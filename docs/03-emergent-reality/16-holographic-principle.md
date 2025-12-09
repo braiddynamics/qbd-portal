@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 16: The Holographic Principle (Isomorphism)"
-sidebar_label: "Chapter 16: The Holographic Principle"
+title: "Chapter 16: Isomorphism"
+sidebar_label: "Chapter 16: Isomorphism"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

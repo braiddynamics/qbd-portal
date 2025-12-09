@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 24: Cosmological Natural Selection (Conclusion)"
-sidebar_label: "Chapter 24: Cosmological Natural Selection"
+title: "Natural Selection (Conclusion)"
+sidebar_label: "Chapter 24: Natural Selection"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

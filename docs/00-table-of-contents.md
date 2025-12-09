@@ -52,7 +52,7 @@ sidebar_position: 0
 * [Chapter 23: The Mathematical Universe (Millennium Problems)](/monograph/synthesis/mathematical-universe)
 * [Chapter 24: Cosmological Natural Selection (Conclusion)](/monograph/synthesis/cosmological-selection)
 
-### 6. Appendices
+### Appendices
 * [A. External References Cited](/monograph/appendices/a-references)
 * [B. Python Simulation Models](/monograph/appendices/b-sim-models)
 * [C. Notation & Symbol Table](/monograph/appendices/notation)

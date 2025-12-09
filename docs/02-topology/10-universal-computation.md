@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 10: Universal Computation (The Quantum)"
-sidebar_label: "Chapter 10: Universal Computation"
+title: "Chapter 10: Universal Bit"
+sidebar_label: "Chapter 10: Universal Bit"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

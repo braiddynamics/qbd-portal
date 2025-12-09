@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 12: Discrete Field Equations (Einstein)"
-sidebar_label: "Chapter 12: Discrete Field Equations"
+title: "Chapter 12: Field Equations (Einstein)"
+sidebar_label: "Chapter 12: Field Equations"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

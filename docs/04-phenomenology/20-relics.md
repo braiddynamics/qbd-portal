@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 20: Relics (Dark Sector)"
-sidebar_label: "Chapter 20: Relics"
+title: "Chapter 20: Dark Sector"
+sidebar_label: "Chapter 20: Dark Sector"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

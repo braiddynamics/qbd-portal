@@ -1,6 +1,6 @@
 ﻿---
-title: "Appendix B: Python Simulation Models"
-sidebar_label: "Appendix B: Python Simulation Models"
+title: "Appendix B: Python Simulations"
+sidebar_label: "Appendix B: Python Simulations"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

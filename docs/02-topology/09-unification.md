@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 9: Unification, Generations, and Decay"
-sidebar_label: "Chapter 9: Unification, Generations, and Decay"
+title: "Chapter 9: Unification"
+sidebar_label: "Chapter 9: Unification"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 15: The Geometry of Entanglement (ER = EPR)"
-sidebar_label: "Chapter 15: The Geometry of Entanglement"
+title: "Chapter 15: Entanglement (ER = EPR)"
+sidebar_label: "Chapter 15: Entanglement"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 

@@ -1,6 +1,6 @@
 ﻿---
-title: "Chapter 23: The Mathematical Universe (Millennium Problems)"
-sidebar_label: "Chapter 23: The Mathematical Universe"
+title: "Chapter 23: Derivations"
+sidebar_label: "Chapter 23: Derivations"
 ---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
