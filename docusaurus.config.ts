@@ -92,7 +92,7 @@ const config: Config = {
           position: 'left',
           label: 'The Monograph',
         },
-        { to: '/notation', label: 'Notation', position: 'left' },
+        { to: '/monograph/notation', label: 'Notation', position: 'left' },
         { href: 'https://github.com/braiddynamics/qbd-portal', label: 'GitHub', position: 'right' },
       ],
     },
