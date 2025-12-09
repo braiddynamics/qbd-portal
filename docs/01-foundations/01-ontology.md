@@ -470,7 +470,7 @@ $$
 
 with explicit constant $c = \max(\delta \log b / 2, \gamma / 2) + o(1)$ (e.g., for $b=2$, $\delta=5$, $\gamma=0.1$, $c \approx 0.1055$).
 
-The quadratic bound holds generally, but relational no-cloning [(§2.3.3)](monograph/foundations/axioms#2.3.3) prohibits bit duplication beyond the net causal additions: each tick adds at most one irreducible relation (edge), contributing $\leq 1$ bit of distinguishability (log2 of binary choice), yielding linear $S(U_{t_L}) \leq \alpha t_L + \beta$ with $\alpha = \log 2$. Parallel sites are correlated (shared history), so effective entropy growth is linear despite local branching.
+The quadratic bound holds generally, but relational no-cloning [(§2.3.3)](axioms#2.3.3) prohibits bit duplication beyond the net causal additions: each tick adds at most one irreducible relation (edge), contributing $\leq 1$ bit of distinguishability (log2 of binary choice), yielding linear $S(U_{t_L}) \leq \alpha t_L + \beta$ with $\alpha = \log 2$. Parallel sites are correlated (shared history), so effective entropy growth is linear despite local branching.
 
 By induction, finitude holds for all $t_L < \infty$, with each step explicitly computable (finite enumeration of $b^{s_n}$ outcomes, pruned by acyclicity). This multi-scale bounding (empirical → computational → gravitational) renders the lemma robust: counterexamples in one domain (e.g., hypothetical continuum) fail under the others' constraints.
 
