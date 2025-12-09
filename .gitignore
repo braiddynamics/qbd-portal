@@ -1,47 +1,20 @@
-# ----------------------
-# Node & Docusaurus
-# ----------------------
-node_modules/
-.docusaurus/
-build/
-.cache/
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-
-# ----------------------
-# Python (Sim Suite & Tools)
-# ----------------------
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.coverage
-htmlcov/
-venv/
-.venv/
-env/
-.env
-
-# ----------------------
-# Windows & VS Code
-# ----------------------
-.vscode/
-*.code-workspace
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# ----------------------
-# Project Specifics
-# ----------------------
-# Ignore large generated sim data if it exceeds GitHub limits (100MB)
-# For the smoke test, we keep small JSONs, but block heavy dumps:
-*.dump
-*.tmp
-
-# We DO want to track:
-# !static/data/  <-- (Implicitly tracked, no action needed)
-# !llms.txt      <-- (Implicitly tracked)
