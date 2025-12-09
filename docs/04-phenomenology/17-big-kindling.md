@@ -1,5 +1,7 @@
-# Chapter 17: Big Kindling (Inflation)
-
+﻿---
+title: "Chapter 17: Big Kindling (Inflation)"
+sidebar_label: "Chapter 17: Big Kindling"
+---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
 [Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
@@ -15,3 +17,4 @@ This section is currently under active development. The underlying simulation da
 * Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
+

@@ -1,5 +1,7 @@
-# Chapter 10: Universal Computation (The Quantum)
-
+﻿---
+title: "Chapter 10: Universal Computation (The Quantum)"
+sidebar_label: "Chapter 10: Universal Computation"
+---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
 [Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
@@ -15,3 +17,4 @@ This section is currently under active development. The underlying simulation da
 * Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
+

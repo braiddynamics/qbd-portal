@@ -1,3 +1,7 @@
+﻿---
+title: "Nomenclature & Symbol Table"
+sidebar_label: "Nomenclature & Symbol Table"
+---
 # Nomenclature & Symbol Table
 
 This table defines the standard notation used throughout the Quantum Braid Dynamics (QBD) monograph.

@@ -1,5 +1,7 @@
-# Chapter 12: Discrete Field Equations (Einstein)
-
+﻿---
+title: "Chapter 12: Discrete Field Equations (Einstein)"
+sidebar_label: "Chapter 12: Discrete Field Equations"
+---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
 [Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
@@ -15,3 +17,4 @@ This section is currently under active development. The underlying simulation da
 * Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
+

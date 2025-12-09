@@ -1,5 +1,7 @@
-# Chapter 1: Substrate
-
+﻿---
+title: "Chapter 1: Substrate"
+sidebar_label: "Chapter 1: Substrate"
+---
 ## 1.1 The Ontology (Smoke Test)
 We posit that the fundamental ontology is a Directed Acyclic Graph (DAG), $\Graph$.
 

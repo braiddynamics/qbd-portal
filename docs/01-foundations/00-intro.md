@@ -1,3 +1,8 @@
+﻿---
+title: "Introduction: The Search for the Primitive"
+sidebar_label: "Introduction"
+---
+
 # Introduction: The Search for the Primitive
 
 ## The Evolution of the Ultimate “It”: From Ancient Atoms to the Informational Substrate

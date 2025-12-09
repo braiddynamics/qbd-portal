@@ -1,5 +1,7 @@
-# Chapter 21: Extreme Physics (Singularities & Condensates)
-
+﻿---
+title: "Chapter 21: Extreme Physics (Singularities & Condensates)"
+sidebar_label: "Chapter 21: Extreme Physics"
+---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
 [Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
@@ -15,3 +17,4 @@ This section is currently under active development. The underlying simulation da
 * Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
+

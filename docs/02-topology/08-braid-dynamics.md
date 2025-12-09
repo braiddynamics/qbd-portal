@@ -1,5 +1,7 @@
-# Chapter 8: Braid Dynamics (Gauge Symmetries)
-
+﻿---
+title: "Chapter 8: Braid Dynamics (Gauge Symmetries)"
+sidebar_label: "Chapter 8: Braid Dynamics"
+---
 :::info Status
 **Draft**: This chapter is currently being drafted. 
 [Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
@@ -15,3 +17,4 @@ This section is currently under active development. The underlying simulation da
 * Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
+
