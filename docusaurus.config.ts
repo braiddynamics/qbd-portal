@@ -71,15 +71,6 @@ const config: Config = {
     ],
   ],
 
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3yAd8i6Qq0',
-      crossorigin: 'anonymous',
-    },
-  ],
-
   themeConfig: {
     navbar: {
       title: 'QBD',
@@ -92,7 +83,7 @@ const config: Config = {
           position: 'left',
           label: 'The Monograph',
         },
-        { to: '/monograph/notation', label: 'Notation', position: 'left' },
+        { to: '/monograph/appendices/notation', label: 'Notation', position: 'left' },
         { href: 'https://github.com/braiddynamics/qbd-portal', label: 'GitHub', position: 'right' },
       ],
     },
