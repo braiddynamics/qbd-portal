@@ -2,7 +2,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { themes as prismThemes } from 'prism-react-renderer';
 
-// QBD Specific LaTeX Macros from your Symbol Table
+// QBD Specific LaTeX Macros
 const qbdMacros = {
   // Logic & Time
   "\\tL": "t_L",                                   // Global Logical Time
@@ -39,11 +39,11 @@ const qbdMacros = {
 
 const config: Config = {
   title: 'Quantum Braid Dynamics',
-  tagline: 'The universe is not a thing, it is relation.',
+  tagline: 'Unifying General Relativity and the Standard Model.',
   url: 'https://braiddynamics.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  // Use an Atom symbol ⚛️ as a temporary logo
+  // Use an Atom symbol ⚛️ as a logo
   favicon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>',
 
   // Enable Mermaid for Flowcharts (Appendix C)
@@ -58,7 +58,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          routeBasePath: '/monograph', // Serves your book at /monograph instead of /docs
+          routeBasePath: '/monograph',
           remarkPlugins: [require('remark-math')],
           rehypePlugins: [[require('rehype-katex'), { 
             strict: false, 
@@ -75,7 +75,6 @@ const config: Config = {
   themeConfig: {
     navbar: {
       title: 'QBD',
-      // We temporarily comment out the logo until you add the file, to prevent build errors
       // logo: { alt: 'QBD Logo', src: 'img/logo.svg' }, 
       items: [
         {

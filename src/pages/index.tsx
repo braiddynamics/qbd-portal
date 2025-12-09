@@ -46,24 +46,23 @@ export default function Home() {
       <main style={{padding: '2rem 0', maxWidth: '800px', margin: '0 auto'}}>
         <div className="container">
           <div className="text--center">
-            <h2>Abstract</h2>
+            <h2>The universe is not a thing, it is relation.</h2>
             <p style={{textAlign: 'justify', fontSize: '1.1rem', lineHeight: '1.6'}}>
-              We present <strong>Quantum Braid Dynamics (QBD)</strong>, a background-independent framework that unifies General Relativity and the Standard Model as emergent behaviors of a discrete, computational substrate. The theory posits that the fundamental ontology of the universe is not a continuous manifold but a dynamic Directed Acyclic Graph evolved by a stochastic, local rewrite rule.
-            </p>
+              Our Aeon begins not with a bang but with a branch of structure, composed not of fundamental things but fundamental relations. At the Crossover, a smooth and featureless end gives way to the new; before ergo after. Maximally symmetric, pre-geometric. Only the latent rule of becoming exists. An irreducible statement: "A can affect B." From this primitive, information coiled into its first loop and a spark of geometrogenesis rushed forth. Organized by computational process, the most fundamental and stable complex motif that could crystallize did. Our topologically braided law takes form and the grand stage is set, only awaiting its actors. ♾️
+            </p> 
             <hr style={{margin: '2rem 0'}} />
             <div className="row">
               <div className="col col--4">
-                <h3>Ontology</h3>
-                {/* Fixed: Use HTML italics instead of LaTeX $G$ */}
-                <p>A discrete causal graph (<i>G</i>) evolved by local rewrite rules.</p>
+                <h3>Time is Updates</h3>
+                <p>The Rules</p>
               </div>
               <div className="col col--4">
-                <h3>Dynamics</h3>
-                <p>Geometrogenesis via non-equilibrium thermodynamics.</p>
+                <h3>Mass is Complexity.</h3>
+                <p>The Players</p>
               </div>
               <div className="col col--4">
-                <h3>Topology</h3>
-                <p>Matter arises as braided topological defects.</p>
+                <h3>Gravity is Process</h3>
+                <p>The Stage</p>
               </div>
             </div>
           </div>
