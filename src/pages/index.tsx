@@ -57,7 +57,7 @@ export default function Home() {
                 <p>The Rules</p>
               </div>
               <div className="col col--4">
-                <h3>Mass is Complexity.</h3>
+                <h3>Mass is Complexity</h3>
                 <p>The Players</p>
               </div>
               <div className="col col--4">

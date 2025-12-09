@@ -39,7 +39,7 @@ const qbdMacros = {
 
 const config: Config = {
   title: 'Quantum Braid Dynamics',
-  tagline: 'Unifying General Relativity and the Standard Model.',
+  tagline: 'Unifying General Relativity and the Standard Model',
   url: 'https://braiddynamics.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

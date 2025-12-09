@@ -14,8 +14,6 @@ sidebar_position: 0
                            |_|
 ```
 
-**Monograph**
-
 ## 📚 Assembled Table of Contents
 
 * [**Introduction: The Search for the Primitive**](/monograph/foundations/intro)
