@@ -23,12 +23,12 @@ function HomepageHeader() {
           <Link
             className="button button--primary button--lg"
             to="/monograph">
-            Read the Monograph
+            Table of Contents
           </Link>
           <Link
             className="button button--secondary button--lg"
             to="/monograph/foundations/intro">
-            Start at Introduction
+            Historical Introduction
           </Link>
         </div>
       </div>

@@ -30,3 +30,66 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* --- MONOGRAPH DESIGN SYSTEM (Soft/Glass Style) --- */
+
+/* Base Style for all Alerts: Add a subtle blur for a modern feel */
+.alert {
+  backdrop-filter: blur(2px);
+}
+
+/* 1. Definitions & Commentary (Grey) - Uses :::note */
+.alert--secondary, .alert--note {
+  /* Light Mode: Very faint grey */
+  --ifm-alert-background-color: rgba(243, 244, 245, 0.6);
+  --ifm-alert-border-color: rgba(218, 221, 225, 0.5);
+  --ifm-alert-color: #3b3e44;
+}
+[data-theme='dark'] .alert--secondary, [data-theme='dark'] .alert--note {
+  /* Dark Mode: Translucent dark grey */
+  --ifm-alert-background-color: rgba(46, 48, 51, 0.4); 
+  --ifm-alert-border-color: rgba(92, 95, 102, 0.4);
+  --ifm-alert-color: #e3e3e3;
+}
+
+/* 2. Lemmas (Blue) - Uses :::info */
+.alert--info {
+  /* Light Mode: Faint blue */
+  --ifm-alert-background-color: rgba(234, 244, 252, 0.6);
+  --ifm-alert-border-color: rgba(96, 165, 250, 0.4);
+  --ifm-alert-color: #1e429f;
+}
+[data-theme='dark'] .alert--info {
+  /* Dark Mode: Deep translucent blue */
+  --ifm-alert-background-color: rgba(26, 39, 59, 0.4);
+  --ifm-alert-border-color: rgba(59, 130, 246, 0.4);
+  --ifm-alert-color: #bfdbfe;
+}
+
+/* 3. Proofs (Green) - Uses :::tip */
+.alert--success, .alert--tip {
+  /* Light Mode: Faint green */
+  --ifm-alert-background-color: rgba(240, 253, 244, 0.6);
+  --ifm-alert-border-color: rgba(74, 222, 128, 0.4);
+  --ifm-alert-color: #166534;
+}
+[data-theme='dark'] .alert--success, [data-theme='dark'] .alert--tip {
+  /* Dark Mode: Deep translucent green */
+  --ifm-alert-background-color: rgba(20, 47, 31, 0.4);
+  --ifm-alert-border-color: rgba(34, 197, 94, 0.4);
+  --ifm-alert-color: #bbf7d0;
+}
+
+/* 4. Theorems & Axioms (Amber/Gold) - Uses :::warning */
+.alert--warning {
+  /* Light Mode: Faint gold */
+  --ifm-alert-background-color: rgba(255, 251, 235, 0.6);
+  --ifm-alert-border-color: rgba(245, 158, 11, 0.4);
+  --ifm-alert-color: #92400e;
+}
+[data-theme='dark'] .alert--warning {
+  /* Dark Mode: Deep translucent amber */
+  --ifm-alert-background-color: rgba(69, 48, 8, 0.4);
+  --ifm-alert-border-color: rgba(251, 191, 36, 0.4);
+  --ifm-alert-color: #fde68a;
+}

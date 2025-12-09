@@ -21,7 +21,7 @@ sidebar_position: 0
 * [**Introduction: The Search for the Primitive**](/monograph/foundations/intro)
 
 ### 1. The Foundational Principles (The Rules)
-* [Chapter 1: Substrate (Ontology)](/monograph/foundations/substrate)
+* [Chapter 1: Substrate (Ontology)](/monograph/foundations/ontology)
 * [Chapter 2: Axioms (Constraints)](/monograph/foundations/axioms)
 * [Chapter 3: Architecture (Object Model)](/monograph/foundations/architecture)
 * [Chapter 4: Dynamics (The Engine)](/monograph/foundations/dynamics)
