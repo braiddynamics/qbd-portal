@@ -88,10 +88,13 @@ const config: Config = {
         { href: 'https://github.com/braiddynamics/qbd-portal', label: 'GitHub', position: 'right' },
       ],
     },
-    footer: {
-      style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Quantum Braid Dynamics.`,
-    },
+footer: {
+        style: 'dark',
+        // Empty links array removes all columns/lists
+        links: [], 
+        // We embed the Legal link directly here for a single-line look
+        copyright: `Copyright © ${new Date().getFullYear()} Braid Dynamics. <a href="/legal" style="color: inherit; text-decoration: underline; margin-left: 10px;">Legal & License</a>`,
+      },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

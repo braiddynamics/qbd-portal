@@ -93,3 +93,14 @@
   --ifm-alert-border-color: rgba(251, 191, 36, 0.4);
   --ifm-alert-color: #fde68a;
 }
+
+/* Slim Footer Override */
+.footer {
+  padding: 1rem 0; /* Reduces top/bottom space significantly */
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0; /* Removes default margin around the text */
+  font-size: 0.9rem; /* Optional: makes it slightly more subtle */
+}
