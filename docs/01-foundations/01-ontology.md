@@ -959,7 +959,7 @@ The motifs of open paths and minimal cycles lead to a physical detection of rewr
 
 ## 1.Ω Formal Synthesis {#1.omega}
 
-:::note[**END OF CHAPTER 1**]
+:::note[**End of Chapter 1**]
 The ontological framework implies a universe where relations propagate forward from a finite origin, ensuring that causal structures can evolve without the paradoxes of infinite histories or substantival backgrounds; these results link to the axiomatic constraints in the next chapter, where prohibitions on cloning and cycles will enforce the uniqueness and stability required for physical laws.
 :::
 

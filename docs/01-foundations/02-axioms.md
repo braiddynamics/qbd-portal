@@ -1212,7 +1212,7 @@ Thus the constraints cohere: arrows propel, quanta tile, acyclicity aligns, yiel
 
 ## 2.Ω Formal Synthesis
 
-:::note[**END OF CHAPTER**]
+:::note[**End of Chapter 2**]
 The three axioms forge the substrate's unyielding frame: the causal primitive [(§2.1.1)](#2.1.1) that directs without local reversal; the geometric constructibility [(§2.3.1)](#2.3.1) that assembles from 3-cycle quanta under unique paths [(§2.3.3)](#2.3.3); and the acyclic effective causality [(§2.7.1)](#2.7.1) that extends irreflexivity and asymmetry transitively via local thermodynamic guards. This triad delimits the task space, independence ([§2.5.1](#2.5.1); [§2.7.6](#2.7.6)) minimizing overlap, decomposition [(§2.4.1)](#2.4.1) enforcing descent to simplices.
 
 Physically, the graph thus accretes as a causal lattice, cycles resolving to area units under singular mediation, the arrow preserved across mediations without recurving; echoes of incompleteness appear, as local verifications approximate globals, their interplay fertile yet bounded. Frictions in parallel flux persist, urging the engine's ignition.
