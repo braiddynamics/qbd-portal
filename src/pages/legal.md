@@ -2,8 +2,8 @@
 
 ### About the Author
 
-**R. Fisher @Braid Dynamics**
-*Principal Investigator*
+R. Fisher, *Principal Investigator* @Braid Dynamics**
+
 ORCID: 0009-0006-2441-3282
 
 The Quantum Braid Dynamics framework was developed to explore the intersection of graph theory, non-equilibrium thermodynamics, and quantum foundations. This monograph is the result of an independent research initiative aimed at establishing a rigorous, background-independent ontology for physics.
