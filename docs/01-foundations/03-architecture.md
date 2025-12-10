@@ -1107,7 +1107,7 @@ An update map $\mathcal{U}: G_0 \mapsto G_1$ preserves the full automorphism gro
 
 ### 3.3.1.1 Diagram: Scheduler Symmetry Outcomes {#3.3.1.1}
 
-:::note[Visual Comparison of Symmetry Outcomes under Sequential vs Parallel Schedulers]
+**Visual Comparison of Symmetry Outcomes under Sequential vs Parallel Schedulers**
 
 ```text
 SCHEDULER SYMMETRY OUTCOMES
@@ -1123,7 +1123,7 @@ SCHEDULER SYMMETRY OUTCOMES
 
 ### 3.3.1.2 Commentary: Logic of the Preservation Argument {#3.3.1.2}
 
-**The Biconditional Structure of the Symmetry Preservation Proof**
+:::note[The Biconditional Structure of the Symmetry Preservation Proof]
 
 The proof of the Preservation of Automorphisms proceeds through a rigorous biconditional argument that establishes both sufficiency and necessity of maximal parallelism for the preservation of the vacuum automorphism group.
 
