@@ -398,7 +398,7 @@ Precisely because $t_L$ resides at a rigorously external and non-dynamical strat
 :::note[**The Superiority of the Sequencer Mechanism over Conditional Probability Models**]
 The canonical Page–Wootters mechanism, which posits the total wavefunction of the universe as an entangled superposition of clock and system degrees of freedom wherein subsystem evolution emerges conditionally from the global constraint, harbors three fatal defects that undermine its foundational viability as a complete resolution to the problem of time:
 
-1.  **Ideal-clock assumption:** In realistic physical implementations, any candidate clock subsystem inevitably undergoes decoherence due to environmental interactions, thereby entangling with the observed system and inducing non-unitary evolution that dissipates coherence and inner products inner violates the preservation of probabilities required for faithful timekeeping.
+1.  **Ideal-clock assumption:** In realistic physical implementations, any candidate clock subsystem inevitably undergoes decoherence due to environmental interactions, thereby entangling with the observed system and inducing non-unitary evolution that dissipates coherence and inner products violates the preservation of probabilities required for faithful timekeeping.
 
 2.  **Multiple-choice problem:** The partitioning of the total Hilbert space into a "clock" subsystem and a "system" subsystem admits a proliferation of inequivalent choices, each yielding distinct conditional evolution operators; these operators fail to commute or align, generating observer-dependent descriptions that lack universality and invite inconsistencies across different experimental contexts.
 
@@ -419,7 +419,6 @@ Internal observers, operating within the emergent physical time $t_{phys}$, reco
 
 :::info[**The Bounds on Information Density in Discrete Physical Systems**]
 For any finite value of $t_L < \infty$, the information content of the state $U_{t_L}$ remains finite. Specifically, $S(U_{t_L}) \leq O(t_L^2)$, precluding divergence to infinity and ensuring a bounded number of accessible microstates at each step.
-:::
 
 ### 1.2.3.1 Proof: Finite Information {#1.2.3.1}
 
@@ -481,7 +480,6 @@ Q.E.D.
 
 :::info[**The Impossibility of Infinite Backward Accumulation of Entropy or Memory**]
 An infinite past, wherein the domain of $t_L$ extends unboundedly to $-\infty$, necessitates either an infinite accumulation of entropy across the sequence or an infinite capacity for memory storage to encode the prior history, both of which stand in direct contravention of the Finite Information Substrate [(§1.2.3)](#1.2.3).
-:::
 
 ### 1.2.4.1 Proof: Divergence of Accumulation {#1.2.4.1}
 
@@ -513,7 +511,6 @@ Q.E.D.
 
 :::info[**The Incompatibility of Infinite Pasts with Acyclicity in Finite State Spaces**]
 Within a state space of finite cardinality (or more generally, bounded effective dimensionality at each stage), any infinite temporal sequence must eventually exhibit recurrence, wherein some state repeats; such recurrence invariably engenders causal loops that contravene the foundational requirement of acyclicity in causal structures.
-:::
 
 ### 1.2.5.1 Proof: Poincaré Recurrence {#1.2.5.1}
 
@@ -529,7 +526,6 @@ Q.E.D.
 
 :::info[**The Logical and Physical Impossibility of Completing Infinite Operation Sequences**]
 The completion of a countably infinite backward sequence of discrete computational steps, required to traverse from an infinite past and arrive at the manifest present state, proves both logically incoherent and physically unrealizable within any framework consistent with established physical principles.
-:::
 
 ### 1.2.6.1 Proof: Supertask Limits {#1.2.6.1}
 
@@ -549,11 +545,10 @@ To actualize the present state $U_0$ under the hypothesis of an infinite past, t
 Compounding these, the process of "counting upward" from $-\infty$ (iteratively applying $\mathcal{U}^{-1}$) never achieves termination; the supertask remains perpetually incomplete, yielding no final state. Yet the empirical present "Now," with its definite $U_0$ and ongoing dynamics, stands as an indubitable fact of experience. This disparity engenders an irreconcilable contradiction, establishing the impossibility of the infinite backward traversal.
 
 Q.E.D.
-:::
 
 ### 1.2.6.2 Commentary: Collapse of Supertasks {#1.2.6.2}
 
-:::note[**The Dynamical Instability of Infinite Computation under General Relativistic Constraints**]
+:::info[**The Dynamical Instability of Infinite Computation under General Relativistic Constraints**]
 The logical impossibility inherent to an infinite past finds a precise physical counterpart in the phenomenon designated as the **Gravitational Collapse of Supertasks**, a dynamical instability wherein the machinery postulated to execute such a transfinite computation self-destructs under general relativistic backreaction. As rigorously demonstrated by Gustavo Romero in 2014, the apparatus required to perform an infinite sequence of operations (thereby "arriving" at the present from an eternal regress) inevitably succumbs to singularity formation prior to completion.
 
 This collapse arises from the interplay of two inexorable physical limits, each amplifying the other's effects to catastrophic divergence:
@@ -571,7 +566,6 @@ This inexorable collapse precludes the universe from "computing" an infinite his
 
 :::info[**The Necessity of a Finite Temporal Origin and a Unique Initial State**]
 The sequence of $t_L$ admits a strict lower bound, admitting no extension to negative values; there exists a unique initial state $U_0$ possessing no causal predecessors whatsoever, and the precise domain of $t_L$ coincides exactly with the non-negative integers $\mathbb{N}_0 = \{0, 1, 2, \dots\}$. Consequently, the universe embodies a finite computational history, commencing with a definite beginning that seeds all subsequent evolution.
-:::
 
 ### 1.2.7.1 Proof: Temporal Finitude {#1.2.7.1}
 
@@ -639,11 +633,11 @@ The discipline of physics dedicates itself to the elucidation of **Causal Consis
 Empirical scrutiny confirms the universe's obeisance to causal laws (**Axiom B** enjoys verificatory status through the success of predictive theories from quantum electrodynamics to general relativity), while the UPD attests the mutual exclusivity of A and B. Ergo, **Axiom A** must yield to falsehood.
 
 The universe thus mandates a **finite history**, with the Global Sequencer initiating at $t_L = 0$ to forge an unbroken causal spine: every event traces, through finite recursion, to the First Event $U_0$, the axiomatic genesis beyond which no antecedents lurk. This finitistic resolution not only exorcises the Grim Reaper's specter but elevates the temporal ontology to a bastion of logical and physical coherence.
-:::
 
 ### 1.2.7.3 Diagram: The Grim Reaper Paradox {#1.2.7.3}
 
-:::note[THE GRIM REAPER PARADOX (Time Interval 12:00 - 1:00)]
+**THE GRIM REAPER PARADOX (Time Interval 12:00 - 1:00)**
+
 ```text
       ----------------------------------------------------
 
@@ -671,10 +665,10 @@ The universe thus mandates a **finite history**, with the Global Sequencer initi
 ```
 :::
 
-### 1.2.Z Implications and Synthesis
+### 1.2.Z Implications and Synthesis {#1.2.Z}
 
-:::note[Temporal Ontology]
-The theorems establish that finite information bounds lead to contradictions in infinite pasts, enforcing a unique initial state and directing evolution through discrete steps; these results connect to the subsequent causal graph by providing the bounded domain over which relational structures can form without regress.
+:::note[**Temporal Ontology**]
+The Theorem of Finitude establishes that finite information bounds lead to contradictions in infinite pasts, enforcing a unique initial state and directing evolution through discrete steps. By terminating the backward chain at $t_L=0$, the Sequencer guarantees that every subsequent state inherits a complete, traversable history, transforming the abstract notion of "becoming" into a computable mechanical process. These results connect to the subsequent causal graph by providing the bounded domain over which relational structures can form without the logical hazards of infinite regress.
 :::
 
 -----
@@ -701,7 +695,6 @@ $G = (V, E, H)$ constitutes the essential structural unit of $\Omega$. This trip
 This triplet structure ensures that each $G \in \Omega$ represents a complete, self-contained snapshot of causal reality at a logical instant, with finiteness bounding complexity, acyclicity safeguarding consistency, and the history map providing an indelible record of emergence. The choice of $\mathbb{N}$ for $H$ emphasizes the discrete genesis over continuous models, where time subdivides arbitrarily; here, the causal graph posits a punctuated history beginning from an initial empty state, avoiding logical paradoxes from pre-existing infinite chains and enabling rigorous dynamical evolution from nullity.
 
 $H$ defines as an intrinsic attribute of the edge isomorphism class, not as a mutable data register. The timestamp is a topological invariant of the edge's existence profile. Therefore, the "record" of an edge is not a separate resource that requires storage allocation; it is a fundamental definitional component of the edge itself. To delete an edge is to alter the graph topology, but the definition of the deleted element remains mathematically distinct from a non-existent element due to its historical index.
-:::
 
 ### 1.3.1.1 Diagram: Causal Cone {#1.3.1.1}
 
@@ -744,6 +737,7 @@ $H$ defines as an intrinsic attribute of the edge isomorphism class, not as a mu
    RULE: H(e_new) = t_L (Current Global Logical Time)
    CONSTRAINT: H(e) is immutable once assigned.
 ```
+:::
 
 ### 1.3.2 Definition: Emergent Timestamp Assignment {#1.3.2}
 
@@ -763,9 +757,6 @@ The assignment of timestamps ensures that $H$ induces a well-founded partial ord
 $$ H(e) = 1 + \max\left( \lbrace H(e') \mid e' = (w, u) \in E \rbrace \cup \lbrace0\rbrace \right), $$
 
 where the maximum ranges over all edges $e'$ incoming to the source vertex $u$. If $u$ admits no incoming edges (i.e., the set is empty, as occurs for isolated vertices in the initial vacuum state), the convention $\max(\emptyset) = 0$ applies, guaranteeing that primordial edges receive $H(e) = 1$. This recurrence enforces strict monotonicity of causality: no effect precedes its cause in the timestamp ordering, preserving the forward arrow of logical time across all transformations.
-:::
-
-This version expands the shorthand from your original notes into full, rigorous prose, maintaining the "Constructor/Task" framing that distinguishes your theory.
 
 ### 1.3.3.1 Proof: Monotonicity {#1.3.3.1}
 
@@ -800,7 +791,6 @@ Q.E.D.
 
 :::note[**The Relational Identity of the Abstract Event Vertex**]
 An **Abstract Event** constitutes a vertex $v_i \in V$. The abstract event manifests as a dimensionless, pre-geometric locus devoid of intrinsic physical properties. The abstract event possesses no mass, no charge, no spin, and no spatial coordinates; it functions solely as a relational nexus, acquiring all attributes through its incident edges.
-:::
 
 ### 1.3.4.1 Commentary: Relational Justification {#1.3.4.1}
 
@@ -810,7 +800,7 @@ This definition resolves the background dependence paradoxes inherent in classic
 For instance, in a minimal universe comprising two connected events $A \to B$, event $A$ acquires no absolute position or intrinsic marker. Event $A$ manifests relationally as "the direct cause of $B$," while event $B$ manifests as "the direct effect of $A$." The absence of self-attributes ensures that physics originates not from substantival properties of the events but from the topology and dynamical evolution of the relations interconnecting them. This relational ontology aligns the foundational structure with the background-independent imperatives of quantum gravity theories, where spacetime arises as a derived construct from causal sets or spin networks rather than a primitive arena. The explicit exclusion of coordinates precludes substantivalism, enforcing diffeomorphism invariance at the discrete level: relabeling vertices preserves the causal skeleton, with isomorphism classes under edge-preserving maps defining equivalence. This shift from substantive objects to relational structures not only evades the hole argument but also embeds the theory's discreteness, where events nucleate via edge additions, inheriting timestamps and influences solely from predecessors.
 :::
 
-### 1.3.Z Implications and Synthesis
+### 1.3.Z Implications and Synthesis {#1.3.Z}
 
 :::note[The Causal Graph]
 The relational graph's monotonic timestamps and acyclic structure yield a physical order where causal chains propagate forward without loops, connecting to the subsequent task space by providing the immutable records that transformations must respect.
@@ -828,7 +818,6 @@ We restrict our inquiry to a domain of admissible transformations on the causal 
 
 :::info[**The Restriction of the Vacuum Repertoire to Primitive Edge Operations**]
 The Postulate of the Vacuum Repertoire delimits the kinematic capabilities of the fundamental substrate to exactly two primitive operations: Edge Addition ($\mathfrak{T}_{add}$) and Edge Deletion ($\mathfrak{T}_{del}$). This restriction asserts that the unmediated vacuum possesses no intrinsic capacity for higher-order transformations; operations such as simultaneous multi-edge generation, non-local topological swaps, or geometric smoothing do not exist as fundamental primitives. Instead, the theory mandates that all complex structural evolution derives exclusively from the iterative composition of these binary edge fluxes. The ambient relational structure functions as the auto-catalyst for these operations, requiring no extrinsic constructor to drive the basal dynamics. By confining the repertoire to this symmetric duality, the postulate enforces an ontological neutrality, ensuring that physical laws emerge not from ad hoc kinematic privileges but as constraint-based filters acting upon a uniform combinatorial potential.
-:::
 
 ### 1.4.1.1 Definition: Elementary Task Space {#1.4.1.1}
 
@@ -854,7 +843,6 @@ In the architecture of Graph Rewriting Systems, the foundational primitive manif
 $\mathfrak{T}_{del}$ defines as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) but does not retroactively annihilate the *event of its creation*. The task space assumes an "Append-Only" metaphysics regarding the Global Sequencer's log: $t_L$ at which $e$ was created remains a persistent property of the universe's trajectory, even if the geometric constituent $e$ is removed from the active graph $G$. This distinction allows for the pruning of geometry without the paradox of altering the past.
 
 These primitives form the "assembly language" of $\mathfrak{T}$: every complex transformation, be it the braiding of fermionic worldlines, the curvature gradients of spacetime, or the entanglement webs of holography, decomposes into a countable sequence of such substitutions. Unlike general graph rewriting systems, where arbitrary motifs proliferate, Quantum Braid Dynamics restricts rewrite templates to these edge-level operations, ensuring that vertex identities remain purely relational and pre-geometric [(§1.3.4)](#1.3.4). The symmetry between creation and deletion reflects the reversibility constraint of Constructor Theory: if $\mathfrak{T}_{add}$ qualifies as possible (i.e., a constructor exists to enact it reliably), then its inverse $\mathfrak{T}_{del}$ must also qualify as possible, conserving the distinguishability of graph states without informational loss. This explicit duality mandates the equiprimordiality: the vacuum admits both fluxes symmetrically, with no primitive favoring one over the other, thereby embedding conservation of relational distinguishability at the ontological core.
-:::
 
 ### 1.4.2.1 Diagram: Task Repertoire {#1.4.2.1}
 
@@ -880,6 +868,7 @@ These primitives form the "assembly language" of $\mathfrak{T}$: every complex t
    2. Monotonicity: H(e) = Current t_L.
    3. Reversibility: If Add is possible, Del is possible.
 ```
+:::
 
 ### 1.4.3 Commentary: Symmetry and Catalysis {#1.4.3}
 
@@ -898,7 +887,7 @@ A defining virtue of this task-theoretic formulation resides in its kinematic pu
 ### 1.4.Z Implications and Synthesis {#1.4.Z}
 
 :::note[**The Task Space**]
-The restricted repertoire of additions and deletions yields a physical flux where relations can form and dissolve reversibly, connecting to the subsequent graph motifs by providing the primitive operations that detect and close patterns into stable structures.
+The restricted repertoire of additions and deletions yields a physical flux where relations can form and dissolve reversibly. By confining structural evolution to these binary primitives, the task space decouples kinematic possibility from dynamical probability, ensuring that the substrate acts as a neutral combinatorial engine rather than a directed force. This neutrality connects to the subsequent graph motifs by providing the unbiased primitive operations that detect and close patterns into stable structures, leaving the selection of those structures to the thermodynamic constraints.
 :::
 
 -----
@@ -924,7 +913,6 @@ The following structures constitute the vocabulary for topological constraints:
 
 :::note[**The 2-Path as the Minimal Unit of Transitive Mediation**]
 $P_2$ is defined as a simple directed path of length 2, denoted $(v \to w \to u)$. This structure is the fundamental substrate for the rewrite rule. It represents the minimal causal chain required to infer a mediated relationship between (v) and (u).
-:::
 
 ### 1.5.2.1 Diagram: Open 2-Path {#1.5.2.1}
 
@@ -934,6 +922,7 @@ $P_2$ is defined as a simple directed path of length 2, denoted $(v \to w \to u)
     /   \
    v     u
 ```
+:::
 
 ### 1.5.3 Definition: Cycle Definitions {#1.5.3}
 
@@ -941,7 +930,6 @@ $P_2$ is defined as a simple directed path of length 2, denoted $(v \to w \to u)
 * A Cycle is defined as a non-trivial directed path that starts and ends at the same vertex.
 * 2-Cycle: A loop of length 2 (e.g., $A \to B \to A$). This represents a logical contradiction (mutual instantaneous causality).
 * 3-Cycle: A loop of length 3 (e.g., $A \to B \to C \to A$). This is the fundamental quantum of geometry, representing the smallest possible closed area.
-:::
 
 ### 1.5.3.1 Diagram: Closed 3-Cycle {#1.5.3.1}
 
@@ -959,8 +947,9 @@ OPEN 2-PATH (Pre-Geometric)       CLOSED 3-CYCLE (Geometric Quantum)
    Relation: A->B, B->C               Relation: A->B->C->A
    Status: Transitive Flow            Status: Self-Reference / Closure
 ```
+:::
 
-### 1.5.Z Implications and Synthesis
+### 1.5.Z Implications and Synthesis {#1.5.Z}
 
 :::note[**Graph-Theoretic Definitions**]
 The motifs of open paths and minimal cycles lead to a physical detection of rewrite sites, where closures generate stable quanta that underpin emergent geometry, connecting to the subsequent axioms by providing the patterns that constraints must prune for coherent evolution.
@@ -973,5 +962,70 @@ The motifs of open paths and minimal cycles lead to a physical detection of rewr
 :::note[**END OF CHAPTER 1**]
 The ontological framework implies a universe where relations propagate forward from a finite origin, ensuring that causal structures can evolve without the paradoxes of infinite histories or substantival backgrounds; these results link to the axiomatic constraints in the next chapter, where prohibitions on cloning and cycles will enforce the uniqueness and stability required for physical laws.
 :::
+
+| Symbol | Description | First Used |
+| :--- | :--- | :--- |
+| $A, B$ | Generic propositions within a logical schema | [§1.1.2](#1.1.2) |
+| $\vdash$ | Syntactic derivability (provability within a formal system) | [§1.1.2](#1.1.2) |
+| $\models$ | Semantic entailment (truth within a model) | [§1.1.2](#1.1.2) |
+| $\Gamma$ | A set of premises or axioms | [§1.1.2](#1.1.2) |
+| $\theta$ | A derived theorem or conclusion | [§1.1.2](#1.1.2) |
+| $S_n$ | The $n$-th statement in a formal proof sequence | [§1.1.2](#1.1.2) |
+| $F$ | A consistent, effectively axiomatized formal system | [§1.1.3](#1.1.3) |
+| $\mathcal{G}$ | The Gödel sentence ("This statement is unprovable in F") | [§1.1.3](#1.1.3) |
+| $Con(F)$ | The statement asserting the consistency of system $F$ | [§1.1.3](#1.1.3) |
+| $t_{phys}$ | Physical Time (emergent, geometric, continuous, local) | [§1.2.1](#1.2.1) |
+| $t_L$ | Global Logical Time (fundamental, discrete, integer-valued) | [§1.2.1](#1.2.1) |
+| $\mathbb{N}_0$ | The set of non-negative integers $\{0, 1, 2, \dots\}$ | [§1.2.2](#1.2.2) |
+| $U_{t_L}$ | The global state of the universe at logical time step $t_L$ | [§1.2.2](#1.2.2) |
+| $\mathcal{U}$ | The Universal Evolution Operator | [§1.2.2](#1.2.2) |
+| $\hat{H}$ | Total Hamiltonian operator | [§1.2.2](#1.2.2) |
+| $\Psi$ | The wavefunction of the universe | [§1.2.2](#1.2.2) |
+| $n$ | Generation step (Cellular Automaton context) | [§1.2.2.1](#1.2.2.1) |
+| $\mu$ | Renormalization scale (or mean in statistical contexts) | [§1.2.2.1](#1.2.2.1) |
+| $\tau$ | Fictitious or imaginary time parameter | [§1.2.2.1](#1.2.2.1) |
+| $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3](#1.2.2.3) |
+| $\hat{P}$ | Permutation operator (Cellular Automaton Interpretation) | [§1.2.2.2](#1.2.2.2) |
+| $\vert \psi(t)\rangle$ | The Ontic State vector | [§1.2.2.2](#1.2.2.2) |
+| $\Lambda, \hat{\Lambda}$ | Cosmological constant (and corresponding operator) | [§1.2.2.3](#1.2.2.3) |
+| $\hbar$ | Reduced Planck constant | [§1.2.2.3](#1.2.2.3) |
+| $S(U_{t_L})$ | Entropy of the state $U_{t_L}$ | [§1.2.3](#1.2.3) |
+| $O(\cdot)$ | Big O notation (asymptotic upper bound) | [§1.2.3](#1.2.3) |
+| $\ell_P$ | Planck length ($\approx 1.6 \times 10^{-35}$ m) | [§1.2.3](#1.2.3) |
+| $N_P$ | Number of Planck voxels | [§1.2.3](#1.2.3) |
+| $\vert \Omega_n \vert$ | Cardinality of the state space at step $n$ | [§1.2.3](#1.2.3) |
+| $k_B$ | Boltzmann constant | [§1.2.3](#1.2.3) |
+| $E$ | Energy | [§1.2.3](#1.2.3) |
+| $T$ | Temperature | [§1.2.3](#1.2.3) |
+| $d_{t_L}$ | Dimension of the Hilbert space at step $t_L$ | [§1.2.3](#1.2.3) |
+| $\mathcal{R}$ | Rule set for evolution | [§1.2.3](#1.2.3) |
+| $s_{t_L}$ | Number of active rewrite sites at step $t_L$ | [§1.2.3](#1.2.3) |
+| $b$ | Branching factor (outcomes per site) | [§1.2.3](#1.2.3) |
+| $\delta, \gamma$ | Scaling constants for site growth | [§1.2.3](#1.2.3) |
+| $\sigma^2$ | Variance | [§1.2.4.1](#1.2.4.1) |
+| $\mathbb{E}[\cdot]$ | Expected value operator | [§1.2.4.1](#1.2.4.1) |
+| $\mathbb{P}(\cdot)$ | Probability measure | [§1.2.4.1](#1.2.4.1) |
+| $\mathbb{Z}_{<0}$ | The set of negative integers | [§1.2.7.1](#1.2.7.1) |
+| $\prec$ | Strict precedence relation (causal ordering) | [§1.2.5.1](#1.2.5.1) |
+| $c$ | Speed of light in vacuum | [§1.2.6.1](#1.2.6.1) |
+| $G_{\mu\nu}$ | Einstein tensor | [§1.2.6.2](#1.2.6.2) |
+| $T_{\mu\nu}$ | Stress-energy tensor | [§1.2.6.2](#1.2.6.2) |
+| $G$ | Gravitational constant | [§1.2.6.2](#1.2.6.2) |
+| $R_s$ | Schwarzschild radius | [§1.2.6.2](#1.2.6.2) |
+| $R_n$ | The $n$-th Grim Reaper in the paradox sequence | [§1.2.7.2](#1.2.7.2) |
+| $\Omega$ | Universal State Space (set of all admissible graphs) | [§1.3.1](#1.3.1) |
+| $G$ | A specific Causal Graph configuration | [§1.3.1](#1.3.1) |
+| $V$ | The set of Vertices (Abstract Events) | [§1.3.1](#1.3.1) |
+| $E$ | The set of Edges (Causal Relations) | [§1.3.1](#1.3.1) |
+| $H$ | The History Function (Timestamp map) | [§1.3.1](#1.3.1) |
+| $v_i, u, w$ | Individual vertices (events) | [§1.3.1](#1.3.1) |
+| $e$ | An individual directed edge | [§1.3.1](#1.3.1) |
+| $\mathbb{N}$ | Natural numbers (codomain of $H$) | [§1.3.1](#1.3.1) |
+| $\mathfrak{T}$ | Elementary Task Space (set of kinematic transformations) | [§1.4.1.1](#1.4.1.1) |
+| $\mathfrak{T}_{add}$ | Edge Creation Task | [§1.4.1](#1.4.1) |
+| $\mathfrak{T}_{del}$ | Edge Deletion Task | [§1.4.1](#1.4.1) |
+| $\Delta F$ | Change in Free Energy | [§1.4.4](#1.4.4) |
+| $V_A, V_B$ | Disjoint vertex sets in a bipartite graph | [§1.5.1](#1.5.1) |
+| $\to$ | Directionality indicator in a path (e.g., $v \to w$) | [§1.5.2](#1.5.2) |
 
 -----
