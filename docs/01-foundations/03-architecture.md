@@ -501,7 +501,7 @@ Q.E.D.
 
 :::info[The Specific Rejection of Self-Loops and 2-Cycles from the Candidate Set]
 
-- Every graph that contains either a self-loop or a pair of reciprocal edges forming a directed 2-cycle receives exclusion from candidacy for the vacuum state $G_0$.
+Every graph that contains either a self-loop or a pair of reciprocal edges forming a directed 2-cycle receives exclusion from candidacy for the vacuum state $G_0$.
 
 
 ### 3.2.3.1 Proof: Short Cycle Exclusion {#3.2.3.1}
@@ -550,7 +550,7 @@ Q.E.D.
 
 :::info[The Rejection of Non-Tree DAGs via the Unique Causality Constraint]
 
-- Every connected directed acyclic graph with edge count strictly greater than $N-1$ receives exclusion from candidacy for the vacuum state $G_0$.
+Every connected directed acyclic graph with edge count strictly greater than $N-1$ receives exclusion from candidacy for the vacuum state $G_0$.
 
 
 ### 3.2.5.1 Proof: Redundancy Exclusion {#3.2.5.1}
@@ -576,7 +576,7 @@ Q.E.D.
 
 :::info[The Exclusion of Trees with Insufficient Rewrite Site Density]
 
-- Every tree graph whose structure yields a strictly sub-maximal number of compliant 2-path rewrite sites receives exclusion from candidacy for the vacuum state $G_0$.
+Every tree graph whose structure yields a strictly sub-maximal number of compliant 2-path rewrite sites receives exclusion from candidacy for the vacuum state $G_0$.
 
 
 ### 3.2.6.1 Proof: Branching Optimization {#3.2.6.1}
@@ -599,7 +599,7 @@ Q.E.D.
 
 :::info[The Exclusion of Trees Lacking Level-Transitive Automorphism Action]
 
-- Every tree graph whose automorphism group fails to act transitively on vertex levels receives exclusion from candidacy for the vacuum state $G_0$.
+Every tree graph whose automorphism group fails to act transitively on vertex levels receives exclusion from candidacy for the vacuum state $G_0$.
 
 
 ### 3.2.7.1 Proof: Transitivity Mandate {#3.2.7.1}
@@ -622,7 +622,7 @@ Q.E.D.
 
 :::info[The Exclusion of Non-Regular Trees via Orbit Entropy Maximization]
 
-- Every non-regular tree graph receives exclusion from candidacy for the vacuum state $G_0$.
+Every non-regular tree graph receives exclusion from candidacy for the vacuum state $G_0$.
 
 
 ### 3.2.8.1 Proof: Regularity Mandate {#3.2.8.1}
@@ -1484,7 +1484,7 @@ The proof of the Inevitable Geometrogenesis proceeds through a rigorous mechanis
 
 :::info[The Irreversible Breaking of Vacuum Bipartiteness via Single-Edge Fluctuation]
 
-- The non-perturbative addition of a single edge that connects two vertices residing in the same partition set of the bipartite vacuum constitutes a minimal topological fluctuation that irreversibly violates the global strict bipartiteness of the graph.
+The non-perturbative addition of a single edge that connects two vertices residing in the same partition set of the bipartite vacuum constitutes a minimal topological fluctuation that irreversibly violates the global strict bipartiteness of the graph.
 
 
 ### 3.4.2.1 Proof: Symmetry Breaking {#3.4.2.1}
@@ -1522,7 +1522,7 @@ Q.E.D.
 
 :::info[The Immediate Creation of Compliant Rewrite Sites by the Tunneling Event]
 
-- The tunneling edge $(x, y)$ with both endpoints in the same parity partition creates at least one valid Principle-of-Unique-Causality-compliant 2-path site whenever at least one endpoint possesses an outgoing edge in the original vacuum tree.
+The tunneling edge $(x, y)$ with both endpoints in the same parity partition creates at least one valid Principle-of-Unique-Causality-compliant 2-path site whenever at least one endpoint possesses an outgoing edge in the original vacuum tree.
 
 
 ### 3.4.3.1 Proof: Site Nucleation {#3.4.3.1}
@@ -1548,7 +1548,7 @@ Q.E.D.
 
 :::info[The Generation of the First 3-Cycle and the Initiation of the Chain Reaction]
 
-- The acceptance of the standard perturbative rewrite rule $\mathcal{R}$ on the tunneling-induced compliant 2-path creates the first directed 3-cycle in the universe. This 3-cycle immediately generates multiple new compliant 2-path sites and initiates the explosive chain reaction of geometrogenesis.
+The acceptance of the standard perturbative rewrite rule $\mathcal{R}$ on the tunneling-induced compliant 2-path creates the first directed 3-cycle in the universe. This 3-cycle immediately generates multiple new compliant 2-path sites and initiates the explosive chain reaction of geometrogenesis.
 
 
 ### 3.4.4.1 Proof: Chain Reaction {#3.4.4.1}
@@ -1575,7 +1575,7 @@ Q.E.D.
 
 :::info[The Non-Vanishing Probability of Tunneling in the High-Temperature Regime]
 
-- The probability $\mathbb{P}_{\text{ign}}$ of at least one symmetry-breaking tunneling event in the early vacuum remains strictly positive. This probability approaches unity under the natural high-effective-temperature conditions of the pre-ignition state.
+The probability $\mathbb{P}_{\text{ign}}$ of at least one symmetry-breaking tunneling event in the early vacuum remains strictly positive. This probability approaches unity under the natural high-effective-temperature conditions of the pre-ignition state.
 
 
 ### 3.4.5.1 Proof: High-T Probability {#3.4.5.1}
@@ -1746,7 +1746,7 @@ The capstone proof in [(§3.5.7)](#3.5.7) assembles these components to demonstr
 
 :::info[The Faithful Embedding of Classical Graph States into the Hilbert Space]
 
-- The classical combinatorial states of the causal graph receive faithful embedding into a formal Hilbert space configuration space. This embedding enables the application of stabilizer Quantum Error-Correcting Code techniques while preserving the classical nature of the physical system.
+The classical combinatorial states of the causal graph receive faithful embedding into a formal Hilbert space configuration space. This embedding enables the application of stabilizer Quantum Error-Correcting Code techniques while preserving the classical nature of the physical system.
 
 
 ### 3.5.2.1 Proof: Mapping Validity {#3.5.2.1}
@@ -1811,7 +1811,7 @@ Z-OPERATOR (Diagonal) X-OPERATOR (Off-Diagonal)
 
 :::info[The Enforcement of Inviolable Axioms via Constraint Projectors]
 
-- The hard constraint projectors successfully enforce the inviolable axiomatic rules of the theory. These projectors annihilate all invalid graph configurations and define the boundaries of the physically permissible codespace.
+The hard constraint projectors successfully enforce the inviolable axiomatic rules of the theory. These projectors annihilate all invalid graph configurations and define the boundaries of the physically permissible codespace.
 
 
 ### 3.5.3.1 Definition: The Projectors {#3.5.3.1}
@@ -1939,7 +1939,7 @@ Proof of Equivalence for Small N: For $N=3$, $\sigma_{\text{geom}} = ZZZ$, $\Pi_
 
 :::info[The Classification of Local Geometry via Triplet Syndrome Tuples]
 
-- The geometric check operators successfully classify all possible local triplet configurations with complete granularity. These operators provide syndrome tuples that uniquely identify the exact edge configuration of every triplet subgraph.
+The geometric check operators successfully classify all possible local triplet configurations with complete granularity. These operators provide syndrome tuples that uniquely identify the exact edge configuration of every triplet subgraph.
 
 
 ### 3.5.4.1 Definition: Triplet Check Operators {#3.5.4.1}
@@ -2220,7 +2220,7 @@ This granular classification system enables the awareness layer $R_T$ to produce
 
 :::info[The Mutual Commutativity of All Stabilizer Operators in the Code]
 
-- All stabilizer operators in the theory mutually commute. This commutativity guarantees the existence of a common eigenbasis and the mathematical consistency of the codespace definition.
+All stabilizer operators in the theory mutually commute. This commutativity guarantees the existence of a common eigenbasis and the mathematical consistency of the codespace definition.
 
 
 ### 3.5.5.1 Proof: Abelian Group Structure {#3.5.5.1}
@@ -2247,7 +2247,7 @@ Q.E.D.
 
 :::info[The Existence of a Non-Empty Physical Codespace]
 
-- The codespace $\mathcal{C}$ defined by the common +1 eigenspace of all constraint projectors contains at least one physical state. The codespace therefore remains mathematically and physically non-trivial.
+The codespace $\mathcal{C}$ defined by the common +1 eigenspace of all constraint projectors contains at least one physical state. The codespace therefore remains mathematically and physically non-trivial.
 
 
 ### 3.5.6.1 Proof: Existence of Valid States {#3.5.6.1}
