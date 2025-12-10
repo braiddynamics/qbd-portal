@@ -378,6 +378,7 @@ The vacuum organizes into alternating layers of even and odd depth. The graph is
     2. Cycles (returning to self) must be Even length.
     3. Therefore, no Odd Cycles can exist.
 ```
+:::
 
 ## 3.1.Z Implications and Synthesis {#3.1.Z}
 
