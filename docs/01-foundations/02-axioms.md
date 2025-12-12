@@ -42,7 +42,7 @@ Antisymmetry blocks mutual edges only when vertices differ, yet this mathematica
 ### 2.2.1 Theorem: Insufficiency of Antisymmetry {#2.2.1}
 
 :::info[**Insufficiency of Antisymmetry for a Physical Theory of Causality**]
-Antisymmetry alone is insufficient for a physical theory of causality in the framework. Antisymmetry permits self-loops ($v \to v$). Self-loops introduce directed cycles. Directed cycles violate the Directed Acyclic Graph (DAG) requirement. The DAG requirement is essential for Acyclic Effective Causality [(§2.7.1)](#2.7.1). Self-loops create inconsistencies in the dynamics of the rewrite rule $\mathcal{R}$.
+Antisymmetry alone is insufficient for a physical theory of causality. Antisymmetry permits self-loops ($v \to v$). Self-loops introduce directed cycles. Directed cycles violate the Directed Acyclic Graph (DAG) requirement. The DAG requirement is essential for Acyclic Effective Causality [(§2.7.1)](#2.7.1). Self-loops create inconsistencies in the dynamics of the rewrite rule $\mathcal{R}$.
 
 ### 2.2.1.1 Commentary: Argument Outline {#2.2.1.1}
 
@@ -246,7 +246,7 @@ This principle acts as a "No-Cloning Theorem" for the causal graph. The principl
 
 ### 2.3.3.1 Definition: Path Cloning Impossibility {#2.3.3.1}
 
-:::note[**Impossibility of Path Cloning and Redundant Causality**]
+:::warning[**Impossibility of Path Cloning and Redundant Causality**]
 Let $u$ and $v$ be vertices in the graph $G$. Let $\Pi(u,v)$ be the set of directed paths from $u$ to $v$ of length $L \le 2$. The task of adding the edge $e = (u,v)$ is impossible (forbidden) if $|\Pi(u,v)| \ge 1$, per the Principle of Unique Causality.
 
 In the language of the rewrite rule, if a 2-path $v \to w \to u$ exists, the closing chord $(u,v)$ may only be added if no other path $v \to x \to u$ exists (where $x \neq w$). The closing chord may only be added if no existing direct edge $v \to u$ exists. If the path is degenerate (non-unique), the construction is blocked. This forces the system to resolve the ambiguity via thermodynamic deletion. Growth can then resume.
@@ -264,14 +264,15 @@ def is_permissible(G, v, w, u):  # Check add (u,v) on 2-path v->w->u
 ```
 
 This local successor scan enforces |Π|≤1 without full BFS (for L=2). Verified via unit tests (pytest): Rejects direct/alt paths, accepts unique (e.g., isolated 2-path passes; alt 3-path ok).
-:::
 
 ### 2.3.3.1 Diagram: Principle of Unique Causality (PUC) {#2.3.3.1}
 
-:::note[**Illustration of the *No Cloning* rule. If a path of length 2 exists, a chord cannot be added because it duplicates the causal information.**]
+:::note[**Illustration of the *No Cloning* rule.**]
 
-```text
+```
       Rule: Do not clone the path.
+      - If a path of length 2 exists, a chord cannot be 
+        because it duplicates the causal information.
 
       SCENARIO: A influences C via B.
 
@@ -296,7 +297,7 @@ This local successor scan enforces |Π|≤1 without full BFS (for L=2). Verified
 
 ### 2.3.4 Definition: Lexicographic Potential {#2.3.4}
 
-:::note[**Lexicographic Potential Metric ($\Phi(G)$) for Topological Complexity**]
+:::warning[**Lexicographic Potential Metric ($\Phi(G)$) for Topological Complexity**]
 The lexicographic potential is defined as the ordered pair $\Phi(G) = (L, N_L)$. Here, $L=\max(\text{len}(C))$ is the length of the longest simple directed cycle in $G$. $N_L$ is the number of distinct simple cycles in $G$ of length $L$.
 
 A state $G'$ is strictly simpler than $G$ if $\Phi(G') < \Phi(G)$ in lexicographic order. This means either $L' < L$, or $L' = L$ and $N_L' < N_L$. This defines a well-ordered measure of the graph's cyclic complexity. Both $L \le |V|$ and $N_L \le \binom{|E|}{L}$. Thus, the lexicographic order on $\Phi(G)$ is well-founded on all finite graphs.
@@ -846,7 +847,7 @@ The focus confines to finite cycles without further enforcement. The structure j
 
 ### 2.6.1 Definition: Effective Influence {#2.6.1}
 
-:::note[**The Effective Influence Relation ($\le$) as the Transitive Closure of Strictly Timestamped Causal Paths**]
+:::warning[**The Effective Influence Relation ($\le$) as the Transitive Closure of Strictly Timestamped Causal Paths**]
 Let $G = (V, E, H)$ be a causal graph with history. The concept of effective influence captures the transitive propagation of causality across the graph, distinguishing mediated consequences from immediate actions. For any two vertices $u, v \in V$, $u$ has an effective influence on $v$, denoted $u \le v$, if and only if there exists a valid causal trajectory connecting them. Formally, this requires the existence of a simple directed path $\pi_{uv} = (v_0, v_1, \ldots, v_\ell)$ in $G$ that satisfies three rigorous conditions:
 1.  **Connectivity:** The path must explicitly link the cause to the effect, such that $v_0 = u$ and $v_\ell = v$.
 2.  **Mediation:** The path length $\ell$ must be greater than or equal to two ($\ell \geq 2$).
@@ -858,7 +859,7 @@ The definition of Effective Influence ($\le$) requires the trajectory $\pi_{uv}$
 
 ### 2.6.1.1 Commentary: Path {#2.6.1.1}
 
-**Justification of the Necessity of Mediation and Sequentiality Constraints in Causal Paths**
+:::note[**Justification of the Necessity of Mediation and Sequentiality Constraints in Causal Paths**]
 
 The specific constraints imposed on the effective influence relation are not arbitrary mathematical choices; they are physical necessities required to preserve the distinct ontological layers of the theory.
 
