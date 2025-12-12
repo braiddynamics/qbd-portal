@@ -1166,7 +1166,7 @@ Q.E.D.
 
 ### 3.3.3 Definition: The Formal Symmetry{#3.3.3}
 
-:::info[**Axiomatic Assumptions for Symmetry-Preserving Dynamics (A1–A4)]**
+:::info[**Axiomatic Assumptions for Symmetry-Preserving Dynamics (A1–A4)**]
 
 The requirement that the laws of physics remain identical at every location in the universe constitutes a fundamental physical principle. No update rule may introduce arbitrary distinctions that favor particular sites or break the symmetry present in the vacuum state. Group theory supplies the exact mathematical language required to express this physical requirement with complete precision.
 
@@ -1250,7 +1250,7 @@ The only update map that introduces no arbitrary distinguishing information cons
 
 Q.E.D.
 
-### 3.3.4.2 Example: Cycle Resolution {#3.3.4.2}
+### 3.3.4.2 Calculation: Cycle Resolution {#3.3.4.2}
 
 **Algorithmic Resolution of Symmetric Overlaps in a 6-Cycle Graph**
 
@@ -1308,7 +1308,7 @@ It is confirmed that $D_8$ receives preservation: Rotations/reflections map rema
 
 ### 3.3.4.4: Calculation: Symmetry Metrics Pre/Post-Update {#3.3.4.4}
 
-:::info[**Computational Verification of Automorphism Preservation under Parallel vs. Sequential Schedulers**]
+**Computational Verification of Automorphism Preservation under Parallel vs. Sequential Schedulers**
 
 To empirically ground the necessity direction's contradiction (subset selection injects distinguishability, fracturing orbits), a balanced N=7 Bethe fragment (root+3 children+3 grandchildren) is analyzed. Mock compliant sites are undirected chords between level-1 siblings (K3 on level-1), parallel adds all 3 chords (K3 on level-1), preserving S3 symmetry (|Aut|=6); sequential adds one, distinguishing updated vs. untouched siblings (|Aut|=2).
 
