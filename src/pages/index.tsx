@@ -54,15 +54,15 @@ export default function Home() {
             <div className="row">
               <div className="col col--4">
                 <h3>Time is Updates</h3>
-                <p>The Rules</p>
+                <p><a href="/monograph/category/part-1-the-rules">The Rules</a></p>
               </div>
               <div className="col col--4">
                 <h3>Mass is Complexity</h3>
-                <p>The Players</p>
+                <p><a href="/monograph/category/part-2-the-players">The Players</a></p>
               </div>
               <div className="col col--4">
                 <h3>Gravity is Process</h3>
-                <p>The Stage</p>
+                <p><a href="/monograph/category/part-3-the-stage">The Stage</a></p>
               </div>
             </div>
           </div>
