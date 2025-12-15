@@ -1584,27 +1584,27 @@ A lingering question persists regarding the scaling to regimes of higher relatio
 
 | Symbol | Description | First Used |
 | :--- | :--- | :--- |
-| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1]({#4.1.1) |
-| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3]({#4.1.3) |
-| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1]({#4.3.1) |
-| $R_T$ | Awareness Endofunctor | [§4.3.2]({#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2]({#4.3.2) |
-| $\epsilon$ | Counit (Context Extraction) | [§4.3.3]({#4.3.3) |
-| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4]({#4.3.4) |
-| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1]({#4.4.1) |
-| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2]({#4.4.2) |
-| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4]({#4.4.4) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e - 1$) | [§4.4.5]({#4.4.5) |
-| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6]({#4.4.6) |
-| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1]({#4.5.1) |
-| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2]({#4.5.2) |
-| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2]({#4.5.2) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3]({#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5]({#4.5.5) |
-| $\mathcal{U}$ | Evolution Operator | [§4.6.1]({#4.6.1) |
-| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1]({#4.6.1) |
-| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1]({#4.6.1) |
-| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1]({#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2]({#4.6.2) |
+| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](#4.1.1) |
+| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3](#4.1.3) |
+| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](#4.3.1) |
+| $R_T$ | Awareness Endofunctor | [§4.3.2](#4.3.2) |
+| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](#4.3.2) |
+| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](#4.3.3) |
+| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](#4.3.4) |
+| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](#4.4.1) |
+| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](#4.4.2) |
+| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](#4.4.4) |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e - 1$) | [§4.4.5](#4.4.5) |
+| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](#4.4.6) |
+| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](#4.5.1) |
+| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](#4.5.2) |
+| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](#4.5.2) |
+| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](#4.5.3) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](#4.5.5) |
+| $\mathcal{U}$ | Evolution Operator | [§4.6.1](#4.6.1) |
+| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](#4.6.1) |
+| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](#4.6.1) |
+| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](#4.6.1) |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](#4.6.2) |
 
 -----

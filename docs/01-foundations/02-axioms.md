@@ -1945,27 +1945,27 @@ Physically, the graph thus accretes as a causal lattice, cycles resolving to are
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1]({#2.1.1) |
-| $E$ | The set of edges within the graph | [§2.1.1]({#2.1.1) |
-| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1]({#2.6.1) |
-| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1]({#2.6.1) |
-| $\neg$ | Logical negation | [§2.7.1]({#2.7.1) |
-| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2]({#2.3.2) |
-| $L$ | Length of a cycle or path | [§2.3.1]({#2.3.1) |
-| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.3]({#2.3.3) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1]({#2.6.1) |
-| $C$ | A Simple Directed Cycle | [§2.4.3]({#2.4.3) |
-| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2]({#2.4.2) |
-| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.3]({#2.3.3) |
-| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5]({#2.4.5) |
-| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5]({#2.4.5) |
-| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4]({#2.3.4) |
-| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4]({#2.3.4) |
-| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4]({#2.3.4) |
-| $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3]({#2.2.3) |
-| $\Delta S$ | Change in Entropy | [§2.2.3]({#2.2.3) |
-| $k_B$ | Boltzmann Constant | [§2.2.3]({#2.2.3) |
-| $R$ | Radius of local computational patch | [§2.7.3]({#2.7.3) |
-| $\rho$ | Edge density of the graph | [§2.7.3]({#2.7.3) |
-| $t_{crit}$ | Critical time where cycle diameter exceeds horizon | [§2.7.3]({#2.7.3) |
-| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.7.4]({#2.7.4) |
+| $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](#2.1.1) |
+| $E$ | The set of edges within the graph | [§2.1.1](#2.1.1) |
+| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](#2.6.1) |
+| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](#2.6.1) |
+| $\neg$ | Logical negation | [§2.7.1](#2.7.1) |
+| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2](#2.3.2) |
+| $L$ | Length of a cycle or path | [§2.3.1](#2.3.1) |
+| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.3](#2.3.3) |
+| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](#2.6.1) |
+| $C$ | A Simple Directed Cycle | [§2.4.3](#2.4.3) |
+| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](#2.4.2) |
+| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.3](#2.3.3) |
+| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](#2.4.5) |
+| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](#2.4.5) |
+| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4](#2.3.4) |
+| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4](#2.3.4) |
+| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4](#2.3.4) |
+| $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3](#2.2.3) |
+| $\Delta S$ | Change in Entropy | [§2.2.3](#2.2.3) |
+| $k_B$ | Boltzmann Constant | [§2.2.3](#2.2.3) |
+| $R$ | Radius of local computational patch | [§2.7.3](#2.7.3) |
+| $\rho$ | Edge density of the graph | [§2.7.3](#2.7.3) |
+| $t_{crit}$ | Critical time where cycle diameter exceeds horizon | [§2.7.3](#2.7.3) |
+| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.7.4](#2.7.4) |

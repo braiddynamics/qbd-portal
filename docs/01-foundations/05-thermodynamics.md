@@ -1173,27 +1173,27 @@ Physically, the construction of volume from vertices occurs through the entropic
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [(§5.1.1)]({#5.1.1) |
-| $\xi$ | Correlation Length | [(§5.1.1)]({#5.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [(§5.1.2)]({#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [(§5.1.2)]({#5.1.2) |
-| $c$ | Specific entropy per event | [(§5.1.2)]({#5.1.2) |
-| $V_\xi$ | Correlation volume | [(§5.1.1.1)]({#5.1.1.1) |
-| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [(§5.2.1)]({#5.2.1) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [(§5.2.1)]({#5.2.1) |
-| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [(§5.2.2)]({#5.2.2) |
-| $\rho^*$ | Equilibrium density (Fixed Point) | [(§5.4.1)]({#5.4.1) |
-| $\mu$ | Friction Coefficient (Bounds derived) | [(§5.4.2)]({#5.4.2) |
-| $\lambda_{cat}$ | Catalysis Coefficient (Bounds derived) | [(§5.4.3)]({#5.4.3) |
-| $J$ | Jacobian Eigenvalue (Stability indicator) | [(§5.4.4.1)]({#5.4.4.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path distance | [(§5.5.2)]({#5.5.2) |
-| $\langle k \rangle$ | Mean vertex degree | [(§5.5.3)]({#5.5.3) |
-| $D_{\max}$ | Maximum vertex degree bound | [(§5.5.3)]({#5.5.3) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [(§5.5.4)]({#5.5.4) |
-| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [(§5.5.4.1)]({#5.5.4.1) |
-| $C_k$ | Count of simple cycles of length $k$ | [(§5.5.6)]({#5.5.6) |
-| $|B(v,r)|$ | Volume of geodesic ball of radius $r$ | [(§5.5.7)]({#5.5.7) |
-| $d_c$ | Upper critical dimension ($d=4$) | [(§5.5.7.1)]({#5.5.7.1) |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [(§5.1.1)](#5.1.1) |
+| $\xi$ | Correlation Length | [(§5.1.1)](#5.1.1) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [(§5.1.2)](#5.1.2) |
+| $S(N)$ | Total Entropy ($c \cdot N$) | [(§5.1.2)](#5.1.2) |
+| $c$ | Specific entropy per event | [(§5.1.2)](#5.1.2) |
+| $V_\xi$ | Correlation volume | [(§5.1.1.1)](#5.1.1.1) |
+| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [(§5.2.1)](#5.2.1) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [(§5.2.1)](#5.2.1) |
+| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [(§5.2.2)](#5.2.2) |
+| $\rho^*$ | Equilibrium density (Fixed Point) | [(§5.4.1)](#5.4.1) |
+| $\mu$ | Friction Coefficient (Bounds derived) | [(§5.4.2)](#5.4.2) |
+| $\lambda_{cat}$ | Catalysis Coefficient (Bounds derived) | [(§5.4.3)](#5.4.3) |
+| $J$ | Jacobian Eigenvalue (Stability indicator) | [(§5.4.4.1)](#5.4.4.1) |
+| $\bar{d}(u,v)$ | Undirected shortest-path distance | [(§5.5.2)](#5.5.2) |
+| $\langle k \rangle$ | Mean vertex degree | [(§5.5.3)](#5.5.3) |
+| $D_{\max}$ | Maximum vertex degree bound | [(§5.5.3)](#5.5.3) |
+| $K(u,v)$ | Causal Ollivier-Ricci curvature | [(§5.5.4)](#5.5.4) |
+| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [(§5.5.4.1)](#5.5.4.1) |
+| $C_k$ | Count of simple cycles of length $k$ | [(§5.5.6)](#5.5.6) |
+| $|B(v,r)|$ | Volume of geodesic ball of radius $r$ | [(§5.5.7)](#5.5.7) |
+| $d_c$ | Upper critical dimension ($d=4$) | [(§5.5.7.1)](#5.5.7.1) |
 
 -----
 

@@ -2369,31 +2369,31 @@ Physically, this origin avoids contrivance: the initiator lies in topology's nar
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3]({#3.1.3) |
-| $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3]({#3.1.3) |
-| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2]({#3.1.2) |
-| $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2]({#3.1.2) |
-| $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2]({#3.1.2) |
-| $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2]({#3.1.2) |
-| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1]({#3.2.1) |
-| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8]({#3.1.8) |
-| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9]({#3.2.9) |
-| $\lambda$ | Weighting parameter for optimality score | [§3.2.9]({#3.2.9) |
-| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9]({#3.2.9) |
-| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.1]({#3.3.1) |
-| $\mathcal{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1]({#3.3.1) |
-| $\varphi$ | An automorphism mapping | [§3.3.1]({#3.3.1) |
-| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2]({#3.4.2) |
-| $\Delta F$ | Change in Free Energy | [§3.4.5]({#3.4.5) |
-| $\epsilon_{geo}$ | Internal energy of geometric creation | [§3.4.5]({#3.4.5) |
-| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5]({#3.4.5) |
-| $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1]({#3.5.1) |
-| $\mathcal{C}$ | The Physical Codespace (Valid states) | [§3.5.1]({#3.5.1) |
-| $\Pi_{\text{cycle}}$ | Projector enforcing irreflexivity/asymmetry | [§3.5.1]({#3.5.1) |
-| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1]({#3.5.1) |
-| $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1]({#3.5.1) |
-| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2]({#3.5.2) |
-| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1]({#3.5.1) |
-| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1]({#3.5.1) |
+| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](#3.1.3) |
+| $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](#3.1.3) |
+| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](#3.1.2) |
+| $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](#3.1.2) |
+| $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2](#3.1.2) |
+| $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2](#3.1.2) |
+| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](#3.2.1) |
+| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8](#3.1.8) |
+| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9](#3.2.9) |
+| $\lambda$ | Weighting parameter for optimality score | [§3.2.9](#3.2.9) |
+| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9](#3.2.9) |
+| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.1](#3.3.1) |
+| $\mathcal{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1](#3.3.1) |
+| $\varphi$ | An automorphism mapping | [§3.3.1](#3.3.1) |
+| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](#3.4.2) |
+| $\Delta F$ | Change in Free Energy | [§3.4.5](#3.4.5) |
+| $\epsilon_{geo}$ | Internal energy of geometric creation | [§3.4.5](#3.4.5) |
+| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](#3.4.5) |
+| $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](#3.5.1) |
+| $\mathcal{C}$ | The Physical Codespace (Valid states) | [§3.5.1](#3.5.1) |
+| $\Pi_{\text{cycle}}$ | Projector enforcing irreflexivity/asymmetry | [§3.5.1](#3.5.1) |
+| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](#3.5.1) |
+| $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](#3.5.1) |
+| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](#3.5.2) |
+| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](#3.5.1) |
+| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](#3.5.1) |
 
 -----

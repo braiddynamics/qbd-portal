@@ -1345,68 +1345,68 @@ The ontological framework implies a universe where relations propagate forward f
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\mathfrak{S}$ | A finite formal system | [§1.1.1]({#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1]({#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2]({#1.1.2) |
-| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2]({#1.1.2) |
-| $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2]({#1.1.2) |
-| $A, B$ | Generic logical propositions | [§1.1.2]({#1.1.2) |
-| $\vdash$ | Syntactic derivability (provability) | [§1.1.2]({#1.1.2) |
-| $\models$ | Semantic entailment (truth) | [§1.1.2]({#1.1.2) |
-| $\Gamma$ | A set of premises | [§1.1.2]({#1.1.2) |
-| $\theta$ | A derived theorem | [§1.1.2]({#1.1.2) |
-| $S_n$ | The $n$-th statement in a proof sequence | [§1.1.2]({#1.1.2) |
-| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3]({#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3]({#1.1.3) |
-| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3]({#1.1.3) |
-| $\perp$ | Logical contradiction | [§1.1.6]({#1.1.6) |
-| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1]({#1.2.1) |
-| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1]({#1.2.1) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1]({#1.2.1) |
-| $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2]({#1.2.2) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2]({#1.2.2) |
-| $\hat{H}$ | Hamiltonian Operator | [§1.2.2]({#1.2.2) |
-| $\Psi$ | Wavefunction of the universe | [§1.2.2]({#1.2.2) |
-| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1]({#1.2.2.1) |
-| $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3]({#1.2.2.3) |
-| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2]({#1.2.2.2) |
-| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3]({#1.2.2.3) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3]({#1.2.3) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3]({#1.2.3) |
-| $\ell_P$ | Planck length | [§1.2.3]({#1.2.3) |
-| $N_P$ | Number of Planck voxels | [§1.2.3]({#1.2.3) |
-| $\Omega_n$ | Configuration space at step $n$ | [§1.2.3]({#1.2.3) |
-| $k_B$ | Boltzmann constant | [§1.2.3]({#1.2.3) |
-| $A$ | Area (Geometric/Horizon context) | [§1.2.3]({#1.2.3) |
-| $d_{t_L}$ | Hilbert space dimension at $t_L$ | [§1.2.3]({#1.2.3) |
-| $\mathcal{R}$ | Finite rule set | [§1.2.3]({#1.2.3) |
-| $s_{t_L}$ | Number of active rewrite sites | [§1.2.3]({#1.2.3) |
-| $b$ | Branching factor | [§1.2.3]({#1.2.3) |
-| $\gamma, \delta$ | Scaling constants (Holographic/Tree growth) | [§1.2.3]({#1.2.3) |
-| $\mu$ | Mean of entropy change (or renormalization scale) | [§1.2.4.1]({#1.2.4.1) |
-| $\sigma^2$ | Variance of entropy change | [§1.2.4.1]({#1.2.4.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.2.4.1]({#1.2.4.1) |
-| $\mathbb{Z}_{<0}$ | Set of negative integers | [§1.2.7.1]({#1.2.7.1) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2]({#1.2.7.2) |
-| $\Delta E$ | Energy uncertainty/fluctuation | [§1.2.6.2]({#1.2.6.2) |
-| $\Delta t$ | Time uncertainty | [§1.2.6.2]({#1.2.6.2) |
-| $\epsilon$ | Energy cost per operation | [§1.2.6.2]({#1.2.6.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2]({#1.2.6.2) |
-| $T_{\mu\nu}$ | Stress-Energy Tensor | [§1.2.6.2]({#1.2.6.2) |
-| $R_s$ | Schwarzschild Radius | [§1.2.6.2]({#1.2.6.2) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.1]({#1.3.1) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1]({#1.3.1) |
-| $V$ | Set of Vertices (Abstract Events) | [§1.3.1]({#1.3.1) |
-| $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1]({#1.3.1) |
-| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1]({#1.3.1) |
-| $v, u, w$ | Individual vertices | [§1.3.1]({#1.3.1) |
-| $e$ | Individual edge $(u, v)$ | [§1.3.1]({#1.3.1) |
-| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4]({#1.3.4) |
-| $\mathfrak{T}$ | Elementary Task Space | [§1.4.1]({#1.4.1) |
-| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.4.2]({#1.4.2) |
-| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.4.2]({#1.4.2) |
-| $\Delta F$ | Change in Free Energy | [§1.4.5]({#1.4.5) |
-| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1]({#1.5.1) |
-| $\prec$ | Strict causal precedence | [§1.2.5.1]({#1.2.5.1) |
+| $\mathfrak{S}$ | A finite formal system | [§1.1.1](#1.1.1) |
+| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](#1.1.1) |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](#1.1.2) |
+| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](#1.1.2) |
+| $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](#1.1.2) |
+| $A, B$ | Generic logical propositions | [§1.1.2](#1.1.2) |
+| $\vdash$ | Syntactic derivability (provability) | [§1.1.2](#1.1.2) |
+| $\models$ | Semantic entailment (truth) | [§1.1.2](#1.1.2) |
+| $\Gamma$ | A set of premises | [§1.1.2](#1.1.2) |
+| $\theta$ | A derived theorem | [§1.1.2](#1.1.2) |
+| $S_n$ | The $n$-th statement in a proof sequence | [§1.1.2](#1.1.2) |
+| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](#1.1.3) |
+| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](#1.1.3) |
+| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](#1.1.3) |
+| $\perp$ | Logical contradiction | [§1.1.6](#1.1.6) |
+| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](#1.2.1) |
+| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](#1.2.1) |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](#1.2.1) |
+| $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](#1.2.2) |
+| $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](#1.2.2) |
+| $\hat{H}$ | Hamiltonian Operator | [§1.2.2](#1.2.2) |
+| $\Psi$ | Wavefunction of the universe | [§1.2.2](#1.2.2) |
+| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1](#1.2.2.1) |
+| $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3](#1.2.2.3) |
+| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](#1.2.2.2) |
+| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](#1.2.2.3) |
+| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](#1.2.3) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](#1.2.3) |
+| $\ell_P$ | Planck length | [§1.2.3](#1.2.3) |
+| $N_P$ | Number of Planck voxels | [§1.2.3](#1.2.3) |
+| $\Omega_n$ | Configuration space at step $n$ | [§1.2.3](#1.2.3) |
+| $k_B$ | Boltzmann constant | [§1.2.3](#1.2.3) |
+| $A$ | Area (Geometric/Horizon context) | [§1.2.3](#1.2.3) |
+| $d_{t_L}$ | Hilbert space dimension at $t_L$ | [§1.2.3](#1.2.3) |
+| $\mathcal{R}$ | Finite rule set | [§1.2.3](#1.2.3) |
+| $s_{t_L}$ | Number of active rewrite sites | [§1.2.3](#1.2.3) |
+| $b$ | Branching factor | [§1.2.3](#1.2.3) |
+| $\gamma, \delta$ | Scaling constants (Holographic/Tree growth) | [§1.2.3](#1.2.3) |
+| $\mu$ | Mean of entropy change (or renormalization scale) | [§1.2.4.1](#1.2.4.1) |
+| $\sigma^2$ | Variance of entropy change | [§1.2.4.1](#1.2.4.1) |
+| $\Delta I_k$ | Information bit contribution | [§1.2.4.1](#1.2.4.1) |
+| $\mathbb{Z}_{<0}$ | Set of negative integers | [§1.2.7.1](#1.2.7.1) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](#1.2.7.2) |
+| $\Delta E$ | Energy uncertainty/fluctuation | [§1.2.6.2](#1.2.6.2) |
+| $\Delta t$ | Time uncertainty | [§1.2.6.2](#1.2.6.2) |
+| $\epsilon$ | Energy cost per operation | [§1.2.6.2](#1.2.6.2) |
+| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](#1.2.6.2) |
+| $T_{\mu\nu}$ | Stress-Energy Tensor | [§1.2.6.2](#1.2.6.2) |
+| $R_s$ | Schwarzschild Radius | [§1.2.6.2](#1.2.6.2) |
+| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.1](#1.3.1) |
+| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](#1.3.1) |
+| $V$ | Set of Vertices (Abstract Events) | [§1.3.1](#1.3.1) |
+| $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](#1.3.1) |
+| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](#1.3.1) |
+| $v, u, w$ | Individual vertices | [§1.3.1](#1.3.1) |
+| $e$ | Individual edge $(u, v)$ | [§1.3.1](#1.3.1) |
+| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4](#1.3.4) |
+| $\mathfrak{T}$ | Elementary Task Space | [§1.4.1](#1.4.1) |
+| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.4.2](#1.4.2) |
+| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.4.2](#1.4.2) |
+| $\Delta F$ | Change in Free Energy | [§1.4.5](#1.4.5) |
+| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1](#1.5.1) |
+| $\prec$ | Strict causal precedence | [§1.2.5.1](#1.2.5.1) |
 
 -----
