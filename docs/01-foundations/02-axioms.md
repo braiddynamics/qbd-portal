@@ -149,7 +149,6 @@ The self-loop $e_{loop}$ satisfies all topological criteria for a directed cycle
 Since valid causal histories must be Directed Acyclic Graphs (DAGs), the existence of $e_{loop}$ violates the acyclicity constraint.
 
 Q.E.D.
-:::
 
 ### 2.2.2.2 Commentary: The Atomic Violation {#2.2.2.2}
 
@@ -237,7 +236,6 @@ $$
 $$
 
 Q.E.D.
-:::
 
 ### 2.2.3.2 Commentary: Entropic Barrenness {#2.2.3.2}
 
@@ -479,13 +477,12 @@ Action: $\mathfrak{T}_{add}(u, v)$ is **Forbidden**.
 The existence of the mediated path $P_1$ physically precludes the formation of the direct path $P_2$. The topology enforces informational parsimony.
 
 Q.E.D.
-:::
 
 ### 2.3.3.3 Commentary: The No-Cloning of History {#2.3.3.3}
 
 :::info[**Preservation of Informational Integrity established by the Topological Analog of No-Cloning**]
 
-The Principle of Unique Causality constitutes the topological analog of the Quantum No-Cloning Theorem. A path from $u$ to $v$ represents a transmission of causal information. Existence of a path $u \to w \to v$ implies the influence of $u$ reaches $v$. Addition of a second path (a direct edge $u \to v$) creates a clone of this causal relationship. This introduces ambiguity regarding the provenance of information at $v$.
+The Principle of Unique Causality constitutes the topological analog of the No-Cloning Theorem. A path from $u$ to $v$ represents a transmission of causal information. Existence of a path $u \to w \to v$ implies the influence of $u$ reaches $v$. Addition of a second path (a direct edge $u \to v$) creates a clone of this causal relationship. This introduces ambiguity regarding the provenance of information at $v$.
 
 **The Limits of Locality:**
 It is critical to note that PUC enforces uniqueness only for *local* paths ($\ell \le 2$). It does not prevent the formation of larger cycles or global paradoxes, such as the "Bowtie Paradox" (two disjoint paths forming a mutual influence loop). While PUC prevents the *local* cloning of edges, it cannot see the global topology. The resolution of global causal consistency requires the stronger, transitive constraint of **Axiom 3** (Acyclic Effective Causality).
@@ -588,7 +585,7 @@ Chordless maximal cycles and concurrent updates that merge without conflict appl
 
 :::info[**Finite Decomposition of General Cycles via the Alternating Application of Chordal Addition and Entropic Deletion**]
 
-It is asserted that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations—specifically Chordal Addition followed by Entropic Deletion—that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the Lexicographic Potential $\Phi(G)$ [(§2.3.4)](#2.3.4).
+It is asserted that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the Lexicographic Potential $\Phi(G)$ [(§2.3.4)](#2.3.4).
 
 ### 2.4.1.1 Commentary: Argument Outline {#2.4.1.1}
 
@@ -1717,7 +1714,7 @@ The proof establishes that global causal consistency must emerge from preemptive
 
 1.  **The Horizon Problem (Lemma 2.7.3):** The argument establishes that the natural evolution of the graph creates cycles larger than any local computational patch. This proves that a purely local observer cannot "see" a global paradox forming.
 2.  **The Approximation Validity (Lemma 2.7.4):** The argument demonstrates that a logarithmic check radius ($R \sim \ln N$) is mathematically sufficient. The probability of a paradox evading this check vanishes exponentially, making the local approximation exact for all physical intents.
-3.  **The Energy Divergence (Theorem 2.7.2):** The final synthesis proves that the alternative—fixing paradoxes after they form—requires infinite energy. A global correction would require a signal to traverse the entire universe instantaneously, violating the principle of finite resources.
+3.  **The Energy Divergence (Theorem 2.7.2):** The final synthesis proves that the alternative, fixing paradoxes after they form, requires infinite energy. A global correction would require a signal to traverse the entire universe instantaneously, violating the principle of finite resources.
 :::
 
 ### 2.7.3 Lemma: Cycle Diameter Growth {#2.7.3}

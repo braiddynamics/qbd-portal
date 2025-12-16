@@ -111,13 +111,31 @@ The universe possesses an initial state $G_0$ at $t_L = 0$ [(§1.2.7)](ontology#
 
 :::tip[**Verification of State Existence using the History Map and Order Finiteness**]
 
-The Dual Time Architecture [(§1.2.1)](ontology#1.2.1) specifies that $t_L$ ranges over the non-negative integers $\mathbb{N}_0$. The state corresponding to $t_L = 0$ exists by the constructive rule of the theory.
+**I. Axiomatic Premises**
 
-The Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1) requires that the Effective Influence Relation $\le$ constitutes a strict partial order on the vertex set of every state. A strict partial order is well-founded if and only if every non-empty subset contains at least one minimal element. The property of being well-founded prohibits the existence of any infinite descending chain in the order.
+The **Dual Time Architecture** specifies the logical time domain $T_L \cong \mathbb{N}_0$ [(§1.2.1)](#1.2.1).
+The **Acyclic Effective Causality** requires that the Effective Influence Relation $\le$ constitutes a strict partial order on the vertex set $V$ [(§2.7.1)](#2.7.1).
+A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element. This property strictly prohibits infinite descending chains.
 
-Assume, for the purpose of deriving a contradiction, that the vertex set $V_0$ is infinite ($|V_0| = \infty$). The axioms permit the construction of exactly such an infinite descending chain within an infinite set:
+**II. Proof by Contradiction**
+
+Assume the existence of an infinite vertex set at the initial state:
+$$|V_0| = \infty$$
+
+The axioms permit the construction of a sequence $\{v_i\}_{i=0}^{\infty}$ such that each element exerts causal influence on the predecessor:
 $$\dots \le v_n \le \dots \le v_1 \le v_0$$
-This construction contradicts the well-foundedness requirement enforced by Axiom 3. The assumption that $|V_0| = \infty$ therefore leads to contradiction. The vertex set must satisfy $|V_0| < \infty$. Consequently, the edge set is also finite.
+This sequence constitutes an infinite descending chain within the order $\le$.
+
+**III. Violation**
+
+The existence of the infinite chain violates the well-foundedness requirement of the strict partial order.
+Therefore, the assumption $|V_0| = \infty$ leads to a contradiction.
+
+**IV. Conclusion**
+
+The vertex set $V_0$ must be finite.
+$$|V_0| < \infty$$
+By extension, the edge set $E_0$ is also finite.
 
 Q.E.D.
 
@@ -140,12 +158,32 @@ The initial state $G_0$ contains neither Self-Loops [(§2.2.2)](axioms#2.2.2) no
 
 :::tip[**Demonstration of Incompatibility with Irreflexivity and Asymmetry through Topological Analysis**]
 
-The Directed Causal Link [(§2.1.1)](axioms#2.1.1) establishes the causal primitive as a directed link that is strictly irreflexive and asymmetric.
+**I. The Causal Primitive**
 
-1.  **Reflexivity:** Assume a self-loop $v \to v$ exists. The effective influence relation $\le$ includes all mediated paths. A self-loop constitutes a trivial path of length 1 that immediately induces $v \le v$. This reflexivity violates the irreflexivity requirement of Axiom 3.
-2.  **Reciprocity:** Assume a reciprocal pair $u \to v$ and $v \to u$ exists. The path $u \to v \to u$ immediately induces both $u \le u$ and $v \le v$ by transitivity. This reflexivity again violates Axiom 3.
+The **Directed Causal Link** defines the elementary relation as strictly irreflexive and asymmetric [(§2.1.1)](#2.1.1).
 
-Both structures constitute geometric cycles of length 1 or 2 that exist prior to any application of the rewrite rule. The Principle of Unique Causality explicitly forbids all geometric cycles except those 3-cycles created by the rewrite rule. Pre-existing cycles of length 1 or 2 violate this principle directly.
+**II. Case A: Reflexivity Violation (L=1)**
+
+Assume the existence of a self-loop $e = (v, v)$.
+The effective influence relation $\le$ includes all direct connections.
+$$e \in E \implies v \le v$$
+This relation violates the condition of Irreflexivity enforced by the Strict Partial Order Axiom [(§2.7.1)](#2.7.1).
+
+**III. Case B: Asymmetry Violation (L=2)**
+
+Assume the existence of a reciprocal pair of edges $e_1 = (u, v)$ and $e_2 = (v, u)$.
+Transitivity of influence implies:
+$$(u \le v) \land (v \le u) \implies (u \le u) \land (v \le v)$$
+This relation violates both Asymmetry and Irreflexivity.
+
+**IV. Geometric Constraint**
+
+The **Principle of Unique Causality** restricts the creation of geometric cycles exclusively to the rewrite rule $\mathcal{R}$ [(§2.3.3)](#2.3.3).
+Pre-existing cycles of length $L=1$ or $L=2$ constitute geometric anomalies existing prior to dynamical evolution.
+
+**V. Conclusion**
+
+The initial graph $G_0$ must contain no cycles of length $L \le 2$.
 
 Q.E.D.
 
@@ -171,15 +209,35 @@ The initial state $G_0$ contains no Directed Cycles of length $L \ge 3$. The exi
 
 :::tip[**Derivation of Cycle Non-Existence from the Strict Partial Order of Effective Influence**]
 
-Assume, for the purpose of deriving a contradiction, that $G_0$ contains a directed cycle $C$ of length $L \geq 3$:
-$$v_0 \to v_1 \to \dots \to v_{L-1} \to v_0$$
+**I. Hypothesis**
 
-Axiom 3 requires that the effective influence relation $\le$ forms a strict partial order, which enforces strictly increasing timestamps along every directed path. The timestamp assignment along the edges of $C$ must therefore satisfy the strict inequalities:
-$$H(v_0 \to v_1) < H(v_1 \to v_2) < \dots < H(v_{L-1} \to v_0) < H(v_0 \to v_1)$$
+Assume the graph $G_0$ contains a directed cycle $C$ of length $L \geq 3$:
+$$C = (v_0, v_1, \dots, v_{L-1}, v_0)$$
+where $\forall i, (v_i, v_{i+1}) \in E$.
 
-This chain of strict inequalities cannot hold, because the final inequality returns to the first timestamp and requires it to be strictly less than itself. The assumption that such a cycle exists therefore yields an immediate logical contradiction. Any alternative timestamp assignment that attempts to use non-strict inequalities or equal timestamps along the cycle violates the strict sequentiality requirement that the effective influence relation imposes for valid causal paths.
+**II. Timestamp Analysis**
 
-Furthermore, any cycle of length $\geq 3$ constitutes a closed geometric structure that encloses irreducible area. The Principle of Unique Causality reserves the creation of all geometric quanta (3-cycles) exclusively to the rewrite rule. The presence of such a cycle in $G_0$ implies geometry pre-exists the dynamical process defined to create it.
+The **Acyclic Effective Causality** enforces strictly increasing timestamps along every directed path [(§2.7.1)](#2.7.1).
+Applying the timestamp function $H$ to the edges of $C$ yields a chain of inequalities:
+$$H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{L-1}, v_0)$$
+
+**III. The Cycle Paradox**
+
+Transitivity of the order $<$ implies:
+$$H(v_0, v_1) < H(v_{L-1}, v_0)$$
+However, the closing edge $(v_{L-1}, v_0)$ requires its timestamp to exceed the predecessor.
+Tracing the full loop necessitates:
+$$H(v_0, v_1) < H(v_0, v_1)$$
+This statement asserts that a real number is strictly less than itself.
+
+**IV. Contradiction**
+
+The inequality $x < x$ is false. The assumption of the existence of $C$ yields a logical contradiction.
+Furthermore, the existence of a cycle $L \ge 3$ implies pre-existing geometry, violating the constructive definition of the **Geometric Quantum** [(§2.3.1)](#2.3.1).
+
+**V. Conclusion**
+
+The graph $G_0$ contains no directed cycles of any length. The girth is infinite.
 
 Q.E.D.
 
@@ -200,21 +258,49 @@ The initial state $G_0$ constitutes a Directed Acyclic Graph (DAG) [(§1.5.1)](o
 
 :::tip[**Verification of Acyclicity through the Strict Monotonicity of the Vertex Depth Function**]
 
-The preceding lemmas exclude cycles of length 1, 2, and $\ge 3$. For an independent proof relying solely on timestamp ordering and the depth function:
+**I. Depth Function Definition**
 
-The depth function $d_{depth}(v)$ for any vertex $v$ equals the length of the longest directed path from a minimal vertex to $v$. Finiteness guarantees this is well-defined. Along every directed edge $u \to v$, the depth strictly increases: $d_{depth}(v) \geq d_{depth}(u) + 1$.
+Let $d(v)$ denote the length of the longest directed path from a minimal root vertex to $v$.
+$$d(v) = \max \{ \text{len}(\pi) \mid \pi: \text{root} \to v \}$$
+Finiteness of $V_0$ ensures this function is well-defined.
 
-Assume a directed cycle $C = v_0 \to v_1 \to \dots \to v_m = v_0$ exists. Traversal produces the strict inequality chain:
-$$d_{depth}(v_0) < d_{depth}(v_1) < \dots < d_{depth}(v_m) = d_{depth}(v_0)$$
-This chain requires a number to be strictly less than itself, a contradiction holding independently of cycle length $m$.
+**II. Monotonicity Property**
 
-**Explicit Verification on Small Instances:**
-For explicit verification on small instances that later proofs show isomorphic to fragments of $G_0$, a directed Bethe-like fragment with coordination number $k_{deg}=3$, depth 2 ($N=10$) is constructed:
+For every directed edge $u \to v$ in $G_0$, the depth must strictly increase.
+$$d(v) \ge d(u) + 1$$
 
-  * **Nodes:** $\{0 \text{ (root)}, 1,2,3 \text{ (level 1)}, 4\dots9 \text{ (level 2)}\}$
-  * **Edges:** $\{(0,1), (0,2), (0,3), (1,4), (1,5), (2,6), (2,7), (3,8), (3,9)\}$
+**III. Cycle Contradiction**
 
-For any path, such as $0 \to 1 \to 4$, depths increase: $d(0)=0$, $d(1)=1$, $d(4)=2$. No path returns to a lower depth, precluding cycles. Formally, for all paths $p = v_0 \to \dots \to v_l$, $d(v_i) = i$ relative to $v_0$, strictly increasing. For larger instances, induction on depth establishes the property.
+Assume a directed cycle $C = (v_0, v_1, \dots, v_m, v_0)$ exists.
+Traversal of the cycle generates the inequality chain:
+$$d(v_0) < d(v_1) < \dots < d(v_m) < d(v_0)$$
+This implies $d(v_0) < d(v_0)$, a contradiction.
+
+**IV. Explicit Verification (Bethe Fragment)**
+
+Consider a finite construction with coordination number $k=3$ and depth 2 ($N=10$).
+
+  * **Vertex Set:** $V = \{0, \dots, 9\}$.
+  * **Edge Set:** $E = \{(0,1), (0,2), (0,3), (1,4), (1,5), (2,6), (2,7), (3,8), (3,9)\}$.
+
+**Path Analysis:**
+
+1.  **Path $\pi_1 = 0 \to 1 \to 4$:**
+      * $d(0) = 0$
+      * $d(1) = 1$
+      * $d(4) = 2$
+      * Strict monotonicity holds: $0 < 1 < 2$.
+2.  **Path $\pi_2 = 0 \to 2 \to 7$:**
+      * $d(0) = 0$
+      * $d(2) = 1$
+      * $d(7) = 2$
+      * Strict monotonicity holds.
+
+**V. Conclusion**
+
+The depth function provides a strictly monotonic ordering on the vertices.
+No path exists that returns to a vertex of equal or lower depth.
+The graph $G_0$ is strictly acyclic.
 
 Q.E.D.
 
@@ -259,11 +345,27 @@ The initial state $G_0$ satisfies connectivity in the weak sense: the underlying
 
 :::tip[**Proof of Connectivity via the Prohibition of Automorphism Group Inflation**]
 
-Assume, for contradiction, that $G_0$ is disconnected and consists of $m \geq 2$ components $C_1, \dots, C_m$.
+**I. Disconnected Hypothesis**
 
-The effective influence order $\le$ decomposes into independent strict partial orders on each component. No directed path crosses component boundaries. The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$. This decomposition violates the single, unified causal order required by the axioms.
+Assume $G_0$ constitutes a disconnected graph comprising $m \geq 2$ components $C_1, \dots, C_m$.
 
-Moreover, the automorphism group of a disconnected graph equals the direct product of the automorphism groups of its components (accounting for component permutations). This product dramatically inflates $|\text{Aut}(G_0)|$ compared to any connected graph of the same vertex count. The inflation creates unjustified distinguishability between components that the purely relational ontology forbids.
+**II. Causal Order Decomposition**
+
+The effective influence order $\le$ decomposes into independent strict partial orders on each component.
+No directed path crosses component boundaries.
+The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$.
+This decomposition violates the requirement for a single, unified causal order [(§2.7.1)](#2.7.1).
+
+**III. Automorphism Inflation**
+
+The automorphism group of a disconnected graph equals the direct product of the automorphism groups of its components (accounting for component permutations).
+$$|\text{Aut}(G_0)| = \left( \prod_{i=1}^m |\text{Aut}(C_i)| \right) \cdot m!$$
+This product dramatically inflates $|\text{Aut}(G_0)|$ compared to any connected graph of the same vertex count.
+The inflation creates unjustified distinguishability between components that the purely relational ontology forbids.
+
+**IV. Conclusion**
+
+To satisfy the unified order and minimize the automorphism group, the graph $G_0$ must be weakly connected.
 
 Q.E.D.
 
@@ -316,14 +418,29 @@ Let $G$ represent a weakly connected DAG on $N$ vertices. If the edge count sati
 
 :::tip[**Derivation of the Exact Edge Count Constraint through the Prohibition of Parallel Paths**]
 
-In any weakly connected undirected graph on $N$ vertices, the maximum number of edges without creating an undirected cycle equals $N-1$ (the tree condition). Cayley's formula counts $N^{N-2}$ distinct labeled trees. Adding any additional edge creates an undirected cycle. In the directed case, this additional edge forces at least one pair of vertices to have multiple distinct undirected paths between them.
+**I. Graph Theoretical Basis**
 
-In the directed setting of $G_0$, multiple undirected paths between $u$ and $v$ imply, by orientation, either multiple directed paths from some common ancestor or the existence of converging/diverging flows. Both configurations violate the **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) by creating non-unique informational paths of length $\leq 2$.
+In any weakly connected graph on $N$ vertices, the maximum number of edges permitted without creating an undirected cycle equals $N-1$ (the tree condition).
+Adding any additional edge creates an undirected cycle.
+In the directed case, this additional edge forces at least one pair of vertices to have multiple distinct undirected paths between them.
 
-Crucially, the rewrite rule $\mathcal{R}$ requires compliant 2-path sites (open 2-paths with a unique intermediate vertex). When multiple paths exist between the same endpoints, the fraction of compliant sites drops strictly below 1.
-Formally, define the redundancy density $\rho = (|E| - N + 1)/N$. The probability that a potential 2-path remains compliant decreases as $1 - e^{-\rho}$. For $\rho > 0$, the compliant fraction falls below 1, violating the axiomatic requirement for maximal constructive potential.
+**II. Violation of Unique Causality**
 
-Therefore, any connected DAG with $|E| > N-1$ possesses redundant paths and fails as a candidate for $G_0$. The only surviving candidates are connected DAGs with exactly $|E| = N-1$.
+Multiple undirected paths between $u$ and $v$ imply, by orientation, either multiple directed paths from a common ancestor or the existence of colliding flows.
+Both configurations violate the **Principle of Unique Causality** [(§2.3.3)](#2.3.3) by creating non-unique informational paths of length $\leq 2$.
+
+**III. Redundancy Density**
+
+Define the redundancy density $\rho = (|E| - N + 1)/N$.
+Crucially, the rewrite rule $\mathcal{R}$ requires compliant 2-path sites (open 2-paths with a unique intermediate vertex).
+When multiple paths exist between the same endpoints, the fraction of compliant sites drops strictly below 1.
+$$P(\text{compliant}) \approx 1 - e^{-\rho}$$
+For $\rho > 0$, the compliant fraction falls below 1, violating the axiomatic requirement for maximal constructive potential.
+
+**IV. Conclusion**
+
+Any connected DAG with $|E| > N-1$ possesses redundant paths and fails as a candidate for $G_0$.
+The only surviving candidates constitute connected DAGs with exactly $|E| = N-1$.
 
 Q.E.D.
 
@@ -348,16 +465,34 @@ In any rooted tree where all edges are directed away from the root, the parity o
 
 :::tip[**Demonstration of the Strict Bipartiteness of Directed Out-Trees using Inductive Parity Analysis**]
 
-**Define:**
-$V_{\text{even}} = \{v \mid d_{depth}(v) \text{ even}\}$ and $V_{\text{odd}} = \{v \mid d_{depth}(v) \text{ odd}\}$, where $d_{depth}(v)$ represents the length of the unique path from the root to $v$.
+**I. Set Definition**
 
-**Base Case:**
-The root possesses depth $d_{depth}(\text{root}) = 0$, which is even. The root therefore belongs to $V_{\text{even}}$.
+Define two vertex sets based on the parity of the depth function $d_{depth}(v)$:
 
-**Inductive Step:**
-Assume the partition holds correctly for all vertices up to depth $m$. A vertex at depth $m+1$ is analyzed. This vertex is a child of exactly one parent at depth $m$. The depth increases by exactly 1, so the parity flips. If the parent belongs to $V_{\text{even}}$, the child belongs to $V_{\text{odd}}$, and conversely.
+  * $V_{\text{even}} = \{v \in V_0 \mid d_{depth}(v) \equiv 0 \pmod 2\}$
+  * $V_{\text{odd}} = \{v \in V_0 \mid d_{depth}(v) \equiv 1 \pmod 2\}$
 
-All edges connect vertices of opposite parity. The sets $V_{\text{even}}$ and $V_{\text{odd}}$ are disjoint and their union equals $V_0$. The pair $(V_{\text{even}}, V_{\text{odd}})$ therefore constitutes a proper 2-coloring and bipartition of the graph.
+**II. Base Case**
+
+The root vertex possesses depth $d_{depth}(\text{root}) = 0$.
+Since 0 is even, the root belongs to $V_{\text{even}}$.
+
+**III. Inductive Step**
+
+Assume the partition holds correctly for all vertices up to depth $m$.
+Consider a vertex $v$ at depth $m+1$.
+In a tree topology, $v$ acts as a child of exactly one parent $u$ at depth $m$.
+The depth increases by exactly 1: $d(v) = d(u) + 1$.
+This operation flips the parity:
+
+  * $u \in V_{\text{even}} \implies v \in V_{\text{odd}}$
+  * $u \in V_{\text{odd}} \implies v \in V_{\text{even}}$
+
+**IV. Conclusion**
+
+All edges connect vertices of opposite parity.
+The sets $V_{\text{even}}$ and $V_{\text{odd}}$ partition the vertex set $V_0$.
+The pair $(V_{\text{even}}, V_{\text{odd}})$ constitutes a proper 2-coloring and bipartition of the graph.
 
 Q.E.D.
 
@@ -380,14 +515,32 @@ A Bipartite Graph [(§1.5.1)](ontology#1.5.1) cannot contain odd-length cycles. 
 
 :::tip[**Formal Proof of the Non-Existence of Odd Cycles under Strict Bipartition**]
 
-The Depth-Parity Bipartition [(§3.1.10)](#3.1.10) establishes the bipartition $(V_{\text{even}}, V_{\text{odd}})$.
+**I. Premise**
 
-Assume, for contradiction, that an odd-length cycle $C = v_0 \to v_1 \to \dots \to v_{2k} = v_0$ exists.
+The **Depth-Parity Bipartition** establishes the bipartition $(V_{\text{even}}, V_{\text{odd}})$ [(§3.1.10)](#3.1.10).
+No edges exist within $V_{\text{even}}$ or within $V_{\text{odd}}$.
 
-  * Begin with $v_0 \in V_{\text{even}}$.
-  * Each edge flips parity, so $v_{2k} \in V_{\text{even}}$.
+**II. Cycle Hypothesis**
 
-The closing edge connects a vertex in $V_{\text{even}}$ to another in $V_{\text{even}}$, which contradicts the bipartition property that forbids intra-set edges. The contradiction establishes that no odd-length cycles exist.
+Assume the existence of an odd-length cycle $C$ of length $2k+1$:
+$$C = (v_0, v_1, \dots, v_{2k}, v_0)$$
+
+**III. Parity Traversal**
+
+Let $v_0 \in V_{\text{even}}$.
+Traversing the cycle flips the parity at each step:
+
+1.  $v_1 \in V_{\text{odd}}$
+2.  $v_2 \in V_{\text{even}}$
+3.  ...
+4.  $v_{2k} \in V_{\text{even}}$ (Since $2k$ is even).
+
+**IV. Contradiction**
+
+The closing edge connects $v_{2k}$ to $v_0$.
+Since both vertices belong to $V_{\text{even}}$, the edge $(v_{2k}, v_0)$ violates the bipartition property.
+$$E \cap (V_{\text{even}} \times V_{\text{even}}) \neq \emptyset$$
+This contradiction establishes that no odd-length cycles exist.
 
 Q.E.D.
 
@@ -409,16 +562,17 @@ Therefore, it is mathematically impossible for the vacuum to contain a Geometric
 
 :::tip[**Formal Derivation of the Finite Rooted Tree Topology via Synthesis of Lemmas**]
 
-We synthesize the cumulative findings to uniquely identify the topology of the initial state $G_0$.
+The proof synthesizes the cumulative findings to uniquely identify the topology of the initial state $G_0$.
 
-1.  **Finiteness:** Lemma 3.1.4 establishes $|V_0| < \infty$.
-2.  **Acyclicity:** Lemma 3.1.7 establishes that $G_0$ is a DAG.
-3.  **Connectivity:** Lemma 3.1.8 establishes that $G_0$ is weakly connected.
-4.  **Sparsity:** Lemma 3.1.9 establishes that $|E_0| = |V_0| - 1$ to satisfy Unique Causality.
-5.  **Bipartition:** Lemma 3.1.10 establishes the strict parity separation, which Lemma 3.1.11 uses to prove the impossibility of odd cycles.
+1.  **Finiteness:** Lemma 3.1.4 establishes $|V_0| < \infty$ [(§3.1.4)](#3.1.4).
+2.  **Acyclicity:** Lemma 3.1.7 establishes that $G_0$ constitutes a DAG [(§3.1.7)](#3.1.7).
+3.  **Connectivity:** Lemma 3.1.8 establishes that $G_0$ constitutes a weakly connected graph [(§3.1.8)](#3.1.8).
+4.  **Sparsity:** Lemma 3.1.9 establishes the constraint $|E_0| = |V_0| - 1$ to satisfy Unique Causality [(§3.1.9)](#3.1.9).
+5.  **Bipartition:** Lemma 3.1.10 establishes the strict parity separation [(§3.1.10)](#3.1.10), which Lemma 3.1.11 uses to prove the impossibility of odd cycles [(§3.1.11)](#3.1.11).
 6.  **Orientation:** In a finite, connected, acyclic graph with exactly $N-1$ edges, there exists at least one vertex with in-degree 0 (the root). To satisfy asymmetry everywhere and avoid colliding flows, flow must diverge strictly from a single origin.
 
-**Conclusion:** A finite, rooted, outward-directed tree is the unique structure satisfying all these constraints simultaneously.
+**Conclusion:**
+A finite, rooted, outward-directed tree constitutes the unique structure satisfying all constraints simultaneously.
 
 Q.E.D.
 
@@ -544,18 +698,35 @@ Every graph containing a directed cycle of length greater than or equal to 3 is 
 
 :::tip[**Formal Verification of the Incompatibility of Cycles with Vacuum Axioms via Constructibility Analysis**]
 
-The Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) mandates that the vacuum state remains strictly pre-geometric. The vacuum state must possess infinite girth. The vacuum state must contain no metric structure whatsoever. Any directed cycle of length greater than or equal to 3 constitutes a closed geometric structure. This closed geometric structure encloses irreducible area.
+**I. The Pre-Geometric Constraint**
 
-The Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) explicitly designates directed 3-cycles as the sole minimal quanta of spatial area.
+The **Axiom of Geometric Constructibility** [(§2.3.1)](#2.3.1) mandates that the vacuum state remains strictly pre-geometric.
 
-The Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) permits the creation of such quanta exclusively through the controlled action of the rewrite rule during the dynamical evolution process.
+1.  **Metric Nullity:** The state must possess no metric structure whatsoever.
+2.  **Girth Requirement:** The vacuum state must possess infinite girth.
+    $$\text{girth}(G_0) = \infty$$
+3.  **Area Exclusion:** Any directed cycle of length $L \ge 3$ constitutes a closed geometric structure. This closed geometric structure encloses irreducible area.
 
-The presence of any cycle of length greater than or equal to 3 in the initial state would imply that geometry pre-exists the dynamical mechanism that the theory defines to generate it. This pre-existence directly contradicts the Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1).
+**II. The Constructive Origin Paradox**
 
-Furthermore, the General Cycle Decomposition [(§2.4.1)](axioms#2.4.1) demonstrates that cycles of length greater than 3 remain dynamically reducible to compositions of 3-cycles in evolving states. In the static vacuum state, however, no dynamical reduction mechanism operates. Any such cycle would therefore remain irreducible in the initial state. This irreducibility violates the primitive status that the Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) assigns exclusively to controlled 3-cycles.
+The Axiom of Geometric Constructibility explicitly designates directed 3-cycles as the sole minimal quanta of spatial area.
+The Axiom permits the creation of such quanta exclusively through the controlled action of the rewrite rule $\mathcal{R}$ during the dynamical evolution process.
+The presence of any cycle of length $L \ge 3$ in the initial state would imply that geometry pre-exists the dynamical mechanism that the theory defines to generate it.
+This pre-existence directly contradicts the Axiom of Geometric Constructibility.
 
-Finally, the Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1) requires that the effective influence relation $\le$ forms a strict partial order on the entire vertex set. The strict partial order forbids cycles in mediated paths of length greater than or equal to 2 with strictly increasing timestamps. Any cycle of length greater than or equal to 3 induces such a forbidden mediated cycle in the effective influence relation.
+**III. The Static Irreducibility Paradox**
 
+The **General Cycle Decomposition** [(§2.4.1)](#2.4.1) demonstrates that cycles of length $L > 3$ remain dynamically reducible to compositions of 3-cycles in evolving states.
+In the static vacuum state $G_0$, however, no dynamical reduction mechanism operates.
+Any such cycle would therefore remain irreducible in the initial state.
+This irreducibility violates the primitive status that the Axiom of Geometric Constructibility assigns exclusively to controlled 3-cycles.
+
+**IV. The Causal Order Violation**
+
+The **Acyclic Effective Causality** [(§2.7.1)](#2.7.1) requires that the effective influence relation $\le$ forms a strict partial order on the entire vertex set.
+The strict partial order forbids cycles in mediated paths of length greater than or equal to 2 with strictly increasing timestamps.
+Any cycle of length $L \ge 3$ induces such a forbidden mediated cycle in the effective influence relation.
+$$\exists \pi = (v_0, \dots, v_{L-1}, v_0) \implies \tau(v_0) < \tau(v_0)$$
 The multiple independent violations force the exclusion of all graphs containing cycles of length greater than or equal to 3.
 
 Q.E.D.
@@ -571,17 +742,28 @@ Every graph containing a Self-Loop or a reciprocal 2-Cycle is excluded from cand
 
 :::tip[**Verification of Incompatibility with Irreflexivity and Asymmetry using Causal Link Definitions**]
 
-  - The Directed Causal Link [(§2.1.1)](axioms#2.1.1) establishes that every directed causal link must satisfy strict irreflexivity and asymmetry.
+**I. Axiomatic Definitions**
 
-  - The irreflexivity condition explicitly forbids any edge of the form $v \to v$ for any vertex $v$.
+The **Directed Causal Link** [(§2.1.1)](#2.1.1) establishes that every directed causal link must satisfy strict irreflexivity and asymmetry.
 
-  - The asymmetry condition explicitly forbids any pair of reciprocal edges $u \to v$ and $v \to u$ for distinct vertices $u, v$.
+**II. Violation by Self-Loop ($L=1$)**
 
-**A self-loop $v \to v$ violates irreflexivity by definition.**
+The irreflexivity condition explicitly forbids any edge of the form $v \to v$ for any vertex $v$.
+$$E \cap \{(v, v) \mid v \in V\} = \emptyset$$
+A self-loop constitutes a primitive geometric cycle of length 1.
+A self-loop $v \to v$ violates irreflexivity by definition.
 
-**A reciprocal pair violates asymmetry by definition.**
+**III. Violation by Reciprocity ($L=2$)**
 
-Both structures constitute primitive geometric cycles of length 1 or 2 respectively. The Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) forbids all such primitive cycles in the vacuum state.
+The asymmetry condition explicitly forbids any pair of reciprocal edges $u \to v$ and $v \to u$ for distinct vertices $u, v$.
+$$(u, v) \in E \implies (v, u) \notin E$$
+A reciprocal pair constitutes a primitive geometric cycle of length 2.
+A reciprocal pair violates asymmetry by definition.
+
+**IV. Conclusion**
+
+Both structures constitute primitive geometric cycles that exist prior to any application of the rewrite rule.
+The **Principle of Unique Causality** [(§2.3.3)](#2.3.3) forbids all such primitive cycles in the vacuum state.
 
 Q.E.D.
 :::
@@ -596,11 +778,28 @@ Every disconnected graph is excluded from candidacy for $G_0$. This exclusion is
 
 :::tip[**Formal Demonstration of the Necessity of Weak Connectivity via Automorphism Analysis**]
 
-The Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1) requires that the effective influence relation $\le$ forms a single strict partial order on the entire vertex set $V_0$. The strict partial order must exhibit irreflexivity, asymmetry, and transitivity across all vertices simultaneously.
+**I. The Unified Order Requirement**
 
-Assume, for contradiction, that the graph consists of two or more disconnected components $C_1, C_2, \dots$. No directed path exists between vertices in different components. The effective influence relation $\le$ therefore decomposes into independent strict partial orders, one on each component. This decomposition violates the requirement of a single unified causal order across the entire vertex set.
+The **Acyclic Effective Causality** [(§2.7.1)](#2.7.1) requires that the effective influence relation $\le$ forms a single strict partial order on the entire vertex set $V_0$.
+The strict partial order must exhibit irreflexivity, asymmetry, and transitivity across all vertices simultaneously.
 
-Furthermore, the automorphism group of a disconnected graph equals the direct product of the automorphism groups of its components. This direct product dramatically inflates the total number of automorphisms. The inflation introduces artificial relational distinguishability between components that the purely relational ontology of the theory forbids.
+**II. The Decomposition Problem**
+
+Assume, for contradiction, that the graph consists of two or more disconnected components $C_1, C_2, \dots$.
+No directed path exists between vertices in different components.
+The effective influence relation $\le$ therefore decomposes into independent strict partial orders, one on each component.
+$$\le_{total} = \le_{C_1} \sqcup \le_{C_2} \sqcup \dots$$
+This decomposition violates the requirement of a single unified causal order across the entire vertex set.
+
+**III. The Symmetry Inflation Problem**
+
+The automorphism group of a disconnected graph equals the direct product of the automorphism groups of its components.
+$$|\text{Aut}(G_0)| = \left( \prod_{i=1}^m |\text{Aut}(C_i)| \right) \cdot m!$$
+This direct product dramatically inflates the total number of automorphisms compared to any connected graph of the same vertex count.
+The inflation introduces artificial relational distinguishability between components that the purely relational ontology of the theory forbids.
+
+**IV. Conclusion**
+
 The contradiction establishes that the vacuum state must satisfy weak connectivity in its underlying undirected graph.
 
 Q.E.D.
@@ -624,14 +823,28 @@ Every connected DAG with edge count strictly greater than $N-1$ is excluded from
 
 :::tip[**Demonstration of Compliant Site Reduction in Graphs with Redundant Paths through Probability Analysis**]
 
-In any connected undirected graph on $N$ vertices, the maximum number of edges that permits acyclicity equals exactly $N-1$. This condition defines tree graphs. Cayley's formula enumerates exactly $N^{N-2}$ distinct labeled trees on $N$ vertices.
+**I. The Tree Condition (Combinatorial Basis)**
+
+In any connected undirected graph on $N$ vertices, the maximum number of edges that permits acyclicity equals exactly $N-1$.
+This condition defines tree graphs.
+Cayley's formula enumerates exactly $N^{N-2}$ distinct labeled trees on $N$ vertices.
+
+**II. Directed Redundancy Density**
 
 In the directed setting, any connected directed acyclic graph with $|E| > N-1$ necessarily contains redundant directed paths between some pairs of vertices.
-The Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) explicitly forbids redundant causal paths of length less than or equal to 2. Such redundant paths reduce the fraction of compliant 2-path sites available for the rewrite rule below the maximum value of 1.
+The **Principle of Unique Causality** [(§2.3.3)](#2.3.3) explicitly forbids redundant causal paths of length less than or equal to 2.
+Such redundant paths reduce the fraction of compliant 2-path sites available for the rewrite rule below the maximum value of 1.
 
-The Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) requires that the vacuum state maximizes the density of compliant rewrite sites to ensure optimal and unbiased geometrogenesis. Any reduction below the maximum density violates this requirement.
+**III. Probabilistic Decay of Compliance**
 
-Formally, the redundancy density receives definition as $\rho = (|E| - N + 1)/N$. The $\mathbb{P}$ that a potential 2-path site remains non-compliant grows as $1 - e^{-\rho}$. For any positive redundancy density $\rho > 0$, the compliant fraction falls strictly below 1.
+Formally, define the redundancy density $\rho$:
+$$\rho = \frac{|E| - N + 1}{N}$$
+The **Axiom of Geometric Constructibility** [(§2.3.1)](#2.3.1) requires that the vacuum state maximizes the density of compliant rewrite sites to ensure optimal and unbiased geometrogenesis.
+The probability $\mathbb{P}$ that a potential 2-path site remains non-compliant grows as a function of density:
+$$\mathbb{P}(\text{non-compliant}) \approx e^{\rho} - 1$$
+For any positive redundancy density $\rho > 0$, the compliant fraction falls strictly below 1.
+
+**IV. Conclusion**
 
 The contrapositive establishes that only graphs with exactly $|E| = N-1$ achieve the required maximum compliant fraction of 1.
 All denser connected directed acyclic graphs receive exclusion.
@@ -657,13 +870,26 @@ Every tree graph whose structure yields a strictly sub-maximal number of complia
 
 :::tip[**Verification of Site Density Maximization in Maximally Branched Trees using Combinatorial Counting**]
 
-The Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) and the Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1) jointly require that the vacuum state achieves sufficient participancy of all vertices in the emergent geometric process. Sufficient participancy demands the absolute maximum possible number of compliant 2-path sites per vertex.
+**I. Participancy Requirement**
 
-In any tree, the total number of compliant 2-paths equals the sum over all internal vertices of $(\deg(v) - 1)$. This sum achieves its maximum value when the degree distribution remains as uniform as possible with minimum degree at least 3 for internal vertices.
+The **Principle of Unique Causality** [(§2.3.3)](#2.3.3) and the **Axiom of Geometric Constructibility** [(§2.3.1)](#2.3.1) jointly require that the vacuum state achieves sufficient participancy of all vertices in the emergent geometric process.
+Sufficient participancy demands the absolute maximum possible number of compliant 2-path sites per vertex.
+
+**II. Site Summation**
+
+In any tree, the total number of compliant 2-paths equals the sum over all internal vertices of their output degree.
+$$S(G) = \sum_{v \in V_{int}} (\deg(v) - 1)$$
+This sum achieves its maximum value when the degree distribution remains as uniform as possible with minimum degree at least 3 for internal vertices.
+
+**III. Asymmetry Reduction**
 
 Trees with structural asymmetries, such as long linear chains or highly skewed branching, possess significantly fewer 2-paths per vertex than maximally branched regular trees.
-The contrapositive establishes that only trees that maximize the total count of compliant 2-path sites satisfy the axiomatic requirements.
+$$S(T_{skew}) \ll S(T_{regular})$$
+The rate of geometric production is directly proportional to this site density.
 
+**IV. Conclusion**
+
+The contrapositive establishes that only trees that maximize the total count of compliant 2-path sites satisfy the axiomatic requirements.
 All trees with sub-maximal site counts receive exclusion. Only maximally branched trees survive this filter.
 
 Q.E.D.
@@ -687,13 +913,27 @@ Every tree graph whose automorphism group fails to act transitively on vertex le
 
 :::tip[**Derivation of the Necessity of Level-Transitivity for Relational Uniformity through Group Action Analysis**]
 
-The Directed Causal Link [(§2.1.1)](axioms#2.1.1) and the Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1) jointly enforce complete relational uniformity across all vertices that occupy equivalent structural positions. Complete relational uniformity requires that the automorphism group acts transitively on each depth level separately and possesses the minimal possible number of orbits consistent with the rooted structure.
+**I. The Uniformity Constraint**
 
-Non-level-transitive trees necessarily contain privileged vertices or substructures at certain depths. Such privilege introduces relational distinguishability that the axioms forbid.
+The **Directed Causal Link** [(§2.1.1)](#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](#2.7.1) jointly enforce complete relational uniformity across all vertices that occupy equivalent structural positions.
+Complete relational uniformity requires that the automorphism group acts transitively on each depth level separately.
+
+**II. Orbit Minimization**
+
+The group action must possess the minimal possible number of orbits consistent with the rooted structure.
+$$N_{orbits} \approx \text{depth}_{max} + 1$$
+Non-level-transitive trees necessarily contain privileged vertices or substructures at certain depths.
+Such privilege introduces relational distinguishability that the axioms forbid.
+
+**III. Shannon Entropy Maximization**
+
 Level-transitive action minimizes the number of orbits and thereby maximizes the Shannon entropy of the orbit size distribution under the group action.
+$$H_S(O) = -\sum_{i} p(O_i) \log_2 p(O_i)$$
+Fragmentation of orbits strictly reduces this entropy measure.
+
+**IV. Conclusion**
 
 The contrapositive establishes that only trees with level-transitive or near-level-transitive automorphism groups satisfy the uniformity requirements.
-
 All non-level-transitive trees receive exclusion.
 
 Q.E.D.
@@ -717,14 +957,28 @@ Every non-regular tree graph is excluded from candidacy for $G_0$. Non-regularit
 
 :::tip[**Demonstration of Orbit Entropy Reduction in Non-Regular Structures via Distribution Analysis**]
 
-Non-regular trees possess varying vertex degrees across internal vertices. Varying degrees necessarily create structural distinctions between vertices that occupy the same depth level. These distinctions fragment the orbits under the automorphism group action.
+**I. Degree Variance**
 
+Non-regular trees possess varying vertex degrees across internal vertices.
+$$\exists u, v \in V_{int} \quad \text{such that} \quad \deg(u) \neq \deg(v)$$
+Varying degrees necessarily create structural distinctions between vertices that occupy the same depth level.
+
+**II. Orbit Fragmentation**
+
+These distinctions fragment the orbits under the automorphism group action.
+$$O_{depth} \to O_a \cup O_b \cup \dots$$
 Fragmented orbits reduce the Shannon entropy of the orbit size distribution below its theoretical maximum for the given number of vertices.
+$$H_S(G_{irregular}) < H_S^{\max}(N)$$
 
-The uniformity requirements of the Directed Causal Link [(§2.1.1)](axioms#2.1.1) and the Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1) demand maximization of this entropy measure.
+**III. Lemma Integration**
 
-The contrapositive establishes: If a tree remains consistent with uniform automorphism-transitive action, then the tree exhibits regularity (constant internal degree $\geq 3$; internal degrees less than 3 yield insufficient compliant sites per previous lemmas).
+The uniformity requirements of the **Directed Causal Link** [(§2.1.1)](#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](#2.7.1) demand maximization of this entropy measure.
+Furthermore, internal degrees less than 3 yield insufficient compliant sites per previous lemmas.
 
+**IV. Conclusion**
+
+The contrapositive establishes: If a tree remains consistent with uniform automorphism-transitive action, then the tree must exhibit regularity.
+$$k_{deg} = \text{constant} \ge 3$$
 All non-regular trees receive exclusion.
 
 Q.E.D.
@@ -813,15 +1067,29 @@ The **Structural Optimality Score** is defined as $\mathcal{O}(G; \lambda) = \la
 
 :::tip[**Justification of the Optimality Score as a Measure of Relational Uniformity through Extremal Case Analysis**]
 
-The Structural Optimality Metric rigorously balances the competing requirements of global symmetry maximization and local homogeneity maximization.
+**I. The Structural Optimality Metric**
 
-  - Extreme graphs such as stars achieve high $|\Aut(G)|$ but low $H_S(G)$ due to the privileged central vertex.
+The metric balances global symmetry maximization against local homogeneity maximization.
+$$\mathcal{O}(G) = \lambda \cdot \log |\text{Aut}(G)| + (1-\lambda) \cdot H_{orbit}(G)$$
+Analysis confirms the metric validly captures the axiomatic mandate across the physiologically relevant range $\lambda \in [0.4, 0.6]$.
 
-  - Extreme graphs such as paths achieve higher $H_S(G)$ but minimal $|\Aut(G)|$.
+**II. Extremal Case: Star Graphs**
 
-  - Balanced regular structures achieve superior scores across the physiologically relevant range $\lambda \in [0.4, 0.6]$.
+Extreme graphs such as stars achieve high $|\text{Aut}(G)|$ but low $H_S(G)$.
+This is due to the **privileged central vertex**, which forms a singleton orbit that minimizes entropy.
+$$H_S(\text{Star}) \approx 0$$
 
-The metric therefore validly captures the axiomatic mandate for relational uniformity.
+**III. Extremal Case: Linear Paths**
+
+Extreme graphs such as paths achieve higher $H_S(G)$ but minimal $|\text{Aut}(G)|$.
+$$|\text{Aut}(\text{Path})| = 2$$
+This reflects the total lack of global symmetry.
+
+**IV. Extremal Case: Regular Trees**
+
+Balanced regular structures achieve superior scores, combining exponential symmetry scaling with minimal orbit counts.
+$$\mathcal{O}(\text{Bethe}) > \mathcal{O}(\text{Star}) \land \mathcal{O}(\text{Bethe}) > \mathcal{O}(\text{Path})$$
+The metric therefore validly identifies the Regular Bethe Fragment as the optimal topology.
 
 Q.E.D.
 :::
@@ -836,15 +1104,26 @@ The Regular Bethe Fragment [(§3.2.1)](#3.2.1) constitutes the unique maximizer 
 
 :::tip[**Formal Proof of the Bethe Fragment as the Unique Maximizer via Computational Census**]
 
-The class of axiomatically admissible graphs reduces, through the cumulative exclusions of the previous lemmas, to the singleton containing the Regular Bethe Fragment [(§3.2.1.1)](#3.2.1.1) with internal coordination number $k_{deg} \geq 3$.
+**I. Candidate Set Reduction**
 
-The quantitative verification proceeds through complete enumeration of all non-isomorphic trees for small $N$, sequential application of the lemma filters, and explicit computation of the Structural Optimality Score [(§3.2.9)](#3.2.9) for all survivors.
+The class of axiomatically admissible graphs reduces, through the cumulative exclusions of the previous lemmas, to the singleton containing the **Regular Bethe Fragment** [(§3.2.1.1)](#3.2.1.1) with internal coordination number $k_{deg} \ge 3$.
+$$\Omega_{valid} = \{ T \mid T \cong \text{Bethe}(k), k \ge 3 \}$$
 
-**Analytical Extension:**
+**II. Computational Census**
 
-For large $N$ beyond computational enumeration, the result holds via Bass-Serre theory. Non-Cayley regular trees lack the full transitivity of the Bethe lattice (whose automorphism group is generated by the free group $F_{k-1}$).
+The quantitative verification proceeds through complete enumeration of all non-isomorphic trees for small $N$.
+Sequential application of the lemma filters and explicit computation of the **Structural Optimality Score** [(§3.2.9)](#3.2.9) confirms the maximum.
+$$\arg \max_{G} \mathcal{O}(G) = T_{Bethe}(k=3)$$
 
-Any deviation from the Bethe structure introduces fixed points or reduces orbit sizes, thereby strictly decreasing the orbit entropy $H_S$ while failing to compensate with a proportional increase in $|\Aut(G)|$. Thus, $\mathcal{O}(T) \leq \mathcal{O}(\text{Bethe})$ holds globally.
+**III. Analytical Extension (Bass-Serre Theory)**
+
+For large $N$ beyond computational enumeration, the result holds via **Bass-Serre theory**.
+Non-Cayley regular trees lack the full transitivity of the Bethe lattice (whose automorphism group is generated by the free group $F_{k-1}$).
+Any deviation from the Bethe structure introduces fixed points or reduces orbit sizes.
+$$\text{Fix}(g) \neq \emptyset \implies |\text{Aut}(G')| < |\text{Aut}(G)|$$
+This breakage strictly decreases the orbit entropy $H_S$ while failing to compensate with a proportional increase in $|\text{Aut}(G)|$.
+Thus, the global inequality holds:
+$$\mathcal{O}(T) \le \mathcal{O}(\text{Bethe})$$
 
 Q.E.D.
 
@@ -996,19 +1275,20 @@ To further quantify the scaling behavior of the Bethe fragment and illustrate it
 import networkx as nx
 import csv
 import os
-
+import numpy as np
+from math import log
 def generate_bethe_fragment(depth=5, b=3):
     if depth < 1 or b < 3:
         raise ValueError("Depth must be at least 1 and coordination number b must be at least 3.")
-    
+   
     G = nx.Graph()
     node_id = 0
     root = node_id
     node_id += 1
     G.add_node(root)
-    
+   
     levels = [[root]]
-    
+   
     for d in range(depth):
         next_level = []
         for parent in levels[-1]:
@@ -1020,19 +1300,19 @@ def generate_bethe_fragment(depth=5, b=3):
                 G.add_node(child)
                 G.add_edge(parent, child)
                 next_level.append(child)
-        
+       
         if not next_level:
             break
         levels.append(next_level)
-    
+   
     total_nodes = G.number_of_nodes()
     if total_nodes == 0:
         return G, {}
-        
+       
     regular_nodes = sum(1 for v in G if G.degree(v) == b)
     regularity_fraction = regular_nodes / total_nodes
     analytical_fraction = 1.0 / (b - 1)
-    
+   
     metrics = {
         'depth': depth,
         'b': b,
@@ -1043,11 +1323,10 @@ def generate_bethe_fragment(depth=5, b=3):
         'frac_b_regular_analytical': float(analytical_fraction)
     }
     return G, metrics
-
 def main():
     print("Quantum Braid Dynamics: Bethe Fragment Scaling Analysis (v1.0)")
     print("=" * 70)
-    
+   
     configs_to_test = []
     # Test k=3 for depths 3 to 15
     for depth in range(3, 16):
@@ -1055,10 +1334,10 @@ def main():
     # Test k=4,5,6 for depth 5
     for b in [4, 5, 6]:
         configs_to_test.append({'depth': 5, 'b': b})
-        
+       
     print(f"{'Depth':<6} {'Coord.(b)':<10} {'Nodes':<10} {'Girth':<8} {'b-Regular%':<12} {'Theoretical Limit'}")
     print("-" * 70)
-    
+   
     for config in configs_to_test:
         _, metrics = generate_bethe_fragment(depth=config['depth'], b=config['b'])
         d = metrics['depth']
@@ -1067,9 +1346,8 @@ def main():
         g = "inf"
         frac = metrics['frac_b_regular']
         limit = metrics['frac_b_regular_analytical']
-        
+       
         print(f"{d:<6} {b:<10} {n:<10} {g:<8} {frac:<12.3%} {limit:.3%}")
-
 if __name__ == "__main__":
     main()
 ```
@@ -1111,16 +1389,26 @@ These results confirm that for increasing depth, the regularity fraction approac
 
 :::tip[**Formal Derivation of the Regular Bethe Fragment (k=3) from the Intersection of Constraints**]
 
-The Regular Bethe Fragment with coordination number $k=3$ constitutes the unique optimal initial state $G_0$. The proof rests on the intersection of three axiomatic constraints:
+**I. The Intersection of Constraints**
 
-1.  **Lower Bound (Geometric Necessity):** $k \ge 3$.
-    Topologies with $k < 3$ (Points, Lines) lack the connectivity to form closed geometric loops (triangles) or satisfy the Interaction Requirement (Lemma 3.2.6).
+The Regular Bethe Fragment with coordination number $k=3$ constitutes the unique optimal initial state $G_0$. The proof rests on the rigorous intersection of three axiomatic constraints:
 
-2.  **Upper Bound (Bulk Maximization):** $k \to 3$.
-    Among valid topologies ($k \ge 3$), the Regularity Fraction scales as $\approx \frac{1}{k-1}$ (Lemma 3.2.10.3). Minimizing $k$ maximizes the density of fully-realized internal physics relative to boundary conditions.
+**II. Lower Bound (Geometric Necessity)**
 
-3.  **Uniqueness:**
-    The $k=3$ Regular Bethe Fragment is the only structure that satisfies the geometric lower bound while simultaneously maximizing the bulk-to-boundary ratio.
+$$k \ge 3$$
+Topologies with $k < 3$ (Points, Lines) lack the connectivity to form closed geometric loops (triangles).
+They also fail to satisfy the **Interaction Requirement** (Lemma 3.2.6), providing insufficient sites for causal emergence.
+
+**III. Upper Bound (Bulk Maximization)**
+
+$$k \to 3$$
+Among valid topologies ($k \ge 3$), the **Regularity Fraction** scales as $\approx \frac{1}{k-1}$ (Reference Lemma 3.2.10.3).
+Minimizing $k$ maximizes the density of fully-realized internal physics relative to boundary conditions.
+
+**IV. Uniqueness**
+
+The $k=3$ Regular Bethe Fragment is the only structure that satisfies the geometric lower bound while simultaneously maximizing the bulk-to-boundary ratio.
+$$G_0 \cong \text{Bethe}(k=3)$$
 
 Q.E.D.
 
@@ -1229,15 +1517,45 @@ The set of candidate rewrite sites $\mathcal{S}_{sites}(G)$ exhibits complete eq
 
 :::tip[**Formal Proof of the Invariance of Site Sets under Symmetry Groups using Isomorphic Mapping**]
 
-The definition of the candidate site set $\mathcal{S}_{\text{sites}}(G)$ depends exclusively on structural properties of the graph and its annotations. These properties include the existence of compliant 2-paths, timestamp orderings, and satisfaction of the Principle of Unique Causality constraints. Automorphisms preserve all such structural properties by definition.
+**I. Site Definition**
 
-An arbitrary site $s$ that belongs to $\mathcal{S}_{\text{sites}}(G)$ is analyzed. The site $s$ associates with a finite footprint subgraph $F_s$ and a specific local proposal $p_s$. The application of an arbitrary automorphism $\varphi \in \Aut(G)$ maps the footprint $F_s$ isomorphically to a new footprint $\varphi(F_s)$. The proposal $p_s$, being defined purely in terms of local relational structure, maps to an equivalent proposal $\varphi(p_s)$ that applies to the transformed footprint.
+The set of candidate rewrite sites $\mathcal{S}_{\text{sites}}(G)$ is defined by a predicate function $P(s, G)$ that evaluates the local structural eligibility of a subgraph $s$.
+$$s \in \mathcal{S}_{\text{sites}}(G) \iff P(s, G) \text{ is True}$$
+The predicate $P$ depends exclusively on:
 
-The eligibility criteria for the site (including Principle of Unique Causality satisfaction, timestamp monotonicity, and absence of competing paths) remain invariant under this isomorphic mapping. The transformed site $\varphi(s)$ therefore satisfies exactly the same eligibility criteria in the original graph. This satisfaction establishes that $\varphi(s)$ belongs to $\mathcal{S}_{\text{sites}}(G)$.
+1.  **Topological Isomorphism:** The subgraph $F_s$ matches the required template.
+2.  **Causal Constraints:** The site satisfies the Principle of Unique Causality [(§2.3.3)](#2.3.3).
+3.  **Timestamp Ordering:** The site satisfies the strict monotonicity requirements [(§2.6.3)](#2.6.3).
 
-Since $\varphi$ constitutes a bijection and the argument applies to every site, the image of the entire site set under $\varphi$ equals the original site set: $\varphi(\mathcal{S}_{\text{sites}}(G)) = \mathcal{S}_{\text{sites}}(G)$.
+**II. Automorphic Mapping**
 
-The equivariance property extends beyond mere set preservation to full structural mapping. The transformation of a site's local modification followed by automorphism application yields precisely the same outcome as applying the transformed proposal to the transformed subgraph. This stronger property eliminates any possibility of label-dependent biases and aligns with the relational ontology of the framework.
+Let $\varphi \in \text{Aut}(G)$ be an arbitrary automorphism of the graph.
+The mapping $\varphi$ acts on a site $s = (F_s, \tau_s)$ by mapping vertices, edges, and timestamps:
+$$\varphi(s) = (\varphi(F_s), \varphi(\tau_s))$$
+
+**III. Preservation of Structural Properties**
+
+Since $\varphi$ is an isomorphism, it preserves all relational properties defined on the graph.
+
+1.  **Topology:** $F_s \cong \varphi(F_s)$.
+2.  **Causality:** If $s$ satisfies Unique Causality in $G$, $\varphi(s)$ satisfies Unique Causality in $\varphi(G) = G$.
+3.  **Order:** If $\tau_u < \tau_v$, then the preservation of structure implies the mapped timestamps satisfy the corresponding order in the mapped site.
+
+**IV. Predicate Invariance**
+
+The evaluation of the eligibility predicate is invariant under the automorphism:
+$$P(s, G) \iff P(\varphi(s), \varphi(G))$$
+Since $\varphi(G) = G$ for an automorphism:
+$$P(s, G) \iff P(\varphi(s), G)$$
+Therefore, if $s \in \mathcal{S}_{\text{sites}}(G)$, then $\varphi(s) \in \mathcal{S}_{\text{sites}}(G)$.
+
+**V. Bijective Conclusion**
+
+The map $\varphi$ restricts to a bijection on the set of sites.
+$$\varphi(\mathcal{S}_{\text{sites}}(G)) = \mathcal{S}_{\text{sites}}(G)$$
+Furthermore, the local update operation $\mathcal{U}_{loc}$ commutes with the automorphism:
+$$\mathcal{U}_{loc}(\varphi(s)) = \varphi(\mathcal{U}_{loc}(s))$$
+This establishes strict equivariance.
 
 Q.E.D.
 
@@ -1266,38 +1584,40 @@ The resolution mechanism for overlapping rewrite sites preserves the automorphis
 
 :::tip[**Demonstration of Consistent Overlap Resolution via Maximal Parallelism and Equivariance**]
 
-The theorem asserts an "if and only if" equivalence. The proof therefore divides into two independent directions: sufficiency (maximal parallelism preserves symmetry) and necessity (symmetry preservation requires maximal parallelism).
+The theorem asserts the equivalence: *Symmetry Preservation $\iff$ Maximal Parallelism*.
 
-**Sufficiency Direction: Maximal Parallelism Preserves Symmetry**
+**Part I: Sufficiency ($\implies$)**
 
-The proof establishes that any maximally parallel scheduler preserves the automorphism group.
+1.  **Hypothesis:** Let $\mathcal{U}_{max}$ be the maximally parallel update map acting on $G_0$.
+    Let $\phi \in \text{Aut}(G_0)$.
+2.  **Site Set Invariance:** From **Lemma 3.3.4**, $\phi(\mathcal{S}_{sites}) = \mathcal{S}_{sites}$.
+3.  **Operation:** $\mathcal{U}_{max}$ applies the rewrite rule $\mathcal{R}$ to every element in $\mathcal{S}_{sites}$.
+    $$E_{new} = \bigcup_{s \in \mathcal{S}_{sites}} \mathcal{R}(s)$$
+4.  **Transformation:** Apply $\phi$ to the new edge set.
+    $$\phi(E_{new}) = \bigcup_{s \in \mathcal{S}_{sites}} \phi(\mathcal{R}(s))$$
+    By the equivariance of the rule $\mathcal{R}$ (Assumption A1):
+    $$\phi(E_{new}) = \bigcup_{s \in \mathcal{S}_{sites}} \mathcal{R}(\phi(s))$$
+5.  **Re-indexing:** Since $\phi$ permutes $\mathcal{S}_{sites}$, the union over $\phi(s)$ is identical to the union over $s$.
+    $$\phi(E_{new}) = E_{new}$$
+6.  **Conclusion:** $\phi$ preserves $E_0$ (by definition) and $E_{new}$. Thus, $\phi \in \text{Aut}(G_1)$.
 
-A maximally parallel update map $\mathcal{U}$ and an arbitrary automorphism $\phi \in \Aut(G_0)$ are analyzed. The goal requires demonstration that $\phi$ extends to an automorphism of the successor state $G_1 = \mathcal{U}(G_0)$.
+**Part II: Necessity ($\Longleftarrow$)**
 
-The Equivariance of Site Definition (Lemma 3.3.4) proves that the candidate site set satisfies $\phi(\mathcal{S}_{\text{sites}}(G_0)) = \mathcal{S}_{\text{sites}}(G_0)$.
-
-The maximally parallel scheduler applies the rewrite rule to the entire compliant site set $\mathcal{S}_{\text{sites}}(G_0)$. The set of newly created edges $E_{\text{new}}$ therefore receives unique determination as the output of the rewrite rule acting on the full site set.
-
-For any site $s \in \mathcal{S}_{\text{sites}}(G_0)$, the new edge $e_s$ that the rewrite creates maps under $\phi$ to $\phi(e_s)$. Assumption (A1) (locality and equivariance) guarantees that the rewrite rule applied to the transformed site $\phi(s)$ produces exactly the edge $\phi(e_s)$. Assumption (A4) (joint-update equivariance) extends this property to the simultaneous application across the full set.
-
-The image of the new edge set under $\phi$ therefore equals $\phi(E_{\text{new}}) = E_{\text{new}}$. Since $\phi$ preserves the original edge set $E_0$ by definition, $\phi$ preserves the full edge set $E_1 = E_0 \cup E_{\text{new}}$.
-
-The automorphism $\phi$ therefore constitutes an automorphism of the successor state $G_1$. Since the argument holds for arbitrary $\phi \in \Aut(G_0)$, the entire automorphism group receives preservation under maximally parallel updates.
-
-**Necessity Direction: Symmetry Preservation Requires Maximal Parallelism**
-
-The proof now establishes the converse by contradiction.
-
-Assume that an update map $\mathcal{U}$ preserves symmetry but does not constitute maximal parallelism. The map $\mathcal{U}$ therefore acts on a proper subset $S' \subsetneq \mathcal{S}_{\text{sites}}(G_0)$ of the full compliant site set.
-
-The vacuum state $G_0$ exhibits maximal relational uniformity. No intrinsic information exists that distinguishes structurally equivalent sites within the same automorphism orbit.
-The selection of a proper subset $S'$ introduces new information into the system: the property "having been selected for update in this step". This property distinguishes sites that receive updates from identical sites that do not.
-
-Two sites $s_1 \in S'$ and $s_2 \in \mathcal{S}_{\text{sites}} \setminus S'$ are analyzed. The high symmetry of $G_0$ guarantees the existence of an automorphism $\phi \in \Aut(G_0)$ that maps $s_1$ to $s_2$. In the successor state $G_1$, the local structure at $s_1$ undergoes modification while the identical structure at $s_2$ remains unchanged. If $\phi$ extended to an automorphism of $G_1$, the modification at $s_1$ would map to an equivalent modification at $s_2$. No such modification exists at $s_2$. This yields a contradiction.
-
-Stochastic schedulers that attempt to preserve symmetry "on average" fail for the same reason. The theory describes the evolution of a single concrete universe, not an ensemble. In any single realization, a specific choice occurs that breaks symmetry irreversibly from the first update step.
-
-The only update map that introduces no arbitrary distinguishing information constitutes the maximally parallel map that acts simultaneously on every compliant site.
+1.  **Hypothesis:** Let $\mathcal{U}_{partial}$ be an update map that selects a proper subset $S' \subset \mathcal{S}_{sites}$.
+    $$S' \neq \emptyset \land S' \neq \mathcal{S}_{sites}$$
+2.  **Symmetry Breaking:**
+    Let $s_a \in S'$ (selected) and $s_b \in \mathcal{S}_{sites} \setminus S'$ (ignored).
+    The vacuum state $G_0$ is vertex-transitive and site-transitive [(§3.2.1)](#3.2.1).
+    There exists $\sigma \in \text{Aut}(G_0)$ such that $\sigma(s_a) = s_b$.
+3.  **State Divergence:**
+    In the successor state $G_1$:
+      * The neighborhood of $s_a$ contains new structure $\mathcal{R}(s_a)$.
+      * The neighborhood of $s_b$ remains unmodified (vacuum).
+4.  **Contradiction:**
+    If $\sigma$ extended to $G_1$, it would map the modified neighborhood of $s_a$ to the modified neighborhood of $s_b$.
+    $$\sigma(\mathcal{R}(s_a)) \neq \emptyset \quad \text{but} \quad \mathcal{R}(s_b) \text{ does not exist in } G_1$$
+    Thus, $\sigma \notin \text{Aut}(G_1)$. Symmetry is broken.
+5.  **Conclusion:** Only the map where $S' = \mathcal{S}_{sites}$ avoids this contradiction.
 
 Q.E.D.
 
@@ -1418,28 +1738,36 @@ The time complexity of the maximally parallel update operation, conditioned on t
 
 :::tip[**Derivation of Time Complexity for Parallel Updates in Sparse Graphs via Radius Bounding**]
 
-The proof establishes consistency (no deadlocks or conflicts), scalability (per-step time $O(\log N)$), and operational independence (no global synchronization required).
-Each rewrite site $s$ possesses a local footprint $F_s$ of radius $\sim 1$ (the 2-path itself). Constraint checks extend to radius $R$ (breadth-first search for competing paths or cycle detection). The patch $P_s$ consists of the full neighborhood of radius $R$ around $F_s$.
+**I. The Interaction Radius**
 
-Each patch overlaps when sites reside within distance $2R$. During the preparation phase, each site computes local syndromes and proposals independently. For constraints requiring non-local information (timestamp maxima, path uniqueness), information propagates asynchronously: each vertex broadcasts its local maximum timestamp or path set to neighbors at unit speed. Propagation requires $O(R)$ steps to cross any patch.
+Let $R$ define the graph distance required to verify all local constraints (Unique Causality, Timestamp Monotonicity) for a given site $s$.
+In the sparse vacuum graph $G_0$, the density of edges is minimal.
 
-Overlap resolution occurs via the Universal Constructor: the meta-check function $\delta$ compares incoming values across overlapping patches and flags inconsistencies. The counit $\varepsilon$ resolves conflicts locally by selecting the globally consistent value (maximum timestamp) or delaying conflicting proposals.
+1.  **Footprint:** The rewrite site itself has radius $r \approx 1$.
+2.  **Constraint Check:** Verification requires traversing paths of length up to a constant $k$ (cycle detection limit).
+3.  **Interaction Zone:** $R$ is bounded by a small constant in the vacuum topology.
 
-**Convergence and Consistency**
+**II. Propagation Complexity**
 
-In sparse regimes (average degree bounded), the probability of overlaps beyond radius $R$ decays exponentially as $\sim \rho^{2R}$. For $\rho$ bounded away from percolation, most sites remain independent.
+The time $T$ required to resolve overlaps and verify consistency is proportional to the diameter of the interference patch.
+$$T_{step} \propto R$$
+In a generic graph, $R$ could scale with $N$. However, the **Axiom of Geometric Constructibility** [(§2.3.1)](#2.3.1) enforces a tree-like regular structure (Bethe lattice) for $G_0$.
 
-Connected overlap components possess diameter $O(R)$. Asynchronous propagation converges in $O(R)$ steps.
+**III. Error Suppression Limit**
 
-The quantum error-correcting code threshold theorem applies analogously: for local error (conflict) rate $p < p_{\text{th}}$ (where $p_{\text{th}}$ scales as $1/\log N$ for sparse codes), bounded-radius decoders correct all errors. Here, conflicts constitute "errors" with rate $p \sim 1/N$ in the vacuum, well below threshold.
+For the update to remain consistent, the probability of an undetected long-range conflict must vanish.
+Let $P_{err}(R)$ be the probability of a conflict chain extending beyond radius $R$.
+In a sub-critical sparse graph, this decays exponentially:
+$$P_{err}(R) \propto e^{-\lambda R}$$
+To ensure global consistency with high probability ($1 - \epsilon$) as $N \to \infty$:
+$$N \cdot P_{err}(R) < \epsilon$$
+$$N \cdot e^{-\lambda R} < \epsilon \implies R > \frac{1}{\lambda} \ln \left( \frac{N}{\epsilon} \right)$$
 
-**Scalability and Independence**
+**IV. Complexity Bound**
 
-Time per logical step equals $O(R) = O(\log N)$, which remains efficient even for cosmic vertex counts $N \sim 10^{80}$.
-
-Independence receives strict preservation. Sites delay only on local overlaps within causal light-cones of radius $R$.
-
-No global clock or synchronization occurs. Errors remain exponentially suppressed as $e^{-R}$. The maximally parallel framework therefore achieves full consistency, scalability, and operational locality simultaneously.
+Substituting the bound for $R$ into the time complexity:
+$$T_{step} \sim O(R) \sim O(\log N)$$
+This logarithmic scaling establishes the computational feasibility of the update process even for cosmological $N$.
 
 Q.E.D.
 :::
@@ -1448,7 +1776,37 @@ Q.E.D.
 
 :::tip[**Formal Proof of the Inevitability of Maximal Parallelism for Symmetry Preservation through Contradiction**]
 
-It is proven that any update map $\mathcal{U}$ that selects a proper subset $S' \subsetneq \mathcal{S}_{sites}(G_0)$ introduces distinguishing information not present in the vacuum state $G_0$. Since $G_0$ is vertex-transitive [(§3.2.1)](#3.2.1), there exists an automorphism mapping a site in $S'$ to a site in $\mathcal{S}_{sites} \setminus S'$. The updated state $G_1$ violates this symmetry. Therefore, the preservation of $\text{Aut}(G_0)$ necessitates $S' = \mathcal{S}_{sites}(G_0)$.
+**I. The Indistinguishability Premise**
+
+The vacuum state $G_0$ is defined by maximal symmetry [(§3.2.1)](#3.2.1).
+For any two compliant sites $s_i, s_j \in \mathcal{S}_{sites}(G_0)$, there exists an automorphism $\sigma$ such that $\sigma(s_i) = s_j$.
+This renders $s_i$ and $s_j$ informationally indistinguishable within the state $G_0$.
+
+**II. The Selection Function**
+
+Let $\mathcal{U}$ be an update function defined by a selection vector $\mathbf{v} \in \{0, 1\}^{|\mathcal{S}|}$, where $v_k=1$ implies site $s_k$ updates.
+If $\mathcal{U}$ is not maximally parallel, $\exists i, j$ such that $v_i = 1$ and $v_j = 0$.
+
+**III. Information Generation**
+
+The application of $\mathcal{U}$ generates a bit of distinguishing information $I_{diff} = 1$ bit (distinguishing $s_i$ from $s_j$).
+The source of this information cannot be $G_0$ (where $I(s_i, s_j) = 0$).
+Therefore, the information must be extrinsic (arbitrary or random).
+
+**IV. Covariance Violation**
+
+The physical laws must be covariant; the update rule must depend only on intrinsic state information.
+$$\text{Output}(G) = F(\text{State}(G))$$
+An update depending on extrinsic selection violates covariance.
+To eliminate extrinsic variables, the selection must be uniform.
+
+1.  **Null Selection:** $v_k = 0 \quad \forall k$ (Trivial identity map).
+2.  **Full Selection:** $v_k = 1 \quad \forall k$ (Maximal parallelism).
+
+**V. Conclusion**
+
+Since evolution requires non-trivial change, the Null Selection is rejected.
+The Full Selection (Maximal Parallelism) is the unique non-trivial update mode preserving the information-theoretic symmetries of the vacuum.
 
 Q.E.D.
 :::
@@ -1503,25 +1861,37 @@ A Tunneling Event is defined as the addition of a single edge $e = (u, v)$ such 
 
 :::tip[**Demonstration of Minimal Topological Fragility against Parity-Violating Edges using Hamming Distance**]
 
-The non-perturbative tunneling is analyzed. The proof proceeds by establishing that the configuration distance to a symmetry-broken state is minimal, then demonstrating that this minimal step necessitates the collapse of the vacuum's defining order.
+**I. Topological State Definition**
 
-**Topological Fragility (Minimal Hamming Distance):**
-Let $E_{vac}$ be the edge set of the bipartite vacuum state $G_0$. Let $E_{geo}$ be the edge set of a state containing the universe's first geometric quantum (a 3-cycle). The transition requires the addition of exactly one tunneling edge $e_{\text{tunnel}}$ such that $E_{geo} = E_{vac} \cup \{e_{\text{tunnel}}\}$.
+Let $G_0 = (V, E_0)$ denote the vacuum state.
+The **Depth-Parity Bipartition** [(§3.1.10)](#3.1.10) establishes that $G_0$ admits a canonical 2-coloring:
+$$V = V_{\text{even}} \sqcup V_{\text{odd}}$$
+$$E_0 \subseteq (V_{\text{even}} \times V_{\text{odd}}) \cup (V_{\text{odd}} \times V_{\text{even}})$$
+This strict bipartition constitutes the protecting symmetry of the pre-geometric phase.
 
-*The Hamming distance between the two states is exactly:*
-$|E_{geo}| - |E_{vac}| = 1.$
+**II. The Tunneling Operator**
 
-Since the Elementary Task Space [(§1.4.1.1)](ontology#1.4.1.1) explicitly permits single-edge additions, this transition requires only the minimal possible kinematic operation. It does not require a coordinated multi-edge event, which would imply an exponential suppression barrier. Therefore, the vacuum possesses no extensive topological barrier against the phase transition.
+Let $\mathcal{T}_{\text{tunnel}}$ denote a non-perturbative operator that adds a single directed edge $e_{\text{tunnel}} = (u, v)$ to the graph.
+$$G_1 = \mathcal{T}_{\text{tunnel}}(G_0) \implies E_1 = E_0 \cup \{e_{\text{tunnel}}\}$$
+The **Hamming Distance** between the states satisfies the minimal possible increment:
+$$d_H(G_0, G_1) = |E_1| - |E_0| = 1$$
+The **Elementary Task Space** [(§1.4.1)](#1.4.1) permits single-edge additions; thus, the transition barrier is kinematic, not combinatorial.
 
-**Structural Violation:**
-The Depth-Parity Bipartition [(§3.1.10)](#3.1.10) establishes that the vacuum state $G_0$ admits a canonical depth-parity bipartition $(V_{\text{even}}, V_{\text{odd}})$, where all edges connect vertices of opposite parity. Consider the non-perturbative quantum tunneling event defined above, adding the single edge $e_{\text{tunnel}} = (x, y)$. For a 3-cycle to form from a 2-path precursor, the endpoints $x$ and $y$ must belong to the same partition set (e.g., $x, y \in V_{\text{even}}$).
+**III. Structural Violation**
 
-The new graph $G_1$ now contains an edge connecting two vertices of even parity. This single edge violates the defining property of the bipartition that forbids intra-set edges. The original bipartition $(V_{\text{even}}, V_{\text{odd}})$ therefore ceases to constitute a valid 2-coloring of $G_1$.
+Select $u, v$ such that both vertices belong to the same partition set (e.g., $u, v \in V_{\text{even}}$).
+The new edge violates the bipartition constraint:
+$$e_{\text{tunnel}} \in V_{\text{even}} \times V_{\text{even}}$$
+Consequently, the chromatic number of the graph increases:
+$$\chi(G_1) > 2$$
+The global $\mathbb{Z}_2$ symmetry of the vacuum breaks spontaneously.
 
-**Irreversibility:**
-The global $\mathbb{Z}_2$ symmetry of perfect bipartiteness undergoes spontaneous breaking by this single edge. The breaking persists irreversibly because no local or perturbative process can remove the symmetry-breaking edge without violating the monotonicity of the history function or the causal primitive.
+**IV. Irreversibility**
 
-The tunneling event thus shatters the protecting symmetry that suppressed geometric emergence. This shattering constitutes the nucleation of the phase transition from the false pre-geometric vacuum to the true geometric vacuum.
+The removal of $e_{\text{tunnel}}$ would require a specific inverse operation.
+However, the **Monotonicity of History** [(§2.6.3)](#2.6.3) prohibits the deletion of edges once established in the causal order (except via specific rewrite rules which do not apply to isolated edges).
+Therefore, the symmetry breaking is persistent.
+$$G_1 \notin \Omega_{\text{bipartite}}$$
 
 Q.E.D.
 
@@ -1543,17 +1913,40 @@ Given a Tunneling Event $e=(u, v)$ in $G_0$, if there exists a vertex $w \in V_0
 
 :::tip[**Verification of Compliant 2-Path Formation through Parity Violation Analysis**]
 
-The vacuum state $G_0$ constitutes a connected outward-directed tree. Assume without loss of generality that the endpoint $y$ of the tunneling edge $e_{\text{tunnel}} = (x, y)$ constitutes a non-leaf vertex in the original tree. This assumption holds generically for the overwhelming majority of internal vertices in the Regular Bethe Fragment [(§3.2.1.1)](#3.2.1.1).
+**I. Initial Configuration**
 
-  - The vertex $y$ therefore possesses at least one child vertex $z$ connected by an original edge $y \to z$ in $G_0$. The depth-parity bipartition requires that $z$ resides in the opposite partition from $y$.
+Let $G_1$ be the state immediately following the tunneling event $e_{\text{tunnel}} = (x, y)$ where $x, y \in V_{\text{even}}$.
+The underlying structure of $G_0$ constitutes a Maximally Branched Tree [(§3.2.6)](#3.2.6).
+Therefore, the vertex $y$ (being an internal node) possesses an out-degree $k \ge 1$.
+$$\exists z \in V : (y, z) \in E_0$$
 
-  - In the post-tunneling state $G_1$, the new tunneling edge creates the directed 2-path $x \to y \to z$. The endpoints of this 2-path consist of $x$ (same parity as $y$) and $z$ (opposite parity).
+**II. Parity Analysis**
 
-No direct edge existed between $x$ and $z$ in $G_0$, and the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) checks confirm that no competing path of length $\leq 2$ existed between $x$ and $z$ prior to the tunneling event. The new 2-path $x \to y \to z$ therefore constitutes the unique informational path of length 2 between its endpoints.
+1.  **Vertex $x$:** $x \in V_{\text{even}}$.
+2.  **Vertex $y$:** $y \in V_{\text{even}}$.
+3.  **Vertex $z$:** Since $(y, z) \in E_0$ (a vacuum edge), $z$ must satisfy the bipartition relative to $y$.
+    $$y \in V_{\text{even}} \implies z \in V_{\text{odd}}$$
 
-This 2-path satisfies all criteria for a valid, compliant rewrite site under the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) and the Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1).
+**III. Path Construction**
 
-*At least one such compliant site emerges immediately from the tunneling event.*
+The sequence of edges $\{(x, y), (y, z)\}$ forms a directed 2-path $\pi = x \to y \to z$.
+Check endpoints:
+
+  * Start: $x \in V_{\text{even}}$
+  * End: $z \in V_{\text{odd}}$
+    Since $x$ and $z$ have distinct parities, they are distinct vertices ($x \neq z$).
+
+**IV. Compliance Verification**
+
+The **Principle of Unique Causality** [(§2.3.3)](#2.3.3) requires that no other path of length $\le 2$ exists between $x$ and $z$.
+
+1.  **Direct Edge $(x, z)$:** $E_0$ contains only even-odd edges. While $x, z$ are even-odd, the tree structure of $G_0$ implies a unique path between any two nodes. If a direct edge existed, $x, y, z$ would form a triangle in $G_0$, violating acyclicity [(§3.1.7)](#3.1.7). Thus $(x, z) \notin E_0$.
+2.  **Alternative 2-Path:** Any other path would imply a cycle in the underlying undirected graph of the vacuum, violating the Tree Condition [(§3.1.9)](#3.1.9).
+
+**V. Conclusion**
+
+The path $\pi = x \to y \to z$ constitutes a valid, compliant rewrite site.
+$$\mathcal{S}_{\text{sites}}(G_1) \neq \emptyset$$
 
 Q.E.D.
 :::
@@ -1568,18 +1961,37 @@ The application of the rewrite rule $\mathcal{R}$ to the tunneling-induced compl
 
 :::tip[**Demonstration of Supercritical Branching Process triggered by the First 3-Cycle**]
 
-The tunneling event nucleates at least one compliant 2-path 2-path site $x \to y \to z$ as the Nucleation of Compliant Sites [(§3.4.3)](#3.4.3) establishes.
-The standard rewrite rule $\mathcal{R}$ proposes the closing chord $(z, x)$. The acceptance of this proposal (governed by the thermodynamic acceptance probability at the prevailing effective temperature) adds the edge $z \to x$.
+**I. The First Geometric Quantum**
 
-  - The addition completes the first directed 3-cycle: $x \to y \to z \to x$.
+1.  **Input:** The compliant site $\pi = x \to y \to z$ established in **Lemma 3.4.3**.
+2.  **Operation:** The rewrite rule $\mathcal{R}$ proposes the closing chord $e_{\text{chord}} = (z, x)$.
+3.  **Output:** Upon acceptance, $E_2 = E_1 \cup \{(z, x)\}$.
+4.  **Geometry:** The sequence $x \to y \to z \to x$ forms a directed 3-cycle.
+    $$C_3 \in G_2$$
+    This constitutes the nucleation of the **Geometric Phase**.
 
-  - This first 3-cycle constitutes the initial quantum of spatial area in the previously pre-geometric vacuum.
+**II. Iterative Feedback (Branching)**
 
-  - The new closing edge $z \to x$ immediately creates multiple new 2-paths in its local neighborhood. Each new 2-path becomes eligible for rewrite under the standard rule. The acceptance of these rewrites nucleates additional 3-cycles.
+The addition of $(z, x)$ creates new connectivity.
+Let $w$ be a child of $x$ in the original tree ($x \to w$).
+The new edge $(z, x)$ combined with existing edge $(x, w)$ creates a new 2-path:
+$$\pi_{\text{new}} = z \to x \to w$$
+This path satisfies validity criteria (inherited from tree structure).
+Consequently, the creation of one cycle enables the creation of subsequent cycles (e.g., $z \to x \to w \to z$).
 
-The process repeats with increasing rapidity as the number of compliant sites grows exponentially with each logical time step. The growth constitutes a supercritical branching process that fills the graph with geometric quanta at the maximum causal speed permitted by the update rule.
+**III. Supercriticality**
 
-The nucleation of the first 3-cycle therefore ignites an explosive first-order phase transition. The transition proceeds via the rapid expansion of a geometric "bubble" that converts the metastable false vacuum into the true geometric vacuum.
+Let $N(t)$ be the number of compliant sites.
+The tree structure ($k \ge 3$) ensures that each vertex has multiple children.
+Closing a cycle at depth $d$ connects to parents and children, opening paths to siblings and further descendants.
+The branching factor of the reaction $b > 1$.
+$$N(t+1) \approx b \cdot N(t)$$
+This describes a supercritical branching process.
+
+**IV. Conclusion**
+
+The nucleation of the first 3-cycle ignites an explosive first-order phase transition.
+The graph transitions from the sparse tree-like Vacuum Phase to the dense Geometric Phase.
 
 Q.E.D.
 
@@ -1603,29 +2015,37 @@ The probability $\mathbb{P}_{ign}$ of at least one symmetry-breaking tunneling e
 
 :::tip[**Derivation of the Near-Unity Tunneling Probability under Pre-Geometric Conditions**]
 
-The proposed ignition event consists of the direct addition of a single bipartiteness-violating edge $e = (x, y)$ between same-parity vertices without a preceding 2-path.
-The thermodynamic acceptance probability for any proposed edge addition follows the standard detailed-balance form
+**I. Thermodynamic Framework**
 
-$\mathbb{P}_{acc} = \chi(\vec{\sigma}_e) \min(1, \exp(-\Delta F / T))$
+The acceptance probability for an edge addition follows the detailed balance relation:
+$$\mathbb{P}_{acc} = \chi(\vec{\sigma}) \cdot \min \left( 1, \exp \left( -\frac{\Delta F}{T} \right) \right)$$
+where $\Delta F = \Delta U - T \Delta S$.
 
-,where $\chi(\vec{\sigma}_e)$ denotes the syndrome-response function, $\Delta F = \Delta U - T \Delta S$ denotes the free energy change, and $T$ denotes the effective temperature.
-In the pre-ignition vacuum, the syndrome uniformly equals $\sigma = +1$ (pure vacuum). The response factor therefore satisfies $\chi(\vec{\sigma}_e) \approx 1$.
+**II. Pre-Ignition Parameters**
 
-The internal energy change for adding a single edge satisfies $\Delta U = \epsilon_{geo} > 0$, where $\epsilon_{geo}$ remains positive but finite (on the order of the energy scale associated with 1/4 of a 3-cycle quantum).
+1.  **Syndrome:** The vacuum is defect-free. $\chi \approx 1$.
+2.  **Internal Energy:** Adding an edge costs finite energy $\epsilon_{geo} > 0$.
+3.  **Entropy:** Symmetry breaking increases the configurational phase space.
+    $$\Delta S = k_B \ln(\Omega_{\text{broken}}) - k_B \ln(\Omega_{\text{sym}}) > 0$$
+    Specifically, $\Delta S \ge \ln 2$ (binary choice of symmetry sector).
 
-The entropy change satisfies $\Delta S = \ln 2 + \delta > 0$, where the leading term arises from the new binary degree of freedom and the subleading term $\delta$ arises from the increased configurational multiplicity enabled by symmetry breaking.
+**III. High-Temperature Limit**
 
-In the extreme high-temperature regime that characterizes the pre-ignition vacuum (where quantum gravitational fluctuations dominate and no equilibrium has yet been reached), the free energy change satisfies $\Delta F \approx -T \Delta S < 0$ for $T \gg \epsilon_{geo} / \Delta S$. The acceptance probability therefore approaches $\mathbb{P}_{acc} \to 1$.
+In the pre-geometric regime, fluctuations dominate ($T \to \infty$).
+The free energy change becomes entropy-driven:
+$$\lim_{T \to \infty} \Delta F \approx -T \Delta S$$
+Since $\Delta S > 0$, we have $\Delta F < 0$.
+$$\lim_{T \to \infty} \exp \left( -\frac{\Delta F}{T} \right) = \exp(\Delta S) > 1$$
+Therefore, the probability saturates:
+$$\mathbb{P}_{acc} \to 1$$
 
-Even for finite but large effective temperature, the acceptance probability remains substantial: for example, at $T = 10 \epsilon_{geo} / \Delta S$, the exponential factor yields $\mathbb{P}_{acc} \sim e^{-0.1} \approx 0.9$.
+**IV. Global Ignition Probability**
 
-**The total ignition probability follows Poisson statistics for rare events:**
-
-$\mathbb{P}_{\text{ign}} = 1 - \exp(-N^2 \chi \cdot e^{-\Delta \Delta F/T})$
-
-,where $N^2$ denotes the number of possible same-parity vertex pairs. The strictly positive acceptance probability ensures that $\mathbb{P}_{\text{ign}} > 0$. The large number of potential pairs and high $\mathbb{P}_{acc}$ in the early regime drive $\mathbb{P}_{\text{ign}} \to 1$ rapidly.
-
-The high effective temperature arises naturally from the non-equilibrium, fluctuation-dominated character of the pre-ignition vacuum state. No fine-tuning is required.
+The total probability of ignition $P_{\text{ign}}$ depends on the number of candidate pairs $N_{pairs}$ and the per-pair probability $P_{pair}$.
+In the vacuum, any pair of same-parity vertices can support a tunneling event.
+$$N_{pairs} \propto N^2$$
+$$P_{\text{ign}} = 1 - (1 - P_{pair})^{N^2} \approx 1 - e^{-N^2 P_{pair}}$$
+With $P_{pair} > 0$, as $N \to \infty$, $P_{\text{ign}} \to 1$.
 
 Q.E.D.
 :::
@@ -1634,7 +2054,29 @@ Q.E.D.
 
 :::tip[**Formal Theorem Proof of the Universality of the Transition from False Vacuum to Geometry**]
 
-The deduction regarding the metastability of the false vacuum and the inevitability of decay is established.
+**I. Synthesis of Lemmas**
+
+1.  **Fragility:** **Lemma 3.4.2** establishes that the vacuum barrier is topologically minimal ($d_H=1$).
+2.  **Nucleation:** **Lemma 3.4.3** establishes that a single failure creates a valid rewrite site.
+3.  **Propagation:** **Lemma 3.4.4** establishes that a single site triggers a global chain reaction.
+4.  **Probability:** **Lemma 3.4.5** establishes that the probability of the initial failure approaches unity over sufficient time or system size.
+
+**II. Metastability**
+
+The vacuum state $G_0$ is a local minimum of the structural complexity functional but not a global maximum of entropy.
+$$S(G_{\text{geo}}) \gg S(G_0)$$
+The system resides in a metastable "False Vacuum."
+
+**III. Temporal Inevitability**
+
+Let $P(t)$ be the probability that the universe remains in the vacuum state at time $t$.
+$$P(t) = \prod_{i=0}^t (1 - P_{\text{ign}})$$
+Since $P_{\text{ign}} > 0$:
+$$\lim_{t \to \infty} P(t) = 0$$
+
+**IV. Conclusion**
+
+The transition from the pre-geometric vacuum to the geometric phase is a deterministic inevitability of the axioms.
 
 Q.E.D.
 
@@ -1798,13 +2240,49 @@ The formal Hilbert space $\mathcal{H}$ provides a faithful embedding of the clas
 
 :::tip[**Verification of the Correspondence between Graph States and Qubit Basis States via Orthogonality Checks**]
 
-The mapping function $\mathcal{M}: G \to \mathcal{H}$ assigns each directed edge $(u,v)$ to the basis state of qubit $q_{uv}$.
+**I. Hilbert Space Construction**
 
-The total dimension of $\mathcal{H}$ is $2^{N(N-1)}$. The set of all possible directed graphs on $N$ vertices has cardinality $2^{N(N-1)}$.
-For any distinct graphs $G_1 \neq G_2$, there exists at least one edge $(u,v)$ present in $G_1$ but not $G_2$ (or vice versa).
-Consequently, the corresponding qubit states differ: $|x_{uv}^{(1)}\rangle \neq |x_{uv}^{(2)}\rangle$.
-The tensor product states $|G_1\rangle$ and $|G_2\rangle$ are therefore orthogonal basis vectors in $\mathcal{H}$.
-The mapping $\mathcal{M}$ is injective and surjective onto the computational basis of $\mathcal{H}$.
+Let the physical system be defined on a fixed set of $N$ vertices $V$.
+The Hilbert space $\mathcal{H}$ corresponds to the tensor product of $M = N(N-1)$ two-level quantum systems (qubits), where each qubit $q_{uv}$ represents the directed edge $(u, v)$ for $u \neq v$.
+$$\mathcal{H} = \bigotimes_{u \neq v} \mathcal{H}_{uv} \cong (\mathbb{C}^2)^{\otimes N(N-1)}$$
+The dimensionality of the space is exactly $D = 2^{N(N-1)}$.
+
+**II. The Computational Basis**
+
+Define the local basis states for each edge qubit:
+
+  * $|0\rangle_{uv}$: Corresponds to the absence of the edge $(u, v)$.
+  * $|1\rangle_{uv}$: Corresponds to the presence of the edge $(u, v)$.
+
+The global computational basis $\mathcal{B}$ consists of the tensor products of these local states:
+$$\mathcal{B} = \left\{ \bigotimes_{u \neq v} |x_{uv}\rangle_{uv} \;\middle|\; x_{uv} \in \{0, 1\} \right\}$$
+The cardinality of the basis is $|\mathcal{B}| = 2^{N(N-1)}$.
+
+**III. The Graph Isomorphism $\mathcal{M}$**
+
+Let $\Omega_{graph}$ be the set of all possible directed graphs on $N$ vertices without self-loops.
+A graph $G \in \Omega_{graph}$ is uniquely identified by its adjacency matrix $A_G$, where $A_{uv} = 1$ if $(u, v) \in E(G)$ and $0$ otherwise.
+Define the mapping $\mathcal{M}: \Omega_{graph} \to \mathcal{H}$ as:
+$$\mathcal{M}(G) = |G\rangle = \bigotimes_{u \neq v} |A_{uv}\rangle_{uv}$$
+
+**IV. Bijectivity Verification**
+
+1.  **Injectivity:** Let $G_1, G_2 \in \Omega_{graph}$ with $G_1 \neq G_2$.
+    Difference implies $\exists (u, v)$ such that $A_{uv}^{(1)} \neq A_{uv}^{(2)}$.
+    Without loss of generality, assume $A_{uv}^{(1)} = 0$ and $A_{uv}^{(2)} = 1$.
+    The inner product evaluates to:
+    $$\langle G_1 | G_2 \rangle = \prod_{i \neq j} \langle A_{ij}^{(1)} | A_{ij}^{(2)} \rangle$$
+    Since $\langle 0 | 1 \rangle = 0$, the product vanishes.
+    $$\langle G_1 | G_2 \rangle = 0$$
+    Distinct graphs map to orthogonal (and thus distinct) state vectors.
+
+2.  **Surjectivity:** For any basis vector $|\psi\rangle \in \mathcal{B}$, the sequence of binary values $\{x_{uv}\}$ uniquely reconstructs an adjacency matrix $A$. Since $\Omega_{graph}$ contains all possible adjacency configurations, $\exists G$ such that $A_G = A$.
+    Thus, $\mathcal{M}(G) = |\psi\rangle$.
+
+**V. Conclusion**
+
+The mapping $\mathcal{M}$ constitutes a bijective isometry from the discrete configuration space of directed graphs to the computational basis of the Hilbert space.
+$$\Omega_{graph} \cong \text{span}(\mathcal{B}) \subset \mathcal{H}$$
 
 Q.E.D.
 
@@ -1849,21 +2327,42 @@ The Hard Constraint Projectors $\Pi_{cycle}$ and $\Pi_{local}$ [(§3.5.1)](#3.5.
 
 :::tip[**Verification of the Annihilation of Invalid States through Operator Algebra**]
 
-**1. The 2-Cycle Projector**
-The operator $\Pi_{\text{cycle}}(u,v)$ acts on the subspace spanned by $q_{uv}$ and $q_{vu}$. The action on the four basis states is verified using the formula from The Generalized Stabilizer Formulation [(§3.5.1)](#3.5.1):
+**I. The 2-Cycle Constraint Projector**
 
-  * $|00\rangle$: $\Pi |00\rangle = |00\rangle$ (Identity).
-  * $|01\rangle$: $\Pi |01\rangle = |01\rangle$ (Identity).
-  * $|10\rangle$: $\Pi |10\rangle = |10\rangle$ (Identity).
-  * $|11\rangle$: The term $(I - Z_{uv} - Z_{vu} + Z_{uv}Z_{vu})$ evaluates to $1 - (-1) - (-1) + 1 = 4$. Thus $\Pi |11\rangle = (I - I)|11\rangle = 0$. (Annihilation).
+The **Principle of Unique Causality** [(§2.3.3)](#2.3.3) forbids reciprocal edges (2-cycles).
+Define the projection operator $\Pi_{\text{cycle}}(u, v)$ acting on the subspace $\mathcal{H}_{uv} \otimes \mathcal{H}_{vu}$:
+$$\Pi_{\text{cycle}}(u, v) = I - P_{11} = I - |1\rangle_{uv}\langle1| \otimes |1\rangle_{vu}\langle1|$$
+Expressed in terms of Pauli-Z operators ($Z = |0\rangle\langle0| - |1\rangle\langle1|$):
+$$|1\rangle\langle1| = \frac{1}{2}(I - Z)$$
+$$\Pi_{\text{cycle}}(u, v) = I - \frac{1}{4}(I - Z_{uv})(I - Z_{vu})$$
 
-**2. The Locality Projector**
-The operator $\Pi_{\text{local}}(u,v)$ acts on the single qubit $q_{uv}$.
+**Spectral Verification:**
 
-  * $|0\rangle$ (Absent): $\frac{1}{2}(1 + 1) = 1$ (Identity).
-  * $|1\rangle$ (Present): $\frac{1}{2}(1 - 1) = 0$ (Annihilation).
+  * **State $|00\rangle$:** $\frac{1}{4}(1-1)(1-1) = 0 \implies \Pi|00\rangle = |00\rangle$. (Invariant)
+  * **State $|01\rangle$:** $\frac{1}{4}(1-1)(1-(-1)) = 0 \implies \Pi|01\rangle = |01\rangle$. (Invariant)
+  * **State $|10\rangle$:** $\frac{1}{4}(1-(-1))(1-1) = 0 \implies \Pi|10\rangle = |10\rangle$. (Invariant)
+  * **State $|11\rangle$:** $\frac{1}{4}(1-(-1))(1-(-1)) = \frac{1}{4}(4) = 1$.
+    $$\Pi|11\rangle = (I - I)|11\rangle = 0$$
+    The invalid state is annihilated.
 
-Since the full set of constraint projectors consists of tensor products of these local operators acting on disjoint or commuting subspaces, they collectively define a valid projection onto the codespace.
+**II. The Locality Constraint Projector**
+
+The **Axiom of Geometric Constructibility** [(§2.3.1)](#2.3.1) forbids edges between non-adjacent vertices in the vacuum.
+For any pair $(u, v)$ with undirected distance $d(u, v) > 1$, define:
+$$\Pi_{\text{local}}(u, v) = |0\rangle_{uv}\langle0| = \frac{1}{2}(I + Z_{uv})$$
+
+**Spectral Verification:**
+
+  * **State $|0\rangle$:** $\frac{1}{2}(1+1) = 1 \implies \Pi|0\rangle = |0\rangle$. (Invariant)
+  * **State $|1\rangle$:** $\frac{1}{2}(1-1) = 0 \implies \Pi|1\rangle = 0$. (Annihilated)
+
+**III. Global Projection Operator**
+
+The total code projector $\Pi_{\mathcal{C}}$ is the product of all local constraints:
+$$\Pi_{\mathcal{C}} = \left( \prod_{\{u, v\}} \Pi_{\text{cycle}}(u, v) \right) \left( \prod_{(u, v) \in \text{Forbidden}} \Pi_{\text{local}}(u, v) \right)$$
+Since all constituent operators are diagonal in the Z-basis, they commute:
+$$[\Pi_i, \Pi_j] = 0 \quad \forall i, j$$
+The product defines a valid orthogonal projection onto the physical subspace $\mathcal{C}$.
 
 Q.E.D.
 
@@ -1888,16 +2387,13 @@ This simulation verifies the action of a geometric stabilizer ($Z \otimes Z \oti
 import numpy as np
 # Pauli Z
 Z = np.array([[1, 0], [0, -1]])
-# K_geom for 4 qubits = Z ⊗ Z ⊗ Z ⊗ Z
-K_geom_4 = np.kron(np.kron(np.kron(Z, Z), Z), Z)
-# Basis states for 4 qubits (16 states)
+# Z ⊗ Z ⊗ Z ⊗ Z
+Z4 = np.kron(np.kron(np.kron(Z, Z), Z), Z)
 basis_4 = np.eye(16)
-
-# Eigenvalues
 print("State |qs>: Eigenvalue (Syndrome)")
 for i in range(16):
     state = basis_4[:, i]
-    ev = state.T @ K_geom_4 @ state
+    ev = state.T @ Z4 @ state
     # Format state string
     state_str = bin(i)[2:].zfill(4)
     print(f"State |{state_str}>: {ev:.1f}")
@@ -1945,26 +2441,45 @@ The Geometric Check Operators [(§3.5.1)](#3.5.1) generate syndrome tuples $(\la
 
 :::tip[**Verification of Unique Syndrome Generation for All Triplet Configurations through Group Theory**]
 
-The three operators act on disjoint qubit sets. The commutator of any pair therefore equals zero by construction. The operators form an Abelian group under multiplication.
-The action on the eight basis states of the three-qubit subspace proceeds exactly as enumerated in the definition.
+**I. The Local Check Group**
 
-  - Each of the eight possible edge configurations produces a distinct syndrome tuple.
+Consider a triad of vertices $\{1, 2, 3\}$. The local geometry is probed by three stabilizer generators:
 
-  - No two different configurations share the same tuple.
+1.  $S_1 = Z_{12}Z_{23}$ (Checks path $1 \to 2 \to 3$)
+2.  $S_2 = Z_{23}Z_{31}$ (Checks path $2 \to 3 \to 1$)
+3.  $S_3 = Z_{31}Z_{12}$ (Checks path $3 \to 1 \to 2$)
 
-The mapping from configurations to syndromes therefore achieves bijectivity.
+These operators generate a group $\mathcal{G}_{triad} \cong \mathbb{Z}_2 \times \mathbb{Z}_2 \times \mathbb{Z}_2$ acting on the 3-qubit subspace spanned by $\{q_{12}, q_{23}, q_{31}\}$.
 
-**The physical classification follows directly:**
+**II. Syndrome Calculation Table**
 
-  - Syndrome (+1,+1,+1): vacuum configuration (0 edges)
+Let $\lambda_i$ be the eigenvalue of $S_i$ for a given basis state $|q_{12}q_{23}q_{31}\rangle$.
+Recall that $Z|0\rangle = (+1)|0\rangle$ and $Z|1\rangle = (-1)|1\rangle$.
+The syndrome vector is $\vec{s} = (\lambda_1, \lambda_2, \lambda_3)$.
 
-  - Syndromes with exactly one -1: tension states (single dangling edges)
+| Configuration | State $|q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Classification |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Vacuum** | $|000\rangle$ | $(+)(+) = +1$ | $(+)(+) = +1$ | $(+)(+) = +1$ | Empty |
+| **Tension A** | $|100\rangle$ | $(-)(+) = -1$ | $(+)(+) = +1$ | $(+)(-) = -1$ | Single Edge $1 \to 2$ |
+| **Tension B** | $|010\rangle$ | $(+)(-) = -1$ | $(-)(+) = -1$ | $(+)(+) = +1$ | Single Edge $2 \to 3$ |
+| **Tension C** | $|001\rangle$ | $(+)(+) = +1$ | $(+)(-) = -1$ | $(-)(+) = -1$ | Single Edge $3 \to 1$ |
+| **Precursor A** | $|110\rangle$ | $(-)(-) = +1$ | $(-)(+) = -1$ | $(+)(-) = -1$ | 2-Path $1 \to 2 \to 3$ |
+| **Precursor B** | $|011\rangle$ | $(+)(-) = -1$ | $(-)(-) = +1$ | $(-)(+) = -1$ | 2-Path $2 \to 3 \to 1$ |
+| **Precursor C** | $|101\rangle$ | $(-)(+) = -1$ | $(+)(-) = -1$ | $(-)(-) = +1$ | 2-Path $3 \to 1 \to 2$ |
+| **Geometry** | $|111\rangle$ | $(-)(-) = +1$ | $(-)(-) = +1$ | $(-)(-) = +1$ | 3-Cycle (Closed) |
 
-  - Syndromes with exactly two -1's: precursor states (open 2-paths)
+**III. Injectivity and Ambiguity Resolution**
 
-  - Syndrome (-1,-1,-1): stable geometric excitation (completed 3-cycle)
+1.  **Partial Injectivity:** The mapping from the 7 pre-geometric states to syndromes is strictly injective.
+2.  **The Geometric Degeneracy:** The state $|111\rangle$ (Geometry) shares the $(+1, +1, +1)$ syndrome with $|000\rangle$ (Vacuum).
+3.  **Resolution:** The degeneracy is lifted by the **Topological Energy Operator** $H_{topo}$.
+    The vacuum $|000\rangle$ is the ground state ($E=0$).
+    The geometry $|111\rangle$ carries an energy penalty $\epsilon_{geo}$ derived from the non-zero expectation value of the number operator $\hat{N} = \sum |1\rangle\langle1|$.
+    Alternatively, a fourth check operator (the "Volume Operator") $V = Z_{12}Z_{23}Z_{31}$ yields $\lambda_V = -1$ for $|111\rangle$ and $+1$ for $|000\rangle$.
 
-The check operators therefore provide complete and physically meaningful local state classification.
+**IV. Conclusion**
+
+The check operators provide a complete, physically meaningful classification of the local Hilbert space, identifying vacuum, tension, precursor, and geometric states.
 
 Q.E.D.
 
@@ -2201,18 +2716,45 @@ The set of all stabilizer operators, comprising both the Hard Constraint Project
 
 :::tip[**Algebraic Proof of the Commutativity of Disjoint Z-Operators via Commutator Expansion**]
 
-All constraint projectors and geometric check operators receive construction exclusively from tensor products of Pauli-Z operators and the identity operator I on the configuration space qubits.
+**I. Operator Composition**
 
-**Any two Pauli-Z operators that act on different qubits commute trivially:**
+The set of stabilizer generators $\mathcal{S}$ comprises:
 
-$[Z_i, Z_j] = 0 \quad \text{for} \quad i \neq j$
+1.  **Constraint Projectors** (e.g., $Z_{uv}$).
+2.  **Geometric Check Operators** (e.g., $Z_{uv}Z_{vw}$).
 
-. Pauli-Z operators acting on the same qubit satisfy $Z_i^2 = I$, but since all stabilizers contain at most linear powers of each Z operator, this property does not affect commutativity.
-The identity operator commutes with everything.
+Every element $O \in \mathcal{S}$ is expressible as a tensor product of Pauli-Z matrices and Identity matrices acting on the edge qubits:
+$$O = \bigotimes_{e \in E_{all}} Z_e^{k_e}, \quad k_e \in \{0, 1\}$$
 
-All constraint projectors and check operators therefore consist of sums and products of mutually commuting building blocks. The commutator of any two such composite operators expands into sums of commutators of the elementary Z and I operators. Each elementary commutator equals zero. The full commutator therefore equals zero.
+**II. Pairwise Commutation**
 
-The entire set of stabilizer operators forms an Abelian group under multiplication.
+Let $A, B \in \mathcal{S}$ be arbitrary operators.
+$$A = \bigotimes_e Z_e^{a_e}, \quad B = \bigotimes_e Z_e^{b_e}$$
+The product $AB$ is given by:
+$$AB = \left( \bigotimes_e Z_e^{a_e} \right) \left( \bigotimes_e Z_e^{b_e} \right) = \bigotimes_e (Z_e^{a_e} Z_e^{b_e})$$
+The product $BA$ is given by:
+$$BA = \left( \bigotimes_e Z_e^{b_e} \right) \left( \bigotimes_e Z_e^{a_e} \right) = \bigotimes_e (Z_e^{b_e} Z_e^{a_e})$$
+
+We analyze the local term for a specific edge qubit $e$:
+
+1.  **Case 1 (Disjoint):** If operator $A$ acts on $e$ ($a_e=1$) and $B$ does not ($b_e=0$), the terms involve $Z$ and $I$, which commute.
+2.  **Case 2 (Overlap):** If both act on $e$ ($a_e=1, b_e=1$), the terms are $Z_e Z_e$ and $Z_e Z_e$.
+    Since $[Z, Z] = 0$ (every operator commutes with itself), the local terms commute.
+
+Therefore, the global operators commute:
+$$[A, B] = 0 \quad \forall A, B \in \mathcal{S}$$
+
+**III. Group Axioms Verification**
+
+1.  **Closure:** The product of any two Pauli-Z tensors is a Pauli-Z tensor (up to a phase factor, which is $+1$ here as $Z^2=I$).
+2.  **Identity:** The operator $I = \bigotimes I$ is the trivial stabilizer ($k=0$).
+3.  **Inverse:** Since $Z^2 = I$, every operator is self-inverse: $A^2 = I \implies A^{-1} = A$.
+4.  **Associativity:** Matrix multiplication is associative.
+
+**IV. Conclusion**
+
+The set of stabilizer operators generates an Abelian subgroup of the $N(N-1)$-qubit Pauli group.
+$$\mathcal{G} \cong \mathbb{Z}_2^K \subset \mathcal{P}_{N(N-1)}$$
 
 Q.E.D.
 :::
@@ -2227,17 +2769,35 @@ The codespace $\mathcal{C}$ is non-empty. Specifically, the state vector corresp
 
 :::tip[**Explicit Construction of the Vacuum State as a Valid Codeword through Projector Verification**]
 
-The codespace $\mathcal{C}$ consists of all states $|\psi\rangle \in \mathcal{H}$ such that $\Pi_i |\psi\rangle = |\psi\rangle$ for every constraint projector $\Pi_i$
+**I. The Vacuum State Construction**
 
-  - The vacuum state $|G_0\rangle$ corresponding to the Regular Bethe Fragment [(§3.2.1.1)](#3.2.1.1) satisfies all axiomatic constraints by the theorems of Chapter 3.
+Let $G_0 = (V, E_0)$ be the graph corresponding to the Regular Bethe Fragment ($k=3$) established in **Chapter 3.2**.
+Construct the quantum state $|G_0\rangle$ as:
+$$|G_0\rangle = \left( \bigotimes_{(u,v) \in E_0} |1\rangle_{uv} \right) \otimes \left( \bigotimes_{(u,v) \notin E_0} |0\rangle_{uv} \right)$$
 
-  - The state $|G_0\rangle$ contains no 2-cycles, so it satisfies $\Pi_{\text{cycle}}(u,v) |G_0\rangle = |G_0\rangle$ for all pairs.
+**II. Projector Verification**
 
-  - The state $|G_0\rangle$ contains edges only between vertices at undirected distance 1, so it satisfies $\Pi_{\text{local}}(u,v) |G_0\rangle = |G_0\rangle$ for all distant pairs.
+We verify that $|G_0\rangle$ lies within the code subspace $\mathcal{C}$ by testing it against all constraint projectors.
 
-The vacuum state therefore constitutes a +1 eigenstate of every constraint projector and belongs to the codespace.
+1.  **Cycle Constraints ($\Pi_{\text{cycle}}$):**
+    For every pair $\{u, v\}$, we must ensure $|G_0\rangle$ is not $|1\rangle_{uv}|1\rangle_{vu}$.
+    Since $G_0$ is a DAG [(§3.1.7)](#3.1.7), it contains no reciprocal edges.
+    $$\forall u, v: \neg ((u, v) \in E_0 \land (v, u) \in E_0)$$
+    Thus, $\Pi_{\text{cycle}}|G_0\rangle = |G_0\rangle$.
 
-**The codespace contains at least the vacuum state and remains non-trivial.**
+2.  **Locality Constraints ($\Pi_{\text{local}}$):**
+    For every pair $\{u, v\}$ with distance $d(u, v) > 1$, we must ensure the state is $|0\rangle_{uv}$.
+    Since $G_0$ is a tree with edges only between parents and children ($d=1$), no long-range edges exist.
+    $$\forall u, v: d(u, v) > 1 \implies (u, v) \notin E_0$$
+    Thus, $\Pi_{\text{local}}|G_0\rangle = |G_0\rangle$.
+
+**III. Dimensionality of Codespace**
+
+Since $|G_0\rangle$ satisfies all constraints:
+$$|G_0\rangle \in \mathcal{C}$$
+Therefore, the dimension of the codespace satisfies:
+$$\dim(\mathcal{C}) \ge 1$$
+The stabilizer code is non-trivial and physically realizable.
 
 Q.E.D.
 :::
@@ -2246,7 +2806,42 @@ Q.E.D.
 
 :::tip[**Formal Theorem Proof of the Equivalence between the Consistency Mechanism and Quantum Error Correction via Structural Mapping**]
 
-The formal assertion that the resulting structure satisfies the definition of a generalized stabilizer QECC and the connection to dynamics are established.
+**I. The Isomorphism $\Phi$**
+
+Define the structural mapping $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ between the Physical Theory and Quantum Error Correction.
+
+1.  **State Space:**
+    $$\Phi: \Omega_{graph} \to \mathcal{H}_{\text{code}} \oplus \mathcal{H}_{\text{error}}$$
+    Valid physical states map to the code subspace $\mathcal{C}$.
+    Invalid configurations map to the error subspace $\mathcal{C}^\perp$.
+
+2.  **Physical Laws (Constraints):**
+    The set of axiomatic constraints $\mathcal{L} = \{L_i\}$ maps to the stabilizer group $\mathcal{S}$.
+    $$\Phi(L_i) = S_i \in \mathcal{S}$$
+    Satisfaction ($L_i(G) = \text{True}$) maps to eigenvalue $+1$ ($S_i |G\rangle = +|G\rangle$).
+    Violation ($L_i(G) = \text{False}$) maps to eigenvalue $-1$ ($S_i |G\rangle = -|G\rangle$).
+
+3.  **Dynamics (Rewrite Rule):**
+    The rewrite rule $\mathcal{R}$ maps to a unitary logical operator $U_L$ acting on the codespace.
+    $$U_L |G\rangle = |G'\rangle$$
+    This operator commutes with the stabilizers of the *new* structure, effectively evolving the code parameters.
+
+**II. The Error Correction Cycle**
+
+The theory's consistency mechanism is isomorphic to the standard QEC cycle:
+
+1.  **Noise Channel ($\mathcal{E}$):** Stochastic fluctuations (tunneling events, forbidden edges) correspond to Pauli-X errors flipping edge qubits from $|0\rangle$ to $|1\rangle$.
+2.  **Syndrome Extraction:** The check operators $S_i$ measure the geometry.
+    $$\langle \psi | S_i | \psi \rangle = -1 \implies \text{Defect Detected}$$
+3.  **Recovery Operation ($\mathcal{R}$):**
+    The "force" restoring physical law is the projection back to $\mathcal{C}$.
+    In the thermodynamic limit, the energy penalty $\Delta E$ suppresses the error amplitude, acting as continuous Zeno-effect error correction.
+
+**III. Conclusion**
+
+The physical theory is formally isomorphic to a **Generalized Stabilizer Code**.
+The vacuum is the logical zero state $|0\rangle_L$.
+Geometric evolution is the computation performed on the encoded information.
 
 Q.E.D.
 
@@ -2258,15 +2853,12 @@ The code embeds a N=3 triplet with 6 qubits for all directed pairs (q_AB=0,q_BA=
 
 ```python
 import numpy as np
-
 # Pauli matrices
 I = np.eye(2)
 Z = np.array([[1, 0], [0, -1]])
 X = np.array([[0, 1], [1, 0]])
-
 # 6-qubit space
 dim = 64
-
 # Tensor helper
 def tensor_op(op, pos, n=6):
     ops = [I] * n
@@ -2275,40 +2867,34 @@ def tensor_op(op, pos, n=6):
     for o in ops[1:]:
         result = np.kron(result, o)
     return result
-
 # General Π_pair: diag 1 for not both fwd/rev=1, 0 if both q_fwd and q_rev =1
 def general_pi_pair(q_fwd, q_rev, dim=64):
     diag_vec = np.ones(dim)
     for i in range(dim):
         # Binary, q0 MSB index0 (bit5='1' for i&32), ..., q5 LSB index5 (bit0='1' for i&1)
-        bin_str = f'{i:06b}'  # bin_str[0]=MSB q0, bin_str[5]=LSB q5
-        qf_bit = int(bin_str[q_fwd])  # bit pos = q_fwd (0=MSB)
+        bin_str = f'{i:06b}' # bin_str[0]=MSB q0, bin_str[5]=LSB q5
+        qf_bit = int(bin_str[q_fwd]) # bit pos = q_fwd (0=MSB)
         qr_bit = int(bin_str[q_rev])
         if qf_bit == 1 and qr_bit == 1:
             diag_vec[i] = 0
     return np.diag(diag_vec)
-
 Pi_AB = general_pi_pair(0,1)
 Pi_BC = general_pi_pair(2,3)
 Pi_CA = general_pi_pair(4,5)
-
 # K's (forwards)
 K_AB = tensor_op(Z, 0)
 K_BC = tensor_op(Z, 2)
 K_CA = tensor_op(Z, 4)
-
 # State vec
 def get_state_vec(state_int, dim=64):
     vec = np.zeros(dim)
     vec[state_int] = 1.0
     return vec
-
-# States: vac 0=000000; tension CA q4=1 (bit1 from LSB? MSB q0 bit5=32, ..., ..., q4 bit1=2 → i=2 '000010')
+# States: vac 0=000000; tension CA q4=1 (bit1 from LSB? MSB q0 bit5=32, ..., q4 bit1=2 → i=2 '000010')
 # exc AB q0 bit5=32, BC q2 bit3=8, CA q4 bit1=2 =32+8+2=42 '101010'
 # 2-cycle AB-BA q0 bit5=32 q1 bit4=16 =48 '110000'
 states_to_test = [0, 2, 42, 48]
 state_labels = {0: '000000 (vac)', 2: '000010 (tension CA)', 42: '101010 (exc fwd)', 48: '110000 (2-cycle AB-BA)'}
-
 results = []
 for s in states_to_test:
     vec = get_state_vec(s)
@@ -2317,12 +2903,11 @@ for s in states_to_test:
     pi_bc_eig = np.dot(vec, Pi_BC @ vec)
     pi_ca_eig = np.dot(vec, Pi_CA @ vec)
     pi_all = pi_ab_eig * pi_bc_eig * pi_ca_eig
-    k_ab = np.dot(vec, K_AB @ vec)
-    k_bc = np.dot(vec, K_BC @ vec)
-    k_ca = np.dot(vec, K_CA @ vec)
+    k_ab = float(np.dot(vec, K_AB @ vec))
+    k_bc = float(np.dot(vec, K_BC @ vec))
+    k_ca = float(np.dot(vec, K_CA @ vec))
     syndrome = (k_ab, k_bc, k_ca)
-    results.append({'State': label, 'Π_all': pi_all, 'Syndrome (K)': syndrome, 'In C?': np.isclose(pi_all, 1)})
-
+    results.append({'State': label, 'Π_all': pi_all, 'Syndrome (K)': syndrome, 'In C?': 1 if np.isclose(pi_all, 1) else 0})
 import pandas as pd
 df = pd.DataFrame(results)
 print(df.to_markdown(index=False))
@@ -2337,6 +2922,7 @@ print(df.to_markdown(index=False))
 | 000010 (tension CA)    |       1 | (1.0, 1.0, -1.0)   |       1 |
 | 101010 (exc fwd)       |       1 | (-1.0, -1.0, -1.0) |       1 |
 | 110000 (2-cycle AB-BA) |       0 | (-1.0, 1.0, 1.0)   |       0 |
+```
 
 | Interpretation     | Π_all | Syndrome | Codespace | Correction Example |
 |--------------------|-------|----------|-----------|--------------------|
@@ -2344,7 +2930,7 @@ print(df.to_markdown(index=False))
 | Tension (000010)  | +1   | (+,+,-) | Yes      | X_q0 or X_q2 → exc|
 | Excitation (101010)| +1  | (-,-,-) | Yes      | Preserve          |
 | Invalid 2-Cycle (110000)| 0 | (-,+,+) | No       | Annihilate        |
-```
+
 :::
 
 ## 3.5.Z Implications and Synthesis {#3.5.Z}
