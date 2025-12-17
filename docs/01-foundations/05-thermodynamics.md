@@ -45,10 +45,9 @@ $$
 I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
 $$
 
-where $\xi$ is the finite **Correlation Length** [(§5.1.3)](#5.1.3) and $K$ is a normalization constant. In the asymptotic limit $d(R_A, R_B) \gg \xi$, the joint configuration space factorizes as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ [**(Witten, 1989)**](/monograph/appendices/a-references#A.70).
+where $\xi$ is the finite **Correlation Length** [(§5.1.3)](#5.1.3) and $K$ is a normalization constant. In the asymptotic limit $d(R_A, R_B) \gg \xi$, the joint configuration space factorizes as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$.
 
-### 5.1.2 Theorem: Extensive Entropy {#5.1.2}
-
+### 5.1.2 Theorem: Extensive Entropy
 Let $\Omega_N$ denote the cardinality of the set of all axiomatically compliant causal graphs on $N$ vertices. It is asserted that the system exhibits **Extensive Entropy**, defined by the asymptotic scaling law of the total entropy $S(N) \equiv \ln \Omega_N$:
 
 $$
@@ -99,7 +98,7 @@ $$
 P(u \leftrightarrow v) \sim (d_{\max} \rho)^r
 $$
 
-Within the **Sparse Phase**, where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length is finite: $\xi = -1 / \ln(d_{\max} \rho)$. Consequently, the Mutual Information satisfies $I(R_i; R_j) \to 0$ for distances greater than $\xi$, validating the mean-field approximation for macroscopic dynamics [**(Jost & Liu, 2016)**](/monograph/appendices/a-references#A.37).
+Within the **Sparse Phase**, where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length is finite: $\xi = -1 / \ln(d_{\max} \rho)$. Consequently, the Mutual Information satisfies $I(R_i; R_j) \to 0$ for distances greater than $\xi$, validating the mean-field approximation for macroscopic dynamics.
 
 ### 5.1.3.1 Proof: Exponential Decay {#5.1.3.1}
 
@@ -323,7 +322,7 @@ $$
 \frac{dN_3}{dt} = J_{in} - J_{out}
 $$
 1.  **Creation Flux ($J_{in}$):** The rate of nucleation for new 3-Cycles via the closure of compliant 2-Path precursors. This process acts as the generative drive of the manifold.
-2.  **Deletion Flux ($J_{out}$):** The rate of dissolution for existing 3-Cycles into the vacuum. This process acts as the entropic restoring force [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.28).
+2.  **Deletion Flux ($J_{out}$):** The rate of dissolution for existing 3-Cycles into the vacuum. This process acts as the entropic restoring force.
 
 ### 5.2.1.1 Commentary: The Dynamics of Information {#5.2.1.1}
 
@@ -347,7 +346,7 @@ $$
 The terms are defined as follows:
 * **$9\rho^2$:** The combinatorial density of compliant 2-path precursors [(§5.2.3)](#5.2.3).
 * **$e^{-6\mu\rho}$:** The frictional suppression factor arising from local steric hindrance [(§5.2.4)](#5.2.4).
-* **$\frac{1}{2}\rho$:** The independent entropic decay rate [(§5.2.5)](#5.2.5) [**(Bollobás, 2001)**](/monograph/appendices/a-references#A.15).
+* **$\frac{1}{2}\rho$:** The independent entropic decay rate [(§5.2.5)](#5.2.5).
 
 ### 5.2.2.1 Commentary: Anatomy of the Equation {#5.2.2.1}
 
@@ -441,7 +440,7 @@ A $2$-path originates at a vertex $v$ if $v$ connects to $w$ and $w$ connects to
 The Creation Flux is modulated by the probability that a proposed edge addition survives the Acyclic Pre-Check [(§4.5.1)](dynamics#4.5.1). This probability decays exponentially with the local stress density. For an edge connecting two vertices in a trivalent network, the effective **Interaction Volume** involved in the check is $V_{int} = 6$. The suppression factor is formally derived as:
 $$
 \chi(\rho) \approx \exp(-\mu \cdot V_{int} \cdot \rho) = \exp(-6 \mu \rho)
-$$ [**(van Kampen, 1992)**](/monograph/appendices/a-references#A.64).
+$$
 
 ### 5.2.4.1 Proof: Friction Derivation {#5.2.4.1}
 
@@ -675,7 +674,7 @@ Let $\rho(t)$ denote the time-dependent cycle density of a causal graph simulati
 
 1.  **Ignition:** The system must strictly avoid the trivial vacuum state for all times post-nucleation. Formally, $\langle \rho(t) \rangle > 0$ for all $t > 0$.
 2.  **Sparsity:** The asymptotic density must remain bounded below the percolation threshold. Formally, $\lim_{t \to \infty} \langle \rho(t) \rangle < 0.10$.
-3.  **Stability:** The variance of the density over the equilibrium window $[t_{eq}, \infty)$ must be bounded by Poisson statistics. Formally, $\text{Var}(\rho) \approx \langle \rho \rangle / N$, excluding regimes of chaotic oscillation or metastable trapping [**(Erdős & Rényi, 1960)**](/monograph/appendices/a-references#A.25).
+3.  **Stability:** The variance of the density over the equilibrium window $[t_{eq}, \infty)$ must be bounded by Poisson statistics. Formally, $\text{Var}(\rho) \approx \langle \rho \rangle / N$, excluding regimes of chaotic oscillation or metastable trapping.
 
 ### 5.3.1.1 Commentary: The Goldilocks Zone of Connectivity {#5.3.1.1}
 
@@ -808,7 +807,7 @@ The Region of Physical Viability forms a contiguous, oblique band in the $(\mu, 
 
 1.  **Lower Bound ($\mu < 0.30$):** The system freezes. Insufficient friction allows the graph to "overheat" initially, triggering a global Acyclic Pre-Check failure that halts dynamics.
 2.  **Upper Bound ($\mu > 0.50$):** The system saturates. Excessive friction dampens creation so heavily that the density never rises above the noise floor.
-3.  **The Channel:** Between these extremes exists a stable regime where $\rho^* \approx 0.03$. The width of this channel ($\Delta \mu \approx 0.15, \Delta \lambda \approx 1.1$) indicates that the universe is robust against small parameter fluctuations but requires specific tuning to exist [**(Wolfram, 2002)**](/monograph/appendices/a-references#A.72).
+3.  **The Channel:** Between these extremes exists a stable regime where $\rho^* \approx 0.03$. The width of this channel ($\Delta \mu \approx 0.15, \Delta \lambda \approx 1.1$) indicates that the universe is robust against small parameter fluctuations but requires specific tuning to exist.
 
 ### 5.3.4.1 Commentary: Robustness and Fine-Tuning {#5.3.4.1}
 
@@ -988,7 +987,7 @@ Conversely; Axiom $1$ (Causality) necessitates $\lambda_{\text{cat}} > 0$. Witho
 
 :::info[**Existence and Attractor Nature of the Equilibrium Density**]
 
-Given parameters satisfying the Friction Bounds [(§5.4.2)](#5.4.2) and Catalysis Bounds [(§5.4.3)](#5.4.3), the dynamical system admits a unique, non-zero equilibrium density $\rho^*$. This fixed point is asymptotically stable, characterized by a strictly negative Jacobian eigenvalue $J < 0$ at $\rho^*$, ensuring the exponential decay of small density perturbations and the robustness of the geometric vacuum [**(Ollivier, 2009)**](/monograph/appendices/a-references#A.45).
+Given parameters satisfying the Friction Bounds [(§5.4.2)](#5.4.2) and Catalysis Bounds [(§5.4.3)](#5.4.3), the dynamical system admits a unique, non-zero equilibrium density $\rho^*$. This fixed point is asymptotically stable, characterized by a strictly negative Jacobian eigenvalue $J < 0$ at $\rho^*$, ensuring the exponential decay of small density perturbations and the robustness of the geometric vacuum.
 
 ### 5.4.4.1 Proof: Stability Analysis {#5.4.4.1}
 
@@ -1081,18 +1080,18 @@ It is asserted that the sequence of discrete causal graphs $\{G_t\}$ generated b
 2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ [(§5.5.4)](#5.5.4).
 3.  **Statistical Homogeneity:** Exponential decay of geometric correlations [(§5.5.5)](#5.5.5).
 4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible cycles [(§5.5.6)](#5.5.6).
-5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow [(§5.5.7)](#5.5.7) [**(Cheeger, Colding, & Tian, 1997)**](/monograph/appendices/a-references#A.19).
+5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow [(§5.5.7)](#5.5.7).
 
 ### 5.5.1.1 Commentary: Logic of Geometric Hypotheses {#5.5.1.1}
 
 :::tip[**Sequential Verification of Regularity Conditions**]
 
-The argument proceeds through through a systematic verification of five interdependent preconditions, demonstrating that the discrete graph naturally evolves toward a structure compatible with a continuous manifold.
+The argument proceeds through a systematic verification of five interdependent preconditions, demonstrating that the discrete graph naturally evolves toward a structure compatible with a smooth manifold.
 
 1.  **The Metric Basis (Strict Locality):** The argument enforces that no direct edges span a distance greater than 2 in the undirected metric. The **Path Uniqueness** constraint makes non-local links topologically impossible, ensuring the graph's connectivity remains short-range and amenable to local curvature approximations.
 2.  **The Kinematic Stability (Bounded Degree):** The argument proves that the mean degree $\langle k \rangle$ converges to a finite fixed point $\langle k \rangle^* = O(1)$. This prevents the formation of "hubs" (infinite degree nodes) which would violate the local Euclidean structure of a manifold.
 3.  **The Smoothness (Uniform Curvature):** The argument establishes bounds on the **Causal Ollivier-Ricci Curvature**. With the diameter of local neighborhoods strictly bounded by the axioms, the transport distance for curvature calculation is capped, yielding a uniform bound $|K| \leq 2$.
-4.  **The Homogeneity (Correlation Decay):** The synthesis of locality and stability proves that the covariance of geometric observables decays exponentially. This **Self-Averaging** property allows the discrete graph to approximate a continuous field at continuous scales.
+4.  **The Homogeneity (Correlation Decay):** The synthesis of locality and stability proves that the covariance of geometric observables decays exponentially. This **Self-Averaging** property allows the discrete graph to approximate a continuous field at macroscopic scales.
 5.  **The Dimensionality (Ahlfors 4-Regularity):** The argument culminates in the derivation of the Hausdorff dimension. It argues that $d=4$ is the unique fixed point in the Renormalization Group flow where the boundary-scaling creation ($r^{d-1}$) precisely balances the bulk-scaling deletion ($r^d$).
 :::
 
@@ -1244,7 +1243,7 @@ There exists a constant $C_1 > 0$ such that for all graphs $G_t$ in the equilibr
 $$
 |K(u, v)| \leq C_1
 $$
-where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for the emergence of a smooth curvature tensor [**(Ollivier, 2009)**](/monograph/appendices/a-references#A.45).
+where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for the emergence of a smooth curvature tensor.
 
 ### 5.5.4.1 Proof: Curvature Bounds {#5.5.4.1}
 
@@ -1306,7 +1305,7 @@ By rigorously bounding the maximum degree and enforcing strict locality; we limi
 Let $f(x)$ denote a local geometric observable at vertex $x$ depending solely on a fixed-radius neighborhood. For any vertices $x, y \in V_t$, there exist constants $C_{\text{cov}} > 0$ and $\gamma > 0$ such that the covariance decays exponentially with distance:
 $$
 |\text{Cov}(f(x), f(y))| \leq C_{\text{cov}} \cdot \exp(-\gamma \cdot \bar{d}(x, y))
-$$ [**(Calder & García Trillos, 2022)**](/monograph/appendices/a-references#A.18).
+$$
 
 ### 5.5.5.1 Proof: Decay Verification {#5.5.5.1}
 
@@ -1423,7 +1422,7 @@ Let $C_k$ denote the random variable counting simple directed cycles of length $
 $$
 \mathbb{E}[C_k] \leq N_t \cdot (D_{\max} \cdot p_{\max})^k
 $$
-Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$, suppressing non-local topology [**(Bollobás, 2001)**](/monograph/appendices/a-references#A.15).
+Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$, suppressing non-local topology.
 
 ### 5.5.6.2 Proof: Topology Suppression {#5.5.6.2}
 
@@ -1487,7 +1486,7 @@ The sequence of equilibrium graphs satisfies the Ahlfors 4-Regularity condition.
 $$
 c_1 r^4 \leq |B(v, r)| \leq c_2 r^4
 $$
-This dimensionality arises because $d=4$ is the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow [**(Wilson, 1975)**](/monograph/appendices/a-references#A.69).
+This dimensionality arises because $d=4$ is the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow.
 
 ### 5.5.7.1 Proof: Dimensionality Verification {#5.5.7.1}
 
@@ -1598,7 +1597,7 @@ Q.E.D.
 
 :::note[**Geometric Stabilization**]
 
-Well-posedness solidifies through the chained lemmas. Locality confines connections to spans of two via the path uniqueness rule and triangle inequality. Degrees limit branching to finite $D_{\max}$ from the frictional balance. Curvatures bound $|K| \leq 2$ from Wasserstein diameters at three. Correlations decay exponentially yielding self-averaging homogeneity. Ahlfors $4$-regularity fixes the Hausdorff dimension at four via the marginal stability of the renormalization group flow. We have effectively proven that the "pixels" of our universe are fine enough and regular enough to form a smooth picture.
+Well-posedness solidifies through the chained lemmas. Locality confines connections to spans of two via the path uniqueness rule and triangle inequality. Degrees limit branching to finite $D_{\max}$ from the frictional balance. Curvatures bound $|K| \leq 2$ from Wasserstein diameters. Correlations decay exponentially yielding self-averaging homogeneity. Ahlfors $4$-regularity fixes the Hausdorff dimension at four via the marginal stability of the renormalization group flow. We have effectively proven that the "pixels" of our universe are fine enough and regular enough to form a smooth picture.
 
 We have verified the preconditions. The graphs at equilibrium converge to a Lorentzian manifold without singularities or anomalous scalings. The discrete causal clamps yield continuous geometry through these layered bounds. The genesis rounds complete; entropy volumes the possibilities, the master equation balances the flux, sweeps map the viable channel, and geometry mends the mesh to a manifold. The stage is set.
 :::
