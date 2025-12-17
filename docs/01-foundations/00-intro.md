@@ -716,25 +716,26 @@ In the Newtonian and Einsteinian paradigms, the universe was governed by differe
 Hilbert’s Dream Revisited: In 1900, Hilbert wished to axiomatize physics. While his specific continuum-based axioms were superseded, the spirit of his program has returned with a vengeance. Causal Set Theory and “It from Qubit” essentially attempt to find the “machine code” of the universe. The Bekenstein Bound ($ S = A/4 $) acts as a constraint on the memory capacity of the universe, much like a hard drive limit. This implies the universe has a finite computational capacity.
 
 ```text
-+======================================================================+
-|             THE PARADIGM SHIFT: FROM GEOMETRY TO CODE                |
-+======================================================================+
-| FEATURE          | CLASSICAL / RELATIVISTIC | COMPUTATIONAL / QUANTUM|
-|                  | (The Old "It")           | (The New "Bit")        |
-+------------------+--------------------------+------------------------+
-| FUNDAMENTAL UNIT | Point Mass / Field Value | Qubit / Causal Link    |
-+------------------+--------------------------+------------------------+
-| SUBSTRATE        | Smooth Continuum (R^4)   | Discrete Network(Graph)|
-+------------------+--------------------------+------------------------+
-| DYNAMICS         | Differential Equations   | Algorithms / Rules     |
-+------------------+--------------------------+------------------------+
-| ROLE OF TIME     | Dimension (External)     | Update Step (Internal) |
-+------------------+--------------------------+------------------------+
-| ONTOLOGY         | "View from Nowhere"      | Relational / Observer  |
-|                  | (Objective Reality)      | (Participatory)        |
-+------------------+--------------------------+------------------------+
-| METAPHOR         | The Clockwork / Stage    | The Computer / Network |
-+======================================================================+
+╔══════════════════════════════════════════════════════════════════════╗
+║               SYSTEM UPDATE: ONTOLOGICAL KERNEL CHANGE               ║
+╠══════════════════╦════════════════════════╦══════════════════════════╣
+║ PARAMETER        ║ VERSION 1.0 (Physics)  ║ VERSION 2.0 (Info)       ║
+╠══════════════════╬════════════════════════╬══════════════════════════╣
+║ PRIMITIVE UNIT   ║ Point Mass / Particle  ║ Qubit / Causal Link      ║
+║                  ║ (Hard "Stuff")         ║ (Pure Logic)             ║
+╠══════════════════╬════════════════════════╬══════════════════════════╣
+║ OPERATING SYSTEM ║ Continuum (R⁴)         ║ Discrete Graph (G)       ║
+║                  ║ (Smooth Manifold)      ║ (Network/Lattice)        ║
+╠══════════════════╬════════════════════════╬══════════════════════════╣
+║ DYNAMICS         ║ Differential Equations ║ Algorithms / Rules       ║
+║                  ║ (∂x/∂t)                ║ (If A then B)            ║
+╠══════════════════╬════════════════════════╬══════════════════════════╣
+║ TIME             ║ External Dimension t   ║ Internal Update Step     ║
+║                  ║ (The "Block")          ║ (The "Tick")             ║
+╠══════════════════╬════════════════════════╬══════════════════════════╣
+║ PERSPECTIVE      ║ "View from Nowhere"    ║ Relational / Internal    ║
+║                  ║ (God's Eye)            ║ (The User/Observer)      ║
+╚══════════════════╩════════════════════════╩══════════════════════════╝
 ```
 
 **The End of the “View from Nowhere”**
