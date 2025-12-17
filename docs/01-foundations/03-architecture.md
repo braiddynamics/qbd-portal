@@ -2484,16 +2484,16 @@ Let $\lambda_i$ be the eigenvalue of $S_i$ for a given basis state $|q_{12}q_{23
 Recall that $Z|0\rangle = (+1)|0\rangle$ and $Z|1\rangle = (-1)|1\rangle$.
 The syndrome vector is $\vec{s} = (\lambda_1, \lambda_2, \lambda_3)$.
 
-| Configuration | State $|q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Classification |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Vacuum** | $|000\rangle$ | $(+)(+) = +1$ | $(+)(+) = +1$ | $(+)(+) = +1$ | Empty |
-| **Tension A** | $|100\rangle$ | $(-)(+) = -1$ | $(+)(+) = +1$ | $(+)(-) = -1$ | Single Edge $1 \to 2$ |
-| **Tension B** | $|010\rangle$ | $(+)(-) = -1$ | $(-)(+) = -1$ | $(+)(+) = +1$ | Single Edge $2 \to 3$ |
-| **Tension C** | $|001\rangle$ | $(+)(+) = +1$ | $(+)(-) = -1$ | $(-)(+) = -1$ | Single Edge $3 \to 1$ |
-| **Precursor A** | $|110\rangle$ | $(-)(-) = +1$ | $(-)(+) = -1$ | $(+)(-) = -1$ | 2-Path $1 \to 2 \to 3$ |
-| **Precursor B** | $|011\rangle$ | $(+)(-) = -1$ | $(-)(-) = +1$ | $(-)(+) = -1$ | 2-Path $2 \to 3 \to 1$ |
-| **Precursor C** | $|101\rangle$ | $(-)(+) = -1$ | $(+)(-) = -1$ | $(-)(-) = +1$ | 2-Path $3 \to 1 \to 2$ |
-| **Geometry** | $|111\rangle$ | $(-)(-) = +1$ | $(-)(-) = +1$ | $(-)(-) = +1$ | 3-Cycle (Closed) |
+| Configuration | State $\|q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Classification |
+| --- | --- | --- | --- | --- | --- |
+| **Vacuum** | $\|000\rangle$ | $(+)(+) = +1$ | $(+)(+) = +1$ | $(+)(+) = +1$ | Empty |
+| **Tension A** | $\|100\rangle$ | $(-)(+) = -1$ | $(+)(+) = +1$ | $(+)(-) = -1$ | Single Edge $1 \to 2$ |
+| **Tension B** | $\|010\rangle$ | $(+)(-) = -1$ | $(-)(+) = -1$ | $(+)(+) = +1$ | Single Edge $2 \to 3$ |
+| **Tension C** | $\|001\rangle$ | $(+)(+) = +1$ | $(+)(-) = -1$ | $(-)(+) = -1$ | Single Edge $3 \to 1$ |
+| **Precursor A** | $\|110\rangle$ | $(-)(-) = +1$ | $(-)(+) = -1$ | $(+)(-) = -1$ | 2-Path $1 \to 2 \to 3$ |
+| **Precursor B** | $\|011\rangle$ | $(+)(-) = -1$ | $(-)(-) = +1$ | $(-)(+) = -1$ | 2-Path $2 \to 3 \to 1$ |
+| **Precursor C** | $\|101\rangle$ | $(-)(+) = -1$ | $(+)(-) = -1$ | $(-)(-) = +1$ | 2-Path $3 \to 1 \to 2$ |
+| **Geometry** | $\|111\rangle$ | $(-)(-) = +1$ | $(-)(-) = +1$ | $(-)(-) = +1$ | 3-Cycle (Closed) |
 
 **III. Injectivity and Ambiguity Resolution**
 
