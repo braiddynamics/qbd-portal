@@ -405,7 +405,7 @@ The integer $3$ represents the fundamental topological limit for causal closure.
 
 Structures of length $1$ and $2$ imply logical contradictions within a directed causal framework. As established, the self-loop (length $1$) implies self-creation; a violation of the causal demand for antecedence. The feedback loop (length $2$) implies simultaneity; if $A$ causes $B$ and $B$ causes $A$, the temporal interval between them vanishes, collapsing them into a single event. The $3$-cycle, however, permits feedback (a return to the origin) while preserving local directionality. In the sequence $A \to B \to C \to A$, event $A$ precedes $B$; $B$ precedes $C$; and $C$ precedes $A$. Locally, every link maintains a strict forward orientation in logical time. The paradox of the loop is distributed across three events; creating a structure possessing an "interior" or area rather than a singularity. The triangle functions as the unique topological solution to the problem of creating a closed structure (a persistent object) from directed arrows of influence.
 
-### 2.3.2.3 Diagram: Loop Hierarchy {#2.3.2.1}
+### 2.3.2.3 Diagram: Loop Hierarchy {#2.3.2.3}
 
 :::note[**Hierarchy of Causal Closures illustrating the Transition from Forbidden to Permitted Structures**]
 
@@ -1651,7 +1651,7 @@ Pure Directionality     Loophole for u->u         Thermodynamic Arrow
 
 :::note[**Inadequacy of Local Axioms**]
 
-The effective influence relation [(§2.6.1)](#2.6.1) stands defined through simple paths of length at least 2 with strictly increasing timestamps. This strictness is a necessity proven against non-decreasing allowances, which we show invite symmetric dependencies [(§2.6.3)](#2.6.3) that would destroy the causal order. Yet, under Axioms 1 and 2 alone, this relation falters irreflexively in the 3-cycle [(§2.6.4)](#2.6.4), where the quantum's closure loops back as v \le v. It also falters asymmetrically in timestamped 4- and 5-cycles [(§2.6.5)](#2.6.5), where subpaths enable u \le v and v \le u without overlap.
+The effective influence relation [(§2.6.1)](#2.6.1) stands defined through simple paths of length at least 2 with strictly increasing timestamps. This strictness is a necessity proven against non-decreasing allowances, which we show invite symmetric dependencies [(§2.6.3)](#2.6.3) that would destroy the causal order. Yet, under Axioms 1 and 2 alone, this relation falters irreflexively in the 3-cycle [(§2.6.4)](#2.6.4), where the quantum's closure loops back as $v \le v$. It also falters asymmetrically in timestamped 4- and 5-cycles [(§2.6.5)](#2.6.5), where subpaths enable $u \le v$ and $v \le u$ without overlap.
 
 Physically, these failures mean that mediated causality can recirculate, turning forward chains into hidden engines of stasis or reversal. The arrow of time bends into a circle. The diagnosis clarifies the limit of our current toolkit: local primitives seed structure but breed emergent loops that are blind to their own closure, eroding the partial order essential to becoming. Enforcement thus requires preemptive global prophylaxis, a demand met in the axiom on acyclic effective causality, where thermodynamics routes the fix through local sieves to prevent the universe from eating its own tail.
 :::
@@ -2064,3 +2064,5 @@ This triad delimits the task space, with independence ([§2.5.1](#2.5.1); [§2.7
 | $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.7.4](#2.7.4) |
 | $E_{sync}$ | Energy required for global synchronization | [§2.7.5](#2.7.5) |
 | $D$ | Graph Diameter | [§2.7.5](#2.7.5) |
+
+-----

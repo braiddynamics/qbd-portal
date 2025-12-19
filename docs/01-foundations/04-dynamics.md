@@ -627,7 +627,7 @@ The counit $\epsilon$ formalizes the retrieval of the system's stored context fr
 
 :::note[**Visualization of the Extraction of Historical Context from Annotated States**]
 
-```
+```text
 Annotated: R_T(G,\sigma) = (G, (\sigma, \sigma_G))
   |
   v
@@ -670,7 +670,7 @@ Physically; this corresponds to "checking the checker"; aligning with the QECC I
 
 :::note[**Visualization of the Duplication of Diagnostic Data for Recursive Verification**]
 
-```
+```text
 -----------------------------
     Input State: R_T(G)
     +-----------------------------------+
@@ -2085,7 +2085,7 @@ Avg Total Entropy Production: 1.500 ± 0.021 bits
 
 The positive entropy production confirms the irreversible directionality of the operator.
 
-### 4.6.3.3 Diagram: The Thermodynamic Arrow {#4.6.3.2}
+### 4.6.3.3 Diagram: The Thermodynamic Arrow {#4.6.3.3}
 
 **Visualization of Irreversibility via Information Loss in Projection**
 

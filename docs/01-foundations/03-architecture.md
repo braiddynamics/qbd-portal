@@ -2868,7 +2868,26 @@ Q.E.D.
 
 :::note[**Computational Verification of Codespace Projection and Syndrome Extraction for a Full Directed Triplet using Simulation**]
 
-The code embeds a N=3 triplet with 6 qubits for all directed pairs (q_AB=0,q_BA=1,q_BC=2,q_CB=3,q_CA=4,q_AC=5; MSB q0 at index 0 in binary). Each Π_cycle is a diagonal projector (1 unless both fwd/rev=1 for that pair, 0 otherwise). K_AB, K_BC, K_CA measure forward edges (Z0 Z2 Z4 for syndrome evals). Tests: Vacuum |000000⟩ (+1 all, in C); tension |000010⟩ (CA=1, +1 Π but K_CA=-1); excitation |101010⟩ (AB=1,BC=1,CA=1, +1 Π, all -1 syndrome); invalid 2-cycle |110000⟩ (AB+BA=1, 0 Π). Confirms: Valid states in C (+1 Π_all, syndromes classify); invalid annihilated (0). Demonstrates repair: X on q0 for tension yields syndrome=(-1,-1,-1) (excitation).
+We perform an end-to-end verification of the codespace projection and syndrome extraction using the `N=3` simulation.
+
+**Setup:**
+* **System:** A triplet with 6 qubits representing all directed pairs.
+* **Mapping:** $q_{AB}=0, q_{BA}=1, q_{BC}=2, q_{CB}=3, q_{CA}=4, q_{AC}=5$ (MSB $q_0$ at index 0).
+* **Projectors:** Each $\Pi_{cycle}$ is a diagonal projector (1 unless both forward/reverse edges are active, 0 otherwise).
+* **Syndromes:** Operators $K_{AB}, K_{BC}, K_{CA}$ measure forward edges ($Z_0, Z_2, Z_4$).
+
+**Test Cases & Outcomes:**
+1.  **Vacuum** `|000000>`:
+    * Result: Valid ($\Pi = +1$).
+    * Syndrome: Stabilized.
+2.  **Tension** `|000010>` ($q_{CA}=1$):
+    * Result: Valid Projector ($\Pi = +1$), but unstable syndrome ($K_{CA} = -1$).
+3.  **Excitation** `|101010>` (All forward edges=1):
+    * Result: Valid Projector ($\Pi = +1$), all syndromes $-1$.
+4.  **Invalid 2-Cycle** `|110000>` ($q_{AB}=1, q_{BA}=1$):
+    * Result: **Annihilated** ($\Pi = 0$).
+
+**Conclusion:** The simulation confirms that valid states reside in the code subspace $C$ while causal violations are strictly annihilated.
 
 ```python
 import numpy as np
@@ -2950,7 +2969,7 @@ print(df.to_markdown(index=False))
 | Excitation (101010)| +1  | (-,-,-) | Yes      | Preserve          |
 | Invalid 2-Cycle (110000)| 0 | (-,+,+) | No       | Annihilate        |
 
-### 3.5.3.3 Diagram: The Stabilizer Isomorphism {#3.5.3.3}
+### 3.5.8.2 Diagram: The Stabilizer Isomorphism {#3.5.8.2}
 
 :::note[**Visual Representation of the Mapping between Graph Topology and Quantum Codes**]
 
@@ -3039,4 +3058,5 @@ This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and read
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](#3.5.2) |
 | $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](#3.5.1) |
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](#3.5.1) |
+
 -----
