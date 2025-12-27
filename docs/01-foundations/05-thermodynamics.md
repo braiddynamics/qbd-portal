@@ -397,8 +397,6 @@ $$
 \Lambda \approx 2^{-V_{int}} = 2^{-6} = \frac{1}{64} \approx 0.0156
 $$
 
-This constant $\Lambda$ acts as the **Vacuum Permittivity**, ensuring that the Master Equation possesses a non-zero intercept, $\frac{d\rho}{dt}\big|_{\rho=0} > 0$.
-
 ### 5.2.3.1 Proof: Background Path Density {#5.2.3.1}
 
 :::tip[**Derivation from Bethe Lattice Topology**]
