@@ -7,7 +7,7 @@ sidebar_label: "Chapter 4: Dynamics"
 
 :::info[**Overview**]
 
-We stand before the static architecture of the vacuum we assembled in the previous chapter; a perfect, finite, rooted tree that contains the potential for geometry but lacks the motive force to realize it. Our inquiry now shifts from the structural "what" to the dynamical "how." We must determine what mechanism turns the first tick of the universal clock into an unstoppable cascade of increasing complexity. We dive into the quantum engine of our model, establishing a rigorous categorical syntax for histories and paths. We do not view the evolution of the universe as a mere sequence of frames, but as a continuous morphism in a category where every step preserves the causal structure of the past while opening new degrees of freedom for the future. We are effectively defining the grammar of time itself.
+We stand before the static architecture of the vacuum we assembled in the previous chapter; a perfect, finite, rooted tree that contains the potential for geometry but lacks the motive force to realize it. Our inquiry now shifts from the structural "what" to the dynamical "how." We must determine what mechanism turns the first tick of the universal clock into an unstoppable cascade of increasing complexity. We dive into the quantum engine of our model, establishing a categorical syntax for histories and paths. We do not view the evolution of the universe as a mere sequence of frames, but as a continuous morphism in a category where every step preserves the causal structure of the past while opening new degrees of freedom for the future. We are effectively defining the grammar of time itself.
 
 But a sequence of states is not enough; the system must possess a form of internal logic that allows it to assess its own configuration before acting. We introduce the concept of "awareness" not as a metaphysical quality, but as a comonadic self-check. This mathematical structure allows the graph to query its local topology, identifying valid sites for expansion without requiring a global observer. We couple this logical rigor with the thermodynamic reality of information processing. We derive the fundamental scales of our system, such as the critical temperature $T=\ln 2$, by equating the energetic cost of a decision with the informational content of a bit. This ensures that the engine does not run on magic; it pays for every bit of order it creates with a commensurate amount of entropic heat, grounding our dynamics in the iron laws of statistical mechanics.
 
@@ -26,7 +26,7 @@ Finally, we unify these elements into the Universal Operator $\mathcal{U}$. This
 
 :::note[**Section 4.1 Overview**]
 
-Before we ignite the dynamical engine that will drive the universe's evolution, we must establish the syntactic scaffolding that structures the growth of causal graphs. Drawing from the ontology of Chapter 1, where graphs encode relations with immutable history maps [(§1.3.1)](ontology#1.3.1), and the axioms of Chapter 2 that constrain these relations (such as effective influence $\leq$ as mediated paths [(§2.6.1)](axioms#2.6.1)), we now formalize two complementary categories. We require a rigorous mathematical language to describe how the static vacuum tree we derived in Chapter 3 transforms into a complex geometry. Without this, we risk describing a chaotic flux rather than a lawful evolution. The internal category $\mathbf{Caus}_t$ captures the web of potential influences within a single snapshot, modeling how events connect through directed paths at a specific moment in time.
+Before we ignite the dynamical engine that will drive the universe's evolution, we must establish the syntactic scaffolding that structures the growth of causal graphs. Drawing from the ontology of Chapter 1, where graphs encode relations with immutable history maps [(§1.3.1)](ontology#1.3.1), and the axioms of Chapter 2 that constrain these relations (such as effective influence $\leq$ as mediated paths [(§2.6.1)](axioms#2.6.1)), we now formalize two complementary categories. We require a mathematical language to describe how the static vacuum tree we derived in Chapter 3 transforms into a complex geometry. Without this, we risk describing a chaotic flux rather than a lawful evolution. The internal category $\mathbf{Caus}_t$ captures the web of potential influences within a single snapshot, modeling how events connect through directed paths at a specific moment in time.
 
 Simultaneously, we define the global category $\mathbf{Hist}$ to chain these snapshots across logical time. This structure ensures that evolutions embed prior states without erasing or compressing history. These categories tie directly to Chapter 3's architecture; the vacuum tree [(§3.1.3)](architecture#3.1.3) provides the initial object, with its bipartition and timestamps serving as the seed for path-based morphisms that respect acyclicity and monotonicity. We are effectively building a container for time. In this container, the past is not a memory that can be overwritten but a foundation that is permanently built upon. This distinction is critical; it prevents the paradoxes of retrocausality by enforcing that every new state must be a superset of the old, preserving the causal order established at the moment of creation.
 
@@ -83,7 +83,7 @@ This formulation acts as a rigorous safeguard against retrocausality. Because ev
 
 These two categories; $\mathbf{Caus}_t$ and $\mathbf{Hist}$; function as the syntactic glue that binds the ontological substrate of Chapter $1$ to the architectural realizations of Chapter $3$. They operationalize the abstract constraints of the theory into calculable algebraic structures.
 
-Consider the **Regular Bethe Fragment** derived as the initial vacuum state $G_0$. In the language of $\mathbf{Caus}_t$; this object is a category where the morphism sets $\text{Hom}(u, v)$ contain at most one element (due to tree sparsity); and there are no morphisms $f: u \to u$ other than identity (due to acyclicity). This algebraic simplicity is precisely what defines the "cold" vacuum. The **Ignition** event (tunneling) described in Section $3.4$ can now be rigorously defined as a functorial transition that introduces the first non-trivial morphisms (cycles) into $\mathbf{Caus}_t$; breaking the algebraic rigidity of the tree.
+Consider the **Regular Bethe Fragment** derived as the initial vacuum state $G_0$. In the language of $\mathbf{Caus}_t$; this object is a category where the morphism sets $\text{Hom}(u, v)$ contain at most one element (due to tree sparsity); and there are no morphisms $f: u \to u$ other than identity (due to acyclicity). This algebraic simplicity is precisely what defines the "cold" vacuum. The **Ignition** event (tunneling) described in Section $3.4$ can now be defined as a functorial transition that introduces the first non-trivial morphisms (cycles) into $\mathbf{Caus}_t$; breaking the algebraic rigidity of the tree.
 
 Furthermore; the axioms of Chapter $2$ act as filters on these categories. **Axiom $1$** (Causal Primitive) ensures that the atomic morphisms in $\mathbf{Caus}_t$ are directed. **Axiom $3$** (Acyclic Effective Causality) ensures that the composition of these morphisms never yields an identity morphism other than the trivial one (i.e.; no $f \circ g = \text{id}$ for non-trivial $f, g$); thereby preventing closed causal loops. In $\mathbf{Hist}$; the preservation of timestamps enforces the monotonicity required by the thermodynamic arguments of Chapter $5$. Thus; these categorical definitions are not merely descriptive; they are the enforcement mechanisms that prevent the dynamical engine from producing physical nonsense. They provide the "rails" upon which the Universal Constructor must run; ensuring that however violent the geometric phase transition becomes; the logical consistency of the universe remains inviolate.
 :::
@@ -474,7 +474,7 @@ $$u \le v \iff \text{Hom}(u, v) \cap \mathcal{M}_{eff} \neq \emptyset$$
 
 **IV. Conclusion**
 
-The category $\mathbf{Caus}_t$ provides the rigorous structural superset for the physical influence relation.
+The category $\mathbf{Caus}_t$ provides the structural superset for the physical influence relation.
 The axioms act as filters on the categorical morphism space to define physical causality.
 
 Q.E.D.
@@ -534,21 +534,22 @@ Q.E.D.
 
 ### 4.2.11 Proof: Demonstration of Categorical Validity {#4.2.11}
 
-:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$**]
+:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$ [(§4.2.1)](#4.2.1)**]
 
-**I. Synthesis of Lemmas**
+**I. The Structural Hypothesis**
+We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
-The validity of **Theorem 4.2.1** is established by the conjunction of the preceding proofs:
+**II. The Verification Chain**
+1.  **Identity (Lemmas [§4.2.3](#4.2.3), [§4.2.6](#4.2.6)):** We establish the existence of neutral elements. For $\mathbf{Caus}_t$, the Trivial Path (length 0) serves as $\text{id}_u$. For $\mathbf{Hist}$, the Identity Function serves as $\text{id}_G$. Both satisfy $f \circ \text{id} = f$.
+2.  **Associativity (Lemmas [§4.2.4](#4.2.4), [§4.2.7](#4.2.7)):** We establish that composition is inherently associative. In $\mathbf{Caus}_t$, path concatenation $(p \cdot q) \cdot r = p \cdot (q \cdot r)$ holds. In $\mathbf{Hist}$, function composition is associative by definition.
+3.  **Closure (Lemma [§4.2.5](#4.2.5)):** We establish that the composition of History-Respecting Embeddings yields a valid embedding. Specifically, the transitivity of the inequality $H(e) \le H'(f(e))$ preserves timestamp monotonicity.
+4.  **Physical Consistency (Lemma [§4.2.8](#4.2.8)):** We establish that valid morphisms in $\mathbf{Hist}$ must be injective on connected components to preserve the Irreflexivity axiom, preventing the topological collapse of distinct events.
 
-1.  **Identity:** **Lemma 4.2.3** and **Lemma 4.2.6** verify the existence and neutrality of identity morphisms for both categories.
-2.  **Associativity:** **Lemma 4.2.4** and **Lemma 4.2.7** verify the associativity of composition for path concatenation and function composition.
-3.  **Closure:** **Lemma 4.2.5** verifies that the composition of history-preserving morphisms remains within the category.
-4.  **Physical Consistency:** **Lemma 4.2.8** and **Lemma 4.2.10** verify that the categorical structure rigorously enforces the physical axioms of irreflexivity, acyclicity, and partial ordering.
+**III. Convergence**
+The defined structures satisfy all required algebraic properties (Identity, Associativity, Closure) without contradiction. The categorical syntax faithfully encodes the physical constraints.
 
-**II. Conclusion**
-
-The collections $\mathbf{Caus}_t$ and $\mathbf{Hist}$ satisfy all Eilenberg-MacLane axioms for a Category.
-They constitute valid, well-defined mathematical objects suitable for modeling the causal universe.
+**IV. Formal Conclusion**
+$\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid **Categories**. This confirms that the framework used to describe the dynamical evolution of the universe is mathematically consistent.
 
 Q.E.D.
 :::
@@ -777,7 +778,7 @@ Q.E.D.
 
 :::info[**Implications of Functoriality for Self-Diagnosis**]
 
-The verification of functoriality is not merely a mathematical formality; it ensures that the adjunction of observational data does not disrupt the underlying categorical structure. Identity preservation guarantees that a "null operation" on the physical state corresponds to a null operation on the diagnostic state; the system does not hallucinate changes when nothing has happened. Composition preservation (rigorously proven via induction for nested structures) ensures that sequential transformations can be diagnosed either step-by-step or as a single composite action without contradiction.
+The verification of functoriality is not merely a mathematical formality; it ensures that the adjunction of observational data does not disrupt the underlying categorical structure. Identity preservation guarantees that a "null operation" on the physical state corresponds to a null operation on the diagnostic state; the system does not hallucinate changes when nothing has happened. Composition preservation (proven via induction for nested structures) ensures that sequential transformations can be diagnosed either step-by-step or as a single composite action without contradiction.
 
 This coherence is essential for the stability of the self-diagnostic mechanism over time; particularly when recursive checks ($\delta$) create deeply nested annotation structures. Physically; this property is analogous to the universe's state transformations carrying forward diagnostic histories unaltered; enabling the observational enrichment to propagate consistently without distortion. The exhaustive check; including generalization to nested annotations by induction on depth; positions the functor as a seamless integrator with the morphisms of $\mathbf{AnnCG}$; paving the way for the comonad's fault-tolerant properties. It ensures that the act of observing the universe does not break the logic of how the universe evolves.
 :::
@@ -961,27 +962,24 @@ The satisfaction of these axioms guarantees that the self-diagnostic mechanism i
 
 ### 4.3.9 Proof: Demonstration of the Awareness Comonad {#4.3.9}
 
-:::tip[**Formal Derivation of the Existence and Validity of the Self-Diagnostic Comonad Structure**]
+:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure [(§4.3.5)](#4.3.5)**]
 
-**I. Structural Synthesis**
+**I. The Object Hypothesis**
+We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ as a candidate structure for a Comonad, intended to formalize self-reference.
 
-The validity of **Theorem 4.3.5** derives from the rigorous conjunction of the preceding lemmas:
-1.  **Functoriality:** **Lemma 4.3.6** proves that the local check process $R_T$ constitutes a valid endofunctor on $\mathbf{AnnCG}$, preserving identity and composition across arbitrary nesting depths.
-2.  **Naturality:** **Lemma 4.3.7** proves that the structural maps $\epsilon$ (projection) and $\delta$ (duplication) constitute natural transformations, commuting with all graph morphisms.
-3.  **Algebraic Consistency:** **Lemma 4.3.8** proves that the triplet $(R_T, \epsilon, \delta)$ satisfies the Left Identity, Right Identity, and Associativity axioms required of a Comonad.
+**II. The Verification Chain**
+1.  **Functoriality (Lemma [§4.3.6](#4.3.6)):** It is proven that the mapping $R_T$, which adjoins the local syndrome $\sigma_G$ to the state, preserves both identity morphisms and composition, qualifying as a valid **Endofunctor**.
+2.  **Naturality (Lemma [§4.3.7](#4.3.7)):** It is proven that Context Extraction ($\epsilon$) and Meta-Check duplication ($\delta$) commute with all state transformations $f: G \to G'$, qualifying them as **Natural Transformations**.
+3.  **Comonad Axioms (Lemma [§4.3.8](#4.3.8)):** Explicit tuple tracing confirms the triplet satisfies the defining laws:
+    * **Left Identity:** $\epsilon \circ \delta = \text{id}$ (Checking the check then discarding it returns the original).
+    * **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$ (Checking the check then discarding the inner context returns the original).
+    * **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$ (The order of recursive checking does not alter the nested structure).
 
-**II. Categorical Object Definition**
+**III. Convergence**
+The structure satisfies the complete algebraic definition of a Comonad. The operations of self-diagnosis, context retrieval, and recursive verification form a closed and consistent algebraic system.
 
-The object $D = (R_T, \epsilon, \delta)$ is formally defined as the **Awareness Comonad** on the category $\mathbf{AnnCG}$.
-This object mathematically formalizes the capability of the causal graph to maintain and manipulate self-referential diagnostic information without infinite regress or consistency violation.
-* **Context:** $R_T$ reifies the local syndrome.
-* **Access:** $\epsilon$ retrieves the state.
-* **Extension:** $\delta$ enables recursive self-diagnosis.
-
-**III. Conclusion**
-
-The Awareness Comonad rigorously models the self-diagnostic capabilities of the Causal Universe.
-The construction remains mathematically sound and consistent with the axioms of the theory.
+**IV. Formal Conclusion**
+The **Awareness Comonad** is a valid mathematical object. It formalizes the capacity for fault-tolerant self-diagnosis within the causal graph.
 
 Q.E.D.
 
@@ -993,89 +991,92 @@ The following Python simulation implements the "Store Comonad" (Functor, Counit,
 
 ```python
 import networkx as nx
+
 def compute_syndrome(graph):
-    # This is our \sigma_G, the "freshly computed" value.
-    # For this simulation, we use a dummy value of 1 to represent a dummy vacuum state, but in full implementation, this would involve detailed QECC syndrome calculations as in Geometric Check Operators (Syndrome Tuples) [(§3.5.5)](architecture#3.5.5).
+    # Dummy syndrome for simulation
     return 1
+
 class AnnotatedGraph:
     def __init__(self, graph, annotation):
         self.graph = graph
-        # Enforce tuple for consistent structure to match the nested annotations in the comonad
+        # Enforce tuple for consistent structure
         self.annotation = annotation if isinstance(annotation, tuple) else (annotation, )
+    
     def __repr__(self):
         return f"AnnotatedGraph with annotation {self.annotation}"
+    
     def __eq__(self, other):
-        # Strict, structural equality check for verification
         if not isinstance(other, AnnotatedGraph):
             return False
         if not nx.is_isomorphic(self.graph, other.graph):
             return False
         return self.annotation == other.annotation
-# Helper to apply a morphism (a function on annotations)
+
+# Helper to apply a morphism
 def apply_morphism(f_ann, ann_graph):
     new_annotation = f_ann(ann_graph.annotation)
     return AnnotatedGraph(ann_graph.graph, new_annotation)
+
 # R_T on objects
 def R_T_obj(ann_graph):
     recomputed = compute_syndrome(ann_graph.graph)
     new_annotation = (ann_graph.annotation, recomputed)
     return AnnotatedGraph(ann_graph.graph, new_annotation)
-# R_T on morphisms (lifts a function)
+
+# R_T on morphisms
 def R_T_morph(f_ann):
     def lifted(ann_tuple):
-        # ann_tuple is (a, b)
         a, b = ann_tuple
-        # Returns (f_ann(a), b)
         return (f_ann(a), b)
     return lifted
-# Counit \epsilon as an annotation function
+
+# Counit epsilon
 def f_epsilon(ann_tuple):
-    # (a, b) -> a
     a, b = ann_tuple
     return a
-# Commultiplication \delta as an annotation function
+
+# Comultiplication delta
 def f_delta(ann_tuple):
-    # (a, b) -> ((a, b), b)
     a, b = ann_tuple
     return ((a, b), b)
+
 # --- Verification ---
 print("--- Comonad Verification ---")
 G = nx.DiGraph()
 G.add_edges_from([('v1', 'v2'), ('v2', 'v3')])
-# Initial Object X = (G, 'old')
+
 initial_ann = AnnotatedGraph(G, 'old')
 print(f"Initial X: {initial_ann}")
-# Object Y = R_T(X) = (G, (('old',), 1))
-# This is the object we test the axioms on
+
 rt_ann = R_T_obj(initial_ann)
 print(f"R_T(X) = Y: {rt_ann}")
+
 print("--- Axiom Tests ---")
-# --- 1. Left Identity: \epsilon \circ \delta == id ---
-# We apply (\epsilon \circ \delta) to Y
+
+# --- 1. Left Identity ---
 delta_on_rt = apply_morphism(f_delta, rt_ann)
 left_id_result = apply_morphism(f_epsilon, delta_on_rt)
-print("Axiom 1 (LHS: \epsilon \circ \delta):", left_id_result)
+print(r"Axiom 1 (LHS: \epsilon \circ \delta):", left_id_result)
 print("Axiom 1 (RHS: id(Y)):", rt_ann)
 print(f"Axiom 1 Holds: {left_id_result == rt_ann}\n")
-# --- 2. Right Identity: R_T(\epsilon) \circ \delta == id ---
-# We apply (R_T(\epsilon) \circ \delta) to Y
-delta_on_rt = apply_morphism(f_delta, rt_ann) # (G, ((('old',), 1), 1))
-rt_epsilon_morph = R_T_morph(f_epsilon) # The lifted morphism
+
+# --- 2. Right Identity ---
+delta_on_rt = apply_morphism(f_delta, rt_ann)
+rt_epsilon_morph = R_T_morph(f_epsilon)
 right_id_result = apply_morphism(rt_epsilon_morph, delta_on_rt)
-print("Axiom 2 (LHS: R_T(\epsilon) \circ \delta):", right_id_result)
+print(r"Axiom 2 (LHS: R_T(\epsilon) \circ \delta):", right_id_result)
 print("Axiom 2 (RHS: id(Y)):", rt_ann)
 print(f"Axiom 2 Holds: {right_id_result == rt_ann}\n")
-# --- 3. Associativity: \delta \circ \delta == R_T(\delta) \circ \delta ---
-# We apply both sides to Y
-# LHS: (\delta \circ \delta)
+
+# --- 3. Associativity ---
 inner_delta_lhs = apply_morphism(f_delta, rt_ann)
 lhs_result = apply_morphism(f_delta, inner_delta_lhs)
-print("Axiom 3 (LHS: \delta \circ \delta):", lhs_result)
-# RHS: (R_T(\delta) \circ \delta)
+print(r"Axiom 3 (LHS: \delta \circ \delta):", lhs_result)
+
 inner_delta_rhs = apply_morphism(f_delta, rt_ann)
-rt_delta_morph = R_T_morph(f_delta) # The lifted morphism
+rt_delta_morph = R_T_morph(f_delta)
 rhs_result = apply_morphism(rt_delta_morph, inner_delta_rhs)
-print("Axiom 3 (RHS: R_T(\delta) \circ \delta):", rhs_result)
+print(r"Axiom 3 (RHS: R_T(\delta) \circ \delta):", rhs_result)
 print(f"Axiom 3 Holds: {lhs_result == rhs_result}\n")
 ```
 
@@ -1089,9 +1090,11 @@ R_T(X) = Y: AnnotatedGraph with annotation (('old',), 1)
 Axiom 1 (LHS: \epsilon \circ \delta): AnnotatedGraph with annotation (('old',), 1)
 Axiom 1 (RHS: id(Y)): AnnotatedGraph with annotation (('old',), 1)
 Axiom 1 Holds: True
+
 Axiom 2 (LHS: R_T(\epsilon) \circ \delta): AnnotatedGraph with annotation (('old',), 1)
 Axiom 2 (RHS: id(Y)): AnnotatedGraph with annotation (('old',), 1)
 Axiom 2 Holds: True
+
 Axiom 3 (LHS: \delta \circ \delta): AnnotatedGraph with annotation (((('old',), 1), 1), 1)
 Axiom 3 (RHS: R_T(\delta) \circ \delta): AnnotatedGraph with annotation (((('old',), 1), 1), 1)
 Axiom 3 Holds: True
@@ -1104,7 +1107,7 @@ This simulation output confirms that the comonad axioms hold empirically, with a
 
 :::note[**The Awarness Layer**]
 
-We have defined the category of annotated graphs ($\mathbf{AnnCG}$) and constructed the awareness mechanism through three distinct components: the endofunctor $R_T$ [(§4.3.2)](#4.3.2) which generates diagnostics, the counit $\epsilon$ [(§4.3.3)](#4.3.3) which retrieves historical context, and the comultiplication $\delta$ [(§4.3.4)](#4.3.4) which enables recursive verification. The rigorous demonstration of functoriality [(§4.3.6)](#4.3.6), naturality [(§4.3.7)](#4.3.7), and axiomatic satisfaction [(§4.3.8)](#4.3.8) confirms that these components form a valid Store Comonad.
+We have defined the category of annotated graphs ($\mathbf{AnnCG}$) and constructed the awareness mechanism through three distinct components: the endofunctor $R_T$ [(§4.3.2)](#4.3.2) which generates diagnostics, the counit $\epsilon$ [(§4.3.3)](#4.3.3) which retrieves historical context, and the comultiplication $\delta$ [(§4.3.4)](#4.3.4) which enables recursive verification. The demonstration of functoriality [(§4.3.6)](#4.3.6), naturality [(§4.3.7)](#4.3.7), and axiomatic satisfaction [(§4.3.8)](#4.3.8) confirms that these components form a valid Store Comonad.
 
 The validation of this comonadic structure endows the substrate with the capacity for introspection, transforming the causal graph from a static object into a system capable of retaining and verifying its own diagnostic history. Annotations build up through successive applications of $R_T$, forming a stack of verifications that probe the graph's health from multiple depths. This is much like how repeated measurements in a physical apparatus refine estimates of an underlying quantity. This formalization ensures that error detection is not an ad hoc process but a structural invariant; it provides the reliable data substrate required for dynamical selection.
 
@@ -1528,7 +1531,7 @@ The output confirms that stress=1 reduces the rate by \~33%, while stress=5 supp
 
 ### 4.4.6.3 Commentary: The Viscosity of Space {#4.4.6.3}
 
-:::info[**Steric Hindrance in the Causal Graph**]
+:::tip[**Steric Hindrance in the Causal Graph**]
 
 Friction ($\mu$) acts as the "viscosity" of the vacuum; a crucial resistive force that prevents the system from overheating. In regions where the graph becomes dense and highly interconnected ("stressed"); the number of constraints on any new edge increases linearly. The friction coefficient converts this topological density into a suppression probability.
 
@@ -2080,7 +2083,7 @@ print(f"Avg Total Entropy Production: {avg_loss:.3f} ± {std_loss:.3f} bits")
 **Simulation Output:**
 
 ```text
-Avg Total Entropy Production: 1.500 ± 0.021 bits
+Avg Total Entropy Production: 1.500 ± 0.011 bits
 ```
 
 The positive entropy production confirms the irreversible directionality of the operator.

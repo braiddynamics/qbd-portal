@@ -157,23 +157,26 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
 | $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/foundations/dynamics#4.6.2) |
 | $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/foundations/thermodynamics#5.1.1) |
-| $\xi$ | Correlation Length | [§5.1.1](/monograph/foundations/thermodynamics#5.1.1) |
+| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/foundations/thermodynamics#5.1.1) |
+| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/foundations/thermodynamics#5.1.1.1) |
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
 | $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
-| $c$ | Specific entropy per event | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
-| $V_\xi$ | Correlation volume | [§5.1.1.1](/monograph/foundations/thermodynamics#5.1.1.1) |
+| $c$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
 | $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/foundations/thermodynamics#5.2.1) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.1](/monograph/foundations/thermodynamics#5.2.1) |
 | $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/foundations/thermodynamics#5.2.2) |
+| $\Lambda$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/foundations/thermodynamics#5.2.3) |
+| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/foundations/thermodynamics#5.2.5) |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/foundations/thermodynamics#5.2.6) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/foundations/thermodynamics#5.2.7) |
 | $\rho^*$ | Equilibrium density (Fixed Point) | [§5.4.1](/monograph/foundations/thermodynamics#5.4.1) |
-| $\mu$ | Friction Coefficient (Bounds derived) | [§5.4.2](/monograph/foundations/thermodynamics#5.4.2) |
-| $\lambda_{cat}$ | Catalysis Coefficient (Bounds derived) | [§5.4.3](/monograph/foundations/thermodynamics#5.4.3) |
+| $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/foundations/thermodynamics#5.4.2.1) |
 | $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/foundations/thermodynamics#5.4.4.1) |
 | $\bar{d}(u,v)$ | Undirected shortest-path distance | [§5.5.2](/monograph/foundations/thermodynamics#5.5.2) |
 | $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/foundations/thermodynamics#5.5.3) |
 | $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/foundations/thermodynamics#5.5.3) |
 | $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.4](/monograph/foundations/thermodynamics#5.5.4) |
 | $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.4.1](/monograph/foundations/thermodynamics#5.5.4.1) |
+| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | [§5.5.5](/monograph/foundations/thermodynamics#5.5.5) |
 | $C_k$ | Count of simple cycles of length $k$ | [§5.5.6](/monograph/foundations/thermodynamics#5.5.6) |
 | $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/foundations/thermodynamics#5.5.7) |
 | $d_c$ | Upper critical dimension ($d=4$) | [§5.5.7.1](/monograph/foundations/thermodynamics#5.5.7.1) |

@@ -217,7 +217,7 @@ Crucially, Al-Biruni engaged in a famous correspondence with Ibn Sina (Avicenna)
 
 **Ibn al-Haytham: The First Scientist**
 
-While Al-Biruni mapped the earth, Ibn al-Haytham (Alhazen, c. 965–1040) mapped the behavior of light. In his magnum opus, Kitab al-Manazir (Book of Optics), he dismantled the ancient “extramission” theory (that eyes emit rays to touch objects) and established the “intromission” theory (light reflects off objects and enters the eye) through rigorous experimentation.
+While Al-Biruni mapped the earth, Ibn al-Haytham (Alhazen, c. 965–1040) mapped the behavior of light. In his magnum opus, Kitab al-Manazir (Book of Optics), he dismantled the ancient “extramission” theory (that eyes emit rays to touch objects) and established the “intromission” theory (light reflects off objects and enters the eye) through experimentation.
 
 Ibn al-Haytham is arguably the father of the scientific method. He insisted that no theory is true until supported by experimental confirmation (iʿtibar) and mathematical verification. His work on the camera obscura provided the physical link to the earlier Mohist discoveries (though likely derived independently). He also formulated a concept of inertia, stating that a projectile would move forever unless stopped by a force or resistance, anticipating Newton’s First Law by centuries. His influence on the West was direct; his book was translated into Latin and deeply studied by Roger Bacon, Kepler, and eventually Newton.
 
@@ -552,7 +552,7 @@ Szilard postulated that the act of measurement (or the subsequent erasure of tha
 
 By the 1950s, the “It” was in a fragile state: maintained as a probability wave by Schrödinger, fragmented into complementary contexts by Bohr, and tied to entropy by Szilard. Yet, the “Measurement Problem” remained: how does the probability wave ($\psi$) collapse into a single “It” (a specific record) upon observation? The standard Von Neumann formulation relied on an ad-hoc “Process 1” (collapse) that defied the Schrödinger equation (“Process 2”).
 
-In 1957, Hugh Everett III, a graduate student of John Wheeler at Princeton, proposed a solution that required abandoning the last vestige of the classical “It”: the uniqueness of history. He took the Von Neumann formulation seriously but removed the collapse. He asked: What if the Schrödinger equation applies to everything, including the observer? He modeled the observer not as a metaphysical external agent (as Bohr effectively did by placing them on the classical side of the cut), but as a physical system, a mechanical automaton with a memory. He rigorously analyzed the interaction between a quantum system $S$ and an observer $O$.
+In 1957, Hugh Everett III, a graduate student of John Wheeler at Princeton, proposed a solution that required abandoning the last vestige of the classical “It”: the uniqueness of history. He took the Von Neumann formulation seriously but removed the collapse. He asked: What if the Schrödinger equation applies to everything, including the observer? He modeled the observer not as a metaphysical external agent (as Bohr effectively did by placing them on the classical side of the cut), but as a physical system, a mechanical automaton with a memory. He analyzed the interaction between a quantum system $S$ and an observer $O$.
 
 Everett showed that if the observer interacts with a superposed system, the observer themselves enters a superposition. If the system is in state $\alpha |UP\rangle + \beta |DOWN\rangle$, the observer evolves into a state of: $\alpha |UP\rangle |“I saw UP”\rangle + \beta |DOWN\rangle |“I saw DOWN”\rangle$. There is no collapse. There is no single “It” that emerges. Instead, the reality is the correlation between the system and the memory. Everett called this the “Relative State” formulation. Relative to the memory state “I saw UP,” the electron is UP. Relative to “I saw DOWN,” it is DOWN. Both branches exist simultaneously in the universal wavefunction.
 
@@ -598,7 +598,7 @@ Wheeler pushed this logic to its extreme with the concept of “Law without Law.
 
 ### Causal Set Theory: The Discretization of History
 
-The most direct heir to the idea that the continuum is an illusion is Causal Set Theory (CST), championed by Raphael Sorkin and Fay Dowker. Dowker, a Professor of Theoretical Physics at Imperial College London, possesses a direct lineage to the architects of spacetime thermodynamics; she completed her PhD under Stephen Hawking in 1990. Her work represents a rigorous mathematization of Wheeler’s intuition that the “deepest bottom” is discrete.
+The most direct heir to the idea that the continuum is an illusion is Causal Set Theory (CST), championed by Raphael Sorkin and Fay Dowker. Dowker, a Professor of Theoretical Physics at Imperial College London, possesses a direct lineage to the architects of spacetime thermodynamics; she completed her PhD under Stephen Hawking in 1990. Her work represents a mathematization of Wheeler’s intuition that the “deepest bottom” is discrete.
 
 **The Rejection of the Continuum**
 
@@ -656,7 +656,7 @@ The third and perhaps most dominant modern path fuses Wheeler’s information th
 
 In 1997, Juan Maldacena made a discovery that shook the foundations of physics: the AdS/CFT correspondence. He showed that a theory of quantum gravity (String Theory) in a bulk, saddle-shaped 3D space (Anti-de Sitter space or AdS) is mathematically equivalent to a quantum field theory (Conformal Field Theory or CFT) living on its 2D boundary.
 
-This was the rigorous mathematical realization of the Holographic Principle hinted at by Bekenstein’s black hole entropy. It implies that everything happening inside the universe (gravity, stars, black holes) is a “hologram” projected from the interactions of particles on the boundary of the universe. The “It” (the 3D bulk) is generated by the “Bit” (the 2D boundary data).
+This was the mathematical realization of the Holographic Principle hinted at by Bekenstein’s black hole entropy. It implies that everything happening inside the universe (gravity, stars, black holes) is a “hologram” projected from the interactions of particles on the boundary of the universe. The “It” (the 3D bulk) is generated by the “Bit” (the 2D boundary data).
 
 **Entanglement Builds Geometry**
 
