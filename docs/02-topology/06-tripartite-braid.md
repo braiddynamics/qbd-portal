@@ -176,9 +176,10 @@ A decomposed cluster comprising isolated 3-cycles constitutes a high-stress conf
 
 **I. Initial State Parameters**
 
-Let the cluster $\xi$ be defined by a local 3-cycle density $\rho_\xi$ resulting from the reduction of a trivial knot. We analyze a characteristic high-density fluctuation:
+Let the cluster $\xi$ be defined by a local 3-cycle density $\rho_\xi$ resulting from the reduction of a trivial knot.
+The analysis considers a characteristic high-density fluctuation:
 $$\rho_\xi = 0.50 \quad (\gg \rho^* \approx 0.037)$$
-We utilize the robust physical constants derived in Chapter 4 and verified in Chapter 5:
+The derivation utilizes the robust physical constants derived in Chapter 4 and verified in Chapter 5:
 * **Vacuum Permittivity:** $\Lambda = 0.0156$
 * **Friction Coefficient:** $\mu = 1/\sqrt{2\pi} \approx 0.3989$
 * **Catalysis Coefficient:** $\lambda_{cat} = e - 1 \approx 1.718$
@@ -187,31 +188,33 @@ We utilize the robust physical constants derived in Chapter 4 and verified in Ch
 
 The creation rate is governed by the interaction of vacuum ignition and autocatalysis, modulated by geometric friction:
 $$J_{in}(\rho) = (\Lambda + 9\rho^2) e^{-6\mu\rho}$$
-Substituting $\rho = 0.50$:
-1.  **Pre-factor:** $\Lambda + 9(0.25) = 0.0156 + 2.25 = 2.2656$
-2.  **Friction Exponent:** $-6(0.3989)(0.50) \approx -1.1967$
-3.  **Damping Factor:** $e^{-1.1967} \approx 0.3022$
+Substituting the density $\rho = 0.50$:
+1.  **Pre-factor Calculation:** $\Lambda + 9(0.25) = 0.0156 + 2.25 = 2.2656$
+2.  **Friction Exponent Calculation:** $-6(0.3989)(0.50) \approx -1.1967$
+3.  **Damping Factor Calculation:** $e^{-1.1967} \approx 0.3022$
 $$J_{in}(0.5) \approx 2.2656 \cdot 0.3022 \approx 0.685$$
 
 **III. Deletion Flux ($J_{out}$)**
 
-The deletion rate is the sum of linear entropic decay and quadratic catalytic stress release:
+The deletion rate is defined as the sum of linear entropic decay and quadratic catalytic stress release:
 $$J_{out}(\rho) = \frac{1}{2}\rho + 3\lambda_{cat}\rho^2$$
-Substituting $\rho = 0.50$:
-1.  **Linear Term:** $0.5(0.5) = 0.25$
-2.  **Catalytic Term:** $3(1.718)(0.25) = 1.2885$
+Substituting the density $\rho = 0.50$:
+1.  **Linear Term Calculation:** $0.5(0.5) = 0.25$
+2.  **Catalytic Term Calculation:** $3(1.718)(0.25) = 1.2885$
 $$J_{out}(0.5) \approx 0.25 + 1.2885 = 1.539$$
 
 **IV. Net Topological Flux**
 
-The time evolution is the difference in fluxes:
+The time evolution is determined by the difference in topological fluxes:
 $$\frac{d\rho}{dt} = J_{in} - J_{out}$$
 $$\frac{d\rho}{dt} \approx 0.685 - 1.539 = -0.854$$
 
 **V. Stability Conclusion**
 
-The derivative is negative and large ($\mathcal{O}(1)$). The Catalytic term ($1.29$) alone is nearly double the total creation flux ($0.69$).
-This confirms that in the high-density regime, the vacuum's "immune response" (deletion) overwhelms its generative capacity. A trivial cluster cannot sustain itself; it will evaporate until $\rho(t) \to \rho^*$.
+The derivative is strictly negative and large ($\mathcal{O}(1)$).
+The Catalytic term ($1.29$) alone exceeds the total creation flux ($0.69$) by a factor of nearly two.
+This confirms that in the high-density regime, the vacuum's deletion response overwhelms the generative capacity.
+Consequently, a trivial cluster cannot sustain itself and evaporates until $\rho(t) \to \rho^*$.
 
 Q.E.D.
 
@@ -550,32 +553,36 @@ Any localized excitation characterized by a trivial topology, constituting an un
 
 **I. High-Density Condition**
 
-Let $\xi$ be a trivial cluster reduced by Type II moves to a compact volume $V_\xi$. This concentration forces the local density well above the vacuum fixed point:
+Let $\xi$ denote a trivial cluster reduced by Type II moves to a compact volume $V_\xi$.
+This geometric concentration forces the local density significantly above the vacuum fixed point.
 $$\rho_\xi \gg \rho^* \approx 0.037$$
-We analyze the stability at a characteristic dense value $\rho_\xi \approx 0.50$.
+The analysis evaluates stability at the characteristic high-stress value $\rho_\xi \approx 0.50$.
 
 **II. Flux Imbalance Analysis**
 
-We evaluate the competing terms of the Master Equation $\dot{\rho} = J_{in} - J_{out}$ using the robust constants ($\Lambda \approx 0.016, \mu \approx 0.40, \lambda_{cat} \approx 1.72$).
+The evaluation of the competing terms within the Master Equation $\dot{\rho} = J_{in} - J_{out}$ utilizes the robust physical constants derived in Chapter 5 ($\Lambda \approx 0.016, \mu \approx 0.40, \lambda_{cat} \approx 1.72$).
 
 1.  **Creation Flux ($J_{in}$):**
-    Growth is driven by autocatalysis but choked by friction.
+    Growth is driven by the autocatalytic term but suppressed by the geometric friction term.
     $$J_{in} = (\Lambda + 9\rho^2)e^{-6\mu\rho} \approx (0.016 + 2.25)e^{-1.2} \approx 0.69$$
 
 2.  **Deletion Flux ($J_{out}$):**
-    Decay is driven by the quadratic catalytic stress term.
+    Decay is driven by the quadratic catalytic stress term proportional to the square of the density.
     $$J_{out} = \frac{1}{2}\rho + 3\lambda_{cat}\rho^2 \approx 0.25 + 3(1.72)(0.25) \approx 1.54$$
 
 **III. The Negative Lyapunov Function**
 
-Comparing the fluxes reveals a massive deficit:
+The comparison of the fluxes reveals a significant deficit in the topological current.
 $$J_{net} = 0.69 - 1.54 = -0.85$$
-Since $\dot{\rho} < 0$, the density $\rho(t)$ must decrease.
-Since the topology is trivial ($V(t)=1$), there is no barrier to prevent this decay from continuing until the catalytic term $3\lambda_{cat}\rho^2$ becomes negligible, which only occurs as $\rho \to \rho^*$.
+Since the time derivative $\dot{\rho}$ is strictly negative, the density $\rho(t)$ must decrease monotonically.
+Given that the topology is trivial ($V(t)=1$), no architectural barrier exists to arrest this decay.
+The process continues until the catalytic term $3\lambda_{cat}\rho^2$ becomes negligible, a condition satisfied only as $\rho \to \rho^*$.
 
 **IV. Conclusion**
 
-The unbraided cluster possesses a strictly negative time derivative for all $\rho > \rho^*$. It cannot sustain itself against the vacuum's immune response. The state is dynamically unstable and evaporates.
+The unbraided cluster exhibits a strictly negative time derivative for all densities $\rho > \rho^*$.
+The configuration cannot sustain itself against the deletion response of the vacuum.
+Consequently, the state is dynamically unstable and evaporates to the equilibrium background.
 
 Q.E.D.
 
@@ -600,55 +607,57 @@ A configuration consisting of a single framed ribbon ($n=1$) is excluded from th
 
 **I. Inductive Framework**
 
-Let $\mathcal{C}_1$ be the configuration space of a single framed ribbon.
-Let $k \in \mathbb{Z}$ denote the number of half-twists, such that the writhe is $w = k/2$.
-Let $N_{strain}(k)$ be the number of **Geometric Quanta** (3-cycles) required to support the configuration under the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3).
-We prove the hypothesis $N_{strain}(k) \propto k^2$ by induction.
+Let $\mathcal{C}_1$ denote the configuration space of a single framed ribbon.
+Let $k \in \mathbb{Z}$ represent the number of half-twists, yielding a writhe $w = k/2$.
+Let $N_{strain}(k)$ denote the number of **Geometric Quanta** (3-cycles) required to support the configuration under the strictures of the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3).
+The hypothesis $N_{strain}(k) \propto k^2$ is established via mathematical induction.
 
 **II. Base Case ($k=1$)**
 
-To induce a single half-twist ($w=0.5$) in a linear ribbon segment, the local topology must be deformed.
-The minimal deformation involves bridging a "rung" edge across the twist axis.
-Let the ribbon segment be defined by vertices $\{v_1, v_2, v_3, v_4\}$.
-The twist operation introduces edges $(v_1, v_3)$ and $(v_2, v_4)$ to enact the swap.
-These edges complete two new 3-cycles relative to the untwisted ladder.
+The induction of a single half-twist ($w=0.5$) in a linear ribbon segment requires a deformation of the local topology.
+The minimal deformation necessitates bridging a "rung" edge across the twist axis to effect the permutation of boundary vertices.
+Let the ribbon segment be defined by the vertex set $\{v_1, v_2, v_3, v_4\}$.
+The twist operation introduces the edges $(v_1, v_3)$ and $(v_2, v_4)$ to enact the swap.
+These additional edges complete exactly two new 3-cycles relative to the untwisted ladder configuration.
 $$N_{strain}(1) = 2$$
-Energy density: $E(1) \propto N_{strain}(1) = 2$.
+Consequently, the energy density scales as $E(1) \propto N_{strain}(1) = 2$.
 
 **III. Inductive Step ($k \to k+1$)**
 
-Assume the relation $N_{strain}(k) = c k^2 + O(k)$ holds for some $k \ge 1$.
-Consider the addition of the $(k+1)$-th twist.
-The new twist must be causally connected to the existing $k$ twists.
-Due to **PUC**, the direct path $u \to v$ of length 1 is forbidden if a path of length $\le 2$ exists.
-The existing $k$ twists create a "knot core" of radius $R \propto k$.
-To add a new twist without cloning existing paths, the new causal link must traverse the circumference of this core.
-The path length $L$ for the new connection scales linearly with the core radius (and thus the twist count).
+Assume the relation $N_{strain}(k) = c k^2 + O(k)$ holds for an arbitrary integer $k \ge 1$.
+The analysis considers the addition of the $(k+1)$-th twist to the existing structure.
+This new twist must causally connect to the prior $k$ twists.
+The **Principle of Unique Causality** strictly forbids the direct path $u \to v$ of length 1 if a path of length $\le 2$ already exists.
+The accumulation of $k$ twists generates a "knot core" obstruction with an effective radius $R \propto k$.
+To add a new twist without cloning existing paths or intersecting the core, the new causal link must traverse the circumference of this obstruction.
+The path length $L$ required for the new connection scales linearly with the core radius, and thus with the twist count.
 $$L_{new}(k) \propto k$$
-The number of supporting 3-cycles required to stabilize a path of length $L$ is proportional to $L$.
+The number of supporting 3-cycles required to stabilize a path of length $L$ scales linearly with $L$.
 $$\Delta N(k) = N_{strain}(k+1) - N_{strain}(k) = \alpha \cdot k$$
+where $\alpha$ is a geometric constant determined by the lattice connectivity.
 
 **IV. Recurrence Solution**
 
-We solve the recurrence relation $N_{k+1} = N_k + \alpha k$.
-Summing the series from 1 to $k$:
+The recurrence relation $N_{k+1} = N_k + \alpha k$ requires solution.
+Summing the series from the base case $1$ to $k$:
 $$N_{strain}(k) = N_{strain}(1) + \sum_{i=1}^{k-1} \alpha i$$
+Utilizing the arithmetic series summation formula $\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$:
 $$N_{strain}(k) = 2 + \alpha \frac{k(k-1)}{2}$$
 $$N_{strain}(k) = \frac{\alpha}{2} k^2 - \frac{\alpha}{2} k + 2$$
-In the asymptotic limit $k \gg 1$, the quadratic term dominates.
+In the asymptotic limit $k \gg 1$, the quadratic term dominates the expression.
 $$N_{strain}(k) \sim k^2 \implies E_{torsion} \propto w^2$$
 
 **V. Instability Verification**
 
-We define the stability condition as the absence of a complexity-reducing path in the Elementary Task Space $\mathfrak{T}$.
-For any $k \ge 2$, there exists a **Type II Reidemeister Move** that reduces the crossing number.
-This move corresponds to the sequence:
-1.  Identify a local "bigon" (two paths enclosing a region).
-2.  Apply $\mathcal{T}_{del}$ to one edge of the bigon (permitted by redundancy).
-3.  The operation reduces the twist count $k \to k-2$.
-Since $\Delta E \propto (k)^2 - (k-2)^2 = 4k - 4 > 0$ for $k \ge 2$, the reduction is energetically favored.
-The vacuum pressure drives the system via gradient descent to the ground state $k=0$ (or $k=1$ if topologically trapped, but $k=1$ is reducible to $k=0$ via rotation).
-Therefore, single ribbons are unstable.
+Stability is defined as the absence of a complexity-reducing trajectory in the Elementary Task Space $\mathfrak{T}$.
+For any configuration with $k \ge 2$, a **Type II Reidemeister Move** exists which reduces the crossing number.
+This move corresponds to the following topological sequence:
+1.  Identification of a local "bigon" (two distinct paths enclosing a region between vertices).
+2.  Application of the operator $\mathcal{T}_{del}$ to one edge of the bigon, permitted by the redundancy of the path.
+3.  Reduction of the twist count from $k \to k-2$.
+The energy difference $\Delta E \propto (k)^2 - (k-2)^2 = 4k - 4$ is strictly positive for $k \ge 2$, indicating the reduction is energetically favored.
+The vacuum pressure therefore drives the system via gradient descent to the ground state $k=0$ (or the reducible state $k=1$).
+This confirms that single ribbons are dynamically unstable.
 
 Q.E.D.
 
@@ -726,7 +735,7 @@ To understand this isomorphism, note that in $B_2$, there are no relations impos
 
 **II. Commutator Analysis**
 
-We evaluate the commutator of any two elements $g, h \in B_2$.
+Evaluate the commutator of any two elements $g, h \in B_2$.
 Let $g = \sigma_1^n$ and $h = \sigma_1^m$ for arbitrary integers $n, m$.
 The commutator is defined as $[g, h] = g h g^{-1} h^{-1}$.
 Substitute the generator powers:
@@ -1085,46 +1094,46 @@ The total count of Geometric Quanta $N_3(\beta_M)$ requisite to sustain a prime 
 
 **I. Inductive Framework**
 
-Let $M \in \mathbb{N}$ denote the number of **Principle of Unique Causality (PUC)**-compliant crossing operations constituting the construction history of a prime braid $\beta_M$.
+Let $M \in \mathbb{N}$ denote the number of crossing operations compliant with the **Principle of Unique Causality (PUC)** that constitute the construction history of a prime braid $\beta_M$.
 Let $C[\beta_M]$ denote the minimal crossing number of the knot diagram associated with $\beta_M$.
 Let $N_3(\beta_M)$ denote the total count of **Geometric Quanta** (3-cycles) embedded within the causal graph structure of $\beta_M$.
-We test the hypothesis $N_3(\beta_M) = k_c \cdot C[\beta_M]$ by induction on $M$.
+The hypothesis $N_3(\beta_M) = k_c \cdot C[\beta_M]$ is tested by induction on $M$.
 
 **II. Base Case ($M=1$)**
 
-The construction of the first crossing $\beta_1$ (corresponding to a half-twist or single swap $\sigma_i$) necessitates the formation of a causal bridge between adjacent ribbons.
+The construction of the initial crossing $\beta_1$, corresponding to a half-twist or single swap $\sigma_i$, necessitates the formation of a causal bridge between adjacent ribbons.
 Under the **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics#4.5.1), this bridge forms via the closure of a compliant 2-path.
 The closure operation $\mathfrak{T}_{add}$ creates exactly one new edge, completing exactly one new 3-cycle $\gamma$.
 $$N_3(\beta_1) = 1$$
-The minimal crossing number for a single swap is $C[\beta_1] = 1$.
-Thus, the relation holds with proportionality constant $k_c = 1$ (for the minimal basis).
+The minimal crossing number for a single swap is identically $C[\beta_1] = 1$.
+The relation holds with the proportionality constant $k_c = 1$ for the minimal basis.
 $$N_3(1) = 1 \cdot 1$$
 
 **III. Inductive Step ($M \to M+1$)**
 
-Assume the relation $N_3(\beta_M) = k_c \cdot M$ holds for a prime braid of $M$ crossings.
-Consider the addition of the $(M+1)$-th crossing via the operator $\mathcal{R}_{M+1}$.
-The operation $\mathcal{R}_{M+1}$ must satisfy **PUC Compliance** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which forbids the creation of redundant paths (bubbles) of length $\le 2$.
+Assume the relation $N_3(\beta_M) = k_c \cdot M$ holds for a prime braid comprising $M$ crossings.
+The analysis proceeds to the addition of the $(M+1)$-th crossing via the operator $\mathcal{R}_{M+1}$.
+The operation $\mathcal{R}_{M+1}$ must satisfy **PUC Compliance** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which explicitly forbids the creation of redundant paths (bubbles) of length $\le 2$.
 
 1.  **Topological Distinctness:**
     The addition of a crossing corresponds to the action of a braid group generator $\sigma_i$.
-    If the new crossing were redundant (i.e., reducible via Reidemeister II moves), the operation would imply the existence of an inverse path $u \to v$ canceling $v \to u$.
-    However, **PUC** explicitly forbids the graph structures required for such cancellation (parallel edges or 2-cycles).
-    Therefore, the new crossing increases the minimal crossing number strictly.
+    If the new crossing were redundant (reducible via Reidemeister II moves), the operation would imply the existence of an inverse path $u \to v$ canceling $v \to u$.
+    However, **PUC** explicitly forbids the graph structures required for such cancellation, specifically parallel edges or 2-cycles.
+    Consequently, the new crossing strictly increases the minimal crossing number.
     $$C[\beta_{M+1}] = C[\beta_M] + 1 = M + 1$$
 
 2.  **Resource Accumulation:**
-    The rewrite operation $\mathcal{R}_{M+1}$ acts on a local neighborhood disjoint from the cores of previous crossings (or separated by sufficient graph distance $\bar{d} > \xi$).
-    Due to the **Spatial Cluster Decomposition** [(§5.1.1)](/monograph/foundations/thermodynamics#5.1.1), the structural cost of the new crossing adds linearly to the existing complexity.
+    The rewrite operation $\mathcal{R}_{M+1}$ acts on a local neighborhood disjoint from the cores of previous crossings (or separated by a graph distance $\bar{d} > \xi$).
+    Due to the **Spatial Cluster Decomposition** [(§5.1.1)](/monograph/foundations/thermodynamics#5.1.1), the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
     $$N_3(\beta_{M+1}) = N_3(\beta_M) + \Delta N_3(\mathcal{R}_{M+1})$$
-    Since $\mathcal{R}_{M+1}$ is a standard crossing operation, $\Delta N_3 = k_c$.
+    Since $\mathcal{R}_{M+1}$ represents a standard crossing operation, the marginal cost is $\Delta N_3 = k_c$.
     $$N_3(\beta_{M+1}) = k_c M + k_c = k_c (M+1)$$
 
 **IV. Conclusion**
 
 The number of geometric quanta scales linearly with the minimal crossing number for all prime braids constructible via PUC-compliant operations.
 $$N_3(\beta) \propto C[\beta]$$
-Since mass $m$ is defined as the informational inertia proportional to $N_3$ [(§7.4.1)](quantum-numbers#7.4.1), the mass scales linearly with the crossing number.
+Given that mass $m$ is defined as the informational inertia proportional to $N_3$ [(§7.4.1)](quantum-numbers#7.4.1), it follows that mass scales linearly with the crossing number.
 
 Q.E.D.
 
@@ -1151,13 +1160,13 @@ The internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ sca
 
 **I. Inductive Framework**
 
-Let $k$ be the integer count of half-twists applied to a ribbon, corresponding to a total writhe $w = k/2$.
-Let $N_{strain}(k)$ be the number of 3-cycle quanta required to maintain the causal connectivity of the twisted ribbon under **PUC** constraints.
-We test the hypothesis $N_{strain}(k) \propto k^2$.
+Let $k$ represent the integer count of half-twists applied to a ribbon, corresponding to a total writhe $w = k/2$.
+Let $N_{strain}(k)$ denote the number of 3-cycle quanta required to maintain the causal connectivity of the twisted ribbon under **PUC** constraints.
+The hypothesis $N_{strain}(k) \propto k^2$ is tested via induction.
 
 **II. Base Case ($k=1$)**
 
-A single half-twist ($w=0.5$) is formed by the minimal set of local rewrites required to permute the ribbon boundaries.
+A single half-twist ($w=0.5$) forms via the minimal set of local rewrites required to permute the ribbon boundaries.
 This operation requires bridging the ribbon's width $d \approx 1$.
 The cost is defined as the minimal quantum:
 $$N_{strain}(1) = c$$
@@ -1165,19 +1174,19 @@ $$N_{strain}(1) = c$$
 **III. Inductive Step ($k \to k+1$)**
 
 Assume the cost for $k$ twists scales as $N_{strain}(k) \approx c k^2$.
-Consider the addition of the $(k+1)$-th twist.
+The analysis considers the addition of the $(k+1)$-th twist.
 The new twist requires establishing a unique causal path that circumnavigates the existing structure.
 The **Principle of Unique Causality (PUC)** forbids the reuse of any edge participating in the previous $k$ twists.
-The existing twists create a topological obstruction ("knot core") with an effective diameter proportional to the number of windings.
+The existing twists create a topological obstruction, or "knot core," with an effective diameter proportional to the number of windings.
 $$D_{core} \propto k$$
 To add the $(k+1)$-th twist without intersection or cloning, the new causal link must traverse a path of length $L_{new}$ proportional to the core circumference.
 $$L_{new} \propto D_{core} \propto k$$
-The number of new 3-cycles required to support a path of length $L$ is linear in $L$.
+The number of new 3-cycles required to support a path of length $L$ scales linearly with $L$.
 $$\Delta N = N_{strain}(k+1) - N_{strain}(k) = \alpha \cdot k$$
 
 **IV. Recurrence Solution**
 
-We solve the recurrence relation $N_{k+1} = N_k + \alpha k$.
+The recurrence relation $N_{k+1} = N_k + \alpha k$ yields the total complexity.
 Summing the arithmetic progression:
 $$N_{strain}(k) \approx \sum_{i=1}^{k} \alpha i = \alpha \frac{k(k+1)}{2} \approx \frac{\alpha}{2} k^2$$
 Substituting $w = k/2$:
@@ -1186,13 +1195,13 @@ $$N_{strain}(w) \propto w^2$$
 
 **V. Empirical Calibration**
 
-For a full twist ($k=2$), the simulation [(§6.3.5.2)](#6.3.5.2) yields $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
-This confirms the quadratic scaling $2^2 = 4$.
+For a full twist ($k=2$), the simulation [(§6.3.5.2)](#6.3.5.2) yields the result $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
+This result confirms the quadratic scaling $2^2 = 4$.
 The pathfinding penalty enforces quadratic mass scaling for higher torsion states.
 
 **VI. Conclusion**
 
-The topological complexity (and thus the mass) of a twisted ribbon scales with the square of its writhe.
+The topological complexity, and thus the inertial mass, of a twisted ribbon scales with the square of its writhe.
 $$m \propto w^2$$
 
 Q.E.D.
@@ -1479,16 +1488,16 @@ The operational scope of the rewrite rule $\mathcal{R}$ is strictly bounded by t
 
 Let the topological state of the braid $\beta$ be characterized by the **Gauss Linking Number** $L_{ij}$, a global invariant defined over the closed curves $\gamma_i, \gamma_j$ of the constituent ribbons.
 $$L_{ij} = \frac{1}{4\pi} \oint_{\gamma_i} \oint_{\gamma_j} \frac{\mathbf{r}_i - \mathbf{r}_j}{|\mathbf{r}_i - \mathbf{r}_j|^3} \cdot (d\mathbf{r}_i \times d\mathbf{r}_j)$$
-This integral is invariant under any continuous deformation (isotopy) of the curves that does not cause the strands to intersect ($\mathbf{r}_i \neq \mathbf{r}_j$).
+This integral remains invariant under any continuous deformation (isotopy) of the curves that avoids strand intersection ($\mathbf{r}_i \neq \mathbf{r}_j$).
 
 **II. Local Operator Action**
 
-The **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) acts on a local subgraph $G_{loc} \subset G$ bounded by the causal horizon radius $R \sim \log N$.
+The **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) acts on a local subgraph $G_{loc} \subset G$ strictly bounded by the causal horizon radius $R \sim \log N$.
 Let the operation induce a local deformation of the path $\gamma_i \to \gamma_i + \delta\gamma$, where the support of $\delta\gamma$ is strictly contained within $G_{loc}$.
 
 **III. Variation of the Invariant**
 
-We compute the variation $\Delta L_{ij}$ under the local deformation.
+The variation $\Delta L_{ij}$ under the local deformation is computed.
 Since the operator $\mathcal{R}$ enforces the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), it strictly forbids edge collisions or vertex mergers that would correspond to the singularity $\mathbf{r}_i = \mathbf{r}_j$.
 In the absence of intersection, the variation of the Gauss integral vanishes identically due to the vector calculus identity $\nabla \cdot \left( \frac{\mathbf{r}}{r^3} \right) = 0$ (for $r \neq 0$).
 $$\Delta L_{ij} = 0$$
@@ -1496,14 +1505,14 @@ $$\Delta L_{ij} = 0$$
 **IV. Horizon Constraint**
 
 To alter the linking number without intersection, one curve must be "pulled" entirely around the other.
-This requires a correlated sequence of deformations spanning the full circumference of the braid $S_{braid}$.
-The arc length of the braid satisfies $S_{braid} \sim N$ (linear in particle mass/complexity).
-The local operator horizon satisfies $R \ll S_{braid}$.
+This process requires a correlated sequence of deformations spanning the full circumference of the braid $S_{braid}$.
+The arc length of the braid satisfies $S_{braid} \sim N$, scaling linearly with particle complexity.
+The local operator horizon satisfies the condition $R \ll S_{braid}$.
 Consequently, the operator $\mathcal{R}$ cannot compute or modify the global value of the integral; it perceives the strands as locally parallel lines ($L_{loc} \approx 0$).
 
 **V. Conclusion**
 
-The local update mechanism is topologically blind to global invariants.
+The local update mechanism remains topologically blind to global invariants.
 It cannot distinguish between a globally knotted structure and a locally trivial one provided the knotting occurs outside the horizon $R$.
 
 Q.E.D.
@@ -1735,13 +1744,13 @@ Because the local vacuum fluctuations operate within a logarithmic horizon $R \s
 
 **I. Variational Classification**
 
-We partition the set of all localized excitations $\Xi$ into two disjoint classes based on topological primality.
+Partition the set of all localized excitations $\Xi$ into two disjoint classes based on topological primality.
 $$\Xi = \Xi_{reducible} \cup \Xi_{prime}$$
 
 **II. Case 1: Reducible (Non-Prime) Braids**
 
 Let $\xi \in \Xi_{reducible}$ (e.g., unbraided clusters, simple twists, composite knots).
-By **Lemma 6.1.3** [(§6.1.3)](#6.1.3), there exists a local sequence $\mathcal{S}_{loc}$ of Type II/III moves that reduces the crossing number $C[\xi]$.
+By **Lemma [§6.1.3](#6.1.3)**, there exists a local sequence $\mathcal{S}_{loc}$ of Type II/III moves that reduces the crossing number $C[\xi]$.
 The length of this sequence is bounded by the local horizon $|\mathcal{S}_{loc}| \le R$.
 The **Universal Constructor** $\mathcal{R}$ accesses this sequence via random exploration.
 The **Catalytic Tension** $\chi(\sigma)$ [(§4.5.2)](/monograph/foundations/dynamics#4.5.2) amplifies the deletion probability for the reducible components.
@@ -1752,8 +1761,8 @@ Result: $\xi$ decays to the vacuum state.
 Let $\xi \in \Xi_{prime}$ (e.g., the Tripartite Braid).
 By definition of primality, no local sequence $\mathcal{S}_{loc}$ exists that reduces $C[\xi]$ (Reidemeister minimality).
 Decay requires Global Unwinding.
-By **Lemma 6.4.4**, the cost of Global Unwinding is $O(N)$.
-By **Lemma 6.4.3**, the local operator $\mathcal{R}$ is blind to the global gradient required to guide this $O(N)$ process.
+By **Lemma [§6.4.4](#6.4.4)**, the cost of Global Unwinding is $O(N)$.
+By **Lemma [§6.4.3](#6.4.3)**, the local operator $\mathcal{R}$ is blind to the global gradient required to guide this $O(N)$ process.
 The probability of accidental unwinding is $P \sim e^{-N}$.
 Result: $\xi$ persists on cosmological timescales.
 
