@@ -939,6 +939,7 @@ Stability Analysis:
   Gradient (J):         -0.3331
   Status:               STABLE (Attractor)
 ```
+:::
 
 ### 5.2.Z Implications and Synthesis {#5.2.Z}
 
