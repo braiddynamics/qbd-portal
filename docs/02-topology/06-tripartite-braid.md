@@ -222,7 +222,7 @@ Q.E.D.
 
 :::info[**Computational Verification via the Fundamental Equation of Geometrogenesis**]
 
-The following Python simulation models the precise time-evolution of local density clusters using the rigorous Master Equation derived in Chapter 5. It contrasts the fate of a **Trivial Excitation** (which is subject to the full deletion flux) against a **Prime Knot** (which engages the Topological Barrier, setting $J_{out} \to 0$ for the knot's core).
+The following Python simulation models the precise time-evolution of local density clusters using the Master Equation derived in Chapter 5. It contrasts the fate of a **Trivial Excitation** (which is subject to the full deletion flux) against a **Prime Knot** (which engages the Topological Barrier, setting $J_{out} \to 0$ for the knot's core).
 
 ```python
 import numpy as np
@@ -230,7 +230,7 @@ import numpy as np
 def simulate_cluster_decay():
     """
     Simulates the time-evolution of local particle clusters under 
-    the rigorous Fundamental Equation of Geometrogenesis.
+    the Fundamental Equation of Geometrogenesis.
     
     Dynamical Law: dρ/dt = (Λ + 9ρ²)*exp(-6μρ) - (0.5ρ + 3λρ²)
     """
@@ -1428,7 +1428,7 @@ The vanishing entropy underscores a key departure from thermal systems: unlike a
 
 :::note[**Section 6.4 Scope**]
 
-Does the local nature of the vacuum's rewrite dynamics truly preserve the global invariants of prime braids, or could subtle pathways allow for their gradual dissipation? Having established the tripartite braid's necessity and its complexity-based mass in previous sections, we must rigorously test its longevity against the constant probing of the deletion flux. The equilibrium vacuum from Chapter 5 maintains a delicate balance, but particles as defects introduce localized strains that could, in principle, provide handles for local operations to unravel the structure over time.
+Does the local nature of the vacuum's rewrite dynamics truly preserve the global invariants of prime braids, or could subtle pathways allow for their gradual dissipation? Having established the tripartite braid's necessity and its complexity-based mass in previous sections, we must test its longevity against the constant probing of the deletion flux. The equilibrium vacuum from Chapter 5 maintains a delicate balance, but particles as defects introduce localized strains that could, in principle, provide handles for local operations to unravel the structure over time.
 
 This examination draws on the computational horizons from Chapter 2's acyclicity enforcement and the QECC protection in Chapter 3, addressing whether the O(log N) scope of the constructor can bridge the O(N) barrier required for global untying. Resolving this scale mismatch is essential to confirm fermions as eternal features rather than metastable transients, grounding their role in the emergent zoo of the causal substrate.
 :::

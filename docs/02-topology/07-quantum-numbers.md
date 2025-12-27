@@ -53,7 +53,7 @@ If the number of twists is even, the product of $Z$ operators yields +1, corresp
 
 :::info[**Derivation of Fermionic Exchange Phases from Braid Topology**]
 
-It is asserted that the physical exchange of two identical tripartite braids, $\beta_1$ and $\beta_2$, necessitates the accumulation of a global phase factor $\phi = -1$ on the joint wavefunction, thereby enforcing Fermi-Dirac statistics. This statistical behavior is derived from the rigorous conjugation of the joint spin projector $\Pi_{joint}$ by the Exchange Operator $\hat{P}_{12}$, subject to the following topological constraints:
+It is asserted that the physical exchange of two identical tripartite braids, $\beta_1$ and $\beta_2$, necessitates the accumulation of a global phase factor $\phi = -1$ on the joint wavefunction, thereby enforcing Fermi-Dirac statistics. This statistical behavior is derived from the conjugation of the joint spin projector $\Pi_{joint}$ by the Exchange Operator $\hat{P}_{12}$, subject to the following topological constraints:
 1.  **Phase Accumulation:** The execution of $\hat{P}_{12}$ induces a geometric phase $\phi = (-1)^{2s}$ on the state vector, where the spin quantum number $s=1/2$ is fixed by the intrinsic odd parity of the ribbon's half-twist configuration.
 2.  **Algebraic Enforcement:** The emergence of the phase factor is enforced by the non-commutative algebra of the braid group generators acting on the edge qubits, specifically the anticommutation relation between the unitary twist operation and the spin stabilizer.
 3.  **Isotopic Invariance:** The resultant phase $\phi$ is invariant under ambient isotopy, ensuring that all physical realizations of the particle exchange trajectory within the codespace $\mathcal{C}$ yield the strictly fermionic sign, independent of the specific sequence of local rewrite operations.
@@ -62,7 +62,7 @@ It is asserted that the physical exchange of two identical tripartite braids, $\
 
 :::tip[**Logical Structure of the Proof via Topological Phase Accumulation**]
 
-The derivation of Fermionic Statistics proceeds through a rigorous chaining of geometric operators to algebraic commutators. This approach validates that the Pauli exclusion phase is an emergent consequence of the braid's internal twist parity, independent of relativistic field postulates.
+The derivation of Fermionic Statistics proceeds through a chaining of geometric operators to algebraic commutators. This approach validates that the Pauli exclusion phase is an emergent consequence of the braid's internal twist parity, independent of relativistic field postulates.
 
 First, we isolate the **Spin Definition** by constructing the operator $L_S$ from the product of rung edge Z-operators. We demonstrate that this operator measures the parity of the ribbon's internal twist, assigning eigenvalues $\lambda = -1$ to the half-twisted ($s=1/2$) configurations characteristic of stable fermions.
 
@@ -77,7 +77,7 @@ Finally, we synthesize these components to prove **Phase Inversion**. The antico
 
 :::info[**Inversion of Spin Eigenvalues by Geometric Rotation Operators**]
 
-The geometric half-twist operation applied to a framed ribbon is represented in the Hilbert space by a unitary operator $\hat{\mathcal{T}}$ that satisfies a strict anticommutation relation with the Spin Operator $L_S$. This algebraic relationship is characterized by the following rigorous conditions:
+The geometric half-twist operation applied to a framed ribbon is represented in the Hilbert space by a unitary operator $\hat{\mathcal{T}}$ that satisfies a strict anticommutation relation with the Spin Operator $L_S$. This algebraic relationship is characterized by the following conditions:
 1.  **Operator Conjugation:** The action of the twist operator on the spin stabilizer yields the negated operator, defined by the identity $\hat{\mathcal{T}} L_S \hat{\mathcal{T}}^\dagger = -L_S$.
 2.  **Eigenspace Mapping:** The operator $\hat{\mathcal{T}}$ functions as a map between orthogonal eigenspaces, transforming the $+1$ eigenspace of $L_S$ (the untwisted state) to the $-1$ eigenspace (the twisted state), and vice versa.
 3.  **Intersection Parity:** The anticommutation property derives directly from the topological necessity that any trajectory implementing a geometric half-twist intersects the set of rung edges an odd number of times, thereby inducing an odd number of Pauli-X bit flips on the Z-basis stabilizer.
@@ -424,7 +424,7 @@ It is asserted that the simultaneous occupancy of a single quantum state by two 
 
 :::tip[**Logical Structure of the Proof via Saturation and Annihilation**]
 
-The derivation of the Pauli Exclusion Principle proceeds through a rigorous analysis of the information capacity of the causal graph edges. This approach validates that exclusion is a geometric impossibility of superposition within a binary substrate, rather than an ad-hoc repulsion force.
+The derivation of the Pauli Exclusion Principle proceeds through an analysis of the information capacity of the causal graph edges. This approach validates that exclusion is a geometric impossibility of superposition within a binary substrate, rather than an ad-hoc repulsion force.
 
 First, we isolate the **Binary Capacity** by invoking the Binary State Principle. We demonstrate that a directed edge constitutes a single qubit system ($|0\rangle, |1\rangle$) which saturates at single occupancy. No "stacking" of multiple excitations on a single causal link is permitted by the fundamental set theory of the graph.
 
@@ -698,7 +698,7 @@ It is asserted that the electric charge $Q$ of a stable elementary fermion is id
 
 :::tip[**Logical Structure of the Proof via Invariant Normalization**]
 
-The derivation of Quantized Electric Charge proceeds through a rigorous mapping of global topological invariants to conserved quantum numbers. This approach validates that charge is a measure of the braid's total torsion, independent of the particle's mass or generation.
+The derivation of Quantized Electric Charge proceeds through a mapping of global topological invariants to conserved quantum numbers. This approach validates that charge is a measure of the braid's total torsion, independent of the particle's mass or generation.
 
 First, we isolate the **Writhe Invariant** by defining the total writhe $w(\beta)$ as a conserved quantity under local updates. We demonstrate that while local moves can shuffle twist between ribbons, they cannot alter the net sum without a forbidden global surgery, securing charge conservation.
 
@@ -1177,7 +1177,7 @@ This definition resolves the "Preon Paradox", the problem that composite particl
 
 :::info[**The Proportionality of Inertial Mass to Total Topological Complexity**]
 
-It is asserted that the rest mass $m$ of a fermion braid is determined by a rigorous functional of its topological complexity invariants. The mass functional is defined as:
+It is asserted that the rest mass $m$ of a fermion braid is determined by a functional of its topological complexity invariants. The mass functional is defined as:
 $$m = \kappa_m \left( \sum_{i=1}^3 N_3(R_i) - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)$$
 This functional is constituted by the following terms:
 1.  **Base Constant:** $\kappa_m \approx 0.170$ MeV, anchored to the electron mass.
@@ -1188,7 +1188,7 @@ This functional is constituted by the following terms:
 
 :::tip[**Logical Structure of the Proof via Complexity Decomposition**]
 
-The derivation of the Topological Mass Functional proceeds through a rigorous summation of the geometric resources required to sustain a knot. This approach validates that mass is the "informational inertia" of the particle, emergent from the cost of maintaining structure against vacuum friction.
+The derivation of the Topological Mass Functional proceeds through a summation of the geometric resources required to sustain a knot. This approach validates that mass is the "informational inertia" of the particle, emergent from the cost of maintaining structure against vacuum friction.
 
 First, we isolate the **Inertial Definition** by equating mass to the total count of 3-cycles $N_3$ in the braid. We demonstrate that this count represents the bits of geometric information that must be actively preserved by the rewrite rule, scaling the particle's resistance to acceleration (state change).
 
