@@ -486,7 +486,7 @@ This binary nature restricts the information capacity of any local region. A pai
 
 The attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints:
 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel.
-2.  **Locality Constraint:** The Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) and the high energy barrier for non-local connections [(§6.4.4)](tripartite-braid6.4.4) restrict the second fermion to the immediate neighborhood of $\{u, v\}$.
+2.  **Locality Constraint:** The Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) and the high energy barrier for non-local connections [(§6.4.4)](tripartite-braid#6.4.4) restrict the second fermion to the immediate neighborhood of $\{u, v\}$.
 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$.
 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.
 
@@ -507,7 +507,7 @@ Encoding $\psi_B$ requires identifying an orthogonal degree of freedom within th
 The local neighborhood $\mathcal{N}(\{u, v\})$ contains two directional slots: $(u, v)$ and $(v, u)$.
 Since $(u, v)$ is occupied, the only remaining local slot is the reverse link $(v, u)$.
 Any non-local encoding involves connecting to a third vertex $w$ to form a path $u \to w \to v$.
-By **Lemma 6.4.4** [(§6.4.4)](tripartite-braid6.4.4), the formation of such a non-local structure constitutes a global topology change with an $O(N)$ energy barrier.
+By **Lemma 6.4.4** [(§6.4.4)](tripartite-braid#6.4.4), the formation of such a non-local structure constitutes a global topology change with an $O(N)$ energy barrier.
 By **Lemma 2.3.3** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), the creation of a path $u \to w \to v$ while $u \to v$ exists violates the **Principle of Unique Causality (PUC)**, triggering immediate deletion.
 Consequently, the system is topologically forced to utilize the reverse channel $(v, u)$ to accommodate the second particle locally.
 
@@ -662,7 +662,7 @@ The **Charge Operator**, denoted $Q$, is defined strictly as a composite global 
 
 The Charge Operator $Q$ transforms the abstract concept of electric charge into a concrete inventory of topological features. Rather than treating charge as a fluid painted onto particles, the theory defines it as a count of the "twistedness" of the braid.
 
-The operator scans the three ribbons of a particle and sums their writhe (twist). The normalization factor of $1/3$ reflects the tripartite nature of the fundamental braid [(§6.2.1)](tripartite-braid6.2.1). This implies that the "elementary" charge $e$ constitutes a composite of three fractional sub-charges, each carried by one of the ribbons.
+The operator scans the three ribbons of a particle and sums their writhe (twist). The normalization factor of $1/3$ reflects the tripartite nature of the fundamental braid [(§6.2.1)](tripartite-braid#6.2.1). This implies that the "elementary" charge $e$ constitutes a composite of three fractional sub-charges, each carried by one of the ribbons.
 
 For a lepton like the electron, the ribbons are symmetric, each contributing $-1$ to the writhe sum, resulting in a total charge of $-1$. For quarks, the asymmetry allows for fractional totals like $-1/3$ or $+2/3$. This definition implies that charge conservation equates to the conservation of topology. Changing the net charge of a system requires physically creating or destroying twists, a process constrained by the global conservation laws. Charge is geometry, counted.
 :::
@@ -696,7 +696,7 @@ Finally, we synthesize these results via **Anomaly Normalization**. We fix the p
 :::info[**Invariance of Physical Laws under Global Writhe Shifts**]
 
 The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry** with respect to the absolute value of the total writhe parameter. This symmetry is enforced by the following conditions:
-1.  **Local Blindness:** The Universal Constructor $\mathcal{R}$ operates within a bounded causal horizon $R \sim \log N$ [(§6.4.3)](tripartite-braid6.4.3), rendering it incapable of measuring global topological invariants such as the total winding number.
+1.  **Local Blindness:** The Universal Constructor $\mathcal{R}$ operates within a bounded causal horizon $R \sim \log N$ [(§6.4.3)](tripartite-braid#6.4.3), rendering it incapable of measuring global topological invariants such as the total winding number.
 2.  **Shift Invariance:** Consequently, the local transition probabilities are invariant under the global transformation $w \to w + n$, where $n \in \mathbb{Z}$.
 3.  **Field Necessity:** The preservation of local causal consistency under independent phase shifts necessitates the existence of a compensating gauge field, identified as the electromagnetic potential $A_\mu$.
 
@@ -707,7 +707,7 @@ The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry*
 **I. Operator Support Definition**
 
 Let $\mathcal{O}_{loc}$ denote the set of all physically realizable operators generatable by the **Universal Constructor** $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics#4.5.1).
-The action of any operator $\hat{O} \in \mathcal{O}_{loc}$ restricts to a subgraph $G_{sub} \subset G$ defined by the **Local Horizon** radius $R \sim \log N$ [(§6.4.3)](tripartite-braid6.4.3).
+The action of any operator $\hat{O} \in \mathcal{O}_{loc}$ restricts to a subgraph $G_{sub} \subset G$ defined by the **Local Horizon** radius $R \sim \log N$ [(§6.4.3)](tripartite-braid#6.4.3).
 $$\text{supp}(\hat{O}) \subseteq B(v, R)$$
 This confinement prevents any single rewrite operation from accessing topological data distributed over distances $L > R$.
 
@@ -749,7 +749,7 @@ Q.E.D.
 
 This commentary explains the origin of gauge invariance. Charge is defined as the *total* writhe of a braid. However, the rewrite rule $\mathcal{R}$—the engine of physics—operates as a nearsighted agent, perceiving only a small patch of the graph.
 
-Consider a macroscopic filament. A local observer viewing a small segment perceives the local twist but cannot count the *total* number of twists in the entire filament without traversing its length. Since the rewrite rule cannot traverse the particle instantaneously due to the causal horizon [(§6.4.3)](tripartite-braid6.4.3), it remains blind to the total charge.
+Consider a macroscopic filament. A local observer viewing a small segment perceives the local twist but cannot count the *total* number of twists in the entire filament without traversing its length. Since the rewrite rule cannot traverse the particle instantaneously due to the causal horizon [(§6.4.3)](tripartite-braid#6.4.3), it remains blind to the total charge.
 
 This blindness manifests as a symmetry. The local laws of physics must remain invariant under shifts in the global writhe count. Whether the total writhe is $W$ or $W+1$, the local dynamics appear identical. This invariance necessitates the existence of a compensating field to maintain consistency across the graph—precisely the role of the photon field in quantum electrodynamics. Gauge symmetry follows not as a postulate but as a consequence of the limited horizon of local causal operations.
 :::
@@ -828,9 +828,9 @@ The set of stable, minimal-complexity braid configurations that transform as sin
 **I. Configuration Space Definition**
 
 Let the state of a tripartite braid be defined by the writhe vector $\vec{w} = (w_1, w_2, w_3) \in \mathbb{Z}^3$.
-The **Electric Charge Operator** $Q$ [(§7.3.1)](properties#7.3.1) is defined linearly:
+The **Electric Charge Operator** $Q$ [(§7.3.1)](#7.3.1) is defined linearly:
 $$Q(\vec{w}) = \frac{1}{3} \sum_{i=1}^{3} w_i$$
-The **Topological Complexity** $C(\vec{w})$ [(§6.3.3)](tripartite-braid6.3.3) scales with the absolute writhe sum (approximating crossing number scaling):
+The **Topological Complexity** $C(\vec{w})$ [(§6.3.3)](tripartite-braid#6.3.3) scales with the absolute writhe sum (approximating crossing number scaling):
 $$C(\vec{w}) = \sum_{i=1}^{3} |w_i|$$
 
 **II. Color Singlet Constraint**
@@ -842,7 +842,7 @@ $$w_1 = w_2 = w_3 = k, \quad k \in \mathbb{Z}$$
 
 **III. Solution Enumeration via Complexity Minimization**
 
-The **Minimal Generation Theorem** [(§6.1.2)](tripartite-braid6.1.2) dictates that the vacuum populates states in increasing order of topological complexity $C$.
+The **Minimal Generation Theorem** [(§6.1.2)](tripartite-braid#6.1.2) dictates that the vacuum populates states in increasing order of topological complexity $C$.
 Substituting the singlet condition:
 $$C(k) = 3|k|$$
 $$Q(k) = \frac{1}{3}(3k) = k$$
@@ -910,7 +910,7 @@ This distinguishes the ribbons topologically, mapping them to the fundamental re
 
 **II. The Minimal Complexity Constraint**
 
-The **Minimal Generation Theorem** [(§6.1.2)](tripartite-braid6.1.2) mandates that the vacuum populates states in increasing order of complexity $C = \sum |w_i|$.
+The **Minimal Generation Theorem** [(§6.1.2)](tripartite-braid#6.1.2) mandates that the vacuum populates states in increasing order of complexity $C = \sum |w_i|$.
 Perform an ordered search for integer writhe vectors satisfying asymmetry.
 
 **III. Solution 1: The Down Quark ($d$)**
@@ -931,7 +931,7 @@ Perform an ordered search for integer writhe vectors satisfying asymmetry.
     Consider the configuration $(+1, +1, 0)$.
     Asymmetry: Distinct values exist ($1 \neq 0$). Satisfied.
 3.  **Stability Analysis (Parallelism):**
-    By **Lemma 7.4.5** [(§7.4.5)](properties#7.4.5), parallel twists ($w_i, w_j > 0$) share geometric support structures within the causal graph (shared 3-cycles).
+    By **Lemma 7.4.5** [(§7.4.5)](#7.4.5), parallel twists ($w_i, w_j > 0$) share geometric support structures within the causal graph (shared 3-cycles).
     The effective free energy $F$ is reduced by the **Sharing Integer** $k_{share}=1$.
     For $(+1, +1, 0)$, the parallel link reduces the effective complexity relative to anti-parallel configurations like $(+1, -1, 0)$ or isolated twists like $(2, 0, 0)$.
     This identifies $(+1, +1, 0)$ as the next stable ground state after the Down quark.
@@ -1242,25 +1242,25 @@ The base component of the topological mass scales linearly with the number of ge
 
 **I. Inertial Definition**
 
-The mass $m$ is defined as the informational inertia of the defect, proportional to the number of active geometric bits $N_3$ [(§7.4.1)](properties#7.4.1).
+The mass $m$ is defined as the informational inertia of the defect, proportional to the number of active geometric bits $N_3$ [(§7.4.1)](#7.4.1).
 $$m = \kappa \cdot N_3$$
 where $\kappa$ is the conversion factor determined by the fundamental energy scale of the vacuum.
 
 **II. Complexity Decomposition**
 
-The total number of geometric quanta $N_3$ partitions into contributions from discrete crossings and torsional strain, as established in **Lemma 6.3.3** [(§6.3.3)](tripartite-braid6.3.3).
+The total number of geometric quanta $N_3$ partitions into contributions from discrete crossings and torsional strain, as established in **Lemma 6.3.3** [(§6.3.3)](tripartite-braid#6.3.3).
 $$N_3(\beta) = N_{cross} + N_{torsion}$$
 
 **III. Linear Term (Crossings)**
 
-By **Proof 6.3.4.1** [(§6.3.4.1)](tripartite-braid6.3.4.1), the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+By **Proof 6.3.4.1** [(§6.3.4.1)](tripartite-braid#6.3.4.1), the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
 For the minimal basis ($k_c=1$):
 $$N_{cross} \propto C[\beta]$$
 This establishes the linear dependence of mass on the topological crossing number for low-writhe states.
 
 **IV. Quadratic Term (Torsion)**
 
-By **Proof 6.3.5.1** [(§6.3.5.1)](tripartite-braid6.3.5.1), the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+By **Proof 6.3.5.1** [(§6.3.5.1)](tripartite-braid#6.3.5.1), the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
 $$N_{torsion} \propto \int L dw \propto w^2$$
 This term dominates for high-writhe states (generations 2 and 3).
 
