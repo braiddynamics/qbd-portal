@@ -427,7 +427,7 @@ Q.E.D.
 
 :::info[**The Instability of Nothingness**]
 
-As established in Chapter 3 [(§3.2.1)](#3.2.1), the pre-geometric vacuum uses binary branching (internals: in=1, out=2) for sparsity and no quanta. Post-ignition, ternary (k=3) emerges in equilibrium. Vacuum proofs here reflect this binary foundation. 
+As established in Chapter 3 [(§3.2.1)](architecture#3.2.1), the pre-geometric vacuum uses binary branching (internals: in=1, out=2) for sparsity and no quanta. Post-ignition, ternary (k=3) emerges in equilibrium. Vacuum proofs here reflect this binary foundation. 
 
 A dimensionless constant represents the **Background Reactivity** of the vacuum. In standard nucleation theory, a system often faces a "critical barrier" of minimum size or energy required to initiate growth. If $\Lambda$ were zero, the universe would require an external seed to "ignite," remaining frozen in a tree-like state otherwise.
 
@@ -837,11 +837,11 @@ The time evolution of the geometric order parameter $\rho(t)$ is determined by t
 $$\frac{d\rho}{dt} = J_{in}(\rho) - J_{out}(\rho)$$
 
 **II. Total Creation Potential ($J_{in}$)**
-The creation flux is composed of two distinct driving forces: the constant background vacuum permittivity $\Lambda$ (Lemma [§5.2.3](#5.2.3)) and the quadratic autocatalytic growth $9\rho^2$ (Lemma [§5.2.4](#5.2.4)). This total potential is modulated by the geometric probability of satisfying the topological constraints, which imposes the Gaussian friction factor $e^{-6\mu\rho}$ derived from the stress distribution (Theorem [§4.4.6](#4.4.6)).
+The creation flux is composed of two distinct driving forces: the constant background vacuum permittivity $\Lambda$ (Lemma [§5.2.3](#5.2.3)) and the quadratic autocatalytic growth $9\rho^2$ (Lemma [§5.2.4](#5.2.4)). This total potential is modulated by the geometric probability of satisfying the topological constraints, which imposes the Gaussian friction factor $e^{-6\mu\rho}$ derived from the stress distribution (Theorem [§4.4.6](dynamics#4.4.6)).
 $$J_{in} = (\Lambda + 9\rho^2) e^{-6\mu\rho}, \quad \text{where } \mu = \frac{1}{\sqrt{2\pi}}$$
 
 **III. Total Deletion Potential ($J_{out}$)**
-The deletion flux is governed by the thermodynamic probability of information erasure. It consists of the linear entropic decay of independent cycles, $\frac{1}{2}\rho$, and the non-linear catalytic stress term, $3\lambda_{cat}\rho^2$. The coefficient $\lambda_{cat}$ is determined by the entropic release of tension, $\lambda_{cat} = e-1$ (Theorem [§4.4.5](#4.4.5)).
+The deletion flux is governed by the thermodynamic probability of information erasure. It consists of the linear entropic decay of independent cycles, $\frac{1}{2}\rho$, and the non-linear catalytic stress term, $3\lambda_{cat}\rho^2$. The coefficient $\lambda_{cat}$ is determined by the entropic release of tension, $\lambda_{cat} = e-1$ (Theorem [§4.4.5](dynamics#4.4.5)).
 $$J_{out} = \frac{1}{2}\rho + 3(e-1)\rho^2$$
 
 **IV. Assembly**
@@ -1226,7 +1226,7 @@ The upper bound $\lambda_{\text{cat}} < 3$ is the **Geometric Stability Limit**.
 :::tip[**Derivation via Quadratic Coefficient Comparison**]
 
 **I. The Flux Competition**
-Stability of the geometric phase requires that, at least in the vacuum regime, the capacity for growth exceeds the rate of dissolution. We examine the non-linear terms of the Master Equation [(§5.2.7)](dynamics#5.2.7) which dominate the dynamics of ignition and bulk maintenance.
+Stability of the geometric phase requires that, at least in the vacuum regime, the capacity for growth exceeds the rate of dissolution. We examine the non-linear terms of the Master Equation [(§5.2.7)](#5.2.7) which dominate the dynamics of ignition and bulk maintenance.
 
 * **Creation Potential:** $J_{in} \approx 9\rho^2$ (Autocatalytic Growth)
 * **Deletion Potential:** $J_{out} \approx 3\lambda_{cat}\rho^2$ (Catalytic Stress Decay)
