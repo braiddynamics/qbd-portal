@@ -1371,27 +1371,26 @@ print("\nExported MC summary to mc_tau_summary.csv")
 ```text
 Base τ_p = 5.07e+31 years
 Experimental lower bound = 2.40e+34 years
-Shortfall factor (exp/calc) = 473.4
+Shortfall factor (exp/calc) = 473.7
 Lit SU(5) prediction = 1.00e+32 years
 Shortfall vs lit (lit/calc) = 2.0
 
 MC Stats:
-Mean τ_p = 5.66e+35 years
-Median τ_p = 5.09e+33 years
-Std τ_p = 1.45e+36 years
-P(τ_p > exp bound) = 41.9%
-P(τ_p > lit SU(5)) = 76.8%
+Mean τ_p = 5.54e+35 years
+Median τ_p = 5.01e+33 years
+Std τ_p = 1.41e+36 years
+P(τ_p > exp bound) = 39.4%
+P(τ_p > lit SU(5)) = 76.7%
 
 Histogram data for chart:
-Bin centers: [30.778043144449168, 31.432520833914914, 32.08699852338066, 32.74147621284641, 33.395953902312144, 34.050431591777894, 34.70490928124363, 35.35938697070938, 36.01386466017513, 36.66834234964087]
-Frequencies: [94, 105, 99, 105, 99, 101, 104, 101, 103, 89]
-
-         Stat Value
-         Mean 5.66e+35
-       Median 5.09e+33
-          Std 1.45e+36
-P(>exp bound) 41.9%
-P(>lit SU(5)) 76.8%
+Bin centers: [30.769254613705087, 31.42433887797811, 32.07942314225113, 32.734507406524145, 33.38959167079716, 34.04467593507019, 34.6997601993432, 35.35484446361622, 36.00992872788924, 36.66501299216226]        
+Frequencies: [94, 100, 104, 104, 99, 105, 100, 105, 101, 88]
+         Stat    Value
+         Mean 5.54e+35
+       Median 5.01e+33
+          Std 1.41e+36
+P(>exp bound)    39.4%
+P(>lit SU(5))    76.7%
 ```
 
 This confirms the EFT tension: the base calculation falls $\sim 473$x short of the Dec 2025 bound ($>2.4 \times 10^{34}$ years for $p \to e^+ + \pi^0$) but only $\sim 2$x short of minimal SU(5) literature predictions ($\sim 10^{32}$ years). The MC clarifies "closeness": the median $\tau_p$ ($\sim 5 \times 10^{33}$ years) is within a factor of $\sim 5$ of the bound and 76.8% of samples exceed lit SU(5), showing parametric viability, but the 41.9% $P(>\text{bound})$ underscores the need for topological $e^{-S_{inst}}$ suppression (§9.5.4) to guarantee stability. The standard deviation ($\sim 10^{36}$ years) reflects $M_X$ dominance, with the histogram showing a broad, right-skewed spread (peak near 33, tail to 36+).

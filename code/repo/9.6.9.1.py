@@ -1,0 +1,10 @@
+m_D = 0.1 * 246
+m_D2 = m_D ** 2
+M_R = 2e16
+m_nu_GeV = m_D2 / M_R
+m_nu_eV = m_nu_GeV * 1e9
+print(f"m_D = {m_D} GeV")
+print(f"m_D^2 = {m_D2} GeV²")
+print(f"M_R = {M_R} GeV")
+print(f"m_ν (GeV) = {m_nu_GeV}")
+print(f"m_ν (eV) = {m_nu_eV}")

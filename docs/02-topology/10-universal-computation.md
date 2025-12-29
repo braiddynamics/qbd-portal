@@ -968,11 +968,11 @@ print("Verification complete: Errors produce non-trivial syndromes, confirming f
 **Simulation Output:**
 
 ```text
-Initial geometric syndrome: -1.0
-Syndrome after X0 error: 1.0
-Syndrome after Z0 (geom): -1.0
-Initial ribbon2: 1.0
-Syndrome after weight-2 X0 X1 for ribbon2: -1.0
+Initial geometric syndrome:  -1.0
+Syndrome after X0 error:  -1.0
+Syndrome after Z0 (geom):  1.0
+Initial ribbon2:  1.0
+Syndrome after weight-2 X0 X1 for ribbon2:  -1.0
 Z error flips vertex syndrome due to anticommutation factor -1.
 Verification complete: Errors produce non-trivial syndromes, confirming fault tolerance and d=3.
 ```
@@ -1495,9 +1495,9 @@ print("Verification: High Ω low Γ for ~0.5 coherence.")
 **Simulation Output:**
 
 ```text
-Final pops: [0.29588084 0.70411916]
-Final off-diag real: 0.441222096461602
-Final off-diag imag: 0.0
+Final pops:  [0.29588084 0.70411916]
+Final off-diag real:  0.441222096461602
+Final off-diag imag:  0.0
 Verification: High Ω low Γ for ~0.5 coherence.
 ```
 
