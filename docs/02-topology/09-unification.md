@@ -398,7 +398,7 @@ The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \ma
 **I. Topological Construction**
 The relation represents the "three-strand rule" (Reidemeister Type III move). For any triplet of adjacent ribbons $(i, i+1, i+2)$, the sequence represents a permutation of the strands.
 Both sequences $\Sigma_A = \mathcal{R}_i \circ \mathcal{R}_{i+1} \circ \mathcal{R}_i$ and $\Sigma_B = \mathcal{R}_{i+1} \circ \mathcal{R}_i \circ \mathcal{R}_{i+1}$ map the initial configuration $C_{init}$ to an identical final configuration $C_{final}$ up to ambient isotopy.
-The isotopy preserves all topological invariants, including the **Writhe** $w(\beta)$ and **Linking Matrix** $L_{ij}$ [(§6.1.1)](#6.1.1).
+The isotopy preserves all topological invariants, including the **Writhe** $w(\beta)$ and **Linking Matrix** $L_{ij}$ [(§6.1.1)](/monograph/topology/tripartite-braid#6.1.1).
 
 **II. Causal Validity**
 The transformation respects the **Principle of Unique Causality**.
@@ -1139,7 +1139,7 @@ The writhe is additively conserved ($w_5 = w_3 + w_2$) due to the traceless gene
 1.  **Link Term:** The 6 cross-sector links are annihilated. $\Delta L = L_5 - 0 > 0$.
 2.  **Writhe Term:** Since $(w_3 + w_2)^2 > w_3^2 + w_2^2$ for aligned charges, the quadratic penalty decreases.
 3.  **Total:** $\Delta C_{total} = C_{total}(\beta_5) - C_{total}(\beta_f) \propto 6 \text{ links} + \Delta(w^2) > 0$.
-Alternative fragmentations (e.g., $5 \to 1+1+1+1+1$) are forbidden as they yield unstable vacuum states [(§6.2.4)](#6.2.4).
+Alternative fragmentations (e.g., $5 \to 1+1+1+1+1$) are forbidden as they yield unstable vacuum states [(§6.2.4)](/monograph/topology/tripartite-braid#6.2.4).
 Since mass $m \propto C_{total}$, the unified state is energetically metastable, favoring decay to the Standard Model configuration.
 
 Q.E.D.
@@ -1651,7 +1651,7 @@ Consequently, the configuration vector is the null vector $\vec{w} = (0, 0, \dot
 
 **III. Mass Vanishing Theorem**
 A standard braid with zero writhe on all ribbons minimizes the Generalized Braid Energy Functional at the trivial topology.
-* **Crossing Number:** By the Minimal Generation Theorem [(§6.1.2)](#6.1.2), zero writhe implies a minimal crossing number $C[\beta] = 0$.
+* **Crossing Number:** By the Minimal Generation Theorem [(§6.1.2)](/monograph/topology/tripartite-braid#6.1.2), zero writhe implies a minimal crossing number $C[\beta] = 0$.
 * **Complexity:** The total topological complexity vanishes: $N_3(\beta) = 0$, $w_i=0$, $L_{ij}=0$.
 * **Mass:** By the Topological Mass Theorem [(§7.4.4)](quantum-numbers#7.4.4), $m \propto N_3$. Thus, $m_{\beta} = 0$.
 Attempts to introduce mass via added crossings ($C[\beta] > 0$) while maintaining $w_i=0$ yield high-complexity excited states, failing the minimality criterion for the ground state neutrino. Therefore, standard braids describe only massless Weyl fermions or vacuum states.
