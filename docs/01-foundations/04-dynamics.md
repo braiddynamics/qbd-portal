@@ -22,6 +22,8 @@ Finally, we unify these elements into the Universal Operator $\mathcal{U}$. This
 * Confirm the operator is irreversible through projection and sampling entropy increase.
 :::
 
+-----
+
 ## 4.1 Categorical Foundations: Definitions and Motivations {#4.1}
 
 :::note[**Section 4.1 Overview**]
@@ -567,6 +569,8 @@ This syntax bridges directly to the thermodynamic considerations by providing a 
 The mathematical validation of these categories transforms the graph from a static data structure into a dynamic engine capable of supporting physics. By proving that the operations of path concatenation and history embedding are associative and possess identity elements, we guarantee that the "computation" of the universe is robust against the order of operations. This solidity allows us to build complex higher-order structures, such as the awareness comonad, with the confidence that the underlying logical substrate will not collapse under the weight of recursive definitions.
 :::
 
+-----
+
 ## 4.3 The Awareness Layer {#4.3}
 
 :::note[**Section 4.3 Overview**]
@@ -989,7 +993,7 @@ Q.E.D.
 
 ### 4.3.9.1 Calculation: Simulation Verification {#4.3.9.1}
 
-:::info[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
+:::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 
 The following Python simulation implements the "Store Comonad" (Functor, Counit, Commultiplication, and Functor-on-Morphisms) and verifies all three axioms with strict, structural equality. This simulation serves as an empirical validation, translating the abstract categorical definitions into a concrete computational model to confirm their consistency.
 
@@ -1234,7 +1238,7 @@ Q.E.D.
 
 ### 4.4.2.2 Calculation: Entropy Simulation {#4.4.2.2}
 
-:::info[**Computational Verification of Local Entropy Gain with Multi-Trial Robustness**]
+:::note[**Computational Verification of Local Entropy Gain with Multi-Trial Robustness**]
 
 The simulation below isolates the relational pair $(v, u)$ in a minimal 2-path $v \to w \to u$, computing effective multiplicity pre- and post-closure. It employs multi-trial averaging over randomized timestamps to ensure robustness against temporal ordering artifacts, confirming $\Delta S = \ln 2$ with statistical precision. This numerical exactness grounds the analytic multiplicity argument.
 
@@ -1498,7 +1502,7 @@ Q.E.D.
 
 ### 4.4.6.2 Calculation: Friction Damping {#4.4.6.2}
 
-:::info[**Computational Check of Gaussian Normalization and Tail Damping**]
+:::note[**Computational Check of Gaussian Normalization and Tail Damping**]
 
 The simulation calculates $\mu = 1/\sqrt{2\pi}$ and verifies the damping factors for various stress levels. It explicitly validates the normalization by comparing the Gaussian PDF peak to the derived $\mu$.
 
@@ -1537,7 +1541,7 @@ The output confirms that stress=1 reduces the rate by \~33%, while stress=5 supp
 
 ### 4.4.6.3 Commentary: The Viscosity of Space {#4.4.6.3}
 
-:::tip[**Steric Hindrance in the Causal Graph**]
+:::info[**Steric Hindrance in the Causal Graph**]
 
 Friction ($\mu$) acts as the "viscosity" of the vacuum; a crucial resistive force that prevents the system from overheating. In regions where the graph becomes dense and highly interconnected ("stressed"); the number of constraints on any new edge increases linearly. The friction coefficient converts this topological density into a suppression probability. This statistical suppression is consistent with the master equation formalism of **[(van Kampen, 1992)](/monograph/appendices/a-references#A.64)**, where the macroscopic stability of a system emerges from the competitive balance between growth rates and density-dependent damping terms.
 
@@ -1554,6 +1558,8 @@ This thermodynamic grounding implies a subtle bias in the overall flow, where th
 
 The identification of these thermodynamic constants transforms the abstract graph dynamics into a physical theory with predictive power. By anchoring the parameters to the information-theoretic properties of the bit, we remove the freedom to "tune" the universe, asserting that the laws of physics are consequences of the limits of information processing. This unification of thermodynamics and geometry provides the energy budget for the universal constructor, ensuring that every topological operation pays its way in entropy.
 :::
+
+-----
 
 ## 4.5 The Action Layer (Mechanism) {#4.5}
 
@@ -1827,6 +1833,8 @@ This mechanism produces a distribution of potential futures, separating the prop
 The operationalization of the rewrite rule as a stochastic process governed by local stress completes the microscopic definition of the dynamics. It establishes the universe as a computational engine that actively seeks to maximize its internal complexity while minimizing logical contradictions. This biased random walk through the configuration space of graphs is the microscopic origin of the macroscopic laws of evolution, driving the system inevitably toward the geometric phase where matter and spacetime can emerge.
 :::
 
+-----
+
 ## 4.6 Single Tick of Logical Time {#4.6}
 
 :::note[**Section 4.6 Overview**]
@@ -1945,7 +1953,7 @@ Q.E.D.
 
 ### 4.6.2.2 Calculation: Born Rule Verification {#4.6.2.2}
 
-:::info[**Computational Check of Product-Rule Transitions with Normalization**]
+:::note[**Computational Check of Product-Rule Transitions with Normalization**]
 
 The simulation evolves a toy graph (N=4 chain) to verify that multi-event probabilities follow the product rule. It explicitly calculates the raw weights for three distinct branches (two additions, one deletion) and verifies that the deletion path probability is exactly half that of the addition paths after normalization.
 
@@ -1995,7 +2003,7 @@ The simulation confirms that the deletion path is penalized exactly by the entro
 
 ### 4.6.2.3 Commentary: Classical Amplitudes {#4.6.2.3}
 
-:::warning[**Information as the Basis of Probability**]
+:::info[**Information as the Basis of Probability**]
 
 This result provides a startlingly classical mechanism for the emergence of Born-like probabilities. The scaling factor $(1/2)^{N_{\text{del}}}$ does not arise from a complex wave equation or Hilbert space norm; but from the naked entropic "cost" of information erasure. This derivation suggests a physical origin for the principles of **[(Zurek, 2003)](/monograph/appendices/a-references#A.74)**, where quantum probabilities (the Born rule) emerge from the symmetries of entanglement and the environment's selection of stable states; in QBD, the "environment" is the vacuum friction that selects against information loss.
 
@@ -2049,7 +2057,7 @@ Q.E.D.
 
 ### 4.6.3.2 Calculation: Irreversibility Check {#4.6.3.2}
 
-:::info[**Computational Verification of Entropy Loss in Projection and Sampling**]
+:::note[**Computational Verification of Entropy Loss in Projection and Sampling**]
 
 The simulation measures the Shannon entropy of the distribution at each stage of the operator $\mathcal{U}$. It uses multi-trial averaging to ensure robustness against noise in the branching probabilities.
 
@@ -2135,6 +2143,8 @@ In synthesizing the dynamics, we see the historical syntax accumulate immutable 
 
 The definition of the logical tick as a composite irreversible operator cements the fundamental nature of time in this theory. Time is not a smooth coordinate but a discrete sequence of computational cycles, each consuming information to produce history. The irreversibility of the sampling step provides a derivation of the Second Law of Thermodynamics from the microscopic dynamics of the graph, identifying the flow of time with the production of entropy inherent in the collapse of possibility into reality.
 :::
+
+-----
 
 ## 4.Ω Formal Synthesis {#4.Ω}
 

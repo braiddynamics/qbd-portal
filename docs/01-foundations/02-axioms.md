@@ -305,7 +305,7 @@ This permission generates a universe populated by "inert echoes." A vertex posse
 
 Mathematical antisymmetry is proven insufficient for physical causality because it permits self-loops that masquerade as valid relations while contributing zero thermodynamic progress. These loops satisfy the formal condition of non-reciprocity only because the source and target are identical, creating pockets of causal inertia where logical time passes without state evolution. By allowing events to be their own antecedents, antisymmetry creates a permission structure for solipsistic existence that decouples from the external universe.
 
-This realization forces the adoption of strict irreflexivity, redefining physical existence as inherently relational and interactive. A universe governed by simple antisymmetry would be cluttered with inert debris—ghostly loops that consume resources but generate no history—whereas irreflexivity purges these artifacts, ensuring that every valid edge represents a genuine transfer of information between distinct entities. This cleans the ontology, demanding that to exist is to affect something else.
+This realization forces the adoption of strict irreflexivity, redefining physical existence as inherently relational and interactive. A universe governed by simple antisymmetry would be cluttered with inert debris, ghostly loops that consume resources but generate no history, whereas irreflexivity purges these artifacts, ensuring that every valid edge represents a genuine transfer of information between distinct entities. This cleans the ontology, demanding that to exist is to affect something else.
 
 By closing the loophole of self-reference, we guarantee that the causal graph remains thermodynamically active, preventing the formation of informational sinks that would stall the evolution of the cosmos. This mandate ensures that every quantum of logical time must purchase a quantum of relational change, enforcing a strict efficiency on the computational substrate. There can be no idle cycles in the engine of reality; the universe is forbidden from stuttering in place, ensuring that existence is synonymous with continuous, relational transformation.
 :::
@@ -1210,14 +1210,13 @@ The **Causal Primitive** [(§2.1.1)](#2.1.1) and the **Geometric Primitive** [(�
 
 ### 2.5.1.1 Commentary: Independence Argument {#2.5.1.1}
 
-:::info[**Structure of the Mutual Non-Entailment Argument via Construction of Orthogonal Countermodels**]
+:::tip[**Structure of the Mutual Non-Entailment Argument via Construction of Orthogonal Countermodels**]
 
 The proof follows the standard model-theoretic approach, constructing explicit counter-models to demonstrate that neither axiom functions as a subset of the other. This methodology draws upon **[(Enderton, 2001)](/monograph/appendices/a-references#A.24)**, using the definition of independence where a sentence $\sigma$ is independent of a set of axioms $\Sigma$ if there exists a model $\mathfrak{M}_1$ where $\Sigma \cup \{\sigma\}$ holds and a model $\mathfrak{M}_2$ where $\Sigma \cup \{\neg \sigma\}$ holds. Here, our "sentences" are the axioms of Causal Directionality and Geometric Constructibility.
 
 1.  **The Granularity Failure (Model A):** The argument constructs a sparse directed 4-cycle. This model satisfies Axiom 1 (no self-loops, no reciprocity) but violates Axiom 2. It demonstrates that causal directionality does not entail geometric quantization.
 2.  **The Causal Failure (Model B):** The argument constructs a disjoint union of a 3-cycle and a self-loop. This model satisfies Axiom 2 (quanta exist) but violates Axiom 1. It demonstrates that geometric structure does not entail causal consistency.
 3.  **The Synthesis:** The mutual non-entailment confirms the axioms as orthogonal foundations: one establishes the arrow of time, the other establishes the fabric of space.
-:::
 
 ### 2.5.1.2 Diagram: Independence Matrix {#2.5.1.2}
 
@@ -1370,6 +1369,7 @@ This delineation clarifies the specific role of each axiom: directionality provi
 
 By establishing these axioms as distinct pillars, we secure a robust foundation where the failure of one principle does not collapse the entire theoretical framework, allowing for precise diagnosis of physical pathologies. This modularity implies that the arrow of time and the fabric of space are not the same entity but are coupled mechanical systems. The universe requires both the engine of causality and the chassis of geometry to function, and recognizing their independence allows us to understand how they constrain one another to produce a consistent physical reality.
 :::
+
 -----
 
 ## 2.6 The Inadequacy of Local Axioms {#2.6}
@@ -1820,7 +1820,6 @@ Q.E.D.
 We encounter here the "Horizon Problem" in the specific context of discrete graph dynamics. This refers to the fundamental inability of a local observer (or a local physical law) to perceive global curvature or topology. This phenomenon is deeply rooted in the statistical mechanics of random graphs as described by **[(Erdős & Rényi, 1960)](/monograph/appendices/a-references#A.25)** and further elaborated by **[(Bollobás, 2001)](/monograph/appendices/a-references#A.15)**. As the graph evolves and edge density increases, the system undergoes a phase transition (percolation) where the size of connected components and cycle lengths diverges. In this regime, the global topology (such as a large cycle) scales faster than any fixed local neighborhood radius $R$.
 
 Consider the analogy of an observer standing on the surface of a massive sphere; locally the ground appears perfectly flat. The observer requires measurements from a vast distance to detect the curvature. Similarly, a local rewrite rule operating on a specific node sees a long cycle simply as a straight line extending into the horizon. If the rule $\mathcal{R}$ is restricted to look only $R$ steps away, it cannot distinguish between an infinite linear chain and a closed circle of circumference $100R$. If the system relied on detecting the *geometry* of the loop to stop paradoxes, it would inevitably fail; as the loop closes beyond the "vision" of the local operator. This limitation underscores why the enforcement mechanism must rely on **Unique Causality** (preventing the cloning of information locally) and **Monotonicity** (checking timestamps locally); rather than attempting to measure the global topology directly. We cannot police the universe by looking at the whole thing at once; we must design local laws that make global violations impossible by their very nature.
-:::
 
 ### 2.7.3.3 Diagram: The Horizon Problem
 

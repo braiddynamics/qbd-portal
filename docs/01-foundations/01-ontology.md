@@ -108,7 +108,7 @@ To build this argument, the formal definitions that govern deductive systems are
 
 ### 1.1.2 Definition: Deductive System Components {#1.1.2}
 
-:::info[**Definition of Formal Deductive Systems as a Tripartite Framework of Language, Axioms, and Inference**]
+:::tip[**Definition of Formal Deductive Systems as a Tripartite Framework of Language, Axioms, and Inference**]
 
 A **Formal Deductive System** is defined as the tripartite structure $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$, comprising the following immutable components:
 1.  $\mathcal{L}$, the **Formal Language**, consisting of a finite alphabet and a recursive grammar that defines the set of all possible Well-Formed Formulas (WFFs).

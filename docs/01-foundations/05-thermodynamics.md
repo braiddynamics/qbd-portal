@@ -22,7 +22,7 @@ Our inquiry culminates in the mapping of the system's phase space and the identi
 * Chain geometric preconditions for manifold convergence.
 :::
 
----
+-----
 
 ## 5.1 The Thermodynamic Framework {#5.1}
 
@@ -199,7 +199,7 @@ Q.E.D.
 
 ### 5.1.4.1 Calculation: Boundary Correction {#5.1.4.1}
 
-:::info[**Computational Verification of Subextensive Boundary Terms using Lattice Simulation**]
+:::note[**Computational Verification of Subextensive Boundary Terms using Lattice Simulation**]
 
 Quantification of the subextensive boundary term and verification of the independence assumption utilize a simulation of a 2D toroidal lattice. Partitioning the lattice into $\sqrt{N}$ blocks allows counting the fraction of edges crossing block boundaries.
 
@@ -355,9 +355,7 @@ The terms are defined as follows:
 * **$e^{-6\mu\rho}$:** The frictional suppression factor arising from Acyclic constraints [(§5.2.5)](#5.2.5).
 * **$\frac{1}{2}\rho(1 + 6\lambda_{cat}\rho)$:** The entropic decay rate enhanced by Catalytic Stress [(§5.2.6)](#5.2.6).
 
-### 5.2.2.1 Commentary: Anatomy of the Equation {#5.2.2.1}
-
-:::info[**Dissecting the Law of Growth**]
+---
 
 **The Vacuum Drive ($\Lambda$):**
 This term acts as the **Spark of Existence**. Unlike classical autocatalysis, which requires a seed to begin, the Vacuum Drive ensures that the creation rate is strictly positive even at zero density ($\rho=0$). It represents the intrinsic tendency of the graph's underlying tree structure to spontaneously close loops, lifting the system out of the void and topologically prohibiting total collapse.
@@ -371,7 +369,7 @@ This term is the **Friction Function**. It represents the increasing difficulty 
 **The Linear Brake and Catalytic Stress ($-\frac{1}{2}\rho(1 + \dots)$):**
 This term acts as the **Thermodynamic Cost**. The linear component ($\frac{1}{2}\rho$) represents the natural evaporation of information, the entropy tax required to maintain order. The stress component ($6\lambda_{cat}\rho$) acts as a "crowding tax": as density rises, local tension increases, making edges more fragile and prone to deletion. This non-linear decay prevents the runaway saturation that would otherwise occur.
 
-### 5.2.2.2 Argument Outline: Derivation of the Master Equation {#5.2.2.2}
+### 5.2.2.1 Argument Outline: Derivation of the Master Equation {#5.2.2.1}
 
 :::tip[**Logical Structure of the Proof via Aggregation of Microscopic Rates**]
 
@@ -467,7 +465,7 @@ Q.E.D.
 
 ### 5.2.4.2 Calculation: Precursor Scaling Verification {#5.2.4.2}
 
-:::info[**Monte Carlo Validation of Quadratic Path Growth**]
+:::note[**Monte Carlo Validation of Quadratic Path Growth**]
 
 To verify the combinatorial derivation, a simulation is performed to track the density of **Compliant 2-Paths** ($u \to v \to w$ where $u \not\sim w$) in a graph growing via random cycle addition. The simulation strictly isolates **open** paths, those created by the interaction of overlapping cycles, filtering out the closed paths internal to the triangles themselves. This isolation is necessary to distinguish the quadratic interaction term ($9\rho^2$) from linear background counts.
 
@@ -562,7 +560,7 @@ The simulation yields a scaling exponent of $\approx 2.017$, which is in close a
 
 ### 5.2.4.3 Commentary: Nonlinear Dynamics {#5.2.4.3}
 
-:::note[**Mechanism of Structural Acceleration**]
+:::info[**Mechanism of Structural Acceleration**]
 
 The derivation highlights that the quadratic term arises from the **pairwise incidence** of edges. It is not sufficient for edges to simply exist; they must share a vertex to form a 2-path. This geometric constraint creates a non-linear feedback loop: adding an edge increases the degrees of two vertices, which increases the number of available 2-paths ($\binom{d}{2}$), which in turn increases the probability of adding *more* edges. This positive feedback drives the "inflationary" phase of the graph's evolution, allowing the system to rapidly densify once the vacuum permittivity $\Lambda$ provides the initial seed.
 :::
@@ -608,7 +606,7 @@ Q.E.D.
 
 ### 5.2.5.2 Calculation: Friction Verification {#5.2.5.2}
 
-:::info[**Monte Carlo Validation of Steric Hindrance**]
+:::note[**Monte Carlo Validation of Steric Hindrance**]
 
 To validate exponential suppression, a simulation is performed to model graph growth under **Bounded Degree Constraints**. The maximum degree is set to $k_{max}=3$. Random edges are proposed and the **Acceptance Ratio**, defined as the fraction of attempts where both target nodes possess available capacity ($d < k_{max}$), is tracked.
 
@@ -704,7 +702,7 @@ The simulation yields a clear exponential decay profile with a decay constant $B
 
 ### 5.2.5.3 Commentary: The Saturation Mechanism {#5.2.5.3}
 
-:::note[**The Role of Negative Feedback**]
+:::info[**The Role of Negative Feedback**]
 
 This exponential damping constitutes the essential physical mechanism that stabilizes the vacuum. Without it, the quadratic autocatalysis term ($J_{auto} = 9\rho^2$) would drive the density to unity in finite time, resulting in a "Small World" catastrophe where every event is causally connected to every other event (a black hole topology). This mechanism is analogous to the logistic growth models in population dynamics, but here it arises from the graph's internal constraints. **[(van Kampen, 1992)](/monograph/appendices/a-references#A.64)** describes similar self-limiting processes in chemical kinetics and master equations, where non-linear damping terms prevent divergences and lead to stable stationary states.
 
@@ -748,7 +746,7 @@ Q.E.D.
 
 ### 5.2.6.2 Calculation: Stress-Decay Verification {#5.2.6.2}
 
-:::info[**Monte Carlo Validation of Induced Instability**]
+:::note[**Monte Carlo Validation of Induced Instability**]
 
 To verify the non-linear decay law, a simulation is performed to model "Stress-Dependent Deletion." Random graphs of varying densities are generated, and a deletion rule is applied where the probability of removing an edge increases linearly with the local degree (crowding).
 
@@ -851,7 +849,7 @@ Q.E.D.
 
 ### 5.2.7.1 Calculation: Equation Verification {#5.2.7.1}
 
-:::info[**Exact Solution of the Geometrogenesis Equation**]
+:::note[**Exact Solution of the Geometrogenesis Equation**]
 
 To validate the Master Equation, we solve for the equilibrium fixed point $\rho^*$ using the precise constants derived in Chapter 4. We utilize the **Catalysis Coefficient** ($\lambda_{cat} = e-1$) and the **Friction Coefficient** ($\mu = 1/\sqrt{2\pi}$) to confirm that the physical vacuum state ($\rho^* \approx 0.037$) emerges naturally from the interplay of entropic release and Gaussian stress damping.
 

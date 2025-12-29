@@ -89,7 +89,7 @@ Q.E.D.
 
 :::info[**Impossibility of Standard Model Embedding in Low-Rank Groups**]
 
-The **rank necessity condition** [(§9.1.2)](#9.1.2) establishes a hard, non-negotiable lower bound on the complexity of the unifying gauge group. In Lie algebra theory, the "rank" of a group corresponds directly to the number of mutually commuting generators—which, in physics terms, translates to the number of quantum numbers that can be simultaneously conserved and measured. The Standard Model requires the conservation of four distinct charges: the two diagonal generators of color ($T_3, T_8$), the third component of weak isospin ($T_3$), and the hypercharge ($Y$). This implies that the "diagonal bandwidth" of the unification group must be at least 4.
+The **rank necessity condition** [(§9.1.2)](#9.1.2) establishes a hard, non-negotiable lower bound on the complexity of the unifying gauge group. In Lie algebra theory, the "rank" of a group corresponds directly to the number of mutually commuting generators. In physics terms this translates to the number of quantum numbers that can be simultaneously conserved and measured. The Standard Model requires the conservation of four distinct charges: the two diagonal generators of color ($T_3, T_8$), the third component of weak isospin ($T_3$), and the hypercharge ($Y$). This implies that the "diagonal bandwidth" of the unification group must be at least 4.
 
 This constraint is not merely an algebraic technicality; it is a topological constraint on the connectivity of the underlying braid. If the group had a rank of 3 (like $SU(4)$), it would be geometrically impossible to distinguish a quark from a lepton while simultaneously maintaining color conservation; the "address space" of the particle would be too small to encode all necessary information. **[(Sachs, 1962)](/monograph/appendices/a-references#A.57)** systematically explored the properties of graph spectra related to Lie algebras, providing the mathematical groundwork for linking the discrete connectivity of graphs to the continuous symmetries of rank-constrained groups. His work illustrates that the dimensionality of the "hole structure" in the graph (the rank) dictates the complexity of the symmetries it can support. Consequently, the minimal simple group that satisfies this rank-4 condition is $SU(5)$. This provides a group-theoretical justification for the 5-ribbon braid model: fewer than 5 ribbons cannot generate enough diagonal operators to label the particles of the Standard Model.
 :::
@@ -209,7 +209,7 @@ Q.E.D.
 
 ### 9.1.5.1 Calculation: Anomaly Check Verification {#9.1.5.1}
 
-:::info[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
+:::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
 
 The explicit cubic anomaly trace check for the SU(5) representations $\bar{5}$ and $10$ confirms anomaly cancellation: $A(\bar{5}) = -1$, $A(10) = +1$, sum = 0. For SU(N), the cubic anomaly coefficient $A(R)$ is the index of the representation in the adjoint, normalized such that $A(\text{fundamental}) = 1$; for anti-fundamental $\bar{N}$, $A(\bar{N}) = -1$; for antisymmetric tensor $\wedge^2 N$, $A = N-4$ (for N=5, $A(10)=1$).
 
@@ -268,9 +268,9 @@ The identification of $SU(5)$ as the minimal solution transforms unification fro
 
 :::note[**Section 9.2 Overview**]
 
-If $SU(5)$ provides the algebraic language of unification, what is the physical object that speaks it? We face the ontological challenge of identifying a single topological structure whose internal dynamics naturally generate the 24 gauge bosons of the unified force and whose stable knot configurations correspond one-to-one with the quarks and leptons. The Standard Model offers no such object, treating particles as point-like excitations of abstract fields—a "zoo" of distinct entities with no structural relationship to one another. We are forced to construct a geometric entity that unifies matter and force into a single topological framework, dissolving the distinction between the mover and the moved.
+If $SU(5)$ provides the algebraic language of unification, what is the physical object that speaks it? We face the ontological challenge of identifying a single topological structure whose internal dynamics naturally generate the 24 gauge bosons of the unified force and whose stable knot configurations correspond one-to-one with the quarks and leptons. The Standard Model offers no such object, treating particles as point-like excitations of abstract fields, a "zoo" of distinct entities with no structural relationship to one another. We are forced to construct a geometric entity that unifies matter and force into a single topological framework, dissolving the distinction between the mover and the moved.
 
-Relying on point-particle models forces theoretical physics to introduce separate quantum fields for each multiplet, cluttering the ontology with arbitrary distinct entities that happen to share interaction vertices. String theory offers a geometric unification but achieves it at the cost of introducing extra spatial dimensions and a "landscape" of $10^{500}$ possible vacua, effectively abandoning predictivity. We seek a solution in four dimensions that explains the specific multiplet structure—the antifundamental $\mathbf{\bar{5}}$ and the antisymmetric $\mathbf{10}$—as a necessary consequence of knot theory. Without a topological reason for these specific representations, the particle content of the universe remains a random selection drawn from an infinite menu of mathematical possibilities. A theory that cannot map the taxonomy of particles to the combinatorics of space itself fails to provide a satisfying unification.
+Relying on point-particle models forces theoretical physics to introduce separate quantum fields for each multiplet, cluttering the ontology with arbitrary distinct entities that happen to share interaction vertices. String theory offers a geometric unification but achieves it at the cost of introducing extra spatial dimensions and a "landscape" of $10^{500}$ possible vacua, effectively abandoning predictivity. We seek a solution in four dimensions that explains the specific multiplet structure, the antifundamental $\mathbf{\bar{5}}$ and the antisymmetric $\mathbf{10}$, as a necessary consequence of knot theory. Without a topological reason for these specific representations, the particle content of the universe remains a random selection drawn from an infinite menu of mathematical possibilities. A theory that cannot map the taxonomy of particles to the combinatorics of space itself fails to provide a satisfying unification.
 
 We introduce the **Penta-Ribbon Braid**, a five-strand composite structure whose local rewrite operations generate the $SU(5)$ algebra. We demonstrate that its "unlinked" ground state topologically corresponds to the $\mathbf{\bar{5}}$ multiplet (down quarks and leptons) and its "pairwise linked" excited state corresponds to the $\mathbf{10}$ multiplet (up quarks), deriving the entire particle spectrum from the inevitable combinatorics of the braid.
 :::
@@ -285,10 +285,9 @@ The **Penta-Ribbon Braid** is herein defined as the composite topological struct
 
 :::info[**Derivation of Matter Multiplets from Five-Strand Braid Topology**]
 
-The **penta-ribbon definition** [(§9.2.1)](#9.2.1) introduces the central topological protagonist of this chapter: the 5-strand braid. Rather than postulating quarks and leptons as separate entities, this model posits that a single composite object—a braid of five interacting world-tubes—is sufficient to encode all the fermions of a single generation. Each "strand" or ribbon in this cable corresponds to a specific component of the 5-dimensional fundamental vector space on which the $SU(5)$ group acts. The local rewrite rules $\{\mathcal{R}_1, \dots, \mathcal{R}_4\}$ act as the physical mechanisms that swap these ribbons, and these swaps physically generate the gauge forces we observe.
+The **penta-ribbon definition** [(§9.2.1)](#9.2.1) introduces the central topological protagonist of this chapter: the 5-strand braid. Rather than postulating quarks and leptons as separate entities, this model posits that a single composite object, a braid of five interacting world-tubes, is sufficient to encode all the fermions of a single generation. Each "strand" or ribbon in this cable corresponds to a specific component of the 5-dimensional fundamental vector space on which the $SU(5)$ group acts. The local rewrite rules $\{\mathcal{R}_1, \dots, \mathcal{R}_4\}$ act as the physical mechanisms that swap these ribbons, and these swaps physically generate the gauge forces we observe.
 
-This approach resonates with the seminal work of **[(Witten, 1989)](/monograph/appendices/a-references#A.70)**, who demonstrated how Chern-Simons theory on 3-manifolds (specifically the knot complement) generates the quantum invariants of knots. Witten effectively linked the topology of braids to the Hilbert spaces of quantum field theories. In QBD, we invert this relationship: the "quantum field" is simply the local state of the graph, and the "knot invariants" (like crossing number and writhe) become the conserved quantum numbers of the particle (mass, charge, spin). By defining matter this way, we move away from point particles to extended, relational structures. A "particle" is no longer a dimensionless dot; it is a specific, stable braiding pattern of this 5-strand cable. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations//monograph/foundations/axioms#2.3.3) ensures that this cable doesn't tangle into acausal knots (closed timelike curves), preserving the logical consistency of the particle's history.
-:::
+This approach resonates with the seminal work of **[(Witten, 1989)](/monograph/appendices/a-references#A.70)**, who demonstrated how Chern-Simons theory on 3-manifolds (specifically the knot complement) generates the quantum invariants of knots. Witten effectively linked the topology of braids to the Hilbert spaces of quantum field theories. In QBD, we invert this relationship: the "quantum field" is simply the local state of the graph, and the "knot invariants" (like crossing number and writhe) become the conserved quantum numbers of the particle (mass, charge, spin). By defining matter this way, we move away from point particles to extended, relational structures. A "particle" is no longer a dimensionless dot; it is a specific, stable braiding pattern of this 5-strand cable. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) ensures that this cable doesn't tangle into acausal knots (closed timelike curves), preserving the logical consistency of the particle's history.
 
 ### 9.2.1.2 Diagram: The Penta-Ribbon Unification {#9.2.1.2}
 
@@ -406,7 +405,7 @@ The transformation respects the **Principle of Unique Causality**.
 In the graph representation, the "triangle slide" operation involves a sequence of edge additions and deletions.
 1.  **Deletion:** Removing an edge leaves a unique 2-path (no distant alternatives exist).
 2.  **Addition:** Adding the new crossing edge preserves acyclicity (timestamps $H(e)$ remain monotonic).
-The intermediate states in both $\Sigma_A$ and $\Sigma_B$ satisfy the **Effective Influence** relation $\le$ [(§2.6.1)](axioms#.6.1), ensuring the move is a valid trajectory in the causal manifold.
+The intermediate states in both $\Sigma_A$ and $\Sigma_B$ satisfy the **Effective Influence** relation $\le$ [(§2.6.1)](/monograph/foundations/axioms#2.6.1), ensuring the move is a valid trajectory in the causal manifold.
 
 Q.E.D.
 
@@ -463,7 +462,7 @@ Q.E.D.
 
 ### 9.2.5.2 Calculation: SU(5) Closure Simulation {#9.2.5.2}
 
-:::info[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
+:::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 
 To furnish empirical substantiation for the inductive contention that nested commutators of the four fundamental Hamiltonians comprehensively span the 24-dimensional basis of $\mathfrak{su}(5)$, we implement a computational simulation of the algebraic generation procedure. This verification commences with the eight Hermitian traceless generators affiliated with the adjacent braid swaps: for each of the four ribbon pairs, we formulate the real off-diagonal $\lambda^{(i,i+1)} = E_{i,i+1} + E_{i+1,i}$ and the imaginary counterpart $-i (E_{i,i+1} - E_{i+1,i})$, normalized such that $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ in accordance with the extended Gell-Mann convention [(§8.5.3)](braid-dynamics#8.5.3). In successive iterations, commutators $[A, B]$ are systematically evaluated, with the resultant skew-Hermitian structures projected onto Hermitian traceless forms through multiplication by $i$, candidates normalized to satisfy the trace condition, and each novel element incorporated exclusively upon confirmation of an increment in the singular value decomposition (SVD) rank of the coefficient matrix within the 25-dimensional traceless subspace (the dimension of 5×5 matrices less the trace constraint). A tolerance of $10^{-8}$ is imposed for rank discernment to accommodate numerical instabilities inherent in floating-point arithmetic.
 
@@ -600,7 +599,7 @@ This rapid escalation, 10 additions in the first pass (primarily non-adjacent of
 
 ### 9.2.5.3 Commentary: The Closure of Unified Force {#9.2.5.3}
 
-:::tip[**Completeness of the Gauge Algebra via Braid Dynamics**]
+:::info[**Completeness of the Gauge Algebra via Braid Dynamics**]
 
 The algebraic verification of the 24-dimensional closure confirms that the penta-ribbon braid naturally generates the full $\mathfrak{su}(5)$ gauge symmetry without ad hoc extensions. The simulation demonstrates that the recursive application of commutators, representing the physical interaction of non-adjacent ribbons via intermediate swaps, rapidly fills the entire Lie algebra space.
 
@@ -640,7 +639,6 @@ Q.E.D.
 The **anti-fundamental multiplet lemma** [(§9.2.6)](#9.2.6) provides a stunningly simple topological picture of the $\mathbf{\bar{5}}$ representation, which contains the down-type antiquarks and the lepton doublet ($d^c, e, \nu$). In standard group theory, $\mathbf{\bar{5}}$ is just a vector of 5 complex numbers. In QBD, it is revealed to be a specific geometric configuration: the "unlinked" state where the five ribbons run parallel without twisting or braiding around each other.
 
 This interpretation mirrors the representation theory found in the large-$N$ limits discussed by **[(Maldacena, 1998)](/monograph/appendices/a-references#A.42)**, where fundamental representations often map to "probe" branes or decoupled sectors that lack the complex self-interaction of the adjoint or antisymmetric tensors. Here, the "zero-complexity" ground state explains why these particles are the fundamental building blocks of matter. They are the "blank canvas" of the theory. Their quantum numbers (charges) come purely from the intrinsic twist of individual ribbons, not from the complex entanglement between them. This geometric simplicity aligns with their role as the lighter, more elementary components of the Standard Model spectrum compared to the heavier $\mathbf{10}$ multiplet (containing the top quark), which involves complex pairwise linking.
-:::
 
 ### 9.2.6.3 Diagram: Unlinked Configuration {#9.2.6.3}
 
@@ -743,6 +741,8 @@ The geometric realization of the multiplets explains the mass hierarchy as a con
 -----
 
 ## 9.3 The Origin of Generations {#9.3}
+
+:::note[**Section 9.3 Overview**]
 
 Why does nature replicate the fermion family exactly three times, creating two heavier copies of the electron and quarks that appear identical in every way except mass? The existence of three generations is an unexplained brute fact in the Standard Model, a "Who ordered that?" moment that defies the principle of parsimony. We must find a mechanism that generates these copies as distinct, stable states while strictly limiting their number to three. The challenge is to derive this integer not as an arbitrary input parameter, but as a dynamical constraint of the vacuum that prevents the formation of a fourth or fifth family.
 
@@ -930,7 +930,7 @@ Q.E.D.
 
 :::info[**Exponential Suppression of Transition Rates by Topological Barrier Width**]
 
-The **decay tunneling lemma** [(§9.3.4)](#9.3.4) resolves the paradox of why higher-generation particles (like muons and taus) are stable enough to be detected but unstable enough to decay. If they are protected by topology, why do they decay at all? The answer lies in the stochastic nature of the vacuum. While local moves cannot "untie" the knot of a muon to turn it into an electron, the probabilistic nature of the vacuum—the "rewrite bath"—allows for rare, non-local fluctuations that can bridge the topological gap.
+The **decay tunneling lemma** [(§9.3.4)](#9.3.4) resolves the paradox of why higher-generation particles (like muons and taus) are stable enough to be detected but unstable enough to decay. If they are protected by topology, why do they decay at all? The answer lies in the stochastic nature of the vacuum. While local moves cannot "untie" the knot of a muon to turn it into an electron, the probabilistic nature of the vacuum, the "rewrite bath", allows for rare, non-local fluctuations that can bridge the topological gap.
 
 This provides a natural physical explanation for the vast differences in particle lifetimes. The decay rate depends exponentially on the "thickness" of the topological barrier ($\Delta C$), which is the difference in knot complexity between the generations. A small arithmetic increase in complexity leads to a drastic exponential reduction in lifetime. This is why the Muon (Gen 2) lives for a relatively long microsecond, while the Tau (Gen 3), with its higher complexity and larger mass offering more phase space for decay, has a lifetime orders of magnitude shorter. Decay is not a random disintegration; it is the specific, calculable probability of the braid successfully "tunneling" through its complexity barrier to reach a simpler state.
 :::
@@ -982,7 +982,7 @@ This result solves the generation problem by transforming it from a parameter tu
 
 :::note[**Section 9.4 Overview**]
 
-If quarks and leptons share a common topological origin, what prevents them from transforming into one another constantly, turning the universe into a soup of radiation? We must reconcile the algebraic necessity of unification with the empirical stability of the proton and the distinct identities of matter particles at low energies. The challenge is to describe the "Leptoquarks"—the X and Y bosons—not as omnipresent particles that would dissolve atomic nuclei in microseconds, but as transient, high-energy events that are dynamically suppressed in the cold vacuum of the present epoch.
+If quarks and leptons share a common topological origin, what prevents them from transforming into one another constantly, turning the universe into a soup of radiation? We must reconcile the algebraic necessity of unification with the empirical stability of the proton and the distinct identities of matter particles at low energies. The challenge is to describe the "Leptoquarks", the X and Y bosons, not as omnipresent particles that would dissolve atomic nuclei in microseconds, but as transient, high-energy events that are dynamically suppressed in the cold vacuum of the present epoch.
 
 In standard Grand Unified Theories, leptoquarks are massive gauge bosons that mediate proton decay, and their mass must be set by hand to be astronomically high ($10^{15}$ GeV) to avoid contradicting experimental bounds. This "hierarchy problem" leaves the stability of matter dependent on a vast and unexplained energy gap between the electroweak scale and the unification scale. We need a mechanism where the separation of quarks and leptons is not just a parameter choice but the result of a symmetry breaking phase transition that physically isolates the topological sectors. A theory that allows quarks and leptons to mix freely without a mechanism for suppression fails to describe a habitable universe.
 
@@ -1060,10 +1060,9 @@ Q.E.D.
 
 :::info[**Topological Construction of the Quark-Lepton Mixing Vertex**]
 
-The **interaction vertex definition** [(§9.4.3)](#9.4.3) provides the geometric blueprint for the leptoquark vertex, the precise point where matter changes its fundamental nature. It describes a specific locus in the braid where the distinct "bundles" of ribbons—the color triplet and the weak doublet—converge and interact.
+The **interaction vertex definition** [(§9.4.3)](#9.4.3) provides the geometric blueprint for the leptoquark vertex, the precise point where matter changes its fundamental nature. It describes a specific locus in the braid where the distinct "bundles" of ribbons, the color triplet and the weak doublet, converge and interact.
 
 At this vertex, the off-diagonal generator $\hat{\lambda}_{LQ}$ acts like a switch track on a railway. It routes causal flux from the color lines onto the weak lines. Geometrically, imagine the three color strands merging with the two weak strands at a singular point, exchanging quantum numbers, and then separating. This explicit topological construction ensures that the transformation respects the subtle conservation laws of the theory (like $B-L$ conservation) because the total number of strands and the net orientation (writhe) must be conserved through the vertex. It turns the abstract algebra of $SU(5)$ into a mechanical flow-chart for particle transmutation, showing exactly how a quark becomes a lepton.
-:::
 
 ### 9.4.3.3 Diagram: The Leptoquark Vertex {#9.4.3.3}
 
@@ -1259,7 +1258,7 @@ Q.E.D.
 
 ### 9.5.2.2 Calculation: EFT Rate Calculation {#9.5.2.2}
 
-:::info[**Computational Verification of the EFT Decay Rate Tension**]
+:::note[**Computational Verification of the EFT Decay Rate Tension**]
 
 The perturbative decay rate in effective field theory (EFT) for proton decay via X-boson exchange follows the dimension-6 operator estimate:
 $$
@@ -1399,7 +1398,7 @@ This confirms the EFT tension: the base calculation falls $\sim 473$x short of t
 
 ### 9.5.2.3 Commentary: Standard Theory Failure {#9.5.2.3}
 
-:::tip[**Insufficiency of Perturbative Suppression for Proton Longevity**]
+:::info[**Insufficiency of Perturbative Suppression for Proton Longevity**]
 
 The **tension verification lemma** [(§9.5.2)](#9.5.2) highlights a critical failure of standard GUTs: they predict protons should die too young. Standard calculations suggest a lifetime of $10^{31}$ years, but experiments tell us protons live longer than $10^{34}$ years. This discrepancy of 3 orders of magnitude is a smoking gun.
 
@@ -1433,7 +1432,7 @@ The proton comprises three valence quarks ($uud$) in a color singlet state.
     * **Total Complexity:** $C_A \approx C_{e^+}$.
 
 2.  **Channel B: $p \to \mu^+ + K^0$**
-    * **Muon ($\mu^+$):** Generation 2 anti-lepton. As proven in **Lemma 9.3.2** [(§9.3.2)](generations#9.3.2), $C_{\mu} > C_{e}$.
+    * **Muon ($\mu^+$):** Generation 2 anti-lepton. As proven in **Lemma 9.3.2** [(§9.3.2)](#9.3.2), $C_{\mu} > C_{e}$.
     * **Kaon ($K^0$):** Generation 2 meson ($d\bar{s}$). Contains a strange quark, which possesses higher complexity than first-generation quarks. $C_{K} > C_{\pi}$.
     * **Total Complexity:** $C_B = C_{\mu} + C_{K} > C_A$.
 
@@ -1545,7 +1544,7 @@ This result transforms the proton from a ticking time bomb into a permanent feat
 
 The neutrino stands as the greatest anomaly of the Standard Model: it is electrically neutral, chiral, and possesses a mass so vanishingly small it defies the scale of all other fermions. We must explain this anomaly through topology. How does a braid structure allow for a neutral particle with a non-zero but tiny mass, while all other particles are heavy and charged? The challenge is to derive the "Seesaw Mechanism" from the geometry of the braid itself, linking the lightness of the neutrino to the heavy scale of unification without introducing arbitrary right-handed singlets.
 
-The Standard Model treats neutrinos as massless, requiring ad-hoc modification to accommodate oscillation data. Adding a right-handed neutrino with an arbitrary mass allows for a seesaw, but the scale of the heavy mass is an unconstrained parameter that must be tuned to explain the data. We need a geometric reason for the neutrino's neutrality—a mechanism that cancels its writhe—and a physical derivation of the heavy mass scale from the fundamental properties of the vacuum. A theory that cannot predict the neutrino mass scale from first principles fails to connect the physics of the very light to the physics of the very heavy.
+The Standard Model treats neutrinos as massless, requiring ad-hoc modification to accommodate oscillation data. Adding a right-handed neutrino with an arbitrary mass allows for a seesaw, but the scale of the heavy mass is an unconstrained parameter that must be tuned to explain the data. We need a geometric reason for the neutrino's neutrality, a mechanism that cancels its writhe, and a physical derivation of the heavy mass scale from the fundamental properties of the vacuum. A theory that cannot predict the neutrino mass scale from first principles fails to connect the physics of the very light to the physics of the very heavy.
 
 We define the neutrino as a **Folded Braid**, a structure looped back on itself to globally cancel its electric charge while retaining local topological tension. We show that this zero-mode mixes with a heavy right-handed state anchored to the vacuum's maximum friction-limited complexity, naturally generating the tiny observed neutrino masses via a topological seesaw mechanism.
 :::
@@ -1752,7 +1751,7 @@ The local density of topological features $\rho_{local}$ is defined as the numbe
 $$\rho_{local} = \frac{N_{sites}}{V_{braid}} \propto \frac{N_3}{V_0} \propto N_3$$
 
 **III. Stress Accumulation**
-The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ [(§5.2.1)](thermodynamics#.2.1).
+The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ [(§5.2.1)](/monograph/foundations/thermodynamics#5.2.1).
 $$\sigma \propto \rho_{local} - \rho_3^* \propto N_3$$
 As the complexity $N_3$ increases, the local density rises linearly, leading to a linear increase in the topological stress exerted by the vacuum pressure against the braid structure. This stress creates the friction that opposes further growth.
 
@@ -1872,7 +1871,7 @@ $$M_R = \kappa_{scale} \cdot N_{3,\max}$$
 
 **II. Dimensional Scaling**
 The mass scale is anchored to the Planck mass $M_{Pl}$ but suppressed by the exponential friction factor over the effective dimension $d=4$.
-The suppression factor derives from the instanton action in the 4D bulk [(§5.5.7)](thermodynamicsthermodynamics#.5.7):
+The suppression factor derives from the instanton action in the 4D bulk [(§5.5.7)](/monograph/foundations/thermodynamics#5.5.7):
 $$M_R \sim M_{Pl} \cdot e^{-c/\mu}$$
 where $c \approx 2.76$ is a geometric constant derived from the 4-volume embedding.
 
@@ -1922,7 +1921,7 @@ Q.E.D.
 
 ### 9.6.9.1 Calculation: Neutrino Mass Prediction {#9.6.9.1}
 
-:::info[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
+:::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
 
 Using the derived stability bound $M_R \approx 2 \times 10^{16}$ GeV and the electroweak scale $m_D \approx Y v$ with Yukawa $Y \sim 0.1$ [(§8.6.1)](braid-dynamics#8.6.1), $v \approx 246$ GeV), the calculation of the light neutrino mass proceeds via the seesaw formula [(§9.6.4)](#9.6.4):
 
@@ -1930,7 +1929,7 @@ $$
 m_{\nu_L} \approx \frac{m_D^2}{M_R} \approx \frac{(0.1 \cdot 246)^2}{2 \times 10^{16}} = 3.0258 \times 10^{-14} \, \text{GeV} \approx 3.026 \times 10^{-5} \, \text{eV},
 $$
 
-consistent with upper limits from neutrino oscillation data and cosmology (sum $m_{\nu} \lesssim 0.12$ eV, with $\Delta m^2 \sim (2.5 \times 10^{-3}, 2.4 \times 10^{-5})$ eV² implying minimal masses $\sim 0.009$–$0.05$ eV for hierarchical spectra). This parametric form yields a testable prediction for future precision measurements (for example, KATRIN absolute mass scale, cosmological surveys), with sensitivity to variations in $Y$ and $\mu$ within the region of physical viability. For alignment with lower bounds near $0.03$ eV, the framework accommodates $Y \gtrsim 1$ (analogous to charged lepton Yukawas) or refined $M_R \sim 10^{14}$–$10^{15}$ GeV via adjustments to $\mu$. The vacuum friction $\mu$ sets the Grand Unified Theory scale, rendering the seesaw hierarchy self-consistent from topological stability [(§5.4.1)](thermodynamics#.4.1) and fluid quenching ([§4.8]).
+consistent with upper limits from neutrino oscillation data and cosmology (sum $m_{\nu} \lesssim 0.12$ eV, with $\Delta m^2 \sim (2.5 \times 10^{-3}, 2.4 \times 10^{-5})$ eV² implying minimal masses $\sim 0.009$–$0.05$ eV for hierarchical spectra). This parametric form yields a testable prediction for future precision measurements (for example, KATRIN absolute mass scale, cosmological surveys), with sensitivity to variations in $Y$ and $\mu$ within the region of physical viability. For alignment with lower bounds near $0.03$ eV, the framework accommodates $Y \gtrsim 1$ (analogous to charged lepton Yukawas) or refined $M_R \sim 10^{14}$–$10^{15}$ GeV via adjustments to $\mu$. The vacuum friction $\mu$ sets the Grand Unified Theory scale, rendering the seesaw hierarchy self-consistent from topological stability [(§5.4.1)](/monograph/foundations/thermodynamics#5.4.1) and fluid quenching ([§4.8]).
 
 To arrive at the solution:  
 1. Compute the Dirac mass: $m_D = Y \cdot v = 0.1 \times 246 = 24.6$ GeV.  

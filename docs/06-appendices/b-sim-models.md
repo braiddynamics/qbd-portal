@@ -2,19 +2,10 @@
 title: "Appendix B: Python Simulations"
 sidebar_label: "Appendix B: Python Simulations"
 ---
-:::info Status
-**Draft**: This chapter is currently being drafted. 
-[Check the Roadmap on GitHub](https://github.com/braiddynamics/qbd-portal) for updates.
+:::tip[**Full simulation code is available, under a strict license, at:**]
 :::
 
-## Coming Soon
+### GitHub Repository: https://github.com/braiddynamics/qbd-portal
 
-This section is currently under active development. The underlying simulation data and mathematical proofs are being formatted for the web portal.
-
-### Expected Content
-* Detailed derivation of Appendix B: Python Simulation Models.
-* Associated Python verification suites.
-* Interactive topological diagrams.
 
 Return to [Table of Contents](/monograph)
-

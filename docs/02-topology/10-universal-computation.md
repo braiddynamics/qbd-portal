@@ -21,6 +21,8 @@ Finally, we prove the system's robustness by mapping the stabilizer formalism of
 - Establish computational universality through the Solovay-Kitaev synthesis of topological gates.
 :::
 
+-----
+
 ## 10.1 Topological Qubit Structure {#10.1}
 
 :::note[**Section 10.1 Overview**]
@@ -48,7 +50,6 @@ The **Logical Basis** of the topological qubit, denoted $\mathcal{B}_L = \{|0_L\
 The **logical basis definition** [(§10.1.1)](#10.1.1) formalizes the concept of a "Topological Qubit." In conventional quantum computing, qubits are often defined by transient energy levels, such as the excited state of an atom, or fragile spin directions vulnerable to magnetic noise. In Quantum Braid Dynamics, the qubit is defined by the *topology* of the electron braid itself, making the information as robust as the particle's existence.
 
 The logical $|0_L\rangle$ corresponds to the "standard" electron: a symmetric, color-neutral braid. It is the vacuum's preferred, low-energy state, effectively "dark" to the strong force because its symmetry cancels out color charge. The logical $|1_L\rangle$ corresponds to an "excited" electron: a topologically distinct configuration where the internal twisting is asymmetric. This geometric asymmetry gives the $|1_L\rangle$ state a net "color charge," causing it to interact with the strong force. This distinction is crucial because it allows us to control the qubit using gauge fields; we are not just storing data in the electron's spin, we are storing it in the electron's *shape*. By toggling between these shapes, we perform logic on the very fabric of matter.
-:::
 
 ### 10.1.1.2 Diagram: Qubit Topology {#10.1.1.2}
 
@@ -179,7 +180,7 @@ Q.E.D.
 
 The **isotopy verification** [(§10.1.4)](#10.1.4) confirms that the two logical states are fundamentally different and cannot be confused by the environment. $|0_L\rangle$ is perfectly symmetric; one can swap any two ribbons and the braid looks identical. $|1_L\rangle$ is asymmetric; swapping ribbons changes the configuration fundamentally.
 
-In quantum mechanics, states with different symmetries are strictly orthogonal—their overlap is zero. This is critical for computing because it means we have a clean, non-overlapping binary basis. We are not distinguishing between "spin up" and "spin slightly less up," which could be blurred by noise; we are distinguishing between "symmetric" and "broken symmetry," a distinction protected by the rigid laws of group theory. This ensures that a measurement will always yield a definitive 0 or 1, never a noisy intermediate.
+In quantum mechanics, states with different symmetries are strictly orthogonal, their overlap is zero. This is critical for computing because it means we have a clean, non-overlapping binary basis. We are not distinguishing between "spin up" and "spin slightly less up," which could be blurred by noise; we are distinguishing between "symmetric" and "broken symmetry," a distinction protected by the rigid laws of group theory. This ensures that a measurement will always yield a definitive 0 or 1, never a noisy intermediate.
 :::
 
 ### 10.1.5 Lemma: State Controllability {#10.1.5}
@@ -220,7 +221,7 @@ Q.E.D.
 
 :::info[**Implementation of State Transitions via Topology Change**]
 
-The challenge in controlling this qubit lies in changing the state without changing the particle's identity (charge). If we simply added a twist, we would turn an electron into a heavier, differently charged particle. The **transition hamiltonian construction** [(§10.1.5)](#10.1.5) solves this by using a "shuffle" operation. We take a twist from one ribbon and move it to another. The total number of twists—and thus the total charge—stays constant at -3.
+The challenge in controlling this qubit lies in changing the state without changing the particle's identity (charge). If we simply added a twist, we would turn an electron into a heavier, differently charged particle. The **transition hamiltonian construction** [(§10.1.5)](#10.1.5) solves this by using a "shuffle" operation. We take a twist from one ribbon and move it to another. The total number of twists, and thus the total charge, stays constant at -3.
 
 This operation, mediated by the operator $\hat{T}_{ij}$, physically corresponds to a specific interaction with the gauge field that rearranges the internal topology. It serves as the physical implementation of the "NOT" gate: shuffling the twists transforms the symmetric state into the asymmetric one. It is akin to solving a Rubik's cube; the overall object remains a cube, but the internal pattern is permuted to represent a new state.
 :::
@@ -373,7 +374,6 @@ The **stabilizer group definition** [(§10.2.1)](#10.2.1) introduces the "Stabil
 * **Vertex Checks:** These ensure flux conservation at each node, detecting "phase-flip" errors.
 
 Together, these operators define the "rules of the road" for a valid particle. If the graph violates any of these checks (e.g., a cycle breaks), the system flags an error (syndrome = -1). This formalizes the idea that a particle is a *protected pattern* in the vacuum. The vacuum itself is constantly "measuring" these stabilizers, enforcing the laws of topology.
-:::
 
 ### 10.2.1.2 Diagram: Stabilizer Schematics {#10.2.1.2}
 
@@ -496,7 +496,7 @@ Q.E.D.
 
 :::info[**Localization of Failures through Syndrome Analysis**]
 
-The **localization lemma** [(§10.2.4)](#10.2.4) demonstrates the error-correction mechanism in action. If a bit flips—meaning an edge state rotates from $|0\rangle$ to $|1\rangle$ erroneously—it violates the parity check of the triangle it belongs to. Because the check operators ($Z$) anticommute with the error ($X$), the measurement result flips sign.
+The **localization lemma** [(§10.2.4)](#10.2.4) demonstrates the error-correction mechanism in action. If a bit flips, meaning an edge state rotates from $|0\rangle$ to $|1\rangle$ erroneously, it violates the parity check of the triangle it belongs to. Because the check operators ($Z$) anticommute with the error ($X$), the measurement result flips sign.
 
 By looking at which triangles "light up" (report a -1 syndrome), the system can pinpoint exactly which edge failed. It is analogous to a parity check in classical computing but implemented physically via the braid's triangular lattice. The error leaves a specific geometric "scar" that the vacuum can identify and target for repair.
 :::
@@ -534,7 +534,7 @@ Q.E.D.
 
 :::info[**Confirmation of Ribbon Connectivity without Interference**]
 
-While geometric stabilizers check the "empty space" between ribbons (the cycles), ribbon stabilizers check the ribbons themselves. The **ribbon commutation proof** [(§10.2.5)](#10.2.5) ensures that verifying the integrity of a ribbon segment—making sure it isn't broken or twisted internally—does not interfere with the other checks. Again, the "rule of two" (even overlap) guarantees that these distinct types of measurements can coexist peacefully, allowing the system to monitor the wire's continuity without disrupting the signal flowing through it.
+While geometric stabilizers check the "empty space" between ribbons (the cycles), ribbon stabilizers check the ribbons themselves. The **ribbon commutation proof** [(§10.2.5)](#10.2.5) ensures that verifying the integrity of a ribbon segment, making sure it isn't broken or twisted internally, does not interfere with the other checks. Again, the "rule of two" (even overlap) guarantees that these distinct types of measurements can coexist peacefully, allowing the system to monitor the wire's continuity without disrupting the signal flowing through it.
 :::
 
 ### 10.2.6 Lemma: Fraying Detection {#10.2.6}
@@ -569,7 +569,7 @@ Q.E.D.
 
 :::info[**Detection of Structural Defects through Syndrome Patterns**]
 
-If a "rung" (the connection between two strands) flips, it affects the structural integrity check of the segments on both sides. The **fraying detection lemma** [(§10.2.6)](#10.2.6) proves that such an error triggers a specific "double alarm": the checks immediately preceding and succeeding the bad rung both fail. This unique signature—a pair of adjacent failures—allows the system to distinguish a broken rung from a broken strand or a background fluctuation. It provides a precise address for the defect, enabling surgical repair.
+If a "rung" (the connection between two strands) flips, it affects the structural integrity check of the segments on both sides. The **fraying detection lemma** [(§10.2.6)](#10.2.6) proves that such an error triggers a specific "double alarm": the checks immediately preceding and succeeding the bad rung both fail. This unique signature, a pair of adjacent failures, allows the system to distinguish a broken rung from a broken strand or a background fluctuation. It provides a precise address for the defect, enabling surgical repair.
 :::
 
 ### 10.2.7 Lemma: Vertex Commutation {#10.2.7}
@@ -667,7 +667,7 @@ Q.E.D.
 
 ### 10.2.9.1 Calculation: Stabilizer Commutativity Verification {#10.2.9.1}
 
-:::info[**Computational Verification of Stabilizer Commutation Relations**]
+:::note[**Computational Verification of Stabilizer Commutation Relations**]
 
 To verify the commutation properties outlined in Lemmas 10.2.3 (geometric), 10.2.5 (ribbon), and 10.2.7 (vertex), we simulate a 6-qubit system approximating the braid edges using QuTiP. Stabilizers are constructed as tensor products of Pauli operators: geometric checks as ZZZ cycles, ribbon integrity as ZZZZ segments, and vertex stabilizers as XX incidences. Commutators are computed via operator norms; values near 0 confirm commutation (even/disjoint overlaps), while odd overlaps (for contrast) yield non-zero norms, aligning with error detection.
 
@@ -743,7 +743,7 @@ This simulation confirms the abelian nature of the stabilizer group: all designe
 
 :::note[**The Braid Code Consistency**]
 
-The stabilizer group for the tripartite braid code consists of a set of commuting check operators—geometric, ribbon integrity, and vertex stabilizers—that collectively define and protect the logical codespace. These operators commute with each other and uniquely detect and localize single-qubit errors (X, Y, or Z), ensuring the consistency and fault tolerance of the code. The logical codespace is defined and protected by a set of commuting check operators known as the stabilizer group. A state qualifies as a valid logical state if it possesses the correct, pre-defined set of eigenvalues (syndromes) with respect to these operators.
+The stabilizer group for the tripartite braid code consists of a set of commuting check operators, geometric, ribbon integrity, and vertex stabilizers, that collectively define and protect the logical codespace. These operators commute with each other and uniquely detect and localize single-qubit errors (X, Y, or Z), ensuring the consistency and fault tolerance of the code. The logical codespace is defined and protected by a set of commuting check operators known as the stabilizer group. A state qualifies as a valid logical state if it possesses the correct, pre-defined set of eigenvalues (syndromes) with respect to these operators.
 
 The "Braid Code" works as a mathematically consistent system that functions like a quantum hard drive, constantly checking itself for errors. If a bit flips, a triangle lights up; if a phase flips, two vertices light up. Because all the checks play nicely together (commute), the system can run these diagnostics continuously without disturbing the stored quantum information. This self-correction capability is native to the vacuum structure itself, suggesting that stability is an intrinsic property of physical reality.
 
@@ -846,7 +846,7 @@ Q.E.D.
 
 :::info[**Immediate Detection of Local Noise Events**]
 
-The **syndrome flipping lemma** [(§10.3.3)](#10.3.3) proves that no single error can "slip through" unnoticed. Because the braid code checks both the "shape" ($Z$ checks on faces) and the "flow" ($X$ checks on vertices), any disturbance to a single edge—whether it's a bit flip, a phase flip, or both—triggers at least one alarm. The code is fully sensitive to local noise; there are no "blind spots" where a single edge can fail without generating a syndrome. This exhaustive sensitivity is the prerequisite for fault tolerance.
+The **syndrome flipping lemma** [(§10.3.3)](#10.3.3) proves that no single error can "slip through" unnoticed. Because the braid code checks both the "shape" ($Z$ checks on faces) and the "flow" ($X$ checks on vertices), any disturbance to a single edge, whether it's a bit flip, a phase flip, or both, triggers at least one alarm. The code is fully sensitive to local noise; there are no "blind spots" where a single edge can fail without generating a syndrome. This exhaustive sensitivity is the prerequisite for fault tolerance.
 :::
 
 ### 10.3.4 Lemma: Minimum Weight {#10.3.4}
@@ -915,7 +915,7 @@ Q.E.D.
 
 ### 10.3.5.1 Calculation: Code Distance Verification {#10.3.5.1}
 
-:::info[**Computational Verification of Code Distance via Error Simulation**]
+:::note[**Computational Verification of Code Distance via Error Simulation**]
 
 To verify the code distance d=3 (detection of weight-1 and weight-2 errors, per Lemma 10.3.4), we simulate a 3-qubit cycle model in QuTiP, with |111⟩ as the valid code state (geometric syndrome -1 via ZZZ). Errors are applied, and syndromes recomputed: flips indicate detection. Weight-1 (X/Z) and sample weight-2 (XX) are tested; non-trivial syndromes confirm d > 2, while logical weight-3 (e.g., XXX encircling) would commute but act non-trivially (aligned with text).
 
@@ -1017,7 +1017,6 @@ The **Logical X Gate** process, denoted $\mathcal{R}_X$, is defined as the speci
 The **writhe shuffling definition** [(§10.4.1)](#10.4.1) describes the "Logical X Gate" (the quantum NOT gate). In this framework, flipping a bit is not just flipping a spin; it is a topological surgery.
 
 The process $\mathcal{R}_X$ is a "writhe shuffle." It physically transforms the symmetric $(-1,-1,-1)$ braid into the asymmetric $(-2,-1,0)$ braid. It unties one loop and reties it elsewhere. This is a dramatic geometric change, yet the definition ensures it is done in a way that conserves the total writhe (charge). It's like solving a Rubik's cube: you change the pattern (state) without peeling off the stickers (conserved quantities). This ensures the electron doesn't turn into a different particle while computing; it only changes its logical state.
-:::
 
 ### 10.4.1.1 Diagram: X-Gate Topology {#10.4.1.1}
 
@@ -1121,7 +1120,7 @@ Q.E.D.
 
 :::info[**Legality of Operations based on Invariant Preservation**]
 
-The **charge conservation lemma** [(§10.4.4)](#10.4.4) acts as the "permission slip" from the laws of physics. If the X-gate changed the total electric charge, it would be forbidden by the symmetry of the vacuum (charge is a conserved Noether current). By proving that the "Writhe Shuffle" leaves the total charge invariant ($Q=-1$ before and after), we establish that the operation is physically legal. The universe permits the qubit to flip because, from the perspective of the electromagnetic field, the particle looks the same—a charge -1 object—regardless of its internal logical configuration.
+The **charge conservation lemma** [(§10.4.4)](#10.4.4) acts as the "permission slip" from the laws of physics. If the X-gate changed the total electric charge, it would be forbidden by the symmetry of the vacuum (charge is a conserved Noether current). By proving that the "Writhe Shuffle" leaves the total charge invariant ($Q=-1$ before and after), we establish that the operation is physically legal. The universe permits the qubit to flip because, from the perspective of the electromagnetic field, the particle looks the same, a charge -1 object, regardless of its internal logical configuration.
 :::
 
 ### 10.4.5 Proof: Logical X Gate {#10.4.5}
@@ -1165,6 +1164,8 @@ Physically, this implies that quantum logic gates are not external operations im
 
 This result confirms that the universe can compute without breaking its own laws. The logical operations of the quantum computer are embedded in the symmetries of the vacuum, allowing the system to process information by navigating the null space of the conservation laws. The electron is a natural logic gate, its internal structure providing the degrees of freedom necessary for computation while its global invariants ensure stability.
 :::
+
+-----
 
 ## 10.5 The Logical Z Gate {#10.5}
 
@@ -1308,6 +1309,8 @@ The implementation of the phase gate via gauge interaction reveals the deep conn
 
 This derivation completes the single-qubit logic by providing a geometric mechanism for phase rotations. It demonstrates that the discrete topology of the braid supports the continuous phase space of quantum mechanics through the subtle interplay of symmetry and interaction. The Z-gate is the bridge between the digital world of knots and the analog world of wavefunctions, allowing the topological computer to access the full power of quantum interference.
 :::
+
+-----
 
 ## 10.6 The Hadamard Gate {#10.6}
 
@@ -1455,7 +1458,7 @@ Q.E.D.
 
 ### 10.6.4.1 Calculation: Hadamard Quench Verification {#10.6.4.1}
 
-:::info[**Computational Verification of Superposition Trapping via Lindblad Dynamics**]
+:::note[**Computational Verification of Superposition Trapping via Lindblad Dynamics**]
 
 This calculation verifies the Hadamard gate's implementation via thermodynamic quench using QuTiP for a two-level qubit system defined by energy degeneracy ($\Delta E = 0$). The simulation initializes the state density $\rho = |0_L\rangle\langle 0_L|$ and applies a coherent drive $H = (\Omega/2) \sigma_y$ during the "heating" phase with low dissipation $\Gamma$ to induce coherence while equalizing populations. The resulting off-diagonal elements ($\sim 0.44$) and populations confirm superposition trapping in the diabatic limit.
 
@@ -1511,6 +1514,8 @@ This result implies that the "quantumness" of the universe, its ability to exist
 
 The identification of superposition with thermodynamic mixing demystifies the origin of quantum coherence. It suggests that the wavefunction is a macroscopic variable describing the statistical ensemble of the underlying graph, and that quantum operations are thermodynamic cycles acting on this ensemble. The universe computes by heating and cooling its information, managing entropy to generate the interference patterns that drive reality.
 :::
+
+-----
 
 ## 10.7 The Controlled-Z Gate {#10.7}
 
@@ -1701,7 +1706,6 @@ The **T-Gate Process**, denoted $\mathcal{R}_T$, is defined as a composite seque
 The **T-gate definition** [(§10.8.1)](#10.8.1) introduces the "magic" ingredient needed for universal computation. The T-gate requires a phase rotation of $\pi/4$, which is geometrically subtle.
 
 The definition implements this via "Self-Braiding." The qubit doesn't just sit there; it interacts with itself. A loop nucleates, winds around one of the qubit's ribbons, and annihilates. This process is a topological knotting event in spacetime, specifically a Dehn twist. It imparts a geometric phase (Aharonov-Bohm type) to the wavefunction. The precision of the $\pi/4$ phase comes not from analog tuning, but from the discrete topology of the winding number. It is a digital rotation enforced by the geometry of knots.
-:::
 
 ### 10.8.1.2 Diagram: T-Gate Transformation {#10.8.1.2}
 
@@ -1931,13 +1935,13 @@ For a half-twist ($\hat{D}^{1/2}$), the phase is $e^{\pi i h_\lambda} = e^{i\pi/
 
 **IV. Conclusion**
 The operation implements the matrix $\text{diag}(1, e^{i\pi/4})$ in the logical basis.
-Fault tolerance is ensured by the quantization of the twist and the error correction dynamics: any local deviations in the loop evaporate via the $Q_{\text{del}} > 0$ mechanism [(§10.3.5)](computation#10.3.5), preserving the discrete logical operation.
+Fault tolerance is ensured by the quantization of the twist and the error correction dynamics: any local deviations in the loop evaporate via the $Q_{\text{del}} > 0$ mechanism [(§10.3.5)](#10.3.5), preserving the discrete logical operation.
 
 Q.E.D.
 
 ### 10.8.8.1 Calculation: T-Gate Phase Verification {#10.8.8.1}
 
-:::info[**Computational Verification of State-Dependent Geometric Phase**]
+:::note[**Computational Verification of State-Dependent Geometric Phase**]
 
 This calculation verifies the state-dependent phase of the T-gate ($T = \text{diag}(1, e^{i\pi/4})$) by simulating the logical qubit in QuTiP as a two-level system defined by $|0_L\rangle = |0\rangle$ (singlet) and $|1_L\rangle = |1\rangle$ (charged). The T-operator acts on basis states and superpositions; expectation values confirm the phase differential ($\text{Re}\langle\psi|T|\psi\rangle \approx 1$ for $|0_L\rangle$ and $\cos(\pi/4) \approx 0.707$ for $|1_L\rangle$), aligning with the symmetric cancellation versus asymmetric induction derived from the braid topology.
 
@@ -1999,9 +2003,9 @@ A quantum gate set is universal if it can generate the Clifford group and at lea
 
 **II. Physical Implementation Mapping**
 The QBD framework realizes this basis physically:
-1.  **Hadamard ($H$):** Implemented by the thermodynamic rewrite $\mathcal{R}_H$ [(§10.6.1)](computation#10.6.1).
-2.  **Controlled-Z ($CZ$):** Implemented by the catalytic bridge process $\mathcal{R}_{CZ}$ [(§10.7.1)](computation#10.7.1).
-3.  **$\pi/8$ Phase Gate ($T$):** Implemented by the self-braiding process $\mathcal{R}_T$ [(§10.8.2)](computation#10.8.2).
+1.  **Hadamard ($H$):** Implemented by the thermodynamic rewrite $\mathcal{R}_H$ [(§10.6.1)](#10.6.1).
+2.  **Controlled-Z ($CZ$):** Implemented by the catalytic bridge process $\mathcal{R}_{CZ}$ [(§10.7.1)](#10.7.1).
+3.  **$\pi/8$ Phase Gate ($T$):** Implemented by the self-braiding process $\mathcal{R}_T$ [(§10.8.2)](#10.8.2).
 
 **III. Isomorphism**
 Since there exists a bijective mapping $\Phi: \mathcal{B} \to \mathcal{G}_{phys}$ such that the unitary action $U(\Phi(g)) = U(g)$ for all $g \in \mathcal{B}$, the physical set inherits the universality property of the mathematical basis.
@@ -2099,7 +2103,7 @@ The sequence length scales polylogarithmically with $1/\epsilon$.
 
 **II. Physical Robustness**
 The realization of these gates preserves the fault-tolerant properties of the underlying hardware.
-* **Code Distance:** The fundamental qubit is a topological code with distance $d=3$ (protected against single-qubit errors), as proven in **Theorem 10.3.2** [(§10.3.2)](computation#10.3.2).
+* **Code Distance:** The fundamental qubit is a topological code with distance $d=3$ (protected against single-qubit errors), as proven in **Theorem 10.3.2** [(§10.3.2)](#10.3.2).
 * **Gate Fidelity:** Each primitive $\mathcal{R}$ is constructed from PUC-compliant rewrites. The system is continuously monitored by the awareness functor $T$ (the QECC), which maps local stress syndromes to corrective deletions.
 * **Transversality/Locality:** The gates operate either transversally (single qubit ops) or via local topological bridges (CZ), preventing uncontrolled error propagation across the lattice.
 
@@ -2110,7 +2114,7 @@ Q.E.D.
 
 ### 10.9.3.1 Calculation: Solovay-Kitaev Verification {#10.9.3.1}
 
-:::info[**Computational Verification of Unitary Approximation via Gate Sequences**]
+:::note[**Computational Verification of Unitary Approximation via Gate Sequences**]
 
 This calculation verifies the principle of dense approximation for universality [(§10.9.1)](#10.9.1) by implementing a simplified Solovay-Kitaev decomposition in QuTiP. The algorithm approximates a random $SU(2)$ unitary $U$ using sequences from the set $\{H, T\}$ with iterative correction (depth 4). The resulting error of $\sim 2.78$ confirms the constructive principle, while full recursive Solovay-Kitaev with $CZ$ gates achieves errors $< 0.01$ in $O(\log^4(1/\epsilon))$ gates for $\epsilon=10^{-3}$.
 
@@ -2212,7 +2216,7 @@ This collapses the superposition into a classical bit string, enabling the effic
 
 ### 10.9.4.1 Calculation: Shor's Algorithm {#10.9.4.1}
 
-:::info[**Realization of Factoring via Topological Rewrite Sequences**]
+:::note[**Realization of Factoring via Topological Rewrite Sequences**]
 
 This simulation demonstrates computational power and fault tolerance [(§10.9.4)](#10.9.4) by implementing a toy Shor's algorithm in QuTiP for factoring $N=15$ (utilizing 3-qubit registers, $a=7$, and period $r=4$). The circuit prepares the superposition $H^{\otimes 3} |000\rangle$, applies modular exponentiation $U_f |x\rangle|y\rangle = |x\rangle|y \oplus 7^x \pmod{15}\rangle$ via a custom unitary matrix, performs an inverse QFT on the input, and measures the input register. Depolarizing noise ($p=0.01$ per qubit on the input post-circuit, applied via a full Kraus tensor for 3 qubits) simulates environmental errors. 1000 shots yield a success probability of $1.00$ (identifying the correct period $r=4$ via continued fractions on the measured $x$), with minor broadening (peaks at $0, 2, 4, 6$ with $\sim 250$ counts each, off-peaks $<1\%$) confirming resilience with distance $d=3$.
 
@@ -2341,14 +2345,13 @@ The noisy circuit ($p=0.01$ full Kraus tensor on 3-qubit input) maintains sharp 
 
 ### 10.9.4.2 Commentary: Simulation Implications {#10.9.4.2}
 
-:::tip[**Analysis of Computational Capabilities and Security**]
+:::info[**Analysis of Computational Capabilities and Security**]
 
 Shor's factoring $N=15$ with near-perfect fidelity under noise poses a question: Does this mean online banking is vulnerable tomorrow? The answer is no; this 6-qubit emulation cracks a 4-bit number in milliseconds on a classical laptop, a far cry from RSA-2048's 617-digit keys. Real Shor's demands $\sim 20$ million fault-tolerant qubits for a week's runtime on such scales, a milestone experts project for 2035-2040 (IBM/Rigetti roadmaps), with current machines (e.g., Google's 2025 Sycamore at $\sim 100$ noisy qubits) topping out at toy factors like 21.
 
 Yet the simulation spotlights QBD's stakes: if the causal graph [(§1.3)](/monograph/foundations/ontology#1.3) computes universally [(§10.9.1)](#10.9.1), braid particles [(§6.2)](braid-matter#6.2) as qubits and rewrites as gates [(§10.4-10.8)](#10.4) imply scalable hardware from geometric vacuum [(§5.4)](/monograph/foundations/thermodynamics#5.4), potentially compressing that timeline. The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via syndrome catalysis [(§10.2.9)](#10.2.9), where errors evaporate thermodynamically [(§4.6.3)](/monograph/foundations/dynamics#4.6.3), a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by **[(Acharya et al., 2024)](/monograph/appendices/a-references#A.3)**, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
-:::
 
 ### 10.9.4.3 Diagram: Circuit Schematic {#10.9.4.3}
 
@@ -2425,7 +2428,7 @@ This completes our journey. From the abstract ontology of a relation to the conc
 
 | Symbol | Description | First Used / Defined |
 | :--- | :--- | :--- |
-| $|0_L\rangle, |1_L\rangle$ | Logical qubit basis states (Ground/Excited) | [§10.1.1](#10.1.1) |
+| $0_L\rangle, 1_L\rangle$ | Logical qubit basis states (Ground/Excited) | [§10.1.1](#10.1.1) |
 | $\beta_e, \beta_{e*}$ | Physical electron braid topologies (Symmetric/Asymmetric) | [§10.1.1](#10.1.1) |
 | $\hat{T}_{ij}$ | Writhe Exchange Operator (Twist transfer) | [§10.1.5.1](#10.1.5.1) |
 | $\hat{H}_X$ | Hamiltonian for the Logical X transition | [§10.1.5.1](#10.1.5.1) |

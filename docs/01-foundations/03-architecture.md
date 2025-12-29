@@ -701,12 +701,11 @@ This structure serves as the unique optimal pre-geometric substrate that the axi
 
 ### 3.2.1.3 Commentary: Logic of the Exclusion Chain {#3.2.1.3}
 
-:::info[**Sequential Elimination of Suboptimal Topologies through Independent Axiomatic Filters**]
+:::tip[**Sequential Elimination of Suboptimal Topologies through Independent Axiomatic Filters**]
 
 The proof of the Optimal Vacuum proceeds through an exhaustive exclusion chain that begins with the universal set of all finite directed graphs equipped with history maps. The exclusion chain applies the axiomatic constraints sequentially and independently. Each application eliminates entire equivalence classes of candidate structures. The exclusions operate with complete independence. Any single exclusion suffices to disqualify broad categories of graphs. The cumulative effect of all exclusions reduces the candidate set to a singleton containing exclusively the Regular Bethe Fragment with internal coordination number $k_{deg} \ge 3$.
 
 This specific structure, the finite truncation of the infinite Bethe lattice (or Cayley tree), is analyzed in spectral graph theory by **[(Woess, 2000)](/monograph/appendices/a-references#A.71)**. Woess demonstrates that such regular trees possess unique isotropic properties where the automorphism group acts transitively on the boundary, a feature we leverage here to ensure a "flat" vacuum without preferred directions. The chain establishes uniqueness by demonstrating that no other structure survives the full set of filters, and Woess's work confirms that only the regular $k$-ary tree maximizes the ratio of symmetry to volume required for a homogeneous start.
-:::
 
 **The chain establishes uniqueness by demonstrating that no other structure survives the full set of filters.**
 :::
@@ -1152,7 +1151,7 @@ Q.E.D.
 
 ### 3.2.10.2 Calculation: Small N Census {#3.2.10.2}
 
-:::info[**Algorithmic Census of All Trees for Small N Confirming Bethe Optimality through Sequential Filtering**]
+:::note[**Algorithmic Census of All Trees for Small N Confirming Bethe Optimality through Sequential Filtering**]
 
 ```python
 import networkx as nx
@@ -1449,7 +1448,7 @@ We establish maximal parallelism as the inevitable protocol for time evolution b
 
 ### 3.3.1 Definition: The Annotated State Space {#3.3.1}
 
-:::info[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
+:::tip[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
 
 The physical state of the universe at Logical Time $t$ [(§1.2.1)](ontology#1.2.1) is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$.
 1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the History Mapping [(§1.3.1)](ontology#1.3.1) and local Syndrome values [(§3.5.5)](#3.5.5).
@@ -1462,7 +1461,7 @@ The physical state of the universe at Logical Time $t$ [(§1.2.1)](ontology#1.2.
 
 ### 3.3.2 Definition: The Formal Symmetry Framework {#3.3.2}
 
-:::info[**Axiomatic Constraints on the Update Mechanism regarding Equivariance and Determinism**]
+:::tip[**Axiomatic Constraints on the Update Mechanism regarding Equivariance and Determinism**]
 
 A graph rewrite system satisfies the **Symmetry Preservation Constraints** if and only if the Update Map $\mathcal{U}$ and the Site Identification Function $\mathcal{S}$ satisfy the following four axiomatic conditions with respect to the automorphism group $\text{Aut}(G)$:
 1.  **Assumption A1 (Locality and Equivariance):** For every automorphism $\varphi \in \text{Aut}(G)$, the induced action on the set of candidate sites $\mathcal{S}(G)$ is a bijection that preserves the isomorphism class of the site footprints and their associated local proposals.
@@ -2078,7 +2077,7 @@ Q.E.D.
 
 ### 3.4.6.1 Calculation: Simulated Ignition Trajectories {#3.4.6.1}
 
-:::info[**Monte Carlo Verification of Tunneling Probability in Finite N Regimes using Metropolis Sampling**]
+:::note[**Monte Carlo Verification of Tunneling Probability in Finite N Regimes using Metropolis Sampling**]
 
 Simulate Metropolis acceptance ($\Delta F=\epsilon_{geo} - T \Delta S$) over 10^4 trials, then Poisson $\mathbb{P}_{\text{ign}}$ for N=10^3 (N\_pot≈N^2/2 same-parity pairs). High T=10×($\epsilon_{geo}/\Delta S$) yields P\_acc=1.000→$\mathbb{P}_{\text{ign}}$=1.000; low T=0.5×($\epsilon_{geo}/\Delta S$) gives P\_acc=0.500 but still $\mathbb{P}_{\text{ign}}$=1.000 (vast trials saturate).
 
@@ -2131,7 +2130,7 @@ Low T: P_acc=0.500, P_ign=1.000
 
 :::note[**Ignition of Geometrogenesis is Inevitable**]
 
-The structural perfection of the Bethe vacuum creates a "False Vacuum" condition where the topological prohibition of 3-cycles traps the system in a pre-geometric stasis. We have proven that a single parity-violating tunneling event—the random addition of an edge between nodes of the same depth—shatters this deadlock, creating the first compliant site and nucleating a runaway phase transition. This ignition is a thermodynamic inevitability, driven by the immense entropic pressure to access the vast phase space of geometric configurations.
+The structural perfection of the Bethe vacuum creates a "False Vacuum" condition where the topological prohibition of 3-cycles traps the system in a pre-geometric stasis. We have proven that a single parity-violating tunneling event, the random addition of an edge between nodes of the same depth, shatters this deadlock, creating the first compliant site and nucleating a runaway phase transition. This ignition is a thermodynamic inevitability, driven by the immense entropic pressure to access the vast phase space of geometric configurations.
 
 This reframes the Big Bang not as a singularity of infinite density, but as a phase transition from a static, one-dimensional causal tree to a dynamic, multi-dimensional geometric mesh. The "spark" is a microscopic fluctuation that breaks the global symmetry, acting as a seed crystal around which the complex fabric of spacetime rapidly aggregates. The universe does not begin with an explosion of energy, but with an explosion of connectivity.
 
@@ -2353,17 +2352,9 @@ The product defines a valid orthogonal projection onto the physical subspace $\m
 
 Q.E.D.
 
-### 3.5.4.2 Commentary: Justification of the Undirected Metric {#3.5.4.2}
+### 3.5.4.2 Calculation: Eigenvalue Verification {#3.5.4.2}
 
-:::info[**Requirement of the Undirected Metric for Spatial Locality Definition**]
-
-The locality projector $\Pi_{\text{local}}$ enforces a fundamental property of physical space: strict locality. It ensures that direct causal links can form only between events that remain "nearby" in the emergent spatial geometry. To achieve this; the projector must utilize the Undirected Metric $\bar{d}$; rather than the directed causal distance.
-
-We must distinguish between two concepts of distance. **Causal Distance** is asymmetric; if $u$ causes $v$; then $u$ is in the past of $v$; but $v$ is causally disconnected from $u$ (infinite directed distance). **Metric Distance** (structural proximity) is symmetric; it measures how many links separate two nodes regardless of direction. If we relied on directed distance; a pair $(v, u)$ might be "far" causally (infinite separation) but "close" spatially (neighbors). The locality constraint must permit connections between spatial neighbors regardless of the arrow of time to allow the geometry to evolve coherently as a manifold. Thus; $\bar{d}$ is the unique correct measure for defining the spatial locality required for the emergence of a coordinate chart.
-
-### 3.5.4.3 Calculation: Eigenvalue Verification {#3.5.4.3}
-
-**Computational Verification of Projector Eigenvalues using Matrix Multiplication**
+:::note[**Computational Verification of Projector Eigenvalues using Matrix Multiplication**]
 
 This simulation verifies the action of a geometric stabilizer ($Z \otimes Z \otimes Z \otimes Z$) on a 4-qubit basis, demonstrating how syndrome extraction distinguishes valid (even parity) from invalid (odd parity) states.
 
@@ -2413,6 +2404,14 @@ Local rewrites in QBD (add/delete edge) correspond to Pauli X (bit flip on qubit
 
 **Proof of Equivalence for Small N:**
 For $N=3$, $\sigma_{\text{geom}} = ZZZ$, $\Pi_{\text{cycle}}$, on pairs as $(I + Z)/2$ projectors span space detecting odd flips: Syndromes unique per error (e.g., X on first qubit: |000⟩ (+1) to |100⟩ (-1), detected as -1 eigenvalue). Spans same as 3-qubit repetition code (ZZZ stabilizer), where codewords |000⟩, |111⟩ (+1), odd as -1 errors. Equivalence receives proof by identical operator algebra and eigenspaces for small N.
+
+### 3.5.4.2 Commentary: Justification of the Undirected Metric {#3.5.4.2}
+
+:::info[**Requirement of the Undirected Metric for Spatial Locality Definition**]
+
+The locality projector $\Pi_{\text{local}}$ enforces a fundamental property of physical space: strict locality. It ensures that direct causal links can form only between events that remain "nearby" in the emergent spatial geometry. To achieve this; the projector must utilize the Undirected Metric $\bar{d}$; rather than the directed causal distance.
+
+We must distinguish between two concepts of distance. **Causal Distance** is asymmetric; if $u$ causes $v$; then $u$ is in the past of $v$; but $v$ is causally disconnected from $u$ (infinite directed distance). **Metric Distance** (structural proximity) is symmetric; it measures how many links separate two nodes regardless of direction. If we relied on directed distance; a pair $(v, u)$ might be "far" causally (infinite separation) but "close" spatially (neighbors). The locality constraint must permit connections between spatial neighbors regardless of the arrow of time to allow the geometry to evolve coherently as a manifold. Thus; $\bar{d}$ is the unique correct measure for defining the spatial locality required for the emergence of a coordinate chart.
 :::
 
 ### 3.5.5 Lemma: Syndrome Extraction {#3.5.5}
@@ -2469,7 +2468,7 @@ Q.E.D.
 
 ### 3.5.5.2 Calculation: 5-Qubit Syndrome Table {#3.5.5.2}
 
-:::info[**Computational Generation of the Syndrome Table for a 5-Qubit Code via Algebraic Simulation**]
+:::note[**Computational Generation of the Syndrome Table for a 5-Qubit Code via Algebraic Simulation**]
 
 ```python
 import pandas as pd
@@ -2708,13 +2707,13 @@ SUCCESS: Each single-qubit Pauli error produces a unique, non-zero syndrome.
 
 The syndrome tuples produced by the triplet check operators constitute far more than abstract mathematical labels; they provide a complete and physically meaningful classification system that directly informs the thermodynamic and dynamical response of the system at every local site. This classification leverages the framework developed by **[(Dauphinais, Kribs, & Vasmer, 2024)](/monograph/appendices/a-references#A.21)**, who extended the stabilizer formalism to operator algebras, allowing for a rigorous categorization of error states (syndromes) as distinct topological sectors. In the context of Quantum Braid Dynamics, these "errors" are not nuisances to be discarded but are the active degrees of freedom that drive cosmic evolution.
 
-The syndrome $(+1, +1, +1)$ corresponds to the **Vacuum State**. In this configuration, the local topology is devoid of edges within the triplet scope. Physically, this represents the "ground state" of the manifold—a region of zero curvature and zero information density. It is the "silence" of the vacuum. Thermodynamically, this state is inert; it possesses no potential energy to drive updates, effectively rendering it invisible to the rewrite engine until a tunneling event introduces a fluctuation.
+The syndrome $(+1, +1, +1)$ corresponds to the **Vacuum State**. In this configuration, the local topology is devoid of edges within the triplet scope. Physically, this represents the "ground state" of the manifold, a region of zero curvature and zero information density. It is the "silence" of the vacuum. Thermodynamically, this state is inert; it possesses no potential energy to drive updates, effectively rendering it invisible to the rewrite engine until a tunneling event introduces a fluctuation.
 
 The class of syndromes containing exactly one $-1$ eigenvalue (e.g., $(+1, +1, -1)$) identifies the **Tension States**. These represent a local topology containing a single isolated edge ("dangling bond") within the triplet. From the perspective of the stabilizer code, this is a single-bit flip error; physically, it represents "topological frustration." The existence of a directed edge without a corresponding path to close or extend it creates a local gradient of potential energy. The thermodynamic response of the universe to this syndrome is biphasic: it exerts a "pressure" to either dissolve the edge (returning to the vacuum state via $\mathfrak{T}_{del}$) or to attract a neighbor to form a 2-path. This syndrome acts as a request for resolution, flagging the region as unstable.
 
 The class of syndromes containing exactly two $-1$ eigenvalues (e.g., $(+1, -1, -1)$) identifies the **Precursor States**. These are topologically equivalent to the open 2-path structure ($u \to v \to w$). This is the critical "active site" of geometrogenesis. The specific pattern of eigenvalues encodes the orientation of the path, providing the necessary data for the rewrite rule to identify the start and end points of the potential closure. In the language of quantum error correction, this is a correlated error state that serves as the "lock" waiting for the "key" (the closing chord). The thermodynamic response here is catalytic: the presence of this syndrome lowers the activation energy for edge addition, biasing the system toward the creation of the third edge.
 
-Finally, the syndrome $(-1, -1, -1)$ corresponds to the **Geometric Excitation**. This represents the successfully closed 3-cycle. In standard error correction, a non-trivial syndrome usually triggers a recovery operation to remove it. However, in QBD, this specific "error" pattern constitutes the *signal*—the stored bit of geometric information. The system "accepts" this error because it satisfies the hard constraints of the code (it lies within the valid code subspace $C$ despite having negative stabilizer eigenvalues). This configuration represents the minimal quantum of spatial area, a stable knot in the causal fabric. The thermodynamic response shifts from creation to preservation; the 3-cycle becomes a robust feature, resistant to decay, effectively "storing" the history of the update. This granular classification allows the universe to function as a self-diagnosing computer, where local laws read the syndrome to determine whether to build space, dissolve noise, or preserve structure.
+Finally, the syndrome $(-1, -1, -1)$ corresponds to the **Geometric Excitation**. This represents the successfully closed 3-cycle. In standard error correction, a non-trivial syndrome usually triggers a recovery operation to remove it. However, in QBD, this specific "error" pattern constitutes the *signal*, the stored bit of geometric information. The system "accepts" this error because it satisfies the hard constraints of the code (it lies within the valid code subspace $C$ despite having negative stabilizer eigenvalues). This configuration represents the minimal quantum of spatial area, a stable knot in the causal fabric. The thermodynamic response shifts from creation to preservation; the 3-cycle becomes a robust feature, resistant to decay, effectively "storing" the history of the update. This granular classification allows the universe to function as a self-diagnosing computer, where local laws read the syndrome to determine whether to build space, dissolve noise, or preserve structure.
 :::
 
 ### 3.5.6 Lemma: Stabilizer Commutativity {#3.5.6}

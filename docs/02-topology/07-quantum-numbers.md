@@ -22,6 +22,8 @@ This arc reveals how global topology enforces local quantum rules, setting the s
 - Synthesize quantum numbers as topological invariants matching the first-generation Standard Model.
 :::
 
+-----
+
 ## 7.1 Spin and Statistics {#7.1}
 
 :::note[**Section 7.1 Overview**]
@@ -552,7 +554,6 @@ Q.E.D.
 This commentary explains the origin of gauge invariance. Charge is defined as the *total* writhe of a braid. However, the rewrite rule $\mathcal{R}$, the engine of physics, operates as a nearsighted agent, perceiving only a small patch of the graph. This limited horizon is a feature of local computation, as discussed by **[(Wolfram, 2002)](/monograph/appendices/a-references#A.72)**, where cellular automata rules are inherently local yet generate global structures. The blindness of the local rule to the global invariant forces the system to respect a symmetry: the physics must look the same regardless of the global writhe value.
 
 Consider a macroscopic filament. A local observer viewing a small segment perceives the local twist but cannot count the *total* number of twists in the entire filament without traversing its length. Since the rewrite rule cannot traverse the particle instantaneously due to the causal horizon [(§6.4.3)](tripartite-braid#6.4.3), it remains blind to the total charge. This blindness manifests as a symmetry. The local laws of physics must remain invariant under shifts in the global writhe count. Whether the total writhe is $W$ or $W+1$, the local dynamics appear identical. This invariance necessitates the existence of a compensating field to maintain consistency across the graph, precisely the role of the photon field in quantum electrodynamics. Gauge symmetry follows not as a postulate but as a consequence of the limited horizon of local causal operations.
-:::
 
 ### 7.2.3.3 Diagram: The Exclusion Barrier {#7.2.3.3}
 
@@ -1412,7 +1413,7 @@ Q.E.D.
 
 ### 7.4.6.1 Calculation: Mass Hierarchy Verification {#7.4.6.1}
 
-:::info[**Computational Verification of Mass Ratios via Integer Sharing**]
+:::note[**Computational Verification of Mass Ratios via Integer Sharing**]
 
 To quantify the mass spectrum predicted by the Topological Mass Functional, the calculation performs a numerical evaluation of the net complexity $N_3$ for the fundamental fermions. This calculation applies the **Integer Geometric Efficiency** principle derived in **Lemma 7.4.5** [(§7.4.5)](#7.4.5), where the total mass is the sum of the isolated ribbon complexities minus the geometric quanta shared through parallel linking:
 
@@ -1575,6 +1576,8 @@ For a technical audience, this implies a shift from field-theoretic masses to gr
 
 Broader still, this functional posits that mass hierarchies are echoes of topological minima: the universe populates low-writhe states abundantly, with deeper writhe wells accessed only through rare, high-energy processes. This predicts a discrete spectrum without infinities, where generations occupy metastable attractors in the writhe landscape. These quantum numbers of spin now stand as topological exhausts of the braid engine, completing the fermionic profile as emergent logic in the causal weave.
 :::
+
+-----
 
 ## 7.Ω Formal Synthesis {#7.Ω}
 
