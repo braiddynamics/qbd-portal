@@ -279,7 +279,7 @@ We introduce the **Penta-Ribbon Braid**, a five-strand composite structure whose
 
 :::tip[**Structural Definition of the Five-Ribbon Braid as the Fundamental Object**]
 
-The **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\{R_1, R_2, R_3, R_4, R_5\}$, embedded within the four-dimensional causal graph $G_t$. The physical dynamics of this structure are governed exclusively by the set of four local rewrite rules $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3), maintaining the global topological invariants of the Braid Group $B_5$ while encoding the 5-dimensional fundamental representation space of the unified gauge group.
+The **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\{R_1, R_2, R_3, R_4, R_5\}$, embedded within the four-dimensional causal graph $G_t$. The physical dynamics of this structure are governed exclusively by the set of four local rewrite rules $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3), maintaining the global topological invariants of the Braid Group $B_5$ while encoding the 5-dimensional fundamental representation space of the unified gauge group.
 
 ### 9.2.1.1 Commentary: Penta-Ribbon Anatomy {#9.2.1.1}
 
@@ -287,7 +287,7 @@ The **Penta-Ribbon Braid** is herein defined as the composite topological struct
 
 The **penta-ribbon definition** [(§9.2.1)](#9.2.1) introduces the central topological protagonist of this chapter: the 5-strand braid. Rather than postulating quarks and leptons as separate entities, this model posits that a single composite object—a braid of five interacting world-tubes—is sufficient to encode all the fermions of a single generation. Each "strand" or ribbon in this cable corresponds to a specific component of the 5-dimensional fundamental vector space on which the $SU(5)$ group acts. The local rewrite rules $\{\mathcal{R}_1, \dots, \mathcal{R}_4\}$ act as the physical mechanisms that swap these ribbons, and these swaps physically generate the gauge forces we observe.
 
-This approach resonates with the seminal work of **[(Witten, 1989)](/monograph/appendices/a-references#A.70)**, who demonstrated how Chern-Simons theory on 3-manifolds (specifically the knot complement) generates the quantum invariants of knots. Witten effectively linked the topology of braids to the Hilbert spaces of quantum field theories. In QBD, we invert this relationship: the "quantum field" is simply the local state of the graph, and the "knot invariants" (like crossing number and writhe) become the conserved quantum numbers of the particle (mass, charge, spin). By defining matter this way, we move away from point particles to extended, relational structures. A "particle" is no longer a dimensionless dot; it is a specific, stable braiding pattern of this 5-strand cable. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) ensures that this cable doesn't tangle into acausal knots (closed timelike curves), preserving the logical consistency of the particle's history.
+This approach resonates with the seminal work of **[(Witten, 1989)](/monograph/appendices/a-references#A.70)**, who demonstrated how Chern-Simons theory on 3-manifolds (specifically the knot complement) generates the quantum invariants of knots. Witten effectively linked the topology of braids to the Hilbert spaces of quantum field theories. In QBD, we invert this relationship: the "quantum field" is simply the local state of the graph, and the "knot invariants" (like crossing number and writhe) become the conserved quantum numbers of the particle (mass, charge, spin). By defining matter this way, we move away from point particles to extended, relational structures. A "particle" is no longer a dimensionless dot; it is a specific, stable braiding pattern of this 5-strand cable. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations//monograph/foundations/axioms#2.3.3) ensures that this cable doesn't tangle into acausal knots (closed timelike curves), preserving the logical consistency of the particle's history.
 :::
 
 ### 9.2.1.2 Diagram: The Penta-Ribbon Unification {#9.2.1.2}
@@ -354,7 +354,7 @@ The physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the
 
 :::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
 
-The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](dynamics#.5.1) and the maximal parallelism theorem [(§3.3.5)](architecture#3.3.5).
+The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) and the maximal parallelism theorem [(§3.3.5)](/monograph/foundations/architecture#3.3.5).
 
 **I. Spatial Decomposition**
 The rewrite process $\mathcal{R}_i$ operates on a local subgraph $G_i \subset G$ defined by the ribbons $i, i+1$ and their immediate neighbors.
@@ -596,7 +596,7 @@ Progress Table:
 | 3         | 0     | 24  |
 ```
 
-This rapid escalation, 10 additions in the first pass (primarily non-adjacent off-diagonals like $[H_1, H_2] \propto \lambda^{(1,3)}$) and 6 in the second (diagonals and remaining imaginaries via nested $[[\cdot, \cdot], \cdot]$), validates the inductive step's efficiency, with no further commutators yielding linearly independent elements. The $O(1)$ depth aligns with the 5-ribbon topology's compactness, ensuring the physical $\mathcal{R}_i$ dynamics [(§4.5.1)](dynamics#.5.1) generate the full algebra without pathological proliferation. Thus, the Lie algebra closure is empirically sealed, affirming the braid group's projection onto $\mathfrak{su}(5)$ as a faithful representation of the penta-ribbon unification. The Gram determinant quantifies near-orthogonality (deviations < 10^{-6} under normalization), and the negative Killing form confirms the non-degenerate root system essential for the simple Lie algebra structure.
+This rapid escalation, 10 additions in the first pass (primarily non-adjacent off-diagonals like $[H_1, H_2] \propto \lambda^{(1,3)}$) and 6 in the second (diagonals and remaining imaginaries via nested $[[\cdot, \cdot], \cdot]$), validates the inductive step's efficiency, with no further commutators yielding linearly independent elements. The $O(1)$ depth aligns with the 5-ribbon topology's compactness, ensuring the physical $\mathcal{R}_i$ dynamics [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) generate the full algebra without pathological proliferation. Thus, the Lie algebra closure is empirically sealed, affirming the braid group's projection onto $\mathfrak{su}(5)$ as a faithful representation of the penta-ribbon unification. The Gram determinant quantifies near-orthogonality (deviations < 10^{-6} under normalization), and the negative Killing form confirms the non-degenerate root system essential for the simple Lie algebra structure.
 
 ### 9.2.5.3 Commentary: The Closure of Unified Force {#9.2.5.3}
 
@@ -1742,7 +1742,7 @@ The local edge density $\rho_{local}$ within the effective volume of a particle 
 :::tip[**Derivation of Stress Scaling within Fixed Particle Volumes**]
 
 **I. Volume Constraint**
-A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ [(§3.3.5)](architecture#3.3.5). For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
+A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ [(§3.3.5)](/monograph/foundations/architecture#3.3.5). For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
 $$V_{braid} \sim \text{const}$$
 
 **II. Local Density Scaling**
@@ -1779,7 +1779,7 @@ The stability of a topological particle is bounded by the syndrome-response fric
 
 **I. Maintenance Dynamics**
 The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it.
-* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ [(§4.5.4)](dynamics#.5.4).
+* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ [(§4.5.4)](/monograph/foundations/dynamics#4.5.4).
     $$R_{create} \propto N_3 \cdot P_{acc} \propto N_3 e^{-\mu N_3}$$
     (Substituting $\sigma \propto N_3$ from **Lemma 9.6.5**).
 * **Deletion Rate ($R_{delete}$):** Proportional to the number of active sites susceptible to decay or unraveling, catalyzed by excess density.
@@ -1823,7 +1823,7 @@ The critical state occurs when the creation rate exactly balances the deletion r
 $$R_{create} = R_{delete}$$
 Using the scaling forms derived in **9.6.6.1**:
 $$N_3 e^{-\mu N_3} = \frac{1}{2}$$
-The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ dynamics [(§4.5.6)](dynamics#.5.6).
+The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ dynamics [(§4.5.6)](/monograph/foundations/dynamics#4.5.6).
 
 **II. Solution Analysis**
 Let $f(x) = x e^{-\mu x} - 0.5 = 0$, where $x = N_3$.

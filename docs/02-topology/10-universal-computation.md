@@ -905,7 +905,7 @@ A single-qubit error $E$ induces a syndrome flip $\sigma \to -1$ in the local ne
 **III. Error Handling (The Evolution $\mathcal{U}$)**
 The evolution operator $\mathcal{U}$ is driven by the thermodynamic weight $P \propto e^{-\text{Stress}/T}$ with $T = \ln 2$.
 * **Instability:** The state with $\sigma = -1$ is not a high free energy minimum requiring minimization; rather, it is a high-stress instability.
-* **Catalysis:** The high stress catalyzes the deletion kernel $\mathcal{Q}_{del}$ [(§4.5.2)](dynamics#4.5.2). The probability of deleting the erroneous edge is amplified ($f_{cat} > 1$).
+* **Catalysis:** The high stress catalyzes the deletion kernel $\mathcal{Q}_{del}$ [(§4.5.2)](/monograph/foundations/dynamics#4.5.2). The probability of deleting the erroneous edge is amplified ($f_{cat} > 1$).
 * **Correction:** The Universal Constructor stochastically applies the deletion/rewrite process with probability $Q_{\text{del,thermo}} = 1/2$. This rapid "evaporation" restores the local geometry to the stress-free ($\sigma=+1$) configuration. Since the logical information is encoded non-locally (topologically protected by $O(N)$), the local repair restores the physical code state $|\psi_L\rangle$ without altering the logical state $|0_L\rangle$ or $|1_L\rangle$.
 
 **IV. Conclusion**
@@ -1354,7 +1354,7 @@ The local effective temperature $T_{local}$ of the causal graph region is contro
 **I. Temperature Definition**
 The global vacuum temperature $T_{vac}$ is determined by the homeostatic equilibrium of the causal graph. The local temperature $T_{local}(t)$ in a volume $V$ is defined by the density of active rewrite events:
 $$T_{local}(t) = T_{vac} + k \frac{\rho_{rewrite}(t)}{|V|}$$
-where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from the catalysis coefficient $\lambda_{cat} = e - 1$ [(§4.4.5)](dynamics#4.4.5).
+where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from the catalysis coefficient $\lambda_{cat} = e - 1$ [(§4.4.5)](/monograph/foundations/dynamics#4.4.5).
 
 **II. Driving Mechanism**
 The local rewrite density is increased by applying an external driver (e.g., a bias field) that enhances the acceptance probability of the Universal Constructor in the region $V$.
@@ -1589,7 +1589,7 @@ The conditional execution of the target operation is governed by the catalytic f
 :::tip[**Verification of Catalytic Enhancement for the $|1_L\rangle$ State**]
 
 **I. Friction Function**
-The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ [(§4.5.4)](dynamics#4.5.4).
+The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ [(§4.5.4)](/monograph/foundations/dynamics#4.5.4).
 For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost).
 Thus, $P_{acc} \approx f(\sigma_{eff})$.
 
@@ -1605,7 +1605,7 @@ Thus, $P_{acc} \approx f(\sigma_{eff})$.
 * State: Asymmetric excited state.
 * Syndrome: High stress, $\sigma_C = -1$.
 * Effective Stress: $\sigma_{eff} \approx -1$ (Defect-like).
-* Catalysis: The function $f(-1)$ corresponds to the catalytic regime [(§4.4.5)](dynamics#4.4.5), where $f_{cat} > 1$.
+* Catalysis: The function $f(-1)$ corresponds to the catalytic regime [(§4.4.5)](/monograph/foundations/dynamics#4.4.5), where $f_{cat} > 1$.
     $$P_{acc} \approx f(-1) \approx 1$$
     **Result:** The operation $\mathcal{R}_Z$ is catalyzed. The target undergoes the Z-gate.
 
@@ -1858,8 +1858,8 @@ The category $\mathcal{C}_{QBD}$ is rigid, possessing dual objects $X^*$ corresp
 For a braid $\beta$ defined by writhe sequence $\{w_i\}$, the dual $\beta^*$ is defined by $\{-w_i\}$ with reversed strand orientation [(§7.3.2)](quantum-numbers#7.3.2).
 
 **II. Evaluation and Coevaluation**
-* **Coevaluation ($i_X: I \to X \otimes X^*$):** Pair creation from vacuum. $\mathcal{R}_{create}$ generates balanced writhe $\Delta w = 0$ [(§4.5.3)](dynamics#4.5.3).
-* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ [(§4.5.6)](dynamics#4.5.6).
+* **Coevaluation ($i_X: I \to X \otimes X^*$):** Pair creation from vacuum. $\mathcal{R}_{create}$ generates balanced writhe $\Delta w = 0$ [(§4.5.3)](/monograph/foundations/dynamics#4.5.3).
+* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ [(§4.5.6)](/monograph/foundations/dynamics#4.5.6).
 
 **III. Zig-Zag Identity**
 The composition $(id_X \otimes e_X) \circ (i_X \otimes id_X) = id_X$.
@@ -2345,7 +2345,7 @@ The noisy circuit ($p=0.01$ full Kraus tensor on 3-qubit input) maintains sharp 
 
 Shor's factoring $N=15$ with near-perfect fidelity under noise poses a question: Does this mean online banking is vulnerable tomorrow? The answer is no; this 6-qubit emulation cracks a 4-bit number in milliseconds on a classical laptop, a far cry from RSA-2048's 617-digit keys. Real Shor's demands $\sim 20$ million fault-tolerant qubits for a week's runtime on such scales, a milestone experts project for 2035-2040 (IBM/Rigetti roadmaps), with current machines (e.g., Google's 2025 Sycamore at $\sim 100$ noisy qubits) topping out at toy factors like 21.
 
-Yet the simulation spotlights QBD's stakes: if the causal graph [(§1.3)](ontology#1.3) computes universally [(§10.9.1)](#10.9.1), braid particles [(§6.2)](braid-matter#6.2) as qubits and rewrites as gates [(§10.4-10.8)](#10.4) imply scalable hardware from geometric vacuum [(§5.4)](thermodynamics#5.4), potentially compressing that timeline. The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via syndrome catalysis [(§10.2.9)](#10.2.9), where errors evaporate thermodynamically [(§4.6.3)](dynamics#4.6.3), a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by **[(Acharya et al., 2024)](/monograph/appendices/a-references#A.3)**, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
+Yet the simulation spotlights QBD's stakes: if the causal graph [(§1.3)](/monograph/foundations/ontology#1.3) computes universally [(§10.9.1)](#10.9.1), braid particles [(§6.2)](braid-matter#6.2) as qubits and rewrites as gates [(§10.4-10.8)](#10.4) imply scalable hardware from geometric vacuum [(§5.4)](/monograph/foundations/thermodynamics#5.4), potentially compressing that timeline. The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via syndrome catalysis [(§10.2.9)](#10.2.9), where errors evaporate thermodynamically [(§4.6.3)](/monograph/foundations/dynamics#4.6.3), a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by **[(Acharya et al., 2024)](/monograph/appendices/a-references#A.3)**, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
 :::
