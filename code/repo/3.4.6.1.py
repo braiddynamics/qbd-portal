@@ -1,27 +1,44 @@
 import numpy as np
+import pandas as pd
 
-# Params: ε_geo=1, ΔS=ln(2)≈0.693
-eps_geo = 1.0
-delta_S = np.log(2)
-T_high = 10 * eps_geo / delta_S  # High T
-T_low = 0.5 * eps_geo / delta_S  # Half-crossover for P_acc≈0.5
+# Thermodynamic parameters
+ε_geo = 1.0                    # Energy cost of edge addition
+ΔS = np.log(2)                 # Entropy gain from parity symmetry breaking
 
-def metropolis_acc(T, delta_U=eps_geo, delta_S=delta_S):
-    delta_F = delta_U - T * delta_S
-    return min(1, np.exp(-delta_F / T))
+# Temperature regimes
+T_high = 10 * ε_geo / ΔS       # Entropy-dominated (primordial) regime
+T_low  = 0.5 * ε_geo / ΔS      # Energy-entropic crossover regime
 
-# Sim P_acc over 10^4 proposals
-n_trials = 10000
-P_acc_high = np.mean([metropolis_acc(T_high) for _ in range(n_trials)])
-P_acc_low = np.mean([metropolis_acc(T_low) for _ in range(n_trials)])
+def acceptance_probability(T):
+    """Exact Metropolis acceptance for ΔF = ε_geo - T ΔS"""
+    ΔF = ε_geo - T * ΔS
+    return min(1.0, np.exp(-ΔF / T))
 
-# Poisson P_ign for N=1000
-N = 1000
-N_pot = N**2 / 2
-lambda_high = N_pot * P_acc_high
-lambda_low = N_pot * P_acc_low
-P_ign_high = 1 - np.exp(-lambda_high)
-P_ign_low = 1 - np.exp(-lambda_low)
+# Exact local acceptance rates
+P_acc_high = acceptance_probability(T_high)
+P_acc_low  = acceptance_probability(T_low)
 
-print(f"High T: P_acc={P_acc_high:.3f}, P_ign={P_ign_high:.3f}")
-print(f"Low T: P_acc={P_acc_low:.3f}, P_ign={P_ign_low:.3f}")
+# Scaling demonstration
+vertices = [100, 500, 1000, 2000]
+results = []
+
+for N in vertices:
+    candidate_pairs = N**2 / 2
+    rate_high = candidate_pairs * P_acc_high
+    rate_low  = candidate_pairs * P_acc_low
+    
+    P_ign_high = 1 - np.exp(-rate_high)
+    P_ign_low  = 1 - np.exp(-rate_low)
+    
+    results.append({
+        'Vertices (N)': N,
+        'Candidate Pairs (≈ N²/2)': f'{candidate_pairs:.0f}',
+        'Local P_acc (High T)': f'{P_acc_high:.4f}',
+        'Global P_ign (High T)': f'{P_ign_high:.4f}',
+        'Local P_acc (Low T)': f'{P_acc_low:.4f}',
+        'Global P_ign (Low T)': f'{P_ign_low:.4f}'
+    })
+
+# Render Markdown table
+df = pd.DataFrame(results)
+print(df.to_markdown(index=False))

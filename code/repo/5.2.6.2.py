@@ -3,7 +3,7 @@ import numpy as np
 import random
 from scipy.optimize import curve_fit
 
-# 1. Deterministic Initialization
+# Set seeds for reproducibility
 random.seed(42)
 np.random.seed(42)
 
@@ -12,10 +12,10 @@ def measure_deletion_flux(N, max_density_cycles=100):
     flux_rates = [] 
     
     # Simulation Rule: P_delete = P_base * (1 + lambda * local_density)
-    lambda_sim = 0.5 
+    lambda_sim = 0.5  # Catalytic coefficient (example value)
     
     for cycles in range(10, max_density_cycles, 5):
-        # A. Create Graph
+        # Create Graph
         G = nx.Graph()
         G.add_nodes_from(range(N))
         for _ in range(cycles):
@@ -24,13 +24,14 @@ def measure_deletion_flux(N, max_density_cycles=100):
             
         rho = cycles / N
         
-        # B. Measure Deletion Flux
+        # Measure Deletion Flux
         deleted_count = 0
         edges = list(G.edges())
-        if not edges: continue
+        if not edges:
+            continue
         
         for u, v in edges:
-            # Local Stress Metric (Degree)
+            # Local Stress Metric (Average Degree in Neighborhood)
             k_local = (G.degree[u] + G.degree[v]) / 4.0 
             p_base = 0.05
             p_stress = p_base * (lambda_sim * k_local)
@@ -38,7 +39,7 @@ def measure_deletion_flux(N, max_density_cycles=100):
             if random.random() < (p_base + p_stress):
                 deleted_count += 1
         
-        # Normalized Flux = (Total Deleted / Total Edges)
+        # Normalized Flux = Deleted / Total Edges
         normalized_flux = deleted_count / len(edges) 
         
         densities.append(rho)
@@ -46,16 +47,18 @@ def measure_deletion_flux(N, max_density_cycles=100):
         
     return densities, flux_rates
 
-# 2. Simulation Parameters
+# Simulation parameters
 N = 500
 densities, normalized_rates = measure_deletion_flux(N, max_density_cycles=500)
 
-# 3. Fit: Rate = A + B * rho
+# Fit to linear model: Rate = A + B * rho
 def linear_fit(x, a, b):
     return a + b * x
 
-popt, _ = curve_fit(linear_fit, densities, normalized_rates)
+popt, pcov = curve_fit(linear_fit, densities, normalized_rates)
 intercept, slope = popt
+std_err_intercept, std_err_slope = np.sqrt(np.diag(pcov))
 
-print(f"Base Rate (Intercept): {intercept:.4f}")
-print(f"Catalytic Coeff (Slope): {slope:.4f}")
+# Formatted console output
+print(f"Base Rate (Intercept): {intercept:.4f} ± {std_err_intercept:.4f}")
+print(f"Catalytic Coeff (Slope): {slope:.4f} ± {std_err_slope:.4f}")

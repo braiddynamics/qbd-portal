@@ -3,41 +3,51 @@ import numpy as np
 import random
 from scipy.optimize import curve_fit
 
-# 1. Deterministic Initialization
+# Set seeds for reproducibility
 random.seed(42)
 np.random.seed(42)
 
 def count_open_paths(G):
     """
-    Counts u -> v -> w ONLY if edge u-w does NOT exist.
-    This filters out internal triangle paths to isolate the interaction term.
+    Counts the number of compliant open 2-paths in the graph.
+    
+    A compliant 2-path is u -> v -> w where no direct edge u-w exists.
+    This excludes paths internal to closed triangles, isolating the
+    interaction term for autocatalytic growth analysis.
+    
+    Parameters:
+    G (nx.Graph): The input graph.
+    
+    Returns:
+    int: Total count of open 2-paths.
     """
     paths = 0
     nodes = list(G.nodes())
     for v in nodes:
         neighbors = list(G.neighbors(v))
         k = len(neighbors)
-        if k < 2: continue
+        if k < 2:
+            continue
         
-        # Check all neighbor pairs
+        # Iterate over all unique pairs of neighbors
         for i in range(k):
             for j in range(i + 1, k):
                 u, w = neighbors[i], neighbors[j]
                 
-                # CRITICAL: Only count if the loop is NOT closed
+                # Count only if the closing edge does not exist
                 if not G.has_edge(u, w):
                     paths += 1
     return paths
 
-# 2. Simulation Parameters
-N = 1000
-runs = 20
-max_cycles = 150  
+# Simulation parameters
+N = 1000          # Number of nodes
+runs = 50         # Number of independent runs
+max_cycles = 150  # Maximum cycles added per run
 
 all_densities = []
 all_paths = []
 
-for _ in range(runs):
+for run in range(runs):
     G = nx.Graph()
     G.add_nodes_from(range(N))
     
@@ -45,30 +55,36 @@ for _ in range(runs):
     current_paths = []
     
     for c in range(1, max_cycles + 1):
+        # Add a random 3-cycle
         triad = random.sample(range(N), 3)
         nx.add_cycle(G, triad)
         
-        # Record Metrics
-        if c > 10: # Ensure sufficient density for interaction
+        # Record metrics after sufficient density
+        if c > 10:
             rho = c / N
-            path_density = count_open_paths(G) / N
+            path_count = count_open_paths(G)
+            path_density = path_count / N
             
             current_densities.append(rho)
             current_paths.append(path_density)
-        
+    
     all_densities.append(current_densities)
     all_paths.append(current_paths)
 
-# 3. Aggregation and Fitting
+# Aggregate results
 mean_rho = np.mean(all_densities, axis=0)
 mean_paths = np.mean(all_paths, axis=0)
 
+# Fit to power law: y = a * x^b
 def power_law(x, a, b):
-    return a * (x**b)
+    return a * (x ** b)
 
-popt, _ = curve_fit(power_law, mean_rho, mean_paths)
+popt, pcov = curve_fit(power_law, mean_rho, mean_paths, p0=[1.0, 2.0])
 amplitude, exponent = popt
+std_err = np.sqrt(np.diag(pcov))[1]  # Standard error on exponent
 
-print(f"Sample Size (N): {N} | Runs: {runs}")
-print(f"Measured Scaling Exponent: {exponent:.4f}")
-print(f"Theoretical Expectation:   2.0000")
+# Formatted console output
+print(f"Number of Nodes (N): {N}")
+print(f"Number of Runs:      {runs}")
+print(f"Measured Exponent:   {exponent:.4f} ± {std_err:.4f}")
+print(f"Theoretical Value:   2.0000")

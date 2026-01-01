@@ -1,16 +1,17 @@
 import networkx as nx
 import pandas as pd
+import math 
 
 def create_directed_cycle(k):
-    """Creates a simple directed k-cycle."""
+    """Creates a simple directed k-cycle graph — the initial topological defect."""
     G = nx.DiGraph()
     nodes = list(range(k))
     for i in range(k):
         G.add_edge(nodes[i], nodes[(i + 1) % k])
     return G
 
-def max_cycle_length(G):
-    """Finds the length of the longest simple cycle in the graph."""
+def get_max_cycle_len(G):
+    """Returns the length of the longest simple cycle, or 0 if acyclic."""
     try:
         cycles = list(nx.simple_cycles(G))
         if not cycles:
@@ -20,90 +21,88 @@ def max_cycle_length(G):
         return 0
 
 def find_compliant_2_paths(G):
-    """Finds all PUC-compliant 2-paths (v -> w -> u)."""
+    """
+    Identifies all open 2-paths (v→w→u) that satisfy the
+    Principle of Unique Causality (PUC) for chord addition.
+    This is the recognition phase of the rewrite rule.
+    """
     paths = []
     for v in G.nodes():
         for w in G.successors(v):
             for u in G.successors(w):
-                if u == v: continue
-                # PUC Check 1: No direct path v->u
-                if G.has_edge(v, u):
+                if u == v: 
+                    continue  # Prevent trivial loops
+                
+                # Constraint 1: Direct chord must not exist
+                if G.has_edge(v, u): 
                     continue
-                # PUC Check 2: No alternative 2-path v->x->u with x != w
-                other_paths = 0
+                
+                # Constraint 2: No parallel 2-path (PUC)
+                redundant = False
                 for x in G.successors(v):
                     if x != w and G.has_edge(x, u):
-                        other_paths += 1
-                # PUC Check 3: The closing chord u->v does not already exist
-                if other_paths == 0 and not G.has_edge(u, v):
+                        redundant = True
+                        break
+                if not redundant:
                     paths.append((v, w, u))
     return paths
 
-def add_all_chords(G):
-    """
-    Phase 1: Add all PUC-compliant chords in parallel.
-    Returns the number of additions.
-    """
+def phase_1_add_chords(G):
+    """Phase 1: Exhaustive chord insertion on all compliant sites (parallel update)."""
+    paths = find_compliant_2_paths(G)  # Collect all sites first — simulates parallel application
     ops = 0
-    paths_to_add = find_compliant_2_paths(G)
-    for v, w, u in paths_to_add:
-        G.add_edge(u, v)
-        ops += 1
+    for v, w, u in paths:
+        if not G.has_edge(u, v):        # Direction: close with (u → v)
+            G.add_edge(u, v)
+            ops += 1
     return ops
 
-def delete_to_break_large_cycles(G):
-    """
-    Phase 2: Sequentially remove edges from large cycles
-    until max L <= 3.
-    Returns the number of deletions.
-    """
+def phase_2_delete_cycles(G):
+    """Phase 2: Entropic deletion — break remaining macro-cycles by removing perimeter edges."""
     ops = 0
-    current_max_len = max_cycle_length(G)
-    while current_max_len > 3:
-        cycle_found = None
-        for cycle in nx.simple_cycles(G):
-            if len(cycle) > 3:
-                cycle_found = cycle
+    while True:
+        max_len = get_max_cycle_len(G)
+        if max_len <= 3:
+            break
+           
+        # Find and break one macro-cycle
+        target_cycle = None
+        for c in nx.simple_cycles(G):
+            if len(c) > 3:
+                target_cycle = c
                 break
-
-        if cycle_found:
-            # Delete the first edge of this cycle
-            edge_to_remove = (cycle_found[0], cycle_found[1])
-            if G.has_edge(*edge_to_remove):
-                G.remove_edge(*edge_to_remove)
+       
+        if target_cycle:
+            # Delete the first edge of the detected cycle — thermodynamic pruning
+            u, v = target_cycle[0], target_cycle[1]
+            if G.has_edge(u, v):
+                G.remove_edge(u, v)
                 ops += 1
-            current_max_len = max_cycle_length(G)  # Re-check
         else:
             break
-
     return ops
 
-def total_reduction_steps(k):
-    """
-    Calculates the total steps to reduce a k-cycle using the
-    two-phase (add-all, then-delete) algorithm.
-    """
-    if k <= 3:
+def run_reduction_protocol(k):
+    """Full reduction protocol for a single k-cycle — returns (add_ops, del_ops)."""
+    if k <= 3: 
         return 0, 0
-
+   
     G = create_directed_cycle(k)
-    # Phase 1: Add all k chords (in simple k-cycle, all compliant)
-    add_ops = add_all_chords(G)
-    # Phase 2: Delete until max L <= 3
-    del_ops = delete_to_break_large_cycles(G)
+    add_ops = phase_1_add_chords(G)
+    del_ops = phase_2_delete_cycles(G)
+   
     return add_ops, del_ops
 
-# --- Main execution ---
+# === Execution and Verification ===
 results = []
 for k in range(4, 13):
-    adds, dels = total_reduction_steps(k)
+    adds, dels = run_reduction_protocol(k)
     results.append({
         "Cycle Length (k)": k,
-        "Add Operations (Phase 1)": adds,
-        "Delete Operations (Phase 2)": dels,
-        "Total Reduction Steps": adds + dels
+        "Add Ops": adds,
+        "Del Ops": dels,
+        "Total Steps": adds + dels
     })
 
-# Format and print the results as a Markdown table
 df = pd.DataFrame(results)
-print(df.to_markdown(index=False, floatfmt=".0f"))
+print(df.to_markdown(index=False))

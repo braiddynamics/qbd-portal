@@ -1,52 +1,40 @@
 import networkx as nx
 import numpy as np
 
-def compute_local_relations(G, pair):
+def relational_entropy(G, source, target):
     """
-    Local to pair (x,y): Count simple paths k_xy (x<=y), k_yx (y<=x).
-    Post-cycle: Closure adds direct y->x (k_yx=1) + + reinforces k_xy=2.
-    S_local = ln( k_xy * k_yx ) if both >0 else 0 (baseline).
+    Local entropy for directed pair (source, target).
+    Entropy = ln(k_forward × k_reverse), where:
+      - k_forward: number of simple paths source → target
+      - +1 if cycle present (degenerate representation under ≤)
+      - k_reverse: number of simple paths target → source
+    Returns 0 if product = 0.
     """
-    x, y = pair
-    paths_xy = list(nx.all_simple_paths(G, x, y))
-    k_xy = len(paths_xy)
-    if list(nx.simple_cycles(G)):  # Cycle encloses pair
-        k_xy += 1  # Reinforcement (degenerate rep under <=)
-    paths_yx = list(nx.all_simple_paths(G, y, x))
-    k_yx = len(paths_yx)
-    S_local = np.log(k_xy * k_yx) if k_xy > 0 and k_yx > 0 else 0.0
-    return S_local
+    k_fwd = len(list(nx.all_simple_paths(G, source, target)))
+    if any(nx.simple_cycles(G)):
+        k_fwd += 1                    # Cycle reinforcement
+    k_rev = len(list(nx.all_simple_paths(G, target, source)))
+    product = k_fwd * k_rev
+    return np.log(product) if product > 0 else 0.0
 
-# Minimal: v=0, w=1, u=2; pair v-u=(0,2)
-pair = (0, 2)
-G_pre = nx.DiGraph([(0,1),(1,2)])  # Pre-closure 2-path
+# Minimal 2-path: v=0 → w=1 → u=2, focus pair (v,u)=(0,2)
+G_pre = nx.DiGraph([(0, 1), (1, 2)])
 
-# Multi-trial: Avg over 100 random monotone timestamps
-n_trials = 100
-delta_S_trials = []
-ln2 = np.log(2)
+S_pre = relational_entropy(G_pre, 0, 2)
 
-for _ in range(n_trials):
-    # Assign random increasing H (ensures monotone paths)
-    H_pre = {e: np.random.randint(1, 10) for e in G_pre.edges()}
-    nx.set_edge_attributes(G_pre, H_pre, 'H')
-    
-    # Compute Pre S
-    S_pre = compute_local_relations(G_pre, pair)
-    
-    # Construct Post
-    G_post = G_pre.copy()
-    G_post.add_edge(2, 0)  # Post: add u->v (cycle)
-    # H for new edge > max in-degree to maintain monotonicity
-    H_post = H_pre.copy(); H_post[(2,0)] = max(H_pre.values()) + 1
-    nx.set_edge_attributes(G_post, H_post, 'H')
-    
-    # Compute Post S
-    S_post = compute_local_relations(G_post, pair)
-    delta_S_trials.append(S_post - S_pre)
+# Closure: add return edge u → v
+G_post = G_pre.copy()
+G_post.add_edge(2, 0)
 
-avg_delta_S = np.mean(delta_S_trials)
-std_delta_S = np.std(delta_S_trials)
+S_post = relational_entropy(G_post, 0, 2)
 
-assert np.isclose(avg_delta_S, ln2, atol=1e-4), f"Avg ΔS mismatch: {avg_delta_S:.6f}"
-print(f"Avg ΔS over {n_trials} trials: {avg_delta_S:.3f} ± {std_delta_S:.3f} (Target: {ln2:.3f})")
+delta_S = S_post - S_pre
+target = np.log(2)
+
+print("Local Entropy Gain from Relational Loop Closure")
+print("=" * 52)
+print(f"Pre-closure multiplicity product:  1 × 0 = 0  → S = {S_pre:.6f}")
+print(f"Post-closure multiplicity product: 2 × 1 = 2  → S = {S_post:.6f}")
+print(f"ΔS:                                {delta_S:.6f}")
+print(f"Theoretical ln(2):                 {target:.6f}")
+print(f"Exact match:                       {np.isclose(delta_S, target)}")

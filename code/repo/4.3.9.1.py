@@ -1,88 +1,83 @@
 import networkx as nx
 
-def compute_syndrome(graph):
-    # Dummy syndrome for simulation
+# Dummy syndrome computation: returns a constant value for verification purposes
+def compute_syndrome(_):
     return 1
 
 class AnnotatedGraph:
+    """Represents a causal graph with nested tuple annotation (store comonad structure)."""
     def __init__(self, graph, annotation):
         self.graph = graph
-        # Enforce tuple for consistent structure
-        self.annotation = annotation if isinstance(annotation, tuple) else (annotation, )
+        # Ensure annotation is always a tuple to support consistent nesting
+        self.annotation = annotation if isinstance(annotation, tuple) else (annotation,)
     
     def __repr__(self):
-        return f"AnnotatedGraph with annotation {self.annotation}"
+        return f"AnnotatedGraph with annotation: {self.annotation}"
     
     def __eq__(self, other):
         if not isinstance(other, AnnotatedGraph):
             return False
-        if not nx.is_isomorphic(self.graph, other.graph):
-            return False
-        return self.annotation == other.annotation
+        return (nx.is_isomorphic(self.graph, other.graph) and
+                self.annotation == other.annotation)
 
-# Helper to apply a morphism
+# Apply a morphism to the annotation part only
 def apply_morphism(f_ann, ann_graph):
-    new_annotation = f_ann(ann_graph.annotation)
-    return AnnotatedGraph(ann_graph.graph, new_annotation)
+    new_ann = f_ann(ann_graph.annotation)
+    return AnnotatedGraph(ann_graph.graph, new_ann)
 
-# R_T on objects
-def R_T_obj(ann_graph):
-    recomputed = compute_syndrome(ann_graph.graph)
-    new_annotation = (ann_graph.annotation, recomputed)
-    return AnnotatedGraph(ann_graph.graph, new_annotation)
+# Awareness functor R_T: adjoins freshly computed syndrome
+def R_T(ann_graph):
+    syndrome = compute_syndrome(ann_graph.graph)
+    return AnnotatedGraph(ann_graph.graph, (ann_graph.annotation, syndrome))
 
-# R_T on morphisms
-def R_T_morph(f_ann):
-    def lifted(ann_tuple):
-        a, b = ann_tuple
-        return (f_ann(a), b)
+# Lifted morphism for R_T
+def R_T_lift(f_ann):
+    def lifted(pair):
+        old, new = pair
+        return (f_ann(old), new)
     return lifted
 
-# Counit epsilon
-def f_epsilon(ann_tuple):
-    a, b = ann_tuple
-    return a
+# Counit ε: extracts the stored context
+def ε(pair):
+    old, _ = pair
+    return old
 
-# Comultiplication delta
-def f_delta(ann_tuple):
-    a, b = ann_tuple
-    return ((a, b), b)
+# Comultiplication δ: duplicates the current observation for meta-check
+def δ(pair):
+    old, new = pair
+    return ((old, new), new)
 
-# --- Verification ---
-print("--- Comonad Verification ---")
-G = nx.DiGraph()
-G.add_edges_from([('v1', 'v2'), ('v2', 'v3')])
+# Test graph (simple chain for demonstration)
+G = nx.DiGraph([('v1', 'v2'), ('v2', 'v3')])
 
-initial_ann = AnnotatedGraph(G, 'old')
-print(f"Initial X: {initial_ann}")
+# Initial state X with stored annotation 'old'
+X = AnnotatedGraph(G, 'old')
+Y = R_T(X)  # Apply awareness: Y = R_T(X)
 
-rt_ann = R_T_obj(initial_ann)
-print(f"R_T(X) = Y: {rt_ann}")
+print("Store Comonad Axiom Verification")
+print("=" * 50)
 
-print("--- Axiom Tests ---")
+# Axiom 1: Left Identity — ε ∘ δ = id
+δ_Y = apply_morphism(δ, Y)
+lhs1 = apply_morphism(ε, δ_Y)
+print("Axiom 1: Left Identity (ε ∘ δ = id)")
+print(f"   Holds: {lhs1 == Y}")
+print(f"   Result after ε ∘ δ: {lhs1}")
+print(f"   Expected (id(Y)):     {Y}\n")
 
-# --- 1. Left Identity ---
-delta_on_rt = apply_morphism(f_delta, rt_ann)
-left_id_result = apply_morphism(f_epsilon, delta_on_rt)
-print(r"Axiom 1 (LHS: \epsilon \circ \delta):", left_id_result)
-print("Axiom 1 (RHS: id(Y)):", rt_ann)
-print(f"Axiom 1 Holds: {left_id_result == rt_ann}\n")
+# Axiom 2: Right Identity — R_T(ε) ∘ δ = id
+lifted_ε = R_T_lift(ε)
+lhs2 = apply_morphism(lifted_ε, δ_Y)
+print("Axiom 2: Right Identity (R_T(ε) ∘ δ = id)")
+print(f"   Holds: {lhs2 == Y}")
+print(f"   Result after R_T(ε) ∘ δ: {lhs2}")
+print(f"   Expected (id(Y)):         {Y}\n")
 
-# --- 2. Right Identity ---
-delta_on_rt = apply_morphism(f_delta, rt_ann)
-rt_epsilon_morph = R_T_morph(f_epsilon)
-right_id_result = apply_morphism(rt_epsilon_morph, delta_on_rt)
-print(r"Axiom 2 (LHS: R_T(\epsilon) \circ \delta):", right_id_result)
-print("Axiom 2 (RHS: id(Y)):", rt_ann)
-print(f"Axiom 2 Holds: {right_id_result == rt_ann}\n")
-
-# --- 3. Associativity ---
-inner_delta_lhs = apply_morphism(f_delta, rt_ann)
-lhs_result = apply_morphism(f_delta, inner_delta_lhs)
-print(r"Axiom 3 (LHS: \delta \circ \delta):", lhs_result)
-
-inner_delta_rhs = apply_morphism(f_delta, rt_ann)
-rt_delta_morph = R_T_morph(f_delta)
-rhs_result = apply_morphism(rt_delta_morph, inner_delta_rhs)
-print(r"Axiom 3 (RHS: R_T(\delta) \circ \delta):", rhs_result)
-print(f"Axiom 3 Holds: {lhs_result == rhs_result}\n")
+# Axiom 3: Associativity — δ ∘ δ = R_T(δ) ∘ δ
+lhs3 = apply_morphism(δ, δ_Y)
+lifted_δ = R_T_lift(δ)
+rhs3 = apply_morphism(lifted_δ, δ_Y)
+print("Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)")
+print(f"   Holds: {lhs3 == rhs3}")
+print(f"   LHS (δ ∘ δ):           {lhs3}")
+print(f"   RHS (R_T(δ) ∘ δ):      {rhs3}")

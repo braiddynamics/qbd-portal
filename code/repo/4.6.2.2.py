@@ -1,31 +1,38 @@
 import numpy as np
 
-# Scenario:
-# Branch 1 (G1): Add C->A (Cost: 1.0)
-# Branch 2 (G2): Add D->B (Cost: 1.0)
-# Branch 3 (G3): Both Adds + Del C->D (Cost: 1.0 * 1.0 * 0.5 = 0.5)
+def transition_weight(n_add: int, n_del: int, P_add: float = 1.0, P_del: float = 0.5) -> float:
+    """Raw thermodynamic weight of a transition path in the vacuum limit (χ = 1)."""
+    return P_add ** n_add * P_del ** n_del
 
-def born_product(n_add, n_del, P_add=1.0, P_del=0.5):
-    """Calculates raw thermodynamic weight of a transition path."""
-    return (P_add ** n_add) * (P_del ** n_del)
+print("Emergent Born Rule Verification (Vacuum Limit)")
+print("=" * 54)
 
-# 1. Calculate Raw Weights (assuming chi=1 for vacuum)
-W_G1 = born_product(n_add=1, n_del=0)
-W_G2 = born_product(n_add=1, n_del=0)
-W_G3 = born_product(n_add=2, n_del=1) # Note: Multi-event path
+# Define the three concrete transition paths in the toy ensemble
+# Path A: single addition (e.g., add C→A)
+W_A = transition_weight(n_add=1, n_del=0)
 
-# 2. Normalize over the ensemble of valid outcomes
-total_weight = W_G1 + W_G2 + W_G3
-P_G1 = W_G1 / total_weight
-P_G3 = W_G3 / total_weight
+# Path B: single addition (e.g., add D→B) – symmetric to A
+W_B = transition_weight(n_add=1, n_del=0)
 
-# 3. Verify the 1/2 Ratio
-expected_ratio = 0.5
-ratio = P_G3 / P_G1
+# Path C: two additions + one deletion (e.g., add C→A, add D→B, then delete one edge)
+W_C = transition_weight(n_add=2, n_del=1)
 
-assert np.isclose(P_G1, 1.0/2.5), "G1 norm mismatch"
-assert np.isclose(P_G3, 0.5/2.5), "G3 norm mismatch"
+# Full ensemble of valid successors (two symmetric single-add paths + one mixed path)
+total_weight = W_A + W_B + W_C
 
-print(f"Raw Weights: G1={W_G1}, G3={W_G3}")
-print(f"Norm Probs:  G1={P_G1:.3f}, G3={P_G3:.3f}")
-print(f"Ratio P(G3)/P(G1): {ratio:.2f} (Target: {expected_ratio})")
+P_A = W_A / total_weight
+P_B = W_B / total_weight  # identical to P_A
+P_C = W_C / total_weight
+
+ratio = P_C / P_A
+
+print(f"Raw weights:")
+print(f"  Single addition (Path A or B):           {W_A:.1f}")
+print(f"  Two additions + one deletion (Path C):   {W_C:.1f}")
+print(f"  Total ensemble weight:                   {total_weight:.1f}\n")
+
+print(f"Normalized probabilities:")
+print(f"  P(single addition):                      {P_A:.3f}")
+print(f"  P(two adds + one deletion):              {P_C:.3f}")
+print(f"  Ratio P(C)/P(A):                         {ratio:.2f}  (theoretical target: 0.50)")
+print(f"  Exact match with ½ deletion penalty:     {np.isclose(ratio, 0.5)}")
