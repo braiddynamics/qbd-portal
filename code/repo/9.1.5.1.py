@@ -1,21 +1,45 @@
 import sympy as sp
 
-# Define SU(N) anomaly coefficients symbolically
-N = sp.symbols('N', integer=True)
-A_fund = 1  # Fundamental
-A_antifund = -1  # Anti-fundamental
-A_antisym = N - 4  # Antisymmetric 2-tensor
+def verify_su5_anomaly_cancellation():
+    """
+    Verification of Cubic Anomaly Cancellation in Minimal SU(5)
+    
+    The anomaly coefficient A(R) for a representation R in SU(N) is:
+    - A(fund) = 1
+    - A(antifund) = -1
+    - A(antisymmetric 2-tensor) = N - 4
+    
+    For SU(5), the fermion generation fits into \bar{5} + 10.
+    We compute A(\bar{5}) + A(10) and confirm exact cancellation.
+    """
+    print("═" * 70)
+    print("COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION")
+    print("Minimal Chiral Generation in \bar{5} ⊕ 10 Representations")
+    print("═" * 70)
 
-# For SU(5), N=5
-N_val = 5
-A_5bar = A_antifund  # \bar{5} is anti-fundamental
-A_10 = A_antisym.subs(N, N_val)  # 10 is \wedge^2 5
+    # Symbolic definition
+    N = sp.symbols('N', integer=True, positive=True)
+    A_fund = 1
+    A_antifund = -sp.Integer(1)
+    A_antisym = N - 4
 
-# Total anomaly for one generation
-total_anomaly = A_5bar + A_10
+    # Evaluate at N=5 (SU(5))
+    N_val = 5
+    A_5bar = A_antifund
+    A_10 = A_antisym.subs(N, N_val)
 
-# Numerical evaluation
-print(f"A(\bar{{5}}) = {A_5bar}")
-print(f"A(10) = {A_10}")
-print(f"Total anomaly = {total_anomaly}")
-print(f"Symbolic: A(antisym) = {A_antisym}, eval at N={N_val}: {A_antisym.subs(N, N_val)}")
+    total = A_5bar + A_10
+
+    print(f"\nAnomaly Coefficients (SU(5)):")
+    print(f"  A(\\bar{{5}})   = {A_5bar}")
+    print(f"  A(10)        =  {A_10}")
+    print(f"  Total        =  {total}")
+    print("-" * 50)
+
+    if total == 0:
+        print("RESULT: Exact cancellation confirmed.")
+    else:
+        print("RESULT: Anomaly detected – invalid unification.")
+
+if __name__ == "__main__":
+    verify_su5_anomaly_cancellation()

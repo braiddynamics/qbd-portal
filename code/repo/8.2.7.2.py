@@ -33,10 +33,6 @@ def verify_flux_tube_confinement():
         print(f"{L:<6} | {E:<15.2f} | {ph:<18.2f} | {mod_phase:<10.2f}")
         
     print("-" * 60)
-    print("VERIFICATION:")
-    print("1. Energy scales linearly with Length (Linear Confinement confirmed).")
-    print("2. Phase accumulates as n*pi/4, indicating discrete flux quantization.")
-    print("3. Modulo 2pi cycles reflect the topological periodicity of the flux tube.")
 
 if __name__ == "__main__":
     verify_flux_tube_confinement()

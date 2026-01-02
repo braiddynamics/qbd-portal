@@ -3,45 +3,33 @@ import pandas as pd
 
 def simulate_entropic_exclusion():
     """
-    Calculates the relative abundance of higher-order braids (n > 3)
-    based on the Boltzmann suppression of their topological complexity.
+    Computes thermodynamic suppression of higher-order braids (n > 3)
+    relative to tripartite ground state (n=3).
+    
+    Continuous Boltzmann model: ΔC = 1 nat per ribbon, T = ln 2.
     """
+    print("═" * 70)
+    print("ENTROPIC SUPPRESSION OF EXOTIC BRAIDS")
+    print("Boltzmann Weights vs. Ribbon Count (n)")
+    print("═" * 70)
     
-    # 1. Physical Constants
-    # T_vac = ln(2) approx 0.693. This is the critical temperature derived in Ch 5.
-    T_VAC = np.log(2) 
+    T_vac = np.log(2)                                 # ≈ 0.693147
+    suppression_per_ribbon = np.exp(-1 / T_vac)        # ≈ 0.236928
     
-    # 2. Define Candidates (Ribbon Counts)
-    # We analyze n=3 (Standard Model) vs n=4..8 (Exotics)
-    n_values = np.array([3, 4, 5, 6, 7, 8])
+    n_values = np.arange(3, 9)
+    relative = suppression_per_ribbon ** (n_values - 3)
+    suppression_factor = 1 / relative
     
-    # 3. Define Complexity Cost Function C(n)
-    # The Minimal Generation Principle asserts that C scales with n.
-    # We assume the most charitable case for exotics: Linear Scaling C = n.
-    # (If scaling is quadratic, suppression is even stronger).
-    complexity = n_values.astype(float)
-    
-    # 4. Calculate Boltzmann Weights
-    # P(n) ~ exp(-Complexity / T_vac)
-    weights = np.exp(-complexity / T_VAC)
-    
-    # 5. Normalize Relative to the Ground State (n=3)
-    base_weight = weights[0] 
-    relative_abundance = weights / base_weight
-    
-    # 6. Inverse Ratio (Suppression Factor)
-    suppression_factor = 1.0 / relative_abundance
-
-    # --- Output Data ---
     df = pd.DataFrame({
-        'Ribbons (n)': n_values,
-        'Relative Abundance': relative_abundance,
-        'Suppression (1 in X)': suppression_factor
+        'Ribbon count (n)'      : n_values,
+        'Relative probability'  : [f"{r:.6f}" for r in relative],
+        'Suppression factor'    : [f"{s:.1f}" for s in suppression_factor]
     })
     
-    print("--- ENTROPIC EXCLUSION SWEEP ---")
-    print(f"Vacuum Temperature: {T_VAC:.4f} (ln 2)")
-    print("\nResults:")
+    print(f"\nVacuum temperature T = ln 2 ≈ {T_vac:.6f}")
+    print(f"Cost per ribbon ΔC = 1 nat")
+    print(f"Suppression per ribbon ≈ {suppression_per_ribbon:.6f}")
+    print("\nResults (normalized to n=3):")
     print(df.to_string(index=False))
 
 if __name__ == "__main__":

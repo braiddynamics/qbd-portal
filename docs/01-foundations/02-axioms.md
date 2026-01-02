@@ -2018,7 +2018,7 @@ This theorem serves as the capstone of the axiomatic chapter; confirming that th
 2.  **Axiom $2$** gives the universe **Structure** (Space). It provides the constructive logic for building geometry out of those directed links.
 3.  **Axiom $3$** gives the universe **Consistency** (Logic).
 
-It is possible (as our independence proofs demonstrate) to have a universe with Direction and Structure that nonetheless makes no sense; a reality where effects precede causes via complex and non-local loops. By proving the independence of Axiom $3$, we demonstrate that Consistency is not a free byproduct of Time and Space; it is an active constraint that must be legislated into the foundations of physics. We cannot assume the universe is logical; we must postulate the rules that force it to be s
+It is possible (as our independence proofs demonstrate) to have a universe with Direction and Structure that nonetheless makes no sense; a reality where effects precede causes via complex and non-local loops. By proving the independence of Axiom $3$, we demonstrate that Consistency is not a free byproduct of Time and Space; it is an active constraint that must be legislated into the foundations of physics.
 :::
 
 ### 2.7.Z Implications and Synthesis {#2.7.Z}

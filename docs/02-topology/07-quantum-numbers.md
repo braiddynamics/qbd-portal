@@ -1415,11 +1415,11 @@ Q.E.D.
 
 :::note[**Computational Verification of Mass Ratios via Integer Sharing**]
 
-To quantify the mass spectrum predicted by the Topological Mass Functional, the calculation performs a numerical evaluation of the net complexity $N_3$ for the fundamental fermions. This calculation applies the **Integer Geometric Efficiency** principle derived in **Lemma 7.4.5** [(§7.4.5)](#7.4.5), where the total mass is the sum of the isolated ribbon complexities minus the geometric quanta shared through parallel linking:
+Quantification of the mass spectrum predicted by the Topological Mass Functional established in the Discrete Mass Spectrum Proof [(§7.4.6)](#7.4.6) is based on the following protocols:
 
-$$m = \kappa_m \left( \sum N_{3,\text{iso}} - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)$$
-
-Using the electron mass to anchor the fundamental scale ($\kappa_m = m_e / 3 \approx 0.170$ MeV), and enforcing the lattice constraint ($k_{\text{share}} = 1$), the simulation determines the rest masses for the minimal topological configurations. The provided code verifies the logic of the functional, specifically testing the cancellation mechanisms inherent in isospin doublets and the quantization of mass levels.
+1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.170$ MeV (anchored to the electron mass $m_e/3$) and enforces the lattice constraint $k_{share} = 1$.
+2.  **Topology Instantiation:** The protocol defines the writhe vectors for the fundamental fermions (e.g., Up Quark $\vec{w}=(1,1,0)$, Down Quark $\vec{w}=(-1,0,0)$) and identifies parallel ribbon pairs eligible for geometric sharing.
+3.  **Complexity Calculation:** The simulation computes the net topological complexity $N_{net} = \sum w_i^2 - k_{share} \cdot N_{parallel}$ and maps this integer value to the predicted rest mass to verify isospin degeneracy.
 
 ```python
 import pandas as pd
@@ -1543,11 +1543,12 @@ RESULT: Perfect zeroth-order degeneracy verified.
 Note: Observed mass splitting (d > u) attributed to QED self-energy (Q_d^2 vs Q_u^2).
 ```
 
-The calculation confirms three critical predictions of the topological mass functional:
-
+The simulation confirms three critical predictions of the topological mass functional.
 1.  **Quantization:** The mass spectrum is strictly discrete, appearing in integer multiples of the fundamental quantum $\kappa_m \approx 0.17$ MeV.
-2.  **Neutrino Masslessness:** The trivial $(0,0,0)$ topology yields exactly zero mass, consistent with the folded braid geometry prior to seesaw mixing.
-3.  **Isospin Degeneracy:** The most significant result is the perfect zeroth-order degeneracy between the Up and Down quarks ($m_u = m_d \approx 0.17$ MeV). Despite the Up quark possessing higher torsional complexity ($N_{iso}=2$ vs $N_{iso}=1$), the parallel alignment of its ribbons enables geometric sharing ($-1$), exactly cancelling the added cost. This provides a geometric derivation for isospin symmetry: the Up and Down quarks are iso-energetic topological isomers.
+2.  **Neutrino Masslessness:** The trivial $(0,0,0)$ topology yields exactly zero mass, consistent with the folded braid geometry.
+3.  **Isospin Degeneracy:** The results verify perfect zeroth-order degeneracy between the Up and Down quarks ($m_u = m_d \approx 0.17$ MeV). Despite the Up quark possessing higher torsional complexity ($N_{iso}=2$ vs $N_{iso}=1$), the parallel alignment of the ribbons enables geometric sharing ($-1$), exactly cancelling the added cost.
+
+This validates the geometric derivation of isospin symmetry: the Up and Down quarks are iso-energetic topological isomers. Additionally, the calculation for the Top Quark configuration demonstrates how quadratic scaling and sharing ($8 - 2 = 6$) generate heavier masses from high-writhe inputs.
 
 *Note:* The table displays minimal integer excitations. While the "Top Quark" entry demonstrates the mechanics of quadratic scaling and sharing ($8 - 2 = 6$), the physical Top quark corresponds to a high-writhe eigenstate ($w \gg 1$) where the quadratic term $w^2$ dominates, generating the observed 173 GeV mass.
 

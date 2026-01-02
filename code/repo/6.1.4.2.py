@@ -2,96 +2,82 @@ import numpy as np
 
 def simulate_cluster_decay():
     """
-    Simulates the time-evolution of local particle clusters under 
-    the rigorous Fundamental Equation of Geometrogenesis.
+    Simulates the thermodynamic fate of a high-density excitation under the
+    Fundamental Equation of Geometrogenesis.
     
-    Dynamical Law: dρ/dt = (Λ + 9ρ²)*exp(-6μρ) - (0.5ρ + 3λρ²)
+    Compares:
+    - Trivial (reducible) cluster: Fully exposed to deletion flux.
+    - Prime knot: Protected by topological barrier below core density.
+    
+    Demonstrates architectural stability of non-trivial topology.
     """
     
-    print("--- SIMULATION: DECAY OF THE UNKNOT ---")
+    print("═" * 60)
+    print("SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES")
+    print("Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux")
+    print("═" * 60)
     
-    # --- 1. PRECISE PHYSICAL CONSTANTS (Ch 5) ---
-    LAMBDA_VAC = 0.0156               # Vacuum Permittivity
-    MU         = 1.0 / np.sqrt(2 * np.pi)  # Friction ≈ 0.3989
-    LAMBDA_CAT = np.e - 1             # Catalysis ≈ 1.7183
+    # ── Physical Constants (Derived in Chapter 5) ─────────────────────
+    Λ_vac     = 0.0156                          # Vacuum Permittivity
+    μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
+    λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
     
-    # Vacuum Equilibrium (Fixed Point)
-    RHO_STAR   = 0.037               # Approx solution from Ch 5
+    ρ_star    = 0.0370                          # Equilibrium vacuum density
+    ρ_core    = 0.0820                          # Knot core threshold (topological lock)
     
-    # Simulation Settings
-    # Increased duration to ensure convergence from high density
-    TICKS = 600
-    DT    = 0.1
+    # ── Simulation Parameters ────────────────────────────────────────
+    initial_ρ = 0.50                            # High-stress fluctuation
+    dt        = 0.10                            # Time step
+    n_steps   = 600                             # Total steps (ensures convergence)
     
-    # --- 2. INITIAL CONDITIONS ---
-    # Start as a high-density fluctuation (High Stress)
-    initial_rho = 0.50
+    time = np.arange(0, n_steps * dt, dt)
     
-    time = np.arange(0, TICKS * DT, DT)
-    rho_trivial = np.zeros_like(time)
-    rho_knotted = np.zeros_like(time)
+    # ── State Initialization ─────────────────────────────────────────
+    ρ_trivial = np.zeros_like(time)
+    ρ_knotted = np.zeros_like(time)
     
-    rho_trivial[0] = initial_rho
-    rho_knotted[0] = initial_rho
+    ρ_trivial[0] = initial_ρ
+    ρ_knotted[0] = initial_ρ
     
-    # --- 3. DYNAMICS ENGINE ---
-    
-    def get_fluxes(rho):
-        """Calculates J_in and J_out based on the Master Equation."""
-        # Creation: Autocatalysis dampened by Gaussian Friction
-        j_in = (LAMBDA_VAC + 9 * rho**2) * np.exp(-6 * MU * rho)
-        
-        # Deletion: Linear Decay + Quadratic Catalytic Stress
-        j_out = 0.5 * rho + 3 * LAMBDA_CAT * rho**2
-        
+    # ── Flux Calculation Helper ──────────────────────────────────────
+    def fluxes(ρ):
+        j_in  = (Λ_vac + 9 * ρ**2) * np.exp(-6 * μ * ρ)
+        j_out = 0.5 * ρ + 3 * λ_cat * ρ**2
         return j_in, j_out
-
-    # Knot Core Density (Mass of the Particle)
-    # The density below which the knot cannot be untied locally.
-    RHO_CORE = 0.082
-
-    for i in range(1, len(time)):
-        
-        # --- A. Trivial Cluster (Unprotected) ---
-        r_t = rho_trivial[i-1]
-        jin_t, jout_t = get_fluxes(r_t)
-        
-        # Trivial clusters feel the full force of deletion
-        d_rho_t = jin_t - jout_t
-        
-        # Update (prevent going below vacuum floor)
-        rho_trivial[i] = max(RHO_STAR, r_t + d_rho_t * DT)
-        
-        
-        # --- B. Prime Knot (Protected) ---
-        r_k = rho_knotted[i-1]
-        jin_k, jout_k = get_fluxes(r_k)
-        
-        # Topological Barrier Logic:
-        # If density > Core, the "fuzz" evaporates normally.
-        # If density <= Core, the Knot Barrier activates (Deletion -> 0).
-        if r_k <= RHO_CORE:
-            jout_k = 0.0  # The Lock
-            
-        d_rho_k = jin_k - jout_k
-        
-        # Update (prevent going below vacuum floor)
-        rho_knotted[i] = max(RHO_STAR, r_k + d_rho_k * DT)
-
-    # --- 4. OUTPUT RESULTS ---
-    print(f"Physical Parameters: Λ={LAMBDA_VAC} | μ={MU:.4f} | λ={LAMBDA_CAT:.4f}")
-    print(f"Initial Density:     {initial_rho:.2f}")
-    print("-" * 40)
-    print(f"Final Trivial Density: {rho_trivial[-1]:.4f} (Vacuum State)")
-    print(f"Final Knotted Density: {rho_knotted[-1]:.4f} (Stable Particle)")
-    print("-" * 40)
     
-    # Verification of Flux at Initial State
-    j_in_0, j_out_0 = get_fluxes(initial_rho)
-    print(f"Initial Flux Balance (ρ={initial_rho}):")
-    print(f"  J_in:  {j_in_0:.3f}")
-    print(f"  J_out: {j_out_0:.3f}")
-    print(f"  Net:   {j_in_0 - j_out_0:.3f} (Strong Decay)")
-
+    # ── Time Evolution Loop ──────────────────────────────────────────
+    for i in range(1, len(time)):
+        # Trivial cluster: Full exposure
+        j_in_t, j_out_t = fluxes(ρ_trivial[i-1])
+        dρ_t = j_in_t - j_out_t
+        ρ_trivial[i] = max(ρ_star, ρ_trivial[i-1] + dρ_t * dt)
+        
+        # Prime knot: Deletion suppressed below core
+        j_in_k, j_out_k = fluxes(ρ_knotted[i-1])
+        if ρ_knotted[i-1] <= ρ_core:
+            j_out_k = 0.0  # Topological barrier activates
+        dρ_k = j_in_k - j_out_k
+        ρ_knotted[i] = max(ρ_star, ρ_knotted[i-1] + dρ_k * dt)
+    
+    # ── Results Output ───────────────────────────────────────────────
+    print(f"\nPhysical Parameters:")
+    print(f"  Vacuum Drive (Λ)      : {Λ_vac:.4f}")
+    print(f"  Friction (μ)          : {μ:.6f}")
+    print(f"  Catalysis (λ_cat)     : {λ_cat:.6f}")
+    print(f"  Equilibrium Density   : {ρ_star:.4f}")
+    print(f"  Knot Core Threshold   : {ρ_core:.4f}")
+    print(f"\nInitial Local Density   : {initial_ρ:.2f}")
+    print("-" * 60)
+    print(f"Final States after {n_steps} steps:")
+    print(f"  Trivial Cluster       : {ρ_trivial[-1]:.6f} → Vacuum Equilibrium")
+    print(f"  Prime Knot            : {ρ_knotted[-1]:.6f} → Stable Particle")
+    print("-" * 60)
+    
+    # Initial flux balance verification
+    j_in_0, j_out_0 = fluxes(initial_ρ)
+    print(f"Initial Flux Balance (ρ = {initial_ρ}):")
+    print(f"  Creation  J_in  : {j_in_0:.4f}")
+    print(f"  Deletion  J_out : {j_out_0:.4f}")
+    print(f"  Net Rate dρ/dt  : {j_in_0 - j_out_0:+.4f} (Strong Decay)")
 if __name__ == "__main__":
     simulate_cluster_decay()

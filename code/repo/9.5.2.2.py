@@ -1,95 +1,103 @@
 import numpy as np
 import pandas as pd
 
-# Base parameters
-alpha_gut = 1 / 42
-m_p = 0.938
-M_X_base = 1e15
-C = 1.0
-hbar = 6.582e-25
-sec_per_year = 3.156e7
-exp_bound = 2.4e34  # years, Super-K 2025 for p->e+ pi0
-lit_su5 = 1e32  # years, minimal SU(5) prediction
+def verify_proton_decay_suppression():
+    """
+    Verification of Topological vs. Perturbative Proton Decay Suppression
+    
+    Standard minimal SU(5) GUTs predict τ_p ~ 10^{31}–10^{32} years (ruled out).
+    This calculation quantifies the shortfall and demonstrates the requirement
+    for additional non-perturbative (topological) suppression.
+    """
+    print("═" * 78)
+    print("PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS")
+    print("Quantifying the Shortfall in Minimal SU(5) Predictions")
+    print("═" * 78)
 
-# Base calc
-alpha_sq = alpha_gut ** 2
-m_p5 = m_p ** 5
-Gamma_p = C * alpha_sq * m_p5 / M_X_base**4
-tau_p_years = hbar / Gamma_p / sec_per_year
-ratio_shortfall = exp_bound / tau_p_years
-ratio_lit = lit_su5 / tau_p_years
+    # Physical constants and benchmarks
+    alpha_gut = 1 / 42.0                  # Typical GUT coupling
+    m_p_gev = 0.938                       # Proton mass
+    M_X_base_gev = 1e15                   # Nominal unification scale
+    hbar_gev_s = 6.582e-25                # ħ in GeV·s
+    sec_per_year = 3.156e7                # Seconds per year
 
-print(f"Base τ_p = {tau_p_years:.2e} years")
-print(f"Experimental lower bound = {exp_bound:.2e} years")
-print(f"Shortfall factor (exp/calc) = {ratio_shortfall:.1f}")
-print(f"Lit SU(5) prediction = {lit_su5:.2e} years")
-print(f"Shortfall vs lit (lit/calc) = {ratio_lit:.1f}")
+    exp_bound_years = 2.4e34              # Super-Kamiokande lower bound (p → e⁺ π⁰)
+    lit_su5_years = 1e32                  # Typical minimal SU(5) prediction
 
-# Monte Carlo: 1000 samples
-n_mc = 1000
-M_X_samples = np.logspace(np.log10(5e14), np.log10(2e16), n_mc)  # log-uniform from mu bounds
-alpha_gut_samples = alpha_gut * np.random.uniform(0.9, 1.1, n_mc)
-tau_p_mc = []
+    # Base perturbative calculation (dimension-6 operator)
+    alpha_sq = alpha_gut ** 2
+    m_p5 = m_p_gev ** 5
+    Gamma_base = alpha_sq * m_p5 / M_X_base_gev**4
+    tau_base_years = hbar_gev_s / Gamma_base / sec_per_year
 
-for i in range(n_mc):
-    alpha_sq_i = alpha_gut_samples[i]**2
-    M_X_i = M_X_samples[i]
-    Gamma_i = C * alpha_sq_i * m_p5 / M_X_i**4
-    tau_i = hbar / Gamma_i / sec_per_year
-    tau_p_mc.append(tau_i)
+    shortfall_exp = exp_bound_years / tau_base_years
+    shortfall_lit = lit_su5_years / tau_base_years
 
-tau_p_mc = np.array(tau_p_mc)
-log_tau = np.log10(tau_p_mc)
+    print(f"\nBase Parameters:")
+    print(f"  α_GUT   ≈ {alpha_gut:.4f}")
+    print(f"  M_X     = {M_X_base_gev:.1e} GeV")
+    print(f"  m_p     = {m_p_gev:.3f} GeV")
+    print("-" * 50)
+    print(f"Perturbative Prediction (Nominal):")
+    print(f"  τ_p     ≈ {tau_base_years:.2e} years")
+    print(f"  Literature SU(5) ≈ {lit_su5_years:.2e} years")
+    print(f"  Experimental     > {exp_bound_years:.2e} years")
+    print("-" * 50)
+    print(f"Shortfall Factors:")
+    print(f"  vs. Experiment : ×{shortfall_exp:.0f}")
+    print(f"  vs. Literature : ×{shortfall_lit:.1f}")
+    print("-" * 50)
 
-# Stats
-mean_tau = np.mean(tau_p_mc)
-median_tau = np.median(tau_p_mc)
-std_tau = np.std(tau_p_mc)
-p_above_bound = np.mean(tau_p_mc > exp_bound) * 100
-p_above_lit = np.mean(tau_p_mc > lit_su5) * 100
+    # Monte Carlo variation
+    n_mc = 1000
+    np.random.seed(42)
 
-print(f"\nMC Stats:")
-print(f"Mean τ_p = {mean_tau:.2e} years")
-print(f"Median τ_p = {median_tau:.2e} years")
-print(f"Std τ_p = {std_tau:.2e} years")
-print(f"P(τ_p > exp bound) = {p_above_bound:.1f}%")
-print(f"P(τ_p > lit SU(5)) = {p_above_lit:.1f}%")
+    # Log-uniform M_X around nominal (factor ~40 variation)
+    M_X_samples = np.logspace(np.log10(5e14), np.log10(2e16), n_mc)
+    # Uniform α_GUT variation ±10%
+    alpha_samples = alpha_gut * np.random.uniform(0.9, 1.1, n_mc)
 
-# Binning for histogram (10 bins for chart)
-hist, bin_edges = np.histogram(log_tau, bins=10)
-bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
-hist_data = hist.tolist()
-centers_data = bin_centers.tolist()
+    tau_mc_years = []
+    for i in range(n_mc):
+        alpha_sq_i = alpha_samples[i]**2
+        Gamma_i = alpha_sq_i * m_p5 / M_X_samples[i]**4
+        tau_i = hbar_gev_s / Gamma_i / sec_per_year
+        tau_mc_years.append(tau_i)
 
-# Chart config (simple bar for log10(τ_p) distribution)
-chart_config = {
-    "type": "bar",
-    "data": {
-        "labels": [f"{c:.1f}" for c in centers_data],
-        "datasets": [{
-            "label": "Frequency",
-            "data": hist_data,
-            "backgroundColor": "rgba(54, 162, 235, 0.8)"
-        }]
-    },
-    "options": {
-        "scales": {
-            "x": {"title": {"display": True, "text": "log10(τ_p [years])"}},
-            "y": {"title": {"display": True, "text": "Counts"}}
-        },
-        "plugins": {"title": {"display": True, "text": "MC Distribution of τ_p"}}
-    }
-}
+    tau_mc = np.array(tau_mc_years)
+    log_tau = np.log10(tau_mc)
 
-print("\nHistogram data for chart:")
-print(f"Bin centers: {centers_data}")
-print(f"Frequencies: {hist_data}")
+    mean_tau = np.mean(tau_mc)
+    median_tau = np.median(tau_mc)
+    std_tau = np.std(tau_mc)
+    p_above_exp = np.mean(tau_mc > exp_bound_years) * 100
+    p_above_lit = np.mean(tau_mc > lit_su5_years) * 100
 
-# Export MC summary
-mc_df = pd.DataFrame({
-    'Stat': ['Mean', 'Median', 'Std', 'P(>exp bound)', 'P(>lit SU(5))'],
-    'Value': [f"{mean_tau:.2e}", f"{median_tau:.2e}", f"{std_tau:.2e}", f"{p_above_bound:.1f}%", f"{p_above_lit:.1f}%"]
-})
-print(mc_df.to_string(index=False))
-mc_df.to_csv('mc_tau_summary.csv', index=False)
-print("\nExported MC summary to mc_tau_summary.csv")
+    print(f"\nMonte Carlo Results ({n_mc} samples):")
+    print(f"  Mean τ_p     = {mean_tau:.2e} years")
+    print(f"  Median τ_p   = {median_tau:.2e} years")
+    print(f"  Std dev      = {std_tau:.2e} years")
+    print(f"  P(τ_p > exp) = {p_above_exp:.1f}%")
+    print(f"  P(τ_p > lit) = {p_above_lit:.1f}%")
+    print("-" * 50)
+
+    # Binned distribution as clean table (no ASCII bars)
+    bins = 10
+    hist, bin_edges = np.histogram(log_tau, bins=bins)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+
+    print("Distribution of log₁₀(τ_p [years]):")
+    dist_data = []
+    for center, count in zip(bin_centers, hist):
+        percentage = (count / n_mc) * 100
+        dist_data.append({
+            "log₁₀(τ_p)": f"{center:.2f}",
+            "Count": count,
+            "Percentage": f"{percentage:.1f}%"
+        })
+
+    df_dist = pd.DataFrame(dist_data)
+    print(df_dist.to_string(index=False))
+
+if __name__ == "__main__":
+    verify_proton_decay_suppression()
