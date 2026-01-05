@@ -2545,24 +2545,24 @@ print(df.to_markdown(index=False, tablefmt="github"))
 
 **Simulation Output:**
 
-| State |ψ⟩   |   Excitations | Parity   |   Eigenvalue λ |
+| State ψ⟩   |   Excitations | Parity   |   Eigenvalue λ |
 |-------------|---------------|----------|----------------|
-| |0000⟩      |             0 | Even     |              1 |
-| |0001⟩      |             1 | Odd      |             -1 |
-| |0010⟩      |             1 | Odd      |             -1 |
-| |0011⟩      |             2 | Even     |              1 |
-| |0100⟩      |             1 | Odd      |             -1 |
-| |0101⟩      |             2 | Even     |              1 |
-| |0110⟩      |             2 | Even     |              1 |
-| |0111⟩      |             3 | Odd      |             -1 |
-| |1000⟩      |             1 | Odd      |             -1 |
-| |1001⟩      |             2 | Even     |              1 |
-| |1010⟩      |             2 | Even     |              1 |
-| |1011⟩      |             3 | Odd      |             -1 |
-| |1100⟩      |             2 | Even     |              1 |
-| |1101⟩      |             3 | Odd      |             -1 |
-| |1110⟩      |             3 | Odd      |             -1 |
-| |1111⟩      |             4 | Even     |              1 |
+| 0000⟩      |             0 | Even     |              1 |
+| 0001⟩      |             1 | Odd      |             -1 |
+| 0010⟩      |             1 | Odd      |             -1 |
+| 0011⟩      |             2 | Even     |              1 |
+| 0100⟩      |             1 | Odd      |             -1 |
+| 0101⟩      |             2 | Even     |              1 |
+| 0110⟩      |             2 | Even     |              1 |
+| 0111⟩      |             3 | Odd      |             -1 |
+| 1000⟩      |             1 | Odd      |             -1 |
+| 1001⟩      |             2 | Even     |              1 |
+| 1010⟩      |             2 | Even     |              1 |
+| 1011⟩      |             3 | Odd      |             -1 |
+| 1100⟩      |             2 | Even     |              1 |
+| 1101⟩      |             3 | Odd      |             -1 |
+| 1110⟩      |             3 | Odd      |             -1 |
+| 1111⟩      |             4 | Even     |              1 |
 
 The simulation output confirms the fundamental operation of the stabilizer code. States with an even number of occupied edges (e.g., `|0000>`, `|0011>`, `|1111>`) consistently yield the $+1$ eigenvalue, identifying them as members of the valid code subspace $\mathcal{C}$. Conversely, states with an odd number of occupied edges (e.g., `|0001>`, `|0111>`) yield the $-1$ eigenvalue, flagging them as error states.
 
