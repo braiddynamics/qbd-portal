@@ -24,7 +24,7 @@ These constraints act as the legislative bedrock of our model, clamping down on 
 
 -----
 
-## 2.1 Axiom 1: The Causal Primitive {#2.1}
+## 2.1 The Causal Primitive {#2.1}
 
 :::note[**Section 2.1 Overview**]
 
@@ -35,7 +35,7 @@ The assumption of a symmetric bond as the fundamental unit generates a crystalli
 We resolve this foundational crisis by defining the causal primitive through the strict and inviolable constraints of irreflexivity and asymmetry to create a geometric arrow of time at the smallest possible scale of existence. Mandating that every connection must distinguish source from target while forbidding any event from influencing itself ensures that the graph evolves as a strict one-way street capable of supporting irreversible processes. This establishes a logical ratchet mechanism at the absolute foundation of reality that seeds the directionality required for the macroscopic flow of time and the eventual emergence of entropy. By enforcing this directionality at the atomic level, we guarantee that the macroscopic universe inherits a coherent temporal order that prevents the reversal of cause and effect.
 :::
 
-### 2.1.1 Axiom: The Directed Causal Link {#2.1.1}
+### 2.1.1 Axiom 1: The Directed Causal Link {#2.1.1}
 
 :::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 
@@ -129,41 +129,42 @@ The demonstration proceeds by identifying a topological blind spot in the standa
 
 ### 2.2.2 Lemma: Pathology of Self-Loops {#2.2.2}
 
-:::info[**Classification of Reflexive Edges as Directed Cycles of Length One under Topological Definition**]
+:::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]
 
-A **Self-Loop** is defined as an edge $e \in E$ such that $e$ is incident to a single vertex $u$ at both its origin and terminus, denoted $(u, u)$. This structure constitutes a topological **Directed Cycle** of length $k=1$ [(§1.5.3)](ontology#1.5.3), satisfying the cyclic definition for a sequence of vertices $(v_0, v_1)$ where $v_0 = u$, $v_1 = u$, and the transition $(v_0, v_1)$ exists in $E$. The existence of any such Self-Loop renders the graph $G$ incompatible with the definition of a Directed Acyclic Graph [(§1.5.1)](ontology#1.5.1) and violates the requirement for a valid causal history.
+Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ [(§1.5.3)](ontology#1.5.3), a configuration excluded by the definition of a Directed Acyclic Graph [(§1.5.1)](ontology#1.5.1).
 
-### 2.2.2.1 Proof: Topological Identity {#2.2.2.1}
+### 2.2.2.1 Proof: Pathology of Self-Loops {#2.2.2.1}
 
-:::tip[**Verification of the Cycle Definition for Length One via Sequence Mapping**]
+:::tip[**Verification of the Cycle Definition for Length One**]
 
 **I. The Generalized Cycle Definition**
 
-Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying:
+Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying two conditions [(§1.5.3)](ontology#1.5.3):
+
 1.  **Connectivity:** $\forall i \in \{0, \dots, k-1\}, (v_i, v_{i+1}) \in E$
 2.  **Closure:** $v_0 = v_k$
 
-**II. The Self-Loop Structure**
+**II. Sequence Mapping**
 
-Let $e_{loop}$ be a self-loop incident to vertex $u$.
-$$e_{loop} = (u, u) \in E$$
+Let $e_{loop} = (u, u) \in E$ denote a self-loop incident to vertex $u$. We construct a sequence $S$ from this structure:
 
-**III. Sequence Mapping**
+$$
+S = (v_0, v_1)
+$$
 
-We construct a sequence $S$ from the self-loop structure:
-$$S = (v_0, v_1)$$
 where $v_0 = u$ and $v_1 = u$.
 
-**IV. Verification of Criteria**
+**III. Verification of Criteria**
+
+The sequence $S$ satisfies the topological criteria for a cycle:
 
 1.  **Length:** The sequence has length $k=1$.
-2.  **Connectivity:** The edge $(v_0, v_1)$ corresponds to $(u, u)$. Since $(u, u) \in E$, the connectivity condition is satisfied.
-3.  **Closure:** Since $v_0 = u$ and $v_1 = u$, the condition $v_0 = v_1$ is satisfied.
+2.  **Connectivity:** The pair $(v_0, v_1)$ corresponds to the edge $(u, u)$. Since $(u, u) \in E$, the connectivity condition holds.
+3.  **Closure:** The endpoints satisfy $v_0 = u$ and $v_1 = u$, establishing $v_0 = v_1$.
 
-**V. Conclusion**
+**IV. Conclusion**
 
-The self-loop $e_{loop}$ satisfies all topological criteria for a directed cycle $C_1$.
-Since valid causal histories must be Directed Acyclic Graphs (DAGs), the existence of $e_{loop}$ violates the acyclicity constraint.
+The self-loop $e_{loop}$ satisfies the definition of a directed cycle $C_1$. We conclude that the existence of such an edge violates the acyclicity condition required for a valid causal history [(§1.5.1)](ontology#1.5.1).
 
 Q.E.D.
 
@@ -203,54 +204,53 @@ THE INERTIA OF SELF-LOOPS
 
 ### 2.2.3 Lemma: Thermodynamic Nullity {#2.2.3}
 
-:::info[**Determination of Zero Entropy Contribution from Reflexive Relations due to Path Ensemble Invariance**]
+:::info[**Nullity of Entropic Contribution from Reflexive Relations**]
 
-Let $\Omega(G)$ denote the cardinality of the set of all **Simple Paths** connecting distinct vertices $u, v$ (where $u \neq v$) within the graph $G$. A Simple Path is defined strictly as a Directed Path containing no repeated vertices. Let $\mathcal{T}_{self}$ be an operation that transforms graph $G$ into $G'$ by the sole addition of a Self-Loop $(u, u)$. It is proven that the set of Simple Paths connecting distinct vertices remains invariant under this operation, such that $\Omega(G') = \Omega(G)$. Consequently, the entropic contribution of the Self-Loop, defined as $\Delta S = k_B \ln(\Omega(G')/\Omega(G))$, is identically zero.
+Let $\Omega(G)$ denote the cardinality of the set of simple paths connecting distinct vertices in a graph $G$. Then the path ensemble remains invariant under the addition of a self-loop, $\Omega(G') = \Omega(G)$, and the associated entropic contribution $\Delta S$ is zero.
 
-### 2.2.3.1 Proof: Nullity Verification {#2.2.3.1}
+### 2.2.3.1 Proof: Thermodynamic Nullity {#2.2.3.1}
 
-:::tip[**Formal Derivation of Invariance in the Path Ensemble under Self-Loop Addition**]
+:::tip[**Formal Derivation of Invariance in the Path Ensemble**]
 
-**I. The Configuration Space**
+**I. Definition of the Configuration Space**
 
-Let $\Omega(G)$ be the cardinality of the set of all simple directed paths between distinct vertices.
+Let $\Omega(G)$ denote the cardinality of the set of simple directed paths between distinct vertices $u, v$. A simple path is defined strictly as a sequence of vertices containing no repetitions.
+
 $$
-\Omega(G) = | \{ \pi_{uv} \mid u, v \in V, u \neq v, \pi \text{ is simple} \} |
-$$
-
-**II. The Perturbation**
-
-Let $\mathcal{T}_{self}$ be the operation adding a self-loop $e = (x, x)$ to graph $G$, yielding $G'$.
-$$
-E' = E \cup \{ (x, x) \}
+\Omega(G) = | \{ \pi_{uv} \mid u \neq v, \pi \text{ is simple} \} |
 $$
 
-**III. Path Extension Analysis**
+**II. Structural Analysis of Self-Loops**
 
-Consider a candidate path $\pi'$ in $G'$ that utilizes $e$.
-$$\pi' = (\dots, v_i, x, x, v_{i+1}, \dots)$$
-For $\pi'$ to be a valid trajectory in the ensemble $\Omega(G')$, it must be simple (no repeated vertices).
-The subsequence $(x, x)$ contains the vertex $x$ twice.
-Therefore, $\pi'$ is not simple.
+Let $\mathcal{T}_{self}$ denote the operation adding a self-loop $e = (x, x)$ to the graph $G$, yielding $G'$. Any candidate path $\pi'$ in $G'$ that traverses $e$ necessarily contains the subsequence $(x, x)$. This repetition of the vertex $x$ violates the definition of a simple path. It follows that no valid simple path utilizes the self-loop edge.
+
 $$
-\pi' \notin \Omega(G')
+\pi' \notin \Omega(G') \implies \Omega(G') = \Omega(G)
 $$
 
-**IV. Connectivity Analysis**
+**III. Calculation of Entropy Change**
 
-Consider if $e$ creates a new connection between distinct $u, v$.
-The edge connects $x$ to $x$. Since $u \neq v$, $e$ cannot serve as the path between them.
+The entropic contribution of the operation is defined by the Boltzmann formulation:
 
-**V. Conclusion**
+$$
+\Delta S = k_B \ln \left( \frac{\Omega(G')}{\Omega(G)} \right)
+$$
 
-The set of valid simple paths is invariant under the operation.
+Substitution of the invariance equality into the expression yields:
+
 $$
-\Omega(G') = \Omega(G)
+\Delta S = k_B \ln(1)
 $$
-The entropic contribution is zero.
+
+The logarithm of unity implies the vanishing of the term:
+
 $$
-\Delta S = k_B \ln \left( \frac{\Omega(G')}{\Omega(G)} \right) = k_B \ln(1) = 0
+\Delta S = 0
 $$
+
+**IV. Conclusion**
+
+The addition of a self-loop preserves the cardinality of the simple path ensemble. We conclude that the entropic contribution of a reflexive edge is identically zero.
 
 Q.E.D.
 
@@ -312,7 +312,7 @@ By closing the loophole of self-reference, we guarantee that the causal graph re
 
 -----
 
-## 2.3 Axiom 2: Geometric Constructibility {#2.3}
+## 2.3 Geometric Constructibility {#2.3}
 
 :::note[**Section 2.3 Overview**]
 
@@ -323,7 +323,7 @@ In the absence of a channeling mechanism to govern the formation of new links, t
 We solve this by imposing the axiom of geometric constructibility to mandate that space assembles exclusively through the closure of minimal 3-cycles while simultaneously blocking redundant paths via the principle of unique causality. This positive constraint forces the graph to tessellate into a lattice of fundamental triangular units that effectively defines the pixel of our reality and ensures the universe is constructed from discrete quanta. Coupling this with the negative constraint of path uniqueness ensures that the resulting geometry is both granular and efficient to construct a sparse and dimensional vacuum. This dual approach provides the rigidity necessary for a metric space to emerge from a topological web.
 :::
 
-### 2.3.1 Axiom: Geometric Constructibility {#2.3.1}
+### 2.3.1 Axiom 2: Geometric Constructibility {#2.3.1}
 
 :::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
 
@@ -343,48 +343,50 @@ The axiomatic framework is established by separating the generative capacity of 
 3.  **The Lyapunov Function (Definition 2.3.4):** The **Lexicographic Potential** is defined to quantify the distance from the ideal state. It orders graph states by topological complexity, providing the metric required to prove that dynamical rules drive the system toward the simplicial limit.
 :::
 
-### 2.3.2 Definition: The Geometric Quantum {#2.3.2}
+### 2.3.2 Lemma: The Geometric Quantum {#2.3.2}
 
-:::info[**Definition of the Fundamental Spatial Unit as the Directed 3-Cycle**]
+:::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]
 
-The **Geometric Quantum**, denoted $\gamma$, is defined as the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\{(u, v), (v, w), (w, u)\}$. This structure constitutes the minimal closed cycle compatible with the Causal Primitive [(§2.1.1)](#2.1.1), as Irreflexivity precludes cycles of length 1 and Asymmetry precludes cycles of length 2. The set of all $\gamma \subset G$ constitutes the basis for emergent spatial area.
+Let the Geometric Quantum $\gamma$ denote the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\{(u, v), (v, w), (w, u)\}$. Then this structure constitutes the minimal closed cycle compatible with the Causal Primitive [(§2.1.1)](#2.1.1), excluding cycles of length 1 and 2, and the set of all $\gamma \subset G$ constitutes the basis for emergent spatial area.
 
-### 2.3.2.1 Proof: Topological Minimality {#2.3.2.1}
+### 2.3.2.1 Proof: The Geometric Quantum {#2.3.2.1}
 
 :::tip[**Derivation of the Minimal Stable Cycle Length via Elimination of Forbidden Lower Orders**]
 
 **I. Cycle Length Domain**
 
-Let $L$ be the length of a directed cycle $C_L$. We analyze $L \in \mathbb{N}_{\ge 1}$.
+Let $L$ denote the length of a directed cycle $C_L$, analyzed for $L \in \mathbb{N}_{\ge 1}$.
 
 **II. Elimination of Lower Orders**
 
-**Case $L=1$:**
-A cycle of length 1 implies an edge $e = (u, u)$.
-This violates **Axiom 1 (Irreflexivity)**:
-$$(u, u) \notin E$$
-$\therefore L \neq 1$.
+The case $L=1$ implies an edge $e = (u, u)$. This configuration is excluded by Axiom 1 (Irreflexivity) [(§2.1.1)](#2.1.1):
 
-**Case $L=2$:**
-A cycle of length 2 implies edges $e_1 = (u, v)$ and $e_2 = (v, u)$ with $u \neq v$.
-This violates **Axiom 1 (Asymmetry)**:
-$$(u, v) \in E \implies (v, u) \notin E$$
-$\therefore L \neq 2$.
+$$
+(u, u) \notin E \implies L \neq 1
+$$
 
-**III. Verification of $L=3$**
+The case $L=2$ implies edges $e_1 = (u, v)$ and $e_2 = (v, u)$ with $u \neq v$. This configuration is excluded by Axiom 1 (Asymmetry) [(§2.1.1)](#2.1.1):
 
-A cycle of length 3 involves distinct vertices $u, v, w$ and edges:
-$$E_C = \{ (u, v), (v, w), (w, u) \}$$
-1.  **Irreflexivity:** $u \neq v \neq w$. No self-loops.
-2.  **Asymmetry:** No reciprocal pairs (e.g., $(v, u) \notin E_C$).
+$$
+(u, v) \in E \implies (v, u) \notin E \implies L \neq 2
+$$
+
+**III. Verification of the 3-Cycle**
+
+A cycle of length 3 involves distinct vertices $u, v, w$ and edges $E_C = \{ (u, v), (v, w), (w, u) \}$.
+
+1.  **Irreflexivity:** The condition $u \neq v \neq w$ holds, ensuring no self-loops.
+2.  **Asymmetry:** The set contains no reciprocal pairs (e.g., $(v, u) \notin E_C$).
 
 **IV. Conclusion**
 
 The integer $L=3$ is the minimal length satisfying the Causal Primitive.
-$$L_{min} = 3$$
+
+$$
+L_{min} = 3
+$$
 
 Q.E.D.
-:::
 
 ### 2.3.2.2 Commentary: The Necessity of Three {#2.3.2.2}
 
@@ -393,7 +395,6 @@ Q.E.D.
 The integer $3$ represents the fundamental topological limit for causal closure. It constitutes the first structure capable of closing a causal loop without violating the logical constraints of time and causality. This mirrors the findings of **[(Ambjørn, Jurkiewicz, & Loll, 2005)](/monograph/appendices/a-references#A.6)** in Causal Dynamical Triangulations (CDT), where spacetime is constructed from simplicial building blocks (triangles in 2D, tetrahedra in 3D) that respect a strict causal foliation. In both QBD and CDT, the triangle is not just a shape but the atom of geometry, the minimal unit required to define an "interior" and thus generate manifold-like properties from discrete data.
 
 Structures of length $1$ and $2$ imply logical contradictions within a directed causal framework. As established, the self-loop (length $1$) implies self-creation; a violation of the causal demand for antecedence. The feedback loop (length $2$) implies simultaneity; if $A$ causes $B$ and $B$ causes $A$, the temporal interval between them vanishes, collapsing them into a single event. The $3$-cycle, however, permits feedback (a return to the origin) while preserving local directionality. In the sequence $A \to B \to C \to A$, event $A$ precedes $B$; $B$ precedes $C$; and $C$ precedes $A$. Locally, every link maintains a strict forward orientation in logical time. The paradox of the loop is distributed across three events; creating a structure possessing an "interior" or area rather than a singularity. The triangle functions as the unique topological solution to the problem of creating a closed structure (a persistent object) from directed arrows of influence.
-:::
 
 ### 2.3.2.3 Diagram: Loop Hierarchy {#2.3.2.3}
 
@@ -421,9 +422,9 @@ Structures of length $1$ and $2$ imply logical contradictions within a directed 
 
 ### 2.3.3 Principle: Unique Causality (PUC) {#2.3.3}
 
-:::info[**Prohibition of Causal Redundancy enforced by the Sparsity Constraint on Local Paths**]
+:::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ [(§1.4.2)](ontology#1.4.2) is defined as admissible if and only if the cardinality of this set is zero ($|\Pi_{\ell \le 2}(u, v)| = 0$). If $|\Pi_{\ell \le 2}(u, v)| \ge 1$, the operation is forbidden on the grounds of informational redundancy.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ [(§1.4.2)](ontology#1.4.2) is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
 ### 2.3.3.1 Commentary: Pseudocode for PUC Check {#2.3.3.1}
 
@@ -458,14 +459,20 @@ def is_permissible(G, v, w, u):
 **I. Initial State**
 
 Let $G$ be a graph containing a mediated path between $u$ and $v$.
-$$P_1 = (u, w, v) \implies (u, w) \in E \land (w, v) \in E$$
-The set of paths of length $\le 2$ is non-empty:
-$$|\Pi_{\le 2}(u, v)| \ge 1$$
+
+$$
+P_1 = (u, w, v) \implies (u, w) \in E \land (w, v) \in E
+$$
+
+The set of paths of length $\le 2$ satisfies the non-empty condition:
+
+$$
+|\Pi_{\le 2}(u, v)| \ge 1
+$$
 
 **II. The Proposed Operation**
 
-Consider the addition of the direct edge $e = (u, v)$.
-This creates a new path $P_2 = (u, v)$ of length 1.
+The proposed operation adds the direct edge $e = (u, v)$. This creates a new path $P_2 = (u, v)$ of length 1.
 
 **III. Information Analysis**
 
@@ -476,8 +483,9 @@ This creates a new path $P_2 = (u, v)$ of length 1.
 **IV. Constraint Application**
 
 The **Principle of Unique Causality (PUC)** forbids edge addition if a path of length $\le 2$ already exists.
-Condition: $|\Pi_{\le 2}(u, v)| \ge 1$.
-Action: $\mathfrak{T}_{add}(u, v)$ is **Forbidden**.
+
+* **Condition:** $|\Pi_{\le 2}(u, v)| \ge 1$
+* **Action:** $\mathfrak{T}_{add}(u, v)$ is Forbidden
 
 **V. Conclusion**
 
@@ -488,7 +496,6 @@ Q.E.D.
 ### 2.3.3.3 Commentary: The No-Cloning of History {#2.3.3.3}
 
 :::info[**Preservation of Informational Integrity established by the Topological Analog of No-Cloning**]
-
 
 The Principle of Unique Causality (PUC) constitutes the topological analog of the Quantum No-Cloning Theorem. In a causal graph, a path from $u$ to $v$ represents a specific transmission of causal information; a lineage. The existence of a mediated path $u \to w \to v$ implies that the influence of $u$ reaches $v$ via the history of $w$. The addition of a second, direct path (an edge $u \to v$) creates a clone of this causal relationship. It introduces a fundamental ambiguity regarding the provenance of information at $v$; did the signal arrive via the mediated history or the direct injection?
 
@@ -536,51 +543,57 @@ It is critical to note that PUC enforces uniqueness only for *local* paths ($\el
 
 ### 2.3.4 Definition: Lexicographic Potential {#2.3.4}
 
-:::info[**Quantification of Topological Complexity through the Lexicographic Ordering of Cycle Lengths**]
+:::tip[**Quantification of Topological Complexity via Cycle Ordering**]
 
-The topological complexity of a graph $G$ is quantified by the **Lexicographic Potential** $\Phi(G)$, defined as the ordered pair $(L_{\max}, N_{L_{\max}})$, where:
-1.  $L_{\max}$ is the length of the longest Simple Directed Cycle present in $G$.
-2.  $N_{L_{\max}}$ is the integer count of distinct Simple Directed Cycles of length $L_{\max}$.
-The state space is ordered such that $\Phi(G') < \Phi(G)$ if $L'_{\max} < L_{\max}$ or if ($L'_{\max} = L_{\max}$ and $N'_{L_{\max}} < N_{L_{\max}}$). Valid dynamical rules for cycle resolution must strictly decrease $\Phi(G)$ according to this ordering
+The **Lexicographic Potential** $\Phi(G)$ is defined as the ordered pair $(L_{\max}, N_{L_{\max}})$, where $L_{\max}$ denotes the length of the longest Simple Directed Cycle in $G$, and $N_{L_{\max}}$ denotes the cardinality of the set of cycles with length $L_{\max}$. The state space is ordered such that $\Phi(G') < \Phi(G)$ holds if $L'_{\max} < L_{\max}$ or if both $L'_{\max} = L_{\max}$ and $N'_{L_{\max}} < N_{L_{\max}}$.
 
-### 2.3.4.1 Proof: Well-Foundedness {#2.3.4.1}
-
-:::tip[**Verification of the Descent Property due to the Finiteness of Graph Configurations**]
-
-**I. State Space Properties**
-
-Let $G$ be a graph with $|V| = N < \infty$.
-Let $\mathcal{C}$ be the set of all simple cycles in $G$.
-Since the graph is finite, the number of possible cycles is finite.
-$$|\mathcal{C}| \le \sum_{k=1}^N \binom{N}{k} (k-1)! < \infty$$
-
-**II. The Potential Function**
-
-Let $\Phi(G) = (L_{\max}, N_{L_{\max}})$ mapped to the lexicographical order on $\mathbb{N} \times \mathbb{N}$.
-1.  $L_{\max} \in \{0, \dots, N\}$ (Bounded by vertex count).
-2.  $N_{L_{\max}} \in \mathbb{N}$ (Bounded by combinatorial limit).
-
-**III. Descent Analysis**
-
-Let a dynamical operation produce a sequence of states $G_0, G_1, \dots$ such that $\Phi(G_{i+1}) < \Phi(G_i)$.
-Since the domain $\mathbb{N} \times \mathbb{N}$ is well-ordered, there exists no infinite strictly decreasing sequence.
-$$
-\nexists \ \{ \phi_i \}_{i=0}^\infty \quad \text{such that} \quad \forall i, \phi_{i+1} < \phi_i
-$$
-
-**IV. Conclusion**
-
-Any dynamical rule that strictly decreases the lexicographic potential $\Phi$ must terminate in a finite number of steps. The cycle reduction process is guaranteed to halt.
-
-Q.E.D.
-
-### 2.3.4.2 Commentary: The Descent to Simplicity {#2.3.4.2}
+### 2.3.4.1 Commentary: The Descent to Simplicity {#2.3.4.2}
 
 :::info[**Directionality of Topological Evolution driven by the Thermodynamics of Geometric Ground States**]
 
 Physical systems inevitably seek ground states. For the causal graph, the geometry defined by Axiom $2$ (a network composed entirely of $3$-cycles) constitutes this topological ground state. Stochastic edge addition (driven by the Universal Constructor) naturally creates larger and unstable structures; cycles of length $4$, $5$, or greater. These structures represent "excited states" of the topology; they are geometric defects that possess higher potential energy (or lower entropy) than the simplicial vacuum.
 
 The Lexicographic Potential provides a measure of the distance between a given graph and this simplicial ground state. It prioritizes the magnitude of the anomaly ($L_{\max}$) over the multiplicity of anomalies ($N_L$). A graph containing a single $5$-cycle possesses a higher potential than a graph containing multiple $4$-cycles; reflecting the greater deviation from the ideal geometry. This hierarchy dictates the direction of time evolution. Dynamical rules must strictly decrease this potential; guaranteeing an inexorable evolution toward the simplicial limit. This mechanism ensures that complex and non-local tangles of causality are transient; naturally decaying into the stable and triangulated fabric of spacetime.
+:::
+
+### 2.3.5 Lemma: Well-Foundedness {#2.3.5}
+
+:::info[**Termination of Strictly Decreasing Topological Processes**]
+
+Let $\Phi(G)$ denote the Lexicographic Potential of a finite graph $G$ [(§2.3.4)](#2.3.4). Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
+
+### 2.3.5.1 Proof: Well-Foundedness {#2.3.5.1}
+
+:::tip[**Verification of the Descent Property due to the Finiteness of Graph Configurations**]
+
+**I. State Space Properties**
+
+Let $G$ be a graph with finite vertex count $|V| = N < \infty$. Let $\mathcal{C}$ denote the set of all simple cycles in $G$. The number of possible cycles is bounded by the combinatorial limit:
+
+$$
+|\mathcal{C}| \le \sum_{k=1}^N \binom{N}{k} (k-1)! < \infty
+$$
+
+**II. The Potential Function**
+
+Let $\Phi(G) = (L_{\max}, N_{L_{\max}})$ map to the domain $\mathbb{N} \times \mathbb{N}$ under the lexicographical order.
+
+1.  **Length Bound:** $L_{\max} \in \{0, \dots, N\}$.
+2.  **Count Bound:** $N_{L_{\max}}$ is finite.
+
+**III. Descent Analysis**
+
+Let a dynamical operation produce a sequence of states $G_0, G_1, \dots$ satisfying $\Phi(G_{i+1}) < \Phi(G_i)$. The domain is a finite subset of the well-ordered set $\mathbb{N} \times \mathbb{N}$. It follows that no infinite strictly decreasing sequence exists.
+
+$$
+\nexists \ \{ \phi_i \}_{i=0}^\infty \quad \text{such that} \quad \forall i, \phi_{i+1} < \phi_i
+$$
+
+**IV. Conclusion**
+
+Any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ terminates in a finite number of steps. The cycle reduction process is guaranteed to halt.
+
+Q.E.D.
 :::
 
 ### 2.3.Z Implications and Synthesis {#2.3.Z}
@@ -663,128 +676,136 @@ The demonstration relies on four specific topological guarantees, each establish
 
 ### 2.4.2 Lemma: Confluence of the Constructor {#2.4.2}
 
-:::info[**Guarantee of Global Consistency in Rewrite Operations established by the Diamond Property**]
+:::info[**Local Confluence of Overlapping Rewrite Operations**]
 
-The rewrite rule $\mathcal{R}$ governing edge addition satisfies the property of **Local Confluence**. Given a state $G$ containing two distinct, overlapping compliant 2-Paths $P_1$ and $P_2$ [(§1.5.2)](ontology#1.5.2), the application of $\mathcal{R}$ to $P_1$ does not render $P_2$ non-compliant, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$). This guarantees global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant 2-Paths $P_1$ and $P_2$, satisfying The 2-Path Structure [(§1.5.2)](ontology#1.5.2). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
 
 ### 2.4.2.1 Proof: Diamond Property {#2.4.2.1}
 
-:::tip[**Formal Verification of Commutativity in Overlapping Updates under the Confluence Lemma**]
+:::tip[**Formal Verification of Commutativity in Overlapping Updates**]
 
 **I. Initial State with Overlap**
 
-Let $G = (V, E)$ contain two compliant 2-paths sharing an edge.
-1.  $P_1 = (v, w, u)$ targeting chord $e_1 = (u, v)$.
-2.  $P_2 = (w, u, x)$ targeting chord $e_2 = (x, w)$.
-Overlap: Edge $(w, u)$ is common to both.
+Let $G = (V, E)$ denote a graph containing two compliant 2-paths sharing a common edge $(w, u)$.
+1.  $P_1 = (v, w, u)$ targeting the chord $e_1 = (u, v)$.
+2.  $P_2 = (w, u, x)$ targeting the chord $e_2 = (x, w)$.
 
-**II. Branch A (Apply $P_1$)**
 
-Transition: $G \xrightarrow{P_1} G_A$ where $E_A = E \cup \{ (u, v) \}$.
+
+**II. Branch A Derivation**
+
+The transition $G \xrightarrow{P_1} G_A$ yields the edge set $E_A = E \cup \{ (u, v) \}$.
 **Check $P_2$ Validity in $G_A$:**
-* Required edges: $(w, u), (u, x)$. Both are present in $E_A$.
-* Uniqueness Constraint: Is there a path $w \to \dots \to x$ of length $\le 2$ involving the new edge $(u, v)$?
-    No. The new edge terminates at $v$. It cannot help reach $x$ from $w$ unless a path $v \to x$ exists. If $v=x$, $P_2$ would be a cycle, contradicting compliance.
-* **Result:** $P_2$ remains valid. Operation $\mathcal{R}(P_2)$ yields $E_{AB} = E \cup \{ (u, v), (x, w) \}$.
+The required edges $(w, u)$ and $(u, x)$ persist in $E_A$. The Uniqueness Constraint requires the absence of a path $w \to \dots \to x$ of length $\le 2$ utilizing the new edge $(u, v)$. Since $(u, v)$ originates at $u$ and terminates at $v$, a contribution to the target path necessitates a connection $v \to x$. The case $v=x$ implies that $P_2$ forms a cycle, a configuration excluded by compliance. It follows that no such path exists, and $P_2$ remains valid.
+The subsequent operation $\mathcal{R}(P_2)$ yields:
+$$
+E_{AB} = E \cup \{ (u, v), (x, w) \}
+$$
 
-**III. Branch B (Apply $P_2$)**
+**III. Branch B Derivation**
 
-Transition: $G \xrightarrow{P_2} G_B$ where $E_B = E \cup \{ (x, w) \}$.
+The transition $G \xrightarrow{P_2} G_B$ yields the edge set $E_B = E \cup \{ (x, w) \}$.
 **Check $P_1$ Validity in $G_B$:**
-* Symmetric analysis applies. $P_1$ remains valid.
-* **Result:** Operation $\mathcal{R}(P_1)$ yields $E_{BA} = E \cup \{ (x, w), (u, v) \}$.
+Symmetric analysis establishes that the addition of $(x, w)$ does not invalidate $P_1$.
+The operation $\mathcal{R}(P_1)$ yields:
+$$
+E_{BA} = E \cup \{ (x, w), (u, v) \}
+$$
 
 **IV. Convergence**
 
-Compare the final edge sets:
-$$E_{AB} = E \cup \{ e_1, e_2 \}$$
-$$E_{BA} = E \cup \{ e_2, e_1 \}$$
-Since set union is commutative, $E_{AB} = E_{BA}$.
-The order of operations does not affect the final state.
+Comparison of the final edge sets reveals identity due to the commutativity of set union:
+$$
+E_{AB} = E \cup \{ e_1, e_2 \} = E \cup \{ e_2, e_1 \} = E_{BA}
+$$
+We conclude that the order of operations does not affect the final state.
 
 Q.E.D.
 :::
 
 ### 2.4.3 Lemma: Chordlessness of Maximal Cycles {#2.4.3}
 
-:::info[**Exposure of Reducible Surfaces due to the Topological Chordlessness of Maximal Cycles**]
+:::info[**Topological Chordlessness of Maximal Cycles**]
 
-Let $C$ be a Simple Directed Cycle within $G$ possessing the maximal length $L = L_{\max} \ge 4$. It is established that $C$ is strictly **Chordless**, defined as the condition where no edges exist between non-adjacent vertices of the cycle. Proof by contradiction: the existence of a chord would topologically partition $C$ into two strictly smaller cycles $C_1, C_2$ of lengths $L_1, L_2 < L$, thereby contradicting the premise that $L$ is the maximal cycle length [(§2.3.4)](#2.3.4).
+Let $C$ denote a Simple Directed Cycle within $G$ possessing the maximal length $L = L_{\max} \ge 4$. Then $C$ constitutes a strictly **Chordless** cycle, satisfying the condition that no edges exist between non-adjacent vertices.
 
-### 2.4.3.1 Proof: Contradiction of Maximality {#2.4.3.1}
+### 2.4.3.1 Proof: Chordlessness of Maximal Cycles {#2.4.3.1}
 
 :::tip[**Derivation of Chordlessness via Contradiction of the Lexicographic Maximality Premise**]
 
 **I. The Maximality Hypothesis**
 
-Let $C = (v_0, \dots, v_{L-1})$ be a simple cycle of length $L$.
-Assume $L$ is the global maximum cycle length in $G$.
-$$L = L_{\max}$$
+Let $C = (v_0, \dots, v_{L-1})$ denote a simple cycle of length $L$. Assume $L$ represents the global maximum cycle length in $G$.
+
+$$
+L = L_{\max}
+$$
 
 **II. The Chord Assumption**
 
-Assume there exists a chord $e = (v_i, v_k)$ where $v_i, v_k \in C$ are non-adjacent in the cycle.
-The indices satisfy $|i - k| > 1$ (modulo $L$).
+Assume the existence of a chord $e = (v_i, v_k)$ where $v_i, v_k \in C$ correspond to non-adjacent vertices. The indices satisfy the separation condition:
+
+$$
+|i - k| > 1 \pmod L
+$$
 
 **III. Topological Partition**
 
-The chord $e$ splits the cycle $C$ into two sub-cycles:
-1.  **Cycle $C_1$:** Edges along $C$ from $v_k$ to $v_i$, plus chord $(v_i, v_k)$.
-    Length $L_1 = \text{dist}_C(v_k, v_i) + 1$.
-2.  **Cycle $C_2$:** Edges along $C$ from $v_i$ to $v_k$, plus chord $(v_i, v_k)$.
-    Length $L_2 = \text{dist}_C(v_i, v_k) + 1$.
+The chord $e$ partitions the cycle $C$ into two sub-cycles:
+
+1.  **Cycle $C_1$:** Composed of the path along $C$ from $v_k$ to $v_i$ and the chord $(v_i, v_k)$.
+    $$L_1 = \text{dist}_C(v_k, v_i) + 1$$
+2.  **Cycle $C_2$:** Composed of the path along $C$ from $v_i$ to $v_k$ and the chord $(v_i, v_k)$.
+    $$L_2 = \text{dist}_C(v_i, v_k) + 1$$
+
+
 
 **IV. Inequality Derivation**
 
-The total length is the sum of the arcs: $L = \text{dist}_C(v_k, v_i) + \text{dist}_C(v_i, v_k)$.
-Since the vertices are non-adjacent:
-$\text{dist}_C(v_k, v_i) \ge 1 \implies L_2 < L$
-$\text{dist}_C(v_i, v_k) \ge 1 \implies L_1 < L$
+The total length $L$ corresponds to the sum of the distances along the original arc.
+
+$$
+L = \text{dist}_C(v_k, v_i) + \text{dist}_C(v_i, v_k)
+$$
+
+The non-adjacency condition implies strictly positive distances between vertices on the arc.
+
+$$
+\text{dist}_C(v_k, v_i) \ge 1 \implies L_2 < L
+$$
+
+$$
+\text{dist}_C(v_i, v_k) \ge 1 \implies L_1 < L
+$$
 
 **V. Contradiction**
 
-If $C$ contains a chord, it is a composite structure formed by the union of $C_1$ and $C_2$.
-The elementary cycles contributing to the potential $\Phi(G)$ are $C_1$ and $C_2$.
-The maximum length in this subgraph is $\max(L_1, L_2) < L$.
-This contradicts the premise that a simple cycle of length $L$ exists as a fundamental component.
-Therefore, a maximal simple cycle must be chordless.
+The presence of the chord identifies $C$ as a composite structure formed by the union of $C_1$ and $C_2$. It follows that the elementary cycles contributing to the potential $\Phi(G)$ are $C_1$ and $C_2$. The maximum length in this subgraph evaluates to $\max(L_1, L_2) < L$. This contradicts the premise that a simple cycle of length $L$ exists as a fundamental component [(§2.3.4)](#2.3.4). We conclude that a maximal simple cycle must be chordless.
 
 Q.E.D.
 :::
 
 ### 2.4.4 Lemma: Reduction via Deletion {#2.4.4}
 
-:::info[**Strict Descent of the Lexicographic Potential driven by Edge Removal**]
+:::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]
 
-The deletion of any single edge $e$ that is a constitutive member of a maximal cycle $C$ necessitates the strict reduction of the Lexicographic Potential $\Phi(G)$. The removal of $e$ eliminates $C$ from the set of simple cycles, thereby reducing the count $N_{L_{\max}}$ or the maximum length $L_{\max}$, without the possibility of creating new cycles of equal or greater length.
+Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the Lexicographic Potential $\Phi(G)$ [(§2.3.4)](#2.3.4). Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
 
-### 2.4.4.1 Proof: Potential Reduction {#2.4.4.1}
+### 2.4.4.1 Proof: Reduction via Deletion {#2.4.4.1}
 
 :::tip[**Demonstration of Order Descent via Path Set Reduction**]
 
 **I. Initial State Definition**
 
-Let $G = (V, E)$ denote a graph with lexicographic potential $\Phi(G) = (L_{\max}, N_{L_{\max}})$.
-Let $C$ denote a simple cycle of length $L_{\max}$ contributing to the count $N_{L_{\max}}$.
-Let $e = (u, v)$ denote an edge satisfying $e \in C$.
+Let $G = (V, E)$ denote a graph with lexicographic potential $\Phi(G) = (L_{\max}, N_{L_{\max}})$. Let $C$ denote a simple cycle of length $L_{\max}$, and let $e \in C$ denote a specific edge within this cycle.
 
 **II. The Deletion Operation**
 
-The transformation $\mathcal{T}_{del}$ maps $G \to G'$ where $E' = E \setminus \{e\}$.
-The set of simple cycles in $G'$ constitutes a subset of the cycles in $G$:
-
-$$
-\mathcal{C}(G') = \{ C' \in \mathcal{C}(G) \mid e \notin C' \}
-$$
-
-The condition $e \in C$ implies $C \notin \mathcal{C}(G')$.
+Let $G'$ denote the graph resulting from the operation $E' = E \setminus \{e\}$.
 
 **III. Connectivity Analysis**
 
-The deletion of an edge strictly reduces the path set.
-Any cycle $C_{new}$ existing in $G'$ requires edges in $E'$.
-The relation $E' \subset E$ implies any such cycle pre-existed in $G$.
-No new cycles emerge from deletion.
+The deletion of the edge $e$ strictly reduces the set of valid paths. Any cycle $C_{new}$ existing in $G'$ necessitates that all constitutive edges belong to $E'$. The subset relation $E' \subset E$ implies that any such cycle pre-existed in $G$. It follows that no new cycles emerge from the deletion operation.
 
 $$
 \mathcal{C}(G') \subseteq \mathcal{C}(G) \setminus \{C\}
@@ -792,22 +813,14 @@ $$
 
 **IV. Recalculation of Potential**
 
-The potential $\Phi(G') = (L'_{\max}, N'_{L_{\max}})$ evaluates under two cases:
+The potential $\Phi(G') = (L'_{\max}, N'_{L_{\max}})$ evaluates under two cases based on the survival of other maximal cycles.
 
-1.  **Case A ($N_{L_{\max}} > 1$):**
-    Alternative cycles of length $L_{\max}$ persist.
-    $L'_{\max} = L_{\max}$.
-    $N'_{L_{\max}} = N_{L_{\max}} - k$, where $k \ge 1$ represents the number of max-length cycles containing $e$.
-    The inequality $N'_{L_{\max}} < N_{L_{\max}}$ implies $\Phi(G') < \Phi(G)$.
-
-2.  **Case B ($N_{L_{\max}} = 1$):**
-    $C$ constitutes the unique cycle of maximal length.
-    $L'_{\max} < L_{\max}$.
-    The lexicographic ordering implies $\Phi(G') < \Phi(G)$.
+1.  **Case A (Survival):** If the set of cycles of length $L_{\max}$ remains non-empty, the length parameter is invariant ($L'_{\max} = L_{\max}$). The count parameter decreases by the number of maximal cycles containing $e$, ensuring $N'_{L_{\max}} < N_{L_{\max}}$.
+2.  **Case B (Extinction):** If $C$ was the sole remaining cycle of length $L_{\max}$, the maximum cycle length decreases. This yields $L'_{\max} < L_{\max}$.
 
 **V. Conclusion**
 
-The operation strictly decreases the potential.
+Both cases satisfy the criteria for lexicographic descent. We conclude that the deletion of a maximal-cycle edge guarantees strict potential reduction.
 
 $$
 \Phi(G') < \Phi(G)
@@ -818,11 +831,11 @@ Q.E.D.
 
 ### 2.4.5 Lemma: Decrease in Parallel Updates {#2.4.5}
 
-:::info[**Net Reduction of Topological Complexity under Synchronous Composite Updates**]
+:::info[**Net Reduction of Topological Complexity under Composite Updates**]
 
-A composite update step, defined as $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$, strictly decreases the lexicographic potential.
+Let $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$ denote a composite update step comprising edge addition and subsequent deletion. Then the operation satisfies the strict descent condition for the Lexicographic Potential, $\Phi(G_{next}) < \Phi(G)$.
 
-### 2.4.5.1 Proof: Strict Decrease {#2.4.5.1}
+### 2.4.5.1 Proof: Decrease in Parallel Updates {#2.4.5.1}
 
 :::tip[**Verification of Net Descent across the Two-Phase Update Cycle**]
 
@@ -833,7 +846,7 @@ Let $G \to G_{add}$ denote the addition of chords to all compliant 2-paths withi
 1.  **Site Availability:** Maximal cycles constitute chordless structures [(§2.4.3)](#2.4.3), ensuring the existence of valid 2-paths.
 2.  **Structure Decomposition:** The addition of chords partitions maximal cycles into 3-cycles and smaller loops.
 3.  **Cycle Bounding:** The **Principle of Unique Causality (PUC)** restricts additions to sites lacking short paths [(§2.3.3)](#2.3.3). The creation of a cycle $L_{new} > L_{\max}$ requires a pre-existing path of length $> L_{\max}-1$ connecting vertices at distance 2. This implies a prior path violation.
-4.  **Result:** The maximum cycle length does not increase.
+4.  **Result:** The maximum cycle length satisfies the non-increasing condition.
     $$
     \Phi(G_{add}) \le \Phi(G)
     $$
@@ -856,7 +869,7 @@ $$
 \Phi(G_{next}) < \Phi(G)
 $$
 
-The update step enforces monotonic descent in the topological complexity metric.
+We conclude that the update step enforces monotonic descent in the topological complexity metric.
 
 Q.E.D.
 :::
@@ -1251,57 +1264,70 @@ The proof follows the standard model-theoretic approach, constructing explicit c
 
 ### 2.5.2 Lemma: Independence Case A {#2.5.2}
 
-:::info[**Existence of Causal Validity amidst Geometric Violation demonstrated by the Chordless 4-Cycle Model**]
+:::info[**Existence of Causal Validity amidst Geometric Non-Constructibility**]
 
-There exists a graph model $G_A$, specifically a chordless directed 4-cycle, which satisfies all conditions of Axiom 1 (containing no self-loops and no reciprocal edges) but violates the conditions of Axiom 2 [(§2.3.1)](#2.3.1). The violation arises because the 4-cycle persists as an irreducible geometric structure exceeding the maximum permitted quantum length of $L=3$.
+Let $G_A$ denote a chordless directed cycle of length 4. Then this structure satisfies the Irreflexivity and Asymmetry of **The Directed Causal Link** (Axiom 1) [(§2.1.1)](#2.1.1), yet constitutes an irreducible configuration violating the Geometric Constructibility defined by Axiom 2 [(§2.3.1)](#2.3.1).
 
-### 2.5.2.1 Proof: Verification of Case A {#2.5.2.1}
+### 2.5.2.1 Proof: Independence Case A {#2.5.2.1}
 
 :::tip[**Formal Verification of the Chordless 4-Cycle Model against Axiomatic Criteria**]
 
 **I. Model Construction**
 
-Let $G_A = (V, E)$ denote a graph consisting of a single connected component forming a directed cycle of length four.
+Let $G_A = (V, E)$ denote a graph forming a single connected directed cycle of length four, defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$. The topology strictly excludes internal chords:
 
-  * **Vertices:** $V = \{A, B, C, D\}$.
-  * **Edges:** $E = \{(A, B), (B, C), (C, D), (D, A)\}$.
-  * **Topological Constraint:** The graph strictly excludes internal chords ($E \cap \{(A, C), (B, D)\} = \emptyset$).
+$$
+E \cap \{(A, C), (B, D)\} = \emptyset
+$$
 
-**II. Verification of Axiom 1 (Causal Primitive)**
 
-1.  **Irreflexivity:**
-    Inspection of $E$ reveals no edges of the form $(v, v)$.
-    $$\forall v \in V, (v, v) \notin E$$
-    The condition holds.
-2.  **Asymmetry:**
-    Inspection reveals no reciprocal pairs.
-    $$(A, B) \in E \implies (B, A) \notin E$$
-    The condition holds for all edge pairs.
 
-**III. Verification of Axiom 2 (Geometric Constructibility)**
+**II. Verification of The Directed Causal Link (Axiom 1)**
 
-1.  **Requirement:** Axiom 2 mandates that valid physical geometry arises exclusively from the closure of minimal directed causal loops (3-cycles) [(§2.3.1)](#2.3.1).
-2.  **Analysis:** $G_A$ contains a cycle of length $L=4$.
-    Due to the absence of chords, this cycle admits no decomposition into constituent 3-cycles.
-    $$L_{min}(G_A) = 4 > 3$$
-3.  **Violation:** The structure persists as an irreducible topological unit exceeding the defined geometric quantum.
-    $$G_A \notin \Omega_{geo}$$
+Inspection of the edge set $E$ reveals no reflexive edges.
+
+$$
+\forall v \in V, (v, v) \notin E
+$$
+
+Furthermore, inspection reveals no reciprocal pairs.
+
+$$
+(A, B) \in E \implies (B, A) \notin E
+$$
+
+**III. Verification of Geometric Constructibility (Axiom 2)**
+
+Axiom 2 requires that valid geometry emerges exclusively from the closure of minimal directed 3-cycles [(§2.3.1)](#2.3.1). The graph $G_A$ contains a cycle of length 4. The absence of chords precludes the decomposition of this cycle into constituent 3-cycles.
+
+$$
+L_{min}(G_A) = 4 > 3
+$$
+
+The structure persists as an irreducible unit exceeding the geometric quantum.
+
+$$
+G_A \notin \Omega_{geo}
+$$
 
 **IV. Conclusion**
 
-The existence of $G_A$ demonstrates that Causal Validity does not entail Geometric Validity.
-$$Ax1 \not\implies Ax2$$
+The model $G_A$ satisfies Causal Validity while violating Geometric Constructibility. We conclude that Axiom 1 does not entail Axiom 2.
+
+$$
+Ax1 \not\implies Ax2
+$$
 
 Q.E.D.
 :::
 
 ### 2.5.3 Lemma: Independence Case B {#2.5.3}
 
-:::info[**Existence of Geometric Validity amidst Causal Violation demonstrated by the Disjoint Reflexive Model**]
+:::info[**Existence of Geometric Constructibility amidst Causal Invalidity**]
 
-There exists a graph model $G_B$, defined as the disjoint union of a valid 3-cycle and an isolated self-loop, which satisfies the constructive criteria of Axiom 2 [(§2.3.1)](#2.3.1) regarding the form of geometric quanta, but violates Axiom 1. The violation arises from the presence of the self-loop, which breaches the Irreflexivity constraint.
+Let $G_B$ denote the graph formed by the disjoint union of a simple directed 3-cycle and an isolated vertex possessing a self-loop. Then this structure satisfies the criteria of Geometric Constructibility (Axiom 2) [(§2.3.1)](#2.3.1), yet constitutes a configuration excluded by the Irreflexivity constraint of The Directed Causal Link (Axiom 1) [(§2.1.1)](#2.1.1).
 
-### 2.5.3.1 Proof: Verification of Case B {#2.5.3.1}
+### 2.5.3.1 Proof: Independence Case B {#2.5.3.1}
 
 :::tip[**Formal Verification of the Disjoint Reflexive Model against Axiomatic Criteria**]
 
@@ -1309,31 +1335,46 @@ There exists a graph model $G_B$, defined as the disjoint union of a valid 3-cyc
 
 Let $G_B$ comprise the union of two disjoint subgraphs $C_1$ and $C_2$.
 
-  * **Subgraph $C_1$ (Geometric):** A valid 3-cycle on vertices $\{A, B, C\}$.
+1.  **Subgraph $C_1$:** A valid 3-cycle on vertices $\{A, B, C\}$ with edge set:
     $$E_1 = \{(A, B), (B, C), (C, A)\}$$
-  * **Subgraph $C_2$ (Pathological):** An isolated vertex $X$ with a self-loop.
+2.  **Subgraph $C_2$:** An isolated vertex $X$ with edge set:
     $$E_2 = \{(X, X)\}$$
-  * **Composite Graph:** $G_B = C_1 \cup C_2$.
 
-**II. Verification of Axiom 1 (Causal Primitive)**
 
-1.  **Requirement:** Axiom 1 imposes a universal prohibition on self-reference for all entities.
-    $$\forall u \in V, (u, u) \notin E$$
-2.  **Analysis:** The subgraph $C_2$ contains the edge $(X, X)$.
-3.  **Violation:** This edge constitutes a direct violation of the irreflexivity condition.
-    $$G_B \notin \Omega_{causal}$$
 
-**III. Verification of Axiom 2 (Geometric Constructibility)**
+The composite graph is defined as $G_B = C_1 \cup C_2$.
 
-1.  **Requirement:** Axiom 2 defines the constructive basis of valid physical geometry as the directed 3-cycle.
-2.  **Analysis:** The subgraph $C_1$ constitutes a perfect instance of the geometric quantum.
-    $$C_1 \in \Omega_{geo}$$
-3.  **Constraint Application:** Axiom 2 posits a positive definition for spatial assembly; it does not, in isolation, enforce the removal of non-geometric causal defects in disjoint sectors. The existence of $C_1$ satisfies the constructive criteria.
+**II. Verification of The Directed Causal Link (Axiom 1)**
+
+The Directed Causal Link imposes a universal prohibition on self-reference [(§2.1.1)](#2.1.1).
+
+$$
+\forall u \in V, (u, u) \notin E
+$$
+
+The subgraph $C_2$ contains the reflexive edge $(X, X)$. This constitutes a direct violation of the irreflexivity condition.
+
+$$
+G_B \notin \Omega_{causal}
+$$
+
+**III. Verification of Geometric Constructibility (Axiom 2)**
+
+Geometric Constructibility identifies the directed 3-cycle as the basis of spatial assembly [(§2.3.1)](#2.3.1). The subgraph $C_1$ constitutes a valid instance of the geometric quantum.
+
+$$
+C_1 \in \Omega_{geo}
+$$
+
+Axiom 2 posits a positive definition for spatial assembly; it does not, in isolation, enforce the removal of non-geometric causal defects in disjoint sectors. The existence of $C_1$ satisfies the constructive criteria.
 
 **IV. Conclusion**
 
-The existence of $G_B$ demonstrates that Geometric Validity does not entail Causal Validity.
-$$Ax2 \not\implies Ax1$$
+The existence of $G_B$ demonstrates that Geometric Constructibility does not entail Causal Validity. We conclude that Axiom 2 does not imply Axiom 1.
+
+$$
+Ax2 \not\implies Ax1
+$$
 
 Q.E.D.
 :::
@@ -1441,134 +1482,148 @@ The theorem unfolds through a diagnostic progression, exposing how purely local 
 
 ### 2.6.3 Lemma: Strict Timestamps {#2.6.3}
 
-:::info[**Prevention of Instantaneous Symmetric Dependency through Strictly Increasing Timestamps**]
+:::info[**Necessity of Strictly Increasing Timestamps for Strict Partial Ordering**]
 
-Strictly increasing timestamps ($H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$) are a necessary condition for the effective influence relation $\le$ to form a strict partial order.
+Let the effective influence relation $\le$ constitute a strict partial order. Then the associated timestamp function $H$ satisfies the strict inequality condition $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all connected sequences of events.
 
-### 2.6.3.1 Proof: Necessity of Strictness {#2.6.3.1}
+### 2.6.3.1 Proof: Strict Timestamps {#2.6.3.1}
 
-:::tip[**Derivation of Strict Inequality as a Necessary Condition for Partial Ordering**]
+:::tip[**Derivation of Strict Inequality from Partial Order Axioms**]
 
 **I. Premise**
 
-A valid causal history requires the relation $\le$ to constitute a strict partial order.
-Properties required: Irreflexivity, Asymmetry, Transitivity.
+Let the relation $\le$ satisfy the axioms of a strict partial order. The properties of Irreflexivity, Asymmetry, and Transitivity hold.
 
 **II. Hypothesis (Relaxed Equality)**
 
-Assume the timestamp function $H$ permits equality for connected events:
-$$H(u, v) \le H(v, w)$$
-This permits the case $H(u, v) = H(v, w)$.
+Suppose the timestamp function $H$ permits equality for connected events.
 
-**III. Simultaneity Paradox**
+$$
+H(u, v) \le H(v, w) \implies \exists (u, v, w) \text{ such that } H(u, v) = H(v, w)
+$$
 
-1.  **Concurrent Chains:** Equality implies edges are added in the same logical tick.
-    A path $u \to v \to w$ with equal timestamps implies concurrent influence.
-2.  **Symmetry Violation:** In a parallel update, the formation of $A \to B$ and $B \to A$ in the same tick becomes possible.
-    $$H(A, B) = t \land H(B, A) = t$$
-    This establishes $A \le B$ and $B \le A$ simultaneously.
-    Since $A \neq B$, this violates the property of Asymmetry.
+**III. Simultaneity Analysis**
+
+The equality condition implies simultaneous edge formation within the same logical tick. Consider the parallel formation of edges between distinct vertices $A$ and $B$.
+
+$$
+H(A, B) = t \land H(B, A) = t
+$$
+
+
+
+This establishes the mutual relations:
+
+$$
+A \le B \land B \le A
+$$
+
+Since $A \neq B$, this constitutes a violation of the Asymmetry axiom.
 
 **IV. Conclusion**
 
-Strict inequality ($<$) is required to enforce sequentiality and prevent instantaneous symmetric dependency.
-$$H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$$
+The derived contradiction implies the strict inequality condition.
+
+$$
+H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})
+$$
+
+We conclude that strictly increasing timestamps are necessary for the validity of the influence relation.
 
 Q.E.D.
 :::
 
 ### 2.6.4 Lemma: Failure of Reflexivity {#2.6.4}
 
-:::info[**Emergence of Self-Influence within the Geometric Quantum due to Transitive Closure**]
+:::info[**Violation of Irreflexivity within the Geometric Quantum**]
 
-The topology of the **Geometric Quantum** (the Directed 3-Cycle) necessitates a reflexive mapping within the Effective Influence relation. For any vertex $v$ participating in a 3-Cycle with strictly increasing timestamps along the edges, the traversal of the path implies the relation $v \le v$, violating the global requirement for acyclicity [(§2.7.1)](#2.7.1).
+Let $v$ denote a vertex participating in a Geometric Quantum (Directed 3-Cycle) with strictly increasing timestamps along the edges. Then the Effective Influence relation satisfies the reflexive condition $v \le v$, violating the global acyclicity requirement [(§2.7.1)](#2.7.1).
 
-### 2.6.4.1 Proof: Reflexivity Failure {#2.6.4.1}
+### 2.6.4.1 Proof: Failure of Reflexivity {#2.6.4.1}
 
-:::tip[**Demonstration of Self-Influence via Transitive Analysis of the 3-Cycle**]
+:::tip[**Demonstration of Self-Influence via Transitive Analysis**]
 
 **I. Model Construction**
 
-Let $G$ denote a single directed 3-cycle.
-
-  * **Vertices:** $V = \{A, B, C\}$.
-  * **Edges:** $E = \{(A,B), (B,C), (C,A)\}$.
+Let $G$ denote a single directed 3-cycle defined by the vertex set $V = \{A, B, C\}$ and the edge set $E = \{(A,B), (B,C), (C,A)\}$.
 
 **II. History Assignment**
 
-Assign strictly increasing timestamps to the sequence:
+Let the timestamp function $H$ assign strictly increasing timestamps to the sequence.
 
-  * $H(A, B) = t_1$
-  * $H(B, C) = t_2$
-  * $H(C, A) = t_3$
-    Constraint: $t_1 < t_2 < t_3$.
+* $H(A, B) = t_1$
+* $H(B, C) = t_2$
+* $H(C, A) = t_3$
 
-**III. Influence Evaluation**
+The timestamps satisfy the condition $t_1 < t_2 < t_3$.
+
+**III. Influence Analysis**
 
 Evaluate the influence relation for the pair $(A, A)$.
 
 1.  **Path Existence:** A directed path $\pi = (A, B, C, A)$ exists.
+    
 2.  **Length Constraint:** The path length is $L=3$.
     $$L \ge 2$$
     The mediation condition holds.
-3.  **Sequentiality:** The timestamp sequence is $(t_1, t_2, t_3)$.
-    Since $t_1 < t_2 < t_3$, the sequence is strictly increasing.
+3.  **Sequentiality:** The timestamp sequence corresponds to $(t_1, t_2, t_3)$. The strict ordering $t_1 < t_2 < t_3$ implies the sequence is strictly increasing.
     $$A \xrightarrow{t_1} B \xrightarrow{t_2} C \xrightarrow{t_3} A$$
 
-**IV. Result**
+**IV. Conclusion**
 
-The relation $A \le A$ is established.
-This violates the requirement of Irreflexivity for a strict partial order.
+The existence of $\pi$ establishes the relation $A \le A$. We conclude that this self-influence violates the Irreflexivity axiom required for a strict partial order.
 
 Q.E.D.
 :::
 
 ### 2.6.5 Lemma: Failure of Asymmetry {#2.6.5}
 
-:::info[**Emergence of Mutual Influence in Higher-Order Cycles via Disjoint Timestamped Subpaths**]
+:::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 
-It is established that cycles of length $L \ge 4$ physically permit the formation of mutual Effective Influence between distinct vertices. There exist valid timestamp assignments (specifically the "Bowtie" configuration) on a 4-Cycle such that for distinct vertices $u, v$, there exist disjoint sub-paths satisfying the timestamp monotonicity constraint [(§1.3.4)](ontology#1.3.4) for both $u \to \dots \to v$ and $v \to \dots \to u$, resulting in the symmetric relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying the timestamp monotonicity constraint [(§1.3.4)](ontology#1.3.4) in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
-### 2.6.5.1 Proof: Asymmetry Failure {#2.6.5.1}
+### 2.6.5.1 Proof: Failure of Asymmetry {#2.6.5.1}
 
-:::tip[**Demonstration of Mutual Influence in the Timestamped 4-Cycle via the Bowtie Paradox**]
+:::tip[**Demonstration of Mutual Influence via the Bowtie Configuration**]
 
 **I. Model Construction**
 
-Let $G$ denote a directed 4-cycle.
+Let $G$ denote a directed 4-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$.
 
-  * **Vertices:** $\{A, B, C, D\}$.
-  * **Edges:** $A \to B \to C \to D \to A$.
+**II. History Assignment**
 
-**II. History Assignment (Bowtie Mapping)**
+Let the timestamp function $H$ assign values to the edge set to construct the "Bowtie" configuration.
 
-Assign timestamps $H$ to creating a non-sequential perimeter:
+* $H(A, B) = 1$
+* $H(B, C) = 4$
+* $H(C, D) = 2$
+* $H(D, A) = 3$
 
-  * $H(A, B) = 1$
-  * $H(B, C) = 4$
-  * $H(C, D) = 2$
-  * $H(D, A) = 3$
 
-**III. Evaluation of Forward Influence ($A \le C$)**
 
-1.  **Path:** $\pi_{AC} = (A \to B \to C)$.
-2.  **Length:** $2$ ($\ge 2$).
-3.  **Timestamps:** $(1, 4)$.
-4.  **Check:** $1 < 4$. Strictly increasing.
-5.  **Result:** $A \le C$ holds.
+**III. Evaluation of Forward Influence**
 
-**IV. Evaluation of Reverse Influence ($C \le A$)**
+Consider the path $\pi_{AC} = (A, B, C)$.
 
-1.  **Path:** $\pi_{CA} = (C \to D \to A)$.
-2.  **Length:** $2$ ($\ge 2$).
-3.  **Timestamps:** $(2, 3)$.
-4.  **Check:** $2 < 3$. Strictly increasing.
-5.  **Result:** $C \le A$ holds.
+1.  **Length:** The path length is $2$.
+    $$2 \ge 2$$
+2.  **Timestamps:** The sequence is $(1, 4)$.
+3.  **Monotonicity:** The strictly increasing condition $1 < 4$ holds.
+4.  **Result:** The relation $A \le C$ holds.
+
+**IV. Evaluation of Reverse Influence**
+
+Consider the path $\pi_{CA} = (C, D, A)$.
+
+1.  **Length:** The path length is $2$.
+    $$2 \ge 2$$
+2.  **Timestamps:** The sequence is $(2, 3)$.
+3.  **Monotonicity:** The strictly increasing condition $2 < 3$ holds.
+4.  **Result:** The relation $C \le A$ holds.
 
 **V. Conclusion**
 
-The relations $A \le C$ and $C \le A$ hold simultaneously for distinct entities ($A \neq C$).
-This constitutes a direct violation of Asymmetry.
+The relations $A \le C$ and $C \le A$ hold simultaneously for distinct vertices ($A \neq C$). We conclude that this configuration violates the Asymmetry property.
 
 Q.E.D.
 
@@ -1671,7 +1726,7 @@ The persistence of these transitive paradoxes demands the imposition of a third,
 
 -----
 
-## 2.7 Axiom 3: Global Consistency & Enforcement {#2.7}
+## 2.7 Global Consistency & Enforcement {#2.7}
 
 :::note[**Section 2.7 Overview**]
 
@@ -1682,7 +1737,7 @@ Relying on post-hoc correction proves thermodynamically untenable because it req
 We solve this by implementing a preemptive local enforcement mechanism that approximates global consistency through logarithmic-depth probes to filter out potential violations before they manifest. Bounding the error probability exponentially allows us to design a system that is robust by default and utilizes the thermodynamics of the rewrite rule to ensure that the present advances as a coherent wavefront. This statistical enforcement aligns the computational limits of the graph with the physical requirements of causality and ensures that the arrow of time is protected by the laws of probability rather than an impossible requirement for global knowledge.
 :::
 
-### 2.7.1 Axiom: Acyclic Effective Causality {#2.7.1}
+### 2.7.1 Axiom 3: Acyclic Effective Causality {#2.7.1}
 
 :::info[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]
 
@@ -1782,40 +1837,45 @@ The proof establishes that global causal consistency must emerge from preemptive
 
 ### 2.7.3 Lemma: Cycle Diameter Growth {#2.7.3}
 
-:::info[**Divergence of Cycle Diameters beyond Local Computational Radii due to Percolation Dynamics**]
+:::info[**Divergence of Cycle Diameters beyond Finite Computational Radii**]
 
-During the dynamical evolution of the graph, the length of the longest simple cycle $L_{\max}$ diverges as a function of logical time. There exists a critical time $t_{crit}$ such that for any finite computational radius $R$, the condition $L_{\max} > 2R$ holds. Consequently, local operators bounded by radius $R$ are topologically blind to the closure of global cycles.
+Let the graph evolve under the rewrite rule $\mathcal{R}$. Then the length of the longest simple cycle $L_{\max}$ diverges as a function of logical time, and for any finite computational radius $R$ there exists a critical time $t_{crit}$ such that $L_{\max} > 2R$ holds and local operators bounded by radius $R$ are topologically blind to the closure of global cycles.
 
-### 2.7.3.1 Proof: Diameter Growth {#2.7.3.1}
+### 2.7.3.1 Proof: Cycle Diameter Growth {#2.7.3.1}
 
 :::tip[**Derivation of Trans-Local Cycle Expansion via Random Graph Dynamics**]
 
 **I. Micro-Dynamics**
 
-The rewrite rule $\mathcal{R}$ acts as the engine of geometrogenesis, injecting 3-cycles into the topology.
-This increases the edge density $\rho$ of the graph over logical time.
+The rewrite rule $\mathcal{R}$ acts as the engine of geometrogenesis, injecting 3-cycles into the topology. This increases the edge density $\rho$ of the graph over logical time.
 
 **II. Macro-State Evolution**
 
-As density $\rho$ rises, the system approaches the percolation threshold.
-Random Graph Theory dictates that near this threshold, the probability of forming system-spanning structures increases non-linearly.
-$$P(L_{max} > R) \to 1 \quad \text{as} \quad N \to \infty$$
+As density $\rho$ rises, the system approaches the percolation threshold. Random Graph Theory dictates that near this threshold, the probability of forming system-spanning structures increases non-linearly.
+
+$$
+P(L_{\max} > R) \to 1 \quad \text{as} \quad N \to \infty
+$$
+
+
 
 **III. The Horizon Limit**
 
-Let a local computational patch be defined by a finite radius $R$.
-The dynamics inevitably generate cycles with length $L_{max}$ satisfying:
-$$L_{max} \gg R$$
+Let a local computational patch be defined by a finite radius $R$. The dynamics inevitably generate cycles with length $L_{\max}$ satisfying:
+
+$$
+L_{\max} \gg R
+$$
 
 **IV. Blindness**
 
-A local operator bounded by $R$ cannot perceive the closure of a cycle with diameter $D > R$.
-To the local operator, the path segment appears as an open geodesic.
+A local operator bounded by $R$ cannot perceive the closure of a cycle with diameter $D > R$. To the local operator, the path segment appears as an open geodesic.
+
+
 
 **V. Conclusion**
 
-Local dynamics generate trans-local structures invisible to local error-correction.
-Post-hoc correction of paradoxes is topologically impossible for a local agent.
+Local dynamics generate trans-local structures invisible to local error-correction. Post-hoc correction of paradoxes is topologically impossible for a local agent.
 
 Q.E.D.
 
@@ -1869,38 +1929,51 @@ Consider the analogy of an observer standing on the surface of a massive sphere;
 
 ### 2.7.4 Lemma: Local PUC Approximation {#2.7.4}
 
-:::info[**Exponential Suppression of Global Paradoxes achieved by Logarithmic-Depth Local Search**]
+:::info[**Exponential Suppression of Global Paradoxes under Local Search Constraints**]
 
-Let $P_{err}(R)$ be the probability that a paradox-inducing cycle of length $L > R$ evades detection by a local search of radius $R$. In the sparse graph regime, this probability is bounded by an exponential decay function $P_{err}(R) < e^{-R}$. Therefore, a search depth scaling logarithmically with system size ($R \sim \ln N$) is sufficient to suppress the probability of global paradox formation below any arbitrary fixed threshold.
+Let $P_{err}(R)$ denote the probability that a paradox-inducing cycle of length $L > R$ evades detection by a local search of radius $R$ in the sparse graph regime. Then this probability satisfies the exponential decay bound $P_{err}(R) < e^{-R}$, and a search depth scaling as $R \sim \ln N$ constitutes a sufficient condition to suppress the probability of global paradox formation below any arbitrary fixed threshold.
 
-### 2.7.4.1 Proof: Approximation Fidelity {#2.7.4.1}
+### 2.7.4.1 Proof: Local PUC Approximation {#2.7.4.1}
 
 :::tip[**Derivation of the Error Probability Bound via Sparse Graph Analysis**]
 
 **I. Premise**
 
-The causal graph operates in the sparse regime ($\rho \ll 1$).
+Let the causal graph operate in the sparse regime where the edge density satisfies $\rho \ll 1$.
 
 **II. Path Extension Probability**
 
 The probability of a specific path extending for length $L$ without termination is proportional to the density raised to the power of the length.
-$$P_{ext}(L) \propto \rho^L$$
+
+$$
+P_{ext}(L) \propto \rho^L
+$$
 
 **III. Loop Closure Probability**
 
-The probability of this path closing back on its origin to form a cycle involves the selection of a specific vertex from $N$ candidates.
-$$P_{close}(L) \propto \frac{1}{N} \rho^L$$
+The probability of a path closing back on its origin to form a cycle involves the selection of a specific vertex from $N$ candidates.
+
+$$
+P_{close}(L) \propto \frac{1}{N} \rho^L
+$$
+
+
 
 **IV. Cumulative Error**
 
-The total probability of *any* undetected cycle existing beyond the check radius $R$ is the sum of probabilities for all lengths greater than $R$.
-$$P_{err} = \sum_{L=R+1}^{\infty} C \frac{\rho^L}{N} \approx \frac{C}{N} \frac{\rho^{R+1}}{1-\rho}$$
+The total probability of an undetected cycle existing beyond the check radius $R$ corresponds to the sum over all lengths greater than $R$.
+
+$$
+P_{err} = \sum_{L=R+1}^{\infty} C \frac{\rho^L}{N} \approx \frac{C}{N} \frac{\rho^{R+1}}{1-\rho}
+$$
 
 **V. Exponential Decay**
 
-Since $\rho < 1$, the term $\rho^R$ decays exponentially with $R$.
-Setting $R \sim \log N$ yields a probability bounded by a polynomial in $1/N$.
-$$P_{err} \le \mathcal{O}(N^{-k})$$
+The condition $\rho < 1$ implies that the term $\rho^R$ decays exponentially with $R$. The assignment $R \sim \ln N$ yields a probability bounded by a polynomial in $1/N$.
+
+$$
+P_{err} \le \mathcal{O}(N^{-k})
+$$
 
 **VI. Conclusion**
 
@@ -1966,9 +2039,9 @@ Synchronizing a correction across this distance would require a signal to propag
 
 ### 2.7.6 Theorem: Independence of Axiom 3 {#2.7.6}
 
-:::info[**Establishment of Logical Independence of Acyclic Effective Causality via Counter-Model Demonstration**]
+:::info[**Logical Independence of the Global Acyclicity Requirement**]
 
-Axiom 3 is logically independent of Axioms 1 and 2. The timestamped 4-cycle counter-model defined previously [(§2.6.5)](#2.6.5) constitutes a valid graph under Axioms 1 and 2 but is explicitly forbidden by Axiom 3. This demonstrates that the requirement for global causal consistency is not derivable from the local primitives of edge directionality and geometric closure.
+Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of The Directed Causal Link [(§2.1.1)](#2.1.1) and Geometric Constructibility [(§2.3.1)](#2.3.1). Then the timestamped 4-cycle configuration [(§2.6.5)](#2.6.5) constitutes a valid graph under $\Sigma$ while violating the Global Acyclicity condition of Axiom 3. Therefore, Axiom 3 constitutes a logically independent constraint not derivable from the local primitives.
 
 ### 2.7.6.1 Proof: Independence of Axiom 3 {#2.7.6.1}
 
@@ -1976,35 +2049,36 @@ Axiom 3 is logically independent of Axioms 1 and 2. The timestamped 4-cycle coun
 
 **I. Model Construction**
 
-Let $G$ be a directed 4-cycle with vertices $\{A, B, C, D\}$ and edges $E = \{(A,B), (B,C), (C,D), (D,A)\}$.
+Let $G$ denote a directed 4-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A,B), (B,C), (C,D), (D,A)\}$.
+
+
 
 **II. History Assignment**
 
-Assign non-sequential timestamps (Bowtie Configuration):
+Let the timestamp function $H$ assign the non-sequential "Bowtie" values to the edge set:
 
-  * $H(A, B) = 1$
-  * $H(B, C) = 4$
-  * $H(C, D) = 2$
-  * $H(D, A) = 3$
+* $H(A, B) = 1$
+* $H(B, C) = 4$
+* $H(C, D) = 2$
+* $H(D, A) = 3$
 
-**III. Verification of Axiom 1 & 2**
 
-1.  **Axiom 1:** The graph satisfies irreflexivity and asymmetry on edges.
-2.  **Axiom 2:** The 4-cycle does not violate the constructive definition, which governs formation, not existence.
 
-**IV. Verification of Axiom 3 (Global Acyclicity)**
+**III. Verification of Local Axioms**
 
-1.  **Forward Path:** $A \to B \to C$ (Timestamps 1, 4).
-    $1 < 4 \implies A \le C$.
-2.  **Reverse Path:** $C \to D \to A$ (Timestamps 2, 3).
-    $2 < 3 \implies C \le A$.
-3.  **Conflict:** The relation is symmetric ($A \le C \land C \le A$).
-    This violates the strict partial order requirement of Axiom 3.
+The graph satisfies the Irreflexivity and Asymmetry conditions for all individual edges, complying with Axiom 1. The 4-cycle does not violate the constructive definition of Axiom 2, which governs formation rather than existence.
+
+**IV. Verification of Global Acyclicity (Axiom 3)**
+
+Consider the effective influence relations derived from the timestamp sequence.
+
+1.  **Forward Path:** The path $A \to B \to C$ corresponds to timestamps $(1, 4)$. The condition $1 < 4$ establishes the relation $A \le C$.
+2.  **Reverse Path:** The path $C \to D \to A$ corresponds to timestamps $(2, 3)$. The condition $2 < 3$ establishes the relation $C \le A$.
+3.  **Conflict:** The simultaneous validity of $A \le C$ and $C \le A$ for distinct vertices constitutes a symmetric dependency. This violates the strict partial order required by Axiom 3.
 
 **V. Conclusion**
 
-A model exists that satisfies Axioms 1 and 2 but violates Axiom 3.
-Therefore, Axiom 3 is logically independent.
+A model exists that satisfies Axioms 1 and 2 but violates Axiom 3. We conclude that Axiom 3 is logically independent.
 
 Q.E.D.
 

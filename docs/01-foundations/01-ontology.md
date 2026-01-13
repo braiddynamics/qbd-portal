@@ -7,9 +7,9 @@ sidebar_label: "Chapter 1: Ontology"
 
 :::info[**The Rules**]
 
-Beginning with Part 1, **Quantum Braid Dynamics (QBD)** adopts a template explicitly engineered for auditability and formal verification. Every section is identified, every statement proven is globally unique. An auditable format produces a physical theory verifiable without ambiguity or need for clarification. Ideas must survive translation into pure logic that can be parsed.
+**Quantum Braid Dynamics,** ***A Computational Process*** **(QBD)** adopts a template explicitly engineered for auditability and formal verification. Every section is identified, every statement proven is globally unique. An auditable format ensures ideas survive translation into pure logic that can be parsed, producing a physical theory that is verifiable without ambiguity.
 
-The Foundational Principles construct the physical universe as a deductive chain, moving from abstract requirements to concrete emergence. The substrate of existence defines as abstract in Chapter 1. Strict axiomatic constraints impose in Chapter 2 to enforce causality and prevent logical paradoxes, distinguishing the physically possible from the mathematically constructible. The unique initial state of the universe derives in Chapter 3 as a specific topological structure poised for evolution. This static frame animates by a dynamical engine in Chapter 4, a universal constructor driven by information-theoretic potentials that dictate how connections evolve. The aggregate action of this engine yields a stable, macroscopic phase of spacetime through thermodynamic equilibrium in Chapter 5, bridging the gap between discrete graph operations and continuous geometry.
+The Foundational Principles begins the construction of the physical universe as a deductive chain, moving from abstract requirements to concrete emergence. The abstract substrate of existence is defined in Chapter 1. Strict axiomatic constraints enforce causality and prevent logical paradoxes in Chapter 2, distinguishing the physically possible from the mathematically constructible. The unique initial state of the universe is revealed in Chapter 3 as a topological structure poised for evolution which is animated by a dynamical engine in Chapter 4, a universal constructor driven by information-theoretic potentials that dictate how connections evolve. The aggregate action of this engine yields a stable, macroscopic phase of spacetime through thermodynamic equilibrium in Chapter 5, bridging the gap between discrete graph operations and continuous geometry.
 
 ```text
         PART 1:THE FOUNDATIONAL PRINCIPLES (The Rules)
@@ -42,11 +42,11 @@ The Foundational Principles construct the physical universe as a deductive chain
 
 :::info[**Overview**]
 
-Standard physics typically grants itself a pre-existing stage: a manifold of space and time where particles interact and fields propagate. Yet we find that this assumption obscures the very origin of the structure we wish to understand. To derive the architecture of the universe, our shared inquiry cannot start by assuming the building already exists. It becomes necessary to descend to a level more primitive than geometry, seeking a substrate that possesses neither location nor duration until those properties are rigorously constructed. We must ask how a universe can exist before there is a "where" for it to exist in, or a "when" for it to happen.
+Standard physics typically grants itself a pre-existing stage: a manifold of space and time where particles interact and fields propagate. Yet we find that this assumption obscures the very origin of the structure we wish to understand. To derive the architecture of the universe, our shared inquiry cannot start by assuming the building already exists. It becomes necessary to descend to a level more primitive than geometry, seeking a substrate that possesses neither location nor duration until those properties are constructed. We must ask how a universe can exist before there is a "where" for it to exist in, or a "when" for it to happen.
 
 Discarding the continuum, with its implication of infinite information density within every volume, reveals itself as a logical necessity if we are to respect the limits of computation and the finiteness of information. A domain of pure relation remains for us to analyze. We must strip away the comfortable illusions of smooth space to find the discrete gears operating beneath the fabric. If we do not, we trap ourselves in the paradoxes of the infinite before we have even begun to describe the finite.
 
-The task at hand involves understanding how independent, dimensionless events can weave themselves into a sequence that mimics the flow of time and a network that mimics the extension of space. We must determine how a collection of dimensionless points can develop the properties of adjacency, distance, and direction without referencing an external coordinate system. This chapter establishes the epistemological rules that permit us to build such a model, defines the discrete nature of the temporal iterator that drives it, and constructs the relational graph that serves as the absolute floor of our reality.
+The task at hand involves understanding how independent, dimensionless events can weave themselves into a sequence that mimics the flow of time and a network that mimics the extension of space. We must determine how a collection of dimensionless points can develop the properties of adjacency, distance, and direction without referencing an external coordinate system. This chapter on Ontology establishes the epistemological rules that permit us to build such a model, defines the discrete nature of the temporal iterator that drives it, and constructs the relational graph that serves as the absolute floor of our reality.
 
 :::tip[**Preconditions and Goals**]
 * Establish unprovability of axioms to justify a coherentist epistemological approach.
@@ -65,8 +65,6 @@ The task at hand involves understanding how independent, dimensionless events ca
 A logical hazard confronts us immediately when we attempt to define the absolute bottom of reality. This is the ancient problem of the infinite regress of justification. If we demand that our foundation be rigorously proven, we are compelled to provide a set of prior axioms to construct that proof. Those prior axioms, in turn, require their own antecedents to validate them, and so we fall into a bottomless well of requirements. It becomes clear that a physical theory cannot claim absolute security if its roots cannot be proven from within its own system. However, logic dictates that no system can prove its own consistency without stepping outside of itself. We must therefore shift our standard of validity entirely. We cannot demand that our axioms be self-evident truths handed down from above. Instead, we must select them as consistent and fertile tools that justify themselves solely by the universe they are capable of building. We are looking for a starting point that does not require an antecedent.
 
 We must look to the structure of deductive systems to understand where the limits of certainty lie. Standard approaches in physics often attempt to anchor their theories in self-evident truths or undeniable observations. However, Gödel teaches us that in any sufficiently powerful formal system, there are truths that cannot be proven syntactically. If we persist in searching for a pre-written scroll of absolute truth that requires no justification, we trap ourselves in a state of intellectual paralysis. We are not uncovering an archaeological artifact that was hidden in the sand. We are designing a machine of logic that must run without crashing. This realization frees us from the impossible demand of absolute certainty and allows us to focus on the engineering constraint of structural coherence. Our goal is not to find the one true axiom but to find an axiom that works.
-
-Constraints are chosen here not because they feel intuitive to our human senses, but because they successfully generate a working model of the cosmos that does not collapse under its own logical weight. Our objective is to establish a framework where assumptions are stated with engineering clarity. This allows us to follow their consequences without becoming mired in the impossibility of absolute proof. We must accept that our starting points are a choice. The validity of that choice is measured only by the stability of the structure that rises from it. We are engaging in a process of reverse-engineering existence by postulating the minimal code required to run it.
 :::
 
 ### 1.1.1 Theorem: The Unprovability of Axioms {#1.1.1}
@@ -77,7 +75,7 @@ It is established as a structural necessity of deductive logic that within any f
 
 The enterprise of deductive reasoning, the bedrock of mathematics and logic, is built upon a foundational paradox. Any attempt to establish an ultimate truth through proof must contend with the Münchhausen trilemma: the chain of justification must either regress infinitely, loop back upon itself in a circle, or terminate in a set of propositions that are accepted without proof. In the architecture of formal deductive systems, these terminal propositions are known as axioms. Historically, they were considered self-evident truths, but modern logic has recast them as foundational assumptions. A distinction is made between a syntactic process of derivation from accepted premises and a justification, which is the meta-systemic, philosophical, and pragmatic argument for adopting those premises in the first place.
 
-A foundational axiomatic structure is a coherent set of postulates whose justification rests not on derivational dependency or claims of self-evidence, but on the systemic utility and coherence of the entire theoretical edifice it supports. The selection of axioms is a rational process motivated by criteria such as parsimony, consistency, and the richness of the consequences (the theorems) that can be derived from them. This perspective is not merely a philosophical preference but a conclusion forced by the evolution of mathematics itself. The historical journey from a classical view of axioms as immutable truths to a modern, formalist view of axioms as definitional starting points reflects a profound epistemological shift. This transition, catalyzed by the discovery of non-Euclidean geometries, revealed that the "truth" of an axiom lies not in its correspondence to a singular, external reality, but in its role in defining a consistent and fruitful logical system.
+A foundational axiomatic structure is a coherent set of postulates whose justification rests not on derivational dependency or claims of self-evidence, but on the systemic utility and coherence of the entire theoretical edifice it supports. The selection of axioms is a rational process motivated by criteria such as parsimony, consistency, and the richness of the consequences (the theorems) that can be derived from them. This perspective on selection is, therefore, a conclusion forced by the evolution of mathematics itself. The historical journey from a classical view of axioms as immutable truths to a modern, formalist view of axioms as definitional starting points reflects a profound epistemological shift. This transition, catalyzed by the discovery of non-Euclidean geometries, revealed that the "truth" of an axiom lies not in its correspondence to a singular, external reality, but in its role in defining a consistent and fruitful logical system.
 
 To build this argument, the formal definitions that govern deductive systems are first established, then the logical necessity of unprovable truths is explored through the lens of Gödel's incompleteness theorems. Subsequently, two pivotal case studies from the history of mathematics are analyzed: the centuries-long debate over Euclid's parallel postulate and the more recent controversy surrounding the Axiom of Choice. These examples are framed within a coherentist epistemology, distinguishing this holistic mode of justification from fallacious circular reasoning. Finally, an analogy is drawn to the foundational postulates of Relational Quantum Mechanics to demonstrate the broad applicability of this justificatory framework across the formal and physical sciences.
 
@@ -317,8 +315,6 @@ Rovelli's original formulation was motivated by information theory and based on 
 2.  It is always possible to acquire new information about a system (novelty).
     More recent codifications of RQM list a set of principles, including:
 
-<!-- end list -->
-
   * Relative Facts: Events or facts occur relative to interacting physical systems.
   * No Hidden Variables: Standard quantum mechanics is complete.
   * Internally Consistent Descriptions: The descriptions from different observer perspectives, while different, must cohere in a predictable way when one observer measures another.
@@ -379,7 +375,7 @@ The temporal structure of the physical theory is constituted by two distinct, or
 1.  **Global Logical Time ($t_L$):** The fundamental ordering parameter of state evolution. The domain of $t_L$ is strictly restricted to the set of non-negative integers $\mathbb{N}_0$. This parameter serves as the discrete iteration counter for the Universal Evolution Operator and is not subject to relativistic dilation or coordinate transformation.
 2.  **Physical Time ($t_{phys}$):** An emergent, continuous parameter derived from relational path lengths within the graph substrate. $t_{phys}$ is subordinate to $t_L$ and possesses geometric character, emerging only in the macroscopic limit.
 
-The foundational postulate of this theory asserts that physical reality emerges as a secondary phenomenon rather than serving as a primary, self-subsistent entity; this assertion compels an immediate and total rupture with every standard temporal formulation that has ever been proposed in physics, thereby necessitating the complete rejection of all such formulations without any form of compromise or partial retention. In their place, the theory introduces a strict dual-time structure, wherein two distinct temporal parameters operate at orthogonal levels of ontological priority, each fulfilling precisely defined roles that preclude overlap or interchangeability.
+The foundational postulate of this theory asserts that physical reality emerges as a secondary phenomenon rather than serving as a primary, self-subsistent entity; this assertion compels an immediate and total rupture with standard temporal formulation, thereby necessitating the complete rejection of all such formulations without any form of compromise or partial retention. In their place, the theory introduces a strict dual-time structure, wherein two distinct temporal parameters operate at orthogonal levels of ontological priority, each fulfilling precisely defined roles that preclude overlap or interchangeability.
 
 This dual-time structure comprises the following two components, rigorously delineated to ensure no ambiguity arises in their application or interpretation:
 
@@ -480,242 +476,266 @@ Internal observers, operating within the emergent physical time $t_{phys}$, reco
 
 ### 1.2.3 Lemma: Finite Information Substrate {#1.2.3}
 
-:::info[**Bounds on Information Density established by the Convergence of Empirical and Holographic Limits**]
+:::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
 
-For any finite value of $t_L$, the information content of the state $U_{t_L}$, denoted $S(U_{t_L})$, is strictly finite. The growth of the state space cardinality is bounded by a quadratic function of logical time:
-$$S(U_{t_L}) \leq \mathcal{O}(t_L^2)$$
-This condition precludes divergence to infinite information density for any finite iteration of the sequence, ensuring that the universe remains computable at every step $t_L$. **[(Bekenstein, 1981)](/monograph/appendices/a-references#A.12)**. 
+Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
 
-### 1.2.3.1 Proof: Finite Information {#1.2.3.1}
+### 1.2.3.1 Proof: Finite Information Substrate {#1.2.3.1}
 
-:::tip[**Derivation of the Quadratic Entropy Bound through Inductive Branching**]
+:::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
 
-**I. Axiomatic Boundary Conditions**
+**I. Setup and Assumptions**
 
-Let $\Omega_{t}$ denote the set of admissible physical states at logical time $t$.
-Let $S(U_{t}) = \log_2 |\Omega_{t}|$ be the information content.
+Let $\Omega_{t}$ denote the set of admissible physical states at logical time $t$. Let $S(U_{t}) = \log_2 |\Omega_{t}|$ quantify the information content.
 
-We define the growth constraints based on the physical postulates:
-1.  **Finite Branching ($b$):** The **Finite Nature Hypothesis** implies that for any state $U$, the number of physically distinct successor states is finite.
-    $$\forall U \in \Omega, \quad | \{ U' \mid U \xrightarrow{\mathcal{U}} U' \} | \le b < \infty$$
-2.  **Holographic Surface Scaling ($\delta$):** The **Bousso Bound** limits the number of active degrees of freedom (rewrite sites) to the surface area of the causal graph. In a discrete graph growing from a root, the surface area $s_t$ scales linearly with the radius (logical time).
-    $$s_{t} \le \delta \cdot t \quad \text{where } \delta > 0$$
+The physical postulates impose the following growth constraints:
 
-**II. The Recurrence Relation**
+1.  **Finite Local Branching ($b$):** The **Finite Nature Hypothesis** limits the update capacity of the substrate. The number of physically distinct successor states for any state $U$ is bounded by the local branching factor $b$ raised to the number of active sites.
 
-The cardinality of the state space at step $t+1$ is bounded by the product of the previous cardinality and the branching factor raised to the number of active sites.
+    $$
+    \forall U \in \Omega, \quad | \{ U' \mid U \xrightarrow{\mathcal{U}} U' \} | \le b^{s_t}
+    $$
 
-$$|\Omega_{t+1}| \le |\Omega_t| \cdot b^{s_t}$$
+2.  **Holographic Surface Scaling ($\delta$):** The **Bousso Bound** restricts the number of active degrees of freedom to the surface area of the causal graph. This area $s_t$ scales linearly with the radius in a discrete graph growing from a root.
 
-Taking the logarithm to transform the product into a sum for entropy calculation:
+    $$
+    s_{t} \le \delta \cdot t \quad \text{where } \delta > 0
+    $$
 
-$$\log |\Omega_{t+1}| \le \log |\Omega_t| + \log(b^{s_t})$$
+**II. Derivation**
 
-$$S(U_{t+1}) \le S(U_t) + s_t \log b$$
+The cardinality of the state space at step $t+1$ is bounded by the product of the previous cardinality and the successor count defined by the branching factor and active sites.
 
-Defining the incremental entropy change $\Delta S_t = S(U_{t+1}) - S(U_t)$:
+$$
+|\Omega_{t+1}| \le |\Omega_t| \cdot b^{s_t}
+$$
 
-$$\Delta S_t \le s_t \log b$$
+Logarithmic transformation converts this product into a summation for entropy calculation:
 
-Substituting the **Holographic Surface Scaling** constraint ($s_t \le \delta t$):
+$$
+\log_2 |\Omega_{t+1}| \le \log_2 |\Omega_t| + \log_2(b^{s_t})
+$$
 
-$$\Delta S_t \le (\delta t) \log b$$
+$$
+S(U_{t+1}) \le S(U_t) + s_t \log_2 b
+$$
 
-**III. The Cumulative Summation**
+Let $\Delta S_t = S(U_{t+1}) - S(U_t)$. Substitution of the **Holographic Surface Scaling** constraint yields the explicit bound:
 
-The total entropy at time $T$ is the sum of the initial entropy and all incremental changes up to $T$.
+$$
+\Delta S_t \le (\delta t) \log_2 b
+$$
 
-$$S(U_T) = S(U_0) + \sum_{t=0}^{T-1} \Delta S_t$$
+**III. Accumulation**
 
-**Base Case:** The initial state $U_0$ is the unique primordial vacuum.
-$$|\Omega_0| = 1 \implies S(U_0) = 0$$
+The total entropy at time $T$ is the sum of the initial entropy and all incremental changes.
 
-Substituting the bound for $\Delta S_t$:
+$$
+S(U_T) = S(U_0) + \sum_{t=0}^{T-1} \Delta S_t
+$$
 
-$$S(U_T) \le 0 + \sum_{t=0}^{T-1} (\delta t \log b)$$
+The unique primordial vacuum at $t=0$ establishes the **Base Case**:
 
-Factoring out the time-independent constants $C = \delta \log b$:
+$$
+|\Omega_0| = 1 \implies S(U_0) = 0
+$$
 
-$$S(U_T) \le C \sum_{t=0}^{T-1} t$$
+Substitution of the derived bound for $\Delta S_t$ into the cumulative sum produces:
 
-**IV. Algebraic Resolution**
+$$
+S(U_T) \le 0 + \sum_{t=0}^{T-1} (\delta t \log_2 b)
+$$
 
-We evaluate the arithmetic series $\sum_{t=0}^{T-1} t$.
-Using the summation formula $\sum_{i=0}^{n} i = \frac{n(n+1)}{2}$ with $n = T-1$:
+Factoring out the time-independent constants $C = \delta \log_2 b$ isolates the arithmetic series:
 
-$$\sum_{t=0}^{T-1} t = \frac{(T-1)((T-1)+1)}{2}$$
+$$
+S(U_T) \le C \sum_{t=0}^{T-1} t
+$$
 
-$$\sum_{t=0}^{T-1} t = \frac{(T-1)T}{2}$$
+**IV. Resolution and Conclusion**
 
-$$\sum_{t=0}^{T-1} t = \frac{T^2 - T}{2}$$
+The arithmetic series evaluates via the standard summation formula with $n = T-1$:
 
-Substituting this result back into the entropy inequality:
+$$
+\sum_{t=0}^{T-1} t = \frac{(T-1)((T-1)+1)}{2}
+$$
 
-$$S(U_T) \le C \cdot \left( \frac{T^2 - T}{2} \right)$$
+$$
+\sum_{t=0}^{T-1} t = \frac{(T-1)T}{2}
+$$
 
-$$S(U_T) \le \frac{\delta \log b}{2} (T^2 - T)$$
+$$
+\sum_{t=0}^{T-1} t = \frac{T^2 - T}{2}
+$$
 
-**V. Asymptotic Analysis**
+Substitution of this result back into the entropy inequality yields:
 
-For large $T$, the quadratic term $T^2$ dominates the linear term $T$.
-$$T^2 - T < T^2 \quad \text{for } T > 1$$
+$$
+S(U_T) \le C \cdot \left( \frac{T^2 - T}{2} \right)
+$$
 
-Thus, the upper bound is strictly quadratic:
+$$
+S(U_T) \le \frac{\delta \log_2 b}{2} (T^2 - T)
+$$
 
-$$S(U_{t_L}) \le \mathcal{O}(t_L^2)$$
+For $T > 1$, the quadratic term strictly dominates the linear term, such that $T^2 - T < T^2$. This dominance relation establishes the upper bound:
 
-This confirms that given finite local branching and holographic area scaling, the total information content of the universe remains finite for any finite logical time $t_L$.
+$$
+S(U_T) < \frac{\delta \log_2 b}{2} T^2
+$$
+
+We conclude that the information content growth is bounded by a quadratic function of logical time:
+
+$$
+S(U_{t_L}) \le \mathcal{O}(t_L^2)
+$$
 
 Q.E.D.
 :::
 
+
 ### 1.2.4 Lemma: Backward Accumulation {#1.2.4}
 
-:::info[**Impossibility of Infinite Backward Accumulation dictated by Thermodynamic and Memory Limits**]
+:::info[**Exclusion of Unbounded Past Direction**]
 
-It is asserted that a temporal domain extending to $t_L \to -\infty$ (an Infinite Past) necessitates either an infinite accumulation of entropy or an infinite memory capacity to maintain state distinctness across the unbounded interval. Both conditions violate the Finite Information Substrate lemma [(§1.2.3)](#1.2.3). Therefore, the domain of $t_L$ cannot be unbounded in the past direction; the timeline must possess a finite origin.
+Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the Finite Information Substrate [(§1.2.3)](#1.2.3).
 
-### 1.2.4.1 Proof: Divergence of Accumulation {#1.2.4.1}
+### 1.2.4.1 Proof: Backward Accumulation {#1.2.4.1}
 
-:::tip[**Demonstration of Entropy Divergence within Irreversible Infinite Pasts**]
+:::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
 
-**I. The Infinite Past Hypothesis**
+**I. Setup and Assumptions**
 
-Let the temporal domain be unbounded in the past direction, $T = \mathbb{Z}_{\le 0}$.
-Let the history of the universe be the infinite sequence of states $\mathcal{H} = \{ \dots, U_{-n}, \dots, U_{-1}, U_0 \}$.
-We analyze the information content $S(U_0)$ under two exhaustive dynamical regimes.
+Let the temporal domain be unbounded in the past direction, denoted $T = \mathbb{Z}_{\le 0}$. Let the history of the universe be the infinite sequence of states $\mathcal{H} = \{ \dots, U_{-n}, \dots, U_{-1}, U_0 \}$.
 
 **II. Case A: Irreversible Dynamics**
 
-Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermodynamics.
-Let $\Delta S_k = S(U_{k+1}) - S(U_k)$ be the entropy production at step $k$.
+Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermodynamics. Let $\Delta S_k = S(U_{k+1}) - S(U_k)$ denote the entropy production at step $k$.
 
 1.  **Thermodynamic Positivity:**
-    For non-equilibrium evolution involving coarse-graining or erasure, the expected entropy production is strictly positive.
-    $$\mathbb{E}[\Delta S_k] = \mu > 0$$
-    The fluctuations are bounded by the finite substrate [(§1.2.3)](#1.2.3).
-    $$\text{Var}(\Delta S_k) = \sigma^2 < \infty$$
+    For non-equilibrium evolution involving coarse-graining or erasure, the expected entropy production is strictly positive:
+
+    $$
+    \mathbb{E}[\Delta S_k] = \mu > 0
+    $$
+
+    The fluctuations are bounded by the Finite Information Substrate [(§1.2.3)](#1.2.3):
+
+    $$
+    \text{Var}(\Delta S_k) = \sigma^2 < \infty
+    $$
 
 2.  **Cumulative Summation:**
-    The total entropy at the present $t=0$ is the accumulation of all prior productions. Let $S_n$ denote the sum over the past $n$ steps.
-    $$S_n = \sum_{k=-n}^{-1} \Delta S_k$$
+    The total entropy at the present $t=0$ is the accumulation of all prior productions. Let $S_n$ denote the sum over the past $n$ steps:
+
+    $$
+    S_n = \sum_{k=-n}^{-1} \Delta S_k
+    $$
 
 3.  **Probabilistic Divergence:**
-    We apply Chebyshev's Inequality to bound the deviation of the time-averaged entropy production from the mean $\mu$.
+    We apply Chebyshev's Inequality to bound the deviation of the time-averaged entropy production from the mean $\mu$:
 
     $$
     \mathbb{P}\left( \left| \frac{S_n}{n} - \mu \right| > \epsilon \right) \leq \frac{\sigma^2}{n \epsilon^2}
     $$
 
-    Taking the limit as $n \to \infty$, the probability of deviation vanishes.
+    The limit $n \to \infty$ drives the probability of deviation to zero:
 
     $$
     \lim_{n \to \infty} \mathbb{P}\left( \left| \frac{S_n}{n} - \mu \right| > \epsilon \right) = 0
     $$
 
-    This implies almost sure convergence of the sum to the linear growth trend.
+    This implies almost sure convergence of the sum to the linear growth trend:
 
     $$
     S(U_0) \approx \lim_{n \to \infty} n\mu = \infty
     $$
 
 4.  **Contradiction:**
-    The divergence $S(U_0) \to \infty$ violates the finite information bound [(§1.2.3)](#1.2.3).
+    The divergence $S(U_0) \to \infty$ is excluded by the Finite Information Substrate [(§1.2.3)](#1.2.3).
 
 **III. Case B: Reversible Dynamics**
 
 Let $\mathcal{U}$ be a strictly unitary (bijective) operator.
-$$U_{t+1} = \mathcal{U}(U_t) \iff U_t = \mathcal{U}^{-1}(U_{t+1})$$
+
+$$
+U_{t+1} = \mathcal{U}(U_t) \iff U_t = \mathcal{U}^{-1}(U_{t+1})
+$$
 
 1.  **Injectivity of History:**
-    For the history to be non-cyclic, the mapping from time to state must be injective.
-    $$\forall t_a, t_b \in T, \quad t_a \neq t_b \implies U_{t_a} \neq U_{t_b}$$
+    The requirement of a non-cyclic history implies injectivity of the mapping from time to state:
+
+    $$
+    \forall t_a, t_b \in T, \quad t_a \neq t_b \implies U_{t_a} \neq U_{t_b}
+    $$
 
 2.  **Information Preservation:**
-    In a deterministic reversible system, the present state $U_0$ must encode the unique trajectory of the past to satisfy unitarity.
-    Let $\Delta I_k$ be the unique information bit distinguishing state $U_{-k}$ from any other state in the sequence.
-    $$\Delta I_k \ge 1 \text{ bit}$$
+    In a deterministic reversible system, unitarity requires that the present state $U_0$ encode the unique trajectory of the past. Let $\Delta I_k$ denote the unique information bit distinguishing state $U_{-k}$ from any other state in the sequence:
+
+    $$
+    \Delta I_k \ge 1 \text{ bit}
+    $$
 
 3.  **Capacity Aggregation:**
-    The total information capacity required for $U_0$ to distinguish an infinite set of unique predecessors is the sum of these contributions.
+    The total information capacity required for $U_0$ to distinguish an infinite set of unique predecessors is the sum of these contributions:
 
     $$
     I(U_0) \ge \sum_{k=1}^{\infty} \Delta I_{-k}
     $$
+
+    We evaluate the sum:
 
     $$
     I(U_0) \ge \sum_{k=1}^{\infty} 1 = \infty
     $$
 
 4.  **Contradiction:**
-    An infinite information capacity $I(U_0) = \infty$ violates the finite bound on state space cardinality [(§1.2.3)](#1.2.3).
+    An infinite information capacity $I(U_0) = \infty$ is excluded by the Finite Information Substrate [(§1.2.3)](#1.2.3).
 
 **IV. Conclusion**
 
-Both dynamical regimes necessitate an infinite information content in the present state $U_0$ given an infinite past.
-Since $S(U_0)$ is finite [(§1.2.3)](#1.2.3), the hypothesis $T = \mathbb{Z}_{\le 0}$ is false.
-The temporal domain must be bounded below by a finite origin.
+Both dynamical regimes necessitate an infinite information content in the present state $U_0$ given an infinite past. We conclude that the temporal domain is bounded by a finite origin.
 
 Q.E.D.
 :::
 
-### 1.2.5 Lemma: Poincaré-Acyclic Contradiction {#1.2.5}
+### 1.2.5 Lemma: Finite State Recurrence {#1.2.5}
 
-:::info[**Incompatibility of Infinite Pasts with Acyclicity under Finite State Space Constraints**]
+:::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
 
-Within a state space of finite cardinality, an infinite temporal duration necessitates the recurrence of states (Poincaré Recurrence). Such recurrence implies the existence of a closed causal loop $U_a \to \dots \to U_a$. This condition violates the Axiom of Acyclicity, which governs the causal graph. Consequently, an infinite past is incompatible with acyclic causality in a finite system.
+Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating the axiom of Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1).
 
-### 1.2.5.1 Proof: Poincaré Recurrence {#1.2.5.1}
+### 1.2.5.1 Proof: Finite State Recurrence {#1.2.5.1}
 
-:::tip[**Demonstration of Inevitable Causal Loops by Poincaré Recurrence**]
+:::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
 
-**I. The Finitude of the Configuration Space**
+**I. Setup and Assumptions**
 
-Let $\Omega$ be the universal configuration space of physically admissible states.
-From the Finite Information Substrate lemma [(§1.2.3)](#1.2.3), the information content is bounded by the holographic surface area.
-Therefore, the cardinality of the state space is strictly finite:
+Let $\Omega$ denote the universal configuration space of admissible states. Assume the cardinality of this state space is strictly finite:
 
 $$
 |\Omega| = N < \infty
 $$
 
-**II. The Infinite Trajectory Hypothesis**
+**II. The Infinite Past Hypothesis**
 
-Assume the temporal domain is unbounded in the future direction ($t \to \infty$).
-Let the trajectory of the universe be represented as a sequence of states indexed by logical time:
-
-$$
-\mathcal{T} = (U_0, U_1, U_2, \dots)
-$$
-
-Consider a finite subsequence of this trajectory with length $N+1$:
+Assume the temporal domain extends to the infinite past. Let the history of the universe correspond to a sequence of states indexed by non-positive logical time:
 
 $$
-\mathcal{T}_{sub} = (U_0, U_1, \dots, U_N)
+\mathcal{T} = (\dots, U_{-2}, U_{-1}, U_0)
 $$
 
-The set of time indices for this subsequence is $T = \{0, 1, \dots, N\}$.
+Consider a finite subsequence of this history with length $N+1$:
 
 $$
-|T| = N + 1
+\mathcal{T}_{sub} = (U_{-N}, \dots, U_0)
 $$
 
-**III. Application of the Dirichlet (Pigeonhole) Principle**
+Let $T = \{-N, \dots, 0\}$ denote the set of time indices for this subsequence, such that $|T| = N + 1$.
 
-We define a mapping function $f: T \to \Omega$ such that $f(t) = U_t$.
-We compare the cardinalities of the domain and codomain:
+**III. Application of the Dirichlet Principle**
 
-1.  **Domain:** $|T| = N + 1$
-2.  **Codomain:** $|\Omega| = N$
-
-Since $|T| > |\Omega|$, the mapping $f$ cannot be injective.
-By the Dirichlet Principle, there must exist at least two distinct time indices $t_a, t_b \in T$ such that:
-
-$$
-t_a < t_b \quad \text{and} \quad f(t_a) = f(t_b)
-$$
-
-Thus, the system returns to an identical state:
+Let $f: T \to \Omega$ define the mapping $f(t) = U_t$. Comparison of the domain cardinality $|T| = N + 1$ and the codomain cardinality $|\Omega| = N$ reveals that the mapping cannot be injective. The Dirichlet (Pigeonhole) Principle implies the existence of at least two distinct time indices $t_a, t_b \in T$ with $t_a < t_b$ such that the system occupies identical states:
 
 $$
 U_{t_a} = U_{t_b}
@@ -723,26 +743,25 @@ $$
 
 **IV. Deterministic Evolution and Cycle Formation**
 
-Let $\mathcal{U}$ be the deterministic evolution operator such that $U_{t+1} = \mathcal{U}(U_t)$.
-Since $U_{t_a} = U_{t_b}$, their successors must be identical:
+Let $\mathcal{U}$ denote the deterministic evolution operator satisfying $U_{t+1} = \mathcal{U}(U_t)$. The identity of the states $U_{t_a}$ and $U_{t_b}$ implies the identity of their successors:
 
 $$
 \mathcal{U}(U_{t_a}) = \mathcal{U}(U_{t_b}) \implies U_{t_a+1} = U_{t_b+1}
 $$
 
-By induction, for all $k \ge 0$:
-
-$$
-U_{t_a+k} = U_{t_b+k}
-$$
-
-The trajectory does not progress to new states indefinitely but enters a periodic cycle of length $P = t_b - t_a$:
+Mathematical induction extends this identity to all subsequent steps $k \ge 0$, establishing $U_{t_a+k} = U_{t_b+k}$. The trajectory enters a periodic cycle of length $P = t_b - t_a$:
 
 $$
 C = (U_{t_a}, U_{t_a+1}, \dots, U_{t_b-1})
 $$
 
-The causal structure becomes:
+
+
+This recurrence establishes the following closed causal structure:
+
+$$
+U_{t_b-1} \to U_{t_b} \equiv U_{t_a}
+$$
 
 $$
 U_{t_a} \to U_{t_a+1} \to \dots \to U_{t_b-1} \to U_{t_a}
@@ -750,14 +769,7 @@ $$
 
 **V. Contradiction with Acyclicity**
 
-The existence of the cycle $C$ implies that the state $U_{t_a}$ is a causal ancestor of itself.
-
-$$
-U_{t_a} \prec U_{t_a}
-$$
-
-This relation violates the **Axiom of Acyclicity**, which strictly forbids transitive self-reference in the causal graph.
-Therefore, the premise of an infinite trajectory within a finite state space is incompatible with acyclic causality.
+The existence of the cycle $C$ implies that the state $U_{t_a}$ constitutes a causal ancestor of itself ($U_{t_a} \prec U_{t_a}$). This transitive self-reference violates the axiom of Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1). We conclude that an infinite past acyclic trajectory is incompatible with a strictly finite configuration space.
 
 Q.E.D.
 :::
