@@ -7,7 +7,7 @@ sidebar_label: "Chapter 1: Ontology"
 
 :::info[**The Rules**]
 
-**Quantum Braid Dynamics,** ***A Computational Process*** **(QBD)** adopts a template explicitly engineered for auditability and formal verification. Every section is identified, every statement proven is globally unique. An auditable format ensures ideas survive translation into pure logic that can be parsed, producing a physical theory that is verifiable without ambiguity.
+**Quantum Braid Dynamics,** ***A Computational Process*** **(QBD)** adopts a template explicitly engineered for auditability. Every section is identified by object type, every statement proven is globally unique. This format ensures ideas become pure logic that can be parsed, producing a physical theory that is unambiguous and well defined. We acknowledge the use of tools in translating original quantum information research into a formal mathematical framework and are thankful to the machinery of computation that enabled this monograph to be analytically rigorous, empirically verified, and vividly explained.
 
 The Foundational Principles begins the construction of the physical universe as a deductive chain, moving from abstract requirements to concrete emergence. The abstract substrate of existence is defined in Chapter 1. Strict axiomatic constraints enforce causality and prevent logical paradoxes in Chapter 2, distinguishing the physically possible from the mathematically constructible. The unique initial state of the universe is revealed in Chapter 3 as a topological structure poised for evolution which is animated by a dynamical engine in Chapter 4, a universal constructor driven by information-theoretic potentials that dictate how connections evolve. The aggregate action of this engine yields a stable, macroscopic phase of spacetime through thermodynamic equilibrium in Chapter 5, bridging the gap between discrete graph operations and continuous geometry.
 
@@ -123,8 +123,7 @@ Axioms themselves are divided into two categories:
 
   * **Logical axioms**: Statements that are considered universally true within the framework of logic itself, often taking the form of tautologies. An example is the schema $ (A \land B) \to A $, which holds regardless of the specific content of propositions $A$ and $B$. These axioms are foundational to reasoning in any domain.
 
-  * **Non-logical axioms** (also known as postulates or proper axioms): Substantive assertions that define a particular theory or domain of inquiry, such as geometry or set theory. The statement $a + 0 = a$ is not a universal truth of logic but a non-logical axiom defining a property of integer arithmetic.
-    The focus of this analysis is the justification for adopting such non-logical axioms.
+  * **Non-logical axioms** (also known as postulates or proper axioms): Substantive assertions that define a particular theory or domain of inquiry, such as geometry or set theory. The statement $a + 0 = a$ is a non-logical axiom defining a property of integer arithmetic.
 
 **The Nature of Formal Proof**
 
@@ -400,7 +399,9 @@ Any attempt to merge or conflate these two temporal parameters would reintroduce
 
 $t_L \in \mathbb{N}_0$ constitutes the discrete, non-negative integer that systematically labels the successive global states of the universe as they arise under the repeated action of $\mathcal{U}$. Formally, this labeling traces the iterative progression of the universe's configuration through the following infinite but forward-directed chain:
 
-$$U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\mathcal{U}} \dots \xrightarrow{\mathcal{U}} U_{t_L}$$
+$$
+U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\mathcal{U}} \dots \xrightarrow{\mathcal{U}} U_{t_L}
+$$
 
 In this sequence, each application of $\mathcal{U}$ transforms the prior state $U_{t_L}$ into the subsequent state $U_{t_L + 1}$, preserving the necessary constraints while introducing the potential for structural evolution. $t_L$ thereby imposes a strict total order on the entire sequence of states, establishing an unequivocal precedence relation such that for any $i < j$, the state $U_i$ precedes $U_j$ without ambiguity or overlap. Consequently, $t_L$ emerges as the sole known parameter capable of distinguishing “before” from “after” at the most fundamental level of ontological description, serving as the primitive arbiter of temporal succession in the absence of any deeper or more elemental mechanism.
 
@@ -437,7 +438,9 @@ In the canonical formulation of standard General Relativity, the cosmological co
 
 This canonical structure achieves the restoration of unitarity to the formalism of quantum cosmology, which otherwise succumbs to the atemporal constraints of general covariance. In the conventional approach to quantum gravity, $\hat{H}$ imposes a primary constraint demanding $\hat{H}\Psi = 0$ on the physical state space, thereby projecting the dynamics onto a subspace where time evolution vanishes identically and yielding the infamous frozen 'Block Universe,' in which all configurations coexist in a static, changeless totality devoid of intrinsic becoming **[(Rovelli & Smolin, 1990)](/monograph/appendices/a-references#A.55)**. By contrast, the incorporation of the dynamical time variable $\mathcal{T}$ within Unimodular Gravity perturbs the underlying constraint algebra, elevating the temporal progression to a first-class dynamical principle. The resultant equation of motion assumes the canonical form of a genuine Schrödinger equation parametrized by $\mathcal{T}$:
 
-$$i \hbar \frac{\partial \Psi}{\partial \mathcal{T}} = \hat{H} \Psi$$
+$$
+i \hbar \frac{\partial \Psi}{\partial \mathcal{T}} = \hat{H} \Psi
+$$
 
 This evolution equation governs a state vector $|\Psi(\mathcal{T})\rangle$ that advances unitarily with respect to the affine parameter $\mathcal{T}$, preserving probabilities and inner products across increments in $\mathcal{T}$ while permitting the coherent accumulation of phases and amplitudes. The parameter $\mathcal{T}$ thereby incarnates the physical referent of the Global Sequencer within the gravitational sector: it operates in a "de-parameterized" mode, signifying its independence from the arbitrary local coordinate systems (or gauges) adopted by internal observers, who perceive only the relational $t_{phys}$ derived from light signals and rod-and-clock measurements.
 
@@ -1044,7 +1047,7 @@ $H$ defines as an intrinsic attribute of the edge isomorphism class, not as a mu
 
 :::tip[**Assignment of Immutable Creation Timestamps by the Global Sequencer**]
 
-Time in Quantum Braid Dynamics operates not as an independent coordinate dimension but as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the current state of the Sequencer mechanism, defined in [(§1.2.2)](#1.2.2):
+Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the current state of the Sequencer mechanism, defined in [(§1.2.2)](#1.2.2):
 
 $$ H(e) = t_L. $$
 
@@ -1086,7 +1089,7 @@ An **Abstract Event** is a vertex $v \in V$. The identity of $v$ is determined s
 
 This definition resolves the background dependence paradoxes inherent in classical physics by locating identity strictly within the links rather than the nodes. The abstract event diverges fundamentally from a "point" in classical or Riemannian geometry. A geometric point derives identity from extrinsic coordinates embedded within a pre-existing background manifold, which serves as the substantive stage upon which dynamics unfold. In contrast, the abstract event in Quantum Braid Dynamics admits no such background. Its identity emerges purely relationally, defined exhaustively by the directed edges incident to it: outgoing edges designate it as cause, incoming as effect, with the degree sequence and timestamp offsets providing the sole descriptors.
 
-For instance, in a minimal universe comprising two connected events $A \to B$, event $A$ acquires no absolute position or intrinsic marker. Event $A$ manifests relationally as "the direct cause of $B$," while event $B$ manifests as "the direct effect of $A$." The absence of self-attributes ensures that physics originates not from substantival properties of the events but from the topology and dynamical evolution of the relations interconnecting them. This relational ontology aligns the foundational structure with the background-independent imperatives of quantum gravity theories, where spacetime arises as a derived construct from causal sets or spin networks rather than a primitive arena. The explicit exclusion of coordinates precludes substantivalism, enforcing diffeomorphism invariance at the discrete level: relabeling vertices preserves the causal skeleton, with isomorphism classes under edge-preserving maps defining equivalence. This shift from substantive objects to relational structures not only evades the hole argument but also embeds the theory's discreteness, where events nucleate via edge additions, inheriting timestamps and influences solely from predecessors.
+For instance, in a minimal universe comprising two connected events $A \to B$, event $A$ acquires no absolute position or intrinsic marker. Event $A$ manifests relationally as "the direct cause of $B$," while event $B$ manifests as "the direct effect of $A$." The absence of self-attributes ensures that physics originates from the topology and dynamical evolution of the relations interconnecting them. This relational ontology aligns the foundational structure with the background-independent imperatives of quantum gravity theories, where spacetime arises as a derived construct from causal sets or spin networks rather than a primitive arena. The explicit exclusion of coordinates precludes substantivalism, enforcing diffeomorphism invariance at the discrete level: relabeling vertices preserves the causal skeleton, with isomorphism classes under edge-preserving maps defining equivalence. This shift from substantive objects to relational structures not only evades the hole argument but also embeds the theory's discreteness, where events nucleate via edge additions, inheriting timestamps and influences solely from predecessors.
 :::
 
 ### 1.3.4 Theorem: Monotonicity of History {#1.3.4}
@@ -1095,7 +1098,9 @@ For instance, in a minimal universe comprising two connected events $A \to B$, e
 
 The assignment of timestamps ensures that $H$ induces a well-founded partial order on $E$. Specifically, for any newly created edge $e = (u, v)$, the timestamp satisfies the local recurrence relation:
 
-$$ H(e) = 1 + \max\left( \lbrace H(e') \mid e' = (w, u) \in E \rbrace \cup \lbrace0\rbrace \right), $$
+$$
+H(e) = 1 + \max\left( \lbrace H(e') \mid e' = (w, u) \in E \rbrace \cup \lbrace0\rbrace \right)
+$$
 
 where the maximum ranges over all edges $e'$ incoming to the source vertex $u$. If $u$ admits no incoming edges (i.e., the set is empty, as occurs for isolated vertices in the initial vacuum state), the convention $\max(\emptyset) = 0$ applies, guaranteeing that primordial edges receive $H(e) = 1$. This recurrence enforces strict monotonicity of causality: no effect precedes its cause in the timestamp ordering, preserving the forward arrow of logical time across all transformations **[(Lamport, 1978)](/monograph/appendices/a-references#A.39)**.
 

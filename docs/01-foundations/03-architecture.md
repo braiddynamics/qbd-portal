@@ -55,7 +55,7 @@ The derivation of the vacuum structure relies upon the following established def
 
 ### 3.1.2 Definitions: Vacuum Topology {#3.1.2}
 
-:::info[**Formal Definition of Topological Invariants within the Initial State**]
+:::tip[**Formal Definition of Topological Invariants within the Initial State**]
 
 The following topological invariants and structural properties are strictly defined for the initial state $G_0$, establishing the vocabulary required to describe the unique topology of the graph at $t_L=0$:
 
@@ -123,39 +123,47 @@ The proof proceeds through a sequence of exclusions, carving the unique vacuum s
 
 ### 3.1.4 Lemma: Existence and Finiteness {#3.1.4}
 
-:::info[**Constructive Existence and Finite Cardinality of the Initial State established by Order Theory**]
+:::info[**Existence and Finiteness of the Initial Vertex Set**]
 
-The universe possesses an initial state $G_0$ at $t_L = 0$ [(§1.2.7)](ontology#1.2.7). The vertex set $V_0$ satisfies the condition $|V_0| < \infty$. This finiteness is a necessary consequence of the well-foundedness of the Effective Influence relation [(§2.6.1)](axioms#2.6.1), as an infinite vertex set in the initial state would permit the construction of infinite descending causal chains, which violates the lower bound on Logical Time.
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.2.7)](ontology#1.2.7). Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded [(§2.6.1)](axioms#1.6.1).
 
-### 3.1.4.1 Proof: Well-Foundedness {#3.1.4.1}
+### 3.1.4.1 Proof: Existence and Finiteness {#3.1.4.1}
 
-:::tip[**Verification of State Existence using the History Map and Order Finiteness**]
+:::tip[**Order-Theoretic Proof by Contradiction**]
 
 **I. Axiomatic Premises**
 
-The **Dual Time Architecture** specifies the logical time domain $T_L \cong \mathbb{N}_0$ [(§1.2.1)](ontology#1.2.1).
-The **Acyclic Effective Causality** requires that the Effective Influence Relation $\le$ constitutes a strict partial order on the vertex set $V$ [(§2.7.1)](axioms#2.7.1).
-A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element. This property strictly prohibits infinite descending chains.
+Let the logical time domain satisfy $T_L \cong \mathbb{N}_0$ [(§1.2.1)](ontology#1.2.1). Let the Effective Influence relation $\le$ constitute a strict partial order on the vertex set $V$ [(§2.7.1)](axioms#1.7.1). A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element.
 
-**II. Proof by Contradiction**
+**II. Hypothesis**
 
-Assume the existence of an infinite vertex set at the initial state:
-$$|V_0| = \infty$$
+Assume the existence of an infinite vertex set at the initial state.
 
-The axioms permit the construction of a sequence $\{v_i\}_{i=0}^{\infty}$ such that each element exerts causal influence on the predecessor:
-$$\dots \le v_n \le \dots \le v_1 \le v_0$$
-This sequence constitutes an infinite descending chain within the order $\le$.
+$$
+|V_0| = \infty
+$$
 
-**III. Violation**
+**III. Derivation of Contradiction**
 
-The existence of the infinite chain violates the well-foundedness requirement of the strict partial order.
-Therefore, the assumption $|V_0| = \infty$ leads to a contradiction.
+The infinite set permits the construction of a sequence $\{v_i\}_{i=0}^{\infty}$ such that each element exerts influence on its predecessor.
+
+$$
+\dots \le v_n \le \dots \le v_1 \le v_0
+$$
+
+
+
+This sequence forms an infinite descending chain within the order $\le$. The existence of such a chain violates the well-foundedness condition required for the effective influence relation.
 
 **IV. Conclusion**
 
-The vertex set $V_0$ must be finite.
-$$|V_0| < \infty$$
-By extension, the edge set $E_0$ is also finite.
+The contradiction establishes that the vertex set $V_0$ is finite.
+
+$$
+|V_0| < \infty
+$$
+
+The edge set $E_0$ is also finite.
 
 Q.E.D.
 
@@ -170,40 +178,53 @@ If the set of initial events $V_0$ were infinite; one could potentially construc
 
 ### 3.1.5 Lemma: Exclusion of Reflexivity and Reciprocity {#3.1.5}
 
-:::info[**Prohibition of Self-Loops and Reciprocal Pairs under the Causal Primitive**]
+:::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 
-The initial state $G_0$ contains neither Self-Loops [(§2.2.2)](axioms#2.2.2) nor pairs of reciprocal edges forming 2-Cycles [(§1.5.3)](ontology#1.5.3). The existence of such structures is explicitly prohibited by the Causal Primitive [(§2.1.1)](axioms#2.1.1), which mandates strict Irreflexivity and Asymmetry for all valid edges within the Universal State Space.
+Let $G_0$ denote the initial state of the universe [(§1.2.7)](ontology#1.2.7). Then the existence of Self-Loops [(§2.2.2)](axioms#1.2.2) and reciprocal edge pairs forming 2-Cycles [(§1.5.3)](ontology#1.5.3) is excluded [(§2.1.1)](axioms#1.1.1).
 
-### 3.1.5.1 Proof: Exclusion of Short Cycles {#3.1.5.1}
+### 3.1.5.1 Proof: Exclusion of Reflexivity and Reciprocity {#3.1.5.1}
 
-:::tip[**Demonstration of Incompatibility with Irreflexivity and Asymmetry through Topological Analysis**]
+:::tip[**Topological Analysis of Irreflexivity and Asymmetry Constraints**]
 
 **I. The Causal Primitive**
 
-The **Directed Causal Link** defines the elementary relation as strictly irreflexive and asymmetric [(§2.1.1)](axioms#2.1.1).
+Let **The Directed Causal Link** define the elementary relation as strictly irreflexive and asymmetric [(§2.1.1)](axioms#1.1.1).
 
-**II. Case A: Reflexivity Violation (L=1)**
+**II. Reflexivity Analysis (L=1)**
 
 Assume the existence of a self-loop $e = (v, v)$.
-The effective influence relation $\le$ includes all direct connections.
-$$e \in E \implies v \le v$$
-This relation violates the condition of Irreflexivity enforced by the Strict Partial Order Axiom [(§2.7.1)](axioms#2.7.1).
 
-**III. Case B: Asymmetry Violation (L=2)**
+
+
+The effective influence relation $\le$ includes all direct connections.
+
+$$
+e \in E \implies v \le v
+$$
+
+This relation violates the condition of Irreflexivity enforced by **Acyclic Effective Causality** [(§2.7.1)](axioms#1.7.1).
+
+**III. Asymmetry Analysis (L=2)**
 
 Assume the existence of a reciprocal pair of edges $e_1 = (u, v)$ and $e_2 = (v, u)$.
-Transitivity of influence implies:
-$$(u \le v) \land (v \le u) \implies (u \le u) \land (v \le v)$$
-This relation violates both Asymmetry and Irreflexivity.
+
+
+
+The transitivity of influence implies the conjunction:
+
+$$
+(u \le v) \land (v \le u) \implies (u \le u) \land (v \le v)
+$$
+
+This condition violates both Asymmetry and Irreflexivity.
 
 **IV. Geometric Constraint**
 
-The **Principle of Unique Causality** restricts the creation of geometric cycles exclusively to the rewrite rule $\mathcal{R}$ [(§2.3.3)](axioms#2.3.3).
-Pre-existing cycles of length $L=1$ or $L=2$ constitute geometric anomalies existing prior to dynamical evolution.
+The **Principle of Unique Causality** restricts the creation of geometric cycles exclusively to the rewrite rule $\mathcal{R}$ [(§2.3.3)](axioms#1.3.3). Pre-existing cycles of length $L=1$ or $L=2$ constitute geometric anomalies preceding dynamical evolution.
 
 **V. Conclusion**
 
-The initial graph $G_0$ must contain no cycles of length $L \le 2$.
+The initial graph $G_0$ contains no cycles of length $L \le 2$.
 
 Q.E.D.
 
@@ -221,43 +242,56 @@ By strictly forbidding these structures; we enforce the **Thermodynamic Arrow** 
 
 ### 3.1.6 Lemma: Exclusion of Cyclic Paths {#3.1.6}
 
-:::info[**Prohibition of Directed Cycles of Length Three or Greater enforced by Timestamp Monotonicity**]
+:::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
 
-The initial state $G_0$ contains no Directed Cycles of length $L \ge 3$. The existence of such cycles is prohibited by the strict partial order enforced by the History Mapping [(§1.3.4)](ontology#1.3.4), as the traversal of any closed path would require the existence of a timestamp $t$ such that $t < t$, a logical contradiction.3$.
+Let $G_0$ denote the initial state. Then the existence of Directed Cycles of length $L \ge 3$ is excluded by the **Monotonicity of History** [(§1.3.4)](ontology#1.3.4).
 
-### 3.1.6.1 Proof: Infinite Girth {#3.1.6.1}
-
-:::tip[**Derivation of Cycle Non-Existence from the Strict Partial Order of Effective Influence**]
+### 3.1.6.1 Proof: Exclusion of Cyclic Paths {#3.1.6.1}
+:::tip[**Order-Theoretic Derivation of Cycle Non-Existence**]
 
 **I. Hypothesis**
 
 Assume the graph $G_0$ contains a directed cycle $C$ of length $L \geq 3$:
-$$C = (v_0, v_1, \dots, v_{L-1}, v_0)$$
-where $\forall i, (v_i, v_{i+1}) \in E$.
+
+$$
+C = (v_0, v_1, \dots, v_{L-1}, v_0)
+$$
+
+where $(v_i, v_{i+1}) \in E$ for all $i$.
 
 **II. Timestamp Analysis**
 
-The **Acyclic Effective Causality** enforces strictly increasing timestamps along every directed path [(§2.7.1)](axioms#2.7.1).
-Applying the timestamp function $H$ to the edges of $C$ yields a chain of inequalities:
-$$H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{L-1}, v_0)$$
+The **Monotonicity of History** [(§1.3.4)](ontology#1.3.4) enforces strictly increasing timestamps along every directed path via the recurrence relation $H(e) = 1 + \max(H_{incoming})$. The application of the timestamp function $H$ to the edges of $C$ yields a chain of inequalities:
+
+$$
+H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{L-1}, v_0)
+$$
 
 **III. The Cycle Paradox**
 
 Transitivity of the order $<$ implies:
-$$H(v_0, v_1) < H(v_{L-1}, v_0)$$
-However, the closing edge $(v_{L-1}, v_0)$ requires its timestamp to exceed the predecessor.
-Tracing the full loop necessitates:
-$$H(v_0, v_1) < H(v_0, v_1)$$
-This statement asserts that a real number is strictly less than itself.
+
+$$
+H(v_0, v_1) < H(v_{L-1}, v_0)
+$$
+
+However, the closing edge $(v_{L-1}, v_0)$ strictly succeeds its predecessor in the chain. The closure of the loop necessitates:
+
+$$
+H(v_0, v_1) < H(v_0, v_1)
+$$
+
+
+
+This inequality asserts that a real number is strictly less than itself.
 
 **IV. Contradiction**
 
-The inequality $x < x$ is false. The assumption of the existence of $C$ yields a logical contradiction.
-Furthermore, the existence of a cycle $L \ge 3$ implies pre-existing geometry, violating the constructive definition of the **Geometric Quantum** [(§2.3.1)](axioms#2.3.1).
+The inequality $x < x$ is false. The assumption of the existence of $C$ yields a logical contradiction. Furthermore, the existence of a cycle $L \ge 3$ implies pre-existing geometry, violating the constructive definition of **Geometric Constructibility** [(§2.3.1)](axioms#1.3.1).
 
 **V. Conclusion**
 
-The graph $G_0$ contains no directed cycles of any length. The girth is infinite.
+The initial graph $G_0$ contains no directed cycles of any length. We conclude that the girth is infinite.
 
 Q.E.D.
 
@@ -272,57 +306,71 @@ This lemma proves that the "Infinite Staircase" cannot exist in the vacuum. If a
 
 ### 3.1.7 Lemma: Global Acyclicity {#3.1.7}
 
-:::info[**Establishment of the Initial State as a Directed Acyclic Graph**]
+:::info[**Global Directed Acyclicity**]
 
-The initial state $G_0$ constitutes a Directed Acyclic Graph (DAG) [(§1.5.1)](ontology#1.5.1). The strict monotonicity of the vertex depth function $d_{depth}(v)$ along all directed edges precludes the formation of any closed path, as the traversal of a cycle would require the depth value to strictly increase indefinitely within a finite set of integers.
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a Directed Acyclic Graph (DAG) [(§1.5.1)](ontology#1.5.1), and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
 
-### 3.1.7.1 Proof: Depth Monotonicity {#3.1.7.1}
+### 3.1.7.1 Proof: Global Acyclicity {#3.1.7.1}
 
-:::tip[**Verification of Acyclicity through the Strict Monotonicity of the Vertex Depth Function**]
+:::tip[**Derivation of Acyclicity from Depth Monotonicity**]
 
 **I. Depth Function Definition**
 
 Let $d(v)$ denote the length of the longest directed path from a minimal root vertex to $v$.
-$$d(v) = \max \{ \text{len}(\pi) \mid \pi: \text{root} \to v \}$$
-Finiteness of $V_0$ ensures this function is well-defined.
+
+$$
+d(v) = \max \{ \text{len}(\pi) \mid \pi: \text{root} \to v \}
+$$
+
+The finiteness of the vertex set $V_0$ ensures that this function is well-defined.
 
 **II. Monotonicity Property**
 
-For every directed edge $u \to v$ in $G_0$, the depth must strictly increase.
-$$d(v) \ge d(u) + 1$$
+For every directed edge $(u, v)$ in $G_0$, the depth must strictly increase.
 
-**III. Cycle Contradiction**
+$$
+d(v) \ge d(u) + 1
+$$
 
-Assume a directed cycle $C = (v_0, v_1, \dots, v_m, v_0)$ exists.
-Traversal of the cycle generates the inequality chain:
-$$d(v_0) < d(v_1) < \dots < d(v_m) < d(v_0)$$
-This implies $d(v_0) < d(v_0)$, a contradiction.
+**III. Derivation of Contradiction**
+
+Assume the existence of a directed cycle $C = (v_0, v_1, \dots, v_m, v_0)$.
+
+
+
+The traversal of the cycle generates the inequality chain:
+
+$$
+d(v_0) < d(v_1) < \dots < d(v_m) < d(v_0)
+$$
+
+This sequence implies $d(v_0) < d(v_0)$, which constitutes a logical contradiction.
 
 **IV. Explicit Verification (Bethe Fragment)**
 
 Consider a finite construction with coordination number $k=3$ and depth 2 ($N=10$).
 
-  * **Vertex Set:** $V = \{0, \dots, 9\}$.
-  * **Edge Set:** $E = \{(0,1), (0,2), (0,3), (1,4), (1,5), (2,6), (2,7), (3,8), (3,9)\}$.
+* **Vertex Set:** $V = \{0, \dots, 9\}$.
+* **Edge Set:** $E = \{(0,1), (0,2), (0,3), (1,4), (1,5), (2,6), (2,7), (3,8), (3,9)\}$.
+
+
 
 **Path Analysis:**
 
 1.  **Path $\pi_1 = 0 \to 1 \to 4$:**
-      * $d(0) = 0$
-      * $d(1) = 1$
-      * $d(4) = 2$
-      * Strict monotonicity holds: $0 < 1 < 2$.
+    * $d(0) = 0$
+    * $d(1) = 1$
+    * $d(4) = 2$
+    * Strict monotonicity holds: $0 < 1 < 2$.
 2.  **Path $\pi_2 = 0 \to 2 \to 7$:**
-      * $d(0) = 0$
-      * $d(2) = 1$
-      * $d(7) = 2$
-      * Strict monotonicity holds.
+    * $d(0) = 0$
+    * $d(2) = 1$
+    * $d(7) = 2$
+    * Strict monotonicity holds.
 
 **V. Conclusion**
 
-The depth function provides a strictly monotonic ordering on the vertices.
-No path exists that returns to a vertex of equal or lower depth.
-The graph $G_0$ is strictly acyclic.
+The depth function provides a strictly monotonic ordering on the vertices. No path exists that returns to a vertex of equal or lower depth. We conclude that $G_0$ is strictly acyclic.
 
 Q.E.D.
 
@@ -330,7 +378,7 @@ Q.E.D.
 
 :::note[**Computational Verification of Acyclicity in Small Bethe Fragments using NetworkX Simulation**]
 
-Verification of the global causal consistency established in the Depth Monotonicity Proof [(§3.1.7.1)](#3.1.7.1) is based on the following protocols:
+Verification of the global causal consistency established in the Global Acyclicity Proof [(§3.1.7.1)](#3.1.7.1) is based on the following protocols:
 
 1.  **Construction:** The algorithm initializes a directed graph structure and iteratively constructs a "Bethe Fragment" with coordination number $k=3$ and depth 2. The logic enforces strict directionality by creating edges solely from parent nodes in layer $d$ to child nodes in layer $d+1$.
 2.  **Topological Sort:** The protocol utilizes the `networkx.is_directed_acyclic_graph` function to perform a depth-first search traversal. This function tests for the presence of back-edges that would indicate closed topological loops.
@@ -406,35 +454,35 @@ This topological feature is what gives Time its direction. Without a DAG structu
 
 ### 3.1.8 Lemma: Global Connectivity {#3.1.8}
 
-:::info[**Requirement of Weak Connectivity in the Vacuum Graph driven by Automorphism Entropy Minimization**]
+:::info[**Requirement of Weak Connectivity in the Vacuum Graph**]
 
-The initial state $G_0$ satisfies connectivity in the weak sense: the underlying undirected graph is connected. Disconnected components are prohibited because they inflate the size of the automorphism group, introducing relational distinguishability between components that violates the principle of maximum entropy for the vacuum state.
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a weakly connected graph, and disconnected configurations are excluded by **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1).
 
 ### 3.1.8.1 Proof: Minimization of Automorphisms {#3.1.8.1}
 
-:::tip[**Proof of Connectivity via the Prohibition of Automorphism Group Inflation**]
+:::tip[**Derivation of Connectivity from Causal Unity and Symmetry Constraints**]
 
-**I. Disconnected Hypothesis**
+**I. Setup and Assumptions**
 
-Assume $G_0$ constitutes a disconnected graph comprising $m \geq 2$ components $C_1, \dots, C_m$.
+Let $G_0$ constitute a disconnected graph comprising $m \geq 2$ disjoint components $C_1, \dots, C_m$.
 
-**II. Causal Order Decomposition**
+**II. Causal Analysis**
 
-The effective influence order $\le$ decomposes into independent strict partial orders on each component.
-No directed path crosses component boundaries.
-The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$.
-This decomposition violates the requirement for a single, unified causal order [(§2.7.1)](axioms#2.7.1).
+The effective influence order $\le$ decomposes into independent strict partial orders on each component. No directed path crosses component boundaries. The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$. This decomposition is excluded by **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1).
 
-**III. Automorphism Inflation**
+**III. Entropic Derivation**
 
-The automorphism group of a disconnected graph equals the direct product of the automorphism groups of its components (accounting for component permutations).
-$$|\text{Aut}(G_0)| = \left( \prod_{i=1}^m |\text{Aut}(C_i)| \right) \cdot m!$$
-This product dramatically inflates $|\text{Aut}(G_0)|$ compared to any connected graph of the same vertex count.
-The inflation creates unjustified distinguishability between components that the purely relational ontology forbids.
+The automorphism group of a disconnected graph is defined by the direct product of the component groups and the permutation group $S_m$. The cardinality evaluates to:
+
+$$
+|\text{Aut}(G_0)| = \left( \prod_{i=1}^m |\text{Aut}(C_i)| \right) \cdot m!
+$$
+
+This product implies a strict inflation of $|\text{Aut}(G_0)|$ relative to a connected graph of identical vertex count. This inflation establishes relational distinguishability between components.
 
 **IV. Conclusion**
 
-To satisfy the unified order and minimize the automorphism group, the graph $G_0$ must be weakly connected.
+We conclude that the graph $G_0$ satisfies weak connectivity.
 
 Q.E.D.
 
