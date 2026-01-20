@@ -126,7 +126,7 @@ By **Alexander's Theorem**, there exists a finite sequence of Reidemeister moves
 
 **II. Operator Mapping to Elementary Tasks**
 
-We map the topological moves to the Elementary Task Space $\mathfrak{T}$ [(§1.4.1)](/monograph/foundations/ontology#1.4.1):
+We map the topological moves to the Elementary Task Space $\mathfrak{T}$ [(§1.4.1)](/monograph/foundations/ontology/1.4/#1.4.1):
 
 1.  **Type I (Twist Removal):** A local loop corresponds to a graph cycle of length 1 ($u \to u$).
     By **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations/axioms#2.1.1), $E \cap \{(u,u)\} = \emptyset$.

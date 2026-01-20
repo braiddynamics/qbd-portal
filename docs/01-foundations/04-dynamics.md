@@ -41,7 +41,7 @@ We resolve this foundational crisis by formalizing two complementary categories 
 
 The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components:
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
-2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Paths** [(§1.5.1)](ontology#1.5.1) originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
+2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Paths** [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1) originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.9)
 
@@ -61,7 +61,7 @@ Crucially; this category acts as the "kinematic phase space" for the universe at
 :::tip[**Structure of Causal Graphs utilizing History-Preserving Embeddings**]
 
 The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the structure governing the progression of causal graphs across the domain of Logical Time.
-1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the Universal State Space [(§1.3.1)](ontology#1.3.1).
+1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the Universal State Space [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1).
 2.  **Morphisms:** A morphism $f: G \to G'$ constitutes a **History-Respecting Embedding**, defined as an injective function $f: V \to V'$ satisfying two invariant conditions:
     * **Edge Preservation:** For all $(u, v) \in E$, the image $(f(u), f(v))$ must exist in $E'$.
     * **History Preservation:** For all $(u, v) \in E$, the timestamp values must satisfy the non-decreasing inequality $H((u, v)) \leq H'((f(u), f(v)))$.
@@ -587,7 +587,7 @@ We overcome this blindness by constructing the awareness layer as a store comona
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 
 The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components:
-1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with History [(§1.3.1)](ontology#1.3.1), and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the Geometric Check Operators [(§3.5.5)](architecture#3.5.5).
+1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with History [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1), and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the Geometric Check Operators [(§3.5.5)](architecture#3.5.5).
 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding [(§4.1.3)](#4.1.3), and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation.
 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$.
 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
@@ -1204,7 +1204,7 @@ Setting $T = \ln 2$ renders the vacuum "permeable" to geometry. It allows causal
 
 :::info[**Quantification of the Entropic Gain from Cycle Formation**]
 
-The formation of a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) from a compliant 2-Path [(§1.5.2)](ontology#1.5.2) necessitates a specific increase in the local relational entropy of the graph. This increase is quantified exactly as $\Delta S = \ln 2$ nats, corresponding to the doubling of the path multiplicity in the local phase space (bifurcation from a unique open path to a dual closed/open configuration).
+The formation of a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) from a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2) necessitates a specific increase in the local relational entropy of the graph. This increase is quantified exactly as $\Delta S = \ln 2$ nats, corresponding to the doubling of the path multiplicity in the local phase space (bifurcation from a unique open path to a dual closed/open configuration).
 
 ### 4.4.2.1 Proof: Microstate Bifurcation {#4.4.2.1}
 
@@ -1715,7 +1715,7 @@ Consider the physical implications: High stress (indicated by negative syndromes
 
 :::tip[**Constructive Operation Proposing Edge Additions**]
 
-The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant 2-Paths [(§1.5.2)](ontology#1.5.2) and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the Catalytic Tension Factor [(§4.5.2)](#4.5.2).
+The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant 2-Paths [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2) and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the Catalytic Tension Factor [(§4.5.2)](#4.5.2).
 
 ### 4.5.3.1 Commentary: The Generative Drive {#4.5.3.1}
 
@@ -1882,7 +1882,7 @@ We resolve this by defining the evolution operator $\mathcal{U}$ as the sequenti
 
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all axiomatically compliant graphs [(§1.3.1)](ontology#1.3.1) and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all axiomatically compliant graphs [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1) and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
 
 $$
 \mathcal{U} = \mathcal{S} \circ \mathcal{M} \circ \mathcal{R}^\flat \circ \mathcal{P}(R_T)

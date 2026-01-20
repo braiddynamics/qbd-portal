@@ -473,7 +473,7 @@ No state $|n\rangle$ with eigenvalue $n \ge 2$ exists within the fundamental Hil
 
 **III. Information Bound**
 
-The **Finite Information Substrate** lemma [(§1.2.3)](/monograph/foundations/ontology#1.2.3) bounds the information density of the graph.
+The **Finite Information Substrate** lemma [(§1.2.3)](/monograph/foundations/ontology/1.2/#1.2.3) bounds the information density of the graph.
 Encoding a higher occupancy number $n$ requires expanding the local Hilbert space dimension to $d \ge n+1$.
 Such an expansion requires additional degrees of freedom not present in the elementary $V \times V$ topology.
 Furthermore, the **Universal Evolution Operator** $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1) acts via Pauli-$X$ bit-flips, which preserve the binary dimension.

@@ -41,12 +41,12 @@ We resolve this foundational crisis by identifying the finite rooted tree as the
 
 The derivation of the vacuum structure relies upon the following established definitions and axioms:
 
-1.  **Logical Time ($t_L$):** A discrete, monotonically increasing sequence $\mathbb{N}_0$ indexing the evolution of the graph [(§1.2.1)](ontology#1.2.1).
-2.  **The History Mapping ($H$):** A function $H: E \to \mathbb{N}$ assigning a strictly immutable creation timestamp to every edge, enforcing the order of operations [(§1.3.1)](ontology#1.3.1).
+1.  **Logical Time ($t_L$):** A discrete, monotonically increasing sequence $\mathbb{N}_0$ indexing the evolution of the graph [(§1.2.1)](/monograph/foundations/ontology/1.1/#1.2.1).
+2.  **The History Mapping ($H$):** A function $H: E \to \mathbb{N}$ assigning a strictly immutable creation timestamp to every edge, enforcing the order of operations [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1).
 3.  **Fundamental Graph Structures:**
-      * **Directed Acyclic Graph (DAG):** A graph containing no directed cycles [(§1.5.1)](ontology#1.5.1).
-      * **Bipartite Graph:** A graph where vertices define two disjoint sets ($V_A, V_B$) with edges strictly connecting $V_A$ to $V_B$ [(§1.5.1)](ontology#1.5.1).
-      * **The 2-Path:** A simple directed path of length 2 ($v \to w \to u$), serving as the minimal unit of transitive mediation [(§1.5.2)](ontology#1.5.2).
+      * **Directed Acyclic Graph (DAG):** A graph containing no directed cycles [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
+      * **Bipartite Graph:** A graph where vertices define two disjoint sets ($V_A, V_B$) with edges strictly connecting $V_A$ to $V_B$ [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
+      * **The 2-Path:** A simple directed path of length 2 ($v \to w \to u$), serving as the minimal unit of transitive mediation [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2).
 4.  **Axiom 1 (Causal Primitive):** The directed edge $u \to v$ is strictly irreflexive and asymmetric [(§2.1.1)](axioms#2.1.1).
 5.  **Axiom 2 (Geometric Primitive):** Valid physical geometry forms exclusively via the closure of directed 3-cycles [(§2.3.1)](axioms#2.3.1).
 6.  **Axiom 3 (Acyclic Effective Causality):** The effective influence relation $\le$ forms a strict partial order on the vertices [(§2.7.1)](axioms#2.7.1).
@@ -76,7 +76,7 @@ It is asserted that the causal graph possesses a unique initial state at Logical
 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$).
 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$.
 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root.
-5.  **Acyclicity:** The graph contains no Directed Cycles [(§1.5.3)](ontology#1.5.3) and no redundant parallel paths [(§2.3.3)](axioms#2.3.3).
+5.  **Acyclicity:** The graph contains no Directed Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) and no redundant parallel paths [(§2.3.3)](axioms#2.3.3).
 This structure constitutes the unique topological solution compatible with the simultaneous enforcement of the Causal Primitive [(§2.1.1)](axioms#2.1.1), Geometric Constructibility [(§2.3.1)](axioms#2.3.1), and Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1).
 
 ### 3.1.3.1 Commentary: Logic of the Topology Argument {#3.1.3.1}
@@ -125,7 +125,7 @@ The proof proceeds through a sequence of exclusions, carving the unique vacuum s
 
 :::info[**Existence and Finiteness of the Initial Vertex Set**]
 
-Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.2.7)](ontology#1.2.7). Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded [(§2.6.1)](axioms#1.6.1).
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded [(§2.6.1)](axioms#1.6.1).
 
 ### 3.1.4.1 Proof: Existence and Finiteness {#3.1.4.1}
 
@@ -133,7 +133,7 @@ Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.
 
 **I. Axiomatic Premises**
 
-Let the logical time domain satisfy $T_L \cong \mathbb{N}_0$ [(§1.2.1)](ontology#1.2.1). Let the Effective Influence relation $\le$ constitute a strict partial order on the vertex set $V$ [(§2.7.1)](axioms#1.7.1). A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element.
+Let the logical time domain satisfy $T_L \cong \mathbb{N}_0$ [(§1.2.1)](/monograph/foundations/ontology/1.2/#1.2.1). Let the Effective Influence relation $\le$ constitute a strict partial order on the vertex set $V$ [(§2.7.1)](axioms#1.7.1). A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element.
 
 **II. Hypothesis**
 
@@ -180,7 +180,7 @@ If the set of initial events $V_0$ were infinite; one could potentially construc
 
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 
-Let $G_0$ denote the initial state of the universe [(§1.2.7)](ontology#1.2.7). Then the existence of Self-Loops [(§2.2.2)](axioms#1.2.2) and reciprocal edge pairs forming 2-Cycles [(§1.5.3)](ontology#1.5.3) is excluded [(§2.1.1)](axioms#1.1.1).
+Let $G_0$ denote the initial state of the universe [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the existence of Self-Loops [(§2.2.2)](axioms#1.2.2) and reciprocal edge pairs forming 2-Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) is excluded [(§2.1.1)](axioms#1.1.1).
 
 ### 3.1.5.1 Proof: Exclusion of Reflexivity and Reciprocity {#3.1.5.1}
 
@@ -244,7 +244,7 @@ By strictly forbidding these structures; we enforce the **Thermodynamic Arrow** 
 
 :::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
 
-Let $G_0$ denote the initial state. Then the existence of Directed Cycles of length $L \ge 3$ is excluded by the **Monotonicity of History** [(§1.3.4)](ontology#1.3.4).
+Let $G_0$ denote the initial state. Then the existence of Directed Cycles of length $L \ge 3$ is excluded by the **Monotonicity of History** [(§1.3.4)](/monograph/foundations/ontology/1.3/#1.3.4).
 
 ### 3.1.6.1 Proof: Exclusion of Cyclic Paths {#3.1.6.1}
 :::tip[**Order-Theoretic Derivation of Cycle Non-Existence**]
@@ -261,7 +261,7 @@ where $(v_i, v_{i+1}) \in E$ for all $i$.
 
 **II. Timestamp Analysis**
 
-The **Monotonicity of History** [(§1.3.4)](ontology#1.3.4) enforces strictly increasing timestamps along every directed path via the recurrence relation $H(e) = 1 + \max(H_{incoming})$. The application of the timestamp function $H$ to the edges of $C$ yields a chain of inequalities:
+The **Monotonicity of History** [(§1.3.4)](/monograph/foundations/ontology/1.3/#1.3.4) enforces strictly increasing timestamps along every directed path via the recurrence relation $H(e) = 1 + \max(H_{incoming})$. The application of the timestamp function $H$ to the edges of $C$ yields a chain of inequalities:
 
 $$
 H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{L-1}, v_0)
@@ -308,7 +308,7 @@ This lemma proves that the "Infinite Staircase" cannot exist in the vacuum. If a
 
 :::info[**Global Directed Acyclicity**]
 
-Let $G_0$ denote the initial state. Then $G_0$ constitutes a Directed Acyclic Graph (DAG) [(§1.5.1)](ontology#1.5.1), and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a Directed Acyclic Graph (DAG) [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1), and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
 
 ### 3.1.7.1 Proof: Global Acyclicity {#3.1.7.1}
 
@@ -648,7 +648,7 @@ This creates a rigid "checkerboard" structure. You are either on an Even layer (
 
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs due to Parity Mismatch**]
 
-A Bipartite Graph [(§1.5.1)](ontology#1.5.1) cannot contain odd-length cycles. Since the vacuum state $G_0$ is strictly bipartite [(§3.1.10)](#3.1.10) and the Geometric Quantum is defined as a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) (an odd length), it is topologically impossible for geometric quanta to pre-exist in the vacuum state.
+A Bipartite Graph [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1) cannot contain odd-length cycles. Since the vacuum state $G_0$ is strictly bipartite [(§3.1.10)](#3.1.10) and the Geometric Quantum is defined as a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) (an odd length), it is topologically impossible for geometric quanta to pre-exist in the vacuum state.
 
 ### 3.1.11.1 Proof: Parity Constraints {#3.1.11.1}
 
@@ -1007,7 +1007,7 @@ By enforcing **Tree Sparsity**; we ensure absolute historical clarity. Every nod
 
 :::info[**Exclusion of Trees with Insufficient Rewrite Site Density via Branching Optimization**]
 
-Every tree graph whose structure yields a strictly sub-maximal number of compliant 2-Path rewrite sites [(§1.5.2)](ontology#1.5.2) is excluded from candidacy for $G_0$. Maximization of rewrite sites is required to ensure sufficient participancy in the geometric evolution and to prevent dynamical stagnation.
+Every tree graph whose structure yields a strictly sub-maximal number of compliant 2-Path rewrite sites [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2) is excluded from candidacy for $G_0$. Maximization of rewrite sites is required to ensure sufficient participancy in the geometric evolution and to prevent dynamical stagnation.
 
 ### 3.2.6.1 Proof: Branching Optimization {#3.2.6.1}
 
@@ -1609,8 +1609,8 @@ We establish maximal parallelism as the protocol for time evolution by mandating
 
 :::tip[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
 
-The physical state of the universe at Logical Time $t$ [(§1.2.1)](ontology#1.2.1) is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$.
-1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the History Mapping [(§1.3.1)](ontology#1.3.1) and local Syndrome values [(§3.5.5)](#3.5.5).
+The physical state of the universe at Logical Time $t$ [(§1.2.1)](/monograph/foundations/ontology/1.2/#1.2.1) is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$.
+1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the History Mapping [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1) and local Syndrome values [(§3.5.5)](#3.5.5).
 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions:
     * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$.
     * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$.
@@ -2049,7 +2049,7 @@ Let $\mathcal{T}_{\text{tunnel}}$ denote a non-perturbative operator that adds a
 $$G_1 = \mathcal{T}_{\text{tunnel}}(G_0) \implies E_1 = E_0 \cup \{e_{\text{tunnel}}\}$$
 The **Hamming Distance** between the states satisfies the minimal possible increment:
 $$d_H(G_0, G_1) = |E_1| - |E_0| = 1$$
-The **Elementary Task Space** [(§1.4.1)](ontology#1.4.1) permits single-edge additions; thus, the transition barrier is kinematic, not combinatorial.
+The **Elementary Task Space** [(§1.4.1)](/monograph/foundations/ontology/1.4/#1.4.1) permits single-edge additions; thus, the transition barrier is kinematic, not combinatorial.
 
 **III. Structural Violation**
 
@@ -2082,7 +2082,7 @@ Once that edge exists; it serves as a permanent and indelible mark on the univer
 
 :::info[**Immediate Creation of Compliant Rewrite Sites by the Tunneling Event**]
 
-Given a Tunneling Event $e=(u, v)$ in $G_0$, if there exists a vertex $w \in V_0$ such that $(v, w) \in E_0$, then the directed path $(u, v, w)$ constitutes a compliant 2-Path [(§1.5.2)](ontology#1.5.2). This path satisfies the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) due to the sparsity of $G_0$ [(§3.1.3)](#3.1.3) and serves as a valid input for the rewrite rule.
+Given a Tunneling Event $e=(u, v)$ in $G_0$, if there exists a vertex $w \in V_0$ such that $(v, w) \in E_0$, then the directed path $(u, v, w)$ constitutes a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2). This path satisfies the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) due to the sparsity of $G_0$ [(§3.1.3)](#3.1.3) and serves as a valid input for the rewrite rule.
 
 ### 3.4.3.1 Proof: Site Nucleation {#3.4.3.1}
 
@@ -2358,7 +2358,7 @@ The consistency enforcement mechanism is formalized as a **Quantum Error-Correct
 
 2.  **The Hard Constraint Projectors:**
     The inviolable axioms are enforced by a set of Hermitian projection operators. A state $|\psi\rangle$ is physically valid if and only if it is annihilated by the complement of these projectors (i.e., it lies in the +1 eigenspace).
-    * **2-Cycle Projector:** For every unordered pair of vertices $\{u, v\}$, the operator $\Pi_{\text{cycle}}(u, v)$ prohibits reciprocal edges [(§1.5.3)](ontology#1.5.3):
+    * **2-Cycle Projector:** For every unordered pair of vertices $\{u, v\}$, the operator $\Pi_{\text{cycle}}(u, v)$ prohibits reciprocal edges [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3):
         $$\Pi_{\text{cycle}}(u, v) = \frac{1}{4} \left( I_{uv} I_{vu} + Z_{uv} I_{vu} + I_{uv} Z_{vu} - Z_{uv} Z_{vu} \right)$$
     * **Locality Projector:** For every ordered pair $(u, v)$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the operator $\Pi_{\text{local}}(u, v)$ prohibits edge instantiation [(§5.5.2)](thermodynamics#5.5.2):
         $$\Pi_{\text{local}}(u, v) = \frac{1}{2} \left( I_{uv} + Z_{uv} \right)$$

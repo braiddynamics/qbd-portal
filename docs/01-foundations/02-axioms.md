@@ -39,7 +39,7 @@ We resolve this foundational crisis by defining the causal primitive through the
 
 :::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 
-It is herein established that the fundamental unit of relation within the Universal State Space [(§1.3.1)](ontology#1.3.1) shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
+It is herein established that the fundamental unit of relation within the Universal State Space [(§1.3.1)](/monograph/foundations/ontology/1.3/#1.3.1) shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
 
 1.  **Strict Irreflexivity:** The relation shall not, under any circumstance, connect a vertex to itself. For every vertex $u$ contained within the set $V$, the edge $(u, u)$ is categorically excluded from the set $E$. This prohibition enforces the requirement that no event may serve as its own causal antecedent.
 2.  **Strict Asymmetry:** The relation shall not permit immediate reciprocity. For every distinct pair of vertices $u$ and $v$ contained within $V$, the existence of the direct edge $(u, v)$ within $E$ necessitates the absolute absence of the inverse edge $(v, u)$ from $E$. This prohibition enforces the local directionality of causal influence.
@@ -131,7 +131,7 @@ The demonstration proceeds by identifying a topological blind spot in the standa
 
 :::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]
 
-Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ [(§1.5.3)](ontology#1.5.3), a configuration excluded by the definition of a Directed Acyclic Graph [(§1.5.1)](ontology#1.5.1).
+Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3), a configuration excluded by the definition of a Directed Acyclic Graph [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
 
 ### 2.2.2.1 Proof: Pathology of Self-Loops {#2.2.2.1}
 
@@ -139,7 +139,7 @@ Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structur
 
 **I. The Generalized Cycle Definition**
 
-Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying two conditions [(§1.5.3)](ontology#1.5.3):
+Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying two conditions [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3):
 
 1.  **Connectivity:** $\forall i \in \{0, \dots, k-1\}, (v_i, v_{i+1}) \in E$
 2.  **Closure:** $v_0 = v_k$
@@ -164,7 +164,7 @@ The sequence $S$ satisfies the topological criteria for a cycle:
 
 **IV. Conclusion**
 
-The self-loop $e_{loop}$ satisfies the definition of a directed cycle $C_1$. We conclude that the existence of such an edge violates the acyclicity condition required for a valid causal history [(§1.5.1)](ontology#1.5.1).
+The self-loop $e_{loop}$ satisfies the definition of a directed cycle $C_1$. We conclude that the existence of such an edge violates the acyclicity condition required for a valid causal history [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
 
 Q.E.D.
 
@@ -329,7 +329,7 @@ We solve this by imposing the axiom of geometric constructibility to mandate tha
 
 The kinematic admissibility of any transformation $G \to G'$ involving the addition of an edge is restricted by the following two complementary clauses:
 
-1.  **Clause A (Positive Construction):** The formation of closed topological structures is restricted exclusively to **Geometric Quanta**, defined as Directed 3-Cycles [(§1.5.3)](ontology#1.5.3). The closure of a causal loop is permissible if and only if the resulting path sequence has a length of exactly $L=3$.
+1.  **Clause A (Positive Construction):** The formation of closed topological structures is restricted exclusively to **Geometric Quanta**, defined as Directed 3-Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3). The closure of a causal loop is permissible if and only if the resulting path sequence has a length of exactly $L=3$.
 2.  **Clause B (Negative Constraint):** The construction must adhere to the **Principle of Unique Causality (PUC)**. The instantiation of a direct edge $(u, v)$ is prohibited if there already exists a Simple Directed Path from $u$ to $v$ of length $\ell \le 2$ within the graph $G$.
 
 ### 2.3.1.1 Commentary: Argument Outline {#2.3.1.1}
@@ -424,7 +424,7 @@ Structures of length $1$ and $2$ imply logical contradictions within a directed 
 
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ [(§1.4.2)](ontology#1.4.2) is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ [(§1.4.2)](/monograph/foundations/ontology/1.4/#1.4.2) is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
 ### 2.3.3.1 Commentary: Pseudocode for PUC Check {#2.3.3.1}
 
@@ -678,7 +678,7 @@ The demonstration relies on four specific topological guarantees, each establish
 
 :::info[**Local Confluence of Overlapping Rewrite Operations**]
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant 2-Paths $P_1$ and $P_2$, satisfying The 2-Path Structure [(§1.5.2)](ontology#1.5.2). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant 2-Paths $P_1$ and $P_2$, satisfying The 2-Path Structure [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
 
 ### 2.4.2.1 Proof: Diamond Property {#2.4.2.1}
 
@@ -1437,7 +1437,7 @@ We address this inadequacy by exposing the specific failure modes of local axiom
 The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions:
 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$.
 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction.
-3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving the historical ordering [(§1.3.4)](ontology#1.3.4).
+3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving the historical ordering [(§1.3.4)](/monograph/foundations/ontology/1.3/#1.3.4).
 
 **Technical Note on Cycle Traversal:** The definition of $\le$ requires $\pi_{uv}$ to be a *simple* directed path. Consequently, a vertex sequence containing repeated nodes does not constitute a valid trajectory for the purposes of establishing effective influence.
 
@@ -1580,7 +1580,7 @@ Q.E.D.
 
 :::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 
-Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying the timestamp monotonicity constraint [(§1.3.4)](ontology#1.3.4) in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying the timestamp monotonicity constraint [(§1.3.4)](/monograph/foundations/ontology/1.3/#1.3.4) in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
 ### 2.6.5.1 Proof: Failure of Asymmetry {#2.6.5.1}
 
@@ -1822,7 +1822,7 @@ def is_path_monotone(G, path):
 
 :::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]
 
-The maintenance of Acyclic Effective Causality [(§2.7.1)](#2.7.1) mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating finite resource constraints [(§1.2.3)](ontology#1.2.3).
+The maintenance of Acyclic Effective Causality [(§2.7.1)](#2.7.1) mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating finite resource constraints [(§1.2.3)](/monograph/foundations/ontology/1.2/#1.2.3).
 
 ### 2.7.2.1 Commentary: Argument Outline {#2.7.2.1}
 

@@ -8,67 +8,67 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/foundations/ontology#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/foundations/ontology#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\models$ | Semantic entailment (truth) | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\Gamma$ | A set of premises | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\theta$ | A derived theorem | [§1.1.2](/monograph/foundations/ontology#1.1.2) |
-| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/foundations/ontology#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/foundations/ontology#1.1.3) |
-| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/foundations/ontology#1.1.3) |
-| $\perp$ | Logical contradiction | [§1.1.6](/monograph/foundations/ontology#1.1.6) |
-| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](/monograph/foundations/ontology#1.2.1) |
-| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](/monograph/foundations/ontology#1.2.1) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](/monograph/foundations/ontology#1.2.1) |
-| $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](/monograph/foundations/ontology#1.2.2) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](/monograph/foundations/ontology#1.2.2) |
-| $\hat{H}$ | Hamiltonian Operator | [§1.2.2](/monograph/foundations/ontology#1.2.2) |
-| $\Psi$ | Wavefunction of the universe | [§1.2.2](/monograph/foundations/ontology#1.2.2) |
-| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1](/monograph/foundations/ontology#1.2.2.1) |
-| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/foundations/ontology#1.2.2.2) |
-| $\mathcal{T}$ | Unimodular Time variable (Context: Gravity) | [§1.2.2.3](/monograph/foundations/ontology#1.2.2.3) |
-| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/foundations/ontology#1.2.2.3) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](/monograph/foundations/ontology#1.2.3) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](/monograph/foundations/ontology#1.2.3) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.3.1](/monograph/foundations/ontology#1.2.3.1) |
-| $b$ | Finite Branching factor | [§1.2.3.1](/monograph/foundations/ontology#1.2.3.1) |
-| $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/foundations/ontology#1.2.3.1) |
-| $\delta$ | Holographic scaling constant | [§1.2.3.1](/monograph/foundations/ontology#1.2.3.1) |
-| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.4.1](/monograph/foundations/ontology#1.2.4.1) |
-| $\mu$ | Mean of entropy production | [§1.2.4.1](/monograph/foundations/ontology#1.2.4.1) |
-| $\sigma^2$ | Variance of entropy production | [§1.2.4.1](/monograph/foundations/ontology#1.2.4.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.2.4.1](/monograph/foundations/ontology#1.2.4.1) |
-| $\mathcal{T}$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.5.1](/monograph/foundations/ontology#1.2.5.1) |
-| $\mathcal{H}$ | History sequence (set of operations) | [§1.2.6.1](/monograph/foundations/ontology#1.2.6.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/foundations/ontology#1.2.6.1) |
-| $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/foundations/ontology#1.2.6.1) |
-| $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $T$ | Temperature | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $c$ | Speed of light | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $T_{\mu\nu}$ | Stress-Energy Tensor | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/foundations/ontology#1.2.6.2) |
-| $U_0$ | The unique initial state | [§1.2.7](/monograph/foundations/ontology#1.2.7) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/foundations/ontology#1.2.7.2) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $v, u, w$ | Individual vertices | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $e$ | Individual edge $(u, v)$ | [§1.3.1](/monograph/foundations/ontology#1.3.1) |
-| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4.1](/monograph/foundations/ontology#1.3.4.1) |
-| $\mathfrak{T}$ | Elementary Task Space | [§1.4.1](/monograph/foundations/ontology#1.4.1) |
-| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.4.2](/monograph/foundations/ontology#1.4.2) |
-| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.4.2](/monograph/foundations/ontology#1.4.2) |
-| $\Delta F$ | Change in Free Energy | [§1.4.5](/monograph/foundations/ontology#1.4.5) |
-| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1](/monograph/foundations/ontology#1.5.1) |
-| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/foundations/ontology#1.2.5.1) |
+| $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/foundations/ontology/1.1/#1.1.1) |
+| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/foundations/ontology/1.1/#1.1.1) |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\models$ | Semantic entailment (truth) | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\Gamma$ | A set of premises | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\theta$ | A derived theorem | [§1.1.2](/monograph/foundations/ontology/1.1/#1.1.2) |
+| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/foundations/ontology/1.1/#1.1.3) |
+| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/foundations/ontology/1.1/#1.1.3) |
+| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/foundations/ontology/1.1/#1.1.3) |
+| $\perp$ | Logical contradiction | [§1.1.6](/monograph/foundations/ontology/1.1/#1.1.6) |
+| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](/monograph/foundations/ontology/1.2/#1.2.1) |
+| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](/monograph/foundations/ontology/1.2/#1.2.1) |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](/monograph/foundations/ontology/1.2/#1.2.1) |
+| $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
+| $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
+| $\hat{H}$ | Hamiltonian Operator | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
+| $\Psi$ | Wavefunction of the universe | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
+| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1](/monograph/foundations/ontology/1.2/#1.2.2.1) |
+| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/foundations/ontology/1.2/#1.2.2.2) |
+| $\mathcal{T}$ | Unimodular Time variable (Context: Gravity) | [§1.2.2.3](/monograph/foundations/ontology/1.2/#1.2.2.3) |
+| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/foundations/ontology/1.2/#1.2.2.3) |
+| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](/monograph/foundations/ontology/1.2/#1.2.3) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](/monograph/foundations/ontology/1.2/#1.2.3) |
+| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
+| $b$ | Finite Branching factor | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
+| $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
+| $\delta$ | Holographic scaling constant | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
+| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\mu$ | Mean of entropy production | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\sigma^2$ | Variance of entropy production | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\Delta I_k$ | Information bit contribution | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
+| $\mathcal{T}$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
+| $\mathcal{H}$ | History sequence (set of operations) | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
+| $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
+| $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
+| $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $T$ | Temperature | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $c$ | Speed of light | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $T_{\mu\nu}$ | Stress-Energy Tensor | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $U_0$ | The unique initial state | [§1.2.7](/monograph/foundations/ontology/1.2/#1.2.7) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/foundations/ontology/1.2/#1.2.7.2) |
+| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $v, u, w$ | Individual vertices | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $e$ | Individual edge $(u, v)$ | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
+| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4.1](/monograph/foundations/ontology/1.3/#1.3.4.1) |
+| $\mathfrak{T}$ | Elementary Task Space | [§1.4.1](/monograph/foundations/ontology/1.4/#1.4.1) |
+| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.4.2](/monograph/foundations/ontology/1.4/#1.4.2) |
+| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.4.2](/monograph/foundations/ontology/1.4/#1.4.2) |
+| $\Delta F$ | Change in Free Energy | [§1.4.5](/monograph/foundations/ontology/1.4/#1.4.5) |
+| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1](/monograph/foundations/ontology/1.5/#1.5.1) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/foundations/axioms#2.1.1) |
 | $E$ | The set of edges within the graph | [§2.1.1](/monograph/foundations/axioms#2.1.1) |
 | $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/foundations/axioms#2.6.1) |
