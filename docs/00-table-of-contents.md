@@ -10,10 +10,10 @@ sidebar_position: 0
 
 ## 📚 Assembled Table of Contents
 
-* [**Introduction: The Search for the Primitive**](/monograph/foundations/intro)
+* [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
 
 ### 1. The Foundational Principles (The Rules)
-* [Chapter 1: Substrate (Ontology)](/monograph/foundations/ontology)
+* [Chapter 1: Substrate (Ontology)](/monograph/category/chapter-1-ontology)
 * [Chapter 2: Axioms (Constraints)](/monograph/foundations/axioms)
 * [Chapter 3: Architecture (Object Model)](/monograph/foundations/architecture)
 * [Chapter 4: Dynamics (The Engine)](/monograph/foundations/dynamics)
