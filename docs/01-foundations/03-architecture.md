@@ -125,7 +125,7 @@ The proof proceeds through a sequence of exclusions, carving the unique vacuum s
 
 :::info[**Existence and Finiteness of the Initial Vertex Set**]
 
-Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded [(§2.6.1)](/monograph/foundations/axioms/1.6/#1.6.1).
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded [(§2.6.1)](/monograph/foundations/axioms/2.6/#2.6.1).
 
 ### 3.1.4.1 Proof: Existence and Finiteness {#3.1.4.1}
 
@@ -133,7 +133,7 @@ Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ [(§1.
 
 **I. Axiomatic Premises**
 
-Let the logical time domain satisfy $T_L \cong \mathbb{N}_0$ [(§1.2.1)](/monograph/foundations/ontology/1.2/#1.2.1). Let the Effective Influence relation $\le$ constitute a strict partial order on the vertex set $V$ [(§2.7.1)](/monograph/foundations/axioms/1.7/#1.7.1). A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element.
+Let the logical time domain satisfy $T_L \cong \mathbb{N}_0$ [(§1.2.1)](/monograph/foundations/ontology/1.2/#1.2.1). Let the Effective Influence relation $\le$ constitute a strict partial order on the vertex set $V$ [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1). A strict partial order satisfies well-foundedness if and only if every non-empty subset contains a minimal element.
 
 **II. Hypothesis**
 
@@ -180,7 +180,7 @@ If the set of initial events $V_0$ were infinite; one could potentially construc
 
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 
-Let $G_0$ denote the initial state of the universe [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the existence of Self-Loops [(§2.2.2)](/monograph/foundations/axioms/1.2/#1.2.2) and reciprocal edge pairs forming 2-Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) is excluded [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1).
+Let $G_0$ denote the initial state of the universe [(§1.2.7)](/monograph/foundations/ontology/1.2/#1.2.7). Then the existence of Self-Loops [(§2.2.2)](/monograph/foundations/axioms/2.2/#2.2.2) and reciprocal edge pairs forming 2-Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) is excluded [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1).
 
 ### 3.1.5.1 Proof: Exclusion of Reflexivity and Reciprocity {#3.1.5.1}
 
@@ -202,7 +202,7 @@ $$
 e \in E \implies v \le v
 $$
 
-This relation violates the condition of Irreflexivity enforced by **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/1.7/#1.7.1).
+This relation violates the condition of Irreflexivity enforced by **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 
 **III. Asymmetry Analysis (L=2)**
 

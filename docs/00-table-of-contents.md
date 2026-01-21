@@ -14,7 +14,7 @@ sidebar_position: 0
 
 ### 1. The Foundational Principles (The Rules)
 * [Chapter 1: Substrate (Ontology)](/monograph/category/chapter-1-ontology)
-* [Chapter 2: Axioms (Constraints)](/monograph/foundations/axioms)
+* [Chapter 2: Axioms (Constraints)](/monograph/foundations/chapter-2-axioms)
 * [Chapter 3: Architecture (Object Model)](/monograph/foundations/architecture)
 * [Chapter 4: Dynamics (The Engine)](/monograph/foundations/dynamics)
 * [Chapter 5: Thermodynamics (Geometrogenesis)](/monograph/foundations/thermodynamics)
