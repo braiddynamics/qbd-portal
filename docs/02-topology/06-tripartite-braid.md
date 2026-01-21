@@ -90,7 +90,7 @@ If a subgraph admits a sequence of local operations that reduces its complexity 
 
 :::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
 
-The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture#3.5.7). This stability derives from the **Architectural Barrier** [(§6.4.1)](#6.4.1), wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local rewrite rule $\mathcal{R}$ [(§2.7.2)](/monograph/foundations/axioms#2.7.2). Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed deletion mechanism $J_{out}$ [(§5.2.5)](/monograph/foundations/thermodynamics#5.2.5).
+The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture#3.5.7). This stability derives from the **Architectural Barrier** [(§6.4.1)](#6.4.1), wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local rewrite rule $\mathcal{R}$ [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2). Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed deletion mechanism $J_{out}$ [(§5.2.5)](/monograph/foundations/thermodynamics#5.2.5).
 
 
 ### 6.1.2.1 Argument Outline: Logic of the Necessity Chain {#6.1.2.1}
@@ -112,7 +112,7 @@ Finally, we synthesize these dynamics to prove that **Stability** is not an intr
 
 :::info[**Decomposition of Unknotted Excitations via Local Rewrite Operations**]
 
-Any localized subgraph $\xi$ characterized by topological triviality, defined by the condition that the embedding of $\xi$ is ambient isotopic to the unknot (Jones polynomial $V_\xi(t) = 1$), constitutes a **Locally Reducible** structure. A finite, computable sequence of local rewrite operations $\mathcal{S} = \{r_1, \dots, r_k\} \subset \mathcal{R}$ transforms $\xi$ into a set of disjoint, non-interacting 3-cycles without violating the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) or requiring global coordination.
+Any localized subgraph $\xi$ characterized by topological triviality, defined by the condition that the embedding of $\xi$ is ambient isotopic to the unknot (Jones polynomial $V_\xi(t) = 1$), constitutes a **Locally Reducible** structure. A finite, computable sequence of local rewrite operations $\mathcal{S} = \{r_1, \dots, r_k\} \subset \mathcal{R}$ transforms $\xi$ into a set of disjoint, non-interacting 3-cycles without violating the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) or requiring global coordination.
 
 ### 6.1.3.1 Proof: Reducibility Sequence {#6.1.3.1}
 
@@ -129,12 +129,12 @@ By **Alexander's Theorem**, there exists a finite sequence of Reidemeister moves
 We map the topological moves to the Elementary Task Space $\mathfrak{T}$ [(§1.4.1)](/monograph/foundations/ontology/1.4/#1.4.1):
 
 1.  **Type I (Twist Removal):** A local loop corresponds to a graph cycle of length 1 ($u \to u$).
-    By **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations/axioms#2.1.1), $E \cap \{(u,u)\} = \emptyset$.
+    By **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1), $E \cap \{(u,u)\} = \emptyset$.
     The operator $\mathcal{T}_{del}$ must immediately excise any such edge to satisfy the axiom.
 
 2.  **Type II (Bubble Removal):** A bigon corresponds to two distinct directed paths $\pi_1, \pi_2$ between vertices $u$ and $v$.
     Condition: $\ell(\pi_1) \le 2$ and $\ell(\pi_2) \le 2$.
-    The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) forbids multiple paths of length $\le 2$.
+    The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) forbids multiple paths of length $\le 2$.
     Action: The operator $\mathcal{T}_{del}$ removes the redundant edge, reducing the edge count $|\xi|$.
 
 3.  **Type III (Triangle Slide):** Moving a strand across a crossing corresponds to a sequence of 3-cycle formations and deletions.
@@ -171,7 +171,7 @@ Q.E.D.
 
 Lemma 6.1.3 translates the abstract Reidemeister moves of knot theory into concrete thermodynamic processes within the causal substrate. In standard topology, a Type II move represents an equivalence between a looped strand and a straight one. However, within the dynamical framework of the Causal Graph, this equivalence breaks symmetry; the straight strand represents a lower-entropy, lower-energy configuration. The "bubble", defined as two distinct paths connecting the same vertices $u$ and $v$, physically represents a redundancy in the causal history. It implies that information traveled from cause to effect via two distinguishable trajectories simultaneously.
 
-The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) exerts a relentless selection pressure against such redundancies. The vacuum operates under a principle of parsimony; it seeks to eliminate duplicate information channels. When the rewrite rule encounters a bubble, the deletion operator identifies the redundancy and excises one of the paths. This action constitutes a relaxation of the graph toward its ground state, analogous to a soap film minimizing its surface area to reduce surface tension. Therefore, trivial knots do not merely persist until an accident destroys them; the physics of the vacuum actively drives them toward dissolution. The system systematically smooths out unnecessary complexity, ensuring that only those structures which incorporate complexity as a fundamental, non-redundant feature of their topology (i.e., prime knots) can endure against the smoothing pressure.
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) exerts a relentless selection pressure against such redundancies. The vacuum operates under a principle of parsimony; it seeks to eliminate duplicate information channels. When the rewrite rule encounters a bubble, the deletion operator identifies the redundancy and excises one of the paths. This action constitutes a relaxation of the graph toward its ground state, analogous to a soap film minimizing its surface area to reduce surface tension. Therefore, trivial knots do not merely persist until an accident destroys them; the physics of the vacuum actively drives them toward dissolution. The system systematically smooths out unnecessary complexity, ensuring that only those structures which incorporate complexity as a fundamental, non-redundant feature of their topology (i.e., prime knots) can endure against the smoothing pressure.
 :::
 
 ### 6.1.4 Lemma: Catalyzed Instability {#6.1.4}
@@ -475,8 +475,8 @@ We solve this selection problem by deriving the prime tripartite braid as the in
 
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
 
-1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the Geometric Primitive [(§2.3.1)](/monograph/foundations/axioms#2.3.1) and maintains the causal orientation mandated by Axiom 1 [(§2.1.1)](/monograph/foundations/axioms#2.1.1).
-2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3), yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
+1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the Geometric Primitive [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and maintains the causal orientation mandated by Axiom 1 [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1).
+2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
 3.  **Algebraic Generation:** The configuration generates the non-abelian Braid Group on three strands, denoted $B_3$, which satisfies the Yang-Baxter equation $b_1 b_2 b_1 = b_2 b_1 b_2$ and embeds the Special Unitary algebra $\mathfrak{su}(3)$ via three-dimensional fundamental representations.
 4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ [(§3.5.1.1)](/monograph/foundations/architecture#3.5.1.1), characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
 
@@ -538,7 +538,7 @@ It is asserted that the stable, first-generation elementary fermions are topolog
 
 1.  **Lower Bound Exclusion:** Configurations with fewer than three ribbons ($n < 3$) are excluded on grounds of Topological Instability or Algebraic Insufficiency, wherein $n=1$ structures are reducible via local operations [(§6.2.4)](#6.2.4) and $n=2$ structures generate purely abelian algebras incapable of supporting Quantum Chromodynamics [(§6.2.5)](#6.2.5).
 2.  **Upper Bound Exclusion:** Configurations with greater than three ribbons ($n > 3$) are excluded on grounds of Entropic Parsimony, as such structures incur excess topological complexity costs $C[\beta] > 3$ that suppress their formation probability relative to the ground state of three ribbons within the equilibrium vacuum density $\rho_3^* \approx 0.03$ [(§5.4.1)](/monograph/foundations/thermodynamics#5.4.1).
-3.  **Triality Mandate:** The $n=3$ configuration constitutes the unique solution satisfying the 3-cycle primitive [(§2.3.2)](/monograph/foundations/axioms#2.3.2), providing the necessary basis for three color charges and the anomaly coefficient cancellation $A(3) + A(\bar{3}) = 0$.
+3.  **Triality Mandate:** The $n=3$ configuration constitutes the unique solution satisfying the 3-cycle primitive [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2), providing the necessary basis for three color charges and the anomaly coefficient cancellation $A(3) + A(\bar{3}) = 0$.
 
 ### 6.2.2.1 Argument Outline: Logic of the Exclusion Chain {#6.2.2.1}
 
@@ -613,7 +613,7 @@ Because the topology remains trivial, the cluster lacks the structural "interloc
 
 :::info[**Reducibility of Twisted Ribbons through Type II Reidemeister Moves**]
 
-A configuration consisting of a single framed ribbon ($n=1$) is excluded from the set of stable particles on the grounds of topological reducibility. Although such a structure may possess non-trivial writhe $w \neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) and are subsequently excised by the vacuum deletion mechanism.
+A configuration consisting of a single framed ribbon ($n=1$) is excluded from the set of stable particles on the grounds of topological reducibility. Although such a structure may possess non-trivial writhe $w \neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) and are subsequently excised by the vacuum deletion mechanism.
 
 ### 6.2.4.1 Proof: Reducibility via Formal Induction {#6.2.4.1}
 
@@ -623,7 +623,7 @@ A configuration consisting of a single framed ribbon ($n=1$) is excluded from th
 
 Let $\mathcal{C}_1$ denote the configuration space of a single framed ribbon.
 Let $k \in \mathbb{Z}$ represent the number of half-twists, yielding a writhe $w = k/2$.
-Let $N_{strain}(k)$ denote the number of **Geometric Quanta** (3-cycles) required to support the configuration under the strictures of the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3).
+Let $N_{strain}(k)$ denote the number of **Geometric Quanta** (3-cycles) required to support the configuration under the strictures of the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
 The hypothesis $N_{strain}(k) \propto k^2$ is established via mathematical induction.
 
 **II. Base Case ($k=1$)**
@@ -987,7 +987,7 @@ As complexity increases linearly, however, suppression becomes severe. The simul
 
 :::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
 
-The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics#4.5.1)) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with Axiom 2 in [(§2.3.1)](/monograph/foundations/axioms#2.3.1) and the general cycle decomposition in [(§2.4.1)](/monograph/foundations/axioms#2.4.1), where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
+The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics#4.5.1)) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with Axiom 2 in [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and the general cycle decomposition in [(§2.4.1)](/monograph/foundations/axioms/2.4/#2.4.1), where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
 
 **Step 1: Base Case ($n=0$).** Unbraided structures correspond to $n=0$. [(§6.2.3)](#6.2.3) establishes topological triviality and instability, with $\sigma = -1$ catalyzing decay.
 
@@ -1003,9 +1003,9 @@ The proof employs formal induction on the ribbon count $n$, verifying that confi
 
 **Step 7: Inductive Step.** An $n$-ribbon structure satisfies the theorem if and only if $n=3$.
 
-**Substep 7.1: For $n=3$.** Tripartite braids possess non-trivial invariants ($w \neq 0$, possible $L \neq 0$); stability derives from primeness (irreducibility, no complexity-lowering paths without axiom violation; cross-ref. [(§6.4.1)](#6.4.1)). The non-abelian $B_3$ generates $\mathfrak{su}(3)$. Minimality traces to Axiom 2 (3 as primitive). Cross-reference [(§3.5.1.1)](/monograph/foundations/architecture#3.5.1.1) positions primes as protected logical qubits, with infinite $\Delta F$ for global unbraiding per [(§2.7.2)](/monograph/foundations/axioms#2.7.2).
+**Substep 7.1: For $n=3$.** Tripartite braids possess non-trivial invariants ($w \neq 0$, possible $L \neq 0$); stability derives from primeness (irreducibility, no complexity-lowering paths without axiom violation; cross-ref. [(§6.4.1)](#6.4.1)). The non-abelian $B_3$ generates $\mathfrak{su}(3)$. Minimality traces to Axiom 2 (3 as primitive). Cross-reference [(§3.5.1.1)](/monograph/foundations/architecture#3.5.1.1) positions primes as protected logical qubits, with infinite $\Delta F$ for global unbraiding per [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2).
 
-**Substep 7.2: For $n > 3$.** Elevated $n$ contravenes simplicity (Minimal Generation Theorem mandates minimal for first generation; higher $n$ suits relics per [(§2.7.4)](/monograph/foundations/axioms#2.7.4)), though viable for unification (e.g., pentaquarks for SU(5), [(§2.7.2)](/monograph/foundations/axioms#2.7.2)).
+**Substep 7.2: For $n > 3$.** Elevated $n$ contravenes simplicity (Minimal Generation Theorem mandates minimal for first generation; higher $n$ suits relics per [(§2.7.4)](/monograph/foundations/axioms/2.7/#2.7.4)), though viable for unification (e.g., pentaquarks for SU(5), [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2)).
 
 **Step 8: Proof of $n=3$ Minimality for Non-Abelian $\mathfrak{su}(3)$ with Anomaly-Free Representations.** The value $n=3$ uniquely minimizes non-abelian $\mathfrak{su}(3)$ generation while fitting anomaly-free Standard Model fermions (cubic anomaly sum = 0).
 
@@ -1052,7 +1052,7 @@ The **Crossing Complexity**, denoted $C_C$, is defined strictly as a scalar quan
 
 :::info[**Correlation of Crossing Numbers with Geometric Quanta Count**]
 
-A crossing in a braid diagram corresponds to a specific, physical modification of the underlying causal graph. As established in the definition of the geometric quantum [(§2.3.2)](/monograph/foundations/axioms#2.3.2), a connection between two disparate points requires a mediating structure, specifically, the instantiation of a 3-cycle. Therefore, every crossing in the braid topology physically necessitates at least one new 3-cycle bridge in the graph.
+A crossing in a braid diagram corresponds to a specific, physical modification of the underlying causal graph. As established in the definition of the geometric quantum [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2), a connection between two disparate points requires a mediating structure, specifically, the instantiation of a 3-cycle. Therefore, every crossing in the braid topology physically necessitates at least one new 3-cycle bridge in the graph.
 
 Complexity scales linearly because each crossing demands a discrete, dedicated allocation of geometric quanta to sustain the causal link between the strands. There are no "economies of scale" for crossings; $N$ crossings require $N$ times the structural resources of a single crossing. The Crossing Complexity $C_C$ tallies these indispensable bridges. This metric implies that the "mass" of a particle acts, to a first approximation, as a count of the number of times its constituent ribbons interact. The inertia of the particle arises from the aggregate "cost" of maintaining these structural bridges against the vacuum's tendency to dissolve them.
 :::
@@ -1061,13 +1061,13 @@ Complexity scales linearly because each crossing demands a discrete, dedicated a
 
 :::tip[**Quadratic Contribution of Writhe imposed by Pathfinding Penalties**]
 
-The **Torsional Complexity**, denoted $C_T$, is defined strictly as a scalar quantity quadratically proportional to the Writhe $w(\beta)$ of the ribbon configuration. The value of $C_T$ is determined by the pathfinding penalties imposed by the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3), subject to the condition of **Quadratic Scaling**, wherein the complexity satisfies the relation $C_T = k_t \cdot w(\beta)^2$, with $k_t$ serving as a dimensionless scaling constant.
+The **Torsional Complexity**, denoted $C_T$, is defined strictly as a scalar quantity quadratically proportional to the Writhe $w(\beta)$ of the ribbon configuration. The value of $C_T$ is determined by the pathfinding penalties imposed by the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), subject to the condition of **Quadratic Scaling**, wherein the complexity satisfies the relation $C_T = k_t \cdot w(\beta)^2$, with $k_t$ serving as a dimensionless scaling constant.
 
 ### 6.3.2.1 Commentary: Quadratic Torsion Cost {#6.3.2.1}
 
 :::info[**Scaling of Inertial Mass derived from Pathfinding Penalties**]
 
-While crossings add mass linearly, twisting a ribbon adds mass quadratically. This distinction arises from the specific geometry of the discrete lattice. Twisting a ribbon once creates a local strain in the graph connections. A subsequent twist cannot simply be superimposed; the causal path must wind *around* the existing obstruction to avoid violating the **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which forbids cloning edges or reusing paths.
+While crossings add mass linearly, twisting a ribbon adds mass quadratically. This distinction arises from the specific geometry of the discrete lattice. Twisting a ribbon once creates a local strain in the graph connections. A subsequent twist cannot simply be superimposed; the causal path must wind *around* the existing obstruction to avoid violating the **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids cloning edges or reusing paths.
 
 Each successive unit of writhe forces the causal path to traverse an increasingly long and circuitous route through the graph to find a unique, non-cloning connection. This process resembles the winding of a rubber band; the resistance increases with each turn, and the energy stored grows as the square of the turns. The Torsional Complexity $C_T$ captures this non-linear penalty. This quadratic scaling is physically profound because it explains the vast mass gaps between fermion generations. A small arithmetic increase in the topological "winding number" (writhe) results in a geometric explosion in the inertial mass, separating the light electron from the heavy tau.
 :::
@@ -1128,7 +1128,7 @@ $$N_3(1) = 1 \cdot 1$$
 
 Assume the relation $N_3(\beta_M) = k_c \cdot M$ holds for a prime braid comprising $M$ crossings.
 The analysis proceeds to the addition of the $(M+1)$-th crossing via the operator $\mathcal{R}_{M+1}$.
-The operation $\mathcal{R}_{M+1}$ must satisfy **PUC Compliance** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which explicitly forbids the creation of redundant paths (bubbles) of length $\le 2$.
+The operation $\mathcal{R}_{M+1}$ must satisfy **PUC Compliance** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which explicitly forbids the creation of redundant paths (bubbles) of length $\le 2$.
 
 1.  **Topological Distinctness:**
     The addition of a crossing corresponds to the action of a braid group generator $\sigma_i$.
@@ -1165,7 +1165,7 @@ This linearity ensures the stability and discreteness of the mass spectrum. It i
 
 :::info[**Relationship between Writhe and Strain Energy governed by Pathfinding Limits**]
 
-The internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ scales strictly with the square of the writhe ($E_T \propto w^2$). This scaling is enforced by the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which mandates the following pathfinding constraints:
+The internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ scales strictly with the square of the writhe ($E_T \propto w^2$). This scaling is enforced by the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which mandates the following pathfinding constraints:
 1.  **Steric Hindrance:** The addition of the $(k+1)$-th unit of twist requires the formation of a causal path of length $L \propto k$ to circumnavigate the topological core formed by previous twists.
 2.  **Cumulative Summation:** The total structural resource requirement is the arithmetic sum of the linear path costs, yielding a quadratic total complexity $\sum_{i=1}^{k} i \propto k^2$.
 
@@ -1456,7 +1456,7 @@ The **Linear Barrier** is defined as the minimum computational cost required to 
 
 :::info[**Inaccessibility of Global Topology to Local Operators**]
 
-This definition formalizes the concept of the **Topological Lock**. Imagine attempting to determine if a long rope is knotted by viewing it solely through a microscope with a restricted field of view. The observer sees only straight segments; the crossings that define the knot remain outside the frame. This scenario mirrors the predicament of the local rewrite rule $\mathcal{R}$. It operates within a logarithmic horizon scale [(§2.7.2)](/monograph/foundations/axioms#2.7.2).
+This definition formalizes the concept of the **Topological Lock**. Imagine attempting to determine if a long rope is knotted by viewing it solely through a microscope with a restricted field of view. The observer sees only straight segments; the crossings that define the knot remain outside the frame. This scenario mirrors the predicament of the local rewrite rule $\mathcal{R}$. It operates within a logarithmic horizon scale [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2).
 
 Untying a prime knot requires either passing a strand physically through another (forbidden by collision) or unravelling the entire loop. Both operations necessitate global coordination, information must transmit around the entire circumference of the knot ($O(N)$ steps) to execute the move without breaking the graph connectivity. Since the local operator cannot coordinate actions beyond its horizon, the global untying operation remains "invisible" to the dynamics. The particle persists not because the energy landscape energetically favors it, but because the universe literally lacks the computational capacity to delete it locally.
 :::
@@ -1509,7 +1509,7 @@ Let the operation induce a local deformation of the path $\gamma_i \to \gamma_i 
 **III. Variation of the Invariant**
 
 The variation $\Delta L_{ij}$ under the local deformation is computed.
-Since the operator $\mathcal{R}$ enforces the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), it strictly forbids edge collisions or vertex mergers that would correspond to the singularity $\mathbf{r}_i = \mathbf{r}_j$.
+Since the operator $\mathcal{R}$ enforces the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), it strictly forbids edge collisions or vertex mergers that would correspond to the singularity $\mathbf{r}_i = \mathbf{r}_j$.
 In the absence of intersection, the variation of the Gauss integral vanishes identically due to the vector calculus identity $\nabla \cdot \left( \frac{\mathbf{r}}{r^3} \right) = 0$ (for $r \neq 0$).
 $$\Delta L_{ij} = 0$$
 

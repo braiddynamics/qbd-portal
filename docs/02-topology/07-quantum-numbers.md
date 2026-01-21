@@ -199,7 +199,7 @@ Time flows downward ($t_L$ increases).
 
 :::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]
 
-The **Physical Braid Exchange Operation** $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon. This equivalence is established by the existence of a finite, computable sequence of rewrite operations satisfying the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) that continuously deforms the exchange path into a self-twist path. The validity of this isotopy enforces the following physical consequences:
+The **Physical Braid Exchange Operation** $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon. This equivalence is established by the existence of a finite, computable sequence of rewrite operations satisfying the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) that continuously deforms the exchange path into a self-twist path. The validity of this isotopy enforces the following physical consequences:
 1.  **Invariant Preservation:** The deformation sequence preserves the global linking invariants of the braid configuration throughout the transformation.
 2.  **Phase Equality:** The topological equivalence enforces the strict equality of the quantum phase acquired during exchange $\phi_{exch}$ and the phase acquired during self-rotation $\phi_{spin}$, thereby extending the spin-statistics connection to the discrete causal graph substrate without recourse to continuum field postulates.
 
@@ -219,7 +219,7 @@ The global exchange decomposes into a finite sequence of local operations $\math
 
 1.  **Step 1: 2-Path Identification ($r_1$)**
     The system identifies a compliant 2-path $v \to w \to u$ involving the shared boundary of the ribbons.
-    By the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), this path must be unique; no alternative path of length $\le 2$ connects $v$ to $u$.
+    By the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), this path must be unique; no alternative path of length $\le 2$ connects $v$ to $u$.
     Action: $\mathcal{R}_{add}$ creates the chord $(u, v)$.
     *Topological Effect:* Creates a temporary 3-cycle bridge between the ribbons.
 
@@ -237,7 +237,7 @@ The global exchange decomposes into a finite sequence of local operations $\math
 
 Track the accumulation of geometric phase during this sequence.
 The operation $\hat{P}_{12}$ acts on the joint wavefunction.
-Unlike a simple permutation, the rewrite sequence exerts a torque on the internal framing of the ribbons due to the **Directed Causal Link** structure [(§2.1.1)](/monograph/foundations/axioms#2.1.1).
+Unlike a simple permutation, the rewrite sequence exerts a torque on the internal framing of the ribbons due to the **Directed Causal Link** structure [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1).
 Topologically, the path taken by ribbon 1 traces a helical trajectory of angle $\pi$ around ribbon 2.
 Relative to the local frame of the exchange vertex, this induces a twist.
 $$\Delta \text{Frame} = \oint_{\text{path}} \omega \cdot dl = \pi$$
@@ -423,7 +423,7 @@ We establish exclusion as a consequence of the binary saturation of causal links
 It is asserted that the simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden. This prohibition is established by the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph:
 1.  **Binary Saturation:** The occupation of a causal link $(u, v)$ by a fermion saturates the local information capacity of the edge qubit, rendering the state $|1\rangle_{uv}$.
 2.  **Topological Conflict:** The encoding of a second identical fermion within the same local manifold necessitates the activation of the reverse causal link $(v, u)$ to satisfy the requirement for distinct state identification.
-3.  **Axiomatic Violation:** The simultaneous activation of $(u, v)$ and $(v, u)$ constitutes a Directed 2-Cycle, which violates the **Causal Primitive** axiom of Asymmetry [(§2.1.1)](/monograph/foundations/axioms#2.1.1) and the **Acyclic Effective Causality** axiom of strict partial ordering [(§2.7.1)](/monograph/foundations/axioms#2.7.1).
+3.  **Axiomatic Violation:** The simultaneous activation of $(u, v)$ and $(v, u)$ constitutes a Directed 2-Cycle, which violates the **Causal Primitive** axiom of Asymmetry [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the **Acyclic Effective Causality** axiom of strict partial ordering [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 4.  **State Annihilation:** Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
 
 ### 7.2.1.1 Argument Outline: Logic of Exclusion Derivation {#7.2.1.1}
@@ -456,7 +456,7 @@ The information capacity of any directed edge $(u, v)$ within the causal graph i
 
 **I. Set-Theoretic Definition**
 
-The **Directed Causal Link** axiom [(§2.1.1)](/monograph/foundations/axioms#2.1.1) defines the edge set $E$ strictly as a subset of the Cartesian product of the vertex set $V$.
+The **Directed Causal Link** axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) defines the edge set $E$ strictly as a subset of the Cartesian product of the vertex set $V$.
 $$E \subseteq V \times V$$
 For any ordered pair of vertices $(u, v)$, the membership function $\chi_E(u, v)$ maps to the boolean set $\{0, 1\}$.
 $$\chi_E(u, v) = \begin{cases} 1 & \text{if } (u, v) \in E \\ 0 & \text{if } (u, v) \notin E \end{cases}$$
@@ -502,7 +502,7 @@ This binary nature restricts the information capacity of any local region. A pai
 
 The attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints:
 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel.
-2.  **Locality Constraint:** The Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3) and the high energy barrier for non-local connections [(§6.4.4)](tripartite-braid#6.4.4) restrict the second fermion to the immediate neighborhood of $\{u, v\}$.
+2.  **Locality Constraint:** The Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) and the high energy barrier for non-local connections [(§6.4.4)](tripartite-braid#6.4.4) restrict the second fermion to the immediate neighborhood of $\{u, v\}$.
 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$.
 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.
 
@@ -524,7 +524,7 @@ The local neighborhood $\mathcal{N}(\{u, v\})$ contains two directional slots: $
 Since $(u, v)$ is occupied, the only remaining local slot is the reverse link $(v, u)$.
 Any non-local encoding involves connecting to a third vertex $w$ to form a path $u \to w \to v$.
 By **Lemma 6.4.4** [(§6.4.4)](tripartite-braid#6.4.4), the formation of such a non-local structure constitutes a global topology change with an $O(N)$ energy barrier.
-By **Lemma 2.3.3** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), the creation of a path $u \to w \to v$ while $u \to v$ exists violates the **Principle of Unique Causality (PUC)**, triggering immediate deletion.
+By **Lemma 2.3.3** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), the creation of a path $u \to w \to v$ while $u \to v$ exists violates the **Principle of Unique Causality (PUC)**, triggering immediate deletion.
 Consequently, the system is topologically forced to utilize the reverse channel $(v, u)$ to accommodate the second particle locally.
 
 **III. The Violation State**
@@ -537,10 +537,10 @@ This constitutes a **Directed 2-Cycle** $C_2$.
 
 **IV. Axiomatic Contradiction**
 
-The **Causal Primitive** axiom [(§2.1.1)](/monograph/foundations/axioms#2.1.1) mandates strict Asymmetry:
+The **Causal Primitive** axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) mandates strict Asymmetry:
 $$\forall u, v: (u, v) \in E \implies (v, u) \notin E$$
 The state $|\psi_{AB}\rangle$ directly violates this condition.
-Furthermore, **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms#2.7.1) requires a strict partial order $\le$.
+Furthermore, **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) requires a strict partial order $\le$.
 The existence of $C_2$ implies $u \le v$ and $v \le u$, which necessitates $u=v$.
 Since the vertices are distinct ($u \neq v$), the partial order collapses.
 The state is topologically forbidden.
@@ -784,7 +784,7 @@ This blindness manifests as a symmetry. The local laws of physics must remain in
 
 The **Total Writhe** $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions:
 1.  **Type I Prohibition:** The discrete alteration of writhe ($\Delta w = \pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move.
-2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive axiom [(§2.1.1)](/monograph/foundations/axioms#2.1.1) and the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms#2.3.3).
+2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
 
 ### 7.3.4.1 Proof: Conservation Logic {#7.3.4.1}
@@ -801,9 +801,9 @@ In the discrete causal graph $\beta \subset G$, a Type I move maps a straight ri
 
 The graph-theoretic realization of a Type I kink requires specific edge configurations that violate foundational axioms:
 1.  **Self-Loop Case:** Creating a loop on a single vertex requires the edge $(v, v)$.
-    This structure violates **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations/axioms#2.1.1), which mandates that no event causes itself.
+    This structure violates **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1), which mandates that no event causes itself.
 2.  **2-Cycle Case:** Creating a minimal twist involving two vertices requires edges $(u, v)$ and $(v, u)$.
-    This structure violates **Axiom 1 (Asymmetry)** [(§2.1.1)](/monograph/foundations/axioms#2.1.1) and the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3), which forbids reciprocal causality and redundant paths.
+    This structure violates **Axiom 1 (Asymmetry)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids reciprocal causality and redundant paths.
 
 **III. Detection via Stabilizers**
 
@@ -1233,7 +1233,7 @@ This term remains strictly positive for any non-trivial knot ($N_3 \ge 1$), esta
 
 The entropy follows the Boltzmann formula $S = k_B \ln \Omega$.
 1.  **Microstate Enumeration:** A stable particle corresponds to a **Prime Braid** protected by the **QECC Codespace** $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture#3.5.7).
-2.  **Degeneracy Analysis:** The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) enforces a rigid graph structure for the minimal embedding of a prime knot. Any local deviation constitutes a high-energy excitation (logical error) that triggers the **Stabilizer Projectors** [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
+2.  **Degeneracy Analysis:** The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) enforces a rigid graph structure for the minimal embedding of a prime knot. Any local deviation constitutes a high-energy excitation (logical error) that triggers the **Stabilizer Projectors** [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
 3.  **Result:** The ground state degeneracy is exactly unity. The system does not fluctuate between equivalent microstates because the graph geometry is fixed by the minimality constraint.
     $$\Omega(\beta) = 1$$
 4.  **Entropic Nullification:**
@@ -1337,10 +1337,10 @@ $$Cost_{isolated} = N_3(A) + N_3(B) = 1 + 1 = 2$$
 Consider the ribbons arranged in a parallel configuration ($w_A = w_B = +1$) within the same local neighborhood.
 The **Universal Constructor** $\mathcal{R}$ acts on the joint vertex set $V_{AB}$.
 1.  **Shared Vertex Resource:** The bridge requires a vertex $v_{bridge}$ to close the cycle $u \to v_{bridge} \to w \to u$.
-2.  **Lattice Capacity:** The Bethe lattice geometry allows a vertex to support degree $k=3$. A single bridge vertex can sustain connections to both ribbon paths provided the paths are parallel (oriented identically) and satisfy the **Acyclicity** constraint [(§2.7.1)](/monograph/foundations/axioms#2.7.1).
+2.  **Lattice Capacity:** The Bethe lattice geometry allows a vertex to support degree $k=3$. A single bridge vertex can sustain connections to both ribbon paths provided the paths are parallel (oriented identically) and satisfy the **Acyclicity** constraint [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 3.  **Efficiency Mechanism:** The single 3-cycle $(u_A, u_B, v_{bridge})$ provides the topological support (the "pivot") for twisting both strands simultaneously.
     $$Cost_{merged} = 1$$
-    The second 3-cycle becomes redundant. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms#2.3.3) mandates the excision of the redundant path to prevent causal loops.
+    The second 3-cycle becomes redundant. The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) mandates the excision of the redundant path to prevent causal loops.
 
 **III. Limit on Sharing**
 

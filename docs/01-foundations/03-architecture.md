@@ -47,10 +47,10 @@ The derivation of the vacuum structure relies upon the following established def
       * **Directed Acyclic Graph (DAG):** A graph containing no directed cycles [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
       * **Bipartite Graph:** A graph where vertices define two disjoint sets ($V_A, V_B$) with edges strictly connecting $V_A$ to $V_B$ [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1).
       * **The 2-Path:** A simple directed path of length 2 ($v \to w \to u$), serving as the minimal unit of transitive mediation [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2).
-4.  **Axiom 1 (Causal Primitive):** The directed edge $u \to v$ is strictly irreflexive and asymmetric [(§2.1.1)](axioms#2.1.1).
-5.  **Axiom 2 (Geometric Primitive):** Valid physical geometry forms exclusively via the closure of directed 3-cycles [(§2.3.1)](axioms#2.3.1).
-6.  **Axiom 3 (Acyclic Effective Causality):** The effective influence relation $\le$ forms a strict partial order on the vertices [(§2.7.1)](axioms#2.7.1).
-7.  **Principle of Unique Causality:** Information cannot be cloned; specific paths must be unique to serve as valid candidates for interaction [(§2.3.3)](axioms#2.3.3).
+4.  **Axiom 1 (Causal Primitive):** The directed edge $u \to v$ is strictly irreflexive and asymmetric [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1).
+5.  **Axiom 2 (Geometric Primitive):** Valid physical geometry forms exclusively via the closure of directed 3-cycles [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1).
+6.  **Axiom 3 (Acyclic Effective Causality):** The effective influence relation $\le$ forms a strict partial order on the vertices [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
+7.  **Principle of Unique Causality:** Information cannot be cloned; specific paths must be unique to serve as valid candidates for interaction [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
 :::
 
 ### 3.1.2 Definitions: Vacuum Topology {#3.1.2}
@@ -76,8 +76,8 @@ It is asserted that the causal graph possesses a unique initial state at Logical
 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$).
 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$.
 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root.
-5.  **Acyclicity:** The graph contains no Directed Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) and no redundant parallel paths [(§2.3.3)](axioms#2.3.3).
-This structure constitutes the unique topological solution compatible with the simultaneous enforcement of the Causal Primitive [(§2.1.1)](axioms#2.1.1), Geometric Constructibility [(§2.3.1)](axioms#2.3.1), and Acyclic Effective Causality [(§2.7.1)](axioms#2.7.1).
+5.  **Acyclicity:** The graph contains no Directed Cycles [(§1.5.3)](/monograph/foundations/ontology/1.5/#1.5.3) and no redundant parallel paths [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
+This structure constitutes the unique topological solution compatible with the simultaneous enforcement of the Causal Primitive [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1), Geometric Constructibility [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1), and Acyclic Effective Causality [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 
 ### 3.1.3.1 Commentary: Logic of the Topology Argument {#3.1.3.1}
 
@@ -456,7 +456,7 @@ This topological feature is what gives Time its direction. Without a DAG structu
 
 :::info[**Requirement of Weak Connectivity in the Vacuum Graph**]
 
-Let $G_0$ denote the initial state. Then $G_0$ constitutes a weakly connected graph, and disconnected configurations are excluded by **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1).
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a weakly connected graph, and disconnected configurations are excluded by **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 
 ### 3.1.8.1 Proof: Minimization of Automorphisms {#3.1.8.1}
 
@@ -468,7 +468,7 @@ Let $G_0$ constitute a disconnected graph comprising $m \geq 2$ disjoint compone
 
 **II. Causal Analysis**
 
-The effective influence order $\le$ decomposes into independent strict partial orders on each component. No directed path crosses component boundaries. The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$. This decomposition is excluded by **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1).
+The effective influence order $\le$ decomposes into independent strict partial orders on each component. No directed path crosses component boundaries. The full relation $\le$ constitutes the disjoint union of the orders on the $C_i$. This decomposition is excluded by **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 
 **III. Entropic Derivation**
 
@@ -553,7 +553,7 @@ The argument rests on **Entropy Minimization**. In graph theory; symmetry is oft
 
 :::info[**Exclusion of Redundant Causal Paths and Derivation of Exact Tree Sparsity from Unique Causality**]
 
-Let $G$ represent a weakly connected DAG on $N$ vertices. If the edge count satisfies $|E| > N-1$, then $G$ necessarily contains multiple distinct directed paths between at least one pair of vertices. Such path redundancy violates the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3), which forbids the cloning of causal information. Therefore, the vacuum state must satisfy the exact sparsity condition $|E| = N-1$.
+Let $G$ represent a weakly connected DAG on $N$ vertices. If the edge count satisfies $|E| > N-1$, then $G$ necessarily contains multiple distinct directed paths between at least one pair of vertices. Such path redundancy violates the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids the cloning of causal information. Therefore, the vacuum state must satisfy the exact sparsity condition $|E| = N-1$.
 
 ### 3.1.9.1 Proof: The Tree Condition {#3.1.9.1}
 
@@ -568,7 +568,7 @@ In the directed case, this additional edge forces at least one pair of vertices 
 **II. Violation of Unique Causality**
 
 Multiple undirected paths between $u$ and $v$ imply, by orientation, either multiple directed paths from a common ancestor or the existence of colliding flows.
-Both configurations violate the **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) by creating non-unique informational paths of length $\leq 2$.
+Both configurations violate the **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) by creating non-unique informational paths of length $\leq 2$.
 
 **III. Redundancy Density**
 
@@ -648,7 +648,7 @@ This creates a rigid "checkerboard" structure. You are either on an Even layer (
 
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs due to Parity Mismatch**]
 
-A Bipartite Graph [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1) cannot contain odd-length cycles. Since the vacuum state $G_0$ is strictly bipartite [(§3.1.10)](#3.1.10) and the Geometric Quantum is defined as a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) (an odd length), it is topologically impossible for geometric quanta to pre-exist in the vacuum state.
+A Bipartite Graph [(§1.5.1)](/monograph/foundations/ontology/1.5/#1.5.1) cannot contain odd-length cycles. Since the vacuum state $G_0$ is strictly bipartite [(§3.1.10)](#3.1.10) and the Geometric Quantum is defined as a Directed 3-Cycle [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2) (an odd length), it is topologically impossible for geometric quanta to pre-exist in the vacuum state.
 
 ### 3.1.11.1 Proof: Parity Constraints {#3.1.11.1}
 
@@ -835,7 +835,7 @@ This specific structure, the finite truncation of the infinite Bethe lattice (or
 
 :::info[**Rejection of Cyclic Graphs based on Pre-Geometric Constraints**]
 
-Every graph containing a directed cycle of length greater than or equal to 3 is excluded from candidacy for the vacuum state $G_0$. This exclusion is mandated by the Axiom of Geometric Constructibility [(§2.3.1)](axioms#2.3.1), which reserves the creation of geometric quanta exclusively for the dynamical evolution process and prohibits pre-existing geometry.
+Every graph containing a directed cycle of length greater than or equal to 3 is excluded from candidacy for the vacuum state $G_0$. This exclusion is mandated by the Axiom of Geometric Constructibility [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1), which reserves the creation of geometric quanta exclusively for the dynamical evolution process and prohibits pre-existing geometry.
 
 ### 3.2.2.1 Proof: Cyclic Exclusion {#3.2.2.1}
 
@@ -843,7 +843,7 @@ Every graph containing a directed cycle of length greater than or equal to 3 is 
 
 **I. The Pre-Geometric Constraint**
 
-The **Axiom of Geometric Constructibility** [(§2.3.1)](axioms#2.3.1) mandates that the vacuum state remains strictly pre-geometric.
+The **Axiom of Geometric Constructibility** [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) mandates that the vacuum state remains strictly pre-geometric.
 
 1.  **Metric Nullity:** The state must possess no metric structure whatsoever.
 2.  **Girth Requirement:** The vacuum state must possess infinite girth.
@@ -859,14 +859,14 @@ This pre-existence directly contradicts the Axiom of Geometric Constructibility.
 
 **III. The Static Irreducibility Paradox**
 
-The **General Cycle Decomposition** [(§2.4.1)](axioms#2.4.1) demonstrates that cycles of length $L > 3$ remain dynamically reducible to compositions of 3-cycles in evolving states.
+The **General Cycle Decomposition** [(§2.4.1)](/monograph/foundations/axioms/2.4/#2.4.1) demonstrates that cycles of length $L > 3$ remain dynamically reducible to compositions of 3-cycles in evolving states.
 In the static vacuum state $G_0$, however, no dynamical reduction mechanism operates.
 Any such cycle would therefore remain irreducible in the initial state.
 This irreducibility violates the primitive status that the Axiom of Geometric Constructibility assigns exclusively to controlled 3-cycles.
 
 **IV. The Causal Order Violation**
 
-The **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1) requires that the effective influence relation $\le$ forms a strict partial order on the entire vertex set.
+The **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) requires that the effective influence relation $\le$ forms a strict partial order on the entire vertex set.
 The strict partial order forbids cycles in mediated paths of length greater than or equal to 2 with strictly increasing timestamps.
 Any cycle of length $L \ge 3$ induces such a forbidden mediated cycle in the effective influence relation.
 $$\exists \pi = (v_0, \dots, v_{L-1}, v_0) \implies \tau(v_0) < \tau(v_0)$$
@@ -879,7 +879,7 @@ Q.E.D.
 
 :::info[**Specific Rejection of Self-Loops and 2-Cycles from the Candidate Set by Primitive Constraints**]
 
-Every graph containing a Self-Loop or a reciprocal 2-Cycle is excluded from candidacy for $G_0$. This exclusion is strictly mandated by the Causal Primitive [(§2.1.1)](axioms#2.1.1). Directed 2-cycle receives exclusion from candidacy for the vacuum state $G_0$.
+Every graph containing a Self-Loop or a reciprocal 2-Cycle is excluded from candidacy for $G_0$. This exclusion is strictly mandated by the Causal Primitive [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1). Directed 2-cycle receives exclusion from candidacy for the vacuum state $G_0$.
 
 ### 3.2.3.1 Proof: Short Cycle Exclusion {#3.2.3.1}
 
@@ -887,7 +887,7 @@ Every graph containing a Self-Loop or a reciprocal 2-Cycle is excluded from cand
 
 **I. Axiomatic Definitions**
 
-The **Directed Causal Link** [(§2.1.1)](axioms#2.1.1) establishes that every directed causal link must satisfy strict irreflexivity and asymmetry.
+The **Directed Causal Link** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) establishes that every directed causal link must satisfy strict irreflexivity and asymmetry.
 
 **II. Violation by Self-Loop ($L=1$)**
 
@@ -906,7 +906,7 @@ A reciprocal pair violates asymmetry by definition.
 **IV. Conclusion**
 
 Both structures constitute primitive geometric cycles that exist prior to any application of the rewrite rule.
-The **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) forbids all such primitive cycles in the vacuum state.
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) forbids all such primitive cycles in the vacuum state.
 
 Q.E.D.
 :::
@@ -915,7 +915,7 @@ Q.E.D.
 
 :::info[**Rejection of Disconnected Graphs enforced by the Unified Causal Order Requirement**]
 
-Every disconnected graph is excluded from candidacy for $G_0$. This exclusion is mandated by the requirement for a unified causal order [(§2.7.1)](axioms#2.7.1) and the minimization of automorphism entropy, ensuring a single, interacting universe.
+Every disconnected graph is excluded from candidacy for $G_0$. This exclusion is mandated by the requirement for a unified causal order [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) and the minimization of automorphism entropy, ensuring a single, interacting universe.
 
 ### 3.2.4.1 Proof: Connectivity Mandate {#3.2.4.1}
 
@@ -923,7 +923,7 @@ Every disconnected graph is excluded from candidacy for $G_0$. This exclusion is
 
 **I. The Unified Order Requirement**
 
-The **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1) requires that the effective influence relation $\le$ forms a single strict partial order on the entire vertex set $V_0$.
+The **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) requires that the effective influence relation $\le$ forms a single strict partial order on the entire vertex set $V_0$.
 The strict partial order must exhibit irreflexivity, asymmetry, and transitivity across all vertices simultaneously.
 
 **II. The Decomposition Problem**
@@ -960,7 +960,7 @@ If the universe started as two separate trees; there would be no physical reason
 
 :::info[**Rejection of Non-Tree DAGs under the Unique Causality Constraint**]
 
-Every connected DAG with edge count strictly greater than $N-1$ is excluded from candidacy for $G_0$. This exclusion is mandated by the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3), which forbids redundant information channels.
+Every connected DAG with edge count strictly greater than $N-1$ is excluded from candidacy for $G_0$. This exclusion is mandated by the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids redundant information channels.
 
 ### 3.2.5.1 Proof: Redundancy Exclusion {#3.2.5.1}
 
@@ -975,14 +975,14 @@ Cayley's formula enumerates exactly $N^{N-2}$ distinct labeled trees on $N$ vert
 **II. Directed Redundancy Density**
 
 In the directed setting, any connected directed acyclic graph with $|E| > N-1$ necessarily contains redundant directed paths between some pairs of vertices.
-The **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) explicitly forbids redundant causal paths of length less than or equal to 2.
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) explicitly forbids redundant causal paths of length less than or equal to 2.
 Such redundant paths reduce the fraction of compliant 2-path sites available for the rewrite rule below the maximum value of 1.
 
 **III. Probabilistic Decay of Compliance**
 
 Formally, define the redundancy density $\rho$:
 $$\rho = \frac{|E| - N + 1}{N}$$
-The **Axiom of Geometric Constructibility** [(§2.3.1)](axioms#2.3.1) requires that the vacuum state maximizes the density of compliant rewrite sites to ensure optimal and unbiased geometrogenesis.
+The **Axiom of Geometric Constructibility** [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) requires that the vacuum state maximizes the density of compliant rewrite sites to ensure optimal and unbiased geometrogenesis.
 The probability $\mathbb{P}$ that a potential 2-path site remains non-compliant grows as a function of density:
 $$\mathbb{P}(\text{non-compliant}) \approx e^{\rho} - 1$$
 For any positive redundancy density $\rho > 0$, the compliant fraction falls strictly below 1.
@@ -1015,7 +1015,7 @@ Every tree graph whose structure yields a strictly sub-maximal number of complia
 
 **I. Participancy Requirement**
 
-The **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) and the **Axiom of Geometric Constructibility** [(§2.3.1)](axioms#2.3.1) jointly require that the vacuum state achieves sufficient participancy of all vertices in the emergent geometric process.
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) and the **Axiom of Geometric Constructibility** [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) jointly require that the vacuum state achieves sufficient participancy of all vertices in the emergent geometric process.
 Sufficient participancy demands the absolute maximum possible number of compliant 2-path sites per vertex.
 
 **II. Site Summation**
@@ -1071,7 +1071,7 @@ $$H_S(G_{irregular}) < H_S^{\max}(N)$$
 
 **III. Lemma Integration**
 
-The uniformity requirements of the **Directed Causal Link** [(§2.1.1)](axioms#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1) demand maximization of this entropy measure.
+The uniformity requirements of the **Directed Causal Link** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) demand maximization of this entropy measure.
 Furthermore, internal degrees less than 3 yield insufficient compliant sites per previous lemmas.
 
 **IV. Conclusion**
@@ -1178,7 +1178,7 @@ Every tree graph whose automorphism group fails to act transitively on vertex le
 
 **I. The Uniformity Constraint**
 
-The **Directed Causal Link** [(§2.1.1)](axioms#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1) jointly enforce complete relational uniformity across all vertices that occupy equivalent structural positions.
+The **Directed Causal Link** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) and the **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) jointly enforce complete relational uniformity across all vertices that occupy equivalent structural positions.
 Complete relational uniformity requires that the automorphism group acts transitively on each depth level separately.
 
 **II. Orbit Minimization**
@@ -1680,8 +1680,8 @@ $$s \in \mathcal{S}_{\text{sites}}(G) \iff P(s, G) \text{ is True}$$
 The predicate $P$ depends exclusively on:
 
 1.  **Topological Isomorphism:** The subgraph $F_s$ matches the required template.
-2.  **Causal Constraints:** The site satisfies the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3).
-3.  **Timestamp Ordering:** The site satisfies the strict monotonicity requirements [(§2.6.3)](axioms#2.6.3).
+2.  **Causal Constraints:** The site satisfies the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
+3.  **Timestamp Ordering:** The site satisfies the strict monotonicity requirements [(§2.6.3)](/monograph/foundations/axioms/2.6/#2.6.3).
 
 **II. Automorphic Mapping**
 
@@ -1904,7 +1904,7 @@ This confirms that any update rule other than Maximal Parallelism introduces a "
 
 :::info[**Logarithmic Time Complexity of Maximal Parallelism achieved by Quasi-Local Checks**]
 
-The time complexity of the maximally parallel update operation, conditioned on the enforcement of quasi-local constraints [(§2.3.3)](axioms#2.3.3) with a bounded check radius $R \propto \log N$, is bounded by $O(\text{poly}(\log N))$. This scalability holds provided the graph remains in the sparse regime [(§3.1.2)](#3.1.2), ensuring that the probability of conflict chains spanning the system decays exponentially.
+The time complexity of the maximally parallel update operation, conditioned on the enforcement of quasi-local constraints [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) with a bounded check radius $R \propto \log N$, is bounded by $O(\text{poly}(\log N))$. This scalability holds provided the graph remains in the sparse regime [(§3.1.2)](#3.1.2), ensuring that the probability of conflict chains spanning the system decays exponentially.
 
 ### 3.3.6.1 Proof: Log-N Scalability {#3.3.6.1}
 
@@ -1923,7 +1923,7 @@ In the sparse vacuum graph $G_0$, the density of edges is minimal.
 
 The time $T$ required to resolve overlaps and verify consistency is proportional to the diameter of the interference patch.
 $$T_{step} \propto R$$
-In a generic graph, $R$ could scale with $N$. However, the **Axiom of Geometric Constructibility** [(§2.3.1)](axioms#2.3.1) enforces a tree-like regular structure (Bethe lattice) for $G_0$.
+In a generic graph, $R$ could scale with $N$. However, the **Axiom of Geometric Constructibility** [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) enforces a tree-like regular structure (Bethe lattice) for $G_0$.
 
 **III. Error Suppression Limit**
 
@@ -2011,7 +2011,7 @@ We overcome this stasis by modeling the first event as a thermodynamic tunneling
 
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
 
-The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by strict bipartiteness [(§3.1.10)](#3.1.10), which topologically prohibits the formation of Geometric Quanta [(§2.3.2)](axioms#2.3.2). It is asserted that a single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites [(§3.3.2)](#3.3.2), and initiates a first-order phase transition to the geometric vacuum.
+The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by strict bipartiteness [(§3.1.10)](#3.1.10), which topologically prohibits the formation of Geometric Quanta [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2). It is asserted that a single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites [(§3.3.2)](#3.3.2), and initiates a first-order phase transition to the geometric vacuum.
 
 ### 3.4.1.1 Argument Outline: Logic of the Ignition Argument {#3.4.1.1}
 
@@ -2063,7 +2063,7 @@ The global $\mathbb{Z}_2$ symmetry of the vacuum breaks spontaneously.
 **IV. Irreversibility**
 
 The removal of $e_{\text{tunnel}}$ would require a specific inverse operation.
-However, the **Monotonicity of History** [(§2.6.3)](axioms#2.6.3) prohibits the deletion of edges once established in the causal order (except via specific rewrite rules which do not apply to isolated edges).
+However, the **Monotonicity of History** [(§2.6.3)](/monograph/foundations/axioms/2.6/#2.6.3) prohibits the deletion of edges once established in the causal order (except via specific rewrite rules which do not apply to isolated edges).
 Therefore, the symmetry breaking is persistent.
 $$G_1 \notin \Omega_{\text{bipartite}}$$
 
@@ -2082,7 +2082,7 @@ Once that edge exists; it serves as a permanent and indelible mark on the univer
 
 :::info[**Immediate Creation of Compliant Rewrite Sites by the Tunneling Event**]
 
-Given a Tunneling Event $e=(u, v)$ in $G_0$, if there exists a vertex $w \in V_0$ such that $(v, w) \in E_0$, then the directed path $(u, v, w)$ constitutes a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2). This path satisfies the Principle of Unique Causality [(§2.3.3)](axioms#2.3.3) due to the sparsity of $G_0$ [(§3.1.3)](#3.1.3) and serves as a valid input for the rewrite rule.
+Given a Tunneling Event $e=(u, v)$ in $G_0$, if there exists a vertex $w \in V_0$ such that $(v, w) \in E_0$, then the directed path $(u, v, w)$ constitutes a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2). This path satisfies the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) due to the sparsity of $G_0$ [(§3.1.3)](#3.1.3) and serves as a valid input for the rewrite rule.
 
 ### 3.4.3.1 Proof: Site Nucleation {#3.4.3.1}
 
@@ -2113,7 +2113,7 @@ Check endpoints:
 
 **IV. Compliance Verification**
 
-The **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) requires that no other path of length $\le 2$ exists between $x$ and $z$.
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) requires that no other path of length $\le 2$ exists between $x$ and $z$.
 
 1.  **Direct Edge $(x, z)$:** $E_0$ contains only even-odd edges. While $x, z$ are even-odd, the tree structure of $G_0$ implies a unique path between any two nodes. If a direct edge existed, $x, y, z$ would form a triangle in $G_0$, violating acyclicity [(§3.1.7)](#3.1.7). Thus $(x, z) \notin E_0$.
 2.  **Alternative 2-Path:** Any other path would imply a cycle in the underlying undirected graph of the vacuum, violating the Tree Condition [(§3.1.9)](#3.1.9).
@@ -2130,7 +2130,7 @@ Q.E.D.
 
 :::info[**Generation of the First 3-Cycle and Initiation of the Chain Reaction following Rewrite Acceptance**]
 
-The application of the rewrite rule $\mathcal{R}$ to the tunneling-induced compliant 2-Path $(u, v, w)$ generates the closing edge $(w, u)$, thereby forming the first Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) in the universe. This structure constitutes the initial quantum of spatial area and acts as a catalytic seed for subsequent geometric growth.
+The application of the rewrite rule $\mathcal{R}$ to the tunneling-induced compliant 2-Path $(u, v, w)$ generates the closing edge $(w, u)$, thereby forming the first Directed 3-Cycle [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2) in the universe. This structure constitutes the initial quantum of spatial area and acts as a catalytic seed for subsequent geometric growth.
 
 ### 3.4.4.1 Proof: Chain Reaction {#3.4.4.1}
 
@@ -2500,7 +2500,7 @@ Z-OPERATOR (Diagonal)      X-OPERATOR (Off-Diagonal)
 
 :::info[**Enforcement of Inviolable Axioms via Constraint Projectors**]
 
-The Hard Constraint Projectors $\Pi_{cycle}$ and $\Pi_{local}$ [(§3.5.1)](#3.5.1) strictly enforce the axioms. For any state $|\psi\rangle$ representing a graph that violates the Causal Primitive [(§2.1.1)](axioms#2.1.1) or the Locality constraints [(§5.5.2)](thermodynamics#5.5.2), the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
+The Hard Constraint Projectors $\Pi_{cycle}$ and $\Pi_{local}$ [(§3.5.1)](#3.5.1) strictly enforce the axioms. For any state $|\psi\rangle$ representing a graph that violates the Causal Primitive [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) or the Locality constraints [(§5.5.2)](thermodynamics#5.5.2), the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
 
 ### 3.5.4.1 Proof: Projector Validity {#3.5.4.1}
 
@@ -2508,7 +2508,7 @@ The Hard Constraint Projectors $\Pi_{cycle}$ and $\Pi_{local}$ [(§3.5.1)](#3.5.
 
 **I. The 2-Cycle Constraint Projector**
 
-The **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) forbids reciprocal edges (2-cycles).
+The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) forbids reciprocal edges (2-cycles).
 Define the projection operator $\Pi_{\text{cycle}}(u, v)$ acting on the subspace $\mathcal{H}_{uv} \otimes \mathcal{H}_{vu}$:
 $$\Pi_{\text{cycle}}(u, v) = I - P_{11} = I - |1\rangle_{uv}\langle1| \otimes |1\rangle_{vu}\langle1|$$
 Expressed in terms of Pauli-Z operators ($Z = |0\rangle\langle0| - |1\rangle\langle1|$):
@@ -2526,7 +2526,7 @@ $$\Pi_{\text{cycle}}(u, v) = I - \frac{1}{4}(I - Z_{uv})(I - Z_{vu})$$
 
 **II. The Locality Constraint Projector**
 
-The **Axiom of Geometric Constructibility** [(§2.3.1)](axioms#2.3.1) forbids edges between non-adjacent vertices in the vacuum.
+The **Axiom of Geometric Constructibility** [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) forbids edges between non-adjacent vertices in the vacuum.
 For any pair $(u, v)$ with undirected distance $d(u, v) > 1$, define:
 $$\Pi_{\text{local}}(u, v) = |0\rangle_{uv}\langle0| = \frac{1}{2}(I + Z_{uv})$$
 

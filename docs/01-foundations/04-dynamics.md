@@ -400,7 +400,7 @@ Q.E.D.
 
 :::info[**Necessity of Injectivity for the Preservation of Irreflexivity**]
 
-It is established that any structure-preserving map $f: G \to G'$ must be injective on connected vertices to satisfy the Causal Primitive [(§2.1.1)](axioms#2.1.1). If a map merges adjacent vertices such that $f(u) = f(v)$ for an existing edge $(u, v)$, the image in $G'$ would contain a Self-Loop $(f(u), f(u))$. This violates the strict Irreflexivity constraint. Therefore, valid morphisms in $\mathbf{Hist}$ must be embeddings.
+It is established that any structure-preserving map $f: G \to G'$ must be injective on connected vertices to satisfy the Causal Primitive [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1). If a map merges adjacent vertices such that $f(u) = f(v)$ for an existing edge $(u, v)$, the image in $G'$ would contain a Self-Loop $(f(u), f(u))$. This violates the strict Irreflexivity constraint. Therefore, valid morphisms in $\mathbf{Hist}$ must be embeddings.
 
 ### 4.2.8.1 Proof: Irreflexivity Enforcement {#4.2.8.1}
 
@@ -421,7 +421,7 @@ $$C' = (y_0, \dots, y_k) \quad \text{where} \quad y_0 = y_k$$
 
 **III. Axiomatic Violation (Acyclicity)**
 
-The target graph $G'$ is a valid causal graph satisfying **Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1).
+The target graph $G'$ is a valid causal graph satisfying **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 
 1.  **Case A (Length 1):** If $\pi$ is a single edge $(u, v)$, then $f(\pi)$ is a self-loop $(w, w)$.
     $$E(G') \ni (w, w)$$
@@ -450,7 +450,7 @@ Q.E.D.
 
 :::info[**Categorical Encoding of the Effective Influence Relation via Constrained Morphisms**]
 
-The **Effective Influence** relation $\le$ [(§2.6.1)](axioms#2.6.1) is formally encoded as a constrained subset of morphisms within $\mathbf{Caus}_t$. Specifically, $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length is $\ell \ge 2$ and the sequence of edge timestamps is strictly increasing.
+The **Effective Influence** relation $\le$ [(§2.6.1)](/monograph/foundations/axioms/2.6/#2.6.1) is formally encoded as a constrained subset of morphisms within $\mathbf{Caus}_t$. Specifically, $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length is $\ell \ge 2$ and the sequence of edge timestamps is strictly increasing.
 
 ### 4.2.9.1 Proof: Encoding Verification {#4.2.9.1}
 
@@ -489,7 +489,7 @@ Q.E.D.
 :::info[**Strict Partial Ordering of Effective Influence within the Internal Causal Category**]
 
 The subset of morphisms in $\mathbf{Caus}_t$ satisfying the Effective Influence constraints constitutes a strict partial order.
-1.  **Irreflexivity:** No morphism with $\ell \ge 2$ and strictly increasing timestamps can map $u$ to $u$ without violating Acyclicity [(§2.7.1)](axioms#2.7.1).
+1.  **Irreflexivity:** No morphism with $\ell \ge 2$ and strictly increasing timestamps can map $u$ to $u$ without violating Acyclicity [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 2.  **Transitivity:** The composition of two such morphisms yields a morphism preserving the timestamp ordering and length constraints.
 
 ### 4.2.10.1 Proof: Order Verification {#4.2.10.1}
@@ -502,7 +502,7 @@ Assume $u \le u$.
 This implies $\exists p: u \to u \in \mathcal{M}_{eff}$.
 By definition, $\ell(p) \ge 2$.
 A path of length $\ge 2$ from $u$ to $u$ is a directed cycle.
-**Acyclic Effective Causality** [(§2.7.1)](axioms#2.7.1) forbids all cycles.
+**Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) forbids all cycles.
 Therefore, $\mathcal{M}_{eff}$ contains no loops.
 $$u \not\le u$$
 
@@ -1204,7 +1204,7 @@ Setting $T = \ln 2$ renders the vacuum "permeable" to geometry. It allows causal
 
 :::info[**Quantification of the Entropic Gain from Cycle Formation**]
 
-The formation of a Directed 3-Cycle [(§2.3.2)](axioms#2.3.2) from a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2) necessitates a specific increase in the local relational entropy of the graph. This increase is quantified exactly as $\Delta S = \ln 2$ nats, corresponding to the doubling of the path multiplicity in the local phase space (bifurcation from a unique open path to a dual closed/open configuration).
+The formation of a Directed 3-Cycle [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2) from a compliant 2-Path [(§1.5.2)](/monograph/foundations/ontology/1.5/#1.5.2) necessitates a specific increase in the local relational entropy of the graph. This increase is quantified exactly as $\Delta S = \ln 2$ nats, corresponding to the doubling of the path multiplicity in the local phase space (bifurcation from a unique open path to a dual closed/open configuration).
 
 ### 4.4.2.1 Proof: Microstate Bifurcation {#4.4.2.1}
 
@@ -1786,7 +1786,7 @@ Q.E.D.
 
 :::tip[**Destructive Operation Proposing Edge Removals**]
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-Cycles [(§2.3.2)](axioms#2.3.2) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the Catalytic Tension Factor [(§4.5.2)](#4.5.2).
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-Cycles [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the Catalytic Tension Factor [(§4.5.2)](#4.5.2).
 
 ### 4.5.5.1 Commentary: Pruning and Balance {#4.5.5.1}
 

@@ -92,7 +92,7 @@ The argument establishes the thermodynamic stability of the vacuum by decomposin
 
 :::info[**Exponential Suppression of Long-Range Dependencies under Bounded Branching**]
 
-Given a causal graph $G$ satisfying the Bounded Degree condition [(§3.2.1)](architecture#3.2.1) and the Acyclicity constraint [(§2.7.1)](axioms#2.7.1), the probability $P(u \leftrightarrow v)$ that a causal constraint propagates between two vertices $u$ and $v$ separated by distance $r$ decays exponentially:
+Given a causal graph $G$ satisfying the Bounded Degree condition [(§3.2.1)](architecture#3.2.1) and the Acyclicity constraint [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1), the probability $P(u \leftrightarrow v)$ that a causal constraint propagates between two vertices $u$ and $v$ separated by distance $r$ decays exponentially:
 
 $$
 P(u \leftrightarrow v) \sim (d_{\max} \rho)^r
@@ -1439,7 +1439,7 @@ Assume, for the purpose of contradiction, that the rewrite rule generates an edg
 
 The **Evolution Operator** assigns zero probability to transitions violating the topological constraints.
 $$P(G \to G \cup \{(u, v)\}) = 0 \quad \text{if} \quad \bar{d}(u, v) > 2$$
-Furthermore, any non-local edge introduced by external perturbation violates the **Principle of Unique Causality** [(§2.3.3)](axioms#2.3.3) and is annihilated by the **Global Register**.
+Furthermore, any non-local edge introduced by external perturbation violates the **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) and is annihilated by the **Global Register**.
 
 **IV. Conclusion**
 
