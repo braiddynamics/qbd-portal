@@ -237,7 +237,7 @@ The global exchange decomposes into a finite sequence of local operations $\math
 
 Track the accumulation of geometric phase during this sequence.
 The operation $\hat{P}_{12}$ acts on the joint wavefunction.
-Unlike a simple permutation, the rewrite sequence exerts a torque on the internal framing of the ribbons due to the **Directed Causal Link** structure [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1).
+Unlike a simple permutation, the rewrite sequence exerts a torque on the internal framing of the ribbons due to the **Directed Causal Link** structure [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1).
 Topologically, the path taken by ribbon 1 traces a helical trajectory of angle $\pi$ around ribbon 2.
 Relative to the local frame of the exchange vertex, this induces a twist.
 $$\Delta \text{Frame} = \oint_{\text{path}} \omega \cdot dl = \pi$$
@@ -423,7 +423,7 @@ We establish exclusion as a consequence of the binary saturation of causal links
 It is asserted that the simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden. This prohibition is established by the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph:
 1.  **Binary Saturation:** The occupation of a causal link $(u, v)$ by a fermion saturates the local information capacity of the edge qubit, rendering the state $|1\rangle_{uv}$.
 2.  **Topological Conflict:** The encoding of a second identical fermion within the same local manifold necessitates the activation of the reverse causal link $(v, u)$ to satisfy the requirement for distinct state identification.
-3.  **Axiomatic Violation:** The simultaneous activation of $(u, v)$ and $(v, u)$ constitutes a Directed 2-Cycle, which violates the **Causal Primitive** axiom of Asymmetry [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the **Acyclic Effective Causality** axiom of strict partial ordering [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
+3.  **Axiomatic Violation:** The simultaneous activation of $(u, v)$ and $(v, u)$ constitutes a Directed 2-Cycle, which violates the **Causal Primitive** axiom of Asymmetry [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) and the **Acyclic Effective Causality** axiom of strict partial ordering [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1).
 4.  **State Annihilation:** Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
 
 ### 7.2.1.1 Argument Outline: Logic of Exclusion Derivation {#7.2.1.1}
@@ -456,7 +456,7 @@ The information capacity of any directed edge $(u, v)$ within the causal graph i
 
 **I. Set-Theoretic Definition**
 
-The **Directed Causal Link** axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) defines the edge set $E$ strictly as a subset of the Cartesian product of the vertex set $V$.
+The **Directed Causal Link** axiom [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) defines the edge set $E$ strictly as a subset of the Cartesian product of the vertex set $V$.
 $$E \subseteq V \times V$$
 For any ordered pair of vertices $(u, v)$, the membership function $\chi_E(u, v)$ maps to the boolean set $\{0, 1\}$.
 $$\chi_E(u, v) = \begin{cases} 1 & \text{if } (u, v) \in E \\ 0 & \text{if } (u, v) \notin E \end{cases}$$
@@ -537,7 +537,7 @@ This constitutes a **Directed 2-Cycle** $C_2$.
 
 **IV. Axiomatic Contradiction**
 
-The **Causal Primitive** axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) mandates strict Asymmetry:
+The **Causal Primitive** axiom [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) mandates strict Asymmetry:
 $$\forall u, v: (u, v) \in E \implies (v, u) \notin E$$
 The state $|\psi_{AB}\rangle$ directly violates this condition.
 Furthermore, **Acyclic Effective Causality** [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1) requires a strict partial order $\le$.
@@ -784,7 +784,7 @@ This blindness manifests as a symmetry. The local laws of physics must remain in
 
 The **Total Writhe** $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions:
 1.  **Type I Prohibition:** The discrete alteration of writhe ($\Delta w = \pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move.
-2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive axiom [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
+2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive axiom [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) and the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
 
 ### 7.3.4.1 Proof: Conservation Logic {#7.3.4.1}
@@ -801,9 +801,9 @@ In the discrete causal graph $\beta \subset G$, a Type I move maps a straight ri
 
 The graph-theoretic realization of a Type I kink requires specific edge configurations that violate foundational axioms:
 1.  **Self-Loop Case:** Creating a loop on a single vertex requires the edge $(v, v)$.
-    This structure violates **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1), which mandates that no event causes itself.
+    This structure violates **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1), which mandates that no event causes itself.
 2.  **2-Cycle Case:** Creating a minimal twist involving two vertices requires edges $(u, v)$ and $(v, u)$.
-    This structure violates **Axiom 1 (Asymmetry)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1) and the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids reciprocal causality and redundant paths.
+    This structure violates **Axiom 1 (Asymmetry)** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1) and the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids reciprocal causality and redundant paths.
 
 **III. Detection via Stabilizers**
 

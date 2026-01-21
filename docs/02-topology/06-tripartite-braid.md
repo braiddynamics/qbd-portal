@@ -129,7 +129,7 @@ By **Alexander's Theorem**, there exists a finite sequence of Reidemeister moves
 We map the topological moves to the Elementary Task Space $\mathfrak{T}$ [(§1.4.1)](/monograph/foundations/ontology/1.4/#1.4.1):
 
 1.  **Type I (Twist Removal):** A local loop corresponds to a graph cycle of length 1 ($u \to u$).
-    By **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1), $E \cap \{(u,u)\} = \emptyset$.
+    By **Axiom 1 (Irreflexivity)** [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1), $E \cap \{(u,u)\} = \emptyset$.
     The operator $\mathcal{T}_{del}$ must immediately excise any such edge to satisfy the axiom.
 
 2.  **Type II (Bubble Removal):** A bigon corresponds to two distinct directed paths $\pi_1, \pi_2$ between vertices $u$ and $v$.
@@ -475,7 +475,7 @@ We solve this selection problem by deriving the prime tripartite braid as the in
 
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
 
-1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the Geometric Primitive [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and maintains the causal orientation mandated by Axiom 1 [(§2.1.1)](/monograph/foundations//monograph/foundations/axioms/2.1/#2.1.1).
+1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the Geometric Primitive [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and maintains the causal orientation mandated by Axiom 1 [(§2.1.1)](/monograph/foundations/axioms/2.1/#2.1.1).
 2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the Principle of Unique Causality [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
 3.  **Algebraic Generation:** The configuration generates the non-abelian Braid Group on three strands, denoted $B_3$, which satisfies the Yang-Baxter equation $b_1 b_2 b_1 = b_2 b_1 b_2$ and embeds the Special Unitary algebra $\mathfrak{su}(3)$ via three-dimensional fundamental representations.
 4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ [(§3.5.1.1)](/monograph/foundations/architecture#3.5.1.1), characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
