@@ -386,7 +386,7 @@ The physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the
 
 :::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
 
-The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) and the maximal parallelism theorem [(§3.3.5)](/monograph/foundations/architecture#3.3.5).
+The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) and the maximal parallelism theorem [(§3.3.5)](/monograph/foundations/architecture/3.3/#3.3.5).
 
 **I. Spatial Decomposition**
 The rewrite process $\mathcal{R}_i$ operates on a local subgraph $G_i \subset G$ defined by the ribbons $i, i+1$ and their immediate neighbors.
@@ -1798,7 +1798,7 @@ The local edge density $\rho_{local}$ within the effective volume of a particle 
 :::tip[**Derivation of Stress Scaling within Fixed Particle Volumes**]
 
 **I. Volume Constraint**
-A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ [(§3.3.5)](/monograph/foundations/architecture#3.3.5). For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
+A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ [(§3.3.5)](/monograph/foundations/architecture/3.3/#3.3.5). For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
 $$V_{braid} \sim \text{const}$$
 
 **II. Local Density Scaling**

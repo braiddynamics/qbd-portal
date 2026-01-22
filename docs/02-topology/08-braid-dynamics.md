@@ -82,7 +82,7 @@ The mapping covers the full algebraic structure of $B_n$ through inductive const
 **II. Injectivity Verification**
 The kernel of the mapping is trivial, $\text{Ker}(\Phi) = \{1\}$, proved by the preservation of topological invariants.
 1.  **Topological Distinctness:** Distinct reduced words (where no $\sigma_i \sigma_i^{-1} = 1$) yield minimal diagrams distinct up to isotopy (PUC prevents reducible Type II moves). The **Jones Polynomial** $V_\xi(t)$ [(§6.1.1)](/monograph/topology/tripartite-braid#6.1.1) serves as the faithful invariant; since $\mathcal{R}$ sequences preserve the **Writhe** $w(\beta)$ and **Linking Matrix** $L_{ij}$ [(§6.1.1)](/monograph/topology/tripartite-braid#6.1.1), distinct words map to graphs with distinct polynomial invariants.
-2.  **Syndrome Sensitivity:** The injectivity extends to the full group level because the kernel must contain only the identity. Any non-trivial element $\beta \neq 1$ induces a non-trivial syndrome tuple $\sigma_G \neq 0$ in the annotation [(§4.3.2.1)](/monograph/foundations/dynamics#4.3.2.1). This deviation is explicitly detected by the **Z-check operators** in the QECC mapping [(§3.5.4)](/monograph/foundations/architecture#3.5.4), ensuring that the mapping distinguishes all braid words by their encoded causal subgraphs.
+2.  **Syndrome Sensitivity:** The injectivity extends to the full group level because the kernel must contain only the identity. Any non-trivial element $\beta \neq 1$ induces a non-trivial syndrome tuple $\sigma_G \neq 0$ in the annotation [(§4.3.2.1)](/monograph/foundations/dynamics#4.3.2.1). This deviation is explicitly detected by the **Z-check operators** in the QECC mapping [(§3.5.4)](/monograph/foundations/architecture/3.5/#3.5.4), ensuring that the mapping distinguishes all braid words by their encoded causal subgraphs.
 
 **III. Homomorphism Verification**
 The mapping preserves group multiplication: $\Phi(w_a \cdot w_b) = \Phi(w_a) \circ \Phi(w_b)$.
@@ -121,16 +121,16 @@ The proof explicitly demonstrates $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j
 
 **I. Spatial Decomposition and Metric Bounds**
 The rewrite process $\mathcal{R}_i$ is a local operation affecting only the subgraph of ribbons $i, i+1$ and their immediate neighborhood.
-1.  **Metric Separation:** If $|i-j| \ge 2$, the pair $(i, i+1)$ is disjoint from $(j, j+1)$. The subgraphs are spatially separated by an **Undirected Metric Distance** $\bar{d}(u,v) > 2$ [(§3.5.4.2)](/monograph/foundations/architecture#3.5.4.2). This separation ensures no shared vertices or edges beyond the unstrained part, preventing overlapping **2-path motifs** that could couple the operations.
+1.  **Metric Separation:** If $|i-j| \ge 2$, the pair $(i, i+1)$ is disjoint from $(j, j+1)$. The subgraphs are spatially separated by an **Undirected Metric Distance** $\bar{d}(u,v) > 2$ [(§3.5.4.2)](/monograph/foundations/architecture/3.5/#3.5.4.2). This separation ensures no shared vertices or edges beyond the unstrained part, preventing overlapping **2-path motifs** that could couple the operations.
 2.  **PUC Enforcement:** The bound $\bar{d} > 2$ follows directly from the **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3), which forbids direct edges between non-adjacent ribbons to prevent short-path redundancies. The proposed closures for each $\mathcal{R}$ are on unique 2-paths in their local neighborhoods (no alternatives $\le 2$), ensuring no overlap-induced redundancies exist across the separation.
 
 **II. Parallel Execution Equivariance**
-The sequence $\mathcal{R}_i \circ \mathcal{R}_j$ is valid as a parallel operation [(§3.3.5)](/monograph/foundations/architecture#3.3.5); PUC holds independently for each.
-1.  **Scheduler Automorphism:** The parallelism is enforced by the **Scheduler** $\Phi$, which applies rewrites equivariantly under the automorphism group $\text{Aut}(G)$ [(§3.3.4)](/monograph/foundations/architecture#3.3.4). The relation $\Phi(\varphi(G)) = \varphi(\Phi(G))$ ensures that the parallel application treats equivalent disjoint sites identically.
-2.  **Entropy Preservation:** The scheduler preserves the **Orbit Entropy** $H_S(G)$ [(§3.2.9)](/monograph/foundations/architecture#3.2.9) by maximizing the Shannon entropy of orbit sizes, thereby avoiding order-dependent biases that could distinguish $\mathcal{R}_i \mathcal{R}_j$ from $\mathcal{R}_j \mathcal{R}_i$.
+The sequence $\mathcal{R}_i \circ \mathcal{R}_j$ is valid as a parallel operation [(§3.3.5)](/monograph/foundations/architecture/3.3/#3.3.5); PUC holds independently for each.
+1.  **Scheduler Automorphism:** The parallelism is enforced by the **Scheduler** $\Phi$, which applies rewrites equivariantly under the automorphism group $\text{Aut}(G)$ [(§3.3.4)](/monograph/foundations/architecture/3.3/#3.3.4). The relation $\Phi(\varphi(G)) = \varphi(\Phi(G))$ ensures that the parallel application treats equivalent disjoint sites identically.
+2.  **Entropy Preservation:** The scheduler preserves the **Orbit Entropy** $H_S(G)$ [(§3.2.9)](/monograph/foundations/architecture/3.2/#3.2.9) by maximizing the Shannon entropy of orbit sizes, thereby avoiding order-dependent biases that could distinguish $\mathcal{R}_i \mathcal{R}_j$ from $\mathcal{R}_j \mathcal{R}_i$.
 
 **III. Algebraic Tensor Factorization**
-Since the operators act on distinct, non-interacting subsystems, they commute due to the tensor product structure of the QECC Hilbert space $\mathcal{H}$ [(§3.5.1)](/monograph/foundations/architecture#3.5.1).
+Since the operators act on distinct, non-interacting subsystems, they commute due to the tensor product structure of the QECC Hilbert space $\mathcal{H}$ [(§3.5.1)](/monograph/foundations/architecture/3.5/#3.5.1).
 1.  **Operator Product:** $[\mathcal{R}_i, \mathcal{R}_j] = [A \otimes I, I \otimes B] = 0$. The order of operations is irrelevant: $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$.
 2.  **Lie Algebra Extension:** This commutativity extends to the generated Hamiltonians via the exponential map. The relation $[e^{i H_i}, e^{i H_j}] = 0$ implies $[H_i, H_j] = 0$ for distant $i, j$, aligning with the **Cartan Subalgebra** structure in $\mathfrak{su}(n)$. The exponential map preserves commutators, and the QECC embedding ensures the tensor factorization $\mathcal{H} = \mathcal{H}_i \otimes \mathcal{H}_j$ is exact, with no entanglement across the separation distance $\bar{d} > 2$.
 
@@ -162,7 +162,7 @@ The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \ma
 
 **I. Topological Construction**
 The proof follows the form for $B_3$ (three-strand rule), holding for any triplet (e.g., $\sigma_3 \sigma_4 \sigma_3 = \sigma_4 \sigma_3 \sigma_4$).
-1.  **Isotopic Invariance:** The equivalence is confirmed by the invariance of the **Writhe** $w(\beta)$ under Reidemeister moves [(§7.3.1)](quantum-numbers#7.3.1). Each $\mathcal{R}$ step preserves the **Linking Numbers** $L_{ij}$ through **Syndrome-Neutral Flips**, where the global parity $\sigma = +1$ is maintained despite the local precursors having $\sigma = -1$ [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
+1.  **Isotopic Invariance:** The equivalence is confirmed by the invariance of the **Writhe** $w(\beta)$ under Reidemeister moves [(§7.3.1)](quantum-numbers#7.3.1). Each $\mathcal{R}$ step preserves the **Linking Numbers** $L_{ij}$ through **Syndrome-Neutral Flips**, where the global parity $\sigma = +1$ is maintained despite the local precursors having $\sigma = -1$ [(§3.5.4)](/monograph/foundations/architecture/3.5/#3.5.4).
 2.  **Polynomial Gradient:** The final isotopic equivalence is quantified by the unchanged **Alexander-Conway Polynomial Gradient**, which tracks the linking invariants under discrete graph transformations, confirming no topological information is created or destroyed by the choice of path.
 
 **II. PUC Compliance and Fidelity**
@@ -214,7 +214,7 @@ The depth follows from the path graph adjacency of the ribbons.
 **III. Algebraic Completeness**
 1.  **Adjacency Span:** The generation corresponds to the matrix powers $A^d$, which span the full graph for $d \ge n-1$.
 2.  **Killing Form:** The closure is confirmed by the **Killing Form** $K(X,Y) = -\text{Tr}(\text{ad}_X \text{ad}_Y)$, which verifies that no further generators are required without further generators.
-3.  **Cost Scaling:** The total cost scales as $O(n \log N)$, which is sublinear relative to the tick parallelism $O(N / \log N)$ [(§3.3.6)](/monograph/foundations/architecture#3.3.6), as the scheduler processes all levels in quasi-local patches without global synchronization bottlenecks.
+3.  **Cost Scaling:** The total cost scales as $O(n \log N)$, which is sublinear relative to the tick parallelism $O(N / \log N)$ [(§3.3.6)](/monograph/foundations/architecture/3.3/#3.3.6), as the scheduler processes all levels in quasi-local patches without global synchronization bottlenecks.
 
 Q.E.D.
 
@@ -367,9 +367,9 @@ The set of fundamental Hamiltonians $\{\hat{H}_1, \hat{H}_2\}$, together with th
 :::tip[**Explicit Derivation of the Fundamental Generator Representation**]
 
 **I. Explicit Matrix Form**
-The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge [(§3.5.4.1)](/monograph/foundations/architecture#3.5.4.1).
+The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge [(§3.5.4.1)](/monograph/foundations/architecture/3.5/#3.5.4.1).
 $$\lambda^{(1,2)} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad \lambda^{(2,3)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}$$
-This form arises from the action $X_{uv}$ on the edge qubit $q_{uv}$ [(§3.5.3)](/monograph/foundations/architecture#3.5.3), with the unit entries corresponding to the flip amplitude in the code space $\mathcal{C}$. The real part corresponds to the symmetric rung addition.
+This form arises from the action $X_{uv}$ on the edge qubit $q_{uv}$ [(§3.5.3)](/monograph/foundations/architecture/3.5/#3.5.3), with the unit entries corresponding to the flip amplitude in the code space $\mathcal{C}$. The real part corresponds to the symmetric rung addition.
 
 **II. Normalization and Orthogonality**
 The normalization ensures $\operatorname{Tr}(\lambda^{(i,j)} \lambda^{(k,l)}) = 2 \delta_{ij,kl}$, matching Gell-Mann conventions.
@@ -973,7 +973,7 @@ The right-handed mirror process requires inverting the timestamp order to $H_t(e
 This inversion exposes pre-existing mediated paths as valid alternatives under the **Effective Influence** relation $\le$ [(§2.6.1)](/monograph/foundations/axioms/2.6/#2.6.1).
 The cardinality of the path set for the inverted case becomes $|\Pi(u,v)| > 1$ with high probability (proven in **8.3.5.1**).
 The existence of multiple paths violates the **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3).
-Consequently, the local projector $\Pi_{local}$ [(§3.5.4.1)](/monograph/foundations/architecture#3.5.4.1) assigns a zero eigenvalue (annihilation) to the right-handed transition amplitude.
+Consequently, the local projector $\Pi_{local}$ [(§3.5.4.1)](/monograph/foundations/architecture/3.5/#3.5.4.1) assigns a zero eigenvalue (annihilation) to the right-handed transition amplitude.
 
 **III. Conclusion: V-A Structure**
 Weak currents are strictly left-handed because right-handed currents are axiomatically invalid state transitions.
@@ -1430,10 +1430,10 @@ $$\operatorname{Tr}(\lambda^a \lambda^b) = \sum_{k} \langle k | \lambda^a \lambd
 The off-diagonal elements arise from the Pauli-$X$ action on the edge qubits $q_{uv}$ connecting ribbons. The Code Space $\mathcal{C}$ enforces the stabilizer constraint $\langle Z_e \rangle = 1$.
 The overlap term involves the expectation value of the rewrite action relative to the vacuum:
 $$\langle \psi | X_u Z_v | \psi \rangle = \frac{1}{\sqrt{2}}$$
-This factor $1/\sqrt{2}$ represents the geometric mean of the Bit ($Z$-basis) and Nat ($X$-basis) information scales [(§3.5.3)](/monograph/foundations/architecture#3.5.3).
+This factor $1/\sqrt{2}$ represents the geometric mean of the Bit ($Z$-basis) and Nat ($X$-basis) information scales [(§3.5.3)](/monograph/foundations/architecture/3.5/#3.5.3).
 
 **III. Entropy Normalization**
-The vacuum entropy $H_S(G)$ scales with the logarithm of the automorphism group size $\log |\operatorname{Aut}(G)|$ [(§3.2.9)](/monograph/foundations/architecture#3.2.9).
+The vacuum entropy $H_S(G)$ scales with the logarithm of the automorphism group size $\log |\operatorname{Aut}(G)|$ [(§3.2.9)](/monograph/foundations/architecture/3.2/#3.2.9).
 For the bipartite $Z_2$ symmetry inherent in the Bethe lattice stub (ribbon pair), the automorphism count doubles, contributing a factor of $\sqrt{2}$ to the normalization.
 Combining the qubit overlap and the symmetry factor:
 $$\text{Normalization} = \left( \frac{1}{\sqrt{2}} \right)^2 \times 2^2 \to 2$$
@@ -1998,7 +1998,7 @@ The Yukawa coupling $y_f$ for a fermion $f$ is defined as the dimensionless rati
 The coupling $y_f$ constitutes a dimensionless efficiency factor derived from the balance of braid quanta demand against vacuum supply.
 
 **I. Particle Demand and Shared Quanta**
-The braid $\beta$ demands $N_{3,\text{net}}$ quanta for stability [(§7.4.4)](quantum-numbers#7.4.4), defined by $N_{3,\text{net}} = \sum N_{3,\text{iso}} - k_{\text{share}} |L_{\parallel}| \geq 1$ [(§7.3.5)](quantum-numbers#7.3.5). This payload preserves the prime isotopy class under rewrites. Shared parallels in isospin doublets reduce effective demand via twist cost cancellation, yielding degenerate light masses. The integer $\geq 1$ follows from the minimal trefoil $N_3=3$ for generation 1, reduced to net $1$ after sharing $k_{\text{share}}=1$ in a Bethe degree-3 lattice [(§3.2.1)](/monograph/foundations/architecture#3.2.1).
+The braid $\beta$ demands $N_{3,\text{net}}$ quanta for stability [(§7.4.4)](quantum-numbers#7.4.4), defined by $N_{3,\text{net}} = \sum N_{3,\text{iso}} - k_{\text{share}} |L_{\parallel}| \geq 1$ [(§7.3.5)](quantum-numbers#7.3.5). This payload preserves the prime isotopy class under rewrites. Shared parallels in isospin doublets reduce effective demand via twist cost cancellation, yielding degenerate light masses. The integer $\geq 1$ follows from the minimal trefoil $N_3=3$ for generation 1, reduced to net $1$ after sharing $k_{\text{share}}=1$ in a Bethe degree-3 lattice [(§3.2.1)](/monograph/foundations/architecture/3.2/#3.2.1).
 
 **II. Vacuum Supply**
 The condensate $\rho_3^*$ supplies quanta at a characteristic rate $N_{\text{scale}} = \frac{v}{\kappa_m}$, representing available quanta per braid volume $V_\beta \sim N_{3,\text{net}} \ell_0^3$. Dimensionally, $v$ sets the electroweak scale, yielding $N_{\text{scale}} \approx 1.445 \times 10^6$ cycles/GeV at $\rho_3^* \approx 0.029$. The supply flux $J_{\text{supply}} = \frac{\rho_3^* \langle k \rangle}{t_{\text{tick}}}$ ensures demand-matching in equilibrium.

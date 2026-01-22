@@ -92,7 +92,7 @@ The argument establishes the thermodynamic stability of the vacuum by decomposin
 
 :::info[**Exponential Suppression of Long-Range Dependencies under Bounded Branching**]
 
-Given a causal graph $G$ satisfying the Bounded Degree condition [(§3.2.1)](architecture#3.2.1) and the Acyclicity constraint [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1), the probability $P(u \leftrightarrow v)$ that a causal constraint propagates between two vertices $u$ and $v$ separated by distance $r$ decays exponentially:
+Given a causal graph $G$ satisfying the Bounded Degree condition [(§3.2.1)](/monograph/foundations/architecture/3.2/#3.2.1) and the Acyclicity constraint [(§2.7.1)](/monograph/foundations/axioms/2.7/#2.7.1), the probability $P(u \leftrightarrow v)$ that a causal constraint propagates between two vertices $u$ and $v$ separated by distance $r$ decays exponentially:
 
 $$
 P(u \leftrightarrow v) \sim (d_{\max} \rho)^r
@@ -114,7 +114,7 @@ where $\rho < 1$ is the edge density parameter.
 
 **II. Branching Structure**
 
-From the uniqueness of the **Bethe Fragment** as the vacuum state [(§3.2.1)](architecture#3.2.1), the graph $G_0$ exhibits a locally tree-like structure with finite branching factor $b$.
+From the uniqueness of the **Bethe Fragment** as the vacuum state [(§3.2.1)](/monograph/foundations/architecture/3.2/#3.2.1), the graph $G_0$ exhibits a locally tree-like structure with finite branching factor $b$.
 For a distance $d = \text{dist}(u, v)$, the number of simple paths of length $L \ge d$ is bounded by the branching process:
 $$N(L) \sim b^{L-d}$$
 (The path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology).
@@ -412,7 +412,7 @@ Q.E.D.
 
 :::info[**The Instability of Nothingness**]
 
-As established in Chapter 3 [(§3.2.1)](architecture#3.2.1), the pre-geometric vacuum is structured as a directed Regular Bethe Fragment with root coordination number $k=3$ but internal nodes exhibiting exactly 1 incoming edge (from parent) and 2 outgoing edges (to children), yielding a binary branching factor $b=2$ for internal propagation. This precise topology enforces sparsity (no pre-existing cycles) and maximal compliant 2-path density without quanta, ensuring the vacuum remains inert yet primed for ignition. The derivations in this lemma are rooted entirely in this binary foundation, with no free parameters or assumptions introduced.
+As established in Chapter 3 [(§3.2.1)](/monograph/foundations/architecture/3.2/#3.2.1), the pre-geometric vacuum is structured as a directed Regular Bethe Fragment with root coordination number $k=3$ but internal nodes exhibiting exactly 1 incoming edge (from parent) and 2 outgoing edges (to children), yielding a binary branching factor $b=2$ for internal propagation. This precise topology enforces sparsity (no pre-existing cycles) and maximal compliant 2-path density without quanta, ensuring the vacuum remains inert yet primed for ignition. The derivations in this lemma are rooted entirely in this binary foundation, with no free parameters or assumptions introduced.
 
 The dimensionless constant $\Lambda$ emerges as the **Background Reactivity** of the vacuum, quantifying the intrinsic rate at which the tree-like structure spontaneously attempts to form cycles even at zero density. In standard nucleation theory, systems often require overcoming a "critical barrier" of minimum size or energy to initiate growth, mirroring vacuum instability in quantum field theory where fluctuations trigger phase transitions from false to true vacua, as analyzed by **[(Coleman, 1977)](/monograph/appendices/a-references#A.20)**. Here, the "fluctuation" manifests as the combinatorial alignment of a compliant 2-path with an open closing slot.
 
@@ -1021,7 +1021,7 @@ The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the
 
 1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominals [(§4.4.5)](dynamics#4.4.5).
 2.  **Ensemble Initialization:** For each grid point, an ensemble of 100 independent trajectories is instantiated. Each trajectory is initialized from a **Zero-Point Information (ZPI) Vacuum**, defined as a finite, rooted, outward-directed Bethe fragment ($N \approx 100$) exhibiting trivalent coordination at the root and bivalent coordination at internal nodes.
-3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ [(§3.4.1)](architecture#3.4.1), creating the first 3-Cycle ($H=1$) and transforming the inert vacuum into an active initial state.
+3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ [(§3.4.1)](/monograph/foundations/architecture/3.4/#3.4.1), creating the first 3-Cycle ($H=1$) and transforming the inert vacuum into an active initial state.
 4.  **Evolution and Aggregation:** The system is advanced via 1500 iterative applications of the Evolution Operator $\mathcal{U}$ [(§4.6.1)](dynamics#4.6.1). Observables (specifically $N_3$ and $\rho_3$) are recorded at each tick, and statistical moments (mean, median, skew) are aggregated across the ensemble.
 
 ### 5.3.2.1 Commentary: Methodology of the Sweep {#5.3.2.1}

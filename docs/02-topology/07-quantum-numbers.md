@@ -97,7 +97,7 @@ The geometric half-twist operation applied to a framed ribbon is represented in 
 Let the **Spin Operator** $L_S$ define on the set of rung edges $E_{rung}$ of a framed ribbon embedded in the causal graph.
 $$L_S = \prod_{e \in E_{rung}} Z_e$$
 Let the **Twist Operator** $\hat{\mathcal{T}}$ define as the ordered product of rewrite operations $\mathcal{R}$ required to introduce a geometric half-twist ($\pi$ rotation) to the ribbon frame.
-In the stabilizer formalism [(§3.5.1)](/monograph/foundations/architecture#3.5.1), each elementary rewrite maps to a Pauli-$X$ operation on a specific edge qubit.
+In the stabilizer formalism [(§3.5.1)](/monograph/foundations/architecture/3.5/#3.5.1), each elementary rewrite maps to a Pauli-$X$ operation on a specific edge qubit.
 $$\hat{\mathcal{T}} = \prod_{k=1}^{M} X_{e_k}$$
 
 **II. Commutation Algebra**
@@ -139,7 +139,7 @@ Q.E.D.
 
 :::info[**Geometric Origin of Phase Sign Inversion due to Twist Operations**]
 
-Lemma 7.1.3 formalizes the interaction between a physical twist and the measurement of spin. The spin operator $L_S$ measures parity via a product of $Z$ operators. A physical twist, implemented by the unitary $\hat{\mathcal{T}}$, involves the creation and rearrangement of edges, actions that correspond to Pauli-$X$ operations in the qubit basis defined in the Configuration Space Validity [(§3.5.3)](/monograph/foundations/architecture#3.5.3).
+Lemma 7.1.3 formalizes the interaction between a physical twist and the measurement of spin. The spin operator $L_S$ measures parity via a product of $Z$ operators. A physical twist, implemented by the unitary $\hat{\mathcal{T}}$, involves the creation and rearrangement of edges, actions that correspond to Pauli-$X$ operations in the qubit basis defined in the Configuration Space Validity [(§3.5.3)](/monograph/foundations/architecture/3.5/#3.5.3).
 
 Quantum mechanics dictates that $X$ and $Z$ anticommute ($XZ = -ZX$). Consequently, applying a twist operation ($\hat{\mathcal{T}}$) to a state flips the sign of the spin measurement ($L_S$). If the ribbon occupied a +1 eigenstate (untwisted), the twist transforms the system into a -1 eigenstate (twisted).
 
@@ -464,7 +464,7 @@ The underlying set theory precludes multiplicity; an element cannot be a member 
 
 **II. Hilbert Space Isomorphism**
 
-The configuration space $\mathcal{H}$ is constructed via the mapping $\mathcal{M}: \Omega_{graph} \to (\mathbb{C}^2)^{\otimes K}$ [(§3.5.3)](/monograph/foundations/architecture#3.5.3).
+The configuration space $\mathcal{H}$ is constructed via the mapping $\mathcal{M}: \Omega_{graph} \to (\mathbb{C}^2)^{\otimes K}$ [(§3.5.3)](/monograph/foundations/architecture/3.5/#3.5.3).
 This mapping assigns a specific qubit subsystem $q_{uv}$ to the potential edge $(u, v)$.
 The basis states of $q_{uv}$ are defined by the eigenvalues of the number operator $\hat{n}_{uv} = |1\rangle\langle 1|_{uv}$.
 $$\hat{n}_{uv} |0\rangle = 0, \quad \hat{n}_{uv} |1\rangle = 1$$
@@ -606,7 +606,7 @@ where $|\Phi_{env}\rangle$ represents the state of the remaining $K-2$ qubits.
 
 **II. Projector Definition**
 
-The **Hard Constraint Projector** $\Pi_{\text{cycle}}$ [(§3.5.4)](/monograph/foundations/architecture#3.5.4) enforces the asymmetry axiom on the Hilbert space.
+The **Hard Constraint Projector** $\Pi_{\text{cycle}}$ [(§3.5.4)](/monograph/foundations/architecture/3.5/#3.5.4) enforces the asymmetry axiom on the Hilbert space.
 The local projector for the pair $\{u, v\}$ is defined explicitly as the complement of the symmetric state:
 $$P_{uv} = \mathbb{I} - |1\rangle_{uv}\langle1| \otimes |1\rangle_{vu}\langle1|$$
 This operator leaves states $|00\rangle, |01\rangle, |10\rangle$ invariant and annihilates $|11\rangle$.
@@ -675,7 +675,7 @@ We define electric charge as the normalized total writhe of the tripartite braid
 
 :::tip[**Formulation of Net Topological Charge using the Writhe Stabilizer**]
 
-The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ [(§3.5.1)](/monograph/foundations/architecture#3.5.1). The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications:
+The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ [(§3.5.1)](/monograph/foundations/architecture/3.5/#3.5.1). The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications:
 1.  **Operator Construction:** The operator is formulated as the linear combination of rung-product Z-operators, defined by the equation $Q = \frac{1}{3} \sum_{i=1}^3 \left( \prod_{e \in \text{rungs}(R_i)} Z_e \right)$.
 2.  **Eigenvalue Spectrum:** The operator yields a discrete spectrum of rational eigenvalues derived from the sum of the individual ribbon parities $\lambda_i \in \{+1, -1\}$, where the factor $1/3$ serves as the normalization constant mandated by anomaly cancellation constraints [(§7.3.7)](#7.3.7).
 3.  **Topological Correspondence:** The expectation value $\langle Q \rangle$ corresponds strictly to the normalized Total Writhe $w(\beta)$ of the braid configuration, mapping geometric torsion to the conserved quantum number of electric charge.
@@ -809,7 +809,7 @@ The graph-theoretic realization of a Type I kink requires specific edge configur
 
 Let $\hat{\mathcal{T}}_{loc}$ be the operator attempting the Type I move.
 The resulting state $|\psi'\rangle = \hat{\mathcal{T}}_{loc}|\psi\rangle$ contains the forbidden subgraph.
-The **Hard Constraint Projectors** $\Pi_{cycle}$ [(§3.5.4)](/monograph/foundations/architecture#3.5.4) act on the state vector.
+The **Hard Constraint Projectors** $\Pi_{cycle}$ [(§3.5.4)](/monograph/foundations/architecture/3.5/#3.5.4) act on the state vector.
 $$\Pi_{cycle} |\psi'\rangle = 0$$
 The stabilizer syndrome extraction yields a violation $\sigma = 0$ (Invalid State), as the 2-cycle introduces a parity error in the timestamp ordering check.
 
@@ -1232,8 +1232,8 @@ This term remains strictly positive for any non-trivial knot ($N_3 \ge 1$), esta
 **III. Entropy Computation ($S$)**
 
 The entropy follows the Boltzmann formula $S = k_B \ln \Omega$.
-1.  **Microstate Enumeration:** A stable particle corresponds to a **Prime Braid** protected by the **QECC Codespace** $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture#3.5.7).
-2.  **Degeneracy Analysis:** The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) enforces a rigid graph structure for the minimal embedding of a prime knot. Any local deviation constitutes a high-energy excitation (logical error) that triggers the **Stabilizer Projectors** [(§3.5.4)](/monograph/foundations/architecture#3.5.4).
+1.  **Microstate Enumeration:** A stable particle corresponds to a **Prime Braid** protected by the **QECC Codespace** $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture/3.5/#3.5.7).
+2.  **Degeneracy Analysis:** The **Principle of Unique Causality (PUC)** [(§2.3.3)](/monograph/foundations/axioms/2.3/#2.3.3) enforces a rigid graph structure for the minimal embedding of a prime knot. Any local deviation constitutes a high-energy excitation (logical error) that triggers the **Stabilizer Projectors** [(§3.5.4)](/monograph/foundations/architecture/3.5/#3.5.4).
 3.  **Result:** The ground state degeneracy is exactly unity. The system does not fluctuate between equivalent microstates because the graph geometry is fixed by the minimality constraint.
     $$\Omega(\beta) = 1$$
 4.  **Entropic Nullification:**
