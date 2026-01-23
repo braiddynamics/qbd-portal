@@ -633,7 +633,7 @@ The amplitude of the forbidden state is strictly zero in the physical Hilbert sp
 
 **V. Transition Probability**
 
-The probability of transitioning to the dual occupancy state is determined by the Born Rule applied to the projected evolution operator $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1).
+The probability of transitioning to the dual occupancy state is determined by the Born Rule applied to the projected evolution operator $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1).
 $$P(G \to G_{violation}) = || \Pi_{\mathcal{C}} \mathcal{R} |\Psi_{initial}\rangle ||^2$$
 If $\mathcal{R}$ attempts to create the edge $(v, u)$ while $(u, v)$ exists, the target state is $|\psi_{violation}\rangle$.
 $$P = || 0 ||^2 = 0$$
