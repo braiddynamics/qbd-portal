@@ -29,6 +29,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\hat{H}$ | Hamiltonian Operator | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
 | $\Psi$ | Wavefunction of the universe | [§1.2.2](/monograph/foundations/ontology/1.2/#1.2.2) |
 | $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1](/monograph/foundations/ontology/1.2/#1.2.2.1) |
+| $\mu$ | Renormalization scale | [§1.2.2.1](/monograph/foundations/ontology/1.2/#1.2.2.1) |
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/foundations/ontology/1.2/#1.2.2.2) |
 | $\mathcal{T}$ | Unimodular Time variable (Context: Gravity) | [§1.2.2.3](/monograph/foundations/ontology/1.2/#1.2.2.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/foundations/ontology/1.2/#1.2.2.3) |
@@ -38,17 +39,19 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $b$ | Finite Branching factor | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
 | $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
 | $\delta$ | Holographic scaling constant | [§1.2.3.1](/monograph/foundations/ontology/1.2/#1.2.3.1) |
+| $T$ | Temporal Domain (Set of integers) | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
 | $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
-| $\mu$ | Mean of entropy production | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\mathcal{H}$ | History sequence (set of operations) | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
+| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
 | $\sigma^2$ | Variance of entropy production | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
 | $\Delta I_k$ | Information bit contribution | [§1.2.4.1](/monograph/foundations/ontology/1.2/#1.2.4.1) |
-| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
+| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
 | $\mathcal{T}$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
-| $\mathcal{H}$ | History sequence (set of operations) | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
+| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/foundations/ontology/1.2/#1.2.5.1) |
 | $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
 | $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/foundations/ontology/1.2/#1.2.6.1) |
 | $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
-| $T$ | Temperature | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
+| $T$ | Temperature (Context: Thermodynamics) | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
 | $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
 | $c$ | Speed of light | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
 | $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
@@ -56,7 +59,6 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/foundations/ontology/1.2/#1.2.6.2) |
 | $U_0$ | The unique initial state | [§1.2.7](/monograph/foundations/ontology/1.2/#1.2.7) |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/foundations/ontology/1.2/#1.2.7.2) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/foundations/ontology/1.3/#1.3.1) |
@@ -71,29 +73,29 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1](/monograph/foundations/ontology/1.5/#1.5.1) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/foundations/axioms/2.1/#2.1.1) |
 | $E$ | The set of edges within the graph | [§2.1.1](/monograph/foundations/axioms/2.1/#2.1.1) |
-| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
-| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
-| $\neg$ | Logical negation | [§2.7.1](/monograph/foundations/axioms/2.7/#2.7.1) |
 | $\implies$ | Logical implication | [§2.2.1](/monograph/foundations/axioms/2.2/#2.2.1) |
 | $\forall$ | Universal quantifier ("for all") | [§2.2.1](/monograph/foundations/axioms/2.2/#2.2.1) |
-| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2](/monograph/foundations/axioms/2.3/#2.3.2) |
-| $L$ | Length of a cycle or path | [§2.3.1](/monograph/foundations/axioms/2.3/#2.3.1) |
-| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.3](/monograph/foundations/axioms/2.3/#2.3.3) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
-| $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/foundations/axioms/2.4/#2.4.3) |
-| $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/foundations/axioms/2.4/#2.4.3.1) |
-| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/foundations/axioms/2.4/#2.4.2) |
-| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.3](/monograph/foundations/axioms/2.3/#2.3.3) |
 | $\mathcal{T}_{self}$ | Self-Loop Addition Operation | [§2.2.3](/monograph/foundations/axioms/2.2/#2.2.3) |
-| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
-| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
-| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
-| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
-| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
-| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
 | $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3](/monograph/foundations/axioms/2.2/#2.2.3) |
 | $\Delta S$ | Change in Entropy | [§2.2.3](/monograph/foundations/axioms/2.2/#2.2.3) |
 | $k_B$ | Boltzmann Constant | [§2.2.3](/monograph/foundations/axioms/2.2/#2.2.3) |
+| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.1](/monograph/foundations/axioms/2.3/#2.3.1) |
+| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.1](/monograph/foundations/axioms/2.3/#2.3.1) |
+| $L$ | Length of a cycle or path | [§2.3.1](/monograph/foundations/axioms/2.3/#2.3.1) |
+| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2](/monograph/foundations/axioms/2.3/#2.3.2) |
+| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
+| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
+| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4](/monograph/foundations/axioms/2.3/#2.3.4) |
+| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/foundations/axioms/2.4/#2.4.2) |
+| $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/foundations/axioms/2.4/#2.4.3) |
+| $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/foundations/axioms/2.4/#2.4.3.1) |
+| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
+| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
+| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/foundations/axioms/2.4/#2.4.5) |
+| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
+| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
+| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/foundations/axioms/2.6/#2.6.1) |
+| $\neg$ | Logical negation | [§2.7.1](/monograph/foundations/axioms/2.7/#2.7.1) |
 | $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/foundations/axioms/2.7/#2.7.2) |
 | $R$ | Radius of local computational patch | [§2.7.3](/monograph/foundations/axioms/2.7/#2.7.3) |
 | $\rho$ | Edge density of the graph | [§2.7.3](/monograph/foundations/axioms/2.7/#2.7.3) |
