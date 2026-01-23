@@ -698,7 +698,7 @@ For a lepton like the electron, the ribbons are symmetric, each contributing $-1
 It is asserted that the electric charge $Q$ of a stable elementary fermion is identical to the topological invariant defined by the normalized total writhe of its braid topology. This emergence is characterized by the following invariant properties:
 1.  **Proportionality:** The charge satisfies the linear relation $Q = k \cdot w(\beta)$, where $w(\beta)$ is the integer-valued total writhe and $k=1/3$ is the universal coupling constant.
 2.  **Spectrum Partition:** The operator assigns integer charge values $Q \in \{0, \pm 1\}$ exclusively to color-singlet (symmetric) braid configurations, and fractional charge values $Q \in \{-1/3, +2/3\}$ exclusively to color-triplet (asymmetric) braid configurations.
-3.  **Conservation Law:** The global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1), enforced by the topological barriers against local writhe modification.
+3.  **Conservation Law:** The global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1), enforced by the topological barriers against local writhe modification.
 
 ### 7.3.2.1 Argument Outline: Logic of Charge Derivation {#7.3.2.1}
 
@@ -815,7 +815,7 @@ The stabilizer syndrome extraction yields a violation $\sigma = 0$ (Invalid Stat
 
 **IV. Dynamical Rejection**
 
-The **Evolution Operator** $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1) includes the projection map $\mathcal{M}$.
+The **Evolution Operator** $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1) includes the projection map $\mathcal{M}$.
 Since the state $|\psi'\rangle$ lies in the kernel of the physical code space $\mathcal{C}$ (the null space of the valid projectors), the transition amplitude vanishes.
 $$P(w \to w \pm 1) = || \mathcal{M} \hat{\mathcal{T}}_{loc} |\psi\rangle ||^2 = 0$$
 The system cannot evolve into a state with modified writhe via local operations.
