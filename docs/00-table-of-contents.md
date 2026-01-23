@@ -13,11 +13,11 @@ sidebar_position: 0
 * [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
 
 ### 1. The Foundational Principles (The Rules)
-* [Chapter 1: Substrate (Ontology)](/monograph/category/chapter-1-ontology)
-* [Chapter 2: Axioms (Constraints)](/monograph/category/chapter-2-axioms)
-* [Chapter 3: Architecture (Object Model)](/monograph/category/chapter-3-architecture)
-* [Chapter 4: Dynamics (The Engine)](/monograph/foundations/dynamics)
-* [Chapter 5: Thermodynamics (Geometrogenesis)](/monograph/foundations/thermodynamics)
+* [Chapter 1: Ontology (Substrate)](/monograph/category/1-ontology)
+* [Chapter 2: Axioms (Constraints)](/monograph/category/2-axioms)
+* [Chapter 3: Architecture (Object Model)](/monograph/category/3-architecture)
+* [Chapter 4: Dynamics (The Engine)](/monograph/category/4-dynamics)
+* [Chapter 5: Thermodynamics (Geometrogenesis)](/monograph/category/5-thermodynamics)
 
 ### 2. Topological Nature of Matter (The Players)
 * [Chapter 6: The Tripartite Braid (Fermions)](/monograph/topology/tripartite-braid)

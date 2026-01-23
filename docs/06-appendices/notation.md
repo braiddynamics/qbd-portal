@@ -133,55 +133,55 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](/monograph/foundations/architecture/3.5/#3.5.2) |
 | $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/foundations/architecture/3.5/#3.5.1) |
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/foundations/architecture/3.5/#3.5.1) |
-| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/foundations/dynamics#4.1.1) |
-| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3](/monograph/foundations/dynamics#4.1.3) |
-| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/foundations/dynamics#4.3.1) |
-| $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/foundations/dynamics#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/foundations/dynamics#4.3.2) |
-| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/foundations/dynamics#4.3.3) |
-| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/foundations/dynamics#4.3.4) |
-| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/foundations/dynamics#4.4.1) |
-| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/foundations/dynamics#4.4.2) |
-| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/foundations/dynamics#4.4.3) |
-| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/foundations/dynamics#4.4.4) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e - 1$) | [§4.4.5](/monograph/foundations/dynamics#4.4.5) |
-| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/foundations/dynamics#4.4.6) |
-| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/foundations/dynamics#4.5.1) |
-| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/foundations/dynamics#4.5.2) |
-| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/foundations/dynamics#4.5.2) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/foundations/dynamics#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/foundations/dynamics#4.5.5) |
-| $\mathcal{U}$ | Evolution Operator | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/foundations/dynamics#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/foundations/dynamics#4.6.2) |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/foundations/thermodynamics#5.1.1) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/foundations/thermodynamics#5.1.1) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/foundations/thermodynamics#5.1.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
-| $c$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/foundations/thermodynamics#5.1.2) |
-| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/foundations/thermodynamics#5.2.1) |
-| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/foundations/thermodynamics#5.2.2) |
-| $\Lambda$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/foundations/thermodynamics#5.2.3) |
-| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/foundations/thermodynamics#5.2.5) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/foundations/thermodynamics#5.2.6) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/foundations/thermodynamics#5.2.7) |
-| $\rho^*$ | Equilibrium density (Fixed Point) | [§5.4.1](/monograph/foundations/thermodynamics#5.4.1) |
-| $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/foundations/thermodynamics#5.4.2.1) |
-| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/foundations/thermodynamics#5.4.4.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path distance | [§5.5.2](/monograph/foundations/thermodynamics#5.5.2) |
-| $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/foundations/thermodynamics#5.5.3) |
-| $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/foundations/thermodynamics#5.5.3) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.4](/monograph/foundations/thermodynamics#5.5.4) |
-| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.4.1](/monograph/foundations/thermodynamics#5.5.4.1) |
-| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | [§5.5.5](/monograph/foundations/thermodynamics#5.5.5) |
-| $C_k$ | Count of simple cycles of length $k$ | [§5.5.6](/monograph/foundations/thermodynamics#5.5.6) |
-| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/foundations/thermodynamics#5.5.7) |
-| $d_c$ | Upper critical dimension ($d=4$) | [§5.5.7.1](/monograph/foundations/thermodynamics#5.5.7.1) |
+| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/foundations/dynamics/4.1/#4.1.1) |
+| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3](/monograph/foundations/dynamics/4.1/#4.1.3) |
+| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/foundations/dynamics/4.3/#4.3.1) |
+| $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/foundations/dynamics/4.3/#4.3.2) |
+| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/foundations/dynamics/4.3/#4.3.2) |
+| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/foundations/dynamics/4.3/#4.3.3) |
+| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/foundations/dynamics/4.3/#4.3.4) |
+| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/foundations/dynamics/4.4/#4.4.1) |
+| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/foundations/dynamics/4.4/#4.4.2) |
+| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/foundations/dynamics/4.4/#4.4.3) |
+| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/foundations/dynamics/4.4/#4.4.4) |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e - 1$) | [§4.4.5](/monograph/foundations/dynamics/4.4/#4.4.5) |
+| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/foundations/dynamics/4.4/#4.4.6) |
+| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/foundations/dynamics/4.5/#4.5.1) |
+| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/foundations/dynamics/4.5/#4.5.2) |
+| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/foundations/dynamics/4.5/#4.5.2) |
+| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/foundations/dynamics/4.5/#4.5.3) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/foundations/dynamics/4.5/#4.5.5) |
+| $\mathcal{U}$ | Evolution Operator | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/foundations/dynamics/4.6/#4.6.1) |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/foundations/dynamics/4.6/#4.6.2) |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/foundations/thermodynamics/5.1/#5.1.1) |
+| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/foundations/thermodynamics/5.1/#5.1.1) |
+| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/foundations/thermodynamics/5.1/#5.1.1.1) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/foundations/thermodynamics/5.1/#5.1.2) |
+| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/foundations/thermodynamics/5.1/#5.1.2) |
+| $c$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/foundations/thermodynamics/5.1/#5.1.2) |
+| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/foundations/thermodynamics/5.2/#5.2.1) |
+| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/foundations/thermodynamics/5.2/#5.2.2) |
+| $\Lambda$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/foundations/thermodynamics/5.2/#5.2.3) |
+| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/foundations/thermodynamics/5.2/#5.2.5) |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/foundations/thermodynamics/5.2/#5.2.6) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/foundations/thermodynamics/5.2/#5.2.7) |
+| $\rho^*$ | Equilibrium density (Fixed Point) | [§5.4.1](/monograph/foundations/thermodynamics/5.4/#5.4.1) |
+| $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/foundations/thermodynamics/5.4/#5.4.2.1) |
+| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/foundations/thermodynamics/5.4/#5.4.4.1) |
+| $\bar{d}(u,v)$ | Undirected shortest-path distance | [§5.5.2](/monograph/foundations/thermodynamics/5.5/#5.5.2) |
+| $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/foundations/thermodynamics/5.5/#5.5.3) |
+| $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/foundations/thermodynamics/5.5/#5.5.3) |
+| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.4](/monograph/foundations/thermodynamics/5.5/#5.5.4) |
+| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.4.1](/monograph/foundations/thermodynamics/5.5/#5.5.4.1) |
+| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | [§5.5.5](/monograph/foundations/thermodynamics/5.5/#5.5.5) |
+| $C_k$ | Count of simple cycles of length $k$ | [§5.5.6](/monograph/foundations/thermodynamics/5.5/#5.5.6) |
+| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/foundations/thermodynamics/5.5/#5.5.7) |
+| $d_c$ | Upper critical dimension ($d=4$) | [§5.5.7.1](/monograph/foundations/thermodynamics/5.5/#5.5.7.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1](/monograph/topology/tripartite-braid#6.1) |
 | $\xi$ | Localized excitation (subgraph of $G_t^*$) | [§6.1.1](/monograph/topology/tripartite-braid#6.1.1) |
 | $\mathcal{S}$ | Sequence of rewrite operations | [§6.1.1](/monograph/topology/tripartite-braid#6.1.1) |
