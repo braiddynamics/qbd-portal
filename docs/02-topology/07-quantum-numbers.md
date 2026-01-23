@@ -730,7 +730,7 @@ The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry*
 
 **I. Operator Support Definition**
 
-Let $\mathcal{O}_{loc}$ denote the set of all physically realizable operators generatable by the **Universal Constructor** $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics#4.5.1).
+Let $\mathcal{O}_{loc}$ denote the set of all physically realizable operators generatable by the **Universal Constructor** $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics/4.5/#4.5.1).
 The action of any operator $\hat{O} \in \mathcal{O}_{loc}$ restricts to a subgraph $G_{sub} \subset G$ defined by the **Local Horizon** radius $R \sim \log N$ [(§6.4.3)](tripartite-braid#6.4.3).
 $$\text{supp}(\hat{O}) \subseteq B(v, R)$$
 This confinement prevents any single rewrite operation from accessing topological data distributed over distances $L > R$.

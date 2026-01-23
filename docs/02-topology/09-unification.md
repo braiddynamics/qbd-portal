@@ -386,7 +386,7 @@ The physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the
 
 :::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
 
-The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) and the maximal parallelism theorem [(§3.3.5)](/monograph/foundations/architecture/3.3/#3.3.5).
+The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical rewrite rule [(§4.5.1)](/monograph/foundations/dynamics/4.5/#4.5.1) and the maximal parallelism theorem [(§3.3.5)](/monograph/foundations/architecture/3.3/#3.3.5).
 
 **I. Spatial Decomposition**
 The rewrite process $\mathcal{R}_i$ operates on a local subgraph $G_i \subset G$ defined by the ribbons $i, i+1$ and their immediate neighbors.
@@ -1808,7 +1808,7 @@ The local density of topological features $\rho_{local}$ is defined as the numbe
 $$\rho_{local} = \frac{N_{sites}}{V_{braid}} \propto \frac{N_3}{V_0} \propto N_3$$
 
 **III. Stress Accumulation**
-The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ [(§5.2.1)](/monograph/foundations/thermodynamics#5.2.1).
+The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ [(§5.2.1)](/monograph/foundations/thermodynamics/5.2/#5.2.1).
 $$\sigma \propto \rho_{local} - \rho_3^* \propto N_3$$
 As the complexity $N_3$ increases, the local density rises linearly, leading to a linear increase in the topological stress exerted by the vacuum pressure against the braid structure. This stress creates the friction that opposes further growth.
 
@@ -1835,7 +1835,7 @@ The stability of a topological particle is bounded by the syndrome-response fric
 
 **I. Maintenance Dynamics**
 The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it.
-* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ [(§4.5.4)](/monograph/foundations/dynamics#4.5.4).
+* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ [(§4.5.4)](/monograph/foundations/dynamics/4.5/#4.5.4).
     $$R_{create} \propto N_3 \cdot P_{acc} \propto N_3 e^{-\mu N_3}$$
     (Substituting $\sigma \propto N_3$ from **Lemma 9.6.5**).
 * **Deletion Rate ($R_{delete}$):** Proportional to the number of active sites susceptible to decay or unraveling, catalyzed by excess density.
@@ -1879,7 +1879,7 @@ The critical state occurs when the creation rate exactly balances the deletion r
 $$R_{create} = R_{delete}$$
 Using the scaling forms derived in **9.6.6.1**:
 $$N_3 e^{-\mu N_3} = \frac{1}{2}$$
-The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ dynamics [(§4.5.6)](/monograph/foundations/dynamics#4.5.6).
+The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ dynamics [(§4.5.6)](/monograph/foundations/dynamics/4.5/#4.5.6).
 
 **II. Solution Analysis**
 Let $f(x) = x e^{-\mu x} - 0.5 = 0$, where $x = N_3$.
@@ -1928,7 +1928,7 @@ $$M_R = \kappa_{scale} \cdot N_{3,\max}$$
 
 **II. Dimensional Scaling**
 The mass scale is anchored to the Planck mass $M_{Pl}$ but suppressed by the exponential friction factor over the effective dimension $d=4$.
-The suppression factor derives from the instanton action in the 4D bulk [(§5.5.7)](/monograph/foundations/thermodynamics#5.5.7):
+The suppression factor derives from the instanton action in the 4D bulk [(§5.5.7)](/monograph/foundations/thermodynamics/5.5/#5.5.7):
 $$M_R \sim M_{Pl} \cdot e^{-c/\mu}$$
 where $c \approx 2.76$ is a geometric constant derived from the 4-volume embedding.
 

@@ -90,7 +90,7 @@ If a subgraph admits a sequence of local operations that reduces its complexity 
 
 :::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
 
-The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture/3.5/#3.5.7). This stability derives from the **Architectural Barrier** [(§6.4.1)](#6.4.1), wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local rewrite rule $\mathcal{R}$ [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2). Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed deletion mechanism $J_{out}$ [(§5.2.5)](/monograph/foundations/thermodynamics#5.2.5).
+The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace $\mathcal{C}$ [(§3.5.7)](/monograph/foundations/architecture/3.5/#3.5.7). This stability derives from the **Architectural Barrier** [(§6.4.1)](#6.4.1), wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local rewrite rule $\mathcal{R}$ [(§2.7.2)](/monograph/foundations/axioms/2.7/#2.7.2). Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed deletion mechanism $J_{out}$ [(§5.2.5)](/monograph/foundations/thermodynamics/5.2/#5.2.5).
 
 
 ### 6.1.2.1 Argument Outline: Logic of the Necessity Chain {#6.1.2.1}
@@ -178,7 +178,7 @@ The **Principle of Unique Causality** [(§2.3.3)](/monograph/foundations/axioms/
 
 :::info[**Amplification of Deletion Probability triggered by High-Density Stress**]
 
-A decomposed cluster comprising isolated 3-cycles constitutes a high-stress configuration within the vacuum. The local cycle density $\rho_{\xi}$ strictly exceeds the equilibrium fixed point $\rho^*$ [(§5.4.1)](/monograph/foundations/thermodynamics#5.4.1), creating a syndrome potential that activates the non-linear deletion terms of the Master Equation. Specifically, the **Catalytic Flux** $J_{cat} = 3\lambda_{cat}\rho^2$ [(§5.2.7)](/monograph/foundations/thermodynamics#5.2.7) dominates the dynamics, overpowering the friction-damped creation flux. The resulting net topological current is strictly negative ($\dot{\rho} \ll 0$), driving the rapid evaporation of the cluster back to the vacuum baseline.
+A decomposed cluster comprising isolated 3-cycles constitutes a high-stress configuration within the vacuum. The local cycle density $\rho_{\xi}$ strictly exceeds the equilibrium fixed point $\rho^*$ [(§5.4.1)](/monograph/foundations/thermodynamics/5.4/#5.4.1), creating a syndrome potential that activates the non-linear deletion terms of the Master Equation. Specifically, the **Catalytic Flux** $J_{cat} = 3\lambda_{cat}\rho^2$ [(§5.2.7)](/monograph/foundations/thermodynamics/5.2/#5.2.7) dominates the dynamics, overpowering the friction-damped creation flux. The resulting net topological current is strictly negative ($\dot{\rho} \ll 0$), driving the rapid evaporation of the cluster back to the vacuum baseline.
 
 ### 6.1.4.1 Proof: Decay Rate Calculation {#6.1.4.1}
 
@@ -537,7 +537,7 @@ The three-ribbon braid represents the first threshold of true complexity. It for
 It is asserted that the stable, first-generation elementary fermions are topologically isomorphic to prime, three-ribbon braids, denoted $n=3$, residing within the codespace $\mathcal{C}$ [(§3.5.1)](/monograph/foundations/architecture/3.5/#3.5.1). This uniqueness is established by the exhaustive exclusion of all alternative ribbon counts through the following logical filters:
 
 1.  **Lower Bound Exclusion:** Configurations with fewer than three ribbons ($n < 3$) are excluded on grounds of Topological Instability or Algebraic Insufficiency, wherein $n=1$ structures are reducible via local operations [(§6.2.4)](#6.2.4) and $n=2$ structures generate purely abelian algebras incapable of supporting Quantum Chromodynamics [(§6.2.5)](#6.2.5).
-2.  **Upper Bound Exclusion:** Configurations with greater than three ribbons ($n > 3$) are excluded on grounds of Entropic Parsimony, as such structures incur excess topological complexity costs $C[\beta] > 3$ that suppress their formation probability relative to the ground state of three ribbons within the equilibrium vacuum density $\rho_3^* \approx 0.03$ [(§5.4.1)](/monograph/foundations/thermodynamics#5.4.1).
+2.  **Upper Bound Exclusion:** Configurations with greater than three ribbons ($n > 3$) are excluded on grounds of Entropic Parsimony, as such structures incur excess topological complexity costs $C[\beta] > 3$ that suppress their formation probability relative to the ground state of three ribbons within the equilibrium vacuum density $\rho_3^* \approx 0.03$ [(§5.4.1)](/monograph/foundations/thermodynamics/5.4/#5.4.1).
 3.  **Triality Mandate:** The $n=3$ configuration constitutes the unique solution satisfying the 3-cycle primitive [(§2.3.2)](/monograph/foundations/axioms/2.3/#2.3.2), providing the necessary basis for three color charges and the anomaly coefficient cancellation $A(3) + A(\bar{3}) = 0$.
 
 ### 6.2.2.1 Argument Outline: Logic of the Exclusion Chain {#6.2.2.1}
@@ -559,7 +559,7 @@ Finally, we synthesize these findings to exclude **Super-Minimal Configurations*
 
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 
-Any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ [(§5.2.7)](/monograph/foundations/thermodynamics#5.2.7), which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+Any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ [(§5.2.7)](/monograph/foundations/thermodynamics/5.2/#5.2.7), which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
 ### 6.2.3.1 Proof: Triviality via Flux Dominance {#6.2.3.1}
 
@@ -987,7 +987,7 @@ As complexity increases linearly, however, suppression becomes severe. The simul
 
 :::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
 
-The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics#4.5.1)) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with Axiom 2 in [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and the general cycle decomposition in [(§2.4.1)](/monograph/foundations/axioms/2.4/#2.4.1), where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
+The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ [(§4.5.1)](/monograph/foundations/dynamics/4.5/#4.5.1)) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with Axiom 2 in [(§2.3.1)](/monograph/foundations/axioms/2.3/#2.3.1) and the general cycle decomposition in [(§2.4.1)](/monograph/foundations/axioms/2.4/#2.4.1), where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
 
 **Step 1: Base Case ($n=0$).** Unbraided structures correspond to $n=0$. [(§6.2.3)](#6.2.3) establishes topological triviality and instability, with $\sigma = -1$ catalyzing decay.
 
@@ -1117,7 +1117,7 @@ The hypothesis $N_3(\beta_M) = k_c \cdot C[\beta_M]$ is tested by induction on $
 **II. Base Case ($M=1$)**
 
 The construction of the initial crossing $\beta_1$, corresponding to a half-twist or single swap $\sigma_i$, necessitates the formation of a causal bridge between adjacent ribbons.
-Under the **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics#4.5.1), this bridge forms via the closure of a compliant 2-path.
+Under the **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics/4.5/#4.5.1), this bridge forms via the closure of a compliant 2-path.
 The closure operation $\mathfrak{T}_{add}$ creates exactly one new edge, completing exactly one new 3-cycle $\gamma$.
 $$N_3(\beta_1) = 1$$
 The minimal crossing number for a single swap is identically $C[\beta_1] = 1$.
@@ -1139,7 +1139,7 @@ The operation $\mathcal{R}_{M+1}$ must satisfy **PUC Compliance** [(§2.3.3)](/m
 
 2.  **Resource Accumulation:**
     The rewrite operation $\mathcal{R}_{M+1}$ acts on a local neighborhood disjoint from the cores of previous crossings (or separated by a graph distance $\bar{d} > \xi$).
-    Due to the **Spatial Cluster Decomposition** [(§5.1.1)](/monograph/foundations/thermodynamics#5.1.1), the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
+    Due to the **Spatial Cluster Decomposition** [(§5.1.1)](/monograph/foundations/thermodynamics/5.1/#5.1.1), the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
     $$N_3(\beta_{M+1}) = N_3(\beta_M) + \Delta N_3(\mathcal{R}_{M+1})$$
     Since $\mathcal{R}_{M+1}$ represents a standard crossing operation, the marginal cost is $\Delta N_3 = k_c$.
     $$N_3(\beta_{M+1}) = k_c M + k_c = k_c (M+1)$$
@@ -1503,7 +1503,7 @@ This integral remains invariant under any continuous deformation (isotopy) of th
 
 **II. Local Operator Action**
 
-The **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics#4.5.1) acts on a local subgraph $G_{loc} \subset G$ strictly bounded by the causal horizon radius $R \sim \log N$.
+The **Rewrite Rule $\mathcal{R}$** [(§4.5.1)](/monograph/foundations/dynamics/4.5/#4.5.1) acts on a local subgraph $G_{loc} \subset G$ strictly bounded by the causal horizon radius $R \sim \log N$.
 Let the operation induce a local deformation of the path $\gamma_i \to \gamma_i + \delta\gamma$, where the support of $\delta\gamma$ is strictly contained within $G_{loc}$.
 
 **III. Variation of the Invariant**
@@ -1764,7 +1764,7 @@ Let $\xi \in \Xi_{reducible}$ (e.g., unbraided clusters, simple twists, composit
 By **Lemma [§6.1.3](#6.1.3)**, there exists a local sequence $\mathcal{S}_{loc}$ of Type II/III moves that reduces the crossing number $C[\xi]$.
 The length of this sequence is bounded by the local horizon $|\mathcal{S}_{loc}| \le R$.
 The **Universal Constructor** $\mathcal{R}$ accesses this sequence via random exploration.
-The **Catalytic Tension** $\chi(\sigma)$ [(§4.5.2)](/monograph/foundations/dynamics#4.5.2) amplifies the deletion probability for the reducible components.
+The **Catalytic Tension** $\chi(\sigma)$ [(§4.5.2)](/monograph/foundations/dynamics/4.5/#4.5.2) amplifies the deletion probability for the reducible components.
 Result: $\xi$ decays to the vacuum state.
 
 **III. Case 2: Irreducible (Prime) Braids**
