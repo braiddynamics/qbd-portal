@@ -471,7 +471,7 @@ The constructive generation of the $\mathfrak{su}(3)$ basis is robust against st
 :::tip[**Derivation of Near-Unity Closure Probability in the Equilibrium Limit**]
 
 **I. Stochastic Evolution Model**
-The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1). The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ [(§4.6.2)](/monograph/foundations/dynamics#4.6.2). The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
+The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1). The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ [(§4.6.2)](/monograph/foundations/dynamics/4.6/#4.6.2). The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
 
 **II. Inductive Spanning Probability**
 The closure is shown by induction on ticks $t_L$.
@@ -1212,7 +1212,7 @@ The square of the gauge coupling constant $g_F^2$ for a fundamental interaction 
 :::tip[**Derivation from the Born Sampling of the Causal Graph**]
 
 **I. Born Probability Definition**
-In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1). The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:
+In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1). The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:
 $$P(\mathcal{R}_F) = |M(G \to G')|^2$$
 
 **II. Effective Lagrangian Correspondence**
@@ -1369,7 +1369,7 @@ Finally, we synthesize these components to produce the **Prediction and Error**.
 
 :::info[**Equivalence of Coupling Squared and Rewrite Probability**]
 
-In the effective field theory limit of the causal graph dynamics, the square of the gauge coupling constant $g^2$ is strictly equivalent to the probability amplitude $P(\mathcal{R})$ of the associated topological rewrite process. This identity $g^2 = P(\mathcal{R})$ is established by the Born Rule applied to the Universal Evolution Operator [(§4.6.2)](/monograph/foundations/dynamics#4.6.2), which identifies the interaction vertex of the Lagrangian with the transition kernel of the discrete graph update. This equivalence holds under the condition that the discrete logical time step $\Delta t$ provides a natural ultraviolet cutoff, such that the integration of the transition density over one tick equates the discrete probability to the field-theoretic rate.
+In the effective field theory limit of the causal graph dynamics, the square of the gauge coupling constant $g^2$ is strictly equivalent to the probability amplitude $P(\mathcal{R})$ of the associated topological rewrite process. This identity $g^2 = P(\mathcal{R})$ is established by the Born Rule applied to the Universal Evolution Operator [(§4.6.2)](/monograph/foundations/dynamics/4.6/#4.6.2), which identifies the interaction vertex of the Lagrangian with the transition kernel of the discrete graph update. This equivalence holds under the condition that the discrete logical time step $\Delta t$ provides a natural ultraviolet cutoff, such that the integration of the transition density over one tick equates the discrete probability to the field-theoretic rate.
 
 ### 8.5.2.1 Proof: Identity Verification {#8.5.2.1}
 
@@ -1391,7 +1391,7 @@ Given the normalization of the generators (proven in **8.5.3.1**), the matrix el
 $$|M_{QBD}| \sim \frac{g_{eff} t}{\sqrt{2}}$$
 
 **III. Born Rule and Coupling Identification**
-The **Born Rule** in the graph ensemble [(§4.6.2)](/monograph/foundations/dynamics#4.6.2) equates the rewrite probability $P(\mathcal{R}_W)$ to the squared amplitude:
+The **Born Rule** in the graph ensemble [(§4.6.2)](/monograph/foundations/dynamics/4.6/#4.6.2) equates the rewrite probability $P(\mathcal{R}_W)$ to the squared amplitude:
 $$P(\mathcal{R}_W) = |M_{QBD}|^2 \approx \frac{g_{eff}^2 t^2}{2}$$
 Setting the logical time interval to unity ($t=1$) and normalizing to the standard QFT convention where the vertex prefactor integrates to $4\pi \alpha$ (absorbing the factor of 2 into the definition of $g$), the relation simplifies to:
 $$g = \sqrt{P(\mathcal{R}_W)}$$
@@ -2136,7 +2136,7 @@ The master equation [(§5.2.2)](/monograph/foundations/thermodynamics/5.2/#5.2.2
 Broken $SU(2) \times U(1)$ roots produce three Goldstone modes $T^{1,2}$ and $T^3 - \tan \theta_W Y$. These manifest as zero-modes in the stabilizer subgroup $\text{Stab}(\rho_3^*)$ preserving 3-cycle density. Counting rewrite-invariant orbits under the comonad $R_T$ [(§4.3.5)](/monograph/foundations/dynamics/4.3/#4.3.5) yields $\dim(\text{Stab}_{\text{broken}}) = 3$. These modes are absorbed into $W^\pm$ and $Z$ longitudinal components, restoring unitarity via the topological equivalence theorem.
 
 **III. Mass Terms and Lagrangian Synthesis**
-Boson masses $m_{W/Z}$ emerge from coupling [(§8.6.3)](#8.6.3), verified against 100 RPV samples (avg $m_W=81.7 \pm 1.4$, $\chi^2=1.12$, skew $\sim 1.87$). Fermion masses $y_f v$ arise from demand-supply equilibrium [(§8.6.5)](#8.6.5), with hierarchy $(N_t/N_u)^2 \sim 10^6$. Diagonalization via primes reproduces CKM hierarchy. The effective Lagrangian $\mathcal{L}_{\mathrm{EW}} = |D_\mu \phi|^2 - V(\phi) + \bar{\psi} i \gamma^\mu D_\mu \psi + y_f \bar{\psi} \phi \psi$ is derived from tick evolution $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics#4.6.1). The covariant derivative $D_\mu$ incorporates emergent gauge fields from cycle currents $J_\mu^a = \text{Tr}(\rho_3^* [T^a, \partial_\mu G_t])$, encoding gauge curvature $F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f_{abc} A^b_\mu A^c_\nu$. Gauge invariance is maintained in the code space via the comonad $R_T$, ensuring $R_T(\delta \mathcal{L}) = 0$ under infinitesimal Lie transformations.
+Boson masses $m_{W/Z}$ emerge from coupling [(§8.6.3)](#8.6.3), verified against 100 RPV samples (avg $m_W=81.7 \pm 1.4$, $\chi^2=1.12$, skew $\sim 1.87$). Fermion masses $y_f v$ arise from demand-supply equilibrium [(§8.6.5)](#8.6.5), with hierarchy $(N_t/N_u)^2 \sim 10^6$. Diagonalization via primes reproduces CKM hierarchy. The effective Lagrangian $\mathcal{L}_{\mathrm{EW}} = |D_\mu \phi|^2 - V(\phi) + \bar{\psi} i \gamma^\mu D_\mu \psi + y_f \bar{\psi} \phi \psi$ is derived from tick evolution $\mathcal{U}$ [(§4.6.1)](/monograph/foundations/dynamics/4.6/#4.6.1). The covariant derivative $D_\mu$ incorporates emergent gauge fields from cycle currents $J_\mu^a = \text{Tr}(\rho_3^* [T^a, \partial_\mu G_t])$, encoding gauge curvature $F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f_{abc} A^b_\mu A^c_\nu$. Gauge invariance is maintained in the code space via the comonad $R_T$, ensuring $R_T(\delta \mathcal{L}) = 0$ under infinitesimal Lie transformations.
 
 Q.E.D.
 :::
