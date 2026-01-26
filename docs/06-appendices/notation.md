@@ -214,29 +214,29 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $k_c$ | Crossing proportionality constant | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
 | $k_t$ | Torsional proportionality constant | [§6.3.7](/monograph/players/fermions/6.3/#6.3.7) |
 | $\Xi$ | Set of all localized excitations | [§6.4.5](/monograph/players/fermions/6.4/#6.4.5) |
-| $L_S$ | Spin Operator (Product of rung Z-operators) | [§7.1.1](/monograph/players/quantum-numbers/7.1/#7.1.1) |
-| $Z_{e_i}$ | Pauli-Z operator on rung edge $e_i$ | [§7.1.1](/monograph/players/quantum-numbers/7.1/#7.1.1) |
-| $\hat{P}_{12}$ | Particle Exchange Operator | [§7.1.2](/monograph/players/quantum-numbers/7.1/#7.1.2) |
-| $s$ | Spin quantum number ($1/2$) | [§7.1.2](/monograph/players/quantum-numbers/7.1/#7.1.2) |
-| $\phi$ | Topological phase factor ($-1$) | [§7.1.2](/monograph/players/quantum-numbers/7.1/#7.1.2) |
-| $\Pi_s$ | Spin Projector | [§7.1.2](/monograph/players/quantum-numbers/7.1/#7.1.2) |
-| $\hat{\mathcal{T}}$ | Unitary Twist Operator | [§7.1.3](/monograph/players/quantum-numbers/7.1/#7.1.3) |
-| $\| \psi_{violation}\rangle$ | State of dual fermion occupancy (Forbidden) | [§7.2.4](/monograph/players/quantum-numbers/7.2/#7.2.4) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.4](/monograph/players/quantum-numbers/7.2/#7.2.4) |
-| $Q$ | Electric Charge Operator | [§7.3.1](/monograph/players/quantum-numbers/7.3/#7.3.1) |
-| $w(\beta)$ | Total Writhe of braid $\beta$ | [§7.3.1](/monograph/players/quantum-numbers/7.3/#7.3.1) |
-| $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/quantum-numbers/7.3/#7.3.7) |
-| $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/quantum-numbers/7.3/#7.3.5.1) |
-| $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/quantum-numbers/7.3/#7.3.6.1) |
-| $C(\vec{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/quantum-numbers/7.3/#7.3.5.1) |
-| $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/quantum-numbers/7.3/#7.3.7.2) |
-| $m$ | Inertial Mass (Informational Inertia) | [§7.4.1](/monograph/players/quantum-numbers/7.4/#7.4.1) |
-| $N_3$ | Geometric Quantum Count (3-cycles) | [§7.4.1](/monograph/players/quantum-numbers/7.4/#7.4.1) |
-| $\epsilon_{geo}$ | Geometric Self-Energy | [§7.4.3.1](/monograph/players/quantum-numbers/7.4/#7.4.3.1) |
-| $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/quantum-numbers/7.4/#7.4.2) |
-| $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/quantum-numbers/7.4/#7.4.5) |
-| $U_{\text{braid}}$ | Internal Energy (Topological) | [§7.4.3](/monograph/players/quantum-numbers/7.4/#7.4.3) |
-| $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/quantum-numbers/7.4/#7.4.3) |
+| $L_S$ | Spin Operator (Product of rung Z-operators) | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
+| $Z_{e_i}$ | Pauli-Z operator on rung edge $e_i$ | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
+| $\hat{P}_{12}$ | Particle Exchange Operator | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
+| $s$ | Spin quantum number ($1/2$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
+| $\phi$ | Topological phase factor ($-1$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
+| $\Pi_s$ | Spin Projector | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
+| $\hat{\mathcal{T}}$ | Unitary Twist Operator | [§7.1.3](/monograph/players/topology/7.1/#7.1.3) |
+| $\| \psi_{violation}\rangle$ | State of dual fermion occupancy (Forbidden) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
+| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
+| $Q$ | Electric Charge Operator | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
+| $w(\beta)$ | Total Writhe of braid $\beta$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
+| $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/topology/7.3/#7.3.7) |
+| $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
+| $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
+| $C(\vec{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
+| $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/topology/7.3/#7.3.7.2) |
+| $m$ | Inertial Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
+| $N_3$ | Geometric Quantum Count (3-cycles) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
+| $\epsilon_{geo}$ | Geometric Self-Energy | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
+| $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/topology/7.4/#7.4.2) |
+| $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/topology/7.4/#7.4.5) |
+| $U_{\text{braid}}$ | Internal Energy (Topological) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
+| $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
 | $\mathcal{R}$ | Unitary Rewrite Operator ($e^{i\hat{H}}$) | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
 | $\hat{H}_i$ | Hamiltonian Generator for rewrite $\mathcal{R}_i$ | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
 | $f_{ijk}$ | Structure Constants of the Lie algebra | [§8.1.1.1](/monograph/players/braids/8.1/#8.1.1.1) |
