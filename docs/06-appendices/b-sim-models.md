@@ -1,6 +1,6 @@
 ﻿---
 title: "Appendix B: Python Simulations"
-sidebar_label: "Appendix B: Python Simulations"
+sidebar_label: "B: Python Simulations"
 ---
 :::tip[**Full simulation code is available, under a strict license, at:**]
 :::

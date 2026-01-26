@@ -1,6 +1,6 @@
 ﻿---
 title: "Appendix A: External References"
-sidebar_label: "Appendix A: External References"
+sidebar_label: "A: External References"
 ---
 ### 1. **Abramsky, S. (Ed.). (2023).** {#A.1}
 #### "Samson Abramsky on Logic and Structure in Computer Science and Beyond"
