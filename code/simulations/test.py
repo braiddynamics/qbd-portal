@@ -1,86 +1,123 @@
-import networkx as nx
-import itertools
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+from matplotlib.collections import PatchCollection
 
-def verify_partial_order():
-    # 1. Setup: Create a valid Causal DAG with timestamps
-    # Structure: 0 -> 1 -> 2 -> 3 (Linear chain with valid timestamps)
-    # plus a shortcut 0 -> 2 (to test multiple path options)
-    G = nx.DiGraph()
-    edges = [
-        (0, 1, {'t': 10}),
-        (1, 2, {'t': 20}),
-        (2, 3, {'t': 30}),
-        (0, 2, {'t': 15}) # Shortcut, valid but length=1
-    ]
-    G.add_edges_from(edges)
+def clean_triangle_simulation():
+    # --- CONFIGURATION ---
+    ROWS = 60
+    COLS = 100
+    STEPS = 120
     
-    nodes = list(G.nodes())
+    # 1. SETUP THE GRID
+    # Grid state: 0 (Dead), 1 (Alive)
+    grid = np.zeros((ROWS, COLS), dtype=int)
     
-    # 2. Define the Effective Influence Check (u <= v)
-    def has_effective_influence(u, v):
-        if u == v: return False # Optimization, but checked formally below
-        
-        try:
-            paths = nx.all_simple_paths(G, source=u, target=v)
-        except nx.NodeNotFound:
-            return False
-
-        for path in paths:
-            # Check Length Constraint (>= 2 edges)
-            # path list contains nodes; edges = len(path) - 1
-            if len(path) - 1 < 2:
-                continue
-            
-            # Check Monotonicity Constraint
-            timestamps = []
-            valid_time = True
-            for i in range(len(path) - 1):
-                u_curr, v_next = path[i], path[i+1]
-                t = G[u_curr][v_next]['t']
-                if timestamps and t <= timestamps[-1]:
-                    valid_time = False
-                    break
-                timestamps.append(t)
-            
-            if valid_time:
-                return True # Found at least one valid causal morphism
-        
-        return False
-
-    print("Partial Order Property Verification")
-    print("=" * 50)
-
-    # 3. Check Irreflexivity (u !<= u)
-    # Axiom: No node should effectively influence itself (requires cycle)
-    irreflexive = True
-    for n in nodes:
-        if has_effective_influence(n, n):
-            print(f"Violation: Reflexive loop found at {n}")
-            irreflexive = False
+    # Seed: Single active triangle in the center
+    grid[ROWS//2, COLS//2] = 1
     
-    print(f"Irreflexivity Verification: {'PASS' if irreflexive else 'FAIL'}")
-
-    # 4. Check Transitivity (u <= v AND v <= w => u <= w)
-    transitive = True
-    # Check all permutations of 3 nodes
-    for u, v, w in itertools.permutations(nodes, 3):
-        u_v = has_effective_influence(u, v)
-        v_w = has_effective_influence(v, w)
-        u_w = has_effective_influence(u, w)
+    # History tracking
+    history = [grid.copy()]
+    
+    print(">>> Generating High-Fidelity Triangle Mesh...")
+    
+    # 2. RUN SIMULATION (Rule 30 Logic)
+    for t in range(STEPS):
+        new_grid = np.zeros_like(grid)
         
-        if u_v and v_w:
-            if not u_w:
-                print(f"Violation: Transitivity failed for {u}->{v}->{w}")
-                transitive = False
+        for r in range(ROWS):
+            for c in range(COLS):
+                # Identify Neighbors (Periodic/Torus Boundaries)
+                left  = grid[r, (c - 1) % COLS]
+                right = grid[r, (c + 1) % COLS]
+                
+                # Vertical neighbor depends on triangle orientation
+                # (Even sum = Up-pointing, Odd sum = Down-pointing)
+                if (r + c) % 2 == 0: 
+                    # Up-pointing looks DOWN for its vertical neighbor
+                    v_r = (r + 1) % ROWS
+                else:
+                    # Down-pointing looks UP for its vertical neighbor
+                    v_r = (r - 1) % ROWS
+                
+                vertical = grid[v_r, c]
+                
+                # RULE 30 LOGIC: Left XOR (Vertical OR Right)
+                # Note: We treat "Vertical" as the "Center" input
+                new_grid[r, c] = left ^ (vertical | right)
+        
+        grid = new_grid
+        history.append(grid.copy())
 
-    print(f"Transitivity Verification:  {'PASS' if transitive else 'FAIL'}")
+    # 3. RENDER CLEAN GRAPHICS
+    # We visualize only the FINAL state to show the resulting texture
+    final_grid = history[-1]
+    
+    fig, ax = plt.subplots(figsize=(20, 12)) # Widescreen for clarity
+    ax.set_facecolor('#1a1a1a') # Dark gray background for contrast
+    
+    patches = []
+    
+    # Geometry: Equilateral Triangles
+    # Side length = 1.0 -> Height = sqrt(3)/2
+    # We stretch X by 2.0 to fix the "compression artifact"
+    # One column index now equals One unit on the X-axis.
+    side = 1.0 
+    h = (np.sqrt(3)/2) * side
+    
+    print(">>> Rendering vector graphics...")
+    
+    for r in range(ROWS):
+        for c in range(COLS):
+            if final_grid[r, c] == 1:
+                # Coordinate Mapping (Fixed)
+                # x_off is simply 'c' now (not c * 0.5) to span full width
+                # We shift every other row slightly to make them interlock
+                # But to maintain integer columns, we use the specific interlocking logic:
+                
+                x_center = c 
+                y_base = r * h
+                
+                # Vertices Calculation
+                if (r + c) % 2 == 0: 
+                    # UP Pointing Triangle
+                    # (x, y), (x+1, y), (x+0.5, y+h) - roughly
+                    # To interlock perfectly with X=C mapping:
+                    pts = [
+                        [x_center, y_base],           # Bottom Left
+                        [x_center + 1, y_base],       # Bottom Right
+                        [x_center + 0.5, y_base + h]  # Top Tip
+                    ]
+                else: 
+                    # DOWN Pointing Triangle
+                    pts = [
+                        [x_center, y_base + h],       # Top Left
+                        [x_center + 1, y_base + h],   # Top Right
+                        [x_center + 0.5, y_base]      # Bottom Tip
+                    ]
+                
+                patches.append(Polygon(pts))
 
-    # 5. Specific Edge Case Check
-    # 0->1 (len 1, t=10): Not Effective
-    # 1->2 (len 1, t=20): Not Effective
-    # 0->1->2 (len 2, t=10,20): Effective
-    check_0_2 = has_effective_influence(0, 2)
-    print(f"Check 0->2 (via 0->1->2):     {'PASS' if check_0_2 else 'FAIL'} (Expected True)")
+    # Add triangles to plot with high-contrast Neon color
+    p = PatchCollection(patches, facecolors='#00FFCC', edgecolors='none', alpha=1.0)
+    ax.add_collection(p)
+    
+    # Clean up axes
+    ax.set_xlim(0, COLS)
+    ax.set_ylim(0, ROWS * h)
+    ax.set_aspect('equal')
+    ax.invert_yaxis() # Matrix convention (Row 0 at top)
+    
+    # Labels
+    ax.set_title(f"Rule 30 on Triangle Mesh (Fixed Coordinates)\nGrid Width: {COLS} | Chaos Saturation: 100%", 
+                 fontsize=18, color='white', pad=20)
+    
+    # Remove ticks for a cleaner "texture" look
+    ax.set_xticks([])
+    ax.set_yticks([])
+    
+    plt.tight_layout()
+    plt.show()
 
 if __name__ == "__main__":
-    verify_partial_order()
+    clean_triangle_simulation()
