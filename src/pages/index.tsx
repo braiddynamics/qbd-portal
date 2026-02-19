@@ -176,7 +176,7 @@ export default function Home() {
               Quantum Braid Dynamics is an independent research initiative. Your support directly funds computational validation and open-access publishing.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-              <Link to="/sponsor" className="button button--primary button--lg">Become a Sponsor</Link>
+              <Link to="/legal" className="button button--primary button--lg">Become a Sponsor</Link>
               <a href="https://github.com/braiddynamics/qbd-portal" target="_blank" rel="noopener noreferrer" className="button button--secondary button--lg">GitHub Repository</a>
               <a href="https://x.com/BraidDynamics" target="_blank" rel="noopener noreferrer" className="button button--secondary button--lg">Follow on X</a>
             </div>
