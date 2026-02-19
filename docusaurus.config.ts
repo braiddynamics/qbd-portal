@@ -43,10 +43,10 @@ const config: Config = {
   url: 'https://braiddynamics.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  // Use an Atom symbol ⚛️ as a logo
-  favicon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>',
+  
+  // Pointing the site icon to your new logo
+  favicon: 'img/logo.png',
 
-  // Enable Mermaid for Flowcharts (Appendix C)
   markdown: {
     mermaid: true,
   },
@@ -74,8 +74,9 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
+      style: 'dark',
       title: 'QBD',
-      // logo: { alt: 'QBD Logo', src: 'img/logo.svg' }, 
+      logo: { alt: 'QBD Logo', src: 'img/logo.png' }, 
       items: [
         {
           type: 'docSidebar',
@@ -84,16 +85,19 @@ const config: Config = {
           label: 'The Monograph',
         },
         { to: '/monograph/appendices/notation', label: 'Notation', position: 'left' },
-        { href: 'https://github.com/braiddynamics/qbd-portal', label: 'GitHub', position: 'right' },
+        { 
+          href: 'https://github.com/braiddynamics/qbd-portal', 
+          position: 'right', 
+          className: 'header-github-link', 
+          'aria-label': 'GitHub repository',
+        },
       ],
     },
-footer: {
-        style: 'dark',
-        // Empty links array removes all columns/lists
-        links: [], 
-        // We embed the Legal link directly here for a single-line look
-        copyright: `Copyright © ${new Date().getFullYear()} Braid Dynamics. <a href="/legal" style="color: inherit; text-decoration: underline; margin-left: 10px;">Legal & License</a>`,
-      },
+    footer: {
+      style: 'dark',
+      links: [], 
+      copyright: `Copyright © ${new Date().getFullYear()} Braid Dynamics. <a href="/legal" style="color: inherit; text-decoration: underline; margin-left: 10px;">Legal & License</a>`,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
