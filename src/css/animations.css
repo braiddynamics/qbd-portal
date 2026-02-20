@@ -1,0 +1,36 @@
+/* scroll fade animation */
+.timeline-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- WHITE CTA PULSE ANIMATION (HOVER ONLY) --- */
+@keyframes subtle-pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); 
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+}
+
+.btn-pulse-white-active {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-pulse-white-active:hover {
+  animation: subtle-pulse-white 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+  transform: scale(1.03); 
+}

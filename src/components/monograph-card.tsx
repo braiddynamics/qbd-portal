@@ -23,13 +23,13 @@ export default function MonographCard({ section }: MonographCardProps) {
           
           {/* Column 1 */}
           <div className="section-text" style={{ textAlign: 'center' }}>
-            {/* Swapped: Subtitle is now on top */}
+            {/* Reverted: Title is back on top */}
             <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
-              {section.subtitle}
-            </h3>
-            {/* Swapped: Title is now on the bottom */}
-            <h4 style={{ marginBottom: '2rem', color: 'var(--ifm-color-primary)', fontSize: '1.25rem', fontWeight: 'normal', fontStyle: 'italic' }}>
               {section.title}
+            </h3>
+            {/* Reverted: Subtitle is back on the bottom */}
+            <h4 style={{ marginBottom: '2rem', color: 'var(--ifm-color-primary)', fontSize: '1.25rem', fontWeight: 'normal', fontStyle: 'italic' }}>
+              {section.subtitle}
             </h4>
             <span className="button button--secondary">
               Read Part {section.part} →

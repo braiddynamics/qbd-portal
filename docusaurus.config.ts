@@ -44,7 +44,7 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   
-  // Pointing the site icon to your new logo
+  // Pointing the site icon to logo
   favicon: 'img/logo.png',
 
   markdown: {
@@ -66,7 +66,7 @@ const config: Config = {
           }]],
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: './src/css/main.css',
         },
       } satisfies Preset.Options,
     ],

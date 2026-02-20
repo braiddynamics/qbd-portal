@@ -1,0 +1,72 @@
+/* landing page & hero styles */
+.hero-rn-style {
+  position: relative;
+  padding: 6rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background-image: url('/img/hero-bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+[data-theme='dark'] .hero-rn-style {
+  border-bottom: 1px solid #333;
+}
+
+.hero-rn-style > .container {
+  position: relative;
+  z-index: 1; 
+}
+
+.hero-rn-style .hero__title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-rn-style .hero__subtitle {
+  color: #eaeaea !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+/* the central connecting spine */
+.connecting-spine-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.connecting-spine-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    var(--qbd-spine-color) 15%, 
+    var(--qbd-spine-color) 85%, 
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  z-index: -1; 
+  box-shadow: 0 0 20px var(--qbd-spine-glow);
+  opacity: 1;
+}
+
+@media screen and (max-width: 996px) {
+  .connecting-spine-wrapper::before {
+    display: none;
+  }
+}
+
+.footer {
+  padding: 1rem 0; 
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0; 
+  font-size: 0.9rem; 
+}

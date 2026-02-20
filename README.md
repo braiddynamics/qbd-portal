@@ -44,13 +44,14 @@ qbd-portal/
 │   │   ├── repo/             # Simulations from the Monograph
 │   │   ├── sweep.py          # Phase space sweep for the Region of Physical Viability
 │   │   ├── ensemble.py       # Statistical ensemble runner
-│   ├── tests/                 # pyTest unit tests and code verification
-├── docs/                     # Markdown source files for the 17-Chapter Monograph
+│   ├── tests/                # pyTest unit tests and code verification
+├── docs/                     # Markdown source files for the Monograph
 ├── src/                      # React components for the Docusaurus frontend
 ├── static/                   # Images, diagrams, and LaTeX assets
 ├── docusaurus.config.ts      # Site configuration and KaTeX macros
 └── package.json              # Node.js dependencies
 ```
+
 ## Running the Portal Locally
 
 To view the monograph locally, you will need [Node.js](https://nodejs.org/) (version 20.0 or higher) installed.
@@ -93,5 +94,3 @@ Permission is granted to view, read, compile, and run the source code **strictly
 * Use the code or any derivative works for any commercial purpose (including but not limited to quantum computing hardware, cryptographic systems, or simulation engines).
 
 For commercial licensing inquiries, joint ventures, or industrial applications, please contact the author directly via the repository owner profile.
-
-```
