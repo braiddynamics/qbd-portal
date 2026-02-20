@@ -1,71 +1,15 @@
-import React, { useEffect, useRef, useState, ReactNode } from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 
-// Import our decoupled data
+// Data & Components
 import { monographSections } from '../data/sections';
-
-// --- COMPONENTS ---
-
-interface FadeInViewProps {
-  children: ReactNode;
-}
-
-function FadeInView({ children }: FadeInViewProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const domRef = useRef<HTMLDivElement>(null); 
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (domRef.current) observer.unobserve(domRef.current);
-        }
-      });
-    }, { threshold: 0.15 }); 
-    
-    const current = domRef.current;
-    if (current) observer.observe(current);
-    return () => { if (current) observer.unobserve(current); };
-  }, []);
-
-  return (
-    <div ref={domRef} className={`timeline-fade-in ${isVisible ? 'is-visible' : ''}`}>
-      {children}
-    </div>
-  );
-}
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className="hero-rn-style">
-      <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-        <h1 className="hero__title" style={{fontSize: '3.5rem', marginBottom: '1rem', fontWeight: '800'}}>
-          {siteConfig.title}
-        </h1>
-        <p className="hero__subtitle" style={{fontSize: '1.5rem', fontWeight: '400', marginBottom: '2.5rem'}}>
-          {siteConfig.tagline}
-        </p>
-        <div style={{display: 'flex', justifyContent: 'center', gap: '1rem'}}>
-          <Link className="button button--primary button--lg" to="/monograph">
-            Table of Contents
-          </Link>
-          <Link className="button hero-white-btn button--lg" to="/monograph/intro/intro-a"> 
-            Introduction
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import LazyYouTube from '../components/lazy-youtube';
+import HomepageHeader from '../components/homepage-header';
+import MonographCard from '../components/monograph-card';
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-
   return (
     <Layout
       title="Quantum Braid Dynamics: Axiomatic Unification of GR and the Standard Model"
@@ -94,16 +38,10 @@ export default function Home() {
             </div>
 
             <div className="col col--7">
-              <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', boxShadow: '0 12px 28px rgba(0,0,0,0.15)', backgroundColor: '#000' }}>
-                <iframe 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  src="https://www.youtube.com/embed/vT3vW-tcad8" 
-                  title="Quantum Braid Dynamics Overview" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen>
-                </iframe>
-              </div>
+              <LazyYouTube 
+                videoId="vT3vW-tcad8" 
+                title="Quantum Braid Dynamics Overview" 
+              />
             </div>
           </div>
 
@@ -127,46 +65,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Monograph Section Cards - Width constraint removed */}
+            {/* Monograph Section Cards */}
             <div className="monograph-sections-container">
-              
               {monographSections.map((section) => (
-                <FadeInView key={section.part}>
-                  <Link 
-                    to={section.linkUrl} 
-                    className="qbd-interactive-card section-row-margin" 
-                    style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
-                  >
-                    <div className="qbd-interactive-card-content section-grid-3col">
-                      
-                      {/* Column 1: Text styling matches header box */}
-                      <div className="section-text" style={{ textAlign: 'center' }}>
-                        <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                          {section.title}
-                        </h3>
-                        <h4 style={{ marginBottom: '2rem', color: 'var(--ifm-color-primary)', fontSize: '1.25rem', fontWeight: 'normal', fontStyle: 'italic' }}>
-                          {section.subtitle}
-                        </h4>
-                        <span className="button button--secondary">
-                          Read Part {section.part} →
-                        </span>
-                      </div>
-
-                      {/* Column 2: Graphic Placeholder */}
-                      <div className="placeholder-box">
-                        <span>[ Graphic Placeholder ]</span>
-                      </div>
-
-                      {/* Column 3: Video Placeholder */}
-                      <div className="placeholder-box">
-                        <span>[ Video Placeholder ]</span>
-                      </div>
-
-                    </div>
-                  </Link>
-                </FadeInView>
+                <MonographCard key={section.part} section={section} />
               ))}
-
             </div>
           </div> {/* --- SPINE WRAPPER ENDS --- */}
 
