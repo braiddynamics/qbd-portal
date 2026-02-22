@@ -1,0 +1,17 @@
+.braid-ribbon { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); stroke-width: 4; stroke-linecap: round; fill: none; opacity: 0.4; }
+.braid-ribbon-r { stroke: #ef4444; }
+.braid-ribbon-g { stroke: var(--ifm-color-primary); }
+.braid-ribbon-b { stroke: #3b82f6; }
+.braid-eraser { stroke: var(--ifm-background-surface-color); stroke-width: 14; fill: none; }
+
+.qbd-interactive-card:hover .braid-ribbon { opacity: 1; stroke-width: 5; }
+.qbd-interactive-card:hover .braid-ribbon-r { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7)); }
+.qbd-interactive-card:hover .braid-ribbon-g { filter: drop-shadow(0 0 8px var(--qbd-glow-color)); }
+.qbd-interactive-card:hover .braid-ribbon-b { filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.7)); }
+
+.braid-packet { fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 4 250; stroke-dashoffset: 250; opacity: 0; transition: opacity 0.3s ease; }
+@keyframes packet-flow { 0% { stroke-dashoffset: 250; } 100% { stroke-dashoffset: 0; } }
+
+.qbd-interactive-card:hover .braid-packet { opacity: 1; animation: packet-flow 1.5s linear infinite; }
+.qbd-interactive-card:hover .braid-ribbon-g ~ .braid-packet { animation-delay: 0.2s; }
+.qbd-interactive-card:hover .braid-ribbon-b ~ .braid-packet { animation-delay: 0.5s; }

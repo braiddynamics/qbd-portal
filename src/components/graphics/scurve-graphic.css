@@ -1,0 +1,9 @@
+.scurve-asymptote { opacity: 0.3; transition: opacity 0.4s ease; }
+.scurve-line { stroke-dasharray: 250; stroke-dashoffset: 250; transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease; opacity: 0.4; }
+.scurve-fill { opacity: 0; transition: opacity 1.5s ease; }
+.scurve-node { opacity: 0; transform: scale(0); transform-origin: 180px 52px; transition: opacity 0.4s ease 1s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s; }
+
+.qbd-interactive-card:hover .scurve-asymptote { opacity: 0.8; }
+.qbd-interactive-card:hover .scurve-line { stroke-dashoffset: 0; filter: drop-shadow(0 0 8px var(--qbd-glow-color)); opacity: 1; }
+.qbd-interactive-card:hover .scurve-fill { opacity: 0.15; }
+.qbd-interactive-card:hover .scurve-node { opacity: 1; transform: scale(1); }

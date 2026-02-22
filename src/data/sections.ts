@@ -28,5 +28,11 @@ export const monographSections = [
     title: "5. Conclusion",
     subtitle: "Applications and Synthesis",
     linkUrl: "/monograph/category/conclusion",
+  },
+  {
+    part: "6",
+    title: "6. Appendices",
+    subtitle: "Citations, Models, & Notation",
+    linkUrl: "/monograph/category/appendices",
   }
 ];

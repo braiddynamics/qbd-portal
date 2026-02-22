@@ -1,0 +1,38 @@
+.appendix-bracket { transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.appendix-bracket path { transition: stroke 0.4s ease; }
+.appendix-ring { transform-origin: 100px 100px; transition: opacity 0.5s ease; }
+.bracket-node { transition: opacity 0.4s ease, filter 0.4s ease; transform-origin: center; }
+
+/* The new Reference Hub styles */
+.appendix-hub { 
+  transform-origin: 100px 100px; 
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.5s ease; 
+  opacity: 0.5;
+}
+
+@keyframes ring-spin {
+  0% { transform: rotate(0deg) scale(0.9); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+.qbd-interactive-card:hover .bracket-left { transform: translateX(-20px); }
+.qbd-interactive-card:hover .bracket-right { transform: translateX(20px); }
+.qbd-interactive-card:hover .appendix-bracket path { stroke: var(--ifm-color-primary); }
+
+.qbd-interactive-card:hover .appendix-ring {
+  opacity: 0.8;
+  animation: ring-spin 8s linear infinite;
+  filter: drop-shadow(0 0 6px var(--qbd-glow-color));
+}
+
+.qbd-interactive-card:hover .bracket-node {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px var(--qbd-glow-color));
+}
+
+/* Make the hub spin and glow on hover */
+.qbd-interactive-card:hover .appendix-hub {
+  opacity: 1;
+  transform: scale(1.1) rotate(90deg);
+  filter: drop-shadow(0 0 10px var(--qbd-glow-color));
+}

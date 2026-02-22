@@ -1,0 +1,17 @@
+.dag-node, .dag-edge, .dag-arrow { transition: all 0.3s ease; }
+.qbd-interactive-card:hover .node-top { fill: var(--ifm-color-primary); }
+.qbd-interactive-card:hover .node-mid-l { fill: var(--ifm-color-primary-light); transition-delay: 0.15s; }
+.qbd-interactive-card:hover .node-mid-r { fill: var(--ifm-color-primary-light); transition-delay: 0.25s; }
+.qbd-interactive-card:hover .node-bot { fill: var(--ifm-color-primary-lighter); transition-delay: 0.4s; }
+.qbd-interactive-card:hover .node-bot-l { fill: var(--ifm-color-primary-lighter); transition-delay: 0.3s; }
+
+@keyframes edge-flow {
+  0% { stroke: var(--ifm-color-emphasis-300); stroke-width: 2.5; }
+  50% { stroke: var(--ifm-color-primary); stroke-width: 3.5; }
+  100% { stroke: var(--ifm-color-emphasis-300); stroke-width: 2.5; }
+}
+.qbd-interactive-card:hover .edge-1 { animation: edge-flow 1.5s infinite 0.1s; }
+.qbd-interactive-card:hover .edge-2 { animation: edge-flow 1.5s infinite 0.2s; }
+.qbd-interactive-card:hover .edge-3 { animation: edge-flow 1.5s infinite 0.4s; }
+.qbd-interactive-card:hover .edge-5 { animation: edge-flow 1.5s infinite 0.3s; }
+.qbd-interactive-card:hover .edge-4 { animation: edge-flow 1.5s infinite 0.5s; }

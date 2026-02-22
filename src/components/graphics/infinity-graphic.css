@@ -1,0 +1,11 @@
+.infinity-track { transition: opacity 0.4s ease, filter 0.4s ease; }
+.infinity-center-node { opacity: 0; transform: scale(0); transform-origin: 100px 100px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.infinity-packet { stroke-dasharray: 20 500; opacity: 0; transition: opacity 0.3s ease; }
+
+@keyframes flow-forward { 0% { stroke-dashoffset: 520; } 100% { stroke-dashoffset: 0; } }
+@keyframes flow-reverse { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 520; } }
+
+.qbd-interactive-card:hover .infinity-track { opacity: 0.7; filter: drop-shadow(0 0 4px var(--qbd-glow-color)); }
+.qbd-interactive-card:hover .infinity-center-node { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 8px var(--qbd-glow-color)); }
+.qbd-interactive-card:hover .packet-forward { opacity: 1; animation: flow-forward 3s linear infinite; }
+.qbd-interactive-card:hover .packet-reverse { opacity: 1; animation: flow-reverse 3s linear infinite; }
