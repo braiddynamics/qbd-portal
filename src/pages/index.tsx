@@ -17,13 +17,15 @@ export default function Home() {
 
       <Head>
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta property="og:title" content="Quantum Braid Dynamics: A Computational Process" />
+        <meta name="twitter:title" content="Quantum Braid Dynamics: A Computational Process" />
       </Head>
 
       <HomepageHeader />
 
-      <main style={{padding: '4rem 0', maxWidth: '1200px', margin: '0 auto'}}>
+      <main style={{ padding: '4rem 0', maxWidth: '1200px', margin: '0 auto' }}>
         <div className="container">
-          
+
           <div className="row" style={{ alignItems: 'center' }}>
             <div className="col col--5">
               <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontWeight: 'bold', lineHeight: '1.2' }}>
@@ -38,9 +40,9 @@ export default function Home() {
             </div>
 
             <div className="col col--7">
-              <LazyYouTube 
-                videoId="vT3vW-tcad8" 
-                title="Quantum Braid Dynamics Overview" 
+              <LazyYouTube
+                videoId="vT3vW-tcad8"
+                title="Quantum Braid Dynamics Overview"
               />
             </div>
           </div>
@@ -51,7 +53,7 @@ export default function Home() {
 
           {/* --- SPINE WRAPPER STARTS --- */}
           <div className="connecting-spine-wrapper">
-            
+
             {/* Introductory "Auditability" Box */}
             <div className="qbd-interactive-card" style={{ textAlign: 'center', marginBottom: '5rem', maxWidth: '850px', margin: '0 auto 6rem auto' }}>
               <div className="qbd-interactive-card-content">
