@@ -12,8 +12,8 @@ import MonographCard from '../components/monograph-card';
 export default function Home() {
   return (
     <Layout
-      title="Quantum Braid Dynamics: Axiomatic Unification of GR and the Standard Model"
-      description="Rigorous mathematical monograph by R. Fisher deriving General Relativity and quantum phenomena from discrete causal graphs.">
+      title="Quantum Braid Dynamics: A Computational Process"
+      description="Unifying General Relativity and the Standard Model">
 
       <Head>
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
