@@ -43,14 +43,14 @@ export default function Home() {
               <p style={{ fontSize: '1.15rem', lineHeight: '1.6', color: 'var(--ifm-color-emphasis-800)', marginBottom: '2rem' }}>
                 Our Aeon begins not with a bang but with a branch of structure, composed not of fundamental things but fundamental relations.
               </p>
-              
+
               {/* Interactive Smooth-Scroll Anchor */}
-              <a 
+              <a
                 href="#overview-video"
                 onClick={scrollToVideo}
-                style={{ 
-                  fontSize: '1.25rem', 
-                  fontWeight: 'bold', 
+                style={{
+                  fontSize: '1.25rem',
+                  fontWeight: 'bold',
                   color: 'var(--ifm-color-primary)',
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -61,7 +61,7 @@ export default function Home() {
                 }}
                 className="qbd-video-cta"
               >
-                Watch QBD summed up in 90 seconds 
+                Watch QBD summed up in 90 seconds
                 <span style={{ transition: 'transform 0.2s ease' }}>➔</span>
               </a>
             </div>
@@ -82,15 +82,22 @@ export default function Home() {
           {/* --- SPINE WRAPPER STARTS --- */}
           <div className="connecting-spine-wrapper">
 
-            {/* Introductory "Auditability" Box */}
-            <div className="qbd-interactive-card" style={{ maxWidth: '850px', margin: '0 auto 6rem auto' }}>
-              <div className="qbd-interactive-card-content" style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', lineHeight: '1.3' }}>
+            {/* Introductory Framework Abstract */}
+            <div className="qbd-interactive-card" style={{ maxWidth: '950px', margin: '0 auto 6rem auto' }}>
+              <div className="qbd-interactive-card-content" style={{ textAlign: 'center', padding: '0 1rem' }}>
+                <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: '1.3' }}>
                   Quantum Braid Dynamics <br />
-                  <span style={{ color: 'var(--ifm-color-primary)', fontStyle: 'italic', fontWeight: 'normal' }}>A Computational Process</span>
+                  <span style={{ color: 'var(--ifm-color-primary)', fontStyle: 'italic', fontWeight: 'normal', fontSize: '1.75rem' }}>
+                    A Computational Process
+                  </span>
                 </h2>
-                <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-700)', lineHeight: '1.6', margin: 0 }}>
-                  <strong>QBD</strong> is presented in a form explicitly engineered for <strong>auditability</strong>. This format ensures ideas become pure logic that can be parsed, producing a physical theory that is unambiguous and well defined, whose meaning is fully determined by its internal logic.
+
+                <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.5rem', textAlign: 'justify' }}>
+                  At its deepest layer, reality is an abstract network of discrete events and causal links. <strong>Quantum Braid Dynamics (QBD)</strong> is a rigorous, background-independent formulation of quantum gravity that treats the cosmos as a self-updating computational process. This is not a work of speculative world-building or mathematical mysticism, but an analytical framework where physical laws are derived as strict thermodynamic inevitabilities.
+                </p>
+
+                <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
+                  Driven by local, information-theoretic constraints, this raw causal web undergoes a cosmic phase transition known as <em>Geometrogenesis</em>. From a finite topological origin, the network structures itself into a stable, four-dimensional spacetime mesh that natively recovers Einstein’s equations of General Relativity and the particle configurations of the Standard Model. Rather than supplanting modern physics, QBD acts as a foundation that affirms continuous geometry and quantum mechanics as precise macroscopic realities, while revealing how gravity, matter, and the arrow of time naturally emerge from the statistical thermodynamics of a discrete, fault-tolerant system.
                 </p>
               </div>
             </div>
