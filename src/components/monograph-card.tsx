@@ -25,15 +25,14 @@ export default function MonographCard({ section }: MonographCardProps) {
                 className="qbd-interactive-card section-row-margin"
                 style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
             >
-                <div className="qbd-interactive-card-content section-grid-3col">
+                {/* Changed layout class to our new 2-column rule */}
+                <div className="qbd-interactive-card-content section-grid-2col">
 
-                    {/* Column 1 */}
+                    {/* Column 1: Core Text Content */}
                     <div className="section-text" style={{ textAlign: 'center' }}>
-                        {/* Reverted: Title is back on top */}
                         <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>
                             {section.title}
                         </h3>
-                        {/* Reverted: Subtitle is back on the bottom */}
                         <h4 style={{ marginBottom: '2rem', color: 'var(--ifm-color-primary)', fontSize: '1.25rem', fontWeight: 'normal', fontStyle: 'italic' }}>
                             {section.subtitle}
                         </h4>
@@ -42,20 +41,15 @@ export default function MonographCard({ section }: MonographCardProps) {
                         </span>
                     </div>
 
-{/* Column 2: Interactive Graphic */}
-          <div className="placeholder-box" style={{ padding: 0, backgroundColor: 'transparent', border: 'none' }}>
-            {section.part === "1" ? <DagGraphic /> : 
-             section.part === "2" ? <BraidGraphic /> : 
-             section.part === "3" ? <GeodesicGraphic /> : 
-             section.part === "4" ? <SCurveGraphic /> : 
-             section.part === "5" ? <InfinityGraphic /> : 
-             section.part === "6" ? <AppendixGraphic /> : 
-             <span>[ Graphic Placeholder ]</span>}
-          </div>
-
-                    {/* Column 3: Video Placeholder */}
-                    <div className="placeholder-box">
-                        <span>[ Video Placeholder ]</span>
+                    {/* Column 2: Interactive Graphic */}
+                    <div className="placeholder-box" style={{ padding: 0, backgroundColor: 'transparent', border: 'none' }}>
+                        {section.part === "1" ? <DagGraphic /> : 
+                         section.part === "2" ? <BraidGraphic /> : 
+                         section.part === "3" ? <GeodesicGraphic /> : 
+                         section.part === "4" ? <SCurveGraphic /> : 
+                         section.part === "5" ? <InfinityGraphic /> : 
+                         section.part === "6" ? <AppendixGraphic /> : 
+                         <span>[ Graphic Placeholder ]</span>}
                     </div>
 
                 </div>

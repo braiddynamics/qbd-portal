@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
@@ -10,6 +10,14 @@ import HomepageHeader from '../components/homepage-header';
 import MonographCard from '../components/monograph-card';
 
 export default function Home() {
+  // Create a ref for smooth scrolling to the video section
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  const scrollToVideo = (e: React.MouseEvent) => {
+    e.preventDefault();
+    videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
   return (
     <Layout
       title="Quantum Braid Dynamics: A Computational Process"
@@ -26,7 +34,8 @@ export default function Home() {
       <main style={{ padding: '4rem 0', maxWidth: '1200px', margin: '0 auto' }}>
         <div className="container">
 
-          <div className="row" style={{ alignItems: 'center' }}>
+          {/* Hero Content Split */}
+          <div className="row" style={{ alignItems: 'center', marginBottom: '4rem' }}>
             <div className="col col--5">
               <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontWeight: 'bold', lineHeight: '1.2' }}>
                 The universe is not a thing, it is relation.
@@ -34,12 +43,30 @@ export default function Home() {
               <p style={{ fontSize: '1.15rem', lineHeight: '1.6', color: 'var(--ifm-color-emphasis-800)', marginBottom: '2rem' }}>
                 Our Aeon begins not with a bang but with a branch of structure, composed not of fundamental things but fundamental relations.
               </p>
-              <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--ifm-color-primary)' }}>
-                Watch QBD summed up in 90 seconds ➔
-              </p>
+              
+              {/* Interactive Smooth-Scroll Anchor */}
+              <a 
+                href="#overview-video"
+                onClick={scrollToVideo}
+                style={{ 
+                  fontSize: '1.25rem', 
+                  fontWeight: 'bold', 
+                  color: 'var(--ifm-color-primary)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s ease, color 0.2s ease'
+                }}
+                className="qbd-video-cta"
+              >
+                Watch QBD summed up in 90 seconds 
+                <span style={{ transition: 'transform 0.2s ease' }}>➔</span>
+              </a>
             </div>
 
-            <div className="col col--7">
+            <div className="col col--7" ref={videoRef} id="overview-video">
               <LazyYouTube
                 videoId="vT3vW-tcad8"
                 title="Quantum Braid Dynamics Overview"
@@ -47,7 +74,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ padding: '8rem 0', display: 'flex', justifyContent: 'center' }}>
+          {/* Elegant Section Divider */}
+          <div style={{ padding: '4rem 0', display: 'flex', justifyContent: 'center' }}>
             <div style={{ width: '50%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--ifm-color-emphasis-300), transparent)' }}></div>
           </div>
 
@@ -55,8 +83,8 @@ export default function Home() {
           <div className="connecting-spine-wrapper">
 
             {/* Introductory "Auditability" Box */}
-            <div className="qbd-interactive-card" style={{ textAlign: 'center', marginBottom: '5rem', maxWidth: '850px', margin: '0 auto 6rem auto' }}>
-              <div className="qbd-interactive-card-content">
+            <div className="qbd-interactive-card" style={{ maxWidth: '850px', margin: '0 auto 6rem auto' }}>
+              <div className="qbd-interactive-card-content" style={{ textAlign: 'center' }}>
                 <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', lineHeight: '1.3' }}>
                   Quantum Braid Dynamics <br />
                   <span style={{ color: 'var(--ifm-color-primary)', fontStyle: 'italic', fontWeight: 'normal' }}>A Computational Process</span>
@@ -75,6 +103,7 @@ export default function Home() {
             </div>
           </div> {/* --- SPINE WRAPPER ENDS --- */}
 
+          {/* Support Section */}
           <div style={{ marginTop: '8rem', backgroundColor: 'var(--ifm-color-emphasis-100)', padding: '3rem 2rem', borderRadius: '16px', textAlign: 'center', border: '1px solid var(--ifm-color-emphasis-200)' }}>
             <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Support the Project</h3>
             <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--ifm-color-emphasis-700)' }}>
