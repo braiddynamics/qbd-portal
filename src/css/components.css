@@ -1,7 +1,7 @@
 /* interactive cards */
 .qbd-interactive-card {
   position: relative;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2.5rem; /* Slightly increased padding for better breathing room */
   border-radius: 16px;
   background-color: var(--ifm-background-surface-color);
   border: 1px solid var(--qbd-glow-color);
@@ -19,29 +19,29 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Light Mode Hex Grid Pattern */
+/* Light Mode Hex Grid Pattern - Lowered opacity for subtle texture */
 .qbd-interactive-card::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  opacity: 0.10; 
+  opacity: 0.04; 
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='hex' width='80' height='69.28' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0 L80 23.09 L80 69.28 L40 92.37 L0 69.28 L0 23.09 Z' fill='none' stroke='%232e8555' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hex)'/%3E%3C/svg%3E");
   z-index: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Dark Mode Hex Grid Pattern */
+/* Dark Mode Hex Grid Pattern - Lowered opacity for subtle texture */
 [data-theme='dark'] .qbd-interactive-card::before {
-  opacity: 0.15;
+  opacity: 0.06;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='hex' width='80' height='69.28' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0 L80 23.09 L80 69.28 L40 92.37 L0 69.28 L0 23.09 Z' fill='none' stroke='%2325c2a0' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hex)'/%3E%3C/svg%3E");
 }
 
 .qbd-interactive-card-content { position: relative; z-index: 1; }
 .qbd-interactive-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); border-color: var(--ifm-color-primary); }
 [data-theme='dark'] .qbd-interactive-card:hover { box-shadow: 0 12px 40px rgba(37, 194, 160, 0.2); border-color: var(--ifm-color-primary-light); }
-.qbd-interactive-card:hover::before { opacity: 0.25; }
-[data-theme='dark'] .qbd-interactive-card:hover::before { opacity: 0.35; }
+.qbd-interactive-card:hover::before { opacity: 0.10; }
+[data-theme='dark'] .qbd-interactive-card:hover::before { opacity: 0.14; }
 
 /* hero buttons */
 .hero-white-btn {
@@ -60,7 +60,7 @@
 
 /* grids & placeholders */
 .section-grid-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: center; }
-.section-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.section-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; } /* Increased gap for better column separation */
 
 .placeholder-box {
   background-color: rgba(0,0,0,0.03);
@@ -75,7 +75,7 @@
 
 @media screen and (max-width: 996px) { 
   .section-grid-3col { grid-template-columns: 1fr; text-align: center; } 
-  .section-grid-2col { grid-template-columns: 1fr; text-align: center; } 
+  .section-grid-2col { grid-template-columns: 1fr; text-align: center; gap: 2rem; } 
 }
 
 /* alerts (glassmorphism) */
