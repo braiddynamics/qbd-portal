@@ -2,14 +2,14 @@ export const monographSections = [
   {
     part: "1",
     title: "1. The Rules",
-    subtitle: "The Foundational Principles",
-    linkUrl: "/monograph/category/the-rules",
+    subtitle: "Foundational Principles",
+    linkUrl: "/monograph/rules/ontology/1.1",
   },
   {
     part: "2",
     title: "2. The Players",
     subtitle: "Topological Nature of Matter",
-    linkUrl: "/monograph/category/the-players",
+    linkUrl: "/monograph/players/fermions/6.1",
   },
   {
     part: "3",
