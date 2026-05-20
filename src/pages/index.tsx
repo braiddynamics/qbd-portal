@@ -82,7 +82,7 @@ export default function Home() {
           {/* --- SPINE WRAPPER STARTS --- */}
           <div className="connecting-spine-wrapper">
 
-            {/* Introductory Framework Abstract */}
+{/* Introductory Framework Abstract */}
             <div className="qbd-interactive-card" style={{ maxWidth: '950px', margin: '0 auto 6rem auto' }}>
               <div className="qbd-interactive-card-content" style={{ textAlign: 'center', padding: '0 1rem' }}>
                 <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: '1.3' }}>
@@ -93,11 +93,15 @@ export default function Home() {
                 </h2>
 
                 <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.5rem', textAlign: 'justify' }}>
-                  At its deepest layer, reality is an abstract network of discrete events and causal links. <strong>Quantum Braid Dynamics (QBD)</strong> is a rigorous, background-independent formulation of quantum gravity that treats the cosmos as a self-updating computational process. This is not a work of speculative world-building or mathematical mysticism, but an analytical framework where physical laws are derived as strict thermodynamic inevitabilities.
+                  Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity that models the cosmos as a self-updating computational process built with discrete events and causal links. It offers an analytical framework where physical laws are derived at the deepest layer of physical reality, as strict thermodynamic inevitabilities supported by modern empirical simulations.
+                </p>
+
+                <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.5rem', textAlign: 'justify' }}>
+                  Driven by local, information-theoretic constraints, this raw causal web undergoes a cosmic phase transition commonly known as "The Big Bang". From a finite topological origin, a symmetry breaking event begins a process of <em>Geometrogenesis</em>, where the graph network structures itself into a stable, four-dimensional spacetime mesh that natively recovers Einstein’s equations of General Relativity and the particle configurations of the Standard Model.
                 </p>
 
                 <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
-                  Driven by local, information-theoretic constraints, this raw causal web undergoes a cosmic phase transition known as <em>Geometrogenesis</em>. From a finite topological origin, the network structures itself into a stable, four-dimensional spacetime mesh that natively recovers Einstein’s equations of General Relativity and the particle configurations of the Standard Model. Rather than supplanting modern physics, QBD acts as a foundation that affirms continuous geometry and quantum mechanics as precise macroscopic realities, while revealing how gravity, matter, and the arrow of time naturally emerge from the statistical thermodynamics of a discrete, fault-tolerant system.
+                  Rather than supplanting modern physics with mysticism, numerology, or fields of consciousness, QBD acts as a computable, formal foundation that affirms continuous geometry and quantum mechanics as macroscopic realities, while revealing in precise detail how gravity, matter, and the arrow of time naturally emerge from the statistical thermodynamics of a discrete, fault-tolerant, error-correcting system.
                 </p>
               </div>
             </div>

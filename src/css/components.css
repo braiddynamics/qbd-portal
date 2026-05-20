@@ -132,3 +132,51 @@
   --qbd-spine-color: #8b5cf6;
   --qbd-spine-glow: rgba(139, 92, 246, 0.6);
 }
+
+/* Custom Theming for Docusaurus Generated Doc/Category Cards */
+.main-wrapper .card {
+  position: relative;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--qbd-glow-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .main-wrapper .card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle Hex Backdrop for Doc Cards */
+.main-wrapper .card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.02; /* Extremely muted so it doesn't distract from long text reading */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='hex-doc' width='80' height='69.28' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0 L80 23.09 L80 69.28 L40 92.37 L0 69.28 L0 23.09 Z' fill='none' stroke='%2325c2a0' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23hex-doc)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Elevate card text and structure */
+.main-wrapper .card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .main-wrapper .card:hover {
+  box-shadow: 0 8px 24px rgba(37, 194, 160, 0.15);
+}
+
+/* Target default emojis and body descriptions inside Docusaurus cards */
+.main-wrapper .card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.main-wrapper .card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
