@@ -1,0 +1,3762 @@
+{
+  "1.2.1": {
+    "name": "Dual Time Architecture",
+    "type": "postulate",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2": {
+    "name": "Global Logical Time",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2.1": {
+    "name": "Ontological Status",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2.2": {
+    "name": "Computational Cosmology",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2.3": {
+    "name": "Unimodular Gravity",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2.4": {
+    "name": "Background Independence",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.2.5": {
+    "name": "Page-Wootters Comparison",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.3": {
+    "name": "Finite Information Substrate",
+    "type": "lemma",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.3.1": {
+    "name": "Finite Information Substrate",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.4": {
+    "name": "Backward Accumulation",
+    "type": "lemma",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.4.1": {
+    "name": "Backward Accumulation",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.5": {
+    "name": "Finite State Recurrence",
+    "type": "lemma",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.5.1": {
+    "name": "Finite State Recurrence",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.6": {
+    "name": "Supertask Impossibility",
+    "type": "lemma",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.6.1": {
+    "name": "Supertask Limits",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.6.2": {
+    "name": "Collapse of Supertasks",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.7": {
+    "name": "Temporal Finitude",
+    "type": "theorem",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.7.1": {
+    "name": "Temporal Finitude",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.2.7.2": {
+    "name": "Grim Reaper Paradox",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.2.md"
+  },
+  "1.3.1": {
+    "name": "State Space and Graph Structure",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.3.2": {
+    "name": "Emergent Timestamp Assignment",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.3.3": {
+    "name": "Abstract Event",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.3.3.1": {
+    "name": "Relational Justification",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.3.4": {
+    "name": "Monotonicity of History",
+    "type": "theorem",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.3.4.1": {
+    "name": "Monotonicity",
+    "type": "proof",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
+  "1.4.1": {
+    "name": "Elementary Task Space",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.4.2": {
+    "name": "Vacuum Repertoire",
+    "type": "postulate",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.4.3": {
+    "name": "Primitive Tasks",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.4.4": {
+    "name": "Symmetry and Catalysis",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.4.5": {
+    "name": "Task Independence",
+    "type": "commentary",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.5.1": {
+    "name": "Fundamental Graph Structures",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.5.md"
+  },
+  "1.5.2": {
+    "name": "The 2-Path",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.5.md"
+  },
+  "1.5.3": {
+    "name": "Cycle Definitions",
+    "type": "definition",
+    "file": "01-rules/01-ontology/1.5.md"
+  },
+  "2.1.2": {
+    "name": "The Physics of Directionality",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.1.md"
+  },
+  "2.2.1": {
+    "name": "Insufficiency of Antisymmetry",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.2": {
+    "name": "Pathology of Self-Loops",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.2.1": {
+    "name": "Pathology of Self-Loops",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.2.2": {
+    "name": "The Atomic Violation",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.3": {
+    "name": "Thermodynamic Nullity",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.3.1": {
+    "name": "Thermodynamic Nullity",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.3.2": {
+    "name": "Entropic Barrenness",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.4": {
+    "name": "Insufficiency of Antisymmetry",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.2.4.1": {
+    "name": "The Loophole of Equality",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.3.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.2": {
+    "name": "The Geometric Quantum",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.2.1": {
+    "name": "The Geometric Quantum",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.2.2": {
+    "name": "The Necessity of Three",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.3.1": {
+    "name": "Pseudocode for PUC Check",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.3.2": {
+    "name": "Redundancy Exclusion",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.3.3": {
+    "name": "The No-Cloning of History",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.4": {
+    "name": "Lexicographic Potential",
+    "type": "definition",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.4.1": {
+    "name": "The Descent to Simplicity",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.5": {
+    "name": "Well-Foundedness",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.5.1": {
+    "name": "Well-Foundedness",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.4.1": {
+    "name": "General Cycle Decomposition",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.2": {
+    "name": "Confluence of the Constructor",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.2.1": {
+    "name": "Diamond Property",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.3": {
+    "name": "Chordlessness of Maximal Cycles",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.3.1": {
+    "name": "Chordlessness of Maximal Cycles",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.4": {
+    "name": "Reduction via Deletion",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.4.1": {
+    "name": "Reduction via Deletion",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.5": {
+    "name": "Decrease in Parallel Updates",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.5.1": {
+    "name": "Decrease in Parallel Updates",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.6": {
+    "name": "General Cycle Decomposition",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.4.11": {
+    "name": "The Arrow of Simplicity",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.4.md"
+  },
+  "2.5.1": {
+    "name": "Independence of Axioms 1 and 2",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.2": {
+    "name": "Independence Case A",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.2.1": {
+    "name": "Independence Case A",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.3": {
+    "name": "Independence Case B",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.3.1": {
+    "name": "Independence Case B",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.5.4": {
+    "name": "Mutual Independence",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.6.1": {
+    "name": "Effective Influence",
+    "type": "definition",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.1.1": {
+    "name": "Path Constraints",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.1.2": {
+    "name": "The Simultaneity Paradox",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.2": {
+    "name": "Inadequacy of Local Axioms",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.3": {
+    "name": "Strict Timestamps",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.3.1": {
+    "name": "Strict Timestamps",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.4": {
+    "name": "Failure of Reflexivity",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.4.1": {
+    "name": "Failure of Reflexivity",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.5": {
+    "name": "Failure of Asymmetry",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.5.1": {
+    "name": "Failure of Asymmetry",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.6": {
+    "name": "Inadequacy of Local Axioms",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.7.1.1": {
+    "name": "The Arrow of Causality",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.1.2": {
+    "name": "Operational Enforcement",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.2": {
+    "name": "Thermodynamic Enforcement",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.3": {
+    "name": "Cycle Diameter Growth",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.3.1": {
+    "name": "Cycle Diameter Growth",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.3.2": {
+    "name": "The Blindness of Locality",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.4": {
+    "name": "Local PUC Approximation",
+    "type": "lemma",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.4.1": {
+    "name": "Local PUC Approximation",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.4.2": {
+    "name": "The Cost of Certainty",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.5": {
+    "name": "Thermodynamic Enforcement",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.5.1": {
+    "name": "The Thermodynamic Wall",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.6": {
+    "name": "Independence of Axiom 3",
+    "type": "theorem",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.6.1": {
+    "name": "Independence of Axiom 3",
+    "type": "proof",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.6.2": {
+    "name": "The Tripartite Foundation",
+    "type": "commentary",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "3.1.3": {
+    "name": "The Vacuum Structure",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.3.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.4": {
+    "name": "Existence and Finiteness",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.4.1": {
+    "name": "Existence and Finiteness",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.4.2": {
+    "name": "The Problem of Infinity",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.5": {
+    "name": "Exclusion of Reflexivity and Reciprocity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.5.1": {
+    "name": "Exclusion of Reflexivity and Reciprocity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.5.2": {
+    "name": "The Mirror and the Echo",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.6": {
+    "name": "Exclusion of Cyclic Paths",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.6.1": {
+    "name": "Exclusion of Cyclic Paths",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.6.2": {
+    "name": "The Infinite Staircase",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.7": {
+    "name": "Global Acyclicity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.7.1": {
+    "name": "Global Acyclicity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.7.3": {
+    "name": "The River of Time",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.8": {
+    "name": "Global Connectivity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.8.1": {
+    "name": "Minimization of Automorphisms",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.8.3": {
+    "name": "The Unity of the Vacuum",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.9": {
+    "name": "Path Uniqueness and Sparsity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.9.1": {
+    "name": "The Tree Condition",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.9.2": {
+    "name": "The Efficiency of the Tree",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.10": {
+    "name": "The Depth-Parity Bipartition",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.10.1": {
+    "name": "The Depth-Parity Bipartition",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.10.2": {
+    "name": "The Stratification of Spacetime",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.11": {
+    "name": "Exclusion of Odd Cycles",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.11.1": {
+    "name": "Exclusion of Odd Cycles",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.11.2": {
+    "name": "The Impossibility of Accidental Geometry",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.1.12": {
+    "name": "Demonstration of the Vacuum Structure",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.2.1": {
+    "name": "Optimal Vacuum",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.1.1": {
+    "name": "The Regular Bethe Fragment",
+    "type": "definition",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.1.3": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.2": {
+    "name": "Exclusion of Cyclic Topologies",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.2.1": {
+    "name": "Exclusion of Cyclic Topologies",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.3": {
+    "name": "Exclusion of Short-Range Loops",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.3.1": {
+    "name": "Exclusion of Short-Range Loops",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.4": {
+    "name": "Exclusion of Disconnected States",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.4.1": {
+    "name": "Exclusion of Disconnected States",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.4.2": {
+    "name": "One Universe",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.5": {
+    "name": "Exclusion of Redundant DAGs",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.5.1": {
+    "name": "Exclusion of Redundant DAGs",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.5.2": {
+    "name": "The Efficiency of Sparsity",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.6": {
+    "name": "Site Maximality",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.6.1": {
+    "name": "Branching Optimization",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.6.2": {
+    "name": "Parallel Processing",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.7": {
+    "name": "Degree Regularity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.7.1": {
+    "name": "Degree Regularity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.7.3": {
+    "name": "The Democracy of the Vacuum",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.8": {
+    "name": "Orbit Transitivity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.8.1": {
+    "name": "Orbit Transitivity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.8.2": {
+    "name": "Symmetry Breaking",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.9": {
+    "name": "The Structural Optimality Metric",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.9.1": {
+    "name": "Metric Validity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.10": {
+    "name": "Quantitative Supremacy",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.10.1": {
+    "name": "Supremacy Verification",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.2.11": {
+    "name": "Demonstration of the Optimal Vacuum",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.2.md"
+  },
+  "3.3.1": {
+    "name": "The Annotated State Space",
+    "type": "definition",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.2": {
+    "name": "The Formal Symmetry Framework",
+    "type": "definition",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.3": {
+    "name": "Preservation of Automorphisms",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.3.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.4": {
+    "name": "Equivariance of Site Definition",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.4.1": {
+    "name": "Equivariance of Site Definition",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.4.2": {
+    "name": "Physical Justification",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.5": {
+    "name": "Conflict Resolution",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.5.1": {
+    "name": "Conflict Resolution",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.6": {
+    "name": "Scalability of the Scheduler",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.6.1": {
+    "name": "Scalability of the Scheduler",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.3.7": {
+    "name": "Demonstration of Mandatory Parallelism",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
+  "3.4.1": {
+    "name": "Inevitable Geometrogenesis",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.2": {
+    "name": "Topological Tunneling",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.2.1": {
+    "name": "Symmetry Breaking",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.2.2": {
+    "name": "The Minimal Fluctuation",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.3": {
+    "name": "Nucleation of Compliant Sites",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.3.1": {
+    "name": "Nucleation of Compliant Sites",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.4": {
+    "name": "The First Geometric Quantum",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.4.1": {
+    "name": "The First Geometric Quantum",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.4.2": {
+    "name": "The Spark of Geometry",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.5": {
+    "name": "Ignition Probability",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.5.1": {
+    "name": "Ignition Probability",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.4.6": {
+    "name": "Demonstration of Inevitable Ignition",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.5.1": {
+    "name": "The Generalized Stabilizer Formulation",
+    "type": "definition",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.1.1": {
+    "name": "The Physical-Code Mapping",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.2": {
+    "name": "The Stabilizer Isomorphism",
+    "type": "theorem",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.3": {
+    "name": "Configuration Space Validity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.3.1": {
+    "name": "Mapping Validity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.3.2": {
+    "name": "Operator Interpretation",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.4": {
+    "name": "Hard Constraint Validity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.4.1": {
+    "name": "Projector Validity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.4.2": {
+    "name": "Justification of the Undirected Metric",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.5": {
+    "name": "Syndrome Classification of Triplet Configurations",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.5.1": {
+    "name": "Syndrome Classification of Triplet Configurations",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.5.3": {
+    "name": "Physical Interpretation of Syndromes",
+    "type": "commentary",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.6": {
+    "name": "Stabilizer Commutativity",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.6.1": {
+    "name": "Stabilizer Commutativity",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.7": {
+    "name": "Codespace Non-Triviality",
+    "type": "lemma",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.7.1": {
+    "name": "Codespace Non-Triviality",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "3.5.8": {
+    "name": "Demonstration of the Stabilizer Isomorphism",
+    "type": "proof",
+    "file": "01-rules/03-architecture/3.5.md"
+  },
+  "4.1.1": {
+    "name": "The Internal Causal Category",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.1.1.1": {
+    "name": "Physical Interpretation of $\\mathbf{Caus}_t$",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.1.2": {
+    "name": "The Historical Category",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.1.2.1": {
+    "name": "Physical Interpretation of $\\mathbf{Hist}$",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.1.3": {
+    "name": "Categorical Ties to Prior Foundations",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.2.1": {
+    "name": "Categorical Validity",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.2": {
+    "name": "Identity for $\\mathbf{Caus}_t$",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.2.1": {
+    "name": "Identity Preservation for $\\mathbf{Caus}_t$",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.3": {
+    "name": "Associativity for $\\mathbf{Caus}_t$",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.3.1": {
+    "name": "Associativity Preservation for $\\mathbf{Caus}_t$",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.4": {
+    "name": "Timestamp Monotonicity",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.4.1": {
+    "name": "Preservation of Monotonicity",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.5": {
+    "name": "Identity for $\\mathbf{Hist}$",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.5.1": {
+    "name": "Identity Preservation for $\\mathbf{Hist}$",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.6": {
+    "name": "Associativity for $\\mathbf{Hist}$",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.6.1": {
+    "name": "Associativity Preservation for $\\mathbf{Hist}$",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.7": {
+    "name": "Topological Injectivity",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.7.1": {
+    "name": "Irreflexivity Enforcement",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.8": {
+    "name": "Effective Influence Encoding",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.8.1": {
+    "name": "Encoding Verification",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.9": {
+    "name": "The Partial Order Property",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.9.1": {
+    "name": "The Partial Order Property",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.2.10": {
+    "name": "Demonstration of Categorical Validity",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.2.md"
+  },
+  "4.3.1": {
+    "name": "The Annotated Category (AnnCG)",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.1.1": {
+    "name": "Structure of Annotated States",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.2": {
+    "name": "The Awareness Endofunctor ($R_T$)",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.2.1": {
+    "name": "Mechanism of Self-Observation",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.3": {
+    "name": "The Context Extraction (Counit $\\epsilon$)",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.3.1": {
+    "name": "Mechanism of Context Extraction",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.4": {
+    "name": "The Meta-Check (Comultiplication $\\delta$)",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.4.1": {
+    "name": "Mechanism of Higher-Order Verification",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.5": {
+    "name": "The Awareness Comonad",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.5.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.6": {
+    "name": "Functoriality of Awareness",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.6.1": {
+    "name": "Functoriality of Awareness",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.6.2": {
+    "name": "Structural Integrity",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.7": {
+    "name": "Naturality of Transformations",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.7.1": {
+    "name": "Commutative Squares",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.7.2": {
+    "name": "Diagnostic Consistency",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.8": {
+    "name": "Axiom Satisfaction",
+    "type": "lemma",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.8.1": {
+    "name": "Axiom Satisfaction",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.8.2": {
+    "name": "Axiomatic Implications",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.3.9": {
+    "name": "Demonstration of the Awareness Comonad",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
+  "4.4.1": {
+    "name": "Bit-Nat Equivalence",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.1.1": {
+    "name": "Bit-Nat Equivalence",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.1.2": {
+    "name": "The Currency of Structure",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.2": {
+    "name": "Entropy of Closure",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.2.1": {
+    "name": "Entropy of Closure",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.3": {
+    "name": "Dimensional Equipartition",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.3.1": {
+    "name": "Dimensional Equipartition",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.4.1": {
+    "name": "Synthesis",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.4.2": {
+    "name": "The Tax on Structure",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.5": {
+    "name": "The Catalysis Coefficient",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.5.1": {
+    "name": "The Catalysis Coefficient",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.5.2": {
+    "name": "Entropic Pressure",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.6": {
+    "name": "The Friction Coefficient",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.6.1": {
+    "name": "The Friction Coefficient",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.4.6.3": {
+    "name": "The Viscosity of Space",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
+  "4.5.1": {
+    "name": "The Universal Constructor",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.2": {
+    "name": "The Catalytic Tension Factor",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.2.1": {
+    "name": "Adaptive Feedback",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.3": {
+    "name": "Addition Mode",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.3.1": {
+    "name": "The Generative Drive",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.4": {
+    "name": "The Addition Probability",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.4.1": {
+    "name": "The Addition Probability",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.5": {
+    "name": "Deletion Mode",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.5.1": {
+    "name": "Pruning and Balance",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.6": {
+    "name": "The Deletion Probability",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.6.1": {
+    "name": "The Deletion Probability",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.5.6.2": {
+    "name": "Detailed Balance",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
+  "4.6.1": {
+    "name": "The Evolution Operator",
+    "type": "definition",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "4.6.2": {
+    "name": "The Born Rule",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "4.6.2.1": {
+    "name": "The Born Rule",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "4.6.2.3": {
+    "name": "Classical Amplitudes",
+    "type": "commentary",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "4.6.3": {
+    "name": "The Thermodynamic Arrow",
+    "type": "theorem",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "4.6.3.1": {
+    "name": "The Thermodynamic Arrow",
+    "type": "proof",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
+  "5.1.1": {
+    "name": "Spatial Cluster Decomposition",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.1.1": {
+    "name": "Defining \"Volume\" via Correlation",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.2": {
+    "name": "Extensive Entropy",
+    "type": "theorem",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.2.1": {
+    "name": "Logic of Extensivity",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.3": {
+    "name": "Correlation Decay",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.3.1": {
+    "name": "Correlation Decay",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.3.2": {
+    "name": "The Role of Acyclicity and Sparsity",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.1.4": {
+    "name": "Extensive Entropy",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.2.1": {
+    "name": "Thermodynamic Fluxes",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.1.1": {
+    "name": "The Dynamics of Information",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.2": {
+    "name": "Macroscopic Evolution",
+    "type": "theorem",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.3": {
+    "name": "Vacuum Permittivity ($\\Lambda$)",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.3.1": {
+    "name": "Background Path Density",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.3.2": {
+    "name": "The Spark of Existence",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.4": {
+    "name": "Geometric Autocatalysis ($J_{auto}$)",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.4.1": {
+    "name": "Combinatorial Precursors",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.4.3": {
+    "name": "Nonlinear Dynamics",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.5": {
+    "name": "Frictional Suppression ($P_{acc}$)",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.5.1": {
+    "name": "Friction Derivation",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.5.3": {
+    "name": "The Saturation Mechanism",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.6": {
+    "name": "Entropic & Catalytic Decay ($J_{out}$)",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.6.1": {
+    "name": "The Stress-Deletion Coupling",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.2.7": {
+    "name": "The Master Equation",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.2.md"
+  },
+  "5.3.1": {
+    "name": "The Region of Physical Viability",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.1.1": {
+    "name": "The Goldilocks Zone of Connectivity",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.2": {
+    "name": "The Parameter Sweep Protocol",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.2.1": {
+    "name": "Methodology of the Sweep",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.3.1": {
+    "name": "Results of the Sweep",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.4": {
+    "name": "The Viability Channel",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.3.4.1": {
+    "name": "Robustness and Fine-Tuning",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.4.1": {
+    "name": "The Transcendental Balance",
+    "type": "definition",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.1.1": {
+    "name": "Mathematical Structure of the Balance",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.2": {
+    "name": "Global Stability",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.2.1": {
+    "name": "Stability Analysis",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.2.2": {
+    "name": "The Inevitability of Structure",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.3": {
+    "name": "Catalysis Bounds",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.3.1": {
+    "name": "Flux Dominance",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.3.2": {
+    "name": "The Stability Buffer",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.4": {
+    "name": "Vacuum Stability",
+    "type": "theorem",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.4.1": {
+    "name": "Stability Analysis",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.4.4.2": {
+    "name": "The Robust Attractor",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.5.1": {
+    "name": "Geometric Well-Posedness",
+    "type": "theorem",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.1.1": {
+    "name": "Logic of Geometric Hypotheses",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.2": {
+    "name": "Strict Locality",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.2.1": {
+    "name": "Locality Verification",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.2.2": {
+    "name": "The Causal Horizon",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.3": {
+    "name": "Bounded Degree",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.3.1": {
+    "name": "Degree Boundedness",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.3.2": {
+    "name": "The Limits of Connectivity",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.4": {
+    "name": "Uniform Curvature Bound",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.4.1": {
+    "name": "Curvature Bounds",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.4.2": {
+    "name": "Preventing Singularities",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.5": {
+    "name": "Correlation Decay",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.5.1": {
+    "name": "Decay Verification",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.5.3": {
+    "name": "Fluctuation Control",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.5.4": {
+    "name": "Self-Averaging Homogeneity",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.6": {
+    "name": "Manifold Combinatorics",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.6.2": {
+    "name": "Topology Suppression",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.6.1": {
+    "name": "The Vanishing of Non-Locality",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.7": {
+    "name": "Ahlfors 4-Regularity",
+    "type": "lemma",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.7.1": {
+    "name": "Dimensionality Verification",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.7.2": {
+    "name": "Why Four Dimensions?",
+    "type": "commentary",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "5.5.8": {
+    "name": "Geometric Well-Posedness",
+    "type": "proof",
+    "file": "01-rules/05-equilibrium/5.5.md"
+  },
+  "6.1.1": {
+    "name": "Local Reducibility",
+    "type": "definition",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.1.1": {
+    "name": "Thermodynamic Vulnerability",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.2": {
+    "name": "Particle Necessity",
+    "type": "theorem",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.3": {
+    "name": "Reducibility of Trivial Topologies",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.3.1": {
+    "name": "Reducibility Sequence",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.3.2": {
+    "name": "Thermodynamic Simplification",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.4": {
+    "name": "Catalyzed Instability",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.4.1": {
+    "name": "Decay Rate Calculation",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.4.3": {
+    "name": "The Erasure Mechanism",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.5": {
+    "name": "The Topological Barrier",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.5.1": {
+    "name": "Barrier Existence",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.5.2": {
+    "name": "The Topological Lock",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.1.6": {
+    "name": "The Particle Necessity",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.2.1": {
+    "name": "The Tripartite Braid",
+    "type": "definition",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.1.1": {
+    "name": "Tripartite Necessity",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.2": {
+    "name": "The Tripartite Braid Theorem",
+    "type": "theorem",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.3": {
+    "name": "Exclusion of Unbraided Clusters (n=0)",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.3.1": {
+    "name": "Triviality via Flux Dominance",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.3.2": {
+    "name": "The Fate of the Unknotted Cluster",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.4": {
+    "name": "Exclusion of Single-Ribbon (n=1)",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.4.1": {
+    "name": "Reducibility via Formal Induction",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.4.2": {
+    "name": "Torsional Instability",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.5": {
+    "name": "Exclusion of Two-Ribbon (n=2)",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.5.1": {
+    "name": "Algebraic Insufficiency",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.5.2": {
+    "name": "Binary Insufficiency",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.6": {
+    "name": "Exclusion of Higher Order Configurations (n > 3)",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.6.1": {
+    "name": "Analytical Exclusion via TQFT Parsimony",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.6.2": {
+    "name": "Entropic Cost of Exotics",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.2.7": {
+    "name": "The Tripartite Braid Theorem",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.2.md"
+  },
+  "6.3.1": {
+    "name": "Crossing Complexity",
+    "type": "definition",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.1.1": {
+    "name": "Linear Entanglement Cost",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.2": {
+    "name": "Torsional Complexity",
+    "type": "definition",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.2.1": {
+    "name": "Quadratic Torsion Cost",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.3": {
+    "name": "Topological Mass",
+    "type": "theorem",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.3.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.4": {
+    "name": "Linear Scaling of Crossings",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.4.2": {
+    "name": "Braid Additivity",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.5": {
+    "name": "Quadratic Scaling of Torsion",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.5.3": {
+    "name": "Mass Hierarchy Origin",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.6": {
+    "name": "Entropy Negligibility",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.6.2": {
+    "name": "Entropic Vanishing",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.3.7": {
+    "name": "Mass Functional",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.3.md"
+  },
+  "6.4.1": {
+    "name": "The Linear Barrier",
+    "type": "definition",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.1.1": {
+    "name": "Unwinding Impossibility",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.2": {
+    "name": "Architectural Stability",
+    "type": "theorem",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.3": {
+    "name": "The Local Horizon",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.3.1": {
+    "name": "Local Blindness",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.3.3": {
+    "name": "The Horizon Limit",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.4": {
+    "name": "The Global Unwinding Barrier",
+    "type": "lemma",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.4.1": {
+    "name": "Cost Verification",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.4.2": {
+    "name": "Energetic Topology Cost",
+    "type": "commentary",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "6.4.5": {
+    "name": "Stability via Impossibility",
+    "type": "proof",
+    "file": "02-players/06-fermions/6.4.md"
+  },
+  "7.1.1": {
+    "name": "The Spin Operator",
+    "type": "definition",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.1.1": {
+    "name": "The Quantum of Spin",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.2": {
+    "name": "Topological Statistics",
+    "type": "theorem",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.3": {
+    "name": "Unitary Twist Anticommutation",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.3.1": {
+    "name": "Eigenvalue Inversion",
+    "type": "proof",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.3.2": {
+    "name": "Anticommutation Mechanism",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.4": {
+    "name": "Exchange-Rotation Equivalence",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.4.1": {
+    "name": "Topological Phase via Reidemeister Sequence",
+    "type": "proof",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.4.2": {
+    "name": "Exchange-Rotation Identity",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.1.5": {
+    "name": "Topological Statistics",
+    "type": "proof",
+    "file": "02-players/07-topology/7.1.md"
+  },
+  "7.2.1": {
+    "name": "Pauli Exclusion Principle",
+    "type": "theorem",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.2": {
+    "name": "The Binary State Principle",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.2.1": {
+    "name": "Binary Encoding Verification",
+    "type": "proof",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.2.2": {
+    "name": "The Quantum Bit Limit",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.3": {
+    "name": "Forbidden Occupancy",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.2.3.1": {
+    "name": "Topological Violation",
+    "type": "proof",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.3.3.2": {
+    "name": "Global Phase Unobservability",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.2.4": {
+    "name": "Pauli Exclusion Principle",
+    "type": "proof",
+    "file": "02-players/07-topology/7.2.md"
+  },
+  "7.3.1": {
+    "name": "The Charge Operator",
+    "type": "definition",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.1.1": {
+    "name": "Topological Charge Quantification",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.2": {
+    "name": "Emergence of Electric Charge",
+    "type": "theorem",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.3": {
+    "name": "Gauge Symmetry",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.3.1": {
+    "name": "Symmetry Verification",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.4": {
+    "name": "Conservation of Total Writhe",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.4.1": {
+    "name": "Conservation Logic",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.4.2": {
+    "name": "Invariant Preservation",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.5": {
+    "name": "Lepton Charge Solutions",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.5.1": {
+    "name": "Singlet Charge Values",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.5.2": {
+    "name": "Integer Charge Geometry",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.6": {
+    "name": "Quark Charge Solutions",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.6.1": {
+    "name": "Triplet Charge Values",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.6.2": {
+    "name": "Fractional Charge Origin",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.7": {
+    "name": "Charge Normalization",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.7.1": {
+    "name": "Anomaly Cancellation",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.7.2": {
+    "name": "Fractional Necessity",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.3.8": {
+    "name": "Emergence of Electric Charge",
+    "type": "proof",
+    "file": "02-players/07-topology/7.3.md"
+  },
+  "7.4.1": {
+    "name": "Mass as Informational Inertia",
+    "type": "definition",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.1.1": {
+    "name": "Complexity Cost",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.2": {
+    "name": "The Topological Mass Functional",
+    "type": "theorem",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.3": {
+    "name": "Thermodynamic Equivalence",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.3.1": {
+    "name": "Entropic Vanishing",
+    "type": "proof",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.3.2": {
+    "name": "Thermodynamic Isolation",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.4": {
+    "name": "Base Mass Linear Scaling",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.4.1": {
+    "name": "Linear Scaling Verification",
+    "type": "proof",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.4.2": {
+    "name": "Complexity Additivity",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.5": {
+    "name": "Integer Geometric Efficiency",
+    "type": "lemma",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.5.1": {
+    "name": "Derivation of the Sharing Integer",
+    "type": "proof",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.5.2": {
+    "name": "Isospin Symmetry",
+    "type": "commentary",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "7.4.6": {
+    "name": "Discrete Mass Spectrum",
+    "type": "proof",
+    "file": "02-players/07-topology/7.4.md"
+  },
+  "8.1.1": {
+    "name": "Lie Algebra Generator",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.2": {
+    "name": "Braid Group Isomorphism",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.2.1": {
+    "name": "Verification of Isomorphism",
+    "type": "proof",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.2.2": {
+    "name": "Algebraic Rigidity",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.3": {
+    "name": "Distant Commutativity",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.3.1": {
+    "name": "Commutativity Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.3.2": {
+    "name": "Independence Origin",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.4": {
+    "name": "Yang-Baxter Relations",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.4.1": {
+    "name": "Topological Equivalence",
+    "type": "proof",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.4.2": {
+    "name": "Crossing Logic",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.5": {
+    "name": "Bounded Commutator Depth",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.5.1": {
+    "name": "Depth Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.5.2": {
+    "name": "Finite Force Basis",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.1.6": {
+    "name": "Demonstration of The Generator Principle",
+    "type": "proof",
+    "file": "02-players/08-braids/8.1.md"
+  },
+  "8.2.1": {
+    "name": "Tripartite Basis",
+    "type": "definition",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.1.1": {
+    "name": "Color Anatomy",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.2": {
+    "name": "Color Symmetry Emergence",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.3": {
+    "name": "Basis Verification",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.3.1": {
+    "name": "Matrix Construction",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.3.2": {
+    "name": "Color Space Spanning",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.4": {
+    "name": "Commutator Generation",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.4.1": {
+    "name": "Generation Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.4.2": {
+    "name": "Commutator Extension Mechanism",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.5": {
+    "name": "Algebraic Closure",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.5.1": {
+    "name": "Closure Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.5.2": {
+    "name": "Strong Force Closure",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.6": {
+    "name": "Ensemble Closure Verification",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.6.1": {
+    "name": "Closure Probability",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.6.3": {
+    "name": "Structural Inevitability",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.7": {
+    "name": "Flux Tube Confinement",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.7.1": {
+    "name": "Linear Potential and Berry Phase",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.2.8": {
+    "name": "Emergence of SU(3) from B3",
+    "type": "proof",
+    "file": "02-players/08-braids/8.2.md"
+  },
+  "8.3.1": {
+    "name": "The Chiral Invariant",
+    "type": "definition",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.1.2": {
+    "name": "Chiral Arrow",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.2": {
+    "name": "Chiral Symmetry and Parity Violation",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.3": {
+    "name": "Chiral Stability",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.3.1": {
+    "name": "Invariance Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.3.2": {
+    "name": "Handedness Persistence",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.4": {
+    "name": "Weak Algebra Emergence",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.4.1": {
+    "name": "Doublet Algebra Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.4.2": {
+    "name": "Weak Force Algebra",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.5": {
+    "name": "Right-Handed Rejection",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.5.1": {
+    "name": "Rejection Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.5.2": {
+    "name": "Parity Violation Mechanism",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.6": {
+    "name": "Topological Parity Violation",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.6.1": {
+    "name": "Parity Asymmetry Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.6.2": {
+    "name": "Chiral Lock",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.7": {
+    "name": "Mirror PUC Violation",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.7.1": {
+    "name": "PUC Violation Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.7.2": {
+    "name": "Mirror Failure",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.3.8": {
+    "name": "The Chiral Weak Interaction Structure",
+    "type": "proof",
+    "file": "02-players/08-braids/8.3.md"
+  },
+  "8.4.1": {
+    "name": "Topological Weinberg Angle",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.2": {
+    "name": "Computational Friction Ratio",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.2.1": {
+    "name": "Friction Inequality Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.2.2": {
+    "name": "Geometric Cost",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.3": {
+    "name": "Coupling-Probability Correspondence",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.3.1": {
+    "name": "Amplitude Integration",
+    "type": "proof",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.4": {
+    "name": "Topological Complexity Identification",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.4.1": {
+    "name": "Generator Topology",
+    "type": "proof",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.4.5": {
+    "name": "Ratio Construction",
+    "type": "proof",
+    "file": "02-players/08-braids/8.4.md"
+  },
+  "8.5.1": {
+    "name": "Emergent Gauge Coupling",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.2": {
+    "name": "Probabilistic Coupling Identity",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.2.1": {
+    "name": "Identity Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.2.2": {
+    "name": "Probabilistic Coupling",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.3": {
+    "name": "Trace Normalization",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.3.1": {
+    "name": "Normalization Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.3.2": {
+    "name": "Interaction Geometry",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.4": {
+    "name": "Geometric Normalization",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.4.1": {
+    "name": "Spherical Symmetry Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.4.2": {
+    "name": "Spherical Factor",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.5": {
+    "name": "Entropic Dimensionality",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.5.1": {
+    "name": "Weight Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.5.2": {
+    "name": "Entropic Weight",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.6": {
+    "name": "Local State Space Multiplier",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.6.1": {
+    "name": "Degree Counting",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.6.3": {
+    "name": "Combinatorial Multiplier",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.5.7": {
+    "name": "Synthesis of the Coupling Constant",
+    "type": "proof",
+    "file": "02-players/08-braids/8.5.md"
+  },
+  "8.6.1": {
+    "name": "Geometric Reservoir",
+    "type": "definition",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.1.1": {
+    "name": "Mass Reservoir",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.2": {
+    "name": "Emergent Mass Generation",
+    "type": "theorem",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.3": {
+    "name": "Boson Mass Prediction",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.3.1": {
+    "name": "Mass Formula Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.3.2": {
+    "name": "Prediction Precision",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.4": {
+    "name": "Dimensionful VEV Scaling",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.4.1": {
+    "name": "Scaling Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.4.2": {
+    "name": "Reality Scale",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.5": {
+    "name": "Topological Yukawa Identity",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.5.1": {
+    "name": "Yukawa Ratio Verification",
+    "type": "proof",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.5.3": {
+    "name": "Hierarchy Origin",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.6": {
+    "name": "Sensitivity and Error Propagation",
+    "type": "lemma",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.6.1": {
+    "name": "Sensitivity Logic",
+    "type": "proof",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.6.2": {
+    "name": "Standard Model Stability",
+    "type": "commentary",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "8.6.7": {
+    "name": "Emergent Mass Generation",
+    "type": "proof",
+    "file": "02-players/08-braids/8.6.md"
+  },
+  "9.1.1": {
+    "name": "Minimal GUT Uniqueness",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.2": {
+    "name": "Rank Conditions",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.2.1": {
+    "name": "Subgroup Rank Summation",
+    "type": "proof",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.2.2": {
+    "name": "Rank Necessity",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.3": {
+    "name": "Lower Rank Exclusion",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.3.1": {
+    "name": "Inductive Elimination",
+    "type": "proof",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.4": {
+    "name": "Candidate Elimination",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.4.1": {
+    "name": "Representation and Hypercharge Analysis",
+    "type": "proof",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.1.5": {
+    "name": "Uniqueness Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.1.md"
+  },
+  "9.2.1": {
+    "name": "The Penta-Ribbon",
+    "type": "definition",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.1.1": {
+    "name": "Penta-Ribbon Anatomy",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.2": {
+    "name": "Topological Unification",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.3": {
+    "name": "Distant Commutativity",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.3.1": {
+    "name": "Commutativity Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.3.2": {
+    "name": "Swap Independence",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.4": {
+    "name": "Yang-Baxter Relations",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.4.1": {
+    "name": "Topological Equivalence",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.4.2": {
+    "name": "Crossing Logic",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.5": {
+    "name": "Closed Lie Algebra",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.5.1": {
+    "name": "Isomorphism Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.5.3": {
+    "name": "The Closure of Unified Force",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.6": {
+    "name": "Anti-Fundamental Multiplet",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.6.1": {
+    "name": "Unlinked Structure Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.6.2": {
+    "name": "Anti-Matter Topology",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.7": {
+    "name": "Antisymmetric Multiplet",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.7.1": {
+    "name": "Pairwise Interaction Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.7.2": {
+    "name": "Matter Topology",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.2.8": {
+    "name": "Topological Unification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.2.md"
+  },
+  "9.3.1": {
+    "name": "Generational Metastability",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.2": {
+    "name": "Complexity Ordering",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.2.1": {
+    "name": "Topological Complexity Counting",
+    "type": "proof",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.2.2": {
+    "name": "Knot Counting",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.3": {
+    "name": "Topological Protection",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.3.1": {
+    "name": "Barrier Existence",
+    "type": "proof",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.3.2": {
+    "name": "Topological Persistence",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.4": {
+    "name": "Decay Tunneling",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.4.1": {
+    "name": "Tunneling Rate Derivation",
+    "type": "proof",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.4.2": {
+    "name": "Rare Decay",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.3.5": {
+    "name": "Synthesis of the Three-Generation Structure",
+    "type": "proof",
+    "file": "02-players/09-unification/9.3.md"
+  },
+  "9.4.1": {
+    "name": "Leptoquark Processes",
+    "type": "definition",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.1.1": {
+    "name": "Unification Agents",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.2": {
+    "name": "Leptoquark Generators",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.3": {
+    "name": "Interaction Vertex",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.3.1": {
+    "name": "Vertex Geometry Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.3.2": {
+    "name": "Transmutation Geometry",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.4": {
+    "name": "Fragmentation Tunneling",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.4.1": {
+    "name": "Complexity Reduction Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.4.2": {
+    "name": "Symmetry Breaking",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.4.5": {
+    "name": "Leptoquark Demonstration",
+    "type": "proof",
+    "file": "02-players/09-unification/9.4.md"
+  },
+  "9.5.1": {
+    "name": "Proton Stability",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.2": {
+    "name": "Tension Verification",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.2.1": {
+    "name": "Decay Rate Calculation",
+    "type": "proof",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.2.3": {
+    "name": "Standard Theory Failure",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.3": {
+    "name": "Minimal Action Pathway",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.3.1": {
+    "name": "Topological Complexity Minimization",
+    "type": "proof",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.3.2": {
+    "name": "Minimal Action Path",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.4": {
+    "name": "Action-Mass Proportionality",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.4.1": {
+    "name": "Path Length-Mass Equivalence",
+    "type": "proof",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.4.2": {
+    "name": "Topological Shield",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.5.5": {
+    "name": "Stability Synthesis",
+    "type": "proof",
+    "file": "02-players/09-unification/9.5.md"
+  },
+  "9.6.1": {
+    "name": "Folded Topology",
+    "type": "definition",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.1.1": {
+    "name": "Neutrino Geometry",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.2": {
+    "name": "Neutrino Mass Mechanism",
+    "type": "theorem",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.3": {
+    "name": "Neutrality Verification",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.3.1": {
+    "name": "Exclusion of Standard Braids",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.3.2": {
+    "name": "Folded Logic",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.4": {
+    "name": "Seesaw Dynamics",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.4.1": {
+    "name": "Mixing Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.4.2": {
+    "name": "Neutrino Mass Origin",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.5": {
+    "name": "Complexity Density Scaling",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.5.1": {
+    "name": "Density Increase Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.5.2": {
+    "name": "Complexity Density",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.6": {
+    "name": "Friction Suppression Limit",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.6.1": {
+    "name": "Maintenance Halt Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.6.2": {
+    "name": "Existence Limit",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.7": {
+    "name": "Critical Complexity Balance",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.7.1": {
+    "name": "Criticality Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.7.2": {
+    "name": "Balance Point",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.8": {
+    "name": "Planck Anchor",
+    "type": "lemma",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.8.1": {
+    "name": "Scaling Verification",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.8.2": {
+    "name": "Planck Anchor",
+    "type": "commentary",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "9.6.9": {
+    "name": "Neutrino Mass Demonstration",
+    "type": "proof",
+    "file": "02-players/09-unification/9.6.md"
+  },
+  "10.1.1": {
+    "name": "Logical Basis",
+    "type": "definition",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.1.1": {
+    "name": "Logical Reality Basis",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.2": {
+    "name": "Qubit Optimality",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.3": {
+    "name": "Topological Stability",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.3.1": {
+    "name": "Stability Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.3.2": {
+    "name": "Protected Bit",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.4": {
+    "name": "Topological Distinctness",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.4.1": {
+    "name": "Isotopy Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.4.2": {
+    "name": "Geometric Orthogonality",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.5": {
+    "name": "State Controllability",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.5.1": {
+    "name": "Transition Hamiltonian Construction",
+    "type": "proof",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.5.2": {
+    "name": "Writhe Shuffle",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.6": {
+    "name": "Basis Measurability",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.6.1": {
+    "name": "Basis Measurability",
+    "type": "proof",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.6.2": {
+    "name": "Color Readout",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.1.7": {
+    "name": "Qubit Optimality",
+    "type": "proof",
+    "file": "02-players/10-computation/10.1.md"
+  },
+  "10.2.1": {
+    "name": "Stabilizer Group",
+    "type": "definition",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.1.1": {
+    "name": "Vacuum Code",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.2": {
+    "name": "Braid Code Consistency",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.3": {
+    "name": "Geometric Commutation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.3.1": {
+    "name": "Commutation Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.3.2": {
+    "name": "Even-Overlap Rule",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.4": {
+    "name": "Bit-Flip Localization",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.4.1": {
+    "name": "Error Localization Logic",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.4.2": {
+    "name": "Error Triangulation",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.5": {
+    "name": "Ribbon Integrity Commutation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.5.1": {
+    "name": "Ribbon Commutation Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.5.2": {
+    "name": "Strand Verification",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.6": {
+    "name": "Fraying Detection",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.6.1": {
+    "name": "Fraying Detection Logic",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.6.2": {
+    "name": "Fray Identification",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.7": {
+    "name": "Vertex Commutation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.7.1": {
+    "name": "Vertex Commutation Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.7.2": {
+    "name": "Flow Consistency",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.8": {
+    "name": "Phase Error Detection",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.8.1": {
+    "name": "Phase Detection Logic",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.8.2": {
+    "name": "Phase Flip Discovery",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.2.9": {
+    "name": "Synthesis of Code Properties",
+    "type": "proof",
+    "file": "02-players/10-computation/10.2.md"
+  },
+  "10.3.1": {
+    "name": "Logical Codespace",
+    "type": "definition",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.1.1": {
+    "name": "Information Sanctuary",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.2": {
+    "name": "Topological Fault Tolerance",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.3": {
+    "name": "Syndrome Flipping",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.3.1": {
+    "name": "Syndrome Flipping Logic",
+    "type": "proof",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.3.2": {
+    "name": "Alarm System",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.4": {
+    "name": "Minimum Weight",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.4.1": {
+    "name": "Weight Analysis",
+    "type": "proof",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.4.2": {
+    "name": "Coincidence Robustness",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.5": {
+    "name": "Thermodynamic Correction",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.3.5.1": {
+    "name": "Thermodynamic Correction Mechanism",
+    "type": "proof",
+    "file": "02-players/10-computation/10.3.md"
+  },
+  "10.4.1": {
+    "name": "Writhe Shuffling",
+    "type": "definition",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.1.1": {
+    "name": "NOT Gate Mechanics",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.2": {
+    "name": "Logical X Gate",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.3": {
+    "name": "Writhe Conservation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.3.1": {
+    "name": "Invariance Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.3.2": {
+    "name": "Writhe Shuffle",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.4": {
+    "name": "Charge Conservation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.4.1": {
+    "name": "Charge Invariance Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.4.2": {
+    "name": "Conservation Permission",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.4.5": {
+    "name": "Logical X Gate",
+    "type": "proof",
+    "file": "02-players/10-computation/10.4.md"
+  },
+  "10.5.1": {
+    "name": "Logical Z Gate",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.2": {
+    "name": "Singlet Transparency",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.2.1": {
+    "name": "Trivial Representation Analysis",
+    "type": "proof",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.2.2": {
+    "name": "Invisible Qubit",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.3": {
+    "name": "Color Phase",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.3.1": {
+    "name": "Non-Trivial Holonomy Analysis",
+    "type": "proof",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.3.2": {
+    "name": "Phase Imprint",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.5.4": {
+    "name": "Logical Z Gate",
+    "type": "proof",
+    "file": "02-players/10-computation/10.5.md"
+  },
+  "10.6.1": {
+    "name": "Hadamard Gate",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.2": {
+    "name": "Temperature Control",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.2.1": {
+    "name": "Thermo-Modulation Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.2.2": {
+    "name": "Superposition Engine",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.3": {
+    "name": "Topological Degeneracy",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.3.1": {
+    "name": "Mass Equality Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.3.2": {
+    "name": "Unbiased Mixing",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.6.4": {
+    "name": "Hadamard Gate",
+    "type": "proof",
+    "file": "02-players/10-computation/10.6.md"
+  },
+  "10.7.1": {
+    "name": "Controlled-Z Gate",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.2": {
+    "name": "Syndrome Coupling",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.2.1": {
+    "name": "Bridge Construction Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.2.2": {
+    "name": "Logic Wire",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.3": {
+    "name": "Control Dynamics",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.3.1": {
+    "name": "Conditional Friction Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.3.2": {
+    "name": "Entanglement Switch",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.7.4": {
+    "name": "Controlled-Z Gate",
+    "type": "proof",
+    "file": "02-players/10-computation/10.7.md"
+  },
+  "10.8.1": {
+    "name": "Rewrite Process",
+    "type": "definition",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.1.1": {
+    "name": "Geometric Twist",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.2": {
+    "name": "T-Gate",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.3": {
+    "name": "Ribbon Category",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.3.1": {
+    "name": "Category Property Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.3.2": {
+    "name": "Ribbon Algebra",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.4": {
+    "name": "Monoidal Structure",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.4.1": {
+    "name": "Monoidal Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.4.2": {
+    "name": "System Combination",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.5": {
+    "name": "Braiding Structure",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.5.1": {
+    "name": "Braiding Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.5.2": {
+    "name": "Exchange Rules",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.6": {
+    "name": "Duality Structure",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.6.1": {
+    "name": "Duality Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.6.2": {
+    "name": "Matter-Antimatter",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.7": {
+    "name": "Twist Structure",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.7.1": {
+    "name": "Twist Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.7.2": {
+    "name": "Spin Phase",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.8": {
+    "name": "T-Gate",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.8.9.1": {
+    "name": "Set Completeness Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.8.md"
+  },
+  "10.9.1": {
+    "name": "Group Closure",
+    "type": "theorem",
+    "file": "02-players/10-computation/10.9.md"
+  },
+  "10.9.1.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.9.md"
+  },
+  "10.9.2": {
+    "name": "Clifford Generation",
+    "type": "lemma",
+    "file": "02-players/10-computation/10.9.md"
+  },
+  "10.9.2.1": {
+    "name": "Group Closure Verification",
+    "type": "proof",
+    "file": "02-players/10-computation/10.9.md"
+  },
+  "10.9.3": {
+    "name": "Computational Universality",
+    "type": "proof",
+    "file": "02-players/10-computation/10.9.md"
+  },
+  "10.9.4.2": {
+    "name": "Simulation Implications",
+    "type": "commentary",
+    "file": "02-players/10-computation/10.9.md"
+  }
+}
