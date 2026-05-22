@@ -7,7 +7,7 @@ sidebar_label: "c. 1500–1900"
 
 ### The Renaissance Revolution: The Archimedean Revival
 
-The Scientific Revolution wasn't a revolution nor a rejection of the past, it was the victory of Archimedes over Aristotle.
+The Scientific Revolution was neither a sudden break with ancient philosophy nor a wholesale rejection of the past; rather, it represented the ultimate triumph of Archimedean mathematical rigor over Aristotelian qualitative teleology.
 
 :::info[**Galileo: The Mathematician of Motion**]
 :::
@@ -241,7 +241,7 @@ This period saw a flurry of experiments attempting to detect the ether through s
 :::info[**Lorentz’s Local Time**]
 :::
 
-To make Maxwell’s equations invariant in moving frames, Lorentz introduced a mathematical variable he called “Local Time”
+To preserve the form-invariance (covariance) of Maxwell’s equations in moving frames, Lorentz introduced a mathematical variable he called “Local Time”
 
 $$
 t' = t - vx/c^2

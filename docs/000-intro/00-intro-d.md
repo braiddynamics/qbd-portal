@@ -59,7 +59,7 @@ The Core Thesis of Causal Set Theory:
 
 In the CST framework, the universe begins with a partially ordered set (poset). The “It” is the causal link itself. A spacetime geometry is recovered only when one “sprinkles” these causal points into a manifold via a Poisson process, much like a Pointillist painting reveals an image only from a distance. This “sprinkling” is critical because it addresses a major problem in discrete gravity: the violation of Lorentz invariance. A regular grid (like a chessboard) violates relativity because it has preferred directions. A random sprinkling, however, preserves Lorentz symmetry statistically, allowing the smooth manifold of Einstein to emerge from the discrete dust of causal sets.
 
-:::info[**The “Birthing of Time**]
+:::info[**The “Birthing” of Time**]
 :::
 
 As Dowker notes, “The causal structure is the substance of the theory.” This approach radically reinterprets the passage of time. In the Einsteinian “Block Universe,” all of spacetime (past, present, future) exists simultaneously; the “now” is a subjective illusion. In Causal Set Theory, the universe is a “growing set.” New atoms of spacetime are born sequentially, adhering to specific probabilistic rules known as Classical Sequential Growth dynamics.
@@ -273,6 +273,6 @@ While vertices (points, events) and edges (connections, relations) may be the si
 2. **The Primitive of Geometry:** The simplest, stable structure that can be built from these links, and the fundamental quantum of geometric information is the closed 3-cycle, $A \to B \to C \to A$. This self-referential loop provides the first stable standard against which metric intervals can be quantified and structure can be measured.
 
 
-From matter to motion, we now stand at the threshold where philosophical speculation must yield to rigourous formal construction. The task ahead is to translate these conceptual primitives sketches into the language of a precise deductive mathmatical system capable of generating dynamics, geometry, and ultimately cosmology using the minimal assumptions required for a self-consistent universe to build itself from relational information alone. ❦
+From matter to motion, we now stand at the threshold where philosophical speculation must yield to rigorous formal construction. The task ahead is to translate these conceptual primitive sketches into the language of a precise deductive mathematical system capable of generating dynamics, geometry, and ultimately cosmology using the minimal assumptions required for a self-consistent universe to build itself from relational information alone. ❦
 
 -----

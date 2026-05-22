@@ -16,7 +16,7 @@ While Albert Einstein provided the physical insights of Special Relativity in hi
 
 Minkowski’s intervention was decisive and, to Einstein, initially unwelcome. In a now-legendary address to the 80th Assembly of German Natural Scientists and Physicians in Cologne, Minkowski delivered the death knell of the distinct categories of space and time. His words were messianic in tone, signaling a total ontological shift: “Henceforth space by itself, and time by itself, are doomed to fade away into mere shadows, and only a kind of union of the two will preserve an independent reality.”
 
-Minkowski’s contribution: a “world” in which events are points defined by four coordinates
+Minkowski's crucial insight was the formulation of a four-dimensional geometric manifold, a unified "world" where physical events are represented as individual points defined by four coordinates:
 
 $$
 x, y, z, t
