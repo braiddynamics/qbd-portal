@@ -60,13 +60,13 @@ In a letter to Wolfgang Pauli dated July 9, 1925, Heisenberg wrote of his “pit
 
 Heisenberg’s “Umdeutung” (reinterpretation) paper of 1925 proposed a mechanics based solely on these transition quantities. Instead of a single number representing position, he arranged quantities in square arrays, though he did not yet know the term “matrix,” where the element $X_{nm}$ represented the transition amplitude between state $n$ and state $m$. When he multiplied these arrays to calculate physical quantities like energy, he discovered a shocking property: the order of multiplication mattered. In classical arithmetic, $3 \times 4$ equals $4 \times 3$. In Heisenberg’s new mechanics, the position array $X$ and the momentum array $P$ did not commute: $XP - PX \neq 0$.
 
-Upon returning to Göttingen, Heisenberg handed his paper to his mentor Max Born. Born, recognizing the mathematics from his student days, realized Heisenberg had reinvented matrix algebra. Together with Pascual Jordan, they formalized the theory, famously deriving the canonical commutation relation:
+Upon returning to Göttingen, Heisenberg handed his paper to his mentor Max Born. Born, recognizing the mathematics from his student days, realized Heisenberg had reinvented matrix algebra (Heisenberg’s original 1925 paper used arrays of transition amplitudes but did not yet employ the formal language of matrices). Together with Pascual Jordan, they formalized the theory in subsequent papers. The key insight was the canonical commutation relation:
 
 $$
-XP - PX = \frac{ih}{2\pi}
+[X, P] = XP - PX = i\hbar
 $$
 
-This mathematical non-commutativity was the tombstone of the classical trajectory. If $X$ and $P$ do not commute, they cannot simultaneously possess precise numerical values. The “It” could no longer be a point moving along a line, because “position” and “momentum” were no longer simultaneously definable attributes of reality. They were operators acting on a state, not properties of the state itself.
+where $\hbar = h / 2\pi$ is the reduced Planck’s constant. This mathematical non-commutativity was the tombstone of the classical trajectory. If $X$ and $P$ do not commute, they cannot simultaneously possess precise numerical values. The “It” could no longer be a point moving along a line, because “position” and “momentum” were no longer simultaneously definable attributes of reality. They were operators acting on a state, not properties of the state itself.
 
 The reception was mixed. The theory was incredibly successful at predicting spectra, but it was, as Schrödinger later described, “of repelling abstractness.” It offered no picture of what the electron was doing. It reduced the atom to a spreadsheet of transition probabilities, a black box that took inputs and gave outputs but contained no internal machinery. This was the first step toward “It from Bit”: the dissolution of the object into a table of data.
 
