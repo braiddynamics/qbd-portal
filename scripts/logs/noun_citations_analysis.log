@@ -1,0 +1,443 @@
+Quantum Braid Dynamics Monograph - Robust Noun Citations Log
+Total occurrences found: 110
+============================================================
+
+FILE: 01-rules/02-axioms/2.7.md Line 297 -> Lemma 2.7.3
+  Content: By Lemma 2.7.3, the loop length $L$ exceeds the local horizon $R$.
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.1.md Line 29 -> Section 3.1
+  Content: :::note[**Section 3.1 Overview**]
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.1.md Line 731 -> Lemma 3.1.10
+  Content: * The vacuum is **Bipartite** (Lemma 3.1.10).
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.2.md Line 691 -> Lemma 3.2.2
+  Content: Lemma 3.2.2: Exclusion of Cyclic Topologies (Geometric Viability).
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.2.md Line 702 -> Lemma 3.2.6
+  Content: Lemma 3.2.6: Site Maximality.
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.2.md Line 712 -> Lemma 3.2.7
+  Content: Lemma 3.2.7: Strict Degree Regularity.
+----------------------------------------
+
+FILE: 01-rules/03-architecture/3.2.md Line 911 -> Theorem 3.1.12
+  Content: The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by Theorem 3.1.12. The proof seeks to identify the specific tree topology that maximizes the physical potential for geometrogenesis.
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.1.md Line 29 -> Section 4.1
+  Content: :::note[**Section 4.1 Overview**]
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 285 -> Lemma 4.4.2
+  Content: 1.  **Entropic Gain:** $\Delta S = \ln 2$ (Lemma 4.4.2).
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 286 -> Lemma 4.4.1
+  Content: 2.  **Critical Temperature:** $T_c = \ln 2$ (Lemma 4.4.1).
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 287 -> Lemma 4.4.3
+  Content: 3.  **Dimensionality:** $d=4$ (Lemma 4.4.3).
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 321 -> Theorem 4.4.1
+  Content: From **Theorem 4.4.1**, the conversion factor is $T = \ln 2$.
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 325 -> Theorem 4.4.2
+  Content: From **Theorem 4.4.2**, the entropic content is 1 bit ($\Delta S = \ln 2$ nats).
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.4.md Line 337 -> Theorem 4.4.3
+  Content: From **Theorem 4.4.3**, this energy distributes across $d=4$ dimensions.
+----------------------------------------
+
+FILE: 01-rules/04-dynamics/4.5.md Line 85 -> Section 4.4
+  Content: This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in Section 4.4.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.1.md Line 172 -> Lemma 5.1.3
+  Content: The characteristic size of each volume is set by the correlation length $\xi$ derived in **Lemma 5.1.3**.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.2.md Line 494 -> Theorem 4.5.6
+  Content: In the dilute limit ($\rho \to 0$), cycles are isolated. The deletion of a geometric quantum is a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical temperature $T_c$. As established in **Theorem 4.5.6**, the base deletion probability per cycle is $\mathbb{P}_0 = 1/2$.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.2.md Line 657 -> Lemma 5.2.3
+  Content: LAMBDA_VAC = 0.0156  # Vacuum Permittivity (Lemma 5.2.3)
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.2.md Line 658 -> Theorem 4.4.6
+  Content: MU = 1.0 / np.sqrt(2 * np.pi)  # Friction Coefficient ≈ 0.3989 (Theorem 4.4.6)
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.2.md Line 659 -> Theorem 4.4.5
+  Content: LAMBDA_CAT = np.e - 1          # Catalysis Coefficient ≈ 1.7183 (Theorem 4.4.5)
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.4.md Line 157 -> Theorem 4.4.5
+  Content: Substituting the entropic value derived in **Theorem 4.4.5** ($\lambda_{cat} = e - 1$):
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 425 -> Lemma 5.5.5
+  Content: Using **Lemma 5.5.5**, the covariance decays exponentially: $\text{Cov}(x, y) \le C e^{-\gamma d(x, y)}$.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 613 -> Lemma 5.4.4
+  Content: The existence of the stable non-trivial vacuum $\rho^*$ derived in **Lemma 5.4.4** requires the system to reside at a fixed point where interactions balance depletion.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 654 -> Lemma 5.5.2
+  Content: 1.  **Uniform Local Geometry:** **Lemma 5.5.2** (Locality) and **Lemma 5.5.3** (Bounded Degree) enforce local compactness and metric consistency.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 654 -> Lemma 5.5.3
+  Content: 1.  **Uniform Local Geometry:** **Lemma 5.5.2** (Locality) and **Lemma 5.5.3** (Bounded Degree) enforce local compactness and metric consistency.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 656 -> Lemma 5.5.5
+  Content: 3.  **Statistical Homogeneity:** **Lemma 5.5.5** proves the exponential decay of correlations and the vanishing of global variance (Self-Averaging).
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 657 -> Lemma 5.5.6
+  Content: 4.  **Topological Consistency:** **Lemma 5.5.6** ensures the suppression of non-local cycles, enforcing a manifold-like topology at macroscopic scales.
+----------------------------------------
+
+FILE: 01-rules/05-equilibrium/5.5.md Line 658 -> Lemma 5.5.7
+  Content: 5.  **Dimensional Regularity:** **Lemma 5.5.7** fixes the Ahlfors regularity dimension to $d=4$.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 176 -> Lemma 6.1.3
+  Content: Lemma 6.1.3 translates the abstract Reidemeister moves of knot theory into concrete thermodynamic processes within the causal substrate. In standard topology, a Type II move represents an equivalence between a looped strand and a straight one. However, within the dynamical framework of the Causal Graph, this equivalence breaks symmetry; the straight strand represents a lower-entropy, lower-energy configuration. The "bubble", defined as two distinct paths connecting the same vertices $u$ and $v$, physically represents a redundancy in the causal history. It implies that information traveled from cause to effect via two distinguishable trajectories simultaneously.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 368 -> Lemma 6.1.4
+  Content: Lemma 6.1.4 reveals the effectiveness of the updated Master Equation in policing the vacuum. The deletion flux term $3\lambda_{cat}\rho^2$ scales quadratically with density. This means that while the vacuum is gentle on sparse geometry (linear decay dominates near $\rho^*$), it becomes aggressively hostile to dense, unstructured clusters.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 438 -> Lemma 6.1.5
+  Content: Lemma 6.1.5 identifies the critical architectural feature that permits matter to exist within a hostile vacuum. The "immune system" of the vacuum, the deletion operator, operates strictly locally. It perceives geometry only within a small causal horizon $R$, encompassing roughly the immediate neighbors of a vertex. A Prime Knot, however, constitutes a **Global Structure**. Its "knottedness" resides not in any single vertex or edge, but in the collective, non-local relationship of the entire loop. This reliance on non-local topological invariants to ensure stability aligns with the foundational work of **[(Witten, 1989)](/monograph/appendices/a-references#A.70)** on topological quantum field theory (TQFT), where observables like the Jones polynomial capture global properties of knots that are invariant under local deformations.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 452 -> Lemma 6.1.3
+  Content: 2.  **Reduction:** By **Lemma 6.1.3**, the triviality of $\xi_{stable}$ implies the existence of a local rewrite sequence $\mathcal{S}$ that decomposes $\xi_{stable}$ into a set of disjoint, unlinked 3-cycles $\bigcup C_3$.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 453 -> Lemma 6.1.4
+  Content: 3.  **Thermodynamic Response:** By **Lemma 6.1.4**, this decomposed state exhibits high local stress ($\rho > \rho^*$), triggering the catalytic deletion factor $\chi(\sigma)$. The net topological current becomes negative: $dN/dt < 0$.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.1.md Line 455 -> Lemma 6.1.5
+  Content: 5.  **Alternative:** Consider a non-trivial excitation $\xi_{knot}$ ($V_\xi(t) \neq 1$). By **Lemma 6.1.5**, the reduction sequence $\mathcal{S}$ does not exist within the local horizon. The catalytic deletion mechanism is blocked by the topological barrier.
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.3.md Line 212 -> proof 6.3.5.1
+  Content: Verification of the non-linear complexity growth established in the Scaling the **proof 6.3.5.1** [(§6.3.5.1)](/monograph/players/fermions/6.3/#6.3.5.1) is based on the following protocols:
+----------------------------------------
+
+FILE: 02-players/06-fermions/6.3.md Line 288 -> Lemma 6.3.5
+  Content: This commentary provides the physical interpretation for the quadratic scaling derived in Lemma 6.3.5. The question of why the Top quark possesses a mass orders of magnitude larger than the Up quark finds its answer here: the **Pathfinding Penalty**. within a discrete graph, space lacks infinite divisibility. Adding writhe (twist) to a ribbon effectively packs more causal information into a fixed volume.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 147 -> Lemma 7.1.3
+  Content: Lemma 7.1.3 formalizes the interaction between a physical twist and the measurement of spin. The spin operator $L_S$ measures parity via a product of $Z$ operators. A physical twist, implemented by the unitary $\hat{\mathcal{T}}$, involves the creation and rearrangement of edges, actions that correspond to Pauli-$X$ operations in the qubit basis defined in the **Configuration Space Validity** [(§3.5.3)](/monograph/rules/architecture/3.5/#3.5.3).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 257 -> Proof 7.1.3.1
+  Content: Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in **Proof 7.1.3.1**.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 259 -> Proof 7.1.3.1
+  Content: Applying the eigenvalue result from **Proof 7.1.3.1**:
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 276 -> Lemma 7.1.4
+  Content: In standard quantum mechanics, the Spin-Statistics Theorem constitutes a derived result requiring the axioms of relativity and causality. In Quantum Braid Dynamics, it exists as a topological tautology. Lemma 7.1.4 proves that exchanging two particles is geometrically identical to rotating one of them.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 370 -> Proof 7.1.3.1
+  Content: Using the anticommutation relation derived in **Proof 7.1.3.1** ($\hat{T} L_S \hat{T}^\dagger = -L_S$ for half-twisted topologies):
+----------------------------------------
+
+FILE: 02-players/07-topology/7.1.md Line 395 -> Lemma 7.1.4
+  Content: By **Lemma 7.1.4**, the exchange $\hat{P}_{12}$ applies a relative $2\pi$ twist to the pair.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.2.md Line 120 -> Lemma 7.2.2
+  Content: By **Lemma 7.2.2**, the occupation limit of $e_{uv}$ is saturated ($n_{max}=1$).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.2.md Line 128 -> Lemma 6.4.4
+  Content: By **Lemma 6.4.4** [(§6.4.4)](/monograph/players/fermions/6.4/#6.4.4), the formation of such a non-local structure constitutes a global topology change with an $O(N)$ energy barrier.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.2.md Line 129 -> Lemma 2.3.3
+  Content: By **Lemma 2.3.3** [(§2.3.3)](/monograph/rules/axioms/2.3/#2.3.3), the creation of a path $u \to w \to v$ while $u \to v$ exists violates the **Principle of Unique Causality (PUC)**, triggering immediate deletion.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 186 -> Lemma 7.3.4
+  Content: Lemma 7.3.4 establishes the absolute conservation of total writhe under unitary evolution. A change in writhe necessitates a Type I Reidemeister move, the creation or deletion of a twist loop. However, such a move constitutes a local operation that alters a global invariant.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 317 -> Lemma 7.4.5
+  Content: By **Lemma 7.4.5** [(§7.4.5)](/monograph/players/topology/7.4/#7.4.5), parallel twists ($w_i, w_j > 0$) share geometric support structures within the causal graph (shared 3-cycles).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 403 -> Proof 7.3.5.1
+  Content: From **Proof 7.3.5.1** and **Proof 7.3.6.1**, the QBD charge spectrum for the first generation is:
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 403 -> Proof 7.3.6.1
+  Content: From **Proof 7.3.5.1** and **Proof 7.3.6.1**, the QBD charge spectrum for the first generation is:
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 444 -> Lemma 7.3.7
+  Content: The derivation of the normalization constant $k=1/3$ resolves the origin of fractional charges. Lemma 7.3.7 demonstrates that this constant is a requirement for the internal consistency of the theory. The "Anomaly Cancellation" condition constitutes a mathematical requirement for the Standard Model to function without breaking down at high energies. Specifically, the sum of charges in a generation must balance out such that the sum of the cubes of the charges equals zero. This constraint is well-known in quantum field theory, but here it emerges from the topological necessity of the tripartite braid structure, linking the discrete geometry directly to the algebraic consistency of gauge theory as described by **[(Maldacena, 1998)](/monograph/appendices/a-references#A.42)** in the context of large-N limits and dualities.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 468 -> Lemma 7.3.4
+  Content: The **Total Writhe** $w(\beta)$ is established as a globally conserved quantum number under local evolution by **Lemma 7.3.4** [(§7.3.4)](/monograph/players/topology/7.3/#7.3.4).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 469 -> Lemma 7.3.3
+  Content: The local dynamics are invariant under global writhe shifts by **Lemma 7.3.3** [(§7.3.3)](/monograph/players/topology/7.3/#7.3.3), necessitating a $U(1)$ gauge field to enforce local covariance.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 476 -> Lemma 7.3.7
+  Content: **Lemma 7.3.7** [(§7.3.7)](/monograph/players/topology/7.3/#7.3.7) proves that $k=1/3$ is the unique normalization satisfying the definition of the fundamental charge unit and anomaly cancellation.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 482 -> Lemma 7.3.5
+  Content: Inputs: $w \in \{0, \pm 3\}$ (from **Lemma 7.3.5**).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.3.md Line 486 -> Lemma 7.3.6
+  Content: Inputs: $w \in \{-1, +2\}$ (from **Lemma 7.3.6**).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 87 -> Definition 7.4.1
+  Content: From **Definition 7.4.1** [(§7.4.1)](/monograph/players/topology/7.4/#7.4.1), mass corresponds directly to the count of **Geometric Quanta** (3-cycles) $N_3$ required to embed the topology.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 117 -> Proof 7.4.3.1
+  Content: This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. Proof 7.4.3.1 establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of **[(Verlinde, 2011)](/monograph/appendices/a-references#A.66)** on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 145 -> Lemma 6.3.3
+  Content: The total number of geometric quanta $N_3$ partitions into contributions from discrete crossings and torsional strain, as established in **Lemma 6.3.3** [(§6.3.3)](/monograph/players/fermions/6.3/#6.3.3).
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 150 -> Proof 6.3.4.1
+  Content: By **Proof 6.3.4.1** [(§6.3.4.1)](/monograph/players/fermions/6.3/#6.3.4.1), the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 157 -> Proof 6.3.5.1
+  Content: By **Proof 6.3.5.1** [(§6.3.5.1)](/monograph/players/fermions/6.3/#6.3.5.1), the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 176 -> Lemma 7.4.4
+  Content: Lemma 7.4.4 establishes the linear relationship between the crossing number and mass. It implies that topological complexity accumulates additively. Taking a braid with 3 crossings and adding another crossing increases the mass by a fixed amount, the mass of one geometric quantum.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 200 -> Proof 6.3.4.1
+  Content: From **Proof 6.3.4.1**, the minimal subgraph required to execute a twist (crossing) is a "bridge" consisting of a directed 3-cycle.
+----------------------------------------
+
+FILE: 02-players/07-topology/7.4.md Line 217 -> Proof 7.2.4
+  Content: This would map the two fermions to the same causal trajectory, violating the **Pauli Exclusion Principle** (distinctness of state) as derived in **Proof 7.2.4**.
+----------------------------------------
+
+FILE: 02-players/08-braids/8.1.md Line 29 -> Section 8.1
+  Content: :::note[**Section 8.1 Overview**]
+----------------------------------------
+
+FILE: 02-players/08-braids/8.3.md Line 9 -> Section 8.3
+  Content: :::note[**Section 8.3 Overview**]
+----------------------------------------
+
+FILE: 02-players/08-braids/8.4.md Line 9 -> Section 8.4
+  Content: :::note[**Section 8.4 Overview**]
+----------------------------------------
+
+FILE: 02-players/08-braids/8.4.md Line 140 -> Lemma 8.3.4
+  Content: 2.  **Minimal Topology:** As proven in **Lemma 8.3.4** [(§8.3.4)](/monograph/players/braids/8.3/#8.3.4), this transformation is generated by swapping adjacent ribbons in the tripartite braid.
+----------------------------------------
+
+FILE: 02-players/08-braids/8.4.md Line 166 -> Lemma 8.4.3
+  Content: By **Lemma 8.4.3** ($g^2 \propto P$), we substitute the probabilities derived in **Lemma 8.4.4**:
+----------------------------------------
+
+FILE: 02-players/08-braids/8.4.md Line 166 -> Lemma 8.4.4
+  Content: By **Lemma 8.4.3** ($g^2 \propto P$), we substitute the probabilities derived in **Lemma 8.4.4**:
+----------------------------------------
+
+FILE: 02-players/08-braids/8.4.md Line 173 -> Proof 8.4.2.1
+  Content: Using the topological probability ratio derived in **Proof 8.4.2.1**:
+----------------------------------------
+
+FILE: 02-players/08-braids/8.5.md Line 387 -> Lemma 8.5.2
+  Content: 1.  **Identity:** $g = \sqrt{P(\mathcal{R}_W)}$ (**Lemma 8.5.2**).
+----------------------------------------
+
+FILE: 02-players/08-braids/8.5.md Line 391 -> Lemma 8.5.4
+  Content: * $\text{Volume} = 4\pi$ (**Lemma 8.5.4**, spherical symmetry).
+----------------------------------------
+
+FILE: 02-players/08-braids/8.5.md Line 392 -> Lemma 8.5.5
+  Content: * $\text{Weight} = \alpha_{topo} = \frac{\ln 2}{4}$ (**Lemma 8.5.5**, bit-nat scale).
+----------------------------------------
+
+FILE: 02-players/08-braids/8.5.md Line 393 -> Lemma 8.5.6
+  Content: * $\text{Density} = M \cdot \rho_3^*$ (**Lemma 8.5.6**, degree count and equilibrium density).
+----------------------------------------
+
+FILE: 02-players/09-unification/9.1.md Line 105 -> Lemma 9.1.2
+  Content: The set of all simple Lie groups possessing a rank $r$ strictly less than 4, specifically the set $\{A_1, A_2, B_2, G_2, A_3, B_3, C_3\}$, is categorically excluded from the domain of viable Grand Unified Theory candidates. This exclusion is absolute and is predicated upon the failure of said groups to simultaneously satisfy the rank condition established in Lemma 9.1.2 and the requirement to furnish representations whose dimensions match the observed multiplicities of the Standard Model fermion multiplets.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.1.md Line 187 -> Lemma 9.1.2
+  Content: $SU(5)$ has rank 4, satisfying **Lemma 9.1.2**. The embedding of $G_{SM}$ is realized by placing $SU(3)_C$ in the upper $3 \times 3$ block and $SU(2)_L$ in the lower $2 \times 2$ block of the $5 \times 5$ unitary matrices. The $U(1)_Y$ generator is identified with the traceless diagonal matrix commuting with both blocks:
+----------------------------------------
+
+FILE: 02-players/09-unification/9.1.md Line 216 -> Lemma 9.1.3
+  Content: Since all groups with $r < 4$ are excluded (**Lemma 9.1.3**), and all other groups with $r=4$ fail the chirality condition (**Lemma 9.1.4**), and $SU(5)$ satisfies both embedding and anomaly constraints, $SU(5)$ is the unique minimal Grand Unified Theory group.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.1.md Line 216 -> Lemma 9.1.4
+  Content: Since all groups with $r < 4$ are excluded (**Lemma 9.1.3**), and all other groups with $r=4$ fail the chirality condition (**Lemma 9.1.4**), and $SU(5)$ satisfies both embedding and anomaly constraints, $SU(5)$ is the unique minimal Grand Unified Theory group.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.2.md Line 126 -> Lemma 9.2.3
+  Content: Lemma 9.2.3 extends the principle of "Distant Commutativity" to the larger $B_5$ group. It asserts that an operation on ribbons 1 and 2 does not interfere with an operation on ribbons 4 and 5. This is the algebraic signature of locality.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.2.md Line 165 -> Lemma 9.2.4
+  Content: The Yang-Baxter equation appears again here, this time enforcing consistency on the 5-strand braid. Lemma 9.2.4 ensures that the order in which adjacent crossings (e.g., strands 2, 3, and 4) are resolved does not change the physical outcome.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.2.md Line 466 -> Lemma 9.2.7
+  Content: In contrast to the simple $\mathbf{\bar{5}}$, Lemma 9.2.7 identifies the $\mathbf{10}$ representation (containing the up-type quarks, the electron, and the positron) as a structure defined by *pairwise linking*.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.3.md Line 221 -> Lemma 9.3.2
+  Content: From **Lemma 9.3.2**, the generations are ordered $C_1 < C_2 < C_3 < \dots$.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.3.md Line 222 -> Lemma 9.3.3
+  Content: From **Lemma 9.3.3**, each level is a local minimum protected by a barrier.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.3.md Line 223 -> Lemma 9.3.4
+  Content: From **Lemma 9.3.4**, decay rates depend on barrier height.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.5.md Line 241 -> Lemma 9.5.2
+  Content: It implies that the standard "perturbative" picture, where decay happens via simple particle exchange, is missing something huge. Lemma 9.5.2 sets the stage for the topological solution by proving that standard math cannot save the proton. It screams that there is an extra suppression mechanism at work, something that makes the decay much harder than just "paying the mass cost" of the X boson. That mechanism is topological complexity: the proton isn't just heavy to decay, it's *hard to untie*.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.5.md Line 274 -> Lemma 9.3.2
+  Content: * **Muon ($\mu^+$):** Generation 2 anti-lepton. As proven in **Lemma 9.3.2** [(§9.3.2)](/monograph/players/unification/9.3/#9.3.2), $C_{\mu} > C_{e}$.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.5.md Line 356 -> Lemma 9.5.2
+  Content: Combining **Lemma 9.5.2** (EFT inadequacy) and **Lemma 9.5.4** (Topological Action), the full decay rate is given by the product of the perturbative term and the non-perturbative topological factor:
+----------------------------------------
+
+FILE: 02-players/09-unification/9.5.md Line 356 -> Lemma 9.5.4
+  Content: Combining **Lemma 9.5.2** (EFT inadequacy) and **Lemma 9.5.4** (Topological Action), the full decay rate is given by the product of the perturbative term and the non-perturbative topological factor:
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 167 -> Lemma 9.6.3
+  Content: * **$M_L$ (Majorana Mass of $\nu_L$):** As proven in **Lemma 9.6.3** [(§9.6.3)](/monograph/players/unification/9.6/#9.6.3), the folded braid topology of $\nu_L$ has zero intrinsic writhe and minimal complexity. Thus, the intrinsic mass vanishes: $M_L = 0$.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 266 -> Lemma 9.6.5
+  Content: (Substituting $\sigma \propto N_3$ from **Lemma 9.6.5**).
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 374 -> Proof 9.6.7.1
+  Content: Refined by the specific pre-factor from **Proof 9.6.7.1**:
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 401 -> Lemma 9.6.3
+  Content: 1.  **Light Mass Source:** From **Lemma 9.6.3**, the folded braid topology ensures the intrinsic mass of $\nu_L$ is zero ($M_L=0$).
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 402 -> Proof 9.6.4.1
+  Content: 2.  **Seesaw Mechanism:** From **Proof 9.6.4.1**, the mixing with a heavy partner yields $m_\nu \approx m_D^2 / M_R$.
+----------------------------------------
+
+FILE: 02-players/09-unification/9.6.md Line 403 -> Proof 9.6.8.1
+  Content: 3.  **Heavy Mass Scale:** From **Proof 9.6.8.1**, vacuum friction limits the heavy partner mass to $M_R \approx 2 \times 10^{16}$ GeV.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.2.md Line 347 -> Lemma 10.2.4
+  Content: * $X_e$ is detected by $S_{\text{geom}}$ or $S_{\text{ribbon}}$ (Lemma 10.2.4, 10.2.6).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.2.md Line 348 -> Lemma 10.2.8
+  Content: * $Z_e$ is detected by $S_{\text{vert}}$ (Lemma 10.2.8).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.3.md Line 112 -> Lemma 10.3.3
+  Content: As proven in **Lemma 10.3.3**, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.3.md Line 156 -> Lemma 10.3.3
+  Content: A single-qubit error $E$ induces a syndrome flip $\sigma \to -1$ in the local neighborhood (Lemma 10.3.3). This creates a localized region of high stress (a "defect" or "quasiparticle").
+----------------------------------------
+
+FILE: 02-players/10-computation/10.4.md Line 128 -> Lemma 10.4.3
+  Content: From **Lemma 10.4.3**, $\Delta W = 0$.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.5.md Line 50 -> Lemma 10.1.4
+  Content: As proven in **Lemma 10.1.4**, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.5.md Line 136 -> Lemma 10.5.2
+  Content: Combining the results of **Lemma 10.5.2** and **Lemma 10.5.3**:
+----------------------------------------
+
+FILE: 02-players/10-computation/10.5.md Line 136 -> Lemma 10.5.3
+  Content: Combining the results of **Lemma 10.5.2** and **Lemma 10.5.3**:
+----------------------------------------
+
+FILE: 02-players/10-computation/10.6.md Line 59 -> Lemma 5.1.3
+  Content: The decay is exponential, governed by the correlation length $\xi$ established in **Lemma 5.1.3**:
+----------------------------------------
+
+FILE: 02-players/10-computation/10.6.md Line 132 -> Lemma 10.6.3
+  Content: Detailed balance requires $\Gamma_{01}/\Gamma_{10} = e^{-\Delta E / T}$. From **Lemma 10.6.3**, $\Delta E = 0$, so $\Gamma_{01} = \Gamma_{10} = \Gamma(T)$.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.8.md Line 22 -> Axiom 2.3.1
+  Content: 1.  **Loop Nucleation:** A rewrite process that nucleates a temporary, closed 3-cycle loop adjacent to the target braid, adhering to Axiom 2.3.1 by forming irreducible geometric quanta.
+----------------------------------------
+
+FILE: 02-players/10-computation/10.8.md Line 100 -> Lemma 10.8.4
+  Content: 1.  **Tensor Product $\otimes$:** Disjoint union of graph supports (verified in **Lemma 10.8.4**).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.8.md Line 101 -> Lemma 10.8.5
+  Content: 2.  **Braiding $\sigma$:** Particle exchange operation (verified in **Lemma 10.8.5**).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.8.md Line 102 -> Lemma 10.8.6
+  Content: 3.  **Duality $*$:** Particle-antiparticle pairing (verified in **Lemma 10.8.6**).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.8.md Line 103 -> Lemma 10.8.7
+  Content: 4.  **Twist $\theta$:** Self-rotation (verified in **Lemma 10.8.7**).
+----------------------------------------
+
+FILE: 02-players/10-computation/10.9.md Line 84 -> Theorem 10.3.2
+  Content: * **Code Distance:** The fundamental qubit is a topological code with distance $d=3$ (protected against single-qubit errors), as proven in **Theorem 10.3.2** [(§10.3.2)](/monograph/players/computation/10.3/#10.3.2).
+----------------------------------------

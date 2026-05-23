@@ -468,6 +468,54 @@ def clean_line_citations(line, part, chapter):
                     
     return line
 
+bare_citation_re = re.compile(
+    r'(?:\*\*\s*)?\b(?:the\s+)?(Lemma|Theorem|Axiom|Proof|Section|Definition|Principle|Postulate)\s+(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)\b(?:\s*\*\*)?'
+    r'(?:\s*\[\s*\(\s*§\s*\2\s*\)\s*\]\s*\([^\)]+\)|'
+    r'\s*\[\s*§\s*\2\s*\]|'
+    r'\s*\(\s*§\s*\2\s*\))?',
+    re.IGNORECASE
+)
+
+def fix_bare_citations_in_line(line):
+    idx = 0
+    new_line = line
+    while True:
+        m = bare_citation_re.search(new_line, idx)
+        if not m:
+            break
+        
+        cat = m.group(1)
+        rid = m.group(2)
+        
+        # Get replacement
+        clean_name = get_clean_name(rid)
+        if not clean_name:
+            clean_name = f"{cat.lower()} {rid}"
+            
+        url = get_url_path(rid)
+        if not url:
+            idx = m.end()
+            continue
+            
+        # Capitalize if at start of string or sentence
+        prefix = new_line[:m.start()]
+        is_start = False
+        if prefix.strip() == "" or prefix.strip()[-1] in ".!?#":
+            is_start = True
+            
+        concept_display = clean_name
+        if is_start and concept_display:
+            concept_display = concept_display[0].upper() + concept_display[1:]
+            
+        replacement = f"the **{concept_display}** [({chr(167)}{rid})]({url})"
+        if is_start:
+            replacement = f"The **{concept_display}** [({chr(167)}{rid})]({url})"
+            
+        new_line = new_line[:m.start()] + replacement + new_line[m.end():]
+        idx = m.start() + len(replacement)
+        
+    return new_line
+
 def fix_all_files():
     count_files = 0
     for root, dirs, files in os.walk(docs_root):
@@ -495,15 +543,37 @@ def fix_all_files():
                 
             new_lines = []
             modified = False
+            in_code_block = False
             for i, line in enumerate(lines):
-                if "§" in line:
-                    fixed_line = clean_line_citations(line, part, chapter)
-                    if fixed_line != line:
-                        new_lines.append(fixed_line)
-                        modified = True
-                        continue
-                new_lines.append(line)
+                stripped = line.strip()
+                if stripped.startswith("```"):
+                    in_code_block = not in_code_block
+                    new_lines.append(line)
+                    continue
+                    
+                if in_code_block:
+                    new_lines.append(line)
+                    continue
+                    
+                # Skip tables, note headers, and other non-citations
+                if "|" in line or stripped.startswith(":::") or "Overview**]" in line:
+                    new_lines.append(line)
+                    continue
                 
+                fixed_line = line
+                # Pass 1: Standard citation formatting (for lines with section symbol)
+                if "§" in fixed_line:
+                    fixed_line = clean_line_citations(fixed_line, part, chapter)
+                
+                # Pass 2: Bare/noun citation formatting
+                fixed_line = fix_bare_citations_in_line(fixed_line)
+                
+                if fixed_line != line:
+                    new_lines.append(fixed_line)
+                    modified = True
+                else:
+                    new_lines.append(line)
+                    
             if modified:
                 with open(filepath, "w", encoding="utf-8") as f:
                     f.writelines(new_lines)

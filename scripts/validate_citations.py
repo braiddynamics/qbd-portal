@@ -143,6 +143,11 @@ def analyze_line(filepath, relpath, line_no, line, part, chapter):
             
         idx = pos + 1
 
+robust_bare_pat = re.compile(
+    r'\b(Lemma|Theorem|Axiom|Proof|Section|Definition|Principle|Postulate)\s+(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)\b',
+    re.IGNORECASE
+)
+
 # Iterate through doc files
 for root, dirs, files in os.walk(docs_root):
     for file in files:
@@ -161,12 +166,45 @@ for root, dirs, files in os.walk(docs_root):
         with open(filepath, "r", encoding="utf-8") as f:
             lines = f.readlines()
             
+        in_code_block = False
         for i, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped.startswith("```"):
+                in_code_block = not in_code_block
+                continue
+                
+            if in_code_block:
+                continue
+                
+            # Skip TOC, references, appendices, tables, note headers, and other non-citations
+            if "00-table-of-contents" in relpath or "appendices" in relpath or "a-references" in relpath:
+                continue
+            if "|" in line or stripped.startswith(":::") or "Overview**]" in line or stripped.startswith("#"):
+                continue
+                
+            # First, check standard citations if there is a '§'
             if "§" in line:
-                # Skip TOC, references, appendices, and tables containing |
-                if "00-table-of-contents" in relpath or "appendices" in relpath or "a-references" in relpath or "|" in line:
-                    continue
                 analyze_line(filepath, relpath, i + 1, line, part, chapter)
+                
+            # Second, check for bare citations
+            bare_matches = robust_bare_pat.findall(line)
+            if bare_matches:
+                for cat, rid in bare_matches:
+                    violations.append({
+                        "file": relpath,
+                        "line_no": i + 1,
+                        "ref_id": rid,
+                        "concept": None,
+                        "snippet": line.strip(),
+                        "has_bracket_parenthesis": False,
+                        "is_bolded": False,
+                        "is_noun": True,
+                        "noun_reason": f"Bare/noun citation '{cat} {rid}' found without proper formatting.",
+                        "is_grouped": False,
+                        "is_url_correct": False,
+                        "url_reason": "Missing bracketed citation format.",
+                        "link_url": None
+                    })
 
 print(f"Total violations found: {len(violations)}")
 
