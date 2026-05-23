@@ -36,7 +36,7 @@ def calculate_orbit_entropy(G):
 G_star = nx.star_graph(9) # Center 0, 9 leaves
 
 # 2. Bethe Fragment (N=10)
-# Root 0 -> 1,2,3; 1->4,5; 2->6,7; 3->8,9
+# Root 0 -> 1,2,3, 1->4,5, 2->6,7, 3->8,9
 G_bethe = nx.Graph()
 G_bethe.add_edges_from([(0,1), (0,2), (0,3)])
 G_bethe.add_edges_from([(1,4), (1,5), (2,6), (2,7), (3,8), (3,9)])

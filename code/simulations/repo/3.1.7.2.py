@@ -15,7 +15,7 @@ def build_bethe_fragment(depth, k):
     for d in range(depth):
         next_layer = []
         for parent in current_layer:
-            # Root splits into k; others split into k-1 (one parent, k-1 children)
+            # Root splits into k, others split into k-1 (one parent, k-1 children)
             num_children = k if parent == root else k - 1
            
             for _ in range(num_children):

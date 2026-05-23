@@ -3,7 +3,7 @@ import pandas as pd
 import math 
 
 def create_directed_cycle(k):
-    """Creates a simple directed k-cycle graph — the initial topological defect."""
+    """Creates a simple directed $k$-cycle graph: the initial topological defect."""
     G = nx.DiGraph()
     nodes = list(range(k))
     for i in range(k):
@@ -49,7 +49,7 @@ def find_compliant_2_paths(G):
 
 def phase_1_add_chords(G):
     """Phase 1: Exhaustive chord insertion on all compliant sites (parallel update)."""
-    paths = find_compliant_2_paths(G)  # Collect all sites first — simulates parallel application
+    paths = find_compliant_2_paths(G)  # Collect all sites first, simulating parallel application
     ops = 0
     for v, w, u in paths:
         if not G.has_edge(u, v):        # Direction: close with (u → v)
@@ -58,7 +58,7 @@ def phase_1_add_chords(G):
     return ops
 
 def phase_2_delete_cycles(G):
-    """Phase 2: Entropic deletion — break remaining macro-cycles by removing perimeter edges."""
+    """Phase 2: Entropic deletion: break remaining macro-cycles by removing perimeter edges."""
     ops = 0
     while True:
         max_len = get_max_cycle_len(G)
@@ -73,7 +73,7 @@ def phase_2_delete_cycles(G):
                 break
        
         if target_cycle:
-            # Delete the first edge of the detected cycle — thermodynamic pruning
+            # Delete the first edge of the detected cycle: thermodynamic pruning
             u, v = target_cycle[0], target_cycle[1]
             if G.has_edge(u, v):
                 G.remove_edge(u, v)
@@ -83,7 +83,7 @@ def phase_2_delete_cycles(G):
     return ops
 
 def run_reduction_protocol(k):
-    """Full reduction protocol for a single k-cycle — returns (add_ops, del_ops)."""
+    """Full reduction protocol for a single $k$-cycle, returning (add_ops, del_ops)."""
     if k <= 3: 
         return 0, 0
    

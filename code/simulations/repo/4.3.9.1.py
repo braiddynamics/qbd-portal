@@ -57,7 +57,7 @@ Y = R_T(X)  # Apply awareness: Y = R_T(X)
 print("Store Comonad Axiom Verification")
 print("=" * 50)
 
-# Axiom 1: Left Identity — ε ∘ δ = id
+# Axiom 1: Left Identity - ε ∘ δ = id
 δ_Y = apply_morphism(δ, Y)
 lhs1 = apply_morphism(ε, δ_Y)
 print("Axiom 1: Left Identity (ε ∘ δ = id)")
@@ -65,7 +65,7 @@ print(f"   Holds: {lhs1 == Y}")
 print(f"   Result after ε ∘ δ: {lhs1}")
 print(f"   Expected (id(Y)):     {Y}\n")
 
-# Axiom 2: Right Identity — R_T(ε) ∘ δ = id
+# Axiom 2: Right Identity - R_T(ε) ∘ δ = id
 lifted_ε = R_T_lift(ε)
 lhs2 = apply_morphism(lifted_ε, δ_Y)
 print("Axiom 2: Right Identity (R_T(ε) ∘ δ = id)")
@@ -73,7 +73,7 @@ print(f"   Holds: {lhs2 == Y}")
 print(f"   Result after R_T(ε) ∘ δ: {lhs2}")
 print(f"   Expected (id(Y)):         {Y}\n")
 
-# Axiom 3: Associativity — δ ∘ δ = R_T(δ) ∘ δ
+# Axiom 3: Associativity - δ ∘ δ = R_T(δ) ∘ δ
 lhs3 = apply_morphism(δ, δ_Y)
 lifted_δ = R_T_lift(δ)
 rhs3 = apply_morphism(lifted_δ, δ_Y)

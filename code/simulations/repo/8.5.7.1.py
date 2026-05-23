@@ -6,22 +6,22 @@ def verify_gauge_coupling_consistency():
     # 1. Fundamental Constants (Derived in Ch 4, 5, 8)
     
     # Topological Energy Scale (Alpha_topo)
-    # Source: §4.4.2 (Bit-Nat Equivalence / 4 Dimensions)
+    # Source: **entropy of closure theorem** [(§4.4.2)](/monograph/rules/dynamics/4.4/#4.4.2) (Bit-Nat Equivalence / 4 Dimensions)
     # Value: ln(2) / 4
     ALPHA_TOPO = math.log(2) / 4 
     
     # Local State Space Multiplier (M)
-    # Source: §8.5.6 (Lemma: su2_local_dof_counting)
+    # Source: **combinatorial weighting lemma** [(§8.5.6)](/monograph/players/braids/8.5/#8.5.6) (Lemma: su2_local_dof_counting)
     # Derivation: 3 (Cycle Orientations) * 2 (Doublet States) + 1 (Spin Stabilizer)
     M_SU2 = 7 
     
     # Equilibrium Equilibrium Vacuum Density (Rho*)
-    # Source: §5.3 (Parameter Sweep Results)
+    # Source: **section 5.3** [(§5.3)](/monograph/rules/equilibrium/5.3/#5.3) (Parameter Sweep Results)
     # Mean density of the Region of Physical Viability (RPV)
     RHO_MEAN = 0.0290 
     
     # Ensemble Scatter (Standard Deviation)
-    # Source: §5.3 (Fluctuations across 100 runs)
+    # Source: section 5.3 (Fluctuations across 100 runs)
     # This represents the natural variance of the vacuum.
     RHO_SIGMA = 0.0050 
 

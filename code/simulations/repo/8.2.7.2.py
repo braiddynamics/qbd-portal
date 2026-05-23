@@ -2,7 +2,7 @@ import numpy as np
 
 def verify_flux_tube_confinement():
     print("\n" + "="*70)
-    print("8.2.7.2: FLUX TUBE CONFINEMENT & BERRY PHASE")
+    print("FLUX TUBE CONFINEMENT & BERRY PHASE")
     print("="*70)
     
     # 1. Simulation Parameters
