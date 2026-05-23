@@ -9,33 +9,33 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\models$ | Semantic entailment (truth) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\Gamma$ | A set of premises | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\theta$ | A derived theorem | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
-| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
-| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
-| $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
-| $\hat{H}$ | Hamiltonian constraint operator | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
-| $\Psi$ | Wavefunction of the universe | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
+| $\mathfrak{S}$ | A finite formal system | <Ref id="1.1.1" label="§1.1.1" /> |
+| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | <Ref id="1.1.1" label="§1.1.1" /> |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\mathcal{L}$ | The Formal Language (alphabet and grammar) | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\mathcal{I}$ | The set of Rules of Inference | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\vdash$ | Syntactic derivability (provability) | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\models$ | Semantic entailment (truth) | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\Gamma$ | A set of premises | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\theta$ | A derived theorem | <Ref id="1.1.2" label="§1.1.2" /> |
+| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | <Ref id="1.1.3" label="§1.1.3" /> |
+| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | <Ref id="1.1.3" label="§1.1.3" /> |
+| $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | <Ref id="1.1.3" label="§1.1.3" /> |
+| $\perp$ | Logical contradiction | <Ref id="1.1.6" label="§1.1.6" /> |
+| $t_L$ | Global Logical Time (discrete iteration counter) | <Ref id="1.2.1" label="§1.2.1" /> |
+| $t_{phys}$ | Physical Time (emergent, geometric) | <Ref id="1.2.1" label="§1.2.1" /> |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | <Ref id="1.2.1" label="§1.2.1" /> |
+| $U_{t_L}$ | Global state of the universe at step $t_L$ | <Ref id="1.2.2" label="§1.2.2" /> |
+| $\mathcal{U}$ | Universal Evolution Operator | <Ref id="1.2.2" label="§1.2.2" /> |
+| $\hat{H}$ | Hamiltonian constraint operator | <Ref id="1.2.2" label="§1.2.2" /> |
+| $\Psi$ | Wavefunction of the universe | <Ref id="1.2.2" label="§1.2.2" /> |
 | $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.2.2.1](/monograph/rules/ontology/1.2/#1.2.2.1) |
 | $\mu$ | Renormalization scale | [§1.2.2.1](/monograph/rules/ontology/1.2/#1.2.2.1) |
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/rules/ontology/1.2/#1.2.2.2) |
 | $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3](/monograph/rules/ontology/1.2/#1.2.2.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/rules/ontology/1.2/#1.2.2.3) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
+| $S(U)$ | Information content/Entropy of state $U$ | <Ref id="1.2.3" label="§1.2.3" /> |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | <Ref id="1.2.3" label="§1.2.3" /> |
 | $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.3.1](/monograph/rules/ontology/1.2/#1.2.3.1) |
 | $b$ | Finite Branching factor | [§1.2.3.1](/monograph/rules/ontology/1.2/#1.2.3.1) |
 | $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/rules/ontology/1.2/#1.2.3.1) |
@@ -58,324 +58,324 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
 | $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
 | $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $U_0$ | The unique initial state | [§1.2.7](/monograph/rules/ontology/1.2/#1.2.7) |
+| $U_0$ | The unique initial state | <Ref id="1.2.7" label="§1.2.7" /> |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $v, u, w$ | Individual vertices | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $e$ | Individual edge $(u, v)$ | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
+| $G$ | A specific Causal Graph $(V, E, H)$ | <Ref id="1.3.1" label="§1.3.1" /> |
+| $V$ | Set of Vertices (Abstract Events) | <Ref id="1.3.1" label="§1.3.1" /> |
+| $E$ | Set of Directed Edges (Causal Relations) | <Ref id="1.3.1" label="§1.3.1" /> |
+| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | <Ref id="1.3.1" label="§1.3.1" /> |
+| $v, u, w$ | Individual vertices | <Ref id="1.3.1" label="§1.3.1" /> |
+| $e$ | Individual edge $(u, v)$ | <Ref id="1.3.1" label="§1.3.1" /> |
 | $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4.1](/monograph/rules/ontology/1.3/#1.3.4.1) |
-| $\mathfrak{T}$ | Elementary Task Space | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
-| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
-| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
-| $\Delta F$ | Change in Free Energy | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
-| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.5.1](/monograph/rules/ontology/1.5/#1.5.1) |
-| $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
-| $E$ | The set of edges within the graph | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
-| $\implies$ | Logical implication | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
-| $\forall$ | Universal quantifier ("for all") | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
-| $\mathcal{T}_{self}$ | Self-Loop Addition Operation | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $\Delta S$ | Change in Entropy | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $k_B$ | Boltzmann Constant | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $L$ | Length of a cycle or path | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2](/monograph/rules/axioms/2.3/#2.3.2) |
-| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
-| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
-| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
-| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/rules/axioms/2.4/#2.4.2) |
-| $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/rules/axioms/2.4/#2.4.3) |
+| $\mathfrak{T}$ | Elementary Task Space | <Ref id="1.4.1" label="§1.4.1" /> |
+| $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | <Ref id="1.4.2" label="§1.4.2" /> |
+| $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | <Ref id="1.4.2" label="§1.4.2" /> |
+| $\Delta F$ | Change in Free Energy | <Ref id="1.4.5" label="§1.4.5" /> |
+| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | <Ref id="1.5.1" label="§1.5.1" /> |
+| $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | <Ref id="2.1.1" label="§2.1.1" /> |
+| $E$ | The set of edges within the graph | <Ref id="2.1.1" label="§2.1.1" /> |
+| $\implies$ | Logical implication | <Ref id="2.2.1" label="§2.2.1" /> |
+| $\forall$ | Universal quantifier ("for all") | <Ref id="2.2.1" label="§2.2.1" /> |
+| $\mathcal{T}_{self}$ | Self-Loop Addition Operation | <Ref id="2.2.3" label="§2.2.3" /> |
+| $\Omega(G)$ | Cardinality of the set of Simple Paths | <Ref id="2.2.3" label="§2.2.3" /> |
+| $\Delta S$ | Change in Entropy | <Ref id="2.2.3" label="§2.2.3" /> |
+| $k_B$ | Boltzmann Constant | <Ref id="2.2.3" label="§2.2.3" /> |
+| $\mathfrak{T}_{add}$ | Edge Addition Operation | <Ref id="2.3.1" label="§2.3.1" /> |
+| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | <Ref id="2.3.1" label="§2.3.1" /> |
+| $L$ | Length of a cycle or path | <Ref id="2.3.1" label="§2.3.1" /> |
+| $\gamma$ | Geometric Quantum (Directed 3-Cycle) | <Ref id="2.3.2" label="§2.3.2" /> |
+| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | <Ref id="2.3.4" label="§2.3.4" /> |
+| $L_{\max}$ | Length of the longest simple cycle in $G$ | <Ref id="2.3.4" label="§2.3.4" /> |
+| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | <Ref id="2.3.4" label="§2.3.4" /> |
+| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | <Ref id="2.4.2" label="§2.4.2" /> |
+| $C$ | A Simple Directed Cycle | <Ref id="2.4.3" label="§2.4.3" /> |
 | $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/rules/axioms/2.4/#2.4.3.1) |
-| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
-| $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $R$ | Radius of local computational patch | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $\rho$ | Edge density of the graph | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $t_{crit}$ | Critical time where cycle diameter exceeds horizon | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
-| $E_{sync}$ | Energy required for global synchronization | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
-| $D$ | Graph Diameter | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
-| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
-| $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
-| $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
-| $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
-| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
-| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8](/monograph/rules/architecture/3.1/#3.1.8) |
-| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $\lambda$ | Weighting parameter for optimality score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.3](/monograph/rules/architecture/3.3/#3.3.3) |
-| $\mathbf{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
-| $\varphi$ | An automorphism mapping | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
+| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | <Ref id="2.4.5" label="§2.4.5" /> |
+| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | <Ref id="2.4.5" label="§2.4.5" /> |
+| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | <Ref id="2.4.5" label="§2.4.5" /> |
+| $\le$ | Effective Influence Relation (Strict Partial Order) | <Ref id="2.6.1" label="§2.6.1" /> |
+| $H(e)$ | History Timestamp of edge $e$ | <Ref id="2.6.1" label="§2.6.1" /> |
+| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | <Ref id="2.6.1" label="§2.6.1" /> |
+| $\neg$ | Logical negation | <Ref id="2.7.1" label="§2.7.1" /> |
+| $N$ | Total number of vertices in the graph | <Ref id="2.7.2" label="§2.7.2" /> |
+| $R$ | Radius of local computational patch | <Ref id="2.7.3" label="§2.7.3" /> |
+| $\rho$ | Edge density of the graph | <Ref id="2.7.3" label="§2.7.3" /> |
+| $t_{crit}$ | Critical time where cycle diameter exceeds horizon | <Ref id="2.7.3" label="§2.7.3" /> |
+| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | <Ref id="2.7.4" label="§2.7.4" /> |
+| $E_{sync}$ | Energy required for global synchronization | <Ref id="2.7.5" label="§2.7.5" /> |
+| $D$ | Graph Diameter | <Ref id="2.7.5" label="§2.7.5" /> |
+| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | <Ref id="3.1.3" label="§3.1.3" /> |
+| $V_0, E_0$ | Vertex and Edge sets of the Initial State | <Ref id="3.1.3" label="§3.1.3" /> |
+| $r$ | The Root Vertex ($d_{in}(r)=0$) | <Ref id="3.1.2" label="§3.1.2" /> |
+| $d(v)$ | Logical Depth of vertex $v$ from root | <Ref id="3.1.2" label="§3.1.2" /> |
+| $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | <Ref id="3.1.2" label="§3.1.2" /> |
+| $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | <Ref id="3.1.2" label="§3.1.2" /> |
+| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | <Ref id="3.2.1" label="§3.2.1" /> |
+| $\text{Aut}(G)$ | Automorphism group of graph $G$ | <Ref id="3.1.8" label="§3.1.8" /> |
+| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | <Ref id="3.2.9" label="§3.2.9" /> |
+| $\lambda$ | Weighting parameter for optimality score | <Ref id="3.2.9" label="§3.2.9" /> |
+| $H_S(G)$ | Shannon entropy of the orbit size distribution | <Ref id="3.2.9" label="§3.2.9" /> |
+| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | <Ref id="3.3.3" label="§3.3.3" /> |
+| $\mathbf{A}$ | Annotation structure $(a_V, a_E)$ | <Ref id="3.3.1" label="§3.3.1" /> |
+| $\varphi$ | An automorphism mapping | <Ref id="3.3.1" label="§3.3.1" /> |
 | $\mathcal{T}_{\text{tunnel}}$ | Tunneling Operator | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](/monograph/rules/architecture/3.4/#3.4.2) |
+| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | <Ref id="3.4.2" label="§3.4.2" /> |
 | $d_H$ | Hamming Distance | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
 | $\chi(G)$ | Chromatic Number | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\Delta F$ | Change in Free Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\epsilon_{geo}$ | Geometric Self-Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
-| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
-| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3](/monograph/rules/dynamics/4.1/#4.1.3) |
-| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
-| $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
-| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
-| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
-| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
-| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
-| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
-| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
-| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
-| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
-| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/rules/dynamics/4.5/#4.5.5) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/rules/dynamics/4.6/#4.6.2) |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $\Delta F$ | Change in Free Energy | <Ref id="3.4.5" label="§3.4.5" /> |
+| $\epsilon_{geo}$ | Geometric Self-Energy | <Ref id="3.4.5" label="§3.4.5" /> |
+| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | <Ref id="3.4.5" label="§3.4.5" /> |
+| $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\mathcal{C}$ | QECC Codespace (Protected subspace) | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\bar{d}(u,v)$ | Undirected shortest-path metric | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\Pi_{\text{local}}$ | Projector enforcing locality distance | <Ref id="3.5.1" label="§3.5.1" /> |
+| $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | <Ref id="3.5.1" label="§3.5.1" /> |
+| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | <Ref id="3.5.2" label="§3.5.2" /> |
+| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | <Ref id="3.5.1" label="§3.5.1" /> |
+| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | <Ref id="4.1.1" label="§4.1.1" /> |
+| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | <Ref id="4.1.3" label="§4.1.3" /> |
+| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | <Ref id="4.3.1" label="§4.3.1" /> |
+| $R_T$ | Awareness Endofunctor | <Ref id="4.3.2" label="§4.3.2" /> |
+| $\sigma_G$ | Freshly computed syndrome map | <Ref id="4.3.2" label="§4.3.2" /> |
+| $\epsilon$ | Counit (Context Extraction) | <Ref id="4.3.3" label="§4.3.3" /> |
+| $\delta$ | Comultiplication (Meta-Check) | <Ref id="4.3.4" label="§4.3.4" /> |
+| $T$ | Vacuum Temperature ($\ln 2$) | <Ref id="4.4.1" label="§4.4.1" /> |
+| $\Delta S$ | Entropy of Closure ($\ln 2$) | <Ref id="4.4.2" label="§4.4.2" /> |
+| $d$ | Effective Macroscopic Dimensionality ($d=4$) | <Ref id="4.4.3" label="§4.4.3" /> |
+| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | <Ref id="4.4.4" label="§4.4.4" /> |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | <Ref id="4.4.5" label="§4.4.5" /> |
+| $\mu$ | Friction Coefficient ($\approx 0.399$) | <Ref id="4.4.6" label="§4.4.6" /> |
+| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | <Ref id="4.5.1" label="§4.5.1" /> |
+| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | <Ref id="4.5.2" label="§4.5.2" /> |
+| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | <Ref id="4.5.2" label="§4.5.2" /> |
+| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | <Ref id="4.5.3" label="§4.5.3" /> |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | <Ref id="4.5.5" label="§4.5.5" /> |
+| $\mathcal{U}$ | Universal Evolution Operator | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\mathcal{M}$ | Measurement Projection Map | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\mathcal{S}$ | Sampling Collapse Operator | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\rho$ | Probability measure over the state space | <Ref id="4.6.1" label="§4.6.1" /> |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | <Ref id="4.6.2" label="§4.6.2" /> |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | <Ref id="5.1.1" label="§5.1.1" /> |
+| $\xi$ | Correlation Length (Entropic decay scale) | <Ref id="5.1.1" label="§5.1.1" /> |
 | $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/rules/equilibrium/5.1/#5.1.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
-| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
-| $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
-| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/rules/equilibrium/5.2/#5.2.5) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/rules/equilibrium/5.2/#5.2.7) |
-| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | <Ref id="5.1.2" label="§5.1.2" /> |
+| $S(N)$ | Total Entropy ($c \cdot N$) | <Ref id="5.1.2" label="§5.1.2" /> |
+| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | <Ref id="5.1.2" label="§5.1.2" /> |
+| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | <Ref id="5.2.1" label="§5.2.1" /> |
+| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | <Ref id="5.2.2" label="§5.2.2" /> |
+| $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | <Ref id="5.2.3" label="§5.2.3" /> |
+| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | <Ref id="5.2.5" label="§5.2.5" /> |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | <Ref id="5.2.6" label="§5.2.6" /> |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | <Ref id="5.2.7" label="§5.2.7" /> |
+| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | <Ref id="5.4.1" label="§5.4.1" /> |
 | $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |
 | $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/rules/equilibrium/5.4/#5.4.4.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
-| $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
+| $\bar{d}(u,v)$ | Undirected shortest-path metric | <Ref id="5.5.2" label="§5.5.2" /> |
+| $\langle k \rangle$ | Mean vertex degree | <Ref id="5.5.3" label="§5.5.3" /> |
+| $D_{\max}$ | Maximum vertex degree bound | <Ref id="5.5.3" label="§5.5.3" /> |
+| $K(u,v)$ | Causal Ollivier-Ricci curvature | <Ref id="5.5.4" label="§5.5.4" /> |
 | $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.4.1](/monograph/rules/equilibrium/5.5/#5.5.4.1) |
-| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | [§5.5.5](/monograph/rules/equilibrium/5.5/#5.5.5) |
-| $C_k$ | Count of simple cycles of length $k$ | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
-| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
+| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | <Ref id="5.5.5" label="§5.5.5" /> |
+| $C_k$ | Count of simple cycles of length $k$ | <Ref id="5.5.6" label="§5.5.6" /> |
+| $B(v,r)$ | Volume of geodesic ball of radius $r$ | <Ref id="5.5.7" label="§5.5.7" /> |
 | $d_c$ | Upper critical dimension ($d=4$) | [§5.5.7.1](/monograph/rules/equilibrium/5.5/#5.5.7.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1](/monograph/players/fermions/6.1/#6.1) |
-| $\zeta$ | Localized excitation (subgraph of $G_t^*$) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
-| $\Sigma$ | Sequence of rewrite operations | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
+| $\zeta$ | Localized excitation (subgraph of $G_t^*$) | <Ref id="6.1.1" label="§6.1.1" /> |
+| $\Sigma$ | Sequence of rewrite operations | <Ref id="6.1.1" label="§6.1.1" /> |
 | $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§6.1](/monograph/players/fermions/6.1/#6.1) |
-| $\rho(\zeta)$ | Local 3-cycle density of excitation | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $w(\zeta)$ | Writhe of the configuration | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $L_{ij}$ | Pairwise Linking Number | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $R$ | Causal Horizon (Radius of local operator) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
-| $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
-| $\sigma$ | Syndrome value ($\pm 1$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
+| $\rho(\zeta)$ | Local 3-cycle density of excitation | <Ref id="6.1.2" label="§6.1.2" /> |
+| $\mathcal{C}$ | QECC Codespace (Protected subspace) | <Ref id="6.1.2" label="§6.1.2" /> |
+| $w(\zeta)$ | Writhe of the configuration | <Ref id="6.1.2" label="§6.1.2" /> |
+| $L_{ij}$ | Pairwise Linking Number | <Ref id="6.1.2" label="§6.1.2" /> |
+| $R$ | Causal Horizon (Radius of local operator) | <Ref id="6.1.1" label="§6.1.1" /> |
+| $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | <Ref id="6.1.1" label="§6.1.1" /> |
+| $\sigma$ | Syndrome value ($\pm 1$) | <Ref id="6.1.2" label="§6.1.2" /> |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | <Ref id="6.1.2" label="§6.1.2" /> |
 | $\mathfrak{T}$ | Elementary Task Space | [§6.1.3.1](/monograph/players/fermions/6.1/#6.1.3.1) |
-| $\chi(\sigma)$ | Catalytic Tension Factor | [§6.1.4](/monograph/players/fermions/6.1/#6.1.4) |
-| $\mathbb{P}_{del}$ | Deletion Probability | [§6.1.4](/monograph/players/fermions/6.1/#6.1.4) |
-| $\text{Inv}$ | Generic topological invariant | [§6.1.5](/monograph/players/fermions/6.1/#6.1.5) |
-| $\beta_n$ | Braid on $n$ ribbons | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $B_n$ | Braid Group on $n$ strands | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $\mathfrak{su}(n)$ | Special Unitary Lie Algebra | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $A(n)$ | Anomaly Coefficient | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $C[\beta]$ | Minimal Crossing Number | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $b_i$ | Braid group generator | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $\chi(\sigma)$ | Catalytic Tension Factor | <Ref id="6.1.4" label="§6.1.4" /> |
+| $\mathbb{P}_{del}$ | Deletion Probability | <Ref id="6.1.4" label="§6.1.4" /> |
+| $\text{Inv}$ | Generic topological invariant | <Ref id="6.1.5" label="§6.1.5" /> |
+| $\beta_n$ | Braid on $n$ ribbons | <Ref id="6.2.1" label="§6.2.1" /> |
+| $B_n$ | Braid Group on $n$ strands | <Ref id="6.2.1" label="§6.2.1" /> |
+| $\mathfrak{su}(n)$ | Special Unitary Lie Algebra | <Ref id="6.2.1" label="§6.2.1" /> |
+| $A(n)$ | Anomaly Coefficient | <Ref id="6.2.1" label="§6.2.1" /> |
+| $C[\beta]$ | Minimal Crossing Number | <Ref id="6.2.1" label="§6.2.1" /> |
+| $b_i$ | Braid group generator | <Ref id="6.2.1" label="§6.2.1" /> |
 | $f^{abc}$ | Structure constants of Lie algebra | [§6.2.2.1](/monograph/players/fermions/6.2/#6.2.2.1) |
-| $C_C$ | Crossing Complexity | [§6.3.1](/monograph/players/fermions/6.3/#6.3.1) |
-| $C_T$ | Torsional Complexity | [§6.3.2](/monograph/players/fermions/6.3/#6.3.2) |
-| $m$ | Topological Mass (Informational Inertia) | [§6.3.3](/monograph/players/fermions/6.3/#6.3.3) |
-| $k_{writhe}$ | Mass-Writhe coupling constant | [§6.3.3](/monograph/players/fermions/6.3/#6.3.3) |
-| $N_3$ | Count of 3-cycles (Geometric Quanta) | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
-| $k_c$ | Crossing proportionality constant | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
-| $k_t$ | Torsional proportionality constant | [§6.3.7](/monograph/players/fermions/6.3/#6.3.7) |
-| $\Xi$ | Set of all localized excitations | [§6.4.5](/monograph/players/fermions/6.4/#6.4.5) |
-| $L_S$ | Spin Operator (Product of rung Z-operators) | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
-| $Z_{e_i}$ | Pauli-Z operator on rung edge $e_i$ | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
-| $\hat{P}_{12}$ | Particle Exchange Operator | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
-| $s$ | Spin quantum number ($1/2$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
-| $\phi$ | Topological phase factor ($-1$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
-| $\Pi_s$ | Spin Projector | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
-| $\hat{\mathcal{T}}$ | Unitary Twist Operator | [§7.1.3](/monograph/players/topology/7.1/#7.1.3) |
-| $\Vert \psi_{violation}\rangle$ | State of dual fermion occupancy (Forbidden) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
-| $Q$ | Electric Charge Operator | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
-| $w(\beta)$ | Total Writhe of braid $\beta$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
-| $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/topology/7.3/#7.3.7) |
+| $C_C$ | Crossing Complexity | <Ref id="6.3.1" label="§6.3.1" /> |
+| $C_T$ | Torsional Complexity | <Ref id="6.3.2" label="§6.3.2" /> |
+| $m$ | Topological Mass (Informational Inertia) | <Ref id="6.3.3" label="§6.3.3" /> |
+| $k_{writhe}$ | Mass-Writhe coupling constant | <Ref id="6.3.3" label="§6.3.3" /> |
+| $N_3$ | Count of 3-cycles (Geometric Quanta) | <Ref id="6.3.4" label="§6.3.4" /> |
+| $k_c$ | Crossing proportionality constant | <Ref id="6.3.4" label="§6.3.4" /> |
+| $k_t$ | Torsional proportionality constant | <Ref id="6.3.7" label="§6.3.7" /> |
+| $\Xi$ | Set of all localized excitations | <Ref id="6.4.5" label="§6.4.5" /> |
+| $L_S$ | Spin Operator (Product of rung Z-operators) | <Ref id="7.1.1" label="§7.1.1" /> |
+| $Z_{e_i}$ | Pauli-Z operator on rung edge $e_i$ | <Ref id="7.1.1" label="§7.1.1" /> |
+| $\hat{P}_{12}$ | Particle Exchange Operator | <Ref id="7.1.2" label="§7.1.2" /> |
+| $s$ | Spin quantum number ($1/2$) | <Ref id="7.1.2" label="§7.1.2" /> |
+| $\phi$ | Topological phase factor ($-1$) | <Ref id="7.1.2" label="§7.1.2" /> |
+| $\Pi_s$ | Spin Projector | <Ref id="7.1.2" label="§7.1.2" /> |
+| $\hat{\mathcal{T}}$ | Unitary Twist Operator | <Ref id="7.1.3" label="§7.1.3" /> |
+| $\Vert \psi_{violation}\rangle$ | State of dual fermion occupancy (Forbidden) | <Ref id="7.2.4" label="§7.2.4" /> |
+| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | <Ref id="7.2.4" label="§7.2.4" /> |
+| $Q$ | Electric Charge Operator | <Ref id="7.3.1" label="§7.3.1" /> |
+| $w(\beta)$ | Total Writhe of braid $\beta$ | <Ref id="7.3.1" label="§7.3.1" /> |
+| $k$ | Charge normalization constant ($1/3$) | <Ref id="7.3.7" label="§7.3.7" /> |
 | $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
 | $C(\vec{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/topology/7.3/#7.3.7.2) |
-| $m$ | Topological Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
-| $N_3$ | Count of 3-cycles (Geometric Quanta) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
+| $m$ | Topological Mass (Informational Inertia) | <Ref id="7.4.1" label="§7.4.1" /> |
+| $N_3$ | Count of 3-cycles (Geometric Quanta) | <Ref id="7.4.1" label="§7.4.1" /> |
 | $\epsilon_{geo}$ | Geometric Self-Energy | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
-| $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/topology/7.4/#7.4.2) |
-| $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/topology/7.4/#7.4.5) |
-| $U_{\text{braid}}$ | Internal Energy (Topological) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
-| $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
-| $\mathcal{R}$ | Unitary Rewrite Operator ($e^{i\hat{H}}$) | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $\hat{H}_i$ | Hamiltonian Generator for rewrite $\mathcal{R}_i$ | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
+| $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | <Ref id="7.4.2" label="§7.4.2" /> |
+| $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | <Ref id="7.4.5" label="§7.4.5" /> |
+| $U_{\text{braid}}$ | Internal Energy (Topological) | <Ref id="7.4.3" label="§7.4.3" /> |
+| $S_{\text{braid}}$ | Configurational Entropy (Zero) | <Ref id="7.4.3" label="§7.4.3" /> |
+| $\mathcal{R}$ | Unitary Rewrite Operator ($e^{i\hat{H}}$) | <Ref id="8.1.1" label="§8.1.1" /> |
+| $\hat{H}_i$ | Hamiltonian Generator for rewrite $\mathcal{R}_i$ | <Ref id="8.1.1" label="§8.1.1" /> |
 | $f_{ijk}$ | Structure Constants of the Lie algebra | [§8.1.1.1](/monograph/players/braids/8.1/#8.1.1.1) |
 | $G_{ab}$ | Gram Matrix element | [§8.1.1.1](/monograph/players/braids/8.1/#8.1.1.1) |
-| $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
-| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
-| $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $P_L$ | Left-Handed Chiral Projector | [§8.3.8](/monograph/players/braids/8.3/#8.3.8) |
-| $\theta_W$ | Weinberg Angle | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
-| $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
-| $g$ | SU(2) Gauge Coupling Constant | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
-| $\alpha_{\text{topo}}$ | Topological Energy Scale ($\ln 2 / 4$) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
-| $M$ | Vertex Multiplicity Factor ($M=7$) | [§8.5.6](/monograph/players/braids/8.5/#8.5.6) |
-| $v$ | Higgs Vacuum Expectation Value (VEV) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
-| $y_f$ | Yukawa Coupling for fermion $f$ | [§8.6.5](/monograph/players/braids/8.6/#8.6.5) |
-| $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | [§8.6.5](/monograph/players/braids/8.6/#8.6.5) |
-| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.6.3](/monograph/players/braids/8.6/#8.6.3) |
+| $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | <Ref id="8.1.2" label="§8.1.2" /> |
+| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | <Ref id="8.2.1" label="§8.2.1" /> |
+| $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | <Ref id="8.3.1" label="§8.3.1" /> |
+| $\chi$ | Chiral Invariant (Sign of timestamp difference) | <Ref id="8.3.1" label="§8.3.1" /> |
+| $P_L$ | Left-Handed Chiral Projector | <Ref id="8.3.8" label="§8.3.8" /> |
+| $\theta_W$ | Weinberg Angle | <Ref id="8.4.1" label="§8.4.1" /> |
+| $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | <Ref id="8.4.1" label="§8.4.1" /> |
+| $g$ | SU(2) Gauge Coupling Constant | <Ref id="8.5.1" label="§8.5.1" /> |
+| $\alpha_{\text{topo}}$ | Topological Energy Scale ($\ln 2 / 4$) | <Ref id="8.5.1" label="§8.5.1" /> |
+| $M$ | Vertex Multiplicity Factor ($M=7$) | <Ref id="8.5.6" label="§8.5.6" /> |
+| $v$ | Higgs Vacuum Expectation Value (VEV) | <Ref id="8.6.1" label="§8.6.1" /> |
+| $y_f$ | Yukawa Coupling for fermion $f$ | <Ref id="8.6.5" label="§8.6.5" /> |
+| $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | <Ref id="8.6.5" label="§8.6.5" /> |
+| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | <Ref id="8.6.3" label="§8.6.3" /> |
 | $J^\mu$ | Weak Current | [§8.3.2.1](/monograph/players/braids/8.3/#8.3.2.1) |
 | $\gamma^5$ | Chirality Operator | [§8.3.2.1](/monograph/players/braids/8.3/#8.3.2.1) |
-| $G_{GUT}$ | Candidate Grand Unified Theory group | [§9.1.2](/monograph/players/unification/9.1/#9.1.2) |
+| $G_{GUT}$ | Candidate Grand Unified Theory group | <Ref id="9.1.2" label="§9.1.2" /> |
 | $r(G)$ | Rank of a Lie algebra | [§9.1.2.1](/monograph/players/unification/9.1/#9.1.2.1) |
-| $\hat{\lambda}_{LQ}$ | Leptoquark generator | [§9.4.2](/monograph/players/unification/9.4/#9.4.2) |
-| $\mathcal{R}_{LQ}$ | Rewrite process for leptoquarks | [§9.4.1](/monograph/players/unification/9.4/#9.4.1) |
+| $\hat{\lambda}_{LQ}$ | Leptoquark generator | <Ref id="9.4.2" label="§9.4.2" /> |
+| $\mathcal{R}_{LQ}$ | Rewrite process for leptoquarks | <Ref id="9.4.1" label="§9.4.1" /> |
 | $\beta_5$ | Penta-ribbon braid (Unified State) | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
 | $C_{\text{total}}$ | Total topological complexity | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
-| $V(C)$ | Topological complexity potential landscape | [§9.3.1](/monograph/players/unification/9.3/#9.3.1) |
-| $m_D$ | Dirac mass term | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
-| $M_R$ | Heavy right-handed neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
-| $m_\nu$ | Light neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
-| $\beta_+, \beta_-$ | Braid and anti-braid segments (Folded) | [§9.6.1](/monograph/players/unification/9.6/#9.6.1) |
-| $N_{3,\max}$ | Maximum sustainable complexity (Criticality) | [§9.6.7](/monograph/players/unification/9.6/#9.6.7) |
-| $M_{\text{Pl}}$ | Planck mass | [§9.6.8](/monograph/players/unification/9.6/#9.6.8) |
-| $S_{inst}$ | Instanton Action (Tunneling) | [§9.5.4](/monograph/players/unification/9.5/#9.5.4) |
-| $\tau_p$ | Proton lifetime | [§9.5.2](/monograph/players/unification/9.5/#9.5.2) |
-| $A(R)$ | Anomaly Coefficient | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
-| $\mathbf{\bar{5}}, \mathbf{10}$ | SU(5) Representations | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
+| $V(C)$ | Topological complexity potential landscape | <Ref id="9.3.1" label="§9.3.1" /> |
+| $m_D$ | Dirac mass term | <Ref id="9.6.2" label="§9.6.2" /> |
+| $M_R$ | Heavy right-handed neutrino mass | <Ref id="9.6.2" label="§9.6.2" /> |
+| $m_\nu$ | Light neutrino mass | <Ref id="9.6.2" label="§9.6.2" /> |
+| $\beta_+, \beta_-$ | Braid and anti-braid segments (Folded) | <Ref id="9.6.1" label="§9.6.1" /> |
+| $N_{3,\max}$ | Maximum sustainable complexity (Criticality) | <Ref id="9.6.7" label="§9.6.7" /> |
+| $M_{\text{Pl}}$ | Planck mass | <Ref id="9.6.8" label="§9.6.8" /> |
+| $S_{inst}$ | Instanton Action (Tunneling) | <Ref id="9.5.4" label="§9.5.4" /> |
+| $\tau_p$ | Proton lifetime | <Ref id="9.5.2" label="§9.5.2" /> |
+| $A(R)$ | Anomaly Coefficient | <Ref id="9.1.5" label="§9.1.5" /> |
+| $\mathbf{\bar{5}}, \mathbf{10}$ | SU(5) Representations | <Ref id="9.1.5" label="§9.1.5" /> |
 | $L_{CW}$ | Linking number between Color and Weak sectors | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
 | $\Delta C$ | Complexity gap (Barrier height) | [§9.3.4.1](/monograph/players/unification/9.3/#9.3.4.1) |
-| $0_L\rangle, 1_L\rangle$ | Logical qubit basis states (Ground/Excited) | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
-| $\beta_e, \beta_{e*}$ | Physical electron braid topologies (Symmetric/Asymmetric) | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
+| $0_L\rangle, 1_L\rangle$ | Logical qubit basis states (Ground/Excited) | <Ref id="10.1.1" label="§10.1.1" /> |
+| $\beta_e, \beta_{e*}$ | Physical electron braid topologies (Symmetric/Asymmetric) | <Ref id="10.1.1" label="§10.1.1" /> |
 | $\hat{T}_{ij}$ | Writhe Exchange Operator (Twist transfer) | [§10.1.5.1](/monograph/players/computation/10.1/#10.1.5.1) |
 | $\hat{H}_X$ | Hamiltonian for the Logical X transition | [§10.1.5.1](/monograph/players/computation/10.1/#10.1.5.1) |
 | $\hat{C}^2_{SU(3)}$ | Quadratic Casimir Operator (Color measurement) | [§10.1.6.1](/monograph/players/computation/10.1/#10.1.6.1) |
-| $S_{\text{geom}}^{(uvw)}$ | Geometric check operator (Z-type on cycles) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
-| $S_{\text{ribbon}}^{(k,i)}$ | Ribbon integrity operator (Z-type on ladders) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
-| $S_v^X$ | Vertex stabilizer (X-type flow check) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
-| $\mathcal{S}$ | The Stabilizer Group | [§10.2.2](/monograph/players/computation/10.2/#10.2.2) |
-| $\mathcal{C}_L$ | Logical Codespace (Protected subspace) | [§10.3.1](/monograph/players/computation/10.3/#10.3.1) |
-| $d$ | Code Distance ($d=3$) | [§10.3.4](/monograph/players/computation/10.3/#10.3.4) |
-| $\mathcal{R}_X$ | Logical X gate rewrite process (Writhe Shuffle) | [§10.4.1](/monograph/players/computation/10.4/#10.4.1) |
-| $\mathcal{R}_Z$ | Logical Z gate rewrite process (QND Measure) | [§10.5.1](/monograph/players/computation/10.5/#10.5.1) |
-| $\mathcal{R}_H$ | Hadamard gate rewrite process (Thermo-Quench) | [§10.6.1](/monograph/players/computation/10.6/#10.6.1) |
+| $S_{\text{geom}}^{(uvw)}$ | Geometric check operator (Z-type on cycles) | <Ref id="10.2.1" label="§10.2.1" /> |
+| $S_{\text{ribbon}}^{(k,i)}$ | Ribbon integrity operator (Z-type on ladders) | <Ref id="10.2.1" label="§10.2.1" /> |
+| $S_v^X$ | Vertex stabilizer (X-type flow check) | <Ref id="10.2.1" label="§10.2.1" /> |
+| $\mathcal{S}$ | The Stabilizer Group | <Ref id="10.2.2" label="§10.2.2" /> |
+| $\mathcal{C}_L$ | Logical Codespace (Protected subspace) | <Ref id="10.3.1" label="§10.3.1" /> |
+| $d$ | Code Distance ($d=3$) | <Ref id="10.3.4" label="§10.3.4" /> |
+| $\mathcal{R}_X$ | Logical X gate rewrite process (Writhe Shuffle) | <Ref id="10.4.1" label="§10.4.1" /> |
+| $\mathcal{R}_Z$ | Logical Z gate rewrite process (QND Measure) | <Ref id="10.5.1" label="§10.5.1" /> |
+| $\mathcal{R}_H$ | Hadamard gate rewrite process (Thermo-Quench) | <Ref id="10.6.1" label="§10.6.1" /> |
 | $T_{local}$ | Local temperature of a graph region | [§10.6.2.1](/monograph/players/computation/10.6/#10.6.2.1) |
-| $\mathcal{R}_{CZ}$ | Controlled-Z gate rewrite process (Catalytic) | [§10.7.1](/monograph/players/computation/10.7/#10.7.1) |
+| $\mathcal{R}_{CZ}$ | Controlled-Z gate rewrite process (Catalytic) | <Ref id="10.7.1" label="§10.7.1" /> |
 | $\sigma_{eff}$ | Effective stress syndrome | [§10.7.2.1](/monograph/players/computation/10.7/#10.7.2.1) |
-| $\mathcal{R}_T$ | T-gate rewrite process (Self-Braiding) | [§10.8.1](/monograph/players/computation/10.8/#10.8.1) |
-| $\mathcal{C}_{QBD}$ | Ribbon Category of stable braids | [§10.8.3](/monograph/players/computation/10.8/#10.8.3) |
-| $\hat{D}$ | Dehn Twist Operator | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
-| $\mathcal{G}_{phys}$ | Universal Physical Gate Set | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
+| $\mathcal{R}_T$ | T-gate rewrite process (Self-Braiding) | <Ref id="10.8.1" label="§10.8.1" /> |
+| $\mathcal{C}_{QBD}$ | Ribbon Category of stable braids | <Ref id="10.8.3" label="§10.8.3" /> |
+| $\hat{D}$ | Dehn Twist Operator | <Ref id="10.8.8" label="§10.8.8" /> |
+| $\mathcal{G}_{phys}$ | Universal Physical Gate Set | <Ref id="10.8.9" label="§10.8.9" /> |
 | $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
 | $d_H(A,B)$ | Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
 | $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
 | $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§11.1.2](/monograph/stage/discrete/11.1/#11.1.2) |
+| $\bar{d}(u,v)$ | Undirected shortest-path metric | <Ref id="11.1.2" label="§11.1.2" /> |
 | $N^+(u), N^-(u)$ | Future/Past causal neighborhoods | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
 | $\alpha$ | Laziness parameter (self-mass) | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
 | $\beta$ | Neighborhood mass parameter ($(1-\alpha)/2$) | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
 | $\mu_u$ | Lazy causal probability measure for vertex $u$ | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
 | $\mathbb{I}[\cdot]$ | Indicator function | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§11.2.2](/monograph/stage/discrete/11.2/#11.2.2) |
-| $H(\mu_u)$ | Shannon entropy of measure $\mu_u$ | [§11.2.3](/monograph/stage/discrete/11.2/#11.2.3) |
+| $K(u,v)$ | Causal Ollivier-Ricci curvature | <Ref id="11.2.2" label="§11.2.2" /> |
+| $H(\mu_u)$ | Shannon entropy of measure $\mu_u$ | <Ref id="11.2.3" label="§11.2.3" /> |
 | $h(\alpha)$ | Allocation entropy function | [§11.2.3.1](/monograph/stage/discrete/11.2/#11.2.3.1) |
 | $d_{\text{dir}}$ | Directed distance function (shown insufficient) | [§11.2.4.1](/monograph/stage/discrete/11.2/#11.2.4.1) |
-| $\pi$ | Transport coupling (joint measure) | [§11.3.1](/monograph/stage/discrete/11.3/#11.3.1) |
-| $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3](/monograph/stage/discrete/11.3/#11.3.3) |
-| $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
+| $\pi$ | Transport coupling (joint measure) | <Ref id="11.3.1" label="§11.3.1" /> |
+| $m_w$ | Zero-cost shared mass at vertex $w$ | <Ref id="11.3.3" label="§11.3.3" /> |
+| $\Delta \mathcal{S}$ | Variation in total action | <Ref id="11.3.2" label="§11.3.2" /> |
 | $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
-| $T_{ab}$ | Discrete stress-energy tensor | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
-| $P_{\text{add}}(a,b)$ | Probability of edge addition | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
-| $P_{\text{del}}(a,b)$ | Probability of edge deletion | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
+| $T_{ab}$ | Discrete stress-energy tensor | <Ref id="12.1.1" label="§12.1.1" /> |
+| $P_{\text{add}}(a,b)$ | Probability of edge addition | <Ref id="12.1.1" label="§12.1.1" /> |
+| $P_{\text{del}}(a,b)$ | Probability of edge deletion | <Ref id="12.1.1" label="§12.1.1" /> |
 | $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§12.1.2.1](/monograph/stage/einstein/12.1/#12.1.2.1) |
 | $\mathcal{G}_{ab}$ | Discrete Einstein tensor | [§12.2.1.1](/monograph/stage/einstein/12.2/#12.2.1.1) |
 | $R_{\text{disc}}$ | Discrete scalar curvature | [§12.2.1.1](/monograph/stage/einstein/12.2/#12.2.1.1) |
-| $\kappa$ | Discrete gravitational coupling | [§12.2.1](/monograph/stage/einstein/12.2/#12.2.1) |
+| $\kappa$ | Discrete gravitational coupling | <Ref id="12.2.1" label="§12.2.1" /> |
 | $\ell_0$ | Microscopic discreteness / Planck area element | [§12.2.2.1](/monograph/stage/einstein/12.2/#12.2.2.1) |
-| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§12.2.3](/monograph/stage/einstein/12.2/#12.2.3) |
-| $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | [§13.1.1](/monograph/stage/convergence/13.1/#13.1.1) |
-| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§13.1.3](/monograph/stage/convergence/13.1/#13.1.3) |
-| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§13.1.3](/monograph/stage/convergence/13.1/#13.1.3) |
-| $-\Delta_g$ | Laplace-Beltrami operator | [§13.1.2](/monograph/stage/convergence/13.1/#13.1.2) |
-| $p_t(x,y)$ | Heat kernel on graph/manifold | [§13.1.4](/monograph/stage/convergence/13.1/#13.1.4) |
-| $f_k$ | Continuum eigenfunctions | [§13.1.2](/monograph/stage/convergence/13.1/#13.1.2) |
-| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\hat{n}_e$ | Unit direction vector of edge $e$ | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $B(x,R)$ | Mesoscopic ball of radius $R$ | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\kappa'$ | Continuum gravitational coupling constant | [§13.2.5](/monograph/stage/convergence/13.2/#13.2.5) |
-| $M$ | Continuous Lorentzian manifold | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $N$ | Lapse function (coordinate update rate) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $N^i$ | Shift vector (coordinate spatial offset) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $K_{ij}$ | Extrinsic curvature tensor | [§14.1.5](/monograph/stage/time/14.1/#14.1.5) |
-| $\hat{H}$ | Hamiltonian constraint operator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
-| $\vert\Psi\rangle$ | Wavefunction of the universe | [§14.3.2](/monograph/stage/time/14.3/#14.3.2) |
-| $\Lambda$ | Cosmological constant | [§14.3.5](/monograph/stage/time/14.3/#14.3.5) |
-| $S_{EE}$ | Entanglement entropy | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
-| $G$ | Emergent gravitational constant | [§14.4.3](/monograph/stage/time/14.4/#14.4.3) |
-| $\vert\Psi\rangle$ | Wavefunction of the universe | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
-| $S(A)$ | boundary entanglement entropy of region $A$ | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
-| $\rho_A$ | Reduced density matrix of region $A$ | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
-| $d_{geo}$ | Emergent spatial distance on manifold | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
-| $d_{topo}$ | Intrinsic topological distance on causal graph | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
+| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | <Ref id="12.2.3" label="§12.2.3" /> |
+| $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | <Ref id="13.1.1" label="§13.1.1" /> |
+| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | <Ref id="13.1.3" label="§13.1.3" /> |
+| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | <Ref id="13.1.3" label="§13.1.3" /> |
+| $-\Delta_g$ | Laplace-Beltrami operator | <Ref id="13.1.2" label="§13.1.2" /> |
+| $p_t(x,y)$ | Heat kernel on graph/manifold | <Ref id="13.1.4" label="§13.1.4" /> |
+| $f_k$ | Continuum eigenfunctions | <Ref id="13.1.2" label="§13.1.2" /> |
+| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | <Ref id="13.2.1" label="§13.2.1" /> |
+| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | <Ref id="13.2.1" label="§13.2.1" /> |
+| $\hat{n}_e$ | Unit direction vector of edge $e$ | <Ref id="13.2.1" label="§13.2.1" /> |
+| $B(x,R)$ | Mesoscopic ball of radius $R$ | <Ref id="13.2.1" label="§13.2.1" /> |
+| $\kappa'$ | Continuum gravitational coupling constant | <Ref id="13.2.5" label="§13.2.5" /> |
+| $M$ | Continuous Lorentzian manifold | <Ref id="14.1.1" label="§14.1.1" /> |
+| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | <Ref id="14.1.1" label="§14.1.1" /> |
+| $N$ | Lapse function (coordinate update rate) | <Ref id="14.1.2" label="§14.1.2" /> |
+| $N^i$ | Shift vector (coordinate spatial offset) | <Ref id="14.1.2" label="§14.1.2" /> |
+| $K_{ij}$ | Extrinsic curvature tensor | <Ref id="14.1.5" label="§14.1.5" /> |
+| $\hat{H}$ | Hamiltonian constraint operator | <Ref id="14.3.1" label="§14.3.1" /> |
+| $\vert\Psi\rangle$ | Wavefunction of the universe | <Ref id="14.3.2" label="§14.3.2" /> |
+| $\Lambda$ | Cosmological constant | <Ref id="14.3.5" label="§14.3.5" /> |
+| $S_{EE}$ | Entanglement entropy | <Ref id="14.4.1" label="§14.4.1" /> |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | <Ref id="14.4.2" label="§14.4.2" /> |
+| $G$ | Emergent gravitational constant | <Ref id="14.4.3" label="§14.4.3" /> |
+| $\vert\Psi\rangle$ | Wavefunction of the universe | <Ref id="15.1.2" label="§15.1.2" /> |
+| $S(A)$ | boundary entanglement entropy of region $A$ | <Ref id="15.1.1" label="§15.1.1" /> |
+| $\rho_A$ | Reduced density matrix of region $A$ | <Ref id="15.1.1" label="§15.1.1" /> |
+| $d_{geo}$ | Emergent spatial distance on manifold | <Ref id="15.1.2" label="§15.1.2" /> |
+| $d_{topo}$ | Intrinsic topological distance on causal graph | <Ref id="15.1.2" label="§15.1.2" /> |
 | $E_{bridge}$ | Entanglement shortcut edges (non-local) | [§15.1.1.1](/monograph/stage/epr/15.1/#15.1.1.1) |
 | $E_{bulk}$ | Standard spatial edges (local) | [§15.1.1.1](/monograph/stage/epr/15.1/#15.1.1.1) |
-| $\mathcal{S}$ | Stabilizer group protecting codespace | [§15.1.4](/monograph/stage/epr/15.1/#15.1.4) |
-| $S$ | Bell CHSH correlation metric | [§15.2.1](/monograph/stage/epr/15.2/#15.2.1) |
-| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§15.3.2](/monograph/stage/epr/15.3/#15.3.2) |
-| $\mathcal{E}_{\Gamma}$ | Causal history path ensemble | [§15.4.1](/monograph/stage/epr/15.4/#15.4.1) |
-| $\mathcal{TN}$ | Causal Tensor Network (Renormalization flow) | [§16.1.1](/monograph/stage/holography/16.1/#16.1.1) |
-| $S(A)$ | boundary entanglement entropy of region $A$ | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
-| $\gamma_A$ | Ryu-Takayanagi minimal bulk surface | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
-| $G_N$ | Boundary Newton gravitational constant | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
-| $W_k$ | Isometric tensor mapping bulk to boundary | [§16.1.3](/monograph/stage/holography/16.1/#16.1.3) |
+| $\mathcal{S}$ | Stabilizer group protecting codespace | <Ref id="15.1.4" label="§15.1.4" /> |
+| $S$ | Bell CHSH correlation metric | <Ref id="15.2.1" label="§15.2.1" /> |
+| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | <Ref id="15.3.2" label="§15.3.2" /> |
+| $\mathcal{E}_{\Gamma}$ | Causal history path ensemble | <Ref id="15.4.1" label="§15.4.1" /> |
+| $\mathcal{TN}$ | Causal Tensor Network (Renormalization flow) | <Ref id="16.1.1" label="§16.1.1" /> |
+| $S(A)$ | boundary entanglement entropy of region $A$ | <Ref id="16.1.2" label="§16.1.2" /> |
+| $\gamma_A$ | Ryu-Takayanagi minimal bulk surface | <Ref id="16.1.2" label="§16.1.2" /> |
+| $G_N$ | Boundary Newton gravitational constant | <Ref id="16.1.2" label="§16.1.2" /> |
+| $W_k$ | Isometric tensor mapping bulk to boundary | <Ref id="16.1.3" label="§16.1.3" /> |
 | $\ell_0$ | Microscopic discreteness / Planck area element | [§16.1.4.1](/monograph/stage/holography/16.1/#16.1.4.1) |
-| $\rho_{max}$ | Maximum bulk informational capacity density | [§16.2.1](/monograph/stage/holography/16.2/#16.2.1) |
-| $I(R)$ | Information bound of spatial region $R$ | [§16.2.2](/monograph/stage/holography/16.2/#16.2.2) |
-| $S_{BH}$ | Bekenstein-Hawking horizon entropy | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
-| $A$ | Area of black hole horizon / holographic screen | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
-| $\Sigma$ | Discrete worldsheet / causal tube | [§17.1.1](/monograph/stage/worldsheets/17.1/#17.1.1) |
-| $S_{NG}$ | Nambu-Goto informational action | [§17.1.2](/monograph/stage/worldsheets/17.1/#17.1.2) |
-| $T_0$ | Relativistic string tension | [§17.1.2](/monograph/stage/worldsheets/17.1/#17.1.2) |
-| $R$ | Wess-Zumino compactification radius | [§17.2.1](/monograph/stage/worldsheets/17.2/#17.2.1) |
-| $H(R)$ | Hamiltonian operator of compactified string | [§17.2.2](/monograph/stage/worldsheets/17.2/#17.2.2) |
-| $T$ | T-duality mapping operator | [§17.2.2](/monograph/stage/worldsheets/17.2/#17.2.2) |
-| $D_L, D_R$ | Left-moving and right-moving critical dimensions | [§17.3.1](/monograph/stage/worldsheets/17.3/#17.3.1) |
-| $E_8 \times E_8$ | Heterotic unified gauge lattice group | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
-| $B_{\mu\nu}$ | Kalb-Ramond 2-form field | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
-| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
-| $A_\mu$ | Emergent heterotic gauge field | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
-| $\Phi$ | Dilaton field | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
+| $\rho_{max}$ | Maximum bulk informational capacity density | <Ref id="16.2.1" label="§16.2.1" /> |
+| $I(R)$ | Information bound of spatial region $R$ | <Ref id="16.2.2" label="§16.2.2" /> |
+| $S_{BH}$ | Bekenstein-Hawking horizon entropy | <Ref id="16.2.4" label="§16.2.4" /> |
+| $A$ | Area of black hole horizon / holographic screen | <Ref id="16.2.4" label="§16.2.4" /> |
+| $\Sigma$ | Discrete worldsheet / causal tube | <Ref id="17.1.1" label="§17.1.1" /> |
+| $S_{NG}$ | Nambu-Goto informational action | <Ref id="17.1.2" label="§17.1.2" /> |
+| $T_0$ | Relativistic string tension | <Ref id="17.1.2" label="§17.1.2" /> |
+| $R$ | Wess-Zumino compactification radius | <Ref id="17.2.1" label="§17.2.1" /> |
+| $H(R)$ | Hamiltonian operator of compactified string | <Ref id="17.2.2" label="§17.2.2" /> |
+| $T$ | T-duality mapping operator | <Ref id="17.2.2" label="§17.2.2" /> |
+| $D_L, D_R$ | Left-moving and right-moving critical dimensions | <Ref id="17.3.1" label="§17.3.1" /> |
+| $E_8 \times E_8$ | Heterotic unified gauge lattice group | <Ref id="17.4.2" label="§17.4.2" /> |
+| $B_{\mu\nu}$ | Kalb-Ramond 2-form field | <Ref id="17.4.2" label="§17.4.2" /> |
+| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | <Ref id="17.4.2" label="§17.4.2" /> |
+| $A_\mu$ | Emergent heterotic gauge field | <Ref id="17.4.2" label="§17.4.2" /> |
+| $\Phi$ | Dilaton field | <Ref id="17.4.2" label="§17.4.2" /> |

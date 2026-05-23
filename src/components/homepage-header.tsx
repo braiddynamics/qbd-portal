@@ -1,33 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-
-// Setup robust fallback components to ensure flawless compilation in standalone/preview environments
-let Link: any = (props: any) => {
-  const { to, className, children, style, ...rest } = props;
-  return (
-    <a href={to} className={className} style={style} {...rest}>
-      {children}
-    </a>
-  );
-};
-
-let useDocusaurusContext: any = () => ({
-  siteConfig: {
-    title: "Quantum Braid Dynamics",
-    tagline: "Unifying General Relativity and the Standard Model"
-  }
-});
-
-// Dynamic require block to safely bypass bundler resolution issues in sandbox previews,
-// while executing flawlessly in your local Docusaurus production/development build.
-try {
-  const docusaurusLinkModule = '@docusaurus/Link';
-  const docusaurusContextModule = '@docusaurus/useDocusaurusContext';
-
-  Link = require(docusaurusLinkModule).default || require(docusaurusLinkModule);
-  useDocusaurusContext = require(docusaurusContextModule).default || require(docusaurusContextModule);
-} catch (e) {
-  // Fallback is active for standalone preview compilation
-}
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Embedded high-performance Canvas component inside the same file
 // to prevent any Docusaurus path resolution failures and run the particles flawlessly.

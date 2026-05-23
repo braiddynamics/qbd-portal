@@ -22,3 +22,15 @@ yarn-error.log*
 # Custom scripts and scratch directories
 /scripts
 /scratch
+
+# Python temporary files and bytecodes
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Operating System Files
+Thumbs.db
+.DS_Store
+

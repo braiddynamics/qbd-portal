@@ -1,0 +1,309 @@
+/* Premium Internal Cross-References Tooltip Stylesheet */
+
+/* The Internal Cross-Reference Badge Trigger */
+.ref-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15rem 0.45rem;
+  margin: 0 0.15rem;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Light Theme Styling (High Contrast Violet) */
+html[data-theme='light'] .ref-badge,
+:root:not([data-theme='dark']) .ref-badge {
+  color: #6d28d9; /* rich violet-700 */
+  background: rgba(109, 40, 217, 0.06);
+  border: 1px solid rgba(109, 40, 217, 0.18);
+}
+
+html[data-theme='light'] .ref-badge:hover,
+:root:not([data-theme='dark']) .ref-badge:hover {
+  color: #2e1065; /* deep violet-950 */
+  background: rgba(109, 40, 217, 0.14);
+  border-color: rgba(109, 40, 217, 0.45);
+  box-shadow: 0 2px 8px rgba(109, 40, 217, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Dark Theme Styling (Glowing Violet) */
+html[data-theme='dark'] .ref-badge {
+  color: #c084fc; /* soft violet-300 */
+  background: rgba(192, 132, 252, 0.08);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+html[data-theme='dark'] .ref-badge:hover {
+  color: #fae8ff; /* vibrant violet-100 */
+  background: rgba(192, 132, 252, 0.22);
+  border-color: rgba(192, 132, 252, 0.55);
+  box-shadow: 0 0 12px rgba(192, 132, 252, 0.3);
+  transform: translateY(-1px);
+}
+
+.ref-broken {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px dashed rgba(239, 68, 68, 0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+/* Tooltip Backdrop (Fixed Viewport) */
+.ref-tooltip {
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  background: #0e0a16; /* solid very dark violet-black to prevent see-through */
+  border: 1px solid rgba(192, 132, 252, 0.28); /* premium high-contrast violet border */
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 100000;
+  opacity: 0;
+}
+
+.ref-tooltip.ref-visible {
+  opacity: 1;
+  animation: ref-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ref-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.ref-tooltip-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+
+/* Header style */
+.ref-tooltip-header {
+  padding: 1.1rem 1.35rem;
+  background: rgba(255, 255, 255, 0.015);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ref-category {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #c084fc; /* purple category label */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ref-title {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f3f4f6;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* Scrollable body sections */
+.ref-tooltip-body {
+  padding: 1.25rem 1.35rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-height: 320px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.ref-tooltip-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ref-tooltip-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ref-tooltip-body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+}
+
+.ref-tooltip-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Section styling */
+.ref-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ref-section-title {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #a78bfa; /* violet section label */
+  text-transform: uppercase;
+}
+
+.ref-section-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.48;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Formal statement math block container */
+.ref-math-block {
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-style: normal;
+}
+
+.ref-plain-text {
+  color: #d1d5db;
+  font-style: italic;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(167, 139, 250, 0.4);
+}
+
+/* Footer layout and actions */
+.ref-tooltip-footer {
+  padding: 0.8rem 1.1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ref-footer-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.ref-btn-primary {
+  color: #000000;
+  background: #c084fc; /* purple primary */
+}
+
+.ref-btn-primary:hover {
+  color: #000000;
+  background: #e9d5ff;
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+}
+
+.ref-btn-secondary {
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ref-btn-secondary:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive constraints */
+@media (max-width: 480px) {
+  .ref-tooltip {
+    width: calc(100vw - 20px);
+  }
+  .ref-tooltip-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .ref-footer-btn {
+    width: 100%;
+  }
+}
+
+/* Inline link and citation styles inside tooltip */
+.ref-inline-link {
+  color: #c084fc !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.ref-inline-link:hover {
+  color: #e9d5ff !important;
+}
+
+.ref-inline-cite {
+  color: #9ca3af !important;
+  font-size: 0.78rem;
+  font-style: normal;
+  text-decoration: underline dotted !important;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.ref-inline-cite:hover {
+  color: #d1d5db !important;
+}
+
+/* Math block spacing inside tooltips */
+.ref-math-display {
+  margin: 0.6rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.ref-math-display::-webkit-scrollbar {
+  display: none;
+}
+
+.ref-math-inline {
+  display: inline-block;
+  padding: 0 0.15rem;
+  vertical-align: middle;
+}
+
+.ref-math-error {
+  color: #ef4444;
+  font-family: monospace;
+}
