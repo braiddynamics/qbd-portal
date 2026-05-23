@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Appendix A: External References"
 sidebar_label: "A: External References"
 ---
@@ -599,6 +599,11 @@ sidebar_label: "A: External References"
 #### "Decoherence, Einselection, and the Quantum Origins of the Classical"
     * **Link:** [https://arxiv.org/abs/quant-ph/0105127](https://arxiv.org/abs/quant-ph/0105127)
 
+-----
 
+### 75. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.75}
+#### "Elliptic Partial Differential Equations of Second Order"
+- *Springer*
+    * **Link:** [https://link.springer.com/book/10.1007/978-3-642-61798-0](https://link.springer.com/book/10.1007/978-3-642-61798-0)
 
 -----

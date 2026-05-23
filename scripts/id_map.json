@@ -2180,7 +2180,7 @@
     "file": "02-players/06-fermions/6.1.md"
   },
   "6.1.3.1": {
-    "name": "Reducibility Sequence",
+    "name": "Reducibility of Trivial Topologies",
     "type": "proof",
     "file": "02-players/06-fermions/6.1.md"
   },
@@ -4608,5 +4608,1735 @@
     "name": "Formal Synthesis",
     "type": "section",
     "file": "02-players/10-computation/11.10.md"
+  },
+  "3.0": {
+    "name": "The Continuum Limit",
+    "type": "theorem",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "3.0.1": {
+    "name": "The Architecture of the Proof",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.1.1": {
+    "name": "The GHW Metric",
+    "type": "definition",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.1.1.1": {
+    "name": "Integration of Geometry and Probability for Causal Convergence",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.1.2": {
+    "name": "The Undirected Shortest-Path Metric",
+    "type": "definition",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.1.2.1": {
+    "name": "Necessity of Metric Symmetry for Transport Well-Posedness",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.1.2.2": {
+    "name": "GHW Metric Components",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.2": {
+    "name": "Causal Geometry Construction",
+    "type": "section",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.1": {
+    "name": "The Lazy Causal Measure",
+    "type": "definition",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.1.1": {
+    "name": "The \"Tilt\" of Time",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.1.2": {
+    "name": "Measure Distribution",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.2": {
+    "name": "Causal Ollivier-Ricci Curvature",
+    "type": "definition",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.2.1": {
+    "name": "Geometry from Transport Cost",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.2.2": {
+    "name": "Transport Cost",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.3": {
+    "name": "Causal Geometry Construction",
+    "type": "theorem",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.3.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.4": {
+    "name": "Measure Validity",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.4.1": {
+    "name": "Measure Validity",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.4.2": {
+    "name": "Measure Verification",
+    "type": "calculation",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.4.3": {
+    "name": "Conservation of Probability",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.5": {
+    "name": "Entropy Maximization",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.5.1": {
+    "name": "Entropy Maximization",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.5.2": {
+    "name": "Entropy Maximization",
+    "type": "calculation",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.5.3": {
+    "name": "Universal Constant Alpha",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.5.4": {
+    "name": "Entropic Triality",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.6": {
+    "name": "Metric Necessity",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.6.1": {
+    "name": "Metric Necessity",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.6.2": {
+    "name": "Metric Verification",
+    "type": "calculation",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.6.3": {
+    "name": "Avoiding Singularities",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.7": {
+    "name": "Compensation by Causal Measures",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.7.1": {
+    "name": "Compensation",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.7.2": {
+    "name": "Compensation Verification",
+    "type": "calculation",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.7.3": {
+    "name": "The Arrow of Time in Static Geometry",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.7.4": {
+    "name": "Compensation Mechanism",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.2.8": {
+    "name": "Causal Geometry Construction",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.2.md"
+  },
+  "11.3.1": {
+    "name": "Discrete Einstein-Hilbert Action",
+    "type": "definition",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.1.1": {
+    "name": "The Cost of Curvature",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.2": {
+    "name": "Curvature Monotonicity",
+    "type": "theorem",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.2.2": {
+    "name": "Monotonicity Proof",
+    "type": "diagram",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.3": {
+    "name": "Measure Dilution (Phase 1)",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.3.1": {
+    "name": "Mass Redistribution",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.3.2": {
+    "name": "Shared Neighbor Mechanism",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.4": {
+    "name": "Transport Feasibility (Phase 2)",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.4.1": {
+    "name": "Coupling Construction",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.4.2": {
+    "name": "Hybrid Transport Plans",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.5": {
+    "name": "Cost Contraction (Phase 3)",
+    "type": "lemma",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.5.1": {
+    "name": "Inequality Derivation",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.5.2": {
+    "name": "Geometric Efficiency",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.6": {
+    "name": "Monotonicity Synthesis (Phase 4)",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.7": {
+    "name": "Action-Complexity Proportionality",
+    "type": "corollary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.7.1": {
+    "name": "Localized Variation",
+    "type": "proof",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.7.2": {
+    "name": "The Geometric Quantum",
+    "type": "commentary",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.3.7.3": {
+    "name": "Monotonicity Verification",
+    "type": "calculation",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
+  "11.4": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/11-discrete/11.4.md"
+  },
+  "12.1.1": {
+    "name": "Discrete Stress-Energy Tensor",
+    "type": "definition",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.1.1": {
+    "name": "Flux Interpretation",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.1.2": {
+    "name": "The Flux Balance",
+    "type": "diagram",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.2": {
+    "name": "Conservation of Complexity Flux",
+    "type": "theorem",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.3": {
+    "name": "Global Stationarity",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.3.1": {
+    "name": "Ergodic Degree Invariance",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.3.2": {
+    "name": "The Global Balance",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.4": {
+    "name": "Flux Separation (Detailed Balance)",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.4.1": {
+    "name": "Maximum Entropy Decomposition",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.4.2": {
+    "name": "Entropic Independence",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.5": {
+    "name": "Local Conservation Synthesis",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.5.1": {
+    "name": "Flux Conservation Verification",
+    "type": "calculation",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.1.5.2": {
+    "name": "Local Conservation",
+    "type": "diagram",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.2.1": {
+    "name": "Discrete Einstein Tensor",
+    "type": "definition",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.1.1": {
+    "name": "The Geometric Response",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.2": {
+    "name": "The Emergent Field Equations",
+    "type": "theorem",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.3": {
+    "name": "Variational Action Principle",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.3.1": {
+    "name": "Topological Sensitivity",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.3.2": {
+    "name": "The Gravitational Coupling",
+    "type": "diagram",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.4": {
+    "name": "Curvature-Flux Coupling",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.4.1": {
+    "name": "Thermodynamic Work",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.4.2": {
+    "name": "Geometry Doing Work",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.4.3": {
+    "name": "The Curvature Response",
+    "type": "diagram",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.5": {
+    "name": "Gravitational Coupling Scale",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.5.1": {
+    "name": "Coupling Form",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.6": {
+    "name": "Derivation from Stationary Action",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.2.6.1": {
+    "name": "Unified Field Equation Verification",
+    "type": "calculation",
+    "file": "03-stage/12-einstein/12.2.md"
+  },
+  "12.3.1": {
+    "name": "Discrete Bianchi Identity",
+    "type": "definition",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.1.1": {
+    "name": "Geometric Self-Consistency",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.2": {
+    "name": "Discrete Divergence-Free Geometry",
+    "type": "theorem",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.3": {
+    "name": "Action Invariance",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.3.1": {
+    "name": "Vertex Relabeling Invariance",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.3.2": {
+    "name": "Discrete General Covariance",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.4": {
+    "name": "Discrete Schl\u00e4fli Identity",
+    "type": "lemma",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.4.1": {
+    "name": "Null Curvature Variation",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.4.2": {
+    "name": "Orthogonality of Metric Variation",
+    "type": "commentary",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.5": {
+    "name": "Identity Derivation",
+    "type": "proof",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.3.5.1": {
+    "name": "Bianchi Error Scaling",
+    "type": "calculation",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.4": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/12-einstein/12.4.md"
+  },
+  "13.1.1": {
+    "name": "Consistently Weighted Laplacian",
+    "type": "definition",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.1.1": {
+    "name": "Calibrating Diffusion",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.2": {
+    "name": "Smooth Manifold Limit",
+    "type": "theorem",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.3": {
+    "name": "Spectral Convergence",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.3.1": {
+    "name": "Spectral Convergence",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.3.2": {
+    "name": "Spectral Convergence Verification",
+    "type": "calculation",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.3.3": {
+    "name": "Hearing the Shape of Spacetime",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.4": {
+    "name": "Heat Kernel Asymptotics",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.4.1": {
+    "name": "Gaussian Bounds",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.4.2": {
+    "name": "Heat Kernel Asymptotics Verification",
+    "type": "calculation",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.4.3": {
+    "name": "Diffusion as a Geometry Probe",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.5": {
+    "name": "Smoothness via Elliptic Regularity",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.5.1": {
+    "name": "C-Infinity Smoothness",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.1.6": {
+    "name": "Smooth Manifold Limit",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.1.md"
+  },
+  "13.2.1": {
+    "name": "Tensorial Averaging Map",
+    "type": "definition",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.1.1": {
+    "name": "From Scalars to Tensors",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.1.2": {
+    "name": "Coarse Graining",
+    "type": "diagram",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.2": {
+    "name": "Tensorial Continuum Limit",
+    "type": "theorem",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.3": {
+    "name": "Directional Measures",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.3.1": {
+    "name": "Haar Measure Convergence",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.3.2": {
+    "name": "Directional Measures Verification",
+    "type": "calculation",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.3.3": {
+    "name": "The Texture of Spacetime",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.4": {
+    "name": "Riemann Sum Approximation",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.4.1": {
+    "name": "Integral Convergence",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.4.2": {
+    "name": "Riemann Sum Approximation Verification",
+    "type": "calculation",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.4.3": {
+    "name": "The Geometric Projection",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.5": {
+    "name": "EFE Convergence",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.5.1": {
+    "name": "Equation Limit",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.2.6": {
+    "name": "Tensorial Continuum Limit",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
+  "13.3.1": {
+    "name": "The Emergent Light Cone",
+    "type": "definition",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.1.1": {
+    "name": "The Causal Wedge",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.2": {
+    "name": "Signature Selectivity",
+    "type": "theorem",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.3": {
+    "name": "Causal Drift",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.3.1": {
+    "name": "Drift Non-Vanishing",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.3.2": {
+    "name": "The Arrow of Time",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.4": {
+    "name": "The Null Boundary",
+    "type": "lemma",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.4.1": {
+    "name": "Finite Propagation Speed",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.4.2": {
+    "name": "The Speed of Light",
+    "type": "commentary",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.5": {
+    "name": "Signature Selectivity",
+    "type": "proof",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.3.5.1": {
+    "name": "Signature Verification",
+    "type": "calculation",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.4": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/13-convergence/13.4.md"
+  },
+  "14.1.1": {
+    "name": "The Lapse Function",
+    "type": "definition",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.1.1": {
+    "name": "Spacetime Foliation",
+    "type": "diagram",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.2": {
+    "name": "Smoothness of the Lapse",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.3": {
+    "name": "Local Causal Averages",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.3.1": {
+    "name": "Construction via Mollification",
+    "type": "proof",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.3.2": {
+    "name": "Lapse Function Smoothness",
+    "type": "calculation",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.3.3": {
+    "name": "Suppressing Shot Noise",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.5": {
+    "name": "Sobolev Convergence",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.5.1": {
+    "name": "Convergence in $H^k$ Norms",
+    "type": "proof",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.5.2": {
+    "name": "No Fractal Edges in Time",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.6": {
+    "name": "The Smooth Time Foliation",
+    "type": "proof",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.1.6.1": {
+    "name": "Global Monotonicity Check",
+    "type": "calculation",
+    "file": "03-stage/14-time/14.1.md"
+  },
+  "14.2.1": {
+    "name": "The Lorentzian Metric",
+    "type": "definition",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.1.1": {
+    "name": "Signature from Causal Order",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.2": {
+    "name": "The Emergent Lorentzian Manifold",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.2.1": {
+    "name": "Argument Outline",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.3": {
+    "name": "The Emergent Tetrad",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.3.1": {
+    "name": "Frame Orthogonality via Graph Laplacian",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.3.2": {
+    "name": "Coupling Matter to Geometry",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.4": {
+    "name": "Causal Isomorphism",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.4.1": {
+    "name": "Limit of Transitive Closure",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.4.2": {
+    "name": "The Skeleton of Spacetime",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.5": {
+    "name": "Coincidence of Null Cones",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.5.1": {
+    "name": "Null Vector Alignment",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.5.2": {
+    "name": "Why c is a constant",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.6": {
+    "name": "Global Hyperbolicity",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.6.1": {
+    "name": "Existence of Cauchy Surfaces",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.6.2": {
+    "name": "The Prohibition of Time Loops",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.7": {
+    "name": "Geodesic Motion",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.7.1": {
+    "name": "Stationary Phase of Path Integral",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.8": {
+    "name": "The Emergence of Relativistic Dynamics",
+    "type": "proof",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.2.8.1": {
+    "name": "Geodesic Emergence Verification",
+    "type": "calculation",
+    "file": "03-stage/14-time/14.2.md"
+  },
+  "14.3.1": {
+    "name": "The Wightman Axioms",
+    "type": "definition",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.2": {
+    "name": "Wightman Compliance",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.2.1": {
+    "name": "Strategy of Verification",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.3": {
+    "name": "Poincar\u00e9 Covariance",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.3.1": {
+    "name": "Covariance from Isotropy/Homogeneity",
+    "type": "proof",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.3.2": {
+    "name": "The Physics of Invariance",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.4": {
+    "name": "Vacuum Invariance (Haar Measure)",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.4.1": {
+    "name": "Measure Convergence",
+    "type": "proof",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.4.2": {
+    "name": "Stability of the Ground State",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.5": {
+    "name": "The Spectral Condition",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.5.1": {
+    "name": "Positivity from Topological Complexity",
+    "type": "proof",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.5.2": {
+    "name": "Why Complexity is Positive",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.6": {
+    "name": "Microcausality",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.6.1": {
+    "name": "Commutation from Graph Disconnection",
+    "type": "proof",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.6.2": {
+    "name": "Microcausality Check",
+    "type": "calculation",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.6.3": {
+    "name": "Locality in a Disconnected Graph",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.7": {
+    "name": "The Spin-Statistics Relation",
+    "type": "lemma",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.7.1": {
+    "name": "Cluster Decomposition Check [INTEGRATION TEST]",
+    "type": "calculation",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.7.2": {
+    "name": "The Necessity of Exclusion",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.3.8": {
+    "name": "Formal Synthesis of Field Axiomatics",
+    "type": "proof",
+    "file": "03-stage/14-time/14.3.md"
+  },
+  "14.4": {
+    "name": "Gravity from Entanglement Thermodynamics",
+    "type": "section",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.1": {
+    "name": "The First Law of Entanglement",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.1.1": {
+    "name": "dS = dE / T",
+    "type": "proof",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.1.2": {
+    "name": "Jacobson's Argument on the Graph",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.2": {
+    "name": "The Einstein Field Equations",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.2.1": {
+    "name": "Curvature-Entropy Coupling",
+    "type": "proof",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.2.2": {
+    "name": "Gravity is the Thermodynamics of Braid Statistics",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.3": {
+    "name": "Recovering Newton's Constant (G)",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.3.1": {
+    "name": "G_from_planck_area",
+    "type": "proof",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.4.3.3": {
+    "name": "G",
+    "type": "commentary",
+    "file": "03-stage/14-time/14.4.md"
+  },
+  "14.5": {
+    "name": "The Continuum Limit",
+    "type": "theorem",
+    "file": "03-stage/14-time/14.5.md"
+  },
+  "14.6": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/14-time/14.6.md"
+  },
+  "15.1": {
+    "name": "Entanglement as Topological Connection",
+    "type": "section",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.1": {
+    "name": "Topological Entanglement",
+    "type": "definition",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.1.1": {
+    "name": "The Shared Link vs Bulk Separation",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.1.2": {
+    "name": "Visual: Bridge Topology",
+    "type": "section",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.2": {
+    "name": "The Bi-Metric Structure",
+    "type": "definition",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.3": {
+    "name": "The Distance Gap",
+    "type": "theorem",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.3.1": {
+    "name": "Argument: Logic of Geodesic Divergence",
+    "type": "section",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.4": {
+    "name": "Stabilizer Conservation",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.4.1": {
+    "name": "Invariance under Local Unitary Evolution",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.4.2": {
+    "name": "Topology Persists Through Time",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.5": {
+    "name": "The Manifold Screening Condition",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.5.1": {
+    "name": "Dimensional Mismatch Forces Embedding Separation",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.5.2": {
+    "name": "The Invisibility of High-Frequency Topology",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.5.3": {
+    "name": "The Embedding Failure",
+    "type": "diagram",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.6": {
+    "name": "Formal Synthesis of The Distance Gap",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.1.6.1": {
+    "name": "Bi-Metric Verification",
+    "type": "calculation",
+    "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.2": {
+    "name": "The Bell Violation",
+    "type": "section",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.1": {
+    "name": "Violation of Metric Locality (Bell's Theorem)",
+    "type": "theorem",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.1.1": {
+    "name": "Argument: Topology Bypasses Metric Constraints",
+    "type": "section",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.2": {
+    "name": "Path Integral Dominance",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.2.1": {
+    "name": "Amplitude Weight of the Shortest Path",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.2.2": {
+    "name": "The Signal Takes the Bridge",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.3": {
+    "name": "The Correlation Bridge",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.3.1": {
+    "name": "Correlation Magnitude Calculation",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.3.2": {
+    "name": "Tunneling Through the Bulk",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.4": {
+    "name": "The Tsirelson Bound",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.4.1": {
+    "name": "Geometric Limits of Braid Deformation",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.4.2": {
+    "name": "Finite Correlation from Finite Connectivity",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.5": {
+    "name": "Formal Synthesis of Bell Violation",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.2.5.1": {
+    "name": "CHSH Score Verification",
+    "type": "calculation",
+    "file": "03-stage/15-epr/15.2.md"
+  },
+  "15.3": {
+    "name": "ER = EPR (Topological Wormholes)",
+    "type": "section",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.1": {
+    "name": "Transport Cost Reduction (ER=EPR)",
+    "type": "theorem",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.1.1": {
+    "name": "Argument: Geometric Contraction via Shortcuts",
+    "type": "section",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.2": {
+    "name": "The Isoperimetric Deficit",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.2.1": {
+    "name": "Expansion Properties of Entangled Graphs",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.2.2": {
+    "name": "High Connectivity pinches Geometry",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.3": {
+    "name": "The Emergent Throat",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.3.1": {
+    "name": "Area Minimization at the Bridge",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.3.2": {
+    "name": "The Einstein-Rosen Bridge Topology",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.5": {
+    "name": "Formal Synthesis of ER=EPR",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.3.5.1": {
+    "name": "Wormhole Length from Braid Complexity",
+    "type": "calculation",
+    "file": "03-stage/15-epr/15.3.md"
+  },
+  "15.4": {
+    "name": "The Quantum Eraser (Temporal Non-Locality)",
+    "type": "section",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.1": {
+    "name": "The History Ensemble",
+    "type": "definition",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.1.1": {
+    "name": "The Block Universe View",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.2": {
+    "name": "Global Constraint Satisfaction",
+    "type": "theorem",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.2.1": {
+    "name": "Argument: Causality as an Optimization Problem",
+    "type": "section",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.3": {
+    "name": "Ensemble Indeterminacy",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.3.1": {
+    "name": "Non-Commutativity of Unmeasured Histories",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.3.2": {
+    "name": "The Past is Not Fixed",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.4": {
+    "name": "The Block Universe as Fixed Point",
+    "type": "lemma",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.4.1": {
+    "name": "The Eraser is Global Consistency (Max Interference)",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.4.2": {
+    "name": "The Puzzle of the Block",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.5": {
+    "name": "Formal Synthesis of Causality Preservation",
+    "type": "proof",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.4.5.1": {
+    "name": "No Retrocausality Required",
+    "type": "commentary",
+    "file": "03-stage/15-epr/15.4.md"
+  },
+  "15.5": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/15-epr/15.5.md"
+  },
+  "16.1": {
+    "name": "The Surface Code (Discrete Holography)",
+    "type": "section",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.1": {
+    "name": "The Causal Tensor Network",
+    "type": "definition",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.1.1": {
+    "name": "Renormalization as Geometry",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.1.2": {
+    "name": "Visual: The Hyperbolic Discretization",
+    "type": "section",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.2": {
+    "name": "The Ryu-Takayanagi Correspondence",
+    "type": "theorem",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.2.1": {
+    "name": "Argument: Entropy Bounded by Minimal Cut",
+    "type": "section",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.3": {
+    "name": "The Isometry Condition",
+    "type": "lemma",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.3.1": {
+    "name": "Unitarity of the Coarse-Graining Map",
+    "type": "proof",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.3.2": {
+    "name": "Information Conservation",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.4": {
+    "name": "Formal Synthesis of Ryu-Takayanagi",
+    "type": "proof",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.1.4.1": {
+    "name": "Cut-Capacity Verification [PYTHON]",
+    "type": "calculation",
+    "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.2": {
+    "name": "The Bekenstein Bound (Thermodynamic Limits)",
+    "type": "section",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.1": {
+    "name": "The Bulk Saturation Limit",
+    "type": "definition",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.1.1": {
+    "name": "The Incompressibility of the Vacuum",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.2": {
+    "name": "Maximum Informational Density (The Bound)",
+    "type": "theorem",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.2.1": {
+    "name": "Argument: Geometry from Bit Packing",
+    "type": "section",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.3": {
+    "name": "The Holographic Screen Mechanism",
+    "type": "lemma",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.3.1": {
+    "name": "Volume to Area Scaling Transition",
+    "type": "proof",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.3.2": {
+    "name": "The Saturated Horizon",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.3.3": {
+    "name": "The Saturated Horizon",
+    "type": "diagram",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.4": {
+    "name": "Black Hole Entropy from Cycle Count",
+    "type": "lemma",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.4.1": {
+    "name": "Counting Pierced 3-Cycles in Trapped Surface",
+    "type": "proof",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.4.2": {
+    "name": "The Event Horizon as a Pixelated Screen",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.5": {
+    "name": "Formal Synthesis of the Bekenstein Bound",
+    "type": "proof",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.5.1": {
+    "name": "Code: S = N_3 / 4 [PYTHON]",
+    "type": "section",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.2.5.2": {
+    "name": "Why the Universe is Pixelated",
+    "type": "commentary",
+    "file": "03-stage/16-holography/16.2.md"
+  },
+  "16.3": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/16-holography/16.3.md"
+  },
+  "17.1": {
+    "name": "The Discrete Worldsheet (Braid Isomorphism)",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.1": {
+    "name": "The Causal Tube",
+    "type": "definition",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.1.1": {
+    "name": "The Anatomy of a Discrete String",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.1.2": {
+    "name": "The Braid Sweeping a Surface",
+    "type": "diagram",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.2": {
+    "name": "Action Equivalence (Nambu-Goto)",
+    "type": "theorem",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.2.1": {
+    "name": "Argument: Minimizing Updates Minimizes Area",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.3": {
+    "name": "Confinement and Berry Phase",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.3.1": {
+    "name": "Flux Tube Energy Scaling",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.3.2": {
+    "name": "The Rubber Band Universe",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.4": {
+    "name": "Formal Synthesis of String Dynamics",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.4.1": {
+    "name": "Braid Confinement Verification",
+    "type": "calculation",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.1.4.2": {
+    "name": "Strings are Effective Braids",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
+  "17.2": {
+    "name": "T-Duality and Spectrum",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.1": {
+    "name": "Winding vs Kinetic Modes",
+    "type": "definition",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.1.1": {
+    "name": "The Big Circle and the Little Circle",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.1.2": {
+    "name": "The Winding/Momentum Duality",
+    "type": "diagram",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.2": {
+    "name": "Spectral Invariance (T-Duality)",
+    "type": "theorem",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.2.1": {
+    "name": "Argument Outline: Symmetry of the Hamiltonian",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.3": {
+    "name": "The T-Gate Phase",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.3.1": {
+    "name": "Fermionic vs Bosonic",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.3.2": {
+    "name": "The Magic of Matter",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.4": {
+    "name": "Formal Synthesis of Spectral Invariance (T-Duality)",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.2.4.1": {
+    "name": "T-Duality Verification",
+    "type": "calculation",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.3": {
+    "name": "The Critical Dimension (D=26)",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.1": {
+    "name": "The Chiral Split (Bosonic Left / Super Right)",
+    "type": "theorem",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.1.1": {
+    "name": "Argument: Tripartite vs Supersymmetric Topology",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.2": {
+    "name": "Bott Periodicity (The Octonionic Lock)",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.2.1": {
+    "name": "Stability of Spinor Defects (k=8)",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.2.2": {
+    "name": "The Topological Origin of \"8\"",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.3": {
+    "name": "Tripartite Braid Saturation",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.3.1": {
+    "name": "3 Strands x 8 Modes = 24",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.3.2": {
+    "name": "The Thicker Vacuum",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.4": {
+    "name": "ZPE Cancellation",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.4.1": {
+    "name": "Left (Bosonic -1) + Right (Super 0)",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.4.2": {
+    "name": "Consistent 10D Spectrum",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.5": {
+    "name": "Formal Synthesis of the Critical Dimension",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.3.5.1": {
+    "name": "Algebra Closure Verification",
+    "type": "calculation",
+    "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.4": {
+    "name": "Heterotic Unification (E8 x E8)",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.1": {
+    "name": "Chiral Fusion",
+    "type": "definition",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.1.1": {
+    "name": "The Internal Phase Dial",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.1.2": {
+    "name": "The Heterotic Construction",
+    "type": "diagram",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.2": {
+    "name": "Emergence of the E8 Lattice",
+    "type": "theorem",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.2.1": {
+    "name": "Argument: Densest Packing of Information",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.3": {
+    "name": "The Unimodular Basis (Modular Invariance)",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.3.1": {
+    "name": "Self-Duality of the Braid Lattice",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.3.2": {
+    "name": "The Shape of Consistency",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.4": {
+    "name": "The Standard Model Embedding",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.4.1": {
+    "name": "Decomposition of E8 to SU(3)xSU(2)xU(1)",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.4.3": {
+    "name": "Generations from Braid Chirality",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.5": {
+    "name": "Anomaly Cancellation",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.5.1": {
+    "name": "Computing Chiral Index from Spinor Roots",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.5.2": {
+    "name": "Gravitational + Gauge Anomaly Cancel",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.6": {
+    "name": "The Landscape from Braid Vacua",
+    "type": "lemma",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.6.1": {
+    "name": "Different Knots = Different Physics",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.6.2": {
+    "name": "The Code of the Constants",
+    "type": "commentary",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.7": {
+    "name": "Formal Synthesis of Heterotic String Theory",
+    "type": "proof",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.4.7.1": {
+    "name": "Heterotic String Isomorphism Verification",
+    "type": "calculation",
+    "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.5": {
+    "name": "Formal Synthesis",
+    "type": "section",
+    "file": "03-stage/17-worldsheets/17.5.md"
   }
 }
