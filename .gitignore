@@ -22,6 +22,7 @@ yarn-error.log*
 # Custom scripts and scratch directories
 /scripts
 /scratch
+/scratch/chapters
 
 # Python temporary files and bytecodes
 __pycache__/

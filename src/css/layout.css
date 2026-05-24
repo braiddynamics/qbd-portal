@@ -58,7 +58,9 @@
   font-size: clamp(3.2rem, 7.5vw, 5.8rem);
   font-weight: 900;
   letter-spacing: -0.05em;
-  line-height: 1.05;
+  line-height: 1.15;
+  padding-bottom: 0.15em;
+  padding-right: 0.05em;
   margin-bottom: 1.2rem;
   
   /* Volumetric Deep Space Glow */
