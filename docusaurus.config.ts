@@ -76,6 +76,7 @@ const config: Config = {
     image: 'img/qbd-social-card.png',
 
     navbar: {
+      hideOnScroll: true,
       style: 'dark',
       title: 'QBD',
       logo: { alt: 'QBD Logo', src: 'img/logo.png' },
