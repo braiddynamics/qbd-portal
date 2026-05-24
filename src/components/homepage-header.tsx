@@ -175,7 +175,7 @@ export default function HomepageHeader() {
           {/* Call to Action Buttons */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.2rem', flexWrap: 'wrap' }}>
             <Link 
-              className="button button--primary button--lg btn-pulse-white-active" 
+              className="button button--secondary button--lg btn-pulse-white-active" 
               to="/monograph"
             >
               Table of Contents

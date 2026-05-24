@@ -15,7 +15,7 @@ export const monographSections = [
     part: "3",
     title: "3. The Stage",
     subtitle: "Emergent Reality",
-    linkUrl: "/monograph/category/the-stage",
+    linkUrl: "/monograph/stage/discrete/11.1",
   },
   {
     part: "4",
