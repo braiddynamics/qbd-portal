@@ -583,7 +583,7 @@ Section 3.1.3 formalizes the properties of the QBD theorem regarding the vacuum 
 
 :::info[**Existence and Finiteness of the Initial Vertex Set**]
 :::
-Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ **temporal finitude theorem** <Ref id="1.2.7" label="§1.2.7" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is **excluded** <Ref id="2.6.1" label="§2.6.1" />.
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.2.7" label="§1.2.7" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is **excluded** <Ref id="2.6.1" label="§2.6.1" />.
 
 **In Plain English:**  
 Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and finiteness.
@@ -594,7 +594,7 @@ Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and
 
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
-Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.7" label="§1.2.7" />. Then the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming 2-**Cycles** <Ref id="1.5.3" label="§1.5.3" /> is **excluded** <Ref id="2.1.1" label="§2.1.1" />.
+Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.7" label="§1.2.7" />. Then the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.3" label="§1.5.3" /> is **excluded** <Ref id="2.1.1" label="§2.1.1" />.
 
 **In Plain English:**  
 Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of reflexivity and reciprocity.
@@ -605,7 +605,7 @@ Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 :::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
 :::
-Let $G_0$ denote the initial state. Then the existence of Directed Cycles of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
+Let $G_0$ denote the initial state. Then the existence of **Directed Cycles** of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
 
 **In Plain English:**  
 Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of cyclic paths.
@@ -616,7 +616,7 @@ Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 :::info[**Global Directed Acyclicity**]
 :::
-Let $G_0$ denote the initial state. Then $G_0$ constitutes a Directed Acyclic Graph (DAG) <Ref id="1.5.1" label="§1.5.1" />, and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a **Directed Acyclic Graph (DAG)** <Ref id="1.5.1" label="§1.5.1" />, and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
 
 **In Plain English:**  
 Section 3.1.7 formalizes the properties of the QBD lemma regarding global acyclicity.
@@ -649,7 +649,7 @@ Section 3.1.9 formalizes the properties of the QBD lemma regarding path uniquene
 
 :::info[**Canonical Depth-Parity Bipartition of Vertices**]
 :::
-For any rooted tree with all edges directed away from the root, the parity of the Logical **function Depth Logical<Ref id="3.1.2" label="§3.1.2" /> forms a strict bipartition of the vertex set into $V_{even}$ and $V_{odd}$ such that all edges in $E_0$ connect a vertex in $V_{even}$ to a vertex in $V_{odd}$ or vice versa.
+For any rooted tree with all edges directed away from the root, the parity of the **Logical Depth** function <Ref id="3.1.2" label="§3.1.2" /> forms a strict bipartition of the vertex set into $V_{even}$ and $V_{odd}$ such that all edges in $E_0$ connect a vertex in $V_{even}$ to a vertex in $V_{odd}$ or vice versa.
 
 **In Plain English:**  
 Section 3.1.10 formalizes the properties of the QBD lemma regarding the depth-parity bipartition.
@@ -660,7 +660,7 @@ Section 3.1.10 formalizes the properties of the QBD lemma regarding the depth-pa
 
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs**]
 :::
-For all **graphs bipartite all<Ref id="1.5.1" label="§1.5.1" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of geometric quanta defined as **Directed 3-Cycles** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established in the **depth-parity bipartition lemma** <Ref id="3.1.10" label="§3.1.10" />).
+For all bipartite graphs <Ref id="1.5.1" label="§1.5.1" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
 
 **In Plain English:**  
 Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of odd cycles.
@@ -704,7 +704,7 @@ Section 3.2.2 formalizes the properties of the QBD lemma regarding exclusion of 
 
 :::info[**Exclusion of Self-Loops and Reciprocal 2-Cycles**]
 :::
-For any graph containing a self-loop or a reciprocal 2-cycle, candidacy for the vacuum state $G_0$ is excluded by the **Directed Causal Link** the **irreflexivity axiom** <Ref id="2.1.1" label="§2.1.1" />.
+For any graph containing a self-loop or a reciprocal 2-cycle, candidacy for the vacuum state $G_0$ is excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 **In Plain English:**  
 Section 3.2.3 formalizes the properties of the QBD lemma regarding exclusion of short-range loops.
@@ -737,7 +737,7 @@ Section 3.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 :::info[**Exclusion of Trees with Insufficient Rewrite Site Density via Branching Optimization**]
 :::
-For any tree graph yielding a strictly sub-maximal number of compliant 2-Path **sites rewrite** <Ref id="1.5.2" label="§1.5.2" />, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
+For any tree graph yielding a strictly sub-maximal number of compliant **2-Path rewrite sites** <Ref id="1.5.2" label="§1.5.2" />, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
 
 **In Plain English:**  
 Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximality.
@@ -759,7 +759,7 @@ Section 3.2.7 formalizes the properties of the QBD lemma regarding degree regula
 
 :::info[**Exclusion of Trees Lacking Level-Transitive Automorphism Action**]
 :::
-For any tree graph where the automorphism group fails to act transitively on vertex levels, candidacy for the vacuum state $G_0$ is excluded by the condition of **uniformity relational** <Ref id="3.2.9" label="§3.2.9" />. In particular, level-transitivity constitutes a necessary condition for the absence of privileged positions within each generation.
+For any tree graph where the automorphism group fails to act transitively on vertex levels, candidacy for the vacuum state $G_0$ is excluded by the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />. In particular, level-transitivity constitutes a necessary condition for the absence of privileged positions within each generation.
 
 **In Plain English:**  
 Section 3.2.8 formalizes the properties of the QBD lemma regarding orbit transitivity.
@@ -924,7 +924,7 @@ Section 3.4.4 formalizes the properties of the QBD lemma regarding the first geo
 
 :::info[**Non-Vanishing Tunneling Probability in the High-Temperature Regime**]
 :::
-Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the high-effective-temperature **conditions** <Ref id="4.4.1" label="§4.4.1" />, where the free energy barrier to edge addition is thermodynamically negligible.
+Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />, where the free energy barrier to edge addition is thermodynamically negligible.
 
 **In Plain English:**  
 Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition probability.
