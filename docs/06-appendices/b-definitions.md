@@ -238,6 +238,17 @@ Section 2.2.4 formalizes the properties of the QBD proof regarding insufficiency
 
 ---
 
+### 2.2.5 Proof: Type-Theoretic Validation {#2.2.5}
+
+:::info[**Insufficiency of Antisymmetry**]
+:::
+This section formally demonstrates via Lean 4 core that mathematical antisymmetry is physically insufficient for a theory of becoming, as it vacuously permits the formation of length-1 self-loops.
+
+**In Plain English:**  
+Section 2.2.5 formalizes the type-theoretic validation of the insufficiency of antisymmetry, showing that strict irreflexivity must be explicitly enforced.
+
+---
+
 ### 2.3.1 Axiom: 2: Geometric Constructibility {#2.3.1}
 
 :::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
@@ -356,6 +367,17 @@ Section 2.4.5 formalizes the properties of the QBD lemma regarding decrease in p
 
 **In Plain English:**  
 Section 2.4.6 formalizes the properties of the QBD proof regarding general cycle decomposition.
+
+---
+
+### 2.4.11 Proof: Type-Theoretic Validation {#2.4.11}
+
+:::info[**General Cycle Decomposition**]
+:::
+This section formally verifies via Lean 4 core the lexicographic potential halting guarantee under a well-founded lexicographic order, establishing that any reduction step strictly minimizes the universe's complexity metrics.
+
+**In Plain English:**  
+Section 2.4.11 formalizes the type-theoretic validation of the general cycle decomposition theorem, guaranteeing that topological digestion always terminates.
 
 ---
 
@@ -1239,6 +1261,17 @@ Section 4.3.9 formalizes the properties of the QBD proof regarding demonstration
 
 ---
 
+### 4.3.10 Proof: Type-Theoretic Validation {#4.3.10}
+
+:::info[**Awareness Comonad**]
+:::
+This section formally verifies via Lean 4 core the comonadic identities (Left Identity, Right Identity, and Associativity) for the store comonad model of self-observation, proving that the vacuum's self-diagnosis is a robust, mathematically stable invariant.
+
+**In Plain English:**  
+Section 4.3.10 formalizes the type-theoretic validation of the awareness layer comonad, confirming that recursive self-observation satisfies the category-theoretic laws of consistency.
+
+---
+
 ### 4.4.1 Theorem: Bit-Nat Equivalence {#4.4.1}
 
 :::info[**Derivation of the vacuum temperature via information-theoretic energy equivalence**]
@@ -1599,6 +1632,28 @@ The Catalysis Coefficient $\lambda_{\text{cat}}$ is constrained to the interval:
 
 **In Plain English:**  
 Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bounds.
+
+---
+
+### 5.4.5 Proof: Vacuum Stability {#5.4.5}
+
+:::tip[**Formal Verification of Vacuum Stability via Flux Linearization**]
+:::
+Let $\rho^*$ denote the unique positive root satisfying the transcendental balance equation. Define the time-dependent rate equation governing cycle density fluctuations as $\dot{\rho} = C(\rho) - D(\rho)$, where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ represents the creation flux and $D(\rho) = \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2$ represents the deletion flux. The fixed point $\rho^*$ is locked by type geometry to be linearly stable if and only if the first derivative of the net flux satisfies the Jacobian constraint $J \equiv \frac{d}{d\rho}(C(\rho) - D(\rho))\vert_{\rho^*} < 0$, which requires the inequality $C'(\rho^*) < D'(\rho^*)$.
+
+**In Plain English:**  
+Section 5.4.5 formalizes the properties of the QBD proof regarding vacuum stability.
+
+---
+
+### 5.4.6 Proof: Type-Theoretic Validation {#5.4.6}
+
+:::info[**Vacuum Stability**]
+:::
+This section formally verifies via Lean 4 core the master equation fixed-point linear stability criteria under deletion gradient dominance, proving that when the restoring force exceeds the autocatalytic creation drive, the vacuum constitutes a stable, self-regulating attractor.
+
+**In Plain English:**  
+Section 5.4.6 formalizes the type-theoretic validation of vacuum stability, confirming that the universe's ground state returns exponentially to equilibrium when perturbed.
 
 ---
 
