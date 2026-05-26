@@ -183,7 +183,7 @@ Section 1.5.3 formalizes the properties of the QBD definition regarding cycle de
 
 ---
 
-### 2.1.1 Axiom: 1: The Directed Causal Link {#2.1.1}
+### 2.1.1 Axiom 1: The Directed Causal Link {#2.1.1}
 
 :::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 :::
@@ -249,7 +249,7 @@ Section 2.2.5 formalizes the type-theoretic validation of the insufficiency of a
 
 ---
 
-### 2.3.1 Axiom: 2: Geometric Constructibility {#2.3.1}
+### 2.3.1 Axiom 2: Geometric Constructibility {#2.3.1}
 
 :::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
 :::
@@ -275,7 +275,7 @@ A 3-cycle represents the minimal closed loop of causality, constituting the fund
 
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 :::
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ **vacuum repertoire postulate** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Vacuum Repertoire** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
 **In Plain English:**  
 Section 2.3.3 formalizes the properties of the QBD principle regarding unique causality (puc).
@@ -297,7 +297,7 @@ Section 2.3.4 formalizes the properties of the QBD definition regarding lexicogr
 
 :::info[**Termination of Strictly Decreasing Topological Processes**]
 :::
-Let $\Phi(G)$ denote the Lexicographic Potential of a finite graph $G$ **lexicographic potential definition** <Ref id="2.3.4" label="§2.3.4" />. Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
+Let $\Phi(G)$ denote the Lexicographic Potential of a finite graph $G$ under **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />. Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
 
 **In Plain English:**  
 Section 2.3.5 formalizes the properties of the QBD lemma regarding well-foundedness.
@@ -308,7 +308,7 @@ Section 2.3.5 formalizes the properties of the QBD lemma regarding well-foundedn
 
 :::info[**Finite Decomposition of General Cycles via the Alternating Application of Chordal Addition and Entropic Deletion**]
 :::
-It is asserted that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the Lexicographic Potential $\Phi(G)$ **lexicographic potential definition** <Ref id="2.3.4" label="§2.3.4" />.
+It is asserted that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the Lexicographic Potential $\Phi(G)$ under **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />.
 
 **In Plain English:**  
 Section 2.4.1 formalizes the properties of the QBD theorem regarding general cycle decomposition.
@@ -341,7 +341,7 @@ Section 2.4.3 formalizes the properties of the QBD lemma regarding chordlessness
 
 :::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]
 :::
-Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the Lexicographic Potential $\Phi(G)$ **lexicographic potential definition** <Ref id="2.3.4" label="§2.3.4" />. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
+Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the Lexicographic Potential $\Phi(G)$ defined by **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
 
 **In Plain English:**  
 Section 2.4.4 formalizes the properties of the QBD lemma regarding reduction via deletion.
@@ -429,7 +429,7 @@ Section 2.5.4 formalizes the properties of the QBD proof regarding mutual indepe
 
 :::info[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
 :::
-The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving the **ordering historical** <Ref id="1.3.4" label="§1.3.4" />.
+The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
 
 **In Plain English:**  
 Section 2.6.1 formalizes the properties of the QBD definition regarding effective influence.
@@ -462,7 +462,7 @@ Section 2.6.3 formalizes the properties of the QBD lemma regarding strict timest
 
 :::info[**Violation of Irreflexivity within the Geometric Quantum**]
 :::
-Let $v$ denote a vertex participating in a Geometric Quantum (Directed $3$-Cycle) with strictly increasing timestamps along the edges. Then the Effective Influence relation satisfies the reflexive condition $v \le v$, violating the global **global acyclicity** <Ref id="2.7.1" label="§2.7.1" />.
+Let $v$ denote a vertex participating in a Geometric Quantum (Directed $3$-Cycle) with strictly increasing timestamps along the edges. Then the Effective Influence relation satisfies the reflexive condition $v \le v$, violating the global constraint of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 **In Plain English:**  
 Section 2.6.4 formalizes the properties of the QBD lemma regarding failure of reflexivity.
@@ -473,7 +473,7 @@ Section 2.6.4 formalizes the properties of the QBD lemma regarding failure of re
 
 :::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 :::
-Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying the timestamp **timestamp monotonicity** <Ref id="1.3.4" label="§1.3.4" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
 **In Plain English:**  
 Section 2.6.5 formalizes the properties of the QBD lemma regarding failure of asymmetry.
@@ -491,7 +491,7 @@ Section 2.6.6 formalizes the properties of the QBD proof regarding inadequacy of
 
 ---
 
-### 2.7.1 Axiom: 3: Acyclic Effective Causality {#2.7.1}
+### 2.7.1 Axiom 3: Acyclic Effective Causality {#2.7.1}
 
 :::info[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]
 :::
