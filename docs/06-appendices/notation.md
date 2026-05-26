@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Appendix C: Nomenclature & Symbol Table"
 sidebar_label: "C: Nomenclature & Symbol Table"
 ---
@@ -135,7 +135,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
-| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.3](/monograph/rules/dynamics/4.1/#4.1.3) |
+| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
 | $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
 | $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
 | $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |

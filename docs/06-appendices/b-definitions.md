@@ -1089,7 +1089,7 @@ Section 4.2.3 formalizes the properties of the QBD lemma regarding associativity
 
 :::info[**Preservation of Timestamp Monotonicity**]
 :::
-Let $f: G \to G'$ and $g: G' \to G''$ be **History-Respecting Embeddings** <Ref id="4.1.3" label="§4.1.3" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f: G \to G'$ and $g: G' \to G''$ be **History-Respecting Embeddings** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
 
 **In Plain English:**  
 Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp monotonicity.
@@ -1153,7 +1153,7 @@ Section 4.2.9 formalizes the properties of the QBD lemma regarding the partial o
 
 ### 4.2.10 Proof: Demonstration of Categorical Validity {#4.2.10}
 
-:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$ categorical validity** <Ref id="4.2.1" label="§4.2.1" />]
+:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$**]
 :::
 **I. The Structural Hypothesis** We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
@@ -1166,7 +1166,7 @@ Section 4.2.10 formalizes the properties of the QBD proof regarding demonstratio
 
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 :::
-The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with **History** <Ref id="1.3.1" label="§1.3.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the **Geometric Check Operators** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a **History-Respecting Embedding** <Ref id="4.1.3" label="§4.1.3" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
+The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with **History** <Ref id="1.3.1" label="§1.3.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the **Geometric Check Operators** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a **History-Respecting Embedding** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
 
 **In Plain English:**  
 Section 4.3.1 formalizes the properties of the QBD definition regarding the annotated category (anncg).
@@ -1252,7 +1252,7 @@ Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfa
 
 ### 4.3.9 Proof: Demonstration of the Awareness Comonad {#4.3.9}
 
-:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure** <Ref id="4.3.5" label="§4.3.5" />]
+:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure**]
 :::
 **I. The Object Hypothesis** We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ as a candidate structure for a Comonad, intended to formalize self-reference.
 
@@ -1331,7 +1331,7 @@ Section 4.4.5 formalizes the properties of the QBD theorem regarding the catalys
 
 :::info[**Statistical Normalization Constant**]
 :::
-Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$. Moreover, this value forms the Gaussian normalization required by the **Geometric Autocatalysis Lemma** <Ref id="5.2.4" label="§5.2.4" />.
+Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$. Moreover, this value forms the Gaussian normalization required by the **Frictional Suppression ($P_{acc}$)** lemma <Ref id="5.2.5" label="§5.2.5" />.
 
 **In Plain English:**  
 Section 4.4.6 formalizes the properties of the QBD theorem regarding the friction coefficient.
@@ -1661,7 +1661,7 @@ Section 5.4.6 formalizes the type-theoretic validation of vacuum stability, conf
 
 :::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
 :::
-It is asserted that the sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants: 1.  **Uniform Local Geometry:** Strictly bounded **degrees vertex bounded<Ref id="5.5.3" label="§5.5.3" /> and **locality connection** <Ref id="5.5.2" label="§5.5.2" />. 2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ <Ref id="5.5.4" label="§5.5.4" />. 3.  **Statistical Homogeneity:** Exponential decay of **correlations geometric** <Ref id="5.5.5" label="§5.5.5" />. 4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible **cycles** <Ref id="5.5.6" label="§5.5.6" />. 5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization **flow Group Renormalization<Ref id="5.5.7" label="§5.5.7" />.
+It is asserted that the sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants: 1.  **Uniform Local Geometry:** Strictly bounded degree established by the **Bounded Degree** lemma <Ref id="5.5.3" label="§5.5.3" /> and strict locality established by the **Strict Locality** lemma <Ref id="5.5.2" label="§5.5.2" />. 2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ <Ref id="5.5.4" label="§5.5.4" />. 3.  **Statistical Homogeneity:** Exponential decay of covariance established by the **Correlation Decay** lemma <Ref id="5.5.5" label="§5.5.5" />. 4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible cycles established by the **Manifold Combinatorics** lemma <Ref id="5.5.6" label="§5.5.6" />. 5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by the renormalization group flow in the **Ahlfors 4-Regularity** lemma <Ref id="5.5.7" label="§5.5.7" />.
 
 **In Plain English:**  
 Section 5.5.1 formalizes the properties of the QBD theorem regarding geometric well-posedness.
@@ -2310,7 +2310,7 @@ Section 8.1.3 formalizes the properties of the QBD lemma regarding distant commu
 
 :::info[**Compliance of Physical Rewrite Sequences with Topological Isotopy**]
 :::
-The physical rewrite processes satisfy the **Yang-Baxter Equation**, defined as $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$. This relation is enforced by the topological equivalence of the corresponding graph transformation sequences: 1.  **Isotopic Equivalence:** The two distinct sequences of rewrite operations result in final graph states that are ambiently isotopic, preserving all global topological invariants including Writhe and Linking Number. 2.  **Path Homotopy:** The transformation path of the "over-crossing" ribbon in the first sequence is homotopic to the path in the second sequence, with no intersections occurring with the "under-crossing" ribbons. 3.  **Causal Consistency:** Both sequences satisfy the Acyclic Effective Causality the **acyclic effective causality axiom** <Ref id="2.7.1" label="§2.7.1" /> at every intermediate step, ensuring no forbidden causal loops are generated during the transformation.
+The physical rewrite processes satisfy the **Yang-Baxter Equation**, defined as $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$. This relation is enforced by the topological equivalence of the corresponding graph transformation sequences: 1.  **Isotopic Equivalence:** The two distinct sequences of rewrite operations result in final graph states that are ambiently isotopic, preserving all global topological invariants including Writhe and Linking Number. 2.  **Path Homotopy:** The transformation path of the "over-crossing" ribbon in the first sequence is homotopic to the path in the second sequence, with no intersections occurring with the "under-crossing" ribbons. 3.  **Causal Consistency:** Both sequences satisfy the **Acyclic Effective Causality** axiom <Ref id="2.7.1" label="§2.7.1" /> at every intermediate step, ensuring no forbidden causal loops are generated during the transformation.
 
 **In Plain English:**  
 Section 8.1.4 formalizes the properties of the QBD lemma regarding yang-baxter relations.
@@ -2453,7 +2453,7 @@ Section 8.3.2 formalizes the properties of the QBD theorem regarding chiral symm
 
 :::info[**Verification of Invariant Persistence under Local Transformations**]
 :::
-The value of the chiral invariant $\chi(\mathcal{R}_W)$ is stable against all local graph transformations that preserve the causal order. This stability is enforced by the following invariants: 1.  **Functorial Preservation:** The evolution of the graph constitutes a functor in the History Category $\mathbf{Hist}$ **categorical ties to prior foundations commentary** <Ref id="4.1.3" label="§4.1.3" />, which preserves the partial ordering of edges $e_a \le e_b$ under all valid morphisms. 2.  **Sign Invariance:** Consequently, while local deformations may rescale the magnitude of the timestamp difference $\Delta H$, the signum $\operatorname{sgn}(\Delta H)$ remains invariant, locking the chirality of the process. 3.  **Topological Locking:** The effective influence relation $\le$ ensures that the minimal mediated path remains the geodesic, preventing the spontaneous inversion of handedness without a violation of **Acyclicity** <Ref id="2.7.1" label="§2.7.1" />.
+The value of the chiral invariant $\chi(\mathcal{R}_W)$ is stable against all local graph transformations that preserve the causal order. This stability is enforced by the following invariants: 1.  **Functorial Preservation:** The evolution of the graph constitutes a functor in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, which preserves the partial ordering of edges $e_a \le e_b$ under all valid morphisms. 2.  **Sign Invariance:** Consequently, while local deformations may rescale the magnitude of the timestamp difference $\Delta H$, the signum $\operatorname{sgn}(\Delta H)$ remains invariant, locking the chirality of the process. 3.  **Topological Locking:** The effective influence relation $\le$ ensures that the minimal mediated path remains the geodesic, preventing the spontaneous inversion of handedness without a violation of **Acyclicity** <Ref id="2.7.1" label="§2.7.1" />.
 
 **In Plain English:**  
 Section 8.3.3 formalizes the properties of the QBD lemma regarding chiral stability.
