@@ -28,7 +28,7 @@ However, the reception of this idea by the physicist who sparked it was initiall
 
 This resistance highlights a critical epistemological divide that defined the early 20th century: the tension between constructive theories (built on physical mechanisms) and principle theories (built on mathematical axioms). Einstein initially feared that the high-level geometry obscured the physical reality. Yet, the “invasion” proved decisive. By 1912, as Einstein struggled to generalize his theory to include gravity, he realized that the rigid Euclidean geometry of his earlier thought was insufficient. Gravity could not be described by a scalar field in a flat background; it required a dynamic, curved metric. He was forced to adopt the very mathematical machinery he had mocked, eventually conceding that Minkowski’s “arrogant” mathematics was the only path to General Relativity. In a letter to Arnold Sommerfeld, Einstein admitted his conversion, noting that he had “gained a great respect for mathematics, whose more subtle parts I considered until now, in my ignorance, as pure luxury.”
 
-:::info[**The Race for the Field Equations: Einstein vs. Hilbert**]
+:::info[**Race for the Field Equations: Einstein vs. Hilbert**]
 :::
 
 The culmination of the geometric revolution occurred in the fevered month of November 1915, a period that illustrates the convergence of the physicist’s intuition and the mathematician’s axiomatic rigor. As Einstein labored to define how matter curves spacetime, the great mathematician David Hilbert, pursuing his own “Sixth Problem” to axiomatize all of physics, entered the fray.
@@ -49,7 +49,7 @@ This period established the Geometric Paradigm: the universe was a dynamic conti
 
 In the three decades between 1925 and 1957, the ontological foundation of physics underwent a total disintegration. The resulting conceptual vacuum remains unfilled. For nearly three centuries prior, the fundamental constituent of reality in physics had been conceived as a substance located in space and time, possessing determinate properties independent of observation. A particle was a particle; it had a position ($x$) and a momentum ($p$), and these variables traced a smooth, continuous trajectory through the cosmos.
 
-:::info[**The Iconoclasts: Heisenberg, Matrix Mechanics, and the End of the Orbit**]
+:::info[**Iconoclasts: Heisenberg, Matrix Mechanics, and the End of the Orbit**]
 :::
 
 The first casualty of the quantum revolution was the concept of the planetary orbit. By the early 1920s, the “Old Quantum Theory,” a patchwork of classical mechanics and ad-hoc quantization rules developed by Niels Bohr and Arnold Sommerfeld, was collapsing under its own inconsistencies. While it could describe the hydrogen spectrum, it failed miserably for helium and could not account for the anomalous Zeeman effect. More alarmingly, it presumed that electrons moved in defined elliptical orbits, yet these orbits were physically unobservable.
@@ -95,7 +95,7 @@ The interpretation that would seal the fate of the “It” came from Max Born i
 
 Schrödinger was horrified. He had hoped to eliminate the quantum jumps; instead, his equation became the vehicle for formalizing them. The “It” was no longer a substance; it was a betting slip.
 
-:::info[**The Copenhagen Synthesis: Bohr, Complementarity, and the Cut**]
+:::info[**Copenhagen Synthesis: Bohr, Complementarity, and the Cut**]
 :::
 
 While Heisenberg provided the mathematics of uncertainty and Born the statistical interpretation, Niels Bohr provided the philosophy that made the destruction of realism palatable. Operating from his institute in Copenhagen, Bohr dismantled the classical separation between the observer and the observed, effectively redefining what it means to be an “It.”
@@ -106,7 +106,7 @@ Unveiled at the Como Conference in 1927, Bohr’s doctrine of Complementarity as
 
 Crucially, Bohr insisted that the “It” of the measuring device must be described in classical language. We must communicate our results unambiguously using heavy, macroscopic concepts (pointers, scales, clocks). This created a conceptual boundary, the Heisenberg Cut, between the quantum system (probabilistic, indefinable, described by $\psi$) and the classical observer (deterministic, communicable, described by Newton/Maxwell). This was Bohr’s pragmatic solution to the crisis: the “It” had died in the microcosm, but it was resurrected as a necessary fiction in the macrocosm to allow scientists to speak to one another. The price was a fractured worldview where the laws of physics changed depending on the size of the object.
 
-:::info[**The Clash of Completeness: The Bohr-Einstein Debates**]
+:::info[**Clash of Completeness: The Bohr-Einstein Debates**]
 :::
 
 The death of the classical “It” did not happen without a ferocious defense. Albert Einstein served as the attorney for an objective, independent reality, believing that “God does not play dice.” The debates between Einstein and Bohr are legendary not just for their intellectual height but for how they refined the definition of information in physics.
@@ -127,7 +127,7 @@ If we measure the position of $A$, we instantly know the position of $B$. If we 
 
 Bohr’s response, published under the same title, was a “bolt from the blue.” He essentially rejected the separation of $A$ and $B$. He argued that “the whole arrangement,” the source, the particles, and the distant detectors, constitutes a single, unanalyzable phenomenon. There is no “It” at location $B$ independent of the setting at location $A$. Bohr redefined “physical reality” to include the context of the measurement. This was the capitulation of local realism. The “It” was now non-local, spread across the entire experimental context. The “cut” between observer and observed now extended across light-years.
 
-:::info[**The Paradox of Entanglement: Schrödinger’s Cat and the Holism of Information**]
+:::info[**Paradox of Entanglement: Schrödinger’s Cat and the Holism of Information**]
 :::
 
 Schrödinger, observing the EPR debate from Oxford, was inspired to identify the singular feature of quantum mechanics that defied classical ontology. In a 1935 paper, he coined the term Entanglement (German: Verschränkung). Schrödinger realized that when two systems interact and then separate, they can no longer be described by independent wave functions ($\psi_A$ and $\psi_B$). They possess only a single, joint wave function ($\psi_{AB}$). The “It” (the individual particle) ceases to exist mathematically; only the “System” exists.

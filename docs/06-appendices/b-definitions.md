@@ -161,7 +161,7 @@ Space is built from simple discrete connections: single links represent preceden
 
 ---
 
-### 1.5.2 Definition: The 2-Path {#1.5.2}
+### 1.5.2 Definition: 2-Path {#1.5.2}
 
 :::tip[**2-Path as the Minimal Unit of Transitive Mediation**]
 :::
@@ -229,7 +229,7 @@ Section 2.2.3 formalizes the properties of the QBD lemma regarding thermodynamic
 
 ### 2.2.4 Proof: Insufficiency of Antisymmetry {#2.2.4}
 
-:::tip[the **Formal Demonstration of Insufficiency via the Construction of a Reflexive Counter-Model** <Ref id="2.2.1" label="§2.2.1" />]
+:::tip[**Formal Demonstration of Insufficiency via the Construction of a Reflexive Counter-Model** <Ref id="2.2.1" label="§2.2.1" />]
 :::
 **I. The Mathematical Condition** Let the axiom of **Antisymmetry** be defined by the standard order-theoretic implication: $$\forall u, v \in V, \quad ((u, v) \in E \land (v, u) \in E) \implies u = v$$ This condition operates as a conditional restraint. Crucially, it vacuously permits the existence of a reflexive edge $e = (u, u)$, as the consequent of the implication ($u=u$) holds true, rendering the statement valid regardless of the edge's existence.
 
@@ -260,7 +260,7 @@ Section 2.3.1 formalizes the properties of the QBD axiom regarding 2: geometric 
 
 ---
 
-### 2.3.2 Lemma: The Geometric Quantum {#2.3.2}
+### 2.3.2 Lemma: Geometric Quantum {#2.3.2}
 
 :::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]
 :::
@@ -361,7 +361,7 @@ Section 2.4.5 formalizes the properties of the QBD lemma regarding decrease in p
 
 ### 2.4.6 Proof: General Cycle Decomposition {#2.4.6}
 
-:::tip[the **Formal Proof of General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
+:::tip[**Formal Proof of General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
 :::
 **I. Initial Conditions**
 
@@ -416,7 +416,7 @@ Section 2.5.3 formalizes the properties of the QBD lemma regarding independence 
 
 ### 2.5.4 Proof: Mutual Independence {#2.5.4}
 
-:::tip[the **Formal Synthesis of Independence via Orthogonal Counter-Models** <Ref id="2.5.1" label="§2.5.1" />]
+:::tip[**Formal Synthesis of Independence via Orthogonal Counter-Models** <Ref id="2.5.1" label="§2.5.1" />]
 :::
 **I. The Independence Hypothesis** Two axiomatic constraints are defined as logically independent if and only if the satisfaction of one does not logically entail the satisfaction of the other. This independence is verified through the construction of specific counter-models that selectively violate one axiom while satisfying the other.
 
@@ -482,7 +482,7 @@ Section 2.6.5 formalizes the properties of the QBD lemma regarding failure of as
 
 ### 2.6.6 Proof: Inadequacy of Local Axioms {#2.6.6}
 
-:::tip[the **Formal Proof of Inadequacy via the Synthesis of Transitive Failures** <Ref id="2.6.2" label="§2.6.2" />]
+:::tip[**Formal Proof of Inadequacy via the Synthesis of Transitive Failures** <Ref id="2.6.2" label="§2.6.2" />]
 :::
 **I. The Local Premise** Assume the existence of a causal system constrained *exclusively* by Axiom 1 (defining the Local Arrow) and Axiom 2 (defining the Local Geometry). The sufficiency of these axioms is tested by determining whether the transitive closure of the influence relation $\le$ consistently forms a strict partial order.
 
@@ -537,7 +537,7 @@ Section 2.7.4 formalizes the properties of the QBD lemma regarding local puc app
 
 ### 2.7.5 Proof: Thermodynamic Enforcement {#2.7.5}
 
-:::tip[the **Formal Proof of Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> via Demonstration of Energy Divergence]
+:::tip[**Formal Proof of Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> via Demonstration of Energy Divergence]
 :::
 **I. Hypothesis**
 
@@ -568,7 +568,7 @@ Section 3.1.2 formalizes the properties of the QBD definition regarding s: vacuu
 
 ---
 
-### 3.1.3 Theorem: The Vacuum Structure {#3.1.3}
+### 3.1.3 Theorem: Vacuum Structure {#3.1.3}
 
 :::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]
 :::
@@ -645,7 +645,7 @@ Section 3.1.9 formalizes the properties of the QBD lemma regarding path uniquene
 
 ---
 
-### 3.1.10 Lemma: The Depth-Parity Bipartition {#3.1.10}
+### 3.1.10 Lemma: Depth-Parity Bipartition {#3.1.10}
 
 :::info[**Canonical Depth-Parity Bipartition of Vertices**]
 :::
@@ -669,7 +669,7 @@ Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of
 
 ### 3.1.12 Proof: Demonstration of the Vacuum Structure {#3.1.12}
 
-:::tip[the **Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion** <Ref id="3.1.3" label="§3.1.3" />]
+:::tip[**Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion** <Ref id="3.1.3" label="§3.1.3" />]
 :::
 **I. The Configuration Space** Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains.
 
@@ -766,7 +766,7 @@ Section 3.2.8 formalizes the properties of the QBD lemma regarding orbit transit
 
 ---
 
-### 3.2.9 Lemma: The Structural Optimality Metric {#3.2.9}
+### 3.2.9 Lemma: Structural Optimality Metric {#3.2.9}
 
 :::info[**Definition of the Weighted Optimality Score Balancing Symmetry and Homogeneity**]
 :::
@@ -790,7 +790,7 @@ Section 3.2.10 formalizes the properties of the QBD theorem regarding quantitati
 
 ### 3.2.11 Proof: Demonstration of the Optimal Vacuum {#3.2.11}
 
-:::tip[the **Formal Derivation of the Regular Bethe Fragment (k=3) from the Intersection of Constraints** <Ref id="3.2.1" label="§3.2.1" />]
+:::tip[**Formal Derivation of the Regular Bethe Fragment (k=3) from the Intersection of Constraints** <Ref id="3.2.1" label="§3.2.1" />]
 :::
 **I. The Candidate Set** The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by the **demonstration of the vacuum structure proof** <Ref id="3.1.12" label="§3.1.12" />. The proof seeks to identify the specific tree topology that maximizes the physical potential for geometrogenesis.
 
@@ -799,7 +799,7 @@ Section 3.2.11 formalizes the properties of the QBD proof regarding demonstratio
 
 ---
 
-### 3.3.1 Definition: The Annotated State Space {#3.3.1}
+### 3.3.1 Definition: Annotated State Space {#3.3.1}
 
 :::tip[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
 :::
@@ -810,7 +810,7 @@ Section 3.3.1 formalizes the properties of the QBD definition regarding the anno
 
 ---
 
-### 3.3.2 Definition: The Formal Symmetry Framework {#3.3.2}
+### 3.3.2 Definition: Formal Symmetry Framework {#3.3.2}
 
 :::tip[**Axiomatic Constraints on the Update Mechanism regarding Equivariance and Determinism**]
 :::
@@ -909,7 +909,7 @@ Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of
 
 ---
 
-### 3.4.4 Lemma: The First Geometric Quantum {#3.4.4}
+### 3.4.4 Lemma: First Geometric Quantum {#3.4.4}
 
 :::info[**Generation of the First 3-Cycle via Rewrite Acceptance**]
 :::
@@ -933,7 +933,7 @@ Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition prob
 
 ### 3.4.6 Proof: Demonstration of Inevitable Ignition {#3.4.6}
 
-:::tip[the **Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability** <Ref id="3.4.1" label="§3.4.1" />]
+:::tip[**Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability** <Ref id="3.4.1" label="§3.4.1" />]
 :::
 **I. The Metastable Hypothesis** The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$).
 
@@ -942,7 +942,7 @@ Section 3.4.6 formalizes the properties of the QBD proof regarding demonstration
 
 ---
 
-### 3.5.1 Definition: The Generalized Stabilizer Formulation {#3.5.1}
+### 3.5.1 Definition: Generalized Stabilizer Formulation {#3.5.1}
 
 :::tip[**Formal Specification of the Configuration Space and Stabilizer Constraints via Hilbert Space Embedding**]
 :::
@@ -953,7 +953,7 @@ The laws of physics operate as a topological quantum error-correcting code, util
 
 ---
 
-### 3.5.2 Theorem: The Stabilizer Isomorphism {#3.5.2}
+### 3.5.2 Theorem: Stabilizer Isomorphism {#3.5.2}
 
 :::info[**Isomorphism between Quantum Braid Dynamics and Stabilizer Quantum Error Correction established by Operator Mapping**]
 :::
@@ -1021,7 +1021,7 @@ Section 3.5.7 formalizes the properties of the QBD lemma regarding codespace non
 
 ### 3.5.8 Proof: Demonstration of the Stabilizer Isomorphism {#3.5.8}
 
-:::tip[the **Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction** <Ref id="3.5.2" label="§3.5.2" />]
+:::tip[**Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction** <Ref id="3.5.2" label="§3.5.2" />]
 :::
 **I. The Mapping Hypothesis** The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ that links the domain of physical graph theory to the domain of stabilizer quantum codes.
 
@@ -1030,7 +1030,7 @@ Section 3.5.8 formalizes the properties of the QBD proof regarding demonstration
 
 ---
 
-### 4.1.1 Definition: The Internal Causal Category {#4.1.1}
+### 4.1.1 Definition: Internal Causal Category {#4.1.1}
 
 :::tip[**Structure of Vertices and Directed Path Morphisms within a Single Snapshot**]
 :::
@@ -1041,7 +1041,7 @@ Section 4.1.1 formalizes the properties of the QBD definition regarding the inte
 
 ---
 
-### 4.1.2 Definition: The Historical Category {#4.1.2}
+### 4.1.2 Definition: Historical Category {#4.1.2}
 
 :::tip[**Structure of Causal Graphs utilizing History-Preserving Embeddings**]
 :::
@@ -1140,7 +1140,7 @@ Section 4.2.8 formalizes the properties of the QBD lemma regarding effective inf
 
 ---
 
-### 4.2.9 Lemma: The Partial Order Property {#4.2.9}
+### 4.2.9 Lemma: Partial Order Property {#4.2.9}
 
 :::info[**Strict Partial Order Structure of Effective Influence within the Internal Causal Category**]
 :::
@@ -1153,7 +1153,7 @@ Section 4.2.9 formalizes the properties of the QBD lemma regarding the partial o
 
 ### 4.2.10 Proof: Demonstration of Categorical Validity {#4.2.10}
 
-:::tip[the **Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$ categorical validity** <Ref id="4.2.1" label="§4.2.1" />]
+:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$ categorical validity** <Ref id="4.2.1" label="§4.2.1" />]
 :::
 **I. The Structural Hypothesis** We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
@@ -1162,7 +1162,7 @@ Section 4.2.10 formalizes the properties of the QBD proof regarding demonstratio
 
 ---
 
-### 4.3.1 Definition: The Annotated Category (AnnCG) {#4.3.1}
+### 4.3.1 Definition: Annotated Category (AnnCG) {#4.3.1}
 
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 :::
@@ -1173,7 +1173,7 @@ Section 4.3.1 formalizes the properties of the QBD definition regarding the anno
 
 ---
 
-### 4.3.2 Definition: The Awareness Endofunctor ($R_T$) {#4.3.2}
+### 4.3.2 Definition: Awareness Endofunctor ($R_T$) {#4.3.2}
 
 :::tip[**Endofunctor $R_T$ Adjoining Fresh Syndromes to Graph States**]
 :::
@@ -1184,7 +1184,7 @@ Section 4.3.2 formalizes the properties of the QBD definition regarding the awar
 
 ---
 
-### 4.3.3 Definition: The Context Extraction (Counit $\epsilon$) {#4.3.3}
+### 4.3.3 Definition: Context Extraction (Counit $\epsilon$) {#4.3.3}
 
 :::tip[**Natural Transformation Retrieving Prior Annotations**]
 :::
@@ -1195,7 +1195,7 @@ Section 4.3.3 formalizes the properties of the QBD definition regarding the cont
 
 ---
 
-### 4.3.4 Definition: The Meta-Check (Comultiplication $\delta$) {#4.3.4}
+### 4.3.4 Definition: Meta-Check (Comultiplication $\delta$) {#4.3.4}
 
 :::tip[**Natural Transformation Duplicating Diagnostic Data**]
 :::
@@ -1206,7 +1206,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding the meta
 
 ---
 
-### 4.3.5 Theorem: The Awareness Comonad {#4.3.5}
+### 4.3.5 Theorem: Awareness Comonad {#4.3.5}
 
 :::info[**Structural Realization of Self-Diagnosis via the Store Comonad**]
 :::
@@ -1252,7 +1252,7 @@ Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfa
 
 ### 4.3.9 Proof: Demonstration of the Awareness Comonad {#4.3.9}
 
-:::tip[the **Formal Derivation of the Self-Diagnostic Comonad Structure** <Ref id="4.3.5" label="§4.3.5" />]
+:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure** <Ref id="4.3.5" label="§4.3.5" />]
 :::
 **I. The Object Hypothesis** We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ as a candidate structure for a Comonad, intended to formalize self-reference.
 
@@ -1316,7 +1316,7 @@ Section 4.4.4 formalizes the properties of the QBD corollary regarding geometric
 
 ---
 
-### 4.4.5 Theorem: The Catalysis Coefficient {#4.4.5}
+### 4.4.5 Theorem: Catalysis Coefficient {#4.4.5}
 
 :::info[**Entropic Rate Enhancement Coefficient**]
 :::
@@ -1327,7 +1327,7 @@ Section 4.4.5 formalizes the properties of the QBD theorem regarding the catalys
 
 ---
 
-### 4.4.6 Theorem: The Friction Coefficient {#4.4.6}
+### 4.4.6 Theorem: Friction Coefficient {#4.4.6}
 
 :::info[**Statistical Normalization Constant**]
 :::
@@ -1338,7 +1338,7 @@ Section 4.4.6 formalizes the properties of the QBD theorem regarding the frictio
 
 ---
 
-### 4.5.1 Definition: The Universal Constructor {#4.5.1}
+### 4.5.1 Definition: Universal Constructor {#4.5.1}
 
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ with Thermodynamic Modulation**]
 :::
@@ -1349,7 +1349,7 @@ Spacetime updates are governed by a Universal Constructor that stochastically sc
 
 ---
 
-### 4.5.2 Definition: The Catalytic Tension Factor {#4.5.2}
+### 4.5.2 Definition: Catalytic Tension Factor {#4.5.2}
 
 :::tip[**Syndrome-Response Function Modulating Base Probabilities**]
 :::
@@ -1371,7 +1371,7 @@ Section 4.5.3 formalizes the properties of the QBD definition regarding addition
 
 ---
 
-### 4.5.4 Theorem: The Addition Probability {#4.5.4}
+### 4.5.4 Theorem: Addition Probability {#4.5.4}
 
 :::info[**Unitary Thermodynamic Acceptance Probability for Edge Creation**]
 :::
@@ -1393,7 +1393,7 @@ Section 4.5.5 formalizes the properties of the QBD definition regarding deletion
 
 ---
 
-### 4.5.6 Theorem: The Deletion Probability {#4.5.6}
+### 4.5.6 Theorem: Deletion Probability {#4.5.6}
 
 :::info[**Half-unit thermodynamic deletion probability**]
 :::
@@ -1404,7 +1404,7 @@ Section 4.5.6 formalizes the properties of the QBD theorem regarding the deletio
 
 ---
 
-### 4.6.1 Definition: The Evolution Operator {#4.6.1}
+### 4.6.1 Definition: Evolution Operator {#4.6.1}
 
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 :::
@@ -1415,7 +1415,7 @@ Section 4.6.1 formalizes the properties of the QBD definition regarding the evol
 
 ---
 
-### 4.6.2 Theorem: The Born Rule {#4.6.2}
+### 4.6.2 Theorem: Born Rule {#4.6.2}
 
 :::info[**Emergence of Product-Rule Transition Probabilities from Local Independence**]
 :::
@@ -1426,7 +1426,7 @@ Section 4.6.2 formalizes the properties of the QBD theorem regarding the born ru
 
 ---
 
-### 4.6.3 Theorem: The Thermodynamic Arrow {#4.6.3}
+### 4.6.3 Theorem: Thermodynamic Arrow {#4.6.3}
 
 :::info[**Irreversibility and entropy production in the evolution operator**]
 :::
@@ -1547,7 +1547,7 @@ Section 5.2.6 formalizes the properties of the QBD lemma regarding entropic & ca
 
 ---
 
-### 5.2.7 Proof: The Master Equation {#5.2.7}
+### 5.2.7 Proof: Master Equation {#5.2.7}
 
 :::tip[**Synthesis of Fluxes into the Net Rate Equation**]
 :::
@@ -1558,7 +1558,7 @@ Section 5.2.7 formalizes the properties of the QBD proof regarding the master eq
 
 ---
 
-### 5.3.1 Definition: The Region of Physical Viability {#5.3.1}
+### 5.3.1 Definition: Region of Physical Viability {#5.3.1}
 
 :::tip[**Criteria for a Stable Geometric Vacuum**]
 :::
@@ -1569,7 +1569,7 @@ Section 5.3.1 formalizes the properties of the QBD definition regarding the regi
 
 ---
 
-### 5.3.2 Definition: The Parameter Sweep Protocol {#5.3.2}
+### 5.3.2 Definition: Parameter Sweep Protocol {#5.3.2}
 
 :::tip[**Monte Carlo Exploration of the Phase Space**]
 :::
@@ -1580,7 +1580,7 @@ Section 5.3.2 formalizes the properties of the QBD definition regarding the para
 
 ---
 
-### 5.3.4 Definition: The Viability Channel {#5.3.4}
+### 5.3.4 Definition: Viability Channel {#5.3.4}
 
 :::tip[**Empirical Validation of the Axiomatic Constants**]
 :::
@@ -1591,7 +1591,7 @@ Section 5.3.4 formalizes the properties of the QBD definition regarding the viab
 
 ---
 
-### 5.4.1 Definition: The Transcendental Balance {#5.4.1}
+### 5.4.1 Definition: Transcendental Balance {#5.4.1}
 
 :::tip[**Equation Defining the Fixed Point via Flux Equality**]
 :::
@@ -1789,7 +1789,7 @@ Section 6.1.4 formalizes the properties of the QBD lemma regarding catalyzed ins
 
 ---
 
-### 6.1.5 Lemma: The Topological Barrier {#6.1.5}
+### 6.1.5 Lemma: Topological Barrier {#6.1.5}
 
 :::info[**Existence of topological protection barriers**]
 :::
@@ -1800,7 +1800,7 @@ Section 6.1.5 formalizes the properties of the QBD lemma regarding the topologic
 
 ---
 
-### 6.1.6 Proof: The Particle Necessity {#6.1.6}
+### 6.1.6 Proof: Particle Necessity {#6.1.6}
 
 :::tip[**Formal Demonstration of the Persistence of Non-Trivial Excitations via Reductio Ad Absurdum**]
 :::
@@ -1811,7 +1811,7 @@ Section 6.1.6 formalizes the properties of the QBD proof regarding the particle 
 
 ---
 
-### 6.2.1 Definition: The Tripartite Braid {#6.2.1}
+### 6.2.1 Definition: Tripartite Braid {#6.2.1}
 
 :::tip[**Structural Definition based on World-Tube Geometry and Group Generators**]
 :::
@@ -1822,7 +1822,7 @@ Section 6.2.1 formalizes the properties of the QBD definition regarding the trip
 
 ---
 
-### 6.2.2 Theorem: The Tripartite Braid Theorem {#6.2.2}
+### 6.2.2 Theorem: Tripartite Braid Theorem {#6.2.2}
 
 :::info[**Uniqueness of the Prime Three-Ribbon Structure established by Inductive Exclusion**]
 :::
@@ -1877,7 +1877,7 @@ Section 6.2.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ---
 
-### 6.2.7 Proof: The Tripartite Braid Theorem {#6.2.7}
+### 6.2.7 Proof: Tripartite Braid Theorem {#6.2.7}
 
 :::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
 :::
@@ -1965,7 +1965,7 @@ Section 6.3.7 formalizes the properties of the QBD proof regarding mass function
 
 ---
 
-### 6.4.1 Definition: The Linear Barrier {#6.4.1}
+### 6.4.1 Definition: Linear Barrier {#6.4.1}
 
 :::tip[**Computational Cost of Untying Prime Topologies requiring Global Coordination**]
 :::
@@ -1987,7 +1987,7 @@ Section 6.4.2 formalizes the properties of the QBD theorem regarding architectur
 
 ---
 
-### 6.4.3 Lemma: The Local Horizon {#6.4.3}
+### 6.4.3 Lemma: Local Horizon {#6.4.3}
 
 :::info[**Logarithmic Bound on Action Radius imposed by Causal Limits**]
 :::
@@ -1998,7 +1998,7 @@ Section 6.4.3 formalizes the properties of the QBD lemma regarding the local hor
 
 ---
 
-### 6.4.4 Lemma: The Global Unwinding Barrier {#6.4.4}
+### 6.4.4 Lemma: Global Unwinding Barrier {#6.4.4}
 
 :::info[**Linear Complexity of Untying demanding Isotopic Traversal**]
 :::
@@ -2020,7 +2020,7 @@ Section 6.4.5 formalizes the properties of the QBD proof regarding stability via
 
 ---
 
-### 7.1.1 Definition: The Spin Operator {#7.1.1}
+### 7.1.1 Definition: Spin Operator {#7.1.1}
 
 :::tip[**Parity Measurement of Rung Excitations using Z-Product Stabilizers**]
 :::
@@ -2086,7 +2086,7 @@ Section 7.2.1 formalizes the properties of the QBD theorem regarding pauli exclu
 
 ---
 
-### 7.2.2 Lemma: The Binary State Principle {#7.2.2}
+### 7.2.2 Lemma: Binary State Principle {#7.2.2}
 
 :::info[**Restriction of Edge Occupancy to Single-Bit Capacity**]
 :::
@@ -2119,7 +2119,7 @@ Section 7.2.4 formalizes the properties of the QBD proof regarding pauli exclusi
 
 ---
 
-### 7.3.1 Definition: The Charge Operator {#7.3.1}
+### 7.3.1 Definition: Charge Operator {#7.3.1}
 
 :::tip[**Formulation of Net Topological Charge using the Writhe Stabilizer**]
 :::
@@ -2218,9 +2218,9 @@ Section 7.4.1 formalizes the properties of the QBD definition regarding mass as 
 
 ---
 
-### 7.4.2 Theorem: The Topological Mass Functional {#7.4.2}
+### 7.4.2 Theorem: Topological Mass Functional {#7.4.2}
 
-:::info[**The Proportionality of Inertial Mass to Total Topological Complexity**]
+:::info[**Proportionality of Inertial Mass to Total Topological Complexity**]
 :::
 It is asserted that the rest mass $m$ of a fermion braid is determined by a functional of its topological complexity invariants. The mass functional is defined as:
 
@@ -2427,7 +2427,7 @@ Section 8.2.8 formalizes the properties of the QBD proof regarding emergence of 
 
 ---
 
-### 8.3.1 Definition: The Chiral Invariant {#8.3.1}
+### 8.3.1 Definition: Chiral Invariant {#8.3.1}
 
 :::tip[**Quantification of Handedness through Effective History Monotonicity**]
 :::
@@ -2504,7 +2504,7 @@ Section 8.3.7 formalizes the properties of the QBD lemma regarding mirror puc vi
 
 ---
 
-### 8.3.8 Proof: The Chiral Weak Interaction Structure {#8.3.8}
+### 8.3.8 Proof: Chiral Weak Interaction Structure {#8.3.8}
 
 :::tip[**Formal Derivation of the Complete Lie Algebra from Discrete Braid Generators**]
 :::
@@ -2779,7 +2779,7 @@ Section 9.1.5 formalizes the properties of the QBD proof regarding uniqueness ve
 
 ---
 
-### 9.2.1 Definition: The Penta-Ribbon {#9.2.1}
+### 9.2.1 Definition: Penta-Ribbon {#9.2.1}
 
 :::tip[**Structural Definition of the Five-Ribbon Braid as the Fundamental Object**]
 :::
@@ -3681,7 +3681,7 @@ Section 10.9.3 formalizes the properties of the QBD proof regarding computationa
 
 ---
 
-### 11.1.1 Definition: The GHW Metric {#11.1.1}
+### 11.1.1 Definition: GHW Metric {#11.1.1}
 
 :::tip[**Establishment of the Gromov-Hausdorff-Wasserstein Metric by the Integration of Geometric Isometry and Optimal Transport**]
 :::
@@ -3692,7 +3692,7 @@ Section 11.1.1 formalizes the properties of the QBD definition regarding the ghw
 
 ---
 
-### 11.1.2 Definition: The Undirected Shortest-Path Metric {#11.1.2}
+### 11.1.2 Definition: Undirected Shortest-Path Metric {#11.1.2}
 
 :::tip[**Definition of the Undirected Distance Function from the Symmetrization of the Causal Edge Set**]
 :::
@@ -3703,7 +3703,7 @@ Physical space emerges as a macroscopic phase transition in the causal network, 
 
 ---
 
-### 11.2.1 Definition: The Lazy Causal Measure {#11.2.1}
+### 11.2.1 Definition: Lazy Causal Measure {#11.2.1}
 
 :::tip[**Allocation of Probability Mass according to the Balanced Weighting of Past, Present, and Future Neighborhoods**]
 :::
@@ -3934,7 +3934,7 @@ Section 12.2.1 formalizes the properties of the QBD definition regarding discret
 
 ---
 
-### 12.2.2 Theorem: The Emergent Field Equations {#12.2.2}
+### 12.2.2 Theorem: Emergent Field Equations {#12.2.2}
 
 :::info[**Formal Establishment of the Linear Proportionality between the Discrete Einstein Tensor and the Stress-Energy Tensor at Homeostatic Fixed Point**]
 :::
@@ -4101,7 +4101,7 @@ Section 13.1.5 formalizes the properties of the QBD lemma regarding smoothness v
 
 ### 13.1.6 Proof: Smooth Manifold Limit {#13.1.6}
 
-:::tip[**The Synthesis of Spectral Convergence and Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
+:::tip[**Synthesis of Spectral Convergence and Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
 :::
 **I. Convergence of the Spectral Data** From the **Spectral Convergence Lemma** <Ref id="13.1.3" label="§13.1.3" />, the sequence of consistently weighted Laplacians $\{\tilde{\mathcal{L}}_t\}$ converges to the continuum Laplace-Beltrami operator $-\Delta_g$ in the sense of strong resolvent convergence. This implies two critical convergences as $N_t \to \infty$: 1.  **Eigenvalue Stability:** $\tilde{\lambda}_k^{(t)} \to \lambda_k$ uniformly for any fixed $k$. 2.  **Eigenfunction Convergence:** $\psi_k^{(t)} \to f_k$ in the $L^2$-norm induced by the Gromov-Hausdorff approximation. This establishes that the spectral invariants of the discrete graphs stabilize to those of a limit operator defined on the limit metric space $X = \lim_{GH} G_t$.
 
@@ -4176,7 +4176,7 @@ Section 13.2.6 formalizes the properties of the QBD proof regarding tensorial co
 
 ---
 
-### 13.3.1 Definition: The Emergent Light Cone {#13.3.1}
+### 13.3.1 Definition: Emergent Light Cone {#13.3.1}
 
 :::tip[**Definition of the Causal Tangent Subspace via the Closed Conical Hull of Directed Edge Distributions**]
 :::
@@ -4209,7 +4209,7 @@ Section 13.3.3 formalizes the properties of the QBD lemma regarding causal drift
 
 ---
 
-### 13.3.4 Lemma: The Null Boundary {#13.3.4}
+### 13.3.4 Lemma: Null Boundary {#13.3.4}
 
 :::info[**Boundedness of the Edge Direction Distribution Defining the Causal Aperture**]
 :::
@@ -4231,7 +4231,7 @@ Section 13.3.5 formalizes the properties of the QBD proof regarding signature se
 
 ---
 
-### 14.1.1 Definition: The Lapse Function {#14.1.1}
+### 14.1.1 Definition: Lapse Function {#14.1.1}
 
 :::tip[**Definition of the Lapse Function arising from the Continuum Limit of Proper Time and Logical Timestamp Ratios**]
 :::
@@ -4275,7 +4275,7 @@ Section 14.1.5 formalizes the properties of the QBD lemma regarding sobolev conv
 
 ---
 
-### 14.1.6 Proof: The Smooth Time Foliation {#14.1.6}
+### 14.1.6 Proof: Smooth Time Foliation {#14.1.6}
 
 :::tip[**Formal Synthesis of the Global Time Foliation via Monotonic Ordering and Sobolev Regularity**]
 :::
@@ -4286,7 +4286,7 @@ Section 14.1.6 formalizes the properties of the QBD proof regarding the smooth t
 
 ---
 
-### 14.2.1 Definition: The Lorentzian Metric {#14.2.1}
+### 14.2.1 Definition: Lorentzian Metric {#14.2.1}
 
 :::tip[**Definition of the Emergent Pseudo-Riemannian Metric Tensor following the Arnowitt-Deser-Misner Decomposition**]
 :::
@@ -4297,7 +4297,7 @@ Section 14.2.1 formalizes the properties of the QBD definition regarding the lor
 
 ---
 
-### 14.2.2 Theorem: The Emergent Lorentzian Manifold {#14.2.2}
+### 14.2.2 Theorem: Emergent Lorentzian Manifold {#14.2.2}
 
 :::info[**Derivation of the Global Spacetime Structure from the Sequence of Causal Graphs**]
 :::
@@ -4308,7 +4308,7 @@ Section 14.2.2 formalizes the properties of the QBD theorem regarding the emerge
 
 ---
 
-### 14.2.3 Lemma: The Emergent Tetrad {#14.2.3}
+### 14.2.3 Lemma: Emergent Tetrad {#14.2.3}
 
 :::info[**Derivation of the Local Orthonormal Frame Field resulting from Principal Component Analysis**]
 :::
@@ -4363,7 +4363,7 @@ Section 14.2.7 formalizes the properties of the QBD lemma regarding geodesic mot
 
 ---
 
-### 14.2.8 Proof: The Emergence of Relativistic Dynamics {#14.2.8}
+### 14.2.8 Proof: Emergence of Relativistic Dynamics {#14.2.8}
 
 :::tip[**Formal Synthesis of the Einsteinian Kinematic Framework via Geometric and Statistical Convergence**]
 :::
@@ -4374,7 +4374,7 @@ Section 14.2.8 formalizes the properties of the QBD proof regarding the emergenc
 
 ---
 
-### 14.3.1 Definition: The Wightman Axioms {#14.3.1}
+### 14.3.1 Definition: Wightman Axioms {#14.3.1}
 
 :::tip[**Definition of the Necessary and Sufficient Conditions for a Consistent Relativistic Quantum Field Theory**]
 :::
@@ -4418,7 +4418,7 @@ Section 14.3.4 formalizes the properties of the QBD lemma regarding vacuum invar
 
 ---
 
-### 14.3.5 Lemma: The Spectral Condition {#14.3.5}
+### 14.3.5 Lemma: Spectral Condition {#14.3.5}
 
 :::info[**Proof of the Positive Energy Spectrum necessitated by the Non-Negativity of Topological Mass Complexity**]
 :::
@@ -4440,7 +4440,7 @@ Section 14.3.6 formalizes the properties of the QBD lemma regarding microcausali
 
 ---
 
-### 14.3.7 Lemma: The Spin-Statistics Relation {#14.3.7}
+### 14.3.7 Lemma: Spin-Statistics Relation {#14.3.7}
 
 :::info[**Linkage of Half-Integer Spin to Fermi-Dirac Statistics demanded by the Requirement of Consistency with Lorentz Invariance**]
 :::
@@ -4462,7 +4462,7 @@ Section 14.3.8 formalizes the properties of the QBD proof regarding formal synth
 
 ---
 
-### 14.4.1 Theorem: The First Law of Entanglement {#14.4.1}
+### 14.4.1 Theorem: First Law of Entanglement {#14.4.1}
 
 :::info[**Equivalence of Horizon Entropy Change and Energy Flux**]
 :::
@@ -4473,7 +4473,7 @@ Section 14.4.1 formalizes the properties of the QBD theorem regarding the first 
 
 ---
 
-### 14.4.2 Theorem: The Einstein Field Equations {#14.4.2}
+### 14.4.2 Theorem: Einstein Field Equations {#14.4.2}
 
 :::info[**Derivation of the Einstein Tensor as the Equation of State for Entanglement Entropy**]
 :::
@@ -4506,7 +4506,7 @@ Section 15.1.1 formalizes the properties of the QBD definition regarding topolog
 
 ---
 
-### 15.1.2 Definition: The Bi-Metric Structure {#15.1.2}
+### 15.1.2 Definition: Bi-Metric Structure {#15.1.2}
 
 :::tip[**Formal Distinction between Intrinsic Graph Metric and Emergent Manifold Metric**]
 :::
@@ -4517,7 +4517,7 @@ Section 15.1.2 formalizes the properties of the QBD definition regarding the bi-
 
 ---
 
-### 15.1.3 Theorem: The Distance Gap {#15.1.3}
+### 15.1.3 Theorem: Distance Gap {#15.1.3}
 
 :::tip[**Condition for the Necessary Divergence of Geodesics at an Entanglement Bridge**]
 :::
@@ -4539,7 +4539,7 @@ Section 15.1.4 formalizes the properties of the QBD lemma regarding stabilizer c
 
 ---
 
-### 15.1.5 Lemma: The Manifold Screening Condition {#15.1.5}
+### 15.1.5 Lemma: Manifold Screening Condition {#15.1.5}
 
 :::tip[**Establishment of the Vanishing Measure Criterion for Entanglement Bridges in the Continuum Limit**]
 :::
@@ -4583,7 +4583,7 @@ Section 15.2.2 formalizes the properties of the QBD lemma regarding path integra
 
 ---
 
-### 15.2.3 Lemma: The Correlation Bridge {#15.2.3}
+### 15.2.3 Lemma: Correlation Bridge {#15.2.3}
 
 :::tip[**Establishment of Correlation Decay Dependence on Topological Adjacency**]
 :::
@@ -4594,7 +4594,7 @@ Section 15.2.3 formalizes the properties of the QBD lemma regarding the correlat
 
 ---
 
-### 15.2.4 Lemma: The Tsirelson Bound {#15.2.4}
+### 15.2.4 Lemma: Tsirelson Bound {#15.2.4}
 
 :::tip[**Establishment of the Maximum Quantum Correlation Limit via Unitary Constraints**]
 :::
@@ -4627,7 +4627,7 @@ Entangled quantum states behave as shortcuts in the causal network, meaning that
 
 ---
 
-### 15.3.2 Lemma: The Isoperimetric Deficit {#15.3.2}
+### 15.3.2 Lemma: Isoperimetric Deficit {#15.3.2}
 
 :::tip[**Establishment of the Isoperimetric Inequality Violation via Topological Shortcuts**]
 :::
@@ -4638,7 +4638,7 @@ Section 15.3.2 formalizes the properties of the QBD lemma regarding the isoperim
 
 ---
 
-### 15.3.3 Lemma: The Emergent Throat {#15.3.3}
+### 15.3.3 Lemma: Emergent Throat {#15.3.3}
 
 :::tip[**Establishment of the Holographic Minimal Surface Coincident with the Entanglement Bridge**]
 :::
@@ -4664,14 +4664,14 @@ Section 15.3.4 formalizes the properties of the QBD lemma regarding teleportatio
 
 :::tip[**Formal Verification of the Topological Isomorphism between Entangled States and Einstein-Rosen Bridges**]
 :::
-**I. The Topological Premise (EPR)** Let the system state $|\Psi_{AB}\rangle$ be defined by a bipartite entanglement structure on the causal graph $G$, characterized by a non-zero von Neumann entropy $S_A > 0$. By the Entanglement Bridge Lemma **Entanglement Bridge Lemma** <Ref id="15.1.1" label="§15.1.1" />, this state necessitates the existence of a set of stabilizer edges $E_{bridge}$ connecting subgraphs $A$ and $B$ such that: 1.  **Connectivity:** $d_{topo}(A, B) = 1$. 2.  **Capacity:** $|E_{bridge}| \propto S_A$.
+**I. The Topological Premise (EPR)** Let the system state $|\Psi_{AB}\rangle$ be defined by a bipartite entanglement structure on the causal graph $G$, characterized by a non-zero von Neumann entropy $S_A > 0$. By the Entanglement Bridge Lemma **Entanglement Bridge Lemma** [§15.1.1](/monograph/stage/epr/15.1/#15.1.1), this state necessitates the existence of a set of stabilizer edges $E_{bridge}$ connecting subgraphs $A$ and $B$ such that: 1.  **Connectivity:** $d_{topo}(A, B) = 1$. 2.  **Capacity:** $|E_{bridge}| \propto S_A$.
 
 **In Plain English:**  
 Section 15.3.5 formalizes the properties of the QBD proof regarding formal synthesis of er=epr.
 
 ---
 
-### 15.4.1 Definition: The History Ensemble {#15.4.1}
+### 15.4.1 Definition: History Ensemble {#15.4.1}
 
 :::tip[**Formalization of the Path Integral as a Constrained Cobordism**]
 :::
@@ -4704,7 +4704,7 @@ Section 15.4.3 formalizes the properties of the QBD lemma regarding ensemble ind
 
 ---
 
-### 15.4.4 Lemma: The Block Universe as Fixed Point {#15.4.4}
+### 15.4.4 Lemma: Block Universe as Fixed Point {#15.4.4}
 
 :::tip[**Establishment of the Spacetime Cobordism as a Boundary Value Solution**]
 :::
@@ -4726,7 +4726,7 @@ Section 15.4.5 formalizes the properties of the QBD proof regarding formal synth
 
 ---
 
-### 16.1.1 Definition: The Causal Tensor Network {#16.1.1}
+### 16.1.1 Definition: Causal Tensor Network {#16.1.1}
 
 :::tip[**Formalization of the Renormalization Group Flow as a Geometric Embedding**]
 :::
@@ -4737,7 +4737,7 @@ Section 16.1.1 formalizes the properties of the QBD definition regarding the cau
 
 ---
 
-### 16.1.2 Theorem: The Ryu-Takayanagi Correspondence {#16.1.2}
+### 16.1.2 Theorem: Ryu-Takayanagi Correspondence {#16.1.2}
 
 :::tip[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
 :::
@@ -4748,7 +4748,7 @@ Section 16.1.2 formalizes the properties of the QBD theorem regarding the ryu-ta
 
 ---
 
-### 16.1.3 Lemma: The Isometry Condition {#16.1.3}
+### 16.1.3 Lemma: Isometry Condition {#16.1.3}
 
 :::tip[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
 :::
@@ -4770,7 +4770,7 @@ Section 16.1.4 formalizes the properties of the QBD proof regarding formal synth
 
 ---
 
-### 16.2.1 Definition: The Bulk Saturation Limit {#16.2.1}
+### 16.2.1 Definition: Bulk Saturation Limit {#16.2.1}
 
 :::tip[**Formalization of the Maximum Topological Density**]
 :::
@@ -4792,7 +4792,7 @@ The information density of any bounded space is strictly limited by its surface 
 
 ---
 
-### 16.2.3 Lemma: The Holographic Screen Mechanism {#16.2.3}
+### 16.2.3 Lemma: Holographic Screen Mechanism {#16.2.3}
 
 :::tip[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
 :::
@@ -4825,7 +4825,7 @@ Section 16.2.5 formalizes the properties of the QBD proof regarding formal synth
 
 ---
 
-### 17.1.1 Definition: The Causal Tube {#17.1.1}
+### 17.1.1 Definition: Causal Tube {#17.1.1}
 
 :::tip[**Formalization of the Braid Trajectory as a Topological Cobordism**]
 :::
@@ -4891,7 +4891,7 @@ Section 17.2.2 formalizes the properties of the QBD theorem regarding spectral i
 
 ---
 
-### 17.2.3 Lemma: The T-Gate Phase {#17.2.3}
+### 17.2.3 Lemma: T-Gate Phase {#17.2.3}
 
 :::tip[**Establishment of the GSO Projection via Non-Clifford Rotation**]
 :::
@@ -4913,7 +4913,7 @@ Section 17.2.4 formalizes the properties of the QBD proof regarding formal synth
 
 ---
 
-### 17.3.1 Theorem: The Chiral Split (Bosonic Left / Super Right) {#17.3.1}
+### 17.3.1 Theorem: Chiral Split (Bosonic Left / Super Right) {#17.3.1}
 
 :::tip[**Establishment of the Heterotic Worldsheet Decomposition**]
 :::
@@ -4990,7 +4990,7 @@ Section 17.4.2 formalizes the properties of the QBD theorem regarding emergence 
 
 ---
 
-### 17.4.3 Lemma: The Unimodular Basis (Modular Invariance) {#17.4.3}
+### 17.4.3 Lemma: Unimodular Basis (Modular Invariance) {#17.4.3}
 
 :::tip[**Establishment of the Self-Dual Lattice Constraint via One-Loop Unitarity**]
 :::
@@ -5001,7 +5001,7 @@ Section 17.4.3 formalizes the properties of the QBD lemma regarding the unimodul
 
 ---
 
-### 17.4.4 Lemma: The Standard Model Embedding {#17.4.4}
+### 17.4.4 Lemma: Standard Model Embedding {#17.4.4}
 
 :::tip[**Establishment of the Standard Model Gauge Group as a Subgroup of E8**]
 :::
@@ -5023,7 +5023,7 @@ Section 17.4.5 formalizes the properties of the QBD lemma regarding anomaly canc
 
 ---
 
-### 17.4.6 Lemma: The Landscape from Braid Vacua {#17.4.6}
+### 17.4.6 Lemma: Landscape from Braid Vacua {#17.4.6}
 
 :::tip[**Establishment of the Vacuum Moduli Space via Knot Invariants**]
 :::

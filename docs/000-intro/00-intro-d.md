@@ -9,7 +9,7 @@ sidebar_label: "c. 1950–2025"
 
 If Einstein established the stage, it was John Archibald Wheeler who attempted to dismantle it to find what lay beneath. Wheeler, a physicist of immense imagination who had worked with both Niels Bohr on nuclear fission and Albert Einstein on unification, spent the mid-20th century obsessed with a radical unification program known as Geometrodynamics. His intellectual journey from “Everything is Geometry” to “Everything is Information” represents the pivot point of modern physics.
 
-:::info[**The Failure of “Everything is Geometry”**]
+:::info[**Failure of “Everything is Geometry”**]
 :::
 
 Wheeler’s ambition in the 1950s and 60s was to eliminate “matter” entirely. He proposed that particles like electrons and protons were not foreign objects placed on the stage of spacetime, but were rather intense, localized knots of curvature in spacetime itself, structures he termed “geons” (gravitational electromagnetic entities). In this monistic view, there was no “It” separate from the geometry; there was only empty curved space. A charge was not a particle but a “wormhole” mouth trapping lines of force.
@@ -18,7 +18,7 @@ However, this dream of a pure geometric ontology collapsed under the weight of q
 
 This personal failure drove Wheeler toward a profound philosophical pivot. If geometry was not the bottom, what was? His interactions with his student Jacob Bekenstein regarding the thermodynamics of black holes provided the spark for a new ontology that would eventually be called “It from Bit.”
 
-:::info[**The Teacup and the Black Hole: Exploring the Entropy of the Void**]
+:::info[**Teacup and the Black Hole: Exploring the Entropy of the Void**]
 :::
 
 In the early 1970s, Wheeler challenged his PhD student Jacob Bekenstein with a thought experiment that would ultimately destroy the concept of a classical continuum. Wheeler, alluding to the Second Law of Thermodynamics, joked about committing a “crime” by mixing hot tea with cold tea, thereby increasing the entropy of the universe without doing work. He noted that if he threw the teacup into a black hole, the entropy would seemingly vanish from the observable universe, violating the Second Law. The black hole, according to classical General Relativity, was a featureless pit; it had “no hair” (a phrase popularized by Wheeler, which his wife Janette purportedly noted showed his “naughty side”). If it had no internal features, it could have no entropy.
@@ -47,7 +47,7 @@ Wheeler pushed this logic to its extreme with the concept of “Law without Law.
 
 The most direct heir to the idea that the continuum is an illusion is Causal Set Theory (CST), championed by Raphael Sorkin and Fay Dowker. Dowker, a Professor of Theoretical Physics at Imperial College London, possesses a direct lineage to the architects of spacetime thermodynamics; she completed her PhD under Stephen Hawking in 1990. Her work represents a mathematization of Wheeler’s intuition that the “deepest bottom” is discrete.
 
-:::info[**The Rejection of the Continuum**]
+:::info[**Rejection of the Continuum**]
 :::
 
 Dowker and Sorkin argue that if one takes the “It from Bit” seriously, one must abandon the notion of continuous space at the Planck scale. General Relativity predicts its own demise through singularities, points where the curvature becomes infinite and the laws of physics break down. To Dowker, singularities are not errors but signals: they indicate that the continuum assumption is merely an approximation, much like fluid mechanics is an approximation of discrete atoms. Just as water appears smooth but is composed of discrete molecules, spacetime appears smooth but is composed of discrete “atoms” of causality.
@@ -59,7 +59,7 @@ The Core Thesis of Causal Set Theory:
 
 In the CST framework, the universe begins with a partially ordered set (poset). The “It” is the causal link itself. A spacetime geometry is recovered only when one “sprinkles” these causal points into a manifold via a Poisson process, much like a Pointillist painting reveals an image only from a distance. This “sprinkling” is critical because it addresses a major problem in discrete gravity: the violation of Lorentz invariance. A regular grid (like a chessboard) violates relativity because it has preferred directions. A random sprinkling, however, preserves Lorentz symmetry statistically, allowing the smooth manifold of Einstein to emerge from the discrete dust of causal sets.
 
-:::info[**The “Birthing” of Time**]
+:::info[**“Birthing” of Time**]
 :::
 
 As Dowker notes, “The causal structure is the substance of the theory.” This approach radically reinterprets the passage of time. In the Einsteinian “Block Universe,” all of spacetime (past, present, future) exists simultaneously; the “now” is a subjective illusion. In Causal Set Theory, the universe is a “growing set.” New atoms of spacetime are born sequentially, adhering to specific probabilistic rules known as Classical Sequential Growth dynamics.
@@ -93,7 +93,7 @@ When applied to gravity, this relational perspective leads to Loop Quantum Gravi
 
 Crucially, these areas and volumes are quantized. Just as an electron can only have specific energy levels, space itself can only exist in discrete “packets” of volume ($10^{-99}$ cm³). These networks do not exist in space; they are space. A “spin foam” describes the evolution of these networks.
 
-:::info[**The Thermal Time Hypothesis**]
+:::info[**Thermal Time Hypothesis**]
 :::
 
 Perhaps the most radical consequence of Rovelli’s work is the Thermal Time Hypothesis. In the fundamental equations of LQG (the Wheeler-DeWitt equation), the variable $t$ (time) disappears entirely. The theory describes how physical variables change with respect to one another (e.g., how the position of a pendulum changes with respect to the position of a clock hand), but there is no external “time” governing the whole.
@@ -106,7 +106,7 @@ If time is not fundamental, why do we experience it? Rovelli argues that time is
 
 The third and perhaps most dominant path of the late 20th century fuses Wheeler’s information theory with High Energy Physics and String Theory. This movement, often unified under the slogan “It from Qubit,” posits that spacetime is a hologram. This field is led by figures like Juan Maldacena at the Institute for Advanced Study, Leonard Susskind at Stanford, and the researchers of the Simons Collaboration on “It from Qubit.”
 
-:::info[**The AdS/CFT Correspondence**]
+:::info[**AdS/CFT Correspondence**]
 :::
 
 In 1997, Juan Maldacena made a discovery that shook the foundations of physics: the AdS/CFT correspondence. He showed that a theory of quantum gravity (String Theory) in a bulk, saddle-shaped 3D space (Anti-de Sitter space or AdS) is mathematically equivalent to a quantum field theory (Conformal Field Theory or CFT) living on its 2D boundary.
@@ -167,7 +167,7 @@ To fully grasp the magnitude of this revolution, one must compare how these dist
      Boundary: 01101  --->  Bulk Geometry: (Spacetime)
 ```
 
-:::info[**The Shift from “Law” to “Code”**]
+:::info[**Shift from “Law” to “Code”**]
 :::
 
 A subtle but profound trend visible across these theories is the shift from physics as “Law” (binding differential equations acting on a continuum) to physics as “Code” (algorithmic rules acting on discrete data).
@@ -202,7 +202,7 @@ In 1900, Hilbert wished to axiomatize physics. While his specific continuum-base
 ╚══════════════════╩════════════════════════╩══════════════════════════╝
 ```
 
-:::info[**The End of the “View from Nowhere”**]
+:::info[**End of the “View from Nowhere”**]
 :::
 
 Classical physics assumed an objective state of the world that existed independent of observation, a “God’s eye view.” Wheeler, Rovelli, and Dowker all dismantle this.

@@ -29,7 +29,7 @@ Descartes’ contribution was the strict mechanization of the universe. There we
 
 Isaac Newton (1642–1727) stands as the synthesizer who integrated the discrete atoms of Democritus, the void of the Stoics, the inertia of Buridan/Galileo, and the mathematics of Archimedes into a single coherent system. But Newton was also an alchemist and a theologian, and his physics was deeply informed by his quest for the divine structure of reality.
 
-:::info[**The Alchemical Roots and Action at a Distance**]
+:::info[**Alchemical Roots and Action at a Distance**]
 :::
 
 Newton was not a sterile materialist. He spent more time on alchemy and biblical chronology than on physics. His alchemical studies, influenced by the Arab alchemist Jabir ibn Hayyan (Geber) and the text Summa Perfectionis, conditioned him to think about “active principles” in matter, forces that could operate across space, like fermentation or attraction. This alchemical mindset likely made him more open to the concept of Gravity, an invisible force acting across a void, which the strict mechanists like Descartes rejected as “occult.”
@@ -41,7 +41,7 @@ Newton faced a metaphysical problem. If he accepted the Cartesian view that spac
 
 This concept was heavily influenced by the Cambridge Platonist Henry More (1614–1687). More argued against Descartes, claiming that if God is infinite/omnipresent, and space is infinite, then Space must be an attribute of God. More called space the “Spirit of Nature.” Newton adopted this, viewing Absolute Space as the “Sensorium of God,” the infinite, immovable stage upon which the divine will operates and the atoms move. This allowed Newton to embrace the Void of the atomists without succumbing to their atheism; the Void was not “nothing,” it was the presence of God.
 
-:::info[**The Final “It”: Mass and Gravity**]
+:::info[**Final “It”: Mass and Gravity**]
 :::
 
 Newton’s definition of the “Ultimate It” was formalized as Mass (quantity of matter). He stripped the impetus theory of its medieval baggage. Motion was no longer a quality inside the body; it was a state (status). A body in motion is just a body in a different relationship to Absolute Space.
@@ -56,7 +56,7 @@ In the Principia (1687), Newton united the celestial and the terrestrial. The fo
 
 Long before the quantum revolution dissolved matter into wave functions, Gottfried Wilhelm Leibniz mounted a formidable challenge to the materialist atomism that underpinned Newtonian physics. While Newton envisioned a universe of absolute space filled with hard, impenetrable particles acting under divine laws, Leibniz proposed a reality constructed of Monads, simple, immaterial substances that perceived the universe from their unique perspectives.
 
-:::info[**The Monad as a Unit of Information (“Bit”)**]
+:::info[**Monad as a Unit of Information (“Bit”)**]
 :::
 
 The divergence between the Newtonian “atom” and the Leibnizian “monad” constitutes a fundamental disagreement about the nature of existence. Newton’s atoms were physical “stuff” occupying absolute space, inert lumps waiting for a force to move them. In contrast, Leibniz’s monads possessed no spatial extension and no constituent parts. They were, in a modern sense, units of proto-information, defined not by their shape or mass, but by their internal state of perception.
@@ -93,7 +93,7 @@ For Maupertuis, this was proof of a wise Creator. A blind mechanism might be ine
 
 Maupertuis framed “Action” not merely as a physical quantity but as Nature’s “budget” or “fund” ($fonds$). He argued that nature saves up this quantity, treating action as a resource that must be expended sparingly. This economic metaphor was radical; it shifted the focus from the instantaneous push-and-pull of forces to a holistic assessment of the entire path of motion. The particle does not just react to the immediate force; it minimizes the cost of the entire journey.
 
-:::info[**The Dr. Akakia Scandal: Satire as Peer Review**]
+:::info[**Dr. Akakia Scandal: Satire as Peer Review**]
 :::
 
 The reception of Maupertuis’s principle was not universally reverent. It sparked one of the most vicious intellectual feuds of the Enlightenment, culminating in the Diatribe of Doctor Akakia by Voltaire.
@@ -104,7 +104,7 @@ In Dr. Akakia, Voltaire mercilessly lampooned Maupertuis. He did not attack the 
 
 The satire was so devastating that Frederick the Great, Maupertuis’s patron, ordered the pamphlet burned and Voltaire arrested, effectively ending Maupertuis’s public credibility. This episode illustrates a crucial moment in the history of physics: the purging of overt theology from physical laws. While the principle survived, its metaphysical baggage was jettisoned by the mathematicians who followed. The “Action” remained, but the “God” who minimized it was slowly replaced by the abstract requirements of the calculus of variations.
 
-:::info[**The Mathematization of Action: Euler, Lagrange, and Hamilton**]
+:::info[**Mathematization of Action: Euler, Lagrange, and Hamilton**]
 :::
 
 Leonhard Euler, though a friend and defender of Maupertuis, began the process of stripping the principle of its theological gloss. In his 1744 work, Euler formulated a variational principle for mechanics, the Methodus inveniendi, which laid the groundwork for the calculus of variations. Euler showed that the path of a particle minimizes the integral of momentum over distance. However, Euler maintained a geometric, intuitive approach, relying on diagrams and the geometric interpretation of small variations.
@@ -143,7 +143,7 @@ Maupertuis’s principle of least action, stripped of its theological justificat
 
 While analytical mechanics refined the description of reversible motion, a separate revolution was dismantling the concept of the eternal, static universe. The laws of thermodynamics introduced the concept of Energy as the fundamental currency of physical interactions and Entropy as the arbiter of time’s direction.
 
-:::info[**The Conservation of Force (Energy)**]
+:::info[**Conservation of Force (Energy)**]
 :::
 
 In the mid-19th century, the caloric theory, which treated heat as a subtle, indestructible fluid, collapsed under the weight of experimental anomalies. Julius Robert Mayer, James Prescott Joule, and Hermann von Helmholtz independently converged on the principle of the conservation of energy.
@@ -180,7 +180,7 @@ Michael Faraday, lacking formal mathematical training, visualized lines of force
 
 James Clerk Maxwell translated Faraday’s intuition into the language of differential equations. Maxwell’s equations demonstrated that electric and magnetic fields propagated as waves at the speed of light, unifying optics and electromagnetism. However, this triumph birthed a new “It”: the Luminiferous Ether.
 
-:::info[**The Burden of the Ether**]
+:::info[**Burden of the Ether**]
 :::
 
 If light is a wave, it must wave something. The ether was postulated as an all-pervasive, elastic solid that filled the vacuum. It had to be rigid enough to support high-frequency transverse waves (light) yet tenuous enough to allow planets to pass through it without drag.

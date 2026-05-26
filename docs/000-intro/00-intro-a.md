@@ -62,7 +62,7 @@ Popular retellings of history portray physics as incremental progress toward a m
 
 ### The Pre-Socratic “Cut” and the Crisis of Becoming
 
-:::info[**The Milesian Materialists and the Search for Arche**]
+:::info[**Milesian Materialists and the Search for Arche**]
 :::
 
 The earliest recorded physical inquiries in the Western tradition emerged in the 6th century BCE in Miletus, a prosperous Ionian port city where the convergence of cultures sparked a new mode of thinking. Here, the wise sought the arche, the originating principle or source substance from which all diverse phenomena are derived. Thales (c. 624–546 BCE), often cited as the first philosopher, posited water as this fundamental “It.”
@@ -71,7 +71,7 @@ While this might seem like a naive chemical observation to the modern reader, Th
 
 However, Thales’ student, Anaximander (c. 610–546 BCE), recognized a logical flaw in identifying the arche with a specific element like water. If water is the fundamental substance, how can it generate its opposite, fire? To solve this, Anaximander introduced the concept of the Apeiron, the Boundless or the Unlimited. The Apeiron was an indefinite, infinite primordial mass, distinct from the observable elements, from which the opposites (hot/cold, wet/dry) separated out. This was a striking leap of abstraction: the “Ultimate It” was a theoretical entity, a precursor to the modern concept of an abstract field or energy vacuum.
 
-:::info[**The Eleatic Crisis: Being vs. Becoming**]
+:::info[**Eleatic Crisis: Being vs. Becoming**]
 :::
 
 The progress of early Greek physics was abruptly halted by a crisis of logic introduced by Parmenides of Elea (c. 515–450 BCE). Parmenides fundamentally challenged the validity of sensory experience and the very possibility of change. His argument was stark and devastatingly simple: Anything that can be thought or spoken of must exist (“Being”). “Nothing” (Non-Being) cannot exist, nor can it be thought of. For change to occur, “what is” must either come from “what is not” (generation) or pass into “what is not” (destruction). Since “what is not” does not exist, generation and destruction are logically impossible.
@@ -84,7 +84,7 @@ Parmenides concluded that reality is a single, static, ungenerated, and indestru
 
 In response to the Eleatic paralysis, two civilizations, separated by thousands of miles, independently arrived at the same solution: Atomism. This simultaneous genesis suggests that the concept of the “atom” is not a cultural artifact but a cognitive necessity when the human mind attempts to reconcile the discrete and the continuous.
 
-:::info[**The Greek Solution: Democritus and the Void**]
+:::info[**Greek Solution: Democritus and the Void**]
 :::
 
 Leucippus and his pupil Democritus (c. 460–370 BCE) solved Parmenides’ riddle by redefining the nature of “Non-Being.” They proposed a radical ontological innovation: the Void (kenon) exists just as much as the Full (pleres). By granting existence to the Void (“what is not”), they provided a stage upon which “what is” (the atoms) could move.
@@ -93,14 +93,14 @@ Democritean atoms (atomos, “uncuttable”) were infinite in number, eternal, a
 
 This was the birth of the mechanistic universe. The Democritean world had no purpose, no divine design, and no “prime mover.” It was a world driven by necessity (ananke), governed by the blind collisions of matter in the dark. However, this model had a significant limitation: it lacked a dynamic agent. Democritus could explain that atoms moved (perhaps by an eternal chaotic motion), but he struggled to explain why they combined to form complex structures beyond the primitive mechanical analogy of atoms having “hooks” and “barbs.”
 
-:::info[**The Vedic Solution: Vaisheshika and the Logic of Particulars**]
+:::info[**Vedic Solution: Vaisheshika and the Logic of Particulars**]
 :::
 
 Remarkably, in a nearly synchronous development on the Indian subcontinent (approx. 6th–2nd century BCE), the sage Kaṇāda founded the Vaisheshika school of philosophy, formulating an atomic theory that was, in many respects, more logically rigorous and structurally complex than its Greek counterpart.
 
 While the Greeks were driven to atomism to solve the problem of motion, the Indian thinkers were driven by the problem of divisibility and the logic of parts and wholes. The Vaisheshika Sutras argue via reductio ad absurdum: if matter were infinitely divisible, then a mountain and a mustard seed would be of equal size, as both would contain an infinite number of parts. To preserve the distinction of magnitude, there must be a limit to division: the Paramanu (ultimate particle).
 
-:::info[**The Qualitative Atom and the Architecture of Matter**]
+:::info[**Qualitative Atom and the Architecture of Matter**]
 :::
 
 Unlike the qualitative barrenness of Greek atoms, Vaisheshika atoms were classified qualitatively into four types corresponding to the eternal elements: Earth, Water, Fire, and Air. Each Paramanu possessed specific inherent qualities (vishesha) that distinguished it from others.
@@ -172,7 +172,7 @@ The earliest physical theories converged on the insight that reality is not a se
 
 While India and Greece descended into the granular, dissecting reality into its smallest bits, China developed a physics predicated on continuity, flow, and resonance. This divergence highlights a fundamental split in human cognition regarding the “Ultimate It.”
 
-:::info[**The Mohist Interlude: A Lost Logic of Mechanics**]
+:::info[**Mohist Interlude: A Lost Logic of Mechanics**]
 :::
 
 During the Warring States period (c. 475–221 BCE), a rival school to Confucianism known as Mohism (founded by Mozi) developed a corpus of optical, logical, and mechanical knowledge that rivaled the works of Euclid and Archimedes. The Mo Jing (Mohist Canon) contains definitions of space, time, and motion that are startlingly modern and mathematically rigorous.
@@ -183,7 +183,7 @@ In the realm of optics, the Mohists were empiricists par excellence. They docume
 
 Perhaps most fascinating was their conception of Spacetime. Unlike the Newtonian “Absolute,” the Mohists viewed space and time as interdependent. They defined “duration” (jiu) as encompassing different times (past and present), and “space” (yu) encompassing different locations. They argued that an object’s position cannot be defined without a time coordinate, anticipating the four-dimensional manifold of modern physics.
 
-:::info[**The Triumph of Qi and the Continuum**]
+:::info[**Triumph of Qi and the Continuum**]
 :::
 
 However, the Mohist logic did not become the dominant paradigm of Chinese science. The unification of China under the Qin and the subsequent rise of Han Confucianism and Daoism shifted the focus from discrete analysis to holistic synthesis. The dominant physical concept became Qi, a vital matter-energy that fills the universe.
