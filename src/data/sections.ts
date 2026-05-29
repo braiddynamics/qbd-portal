@@ -21,13 +21,13 @@ export const monographSections = [
     part: "4",
     title: "4. The Output",
     subtitle: "Phenomenological Consequences",
-    linkUrl: "/monograph/category/the-output",
+    linkUrl: "/wip?part=4",
   },
   {
     part: "5",
     title: "5. Conclusion",
     subtitle: "Applications and Synthesis",
-    linkUrl: "/monograph/category/conclusion",
+    linkUrl: "/wip?part=5",
   },
   {
     part: "6",

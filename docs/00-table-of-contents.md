@@ -36,16 +36,16 @@ sidebar_position: 0
 * [Chapter 17: String Limit (Worldsheets)](/monograph/category/17-worldsheets)
 
 ### 4. Phenomenological Consequences (The Output)
-* [Chapter 18: Big Kindling (Inflation)](/monograph/category/18-inflation)
-* [Chapter 19: Hot Universe (Nucleosynthesis)](/monograph/category/19-nucleosynthesis)
-* [Chapter 20: Structured Universe (Cosmic Web)](/monograph/category/20-web)
-* [Chapter 21: Dark Sector (Relics)](/monograph/category/21-relics)
-* [Chapter 22: Singularities & Condensates (Extremes)](/monograph/category/22-extremes)
+* [Chapter 18: Big Kindling (Inflation)](/wip?chapter=18)
+* [Chapter 19: Hot Universe (Nucleosynthesis)](/wip?chapter=19)
+* [Chapter 20: Structured Universe (Cosmic Web)](/wip?chapter=20)
+* [Chapter 21: Dark Sector (Relics)](/wip?chapter=21)
+* [Chapter 22: Singularities & Condensates (Extremes)](/wip?chapter=22)
 
 ### 5. Applications and Synthesis (Conclusion)
-* [Chapter 23: Holographic World (Universality)](/monograph/category/23-universality)
-* [Chapter 24: Mathematical Universe (Derivations)](/monograph/category/24-derivations)
-* [Chapter 25: Cosmological Natural Selection (Synthesis)](/monograph/category/25-synthesis)
+* [Chapter 23: Holographic World (Universality)](/wip?chapter=23)
+* [Chapter 24: Mathematical Universe (Derivations)](/wip?chapter=24)
+* [Chapter 25: Cosmological Natural Selection (Synthesis)](/wip?chapter=25)
 
 ### Appendices
 * [A. External References Cited](/monograph/appendices/a-references)
