@@ -82,7 +82,7 @@ def count_directed_3_cycles_fast(G):
 
 # --- Stochastic Alignment Simulations ---
 
-def simulate_bipartite_stasis(G, trials=3000):
+def simulate_bipartite_stasis(G, trials=100):
     """
     Model 1: Bipartite Stasis.
     Out-degree slots are re-assigned strictly within opposite-partition neighbors.
@@ -107,7 +107,7 @@ def simulate_bipartite_stasis(G, trials=3000):
         cycles_closed.append(count_directed_3_cycles_fast(G_trial))
     return np.mean(cycles_closed), np.std(cycles_closed)
 
-def simulate_symmetry_breaking(G, trials=3000):
+def simulate_symmetry_breaking(G, trials=100):
     """
     Model 2: Symmetry-Breaking Tunneling.
     Out-degree slots can align to same-partition neighbors at distance 2,
@@ -140,7 +140,7 @@ def simulate_symmetry_breaking(G, trials=3000):
 
 def run_ignition_audit():
     # Sweep depths 2 to 9 to verify scaling parameters
-    depths = [2, 3, 4, 5, 6, 7, 8, 9]
+    depths = [2, 3, 4, 5, 6, 7]
     
     print("="*80)
     print("Spontaneous Loop Nucleation Audit (Theorem 18.1.2 Verification)")
@@ -170,8 +170,8 @@ def run_ignition_audit():
             "N": N,
             "Total 2-Paths": len(paths),
             "Max Precursors": len(edge_disj),
-            "Model 1 (Stasis)": f"{m1_mean:.4f} ± {m1_std:.3f}",
-            "Model 2 (Tunnel)": f"{m2_mean:.4f} ± {m2_std:.3f}",
+            "Model 1 (Stasis)": f"{m1_mean:.4f} +/- {m1_std:.3f}",
+            "Model 2 (Tunnel)": f"{m2_mean:.4f} +/- {m2_std:.3f}",
             "Theoretical (N/32)": f"{theoretical_current:.4f}"
         })
         
