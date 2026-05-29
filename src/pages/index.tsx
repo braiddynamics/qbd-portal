@@ -93,15 +93,11 @@ export default function Home() {
                 </h2>
 
                 <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.5rem', textAlign: 'justify' }}>
-                  Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity that models the cosmos as a self-updating computational process built with discrete events and causal links. It offers an analytical framework where physical laws are derived at the deepest layer of physical reality, as strict thermodynamic inevitabilities supported by modern empirical simulations.
-                </p>
-
-                <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.5rem', textAlign: 'justify' }}>
-                  Driven by local, information-theoretic constraints, this raw causal web undergoes a cosmic phase transition commonly known as "The Big Bang". From a finite topological origin, a symmetry breaking event begins a process of <em>Geometrogenesis</em>, where the graph network structures itself into a stable, four-dimensional spacetime mesh that natively recovers Einstein’s equations of General Relativity and the particle configurations of the Standard Model.
+                  Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity that models the cosmos without free parameters. Using only discrete events and causal links, QBD bridges gaps between the Wolfram Physics Project, Causal Set Theory, and Causal Dynamical Triangulations.
                 </p>
 
                 <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
-                  Rather than supplanting modern physics with mysticism, numerology, or fields of consciousness, QBD acts as a computable, formal foundation that affirms continuous geometry and quantum mechanics as macroscopic realities, while revealing in precise detail how gravity, matter, and the arrow of time naturally emerge from the statistical thermodynamics of a discrete, fault-tolerant, error-correcting system.
+                  By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from first principles.
                 </p>
               </div>
             </div>
