@@ -163,7 +163,9 @@ While often interpreted in a religious context as the force of karmic merit/deme
 The combination of atoms was governed by two distinct relations: Samyoga (conjunction), which is a temporary, mechanical contact, and Samavaya (inherence), a permanent, binding relationship that makes the whole distinct from the sum of its parts. This sophisticated mereology allowed Indian physicists to argue that a pot is not just a heap of clay atoms, but a new distinct ontological entity, a “composite whole” (avayavin).
 
 :::tip[**Synopsis: The Primacy of Relation (Pre-Socratics to Atomism)**]
-The earliest physical theories converged on the insight that reality is not a seamless plenum nor a single substance, but a plurality of indivisible atoms moving in a void that possesses its own ontological status (Democritus–Leucippus) or qualitatively distinct ultimate particles (paramāṇu) bound by an unseen directive principle (adriṣṭa) in the Vaiśeṣika. The 3-cycle hierarchy of assembly (paramāṇu → dvyanuka → tryanuka) and the concept of an invisible non-mechanical cause (adriṣṭa) prefigure molecular structure and field theory by two millennia.
+* **Plurality Over Monism:** Early physical theories shifted from single-substance *archē* to a plurality of indivisible atoms moving in a void that possesses its own distinct ontological status (Democritus–Leucippus).
+* **Structured Indian Mereology:** The Vaisheshika school formulated a qualitative atomic theory, constructing the visible world through a precise integer hierarchy of assembly: *Paramāṇu* (atom) $\to$ *Dvyanuka* (dyad) $\to$ *Tryanuka* (triad).
+* **Anticipating Modern Primitives:** The Vaisheshika 3-cycle assembly and the concept of *Adṛṣṭa* (the Unseen force) prefigured molecular structure and field-theoretic action-at-a-distance by over two millennia.
 :::
 
 ---
@@ -192,6 +194,12 @@ In the Daoist cosmological model, space is not a “Void” (a non-existent empt
 
 This view precluded atomism because if the “It” is a continuous, resonant breath (Qi), it cannot be cut into independent, immutable parts. Matter was viewed not as built from discrete bricks, but as condensations of Qi, similar to how ice forms from water. Action occurred not by mechanical collision, but by Ganying (Resonance) or “Action at a Distance,” the idea that things of similar Qi affect one another across space, just as plucking a string on one lute causes a sympathetic vibration in another. This reliance on wave-like resonance meant that Chinese physics was uniquely positioned to understand magnetism and tides, phenomena that baffled the mechanical atomists of the West, but it steered them away from the geometric reductionism that led to Western mechanics.
 
+:::tip[Synopsis: The Continuous Alternative (China)]
+* **The Primacy of the Plenum:** While Greece and India chose discreteness to reconcile motion with Being, Chinese natural philosophy embraced continuity, framing reality as condensations of continuous *Qi* (vital breath) in a dynamic, generative *Vacuity* (*Xu*).
+* **Action via Resonance:** Rather than mechanical collisions, physical interactions were governed by *Gǎnyìng* (sympathetic resonance), naturally explaining wave-like and magnetic phenomena.
+* **The Mohist Interlude:** The Mohist school independently developed a rigorous discrete mechanics, formulating a proto-law of inertia and a relational, four-dimensional view of spacetime before being eclipsed by Daoism and Confucianism.
+:::
+
 ---
 
 ### The Aristotelian Stranglehold and the Archimedean Resistance
@@ -216,8 +224,10 @@ Most significantly for the trajectory of physics, Archimedes developed the “Me
 
 In his work The Sand Reckoner, Archimedes tackled the concept of the infinite directly. He set out to calculate the number of grains of sand that would fit into the universe. To do this, he had to invent a new system of naming large numbers (exponents) and estimate the size of the cosmos (heliocentric model), demonstrating that the universe was vast but finite and calculable. Archimedes represents a “lost path” in physics, a mathematical experimentalism that was largely ignored by the Roman and early Medieval inheritors of Greek thought, who preferred the qualitative descriptions of Aristotle. It was only when this Archimedean thread was picked up again, first by the Arabs, then by Galileo, that the “Boundary of Physics” began to shift.
 
-:::tip[Synopsis: The Continuous Alternative (China)]
-While Greece and India chose discreteness to rescue motion from Parmenides, Chinese natural philosophy selected continuity: Qi as vital breath, Vacuity (xu) as generative openness, and action through resonance (ganying). The Mohists alone developed a rigorous discrete mechanics (inertia, geometric point, relational duration) but were eclipsed by the holistic synthesis of Daoism and Confucianism.
+:::tip[Synopsis: Aristotelian Plenum and Archimedean Rigor]
+* **The Rejection of the Void:** Aristotle declared the void physically impossible, establishing a plenum universe where motion is sustained by the surrounding medium (*antiperistasis*).
+* **Mathematical Experimentalism:** Archimedes bypassed qualitative descriptions, using geometric proofs and virtual infinitesimals (the Method) to formulate the laws of hydrostatics and leverage.
+* **The Lost Path:** Archimedes represented a rigorous quantitative methodology that was largely sidelined by medieval scholars in favor of Aristotle’s qualitative categories, delaying the birth of modern experimental physics.
 :::
 
 ---
@@ -274,7 +284,9 @@ In the 14th century, the French philosopher Jean Buridan (c. 1300–1358) refine
 This was the intellectual tipping point. Buridan wrote, “If a mover sets a body in motion, he implants into it a certain impetus.. which moves the body in the direction in which the mover set it in motion.” He explicitly linked this to the rotation of the heavens, suggesting that God gave the planets an initial impetus at Creation, and since there is no friction in space, they have been spinning ever since. This paved the way for celestial mechanics, removing the need for angels to push the planets. The “Ultimate It” of motion was no longer a force being constantly applied, but a quantity conserved.
 
 :::tip[Synopsis: The Islamic Synthesis and the Birth of Inertia]
-Through Philoponus → Ibn Sina (mayl) → Buridan (impetus permanens) → al-Biruni’s defence of Earth’s rotation, the Aristotelian horror vacui and antiperistasis were dismantled. Ashʿarite occasionalism introduced discrete instants and denied intrinsic causality: a theological move that nevertheless furnished the conceptual template for quantum discreteness.
+* **Dismantling Aristotle:** The Islamic golden age, inheriting critiques from John Philoponus, systematically rejected Aristotelian *antiperistasis* through rigorous mathematics, density measurements (Al-Biruni), and empirical optics (Ibn al-Haytham).
+* **Evolution of Momentum:** The concept of motion transitioned from external medium-drive to internal, conserved properties: Philoponus' motive power $\to$ Ibn Sina’s *Mayl* (inclination) $\to$ Jean Buridan’s *Impetus permanens* (inertia).
+* **Temporal Discreteness:** Ashʿarite theological occasionalism modeled space and time as discrete instants recreated constantly by the divine, establishing a conceptual precursor to quantum discreteness and the denial of classical causality.
 :::
 
 ---

@@ -43,6 +43,12 @@ While a priority dispute simmered among historians for decades, recent analysis 
 
 This period established the Geometric Paradigm: the universe was a dynamic continuum, a smooth manifold where gravity was the curvature of the stage itself. For the next half-century, “Geometry was Destiny.” Matter (the “It”) told spacetime (the “Stage”) how to curve, and spacetime told matter how to move. The separation between the container and the contained had been dissolved into a single interacting entity, fulfilling Minkowski’s prophecy.
 
+:::tip[Synopsis: Relativistic Spacetime and the Curved Stage]
+* **Minkowski Spacetime:** Minkowski unified separate space and time into a 4D geometric manifold governed by the invariant interval, replacing relative measurements with an absolute spacetime metric.
+* **Geometric Gravity:** Einstein converted gravity from an external vector force into the dynamic curvature of the spacetime stage itself—matter tells space how to curve, and space tells matter how to move.
+* **Axiomatic Pursuits:** The Einstein-Hilbert race to formulate the field equations highlighted the tension between physical constructive theories and Hilbert’s grand dream to axiomatize all of physics.
+:::
+
 ---
 
 ### Dissolution of Substance: Trajectories to Quantum Information
@@ -171,5 +177,8 @@ Everett was driven by the “Wigner’s Friend” paradox: if a friend observes 
 This quantum revolution, with its dissolution of the independent “It” into informational potentia, measurement phenomena, entangled correlations, thermodynamic bits, and relative states, provided the philosophical and mathematical engine for Wheeler’s later “It from Bit” paradigm. The classical field’s continuity, already challenged by Einstein’s geometry, now faced an even more profound assault from the quantum domain, rendering the transition to geometrodynamics’ collapse not abrupt but inexorable, a culmination of the crisis that began with Heisenberg’s matrices and Bohr’s indivisible phenomena.
 
 :::tip[Synopsis: The Quantum Dissolution of Substance 1925–1957]
-Heisenberg’s matrices, Born’s probability rule, Bohr’s complementarity, Schrödinger’s entanglement, Szilard’s thermodynamic bit, and Everett’s relative states collectively annihilated the classical “It”: there remains only correlation, information, and observer-relative facts: no independent substance, no absolute trajectory.
+* **Annihilation of Trajectories:** Heisenberg's matrix mechanics ($[X, P] = i\hbar$) and positivist deletion of unobservable orbits destroyed the classical continuous trajectory, replacing properties with operators.
+* **Probability and Entanglement:** Born’s probability density interpretation of the wavefunction ($|\psi|^2$) and Schrödinger’s formulation of entanglement ($\psi_{AB}$) demonstrated that physical states are non-local and stored in relational correlations rather than individual substances.
+* **Contextuality & Relative States:** Bohr’s Copenhagen Complementarity dissolved the observer-observed boundary, while Everett’s Relative State formulation removed wavefunction collapse, portraying a universe of branching, observer-relative facts.
+* **Physicality of Information:** Szilard's thermodynamic engine bridged entropy and information ($\Delta S = k_B \ln 2$), proving that observation and information processing are fundamental physical processes.
 :::

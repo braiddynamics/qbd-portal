@@ -214,7 +214,10 @@ Classical physics assumed an objective state of the world that existed independe
 The “Bit” is always perspectival. Information is not a thing that exists in the void; it is a measure of correlation between two entities. The dematerialization of the “It” brings with it the realization that reality is fundamentally relational.
 
 :::tip[Synopsis: The Informational Turn 1957–2025]
-Wheeler’s “It from Bit”, Bekenstein–Hawking horizon entropy, causal set theory (Sorkin–Dowker), relational quantum mechanics (Rovelli), and holography (Maldacena–Susskind) converge on a single conclusion: geometry, time, and matter are emergent from a more primitive informational substrate composed of relational quanta (causal links, entanglement, qubits).
+* **The Informational Substrate:** Wheeler's "It from Bit" paradigm and Bekenstein's black hole horizon entropy ($S = A/4$) shifted the foundation of physics from material substance and geometry to discrete information capacity.
+* **Discrete Causal Emergence:** Causal Set Theory (Sorkin & Dowker) replaces the spacetime continuum with a discrete, growing poset of causal links, from which smooth Lorentzian manifolds statistically approximate.
+* **Relational Networks:** Loop Quantum Gravity (Rovelli) replaces smooth space with quantized spin networks, where time disappears at the fundamental level and emerges macroscopically as a thermal statistical illusion.
+* **Holographic Unification:** Maldacena's AdS/CFT correspondence and the ER=EPR conjecture demonstrate that 3D bulk geometry is a holographic projection built from the quantum entanglement (qubits) of a boundary field theory, unifying gravity, spacetime, and quantum information.
 :::
 
 ---
