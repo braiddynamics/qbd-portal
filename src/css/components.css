@@ -1,6 +1,6 @@
-/* interactive cards */
 .qbd-interactive-card {
   position: relative;
+  width: 100%;
   padding: 3.5rem 2.5rem; /* Slightly increased padding for better breathing room */
   border-radius: 16px;
   background-color: var(--ifm-background-surface-color);
@@ -60,7 +60,7 @@
 
 /* grids & placeholders */
 .section-grid-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: center; }
-.section-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; } /* Increased gap for better column separation */
+.section-grid-2col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: center; width: 100%; }
 
 .placeholder-box {
   background-color: rgba(0,0,0,0.03);
@@ -92,6 +92,30 @@
 /* navbar icons */
 .header-github-link:hover { opacity: 0.6; }
 .header-github-link::before { content: ''; width: 24px; height: 24px; display: flex; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat; }
+
+/* AI sparkles navbar icon */
+.header-ai-link {
+  font-size: 1.35rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  text-decoration: none !important;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+}
+.header-ai-link:hover {
+  opacity: 0.75;
+  transform: scale(1.15) rotate(-5deg);
+  text-decoration: none !important;
+}
+/* Suppress the active/selected underline that Docusaurus adds to internal links */
+.header-ai-link.navbar__link--active {
+  font-weight: normal;
+}
+.header-ai-link.navbar__link--active::after {
+  display: none;
+}
 
 @import "~katex/dist/katex.min.css";
 
@@ -218,4 +242,76 @@
   color: #ef4444 !important;
   box-shadow: 0 0 14px rgba(239, 68, 68, 0.3) !important;
   text-decoration: none !important;
+}
+
+/* Chapter Tabs for Folder Experience on Part 1 Card */
+.qbd-folder-tabs-container {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  z-index: 10;
+}
+
+.qbd-folder-tab {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid var(--qbd-glow-color);
+  border-top: none;
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+  transform: skewX(-15deg); /* Beautiful horizontal folder slant */
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+/* Correct the text inside the skewed tab container so it stays upright */
+.qbd-folder-tab span {
+  display: inline-block;
+  transform: skewX(15deg);
+}
+
+[data-theme='dark'] .qbd-folder-tab {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--ifm-color-emphasis-400);
+}
+
+.qbd-folder-tab:hover,
+.qbd-folder-tab.active {
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 4px 10px var(--qbd-glow-color);
+  transform: skewX(-15deg) translateY(2px); /* Maintain slant and add pull-down animation */
+}
+
+[data-theme='dark'] .qbd-folder-tab:hover,
+[data-theme='dark'] .qbd-folder-tab.active {
+  color: #121314 !important;
+  background-color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .qbd-folder-tabs-container {
+    left: 1rem;
+    right: 1rem;
+    justify-content: center;
+    gap: 4px;
+  }
+  
+  .qbd-folder-tab {
+    padding: 5px 8px;
+    font-size: 0.65rem;
+  }
 }

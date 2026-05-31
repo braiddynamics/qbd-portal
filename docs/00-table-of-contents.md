@@ -1,6 +1,6 @@
 ---
 slug: /
-title: Table of Contents
+title: The Monograph
 sidebar_position: 0
 ---
 
@@ -10,6 +10,7 @@ sidebar_position: 0
 
 ## 📚 Assembled Table of Contents
 
+* [**Monograph Abstract**](/monograph/abstract)
 * [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
 
 ### 1. The Foundational Principles (The Rules)
