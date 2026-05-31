@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 3270739,
-      "estimated_tokens": 1187955,
+      "file_size_bytes": 3275533,
+      "estimated_tokens": 1189731,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 3307458,
-      "estimated_tokens": 1219204,
+      "file_size_bytes": 3312266,
+      "estimated_tokens": 1220999,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 4120349,
-      "estimated_tokens": 1187955,
+      "file_size_bytes": 4125976,
+      "estimated_tokens": 1189731,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -42,7 +42,7 @@
       "json_file_size_bytes": 864399,
       "json_estimated_tokens": 318261,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1154573,
+      "pdf_file_size_bytes": 1155846,
       "pdf_estimated_tokens": 310205
     },
     {
@@ -58,7 +58,7 @@
       "json_file_size_bytes": 844131,
       "json_estimated_tokens": 311144,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1133278,
+      "pdf_file_size_bytes": 1135079,
       "pdf_estimated_tokens": 303130
     },
     {
@@ -74,7 +74,7 @@
       "json_file_size_bytes": 745558,
       "json_estimated_tokens": 275779,
       "pdf_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.pdf",
-      "pdf_file_size_bytes": 1154586,
+      "pdf_file_size_bytes": 1042335,
       "pdf_estimated_tokens": 268031
     },
     {
@@ -90,7 +90,7 @@
       "json_file_size_bytes": 231854,
       "json_estimated_tokens": 85789,
       "pdf_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.pdf",
-      "pdf_file_size_bytes": 1133281,
+      "pdf_file_size_bytes": 1135078,
       "pdf_estimated_tokens": 83022
     },
     {
@@ -106,7 +106,7 @@
       "json_file_size_bytes": 27697,
       "json_estimated_tokens": 10242,
       "pdf_url": "/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.pdf",
-      "pdf_file_size_bytes": 664913,
+      "pdf_file_size_bytes": 666178,
       "pdf_estimated_tokens": 9932
     },
     {
@@ -122,7 +122,7 @@
       "json_file_size_bytes": 463692,
       "json_estimated_tokens": 171517,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 664901,
+      "pdf_file_size_bytes": 666176,
       "pdf_estimated_tokens": 167905
     }
   ],
@@ -140,7 +140,7 @@
       "json_file_size_bytes": 155465,
       "json_estimated_tokens": 57088,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 264681,
+      "pdf_file_size_bytes": 265959,
       "pdf_estimated_tokens": 56101
     },
     {
@@ -156,7 +156,7 @@
       "json_file_size_bytes": 154922,
       "json_estimated_tokens": 56860,
       "pdf_url": "/downloads/chapters/chapter_2.pdf",
-      "pdf_file_size_bytes": 268188,
+      "pdf_file_size_bytes": 270044,
       "pdf_estimated_tokens": 55555
     },
     {
@@ -172,7 +172,7 @@
       "json_file_size_bytes": 214047,
       "json_estimated_tokens": 78698,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 311290,
+      "pdf_file_size_bytes": 368095,
       "pdf_estimated_tokens": 76492
     },
     {
@@ -188,7 +188,7 @@
       "json_file_size_bytes": 171415,
       "json_estimated_tokens": 63357,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 311293,
+      "pdf_file_size_bytes": 312613,
       "pdf_estimated_tokens": 61523
     },
     {
@@ -204,7 +204,7 @@
       "json_file_size_bytes": 168381,
       "json_estimated_tokens": 62197,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 307187,
+      "pdf_file_size_bytes": 308560,
       "pdf_estimated_tokens": 60573
     },
     {
@@ -220,7 +220,7 @@
       "json_file_size_bytes": 146532,
       "json_estimated_tokens": 53769,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 307189,
+      "pdf_file_size_bytes": 276726,
       "pdf_estimated_tokens": 52434
     },
     {
@@ -236,7 +236,7 @@
       "json_file_size_bytes": 128005,
       "json_estimated_tokens": 47347,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 251021,
+      "pdf_file_size_bytes": 252433,
       "pdf_estimated_tokens": 46085
     },
     {
@@ -252,7 +252,7 @@
       "json_file_size_bytes": 208043,
       "json_estimated_tokens": 76720,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 359056,
+      "pdf_file_size_bytes": 360096,
       "pdf_estimated_tokens": 74793
     },
     {
@@ -268,7 +268,7 @@
       "json_file_size_bytes": 167497,
       "json_estimated_tokens": 61512,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 303119,
+      "pdf_file_size_bytes": 304495,
       "pdf_estimated_tokens": 59911
     },
     {
@@ -284,7 +284,7 @@
       "json_file_size_bytes": 193883,
       "json_estimated_tokens": 71735,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 333124,
+      "pdf_file_size_bytes": 334626,
       "pdf_estimated_tokens": 69956
     },
     {
@@ -300,7 +300,7 @@
       "json_file_size_bytes": 132609,
       "json_estimated_tokens": 49037,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 232845,
+      "pdf_file_size_bytes": 334633,
       "pdf_estimated_tokens": 47664
     },
     {
@@ -316,7 +316,7 @@
       "json_file_size_bytes": 99855,
       "json_estimated_tokens": 36927,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 232840,
+      "pdf_file_size_bytes": 208753,
       "pdf_estimated_tokens": 35909
     },
     {
@@ -332,7 +332,7 @@
       "json_file_size_bytes": 100283,
       "json_estimated_tokens": 37087,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 232840,
+      "pdf_file_size_bytes": 234632,
       "pdf_estimated_tokens": 36015
     },
     {
@@ -348,7 +348,7 @@
       "json_file_size_bytes": 123698,
       "json_estimated_tokens": 45748,
       "pdf_url": "/downloads/chapters/chapter_14.pdf",
-      "pdf_file_size_bytes": 237858,
+      "pdf_file_size_bytes": 251701,
       "pdf_estimated_tokens": 44562
     },
     {
@@ -364,7 +364,7 @@
       "json_file_size_bytes": 118669,
       "json_estimated_tokens": 43907,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 237858,
+      "pdf_file_size_bytes": 239138,
       "pdf_estimated_tokens": 42660
     },
     {
@@ -380,7 +380,7 @@
       "json_file_size_bytes": 56217,
       "json_estimated_tokens": 20799,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 149399,
+      "pdf_file_size_bytes": 150588,
       "pdf_estimated_tokens": 20235
     },
     {
@@ -396,7 +396,7 @@
       "json_file_size_bytes": 114052,
       "json_estimated_tokens": 42210,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 320477,
+      "pdf_file_size_bytes": 236362,
       "pdf_estimated_tokens": 41074
     },
     {
@@ -412,7 +412,7 @@
       "json_file_size_bytes": 183761,
       "json_estimated_tokens": 67999,
       "pdf_url": "/downloads/chapters/chapter_18.pdf",
-      "pdf_file_size_bytes": 320486,
+      "pdf_file_size_bytes": 321806,
       "pdf_estimated_tokens": 65747
     },
     {
@@ -428,7 +428,7 @@
       "json_file_size_bytes": 12997,
       "json_estimated_tokens": 4807,
       "pdf_url": "/downloads/chapters/chapter_19.pdf",
-      "pdf_file_size_bytes": 72391,
+      "pdf_file_size_bytes": 73648,
       "pdf_estimated_tokens": 4690
     },
     {
@@ -444,7 +444,7 @@
       "json_file_size_bytes": 10450,
       "json_estimated_tokens": 3866,
       "pdf_url": "/downloads/chapters/chapter_20.pdf",
-      "pdf_file_size_bytes": 65289,
+      "pdf_file_size_bytes": 66497,
       "pdf_estimated_tokens": 3776
     },
     {
@@ -460,7 +460,7 @@
       "json_file_size_bytes": 14278,
       "json_estimated_tokens": 5284,
       "pdf_url": "/downloads/chapters/chapter_21.pdf",
-      "pdf_file_size_bytes": 59969,
+      "pdf_file_size_bytes": 71739,
       "pdf_estimated_tokens": 5170
     },
     {
@@ -476,7 +476,7 @@
       "json_file_size_bytes": 10201,
       "json_estimated_tokens": 3773,
       "pdf_url": "/downloads/chapters/chapter_22.pdf",
-      "pdf_file_size_bytes": 59967,
+      "pdf_file_size_bytes": 61245,
       "pdf_estimated_tokens": 3691
     },
     {
@@ -492,7 +492,7 @@
       "json_file_size_bytes": 8678,
       "json_estimated_tokens": 3209,
       "pdf_url": "/downloads/chapters/chapter_23.pdf",
-      "pdf_file_size_bytes": 57708,
+      "pdf_file_size_bytes": 58815,
       "pdf_estimated_tokens": 3130
     },
     {
@@ -508,7 +508,7 @@
       "json_file_size_bytes": 12064,
       "json_estimated_tokens": 4465,
       "pdf_url": "/downloads/chapters/chapter_24.pdf",
-      "pdf_file_size_bytes": 66820,
+      "pdf_file_size_bytes": 68124,
       "pdf_estimated_tokens": 4373
     },
     {
@@ -524,7 +524,7 @@
       "json_file_size_bytes": 6813,
       "json_estimated_tokens": 2518,
       "pdf_url": "/downloads/chapters/chapter_25.pdf",
-      "pdf_file_size_bytes": 49651,
+      "pdf_file_size_bytes": 50952,
       "pdf_estimated_tokens": 2462
     }
   ],
