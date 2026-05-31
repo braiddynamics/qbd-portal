@@ -146,16 +146,75 @@ const MODEL_CODE = [
 ];
 
 const KEY_CONCEPTS = [
-  { term: 'Causal Network',         def: 'The substrate: a directed acyclic graph of discrete events connected by causal links. No background metric assumed.' },
-  { term: 'Braid',                  def: 'A topological structure formed by interleaved causal strands. The fundamental carrier of quantum information in QBD.' },
-  { term: 'Tripartite Braid',       def: 'A 3-strand braid whose topological invariants correspond exactly to fermion quantum numbers (charge, color, generation).' },
-  { term: 'Geometrogenesis',        def: 'The emergence of smooth Lorentzian spacetime geometry from the equilibrium limit of the causal network dynamics.' },
-  { term: 'Gauge Symmetry',         def: 'Arises as automorphisms of the braid group. U(1), SU(2), SU(3) correspond to distinct braid symmetry classes.' },
-  { term: 'Ash (Dark Matter)',       def: 'Topological defects — inert braid configurations that do not couple electromagnetically, interpreted as dark matter candidates.' },
-  { term: 'Syndrome',               def: 'Error correction syndrome in the topological QECC interpretation of the causal network.' },
-  { term: 'Logical Time (tL)',      def: 'A global discrete clock counting causal update steps; distinct from emergent physical/proper time.' },
-  { term: 'Isomorphism Principle',  def: 'The holographic conjecture in QBD: bulk causal structure is isomorphic to a boundary topological code.' },
-  { term: 'Writhe w(β)',            def: 'A braid invariant whose value encodes fermion handedness (chirality) in the QBD particle model.' },
+  // ── Substrate ──────────────────────────────────────────────────────────────
+  { layer: 'Substrate',
+    term: 'Abstract Event',
+    def: 'A vertex in the causal graph with no intrinsic properties — no coordinates, no internal structure. Its identity is defined purely by what caused it and what it causes. The universe contains nothing else at the foundational level.' },
+  { layer: 'Substrate',
+    term: 'Directed Causal Link',
+    def: 'The one and only primitive object in QBD: an irreflexive, asymmetric directed edge (u→v) between two abstract events. It encodes cause-and-effect as a one-way temporal ratchet. All physical structure emerges from networks of these links.' },
+  { layer: 'Substrate',
+    term: 'Dual Time Architecture',
+    def: 'QBD separates time into two distinct parameters: Global Logical Time (tL), a discrete integer step counter for the evolution engine, non-dilatable by relativity; and Physical Time (tphys), an emergent continuous parameter derived from path lengths in the graph, recoverable only in the macroscopic limit.' },
+  { layer: 'Substrate',
+    term: 'Geometric Quantum (γ)',
+    def: 'The minimal closed causal loop compatible with the axioms: a directed 3-cycle (u→v→w→u). Every 3-cycle encloses one quantum of spatial area. The entire spatial fabric is built from overlapping 3-cycles; no smaller structure can carry area.' },
+  { layer: 'Substrate',
+    term: 'Acyclic Effective Causality',
+    def: 'Axiom 3: the transitive closure of the causal history must form a strict partial order — irreflexive and asymmetric globally. No event can be its own ancestor. This prevents causal paradoxes and is thermodynamically enforced by the constructor.' },
+
+  // ── Dynamics ───────────────────────────────────────────────────────────────
+  { layer: 'Dynamics',
+    term: 'Universal Constructor (ℛ)',
+    def: 'The stochastic rewrite rule that drives the universe\'s evolution. At each logical tick it scans local 2-paths, validates proposed edge additions/deletions against the axioms, and applies them with Boltzmann-weighted probability. It is the sole dynamical law of QBD.' },
+  { layer: 'Dynamics',
+    term: 'Principle of Unique Causality (PUC)',
+    def: 'A new edge (u→v) is admissible only if no directed path of length ≤2 between u and v already exists. This sparsity constraint prevents causal redundancy and is the mechanism that forces the causal network toward 3-cycles rather than arbitrary dense graphs.' },
+  { layer: 'Dynamics',
+    term: 'Comonadic Self-Observation',
+    def: 'The constructor implements a comonadic awareness structure: each local update reads its own neighbourhood (extract) and propagates context outward (extend), enabling the network to locally sense and respond to its own causal topology without a global observer.' },
+  { layer: 'Dynamics',
+    term: 'Maximal Parallelism',
+    def: 'All non-overlapping compliant 2-paths across the entire graph are updated simultaneously at each logical tick. Updates that share vertices are serialised; all others are strictly parallel. This is the QBD analogue of Lorentz-invariant simultaneity.' },
+  { layer: 'Dynamics',
+    term: 'Geometrogenesis',
+    def: 'The phase transition by which the causal graph reaches thermodynamic equilibrium and a smooth 4D Lorentzian manifold emerges. Below the critical density of 3-cycles the network is pre-geometric; above it, spacetime crystallises as an emergent, large-scale phenomenon.' },
+
+  // ── Matter ─────────────────────────────────────────────────────────────────
+  { layer: 'Matter',
+    term: 'Tripartite Braid',
+    def: 'A stable, topologically non-trivial subgraph consisting of three interleaved causal strands. This is QBD\'s model of a fermion. Its topological invariants — writhe, crossing number, chirality — map one-to-one onto electric charge, color charge, and handedness.' },
+  { layer: 'Matter',
+    term: 'Writhe w(β)',
+    def: 'A braid invariant that counts net signed crossings of the strand diagram. In QBD: w = +1/3 per strand encodes one unit of color, integer writhe encodes electric charge, and the sign of writhe encodes left vs right handedness (chirality).' },
+  { layer: 'Matter',
+    term: 'Jones Polynomial V(t)',
+    def: 'The topological invariant used to classify and distinguish braid particle states. Two braid configurations represent the same particle if and only if they share the same Jones polynomial. It is preserved under all admissible rewrite operations of the constructor.' },
+  { layer: 'Matter',
+    term: 'Gauge Symmetry as Braid Automorphism',
+    def: 'The Standard Model gauge groups U(1), SU(2), SU(3) arise in QBD as automorphism classes of the local braid group. Phase invariance of the writhe under global shifts → U(1)/electromagnetism. Strand permutation symmetry → SU(3)/color. Chirality mixing → SU(2)/weak force.' },
+  { layer: 'Matter',
+    term: 'Chiral Invariant (χ)',
+    def: 'A topological quantum number computed from the timestamp ordering of a braid\'s constituent edges: χ = sgn(H(e1) − H(e2)). Value −1 = left-handed, +1 = right-handed. This is QBD\'s derivation of parity violation from first principles.' },
+
+  // ── Geometry ───────────────────────────────────────────────────────────────
+  { layer: 'Geometry',
+    term: 'Lorentzian GHP Convergence',
+    def: 'The central geometric theorem: the sequence of discrete causal graphs, as the vertex density N→∞, converges to a smooth 4D Lorentzian manifold under the Lorentzian Gromov–Hausdorff–Prokhorov metric. This is QBD\'s proof that its discrete substrate produces continuous spacetime.' },
+  { layer: 'Geometry',
+    term: 'Isomorphism Principle',
+    def: 'QBD\'s holographic theorem: the bulk causal structure of any finite region is isomorphic to a topological code on its boundary. This formalises the holographic principle and identifies the AdS/CFT correspondence as a special case of boundary-to-bulk isomorphism.' },
+  { layer: 'Geometry',
+    term: 'ER = EPR (Topological Wormholes)',
+    def: 'Entangled braid pairs are connected by shared causal strands — microscopic topological wormholes. QBD proves the ER = EPR conjecture from first principles: quantum entanglement and geometric connectivity are the same topological phenomenon at different scales.' },
+
+  // ── Quantum Error Correction ───────────────────────────────────────────────
+  { layer: 'QECC',
+    term: 'Topological Stabilizer Code',
+    def: 'The causal diamond structure of the network forms a fault-tolerant topological quantum error-correcting code inherent to the pre-geometric vacuum. Physical causal updates correspond to logical operations on the codespace; the vacuum is intrinsically error-protected.' },
+  { layer: 'QECC',
+    term: 'Syndrome (σ)',
+    def: 'A detectable topological defect in the causal graph — a local region where the stabilizer conditions are violated. Syndromes propagate, annihilate, or braid. Syndrome worldlines in spacetime are the trajectories of particles; pair creation/annihilation is syndrome birth/death.' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -427,22 +486,59 @@ Machine-readable download catalogue:
 
         {/* ── Key Concepts ── */}
         <h2 style={s.h2}>KEY CONCEPTS GLOSSARY</h2>
+        <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
+          20 essential terms drawn from published chapters, grouped by conceptual layer.
+          All terms from WIP sections (Ch. 18–25) are excluded.
+        </p>
         <table style={s.table}>
           <thead>
             <tr>
+              <th style={s.th}>Layer</th>
               <th style={s.th}>Term</th>
               <th style={s.th}>Definition</th>
             </tr>
           </thead>
           <tbody>
-            {KEY_CONCEPTS.map((c, i) => (
-              <tr key={i}>
-                <td style={{ ...s.td, fontWeight: 700, whiteSpace: 'nowrap' }}>{c.term}</td>
-                <td style={s.td}>{c.def}</td>
-              </tr>
-            ))}
+            {(() => {
+              let lastLayer = '';
+              return KEY_CONCEPTS.map((c, i) => {
+                const isNewLayer = c.layer !== lastLayer;
+                lastLayer = c.layer;
+                return (
+                  <React.Fragment key={i}>
+                    {isNewLayer && (
+                      <tr>
+                        <td
+                          colSpan={3}
+                          style={{
+                            ...s.td,
+                            background: 'var(--ifm-color-emphasis-100)',
+                            fontWeight: 700,
+                            fontSize: '0.78rem',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.08em',
+                            color: 'var(--ifm-color-primary)',
+                            paddingTop: '0.5rem',
+                            paddingBottom: '0.5rem',
+                            borderTop: '2px solid var(--ifm-color-emphasis-300)',
+                          }}
+                        >
+                          {c.layer}
+                        </td>
+                      </tr>
+                    )}
+                    <tr>
+                      <td style={{ ...s.td, whiteSpace: 'nowrap', verticalAlign: 'top' }}></td>
+                      <td style={{ ...s.td, fontWeight: 700, whiteSpace: 'nowrap', verticalAlign: 'top' }}>{c.term}</td>
+                      <td style={s.td}>{c.def}</td>
+                    </tr>
+                  </React.Fragment>
+                );
+              });
+            })()}
           </tbody>
         </table>
+
 
         <p style={{ fontSize: '0.85rem' }}>
           Complete definitions for all ~300 terms used in the monograph:{' '}
