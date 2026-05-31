@@ -178,7 +178,7 @@ export default function HomepageHeader() {
               className="button button--secondary button--lg btn-pulse-white-active" 
               to="/monograph"
             >
-              The Monograph
+              Table of Contents
             </Link>
             <Link 
               className="button hero-white-btn button--lg btn-pulse-white-active" 
