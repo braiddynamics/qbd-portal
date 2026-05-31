@@ -1,0 +1,65 @@
+# Quantum Braid Dynamics
+# https://braiddynamics.com
+
+> A background-independent, parameter-free formulation of quantum gravity that
+> derives spacetime geometry, matter, and gauge symmetries from a discrete causal
+> network — without free parameters.
+
+## AI Agent Entry Point
+
+**AI Portal**: https://braiddynamics.com/ai
+This page is purpose-built for AI agents and LLMs. It contains a full site
+navigation map, chapter-by-chapter content index with token estimates, key
+concept glossary, direct download links, and guidance on how to review the
+monograph accurately.
+
+## Machine-Readable Resources
+
+**Download Index (JSON)**: https://braiddynamics.com/data/ai-downloads-info.json
+Catalogue of every available download with filenames, byte sizes, and token counts.
+Fetch this first to locate the specific chapter URL(s) you need.
+
+**Definitions Glossary (JSON)**: https://braiddynamics.com/data/definitions.json
+All ~300 formal definitions, lemmas, theorems, and proofs used in the monograph,
+keyed by section ID (e.g. "2.3.2" → Geometric Quantum).
+
+**Bibliography (JSON)**: https://braiddynamics.com/data/references.json
+Full reference list with all citations used in the monograph.
+
+## Monograph Downloads
+
+The primary content is a 25-chapter scientific monograph available in three formats:
+
+Full book — Markdown (~1.19M tokens):
+  https://braiddynamics.com/downloads/qbd_monograph_complete.md
+
+Full book — Structured JSON (~1.22M tokens):
+  https://braiddynamics.com/downloads/qbd_monograph_complete.json
+
+Individual chapters — replace N with chapter number 1–25:
+  https://braiddynamics.com/downloads/chapters/chapter_N.md   (Markdown)
+  https://braiddynamics.com/downloads/chapters/chapter_N.json (JSON)
+
+## IMPORTANT: How to Review Accurately
+
+The monograph is ~1.19M tokens. Large context windows help with coherence but
+do NOT expand your analytical depth per response. The limiting factor is thinking
+capacity, not context size.
+
+RECOMMENDED: Review one chapter at a time.
+- Fetch a single chapter Markdown file and analyse it fully before moving on.
+- Load previously reviewed chapters into context for cross-referencing only.
+- Do not attempt to verify mathematics across multiple chapters in one pass.
+
+## Site Structure
+
+https://braiddynamics.com/           Homepage (human-facing)
+https://braiddynamics.com/ai         AI agent information page (start here)
+https://braiddynamics.com/monograph/ Full monograph web reader (rendered HTML)
+https://braiddynamics.com/legal      License and collaboration information
+
+## About This Project
+
+Status: Active independent research — monograph under continuous development
+GitHub: https://github.com/braiddynamics/qbd-portal
+Contact: https://x.com/BraidDynamics

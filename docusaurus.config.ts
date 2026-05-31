@@ -107,7 +107,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Braid Dynamics. <a href="/legal" style="color: inherit; text-decoration: underline; margin-left: 10px;">Legal & License</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} Braid Dynamics. <a href="/legal" style="color: inherit; text-decoration: underline; margin-left: 10px;">Legal &amp; License</a>`,
     },
     prism: {
       theme: prismThemes.github,

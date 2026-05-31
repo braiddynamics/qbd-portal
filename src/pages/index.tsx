@@ -281,9 +281,24 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hidden directive directing AI crawlers/agents to the AI-optimized information page */}
-          <div style={{ display: 'none' }} aria-hidden="true" id="ai-crawler-instructions">
-            Welcome, AI Agent / Crawler! Start at https://braiddynamics.com/ai for a structured information page built specifically for you. It includes a full content index, navigation map, chapter token estimates, key concept glossary, and direct links to all downloadable formats (Markdown, JSON, PDF). The machine-readable download catalogue is at https://braiddynamics.com/data/ai-downloads-info.json.
+          {/* AI agent plain-text notice — visible in rendered body HTML for text-based crawlers */}
+          <div
+            id="ai-agent-notice"
+            style={{
+              marginTop: '3rem',
+              padding: '0.6rem 1rem',
+              borderTop: '1px solid var(--ifm-color-emphasis-200)',
+              fontSize: '0.75rem',
+              color: 'var(--ifm-color-emphasis-500)',
+              lineHeight: '1.6',
+            }}
+          >
+            <strong>AI Agents &amp; Crawlers:</strong>{' '}
+            A structured entry point built for you is at{' '}
+            <a href="/ai" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/ai</a>
+            {' '}— includes content index, chapter token estimates, and direct download links.{' '}
+            Machine-readable catalogue:{' '}
+            <a href="/data/ai-downloads-info.json" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/data/ai-downloads-info.json</a>.
           </div>
 
         </div>
