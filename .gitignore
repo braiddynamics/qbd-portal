@@ -38,4 +38,8 @@ Thumbs.db
 # Local schemas folder
 /schema/
 
+# Local PDF build workspace
+/pdf-build/
 
+# Untracked draft papers
+/papers-drafts/
