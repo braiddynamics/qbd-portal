@@ -23,7 +23,7 @@ const introTabs: IntroTabInfo[] = [
   {
     id: 'abstract',
     shortName: 'Abstract',
-    title: 'Monograph Abstract',
+    title: 'Abstract',
     subtitle: 'Summary of the computational framework and key mathematical results',
     description: 'Quantum Braid Dynamics (QBD) is a background-independent computational framework that derives the continuous fabric of spacetime and quantum mechanics from a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. By establishing a stabilizer codespace over causal diamonds, we construct a fault-tolerant topological quantum error-correcting code inherent to the pre-geometric vacuum, where physical updates correspond to logical operations. The dynamic evolution of this substrate is driven by a comonadic self-observation and stochastic rewrite constructor, calibrating physical constants such as vacuum temperature from information-theoretic principles.\n\nWithin this relational substrate, elementary fermions emerge naturally as stable, chiral tripartite braids, mapping discrete topological invariants directly to physical quantum numbers: electric charge, spin, and color. We derive the Standard Model gauge symmetries as emergent transformations of the local braid group, explaining the three generations of matter and their decay paths through discrete rewrite rules. Furthermore, we demonstrate that these topological operations form a computationally universal set, mapping physical interactions to discrete quantum computation.\n\nFinally, we construct a discrete formulation of differential geometry directly on the causal network, deriving the Einstein field equations as a hydrodynamic equation of state without coordinate charts. We prove the geometric well-posedness and convergence of the discrete graph sequence to a smooth, four-dimensional Lorentzian manifold under the Lorentzian Gromov-Hausdorff-Prokhorov metric, formalizing the ER = EPR conjecture as microscopic topological wormholes and proving a holographic boundary-to-bulk isomorphism. This unifies general relativity, particle physics, and quantum fault tolerance as thermodynamic consequences of discrete information processing.',
     linkUrl: '/monograph/abstract',
@@ -86,7 +86,7 @@ export default function Home() {
   const displayLink = activeTab ? activeTab.linkUrl : '/monograph/category/introduction/';
   const buttonText = activeTab 
     ? activeTab.buttonLabel 
-    : (isCardHovered ? 'Read the Historical Introduction →' : 'Read the Full Introduction →');
+    : (isCardHovered ? 'Read the Historical Introduction →' : 'Read the Historical Introduction →');
 
   return (
     <Layout
@@ -244,7 +244,7 @@ export default function Home() {
                             Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity that models the cosmos without free parameters. Using only discrete events and causal links, QBD bridges gaps between the Wolfram Physics Project, Causal Set Theory, and Causal Dynamical Triangulations.
                           </p>
                           <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
-                            By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from first principles.
+                            By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from first principles. This form was chosen for auditability, ensuring ideas become pure logic that can be parsed, while producing a physical theory that is unambiguous and well defined, whose meaning is fully determined by its internal logic.
                           </p>
                         </>
                       )}
