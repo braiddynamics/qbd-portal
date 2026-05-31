@@ -88,6 +88,7 @@ const config: Config = {
           label: 'The Monograph',
         },
         { to: '/monograph/appendices/notation', label: 'Notation', position: 'left' },
+        { to: '/monograph/download', label: 'Downloads', position: 'left' },
         {
           href: 'https://github.com/braiddynamics/qbd-portal',
           position: 'right',

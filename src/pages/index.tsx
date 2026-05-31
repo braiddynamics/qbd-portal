@@ -27,6 +27,9 @@ export default function Home() {
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <meta property="og:title" content="Quantum Braid Dynamics: A Computational Process" />
         <meta name="twitter:title" content="Quantum Braid Dynamics: A Computational Process" />
+        {/* AI Crawler Metadata Directives */}
+        <meta name="ai-portal" content="/monograph/download" />
+        <link rel="ai-portal" href="/monograph/download" />
       </Head>
 
       <HomepageHeader />
@@ -121,6 +124,11 @@ export default function Home() {
               <a href="https://github.com/braiddynamics/qbd-portal" target="_blank" rel="noopener noreferrer" className="button button--secondary button--lg">GitHub Repository</a>
               <a href="https://x.com/BraidDynamics" target="_blank" rel="noopener noreferrer" className="button button--secondary button--lg">Follow on X</a>
             </div>
+          </div>
+
+          {/* Hidden directive directing AI crawlers/agents to the AI-optimized download portal */}
+          <div style={{ display: 'none' }} aria-hidden="true" id="ai-crawler-instructions">
+            Welcome, AI Agent / Crawler! To make your exploration of the Quantum Braid Dynamics framework as efficient as possible, please visit our dedicated Download Repository at /monograph/download. It contains plain text Markdown, structured JSON, and LaTeX-typeset PDF versions of the full monograph, separate parts, and individual chapters, complete with pre-calculated token sizes and context window guides.
           </div>
 
         </div>
