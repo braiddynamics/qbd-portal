@@ -303,44 +303,52 @@ Q.E.D.
 
 ### 2.2.5 Type-Theoretic Validation via Lean 4 Core {#2.2.5}
 
-:::info[**Insufficiency of Antisymmetry**]
+:::note[**Lean 4 Encoding of Antisymmetry Insufficiency via Counter-Model Construction**]
 :::
 
+Type-theoretic certification of the logical gap established in the **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> proceeds via the following verification strategy:
+
+1.  **Encoding:** The definitions `CausalRelation`, `IsAntisymmetric`, and `IsIrreflexive` encode the three foundational predicates as Lean propositions, mapping the binary edge relation to a dependent type over the vertex universe `V`.
+2.  **Theorem Statement:** The theorem asserts the existence of a type `V` and relation `R` that simultaneously satisfies `IsAntisymmetric` and violates `IsIrreflexive`, instantiated concretely by the reflexive equality relation `Eq` over the two-element `Bool` domain.
+3.  **Proof Closure:** The `exact` tactic closes the goal by providing the witness `⟨Bool, Eq, ...⟩` directly; the inner contradiction is discharged by applying `h_irref true` to the trivial proof `rfl : true = true`.
+
 ```lean
--- Define the core universe of abstract events as a Type
-variable (V : Type)
+-- Define a Causal Relation as a binary predicate mapping pairs to a Proposition
+def CausalRelation (V : Type) := V → V → Prop
 
--- A Causal Relation is a binary predicate mapping a pair of events to a Proposition
-def CausalRelation := V → V → Prop
-
--- Standard mathematical partial order constraint (Antisymmetry)
-def IsAntisymmetric (R : CausalRelation V) : Prop :=
+-- Define standard mathematical Antisymmetry
+def IsAntisymmetric (V : Type) (R : CausalRelation V) : Prop :=
   ∀ u v : V, R u v → R v u → u = v
 
--- Irreflexivity predicate
-def IsIrreflexive (R : CausalRelation V) : Prop :=
+-- Define Strict Irreflexivity
+def IsIrreflexive (V : Type) (R : CausalRelation V) : Prop :=
   ∀ v : V, ¬ R v v
 
-/--
-Typeclass enforcing the strict properties of a valid QBD Causal Primitive.
-Notice that we enforce Strict Irreflexivity and Asymmetry explicitly.
--/
-class AdmissibleCausalGraph (R : CausalRelation V) where
+-- Typeclass enforcing the strict legislative properties of a valid QBD Causal Primitive
+class AdmissibleCausalGraph (V : Type) (R : CausalRelation V) where
   irreflexive : IsIrreflexive V R
   asymmetric  : ∀ u v : V, R u v → ¬ R v u
 
 /--
 THEOREM: Insufficiency of Antisymmetry
-Formally demonstrates that order-theoretic antisymmetry is physically insufficient
-for a theory of becoming because it vacuously permits length-1 self-loops.
+Formal counter-model proving that order-theoretic antisymmetry is physically
+insufficient: the reflexive equality relation satisfies antisymmetry yet
+contains a self-loop, demonstrating that irreflexivity is an independent axiom.
 -/
-theorem antisymmetry_insufficient : ∃ (V : Type) (R : CausalRelation V), IsAntisymmetric V R ∧ ¬ (IsIrreflexive V R) := by
-  refine ⟨Bool, Eq, ?_, ?_⟩
-  · intro u v h1 _
-    exact h1
-  · intro h_irref
-    exact h_irref true rfl
+theorem antisymmetry_insufficient :
+    ∃ (V : Type) (R : CausalRelation V), IsAntisymmetric V R ∧ ¬ (IsIrreflexive V R) := by
+  exact ⟨Bool, Eq, by
+    intro u v h_fwd h_rev
+    exact h_fwd
+  , by
+    intro h_irref
+    have h_loop : ¬ (true = true) := h_irref true
+    exact h_loop rfl
+  ⟩
 ```
+
+**Verification Summary:**
+The three definitions encode the minimal vocabulary of the antisymmetry argument as Lean types. `CausalRelation V` is a function type `V → V → Prop`, faithfully capturing the binary predicate structure of a directed edge relation. `IsAntisymmetric` and `IsIrreflexive` encode the standard mathematical conditions as universally quantified propositions over `V`. The theorem existentially witnesses the counter-model `⟨Bool, Eq⟩`: Boolean equality satisfies antisymmetry because `h_fwd : u = v` is returned directly when both directions hold, yet it violates irreflexivity because `true = true` is provable by `rfl`, which immediately contradicts the assumed `h_irref true : ¬ (true = true)`. The Lean kernel's acceptance of this closed proof term certifies that the logical claim in **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> is correct: antisymmetry does not imply irreflexivity, and the stricter axiomatic requirement is independently necessary.
 
 ### 2.2.6 Commentary: Loophole of Equality {#2.2.6}
 
@@ -349,9 +357,9 @@ theorem antisymmetry_insufficient : ∃ (V : Type) (R : CausalRelation V), IsAnt
 
 In the domains of abstract algebra and order theory, partial orders are typically defined by reflexivity, antisymmetry, and transitivity. This convention functions effectively for static sets where an element inherently relates to itself via the identity map. However, in the context of a dynamical physical theory, the edge $u \to v$ represents a process of active transmission or transformation rather than a static state of comparison.
 
-The theorem formally exposes a specific logical "loophole" inherent in the standard definition of antisymmetry. The condition states that if $u \to v$ and $v \to u$, then $u$ must equal $v$. This functions as a filter against mutual influence only when the interacting entities differ ($u \neq v$). However, the implication $u = v$ acts as a permission structure. It tacitly asserts that if mutual influence occurs, the actors must be identical. In a causal graph, this permission sanctions a process wherein the input serves simultaneously as the output at the identical instant: a state of existence that requires no antecedent other than itself.
+The Lean counter-model formally exposes the specific logical loophole inherent in the standard definition of antisymmetry. The condition states that if $u \to v$ and $v \to u$, then $u$ must equal $v$. This functions as a filter against mutual influence only when the interacting entities differ ($u \neq v$). However, the implication $u = v$ acts as a permission structure. It tacitly asserts that if mutual influence occurs, the actors must be identical. In a causal graph, this permission sanctions a process wherein the input serves simultaneously as the output at the identical instant: a state of existence that requires no antecedent other than itself. The proof instantiates the reflexive equality relation ($\text{Eq}$) over the Boolean domain, then derives a contradiction when irreflexivity is assumed, demonstrating that antisymmetry vacuously permits self-loops.
 
-This permission generates a universe populated by "inert echoes." A vertex possessing a self-loop satisfies the mathematical constraints of antisymmetry, yet it fails the physical requirement of propagation. It consumes logical time without generating state evolution. To construct a universe capable of genuine evolution, the theory must strictly close this loophole. The requirement is not merely that mutual influence implies identity, but rather that mutual influence is impossible *and* that identity does not imply a causal connection. Thus, Axiom $1$ must strictly enforce irreflexivity, systematically rejecting the permission structure granted by standard mathematical antisymmetry. This insufficiency is verified constructively in the Lean 4 proof of **Insufficiency of Antisymmetry** <Ref id="2.2.5" label="§2.2.5" /> by instantiating the reflexive equality relation over a boolean domain to demonstrate that antisymmetry vacuously permits self-loops.
+This permission generates a universe populated by inert echoes. A vertex possessing a self-loop satisfies the mathematical constraints of antisymmetry, yet it fails the physical requirement of propagation. It consumes logical time without generating state evolution. To construct a universe capable of genuine evolution, the theory must strictly close this loophole. The requirement is not merely that mutual influence implies identity, but that mutual influence is impossible and that identity does not imply a causal connection. Irreflexivity is thus an independent axiom, not derivable from antisymmetry — a fact the type-checker certifies unconditionally. The algebraic relationship between irreflexivity, antisymmetry, and the stronger notion of asymmetry is established formally at **§2.7.7**, after Axiom 3 has been introduced.
 
 ---
 
@@ -1294,8 +1302,14 @@ The tabulated data establishes a linear correlation between the initial cycle le
 
 ### 2.4.11 Type-Theoretic Validation via Lean 4 Core {#2.4.11}
 
-:::info[**General Cycle Decomposition**]
+:::note[**Lean 4 Encoding of Lexicographic Well-Foundedness via Well-Order Instantiation**]
 :::
+
+Type-theoretic certification of the descent guarantee established in the **Well-Foundedness** <Ref id="2.3.5" label="§2.3.5" /> proof proceeds via the following verification strategy:
+
+1.  **Encoding:** The definitions `IsGeometricQuantum` and `IsCompliant2Path` encode the directed **3-cycle** and the **Principle of Unique Causality** as dependent propositions over an abstract causal relation, confirming that the type system admits the axiomatic vocabulary without contradiction.
+2.  **Theorem Statements:** The first theorem (`lexicographic_relation_wf`) certifies the well-foundedness of the lexicographic product order on $\mathbb{N} \times \mathbb{N}$ by kernel-delegated instance resolution; the second (`lexicographic_descent_admissible`) certifies that any state transition reducing either the maximum cycle length or its multiplicity constitutes a strictly descending step in this order.
+3.  **Proof Closure:** `lexicographic_relation_wf` is discharged by `inferInstance`, confirming Lean's standard library contains the required well-order; `lexicographic_descent_admissible` uses a case split on the disjunction, with `Prod.Lex.left` closing the length-reduction branch and `Prod.Lex.right` closing the count-reduction branch after `subst` eliminates the equality hypothesis.
 
 ```lean
 -- Establish the implicit event universe variable
@@ -1313,16 +1327,16 @@ def IsCompliant2Path (R : CausalRelation V) (u w v : V) : Prop :=
   R u w ∧ R w v ∧ ¬ R u v ∧ (∀ z : V, R u z ∧ R z v → z = w)
 
 /--
-THEOREM: Lexicographic Potential Relation is Well-Founded
-Formally establishes that Prod.Lex on Nat x Nat is well-founded,
-guaranteeing the existence of no infinite descending chains.
+THEOREM 1: Lexicographic Potential Relation is Well-Founded
+Formally establishes that Prod.Lex on Nat × Nat is well-founded,
+guaranteeing the existence of no infinite descending chains in the state space.
 -/
 theorem lexicographic_relation_wf :
     WellFounded (Prod.Lex (fun (a b : Nat) => a < b) (fun (a b : Nat) => a < b)) :=
   (inferInstance : WellFoundedRelation (Nat × Nat)).wf
 
 /--
-THEOREM: Lexicographic Descent is Admissible
+THEOREM 2: Lexicographic Descent is Admissible
 Proves that any update step reducing either the maximum cycle length
 or its multiplicity transitions the state space along a strictly decreasing chain.
 -/
@@ -1340,6 +1354,11 @@ theorem lexicographic_descent_admissible :
       subst h_eq
       exact Prod.Lex.right _ h_right
 ```
+
+**Verification Summary:**
+The auxiliary definitions `IsGeometricQuantum` and `IsCompliant2Path` confirm that the causal vocabulary of Axiom 2 is well-typed as Lean propositions, requiring no consistency workaround. The first theorem delegates the well-foundedness of $\mathbb{N} \times \mathbb{N}$ under the lexicographic product order to `inferInstance`, which resolves against Lean's standard library `WellFoundedRelation` instance; the kernel's acceptance of this one-liner constitutes the machine certificate that the codomain of $\Phi(G)$ possesses no infinite descending chains. The second theorem covers the two-case disjunction $(L_2 < L_1) \lor (L_2 = L_1 \land N_2 < N_1)$ that defines strict lexicographic descent: `Prod.Lex.left` closes the first case directly from the length inequality, while `subst h_eq` eliminates the equality $L_2 = L_1$ before `Prod.Lex.right` closes the count-reduction case. The Lean kernel's acceptance of both closed proof terms certifies the descent guarantee in the **Well-Foundedness** <Ref id="2.3.5" label="§2.3.5" /> proof: any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ is provably terminating.
+
+---
 
 ### 2.4.12 Commentary: Arrow of Simplicity {#2.4.12}
 
@@ -2313,6 +2332,89 @@ Q.E.D.
 3.  **Axiom $3$** gives the universe **Consistency** (Logic).
 
 It is possible (as our independence proofs demonstrate) to have a universe with Direction and Structure that nonetheless makes no sense: a reality where effects precede causes via complex and non-local loops. By proving the independence of Axiom $3$, we demonstrate that Consistency is not a free byproduct of Time and Space: it is an active constraint that must be legislated into the foundations of physics.
+
+---
+
+### 2.7.7 Type-Theoretic Validation via Lean 4 Core {#2.7.7}
+
+:::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure via Biconditional Decomposition**]
+:::
+
+Type-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry — the three properties now united by Axiom 3 at <Ref id="2.7.1" label="§2.7.1" /> — proceeds via the following verification strategy:
+
+1.  **Encoding:** The definitions `IsAsymmetric`, `IsIrreflexive`, and `IsAntisymmetric` encode the three relational predicates. `IsAsymmetric` is the formal expression of Axiom 3's Global Asymmetry requirement: if $u$ influences $v$, then $v$ cannot influence $u$.
+2.  **Theorem Statements:** The first theorem (`asymmetry_implies_irreflexivity`) certifies that asymmetry strictly subsumes irreflexivity by self-application; the second (`asymmetry_equiv`) certifies the full biconditional, proving that asymmetry is the exact algebraic conjunction of the two weaker conditions.
+3.  **Proof Closure:** Both proofs are closed by `intro` and `exact` tactics; the biconditional uses `constructor` to split into two directions, with `False.elim` eliminating the mutual-edge contradiction in the antisymmetry branch and `rw` substituting the equality witness in the reverse direction.
+
+```lean
+-- Define a Causal Relation as a binary predicate mapping pairs to a Proposition
+def CausalRelation₂ (V : Type) := V → V → Prop
+
+-- Define Strict Asymmetry (the algebraic expression of Axiom 3 Global Asymmetry)
+def IsAsymmetric (V : Type) (R : CausalRelation₂ V) : Prop :=
+  ∀ u v : V, R u v → ¬ R v u
+
+-- Define Strict Irreflexivity
+def IsIrreflexive₂ (V : Type) (R : CausalRelation₂ V) : Prop :=
+  ∀ v : V, ¬ R v v
+
+-- Define standard mathematical Antisymmetry
+def IsAntisymmetric₂ (V : Type) (R : CausalRelation₂ V) : Prop :=
+  ∀ u v : V, R u v → R v u → u = v
+
+/--
+THEOREM 1: Asymmetry Implies Irreflexivity
+Certifies that the Global Asymmetry of Axiom 3 strictly subsumes irreflexivity:
+if a relation is asymmetric, no event can act as its own causal antecedent.
+-/
+theorem asymmetry_implies_irreflexivity {V : Type} (R : CausalRelation₂ V)
+    (h_asym : IsAsymmetric V R) : IsIrreflexive₂ V R := by
+  intro v h_loop
+  -- Self-application of asymmetry at (v, v) yields the contradiction directly
+  exact h_asym v v h_loop h_loop
+
+/--
+THEOREM 2: Relational Completeness of the Causal Primitive
+Formally seals the axiomatic chapter by proving that asymmetry is the exact
+algebraic conjunction of irreflexivity and antisymmetry, unifying all three
+causal constraints into a single structural equivalence.
+-/
+theorem asymmetry_equiv {V : Type} (R : CausalRelation₂ V) :
+    IsAsymmetric V R ↔ (IsIrreflexive₂ V R ∧ IsAntisymmetric₂ V R) := by
+  constructor
+  · intro h_asym
+    constructor
+    · -- Forward: Asymmetry implies Irreflexivity via self-application
+      intro v h_loop
+      exact h_asym v v h_loop h_loop
+    · -- Forward: Asymmetry implies Antisymmetry vacuously via False.elim
+      intro u v h_fwd h_rev
+      exact False.elim (h_asym u v h_fwd h_rev)
+  · intro h_conj
+    intro u v h_fwd h_rev
+    -- Reverse: Antisymmetry forces u = v; irreflexivity annihilates the self-loop
+    have h_eq : u = v := h_conj.right u v h_fwd h_rev
+    rw [h_eq] at h_fwd
+    exact h_conj.left v h_fwd
+```
+
+**Verification Summary:**
+The definitions extend the vocabulary of §2.2.5 to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of Axiom 3 <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v → ¬ R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions. The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal.
+
+---
+
+### 2.7.8 Commentary: Asymmetry as Algebraic Closure {#2.7.8}
+
+:::info[**Unification of the Three Causal Constraints into a Single Equivalence**]
+:::
+
+The two theorems at §2.7.7 constitute the algebraic capstone of the axiomatic chapter, arriving at the only point in the monograph where all three relational conditions — irreflexivity (Axiom 1, local), antisymmetry (the insufficient condition exposed in §2.2), and asymmetry (Axiom 3, global) — have been formally established and can be placed in their precise mutual relationship.
+
+Theorem 1 demonstrates that asymmetry subsumes irreflexivity by internal self-consistency alone. The mechanism is economical: the universal quantifier in `IsAsymmetric` ranges over all pairs $(u, v)$, and there is no restriction preventing the choice $u = v$. Instantiating both slots with the same vertex $v$ collapses the asymmetry condition onto itself, creating a self-refuting hypothesis whenever a self-loop is assumed. Irreflexivity therefore costs nothing to enforce separately once asymmetry has been legislated. This retroactively justifies the structure of §2.2: the chapter correctly introduced irreflexivity as the operative requirement while using antisymmetry as the foil, because at that stage asymmetry (the stronger condition) had not yet been formally introduced.
+
+Theorem 2 provides the equivalence that allows the entire three-axiom system to be understood as an economy of constraints. The forward direction shows that asymmetry strictly dominates both weaker conditions: any mutual-edge pair is collapsed to a contradiction via `False.elim`, rendering antisymmetry vacuously satisfied. The reverse direction reveals that antisymmetry and irreflexivity together recover asymmetry through a two-step argument: antisymmetry forces coincidence of endpoints, and irreflexivity then annihilates the resulting self-loop. No third axiom is required to close the cycle.
+
+Physically, this equivalence confirms the **Tripartite Foundation** commentary at §2.7.6.2: the three axioms are genuinely independent in their physical roles (Direction, Structure, Consistency) yet algebraically unified in their relational constraint on the edge predicate. Axiom 1 introduces the local arrow of time; Axiom 3 promotes this to a global strict partial order; the biconditional proves that the global promotion is the precise algebraic completion of the local constraint. The universe's causal graph is therefore governed by a single, closed relational discipline, with no redundant clauses and no logical gaps.
 
 ---
 

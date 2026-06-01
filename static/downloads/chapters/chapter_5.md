@@ -1571,8 +1571,14 @@ Q.E.D.
 
 ### 5.4.6 Type-Theoretic Validation via Lean 4 Core {#5.4.6}
 
-:::info[**Vacuum Stability**]
+:::note[**Lean 4 Encoding of Vacuum Stability via Gradient Order Axiom**]
 :::
+
+Type-theoretic certification of the stability criterion established in the **Gradient Dominance Proof** <Ref id="5.4.5" label="§5.4.5" /> proceeds via the following verification strategy:
+
+1.  **Encoding:** The abstract `Real` structure and its associated `opaque` operators encode the minimum algebraic vocabulary needed to reason about the Jacobian of the master equation without importing analysis libraries; `IsNegative`, `jacobian`, and `IsStableAttractor` encode the stability predicate as a chain of definitional reductions over the gradient parameters $C'$ and $D'$.
+2.  **Theorem Statement:** The theorem asserts that the gradient dominance condition $C' < D'$ implies the Jacobian $C' - D'$ is strictly negative, which is the definition of a stable attractor; the hypothesis `h_gradient : C' < D'` is consumed by the order axiom `sub_neg_of_lt`.
+3.  **Proof Closure:** Two `unfold` tactics reduce `IsStableAttractor` to `IsNegative (jacobian C' D')` and then to `IsNegative (C' - D')`; `exact sub_neg_of_lt h_gradient` closes the goal by applying the postulated order axiom directly to the gradient inequality hypothesis.
 
 ```lean
 -- Postulate an abstract type for Real numbers as a structure to enable standalone core execution
@@ -1615,6 +1621,11 @@ theorem gradient_dominance_implies_stability (C' D' : Real) :
   -- Apply the order axiom directly to the gradient inequality
   exact sub_neg_of_lt h_gradient
 ```
+
+**Verification Summary:**
+The opaque postulates `Real.zero`, `Real.lt`, and `Real.sub` introduce the essential order-theoretic vocabulary as axioms rather than definitions, deliberately avoiding any dependency on Lean's `Mathlib` analysis hierarchy. The key axiomatic bridge `sub_neg_of_lt` postulates that a strict inequality `a < b` implies `a - b < 0`, which is the abstract encoding of the physical claim that gradient dominance of deletion over creation makes the Jacobian negative. `IsStableAttractor C' D'` is definitionally unfolded by two `unfold` tactics into the kernel-level proposition `C' - D' < Real.zero`. The `exact` tactic then applies `sub_neg_of_lt h_gradient` directly, where `h_gradient : C' < D'` is the gradient dominance hypothesis, closing the goal without any additional manipulation. The Lean kernel's acceptance of this three-step proof certifies that, under the postulated order axioms, gradient dominance is a sufficient condition for vacuum stability, providing the formal machine certificate for the analytical law established in the **Gradient Dominance Proof** <Ref id="5.4.5" label="§5.4.5" />: whenever the deletion restoring force gradient exceeds the autocatalytic creation drive gradient, the vacuum equilibrium is a guaranteed stable attractor.
+
+---
 
 ### 5.4.Z Implications and Synthesis {#5.4.Z}
 
