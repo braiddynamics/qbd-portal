@@ -11,6 +11,7 @@ sidebar_position: 0
 ## 📚 Assembled Table of Contents
 
 * [**Monograph Abstract**](/monograph/abstract)
+* [**Interactive Summary**](/monograph/summary)
 * [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
 
 ### 1. The Foundational Principles (The Rules)

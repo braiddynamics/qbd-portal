@@ -182,9 +182,9 @@ export default function HomepageHeader() {
             </Link>
             <Link 
               className="button hero-white-btn button--lg btn-pulse-white-active" 
-              to="/monograph/intro/intro-a"
+              to="/monograph/summary"
             >
-              Introduction
+              Interactive Summary
             </Link>
           </div>
         </div>

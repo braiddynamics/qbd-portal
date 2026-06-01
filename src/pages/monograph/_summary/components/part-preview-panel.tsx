@@ -141,6 +141,13 @@ const PREVIEW_REGISTRY: Record<number, PartPreviewData> = {
         ingredients: 'Gromov-Hausdorff-Prokhorov Limits',
       },
       {
+        num: '14',
+        title: 'LORENTZIAN REALITY',
+        taxonomy: 'Time',
+        question: 'How does Time Emerge?',
+        ingredients: 'Causal Poset Foliations & Max-Path Geodesics',
+      },
+      {
         num: '15',
         title: 'ENTANGLEMENT',
         taxonomy: 'ER = EPR',

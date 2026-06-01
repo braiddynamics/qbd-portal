@@ -282,17 +282,17 @@ export default function MonographSummary() {
   };
 
   return (
-    <Layout
-      title="Monograph Summary Atlas"
-      description="A comprehensive reference blueprint mapping the 25 chapters of the monograph. Explore emergent spacetime posets, topological braid excitations, and cosmic natural selection attractors on a single continuous page.">
+<Layout
+      title="QBD Summary Atlas: The Source Code of Cosmic Evolution"
+      description="Mapping a Fault-Tolerant, Self-Compiling Universe. This interactive atlas decomposes the 25-chapter mechanics of a background-independent cosmos. Discover a framework where local network rewrites act as universal quantum gates, the vacuum executes a self-repairing stabilizer code, and gravity emerges naturally as the entropic drag of information processing.">
       
       <Head>
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="A comprehensive reference blueprint mapping the 25 chapters of the monograph. Explore emergent spacetime posets, topological braid excitations, and cosmic natural selection attractors on a single continuous page." />
-        <meta property="og:title" content="Quantum Braid Dynamics | Summary Atlas" />
-        <meta property="og:description" content="A comprehensive reference blueprint mapping the 25 chapters of the monograph. Explore emergent spacetime posets, topological braid excitations, and cosmic natural selection attractors on a single continuous page." />
-        <meta name="twitter:title" content="Quantum Braid Dynamics | Summary Atlas" />
-        <meta name="twitter:description" content="A comprehensive reference blueprint mapping the 25 chapters of the monograph. Explore emergent spacetime posets, topological braid excitations, and cosmic natural selection attractors on a single continuous page." />
+        <meta name="description" content="Mapping a Fault-Tolerant, Self-Compiling Universe. This interactive atlas decomposes the 25-chapter mechanics of a background-independent cosmos. Discover a framework where local network rewrites act as universal quantum gates, the vacuum executes a self-repairing stabilizer code, and gravity emerges naturally as the entropic drag of information processing." />
+        <meta property="og:title" content="Quantum Braid Dynamics | The Source Code of Cosmic Evolution" />
+        <meta property="og:description" content="Mapping a Fault-Tolerant, Self-Compiling Universe. This interactive atlas decomposes the 25-chapter mechanics of a background-independent cosmos. Discover a framework where local network rewrites act as universal quantum gates, the vacuum executes a self-repairing stabilizer code, and gravity emerges naturally as the entropic drag of information processing." />
+        <meta name="twitter:title" content="Quantum Braid Dynamics | The Source Code of Cosmic Evolution" />
+        <meta name="twitter:description" content="Mapping a Fault-Tolerant, Self-Compiling Universe. This interactive atlas decomposes the 25-chapter mechanics of a background-independent cosmos. Discover a framework where local network rewrites act as universal quantum gates, the vacuum executes a self-repairing stabilizer code, and gravity emerges naturally as the entropic drag of information processing." />
       </Head>
 
       <main style={{ padding: '2rem 0 6rem 0', position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -352,7 +352,7 @@ export default function MonographSummary() {
               cursor: zoom-in;
               display: flex;
               align-items: center;
-              justifyContent: center;
+              justify-content: center;
               width: 100%;
               height: 100%;
               box-sizing: border-box;
@@ -436,7 +436,7 @@ export default function MonographSummary() {
               color: 'var(--ifm-font-color-base)'
             }}>
               Quantum Braid Dynamics: <br />
-              <span style={{ color: 'var(--ifm-color-primary)', fontStyle: 'italic', fontWeight: '400' }}>The Monograph Summary Atlas</span>
+              <span style={{ color: 'var(--ifm-color-primary)', fontStyle: 'italic', fontWeight: '400' }}>A Computational Process</span>
             </h1>
             <div style={{ width: '80px', height: '4px', backgroundColor: 'var(--ifm-color-primary)', margin: '1.5rem auto' }}></div>
             <p style={{ 
@@ -447,7 +447,7 @@ export default function MonographSummary() {
               maxWidth: '850px',
               margin: '0 auto'
             }}>
-              A comprehensive reference blueprint mapping the 25 chapters of the monograph. Explore emergent spacetime posets, topological braid excitations, and cosmic natural selection attractors on a single continuous page.
+              This interactive atlas introduces the mechanics of a background-independent cosmos. Discover a framework where local network rewrites act as universal quantum gates, the vacuum executes a self-repairing stabilizer code, and gravity emerges naturally as the entropic drag of information processing.
             </p>
           </div>
 
