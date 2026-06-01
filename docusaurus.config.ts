@@ -87,6 +87,7 @@ const config: Config = {
           position: 'left',
           label: 'Table of Contents',
         },
+        { to: '/monograph/summary', label: 'Summary', position: 'left' },
         { to: '/monograph/appendices/notation', label: 'Notation', position: 'left' },
         { to: '/monograph/download', label: 'Downloads', position: 'left' },
         {
