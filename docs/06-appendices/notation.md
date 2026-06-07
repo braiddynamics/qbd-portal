@@ -51,15 +51,15 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/rules/ontology/1.2/#1.2.5.1) |
 | $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/rules/ontology/1.2/#1.2.6.1) |
 | $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/rules/ontology/1.2/#1.2.6.1) |
-| $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $c$ | Speed of light | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/rules/ontology/1.2/#1.2.6.2) |
-| $U_0$ | The unique initial state | [§1.2.7](/monograph/rules/ontology/1.2/#1.2.7) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $k_B$ | Boltzmann constant | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $T$ | Temperature (Context: Thermodynamics) | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $\hbar$ | Reduced Planck constant | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $c$ | Speed of light | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $R_s$ | Schwarzschild Radius | [§1.2.7.2](/monograph/rules/ontology/1.2/#1.2.7.2) |
+| $U_0$ | The unique initial state | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.8.1](/monograph/rules/ontology/1.2/#1.2.8.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |

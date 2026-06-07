@@ -1470,14 +1470,25 @@ Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation d
 
 ---
 
-### 5.1.4 Proof: Extensive Entropy {#5.1.4}
+### 5.1.4 Lemma: Cheeger Bound on Boundary Leakage {#5.1.4}
+
+:::info[**Isoperimetric boundedness of local subsystems**]
+:::
+Let $G = (V, E)$ denote the tree-like skeleton of the causal graph at equilibrium with a sub-percolation decay parameter $\gamma > \ln d_{\max}$. Then the Cheeger constant satisfies $h(G) \ge 1$, and the mutual information leakage between a subsystem $S \subset V$ and its boundary $\partial S$ is bounded for any bulk vertex $u \in S$ by $I(u; \partial S) \le C \exp(-\gamma \cdot d(u, \partial S))$.
+
+**In Plain English:**  
+Section 5.1.4 formalizes the properties of the QBD lemma regarding the Cheeger bound on boundary leakage.
+
+---
+
+### 5.1.5 Proof: Extensive Entropy {#5.1.5}
 
 :::tip[**Formal Derivation via Partitioning and Limits**]
 :::
 **I. Volume Decomposition**
 
 **In Plain English:**  
-Section 5.1.4 formalizes the properties of the QBD proof regarding extensive entropy.
+Section 5.1.5 formalizes the properties of the QBD proof regarding extensive entropy.
 
 ---
 
@@ -1635,25 +1646,36 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 
 ---
 
-### 5.4.5 Proof: Vacuum Stability {#5.4.5}
+### 5.4.5 Lemma: Ginzburg-Landau Functional Potential {#5.4.5}
+
+:::info[**Boundedness of localized field configurations**]
+:::
+Assume the cycle density is a spatial field $\rho(x, t)$ governed over a domain $\Omega$ by a positive-definite diffusion constant $D > 0$ and the local net flux function $F(\rho)$. Then the Ginzburg-Landau functional $V[\rho] = \int_{\Omega} \left[ \frac{1}{2} D (\nabla \rho)^2 + U(\rho) \right] d^4x$ satisfies the Lyapunov stability conditions about the uniform equilibrium state $\rho^*$, where the local potential density $U(\rho) = -\int_{\rho^*}^{\rho} F(s) ds$ is strictly convex.
+
+**In Plain English:**  
+Section 5.4.5 formalizes the properties of the QBD lemma regarding the Ginzburg-Landau functional potential.
+
+---
+
+### 5.4.6 Proof: Vacuum Stability {#5.4.6}
 
 :::tip[**Formal Verification of Vacuum Stability via Flux Linearization**]
 :::
 Let $\rho^*$ denote the unique positive root satisfying the transcendental balance equation. Define the time-dependent rate equation governing cycle density fluctuations as $\dot{\rho} = C(\rho) - D(\rho)$, where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ represents the creation flux and $D(\rho) = \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2$ represents the deletion flux. The fixed point $\rho^*$ is locked by type geometry to be linearly stable if and only if the first derivative of the net flux satisfies the Jacobian constraint $J \equiv \frac{d}{d\rho}(C(\rho) - D(\rho))\vert_{\rho^*} < 0$, which requires the inequality $C'(\rho^*) < D'(\rho^*)$.
 
 **In Plain English:**  
-Section 5.4.5 formalizes the properties of the QBD proof regarding vacuum stability.
+Section 5.4.6 formalizes the properties of the QBD proof regarding vacuum stability.
 
 ---
 
-### 5.4.6 Proof: Type-Theoretic Validation {#5.4.6}
+### 5.4.7 Proof: Type-Theoretic Validation {#5.4.7}
 
 :::info[**Vacuum Stability**]
 :::
 This section formally verifies via Lean 4 core the master equation fixed-point linear stability criteria under deletion gradient dominance, proving that when the restoring force exceeds the autocatalytic creation drive, the vacuum constitutes a stable, self-regulating attractor.
 
 **In Plain English:**  
-Section 5.4.6 formalizes the type-theoretic validation of vacuum stability, confirming that the universe's ground state returns exponentially to equilibrium when perturbed.
+Section 5.4.7 formalizes the type-theoretic validation of vacuum stability, confirming that the universe's ground state returns exponentially to equilibrium when perturbed.
 
 ---
 
@@ -1737,14 +1759,25 @@ Section 5.5.7 formalizes the properties of the QBD lemma regarding scale-invaria
 
 ---
 
-### 5.5.8 Proof: Spacetime Well-Posedness {#5.5.8}
+### 5.5.8 Lemma: Derivation of the Noise Kernel via Kramers-Moyal {#5.5.8}
+
+:::info[**Stochastic covariance and strength of vacuum shot noise in discrete causality**]
+:::
+Assume the discrete graph updates follow a birth-death Markov jump process with creation flux $J_{in}(\rho)$ and deletion flux $J_{out}(\rho)$. Then a second-order Kramers-Moyal expansion yields a Gaussian white noise field $\eta(x, t)$ whose local strength is exactly locked to the sum of the equilibrium fluxes, satisfying $\langle \eta(x, t) \eta(x', t') \rangle = \Gamma(\rho^*) \delta(x - x') \delta(t - t')$, where the noise variance coefficient satisfies $\Gamma(\rho^*) = \rho^*(1 + 6\lambda_{\text{cat}}\rho^*)$.
+
+**In Plain English:**  
+Section 5.5.8 formalizes the properties of the QBD lemma regarding the derivation of the noise kernel via Kramers-Moyal.
+
+---
+
+### 5.5.9 Proof: Spacetime Well-Posedness {#5.5.9}
 
 :::tip[**Formal Proof of Lorentzian Convergence via Causal Triplet Lifting**]
 :::
 The theorem establishes that the sequence of causal graph triplets $(V_N, \bar{d}_N, \mathcal{C}_N)$ converges under the Lorentzian Gromov-Hausdorff-Prokhorov metric to a globally hyperbolic 4-dimensional pseudo-Riemannian manifold.
 
 **In Plain English:**  
-Section 5.5.8 formalizes the properties of the QBD proof regarding spacetime well-posedness.
+Section 5.5.9 formalizes the properties of the QBD proof regarding spacetime well-posedness.
 
 ---
 
