@@ -1,0 +1,3 @@
+Graph Structure: 10 nodes, 9 edges
+Is Directed Acyclic Graph (DAG): True
+Sparsity Check (E=V-1): True

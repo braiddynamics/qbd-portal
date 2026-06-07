@@ -23,6 +23,7 @@ yarn-error.log*
 /scripts
 /scratch
 /scratch/chapters
+/agent-readme.md
 
 # Python temporary files and bytecodes
 __pycache__/

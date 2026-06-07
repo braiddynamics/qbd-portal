@@ -396,9 +396,32 @@ The **Causal Geometry Construction Theorem** guarantees that the discrete Einste
 
 The proof proceeds via Direct Construction, establishing the normalization and well-posedness of the probability measures under discrete transport constraints.
 
-1.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />: The argument verifies probability normalization under the laziness adjustment, preventing mass leakage in vacuum regions.
-2.  **The Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />: The argument derives the equilibrium parameters from a maximum entropy principle, securing geometric stability.
-3.  **The Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />: The argument demonstrates that undirected distances are required to avoid cost divergences, justifying the metric relaxation.
+```text
+• 11.2.3 Theorem Causal Geometry Construction  [by construction]
+├── 11.2.4 Lemma Measure Validity
+│   ├── 11.2.4.1 Proof Measure Validity
+│   ├── 11.2.4.2 Calculation Measure Verification
+│   └── 11.2.4.3 Commentary Conservation of Probability
+│
+├── 11.2.5 Lemma Entropy Maximization
+│   ├── 11.2.5.1 Proof Entropy Maximization
+│   ├── 11.2.5.2 Calculation Entropy Maximization
+│   ├── 11.2.5.3 Commentary Universal Constant Alpha
+│   └── 11.2.5.4 Diagram Entropic Triality
+│
+├── 11.2.6 Lemma Metric Necessity
+│   ├── 11.2.6.1 Proof Metric Necessity
+│   ├── 11.2.6.2 Calculation Metric Verification
+│   └── 11.2.6.3 Commentary Avoiding Singularities
+│
+├── 11.2.7 Lemma Compensation by Causal Measures
+│   ├── 11.2.7.1 Proof Compensation
+│   ├── 11.2.7.2 Calculation Compensation Verification
+│   ├── 11.2.7.3 Commentary Arrow of Time in Static Geometry
+│   └── 11.2.7.4 Diagram Compensation Mechanism
+│
+└── 11.2.8 Proof Causal Geometry Construction
+```
 
 ---
 
@@ -1390,10 +1413,29 @@ $$
 
 The argument proceeds via Direct Construction, tracing the reduction in optimal transport cost that results from the topological nucleation of a three-cycle.
 
-1.  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />: The argument quantifies the reallocation of probability mass, proving the emergence of a non-zero shared mass at the new vertex.
-2.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />: The argument constructs a valid transport coupling that exploits the shared mass to achieve a zero-cost local transfer.
-3.  **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />: The argument bounds the optimal successor cost term-by-term, establishing that the shared mass strictly reduces the transport burden.
-4.  **Monotonicity Synthesis (Phase 4)** <Ref id="11.3.6" label="§11.3.6" />: The argument synthesizes these stages to prove that the decreased transport cost forces a strict curvature increase.
+```text
+• 11.3.2 Theorem Curvature Monotonicity
+├── 11.3.2.2 Diagram Monotonicity Proof
+│
+├── 11.3.3 Lemma Measure Dilution (Phase 1)
+│   ├── 11.3.3.1 Proof Mass Redistribution
+│   └── 11.3.3.2 Commentary Shared Neighbor Mechanism
+│
+├── 11.3.4 Lemma Transport Feasibility (Phase 2)
+│   ├── 11.3.4.1 Proof Coupling Construction
+│   └── 11.3.4.2 Commentary Hybrid Transport Plans
+│
+├── 11.3.5 Lemma Cost Contraction (Phase 3)
+│   ├── 11.3.5.1 Proof Inequality Derivation
+│   └── 11.3.5.2 Commentary Geometric Efficiency
+│
+├── 11.3.6 Proof Monotonicity Synthesis (Phase 4)
+│
+└── 11.3.7 Corollary Action-Complexity Proportionality
+    ├── 11.3.7.1 Proof Localized Variation
+    ├── 11.3.7.2 Commentary Geometric Quantum
+    └── 11.3.7.3 Calculation Monotonicity Verification
+```
 
 ### 11.3.2.2 Diagram: Monotonicity Proof {#11.3.2.2}
 
@@ -2190,9 +2232,20 @@ This conservation law guarantees the preservation of statistical stationarity fo
 
 The argument proceeds via Direct Construction, deriving local flux conservation as the necessary consequence of thermodynamic homeostasis.
 
-1.  **The Global Stationarity** <Ref id="12.1.3" label="§12.1.3" />: The argument applies the Ergodic Theorem to the degree observable, proving that net total flux accumulation must vanish in expectation.
-2.  **Flux Separation (Detailed Balance)** <Ref id="12.1.4" label="§12.1.4" />: The argument decomposes the balance equation using maximum entropy, establishing the independent vanishing of incoming and outgoing divergences.
-3.  **Local Conservation Synthesis** <Ref id="12.1.5" label="§12.1.5" />: The argument synthesizes the global balance and detailed balance to prove the divergence-free nature of the stress-energy tensor.
+```text
+• 12.1.2 Theorem Conservation of Complexity Flux
+├── 12.1.3 Lemma Global Stationarity
+│   ├── 12.1.3.1 Proof Ergodic Degree Invariance
+│   └── 12.1.3.2 Commentary Global Balance
+│
+├── 12.1.4 Lemma Flux Separation (Detailed Balance)
+│   ├── 12.1.4.1 Proof Maximum Entropy Decomposition
+│   └── 12.1.4.2 Commentary Entropic Independence
+│
+└── 12.1.5 Proof Local Conservation Synthesis
+    ├── 12.1.5.1 Calculation Flux Conservation Verification
+    └── 12.1.5.2 Diagram Local Conservation
+```
 
 ---
 
@@ -2682,10 +2735,24 @@ The geometric evolution of the causal graph at the homeostatic fixed point is go
 
 The proof proceeds via Direct Construction, showing that the homeostatic state corresponds to the critical point of the discrete action.
 
-1.  **Variational Action Principle** <Ref id="12.2.3" label="§12.2.3" />: The argument defines the variational action in terms of causal curvatures, linking metric changes to topological updates.
-2.  **The Curvature-Flux Coupling** <Ref id="12.2.4" label="§12.2.4" />: The argument balances topological sensitivity against thermodynamic creation flux to establish a linear relation.
-3.  **Gravitational Coupling Scale** <Ref id="12.2.5" label="§12.2.5" />: The argument scales the coupling parameter to anchor the gravitational constant to the intrinsic vacuum lengths.
-4.  **Derivation from Stationary Action** <Ref id="12.2.6" label="§12.2.6" />: The argument solves the global variational problem to uniquely derive the proportional field equations.
+```text
+• 12.2.2 Theorem Emergent Field Equations
+├── 12.2.3 Lemma Variational Action Principle
+│   ├── 12.2.3.1 Proof Topological Sensitivity
+│   ├── 12.2.3.2 Commentary Response Function
+│   └── 12.2.3.2 Diagram Gravitational Coupling
+│
+├── 12.2.4 Lemma Curvature-Flux Coupling
+│   ├── 12.2.4.1 Proof Thermodynamic Work
+│   ├── 12.2.4.2 Commentary Geometry Doing Work
+│   └── 12.2.4.3 Diagram Curvature Response
+│
+├── 12.2.5 Lemma Gravitational Coupling Scale
+│   └── 12.2.5.1 Proof Coupling Form
+│
+└── 12.2.6 Proof Derivation from Stationary Action
+    └── 12.2.6.1 Calculation Unified Field Equation Verification
+```
 
 ---
 
@@ -3284,9 +3351,19 @@ The **Discrete Divergence-Free Geometry Theorem** establishes that the emergent 
 
 The argument proceeds via Direct Construction, proving the mathematical necessity of the divergence-free curvature tensor from the coordinate invariance of the action.
 
-1.  **Action Invariance** <Ref id="12.3.3" label="§12.3.3" />: The argument proves the invariance of the discrete action under vertex relabelings, establishing general covariance.
-2.  **Discrete Schläfli Identity** <Ref id="12.3.4" label="§12.3.4" />: The argument applies the Schläfli identity to ensure that metric-level variations sum to zero under topological preservation.
-3.  **Identity Derivation** <Ref id="12.3.5" label="§12.3.5" />: The argument combines coordinate invariance and metric constraints to force the vanishing of the covariant divergence.
+```text
+• 12.3.2 Theorem Discrete Divergence-Free Geometry
+├── 12.3.3 Lemma Action Invariance
+│   ├── 12.3.3.1 Proof Vertex Relabeling Invariance
+│   └── 12.3.3.2 Commentary Discrete General Covariance
+│
+├── 12.3.4 Lemma Discrete Schläfli Identity
+│   ├── 12.3.4.1 Proof Null Curvature Variation
+│   └── 12.3.4.2 Commentary Orthogonality of Metric Variation
+│
+└── 12.3.5 Proof Identity Derivation
+    └── 12.3.5.1 Calculation Bianchi Error Scaling
+```
 
 ---
 
@@ -3686,23 +3763,23 @@ This convergence implies that the limit space $M$ admits a smooth differentiable
 
 The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold. This strategy leverages the deep correspondence between the spectrum of the Laplacian and the metric geometry, effectively reconstructing the manifold structure from the "sound" of the graph.
 
-1.  **The Spectral Convergence** <Ref id="13.1.3" label="§13.1.3" />: The argument invokes random geometric graph theorems to show that the discrete Laplacian is a consistent estimator of the continuum operator.
-2.  **The Heat Kernel Asymptotics** <Ref id="13.1.4" label="§13.1.4" />: The argument establishes the Gaussian behavior of the short-time heat kernel, validating local Euclidean scaling.
-3.  **Smoothness via Elliptic Regularity** <Ref id="13.1.5" label="§13.1.5" />: The argument applies elliptic regularity to bootstrap the convergence of eigenfunctions into a smooth limit metric.
-
-The convergence proof relies on establishing that the QBD graph falls within the universality class of random geometric graphs analyzed in manifold learning theory (Belkin & Niyogi, 2008; Calder & García Trillos, 2022). The table below summarizes the specific geometric and statistical conditions required by these theorems and identifies the exact QBD mechanism that satisfies them.
-
-| Condition | Description | QBD Mechanism | Cross-Reference |
-| :--- | :--- | :--- | :--- |
-| **Uniform Sampling** | Density bounded away from 0 and $\infty$ | **Ahlfors 4-Regularity** enforces bounded volume growth $\vert B(r)\vert \sim r^4$. | **emergent Hausdorff dimension** [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
-| **Bounded Geometry** | Finite degree, local connectivity | **Strict Locality** + **Bounded Degree** from causal exclusion. | **bounded vertex degree lemma** [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| **Bounded Curvature** | Ricci curvature bounded below | **Geometric Syndrome** enforces $\vert K\vert \leq 2$. | **Curvature Monotonicity Theorem** [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
-| **Low Noise** | Variance of observables decays | **Exponential Correlation Decay** suppresses fluctuations. | **correlation decay lemma** [§5.1.3](/monograph/rules/equilibrium/5.1/#5.1.3) |
-| **Dimensionality** | Consistent intrinsic dimension $d$ | **Ahlfors Regularity** fixes Hausdorff dimension $d=4$. | **emergent Hausdorff dimension** [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
-| **Spectral Gap** | $\lambda_2 > 0$ (connectedness) | **Cheeger Inequality** derived from correlation decay. | **correlation decay lemma** [§5.1.3](/monograph/rules/equilibrium/5.1/#5.1.3) |
-| **Manifold Topology** | No homological defects | **Cycle Suppression** eliminates non-manifold shortcuts. | **Ricci curvature bound lemma** [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
-
-These conditions collectively guarantee that the discrete graph is a "faithful sampler" of the underlying smooth manifold.
+```text
+• 13.1.2 Theorem Smooth Manifold Limit
+├── 13.1.3 Lemma Spectral Convergence
+│   ├── 13.1.3.1 Proof Spectral Convergence
+│   ├── 13.1.3.2 Calculation Spectral Convergence Verification
+│   └── 13.1.3.3 Commentary Hearing the Shape of Spacetime
+│
+├── 13.1.4 Lemma Heat Kernel Asymptotics
+│   ├── 13.1.4.1 Proof Gaussian Bounds
+│   ├── 13.1.4.2 Calculation Heat Kernel Asymptotics Verification
+│   └── 13.1.4.3 Commentary Diffusion as a Geometry Probe
+│
+├── 13.1.5 Lemma Smoothness via Elliptic Regularity
+│   └── 13.1.5.1 Proof C-Infinity Smoothness
+│
+└── 13.1.6 Proof Smooth Manifold Limit
+```
 
 ---
 
@@ -4256,9 +4333,23 @@ The limit tensor field $S_{\mu\nu}$ is locally proportional to the metric tensor
 
 The proof proceeds via Direct Construction, mapping discrete edge-level equations to continuous symmetric tensor fields on the tangent bundle.
 
-1.  **Directional Measures** <Ref id="13.2.3" label="§13.2.3" />: The argument proves that the local distribution of edge direction vectors converges weakly to the uniform Haar measure.
-2.  **Riemann Sum Approximation** <Ref id="13.2.4" label="§13.2.4" />: The argument demonstrates that discrete weighted averages converge to spherical integrals, yielding metric-proportional tensor structures.
-3.  **EFE Convergence** <Ref id="13.2.5" label="§13.2.5" />: The argument transfers the microscopic balance equations to the macroscopic tensor fields using the linearity of the averaging map.
+```text
+• 13.2.2 Theorem Tensorial Continuum Limit
+├── 13.2.3 Lemma Directional Measures
+│   ├── 13.2.3.1 Proof Haar Measure Convergence
+│   ├── 13.2.3.2 Calculation Directional Measures Verification
+│   └── 13.2.3.3 Commentary Texture of Spacetime
+│
+├── 13.2.4 Lemma Riemann Sum Approximation
+│   ├── 13.2.4.1 Proof Integral Convergence
+│   ├── 13.2.4.2 Calculation Riemann Sum Approximation Verification
+│   └── 13.2.4.3 Commentary Geometric Projection
+│
+├── 13.2.5 Lemma EFE Convergence
+│   └── 13.2.5.1 Proof Equation Limit
+│
+└── 13.2.6 Proof Tensorial Continuum Limit
+```
 
 ---
 
@@ -4744,9 +4835,19 @@ where $h_{\mu\nu}$ is the positive-definite Riemannian metric derived in the **T
 
 The argument proceeds via Direct Construction, reconciling the spatial isotropy with the temporal orientation to yield the hyperbolic signature.
 
-1.  **The Causal Drift** <Ref id="13.3.3" label="§13.3.3" />: The argument establishes that the expectation value of directed edges has a non-zero first moment, defining the temporal axis.
-2.  **The Null Boundary** <Ref id="13.3.4" label="§13.3.4" />: The argument limits transverse variance relative to the longitudinal displacement, creating a causal cone of finite aperture.
-3.  **Signature Selectivity** <Ref id="13.3.5" label="§13.3.5" />: The argument forces a relative sign flip between temporal and spatial coordinates to align the metric interval with the causal cone.
+```text
+• 13.3.2 Theorem Signature Selectivity
+├── 13.3.3 Lemma Causal Drift
+│   ├── 13.3.3.1 Proof Drift Non-Vanishing
+│   └── 13.3.3.2 Commentary Arrow of Time
+│
+├── 13.3.4 Lemma Null Boundary
+│   ├── 13.3.4.1 Proof Finite Propagation Speed
+│   └── 13.3.4.2 Commentary Speed of Light
+│
+└── 13.3.5 Proof Signature Selectivity
+    └── 13.3.5.1 Calculation Signature Verification
+```
 
 ---
 
@@ -5155,9 +5256,20 @@ where $\Delta_g$ is the Laplace-Beltrami operator on $M$ and $\rho(x)$ is a smoo
 
 The proof proceeds via Direct Construction, establishing that the discrete lapse function converges to a smooth scalar field in the continuum.
 
-1.  **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" />: The argument demonstrates that the discrete lapse minimizes a local variance functional, satisfying a discrete Dirichlet problem.
-2.  **Sobolev Convergence** <Ref id="14.1.5" label="§14.1.5" />: The argument proves the spectral convergence of the discrete Laplacian to the continuous Laplace-Beltrami operator.
-3.  **Smooth Time Foliation** <Ref id="14.1.6" label="§14.1.6" />: The argument utilizes elliptic regularity to bootstrap the weak convergence of the lapse into a smooth $C^\infty$ field.
+```text
+• 14.1.2 Theorem Smoothness of the Lapse
+├── 14.1.3 Lemma Local Causal Averages
+│   ├── 14.1.3.1 Proof Construction via Mollification
+│   ├── 14.1.3.2 Calculation Lapse Function Smoothness
+│   └── 14.1.3.3 Commentary Suppressing Shot Noise
+│
+├── 14.1.5 Lemma Sobolev Convergence
+│   ├── 14.1.5.1 Proof Convergence in $H^k$ Norms
+│   └── 14.1.5.2 Commentary No Fractal Edges in Time
+│
+└── 14.1.6 Proof Smooth Time Foliation
+    └── 14.1.6.1 Calculation Global Monotonicity Check
+```
 
 ---
 
@@ -5593,11 +5705,30 @@ The sequence of causal graphs $\{G_t\}$, in the thermodynamic limit $t \to \inft
 
 The proof proceeds via Direct Construction, establishing a rigorous diffeomorphism between the discrete causal graph and a smooth Lorentzian manifold.
 
-1.  **The Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />: The argument verifies the existence of local flat frames, proving that the tangent space is locally Minkowskian.
-2.  **The Causal Isomorphism** <Ref id="14.2.4" label="§14.2.4" />: The argument establishes that the topological order of the graph maps bijectively to the light-cone ordering of the manifold.
-3.  **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />: The argument demonstrates that the metric null boundary corresponds to the maximum speed of information propagation on the graph.
-4.  **The Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" />: The argument verifies the existence of Cauchy surfaces, preventing the formation of closed timelike curves.
-5.  **The Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />: The argument applies stationary phase analysis to prove that topological defects trace extremal paths matching geodesic trajectories.
+```text
+• 14.2.2 Theorem Emergent Lorentzian Manifold
+├── 14.2.3 Lemma Emergent Tetrad
+│   ├── 14.2.3.1 Proof Frame Orthogonality via Graph Laplacian
+│   └── 14.2.3.2 Commentary Coupling Matter to Geometry
+│
+├── 14.2.4 Lemma Causal Isomorphism
+│   ├── 14.2.4.1 Proof Limit of Transitive Closure
+│   └── 14.2.4.2 Commentary Skeleton of Spacetime
+│
+├── 14.2.5 Lemma Coincidence of Null Cones
+│   ├── 14.2.5.1 Proof Null Vector Alignment
+│   └── 14.2.5.2 Commentary Why c is a constant
+│
+├── 14.2.6 Lemma Global Hyperbolicity
+│   ├── 14.2.6.1 Proof Existence of Cauchy Surfaces
+│   └── 14.2.6.2 Commentary Prohibition of Time Loops
+│
+├── 14.2.7 Lemma Geodesic Motion
+│   └── 14.2.7.1 Proof Stationary Phase of Path Integral
+│
+└── 14.2.8 Proof Emergence of Relativistic Dynamics
+    └── 14.2.8.1 Calculation Geodesic Emergence Verification
+```
 
 ---
 
@@ -6476,7 +6607,7 @@ The continuum limit of the causal graph dynamics constitutes a rigorous **Relati
 
 Q.E.D.
 
-### 14.3.7.1 Calculation: Cluster Decomposition Check [INTEGRATION TEST] {#14.3.7.1}
+### 14.3.8.1 Calculation: Cluster Decomposition Check [INTEGRATION TEST] {#14.3.8.1}
 
 :::note[**Verification of Spatial Correlation Decay via Discrete massive Laplacian Solvers**]
 :::
@@ -7332,10 +7463,19 @@ provided that the metric divergence condition $\frac{d_{geo}(A, B)}{d_{topo}(A, 
 
 The proof proceeds via Direct Construction, showing that topological shortcuts bypass the bulk metric to violate local realism bounds while respecting algebraic causality.
 
-1.  **Path Integral Dominance** <Ref id="15.2.2" label="§15.2.2" />: The argument demonstrates that transition amplitudes are dominated by paths of minimal hop-count, routing correlations through the shortcut.
-2.  **Correlation Bridge** <Ref id="15.2.3" label="§15.2.3" />: The argument derives correlation decay along the graph, proving that topological adjacency preserves quantum coherence across spatial separations.
-3.  **Tsirelson Bound** <Ref id="15.2.4" label="§15.2.4" />: The argument applies unitary bounds to the braid algebra to establish the Tsirelson limit as the absolute algebraic correlation ceiling.
-4.  **Formal Synthesis of Bell Violation** <Ref id="15.2.5" label="§15.2.5" />: The argument unifies these discrete constraints to calculate the CHSH score, verifying the bi-metric resolution of the EPR paradox.
+```text
+• 15.2.1 Theorem Violation of Metric Locality (Bell's Theorem)
+├── 15.2.2 Lemma Path Integral Dominance
+│   └── 15.2.2.3 Visual Bell Shortcut
+│
+├── 15.2.3 Lemma Correlation Bridge
+│   └── 15.2.3.3 Visual Hub-and-Spoke vs Distributed Mesh
+│
+├── 15.2.4 Lemma Tsirelson Bound
+│
+└── 15.2.5 Proof Formal Synthesis of Bell Violation
+    └── 15.2.5.1 Calculation CHSH Score Verification
+```
 
 ---
 
@@ -7851,10 +7991,18 @@ The divergence between the transport cost through the bulk ($W_{bulk} \sim d_{ge
 
 The proof proceeds via Direct Construction, establishing that the information-theoretic properties of entanglement are dual to the geometric properties of a wormhole throat.
 
-1.  **The Isoperimetric Deficit** <Ref id="15.3.2" label="§15.3.2" />: The argument demonstrates that high topological connectivity pinches the graph, creating a metric anomaly where the surface-area-to-volume ratio departs from flat space.
-2.  **Emergent Throat** <Ref id="15.3.3" label="§15.3.3" />: The argument identifies the number of entangled links with the cross-sectional area of the throat, recovering the Bekenstein-Hawking area relation.
-3.  **Teleportation Protocol** <Ref id="15.3.4" label="§15.3.4" />: The argument demonstrates that while the bridge is classically non-traversable, it supports quantum state teleportation using entanglement resources.
-4.  **Formal Synthesis of ER=EPR** <Ref id="15.3.5" label="§15.3.5" />: The argument unifies the transport cost and expansion properties to derive the effective wormhole length from braid complexity, validating ER=EPR.
+```text
+• 15.3.1 Theorem Transport Cost Reduction (ER=EPR)
+├── 15.3.2 Lemma Isoperimetric Deficit
+│   └── 15.3.2.2 Visual Wasserstein Throat
+│
+├── 15.3.3 Lemma Emergent Throat
+│
+├── 15.3.4 Lemma Teleportation Protocol
+│
+└── 15.3.5 Proof Formal Synthesis of ER=EPR
+    └── 15.3.5.1 Calculation Wormhole Length from Braid Complexity
+```
 
 ---
 
@@ -8292,9 +8440,15 @@ This constraint satisfaction necessitates that the "reality" of the event $E$ (e
 
 The argument proceeds via Direct Construction, re-framing the evolution of the graph not as a sequential process, but as a global boundary value problem.
 
-1.  **Ensemble Indeterminacy** <Ref id="15.4.3" label="§15.4.3" />: The argument first establishes the superposition principle of histories, proving that in the absence of a constraining final boundary, the history of the system exists as a non-Abelian sum of all topologically possible braids.
-2.  **Block Universe as Fixed Point** <Ref id="15.4.4" label="§15.4.4" />: The argument then defines the block universe convergence, demonstrating that the imposition of the final measurement operator acts as a selection filter.
-3.  **Formal Synthesis of Causality Preservation** <Ref id="15.4.5" label="§15.4.5" />: The argument applies the causality preservation proof to demonstrate that despite the dependence of the past on the future boundary, no information can be transmitted backward in time.
+```text
+• 15.4.2 Theorem Global Constraint Satisfaction
+├── 15.4.3 Lemma Ensemble Indeterminacy
+│   └── 15.4.3.3 Visual Eraser Filter Logic
+│
+├── 15.4.4 Lemma Block Universe as Fixed Point
+│
+└── 15.4.5 Proof Formal Synthesis of Causality Preservation
+```
 
 ---
 
@@ -8711,8 +8865,13 @@ where $\mathcal{A}(\gamma_A)$ is the discrete area defined by the cardinality of
 
 The argument proceeds via Direct Construction, mapping the boundary quantum entanglement entropy to a bulk network flow optimization problem.
 
-1.  **The Isometry Condition** <Ref id="16.1.3" label="§16.1.3" />: The argument establishes the isometric embedding of the bulk Hilbert space into the boundary Hilbert space, ensuring information conservation during coarse-graining.
-2.  **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.4" label="§16.1.4" />: The argument unifies the isometry property and max-flow min-cut duality to derive the area relation for entanglement entropy, proving the correspondence.
+```text
+• 16.1.2 Theorem Ryu-Takayanagi Correspondence
+├── 16.1.3 Lemma Isometry Condition
+│
+└── 16.1.4 Proof Formal Synthesis of Ryu-Takayanagi
+    └── 16.1.4.1 Calculation Cut-Capacity Verification
+```
 
 ---
 
@@ -9071,9 +9230,16 @@ This inequality is derived not as a fundamental postulate, but as the necessary 
 
 The argument proceeds via Direct Construction, analyzing the topological and thermodynamic saturation constraints on information density within the causal graph bulk.
 
-1.  **The Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" />: The argument establishes the transition of information deposition from the bulk volume to the boundary surface as the critical density is saturated.
-2.  **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />: The argument calculates the microstate degeneracy of the event horizon by counting the irreducible stabilizer 3-cycles pierced by the boundary surface.
-3.  **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" />: The argument calibrates the fundamental area quantum and evaluates the exact Bekenstein-Hawking coefficient from discrete geometric packing.
+```text
+• 16.2.2 Theorem Maximum Informational Density (The Bound)
+├── 16.2.3 Lemma Holographic Screen Mechanism
+│   └── 16.2.3.3 Diagram Saturated Horizon
+│
+├── 16.2.4 Lemma Black Hole Entropy from Cycle Count
+│
+└── 16.2.5 Proof Formal Synthesis of the Bekenstein Bound
+    └── 16.2.5.1 Calculation Bekenstein-Hawking Entropy Scaling
+```
 
 ---
 
@@ -9636,8 +9802,13 @@ where $h_{ab}$ is the induced metric on the worldsheet and $T_0$ is the effectiv
 
 The argument proceeds via Direct Construction, establishing that the information-theoretic updates required to propagate a braid defect are dual to Nambu-Goto string dynamics.
 
-1.  **Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" />: The argument establishes the topological flux conservation that restricts energy to a one-dimensional channel, yielding a linear interaction potential.
-2.  **Formal Synthesis of String Dynamics** <Ref id="17.1.4" label="§17.1.4" />: The argument unifies the flux tube boundary conditions and least action principles to derive the string tension and effective Nambu-Goto dynamics from braid updates.
+```text
+• 17.1.2 Theorem Action Equivalence (Nambu-Goto)
+├── 17.1.3 Lemma Confinement and Berry Phase
+│
+└── 17.1.4 Proof Formal Synthesis of String Dynamics
+    └── 17.1.4.1 Calculation Braid Confinement Verification
+```
 
 ---
 
@@ -9988,8 +10159,13 @@ under the simultaneous exchange of the momentum quantum number $n$ and the windi
 
 The argument proceeds via Direct Construction, proving the mathematical and physical equivalence of the mass-squared spectrum on reciprocal compactification radii.
 
-1.  **The T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" />: The argument establishes the necessity of non-Clifford rotations to generate Fermionic degrees of freedom and realize the topological GSO projection.
-2.  **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.4" label="§17.2.4" />: The argument unifies Kaluza-Klein momentum modes and topological winding modes to demonstrate the spectral equivalence of toroidal graph compactifications.
+```text
+• 17.2.2 Theorem Spectral Invariance (T-Duality)
+├── 17.2.3 Lemma T-Gate Phase
+│
+└── 17.2.4 Proof Formal Synthesis of Spectral Invariance (T-Duality)
+    └── 17.2.4.1 Calculation T-Duality Verification
+```
 
 ---
 
@@ -10271,10 +10447,17 @@ The physical string is the tensor product state $|\Psi\rangle = |\psi_R\rangle \
 
 The argument proceeds via Direct Construction, decomposing the worldsheet Hilbert space into decoupled left-moving and right-moving chiral sectors.
 
-1.  **Bott Periodicity (The Octonionic Lock)** <Ref id="17.3.2" label="§17.3.2" />: The argument establishes the octonionic limit restricting the right-moving transverse degrees of freedom to exactly 8 modes.
-2.  **Tripartite Braid Saturation** <Ref id="17.3.3" label="§17.3.3" />: The argument demonstrates the trivalent vertex scaling that triples the left-moving capacity to 24 transverse modes.
-3.  **ZPE Cancellation** <Ref id="17.3.4" label="§17.3.4" />: The argument verifies the balance of zero-point energies between sectors to ensure a stable, tachyon-free ground state.
-4.  **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" />: The argument unifies the chiral constraints to embed the critical dimensions and derive the necessary self-dual gauge group.
+```text
+• 17.3.1 Theorem Chiral Split (Bosonic Left / Super Right)
+├── 17.3.2 Lemma Bott Periodicity (The Octonionic Lock)
+│
+├── 17.3.3 Lemma Tripartite Braid Saturation
+│
+├── 17.3.4 Lemma ZPE Cancellation
+│
+└── 17.3.5 Proof Formal Synthesis of the Critical Dimension
+    └── 17.3.5.1 Calculation Algebra Closure Verification
+```
 
 ---
 
@@ -10776,11 +10959,21 @@ Consequently, the gauge symmetry of the emergent spacetime is fixed to $G = E_8 
 
 The argument proceeds via Direct Construction, proving the modular invariance and optimal sphere-packing constraints that uniquely select the exceptional charge lattice.
 
-1.  **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" />: The argument establishes the even self-dual lattice requirement to satisfy modular S-invariance and ensure one-loop unitarity.
-2.  **The Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />: The argument demonstrates the group-theoretic branching rules that naturally embed the gauge forces and chiral fermion generations within $E_8$.
-3.  **Anomaly Cancellation** <Ref id="17.4.5" label="§17.4.5" />: The argument verifies the Green-Schwarz mechanism on the tripartite graph, demonstrating the complete cancellation of gauge and gravitational anomalies.
-4.  **The Landscape from Braid Vacua** <Ref id="17.4.6" label="§17.4.6" />: The argument relates the moduli space of vacuum parameters to topologically protected Wilson lines wrapping the internal graph cycles.
-5.  **Formal Synthesis of Heterotic String Theory** <Ref id="17.4.7" label="§17.4.7" />: The argument unifies the worldsheet factorization, critical dimensions, and modular lattice constraints to establish the non-perturbative isomorphism with Heterotic String Theory.
+```text
+• 17.4.2 Theorem Emergence of the E8 Lattice
+├── 17.4.3 Lemma Unimodular Basis (Modular Invariance)
+│
+├── 17.4.4 Lemma Standard Model Embedding
+│   ├── 17.4.4.2 Calculation Force-Matter Decomposition
+│   └── 17.4.4.3 Commentary Generations from Braid Chirality
+│
+├── 17.4.5 Lemma Anomaly Cancellation
+│
+├── 17.4.6 Lemma Landscape from Braid Vacua
+│
+└── 17.4.7 Proof Formal Synthesis of Heterotic String Theory
+    └── 17.4.7.1 Calculation Heterotic String Isomorphism Verification
+```
 
 ---
 

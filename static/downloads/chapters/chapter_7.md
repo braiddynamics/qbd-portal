@@ -70,10 +70,20 @@ It is asserted that the physical exchange of two identical tripartite braids, $\
 
 The proof proceeds via Direct Construction, mapping topological phases under physical exchanges to rotational symmetries.
 
-1. **Spin Operator** <Ref id="7.1.1" label="§7.1.1" />: The argument defines the spin operator on the ribbon rung edges, proving it measures twist parity and assigns eigenvalues of negative one to half-twisted fermionic states.
-2. **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />: The argument establishes that the unitary rotation operator anticommutes with the spin operator due to the odd number of edge flips required for a half-twist.
-3. **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" />: The argument proves that the physical exchange of two identical braids is topologically equivalent to a local rotation of one braid by a full two-pi phase.
-4. **Topological Statistics** <Ref id="7.1.5" label="§7.1.5" />: The argument synthesizes the anticommutation and exchange equivalence properties to show that exchanging identical fermions introduces a negative sign in their joint wavefunction, recovering Fermi-Dirac statistics.
+```text
+• 7.1.2 Theorem Topological Statistics
+├── 7.1.3 Lemma Unitary Twist Anticommutation
+│   ├── 7.1.3.1 Proof Eigenvalue Inversion
+│   ├── 7.1.3.2 Commentary Anticommutation Mechanism
+│   └── 7.1.3.3 Diagram Causal Dirac Sequence
+│
+├── 7.1.4 Lemma Exchange-Rotation Equivalence
+│   ├── 7.1.4.1 Proof Topological Phase via Reidemeister Sequence
+│   ├── 7.1.4.2 Commentary Exchange-Rotation Identity
+│   └── 7.1.4.3 Diagram Exchange via Deletion
+│
+└── 7.1.5 Proof Topological Statistics
+```
 
 ---
 
@@ -513,9 +523,18 @@ It is asserted that the simultaneous occupancy of a single quantum state by two 
 
 The proof proceeds via Contradiction, assuming that two fermions can occupy the same quantum state to show that this leads to a violation of the spacetime asymmetry axiom.
 
-1. **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" />: The argument establishes that directed edges have a binary information capacity, preventing the stacking of multiple excitations on a single causal connection.
-2. **The Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" />: The argument demonstrates that attempting to place multiple fermions in the same state forces the creation of a directed two-cycle, directly violating the causal acyclicity constraint.
-3. **Pauli Exclusion Principle** <Ref id="7.2.4" label="§7.2.4" />: The argument proves that the hard constraint projector maps the dual-occupancy state to the null vector, rendering its physical probability zero and enforcing the Pauli exclusion principle.
+```text
+• 7.2.1 Theorem Pauli Exclusion Principle
+├── 7.2.2 Lemma Binary State Principle
+│   ├── 7.2.2.1 Proof Binary Encoding Verification
+│   └── 7.2.2.2 Commentary Quantum Bit Limit
+│
+├── 7.2.3 Lemma Forbidden Occupancy
+│   ├── 7.2.3.1 Proof Topological Violation
+│   └── 7.2.3.3 Diagram Exclusion Barrier
+│
+└── 7.2.4 Proof Pauli Exclusion Principle
+```
 
 ---
 
@@ -867,10 +886,31 @@ It is asserted that the electric charge $Q$ of a stable elementary fermion is id
 
 The proof proceeds via Direct Construction, linking global topological invariants of the braid to conserved electric charge numbers.
 
-1. **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" />: The argument proves that the total writhe of the tripartite braid remains invariant under local graph rewrites, establishing writhe as a conserved charge.
-2. **The Lepton and Quark Spectrum (the **lepton and quark spectrum lemma** <Ref id="7.3.5" label="§7.3.5" />, the **quark spectrum lemma** <Ref id="7.3.6" label="§7.3.6" />):** The argument derives integer charge values for symmetric singlet states and fractional charges for asymmetric triplet configurations.
-3. **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />: The argument fixes the charge scale factor to exactly one-third by enforcing the cancellation of gauge anomalies in the first generation.
-4. **Emergence of Electric Charge** <Ref id="7.3.8" label="§7.3.8" />: The argument combines these topological solutions to prove that electric charge is an emergent, quantized representation of total braid twist.
+```text
+• 7.3.2 Theorem Emergence of Electric Charge
+├── 7.3.3 Lemma Gauge Symmetry
+│   ├── 7.3.3.1 Proof Symmetry Verification
+│   └── 7.3.3.2 Commentary Global Phase Unobservability
+│
+├── 7.3.4 Lemma Conservation of Total Writhe
+│   ├── 7.3.4.1 Proof Conservation Logic
+│   └── 7.3.4.2 Commentary Invariant Preservation
+│
+├── 7.3.5 Lemma Lepton Charge Solutions
+│   ├── 7.3.5.1 Proof Singlet Charge Values
+│   └── 7.3.5.2 Commentary Integer Charge Geometry
+│
+├── 7.3.6 Lemma Quark Charge Solutions
+│   ├── 7.3.6.1 Proof Triplet Charge Values
+│   ├── 7.3.6.2 Commentary Fractional Charge Origin
+│   └── 7.3.6.3 Diagram Fermion Writhe Topology
+│
+├── 7.3.7 Lemma Charge Normalization
+│   ├── 7.3.7.1 Proof Anomaly Cancellation
+│   └── 7.3.7.2 Commentary Fractional Necessity
+│
+└── 7.3.8 Proof Emergence of Electric Charge
+```
 
 ---
 
@@ -1462,10 +1502,24 @@ This functional is constituted by the following terms:
 
 The proof proceeds via Direct Construction, integrating crossing scaling and sharing efficiencies to construct the discrete mass spectrum.
 
-1. **The Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />: The argument proves that entropic contributions vanish for protected topologies, isolating mass as a purely static complexity function.
-2. **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />: The argument demonstrates that base complexity scales linearly with the minimal crossing count of the braid.
-3. **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />: The argument derives the sharing coefficients of parallel strands to account for isospin degeneracies.
-4. **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" />: The argument integrates the linear crossing and geometric sharing efficiency results to prove the discrete generational mass spectrum.
+```text
+• 7.4.2 Theorem Topological Mass Functional
+├── 7.4.3 Lemma Thermodynamic Equivalence
+│   ├── 7.4.3.1 Proof Entropic Vanishing
+│   └── 7.4.3.2 Commentary Thermodynamic Isolation
+│
+├── 7.4.4 Lemma Base Mass Linear Scaling
+│   ├── 7.4.4.1 Proof Linear Scaling Verification
+│   └── 7.4.4.2 Commentary Complexity Additivity
+│
+├── 7.4.5 Lemma Integer Geometric Efficiency
+│   ├── 7.4.5.1 Proof Derivation of the Sharing Integer
+│   └── 7.4.5.2 Commentary Isospin Symmetry
+│
+└── 7.4.6 Proof Discrete Mass Spectrum
+    ├── 7.4.6.1 Calculation Generational Mass Hierarchy Verification
+    └── 7.4.6.2 Diagram Generational Mass Spectrum Table
+```
 
 ---
 

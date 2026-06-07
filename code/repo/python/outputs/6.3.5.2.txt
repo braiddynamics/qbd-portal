@@ -1,0 +1,25 @@
+════════════════════════════════════════════════════════════
+SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING
+Accumulated Geometric Quanta vs. Writhe (w)
+════════════════════════════════════════════════════════════
+Writhe (w)   Marginal Cost   Cumulative N3
+----------------------------------------------------------
+1            5               5
+2            7               12
+3            9               21
+4            11              32
+5            13              45
+6            15              60
+7            17              77
+8            19              96
+9            21              117
+10           23              140
+11           25              165
+12           27              192
+13           29              221
+14           31              252
+15           33              285
+----------------------------------------------------------
+Final state (w = 15):
+  Total geometric quanta N3 = 285
+  Scaling: quadratic in writhe (w² dominant term)

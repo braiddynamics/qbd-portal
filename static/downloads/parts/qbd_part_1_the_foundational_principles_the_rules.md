@@ -505,14 +505,49 @@ Internal observers, operating within the emergent physical time $t_{phys}$, reco
 
 ---
 
-### 1.2.3 Lemma: Finite Information Substrate {#1.2.3}
+### 1.2.3 Theorem: Temporal Finitude {#1.2.3}
+
+:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
+:::
+
+The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
+
+### 1.2.3.1 Commentary: Argument Outline {#1.2.3.1}
+
+:::tip[**Structure of the Temporal Finitude Argument via Substrate Finiteness, Entropy Accumulation, Recurrence Exclusion, and Supertask Limits**]
+:::
+
+The proof proceeds by contradiction, assuming an unbounded temporal regress to demonstrate its topological, thermodynamic, and computational impossibility.
+
+```text
+• 1.2.3 Theorem Temporal Finitude  [by contradiction]
+│
+├── 1.2.4 Lemma Finite Information Substrate
+│   └── 1.2.4.1 Proof Finite Information Substrate
+│
+├── 1.2.5 Lemma Backward Accumulation
+│   └── 1.2.5.1 Proof Backward Accumulation
+│
+├── 1.2.6 Lemma Finite State Recurrence
+│   └── 1.2.6.1 Proof Finite State Recurrence
+│
+├── 1.2.7 Lemma Supertask Impossibility
+│   ├── 1.2.7.1 Proof Supertask Limits
+│   └── 1.2.7.2 Commentary Collapse of Supertasks
+│
+└── 1.2.8 Proof Temporal Finitude
+    ├── 1.2.8.1 Commentary Grim Reaper Paradox
+    └── 1.2.8.2 Diagram Grim Reaper Paradox
+```
+
+### 1.2.4 Lemma: Finite Information Substrate {#1.2.4}
 
 :::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
 :::
 
 Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
 
-### 1.2.3.1 Proof: Finite Information Substrate {#1.2.3.1}
+### 1.2.4.1 Proof: Finite Information Substrate {#1.2.4.1}
 
 :::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
 :::
@@ -629,14 +664,14 @@ Q.E.D.
 
 ---
 
-### 1.2.4 Lemma: Backward Accumulation {#1.2.4}
+### 1.2.5 Lemma: Backward Accumulation {#1.2.5}
 
 :::info[**Exclusion of Unbounded Past Direction**]
 :::
 
-Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
-### 1.2.4.1 Proof: Backward Accumulation {#1.2.4.1}
+### 1.2.5.1 Proof: Backward Accumulation {#1.2.5.1}
 
 :::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
 :::
@@ -656,7 +691,7 @@ Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermod
     \mathbb{E}[\Delta S_k] = \mu > 0
     $$
 
-    The fluctuations are bounded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />:
+    The fluctuations are bounded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />:
 
     $$
     \text{Var}(\Delta S_k) = \sigma^2 < \infty
@@ -689,7 +724,7 @@ Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermod
     $$
 
 4.  **Contradiction:**
-    The divergence $S(U_0) \to \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+    The divergence $S(U_0) \to \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
 **III. Case B: Reversible Dynamics**
 
@@ -727,7 +762,7 @@ $$
     $$
 
 4.  **Contradiction:**
-    An infinite information capacity $I(U_0) = \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+    An infinite information capacity $I(U_0) = \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
 **IV. Conclusion**
 
@@ -737,14 +772,14 @@ Q.E.D.
 
 ---
 
-### 1.2.5 Lemma: Finite State Recurrence {#1.2.5}
+### 1.2.6 Lemma: Finite State Recurrence {#1.2.6}
 
 :::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
 :::
 
 Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
-### 1.2.5.1 Proof: Finite State Recurrence {#1.2.5.1}
+### 1.2.6.1 Proof: Finite State Recurrence {#1.2.6.1}
 
 :::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
 :::
@@ -813,14 +848,14 @@ Q.E.D.
 
 ---
 
-### 1.2.6 Lemma: Supertask Impossibility {#1.2.6}
+### 1.2.7 Lemma: Supertask Impossibility {#1.2.7}
 
 :::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
 :::
 
 The traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
 
-### 1.2.6.1 Proof: Supertask Limits {#1.2.6.1}
+### 1.2.7.1 Proof: Supertask Limits {#1.2.7.1}
 
 :::tip[**Formal Proof of Non-Termination via Turing Computability and Relativistic Constraints**]
 :::
@@ -886,7 +921,7 @@ An infinite energy dissipation implies that the universe must have exhausted all
 
 Q.E.D.
 
-### 1.2.6.2 Commentary: Collapse of Supertasks {#1.2.6.2}
+### 1.2.7.2 Commentary: Collapse of Supertasks {#1.2.7.2}
 
 :::info[**Dynamical Instability of Infinite Computation due to General Relativistic Constraints**]
 :::
@@ -905,16 +940,9 @@ This inexorable collapse precludes the universe from "computing" an infinite his
 
 ---
 
-### 1.2.7 Theorem: Temporal Finitude {#1.2.7}
+### 1.2.8 Proof: Temporal Finitude {#1.2.8}
 
-:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
-:::
-
-The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
-
-### 1.2.7.1 Proof: Temporal Finitude {#1.2.7.1}
-
-:::tip[**Temporal Finitude** <Ref id="1.2.7" label="§1.2.7" />]
+:::tip[**Temporal Finitude** <Ref id="1.2.3" label="§1.2.3" />]
 :::
 
 **I. The Infinite Hypothesis**
@@ -923,10 +951,10 @@ Let it be assumed, for the explicit purpose of demonstrating a contradiction, th
 **II. The Constraint Chain**
 The validity of this hypothesis is interrogated against the established lemmas of the theory:
 
-1.  **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />: The system enforces a strict holographic bound on the information content of any state within the sequence. It is established that $S(U_t)$ must remain finite for all finite $t$. The assumption of an infinite past requires the current state to encode a history of infinite depth, which necessitates an information capacity that exceeds this finite bound.
-2.  **Backward Accumulation** <Ref id="1.2.4" label="§1.2.4" />: Under the condition of irreversible dynamics, an infinite past necessitates an unbounded accumulation of entropy production ($\Sigma \Delta S \to \infty$). This accumulation would result in a present state $U_0$ characterized by maximal entropy (Thermodynamic Equilibrium or Heat Death), a condition that stands in direct contradiction to the observed low-entropy configuration of the physical universe.
-3.  **Finite State Recurrence** <Ref id="1.2.5" label="§1.2.5" />: Under the condition of reversible dynamics within a state space of finite cardinality, an infinite temporal duration necessitates the occurrence of Poincaré recurrence ($U_t = U_{t+k}$). Such recurrence establishes closed causal loops, which constitute a direct violation of the **Acyclicity** axiom governing the causal graph.
-4.  **Supertask Impossibility** <Ref id="1.2.6" label="§1.2.6" />: The logical traversal of an infinite sequence of operations to arrive at the present state $U_0$ constitutes a Supertask. The completion of such a task is computationally undefined, as it lacks a valid initialization condition, rendering the existence of $U_0$ logically impossible under constructive dynamical rules.
+1.  **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />: The system enforces a strict holographic bound on the information content of any state within the sequence. It is established that $S(U_t)$ must remain finite for all finite $t$. The assumption of an infinite past requires the current state to encode a history of infinite depth, which necessitates an information capacity that exceeds this finite bound.
+2.  **Backward Accumulation** <Ref id="1.2.5" label="§1.2.5" />: Under the condition of irreversible dynamics, an infinite past necessitates an unbounded accumulation of entropy production ($\Sigma \Delta S \to \infty$). This accumulation would result in a present state $U_0$ characterized by maximal entropy (Thermodynamic Equilibrium or Heat Death), a condition that stands in direct contradiction to the observed low-entropy configuration of the physical universe.
+3.  **Finite State Recurrence** <Ref id="1.2.6" label="§1.2.6" />: Under the condition of reversible dynamics within a state space of finite cardinality, an infinite temporal duration necessitates the occurrence of Poincaré recurrence ($U_t = U_{t+k}$). Such recurrence establishes closed causal loops, which constitute a direct violation of the **Acyclicity** axiom governing the causal graph.
+4.  **Supertask Impossibility** <Ref id="1.2.7" label="§1.2.7" />: The logical traversal of an infinite sequence of operations to arrive at the present state $U_0$ constitutes a Supertask. The completion of such a task is computationally undefined, as it lacks a valid initialization condition, rendering the existence of $U_0$ logically impossible under constructive dynamical rules.
 
 **III. Convergence**
 The assumption of an unbounded past generates inescapable contradictions under both thermodynamic and computational constraints. Whether the dynamics are reversible or irreversible, the hypothesis fails to yield a consistent physical model.
@@ -936,7 +964,7 @@ Consequently, the temporal domain cannot be unbounded. There must exist a unique
 
 Q.E.D.
 
-### 1.2.7.2 Commentary: Grim Reaper Paradox {#1.2.7.2}
+### 1.2.8.1 Commentary: Grim Reaper Paradox {#1.2.8.1}
 
 :::info[**Logical Necessity of Finite Temporal Origins demonstrated by the Grim Reaper Paradox**]
 :::
@@ -985,7 +1013,7 @@ Empirical scrutiny confirms the universe's obeisance to causal laws (**Axiom B**
 
 The universe thus mandates a **finite history**, with the Global Sequencer initiating at $t_L = 0$ to forge an unbroken causal spine: every event traces, through finite recursion, to the First Event $U_0$, the axiomatic genesis beyond which no antecedents lurk. This finitistic resolution not only exorcises the Grim Reaper's specter but elevates the temporal ontology to a bastion of logical and physical coherence.
 
-### 1.2.7.3 Diagram: Grim Reaper Paradox {#1.2.7.3}
+### 1.2.8.2 Diagram: Grim Reaper Paradox {#1.2.8.2}
 
 :::note[**Visualization of Asymptotic Convergence within the Grim Reaper Paradox**]
 :::
@@ -1546,32 +1574,32 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/rules/ontology/1.2#1.2.2.2) |
 | $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3](/monograph/rules/ontology/1.2#1.2.2.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/rules/ontology/1.2#1.2.2.3) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $b$ | Finite Branching factor | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $T$ | Temporal Domain (Set of integers) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\sigma^2$ | Variance of entropy production | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
-| $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
-| $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $c$ | Speed of light | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $U_0$ | The unique initial state | [§1.2.7](/monograph/rules/ontology/1.2#1.2.7) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.4](/monograph/rules/ontology/1.2#1.2.4) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.4](/monograph/rules/ontology/1.2#1.2.4) |
+| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $b$ | Finite Branching factor | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $s_t$ | Surface area (active degrees of freedom) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $T$ | Temporal Domain (Set of integers) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\sigma^2$ | Variance of entropy production | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\Delta I_k$ | Information bit contribution | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\prec$ | Strict causal precedence | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\epsilon(op)$ | Energy cost per operation | [§1.2.7.1](/monograph/rules/ontology/1.2#1.2.7.1) |
+| $E_{total}$ | Total energy dissipated | [§1.2.7.1](/monograph/rules/ontology/1.2#1.2.7.1) |
+| $k_B$ | Boltzmann constant | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $T$ | Temperature (Context: Thermodynamics) | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $\hbar$ | Reduced Planck constant | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $c$ | Speed of light | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $R_s$ | Schwarzschild Radius | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $U_0$ | The unique initial state | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.8.1](/monograph/rules/ontology/1.2#1.2.8.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
@@ -1685,9 +1713,25 @@ We formally establish that the mathematical condition of **Antisymmetry**, conve
 
 The proof proceeds via Direct Construction, identifying a topological loop-defect and demonstrating its physical and thermodynamic inadmissibility.
 
-1. **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" />: The argument establishes that a reflexive edge is topologically identical to a directed cycle of length one, proving that any relation permitting reflexivity violates acyclicity.
-2. **The Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />: The argument quantifies the information content of reflexive edges, demonstrating that a self-loop contributes exactly zero to the path entropy, which renders the structure physically inert and incapable of recording history.
-3. **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" />: The argument constructs a formal model that satisfies mathematical antisymmetry yet fails causal validity, establishing the absolute necessity of irreflexivity.
+```text
+• 2.2.1 Theorem Insufficiency of Antisymmetry
+├── 2.2.1.2 Diagram Ordering Constraints
+│
+├── 2.2.2 Lemma Pathology of Self-Loops
+│   ├── 2.2.2.1 Proof Pathology of Self-Loops
+│   ├── 2.2.2.2 Commentary Atomic Violation
+│   └── 2.2.2.3 Diagram Inertia of Self-Loops
+│
+├── 2.2.3 Lemma Thermodynamic Nullity
+│   ├── 2.2.3.1 Proof Thermodynamic Nullity
+│   └── 2.2.3.2 Commentary Entropic Barrenness
+│
+├── 2.2.4 Proof Insufficiency of Antisymmetry
+│
+├── 2.2.5 Validation via Lean 4 Core
+│
+└── 2.2.6 Commentary Loophole of Equality
+```
 
 ### 2.2.1.2 Diagram: Ordering Constraints {#2.2.1.2}
 
@@ -1993,9 +2037,25 @@ The kinematic admissibility of any transformation $G \to G'$ involving the addit
 
 The proof proceeds via Direct Construction, separating the generative capacity of the graph from its restrictive bounds to establish a well-founded metric topology.
 
-1. **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />: The argument establishes the directed three-cycle as the geometric quantum, deriving its necessity from the failure of shorter loops to preserve the causal flow of time.
-2. **Unique Causality (PUC)** <Ref id="2.3.3" label="§2.3.3" />: The argument enforces the Principle of Unique Causality as a structural filter, prohibiting redundant connections to prevent the collapse of the metric space into a small-world network.
-3. **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />: The argument instantiates the lexicographic potential to quantify structural complexity, providing the ordering metric required to prove that dynamical rules drive the system toward the simplicial limit.
+```text
+• 2.3.1 Axiom 2 Geometric Constructibility
+├── 2.3.2 Lemma Geometric Quantum
+│   ├── 2.3.2.1 Proof Geometric Quantum
+│   ├── 2.3.2.2 Commentary Necessity of Three
+│   └── 2.3.2.3 Diagram Loop Hierarchy
+│
+├── 2.3.3 Principle Unique Causality (PUC)
+│   ├── 2.3.3.1 Commentary Pseudocode for PUC Check
+│   ├── 2.3.3.2 Proof Redundancy Exclusion
+│   ├── 2.3.3.3 Commentary No-Cloning of History
+│   └── 2.3.3.4 Diagram Principle of Unique Causality
+│
+├── 2.3.4 Definition Lexicographic Potential
+│   └── 2.3.4.1 Commentary Descent to Simplicity
+│
+└── 2.3.5 Lemma Well-Foundedness
+    └── 2.3.5.1 Proof Well-Foundedness
+```
 
 ---
 
@@ -2308,10 +2368,36 @@ We formally prove that for any graph state $G$ containing a Simple Directed Cycl
 
 The proof proceeds by Direct Construction, defining a finite sequence of constructive triangulation operations that systematically decompose higher-order cycles into stable geometric quanta.
 
-1. **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />: The argument establishes confluence for local rewrites, proving that overlapping repairs do not block one another and ensuring that the reduction process avoids frozen states.
-2. **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />: The argument establishes chordlessness, proving that any maximal cycle maintains a hollow topology that exposes its internal vertices to triangulation.
-3. **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />: The argument proves that the deletion mechanism operates strictly monotonically, preventing the system from reconstructing higher-complexity cycles once reduced.
-4. **General Cycle Decomposition** <Ref id="2.4.6" label="§2.4.6" />: The argument combines the confluence, chordlessness, and monotonicity guarantees, proving that any state containing a cycle of length four or greater admits a valid sequence of transitions that terminates at a stable quantum geometry.
+```text
+• 2.4.1 Theorem General Cycle Decomposition
+├── 2.4.1.2 Diagram Digestion of Geometry
+│
+├── 2.4.2 Lemma Confluence of the Constructor
+│   └── 2.4.2.1 Proof Diamond Property
+│
+├── 2.4.3 Lemma Chordlessness of Maximal Cycles
+│   └── 2.4.3.1 Proof Chordlessness of Maximal Cycles
+│
+├── 2.4.4 Lemma Reduction via Deletion
+│   └── 2.4.4.1 Proof Reduction via Deletion
+│
+├── 2.4.5 Lemma Decrease in Parallel Updates
+│   └── 2.4.5.1 Proof Decrease in Parallel Updates
+│
+├── 2.4.6 Proof General Cycle Decomposition
+│
+├── 2.4.7 Example 4-Cycle Reduction
+│
+├── 2.4.8 Example 5-Cycle Reduction
+│
+├── 2.4.9 Example 6-Cycle Reduction
+│
+├── 2.4.10 Calculation Simulation Verification
+│
+├── 2.4.11 Validation via Lean 4 Core
+│
+└── 2.4.12 Commentary Arrow of Simplicity
+```
 
 ### 2.4.1.2 Diagram: Digestion of Geometry {#2.4.1.2}
 
@@ -3002,9 +3088,18 @@ The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the **Geomet
 
 The proof proceeds by Direct Construction, establishing logical orthogonality between the causal and geometric primitives by instantiating explicit counter-models.
 
-1. **Independence Case A** <Ref id="2.5.2" label="§2.5.2" />: The argument constructs a sparse, directed four-cycle model that satisfies the causal primitive but violates geometric constructibility, demonstrating that causal directionality does not entail geometric quantization.
-2. **Independence Case B** <Ref id="2.5.3" label="§2.5.3" />: The argument constructs a disjoint union of a three-cycle and a self-loop that satisfies geometric constructibility but violates the causal primitive, demonstrating that geometric structure does not entail causal consistency.
-3. **Mutual Independence** <Ref id="2.5.4" label="§2.5.4" />: The argument synthesizes these two orthogonal counter-models, proving that neither primitive can be derived from or reduced to the other.
+```text
+• 2.5.1 Theorem Independence of Axioms 1 and 2
+├── 2.5.1.2 Diagram Independence Matrix
+│
+├── 2.5.2 Lemma Independence Case A
+│   └── 2.5.2.1 Proof Independence Case A
+│
+├── 2.5.3 Lemma Independence Case B
+│   └── 2.5.3.1 Proof Independence Case B
+│
+└── 2.5.4 Proof Mutual Independence
+```
 
 ### 2.5.1.2 Diagram: Independence Matrix {#2.5.1.2}
 
@@ -3262,10 +3357,18 @@ In a system constrained exclusively by Axioms 1 and 2, the Effective Influence r
 
 The proof proceeds via Contradiction, assuming that local constraints alone suffice for global consistency to expose the emergent causal violations that refute this assumption.
 
-1. **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />: The argument demonstrates that strictly increasing local timestamps fail to detect circularity that closes beyond the causal horizon of a single vertex.
-2. **Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />: The argument dissects the closed three-cycle under local rules, proving that transitively closed paths yield a reflexive self-influence that violates causal irreflexivity.
-3. **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />: The argument constructs a symmetric bowtie configuration, proving that disjoint sub-paths permit mutual influence between distinct vertices despite strictly monotonic local updates.
-4. **Inadequacy of Local Axioms** <Ref id="2.6.6" label="§2.6.6" />: The argument synthesizes these local failures, demonstrating that local primitives license global causal closures and establishing the logical necessity of a global partial ordering constraint.
+```text
+• 2.6.2 Theorem Inadequacy of Local Axioms
+├── 2.6.3 Lemma Strict Timestamps
+│   └── 2.6.3.1 Proof Strict Timestamps
+│
+├── 2.6.4 Lemma Failure of Reflexivity
+│   └── 2.6.4.1 Proof Failure of Reflexivity
+│
+└── 2.6.5 Lemma Failure of Asymmetry
+    ├── 2.6.5.1 Proof Failure of Asymmetry
+    └── 2.6.5.2 Diagram Bowtie Paradox
+```
 
 ---
 
@@ -3647,9 +3750,20 @@ The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.
 
 The proof proceeds via Contradiction, assuming that global causal violations can be resolved post-hoc to demonstrate that the required coordination energy diverges in the thermodynamic limit.
 
-1. **Cycle Diameter Growth** <Ref id="2.7.3" label="§2.7.3" />: The argument establishes that graph evolution generates system-spanning cycles that exceed any finite computational radius, proving that local operators remain topologically blind to global loop closure.
-2. **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />: The argument demonstrates that a local check of logarithmic radius is mathematically sufficient, proving that the probability of a cycle evading detection decays exponentially with the check radius.
-3. **Thermodynamic Enforcement** <Ref id="2.7.5" label="§2.7.5" />: The argument proves that post-hoc deletion of global cycles requires signal synchronization across the graph diameter, demonstrating that the required energy diverges for infinite networks and establishing the necessity of preemptive local enforcement.
+```text
+• 2.7.2 Theorem Thermodynamic Enforcement
+├── 2.7.3 Lemma Cycle Diameter Growth
+│   ├── 2.7.3.1 Proof Cycle Diameter Growth
+│   ├── 2.7.3.2 Commentary Blindness of Locality
+│   └── 2.7.3.3 Diagram Horizon Problem
+│
+├── 2.7.4 Lemma Local PUC Approximation
+│   ├── 2.7.4.1 Proof Local PUC Approximation
+│   └── 2.7.4.2 Commentary Cost of Certainty
+│
+└── 2.7.5 Proof Thermodynamic Enforcement
+    └── 2.7.5.1 Commentary Thermodynamic Wall
+```
 
 ---
 
@@ -4165,10 +4279,47 @@ This structure constitutes the unique topological solution compatible with the s
 
 The argument proceeds by sequentially eliminating alternative graph configurations, carving the unique acyclic vacuum state out of the space of all possible directed graphs.
 
-1.  **Existence Finiteness** <Ref id="3.1.4" label="§3.1.4" />: The argument establishes graph existence and finiteness, proving that the initial vertex set must be finite to satisfy well-foundedness of the causal order.
-2.  **Cyclic Exclusion** <Ref id="3.1.5" label="§3.1.5" /> <Ref id="3.1.6" label="§3.1.6" /> <Ref id="3.1.7" label="§3.1.7" />: The argument systematically excludes all cyclic topologies, proving that reflexivity, reciprocity, and higher-order loops violate causal constraints and restricting the vacuum to a directed acyclic graph.
-3.  **Sparsity Enforcement** <Ref id="3.1.8" label="§3.1.8" /> <Ref id="3.1.9" label="§3.1.9" />: The argument enforces tree sparsity, demonstrating that any excess edge density creates redundant paths that violate the Principle of Unique Causality.
-4.  **Bipartition Identification** <Ref id="3.1.10" label="§3.1.10" /> <Ref id="3.1.11" label="§3.1.11" /> <Ref id="3.1.12" label="§3.1.12" />: The argument identifies the depth-parity bipartition, proving that odd-length cycles are topologically suppressed and isolating the directed tree as the unique initial state.
+```text
+• 3.1.3 Theorem Vacuum Structure
+├── 3.1.3.2 Diagram Topology of Genesis
+│
+├── 3.1.4 Lemma Existence and Finiteness
+│   ├── 3.1.4.1 Proof Existence and Finiteness
+│   └── 3.1.4.2 Commentary Problem of Infinity
+│
+├── 3.1.5 Lemma Exclusion of Reflexivity and Reciprocity
+│   ├── 3.1.5.1 Proof Exclusion of Reflexivity and Reciprocity
+│   └── 3.1.5.2 Commentary Mirror and the Echo
+│
+├── 3.1.6 Lemma Exclusion of Cyclic Paths
+│   ├── 3.1.6.1 Proof Exclusion of Cyclic Paths
+│   └── 3.1.6.2 Commentary Infinite Staircase
+│
+├── 3.1.7 Lemma Global Acyclicity
+│   ├── 3.1.7.1 Proof Global Acyclicity
+│   ├── 3.1.7.2 Calculation DAG Verification
+│   └── 3.1.7.3 Commentary River of Time
+│
+├── 3.1.8 Lemma Global Connectivity
+│   ├── 3.1.8.1 Proof Minimization of Automorphisms
+│   ├── 3.1.8.2 Calculation Connectivity Counterexample
+│   └── 3.1.8.3 Commentary Unity of the Vacuum
+│
+├── 3.1.9 Lemma Path Uniqueness and Sparsity
+│   ├── 3.1.9.1 Proof Tree Condition
+│   └── 3.1.9.2 Commentary Efficiency of the Tree
+│
+├── 3.1.10 Lemma Depth-Parity Bipartition
+│   ├── 3.1.10.1 Proof Depth-Parity Bipartition
+│   └── 3.1.10.2 Commentary Stratification of Spacetime
+│
+├── 3.1.11 Lemma Exclusion of Odd Cycles
+│   ├── 3.1.11.1 Proof Exclusion of Odd Cycles
+│   └── 3.1.11.2 Commentary Impossibility of Accidental Geometry
+│
+└── 3.1.12 Proof Demonstration of the Vacuum Structure
+    └── 3.1.12.2 Diagram Bipartite Vacuum Structure
+```
 
 ### 3.1.3.2 Diagram: Topology of Genesis {#3.1.3.2}
 
@@ -4942,10 +5093,38 @@ This structure serves as the unique optimal pre-geometric substrate that the axi
 
 The proof proceeds by sequentially eliminating suboptimal topologies, applying independent axiomatic filters to reduce the space of candidate vacuum states to a unique regular tree.
 
-1.  **Pre-Geometric Exclusion** <Ref id="3.2.2" label="§3.2.2" /> <Ref id="3.2.3" label="§3.2.3" />: The argument eliminates cyclic, reflexive, and short-range loop topologies, enforcing the strict irreflexivity and pre-geometric girth of the vacuum.
-2.  **Sparsity Filtering** <Ref id="3.2.4" label="§3.2.4" /> <Ref id="3.2.5" label="§3.2.5" />: The argument rejects disconnected states and redundant directed paths, establishing weak connectivity and exact tree sparsity to preserve unique causality.
-3.  **Homogeneity Optimization** <Ref id="3.2.6" label="§3.2.6" /> <Ref id="3.2.7" label="§3.2.7" /> <Ref id="3.2.8" label="§3.2.8" />: The argument maximizes active rewrite sites and enforces uniform degree regularity and level-transitive branching, ensuring spatial isotropy and homogeneous physical laws.
-4.  **Metric Convergence** <Ref id="3.2.9" label="§3.2.9" /> <Ref id="3.2.10" label="§3.2.10" /> <Ref id="3.2.11" label="§3.2.11" />: The argument evaluates candidates under a weighted global symmetry and local homogeneity metric, deriving the regular Bethe fragment as the unique optimal initial state.
+```text
+• 3.2.1.2 Diagram Fragment Topology
+├── 3.2.2 Lemma Exclusion of Cyclic Topologies
+│   └── 3.2.2.1 Proof Exclusion of Cyclic Topologies
+│
+├── 3.2.3 Lemma Exclusion of Short-Range Loops
+│   └── 3.2.3.1 Proof Exclusion of Short-Range Loops
+│
+├── 3.2.4 Lemma Exclusion of Disconnected States
+│   ├── 3.2.4.1 Proof Exclusion of Disconnected States
+│   └── 3.2.4.2 Commentary One Universe
+│
+├── 3.2.5 Lemma Exclusion of Redundant DAGs
+│   ├── 3.2.5.1 Proof Exclusion of Redundant DAGs
+│   └── 3.2.5.2 Commentary Efficiency of Sparsity
+│
+├── 3.2.6 Lemma Site Maximality
+│   ├── 3.2.6.1 Proof Branching Optimization
+│   └── 3.2.6.2 Commentary Parallel Processing
+│
+├── 3.2.7 Lemma Degree Regularity
+│   ├── 3.2.7.1 Proof Degree Regularity
+│   ├── 3.2.7.2 Calculation Entropy Comparison
+│   └── 3.2.7.3 Commentary Democracy of the Vacuum
+│
+├── 3.2.8 Lemma Orbit Transitivity
+│   ├── 3.2.8.1 Proof Orbit Transitivity
+│   └── 3.2.8.2 Commentary Symmetry Breaking
+│
+└── 3.2.9 Lemma Structural Optimality Metric
+    └── 3.2.9.1 Proof Metric Validity
+```
 
 ---
 
@@ -5866,9 +6045,19 @@ It is asserted that an update map $\mathcal{U}: G_0 \to G_1$ preserves the full 
 
 The proof proceeds via Direct Construction, establishing that a maximally parallel scheduler is both necessary and sufficient to preserve the background symmetry of the vacuum state.
 
-1.  **Sufficiency Verification** <Ref id="3.3.4" label="§3.3.4" />: The argument establishes that a maximally parallel update preserves graph automorphisms, utilizing the equivariance of the site definition to guarantee that symmetric inputs yield symmetric outputs.
-2.  **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />: The argument verifies that symmetry is preserved under overlapping update sites, demonstrating that equivariant conflict resolution rules prevent symmetry-breaking coordination collapses.
-3.  **Necessity Demonstration** <Ref id="3.3.7" label="§3.3.7" />: The argument demonstrates that any sequential or non-maximal scheduling of updates introduces distinguishing selections that partition symmetric orbits, proving that partial parallelism collapses the automorphism group.
+```text
+• 3.3.3 Theorem Preservation of Automorphisms
+├── 3.3.3.2 Diagram Scheduler Symmetry Outcomes
+│
+├── 3.3.4 Lemma Equivariance of Site Definition
+│   ├── 3.3.4.1 Proof Equivariance of Site Definition
+│   └── 3.3.4.2 Commentary Physical Justification
+│
+└── 3.3.5 Lemma Conflict Resolution
+    ├── 3.3.5.1 Proof Conflict Resolution
+    ├── 3.3.5.2 Calculation Cycle Resolution
+    └── 3.3.5.3 Calculation Symmetry Metrics Pre/Post-Update
+```
 
 ### 3.3.3.2 Diagram: Scheduler Symmetry Outcomes {#3.3.3.2}
 
@@ -6387,10 +6576,25 @@ The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** charact
 
 The proof proceeds via Direct Construction, establishing a deterministic causal sequence that drives the transition from an inert vacuum to an active, expanding geometry.
 
-1.  **Instability Diagnosis** <Ref id="3.4.2" label="§3.4.2" />: The argument isolates topological tunneling, proving that the distance between the static, bipartite vacuum and an active, non-bipartite state is exactly one single-edge fluctuation.
-2.  **Nucleation Verification** <Ref id="3.4.3" label="§3.4.3" />: The argument proves that a symmetry-breaking edge fluctuation immediately constructs a compliant update site, converting the inert tree into an active domain.
-3.  **Catalytic Ignition** <Ref id="3.4.4" label="§3.4.4" />: The argument establishes that the execution of the first rewrite generates a stable directed three-cycle, creating the first geometric quantum that acts as a catalyst for subsequent updates.
-4.  **Inevitable Progression** <Ref id="3.4.5" label="§3.4.5" /> <Ref id="3.4.6" label="§3.4.6" />: The argument derives a strictly positive lower bound for the transition probability, proving that the geometric phase transition completes on finite logical timescales.
+```text
+• 3.4.1 Theorem Inevitable Geometrogenesis
+├── 3.4.2 Lemma Topological Tunneling
+│   ├── 3.4.2.1 Proof Symmetry Breaking
+│   └── 3.4.2.2 Commentary Minimal Fluctuation
+│
+├── 3.4.3 Lemma Nucleation of Compliant Sites
+│   └── 3.4.3.1 Proof Nucleation of Compliant Sites
+│
+├── 3.4.4 Lemma First Geometric Quantum
+│   ├── 3.4.4.1 Proof First Geometric Quantum
+│   └── 3.4.4.2 Commentary Spark of Geometry
+│
+├── 3.4.5 Lemma Ignition Probability
+│   └── 3.4.5.1 Proof Ignition Probability
+│
+└── 3.4.6 Proof Demonstration of Inevitable Ignition
+    └── 3.4.6.1 Calculation Simulated Ignition Trajectories
+```
 
 ---
 
@@ -6869,10 +7073,36 @@ There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set 
 
 The proof proceeds via Direct Construction, establishing a rigorous algebraic mapping that binds the configurations of Quantum Braid Dynamics to a stabilizer quantum error-correcting code.
 
-1.  **Hilbert Embedding** <Ref id="3.5.3" label="§3.5.3" />: The argument constructs the configuration space mapping, proving that combinatorial graph states faithfully embed into an edge-qubit Hilbert space as orthogonal basis states.
-2.  **Projector Filtering** <Ref id="3.5.4" label="§3.5.4" />: The argument verifies that the physical acyclicity and constructibility axioms are strictly enforced by stabilizer projector operators.
-3.  **Syndrome Extraction** <Ref id="3.5.5" label="§3.5.5" /> <Ref id="3.5.6" label="§3.5.6" />: The argument defines the local check operators, proving that non-destructive syndrome measurements uniquely classify graph configurations into vacuum, tension, or excitation sectors.
-4.  **Codeword Synthesis** <Ref id="3.5.7" label="§3.5.7" /> <Ref id="3.5.8" label="§3.5.8" />: The argument confirms that the initial vacuum state corresponds to a non-trivial joint eigenvalue of the stabilizer generators, proving that the physical vacuum exists as a valid code codeword.
+```text
+• 3.5.2 Theorem Stabilizer Isomorphism
+├── 3.5.3 Lemma Configuration Space Validity
+│   ├── 3.5.3.1 Proof Mapping Validity
+│   ├── 3.5.3.2 Commentary Operator Interpretation
+│   └── 3.5.3.3 Diagram Z/X Duality
+│
+├── 3.5.4 Lemma Hard Constraint Validity
+│   ├── 3.5.4.1 Proof Projector Validity
+│   ├── 3.5.4.2 Calculation Eigenvalue Verification
+│   └── 3.5.4.3 Commentary Justification of the Undirected Metric
+│
+├── 3.5.5 Lemma Syndrome Classification of Triplet Configurations
+│   ├── 3.5.5.1 Proof Syndrome Classification of Triplet Configurations
+│   ├── 3.5.5.2 Calculation Qubit Syndrome Table
+│   └── 3.5.5.3 Commentary Physical Interpretation of Syndromes
+│
+├── 3.5.6 Lemma Stabilizer Commutativity
+│   └── 3.5.6.1 Proof Stabilizer Commutativity
+│
+├── 3.5.7 Lemma Codespace Non-Triviality
+│   └── 3.5.7.1 Proof Codespace Non-Triviality
+│
+├── 3.5.8 Proof Demonstration of the Stabilizer Isomorphism
+│   └── 3.5.8.2 Diagram Stabilizer Isomorphism
+│
+├── 3.5.9 Validation via Lean 4 Core
+│
+└── 3.5.10 Commentary Parity Closure and the Abelian Group Structure
+```
 
 ---
 
@@ -7134,7 +7364,7 @@ The simulation output confirms the fundamental operation of the stabilizer code.
 
 This parity check provides the mechanism for **Error Detection**. A local rewrite operation corresponds to a Pauli-X bit flip. A single bit flip (e.g., `|0000>` $\to$ `|1000>`) transitions the system from a $+1$ eigenstate to a $-1$ eigenstate. This spectral gap allows the vacuum to detect topological violations (such as open strings or forbidden 2-cycles) purely through the measurement of local operators, without requiring global knowledge of the graph state. The set of valid states forms the kernel of the error syndrome, ensuring that the physical vacuum is a protected topological phase.
 
-### 3.5.4.2 Commentary: Justification of the Undirected Metric {#3.5.4.2}
+### 3.5.4.3 Commentary: Justification of the Undirected Metric {#3.5.4.3}
 
 :::info[**Requirement of the Undirected Metric for Spatial Locality Definition**]
 :::
@@ -7932,9 +8162,36 @@ It is asserted that the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constit
 
 The proof proceeds via Direct Construction, verifying the algebraic requirements that establish the internal and global category representations of temporal evolution.
 
-1.  **Internal Verification** <Ref id="4.2.2" label="§4.2.2" /> <Ref id="4.2.3" label="§4.2.3" />: The argument establishes the mathematical soundness of the local causal category, proving that path composition respects identity and associativity constraints.
-2.  **Historical Verification** <Ref id="4.2.4" label="§4.2.4" /> <Ref id="4.2.5" label="§4.2.5" /> <Ref id="4.2.6" label="§4.2.6" /> <Ref id="4.2.7" label="§4.2.7" />: The argument validates the global history category, demonstrating that history-respecting embeddings preserve timestamp monotonicity and irreflexivity to guarantee causality across updates.
-3.  **Causal Encoding** <Ref id="4.2.8" label="§4.2.8" /> <Ref id="4.2.9" label="§4.2.9" /> <Ref id="4.2.10" label="§4.2.10" />: The argument proves that the effective influence relation encodes as a constrained subset of category morphisms, verifying that categorical mapping preserves the strict partial ordering of physical events.
+```text
+• 4.2.1 Theorem Categorical Validity
+├── 4.2.2 Lemma Identity for $\mathbf{Caus}_t$
+│   └── 4.2.2.1 Proof Identity Preservation for $\mathbf{Caus}_t$
+│
+├── 4.2.3 Lemma Associativity for $\mathbf{Caus}_t$
+│   └── 4.2.3.1 Proof Associativity Preservation for $\mathbf{Caus}_t$
+│
+├── 4.2.4 Lemma Timestamp Monotonicity
+│   └── 4.2.4.1 Proof Preservation of Monotonicity
+│
+├── 4.2.5 Lemma Identity for $\mathbf{Hist}$
+│   └── 4.2.5.1 Proof Identity Preservation for $\mathbf{Hist}$
+│
+├── 4.2.6 Lemma Associativity for $\mathbf{Hist}$
+│   └── 4.2.6.1 Proof Associativity Preservation for $\mathbf{Hist}$
+│
+├── 4.2.7 Lemma Topological Injectivity
+│   └── 4.2.7.1 Proof Irreflexivity Enforcement
+│
+├── 4.2.8 Lemma Effective Influence Encoding
+│   └── 4.2.8.1 Proof Encoding Verification
+│
+├── 4.2.9 Lemma Partial Order Property
+│   └── 4.2.9.1 Proof Partial Order Property
+│
+├── 4.2.10 Proof Demonstration of Categorical Validity
+│
+└── 4.2.11 Calculation Partial Order Verification
+```
 
 ---
 
@@ -8689,9 +8946,16 @@ The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ i
 
 The proof proceeds via Direct Construction, proving that the self-observation and diagnostic structures satisfy the comonadic laws of identity and associativity.
 
-1.  **Functorial Lifting** <Ref id="4.3.6" label="§4.3.6" />: The argument establishes the functoriality of the awareness endofunctor, proving that the addition of diagnostic annotations preserves the identity and composition of underlying state transitions.
-2.  **Naturality Inspection** <Ref id="4.3.7" label="§4.3.7" />: The argument verifies the naturality of the context extraction counit and the meta-check comultiplication, demonstrating that diagnostic mappings commute with state evolution.
-3.  **Comonadic Self-Reference** <Ref id="4.3.8" label="§4.3.8" /> <Ref id="4.3.9" label="§4.3.9" />: The argument proves that the endofunctor, counit, and comultiplication satisfy the comonad associativity and identity laws, establishing the algebraic validity of the error-correction framework.
+```text
+• 4.3.4.2 Diagram Meta-Check
+├── 4.3.6 Lemma Functoriality of Awareness
+│   ├── 4.3.6.1 Proof Functoriality of Awareness
+│   └── 4.3.6.2 Commentary Structural Integrity
+│
+└── 4.3.7 Lemma Naturality of Transformations
+    ├── 4.3.7.1 Proof Commutative Squares
+    └── 4.3.7.2 Commentary Diagnostic Consistency
+```
 
 ---
 
@@ -9885,9 +10149,14 @@ This implementation adheres to the Micro/Macro separation principle, operating e
 
 The proof proceeds via Direct Construction, demonstrating that the scan-validate-weight sequence decomposes evolution into sequential phases that enforce thermodynamic balance and causal acyclicity.
 
-1.  **Generative Drive** <Ref id="4.5.3" label="§4.5.3" /> <Ref id="4.5.4" label="§4.5.4" />: The argument identifies compliant two-paths and computes addition probabilities, driving the generation of new geometric connectivity in sparse regions.
-2.  **Pruning Balance** <Ref id="4.5.5" label="§4.5.5" /> <Ref id="4.5.6" label="§4.5.6" />: The argument scans for existing three-cycles and computes deletion probabilities, balancing growth with stress-driven pruning.
-3.  **Adaptive Feedback** <Ref id="4.5.2" label="§4.5.2" />: The argument modulates rewrite rates via the catalytic tension factor, establishing a self-regulating dynamical feedback loop that stabilizes the system.
+```text
+• 4.5.1 Definition Universal Constructor
+├── 4.5.2 Definition Catalytic Tension Factor
+│   └── 4.5.2.1 Commentary Adaptive Feedback
+│
+└── 4.5.3 Definition Addition Mode
+    └── 4.5.3.1 Commentary Generative Drive
+```
 
 ---
 
@@ -11010,10 +11279,30 @@ This term acts as the **Thermodynamic Cost**. The linear component ($0.5\rho$) r
 
 The proof proceeds via Direct Construction, aggregating microscopic transition rates into a macroscopic continuum equation that governs structural density evolution.
 
-1.  **Vacuum Permittivity** <Ref id="5.2.3" label="§5.2.3" />: The argument isolates the spontaneous edge creation rate of the vacuum tree, establishing a non-zero base probability that ignites the system from a null geometric state.
-2.  **Autocatalytic Growth** <Ref id="5.2.4" label="§5.2.4" />: The argument quantifies the non-linear growth dynamics scaling quadratically with existing spatial density, representing the macroscopic driver of the geometric phase transition.
-3.  **Frictional Suppression** <Ref id="5.2.5" label="§5.2.5" />: The argument derives the exponential friction governor that dampens edge creation as density rises, modeling the increased likelihood of causal loop violations.
-4.  **Net Flux Synthesis** <Ref id="5.2.6" label="§5.2.6" /> <Ref id="5.2.7" label="§5.2.7" />: The argument aggregates creation and stress-catalyzed deletion rates, yielding the intensive density master equation that stabilizes at a finite spatial equilibrium.
+```text
+• 5.2.2.1 Commentary Anatomy of an Equation
+├── 5.2.3 Lemma Vacuum Permittivity ($\Lambda$)
+│   ├── 5.2.3.1 Proof Vacuum Permittivity ($\Lambda$)
+│   └── 5.2.3.2 Commentary Spark of Existence
+│
+├── 5.2.4 Lemma Geometric Autocatalysis ($J_{auto}$)
+│   ├── 5.2.4.1 Proof Geometric Autocatalysis ($J_{auto}$)
+│   ├── 5.2.4.2 Calculation Precursor Scaling Verification
+│   └── 5.2.4.3 Commentary Nonlinear Dynamics
+│
+├── 5.2.5 Lemma Frictional Suppression ($P_{acc}$)
+│   ├── 5.2.5.1 Proof Frictional Suppression ($P_{acc}$)
+│   ├── 5.2.5.2 Calculation Friction Verification
+│   └── 5.2.5.3 Commentary Saturation Mechanism
+│
+├── 5.2.6 Lemma Entropic & Catalytic Decay ($J_{out}$)
+│   ├── 5.2.6.1 Proof Entropic & Catalytic Decay ($J_{out}$)
+│   ├── 5.2.6.2 Calculation Stress-Decay Verification
+│   └── 5.2.6.3 Commentary Stress-Deletion Coupling
+│
+└── 5.2.7 Proof Master Equation
+    └── 5.2.7.1 Calculation Equation Verification
+```
 
 ---
 
@@ -12011,9 +12300,20 @@ Assume the kinetic parameters satisfy the boundaries established by **Global Sta
 
 The proof proceeds via formal verification, constructing a linearized dynamic for the net flux function to evaluate the stability of the equilibrium point.
 
-1.  **Flux Linearization** <Ref id="5.4.1" label="§5.4.1" />: The argument instantiates the Jacobian derivative representation for the net flux function, establishing the mathematical conditions required for an asymptotic attractor.
-2.  **Boundary Gradient Evaluation** <Ref id="5.4.3" label="§5.4.3" />: The argument evaluates the net flux function across asymptotic limits, proving that the creation current dominates at zero density while the deletion current dominates at high density.
-3.  **Local Perturbation Damping** <Ref id="5.4.4" label="§5.4.4" /> <Ref id="5.4.5" label="§5.4.5" />: The argument limits the space of admissible kinetic coefficients, ensuring that stress-induced cycle pruning does not outpace the autocatalytic creation potential of the vacuum.
+```text
+• 5.4.2 Theorem Vacuum Stability
+├── 5.4.3 Lemma Global Stability
+│   ├── 5.4.3.1 Proof Global Stability
+│   └── 5.4.3.2 Commentary Inevitability of Structure
+│
+├── 5.4.4 Lemma Catalysis Bounds
+│   ├── 5.4.4.1 Proof Catalysis Bounds
+│   └── 5.4.4.2 Commentary Stability Buffer
+│
+├── 5.4.5 Proof Vacuum Stability
+│
+└── 5.4.6 Validation via Lean 4 Core
+```
 
 ---
 

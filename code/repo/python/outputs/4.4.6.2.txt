@@ -1,0 +1,17 @@
+Friction Coefficient from Gaussian Normalization
+====================================================
+Calculated μ:      0.398942
+Approximate value: 0.398942
+Exact 1/√(2π):     0.398942
+
+Damping Factors for Increasing Local Stress
+--------------------------------------------
+Stress s =  0:  Damping = 1.0000  (Rate reduced by   0.0%)
+Stress s =  1:  Damping = 0.6710  (Rate reduced by  32.9%)
+Stress s =  2:  Damping = 0.4503  (Rate reduced by  55.0%)
+Stress s =  3:  Damping = 0.3022  (Rate reduced by  69.8%)
+Stress s =  4:  Damping = 0.2028  (Rate reduced by  79.7%)
+Stress s =  5:  Damping = 0.1361  (Rate reduced by  86.4%)
+
+Gaussian PDF peak at s=0: 0.398942
+Match with μ:             True

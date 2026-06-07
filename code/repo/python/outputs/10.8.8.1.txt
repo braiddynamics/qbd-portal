@@ -1,0 +1,4 @@
+Phase on |0_L> (expected 0, cos(0)=1): 1.0
+Phase on |1_L> (expected cos(π/4)≈0.707): 0.7071067811865476
+Real part on superposition (mixed phases): 0.8535533905932736
+Verification: Phases match T-gate unitary, confirming state-dependent geometric phase.

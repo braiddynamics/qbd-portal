@@ -505,14 +505,49 @@ Internal observers, operating within the emergent physical time $t_{phys}$, reco
 
 ---
 
-### 1.2.3 Lemma: Finite Information Substrate {#1.2.3}
+### 1.2.3 Theorem: Temporal Finitude {#1.2.3}
+
+:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
+:::
+
+The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
+
+### 1.2.3.1 Commentary: Argument Outline {#1.2.3.1}
+
+:::tip[**Structure of the Temporal Finitude Argument via Substrate Finiteness, Entropy Accumulation, Recurrence Exclusion, and Supertask Limits**]
+:::
+
+The proof proceeds by contradiction, assuming an unbounded temporal regress to demonstrate its topological, thermodynamic, and computational impossibility.
+
+```text
+• 1.2.3 Theorem Temporal Finitude  [by contradiction]
+│
+├── 1.2.4 Lemma Finite Information Substrate
+│   └── 1.2.4.1 Proof Finite Information Substrate
+│
+├── 1.2.5 Lemma Backward Accumulation
+│   └── 1.2.5.1 Proof Backward Accumulation
+│
+├── 1.2.6 Lemma Finite State Recurrence
+│   └── 1.2.6.1 Proof Finite State Recurrence
+│
+├── 1.2.7 Lemma Supertask Impossibility
+│   ├── 1.2.7.1 Proof Supertask Limits
+│   └── 1.2.7.2 Commentary Collapse of Supertasks
+│
+└── 1.2.8 Proof Temporal Finitude
+    ├── 1.2.8.1 Commentary Grim Reaper Paradox
+    └── 1.2.8.2 Diagram Grim Reaper Paradox
+```
+
+### 1.2.4 Lemma: Finite Information Substrate {#1.2.4}
 
 :::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
 :::
 
 Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
 
-### 1.2.3.1 Proof: Finite Information Substrate {#1.2.3.1}
+### 1.2.4.1 Proof: Finite Information Substrate {#1.2.4.1}
 
 :::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
 :::
@@ -629,14 +664,14 @@ Q.E.D.
 
 ---
 
-### 1.2.4 Lemma: Backward Accumulation {#1.2.4}
+### 1.2.5 Lemma: Backward Accumulation {#1.2.5}
 
 :::info[**Exclusion of Unbounded Past Direction**]
 :::
 
-Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
-### 1.2.4.1 Proof: Backward Accumulation {#1.2.4.1}
+### 1.2.5.1 Proof: Backward Accumulation {#1.2.5.1}
 
 :::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
 :::
@@ -656,7 +691,7 @@ Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermod
     \mathbb{E}[\Delta S_k] = \mu > 0
     $$
 
-    The fluctuations are bounded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />:
+    The fluctuations are bounded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />:
 
     $$
     \text{Var}(\Delta S_k) = \sigma^2 < \infty
@@ -689,7 +724,7 @@ Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermod
     $$
 
 4.  **Contradiction:**
-    The divergence $S(U_0) \to \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+    The divergence $S(U_0) \to \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
 **III. Case B: Reversible Dynamics**
 
@@ -727,7 +762,7 @@ $$
     $$
 
 4.  **Contradiction:**
-    An infinite information capacity $I(U_0) = \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+    An infinite information capacity $I(U_0) = \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
 
 **IV. Conclusion**
 
@@ -737,14 +772,14 @@ Q.E.D.
 
 ---
 
-### 1.2.5 Lemma: Finite State Recurrence {#1.2.5}
+### 1.2.6 Lemma: Finite State Recurrence {#1.2.6}
 
 :::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
 :::
 
 Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
-### 1.2.5.1 Proof: Finite State Recurrence {#1.2.5.1}
+### 1.2.6.1 Proof: Finite State Recurrence {#1.2.6.1}
 
 :::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
 :::
@@ -813,14 +848,14 @@ Q.E.D.
 
 ---
 
-### 1.2.6 Lemma: Supertask Impossibility {#1.2.6}
+### 1.2.7 Lemma: Supertask Impossibility {#1.2.7}
 
 :::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
 :::
 
 The traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
 
-### 1.2.6.1 Proof: Supertask Limits {#1.2.6.1}
+### 1.2.7.1 Proof: Supertask Limits {#1.2.7.1}
 
 :::tip[**Formal Proof of Non-Termination via Turing Computability and Relativistic Constraints**]
 :::
@@ -886,7 +921,7 @@ An infinite energy dissipation implies that the universe must have exhausted all
 
 Q.E.D.
 
-### 1.2.6.2 Commentary: Collapse of Supertasks {#1.2.6.2}
+### 1.2.7.2 Commentary: Collapse of Supertasks {#1.2.7.2}
 
 :::info[**Dynamical Instability of Infinite Computation due to General Relativistic Constraints**]
 :::
@@ -905,16 +940,9 @@ This inexorable collapse precludes the universe from "computing" an infinite his
 
 ---
 
-### 1.2.7 Theorem: Temporal Finitude {#1.2.7}
+### 1.2.8 Proof: Temporal Finitude {#1.2.8}
 
-:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
-:::
-
-The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
-
-### 1.2.7.1 Proof: Temporal Finitude {#1.2.7.1}
-
-:::tip[**Temporal Finitude** <Ref id="1.2.7" label="§1.2.7" />]
+:::tip[**Temporal Finitude** <Ref id="1.2.3" label="§1.2.3" />]
 :::
 
 **I. The Infinite Hypothesis**
@@ -923,10 +951,10 @@ Let it be assumed, for the explicit purpose of demonstrating a contradiction, th
 **II. The Constraint Chain**
 The validity of this hypothesis is interrogated against the established lemmas of the theory:
 
-1.  **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />: The system enforces a strict holographic bound on the information content of any state within the sequence. It is established that $S(U_t)$ must remain finite for all finite $t$. The assumption of an infinite past requires the current state to encode a history of infinite depth, which necessitates an information capacity that exceeds this finite bound.
-2.  **Backward Accumulation** <Ref id="1.2.4" label="§1.2.4" />: Under the condition of irreversible dynamics, an infinite past necessitates an unbounded accumulation of entropy production ($\Sigma \Delta S \to \infty$). This accumulation would result in a present state $U_0$ characterized by maximal entropy (Thermodynamic Equilibrium or Heat Death), a condition that stands in direct contradiction to the observed low-entropy configuration of the physical universe.
-3.  **Finite State Recurrence** <Ref id="1.2.5" label="§1.2.5" />: Under the condition of reversible dynamics within a state space of finite cardinality, an infinite temporal duration necessitates the occurrence of Poincaré recurrence ($U_t = U_{t+k}$). Such recurrence establishes closed causal loops, which constitute a direct violation of the **Acyclicity** axiom governing the causal graph.
-4.  **Supertask Impossibility** <Ref id="1.2.6" label="§1.2.6" />: The logical traversal of an infinite sequence of operations to arrive at the present state $U_0$ constitutes a Supertask. The completion of such a task is computationally undefined, as it lacks a valid initialization condition, rendering the existence of $U_0$ logically impossible under constructive dynamical rules.
+1.  **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />: The system enforces a strict holographic bound on the information content of any state within the sequence. It is established that $S(U_t)$ must remain finite for all finite $t$. The assumption of an infinite past requires the current state to encode a history of infinite depth, which necessitates an information capacity that exceeds this finite bound.
+2.  **Backward Accumulation** <Ref id="1.2.5" label="§1.2.5" />: Under the condition of irreversible dynamics, an infinite past necessitates an unbounded accumulation of entropy production ($\Sigma \Delta S \to \infty$). This accumulation would result in a present state $U_0$ characterized by maximal entropy (Thermodynamic Equilibrium or Heat Death), a condition that stands in direct contradiction to the observed low-entropy configuration of the physical universe.
+3.  **Finite State Recurrence** <Ref id="1.2.6" label="§1.2.6" />: Under the condition of reversible dynamics within a state space of finite cardinality, an infinite temporal duration necessitates the occurrence of Poincaré recurrence ($U_t = U_{t+k}$). Such recurrence establishes closed causal loops, which constitute a direct violation of the **Acyclicity** axiom governing the causal graph.
+4.  **Supertask Impossibility** <Ref id="1.2.7" label="§1.2.7" />: The logical traversal of an infinite sequence of operations to arrive at the present state $U_0$ constitutes a Supertask. The completion of such a task is computationally undefined, as it lacks a valid initialization condition, rendering the existence of $U_0$ logically impossible under constructive dynamical rules.
 
 **III. Convergence**
 The assumption of an unbounded past generates inescapable contradictions under both thermodynamic and computational constraints. Whether the dynamics are reversible or irreversible, the hypothesis fails to yield a consistent physical model.
@@ -936,7 +964,7 @@ Consequently, the temporal domain cannot be unbounded. There must exist a unique
 
 Q.E.D.
 
-### 1.2.7.2 Commentary: Grim Reaper Paradox {#1.2.7.2}
+### 1.2.8.1 Commentary: Grim Reaper Paradox {#1.2.8.1}
 
 :::info[**Logical Necessity of Finite Temporal Origins demonstrated by the Grim Reaper Paradox**]
 :::
@@ -985,7 +1013,7 @@ Empirical scrutiny confirms the universe's obeisance to causal laws (**Axiom B**
 
 The universe thus mandates a **finite history**, with the Global Sequencer initiating at $t_L = 0$ to forge an unbroken causal spine: every event traces, through finite recursion, to the First Event $U_0$, the axiomatic genesis beyond which no antecedents lurk. This finitistic resolution not only exorcises the Grim Reaper's specter but elevates the temporal ontology to a bastion of logical and physical coherence.
 
-### 1.2.7.3 Diagram: Grim Reaper Paradox {#1.2.7.3}
+### 1.2.8.2 Diagram: Grim Reaper Paradox {#1.2.8.2}
 
 :::note[**Visualization of Asymptotic Convergence within the Grim Reaper Paradox**]
 :::
@@ -1546,32 +1574,32 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.2.2.2](/monograph/rules/ontology/1.2#1.2.2.2) |
 | $\mathcal{T}$ | Unimodular Time variable | [§1.2.2.3](/monograph/rules/ontology/1.2#1.2.2.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.2.2.3](/monograph/rules/ontology/1.2#1.2.2.3) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $b$ | Finite Branching factor | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $s_t$ | Surface area (active degrees of freedom) | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.2.3.1](/monograph/rules/ontology/1.2#1.2.3.1) |
-| $T$ | Temporal Domain (Set of integers) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\sigma^2$ | Variance of entropy production | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\prec$ | Strict causal precedence | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
-| $E_{total}$ | Total energy dissipated | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
-| $k_B$ | Boltzmann constant | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $\hbar$ | Reduced Planck constant | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $c$ | Speed of light | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $R_s$ | Schwarzschild Radius | [§1.2.6.2](/monograph/rules/ontology/1.2#1.2.6.2) |
-| $U_0$ | The unique initial state | [§1.2.7](/monograph/rules/ontology/1.2#1.2.7) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $S(U)$ | Information content/Entropy of state $U$ | [§1.2.4](/monograph/rules/ontology/1.2#1.2.4) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.2.4](/monograph/rules/ontology/1.2#1.2.4) |
+| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $b$ | Finite Branching factor | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $s_t$ | Surface area (active degrees of freedom) | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.2.4.1](/monograph/rules/ontology/1.2#1.2.4.1) |
+| $T$ | Temporal Domain (Set of integers) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\sigma^2$ | Variance of entropy production | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\Delta I_k$ | Information bit contribution | [§1.2.5.1](/monograph/rules/ontology/1.2#1.2.5.1) |
+| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\prec$ | Strict causal precedence | [§1.2.6.1](/monograph/rules/ontology/1.2#1.2.6.1) |
+| $\epsilon(op)$ | Energy cost per operation | [§1.2.7.1](/monograph/rules/ontology/1.2#1.2.7.1) |
+| $E_{total}$ | Total energy dissipated | [§1.2.7.1](/monograph/rules/ontology/1.2#1.2.7.1) |
+| $k_B$ | Boltzmann constant | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $T$ | Temperature (Context: Thermodynamics) | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $\hbar$ | Reduced Planck constant | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $c$ | Speed of light | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $G_{\mu\nu}$ | Einstein Tensor | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $R_s$ | Schwarzschild Radius | [§1.2.7.2](/monograph/rules/ontology/1.2#1.2.7.2) |
+| $U_0$ | The unique initial state | [§1.2.3](/monograph/rules/ontology/1.2#1.2.3) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.2.8.1](/monograph/rules/ontology/1.2#1.2.8.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |

@@ -125,9 +125,20 @@ This conservation law guarantees the preservation of statistical stationarity fo
 
 The argument proceeds via Direct Construction, deriving local flux conservation as the necessary consequence of thermodynamic homeostasis.
 
-1.  **The Global Stationarity** <Ref id="12.1.3" label="§12.1.3" />: The argument applies the Ergodic Theorem to the degree observable, proving that net total flux accumulation must vanish in expectation.
-2.  **Flux Separation (Detailed Balance)** <Ref id="12.1.4" label="§12.1.4" />: The argument decomposes the balance equation using maximum entropy, establishing the independent vanishing of incoming and outgoing divergences.
-3.  **Local Conservation Synthesis** <Ref id="12.1.5" label="§12.1.5" />: The argument synthesizes the global balance and detailed balance to prove the divergence-free nature of the stress-energy tensor.
+```text
+• 12.1.2 Theorem Conservation of Complexity Flux
+├── 12.1.3 Lemma Global Stationarity
+│   ├── 12.1.3.1 Proof Ergodic Degree Invariance
+│   └── 12.1.3.2 Commentary Global Balance
+│
+├── 12.1.4 Lemma Flux Separation (Detailed Balance)
+│   ├── 12.1.4.1 Proof Maximum Entropy Decomposition
+│   └── 12.1.4.2 Commentary Entropic Independence
+│
+└── 12.1.5 Proof Local Conservation Synthesis
+    ├── 12.1.5.1 Calculation Flux Conservation Verification
+    └── 12.1.5.2 Diagram Local Conservation
+```
 
 ---
 
@@ -617,10 +628,24 @@ The geometric evolution of the causal graph at the homeostatic fixed point is go
 
 The proof proceeds via Direct Construction, showing that the homeostatic state corresponds to the critical point of the discrete action.
 
-1.  **Variational Action Principle** <Ref id="12.2.3" label="§12.2.3" />: The argument defines the variational action in terms of causal curvatures, linking metric changes to topological updates.
-2.  **The Curvature-Flux Coupling** <Ref id="12.2.4" label="§12.2.4" />: The argument balances topological sensitivity against thermodynamic creation flux to establish a linear relation.
-3.  **Gravitational Coupling Scale** <Ref id="12.2.5" label="§12.2.5" />: The argument scales the coupling parameter to anchor the gravitational constant to the intrinsic vacuum lengths.
-4.  **Derivation from Stationary Action** <Ref id="12.2.6" label="§12.2.6" />: The argument solves the global variational problem to uniquely derive the proportional field equations.
+```text
+• 12.2.2 Theorem Emergent Field Equations
+├── 12.2.3 Lemma Variational Action Principle
+│   ├── 12.2.3.1 Proof Topological Sensitivity
+│   ├── 12.2.3.2 Commentary Response Function
+│   └── 12.2.3.2 Diagram Gravitational Coupling
+│
+├── 12.2.4 Lemma Curvature-Flux Coupling
+│   ├── 12.2.4.1 Proof Thermodynamic Work
+│   ├── 12.2.4.2 Commentary Geometry Doing Work
+│   └── 12.2.4.3 Diagram Curvature Response
+│
+├── 12.2.5 Lemma Gravitational Coupling Scale
+│   └── 12.2.5.1 Proof Coupling Form
+│
+└── 12.2.6 Proof Derivation from Stationary Action
+    └── 12.2.6.1 Calculation Unified Field Equation Verification
+```
 
 ---
 
@@ -1219,9 +1244,19 @@ The **Discrete Divergence-Free Geometry Theorem** establishes that the emergent 
 
 The argument proceeds via Direct Construction, proving the mathematical necessity of the divergence-free curvature tensor from the coordinate invariance of the action.
 
-1.  **Action Invariance** <Ref id="12.3.3" label="§12.3.3" />: The argument proves the invariance of the discrete action under vertex relabelings, establishing general covariance.
-2.  **Discrete Schläfli Identity** <Ref id="12.3.4" label="§12.3.4" />: The argument applies the Schläfli identity to ensure that metric-level variations sum to zero under topological preservation.
-3.  **Identity Derivation** <Ref id="12.3.5" label="§12.3.5" />: The argument combines coordinate invariance and metric constraints to force the vanishing of the covariant divergence.
+```text
+• 12.3.2 Theorem Discrete Divergence-Free Geometry
+├── 12.3.3 Lemma Action Invariance
+│   ├── 12.3.3.1 Proof Vertex Relabeling Invariance
+│   └── 12.3.3.2 Commentary Discrete General Covariance
+│
+├── 12.3.4 Lemma Discrete Schläfli Identity
+│   ├── 12.3.4.1 Proof Null Curvature Variation
+│   └── 12.3.4.2 Commentary Orthogonality of Metric Variation
+│
+└── 12.3.5 Proof Identity Derivation
+    └── 12.3.5.1 Calculation Bianchi Error Scaling
+```
 
 ---
 

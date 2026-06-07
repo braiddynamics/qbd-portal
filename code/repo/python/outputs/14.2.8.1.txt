@@ -1,0 +1,8 @@
+--- INTEGRATION TEST: Geodesic Motion & Equivalence Principle ---
+PASS: Graph is Acyclic (Globally Hyperbolic).
+Start X: 2
+End X:   2
+Max X (Apex): 5
+Trajectory: [2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2]
+PASS: Geodesic Deviation Detected.
+      Particle accelerated toward high-curvature region (Gravity).

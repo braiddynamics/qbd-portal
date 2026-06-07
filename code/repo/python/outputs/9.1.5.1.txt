@@ -1,0 +1,11 @@
+══════════════════════════════════════════════════════════════════════
+COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION
+Minimal Chiral Generation inar{5} ⊕ 10 Representations
+══════════════════════════════════════════════════════════════════════
+
+Anomaly Coefficients (SU(5)):
+  A(\bar{5})   = -1
+  A(10)        =  1
+  Total        =  0
+--------------------------------------------------
+RESULT: Exact cancellation confirmed.

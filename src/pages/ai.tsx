@@ -128,12 +128,12 @@ const CHAPTERS = [
 ];
 
 const LEAN_PROOFS = [
-  { name: 'awareness-comonad.lean',      url: '/downloads/code/lean/awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
-  { name: 'causal-primitive.lean',       url: '/downloads/code/lean/causal-primitive.lean',       desc: 'Topological axioms for causal set spacetime primitives.' },
-  { name: 'geometric-decomposition.lean', url: '/downloads/code/lean/geometric-decomposition.lean', desc: 'Topological geometric decomposition formalization.' },
-  { name: 'maximal-parallelism.lean',    url: '/downloads/code/lean/maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
-  { name: 'stabilizer-isomorphism.lean', url: '/downloads/code/lean/stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
-  { name: 'vacuum-stability.lean',       url: '/downloads/code/lean/vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
+  { name: 'awareness-comonad.lean',      url: '/downloads/code/repo/lean/awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
+  { name: 'causal-primitive.lean',       url: '/downloads/code/repo/lean/causal-primitive.lean',       desc: 'Topological axioms for causal set spacetime primitives.' },
+  { name: 'geometric-decomposition.lean', url: '/downloads/code/repo/lean/geometric-decomposition.lean', desc: 'Topological geometric decomposition formalization.' },
+  { name: 'maximal-parallelism.lean',    url: '/downloads/code/repo/lean/maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
+  { name: 'stabilizer-isomorphism.lean', url: '/downloads/code/repo/lean/stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
+  { name: 'vacuum-stability.lean',       url: '/downloads/code/repo/lean/vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
 ];
 
 const MODEL_CODE = [
@@ -408,10 +408,10 @@ Downloads base URL:  https://braiddynamics.com/downloads/
   Full book:         qbd_monograph_complete.{md,json,pdf}
   Parts:             parts/qbd_part_{1..6}_*.{md,json,pdf}
   Chapters:          chapters/chapter_{1..25}.{md,json,pdf}
-  Lean 4 proofs:     code/lean/*.lean
+  Lean 4 proofs:     code/repo/lean/*.lean
   Python model:      code/model/*.py
   Simulations:       code/simulations/*.py
-  Equation scripts:  code/repo/{chapter}.{section}.{eq}.py
+  Equation scripts:  code/repo/python/{chapter}.{section}.{eq}.py
 
 Machine-readable download catalogue:
   https://braiddynamics.com/data/ai-downloads-info.json`}</pre>

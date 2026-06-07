@@ -1,0 +1,5 @@
+State                | |Aut|      | Symmetry Status
+-----------------------------------------------------------------
+Initial Vacuum       | 6          | Perfect Symmetry (S3)
+Sequential Update    | 2          | BROKEN (Distinguishes Branch 3)
+Parallel Update      | 6          | PRESERVED (Equivariant)

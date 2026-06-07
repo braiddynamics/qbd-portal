@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 3270739,
-      "estimated_tokens": 1187955,
+      "file_size_bytes": 3382442,
+      "estimated_tokens": 1226047,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 3307458,
-      "estimated_tokens": 1219204,
+      "file_size_bytes": 3418610,
+      "estimated_tokens": 1258038,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 4120349,
-      "estimated_tokens": 1187955,
+      "file_size_bytes": 4245558,
+      "estimated_tokens": 1226047,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -34,64 +34,64 @@
       "name": "Part 1: The Foundational Principles (The Rules)",
       "filename": "qbd_part_1_the_foundational_principles_the_rules.md",
       "url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md",
-      "file_size_bytes": 855360,
-      "estimated_tokens": 310205,
+      "file_size_bytes": 883971,
+      "estimated_tokens": 319910,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 1: The Foundational Principles (The Rules).",
       "json_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.json",
-      "json_file_size_bytes": 864399,
-      "json_estimated_tokens": 318261,
+      "json_file_size_bytes": 892773,
+      "json_estimated_tokens": 328082,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1154573,
-      "pdf_estimated_tokens": 310205
+      "pdf_file_size_bytes": 1185926,
+      "pdf_estimated_tokens": 319910
     },
     {
       "part_number": 2,
       "name": "Part 2: Topological Nature of Matter (The Players)",
       "filename": "qbd_part_2_topological_nature_of_matter_the_players.md",
       "url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md",
-      "file_size_bytes": 834425,
-      "estimated_tokens": 303130,
+      "file_size_bytes": 830001,
+      "estimated_tokens": 300340,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 2: Topological Nature of Matter (The Players).",
       "json_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.json",
-      "json_file_size_bytes": 844131,
-      "json_estimated_tokens": 311144,
+      "json_file_size_bytes": 839199,
+      "json_estimated_tokens": 308326,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1133278,
-      "pdf_estimated_tokens": 303130
+      "pdf_file_size_bytes": 1125288,
+      "pdf_estimated_tokens": 300340
     },
     {
       "part_number": 3,
       "name": "Part 3: Emergent Reality (The Stage)",
       "filename": "qbd_part_3_emergent_reality_the_stage.md",
       "url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.md",
-      "file_size_bytes": 736019,
-      "estimated_tokens": 268031,
+      "file_size_bytes": 731235,
+      "estimated_tokens": 265748,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 3: Emergent Reality (The Stage).",
       "json_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.json",
-      "json_file_size_bytes": 745558,
-      "json_estimated_tokens": 275779,
+      "json_file_size_bytes": 740511,
+      "json_estimated_tokens": 273470,
       "pdf_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.pdf",
-      "pdf_file_size_bytes": 1154586,
-      "pdf_estimated_tokens": 268031
+      "pdf_file_size_bytes": 1037676,
+      "pdf_estimated_tokens": 265748
     },
     {
       "part_number": 4,
       "name": "Part 4: Phenomenological Consequences (The Output)",
       "filename": "qbd_part_4_phenomenological_consequences_the_output.md",
       "url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md",
-      "file_size_bytes": 228253,
-      "estimated_tokens": 83022,
+      "file_size_bytes": 229431,
+      "estimated_tokens": 83204,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 4: Phenomenological Consequences (The Output).",
       "json_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.json",
-      "json_file_size_bytes": 231854,
-      "json_estimated_tokens": 85789,
+      "json_file_size_bytes": 232930,
+      "json_estimated_tokens": 85973,
       "pdf_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.pdf",
-      "pdf_file_size_bytes": 1133281,
-      "pdf_estimated_tokens": 83022
+      "pdf_file_size_bytes": 389801,
+      "pdf_estimated_tokens": 83204
     },
     {
       "part_number": 5,
@@ -106,7 +106,7 @@
       "json_file_size_bytes": 27697,
       "json_estimated_tokens": 10242,
       "pdf_url": "/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.pdf",
-      "pdf_file_size_bytes": 664913,
+      "pdf_file_size_bytes": 92399,
       "pdf_estimated_tokens": 9932
     },
     {
@@ -114,16 +114,16 @@
       "name": "Part 6: Appendices",
       "filename": "qbd_part_6_appendices.md",
       "url": "/downloads/parts/qbd_part_6_appendices.md",
-      "file_size_bytes": 460269,
-      "estimated_tokens": 167905,
+      "file_size_bytes": 546548,
+      "estimated_tokens": 199390,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 6: Appendices.",
       "json_url": "/downloads/parts/qbd_part_6_appendices.json",
-      "json_file_size_bytes": 463692,
-      "json_estimated_tokens": 171517,
+      "json_file_size_bytes": 550516,
+      "json_estimated_tokens": 203660,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 664901,
-      "pdf_estimated_tokens": 167905
+      "pdf_file_size_bytes": 777192,
+      "pdf_estimated_tokens": 199390
     }
   ],
   "chapters": [
@@ -132,288 +132,288 @@
       "name": "Chapter 1: Substrate (Ontology)",
       "filename": "chapter_1.md",
       "url": "/downloads/chapters/chapter_1.md",
-      "file_size_bytes": 154381,
-      "estimated_tokens": 56101,
+      "file_size_bytes": 155456,
+      "estimated_tokens": 56454,
       "type": "markdown",
       "description": "Markdown source for Chapter 1.",
       "json_url": "/downloads/chapters/chapter_1.json",
-      "json_file_size_bytes": 155465,
-      "json_estimated_tokens": 57088,
+      "json_file_size_bytes": 156540,
+      "json_estimated_tokens": 57451,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 264681,
-      "pdf_estimated_tokens": 56101
+      "pdf_file_size_bytes": 266839,
+      "pdf_estimated_tokens": 56454
     },
     {
       "chapter_number": 2,
       "name": "Chapter 2: Constraints (Axioms)",
       "filename": "chapter_2.md",
       "url": "/downloads/chapters/chapter_2.md",
-      "file_size_bytes": 153778,
-      "estimated_tokens": 55555,
+      "file_size_bytes": 164299,
+      "estimated_tokens": 59177,
       "type": "markdown",
       "description": "Markdown source for Chapter 2.",
       "json_url": "/downloads/chapters/chapter_2.json",
-      "json_file_size_bytes": 154922,
-      "json_estimated_tokens": 56860,
+      "json_file_size_bytes": 165394,
+      "json_estimated_tokens": 60534,
       "pdf_url": "/downloads/chapters/chapter_2.pdf",
-      "pdf_file_size_bytes": 268188,
-      "pdf_estimated_tokens": 55555
+      "pdf_file_size_bytes": 280465,
+      "pdf_estimated_tokens": 59177
     },
     {
       "chapter_number": 3,
       "name": "Chapter 3: Object Model (Architecture)",
       "filename": "chapter_3.md",
       "url": "/downloads/chapters/chapter_3.md",
-      "file_size_bytes": 211623,
-      "estimated_tokens": 76492,
+      "file_size_bytes": 224734,
+      "estimated_tokens": 80963,
       "type": "markdown",
       "description": "Markdown source for Chapter 3.",
       "json_url": "/downloads/chapters/chapter_3.json",
-      "json_file_size_bytes": 214047,
-      "json_estimated_tokens": 78698,
+      "json_file_size_bytes": 227056,
+      "json_estimated_tokens": 83221,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 311290,
-      "pdf_estimated_tokens": 76492
+      "pdf_file_size_bytes": 379998,
+      "pdf_estimated_tokens": 80963
     },
     {
       "chapter_number": 4,
       "name": "Chapter 4: Operations (Dynamics)",
       "filename": "chapter_4.md",
       "url": "/downloads/chapters/chapter_4.md",
-      "file_size_bytes": 169309,
-      "estimated_tokens": 61523,
+      "file_size_bytes": 170947,
+      "estimated_tokens": 62029,
       "type": "markdown",
       "description": "Markdown source for Chapter 4.",
       "json_url": "/downloads/chapters/chapter_4.json",
-      "json_file_size_bytes": 171415,
-      "json_estimated_tokens": 63357,
+      "json_file_size_bytes": 172993,
+      "json_estimated_tokens": 63860,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 311293,
-      "pdf_estimated_tokens": 61523
+      "pdf_file_size_bytes": 313851,
+      "pdf_estimated_tokens": 62029
     },
     {
       "chapter_number": 5,
       "name": "Chapter 5: Geometrogensis (Equilibrium)",
       "filename": "chapter_5.md",
       "url": "/downloads/chapters/chapter_5.md",
-      "file_size_bytes": 166373,
-      "estimated_tokens": 60573,
+      "file_size_bytes": 168639,
+      "estimated_tokens": 61326,
       "type": "markdown",
       "description": "Markdown source for Chapter 5.",
       "json_url": "/downloads/chapters/chapter_5.json",
-      "json_file_size_bytes": 168381,
-      "json_estimated_tokens": 62197,
+      "json_file_size_bytes": 170621,
+      "json_estimated_tokens": 62956,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 307187,
-      "pdf_estimated_tokens": 60573
+      "pdf_file_size_bytes": 310768,
+      "pdf_estimated_tokens": 61326
     },
     {
       "chapter_number": 6,
       "name": "Chapter 6: Tripartite Braid (Fermions)",
       "filename": "chapter_6.md",
       "url": "/downloads/chapters/chapter_6.md",
-      "file_size_bytes": 145056,
-      "estimated_tokens": 52434,
+      "file_size_bytes": 144113,
+      "estimated_tokens": 51934,
       "type": "markdown",
       "description": "Markdown source for Chapter 6.",
       "json_url": "/downloads/chapters/chapter_6.json",
-      "json_file_size_bytes": 146532,
-      "json_estimated_tokens": 53769,
+      "json_file_size_bytes": 145525,
+      "json_estimated_tokens": 53265,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 307189,
-      "pdf_estimated_tokens": 52434
+      "pdf_file_size_bytes": 274422,
+      "pdf_estimated_tokens": 51934
     },
     {
       "chapter_number": 7,
       "name": "Chapter 7: Quantum Numbers (Topology)",
       "filename": "chapter_7.md",
       "url": "/downloads/chapters/chapter_7.md",
-      "file_size_bytes": 126564,
-      "estimated_tokens": 46085,
+      "file_size_bytes": 125868,
+      "estimated_tokens": 45682,
       "type": "markdown",
       "description": "Markdown source for Chapter 7.",
       "json_url": "/downloads/chapters/chapter_7.json",
-      "json_file_size_bytes": 128005,
-      "json_estimated_tokens": 47347,
+      "json_file_size_bytes": 127245,
+      "json_estimated_tokens": 46940,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 251021,
-      "pdf_estimated_tokens": 46085
+      "pdf_file_size_bytes": 251348,
+      "pdf_estimated_tokens": 45682
     },
     {
       "chapter_number": 8,
       "name": "Chapter 8: Gauge Symmetries (Braids)",
       "filename": "chapter_8.md",
       "url": "/downloads/chapters/chapter_8.md",
-      "file_size_bytes": 205367,
-      "estimated_tokens": 74793,
+      "file_size_bytes": 204387,
+      "estimated_tokens": 74139,
       "type": "markdown",
       "description": "Markdown source for Chapter 8.",
       "json_url": "/downloads/chapters/chapter_8.json",
-      "json_file_size_bytes": 208043,
-      "json_estimated_tokens": 76720,
+      "json_file_size_bytes": 206935,
+      "json_estimated_tokens": 76059,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 359056,
-      "pdf_estimated_tokens": 74793
+      "pdf_file_size_bytes": 359024,
+      "pdf_estimated_tokens": 74139
     },
     {
       "chapter_number": 9,
       "name": "Chapter 9: Generations and Decay (Unification)",
       "filename": "chapter_9.md",
       "url": "/downloads/chapters/chapter_9.md",
-      "file_size_bytes": 165647,
-      "estimated_tokens": 59911,
+      "file_size_bytes": 164615,
+      "estimated_tokens": 59278,
       "type": "markdown",
       "description": "Markdown source for Chapter 9.",
       "json_url": "/downloads/chapters/chapter_9.json",
-      "json_file_size_bytes": 167497,
-      "json_estimated_tokens": 61512,
+      "json_file_size_bytes": 166353,
+      "json_estimated_tokens": 60872,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 303119,
-      "pdf_estimated_tokens": 59911
+      "pdf_file_size_bytes": 302030,
+      "pdf_estimated_tokens": 59278
     },
     {
       "chapter_number": 10,
       "name": "Chapter 10: Quantum Universality (Computation)",
       "filename": "chapter_10.md",
       "url": "/downloads/chapters/chapter_10.md",
-      "file_size_bytes": 191924,
-      "estimated_tokens": 69956,
+      "file_size_bytes": 191151,
+      "estimated_tokens": 69358,
       "type": "markdown",
       "description": "Markdown source for Chapter 10.",
       "json_url": "/downloads/chapters/chapter_10.json",
-      "json_file_size_bytes": 193883,
-      "json_estimated_tokens": 71735,
+      "json_file_size_bytes": 192970,
+      "json_estimated_tokens": 71130,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 333124,
-      "pdf_estimated_tokens": 69956
+      "pdf_file_size_bytes": 333166,
+      "pdf_estimated_tokens": 69358
     },
     {
       "chapter_number": 11,
       "name": "Chapter 11: Differential Geometry (Discrete)",
       "filename": "chapter_11.md",
       "url": "/downloads/chapters/chapter_11.md",
-      "file_size_bytes": 130960,
-      "estimated_tokens": 47664,
+      "file_size_bytes": 131641,
+      "estimated_tokens": 47805,
       "type": "markdown",
       "description": "Markdown source for Chapter 11.",
       "json_url": "/downloads/chapters/chapter_11.json",
-      "json_file_size_bytes": 132609,
-      "json_estimated_tokens": 49037,
+      "json_file_size_bytes": 133262,
+      "json_estimated_tokens": 49183,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 232845,
-      "pdf_estimated_tokens": 47664
+      "pdf_file_size_bytes": 255648,
+      "pdf_estimated_tokens": 47805
     },
     {
       "chapter_number": 12,
       "name": "Chapter 12: Discrete Field Equations (Einstein)",
       "filename": "chapter_12.md",
       "url": "/downloads/chapters/chapter_12.md",
-      "file_size_bytes": 98651,
-      "estimated_tokens": 35909,
+      "file_size_bytes": 98522,
+      "estimated_tokens": 35769,
       "type": "markdown",
       "description": "Markdown source for Chapter 12.",
       "json_url": "/downloads/chapters/chapter_12.json",
-      "json_file_size_bytes": 99855,
-      "json_estimated_tokens": 36927,
+      "json_file_size_bytes": 99686,
+      "json_estimated_tokens": 36785,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 232840,
-      "pdf_estimated_tokens": 35909
+      "pdf_file_size_bytes": 208018,
+      "pdf_estimated_tokens": 35769
     },
     {
       "chapter_number": 13,
       "name": "Chapter 13: Continuum Limit (Convergence)",
       "filename": "chapter_13.md",
       "url": "/downloads/chapters/chapter_13.md",
-      "file_size_bytes": 98815,
-      "estimated_tokens": 36015,
+      "file_size_bytes": 96824,
+      "estimated_tokens": 35187,
       "type": "markdown",
       "description": "Markdown source for Chapter 13.",
       "json_url": "/downloads/chapters/chapter_13.json",
-      "json_file_size_bytes": 100283,
-      "json_estimated_tokens": 37087,
+      "json_file_size_bytes": 98246,
+      "json_estimated_tokens": 36251,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 232840,
-      "pdf_estimated_tokens": 36015
+      "pdf_file_size_bytes": 230729,
+      "pdf_estimated_tokens": 35187
     },
     {
       "chapter_number": 14,
       "name": "Chapter 14: Lorentzian Reality (Time)",
       "filename": "chapter_14.md",
       "url": "/downloads/chapters/chapter_14.md",
-      "file_size_bytes": 122254,
-      "estimated_tokens": 44562,
+      "file_size_bytes": 122286,
+      "estimated_tokens": 44494,
       "type": "markdown",
       "description": "Markdown source for Chapter 14.",
       "json_url": "/downloads/chapters/chapter_14.json",
-      "json_file_size_bytes": 123698,
-      "json_estimated_tokens": 45748,
+      "json_file_size_bytes": 123697,
+      "json_estimated_tokens": 45678,
       "pdf_url": "/downloads/chapters/chapter_14.pdf",
-      "pdf_file_size_bytes": 237858,
-      "pdf_estimated_tokens": 44562
+      "pdf_file_size_bytes": 251873,
+      "pdf_estimated_tokens": 44494
     },
     {
       "chapter_number": 15,
       "name": "Chapter 15: Geometry of Entanglement (ER = EPR)",
       "filename": "chapter_15.md",
       "url": "/downloads/chapters/chapter_15.md",
-      "file_size_bytes": 117085,
-      "estimated_tokens": 42660,
+      "file_size_bytes": 115696,
+      "estimated_tokens": 42092,
       "type": "markdown",
       "description": "Markdown source for Chapter 15.",
       "json_url": "/downloads/chapters/chapter_15.json",
-      "json_file_size_bytes": 118669,
-      "json_estimated_tokens": 43907,
+      "json_file_size_bytes": 117236,
+      "json_estimated_tokens": 43331,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 237858,
-      "pdf_estimated_tokens": 42660
+      "pdf_file_size_bytes": 236850,
+      "pdf_estimated_tokens": 42092
     },
     {
       "chapter_number": 16,
       "name": "Chapter 16: Isomorphism Principle (Holography)",
       "filename": "chapter_16.md",
       "url": "/downloads/chapters/chapter_16.md",
-      "file_size_bytes": 55622,
-      "estimated_tokens": 20235,
+      "file_size_bytes": 55077,
+      "estimated_tokens": 20008,
       "type": "markdown",
       "description": "Markdown source for Chapter 16.",
       "json_url": "/downloads/chapters/chapter_16.json",
-      "json_file_size_bytes": 56217,
-      "json_estimated_tokens": 20799,
+      "json_file_size_bytes": 55652,
+      "json_estimated_tokens": 20569,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 149399,
-      "pdf_estimated_tokens": 20235
+      "pdf_file_size_bytes": 149558,
+      "pdf_estimated_tokens": 20008
     },
     {
       "chapter_number": 17,
       "name": "Chapter 17: String Limit (Worldsheets)",
       "filename": "chapter_17.md",
       "url": "/downloads/chapters/chapter_17.md",
-      "file_size_bytes": 112866,
-      "estimated_tokens": 41074,
+      "file_size_bytes": 111423,
+      "estimated_tokens": 40481,
       "type": "markdown",
       "description": "Markdown source for Chapter 17.",
       "json_url": "/downloads/chapters/chapter_17.json",
-      "json_file_size_bytes": 114052,
-      "json_estimated_tokens": 42210,
+      "json_file_size_bytes": 112557,
+      "json_estimated_tokens": 41608,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 320477,
-      "pdf_estimated_tokens": 41074
+      "pdf_file_size_bytes": 235062,
+      "pdf_estimated_tokens": 40481
     },
     {
       "chapter_number": 18,
       "name": "Chapter 18: Big Kindling (Inflation)",
       "filename": "chapter_18.md",
       "url": "/downloads/chapters/chapter_18.md",
-      "file_size_bytes": 180884,
-      "estimated_tokens": 65747,
+      "file_size_bytes": 182062,
+      "estimated_tokens": 65928,
       "type": "markdown",
       "description": "Markdown source for Chapter 18.",
       "json_url": "/downloads/chapters/chapter_18.json",
-      "json_file_size_bytes": 183761,
-      "json_estimated_tokens": 67999,
+      "json_file_size_bytes": 184837,
+      "json_estimated_tokens": 68183,
       "pdf_url": "/downloads/chapters/chapter_18.pdf",
-      "pdf_file_size_bytes": 320486,
-      "pdf_estimated_tokens": 65747
+      "pdf_file_size_bytes": 320981,
+      "pdf_estimated_tokens": 65928
     },
     {
       "chapter_number": 19,
@@ -428,7 +428,7 @@
       "json_file_size_bytes": 12997,
       "json_estimated_tokens": 4807,
       "pdf_url": "/downloads/chapters/chapter_19.pdf",
-      "pdf_file_size_bytes": 72391,
+      "pdf_file_size_bytes": 73292,
       "pdf_estimated_tokens": 4690
     },
     {
@@ -444,7 +444,7 @@
       "json_file_size_bytes": 10450,
       "json_estimated_tokens": 3866,
       "pdf_url": "/downloads/chapters/chapter_20.pdf",
-      "pdf_file_size_bytes": 65289,
+      "pdf_file_size_bytes": 66010,
       "pdf_estimated_tokens": 3776
     },
     {
@@ -460,7 +460,7 @@
       "json_file_size_bytes": 14278,
       "json_estimated_tokens": 5284,
       "pdf_url": "/downloads/chapters/chapter_21.pdf",
-      "pdf_file_size_bytes": 59969,
+      "pdf_file_size_bytes": 71398,
       "pdf_estimated_tokens": 5170
     },
     {
@@ -476,7 +476,7 @@
       "json_file_size_bytes": 10201,
       "json_estimated_tokens": 3773,
       "pdf_url": "/downloads/chapters/chapter_22.pdf",
-      "pdf_file_size_bytes": 59967,
+      "pdf_file_size_bytes": 60928,
       "pdf_estimated_tokens": 3691
     },
     {
@@ -492,7 +492,7 @@
       "json_file_size_bytes": 8678,
       "json_estimated_tokens": 3209,
       "pdf_url": "/downloads/chapters/chapter_23.pdf",
-      "pdf_file_size_bytes": 57708,
+      "pdf_file_size_bytes": 58476,
       "pdf_estimated_tokens": 3130
     },
     {
@@ -508,7 +508,7 @@
       "json_file_size_bytes": 12064,
       "json_estimated_tokens": 4465,
       "pdf_url": "/downloads/chapters/chapter_24.pdf",
-      "pdf_file_size_bytes": 66820,
+      "pdf_file_size_bytes": 67766,
       "pdf_estimated_tokens": 4373
     },
     {
@@ -524,59 +524,59 @@
       "json_file_size_bytes": 6813,
       "json_estimated_tokens": 2518,
       "pdf_url": "/downloads/chapters/chapter_25.pdf",
-      "pdf_file_size_bytes": 49651,
+      "pdf_file_size_bytes": 50613,
       "pdf_estimated_tokens": 2462
     }
   ],
   "codebase": {
     "lean": [
       {
-        "name": "awareness-comonad.lean",
-        "url": "/downloads/code/lean/awareness-comonad.lean",
-        "file_size_bytes": 1851,
-        "estimated_tokens": 671,
-        "type": "code",
-        "description": "Modeling comonadic awareness structures under background independence in Lean 4."
-      },
-      {
-        "name": "causal-primitive.lean",
-        "url": "/downloads/code/lean/causal-primitive.lean",
+        "name": "s2.2-causal-primitive.lean",
+        "url": "/downloads/code/repo/lean/s2.2-causal-primitive.lean",
         "file_size_bytes": 2854,
         "estimated_tokens": 1043,
         "type": "code",
-        "description": "Formalizing topological causal set axioms of spacetime primitives in Lean 4."
+        "description": "Source code for s2.2-causal-primitive.lean."
       },
       {
-        "name": "geometric-decomposition.lean",
-        "url": "/downloads/code/lean/geometric-decomposition.lean",
+        "name": "s2.4-geometric-decomposition.lean",
+        "url": "/downloads/code/repo/lean/s2.4-geometric-decomposition.lean",
         "file_size_bytes": 1552,
         "estimated_tokens": 563,
         "type": "code",
-        "description": "Lean 4 formalization of topological geometric decompositions."
+        "description": "Source code for s2.4-geometric-decomposition.lean."
       },
       {
-        "name": "maximal-parallelism.lean",
-        "url": "/downloads/code/lean/maximal-parallelism.lean",
+        "name": "s3.3-maximal-parallelism.lean",
+        "url": "/downloads/code/repo/lean/s3.3-maximal-parallelism.lean",
         "file_size_bytes": 1374,
         "estimated_tokens": 493,
         "type": "code",
-        "description": "Verifying maximal parallel updates under strict causal consistency constraints in Lean 4."
+        "description": "Source code for s3.3-maximal-parallelism.lean."
       },
       {
-        "name": "stabilizer-isomorphism.lean",
-        "url": "/downloads/code/lean/stabilizer-isomorphism.lean",
+        "name": "s3.5-stabilizer-isomorphism.lean",
+        "url": "/downloads/code/repo/lean/s3.5-stabilizer-isomorphism.lean",
         "file_size_bytes": 1320,
         "estimated_tokens": 483,
         "type": "code",
-        "description": "Proving isomorphism of stabilizer quantum error-correcting codes in Lean 4."
+        "description": "Source code for s3.5-stabilizer-isomorphism.lean."
       },
       {
-        "name": "vacuum-stability.lean",
-        "url": "/downloads/code/lean/vacuum-stability.lean",
+        "name": "s4.3-awareness-comonad.lean",
+        "url": "/downloads/code/repo/lean/s4.3-awareness-comonad.lean",
+        "file_size_bytes": 1851,
+        "estimated_tokens": 671,
+        "type": "code",
+        "description": "Source code for s4.3-awareness-comonad.lean."
+      },
+      {
+        "name": "s5.4-vacuum-stability.lean",
+        "url": "/downloads/code/repo/lean/s5.4-vacuum-stability.lean",
         "file_size_bytes": 1701,
         "estimated_tokens": 621,
         "type": "code",
-        "description": "Mathematical verification of quantum vacuum stability boundary conditions in Lean 4."
+        "description": "Source code for s5.4-vacuum-stability.lean."
       }
     ],
     "model": [
@@ -650,7 +650,7 @@
     "repo": [
       {
         "name": "10.2.9.1.py",
-        "url": "/downloads/code/repo/10.2.9.1.py",
+        "url": "/downloads/code/repo/python/10.2.9.1.py",
         "file_size_bytes": 1821,
         "estimated_tokens": 657,
         "type": "code",
@@ -658,7 +658,7 @@
       },
       {
         "name": "10.3.5.1.py",
-        "url": "/downloads/code/repo/10.3.5.1.py",
+        "url": "/downloads/code/repo/python/10.3.5.1.py",
         "file_size_bytes": 1432,
         "estimated_tokens": 512,
         "type": "code",
@@ -666,7 +666,7 @@
       },
       {
         "name": "10.6.4.1.py",
-        "url": "/downloads/code/repo/10.6.4.1.py",
+        "url": "/downloads/code/repo/python/10.6.4.1.py",
         "file_size_bytes": 727,
         "estimated_tokens": 255,
         "type": "code",
@@ -674,7 +674,7 @@
       },
       {
         "name": "10.8.8.1.py",
-        "url": "/downloads/code/repo/10.8.8.1.py",
+        "url": "/downloads/code/repo/python/10.8.8.1.py",
         "file_size_bytes": 936,
         "estimated_tokens": 333,
         "type": "code",
@@ -682,7 +682,7 @@
       },
       {
         "name": "10.9.3.1.py",
-        "url": "/downloads/code/repo/10.9.3.1.py",
+        "url": "/downloads/code/repo/python/10.9.3.1.py",
         "file_size_bytes": 1017,
         "estimated_tokens": 365,
         "type": "code",
@@ -690,7 +690,7 @@
       },
       {
         "name": "10.9.4.1.py",
-        "url": "/downloads/code/repo/10.9.4.1.py",
+        "url": "/downloads/code/repo/python/10.9.4.1.py",
         "file_size_bytes": 3562,
         "estimated_tokens": 1279,
         "type": "code",
@@ -698,7 +698,7 @@
       },
       {
         "name": "11.2.4.2.py",
-        "url": "/downloads/code/repo/11.2.4.2.py",
+        "url": "/downloads/code/repo/python/11.2.4.2.py",
         "file_size_bytes": 1880,
         "estimated_tokens": 670,
         "type": "code",
@@ -706,7 +706,7 @@
       },
       {
         "name": "11.2.5.2.py",
-        "url": "/downloads/code/repo/11.2.5.2.py",
+        "url": "/downloads/code/repo/python/11.2.5.2.py",
         "file_size_bytes": 2635,
         "estimated_tokens": 945,
         "type": "code",
@@ -714,7 +714,7 @@
       },
       {
         "name": "11.2.6.2.py",
-        "url": "/downloads/code/repo/11.2.6.2.py",
+        "url": "/downloads/code/repo/python/11.2.6.2.py",
         "file_size_bytes": 3069,
         "estimated_tokens": 1100,
         "type": "code",
@@ -722,7 +722,7 @@
       },
       {
         "name": "11.2.7.2.py",
-        "url": "/downloads/code/repo/11.2.7.2.py",
+        "url": "/downloads/code/repo/python/11.2.7.2.py",
         "file_size_bytes": 2816,
         "estimated_tokens": 1004,
         "type": "code",
@@ -730,7 +730,7 @@
       },
       {
         "name": "11.3.7.3.py",
-        "url": "/downloads/code/repo/11.3.7.3.py",
+        "url": "/downloads/code/repo/python/11.3.7.3.py",
         "file_size_bytes": 4527,
         "estimated_tokens": 1619,
         "type": "code",
@@ -738,7 +738,7 @@
       },
       {
         "name": "12.1.5.1.py",
-        "url": "/downloads/code/repo/12.1.5.1.py",
+        "url": "/downloads/code/repo/python/12.1.5.1.py",
         "file_size_bytes": 8160,
         "estimated_tokens": 2943,
         "type": "code",
@@ -746,7 +746,7 @@
       },
       {
         "name": "12.2.6.1.py",
-        "url": "/downloads/code/repo/12.2.6.1.py",
+        "url": "/downloads/code/repo/python/12.2.6.1.py",
         "file_size_bytes": 7151,
         "estimated_tokens": 2569,
         "type": "code",
@@ -754,7 +754,7 @@
       },
       {
         "name": "12.3.5.1.py",
-        "url": "/downloads/code/repo/12.3.5.1.py",
+        "url": "/downloads/code/repo/python/12.3.5.1.py",
         "file_size_bytes": 2281,
         "estimated_tokens": 821,
         "type": "code",
@@ -762,7 +762,7 @@
       },
       {
         "name": "13.1.3.2.py",
-        "url": "/downloads/code/repo/13.1.3.2.py",
+        "url": "/downloads/code/repo/python/13.1.3.2.py",
         "file_size_bytes": 2392,
         "estimated_tokens": 859,
         "type": "code",
@@ -770,7 +770,7 @@
       },
       {
         "name": "13.1.4.2.py",
-        "url": "/downloads/code/repo/13.1.4.2.py",
+        "url": "/downloads/code/repo/python/13.1.4.2.py",
         "file_size_bytes": 2279,
         "estimated_tokens": 817,
         "type": "code",
@@ -778,7 +778,7 @@
       },
       {
         "name": "13.2.3.2.py",
-        "url": "/downloads/code/repo/13.2.3.2.py",
+        "url": "/downloads/code/repo/python/13.2.3.2.py",
         "file_size_bytes": 919,
         "estimated_tokens": 329,
         "type": "code",
@@ -786,7 +786,7 @@
       },
       {
         "name": "13.2.4.2.py",
-        "url": "/downloads/code/repo/13.2.4.2.py",
+        "url": "/downloads/code/repo/python/13.2.4.2.py",
         "file_size_bytes": 1220,
         "estimated_tokens": 437,
         "type": "code",
@@ -794,7 +794,7 @@
       },
       {
         "name": "13.3.5.1.py",
-        "url": "/downloads/code/repo/13.3.5.1.py",
+        "url": "/downloads/code/repo/python/13.3.5.1.py",
         "file_size_bytes": 2052,
         "estimated_tokens": 740,
         "type": "code",
@@ -802,7 +802,7 @@
       },
       {
         "name": "14.1.3.2.py",
-        "url": "/downloads/code/repo/14.1.3.2.py",
+        "url": "/downloads/code/repo/python/14.1.3.2.py",
         "file_size_bytes": 2591,
         "estimated_tokens": 937,
         "type": "code",
@@ -810,7 +810,7 @@
       },
       {
         "name": "14.1.6.1.py",
-        "url": "/downloads/code/repo/14.1.6.1.py",
+        "url": "/downloads/code/repo/python/14.1.6.1.py",
         "file_size_bytes": 4060,
         "estimated_tokens": 1464,
         "type": "code",
@@ -818,7 +818,7 @@
       },
       {
         "name": "14.2.8.1.py",
-        "url": "/downloads/code/repo/14.2.8.1.py",
+        "url": "/downloads/code/repo/python/14.2.8.1.py",
         "file_size_bytes": 3220,
         "estimated_tokens": 1162,
         "type": "code",
@@ -826,7 +826,7 @@
       },
       {
         "name": "14.3.6.2.py",
-        "url": "/downloads/code/repo/14.3.6.2.py",
+        "url": "/downloads/code/repo/python/14.3.6.2.py",
         "file_size_bytes": 2331,
         "estimated_tokens": 835,
         "type": "code",
@@ -834,7 +834,7 @@
       },
       {
         "name": "14.3.7.1.py",
-        "url": "/downloads/code/repo/14.3.7.1.py",
+        "url": "/downloads/code/repo/python/14.3.7.1.py",
         "file_size_bytes": 2216,
         "estimated_tokens": 798,
         "type": "code",
@@ -842,7 +842,7 @@
       },
       {
         "name": "15.1.6.1.py",
-        "url": "/downloads/code/repo/15.1.6.1.py",
+        "url": "/downloads/code/repo/python/15.1.6.1.py",
         "file_size_bytes": 2301,
         "estimated_tokens": 832,
         "type": "code",
@@ -850,7 +850,7 @@
       },
       {
         "name": "15.2.5.1.py",
-        "url": "/downloads/code/repo/15.2.5.1.py",
+        "url": "/downloads/code/repo/python/15.2.5.1.py",
         "file_size_bytes": 3700,
         "estimated_tokens": 1338,
         "type": "code",
@@ -858,7 +858,7 @@
       },
       {
         "name": "15.3.5.1.py",
-        "url": "/downloads/code/repo/15.3.5.1.py",
+        "url": "/downloads/code/repo/python/15.3.5.1.py",
         "file_size_bytes": 2696,
         "estimated_tokens": 975,
         "type": "code",
@@ -866,7 +866,7 @@
       },
       {
         "name": "16.1.4.1.py",
-        "url": "/downloads/code/repo/16.1.4.1.py",
+        "url": "/downloads/code/repo/python/16.1.4.1.py",
         "file_size_bytes": 4314,
         "estimated_tokens": 1556,
         "type": "code",
@@ -874,7 +874,7 @@
       },
       {
         "name": "16.2.5.1.py",
-        "url": "/downloads/code/repo/16.2.5.1.py",
+        "url": "/downloads/code/repo/python/16.2.5.1.py",
         "file_size_bytes": 4801,
         "estimated_tokens": 1729,
         "type": "code",
@@ -882,7 +882,7 @@
       },
       {
         "name": "17.1.4.1.py",
-        "url": "/downloads/code/repo/17.1.4.1.py",
+        "url": "/downloads/code/repo/python/17.1.4.1.py",
         "file_size_bytes": 3050,
         "estimated_tokens": 1102,
         "type": "code",
@@ -890,7 +890,7 @@
       },
       {
         "name": "17.2.4.1.py",
-        "url": "/downloads/code/repo/17.2.4.1.py",
+        "url": "/downloads/code/repo/python/17.2.4.1.py",
         "file_size_bytes": 2924,
         "estimated_tokens": 1052,
         "type": "code",
@@ -898,7 +898,7 @@
       },
       {
         "name": "17.3.5.1.py",
-        "url": "/downloads/code/repo/17.3.5.1.py",
+        "url": "/downloads/code/repo/python/17.3.5.1.py",
         "file_size_bytes": 4189,
         "estimated_tokens": 1515,
         "type": "code",
@@ -906,7 +906,7 @@
       },
       {
         "name": "17.4.4.2.py",
-        "url": "/downloads/code/repo/17.4.4.2.py",
+        "url": "/downloads/code/repo/python/17.4.4.2.py",
         "file_size_bytes": 2993,
         "estimated_tokens": 1079,
         "type": "code",
@@ -914,7 +914,7 @@
       },
       {
         "name": "17.4.7.1.py",
-        "url": "/downloads/code/repo/17.4.7.1.py",
+        "url": "/downloads/code/repo/python/17.4.7.1.py",
         "file_size_bytes": 4714,
         "estimated_tokens": 1703,
         "type": "code",
@@ -922,7 +922,7 @@
       },
       {
         "name": "18.1.6.py",
-        "url": "/downloads/code/repo/18.1.6.py",
+        "url": "/downloads/code/repo/python/18.1.6.py",
         "file_size_bytes": 6433,
         "estimated_tokens": 2382,
         "type": "code",
@@ -930,7 +930,7 @@
       },
       {
         "name": "18.1.8.py",
-        "url": "/downloads/code/repo/18.1.8.py",
+        "url": "/downloads/code/repo/python/18.1.8.py",
         "file_size_bytes": 6573,
         "estimated_tokens": 2433,
         "type": "code",
@@ -938,7 +938,7 @@
       },
       {
         "name": "18.2.6.py",
-        "url": "/downloads/code/repo/18.2.6.py",
+        "url": "/downloads/code/repo/python/18.2.6.py",
         "file_size_bytes": 4407,
         "estimated_tokens": 1632,
         "type": "code",
@@ -946,7 +946,7 @@
       },
       {
         "name": "18.3.11.py",
-        "url": "/downloads/code/repo/18.3.11.py",
+        "url": "/downloads/code/repo/python/18.3.11.py",
         "file_size_bytes": 3439,
         "estimated_tokens": 1272,
         "type": "code",
@@ -954,7 +954,7 @@
       },
       {
         "name": "18.3.13.py",
-        "url": "/downloads/code/repo/18.3.13.py",
+        "url": "/downloads/code/repo/python/18.3.13.py",
         "file_size_bytes": 4210,
         "estimated_tokens": 1557,
         "type": "code",
@@ -962,7 +962,7 @@
       },
       {
         "name": "18.3.5.py",
-        "url": "/downloads/code/repo/18.3.5.py",
+        "url": "/downloads/code/repo/python/18.3.5.py",
         "file_size_bytes": 3436,
         "estimated_tokens": 1272,
         "type": "code",
@@ -970,7 +970,7 @@
       },
       {
         "name": "18.4.5.py",
-        "url": "/downloads/code/repo/18.4.5.py",
+        "url": "/downloads/code/repo/python/18.4.5.py",
         "file_size_bytes": 4401,
         "estimated_tokens": 1627,
         "type": "code",
@@ -978,7 +978,7 @@
       },
       {
         "name": "18.4.7.py",
-        "url": "/downloads/code/repo/18.4.7.py",
+        "url": "/downloads/code/repo/python/18.4.7.py",
         "file_size_bytes": 3921,
         "estimated_tokens": 1450,
         "type": "code",
@@ -986,7 +986,7 @@
       },
       {
         "name": "18.5.11.py",
-        "url": "/downloads/code/repo/18.5.11.py",
+        "url": "/downloads/code/repo/python/18.5.11.py",
         "file_size_bytes": 4780,
         "estimated_tokens": 1769,
         "type": "code",
@@ -994,7 +994,7 @@
       },
       {
         "name": "18.5.5.py",
-        "url": "/downloads/code/repo/18.5.5.py",
+        "url": "/downloads/code/repo/python/18.5.5.py",
         "file_size_bytes": 2693,
         "estimated_tokens": 996,
         "type": "code",
@@ -1002,7 +1002,7 @@
       },
       {
         "name": "2.3.3.1.py",
-        "url": "/downloads/code/repo/2.3.3.1.py",
+        "url": "/downloads/code/repo/python/2.3.3.1.py",
         "file_size_bytes": 642,
         "estimated_tokens": 231,
         "type": "code",
@@ -1010,7 +1010,7 @@
       },
       {
         "name": "2.4.10.py",
-        "url": "/downloads/code/repo/2.4.10.py",
+        "url": "/downloads/code/repo/python/2.4.10.py",
         "file_size_bytes": 3390,
         "estimated_tokens": 1213,
         "type": "code",
@@ -1018,7 +1018,7 @@
       },
       {
         "name": "2.7.1.2.py",
-        "url": "/downloads/code/repo/2.7.1.2.py",
+        "url": "/downloads/code/repo/python/2.7.1.2.py",
         "file_size_bytes": 2131,
         "estimated_tokens": 770,
         "type": "code",
@@ -1026,7 +1026,7 @@
       },
       {
         "name": "3.1.7.2.py",
-        "url": "/downloads/code/repo/3.1.7.2.py",
+        "url": "/downloads/code/repo/python/3.1.7.2.py",
         "file_size_bytes": 1386,
         "estimated_tokens": 497,
         "type": "code",
@@ -1034,7 +1034,7 @@
       },
       {
         "name": "3.1.8.2.py",
-        "url": "/downloads/code/repo/3.1.8.2.py",
+        "url": "/downloads/code/repo/python/3.1.8.2.py",
         "file_size_bytes": 937,
         "estimated_tokens": 336,
         "type": "code",
@@ -1042,7 +1042,7 @@
       },
       {
         "name": "3.2.10.2.py",
-        "url": "/downloads/code/repo/3.2.10.2.py",
+        "url": "/downloads/code/repo/python/3.2.10.2.py",
         "file_size_bytes": 5127,
         "estimated_tokens": 1844,
         "type": "code",
@@ -1050,7 +1050,7 @@
       },
       {
         "name": "3.2.10.3.py",
-        "url": "/downloads/code/repo/3.2.10.3.py",
+        "url": "/downloads/code/repo/python/3.2.10.3.py",
         "file_size_bytes": 1724,
         "estimated_tokens": 615,
         "type": "code",
@@ -1058,7 +1058,7 @@
       },
       {
         "name": "3.2.7.2.py",
-        "url": "/downloads/code/repo/3.2.7.2.py",
+        "url": "/downloads/code/repo/python/3.2.7.2.py",
         "file_size_bytes": 1629,
         "estimated_tokens": 584,
         "type": "code",
@@ -1066,7 +1066,7 @@
       },
       {
         "name": "3.3.5.3.py",
-        "url": "/downloads/code/repo/3.3.5.3.py",
+        "url": "/downloads/code/repo/python/3.3.5.3.py",
         "file_size_bytes": 1525,
         "estimated_tokens": 549,
         "type": "code",
@@ -1074,7 +1074,7 @@
       },
       {
         "name": "3.4.6.1.py",
-        "url": "/downloads/code/repo/3.4.6.1.py",
+        "url": "/downloads/code/repo/python/3.4.6.1.py",
         "file_size_bytes": 1411,
         "estimated_tokens": 500,
         "type": "code",
@@ -1082,7 +1082,7 @@
       },
       {
         "name": "3.5.4.2.py",
-        "url": "/downloads/code/repo/3.5.4.2.py",
+        "url": "/downloads/code/repo/python/3.5.4.2.py",
         "file_size_bytes": 940,
         "estimated_tokens": 329,
         "type": "code",
@@ -1090,7 +1090,7 @@
       },
       {
         "name": "3.5.5.2.py",
-        "url": "/downloads/code/repo/3.5.5.2.py",
+        "url": "/downloads/code/repo/python/3.5.5.2.py",
         "file_size_bytes": 1807,
         "estimated_tokens": 651,
         "type": "code",
@@ -1098,7 +1098,7 @@
       },
       {
         "name": "3.5.8.1.py",
-        "url": "/downloads/code/repo/3.5.8.1.py",
+        "url": "/downloads/code/repo/python/3.5.8.1.py",
         "file_size_bytes": 2053,
         "estimated_tokens": 731,
         "type": "code",
@@ -1106,7 +1106,7 @@
       },
       {
         "name": "4.2.11.py",
-        "url": "/downloads/code/repo/4.2.11.py",
+        "url": "/downloads/code/repo/python/4.2.11.py",
         "file_size_bytes": 2999,
         "estimated_tokens": 1078,
         "type": "code",
@@ -1114,7 +1114,7 @@
       },
       {
         "name": "4.3.9.1.py",
-        "url": "/downloads/code/repo/4.3.9.1.py",
+        "url": "/downloads/code/repo/python/4.3.9.1.py",
         "file_size_bytes": 2828,
         "estimated_tokens": 992,
         "type": "code",
@@ -1122,7 +1122,7 @@
       },
       {
         "name": "4.4.2.2.py",
-        "url": "/downloads/code/repo/4.4.2.2.py",
+        "url": "/downloads/code/repo/python/4.4.2.2.py",
         "file_size_bytes": 1487,
         "estimated_tokens": 528,
         "type": "code",
@@ -1130,7 +1130,7 @@
       },
       {
         "name": "4.4.6.2.py",
-        "url": "/downloads/code/repo/4.4.6.2.py",
+        "url": "/downloads/code/repo/python/4.4.6.2.py",
         "file_size_bytes": 980,
         "estimated_tokens": 349,
         "type": "code",
@@ -1138,7 +1138,7 @@
       },
       {
         "name": "4.5.1.py",
-        "url": "/downloads/code/repo/4.5.1.py",
+        "url": "/downloads/code/repo/python/4.5.1.py",
         "file_size_bytes": 2559,
         "estimated_tokens": 925,
         "type": "code",
@@ -1146,7 +1146,7 @@
       },
       {
         "name": "4.6.2.2.py",
-        "url": "/downloads/code/repo/4.6.2.2.py",
+        "url": "/downloads/code/repo/python/4.6.2.2.py",
         "file_size_bytes": 1539,
         "estimated_tokens": 551,
         "type": "code",
@@ -1154,7 +1154,7 @@
       },
       {
         "name": "4.6.3.2.py",
-        "url": "/downloads/code/repo/4.6.3.2.py",
+        "url": "/downloads/code/repo/python/4.6.3.2.py",
         "file_size_bytes": 1864,
         "estimated_tokens": 668,
         "type": "code",
@@ -1162,7 +1162,7 @@
       },
       {
         "name": "5.1.4.1.py",
-        "url": "/downloads/code/repo/5.1.4.1.py",
+        "url": "/downloads/code/repo/python/5.1.4.1.py",
         "file_size_bytes": 1896,
         "estimated_tokens": 681,
         "type": "code",
@@ -1170,7 +1170,7 @@
       },
       {
         "name": "5.2.4.2.py",
-        "url": "/downloads/code/repo/5.2.4.2.py",
+        "url": "/downloads/code/repo/python/5.2.4.2.py",
         "file_size_bytes": 2580,
         "estimated_tokens": 921,
         "type": "code",
@@ -1178,7 +1178,7 @@
       },
       {
         "name": "5.2.5.2.py",
-        "url": "/downloads/code/repo/5.2.5.2.py",
+        "url": "/downloads/code/repo/python/5.2.5.2.py",
         "file_size_bytes": 2164,
         "estimated_tokens": 773,
         "type": "code",
@@ -1186,7 +1186,7 @@
       },
       {
         "name": "5.2.6.2.py",
-        "url": "/downloads/code/repo/5.2.6.2.py",
+        "url": "/downloads/code/repo/python/5.2.6.2.py",
         "file_size_bytes": 1992,
         "estimated_tokens": 713,
         "type": "code",
@@ -1194,7 +1194,7 @@
       },
       {
         "name": "5.2.7.1.py",
-        "url": "/downloads/code/repo/5.2.7.1.py",
+        "url": "/downloads/code/repo/python/5.2.7.1.py",
         "file_size_bytes": 2301,
         "estimated_tokens": 818,
         "type": "code",
@@ -1202,7 +1202,7 @@
       },
       {
         "name": "5.3.3.py",
-        "url": "/downloads/code/repo/5.3.3.py",
+        "url": "/downloads/code/repo/python/5.3.3.py",
         "file_size_bytes": 1021,
         "estimated_tokens": 371,
         "type": "code",
@@ -1210,7 +1210,7 @@
       },
       {
         "name": "6.1.4.2.py",
-        "url": "/downloads/code/repo/6.1.4.2.py",
+        "url": "/downloads/code/repo/python/6.1.4.2.py",
         "file_size_bytes": 4117,
         "estimated_tokens": 1292,
         "type": "code",
@@ -1218,7 +1218,7 @@
       },
       {
         "name": "6.2.6.2.py",
-        "url": "/downloads/code/repo/6.2.6.2.py",
+        "url": "/downloads/code/repo/python/6.2.6.2.py",
         "file_size_bytes": 1277,
         "estimated_tokens": 454,
         "type": "code",
@@ -1226,7 +1226,7 @@
       },
       {
         "name": "6.3.5.2.py",
-        "url": "/downloads/code/repo/6.3.5.2.py",
+        "url": "/downloads/code/repo/python/6.3.5.2.py",
         "file_size_bytes": 1176,
         "estimated_tokens": 422,
         "type": "code",
@@ -1234,7 +1234,7 @@
       },
       {
         "name": "6.4.3.2.py",
-        "url": "/downloads/code/repo/6.4.3.2.py",
+        "url": "/downloads/code/repo/python/6.4.3.2.py",
         "file_size_bytes": 2789,
         "estimated_tokens": 1001,
         "type": "code",
@@ -1242,7 +1242,7 @@
       },
       {
         "name": "7.4.6.1.py",
-        "url": "/downloads/code/repo/7.4.6.1.py",
+        "url": "/downloads/code/repo/python/7.4.6.1.py",
         "file_size_bytes": 2816,
         "estimated_tokens": 1015,
         "type": "code",
@@ -1250,7 +1250,7 @@
       },
       {
         "name": "8.2.6.2.py",
-        "url": "/downloads/code/repo/8.2.6.2.py",
+        "url": "/downloads/code/repo/python/8.2.6.2.py",
         "file_size_bytes": 3675,
         "estimated_tokens": 1312,
         "type": "code",
@@ -1258,7 +1258,7 @@
       },
       {
         "name": "8.2.7.2.py",
-        "url": "/downloads/code/repo/8.2.7.2.py",
+        "url": "/downloads/code/repo/python/8.2.7.2.py",
         "file_size_bytes": 1243,
         "estimated_tokens": 445,
         "type": "code",
@@ -1266,7 +1266,7 @@
       },
       {
         "name": "8.5.6.2.py",
-        "url": "/downloads/code/repo/8.5.6.2.py",
+        "url": "/downloads/code/repo/python/8.5.6.2.py",
         "file_size_bytes": 2455,
         "estimated_tokens": 883,
         "type": "code",
@@ -1274,7 +1274,7 @@
       },
       {
         "name": "8.5.7.1.py",
-        "url": "/downloads/code/repo/8.5.7.1.py",
+        "url": "/downloads/code/repo/python/8.5.7.1.py",
         "file_size_bytes": 3385,
         "estimated_tokens": 1223,
         "type": "code",
@@ -1282,7 +1282,7 @@
       },
       {
         "name": "8.6.5.2.py",
-        "url": "/downloads/code/repo/8.6.5.2.py",
+        "url": "/downloads/code/repo/python/8.6.5.2.py",
         "file_size_bytes": 1535,
         "estimated_tokens": 555,
         "type": "code",
@@ -1290,7 +1290,7 @@
       },
       {
         "name": "9.1.5.1.py",
-        "url": "/downloads/code/repo/9.1.5.1.py",
+        "url": "/downloads/code/repo/python/9.1.5.1.py",
         "file_size_bytes": 1345,
         "estimated_tokens": 478,
         "type": "code",
@@ -1298,7 +1298,7 @@
       },
       {
         "name": "9.2.5.2.py",
-        "url": "/downloads/code/repo/9.2.5.2.py",
+        "url": "/downloads/code/repo/python/9.2.5.2.py",
         "file_size_bytes": 3377,
         "estimated_tokens": 1212,
         "type": "code",
@@ -1306,7 +1306,7 @@
       },
       {
         "name": "9.5.2.2.py",
-        "url": "/downloads/code/repo/9.5.2.2.py",
+        "url": "/downloads/code/repo/python/9.5.2.2.py",
         "file_size_bytes": 3941,
         "estimated_tokens": 1405,
         "type": "code",
@@ -1314,7 +1314,7 @@
       },
       {
         "name": "9.6.9.1.py",
-        "url": "/downloads/code/repo/9.6.9.1.py",
+        "url": "/downloads/code/repo/python/9.6.9.1.py",
         "file_size_bytes": 1314,
         "estimated_tokens": 467,
         "type": "code",
@@ -1324,7 +1324,7 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 101090,
+      "file_size_bytes": 126849,
       "description": "Download the complete simulations repository bundle containing all 84 numerical derivation scripts in a single ZIP archive."
     }
   }

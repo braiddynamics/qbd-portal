@@ -520,10 +520,19 @@ provided that the metric divergence condition $\frac{d_{geo}(A, B)}{d_{topo}(A, 
 
 The proof proceeds via Direct Construction, showing that topological shortcuts bypass the bulk metric to violate local realism bounds while respecting algebraic causality.
 
-1.  **Path Integral Dominance** <Ref id="15.2.2" label="§15.2.2" />: The argument demonstrates that transition amplitudes are dominated by paths of minimal hop-count, routing correlations through the shortcut.
-2.  **Correlation Bridge** <Ref id="15.2.3" label="§15.2.3" />: The argument derives correlation decay along the graph, proving that topological adjacency preserves quantum coherence across spatial separations.
-3.  **Tsirelson Bound** <Ref id="15.2.4" label="§15.2.4" />: The argument applies unitary bounds to the braid algebra to establish the Tsirelson limit as the absolute algebraic correlation ceiling.
-4.  **Formal Synthesis of Bell Violation** <Ref id="15.2.5" label="§15.2.5" />: The argument unifies these discrete constraints to calculate the CHSH score, verifying the bi-metric resolution of the EPR paradox.
+```text
+• 15.2.1 Theorem Violation of Metric Locality (Bell's Theorem)
+├── 15.2.2 Lemma Path Integral Dominance
+│   └── 15.2.2.3 Visual Bell Shortcut
+│
+├── 15.2.3 Lemma Correlation Bridge
+│   └── 15.2.3.3 Visual Hub-and-Spoke vs Distributed Mesh
+│
+├── 15.2.4 Lemma Tsirelson Bound
+│
+└── 15.2.5 Proof Formal Synthesis of Bell Violation
+    └── 15.2.5.1 Calculation CHSH Score Verification
+```
 
 ---
 
@@ -1039,10 +1048,18 @@ The divergence between the transport cost through the bulk ($W_{bulk} \sim d_{ge
 
 The proof proceeds via Direct Construction, establishing that the information-theoretic properties of entanglement are dual to the geometric properties of a wormhole throat.
 
-1.  **The Isoperimetric Deficit** <Ref id="15.3.2" label="§15.3.2" />: The argument demonstrates that high topological connectivity pinches the graph, creating a metric anomaly where the surface-area-to-volume ratio departs from flat space.
-2.  **Emergent Throat** <Ref id="15.3.3" label="§15.3.3" />: The argument identifies the number of entangled links with the cross-sectional area of the throat, recovering the Bekenstein-Hawking area relation.
-3.  **Teleportation Protocol** <Ref id="15.3.4" label="§15.3.4" />: The argument demonstrates that while the bridge is classically non-traversable, it supports quantum state teleportation using entanglement resources.
-4.  **Formal Synthesis of ER=EPR** <Ref id="15.3.5" label="§15.3.5" />: The argument unifies the transport cost and expansion properties to derive the effective wormhole length from braid complexity, validating ER=EPR.
+```text
+• 15.3.1 Theorem Transport Cost Reduction (ER=EPR)
+├── 15.3.2 Lemma Isoperimetric Deficit
+│   └── 15.3.2.2 Visual Wasserstein Throat
+│
+├── 15.3.3 Lemma Emergent Throat
+│
+├── 15.3.4 Lemma Teleportation Protocol
+│
+└── 15.3.5 Proof Formal Synthesis of ER=EPR
+    └── 15.3.5.1 Calculation Wormhole Length from Braid Complexity
+```
 
 ---
 
@@ -1480,9 +1497,15 @@ This constraint satisfaction necessitates that the "reality" of the event $E$ (e
 
 The argument proceeds via Direct Construction, re-framing the evolution of the graph not as a sequential process, but as a global boundary value problem.
 
-1.  **Ensemble Indeterminacy** <Ref id="15.4.3" label="§15.4.3" />: The argument first establishes the superposition principle of histories, proving that in the absence of a constraining final boundary, the history of the system exists as a non-Abelian sum of all topologically possible braids.
-2.  **Block Universe as Fixed Point** <Ref id="15.4.4" label="§15.4.4" />: The argument then defines the block universe convergence, demonstrating that the imposition of the final measurement operator acts as a selection filter.
-3.  **Formal Synthesis of Causality Preservation** <Ref id="15.4.5" label="§15.4.5" />: The argument applies the causality preservation proof to demonstrate that despite the dependence of the past on the future boundary, no information can be transmitted backward in time.
+```text
+• 15.4.2 Theorem Global Constraint Satisfaction
+├── 15.4.3 Lemma Ensemble Indeterminacy
+│   └── 15.4.3.3 Visual Eraser Filter Logic
+│
+├── 15.4.4 Lemma Block Universe as Fixed Point
+│
+└── 15.4.5 Proof Formal Synthesis of Causality Preservation
+```
 
 ---
 

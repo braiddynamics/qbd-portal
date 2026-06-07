@@ -98,10 +98,23 @@ The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characte
 
 The proof proceeds via Inductive Elimination, identifying a topological loop-defect and demonstrating its physical and thermodynamic stability compared to trivial states.
 
-1. **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />: The argument establishes that any topologically trivial excitation is locally reducible to disjoint three-cycles via a finite sequence of local operations.
-2. **The Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />: The argument demonstrates that reducible excitations trigger localized stress that accelerates deletion, driving the decay probability to unity.
-3. **The Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />: The argument proves that non-trivial topological invariants generate a scale-separated protection barrier, preventing local operations from reducing the structure.
-4. **Particle Necessity** <Ref id="6.1.6" label="§6.1.6" />: The argument synthesizes these components to establish that only excitations protected by non-trivial invariants survive the vacuum deletion flux, proving that physical persistence necessitates topological protection.
+```text
+• 6.1.2 Theorem Particle Necessity
+├── 6.1.3 Lemma Reducibility of Trivial Topologies
+│   ├── 6.1.3.1 Proof Reducibility of Trivial Topologies
+│   └── 6.1.3.2 Commentary Thermodynamic Simplification
+│
+├── 6.1.4 Lemma Catalyzed Instability
+│   ├── 6.1.4.1 Proof Decay Rate Calculation
+│   ├── 6.1.4.2 Calculation Cluster Decay Simulation
+│   └── 6.1.4.3 Commentary Erasure Mechanism
+│
+├── 6.1.5 Lemma Topological Barrier
+│   ├── 6.1.5.1 Proof Topological Barrier
+│   └── 6.1.5.2 Commentary Topological Lock
+│
+└── 6.1.6 Proof Particle Necessity
+```
 
 ---
 
@@ -601,10 +614,27 @@ Stable, first-generation elementary fermions are topologically isomorphic to pri
 
 The proof proceeds via Inductive Elimination, systematically disqualifying alternative geometries to isolate the unique stable tripartite configuration.
 
-1. **The Vacuum and Single-Strand Exclusions (the **exclusion of unbraided clusters lemma** <Ref id="6.2.3" label="§6.2.3" />, the **exclusion of single-ribbon lemma** <Ref id="6.2.4" label="§6.2.4" />):** The argument systematically excludes zero-strand clusters by proving they dissolve under vacuum flux, and single-ribbon structures by demonstrating they collapse under local Type II operations.
-2. **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />: The argument disqualifies two-ribbon configurations by showing they generate only abelian symmetries, which are algebraically insufficient to represent the strong interaction.
-3. **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" />: The argument proves that braids with more than three strands are suppressed on entropic grounds due to the excessive geometric resources required to sustain their complexity.
-4. **Tripartite Braid Theorem** <Ref id="6.2.7" label="§6.2.7" />: The argument combines these constructive exclusions to isolate the three-ribbon braid as the unique stable topology that satisfies gauge and code constraints.
+```text
+• 6.2.2 Theorem Tripartite Braid Theorem
+├── 6.2.3 Lemma Exclusion of Unbraided Clusters (n=0)
+│   ├── 6.2.3.1 Proof Triviality via Flux Dominance
+│   └── 6.2.3.2 Commentary Fate of the Unknotted Cluster
+│
+├── 6.2.4 Lemma Exclusion of Single-Ribbon (n=1)
+│   ├── 6.2.4.1 Proof Reducibility via Formal Induction
+│   ├── 6.2.4.2 Commentary Torsional Instability
+│   └── 6.2.4.3 Diagram Decay of Single Ribbon
+│
+├── 6.2.5 Lemma Exclusion of Two-Ribbon (n=2)
+│   ├── 6.2.5.1 Proof Algebraic Insufficiency
+│   ├── 6.2.5.2 Commentary Binary Insufficiency
+│   └── 6.2.5.3 Diagram Abelian Limit
+│
+└── 6.2.6 Lemma Exclusion of Higher Order Configurations (n > 3)
+    ├── 6.2.6.1 Proof Analytical Exclusion via TQFT Parsimony
+    ├── 6.2.6.2 Calculation Entropic Exclusion Simulation
+    └── 6.2.6.3 Commentary Entropic Cost of Exotics
+```
 
 ---
 
@@ -1119,7 +1149,7 @@ Results (normalized to n=3):
 
 The calculated relative abundances demonstrate an exponential decay in formation probability as the ribbon count increases. While the $n=3$ configuration represents the unitary baseline ($P=1.0$), the $n=4$ population is suppressed to approximately $23.6\%$ (a factor of 1 in 4.2). The suppression factor increases rapidly for higher orders, reaching 1 in 17.9 for $n=5$ and 1 in 1357 for $n=8$. This statistical distribution confirms that hyper-complex braids are thermodynamically rarefied relative to the tripartite ground state.
 
-### 6.2.6.2 Commentary: Entropic Cost of Exotics {#6.2.6.2}
+### 6.2.6.3 Commentary: Entropic Cost of Exotics {#6.2.6.3}
 
 :::info[**Suppression of Higher-Order Braids via Boltzmann Statistics**]
 :::
@@ -1246,10 +1276,24 @@ It is asserted that the **Topological Mass** $m$ of a stable prime braid $\beta$
 
 The proof proceeds via Direct Construction, decomposing the topological mass functional into independent geometric complexity contributions.
 
-1. **Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />: The argument proves that crossing complexity scales linearly with the minimal crossing number, establishing the base mass contribution from braiding.
-2. **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />: The argument derives the quadratic scaling of torsional complexity, showing that twisting forces require a quadratic increase in geometric resources to satisfy causal partial ordering.
-3. **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />: The argument proves that entropic fluctuations vanish for topologically protected states, allowing mass to be modeled strictly as a function of static complexity.
-4. **Mass Functional** <Ref id="6.3.7" label="§6.3.7" />: The argument combines the linear crossing, quadratic torsional, and entropic parsimony results to synthesize the total topological mass functional.
+```text
+• 6.3.3 Theorem Topological Mass
+├── 6.3.4 Lemma Linear Scaling of Crossings
+│   ├── 6.3.4.1 Proof of Scaling
+│   └── 6.3.4.2 Commentary Braid Additivity
+│
+├── 6.3.5 Lemma Quadratic Scaling of Torsion
+│   ├── 6.3.5.1 Proof of Scaling
+│   ├── 6.3.5.2 Calculation Torsional Strain Simulation
+│   ├── 6.3.5.3 Commentary Mass Hierarchy Origin
+│   └── 6.3.5.4 Diagram Torsional Strain
+│
+├── 6.3.6 Lemma Entropy Negligibility
+│   ├── 6.3.6.1 Proof of Single Microstate
+│   └── 6.3.6.2 Commentary Entropic Vanishing
+│
+└── 6.3.7 Proof Mass Functional
+```
 
 ---
 
@@ -1721,9 +1765,20 @@ It is asserted that Prime Braids exhibit dynamical persistence against the vacuu
 
 The proof proceeds via Contradiction, assuming that local operations can untie an irreducible prime knot to expose the scale separation that refutes this assumption.
 
-1. **The Local Horizon** <Ref id="6.4.3" label="§6.4.3" />: The argument establishes that the local rewrite operator is confined to a logarithmic spatial horizon, rendering it blind to global topological structures.
-2. **The Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />: The argument proves that untying an irreducible knot requires a coordinated sequence of operations scaling linearly with the system size, which cannot be initiated locally.
-3. **Stability via Impossibility** <Ref id="6.4.5" label="§6.4.5" />: The argument synthesizes the scale separation between the logarithmic local horizon and the linear global barrier, proving that irreducible prime braids are stable against local vacuum decay.
+```text
+• 6.4.2 Theorem Architectural Stability
+├── 6.4.3 Lemma Local Horizon
+│   ├── 6.4.3.1 Proof Local Blindness
+│   ├── 6.4.3.2 Calculation Horizon Simulation
+│   ├── 6.4.3.3 Commentary Horizon Limit
+│   └── 6.4.3.3 Diagram Horizon Limit
+│
+├── 6.4.4 Lemma Global Unwinding Barrier
+│   ├── 6.4.4.1 Proof Cost Verification
+│   └── 6.4.4.2 Commentary Energetic Topology Cost
+│
+└── 6.4.5 Proof Stability via Impossibility
+```
 
 ---
 
@@ -2204,10 +2259,20 @@ It is asserted that the physical exchange of two identical tripartite braids, $\
 
 The proof proceeds via Direct Construction, mapping topological phases under physical exchanges to rotational symmetries.
 
-1. **Spin Operator** <Ref id="7.1.1" label="§7.1.1" />: The argument defines the spin operator on the ribbon rung edges, proving it measures twist parity and assigns eigenvalues of negative one to half-twisted fermionic states.
-2. **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />: The argument establishes that the unitary rotation operator anticommutes with the spin operator due to the odd number of edge flips required for a half-twist.
-3. **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" />: The argument proves that the physical exchange of two identical braids is topologically equivalent to a local rotation of one braid by a full two-pi phase.
-4. **Topological Statistics** <Ref id="7.1.5" label="§7.1.5" />: The argument synthesizes the anticommutation and exchange equivalence properties to show that exchanging identical fermions introduces a negative sign in their joint wavefunction, recovering Fermi-Dirac statistics.
+```text
+• 7.1.2 Theorem Topological Statistics
+├── 7.1.3 Lemma Unitary Twist Anticommutation
+│   ├── 7.1.3.1 Proof Eigenvalue Inversion
+│   ├── 7.1.3.2 Commentary Anticommutation Mechanism
+│   └── 7.1.3.3 Diagram Causal Dirac Sequence
+│
+├── 7.1.4 Lemma Exchange-Rotation Equivalence
+│   ├── 7.1.4.1 Proof Topological Phase via Reidemeister Sequence
+│   ├── 7.1.4.2 Commentary Exchange-Rotation Identity
+│   └── 7.1.4.3 Diagram Exchange via Deletion
+│
+└── 7.1.5 Proof Topological Statistics
+```
 
 ---
 
@@ -2647,9 +2712,18 @@ It is asserted that the simultaneous occupancy of a single quantum state by two 
 
 The proof proceeds via Contradiction, assuming that two fermions can occupy the same quantum state to show that this leads to a violation of the spacetime asymmetry axiom.
 
-1. **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" />: The argument establishes that directed edges have a binary information capacity, preventing the stacking of multiple excitations on a single causal connection.
-2. **The Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" />: The argument demonstrates that attempting to place multiple fermions in the same state forces the creation of a directed two-cycle, directly violating the causal acyclicity constraint.
-3. **Pauli Exclusion Principle** <Ref id="7.2.4" label="§7.2.4" />: The argument proves that the hard constraint projector maps the dual-occupancy state to the null vector, rendering its physical probability zero and enforcing the Pauli exclusion principle.
+```text
+• 7.2.1 Theorem Pauli Exclusion Principle
+├── 7.2.2 Lemma Binary State Principle
+│   ├── 7.2.2.1 Proof Binary Encoding Verification
+│   └── 7.2.2.2 Commentary Quantum Bit Limit
+│
+├── 7.2.3 Lemma Forbidden Occupancy
+│   ├── 7.2.3.1 Proof Topological Violation
+│   └── 7.2.3.3 Diagram Exclusion Barrier
+│
+└── 7.2.4 Proof Pauli Exclusion Principle
+```
 
 ---
 
@@ -3001,10 +3075,31 @@ It is asserted that the electric charge $Q$ of a stable elementary fermion is id
 
 The proof proceeds via Direct Construction, linking global topological invariants of the braid to conserved electric charge numbers.
 
-1. **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" />: The argument proves that the total writhe of the tripartite braid remains invariant under local graph rewrites, establishing writhe as a conserved charge.
-2. **The Lepton and Quark Spectrum (the **lepton and quark spectrum lemma** <Ref id="7.3.5" label="§7.3.5" />, the **quark spectrum lemma** <Ref id="7.3.6" label="§7.3.6" />):** The argument derives integer charge values for symmetric singlet states and fractional charges for asymmetric triplet configurations.
-3. **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />: The argument fixes the charge scale factor to exactly one-third by enforcing the cancellation of gauge anomalies in the first generation.
-4. **Emergence of Electric Charge** <Ref id="7.3.8" label="§7.3.8" />: The argument combines these topological solutions to prove that electric charge is an emergent, quantized representation of total braid twist.
+```text
+• 7.3.2 Theorem Emergence of Electric Charge
+├── 7.3.3 Lemma Gauge Symmetry
+│   ├── 7.3.3.1 Proof Symmetry Verification
+│   └── 7.3.3.2 Commentary Global Phase Unobservability
+│
+├── 7.3.4 Lemma Conservation of Total Writhe
+│   ├── 7.3.4.1 Proof Conservation Logic
+│   └── 7.3.4.2 Commentary Invariant Preservation
+│
+├── 7.3.5 Lemma Lepton Charge Solutions
+│   ├── 7.3.5.1 Proof Singlet Charge Values
+│   └── 7.3.5.2 Commentary Integer Charge Geometry
+│
+├── 7.3.6 Lemma Quark Charge Solutions
+│   ├── 7.3.6.1 Proof Triplet Charge Values
+│   ├── 7.3.6.2 Commentary Fractional Charge Origin
+│   └── 7.3.6.3 Diagram Fermion Writhe Topology
+│
+├── 7.3.7 Lemma Charge Normalization
+│   ├── 7.3.7.1 Proof Anomaly Cancellation
+│   └── 7.3.7.2 Commentary Fractional Necessity
+│
+└── 7.3.8 Proof Emergence of Electric Charge
+```
 
 ---
 
@@ -3596,10 +3691,24 @@ This functional is constituted by the following terms:
 
 The proof proceeds via Direct Construction, integrating crossing scaling and sharing efficiencies to construct the discrete mass spectrum.
 
-1. **The Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />: The argument proves that entropic contributions vanish for protected topologies, isolating mass as a purely static complexity function.
-2. **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />: The argument demonstrates that base complexity scales linearly with the minimal crossing count of the braid.
-3. **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />: The argument derives the sharing coefficients of parallel strands to account for isospin degeneracies.
-4. **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" />: The argument integrates the linear crossing and geometric sharing efficiency results to prove the discrete generational mass spectrum.
+```text
+• 7.4.2 Theorem Topological Mass Functional
+├── 7.4.3 Lemma Thermodynamic Equivalence
+│   ├── 7.4.3.1 Proof Entropic Vanishing
+│   └── 7.4.3.2 Commentary Thermodynamic Isolation
+│
+├── 7.4.4 Lemma Base Mass Linear Scaling
+│   ├── 7.4.4.1 Proof Linear Scaling Verification
+│   └── 7.4.4.2 Commentary Complexity Additivity
+│
+├── 7.4.5 Lemma Integer Geometric Efficiency
+│   ├── 7.4.5.1 Proof Derivation of the Sharing Integer
+│   └── 7.4.5.2 Commentary Isospin Symmetry
+│
+└── 7.4.6 Proof Discrete Mass Spectrum
+    ├── 7.4.6.1 Calculation Generational Mass Hierarchy Verification
+    └── 7.4.6.2 Diagram Generational Mass Spectrum Table
+```
 
 ---
 
@@ -4155,10 +4264,26 @@ The unitary physical process of a topological rewrite operation $\mathcal{R}$ is
 
 The proof proceeds via Direct Construction, constructing a continuous Lie algebra from discrete topological rewrite actions.
 
-1. **Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />: The argument establishes that discrete rewrite operations on particle ribbons correspond exactly to the algebraic generators of the braid group.
-2. **The Distant Commutativity and Yang-Baxter Relations (the **distant commutativity lemma** <Ref id="8.1.3" label="§8.1.3" />, the **yang-baxter relations lemma** <Ref id="8.1.4" label="§8.1.4" />):** The argument proves that spatially separated swaps commute while adjacent swaps satisfy the Yang-Baxter relation, providing the algebraic constraints of the group.
-3. **Bounded Commutator Depth** <Ref id="8.1.5" label="§8.1.5" />: The argument demonstrates that nested commutators of the braid generators close within a finite depth, defining a bounded Lie bracket structure.
-4. **Demonstration of The Generator Principle** <Ref id="8.1.6" label="§8.1.6" />: The argument combines these relations to prove that continuous gauge fields and Lie algebra generators emerge from the unitary evolution of the discrete braid graph.
+```text
+• 8.1.1 Theorem Lie Algebra Generator
+├── 8.1.2 Lemma Braid Group Isomorphism
+│   ├── 8.1.2.1 Proof Verification of Isomorphism
+│   └── 8.1.2.2 Commentary Algebraic Rigidity
+│
+├── 8.1.3 Lemma Distant Commutativity
+│   ├── 8.1.3.1 Proof Commutativity Verification
+│   └── 8.1.3.2 Commentary Independence Origin
+│
+├── 8.1.4 Lemma Yang-Baxter Relations
+│   ├── 8.1.4.1 Proof Topological Equivalence
+│   └── 8.1.4.2 Commentary Crossing Logic
+│
+├── 8.1.5 Lemma Bounded Commutator Depth
+│   ├── 8.1.5.1 Proof Depth Verification
+│   └── 8.1.5.2 Commentary Finite Force Basis
+│
+└── 8.1.6 Proof Demonstration of The Generator Principle
+```
 
 ---
 
@@ -4230,7 +4355,7 @@ The proof explicitly demonstrates $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j
 
 **I. Spatial Decomposition and Metric Bounds**
 The rewrite process $\mathcal{R}_i$ is a local operation affecting only the subgraph of ribbons $i, i+1$ and their immediate neighborhood.
-1.  **Metric Separation:** If $|i-j| \ge 2$, the pair $(i, i+1)$ is disjoint from $(j, j+1)$. The subgraphs are spatially separated by an **Undirected Metric Distance** $\bar{d}(u,v) > 2$ [(§3.5.4.2)](/monograph/rules/architecture/3.5/#3.5.4.2). This separation ensures no shared vertices or edges beyond the unstrained part, preventing overlapping **2-path motifs** that could couple the operations.
+1.  **Metric Separation:** If $|i-j| \ge 2$, the pair $(i, i+1)$ is disjoint from $(j, j+1)$. The subgraphs are spatially separated by an **Undirected Metric Distance** $\bar{d}(u,v) > 2$ [(§3.5.4.3)](/monograph/rules/architecture/3.5/#3.5.4.3). This separation ensures no shared vertices or edges beyond the unstrained part, preventing overlapping **2-path motifs** that could couple the operations.
 2.  **PUC Enforcement:** The bound $\bar{d} > 2$ follows directly from the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" />, which forbids direct edges between non-adjacent ribbons to prevent short-path redundancies. The proposed closures for each $\mathcal{R}$ are on unique 2-paths in their local neighborhoods (no alternatives $\le 2$), ensuring no overlap-induced redundancies exist across the separation.
 
 **II. Parallel Execution Equivariance**
@@ -4473,10 +4598,31 @@ The Lie algebra generated by the physical rewrite processes acting upon a tripar
 
 The proof proceeds via Direct Construction, generating the full special unitary group of degree three basis from adjacent strand swaps on a three-strand braid.
 
-1. **The Basis Verification** <Ref id="8.2.3" label="§8.2.3" />: The argument maps the tripartite braid configuration states to a three-dimensional vector space, constructing the fundamental matrix representation.
-2. **The Commutator Generation** <Ref id="8.2.4" label="§8.2.4" />: The argument derives the Gell-Mann-like generators by taking nested commutators of adjacent strand swaps, generating the off-diagonal operators of the algebra.
-3. **The Algebraic Closure (the **algebraic closure lemma** <Ref id="8.2.5" label="§8.2.5" />, the **closure verification lemma** <Ref id="8.2.6" label="§8.2.6" />):** The argument proves that the generated set of eight operators closes under the Lie bracket, verifying the structure constants and Jacobi identities.
-4. **The Confinement and Isomorphism (the **confinement and isomorphism lemma** <Ref id="8.2.7" label="§8.2.7" />, the **color symmetry su(3) emergence proof** <Ref id="8.2.8" label="§8.2.8" />):** The argument demonstrates topological confinement and completes the isomorphism proof to establish the emergent special unitary group of degree three symmetry from three-strand braids.
+```text
+• 8.2.2 Theorem Color Symmetry Emergence
+├── 8.2.3 Lemma Basis Verification
+│   ├── 8.2.3.1 Proof Matrix Construction
+│   └── 8.2.3.2 Commentary Color Space Spanning
+│
+├── 8.2.4 Lemma Commutator Generation
+│   ├── 8.2.4.1 Proof Generation Logic
+│   └── 8.2.4.2 Commentary Commutator Extension Mechanism
+│
+├── 8.2.5 Lemma Algebraic Closure
+│   ├── 8.2.5.1 Proof Closure Verification
+│   └── 8.2.5.2 Commentary Strong Force Closure
+│
+├── 8.2.6 Lemma Ensemble Closure Verification
+│   ├── 8.2.6.1 Proof Closure Probability
+│   ├── 8.2.6.2 Calculation SU(3) Closure Simulation
+│   └── 8.2.6.3 Commentary Structural Inevitability
+│
+├── 8.2.7 Lemma Flux Tube Confinement
+│   ├── 8.2.7.1 Proof Linear Potential and Berry Phase
+│   └── 8.2.7.2 Calculation Flux Tube Phase Simulation
+│
+└── 8.2.8 Proof Emergence of SU(3) from B3
+```
 
 ---
 
@@ -4981,10 +5127,31 @@ The Weak Interaction constitutes a chiral gauge theory governing the transformat
 
 The proof proceeds via Direct Construction, deriving parity-violating gauge fields from comonadic path filtering on chiral braids.
 
-1. **The Chiral Stability** <Ref id="8.3.3" label="§8.3.3" />: The argument establishes that the chiral invariant of a braid is preserved under standard evolutionary operations, securing handedness as a stable physical property.
-2. **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />: The argument constructs the weak doublet algebra from local swaps on paired lepton braids, establishing the emergent special unitary group of degree two symmetry.
-3. **The Mirror Rejections (the **mirror path rejection lemma** <Ref id="8.3.5" label="§8.3.5" />, the **path rejection lemma** <Ref id="8.3.6" label="§8.3.6" />, the **mirror path rejection lemma** <Ref id="8.3.7" label="§8.3.7" />):** The argument demonstrates that right-handed paths are rejected by the evolution comonad because their mirror transitions violate the Principle of Unique Causality.
-4. **Chiral Weak Interaction Structure** <Ref id="8.3.8" label="§8.3.8" />: The argument integrates the doublet algebra and parity-violating path constraints to derive the chiral vector-minus-axial electroweak current.
+```text
+• 8.3.2 Theorem Chiral Symmetry and Parity Violation
+├── 8.3.3 Lemma Chiral Stability
+│   ├── 8.3.3.1 Proof Invariance Verification
+│   └── 8.3.3.2 Commentary Handedness Persistence
+│
+├── 8.3.4 Lemma Weak Algebra Emergence
+│   ├── 8.3.4.1 Proof Doublet Algebra Verification
+│   └── 8.3.4.2 Commentary Weak Force Algebra
+│
+├── 8.3.5 Lemma Right-Handed Rejection
+│   ├── 8.3.5.1 Proof Rejection Logic
+│   └── 8.3.5.2 Commentary Parity Violation Mechanism
+│
+├── 8.3.6 Lemma Topological Parity Violation
+│   ├── 8.3.6.1 Proof Parity Asymmetry Verification
+│   ├── 8.3.6.2 Commentary Chiral Lock
+│   └── 8.3.6.3 Diagram Chiral Lock
+│
+├── 8.3.7 Lemma Mirror PUC Violation
+│   ├── 8.3.7.1 Proof PUC Violation Logic
+│   └── 8.3.7.2 Commentary Mirror Failure
+│
+└── 8.3.8 Proof Chiral Weak Interaction Structure
+```
 
 ---
 
@@ -5414,10 +5581,21 @@ The electroweak mixing angle $\theta_W$ is determined by the ratio of the thermo
 
 The proof proceeds via Direct Construction, deriving the Electroweak mixing ratio from relative topological complexities and vacuum friction coefficients.
 
-1. **Computational Friction Ratio** <Ref id="8.4.2" label="§8.4.2" />: The argument establishes the mathematical bounds on rewrite friction, proving that triangle-closing operations encounter less resistance than square-closing ones.
-2. **Coupling-Probability Correspondence** <Ref id="8.4.3" label="§8.4.3" />: The argument demonstrates that gauge couplings map directly to rewrite transition probabilities via the Born amplitude rule.
-3. **Topological Complexity Identification** <Ref id="8.4.4" label="§8.4.4" />: The argument maps weak isospin to three-cycle flips and weak hypercharge to four-cycle phase shifts, identifying their respective geometric complexities.
-4. **Ratio Construction** <Ref id="8.4.5" label="§8.4.5" />: The argument combines the friction, coupling, and complexity identities to prove the exact value of the electroweak mixing angle.
+```text
+• 8.4.1 Theorem Topological Weinberg Angle
+├── 8.4.2 Lemma Computational Friction Ratio
+│   ├── 8.4.2.1 Proof Friction Inequality Verification
+│   └── 8.4.2.2 Commentary Geometric Cost
+│
+├── 8.4.3 Lemma Coupling-Probability Correspondence
+│   └── 8.4.3.1 Proof Amplitude Integration
+│
+├── 8.4.4 Lemma Topological Complexity Identification
+│   └── 8.4.4.1 Proof Generator Topology
+│
+└── 8.4.5 Proof Ratio Construction
+    └── 8.4.5.1 Diagram Electroweak Mixing Topology
+```
 
 ---
 
@@ -5670,10 +5848,32 @@ This derivation is constrained by the simultaneous satisfaction of four physical
 
 The proof proceeds via Direct Construction, deriving the coupling strength from trace projections and local state space dimensionalities.
 
-1. **Probabilistic Coupling Identity** <Ref id="8.5.2" label="§8.5.2" />: The argument establishes the direct mapping between physical coupling constants and rewrite transition probabilities on the code space.
-2. **The Normalizations (the **trace normalization lemma** <Ref id="8.5.3" label="§8.5.3" />, the **geometric normalization lemma** <Ref id="8.5.4" label="§8.5.4" />):** The argument derives the trace normalization of the projection operators and the geometric normalization factors of the local spherical interaction volume.
-3. **The Entropic and Combinatorial Weights (the **entropic weighting lemma** <Ref id="8.5.5" label="§8.5.5" />, the **combinatorial weighting lemma** <Ref id="8.5.6" label="§8.5.6" />):** The argument quantifies the entropic weighting of the state space and the combinatorial multiplier of the local degrees of freedom.
-4. **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" />: The argument synthesizes the probabilistic, geometric, and entropic factors to calculate the emergent gauge coupling constant.
+```text
+• 8.5.1 Theorem Emergent Gauge Coupling
+├── 8.5.2 Lemma Probabilistic Coupling Identity
+│   ├── 8.5.2.1 Proof Identity Verification
+│   └── 8.5.2.2 Commentary Probabilistic Coupling
+│
+├── 8.5.3 Lemma Trace Normalization
+│   ├── 8.5.3.1 Proof Normalization Logic
+│   └── 8.5.3.2 Commentary Interaction Geometry
+│
+├── 8.5.4 Lemma Geometric Normalization
+│   ├── 8.5.4.1 Proof Spherical Symmetry Verification
+│   └── 8.5.4.2 Commentary Spherical Factor
+│
+├── 8.5.5 Lemma Entropic Dimensionality
+│   ├── 8.5.5.1 Proof Weight Verification
+│   └── 8.5.5.2 Commentary Entropic Weight
+│
+├── 8.5.6 Lemma Local State Space Multiplier
+│   ├── 8.5.6.1 Proof Degree Counting
+│   ├── 8.5.6.2 Calculation SU(2) DoF Verification
+│   └── 8.5.6.3 Commentary Combinatorial Multiplier
+│
+└── 8.5.7 Proof Synthesis of the Coupling Constant
+    └── 8.5.7.1 Calculation Numerical Consistency Check
+```
 
 ---
 
@@ -6290,10 +6490,29 @@ The masses of elementary particles are generated by the thermodynamic phase tran
 
 The proof proceeds via Direct Construction, deriving mass values from geometric condensates and topological drag coefficients.
 
-1. **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />: The argument calibrates the order parameter of the geometric condensate to physical energy scales, anchoring the vacuum expectation value.
-2. **The Boson Mass Prediction** <Ref id="8.6.3" label="§8.6.3" />: The argument derives the masses of the weak bosons by combining the derived gauge couplings with the vacuum expectation value, incorporating Goldstone absorption.
-3. **The Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" />: The argument defines the Yukawa couplings as the ratio of braid complexity to vacuum supply, explaining the large generational mass hierarchy.
-4. **The Mass Condensation (the **mass generation sensitivity lemma** <Ref id="8.6.6" label="§8.6.6" />, the **mass condensation proof** <Ref id="8.6.7" label="§8.6.7" />):** The argument conducts sensitivity analysis and synthesizes these components to prove emergent mass generation without a fundamental scalar field.
+```text
+• 8.6.2 Theorem Emergent Mass Generation
+├── 8.6.2.2 Diagram Geometric Higgs Mechanism
+│
+├── 8.6.3 Lemma Boson Mass Prediction
+│   ├── 8.6.3.1 Proof Mass Formula Verification
+│   └── 8.6.3.2 Commentary Prediction Precision
+│
+├── 8.6.4 Lemma Dimensionful VEV Scaling
+│   ├── 8.6.4.1 Proof Scaling Logic
+│   └── 8.6.4.2 Commentary Reality Scale
+│
+├── 8.6.5 Lemma Topological Yukawa Identity
+│   ├── 8.6.5.1 Proof Yukawa Ratio Verification
+│   ├── 8.6.5.2 Calculation Yukawa Hierarchy Verification
+│   └── 8.6.5.3 Commentary Hierarchy Origin
+│
+├── 8.6.6 Lemma Sensitivity and Error Propagation
+│   ├── 8.6.6.1 Proof Sensitivity Logic
+│   └── 8.6.6.2 Commentary Standard Model Stability
+│
+└── 8.6.7 Proof Emergent Mass Generation
+```
 
 ### 8.6.2.2 Diagram: Geometric Higgs Mechanism {#8.6.2.2}
 
@@ -6683,10 +6902,21 @@ The simple Lie group capable of serving as the unification gauge group for the S
 
 The proof proceeds via Inductive Elimination, systematically disqualifying alternative algebras to prove that the special unitary group of degree five is the unique minimal grand unified group.
 
-1. **The Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />: The argument establishes that embedding the Standard Model requires a unified gauge group of rank four or higher.
-2. **The Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />: The argument systematically excludes all simple Lie groups of rank less than four due to insufficient dimension.
-3. **The Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />: The argument disqualifies competing rank four algebras because they lack complex, chiral representations.
-4. **The Uniqueness Verification** <Ref id="9.1.5" label="§9.1.5" />: The argument proves that the special unitary group of degree five is the unique minimal Lie group that accommodates Standard Model fermions with exact anomaly cancellation.
+```text
+• 9.1.1 Theorem Minimal GUT Uniqueness
+├── 9.1.2 Lemma Rank Conditions
+│   ├── 9.1.2.1 Proof Subgroup Rank Summation
+│   └── 9.1.2.2 Commentary Rank Necessity
+│
+├── 9.1.3 Lemma Lower Rank Exclusion
+│   └── 9.1.3.1 Proof Inductive Elimination
+│
+├── 9.1.4 Lemma Candidate Elimination
+│   └── 9.1.4.1 Proof Representation and Hypercharge Analysis
+│
+└── 9.1.5 Proof Uniqueness Verification
+    └── 9.1.5.1 Calculation Anomaly Check Verification
+```
 
 ---
 
@@ -7046,10 +7276,32 @@ The Lie algebra generated by the aggregate of physical rewrite processes acting 
 
 The proof proceeds via Direct Construction, constructing the special unitary group of degree five algebra and its fundamental representations from five-strand braid swaps.
 
-1. **The Braid Relations (the **distant commutativity lemma** <Ref id="9.2.3" label="§9.2.3" />, the **yang-baxter relations lemma** <Ref id="9.2.4" label="§9.2.4" />):** The argument establishes distant commutativity and the Yang-Baxter relations for five-strand braids, defining the algebraic constraints.
-2. **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />: The argument derives the twenty-four generators of the special unitary group of degree five Lie algebra from nested commutators of five-strand swaps, proving algebraic closure.
-3. **The Multiplet Verification (the **anti-fundamental representation lemma** <Ref id="9.2.6" label="§9.2.6" />, the **antisymmetric representation lemma** <Ref id="9.2.7" label="§9.2.7" />):** The argument maps the unlinked and pairwise linked configurations of the five-strand braid to the anti-fundamental and antisymmetric tensor representations of the algebra.
-4. **Topological Unification** <Ref id="9.2.8" label="§9.2.8" />: The argument integrates these algebraic and representation mappings to prove that grand unification is an emergent consequence of five-strand braid dynamics.
+```text
+• 9.2.2 Theorem Topological Unification
+├── 9.2.3 Lemma Distant Commutativity
+│   ├── 9.2.3.1 Proof Commutativity Verification
+│   └── 9.2.3.2 Commentary Swap Independence
+│
+├── 9.2.4 Lemma Yang-Baxter Relations
+│   ├── 9.2.4.1 Proof Topological Equivalence
+│   └── 9.2.4.2 Commentary Crossing Logic
+│
+├── 9.2.5 Lemma Closed Lie Algebra
+│   ├── 9.2.5.1 Proof Isomorphism Verification
+│   ├── 9.2.5.2 Calculation SU(5) Closure Simulation
+│   └── 9.2.5.3 Commentary Closure of Unified Force
+│
+├── 9.2.6 Lemma Anti-Fundamental Multiplet
+│   ├── 9.2.6.1 Proof Unlinked Structure Verification
+│   ├── 9.2.6.2 Commentary Anti-Matter Topology
+│   └── 9.2.6.3 Diagram Unlinked Configuration
+│
+├── 9.2.7 Lemma Antisymmetric Multiplet
+│   ├── 9.2.7.1 Proof Pairwise Interaction Verification
+│   └── 9.2.7.2 Commentary Matter Topology
+│
+└── 9.2.8 Proof Topological Unification
+```
 
 ---
 
@@ -7509,10 +7761,23 @@ The three observed fermion generations correspond strictly to the first three di
 
 The proof proceeds via Direct Construction, demonstrating that generational families correspond to discrete, metastable minima in the complexity landscape.
 
-1. **The Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />: The argument establishes that generational mass correlates with topological complexity, ordering the three generations by their minimal crossing counts.
-2. **The Topological Protection** <Ref id="9.3.3" label="§9.3.3" />: The argument proves that prime knots correspond to stable local minima in the complexity landscape, protected by energetic boundaries.
-3. **The Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />: The argument derives the tunneling rate between topological minima, showing that higher generations decay only via non-perturbative instanton processes.
-4. **Synthesis of the Three-Generation Structure** <Ref id="9.3.5" label="§9.3.5" />: The argument combines complexity ordering, local barriers, and tunneling suppression to prove the lifetime metastability of the three-generation structure.
+```text
+• 9.3.1 Theorem Generational Metastability
+├── 9.3.2 Lemma Complexity Ordering
+│   ├── 9.3.2.1 Proof Topological Complexity Counting
+│   └── 9.3.2.2 Commentary Knot Counting
+│
+├── 9.3.3 Lemma Topological Protection
+│   ├── 9.3.3.1 Proof Barrier Existence
+│   ├── 9.3.3.2 Commentary Topological Persistence
+│   └── 9.3.3.3 Diagram Complexity Potential
+│
+├── 9.3.4 Lemma Decay Tunneling
+│   ├── 9.3.4.1 Proof Tunneling Rate Derivation
+│   └── 9.3.4.2 Commentary Rare Decay
+│
+└── 9.3.5 Proof Synthesis of the Three-Generation Structure
+```
 
 ---
 
@@ -7812,9 +8077,19 @@ The complete set of 24 generators of the $\mathfrak{su}(5)$ algebra decomposes i
 
 The proof proceeds via Direct Construction, mapping off-diagonal grand unified generators to physical leptoquark transitions.
 
-1. **The Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />: The argument maps the off-diagonal generators of the special unitary group of degree five Lie algebra to physical leptoquark transitions, verifying their geometric action on quarks and leptons.
-2. **The Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />: The argument derives the tunneling transition that breaks the five-strand symmetry into three-strand and two-strand sectors.
-3. **Leptoquark Demonstration** <Ref id="9.4.5" label="§9.4.5" />: The argument combines the vertex maps and symmetry-breaking tunneling results to prove the existence of leptoquark-mediated transitions.
+```text
+• 9.4.2 Theorem Leptoquark Generators
+├── 9.4.3 Lemma Interaction Vertex
+│   ├── 9.4.3.1 Proof Vertex Geometry Verification
+│   ├── 9.4.3.2 Commentary Transmutation Geometry
+│   └── 9.4.3.3 Diagram Leptoquark Vertex
+│
+├── 9.4.4 Lemma Fragmentation Tunneling
+│   ├── 9.4.4.1 Proof Complexity Reduction Verification
+│   └── 9.4.4.2 Commentary Symmetry Breaking
+│
+└── 9.4.5 Proof Leptoquark Demonstration
+```
 
 ---
 
@@ -8030,10 +8305,23 @@ The proton is asserted to be stable on cosmological timescales due to the expone
 
 The proof proceeds via Contradiction, assuming that the proton decays via standard perturbative field channels to demonstrate that the required topological action is exponentially suppressed, thereby refuting the assumption of rapid decay.
 
-1. **The Tension Verification** <Ref id="9.5.2" label="§9.5.2" />: The argument demonstrates that standard effective field theory calculations overpredict the proton decay rate, establishing the need for non-perturbative suppression.
-2. **The Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" />: The argument constructs the optimal trajectory through the topological configuration space, defining the minimal path for baryonic decay.
-3. **The Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />: The argument proves that the tunneling action scales linearly with the leptoquark's topological complexity, providing an immense potential barrier.
-4. **The Stability Synthesis** <Ref id="9.5.5" label="§9.5.5" />: The argument combines the path and action scaling constraints to prove that leptoquark-mediated proton decay is exponentially suppressed, matching experimental bounds.
+```text
+• 9.5.1 Theorem Proton Stability
+├── 9.5.2 Lemma Tension Verification
+│   ├── 9.5.2.1 Proof Decay Rate Calculation
+│   ├── 9.5.2.2 Calculation EFT Rate Calculation
+│   └── 9.5.2.3 Commentary Standard Theory Failure
+│
+├── 9.5.3 Lemma Minimal Action Pathway
+│   ├── 9.5.3.1 Proof Topological Complexity Minimization
+│   └── 9.5.3.2 Commentary Minimal Action Path
+│
+├── 9.5.4 Lemma Action-Mass Proportionality
+│   ├── 9.5.4.1 Proof Path Length-Mass Equivalence
+│   └── 9.5.4.2 Commentary Topological Shield
+│
+└── 9.5.5 Proof Stability Synthesis
+```
 
 ---
 
@@ -8532,10 +8820,35 @@ The light neutrino mass $m_\nu$ arises from a topological seesaw mechanism gener
 
 The proof proceeds via Direct Construction, deriving sub-electron-volt neutrino masses from topological neutrality and Planck-scale seesaw mechanisms.
 
-1. **The Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />: The argument establishes that the folded braid topology achieves exact color and electric neutrality through the cancellation of writhe in complementary segments.
-2. **The Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />: The argument demonstrates that mixing light left-handed and heavy right-handed states suppresses the active neutrino mass.
-3. **The Complexity and Friction Limits (the **complexity density limits lemma** <Ref id="9.6.5" label="§9.6.5" />, the **vacuum friction limits lemma** <Ref id="9.6.6" label="§9.6.6" />, the **critical balance limits lemma** <Ref id="9.6.7" label="§9.6.7" />):** The argument shows that high complexity density triggers exponential friction, establishing a critical balance point that halts structural growth.
-4. **The Planck Anchor and Mass Spectrum (the **planck anchor lemma** <Ref id="9.6.8" label="§9.6.8" />, the **neutrino mass chain proof** <Ref id="9.6.9" label="§9.6.9" />):** The argument anchors the heavy state to the Planck scale and synthesizes these components to prove the sub-electron-volt neutrino mass scale.
+```text
+• 9.6.2 Theorem Neutrino Mass Mechanism
+├── 9.6.3 Lemma Neutrality Verification
+│   ├── 9.6.3.1 Proof Exclusion of Standard Braids
+│   └── 9.6.3.2 Commentary Folded Logic
+│
+├── 9.6.4 Lemma Seesaw Dynamics
+│   ├── 9.6.4.1 Proof Mixing Verification
+│   └── 9.6.4.2 Commentary Neutrino Mass Origin
+│
+├── 9.6.5 Lemma Complexity Density Scaling
+│   ├── 9.6.5.1 Proof Density Increase Verification
+│   └── 9.6.5.2 Commentary Complexity Density
+│
+├── 9.6.6 Lemma Friction Suppression Limit
+│   ├── 9.6.6.1 Proof Maintenance Halt Verification
+│   └── 9.6.6.2 Commentary Existence Limit
+│
+├── 9.6.7 Lemma Critical Complexity Balance
+│   ├── 9.6.7.1 Proof Criticality Verification
+│   └── 9.6.7.2 Commentary Balance Point
+│
+├── 9.6.8 Lemma Planck Anchor
+│   ├── 9.6.8.1 Proof Scaling Verification
+│   └── 9.6.8.2 Commentary Planck Anchor
+│
+└── 9.6.9 Proof Neutrino Mass Demonstration
+    └── 9.6.9.1 Calculation Neutrino Mass Prediction
+```
 
 ---
 
@@ -9214,10 +9527,27 @@ It is asserted that the topological pair $\{|\beta_e\rangle, |\beta_{e*}\rangle\
 
 The proof proceeds via Direct Construction, evaluating candidate subgraphs against the storage, control, and measurement requirements for physical information storage.
 
-1. **The Topological Stability** <Ref id="10.1.3" label="§10.1.3" />: The argument establishes that logical qubit states correspond to stable minima in the topological complexity landscape.
-2. **The Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />: The argument verifies that the basis states are topologically distinct and orthogonal under ambient isotopy.
-3. **State Controllability** <Ref id="10.1.5" label="§10.1.5" />: The argument constructs transition Hamiltonians to prove that the states can be toggled via writhe shuffling.
-4. **The Measurability (the **measurability lemma** <Ref id="10.1.6" label="§10.1.6" />, the **qubit optimality proof** <Ref id="10.1.7" label="§10.1.7" />):** The argument defines the color charge observable to prove projective readouts and synthesizes these features to prove the optimality of the tripartite qubit.
+```text
+• 10.1.2 Theorem Qubit Optimality
+├── 10.1.3 Lemma Topological Stability
+│   ├── 10.1.3.1 Proof Stability Verification
+│   └── 10.1.3.2 Commentary Protected Bit
+│
+├── 10.1.4 Lemma Topological Distinctness
+│   ├── 10.1.4.1 Proof Isotopy Verification
+│   └── 10.1.4.2 Commentary Geometric Orthogonality
+│
+├── 10.1.5 Lemma State Controllability
+│   ├── 10.1.5.1 Proof Transition Hamiltonian Construction
+│   └── 10.1.5.2 Commentary Writhe Shuffle
+│
+├── 10.1.6 Lemma Basis Measurability
+│   ├── 10.1.6.1 Proof Basis Measurability
+│   └── 10.1.6.2 Commentary Color Readout
+│
+└── 10.1.7 Proof Qubit Optimality
+    └── 10.1.7.1 Diagram Color Measurement
+```
 
 ---
 
@@ -9643,10 +9973,35 @@ It is asserted that the stabilizer group $\mathcal{S}$ defines a mathematically 
 
 The proof proceeds via Direct Construction, establishing a mutually commuting set of stabilizer check operators to define the logical codespace.
 
-1. **The Stabilizer Commutations (the **stabilizer commutations lemma** <Ref id="10.2.3" label="§10.2.3" />, the **ribbon stabilizer commutations lemma** <Ref id="10.2.5" label="§10.2.5" />, the **vertex stabilizer commutations lemma** <Ref id="10.2.7" label="§10.2.7" />):** The argument establishes the mutual commutation of the geometric, ribbon, and vertex stabilizers, satisfying the abelian stabilizer group requirement.
-2. **The Bit-Flip and Fraying Detection (the **bit-flip error detection lemma** <Ref id="10.2.4" label="§10.2.4" />, the **fraying error detection lemma** <Ref id="10.2.6" label="§10.2.6" />):** The argument proves that single-qubit errors and ribbon fraying defects map to unique stabilizer syndrome patterns.
-3. **The Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />: The argument demonstrates the detection of phase flips through check operator overlaps.
-4. **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />: The argument synthesizes these commutation and detection properties to prove that the stabilizers constitute a consistent quantum error-correcting code of distance three or greater.
+```text
+• 10.2.2 Theorem Braid Code Consistency
+├── 10.2.3 Lemma Geometric Commutation
+│   ├── 10.2.3.1 Proof Commutation Verification
+│   └── 10.2.3.2 Commentary Even-Overlap Rule
+│
+├── 10.2.4 Lemma Bit-Flip Localization
+│   ├── 10.2.4.1 Proof Error Localization Logic
+│   └── 10.2.4.2 Commentary Error Triangulation
+│
+├── 10.2.5 Lemma Ribbon Integrity Commutation
+│   ├── 10.2.5.1 Proof Ribbon Commutation Verification
+│   └── 10.2.5.2 Commentary Strand Verification
+│
+├── 10.2.6 Lemma Fraying Detection
+│   ├── 10.2.6.1 Proof Fraying Detection Logic
+│   └── 10.2.6.2 Commentary Fray Identification
+│
+├── 10.2.7 Lemma Vertex Commutation
+│   ├── 10.2.7.1 Proof Vertex Commutation Verification
+│   └── 10.2.7.2 Commentary Flow Consistency
+│
+├── 10.2.8 Lemma Phase Error Detection
+│   ├── 10.2.8.1 Proof Phase Detection Logic
+│   └── 10.2.8.2 Commentary Phase Flip Discovery
+│
+└── 10.2.9 Proof Synthesis of Code Properties
+    └── 10.2.9.1 Calculation Stabilizer Commutativity Verification
+```
 
 ---
 
@@ -10083,9 +10438,16 @@ It is asserted that the topological qubit constitutes a quantum error-correcting
 
 The proof proceeds via Direct Construction, utilizing topological distance and thermodynamic feedback loops to self-correct local defects.
 
-1. **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />: The argument establishes that error syndromes trigger localized thermodynamic stress.
-2. **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" />: The argument verifies that the minimum weight of an undetectable logical operator is three, ensuring code distance protection.
-3. **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" />: The argument proves that the evolution operator naturally deletes high-stress syndrome defects to restore the error-free codespace.
+```text
+• 10.3.2 Theorem Topological Fault Tolerance
+├── 10.3.3 Lemma Syndrome Flipping
+│   ├── 10.3.3.1 Proof Syndrome Flipping Logic
+│   └── 10.3.3.2 Commentary Alarm System
+│
+└── 10.3.4 Lemma Minimum Weight
+    ├── 10.3.4.1 Proof Weight Analysis
+    └── 10.3.4.2 Commentary Coincidence Robustness
+```
 
 ---
 
@@ -10355,9 +10717,18 @@ It is asserted that the rewrite process $\mathcal{R}_X$ implements the unitary P
 
 The proof proceeds via Direct Construction, executing a charge-conserving rewrite sequence to implement the bit-flip operation on logical states.
 
-1. **The Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />: The argument proves that writhe-shuffling operations preserve the global writhe sum.
-2. **The Charge Conservation** <Ref id="10.4.4" label="§10.4.4" />: The argument verifies that the redistribution of writhe does not violate electric charge conservation.
-3. **Logical X Gate** <Ref id="10.4.5" label="§10.4.5" />: The argument demonstrates that the writhe-shuffling sequence implements the exact unitary transformation of the logical Pauli-X gate on basis states.
+```text
+• 10.4.2 Theorem Logical X Gate
+├── 10.4.3 Lemma Writhe Conservation
+│   ├── 10.4.3.1 Proof Invariance Verification
+│   └── 10.4.3.2 Commentary Writhe Shuffle
+│
+├── 10.4.4 Lemma Charge Conservation
+│   ├── 10.4.4.1 Proof Charge Invariance Verification
+│   └── 10.4.4.2 Commentary Conservation Permission
+│
+└── 10.4.5 Proof Logical X Gate
+```
 
 ---
 
@@ -10537,9 +10908,18 @@ It is asserted that the **Logical Z Gate** is implemented by a Quantum Non-Demol
 
 The proof proceeds via Direct Construction, exploiting state-dependent gauge interactions to implement the logical phase flip.
 
-1. **The Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />: The argument proves that the symmetric ground state does not couple to the color probe, accumulating zero phase.
-2. **Color Phase** <Ref id="10.5.3" label="§10.5.3" />: The argument demonstrates that the asymmetric excited state carries color charge, acquiring a geometric phase of pi.
-3. **Logical Z Gate** <Ref id="10.5.4" label="§10.5.4" />: The argument combines these state-dependent phase responses to prove the execution of the logical Pauli-Z gate.
+```text
+• 10.5.1 Theorem Logical Z Gate
+├── 10.5.2 Lemma Singlet Transparency
+│   ├── 10.5.2.1 Proof Trivial Representation Analysis
+│   └── 10.5.2.2 Commentary Invisible Qubit
+│
+├── 10.5.3 Lemma Color Phase
+│   ├── 10.5.3.1 Proof Non-Trivial Holonomy Analysis
+│   └── 10.5.3.2 Commentary Phase Imprint
+│
+└── 10.5.4 Proof Logical Z Gate
+```
 
 ---
 
@@ -10729,9 +11109,19 @@ It is asserted that the **Hadamard Gate** is implemented by a thermodynamic rewr
 
 The proof proceeds via Direct Construction, using thermal mixing and rapid quenches to prepare unbiased superposition states.
 
-1. **Temperature Control** <Ref id="10.6.2" label="§10.6.2" />: The argument demonstrates that modulating local graph activity creates a transient high-temperature state that lowers stability barriers.
-2. **The Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" />: The argument proves that the basis states are energetically degenerate, ensuring an unbiased uniform distribution at high temperatures.
-3. **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" />: The argument verifies that rapid cooling freezes the uniform distribution into a coherent superposition, implementing the Hadamard gate.
+```text
+• 10.6.1 Theorem Hadamard Gate
+├── 10.6.2 Lemma Temperature Control
+│   ├── 10.6.2.1 Proof Thermo-Modulation Verification
+│   └── 10.6.2.2 Commentary Superposition Engine
+│
+├── 10.6.3 Lemma Topological Degeneracy
+│   ├── 10.6.3.1 Proof Mass Equality Verification
+│   └── 10.6.3.2 Commentary Unbiased Mixing
+│
+└── 10.6.4 Proof Hadamard Gate
+    └── 10.6.4.1 Calculation Hadamard Quench Verification
+```
 
 ---
 
@@ -10969,9 +11359,18 @@ It is asserted that the **Controlled-Z Gate** is implemented by a composite proc
 
 The proof proceeds via Direct Construction, linking qubit environments to implement conditional phase shifts.
 
-1. **The Syndrome Coupling** <Ref id="10.7.2" label="§10.7.2" />: The argument establishes that a topological bridge allows the stress syndrome of the control qubit to couple to the target qubit's environment.
-2. **Control Dynamics** <Ref id="10.7.3" label="§10.7.3" />: The argument proves that the excited control state acts as a catalyst to lower rewrite barriers for the target qubit while the ground control state inhibits them.
-3. **Controlled-Z Gate** <Ref id="10.7.4" label="§10.7.4" />: The argument demonstrates that this conditional catalysis executes a phase flip if and only if the control qubit is excited, reproducing the Controlled-Z gate.
+```text
+• 10.7.1 Theorem Controlled-Z Gate
+├── 10.7.2 Lemma Syndrome Coupling
+│   ├── 10.7.2.1 Proof Bridge Construction Verification
+│   └── 10.7.2.2 Commentary Logic Wire
+│
+├── 10.7.3 Lemma Control Dynamics
+│   ├── 10.7.3.1 Proof Conditional Friction Verification
+│   └── 10.7.3.2 Commentary Entanglement Switch
+│
+└── 10.7.4 Proof Controlled-Z Gate
+```
 
 ---
 
@@ -11200,10 +11599,34 @@ It is asserted that the process $\mathcal{R}_T$ implements the non-Clifford phas
 
 The proof proceeds via Direct Construction, utilizing ribbon category Twist structures to execute fractional self-interactions.
 
-1. **The Category and Monoidal Foundations (the **category structures lemma** <Ref id="10.8.3" label="§10.8.3" />, the **monoidal structures lemma** <Ref id="10.8.4" label="§10.8.4" />):** The argument establishes the category and monoidal structures of the braid system, proving consistent composition and system combination rules.
-2. **The Braiding and Duality (the **braiding structures lemma** <Ref id="10.8.5" label="§10.8.5" />, the **duality structures lemma** <Ref id="10.8.6" label="§10.8.6" />):** The argument verifies braiding and duality structures, validating exchange rules and matter-antimatter conjugates.
-3. **Twist Structure** <Ref id="10.8.7" label="§10.8.7" />: The argument instantiates the twisting morphism to construct the self-braiding operation.
-4. **T-Gate** <Ref id="10.8.8" label="§10.8.8" />: The argument combines these categorical structures to prove that the self-braiding operation implements the exact phase shift of pi over four required for the T-gate.
+```text
+• 10.8.2 Theorem T-Gate
+├── 10.8.3 Lemma Ribbon Category
+│   ├── 10.8.3.1 Proof Category Property Verification
+│   └── 10.8.3.2 Commentary Ribbon Algebra
+│
+├── 10.8.4 Lemma Monoidal Structure
+│   ├── 10.8.4.1 Proof Monoidal Verification
+│   └── 10.8.4.2 Commentary System Combination
+│
+├── 10.8.5 Lemma Braiding Structure
+│   ├── 10.8.5.1 Proof Braiding Verification
+│   └── 10.8.5.2 Commentary Exchange Rules
+│
+├── 10.8.6 Lemma Duality Structure
+│   ├── 10.8.6.1 Proof Duality Verification
+│   └── 10.8.6.2 Commentary Matter-Antimatter
+│
+├── 10.8.7 Lemma Twist Structure
+│   ├── 10.8.7.1 Proof Twist Verification
+│   └── 10.8.7.2 Commentary Spin Phase
+│
+├── 10.8.8 Proof T-Gate
+│   └── 10.8.8.1 Calculation T-Gate Phase Verification
+│
+└── 10.8.9 Corollary Gate Set Universality
+    └── 10.8.9.1 Proof Set Completeness Verification
+```
 
 ---
 
@@ -11559,8 +11982,20 @@ It is asserted that the physical gate set $\mathcal{G}_{phys} = \{\mathcal{R}_H,
 
 The proof proceeds via Direct Construction, utilizing Solovay-Kitaev approximations to establish the Turing-completeness of the braid gate set.
 
-1. **The Clifford Generation** <Ref id="10.9.2" label="§10.9.2" />: The argument proves that the Phase and Controlled-NOT gates are constructible from Hadamard, Controlled-Z, and T gate primitives.
-2. **Computational Universality** <Ref id="10.9.3" label="§10.9.3" />: The argument invokes the Solovay-Kitaev theorem to show that the Clifford group plus the T gate generates a dense subset of the special unitary group, allowing arbitrary approximation of any unitary matrix.
+```text
+• 10.9.1 Theorem Group Closure
+├── 10.9.2 Lemma Clifford Generation
+│   └── 10.9.2.1 Proof Group Closure Verification
+│
+├── 10.9.3 Proof Computational Universality
+│   └── 10.9.3.1 Calculation Solovay-Kitaev Verification
+│
+└── 10.9.4 Example Shor's Algorithm Implementation
+    ├── 10.9.4.1 Calculation Shor's Algorithm
+    ├── 10.9.4.2 Commentary Simulation Implications
+    ├── 10.9.4.3 Diagram Circuit Schematic
+    └── 10.9.4.4 Diagram Braid Circuit
+```
 
 ---
 

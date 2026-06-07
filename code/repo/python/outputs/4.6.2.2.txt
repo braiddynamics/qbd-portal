@@ -1,0 +1,12 @@
+Emergent Amplitude Normalization (Vacuum Limit)
+======================================================
+Raw weights:
+  Single addition (Path A or B):           1.0
+  Two additions + one deletion (Path C):   0.5
+  Total ensemble weight:                   2.5
+
+Normalized probabilities:
+  P(single addition):                      0.400
+  P(two adds + one deletion):              0.200
+  Ratio P(C)/P(A):                         0.50  (theoretical target: 0.50)
+  Exact match with ½ deletion penalty:     True

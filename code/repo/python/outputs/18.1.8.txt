@@ -1,0 +1,13 @@
+|   Coupling (β) | Tunneling Prob   |   Parity Violation (Φ) |   3-Cycles Closed | Phase State           |
+|----------------|------------------|------------------------|-------------------|-----------------------|
+|            0   | 0%               |                 0      |              0    | Pre-Geometric Stasis  |
+|            0.1 | 10%              |                 0.1305 |              7.99 | Igniting Plasma       |
+|            0.2 | 20%              |                 0.2525 |             12.73 | Crystallized Geometry |
+|            0.3 | 30%              |                 0.3669 |             15.14 | Crystallized Geometry |
+|            0.4 | 40%              |                 0.472  |             15.43 | Crystallized Geometry |
+|            0.5 | 50%              |                 0.5777 |             15.3  | Crystallized Geometry |
+|            0.6 | 60%              |                 0.6641 |             14.97 | Crystallized Geometry |
+|            0.7 | 70%              |                 0.7545 |             14.45 | Crystallized Geometry |
+|            0.8 | 80%              |                 0.8406 |             15.45 | Crystallized Geometry |
+|            0.9 | 90%              |                 0.9232 |             18.74 | Crystallized Geometry |
+|            1   | 100%             |                 1      |             24.56 | Crystallized Geometry |

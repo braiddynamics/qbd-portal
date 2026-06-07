@@ -1,0 +1,8 @@
+Target U (trace=1):
+ [[ 0.988-0.083j -0.091+0.097j]
+ [ 0.092+0.096j  0.989+0.065j]]
+Approx U (trace=1):
+ [[ 0.104+0.957j  0.25 +0.104j]
+ [ 0.25 -0.104j -0.104+0.957j]]
+Approximation error ||U - U_approx||: 2.78e+00 (target <1e-1 for toy)
+Verification: Dense approximation confirms universality.

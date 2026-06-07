@@ -1,0 +1,39 @@
+══════════════════════════════════════════════════════════════════════════════
+PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS
+Quantifying the Shortfall in Minimal SU(5) Predictions
+══════════════════════════════════════════════════════════════════════════════
+
+Base Parameters:
+  α_GUT   ≈ 0.0238
+  M_X     = 1.0e+15 GeV
+  m_p     = 0.938 GeV
+--------------------------------------------------
+Perturbative Prediction (Nominal):
+  τ_p     ≈ 5.07e+31 years
+  Literature SU(5) ≈ 1.00e+32 years
+  Experimental     > 2.40e+34 years
+--------------------------------------------------
+Shortfall Factors:
+  vs. Experiment : ×474
+  vs. Literature : ×2.0
+--------------------------------------------------
+
+Monte Carlo Results (1000 samples):
+  Mean τ_p     = 5.65e+35 years
+  Median τ_p   = 4.98e+33 years
+  Std dev      = 1.43e+36 years
+  P(τ_p > exp) = 39.9%
+  P(τ_p > lit) = 76.2%
+--------------------------------------------------
+Distribution of log₁₀(τ_p [years]):
+log₁₀(τ_p)  Count Percentage
+     30.76     92       9.2%
+     31.41    105      10.5%
+     32.06     96       9.6%
+     32.72    108      10.8%
+     33.37     99       9.9%
+     34.02     95       9.5%
+     34.68    105      10.5%
+     35.33    108      10.8%
+     35.98     94       9.4%
+     36.64     98       9.8%

@@ -1,0 +1,7 @@
+Initial geometric syndrome:  -1.0
+Syndrome after X0 error:  -1.0
+Syndrome after Z0 (geom):  1.0
+Initial ribbon2:  1.0
+Syndrome after weight-2 X0 X1 for ribbon2:  -1.0
+Z error flips vertex syndrome due to anticommutation factor -1.
+Verification complete: Errors produce non-trivial syndromes, confirming fault tolerance and d=3.

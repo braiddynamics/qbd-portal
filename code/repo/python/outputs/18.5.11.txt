@@ -1,0 +1,4 @@
+Total Vertices N: 46
+Max Geodesic Distance (Diameter): 8
+Logarithmic Bound 2 * log2(N): 11.0471
+Diameter Bounding Verification: SUCCESS (Diameter &lt;= Bound)

@@ -1,0 +1,4 @@
+Structure       | |Aut|      | Orbit Entropy  
+---------------------------------------------
+Star (Irreg)    | 362880     | 0.4690         
+Bethe (Reg)     | 48         | 1.2955

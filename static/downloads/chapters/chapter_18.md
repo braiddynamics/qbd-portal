@@ -58,9 +58,28 @@ Let $G_0$ denote the pre-geometric tree vacuum with non-zero vacuum permittivity
 
 The proof of the **Primordial Loop Nucleation Theorem** <Ref id="18.1.2" label="§18.1.2" /> is established by the systematic integration of combinatorial alignment probabilities and topological path counting:
 
-1.  **Slot Alignment** <Ref id="18.1.3" label="§18.1.3" />: We calculate the local alignment probability of out-degree slots for a vertex triad, proving that background vacuum fluctuations have a non-zero probability of closing a 2-path.
-2.  **Path Enumeration** <Ref id="18.1.4" label="§18.1.4" />: We calculate the total count of potential precursor 2-paths across a finite bipartite Bethe tree of $N$ nodes.
-3.  **Current Synthesis** <Ref id="18.1.5" label="§18.1.5" />: We multiply the precursor path count by the alignment probability to synthesize a strictly positive background loop nucleation current $J_{\text{in}} > 0$.
+```text
+• 18.1.2 Theorem Primordial Loop Nucleation
+├── 18.1.3 Lemma Slot Alignment Probability
+│   ├── 18.1.3.1 Proof Slot Alignment Probability
+│   └── 18.1.3.2 Commentary Slot Alignment Duality
+│
+├── 18.1.4 Lemma Precursor Path Counting
+│   ├── 18.1.4.1 Proof Precursor Path Counting
+│   └── 18.1.4.2 Commentary Precursor Path Abundance
+│
+├── 18.1.5 Proof Primordial Loop Nucleation
+│
+├── 18.1.6 Calculation Loop Nucleation Current
+│
+├── 18.1.7 Diagram Triad Alignment Duality
+│
+├── 18.1.8 Lemma Topological Parity Projection
+│   ├── 18.1.8.1 Proof Topological Parity Projection
+│   └── 18.1.8.2 Commentary Parity Symmetry Duality
+│
+└── 18.1.9 Calculation Bipartite Parity Phase Transition
+```
 
 ---
 
@@ -753,9 +772,22 @@ Let $a(t)$ denote the cosmic scale factor satisfying the **Volume-Complexity Lin
 
 The proof of the **Discrete Friedmann Scaling Theorem** <Ref id="18.2.2" label="§18.2.2" /> is established by the integration of two pre-geometric metric lemmas:
 
-1.  **Metric Reconstruction** <Ref id="18.2.3" label="§18.2.3" />: We reconstruct the spatial metric by normalizing vertex path distances by the intensive cycle density.
-2.  **Geodesic Integration** <Ref id="18.2.4" label="§18.2.4" />: We integrate the causal interval over the spatial hypersurface to map geodesic separation to cycle counts.
-3.  **Scaling Synthesis** <Ref id="18.2.5" label="§18.2.5" />: We combine these metric scaling relations to prove that the macroscopic scale factor scales exactly as $a(t) \propto N_3(t)^{1/3}$.
+```text
+• 18.2.2 Theorem Discrete Friedmann Scaling
+├── 18.2.3 Lemma Metric Space Reconstruction
+│   ├── 18.2.3.1 Proof Metric Space Reconstruction
+│   └── 18.2.3.2 Commentary Metric Grid Normalization
+│
+├── 18.2.4 Lemma Hypersurface Geodesic Integration
+│   ├── 18.2.4.1 Proof Hypersurface Geodesic Integration
+│   └── 18.2.4.2 Commentary Fractal Length Dimension
+│
+├── 18.2.5 Proof Discrete Friedmann Scaling
+│
+├── 18.2.6 Calculation Scale Factor Expansion
+│
+└── 18.2.7 Diagram Volume-Complexity Projection
+```
 
 ---
 
@@ -1101,9 +1133,22 @@ Let $\rho(t)$ denote the intensive cycle density of the expanding graph under th
 
 The proof of the **Emergence of de Sitter Expansion Theorem** <Ref id="18.3.1" label="§18.3.1" /> is established by integrating two dynamical lemmas:
 
-1.  **Frictionless Growth** <Ref id="18.3.2" label="§18.3.2" />: We prove that early-phase growth simplifies to the quadratic Master Equation limit $\dot{\rho} \approx 9\rho^2 - \frac{1}{2}\rho$.
-2.  **Bipartite Expansion** <Ref id="18.3.3" label="§18.3.3" />: We prove that self-similar vertex additions keep the intensive cycle density nearly constant, stabilizing the per-capita growth.
-3.  **Scaling Synthesis** <Ref id="18.3.4" label="§18.3.4" />: We integrate these relations to derive the exponential scale factor growth $a(t) \propto e^{(r/3)t}$.
+```text
+• 18.3.1 Theorem Emergence of de Sitter Expansion
+├── 18.3.2 Lemma Frictionless Growth Simplification
+│   ├── 18.3.2.1 Proof Frictionless Growth Simplification
+│   └── 18.3.2.2 Commentary Frictionless Growth Velocity
+│
+├── 18.3.3 Lemma Self-Similar Bipartite Expansion
+│   ├── 18.3.3.1 Proof Self-Similar Bipartite Expansion
+│   └── 18.3.3.2 Commentary Substrate Growth Balance
+│
+├── 18.3.4 Proof Emergence of de Sitter Expansion
+│
+├── 18.3.5 Calculation de Sitter Scale Factor Growth
+│
+└── 18.3.6 Diagram de Sitter Expansion Phase Profile
+```
 
 ---
 
@@ -1426,9 +1471,28 @@ Let $\rho(t)$ denote the intensive cycle density flowing under the universal evo
 
 The proof of the **Dimensional Emergence Theorem** <Ref id="18.3.7" label="§18.3.7" /> is established by integrating two pre-geometric metric lemmas:
 
-1.  **Ahlfors Regularity** <Ref id="18.3.8" label="§18.3.8" />: We prove that the volume of a topological ball of radius $R$ scales as $|B(v, R)| \sim R^4$ at the stable attractor.
-2.  **Spectral Convergence** <Ref id="18.3.9" label="§18.3.9" />: We prove that random walk return probabilities converge to a spectral dimension $d_S \to 4$.
-3.  **Boundary-Bulk Synthesis** <Ref id="18.3.10" label="§18.3.10" />: We combine these scaling relations to prove that the Gromov-Hausdorff limit of the graph sequence is a smooth 4-dimensional manifold.
+```text
+• 18.3.7 Theorem Dimensional Emergence
+├── 18.3.8 Lemma Ahlfors Regularity Bounds
+│   ├── 18.3.8.1 Proof Ahlfors Regularity Bounds
+│   └── 18.3.8.2 Commentary Boundary Area Stabilization
+│
+├── 18.3.9 Lemma Spectral Dimension Convergence
+│   ├── 18.3.9.1 Proof Spectral Dimension Convergence
+│   └── 18.3.9.2 Commentary Infrared Operator Convergence
+│
+├── 18.3.10 Proof Dimensional Emergence
+│
+├── 18.3.11 Calculation Hausdorff Dimension Flow
+│
+├── 18.3.12 Diagram Dimensional Crystallization RG Flow
+│
+├── 18.3.13 Lemma Gromov-Hausdorff Laplacian Convergence
+│   ├── 18.3.13.1 Proof Gromov-Hausdorff Laplacian Convergence
+│   └── 18.3.13.2 Commentary Variational Energy Stability
+│
+└── 18.3.14 Calculation Heat Kernel Spectral Walks
+```
 
 ---
 
@@ -1964,9 +2028,28 @@ Let $P_{\mathcal{R}}(k)$ denote the primordial power spectrum of curvature pertu
 
 The proof of the **Spectral Index Red Tilt Theorem** <Ref id="18.4.1" label="§18.4.1" /> is established by integrating two pre-geometric physical lemmas:
 
-1.  **Slow-Roll Dynamics** <Ref id="18.4.2" label="§18.4.2" />: We prove that cycle density growth naturally satisfies the slow-roll conditions ($\varepsilon \ll 1, \eta \ll 1$) near the stable attractor.
-2.  **Noise Damping** <Ref id="18.4.3" label="§18.4.3" />: We prove that steric friction suppresses the stochastic update noise amplitude as density increases over time.
-3.  **Scaling Synthesis** <Ref id="18.4.4" label="§18.4.4" />: We combine these relations to derive the red-tilted power spectrum $P(k) \propto k^{-0.04}$.
+```text
+• 18.4.1 Theorem Spectral Index Red Tilt
+├── 18.4.2 Lemma Master Equation Slow-Roll Dynamics
+│   ├── 18.4.2.1 Proof Master Equation Slow-Roll Dynamics
+│   └── 18.4.2.2 Commentary Slow-Roll Attractor Dynamics
+│
+├── 18.4.3 Lemma Frictional Noise Damping
+│   ├── 18.4.3.1 Proof Frictional Noise Damping
+│   └── 18.4.3.2 Commentary Frictional Noise Damping
+│
+├── 18.4.4 Proof Spectral Index Red Tilt
+│
+├── 18.4.5 Calculation Power Spectrum Numerical Integration
+│
+├── 18.4.6 Diagram Slow-Roll Potential Horizon Exit
+│
+├── 18.4.7 Lemma Steric Damping Slow-Roll Bounds
+│   ├── 18.4.7.1 Proof Steric Damping Slow-Roll Bounds
+│   └── 18.4.7.2 Commentary Parameter Bounds Robustness
+│
+└── 18.4.8 Calculation Langevin Slow-Roll Parameter Audit
+```
 
 ---
 
@@ -2520,9 +2603,22 @@ Let $\rho^*$ denote the stable equilibrium density fixed point ($\rho^* \approx 
 
 The proof of the **Flatness as Stable Attractor Theorem** <Ref id="18.5.1" label="§18.5.1" /> is established by integrating two dynamical lemmas:
 
-1.  **Jacobian Linearization** <Ref id="18.5.2" label="§18.5.2" />: We calculate the Jacobian eigenvalue of the Master Equation at the fixed point, proving that perturbations are exponentially suppressed.
-2.  **Curvature Coupling** <Ref id="18.5.3" label="§18.5.3" />: We couple the macroscopic spatial curvature parameter to the intensive cycle density deviation.
-3.  **Attractor Synthesis** <Ref id="18.5.4" label="§18.5.4" />: We integrate these relations to prove that spatial curvature decays by a factor of $e^{-20}$ over the course of inflation.
+```text
+• 18.5.1 Theorem Flatness as Stable Attractor
+├── 18.5.2 Lemma Net Flux Jacobian Linearization
+│   ├── 18.5.2.1 Proof Net Flux Jacobian Linearization
+│   └── 18.5.2.2 Commentary Linearized Stability Analysis
+│
+├── 18.5.3 Lemma Curvature-Density Coupling
+│   ├── 18.5.3.1 Proof Curvature-Density Coupling
+│   └── 18.5.3.2 Commentary Curvature Backpressure Duality
+│
+├── 18.5.4 Proof Flatness as Stable Attractor
+│
+├── 18.5.5 Calculation Jacobian Eigenvalue Verification
+│
+└── 18.5.6 Diagram Flatness Restoring Force Phase Portrait
+```
 
 ---
 
@@ -2831,9 +2927,22 @@ Let $G_0$ represent the pre-geometric trivalent tree vacuum substrate with total
 
 The proof of the **Horizon Homogeneity via Pre-Geometric Connectivity Theorem** <Ref id="18.5.7" label="§18.5.7" /> is established by integrating two topological lemmas:
 
-1.  **Small-World Scaling** <Ref id="18.5.8" label="§18.5.8" />: We prove that a trivalent Bethe tree substrate has a logarithmic path length scaling $d(u,v) \le 2\log_2 N$.
-2.  **Propagator Spectrum** <Ref id="18.5.9" label="§18.5.9" />: We prove that the relational causal propagator matrix decays exponentially with topological distance.
-3.  **Homogeneity Synthesis** <Ref id="18.5.10" label="§18.5.10" />: We combine these relations to prove that the pre-geometric vacuum thermalizes globally before spatial dimensions crystallize.
+```text
+• 18.5.7 Theorem Horizon Homogeneity via Pre-Geometric Connectivity
+├── 18.5.8 Lemma Bethe Tree Small-World Scaling
+│   ├── 18.5.8.1 Proof Bethe Tree Small-World Scaling
+│   └── 18.5.8.2 Commentary Small-World Topological Scaling
+│
+├── 18.5.9 Lemma Relational Propagator Spectrum
+│   ├── 18.5.9.1 Proof Relational Propagator Spectrum
+│   └── 18.5.9.2 Commentary Relational Covariance Decay
+│
+├── 18.5.10 Proof Horizon Homogeneity via Pre-Geometric Connectivity
+│
+├── 18.5.11 Calculation Propagator Covariance Decay
+│
+└── 18.5.12 Diagram Small-World Information Diffusion
+```
 
 ---
 

@@ -42,8 +42,9 @@ qbd-portal/
 │   │   └── utils.py          # Topological constraint checks (PUC, AEC)
 │   ├── simulations/          # Executable experiments
 │   │   ├── repo/             # Simulations from the Monograph
-│   │   ├── sweep.py          # Phase space sweep for the Region of Physical Viability
-│   │   ├── ensemble.py       # Statistical ensemble runner
+│   │   ├── find_vacuum.py    # Phase space sweep for the Region of Physical Viability
+│   │   ├── run_ensemble.py   # Statistical ensemble runner
+│   │   └── test.py           # Verification script for local execution
 │   ├── tests/                # pyTest unit tests and code verification
 ├── docs/                     # Markdown source files for the Monograph
 ├── src/                      # React components for the Docusaurus frontend

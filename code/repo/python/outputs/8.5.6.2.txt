@@ -1,0 +1,18 @@
+--- QBD SU(2) Local State Space Verification ---
+Objective: Enumerate valid interaction channels on a single 3-cycle quantum.
+
+[Enumerated Channels]
+     Channel_Type       Location                 Operation  DoF_Count
+0  Active Rewrite  Edge_1 (u->v)           Flavor_Flip (+)          1
+1  Active Rewrite  Edge_1 (u->v)           Flavor_Flip (-)          1
+2  Active Rewrite  Edge_2 (v->w)           Flavor_Flip (+)          1
+3  Active Rewrite  Edge_2 (v->w)           Flavor_Flip (-)          1
+4  Active Rewrite  Edge_3 (w->u)           Flavor_Flip (+)          1
+5  Active Rewrite  Edge_3 (w->u)           Flavor_Flip (-)          1
+6   Passive Check     Full Cycle  Spin_Stabilizer (Z_rung)          1
+
+----------------------------------------
+Total Local Degrees of Freedom (M): 7
+----------------------------------------
+PASS: Combinatorial count matches the SU(2) multiplier (M=7).
+      (3 Orientations * 2 States) + 1 Stabilizer

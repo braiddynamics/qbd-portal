@@ -1,0 +1,16 @@
+══════════════════════════════════════════════════════════════════════
+COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE
+Robustness under Stochastic Generator Discovery Order
+══════════════════════════════════════════════════════════════════════
+
+Ensembles simulated       : 500
+Initial generators        : 2 (λ¹, λ⁴ – real off-diagonals)
+Average final dimension   : 8.00
+Probability of full closure (dim=8): 1.000 (100.0%)
+
+Distribution of final algebra dimensions:
+ Dimension  Count  Percentage
+         8    500       100.0
+
+──────────────────────────────────────────────────────────────────────
+RESULT: Deterministic closure confirmed.

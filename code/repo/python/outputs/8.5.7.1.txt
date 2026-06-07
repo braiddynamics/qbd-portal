@@ -1,0 +1,16 @@
+--- QBD Gauge Coupling (g) Consistency Check ---
+METRIC                    | VALUE      | NOTES
+-----------------------------------------------------------------
+Alpha_topo                | 0.1733     | ln(2)/4
+Multiplier (M)            | 7          | SU(2) DoF
+Equilibrium Density (rho) | 0.0290     | +/- 0.0050
+-----------------------------------------------------------------
+Predicted g (Mean)        | 0.6649     | Source: Thm 8.5.1
+Experimental g (PDG)      | 0.6530     | Benchmark
+Relative Error            | 1.82%      | < 2% Target
+-----------------------------------------------------------------
+Vacuum Confidence Interval (1-sigma)
+Lower Bound (rho - sigma): g = 0.6048
+Upper Bound (rho + sigma): g = 0.7199
+-----------------------------------------------------------------
+PASS: Experimental value falls within the natural vacuum fluctuation range.

@@ -408,10 +408,30 @@ This term acts as the **Thermodynamic Cost**. The linear component ($0.5\rho$) r
 
 The proof proceeds via Direct Construction, aggregating microscopic transition rates into a macroscopic continuum equation that governs structural density evolution.
 
-1.  **Vacuum Permittivity** <Ref id="5.2.3" label="§5.2.3" />: The argument isolates the spontaneous edge creation rate of the vacuum tree, establishing a non-zero base probability that ignites the system from a null geometric state.
-2.  **Autocatalytic Growth** <Ref id="5.2.4" label="§5.2.4" />: The argument quantifies the non-linear growth dynamics scaling quadratically with existing spatial density, representing the macroscopic driver of the geometric phase transition.
-3.  **Frictional Suppression** <Ref id="5.2.5" label="§5.2.5" />: The argument derives the exponential friction governor that dampens edge creation as density rises, modeling the increased likelihood of causal loop violations.
-4.  **Net Flux Synthesis** <Ref id="5.2.6" label="§5.2.6" /> <Ref id="5.2.7" label="§5.2.7" />: The argument aggregates creation and stress-catalyzed deletion rates, yielding the intensive density master equation that stabilizes at a finite spatial equilibrium.
+```text
+• 5.2.2.1 Commentary Anatomy of an Equation
+├── 5.2.3 Lemma Vacuum Permittivity ($\Lambda$)
+│   ├── 5.2.3.1 Proof Vacuum Permittivity ($\Lambda$)
+│   └── 5.2.3.2 Commentary Spark of Existence
+│
+├── 5.2.4 Lemma Geometric Autocatalysis ($J_{auto}$)
+│   ├── 5.2.4.1 Proof Geometric Autocatalysis ($J_{auto}$)
+│   ├── 5.2.4.2 Calculation Precursor Scaling Verification
+│   └── 5.2.4.3 Commentary Nonlinear Dynamics
+│
+├── 5.2.5 Lemma Frictional Suppression ($P_{acc}$)
+│   ├── 5.2.5.1 Proof Frictional Suppression ($P_{acc}$)
+│   ├── 5.2.5.2 Calculation Friction Verification
+│   └── 5.2.5.3 Commentary Saturation Mechanism
+│
+├── 5.2.6 Lemma Entropic & Catalytic Decay ($J_{out}$)
+│   ├── 5.2.6.1 Proof Entropic & Catalytic Decay ($J_{out}$)
+│   ├── 5.2.6.2 Calculation Stress-Decay Verification
+│   └── 5.2.6.3 Commentary Stress-Deletion Coupling
+│
+└── 5.2.7 Proof Master Equation
+    └── 5.2.7.1 Calculation Equation Verification
+```
 
 ---
 
@@ -1409,9 +1429,20 @@ Assume the kinetic parameters satisfy the boundaries established by **Global Sta
 
 The proof proceeds via formal verification, constructing a linearized dynamic for the net flux function to evaluate the stability of the equilibrium point.
 
-1.  **Flux Linearization** <Ref id="5.4.1" label="§5.4.1" />: The argument instantiates the Jacobian derivative representation for the net flux function, establishing the mathematical conditions required for an asymptotic attractor.
-2.  **Boundary Gradient Evaluation** <Ref id="5.4.3" label="§5.4.3" />: The argument evaluates the net flux function across asymptotic limits, proving that the creation current dominates at zero density while the deletion current dominates at high density.
-3.  **Local Perturbation Damping** <Ref id="5.4.4" label="§5.4.4" /> <Ref id="5.4.5" label="§5.4.5" />: The argument limits the space of admissible kinetic coefficients, ensuring that stress-induced cycle pruning does not outpace the autocatalytic creation potential of the vacuum.
+```text
+• 5.4.2 Theorem Vacuum Stability
+├── 5.4.3 Lemma Global Stability
+│   ├── 5.4.3.1 Proof Global Stability
+│   └── 5.4.3.2 Commentary Inevitability of Structure
+│
+├── 5.4.4 Lemma Catalysis Bounds
+│   ├── 5.4.4.1 Proof Catalysis Bounds
+│   └── 5.4.4.2 Commentary Stability Buffer
+│
+├── 5.4.5 Proof Vacuum Stability
+│
+└── 5.4.6 Validation via Lean 4 Core
+```
 
 ---
 

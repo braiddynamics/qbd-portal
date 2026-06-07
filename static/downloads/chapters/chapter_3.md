@@ -90,10 +90,47 @@ This structure constitutes the unique topological solution compatible with the s
 
 The argument proceeds by sequentially eliminating alternative graph configurations, carving the unique acyclic vacuum state out of the space of all possible directed graphs.
 
-1.  **Existence Finiteness** <Ref id="3.1.4" label="§3.1.4" />: The argument establishes graph existence and finiteness, proving that the initial vertex set must be finite to satisfy well-foundedness of the causal order.
-2.  **Cyclic Exclusion** <Ref id="3.1.5" label="§3.1.5" /> <Ref id="3.1.6" label="§3.1.6" /> <Ref id="3.1.7" label="§3.1.7" />: The argument systematically excludes all cyclic topologies, proving that reflexivity, reciprocity, and higher-order loops violate causal constraints and restricting the vacuum to a directed acyclic graph.
-3.  **Sparsity Enforcement** <Ref id="3.1.8" label="§3.1.8" /> <Ref id="3.1.9" label="§3.1.9" />: The argument enforces tree sparsity, demonstrating that any excess edge density creates redundant paths that violate the Principle of Unique Causality.
-4.  **Bipartition Identification** <Ref id="3.1.10" label="§3.1.10" /> <Ref id="3.1.11" label="§3.1.11" /> <Ref id="3.1.12" label="§3.1.12" />: The argument identifies the depth-parity bipartition, proving that odd-length cycles are topologically suppressed and isolating the directed tree as the unique initial state.
+```text
+• 3.1.3 Theorem Vacuum Structure
+├── 3.1.3.2 Diagram Topology of Genesis
+│
+├── 3.1.4 Lemma Existence and Finiteness
+│   ├── 3.1.4.1 Proof Existence and Finiteness
+│   └── 3.1.4.2 Commentary Problem of Infinity
+│
+├── 3.1.5 Lemma Exclusion of Reflexivity and Reciprocity
+│   ├── 3.1.5.1 Proof Exclusion of Reflexivity and Reciprocity
+│   └── 3.1.5.2 Commentary Mirror and the Echo
+│
+├── 3.1.6 Lemma Exclusion of Cyclic Paths
+│   ├── 3.1.6.1 Proof Exclusion of Cyclic Paths
+│   └── 3.1.6.2 Commentary Infinite Staircase
+│
+├── 3.1.7 Lemma Global Acyclicity
+│   ├── 3.1.7.1 Proof Global Acyclicity
+│   ├── 3.1.7.2 Calculation DAG Verification
+│   └── 3.1.7.3 Commentary River of Time
+│
+├── 3.1.8 Lemma Global Connectivity
+│   ├── 3.1.8.1 Proof Minimization of Automorphisms
+│   ├── 3.1.8.2 Calculation Connectivity Counterexample
+│   └── 3.1.8.3 Commentary Unity of the Vacuum
+│
+├── 3.1.9 Lemma Path Uniqueness and Sparsity
+│   ├── 3.1.9.1 Proof Tree Condition
+│   └── 3.1.9.2 Commentary Efficiency of the Tree
+│
+├── 3.1.10 Lemma Depth-Parity Bipartition
+│   ├── 3.1.10.1 Proof Depth-Parity Bipartition
+│   └── 3.1.10.2 Commentary Stratification of Spacetime
+│
+├── 3.1.11 Lemma Exclusion of Odd Cycles
+│   ├── 3.1.11.1 Proof Exclusion of Odd Cycles
+│   └── 3.1.11.2 Commentary Impossibility of Accidental Geometry
+│
+└── 3.1.12 Proof Demonstration of the Vacuum Structure
+    └── 3.1.12.2 Diagram Bipartite Vacuum Structure
+```
 
 ### 3.1.3.2 Diagram: Topology of Genesis {#3.1.3.2}
 
@@ -867,10 +904,38 @@ This structure serves as the unique optimal pre-geometric substrate that the axi
 
 The proof proceeds by sequentially eliminating suboptimal topologies, applying independent axiomatic filters to reduce the space of candidate vacuum states to a unique regular tree.
 
-1.  **Pre-Geometric Exclusion** <Ref id="3.2.2" label="§3.2.2" /> <Ref id="3.2.3" label="§3.2.3" />: The argument eliminates cyclic, reflexive, and short-range loop topologies, enforcing the strict irreflexivity and pre-geometric girth of the vacuum.
-2.  **Sparsity Filtering** <Ref id="3.2.4" label="§3.2.4" /> <Ref id="3.2.5" label="§3.2.5" />: The argument rejects disconnected states and redundant directed paths, establishing weak connectivity and exact tree sparsity to preserve unique causality.
-3.  **Homogeneity Optimization** <Ref id="3.2.6" label="§3.2.6" /> <Ref id="3.2.7" label="§3.2.7" /> <Ref id="3.2.8" label="§3.2.8" />: The argument maximizes active rewrite sites and enforces uniform degree regularity and level-transitive branching, ensuring spatial isotropy and homogeneous physical laws.
-4.  **Metric Convergence** <Ref id="3.2.9" label="§3.2.9" /> <Ref id="3.2.10" label="§3.2.10" /> <Ref id="3.2.11" label="§3.2.11" />: The argument evaluates candidates under a weighted global symmetry and local homogeneity metric, deriving the regular Bethe fragment as the unique optimal initial state.
+```text
+• 3.2.1.2 Diagram Fragment Topology
+├── 3.2.2 Lemma Exclusion of Cyclic Topologies
+│   └── 3.2.2.1 Proof Exclusion of Cyclic Topologies
+│
+├── 3.2.3 Lemma Exclusion of Short-Range Loops
+│   └── 3.2.3.1 Proof Exclusion of Short-Range Loops
+│
+├── 3.2.4 Lemma Exclusion of Disconnected States
+│   ├── 3.2.4.1 Proof Exclusion of Disconnected States
+│   └── 3.2.4.2 Commentary One Universe
+│
+├── 3.2.5 Lemma Exclusion of Redundant DAGs
+│   ├── 3.2.5.1 Proof Exclusion of Redundant DAGs
+│   └── 3.2.5.2 Commentary Efficiency of Sparsity
+│
+├── 3.2.6 Lemma Site Maximality
+│   ├── 3.2.6.1 Proof Branching Optimization
+│   └── 3.2.6.2 Commentary Parallel Processing
+│
+├── 3.2.7 Lemma Degree Regularity
+│   ├── 3.2.7.1 Proof Degree Regularity
+│   ├── 3.2.7.2 Calculation Entropy Comparison
+│   └── 3.2.7.3 Commentary Democracy of the Vacuum
+│
+├── 3.2.8 Lemma Orbit Transitivity
+│   ├── 3.2.8.1 Proof Orbit Transitivity
+│   └── 3.2.8.2 Commentary Symmetry Breaking
+│
+└── 3.2.9 Lemma Structural Optimality Metric
+    └── 3.2.9.1 Proof Metric Validity
+```
 
 ---
 
@@ -1791,9 +1856,19 @@ It is asserted that an update map $\mathcal{U}: G_0 \to G_1$ preserves the full 
 
 The proof proceeds via Direct Construction, establishing that a maximally parallel scheduler is both necessary and sufficient to preserve the background symmetry of the vacuum state.
 
-1.  **Sufficiency Verification** <Ref id="3.3.4" label="§3.3.4" />: The argument establishes that a maximally parallel update preserves graph automorphisms, utilizing the equivariance of the site definition to guarantee that symmetric inputs yield symmetric outputs.
-2.  **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />: The argument verifies that symmetry is preserved under overlapping update sites, demonstrating that equivariant conflict resolution rules prevent symmetry-breaking coordination collapses.
-3.  **Necessity Demonstration** <Ref id="3.3.7" label="§3.3.7" />: The argument demonstrates that any sequential or non-maximal scheduling of updates introduces distinguishing selections that partition symmetric orbits, proving that partial parallelism collapses the automorphism group.
+```text
+• 3.3.3 Theorem Preservation of Automorphisms
+├── 3.3.3.2 Diagram Scheduler Symmetry Outcomes
+│
+├── 3.3.4 Lemma Equivariance of Site Definition
+│   ├── 3.3.4.1 Proof Equivariance of Site Definition
+│   └── 3.3.4.2 Commentary Physical Justification
+│
+└── 3.3.5 Lemma Conflict Resolution
+    ├── 3.3.5.1 Proof Conflict Resolution
+    ├── 3.3.5.2 Calculation Cycle Resolution
+    └── 3.3.5.3 Calculation Symmetry Metrics Pre/Post-Update
+```
 
 ### 3.3.3.2 Diagram: Scheduler Symmetry Outcomes {#3.3.3.2}
 
@@ -2312,10 +2387,25 @@ The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** charact
 
 The proof proceeds via Direct Construction, establishing a deterministic causal sequence that drives the transition from an inert vacuum to an active, expanding geometry.
 
-1.  **Instability Diagnosis** <Ref id="3.4.2" label="§3.4.2" />: The argument isolates topological tunneling, proving that the distance between the static, bipartite vacuum and an active, non-bipartite state is exactly one single-edge fluctuation.
-2.  **Nucleation Verification** <Ref id="3.4.3" label="§3.4.3" />: The argument proves that a symmetry-breaking edge fluctuation immediately constructs a compliant update site, converting the inert tree into an active domain.
-3.  **Catalytic Ignition** <Ref id="3.4.4" label="§3.4.4" />: The argument establishes that the execution of the first rewrite generates a stable directed three-cycle, creating the first geometric quantum that acts as a catalyst for subsequent updates.
-4.  **Inevitable Progression** <Ref id="3.4.5" label="§3.4.5" /> <Ref id="3.4.6" label="§3.4.6" />: The argument derives a strictly positive lower bound for the transition probability, proving that the geometric phase transition completes on finite logical timescales.
+```text
+• 3.4.1 Theorem Inevitable Geometrogenesis
+├── 3.4.2 Lemma Topological Tunneling
+│   ├── 3.4.2.1 Proof Symmetry Breaking
+│   └── 3.4.2.2 Commentary Minimal Fluctuation
+│
+├── 3.4.3 Lemma Nucleation of Compliant Sites
+│   └── 3.4.3.1 Proof Nucleation of Compliant Sites
+│
+├── 3.4.4 Lemma First Geometric Quantum
+│   ├── 3.4.4.1 Proof First Geometric Quantum
+│   └── 3.4.4.2 Commentary Spark of Geometry
+│
+├── 3.4.5 Lemma Ignition Probability
+│   └── 3.4.5.1 Proof Ignition Probability
+│
+└── 3.4.6 Proof Demonstration of Inevitable Ignition
+    └── 3.4.6.1 Calculation Simulated Ignition Trajectories
+```
 
 ---
 
@@ -2794,10 +2884,36 @@ There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set 
 
 The proof proceeds via Direct Construction, establishing a rigorous algebraic mapping that binds the configurations of Quantum Braid Dynamics to a stabilizer quantum error-correcting code.
 
-1.  **Hilbert Embedding** <Ref id="3.5.3" label="§3.5.3" />: The argument constructs the configuration space mapping, proving that combinatorial graph states faithfully embed into an edge-qubit Hilbert space as orthogonal basis states.
-2.  **Projector Filtering** <Ref id="3.5.4" label="§3.5.4" />: The argument verifies that the physical acyclicity and constructibility axioms are strictly enforced by stabilizer projector operators.
-3.  **Syndrome Extraction** <Ref id="3.5.5" label="§3.5.5" /> <Ref id="3.5.6" label="§3.5.6" />: The argument defines the local check operators, proving that non-destructive syndrome measurements uniquely classify graph configurations into vacuum, tension, or excitation sectors.
-4.  **Codeword Synthesis** <Ref id="3.5.7" label="§3.5.7" /> <Ref id="3.5.8" label="§3.5.8" />: The argument confirms that the initial vacuum state corresponds to a non-trivial joint eigenvalue of the stabilizer generators, proving that the physical vacuum exists as a valid code codeword.
+```text
+• 3.5.2 Theorem Stabilizer Isomorphism
+├── 3.5.3 Lemma Configuration Space Validity
+│   ├── 3.5.3.1 Proof Mapping Validity
+│   ├── 3.5.3.2 Commentary Operator Interpretation
+│   └── 3.5.3.3 Diagram Z/X Duality
+│
+├── 3.5.4 Lemma Hard Constraint Validity
+│   ├── 3.5.4.1 Proof Projector Validity
+│   ├── 3.5.4.2 Calculation Eigenvalue Verification
+│   └── 3.5.4.3 Commentary Justification of the Undirected Metric
+│
+├── 3.5.5 Lemma Syndrome Classification of Triplet Configurations
+│   ├── 3.5.5.1 Proof Syndrome Classification of Triplet Configurations
+│   ├── 3.5.5.2 Calculation Qubit Syndrome Table
+│   └── 3.5.5.3 Commentary Physical Interpretation of Syndromes
+│
+├── 3.5.6 Lemma Stabilizer Commutativity
+│   └── 3.5.6.1 Proof Stabilizer Commutativity
+│
+├── 3.5.7 Lemma Codespace Non-Triviality
+│   └── 3.5.7.1 Proof Codespace Non-Triviality
+│
+├── 3.5.8 Proof Demonstration of the Stabilizer Isomorphism
+│   └── 3.5.8.2 Diagram Stabilizer Isomorphism
+│
+├── 3.5.9 Validation via Lean 4 Core
+│
+└── 3.5.10 Commentary Parity Closure and the Abelian Group Structure
+```
 
 ---
 
@@ -3059,7 +3175,7 @@ The simulation output confirms the fundamental operation of the stabilizer code.
 
 This parity check provides the mechanism for **Error Detection**. A local rewrite operation corresponds to a Pauli-X bit flip. A single bit flip (e.g., `|0000>` $\to$ `|1000>`) transitions the system from a $+1$ eigenstate to a $-1$ eigenstate. This spectral gap allows the vacuum to detect topological violations (such as open strings or forbidden 2-cycles) purely through the measurement of local operators, without requiring global knowledge of the graph state. The set of valid states forms the kernel of the error syndrome, ensuring that the physical vacuum is a protected topological phase.
 
-### 3.5.4.2 Commentary: Justification of the Undirected Metric {#3.5.4.2}
+### 3.5.4.3 Commentary: Justification of the Undirected Metric {#3.5.4.3}
 
 :::info[**Requirement of the Undirected Metric for Spatial Locality Definition**]
 :::

@@ -1,0 +1,2 @@
+Base Rate (Intercept): 0.0643
+Catalytic Coeff (Slope): 0.0904

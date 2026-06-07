@@ -1,0 +1,7 @@
+--- INTEGRATION TEST: Cluster Decomposition (Correlation Decay) ---
+Mass Parameter: 0.5
+Measured Correlation Length: 2.0170
+Correlation at x=0:  0.9701
+Correlation at x=10: 0.006877
+PASS: Correlations decay with distance (Cluster Decomposition).
+      System supports local massive particles.

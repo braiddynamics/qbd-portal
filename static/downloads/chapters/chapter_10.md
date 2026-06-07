@@ -101,10 +101,27 @@ It is asserted that the topological pair $\{|\beta_e\rangle, |\beta_{e*}\rangle\
 
 The proof proceeds via Direct Construction, evaluating candidate subgraphs against the storage, control, and measurement requirements for physical information storage.
 
-1. **The Topological Stability** <Ref id="10.1.3" label="§10.1.3" />: The argument establishes that logical qubit states correspond to stable minima in the topological complexity landscape.
-2. **The Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />: The argument verifies that the basis states are topologically distinct and orthogonal under ambient isotopy.
-3. **State Controllability** <Ref id="10.1.5" label="§10.1.5" />: The argument constructs transition Hamiltonians to prove that the states can be toggled via writhe shuffling.
-4. **The Measurability (the **measurability lemma** <Ref id="10.1.6" label="§10.1.6" />, the **qubit optimality proof** <Ref id="10.1.7" label="§10.1.7" />):** The argument defines the color charge observable to prove projective readouts and synthesizes these features to prove the optimality of the tripartite qubit.
+```text
+• 10.1.2 Theorem Qubit Optimality
+├── 10.1.3 Lemma Topological Stability
+│   ├── 10.1.3.1 Proof Stability Verification
+│   └── 10.1.3.2 Commentary Protected Bit
+│
+├── 10.1.4 Lemma Topological Distinctness
+│   ├── 10.1.4.1 Proof Isotopy Verification
+│   └── 10.1.4.2 Commentary Geometric Orthogonality
+│
+├── 10.1.5 Lemma State Controllability
+│   ├── 10.1.5.1 Proof Transition Hamiltonian Construction
+│   └── 10.1.5.2 Commentary Writhe Shuffle
+│
+├── 10.1.6 Lemma Basis Measurability
+│   ├── 10.1.6.1 Proof Basis Measurability
+│   └── 10.1.6.2 Commentary Color Readout
+│
+└── 10.1.7 Proof Qubit Optimality
+    └── 10.1.7.1 Diagram Color Measurement
+```
 
 ---
 
@@ -530,10 +547,35 @@ It is asserted that the stabilizer group $\mathcal{S}$ defines a mathematically 
 
 The proof proceeds via Direct Construction, establishing a mutually commuting set of stabilizer check operators to define the logical codespace.
 
-1. **The Stabilizer Commutations (the **stabilizer commutations lemma** <Ref id="10.2.3" label="§10.2.3" />, the **ribbon stabilizer commutations lemma** <Ref id="10.2.5" label="§10.2.5" />, the **vertex stabilizer commutations lemma** <Ref id="10.2.7" label="§10.2.7" />):** The argument establishes the mutual commutation of the geometric, ribbon, and vertex stabilizers, satisfying the abelian stabilizer group requirement.
-2. **The Bit-Flip and Fraying Detection (the **bit-flip error detection lemma** <Ref id="10.2.4" label="§10.2.4" />, the **fraying error detection lemma** <Ref id="10.2.6" label="§10.2.6" />):** The argument proves that single-qubit errors and ribbon fraying defects map to unique stabilizer syndrome patterns.
-3. **The Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />: The argument demonstrates the detection of phase flips through check operator overlaps.
-4. **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />: The argument synthesizes these commutation and detection properties to prove that the stabilizers constitute a consistent quantum error-correcting code of distance three or greater.
+```text
+• 10.2.2 Theorem Braid Code Consistency
+├── 10.2.3 Lemma Geometric Commutation
+│   ├── 10.2.3.1 Proof Commutation Verification
+│   └── 10.2.3.2 Commentary Even-Overlap Rule
+│
+├── 10.2.4 Lemma Bit-Flip Localization
+│   ├── 10.2.4.1 Proof Error Localization Logic
+│   └── 10.2.4.2 Commentary Error Triangulation
+│
+├── 10.2.5 Lemma Ribbon Integrity Commutation
+│   ├── 10.2.5.1 Proof Ribbon Commutation Verification
+│   └── 10.2.5.2 Commentary Strand Verification
+│
+├── 10.2.6 Lemma Fraying Detection
+│   ├── 10.2.6.1 Proof Fraying Detection Logic
+│   └── 10.2.6.2 Commentary Fray Identification
+│
+├── 10.2.7 Lemma Vertex Commutation
+│   ├── 10.2.7.1 Proof Vertex Commutation Verification
+│   └── 10.2.7.2 Commentary Flow Consistency
+│
+├── 10.2.8 Lemma Phase Error Detection
+│   ├── 10.2.8.1 Proof Phase Detection Logic
+│   └── 10.2.8.2 Commentary Phase Flip Discovery
+│
+└── 10.2.9 Proof Synthesis of Code Properties
+    └── 10.2.9.1 Calculation Stabilizer Commutativity Verification
+```
 
 ---
 
@@ -970,9 +1012,16 @@ It is asserted that the topological qubit constitutes a quantum error-correcting
 
 The proof proceeds via Direct Construction, utilizing topological distance and thermodynamic feedback loops to self-correct local defects.
 
-1. **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />: The argument establishes that error syndromes trigger localized thermodynamic stress.
-2. **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" />: The argument verifies that the minimum weight of an undetectable logical operator is three, ensuring code distance protection.
-3. **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" />: The argument proves that the evolution operator naturally deletes high-stress syndrome defects to restore the error-free codespace.
+```text
+• 10.3.2 Theorem Topological Fault Tolerance
+├── 10.3.3 Lemma Syndrome Flipping
+│   ├── 10.3.3.1 Proof Syndrome Flipping Logic
+│   └── 10.3.3.2 Commentary Alarm System
+│
+└── 10.3.4 Lemma Minimum Weight
+    ├── 10.3.4.1 Proof Weight Analysis
+    └── 10.3.4.2 Commentary Coincidence Robustness
+```
 
 ---
 
@@ -1242,9 +1291,18 @@ It is asserted that the rewrite process $\mathcal{R}_X$ implements the unitary P
 
 The proof proceeds via Direct Construction, executing a charge-conserving rewrite sequence to implement the bit-flip operation on logical states.
 
-1. **The Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />: The argument proves that writhe-shuffling operations preserve the global writhe sum.
-2. **The Charge Conservation** <Ref id="10.4.4" label="§10.4.4" />: The argument verifies that the redistribution of writhe does not violate electric charge conservation.
-3. **Logical X Gate** <Ref id="10.4.5" label="§10.4.5" />: The argument demonstrates that the writhe-shuffling sequence implements the exact unitary transformation of the logical Pauli-X gate on basis states.
+```text
+• 10.4.2 Theorem Logical X Gate
+├── 10.4.3 Lemma Writhe Conservation
+│   ├── 10.4.3.1 Proof Invariance Verification
+│   └── 10.4.3.2 Commentary Writhe Shuffle
+│
+├── 10.4.4 Lemma Charge Conservation
+│   ├── 10.4.4.1 Proof Charge Invariance Verification
+│   └── 10.4.4.2 Commentary Conservation Permission
+│
+└── 10.4.5 Proof Logical X Gate
+```
 
 ---
 
@@ -1424,9 +1482,18 @@ It is asserted that the **Logical Z Gate** is implemented by a Quantum Non-Demol
 
 The proof proceeds via Direct Construction, exploiting state-dependent gauge interactions to implement the logical phase flip.
 
-1. **The Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />: The argument proves that the symmetric ground state does not couple to the color probe, accumulating zero phase.
-2. **Color Phase** <Ref id="10.5.3" label="§10.5.3" />: The argument demonstrates that the asymmetric excited state carries color charge, acquiring a geometric phase of pi.
-3. **Logical Z Gate** <Ref id="10.5.4" label="§10.5.4" />: The argument combines these state-dependent phase responses to prove the execution of the logical Pauli-Z gate.
+```text
+• 10.5.1 Theorem Logical Z Gate
+├── 10.5.2 Lemma Singlet Transparency
+│   ├── 10.5.2.1 Proof Trivial Representation Analysis
+│   └── 10.5.2.2 Commentary Invisible Qubit
+│
+├── 10.5.3 Lemma Color Phase
+│   ├── 10.5.3.1 Proof Non-Trivial Holonomy Analysis
+│   └── 10.5.3.2 Commentary Phase Imprint
+│
+└── 10.5.4 Proof Logical Z Gate
+```
 
 ---
 
@@ -1616,9 +1683,19 @@ It is asserted that the **Hadamard Gate** is implemented by a thermodynamic rewr
 
 The proof proceeds via Direct Construction, using thermal mixing and rapid quenches to prepare unbiased superposition states.
 
-1. **Temperature Control** <Ref id="10.6.2" label="§10.6.2" />: The argument demonstrates that modulating local graph activity creates a transient high-temperature state that lowers stability barriers.
-2. **The Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" />: The argument proves that the basis states are energetically degenerate, ensuring an unbiased uniform distribution at high temperatures.
-3. **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" />: The argument verifies that rapid cooling freezes the uniform distribution into a coherent superposition, implementing the Hadamard gate.
+```text
+• 10.6.1 Theorem Hadamard Gate
+├── 10.6.2 Lemma Temperature Control
+│   ├── 10.6.2.1 Proof Thermo-Modulation Verification
+│   └── 10.6.2.2 Commentary Superposition Engine
+│
+├── 10.6.3 Lemma Topological Degeneracy
+│   ├── 10.6.3.1 Proof Mass Equality Verification
+│   └── 10.6.3.2 Commentary Unbiased Mixing
+│
+└── 10.6.4 Proof Hadamard Gate
+    └── 10.6.4.1 Calculation Hadamard Quench Verification
+```
 
 ---
 
@@ -1856,9 +1933,18 @@ It is asserted that the **Controlled-Z Gate** is implemented by a composite proc
 
 The proof proceeds via Direct Construction, linking qubit environments to implement conditional phase shifts.
 
-1. **The Syndrome Coupling** <Ref id="10.7.2" label="§10.7.2" />: The argument establishes that a topological bridge allows the stress syndrome of the control qubit to couple to the target qubit's environment.
-2. **Control Dynamics** <Ref id="10.7.3" label="§10.7.3" />: The argument proves that the excited control state acts as a catalyst to lower rewrite barriers for the target qubit while the ground control state inhibits them.
-3. **Controlled-Z Gate** <Ref id="10.7.4" label="§10.7.4" />: The argument demonstrates that this conditional catalysis executes a phase flip if and only if the control qubit is excited, reproducing the Controlled-Z gate.
+```text
+• 10.7.1 Theorem Controlled-Z Gate
+├── 10.7.2 Lemma Syndrome Coupling
+│   ├── 10.7.2.1 Proof Bridge Construction Verification
+│   └── 10.7.2.2 Commentary Logic Wire
+│
+├── 10.7.3 Lemma Control Dynamics
+│   ├── 10.7.3.1 Proof Conditional Friction Verification
+│   └── 10.7.3.2 Commentary Entanglement Switch
+│
+└── 10.7.4 Proof Controlled-Z Gate
+```
 
 ---
 
@@ -2087,10 +2173,34 @@ It is asserted that the process $\mathcal{R}_T$ implements the non-Clifford phas
 
 The proof proceeds via Direct Construction, utilizing ribbon category Twist structures to execute fractional self-interactions.
 
-1. **The Category and Monoidal Foundations (the **category structures lemma** <Ref id="10.8.3" label="§10.8.3" />, the **monoidal structures lemma** <Ref id="10.8.4" label="§10.8.4" />):** The argument establishes the category and monoidal structures of the braid system, proving consistent composition and system combination rules.
-2. **The Braiding and Duality (the **braiding structures lemma** <Ref id="10.8.5" label="§10.8.5" />, the **duality structures lemma** <Ref id="10.8.6" label="§10.8.6" />):** The argument verifies braiding and duality structures, validating exchange rules and matter-antimatter conjugates.
-3. **Twist Structure** <Ref id="10.8.7" label="§10.8.7" />: The argument instantiates the twisting morphism to construct the self-braiding operation.
-4. **T-Gate** <Ref id="10.8.8" label="§10.8.8" />: The argument combines these categorical structures to prove that the self-braiding operation implements the exact phase shift of pi over four required for the T-gate.
+```text
+• 10.8.2 Theorem T-Gate
+├── 10.8.3 Lemma Ribbon Category
+│   ├── 10.8.3.1 Proof Category Property Verification
+│   └── 10.8.3.2 Commentary Ribbon Algebra
+│
+├── 10.8.4 Lemma Monoidal Structure
+│   ├── 10.8.4.1 Proof Monoidal Verification
+│   └── 10.8.4.2 Commentary System Combination
+│
+├── 10.8.5 Lemma Braiding Structure
+│   ├── 10.8.5.1 Proof Braiding Verification
+│   └── 10.8.5.2 Commentary Exchange Rules
+│
+├── 10.8.6 Lemma Duality Structure
+│   ├── 10.8.6.1 Proof Duality Verification
+│   └── 10.8.6.2 Commentary Matter-Antimatter
+│
+├── 10.8.7 Lemma Twist Structure
+│   ├── 10.8.7.1 Proof Twist Verification
+│   └── 10.8.7.2 Commentary Spin Phase
+│
+├── 10.8.8 Proof T-Gate
+│   └── 10.8.8.1 Calculation T-Gate Phase Verification
+│
+└── 10.8.9 Corollary Gate Set Universality
+    └── 10.8.9.1 Proof Set Completeness Verification
+```
 
 ---
 
@@ -2446,8 +2556,20 @@ It is asserted that the physical gate set $\mathcal{G}_{phys} = \{\mathcal{R}_H,
 
 The proof proceeds via Direct Construction, utilizing Solovay-Kitaev approximations to establish the Turing-completeness of the braid gate set.
 
-1. **The Clifford Generation** <Ref id="10.9.2" label="§10.9.2" />: The argument proves that the Phase and Controlled-NOT gates are constructible from Hadamard, Controlled-Z, and T gate primitives.
-2. **Computational Universality** <Ref id="10.9.3" label="§10.9.3" />: The argument invokes the Solovay-Kitaev theorem to show that the Clifford group plus the T gate generates a dense subset of the special unitary group, allowing arbitrary approximation of any unitary matrix.
+```text
+• 10.9.1 Theorem Group Closure
+├── 10.9.2 Lemma Clifford Generation
+│   └── 10.9.2.1 Proof Group Closure Verification
+│
+├── 10.9.3 Proof Computational Universality
+│   └── 10.9.3.1 Calculation Solovay-Kitaev Verification
+│
+└── 10.9.4 Example Shor's Algorithm Implementation
+    ├── 10.9.4.1 Calculation Shor's Algorithm
+    ├── 10.9.4.2 Commentary Simulation Implications
+    ├── 10.9.4.3 Diagram Circuit Schematic
+    └── 10.9.4.4 Diagram Braid Circuit
+```
 
 ---
 

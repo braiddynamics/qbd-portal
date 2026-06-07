@@ -107,9 +107,20 @@ where $\Delta_g$ is the Laplace-Beltrami operator on $M$ and $\rho(x)$ is a smoo
 
 The proof proceeds via Direct Construction, establishing that the discrete lapse function converges to a smooth scalar field in the continuum.
 
-1.  **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" />: The argument demonstrates that the discrete lapse minimizes a local variance functional, satisfying a discrete Dirichlet problem.
-2.  **Sobolev Convergence** <Ref id="14.1.5" label="§14.1.5" />: The argument proves the spectral convergence of the discrete Laplacian to the continuous Laplace-Beltrami operator.
-3.  **Smooth Time Foliation** <Ref id="14.1.6" label="§14.1.6" />: The argument utilizes elliptic regularity to bootstrap the weak convergence of the lapse into a smooth $C^\infty$ field.
+```text
+• 14.1.2 Theorem Smoothness of the Lapse
+├── 14.1.3 Lemma Local Causal Averages
+│   ├── 14.1.3.1 Proof Construction via Mollification
+│   ├── 14.1.3.2 Calculation Lapse Function Smoothness
+│   └── 14.1.3.3 Commentary Suppressing Shot Noise
+│
+├── 14.1.5 Lemma Sobolev Convergence
+│   ├── 14.1.5.1 Proof Convergence in $H^k$ Norms
+│   └── 14.1.5.2 Commentary No Fractal Edges in Time
+│
+└── 14.1.6 Proof Smooth Time Foliation
+    └── 14.1.6.1 Calculation Global Monotonicity Check
+```
 
 ---
 
@@ -545,11 +556,30 @@ The sequence of causal graphs $\{G_t\}$, in the thermodynamic limit $t \to \inft
 
 The proof proceeds via Direct Construction, establishing a rigorous diffeomorphism between the discrete causal graph and a smooth Lorentzian manifold.
 
-1.  **The Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />: The argument verifies the existence of local flat frames, proving that the tangent space is locally Minkowskian.
-2.  **The Causal Isomorphism** <Ref id="14.2.4" label="§14.2.4" />: The argument establishes that the topological order of the graph maps bijectively to the light-cone ordering of the manifold.
-3.  **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />: The argument demonstrates that the metric null boundary corresponds to the maximum speed of information propagation on the graph.
-4.  **The Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" />: The argument verifies the existence of Cauchy surfaces, preventing the formation of closed timelike curves.
-5.  **The Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />: The argument applies stationary phase analysis to prove that topological defects trace extremal paths matching geodesic trajectories.
+```text
+• 14.2.2 Theorem Emergent Lorentzian Manifold
+├── 14.2.3 Lemma Emergent Tetrad
+│   ├── 14.2.3.1 Proof Frame Orthogonality via Graph Laplacian
+│   └── 14.2.3.2 Commentary Coupling Matter to Geometry
+│
+├── 14.2.4 Lemma Causal Isomorphism
+│   ├── 14.2.4.1 Proof Limit of Transitive Closure
+│   └── 14.2.4.2 Commentary Skeleton of Spacetime
+│
+├── 14.2.5 Lemma Coincidence of Null Cones
+│   ├── 14.2.5.1 Proof Null Vector Alignment
+│   └── 14.2.5.2 Commentary Why c is a constant
+│
+├── 14.2.6 Lemma Global Hyperbolicity
+│   ├── 14.2.6.1 Proof Existence of Cauchy Surfaces
+│   └── 14.2.6.2 Commentary Prohibition of Time Loops
+│
+├── 14.2.7 Lemma Geodesic Motion
+│   └── 14.2.7.1 Proof Stationary Phase of Path Integral
+│
+└── 14.2.8 Proof Emergence of Relativistic Dynamics
+    └── 14.2.8.1 Calculation Geodesic Emergence Verification
+```
 
 ---
 
@@ -1428,7 +1458,7 @@ The continuum limit of the causal graph dynamics constitutes a rigorous **Relati
 
 Q.E.D.
 
-### 14.3.7.1 Calculation: Cluster Decomposition Check [INTEGRATION TEST] {#14.3.7.1}
+### 14.3.8.1 Calculation: Cluster Decomposition Check [INTEGRATION TEST] {#14.3.8.1}
 
 :::note[**Verification of Spatial Correlation Decay via Discrete massive Laplacian Solvers**]
 :::

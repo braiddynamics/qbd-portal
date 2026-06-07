@@ -1,0 +1,16 @@
+STEP                                          | SURVIVORS  | ELIMINATED
+----------------------------------------------------------------------
+1. Enumerate Undirected Topologies            | 106        | -
+2. Lemma 3.2.2: Geometric Viability (k<=3)    | 37         | 69 (Stars/Hubs)
+3. Lemma 3.2.6: Site Maximality               | 36         | 1 (Linear Chains)
+4. Lemma 3.2.7: Strict Regularity             | 2          | 34 (Irregular)
+----------------------------------------------------------------------
+
+              --- FINAL SCORECARD (Lambda Sweep [0.4 - 0.6]) ---              
+                     Name  |Aut|  Entropy  Score (0.4)  Score (0.5)  Score (0.6)  Mean Score
+  Balanced Bethe Fragment     48   1.2955       3.0113       3.4402       3.8692      3.4402
+Caterpillar (Linear Core)      8   1.9219       2.3532       2.4610       2.5688      2.4610
+
+WINNER: Balanced Bethe Fragment
+Status: ROBUST across lambda [0.4, 0.6]
+Reason: Maximizes Optimality Score regardless of specific weighting.

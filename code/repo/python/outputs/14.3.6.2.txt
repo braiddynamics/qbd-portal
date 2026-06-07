@@ -1,0 +1,10 @@
+--- QBD Microcausality Verification ---
+Pair       | Relation        | Commutator
+---------------------------------------------
+O-A        | Timelike        | 1.0 (OK)
+A-C        | Timelike        | 1.0 (OK)
+A-B        | Spacelike       | 0.0 (OK)
+C-D        | Spacelike       | 0.0 (OK)
+---------------------------------------------
+PASS: Spacelike operators strictly commute.
+      Wightman Axiom W3 (Microcausality) is enforced by Graph Acyclicity.

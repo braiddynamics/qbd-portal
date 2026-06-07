@@ -501,7 +501,7 @@ export default function DownloadPage() {
                             <a href={module.url} download className="button button--sm btn-download-md" style={{ padding: '0.4rem 0.6rem', display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.8rem' }}>
                               Get Code
                             </a>
-                            <a href={`https://github.com/braiddynamics/qbd-portal/blob/main/code/lean/${module.name}`} target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ padding: '0.4rem 0.6rem', display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.8rem' }}>
+                            <a href={`https://github.com/braiddynamics/qbd-portal/blob/main/code/repo/lean/${module.name}`} target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ padding: '0.4rem 0.6rem', display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.8rem' }}>
                               GitHub
                             </a>
                           </div>
@@ -551,7 +551,7 @@ export default function DownloadPage() {
                           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                           Download ZIP Archive
                         </a>
-                        <a href="https://github.com/braiddynamics/qbd-portal/tree/main/code/simulations/repo" target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', width: '100%', padding: '0.5rem 1rem' }}>
+                        <a href="https://github.com/braiddynamics/qbd-portal/tree/main/code/repo/python" target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', width: '100%', padding: '0.5rem 1rem' }}>
                           View Folder on GitHub
                         </a>
                       </div>
@@ -609,7 +609,7 @@ export default function DownloadPage() {
                           <a href={module.url} download className="button button--sm btn-download-json" style={{ padding: '0.3rem 0.6rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                             Get Code
                           </a>
-                          <a href={`https://github.com/braiddynamics/qbd-portal/blob/main/code/simulations/repo/${module.name}`} target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ padding: '0.3rem 0.6rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                          <a href={`https://github.com/braiddynamics/qbd-portal/blob/main/code/repo/python/${module.name}`} target="_blank" rel="noopener noreferrer" className="button button--sm button--secondary" style={{ padding: '0.3rem 0.6rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                             GitHub
                           </a>
                         </div>

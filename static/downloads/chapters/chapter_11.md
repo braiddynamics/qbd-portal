@@ -396,9 +396,32 @@ The **Causal Geometry Construction Theorem** guarantees that the discrete Einste
 
 The proof proceeds via Direct Construction, establishing the normalization and well-posedness of the probability measures under discrete transport constraints.
 
-1.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />: The argument verifies probability normalization under the laziness adjustment, preventing mass leakage in vacuum regions.
-2.  **The Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />: The argument derives the equilibrium parameters from a maximum entropy principle, securing geometric stability.
-3.  **The Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />: The argument demonstrates that undirected distances are required to avoid cost divergences, justifying the metric relaxation.
+```text
+• 11.2.3 Theorem Causal Geometry Construction  [by construction]
+├── 11.2.4 Lemma Measure Validity
+│   ├── 11.2.4.1 Proof Measure Validity
+│   ├── 11.2.4.2 Calculation Measure Verification
+│   └── 11.2.4.3 Commentary Conservation of Probability
+│
+├── 11.2.5 Lemma Entropy Maximization
+│   ├── 11.2.5.1 Proof Entropy Maximization
+│   ├── 11.2.5.2 Calculation Entropy Maximization
+│   ├── 11.2.5.3 Commentary Universal Constant Alpha
+│   └── 11.2.5.4 Diagram Entropic Triality
+│
+├── 11.2.6 Lemma Metric Necessity
+│   ├── 11.2.6.1 Proof Metric Necessity
+│   ├── 11.2.6.2 Calculation Metric Verification
+│   └── 11.2.6.3 Commentary Avoiding Singularities
+│
+├── 11.2.7 Lemma Compensation by Causal Measures
+│   ├── 11.2.7.1 Proof Compensation
+│   ├── 11.2.7.2 Calculation Compensation Verification
+│   ├── 11.2.7.3 Commentary Arrow of Time in Static Geometry
+│   └── 11.2.7.4 Diagram Compensation Mechanism
+│
+└── 11.2.8 Proof Causal Geometry Construction
+```
 
 ---
 
@@ -1390,10 +1413,29 @@ $$
 
 The argument proceeds via Direct Construction, tracing the reduction in optimal transport cost that results from the topological nucleation of a three-cycle.
 
-1.  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />: The argument quantifies the reallocation of probability mass, proving the emergence of a non-zero shared mass at the new vertex.
-2.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />: The argument constructs a valid transport coupling that exploits the shared mass to achieve a zero-cost local transfer.
-3.  **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />: The argument bounds the optimal successor cost term-by-term, establishing that the shared mass strictly reduces the transport burden.
-4.  **Monotonicity Synthesis (Phase 4)** <Ref id="11.3.6" label="§11.3.6" />: The argument synthesizes these stages to prove that the decreased transport cost forces a strict curvature increase.
+```text
+• 11.3.2 Theorem Curvature Monotonicity
+├── 11.3.2.2 Diagram Monotonicity Proof
+│
+├── 11.3.3 Lemma Measure Dilution (Phase 1)
+│   ├── 11.3.3.1 Proof Mass Redistribution
+│   └── 11.3.3.2 Commentary Shared Neighbor Mechanism
+│
+├── 11.3.4 Lemma Transport Feasibility (Phase 2)
+│   ├── 11.3.4.1 Proof Coupling Construction
+│   └── 11.3.4.2 Commentary Hybrid Transport Plans
+│
+├── 11.3.5 Lemma Cost Contraction (Phase 3)
+│   ├── 11.3.5.1 Proof Inequality Derivation
+│   └── 11.3.5.2 Commentary Geometric Efficiency
+│
+├── 11.3.6 Proof Monotonicity Synthesis (Phase 4)
+│
+└── 11.3.7 Corollary Action-Complexity Proportionality
+    ├── 11.3.7.1 Proof Localized Variation
+    ├── 11.3.7.2 Commentary Geometric Quantum
+    └── 11.3.7.3 Calculation Monotonicity Verification
+```
 
 ### 11.3.2.2 Diagram: Monotonicity Proof {#11.3.2.2}
 

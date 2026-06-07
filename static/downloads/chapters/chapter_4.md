@@ -193,9 +193,36 @@ It is asserted that the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constit
 
 The proof proceeds via Direct Construction, verifying the algebraic requirements that establish the internal and global category representations of temporal evolution.
 
-1.  **Internal Verification** <Ref id="4.2.2" label="§4.2.2" /> <Ref id="4.2.3" label="§4.2.3" />: The argument establishes the mathematical soundness of the local causal category, proving that path composition respects identity and associativity constraints.
-2.  **Historical Verification** <Ref id="4.2.4" label="§4.2.4" /> <Ref id="4.2.5" label="§4.2.5" /> <Ref id="4.2.6" label="§4.2.6" /> <Ref id="4.2.7" label="§4.2.7" />: The argument validates the global history category, demonstrating that history-respecting embeddings preserve timestamp monotonicity and irreflexivity to guarantee causality across updates.
-3.  **Causal Encoding** <Ref id="4.2.8" label="§4.2.8" /> <Ref id="4.2.9" label="§4.2.9" /> <Ref id="4.2.10" label="§4.2.10" />: The argument proves that the effective influence relation encodes as a constrained subset of category morphisms, verifying that categorical mapping preserves the strict partial ordering of physical events.
+```text
+• 4.2.1 Theorem Categorical Validity
+├── 4.2.2 Lemma Identity for $\mathbf{Caus}_t$
+│   └── 4.2.2.1 Proof Identity Preservation for $\mathbf{Caus}_t$
+│
+├── 4.2.3 Lemma Associativity for $\mathbf{Caus}_t$
+│   └── 4.2.3.1 Proof Associativity Preservation for $\mathbf{Caus}_t$
+│
+├── 4.2.4 Lemma Timestamp Monotonicity
+│   └── 4.2.4.1 Proof Preservation of Monotonicity
+│
+├── 4.2.5 Lemma Identity for $\mathbf{Hist}$
+│   └── 4.2.5.1 Proof Identity Preservation for $\mathbf{Hist}$
+│
+├── 4.2.6 Lemma Associativity for $\mathbf{Hist}$
+│   └── 4.2.6.1 Proof Associativity Preservation for $\mathbf{Hist}$
+│
+├── 4.2.7 Lemma Topological Injectivity
+│   └── 4.2.7.1 Proof Irreflexivity Enforcement
+│
+├── 4.2.8 Lemma Effective Influence Encoding
+│   └── 4.2.8.1 Proof Encoding Verification
+│
+├── 4.2.9 Lemma Partial Order Property
+│   └── 4.2.9.1 Proof Partial Order Property
+│
+├── 4.2.10 Proof Demonstration of Categorical Validity
+│
+└── 4.2.11 Calculation Partial Order Verification
+```
 
 ---
 
@@ -950,9 +977,16 @@ The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ i
 
 The proof proceeds via Direct Construction, proving that the self-observation and diagnostic structures satisfy the comonadic laws of identity and associativity.
 
-1.  **Functorial Lifting** <Ref id="4.3.6" label="§4.3.6" />: The argument establishes the functoriality of the awareness endofunctor, proving that the addition of diagnostic annotations preserves the identity and composition of underlying state transitions.
-2.  **Naturality Inspection** <Ref id="4.3.7" label="§4.3.7" />: The argument verifies the naturality of the context extraction counit and the meta-check comultiplication, demonstrating that diagnostic mappings commute with state evolution.
-3.  **Comonadic Self-Reference** <Ref id="4.3.8" label="§4.3.8" /> <Ref id="4.3.9" label="§4.3.9" />: The argument proves that the endofunctor, counit, and comultiplication satisfy the comonad associativity and identity laws, establishing the algebraic validity of the error-correction framework.
+```text
+• 4.3.4.2 Diagram Meta-Check
+├── 4.3.6 Lemma Functoriality of Awareness
+│   ├── 4.3.6.1 Proof Functoriality of Awareness
+│   └── 4.3.6.2 Commentary Structural Integrity
+│
+└── 4.3.7 Lemma Naturality of Transformations
+    ├── 4.3.7.1 Proof Commutative Squares
+    └── 4.3.7.2 Commentary Diagnostic Consistency
+```
 
 ---
 
@@ -2146,9 +2180,14 @@ This implementation adheres to the Micro/Macro separation principle, operating e
 
 The proof proceeds via Direct Construction, demonstrating that the scan-validate-weight sequence decomposes evolution into sequential phases that enforce thermodynamic balance and causal acyclicity.
 
-1.  **Generative Drive** <Ref id="4.5.3" label="§4.5.3" /> <Ref id="4.5.4" label="§4.5.4" />: The argument identifies compliant two-paths and computes addition probabilities, driving the generation of new geometric connectivity in sparse regions.
-2.  **Pruning Balance** <Ref id="4.5.5" label="§4.5.5" /> <Ref id="4.5.6" label="§4.5.6" />: The argument scans for existing three-cycles and computes deletion probabilities, balancing growth with stress-driven pruning.
-3.  **Adaptive Feedback** <Ref id="4.5.2" label="§4.5.2" />: The argument modulates rewrite rates via the catalytic tension factor, establishing a self-regulating dynamical feedback loop that stabilizes the system.
+```text
+• 4.5.1 Definition Universal Constructor
+├── 4.5.2 Definition Catalytic Tension Factor
+│   └── 4.5.2.1 Commentary Adaptive Feedback
+│
+└── 4.5.3 Definition Addition Mode
+    └── 4.5.3.1 Commentary Generative Drive
+```
 
 ---
 

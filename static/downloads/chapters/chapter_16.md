@@ -111,8 +111,13 @@ where $\mathcal{A}(\gamma_A)$ is the discrete area defined by the cardinality of
 
 The argument proceeds via Direct Construction, mapping the boundary quantum entanglement entropy to a bulk network flow optimization problem.
 
-1.  **The Isometry Condition** <Ref id="16.1.3" label="§16.1.3" />: The argument establishes the isometric embedding of the bulk Hilbert space into the boundary Hilbert space, ensuring information conservation during coarse-graining.
-2.  **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.4" label="§16.1.4" />: The argument unifies the isometry property and max-flow min-cut duality to derive the area relation for entanglement entropy, proving the correspondence.
+```text
+• 16.1.2 Theorem Ryu-Takayanagi Correspondence
+├── 16.1.3 Lemma Isometry Condition
+│
+└── 16.1.4 Proof Formal Synthesis of Ryu-Takayanagi
+    └── 16.1.4.1 Calculation Cut-Capacity Verification
+```
 
 ---
 
@@ -471,9 +476,16 @@ This inequality is derived not as a fundamental postulate, but as the necessary 
 
 The argument proceeds via Direct Construction, analyzing the topological and thermodynamic saturation constraints on information density within the causal graph bulk.
 
-1.  **The Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" />: The argument establishes the transition of information deposition from the bulk volume to the boundary surface as the critical density is saturated.
-2.  **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />: The argument calculates the microstate degeneracy of the event horizon by counting the irreducible stabilizer 3-cycles pierced by the boundary surface.
-3.  **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" />: The argument calibrates the fundamental area quantum and evaluates the exact Bekenstein-Hawking coefficient from discrete geometric packing.
+```text
+• 16.2.2 Theorem Maximum Informational Density (The Bound)
+├── 16.2.3 Lemma Holographic Screen Mechanism
+│   └── 16.2.3.3 Diagram Saturated Horizon
+│
+├── 16.2.4 Lemma Black Hole Entropy from Cycle Count
+│
+└── 16.2.5 Proof Formal Synthesis of the Bekenstein Bound
+    └── 16.2.5.1 Calculation Bekenstein-Hawking Entropy Scaling
+```
 
 ---
 

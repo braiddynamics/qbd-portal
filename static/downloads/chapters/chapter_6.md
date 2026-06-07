@@ -98,10 +98,23 @@ The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characte
 
 The proof proceeds via Inductive Elimination, identifying a topological loop-defect and demonstrating its physical and thermodynamic stability compared to trivial states.
 
-1. **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />: The argument establishes that any topologically trivial excitation is locally reducible to disjoint three-cycles via a finite sequence of local operations.
-2. **The Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />: The argument demonstrates that reducible excitations trigger localized stress that accelerates deletion, driving the decay probability to unity.
-3. **The Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />: The argument proves that non-trivial topological invariants generate a scale-separated protection barrier, preventing local operations from reducing the structure.
-4. **Particle Necessity** <Ref id="6.1.6" label="§6.1.6" />: The argument synthesizes these components to establish that only excitations protected by non-trivial invariants survive the vacuum deletion flux, proving that physical persistence necessitates topological protection.
+```text
+• 6.1.2 Theorem Particle Necessity
+├── 6.1.3 Lemma Reducibility of Trivial Topologies
+│   ├── 6.1.3.1 Proof Reducibility of Trivial Topologies
+│   └── 6.1.3.2 Commentary Thermodynamic Simplification
+│
+├── 6.1.4 Lemma Catalyzed Instability
+│   ├── 6.1.4.1 Proof Decay Rate Calculation
+│   ├── 6.1.4.2 Calculation Cluster Decay Simulation
+│   └── 6.1.4.3 Commentary Erasure Mechanism
+│
+├── 6.1.5 Lemma Topological Barrier
+│   ├── 6.1.5.1 Proof Topological Barrier
+│   └── 6.1.5.2 Commentary Topological Lock
+│
+└── 6.1.6 Proof Particle Necessity
+```
 
 ---
 
@@ -601,10 +614,27 @@ Stable, first-generation elementary fermions are topologically isomorphic to pri
 
 The proof proceeds via Inductive Elimination, systematically disqualifying alternative geometries to isolate the unique stable tripartite configuration.
 
-1. **The Vacuum and Single-Strand Exclusions (the **exclusion of unbraided clusters lemma** <Ref id="6.2.3" label="§6.2.3" />, the **exclusion of single-ribbon lemma** <Ref id="6.2.4" label="§6.2.4" />):** The argument systematically excludes zero-strand clusters by proving they dissolve under vacuum flux, and single-ribbon structures by demonstrating they collapse under local Type II operations.
-2. **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />: The argument disqualifies two-ribbon configurations by showing they generate only abelian symmetries, which are algebraically insufficient to represent the strong interaction.
-3. **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" />: The argument proves that braids with more than three strands are suppressed on entropic grounds due to the excessive geometric resources required to sustain their complexity.
-4. **Tripartite Braid Theorem** <Ref id="6.2.7" label="§6.2.7" />: The argument combines these constructive exclusions to isolate the three-ribbon braid as the unique stable topology that satisfies gauge and code constraints.
+```text
+• 6.2.2 Theorem Tripartite Braid Theorem
+├── 6.2.3 Lemma Exclusion of Unbraided Clusters (n=0)
+│   ├── 6.2.3.1 Proof Triviality via Flux Dominance
+│   └── 6.2.3.2 Commentary Fate of the Unknotted Cluster
+│
+├── 6.2.4 Lemma Exclusion of Single-Ribbon (n=1)
+│   ├── 6.2.4.1 Proof Reducibility via Formal Induction
+│   ├── 6.2.4.2 Commentary Torsional Instability
+│   └── 6.2.4.3 Diagram Decay of Single Ribbon
+│
+├── 6.2.5 Lemma Exclusion of Two-Ribbon (n=2)
+│   ├── 6.2.5.1 Proof Algebraic Insufficiency
+│   ├── 6.2.5.2 Commentary Binary Insufficiency
+│   └── 6.2.5.3 Diagram Abelian Limit
+│
+└── 6.2.6 Lemma Exclusion of Higher Order Configurations (n > 3)
+    ├── 6.2.6.1 Proof Analytical Exclusion via TQFT Parsimony
+    ├── 6.2.6.2 Calculation Entropic Exclusion Simulation
+    └── 6.2.6.3 Commentary Entropic Cost of Exotics
+```
 
 ---
 
@@ -1119,7 +1149,7 @@ Results (normalized to n=3):
 
 The calculated relative abundances demonstrate an exponential decay in formation probability as the ribbon count increases. While the $n=3$ configuration represents the unitary baseline ($P=1.0$), the $n=4$ population is suppressed to approximately $23.6\%$ (a factor of 1 in 4.2). The suppression factor increases rapidly for higher orders, reaching 1 in 17.9 for $n=5$ and 1 in 1357 for $n=8$. This statistical distribution confirms that hyper-complex braids are thermodynamically rarefied relative to the tripartite ground state.
 
-### 6.2.6.2 Commentary: Entropic Cost of Exotics {#6.2.6.2}
+### 6.2.6.3 Commentary: Entropic Cost of Exotics {#6.2.6.3}
 
 :::info[**Suppression of Higher-Order Braids via Boltzmann Statistics**]
 :::
@@ -1246,10 +1276,24 @@ It is asserted that the **Topological Mass** $m$ of a stable prime braid $\beta$
 
 The proof proceeds via Direct Construction, decomposing the topological mass functional into independent geometric complexity contributions.
 
-1. **Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />: The argument proves that crossing complexity scales linearly with the minimal crossing number, establishing the base mass contribution from braiding.
-2. **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />: The argument derives the quadratic scaling of torsional complexity, showing that twisting forces require a quadratic increase in geometric resources to satisfy causal partial ordering.
-3. **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />: The argument proves that entropic fluctuations vanish for topologically protected states, allowing mass to be modeled strictly as a function of static complexity.
-4. **Mass Functional** <Ref id="6.3.7" label="§6.3.7" />: The argument combines the linear crossing, quadratic torsional, and entropic parsimony results to synthesize the total topological mass functional.
+```text
+• 6.3.3 Theorem Topological Mass
+├── 6.3.4 Lemma Linear Scaling of Crossings
+│   ├── 6.3.4.1 Proof of Scaling
+│   └── 6.3.4.2 Commentary Braid Additivity
+│
+├── 6.3.5 Lemma Quadratic Scaling of Torsion
+│   ├── 6.3.5.1 Proof of Scaling
+│   ├── 6.3.5.2 Calculation Torsional Strain Simulation
+│   ├── 6.3.5.3 Commentary Mass Hierarchy Origin
+│   └── 6.3.5.4 Diagram Torsional Strain
+│
+├── 6.3.6 Lemma Entropy Negligibility
+│   ├── 6.3.6.1 Proof of Single Microstate
+│   └── 6.3.6.2 Commentary Entropic Vanishing
+│
+└── 6.3.7 Proof Mass Functional
+```
 
 ---
 
@@ -1721,9 +1765,20 @@ It is asserted that Prime Braids exhibit dynamical persistence against the vacuu
 
 The proof proceeds via Contradiction, assuming that local operations can untie an irreducible prime knot to expose the scale separation that refutes this assumption.
 
-1. **The Local Horizon** <Ref id="6.4.3" label="§6.4.3" />: The argument establishes that the local rewrite operator is confined to a logarithmic spatial horizon, rendering it blind to global topological structures.
-2. **The Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />: The argument proves that untying an irreducible knot requires a coordinated sequence of operations scaling linearly with the system size, which cannot be initiated locally.
-3. **Stability via Impossibility** <Ref id="6.4.5" label="§6.4.5" />: The argument synthesizes the scale separation between the logarithmic local horizon and the linear global barrier, proving that irreducible prime braids are stable against local vacuum decay.
+```text
+• 6.4.2 Theorem Architectural Stability
+├── 6.4.3 Lemma Local Horizon
+│   ├── 6.4.3.1 Proof Local Blindness
+│   ├── 6.4.3.2 Calculation Horizon Simulation
+│   ├── 6.4.3.3 Commentary Horizon Limit
+│   └── 6.4.3.3 Diagram Horizon Limit
+│
+├── 6.4.4 Lemma Global Unwinding Barrier
+│   ├── 6.4.4.1 Proof Cost Verification
+│   └── 6.4.4.2 Commentary Energetic Topology Cost
+│
+└── 6.4.5 Proof Stability via Impossibility
+```
 
 ---
 

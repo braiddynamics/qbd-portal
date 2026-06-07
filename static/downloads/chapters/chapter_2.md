@@ -97,9 +97,25 @@ We formally establish that the mathematical condition of **Antisymmetry**, conve
 
 The proof proceeds via Direct Construction, identifying a topological loop-defect and demonstrating its physical and thermodynamic inadmissibility.
 
-1. **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" />: The argument establishes that a reflexive edge is topologically identical to a directed cycle of length one, proving that any relation permitting reflexivity violates acyclicity.
-2. **The Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />: The argument quantifies the information content of reflexive edges, demonstrating that a self-loop contributes exactly zero to the path entropy, which renders the structure physically inert and incapable of recording history.
-3. **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" />: The argument constructs a formal model that satisfies mathematical antisymmetry yet fails causal validity, establishing the absolute necessity of irreflexivity.
+```text
+• 2.2.1 Theorem Insufficiency of Antisymmetry
+├── 2.2.1.2 Diagram Ordering Constraints
+│
+├── 2.2.2 Lemma Pathology of Self-Loops
+│   ├── 2.2.2.1 Proof Pathology of Self-Loops
+│   ├── 2.2.2.2 Commentary Atomic Violation
+│   └── 2.2.2.3 Diagram Inertia of Self-Loops
+│
+├── 2.2.3 Lemma Thermodynamic Nullity
+│   ├── 2.2.3.1 Proof Thermodynamic Nullity
+│   └── 2.2.3.2 Commentary Entropic Barrenness
+│
+├── 2.2.4 Proof Insufficiency of Antisymmetry
+│
+├── 2.2.5 Validation via Lean 4 Core
+│
+└── 2.2.6 Commentary Loophole of Equality
+```
 
 ### 2.2.1.2 Diagram: Ordering Constraints {#2.2.1.2}
 
@@ -405,9 +421,25 @@ The kinematic admissibility of any transformation $G \to G'$ involving the addit
 
 The proof proceeds via Direct Construction, separating the generative capacity of the graph from its restrictive bounds to establish a well-founded metric topology.
 
-1. **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />: The argument establishes the directed three-cycle as the geometric quantum, deriving its necessity from the failure of shorter loops to preserve the causal flow of time.
-2. **Unique Causality (PUC)** <Ref id="2.3.3" label="§2.3.3" />: The argument enforces the Principle of Unique Causality as a structural filter, prohibiting redundant connections to prevent the collapse of the metric space into a small-world network.
-3. **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />: The argument instantiates the lexicographic potential to quantify structural complexity, providing the ordering metric required to prove that dynamical rules drive the system toward the simplicial limit.
+```text
+• 2.3.1 Axiom 2 Geometric Constructibility
+├── 2.3.2 Lemma Geometric Quantum
+│   ├── 2.3.2.1 Proof Geometric Quantum
+│   ├── 2.3.2.2 Commentary Necessity of Three
+│   └── 2.3.2.3 Diagram Loop Hierarchy
+│
+├── 2.3.3 Principle Unique Causality (PUC)
+│   ├── 2.3.3.1 Commentary Pseudocode for PUC Check
+│   ├── 2.3.3.2 Proof Redundancy Exclusion
+│   ├── 2.3.3.3 Commentary No-Cloning of History
+│   └── 2.3.3.4 Diagram Principle of Unique Causality
+│
+├── 2.3.4 Definition Lexicographic Potential
+│   └── 2.3.4.1 Commentary Descent to Simplicity
+│
+└── 2.3.5 Lemma Well-Foundedness
+    └── 2.3.5.1 Proof Well-Foundedness
+```
 
 ---
 
@@ -720,10 +752,36 @@ We formally prove that for any graph state $G$ containing a Simple Directed Cycl
 
 The proof proceeds by Direct Construction, defining a finite sequence of constructive triangulation operations that systematically decompose higher-order cycles into stable geometric quanta.
 
-1. **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />: The argument establishes confluence for local rewrites, proving that overlapping repairs do not block one another and ensuring that the reduction process avoids frozen states.
-2. **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />: The argument establishes chordlessness, proving that any maximal cycle maintains a hollow topology that exposes its internal vertices to triangulation.
-3. **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />: The argument proves that the deletion mechanism operates strictly monotonically, preventing the system from reconstructing higher-complexity cycles once reduced.
-4. **General Cycle Decomposition** <Ref id="2.4.6" label="§2.4.6" />: The argument combines the confluence, chordlessness, and monotonicity guarantees, proving that any state containing a cycle of length four or greater admits a valid sequence of transitions that terminates at a stable quantum geometry.
+```text
+• 2.4.1 Theorem General Cycle Decomposition
+├── 2.4.1.2 Diagram Digestion of Geometry
+│
+├── 2.4.2 Lemma Confluence of the Constructor
+│   └── 2.4.2.1 Proof Diamond Property
+│
+├── 2.4.3 Lemma Chordlessness of Maximal Cycles
+│   └── 2.4.3.1 Proof Chordlessness of Maximal Cycles
+│
+├── 2.4.4 Lemma Reduction via Deletion
+│   └── 2.4.4.1 Proof Reduction via Deletion
+│
+├── 2.4.5 Lemma Decrease in Parallel Updates
+│   └── 2.4.5.1 Proof Decrease in Parallel Updates
+│
+├── 2.4.6 Proof General Cycle Decomposition
+│
+├── 2.4.7 Example 4-Cycle Reduction
+│
+├── 2.4.8 Example 5-Cycle Reduction
+│
+├── 2.4.9 Example 6-Cycle Reduction
+│
+├── 2.4.10 Calculation Simulation Verification
+│
+├── 2.4.11 Validation via Lean 4 Core
+│
+└── 2.4.12 Commentary Arrow of Simplicity
+```
 
 ### 2.4.1.2 Diagram: Digestion of Geometry {#2.4.1.2}
 
@@ -1414,9 +1472,18 @@ The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the **Geomet
 
 The proof proceeds by Direct Construction, establishing logical orthogonality between the causal and geometric primitives by instantiating explicit counter-models.
 
-1. **Independence Case A** <Ref id="2.5.2" label="§2.5.2" />: The argument constructs a sparse, directed four-cycle model that satisfies the causal primitive but violates geometric constructibility, demonstrating that causal directionality does not entail geometric quantization.
-2. **Independence Case B** <Ref id="2.5.3" label="§2.5.3" />: The argument constructs a disjoint union of a three-cycle and a self-loop that satisfies geometric constructibility but violates the causal primitive, demonstrating that geometric structure does not entail causal consistency.
-3. **Mutual Independence** <Ref id="2.5.4" label="§2.5.4" />: The argument synthesizes these two orthogonal counter-models, proving that neither primitive can be derived from or reduced to the other.
+```text
+• 2.5.1 Theorem Independence of Axioms 1 and 2
+├── 2.5.1.2 Diagram Independence Matrix
+│
+├── 2.5.2 Lemma Independence Case A
+│   └── 2.5.2.1 Proof Independence Case A
+│
+├── 2.5.3 Lemma Independence Case B
+│   └── 2.5.3.1 Proof Independence Case B
+│
+└── 2.5.4 Proof Mutual Independence
+```
 
 ### 2.5.1.2 Diagram: Independence Matrix {#2.5.1.2}
 
@@ -1674,10 +1741,18 @@ In a system constrained exclusively by Axioms 1 and 2, the Effective Influence r
 
 The proof proceeds via Contradiction, assuming that local constraints alone suffice for global consistency to expose the emergent causal violations that refute this assumption.
 
-1. **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />: The argument demonstrates that strictly increasing local timestamps fail to detect circularity that closes beyond the causal horizon of a single vertex.
-2. **Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />: The argument dissects the closed three-cycle under local rules, proving that transitively closed paths yield a reflexive self-influence that violates causal irreflexivity.
-3. **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />: The argument constructs a symmetric bowtie configuration, proving that disjoint sub-paths permit mutual influence between distinct vertices despite strictly monotonic local updates.
-4. **Inadequacy of Local Axioms** <Ref id="2.6.6" label="§2.6.6" />: The argument synthesizes these local failures, demonstrating that local primitives license global causal closures and establishing the logical necessity of a global partial ordering constraint.
+```text
+• 2.6.2 Theorem Inadequacy of Local Axioms
+├── 2.6.3 Lemma Strict Timestamps
+│   └── 2.6.3.1 Proof Strict Timestamps
+│
+├── 2.6.4 Lemma Failure of Reflexivity
+│   └── 2.6.4.1 Proof Failure of Reflexivity
+│
+└── 2.6.5 Lemma Failure of Asymmetry
+    ├── 2.6.5.1 Proof Failure of Asymmetry
+    └── 2.6.5.2 Diagram Bowtie Paradox
+```
 
 ---
 
@@ -2059,9 +2134,20 @@ The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.
 
 The proof proceeds via Contradiction, assuming that global causal violations can be resolved post-hoc to demonstrate that the required coordination energy diverges in the thermodynamic limit.
 
-1. **Cycle Diameter Growth** <Ref id="2.7.3" label="§2.7.3" />: The argument establishes that graph evolution generates system-spanning cycles that exceed any finite computational radius, proving that local operators remain topologically blind to global loop closure.
-2. **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />: The argument demonstrates that a local check of logarithmic radius is mathematically sufficient, proving that the probability of a cycle evading detection decays exponentially with the check radius.
-3. **Thermodynamic Enforcement** <Ref id="2.7.5" label="§2.7.5" />: The argument proves that post-hoc deletion of global cycles requires signal synchronization across the graph diameter, demonstrating that the required energy diverges for infinite networks and establishing the necessity of preemptive local enforcement.
+```text
+• 2.7.2 Theorem Thermodynamic Enforcement
+├── 2.7.3 Lemma Cycle Diameter Growth
+│   ├── 2.7.3.1 Proof Cycle Diameter Growth
+│   ├── 2.7.3.2 Commentary Blindness of Locality
+│   └── 2.7.3.3 Diagram Horizon Problem
+│
+├── 2.7.4 Lemma Local PUC Approximation
+│   ├── 2.7.4.1 Proof Local PUC Approximation
+│   └── 2.7.4.2 Commentary Cost of Certainty
+│
+└── 2.7.5 Proof Thermodynamic Enforcement
+    └── 2.7.5.1 Commentary Thermodynamic Wall
+```
 
 ---
 

@@ -1,0 +1,3 @@
+Sample Size (N): 500 | Degree Limit (k): 3
+Decay Constant (B): 3.5788
+Fit Amplitude (A):  2.6981

@@ -1,0 +1,4 @@
+Number of Nodes (N): 1000
+Number of Runs:      50
+Measured Exponent:   2.0008 ± 0.0022
+Theoretical Value:   2.0000

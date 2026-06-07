@@ -1,0 +1,13 @@
+T_ab matrix (rows: from a, cols: to b):
+[[ 0. -0.005 0. 0. 0. ]
+ [ 0. 0. 0. 0. 0. ]
+ [ 0. 0. 0. 0. 0.005]
+ [ 0. 0. 0. 0. 0. ]
+ [-0.005 0. 0. 0. 0. ]]
+Outgoing sums ∑_b T_ab: [-0.005 0. 0.005 0. -0.005]
+Incoming sums ∑_b T_ba: [-0.005 -0.005 0. 0. 0.005]
+Total flux sums: [-0.01 -0.005 0.005 0. 0. ]
+Max |out|: 0.005
+Max |in|: 0.005
+Max |total|: 0.01
+Equil: Total edges at end: 4

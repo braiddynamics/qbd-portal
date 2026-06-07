@@ -103,8 +103,13 @@ where $h_{ab}$ is the induced metric on the worldsheet and $T_0$ is the effectiv
 
 The argument proceeds via Direct Construction, establishing that the information-theoretic updates required to propagate a braid defect are dual to Nambu-Goto string dynamics.
 
-1.  **Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" />: The argument establishes the topological flux conservation that restricts energy to a one-dimensional channel, yielding a linear interaction potential.
-2.  **Formal Synthesis of String Dynamics** <Ref id="17.1.4" label="§17.1.4" />: The argument unifies the flux tube boundary conditions and least action principles to derive the string tension and effective Nambu-Goto dynamics from braid updates.
+```text
+• 17.1.2 Theorem Action Equivalence (Nambu-Goto)
+├── 17.1.3 Lemma Confinement and Berry Phase
+│
+└── 17.1.4 Proof Formal Synthesis of String Dynamics
+    └── 17.1.4.1 Calculation Braid Confinement Verification
+```
 
 ---
 
@@ -455,8 +460,13 @@ under the simultaneous exchange of the momentum quantum number $n$ and the windi
 
 The argument proceeds via Direct Construction, proving the mathematical and physical equivalence of the mass-squared spectrum on reciprocal compactification radii.
 
-1.  **The T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" />: The argument establishes the necessity of non-Clifford rotations to generate Fermionic degrees of freedom and realize the topological GSO projection.
-2.  **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.4" label="§17.2.4" />: The argument unifies Kaluza-Klein momentum modes and topological winding modes to demonstrate the spectral equivalence of toroidal graph compactifications.
+```text
+• 17.2.2 Theorem Spectral Invariance (T-Duality)
+├── 17.2.3 Lemma T-Gate Phase
+│
+└── 17.2.4 Proof Formal Synthesis of Spectral Invariance (T-Duality)
+    └── 17.2.4.1 Calculation T-Duality Verification
+```
 
 ---
 
@@ -738,10 +748,17 @@ The physical string is the tensor product state $|\Psi\rangle = |\psi_R\rangle \
 
 The argument proceeds via Direct Construction, decomposing the worldsheet Hilbert space into decoupled left-moving and right-moving chiral sectors.
 
-1.  **Bott Periodicity (The Octonionic Lock)** <Ref id="17.3.2" label="§17.3.2" />: The argument establishes the octonionic limit restricting the right-moving transverse degrees of freedom to exactly 8 modes.
-2.  **Tripartite Braid Saturation** <Ref id="17.3.3" label="§17.3.3" />: The argument demonstrates the trivalent vertex scaling that triples the left-moving capacity to 24 transverse modes.
-3.  **ZPE Cancellation** <Ref id="17.3.4" label="§17.3.4" />: The argument verifies the balance of zero-point energies between sectors to ensure a stable, tachyon-free ground state.
-4.  **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" />: The argument unifies the chiral constraints to embed the critical dimensions and derive the necessary self-dual gauge group.
+```text
+• 17.3.1 Theorem Chiral Split (Bosonic Left / Super Right)
+├── 17.3.2 Lemma Bott Periodicity (The Octonionic Lock)
+│
+├── 17.3.3 Lemma Tripartite Braid Saturation
+│
+├── 17.3.4 Lemma ZPE Cancellation
+│
+└── 17.3.5 Proof Formal Synthesis of the Critical Dimension
+    └── 17.3.5.1 Calculation Algebra Closure Verification
+```
 
 ---
 
@@ -1243,11 +1260,21 @@ Consequently, the gauge symmetry of the emergent spacetime is fixed to $G = E_8 
 
 The argument proceeds via Direct Construction, proving the modular invariance and optimal sphere-packing constraints that uniquely select the exceptional charge lattice.
 
-1.  **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" />: The argument establishes the even self-dual lattice requirement to satisfy modular S-invariance and ensure one-loop unitarity.
-2.  **The Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />: The argument demonstrates the group-theoretic branching rules that naturally embed the gauge forces and chiral fermion generations within $E_8$.
-3.  **Anomaly Cancellation** <Ref id="17.4.5" label="§17.4.5" />: The argument verifies the Green-Schwarz mechanism on the tripartite graph, demonstrating the complete cancellation of gauge and gravitational anomalies.
-4.  **The Landscape from Braid Vacua** <Ref id="17.4.6" label="§17.4.6" />: The argument relates the moduli space of vacuum parameters to topologically protected Wilson lines wrapping the internal graph cycles.
-5.  **Formal Synthesis of Heterotic String Theory** <Ref id="17.4.7" label="§17.4.7" />: The argument unifies the worldsheet factorization, critical dimensions, and modular lattice constraints to establish the non-perturbative isomorphism with Heterotic String Theory.
+```text
+• 17.4.2 Theorem Emergence of the E8 Lattice
+├── 17.4.3 Lemma Unimodular Basis (Modular Invariance)
+│
+├── 17.4.4 Lemma Standard Model Embedding
+│   ├── 17.4.4.2 Calculation Force-Matter Decomposition
+│   └── 17.4.4.3 Commentary Generations from Braid Chirality
+│
+├── 17.4.5 Lemma Anomaly Cancellation
+│
+├── 17.4.6 Lemma Landscape from Braid Vacua
+│
+└── 17.4.7 Proof Formal Synthesis of Heterotic String Theory
+    └── 17.4.7.1 Calculation Heterotic String Isomorphism Verification
+```
 
 ---
 

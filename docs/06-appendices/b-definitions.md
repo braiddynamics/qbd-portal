@@ -5034,17 +5034,6 @@ Section 18.1.2 formalizes the properties of the QBD theorem regarding primordial
 
 ---
 
-### 18.1.2 Proof: Blackbody Equilibrium {#18.1.2}
-
-:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
-:::
-*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate. *   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
-
-**In Plain English:**  
-Section 18.1.2 formalizes the properties of the QBD proof regarding blackbody equilibrium.
-
----
-
 ### 18.1.3 Lemma: Slot Alignment Probability {#18.1.3}
 
 :::info[**Probability of Out-Degree Slot Alignment for a Directed Triad**]
@@ -5559,6 +5548,17 @@ Section 19.4.4 formalizes the properties of the QBD proof regarding helium abund
 
 **In Plain English:**  
 Section 20.1.1 formalizes the properties of the QBD theorem regarding blackbody equilibrium.
+
+---
+
+### 20.1.2 Proof: Blackbody Equilibrium {#20.1.2}
+
+:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
+:::
+*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate. *   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
+
+**In Plain English:**  
+Section 20.1.2 formalizes the properties of the QBD proof regarding blackbody equilibrium.
 
 ---
 

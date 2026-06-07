@@ -1,0 +1,21 @@
+SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES
+Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
+════════════════════════════════════════════════════════════
+
+Physical Parameters:
+  Vacuum Drive (Λ)      : 0.0156
+  Friction (μ)          : 0.398942
+  Catalysis (λ_cat)     : 1.718282
+  Equilibrium Density   : 0.0370
+  Knot Core Threshold   : 0.0820
+
+Initial Local Density   : 0.50
+------------------------------------------------------------
+Final States after 600 steps:
+  Trivial Cluster       : 0.037000 → Vacuum Equilibrium
+  Prime Knot            : 0.081329 → Stable Particle
+------------------------------------------------------------
+Initial Flux Balance (ρ = 0.5):
+  Creation  J_in  : 0.6846
+  Deletion  J_out : 1.5387
+  Net Rate dρ/dt  : -0.8542 (Strong Decay)

@@ -1,0 +1,7 @@
+Disjoint geometric commutator norm:  0.0
+Overlapping geometric commutator norm:  0.0
+Ribbon-geom commutator norm (even overlap):  0.0
+Vertex X commutator norm:  0.0
+Vertex-geom even overlap commutator norm:  0.0
+Odd overlap (should not commute):  128.0
+Commutators near 0 confirm commutation where designed.

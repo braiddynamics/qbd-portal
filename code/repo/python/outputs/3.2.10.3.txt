@@ -1,0 +1,22 @@
+Bethe Fragment Regularity Scaling
+==================================================
+|   Depth |   Coordination (b) |   Nodes | b-Regular Fraction   | Theoretical Limit   |
+|---------|--------------------|---------|----------------------|---------------------|
+|       3 |                  3 |      22 | 45.4545%             | 50.0000%            |
+|       4 |                  3 |      46 | 47.8261%             | 50.0000%            |
+|       5 |                  3 |      94 | 48.9362%             | 50.0000%            |
+|       6 |                  3 |     190 | 49.4737%             | 50.0000%            |
+|       7 |                  3 |     382 | 49.7382%             | 50.0000%            |
+|       8 |                  3 |     766 | 49.8695%             | 50.0000%            |
+|       9 |                  3 |    1534 | 49.9348%             | 50.0000%            |
+|      10 |                  3 |    3070 | 49.9674%             | 50.0000%            |
+|      11 |                  3 |    6142 | 49.9837%             | 50.0000%            |
+|      12 |                  3 |   12286 | 49.9919%             | 50.0000%            |
+|      13 |                  3 |   24574 | 49.9959%             | 50.0000%            |
+|      14 |                  3 |   49150 | 49.9980%             | 50.0000%            |
+|      15 |                  3 |   98302 | 49.9990%             | 50.0000%            |
+|       5 |                  4 |     485 | 33.1959%             | 33.3333%            |
+|       5 |                  5 |    1706 | 24.9707%             | 25.0000%            |
+|       5 |                  6 |    4687 | 19.9915%             | 20.0000%            |
+
+The results demonstrate that as depth increases to 15, the regularity fraction converges precisely to the theoretical limit of $1/(b-1)$. For $b=3$, the fraction converges to 50% ($1/2$), while for $b=6$, it converges to 20% ($1/5$). This convergence highlights the Bethe fragment's efficient approximation of uniform local structure at lower coordination numbers, which contributes to its high $H_S$ and overall optimality, confirming the fragment's suitability as an optimal vacuum structure.

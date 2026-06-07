@@ -1,0 +1,9 @@
+--- HORIZON TEST: THE MYOPIC VACUUM ---
+Untying Distance:    50
+Local Horizon (R):   5
+Branching Factor:    3 (Bias: 1 vs 2)
+----------------------------------------
+Global Agent (Topological): SOLVED in 50 steps
+Local Agent (Vacuum):       STALLED (> 20000 steps)
+Final Progress:             2/50
+>>> RESULT: The Entropic Barrier prevents unwinding.

@@ -70,23 +70,23 @@ This convergence implies that the limit space $M$ admits a smooth differentiable
 
 The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold. This strategy leverages the deep correspondence between the spectrum of the Laplacian and the metric geometry, effectively reconstructing the manifold structure from the "sound" of the graph.
 
-1.  **The Spectral Convergence** <Ref id="13.1.3" label="§13.1.3" />: The argument invokes random geometric graph theorems to show that the discrete Laplacian is a consistent estimator of the continuum operator.
-2.  **The Heat Kernel Asymptotics** <Ref id="13.1.4" label="§13.1.4" />: The argument establishes the Gaussian behavior of the short-time heat kernel, validating local Euclidean scaling.
-3.  **Smoothness via Elliptic Regularity** <Ref id="13.1.5" label="§13.1.5" />: The argument applies elliptic regularity to bootstrap the convergence of eigenfunctions into a smooth limit metric.
-
-The convergence proof relies on establishing that the QBD graph falls within the universality class of random geometric graphs analyzed in manifold learning theory (Belkin & Niyogi, 2008; Calder & García Trillos, 2022). The table below summarizes the specific geometric and statistical conditions required by these theorems and identifies the exact QBD mechanism that satisfies them.
-
-| Condition | Description | QBD Mechanism | Cross-Reference |
-| :--- | :--- | :--- | :--- |
-| **Uniform Sampling** | Density bounded away from 0 and $\infty$ | **Ahlfors 4-Regularity** enforces bounded volume growth $\vert B(r)\vert \sim r^4$. | **emergent Hausdorff dimension** [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
-| **Bounded Geometry** | Finite degree, local connectivity | **Strict Locality** + **Bounded Degree** from causal exclusion. | **bounded vertex degree lemma** [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| **Bounded Curvature** | Ricci curvature bounded below | **Geometric Syndrome** enforces $\vert K\vert \leq 2$. | **Curvature Monotonicity Theorem** [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
-| **Low Noise** | Variance of observables decays | **Exponential Correlation Decay** suppresses fluctuations. | **correlation decay lemma** [§5.1.3](/monograph/rules/equilibrium/5.1/#5.1.3) |
-| **Dimensionality** | Consistent intrinsic dimension $d$ | **Ahlfors Regularity** fixes Hausdorff dimension $d=4$. | **emergent Hausdorff dimension** [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
-| **Spectral Gap** | $\lambda_2 > 0$ (connectedness) | **Cheeger Inequality** derived from correlation decay. | **correlation decay lemma** [§5.1.3](/monograph/rules/equilibrium/5.1/#5.1.3) |
-| **Manifold Topology** | No homological defects | **Cycle Suppression** eliminates non-manifold shortcuts. | **Ricci curvature bound lemma** [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
-
-These conditions collectively guarantee that the discrete graph is a "faithful sampler" of the underlying smooth manifold.
+```text
+• 13.1.2 Theorem Smooth Manifold Limit
+├── 13.1.3 Lemma Spectral Convergence
+│   ├── 13.1.3.1 Proof Spectral Convergence
+│   ├── 13.1.3.2 Calculation Spectral Convergence Verification
+│   └── 13.1.3.3 Commentary Hearing the Shape of Spacetime
+│
+├── 13.1.4 Lemma Heat Kernel Asymptotics
+│   ├── 13.1.4.1 Proof Gaussian Bounds
+│   ├── 13.1.4.2 Calculation Heat Kernel Asymptotics Verification
+│   └── 13.1.4.3 Commentary Diffusion as a Geometry Probe
+│
+├── 13.1.5 Lemma Smoothness via Elliptic Regularity
+│   └── 13.1.5.1 Proof C-Infinity Smoothness
+│
+└── 13.1.6 Proof Smooth Manifold Limit
+```
 
 ---
 
@@ -640,9 +640,23 @@ The limit tensor field $S_{\mu\nu}$ is locally proportional to the metric tensor
 
 The proof proceeds via Direct Construction, mapping discrete edge-level equations to continuous symmetric tensor fields on the tangent bundle.
 
-1.  **Directional Measures** <Ref id="13.2.3" label="§13.2.3" />: The argument proves that the local distribution of edge direction vectors converges weakly to the uniform Haar measure.
-2.  **Riemann Sum Approximation** <Ref id="13.2.4" label="§13.2.4" />: The argument demonstrates that discrete weighted averages converge to spherical integrals, yielding metric-proportional tensor structures.
-3.  **EFE Convergence** <Ref id="13.2.5" label="§13.2.5" />: The argument transfers the microscopic balance equations to the macroscopic tensor fields using the linearity of the averaging map.
+```text
+• 13.2.2 Theorem Tensorial Continuum Limit
+├── 13.2.3 Lemma Directional Measures
+│   ├── 13.2.3.1 Proof Haar Measure Convergence
+│   ├── 13.2.3.2 Calculation Directional Measures Verification
+│   └── 13.2.3.3 Commentary Texture of Spacetime
+│
+├── 13.2.4 Lemma Riemann Sum Approximation
+│   ├── 13.2.4.1 Proof Integral Convergence
+│   ├── 13.2.4.2 Calculation Riemann Sum Approximation Verification
+│   └── 13.2.4.3 Commentary Geometric Projection
+│
+├── 13.2.5 Lemma EFE Convergence
+│   └── 13.2.5.1 Proof Equation Limit
+│
+└── 13.2.6 Proof Tensorial Continuum Limit
+```
 
 ---
 
@@ -1128,9 +1142,19 @@ where $h_{\mu\nu}$ is the positive-definite Riemannian metric derived in the **T
 
 The argument proceeds via Direct Construction, reconciling the spatial isotropy with the temporal orientation to yield the hyperbolic signature.
 
-1.  **The Causal Drift** <Ref id="13.3.3" label="§13.3.3" />: The argument establishes that the expectation value of directed edges has a non-zero first moment, defining the temporal axis.
-2.  **The Null Boundary** <Ref id="13.3.4" label="§13.3.4" />: The argument limits transverse variance relative to the longitudinal displacement, creating a causal cone of finite aperture.
-3.  **Signature Selectivity** <Ref id="13.3.5" label="§13.3.5" />: The argument forces a relative sign flip between temporal and spatial coordinates to align the metric interval with the causal cone.
+```text
+• 13.3.2 Theorem Signature Selectivity
+├── 13.3.3 Lemma Causal Drift
+│   ├── 13.3.3.1 Proof Drift Non-Vanishing
+│   └── 13.3.3.2 Commentary Arrow of Time
+│
+├── 13.3.4 Lemma Null Boundary
+│   ├── 13.3.4.1 Proof Finite Propagation Speed
+│   └── 13.3.4.2 Commentary Speed of Light
+│
+└── 13.3.5 Proof Signature Selectivity
+    └── 13.3.5.1 Calculation Signature Verification
+```
 
 ---
 

@@ -1,0 +1,27 @@
+══════════════════════════════════════════════════════════════════════
+COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE
+Robustness under Random Generator Discovery Order
+══════════════════════════════════════════════════════════════════════
+Initial generators: 8 (4 adjacent pairs × 2)
+Ensemble   1 → Final dimension: 24
+Ensemble   2 → Final dimension: 24
+Ensemble   3 → Final dimension: 24
+Ensemble   4 → Final dimension: 24
+Ensemble   5 → Final dimension: 24
+Ensemble   6 → Final dimension: 24
+Ensemble   7 → Final dimension: 24
+Ensemble   8 → Final dimension: 24
+Ensemble   9 → Final dimension: 24
+Ensemble  10 → Final dimension: 24
+Ensemble 100 → Final dimension: 24
+Ensemble 200 → Final dimension: 24
+Ensemble 300 → Final dimension: 24
+Ensemble 400 → Final dimension: 24
+Ensemble 500 → Final dimension: 24
+
+──────────────────────────────────────────────────────────────────────
+Ensembles simulated : 500
+Average final dim   : 24.00
+Full closure prob   : 1.000 (100.0%)
+──────────────────────────────────────────────────────────────────────
+RESULT: Deterministic closure confirmed.

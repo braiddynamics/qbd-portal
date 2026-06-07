@@ -3649,11 +3649,11 @@
   },
   "18.1.2": {
     "id": "18.1.2",
-    "type": "Proof",
-    "title": "Blackbody Equilibrium",
-    "statement": ":::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]\n:::\n*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate. *   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \\to \\infty$).",
-    "plainEnglish": "Section 18.1.2 formalizes the properties of the QBD proof regarding blackbody equilibrium.",
-    "file": "04-output/20-web/20.1.md"
+    "type": "Theorem",
+    "title": "Primordial Loop Nucleation",
+    "statement": ":::info[**Dynamical Instability of the Pre-Geometric Tree Vacuum**]\n:::\nLet $G_0$ denote the pre-geometric tree vacuum with non-zero vacuum permittivity $\\Lambda > 0$. Then $G_0$ is dynamically unstable to spontaneous loop nucleation, and the probability of at least one directed 3-cycle closing in a finite volume is strictly positive. In particular, this instability induces spontaneous tunneling from the one-dimensional pre-geometric tree phase into a cyclic, dynamical geometry.",
+    "plainEnglish": "Section 18.1.2 formalizes the properties of the QBD theorem regarding primordial loop nucleation.",
+    "file": "04-output/18-inflation/18.1.md"
   },
   "18.1.3": {
     "id": "18.1.3",
@@ -4029,6 +4029,14 @@
     "title": "Blackbody Equilibrium",
     "statement": ":::info[**Ergodicity of Primordial Plasma under Highly Frequent Graph Updates**]\n:::\n*   ** Primordial Scattering:** Before recombination ($t < 380,000$ years), the universe is a dense plasma of photon motifs and charged braids (electrons, quarks). *   **Ergodioc Mixing:** The rewrite rule $\\mathcal{R}$ mediates highly frequent interactions (scattering, absorption, and emission). In this high-density regime, the frequency of updates ensures that the photon state space is fully explored. *   **Thermalization:** This ergodicity drives the system to the unique state of maximum entropy, which is mathematically described by the Planck Blackbody Distribution: $$ u(\\nu, T) = \\frac{8\\pi h \\nu^3}{c^3} \\frac{1}{e^{h\\nu / k_B T} - 1} $$ *   **Fossilized Equilibrium:** The CMB is the pristine, fossilized thermal signature of a relational graph that successfully achieved thermodynamic equilibrium.",
     "plainEnglish": "Section 20.1.1 formalizes the properties of the QBD theorem regarding blackbody equilibrium.",
+    "file": "04-output/20-web/20.1.md"
+  },
+  "20.1.2": {
+    "id": "20.1.2",
+    "type": "Proof",
+    "title": "Blackbody Equilibrium",
+    "statement": ":::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]\n:::\n*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate. *   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \\to \\infty$).",
+    "plainEnglish": "Section 20.1.2 formalizes the properties of the QBD proof regarding blackbody equilibrium.",
     "file": "04-output/20-web/20.1.md"
   },
   "20.1.3": {

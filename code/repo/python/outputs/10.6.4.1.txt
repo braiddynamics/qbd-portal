@@ -1,0 +1,4 @@
+Final pops:  [0.29588084 0.70411916]
+Final off-diag real:  0.441222096461602
+Final off-diag imag:  0.0
+Verification: High Ω low Γ for ~0.5 coherence.
