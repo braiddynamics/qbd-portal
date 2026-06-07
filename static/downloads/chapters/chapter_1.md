@@ -348,7 +348,7 @@ This process mirrors the justification of non-Euclidean geometry. The measuremen
 
 ---
 
-### 1.1.8 Unprovability of Axioms {#1.1.8}
+### 1.1.8 Limits of Self-Validation {#1.1.8}
 
 :::tip[**Formal Argument of Self-Validation Failure from the Structural Separation of Axioms and Theorems**]
 :::
@@ -517,7 +517,7 @@ The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists 
 :::tip[**Structure of the Temporal Finitude Argument via Substrate Finiteness, Entropy Accumulation, Recurrence Exclusion, and Supertask Limits**]
 :::
 
-The proof proceeds by contradiction, assuming an unbounded temporal regress to demonstrate its topological, thermodynamic, and computational impossibility.
+The proof proceeds by contradiction, assuming an unbounded temporal regress to demonstrate its topological, thermodynamic, and computational impossibility through the intermediate lemmas.
 
 ```text
 • 1.2.3 Theorem Temporal Finitude  [by contradiction]
@@ -564,10 +564,10 @@ The physical postulates impose the following growth constraints:
     \forall U \in \Omega, \quad | \{ U' \mid U \xrightarrow{\mathcal{U}} U' \} | \le b^{s_t}
     $$
 
-2.  **Holographic Surface Scaling ($\delta$):** The **Bousso Bound** restricts the number of active degrees of freedom to the surface area of the causal graph. This area $s_t$ scales linearly with the radius in a discrete graph growing from a root.
+2.  **Holographic Surface Scaling ($\delta_{\text{holo}}$):** The **Bousso Bound** restricts the number of active degrees of freedom to the surface area of the causal graph. This area $s_t$ scales linearly with the radius in a discrete graph growing from a root.
 
     $$
-    s_{t} \le \delta \cdot t \quad \text{where } \delta > 0
+    s_{t} \le \delta_{\text{holo}} \cdot t \quad \text{where } \delta_{\text{holo}} > 0
     $$
 
 **II. Derivation**
@@ -591,7 +591,7 @@ $$
 Let $\Delta S_t = S(U_{t+1}) - S(U_t)$. Substitution of the **Holographic Surface Scaling** constraint yields the explicit bound:
 
 $$
-\Delta S_t \le (\delta t) \log_2 b
+\Delta S_t \le (\delta_{\text{holo}} t) \log_2 b
 $$
 
 **III. Accumulation**
@@ -611,10 +611,10 @@ $$
 Substitution of the derived bound for $\Delta S_t$ into the cumulative sum produces:
 
 $$
-S(U_T) \le 0 + \sum_{t=0}^{T-1} (\delta t \log_2 b)
+S(U_T) \le 0 + \sum_{t=0}^{T-1} (\delta_{\text{holo}} t \log_2 b)
 $$
 
-Factoring out the time-independent constants $C = \delta \log_2 b$ isolates the arithmetic series:
+Factoring out the time-independent constants $C = \delta_{\text{holo}} \log_2 b$ isolates the arithmetic series:
 
 $$
 S(U_T) \le C \sum_{t=0}^{T-1} t
@@ -643,13 +643,13 @@ S(U_T) \le C \cdot \left( \frac{T^2 - T}{2} \right)
 $$
 
 $$
-S(U_T) \le \frac{\delta \log_2 b}{2} (T^2 - T)
+S(U_T) \le \frac{\delta_{\text{holo}} \log_2 b}{2} (T^2 - T)
 $$
 
 For $T > 1$, the quadratic term strictly dominates the linear term, such that $T^2 - T < T^2$. This dominance relation establishes the upper bound:
 
 $$
-S(U_T) < \frac{\delta \log_2 b}{2} T^2
+S(U_T) < \frac{\delta_{\text{holo}} \log_2 b}{2} T^2
 $$
 
 We conclude that the information content growth is bounded by a quadratic function of logical time:
@@ -1124,13 +1124,13 @@ $H$ is defined as an intrinsic attribute of the edge isomorphism class, not as a
 :::tip[**Assignment of Immutable Creation Timestamps by the Global Sequencer**]
 :::
 
-Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the current state of the Sequencer mechanism, defined in **Global Logical Time** <Ref id="1.2.2" label="§1.2.2" />:
+Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the local recursive relation of its causal predecessors, bounded by the current state of the Sequencer mechanism defined in **Global Logical Time** <Ref id="1.2.2" label="§1.2.2" />:
 
 $$
-H(e) = t_L
+H(e) \le t_L
 $$
 
-This assignment couples the ontology of the graph to the meta-theoretical Sequencer, which tracks the cumulative count of ticks since genesis. $H(e)$ constitutes an indelible record of origin: once the edge materializes via the rewrite rule, $H(e)$ fixes irrevocably, immune to subsequent modifications or retroactive adjustments. This immutability enables the full causal order to reconstruct solely from the graph's topological data, rendering the "flow" of time an intrinsic emergent property of the relations rather than an extrinsic parameter imposed upon the structure. The natural number codomain of $H$ reinforces discreteness, with each increment marking a discrete genesis event, precluding continuous interpolation and ensuring the history forms a well-ordered sequence aligned with the theory's punctuated evolution.
+This assignment couples the ontology of the graph to the meta-theoretical Sequencer (macro-clock) while preserving the intrinsic proper time (micro-clock) of the causal path. $H(e)$ constitutes an indelible record of origin: once the edge materializes via the rewrite rule, $H(e)$ fixes irrevocably, immune to subsequent modifications or retroactive adjustments. This immutability enables the full causal order to reconstruct solely from the graph's topological data, rendering the "flow" of time an intrinsic emergent property of the relations rather than an extrinsic parameter imposed upon the structure. The local ratio of proper time to logical time $\Delta H(e) / \Delta t_L$ defines the discrete **Lapse Function** $N(x)$ ([§14.1.1](file:///c:/braid-dynamics/qbd-portal/docs/03-stage/14-time/14.1.md#14.1.1)), which governs emergent gravitational time dilation. The natural number codomain of $H$ reinforces discreteness, with each increment marking a discrete proper time step, precluding continuous interpolation and ensuring the history forms a well-ordered sequence aligned with the theory's punctuated evolution.
 
 ### 1.3.1.2 Diagram: Timestamp Evolution {#1.3.1.2}
 
@@ -1138,8 +1138,8 @@ This assignment couples the ontology of the graph to the meta-theoretical Sequen
 :::
 
 ```text
-   TICK 1 (Genesis)        TICK 2 (Growth)         TICK 3 (Merger)
-   t_L = 1                 t_L = 2                 t_L = 3
+   TICK 1 (Genesis)        TICK 2 (Growth)         TICK 4 (3-Cycle Closure)
+   t_L = 1                 t_L = 2                 t_L = 4
 
     [v1]                    [v1]                    [v1]
       \                       \                       \
@@ -1147,12 +1147,12 @@ This assignment couples the ontology of the graph to the meta-theoretical Sequen
         \                       \                       \
          ▼                       ▼                       ▼
         [v2]                    [v2] ── H=2 ──► [v3]    [v2] ── H=2 ──► [v3]
-                                                      ^               │
-                                                      │ H=3           │ H=3
-                                                      │               ▼
-                                                      [v4] <───────── [v5]
+                                                         ▲               │
+                                                         │ H=4           │ H=3
+                                                         │               ▼
+                                                         └───────────── [v4]
 
-   RULE: H(e_new) = t_L (Current Global Logical Time)
+   RULE: H(e_new) = 1 + max({ H(e_in) }) <= t_L
    CONSTRAINT: H(e) is immutable once assigned.
 ```
 
@@ -1366,13 +1366,13 @@ The **Vacuum Repertoire** delimits the kinematic capabilities of the fundamental
 
 In the architecture of Graph Rewriting Systems, the foundational primitive manifests as vertex substitution: the targeted replacement of a local subgraph motif via a rewrite rule $A \to B$, where $A$ and $B$ denote finite templates matched isomorphically within $G$. For Quantum Braid Dynamics, this primitive realizes exclusively through two symmetric tasks on $E$:
 
-  - **$\mathfrak{T}_{add}$**: The transformation $G \to G + e$, where $e = (u, v) \notin E$ and $u \neq v$, accretes the novel causal link with emergent timestamp $H(e) = t_L$ via the rewrite rule. This task instantiates a primitive causal relation, extending the relational horizon and enabling mediated influences (e.g., closing a compliant 2-path to nucleate a 3-cycle **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />).
+  - **$\mathfrak{T}_{add}$**: The transformation $G \to G + e$, where $e = (u, v) \notin E$ and $u \neq v$, accretes the novel causal link with emergent timestamp $H(e) \le t_L$ (determined by the local recursive relation) via the rewrite rule. This task instantiates a primitive causal relation, extending the relational horizon and enabling mediated influences (e.g., closing a compliant 2-path to nucleate a 3-cycle **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />).
 
   - **$\mathfrak{T}_{del}$**: The transformation $G \to G - e$, where $e = (u, v) \in E$, excises the link while preserving the historical imprint $H(e)$ and the acyclicity of $G'$. This task contracts superfluous connections, resolving topological tensions (e.g., pruning redundant paths to enforce parsimony under **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />).
 
 $\mathfrak{T}_{del}$ is defined as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) but does not retroactively annihilate the *event of its creation*. The task space assumes an "Append-Only" metaphysics regarding the Global Sequencer's log: $t_L$ at which $e$ was created remains a persistent property of the universe's trajectory, even if the geometric constituent $e$ is removed from the active graph $G$. This distinction allows for the pruning of geometry without the paradox of altering the past. Critically, this append-only historical poset (<Ref id="1.3.4" label="§1.3.4" />) incurs zero runtime memory overhead; when $e$ is pruned by $\mathfrak{T}_{del}$ (<Ref id="1.4.2" label="§1.4.2" />), it is fully excised from the active state graph data structure, maintaining strict structural sparsity and computational efficiency without retaining inactive or historically deleted edges in memory.
 
-These primitives form the "assembly language" of $\mathfrak{T}$: every complex transformation, be it the braiding of fermionic worldlines, the curvature gradients of spacetime, or the entanglement webs of holography, decomposes into a countable sequence of such substitutions. Unlike general graph rewriting systems, where arbitrary motifs proliferate, Quantum Braid Dynamics restricts rewrite templates to these edge-level operations, ensuring that vertex identities remain purely relational and pre-geometric under the **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />. The symmetry between creation and deletion reflects the reversibility constraint <Cite id="A.74" label="(Abramsky, Barbosa, & Searle, 2024)" /> of Constructor Theory: if $\mathfrak{T}_{add}$ qualifies as possible (i.e., a constructor exists to enact it reliably), then its inverse $\mathfrak{T}_{del}$ must also qualify as possible, conserving the distinguishability of graph states without informational loss. This explicit duality mandates the equiprimordiality: the vacuum admits both fluxes symmetrically, with no primitive favoring one over the other, thereby embedding conservation of relational distinguishability at the ontological core.
+These primitives form the "assembly language" of $\mathfrak{T}$: every complex transformation, be it the braiding of fermionic worldlines, the curvature gradients of spacetime, or the entanglement webs of holography, decomposes into a countable sequence of such substitutions. Unlike general graph rewriting systems, where arbitrary motifs proliferate, Quantum Braid Dynamics restricts rewrite templates to these edge-level operations, ensuring that vertex identities remain purely relational and pre-geometric under the **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />. The symmetry between creation and deletion reflects the reversibility constraint <Cite id="A.74" label="(Abramsky, Barbosa, & Searle, 2024)" /> of Constructor Theory: if $\mathfrak{T}_{add}$ qualifies as possible (i.e., a constructor exists to enact it reliably), then its inverse $\mathfrak{T}_{del}$ must also qualify as possible, conserving the distinguishability of graph states without informational loss. This explicit duality mandates the equiprimordiality: the vacuum admits both fluxes symmetrically, with no primitive favoring one over the other, thereby embedding conservation of relational distinguishability at the ontological core. To bridge the mathematical formalism and numerical execution, a distinction is maintained between the infinite-limit continuum theory, which models open, growing vertex sets, and the numerical simulation engine, which operates in a closed system (a causal patch) with a constant node number $N$ to represent homeostatic vacuum dynamics.
 
 ### 1.4.3.1 Diagram: Task Repertoire {#1.4.3.1}
 
@@ -1398,7 +1398,7 @@ These primitives form the "assembly language" of $\mathfrak{T}$: every complex t
    --------------------------------------------------------------
    CONSTRAINTS:
    1. Acyclicity: Addition cannot close a loop (unless 3-cycle).
-   2. Monotonicity: H(e) = Current t_L.
+   2. Monotonicity: H(e) = 1 + max(H_in) <= Current t_L.
    3. Reversibility: If Add is possible, Del is possible.
 ```
 
@@ -1562,8 +1562,8 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1#1.1.6) |
-| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](/monograph/rules/ontology/1.2#1.2.1) |
-| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](/monograph/rules/ontology/1.2#1.2.1) |
+| $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.2.1](/monograph/rules/ontology/1.2#1.2.1) |
+| $t_{phys}$ | Physical Time (emergent metric time) | [§1.2.1](/monograph/rules/ontology/1.2#1.2.1) |
 | $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](/monograph/rules/ontology/1.2#1.2.1) |
 | $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](/monograph/rules/ontology/1.2#1.2.2) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](/monograph/rules/ontology/1.2#1.2.2) |
@@ -1603,7 +1603,7 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
-| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
+| $H$ | History Function (Local proper time mapping $E \to \mathbb{N}$) | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $v, u, w$ | Individual vertices | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $e$ | Individual edge $(u, v)$ | [§1.3.1](/monograph/rules/ontology/1.3#1.3.1) |
 | $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4.1](/monograph/rules/ontology/1.3#1.3.4.1) |

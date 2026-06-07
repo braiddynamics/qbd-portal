@@ -2558,7 +2558,7 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
+| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
 | $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |

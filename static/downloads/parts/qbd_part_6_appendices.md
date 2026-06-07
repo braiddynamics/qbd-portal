@@ -7206,8 +7206,8 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
-| $t_L$ | Global Logical Time (discrete iteration counter) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
-| $t_{phys}$ | Physical Time (emergent, geometric) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
+| $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
+| $t_{phys}$ | Physical Time (emergent metric time) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
@@ -7247,7 +7247,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
-| $H$ | History Function (Timestamp map $E \to \mathbb{N}$) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
+| $H$ | History Function (Local proper time mapping $E \to \mathbb{N}$) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $v, u, w$ | Individual vertices | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $e$ | Individual edge $(u, v)$ | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.3.4.1](/monograph/rules/ontology/1.3/#1.3.4.1) |
@@ -7278,7 +7278,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $H(e)$ | History Timestamp of edge $e$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
+| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
 | $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
