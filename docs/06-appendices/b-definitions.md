@@ -121,7 +121,7 @@ Space is not a continuous empty container but a discrete causal graph where the 
 
 :::tip[**Assignment of Immutable Creation Timestamps by the Global Sequencer**]
 :::
-Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the current state of the Sequencer mechanism, defined in **Global Logical Time** <Ref id="1.2.2" label="§1.2.2" />:
+Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the local recursive relation of its causal predecessors, bounded by the current state of the Sequencer mechanism defined in **Global Logical Time** <Ref id="1.2.2" label="§1.2.2" />:
 
 **In Plain English:**  
 Each causal connection (edge) receives a permanent, discrete timestamp when it is created, ensuring a monotonic record of history that cannot be retroactively altered.
@@ -854,25 +854,36 @@ Section 3.3.5 formalizes the properties of the QBD lemma regarding conflict reso
 
 ---
 
-### 3.3.6 Theorem: Scalability of the Scheduler {#3.3.6}
+### 3.3.6 Lemma: Covariant Conflict Resolution {#3.3.6}
+
+:::info[**Covariant Resolution of Update Conflicts**]
+:::
+Let $\mathcal{C}_P(G)$ denote the conflict graph of rewrite proposals on the graph $G$, where edges represent overlapping update sites. Then the deterministic selection of a maximal independent set of proposals under the ordering $\succ_H$ induced by edge timestamps $H(e)$ satisfies the symmetry preservation constraints.
+
+**In Plain English:**  
+Section 3.3.6 formalizes the properties of the QBD lemma regarding covariant conflict resolution.
+
+---
+
+### 3.3.7 Lemma: Scalability of the Scheduler {#3.3.7}
 
 :::info[**Logarithmic Time Complexity via Quasi-Local Checks**]
 :::
 Assume the graph remains in the **regime sparse** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local **constraints** <Ref id="2.3.3" label="§2.3.3" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.
 
 **In Plain English:**  
-Section 3.3.6 formalizes the properties of the QBD theorem regarding scalability of the scheduler.
+Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability of the scheduler.
 
 ---
 
-### 3.3.7 Proof: Demonstration of Mandatory Parallelism {#3.3.7}
+### 3.3.8 Proof: Preservation of Automorphisms {#3.3.8}
 
-:::tip[**Formal Proof of the Inevitability of Maximal Parallelism for Symmetry Preservation through Contradiction**]
+:::tip[**Formal Proof of Automorphism Preservation via Contradiction**]
 :::
-**I. The Indistinguishability Premise**
+**I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 3.3.7 formalizes the properties of the QBD proof regarding demonstration of mandatory parallelism.
+Section 3.3.8 formalizes the properties of the QBD proof regarding preservation of automorphisms.
 
 ---
 
@@ -1239,14 +1250,25 @@ Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfa
 
 ---
 
-### 4.3.9 Proof: Demonstration of the Awareness Comonad {#4.3.9}
+### 4.3.9 Lemma: Comonadic Pauli Frame Tracking {#4.3.9}
 
-:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure**]
+:::info[**Comonadic Tracking of Stabilizer Parity Shifts**]
 :::
-**I. The Object Hypothesis** We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ as a candidate structure for a Comonad, intended to formalize self-reference.
+Let $\vec{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\vec{s}' = \vec{s} \oplus \vec{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
 
 **In Plain English:**  
-Section 4.3.9 formalizes the properties of the QBD proof regarding demonstration of the awareness comonad.
+Section 4.3.9 formalizes the properties of the QBD lemma regarding comonadic pauli frame tracking.
+
+---
+
+### 4.3.10 Proof: Demonstration of the Awareness Comonad {#4.3.10}
+
+:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure via Functorial Mapping**]
+:::
+**I. Setup and Assumptions**
+
+**In Plain English:**  
+Section 4.3.10 formalizes the properties of the QBD proof regarding demonstration of the awareness comonad.
 
 ---
 
@@ -1628,7 +1650,7 @@ Section 5.4.5 formalizes the properties of the QBD proof regarding vacuum stabil
 
 :::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
 :::
-It is asserted that the sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants: 1.  **Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />. 2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />. 3.  **Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. 4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops shown by **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />. 5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
+It is asserted that the sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants: 1.  **Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />. 2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />. 3.  **Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. 4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops shown by **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />. 5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. 6.  **Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
 
 **In Plain English:**  
 Section 5.5.1 formalizes the properties of the QBD theorem regarding geometric well-posedness.
@@ -1701,14 +1723,25 @@ Section 5.5.7 formalizes the properties of the QBD lemma regarding ahlfors 4-reg
 
 ---
 
-### 5.5.8 Proof: Geometric Well-Posedness {#5.5.8}
+### 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence {#5.5.8}
 
-:::tip[**Formal Synthesis of Geometric Lemmas**]
+:::info[**Convergence of Causal Diamond Volumes under the Causal Gromov-Hausdorff Limit**]
 :::
-The theorem establishes that the sequence of causal graphs $\{G_t\}$ converges to a smooth 4-dimensional Lorentzian manifold in the thermodynamic limit.
+Let $\{G_t = (V_t, \preceq_t)\}$ denote the sequence of causal graphs at the homeostatic fixed point, and let $N(u, v) = |\{w \in V_t \mid u \preceq_t w \preceq_t v\}|$ denote the discrete causal diamond event volume. Then the renormalized event volume satisfies the limit: $$ \lim_{N \to \infty} \mathbb{P}\left( \sup_{u \preceq v} \left| N^{-1} N(u, v) - \text{Vol}_{g}(I^+(x) \cap I^-(y)) \right| > \epsilon \right) = 0 $$ where $x, y$ are the continuous representatives of $u, v$ in the limit manifold $(\mathcal{M}, g)$.
 
 **In Plain English:**  
-Section 5.5.8 formalizes the properties of the QBD proof regarding geometric well-posedness.
+Section 5.5.8 formalizes the properties of the QBD lemma regarding lorentzian gromov-hausdorff convergence.
+
+---
+
+### 5.5.9 Proof: Geometric Well-Posedness {#5.5.9}
+
+:::tip[**Formal Proof of Geometric Well-Posedness via Metric Limit Convergence**]
+:::
+**I. Setup and Assumptions**
+
+**In Plain English:**  
+Section 5.5.9 formalizes the properties of the QBD proof regarding geometric well-posedness.
 
 ---
 
@@ -4202,7 +4235,7 @@ Section 13.3.5 formalizes the properties of the QBD proof regarding signature se
 
 :::tip[**Definition of the Lapse Function arising from the Continuum Limit of Proper Time and Logical Timestamp Ratios**]
 :::
-The **Lapse Function**, denoted $N(x)$, constitutes the intrinsic scaling factor that relates the global logical time coordinate $T$ (derived from the sequencer tick $t_L$) to the local proper time $\tau$ measured along a timeline normal to the spatial hypersurface.
+The **Lapse Function**, denoted $N(x)$, constitutes the intrinsic scaling factor that relates the global logical time coordinate $t_L$ (derived from the universal sequencer step count) to the local proper time $H(e)$ (derived from the intrinsic edge history timestamps). This relation establishes the **slicing duality**: the sequencer step count $t_L$ functions as the global coordinate time parameterizing the foliated hypersurfaces of the scheduler, whereas the local edge timestamps $H(e)$ represent the physical proper time accumulated along specific causal pathways.
 
 **In Plain English:**  
 Section 14.1.1 formalizes the properties of the QBD definition regarding lapse function.

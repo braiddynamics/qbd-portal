@@ -1,79 +1,81 @@
-import sympy as sp
+import math
+import networkx as nx
+import numpy as np
 
-def validate_space_dilation():
-    # Define symbols
-    t, rho, c, T, R = sp.symbols('t rho c T R', real=True, positive=True)
-
-    print("=== 1. Metric Tensor Specification ===")
-    g00 = -c**2
-    g11 = sp.exp(2 * t / T)
-    g = sp.Matrix([[g00, 0], [0, g11]])
-    g_inv = g.inv()
-    print(f"g_mu_nu =\n{g}\n")
-    print(f"g^mu_nu =\n{g_inv}\n")
-
-    print("=== 2. Connection Coefficients (Christoffel Symbols) ===")
-    coords = [t, rho]
-    def get_christoffel(lam, mu, nu):
-        gamma = 0
-        for sigma in range(2):
-            term1 = sp.diff(g[nu, sigma], coords[mu])
-            term2 = sp.diff(g[mu, sigma], coords[nu])
-            term3 = sp.diff(g[mu, nu], coords[sigma])
-            gamma += 0.5 * g_inv[lam, sigma] * (term1 + term2 - term3)
-        return sp.simplify(gamma)
-
-    Gamma_t_rho_rho = get_christoffel(0, 1, 1)
-    Gamma_rho_t_rho = get_christoffel(1, 0, 1)
-    print(f"Gamma^t_rho_rho   = {Gamma_t_rho_rho}")
-    print(f"Gamma^rho_t_rho   = {Gamma_rho_t_rho}\n")
-
-    print("=== 3. Trajectory 1: The Comoving Observer (rho = constant) ===")
-    u_comoving = [1 / c, 0]
-    a_comoving = []
-    for lam in range(2):
-        a_comp = 0
-        for mu in range(2):
-            for nu in range(2):
-                a_comp += get_christoffel(lam, mu, nu) * u_comoving[mu] * u_comoving[nu]
-        a_comoving.append(sp.simplify(a_comp))
-    print(f"Four-acceleration vector a^mu = {a_comoving}")
-    mag = sp.sqrt(g[0,0] * a_comoving[0]**2 + g[1,1] * a_comoving[1]**2)
-    print(f"Proper acceleration magnitude  = {sp.simplify(mag)}\n")
-
-    print("=== 4. Trajectory 2: The Static Observer (r = R) ===")
-    rho_t = R * sp.exp(-t / T)
-    v_rho = sp.diff(rho_t, t)
-    print(f"Required coordinate trajectory rho(t) = {rho_t}")
-    print(f"Coordinate velocity d_rho/dt           = {v_rho}\n")
-
-    print("=== 5. Path Proper Length Evaluation ===")
-    d_ell = sp.sqrt(g11) * sp.Abs(v_rho)
-    print(f"Evaluated d_ell             = {sp.simplify(d_ell)} * dt\n")
-
-    print("=== 6. Static Observer Acceleration Verification ===")
-    # Four-velocity components u^mu = dx^mu/dtau
-    # dtau = dt * sqrt(1 - R^2/(c^2*T^2))
-    # Normalized such that u^mu u_mu = -c^2
-    gamma = 1 / sp.sqrt(1 - R**2 / (c**2 * T**2))
-    u_static = [gamma, -gamma * R * sp.exp(-t/T) / T]
-    
-    a_static = []
-    for lam in range(2):
-        du_dtau = gamma * sp.diff(u_static[lam], t)
-        gamma_term = 0
-        for mu in range(2):
-            for nu in range(2):
-                gamma_term += get_christoffel(lam, mu, nu) * u_static[mu] * u_static[nu]
-        a_static.append(sp.simplify(du_dtau + gamma_term))
+class PreGeometricThermodynamicAuditor:
+    def __init__(self):
+        # Fundamental physical constants mapped to the closed substrate register
+        self.k_B = 1.380649e-23  # Joules / Kelvin (Boltzmann constant)
         
-    print(f"Static observer four-acceleration a^mu = {a_static}")
-    mag_squared = g[0,0] * a_static[0]**2 + g[1,1] * a_static[1]**2
-    mag_static_physical = sp.sqrt(sp.simplify(mag_squared))
-    print(f"Proper acceleration magnitude |a|     = {sp.simplify(mag_static_physical)}")
-    print(f"Leading PN order (c -> oo) |a|        = {sp.limit(mag_static_physical, c, sp.oo)}")
+    def calculate_exact_dimensional_pruning(self, vertex_count: int, target_degree: int) -> dict:
+        """
+        Computes the absolute graph-theoretic edge metrics for transitioning 
+        from a complete graph K_N to a k-regular spatial lattice placeholder.
+        """
+        # Generate complete graph representation to extract true invariant baselines
+        initial_graph = nx.complete_graph(vertex_count)
+        edges_initial = initial_graph.number_of_edges()
+        
+        # Derived final edge constraint for regular bounded physical lattices
+        edges_final = (target_degree * vertex_count) // 2
+        edges_deleted = edges_initial - edges_final
+        
+        # Each edge deletion represents exactly 1 bit of unrecoverable connectivity status erasure
+        bits_erased_cosmo = float(edges_deleted)
+        entropy_cosmo = bits_erased_cosmo * self.k_B * math.log(2)
+        
+        return {
+            "initial_edges": edges_initial,
+            "final_edges": edges_final,
+            "edges_deleted": edges_deleted,
+            "entropy_generated_jk": entropy_cosmo
+        }
+
+    def evaluate_multiway_confluence_overhead(self, total_merges: int, branching_ratio: int) -> dict:
+        """
+        Quantifies the information compression vectors occurring when non-injective
+        confluence mappings collapse independent branch paths back into a singular history track.
+        """
+        # A binary merger consolidates distinct histories, compressing state phase space
+        bits_per_merge = math.log2(branching_ratio)
+        total_bits_compressed = total_merges * bits_per_merge
+        entropy_confluence = total_bits_compressed * self.k_B * math.log(2)
+        
+        return {
+            "bits_compressed": total_bits_compressed,
+            "entropy_generated_jk": entropy_confluence
+        }
+
+    def execute_global_insolvency_regression(self, node_steps: list, target_degree: int, planck_merges: int):
+        print(f"{'Nodes (N)':<12}{'Deleted Edges':<15}{'Cosmo Entropy (J/K)':<22}{'Confl Entropy (J/K)'}")
+        print("─" * 70)
+        
+        for N in node_steps:
+            # 1. Evaluate Cosmological Pruning Vectors
+            pruning_results = self.calculate_exact_dimensional_pruning(N, target_degree)
+            
+            # 2. Evaluate Continuous Multiway Synchronization Window Overheads
+            confluence_results = self.evaluate_multiway_confluence_overhead(
+                total_merges=planck_merges, 
+                branching_ratio=2
+            )
+            
+            # Realignment of width padding to precede the exponential type declaration
+            print(f"{N:<12}"
+                  f"{pruning_results['edges_deleted']:<15}"
+                  f"{pruning_results['entropy_generated_jk']:<22.4e}"
+                  f"{confluence_results['entropy_generated_jk']:.4e}")
 
 if __name__ == "__main__":
-    # Ensure the square-root argument in proper acceleration magnitude is positive 
-    # in the physical regime T^2 * c^2 > R^2, since T^2*c^2 - R^2 = R^2 * (c^2 / (GM/R) - 1) > 0.
-    validate_space_dilation()
+    auditor = PreGeometricThermodynamicAuditor()
+    
+    # Scale graph nodes across distinct boundaries to monitor the unsuppressed O(N^2) trajectory
+    test_node_scales = [100, 500, 2000]
+    coordinate_degree = 6      # Normalized 3D lattice connectivity coordinate parameter
+    active_planck_merges = 10000 # Interleaved history consolidations per macro-step block
+    
+    auditor.execute_global_insolvency_regression(
+        node_steps=test_node_scales, 
+        target_degree=coordinate_degree, 
+        planck_merges=active_planck_merges
+    )
