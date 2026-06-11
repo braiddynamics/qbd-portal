@@ -104,7 +104,7 @@ def run_ensemble():
 
     print("="*80)
     print(f"Running Ensemble Analysis")
-    print(f"Configuration: N≈{config['NUM_NODES_APPROX']}, Runs={config['NUM_RUNS']}, Timeout={config['TIMEOUT']}s")
+    print(f"Configuration: N~={config['NUM_NODES_APPROX']}, Runs={config['NUM_RUNS']}, Timeout={config['TIMEOUT']}s")
     print(f"Parameters: ALPHA={config['ALPHA']:.3f}, MU={config['MU']:.2f}, LAMBDA={config['LAMBDA']:.2f}")
     print(f"Cores: {args.cores}")
     print("="*80)
