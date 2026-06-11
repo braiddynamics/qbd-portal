@@ -1,10 +1,12 @@
 # tests/test_observables.py
 import pytest
 import networkx as nx
-from model.observables import get_n3_count, get_graph_density
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from model.observables import get_n3_count, get_graph_density
+
 
 @pytest.mark.parametrize("graph_dict, expected_n3, description", [
     ({}, 0, "Empty graph"),
