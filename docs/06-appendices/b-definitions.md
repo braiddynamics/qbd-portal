@@ -5632,7 +5632,7 @@ Section 20.2.1 formalizes the properties of the QBD lemma regarding gravitationa
 
 :::warning[**Anchoring of Gravitational Potential Wells by Electromagnetically Inert Sterile Braid Structures**]
 :::
-*   **Dark Matter Relics:** The dark sector consists of "sterile braids" (§21.1)—braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs. *   **Shadow Scaffolding:** Because they lack charge topology, these sterile braids do not interact with photons and remain unaffected by radiation pressure. *   **Oscillation Anchors:** While the baryonic plasma oscillates violently, the sterile braids remain stationary, forming a stable gravitational potential scaffolding that guides and amplifies the baryonic sound waves.
+*   **Dark Matter Relics:** The dark sector consists of "sterile braids" (§21.1), braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs. *   **Shadow Scaffolding:** Because they lack charge topology, these sterile braids do not interact with photons and remain unaffected by radiation pressure. *   **Oscillation Anchors:** While the baryonic plasma oscillates violently, the sterile braids remain stationary, forming a stable gravitational potential scaffolding that guides and amplifies the baryonic sound waves.
 
 **In Plain English:**  
 Section 20.2.2 formalizes the properties of the QBD postulate regarding sterile braid scaffolding.
@@ -6259,7 +6259,7 @@ Section 25.1.1 formalizes the properties of the QBD definition regarding computa
 
 :::info[**Selection of Physical Laws through Manifold Stability Requirements**]
 :::
-*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad. *   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, §4.3), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze. *   **Conservation as Protection:** Fundamental principles—such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle—are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
+*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad. *   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, §4.3), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze. *   **Conservation as Protection:** Fundamental principles (such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle) are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
 
 **In Plain English:**  
 Section 25.1.2 formalizes the properties of the QBD theorem regarding minimal robust attractor.

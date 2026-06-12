@@ -296,7 +296,7 @@ QBism provides the epistemological backing for how quantum measurement is modele
 
 ### 25. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.25}
 #### "The Page-Wootters mechanism in canonical quantum gravity"
-    * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search — may be preprint variant or title nuance)*
+    * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
 
 **Overview:**
 Gambini and his co-authors present a careful application of the Page-Wootters mechanism to canonical quantum gravity. They show that relational time can be successfully constructed within a fully stationary quantum state of the universe by computing conditional probabilities between the states of a physical clock and a target system.
