@@ -259,39 +259,99 @@ The vacuum maintains a balance where edge additions and edge deletions are equal
 
 ---
 
-### 1.5.1 Definition: Fundamental Graph Structures {#1.5.1}
+### 1.5.1 Definition: Directed Acyclic Graph (DAG) {#1.5.1}
 
-:::tip[**Classification of Allowable Topologies by Definitions of Acyclicity and Bipartiteness**]
+:::tip[**Directed Acyclic Graph (DAG) as the Relational Foundation of Causal Order**]
 :::
 
-The following structures constitute the vocabulary for topological constraints:
+A **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing no directed cycles. Formally, there exists no sequence of vertices $(v_0, v_1, \dots, v_k)$ in $V$ of length $k \ge 1$ such that $v_0 = v_k$ and $(v_i, v_{i+1}) \in E$ for all $0 \le i < k$.
 
 **In Plain English:**  
 Space is built from simple discrete connections: single links represent precedence, 2-paths represent transitive mediation, and 3-cycles represent spatial area.
 
 ---
 
-### 1.5.2 Definition: 2-Path {#1.5.2}
+### 1.5.2 Definition: Bipartite Graph {#1.5.2}
 
-:::tip[**2-Path as the Minimal Unit of Transitive Mediation**]
+:::tip[**Bipartite Graph as the Partitioned Architecture of State Transitions**]
 :::
 
-A **2-Path** is defined as a simple Directed Path of length exactly 2, denoted as the ordered triplet $(v, w, u)$, such that $(v, w) \in E$ and $(w, u) \in E$. This structure constitutes the minimal unit of transitive mediation <Cite id="A.15" label="(Bondy & Murty, 2008)" /> required for the rewrite rule to identify a potential closure site.
+A **Bipartite Graph** is a directed graph $G = (V, E)$ whose vertex set $V$ can be partitioned into two disjoint sets, $V_A$ and $V_B$ (where $V_A \cup V_B = V$ and $V_A \cap V_B = \emptyset$), such that every directed edge connects a vertex in $V_A$ to a vertex in $V_B$ or vice versa. Formally, the edge set satisfies $E \subseteq (V_A \times V_B) \cup (V_B \times V_A)$.
 
 **In Plain English:**  
 A 2-path consists of three events connected in sequence (A causes B, B causes C), constituting the minimal pathway for causal influence to propagate.
 
 ---
 
-### 1.5.3 Definition: Cycle Definitions {#1.5.3}
+### 1.5.3 Definition: Directed Path {#1.5.3}
 
-:::tip[**Distinction between Forbidden and Permitted Cyclic Structures through the Hierarchy of Cycle Lengths**]
+:::tip[**Directed Path as the Sequence of Relational Causality**]
 :::
 
-A **Cycle** is defined as a non-trivial Directed Path $(v_0, \dots, v_k)$ where $v_0 = v_k$. 1.  **2-Cycle:** A Cycle of length $k=2$, representing immediate reciprocal causality between two events. 2.  **3-Cycle:** A Cycle of length $k=3$, representing the minimal closed loop enclosing a topological area <Cite id="A.34" label="(Janson, 1987)" /> (the Geometric Quantum).
+A **Directed Path** in a directed graph $G = (V, E)$ is a sequence of vertices $(v_0, v_1, \dots, v_n)$ of length $n \ge 0$ such that for all $0 \le i < n$, the directed edge $(v_i, v_{i+1}) \in E$.
 
 **In Plain English:**  
-Section 1.5.3 formalizes the properties of the QBD definition regarding cycle definitions.
+Section 1.5.3 formalizes the properties of the QBD definition regarding directed path.
+
+---
+
+### 1.5.4 Definition: Simple Path {#1.5.4}
+
+:::tip[**Simple Path as the Acyclic Trajectory of Influence**]
+:::
+
+A **Simple Path** is a Directed Path $(v_0, v_1, \dots, v_n)$ containing no repeated vertices. Formally, $v_i \neq v_j$ for all $0 \le i < j \le n$.
+
+**In Plain English:**  
+Section 1.5.4 formalizes the properties of the QBD definition regarding simple path.
+
+---
+
+### 1.5.5 Definition: 2-Path {#1.5.5}
+
+:::tip[**2-Path as the Minimal Unit of Transitive Mediation**]
+:::
+
+A **2-Path** is a simple Directed Path of length exactly $2$. Formally, it is denoted as an ordered triplet of distinct vertices $(v, w, u)$ such that $(v, w) \in E$ and $(w, u) \in E$.
+
+**In Plain English:**  
+Section 1.5.5 formalizes the properties of the QBD definition regarding 2-path.
+
+---
+
+### 1.5.6 Definition: Cycle {#1.5.6}
+
+:::tip[**Cycle as the General Topological Expression of Causal Closure**]
+:::
+
+A **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \dots, v_k)$ of length $k \ge 1$ such that $v_0 = v_k$.
+
+**In Plain English:**  
+Section 1.5.6 formalizes the properties of the QBD definition regarding cycle.
+
+---
+
+### 1.5.7 Definition: 2-Cycle {#1.5.7}
+
+:::tip[**2-Cycle as the Minimal Unit of Reciprocal Causality**]
+:::
+
+A **2-Cycle** is a Cycle of length exactly $k=2$. Formally, it consists of a pair of distinct vertices $\{u, v\}$ such that $(u, v) \in E$ and $(v, u) \in E$.
+
+**In Plain English:**  
+Section 1.5.7 formalizes the properties of the QBD definition regarding 2-cycle.
+
+---
+
+### 1.5.8 Definition: 3-Cycle {#1.5.8}
+
+:::tip[**3-Cycle as the Minimal Closed Loop Enclosing a Topological Area**]
+:::
+
+A **3-Cycle** is a Cycle of length exactly $k=3$. Formally, it consists of a triplet of distinct vertices $(A, B, C)$ such that $(A, B) \in E$, $(B, C) \in E$, and $(C, A) \in E$.
+
+**In Plain English:**  
+Section 1.5.8 formalizes the properties of the QBD definition regarding 3-cycle.
 
 ---
 
@@ -324,7 +384,7 @@ Section 2.2.1 formalizes the properties of the QBD theorem regarding insufficien
 :::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]
 :::
 
-Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **cycle definitions** <Ref id="1.5.3" label="§1.5.3" />, a configuration excluded by **Fundamental Graph Structures** <Ref id="1.5.1" label="§1.5.1" />.
+Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **Cycle** <Ref id="1.5.6" label="§1.5.6" />, a configuration excluded by **Directed Acyclic Graph (DAG)** <Ref id="1.5.1" label="§1.5.1" />.
 
 **In Plain English:**  
 Section 2.2.2 formalizes the properties of the QBD lemma regarding pathology of self-loops.
@@ -504,7 +564,7 @@ Section 2.4.1 formalizes the properties of the QBD theorem regarding general cyc
 :::info[**Local Confluence of Overlapping Rewrite Operations**]
 :::
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.5.2" label="§1.5.2" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.5.5" label="§1.5.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
 
 **In Plain English:**  
 Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of the constructor.
@@ -960,7 +1020,7 @@ Section 3.1.2 formalizes the properties of the QBD definition regarding vacuum t
 :::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]
 :::
 
-The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$. 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Directed Cycles** <Ref id="1.5.3" label="§1.5.3" /> and no redundant **parallel paths** <Ref id="2.3.3" label="§2.3.3" />.
+The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$. 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id="1.5.6" label="§1.5.6" /> and no redundant **parallel paths** <Ref id="2.3.3" label="§2.3.3" />.
 
 **In Plain English:**  
 Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum structure.
@@ -996,7 +1056,7 @@ Section 3.1.4.1 formalizes the properties of the QBD proof regarding existence a
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
 
-Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.7" label="§1.2.7" />. Under the directed causal rules, the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.3" label="§1.5.3" /> is topologically impossible.
+Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.7" label="§1.2.7" />. Under the directed causal rules, the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.7" label="§1.5.7" /> is topologically impossible.
 
 **In Plain English:**  
 Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of reflexivity and reciprocity.
@@ -1164,7 +1224,7 @@ Section 3.1.10.1 formalizes the properties of the QBD proof regarding depth-pari
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs**]
 :::
 
-For all bipartite graphs **Fundamental Graph Structures** <Ref id="1.5.1" label="§1.5.1" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
+For all bipartite graphs **Bipartite Graph** <Ref id="1.5.2" label="§1.5.2" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
 
 **In Plain English:**  
 Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of odd cycles.
@@ -1320,7 +1380,7 @@ Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Exclusion of Trees with Insufficient Rewrite Site Density via Branching Optimization**]
 :::
 
-For any tree graph yielding a strictly sub-maximal number of compliant **2-Path rewrite sites** <Ref id="1.5.2" label="§1.5.2" />, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
+For any tree graph yielding a strictly sub-maximal number of compliant **2-Path rewrite sites** <Ref id="1.5.5" label="§1.5.5" />, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
 
 **In Plain English:**  
 Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximality.
@@ -1704,7 +1764,7 @@ Section 3.4.2.1 formalizes the properties of the QBD proof regarding symmetry br
 :::info[**Nucleation of Compliant Rewrite Sites under Tunneling**]
 :::
 
-For any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id="1.5.2" label="§1.5.2" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and constitutes a valid input for the rewrite rule.
+For any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id="1.5.5" label="§1.5.5" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and constitutes a valid input for the rewrite rule.
 
 **In Plain English:**  
 Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of compliant sites.
@@ -1992,7 +2052,7 @@ Section 3.5.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Structure of Vertices and Directed Path Morphisms within a Single Snapshot**]
 :::
 
-The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components: 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$. 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Paths** <Ref id="1.5.1" label="§1.5.1" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$. 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$. 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
+The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components: 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$. 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.5.3" label="§1.5.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$. 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$. 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
 
 **In Plain English:**  
 Section 4.1.1 formalizes the properties of the QBD definition regarding internal causal category.
@@ -2460,7 +2520,7 @@ Section 4.4.1.1 formalizes the properties of the QBD proof regarding bit-nat equ
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **compliant 2-Path** <Ref id="1.5.2" label="§1.5.2" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.5.5" label="§1.5.5" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
 **In Plain English:**  
 Section 4.4.2 formalizes the properties of the QBD theorem regarding entropy of closure.
@@ -2628,7 +2688,7 @@ Section 4.5.2 formalizes the properties of the QBD definition regarding catalyti
 :::tip[**Constructive Operation Proposing Edge Additions**]
 :::
 
-The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Paths** <Ref id="1.5.2" label="§1.5.2" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Path** <Ref id="1.5.5" label="§1.5.5" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
 Section 4.5.3 formalizes the properties of the QBD definition regarding addition mode.
