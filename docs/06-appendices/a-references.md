@@ -4,7 +4,7 @@ sidebar_label: "A: External References"
 ---
 
 ### 1. **Acharya, R., et al. (2024).** {#A.1}
-#### "Bridging classical and quantum: Group-theoretic approach to quantum circuit simulation"
+**"Bridging classical and quantum: Group-theoretic approach to quantum circuit simulation"**
 - *Physical Review Letters*, 132(15), 150602
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602)
 
@@ -17,7 +17,7 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 ---
 
 ### 2. **Adams, R. A., & Fournier, J. J. (2003).** {#A.2}
-#### "Sobolev Spaces"
+**"Sobolev Spaces"**
     * **Link:** [https://www.sciencedirect.com/book/9780120441433/sobolev-spaces](https://www.sciencedirect.com/book/9780120441433/sobolev-spaces)
 
 **Overview:**
@@ -29,7 +29,7 @@ This reference is indispensable for the continuum limit derivations of QBD. In C
 ---
 
 ### 3. **Aleksandrowicz, G., et al. (2019).** {#A.3}
-#### "Qiskit: An Open-source Framework for Quantum Computing"
+**"Qiskit: An Open-source Framework for Quantum Computing"**
     * **Link:** [https://zenodo.org/record/2562111](https://zenodo.org/record/2562111)
 
 **Overview:**
@@ -41,7 +41,7 @@ QBD leverages the stabilizer code model to protect topological graph structures 
 ---
 
 ### 4. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.4}
-#### "Reconstructing the Universe"
+**"Reconstructing the Universe"**
     * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
 
 **Overview:**
@@ -53,7 +53,7 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 ---
 
 ### 5. **Anderson, E. (2012).** {#A.5}
-#### "The Problem of Time in Quantum Gravity"
+**"The Problem of Time in Quantum Gravity"**
     * **Link:** [https://arxiv.org/abs/1009.2157](https://arxiv.org/abs/1009.2157)
 
 **Overview:**
@@ -65,7 +65,7 @@ The problem of time is resolved in QBD by the dual-time architecture developed i
 ---
 
 ### 6. **Ashtekar, A. (1986).** {#A.6}
-#### "New Variables for Classical and Quantum Gravity"
+**"New Variables for Classical and Quantum Gravity"**
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244)
 
 **Overview:**
@@ -77,7 +77,7 @@ Ashtekar variables provide the direct inspiration for how spatial geometry can b
 ---
 
 ### 7. **Awodey, S. (2010).** {#A.7}
-#### "Category Theory (2nd ed.)"
+**"Category Theory (2nd ed.)"**
     * **Link:** [https://global.oup.com/academic/product/category-theory-9780199237180](https://global.oup.com/academic/product/category-theory-9780199237180)
 
 **Overview:**
@@ -89,7 +89,7 @@ Category theory is the formal language used to define the computational syntax o
 ---
 
 ### 8. **Baader, F., & Nipkow, T. (1998).** {#A.8}
-#### "Term Rewriting and All That"
+**"Term Rewriting and All That"**
     * **Link:** [http://dx.doi.org/10.1017/CBO9781139172752](http://dx.doi.org/10.1017/CBO9781139172752)
 
 **Overview:**
@@ -101,7 +101,7 @@ QBD operates as a discrete dynamical system driven by graph rewriting. In Chapte
 ---
 
 ### 9. **Barbour, A. D., Holst, L., & Janson, S. (1992).** {#A.9}
-#### "Poisson Approximation"
+**"Poisson Approximation"**
 - *Oxford University Press*
     * **Link:** [https://global.oup.com/academic/product/poisson-approximation-9780198522355](https://global.oup.com/academic/product/poisson-approximation-9780198522355)
 
@@ -114,7 +114,7 @@ In Chapter 5, we analyze the statistical distribution of minimal cycles in the v
 ---
 
 ### 10. **Bekenstein, J. D. (1981).** {#A.10}
-#### "A universal upper bound on the entropy-to-energy ratio for bounded systems"
+**"A universal upper bound on the entropy-to-energy ratio for bounded systems"**
     * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287)
 
 **Overview:**
@@ -126,7 +126,7 @@ The Bekenstein Bound serves as a central physical selection rule in QBD, represe
 ---
 
 ### 11. **Belkin, M., & Niyogi, P. (2003).** {#A.11}
-#### "Laplacian Eigenmaps for Dimensionality Reduction and Data Representation"
+**"Laplacian Eigenmaps for Dimensionality Reduction and Data Representation"**
     * **Link:** [https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf](https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf)
 
 **Overview:**
@@ -138,7 +138,7 @@ This approach is the foundation for the dimensional reconstruction proofs in Cha
 ---
 
 ### 12. **Bennett, C. H. (1982).** {#A.12}
-#### "The thermodynamics of computation—a review"
+**"The thermodynamics of computation—a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
 
 **Overview:**
@@ -150,7 +150,7 @@ Bennett's insights are foundational for the dynamical rewrite rules formulated i
 ---
 
 ### 13. **Bollobás, B. (2001).** {#A.13}
-#### "Random Graphs (2nd ed.)"
+**"Random Graphs (2nd ed.)"**
     * **Link:** [https://doi.org/10.1017/CBO9780511814068](https://doi.org/10.1017/CBO9780511814068)
 
 **Overview:**
@@ -162,7 +162,7 @@ This reference is integral to the random graph audits conducted in Chapter 5. To
 ---
 
 ### 14. **Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987).** {#A.14}
-#### "Space-time as a causal set"
+**"Space-time as a causal set"**
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521)
 
 **Overview:**
@@ -174,7 +174,7 @@ This classic paper is the conceptual precursor to the Causal Graph substrate def
 ---
 
 ### 15. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.15}
-#### "Graph Theory"
+**"Graph Theory"**
     * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
 
 **Overview:**
@@ -186,7 +186,7 @@ This textbook serves as the standard reference for all graph-theoretic operation
 ---
 
 ### 16. **Calder, J., & García Trillos, N. (2022).** {#A.16}
-#### "Improved spectral convergence rates for graph Laplacians on ε-graphs and k-NN graphs"
+**"Improved spectral convergence rates for graph Laplacians on ε-graphs and k-NN graphs"**
     * **Link:** [https://arxiv.org/abs/1910.13476](https://arxiv.org/abs/1910.13476)
 
 **Overview:**
@@ -198,7 +198,7 @@ This variational analysis is decisive for the continuum limit of the discrete fi
 ---
 
 ### 17. **Cheeger, J., Colding, T. H., & Tian, G. (1997).** {#A.17}
-#### "On the singularities of spaces with bounded Ricci curvature"
+**"On the singularities of spaces with bounded Ricci curvature"**
     * **Link:** [https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84](https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84)
 
 **Overview:**
@@ -210,7 +210,7 @@ In Chapter 12, we must analyze the singular behavior of the discrete geometry wh
 ---
 
 ### 18. **Coleman, S. (1977).** {#A.18}
-#### "The Uses of Instantons"
+**"The Uses of Instantons"**
     * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
 
 **Overview:**
@@ -222,7 +222,7 @@ Instantons are the continuous analogs of the non-perturbative transition operati
 ---
 
 ### 19. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.19}
-#### "Stabilizer Formalism for Operator Algebra Quantum Error Correction"
+**"Stabilizer Formalism for Operator Algebra Quantum Error Correction"**
     * **Link:** [https://quantum-journal.org/papers/q-2024-02-21-1261/pdf](https://quantum-journal.org/papers/q-2024-02-21-1261/pdf)
 
 **Overview:**
@@ -234,7 +234,7 @@ This algebraic apparatus is indispensable for formalizing topological protection
 ---
 
 ### 20. **Diestel, R. (2017).** {#A.20}
-#### "Graph Theory (5th ed.)"
+**"Graph Theory (5th ed.)"**
 - *Springer*
     * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
 
@@ -247,7 +247,7 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 ---
 
 ### 21. **Dowker, F. (2005).** {#A.21}
-#### "Causal sets and the deep structure of spacetime"
+**"Causal sets and the deep structure of spacetime"**
     * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
 
 **Overview:**
@@ -259,7 +259,7 @@ Dowker's work is a key conceptual pillar for the discrete causal substrate defin
 ---
 
 ### 22. **Enderton, H. B. (2001).** {#A.22}
-#### "A Mathematical Introduction to Logic (2nd ed.)"
+**"A Mathematical Introduction to Logic (2nd ed.)"**
     * **Link:** [https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic](https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic)
 
 **Overview:**
@@ -271,7 +271,7 @@ This logic reference is necessary for the epistemological foundations laid in Ch
 ---
 
 ### 23. **Erdős, P., & Rényi, A. (1960).** {#A.23}
-#### "On the evolution of random graphs"
+**"On the evolution of random graphs"**
     * **Link:** [https://users.renyi.hu/~p_erdos/1960-10.pdf](https://users.renyi.hu/~p_erdos/1960-10.pdf)
 
 **Overview:**
@@ -283,7 +283,7 @@ This seminal work is the foundation for the geometrogenesis proofs in Chapter 11
 ---
 
 ### 24. **Fuchs, C. A. (2010).** {#A.24}
-#### "QBism, The Perimeter of Quantum Bayesianism"
+**"QBism, The Perimeter of Quantum Bayesianism"**
     * **Link:** [https://arxiv.org/abs/1003.5209](https://arxiv.org/abs/1003.5209)
 
 **Overview:**
@@ -295,7 +295,7 @@ QBism provides the epistemological backing for how quantum measurement is modele
 ---
 
 ### 25. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.25}
-#### "The Page-Wootters mechanism in canonical quantum gravity"
+**"The Page-Wootters mechanism in canonical quantum gravity"**
     * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
 
 **Overview:**
@@ -307,7 +307,7 @@ The Page-Wootters mechanism is the conceptual precursor to the relational time f
 ---
 
 ### 26. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.26}
-#### "Elliptic Partial Differential Equations of Second Order"
+**"Elliptic Partial Differential Equations of Second Order"**
 - *Springer*
     * **Link:** [https://link.springer.com/book/10.1007/978-3-642-61798-0](https://link.springer.com/book/10.1007/978-3-642-61798-0)
 
@@ -320,7 +320,7 @@ This reference is necessary for the discrete field equations formulated in Chapt
 ---
 
 ### 27. **Gillespie, D. T. (1977).** {#A.27}
-#### "Exact stochastic simulation of coupled chemical reactions"
+**"Exact stochastic simulation of coupled chemical reactions"**
 - *The Journal of Physical Chemistry*, 81(25), 2340-2361
     * **Link:** [https://pubs.acs.org/doi/10.1021/j100540a008](https://pubs.acs.org/doi/10.1021/j100540a008)
 
@@ -333,7 +333,7 @@ The Gillespie algorithm is the numerical foundation for the stochastic update si
 ---
 
 ### 28. **Gottesman, D. (1997).** {#A.28}
-#### "Stabilizer Codes and Quantum Error Correction"
+**"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
 
 **Overview:**
@@ -345,7 +345,7 @@ The stabilizer formalism is the leading tool used to protect the topological gra
 ---
 
 ### 29. **Gödel, K. (1931).** {#A.29}
-#### "On Formally Undecidable Propositions of Principia Mathematica and Related Systems"
+**"On Formally Undecidable Propositions of Principia Mathematica and Related Systems"**
     * **Link:** [https://homepages.uc.edu/~martinj/History_of_Logic/Godel/Godel%20%E2%80%93%20On%20Formally%20Undecidable%20Propositions%20of%20Principia%20Mathematica%201931.pdf](https://homepages.uc.edu/~martinj/History_of_Logic/Godel/Godel%20%E2%80%93%20On%20Formally%20Undecidable%20Propositions%20of%20Principia%20Mathematica%201931.pdf)
 
 **Overview:**
@@ -357,7 +357,7 @@ Godel's incompleteness theorems provide the logical motivation for the epistemol
 ---
 
 ### 30. **Gukov, S., Takayanagi, T., & Toumbas, N. (2004).** {#A.30}
-#### "Flux backgrounds in 2D string theory"
+**"Flux backgrounds in 2D string theory"**
     * **Link:** [https://arxiv.org/abs/hep-th/0312208](https://arxiv.org/abs/hep-th/0312208)
 
 **Overview:**
@@ -369,7 +369,7 @@ This string-theoretic analysis provides the conceptual backing for the compactif
 ---
 
 ### 31. **Harlow, D. (2016).** {#A.31}
-#### "Jerusalem Lectures on Black Holes and Quantum Information"
+**"Jerusalem Lectures on Black Holes and Quantum Information"**
     * **Link:** [https://arxiv.org/abs/1409.1231](https://arxiv.org/abs/1409.1231)
 
 **Overview:**
@@ -381,7 +381,7 @@ Harlow's lectures provide the chief inspiration for the holographic bulk/boundar
 ---
 
 ### 32. **Hawking, S. W., & Ellis, G. F. R. (1973).** {#A.32}
-#### "The Large Scale Structure of Space-Time"
+**"The Large Scale Structure of Space-Time"**
     * **Link:** [https://doi.org/10.1017/CBO9780511524646](https://doi.org/10.1017/CBO9780511524646)
 
 **Overview:**
@@ -393,7 +393,7 @@ This seminal textbook is the direct reference for the classical Lorentzian geome
 ---
 
 ### 33. **Jacobson, T. (1995).** {#A.33}
-#### "Thermodynamics of Spacetime: The Einstein Equation of State"
+**"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
 
 **Overview:**
@@ -405,7 +405,7 @@ Jacobson's emergent gravity derivation is a key physical pillar for the geometro
 ---
 
 ### 34. **Janson, S. (1987).** {#A.34}
-#### "Poisson approximation for large cycles in random graphs"
+**"Poisson approximation for large cycles in random graphs"**
     * **Link:** [http://stat.wharton.upenn.edu/~steele/Courses/531/531Resoureces/Janson1987PoissonProcess.pdf](http://stat.wharton.upenn.edu/~steele/Courses/531/531Resoureces/Janson1987PoissonProcess.pdf)
 
 **Overview:**
@@ -417,7 +417,7 @@ This probabilistic toolset is indispensable for the vacuum stability proofs in C
 ---
 
 ### 35. **Jones, V. F. R. (1985).** {#A.35}
-#### "A polynomial invariant for knots via a von Neumann algebra"
+**"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
 
 **Overview:**
@@ -429,7 +429,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 ---
 
 ### 36. **Jost, J., & Liu, S. (2016).** {#A.36}
-#### "Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs"
+**"Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs"**
     * **Link:** [https://arxiv.org/abs/1103.4037](https://arxiv.org/abs/1103.4037)
 
 **Overview:**
@@ -441,7 +441,7 @@ This discrete curvature analysis is pivotal for the geometrogenesis proofs in Ch
 ---
 
 ### 37. **Kitaev, A. Y. (2003).** {#A.37}
-#### "Fault-tolerant quantum computation by anyons"
+**"Fault-tolerant quantum computation by anyons"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
 
 **Overview:**
@@ -453,7 +453,7 @@ Kitaev's toric code is the foremost conceptual model for the stabilizer-protecte
 ---
 
 ### 38. **Lamport, L. (1978).** {#A.38}
-#### "Time, clocks, and the ordering of events in a distributed system"
+**"Time, clocks, and the ordering of events in a distributed system"**
     * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
 **Overview:**
@@ -465,7 +465,7 @@ Lamport's logical clock formalism is the starting point for the dual-time archit
 ---
 
 ### 39. **Landauer, R. (1991).** {#A.39}
-#### "Information is Physical"
+**"Information is Physical"**
     * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
 
 **Overview:**
@@ -488,7 +488,7 @@ This historical debate provides the conceptual framing for the relational substr
 ---
 
 ### 41. **Maldacena, J. M. (1998).** {#A.41}
-#### "The Large N Limit of Superconformal Field Theories and Supergravity"
+**"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
 **Overview:**
@@ -500,7 +500,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 ---
 
 ### 42. **Marker, D. (2002).** {#A.42}
-#### "Model Theory: An Introduction"
+**"Model Theory: An Introduction"**
     * **Link:** [https://link.springer.com/book/10.1007/b98860](https://link.springer.com/book/10.1007/b98860)
 
 **Overview:**
@@ -512,7 +512,7 @@ This reference is necessary for the logical and model-theoretic analyses conduct
 ---
 
 ### 43. **Mousa, M., Jamadagni, A., et al. (2025).** {#A.43}
-#### "Pauli Stabilizer Models for Gapped Boundaries of Twisted Quantum Doubles and Applications to Composite Dimensional Codes"
+**"Pauli Stabilizer Models for Gapped Boundaries of Twisted Quantum Doubles and Applications to Composite Dimensional Codes"**
     * **Link:** [https://arxiv.org/abs/2508.19245](https://arxiv.org/abs/2508.19245)
 
 **Overview:**
@@ -524,7 +524,7 @@ This recent stabilizer model is vital for the boundary protection theories devel
 ---
 
 ### 44. **Ollivier, Y. (2009).** {#A.44}
-#### "Ricci curvature of Markov chains on metric spaces"
+**"Ricci curvature of Markov chains on metric spaces"**
     * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
 
 **Overview:**
@@ -536,7 +536,7 @@ Ollivier's metric curvature is the direct tool used to formulate the discrete fi
 ---
 
 ### 45. **Otto, F., Mansuroglu, R., Schuch, N., Gühne, O., & Sahlmann, H. (2025).** {#A.45}
-#### "Hyperinvariant Spin Network States – An AdS/CFT Model from First Principles"
+**"Hyperinvariant Spin Network States – An AdS/CFT Model from First Principles"**
     * **Link:** [https://arxiv.org/abs/2510.06602](https://arxiv.org/abs/2510.06602)
 
 **Overview:**
@@ -548,7 +548,7 @@ This work provides decisive validation for the spin-network formulations develop
 ---
 
 ### 46. **Padmanabhan, T. (2009).** {#A.46}
-#### "Thermodynamical Aspects of Gravity: New Insights"
+**"Thermodynamical Aspects of Gravity: New Insights"**
     * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
 
 **Overview:**
@@ -560,7 +560,7 @@ Padmanabhan's thermodynamic analysis is a central conceptual foundation for the 
 ---
 
 ### 47. **Page, D. N. (1993).** {#A.47}
-#### "Information in Black Hole Radiation"
+**"Information in Black Hole Radiation"**
     * **Link:** [https://arxiv.org/abs/hep-th/9306083](https://arxiv.org/abs/hep-th/9306083)
 
 **Overview:**
@@ -572,7 +572,7 @@ The Page curve is a key physical benchmark used to verify the unitarity of the r
 ---
 
 ### 48. **Page, D. N., & Wootters, W. K. (1983).** {#A.48}
-#### "Evolution without evolution: Dynamics described by stationary observables"
+**"Evolution without evolution: Dynamics described by stationary observables"**
     * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885)
 
 **Overview:**
@@ -584,7 +584,7 @@ This relational time approach is the core architecture used to solve the problem
 ---
 
 ### 49. **Palmigiano, A., & Sadrzadeh, M. (Eds.). (2023).** {#A.49}
-#### "Samson Abramsky on Logic and Structure in Computer Science and Beyond"
+**"Samson Abramsky on Logic and Structure in Computer Science and Beyond"**
     * **Link:** [https://link.springer.com/book/10.1007/978-3-031-24117-8](https://link.springer.com/book/10.1007/978-3-031-24117-8)
 
 **Overview:**
@@ -596,7 +596,7 @@ This volume is the direct reference for the categorical quantum mechanics models
 ---
 
 ### 50. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.50}
-#### "Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"
+**"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
     * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
 
 **Overview:**
@@ -608,7 +608,7 @@ The HaPPY code is the direct template for the holographic screen mechanisms deve
 ---
 
 ### 51. **Penington, G. (2019).** {#A.51}
-#### "Entanglement Wedge Reconstruction and the Information Paradox"
+**"Entanglement Wedge Reconstruction and the Information Paradox"**
     * **Link:** [https://arxiv.org/abs/1905.08255](https://arxiv.org/abs/1905.08255)
 
 **Overview:**
@@ -620,7 +620,7 @@ This holographic reconstruction is central to the black hole simulation audits c
 ---
 
 ### 52. **Rodrigues, F. L. S., & Lutz, E. (2025).** {#A.52}
-#### "Far-from-equilibrium thermodynamics of non-Abelian thermal states"
+**"Far-from-equilibrium thermodynamics of non-Abelian thermal states"**
     * **Link:** [https://arxiv.org/abs/2510.04788](https://arxiv.org/abs/2510.04788)
 
 **Overview:**
@@ -632,7 +632,7 @@ This non-equilibrium thermodynamic analysis is indispensable for the non-Abelian
 ---
 
 ### 53. **Rovelli, C. (1996).** {#A.53}
-#### "Relational Quantum Mechanics"
+**"Relational Quantum Mechanics"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9609002](https://arxiv.org/abs/quant-ph/9609002)
 
 **Overview:**
@@ -644,7 +644,7 @@ RQM is the central epistemological foundation for the update dynamics formulated
 ---
 
 ### 54. **Rovelli, C., & Smolin, L. (1990).** {#A.54}
-#### "Loop space representation of quantum general relativity"
+**"Loop space representation of quantum general relativity"**
     * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
 
 **Overview:**
@@ -656,7 +656,7 @@ This loop space representation is the foremost conceptual template for the spati
 ---
 
 ### 55. **Ryu, S., & Takayanagi, T. (2006).** {#A.55}
-#### "Holographic Derivation of Entanglement Entropy from AdS/CFT"
+**"Holographic Derivation of Entanglement Entropy from AdS/CFT"**
     * **Link:** [https://arxiv.org/abs/hep-th/0603001](https://arxiv.org/abs/hep-th/0603001)
 
 **Overview:**
@@ -668,7 +668,7 @@ The Ryu-Takayanagi formula is the direct tool used to calculate bulk geometry fr
 ---
 
 ### 56. **Sachs, H. (1962).** {#A.56}
-#### "Über selbstkomplementäre Graphen"
+**"Über selbstkomplementäre Graphen"**
 - *Publicationes Mathematicae Debrecen*, 9, 270-288
     * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
 
@@ -681,7 +681,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 ---
 
 ### 57. **Sati, H., & Schreiber, U. (2025).** {#A.57}
-#### "The quantum monadology"
+**"The quantum monadology"**
     * **Link:** [https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf](https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf)
 
 **Overview:**
@@ -693,7 +693,7 @@ This categorical formulation is indispensable for the relational model defined i
 ---
 
 ### 58. **Singer, A., & Wu, H.-T. (2013).** {#A.58}
-#### "Vector diffusion maps and the connection graph Laplacian"
+**"Vector diffusion maps and the connection graph Laplacian"**
     * **Link:** [https://arxiv.org/abs/1102.0075](https://arxiv.org/abs/1102.0075)
 
 **Overview:**
@@ -705,7 +705,7 @@ This connection graph Laplacian is the direct tool used to analyze the emergent 
 ---
 
 ### 59. **Sorkin, R. D. (2005).** {#A.59}
-#### "Causal sets: Discrete gravity"
+**"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
 
@@ -718,7 +718,7 @@ Sorkin's causal set model is a core physical pillar for the discrete causal subs
 ---
 
 ### 60. **Steinberg, M. et al. (2025).** {#A.60}
-#### "Universal Fault-Tolerant Logic with Heterogeneous Holographic Codes"
+**"Universal Fault-Tolerant Logic with Heterogeneous Holographic Codes"**
     * **Link:** [https://arxiv.org/abs/2504.10386](https://arxiv.org/abs/2504.10386)
 
 **Overview:**
@@ -730,7 +730,7 @@ This holographic code model is indispensable for the logical gate simulations co
 ---
 
 ### 61. **Uustalu, T., & Vene, V. (2008).** {#A.61}
-#### "Comonadic notions of computation"
+**"Comonadic notions of computation"**
     * **Link:** [https://www.sciencedirect.com/science/article/pii/S1571066108003435](https://www.sciencedirect.com/science/article/pii/S1571066108003435)
 
 **Overview:**
@@ -742,7 +742,7 @@ This comonadic structure is the direct tool used to formalize the local update r
 ---
 
 ### 62. **van der Hoorn, P., & Stegehuis, C. (2020).** {#A.62}
-#### "Mean-field bounds for the k-core in random graphs"
+**"Mean-field bounds for the k-core in random graphs"**
 - *Electronic Journal of Probability*, 25
     * **Link:** [https://arxiv.org/abs/2008.01209](https://arxiv.org/abs/2008.01209)
 
@@ -755,7 +755,7 @@ This probabilistic analysis is necessary for the vacuum stability audits conduct
 ---
 
 ### 63. **van Kampen, N. G. (1992).** {#A.63}
-#### "Stochastic Processes in Physics and Chemistry (2nd ed.)"
+**"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
 - *North-Holland*
     * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
 
@@ -768,7 +768,7 @@ This textbook is the direct reference for the stochastic master equations formul
 ---
 
 ### 64. **van Luxburg, U., Belkin, M., & Bousquet, O. (2008).** {#A.64}
-#### "Consistency of spectral clustering"
+**"Consistency of spectral clustering"**
     * **Link:** [http://misha.belkin-wang.org/papers/CLEM_08.pdf](http://misha.belkin-wang.org/papers/CLEM_08.pdf)
 
 **Overview:**
@@ -780,7 +780,7 @@ This convergence proof is a main cornerstone for the dimensional reconstruction 
 ---
 
 ### 65. **Verlinde, E. (2011).** {#A.65}
-#### "On the Origin of Gravity and the Laws of Newton"
+**"On the Origin of Gravity and the Laws of Newton"**
     * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
 
 **Overview:**
@@ -792,7 +792,7 @@ Verlinde's entropic gravity is a central conceptual foundation for the discrete 
 ---
 
 ### 66. **Wang, W. (2024).** {#A.66}
-#### "Building holographic code from the boundary"
+**"Building holographic code from the boundary"**
     * **Link:** [https://arxiv.org/abs/2407.10271](https://arxiv.org/abs/2407.10271)
 
 **Overview:**
@@ -804,7 +804,7 @@ This boundary code construction provides vital validation for the holographic sc
 ---
 
 ### 67. **Wheeler, J. A. (1990).** {#A.67}
-#### "Information, physics, quantum: The search for links"
+**"Information, physics, quantum: The search for links"**
     * **Link:** [https://philpapers.org/archive/WHEIPQ.pdf](https://philpapers.org/archive/WHEIPQ.pdf)
 
 **Overview:**
@@ -816,7 +816,7 @@ Wheeler's informational paradigm is the philosophical foundation for the entire 
 ---
 
 ### 68. **Wilson, K. G. (1975).** {#A.68}
-#### "The renormalization group: Critical phenomena and the Kondo problem"
+**"The renormalization group: Critical phenomena and the Kondo problem"**
     * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
 
 **Overview:**
@@ -828,7 +828,7 @@ The renormalization group is the main tool used to calculate the continuum limit
 ---
 
 ### 69. **Witten, E. (1989).** {#A.69}
-#### "Quantum Field Theory and the Jones Polynomial"
+**"Quantum Field Theory and the Jones Polynomial"**
     * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
 
 **Overview:**
@@ -840,7 +840,7 @@ This seminal TQFT construction is the direct algebraic precursor to the particle
 ---
 
 ### 70. **Woess, W. (2000).** {#A.70}
-#### "Random Walks on Infinite Graphs and Groups"
+**"Random Walks on Infinite Graphs and Groups"**
     * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
 
 **Overview:**
@@ -852,7 +852,7 @@ This reference is necessary for the discrete diffusion analyses conducted in Cha
 ---
 
 ### 71. **Wolfram, S. (2002).** {#A.71}
-#### "A New Kind of Science"
+**"A New Kind of Science"**
     * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
 
 **Overview:**
@@ -864,7 +864,7 @@ Wolfram's computational paradigm is a key conceptual precursor to the graph rewr
 ---
 
 ### 72. **Wolfram, S. (2020).** {#A.72}
-#### "A Project to Find the Fundamental Theory of Physics"
+**"A Project to Find the Fundamental Theory of Physics"**
     * **Link:** [https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/](https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/)
 
 **Overview:**
@@ -876,7 +876,7 @@ This project is a direct conceptual and computational precursor to QBD. We build
 ---
 
 ### 73. **Zurek, W. H. (2003).** {#A.73}
-#### "Decoherence, Einselection, and the Quantum Origins of the Classical"
+**"Decoherence, Einselection, and the Quantum Origins of the Classical"**
     * **Link:** [https://arxiv.org/abs/quant-ph/0105127](https://arxiv.org/abs/quant-ph/0105127)
 
 **Overview:**
@@ -888,7 +888,7 @@ Decoherence and einselection are the key physical mechanisms used to explain the
 ---
 
 ### 74. **Abramsky, S., Barbosa, R. S., & Searle, A. (2024).** {#A.74}
-#### "Combining contextuality and causality: a game semantics approach"
+**"Combining contextuality and causality: a game semantics approach"**
 - *Philosophical Transactions of the Royal Society A*, 382(2268), 20230002
     * **Link:** [https://royalsocietypublishing.org/doi/10.1098/rsta.2023.0002](https://royalsocietypublishing.org/doi/10.1098/rsta.2023.0002)
 
