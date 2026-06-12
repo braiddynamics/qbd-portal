@@ -38,6 +38,7 @@ Thumbs.db
 
 # Local schemas folder
 /schema/
+/validation/
 
 # Local PDF build workspace
 /pdf-build/

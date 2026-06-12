@@ -47,8 +47,11 @@ qbd-portal/
 │   │   └── test.py           # Verification script for local execution
 │   ├── tests/                # pyTest unit tests and code verification
 ├── docs/                     # Markdown source files for the Monograph
-├── schema/                   # Editorial blueprints and expected chapter trees
-├── scratch/                  # Formatting linters, glossary compilers, and physics probes
+├── validation/               # Editorial blueprints, chapter schemas, and linters
+│   ├── blueprints/           # Formatting and style rules
+│   ├── schemas/              # Chapter structures and nomenclature
+│   └── linters/              # Python validation scripts and logs
+├── scratch/                  # Temporary compilers, physics simulation probes, and utility scripts
 ├── src/                      # React components for the Docusaurus frontend
 ├── static/                   # Images, diagrams, and LaTeX assets
 ├── docusaurus.config.ts      # Site configuration and KaTeX macros
