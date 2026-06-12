@@ -161,7 +161,7 @@ A task represents the physical possibility of an update: a localized change in t
 
 ---
 
-### 1.4.2 Postulate: Vacuum Repertoire {#1.4.2}
+### 1.4.2 Definition: Vacuum Repertoire {#1.4.2}
 
 :::tip[**Restriction of the Vacuum Repertoire to Primitive Edge Operations due to Catalytic Reciprocity**]
 :::
@@ -207,7 +207,7 @@ Section 1.5.3 formalizes the properties of the QBD definition regarding cycle de
 
 ### 2.1.1 Axiom: 1: The Directed Causal Link {#2.1.1}
 
-:::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
+:::info[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 :::
 It is herein established that the fundamental unit of relation within the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
 
@@ -427,7 +427,7 @@ Section 2.5.4 formalizes the properties of the QBD proof regarding mutual indepe
 
 ### 2.6.1 Definition: Effective Influence {#2.6.1}
 
-:::info[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
+:::tip[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
 :::
 The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
 
@@ -3727,7 +3727,7 @@ Section 11.2.2 formalizes the properties of the QBD definition regarding causal 
 
 ### 11.2.3 Theorem: Causal Geometry Construction {#11.2.3}
 
-:::tip[**Establishment of Well-Posedness for the Discrete Geometric Space**]
+:::info[**Establishment of Well-Posedness for the Discrete Geometric Space**]
 :::
 Let $\mathcal{G}$ be the class of finite, simple, directed graphs. The construction mapping any $G \in \mathcal{G}$ to the causal geometry $(G, \bar{d}, \{\mu_u\}, K)$ is well-posed. Specifically, the following properties hold for all $G$:
 
@@ -3804,7 +3804,7 @@ Section 11.3.1 formalizes the properties of the QBD definition regarding discret
 
 ### 11.3.2 Theorem: Curvature Monotonicity {#11.3.2}
 
-:::tip[**Derivation of Strict Curvature Augmentation from the Nucleation of Three-Cycle Geometric Quanta**]
+:::info[**Derivation of Strict Curvature Augmentation from the Nucleation of Three-Cycle Geometric Quanta**]
 :::
 Let $G_0 = (V_0, E_0)$ denote a finite, simple, directed graph, and let $(u,v) \in E_0$ denote a directed edge within it. Let $G_1 = (V_1, E_1)$ denote the graph derived from $G_0$ by adjoining a new vertex $w \notin V_0$ and the two new directed edges $(v,w)$ and $(w,u)$, thereby nucleating a novel 3-cycle $u \to v \to w \to u$.
 
@@ -3815,7 +3815,7 @@ Section 11.3.2 formalizes the properties of the QBD theorem regarding curvature 
 
 ### 11.3.3 Lemma: Measure Dilution (Phase 1) {#11.3.3}
 
-:::tip[**Quantification of Probability Mass Redistribution upon Topological Nucleation**]
+:::info[**Quantification of Probability Mass Redistribution upon Topological Nucleation**]
 :::
 The nucleation of a 3-cycle involving a new vertex $w$ strictly alters the lazy causal measures of the incident vertices $u$ and $v$. Specifically, the probability mass allocated to the shared vertex $w$ in both the past-measure of $u$ ($\mu_u^{(1)}$) and the future-measure of $v$ ($\mu_v^{(1)}$) is strictly positive, satisfying:
 
@@ -3826,7 +3826,7 @@ Section 11.3.3 formalizes the properties of the QBD lemma regarding measure dilu
 
 ### 11.3.4 Lemma: Transport Feasibility (Phase 2) {#11.3.4}
 
-:::tip[**Construction of a Valid Transport Plan Exploiting Shared Geometry**]
+:::info[**Construction of a Valid Transport Plan Exploiting Shared Geometry**]
 :::
 There exists a feasible transport coupling $\pi_1$ between the post-nucleation measures $\mu_u^{(1)}$ and $\mu_v^{(1)}$ within the expanded graph $G_1$ that explicitly utilizes the shared probability mass at vertex $w$. This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
 
@@ -3837,7 +3837,7 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 
 ### 11.3.5 Lemma: Cost Contraction (Phase 3) {#11.3.5}
 
-:::tip[**Demonstration of Strict Inequality for Wasserstein Distances**]
+:::info[**Demonstration of Strict Inequality for Wasserstein Distances**]
 :::
 The Wasserstein-1 transport cost associated with the feasible plan $\pi_1$ in the nucleated graph $G_1$ is strictly less than the optimal transport cost $W_1^{(0)}$ required in the antecedent graph $G_0$. Specifically, the cost satisfies the inequality $W_1(\pi_1) < W_1^{(0)}$, a reduction necessitated by the zero-cost transport of the shared probability mass fraction $m_w$ at the nucleated vertex $w$. Consequently, the true optimal Wasserstein distance $W_1^{(1)}$ in the successor graph must also satisfy this strict upper bound.
 
@@ -4519,7 +4519,7 @@ Section 15.1.2 formalizes the properties of the QBD definition regarding bi-metr
 
 ### 15.1.3 Theorem: Distance Gap {#15.1.3}
 
-:::tip[**Condition for the Necessary Divergence of Geodesics at an Entanglement Bridge**]
+:::info[**Condition for the Necessary Divergence of Geodesics at an Entanglement Bridge**]
 :::
 Let $A$ and $B$ be two subgraphs of $G$ connected by a Topological Link $\ell_{AB}$ consisting of a single edge or short path such that $d_{topo}(A, B) \sim \mathcal{O}(1)$. If the emergent manifold $M$ maintains local manifold structure (specifically, if the Ricci curvature remains finite), then the geodesic distance $d_{geo}(A, B)$ measured through the bulk must satisfy the inequality:
 
@@ -4530,7 +4530,7 @@ Section 15.1.3 formalizes the properties of the QBD theorem regarding distance g
 
 ### 15.1.4 Lemma: Stabilizer Conservation {#15.1.4}
 
-:::tip[**Establishment of Topological Linkage Invariance under Local Unitary Evolution via Commutativity**]
+:::info[**Establishment of Topological Linkage Invariance under Local Unitary Evolution via Commutativity**]
 :::
 It is herein established that the topological connectivity between two disjoint subgraphs $A$ and $B$, encoded by the stabilizer operator $S_{AB} \in \mathcal{S}$, maintains strict invariance under the unitary evolution of the bulk graph provided the evolution operator respects local support constraints. Let $S_{AB}$ denote a stabilizer generator acting non-trivially on the edge set $E_{bridge}$ connecting $A$ and $B$. Let $U(t)$ denote the global unitary evolution operator generated by the sequence of local rewrite rules $\mathcal{R} = \{r_i\}$ acting on the graph vertex set $V$. The invariance condition:
 
@@ -4541,7 +4541,7 @@ Section 15.1.4 formalizes the properties of the QBD lemma regarding stabilizer c
 
 ### 15.1.5 Lemma: Manifold Screening Condition {#15.1.5}
 
-:::tip[**Establishment of the Vanishing Measure Criterion for Entanglement Bridges in the Continuum Limit**]
+:::info[**Establishment of the Vanishing Measure Criterion for Entanglement Bridges in the Continuum Limit**]
 :::
 It is herein established that an embedding $\phi: G \to M$ of a causal graph $G$ into a $D$-dimensional Riemannian manifold $M$ satisfies the **Manifold Screening Condition** if and only if the subset of topological bridge edges $E_{bridge}$ constitutes a set of measure zero with respect to the bulk edge set $E_{bulk}$ in the thermodynamic limit. Specifically, the validity of the induced metric tensor $g_{\mu\nu}$ on $M$ requires that the cardinality ratio of bridge edges to bulk edges vanishes asymptotically:
 
@@ -4563,7 +4563,7 @@ Section 15.1.6 formalizes the properties of the QBD proof regarding formal synth
 
 ### 15.2.1 Theorem: Violation of Metric Locality (Bell's Theorem) {#15.2.1}
 
-:::tip[**Establishment of the CHSH Bound Divergence via Topological Shortcuts**]
+:::info[**Establishment of the CHSH Bound Divergence via Topological Shortcuts**]
 :::
 It is herein established that for a bipartite system consisting of subsystems $A$ and $B$ connected by a topological bridge $\ell_{AB} \in E$, the correlations between local measurements are bounded exclusively by the algebraic connectivity of the graph $G$ and are independent of the geodesic separation defined on the emergent manifold $M$. Let $S$ denote the Clauser-Horne-Shimony-Holt (CHSH) correlation parameter derived from the expectation values of local observables. The existence of the bridge edge condition $d_{topo}(A, B) = 1$ necessitates that the upper bound of $S$ saturates the Tsirelson bound of quantum mechanics rather than the Bell bound of classical local realism:
 
@@ -4574,7 +4574,7 @@ Section 15.2.1 formalizes the properties of the QBD theorem regarding violation 
 
 ### 15.2.2 Lemma: Path Integral Dominance {#15.2.2}
 
-:::tip[**Establishment of the Shortest Path Principle for Graph Amplitudes in the Geometrogenesis Limit**]
+:::info[**Establishment of the Shortest Path Principle for Graph Amplitudes in the Geometrogenesis Limit**]
 :::
 It is herein established that the transition amplitude $\mathcal{A}(A \to B)$ mediating the interaction between two subsystems $A$ and $B$ within the causal graph $G$ is determined strictly by the summation over all directed paths connecting the subsystems. In the Geometrogenesis limit defined by high inverse temperature $\beta \to \infty$, this summation is asymptotically dominated by the subset of paths minimizing the topological hop-count. Specifically, if there exists a bridge edge $\ell_{AB}$ such that $d_{topo}(A, B) \ll d_{geo}(A, B)$, the transition probability $P(A \to B)$ satisfies the dominance condition:
 
@@ -4585,7 +4585,7 @@ Section 15.2.2 formalizes the properties of the QBD lemma regarding path integra
 
 ### 15.2.3 Lemma: Correlation Bridge {#15.2.3}
 
-:::tip[**Establishment of Correlation Decay Dependence on Topological Adjacency**]
+:::info[**Establishment of Correlation Decay Dependence on Topological Adjacency**]
 :::
 It is herein established that the magnitude of the connected correlation function $C(A, B)$ between two local observables $\hat{O}_A$ and $\hat{O}_B$ is strictly bounded by the exponential decay of information along the geodesic of the causal graph $G$. Let $\xi$ denote the correlation length of the vacuum state. The correlation magnitude satisfies the inequality:
 
@@ -4596,7 +4596,7 @@ Section 15.2.3 formalizes the properties of the QBD lemma regarding correlation 
 
 ### 15.2.4 Lemma: Tsirelson Bound {#15.2.4}
 
-:::tip[**Establishment of the Maximum Quantum Correlation Limit via Unitary Constraints**]
+:::info[**Establishment of the Maximum Quantum Correlation Limit via Unitary Constraints**]
 :::
 It is herein established that while the existence of a topological bridge allows the correlation parameter $S$ to exceed the classical local realism bound ($|S| \le 2$), the magnitude of $S$ remains strictly bounded by the geometric constraints of the graph Hilbert space $\mathcal{H}_G$. Specifically, for any set of local observables defined by the braid group algebra $\mathcal{B}_N$, the CHSH correlation is bounded by the Tsirelson limit:
 
@@ -4618,7 +4618,7 @@ Section 15.2.5 formalizes the properties of the QBD proof regarding formal synth
 
 ### 15.3.1 Theorem: Transport Cost Reduction (ER=EPR) {#15.3.1}
 
-:::tip[**Establishment of the Wasserstein Distance Contraction via Entanglement**]
+:::info[**Establishment of the Wasserstein Distance Contraction via Entanglement**]
 :::
 It is herein established that the introduction of a topological bridge $\ell_{AB}$ between disjoint subsystems $A$ and $B$ induces a strict contraction in the Wasserstein-1 transport distance $W_1(\mu_A, \mu_B)$ relative to the geometric background. Let $\mu_A$ and $\mu_B$ denote probability measures representing localized excitations (particles) at $A$ and $B$. The transport distance, defined as the infimum of the cost function over all transport plans $\pi$, satisfies the inequality:
 
@@ -4629,7 +4629,7 @@ Entangled quantum states behave as shortcuts in the causal network, meaning that
 
 ### 15.3.2 Lemma: Isoperimetric Deficit {#15.3.2}
 
-:::tip[**Establishment of the Isoperimetric Inequality Violation via Topological Shortcuts**]
+:::info[**Establishment of the Isoperimetric Inequality Violation via Topological Shortcuts**]
 :::
 It is herein established that the causal graph $G$ containing a topological bridge $\ell_{AB}$ violates the Euclidean Isoperimetric Inequality characteristic of the emergent manifold $M$. Let $\Omega \subset V$ be a subgraph volume and $\partial \Omega$ be its boundary edge set. In a $D$-dimensional manifold, the isoperimetric ratio scales as $|\partial \Omega| \ge c_D |\Omega|^{(D-1)/D}$. However, for a partition defined by the bridge cut $\partial \Omega = \{\ell_{AB}\}$, the ratio satisfies the **Isoperimetric Deficit Condition**:
 
@@ -4640,7 +4640,7 @@ Section 15.3.2 formalizes the properties of the QBD lemma regarding isoperimetri
 
 ### 15.3.3 Lemma: Emergent Throat {#15.3.3}
 
-:::tip[**Establishment of the Holographic Minimal Surface Coincident with the Entanglement Bridge**]
+:::info[**Establishment of the Holographic Minimal Surface Coincident with the Entanglement Bridge**]
 :::
 It is herein established that the set of topological bridge edges $E_{bridge}$ connecting disjoint subsystems $A$ and $B$ constitutes the **Minimal Cut Surface** $\gamma_{min}$ of the causal graph $G$, identifiable with the throat of an Einstein-Rosen bridge in the emergent geometry. Let $\Sigma$ be a homological surface separating the boundary regions $\partial A$ and $\partial B$. The area of the minimal surface, defined by the edge count $|E_{cut}|$, satisfies the minimization condition strictly at the locus of entanglement:
 
@@ -4651,7 +4651,7 @@ Section 15.3.3 formalizes the properties of the QBD lemma regarding emergent thr
 
 ### 15.3.4 Lemma: Teleportation Protocol {#15.3.4}
 
-:::tip[**Establishment of Quantum State Transmission through Entangled Links**]
+:::info[**Establishment of Quantum State Transmission through Entangled Links**]
 :::
 The **Teleportation Protocol** establishes that a quantum state can be transmitted between spatially separated regions $A$ and $B$ via a shared entanglement channel $E_{bridge}$ and classical coordination. Let $|\psi\rangle$ denote the arbitrary state to be transmitted from $A$ to $B$, and let $|\Phi^+\rangle_{AB}$ be the shared Bell pair supported on the bridge edges. The transmission is achieved through a joint measurement at $A$, classical transmission of the two-bit result, and a local unitary correction at $B$. The protocol recovers the exact state $|\psi\rangle$ at the target locus with fidelity $F \equiv 1.0$, demonstrating that the topological bridge acts as a traversable quantum channel.
 
@@ -4684,7 +4684,7 @@ Section 15.4.1 formalizes the properties of the QBD definition regarding history
 
 ### 15.4.2 Theorem: Global Constraint Satisfaction {#15.4.2}
 
-:::tip[**Establishment of the Necessity of Temporal Boundary Consistency**]
+:::info[**Establishment of the Necessity of Temporal Boundary Consistency**]
 :::
 **Theorem (Constraint Satisfaction):** It is herein established that the probability distribution of observable outcomes $P(O)$ at any intermediate graph time $t$ is functionally determined by the minimization of the global action functional $S[\gamma]$ subject to strict constraints imposed by both the initial state boundary $\partial \Sigma_{in}$ and the final measurement boundary $\partial \Sigma_{fin}$. Let $\mathcal{H}_{eff}$ be the effective history space compatible with the final operator $\hat{M}$. The probability of an intermediate event $E$ is given by the conditional ratio of squared amplitudes:
 
@@ -4695,7 +4695,7 @@ Section 15.4.2 formalizes the properties of the QBD theorem regarding global con
 
 ### 15.4.3 Lemma: Ensemble Indeterminacy {#15.4.3}
 
-:::tip[**Establishment of the Superposition of Trajectories in the Absence of Intermediate Measurement**]
+:::info[**Establishment of the Superposition of Trajectories in the Absence of Intermediate Measurement**]
 :::
 It is herein established that for a system evolving unitarily from an initial state $|\Psi_{in}\rangle$ to a final boundary condition $\hat{M}$, the topological state of the graph $G(t)$ at any intermediate time $t \in (t_0, t_f)$ is formally indeterminate. The state exists as a coherent superposition of all topologically distinct causal histories $\gamma_i$ compatible with the boundary constraints. Specifically, the density matrix $\rho(t)$ describing the system at time $t$ contains non-vanishing off-diagonal terms (coherences) between mutually exclusive geometric configurations:
 
@@ -4706,7 +4706,7 @@ Section 15.4.3 formalizes the properties of the QBD lemma regarding ensemble ind
 
 ### 15.4.4 Lemma: Block Universe as Fixed Point {#15.4.4}
 
-:::tip[**Establishment of the Spacetime Cobordism as a Boundary Value Solution**]
+:::info[**Establishment of the Spacetime Cobordism as a Boundary Value Solution**]
 :::
 **Lemma (Block Universe Fixed Point):** It is herein established that the observable history of the causal graph $\Gamma_{obs}$ is the unique fixed point of the global constraint satisfaction problem defined by the initial state $|\Psi_{in}\rangle$ and the final measurement context $\hat{M}$. The effective spacetime block is not generated iteratively by forward evolution alone, but is the solution set $\mathcal{S}$ to the boundary equation:
 
@@ -4739,7 +4739,7 @@ Section 16.1.1 formalizes the properties of the QBD definition regarding causal 
 
 ### 16.1.2 Theorem: Ryu-Takayanagi Correspondence {#16.1.2}
 
-:::tip[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
+:::info[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
 :::
 **Theorem (Ryu-Takayanagi):** It is herein established that the von Neumann entanglement entropy $S(\rho_A)$ of a boundary subregion $A \subset \partial G$ is strictly determined by the minimum information flux required to sever the causal connections between $A$ and its complement $A^c$ through the bulk graph $G_{bulk}$. Let $\gamma_A$ denote a homological surface in the bulk graph anchored to the boundary of $A$. The entropy satisfies the **Ryu-Takayanagi Formula**:
 
@@ -4750,7 +4750,7 @@ Section 16.1.2 formalizes the properties of the QBD theorem regarding ryu-takaya
 
 ### 16.1.3 Lemma: Isometry Condition {#16.1.3}
 
-:::tip[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
+:::info[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
 :::
 **Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**. Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:
 
@@ -4783,7 +4783,7 @@ Section 16.2.1 formalizes the properties of the QBD definition regarding bulk sa
 
 ### 16.2.2 Theorem: Maximum Informational Density (The Bound) {#16.2.2}
 
-:::tip[**Establishment of the Universal Entropy Bound via Bulk Saturation**]
+:::info[**Establishment of the Universal Entropy Bound via Bulk Saturation**]
 :::
 It is herein established that the information content (entropy $S$) of any causally compact subgraph $\Omega \subset G$ is strictly bounded by the discrete area of its boundary surface $\partial \Omega$. Let $A[\partial \Omega]$ denote the number of plaquettes constituting the causal horizon. The entropy satisfies the **Bekenstein Bound**:
 
@@ -4794,7 +4794,7 @@ The information density of any bounded space is strictly limited by its surface 
 
 ### 16.2.3 Lemma: Holographic Screen Mechanism {#16.2.3}
 
-:::tip[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
+:::info[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
 :::
 **Lemma (Screen Mechanism):** It is herein established that the locus of information deposition for a subgraph $\Omega$ transitions from the bulk volume $V_{\Omega}$ to the boundary surface $\partial \Omega$ as the information density approaches the critical saturation limit $\rho_{max}$. Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
 
@@ -4805,7 +4805,7 @@ Section 16.2.3 formalizes the properties of the QBD lemma regarding holographic 
 
 ### 16.2.4 Lemma: Black Hole Entropy from Cycle Count {#16.2.4}
 
-:::tip[**Establishment of the Geometric Entropy Formula via Topological Crossing Number**]
+:::info[**Establishment of the Geometric Entropy Formula via Topological Crossing Number**]
 :::
 It is herein established that the Bekenstein-Hawking entropy $S_{BH}$ of a trapped surface (Black Hole Horizon) corresponds strictly to the cardinality of the fundamental 3-cycles (braid loops) intersecting the boundary manifold. Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:
 
@@ -4838,7 +4838,7 @@ Section 17.1.1 formalizes the properties of the QBD definition regarding causal 
 
 ### 17.1.2 Theorem: Action Equivalence (Nambu-Goto) {#17.1.2}
 
-:::tip[**Establishment of the Isomorphism between Computational Action and Worldsheet Area**]
+:::info[**Establishment of the Isomorphism between Computational Action and Worldsheet Area**]
 :::
 **Theorem (Action Equivalence):** It is herein established that the information theoretic action $S_{info}$ required to propagate a topological defect $\gamma$ through the causal graph is proportional to the geometric area of the causal tube $\mathcal{T}$ generated by its history. Let $\mathcal{U}$ be the set of graph update operations required to map $\gamma(t)$ to $\gamma(t+\Delta t)$. The action is minimized when the discrete history approximates the **Nambu-Goto Action**:
 
@@ -4849,7 +4849,7 @@ Section 17.1.2 formalizes the properties of the QBD theorem regarding action equ
 
 ### 17.1.3 Lemma: Confinement and Berry Phase {#17.1.3}
 
-:::tip[**Establishment of the Linear Potential via Topological Charge Conservation**]
+:::info[**Establishment of the Linear Potential via Topological Charge Conservation**]
 :::
 It is herein established that the interaction potential $V(r)$ between a separated pair of topological defects (braid ends) scales linearly with their separation distance $r$. Let $\Phi$ be the conserved topological flux (Berry Phase) associated with the braid. Due to the non-Abelian nature of the graph topology (specifically the discrete non-commutativity of the fundamental group $\pi_1(G)$), the flux $\Phi$ cannot diffuse spherically but is constrained to a one-dimensional channel connecting the defects.
 
@@ -4882,7 +4882,7 @@ Section 17.2.1 formalizes the properties of the QBD definition regarding winding
 
 ### 17.2.2 Theorem: Spectral Invariance (T-Duality) {#17.2.2}
 
-:::tip[**Establishment of the Physical Equivalence of Reciprocal Geometries**]
+:::info[**Establishment of the Physical Equivalence of Reciprocal Geometries**]
 :::
 **Theorem (T-Duality):** It is herein established that the Hamiltonian spectrum of a closed topological defect on a graph lattice with compactification radius $R$ is invariant under the duality transformation $\mathcal{D}$. Let $H(R)$ denote the Hamiltonian governing the defect's evolution. The system exhibits **T-Duality** such that:
 
@@ -4893,7 +4893,7 @@ Section 17.2.2 formalizes the properties of the QBD theorem regarding spectral i
 
 ### 17.2.3 Lemma: T-Gate Phase {#17.2.3}
 
-:::tip[**Establishment of the GSO Projection via Non-Clifford Rotation**]
+:::info[**Establishment of the GSO Projection via Non-Clifford Rotation**]
 :::
 **Lemma (T-Gate Phase):** It is herein established that the inclusion of Fermionic modes (Matter) in the graph spectrum necessitates a local update rule capable of imparting a non-Clifford phase shift, specifically the $\pi/4$ rotation characteristic of the **T-Gate**. Let $U(\theta)$ be the rotation operator for a topological defect. 1.  **Clifford constraint:** If $U(\theta) \in \mathcal{C}$ (the Clifford Group), the rotational eigenvalues are restricted to $\{1, -1, i, -i\}$. This spectrum generates only Bosonic statistics (integer spin). 2.  **T-Gate extension:** The inclusion of the T-gate ($R_z(\pi/4)$) extends the group to a universal set, enabling eigenvalues of the form $e^{i\pi/4}$. This fractional phase allows for the construction of spinor representations (half-integer spin) and implements the discrete analog of the **GSO Projection** required to remove tachyons and stabilize the string vacuum.
 
@@ -4915,7 +4915,7 @@ Section 17.2.4 formalizes the properties of the QBD proof regarding formal synth
 
 ### 17.3.1 Theorem: Chiral Split (Bosonic Left / Super Right) {#17.3.1}
 
-:::tip[**Establishment of the Heterotic Worldsheet Decomposition**]
+:::info[**Establishment of the Heterotic Worldsheet Decomposition**]
 :::
 It is herein established that the Hilbert space of a closed topological defect $\mathcal{H}_{defect}$ factorizes into two decoupled chiral sectors with distinct critical dimensions. Let $\partial_+$ and $\partial_-$ denote the derivatives with respect to the light-cone coordinates $(\tau + \sigma)$ and $(\tau - \sigma)$. The graph update rules impose differing constraints on the forward and backward propagation of information: 1.  **The Right-Moving Sector ($\mathcal{H}_R$):** Corresponds to the propagation of the **Topological Twist** (the particle). This sector is governed by the Braid Group $B_3$ and requires Supersymmetry (GSO projection) to maintain topological stability.
 
@@ -4926,7 +4926,7 @@ Section 17.3.1 formalizes the properties of the QBD theorem regarding chiral spl
 
 ### 17.3.2 Lemma: Bott Periodicity (The Octonionic Lock) {#17.3.2}
 
-:::tip[**Establishment of the Transverse Mode Saturation at Dimension 8**]
+:::info[**Establishment of the Transverse Mode Saturation at Dimension 8**]
 :::
 It is herein established that the number of stable transverse degrees of freedom $\delta_{\perp}$ available to a supersymmetric topological defect is strictly limited to $\delta_{\perp} = 8$. This constraint arises from **Bott Periodicity** in the homotopy groups of the orthogonal group $O(N)$ and the classification of Real Clifford Algebras $Cl_{p,q}$.
 
@@ -4937,7 +4937,7 @@ Section 17.3.2 formalizes the properties of the QBD lemma regarding bott periodi
 
 ### 17.3.3 Lemma: Tripartite Braid Saturation {#17.3.3}
 
-:::tip[**Establishment of the Bosonic Critical Dimension via Trivalent Vertex Counting**]
+:::info[**Establishment of the Bosonic Critical Dimension via Trivalent Vertex Counting**]
 :::
 **Lemma (Braid Saturation):** It is herein established that the critical dimension of the Left-Moving (Bosonic) sector of the causal graph is $D_L = 26$. This dimensionality arises from the **Tripartite** nature of the fundamental graph interaction (the trivalent vertex), which triples the transverse information capacity relative to the supersymmetric sector. Let $\delta_{\perp}^{(R)} = 8$ be the transverse capacity of a single spinor defect. The transverse capacity of the background lattice $\delta_{\perp}^{(L)}$ satisfies:
 
@@ -4948,7 +4948,7 @@ Section 17.3.3 formalizes the properties of the QBD lemma regarding tripartite b
 
 ### 17.3.4 Lemma: ZPE Cancellation {#17.3.4}
 
-:::tip[**Establishment of the Vacuum Energy Balance Condition**]
+:::info[**Establishment of the Vacuum Energy Balance Condition**]
 :::
 **Lemma (ZPE Cancellation):** It is herein established that the stability of the Heterotic graph vacuum is guaranteed by the precise cancellation of Zero-Point Energies (ZPE) between the chiral sectors, subject to the level-matching constraint. 1.  **Left Sector (Bosonic):** The vacuum energy of the 24 transverse bosonic modes is $E_0^{(L)} = -1$. 2.  **Right Sector (Super):** The vacuum energy of the 8 transverse bosonic modes plus 8 transverse fermionic modes is $E_0^{(R)} = 0$ (due to Supersymmetry). 3.  **The Matching Condition:** Physical states satisfy the mass-shell condition $M_L^2 = M_R^2$. The mismatch in vacuum energies ($E_0^{(L)} \neq E_0^{(R)}$) is compensated by the excitation of the internal lattice modes (the 16 extra dimensions), ensuring a consistent, tachyon-free spectrum in the effective 10D spacetime.
 
@@ -4981,7 +4981,7 @@ Section 17.4.1 formalizes the properties of the QBD definition regarding chiral 
 
 ### 17.4.2 Theorem: Emergence of the E8 Lattice {#17.4.2}
 
-:::tip[**Establishment of the Vacuum Geometry via Information Packing Optimization**]
+:::info[**Establishment of the Vacuum Geometry via Information Packing Optimization**]
 :::
 It is herein established that the 16 internal degrees of freedom of the Left-Moving sector $\mathcal{H}_{L}^{(16)}$ compactify spontaneously onto the root lattice of the exceptional Lie group $E_8 \times E_8$. This geometry is necessitated by two fundamental constraints: 1.  **Modular Invariance:** The one-loop partition function $Z(\tau)$ of the graph history must be invariant under the modular group $SL(2, \mathbb{Z})$ to preserve unitarity (probability conservation). This restricts the internal momentum lattice $\Gamma$ to be an **Even Self-Dual Lattice**. 2.  **Octonionic Packing:** The transverse phase space of the causal graph is generated by the algebra of Octonions $\mathbb{O}$ (dim 8). The root lattice of $E_8$ is the unique lattice generated by the integral Octonions (Coxeter-Dynkin diagram isomorphism). Consequently, the gauge symmetry of the emergent spacetime is fixed to $G = E_8 \times E_8$ (or the T-dual $Spin(32)/\mathbb{Z}_2$), representing the densest possible encoding of information in the internal dimensions.
 
@@ -4992,7 +4992,7 @@ Section 17.4.2 formalizes the properties of the QBD theorem regarding emergence 
 
 ### 17.4.3 Lemma: Unimodular Basis (Modular Invariance) {#17.4.3}
 
-:::tip[**Establishment of the Self-Dual Lattice Constraint via One-Loop Unitarity**]
+:::info[**Establishment of the Self-Dual Lattice Constraint via One-Loop Unitarity**]
 :::
 **Lemma (Unimodular Basis):** It is herein established that the internal momentum lattice $\Gamma$ of the Heterotic graph must be an **Even Self-Dual Lattice** (Unimodular) to preserve the unitarity of the theory at the one-loop level. Let $Z(\tau)$ be the partition function of the closed string on the torus with modulus $\tau$. Invariance under the modular transformation $S: \tau \to -1/\tau$ imposes the condition:
 
@@ -5003,7 +5003,7 @@ Section 17.4.3 formalizes the properties of the QBD lemma regarding unimodular b
 
 ### 17.4.4 Lemma: Standard Model Embedding {#17.4.4}
 
-:::tip[**Establishment of the Standard Model Gauge Group as a Subgroup of E8**]
+:::info[**Establishment of the Standard Model Gauge Group as a Subgroup of E8**]
 :::
 It is herein established that the gauge symmetry group of the Standard Model, $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$, exists as a maximal subgroup embedding within the first factor of the Heterotic gauge group $E_8$. The breaking of $E_8$ to $G_{SM}$ occurs via the **Exceptional Chain**:
 
@@ -5014,7 +5014,7 @@ Section 17.4.4 formalizes the properties of the QBD lemma regarding standard mod
 
 ### 17.4.5 Lemma: Anomaly Cancellation {#17.4.5}
 
-:::tip[**Establishment of the Green-Schwarz Mechanism via Graph Topology**]
+:::info[**Establishment of the Green-Schwarz Mechanism via Graph Topology**]
 :::
 It is herein established that the heterotic causal graph is free from perturbative chiral anomalies. The potentially fatal quantum inconsistencies arising from the chiral nature of the fermions (Gauge Anomaly) and the chiral nature of the gravitinos (Gravitational Anomaly) cancel each other exactly if and only if the gauge group is $SO(32)$ or $E_8 \times E_8$. The anomaly polynomial $I_{12}$ factorizes only for these specific groups, allowing the inclusion of a counter-term (the $B$-field shift) via the **Green-Schwarz Mechanism**:
 
@@ -5025,7 +5025,7 @@ Section 17.4.5 formalizes the properties of the QBD lemma regarding anomaly canc
 
 ### 17.4.6 Lemma: Landscape from Braid Vacua {#17.4.6}
 
-:::tip[**Establishment of the Vacuum Moduli Space via Knot Invariants**]
+:::info[**Establishment of the Vacuum Moduli Space via Knot Invariants**]
 :::
 It is herein established that the non-uniqueness of the physical constants (The Landscape Problem) arises from the topological degeneracy of the vacuum state in the causal graph. The compactification of the 16 internal dimensions is not fixed to a single trivial torus but can be deformed by **Wilson Lines** (non-contractible loops of flux) around the cycles of the internal graph. Each distinct topological configuration of these Wilson Lines corresponds to a distinct minimum of the potential energy, defining a specific "Vacuum" with unique effective parameters (fine structure constant $\alpha$, Yukawa couplings, etc.).
 
@@ -5034,20 +5034,20 @@ Section 17.4.6 formalizes the properties of the QBD lemma regarding landscape fr
 
 ---
 
-### 17.4.7 Proof: Formal Synthesis of Heterotic String Theory {#17.4.7}
+### 17.4.7 Proof: Formal Synthesis of Heterotic Braid Theory {#17.4.7}
 
 :::tip[**Formal Verification of the Non-Perturbative Graph Limit**]
 :::
 **Theorem (Heterotic Synthesis):** It is herein established that the statistical mechanics of the Causal Graph $G$ in the thermodynamic limit ($N \to \infty, \ell_P \to 0$) is isomorphic to the perturbative expansion of the Heterotic String Theory. Let $Z_{graph}$ be the partition function of the graph history:
 
 **In Plain English:**  
-Section 17.4.7 formalizes the properties of the QBD proof regarding formal synthesis of heterotic string theory.
+Section 17.4.7 formalizes the properties of the QBD proof regarding formal synthesis of heterotic braid theory.
 
 ---
 
 ### 18.1.1 Definition: Pre-Geometric Vacuum {#18.1.1}
 
-:::info[**Characterization of Pre-Geometric Vacuum State as Directed Bipartite Regular Bethe Fragment**]
+:::tip[**Characterization of Pre-Geometric Vacuum State as Directed Bipartite Regular Bethe Fragment**]
 :::
 The initial state of the universe is defined as a directed bipartite Regular Bethe tree $G_0 = (V, E)$ with root coordination number $k=3$ and internal branching factor $b=2$. In this topology, every vertex $v \in V$ is partitioned into two disjoint subsets $V_A$ and $V_B$ such that every directed edge $e \in E$ starts in $V_A$ and ends in $V_B$, or vice versa.
 
@@ -5410,7 +5410,7 @@ Section 18.5.10 formalizes the properties of the QBD proof regarding horizon hom
 
 ### 19.1.1 Definition: Reheating Temperature {#19.1.1}
 
-:::info[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
+:::tip[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
 :::
 *   **Attractor Boundary:** The reheating temperature $T_{RH}$ is defined as the intensive energy density scale where the graph density reaches the unique stable attractor $\rho^* \approx 0.037$ (§5.2.2). *   **Latent Heat Conversion:** As the autocatalytic cycle creation rate ($9\rho^2$) is braked by steric friction ($e^{-6\mu\rho}$), the kinetic energy of expansion is converted (reheated) into localized, non-contractible topological defects. *   **Thermalization:** This phase transition represents the "melting" of high-energy pre-geometric bonds, seeding the emergent 4D manifold with a thermal bath of the simplest braid defects (quarks, leptons).
 
@@ -5498,7 +5498,7 @@ Section 19.2.5 formalizes the properties of the QBD proof regarding sphaleron co
 
 ### 19.3.1 Definition: Topological Mass Splitting {#19.3.1}
 
-:::info[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
+:::tip[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
 :::
 *   **Topological Mass Functional:** The rest mass of a composite particle is proportional to its graph complexity: $$ m \propto C_{total} = C[\beta] + k \cdot w^2 $$ where $C[\beta]$ is the crossing complexity and $w^2$ is the torsional self-energy derived from writhe invariants. *   **Writhe Invariants:** *   $w_u = +2$ (parallel twists, §7.3.5). *   $w_d = -1$ (single twist, §7.3.5). *   **Geometric Isospin Sharing:** When two quark strands possess parallel writhes in a composite knot, they share structural edges in the graph (constructive interference), reducing their combined complexity cost. Antiparallel or orthogonal twists cannot share edges, maintaining their full independent self-energy.
 
@@ -5707,7 +5707,7 @@ Section 20.3.4 formalizes the properties of the QBD proof regarding void relaxat
 
 ### 21.1.1 Definition: Quadripartite Braid Defect {#21.1.1}
 
-:::info[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
+:::tip[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
 :::
 *   **Defect Identity:** During the phase transition where graph dimensionality crystallizes from a chaotic state to a stable $d=4$ manifold (§18.3.3), certain high-density graph segments fail to unravel into the standard 3-strand braid configurations ($B_3$). These represent localized 4-strand braid defects ($B_4$). *   **Topological Mass Functional:** By the Topological Mass Theorem (§7.4), mass is complexity. These four-strand defects are highly complex 3-cycle knots that possess substantial rest mass complexity ($m \propto C[\beta] + k \cdot w^2$). *   **Absolute Stability:** There are no graph-local rewrite rules that can reduce or map a $B_4$ braid defect into the standard 3-strand Standard Model braids ($B_3$) without physically breaking graph strands (requiring energy scales far exceeding the Planck scale). They are thus topologically protected and absolutely stable.
 
@@ -5883,7 +5883,7 @@ Section 21.4.2 formalizes the properties of the QBD proof regarding saturation e
 
 ### 22.1.1 Definition: Saturated State {#22.1.1}
 
-:::info[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
+:::tip[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
 :::
 *   **Maximum Density Constraint:** At the center of gravitational collapse, the local 3-cycle density $\rho_3$ does not diverge to infinity. Instead, it is bounded by a maximum critical density $\rho_{crit} \approx 1/(6\mu)$ defined by the steric friction limits of the Master Equation (§5.2). *   **Saturated Core:** The resulting state is a highly complex, stable subgraph of maximal cycle packing, representing a "saturated core" or a dense computational crystal. *   **State Halting:** Because all available nodes and edges are fully saturated, no local rewrite operations are topologically permitted within the core bulk, causing local structural evolution to cease.
 
@@ -5938,7 +5938,7 @@ Section 22.1.5 formalizes the properties of the QBD proof regarding core density
 
 ### 22.2.1 Definition: Desynchronization Boundary {#22.2.1}
 
-:::info[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
+:::tip[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
 :::
 *   **Lapse Dilation Divergence:** Near the horizon, the Lapse function $N(x)$ falls toward zero relative to the external asymptotic flat space (§14.1). *   **QECC Latency:** The Quantum Error Correction Code (QECC) stabilizing the manifold requires a finite number of logical ticks $\Delta t_{corr}$ to complete a full correction cycle. *   **Desynchronization Surface:** The physical time required for an error correction cycle diverges as $\Delta \tau = N(x) \Delta t_{corr} \to \infty$. This defines the Event Horizon not as a physical membrane, but as a computational phase boundary of infinite error-correction latency where the interior causally desynchronizes from the exterior.
 
@@ -5971,7 +5971,7 @@ Section 22.2.3 formalizes the properties of the QBD proof regarding unitary evap
 
 ### 22.3.1 Definition: Macroscopic Braid Condensate {#22.3.1}
 
-:::info[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
+:::tip[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
 :::
 *   **Phonon-Mediated Fusion:** In a superconductor, lattice vibrations (phonons) act as local rewrite operators that couple individual fermion braids ($\beta_e$) together, forming composite, Bosonic 6-ribbon braids ($\beta_{CP}$). *   **Braid Condensation:** These composite braids condense into a single, highly ordered, macroscopic topological braid state $|\Psi_{SC}\rangle$ spanning the entire material bulk. *   **Coherence Length:** The coherence length of this macroscopic braid scales with the physical dimensions of the superconductor, representing a unified pre-geometric quantum state at human scales.
 
@@ -6004,7 +6004,7 @@ Section 22.3.3 formalizes the properties of the QBD proof regarding infinite cod
 
 ### 23.1.1 Definition: Discrete Gradient {#23.1.1}
 
-:::info[**Characterization of Discrete Gradients as Finite Differences on Emergent Manifold Coordinates**]
+:::tip[**Characterization of Discrete Gradients as Finite Differences on Emergent Manifold Coordinates**]
 :::
 *   **Edge Difference Field:** Let $\phi(v)$ represent a scalar field on vertices (such as cycle density $\rho_3$, §5.2). The change across an edge $e = (u, v)$ is the finite difference: $\Delta \phi = \phi(v) - \phi(u)$. *   **Emergent Length Normalization:** Normalizing this difference by the pre-geometric edge length $\ell_0$ (Planck scale) yields the discrete edge gradient: $$ \nabla_e \phi \equiv \frac{\phi(v) - \phi(u)}{\ell_0} $$ *   **Regularized Limits:** Because $\ell_0 > 0$ represents a hard lower bound on physical spacing, discrete differences prevent infinite gradients, regularizing classical divergences (such as $1/r$ gravitational potentials) at the Planck scale.
 
@@ -6246,7 +6246,7 @@ Section 24.6.2 formalizes the properties of the QBD lemma regarding symmetry bre
 
 ### 25.1.1 Definition: Computational Landscape {#25.1.1}
 
-:::info[**Characterization of Ruliad States as Graph Rewrite Signatures**]
+:::tip[**Characterization of Ruliad States as Graph Rewrite Signatures**]
 :::
 *   **Ruliad Space:** The Ruliad is defined as the abstract landscape containing all possible graph rewrite rules and signatures. *   **Rule Classification:** Universes within the Ruliad are categorized according to Wolfram's rule classes: Class 1 (collapsing or halting), Class 2 (sterile periodic loops), Class 3 (unstable chaotic tangles lacking an emergent metric), and Class 4 (universal complexity). *   **Observer Filter:** Only Class 4 rules are capable of maintaining localized, persistent topological structures (particles) long enough to support observers.
 
