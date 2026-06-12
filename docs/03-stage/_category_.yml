@@ -1,4 +1,5 @@
-﻿label: "The Stage"
+position: 5
+label: "The Stage"
 collapsible: true
 collapsed: true
 link:
