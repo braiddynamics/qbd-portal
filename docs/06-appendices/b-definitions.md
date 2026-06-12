@@ -557,14 +557,14 @@ Section 2.7.6 formalizes the properties of the QBD theorem regarding independenc
 
 ---
 
-### 3.1.2 Definition: s: Vacuum Topology {#3.1.2}
+### 3.1.2 Definition: Vacuum Topology {#3.1.2}
 
 :::tip[**Formal Definition of Topological Invariants within the Initial State**]
 :::
 The following topological invariants and structural properties are strictly defined for the initial state $G_0$, establishing the vocabulary required to describe the unique topology of the graph at $t_L=0$:
 
 **In Plain English:**  
-Section 3.1.2 formalizes the properties of the QBD definition regarding s: vacuum topology.
+Section 3.1.2 formalizes the properties of the QBD definition regarding vacuum topology.
 
 ---
 
@@ -1217,6 +1217,17 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 
 ---
 
+### 4.3.5 Theorem: The Awareness Comonad {#4.3.5}
+
+:::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
+:::
+The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. Specifically, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
+
+**In Plain English:**  
+Section 4.3.5 formalizes the comonadic structure of the self-observation operator, showing that it satisfies the formal laws of identity and coassociativity.
+
+---
+
 ### 4.3.6 Lemma: Functoriality of Awareness {#4.3.6}
 
 :::info[**Preservation of Identity and Composition by the Awareness Endofunctor**]
@@ -1307,7 +1318,7 @@ Section 4.4.3 formalizes the properties of the QBD theorem regarding dimensional
 
 ### 4.4.4 Corollary: Geometric Self-Energy {#4.4.4}
 
-:::tip[**Derivation of the Cost of the Geometric Quantum**]
+:::info[**Derivation of the Cost of the Geometric Quantum**]
 :::
 **I. Synthesis of Components**
 
@@ -3859,7 +3870,7 @@ Section 11.3.6 formalizes the properties of the QBD proof regarding monotonicity
 
 ### 11.3.7 Corollary: Action-Complexity Proportionality {#11.3.7}
 
-:::tip[**Linear Scaling of Total Action with the Count of Geometric Quanta**]
+:::info[**Linear Scaling of Total Action with the Count of Geometric Quanta**]
 :::
 The variation of the total discrete action $\Delta \mathcal{S}$ is linearly proportional to the change in the number of 3-cycle geometric quanta $\Delta N_3$. Specifically, $\Delta \mathcal{S} \approx c \cdot \Delta N_3$, where $c > 0$ is a positive constant determined by the baseline curvature of the vacuum. This establishes a direct physical equivalence between the geometric quantity (Action) and the topological quantity (Complexity).
 
