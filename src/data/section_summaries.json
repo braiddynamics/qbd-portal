@@ -1,0 +1,672 @@
+{
+  "0.1": {
+    "id": "0.1",
+    "title": "c. -600 to 1500",
+    "summary": "Traces the debate of Being versus Becoming, showing how Democritus resolved Parmenides Eleatic block by introducing the physical reality of the Void."
+  },
+  "0.2": {
+    "id": "0.2",
+    "title": "c. 1500 to 1900",
+    "summary": "Examines Mohist and Daoist physics in ancient China, reinterpreting Qi and Ganying (sympathetic resonance) as precursors to wave fields and action-at-a-distance."
+  },
+  "0.3": {
+    "id": "0.3",
+    "title": "c. 1900 to 1950",
+    "summary": "Reviews Ibn al-Haytham's experimental method and Avicenna's theory of Mayl (internal inclination), marking the evolution of projectile dynamics."
+  },
+  "0.4": {
+    "id": "0.4",
+    "title": "c. 1950 to 2025",
+    "summary": "Details Jean Buridan's refinement of Mayl into Impetus, establishing that motion is a state conserved within the body rather than a force constantly applied."
+  },
+  "1.1": {
+    "id": "1.1",
+    "title": "Epistemological Foundations",
+    "summary": "Avoids dogmatic foundationalism by introducing a coherentist epistemology, framing physical postulates as a self-consistent network of relational facts verified by macroscopic stability."
+  },
+  "1.2": {
+    "id": "1.2",
+    "title": "Temporal Ontology",
+    "summary": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths."
+  },
+  "1.3": {
+    "id": "1.3",
+    "title": "Causal Graph",
+    "summary": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps."
+  },
+  "1.4": {
+    "id": "1.4",
+    "title": "Task Space",
+    "summary": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility."
+  },
+  "1.5": {
+    "id": "1.5",
+    "title": "Graph-Theoretic Definitions",
+    "summary": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta."
+  },
+  "2.1": {
+    "id": "2.1",
+    "title": "Causal Primitive",
+    "summary": "Defines the causal primitive as a directed edge representing an asymmetric vector of influence that drives the thermodynamic arrow of time."
+  },
+  "2.2": {
+    "id": "2.2",
+    "title": "Antisymmetry",
+    "summary": "Excludes reflexive self-loops and reciprocal 2-cycles to enforce strict temporal order and prevent instantaneous causality paradoxes."
+  },
+  "2.3": {
+    "id": "2.3",
+    "title": "Geometric Constructibility",
+    "summary": "Formulates the geometric primitive as a directed 3-cycle, showing that spatial constructibility arises exclusively from minimal cyclic closures."
+  },
+  "2.4": {
+    "id": "2.4",
+    "title": "Decomposition",
+    "summary": "Proves the Theorem of General Cycle Decomposition, where complex macro-cycles are systematically triangulated into stable 3-cycle quanta."
+  },
+  "2.5": {
+    "id": "2.5",
+    "title": "Independence",
+    "summary": "Demonstrates the logical independence of the causal and geometric axioms by constructing explicit counter-models that satisfy one while violating the other."
+  },
+  "2.6": {
+    "id": "2.6",
+    "title": "Inadequacy of Local Axioms",
+    "summary": "Analyzes the inadequacy of purely local constraints, showing that non-local topological shortcuts must be policed globally."
+  },
+  "2.7": {
+    "id": "2.7",
+    "title": "Global Consistency & Enforcement",
+    "summary": "Develops a global consistency audit mechanism that enforces acyclicity and causal finitism across the entire event network."
+  },
+  "3.1": {
+    "id": "3.1",
+    "title": "Vacuum is a Finite Rooted Tree",
+    "summary": "Deduces that the initial vacuum state at $t_L = 0$ is uniquely restricted to a finite rooted directed tree to satisfy well-foundedness."
+  },
+  "3.2": {
+    "id": "3.2",
+    "title": "Optimal Structure",
+    "summary": "Identifies the regular Bethe tree fragment as the mathematically optimal maximum-entropy initial state."
+  },
+  "3.3": {
+    "id": "3.3",
+    "title": "Only Maximal Parallelism Preserves Vacuum Symmetry",
+    "summary": "Proves that only maximal parallel updates preserve the global automorphism symmetries of the pre-geometric tree."
+  },
+  "3.4": {
+    "id": "3.4",
+    "title": "Ignition of Geometrogenesis is Inevitable",
+    "summary": "Models the ignition of geometrogenesis as a non-perturbative tunneling fluctuation that breaks bipartiteness."
+  },
+  "3.5": {
+    "id": "3.5",
+    "title": "Fault-Tolerance (QECC)",
+    "summary": "Establishes a rigorous isomorphism between the emergent graph and topological stabilizer codes to protect logical data."
+  },
+  "4.1": {
+    "id": "4.1",
+    "title": "Categorical Foundations: Definitions and Motivations",
+    "summary": "Lays the categorical foundations of QBD, formulating graph rewriting dynamics through the mathematical language of comonads and functors."
+  },
+  "4.2": {
+    "id": "4.2",
+    "title": "Validity of the Categorical Syntax",
+    "summary": "Establishes the syntactic validity of the categorical framework, proving that comonadic filters preserve poset acyclicity."
+  },
+  "4.3": {
+    "id": "4.3",
+    "title": "Awareness Layer",
+    "summary": "Formulates the comonadic self-observation filter, showing how the graph updates dynamically in response to its own local neighborhood density."
+  },
+  "4.4": {
+    "id": "4.4",
+    "title": "Thermodynamic Foundations",
+    "summary": "Establishes the thermodynamic limits of comonadic operations, bounding energy dissipation during topological state changes."
+  },
+  "4.5": {
+    "id": "4.5",
+    "title": "Action Layer (Mechanism)",
+    "summary": "Defines the action functional for graph updates, deriving the classical principle of least action as a macroscopic limit."
+  },
+  "4.6": {
+    "id": "4.6",
+    "title": "Single Tick of Logical Time",
+    "summary": "Tracks a single tick of logical time, proving that the parallel update sequence preserves causality and reversibility."
+  },
+  "5.1": {
+    "id": "5.1",
+    "title": "Thermodynamic Framework",
+    "summary": "Develops the thermodynamic framework of network phase transitions, mapping graph complexity to statistical microstates."
+  },
+  "5.2": {
+    "id": "5.2",
+    "title": "Master Equation",
+    "summary": "Formulates the master equation for network evolution, deriving the transition probabilities under relational entropy maximization."
+  },
+  "5.3": {
+    "id": "5.3",
+    "title": "Computational Verification (The Simulation)",
+    "summary": "Presents numerical simulations verifying that a chaotic pre-geometric foam crystallizes into a highly symmetric grid."
+  },
+  "5.4": {
+    "id": "5.4",
+    "title": "Equilibrium Analysis",
+    "summary": "Analyzes the equilibrium phase of the lattice, proving that spatial coordinate systems emerge as stable thermodynamic attractors."
+  },
+  "5.5": {
+    "id": "5.5",
+    "title": "Geometric Stabilization (Topological Stability)",
+    "summary": "Establishes the topological stability of the crystallized vacuum, showing that local fluctuations are suppressed by steric constraints."
+  },
+  "6.1": {
+    "id": "6.1",
+    "title": "Principles of Particle Formation",
+    "summary": "Establishes the topological origin of matter, showing that particles are not point-like coordinates but localized braid defects."
+  },
+  "6.2": {
+    "id": "6.2",
+    "title": "Tripartite Braid",
+    "summary": "Constructs fermions as tripartite braids formed by three intertwined ribbons, mapping spin and charge to ribbon twists."
+  },
+  "6.3": {
+    "id": "6.3",
+    "title": "Braid Complexity Functional",
+    "summary": "Defines the braid complexity functional, which measures the topological energy barrier protecting localized twists."
+  },
+  "6.4": {
+    "id": "6.4",
+    "title": "Topological Stability",
+    "summary": "Proves the topological stability of tripartite braids under vacuum rewrites, guaranteeing particle conservation."
+  },
+  "7.1": {
+    "id": "7.1",
+    "title": "Spin and Statistics",
+    "summary": "Derives spin-statistics relation directly from cycle parity, explaining half-integer spin from tripartite rotation symmetries."
+  },
+  "7.2": {
+    "id": "7.2",
+    "title": "Pauli Exclusion Principle",
+    "summary": "Formulates a coordinate-free proof of the Pauli Exclusion Principle, arising from topological braid crossing constraints."
+  },
+  "7.3": {
+    "id": "7.3",
+    "title": "Quantized Electric Charge",
+    "summary": "Identifies electric charge as the net writhe polynomial of the tripartite braid, explaining why quark charges are quantized in thirds."
+  },
+  "7.4": {
+    "id": "7.4",
+    "title": "Topological Mass Functional",
+    "summary": "Develops the topological mass functional, deriving particle inertial mass from localized graph curvature stress."
+  },
+  "8.1": {
+    "id": "8.1",
+    "title": "Generator Principle",
+    "summary": "Formulates the generator principle, deriving gauge fields directly from the local coordinate swaps of the ribbon braids."
+  },
+  "8.2": {
+    "id": "8.2",
+    "title": "Strong Interaction",
+    "summary": "Derives the strong interaction from SU(3) permutation symmetries of tripartite braid strand swaps."
+  },
+  "8.3": {
+    "id": "8.3",
+    "title": "Chiral Weak Interaction",
+    "summary": "Constructs the weak interaction as a chiral swap transition acting selectively on specific braid generations."
+  },
+  "8.4": {
+    "id": "8.4",
+    "title": "Electroweak Mixing",
+    "summary": "Explains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios."
+  },
+  "8.5": {
+    "id": "8.5",
+    "title": "Emergent Gauge Coupling",
+    "summary": "Derives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients."
+  },
+  "8.6": {
+    "id": "8.6",
+    "title": "Mass Generation",
+    "summary": "Models the mass generation mechanism, deriving particle masses from localized vacuum rewrite backreactions."
+  },
+  "9.1": {
+    "id": "9.1",
+    "title": "Necessity of Unification",
+    "summary": "Demonstrates the mathematical necessity of grand unification, mapping forces and particles to a single braid group."
+  },
+  "9.2": {
+    "id": "9.2",
+    "title": "Penta-Ribbon Braid",
+    "summary": "Constructs the penta-ribbon braid model, unifying leptons and quarks into a single topological object."
+  },
+  "9.3": {
+    "id": "9.3",
+    "title": "Origin of Generations",
+    "summary": "Explains the origin of the three generations of matter from the discrete topological boundaries of B3 braid configurations."
+  },
+  "9.4": {
+    "id": "9.4",
+    "title": "Leptoquark Dynamics",
+    "summary": "Models leptoquark dynamics as transition states that mediate proton decay under topological writhe conservation."
+  },
+  "9.5": {
+    "id": "9.5",
+    "title": "Proton Decay",
+    "summary": "Calculates the proton lifetime boundary, proving that baryon number conservation is protected by high topological barriers."
+  },
+  "9.6": {
+    "id": "9.6",
+    "title": "Neutrino Mass",
+    "summary": "Derives neutrino masses and oscillation profiles from the non-local swapping of Majorana-like ribbon endings."
+  },
+  "10.1": {
+    "id": "10.1",
+    "title": "Topological Qubit Structure",
+    "summary": "Constructs the topological qubit structure, mapping quantum information to the non-local braid configurations."
+  },
+  "10.10": {
+    "id": "10.10",
+    "title": "Formal Synthesis",
+    "summary": "Formulates the mathematical models and pre-geometric causal posets of Quantum Braid Dynamics."
+  },
+  "10.2": {
+    "id": "10.2",
+    "title": "Braid Code Consistency",
+    "summary": "Establishes braid code consistency, proving that comonadic updates behave like logical gates on the codespace."
+  },
+  "10.3": {
+    "id": "10.3",
+    "title": "Topological Fault Tolerance",
+    "summary": "Develops the fault-tolerance framework, showing that topological quantum error correction protects states from random edge decay."
+  },
+  "10.4": {
+    "id": "10.4",
+    "title": "Logical X-Gate",
+    "summary": "Implements the logical X-gate as a specific braid strand swap operation on the codespace."
+  },
+  "10.5": {
+    "id": "10.5",
+    "title": "Logical Z-Gate",
+    "summary": "Implements the logical Z-gate as a phase-shifting ribbon twist on the codespace."
+  },
+  "10.6": {
+    "id": "10.6",
+    "title": "Hadamard Gate",
+    "summary": "Constructs the Hadamard gate as a composite sequence of tripartite swaps, mapping spin directions."
+  },
+  "10.7": {
+    "id": "10.7",
+    "title": "Controlled-Z Gate",
+    "summary": "Constructs the Controlled-Z gate as a topological linking operation between two adjacent braids."
+  },
+  "10.8": {
+    "id": "10.8",
+    "title": "T-Gate",
+    "summary": "Implements the T-gate, completing the Clifford set by introducing non-Clifford topological rotations."
+  },
+  "11.1": {
+    "id": "11.1",
+    "title": "The Continuum Limit",
+    "summary": "Formulates discrete exterior calculus on graphs, defining discrete differential forms and exterior derivatives that satisfy $d^2 = 0$."
+  },
+  "11.2": {
+    "id": "11.2",
+    "title": "Causal Geometry Construction",
+    "summary": "Constructs curved causal geometry on posets, deriving a coordinate-free Riemannian curvature tensor analogue from path metrics."
+  },
+  "11.3": {
+    "id": "11.3",
+    "title": "Monotonicity Theorem",
+    "summary": "Proves the Monotonicity Theorem, showing that parallel transport along causal loops preserves topological invariants."
+  },
+  "12.1": {
+    "id": "12.1",
+    "title": "Discrete Stress-Energy",
+    "summary": "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations."
+  },
+  "12.2": {
+    "id": "12.2",
+    "title": "Discrete Field Equations",
+    "summary": "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network."
+  },
+  "12.3": {
+    "id": "12.3",
+    "title": "Geometric Conservation",
+    "summary": "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset."
+  },
+  "13.1": {
+    "id": "13.1",
+    "title": "Riemannian Convergence",
+    "summary": "Proves that the sequence of discrete graphs converges strictly to a smooth Riemannian manifold under the Gromov-Hausdorff-Prokhorov metric."
+  },
+  "13.2": {
+    "id": "13.2",
+    "title": "Tensorial Reorganization",
+    "summary": "Develops the coarse-graining framework, showing how micro-updates group into macroscopic tensor fields."
+  },
+  "13.3": {
+    "id": "13.3",
+    "title": "Causal Geometry",
+    "summary": "Validates that emergent causal geometry satisfies classical general relativity in the thermodynamic limit."
+  },
+  "14.1": {
+    "id": "14.1",
+    "title": "Time Recovery",
+    "summary": "Reconstructs physical continuous time, proving that observer frames are emergent foliations of the global poset."
+  },
+  "14.2": {
+    "id": "14.2",
+    "title": "Metric & Motion",
+    "summary": "Derives the relativistic metric and equations of motion, showing that geodesics correspond to maximum logical-time paths."
+  },
+  "14.3": {
+    "id": "14.3",
+    "title": "Section: Field Axiomatics",
+    "summary": "Lays down the field axiomatics for continuous matter, mapping quantum fields to discrete network stress densities."
+  },
+  "14.4": {
+    "id": "14.4",
+    "title": "Section: Gravity from Entanglement Thermodynamics",
+    "summary": "Derives general relativity from entanglement thermodynamics, bridging poset dynamics with Jacobson's gravity."
+  },
+  "14.5": {
+    "id": "14.5",
+    "title": "The Continuum Limit",
+    "summary": "Proves that the macroscopic continuum limit of the causal set reproduces curved Lorentzian spacetime."
+  },
+  "15.1": {
+    "id": "15.1",
+    "title": "Entanglement as Topological Connection",
+    "summary": "Formulates quantum entanglement as dynamic topological edge connections in the pre-geometric poset."
+  },
+  "15.2": {
+    "id": "15.2",
+    "title": "Bell Violation",
+    "summary": "Proves that discrete entanglement connections reproduce Bell inequality violations without non-local coordinate assumptions."
+  },
+  "15.3": {
+    "id": "15.3",
+    "title": "ER = EPR (Topological Wormholes)",
+    "summary": "Formulates the ER = EPR conjecture on graphs, proving that entangled event clusters are connected by topological wormholes."
+  },
+  "15.4": {
+    "id": "15.4",
+    "title": "Quantum Eraser (Temporal Non-Locality)",
+    "summary": "Models the quantum eraser effect, explaining temporal non-locality as a consequence of post-selected poset paths."
+  },
+  "16.1": {
+    "id": "16.1",
+    "title": "Surface Code (Discrete Holography)",
+    "summary": "Formulates discrete holography, proving that bulk poset gravity is isomorphic to boundary surface stabilizer codes."
+  },
+  "16.2": {
+    "id": "16.2",
+    "title": "Bekenstein Bound (Thermodynamic Limits)",
+    "summary": "Derives the Bekenstein entropy bound, proving that boundary information capacities constrain bulk geometry."
+  },
+  "17.1": {
+    "id": "17.1",
+    "title": "Discrete Worldsheet (Braid Isomorphism)",
+    "summary": "Shows that emergent 1D braided strings sweep out 2D worldsheet manifolds in the continuous limit."
+  },
+  "17.2": {
+    "id": "17.2",
+    "title": "T-Duality and Spectrum",
+    "summary": "Derives T-duality and compactification spectra from the discrete topological boundaries of compactified graph dimensions."
+  },
+  "17.3": {
+    "id": "17.3",
+    "title": "Critical Dimension (D=26)",
+    "summary": "Calculates the critical dimension ($D=26$) strictly from the anomaly-free partition functions of discrete worldsheets."
+  },
+  "17.4": {
+    "id": "17.4",
+    "title": "Heterotic Unification (E8 x E8)",
+    "summary": "Models heterotic unification ($E_8 \\times E_8$) as symmetric swap configurations of twenty-six dimensional lattices."
+  },
+  "18.1": {
+    "id": "18.1",
+    "title": "Primordial Ignition",
+    "summary": "Models the ignition of inflation as an autocatalytic branching process of poset nodes driven by comonadic write feedback."
+  },
+  "18.2": {
+    "id": "18.2",
+    "title": "Scaling Relation",
+    "summary": "Derives the inflationary scaling relation, showing that early information growth satisfies holographic bounds."
+  },
+  "18.3": {
+    "id": "18.3",
+    "title": "Autocatalytic Growth",
+    "summary": "Simulates the de Sitter phase, demonstrating that rapid parallel updates yield an emergent de Sitter metric."
+  },
+  "18.4": {
+    "id": "18.4",
+    "title": "Primordial Fluctuations",
+    "summary": "Derives primordial stress fluctuations, matching CMB observations without needing quantum inflaton fields."
+  },
+  "18.5": {
+    "id": "18.5",
+    "title": "Cosmic Equilibrium",
+    "summary": "Analyzes the transition to cosmic equilibrium, showing how the inflationary phase decelerates as update rates stabilize."
+  },
+  "19.1": {
+    "id": "19.1",
+    "title": "Reheating Phase",
+    "summary": "Simulates the reheating phase, showing how pre-geometric kinetic energy is released as topological heat during deceleration."
+  },
+  "19.2": {
+    "id": "19.2",
+    "title": "Baryogenesis",
+    "summary": "Derives baryogenesis directly from the chirality bias of local braid swap transitions during geometerogenesis."
+  },
+  "19.3": {
+    "id": "19.3",
+    "title": "Hadron Mass Splitting",
+    "summary": "Calculates hadron mass splitting from the topological complexity differences of tripartite braid generations."
+  },
+  "19.4": {
+    "id": "19.4",
+    "title": "Primordial Nucleosynthesis",
+    "summary": "Derives primordial nucleosynthesis abundances, matching observational bounds strictly from topological decay ratios."
+  },
+  "20.1": {
+    "id": "20.1",
+    "title": "Primordial Plasma",
+    "summary": "Models the primordial plasma, showing how high-temperature networks behave like a fluid of decoupled event clusters."
+  },
+  "20.2": {
+    "id": "20.2",
+    "title": "Acoustic Oscillations",
+    "summary": "Simulates acoustic oscillations, proving that stress-erasure cycles generate density waves matching baryon acoustic oscillations."
+  },
+  "20.3": {
+    "id": "20.3",
+    "title": "Structure Formation",
+    "summary": "Derives cosmic structure formation, demonstrating that gravitational clustering emerges naturally from relational stress-deletion."
+  },
+  "21.1": {
+    "id": "21.1",
+    "title": "Dark Matter",
+    "summary": "Identifies dark matter as stable, non-braided topological relics ('ash') left behind during geometerogenesis."
+  },
+  "21.2": {
+    "id": "21.2",
+    "title": "Dark Energy",
+    "summary": "Models dark energy as a vacuum relic defect pressure, matching cosmological constant expansion rates."
+  },
+  "21.3": {
+    "id": "21.3",
+    "title": "GZK Anomaly Resolution",
+    "summary": "Resolves the GZK anomaly, showing that discrete lattice constraints naturally modify high-energy dispersion relations."
+  },
+  "21.4": {
+    "id": "21.4",
+    "title": "Cosmic Coincidence",
+    "summary": "Explains the cosmic coincidence problem, deriving dark sector energy densities from network age constraints."
+  },
+  "22.1": {
+    "id": "22.1",
+    "title": "Black Hole Interior",
+    "summary": "Resolves the black hole interior, proving that gravitational singularities are avoided by a strict quantum topological density cutoff."
+  },
+  "22.2": {
+    "id": "22.2",
+    "title": "Event Horizon & Evaporation",
+    "summary": "Models event horizon dynamics and Hawking evaporation as a comonadic stabilizer-state leakage process."
+  },
+  "22.3": {
+    "id": "22.3",
+    "title": "Superconductivity",
+    "summary": "Models the black hole interior as a superconductive graph condensate of maximum logical connectivity."
+  },
+  "23.1": {
+    "id": "23.1",
+    "title": "Calculus Translation",
+    "summary": "Translates continuous calculus to discrete graph equations, validating the universality of the pre-geometric formalism."
+  },
+  "23.2": {
+    "id": "23.2",
+    "title": "Logic of Life",
+    "summary": "Formulates the logic of life, mapping biological organization to self-correcting error-correcting codespaces."
+  },
+  "23.3": {
+    "id": "23.3",
+    "title": "Mathematical Universe",
+    "summary": "Synthesizes the mathematical universe hypothesis, proving that all physical laws emerge as stable phases of computation."
+  },
+  "24.1": {
+    "id": "24.1",
+    "title": "Hodge Conjecture",
+    "summary": "Formulates a discrete approach to the Hodge Conjecture, proving homology properties on algebraic graph configurations."
+  },
+  "24.2": {
+    "id": "24.2",
+    "title": "Riemann Hypothesis",
+    "summary": "Formulates a discrete approach to the Riemann Hypothesis, mapping prime distributions to poset eigenvalue spectra."
+  },
+  "24.3": {
+    "id": "24.3",
+    "title": "Yang-Mills Existence & Mass Gap",
+    "summary": "Proves the Yang-Mills existence and mass gap, deriving the mass gap strictly from discrete gauge group stabilizer energy levels."
+  },
+  "24.4": {
+    "id": "24.4",
+    "title": "Navier-Stokes Regularity",
+    "summary": "Formulates Navier-Stokes regularity on graphs, proving that discrete fluid dynamics avoid finite-time blowups."
+  },
+  "24.5": {
+    "id": "24.5",
+    "title": "P vs NP",
+    "summary": "Analyzes P vs NP on relational substrates, showing that physical time-evolution bounds resolve complexity limits."
+  },
+  "24.6": {
+    "id": "24.6",
+    "title": "Monster Group",
+    "summary": "Derives the Monster Group directly from the automorphism symmetries of twenty-six dimensional lattice configurations."
+  },
+  "25.1": {
+    "id": "25.1",
+    "title": "Ruliad and Stability",
+    "summary": "Formalizes the Ruliad framework, proving that stable physical laws correspond to universal attractor states in compile spaces."
+  },
+  "25.2": {
+    "id": "25.2",
+    "title": "Cyclic Universe",
+    "summary": "Models the cyclic universe, proving that cosmic expansion and contraction cycles arise from periodic network update rates."
+  },
+  "25.3": {
+    "id": "25.3",
+    "title": "Final Statement",
+    "summary": "Delivers the final synthesis of QBD, unifying gravity, particle physics, and quantum computation into a single pre-geometric law."
+  },
+  "1.6": {
+    "id": "1.6",
+    "title": "Formal Synthesis",
+    "summary": "Avoiding the shifting sands of space and time, our inquiry anchors the universe in the bedrock of discrete events and causal links. By rejecting the siren call of the continuum, this chapter establishes a finite, computable substrate where \"where\" is defined strictly by connectivity and \"when\" by the relentless iterator $t_L$. The graph is a living record of existence, growing step by step from a definitive origin."
+  },
+  "2.8": {
+    "id": "2.8",
+    "title": "Formal Synthesis",
+    "summary": "The three axioms forge the substrate's unyielding frame, erecting a rigid skeleton upon which the fabric of reality can be braided. The **Causal Primitive** acts as a ratchet, directing influence without reversal and sharpening the arrow of time. **Geometric Constructibility** mandates the tiling of the vacuum with $3$-cycle quanta, ensuring space is woven from fundamental areas. Finally, **Acyclic Effective Causality** projects these local rules into a global order, preventing the universe from trapping itself in the paradox of closed loops."
+  },
+  "3.6": {
+    "id": "3.6",
+    "title": "Formal Synthesis",
+    "summary": "The pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges by necessity: it is the sole topology capable of providing a cycle-free, unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the heartbeat of the system, ensuring that time propagates as a uniform wavefront that respects the fundamental symmetries of space."
+  },
+  "4.7": {
+    "id": "4.7",
+    "title": "Formal Synthesis",
+    "summary": "Life breathes into the static frame, assembling the complete runtime for the relational engine. The **Internal Causal Category** and **Historical Category** provide a rigorous syntax for evolution, ensuring that every update is a valid morphism that preserves causal structure. By equipping the graph with \"Awareness\" via the store comonad, the system gains the capacity to self-diagnose topological defects and guide its own growth without the need for an external observer."
+  },
+  "5.6": {
+    "id": "5.6",
+    "title": "Formal Synthesis",
+    "summary": "Space is born from the statistical tumult of relations. The entropy of the causal graph proves extensive, scaling linearly with system size $N$, which justifies treating the vacuum as a thermodynamic reservoir. From this, the **Fundamental Equation of Geometrogenesis** emerges, a master equation that balances the explosive force of autocatalysis against the damping force of geometric friction, revealing the heartbeat of cosmic expansion."
+  },
+  "6.5": {
+    "id": "6.5",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully shown that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD."
+  },
+  "7.5": {
+    "id": "7.5",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully decoded the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model."
+  },
+  "8.7": {
+    "id": "8.7",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully derived the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. By identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras, we have bridged the gap between discrete graph rewrites and continuous gauge fields, deriving the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios."
+  },
+  "9.7": {
+    "id": "9.7",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully unified the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
+  },
+  "10.9": {
+    "id": "10.9",
+    "title": "Universality Implementation",
+    "summary": "The final verification step consists of demonstrating that the collection of physical rewrite processes derived constitutes a fully universal quantum computer. Can the causal graph simulate any conceivable quantum system? The goal is to prove that the set of topological gates can approximate any unitary transformation to arbitrary precision, thereby confirming that the causal graph is Turing-complete for quantum tasks. This synthesis requires applying the Solovay-Kitaev theorem to the physical gate set to bridge the discrete nature of the rewrites with the continuous nature of quantum algorithms."
+  },
+  "11.4": {
+    "id": "11.4",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully constructed a rigorous discrete differential geometry upon the foundation of the causal graph, using the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal measure** <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the **Causal Ollivier-Ricci curvature** <Ref id=\"11.2.2\" label=\"§11.2.2\" />."
+  },
+  "12.4": {
+    "id": "12.4",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance."
+  },
+  "13.4": {
+    "id": "13.4",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$)."
+  },
+  "14.6": {
+    "id": "14.6",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully established the emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ under the **3+1 ADM Decomposition**, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network."
+  },
+  "15.5": {
+    "id": "15.5",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully established the topological equivalence between the quantum state vector $|\\Psi\\rangle$ and emergent spatial geometry $(M, g_{\\mu\\nu})$ under stabilizer group symmetries. This identifies entanglement entropy directly with the isoperimetric deficit of topological shortcuts in the graph, providing a solid mechanical basis for the **ER = EPR** duality."
+  },
+  "16.3": {
+    "id": "16.3",
+    "title": "Formal Synthesis",
+    "summary": "We have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \\text{Area}(\\gamma_A)/4G_N$ **Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states."
+  },
+  "17.5": {
+    "id": "17.5",
+    "title": "Formal Synthesis",
+    "summary": "We have successfully derived the continuum limit of propagating braid configurations, establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ (**Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" />) from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the (**Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />) alongside the self-dual (**Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />)."
+  },
+  "18.6": {
+    "id": "18.6",
+    "title": "Formal Synthesis",
+    "summary": "The pre-geometric vacuum has successfully transitioned into a stable, flat, and homogeneous 4-dimensional spatial manifold. This transition rests upon the **Bipartite Bethe Tree Vacuum** and **Spontaneous Loop Nucleation**, which serve as the foundational primitives of the inflationary epoch. The spontaneous tunneling event breaks the parity stasis of the tree substrate, nucleating the first directed 3-cycles that function as the primitive area quanta of emergent geometry."
+  }
+}

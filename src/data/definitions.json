@@ -1,4 +1,44 @@
 {
+  "0.1": {
+    "id": "0.1",
+    "type": "Section",
+    "title": "c. -600 to 1500",
+    "statement": ":::info[**Section 0.1: c. -600 to 1500**]\nTraces the debate of Being versus Becoming, showing how Democritus resolved Parmenides Eleatic block by introducing the physical reality of the Void.\n:::",
+    "plainEnglish": "Traces the debate of Being versus Becoming, showing how Democritus resolved Parmenides Eleatic block by introducing the physical reality of the Void.",
+    "file": ""
+  },
+  "0.2": {
+    "id": "0.2",
+    "type": "Section",
+    "title": "c. 1500 to 1900",
+    "statement": ":::info[**Section 0.2: c. 1500 to 1900**]\nExamines Mohist and Daoist physics in ancient China, reinterpreting Qi and Ganying (sympathetic resonance) as precursors to wave fields and action-at-a-distance.\n:::",
+    "plainEnglish": "Examines Mohist and Daoist physics in ancient China, reinterpreting Qi and Ganying (sympathetic resonance) as precursors to wave fields and action-at-a-distance.",
+    "file": ""
+  },
+  "0.3": {
+    "id": "0.3",
+    "type": "Section",
+    "title": "c. 1900 to 1950",
+    "statement": ":::info[**Section 0.3: c. 1900 to 1950**]\nReviews Ibn al-Haytham's experimental method and Avicenna's theory of Mayl (internal inclination), marking the evolution of projectile dynamics.\n:::",
+    "plainEnglish": "Reviews Ibn al-Haytham's experimental method and Avicenna's theory of Mayl (internal inclination), marking the evolution of projectile dynamics.",
+    "file": ""
+  },
+  "0.4": {
+    "id": "0.4",
+    "type": "Section",
+    "title": "c. 1950 to 2025",
+    "statement": ":::info[**Section 0.4: c. 1950 to 2025**]\nDetails Jean Buridan's refinement of Mayl into Impetus, establishing that motion is a state conserved within the body rather than a force constantly applied.\n:::",
+    "plainEnglish": "Details Jean Buridan's refinement of Mayl into Impetus, establishing that motion is a state conserved within the body rather than a force constantly applied.",
+    "file": ""
+  },
+  "1.1": {
+    "id": "1.1",
+    "type": "Section",
+    "title": "Epistemological Foundations",
+    "statement": ":::info[**Section 1.1: Epistemological Foundations**]\nAvoids dogmatic foundationalism by introducing a coherentist epistemology, framing physical postulates as a self-consistent network of relational facts verified by macroscopic stability.\n:::",
+    "plainEnglish": "Avoids dogmatic foundationalism by introducing a coherentist epistemology, framing physical postulates as a self-consistent network of relational facts verified by macroscopic stability.",
+    "file": "01-rules/01-ontology/1.1.md"
+  },
   "1.1.5": {
     "id": "1.1.5",
     "type": "Axiom",
@@ -14,6 +54,14 @@
     "statement": ":::info[**Justification of Unprovable Postulates by Coherentist Criteria**]\n:::\n\nThe historical evolution of axiomatic justification, as seen in the cases of the parallel postulate and the Axiom of Choice, points toward a specific epistemological framework: coherentism. This view contrasts sharply with the classical foundationalist approach that once dominated mathematical philosophy.",
     "plainEnglish": "Section 1.1.6 formalizes the properties of the QBD principle regarding coherentist justification.",
     "file": "01-rules/01-ontology/1.1.md"
+  },
+  "1.2": {
+    "id": "1.2",
+    "type": "Section",
+    "title": "Temporal Ontology",
+    "statement": ":::info[**Section 1.2: Temporal Ontology**]\nDecouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.\n:::",
+    "plainEnglish": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.",
+    "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.1": {
     "id": "1.2.1",
@@ -111,6 +159,14 @@
     "plainEnglish": "Section 1.2.8 formalizes the properties of the QBD proof regarding temporal finitude.",
     "file": "01-rules/01-ontology/1.2.md"
   },
+  "1.3": {
+    "id": "1.3",
+    "type": "Section",
+    "title": "Causal Graph",
+    "statement": ":::info[**Section 1.3: Causal Graph**]\nFormalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.\n:::",
+    "plainEnglish": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.",
+    "file": "01-rules/01-ontology/1.3.md"
+  },
   "1.3.1": {
     "id": "1.3.1",
     "type": "Definition",
@@ -151,6 +207,14 @@
     "plainEnglish": "Section 1.3.4.1 formalizes the properties of the QBD proof regarding monotonicity.",
     "file": "01-rules/01-ontology/1.3.md"
   },
+  "1.4": {
+    "id": "1.4",
+    "type": "Section",
+    "title": "Task Space",
+    "statement": ":::info[**Section 1.4: Task Space**]\nRestricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.\n:::",
+    "plainEnglish": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.",
+    "file": "01-rules/01-ontology/1.4.md"
+  },
   "1.4.1": {
     "id": "1.4.1",
     "type": "Definition",
@@ -166,6 +230,14 @@
     "statement": ":::tip[**Restriction of the Vacuum Repertoire to Primitive Edge Operations due to Catalytic Reciprocity**]\n:::\n\nThe set of fundamental kinematic operations available to the Universal Constructor is restricted exclusively to the following primitives: 1.  **Edge Addition ($\\mathfrak{T}_{add}$):** The insertion of a directed edge $(u, v)$ into $E$, subject to the monotonic timestamp assignment. 2.  **Edge Deletion ($\\mathfrak{T}_{del}$):** The removal of a directed edge $(u, v)$ from $E$. The theory admits no primitives for the direct creation or destruction of vertices independent of edge topology; vertices emerge solely as the endpoints of relations.",
     "plainEnglish": "The vacuum maintains a balance where edge additions and edge deletions are equally possible, providing the raw substrate for cosmic dynamics.",
     "file": "01-rules/01-ontology/1.4.md"
+  },
+  "1.5": {
+    "id": "1.5",
+    "type": "Section",
+    "title": "Graph-Theoretic Definitions",
+    "statement": ":::info[**Section 1.5: Graph-Theoretic Definitions**]\nEstablishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.\n:::",
+    "plainEnglish": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.",
+    "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.1": {
     "id": "1.5.1",
@@ -191,6 +263,22 @@
     "plainEnglish": "Section 1.5.3 formalizes the properties of the QBD definition regarding cycle definitions.",
     "file": "01-rules/01-ontology/1.5.md"
   },
+  "1.6": {
+    "id": "1.6",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 1.6: Formal Synthesis**]\nAvoiding the shifting sands of space and time, our inquiry anchors the universe in the bedrock of discrete events and causal links. By rejecting the siren call of the continuum, this chapter establishes a finite, computable substrate where \"where\" is defined strictly by connectivity and \"when\" by the relentless iterator $t_L$. The graph is a living record of existence, growing step by step from a definitive origin.\n:::",
+    "plainEnglish": "Avoiding the shifting sands of space and time, our inquiry anchors the universe in the bedrock of discrete events and causal links. By rejecting the siren call of the continuum, this chapter establishes a finite, computable substrate where \"where\" is defined strictly by connectivity and \"when\" by the relentless iterator $t_L$. The graph is a living record of existence, growing step by step from a definitive origin.",
+    "file": "01-rules/01-ontology/1.6.md"
+  },
+  "2.1": {
+    "id": "2.1",
+    "type": "Section",
+    "title": "Causal Primitive",
+    "statement": ":::info[**Section 2.1: Causal Primitive**]\nDefines the causal primitive as a directed edge representing an asymmetric vector of influence that drives the thermodynamic arrow of time.\n:::",
+    "plainEnglish": "Defines the causal primitive as a directed edge representing an asymmetric vector of influence that drives the thermodynamic arrow of time.",
+    "file": "01-rules/02-axioms/2.1.md"
+  },
   "2.1.1": {
     "id": "2.1.1",
     "type": "Axiom",
@@ -198,6 +286,14 @@
     "statement": ":::info[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]\n:::\n\nIt is herein established that the fundamental unit of relation within the **State Space and Graph Structure** <Ref id=\"1.3.1\" label=\"§1.3.1\" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \\subset V \\times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:",
     "plainEnglish": "A directed causal link represents the primitive cause-and-effect relation, acting as a one-way temporal ratchet that drives cosmic updates.",
     "file": "01-rules/02-axioms/2.1.md"
+  },
+  "2.2": {
+    "id": "2.2",
+    "type": "Section",
+    "title": "Antisymmetry",
+    "statement": ":::info[**Section 2.2: Antisymmetry**]\nExcludes reflexive self-loops and reciprocal 2-cycles to enforce strict temporal order and prevent instantaneous causality paradoxes.\n:::",
+    "plainEnglish": "Excludes reflexive self-loops and reciprocal 2-cycles to enforce strict temporal order and prevent instantaneous causality paradoxes.",
+    "file": "01-rules/02-axioms/2.2.md"
   },
   "2.2.1": {
     "id": "2.2.1",
@@ -254,6 +350,14 @@
     "statement": ":::note[**Lean 4 Encoding of Antisymmetry Insufficiency via Counter-Model Construction**]\n:::\n\nType-theoretic certification of the logical gap established in the **Insufficiency of Antisymmetry** <Ref id=\"2.2.4\" label=\"§2.2.4\" /> proceeds via the following verification strategy:",
     "plainEnglish": "Section 2.2.5 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/02-axioms/2.2.md"
+  },
+  "2.3": {
+    "id": "2.3",
+    "type": "Section",
+    "title": "Geometric Constructibility",
+    "statement": ":::info[**Section 2.3: Geometric Constructibility**]\nFormulates the geometric primitive as a directed 3-cycle, showing that spatial constructibility arises exclusively from minimal cyclic closures.\n:::",
+    "plainEnglish": "Formulates the geometric primitive as a directed 3-cycle, showing that spatial constructibility arises exclusively from minimal cyclic closures.",
+    "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.1": {
     "id": "2.3.1",
@@ -318,6 +422,14 @@
     "statement": ":::tip[**Verification of the Descent Property due to the Finiteness of Graph Configurations**]\n:::\n\n**I. State Space Properties**",
     "plainEnglish": "Section 2.3.5.1 formalizes the properties of the QBD proof regarding well-foundedness.",
     "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.4": {
+    "id": "2.4",
+    "type": "Section",
+    "title": "Decomposition",
+    "statement": ":::info[**Section 2.4: Decomposition**]\nProves the Theorem of General Cycle Decomposition, where complex macro-cycles are systematically triangulated into stable 3-cycle quanta.\n:::",
+    "plainEnglish": "Proves the Theorem of General Cycle Decomposition, where complex macro-cycles are systematically triangulated into stable 3-cycle quanta.",
+    "file": "01-rules/02-axioms/2.4.md"
   },
   "2.4.1": {
     "id": "2.4.1",
@@ -415,6 +527,14 @@
     "plainEnglish": "Section 2.4.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/02-axioms/2.4.md"
   },
+  "2.5": {
+    "id": "2.5",
+    "type": "Section",
+    "title": "Independence",
+    "statement": ":::info[**Section 2.5: Independence**]\nDemonstrates the logical independence of the causal and geometric axioms by constructing explicit counter-models that satisfy one while violating the other.\n:::",
+    "plainEnglish": "Demonstrates the logical independence of the causal and geometric axioms by constructing explicit counter-models that satisfy one while violating the other.",
+    "file": "01-rules/02-axioms/2.5.md"
+  },
   "2.5.1": {
     "id": "2.5.1",
     "type": "Theorem",
@@ -462,6 +582,14 @@
     "statement": ":::tip[**Independence of Axioms 1 and 2 via Orthogonal Counter-Models** <Ref id=\"2.5.1\" label=\"§2.5.1\" />]\n:::\n\n**I. The Independence Hypothesis** Two axiomatic constraints are defined as logically independent if and only if the satisfaction of one does not logically entail the satisfaction of the other. This independence is verified through the construction of specific counter-models that selectively violate one axiom while satisfying the other.",
     "plainEnglish": "Section 2.5.4 formalizes the properties of the QBD proof regarding mutual independence.",
     "file": "01-rules/02-axioms/2.5.md"
+  },
+  "2.6": {
+    "id": "2.6",
+    "type": "Section",
+    "title": "Inadequacy of Local Axioms",
+    "statement": ":::info[**Section 2.6: Inadequacy of Local Axioms**]\nAnalyzes the inadequacy of purely local constraints, showing that non-local topological shortcuts must be policed globally.\n:::",
+    "plainEnglish": "Analyzes the inadequacy of purely local constraints, showing that non-local topological shortcuts must be policed globally.",
+    "file": "01-rules/02-axioms/2.6.md"
   },
   "2.6.1": {
     "id": "2.6.1",
@@ -543,6 +671,14 @@
     "plainEnglish": "Section 2.6.6.1 formalizes the properties of the QBD corollary regarding global constraint.",
     "file": "01-rules/02-axioms/2.6.md"
   },
+  "2.7": {
+    "id": "2.7",
+    "type": "Section",
+    "title": "Global Consistency & Enforcement",
+    "statement": ":::info[**Section 2.7: Global Consistency & Enforcement**]\nDevelops a global consistency audit mechanism that enforces acyclicity and causal finitism across the entire event network.\n:::",
+    "plainEnglish": "Develops a global consistency audit mechanism that enforces acyclicity and causal finitism across the entire event network.",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
   "2.7.1": {
     "id": "2.7.1",
     "type": "Axiom",
@@ -622,6 +758,22 @@
     "statement": ":::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure via Biconditional Decomposition**]\n:::\n\nType-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry (the three properties now united under **Acyclic Effective Causality** <Ref id=\"2.7.1\" label=\"§2.7.1\" />) proceeds via the following verification strategy:",
     "plainEnglish": "Section 2.7.7 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.8": {
+    "id": "2.8",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 2.8: Formal Synthesis**]\nThe three axioms forge the substrate's unyielding frame, erecting a rigid skeleton upon which the fabric of reality can be braided. The **Causal Primitive** acts as a ratchet, directing influence without reversal and sharpening the arrow of time. **Geometric Constructibility** mandates the tiling of the vacuum with $3$-cycle quanta, ensuring space is woven from fundamental areas. Finally, **Acyclic Effective Causality** projects these local rules into a global order, preventing the universe from trapping itself in the paradox of closed loops.\n:::",
+    "plainEnglish": "The three axioms forge the substrate's unyielding frame, erecting a rigid skeleton upon which the fabric of reality can be braided. The **Causal Primitive** acts as a ratchet, directing influence without reversal and sharpening the arrow of time. **Geometric Constructibility** mandates the tiling of the vacuum with $3$-cycle quanta, ensuring space is woven from fundamental areas. Finally, **Acyclic Effective Causality** projects these local rules into a global order, preventing the universe from trapping itself in the paradox of closed loops.",
+    "file": "01-rules/02-axioms/2.8.md"
+  },
+  "3.1": {
+    "id": "3.1",
+    "type": "Section",
+    "title": "Vacuum is a Finite Rooted Tree",
+    "statement": ":::info[**Section 3.1: Vacuum is a Finite Rooted Tree**]\nDeduces that the initial vacuum state at $t_L = 0$ is uniquely restricted to a finite rooted directed tree to satisfy well-foundedness.\n:::",
+    "plainEnglish": "Deduces that the initial vacuum state at $t_L = 0$ is uniquely restricted to a finite rooted directed tree to satisfy well-foundedness.",
+    "file": "01-rules/03-architecture/3.1.md"
   },
   "3.1.2": {
     "id": "3.1.2",
@@ -790,6 +942,14 @@
     "statement": ":::tip[the **Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion** <Ref id=\"3.1.3\" label=\"§3.1.3\" />]\n:::\n\n**I. The Configuration Space** Let $\\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains.",
     "plainEnglish": "Section 3.1.12 formalizes the properties of the QBD proof regarding demonstration of the vacuum structure.",
     "file": "01-rules/03-architecture/3.1.md"
+  },
+  "3.2": {
+    "id": "3.2",
+    "type": "Section",
+    "title": "Optimal Structure",
+    "statement": ":::info[**Section 3.2: Optimal Structure**]\nIdentifies the regular Bethe tree fragment as the mathematically optimal maximum-entropy initial state.\n:::",
+    "plainEnglish": "Identifies the regular Bethe tree fragment as the mathematically optimal maximum-entropy initial state.",
+    "file": "01-rules/03-architecture/3.2.md"
   },
   "3.2.1": {
     "id": "3.2.1",
@@ -983,6 +1143,14 @@
     "plainEnglish": "Section 3.2.11 formalizes the properties of the QBD proof regarding demonstration of the optimal vacuum.",
     "file": "01-rules/03-architecture/3.2.md"
   },
+  "3.3": {
+    "id": "3.3",
+    "type": "Section",
+    "title": "Only Maximal Parallelism Preserves Vacuum Symmetry",
+    "statement": ":::info[**Section 3.3: Only Maximal Parallelism Preserves Vacuum Symmetry**]\nProves that only maximal parallel updates preserve the global automorphism symmetries of the pre-geometric tree.\n:::",
+    "plainEnglish": "Proves that only maximal parallel updates preserve the global automorphism symmetries of the pre-geometric tree.",
+    "file": "01-rules/03-architecture/3.3.md"
+  },
   "3.3.1": {
     "id": "3.3.1",
     "type": "Definition",
@@ -1103,6 +1271,14 @@
     "plainEnglish": "Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/03-architecture/3.3.md"
   },
+  "3.4": {
+    "id": "3.4",
+    "type": "Section",
+    "title": "Ignition of Geometrogenesis is Inevitable",
+    "statement": ":::info[**Section 3.4: Ignition of Geometrogenesis is Inevitable**]\nModels the ignition of geometrogenesis as a non-perturbative tunneling fluctuation that breaks bipartiteness.\n:::",
+    "plainEnglish": "Models the ignition of geometrogenesis as a non-perturbative tunneling fluctuation that breaks bipartiteness.",
+    "file": "01-rules/03-architecture/3.4.md"
+  },
   "3.4.1": {
     "id": "3.4.1",
     "type": "Theorem",
@@ -1190,6 +1366,14 @@
     "statement": ":::note[**Monte Carlo Verification of Tunneling Probability in Finite N Regimes using Metropolis Sampling**]\n:::\n\nNumerical quantification of the ignition robustness established by **Ignition Probability** <Ref id=\"3.4.5.1\" label=\"§3.4.5.1\" /> is based on the following protocols:",
     "plainEnglish": "Section 3.4.6.1 formalizes the properties of the QBD calculation regarding simulated ignition trajectories.",
     "file": "01-rules/03-architecture/3.4.md"
+  },
+  "3.5": {
+    "id": "3.5",
+    "type": "Section",
+    "title": "Fault-Tolerance (QECC)",
+    "statement": ":::info[**Section 3.5: Fault-Tolerance (QECC)**]\nEstablishes a rigorous isomorphism between the emergent graph and topological stabilizer codes to protect logical data.\n:::",
+    "plainEnglish": "Establishes a rigorous isomorphism between the emergent graph and topological stabilizer codes to protect logical data.",
+    "file": "01-rules/03-architecture/3.5.md"
   },
   "3.5.1": {
     "id": "3.5.1",
@@ -1319,6 +1503,22 @@
     "plainEnglish": "Section 3.5.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/03-architecture/3.5.md"
   },
+  "3.6": {
+    "id": "3.6",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 3.6: Formal Synthesis**]\nThe pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges by necessity: it is the sole topology capable of providing a cycle-free, unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the heartbeat of the system, ensuring that time propagates as a uniform wavefront that respects the fundamental symmetries of space.\n:::",
+    "plainEnglish": "The pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges by necessity: it is the sole topology capable of providing a cycle-free, unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the heartbeat of the system, ensuring that time propagates as a uniform wavefront that respects the fundamental symmetries of space.",
+    "file": "01-rules/03-architecture/3.6.md"
+  },
+  "4.1": {
+    "id": "4.1",
+    "type": "Section",
+    "title": "Categorical Foundations: Definitions and Motivations",
+    "statement": ":::info[**Section 4.1: Categorical Foundations: Definitions and Motivations**]\nLays the categorical foundations of QBD, formulating graph rewriting dynamics through the mathematical language of comonads and functors.\n:::",
+    "plainEnglish": "Lays the categorical foundations of QBD, formulating graph rewriting dynamics through the mathematical language of comonads and functors.",
+    "file": "01-rules/04-dynamics/4.1.md"
+  },
   "4.1.1": {
     "id": "4.1.1",
     "type": "Definition",
@@ -1334,6 +1534,14 @@
     "statement": ":::tip[**Structure of Causal Graphs utilizing History-Preserving Embeddings**]\n:::\n\nThe **Historical Category**, denoted $\\mathbf{Hist}$, is defined as the structure governing the progression of causal graphs across the domain of Logical Time. 1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the **State Space and Graph Structure** <Ref id=\"1.3.1\" label=\"§1.3.1\" />. 2.  **Morphisms:** A morphism $f: G \\to G'$ constitutes a **History-Respecting Embedding**, defined as an injective function $f: V \\to V'$ satisfying two invariant conditions: * **Edge Preservation:** For all $(u, v) \\in E$, the image $(f(u), f(v))$ must exist in $E'$. * **History Preservation:** For all $(u, v) \\in E$, the timestamp values must satisfy the non-decreasing inequality $H((u, v)) \\leq H'((f(u), f(v)))$. 3.  **Composition:** The composition of morphisms is defined as standard function composition $(g \\circ f)(x) = g(f(x))$. 4.  **Identity:** The identity morphism $\\text{id}_G$ is the identity function on the vertex set $V$, satisfying $H((u, v)) = H((u, v))$.",
     "plainEnglish": "Section 4.1.2 formalizes the properties of the QBD definition regarding historical category.",
     "file": "01-rules/04-dynamics/4.1.md"
+  },
+  "4.2": {
+    "id": "4.2",
+    "type": "Section",
+    "title": "Validity of the Categorical Syntax",
+    "statement": ":::info[**Section 4.2: Validity of the Categorical Syntax**]\nEstablishes the syntactic validity of the categorical framework, proving that comonadic filters preserve poset acyclicity.\n:::",
+    "plainEnglish": "Establishes the syntactic validity of the categorical framework, proving that comonadic filters preserve poset acyclicity.",
+    "file": "01-rules/04-dynamics/4.2.md"
   },
   "4.2.1": {
     "id": "4.2.1",
@@ -1487,6 +1695,14 @@
     "plainEnglish": "Section 4.2.11 formalizes the properties of the QBD calculation regarding partial order verification.",
     "file": "01-rules/04-dynamics/4.2.md"
   },
+  "4.3": {
+    "id": "4.3",
+    "type": "Section",
+    "title": "Awareness Layer",
+    "statement": ":::info[**Section 4.3: Awareness Layer**]\nFormulates the comonadic self-observation filter, showing how the graph updates dynamically in response to its own local neighborhood density.\n:::",
+    "plainEnglish": "Formulates the comonadic self-observation filter, showing how the graph updates dynamically in response to its own local neighborhood density.",
+    "file": "01-rules/04-dynamics/4.3.md"
+  },
   "4.3.1": {
     "id": "4.3.1",
     "type": "Definition",
@@ -1615,6 +1831,14 @@
     "plainEnglish": "Section 4.3.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/04-dynamics/4.3.md"
   },
+  "4.4": {
+    "id": "4.4",
+    "type": "Section",
+    "title": "Thermodynamic Foundations",
+    "statement": ":::info[**Section 4.4: Thermodynamic Foundations**]\nEstablishes the thermodynamic limits of comonadic operations, bounding energy dissipation during topological state changes.\n:::",
+    "plainEnglish": "Establishes the thermodynamic limits of comonadic operations, bounding energy dissipation during topological state changes.",
+    "file": "01-rules/04-dynamics/4.4.md"
+  },
   "4.4.1": {
     "id": "4.4.1",
     "type": "Theorem",
@@ -1727,6 +1951,14 @@
     "plainEnglish": "Section 4.4.6.2 formalizes the properties of the QBD calculation regarding friction damping.",
     "file": "01-rules/04-dynamics/4.4.md"
   },
+  "4.5": {
+    "id": "4.5",
+    "type": "Section",
+    "title": "Action Layer (Mechanism)",
+    "statement": ":::info[**Section 4.5: Action Layer (Mechanism)**]\nDefines the action functional for graph updates, deriving the classical principle of least action as a macroscopic limit.\n:::",
+    "plainEnglish": "Defines the action functional for graph updates, deriving the classical principle of least action as a macroscopic limit.",
+    "file": "01-rules/04-dynamics/4.5.md"
+  },
   "4.5.1": {
     "id": "4.5.1",
     "type": "Definition",
@@ -1791,6 +2023,14 @@
     "plainEnglish": "Section 4.5.6.1 formalizes the properties of the QBD proof regarding deletion probability.",
     "file": "01-rules/04-dynamics/4.5.md"
   },
+  "4.6": {
+    "id": "4.6",
+    "type": "Section",
+    "title": "Single Tick of Logical Time",
+    "statement": ":::info[**Section 4.6: Single Tick of Logical Time**]\nTracks a single tick of logical time, proving that the parallel update sequence preserves causality and reversibility.\n:::",
+    "plainEnglish": "Tracks a single tick of logical time, proving that the parallel update sequence preserves causality and reversibility.",
+    "file": "01-rules/04-dynamics/4.6.md"
+  },
   "4.6.1": {
     "id": "4.6.1",
     "type": "Definition",
@@ -1847,6 +2087,22 @@
     "plainEnglish": "Section 4.6.3.2 formalizes the properties of the QBD calculation regarding irreversibility check.",
     "file": "01-rules/04-dynamics/4.6.md"
   },
+  "4.7": {
+    "id": "4.7",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 4.7: Formal Synthesis**]\nLife breathes into the static frame, assembling the complete runtime for the relational engine. The **Internal Causal Category** and **Historical Category** provide a rigorous syntax for evolution, ensuring that every update is a valid morphism that preserves causal structure. By equipping the graph with \"Awareness\" via the store comonad, the system gains the capacity to self-diagnose topological defects and guide its own growth without the need for an external observer.\n:::",
+    "plainEnglish": "Life breathes into the static frame, assembling the complete runtime for the relational engine. The **Internal Causal Category** and **Historical Category** provide a rigorous syntax for evolution, ensuring that every update is a valid morphism that preserves causal structure. By equipping the graph with \"Awareness\" via the store comonad, the system gains the capacity to self-diagnose topological defects and guide its own growth without the need for an external observer.",
+    "file": "01-rules/04-dynamics/4.7.md"
+  },
+  "5.1": {
+    "id": "5.1",
+    "type": "Section",
+    "title": "Thermodynamic Framework",
+    "statement": ":::info[**Section 5.1: Thermodynamic Framework**]\nDevelops the thermodynamic framework of network phase transitions, mapping graph complexity to statistical microstates.\n:::",
+    "plainEnglish": "Develops the thermodynamic framework of network phase transitions, mapping graph complexity to statistical microstates.",
+    "file": "01-rules/05-equilibrium/5.1.md"
+  },
   "5.1.1": {
     "id": "5.1.1",
     "type": "Definition",
@@ -1894,6 +2150,14 @@
     "statement": ":::note[**Computational Verification of Subextensive Boundary Terms using Lattice Simulation**]\n:::\n\nComputational verification of the subextensive boundary term and verification of the independence assumption established by **Extensive Entropy** <Ref id=\"5.1.4\" label=\"§5.1.4\" /> is based on the following protocols:",
     "plainEnglish": "Section 5.1.4.1 formalizes the properties of the QBD calculation regarding boundary correction.",
     "file": "01-rules/05-equilibrium/5.1.md"
+  },
+  "5.2": {
+    "id": "5.2",
+    "type": "Section",
+    "title": "Master Equation",
+    "statement": ":::info[**Section 5.2: Master Equation**]\nFormulates the master equation for network evolution, deriving the transition probabilities under relational entropy maximization.\n:::",
+    "plainEnglish": "Formulates the master equation for network evolution, deriving the transition probabilities under relational entropy maximization.",
+    "file": "01-rules/05-equilibrium/5.2.md"
   },
   "5.2.1": {
     "id": "5.2.1",
@@ -2015,6 +2279,14 @@
     "plainEnglish": "Section 5.2.7.1 formalizes the properties of the QBD calculation regarding equation verification.",
     "file": "01-rules/05-equilibrium/5.2.md"
   },
+  "5.3": {
+    "id": "5.3",
+    "type": "Section",
+    "title": "Computational Verification (The Simulation)",
+    "statement": ":::info[**Section 5.3: Computational Verification (The Simulation)**]\nPresents numerical simulations verifying that a chaotic pre-geometric foam crystallizes into a highly symmetric grid.\n:::",
+    "plainEnglish": "Presents numerical simulations verifying that a chaotic pre-geometric foam crystallizes into a highly symmetric grid.",
+    "file": "01-rules/05-equilibrium/5.3.md"
+  },
   "5.3.1": {
     "id": "5.3.1",
     "type": "Definition",
@@ -2046,6 +2318,14 @@
     "statement": ":::tip[**Empirical Validation of the Axiomatic Constants**]\n:::\n\nThe Region of Physical Viability forms a contiguous, oblique band in the $(\\mu, \\lambda_{\\text{cat}})$ phase plane. The theoretical constants derived in Chapter 4 ($\\mu \\approx 0.40, \\lambda_{\\text{cat}} \\approx 1.72$) reside precisely in the center of this channel.",
     "plainEnglish": "Section 5.3.4 formalizes the properties of the QBD definition regarding viability channel.",
     "file": "01-rules/05-equilibrium/5.3.md"
+  },
+  "5.4": {
+    "id": "5.4",
+    "type": "Section",
+    "title": "Equilibrium Analysis",
+    "statement": ":::info[**Section 5.4: Equilibrium Analysis**]\nAnalyzes the equilibrium phase of the lattice, proving that spatial coordinate systems emerge as stable thermodynamic attractors.\n:::",
+    "plainEnglish": "Analyzes the equilibrium phase of the lattice, proving that spatial coordinate systems emerge as stable thermodynamic attractors.",
+    "file": "01-rules/05-equilibrium/5.4.md"
   },
   "5.4.1": {
     "id": "5.4.1",
@@ -2110,6 +2390,14 @@
     "statement": ":::note[**Lean 4 Encoding of Vacuum Stability via Gradient Order Axiom**]\n:::\n\nType-theoretic certification of the stability criterion established in the **Gradient Dominance Proof** <Ref id=\"5.4.5\" label=\"§5.4.5\" /> proceeds via the following verification strategy:",
     "plainEnglish": "Section 5.4.6 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/05-equilibrium/5.4.md"
+  },
+  "5.5": {
+    "id": "5.5",
+    "type": "Section",
+    "title": "Geometric Stabilization (Topological Stability)",
+    "statement": ":::info[**Section 5.5: Geometric Stabilization (Topological Stability)**]\nEstablishes the topological stability of the crystallized vacuum, showing that local fluctuations are suppressed by steric constraints.\n:::",
+    "plainEnglish": "Establishes the topological stability of the crystallized vacuum, showing that local fluctuations are suppressed by steric constraints.",
+    "file": "01-rules/05-equilibrium/5.5.md"
   },
   "5.5.1": {
     "id": "5.5.1",
@@ -2255,6 +2543,22 @@
     "plainEnglish": "Section 5.5.9 formalizes the properties of the QBD proof regarding geometric well-posedness.",
     "file": "01-rules/05-equilibrium/5.5.md"
   },
+  "5.6": {
+    "id": "5.6",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 5.6: Formal Synthesis**]\nSpace is born from the statistical tumult of relations. The entropy of the causal graph proves extensive, scaling linearly with system size $N$, which justifies treating the vacuum as a thermodynamic reservoir. From this, the **Fundamental Equation of Geometrogenesis** emerges, a master equation that balances the explosive force of autocatalysis against the damping force of geometric friction, revealing the heartbeat of cosmic expansion.\n:::",
+    "plainEnglish": "Space is born from the statistical tumult of relations. The entropy of the causal graph proves extensive, scaling linearly with system size $N$, which justifies treating the vacuum as a thermodynamic reservoir. From this, the **Fundamental Equation of Geometrogenesis** emerges, a master equation that balances the explosive force of autocatalysis against the damping force of geometric friction, revealing the heartbeat of cosmic expansion.",
+    "file": "01-rules/05-equilibrium/5.6.md"
+  },
+  "6.1": {
+    "id": "6.1",
+    "type": "Section",
+    "title": "Principles of Particle Formation",
+    "statement": ":::info[**Section 6.1: Principles of Particle Formation**]\nEstablishes the topological origin of matter, showing that particles are not point-like coordinates but localized braid defects.\n:::",
+    "plainEnglish": "Establishes the topological origin of matter, showing that particles are not point-like coordinates but localized braid defects.",
+    "file": "02-players/06-fermions/6.1.md"
+  },
   "6.1.1": {
     "id": "6.1.1",
     "type": "Definition",
@@ -2334,6 +2638,14 @@
     "statement": ":::tip[**Formal Demonstration of the Persistence of Non-Trivial Excitations via Reductio Ad Absurdum**]\n:::\n\n**Synthesis:**",
     "plainEnglish": "Section 6.1.6 formalizes the properties of the QBD proof regarding particle necessity.",
     "file": "02-players/06-fermions/6.1.md"
+  },
+  "6.2": {
+    "id": "6.2",
+    "type": "Section",
+    "title": "Tripartite Braid",
+    "statement": ":::info[**Section 6.2: Tripartite Braid**]\nConstructs fermions as tripartite braids formed by three intertwined ribbons, mapping spin and charge to ribbon twists.\n:::",
+    "plainEnglish": "Constructs fermions as tripartite braids formed by three intertwined ribbons, mapping spin and charge to ribbon twists.",
+    "file": "02-players/06-fermions/6.2.md"
   },
   "6.2.1": {
     "id": "6.2.1",
@@ -2431,6 +2743,14 @@
     "plainEnglish": "Section 6.2.7 formalizes the properties of the QBD proof regarding tripartite braid theorem.",
     "file": "02-players/06-fermions/6.2.md"
   },
+  "6.3": {
+    "id": "6.3",
+    "type": "Section",
+    "title": "Braid Complexity Functional",
+    "statement": ":::info[**Section 6.3: Braid Complexity Functional**]\nDefines the braid complexity functional, which measures the topological energy barrier protecting localized twists.\n:::",
+    "plainEnglish": "Defines the braid complexity functional, which measures the topological energy barrier protecting localized twists.",
+    "file": "02-players/06-fermions/6.3.md"
+  },
   "6.3.1": {
     "id": "6.3.1",
     "type": "Definition",
@@ -2519,6 +2839,14 @@
     "plainEnglish": "Section 6.3.7 formalizes the properties of the QBD proof regarding mass functional.",
     "file": "02-players/06-fermions/6.3.md"
   },
+  "6.4": {
+    "id": "6.4",
+    "type": "Section",
+    "title": "Topological Stability",
+    "statement": ":::info[**Section 6.4: Topological Stability**]\nProves the topological stability of tripartite braids under vacuum rewrites, guaranteeing particle conservation.\n:::",
+    "plainEnglish": "Proves the topological stability of tripartite braids under vacuum rewrites, guaranteeing particle conservation.",
+    "file": "02-players/06-fermions/6.4.md"
+  },
   "6.4.1": {
     "id": "6.4.1",
     "type": "Definition",
@@ -2583,6 +2911,22 @@
     "plainEnglish": "Section 6.4.5 formalizes the properties of the QBD proof regarding stability via impossibility.",
     "file": "02-players/06-fermions/6.4.md"
   },
+  "6.5": {
+    "id": "6.5",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 6.5: Formal Synthesis**]\nWe have successfully shown that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD.\n:::",
+    "plainEnglish": "We have successfully shown that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD.",
+    "file": "02-players/06-fermions/6.5.md"
+  },
+  "7.1": {
+    "id": "7.1",
+    "type": "Section",
+    "title": "Spin and Statistics",
+    "statement": ":::info[**Section 7.1: Spin and Statistics**]\nDerives spin-statistics relation directly from cycle parity, explaining half-integer spin from tripartite rotation symmetries.\n:::",
+    "plainEnglish": "Derives spin-statistics relation directly from cycle parity, explaining half-integer spin from tripartite rotation symmetries.",
+    "file": "02-players/07-topology/7.1.md"
+  },
   "7.1.1": {
     "id": "7.1.1",
     "type": "Definition",
@@ -2639,6 +2983,14 @@
     "plainEnglish": "Section 7.1.5 formalizes the properties of the QBD proof regarding topological statistics.",
     "file": "02-players/07-topology/7.1.md"
   },
+  "7.2": {
+    "id": "7.2",
+    "type": "Section",
+    "title": "Pauli Exclusion Principle",
+    "statement": ":::info[**Section 7.2: Pauli Exclusion Principle**]\nFormulates a coordinate-free proof of the Pauli Exclusion Principle, arising from topological braid crossing constraints.\n:::",
+    "plainEnglish": "Formulates a coordinate-free proof of the Pauli Exclusion Principle, arising from topological braid crossing constraints.",
+    "file": "02-players/07-topology/7.2.md"
+  },
   "7.2.1": {
     "id": "7.2.1",
     "type": "Theorem",
@@ -2686,6 +3038,14 @@
     "statement": ":::tip[**Formal Verification of State Annihilation by the Cycle Constraint Projector**]\n:::\n\n**I. State Vector Construction**",
     "plainEnglish": "Section 7.2.4 formalizes the properties of the QBD proof regarding pauli exclusion principle.",
     "file": "02-players/07-topology/7.2.md"
+  },
+  "7.3": {
+    "id": "7.3",
+    "type": "Section",
+    "title": "Quantized Electric Charge",
+    "statement": ":::info[**Section 7.3: Quantized Electric Charge**]\nIdentifies electric charge as the net writhe polynomial of the tripartite braid, explaining why quark charges are quantized in thirds.\n:::",
+    "plainEnglish": "Identifies electric charge as the net writhe polynomial of the tripartite braid, explaining why quark charges are quantized in thirds.",
+    "file": "02-players/07-topology/7.3.md"
   },
   "7.3.1": {
     "id": "7.3.1",
@@ -2791,6 +3151,14 @@
     "plainEnglish": "Section 7.3.8 formalizes the properties of the QBD proof regarding emergence of electric charge.",
     "file": "02-players/07-topology/7.3.md"
   },
+  "7.4": {
+    "id": "7.4",
+    "type": "Section",
+    "title": "Topological Mass Functional",
+    "statement": ":::info[**Section 7.4: Topological Mass Functional**]\nDevelops the topological mass functional, deriving particle inertial mass from localized graph curvature stress.\n:::",
+    "plainEnglish": "Develops the topological mass functional, deriving particle inertial mass from localized graph curvature stress.",
+    "file": "02-players/07-topology/7.4.md"
+  },
   "7.4.1": {
     "id": "7.4.1",
     "type": "Definition",
@@ -2871,6 +3239,22 @@
     "plainEnglish": "Section 7.4.6.1 formalizes the properties of the QBD calculation regarding generational mass hierarchy verification.",
     "file": "02-players/07-topology/7.4.md"
   },
+  "7.5": {
+    "id": "7.5",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 7.5: Formal Synthesis**]\nWe have successfully decoded the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model.\n:::",
+    "plainEnglish": "We have successfully decoded the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model.",
+    "file": "02-players/07-topology/7.5.md"
+  },
+  "8.1": {
+    "id": "8.1",
+    "type": "Section",
+    "title": "Generator Principle",
+    "statement": ":::info[**Section 8.1: Generator Principle**]\nFormulates the generator principle, deriving gauge fields directly from the local coordinate swaps of the ribbon braids.\n:::",
+    "plainEnglish": "Formulates the generator principle, deriving gauge fields directly from the local coordinate swaps of the ribbon braids.",
+    "file": "02-players/08-braids/8.1.md"
+  },
   "8.1.1": {
     "id": "8.1.1",
     "type": "Theorem",
@@ -2950,6 +3334,14 @@
     "statement": ":::tip[**Formal Derivation of the Complete Lie Algebra from Discrete Braid Generators**]\n:::\n\nThe proof provides a constructive derivation of the $\\mathfrak{su}(n)$ algebra from the discrete rewrite generators via the spectral theorem and commutator induction.",
     "plainEnglish": "Section 8.1.6 formalizes the properties of the QBD proof regarding demonstration of the generator principle.",
     "file": "02-players/08-braids/8.1.md"
+  },
+  "8.2": {
+    "id": "8.2",
+    "type": "Section",
+    "title": "Strong Interaction",
+    "statement": ":::info[**Section 8.2: Strong Interaction**]\nDerives the strong interaction from SU(3) permutation symmetries of tripartite braid strand swaps.\n:::",
+    "plainEnglish": "Derives the strong interaction from SU(3) permutation symmetries of tripartite braid strand swaps.",
+    "file": "02-players/08-braids/8.2.md"
   },
   "8.2.1": {
     "id": "8.2.1",
@@ -3071,6 +3463,14 @@
     "plainEnglish": "Section 8.2.8 formalizes the properties of the QBD proof regarding emergence of su(3) from b3.",
     "file": "02-players/08-braids/8.2.md"
   },
+  "8.3": {
+    "id": "8.3",
+    "type": "Section",
+    "title": "Chiral Weak Interaction",
+    "statement": ":::info[**Section 8.3: Chiral Weak Interaction**]\nConstructs the weak interaction as a chiral swap transition acting selectively on specific braid generations.\n:::",
+    "plainEnglish": "Constructs the weak interaction as a chiral swap transition acting selectively on specific braid generations.",
+    "file": "02-players/08-braids/8.3.md"
+  },
   "8.3.1": {
     "id": "8.3.1",
     "type": "Definition",
@@ -3175,6 +3575,14 @@
     "plainEnglish": "Section 8.3.8 formalizes the properties of the QBD proof regarding chiral weak interaction structure.",
     "file": "02-players/08-braids/8.3.md"
   },
+  "8.4": {
+    "id": "8.4",
+    "type": "Section",
+    "title": "Electroweak Mixing",
+    "statement": ":::info[**Section 8.4: Electroweak Mixing**]\nExplains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios.\n:::",
+    "plainEnglish": "Explains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios.",
+    "file": "02-players/08-braids/8.4.md"
+  },
   "8.4.1": {
     "id": "8.4.1",
     "type": "Theorem",
@@ -3238,6 +3646,14 @@
     "statement": ":::tip[**Calculation via Coupling Definitions and Topological Ratios**]\n:::\n\n**I. Standard Definition** The Weinberg angle $\\theta_W$ is defined by the ratio of the coupling constants:",
     "plainEnglish": "Section 8.4.5 formalizes the properties of the QBD proof regarding ratio construction.",
     "file": "02-players/08-braids/8.4.md"
+  },
+  "8.5": {
+    "id": "8.5",
+    "type": "Section",
+    "title": "Emergent Gauge Coupling",
+    "statement": ":::info[**Section 8.5: Emergent Gauge Coupling**]\nDerives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients.\n:::",
+    "plainEnglish": "Derives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients.",
+    "file": "02-players/08-braids/8.5.md"
   },
   "8.5.1": {
     "id": "8.5.1",
@@ -3351,6 +3767,14 @@
     "plainEnglish": "Section 8.5.7.1 formalizes the properties of the QBD calculation regarding numerical consistency check.",
     "file": "02-players/08-braids/8.5.md"
   },
+  "8.6": {
+    "id": "8.6",
+    "type": "Section",
+    "title": "Mass Generation",
+    "statement": ":::info[**Section 8.6: Mass Generation**]\nModels the mass generation mechanism, deriving particle masses from localized vacuum rewrite backreactions.\n:::",
+    "plainEnglish": "Models the mass generation mechanism, deriving particle masses from localized vacuum rewrite backreactions.",
+    "file": "02-players/08-braids/8.6.md"
+  },
   "8.6.1": {
     "id": "8.6.1",
     "type": "Definition",
@@ -3447,6 +3871,22 @@
     "plainEnglish": "Section 8.6.7 formalizes the properties of the QBD proof regarding emergent mass generation.",
     "file": "02-players/08-braids/8.6.md"
   },
+  "8.7": {
+    "id": "8.7",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 8.7: Formal Synthesis**]\nWe have successfully derived the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. By identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras, we have bridged the gap between discrete graph rewrites and continuous gauge fields, deriving the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios.\n:::",
+    "plainEnglish": "We have successfully derived the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. By identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras, we have bridged the gap between discrete graph rewrites and continuous gauge fields, deriving the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios.",
+    "file": "02-players/08-braids/8.7.md"
+  },
+  "9.1": {
+    "id": "9.1",
+    "type": "Section",
+    "title": "Necessity of Unification",
+    "statement": ":::info[**Section 9.1: Necessity of Unification**]\nDemonstrates the mathematical necessity of grand unification, mapping forces and particles to a single braid group.\n:::",
+    "plainEnglish": "Demonstrates the mathematical necessity of grand unification, mapping forces and particles to a single braid group.",
+    "file": "02-players/09-unification/9.1.md"
+  },
   "9.1.1": {
     "id": "9.1.1",
     "type": "Theorem",
@@ -3518,6 +3958,14 @@
     "statement": ":::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]\n:::\n\nVerification of the anomaly freedom condition established in the **uniqueness verification proof** <Ref id=\"9.1.5\" label=\"§9.1.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 9.1.5.1 formalizes the properties of the QBD calculation regarding anomaly check verification.",
     "file": "02-players/09-unification/9.1.md"
+  },
+  "9.2": {
+    "id": "9.2",
+    "type": "Section",
+    "title": "Penta-Ribbon Braid",
+    "statement": ":::info[**Section 9.2: Penta-Ribbon Braid**]\nConstructs the penta-ribbon braid model, unifying leptons and quarks into a single topological object.\n:::",
+    "plainEnglish": "Constructs the penta-ribbon braid model, unifying leptons and quarks into a single topological object.",
+    "file": "02-players/09-unification/9.2.md"
   },
   "9.2.1": {
     "id": "9.2.1",
@@ -3631,6 +4079,14 @@
     "plainEnglish": "Section 9.2.8 formalizes the properties of the QBD proof regarding topological unification.",
     "file": "02-players/09-unification/9.2.md"
   },
+  "9.3": {
+    "id": "9.3",
+    "type": "Section",
+    "title": "Origin of Generations",
+    "statement": ":::info[**Section 9.3: Origin of Generations**]\nExplains the origin of the three generations of matter from the discrete topological boundaries of B3 braid configurations.\n:::",
+    "plainEnglish": "Explains the origin of the three generations of matter from the discrete topological boundaries of B3 braid configurations.",
+    "file": "02-players/09-unification/9.3.md"
+  },
   "9.3.1": {
     "id": "9.3.1",
     "type": "Theorem",
@@ -3695,6 +4151,14 @@
     "plainEnglish": "Section 9.3.5 formalizes the properties of the QBD proof regarding synthesis of the three-generation structure.",
     "file": "02-players/09-unification/9.3.md"
   },
+  "9.4": {
+    "id": "9.4",
+    "type": "Section",
+    "title": "Leptoquark Dynamics",
+    "statement": ":::info[**Section 9.4: Leptoquark Dynamics**]\nModels leptoquark dynamics as transition states that mediate proton decay under topological writhe conservation.\n:::",
+    "plainEnglish": "Models leptoquark dynamics as transition states that mediate proton decay under topological writhe conservation.",
+    "file": "02-players/09-unification/9.4.md"
+  },
   "9.4.1": {
     "id": "9.4.1",
     "type": "Definition",
@@ -3750,6 +4214,14 @@
     "statement": ":::tip[**Formal Verification of Leptoquark Dynamics within the Unified Algebra**]\n:::\n\n**I. Algebraic Identification** The 12 off-diagonal generators $\\hat{\\lambda}_{LQ}$ are isolated as the unique operators in the adjoint $\\mathbf{24}$ that mix the subspaces $V_C$ and $V_W$ (spanning the $(\\mathbf{3}, \\mathbf{2}) \\oplus (\\mathbf{\\bar{3}}, \\mathbf{2})$ representations). These generators drive the transient rewrite processes $\\mathcal{R}_{LQ} = e^{i \\hat{\\lambda}_{LQ}}$, realized as the X and Y bosons.",
     "plainEnglish": "Section 9.4.5 formalizes the properties of the QBD proof regarding leptoquark demonstration.",
     "file": "02-players/09-unification/9.4.md"
+  },
+  "9.5": {
+    "id": "9.5",
+    "type": "Section",
+    "title": "Proton Decay",
+    "statement": ":::info[**Section 9.5: Proton Decay**]\nCalculates the proton lifetime boundary, proving that baryon number conservation is protected by high topological barriers.\n:::",
+    "plainEnglish": "Calculates the proton lifetime boundary, proving that baryon number conservation is protected by high topological barriers.",
+    "file": "02-players/09-unification/9.5.md"
   },
   "9.5.1": {
     "id": "9.5.1",
@@ -3822,6 +4294,14 @@
     "statement": ":::tip[**Formal Proof of Effective Proton Stability via Topological Barriers**]\n:::\n\nThe proof synthesizes the failure of EFT, the identification of the minimal channel, and the exponential action-mass relation to establish the stability of the proton.",
     "plainEnglish": "Section 9.5.5 formalizes the properties of the QBD proof regarding stability synthesis.",
     "file": "02-players/09-unification/9.5.md"
+  },
+  "9.6": {
+    "id": "9.6",
+    "type": "Section",
+    "title": "Neutrino Mass",
+    "statement": ":::info[**Section 9.6: Neutrino Mass**]\nDerives neutrino masses and oscillation profiles from the non-local swapping of Majorana-like ribbon endings.\n:::",
+    "plainEnglish": "Derives neutrino masses and oscillation profiles from the non-local swapping of Majorana-like ribbon endings.",
+    "file": "02-players/09-unification/9.6.md"
   },
   "9.6.1": {
     "id": "9.6.1",
@@ -3951,6 +4431,22 @@
     "plainEnglish": "Section 9.6.9.1 formalizes the properties of the QBD calculation regarding neutrino mass prediction.",
     "file": "02-players/09-unification/9.6.md"
   },
+  "9.7": {
+    "id": "9.7",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 9.7: Formal Synthesis**]\nWe have successfully unified the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape.\n:::",
+    "plainEnglish": "We have successfully unified the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape.",
+    "file": "02-players/09-unification/9.7.md"
+  },
+  "10.1": {
+    "id": "10.1",
+    "type": "Section",
+    "title": "Topological Qubit Structure",
+    "statement": ":::info[**Section 10.1: Topological Qubit Structure**]\nConstructs the topological qubit structure, mapping quantum information to the non-local braid configurations.\n:::",
+    "plainEnglish": "Constructs the topological qubit structure, mapping quantum information to the non-local braid configurations.",
+    "file": "02-players/10-computation/10.1.md"
+  },
   "10.1.1": {
     "id": "10.1.1",
     "type": "Definition",
@@ -4038,6 +4534,14 @@
     "statement": ":::tip[**Formal Elimination of Alternative Particle Candidates**]\n:::\n\nThe proof demonstrates optimality by excluding all other particle classes derived in the theory.",
     "plainEnglish": "Section 10.1.7 formalizes the properties of the QBD proof regarding qubit optimality.",
     "file": "02-players/10-computation/10.1.md"
+  },
+  "10.2": {
+    "id": "10.2",
+    "type": "Section",
+    "title": "Braid Code Consistency",
+    "statement": ":::info[**Section 10.2: Braid Code Consistency**]\nEstablishes braid code consistency, proving that comonadic updates behave like logical gates on the codespace.\n:::",
+    "plainEnglish": "Establishes braid code consistency, proving that comonadic updates behave like logical gates on the codespace.",
+    "file": "02-players/10-computation/10.2.md"
   },
   "10.2.1": {
     "id": "10.2.1",
@@ -4167,6 +4671,14 @@
     "plainEnglish": "Section 10.2.9.1 formalizes the properties of the QBD calculation regarding stabilizer commutativity verification.",
     "file": "02-players/10-computation/10.2.md"
   },
+  "10.3": {
+    "id": "10.3",
+    "type": "Section",
+    "title": "Topological Fault Tolerance",
+    "statement": ":::info[**Section 10.3: Topological Fault Tolerance**]\nDevelops the fault-tolerance framework, showing that topological quantum error correction protects states from random edge decay.\n:::",
+    "plainEnglish": "Develops the fault-tolerance framework, showing that topological quantum error correction protects states from random edge decay.",
+    "file": "02-players/10-computation/10.3.md"
+  },
   "10.3.1": {
     "id": "10.3.1",
     "type": "Definition",
@@ -4239,6 +4751,14 @@
     "plainEnglish": "Section 10.3.5.2 formalizes the properties of the QBD calculation regarding code distance verification.",
     "file": "02-players/10-computation/10.3.md"
   },
+  "10.4": {
+    "id": "10.4",
+    "type": "Section",
+    "title": "Logical X-Gate",
+    "statement": ":::info[**Section 10.4: Logical X-Gate**]\nImplements the logical X-gate as a specific braid strand swap operation on the codespace.\n:::",
+    "plainEnglish": "Implements the logical X-gate as a specific braid strand swap operation on the codespace.",
+    "file": "02-players/10-computation/10.4.md"
+  },
   "10.4.1": {
     "id": "10.4.1",
     "type": "Definition",
@@ -4295,6 +4815,14 @@
     "plainEnglish": "Section 10.4.5 formalizes the properties of the QBD proof regarding logical x gate.",
     "file": "02-players/10-computation/10.4.md"
   },
+  "10.5": {
+    "id": "10.5",
+    "type": "Section",
+    "title": "Logical Z-Gate",
+    "statement": ":::info[**Section 10.5: Logical Z-Gate**]\nImplements the logical Z-gate as a phase-shifting ribbon twist on the codespace.\n:::",
+    "plainEnglish": "Implements the logical Z-gate as a phase-shifting ribbon twist on the codespace.",
+    "file": "02-players/10-computation/10.5.md"
+  },
   "10.5.1": {
     "id": "10.5.1",
     "type": "Theorem",
@@ -4342,6 +4870,14 @@
     "statement": ":::tip[**Formal Verification of Unitary Implementation via QND Measurement**]\n:::\n\nThe combined process $\\mathcal{R}_Z$, utilizing the state-dependent gauge interaction, implements the Pauli-$\\sigma_z$ operator on the logical subspace.",
     "plainEnglish": "Section 10.5.4 formalizes the properties of the QBD proof regarding logical z gate.",
     "file": "02-players/10-computation/10.5.md"
+  },
+  "10.6": {
+    "id": "10.6",
+    "type": "Section",
+    "title": "Hadamard Gate",
+    "statement": ":::info[**Section 10.6: Hadamard Gate**]\nConstructs the Hadamard gate as a composite sequence of tripartite swaps, mapping spin directions.\n:::",
+    "plainEnglish": "Constructs the Hadamard gate as a composite sequence of tripartite swaps, mapping spin directions.",
+    "file": "02-players/10-computation/10.6.md"
   },
   "10.6.1": {
     "id": "10.6.1",
@@ -4399,6 +4935,14 @@
     "plainEnglish": "Section 10.6.4.1 formalizes the properties of the QBD calculation regarding hadamard quench verification.",
     "file": "02-players/10-computation/10.6.md"
   },
+  "10.7": {
+    "id": "10.7",
+    "type": "Section",
+    "title": "Controlled-Z Gate",
+    "statement": ":::info[**Section 10.7: Controlled-Z Gate**]\nConstructs the Controlled-Z gate as a topological linking operation between two adjacent braids.\n:::",
+    "plainEnglish": "Constructs the Controlled-Z gate as a topological linking operation between two adjacent braids.",
+    "file": "02-players/10-computation/10.7.md"
+  },
   "10.7.1": {
     "id": "10.7.1",
     "type": "Theorem",
@@ -4446,6 +4990,14 @@
     "statement": ":::tip[**Formal Verification of C-Z Truth Table via Catalytic Dynamics**]\n:::\n\nThe composite process $\\mathcal{R}_{CZ}$ (Bridge + Conditional $\\mathcal{R}_Z$ + Unbridge) implements the unitary operator $\\text{diag}(1, 1, 1, -1)$.",
     "plainEnglish": "Section 10.7.4 formalizes the properties of the QBD proof regarding controlled-z gate.",
     "file": "02-players/10-computation/10.7.md"
+  },
+  "10.8": {
+    "id": "10.8",
+    "type": "Section",
+    "title": "T-Gate",
+    "statement": ":::info[**Section 10.8: T-Gate**]\nImplements the T-gate, completing the Clifford set by introducing non-Clifford topological rotations.\n:::",
+    "plainEnglish": "Implements the T-gate, completing the Clifford set by introducing non-Clifford topological rotations.",
+    "file": "02-players/10-computation/10.8.md"
   },
   "10.8.1": {
     "id": "10.8.1",
@@ -4575,6 +5127,14 @@
     "plainEnglish": "Section 10.8.9.1 formalizes the properties of the QBD proof regarding set completeness verification.",
     "file": "02-players/10-computation/10.8.md"
   },
+  "10.9": {
+    "id": "10.9",
+    "type": "Section",
+    "title": "Universality Implementation",
+    "statement": ":::info[**Section 10.9: Universality Implementation**]\nThe final verification step consists of demonstrating that the collection of physical rewrite processes derived constitutes a fully universal quantum computer. Can the causal graph simulate any conceivable quantum system? The goal is to prove that the set of topological gates can approximate any unitary transformation to arbitrary precision, thereby confirming that the causal graph is Turing-complete for quantum tasks. This synthesis requires applying the Solovay-Kitaev theorem to the physical gate set to bridge the discrete nature of the rewrites with the continuous nature of quantum algorithms.\n:::",
+    "plainEnglish": "The final verification step consists of demonstrating that the collection of physical rewrite processes derived constitutes a fully universal quantum computer. Can the causal graph simulate any conceivable quantum system? The goal is to prove that the set of topological gates can approximate any unitary transformation to arbitrary precision, thereby confirming that the causal graph is Turing-complete for quantum tasks. This synthesis requires applying the Solovay-Kitaev theorem to the physical gate set to bridge the discrete nature of the rewrites with the continuous nature of quantum algorithms.",
+    "file": "02-players/10-computation/10.9.md"
+  },
   "10.9.1": {
     "id": "10.9.1",
     "type": "Theorem",
@@ -4623,6 +5183,22 @@
     "plainEnglish": "Section 10.9.4.1 formalizes the properties of the QBD calculation regarding shor's algorithm.",
     "file": "02-players/10-computation/10.9.md"
   },
+  "10.10": {
+    "id": "10.10",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 10.10: Formal Synthesis**]\nFormulates the mathematical models and pre-geometric causal posets of Quantum Braid Dynamics.\n:::",
+    "plainEnglish": "Formulates the mathematical models and pre-geometric causal posets of Quantum Braid Dynamics.",
+    "file": "02-players/10-computation/10.10.md"
+  },
+  "11.1": {
+    "id": "11.1",
+    "type": "Section",
+    "title": "The Continuum Limit",
+    "statement": ":::info[**Section 11.1: The Continuum Limit**]\nFormulates discrete exterior calculus on graphs, defining discrete differential forms and exterior derivatives that satisfy $d^2 = 0$.\n:::",
+    "plainEnglish": "Formulates discrete exterior calculus on graphs, defining discrete differential forms and exterior derivatives that satisfy $d^2 = 0$.",
+    "file": "03-stage/11-discrete/11.1.md"
+  },
   "11.1.1": {
     "id": "11.1.1",
     "type": "Definition",
@@ -4638,6 +5214,14 @@
     "statement": ":::tip[**Definition of the Undirected Distance Function from the Symmetrization of the Causal Edge Set**]\n:::\n\nLet $G = (V, E)$ denote a finite, simple directed graph. The underlying undirected graph of $G$ constructs itself as the graph $G' = (V, E')$, in which an undirected edge $\\{u,v\\} \\in E'$ exists if and only if either the directed edge $(u,v) \\in E$ or the directed edge $(v,u) \\in E$.",
     "plainEnglish": "Physical space emerges as a macroscopic phase transition in the causal network, stochastically transitioning from a disjointed state to a unified manifold.",
     "file": "03-stage/11-discrete/11.1.md"
+  },
+  "11.2": {
+    "id": "11.2",
+    "type": "Section",
+    "title": "Causal Geometry Construction",
+    "statement": ":::info[**Section 11.2: Causal Geometry Construction**]\nConstructs curved causal geometry on posets, deriving a coordinate-free Riemannian curvature tensor analogue from path metrics.\n:::",
+    "plainEnglish": "Constructs curved causal geometry on posets, deriving a coordinate-free Riemannian curvature tensor analogue from path metrics.",
+    "file": "03-stage/11-discrete/11.2.md"
   },
   "11.2.1": {
     "id": "11.2.1",
@@ -4767,6 +5351,14 @@
     "plainEnglish": "Section 11.2.8 formalizes the properties of the QBD proof regarding causal geometry construction.",
     "file": "03-stage/11-discrete/11.2.md"
   },
+  "11.3": {
+    "id": "11.3",
+    "type": "Section",
+    "title": "Monotonicity Theorem",
+    "statement": ":::info[**Section 11.3: Monotonicity Theorem**]\nProves the Monotonicity Theorem, showing that parallel transport along causal loops preserves topological invariants.\n:::",
+    "plainEnglish": "Proves the Monotonicity Theorem, showing that parallel transport along causal loops preserves topological invariants.",
+    "file": "03-stage/11-discrete/11.3.md"
+  },
   "11.3.1": {
     "id": "11.3.1",
     "type": "Definition",
@@ -4863,6 +5455,22 @@
     "plainEnglish": "Section 11.3.7.3 formalizes the properties of the QBD calculation regarding monotonicity verification.",
     "file": "03-stage/11-discrete/11.3.md"
   },
+  "11.4": {
+    "id": "11.4",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 11.4: Formal Synthesis**]\nWe have successfully constructed a rigorous discrete differential geometry upon the foundation of the causal graph, using the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal measure** <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the **Causal Ollivier-Ricci curvature** <Ref id=\"11.2.2\" label=\"§11.2.2\" />.\n:::",
+    "plainEnglish": "We have successfully constructed a rigorous discrete differential geometry upon the foundation of the causal graph, using the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal measure** <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the **Causal Ollivier-Ricci curvature** <Ref id=\"11.2.2\" label=\"§11.2.2\" />.",
+    "file": "03-stage/11-discrete/11.4.md"
+  },
+  "12.1": {
+    "id": "12.1",
+    "type": "Section",
+    "title": "Discrete Stress-Energy",
+    "statement": ":::info[**Section 12.1: Discrete Stress-Energy**]\nDefines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations.\n:::",
+    "plainEnglish": "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations.",
+    "file": "03-stage/12-einstein/12.1.md"
+  },
   "12.1.1": {
     "id": "12.1.1",
     "type": "Definition",
@@ -4926,6 +5534,14 @@
     "statement": ":::note[**Verification of Flux Divergence Conservation via Trivalent Graph Simulation**]\n:::\n\nVerification of the local stress-energy conservation laws established in the **Local Conservation Synthesis** <Ref id=\"12.1.5\" label=\"§12.1.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 12.1.5.1 formalizes the properties of the QBD calculation regarding flux conservation verification.",
     "file": "03-stage/12-einstein/12.1.md"
+  },
+  "12.2": {
+    "id": "12.2",
+    "type": "Section",
+    "title": "Discrete Field Equations",
+    "statement": ":::info[**Section 12.2: Discrete Field Equations**]\nFormulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network.\n:::",
+    "plainEnglish": "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network.",
+    "file": "03-stage/12-einstein/12.2.md"
   },
   "12.2.1": {
     "id": "12.2.1",
@@ -5007,6 +5623,14 @@
     "plainEnglish": "Section 12.2.6.1 formalizes the properties of the QBD calculation regarding unified field equation verification.",
     "file": "03-stage/12-einstein/12.2.md"
   },
+  "12.3": {
+    "id": "12.3",
+    "type": "Section",
+    "title": "Geometric Conservation",
+    "statement": ":::info[**Section 12.3: Geometric Conservation**]\nEstablishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset.\n:::",
+    "plainEnglish": "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset.",
+    "file": "03-stage/12-einstein/12.3.md"
+  },
   "12.3.1": {
     "id": "12.3.1",
     "type": "Definition",
@@ -5070,6 +5694,22 @@
     "statement": ":::note[**Verification of the Discrete Bianchi Identity via Divergence Minimization**]\n:::\n\nVerification of the geometric divergence conservation established in the **Identity Derivation** <Ref id=\"12.3.5\" label=\"§12.3.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 12.3.5.1 formalizes the properties of the QBD calculation regarding bianchi error scaling.",
     "file": "03-stage/12-einstein/12.3.md"
+  },
+  "12.4": {
+    "id": "12.4",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 12.4: Formal Synthesis**]\nWe have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance.\n:::",
+    "plainEnglish": "We have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance.",
+    "file": "03-stage/12-einstein/12.4.md"
+  },
+  "13.1": {
+    "id": "13.1",
+    "type": "Section",
+    "title": "Riemannian Convergence",
+    "statement": ":::info[**Section 13.1: Riemannian Convergence**]\nProves that the sequence of discrete graphs converges strictly to a smooth Riemannian manifold under the Gromov-Hausdorff-Prokhorov metric.\n:::",
+    "plainEnglish": "Proves that the sequence of discrete graphs converges strictly to a smooth Riemannian manifold under the Gromov-Hausdorff-Prokhorov metric.",
+    "file": "03-stage/13-convergence/13.1.md"
   },
   "13.1.1": {
     "id": "13.1.1",
@@ -5159,6 +5799,14 @@
     "plainEnglish": "Section 13.1.6 formalizes the properties of the QBD proof regarding smooth manifold limit.",
     "file": "03-stage/13-convergence/13.1.md"
   },
+  "13.2": {
+    "id": "13.2",
+    "type": "Section",
+    "title": "Tensorial Reorganization",
+    "statement": ":::info[**Section 13.2: Tensorial Reorganization**]\nDevelops the coarse-graining framework, showing how micro-updates group into macroscopic tensor fields.\n:::",
+    "plainEnglish": "Develops the coarse-graining framework, showing how micro-updates group into macroscopic tensor fields.",
+    "file": "03-stage/13-convergence/13.2.md"
+  },
   "13.2.1": {
     "id": "13.2.1",
     "type": "Definition",
@@ -5247,6 +5895,14 @@
     "plainEnglish": "Section 13.2.6 formalizes the properties of the QBD proof regarding tensorial continuum limit.",
     "file": "03-stage/13-convergence/13.2.md"
   },
+  "13.3": {
+    "id": "13.3",
+    "type": "Section",
+    "title": "Causal Geometry",
+    "statement": ":::info[**Section 13.3: Causal Geometry**]\nValidates that emergent causal geometry satisfies classical general relativity in the thermodynamic limit.\n:::",
+    "plainEnglish": "Validates that emergent causal geometry satisfies classical general relativity in the thermodynamic limit.",
+    "file": "03-stage/13-convergence/13.3.md"
+  },
   "13.3.1": {
     "id": "13.3.1",
     "type": "Definition",
@@ -5310,6 +5966,22 @@
     "statement": ":::note[**Verification of the Lorentzian Signature via Ensemble Eigendecomposition**]\n:::\n\nVerification of the emergent Lorentzian signature established in the **Signature Selectivity** <Ref id=\"13.3.5\" label=\"§13.3.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 13.3.5.1 formalizes the properties of the QBD calculation regarding signature verification.",
     "file": "03-stage/13-convergence/13.3.md"
+  },
+  "13.4": {
+    "id": "13.4",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 13.4: Formal Synthesis**]\nWe have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$).\n:::",
+    "plainEnglish": "We have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$).",
+    "file": "03-stage/13-convergence/13.4.md"
+  },
+  "14.1": {
+    "id": "14.1",
+    "type": "Section",
+    "title": "Time Recovery",
+    "statement": ":::info[**Section 14.1: Time Recovery**]\nReconstructs physical continuous time, proving that observer frames are emergent foliations of the global poset.\n:::",
+    "plainEnglish": "Reconstructs physical continuous time, proving that observer frames are emergent foliations of the global poset.",
+    "file": "03-stage/14-time/14.1.md"
   },
   "14.1.1": {
     "id": "14.1.1",
@@ -5382,6 +6054,14 @@
     "statement": ":::note[**Verification of Global Monotonicity and Lapse Regularity via Causal Graph Sort**]\n:::\n\nVerification of the global time foliation properties established in the **Smooth Time Foliation** <Ref id=\"14.1.5\" label=\"§14.1.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 14.1.5.1 formalizes the properties of the QBD calculation regarding global monotonicity check.",
     "file": "03-stage/14-time/14.1.md"
+  },
+  "14.2": {
+    "id": "14.2",
+    "type": "Section",
+    "title": "Metric & Motion",
+    "statement": ":::info[**Section 14.2: Metric & Motion**]\nDerives the relativistic metric and equations of motion, showing that geodesics correspond to maximum logical-time paths.\n:::",
+    "plainEnglish": "Derives the relativistic metric and equations of motion, showing that geodesics correspond to maximum logical-time paths.",
+    "file": "03-stage/14-time/14.2.md"
   },
   "14.2.1": {
     "id": "14.2.1",
@@ -5494,6 +6174,14 @@
     "statement": ":::note[**Verification of Geodesic Motion via Shortest-Path Optimization on Weighted Lorentzian Graphs**]\n:::\n\nVerification of the geodesic emergence and proper time maximization established in the **Emergence of Relativistic Dynamics** <Ref id=\"14.2.8\" label=\"§14.2.8\" /> is based on the following protocols:",
     "plainEnglish": "Section 14.2.8.1 formalizes the properties of the QBD calculation regarding geodesic emergence verification.",
     "file": "03-stage/14-time/14.2.md"
+  },
+  "14.3": {
+    "id": "14.3",
+    "type": "Section",
+    "title": "Section: Field Axiomatics",
+    "statement": ":::info[**Section 14.3: Section: Field Axiomatics**]\nLays down the field axiomatics for continuous matter, mapping quantum fields to discrete network stress densities.\n:::",
+    "plainEnglish": "Lays down the field axiomatics for continuous matter, mapping quantum fields to discrete network stress densities.",
+    "file": "03-stage/14-time/14.3.md"
   },
   "14.3.1": {
     "id": "14.3.1",
@@ -5615,6 +6303,14 @@
     "plainEnglish": "Section 14.3.8.1 formalizes the properties of the QBD calculation regarding cluster decomposition check [integration test].",
     "file": "03-stage/14-time/14.3.md"
   },
+  "14.4": {
+    "id": "14.4",
+    "type": "Section",
+    "title": "Section: Gravity from Entanglement Thermodynamics",
+    "statement": ":::info[**Section 14.4: Section: Gravity from Entanglement Thermodynamics**]\nDerives general relativity from entanglement thermodynamics, bridging poset dynamics with Jacobson's gravity.\n:::",
+    "plainEnglish": "Derives general relativity from entanglement thermodynamics, bridging poset dynamics with Jacobson's gravity.",
+    "file": "03-stage/14-time/14.4.md"
+  },
   "14.4.1": {
     "id": "14.4.1",
     "type": "Theorem",
@@ -5662,6 +6358,30 @@
     "statement": ":::tip[**Dimensional Derivation from the Bekenstein-Hawking Limit**]\n:::\n\n**I. Setup and Assumptions**",
     "plainEnglish": "Section 14.4.3.1 formalizes the properties of the QBD proof regarding g_from_planck_area.",
     "file": "03-stage/14-time/14.4.md"
+  },
+  "14.5": {
+    "id": "14.5",
+    "type": "Section",
+    "title": "The Continuum Limit",
+    "statement": ":::info[**Section 14.5: The Continuum Limit**]\nProves that the macroscopic continuum limit of the causal set reproduces curved Lorentzian spacetime.\n:::",
+    "plainEnglish": "Proves that the macroscopic continuum limit of the causal set reproduces curved Lorentzian spacetime.",
+    "file": "03-stage/14-time/14.5.md"
+  },
+  "14.6": {
+    "id": "14.6",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 14.6: Formal Synthesis**]\nWe have successfully established the emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ under the **3+1 ADM Decomposition**, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network.\n:::",
+    "plainEnglish": "We have successfully established the emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ under the **3+1 ADM Decomposition**, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network.",
+    "file": "03-stage/14-time/14.6.md"
+  },
+  "15.1": {
+    "id": "15.1",
+    "type": "Section",
+    "title": "Entanglement as Topological Connection",
+    "statement": ":::info[**Section 15.1: Entanglement as Topological Connection**]\nFormulates quantum entanglement as dynamic topological edge connections in the pre-geometric poset.\n:::",
+    "plainEnglish": "Formulates quantum entanglement as dynamic topological edge connections in the pre-geometric poset.",
+    "file": "03-stage/15-epr/15.1.md"
   },
   "15.1.1": {
     "id": "15.1.1",
@@ -5718,6 +6438,14 @@
     "statement": ":::note[**Confirmation of Metric Divergence via Manifold Scaling**]\n:::\n\nVerification of the metric divergence established in the **Formal Synthesis of The Distance Gap** <Ref id=\"15.1.6\" label=\"§15.1.6\" /> is based on the following protocols:",
     "plainEnglish": "Section 15.1.6.1 formalizes the properties of the QBD calculation regarding bi-metric verification.",
     "file": "03-stage/15-epr/15.1.md"
+  },
+  "15.2": {
+    "id": "15.2",
+    "type": "Section",
+    "title": "Bell Violation",
+    "statement": ":::info[**Section 15.2: Bell Violation**]\nProves that discrete entanglement connections reproduce Bell inequality violations without non-local coordinate assumptions.\n:::",
+    "plainEnglish": "Proves that discrete entanglement connections reproduce Bell inequality violations without non-local coordinate assumptions.",
+    "file": "03-stage/15-epr/15.2.md"
   },
   "15.2.1": {
     "id": "15.2.1",
@@ -5783,6 +6511,14 @@
     "plainEnglish": "Section 15.2.5.1 formalizes the properties of the QBD calculation regarding chsh score verification.",
     "file": "03-stage/15-epr/15.2.md"
   },
+  "15.3": {
+    "id": "15.3",
+    "type": "Section",
+    "title": "ER = EPR (Topological Wormholes)",
+    "statement": ":::info[**Section 15.3: ER = EPR (Topological Wormholes)**]\nFormulates the ER = EPR conjecture on graphs, proving that entangled event clusters are connected by topological wormholes.\n:::",
+    "plainEnglish": "Formulates the ER = EPR conjecture on graphs, proving that entangled event clusters are connected by topological wormholes.",
+    "file": "03-stage/15-epr/15.3.md"
+  },
   "15.3.1": {
     "id": "15.3.1",
     "type": "Theorem",
@@ -5839,6 +6575,14 @@
     "plainEnglish": "Section 15.3.5.1 formalizes the properties of the QBD calculation regarding wormhole length from braid complexity.",
     "file": "03-stage/15-epr/15.3.md"
   },
+  "15.4": {
+    "id": "15.4",
+    "type": "Section",
+    "title": "Quantum Eraser (Temporal Non-Locality)",
+    "statement": ":::info[**Section 15.4: Quantum Eraser (Temporal Non-Locality)**]\nModels the quantum eraser effect, explaining temporal non-locality as a consequence of post-selected poset paths.\n:::",
+    "plainEnglish": "Models the quantum eraser effect, explaining temporal non-locality as a consequence of post-selected poset paths.",
+    "file": "03-stage/15-epr/15.4.md"
+  },
   "15.4.1": {
     "id": "15.4.1",
     "type": "Definition",
@@ -5887,6 +6631,22 @@
     "plainEnglish": "Section 15.4.5 formalizes the properties of the QBD proof regarding formal synthesis of causality preservation.",
     "file": "03-stage/15-epr/15.4.md"
   },
+  "15.5": {
+    "id": "15.5",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 15.5: Formal Synthesis**]\nWe have successfully established the topological equivalence between the quantum state vector $|\\Psi\\rangle$ and emergent spatial geometry $(M, g_{\\mu\\nu})$ under stabilizer group symmetries. This identifies entanglement entropy directly with the isoperimetric deficit of topological shortcuts in the graph, providing a solid mechanical basis for the **ER = EPR** duality.\n:::",
+    "plainEnglish": "We have successfully established the topological equivalence between the quantum state vector $|\\Psi\\rangle$ and emergent spatial geometry $(M, g_{\\mu\\nu})$ under stabilizer group symmetries. This identifies entanglement entropy directly with the isoperimetric deficit of topological shortcuts in the graph, providing a solid mechanical basis for the **ER = EPR** duality.",
+    "file": "03-stage/15-epr/15.5.md"
+  },
+  "16.1": {
+    "id": "16.1",
+    "type": "Section",
+    "title": "Surface Code (Discrete Holography)",
+    "statement": ":::info[**Section 16.1: Surface Code (Discrete Holography)**]\nFormulates discrete holography, proving that bulk poset gravity is isomorphic to boundary surface stabilizer codes.\n:::",
+    "plainEnglish": "Formulates discrete holography, proving that bulk poset gravity is isomorphic to boundary surface stabilizer codes.",
+    "file": "03-stage/16-holography/16.1.md"
+  },
   "16.1.1": {
     "id": "16.1.1",
     "type": "Definition",
@@ -5926,6 +6686,14 @@
     "statement": ":::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]\n:::\n\nVerification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id=\"16.1.4\" label=\"§16.1.4\" /> is based on the following protocols:",
     "plainEnglish": "Section 16.1.4.1 formalizes the properties of the QBD calculation regarding cut-capacity verification.",
     "file": "03-stage/16-holography/16.1.md"
+  },
+  "16.2": {
+    "id": "16.2",
+    "type": "Section",
+    "title": "Bekenstein Bound (Thermodynamic Limits)",
+    "statement": ":::info[**Section 16.2: Bekenstein Bound (Thermodynamic Limits)**]\nDerives the Bekenstein entropy bound, proving that boundary information capacities constrain bulk geometry.\n:::",
+    "plainEnglish": "Derives the Bekenstein entropy bound, proving that boundary information capacities constrain bulk geometry.",
+    "file": "03-stage/16-holography/16.2.md"
   },
   "16.2.1": {
     "id": "16.2.1",
@@ -5983,6 +6751,22 @@
     "plainEnglish": "Section 16.2.5.1 formalizes the properties of the QBD calculation regarding bekenstein-hawking entropy scaling.",
     "file": "03-stage/16-holography/16.2.md"
   },
+  "16.3": {
+    "id": "16.3",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 16.3: Formal Synthesis**]\nWe have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \\text{Area}(\\gamma_A)/4G_N$ **Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states.\n:::",
+    "plainEnglish": "We have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \\text{Area}(\\gamma_A)/4G_N$ **Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states.",
+    "file": "03-stage/16-holography/16.3.md"
+  },
+  "17.1": {
+    "id": "17.1",
+    "type": "Section",
+    "title": "Discrete Worldsheet (Braid Isomorphism)",
+    "statement": ":::info[**Section 17.1: Discrete Worldsheet (Braid Isomorphism)**]\nShows that emergent 1D braided strings sweep out 2D worldsheet manifolds in the continuous limit.\n:::",
+    "plainEnglish": "Shows that emergent 1D braided strings sweep out 2D worldsheet manifolds in the continuous limit.",
+    "file": "03-stage/17-worldsheets/17.1.md"
+  },
   "17.1.1": {
     "id": "17.1.1",
     "type": "Definition",
@@ -6031,6 +6815,14 @@
     "plainEnglish": "Section 17.1.4.1 formalizes the properties of the QBD calculation regarding braid confinement verification.",
     "file": "03-stage/17-worldsheets/17.1.md"
   },
+  "17.2": {
+    "id": "17.2",
+    "type": "Section",
+    "title": "T-Duality and Spectrum",
+    "statement": ":::info[**Section 17.2: T-Duality and Spectrum**]\nDerives T-duality and compactification spectra from the discrete topological boundaries of compactified graph dimensions.\n:::",
+    "plainEnglish": "Derives T-duality and compactification spectra from the discrete topological boundaries of compactified graph dimensions.",
+    "file": "03-stage/17-worldsheets/17.2.md"
+  },
   "17.2.1": {
     "id": "17.2.1",
     "type": "Definition",
@@ -6070,6 +6862,14 @@
     "statement": ":::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]\n:::\n\nVerification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id=\"17.2.4\" label=\"§17.2.4\" /> is based on the following protocols:",
     "plainEnglish": "Section 17.2.4.1 formalizes the properties of the QBD calculation regarding t-duality verification.",
     "file": "03-stage/17-worldsheets/17.2.md"
+  },
+  "17.3": {
+    "id": "17.3",
+    "type": "Section",
+    "title": "Critical Dimension (D=26)",
+    "statement": ":::info[**Section 17.3: Critical Dimension (D=26)**]\nCalculates the critical dimension ($D=26$) strictly from the anomaly-free partition functions of discrete worldsheets.\n:::",
+    "plainEnglish": "Calculates the critical dimension ($D=26$) strictly from the anomaly-free partition functions of discrete worldsheets.",
+    "file": "03-stage/17-worldsheets/17.3.md"
   },
   "17.3.1": {
     "id": "17.3.1",
@@ -6118,6 +6918,14 @@
     "statement": ":::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]\n:::\n\nVerification of the dimensional consistency established by **Formal Synthesis of the Critical Dimension** <Ref id=\"17.3.5\" label=\"§17.3.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 17.3.5.1 formalizes the properties of the QBD calculation regarding algebra closure verification.",
     "file": "03-stage/17-worldsheets/17.3.md"
+  },
+  "17.4": {
+    "id": "17.4",
+    "type": "Section",
+    "title": "Heterotic Unification (E8 x E8)",
+    "statement": ":::info[**Section 17.4: Heterotic Unification (E8 x E8)**]\nModels heterotic unification ($E_8 \\times E_8$) as symmetric swap configurations of twenty-six dimensional lattices.\n:::",
+    "plainEnglish": "Models heterotic unification ($E_8 \\times E_8$) as symmetric swap configurations of twenty-six dimensional lattices.",
+    "file": "03-stage/17-worldsheets/17.4.md"
   },
   "17.4.1": {
     "id": "17.4.1",
@@ -6198,6 +7006,22 @@
     "statement": ":::note[**Verification of Heterotic Braid Isomorphism via exceptional root Lattice Mapping**]\n:::\n\nVerification of the non-perturbative loop limit established by **Formal Synthesis of Heterotic Braid Theory** <Ref id=\"17.4.7\" label=\"§17.4.7\" /> is based on the following protocols:",
     "plainEnglish": "Section 17.4.7.1 formalizes the properties of the QBD calculation regarding heterotic braid isomorphism verification.",
     "file": "03-stage/17-worldsheets/17.4.md"
+  },
+  "17.5": {
+    "id": "17.5",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 17.5: Formal Synthesis**]\nWe have successfully derived the continuum limit of propagating braid configurations, establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ (**Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" />) from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the (**Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />) alongside the self-dual (**Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />).\n:::",
+    "plainEnglish": "We have successfully derived the continuum limit of propagating braid configurations, establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ (**Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" />) from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the (**Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />) alongside the self-dual (**Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />).",
+    "file": "03-stage/17-worldsheets/17.5.md"
+  },
+  "18.1": {
+    "id": "18.1",
+    "type": "Section",
+    "title": "Primordial Ignition",
+    "statement": ":::info[**Section 18.1: Primordial Ignition**]\nModels the ignition of inflation as an autocatalytic branching process of poset nodes driven by comonadic write feedback.\n:::",
+    "plainEnglish": "Models the ignition of inflation as an autocatalytic branching process of poset nodes driven by comonadic write feedback.",
+    "file": "04-output/18-inflation/18.1.md"
   },
   "18.1.1": {
     "id": "18.1.1",
@@ -6287,6 +7111,14 @@
     "plainEnglish": "Section 18.1.9 formalizes the properties of the QBD calculation regarding bipartite parity phase transition.",
     "file": "04-output/18-inflation/18.1.md"
   },
+  "18.2": {
+    "id": "18.2",
+    "type": "Section",
+    "title": "Scaling Relation",
+    "statement": ":::info[**Section 18.2: Scaling Relation**]\nDerives the inflationary scaling relation, showing that early information growth satisfies holographic bounds.\n:::",
+    "plainEnglish": "Derives the inflationary scaling relation, showing that early information growth satisfies holographic bounds.",
+    "file": "04-output/18-inflation/18.2.md"
+  },
   "18.2.1": {
     "id": "18.2.1",
     "type": "Postulate",
@@ -6350,6 +7182,14 @@
     "statement": ":::note[**Numerical Calculation of the Emergent Scale Factor and Hubble Parameter from Cycle Currents**]\n:::\n\nVerification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id=\"18.2.5\" label=\"§18.2.5\" /> is based on the following protocols:",
     "plainEnglish": "Section 18.2.6 formalizes the properties of the QBD calculation regarding scale factor expansion.",
     "file": "04-output/18-inflation/18.2.md"
+  },
+  "18.3": {
+    "id": "18.3",
+    "type": "Section",
+    "title": "Autocatalytic Growth",
+    "statement": ":::info[**Section 18.3: Autocatalytic Growth**]\nSimulates the de Sitter phase, demonstrating that rapid parallel updates yield an emergent de Sitter metric.\n:::",
+    "plainEnglish": "Simulates the de Sitter phase, demonstrating that rapid parallel updates yield an emergent de Sitter metric.",
+    "file": "04-output/18-inflation/18.3.md"
   },
   "18.3.1": {
     "id": "18.3.1",
@@ -6487,6 +7327,14 @@
     "plainEnglish": "Section 18.3.14 formalizes the properties of the QBD calculation regarding heat kernel spectral walks.",
     "file": "04-output/18-inflation/18.3.md"
   },
+  "18.4": {
+    "id": "18.4",
+    "type": "Section",
+    "title": "Primordial Fluctuations",
+    "statement": ":::info[**Section 18.4: Primordial Fluctuations**]\nDerives primordial stress fluctuations, matching CMB observations without needing quantum inflaton fields.\n:::",
+    "plainEnglish": "Derives primordial stress fluctuations, matching CMB observations without needing quantum inflaton fields.",
+    "file": "04-output/18-inflation/18.4.md"
+  },
   "18.4.1": {
     "id": "18.4.1",
     "type": "Theorem",
@@ -6566,6 +7414,14 @@
     "statement": ":::note[**Numerical Integration of Stochastic Langevin Trajectory and Slow-Roll Parameter Tracking**]\n:::\n\nVerification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id=\"18.4.7.1\" label=\"§18.4.7.1\" /> is based on the following protocols:",
     "plainEnglish": "Section 18.4.8 formalizes the properties of the QBD calculation regarding langevin slow-roll parameter audit.",
     "file": "04-output/18-inflation/18.4.md"
+  },
+  "18.5": {
+    "id": "18.5",
+    "type": "Section",
+    "title": "Cosmic Equilibrium",
+    "statement": ":::info[**Section 18.5: Cosmic Equilibrium**]\nAnalyzes the transition to cosmic equilibrium, showing how the inflationary phase decelerates as update rates stabilize.\n:::",
+    "plainEnglish": "Analyzes the transition to cosmic equilibrium, showing how the inflationary phase decelerates as update rates stabilize.",
+    "file": "04-output/18-inflation/18.5.md"
   },
   "18.5.1": {
     "id": "18.5.1",
@@ -6679,6 +7535,22 @@
     "plainEnglish": "Section 18.5.11 formalizes the properties of the QBD calculation regarding propagator covariance decay.",
     "file": "04-output/18-inflation/18.5.md"
   },
+  "18.6": {
+    "id": "18.6",
+    "type": "Section",
+    "title": "Formal Synthesis",
+    "statement": ":::info[**Section 18.6: Formal Synthesis**]\nThe pre-geometric vacuum has successfully transitioned into a stable, flat, and homogeneous 4-dimensional spatial manifold. This transition rests upon the **Bipartite Bethe Tree Vacuum** and **Spontaneous Loop Nucleation**, which serve as the foundational primitives of the inflationary epoch. The spontaneous tunneling event breaks the parity stasis of the tree substrate, nucleating the first directed 3-cycles that function as the primitive area quanta of emergent geometry.\n:::",
+    "plainEnglish": "The pre-geometric vacuum has successfully transitioned into a stable, flat, and homogeneous 4-dimensional spatial manifold. This transition rests upon the **Bipartite Bethe Tree Vacuum** and **Spontaneous Loop Nucleation**, which serve as the foundational primitives of the inflationary epoch. The spontaneous tunneling event breaks the parity stasis of the tree substrate, nucleating the first directed 3-cycles that function as the primitive area quanta of emergent geometry.",
+    "file": "04-output/18-inflation/18.6.md"
+  },
+  "19.1": {
+    "id": "19.1",
+    "type": "Section",
+    "title": "Reheating Phase",
+    "statement": ":::info[**Section 19.1: Reheating Phase**]\nSimulates the reheating phase, showing how pre-geometric kinetic energy is released as topological heat during deceleration.\n:::",
+    "plainEnglish": "Simulates the reheating phase, showing how pre-geometric kinetic energy is released as topological heat during deceleration.",
+    "file": "04-output/19-nucleosynthesis/19.1.md"
+  },
   "19.1.1": {
     "id": "19.1.1",
     "type": "Definition",
@@ -6702,6 +7574,14 @@
     "statement": ":::tip[**Verification of Right-Handed Neutrino Production through Phase Space Integration of Braid Nucleation Rates**]\n:::\n\n*   **Defect Nucleation Count:** The proof integrates the defect creation rates over the transition interval where the graph settles into the stable attractor $\\rho^*$. *   **Phase Space Statistics:** Using the combinatorial multiplicity of 3-ribbon braids, it shows that the decay of excess connectivity is statistically dominated by the production of $N_R$ states, establishing that the post-inflationary vacuum is filled with a hot, decaying plasma of heavy Majorana neutrinos.",
     "plainEnglish": "Section 19.1.3 formalizes the properties of the QBD proof regarding right-handed neutrino production.",
     "file": "04-output/19-nucleosynthesis/19.1.md"
+  },
+  "19.2": {
+    "id": "19.2",
+    "type": "Section",
+    "title": "Baryogenesis",
+    "statement": ":::info[**Section 19.2: Baryogenesis**]\nDerives baryogenesis directly from the chirality bias of local braid swap transitions during geometerogenesis.\n:::",
+    "plainEnglish": "Derives baryogenesis directly from the chirality bias of local braid swap transitions during geometerogenesis.",
+    "file": "04-output/19-nucleosynthesis/19.2.md"
   },
   "19.2.1": {
     "id": "19.2.1",
@@ -6743,6 +7623,14 @@
     "plainEnglish": "Section 19.2.5 formalizes the properties of the QBD proof regarding sphaleron conversion.",
     "file": "04-output/19-nucleosynthesis/19.2.md"
   },
+  "19.3": {
+    "id": "19.3",
+    "type": "Section",
+    "title": "Hadron Mass Splitting",
+    "statement": ":::info[**Section 19.3: Hadron Mass Splitting**]\nCalculates hadron mass splitting from the topological complexity differences of tripartite braid generations.\n:::",
+    "plainEnglish": "Calculates hadron mass splitting from the topological complexity differences of tripartite braid generations.",
+    "file": "04-output/19-nucleosynthesis/19.3.md"
+  },
   "19.3.1": {
     "id": "19.3.1",
     "type": "Definition",
@@ -6766,6 +7654,14 @@
     "statement": ":::tip[**Verification of Mass Difference Scale through Direct Evaluation of Composite Knot Writhe Invariants**]\n:::\n\n*   **Complexity Gap Calculation:** The proof evaluates the topological complexity gap: $$ \\Delta C = C_{udd} - C_{uud} $$ *   **Energy Calibration:** Using the calibrated coupling constant $\\kappa$, it translates this complexity gap into energy, yielding: $$ \\Delta m \\approx 1.293 \\text{ MeV} $$ *   **Anthropic Necessity:** It demonstrates that this $1.3$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.",
     "plainEnglish": "Section 19.3.3 formalizes the properties of the QBD proof regarding neutron-proton mass difference.",
     "file": "04-output/19-nucleosynthesis/19.3.md"
+  },
+  "19.4": {
+    "id": "19.4",
+    "type": "Section",
+    "title": "Primordial Nucleosynthesis",
+    "statement": ":::info[**Section 19.4: Primordial Nucleosynthesis**]\nDerives primordial nucleosynthesis abundances, matching observational bounds strictly from topological decay ratios.\n:::",
+    "plainEnglish": "Derives primordial nucleosynthesis abundances, matching observational bounds strictly from topological decay ratios.",
+    "file": "04-output/19-nucleosynthesis/19.4.md"
   },
   "19.4.1": {
     "id": "19.4.1",
@@ -6799,6 +7695,14 @@
     "plainEnglish": "Section 19.4.4 formalizes the properties of the QBD proof regarding helium abundance prediction.",
     "file": "04-output/19-nucleosynthesis/19.4.md"
   },
+  "20.1": {
+    "id": "20.1",
+    "type": "Section",
+    "title": "Primordial Plasma",
+    "statement": ":::info[**Section 20.1: Primordial Plasma**]\nModels the primordial plasma, showing how high-temperature networks behave like a fluid of decoupled event clusters.\n:::",
+    "plainEnglish": "Models the primordial plasma, showing how high-temperature networks behave like a fluid of decoupled event clusters.",
+    "file": "04-output/20-web/20.1.md"
+  },
   "20.1.1": {
     "id": "20.1.1",
     "type": "Theorem",
@@ -6830,6 +7734,14 @@
     "statement": ":::tip[**Verification of Sachs-Wolfe Temperature Anisotropies through Complexity Potential Field Maps**]\n:::\n\n*   **Lapse Evaluation:** The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster. *   **Anisotropy Derivation:** It mathematically derives the Sachs-Wolfe relation: $$ \\frac{\\delta T}{T} \\approx \\frac{1}{3}\\Phi_c $$ verifying that the $10^{-5}$ temperature anisotropies measured in the CMB are direct maps of the graph's primordial complexity potentials.",
     "plainEnglish": "Section 20.1.4 formalizes the properties of the QBD proof regarding sachs-wolfe time dilation.",
     "file": "04-output/20-web/20.1.md"
+  },
+  "20.2": {
+    "id": "20.2",
+    "type": "Section",
+    "title": "Acoustic Oscillations",
+    "statement": ":::info[**Section 20.2: Acoustic Oscillations**]\nSimulates acoustic oscillations, proving that stress-erasure cycles generate density waves matching baryon acoustic oscillations.\n:::",
+    "plainEnglish": "Simulates acoustic oscillations, proving that stress-erasure cycles generate density waves matching baryon acoustic oscillations.",
+    "file": "04-output/20-web/20.2.md"
   },
   "20.2.1": {
     "id": "20.2.1",
@@ -6863,6 +7775,14 @@
     "plainEnglish": "Section 20.2.4 formalizes the properties of the QBD proof regarding angular power spectrum peaks.",
     "file": "04-output/20-web/20.2.md"
   },
+  "20.3": {
+    "id": "20.3",
+    "type": "Section",
+    "title": "Structure Formation",
+    "statement": ":::info[**Section 20.3: Structure Formation**]\nDerives cosmic structure formation, demonstrating that gravitational clustering emerges naturally from relational stress-deletion.\n:::",
+    "plainEnglish": "Derives cosmic structure formation, demonstrating that gravitational clustering emerges naturally from relational stress-deletion.",
+    "file": "04-output/20-web/20.3.md"
+  },
   "20.3.1": {
     "id": "20.3.1",
     "type": "Theorem",
@@ -6894,6 +7814,14 @@
     "statement": ":::tip[**Verification of Void Sparsity through Direct Measurement of Equilibrium Density Bounds**]\n:::\n\n*   **Master Equation Relaxation:** The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes. *   **Stable Convergence:** It shows that the local cycle density converges stably to $\\rho^* \\approx 0.037$ with a negative Jacobian, proving that voids represent the pure, unperturbed baseline vacuum state of the cosmos.",
     "plainEnglish": "Section 20.3.4 formalizes the properties of the QBD proof regarding void relaxation.",
     "file": "04-output/20-web/20.3.md"
+  },
+  "21.1": {
+    "id": "21.1",
+    "type": "Section",
+    "title": "Dark Matter",
+    "statement": ":::info[**Section 21.1: Dark Matter**]\nIdentifies dark matter as stable, non-braided topological relics ('ash') left behind during geometerogenesis.\n:::",
+    "plainEnglish": "Identifies dark matter as stable, non-braided topological relics ('ash') left behind during geometerogenesis.",
+    "file": "04-output/21-relics/21.1.md"
   },
   "21.1.1": {
     "id": "21.1.1",
@@ -6934,6 +7862,14 @@
     "statement": ":::tip[**Verification of Relic Abundance Ratio through Phase Space Density Integration**]\n:::\n\n*   **Multiplicity Phase Space:** The proof integrates the combinatorial multiplicity of 4-strand braids versus 3-strand braids in the hot primordial plasma near the crystallization phase transition. *   **Freeze-Out Calculation:** By solving the Boltzmann equation using the geometric freeze-out temperature $T_f$ and the topological mass functional, it derives $\\Omega_{DM} \\approx 0.25$ and $\\Omega_B \\approx 0.05$, validating the observed abundance ratio.",
     "plainEnglish": "Section 21.1.5 formalizes the properties of the QBD proof regarding relic abundance scaling.",
     "file": "04-output/21-relics/21.1.md"
+  },
+  "21.2": {
+    "id": "21.2",
+    "type": "Section",
+    "title": "Dark Energy",
+    "statement": ":::info[**Section 21.2: Dark Energy**]\nModels dark energy as a vacuum relic defect pressure, matching cosmological constant expansion rates.\n:::",
+    "plainEnglish": "Models dark energy as a vacuum relic defect pressure, matching cosmological constant expansion rates.",
+    "file": "04-output/21-relics/21.2.md"
   },
   "21.2.1": {
     "id": "21.2.1",
@@ -6983,6 +7919,14 @@
     "plainEnglish": "Section 21.2.6 formalizes the properties of the QBD proof regarding cosmological constant scale.",
     "file": "04-output/21-relics/21.2.md"
   },
+  "21.3": {
+    "id": "21.3",
+    "type": "Section",
+    "title": "GZK Anomaly Resolution",
+    "statement": ":::info[**Section 21.3: GZK Anomaly Resolution**]\nResolves the GZK anomaly, showing that discrete lattice constraints naturally modify high-energy dispersion relations.\n:::",
+    "plainEnglish": "Resolves the GZK anomaly, showing that discrete lattice constraints naturally modify high-energy dispersion relations.",
+    "file": "04-output/21-relics/21.3.md"
+  },
   "21.3.1": {
     "id": "21.3.1",
     "type": "Postulate",
@@ -7007,6 +7951,14 @@
     "plainEnglish": "Section 21.3.3 formalizes the properties of the QBD proof regarding electromagnetic transparency.",
     "file": "04-output/21-relics/21.3.md"
   },
+  "21.4": {
+    "id": "21.4",
+    "type": "Section",
+    "title": "Cosmic Coincidence",
+    "statement": ":::info[**Section 21.4: Cosmic Coincidence**]\nExplains the cosmic coincidence problem, deriving dark sector energy densities from network age constraints.\n:::",
+    "plainEnglish": "Explains the cosmic coincidence problem, deriving dark sector energy densities from network age constraints.",
+    "file": "04-output/21-relics/21.4.md"
+  },
   "21.4.1": {
     "id": "21.4.1",
     "type": "Lemma",
@@ -7022,6 +7974,14 @@
     "statement": ":::tip[**Verification of Saturation Epoch Convergence by Phase Portrait Analysis of Cosmic Evolution**]\n:::\n\n*   **Phase Portrait Construction:** The proof maps the phase portrait of the Master Equation coupled to the cosmic fluid expansion equations. *   **Extended Coincidence Window:** It solves for the timeline of the attractor convergence, demonstrating that the ratio $\\Omega_m / \\Omega_{DE}$ remains within a single order of magnitude for a substantial fraction of the active lifetime of the 4D manifold, resolving the coincidence problem dynamically without fine-tuned initial parameters.",
     "plainEnglish": "Section 21.4.2 formalizes the properties of the QBD proof regarding saturation epoch convergence.",
     "file": "04-output/21-relics/21.4.md"
+  },
+  "22.1": {
+    "id": "22.1",
+    "type": "Section",
+    "title": "Black Hole Interior",
+    "statement": ":::info[**Section 22.1: Black Hole Interior**]\nResolves the black hole interior, proving that gravitational singularities are avoided by a strict quantum topological density cutoff.\n:::",
+    "plainEnglish": "Resolves the black hole interior, proving that gravitational singularities are avoided by a strict quantum topological density cutoff.",
+    "file": "04-output/22-extremes/22.1.md"
   },
   "22.1.1": {
     "id": "22.1.1",
@@ -7063,6 +8023,14 @@
     "plainEnglish": "Section 22.1.5 formalizes the properties of the QBD proof regarding core density limitation.",
     "file": "04-output/22-extremes/22.1.md"
   },
+  "22.2": {
+    "id": "22.2",
+    "type": "Section",
+    "title": "Event Horizon & Evaporation",
+    "statement": ":::info[**Section 22.2: Event Horizon & Evaporation**]\nModels event horizon dynamics and Hawking evaporation as a comonadic stabilizer-state leakage process.\n:::",
+    "plainEnglish": "Models event horizon dynamics and Hawking evaporation as a comonadic stabilizer-state leakage process.",
+    "file": "04-output/22-extremes/22.2.md"
+  },
   "22.2.1": {
     "id": "22.2.1",
     "type": "Definition",
@@ -7087,6 +8055,14 @@
     "plainEnglish": "Section 22.2.3 formalizes the properties of the QBD proof regarding unitary evaporation.",
     "file": "04-output/22-extremes/22.2.md"
   },
+  "22.3": {
+    "id": "22.3",
+    "type": "Section",
+    "title": "Superconductivity",
+    "statement": ":::info[**Section 22.3: Superconductivity**]\nModels the black hole interior as a superconductive graph condensate of maximum logical connectivity.\n:::",
+    "plainEnglish": "Models the black hole interior as a superconductive graph condensate of maximum logical connectivity.",
+    "file": "04-output/22-extremes/22.3.md"
+  },
   "22.3.1": {
     "id": "22.3.1",
     "type": "Definition",
@@ -7110,6 +8086,14 @@
     "statement": ":::tip[**Verification of Dissipationless Flow through Integration of Awareness Comonad Projection Operators**]\n:::\n\n*   **Stabilizer Projection:** The proof constructs the projection operators for the comonad stabilization flow acting on the macroscopic braid condensate state $|\\Psi_{SC}\\rangle$. *   **Error Correction Yield:** By calculating the expectation value of the dissipation operator under the stabilizer projection, it demonstrates that all weight-$w < d/2$ errors are projected out, yielding a net scattering cross-section that is identically zero and proving the absolute fault tolerance of superconducting currents.",
     "plainEnglish": "Section 22.3.3 formalizes the properties of the QBD proof regarding infinite code distance.",
     "file": "04-output/22-extremes/22.3.md"
+  },
+  "23.1": {
+    "id": "23.1",
+    "type": "Section",
+    "title": "Calculus Translation",
+    "statement": ":::info[**Section 23.1: Calculus Translation**]\nTranslates continuous calculus to discrete graph equations, validating the universality of the pre-geometric formalism.\n:::",
+    "plainEnglish": "Translates continuous calculus to discrete graph equations, validating the universality of the pre-geometric formalism.",
+    "file": "05-conclusion/23-universality/23.1.md"
   },
   "23.1.1": {
     "id": "23.1.1",
@@ -7151,6 +8135,14 @@
     "plainEnglish": "Section 23.1.5 formalizes the properties of the QBD proof regarding integration representation.",
     "file": "05-conclusion/23-universality/23.1.md"
   },
+  "23.2": {
+    "id": "23.2",
+    "type": "Section",
+    "title": "Logic of Life",
+    "statement": ":::info[**Section 23.2: Logic of Life**]\nFormulates the logic of life, mapping biological organization to self-correcting error-correcting codespaces.\n:::",
+    "plainEnglish": "Formulates the logic of life, mapping biological organization to self-correcting error-correcting codespaces.",
+    "file": "05-conclusion/23-universality/23.2.md"
+  },
   "23.2.1": {
     "id": "23.2.1",
     "type": "Postulate",
@@ -7175,6 +8167,14 @@
     "plainEnglish": "Section 23.2.3 formalizes the properties of the QBD proof regarding chiral vacuum bias.",
     "file": "05-conclusion/23-universality/23.2.md"
   },
+  "23.3": {
+    "id": "23.3",
+    "type": "Section",
+    "title": "Mathematical Universe",
+    "statement": ":::info[**Section 23.3: Mathematical Universe**]\nSynthesizes the mathematical universe hypothesis, proving that all physical laws emerge as stable phases of computation.\n:::",
+    "plainEnglish": "Synthesizes the mathematical universe hypothesis, proving that all physical laws emerge as stable phases of computation.",
+    "file": "05-conclusion/23-universality/23.3.md"
+  },
   "23.3.1": {
     "id": "23.3.1",
     "type": "Theorem",
@@ -7190,6 +8190,14 @@
     "statement": ":::tip[**Verification of E8 Lie Algebra Convergence through Multiplicity Growth Calculations**]\n:::\n\n*   **Algebra Dimension Growth:** The proof calculates the dimension growth of the coupled generators of the three braid sectors. *   **Convergence Verification:** It demonstrates that the dimension of the coupled braid symmetries converges to exactly 248 dimensions under triple sector entanglement, mathematically validating the holographic $E_8$ convergence limit and illustrating that extreme mathematical symmetries are emergent structures.",
     "plainEnglish": "Section 23.3.2 formalizes the properties of the QBD proof regarding chiral triple fusion.",
     "file": "05-conclusion/23-universality/23.3.md"
+  },
+  "24.1": {
+    "id": "24.1",
+    "type": "Section",
+    "title": "Hodge Conjecture",
+    "statement": ":::info[**Section 24.1: Hodge Conjecture**]\nFormulates a discrete approach to the Hodge Conjecture, proving homology properties on algebraic graph configurations.\n:::",
+    "plainEnglish": "Formulates a discrete approach to the Hodge Conjecture, proving homology properties on algebraic graph configurations.",
+    "file": "05-conclusion/24-derivations/24.1.md"
   },
   "24.1.1": {
     "id": "24.1.1",
@@ -7207,6 +8215,14 @@
     "plainEnglish": "Section 24.1.2 formalizes the properties of the QBD proof regarding integer basis.",
     "file": "05-conclusion/24-derivations/24.1.md"
   },
+  "24.2": {
+    "id": "24.2",
+    "type": "Section",
+    "title": "Riemann Hypothesis",
+    "statement": ":::info[**Section 24.2: Riemann Hypothesis**]\nFormulates a discrete approach to the Riemann Hypothesis, mapping prime distributions to poset eigenvalue spectra.\n:::",
+    "plainEnglish": "Formulates a discrete approach to the Riemann Hypothesis, mapping prime distributions to poset eigenvalue spectra.",
+    "file": "05-conclusion/24-derivations/24.2.md"
+  },
   "24.2.2": {
     "id": "24.2.2",
     "type": "Lemma",
@@ -7214,6 +8230,14 @@
     "statement": ":::info[**Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities**]\n:::\n\n*   **Random Matrix Statistics:** The spacing of the Zeta zeros matches the Gaussian Unitary Ensemble (GUE) random matrix statistics. *   **Adjacency Multiplicity:** In QBD, this spectral signature arises naturally from the random adjacency statistics of the pre-geometric graph during spontaneous ignition (the \"Big Kindling\", **Primordial Ignition** <Ref id=\"18.1\" label=\"§18.1\" />), where the quantum chaotic spacing of zeros reflects the eigenvalue distribution of the vacuum's pre-geometric network.",
     "plainEnglish": "Section 24.2.2 formalizes the properties of the QBD lemma regarding spacing statistics.",
     "file": "05-conclusion/24-derivations/24.2.md"
+  },
+  "24.3": {
+    "id": "24.3",
+    "type": "Section",
+    "title": "Yang-Mills Existence & Mass Gap",
+    "statement": ":::info[**Section 24.3: Yang-Mills Existence & Mass Gap**]\nProves the Yang-Mills existence and mass gap, deriving the mass gap strictly from discrete gauge group stabilizer energy levels.\n:::",
+    "plainEnglish": "Proves the Yang-Mills existence and mass gap, deriving the mass gap strictly from discrete gauge group stabilizer energy levels.",
+    "file": "05-conclusion/24-derivations/24.3.md"
   },
   "24.3.1": {
     "id": "24.3.1",
@@ -7230,6 +8254,14 @@
     "statement": ":::tip[**Verification of Mass Gap Existence by Analysis of Minimal Gauge Braid Twists**]\n:::\n\n*   **Braid Spectrum Evaluation:** The proof calculates the expectation value of the topological mass functional for the lowest energy states of the $SU(3)$ gauge braid representation. *   **Trefoil Energy Bounds:** It proves that all non-trivial states have an energy spectrum bounded below by $E \\ge \\hbar c / (6\\mu\\ell_0) > 0$, mathematically verifying the existence of the mass gap.",
     "plainEnglish": "Section 24.3.2 formalizes the properties of the QBD proof regarding topological mass gap.",
     "file": "05-conclusion/24-derivations/24.3.md"
+  },
+  "24.4": {
+    "id": "24.4",
+    "type": "Section",
+    "title": "Navier-Stokes Regularity",
+    "statement": ":::info[**Section 24.4: Navier-Stokes Regularity**]\nFormulates Navier-Stokes regularity on graphs, proving that discrete fluid dynamics avoid finite-time blowups.\n:::",
+    "plainEnglish": "Formulates Navier-Stokes regularity on graphs, proving that discrete fluid dynamics avoid finite-time blowups.",
+    "file": "05-conclusion/24-derivations/24.4.md"
   },
   "24.4.1": {
     "id": "24.4.1",
@@ -7255,6 +8287,14 @@
     "plainEnglish": "Section 24.4.3 formalizes the properties of the QBD theorem regarding quantum cutoff.",
     "file": "05-conclusion/24-derivations/24.4.md"
   },
+  "24.5": {
+    "id": "24.5",
+    "type": "Section",
+    "title": "P vs NP",
+    "statement": ":::info[**Section 24.5: P vs NP**]\nAnalyzes P vs NP on relational substrates, showing that physical time-evolution bounds resolve complexity limits.\n:::",
+    "plainEnglish": "Analyzes P vs NP on relational substrates, showing that physical time-evolution bounds resolve complexity limits.",
+    "file": "05-conclusion/24-derivations/24.5.md"
+  },
   "24.5.1": {
     "id": "24.5.1",
     "type": "Postulate",
@@ -7279,6 +8319,14 @@
     "plainEnglish": "Section 24.5.3 formalizes the properties of the QBD proof regarding complexity black hole collapse.",
     "file": "05-conclusion/24-derivations/24.5.md"
   },
+  "24.6": {
+    "id": "24.6",
+    "type": "Section",
+    "title": "Monster Group",
+    "statement": ":::info[**Section 24.6: Monster Group**]\nDerives the Monster Group directly from the automorphism symmetries of twenty-six dimensional lattice configurations.\n:::",
+    "plainEnglish": "Derives the Monster Group directly from the automorphism symmetries of twenty-six dimensional lattice configurations.",
+    "file": "05-conclusion/24-derivations/24.6.md"
+  },
   "24.6.2": {
     "id": "24.6.2",
     "type": "Lemma",
@@ -7286,6 +8334,14 @@
     "statement": ":::info[**Derivation of Standard Model Subgroups from Vacuum Symmetry Branching Rules**]\n:::\n\n*   **Crystallization Symmetry Breaking:** As the graph undergoes spontaneous ignition and dimensional emergence, the high-dimensional symmetry of the Monster Group is spontaneously broken. *   **Emergent Gauge Subgroups:** The standard gauge symmetries ($SU(3) \\times SU(2) \\times U(1)$) emerge as low-energy residues of the Monster Group's branching rules during crystallization to $d=4$, linking the largest sporadic group directly to standard particle physics.",
     "plainEnglish": "Section 24.6.2 formalizes the properties of the QBD lemma regarding symmetry breaking.",
     "file": "05-conclusion/24-derivations/24.6.md"
+  },
+  "25.1": {
+    "id": "25.1",
+    "type": "Section",
+    "title": "Ruliad and Stability",
+    "statement": ":::info[**Section 25.1: Ruliad and Stability**]\nFormalizes the Ruliad framework, proving that stable physical laws correspond to universal attractor states in compile spaces.\n:::",
+    "plainEnglish": "Formalizes the Ruliad framework, proving that stable physical laws correspond to universal attractor states in compile spaces.",
+    "file": "05-conclusion/25-synthesis/25.1.md"
   },
   "25.1.1": {
     "id": "25.1.1",
@@ -7311,6 +8367,14 @@
     "plainEnglish": "Section 25.1.3 formalizes the properties of the QBD corollary regarding fine-tuning limits.",
     "file": "05-conclusion/25-synthesis/25.1.md"
   },
+  "25.2": {
+    "id": "25.2",
+    "type": "Section",
+    "title": "Cyclic Universe",
+    "statement": ":::info[**Section 25.2: Cyclic Universe**]\nModels the cyclic universe, proving that cosmic expansion and contraction cycles arise from periodic network update rates.\n:::",
+    "plainEnglish": "Models the cyclic universe, proving that cosmic expansion and contraction cycles arise from periodic network update rates.",
+    "file": "05-conclusion/25-synthesis/25.2.md"
+  },
   "25.2.1": {
     "id": "25.2.1",
     "type": "Lemma",
@@ -7334,5 +8398,13 @@
     "statement": ":::tip[**Verification of Cosmic Recoherence through Spectral Invariance Integrations**]\n:::\n\n*   **Spectral Mapping:** The proof constructs the isomorphism mapping the infinite-volume limit of the graph metric tensor to the zero-volume Bethe vacuum state $G_0$. *   **Cyclic Reset Result:** By integrating the spectral density of graph cycles, it demonstrates that entropy is renormalized to zero as the available degrees of freedom collapse, mathematically validating the cyclic Big Kindling reset.",
     "plainEnglish": "Section 25.2.3 formalizes the properties of the QBD proof regarding t-duality flip.",
     "file": "05-conclusion/25-synthesis/25.2.md"
+  },
+  "25.3": {
+    "id": "25.3",
+    "type": "Section",
+    "title": "Final Statement",
+    "statement": ":::info[**Section 25.3: Final Statement**]\nDelivers the final synthesis of QBD, unifying gravity, particle physics, and quantum computation into a single pre-geometric law.\n:::",
+    "plainEnglish": "Delivers the final synthesis of QBD, unifying gravity, particle physics, and quantum computation into a single pre-geometric law.",
+    "file": "05-conclusion/25-synthesis/25.3.md"
   }
 }
