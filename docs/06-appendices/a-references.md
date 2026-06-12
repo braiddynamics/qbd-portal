@@ -138,7 +138,7 @@ This approach is the foundation for the dimensional reconstruction proofs in Cha
 ---
 
 ### 12. **Bennett, C. H. (1982).** {#A.12}
-**"The thermodynamics of computation—a review"**
+**"The thermodynamics of computation: a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
 
 **Overview:**
@@ -536,7 +536,7 @@ Ollivier's metric curvature is the direct tool used to formulate the discrete fi
 ---
 
 ### 45. **Otto, F., Mansuroglu, R., Schuch, N., Gühne, O., & Sahlmann, H. (2025).** {#A.45}
-**"Hyperinvariant Spin Network States – An AdS/CFT Model from First Principles"**
+**"Hyperinvariant Spin Network States: An AdS/CFT Model from First Principles"**
     * **Link:** [https://arxiv.org/abs/2510.06602](https://arxiv.org/abs/2510.06602)
 
 **Overview:**
