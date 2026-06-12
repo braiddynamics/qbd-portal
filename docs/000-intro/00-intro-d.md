@@ -278,4 +278,4 @@ While vertices (points, events) and edges (connections, relations) may be the si
 
 From matter to motion, we now stand at the threshold where philosophical speculation must yield to rigorous formal construction. The task ahead is to translate these conceptual primitive sketches into the language of a precise deductive mathematical system capable of generating dynamics, geometry, and ultimately cosmology using the minimal assumptions required for a self-consistent universe to build itself from relational information alone. ❦
 
------
+---
