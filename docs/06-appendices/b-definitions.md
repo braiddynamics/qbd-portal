@@ -7,7 +7,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ---
 
-### 1.1.5 Axiom: of Choice {#1.1.5}
+### 1.1.5 Axiom of Choice {#1.1.5}
 
 :::info[**Acceptance of Non-Constructive Principles based on Systemic Fertility**]
 :::
@@ -15,7 +15,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 If the debate over the parallel postulate marked the birth of a new view on axioms, the controversy surrounding the Axiom of Choice represents its full maturation. Here, the justification for adopting a foundational principle is almost entirely divorced from physical intuition or self-evidence, resting instead on the internal coherence and sheer utility of the mathematical system it enables.
 
 **In Plain English:**  
-Section 1.1.5 formalizes the properties of the QBD axiom regarding of choice.
+Section 1.1.5 formalizes the properties of the QBD axiom regarding axiom of choice.
 
 ---
 
@@ -31,391 +31,7 @@ Section 1.1.6 formalizes the properties of the QBD principle regarding coherenti
 
 ---
 
-### 1.2.1 Definition: Dual Time Architecture {#1.2.1}
-
-:::tip[**Mathematical Characterization of the Dual Temporal Scales**]
-:::
-
-The temporal structure of the physical theory is defined as a dual architecture constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
-
-**In Plain English:**  
-Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).
-
----
-
-### 1.2.2 Definition: Emergent Physical Time {#1.2.2}
-
-:::tip[**Mathematical Characterization of Relational Physical Duration**]
-:::
-
-Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the physical proper time interval $\Delta t_{phys}$ along the path is defined as:
-
-**In Plain English:**  
-Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.
-
----
-
-### 1.2.3 Definition: Global Logical Time {#1.2.3}
-
-:::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]
-:::
-
-Let $\mathcal{U}$ denote the Universal Evolution Operator. The Global Logical Time, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
-
-**In Plain English:**  
-Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
-
----
-
-### 1.2.4 Theorem: Temporal Finitude {#1.2.4}
-
-:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
-:::
-
-The following holds: the domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
-
-**In Plain English:**  
-The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
-
----
-
-### 1.2.5 Lemma: Finite Information Substrate {#1.2.5}
-
-:::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
-:::
-
-Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
-
-**In Plain English:**  
-The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
-
----
-
-### 1.2.5.1 Proof: Finite Information Substrate {#1.2.5.1}
-
-:::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
-:::
-
-**I. Setup and Assumptions**
-
-**In Plain English:**  
-Section 1.2.5.1 formalizes the properties of the QBD proof regarding finite information substrate.
-
----
-
-### 1.2.6 Lemma: Backward Accumulation {#1.2.6}
-
-:::info[**Exclusion of Unbounded Past Direction**]
-:::
-
-Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />.
-
-**In Plain English:**  
-Section 1.2.6 formalizes the properties of the QBD lemma regarding backward accumulation.
-
----
-
-### 1.2.6.1 Proof: Backward Accumulation {#1.2.6.1}
-
-:::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
-:::
-
-**I. Setup and Assumptions**
-
-**In Plain English:**  
-Section 1.2.6.1 formalizes the properties of the QBD proof regarding backward accumulation.
-
----
-
-### 1.2.7 Lemma: Finite State Recurrence {#1.2.7}
-
-:::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
-:::
-
-Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-
-**In Plain English:**  
-Section 1.2.7 formalizes the properties of the QBD lemma regarding finite state recurrence.
-
----
-
-### 1.2.7.1 Proof: Finite State Recurrence {#1.2.7.1}
-
-:::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
-:::
-
-**I. Setup and Assumptions**
-
-**In Plain English:**  
-Section 1.2.7.1 formalizes the properties of the QBD proof regarding finite state recurrence.
-
----
-
-### 1.2.8 Lemma: Supertask Impossibility {#1.2.8}
-
-:::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
-:::
-
-The following holds: the traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
-
-**In Plain English:**  
-Section 1.2.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
-
----
-
-### 1.2.8.1 Proof: Supertask Limits {#1.2.8.1}
-
-:::tip[**Formal Proof of Non-Termination via Turing Computability and Relativistic Constraints**]
-:::
-
-**I. Definition of the History Sequence**
-
-**In Plain English:**  
-Section 1.2.8.1 formalizes the properties of the QBD proof regarding supertask limits.
-
----
-
-### 1.2.9 Proof: Temporal Finitude {#1.2.9}
-
-:::tip[**Temporal Finitude** <Ref id="1.2.4" label="§1.2.4" />]
-:::
-
-**I. The Infinite Hypothesis** Let it be assumed, for the explicit purpose of demonstrating a contradiction, that the domain of Global Logical Time $t_L$ is unbounded in the past direction. This assumption implies that the set of temporal indices is isomorphic to the non-positive integers ($T_L \cong \mathbb{Z}_{\le 0}$), thereby asserting the existence of an infinite sequence of distinct antecedent states $\{\dots, U_{-2}, U_{-1}, U_0\}$.
-
-**In Plain English:**  
-Section 1.2.9 formalizes the properties of the QBD proof regarding temporal finitude.
-
----
-
-### 1.3.1 Definition: Causal Graph Substrate {#1.3.1}
-
-:::tip[**Mathematical Characterization of the Relational Configuration Space**]
-:::
-
-Let $\Omega$ denote the universal configuration space of all valid states of the causal graph substrate. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
-
-**In Plain English:**  
-Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
-
----
-
-### 1.3.2 Definition: Abstract Event {#1.3.2}
-
-:::tip[**Formal Characterization of Event Vertices as Pre-Geometric Nodes**]
-:::
-
-Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
-
-**In Plain English:**  
-Abstract Event defines the vertex set V where each element represents an structureless pre-geometric event whose identity is determined purely by relations.
-
----
-
-### 1.3.3 Definition: Causal Relation {#1.3.3}
-
-:::tip[**Formal Characterization of Causal Links as Directed Poset Edges**]
-:::
-
-Let $E \subseteq V \times V$ be a set of directed edges, where each ordered pair $e = (u, v) \in E$ is a **Causal Relation**. An edge $e$ represents an irreducible causal link denoting the direct, unmediated logical proposition that event $u$ precedes and causally influences event $v$. The relation is strictly asymmetric, satisfying:
-
-**In Plain English:**  
-Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.
-
----
-
-### 1.3.4 Definition: Creation Timestamp {#1.3.4}
-
-:::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]
-:::
-
-Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a creation timestamp $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
-
-**In Plain English:**  
-Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.
-
----
-
-### 1.3.5 Theorem: Monotonicity of History {#1.3.5}
-
-:::info[**Strict Monotonicity and Well-Foundedness of Causal Timestamp Sequences**]
-:::
-
-Let $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:
-
-**In Plain English:**  
-The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.
-
----
-
-### 1.3.6 Lemma: Irreflexivity of Timestamps {#1.3.6}
-
-:::info[**Unsatisfiability of Recursive Timestamp Assignment for Self-Loops**]
-:::
-
-Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \max \left( \{H(e') \mid e' \in \text{In}(u)\} \cup \{0\} \right)$ is inconsistent and admits no stable timestamp assignment.
-
-**In Plain English:**  
-The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the recursive timestamp assignment, logically excluding closed timelike curves of zero radius.
-
----
-
-### 1.3.6.1 Proof: Irreflexivity of Timestamps {#1.3.6.1}
-
-:::tip[**Formal Stability Analysis of Self-Loop Timestamps**]
-:::
-
-**I. Pre-computation of the Source History**
-
-**In Plain English:**  
-Section 1.3.6.1 formalizes the properties of the QBD proof regarding irreflexivity of timestamps.
-
----
-
-### 1.3.7 Lemma: Transitive Causal Monotonicity {#1.3.7}
-
-:::info[**Monotonic Timestamp Progression along Directed Causal Chains**]
-:::
-
-Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
-
-**In Plain English:**  
-The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.
-
----
-
-### 1.3.7.1 Proof: Transitive Causal Monotonicity {#1.3.7.1}
-
-:::tip[**Inductive Demonstration of Strict Timestamp Increase**]
-:::
-
-**I. Inductive Base Case**
-
-**In Plain English:**  
-Section 1.3.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.
-
----
-
-### 1.3.8 Proof: Monotonicity of History {#1.3.8}
-
-:::tip[**Synthesis of Irreflexivity and Transitivity to Establish Global Acyclicity**]
-:::
-
-**I. Assumption of a Causal Cycle**
-
-**In Plain English:**  
-Section 1.3.8 formalizes the properties of the QBD proof regarding monotonicity of history.
-
----
-
-### 1.4.1 Definition: Elementary Task Space {#1.4.1}
-
-:::tip[**Mathematical Characterization of the Admissible Transformation Space**]
-:::
-
-Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \to G'$ where $G' = (V', E', H')$ such that: 1.  **Acyclicity**: $G'$ is a directed acyclic graph. 2.  **Monotonicity of History**: The local sequence of timestamps $H'$ satisfies temporal monotonicity under any edge modification. 3.  **Finite Growth**: There exists a constant $k \in \mathbb{N}$ such that $|V'| \leq |V| + k$ and $|E'| \leq |E| + k$.
-
-**In Plain English:**  
-Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.
-
----
-
-### 1.4.2 Definition: Edge Addition Task {#1.4.2}
-
-:::tip[**Formal Specification of the Primitive Edge Insertion Operator**]
-:::
-
-Let $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \in V$ such that $u \neq v$ and $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{add}(u, v)$ is the mapping:
-
-**In Plain English:**  
-Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.
-
----
-
-### 1.4.3 Definition: Edge Deletion Task {#1.4.3}
-
-:::tip[**Formal Specification of the Primitive Edge Excision Operator**]
-:::
-
-Let $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{del}(u, v)$ is the mapping:
-
-**In Plain English:**  
-Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.
-
----
-
-### 1.4.4 Theorem: Vacuum Repertoire {#1.4.4}
-
-:::info[**Sufficiency and Completeness of Primitive Edge Operators**]
-:::
-
-Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
-
-**In Plain English:**  
-The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
-
----
-
-### 1.4.5 Lemma: Relational Vertex Emergence {#1.4.5}
-
-:::info[**Subordination of Vertex Existence to Edge Topology**]
-:::
-
-Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ s.t. } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
-
-**In Plain English:**  
-The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.
-
----
-
-### 1.4.5.1 Proof: Relational Vertex Emergence {#1.4.5.1}
-
-:::tip[**Verification of Vertex Subordination under Primitive Operations**]
-:::
-
-**I. Definition of the Vertex Modification Operator**
-
-**In Plain English:**  
-Section 1.4.5.1 formalizes the properties of the QBD proof regarding relational vertex emergence.
-
----
-
-### 1.4.6 Lemma: Reversibility of Primitives {#1.4.6}
-
-:::info[**Kinematic Reversibility of Edge Operations**]
-:::
-
-For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
-
-**In Plain English:**  
-The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.
-
----
-
-### 1.4.6.1 Proof: Reversibility of Primitives {#1.4.6.1}
-
-:::tip[**Verification of the Inverse Relations of Primitive Operators**]
-:::
-
-**I. Evaluation of the Edge Addition Inverse**
-
-**In Plain English:**  
-Section 1.4.6.1 formalizes the properties of the QBD proof regarding reversibility of primitives.
-
----
-
-### 1.4.7 Proof: Vacuum Repertoire {#1.4.7}
-
-:::tip[**Completeness of the Primitive Operators**]
-:::
-
-**I. Characterization of the Target Space**
-
-**In Plain English:**  
-Section 1.4.7 formalizes the properties of the QBD proof regarding the vacuum repertoire.
-
----
-
-### 1.5.1 Definition: Directed Acyclic Graph (DAG) {#1.5.1}
+### 1.2.1 Definition: Directed Acyclic Graph (DAG) {#1.2.1}
 
 :::tip[**Directed Acyclic Graph (DAG) as the Relational Foundation of Causal Order**]
 :::
@@ -423,11 +39,11 @@ Section 1.4.7 formalizes the properties of the QBD proof regarding the vacuum re
 A **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing no directed cycles. Formally, there exists no sequence of vertices $(v_0, v_1, \dots, v_k)$ in $V$ of length $k \ge 1$ such that $v_0 = v_k$ and $(v_i, v_{i+1}) \in E$ for all $0 \le i < k$.
 
 **In Plain English:**  
-Space is built from simple discrete connections: single links represent precedence, 2-paths represent transitive mediation, and 3-cycles represent spatial area.
+Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.
 
 ---
 
-### 1.5.2 Definition: Bipartite Graph {#1.5.2}
+### 1.2.2 Definition: Bipartite Graph {#1.2.2}
 
 :::tip[**Bipartite Graph as the Partitioned Architecture of State Transitions**]
 :::
@@ -435,11 +51,11 @@ Space is built from simple discrete connections: single links represent preceden
 A **Bipartite Graph** is a directed graph $G = (V, E)$ whose vertex set $V$ can be partitioned into two disjoint sets, $V_A$ and $V_B$ (where $V_A \cup V_B = V$ and $V_A \cap V_B = \emptyset$), such that every directed edge connects a vertex in $V_A$ to a vertex in $V_B$ or vice versa. Formally, the edge set satisfies $E \subseteq (V_A \times V_B) \cup (V_B \times V_A)$.
 
 **In Plain English:**  
-A 2-path consists of three events connected in sequence (A causes B, B causes C), constituting the minimal pathway for causal influence to propagate.
+Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.
 
 ---
 
-### 1.5.3 Definition: Directed Path {#1.5.3}
+### 1.2.3 Definition: Directed Path {#1.2.3}
 
 :::tip[**Directed Path as the Sequence of Relational Causality**]
 :::
@@ -447,11 +63,11 @@ A 2-path consists of three events connected in sequence (A causes B, B causes C)
 A **Directed Path** in a directed graph $G = (V, E)$ is a sequence of vertices $(v_0, v_1, \dots, v_n)$ of length $n \ge 0$ such that for all $0 \le i < n$, the directed edge $(v_i, v_{i+1}) \in E$.
 
 **In Plain English:**  
-Section 1.5.3 formalizes the properties of the QBD definition regarding directed path.
+Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.
 
 ---
 
-### 1.5.4 Definition: Simple Path {#1.5.4}
+### 1.2.4 Definition: Simple Path {#1.2.4}
 
 :::tip[**Simple Path as the Acyclic Trajectory of Influence**]
 :::
@@ -459,11 +75,11 @@ Section 1.5.3 formalizes the properties of the QBD definition regarding directed
 A **Simple Path** is a Directed Path $(v_0, v_1, \dots, v_n)$ containing no repeated vertices. Formally, $v_i \neq v_j$ for all $0 \le i < j \le n$.
 
 **In Plain English:**  
-Section 1.5.4 formalizes the properties of the QBD definition regarding simple path.
+The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
 
 ---
 
-### 1.5.5 Definition: 2-Path {#1.5.5}
+### 1.2.5 Definition: 2-Path {#1.2.5}
 
 :::tip[**2-Path as the Minimal Unit of Transitive Mediation**]
 :::
@@ -471,11 +87,11 @@ Section 1.5.4 formalizes the properties of the QBD definition regarding simple p
 A **2-Path** is a simple Directed Path of length exactly $2$. Formally, it is denoted as an ordered triplet of distinct vertices $(v, w, u)$ such that $(v, w) \in E$ and $(w, u) \in E$.
 
 **In Plain English:**  
-Section 1.5.5 formalizes the properties of the QBD definition regarding 2-path.
+The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.
 
 ---
 
-### 1.5.6 Definition: Cycle {#1.5.6}
+### 1.2.6 Definition: Cycle {#1.2.6}
 
 :::tip[**Cycle as the General Topological Expression of Causal Closure**]
 :::
@@ -483,11 +99,11 @@ Section 1.5.5 formalizes the properties of the QBD definition regarding 2-path.
 A **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \dots, v_k)$ of length $k \ge 1$ such that $v_0 = v_k$.
 
 **In Plain English:**  
-Section 1.5.6 formalizes the properties of the QBD definition regarding cycle.
+The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.
 
 ---
 
-### 1.5.7 Definition: 2-Cycle {#1.5.7}
+### 1.2.7 Definition: 2-Cycle {#1.2.7}
 
 :::tip[**2-Cycle as the Minimal Unit of Reciprocal Causality**]
 :::
@@ -495,11 +111,11 @@ Section 1.5.6 formalizes the properties of the QBD definition regarding cycle.
 A **2-Cycle** is a Cycle of length exactly $k=2$. Formally, it consists of a pair of distinct vertices $\{u, v\}$ such that $(u, v) \in E$ and $(v, u) \in E$.
 
 **In Plain English:**  
-Section 1.5.7 formalizes the properties of the QBD definition regarding 2-cycle.
+Section 1.2.7 formalizes the properties of the QBD definition regarding 2-cycle.
 
 ---
 
-### 1.5.8 Definition: 3-Cycle {#1.5.8}
+### 1.2.8 Definition: 3-Cycle {#1.2.8}
 
 :::tip[**3-Cycle as the Minimal Closed Loop Enclosing a Topological Area**]
 :::
@@ -507,16 +123,400 @@ Section 1.5.7 formalizes the properties of the QBD definition regarding 2-cycle.
 A **3-Cycle** is a Cycle of length exactly $k=3$. Formally, it consists of a triplet of distinct vertices $(A, B, C)$ such that $(A, B) \in E$, $(B, C) \in E$, and $(C, A) \in E$.
 
 **In Plain English:**  
-Section 1.5.8 formalizes the properties of the QBD definition regarding 3-cycle.
+Section 1.2.8 formalizes the properties of the QBD definition regarding 3-cycle.
 
 ---
 
-### 2.1.1 Axiom: 1: The Directed Causal Link {#2.1.1}
+### 1.3.1 Definition: Dual Time Architecture {#1.3.1}
+
+:::tip[**Mathematical Characterization of the Dual Temporal Scales**]
+:::
+
+The temporal structure of the physical theory is defined as a dual architecture constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
+
+**In Plain English:**  
+Space is built from simple discrete connections: single links represent precedence, 2-paths represent transitive mediation, and 3-cycles represent spatial area.
+
+---
+
+### 1.3.2 Definition: Emergent Physical Time {#1.3.2}
+
+:::tip[**Mathematical Characterization of Relational Physical Duration**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the physical proper time interval $\Delta t_{phys}$ along the path is defined as:
+
+**In Plain English:**  
+A 2-path consists of three events connected in sequence (A causes B, B causes C), constituting the minimal pathway for causal influence to propagate.
+
+---
+
+### 1.3.3 Definition: Global Logical Time {#1.3.3}
+
+:::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]
+:::
+
+Let $\mathcal{U}$ denote the Universal Evolution Operator. The Global Logical Time, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
+
+**In Plain English:**  
+Section 1.3.3 formalizes the properties of the QBD definition regarding global logical time.
+
+---
+
+### 1.3.4 Theorem: Temporal Finitude {#1.3.4}
+
+:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
+:::
+
+The following holds: the domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
+
+**In Plain English:**  
+Section 1.3.4 formalizes the properties of the QBD theorem regarding temporal finitude.
+
+---
+
+### 1.3.5 Lemma: Finite Information Substrate {#1.3.5}
+
+:::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
+:::
+
+Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
+
+**In Plain English:**  
+Section 1.3.5 formalizes the properties of the QBD lemma regarding finite information substrate.
+
+---
+
+### 1.3.5.1 Proof: Finite Information Substrate {#1.3.5.1}
+
+:::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
+:::
+
+**I. Setup and Assumptions**
+
+**In Plain English:**  
+Section 1.3.5.1 formalizes the properties of the QBD proof regarding finite information substrate.
+
+---
+
+### 1.3.6 Lemma: Backward Accumulation {#1.3.6}
+
+:::info[**Exclusion of Unbounded Past Direction**]
+:::
+
+Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
+
+**In Plain English:**  
+Section 1.3.6 formalizes the properties of the QBD lemma regarding backward accumulation.
+
+---
+
+### 1.3.6.1 Proof: Backward Accumulation {#1.3.6.1}
+
+:::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
+:::
+
+**I. Setup and Assumptions**
+
+**In Plain English:**  
+Section 1.3.6.1 formalizes the properties of the QBD proof regarding backward accumulation.
+
+---
+
+### 1.3.7 Lemma: Finite State Recurrence {#1.3.7}
+
+:::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
+:::
+
+Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+
+**In Plain English:**  
+Section 1.3.7 formalizes the properties of the QBD lemma regarding finite state recurrence.
+
+---
+
+### 1.3.7.1 Proof: Finite State Recurrence {#1.3.7.1}
+
+:::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
+:::
+
+**I. Setup and Assumptions**
+
+**In Plain English:**  
+Section 1.3.7.1 formalizes the properties of the QBD proof regarding finite state recurrence.
+
+---
+
+### 1.3.8 Lemma: Supertask Impossibility {#1.3.8}
+
+:::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
+:::
+
+The following holds: the traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
+
+**In Plain English:**  
+Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
+
+---
+
+### 1.3.8.1 Proof: Supertask Limits {#1.3.8.1}
+
+:::tip[**Formal Proof of Non-Termination via Turing Computability and Relativistic Constraints**]
+:::
+
+**I. Definition of the History Sequence**
+
+**In Plain English:**  
+Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask limits.
+
+---
+
+### 1.3.9 Proof: Temporal Finitude {#1.3.9}
+
+:::tip[**Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />]
+:::
+
+**I. The Infinite Hypothesis** Let it be assumed, for the explicit purpose of demonstrating a contradiction, that the domain of Global Logical Time $t_L$ is unbounded in the past direction. This assumption implies that the set of temporal indices is isomorphic to the non-positive integers ($T_L \cong \mathbb{Z}_{\le 0}$), thereby asserting the existence of an infinite sequence of distinct antecedent states $\{\dots, U_{-2}, U_{-1}, U_0\}$.
+
+**In Plain English:**  
+Section 1.3.9 formalizes the properties of the QBD proof regarding temporal finitude.
+
+---
+
+### 1.4.1 Definition: Causal Graph Substrate {#1.4.1}
+
+:::tip[**Mathematical Characterization of the Relational Configuration Space**]
+:::
+
+Let $\Omega$ denote the universal configuration space of all valid states of the causal graph substrate. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
+
+**In Plain English:**  
+Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).
+
+---
+
+### 1.4.2 Definition: Abstract Event {#1.4.2}
+
+:::tip[**Formal Characterization of Event Vertices as Pre-Geometric Nodes**]
+:::
+
+Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
+
+**In Plain English:**  
+Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.
+
+---
+
+### 1.4.3 Definition: Causal Relation {#1.4.3}
+
+:::tip[**Formal Characterization of Causal Links as Directed Poset Edges**]
+:::
+
+Let $E \subseteq V \times V$ be a set of directed edges, where each ordered pair $e = (u, v) \in E$ is a **Causal Relation**. An edge $e$ represents an irreducible causal link denoting the direct, unmediated logical proposition that event $u$ precedes and causally influences event $v$. The relation is strictly asymmetric, satisfying:
+
+**In Plain English:**  
+Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
+
+---
+
+### 1.4.4 Definition: Creation Timestamp {#1.4.4}
+
+:::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]
+:::
+
+Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a creation timestamp $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
+
+**In Plain English:**  
+The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
+
+---
+
+### 1.4.5 Theorem: Monotonicity of History {#1.4.5}
+
+:::info[**Strict Monotonicity and Well-Foundedness of Causal Timestamp Sequences**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:
+
+**In Plain English:**  
+The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
+
+---
+
+### 1.4.6 Lemma: Irreflexivity of Timestamps {#1.4.6}
+
+:::info[**Unsatisfiability of Recursive Timestamp Assignment for Self-Loops**]
+:::
+
+Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \max \left( \{H(e') \mid e' \in \text{In}(u)\} \cup \{0\} \right)$ is inconsistent and admits no stable timestamp assignment.
+
+**In Plain English:**  
+Section 1.4.6 formalizes the properties of the QBD lemma regarding irreflexivity of timestamps.
+
+---
+
+### 1.4.6.1 Proof: Irreflexivity of Timestamps {#1.4.6.1}
+
+:::tip[**Formal Stability Analysis of Self-Loop Timestamps**]
+:::
+
+**I. Pre-computation of the Source History**
+
+**In Plain English:**  
+Section 1.4.6.1 formalizes the properties of the QBD proof regarding irreflexivity of timestamps.
+
+---
+
+### 1.4.7 Lemma: Transitive Causal Monotonicity {#1.4.7}
+
+:::info[**Monotonic Timestamp Progression along Directed Causal Chains**]
+:::
+
+Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
+
+**In Plain English:**  
+Section 1.4.7 formalizes the properties of the QBD lemma regarding transitive causal monotonicity.
+
+---
+
+### 1.4.7.1 Proof: Transitive Causal Monotonicity {#1.4.7.1}
+
+:::tip[**Inductive Demonstration of Strict Timestamp Increase**]
+:::
+
+**I. Inductive Base Case**
+
+**In Plain English:**  
+Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.
+
+---
+
+### 1.4.8 Proof: Monotonicity of History {#1.4.8}
+
+:::tip[**Synthesis of Irreflexivity and Transitivity to Establish Global Acyclicity**]
+:::
+
+**I. Assumption of a Causal Cycle**
+
+**In Plain English:**  
+Section 1.4.8 formalizes the properties of the QBD proof regarding monotonicity of history.
+
+---
+
+### 1.5.1 Definition: Elementary Task Space {#1.5.1}
+
+:::tip[**Mathematical Characterization of the Admissible Transformation Space**]
+:::
+
+Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \to G'$ where $G' = (V', E', H')$ such that: 1.  **Acyclicity**: $G'$ is a directed acyclic graph. 2.  **Monotonicity of History**: The local sequence of timestamps $H'$ satisfies temporal monotonicity under any edge modification. 3.  **Finite Growth**: There exists a constant $k \in \mathbb{N}$ such that $|V'| \leq |V| + k$ and $|E'| \leq |E| + k$.
+
+**In Plain English:**  
+Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
+
+---
+
+### 1.5.2 Definition: Edge Addition Task {#1.5.2}
+
+:::tip[**Formal Specification of the Primitive Edge Insertion Operator**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \in V$ such that $u \neq v$ and $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{add}(u, v)$ is the mapping:
+
+**In Plain English:**  
+Abstract Event defines the vertex set V where each element represents an structureless pre-geometric event whose identity is determined purely by relations.
+
+---
+
+### 1.5.3 Definition: Edge Deletion Task {#1.5.3}
+
+:::tip[**Formal Specification of the Primitive Edge Excision Operator**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{del}(u, v)$ is the mapping:
+
+**In Plain English:**  
+Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.
+
+---
+
+### 1.5.4 Theorem: Vacuum Repertoire {#1.5.4}
+
+:::info[**Sufficiency and Completeness of Primitive Edge Operators**]
+:::
+
+Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
+
+**In Plain English:**  
+Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.
+
+---
+
+### 1.5.5 Lemma: Relational Vertex Emergence {#1.5.5}
+
+:::info[**Subordination of Vertex Existence to Edge Topology**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ s.t. } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
+
+**In Plain English:**  
+The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.
+
+---
+
+### 1.5.5.1 Proof: Relational Vertex Emergence {#1.5.5.1}
+
+:::tip[**Verification of Vertex Subordination under Primitive Operations**]
+:::
+
+**I. Definition of the Vertex Modification Operator**
+
+**In Plain English:**  
+Section 1.5.5.1 formalizes the properties of the QBD proof regarding relational vertex emergence.
+
+---
+
+### 1.5.6 Lemma: Reversibility of Primitives {#1.5.6}
+
+:::info[**Kinematic Reversibility of Edge Operations**]
+:::
+
+For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
+
+**In Plain English:**  
+The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the recursive timestamp assignment, logically excluding closed timelike curves of zero radius.
+
+---
+
+### 1.5.6.1 Proof: Reversibility of Primitives {#1.5.6.1}
+
+:::tip[**Verification of the Inverse Relations of Primitive Operators**]
+:::
+
+**I. Evaluation of the Edge Addition Inverse**
+
+**In Plain English:**  
+Section 1.5.6.1 formalizes the properties of the QBD proof regarding reversibility of primitives.
+
+---
+
+### 1.5.7 Proof: Vacuum Repertoire {#1.5.7}
+
+:::tip[**Completeness of the Primitive Operators**]
+:::
+
+**I. Characterization of the Target Space**
+
+**In Plain English:**  
+The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.
+
+---
+
+### 2.1.1 Axiom 1: The Directed Causal Link {#2.1.1}
 
 :::info[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 :::
 
-It is herein established that the fundamental unit of relation within the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
+It is herein established that the fundamental unit of relation within the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
 
 **In Plain English:**  
 A directed causal link represents the primitive cause-and-effect relation, acting as a one-way temporal ratchet that drives cosmic updates.
@@ -540,7 +540,7 @@ Section 2.2.1 formalizes the properties of the QBD theorem regarding insufficien
 :::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]
 :::
 
-Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **Cycle** <Ref id="1.5.6" label="§1.5.6" />, a configuration excluded by **Directed Acyclic Graph (DAG)** <Ref id="1.5.1" label="§1.5.1" />.
+Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **Cycle** <Ref id="1.2.6" label="§1.2.6" />, a configuration excluded by **Directed Acyclic Graph (DAG)** <Ref id="1.2.1" label="§1.2.1" />.
 
 **In Plain English:**  
 Section 2.2.2 formalizes the properties of the QBD lemma regarding pathology of self-loops.
@@ -607,7 +607,7 @@ Section 2.2.5 formalizes the properties of the QBD type-theoretic regarding vali
 
 ---
 
-### 2.3.1 Axiom: 2: Geometric Constructibility {#2.3.1}
+### 2.3.1 Axiom 2: Geometric Constructibility {#2.3.1}
 
 :::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
 :::
@@ -615,7 +615,7 @@ Section 2.2.5 formalizes the properties of the QBD type-theoretic regarding vali
 The kinematic admissibility of any transformation $G \to G'$ involving the addition of an edge is restricted by the following two complementary clauses:
 
 **In Plain English:**  
-Section 2.3.1 formalizes the properties of the QBD axiom regarding 2: geometric constructibility.
+Section 2.3.1 formalizes the properties of the QBD axiom regarding axiom 2: geometric constructibility.
 
 ---
 
@@ -643,15 +643,15 @@ Section 2.3.2.1 formalizes the properties of the QBD proof regarding geometric q
 
 ---
 
-### 2.3.3 Principle: Principle of Unique Causality (PUC) {#2.3.3}
+### 2.3.3 Principle of Unique Causality (PUC) {#2.3.3}
 
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 :::
 
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
 **In Plain English:**  
-Section 2.3.3 formalizes the properties of the QBD principle regarding unique causality (puc).
+Section 2.3.3 formalizes the properties of the QBD principle regarding principle of unique causality (puc).
 
 ---
 
@@ -720,7 +720,7 @@ Section 2.4.1 formalizes the properties of the QBD theorem regarding general cyc
 :::info[**Local Confluence of Overlapping Rewrite Operations**]
 :::
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.5.5" label="§1.5.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
 
 **In Plain English:**  
 Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of the constructor.
@@ -813,7 +813,7 @@ Section 2.4.5.1 formalizes the properties of the QBD proof regarding decrease in
 
 ### 2.4.6 Proof: General Cycle Decomposition {#2.4.6}
 
-:::tip[**Formal Proof of General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
+:::tip[**General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
 :::
 
 **I. Initial Conditions**
@@ -909,7 +909,7 @@ Section 2.5.3.1 formalizes the properties of the QBD proof regarding independenc
 
 ### 2.5.4 Proof: Mutual Independence {#2.5.4}
 
-:::tip[**Independence of Axioms 1 and 2 via Orthogonal Counter-Models** <Ref id="2.5.1" label="§2.5.1" />]
+:::tip[Orthogonal Counter-Models demonstrating the **Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />]
 :::
 
 **I. The Independence Hypothesis** Two axiomatic constraints are defined as logically independent if and only if the satisfaction of one does not logically entail the satisfaction of the other. This independence is verified through the construction of specific counter-models that selectively violate one axiom while satisfying the other.
@@ -924,7 +924,7 @@ Section 2.5.4 formalizes the properties of the QBD proof regarding mutual indepe
 :::tip[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
 :::
 
-The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />.
+The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />.
 
 **In Plain English:**  
 Section 2.6.1 formalizes the properties of the QBD definition regarding effective influence.
@@ -996,7 +996,7 @@ Section 2.6.4.1 formalizes the properties of the QBD proof regarding failure of 
 :::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 :::
 
-Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
 **In Plain English:**  
 Section 2.6.5 formalizes the properties of the QBD lemma regarding failure of asymmetry.
@@ -1017,7 +1017,7 @@ Section 2.6.5.1 formalizes the properties of the QBD proof regarding failure of 
 
 ### 2.6.6 Proof: Inadequacy of Local Axioms {#2.6.6}
 
-:::tip[**Inadequacy of Local Axioms via the Synthesis of Transitive Failures** <Ref id="2.6.2" label="§2.6.2" />]
+:::tip[Synthesis of Transitive Failures showing the **Inadequacy of Local Axioms** <Ref id="2.6.2" label="§2.6.2" />]
 :::
 
 **I. The Local Premise** Assume the existence of a causal system constrained *exclusively* by Axiom 1 (defining the Local Arrow) and Axiom 2 (defining the Local Geometry). The sufficiency of these axioms is tested by determining whether the transitive closure of the influence relation $\le$ consistently forms a strict partial order.
@@ -1039,7 +1039,7 @@ Section 2.6.6.1 formalizes the properties of the QBD corollary regarding global 
 
 ---
 
-### 2.7.1 Axiom: 3: Acyclic Effective Causality {#2.7.1}
+### 2.7.1 Axiom 3: Acyclic Effective Causality {#2.7.1}
 
 :::info[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]
 :::
@@ -1056,7 +1056,7 @@ Causality is strictly acyclic: an event can never be its own cause. This prevent
 :::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]
 :::
 
-The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />.
+The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
 
 **In Plain English:**  
 Section 2.7.2 formalizes the properties of the QBD theorem regarding thermodynamic enforcement.
@@ -1176,7 +1176,7 @@ Section 3.1.2 formalizes the properties of the QBD definition regarding vacuum t
 :::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]
 :::
 
-The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$. 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id="1.5.6" label="§1.5.6" /> and no redundant **parallel paths** <Ref id="2.3.3" label="§2.3.3" />.
+The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$. 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id="1.2.6" label="§1.2.6" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" />.
 
 **In Plain English:**  
 Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum structure.
@@ -1188,7 +1188,7 @@ Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum stru
 :::info[**Existence and Finiteness of the Initial Vertex Set**]
 :::
 
-Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.2.4" label="§1.2.4" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is **excluded** <Ref id="2.6.1" label="§2.6.1" />.
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded by **Effective Influence** <Ref id="2.6.1" label="§2.6.1" />.
 
 **In Plain English:**  
 Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and finiteness.
@@ -1212,7 +1212,7 @@ Section 3.1.4.1 formalizes the properties of the QBD proof regarding existence a
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
 
-Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.4" label="§1.2.4" />. Under the directed causal rules, the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.7" label="§1.5.7" /> is topologically impossible.
+Let $G_0$ denote the initial state of the universe, established in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Under the directed causal rules, the existence of the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming a **2-Cycle** <Ref id="1.2.7" label="§1.2.7" /> is topologically impossible.
 
 **In Plain English:**  
 Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of reflexivity and reciprocity.
@@ -1236,7 +1236,7 @@ Section 3.1.5.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
 :::
 
-Let $G_0$ denote the initial state. Then the existence of **Directed Cycles** of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />.
+Let $G_0$ denote the initial state. Then the existence of **Directed Cycles** of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />.
 
 **In Plain English:**  
 Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of cyclic paths.
@@ -1260,7 +1260,7 @@ Section 3.1.6.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Global Directed Acyclicity**]
 :::
 
-Let $G_0$ denote the initial state. Then $G_0$ constitutes a **Directed Acyclic Graph (DAG)** <Ref id="1.5.1" label="§1.5.1" />, and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
+Let $G_0$ denote the initial state. Then $G_0$ constitutes a **Directed Acyclic Graph (DAG)** <Ref id="1.2.1" label="§1.2.1" />, and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
 
 **In Plain English:**  
 Section 3.1.7 formalizes the properties of the QBD lemma regarding global acyclicity.
@@ -1380,7 +1380,7 @@ Section 3.1.10.1 formalizes the properties of the QBD proof regarding depth-pari
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs**]
 :::
 
-For all bipartite graphs **Bipartite Graph** <Ref id="1.5.2" label="§1.5.2" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
+For all bipartite graphs **Bipartite Graph** <Ref id="1.2.2" label="§1.2.2" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
 
 **In Plain English:**  
 Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of odd cycles.
@@ -1401,7 +1401,7 @@ Section 3.1.11.1 formalizes the properties of the QBD proof regarding exclusion 
 
 ### 3.1.12 Proof: Demonstration of the Vacuum Structure {#3.1.12}
 
-:::tip[the **Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion** <Ref id="3.1.3" label="§3.1.3" />]
+:::tip[Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion, demonstrating the **Vacuum Structure** <Ref id="3.1.3" label="§3.1.3" />]
 :::
 
 **I. The Configuration Space** Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains.
@@ -1416,7 +1416,7 @@ Section 3.1.12 formalizes the properties of the QBD proof regarding demonstratio
 :::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
 :::
 
-The initial state $G_0$ constitutes a unique structure designated as a **Regular Bethe Fragment**. This structure is a finite, rooted, outward-directed tree possessing a fixed internal coordination number $k_{deg} \ge 3$. The root vertex and all internal vertices exhibit an out-degree of exactly $k_{deg}$, while all leaf vertices exhibit an out-degree of zero. This structure maximizes the number of compliant **rewrite sites** <Ref id="3.3.2" label="§3.3.2" /> per vertex while simultaneously maximizing relational uniformity across vertices. [(Woess, 2000)](/monograph/appendices/a-references#A.70)
+The initial state $G_0$ constitutes a unique structure designated as a **Regular Bethe Fragment**. This structure is a finite, rooted, outward-directed tree possessing a fixed internal coordination number $k_{deg} \ge 3$. The root vertex and all internal vertices exhibit an out-degree of exactly $k_{deg}$, while all leaf vertices exhibit an out-degree of zero. This structure maximizes the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity across vertices. [(Woess, 2000)](/monograph/appendices/a-references#A.70)
 
 **In Plain English:**  
 Section 3.2.1 formalizes the properties of the QBD theorem regarding optimal vacuum.
@@ -1440,7 +1440,7 @@ Section 3.2.1.1 formalizes the properties of the QBD definition regarding regula
 :::info[**Rejection of Cyclic Graphs via Pre-Geometric Constraints**]
 :::
 
-For any graph containing a directed cycle of length greater than or equal to 3, candidacy for the vacuum state $G_0$ is **excluded** <Ref id="2.3.1" label="§2.3.1" />.
+For any graph containing a directed cycle of length greater than or equal to 3, candidacy for the vacuum state $G_0$ is excluded by **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
 
 **In Plain English:**  
 Section 3.2.2 formalizes the properties of the QBD lemma regarding exclusion of cyclic topologies.
@@ -1488,7 +1488,7 @@ Section 3.2.3.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Rejection of Disconnected Graphs**]
 :::
 
-For all disconnected graphs, candidacy for the vacuum state $G_0$ is **excluded** <Ref id="2.7.1" label="§2.7.1" />. In particular, automorphism entropy is minimal and a single interacting universe exists.
+For all disconnected graphs, candidacy for the vacuum state $G_0$ is excluded by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. In particular, automorphism entropy is minimal and a single interacting universe exists.
 
 **In Plain English:**  
 Section 3.2.4 formalizes the properties of the QBD lemma regarding exclusion of disconnected states.
@@ -1536,7 +1536,7 @@ Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Exclusion of Trees with Insufficient Rewrite Site Density via Branching Optimization**]
 :::
 
-For any tree graph yielding a strictly sub-maximal number of compliant **2-Path rewrite sites** <Ref id="1.5.5" label="§1.5.5" />, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
+For any tree graph yielding a strictly sub-maximal number of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> rewrite sites, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
 
 **In Plain English:**  
 Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximality.
@@ -1560,7 +1560,7 @@ Section 3.2.6.1 formalizes the properties of the QBD proof regarding branching o
 :::info[**Exclusion of Non-Regular Trees under Orbit Entropy Maximization**]
 :::
 
-For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal **orbit entropy** <Ref id="3.2.9" label="§3.2.9" />.
+For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal structural optimality, as established by the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />.
 
 **In Plain English:**  
 Section 3.2.7 formalizes the properties of the QBD lemma regarding degree regularity.
@@ -1644,7 +1644,7 @@ Section 3.2.9.1 formalizes the properties of the QBD proof regarding metric vali
 :::info[**Supremacy of the Bethe Fragment under the Structural Optimality Metric confirmed by Exhaustive Search**]
 :::
 
-**The Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer of the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of axiomatically admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
+**Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer of the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of axiomatically admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
 
 **In Plain English:**  
 Section 3.2.10 formalizes the properties of the QBD theorem regarding quantitative supremacy.
@@ -1689,7 +1689,7 @@ Section 3.2.10.3 formalizes the properties of the QBD calculation regarding larg
 
 ### 3.2.11 Proof: Demonstration of the Optimal Vacuum {#3.2.11}
 
-:::tip[**Formal Derivation of the Regular Bethe Fragment (k=3) from the Intersection of Constraints** <Ref id="3.2.1" label="§3.2.1" />]
+:::tip[Formal Derivation of the Regular Bethe Fragment ($k=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />]
 :::
 
 **I. The Candidate Set** The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by **Demonstration of the Vacuum Structure** <Ref id="3.1.12" label="§3.1.12" />. The proof seeks to identify the specific tree topology that maximizes the physical potential for geometrogenesis.
@@ -1704,7 +1704,7 @@ Section 3.2.11 formalizes the properties of the QBD proof regarding demonstratio
 :::tip[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
 :::
 
-The physical state of the universe at Logical Time $t$ **Dual Time Architecture** <Ref id="1.2.1" label="§1.2.1" /> is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$. 1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" /> and local **syndrome values** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions: * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$. * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$. * **Edge Annotation Invariance:** $\forall (u, v) \in E, a_E((u, v)) = a_E((\varphi(u), \varphi(v)))$. 3.  **Candidate Rewrite Site:** A candidate rewrite site $s$ is defined as the ordered tuple $s = (F_s, p_s)$, where $F_s \subseteq G_t$ constitutes the finite footprint subgraph required by the rewrite rule, and $p_s$ constitutes the deterministic local transformation rule defined on the domain of $F_s$.
+The physical state of the universe at Logical Time $t$ **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$. 1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and local **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> values. 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions: * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$. * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$. * **Edge Annotation Invariance:** $\forall (u, v) \in E, a_E((u, v)) = a_E((\varphi(u), \varphi(v)))$. 3.  **Candidate Rewrite Site:** A candidate rewrite site $s$ is defined as the ordered tuple $s = (F_s, p_s)$, where $F_s \subseteq G_t$ constitutes the finite footprint subgraph required by the rewrite rule, and $p_s$ constitutes the deterministic local transformation rule defined on the domain of $F_s$.
 
 **In Plain English:**  
 Section 3.3.1 formalizes the properties of the QBD definition regarding annotated state space.
@@ -1836,7 +1836,7 @@ Section 3.3.6.1 formalizes the properties of the QBD proof regarding covariant c
 :::info[**Logarithmic Time Complexity via Quasi-Local Checks**]
 :::
 
-Assume the graph remains in the **regime sparse** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local **constraints** <Ref id="2.3.3" label="§2.3.3" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.
+Assume the graph remains in the regime characterized by **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.
 
 **In Plain English:**  
 Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability of the scheduler.
@@ -1872,7 +1872,7 @@ Section 3.3.8 formalizes the properties of the QBD proof regarding preservation 
 :::note[**Lean 4 Encoding of Equivariant Symmetry Preservation via Group-Action Self-Consistency**]
 :::
 
-Type-theoretic certification of the symmetry invariance established in the **Preservation of Automorphisms Proof** <Ref id="3.3.8" label="§3.3.8" /> proceeds via the following verification strategy:
+Type-theoretic certification of the symmetry invariance established in the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" /> proceeds via the following verification strategy:
 
 **In Plain English:**  
 Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -1884,7 +1884,7 @@ Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
 :::
 
-The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **bipartiteness** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant **rewrite sites** <Ref id="3.3.2" label="§3.3.2" />, and initiates a first-order phase transition to the geometric vacuum.
+The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
 
 **In Plain English:**  
 Section 3.4.1 formalizes the properties of the QBD theorem regarding inevitable geometrogenesis.
@@ -1920,7 +1920,7 @@ Section 3.4.2.1 formalizes the properties of the QBD proof regarding symmetry br
 :::info[**Nucleation of Compliant Rewrite Sites under Tunneling**]
 :::
 
-For any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id="1.5.5" label="§1.5.5" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and constitutes a valid input for the rewrite rule.
+For any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and constitutes a valid input for the rewrite rule.
 
 **In Plain English:**  
 Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of compliant sites.
@@ -1989,7 +1989,7 @@ Section 3.4.5.1 formalizes the properties of the QBD proof regarding ignition pr
 
 ### 3.4.6 Proof: Demonstration of Inevitable Ignition {#3.4.6}
 
-:::tip[the **Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability** <Ref id="3.4.1" label="§3.4.1" />]
+:::tip[Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability, demonstrating **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />]
 :::
 
 **I. The Metastable Hypothesis** The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$).
@@ -2028,7 +2028,7 @@ The laws of physics operate as a topological quantum error-correcting code, util
 :::info[**Isomorphism between Quantum Braid Dynamics and Stabilizer Quantum Error Correction established by Operator Mapping**]
 :::
 
-There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome **extraction** <Ref id="4.3.2" label="§4.3.2" />. [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.50)
+There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.50)
 
 **In Plain English:**  
 Section 3.5.2 formalizes the properties of the QBD theorem regarding stabilizer isomorphism.
@@ -2064,7 +2064,7 @@ Section 3.5.3.1 formalizes the properties of the QBD proof regarding mapping val
 :::info[**Enforcement of Inviolable Axioms via Constraint Projectors**]
 :::
 
-Let $\Pi_{cycle}$ and $\Pi_{local}$ denote the Hard Constraint Projectors established in **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Then, for any state $|\psi\rangle$ representing a graph that violates the **Causal Primitive** <Ref id="2.1.1" label="§2.1.1" /> or the **Locality Constraints** <Ref id="5.5.2" label="§5.5.2" />, the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
+Let $\Pi_{cycle}$ and $\Pi_{local}$ denote the Hard Constraint Projectors established in **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Then, for any state $|\psi\rangle$ representing a graph that violates the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> or **Strict Locality** <Ref id="5.5.2" label="§5.5.2" />, the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
 
 **In Plain English:**  
 Section 3.5.4 formalizes the properties of the QBD lemma regarding hard constraint validity.
@@ -2100,7 +2100,7 @@ Section 3.5.4.2 formalizes the properties of the QBD calculation regarding eigen
 :::info[**Classification of Local Geometry via Triplet Syndrome Tuples**]
 :::
 
-**Let the Geometric Check Operators** <Ref id="3.5.1" label="§3.5.1" /> generate syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. Then these tuples characterize the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
+**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> checks generate syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. Then these tuples characterize the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
 
 **In Plain English:**  
 Section 3.5.5 formalizes the properties of the QBD lemma regarding syndrome classification of triplet configurations.
@@ -2136,7 +2136,7 @@ Section 3.5.5.2 formalizes the properties of the QBD calculation regarding qubit
 :::info[**Mutual Commutativity of All Stabilizer Operators**]
 :::
 
-Let $\mathcal{S}$ denote the set of all stabilizer operators, comprising both the Hard Constraint Projectors and the **Geometric Check Operators** <Ref id="3.5.1" label="§3.5.1" />. Then $\mathcal{S}$ forms an Abelian group under multiplication, guaranteeing the existence of a simultaneous eigenbasis and a well-defined physical codespace.
+Let $\mathcal{S}$ denote the set of all stabilizer operators, comprising both the Hard Constraint Projectors and the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> check operators. Then $\mathcal{S}$ forms an Abelian group under multiplication, guaranteeing the existence of a simultaneous eigenbasis and a well-defined physical codespace.
 
 **In Plain English:**  
 Section 3.5.6 formalizes the properties of the QBD lemma regarding stabilizer commutativity.
@@ -2181,7 +2181,7 @@ Section 3.5.7.1 formalizes the properties of the QBD proof regarding codespace n
 
 ### 3.5.8 Proof: Demonstration of the Stabilizer Isomorphism {#3.5.8}
 
-:::tip[the **Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction** <Ref id="3.5.2" label="§3.5.2" />]
+:::tip[Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction, establishing the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />]
 :::
 
 **I. The Mapping Hypothesis** The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ that links the domain of physical graph theory to the domain of stabilizer quantum codes.
@@ -2208,7 +2208,7 @@ Section 3.5.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Structure of Vertices and Directed Path Morphisms within a Single Snapshot**]
 :::
 
-The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components: 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$. 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.5.3" label="§1.5.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$. 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$. 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
+The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components: 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$. 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$. 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$. 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
 
 **In Plain English:**  
 Section 4.1.1 formalizes the properties of the QBD definition regarding internal causal category.
@@ -2220,7 +2220,7 @@ Section 4.1.1 formalizes the properties of the QBD definition regarding internal
 :::tip[**Structure of Causal Graphs utilizing History-Preserving Embeddings**]
 :::
 
-The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the structure governing the progression of causal graphs across the domain of Logical Time. 1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" />. 2.  **Morphisms:** A morphism $f: G \to G'$ constitutes a **History-Respecting Embedding**, defined as an injective function $f: V \to V'$ satisfying two invariant conditions: * **Edge Preservation:** For all $(u, v) \in E$, the image $(f(u), f(v))$ must exist in $E'$. * **History Preservation:** For all $(u, v) \in E$, the timestamp values must satisfy the non-decreasing inequality $H((u, v)) \leq H'((f(u), f(v)))$. 3.  **Composition:** The composition of morphisms is defined as standard function composition $(g \circ f)(x) = g(f(x))$. 4.  **Identity:** The identity morphism $\text{id}_G$ is the identity function on the vertex set $V$, satisfying $H((u, v)) = H((u, v))$.
+The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the structure governing the progression of causal graphs across the domain of Logical Time. 1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. 2.  **Morphisms:** A morphism $f: G \to G'$ constitutes a **History-Respecting Embedding**, defined as an injective function $f: V \to V'$ satisfying two invariant conditions: * **Edge Preservation:** For all $(u, v) \in E$, the image $(f(u), f(v))$ must exist in $E'$. * **History Preservation:** For all $(u, v) \in E$, the timestamp values must satisfy the non-decreasing inequality $H((u, v)) \leq H'((f(u), f(v)))$. 3.  **Composition:** The composition of morphisms is defined as standard function composition $(g \circ f)(x) = g(f(x))$. 4.  **Identity:** The identity morphism $\text{id}_G$ is the identity function on the vertex set $V$, satisfying $H((u, v)) = H((u, v))$.
 
 **In Plain English:**  
 Section 4.1.2 formalizes the properties of the QBD definition regarding historical category.
@@ -2244,7 +2244,7 @@ Section 4.2.1 formalizes the properties of the QBD theorem regarding categorical
 :::info[**Neutrality of Trivial Paths in the Internal Causal Category**]
 :::
 
-Let $p: u \to v$ be a morphism in $\mathbf{Caus}_t$. Then the composition with the **Trivial Path** <Ref id="4.1.1" label="§4.1.1" /> satisfies the identity laws $p \circ \text{id}_u = p$ and $\text{id}_v \circ p = p$, where the concatenation of a sequence with a zero-length sequence yields the original sequence invariant.
+Let $p: u \to v$ be a morphism in $\mathbf{Caus}_t$. Then the composition with the Trivial Path in the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" /> satisfies the identity laws $p \circ \text{id}_u = p$ and $\text{id}_v \circ p = p$, where the concatenation of a sequence with a zero-length sequence yields the original sequence invariant.
 
 **In Plain English:**  
 Section 4.2.2 formalizes the properties of the QBD lemma regarding identity for $\mathbf{caus}_t$.
@@ -2292,7 +2292,7 @@ Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativi
 :::info[**Preservation of Timestamp Monotonicity**]
 :::
 
-Let $f: G \to G'$ and $g: G' \to G''$ be **History-Respecting Embeddings** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
 
 **In Plain English:**  
 Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp monotonicity.
@@ -2455,15 +2455,15 @@ Section 4.2.11 formalizes the properties of the QBD calculation regarding partia
 
 ---
 
-### 4.3.1 Definition: Annotated Category (AnnCG) {#4.3.1}
+### 4.3.1 Definition: Annotated Causal Graphs (AnnCG) {#4.3.1}
 
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 :::
 
-The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with **History** <Ref id="1.3.1" label="§1.3.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the **Geometric Check Operators** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a **History-Respecting Embedding** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
+The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a Causal Graph with **History**, as defined in **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
 
 **In Plain English:**  
-Section 4.3.1 formalizes the properties of the QBD definition regarding annotated category (anncg).
+Section 4.3.1 formalizes the properties of the QBD definition regarding annotated causal graphs (anncg).
 
 ---
 
@@ -2472,7 +2472,7 @@ Section 4.3.1 formalizes the properties of the QBD definition regarding annotate
 :::tip[**Endofunctor $R_T$ Adjoining Fresh Syndromes to Graph States**]
 :::
 
-The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations: 1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via the Syndrome **extraction** <Ref id="3.5.5" label="§3.5.5" />. 2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
+The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations: 1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> extraction. 2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
 
 **In Plain English:**  
 Section 4.3.2 formalizes the properties of the QBD definition regarding awareness endofunctor ($r_t$).
@@ -2511,7 +2511,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. Specifically, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
 
 **In Plain English:**  
-Section 4.3.5 formalizes the properties of the QBD theorem regarding the awareness comonad.
+Section 4.3.5 formalizes the properties of the QBD theorem regarding awareness comonad.
 
 ---
 
@@ -2628,7 +2628,7 @@ Section 4.3.10 formalizes the properties of the QBD proof regarding demonstratio
 :::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 :::
 
-Computational verification of the categorical consistency established by **The Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
+Computational verification of the categorical consistency established by **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 4.3.10.1 formalizes the properties of the QBD calculation regarding simulation verification.
@@ -2640,7 +2640,7 @@ Section 4.3.10.1 formalizes the properties of the QBD calculation regarding simu
 :::note[**Lean 4 Encoding of Comonadic Laws via Definitional Equality**]
 :::
 
-Type-theoretic certification of the comonad axioms established in the **Awareness Comonad Proof** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
+Type-theoretic certification of the comonad axioms established in **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
 
 **In Plain English:**  
 Section 4.3.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -2676,7 +2676,7 @@ Section 4.4.1.1 formalizes the properties of the QBD proof regarding bit-nat equ
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **2-Path** <Ref id="1.5.5" label="§1.5.5" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
 **In Plain English:**  
 Section 4.4.2 formalizes the properties of the QBD theorem regarding entropy of closure.
@@ -2844,7 +2844,7 @@ Section 4.5.2 formalizes the properties of the QBD definition regarding catalyti
 :::tip[**Constructive Operation Proposing Edge Additions**]
 :::
 
-The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Path** <Ref id="1.5.5" label="§1.5.5" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
 Section 4.5.3 formalizes the properties of the QBD definition regarding addition mode.
@@ -2916,7 +2916,7 @@ Section 4.5.6.1 formalizes the properties of the QBD proof regarding deletion pr
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **axiomatically compliant graphs** <Ref id="1.3.1" label="§1.3.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **axiomatically compliant graphs** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
 
 **In Plain English:**  
 Section 4.6.1 formalizes the properties of the QBD definition regarding evolution operator.
@@ -3919,7 +3919,7 @@ Section 6.3.4 formalizes the properties of the QBD lemma regarding linear scalin
 
 ---
 
-### 6.3.4.1 Proof: of Scaling {#6.3.4.1}
+### 6.3.4.1 Proof of Scaling {#6.3.4.1}
 
 :::tip[**Formal Induction of Linear Scaling from Prime Braid Construction**]
 :::
@@ -3927,7 +3927,7 @@ Section 6.3.4 formalizes the properties of the QBD lemma regarding linear scalin
 **I. Inductive Framework**
 
 **In Plain English:**  
-Section 6.3.4.1 formalizes the properties of the QBD proof regarding of scaling.
+Section 6.3.4.1 formalizes the properties of the QBD proof regarding proof of scaling.
 
 ---
 
@@ -3979,7 +3979,7 @@ Section 6.3.6 formalizes the properties of the QBD lemma regarding entropy negli
 
 ---
 
-### 6.3.6.1 Proof: of Single Microstate {#6.3.6.1}
+### 6.3.6.1 Proof of Single Microstate {#6.3.6.1}
 
 :::tip[**Demonstration of Zero Entropy for Unique Prime Braid Configurations**]
 :::
@@ -3987,7 +3987,7 @@ Section 6.3.6 formalizes the properties of the QBD lemma regarding entropy negli
 **I. State Definition**
 
 **In Plain English:**  
-Section 6.3.6.1 formalizes the properties of the QBD proof regarding of single microstate.
+Section 6.3.6.1 formalizes the properties of the QBD proof regarding proof of single microstate.
 
 ---
 
@@ -4800,7 +4800,7 @@ Section 8.2.7 formalizes the properties of the QBD lemma regarding flux tube con
 :::tip[**Derivation of String Tension and Phase Accumulation from Graph Geometry**]
 :::
 
-**I. Linear Potential Construction** Consider a tripartite braid where active crossing regions are separated by distance $L$. By the **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />, distance is the minimum edge count. To increase separation by $\Delta L$, the **Universal Constructor** $\mathcal{R}$ inserts $\Delta N \propto \Delta L$ edges.
+**I. Linear Potential Construction** Consider a tripartite braid where active crossing regions are separated by distance $L$. By the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />, distance is the minimum edge count. To increase separation by $\Delta L$, the **Universal Constructor** $\mathcal{R}$ inserts $\Delta N \propto \Delta L$ edges.
 
 **In Plain English:**  
 Section 8.2.7.1 formalizes the properties of the QBD proof regarding linear potential and berry phase.
@@ -4836,7 +4836,7 @@ Section 8.2.8 formalizes the properties of the QBD proof regarding emergence of 
 :::tip[**Quantification of Handedness through Effective History Monotonicity**]
 :::
 
-The **Chiral Invariant**, denoted $\chi$, is defined strictly as a topological quantum number quantifying the causal orientation of a flavor-changing rewrite process $\mathcal{R}_W$ within the causal graph $G_t$. This invariant is computed as the signum of the timestamp difference between the constituent edges of the active 2-path precursor, satisfying the relation $\chi = \operatorname{sgn}(H_t(e_1) - H_t(e_2))$, subject to the following structural constraints: 1.  **Path Ordering:** The edges $e_1$ and $e_2$ are ordered sequentially along the directed causal path from the initial ribbon state to the final state. 2.  **Monotonicity Enforcement:** The value of $\chi$ is fixed by the strict monotonicity of the History Function $H_t$ **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />, where the forward causal order $H_t(e_1) < H_t(e_2)$ yields the left-handed value $\chi = -1$, and the reverse order yields the right-handed value $\chi = +1$. 3.  **Projective Action:** The invariant functions as a selection operator within the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, gating the acceptance probability $P_{\text{acc}}$ via the chiral projector $P_\chi = \frac{1}{2}(I + \chi \gamma_5)$.
+The **Chiral Invariant**, denoted $\chi$, is defined strictly as a topological quantum number quantifying the causal orientation of a flavor-changing rewrite process $\mathcal{R}_W$ within the causal graph $G_t$. This invariant is computed as the signum of the timestamp difference between the constituent edges of the active 2-path precursor, satisfying the relation $\chi = \operatorname{sgn}(H_t(e_1) - H_t(e_2))$, subject to the following structural constraints: 1.  **Path Ordering:** The edges $e_1$ and $e_2$ are ordered sequentially along the directed causal path from the initial ribbon state to the final state. 2.  **Monotonicity Enforcement:** The value of $\chi$ is fixed by the strict monotonicity of the History Function $H_t$ **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />, where the forward causal order $H_t(e_1) < H_t(e_2)$ yields the left-handed value $\chi = -1$, and the reverse order yields the right-handed value $\chi = +1$. 3.  **Projective Action:** The invariant functions as a selection operator within the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, gating the acceptance probability $P_{\text{acc}}$ via the chiral projector $P_\chi = \frac{1}{2}(I + \chi \gamma_5)$.
 
 **In Plain English:**  
 Section 8.3.1 formalizes the properties of the QBD definition regarding chiral invariant.
@@ -7179,7 +7179,7 @@ Section 11.1.1 formalizes the properties of the QBD definition regarding ghw met
 Let $G = (V, E)$ denote a finite, simple directed graph. The underlying undirected graph of $G$ constructs itself as the graph $G' = (V, E')$, in which an undirected edge $\{u,v\} \in E'$ exists if and only if either the directed edge $(u,v) \in E$ or the directed edge $(v,u) \in E$.
 
 **In Plain English:**  
-Physical space emerges as a macroscopic phase transition in the causal network, stochastically transitioning from a disjointed state to a unified manifold.
+Section 11.1.2 formalizes the properties of the QBD definition regarding undirected shortest-path metric.
 
 ---
 
@@ -10356,7 +10356,7 @@ Section 19.3.1 formalizes the properties of the QBD definition regarding topolog
 :::info[**Establishment of Neutron-Proton Mass Difference from Topological Complexity Gap**]
 :::
 
-*   **Proton Structure ($uud$):** The proton consists of two up quarks and one down quark ($uud$). The parallel $uu$ pair ($+2, +2$) enjoys constructive **Geometric Isospin Sharing**, significantly lowering the proton's effective mass. *   **Neutron Structure ($udd$):** The neutron consists of one up quark and two down quarks ($udd$). To maintain color neutrality, the two down quarks ($+2, -1, -1$) must occupy an antiparallel/orthogonal alignment in the composite knot, preventing edge sharing. *   **Mass Splitting:** Because the neutron's configuration prevents sharing, it exhibits a slightly larger topological complexity gap than the proton: $$ \Delta m = m_n - m_p \approx 1.3 \text{ MeV} $$
+*   **Proton Structure ($uud$):** The proton consists of two up quarks and one down quark ($uud$). The parallel $uu$ pair ($+2, +2$) enjoys constructive **Geometric Isospin Sharing**, significantly lowering the proton's effective mass. *   **Neutron Structure ($udd$):** The neutron consists of one up quark and two down quarks ($udd$). To maintain color neutrality, the two down quarks ($+2, -1, -1$) must occupy an antiparallel/orthogonal alignment in the composite knot, preventing edge sharing. *   **Mass Splitting:** Because the neutron's configuration prevents sharing, it exhibits a slightly larger topological complexity gap than the proton: $$ \Delta m = m_n - m_p \approx 1.4 \text{ MeV} $$
 
 **In Plain English:**  
 Section 19.3.2 formalizes the properties of the QBD theorem regarding neutron-proton mass difference.
@@ -10368,7 +10368,7 @@ Section 19.3.2 formalizes the properties of the QBD theorem regarding neutron-pr
 :::tip[**Verification of Mass Difference Scale through Direct Evaluation of Composite Knot Writhe Invariants**]
 :::
 
-*   **Complexity Gap Calculation:** The proof evaluates the topological complexity gap: $$ \Delta C = C_{udd} - C_{uud} $$ *   **Energy Calibration:** Using the calibrated coupling constant $\kappa$, it translates this complexity gap into energy, yielding: $$ \Delta m \approx 1.293 \text{ MeV} $$ *   **Anthropic Necessity:** It demonstrates that this $1.3$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
+*   **Complexity Gap Calculation:** The proof evaluates the topological complexity gap: $$ \Delta C = C_{udd} - C_{uud} $$ *   **Energy Calibration:** Using the calibrated coupling constant $\kappa$, it translates this complexity gap into energy, yielding: $$ \Delta m \approx 1.293 \text{ MeV} $$ *   **Anthropic Necessity:** It demonstrates that this $1.4$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
 
 **In Plain English:**  
 Section 19.3.3 formalizes the properties of the QBD proof regarding neutron-proton mass difference.
@@ -10404,7 +10404,7 @@ Section 19.4.2 formalizes the properties of the QBD proof regarding weak interac
 :::info[**Prediction of Helium-4 Mass Fraction from Derived Topological Mass Splitting and Weak Rates**]
 :::
 
-*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.3$ MeV: $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.3/0.8} \approx 0.20 $$ *   **Beta Decay Phase:** Prior to the onset of nucleosynthesis (the "Deuterium Bottleneck"), free neutrons undergo standard beta decay for approximately 300 seconds, reducing the ratio to: $$ \frac{n_n}{n_p} \approx \frac{1}{7} $$ *   **Helium Fraction:** Assuming all available neutrons are captured into stable $^4\text{He}$ nuclei, the primordial Helium mass fraction $Y_p$ is: $$ Y_p = \frac{2(n_n/n_p)}{1 + n_n/n_p} = \frac{2/7}{8/7} = 0.25 $$ This matches the observed value $Y_p \approx 0.245$ with high precision.
+*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.4$ MeV: $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.4/0.8} \approx 0.20 $$ *   **Beta Decay Phase:** Prior to the onset of nucleosynthesis (the "Deuterium Bottleneck"), free neutrons undergo standard beta decay for approximately 300 seconds, reducing the ratio to: $$ \frac{n_n}{n_p} \approx \frac{1}{7} $$ *   **Helium Fraction:** Assuming all available neutrons are captured into stable $^4\text{He}$ nuclei, the primordial Helium mass fraction $Y_p$ is: $$ Y_p = \frac{2(n_n/n_p)}{1 + n_n/n_p} = \frac{2/7}{8/7} = 0.25 $$ This matches the observed value $Y_p \approx 0.245$ with high precision.
 
 **In Plain English:**  
 Section 19.4.3 formalizes the properties of the QBD theorem regarding helium abundance prediction.
