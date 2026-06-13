@@ -31,31 +31,43 @@ Section 1.1.6 formalizes the properties of the QBD principle regarding coherenti
 
 ---
 
-### 1.2.1 Postulate: Dual Time Architecture {#1.2.1}
+### 1.2.1 Definition: Dual Time Architecture {#1.2.1}
 
-:::warning[**Separation of Emergent Physical Time from Fundamental Logical Time through a Dual-Time Architecture**]
+:::tip[**Mathematical Characterization of the Dual Temporal Scales**]
 :::
 
-The temporal structure of the physical theory is constituted by two distinct, orthogonal, and non-interchangeable parameters: 1.  **Global Logical Time ($t_L$):** The fundamental ordering parameter of state evolution. The domain of $t_L$ is strictly restricted to the set of non-negative integers $\mathbb{N}_0$. This parameter serves as the discrete iteration counter for the Universal Evolution Operator and is not subject to relativistic dilation or coordinate transformation. 2.  **Physical Time ($t_{phys}$):** An emergent, continuous parameter derived from relational path lengths within the graph substrate. $t_{phys}$ is subordinate to $t_L$ and possesses geometric character, emerging only in the macroscopic limit.
+The temporal structure of the physical theory is defined as a dual architecture constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
 
 **In Plain English:**  
-Time in QBD operates in a dual fashion: global logical time (a step counter for the universe's evolution engine) and physical time (the relativistic, continuous time experienced by observers inside the universe).
+Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).
 
 ---
 
-### 1.2.2 Definition: Global Logical Time {#1.2.2}
+### 1.2.2 Definition: Emergent Physical Time {#1.2.2}
+
+:::tip[**Mathematical Characterization of Relational Physical Duration**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the physical proper time interval $\Delta t_{phys}$ along the path is defined as:
+
+**In Plain English:**  
+Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.
+
+---
+
+### 1.2.3 Definition: Global Logical Time {#1.2.3}
 
 :::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]
 :::
 
-$t_L \in \mathbb{N}_0$ constitutes the discrete, non-negative integer that systematically labels the successive global states of the universe as they arise under the repeated action of $\mathcal{U}$. Formally, this labeling traces the iterative progression of the universe's configuration through the following infinite but forward-directed chain:
+Let $\mathcal{U}$ denote the Universal Evolution Operator. The Global Logical Time, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
 
 **In Plain English:**  
 Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
 
 ---
 
-### 1.2.3 Theorem: Temporal Finitude {#1.2.3}
+### 1.2.4 Theorem: Temporal Finitude {#1.2.4}
 
 :::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
 :::
@@ -63,11 +75,11 @@ Logical time is a discrete sequence of integer steps tracking the repeated appli
 The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
 
 **In Plain English:**  
-The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
+The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
 
 ---
 
-### 1.2.4 Lemma: Finite Information Substrate {#1.2.4}
+### 1.2.5 Lemma: Finite Information Substrate {#1.2.5}
 
 :::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
 :::
@@ -75,11 +87,11 @@ The amount of information needed to describe the universe's state cannot grow fa
 Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
 
 **In Plain English:**  
-Section 1.2.4 formalizes the properties of the QBD lemma regarding finite information substrate.
+The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
 
 ---
 
-### 1.2.4.1 Proof: Finite Information Substrate {#1.2.4.1}
+### 1.2.5.1 Proof: Finite Information Substrate {#1.2.5.1}
 
 :::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
 :::
@@ -87,23 +99,23 @@ Section 1.2.4 formalizes the properties of the QBD lemma regarding finite inform
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 1.2.4.1 formalizes the properties of the QBD proof regarding finite information substrate.
+Section 1.2.5.1 formalizes the properties of the QBD proof regarding finite information substrate.
 
 ---
 
-### 1.2.5 Lemma: Backward Accumulation {#1.2.5}
+### 1.2.6 Lemma: Backward Accumulation {#1.2.6}
 
 :::info[**Exclusion of Unbounded Past Direction**]
 :::
 
-Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.4" label="§1.2.4" />.
+Assume the domain of the global logical time parameter $T$ extends to the infinite past. Then this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />.
 
 **In Plain English:**  
-Section 1.2.5 formalizes the properties of the QBD lemma regarding backward accumulation.
+Section 1.2.6 formalizes the properties of the QBD lemma regarding backward accumulation.
 
 ---
 
-### 1.2.5.1 Proof: Backward Accumulation {#1.2.5.1}
+### 1.2.6.1 Proof: Backward Accumulation {#1.2.6.1}
 
 :::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
 :::
@@ -111,11 +123,11 @@ Section 1.2.5 formalizes the properties of the QBD lemma regarding backward accu
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 1.2.5.1 formalizes the properties of the QBD proof regarding backward accumulation.
+Section 1.2.6.1 formalizes the properties of the QBD proof regarding backward accumulation.
 
 ---
 
-### 1.2.6 Lemma: Finite State Recurrence {#1.2.6}
+### 1.2.7 Lemma: Finite State Recurrence {#1.2.7}
 
 :::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
 :::
@@ -123,11 +135,11 @@ Section 1.2.5.1 formalizes the properties of the QBD proof regarding backward ac
 Assume the configuration space $\Omega$ possesses strictly finite cardinality. Then an infinite past trajectory necessitates a state recurrence that forms a closed causal loop, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 **In Plain English:**  
-Section 1.2.6 formalizes the properties of the QBD lemma regarding finite state recurrence.
+Section 1.2.7 formalizes the properties of the QBD lemma regarding finite state recurrence.
 
 ---
 
-### 1.2.6.1 Proof: Finite State Recurrence {#1.2.6.1}
+### 1.2.7.1 Proof: Finite State Recurrence {#1.2.7.1}
 
 :::tip[**Demonstration of Inevitable Causal Loops via the Dirichlet Principle**]
 :::
@@ -135,11 +147,11 @@ Section 1.2.6 formalizes the properties of the QBD lemma regarding finite state 
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 1.2.6.1 formalizes the properties of the QBD proof regarding finite state recurrence.
+Section 1.2.7.1 formalizes the properties of the QBD proof regarding finite state recurrence.
 
 ---
 
-### 1.2.7 Lemma: Supertask Impossibility {#1.2.7}
+### 1.2.8 Lemma: Supertask Impossibility {#1.2.8}
 
 :::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
 :::
@@ -147,11 +159,11 @@ Section 1.2.6.1 formalizes the properties of the QBD proof regarding finite stat
 The traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
 
 **In Plain English:**  
-The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
+Section 1.2.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
 
 ---
 
-### 1.2.7.1 Proof: Supertask Limits {#1.2.7.1}
+### 1.2.8.1 Proof: Supertask Limits {#1.2.8.1}
 
 :::tip[**Formal Proof of Non-Termination via Turing Computability and Relativistic Constraints**]
 :::
@@ -159,103 +171,247 @@ The universe must have had a beginning (a logical step zero) because an infinite
 **I. Definition of the History Sequence**
 
 **In Plain English:**  
-Section 1.2.7.1 formalizes the properties of the QBD proof regarding supertask limits.
+Section 1.2.8.1 formalizes the properties of the QBD proof regarding supertask limits.
 
 ---
 
-### 1.2.8 Proof: Temporal Finitude {#1.2.8}
+### 1.2.9 Proof: Temporal Finitude {#1.2.9}
 
-:::tip[**Temporal Finitude** <Ref id="1.2.3" label="§1.2.3" />]
+:::tip[**Temporal Finitude** <Ref id="1.2.4" label="§1.2.4" />]
 :::
 
 **I. The Infinite Hypothesis** Let it be assumed, for the explicit purpose of demonstrating a contradiction, that the domain of Global Logical Time $t_L$ is unbounded in the past direction. This assumption implies that the set of temporal indices is isomorphic to the non-positive integers ($T_L \cong \mathbb{Z}_{\le 0}$), thereby asserting the existence of an infinite sequence of distinct antecedent states $\{\dots, U_{-2}, U_{-1}, U_0\}$.
 
 **In Plain English:**  
-Section 1.2.8 formalizes the properties of the QBD proof regarding temporal finitude.
+Section 1.2.9 formalizes the properties of the QBD proof regarding temporal finitude.
 
 ---
 
-### 1.3.1 Definition: State Space and Graph Structure {#1.3.1}
+### 1.3.1 Definition: Causal Graph Substrate {#1.3.1}
 
-:::tip[**Structure of the Universal State Space as a Collection of Finite Acyclic Directed Graphs**]
+:::tip[**Mathematical Characterization of the Relational Configuration Space**]
 :::
 
-$\Omega$ comprises the set of all kinematically admissible graph configurations that satisfy the constraints of finiteness and acyclicity. Each configuration in $\Omega$ encodes an essential "moment" in the universe's history, represented by a single point $G \in \Omega$, which captures the complete relational and temporal structure at that instant without presupposing prior states or future evolutions. The finiteness constraint limits $|V| < \infty$ for every $G$, ensuring computational tractability and avoiding infinities that could undermine the discrete genesis principle, while acyclicity enforces the strict forward direction of causation, precluding loops that would imply retroactive influences or paradoxes.
+Let $\Omega$ denote the universal configuration space of all valid states of the causal graph substrate. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
 
 **In Plain English:**  
-Space is not a continuous empty container but a discrete causal graph where the vertices represent events and the directed edges represent cause-and-effect relations.
+Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
 
 ---
 
-### 1.3.2 Definition: Emergent Timestamp Assignment {#1.3.2}
+### 1.3.2 Definition: Abstract Event {#1.3.2}
 
-:::tip[**Assignment of Immutable Creation Timestamps by the Global Sequencer**]
+:::tip[**Formal Characterization of Event Vertices as Pre-Geometric Nodes**]
 :::
 
-Time in Quantum Braid Dynamics operates as a persistent, immutable memory of creation embedded directly within the graph's structure. For any edge $e = (u, v)$ added to the graph during a dynamical tick at $t_L$, the **timestamp $H(e)$** receives permanent assignment according to the local recursive relation of its causal predecessors, bounded by the current state of the Sequencer mechanism defined in **Global Logical Time** <Ref id="1.2.2" label="§1.2.2" />:
+Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
 
 **In Plain English:**  
-Each causal connection (edge) receives a permanent, discrete timestamp when it is created, ensuring a monotonic record of history that cannot be retroactively altered.
+Abstract Event defines the vertex set V where each element represents an structureless pre-geometric event whose identity is determined purely by relations.
 
 ---
 
-### 1.3.3 Definition: Abstract Event {#1.3.3}
+### 1.3.3 Definition: Causal Relation {#1.3.3}
 
-:::tip[**Identity of the Abstract Event Vertex as a Purely Relational Nexus**]
+:::tip[**Formal Characterization of Causal Links as Directed Poset Edges**]
 :::
 
-An **Abstract Event** is a vertex $v \in V$. The identity of $v$ is determined strictly by its relational connectivity within $E$. The vertex possesses no intrinsic properties, coordinates, or internal structure independent of these relations. It is a structureless point of intersection for causal influences.
+Let $E \subseteq V \times V$ be a set of directed edges, where each ordered pair $e = (u, v) \in E$ is a **Causal Relation**. An edge $e$ represents an irreducible causal link denoting the direct, unmediated logical proposition that event $u$ precedes and causally influences event $v$. The relation is strictly asymmetric, satisfying:
 
 **In Plain English:**  
-An event has no coordinate location on a pre-existing grid; its identity is defined purely by its relations: what caused it and what it causes.
+Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.
 
 ---
 
-### 1.3.4 Theorem: Monotonicity of History {#1.3.4}
+### 1.3.4 Definition: Creation Timestamp {#1.3.4}
 
-:::info[**Strict Monotonicity of Causal Timestamp Sequences enforced by Recursive Assignment**]
+:::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]
 :::
 
-The assignment of timestamps ensures that $H$ induces a well-founded partial order on $E$. Specifically, for any newly created edge $e = (u, v)$, the timestamp satisfies the local recurrence relation:
+Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a creation timestamp $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
 
 **In Plain English:**  
-The flow of history is strictly one-way: no effect can ever precede its cause in timestamp ordering, preserving the forward arrow of time.
+Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.
 
 ---
 
-### 1.3.4.1 Proof: Monotonicity {#1.3.4.1}
+### 1.3.5 Theorem: Monotonicity of History {#1.3.5}
 
-:::tip[**Formal Proof of Order Preservation from Inductive Stability**]
+:::info[**Strict Monotonicity and Well-Foundedness of Causal Timestamp Sequences**]
 :::
 
-**I. The Timestamp Assignment Algorithm**
+Let $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:
 
 **In Plain English:**  
-Section 1.3.4.1 formalizes the properties of the QBD proof regarding monotonicity.
+The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.
+
+---
+
+### 1.3.6 Lemma: Irreflexivity of Timestamps {#1.3.6}
+
+:::info[**Unsatisfiability of Recursive Timestamp Assignment for Self-Loops**]
+:::
+
+Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \max \left( \{H(e') \mid e' \in \text{In}(u)\} \cup \{0\} \right)$ is inconsistent and admits no stable timestamp assignment.
+
+**In Plain English:**  
+The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the recursive timestamp assignment, logically excluding closed timelike curves of zero radius.
+
+---
+
+### 1.3.6.1 Proof: Irreflexivity of Timestamps {#1.3.6.1}
+
+:::tip[**Formal Stability Analysis of Self-Loop Timestamps**]
+:::
+
+**I. Pre-computation of the Source History**
+
+**In Plain English:**  
+Section 1.3.6.1 formalizes the properties of the QBD proof regarding irreflexivity of timestamps.
+
+---
+
+### 1.3.7 Lemma: Transitive Causal Monotonicity {#1.3.7}
+
+:::info[**Monotonic Timestamp Progression along Directed Causal Chains**]
+:::
+
+Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
+
+**In Plain English:**  
+The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.
+
+---
+
+### 1.3.7.1 Proof: Transitive Causal Monotonicity {#1.3.7.1}
+
+:::tip[**Inductive Demonstration of Strict Timestamp Increase**]
+:::
+
+**I. Inductive Base Case**
+
+**In Plain English:**  
+Section 1.3.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.
+
+---
+
+### 1.3.8 Proof: Monotonicity of History {#1.3.8}
+
+:::tip[**Synthesis of Irreflexivity and Transitivity to Establish Global Acyclicity**]
+:::
+
+**I. Assumption of a Causal Cycle**
+
+**In Plain English:**  
+Section 1.3.8 formalizes the properties of the QBD proof regarding monotonicity of history.
 
 ---
 
 ### 1.4.1 Definition: Elementary Task Space {#1.4.1}
 
-:::tip[**Delimitation of Admissible Transformations by Kinematic Constraints**]
+:::tip[**Mathematical Characterization of the Admissible Transformation Space**]
 :::
 
-$\mathfrak{T}$ comprises the set of all graph transformations on the causal graph substrate $G = (V, E, H)$:
+Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \to G'$ where $G' = (V', E', H')$ such that: 1.  **Acyclicity**: $G'$ is a directed acyclic graph. 2.  **Monotonicity of History**: The local sequence of timestamps $H'$ satisfies temporal monotonicity under any edge modification. 3.  **Finite Growth**: There exists a constant $k \in \mathbb{N}$ such that $|V'| \leq |V| + k$ and $|E'| \leq |E| + k$.
 
 **In Plain English:**  
-A task represents the physical possibility of an update: a localized change in the graph substrate that modifies the causal connections.
+Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.
 
 ---
 
-### 1.4.2 Definition: Vacuum Repertoire {#1.4.2}
+### 1.4.2 Definition: Edge Addition Task {#1.4.2}
 
-:::tip[**Restriction of the Vacuum Repertoire to Primitive Edge Operations due to Catalytic Reciprocity**]
+:::tip[**Formal Specification of the Primitive Edge Insertion Operator**]
 :::
 
-The set of fundamental kinematic operations available to the Universal Constructor is restricted exclusively to the following primitives: 1.  **Edge Addition ($\mathfrak{T}_{add}$):** The insertion of a directed edge $(u, v)$ into $E$, subject to the monotonic timestamp assignment. 2.  **Edge Deletion ($\mathfrak{T}_{del}$):** The removal of a directed edge $(u, v)$ from $E$. The theory admits no primitives for the direct creation or destruction of vertices independent of edge topology; vertices emerge solely as the endpoints of relations.
+Let $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \in V$ such that $u \neq v$ and $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{add}(u, v)$ is the mapping:
 
 **In Plain English:**  
-The vacuum maintains a balance where edge additions and edge deletions are equally possible, providing the raw substrate for cosmic dynamics.
+Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.
+
+---
+
+### 1.4.3 Definition: Edge Deletion Task {#1.4.3}
+
+:::tip[**Formal Specification of the Primitive Edge Excision Operator**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{del}(u, v)$ is the mapping:
+
+**In Plain English:**  
+Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.
+
+---
+
+### 1.4.4 Theorem: The Vacuum Repertoire {#1.4.4}
+
+:::info[**Sufficiency and Completeness of Primitive Edge Operators**]
+:::
+
+Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
+
+**In Plain English:**  
+The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
+
+---
+
+### 1.4.5 Lemma: Relational Vertex Emergence {#1.4.5}
+
+:::info[**Subordination of Vertex Existence to Edge Topology**]
+:::
+
+Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ s.t. } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
+
+**In Plain English:**  
+The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.
+
+---
+
+### 1.4.5.1 Proof: Relational Vertex Emergence {#1.4.5.1}
+
+:::tip[**Verification of Vertex Subordination under Primitive Operations**]
+:::
+
+**I. Definition of the Vertex Modification Operator**
+
+**In Plain English:**  
+Section 1.4.5.1 formalizes the properties of the QBD proof regarding relational vertex emergence.
+
+---
+
+### 1.4.6 Lemma: Reversibility of Primitives {#1.4.6}
+
+:::info[**Kinematic Reversibility of Edge Operations**]
+:::
+
+For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
+
+**In Plain English:**  
+The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.
+
+---
+
+### 1.4.6.1 Proof: Reversibility of Primitives {#1.4.6.1}
+
+:::tip[**Verification of the Inverse Relations of Primitive Operators**]
+:::
+
+**I. Evaluation of the Edge Addition Inverse**
+
+**In Plain English:**  
+Section 1.4.6.1 formalizes the properties of the QBD proof regarding reversibility of primitives.
+
+---
+
+### 1.4.7 Proof: The Vacuum Repertoire {#1.4.7}
+
+:::tip[**Completeness of the Primitive Operators**]
+:::
+
+**I. Characterization of the Target Space**
+
+**In Plain English:**  
+Section 1.4.7 formalizes the properties of the QBD proof regarding the vacuum repertoire.
 
 ---
 
@@ -492,7 +648,7 @@ Section 2.3.2.1 formalizes the properties of the QBD proof regarding geometric q
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 :::
 
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Vacuum Repertoire** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
 **In Plain English:**  
 Section 2.3.3 formalizes the properties of the QBD principle regarding unique causality (puc).
@@ -768,7 +924,7 @@ Section 2.5.4 formalizes the properties of the QBD proof regarding mutual indepe
 :::tip[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
 :::
 
-The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
+The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />.
 
 **In Plain English:**  
 Section 2.6.1 formalizes the properties of the QBD definition regarding effective influence.
@@ -840,7 +996,7 @@ Section 2.6.4.1 formalizes the properties of the QBD proof regarding failure of 
 :::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 :::
 
-Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
 **In Plain English:**  
 Section 2.6.5 formalizes the properties of the QBD lemma regarding failure of asymmetry.
@@ -900,7 +1056,7 @@ Causality is strictly acyclic: an event can never be its own cause. This prevent
 :::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]
 :::
 
-The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />.
 
 **In Plain English:**  
 Section 2.7.2 formalizes the properties of the QBD theorem regarding thermodynamic enforcement.
@@ -1032,7 +1188,7 @@ Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum stru
 :::info[**Existence and Finiteness of the Initial Vertex Set**]
 :::
 
-Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.2.7" label="§1.2.7" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is **excluded** <Ref id="2.6.1" label="§2.6.1" />.
+Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.2.4" label="§1.2.4" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is **excluded** <Ref id="2.6.1" label="§2.6.1" />.
 
 **In Plain English:**  
 Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and finiteness.
@@ -1056,7 +1212,7 @@ Section 3.1.4.1 formalizes the properties of the QBD proof regarding existence a
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
 
-Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.7" label="§1.2.7" />. Under the directed causal rules, the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.7" label="§1.5.7" /> is topologically impossible.
+Let $G_0$ denote the initial state of the **universe** <Ref id="1.2.4" label="§1.2.4" />. Under the directed causal rules, the existence of **Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming **2-Cycles** <Ref id="1.5.7" label="§1.5.7" /> is topologically impossible.
 
 **In Plain English:**  
 Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of reflexivity and reciprocity.
@@ -1080,7 +1236,7 @@ Section 3.1.5.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
 :::
 
-Let $G_0$ denote the initial state. Then the existence of **Directed Cycles** of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
+Let $G_0$ denote the initial state. Then the existence of **Directed Cycles** of length $L \ge 3$ is excluded by the **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />.
 
 **In Plain English:**  
 Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of cyclic paths.
@@ -4644,7 +4800,7 @@ Section 8.2.7 formalizes the properties of the QBD lemma regarding flux tube con
 :::tip[**Derivation of String Tension and Phase Accumulation from Graph Geometry**]
 :::
 
-**I. Linear Potential Construction** Consider a tripartite braid where active crossing regions are separated by distance $L$. By the **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />, distance is the minimum edge count. To increase separation by $\Delta L$, the **Universal Constructor** $\mathcal{R}$ inserts $\Delta N \propto \Delta L$ edges.
+**I. Linear Potential Construction** Consider a tripartite braid where active crossing regions are separated by distance $L$. By the **Finite Information Substrate** <Ref id="1.2.5" label="§1.2.5" />, distance is the minimum edge count. To increase separation by $\Delta L$, the **Universal Constructor** $\mathcal{R}$ inserts $\Delta N \propto \Delta L$ edges.
 
 **In Plain English:**  
 Section 8.2.7.1 formalizes the properties of the QBD proof regarding linear potential and berry phase.
@@ -4680,7 +4836,7 @@ Section 8.2.8 formalizes the properties of the QBD proof regarding emergence of 
 :::tip[**Quantification of Handedness through Effective History Monotonicity**]
 :::
 
-The **Chiral Invariant**, denoted $\chi$, is defined strictly as a topological quantum number quantifying the causal orientation of a flavor-changing rewrite process $\mathcal{R}_W$ within the causal graph $G_t$. This invariant is computed as the signum of the timestamp difference between the constituent edges of the active 2-path precursor, satisfying the relation $\chi = \operatorname{sgn}(H_t(e_1) - H_t(e_2))$, subject to the following structural constraints: 1.  **Path Ordering:** The edges $e_1$ and $e_2$ are ordered sequentially along the directed causal path from the initial ribbon state to the final state. 2.  **Monotonicity Enforcement:** The value of $\chi$ is fixed by the strict monotonicity of the History Function $H_t$ **monotonicity of history theorem** <Ref id="1.3.4" label="§1.3.4" />, where the forward causal order $H_t(e_1) < H_t(e_2)$ yields the left-handed value $\chi = -1$, and the reverse order yields the right-handed value $\chi = +1$. 3.  **Projective Action:** The invariant functions as a selection operator within the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, gating the acceptance probability $P_{\text{acc}}$ via the chiral projector $P_\chi = \frac{1}{2}(I + \chi \gamma_5)$.
+The **Chiral Invariant**, denoted $\chi$, is defined strictly as a topological quantum number quantifying the causal orientation of a flavor-changing rewrite process $\mathcal{R}_W$ within the causal graph $G_t$. This invariant is computed as the signum of the timestamp difference between the constituent edges of the active 2-path precursor, satisfying the relation $\chi = \operatorname{sgn}(H_t(e_1) - H_t(e_2))$, subject to the following structural constraints: 1.  **Path Ordering:** The edges $e_1$ and $e_2$ are ordered sequentially along the directed causal path from the initial ribbon state to the final state. 2.  **Monotonicity Enforcement:** The value of $\chi$ is fixed by the strict monotonicity of the History Function $H_t$ **Monotonicity of History** <Ref id="1.3.5" label="§1.3.5" />, where the forward causal order $H_t(e_1) < H_t(e_2)$ yields the left-handed value $\chi = -1$, and the reverse order yields the right-handed value $\chi = +1$. 3.  **Projective Action:** The invariant functions as a selection operator within the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, gating the acceptance probability $P_{\text{acc}}$ via the chiral projector $P_\chi = \frac{1}{2}(I + \chi \gamma_5)$.
 
 **In Plain English:**  
 Section 8.3.1 formalizes the properties of the QBD definition regarding chiral invariant.

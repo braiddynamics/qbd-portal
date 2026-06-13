@@ -133,7 +133,7 @@ export default function Ref({ id, label }: RefProps) {
     return <span className="ref-broken">[Broken Reference: §{id}]</span>;
   }
 
-  // Deduce if a formal proof exists (e.g. 1.2.3.1 is the proof for 1.2.3)
+  // Deduce if a formal proof exists (e.g. 1.3.6.1 is the proof for 1.3.6)
   const proofId = `${id}.1`;
   const hasProof = definitions[proofId] !== undefined;
 
