@@ -75,20 +75,20 @@ export const part1Chapters: ChapterData[] = [
         content: "Avoids dogmatic foundationalism by introducing a coherentist epistemology, framing physical postulates as a self-consistent network of relational facts verified by macroscopic stability."
       },
       {
-        title: "1.2 Temporal Ontology",
+        title: "1.2 Graph-Theoretic Definitions",
+        content: "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta."
+      },
+      {
+        title: "1.3 Temporal Ontology",
         content: "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths."
       },
       {
-        title: "1.3 Causal Graph",
+        title: "1.4 Causal Graph",
         content: "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps."
       },
       {
-        title: "1.4 Task Space",
+        title: "1.5 Task Space",
         content: "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility."
-      },
-      {
-        title: "1.5 Graph-Theoretic Definitions",
-        content: "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta."
       }
     ],
     specialists: [

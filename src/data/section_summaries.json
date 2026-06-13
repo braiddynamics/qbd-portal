@@ -26,23 +26,23 @@
   },
   "1.2": {
     "id": "1.2",
-    "title": "Temporal Ontology",
-    "summary": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths."
+    "title": "Graph-Theoretic Definitions",
+    "summary": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta."
   },
   "1.3": {
     "id": "1.3",
-    "title": "Causal Graph",
-    "summary": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps."
+    "title": "Temporal Ontology",
+    "summary": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths."
   },
   "1.4": {
     "id": "1.4",
-    "title": "Task Space",
-    "summary": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility."
+    "title": "Causal Graph",
+    "summary": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps."
   },
   "1.5": {
     "id": "1.5",
-    "title": "Graph-Theoretic Definitions",
-    "summary": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta."
+    "title": "Task Space",
+    "summary": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility."
   },
   "2.1": {
     "id": "2.1",

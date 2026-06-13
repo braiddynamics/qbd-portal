@@ -22,6 +22,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
+| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
 | $t_{phys}$ | Physical Time (emergent metric time) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
 | $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
@@ -34,6 +35,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.3.3.2](/monograph/rules/ontology/1.3/#1.3.3.2) |
 | $\mathcal{T}$ | Unimodular Time variable | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
+| $U_0$ | The unique initial state | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
 | $S(U)$ | Information content/Entropy of state $U$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
@@ -58,7 +60,6 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $G_{\mu\nu}$ | Einstein Tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
 | $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
 | $R_s$ | Schwarzschild Radius | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $U_0$ | The unique initial state | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.3.9.1](/monograph/rules/ontology/1.3/#1.3.9.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
@@ -71,7 +72,6 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.5.2](/monograph/rules/ontology/1.5/#1.5.2) |
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
 | $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
-| $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
 | $E$ | The set of edges within the graph | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
 | $\implies$ | Logical implication | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |

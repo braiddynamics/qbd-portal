@@ -58,9 +58,9 @@
   "1.2": {
     "id": "1.2",
     "type": "Section",
-    "title": "Temporal Ontology",
-    "statement": ":::info[**Section 1.2: Temporal Ontology**]\nDecouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.\n:::",
-    "plainEnglish": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.",
+    "title": "Graph-Theoretic Definitions",
+    "statement": ":::info[**Section 1.2: Graph-Theoretic Definitions**]\nEstablishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.\n:::",
+    "plainEnglish": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.1": {
@@ -68,7 +68,7 @@
     "type": "Definition",
     "title": "Directed Acyclic Graph (DAG)",
     "statement": ":::tip[**Directed Acyclic Graph (DAG) as the Relational Foundation of Causal Order**]\n:::\n\nA **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing no directed cycles. Formally, there exists no sequence of vertices $(v_0, v_1, \\dots, v_k)$ in $V$ of length $k \\ge 1$ such that $v_0 = v_k$ and $(v_i, v_{i+1}) \\in E$ for all $0 \\le i < k$.",
-    "plainEnglish": "Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.",
+    "plainEnglish": "Space is built from simple discrete connections: single links represent precedence, 2-paths represent transitive mediation, and 3-cycles represent spatial area.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.2": {
@@ -76,7 +76,7 @@
     "type": "Definition",
     "title": "Bipartite Graph",
     "statement": ":::tip[**Bipartite Graph as the Partitioned Architecture of State Transitions**]\n:::\n\nA **Bipartite Graph** is a directed graph $G = (V, E)$ whose vertex set $V$ can be partitioned into two disjoint sets, $V_A$ and $V_B$ (where $V_A \\cup V_B = V$ and $V_A \\cap V_B = \\emptyset$), such that every directed edge connects a vertex in $V_A$ to a vertex in $V_B$ or vice versa. Formally, the edge set satisfies $E \\subseteq (V_A \\times V_B) \\cup (V_B \\times V_A)$.",
-    "plainEnglish": "Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.",
+    "plainEnglish": "Section 1.2.2 formalizes the properties of the QBD definition regarding bipartite graph.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.3": {
@@ -84,7 +84,7 @@
     "type": "Definition",
     "title": "Directed Path",
     "statement": ":::tip[**Directed Path as the Sequence of Relational Causality**]\n:::\n\nA **Directed Path** in a directed graph $G = (V, E)$ is a sequence of vertices $(v_0, v_1, \\dots, v_n)$ of length $n \\ge 0$ such that for all $0 \\le i < n$, the directed edge $(v_i, v_{i+1}) \\in E$.",
-    "plainEnglish": "Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.",
+    "plainEnglish": "Section 1.2.3 formalizes the properties of the QBD definition regarding directed path.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.4": {
@@ -92,7 +92,7 @@
     "type": "Definition",
     "title": "Simple Path",
     "statement": ":::tip[**Simple Path as the Acyclic Trajectory of Influence**]\n:::\n\nA **Simple Path** is a Directed Path $(v_0, v_1, \\dots, v_n)$ containing no repeated vertices. Formally, $v_i \\neq v_j$ for all $0 \\le i < j \\le n$.",
-    "plainEnglish": "The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.",
+    "plainEnglish": "Section 1.2.4 formalizes the properties of the QBD definition regarding simple path.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.5": {
@@ -100,7 +100,7 @@
     "type": "Definition",
     "title": "2-Path",
     "statement": ":::tip[**2-Path as the Minimal Unit of Transitive Mediation**]\n:::\n\nA **2-Path** is a simple Directed Path of length exactly $2$. Formally, it is denoted as an ordered triplet of distinct vertices $(v, w, u)$ such that $(v, w) \\in E$ and $(w, u) \\in E$.",
-    "plainEnglish": "The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.",
+    "plainEnglish": "A 2-path consists of three events connected in sequence (A causes B, B causes C), constituting the minimal pathway for causal influence to propagate.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.6": {
@@ -108,7 +108,7 @@
     "type": "Definition",
     "title": "Cycle",
     "statement": ":::tip[**Cycle as the General Topological Expression of Causal Closure**]\n:::\n\nA **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \\dots, v_k)$ of length $k \\ge 1$ such that $v_0 = v_k$.",
-    "plainEnglish": "The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.",
+    "plainEnglish": "Section 1.2.6 formalizes the properties of the QBD definition regarding cycle.",
     "file": "01-rules/01-ontology/1.2.md"
   },
   "1.2.7": {
@@ -130,9 +130,9 @@
   "1.3": {
     "id": "1.3",
     "type": "Section",
-    "title": "Causal Graph",
-    "statement": ":::info[**Section 1.3: Causal Graph**]\nFormalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.\n:::",
-    "plainEnglish": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.",
+    "title": "Temporal Ontology",
+    "statement": ":::info[**Section 1.3: Temporal Ontology**]\nDecouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.\n:::",
+    "plainEnglish": "Decouples system evolution into two orthogonal temporal axes: discrete Global Logical Time ($t_L$) and emergent continuous Physical Time ($t_{phys}$) derived from geodesic path lengths.",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.1": {
@@ -140,7 +140,7 @@
     "type": "Definition",
     "title": "Dual Time Architecture",
     "statement": ":::tip[**Mathematical Characterization of the Dual Temporal Scales**]\n:::\n\nThe temporal structure of the physical theory is defined as a dual architecture constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).",
-    "plainEnglish": "Space is built from simple discrete connections: single links represent precedence, 2-paths represent transitive mediation, and 3-cycles represent spatial area.",
+    "plainEnglish": "Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.2": {
@@ -148,7 +148,7 @@
     "type": "Definition",
     "title": "Emergent Physical Time",
     "statement": ":::tip[**Mathematical Characterization of Relational Physical Duration**]\n:::\n\nLet $G = (V, E, H)$ be a causal graph. For any directed causal path $\\pi = (v_0, v_1, \\dots, v_k)$ in $G$ representing an observer's trajectory, the physical proper time interval $\\Delta t_{phys}$ along the path is defined as:",
-    "plainEnglish": "A 2-path consists of three events connected in sequence (A causes B, B causes C), constituting the minimal pathway for causal influence to propagate.",
+    "plainEnglish": "Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.3": {
@@ -156,7 +156,7 @@
     "type": "Definition",
     "title": "Global Logical Time",
     "statement": ":::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]\n:::\n\nLet $\\mathcal{U}$ denote the Universal Evolution Operator. The Global Logical Time, denoted $t_L \\in \\mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\\mathcal{U}$:",
-    "plainEnglish": "Section 1.3.3 formalizes the properties of the QBD definition regarding global logical time.",
+    "plainEnglish": "Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.4": {
@@ -164,7 +164,7 @@
     "type": "Theorem",
     "title": "Temporal Finitude",
     "statement": ":::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]\n:::\n\nThe following holds: the domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.",
-    "plainEnglish": "Section 1.3.4 formalizes the properties of the QBD theorem regarding temporal finitude.",
+    "plainEnglish": "The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.5": {
@@ -172,7 +172,7 @@
     "type": "Lemma",
     "title": "Finite Information Substrate",
     "statement": ":::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]\n:::\n\nLet $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \\le \\mathcal{O}(t_L^2)$.",
-    "plainEnglish": "Section 1.3.5 formalizes the properties of the QBD lemma regarding finite information substrate.",
+    "plainEnglish": "The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.",
     "file": "01-rules/01-ontology/1.3.md"
   },
   "1.3.5.1": {
@@ -242,9 +242,9 @@
   "1.4": {
     "id": "1.4",
     "type": "Section",
-    "title": "Task Space",
-    "statement": ":::info[**Section 1.4: Task Space**]\nRestricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.\n:::",
-    "plainEnglish": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.",
+    "title": "Causal Graph",
+    "statement": ":::info[**Section 1.4: Causal Graph**]\nFormalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.\n:::",
+    "plainEnglish": "Formalizes the pre-geometric substrate as a dynamic poset where vertices represent pure relational events and history is preserved via monotonic Lamport timestamps.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.1": {
@@ -252,7 +252,7 @@
     "type": "Definition",
     "title": "Causal Graph Substrate",
     "statement": ":::tip[**Mathematical Characterization of the Relational Configuration Space**]\n:::\n\nLet $\\Omega$ denote the universal configuration space of all valid states of the causal graph substrate. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \\subseteq V \\times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \\to \\mathbb{N}$ is a mapping assigning a creation timestamp to each edge.",
-    "plainEnglish": "Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).",
+    "plainEnglish": "Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.2": {
@@ -260,7 +260,7 @@
     "type": "Definition",
     "title": "Abstract Event",
     "statement": ":::tip[**Formal Characterization of Event Vertices as Pre-Geometric Nodes**]\n:::\n\nLet $V = \\{ v_1, v_2, \\ldots, v_N \\}$ be a finite set of vertices, where each element $v \\in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.",
-    "plainEnglish": "Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.",
+    "plainEnglish": "Abstract Event defines the vertex set V where each element represents an structureless pre-geometric event whose identity is determined purely by relations.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.3": {
@@ -268,7 +268,7 @@
     "type": "Definition",
     "title": "Causal Relation",
     "statement": ":::tip[**Formal Characterization of Causal Links as Directed Poset Edges**]\n:::\n\nLet $E \\subseteq V \\times V$ be a set of directed edges, where each ordered pair $e = (u, v) \\in E$ is a **Causal Relation**. An edge $e$ represents an irreducible causal link denoting the direct, unmediated logical proposition that event $u$ precedes and causally influences event $v$. The relation is strictly asymmetric, satisfying:",
-    "plainEnglish": "Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.",
+    "plainEnglish": "Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.4": {
@@ -276,7 +276,7 @@
     "type": "Definition",
     "title": "Creation Timestamp",
     "statement": ":::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]\n:::\n\nLet $H: E \\to \\mathbb{N}$ be a mapping that assigns to each edge $e \\in E$ a creation timestamp $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.",
-    "plainEnglish": "The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.",
+    "plainEnglish": "Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.5": {
@@ -284,7 +284,7 @@
     "type": "Theorem",
     "title": "Monotonicity of History",
     "statement": ":::info[**Strict Monotonicity and Well-Foundedness of Causal Timestamp Sequences**]\n:::\n\nLet $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:",
-    "plainEnglish": "The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.",
+    "plainEnglish": "The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.6": {
@@ -292,7 +292,7 @@
     "type": "Lemma",
     "title": "Irreflexivity of Timestamps",
     "statement": ":::info[**Unsatisfiability of Recursive Timestamp Assignment for Self-Loops**]\n:::\n\nLet $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \\max \\left( \\{H(e') \\mid e' \\in \\text{In}(u)\\} \\cup \\{0\\} \\right)$ is inconsistent and admits no stable timestamp assignment.",
-    "plainEnglish": "Section 1.4.6 formalizes the properties of the QBD lemma regarding irreflexivity of timestamps.",
+    "plainEnglish": "The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the recursive timestamp assignment, logically excluding closed timelike curves of zero radius.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.6.1": {
@@ -308,7 +308,7 @@
     "type": "Lemma",
     "title": "Transitive Causal Monotonicity",
     "statement": ":::info[**Monotonic Timestamp Progression along Directed Causal Chains**]\n:::\n\nLet $\\pi = (v_0, v_1, \\dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \\in E$ for each $i \\in \\{1, \\dots, k\\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:",
-    "plainEnglish": "Section 1.4.7 formalizes the properties of the QBD lemma regarding transitive causal monotonicity.",
+    "plainEnglish": "The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.",
     "file": "01-rules/01-ontology/1.4.md"
   },
   "1.4.7.1": {
@@ -330,9 +330,9 @@
   "1.5": {
     "id": "1.5",
     "type": "Section",
-    "title": "Graph-Theoretic Definitions",
-    "statement": ":::info[**Section 1.5: Graph-Theoretic Definitions**]\nEstablishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.\n:::",
-    "plainEnglish": "Establishes graph-theoretic definitions for fundamental pre-geometric structures, distinguishing between open transitive paths and closed cyclic geometric quanta.",
+    "title": "Task Space",
+    "statement": ":::info[**Section 1.5: Task Space**]\nRestricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.\n:::",
+    "plainEnglish": "Restricts kinematics to a minimalist constructor-theoretic repertoire of edge addition and deletion, preserving microscopic reversibility.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.1": {
@@ -340,7 +340,7 @@
     "type": "Definition",
     "title": "Elementary Task Space",
     "statement": ":::tip[**Mathematical Characterization of the Admissible Transformation Space**]\n:::\n\nLet $\\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\\mathfrak{T}$ is the set of all graph transformations $T: G \\to G'$ where $G' = (V', E', H')$ such that: 1.  **Acyclicity**: $G'$ is a directed acyclic graph. 2.  **Monotonicity of History**: The local sequence of timestamps $H'$ satisfies temporal monotonicity under any edge modification. 3.  **Finite Growth**: There exists a constant $k \\in \\mathbb{N}$ such that $|V'| \\leq |V| + k$ and $|E'| \\leq |E| + k$.",
-    "plainEnglish": "Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).",
+    "plainEnglish": "Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.2": {
@@ -348,7 +348,7 @@
     "type": "Definition",
     "title": "Edge Addition Task",
     "statement": ":::tip[**Formal Specification of the Primitive Edge Insertion Operator**]\n:::\n\nLet $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \\in V$ such that $u \\neq v$ and $(u, v) \\notin E$, the **Edge Addition Task** $\\mathfrak{T}_{add}(u, v)$ is the mapping:",
-    "plainEnglish": "Abstract Event defines the vertex set V where each element represents an structureless pre-geometric event whose identity is determined purely by relations.",
+    "plainEnglish": "Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.3": {
@@ -356,7 +356,7 @@
     "type": "Definition",
     "title": "Edge Deletion Task",
     "statement": ":::tip[**Formal Specification of the Primitive Edge Excision Operator**]\n:::\n\nLet $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \\in E$, the **Edge Deletion Task** $\\mathfrak{T}_{del}(u, v)$ is the mapping:",
-    "plainEnglish": "Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.",
+    "plainEnglish": "Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.4": {
@@ -364,7 +364,7 @@
     "type": "Theorem",
     "title": "Vacuum Repertoire",
     "statement": ":::info[**Sufficiency and Completeness of Primitive Edge Operators**]\n:::\n\nLet $\\mathfrak{T}_{vac} = \\{ \\mathfrak{T}_{add}(u, v), \\mathfrak{T}_{del}(u, v) \\mid u, v \\in V \\}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.",
-    "plainEnglish": "Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.",
+    "plainEnglish": "The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.5": {
@@ -372,7 +372,7 @@
     "type": "Lemma",
     "title": "Relational Vertex Emergence",
     "statement": ":::info[**Subordination of Vertex Existence to Edge Topology**]\n:::\n\nLet $G = (V, E, H)$ be a causal graph, and let $V_{act} = \\{ v \\in V \\mid \\exists u \\in V \\text{ s.t. } (u, v) \\in E \\lor (v, u) \\in E \\}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.",
-    "plainEnglish": "The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.",
+    "plainEnglish": "The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.5.1": {
@@ -388,7 +388,7 @@
     "type": "Lemma",
     "title": "Reversibility of Primitives",
     "statement": ":::info[**Kinematic Reversibility of Edge Operations**]\n:::\n\nFor all primitive tasks $T \\in \\mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \\in \\mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.",
-    "plainEnglish": "The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the recursive timestamp assignment, logically excluding closed timelike curves of zero radius.",
+    "plainEnglish": "The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.5.6.1": {
@@ -404,7 +404,7 @@
     "type": "Proof",
     "title": "Vacuum Repertoire",
     "statement": ":::tip[**Completeness of the Primitive Operators**]\n:::\n\n**I. Characterization of the Target Space**",
-    "plainEnglish": "The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.",
+    "plainEnglish": "Section 1.5.7 formalizes the properties of the QBD proof regarding vacuum repertoire.",
     "file": "01-rules/01-ontology/1.5.md"
   },
   "1.6": {
