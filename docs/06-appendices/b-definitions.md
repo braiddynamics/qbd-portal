@@ -2880,7 +2880,7 @@ Section 4.5.4.1 formalizes the properties of the QBD proof regarding addition pr
 :::tip[**Destructive Operation Proposing Edge Removals**]
 :::
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-**Cycles** <Ref id="2.3.2" label="§2.3.2" /> and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-**Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
 Section 4.5.5 formalizes the properties of the QBD definition regarding deletion mode.
@@ -2916,7 +2916,7 @@ Section 4.5.6.1 formalizes the properties of the QBD proof regarding deletion pr
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **axiomatically compliant graphs** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
 
 **In Plain English:**  
 Section 4.6.1 formalizes the properties of the QBD definition regarding evolution operator.
@@ -3024,7 +3024,7 @@ Section 5.1.2 formalizes the properties of the QBD theorem regarding extensive e
 :::info[**Decay of Geometric Covariance**]
 :::
 
-Assume a causal graph $G$ satisfies the **Bounded Degree condition** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
+Assume a causal graph $G$ satisfies the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
 
 **In Plain English:**  
 Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation decay.
@@ -3384,7 +3384,7 @@ Section 5.4.5 formalizes the properties of the QBD proof regarding vacuum stabil
 :::note[**Lean 4 Encoding of Vacuum Stability via Gradient Order Axiom**]
 :::
 
-Type-theoretic certification of the stability criterion established in the **Gradient Dominance Proof** <Ref id="5.4.5" label="§5.4.5" /> proceeds via the following verification strategy:
+Type-theoretic certification of the stability criterion established in the **Vacuum Stability** <Ref id="5.4.5" label="§5.4.5" /> proceeds via the following verification strategy:
 
 **In Plain English:**  
 Section 5.4.6 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -3624,7 +3624,7 @@ Section 6.1.1 formalizes the properties of the QBD definition regarding local re
 :::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
 :::
 
-The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace (**Quantum Error-Correcting Codespace** <Ref id="3.5.7" label="§3.5.7" />) (denoted $\mathcal{C}$). This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Local Rewrite Rule Theorem** <Ref id="2.7.2" label="§2.7.2" /> (denoted $\mathcal{R}$).
+The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />) (denoted $\mathcal{C}$). This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> (denoted $\mathcal{R}$).
 
 **In Plain English:**  
 Section 6.1.2 formalizes the properties of the QBD theorem regarding particle necessity.
@@ -3636,7 +3636,7 @@ Section 6.1.2 formalizes the properties of the QBD theorem regarding particle ne
 :::info[**Reducibility of topologically trivial subgraphs**]
 :::
 
-Let $\xi \subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\xi(t) = 1$. Then there exists a finite sequence of local rewrite operations $\mathcal{S} = \{r_1, \dots, r_k\} \subset \mathcal{R}$ that constitutes a mapping of $\xi$ into a disjoint union of non-interacting 3-cycles $\coprod_j C_3^{(j)}$ under the invariant conditions of the **Principle: Unique Causality (PUC)** <Ref id="2.3.3" label="§2.3.3" />.
+Let $\xi \subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\xi(t) = 1$. Then there exists a finite sequence of local rewrite operations $\mathcal{S} = \{r_1, \dots, r_k\} \subset \mathcal{R}$ that constitutes a mapping of $\xi$ into a disjoint union of non-interacting 3-cycles $\coprod_j C_3^{(j)}$ under the invariant conditions of the **Principle of Unique Causality (PUC)** <Ref id="2.3.3" label="§2.3.3" />.
 
 **In Plain English:**  
 Section 6.1.3 formalizes the properties of the QBD lemma regarding reducibility of trivial topologies.
@@ -3744,7 +3744,7 @@ Section 6.2.1 formalizes the properties of the QBD definition regarding triparti
 :::info[**Uniqueness of the Prime Three-Ribbon Structure established by Inductive Exclusion**]
 :::
 
-Stable, first-generation elementary fermions are topologically isomorphic to prime, three-ribbon braids, denoted $n=3$, residing within the codespace $\mathcal{C}$ **the generalized stabilizer formulation definition** <Ref id="3.5.1" label="§3.5.1" />. This uniqueness is established by the exhaustive exclusion of all alternative ribbon counts through the following logical filters:
+Stable, first-generation elementary fermions are topologically isomorphic to prime, three-ribbon braids, denoted $n=3$, residing within the codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. This uniqueness is established by the exhaustive exclusion of all alternative ribbon counts through the following logical filters:
 
 **In Plain English:**  
 Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite braid theorem.
@@ -3756,7 +3756,7 @@ Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite 
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 :::
 
-Any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ **catalytic flux relation** <Ref id="5.2.7" label="§5.2.7" />, which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+Any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ **Master Equation** <Ref id="5.2.7" label="§5.2.7" />, which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
 **In Plain English:**  
 Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of unbraided clusters (n=0).
@@ -3852,7 +3852,7 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding analytical 
 :::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
 :::
 
-Quantification of the formation probabilities for higher-order structures established by **analytical exclusion via tqft parsimony proof** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
+Quantification of the formation probabilities for higher-order structures established by **Analytical Exclusion via TQFT Parsimony** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 6.2.6.2 formalizes the properties of the QBD calculation regarding entropic exclusion simulation.
@@ -3864,7 +3864,7 @@ Section 6.2.6.2 formalizes the properties of the QBD calculation regarding entro
 :::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
 :::
 
-The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ **universal constructor** <Ref id="4.5.1" label="§4.5.1" />) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with the **geometric constructibility axiom** <Ref id="2.3.1" label="§2.3.1" /> and the general cycle decomposition in **general cycle decomposition theorem** <Ref id="2.4.1" label="§2.4.1" />, where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
+The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ **universal constructor** <Ref id="4.5.1" label="§4.5.1" />) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with the **Axiom 2: Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and the general cycle decomposition in **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" />, where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
 
 **In Plain English:**  
 Section 6.2.7 formalizes the properties of the QBD proof regarding tripartite braid theorem.
@@ -3900,7 +3900,7 @@ Section 6.3.2 formalizes the properties of the QBD definition regarding torsiona
 :::info[**Proportionality of Inertial Mass to Complexity under Energy-Entropy Equivalence**]
 :::
 
-The **Topological Mass** $m$ of a stable prime braid $\beta$ is defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ **entropic vanishing lemma** <Ref id="6.3.6" label="§6.3.6" />. The functional form is established by the following properties: 1.  **Mass Summation:** The total mass is the sum $m \propto C_C + C_T$. 2.  **Explicit Form:** The mass relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
+The **Topological Mass** $m$ of a stable prime braid $\beta$ is defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />. The functional form is established by the following properties: 1.  **Mass Summation:** The total mass is the sum $m \propto C_C + C_T$. 2.  **Explicit Form:** The mass relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
 
 **In Plain English:**  
 Section 6.3.3 formalizes the properties of the QBD theorem regarding topological mass.
@@ -3960,7 +3960,7 @@ Section 6.3.5.1 formalizes the properties of the QBD proof regarding scaling.
 :::note[**Computational Verification of Quadratic Mass Scaling via Pathfinding Constraints**]
 :::
 
-Verification of the non-linear complexity growth established by **scaling proof** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
+Verification of the non-linear complexity growth established by **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 6.3.5.2 formalizes the properties of the QBD calculation regarding torsional strain simulation.
@@ -4056,7 +4056,7 @@ Section 6.4.3.1 formalizes the properties of the QBD proof regarding local blind
 :::note[**Computational Verification of Operator Blindness via Entropic Drift**]
 :::
 
-Validation of the operational limits established by **local blindness proof** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
+Validation of the operational limits established by **Local Blindness** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 6.4.3.2 formalizes the properties of the QBD calculation regarding horizon simulation.
@@ -4224,7 +4224,7 @@ Section 7.2.2.1 formalizes the properties of the QBD proof regarding binary enco
 :::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]
 :::
 
-The attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints: 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel. 2.  **Locality Constraint:** The **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and the high energy barrier for non-local **connections** <Ref id="6.4.4" label="§6.4.4" /> restrict the second fermion to the immediate neighborhood of $\{u, v\}$. 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$. 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.
+The attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints: 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel. 2.  **Locality Constraint:** The **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" /> and the high energy barrier for non-local **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" /> restrict the second fermion to the immediate neighborhood of $\{u, v\}$. 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$. 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.
 
 **In Plain English:**  
 Section 7.2.3 formalizes the properties of the QBD lemma regarding forbidden occupancy.
@@ -4260,7 +4260,7 @@ Section 7.2.4 formalizes the properties of the QBD proof regarding pauli exclusi
 :::tip[**Formulation of Net Topological Charge using the Writhe Stabilizer**]
 :::
 
-The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ **the generalized stabilizer formulation definition** <Ref id="3.5.1" label="§3.5.1" />. The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications: 1.  **Operator Construction:** The operator is formulated as the linear combination of rung-product Z-operators, defined by the equation $Q = \frac{1}{3} \sum_{i=1}^3 \left( \prod_{e \in \text{rungs}(R_i)} Z_e \right)$. 2.  **Eigenvalue Spectrum:** The operator yields a discrete spectrum of rational eigenvalues derived from the sum of the individual ribbon parities $\lambda_i \in \{+1, -1\}$, where the factor $1/3$ serves as the normalization constant mandated by anomaly **constraints cancellation anomaly<Ref id="7.3.7" label="§7.3.7" />. 3.  **Topological Correspondence:** The expectation value $\langle Q \rangle$ corresponds strictly to the normalized Total Writhe $w(\beta)$ of the braid configuration, mapping geometric torsion to the conserved quantum number of electric charge.
+The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications: 1.  **Operator Construction:** The operator is formulated as the linear combination of rung-product Z-operators, defined by the equation $Q = \frac{1}{3} \sum_{i=1}^3 \left( \prod_{e \in \text{rungs}(R_i)} Z_e \right)$. 2.  **Eigenvalue Spectrum:** The operator yields a discrete spectrum of rational eigenvalues derived from the sum of the individual ribbon parities $\lambda_i \in \{+1, -1\}$, where the factor $1/3$ serves as the normalization constant mandated by anomaly **constraints cancellation anomaly<Ref id="7.3.7" label="§7.3.7" />. 3.  **Topological Correspondence:** The expectation value $\langle Q \rangle$ corresponds strictly to the normalized Total Writhe $w(\beta)$ of the braid configuration, mapping geometric torsion to the conserved quantum number of electric charge.
 
 **In Plain English:**  
 Section 7.3.1 formalizes the properties of the QBD definition regarding charge operator.
@@ -4272,7 +4272,7 @@ Section 7.3.1 formalizes the properties of the QBD definition regarding charge o
 :::info[**Derivation of Quantized Charge from Normalized Writhe Invariants**]
 :::
 
-The electric charge $Q$ of a stable elementary fermion is identical to the topological invariant defined by the normalized total writhe of its braid topology. This emergence is characterized by the following invariant properties: 1.  **Proportionality:** The charge satisfies the linear relation $Q = k \cdot w(\beta)$, where $w(\beta)$ is the integer-valued total writhe and $k=1/3$ is the universal coupling constant. 2.  **Spectrum Partition:** The operator assigns integer charge values $Q \in \{0, \pm 1\}$ exclusively to color-singlet (symmetric) braid configurations, and fractional charge values $Q \in \{-1/3, +2/3\}$ exclusively to color-triplet (asymmetric) braid configurations. 3.  **Conservation Law:** The global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ **the evolution operator definition** <Ref id="4.6.1" label="§4.6.1" />, enforced by the topological barriers against local writhe modification.
+The electric charge $Q$ of a stable elementary fermion is identical to the topological invariant defined by the normalized total writhe of its braid topology. This emergence is characterized by the following invariant properties: 1.  **Proportionality:** The charge satisfies the linear relation $Q = k \cdot w(\beta)$, where $w(\beta)$ is the integer-valued total writhe and $k=1/3$ is the universal coupling constant. 2.  **Spectrum Partition:** The operator assigns integer charge values $Q \in \{0, \pm 1\}$ exclusively to color-singlet (symmetric) braid configurations, and fractional charge values $Q \in \{-1/3, +2/3\}$ exclusively to color-triplet (asymmetric) braid configurations. 3.  **Conservation Law:** The global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, enforced by the topological barriers against local writhe modification.
 
 **In Plain English:**  
 Section 7.3.2 formalizes the properties of the QBD theorem regarding emergence of electric charge.
@@ -4284,7 +4284,7 @@ Section 7.3.2 formalizes the properties of the QBD theorem regarding emergence o
 :::info[**Invariance of Physical Laws under Global Writhe Shifts**]
 :::
 
-The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry** with respect to the absolute value of the total writhe parameter. This symmetry is enforced by the following conditions: 1.  **Local Blindness:** The Universal Constructor $\mathcal{R}$ operates within a bounded causal horizon $R \sim \log N$ **local horizon lemma** <Ref id="6.4.3" label="§6.4.3" />, rendering it incapable of measuring global topological invariants such as the total winding number. 2.  **Shift Invariance:** Consequently, the local transition probabilities are invariant under the global transformation $w \to w + n$, where $n \in \mathbb{Z}$. 3.  **Field Necessity:** The preservation of local causal consistency under independent phase shifts necessitates the existence of a compensating gauge field, identified as the electromagnetic potential $A_\mu$.
+The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry** with respect to the absolute value of the total writhe parameter. This symmetry is enforced by the following conditions: 1.  **Local Blindness:** The Universal Constructor $\mathcal{R}$ operates within a bounded causal horizon $R \sim \log N$ **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, rendering it incapable of measuring global topological invariants such as the total winding number. 2.  **Shift Invariance:** Consequently, the local transition probabilities are invariant under the global transformation $w \to w + n$, where $n \in \mathbb{Z}$. 3.  **Field Necessity:** The preservation of local causal consistency under independent phase shifts necessitates the existence of a compensating gauge field, identified as the electromagnetic potential $A_\mu$.
 
 **In Plain English:**  
 Section 7.3.3 formalizes the properties of the QBD lemma regarding gauge symmetry.
@@ -4308,7 +4308,7 @@ Section 7.3.3.1 formalizes the properties of the QBD proof regarding symmetry ve
 :::info[**Invariance of Writhe Number under Unitary Evolution**]
 :::
 
-The **Total Writhe** $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions: 1.  **Type I Prohibition:** The discrete alteration of writhe ($\Delta w = \pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move. 2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive the **irreflexivity axiom** <Ref id="2.1.1" label="§2.1.1" /> and the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" />. 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
+The **Total Writhe** $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions: 1.  **Type I Prohibition:** The discrete alteration of writhe ($\Delta w = \pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move. 2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the **Principle of Unique Causality** <Ref id="2.3.3" label="§2.3.3" />. 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
 
 **In Plain English:**  
 Section 7.3.4 formalizes the properties of the QBD lemma regarding conservation of total writhe.
@@ -4560,7 +4560,7 @@ Section 8.1.2 formalizes the properties of the QBD lemma regarding braid group i
 :::tip[**Formal Verification of Surjectivity, Injectivity, and Homomorphism for Rewrite Sequences**]
 :::
 
-The proof explicitly constructs the isomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ by systematically verifying surjectivity, injectivity, and the homomorphism property within the category of annotated causal graphs $\mathbf{AnnCG}$ **the annotated category (anncg) definition** <Ref id="4.3.1" label="§4.3.1" />, ensuring that the mapping respects the syndrome annotations and timestamp monotonicity defined in the axioms.
+The proof explicitly constructs the isomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ by systematically verifying surjectivity, injectivity, and the homomorphism property within the category of annotated causal graphs $\mathbf{AnnCG}$ **Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />, ensuring that the mapping respects the syndrome annotations and timestamp monotonicity defined in the axioms.
 
 **In Plain English:**  
 Section 8.1.2.1 formalizes the properties of the QBD proof regarding verification of isomorphism.
@@ -4764,7 +4764,7 @@ Section 8.2.6 formalizes the properties of the QBD lemma regarding ensemble clos
 :::tip[**Derivation of Near-Unity Closure Probability in the Equilibrium Limit**]
 :::
 
-**I. Stochastic Evolution Model** The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **the evolution operator definition** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **the born rule theorem** <Ref id="4.6.2" label="§4.6.2" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
+**I. Stochastic Evolution Model** The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **Born Rule** <Ref id="4.6.2" label="§4.6.2" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
 
 **In Plain English:**  
 Section 8.2.6.1 formalizes the properties of the QBD proof regarding closure probability.
@@ -4776,7 +4776,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding closure pro
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **closure probability proof** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Closure Probability** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 8.2.6.2 formalizes the properties of the QBD calculation regarding su(3) closure simulation.
@@ -4812,7 +4812,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding linear pote
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **linear potential and berry phase proof** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Linear Potential and Berry Phase** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 8.2.7.2 formalizes the properties of the QBD calculation regarding flux tube phase simulation.
@@ -4824,7 +4824,7 @@ Section 8.2.7.2 formalizes the properties of the QBD calculation regarding flux 
 :::tip[**Formal Proof of the Isomorphism between Tripartite Dynamics and Color Symmetry**]
 :::
 
-**I. Application of the Generator Principle** Every unitary rewrite $\mathcal{R}_i$ is generated by a unique Hermitian $\hat{H}_i$ via $\mathcal{R}_i = e^{i \hat{H}_i t}$ **lie algebra generator theorem** <Ref id="8.1.1" label="§8.1.1" />. For $n=3$, the two generators $\hat{H}_1, \hat{H}_2$ suffice, as the braid path connectivity ensures full spanning (diameter $n-1=2$).
+**I. Application of the Generator Principle** Every unitary rewrite $\mathcal{R}_i$ is generated by a unique Hermitian $\hat{H}_i$ via $\mathcal{R}_i = e^{i \hat{H}_i t}$ **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />. For $n=3$, the two generators $\hat{H}_1, \hat{H}_2$ suffice, as the braid path connectivity ensures full spanning (diameter $n-1=2$).
 
 **In Plain English:**  
 Section 8.2.8 formalizes the properties of the QBD proof regarding emergence of su(3) from b3.
@@ -4860,7 +4860,7 @@ Section 8.3.2 formalizes the properties of the QBD theorem regarding chiral symm
 :::info[**Verification of Invariant Persistence under Local Transformations**]
 :::
 
-The value of the chiral invariant $\chi(\mathcal{R}_W)$ is stable against all local graph transformations that preserve the causal order. This stability is enforced by the following invariants: 1.  **Functorial Preservation:** The evolution of the graph constitutes a functor in the History Category $\mathbf{Hist}$ **Categorical Ties To Prior Foundations** <Ref id="4.1.2" label="§4.1.2" />,preserves the partial ordering of edges $e_a \le e_b$ under all valid morphisms. 2.  **Sign Invariance:** Consequently, while local deformations may rescale the magnitude of the timestamp difference $\Delta H$, the signum $\operatorname{sgn}(\Delta H)$ remains invariant, locking the chirality of the process. 3.  **Topological Locking:** The effective influence relation $\le$ ensures that the minimal mediated path remains the geodesic, preventing the spontaneous inversion of handedness without a violation of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+The value of the chiral invariant $\chi(\mathcal{R}_W)$ is stable against all local graph transformations that preserve the causal order. This stability is enforced by the following invariants: 1.  **Functorial Preservation:** The evolution of the graph constitutes a functor in the History Category $\mathbf{Hist}$ **Historical Category** <Ref id="4.1.2" label="§4.1.2" />,preserves the partial ordering of edges $e_a \le e_b$ under all valid morphisms. 2.  **Sign Invariance:** Consequently, while local deformations may rescale the magnitude of the timestamp difference $\Delta H$, the signum $\operatorname{sgn}(\Delta H)$ remains invariant, locking the chirality of the process. 3.  **Topological Locking:** The effective influence relation $\le$ ensures that the minimal mediated path remains the geodesic, preventing the spontaneous inversion of handedness without a violation of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 **In Plain English:**  
 Section 8.3.3 formalizes the properties of the QBD lemma regarding chiral stability.
@@ -5064,7 +5064,7 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding topological c
 :::tip[**Analysis of Minimal Vertex Requirements for Doublet Transformations**]
 :::
 
-**I. The SU(2) Interaction ($p_3$)** The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$). 1.  **Action:** It transforms one basis state of the doublet into the other. 2.  **Minimal Topology:** As proven in the **weak doublet algebra lemma** <Ref id="8.3.4" label="§8.3.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid. 3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot). 4.  **Conclusion:** The generator of $SU(2)$ maps to the class of 3-cycle rewrites. $P(\mathcal{R}_{SU2}) = p_3$.
+**I. The SU(2) Interaction ($p_3$)** The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$). 1.  **Action:** It transforms one basis state of the doublet into the other. 2.  **Minimal Topology:** As proven in the **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid. 3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot). 4.  **Conclusion:** The generator of $SU(2)$ maps to the class of 3-cycle rewrites. $P(\mathcal{R}_{SU2}) = p_3$.
 
 **In Plain English:**  
 Section 8.4.4.1 formalizes the properties of the QBD proof regarding generator topology.
@@ -5088,7 +5088,7 @@ Section 8.4.5 formalizes the properties of the QBD proof regarding ratio constru
 :::info[**Derivation of the Weak Constant from Vacuum Parameters**]
 :::
 
-The $SU(2)_L$ gauge coupling constant, denoted $g$, is a derived quantity determined strictly by the geometric saturation of the vacuum equilibrium state. The value of $g$ corresponds to the square root of the probability density for a flavor-changing rewrite event $\mathcal{R}_W$ **twist anticommutation lemma** <Ref id="7.1.3" label="§7.1.3" />, subject to the following constitutive relation:
+The $SU(2)_L$ gauge coupling constant, denoted $g$, is a derived quantity determined strictly by the geometric saturation of the vacuum equilibrium state. The value of $g$ corresponds to the square root of the probability density for a flavor-changing rewrite event $\mathcal{R}_W$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />, subject to the following constitutive relation:
 
 **In Plain English:**  
 Section 8.5.1 formalizes the properties of the QBD theorem regarding emergent gauge coupling.
@@ -5208,7 +5208,7 @@ Section 8.5.6 formalizes the properties of the QBD lemma regarding local state s
 :::tip[**Combinatorial Enumeration of Valid Interaction Channels on a 3-Cycle**]
 :::
 
-**I. Channel Decomposition** To determine the multiplicity factor $M$ for the interaction probability, the number of distinct, valid rewrite channels on a fundamental 3-cycle must be counted. 1.  **Orientations (3):** The directed 3-cycle $\gamma$ has 3 edges. Each edge can serve as the "active" rung for the half-twist operator $\hat{\mathcal{T}}$ **twist anticommutation lemma** <Ref id="7.1.3" label="§7.1.3" />. This yields 3 spatial channels. 2.  **Doublet States (2):** The interaction acts on the $SU(2)$ doublet. The rewrite can initiate from either the Left-handed or Right-handed chirality state (prior to projection). This yields a factor of 2 for the internal state degrees of freedom. 3.  **Spin Stabilizer (+1):** The global spin parity check $L_S = \prod Z_{e_i} = +1$ **spin operator definition** <Ref id="7.1.1" label="§7.1.1" /> adds a single constraint channel that must be satisfied, effectively contributing one unit of weight to the coherent sum in the path integral.
+**I. Channel Decomposition** To determine the multiplicity factor $M$ for the interaction probability, the number of distinct, valid rewrite channels on a fundamental 3-cycle must be counted. 1.  **Orientations (3):** The directed 3-cycle $\gamma$ has 3 edges. Each edge can serve as the "active" rung for the half-twist operator $\hat{\mathcal{T}}$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />. This yields 3 spatial channels. 2.  **Doublet States (2):** The interaction acts on the $SU(2)$ doublet. The rewrite can initiate from either the Left-handed or Right-handed chirality state (prior to projection). This yields a factor of 2 for the internal state degrees of freedom. 3.  **Spin Stabilizer (+1):** The global spin parity check $L_S = \prod Z_{e_i} = +1$ **Spin Operator** <Ref id="7.1.1" label="§7.1.1" /> adds a single constraint channel that must be satisfied, effectively contributing one unit of weight to the coherent sum in the path integral.
 
 **In Plain English:**  
 Section 8.5.6.1 formalizes the properties of the QBD proof regarding degree counting.
@@ -5220,7 +5220,7 @@ Section 8.5.6.1 formalizes the properties of the QBD proof regarding degree coun
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **degree counting proof** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Degree Counting** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 8.5.6.2 formalizes the properties of the QBD calculation regarding su(2) dof verification.
@@ -5232,7 +5232,7 @@ Section 8.5.6.2 formalizes the properties of the QBD calculation regarding su(2)
 :::tip[**Formal Synthesis of Factors into the Analytical Expression for $g$**]
 :::
 
-**I. Component Assembly** The proof synthesizes the results of the preceding lemmas to derive the value of the weak coupling constant $g$. 1.  **Identity:** $g = \sqrt{P(\mathcal{R}_W)}$ (the **probabilistic identity lemma** <Ref id="8.5.2" label="§8.5.2" />). 2.  **Probability Definition:** The probability $P$ is the product of the geometric volume, the topological weight, and the active site density.
+**I. Component Assembly** The proof synthesizes the results of the preceding lemmas to derive the value of the weak coupling constant $g$. 1.  **Identity:** $g = \sqrt{P(\mathcal{R}_W)}$ (the **Probabilistic Coupling Identity** <Ref id="8.5.2" label="§8.5.2" />). 2.  **Probability Definition:** The probability $P$ is the product of the geometric volume, the topological weight, and the active site density.
 
 **In Plain English:**  
 Section 8.5.7 formalizes the properties of the QBD proof regarding synthesis of the coupling constant.
@@ -5244,7 +5244,7 @@ Section 8.5.7 formalizes the properties of the QBD proof regarding synthesis of 
 :::note[**Computational Verification of the Predicted Coupling against Experimental Data**]
 :::
 
-Validation of the analytical coupling derivation established in the **coupling strength synthesis proof** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
+Validation of the analytical coupling derivation established in the **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 8.5.7.1 formalizes the properties of the QBD calculation regarding numerical consistency check.
@@ -5316,7 +5316,7 @@ Section 8.6.4 formalizes the properties of the QBD lemma regarding dimensionful 
 :::tip[**Derivation of the 246 GeV Scale from Local Density of States**]
 :::
 
-Extensive entropy $S = c N$ **extensive entropy theorem** <Ref id="5.1.2" label="§5.1.2" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **correlation decay lemma** <Ref id="5.5.5" label="§5.5.5" />. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **the topological mass functional theorem** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **thermodynamic equivalence lemma** <Ref id="7.4.3" label="§7.4.3" />.
+Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.2" label="§5.1.2" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />.
 
 **In Plain English:**  
 Section 8.6.4.1 formalizes the properties of the QBD proof regarding scaling logic.
@@ -5352,7 +5352,7 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding yukawa rati
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **yukawa ratio verification proof** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Yukawa Ratio Verification** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 8.6.5.2 formalizes the properties of the QBD calculation regarding yukawa hierarchy verification.
@@ -5436,7 +5436,7 @@ Section 9.1.2.1 formalizes the properties of the QBD proof regarding subgroup ra
 :::info[**Systematic Elimination of Simple Lie Groups with Insufficient Rank**]
 :::
 
-The set of all simple Lie groups possessing a rank $r$ strictly less than 4, specifically the set $\{A_1, A_2, B_2, G_2, A_3, B_3, C_3\}$, is categorically excluded from the domain of viable Grand Unified Theory candidates. This exclusion is absolute and is predicated upon the failure of said groups to simultaneously satisfy the rank condition established in the **rank conditions lemma** <Ref id="9.1.2" label="§9.1.2" /> and the requirement to furnish representations whose dimensions match the observed multiplicities of the Standard Model fermion multiplets.
+The set of all simple Lie groups possessing a rank $r$ strictly less than 4, specifically the set $\{A_1, A_2, B_2, G_2, A_3, B_3, C_3\}$, is categorically excluded from the domain of viable Grand Unified Theory candidates. This exclusion is absolute and is predicated upon the failure of said groups to simultaneously satisfy the rank condition established in the **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" /> and the requirement to furnish representations whose dimensions match the observed multiplicities of the Standard Model fermion multiplets.
 
 **In Plain English:**  
 Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank exclusion.
@@ -5496,7 +5496,7 @@ Section 9.1.5 formalizes the properties of the QBD proof regarding uniqueness ve
 :::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
 :::
 
-Verification of the anomaly freedom condition established in the **uniqueness verification proof** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
+Verification of the anomaly freedom condition established in the **Uniqueness Verification** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 9.1.5.1 formalizes the properties of the QBD calculation regarding anomaly check verification.
@@ -5604,7 +5604,7 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding isomorphism
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **isomorphism verification proof** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Isomorphism Verification** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 9.2.5.2 formalizes the properties of the QBD calculation regarding su(5) closure simulation.
@@ -5832,7 +5832,7 @@ Section 9.4.4 formalizes the properties of the QBD lemma regarding fragmentation
 :::tip[**Demonstration of Energetic Favorability for Symmetry Breaking Transitions**]
 :::
 
-**I. Complexity Functional Definition** The topological complexity $C_{total}$ is defined as the weighted sum of crossings, writhe, and **numbers linking** <Ref id="7.4.4" label="§7.4.4" />:
+**I. Complexity Functional Definition** The topological complexity $C_{total}$ is defined as the weighted sum of crossings, writhe, and **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />:
 
 **In Plain English:**  
 Section 9.4.4.1 formalizes the properties of the QBD proof regarding complexity reduction verification.
@@ -5892,7 +5892,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding decay rate 
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Decay Rate Calculation Proof** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Decay Rate Calculation** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 9.5.2.2 formalizes the properties of the QBD calculation regarding eft rate calculation.
@@ -6048,7 +6048,7 @@ Section 9.6.5 formalizes the properties of the QBD lemma regarding complexity de
 :::tip[**Derivation of Stress Scaling within Fixed Particle Volumes**]
 :::
 
-**I. Volume Constraint** A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ **conflict resolution lemma** <Ref id="3.3.5" label="§3.3.5" />. For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
+**I. Volume Constraint** A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />. For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
 
 **In Plain English:**  
 Section 9.6.5.1 formalizes the properties of the QBD proof regarding density increase verification.
@@ -6072,7 +6072,7 @@ Section 9.6.6 formalizes the properties of the QBD lemma regarding friction supp
 :::tip[**Demonstration of Instability Onset at Critical Complexity**]
 :::
 
-**I. Maintenance Dynamics** The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it. * **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **the addition probability theorem** <Ref id="4.5.4" label="§4.5.4" />.
+**I. Maintenance Dynamics** The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it. * **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
 
 **In Plain English:**  
 Section 9.6.6.1 formalizes the properties of the QBD proof regarding maintenance halt verification.
@@ -6120,7 +6120,7 @@ Section 9.6.8 formalizes the properties of the QBD lemma regarding planck anchor
 :::tip[**Derivation of $M_R$ from Critical Complexity and Planck Units**]
 :::
 
-**I. Mass-Complexity Relation** The mass of the heavy neutrino $M_R$ is proportional to its critical topological complexity $N_{3,\max}$ **crossing scaling lemma** <Ref id="7.4.4" label="§7.4.4" />.
+**I. Mass-Complexity Relation** The mass of the heavy neutrino $M_R$ is proportional to its critical topological complexity $N_{3,\max}$ **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />.
 
 **In Plain English:**  
 Section 9.6.8.1 formalizes the properties of the QBD proof regarding scaling verification.
@@ -6144,7 +6144,7 @@ Section 9.6.9 formalizes the properties of the QBD proof regarding neutrino mass
 :::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
 :::
 
-Verification of the seesaw hierarchy established in the **neutrino mass chain proof** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+Verification of the seesaw hierarchy established in the **Neutrino Mass Demonstration** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 9.6.9.1 formalizes the properties of the QBD calculation regarding neutrino mass prediction.
@@ -6468,7 +6468,7 @@ Section 10.2.9 formalizes the properties of the QBD proof regarding synthesis of
 :::note[**Computational Verification of Stabilizer Commutation Relations**]
 :::
 
-Verification of the abelian structure of the stabilizer group established in the **code consistency proof** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
+Verification of the abelian structure of the stabilizer group established in the **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 10.2.9.1 formalizes the properties of the QBD calculation regarding stabilizer commutativity verification.
@@ -6540,7 +6540,7 @@ Section 10.3.4 formalizes the properties of the QBD lemma regarding minimum weig
 :::tip[**Exhaustive Enumeration of Low-Weight Operators**]
 :::
 
-**I. Weight-1 Errors** As proven in the **syndrome response lemma** <Ref id="10.3.3" label="§10.3.3" />, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
+**I. Weight-1 Errors** As proven in the **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
 
 **In Plain English:**  
 Section 10.3.4.1 formalizes the properties of the QBD proof regarding weight analysis.
@@ -6648,7 +6648,7 @@ Section 10.4.4 formalizes the properties of the QBD lemma regarding charge conse
 :::tip[**Formal Derivation via the Topological Charge Operator**]
 :::
 
-**I. Charge Operator Definition** The electric charge operator $\hat{Q}$ is proportional to the total writhe operator $\hat{W}$, with the coupling constant $k=1/3$ derived from the **model preon** <Ref id="7.3.4" label="§7.3.4" />.
+**I. Charge Operator Definition** The electric charge operator $\hat{Q}$ is proportional to the total writhe operator $\hat{W}$, with the coupling constant $k=1/3$ derived from the **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" />.
 
 **In Plain English:**  
 Section 10.4.4.1 formalizes the properties of the QBD proof regarding charge invariance verification.
@@ -6696,7 +6696,7 @@ Section 10.5.2 formalizes the properties of the QBD lemma regarding singlet tran
 :::tip[**Formal Derivation of Vanishing Coupling Amplitude**]
 :::
 
-**I. State Representation** The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$. As proven in the **topological distinctness lemma** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
+**I. State Representation** The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
 
 **In Plain English:**  
 Section 10.5.2.1 formalizes the properties of the QBD proof regarding trivial representation analysis.
@@ -6816,7 +6816,7 @@ Section 10.6.4 formalizes the properties of the QBD proof regarding hadamard gat
 :::note[**Computational Verification of Superposition Trapping via Lindblad Dynamics**]
 :::
 
-Verification of the thermodynamic mixing mechanism established in the **coherent quench proof** <Ref id="10.6.4" label="§10.6.4" /> is based on the following protocols:
+Verification of the thermodynamic mixing mechanism established in the **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 10.6.4.1 formalizes the properties of the QBD calculation regarding hadamard quench verification.
@@ -6876,7 +6876,7 @@ Section 10.7.3 formalizes the properties of the QBD lemma regarding control dyna
 :::tip[**Verification of Catalytic Enhancement for the $|1_L\rangle$ State**]
 :::
 
-**I. Friction Function** The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **the addition probability theorem** <Ref id="4.5.4" label="§4.5.4" />. For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost). Thus, $P_{acc} \approx f(\sigma_{eff})$.
+**I. Friction Function** The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />. For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost). Thus, $P_{acc} \approx f(\sigma_{eff})$.
 
 **In Plain English:**  
 Section 10.7.3.1 formalizes the properties of the QBD proof regarding conditional friction verification.
@@ -6900,7 +6900,7 @@ Section 10.7.4 formalizes the properties of the QBD proof regarding controlled-z
 :::tip[**Composite Rewrite Process for Loop Nucleation and Self-Braiding**]
 :::
 
-The **T-Gate Process**, denoted $\mathcal{R}_T$, is defined as a composite sequence of PUC-compliant rewrites that is constituted by three mandatory topological phases: 1.  **Loop Nucleation:** A rewrite process that nucleates a temporary, closed 3-cycle loop adjacent to the target braid, adhering to the **geometric constructibility axiom** <Ref id="2.3.1" label="§2.3.1" /> by forming irreducible geometric quanta. 2.  **Self-Braiding:** A topological transport phase where the loop encircles a single strand of the target ribbon and passes through the framing, realizing a geometric half-Dehn twist. 3.  **Loop Annihilation:** An inverse rewrite process that de-allocates the temporary loop, returning the graph to vacuum while retaining the accumulated geometric phase on the target qubit.
+The **T-Gate Process**, denoted $\mathcal{R}_T$, is defined as a composite sequence of PUC-compliant rewrites that is constituted by three mandatory topological phases: 1.  **Loop Nucleation:** A rewrite process that nucleates a temporary, closed 3-cycle loop adjacent to the target braid, adhering to the **Axiom 2: Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> by forming irreducible geometric quanta. 2.  **Self-Braiding:** A topological transport phase where the loop encircles a single strand of the target ribbon and passes through the framing, realizing a geometric half-Dehn twist. 3.  **Loop Annihilation:** An inverse rewrite process that de-allocates the temporary loop, returning the graph to vacuum while retaining the accumulated geometric phase on the target qubit.
 
 **In Plain English:**  
 Section 10.8.1 formalizes the properties of the QBD definition regarding rewrite process.
@@ -7032,7 +7032,7 @@ Section 10.8.7 formalizes the properties of the QBD lemma regarding twist struct
 :::tip[**Verification of Twist Axioms and Phase Induction**]
 :::
 
-**I. Twist Morphism** The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$). This introduces a full twist ($360^\circ$) to the framing of the ribbons. The operator anticommutes with the specific link stabilizer $L_S$ **twist anticommutation lemma** <Ref id="7.1.3" label="§7.1.3" />, enforcing non-trivial phase accumulation.
+**I. Twist Morphism** The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$). This introduces a full twist ($360^\circ$) to the framing of the ribbons. The operator anticommutes with the specific link stabilizer $L_S$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />, enforcing non-trivial phase accumulation.
 
 **In Plain English:**  
 Section 10.8.7.1 formalizes the properties of the QBD proof regarding twist verification.
@@ -7056,7 +7056,7 @@ Section 10.8.8 formalizes the properties of the QBD proof regarding t-gate.
 :::note[**Computational Verification of State-Dependent Geometric Phase**]
 :::
 
-Verification of the non-Clifford phase accumulation established in the **gate action proof** <Ref id="10.8.8" label="§10.8.8" /> is based on the following protocols:
+Verification of the non-Clifford phase accumulation established in the **T-Gate** <Ref id="10.8.8" label="§10.8.8" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 10.8.8.1 formalizes the properties of the QBD calculation regarding t-gate phase verification.
@@ -7356,7 +7356,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Causal Boundary** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 11.2.7.2 formalizes the properties of the QBD calculation regarding compensation verification.
@@ -7416,7 +7416,7 @@ Section 11.3.3 formalizes the properties of the QBD lemma regarding measure dilu
 :::tip[**Formal Derivation of Shared Mass Existence from Neighborhood Cardinalities**]
 :::
 
-The proof proceeds by explicitly constructing the neighborhood sets and applying the **"Tilt" of Time** <Ref id="11.2.1" label="§11.2.1" /> to the pre-nucleation graph $G_0$ and the post-nucleation graph $G_1$. Let $\alpha, \beta$ be the fixed parameters of the measure, strictly positive (specifically $\alpha=\beta=1/3$).
+The proof proceeds by explicitly constructing the neighborhood sets and applying the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> to the pre-nucleation graph $G_0$ and the post-nucleation graph $G_1$. Let $\alpha, \beta$ be the fixed parameters of the measure, strictly positive (specifically $\alpha=\beta=1/3$).
 
 **In Plain English:**  
 Section 11.3.3.1 formalizes the properties of the QBD proof regarding mass redistribution.
@@ -7512,7 +7512,7 @@ Section 11.3.7.1 formalizes the properties of the QBD proof regarding localized 
 :::note[**Verification of Curvature Monotonicity via Graph Augmentation and Linear Programming**]
 :::
 
-Verification of the curvature monotonicity and scaling laws established by **Monotonicity Theorem Proof** <Ref id="11.3.7.1" label="§11.3.7.1" /> is based on the following protocols:
+Verification of the curvature monotonicity and scaling laws established by **Localized Variation** <Ref id="11.3.7.1" label="§11.3.7.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 11.3.7.3 formalizes the properties of the QBD calculation regarding monotonicity verification.
@@ -7536,7 +7536,7 @@ Section 12.1.1 formalizes the properties of the QBD definition regarding discret
 :::info[**Derivation of the Local Conservation Law establishing the Mandatory Vanishing of Net Informational Flux Divergence at Homeostatic Equilibrium**]
 :::
 
-The discrete stress-energy tensor $T_{ab}$ **stress-energy tensor definition** <Ref id="12.1.1" label="§12.1.1" /> exhibits strict local conservation at the homeostatic fixed point of the Quantum Braid Dynamics evolution. For every vertex $a \in V_t$ within the causal graph $G_t$, the net outgoing probability flux across the 1-hop neighborhood $N(a)$ vanishes:
+The discrete stress-energy tensor $T_{ab}$ **Discrete Stress-Energy Tensor** <Ref id="12.1.1" label="§12.1.1" /> exhibits strict local conservation at the homeostatic fixed point of the Quantum Braid Dynamics evolution. For every vertex $a \in V_t$ within the causal graph $G_t$, the net outgoing probability flux across the 1-hop neighborhood $N(a)$ vanishes:
 
 **In Plain English:**  
 Section 12.1.2 formalizes the properties of the QBD theorem regarding conservation of complexity flux.
@@ -7620,7 +7620,7 @@ Section 12.1.5.1 formalizes the properties of the QBD calculation regarding flux
 :::tip[**Specification of the Discrete Geometric Tensor as the Trace-Reversed Normalization of Causal Ollivier-Ricci Curvature**]
 :::
 
-The **Discrete Einstein Tensor**, denoted $\mathcal{G}_{ab}$, is defined as the scalar geometric invariant quantifying the local curvature response of the manifold for every ordered pair of vertices $(a,b)$ within the causal graph $G_t = (V_t, E_t, H_t)$. The tensor is constituted by the following structural components: 1.  **Curvature Mapping:** For any realized directed edge $(a,b) \in E_t$, the tensor adopts the value $\mathcal{G}_{ab} = \frac{1}{2} K(a,b)$, where $K(a,b)$ denotes the Causal Ollivier-Ricci curvature derived from the Wasserstein transport distance between the lazy causal measures $\mu_a$ and $\mu_b$ **lazy causal measure definition** <Ref id="11.2.1" label="§11.2.1" />. 2.  **Trace Normalization:** The prefactor of $\frac{1}{2}$ aligns the discrete scalar with the trace-reversed formulation of the continuum Einstein tensor, ensuring that the contraction of the tensor over the local neighborhood recovers the discrete scalar curvature density $R_{\text{disc}}(a) = 2 \mathcal{G}_{aa} = \sum_{b \in N(a)} K(a,b)$. 3.  **Vacuum Extension:** The domain of the tensor extends to the set of potential edges $(a,b) \notin E_t$ satisfying the undirected distance constraint $\bar{d}(a,b) > 2$ **undirected metric definition** <Ref id="11.1.2" label="§11.1.2" /> through the assignment $\mathcal{G}_{ab} = \frac{1}{2}(1 - W_1(\mu_a, \mu_b))$, which quantifies the geometric potential of the acausal vacuum. 4.  **Causal Antisymmetry:** The tensor field satisfies the strict antisymmetry condition $\mathcal{G}_{ba} = -\mathcal{G}_{ab}$ for all pairs, inherited from the directional asymmetry of the transport cost under time reversal **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, thereby encoding the causal orientation of the underlying spacetime foliation.
+The **Discrete Einstein Tensor**, denoted $\mathcal{G}_{ab}$, is defined as the scalar geometric invariant quantifying the local curvature response of the manifold for every ordered pair of vertices $(a,b)$ within the causal graph $G_t = (V_t, E_t, H_t)$. The tensor is constituted by the following structural components: 1.  **Curvature Mapping:** For any realized directed edge $(a,b) \in E_t$, the tensor adopts the value $\mathcal{G}_{ab} = \frac{1}{2} K(a,b)$, where $K(a,b)$ denotes the Causal Ollivier-Ricci curvature derived from the Wasserstein transport distance between the lazy causal measures $\mu_a$ and $\mu_b$ **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />. 2.  **Trace Normalization:** The prefactor of $\frac{1}{2}$ aligns the discrete scalar with the trace-reversed formulation of the continuum Einstein tensor, ensuring that the contraction of the tensor over the local neighborhood recovers the discrete scalar curvature density $R_{\text{disc}}(a) = 2 \mathcal{G}_{aa} = \sum_{b \in N(a)} K(a,b)$. 3.  **Vacuum Extension:** The domain of the tensor extends to the set of potential edges $(a,b) \notin E_t$ satisfying the undirected distance constraint $\bar{d}(a,b) > 2$ **Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" /> through the assignment $\mathcal{G}_{ab} = \frac{1}{2}(1 - W_1(\mu_a, \mu_b))$, which quantifies the geometric potential of the acausal vacuum. 4.  **Causal Antisymmetry:** The tensor field satisfies the strict antisymmetry condition $\mathcal{G}_{ba} = -\mathcal{G}_{ab}$ for all pairs, inherited from the directional asymmetry of the transport cost under time reversal **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, thereby encoding the causal orientation of the underlying spacetime foliation.
 
 **In Plain English:**  
 Section 12.2.1 formalizes the properties of the QBD definition regarding discrete einstein tensor.
@@ -7632,7 +7632,7 @@ Section 12.2.1 formalizes the properties of the QBD definition regarding discret
 :::info[**Formal Establishment of the Linear Proportionality between the Discrete Einstein Tensor and the Stress-Energy Tensor at Homeostatic Fixed Point**]
 :::
 
-The geometric evolution of the causal graph at the homeostatic fixed point is governed by the **Discrete Einstein Field Equations**, defined by the linear constitutive relation $\mathcal{G}_{ab} = \kappa \cdot T_{ab}$ for all potential directed edges $(a,b) \in E_t$. This relation enforces a strict local proportionality between the **Discrete Einstein Tensor** <Ref id="12.2.1" label="§12.2.1" /> (denoted $\mathcal{G}_{ab}$) and the **Stress-Energy Tensor** <Ref id="12.1.1" label="§12.1.1" /> (denoted $T_{ab}$), mediated by the gravitational coupling constant $\kappa > 0$. The validity of this equation is established by the simultaneous satisfaction of the following physical constraints: 1.  **Stationary Action:** The equilibrium state minimizes the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to local topological perturbations, implying that the geometric response $\delta \mathcal{G}$ must strictly balance the informational flux $\delta T$. 2.  **Local Conservation:** The divergence-free property of the stress-energy tensor $\sum_b T_{ab} = 0$ **Flux Separation (Detailed Balance)** <Ref id="12.1.4" label="§12.1.4" /> necessitates a matching conservation law for the curvature tensor, satisfied only by the linear mapping $\mathcal{G} \propto T$ in the absence of higher-order curvature corrections. 3.  **Continuum Convergence:** The discrete equation converges in the thermodynamic limit $N \to \infty$ to the continuum Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ **Tensorial Continuum Limit** <Ref id="13.2.2" label="§13.2.2" />, ensuring the recovery of General Relativity as the effective field theory of the causal graph.
+The geometric evolution of the causal graph at the homeostatic fixed point is governed by the **Discrete Einstein Field Equations**, defined by the linear constitutive relation $\mathcal{G}_{ab} = \kappa \cdot T_{ab}$ for all potential directed edges $(a,b) \in E_t$. This relation enforces a strict local proportionality between the **Discrete Einstein Tensor** <Ref id="12.2.1" label="§12.2.1" /> (denoted $\mathcal{G}_{ab}$) and the **Discrete Stress-Energy Tensor** <Ref id="12.1.1" label="§12.1.1" /> (denoted $T_{ab}$), mediated by the gravitational coupling constant $\kappa > 0$. The validity of this equation is established by the simultaneous satisfaction of the following physical constraints: 1.  **Stationary Action:** The equilibrium state minimizes the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to local topological perturbations, implying that the geometric response $\delta \mathcal{G}$ must strictly balance the informational flux $\delta T$. 2.  **Local Conservation:** The divergence-free property of the stress-energy tensor $\sum_b T_{ab} = 0$ **Flux Separation (Detailed Balance)** <Ref id="12.1.4" label="§12.1.4" /> necessitates a matching conservation law for the curvature tensor, satisfied only by the linear mapping $\mathcal{G} \propto T$ in the absence of higher-order curvature corrections. 3.  **Continuum Convergence:** The discrete equation converges in the thermodynamic limit $N \to \infty$ to the continuum Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ **Tensorial Continuum Limit** <Ref id="13.2.2" label="§13.2.2" />, ensuring the recovery of General Relativity as the effective field theory of the causal graph.
 
 **In Plain English:**  
 Gravity is not a fundamental force but rather an entropic force arising from information changes on holographic screens, yielding the Einstein Field Equations.
@@ -7644,7 +7644,7 @@ Gravity is not a fundamental force but rather an entropic force arising from inf
 :::info[**Equivalence of Homeostatic Equilibrium and Stationary Action under Topological Variation**]
 :::
 
-The condition of homeostatic equilibrium $\frac{d\rho}{dt} = 0$ defined by the Master Equation **equilibrium fixed point** <Ref id="5.4.1" label="§5.4.1" /> is mathematically equivalent to the principle of stationary action $\delta \mathcal{S}[G] = 0$ applied to the discrete Einstein-Hilbert action. This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
+The condition of homeostatic equilibrium $\frac{d\rho}{dt} = 0$ defined by the Master Equation **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" /> is mathematically equivalent to the principle of stationary action $\delta \mathcal{S}[G] = 0$ applied to the discrete Einstein-Hilbert action. This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
 
 **In Plain English:**  
 Section 12.2.3 formalizes the properties of the QBD lemma regarding variational action principle.
@@ -7692,7 +7692,7 @@ Section 12.2.4.1 formalizes the properties of the QBD proof regarding thermodyna
 :::info[**Derivation of the Discrete Coupling Constant as a Functional Dependency of the Emergent Discreteness Scale and Correlation Length**]
 :::
 
-The discrete gravitational coupling constant $\kappa$, which mediates the interaction in the field equation $\mathcal{G}_{ab} = \kappa T_{ab}$, constitutes a derived quantity determined by the emergent geometric scales of the homeostatic fixed point **equilibrium fixed point** <Ref id="5.4.1" label="§5.4.1" />. Specifically, the coupling strength is defined by the ratio of the squared fundamental discreteness scale $\ell_0^2$ to the vacuum correlation length $\xi$. This derivation anchors the gravitational interaction to the intrinsic granular structure of the causal graph substrate, eliminating $\kappa$ as a free parameter.
+The discrete gravitational coupling constant $\kappa$, which mediates the interaction in the field equation $\mathcal{G}_{ab} = \kappa T_{ab}$, constitutes a derived quantity determined by the emergent geometric scales of the homeostatic fixed point **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Specifically, the coupling strength is defined by the ratio of the squared fundamental discreteness scale $\ell_0^2$ to the vacuum correlation length $\xi$. This derivation anchors the gravitational interaction to the intrinsic granular structure of the causal graph substrate, eliminating $\kappa$ as a free parameter.
 
 **In Plain English:**  
 Section 12.2.5 formalizes the properties of the QBD lemma regarding gravitational coupling scale.
@@ -8172,7 +8172,7 @@ Section 13.3.4.1 formalizes the properties of the QBD proof regarding finite pro
 :::tip[**Derivation of the $(-+++)$ Signature via the Quadratic Form of the Causal Propagator**]
 :::
 
-**I. The Causal Propagator Construction** To capture the full spacetime geometry, we analyze the second moment tensor of the *directed* edge distribution, termed the Causal Propagator $P^{\mu\nu}$. Unlike the undirected averaging in the **Tensorial Continuum Limit Section** <Ref id="13.2" label="§13.2" /> which yielded the identity $\delta^{\mu\nu}$, the directed propagator integrates only over the causal wedge:
+**I. The Causal Propagator Construction** To capture the full spacetime geometry, we analyze the second moment tensor of the *directed* edge distribution, termed the Causal Propagator $P^{\mu\nu}$. Unlike the undirected averaging in the **Tensorial Reorganization** <Ref id="13.2" label="§13.2" /> which yielded the identity $\delta^{\mu\nu}$, the directed propagator integrates only over the causal wedge:
 
 **In Plain English:**  
 Section 13.3.5 formalizes the properties of the QBD proof regarding signature selectivity.
@@ -8400,7 +8400,7 @@ Section 14.2.5.1 formalizes the properties of the QBD proof regarding null vecto
 :::info[**Establishment of the Cauchy Property conditioned on the Acyclicity of the Underlying Graph**]
 :::
 
-The emergent spacetime $(M, g_{\mu\nu})$ satisfies the condition of **Global Hyperbolicity**, defined by the existence of a Cauchy surface $\Sigma$ such that every inextendible causal curve in $M$ intersects $\Sigma$ exactly once. This continuum property is the rigorous limit of the **Directed Acyclic Graph (DAG)** property of the substrate (**acyclic effective causality Axiom** <Ref id="2.7.1" label="§2.7.1" />). Consequently, the spacetime is causally stable, containing no closed timelike curves (CTCs), and possesses a well-posed initial value formulation for the emergent field equations.
+The emergent spacetime $(M, g_{\mu\nu})$ satisfies the condition of **Global Hyperbolicity**, defined by the existence of a Cauchy surface $\Sigma$ such that every inextendible causal curve in $M$ intersects $\Sigma$ exactly once. This continuum property is the rigorous limit of the **Directed Acyclic Graph (DAG)** property of the substrate (**Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />). Consequently, the spacetime is causally stable, containing no closed timelike curves (CTCs), and possesses a well-posed initial value formulation for the emergent field equations.
 
 **In Plain English:**  
 Section 14.2.6 formalizes the properties of the QBD lemma regarding global hyperbolicity.
@@ -8412,7 +8412,7 @@ Section 14.2.6 formalizes the properties of the QBD lemma regarding global hyper
 :::tip[**Deduction of Foliation Consistency enforced by the Strict Monotonicity of the Global Time Function**]
 :::
 
-**I. Graph Acyclicity** **acyclic effective causality Axiom** <Ref id="2.7.1" label="§2.7.1" />strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
+**I. Graph Acyclicity** **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
 
 **In Plain English:**  
 Section 14.2.6.1 formalizes the properties of the QBD proof regarding existence of cauchy surfaces.
@@ -8424,7 +8424,7 @@ Section 14.2.6.1 formalizes the properties of the QBD proof regarding existence 
 :::info[**Derivation of the Geodesic Equation emerging from the Stationary Phase Approximation of Probabilistic Graph Trajectories**]
 :::
 
-Test particles, modeled as stable topological braids (as established in the **topological mass theorem** <Ref id="6.3" label="§6.3" />), propagate through the emergent spacetime along timelike geodesics of the metric $g_{\mu\nu}$. This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
+Test particles, modeled as stable topological braids (as established in the **Braid Complexity Functional** <Ref id="6.3" label="§6.3" />), propagate through the emergent spacetime along timelike geodesics of the metric $g_{\mu\nu}$. This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
 
 **In Plain English:**  
 Section 14.2.7 formalizes the properties of the QBD lemma regarding geodesic motion.
@@ -8484,7 +8484,7 @@ Section 14.3.1 formalizes the properties of the QBD definition regarding wightma
 :::info[**Verification of Relativistic Quantum Field Theory Consistency guaranteed by the Satisfaction of the Wightman Axioms**]
 :::
 
-The emergent physical theory is defined by the Hilbert space of topological braid states $\mathcal{H}_{braid}$ (**Braid Matter** <Ref id="6.2" label="§6.2" />) and field operators $\Phi(x)$ constructed from coarse-grained graph rewrite operations (**Tensorial Continuum Limit** <Ref id="13.2" label="§13.2" />). This emergent theory, as established by the **Wightman Axioms** <Ref id="14.3.1" label="§14.3.1" />, rigorously satisfies the necessary and sufficient conditions for a local quantum field theory. Specifically:
+The emergent physical theory is defined by the Hilbert space of topological braid states $\mathcal{H}_{braid}$ (**Tripartite Braid** <Ref id="6.2" label="§6.2" />) and field operators $\Phi(x)$ constructed from coarse-grained graph rewrite operations (**Tensorial Reorganization** <Ref id="13.2" label="§13.2" />). This emergent theory, as established by the **Wightman Axioms** <Ref id="14.3.1" label="§14.3.1" />, rigorously satisfies the necessary and sufficient conditions for a local quantum field theory. Specifically:
 
 **In Plain English:**  
 Section 14.3.2 formalizes the properties of the QBD theorem regarding wightman compliance.
@@ -8604,7 +8604,7 @@ Section 14.3.6.2 formalizes the properties of the QBD calculation regarding micr
 :::info[**Linkage of Half-Integer Spin to Fermi-Dirac Statistics demanded by the Requirement of Consistency with Lorentz Invariance**]
 :::
 
-Fields with half-integer spin (topological fermions) obey Fermi-Dirac statistics (anticommutation relations), while fields with integer spin (topological bosons) obey Bose-Einstein statistics (commutation relations). This theorem is not an independent postulate but a necessary consequence of the topological phase $\phi = (-1)^{2s}$ established in the **braid exchange topological phase** <Ref id="7.1.2" label="§7.1.2" /> combined with the Lorentz invariance of the emergent manifold. The consistency of the emergent Quantum Field Theory requires:
+Fields with half-integer spin (topological fermions) obey Fermi-Dirac statistics (anticommutation relations), while fields with integer spin (topological bosons) obey Bose-Einstein statistics (commutation relations). This theorem is not an independent postulate but a necessary consequence of the topological phase $\phi = (-1)^{2s}$ established in the **Topological Statistics** <Ref id="7.1.2" label="§7.1.2" /> combined with the Lorentz invariance of the emergent manifold. The consistency of the emergent Quantum Field Theory requires:
 
 **In Plain English:**  
 Section 14.3.7 formalizes the properties of the QBD lemma regarding spin-statistics relation.
@@ -8964,7 +8964,7 @@ Section 15.3.4 formalizes the properties of the QBD lemma regarding teleportatio
 :::tip[**Formal Verification of the Topological Isomorphism between Entangled States and Einstein-Rosen Bridges**]
 :::
 
-**I. The Topological Premise (EPR)** Let the system state $|\Psi_{AB}\rangle$ be defined by a bipartite entanglement structure on the causal graph $G$, characterized by a non-zero von Neumann entropy $S_A > 0$. By the **Entanglement Bridge Lemma** <Ref id="15.1.1" label="§15.1.1" />, this state necessitates the existence of a set of stabilizer edges $E_{bridge}$ connecting subgraphs $A$ and $B$ such that: 1.  **Connectivity:** $d_{topo}(A, B) = 1$. 2.  **Capacity:** $|E_{bridge}| \propto S_A$.
+**I. The Topological Premise (EPR)** Let the system state $|\Psi_{AB}\rangle$ be defined by a bipartite entanglement structure on the causal graph $G$, characterized by a non-zero von Neumann entropy $S_A > 0$. By the **Topological Entanglement** <Ref id="15.1.1" label="§15.1.1" />, this state necessitates the existence of a set of stabilizer edges $E_{bridge}$ connecting subgraphs $A$ and $B$ such that: 1.  **Connectivity:** $d_{topo}(A, B) = 1$. 2.  **Capacity:** $|E_{bridge}| \propto S_A$.
 
 **In Plain English:**  
 Section 15.3.5 formalizes the properties of the QBD proof regarding formal synthesis of er=epr.
@@ -10932,7 +10932,7 @@ Section 23.1.3 formalizes the properties of the QBD proof regarding combinatoria
 :::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
 
-*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$. *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral: $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$ *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
+*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$. *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral: $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$ *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **The Continuum Limit** <Ref id="11.1" label="§11.1" />).
 
 **In Plain English:**  
 Section 23.1.4 formalizes the properties of the QBD lemma regarding integration representation.
