@@ -72,7 +72,7 @@ Logical time is a discrete sequence of integer steps tracking the repeated appli
 :::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
 :::
 
-The domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
+The following holds: the domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
 
 **In Plain English:**  
 The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
@@ -156,7 +156,7 @@ Section 1.2.7.1 formalizes the properties of the QBD proof regarding finite stat
 :::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
 :::
 
-The traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
+The following holds: the traversal of an infinite sequence of discrete computational steps to arrive at the present state $U_0$ constitutes a Supertask. The completion of a Supertask is physically undefined within the dynamical constraints of the theory, as it requires the execution of $\aleph_0$ operations in finite time or the existence of a completed infinity. Neither is permissible in a constructive ontology.
 
 **In Plain English:**  
 Section 1.2.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
