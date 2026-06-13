@@ -343,7 +343,7 @@ Edge Deletion Task defines the primitive operator that removes an active directe
 
 ---
 
-### 1.4.4 Theorem: The Vacuum Repertoire {#1.4.4}
+### 1.4.4 Theorem: Vacuum Repertoire {#1.4.4}
 
 :::info[**Sufficiency and Completeness of Primitive Edge Operators**]
 :::
@@ -403,7 +403,7 @@ Section 1.4.6.1 formalizes the properties of the QBD proof regarding reversibili
 
 ---
 
-### 1.4.7 Proof: The Vacuum Repertoire {#1.4.7}
+### 1.4.7 Proof: Vacuum Repertoire {#1.4.7}
 
 :::tip[**Completeness of the Primitive Operators**]
 :::
@@ -643,7 +643,7 @@ Section 2.3.2.1 formalizes the properties of the QBD proof regarding geometric q
 
 ---
 
-### 2.3.3 Principle: Unique Causality (PUC) {#2.3.3}
+### 2.3.3 Principle: Principle of Unique Causality (PUC) {#2.3.3}
 
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 :::
@@ -2503,7 +2503,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 
 ---
 
-### 4.3.5 Theorem: The Awareness Comonad {#4.3.5}
+### 4.3.5 Theorem: Awareness Comonad {#4.3.5}
 
 :::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
 :::
