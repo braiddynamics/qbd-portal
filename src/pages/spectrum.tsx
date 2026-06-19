@@ -259,7 +259,7 @@ export default function ParticleSpectrumPage() {
   return (
     <Layout
       title="QBD Particle Spectrum"
-      description="Quantum Braid Dynamics Particle Spectrum Wall Chart. An immaculate scientific blueprint layout detailing emergent Standard Model states."
+      description="Quantum Braid Dynamics Particle Spectrum Wall Chart. A technical scientific blueprint layout detailing emergent Standard Model states."
     >
       <Head>
         <meta name="robots" content="index, follow" />
