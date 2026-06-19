@@ -380,9 +380,9 @@ export const HiggsMechanismGraphic = () => (
     <circle cx="150" cy="280" r="5" fill="#ffffff" stroke={AMBER} strokeWidth="1.5" />
     
     {/* Chiral stabilizer circulation arrows */}
-    <path d="M 74 238 L 80 235 L 78 243" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
-    <path d="M 122 243 L 120 235 L 126 238" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
-    <path d="M 96 283 L 90 280 L 96 277" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    <path d="M 64.90 240.83 L 75.00 235.00 L 75.39 246.66" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    <path d="M 125.39 223.34 L 125.00 235.00 L 114.90 229.17" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    <path d="M 110.00 286.00 L 100.00 280.00 L 110.00 274.00" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
     
     {/* Central excitation core */}
     <circle cx="100" cy="250" r="14" fill="rgba(245,158,11,0.15)" stroke={AMBER} strokeWidth="1.5" strokeDasharray="3 3" className="spectrum-node-pulse" />
@@ -426,9 +426,9 @@ export const HiggsCardGraphic = () => (
     <circle cx="75" cy="75" r="3" fill="#ffffff" stroke={AMBER} strokeWidth="1" />
     
     {/* Circulation arrows */}
-    <path d="M 34 54 L 38 48 L 36 56" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M 64 48 L 62 54 L 66 52" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M 52 78 L 46 75 L 52 72" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M 32.45 55.41 L 37.50 52.50 L 37.69 58.33" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M 62.69 46.67 L 62.50 52.50 L 57.45 49.59" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M 55.00 78.00 L 50.00 75.00 L 55.00 72.00" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
     
     {/* Central excitation core */}
     <circle cx="50" cy="60" r="9" fill="rgba(245,158,11,0.15)" stroke={AMBER} strokeWidth="1" strokeDasharray="2 2" className="spectrum-node-pulse" />
@@ -518,29 +518,130 @@ export const PentaribbonSidewaysGraphic = () => (
   </svg>
 );
 
-// 22. Vacuum Calibration Graphic - Concentric calibration grid & background 3-cycles
+// 22. Vacuum Calibration Graphic - Regular Bethe Fragment tree with a horizontal non-perturbative tunneling event
 export const VacuumCalibrationGraphic = () => (
   <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
     <BlueprintGrid />
-    {/* Calibration rings */}
-    <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.5" strokeDasharray="3 3" />
-    <circle cx="50" cy="50" r="22" fill="none" stroke="rgba(0, 245, 255, 0.12)" strokeWidth="0.5" strokeDasharray="2 2" />
-    <circle cx="50" cy="50" r="6" fill="none" stroke={AMBER} strokeWidth="0.75" />
     
-    {/* Lattice of background 3-cycles */}
-    <polygon points="50,22 42,36 58,36" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
-    <polygon points="30,57 22,71 38,71" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
-    <polygon points="70,57 62,71 78,71" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    {/* Tree Edges */}
+    {/* Level 0 to Level 1 */}
+    <line x1="50" y1="12" x2="30" y2="28" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="50" y1="12" x2="70" y2="28" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
     
-    {/* Measurement ticks */}
-    <line x1="50" y1="5" x2="50" y2="15" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
-    <line x1="50" y1="85" x2="50" y2="95" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
-    <line x1="5" y1="50" x2="15" y2="50" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
-    <line x1="85" y1="50" x2="95" y2="50" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
+    {/* Level 1 to Level 2 */}
+    <line x1="30" y1="28" x2="20" y2="44" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="30" y1="28" x2="40" y2="44" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="70" y1="28" x2="60" y2="44" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="70" y1="28" x2="80" y2="44" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
     
-    {/* Sweep ray */}
-    <line x1="50" y1="50" x2="73" y2="27" stroke={AMBER} strokeWidth="1" strokeDasharray="4 2" />
-    <circle cx="73" cy="27" r="1.5" fill="#ffffff" />
+    {/* Level 2 to Level 3 */}
+    <line x1="20" y1="44" x2="14" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="20" y1="44" x2="26" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="40" y1="44" x2="34" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="40" y1="44" x2="46" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="60" y1="44" x2="54" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="60" y1="44" x2="66" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="80" y1="44" x2="74" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <line x1="80" y1="44" x2="86" y2="60" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    
+    {/* Level 3 to Level 4 (Leaves) */}
+    <line x1="14" y1="60" x2="11" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="14" y1="60" x2="17" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="26" y1="60" x2="23" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="26" y1="60" x2="29" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="34" y1="60" x2="31" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="34" y1="60" x2="37" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="46" y1="60" x2="43" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="46" y1="60" x2="49" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    
+    <line x1="54" y1="60" x2="51" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="54" y1="60" x2="57" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="66" y1="60" x2="63" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="66" y1="60" x2="69" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="74" y1="60" x2="71" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="74" y1="60" x2="77" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="86" y1="60" x2="83" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+    <line x1="86" y1="60" x2="89" y2="76" stroke="rgba(0, 245, 255, 0.15)" strokeWidth="0.5" />
+
+    {/* Level 4 to Level 5 (Dense leaf row - just vertical line indicators to show depth) */}
+    <line x1="11" y1="76" x2="9.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="11" y1="76" x2="12.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="17" y1="76" x2="15.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="17" y1="76" x2="18.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="23" y1="76" x2="21.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="23" y1="76" x2="24.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="29" y1="76" x2="27.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="29" y1="76" x2="30.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="31" y1="76" x2="29.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="31" y1="76" x2="32.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="37" y1="76" x2="35.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="37" y1="76" x2="38.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="43" y1="76" x2="41.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="43" y1="76" x2="44.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="49" y1="76" x2="47.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="49" y1="76" x2="50.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    
+    <line x1="51" y1="76" x2="49.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="51" y1="76" x2="52.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="57" y1="76" x2="55.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="57" y1="76" x2="58.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="63" y1="76" x2="61.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="63" y1="76" x2="64.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="69" y1="76" x2="67.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="69" y1="76" x2="70.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="71" y1="76" x2="69.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="71" y1="76" x2="72.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="77" y1="76" x2="75.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="77" y1="76" x2="78.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="83" y1="76" x2="81.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="83" y1="76" x2="84.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="89" y1="76" x2="87.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+    <line x1="89" y1="76" x2="90.5" y2="90" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.4" />
+
+
+
+    {/* Tree Nodes (Alternating Parity) */}
+    {/* Level 0: Root (Amber, Filled) */}
+    <circle cx="50" cy="12" r="3" fill="#ffb01f" className="spectrum-node-pulse" />
+    
+    {/* Level 1: Odd (Cyan, Filled) */}
+    <circle cx="30" cy="28" r="2.5" fill="#00f5ff" />
+    <circle cx="70" cy="28" r="2.5" fill="#00f5ff" />
+    
+    {/* Level 2: Even (Hollow, Amber border) */}
+    <circle cx="20" cy="44" r="2.5" fill="#0d1117" stroke="#ffb01f" strokeWidth="1" />
+    <circle cx="40" cy="44" r="2.5" fill="#0d1117" stroke="#ffb01f" strokeWidth="1" />
+    <circle cx="60" cy="44" r="2.5" fill="#0d1117" stroke="#ffb01f" strokeWidth="1" />
+    <circle cx="80" cy="44" r="2.5" fill="#0d1117" stroke="#ffb01f" strokeWidth="1" />
+    
+    {/* Level 3: Odd (Cyan, Filled) */}
+    <circle cx="14" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="26" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="34" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="46" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="54" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="66" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="74" cy="60" r="2" fill="#00f5ff" />
+    <circle cx="86" cy="60" r="2" fill="#00f5ff" />
+    
+    {/* Level 4: Even (Hollow, Cyan border) */}
+    <circle cx="11" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="17" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="23" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="29" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="31" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="37" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="43" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="49" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    
+    <circle cx="51" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="57" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="63" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="69" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="71" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="77" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="83" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
+    <circle cx="89" cy="76" r="1.5" fill="#0d1117" stroke="#00f5ff" strokeWidth="0.75" />
   </svg>
 );
 

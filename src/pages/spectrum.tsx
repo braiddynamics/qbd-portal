@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import { ParticleGraphic } from '../components/graphics/spectrum-graphics';
+import HeroNetworkCanvas from '../components/graphics/hero-network-canvas';
 
 interface ParticleData {
   row: number;
@@ -277,10 +278,10 @@ const particles: ParticleData[] = [
     col: 5,
     symbol: 'ρ*',
     name: 'Vacuum Substrate',
-    charge: '',
+    charge: 'T = ln(2)',
     param: 'Calibration & Constants',
-    complexity: <span>ρ* ≈ 0.03015</span>,
-    mass: 'μ* ≈ 0.4021',
+    complexity: <span>ρ* ≈ 0.03699</span>,
+    mass: 'ρ* ≈ 0.03699',
     writheConfig: 'Calibration Baseline',
     description: <span>The pre-geometric vacuum substrate parameters define the fundamental constants of the topological network. These include the equilibrium 3-cycle density (ρ*), friction modulus (μ*), and the relaxation rate of local rewrites (Γ<sub>vac</sub>) which dictate the background dynamics and emergent mass scales.</span>,
     colorType: 'gold'
@@ -340,22 +341,12 @@ export default function ParticleSpectrumPage() {
           
           {/* Header */}
           <div className="spectrum-header">
-            <div className="spectrum-title-tag">
-              <span style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                backgroundColor: '#ffb01f',
-                display: 'inline-block',
-                boxShadow: '0 0 6px #ffb01f',
-                marginRight: '0.25rem'
-              }} />
-              VACUUM RESONANCE MAPPING
-            </div>
+            <HeroNetworkCanvas />
             <h1 className="spectrum-title">QUANTUM BRAID DYNAMICS (QBD) PARTICLE SPECTRUM</h1>
             <p className="spectrum-subtitle">
-              Topological invariants and geometric invariants of standard model fermions and gauge boson states mapped as emergent knot and rewrite systems on the relational pre-geometric vacuum substrate.
+              Topological and geometric invariants of standard model fermions and gauge boson states mapped as emergent knot and rewrite systems on the relational pre-geometric vacuum substrate.
             </p>
+            <div className="spectrum-header-corners" />
           </div>
 
           {/* Matrix Area */}
@@ -374,18 +365,12 @@ export default function ParticleSpectrumPage() {
                 </div>
               </div>
               
-              <div className="spectrum-super-header gauge-super combined-header col-4-header">
+              <div className="spectrum-super-header gauge-super combined-header col-4-header single-title-header">
                 <span className="spectrum-super-title">Gauge Fields (Rewrites)</span>
-                <div className="spectrum-sub-labels">
-                  <div className="spectrum-sub-label">&nbsp;</div>
-                </div>
               </div>
               
-              <div className="spectrum-super-header vacuum-super combined-header col-5-header">
-                <span className="spectrum-super-title">Vacuum Substrate & Unified Topology</span>
-                <div className="spectrum-sub-labels">
-                  <div className="spectrum-sub-label">&nbsp;</div>
-                </div>
+              <div className="spectrum-super-header vacuum-super combined-header col-5-header single-title-header">
+                <span className="spectrum-super-title">Vacuum Substrate<br />(Topology)</span>
               </div>
 
               {/* Grid Rows */}
@@ -446,7 +431,7 @@ export default function ParticleSpectrumPage() {
                           <div className="spectrum-card-name">{p.name}</div>
                           {p.symbol === 'ρ*' ? (
                             <div className="spectrum-card-constants-micro">
-                              <div>ρ* ≈ 0.03015 | μ* ≈ 0.4021</div>
+                              <div>α<sub>vac</sub> ≈ 0.0073 | μ* ≈ 0.3989</div>
                               <div>Λ<sub>L</sub> ≈ 1.61 × 10⁻³⁵ m</div>
                             </div>
                           ) : (
@@ -495,7 +480,9 @@ export default function ParticleSpectrumPage() {
 
                     <h4 style={{ margin: '0 0 0.5rem 0', color: '#ffffff', fontFamily: 'monospace' }}>TOPOLOGICAL INVARIANTS</h4>
                     <div className="spectrum-modal-parameters">
-                      <div className="spectrum-modal-param-label">Electric Charge</div>
+                      <div className="spectrum-modal-param-label">
+                        {selectedParticle.symbol === 'ρ*' ? 'Vacuum Temp (T)' : 'Electric Charge'}
+                      </div>
                       <div className={`spectrum-modal-param-value ${selectedParticle.colorType}-text`}>
                         {selectedParticle.charge || '0'}
                       </div>
