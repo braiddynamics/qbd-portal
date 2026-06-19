@@ -51,10 +51,8 @@ def test_calculate_add_proposals_stochastic(mocker, basic_config, mock_random_va
     # In this graph, there are 0 cycles, so the stress map is empty
     stress_map = {}
     
-    # --- FIXED CALL ---
-    # Removed N and ALPHA. The function now only takes 4 args.
     proposals = _calculate_add_proposals(G, config["T_VACUUM"], config["MU"], 
-                                         stress_map) # Pass the map
+                                         stress_map)
     
     assert proposals == expected_set
 
@@ -72,7 +70,6 @@ def test_calculate_add_proposals_respects_gpc(mocker, basic_config):
     G = nx.DiGraph([(0, 1, {'H': 0}), (1, 2, {'H': 0}), (0, 2, {'H': 0})])
     stress_map = {} # No cycles in this graph
 
-    # --- FIXED CALL ---
     proposals = _calculate_add_proposals(G, config["T_VACUUM"], config["MU"], 
                                          stress_map)
     assert proposals == set() # No proposals
@@ -92,7 +89,6 @@ def test_calculate_add_proposals_respects_aec(mocker, basic_config):
     G = nx.DiGraph([(0, 1, {'H': 1}), (1, 2, {'H': 2})])
     stress_map = {} # No cycles in this graph
 
-    # --- FIXED CALL ---
     proposals = _calculate_add_proposals(G, config["T_VACUUM"], config["MU"],
                                          stress_map)
     assert proposals == set()
@@ -119,10 +115,8 @@ def test_calculate_del_proposals_stochastic(mocker, basic_config, mock_random_va
     all_cycles = [[(0, 1), (1, 2), (2, 0)]] # Pre-found cycles
     stress_map = {0: 1, 1: 1, 2: 1}         # Pre-computed stress
     
-    # --- FIXED CALL ---
-    # Removed N and ALPHA. The function now only takes 6 args.
     proposals = _calculate_del_proposals(G, config["T_VACUUM"], config["MU"], config["LAMBDA"],
-                                         all_cycles, stress_map) # Pass new args
+                                         all_cycles, stress_map)
     assert proposals == expected_set
 
 def test_calculate_del_proposals_respects_friction(mocker, basic_config):
@@ -145,9 +139,8 @@ def test_calculate_del_proposals_respects_friction(mocker, basic_config):
     # Node 0 is in 2 cycles, 1 in 1, 2 in 2, 3 in 1
     stress_map = {0: 2, 1: 1, 2: 2, 3: 1}
 
-    # --- FIXED CALL ---
     proposals = _calculate_del_proposals(G, config["T_VACUUM"], config["MU"], config["LAMBDA"],
-                                         all_cycles, stress_map) # Pass new args
+                                         all_cycles, stress_map)
     
     # Q_del will be ~0 due to exp(-100), so random.random() < Q_del fails
     assert proposals == set()
@@ -157,9 +150,8 @@ def test_calculate_del_proposals_respects_friction(mocker, basic_config):
 
 def test_p_thermo_constants_are_correct(mocker, basic_config):
     """
-    This test replaces the old, flawed 'test_p_thermo_is_correct'.
-    It verifies the *new* logic: that with T=ln(2), μ=0, and λ=0,
-    P_thermo_add is *exactly* 1 and Q_thermo_del is *exactly* 1/2.
+    Verifies that with T=ln(2), μ=0, and λ=0,
+    P_thermo_add is exactly 1 and Q_thermo_del is exactly 1/2.
     """
     config = basic_config.copy()
     # Set config to the exact theoretical values
@@ -227,12 +219,9 @@ def test_terminates_quickly_on_stuck_state(basic_config):
 
 def test_runs_at_high_T(basic_config):
     """
-    Tests that a high T (hot) sim creates a dense graph.
-    The new logic is N-agnostic, but T still matters for the *old* logic
-    this test was based on. We'll keep it as a sanity check.
+    Tests that a high T (hot) simulation creates a dense graph.
     With T=1000, ΔF_add = -1000*ln(2) < 0 -> P_thermo=1.
     With T=1000, ΔF_del = +1000*ln(2) > 0 -> Q_thermo=min(1, exp(-ln2)) = 1/2.
-    The test should still pass.
     """
     G_initial_template = nx.DiGraph()
     G_initial_template.add_edges_from([(100, 101, {'H': 0}), (101, 102, {'H': 0})])
