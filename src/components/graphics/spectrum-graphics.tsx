@@ -320,8 +320,232 @@ export const WBosonGraphic = () => (
   </svg>
 );
 
+// 17. Higgs Boson (H) - Emergent 3-Cycle Condensate & Topological Drag
+export const HiggsMechanismGraphic = () => (
+  <svg viewBox="0 0 200 500" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
+    {/* Grid Background points */}
+    <circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="50" cy="150" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="50" cy="250" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="50" cy="350" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="50" cy="450" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="100" cy="50" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="100" cy="150" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="100" cy="250" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="100" cy="350" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="100" cy="450" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="150" cy="50" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="150" cy="150" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="150" cy="250" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="150" cy="350" r="0.5" fill="rgba(255,255,255,0.15)" />
+    <circle cx="150" cy="450" r="0.5" fill="rgba(255,255,255,0.15)" />
+
+    {/* Section 1: Vacuum Lattice (3-cycles) */}
+    {/* Nodes */}
+    <circle cx="30" cy="70" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+    <circle cx="100" cy="30" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+    <circle cx="60" cy="115" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+    <circle cx="140" cy="115" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+    <circle cx="170" cy="70" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+    <circle cx="100" cy="75" r="3.5" fill="rgba(0, 245, 255, 0.6)" />
+
+    {/* Edges */}
+    <line x1="30" y1="70" x2="100" y2="30" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="100" y1="30" x2="100" y2="75" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="100" y1="75" x2="30" y2="70" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    
+    <line x1="100" y1="30" x2="170" y2="70" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="170" y1="70" x2="100" y2="75" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    
+    <line x1="30" y1="70" x2="60" y2="115" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="60" y1="115" x2="100" y2="75" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    
+    <line x1="60" y1="115" x2="140" y2="115" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="140" y1="115" x2="100" y2="75" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+    <line x1="140" y1="115" x2="170" y2="70" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="1.5" />
+
+    <text x="100" y="152" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="monospace" textAnchor="middle" letterSpacing="1">VACUUM SUBSTRATE (ρ₀)</text>
+
+    {/* Divider 1 */}
+    <line x1="15" y1="168" x2="185" y2="168" stroke="rgba(0, 245, 255, 0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
+
+    {/* Section 2: Higgs Density Excitation */}
+    {/* Highlighted Glowing 3-Cycle */}
+    <polygon points="50,280 100,190 150,280" fill="none" stroke={AMBER} strokeWidth="4" 
+      style={{ filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.6))' }} />
+    
+    {/* Vertices */}
+    <circle cx="50" cy="280" r="5" fill="#ffffff" stroke={AMBER} strokeWidth="1.5" />
+    <circle cx="100" cy="190" r="5" fill="#ffffff" stroke={AMBER} strokeWidth="1.5" />
+    <circle cx="150" cy="280" r="5" fill="#ffffff" stroke={AMBER} strokeWidth="1.5" />
+    
+    {/* Chiral stabilizer circulation arrows */}
+    <path d="M 74 238 L 80 235 L 78 243" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    <path d="M 122 243 L 120 235 L 126 238" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    <path d="M 96 283 L 90 280 L 96 277" fill="none" stroke={AMBER} strokeWidth="2" strokeLinecap="round" />
+    
+    {/* Central excitation core */}
+    <circle cx="100" cy="250" r="14" fill="rgba(245,158,11,0.15)" stroke={AMBER} strokeWidth="1.5" strokeDasharray="3 3" className="spectrum-node-pulse" />
+    <circle cx="100" cy="250" r="6" fill={AMBER} opacity="0.8" />
+    
+    <text x="100" y="312" fill={AMBER} fontSize="10.5" fontFamily="monospace" textAnchor="middle" style={{ fontWeight: 'bold' }} letterSpacing="1">3-CYCLE CONDENSATE EXC. (H)</text>
+
+    {/* Divider 2 */}
+    <line x1="15" y1="328" x2="185" y2="328" stroke="rgba(0, 245, 255, 0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
+
+    {/* Section 3: Topological Drag / Mass */}
+    {/* 3 braid strands passing through background nodes and experiencing friction drag */}
+    <path d="M 50 340 C 50 380, 95 400, 95 430 C 95 450, 50 450, 50 480" stroke={BLUE} strokeWidth="3.5" fill="none" />
+    <path d="M 100 340 C 100 380, 55 400, 55 430 C 55 450, 100 450, 100 480" stroke={AMBER} strokeWidth="2.5" fill="none" strokeDasharray="4 3" />
+    <path d="M 150 340 C 150 380, 125 400, 125 430 L 125 480" stroke={BLUE} strokeWidth="3.5" fill="none" />
+
+    {/* Drag ripples */}
+    <path d="M 40 425 A 60 20 0 0 0 160 425" stroke={AMBER} strokeWidth="2.5" fill="none" opacity="0.4" strokeDasharray="3 3" />
+    <path d="M 25 435 A 75 25 0 0 0 175 435" stroke={AMBER} strokeWidth="1.5" fill="none" opacity="0.25" strokeDasharray="4 4" />
+    
+    {/* Drag vectors */}
+    <line x1="180" y1="440" x2="180" y2="395" stroke={BLUE} strokeWidth="2.5" />
+    <path d="M 174 402 L 180 395 L 186 402" fill="none" stroke={BLUE} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <text x="180" y="383" fill={BLUE} fontSize="8.5" fontFamily="monospace" textAnchor="middle" style={{ fontWeight: 'bold' }}>DRAG</text>
+
+    <text x="100" y="495" fill="rgba(255,255,255,0.4)" fontSize="10" fontFamily="monospace" textAnchor="middle" letterSpacing="0.5">TOPOLOGICAL FRICTION (m = Z_f)</text>
+  </svg>
+);
+
+// 18. Higgs Boson (H) - Card Graphic (Just the 3-Cycle Condensate Triangle)
+export const HiggsCardGraphic = () => (
+  <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+    <BlueprintGrid />
+    {/* Highlighted Glowing 3-Cycle */}
+    <polygon points="25,75 50,30 75,75" fill="none" stroke={AMBER} strokeWidth="2.5" 
+      style={{ filter: 'drop-shadow(0 0 6px rgba(245, 158, 11, 0.6))' }} />
+    
+    {/* Vertices */}
+    <circle cx="25" cy="75" r="3" fill="#ffffff" stroke={AMBER} strokeWidth="1" />
+    <circle cx="50" cy="30" r="3" fill="#ffffff" stroke={AMBER} strokeWidth="1" />
+    <circle cx="75" cy="75" r="3" fill="#ffffff" stroke={AMBER} strokeWidth="1" />
+    
+    {/* Circulation arrows */}
+    <path d="M 34 54 L 38 48 L 36 56" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M 64 48 L 62 54 L 66 52" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M 52 78 L 46 75 L 52 72" fill="none" stroke={AMBER} strokeWidth="1.5" strokeLinecap="round" />
+    
+    {/* Central excitation core */}
+    <circle cx="50" cy="60" r="9" fill="rgba(245,158,11,0.15)" stroke={AMBER} strokeWidth="1" strokeDasharray="2 2" className="spectrum-node-pulse" />
+    <circle cx="50" cy="60" r="3.5" fill={AMBER} opacity="0.8" />
+  </svg>
+);
+
+// 20. Tripartite Braid Graphic - 3-strand weaving ground state
+export const TripartiteBraidGraphic = () => (
+  <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+    <BlueprintGrid />
+    {/* Blue Strand (Under) */}
+    <path 
+      d="M 50 85 L 50 70 C 50 62, 90 62, 90 54 L 90 15" 
+      fill="none" 
+      stroke="#00f5ff" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+    />
+    
+    {/* Green Strand (Under) */}
+    <path 
+      d="M 10 85 L 10 46 C 10 38, 50 38, 50 30 L 50 15" 
+      fill="none" 
+      stroke="#25c2a0" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+    />
+    
+    {/* Masking path for Red Strand (to create overlap effect) */}
+    <path 
+      d="M 90 85 L 90 70 C 90 62, 50 62, 50 54 L 50 46 C 50 38, 10 38, 10 30 L 10 15" 
+      fill="none" 
+      stroke="#0D1117" 
+      strokeWidth="6" 
+      strokeLinecap="round" 
+    />
+    
+    {/* Red Strand (Over) */}
+    <path 
+      d="M 90 85 L 90 70 C 90 62, 50 62, 50 54 L 50 46 C 50 38, 10 38, 10 30 L 10 15" 
+      fill="none" 
+      stroke="#ffb01f" 
+      strokeWidth="2.5" 
+      strokeLinecap="round" 
+    />
+  </svg>
+);
+
+// 21. Pentaribbon Sideways Graphic - Horizontal 5-strand GUT braid
+export const PentaribbonSidewaysGraphic = () => (
+  <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+    <BlueprintGrid />
+    {/* Background sector boundary line */}
+    <line x1="10" y1="56" x2="90" y2="56" stroke="rgba(255,255,255,0.06)" strokeWidth="1" strokeDasharray="3 3" />
+    <text x="15" y="14" fill="rgba(0, 245, 255, 0.35)" fontSize="5.5" fontFamily="monospace" letterSpacing="0.5">COLOR SU(3)</text>
+    <text x="15" y="93" fill="rgba(255, 176, 31, 0.35)" fontSize="5.5" fontFamily="monospace" letterSpacing="0.5">WEAK SU(2)</text>
+    
+    {/* Weaving Strands */}
+    {/* R1 (Cyan) */}
+    <path d="M 10 24 C 25 24, 35 38, 50 38 C 65 38, 75 24, 90 24" fill="none" stroke="#00f5ff" strokeWidth="2.2" strokeLinecap="round" />
+    
+    {/* R2 (Green) */}
+    <path d="M 10 36 C 25 36, 35 50, 50 50 C 65 50, 75 36, 90 36" fill="none" stroke="#25c2a0" strokeWidth="2.2" strokeLinecap="round" />
+    
+    {/* R3 (Blue) */}
+    <path d="M 10 48 C 25 48, 35 24, 50 24 C 65 24, 75 48, 90 48" fill="none" stroke="#3b82f6" strokeWidth="2.2" strokeLinecap="round" />
+    
+    {/* R4 (Amber) */}
+    <path d="M 10 63 C 25 63, 35 77, 50 77 C 65 77, 75 63, 90 63" fill="none" stroke="#ffb01f" strokeWidth="2.2" strokeLinecap="round" />
+    
+    {/* R5 (Red/Orange) */}
+    <path d="M 10 75 C 25 75, 35 63, 50 63 C 65 63, 75 75, 90 75" fill="none" stroke="#ff6b00" strokeWidth="2.2" strokeLinecap="round" />
+    
+    {/* Intersection/Crossings nodes */}
+    <circle cx="30" cy="30" r="1.5" fill="#ffffff" />
+    <circle cx="30" cy="54" r="1.5" fill="#ffffff" />
+    <circle cx="30" cy="67" r="1.5" fill="#ffffff" />
+    
+    <circle cx="50" cy="24" r="1.5" fill="#ffffff" />
+    <circle cx="50" cy="38" r="1.5" fill="#ffffff" />
+    <circle cx="50" cy="77" r="1.5" fill="#ffffff" />
+    
+    <circle cx="70" cy="30" r="1.5" fill="#ffffff" />
+    <circle cx="70" cy="54" r="1.5" fill="#ffffff" />
+    <circle cx="70" cy="67" r="1.5" fill="#ffffff" />
+  </svg>
+);
+
+// 22. Vacuum Calibration Graphic - Concentric calibration grid & background 3-cycles
+export const VacuumCalibrationGraphic = () => (
+  <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+    <BlueprintGrid />
+    {/* Calibration rings */}
+    <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(0, 245, 255, 0.08)" strokeWidth="0.5" strokeDasharray="3 3" />
+    <circle cx="50" cy="50" r="22" fill="none" stroke="rgba(0, 245, 255, 0.12)" strokeWidth="0.5" strokeDasharray="2 2" />
+    <circle cx="50" cy="50" r="6" fill="none" stroke={AMBER} strokeWidth="0.75" />
+    
+    {/* Lattice of background 3-cycles */}
+    <polygon points="50,22 42,36 58,36" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <polygon points="30,57 22,71 38,71" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    <polygon points="70,57 62,71 78,71" fill="none" stroke="rgba(0, 245, 255, 0.25)" strokeWidth="0.75" />
+    
+    {/* Measurement ticks */}
+    <line x1="50" y1="5" x2="50" y2="15" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
+    <line x1="50" y1="85" x2="50" y2="95" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
+    <line x1="5" y1="50" x2="15" y2="50" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
+    <line x1="85" y1="50" x2="95" y2="50" stroke="rgba(0, 245, 255, 0.3)" strokeWidth="0.75" />
+    
+    {/* Sweep ray */}
+    <line x1="50" y1="50" x2="73" y2="27" stroke={AMBER} strokeWidth="1" strokeDasharray="4 2" />
+    <circle cx="73" cy="27" r="1.5" fill="#ffffff" />
+  </svg>
+);
+
 // Central selector helper
-export const ParticleGraphic = ({ symbol }: { symbol: string }) => {
+export const ParticleGraphic = ({ symbol, isCard = false }: { symbol: string; isCard?: boolean }) => {
   switch (symbol) {
     case 'u': return <UpQuarkGraphic />;
     case 'c': return <CharmQuarkGraphic />;
@@ -339,6 +563,10 @@ export const ParticleGraphic = ({ symbol }: { symbol: string }) => {
     case 's': return <StrangeQuarkGraphic />;
     case 'b': return <BottomQuarkGraphic />;
     case 'W': return <WBosonGraphic />;
+    case 'H': return isCard ? <HiggsCardGraphic /> : <HiggsMechanismGraphic />;
+    case 'β₃': return <TripartiteBraidGraphic />;
+    case 'β₅': return <PentaribbonSidewaysGraphic />;
+    case 'ρ*': return <VacuumCalibrationGraphic />;
     default: return null;
   }
 };

@@ -86,9 +86,9 @@
 
 .spectrum-matrix-grid {
   display: grid;
-  grid-template-columns: 240px repeat(4, 1fr);
+  grid-template-columns: 240px repeat(5, 1fr);
   gap: 1.25rem;
-  min-width: 1200px; /* Ensure layout doesn't break on window resize */
+  min-width: 1400px; /* Ensure layout doesn't break on window resize */
 }
 
 /* Column Labels */
@@ -115,6 +115,8 @@
 .spectrum-row-label-cell {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 1.5rem;
   border-right: 2px solid rgba(245, 158, 11, 0.3);
   background-color: rgba(13, 17, 23, 0.7);
@@ -130,6 +132,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+  width: 100%;
 }
 
 /* Card Styling */
@@ -185,7 +188,7 @@
   position: relative;
 }
 
-.spectrum-card-index {
+.spectrum-card-mass {
   font-family: monospace;
   font-size: 0.75rem;
   color: #8b949e;
@@ -220,12 +223,15 @@
   transform: scale(1.05);
 }
 
-/* Central Large Symbol overlay */
+/* Background Large Symbol Watermark (Top-Left Corner) */
 .spectrum-card-symbol {
   position: absolute;
-  font-size: 3.2rem;
+  top: 2.15rem;
+  left: 1.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.08);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.12);
   font-family: monospace, sans-serif;
   pointer-events: none;
   z-index: 0;
@@ -233,8 +239,13 @@
 }
 
 .spectrum-card:hover .spectrum-card-symbol {
-  color: rgba(255, 255, 255, 0.18);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.spectrum-card-symbol.wide-symbol {
+  font-size: 1.85rem;
+  top: 2.5rem;
+  left: 1.1rem;
 }
 
 /* Bottom Text Details */
@@ -459,4 +470,332 @@
   color: #ffffff;
   font-weight: bold;
   text-align: right;
+}
+
+/* Higgs Vertical Card Styling */
+.spectrum-higgs-card-vertical {
+  grid-column: 6;
+  grid-row: 2 / 6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.spectrum-higgs-card-vertical::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 100px, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spectrum-higgs-card-vertical:hover {
+  transform: translateY(-4px);
+  background-color: rgba(22, 27, 34, 0.85);
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.spectrum-higgs-card-vertical-top {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.spectrum-higgs-card-vertical-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  min-height: 480px;
+  margin: 1rem 0;
+}
+
+.spectrum-higgs-card-vertical-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #8b949e;
+}
+
+.spectrum-higgs-card-vertical-bottom-title {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Micro Constants for Vacuum Calibration Card */
+.spectrum-card-constants-micro {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: #8b949e;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1.3;
+}
+
+.spectrum-card-constants-micro div {
+  white-space: nowrap;
+}
+
+/* Vertical separator line between Column 4 and Column 5 */
+.col-5-header,
+.col-5-card {
+  position: relative;
+}
+
+.col-5-header::before,
+.col-5-card::before {
+  content: "";
+  position: absolute;
+  top: -0.625rem;
+  bottom: -0.625rem;
+  left: -0.625rem;
+  width: 0;
+  border-left: 1px dashed rgba(0, 245, 255, 0.22);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.col-5-header::before {
+  top: 0;
+}
+
+.row-4-card::before {
+  bottom: 0;
+}
+
+/* --- QBD Matrix Super Headers --- */
+.spectrum-super-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  font-family: monospace;
+  border-radius: 6px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.5rem;
+}
+
+.combined-header {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem 0.5rem 1rem;
+  min-height: 90px;
+  height: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.spectrum-super-title {
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.spectrum-sub-labels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.spectrum-sub-label {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #00f5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+}
+
+.gauge-super .spectrum-sub-labels,
+.vacuum-super .spectrum-sub-labels {
+  grid-template-columns: 1fr;
+}
+
+.gauge-super .spectrum-sub-label {
+  color: #ef4444;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.vacuum-super .spectrum-sub-label {
+  color: #ffb01f;
+  text-shadow: 0 0 8px rgba(255, 176, 31, 0.4);
+}
+
+.spectrum-super-header.matter-super {
+  grid-column: 2 / 5;
+  background-color: rgba(0, 245, 255, 0.03);
+  border-bottom-color: rgba(0, 245, 255, 0.3);
+  color: #00f5ff;
+  text-shadow: 0 0 6px rgba(0, 245, 255, 0.35);
+}
+
+.spectrum-super-header.gauge-super {
+  grid-column: 5;
+  background-color: rgba(239, 68, 68, 0.03);
+  border-bottom-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  text-shadow: 0 0 6px rgba(239, 68, 68, 0.35);
+}
+
+.spectrum-super-header.vacuum-super {
+  grid-column: 6;
+  background-color: rgba(255, 176, 31, 0.03);
+  border-bottom-color: rgba(255, 176, 31, 0.3);
+  color: #ffb01f;
+  text-shadow: 0 0 6px rgba(255, 176, 31, 0.35);
+  position: relative;
+}
+
+/* Align vertical divider to start at the top of the super header */
+.spectrum-super-header.vacuum-super::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -0.625rem;
+  left: -0.625rem;
+  width: 0;
+  border-left: 1px dashed rgba(0, 245, 255, 0.22);
+  pointer-events: none;
+}
+
+.col-4-header {
+  border-bottom: 2px solid rgba(239, 68, 68, 0.3) !important;
+}
+.col-4-header .spectrum-col-label-text {
+  color: #ef4444;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+.col-5-header {
+  border-bottom: 2px solid rgba(255, 176, 31, 0.3) !important;
+}
+.col-5-header .spectrum-col-label-text {
+  color: #ffb01f;
+  text-shadow: 0 0 8px rgba(255, 176, 31, 0.4);
+}
+
+/* --- Card Glow Colors --- */
+.spectrum-card.blue-glow {
+  border-color: rgba(0, 245, 255, 0.22);
+}
+.spectrum-card.blue-glow::before {
+  background: radial-gradient(circle at 50% 30%, rgba(0, 245, 255, 0.08) 0%, transparent 70%);
+}
+.spectrum-card.blue-glow:hover {
+  border-color: rgba(0, 245, 255, 0.7);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.25);
+}
+
+.spectrum-card.green-glow {
+  border-color: rgba(37, 194, 160, 0.22);
+}
+.spectrum-card.green-glow::before {
+  background: radial-gradient(circle at 50% 30%, rgba(37, 194, 160, 0.08) 0%, transparent 70%);
+}
+.spectrum-card.green-glow:hover {
+  border-color: rgba(37, 194, 160, 0.7);
+  box-shadow: 0 0 25px rgba(37, 194, 160, 0.25);
+}
+
+.spectrum-card.red-glow {
+  border-color: rgba(239, 68, 68, 0.22);
+}
+.spectrum-card.red-glow::before {
+  background: radial-gradient(circle at 50% 30%, rgba(239, 68, 68, 0.08) 0%, transparent 70%);
+}
+.spectrum-card.red-glow:hover {
+  border-color: rgba(239, 68, 68, 0.7);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+}
+
+.spectrum-card.gold-glow {
+  border-color: rgba(255, 176, 31, 0.22);
+}
+.spectrum-card.gold-glow::before {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 176, 31, 0.08) 0%, transparent 70%);
+}
+.spectrum-card.gold-glow:hover {
+  border-color: rgba(255, 176, 31, 0.7);
+  box-shadow: 0 0 25px rgba(255, 176, 31, 0.25);
+}
+
+/* --- Charge / Text Colors --- */
+.spectrum-card-charge.blue-text, .blue-text {
+  color: #00f5ff !important;
+  text-shadow: 0 0 4px rgba(0, 245, 255, 0.25);
+}
+.spectrum-card-charge.green-text, .green-text {
+  color: #25c2a0 !important;
+  text-shadow: 0 0 4px rgba(37, 194, 160, 0.25);
+}
+.spectrum-card-charge.red-text, .red-text {
+  color: #ef4444 !important;
+  text-shadow: 0 0 4px rgba(239, 68, 68, 0.25);
+}
+.spectrum-card-charge.gold-text, .gold-text {
+  color: #ffb01f !important;
+  text-shadow: 0 0 4px rgba(255, 176, 31, 0.25);
+}
+
+/* --- Modal left borders and drop-shadows --- */
+.spectrum-modal-left.blue-border {
+  border-color: rgba(0, 245, 255, 0.25) !important;
+}
+.spectrum-modal-left.blue-border .spectrum-modal-left-graphic {
+  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.22));
+}
+
+.spectrum-modal-left.green-border {
+  border-color: rgba(37, 194, 160, 0.25) !important;
+}
+.spectrum-modal-left.green-border .spectrum-modal-left-graphic {
+  filter: drop-shadow(0 0 10px rgba(37, 194, 160, 0.22));
+}
+
+.spectrum-modal-left.red-border {
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+.spectrum-modal-left.red-border .spectrum-modal-left-graphic {
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.22));
+}
+
+.spectrum-modal-left.gold-border {
+  border-color: rgba(255, 176, 31, 0.25) !important;
+}
+.spectrum-modal-left.gold-border .spectrum-modal-left-graphic {
+  filter: drop-shadow(0 0 10px rgba(255, 176, 31, 0.22));
 }
