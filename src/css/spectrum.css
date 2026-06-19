@@ -1,0 +1,462 @@
+/* QBD Particle Spectrum Blueprint CSS */
+
+.spectrum-page-container {
+  min-height: 100vh;
+  background-color: #0D1117;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  padding: 3rem 1.5rem 5rem 1.5rem;
+}
+
+/* Blueprint Grid Background Pattern */
+.spectrum-page-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.12;
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.25) 1px, transparent 1px),
+    linear-gradient(rgba(245, 158, 11, 0.1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+  background-position: center center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main content wrapper */
+.spectrum-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title & Header Section */
+.spectrum-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px dashed rgba(0, 245, 255, 0.2);
+  padding-bottom: 2rem;
+}
+
+.spectrum-title-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #ffb01f;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.spectrum-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+.spectrum-subtitle {
+  font-size: 1.15rem;
+  color: #8b949e;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Matrix Layout using CSS Grid */
+.spectrum-matrix-wrapper {
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.spectrum-matrix-grid {
+  display: grid;
+  grid-template-columns: 240px repeat(4, 1fr);
+  gap: 1.25rem;
+  min-width: 1200px; /* Ensure layout doesn't break on window resize */
+}
+
+/* Column Labels */
+.spectrum-col-label-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 2px solid rgba(0, 245, 255, 0.3);
+  text-align: center;
+}
+
+.spectrum-col-label-text {
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #00f5ff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+}
+
+/* Row Labels */
+.spectrum-row-label-cell {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-right: 2px solid rgba(245, 158, 11, 0.3);
+  background-color: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.spectrum-row-label-text {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #ffb01f;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+/* Card Styling */
+.spectrum-card {
+  position: relative;
+  background-color: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.spectrum-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 245, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spectrum-card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(22, 27, 34, 0.85);
+  border-color: rgba(0, 245, 255, 0.7);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.25);
+}
+
+.spectrum-card:hover::before {
+  opacity: 1;
+}
+
+/* Amber variants for specific sections */
+.spectrum-card.amber-glow:hover {
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+/* Header detail in card */
+.spectrum-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  position: relative;
+}
+
+.spectrum-card-index {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+
+.spectrum-card-charge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #00f5ff;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(0, 245, 255, 0.2);
+}
+
+.spectrum-card-charge.amber-text {
+  color: #ffb01f;
+  text-shadow: 0 0 4px rgba(245, 158, 11, 0.2);
+}
+
+/* Central Graphic Area */
+.spectrum-card-graphic-container {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.spectrum-card:hover .spectrum-card-graphic-container {
+  transform: scale(1.05);
+}
+
+/* Central Large Symbol overlay */
+.spectrum-card-symbol {
+  position: absolute;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.08);
+  font-family: monospace, sans-serif;
+  pointer-events: none;
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+.spectrum-card:hover .spectrum-card-symbol {
+  color: rgba(255, 255, 255, 0.18);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Bottom Text Details */
+.spectrum-card-footer {
+  z-index: 1;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.5rem;
+}
+
+.spectrum-card-name {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.spectrum-card-param {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+
+/* SVG Line Animations */
+.spectrum-svg-path {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-width 0.3s ease, filter 0.3s ease;
+}
+
+.spectrum-card:hover .spectrum-svg-path {
+  stroke-width: 2.5px;
+}
+
+/* Pulse animation for node points */
+.spectrum-node-pulse {
+  animation: pulse-node 2s infinite ease-in-out;
+}
+
+@keyframes pulse-node {
+  0%, 100% { r: 3px; opacity: 0.5; }
+  50% { r: 5px; opacity: 1; }
+}
+
+/* Footer Plinth */
+.spectrum-footer-plinth {
+  background-color: rgba(22, 27, 34, 0.5);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 15px rgba(245, 158, 11, 0.05);
+}
+
+.spectrum-footer-plinth-label {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0D1117;
+  padding: 0 1.25rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #ffb01f;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.spectrum-footer-plinth-text {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #8b949e;
+  letter-spacing: 0.5px;
+}
+
+.spectrum-footer-plinth-highlight {
+  color: #00f5ff;
+  font-weight: 600;
+}
+
+/* Modal Popup Styles */
+.spectrum-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.spectrum-modal-content {
+  background-color: #161b22;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 12px;
+  max-width: 850px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.15);
+  color: #c9d1d9;
+}
+
+.spectrum-modal-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.spectrum-modal-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(13, 17, 23, 0.6);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+}
+
+.spectrum-modal-left.amber-border {
+  border-color: rgba(245, 158, 11, 0.15);
+}
+
+.spectrum-modal-left-symbol {
+  position: absolute;
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: monospace, sans-serif;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spectrum-modal-left-graphic {
+  width: 220px;
+  height: 220px;
+  z-index: 1;
+  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.2));
+  transition: all 0.3s ease;
+}
+
+.spectrum-modal-left.amber-border .spectrum-modal-left-graphic {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.2));
+}
+
+@media screen and (max-width: 768px) {
+  .spectrum-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .spectrum-modal-left {
+    height: 240px;
+    width: 100%;
+  }
+}
+
+.spectrum-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.spectrum-modal-close:hover {
+  color: #ffffff;
+}
+
+.spectrum-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.spectrum-modal-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.spectrum-modal-subtitle {
+  font-family: monospace;
+  color: #00f5ff;
+  font-size: 0.9rem;
+}
+
+.spectrum-modal-body {
+  line-height: 1.6;
+}
+
+.spectrum-modal-parameters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(13, 17, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.spectrum-modal-param-label {
+  color: #8b949e;
+}
+
+.spectrum-modal-param-value {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: right;
+}
