@@ -100,7 +100,7 @@ def test_calculate_add_proposals_respects_aec(mocker, basic_config):
 def test_calculate_del_proposals_stochastic(mocker, basic_config, mock_random_val, expected_set):
     """
     Tests the delete proposal function's stochastic acceptance/rejection.
-    Uses the *new* logic where Q_del_thermo is exactly 1/2.
+    Uses the logic where Q_del_thermo is exactly 1/2.
     """
     mocker.patch('random.random', return_value=mock_random_val)
     mocker.patch('random.choice', return_value=(0, 1))
