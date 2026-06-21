@@ -1,0 +1,895 @@
+/* QBD Quantum Computing Console Stylesheet */
+
+/* ──────────────────────────────────────────────────────── */
+/* CRITICAL: DOCUSAURUS STICKY OVERRIDES                    */
+/* ──────────────────────────────────────────────────────── */
+#__docusaurus,
+.main-wrapper,
+.quantum-page-container {
+  overflow: visible !important;
+}
+
+.quantum-page-container {
+  min-height: 100vh;
+  background-color: #0D1117;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  position: relative;
+  padding: 0;
+}
+
+/* Liquid glassmorphic background container and drifting animated blobs */
+.quantum-liquid-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quantum-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.07;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.quantum-blob-cyan {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.4) 0%, rgba(0, 245, 255, 0) 70%);
+  top: -10%;
+  left: -10%;
+  animation: drift-cyan 55s infinite alternate ease-in-out;
+}
+
+.quantum-blob-amber {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, rgba(245, 158, 11, 0) 70%);
+  bottom: -10%;
+  right: -10%;
+  animation: drift-amber 42s infinite alternate ease-in-out;
+}
+
+.quantum-blob-green {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(37, 194, 160, 0.25) 0%, rgba(37, 194, 160, 0) 70%);
+  top: 40%;
+  left: 45%;
+  animation: drift-green 65s infinite alternate ease-in-out;
+}
+
+@keyframes drift-cyan {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vw, 10vh) scale(1.06); }
+  100% { transform: translate(-3vw, 3vh) scale(0.97); }
+}
+
+@keyframes drift-amber {
+  0% { transform: translate(0, 0) scale(0.94); }
+  50% { transform: translate(-8vw, -6vh) scale(1.03); }
+  100% { transform: translate(1vw, 3vh) scale(1); }
+}
+
+@keyframes drift-green {
+  0% { transform: translate(0, 0) scale(1.03); }
+  50% { transform: translate(3vw, -10vh) scale(0.94); }
+  100% { transform: translate(-5vw, 6vh) scale(1.06); }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* DYNAMIC DUST & FLOW ANIMATIONS                           */
+/* ──────────────────────────────────────────────────────── */
+
+.rotate-cw {
+  transform-origin: 50px 50px;
+  animation: spin-clockwise 30s infinite linear;
+}
+
+.rotate-ccw {
+  transform-origin: 50px 50px;
+  animation: spin-counter-clockwise 25s infinite linear;
+}
+
+@keyframes spin-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-counter-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Glowing dash flow path for cyan and amber energy strands */
+.quantum-flow-path-cyan {
+  stroke-dasharray: 8 14;
+  animation: dash-flow-forward 4s infinite linear;
+  opacity: 0.5;
+  transition: opacity 0.6s ease, stroke-width 0.6s ease;
+}
+
+.active-slide .quantum-flow-path-cyan {
+  animation: dash-flow-forward 1.8s infinite linear;
+  opacity: 1;
+  stroke-width: 2.5px;
+}
+
+.quantum-flow-path-amber {
+  stroke-dasharray: 8 14;
+  animation: dash-flow-backward 4s infinite linear;
+  opacity: 0.5;
+  transition: opacity 0.6s ease, stroke-width 0.6s ease;
+}
+
+.active-slide .quantum-flow-path-amber {
+  animation: dash-flow-backward 1.8s infinite linear;
+  opacity: 1;
+  stroke-width: 2.5px;
+}
+
+@keyframes dash-flow-forward {
+  from { stroke-dashoffset: 22; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dash-flow-backward {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 22; }
+}
+
+/* Pulsating nodes */
+.quantum-node-pulse {
+  animation: node-glowing 2s infinite ease-in-out;
+}
+
+@keyframes node-glowing {
+  0%, 100% { filter: drop-shadow(0 0 2px #00f5ff); opacity: 0.7; }
+  50% { filter: drop-shadow(0 0 8px #00f5ff); opacity: 1; }
+}
+
+/* Hadamard wave wiggles */
+.hadamard-wave-1 {
+  animation: wave-wiggle-1 0.4s infinite alternate ease-in-out;
+}
+.hadamard-wave-2 {
+  animation: wave-wiggle-2 0.4s infinite alternate ease-in-out;
+}
+@keyframes wave-wiggle-1 {
+  from { transform: translateX(-1.5px) skewX(-1deg); }
+  to { transform: translateX(1.5px) skewX(1deg); }
+}
+@keyframes wave-wiggle-2 {
+  from { transform: translateX(1.5px) skewX(1deg); }
+  to { transform: translateX(-1.5px) skewX(-1deg); }
+}
+
+/* Z-Gate gauge field loop rotation/flow */
+.gauge-field-loop {
+  animation: gauge-flow 2s infinite linear;
+}
+@keyframes gauge-flow {
+  from { stroke-dashoffset: 20; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* SCROLL REVEALS & UNFOLDING TRANSITIONS                   */
+/* ──────────────────────────────────────────────────────── */
+.quantum-slide-title, 
+.quantum-slide-subtitle, 
+.quantum-slide-stage-tag,
+.gate-slide-name, 
+.gate-slide-desc, 
+.gate-expert-summary {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gate-slide-left, 
+.qubit-cards-container, 
+.stabilizer-grid-container {
+  opacity: 0.1;
+  transform: scale(0.96) translateY(15px);
+  transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When the slide is active, transition them to fully visible and translated to 0 */
+.active-slide .quantum-slide-title,
+.active-slide .quantum-slide-subtitle,
+.active-slide .quantum-slide-stage-tag,
+.active-slide .gate-slide-name,
+.active-slide .gate-slide-desc,
+.active-slide .gate-expert-summary {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.active-slide .gate-slide-left,
+.active-slide .qubit-cards-container,
+.active-slide .stabilizer-grid-container {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Staggered delay for text elements to unfold sequentially */
+.active-slide .quantum-slide-title,
+.active-slide .gate-slide-name {
+  transition-delay: 0.05s;
+}
+.active-slide .quantum-slide-subtitle,
+.active-slide .gate-slide-desc {
+  transition-delay: 0.1s;
+}
+.active-slide .gate-expert-summary {
+  transition-delay: 0.15s;
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* SLIDE LAYOUTS & COMPACT SCANNABILITY                     */
+/* ──────────────────────────────────────────────────────── */
+
+.quantum-viewport-slide {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 2rem 4rem;
+}
+
+/* Stage Header Panels */
+.quantum-slide-header-panel {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.quantum-slide-stage-tag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #ffb01f;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
+}
+
+.quantum-slide-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(0, 245, 255, 0.2);
+}
+
+.quantum-slide-subtitle {
+  font-size: 0.95rem;
+  color: #8b949e;
+  line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* CINEMATIC WELCOME SCREEN (SLIDE 1)                       */
+/* ──────────────────────────────────────────────────────── */
+
+.quantum-welcome-slide {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  gap: 3rem;
+  max-width: 1300px;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.quantum-welcome-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Quantum welcome page telemetry grid */
+.quantum-welcome-telemetry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background-color: rgba(22, 27, 34, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.01), 0 4px 12px rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.telemetry-label {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: #8b949e;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.telemetry-value {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.telemetry-value.cyan-text { color: #00f5ff; text-shadow: 0 0 8px rgba(0, 245, 255, 0.25); }
+.telemetry-value.amber-text { color: #ffb01f; text-shadow: 0 0 8px rgba(245, 158, 11, 0.25); }
+.telemetry-value.green-text { color: #25c2a0; text-shadow: 0 0 8px rgba(37, 194, 160, 0.25); }
+
+.quantum-welcome-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.quantum-welcome-right::before {
+  content: "";
+  position: absolute;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 245, 255, 0.08);
+  animation: spin-clockwise 60s infinite linear;
+}
+
+.quantum-welcome-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #ffb01f;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+  width: fit-content;
+}
+
+.quantum-welcome-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  line-height: 1.1;
+}
+
+.quantum-welcome-subtitle {
+  font-size: 1.1rem;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.quantum-welcome-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: rgba(0, 245, 255, 0.6);
+  animation: pulse-dot 2.5s infinite ease-in-out;
+}
+
+.quantum-welcome-indicator svg {
+  stroke: currentColor;
+  width: 18px;
+  height: 18px;
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* STAGE 1: THE QUBIT BASIS SPACE (SLIDE 2)                 */
+/* ──────────────────────────────────────────────────────── */
+
+.quantum-viewport-slide.split-slide {
+  justify-content: center;
+}
+
+.qubit-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 960px;
+  width: 100%;
+}
+
+.qubit-card {
+  background-color: rgba(22, 27, 34, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(6px);
+}
+
+.qubit-card-corners {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+.qubit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qubit-card-logical-val {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.qubit-card-label {
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.qubit-card-graphic-container {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+}
+
+.qubit-card:hover .qubit-card-graphic-container {
+  transform: scale(1.05);
+}
+
+.qubit-card-footer {
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+}
+
+.qubit-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.qubit-card-invariants {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+
+/* Glowing hover effects */
+.qubit-card.cyan-glow:hover {
+  border-color: rgba(0, 245, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.18);
+  background-color: rgba(22, 27, 34, 0.8);
+}
+.qubit-card.cyan-glow .qubit-card-logical-val {
+  color: #00f5ff;
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+}
+
+.qubit-card.amber-glow:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.18);
+  background-color: rgba(22, 27, 34, 0.8);
+}
+.qubit-card.amber-glow .qubit-card-logical-val {
+  color: #ffb01f;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* STAGE 2: STICKY HORIZONTAL SCROLL TIMELINE               */
+/* ──────────────────────────────────────────────────────── */
+
+.gates-scrolly-container {
+  position: relative;
+  height: 800vh;
+  width: 100%;
+}
+
+.gates-sticky-window {
+  position: sticky;
+  top: var(--ifm-navbar-height, 60px);
+  width: 100%;
+  height: calc(100vh - var(--ifm-navbar-height, 60px));
+  overflow: hidden;
+  z-index: 2;
+}
+
+.gates-horizontal-track {
+  display: flex;
+  flex-direction: row;
+  width: 800vw;
+  height: 100%;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gate-slide {
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 6rem;
+  box-sizing: border-box;
+  background-color: rgba(13, 17, 23, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.gate-slide:hover {
+  background-color: rgba(22, 27, 34, 0.12);
+}
+
+.gate-slide-layout {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.gate-slide-left {
+  height: 380px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(22, 27, 34, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gate-slide-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gate-slide-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0.5rem 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.gate-slide-desc {
+  font-size: 1.05rem;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.gate-expert-summary {
+  background-color: rgba(22, 27, 34, 0.75);
+  border-left: 2px solid #ffb01f;
+  border-radius: 0 6px 6px 0;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.gate-expert-title {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #ffb01f;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.gate-expert-summary p {
+  font-size: 0.88rem;
+  color: #8b949e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.gate-click-hint {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: #00f5ff;
+  letter-spacing: 0.5px;
+  margin-top: 0.75rem;
+  opacity: 0.7;
+}
+
+.gate-slide::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.gate-slide.cyan-border:hover .gate-slide-left {
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.08);
+}
+.gate-slide.amber-border:hover .gate-slide-left {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.08);
+}
+.gate-slide.red-border:hover .gate-slide-left {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.08);
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* STAGE 3: READOUT & STABILIZER DASHBOARDS                  */
+/* ──────────────────────────────────────────────────────── */
+
+.quantum-viewport-slide.read-slide:hover {
+  background-color: rgba(22, 27, 34, 0.12);
+}
+
+.quantum-viewport-slide.read-slide:hover .gate-slide-left {
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.08);
+}
+
+.quantum-viewport-slide.stabilizer-slide {
+  justify-content: center;
+}
+
+.stabilizer-grid-container {
+  height: 380px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(22, 27, 34, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Interactive button */
+.quantum-healing-btn {
+  background-color: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.9rem 1.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: not-allowed;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+.quantum-healing-btn.active {
+  border-color: #25c2a0;
+  color: #25c2a0;
+  cursor: pointer;
+  background-color: rgba(37, 194, 160, 0.05);
+  box-shadow: 0 0 15px rgba(37, 194, 160, 0.15);
+}
+
+.quantum-healing-btn.active:hover {
+  background-color: rgba(37, 194, 160, 0.12);
+  box-shadow: 0 0 25px rgba(37, 194, 160, 0.3);
+  transform: translateY(-1px);
+}
+
+.quantum-healing-btn.healing {
+  border-color: #ffb01f;
+  color: #ffb01f;
+  cursor: wait;
+  background-color: rgba(245, 158, 11, 0.05);
+  animation: healing-glow-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes healing-glow-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+  }
+}
+
+/* ──────────────────────────────────────────────────────── */
+/* MODALS & RESPONSIVE LAYOUTS                              */
+/* ──────────────────────────────────────────────────────── */
+
+.quantum-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.quantum-modal-content {
+  background-color: #161b22;
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 12px;
+  max-width: 650px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.15);
+  color: #c9d1d9;
+}
+
+.quantum-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.quantum-modal-close:hover {
+  color: #ffffff;
+}
+
+.quantum-modal-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.quantum-modal-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.quantum-modal-subtitle {
+  font-family: monospace;
+  color: #ffb01f;
+  font-size: 0.9rem;
+}
+
+.quantum-modal-parameters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(13, 17, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.quantum-modal-param-label {
+  color: #8b949e;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.quantum-modal-param-value {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.quantum-modal-text p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.quantum-math-block {
+  background-color: rgba(13, 17, 23, 0.7);
+  border-left: 3px solid #00f5ff;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1100px) {
+  .quantum-welcome-slide {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 4rem;
+  }
+  .quantum-welcome-right::before {
+    width: 260px; height: 260px;
+  }
+  .quantum-welcome-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .gate-slide {
+    padding: 3rem;
+  }
+  .gate-slide-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .gate-slide-left {
+    height: 280px;
+  }
+  .stabilizer-grid-container {
+    height: 300px;
+  }
+  .gate-slide-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .qubit-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .qubit-card {
+    min-height: 320px;
+  }
+  .quantum-modal-parameters {
+    grid-template-columns: 1fr;
+  }
+}
