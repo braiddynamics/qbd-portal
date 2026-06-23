@@ -132,7 +132,7 @@ Section 1.2.8 formalizes the properties of the QBD definition regarding 3-cycle.
 :::tip[**Mathematical Characterization of the Dual Temporal Scales**]
 :::
 
-The temporal structure of the physical theory is defined as a dual architecture constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
+The temporal structure of the physical theory is defined as a **Dual Time Architecture** constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
 
 **In Plain English:**  
 Time in QBD operates in a dual fashion: physical time (the relativistic, continuous time experienced by observers inside the universe) and global logical time (a step counter for the universe's evolution engine).
@@ -144,7 +144,7 @@ Time in QBD operates in a dual fashion: physical time (the relativistic, continu
 :::tip[**Mathematical Characterization of Relational Physical Duration**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the physical proper time interval $\Delta t_{phys}$ along the path is defined as:
+Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
 
 **In Plain English:**  
 Physical time is relationally defined as proper time computed along causal paths of the graph, emerging as continuous coordinate duration in the macroscopic limit.
@@ -156,7 +156,7 @@ Physical time is relationally defined as proper time computed along causal paths
 :::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]
 :::
 
-Let $\mathcal{U}$ denote the Universal Evolution Operator. The Global Logical Time, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
+Let $\mathcal{U}$ denote the Universal Evolution Operator. The **Global Logical Time**, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
 
 **In Plain English:**  
 Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
@@ -288,7 +288,7 @@ Section 1.3.9 formalizes the properties of the QBD proof regarding temporal fini
 :::tip[**Mathematical Characterization of the Relational Configuration Space**]
 :::
 
-Let $\Omega$ denote the universal configuration space of all valid states of the causal graph substrate. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
+Let $\Omega$ denote the universal configuration space of all valid states of the **Causal Graph Substrate**. A specific causal graph configuration is a triplet $G = (V, E, H)$ where: 1.  **Event Set**: $V$ is a finite set of vertices representing abstract events. 2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges. 3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
 
 **In Plain English:**  
 Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
@@ -324,7 +324,7 @@ Causal Relation defines the edge set E of directed links representing irreducibl
 :::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]
 :::
 
-Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a creation timestamp $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
+Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a **Creation Timestamp** $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
 
 **In Plain English:**  
 Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.
@@ -924,7 +924,7 @@ Section 2.5.4 formalizes the properties of the QBD proof regarding mutual indepe
 :::tip[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
 :::
 
-The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />.
+The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />.
 
 **In Plain English:**  
 Section 2.6.1 formalizes the properties of the QBD definition regarding effective influence.
@@ -1164,7 +1164,7 @@ Section 2.7.7 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Formal Definition of Topological Invariants within the Initial State**]
 :::
 
-The following topological invariants and structural properties are strictly defined for the initial state $G_0$, establishing the vocabulary required to describe the unique topology of the graph at $t_L=0$:
+The following topological invariants and structural properties are strictly defined for the **Vacuum Topology** of the initial state $G_0$, establishing the vocabulary required to describe the unique topology of the graph at $t_L=0$:
 
 **In Plain English:**  
 Section 3.1.2 formalizes the properties of the QBD definition regarding vacuum topology.
@@ -1428,7 +1428,7 @@ Section 3.2.1 formalizes the properties of the QBD theorem regarding optimal vac
 :::tip[**Structural Definition of the Vacuum derived from Truncated Cayley Trees**]
 :::
 
-- The Regular Bethe Fragment constitutes a finite, rooted, outward-directed tree graph. This graph derives from the infinite regular Bethe lattice (also known as the Cayley tree) through truncation at a finite depth.
+- The **Regular Bethe Fragment** constitutes a finite, rooted, outward-directed tree graph. This graph derives from the infinite regular Bethe lattice (also known as the Cayley tree) through truncation at a finite depth.
 
 **In Plain English:**  
 Section 3.2.1.1 formalizes the properties of the QBD definition regarding regular bethe fragment.
@@ -1704,7 +1704,7 @@ Section 3.2.11 formalizes the properties of the QBD proof regarding demonstratio
 :::tip[**Formal Specification of Graph States and Rewrite Sites as Annotated Structures**]
 :::
 
-The physical state of the universe at Logical Time $t$ **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$. 1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and local **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> values. 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions: * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$. * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$. * **Edge Annotation Invariance:** $\forall (u, v) \in E, a_E((u, v)) = a_E((\varphi(u), \varphi(v)))$. 3.  **Candidate Rewrite Site:** A candidate rewrite site $s$ is defined as the ordered tuple $s = (F_s, p_s)$, where $F_s \subseteq G_t$ constitutes the finite footprint subgraph required by the rewrite rule, and $p_s$ constitutes the deterministic local transformation rule defined on the domain of $F_s$.
+The **Annotated State Space** representing the physical state of the universe at Logical Time $t$ **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$. 1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and local **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> values. 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions: * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$. * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$. * **Edge Annotation Invariance:** $\forall (u, v) \in E, a_E((u, v)) = a_E((\varphi(u), \varphi(v)))$. 3.  **Candidate Rewrite Site:** A candidate rewrite site $s$ is defined as the ordered tuple $s = (F_s, p_s)$, where $F_s \subseteq G_t$ constitutes the finite footprint subgraph required by the rewrite rule, and $p_s$ constitutes the deterministic local transformation rule defined on the domain of $F_s$.
 
 **In Plain English:**  
 Section 3.3.1 formalizes the properties of the QBD definition regarding annotated state space.
@@ -1716,7 +1716,7 @@ Section 3.3.1 formalizes the properties of the QBD definition regarding annotate
 :::tip[**Axiomatic Constraints on the Update Mechanism regarding Equivariance and Determinism**]
 :::
 
-A graph rewrite system satisfies the **Symmetry Preservation Constraints** if and only if the Update Map $\mathcal{U}$ and the Site Identification Function $\mathcal{S}$ satisfy the following four axiomatic conditions with respect to the automorphism group $\text{Aut}(G)$: 1.  **Assumption A1 (Locality and Equivariance):** For every automorphism $\varphi \in \text{Aut}(G)$, the induced action on the set of candidate sites $\mathcal{S}(G)$ is a bijection that preserves the isomorphism class of the site footprints and their associated local proposals. 2.  **Assumption A2 (Universality of Eligibility):** The eligibility function determining membership in $\mathcal{S}(G)$ depends exclusively on local structural invariants preserved under the action of $\text{Aut}(G)$. 3.  **Assumption A3 (Deterministic Acceptance):** The acceptance function $\mathcal{A}$ governing the update is strictly deterministic, conditioned solely on the state $G$ and the specific set of selected sites. 4.  **Assumption A4 (Joint-Update Equivariance):** The simultaneous application of a selected set of site updates commutes with the action of the automorphism group, such that $\varphi(\text{Update}(S, G)) = \text{Update}(\varphi(S), \varphi(G))$.
+The **Formal Symmetry Framework** defines the **Symmetry Preservation Constraints** that a graph rewrite system must satisfy. Specifically, a graph rewrite system satisfies these constraints when the Update Map $\mathcal{U}$ and the Site Identification Function $\mathcal{S}$ satisfy the following four axiomatic conditions with respect to the automorphism group $\text{Aut}(G)$: 1.  **Assumption A1 (Locality and Equivariance):** For every automorphism $\varphi \in \text{Aut}(G)$, the induced action on the set of candidate sites $\mathcal{S}(G)$ is a bijection that preserves the isomorphism class of the site footprints and their associated local proposals. 2.  **Assumption A2 (Universality of Eligibility):** The eligibility function determining membership in $\mathcal{S}(G)$ depends exclusively on local structural invariants preserved under the action of $\text{Aut}(G)$. 3.  **Assumption A3 (Deterministic Acceptance):** The acceptance function $\mathcal{A}$ governing the update is strictly deterministic, conditioned solely on the state $G$ and the specific set of selected sites. 4.  **Assumption A4 (Joint-Update Equivariance):** The simultaneous application of a selected set of site updates commutes with the action of the automorphism group, such that $\varphi(\text{Update}(S, G)) = \text{Update}(\varphi(S), \varphi(G))$.
 
 **In Plain English:**  
 Section 3.3.2 formalizes the properties of the QBD definition regarding formal symmetry framework.
@@ -2016,7 +2016,7 @@ Section 3.4.6.1 formalizes the properties of the QBD calculation regarding simul
 :::tip[**Formal Specification of the Configuration Space and Stabilizer Constraints via Hilbert Space Embedding**]
 :::
 
-The consistency enforcement mechanism is formalized as a **Quantum Error-Correcting Code (QECC)** defined on a finite dimensional Hilbert space, governed by the following structural definitions and operator constraints:
+The **Generalized Stabilizer Formulation** formalizes the consistency enforcement mechanism as a **Quantum Error-Correcting Code (QECC)** defined on a finite dimensional Hilbert space, governed by the following structural definitions and operator constraints:
 
 **In Plain English:**  
 The laws of physics operate as a topological quantum error-correcting code, utilizing local parities to protect space from collapsing due to vacuum noise.
@@ -2460,7 +2460,7 @@ Section 4.2.11 formalizes the properties of the QBD calculation regarding partia
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 :::
 
-The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a Causal Graph with **History**, as defined in **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
+The Category of **Annotated Causal Graphs (AnnCG)**, denoted $\mathbf{AnnCG}$, is defined by the following structural components: 1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a Causal Graph with **History**, as defined in **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />. 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation. 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$. 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
 
 **In Plain English:**  
 Section 4.3.1 formalizes the properties of the QBD definition regarding annotated causal graphs (anncg).
@@ -2880,7 +2880,7 @@ Section 4.5.4.1 formalizes the properties of the QBD proof regarding addition pr
 :::tip[**Destructive Operation Proposing Edge Removals**]
 :::
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-**Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
 Section 4.5.5 formalizes the properties of the QBD definition regarding deletion mode.
@@ -2916,7 +2916,7 @@ Section 4.5.6.1 formalizes the properties of the QBD proof regarding deletion pr
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
 
 **In Plain English:**  
 Section 4.6.1 formalizes the properties of the QBD definition regarding evolution operator.
@@ -3024,7 +3024,7 @@ Section 5.1.2 formalizes the properties of the QBD theorem regarding extensive e
 :::info[**Decay of Geometric Covariance**]
 :::
 
-Assume a causal graph $G$ satisfies the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
+Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
 
 **In Plain English:**  
 Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation decay.
@@ -3072,7 +3072,7 @@ Section 5.1.4.1 formalizes the properties of the QBD calculation regarding bound
 :::tip[**Decomposition of the Net Topological Current into Creation and Deletion**]
 :::
 
-The time evolution of the system is governed by the **Net Topological Current**, denoted $J_{net}$, acting on the population of Geometric Quanta $N_3(t)$. The current decomposes into two opposing fluxes:
+The time evolution of the system is governed by the **Net Topological Current**, denoted $J_{net}$, acting on the population of Geometric Quanta $N_3(t)$. The current decomposes into two opposing **Thermodynamic Fluxes**:
 
 **In Plain English:**  
 Section 5.2.1 formalizes the properties of the QBD definition regarding thermodynamic fluxes.
@@ -3288,7 +3288,7 @@ Section 5.3.3 formalizes the properties of the QBD calculation regarding phase s
 :::tip[**Empirical Validation of the Axiomatic Constants**]
 :::
 
-The Region of Physical Viability forms a contiguous, oblique band in the $(\mu, \lambda_{\text{cat}})$ phase plane. The theoretical constants derived in Chapter 4 ($\mu \approx 0.40, \lambda_{\text{cat}} \approx 1.72$) reside precisely in the center of this channel.
+The **Viability Channel** (or Region of Physical Viability) forms a contiguous, oblique band in the $(\mu, \lambda_{\text{cat}})$ phase plane. The theoretical constants derived in Chapter 4 ($\mu \approx 0.40, \lambda_{\text{cat}} \approx 1.72$) reside precisely in the center of this channel.
 
 **In Plain English:**  
 Section 5.3.4 formalizes the properties of the QBD definition regarding viability channel.
@@ -3300,7 +3300,7 @@ Section 5.3.4 formalizes the properties of the QBD definition regarding viabilit
 :::tip[**Equation Defining the Fixed Point via Flux Equality**]
 :::
 
-The equilibrium density of Geometric Quanta, denoted $\rho^*$, is defined as the fixed-point solution to the Master Equation. It satisfies the transcendental equation balancing the friction-damped creation against the catalytically-boosted deletion:
+The equilibrium density of Geometric Quanta, denoted $\rho^*$, is defined as the fixed-point solution to the Master Equation, satisfying the **Transcendental Balance** equation that balances the friction-damped creation against the catalytically-boosted deletion:
 
 **In Plain English:**  
 Section 5.4.1 formalizes the properties of the QBD definition regarding transcendental balance.
@@ -10932,7 +10932,7 @@ Section 23.1.3 formalizes the properties of the QBD proof regarding combinatoria
 :::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
 
-*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$. *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral: $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$ *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **The Continuum Limit** <Ref id="11.1" label="§11.1" />).
+*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$. *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral: $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$ *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
 
 **In Plain English:**  
 Section 23.1.4 formalizes the properties of the QBD lemma regarding integration representation.
