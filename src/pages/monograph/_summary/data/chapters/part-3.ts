@@ -59,61 +59,6 @@ export const part3Chapters: ChapterData[] = [
   {
     num: 12,
     part: "Part III: Emergent Reality (The Stage)",
-    title: "Discrete Field Equations",
-    taxonomy: "Einstein",
-    status: "Theoretical Model",
-    leanProofs: 0,
-    pythonSims: 3,
-    executiveEvaluation: "Gravity is derived as an emergent thermodynamic hydrodynamic equation of state from the causal network updates, bypassing continuous coordinate charts.",
-    breakdowns: [
-      {
-        title: "12.1 Discrete Stress-Energy",
-        content: "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations."
-      },
-      {
-        title: "12.2 Discrete Field Equations",
-        content: "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network."
-      },
-      {
-        title: "12.3 Geometric Conservation",
-        content: "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset."
-      }
-    ],
-    specialists: [
-      {
-        area: "For Relativists & Cosmology Experts",
-        text: "Curvature emerges as a thermodynamic pressure balance, bridging Jacobson's thermodynamics of spacetime with discrete network models."
-      },
-      {
-        area: "For Gravitational Theorists",
-        text: "The discrete stress-energy tensor is derived from the probability flux of network updates, sourcing emergent gravity relationally."
-      },
-      {
-        area: "For Einstein Equation Researchers",
-        text: "Stationary action constraints on the discrete event poset enforce the exact balance of curvature and information flux."
-      }
-    ],
-    analogy: "A heavy bowling ball resting on a trampoline. A knot (matter) in the network forces adjacent threads to stretch and crowd together, which nearby knots naturally roll toward, creating gravity.",
-    link: "/monograph/stage/einstein/12.1",
-    style: "B",
-    definitions: [
-      {
-        term: "Stress-Energy Equivalent",
-        definition: "The localized update density perturbations on the lattice, which couples directly to emergent gravity."
-      },
-      {
-        term: "Thermodynamic Gravity",
-        definition: "The description of gravity not as a fundamental mechanical force, but as an emergent thermodynamic equation of state."
-      }
-    ],
-    historicalCallout: {
-      title: "Jacobson's Thermal Gravity",
-      text: "In 1995, Ted Jacobson derived Einstein's field equations as a thermodynamic equation of state of a horizon. QBD implements this on networks: gravity emerges as a macroscopic thermal balance of discrete graph rewrites."
-    }
-  },
-  {
-    num: 13,
-    part: "Part III: Emergent Reality (The Stage)",
     title: "Continuum Limit",
     taxonomy: "Convergence",
     status: "Theoretical Model",
@@ -122,15 +67,15 @@ export const part3Chapters: ChapterData[] = [
     executiveEvaluation: "Proves that the discrete causal network sequence converges mathematically to a smooth, curved Lorentzian spacetime manifold under the Gromov-Hausdorff-Prokhorov metric.",
     breakdowns: [
       {
-        title: "13.1 Riemannian Convergence",
+        title: "12.1 Riemannian Convergence",
         content: "Proves that the sequence of discrete graphs converges strictly to a smooth Riemannian manifold under the Gromov-Hausdorff-Prokhorov metric."
       },
       {
-        title: "13.2 Tensorial Reorganization",
+        title: "12.2 Tensorial Reorganization",
         content: "Develops the coarse-graining framework, showing how micro-updates group into macroscopic tensor fields."
       },
       {
-        title: "13.3 Causal Geometry",
+        title: "12.3 Causal Geometry",
         content: "Validates that emergent causal geometry satisfies classical general relativity in the thermodynamic limit."
       }
     ],
@@ -149,7 +94,7 @@ export const part3Chapters: ChapterData[] = [
       }
     ],
     analogy: "A digital photo. Zoomed in close, it is a grid of distinct, square pixels (discrete graph). Zoomed out, the pixels merge seamlessly into a smooth, continuous, curved image (classical spacetime).",
-    link: "/monograph/stage/convergence/13.1",
+    link: "/monograph/stage/reconstruction/12.1",
     style: "C",
     image: {
       src: "/img/manifold_convergence.png",
@@ -170,6 +115,61 @@ export const part3Chapters: ChapterData[] = [
     historicalCallout: {
       title: "Hausdorff's Metric Topology",
       text: "Felix Hausdorff formalized the math of metric spaces and topological dimension. QBD uses Mikhail Gromov's generalization (Gromov-Hausdorff metric) to prove that discrete graph meshes converge strictly to smooth 4D containers."
+    }
+  },
+  {
+    num: 13,
+    part: "Part III: Emergent Reality (The Stage)",
+    title: "Discrete Field Equations",
+    taxonomy: "Einstein",
+    status: "Theoretical Model",
+    leanProofs: 0,
+    pythonSims: 3,
+    executiveEvaluation: "Gravity is derived as an emergent thermodynamic hydrodynamic equation of state from the causal network updates, bypassing continuous coordinate charts.",
+    breakdowns: [
+      {
+        title: "13.1 Discrete Stress-Energy",
+        content: "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations."
+      },
+      {
+        title: "13.2 Discrete Field Equations",
+        content: "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network."
+      },
+      {
+        title: "13.3 Geometric Conservation",
+        content: "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset."
+      }
+    ],
+    specialists: [
+      {
+        area: "For Relativists & Cosmology Experts",
+        text: "Curvature emerges as a thermodynamic pressure balance, bridging Jacobson's thermodynamics of spacetime with discrete network models."
+      },
+      {
+        area: "For Gravitational Theorists",
+        text: "The discrete stress-energy tensor is derived from the probability flux of network updates, sourcing emergent gravity relationally."
+      },
+      {
+        area: "For Einstein Equation Researchers",
+        text: "Stationary action constraints on the discrete event poset enforce the exact balance of curvature and information flux."
+      }
+    ],
+    analogy: "A heavy bowling ball resting on a trampoline. A knot (matter) in the network forces adjacent threads to stretch and crowd together, which nearby knots naturally roll toward, creating gravity.",
+    link: "/monograph/stage/dynamics/13.1",
+    style: "B",
+    definitions: [
+      {
+        term: "Stress-Energy Equivalent",
+        definition: "The localized update density perturbations on the lattice, which couples directly to emergent gravity."
+      },
+      {
+        term: "Thermodynamic Gravity",
+        definition: "The description of gravity not as a fundamental mechanical force, but as an emergent thermodynamic equation of state."
+      }
+    ],
+    historicalCallout: {
+      title: "Jacobson's Thermal Gravity",
+      text: "In 1995, Ted Jacobson derived Einstein's field equations as a thermodynamic equation of state of a horizon. QBD implements this on networks: gravity emerges as a macroscopic thermal balance of discrete graph rewrites."
     }
   },
   {

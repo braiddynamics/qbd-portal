@@ -30,8 +30,8 @@ sidebar_position: 0
 
 ### 3. Emergent Reality (The Stage)
 * [Chapter 11: Differential Geometry (Discrete)](/monograph/category/11-discrete)
-* [Chapter 12: Discrete Field Equations (Einstein)](/monograph/category/12-einstein)
-* [Chapter 13: Continuum Limit (Convergence)](/monograph/category/13-convergence)
+* [Chapter 12: Continuum Limit (Convergence)](/monograph/category/12-reconstruction)
+* [Chapter 13: Discrete Field Equations (Einstein)](/monograph/category/13-dynamics)
 * [Chapter 14: Lorentzian Reality (Time)](/monograph/category/14-time)
 * [Chapter 15: Geometry of Entanglement (ER = EPR)](/monograph/category/15-epr)
 * [Chapter 16: Isomorphism Principle (Holography)](/monograph/category/16-holography)

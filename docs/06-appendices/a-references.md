@@ -24,7 +24,7 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 Adams and Fournier present a comprehensive and classic monograph on the theory of Sobolev spaces. They cover the fundamental properties of these spaces, including approximation theorems, embedding theorems, and compactness results. Their work supplies the analytical machinery used to analyze partial differential equations on continuous domains.
 
 **Relevance to QBD:**
-This reference is indispensable for the continuum limit derivations of QBD. In Chapter 13, the discrete graph Laplacian and its associated energy functionals are proved to converge to continuous differential operators. This convergence requires mapping graph functions to Sobolev spaces. The embedding theorems derived by Adams and Fournier provide the required bounds to ensure that the discrete solutions remain well-behaved as the graph spacing approaches zero.
+This reference is indispensable for the continuum limit derivations of QBD. In Chapter 12, the discrete graph Laplacian and its associated energy functionals are proved to converge to continuous differential operators. This convergence requires mapping graph functions to Sobolev spaces. The embedding theorems derived by Adams and Fournier provide the required bounds to ensure that the discrete solutions remain well-behaved as the graph spacing approaches zero.
 
 ---
 
@@ -72,7 +72,7 @@ The problem of time is resolved in QBD by the dual-time architecture developed i
 Ashtekar introduces a new set of canonical variables for general relativity, mapping the theory's phase space to that of a Yang-Mills gauge theory. This reformulation simplifies the constraints of classical gravity and lays the foundation for Loop Quantum Gravity by expressing the spatial geometry in terms of loops and connections.
 
 **Relevance to QBD:**
-Ashtekar variables provide the direct inspiration for how spatial geometry can be encoded in connection-like loops within a discrete graph. In Chapter 12, the discrete field equations are formulated by defining connection variables along the edges of the causal graph. Ashtekar's treatment of canonical gravity traces the historical and algebraic link between continuous general relativity and our discrete, loop-based gauge formulations.
+Ashtekar variables provide the direct inspiration for how spatial geometry can be encoded in connection-like loops within a discrete graph. In Chapter 13, the discrete field equations are formulated by defining connection variables along the edges of the causal graph. Ashtekar's treatment of canonical gravity traces the historical and algebraic link between continuous general relativity and our discrete, loop-based gauge formulations.
 
 ---
 
@@ -133,7 +133,7 @@ The Bekenstein Bound serves as a central physical selection rule in QBD, represe
 Belkin and Niyogi introduce Laplacian Eigenmaps, a geometric toolset that utilizes the Laplace-Beltrami operator to map high-dimensional data points to a low-dimensional manifold while preserving local proximity. They prove that the eigenvectors of the graph Laplacian provide optimal embeddings that preserve the underlying manifold's geometry.
 
 **Relevance to QBD:**
-This approach is the foundation for the dimensional reconstruction proofs in Chapter 13. To show that a discrete graph converges to a smooth spacetime manifold, we must construct an embedding. Belkin and Niyogi's work provides the justification for using the graph Laplacian's eigenvectors to recover the metric tensor and coordinate charts, demonstrating that low-dimensional spacetime emerges naturally from discrete networks.
+This approach is the foundation for the dimensional reconstruction proofs in Chapter 12. To show that a discrete graph converges to a smooth spacetime manifold, we must construct an embedding. Belkin and Niyogi's work provides the justification for using the graph Laplacian's eigenvectors to recover the metric tensor and coordinate charts, demonstrating that low-dimensional spacetime emerges naturally from discrete networks.
 
 ---
 
@@ -193,7 +193,7 @@ This textbook serves as the standard reference for all graph-theoretic operation
 Calder and Garcia Trillos derive improved spectral convergence rates for graph Laplacians converging to continuous Laplace-Beltrami operators on data-generated manifolds. They utilize optimal transport theory and variational analysis to prove that the eigenvectors and eigenvalues of the discrete graph match their continuous counterparts with sharp convergence bounds.
 
 **Relevance to QBD:**
-This variational analysis is decisive for the continuum limit of the discrete field equations in Chapter 13. To show that the discrete Einstein-Hilbert action on our graph converges to the continuous action, we must bound the error of the graph Laplacian. Calder's convergence bounds are used to confirm that the discrete curvature converges systematically to the continuous Ricci scalar, establishing a bridge to classical general relativity.
+This variational analysis is decisive for the continuum limit of the discrete field equations in Chapter 12. To show that the discrete Einstein-Hilbert action on our graph converges to the continuous action, we must bound the error of the graph Laplacian. Calder's convergence bounds are used to confirm that the discrete curvature converges systematically to the continuous Ricci scalar, establishing a bridge to classical general relativity.
 
 ---
 
@@ -205,7 +205,7 @@ This variational analysis is decisive for the continuum limit of the discrete fi
 Cheeger, Colding, and Tian analyze the structure of singularities in limit spaces of Riemannian manifolds with bounded Ricci curvature. They prove that these limit spaces, though singular, possess tightly constrained geometric properties, specifically regarding their tangent cones and the Hausdorff dimension of their singular sets.
 
 **Relevance to QBD:**
-In Chapter 12, we must analyze the singular behavior of the discrete geometry when local graph densities fluctuate. Cheeger's analysis of singular limit spaces is used to prove that the emergent discrete spacetime remains stable and does not develop uncontrollable geometric singularities, ensuring that physical observables remain finite and well-defined even at the smallest scales.
+In Chapter 13, we must analyze the singular behavior of the discrete geometry when local graph densities fluctuate. Cheeger's analysis of singular limit spaces is used to prove that the emergent discrete spacetime remains stable and does not develop uncontrollable geometric singularities, ensuring that physical observables remain finite and well-defined even at the smallest scales.
 
 ---
 
@@ -315,7 +315,7 @@ The Page-Wootters mechanism is the conceptual precursor to the relational time f
 Gilbarg and Trudinger present a definitive and thorough treatment of classical elliptic partial differential equations. They cover maximum principles, Sobolev spaces, Schauder estimates, and existence theorems, supplying the standard analytical tools used to analyze smooth geometric operators.
 
 **Relevance to QBD:**
-This reference is necessary for the discrete field equations formulated in Chapter 12. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
 
 ---
 
@@ -400,7 +400,7 @@ This seminal textbook is the direct reference for the classical Lorentzian geome
 Jacobson derives the Einstein field equations of general relativity directly from thermodynamic relations, demonstrating that gravity can be interpreted as an emergent equation of state. By applying the Clausius relation ($dS = dQ/T$) to a local causal horizon, he proves that the Einstein equation is a necessary consequence of horizon thermodynamics.
 
 **Relevance to QBD:**
-Jacobson's emergent gravity derivation is a key physical pillar for the geometrogenesis proofs in Chapter 12. In QBD, the discrete field equations are shown to emerge from the thermodynamic equilibrium of the vacuum graph. Jacobson's results underpin our interpretation of gravity as a macroscopic equation of state, confirming that the curvature of spacetime arises from localized information entropy.
+Jacobson's emergent gravity derivation is a key physical pillar for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are shown to emerge from the thermodynamic equilibrium of the vacuum graph. Jacobson's results underpin our interpretation of gravity as a macroscopic equation of state, confirming that the curvature of spacetime arises from localized information entropy.
 
 ---
 
@@ -436,7 +436,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 Jost and Liu analyze Ollivier's definition of Ricci curvature on discrete graphs, proving that it correlates with the graph's local clustering coefficient. They derive key curvature-dimension inequalities that govern how diffusion processes behave on curved discrete networks, establishing a rigorous connection to continuous differential geometry.
 
 **Relevance to QBD:**
-This discrete curvature analysis is pivotal for the geometrogenesis proofs in Chapter 12. In QBD, the discrete field equations are formulated by defining Ollivier-Ricci curvature along the edges of the causal graph. Jost and his co-authors' calculus provides the tools to calculate this curvature, confirming that the graph's connectivity relates directly to physical spacetime curvature.
+This discrete curvature analysis is pivotal for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are formulated by defining Ollivier-Ricci curvature along the edges of the causal graph. Jost and his co-authors' calculus provides the tools to calculate this curvature, confirming that the graph's connectivity relates directly to physical spacetime curvature.
 
 ---
 
@@ -531,7 +531,7 @@ This recent stabilizer model is vital for the boundary protection theories devel
 Ollivier develops a robust approach to define Ricci curvature on arbitrary metric spaces using transport distances between probability measures. He shows that this definition, known as Ollivier-Ricci curvature, captures the geometric properties of continuous Riemannian manifolds while remaining fully applicable to discrete networks.
 
 **Relevance to QBD:**
-Ollivier's metric curvature is the direct tool used to formulate the discrete field equations in Chapter 12. By calculating the transport distance between localized random walks on our causal graph, we define the Ollivier-Ricci curvature along each edge. Ollivier's calculus provides the formal apparatus used to prove that this discrete curvature converges to classical Ricci curvature.
+Ollivier's metric curvature is the direct tool used to formulate the discrete field equations in Chapter 13. By calculating the transport distance between localized random walks on our causal graph, we define the Ollivier-Ricci curvature along each edge. Ollivier's calculus provides the formal apparatus used to prove that this discrete curvature converges to classical Ricci curvature.
 
 ---
 
@@ -543,7 +543,7 @@ Ollivier's metric curvature is the direct tool used to formulate the discrete fi
 Otto and his co-authors present a first-principles derivation of hyperinvariant spin network states in discrete gravity, establishing an AdS/CFT model that operates on hyperbolic geometries. They prove that these spin networks exhibit robust entanglement properties that match the holographic predictions of continuous gravity.
 
 **Relevance to QBD:**
-This work provides decisive validation for the spin-network formulations developed in Chapter 12. QBD models the causal graph as a network of spin-like connections where spatial geometry is reconstructed via edge entanglement. The algebraic connection between our discrete graph states and the holographic spin networks of loop quantum gravity is traced through this paper.
+This work provides decisive validation for the spin-network formulations developed in Chapter 13. QBD models the causal graph as a network of spin-like connections where spatial geometry is reconstructed via edge entanglement. The algebraic connection between our discrete graph states and the holographic spin networks of loop quantum gravity is traced through this paper.
 
 ---
 
@@ -555,7 +555,7 @@ This work provides decisive validation for the spin-network formulations develop
 Padmanabhan reviews the thermodynamic description of gravity, presenting extensive evidence that gravity is not a fundamental interaction but rather an emergent thermodynamic phenomenon. He demonstrates that the field equations can be written as a local thermodynamic identity on causal horizons, linking geometry directly to entropy.
 
 **Relevance to QBD:**
-Padmanabhan's thermodynamic analysis is a central conceptual foundation for the emergent gravity proofs in Chapter 12. In QBD, spatial curvature emerges from the thermodynamic equilibrium of the vacuum graph. His review provides the physical motivation for treating general relativity as a macroscopic equation of state, linking discrete updates to thermodynamic entropy.
+Padmanabhan's thermodynamic analysis is a central conceptual foundation for the emergent gravity proofs in Chapter 13. In QBD, spatial curvature emerges from the thermodynamic equilibrium of the vacuum graph. His review provides the physical motivation for treating general relativity as a macroscopic equation of state, linking discrete updates to thermodynamic entropy.
 
 ---
 
@@ -651,7 +651,7 @@ RQM is the central epistemological foundation for the update dynamics formulated
 Rovelli and Smolin construct the loop space representation of quantum general relativity, formulating gravity in terms of loops and connections. They prove that the spatial geometry is quantized in terms of discrete spin network states, establishing a non-perturbative structure for what would become Loop Quantum Gravity.
 
 **Relevance to QBD:**
-This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 12. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
+This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 13. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
 
 ---
 
@@ -700,7 +700,7 @@ This categorical formulation is indispensable for the relational model defined i
 Singer and Wu introduce vector diffusion maps (VDM), a geometric approach that generalizes Laplacian eigenmaps to vector bundles on manifolds. They define the connection graph Laplacian, proving that its spectral properties recover both the underlying manifold's geometry and the gauge connection of the vector bundle, establishing a powerful tool for analyzing curved datasets.
 
 **Relevance to QBD:**
-This connection graph Laplacian is the direct tool used to analyze the emergent gauge fields in Chapter 13. To show that our discrete graph connectivity yields continuous gauge fields, we must construct a vector bundle over the graph. Singer and Wu's spectral convergence proofs show how the eigenvectors of the connection Laplacian recover both physical coordinates and gauge connections.
+This connection graph Laplacian is the direct tool used to analyze the emergent gauge fields in Chapter 12. To show that our discrete graph connectivity yields continuous gauge fields, we must construct a vector bundle over the graph. Singer and Wu's spectral convergence proofs show how the eigenvectors of the connection Laplacian recover both physical coordinates and gauge connections.
 
 ---
 
@@ -775,7 +775,7 @@ This textbook is the direct reference for the stochastic master equations formul
 van Luxburg, Belkin, and Bousquet prove the consistency of spectral clustering, demonstrating that the eigenvectors of the graph Laplacian converge systematically to the eigenfunctions of the continuous Laplace-Beltrami operator as the graph size approaches infinity. They establish explicit convergence bounds for different graph normalization schemes.
 
 **Relevance to QBD:**
-This convergence proof is a main cornerstone for the dimensional reconstruction proofs in Chapter 13. To show that a discrete causal network converges to a continuous manifold, we rely on spectral clustering consistency. This paper provides the bounds needed to verify that the discrete eigenvectors recover continuous coordinates in the infinite-volume limit.
+This convergence proof is a main cornerstone for the dimensional reconstruction proofs in Chapter 12. To show that a discrete causal network converges to a continuous manifold, we rely on spectral clustering consistency. This paper provides the bounds needed to verify that the discrete eigenvectors recover continuous coordinates in the infinite-volume limit.
 
 ---
 
@@ -787,7 +787,7 @@ This convergence proof is a main cornerstone for the dimensional reconstruction 
 Verlinde proposes that gravity is not a fundamental interaction but rather an entropic force arising from information changes on holographic screens. By combining Bekenstein's horizon thermodynamics with holographic principles, he derives Newton's laws and the Einstein field equations as emergent thermodynamic equations of state.
 
 **Relevance to QBD:**
-Verlinde's entropic gravity is a central conceptual foundation for the discrete field equations formulated in Chapter 12. In QBD, the spatial curvature of the causal graph is shown to emerge from the entropic forces generated by local graph update fluxes. Verlinde's treatment supports our interpretation of gravity as an entropic force, showing that geometry is an emergent information phenomenon.
+Verlinde's entropic gravity is a central conceptual foundation for the discrete field equations formulated in Chapter 13. In QBD, the spatial curvature of the causal graph is shown to emerge from the entropic forces generated by local graph update fluxes. Verlinde's treatment supports our interpretation of gravity as an entropic force, showing that geometry is an emergent information phenomenon.
 
 ---
 
@@ -823,7 +823,7 @@ Wheeler's informational paradigm is the philosophical foundation for the entire 
 Wilson presents the definitive formulation of the renormalization group, describing how the effective physical parameters of a quantum field theory shift as the system is viewed at different length scales. This work provides the tools required to analyze critical phase transitions and calculate continuous limits in quantum field theories.
 
 **Relevance to QBD:**
-The renormalization group is the main tool used to calculate the continuum limit of the discrete field equations in Chapter 13. By grouping local graph updates into larger coarse-grained blocks, we show that the discrete Laplacian converges to a continuous operator. Wilson's scaling theory underpins this convergence.
+The renormalization group is the main tool used to calculate the continuum limit of the discrete field equations in Chapter 12. By grouping local graph updates into larger coarse-grained blocks, we show that the discrete Laplacian converges to a continuous operator. Wilson's scaling theory underpins this convergence.
 
 ---
 

@@ -315,26 +315,26 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3](/monograph/stage/discrete/11.3/#11.3.3) |
 | $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
 | $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
-| $T_{ab}$ | Discrete stress-energy tensor | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
-| $P_{\text{add}}(a,b)$ | Probability of edge addition | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
-| $P_{\text{del}}(a,b)$ | Probability of edge deletion | [§12.1.1](/monograph/stage/einstein/12.1/#12.1.1) |
-| $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§12.1.2.1](/monograph/stage/einstein/12.1/#12.1.2.1) |
-| $\mathcal{G}_{ab}$ | Discrete Einstein tensor | [§12.2.1.1](/monograph/stage/einstein/12.2/#12.2.1.1) |
-| $R_{\text{disc}}$ | Discrete scalar curvature | [§12.2.1.1](/monograph/stage/einstein/12.2/#12.2.1.1) |
-| $\kappa$ | Discrete gravitational coupling | [§12.2.1](/monograph/stage/einstein/12.2/#12.2.1) |
-| $\ell_0$ | Microscopic discreteness / Planck area element | [§12.2.2.1](/monograph/stage/einstein/12.2/#12.2.2.1) |
-| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§12.2.3](/monograph/stage/einstein/12.2/#12.2.3) |
-| $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | [§13.1.1](/monograph/stage/convergence/13.1/#13.1.1) |
-| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§13.1.3](/monograph/stage/convergence/13.1/#13.1.3) |
-| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§13.1.3](/monograph/stage/convergence/13.1/#13.1.3) |
-| $-\Delta_g$ | Laplace-Beltrami operator | [§13.1.2](/monograph/stage/convergence/13.1/#13.1.2) |
-| $p_t(x,y)$ | Heat kernel on graph/manifold | [§13.1.4](/monograph/stage/convergence/13.1/#13.1.4) |
-| $f_k$ | Continuum eigenfunctions | [§13.1.2](/monograph/stage/convergence/13.1/#13.1.2) |
-| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\hat{n}_e$ | Unit direction vector of edge $e$ | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $B(x,R)$ | Mesoscopic ball of radius $R$ | [§13.2.1](/monograph/stage/convergence/13.2/#13.2.1) |
-| $\kappa'$ | Continuum gravitational coupling constant | [§13.2.5](/monograph/stage/convergence/13.2/#13.2.5) |
+| $T_{ab}$ | Discrete stress-energy tensor | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
+| $P_{\text{add}}(a,b)$ | Probability of edge addition | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
+| $P_{\text{del}}(a,b)$ | Probability of edge deletion | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
+| $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§13.1.2.1](/monograph/stage/dynamics/13.1/#13.1.2.1) |
+| $\mathcal{G}_{ab}$ | Discrete Einstein tensor | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |
+| $R_{\text{disc}}$ | Discrete scalar curvature | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |
+| $\kappa$ | Discrete gravitational coupling | [§13.2.1](/monograph/stage/dynamics/13.2/#13.2.1) |
+| $\ell_0$ | Microscopic discreteness / Planck area element | [§13.2.2.1](/monograph/stage/dynamics/13.2/#13.2.2.1) |
+| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§13.2.3](/monograph/stage/dynamics/13.2/#13.2.3) |
+| $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | [§12.1.1](/monograph/stage/reconstruction/12.1/#12.1.1) |
+| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
+| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
+| $-\Delta_g$ | Laplace-Beltrami operator | [§12.1.2](/monograph/stage/reconstruction/12.1/#12.1.2) |
+| $p_t(x,y)$ | Heat kernel on graph/manifold | [§12.1.4](/monograph/stage/reconstruction/12.1/#12.1.4) |
+| $f_k$ | Continuum eigenfunctions | [§12.1.2](/monograph/stage/reconstruction/12.1/#12.1.2) |
+| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $\hat{n}_e$ | Unit direction vector of edge $e$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $B(x,R)$ | Mesoscopic ball of radius $R$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $\kappa'$ | Continuum gravitational coupling constant | [§12.2.5](/monograph/stage/reconstruction/12.2/#12.2.5) |
 | $M$ | Continuous Lorentzian manifold | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
 | $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
 | $N$ | Lapse function (coordinate update rate) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |

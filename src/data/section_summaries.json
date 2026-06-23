@@ -321,33 +321,33 @@
   },
   "12.1": {
     "id": "12.1",
-    "title": "Discrete Stress-Energy",
-    "summary": "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations."
-  },
-  "12.2": {
-    "id": "12.2",
-    "title": "Discrete Field Equations",
-    "summary": "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network."
-  },
-  "12.3": {
-    "id": "12.3",
-    "title": "Geometric Conservation",
-    "summary": "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset."
-  },
-  "13.1": {
-    "id": "13.1",
     "title": "Riemannian Convergence",
     "summary": "Proves that the sequence of discrete graphs converges strictly to a smooth Riemannian manifold under the Gromov-Hausdorff-Prokhorov metric."
   },
-  "13.2": {
-    "id": "13.2",
+  "12.2": {
+    "id": "12.2",
     "title": "Tensorial Reorganization",
     "summary": "Develops the coarse-graining framework, showing how micro-updates group into macroscopic tensor fields."
   },
-  "13.3": {
-    "id": "13.3",
+  "12.3": {
+    "id": "12.3",
     "title": "Causal Geometry",
     "summary": "Validates that emergent causal geometry satisfies classical general relativity in the thermodynamic limit."
+  },
+  "13.1": {
+    "id": "13.1",
+    "title": "Discrete Stress-Energy",
+    "summary": "Defines the discrete stress-energy tensor on graphs, mapping mass-energy to localized edge-update density perturbations."
+  },
+  "13.2": {
+    "id": "13.2",
+    "title": "Discrete Field Equations",
+    "summary": "Formulates the discrete Einstein Field Equations, deriving gravity as a thermodynamic equation of state of the network."
+  },
+  "13.3": {
+    "id": "13.3",
+    "title": "Geometric Conservation",
+    "summary": "Establishes the geometric conservation law, proving that the discrete Bianchi identity is satisfied strictly by the poset."
   },
   "14.1": {
     "id": "14.1",
@@ -637,12 +637,12 @@
   "12.4": {
     "id": "12.4",
     "title": "Formal Synthesis",
-    "summary": "We have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance."
+    "summary": "We have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$)."
   },
   "13.4": {
     "id": "13.4",
     "title": "Formal Synthesis",
-    "summary": "We have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$)."
+    "summary": "We have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance."
   },
   "14.6": {
     "id": "14.6",
