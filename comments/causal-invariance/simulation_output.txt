@@ -1,0 +1,190 @@
+------------------------------------------------------------------------------------------
+Discrete Hypergraph Evolution Matrix: Multiway Trajectory Space Simulation Engine
+------------------------------------------------------------------------------------------
+Initializing multiway state space evaluation (N=5, k=3)...
+  Layer 0  complete | Isomorphism Classes: 1     | Trajectory Paths: 1            | Time: 0.0023s
+  Layer 1  complete | Isomorphism Classes: 1     | Trajectory Paths: 10           | Time: 0.0024s
+  Layer 2  complete | Isomorphism Classes: 2     | Trajectory Paths: 90           | Time: 0.0020s
+  Layer 3  complete | Isomorphism Classes: 3     | Trajectory Paths: 540          | Time: 0.0015s
+  Layer 4  complete | Isomorphism Classes: 3     | Trajectory Paths: 1,440        | Time: 0.0000s
+Scale N=5 complete in 0.01s (Configuration data exported to distribution_N5_k3.json)
+
+Initializing multiway state space evaluation (N=6, k=3)...
+  Layer 0  complete | Isomorphism Classes: 1     | Trajectory Paths: 1            | Time: 0.0300s
+  Layer 1  complete | Isomorphism Classes: 1     | Trajectory Paths: 15           | Time: 0.0261s
+  Layer 2  complete | Isomorphism Classes: 2     | Trajectory Paths: 210          | Time: 0.0456s
+  Layer 3  complete | Isomorphism Classes: 5     | Trajectory Paths: 2,730        | Time: 0.0908s
+  Layer 4  complete | Isomorphism Classes: 9     | Trajectory Paths: 32,760       | Time: 0.1255s
+  Layer 5  complete | Isomorphism Classes: 15    | Trajectory Paths: 347,400      | Time: 0.1624s
+  Layer 6  complete | Isomorphism Classes: 20    | Trajectory Paths: 3,000,960    | Time: 0.1429s
+  Layer 7  complete | Isomorphism Classes: 22    | Trajectory Paths: 18,571,680   | Time: 0.0925s
+  Layer 8  complete | Isomorphism Classes: 19    | Trajectory Paths: 66,096,000   | Time: 0.0333s
+  Layer 9  complete | Isomorphism Classes: 11    | Trajectory Paths: 84,395,520   | Time: 0.0000s
+Scale N=6 complete in 0.75s (Configuration data exported to distribution_N6_k3.json)
+
+Initializing multiway state space evaluation (N=7, k=3)...
+  Layer 0  complete | Isomorphism Classes: 1     | Trajectory Paths: 1            | Time: 0.3918s
+  Layer 1  complete | Isomorphism Classes: 1     | Trajectory Paths: 21           | Time: 0.3577s
+  Layer 2  complete | Isomorphism Classes: 2     | Trajectory Paths: 420          | Time: 0.6517s
+  Layer 3  complete | Isomorphism Classes: 5     | Trajectory Paths: 7,980        | Time: 1.4038s
+  Layer 4  complete | Isomorphism Classes: 10    | Trajectory Paths: 143,640      | Time: 2.3970s
+  Layer 5  complete | Isomorphism Classes: 21    | Trajectory Paths: 2,441,880    | Time: 4.4694s
+  Layer 6  complete | Isomorphism Classes: 41    | Trajectory Paths: 39,070,080   | Time: 7.3204s
+  Layer 7  complete | Isomorphism Classes: 65    | Trajectory Paths: 584,539,200  | Time: 9.8036s
+  Layer 8  complete | Isomorphism Classes: 97    | Trajectory Paths: 8,067,124,800 | Time: 12.3548s
+  Layer 9  complete | Isomorphism Classes: 131   | Trajectory Paths: 100,177,560,000 | Time: 13.7287s
+  Layer 10 complete | Isomorphism Classes: 147   | Trajectory Paths: 1,075,336,819,200 | Time: 12.0315s
+  Layer 11 complete | Isomorphism Classes: 146   | Trajectory Paths: 9,386,390,160,000 | Time: 8.7919s
+  Layer 12 complete | Isomorphism Classes: 126   | Trajectory Paths: 60,714,628,531,200 | Time: 5.0213s
+  Layer 13 complete | Isomorphism Classes: 89    | Trajectory Paths: 251,461,078,041,600 | Time: 2.1131s
+  Layer 14 complete | Isomorphism Classes: 50    | Trajectory Paths: 527,160,769,228,800 | Time: 0.5156s
+  Layer 15 complete | Isomorphism Classes: 18    | Trajectory Paths: 369,890,260,992,000 | Time: 0.0001s
+Scale N=7 complete in 81.38s (Configuration data exported to distribution_N7_k3.json)
+
+Initializing multiway state space evaluation (N=8, k=3)...
+  Layer 0  complete | Isomorphism Classes: 1     | Trajectory Paths: 1            | Time: 5.5074s
+  Layer 1  complete | Isomorphism Classes: 1     | Trajectory Paths: 28           | Time: 5.0476s
+  Layer 2  complete | Isomorphism Classes: 2     | Trajectory Paths: 756          | Time: 9.3317s
+  Layer 3  complete | Isomorphism Classes: 5     | Trajectory Paths: 19,656       | Time: 21.3217s
+  Layer 4  complete | Isomorphism Classes: 11    | Trajectory Paths: 491,400      | Time: 43.1290s
+  Layer 5  complete | Isomorphism Classes: 24    | Trajectory Paths: 11,793,600   | Time: 84.0307s
+  Layer 6  complete | Isomorphism Classes: 56    | Trajectory Paths: 271,252,800  | Time: 175.5861s
+  Layer 7  complete | Isomorphism Classes: 115   | Trajectory Paths: 5,967,561,600 | Time: 319.3178s
+  Layer 8  complete | Isomorphism Classes: 221   | Trajectory Paths: 125,318,793,600 | Time: 538.5301s
+  Layer 9  complete | Isomorphism Classes: 402   | Trajectory Paths: 2,506,121,856,000 | Time: 874.4880s
+  Layer 10 complete | Isomorphism Classes: 663   | Trajectory Paths: 47,580,194,188,800 | Time: 1269.0703s
+  Layer 11 complete | Isomorphism Classes: 980   | Trajectory Paths: 853,762,000,896,000 | Time: 1628.9457s
+  Layer 12 complete | Isomorphism Classes: 1312  | Trajectory Paths: 14,377,288,631,731,200 | Time: 1905.4925s
+  Layer 13 complete | Isomorphism Classes: 1557  | Trajectory Paths: 224,732,565,692,006,400 | Time: 1904.8047s
+  Layer 14 complete | Isomorphism Classes: 1646  | Trajectory Paths: 3,206,622,535,151,616,000 | Time: 1722.9343s
+  Layer 15 complete | Isomorphism Classes: 1556  | Trajectory Paths: 40,752,005,732,869,939,200 | Time: 1369.2442s
+  Layer 16 complete | Isomorphism Classes: 1310  | Trajectory Paths: 445,239,815,632,883,712,000 | Time: 939.0224s
+  Layer 17 complete | Isomorphism Classes: 976   | Trajectory Paths: 3,975,365,877,233,084,006,400 | Time: 540.6218s
+  Layer 18 complete | Isomorphism Classes: 656   | Trajectory Paths: 26,967,034,306,757,925,273,600 | Time: 266.5340s
+  Layer 19 complete | Isomorphism Classes: 390   | Trajectory Paths: 125,106,161,123,446,220,390,400 | Time: 105.3516s
+  Layer 20 complete | Isomorphism Classes: 201   | Trajectory Paths: 342,629,584,908,783,530,803,200 | Time: 32.8268s
+  Layer 21 complete | Isomorphism Classes: 84    | Trajectory Paths: 453,238,939,155,486,081,024,000 | Time: 6.1474s
+  Layer 22 complete | Isomorphism Classes: 22    | Trajectory Paths: 202,408,249,235,048,969,011,200 | Time: 0.0001s
+Scale N=8 complete in 13767.97s (Configuration data exported to distribution_N8_k3.json)
+
+
+=========================================================================================================================================================================================
+                                      SUMMARY EVALUATION MATRIX: DIMENSIONAL REDUCTION UNLABELED PHASE SPACE
+=========================================================================================================================================================================================
+Scale (N)  Target (k)    Trajectory Paths (M)                Classes   H_process (max)   H_macro (Realized)   ΔH (Realized)     P(Connected)     P(Regular)     P(Exact k-Reg)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+N = 5      k = 3         1,620                               4         10.6618           1.6416                9.0201            9.2593e-01       0.0000e+00     0.0000e+00       
+N = 6      k = 3         133,797,600                         29        26.9955           4.0145                22.9809           6.3799e-01       3.7669e-04     3.7669e-04       
+N = 7      k = 3         945,480,476,102,400                 102       49.7480           5.5155                44.2326           3.5861e-01       0.0000e+00     0.0000e+00       
+N = 8      k = 3         894,757,885,819,817,073,868,800     355       79.5658           6.6960                72.8698           1.7731e-01       4.5259e-07     4.5259e-07       
+=========================================================================================================================================================================================
+
+--- MACROSTATE DISTRIBUTION ANALYSIS: TOPOLOGICAL CONFIGURATION PROFILES ---
+
+Scale N=5, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=51.85% | Degree Sequence=[3, 3, 3, 2, 1]
+  Rank 2: Representation=29.63% | Degree Sequence=[3, 3, 2, 2, 2]
+  Rank 3: Representation=11.11% | Degree Sequence=[3, 3, 3, 3, 2]
+  Rank 4: Representation=7.41%  | Degree Sequence=[3, 3, 3, 3, 0]
+
+Scale N=6, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=20.56% | Degree Sequence=[3, 3, 3, 2, 1, 0]
+  Rank 2: Representation=10.85% | Degree Sequence=[3, 3, 2, 2, 1, 1]
+  Rank 3: Representation=8.52%  | Degree Sequence=[3, 3, 2, 2, 2, 0]
+  Rank 4: Representation=7.28%  | Degree Sequence=[3, 3, 2, 2, 1, 1]
+  Rank 5: Representation=7.03%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 6: Representation=5.79%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 7: Representation=5.61%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 8: Representation=5.22%  | Degree Sequence=[3, 3, 3, 1, 1, 1]
+  Rank 9: Representation=3.82%  | Degree Sequence=[3, 3, 3, 3, 2, 0]
+  Rank 10: Representation=3.64% | Degree Sequence=[3, 3, 2, 2, 1, 1]
+
+Scale N=7, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=9.29%  | Degree Sequence=[3, 3, 3, 2, 1, 0, 0]
+  Rank 2: Representation=6.81%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0]
+  Rank 3: Representation=5.06%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 4: Representation=4.87%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0]
+  Rank 5: Representation=4.34%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 6: Representation=4.26%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 7: Representation=4.18%  | Degree Sequence=[3, 3, 3, 1, 1, 1, 0]
+  Rank 8: Representation=3.41%  | Degree Sequence=[3, 3, 3, 2, 1, 1, 1]
+  Rank 9: Representation=3.11%  | Degree Sequence=[3, 3, 2, 2, 2, 0, 0]
+  Rank 10: Representation=3.00% | Degree Sequence=[3, 3, 3, 3, 1, 1, 0]
+
+Scale N=8, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=4.41%  | Degree Sequence=[3, 3, 3, 2, 1, 0, 0, 0]
+  Rank 2: Representation=4.04%  | Degree Sequence=[3, 3, 3, 2, 1, 1, 1, 0]
+  Rank 3: Representation=3.67%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0, 0]
+  Rank 4: Representation=3.19%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 5: Representation=2.98%  | Degree Sequence=[3, 3, 2, 2, 2, 1, 1, 0]
+  Rank 6: Representation=2.81%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 7: Representation=2.78%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 8: Representation=2.73%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0, 0]
+  Rank 9: Representation=2.66%  | Degree Sequence=[3, 3, 3, 1, 1, 1, 0, 0]
+  Rank 10: Representation=2.61% | Degree Sequence=[3, 3, 2, 1, 1, 1, 1, 0]
+  ```
+  Layer 15 complete | Isomorphism Classes: 1556  | Trajectory Paths: 40,752,005,732,869,939,200 | Time: 1369.2442s
+  Layer 16 complete | Isomorphism Classes: 1310  | Trajectory Paths: 445,239,815,632,883,712,000 | Time: 939.0224s
+  Layer 17 complete | Isomorphism Classes: 976   | Trajectory Paths: 3,975,365,877,233,084,006,400 | Time: 540.6218s
+  Layer 18 complete | Isomorphism Classes: 656   | Trajectory Paths: 26,967,034,306,757,925,273,600 | Time: 266.5340s
+  Layer 19 complete | Isomorphism Classes: 390   | Trajectory Paths: 125,106,161,123,446,220,390,400 | Time: 105.3516s
+  Layer 20 complete | Isomorphism Classes: 201   | Trajectory Paths: 342,629,584,908,783,530,803,200 | Time: 32.8268s
+  Layer 21 complete | Isomorphism Classes: 84    | Trajectory Paths: 453,238,939,155,486,081,024,000 | Time: 6.1474s
+  Layer 22 complete | Isomorphism Classes: 22    | Trajectory Paths: 202,408,249,235,048,969,011,200 | Time: 0.0001s
+Scale N=8 complete in 13767.97s (Configuration data exported to distribution_N8_k3.json)
+
+
+=========================================================================================================================================================================================
+                                      SUMMARY EVALUATION MATRIX: DIMENSIONAL REDUCTION UNLABELED PHASE SPACE
+=========================================================================================================================================================================================
+Scale (N)  Target (k)    Trajectory Paths (M)                Classes   H_process (max)   H_macro (Realized)   ΔH (Realized)     P(Connected)     P(Regular)     P(Exact k-Reg)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+N = 5      k = 3         1,620                               4         10.6618           1.6416                9.0201            9.2593e-01       0.0000e+00     0.0000e+00       
+N = 6      k = 3         133,797,600                         29        26.9955           4.0145                22.9809           6.3799e-01       3.7669e-04     3.7669e-04       
+N = 7      k = 3         945,480,476,102,400                 102       49.7480           5.5155                44.2326           3.5861e-01       0.0000e+00     0.0000e+00       
+N = 8      k = 3         894,757,885,819,817,073,868,800     355       79.5658           6.6960                72.8698           1.7731e-01       4.5259e-07     4.5259e-07       
+=========================================================================================================================================================================================
+
+--- MACROSTATE DISTRIBUTION ANALYSIS: TOPOLOGICAL CONFIGURATION PROFILES ---
+
+Scale N=5, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=51.85% | Degree Sequence=[3, 3, 3, 2, 1]
+  Rank 2: Representation=29.63% | Degree Sequence=[3, 3, 2, 2, 2]
+  Rank 3: Representation=11.11% | Degree Sequence=[3, 3, 3, 3, 2]
+  Rank 4: Representation=7.41%  | Degree Sequence=[3, 3, 3, 3, 0]
+
+Scale N=6, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=20.56% | Degree Sequence=[3, 3, 3, 2, 1, 0]
+  Rank 2: Representation=10.85% | Degree Sequence=[3, 3, 2, 2, 1, 1]
+  Rank 3: Representation=8.52%  | Degree Sequence=[3, 3, 2, 2, 2, 0]
+  Rank 4: Representation=7.28%  | Degree Sequence=[3, 3, 2, 2, 1, 1]
+  Rank 5: Representation=7.03%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 6: Representation=5.79%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 7: Representation=5.61%  | Degree Sequence=[3, 3, 3, 2, 2, 1]
+  Rank 8: Representation=5.22%  | Degree Sequence=[3, 3, 3, 1, 1, 1]
+  Rank 9: Representation=3.82%  | Degree Sequence=[3, 3, 3, 3, 2, 0]
+  Rank 10: Representation=3.64% | Degree Sequence=[3, 3, 2, 2, 1, 1]
+
+Scale N=7, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=9.29%  | Degree Sequence=[3, 3, 3, 2, 1, 0, 0]
+  Rank 2: Representation=6.81%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0]
+  Rank 3: Representation=5.06%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 4: Representation=4.87%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0]
+  Rank 5: Representation=4.34%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 6: Representation=4.26%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0]
+  Rank 7: Representation=4.18%  | Degree Sequence=[3, 3, 3, 1, 1, 1, 0]
+  Rank 8: Representation=3.41%  | Degree Sequence=[3, 3, 3, 2, 1, 1, 1]
+  Rank 9: Representation=3.11%  | Degree Sequence=[3, 3, 2, 2, 2, 0, 0]
+  Rank 10: Representation=3.00% | Degree Sequence=[3, 3, 3, 3, 1, 1, 0]
+
+Scale N=8, k=3 | Distribution Profile across Dominant Isomorphism Classes:
+  Rank 1: Representation=4.41%  | Degree Sequence=[3, 3, 3, 2, 1, 0, 0, 0]
+  Rank 2: Representation=4.04%  | Degree Sequence=[3, 3, 3, 2, 1, 1, 1, 0]
+  Rank 3: Representation=3.67%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0, 0]
+  Rank 4: Representation=3.19%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 5: Representation=2.98%  | Degree Sequence=[3, 3, 2, 2, 2, 1, 1, 0]
+  Rank 6: Representation=2.81%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 7: Representation=2.78%  | Degree Sequence=[3, 3, 3, 2, 2, 1, 0, 0]
+  Rank 8: Representation=2.73%  | Degree Sequence=[3, 3, 2, 2, 1, 1, 0, 0]
+  Rank 9: Representation=2.66%  | Degree Sequence=[3, 3, 3, 1, 1, 1, 0, 0]
+  Rank 10: Representation=2.61% | Degree Sequence=[3, 3, 2, 1, 1, 1, 1, 0]
