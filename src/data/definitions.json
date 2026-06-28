@@ -315,7 +315,7 @@
     "id": "1.4.7.1",
     "type": "Proof",
     "title": "Transitive Causal Monotonicity",
-    "statement": ":::tip[**Inductive Demonstration of Strict Timestamp Increase**]\n:::\n\n**I. Setup and Definitions**",
+    "statement": ":::tip[**Inductive Demonstration of Strict Timestamp Increase**]\n:::\n\n**I. Inductive Base Case**",
     "plainEnglish": "Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.",
     "file": "01-rules/01-ontology/1.4.md"
   },
@@ -425,9 +425,9 @@
   },
   "2.1.1": {
     "id": "2.1.1",
-    "type": "Axiom",
-    "title": "Axiom 1: The Directed Causal Link",
-    "statement": ":::info[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]\n:::\n\nIt is herein established that the fundamental unit of relation within the **Causal Graph Substrate** <Ref id=\"1.4.1\" label=\"§1.4.1\" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \\subset V \\times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:",
+    "type": "Definition",
+    "title": "Axiom 1 Directed Causal Link",
+    "statement": ":::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]\n:::\n\nIt is herein established that the fundamental unit of relation within the **Causal Graph Substrate** <Ref id=\"1.4.1\" label=\"§1.4.1\" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \\subset V \\times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:",
     "plainEnglish": "A directed causal link represents the primitive cause-and-effect relation, acting as a one-way temporal ratchet that drives cosmic updates.",
     "file": "01-rules/02-axioms/2.1.md"
   },
@@ -443,7 +443,7 @@
     "id": "2.2.1",
     "type": "Theorem",
     "title": "Insufficiency of Antisymmetry",
-    "statement": ":::info[**Non-Equivalence between Antisymmetry and Irreflexivity through the Permissibility of Self-Loops**]\n:::\n\nWe formally establish that the mathematical condition of **Antisymmetry**, conventionally defined by the proposition $\\forall u, v \\in V : ((u, v) \\in E \\land (v, u) \\in E) \\implies u = v$, is formally insufficient to satisfy the requirements of the **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />. The condition of Antisymmetry is satisfied vacuously by the reflexive relation $(u, u)$, whereas the Causal Primitive mandates Strict Irreflexivity. Consequently, a causal structure governed solely by the condition of Antisymmetry physically permits the existence of Directed Cycles of length $k=1$, which are prohibited otherwise.",
+    "statement": ":::info[**Non-Equivalence between Antisymmetry and Irreflexivity through the Permissibility of Self-Loops**]\n:::\n\nLet the condition of **Antisymmetry** be defined conventionally by the proposition $\\forall u, v \\in V : ((u, v) \\in E \\land (v, u) \\in E) \\implies u = v$. This condition is formally insufficient to satisfy the requirements of the **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />, as it is satisfied vacuously by the reflexive relation $(u, u)$ whereas the Causal Primitive mandates Strict Irreflexivity. Consequently, a causal structure governed solely by Antisymmetry physically permits Directed Cycles of length $k=1$, which are prohibited otherwise.",
     "plainEnglish": "Section 2.2.1 formalizes the properties of the QBD theorem regarding insufficiency of antisymmetry.",
     "file": "01-rules/02-axioms/2.2.md"
   },
@@ -451,7 +451,7 @@
     "id": "2.2.2",
     "type": "Lemma",
     "title": "Pathology of Self-Loops",
-    "statement": ":::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]\n:::\n\nLet $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **Cycle** <Ref id=\"1.2.6\" label=\"§1.2.6\" />, a configuration excluded by **Directed Acyclic Graph (DAG)** <Ref id=\"1.2.1\" label=\"§1.2.1\" />.",
+    "statement": ":::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]\n:::\n\nLet a self-loop incident to a vertex $u$ be denoted by $e = (u, u)$, which constitutes a directed cycle of length $k=1$ representing a **Cycle** <Ref id=\"1.2.6\" label=\"§1.2.6\" />. Consequently, this configuration is excluded under **Directed Acyclic Graph (DAG)** <Ref id=\"1.2.1\" label=\"§1.2.1\" />.",
     "plainEnglish": "Section 2.2.2 formalizes the properties of the QBD lemma regarding pathology of self-loops.",
     "file": "01-rules/02-axioms/2.2.md"
   },
@@ -505,66 +505,90 @@
   },
   "2.3.1": {
     "id": "2.3.1",
-    "type": "Axiom",
-    "title": "Axiom 2: Geometric Constructibility",
-    "statement": ":::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]\n:::\n\nThe kinematic admissibility of any transformation $G \\to G'$ involving the addition of an edge is restricted by the following two complementary clauses:",
-    "plainEnglish": "Section 2.3.1 formalizes the properties of the QBD axiom regarding axiom 2: geometric constructibility.",
+    "type": "Definition",
+    "title": "Axiom 2 Geometric Constructibility",
+    "statement": ":::tip[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]\n:::\n\nThe kinematic admissibility of any transformation $G \\to G'$ involving the addition of an edge is restricted by the following two complementary clauses of **Geometric Constructibility**:",
+    "plainEnglish": "Section 2.3.1 formalizes the properties of the QBD definition regarding axiom 2 geometric constructibility.",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.2": {
     "id": "2.3.2",
-    "type": "Lemma",
-    "title": "Geometric Quantum",
-    "statement": ":::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]\n:::\n\nLet the Geometric Quantum $\\gamma$ denote the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\\{(u, v), (v, w), (w, u)\\}$. Then this structure constitutes the minimal closed cycle compatible with the **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />, excluding cycles of length 1 and 2, and the set of all $\\gamma \\subset G$ constitutes the basis for emergent spatial area.",
+    "type": "Theorem",
+    "title": "Geometric Constructibility",
+    "statement": ":::info[**Convergence of Constructible Graph States to Acyclic Unions of Geometric Quanta**]\n:::\n\nFor any graph state $G$ undergoing a sequence of edge addition and deletion tasks, the resulting configuration $G'$ converges to a stable, acyclic union of geometric quanta. This convergence is bounded and well-founded under the lexicographic potential.",
     "plainEnglish": "A 3-cycle represents the minimal closed loop of causality, constituting the fundamental 'geometric quantum' or atom of physical space.",
-    "file": "01-rules/02-axioms/2.3.md"
-  },
-  "2.3.2.1": {
-    "id": "2.3.2.1",
-    "type": "Proof",
-    "title": "Geometric Quantum",
-    "statement": ":::tip[**Derivation of the Minimal Stable Cycle Length via Elimination of Forbidden Lower Orders**]\n:::\n\n**I. Cycle Length Domain**",
-    "plainEnglish": "Section 2.3.2.1 formalizes the properties of the QBD proof regarding geometric quantum.",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.3": {
     "id": "2.3.3",
-    "type": "Principle",
-    "title": "Principle of Unique Causality (PUC)",
-    "statement": ":::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]\n:::\n\nLet $\\Pi_{\\ell \\le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id=\"1.5.2\" label=\"§1.5.2\" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.",
-    "plainEnglish": "Section 2.3.3 formalizes the properties of the QBD principle regarding principle of unique causality (puc).",
+    "type": "Lemma",
+    "title": "Geometric Quantum",
+    "statement": ":::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]\n:::\n\nLet the Geometric Quantum $\\gamma$ denote the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\\{(u, v), (v, w), (w, u)\\}$. Then this structure constitutes the minimal closed cycle compatible with the **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />, excluding cycles of length 1 and 2, and the set of all $\\gamma \\subset G$ constitutes the basis for emergent spatial area.",
+    "plainEnglish": "Section 2.3.3 formalizes the properties of the QBD lemma regarding geometric quantum.",
     "file": "01-rules/02-axioms/2.3.md"
   },
-  "2.3.3.2": {
-    "id": "2.3.3.2",
+  "2.3.3.1": {
+    "id": "2.3.3.1",
     "type": "Proof",
-    "title": "Redundancy Exclusion",
-    "statement": ":::tip[**Formal Derivation of Path Uniqueness from the Principle of Informational Parsimony**]\n:::\n\n**I. Initial State**",
-    "plainEnglish": "Section 2.3.3.2 formalizes the properties of the QBD proof regarding redundancy exclusion.",
+    "title": "Geometric Quantum",
+    "statement": ":::tip[**Derivation of the Minimal Stable Cycle Length via Elimination of Forbidden Lower Orders**]\n:::\n\n**I. Cycle Length Domain**",
+    "plainEnglish": "Section 2.3.3.1 formalizes the properties of the QBD proof regarding geometric quantum.",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.4": {
     "id": "2.3.4",
-    "type": "Definition",
-    "title": "Lexicographic Potential",
-    "statement": ":::tip[**Quantification of Topological Complexity via Cycle Ordering**]\n:::\n\nThe **Lexicographic Potential** $\\Phi(G)$ is defined as the ordered pair $(L_{\\max}, N_{L_{\\max}})$, where $L_{\\max}$ denotes the length of the longest Simple Directed Cycle in $G$, and $N_{L_{\\max}}$ denotes the cardinality of the set of cycles with length $L_{\\max}$. The state space is ordered such that $\\Phi(G') < \\Phi(G)$ holds if $L'_{\\max} < L_{\\max}$ or if both $L'_{\\max} = L_{\\max}$ and $N'_{L_{\\max}} < N_{L_{\\max}}$.",
-    "plainEnglish": "Section 2.3.4 formalizes the properties of the QBD definition regarding lexicographic potential.",
+    "type": "Lemma",
+    "title": "Principle of Unique Causality (PUC)",
+    "statement": ":::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]\n:::\n\nLet $\\Pi_{\\ell \\le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id=\"1.5.2\" label=\"§1.5.2\" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.",
+    "plainEnglish": "Section 2.3.4 formalizes the properties of the QBD lemma regarding principle of unique causality (puc).",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.4.2": {
+    "id": "2.3.4.2",
+    "type": "Proof",
+    "title": "Principle of Unique Causality (PUC)",
+    "statement": ":::tip[**Formal Derivation of Path Uniqueness from the Principle of Informational Parsimony**]\n:::\n\n**I. Initial State**",
+    "plainEnglish": "Section 2.3.4.2 formalizes the properties of the QBD proof regarding principle of unique causality (puc).",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.5": {
     "id": "2.3.5",
     "type": "Lemma",
-    "title": "Well-Foundedness",
-    "statement": ":::info[**Termination of Strictly Decreasing Topological Processes**]\n:::\n\nLet $\\Phi(G)$ denote the **Lexicographic Potential** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> of a finite graph $G$. Then the codomain of $\\Phi$ is well-ordered, and any trajectory $G_0, G_1, \\dots$ satisfying the descent condition $\\Phi(G_{t+1}) < \\Phi(G_t)$ constitutes a finite sequence.",
-    "plainEnglish": "Section 2.3.5 formalizes the properties of the QBD lemma regarding well-foundedness.",
+    "title": "Lexicographic Potential",
+    "statement": ":::info[**Quantification of Topological Complexity via Cycle Ordering**]\n:::\n\nLet the **Lexicographic Potential** $\\Phi(G)$ be the ordered pair $(L_{\\max}, N_{L_{\\max}})$ mapping a finite graph $G$ to the state space $\\mathcal{P} = \\mathbb{N} \\times \\mathbb{N}$ ordered lexicographically. The relation $<$ on $\\mathcal{P}$ constitutes a strict order satisfying irreflexivity, asymmetry, and transitivity.",
+    "plainEnglish": "Section 2.3.5 formalizes the properties of the QBD lemma regarding lexicographic potential.",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.3.5.1": {
     "id": "2.3.5.1",
     "type": "Proof",
+    "title": "Lexicographic Potential",
+    "statement": ":::tip[**Verification of the Strict Ordering Properties of the Lexicographic Product**]\n:::\n\n**I. Irreflexivity**",
+    "plainEnglish": "Section 2.3.5.1 formalizes the properties of the QBD proof regarding lexicographic potential.",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.6": {
+    "id": "2.3.6",
+    "type": "Lemma",
+    "title": "Well-Foundedness",
+    "statement": ":::info[**Termination of Strictly Decreasing Topological Processes**]\n:::\n\nLet $\\Phi(G)$ denote the **Lexicographic Potential** <Ref id=\"2.3.5\" label=\"§2.3.5\" /> of a finite graph $G$. Then the codomain of $\\Phi$ is well-ordered, and any trajectory $G_0, G_1, \\dots$ satisfying the descent condition $\\Phi(G_{t+1}) < \\Phi(G_t)$ constitutes a finite sequence.",
+    "plainEnglish": "Section 2.3.6 formalizes the properties of the QBD lemma regarding well-foundedness.",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.6.1": {
+    "id": "2.3.6.1",
+    "type": "Proof",
     "title": "Well-Foundedness",
     "statement": ":::tip[**Verification of the Descent Property due to the Finiteness of Graph Configurations**]\n:::\n\n**I. State Space Properties**",
-    "plainEnglish": "Section 2.3.5.1 formalizes the properties of the QBD proof regarding well-foundedness.",
+    "plainEnglish": "Section 2.3.6.1 formalizes the properties of the QBD proof regarding well-foundedness.",
+    "file": "01-rules/02-axioms/2.3.md"
+  },
+  "2.3.7": {
+    "id": "2.3.7",
+    "type": "Proof",
+    "title": "Geometric Constructibility",
+    "statement": ":::tip[**Synthesis of Local Uniqueness, Quantum Minimality, and Well-Foundedness showing Geometric Convergence**]\n:::\n\n**I. Spatial Quantization**",
+    "plainEnglish": "Section 2.3.7 formalizes the properties of the QBD proof regarding geometric constructibility.",
     "file": "01-rules/02-axioms/2.3.md"
   },
   "2.4": {
@@ -579,7 +603,7 @@
     "id": "2.4.1",
     "type": "Theorem",
     "title": "General Cycle Decomposition",
-    "statement": ":::info[**Finite Decomposition of General Cycles via the Alternating Application of Chordal Addition and Entropic Deletion**]\n:::\n\nWe formally prove that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\\max} \\ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \\le 3$. This decomposition sequence guarantees the strict monotonic reduction of the **Lexicographic Potential** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, denoted $\\Phi(G)$.",
+    "statement": ":::info[**Finite Decomposition of General Cycles via the Alternating Application of Chordal Addition and Entropic Deletion**]\n:::\n\nFor all graph states $G$ containing a Simple Directed Cycle of length $L_{\\max} \\ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \\le 3$. This decomposition sequence guarantees the strict monotonic reduction of the **Lexicographic Potential** <Ref id=\"2.3.5\" label=\"§2.3.5\" />, denoted $\\Phi(G)$.",
     "plainEnglish": "Section 2.4.1 formalizes the properties of the QBD theorem regarding general cycle decomposition.",
     "file": "01-rules/02-axioms/2.4.md"
   },
@@ -594,9 +618,9 @@
   "2.4.2.1": {
     "id": "2.4.2.1",
     "type": "Proof",
-    "title": "Diamond Property",
+    "title": "Confluence of the Constructor",
     "statement": ":::tip[**Formal Verification of Commutativity in Overlapping Updates**]\n:::\n\n**I. Initial State with Overlap**",
-    "plainEnglish": "Section 2.4.2.1 formalizes the properties of the QBD proof regarding diamond property.",
+    "plainEnglish": "Section 2.4.2.1 formalizes the properties of the QBD proof regarding confluence of the constructor.",
     "file": "01-rules/02-axioms/2.4.md"
   },
   "2.4.3": {
@@ -619,7 +643,7 @@
     "id": "2.4.4",
     "type": "Lemma",
     "title": "Reduction via Deletion",
-    "statement": ":::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]\n:::\n\nLet $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the **Lexicographic Potential** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, denoted $\\Phi(G)$.. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\\Phi(G') < \\Phi(G)$.",
+    "statement": ":::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]\n:::\n\nLet $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the **Lexicographic Potential** <Ref id=\"2.3.5\" label=\"§2.3.5\" />, denoted $\\Phi(G)$.. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\\Phi(G') < \\Phi(G)$.",
     "plainEnglish": "Section 2.4.4 formalizes the properties of the QBD lemma regarding reduction via deletion.",
     "file": "01-rules/02-axioms/2.4.md"
   },
@@ -667,7 +691,7 @@
     "id": "2.4.11",
     "type": "Type-Theoretic",
     "title": "Validation via Lean 4 Core",
-    "statement": ":::note[**Lean 4 Encoding of Lexicographic Well-Foundedness via Well-Order Instantiation**]\n:::\n\nType-theoretic certification of the descent guarantee established in the **Well-Foundedness** <Ref id=\"2.3.5\" label=\"§2.3.5\" /> proof proceeds via the following verification strategy:",
+    "statement": ":::note[**Lean 4 Encoding of Lexicographic Well-Foundedness via Well-Order Instantiation**]\n:::\n\nType-theoretic certification of the descent guarantee established in the **Well-Foundedness** <Ref id=\"2.3.6\" label=\"§2.3.6\" /> proof proceeds via the following verification strategy:",
     "plainEnglish": "Section 2.4.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.",
     "file": "01-rules/02-axioms/2.4.md"
   },
@@ -683,7 +707,7 @@
     "id": "2.5.1",
     "type": "Theorem",
     "title": "Independence of Axioms 1 and 2",
-    "statement": ":::info[**Establishment of Logical Orthogonality between Causal and Geometric Primitives via Mutual Non-Entailment**]\n:::\n\nThe **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" /> and the **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" /> are formally independent constraints. The satisfaction of the conditions of Axiom 1 does not logically entail the satisfaction of Axiom 2, nor does the satisfaction of Axiom 2 entail Axiom 1. The validity of this independence is established by the existence of specific graph models that satisfy one axiom while violating the other.",
+    "statement": ":::info[**Establishment of Logical Orthogonality between Causal and Geometric Primitives via Mutual Non-Entailment**]\n:::\n\nLet the **Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" /> be established first. Let **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" /> be established second. These constraints are formally independent, meaning the satisfaction of either does not logically entail the satisfaction of the other, as demonstrated by orthogonal countermodels.",
     "plainEnglish": "Section 2.5.1 formalizes the properties of the QBD theorem regarding independence of axioms 1 and 2.",
     "file": "01-rules/02-axioms/2.5.md"
   },
@@ -691,7 +715,7 @@
     "id": "2.5.2",
     "type": "Lemma",
     "title": "Independence Case A",
-    "statement": ":::info[**Existence of Causal Validity amidst Geometric Non-Constructibility**]\n:::\n\nLet $G_A$ denote a chordless directed cycle of length $4$. Then this structure satisfies the Irreflexivity and Asymmetry of **The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />, yet constitutes an irreducible configuration violating **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />.",
+    "statement": ":::info[**Existence of Causal Validity amidst Geometric Non-Constructibility**]\n:::\n\nLet $G_A$ denote a chordless directed cycle of length $4$ satisfying **The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />. This structure constitutes an irreducible configuration violating **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />.",
     "plainEnglish": "Section 2.5.2 formalizes the properties of the QBD lemma regarding independence case a.",
     "file": "01-rules/02-axioms/2.5.md"
   },
@@ -707,7 +731,7 @@
     "id": "2.5.3",
     "type": "Lemma",
     "title": "Independence Case B",
-    "statement": ":::info[**Existence of Geometric Constructibility amidst Causal Invalidity**]\n:::\n\nLet $G_B$ denote the graph formed by the disjoint union of a simple directed $3$-cycle and an isolated vertex possessing a self-loop. Then this structure satisfies the criteria of **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />, yet constitutes a configuration excluded by the Irreflexivity constraint of **The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />.",
+    "statement": ":::info[**Existence of Geometric Constructibility amidst Causal Invalidity**]\n:::\n\nLet $G_B$ denote the disjoint union of a simple directed $3$-cycle and a reflexive vertex, satisfying **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />. This configuration is excluded by the irreflexive constraint of **The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" />.",
     "plainEnglish": "Section 2.5.3 formalizes the properties of the QBD lemma regarding independence case b.",
     "file": "01-rules/02-axioms/2.5.md"
   },
@@ -722,9 +746,9 @@
   "2.5.4": {
     "id": "2.5.4",
     "type": "Proof",
-    "title": "Mutual Independence",
+    "title": "Independence of Axioms 1 and 2",
     "statement": ":::tip[Orthogonal Counter-Models demonstrating the **Independence of Axioms 1 and 2** <Ref id=\"2.5.1\" label=\"§2.5.1\" />]\n:::\n\n**I. The Independence Hypothesis** Two axiomatic constraints are defined as logically independent if and only if the satisfaction of one does not logically entail the satisfaction of the other. This independence is verified through the construction of specific counter-models that selectively violate one axiom while satisfying the other.",
-    "plainEnglish": "Section 2.5.4 formalizes the properties of the QBD proof regarding mutual independence.",
+    "plainEnglish": "Section 2.5.4 formalizes the properties of the QBD proof regarding independence of axioms 1 and 2.",
     "file": "01-rules/02-axioms/2.5.md"
   },
   "2.6": {
@@ -737,18 +761,26 @@
   },
   "2.6.1": {
     "id": "2.6.1",
-    "type": "Definition",
-    "title": "Effective Influence",
-    "statement": ":::tip[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]\n:::\n\nThe **Effective Influence** relation, denoted as $u \\le v$, is defined to hold between vertices $u$ and $v$ if there exists a Simple Directed Path $\\pi_{uv} = (v_0, v_1, \\dots, v_k)$ satisfying the following three conditions: 1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$. 2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \\ge 2$), distinguishing mediated influence from direct interaction. 3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id=\"1.4.5\" label=\"§1.4.5\" />.",
-    "plainEnglish": "Section 2.6.1 formalizes the properties of the QBD definition regarding effective influence.",
+    "type": "Theorem",
+    "title": "Inadequacy of Local Axioms",
+    "statement": ":::info[**Demonstration of Global Inconsistency under Local Axioms due to Transitive Reflexivity and Symmetry Failures**]\n:::\n\nLet a system be constrained exclusively by Axioms 1 and 2. The **Effective Influence** <Ref id=\"2.6.2\" label=\"§2.6.2\" /> relation $\\le$ is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits the emergence of **Reflexivity** ($u \\le u$) and **Symmetry** ($u \\le v \\land v \\le u$), thereby failing to enforce global causal consistency.",
+    "plainEnglish": "Section 2.6.1 formalizes the properties of the QBD theorem regarding inadequacy of local axioms.",
     "file": "01-rules/02-axioms/2.6.md"
   },
   "2.6.2": {
     "id": "2.6.2",
-    "type": "Theorem",
-    "title": "Inadequacy of Local Axioms",
-    "statement": ":::info[**Demonstration of Global Inconsistency under Local Axioms due to Transitive Reflexivity and Symmetry Failures**]\n:::\n\nIn a system constrained exclusively by Axioms 1 and 2, the **Effective Influence** <Ref id=\"2.6.1\" label=\"§2.6.1\" /> relation $\\le$ is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits the emergence of **Reflexivity** ($u \\le u$) and **Symmetry** ($u \\le v \\land v \\le u$), thereby failing to enforce global causal consistency.",
-    "plainEnglish": "Section 2.6.2 formalizes the properties of the QBD theorem regarding inadequacy of local axioms.",
+    "type": "Lemma",
+    "title": "Effective Influence",
+    "statement": ":::info[**Establishment of the Effective Influence Relation as the Transitive Closure of Timestamped Paths**]\n:::\n\nLet the **Effective Influence** relation $u \\le v$ be defined over the set of vertices $V$ by the existence of a simple directed path with strictly increasing edge timestamps. The relation preserves the monotonicity of logical time and distinguishes mediated influence from direct causal interaction.",
+    "plainEnglish": "Section 2.6.2 formalizes the properties of the QBD lemma regarding effective influence.",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.2.1": {
+    "id": "2.6.2.1",
+    "type": "Proof",
+    "title": "Effective Influence",
+    "statement": ":::tip[**Verification of the Transitive and Monotonic Properties of Effective Influence**]\n:::\n\n**I. Simple Path Construction**",
+    "plainEnglish": "Section 2.6.2.1 formalizes the properties of the QBD proof regarding effective influence.",
     "file": "01-rules/02-axioms/2.6.md"
   },
   "2.6.3": {
@@ -801,18 +833,34 @@
   },
   "2.6.6": {
     "id": "2.6.6",
-    "type": "Proof",
-    "title": "Inadequacy of Local Axioms",
-    "statement": ":::tip[Synthesis of Transitive Failures showing the **Inadequacy of Local Axioms** <Ref id=\"2.6.2\" label=\"§2.6.2\" />]\n:::\n\n**I. The Local Premise** Assume the existence of a causal system constrained *exclusively* by Axiom 1 (defining the Local Arrow) and Axiom 2 (defining the Local Geometry). The sufficiency of these axioms is tested by determining whether the transitive closure of the influence relation $\\le$ consistently forms a strict partial order.",
-    "plainEnglish": "Section 2.6.6 formalizes the properties of the QBD proof regarding inadequacy of local axioms.",
+    "type": "Lemma",
+    "title": "Causal Acyclicity vs. Spatial Triangulation",
+    "statement": ":::info[**Independence of Spatial Area Closures from Causal Timeline Ordering**]\n:::\n\nLet $G_{space}$ represent the Spatial State Graph, and let $G_{event}$ represent the Causal Poset of Events. The existence of directed cycles representing spatial area in $G_{space}$ does not imply or construct directed cycles in the causal history $G_{event}$, which remains a strict Directed Acyclic Graph (DAG).",
+    "plainEnglish": "Section 2.6.6 formalizes the properties of the QBD lemma regarding causal acyclicity vs. spatial triangulation.",
     "file": "01-rules/02-axioms/2.6.md"
   },
   "2.6.6.1": {
     "id": "2.6.6.1",
+    "type": "Proof",
+    "title": "Causal Acyclicity vs. Spatial Triangulation",
+    "statement": ":::tip[**Topological Distinctions between Spatial Boundaries and Chronological Ordering**]\n:::\n\n**I. Spatial vs. Temporal Adjacency**",
+    "plainEnglish": "Section 2.6.6.1 formalizes the properties of the QBD proof regarding causal acyclicity vs. spatial triangulation.",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.7": {
+    "id": "2.6.7",
+    "type": "Proof",
+    "title": "Inadequacy of Local Axioms",
+    "statement": ":::tip[Synthesis of Transitive Failures showing the **Inadequacy of Local Axioms** <Ref id=\"2.6.1\" label=\"§2.6.1\" />]\n:::\n\n**I. The Local Premise**",
+    "plainEnglish": "Section 2.6.7 formalizes the properties of the QBD proof regarding inadequacy of local axioms.",
+    "file": "01-rules/02-axioms/2.6.md"
+  },
+  "2.6.7.1": {
+    "id": "2.6.7.1",
     "type": "Corollary",
     "title": "Global Constraint",
     "statement": ":::info[**Necessity of an Explicit Global Constraint required for the Definition of Causal Unidirectionality**]\n:::\n\nA physical theory requires a well-defined causal ordering (a \"direction of time\"). The proven failure of Axioms 1 and 2 to entail such an order necessitates a third axiom. This axiom must explicitly forbid states containing causal paradoxes, acting as a global topological constraint.",
-    "plainEnglish": "Section 2.6.6.1 formalizes the properties of the QBD corollary regarding global constraint.",
+    "plainEnglish": "Section 2.6.7.1 formalizes the properties of the QBD corollary regarding global constraint.",
     "file": "01-rules/02-axioms/2.6.md"
   },
   "2.7": {
@@ -825,9 +873,9 @@
   },
   "2.7.1": {
     "id": "2.7.1",
-    "type": "Axiom",
-    "title": "Axiom 3: Acyclic Effective Causality",
-    "statement": ":::info[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]\n:::\n\nThe **Effective Influence** <Ref id=\"2.6.1\" label=\"§2.6.1\" /> relation $\\le$ is axiomatically constrained to form a **Strict Partial Order** over the set of vertices $V$. This imposes the following global topological constraints: 1.  **Global Irreflexivity:** For all $v \\in V$, the relation $v \\le v$ is false ($\\neg(v \\le v)$). 2.  **Global Asymmetry:** For all pairs $u, v \\in V$, if $u \\le v$, then the relation $v \\le u$ must be false ($\\neg(v \\le u)$). Consequently, the transitive closure of the causal history must form a Directed Acyclic Graph (DAG) with respect to $\\le$.",
+    "type": "Definition",
+    "title": "Axiom 3 Acyclic Effective Causality",
+    "statement": ":::tip[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]\n:::\n\nThe **Effective Influence** <Ref id=\"2.6.2\" label=\"§2.6.2\" /> relation $\\le$ is axiomatically constrained to form a **Strict Partial Order** over the set of vertices $V$, establishing **Acyclic Effective Causality** via the following global topological constraints: 1.  **Global Irreflexivity:** For all $v \\in V$, the relation $v \\le v$ is false ($\\neg(v \\le v)$). 2.  **Global Asymmetry:** For all pairs $u, v \\in V$, if $u \\le v$, then the relation $v \\le u$ must be false ($\\neg(v \\le u)$). Consequently, the transitive closure of the causal history must form a Directed Acyclic Graph (DAG) with respect to $\\le$.",
     "plainEnglish": "Causality is strictly acyclic: an event can never be its own cause. This prevents grandfather paradoxes and closed timeline loops.",
     "file": "01-rules/02-axioms/2.7.md"
   },
@@ -835,7 +883,7 @@
     "id": "2.7.2",
     "type": "Theorem",
     "title": "Thermodynamic Enforcement",
-    "statement": ":::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]\n:::\n\nThe maintenance of **Acyclic Effective Causality** <Ref id=\"2.7.1\" label=\"§2.7.1\" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \\to \\infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id=\"1.3.5\" label=\"§1.3.5\" />.",
+    "statement": ":::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]\n:::\n\nAssume the requirement of **Acyclic Effective Causality** <Ref id=\"2.7.1\" label=\"§2.7.1\" />. This requirement mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is physically impossible in the thermodynamic limit ($N \\to \\infty$) because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id=\"1.3.5\" label=\"§1.3.5\" />.",
     "plainEnglish": "Section 2.7.2 formalizes the properties of the QBD theorem regarding thermodynamic enforcement.",
     "file": "01-rules/02-axioms/2.7.md"
   },
@@ -873,26 +921,26 @@
   },
   "2.7.5": {
     "id": "2.7.5",
+    "type": "Lemma",
+    "title": "Independence of Axiom 3",
+    "statement": ":::info[**Logical Independence of the Global Acyclicity Requirement**]\n:::\n\nLet $\\Sigma = \\{Ax1, Ax2\\}$ denote the set of local axioms consisting of **The Directed Causal Link** and **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />. The timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id=\"2.6.5\" label=\"§2.6.5\" /> constitutes a valid graph under $\\Sigma$ while violating Axiom 3, showing that Axiom 3 is logically independent.",
+    "plainEnglish": "Section 2.7.5 formalizes the properties of the QBD lemma regarding independence of axiom 3.",
+    "file": "01-rules/02-axioms/2.7.md"
+  },
+  "2.7.5.1": {
+    "id": "2.7.5.1",
     "type": "Proof",
-    "title": "Thermodynamic Enforcement",
-    "statement": ":::tip[**Thermodynamic Enforcement** <Ref id=\"2.7.2\" label=\"§2.7.2\" /> via Demonstration of Energy Divergence]\n:::\n\n**I. Hypothesis**",
-    "plainEnglish": "Section 2.7.5 formalizes the properties of the QBD proof regarding thermodynamic enforcement.",
+    "title": "Independence of Axiom 3",
+    "statement": ":::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]\n:::\n\n**I. Model Construction**",
+    "plainEnglish": "Section 2.7.5.1 formalizes the properties of the QBD proof regarding independence of axiom 3.",
     "file": "01-rules/02-axioms/2.7.md"
   },
   "2.7.6": {
     "id": "2.7.6",
-    "type": "Corollary",
-    "title": "Independence of Axiom 3",
-    "statement": ":::info[**Logical Independence of the Global Acyclicity Requirement**]\n:::\n\nLet $\\Sigma = \\{Ax1, Ax2\\}$ denote the set of local axioms consisting of **The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" /> and **Geometric Constructibility** <Ref id=\"2.3.1\" label=\"§2.3.1\" />. Then the timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id=\"2.6.5\" label=\"§2.6.5\" /> constitutes a valid graph under $\\Sigma$ while violating the Global Acyclicity condition of Axiom 3. Therefore, Axiom 3 constitutes a logically independent constraint not derivable from the local primitives.",
-    "plainEnglish": "Section 2.7.6 formalizes the properties of the QBD corollary regarding independence of axiom 3.",
-    "file": "01-rules/02-axioms/2.7.md"
-  },
-  "2.7.6.1": {
-    "id": "2.7.6.1",
     "type": "Proof",
-    "title": "Independence of Axiom 3",
-    "statement": ":::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]\n:::\n\n**I. Model Construction**",
-    "plainEnglish": "Section 2.7.6.1 formalizes the properties of the QBD proof regarding independence of axiom 3.",
+    "title": "Thermodynamic Enforcement",
+    "statement": ":::tip[**Thermodynamic Enforcement** <Ref id=\"2.7.6\" label=\"§2.7.6\" /> via Demonstration of Energy Divergence]\n:::\n\n**I. Hypothesis**",
+    "plainEnglish": "Section 2.7.6 formalizes the properties of the QBD proof regarding thermodynamic enforcement.",
     "file": "01-rules/02-axioms/2.7.md"
   },
   "2.7.7": {
@@ -931,7 +979,7 @@
     "id": "3.1.3",
     "type": "Theorem",
     "title": "Vacuum Structure",
-    "statement": ":::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]\n:::\n\nThe causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \\infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \\in V_0$. 4.  **Divergence:** Every non-root vertex $v \\neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id=\"1.2.6\" label=\"§1.2.6\" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />.",
+    "statement": ":::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]\n:::\n\nThe causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \\infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \\in V_0$. 4.  **Divergence:** Every non-root vertex $v \\neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id=\"1.2.6\" label=\"§1.2.6\" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />.",
     "plainEnglish": "Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum structure.",
     "file": "01-rules/03-architecture/3.1.md"
   },
@@ -939,7 +987,7 @@
     "id": "3.1.4",
     "type": "Lemma",
     "title": "Existence and Finiteness",
-    "statement": ":::info[**Existence and Finiteness of the Initial Vertex Set**]\n:::\n\nLet the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id=\"1.3.4\" label=\"§1.3.4\" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded by **Effective Influence** <Ref id=\"2.6.1\" label=\"§2.6.1\" />.",
+    "statement": ":::info[**Existence and Finiteness of the Initial Vertex Set**]\n:::\n\nLet the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id=\"1.3.4\" label=\"§1.3.4\" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded by **Effective Influence** <Ref id=\"2.6.2\" label=\"§2.6.2\" />.",
     "plainEnglish": "Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and finiteness.",
     "file": "01-rules/03-architecture/3.1.md"
   },
@@ -1035,7 +1083,7 @@
     "id": "3.1.9",
     "type": "Lemma",
     "title": "Path Uniqueness and Sparsity",
-    "statement": ":::info[**Exclusion of Redundant Causal Paths and Derivation of Exact Tree Sparsity**]\n:::\n\nLet $G$ denote a weakly connected DAG on $N$ vertices where the causal redundancy inherent to $|E| > N-1$ is excluded by the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />. Therefore, the vacuum state satisfies the exact sparsity condition $|E| = N-1$.",
+    "statement": ":::info[**Exclusion of Redundant Causal Paths and Derivation of Exact Tree Sparsity**]\n:::\n\nLet $G$ denote a weakly connected DAG on $N$ vertices where the causal redundancy inherent to $|E| > N-1$ is excluded by the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />. Therefore, the vacuum state satisfies the exact sparsity condition $|E| = N-1$.",
     "plainEnglish": "Section 3.1.9 formalizes the properties of the QBD lemma regarding path uniqueness and sparsity.",
     "file": "01-rules/03-architecture/3.1.md"
   },
@@ -1163,7 +1211,7 @@
     "id": "3.2.5",
     "type": "Lemma",
     "title": "Exclusion of Redundant DAGs",
-    "statement": ":::info[**Exclusion of Connected DAGs with Redundant Paths**]\n:::\n\nFor any connected DAG with edge count strictly greater than $N-1$, candidacy for the vacuum state $G_0$ is excluded by the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />.",
+    "statement": ":::info[**Exclusion of Connected DAGs with Redundant Paths**]\n:::\n\nFor any connected DAG with edge count strictly greater than $N-1$, candidacy for the vacuum state $G_0$ is excluded by the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />.",
     "plainEnglish": "Section 3.2.5 formalizes the properties of the QBD lemma regarding exclusion of redundant dags.",
     "file": "01-rules/03-architecture/3.2.md"
   },
@@ -1387,7 +1435,7 @@
     "id": "3.3.7",
     "type": "Lemma",
     "title": "Scalability of the Scheduler",
-    "statement": ":::info[**Logarithmic Time Complexity via Quasi-Local Checks**]\n:::\n\nAssume the graph remains in the regime characterized by **Vacuum Topology** <Ref id=\"3.1.2\" label=\"§3.1.2\" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> with a bounded check radius $R \\propto \\log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.",
+    "statement": ":::info[**Logarithmic Time Complexity via Quasi-Local Checks**]\n:::\n\nAssume the graph remains in the regime characterized by **Vacuum Topology** <Ref id=\"3.1.2\" label=\"§3.1.2\" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> with a bounded check radius $R \\propto \\log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.",
     "plainEnglish": "Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability of the scheduler.",
     "file": "01-rules/03-architecture/3.3.md"
   },
@@ -1451,7 +1499,7 @@
     "id": "3.4.3",
     "type": "Lemma",
     "title": "Nucleation of Compliant Sites",
-    "statement": ":::info[**Nucleation of Compliant Rewrite Sites under Tunneling**]\n:::\n\nFor any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \\in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id=\"1.2.5\" label=\"§1.2.5\" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> and constitutes a valid input for the rewrite rule.",
+    "statement": ":::info[**Nucleation of Compliant Rewrite Sites under Tunneling**]\n:::\n\nFor any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \\in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id=\"1.2.5\" label=\"§1.2.5\" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> and constitutes a valid input for the rewrite rule.",
     "plainEnglish": "Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of compliant sites.",
     "file": "01-rules/03-architecture/3.4.md"
   },
@@ -1795,7 +1843,7 @@
     "id": "4.2.8",
     "type": "Lemma",
     "title": "Effective Influence Encoding",
-    "statement": ":::info[**Categorical encoding of the effective influence relation**]\n:::\n\nLet the **Effective Influence** <Ref id=\"2.6.1\" label=\"§2.6.1\" /> relation $\\le$ constitute a constrained subset of morphisms within $\\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \\le v$ holds if and only if there exists a morphism $p \\in \\text{Hom}(u, v)$ such that the path length satisfies $\\ell(p) \\ge 2$ and the sequence of edge timestamps is strictly increasing.",
+    "statement": ":::info[**Categorical encoding of the effective influence relation**]\n:::\n\nLet the **Effective Influence** <Ref id=\"2.6.2\" label=\"§2.6.2\" /> relation $\\le$ constitute a constrained subset of morphisms within $\\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \\le v$ holds if and only if there exists a morphism $p \\in \\text{Hom}(u, v)$ such that the path length satisfies $\\ell(p) \\ge 2$ and the sequence of edge timestamps is strictly increasing.",
     "plainEnglish": "Section 4.2.8 formalizes the properties of the QBD lemma regarding effective influence encoding.",
     "file": "01-rules/04-dynamics/4.2.md"
   },
@@ -2723,7 +2771,7 @@
     "id": "6.1.3",
     "type": "Lemma",
     "title": "Reducibility of Trivial Topologies",
-    "statement": ":::info[**Reducibility of topologically trivial subgraphs**]\n:::\n\nLet $\\xi \\subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\\xi(t) = 1$. Then there exists a finite sequence of local rewrite operations $\\mathcal{S} = \\{r_1, \\dots, r_k\\} \\subset \\mathcal{R}$ that constitutes a mapping of $\\xi$ into a disjoint union of non-interacting 3-cycles $\\coprod_j C_3^{(j)}$ under the invariant conditions of the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.3\" label=\"§2.3.3\" />.",
+    "statement": ":::info[**Reducibility of topologically trivial subgraphs**]\n:::\n\nLet $\\xi \\subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\\xi(t) = 1$. Then there exists a finite sequence of local rewrite operations $\\mathcal{S} = \\{r_1, \\dots, r_k\\} \\subset \\mathcal{R}$ that constitutes a mapping of $\\xi$ into a disjoint union of non-interacting 3-cycles $\\coprod_j C_3^{(j)}$ under the invariant conditions of the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.4\" label=\"§2.3.4\" />.",
     "plainEnglish": "Section 6.1.3 formalizes the properties of the QBD lemma regarding reducibility of trivial topologies.",
     "file": "02-players/06-fermions/6.1.md"
   },
@@ -2827,7 +2875,7 @@
     "id": "6.2.4",
     "type": "Lemma",
     "title": "Exclusion of Single-Ribbon (n=1)",
-    "statement": ":::info[**Reducibility of Twisted Ribbons through Type II Reidemeister Moves**]\n:::\n\nA configuration consisting of a single framed ribbon ($n=1$) is excluded from the set of stable particles due to topological reducibility. Although such a structure may possess non-trivial writhe $w \\neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> and are subsequently excised by the vacuum deletion mechanism.",
+    "statement": ":::info[**Reducibility of Twisted Ribbons through Type II Reidemeister Moves**]\n:::\n\nA configuration consisting of a single framed ribbon ($n=1$) is excluded from the set of stable particles due to topological reducibility. Although such a structure may possess non-trivial writhe $w \\neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> and are subsequently excised by the vacuum deletion mechanism.",
     "plainEnglish": "Section 6.2.4 formalizes the properties of the QBD lemma regarding exclusion of single-ribbon (n=1).",
     "file": "02-players/06-fermions/6.2.md"
   },
@@ -2907,7 +2955,7 @@
     "id": "6.3.2",
     "type": "Definition",
     "title": "Torsional Complexity",
-    "statement": ":::tip[**Quadratic Contribution of Writhe imposed by Pathfinding Penalties**]\n:::\n\nThe **Torsional Complexity**, denoted $C_T$, is defined strictly as a scalar quantity quadratically proportional to the Writhe $w(\\beta)$ of the ribbon configuration. The value of $C_T$ is determined by the pathfinding penalties imposed by the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />, subject to the condition of **Quadratic Scaling**, wherein the complexity satisfies the relation $C_T = k_t \\cdot w(\\beta)^2$, with $k_t$ serving as a dimensionless scaling constant.",
+    "statement": ":::tip[**Quadratic Contribution of Writhe imposed by Pathfinding Penalties**]\n:::\n\nThe **Torsional Complexity**, denoted $C_T$, is defined strictly as a scalar quantity quadratically proportional to the Writhe $w(\\beta)$ of the ribbon configuration. The value of $C_T$ is determined by the pathfinding penalties imposed by the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, subject to the condition of **Quadratic Scaling**, wherein the complexity satisfies the relation $C_T = k_t \\cdot w(\\beta)^2$, with $k_t$ serving as a dimensionless scaling constant.",
     "plainEnglish": "Section 6.3.2 formalizes the properties of the QBD definition regarding torsional complexity.",
     "file": "02-players/06-fermions/6.3.md"
   },
@@ -2939,7 +2987,7 @@
     "id": "6.3.5",
     "type": "Lemma",
     "title": "Quadratic Scaling of Torsion",
-    "statement": ":::info[**Relationship between Writhe and Strain Energy governed by Pathfinding Limits**]\n:::\n\nThe internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ scales strictly with the square of the writhe ($E_T \\propto w^2$). This scaling is enforced by the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />, which mandates the following pathfinding constraints: 1.  **Steric Hindrance:** The addition of the $(k+1)$-th unit of twist requires the formation of a causal path of length $L \\propto k$ to circumnavigate the topological core formed by previous twists. 2.  **Cumulative Summation:** The total structural resource requirement is the arithmetic sum of the linear path costs, yielding a quadratic total complexity $\\sum_{i=1}^{k} i \\propto k^2$.",
+    "statement": ":::info[**Relationship between Writhe and Strain Energy governed by Pathfinding Limits**]\n:::\n\nThe internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ scales strictly with the square of the writhe ($E_T \\propto w^2$). This scaling is enforced by the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, which mandates the following pathfinding constraints: 1.  **Steric Hindrance:** The addition of the $(k+1)$-th unit of twist requires the formation of a causal path of length $L \\propto k$ to circumnavigate the topological core formed by previous twists. 2.  **Cumulative Summation:** The total structural resource requirement is the arithmetic sum of the linear path costs, yielding a quadratic total complexity $\\sum_{i=1}^{k} i \\propto k^2$.",
     "plainEnglish": "Section 6.3.5 formalizes the properties of the QBD lemma regarding quadratic scaling of torsion.",
     "file": "02-players/06-fermions/6.3.md"
   },
@@ -3107,7 +3155,7 @@
     "id": "7.1.4",
     "type": "Lemma",
     "title": "Exchange-Rotation Equivalence",
-    "statement": ":::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]\n:::\n\nThe **Physical Braid Exchange Operation** $\\hat{P}_{12}$ is topologically isotopic to a $2\\pi$ self-rotation of a single constituent ribbon. This equivalence is established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> that continuously deforms the exchange path into a self-twist path. The validity of this isotopy enforces the following physical consequences: 1.  **Invariant Preservation:** The deformation sequence preserves the global linking invariants of the braid configuration throughout the transformation. 2.  **Phase Equality:** The topological equivalence enforces the strict equality of the quantum phase acquired during exchange $\\phi_{exch}$ and the phase acquired during self-rotation $\\phi_{spin}$, thereby extending the spin-statistics connection to the discrete causal graph substrate without recourse to continuum field postulates.",
+    "statement": ":::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]\n:::\n\nThe **Physical Braid Exchange Operation** $\\hat{P}_{12}$ is topologically isotopic to a $2\\pi$ self-rotation of a single constituent ribbon. This equivalence is established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> that continuously deforms the exchange path into a self-twist path. The validity of this isotopy enforces the following physical consequences: 1.  **Invariant Preservation:** The deformation sequence preserves the global linking invariants of the braid configuration throughout the transformation. 2.  **Phase Equality:** The topological equivalence enforces the strict equality of the quantum phase acquired during exchange $\\phi_{exch}$ and the phase acquired during self-rotation $\\phi_{spin}$, thereby extending the spin-statistics connection to the discrete causal graph substrate without recourse to continuum field postulates.",
     "plainEnglish": "Section 7.1.4 formalizes the properties of the QBD lemma regarding exchange-rotation equivalence.",
     "file": "02-players/07-topology/7.1.md"
   },
@@ -3163,7 +3211,7 @@
     "id": "7.2.3",
     "type": "Lemma",
     "title": "Forbidden Occupancy",
-    "statement": ":::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]\n:::\n\nThe attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints: 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel. 2.  **Locality Constraint:** The **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> and the high energy barrier for non-local **Global Unwinding Barrier** <Ref id=\"6.4.4\" label=\"§6.4.4\" /> restrict the second fermion to the immediate neighborhood of $\\{u, v\\}$. 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$. 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.",
+    "statement": ":::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]\n:::\n\nThe attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints: 1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel. 2.  **Locality Constraint:** The **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> and the high energy barrier for non-local **Global Unwinding Barrier** <Ref id=\"6.4.4\" label=\"§6.4.4\" /> restrict the second fermion to the immediate neighborhood of $\\{u, v\\}$. 3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$. 4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.",
     "plainEnglish": "Section 7.2.3 formalizes the properties of the QBD lemma regarding forbidden occupancy.",
     "file": "02-players/07-topology/7.2.md"
   },
@@ -3227,7 +3275,7 @@
     "id": "7.3.4",
     "type": "Lemma",
     "title": "Conservation of Total Writhe",
-    "statement": ":::info[**Invariance of Writhe Number under Unitary Evolution**]\n:::\n\nThe **Total Writhe** $w(\\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions: 1.  **Type I Prohibition:** The discrete alteration of writhe ($\\Delta w = \\pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move. 2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive the **Axiom 1: The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" /> and the **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" />. 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\\Pi_{cycle}$, yielding a transition probability of zero.",
+    "statement": ":::info[**Invariance of Writhe Number under Unitary Evolution**]\n:::\n\nThe **Total Writhe** $w(\\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions: 1.  **Type I Prohibition:** The discrete alteration of writhe ($\\Delta w = \\pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move. 2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive the **Axiom 1: The Directed Causal Link** <Ref id=\"2.1.1\" label=\"§2.1.1\" /> and the **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" />. 3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\\Pi_{cycle}$, yielding a transition probability of zero.",
     "plainEnglish": "Section 7.3.4 formalizes the properties of the QBD lemma regarding conservation of total writhe.",
     "file": "02-players/07-topology/7.3.md"
   },
@@ -3427,7 +3475,7 @@
     "id": "8.1.3",
     "type": "Lemma",
     "title": "Distant Commutativity",
-    "statement": ":::info[**Verification of Operator Independence using Disjoint Spatial Supports**]\n:::\n\nThe physical rewrite processes $\\mathcal{R}_i$ and $\\mathcal{R}_j$ acting on an $n$-ribbon braid satisfy the commutativity relation $[\\mathcal{R}_i, \\mathcal{R}_j] = 0$ if and only if the indices satisfy $|i-j| \\geq 2$. This commutation is enforced by the following structural constraints: 1.  **Spatial Separation:** The rewrite operations act on disjoint local subgraphs separated by an undirected metric distance $\\bar{d} > 2$, ensuring no shared vertices or edges exist within the interaction volumes. 2.  **Causal Independence:** The **Principle of Unique Causality** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> forbids the formation of bridging edges between the disjoint neighborhoods, preventing the propagation of causal influence between the operations within a single logical time step. 3.  **Tensor Factorization:** The operators act on distinct tensor factors of the global Hilbert space $\\mathcal{H}$, ensuring algebraic independence.",
+    "statement": ":::info[**Verification of Operator Independence using Disjoint Spatial Supports**]\n:::\n\nThe physical rewrite processes $\\mathcal{R}_i$ and $\\mathcal{R}_j$ acting on an $n$-ribbon braid satisfy the commutativity relation $[\\mathcal{R}_i, \\mathcal{R}_j] = 0$ if and only if the indices satisfy $|i-j| \\geq 2$. This commutation is enforced by the following structural constraints: 1.  **Spatial Separation:** The rewrite operations act on disjoint local subgraphs separated by an undirected metric distance $\\bar{d} > 2$, ensuring no shared vertices or edges exist within the interaction volumes. 2.  **Causal Independence:** The **Principle of Unique Causality** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> forbids the formation of bridging edges between the disjoint neighborhoods, preventing the propagation of causal influence between the operations within a single logical time step. 3.  **Tensor Factorization:** The operators act on distinct tensor factors of the global Hilbert space $\\mathcal{H}$, ensuring algebraic independence.",
     "plainEnglish": "Section 8.1.3 formalizes the properties of the QBD lemma regarding distant commutativity.",
     "file": "02-players/08-braids/8.1.md"
   },
@@ -3627,7 +3675,7 @@
     "id": "8.3.2",
     "type": "Theorem",
     "title": "Chiral Symmetry and Parity Violation",
-    "statement": ":::info[**Emergence of Weak Gauge Theory from Doublet Flavor Rewrites**]\n:::\n\nThe Weak Interaction constitutes a chiral gauge theory governing the transformation of electroweak doublets, characterized by the strict enforcement of left-handed currents and the violation of parity symmetry. This emergence is established by the following topological selection rules: 1.  **Chiral Projection:** The flavor-changing rewrites acting on the doublet space are restricted to the $\\chi = -1$ sector by the strict monotonicity of the timestamp ordering, which aligns the causal flow with the left-handed projector $P_L$. 2.  **Mirror Exclusion:** The right-handed mirror processes, characterized by $\\chi = +1$, are physically excluded from the dynamics by the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.3\" label=\"§2.3.3\" />, which identifies the inverted timestamp order as a generator of redundant causal paths. 3.  **Gauge Structure:** The resulting interaction algebra generates the $SU(2)_L \\times U(1)_Y$ symmetry group, with the V-A current structure arising directly from the topological filtration of the causal graph.",
+    "statement": ":::info[**Emergence of Weak Gauge Theory from Doublet Flavor Rewrites**]\n:::\n\nThe Weak Interaction constitutes a chiral gauge theory governing the transformation of electroweak doublets, characterized by the strict enforcement of left-handed currents and the violation of parity symmetry. This emergence is established by the following topological selection rules: 1.  **Chiral Projection:** The flavor-changing rewrites acting on the doublet space are restricted to the $\\chi = -1$ sector by the strict monotonicity of the timestamp ordering, which aligns the causal flow with the left-handed projector $P_L$. 2.  **Mirror Exclusion:** The right-handed mirror processes, characterized by $\\chi = +1$, are physically excluded from the dynamics by the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, which identifies the inverted timestamp order as a generator of redundant causal paths. 3.  **Gauge Structure:** The resulting interaction algebra generates the $SU(2)_L \\times U(1)_Y$ symmetry group, with the V-A current structure arising directly from the topological filtration of the causal graph.",
     "plainEnglish": "Section 8.3.2 formalizes the properties of the QBD theorem regarding chiral symmetry and parity violation.",
     "file": "02-players/08-braids/8.3.md"
   },
@@ -3707,7 +3755,7 @@
     "id": "8.3.7.1",
     "type": "Proof",
     "title": "PUC Violation Logic",
-    "statement": ":::tip[**Formal Demonstration of Redundant Path Formation in Mirror Processes**]\n:::\n\n**I. Path Uniqueness Condition** The **Principle of Unique Causality (PUC)** <Ref id=\"2.3.3\" label=\"§2.3.3\" /> mandates that for any causal rewrite proposal $u \\to v$, the set of existing paths of length $\\le 2$ must be empty (for new edges) or a singleton (for modifications).",
+    "statement": ":::tip[**Formal Demonstration of Redundant Path Formation in Mirror Processes**]\n:::\n\n**I. Path Uniqueness Condition** The **Principle of Unique Causality (PUC)** <Ref id=\"2.3.4\" label=\"§2.3.4\" /> mandates that for any causal rewrite proposal $u \\to v$, the set of existing paths of length $\\le 2$ must be empty (for new edges) or a singleton (for modifications).",
     "plainEnglish": "Section 8.3.7.1 formalizes the properties of the QBD proof regarding puc violation logic.",
     "file": "02-players/08-braids/8.3.md"
   },
@@ -4115,7 +4163,7 @@
     "id": "9.2.1",
     "type": "Definition",
     "title": "Penta-Ribbon",
-    "statement": ":::tip[**Structural Definition of the Five-Ribbon Braid as the Fundamental Object**]\n:::\n\nThe **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\\{R_1, R_2, R_3, R_4, R_5\\}$, embedded within the four-dimensional causal graph $G_t$. The physical dynamics of this structure are governed exclusively by the set of four local rewrite rules $\\{\\mathcal{R}_1, \\mathcal{R}_2, \\mathcal{R}_3, \\mathcal{R}_4\\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.3\" label=\"§2.3.3\" />, maintaining the global topological invariants of the Braid Group $B_5$ while encoding the 5-dimensional fundamental representation space of the unified gauge group.",
+    "statement": ":::tip[**Structural Definition of the Five-Ribbon Braid as the Fundamental Object**]\n:::\n\nThe **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\\{R_1, R_2, R_3, R_4, R_5\\}$, embedded within the four-dimensional causal graph $G_t$. The physical dynamics of this structure are governed exclusively by the set of four local rewrite rules $\\{\\mathcal{R}_1, \\mathcal{R}_2, \\mathcal{R}_3, \\mathcal{R}_4\\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the **Principle of Unique Causality (PUC)** <Ref id=\"2.3.4\" label=\"§2.3.4\" />, maintaining the global topological invariants of the Braid Group $B_5$ while encoding the 5-dimensional fundamental representation space of the unified gauge group.",
     "plainEnglish": "Section 9.2.1 formalizes the properties of the QBD definition regarding penta-ribbon.",
     "file": "02-players/09-unification/9.2.md"
   },
