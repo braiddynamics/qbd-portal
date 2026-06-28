@@ -1452,7 +1452,7 @@ Section 3.1.10.1 formalizes the properties of the QBD proof regarding depth-pari
 :::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs**]
 :::
 
-For all bipartite graphs **Bipartite Graph** <Ref id="1.2.2" label="§1.2.2" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
+For all bipartite graphs **Bipartite Graph** <Ref id="1.2.2" label="§1.2.2" />, odd-length cycles are topologically excluded. Therefore, the pre-existence of **Directed 3-Cycles** defined as **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> is excluded within the strictly bipartite vacuum state $G_0$ (as established by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />).
 
 **In Plain English:**  
 Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of odd cycles.
@@ -1956,7 +1956,7 @@ Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
 :::
 
-The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
+The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
 
 **In Plain English:**  
 Section 3.4.1 formalizes the properties of the QBD theorem regarding inevitable geometrogenesis.
@@ -2016,7 +2016,7 @@ Section 3.4.3.1 formalizes the properties of the QBD proof regarding nucleation 
 :::info[**Generation of the First 3-Cycle via Rewrite Acceptance**]
 :::
 
-Let the rewrite rule $\mathcal{R}$ be applied to the tunneling-induced compliant 2-Path $(u, v, w)$. Then the operation generates the closing edge $(w, u)$, forming the first **Directed 3-Cycle** in the universe, constituting the initial **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> of spatial area and acting as a catalytic seed for subsequent geometric growth.
+Let the rewrite rule $\mathcal{R}$ be applied to the tunneling-induced compliant 2-Path $(u, v, w)$. Then the operation generates the closing edge $(w, u)$, forming the first **Directed 3-Cycle** in the universe, constituting the initial **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> of spatial area and acting as a catalytic seed for subsequent geometric growth.
 
 **In Plain English:**  
 Section 3.4.4 formalizes the properties of the QBD lemma regarding first geometric quantum.
@@ -2748,7 +2748,7 @@ Section 4.4.1.1 formalizes the properties of the QBD proof regarding bit-nat equ
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
 **In Plain English:**  
 Section 4.4.2 formalizes the properties of the QBD theorem regarding entropy of closure.
@@ -2952,7 +2952,7 @@ Section 4.5.4.1 formalizes the properties of the QBD proof regarding addition pr
 :::tip[**Destructive Operation Proposing Edge Removals**]
 :::
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
 Section 4.5.5 formalizes the properties of the QBD definition regarding deletion mode.
