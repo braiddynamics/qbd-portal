@@ -1248,7 +1248,7 @@ Section 3.1.2 formalizes the properties of the QBD definition regarding vacuum t
 :::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]
 :::
 
-The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions: 1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$). 2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$). 3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$. 4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root. 5.  **Acyclicity:** The graph contains no **Cycle** <Ref id="1.2.6" label="§1.2.6" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
+Given the initial state of the causal graph at Logical Time $t_L = 0$, designated $G_0$, the following holds: $G_0$ is the unique topological configuration that satisfies the following conditions: -   **(i) Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$); -   **(ii) Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$); -   **(iii) Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$; -   **(iv) Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root; -   **(v) Acyclicity:** The graph contains no **Cycle** <Ref id="1.2.6" label="§1.2.6" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />. Moreover, this structure constitutes the unique topological solution compatible with the simultaneous enforcement of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />, **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />, and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
 
 **In Plain English:**  
 Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum structure.
@@ -1284,7 +1284,7 @@ Section 3.1.4.1 formalizes the properties of the QBD proof regarding existence a
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
 
-Let $G_0$ denote the initial state of the universe, established in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Under the directed causal rules, the existence of the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming a **2-Cycle** <Ref id="1.2.7" label="§1.2.7" /> is topologically impossible.
+Suppose $G_0$ is the initial state of the universe established in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Then the existence of the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming a **2-Cycle** <Ref id="1.2.7" label="§1.2.7" /> is topologically impossible under the directed causal rules, being strictly excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 **In Plain English:**  
 Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of reflexivity and reciprocity.
@@ -1375,7 +1375,7 @@ Section 3.1.8 formalizes the properties of the QBD lemma regarding global connec
 
 ---
 
-### 3.1.8.1 Proof: Minimization of Automorphisms {#3.1.8.1}
+### 3.1.8.1 Proof: Global Connectivity {#3.1.8.1}
 
 :::tip[**Derivation of Connectivity from Causal Unity and Symmetry Constraints**]
 :::
@@ -1383,7 +1383,7 @@ Section 3.1.8 formalizes the properties of the QBD lemma regarding global connec
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 3.1.8.1 formalizes the properties of the QBD proof regarding minimization of automorphisms.
+Section 3.1.8.1 formalizes the properties of the QBD proof regarding global connectivity.
 
 ---
 
@@ -1392,7 +1392,7 @@ Section 3.1.8.1 formalizes the properties of the QBD proof regarding minimizatio
 :::note[**Computational Demonstration of Entropy Violation in Disconnected Graphs by Group Size Comparison**]
 :::
 
-Algorithmic validation of the entropic penalty for disconnected topologies established by **Minimization of Automorphisms** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
+Algorithmic validation of the entropic penalty for disconnected topologies established by **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 3.1.8.2 formalizes the properties of the QBD calculation regarding connectivity counterexample.
@@ -1411,7 +1411,7 @@ Section 3.1.9 formalizes the properties of the QBD lemma regarding path uniquene
 
 ---
 
-### 3.1.9.1 Proof: Tree Condition {#3.1.9.1}
+### 3.1.9.1 Proof: Path Uniqueness and Sparsity {#3.1.9.1}
 
 :::tip[**Derivation of the Exact Edge Count Constraint via Prohibition of Parallel Paths**]
 :::
@@ -1419,7 +1419,7 @@ Section 3.1.9 formalizes the properties of the QBD lemma regarding path uniquene
 **I. Topological Setup**
 
 **In Plain English:**  
-Section 3.1.9.1 formalizes the properties of the QBD proof regarding tree condition.
+Section 3.1.9.1 formalizes the properties of the QBD proof regarding path uniqueness and sparsity.
 
 ---
 
@@ -1471,15 +1471,15 @@ Section 3.1.11.1 formalizes the properties of the QBD proof regarding exclusion 
 
 ---
 
-### 3.1.12 Proof: Demonstration of the Vacuum Structure {#3.1.12}
+### 3.1.12 Proof: Vacuum Structure {#3.1.12}
 
 :::tip[Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion, demonstrating the **Vacuum Structure** <Ref id="3.1.3" label="§3.1.3" />]
 :::
 
-**I. The Configuration Space** Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains.
+**I. The Configuration Space** Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains. Basic topological boundaries are established per **Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />, **Exclusion of Reflexivity and Reciprocity** <Ref id="3.1.5" label="§3.1.5" />, and **Exclusion of Cyclic Paths** <Ref id="3.1.6" label="§3.1.6" />.
 
 **In Plain English:**  
-Section 3.1.12 formalizes the properties of the QBD proof regarding demonstration of the vacuum structure.
+Section 3.1.12 formalizes the properties of the QBD proof regarding vacuum structure.
 
 ---
 
@@ -1488,7 +1488,7 @@ Section 3.1.12 formalizes the properties of the QBD proof regarding demonstratio
 :::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
 :::
 
-The initial state $G_0$ constitutes a unique structure designated as a **Regular Bethe Fragment**. This structure is a finite, rooted, outward-directed tree possessing a fixed internal coordination number $k_{deg} \ge 3$. The root vertex and all internal vertices exhibit an out-degree of exactly $k_{deg}$, while all leaf vertices exhibit an out-degree of zero. This structure maximizes the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity across vertices. [(Woess, 2000)](/monograph/appendices/a-references#A.70)
+Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** possessing a fixed internal coordination number $k_{deg} \ge 3$, where the root and all internal vertices exhibit an out-degree of exactly $k_{deg}$ and all leaf vertices exhibit an out-degree of zero, maximizing the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity. <Cite id="A.70" label="(Woess, 2000)" />
 
 **In Plain English:**  
 Section 3.2.1 formalizes the properties of the QBD theorem regarding optimal vacuum.
@@ -1615,7 +1615,7 @@ Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximali
 
 ---
 
-### 3.2.6.1 Proof: Branching Optimization {#3.2.6.1}
+### 3.2.6.1 Proof: Site Maximality {#3.2.6.1}
 
 :::tip[**Verification of Site Density Maximization in Maximally Branched Trees via Combinatorial Counting**]
 :::
@@ -1623,7 +1623,7 @@ Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximali
 **I. Participancy Requirement**
 
 **In Plain English:**  
-Section 3.2.6.1 formalizes the properties of the QBD proof regarding branching optimization.
+Section 3.2.6.1 formalizes the properties of the QBD proof regarding site maximality.
 
 ---
 
@@ -1699,7 +1699,7 @@ Section 3.2.9 formalizes the properties of the QBD lemma regarding structural op
 
 ---
 
-### 3.2.9.1 Proof: Metric Validity {#3.2.9.1}
+### 3.2.9.1 Proof: Structural Optimality Metric {#3.2.9.1}
 
 :::tip[**Justification of Relational Uniformity via Extremal Case Analysis**]
 :::
@@ -1707,23 +1707,23 @@ Section 3.2.9 formalizes the properties of the QBD lemma regarding structural op
 **I. Metric Definition**
 
 **In Plain English:**  
-Section 3.2.9.1 formalizes the properties of the QBD proof regarding metric validity.
+Section 3.2.9.1 formalizes the properties of the QBD proof regarding structural optimality metric.
 
 ---
 
-### 3.2.10 Corollary: Quantitative Supremacy {#3.2.10}
+### 3.2.10 Lemma: Quantitative Supremacy {#3.2.10}
 
 :::info[**Supremacy of the Bethe Fragment under the Structural Optimality Metric confirmed by Exhaustive Search**]
 :::
 
-**Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer of the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of axiomatically admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
+Given the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of candidate graph topologies, the following holds: the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer over all admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
 
 **In Plain English:**  
-Section 3.2.10 formalizes the properties of the QBD corollary regarding quantitative supremacy.
+Section 3.2.10 formalizes the properties of the QBD lemma regarding quantitative supremacy.
 
 ---
 
-### 3.2.10.1 Proof: Supremacy Verification {#3.2.10.1}
+### 3.2.10.1 Proof: Quantitative Supremacy {#3.2.10.1}
 
 :::tip[**Formal Proof of the Bethe Fragment as the Unique Maximizer via Computational Census**]
 :::
@@ -1731,7 +1731,7 @@ Section 3.2.10 formalizes the properties of the QBD corollary regarding quantita
 **I. Candidate Set Reduction**
 
 **In Plain English:**  
-Section 3.2.10.1 formalizes the properties of the QBD proof regarding supremacy verification.
+Section 3.2.10.1 formalizes the properties of the QBD proof regarding quantitative supremacy.
 
 ---
 
@@ -1740,7 +1740,7 @@ Section 3.2.10.1 formalizes the properties of the QBD proof regarding supremacy 
 :::note[**Algorithmic Census of Optimal Tree Topology**]
 :::
 
-Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Supremacy Verification** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
+Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Quantitative Supremacy** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 3.2.10.2 formalizes the properties of the QBD calculation regarding small n census.
@@ -1759,15 +1759,15 @@ Section 3.2.10.3 formalizes the properties of the QBD calculation regarding larg
 
 ---
 
-### 3.2.11 Proof: Demonstration of the Optimal Vacuum {#3.2.11}
+### 3.2.11 Proof: Optimal Vacuum {#3.2.11}
 
 :::tip[Formal Derivation of the Regular Bethe Fragment ($k=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />]
 :::
 
-**I. The Candidate Set** The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by **Demonstration of the Vacuum Structure** <Ref id="3.1.12" label="§3.1.12" />. The proof seeks to identify the specific tree topology that maximizes the physical potential for geometrogenesis.
+**I. The Candidate Set** The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by **Vacuum Structure** <Ref id="3.1.12" label="§3.1.12" />. This restriction arises by sequentially applying **Exclusion of Cyclic Topologies** <Ref id="3.2.2" label="§3.2.2" />, **Exclusion of Short-Range Loops** <Ref id="3.2.3" label="§3.2.3" />, **Exclusion of Disconnected States** <Ref id="3.2.4" label="§3.2.4" />, and **Exclusion of Redundant DAGs** <Ref id="3.2.5" label="§3.2.5" /> to candidate graph configurations.
 
 **In Plain English:**  
-Section 3.2.11 formalizes the properties of the QBD proof regarding demonstration of the optimal vacuum.
+Section 3.2.11 formalizes the properties of the QBD proof regarding optimal vacuum.
 
 ---
 
@@ -1800,7 +1800,7 @@ Section 3.3.2 formalizes the properties of the QBD definition regarding formal s
 :::info[**Necessity and Sufficiency of Maximal Parallelism for Symmetry Maintenance established by Biconditional Proof**]
 :::
 
-An update map $\mathcal{U}: G_0 \to G_1$ preserves the full automorphism group of the vacuum state, such that $\text{Aut}(G_1) \supseteq \text{Aut}(G_0)$, if and only if $\mathcal{U}$ constitutes a **Maximally Parallel Scheduler**. A Maximally Parallel Scheduler is defined as the operator that applies the rewrite rule simultaneously to the complete set of compliant sites $\mathcal{S}_{sites}(G_0)$ permitted by the axiomatic constraints. [(Wolfram, 2002)](/monograph/appendices/a-references#A.71)
+For any update map $\mathcal{U}: G_0 \to G_1$ on the initial vacuum state, the following holds: $\mathcal{U}$ preserves the full automorphism group of the vacuum state, satisfying $\text{Aut}(G_1) \supseteq \text{Aut}(G_0)$, if and only if $\mathcal{U}$ constitutes a **Maximally Parallel Scheduler** that applies the rewrite rule simultaneously to the complete set of compliant sites $\mathcal{S}_{sites}(G_0)$ permitted by the axiomatic constraints. <Cite id="A.71" label="(Wolfram, 2002)" />
 
 **In Plain English:**  
 Section 3.3.3 formalizes the properties of the QBD theorem regarding preservation of automorphisms.
@@ -1812,7 +1812,7 @@ Section 3.3.3 formalizes the properties of the QBD theorem regarding preservatio
 :::info[**Commutativity of Rewrite Site Identification with Graph Automorphisms**]
 :::
 
-Let $\mathcal{S}_{sites}(G)$ denote the set of candidate rewrite sites for a graph $G$. Then the identity $\varphi(\mathcal{S}_{sites}(G)) = \mathcal{S}_{sites}(\varphi(G)) = \mathcal{S}_{sites}(G)$ holds for any automorphism $\varphi \in \text{Aut}(G)$.
+Let $\mathcal{S}_{sites}(G)$ denote the set of candidate rewrite sites for a graph $G$. Then the identity $\varphi(\mathcal{S}_{sites}(G)) = \mathcal{S}_{sites}(\varphi(G)) = \mathcal{S}_{sites}(G)$ is satisfied for any automorphism $\varphi \in \text{Aut}(G)$.
 
 **In Plain English:**  
 Section 3.3.4 formalizes the properties of the QBD lemma regarding equivariance of site definition.
@@ -1908,7 +1908,7 @@ Section 3.3.6.1 formalizes the properties of the QBD proof regarding covariant c
 :::info[**Logarithmic Time Complexity via Quasi-Local Checks**]
 :::
 
-Assume the graph remains in the regime characterized by **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.
+Assume the graph remains in the regime characterized by **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$, and the probability of conflict chains spanning the system decays exponentially.
 
 **In Plain English:**  
 Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability of the scheduler.
@@ -1956,7 +1956,7 @@ Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
 :::
 
-The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
+Suppose the initial vacuum state $G_0$ is a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />. Then this bipartition topologically prohibits the formation of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. Therefore, a single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
 
 **In Plain English:**  
 Section 3.4.1 formalizes the properties of the QBD theorem regarding inevitable geometrogenesis.
@@ -1975,7 +1975,7 @@ Section 3.4.2 formalizes the properties of the QBD lemma regarding topological t
 
 ---
 
-### 3.4.2.1 Proof: Symmetry Breaking {#3.4.2.1}
+### 3.4.2.1 Proof: Topological Tunneling {#3.4.2.1}
 
 :::tip[**Demonstration of Minimal Topological Fragility via Hamming Distance Analysis**]
 :::
@@ -1983,7 +1983,7 @@ Section 3.4.2 formalizes the properties of the QBD lemma regarding topological t
 **I. Topological State Definition**
 
 **In Plain English:**  
-Section 3.4.2.1 formalizes the properties of the QBD proof regarding symmetry breaking.
+Section 3.4.2.1 formalizes the properties of the QBD proof regarding topological tunneling.
 
 ---
 
@@ -2059,15 +2059,15 @@ Section 3.4.5.1 formalizes the properties of the QBD proof regarding ignition pr
 
 ---
 
-### 3.4.6 Proof: Demonstration of Inevitable Ignition {#3.4.6}
+### 3.4.6 Proof: Inevitable Geometrogenesis {#3.4.6}
 
 :::tip[Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability, demonstrating **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />]
 :::
 
-**I. The Metastable Hypothesis** The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$).
+**I. The Metastable Hypothesis** The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$). This barrier is breached via **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, which enables the **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />.
 
 **In Plain English:**  
-Section 3.4.6 formalizes the properties of the QBD proof regarding demonstration of inevitable ignition.
+Section 3.4.6 formalizes the properties of the QBD proof regarding inevitable geometrogenesis.
 
 ---
 
@@ -2119,7 +2119,7 @@ Section 3.5.3 formalizes the properties of the QBD lemma regarding configuration
 
 ---
 
-### 3.5.3.1 Proof: Mapping Validity {#3.5.3.1}
+### 3.5.3.1 Proof: Configuration Space Validity {#3.5.3.1}
 
 :::tip[**Verification of the Correspondence between Graph States and Qubit Basis States via Orthogonality Checks**]
 :::
@@ -2127,7 +2127,7 @@ Section 3.5.3 formalizes the properties of the QBD lemma regarding configuration
 **I. Hilbert Space Construction**
 
 **In Plain English:**  
-Section 3.5.3.1 formalizes the properties of the QBD proof regarding mapping validity.
+Section 3.5.3.1 formalizes the properties of the QBD proof regarding configuration space validity.
 
 ---
 
@@ -2143,7 +2143,7 @@ Section 3.5.4 formalizes the properties of the QBD lemma regarding hard constrai
 
 ---
 
-### 3.5.4.1 Proof: Projector Validity {#3.5.4.1}
+### 3.5.4.1 Proof: Hard Constraint Validity {#3.5.4.1}
 
 :::tip[**Verification of the Annihilation of Invalid States through Operator Algebra**]
 :::
@@ -2151,7 +2151,7 @@ Section 3.5.4 formalizes the properties of the QBD lemma regarding hard constrai
 **I. The 2-Cycle Constraint Projector**
 
 **In Plain English:**  
-Section 3.5.4.1 formalizes the properties of the QBD proof regarding projector validity.
+Section 3.5.4.1 formalizes the properties of the QBD proof regarding hard constraint validity.
 
 ---
 
@@ -2160,7 +2160,7 @@ Section 3.5.4.1 formalizes the properties of the QBD proof regarding projector v
 :::note[**Computational Verification of Projector Eigenvalues using Matrix Multiplication**]
 :::
 
-Computational verification of the spectral properties of geometric stabilizers established by **Projector Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> is based on the following protocols:
+Computational verification of the spectral properties of geometric stabilizers established by **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 3.5.4.2 formalizes the properties of the QBD calculation regarding eigenvalue verification.
@@ -2172,7 +2172,7 @@ Section 3.5.4.2 formalizes the properties of the QBD calculation regarding eigen
 :::info[**Classification of Local Geometry via Triplet Syndrome Tuples**]
 :::
 
-**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> checks generate syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. Then these tuples characterize the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
+Given the checks defined under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, the following holds: the generated syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$ constitute a characterization of the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
 
 **In Plain English:**  
 Section 3.5.5 formalizes the properties of the QBD lemma regarding syndrome classification of triplet configurations.
@@ -2251,15 +2251,27 @@ Section 3.5.7.1 formalizes the properties of the QBD proof regarding codespace n
 
 ---
 
-### 3.5.8 Proof: Demonstration of the Stabilizer Isomorphism {#3.5.8}
+### 3.5.8 Proof: Stabilizer Isomorphism {#3.5.8}
 
 :::tip[Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction, establishing the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />]
 :::
 
-**I. The Mapping Hypothesis** The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ that links the domain of physical graph theory to the domain of stabilizer quantum codes.
+**I. Setup and Mapping** The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ that links the domain of physical graph theory to the domain of stabilizer quantum codes.
 
 **In Plain English:**  
-Section 3.5.8 formalizes the properties of the QBD proof regarding demonstration of the stabilizer isomorphism.
+Section 3.5.8 formalizes the properties of the QBD proof regarding stabilizer isomorphism.
+
+---
+
+### 3.5.8.1 Calculation: End-to-End Codespace Verification {#3.5.8.1}
+
+:::note[**Computational Verification of Codespace Projection and Syndrome Extraction for a Full Directed Triplet using Simulation**]
+:::
+
+Computational verification of the codespace projection and syndrome extraction under **Stabilizer Isomorphism** <Ref id="3.5.8" label="§3.5.8" /> is based on the following protocols:
+
+**In Plain English:**  
+Section 3.5.8.1 formalizes the properties of the QBD calculation regarding end-to-end codespace verification.
 
 ---
 
@@ -4764,7 +4776,7 @@ Section 8.2.3 formalizes the properties of the QBD lemma regarding basis verific
 :::tip[**Explicit Derivation of the Fundamental Generator Representation**]
 :::
 
-**I. Explicit Matrix Form** The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge **Projector Validity** <Ref id="3.5.4.1" label="§3.5.4.1" />.
+**I. Explicit Matrix Form** The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge, as governed by **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" />.
 
 **In Plain English:**  
 Section 8.2.3.1 formalizes the properties of the QBD proof regarding matrix construction.
