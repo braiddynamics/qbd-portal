@@ -259,7 +259,7 @@ Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask imp
 
 ---
 
-### 1.3.8.1 Proof: Supertask Limits {#1.3.8.1}
+### 1.3.8.1 Proof: Supertask Impossibility {#1.3.8.1}
 
 :::tip[**Order-Theoretic Non-Well-Foundedness and Thermodynamic Entropy Divergence Proof**]
 :::
@@ -267,7 +267,7 @@ Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask imp
 **I. Initial Conditions and History Definition**
 
 **In Plain English:**  
-Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask limits.
+Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask impossibility.
 
 ---
 
@@ -384,7 +384,7 @@ The Transitive Causal Monotonicity Lemma proves that timestamps along any causal
 :::tip[**Inductive Demonstration of Strict Timestamp Increase**]
 :::
 
-**I. Inductive Base Case**
+**I. Setup and Definitions**
 
 **In Plain English:**  
 Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.
@@ -456,7 +456,7 @@ The Vacuum Repertoire Theorem proves that edge addition and deletion are suffici
 :::info[**Subordination of Vertex Existence to Edge Topology**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ s.t. } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
+Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ such that } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
 
 **In Plain English:**  
 The Relational Vertex Emergence Lemma states that vertices cannot be directly created or destroyed by primitive tasks; they emerge and vanish solely as endpoints of active relations.
