@@ -8,12 +8,20 @@ Spacetime is not an empty stage; the rapid, autocatalytic growth of the inflatio
 
 ### 19.1.1 Definition: Reheating Temperature {#19.1.1}
 
-:::info[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
+:::tip[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
 :::
 
-*   **Attractor Boundary:** The reheating temperature $T_{RH}$ is defined as the intensive energy density scale where the graph density reaches the unique stable attractor $\rho^* \approx 0.037$ (§5.2.2).
+*   **Attractor Boundary:** The **Reheating Temperature** $T_{RH}$ is defined as the intensive energy density scale where the graph density reaches the unique stable attractor $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />).
 *   **Latent Heat Conversion:** As the autocatalytic cycle creation rate ($9\rho^2$) is braked by steric friction ($e^{-6\mu\rho}$), the kinetic energy of expansion is converted (reheated) into localized, non-contractible topological defects.
 *   **Thermalization:** This phase transition represents the "melting" of high-energy pre-geometric bonds, seeding the emergent 4D manifold with a thermal bath of the simplest braid defects (quarks, leptons).
+
+
+### 19.1.1.1 Commentary: Reheating Temperature {#19.1.1.1}
+
+:::info[**Role of Reheating Temperature in the Early Universe**]
+:::
+
+The **Reheating Temperature** characterizes the thermal state of the early universe at the onset of radiation domination. By defining this scale in terms of the stable intensive density attractor, the framework maps the end of inflation to a structural phase transition where excess pre-geometric connectivity is converted directly into a hot plasma of topological defects, establishing the initial thermodynamic conditions for big bang nucleosynthesis.
 
 ---
 
@@ -22,9 +30,9 @@ Spacetime is not an empty stage; the rapid, autocatalytic growth of the inflatio
 :::info[**Nucleation of Right-Handed Neutrino Braids from High-Energy Gravitational defect production**]
 :::
 
-*   **The Simplest Defect:** The heavy right-handed Majorana neutrino ($N_R$, topology defined in §9.6) is the most statistically favored defect to nucleate at the end of the Big Kindling. It consists of the simplest, color-neutral, charge-neutral 3-ribbon braid.
+*   **The Simplest Defect:** The heavy right-handed Majorana neutrino ($N_R$, topology defined in **Neutrino Mass** <Ref id="9.6" label="§9.6" />) is the most statistically favored defect to nucleate at the end of the Big Kindling. It consists of the simplest, color-neutral, charge-neutral 3-ribbon braid.
 *   **GUT-Scale Production:** As the graph's dimensionality crystallizes from $d=1$ to $d=4$, the thermal bath is dominated by $N_R$ states with mass $M_R \sim 10^{16}$ GeV.
-*   **Initial Condensate:** Gravity (manifested as the metric curvature changes of the expanding graph, §12.2) acts as the primary driver, producing an abundant primordial condensate of unstable heavy neutrinos.
+*   **Initial Condensate:** Gravity (manifested as the metric curvature changes of the expanding graph, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />) acts as the primary driver, producing an abundant primordial condensate of unstable heavy neutrinos.
 
 ---
 
@@ -49,7 +57,7 @@ Why is there a universe made of matter rather than a symmetric, sterile sea of r
 :::info[**Compliance with Sakharov Conditions through Chiral Braid Decay under Causal Timestamp Monotonicity**]
 :::
 
-*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph (§9.2.1) support leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$ (§9.3.1).
+*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />) support leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$ (**Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />).
 *   **CP Violation:** Topological rewrite rules are chiral: Parity (P) inverts crossings, while Charge Conjugation (C) inverts writhe. Because the underlying causal graph is timestamp-monotone ($t_L$), the loop interference phase $\delta$ differs for particles and antiparticles, causing decay rates to split: $\Gamma(N_R \to L H) \neq \Gamma(\bar{N}_R \to \bar{L} \bar{H})$.
 *   **Out-of-Equilibrium Departure:** The rapid expansion of the scale factor at the end of inflation ensures that the Hubble rate $H$ exceeds the decay rate ($H > \Gamma_{decay}$), freezing out the heavy neutrino states and preventing inverse washout reactions from restoring symmetry.
 
@@ -84,7 +92,7 @@ Why is there a universe made of matter rather than a symmetric, sterile sea of r
 :::info[**Redistribution of Lepton Excess into Baryon Numbers via Emergent SU(2) Sphaleron Tunneling**]
 :::
 
-*   **Emergent SU(2) Topology:** In the high-temperature plasma, the emergent $SU(2)$ electroweak sector (§8.5) supports non-trivial vacuum configurations (Sphalerons).
+*   **Emergent SU(2) Topology:** In the high-temperature plasma, the emergent $SU(2)$ electroweak sector (**Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />) supports non-trivial vacuum configurations (Sphalerons).
 *   **Symmetry Conversion:** Sphaleron transitions correspond to topological updates that violate $B$ and $L$ conservation while strictly preserving the $B-L$ invariant. 
 *   **Redistribution Flow:** This electroweak tunneling converts the lepton asymmetry generated by heavy neutrino decay into a stable baryon excess, seeding the universe with quarks.
 
@@ -109,16 +117,24 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
 
 ### 19.3.1 Definition: Topological Mass Splitting {#19.3.1}
 
-:::info[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
+:::tip[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
 :::
 
-*   **Topological Mass Functional:** The rest mass of a composite particle is proportional to its graph complexity:
+*   **Topological Mass Splitting:** The rest mass of a composite particle is governed by the **Topological Mass Splitting** functional, which is proportional to its graph complexity:
     $$ m \propto C_{total} = C[\beta] + k \cdot w^2 $$
     where $C[\beta]$ is the crossing complexity and $w^2$ is the torsional self-energy derived from writhe invariants.
 *   **Writhe Invariants:**
-    *   $w_u = +2$ (parallel twists, §7.3.5).
-    *   $w_d = -1$ (single twist, §7.3.5).
+    *   $w_u = +2$ (parallel twists, **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
+    *   $w_d = -1$ (single twist, **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
 *   **Geometric Isospin Sharing:** When two quark strands possess parallel writhes in a composite knot, they share structural edges in the graph (constructive interference), reducing their combined complexity cost. Antiparallel or orthogonal twists cannot share edges, maintaining their full independent self-energy.
+
+
+### 19.3.1.1 Commentary: Topological Mass Splitting {#19.3.1.1}
+
+:::info[**Physical Origin of Hadronic Mass Differences**]
+:::
+
+The **Topological Mass Splitting** resolves the origin of the neutron-proton mass difference without appealing to free parameter tuning. By showing that the parallel twists of the up quarks enjoy constructive edge sharing in the graph, the model explains why the proton is lighter than the neutron despite containing heavier valence quarks, linking the stability of hydrogen to the geometric properties of composite knots in the causal graph.
 
 ---
 
@@ -130,7 +146,7 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
 *   **Proton Structure ($uud$):** The proton consists of two up quarks and one down quark ($uud$). The parallel $uu$ pair ($+2, +2$) enjoys constructive **Geometric Isospin Sharing**, significantly lowering the proton's effective mass.
 *   **Neutron Structure ($udd$):** The neutron consists of one up quark and two down quarks ($udd$). To maintain color neutrality, the two down quarks ($+2, -1, -1$) must occupy an antiparallel/orthogonal alignment in the composite knot, preventing edge sharing.
 *   **Mass Splitting:** Because the neutron's configuration prevents sharing, it exhibits a slightly larger topological complexity gap than the proton:
-    $$ \Delta m = m_n - m_p \approx 1.3 \text{ MeV} $$
+    $$ \Delta m = m_n - m_p \approx 1.4 \text{ MeV} $$
 
 ---
 
@@ -143,13 +159,13 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
     $$ \Delta C = C_{udd} - C_{uud} $$
 *   **Energy Calibration:** Using the calibrated coupling constant $\kappa$, it translates this complexity gap into energy, yielding:
     $$ \Delta m \approx 1.293 \text{ MeV} $$
-*   **Anthropic Necessity:** It demonstrates that this $1.3$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
+*   **Anthropic Necessity:** It demonstrates that this $1.4$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
 
 ---
 
 ## 19.4 Primordial Nucleosynthesis {#19.4}
 
-The chemical composition of the cosmos—specifically the dominance of Hydrogen and Helium-4—is the primary experimental fingerprint of the early universe. This section derives the primordial Helium abundance $Y_p$ from the coupling constants and mass difference derived in earlier chapters.
+The chemical composition of the cosmos (specifically the dominance of Hydrogen and Helium-4) is the primary experimental fingerprint of the early universe. This section derives the primordial Helium abundance $Y_p$ from the coupling constants and mass difference derived in earlier chapters.
 
 ---
 
@@ -160,8 +176,8 @@ The chemical composition of the cosmos—specifically the dominance of Hydrogen 
 
 *   **Rate Balance:** The ratio of neutrons to protons is governed by weak interactions ($n \leftrightarrow p$) until the reaction rate $\Gamma_{weak}$ falls below the expansion rate $H$.
 *   **Emergent Rates:**
-    *   $\Gamma_{weak} \propto G_F^2 T^5$ (derived from electroweak rewrites, §8.5).
-    *   $H \propto T^2 / M_{Pl}$ (derived from emergent gravity, §12.2).
+    *   $\Gamma_{weak} \propto G_F^2 T^5$ (derived from electroweak rewrites, **Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />).
+    *   $H \propto T^2 / M_{Pl}$ (derived from emergent gravity, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />).
 *   **Freeze-Out Scale:** Equating these rates ($\Gamma_{weak} \approx H$) yields the freeze-out temperature:
     $$ T_f \approx 0.8 \text{ MeV} $$
 
@@ -184,8 +200,8 @@ The chemical composition of the cosmos—specifically the dominance of Hydrogen 
 :::info[**Prediction of Helium-4 Mass Fraction from Derived Topological Mass Splitting and Weak Rates**]
 :::
 
-*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.3$ MeV:
-    $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.3/0.8} \approx 0.20 $$
+*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.4$ MeV:
+    $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.4/0.8} \approx 0.20 $$
 *   **Beta Decay Phase:** Prior to the onset of nucleosynthesis (the "Deuterium Bottleneck"), free neutrons undergo standard beta decay for approximately 300 seconds, reducing the ratio to:
     $$ \frac{n_n}{n_p} \approx \frac{1}{7} $$
 *   **Helium Fraction:** Assuming all available neutrons are captured into stable $^4\text{He}$ nuclei, the primordial Helium mass fraction $Y_p$ is:

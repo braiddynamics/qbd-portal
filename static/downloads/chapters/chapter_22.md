@@ -2,18 +2,26 @@
 
 ## 22.1 Black Hole Interior {#22.1}
 
-In classical General Relativity, gravitational collapse inevitably leads to a singularity—a point of infinite density where the laws of physics break down. Quantum Braid Dynamics resolves this breakdown not by introducing arbitrary quantum corrections, but through the fundamental hardware limits of the discrete graph: steric friction and unique causality saturation.
+In classical General Relativity, gravitational collapse inevitably leads to a singularity: a point of infinite density where the laws of physics break down. Quantum Braid Dynamics resolves this breakdown not by introducing arbitrary quantum corrections, but through the fundamental hardware limits of the discrete graph: steric friction and unique causality saturation.
 
 ---
 
 ### 22.1.1 Definition: Saturated State {#22.1.1}
 
-:::info[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
+:::tip[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
 :::
 
-*   **Maximum Density Constraint:** At the center of gravitational collapse, the local 3-cycle density $\rho_3$ does not diverge to infinity. Instead, it is bounded by a maximum critical density $\rho_{crit} \approx 1/(6\mu)$ defined by the steric friction limits of the Master Equation (§5.2).
+*   **Saturated State:** A **Saturated State** constitutes the maximum density configuration at the center of gravitational collapse, where the local 3-cycle density $\rho_3$ does not diverge to infinity, but is bounded by a maximum critical density $\rho_{crit} \approx 1/(6\mu)$ defined by the steric friction limits of the (**Master Equation** <Ref id="5.2" label="§5.2" />).
 *   **Saturated Core:** The resulting state is a highly complex, stable subgraph of maximal cycle packing, representing a "saturated core" or a dense computational crystal.
 *   **State Halting:** Because all available nodes and edges are fully saturated, no local rewrite operations are topologically permitted within the core bulk, causing local structural evolution to cease.
+
+
+### 22.1.1.1 Commentary: Saturated State {#22.1.1.1}
+
+:::info[**Physical Resolution of Singularities**]
+:::
+
+The **Saturated State** resolves the singularity problem of classical general relativity. Instead of a point of infinite density, the core of a black hole is a dense computational crystal where local structural evolution halts due to the maximum density constraint. This physical halting is the ultimate realization of space-time quantization, showing that the universe has a hardware-level limit that prevents infinite collapse.
 
 ---
 
@@ -23,7 +31,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::
 
 *   **Steric Friction Suppression:** The Master Equation's creation term contains an exponential damping factor $e^{-6\mu\rho}$. As density $\rho \to \rho_{crit}$, the creation rate of new cycles is exponentially suppressed to zero, mathematically preventing the density from diverging.
-*   **Unique Causality Obstruction:** The Principle of Unique Causality (PUC, §2.2) mandates that every valid graph rewrite must have a unique precursor 2-path. At critical saturation density, the high connectivity of nodes creates multiple overlapping paths, resulting in "topological jamming" where no PUC-compliant rewrites are possible.
+*   **Unique Causality Obstruction:** The Principle of Unique Causality (PUC, **Antisymmetry** <Ref id="2.2" label="§2.2" />) mandates that every valid graph rewrite must have a unique precursor 2-path. At critical saturation density, the high connectivity of nodes creates multiple overlapping paths, resulting in "topological jamming" where no PUC-compliant rewrites are possible.
 *   **Halting Probability:** The probability of rewrite acceptance drops to zero ($P_{acc}(\mathcal{R}) \to 0$), freezing the graph's topology and preventing collapse below the Planck length.
 
 ---
@@ -33,7 +41,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::tip[**Verification of Singularity Avoidance by Derivation of Vanishing Lapse Functions at Critical Density**]
 :::
 
-*   **Lapse Dilation:** The proper time interval $\Delta \tau$ is related to logical graph ticks $\Delta t$ via the emergent Lapse function $N(x)$, where $N(x) \propto 1/\rho_3$ (§14.1).
+*   **Lapse Dilation:** The proper time interval $\Delta \tau$ is related to logical graph ticks $\Delta t$ via the emergent Lapse function $N(x)$, where $N(x) \propto 1/\rho_3$ (**Time Recovery** <Ref id="14.1" label="§14.1" />).
 *   **Proper Time Stoppage:** The proof demonstrates that as density approaches the critical saturation threshold ($\rho_3 \to \rho_{crit}$), the Lapse function vanishes:
     $$ N(x) \to 0  $$
 *   **External Invariance:** From the perspective of an external observer at infinity, proper time inside the core stops completely, meaning the singularity is resolved as a static coordinate frozen state, while the global system remains strictly unitary.
@@ -45,7 +53,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::info[**Establishment of Finite Curvature Bound from Planck-Scale Node Spacing Constraints**]
 :::
 
-*   **Discrete Curvature Bounds:** In QBD, curvature is defined through discrete Ollivier-Ricci equivalents on the graph (§11.2), measuring the transport distance between neighboring cycles.
+*   **Discrete Curvature Bounds:** In QBD, curvature is defined through discrete Ollivier-Ricci equivalents on the graph (**Causal Geometry Construction** <Ref id="11.2" label="§11.2" />), measuring the transport distance between neighboring cycles.
 *   **Planck Spacing Limit:** Because graph edges represent discrete pre-geometric connections of finite length $\ell_0$, the distance between adjacent nodes has a hard lower bound of the Planck length.
 *   **Bounded Curvature:** Since node spacing cannot be compressed below the Planck scale, the Ollivier-Ricci curvature tensor $R(x, y)$ remains strictly bounded, proving that physical curvature never diverges.
 
@@ -69,12 +77,20 @@ Classical General Relativity characterizes the event horizon as a geometric surf
 
 ### 22.2.1 Definition: Desynchronization Boundary {#22.2.1}
 
-:::info[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
+:::tip[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
 :::
 
-*   **Lapse Dilation Divergence:** Near the horizon, the Lapse function $N(x)$ falls toward zero relative to the external asymptotic flat space (§14.1).
+*   **Desynchronization Boundary:** The **Desynchronization Boundary** (conventionally identified as the event horizon) constitutes the surface where the Lapse function $N(x)$ falls toward zero relative to the external asymptotic flat space (**Time Recovery** <Ref id="14.1" label="§14.1" />).
 *   **QECC Latency:** The Quantum Error Correction Code (QECC) stabilizing the manifold requires a finite number of logical ticks $\Delta t_{corr}$ to complete a full correction cycle.
 *   **Desynchronization Surface:** The physical time required for an error correction cycle diverges as $\Delta \tau = N(x) \Delta t_{corr} \to \infty$. This defines the Event Horizon not as a physical membrane, but as a computational phase boundary of infinite error-correction latency where the interior causally desynchronizes from the exterior.
+
+
+### 22.2.1.1 Commentary: Desynchronization Boundary {#22.2.1.1}
+
+:::info[**Information Theoretic Nature of Horizons**]
+:::
+
+The **Desynchronization Boundary** reinterprets the black hole event horizon as a computational phase boundary rather than a spatial manifold boundary. By linking the horizon to the infinite latency of quantum error correction, the framework explains why information cannot escape: the physical time needed to execute error-correcting codes diverges, freezing the interior's causal relations. Unitarity is preserved because boundary-spanning swaps allow information to leak out at a rate governed by the area of the boundary.
 
 ---
 
@@ -107,12 +123,20 @@ Standard condensed matter physics explains superconductivity through the pairing
 
 ### 22.3.1 Definition: Macroscopic Braid Condensate {#22.3.1}
 
-:::info[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
+:::tip[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
 :::
 
-*   **Phonon-Mediated Fusion:** In a superconductor, lattice vibrations (phonons) act as local rewrite operators that couple individual fermion braids ($\beta_e$) together, forming composite, Bosonic 6-ribbon braids ($\beta_{CP}$).
+*   **Macroscopic Braid Condensate:** A **Macroscopic Braid Condensate** constitutes the coherent state formed when lattice vibrations (phonons) act as local rewrite operators that couple individual fermion braids ($\beta_e$) together, forming composite, Bosonic 6-ribbon braids ($\beta_{CP}$).
 *   **Braid Condensation:** These composite braids condense into a single, highly ordered, macroscopic topological braid state $|\Psi_{SC}\rangle$ spanning the entire material bulk.
 *   **Coherence Length:** The coherence length of this macroscopic braid scales with the physical dimensions of the superconductor, representing a unified pre-geometric quantum state at human scales.
+
+
+### 22.3.1.1 Commentary: Macroscopic Braid Condensate {#22.3.1.1}
+
+:::info[**Topological Basis of Superconductivity**]
+:::
+
+The **Macroscopic Braid Condensate** describes superconductivity as a macroscopic manifestation of the universe's fault-tolerant stabilizer code. By pairing fermion braids into bosonic six-ribbon braids, the system forms a single topological structure spanning the material. The enormous code distance of this condensate prevents low-weight thermal fluctuations from disrupting the current, providing a structural explanation for zero resistance that is independent of phenomenological potentials.
 
 ---
 
@@ -123,7 +147,7 @@ Standard condensed matter physics explains superconductivity through the pairing
 
 *   **Resistance as Rewrite Errors:** In a classical conductor, resistance is caused by random electron-lattice scattering events. In QBD, these events are modeled as weight-1 "rewrite errors" (random graph edge flips) that disrupt the electron braids.
 *   **Macroscopic Code Distance:** The macroscopic braid condensate $|\Psi_{SC}\rangle$ possesses an extremely large code distance $d$ proportional to the total number of lattice atoms ($d \propto N_{atoms}$).
-*   **Frictionless Conduction:** Since the thermal errors have low weight ($w \ll d$), the comonad stabilization framework of the universe's stabilizer code (the **Awareness Comonad**, §4.3) automatically detects and corrects these fluctuations before they can decohere the state, allowing current to flow with strictly zero resistance.
+*   **Frictionless Conduction:** Since the thermal errors have low weight ($w \ll d$), the comonad stabilization framework of the universe's stabilizer code (the **Awareness Comonad**, **Awareness Layer** <Ref id="4.3" label="§4.3" />) automatically detects and corrects these fluctuations before they can decohere the state, allowing current to flow with strictly zero resistance.
 
 ---
 

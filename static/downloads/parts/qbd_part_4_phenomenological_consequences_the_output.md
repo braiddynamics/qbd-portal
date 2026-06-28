@@ -28,10 +28,10 @@ Spacetime does not begin as a coordinate grid or a singular point in a pre-exist
 
 ### 18.1.1 Definition: Pre-Geometric Vacuum {#18.1.1}
 
-:::info[**Characterization of Pre-Geometric Vacuum State as Directed Bipartite Regular Bethe Fragment**]
+:::tip[**Characterization of Pre-Geometric Vacuum State as Directed Bipartite Regular Bethe Fragment**]
 :::
 
-The initial state of the universe is defined as a directed bipartite Regular Bethe tree $G_0 = (V, E)$ with root coordination number $k=3$ and internal branching factor $b=2$. In this topology, every vertex $v \in V$ is partitioned into two disjoint subsets $V_A$ and $V_B$ such that every directed edge $e \in E$ starts in $V_A$ and ends in $V_B$, or vice versa.
+The **Pre-Geometric Vacuum**, representing the initial state of the universe, is defined as a directed bipartite Regular Bethe tree $G_0 = (V, E)$ with root coordination number $k=3$ and internal branching factor $b=2$. In this topology, every vertex $v \in V$ is partitioned into two disjoint subsets $V_A$ and $V_B$ such that every directed edge $e \in E$ starts in $V_A$ and ends in $V_B$, or vice versa.
 
 In this initial tree state, the 3-cycle density $\rho_3$ is exactly zero:
 $$ \rho_3 = \lim_{|V| \to \infty} \frac{N_3}{|V|} = 0 $$
@@ -39,6 +39,13 @@ Because no 3-cycles exist, there is no spatial area, no localized volume, and no
 $$ d = d_S = d_H = 1 $$
 
 The absence of cyclic structures ensures that the local Ollivier-Ricci curvature is undefined or collapses completely due to the inability to close metric transport triangles. This vacuum is completely static, representing a pure task-theoretic potentiality prior to the initiation of the dynamical sequencer $\mathcal{U}$.
+
+### 18.1.1.1 Commentary: Pre-Geometric Vacuum {#18.1.1.1}
+
+:::info[**Ontological Status of the Primordial Tree Substrate**]
+:::
+
+The **Pre-Geometric Vacuum** represents the absolute zero-point of physical geometry, where the lack of cyclic structures prevents the definition of metric distances or local curvatures. By formalizing this state as a bipartite regular Bethe fragment, the definition establishes a clean starting point for the emergence of time and space, demonstrating that the initial stasis is not a stable vacuum but a transient phase-space origin that inevitably decays into a dynamical geometry.
 
 ---
 
@@ -56,7 +63,7 @@ Let $G_0$ denote the pre-geometric tree vacuum with non-zero vacuum permittivity
 :::tip[**Structure of the Primordial Loop Nucleation Argument via Slot Alignment, Path Enumeration, and Current Synthesis**]
 :::
 
-The proof of the **Primordial Loop Nucleation Theorem** <Ref id="18.1.2" label="§18.1.2" /> is established by the systematic integration of combinatorial alignment probabilities and topological path counting:
+The **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" /> is established by the systematic integration of combinatorial alignment probabilities and topological path counting:
 
 ```text
 • 18.1.2 Theorem Primordial Loop Nucleation
@@ -109,9 +116,9 @@ Let $\{u, v, w\}$ denote three vertices forming a directed 2-path $u \to v \to w
 
 **III. Assembly**
 
-We define the slot variables for the triad $\{u, v, w\}$ as $s_u, s_v, s_w \in \{1, 2\} \times \{1, 2\}$, representing the targets of the out-degree slots. We calculate the total dimension of the configuration space as:
+Let the slot variables for the triad $\{u, v, w\}$ be $s_u, s_v, s_w \in \{1, 2\} \times \{1, 2\}$, representing the targets of the out-degree slots. The total dimension of the configuration space evaluates to:
 $$ D_{\text{slots}} = \prod_{i \in \{u,v,w\}} (\operatorname{out}(i))^2 = 2^2 \times 2^2 \times 2^2 = 64 $$
-We evaluate the number of successful alignment configurations $N_{\text{success}}$ that satisfy the directed cycle condition $u \to v \to w \to u$. We find that this condition requires a single, unique assignment of ports: the first slot of $u$ must select $v$, the first slot of $v$ must select $w$, and the first slot of $w$ must select $u$. We therefore have $N_{\text{success}} = 1$. We compute the probability of slot alignment as the ratio of these configurations:
+Evaluation of the number of successful alignment configurations $N_{\text{success}}$ satisfying the directed cycle condition $u \to v \to w \to u$ requires a single, unique assignment of ports. Specifically, the first slot of $u$ must select $v$, the first slot of $v$ must select $w$, and the first slot of $w$ must select $u$, yielding $N_{\text{success}} = 1$. We compute the probability of slot alignment as the ratio of these configurations:
 $$ P_{\text{alignment}} = \frac{N_{\text{success}}}{D_{\text{slots}}} = \frac{1}{64} = 2^{-6} = 0.015625 $$
 
 **IV. Formal Conclusion**
@@ -127,7 +134,7 @@ Q.E.D.
 :::info[**Verification of Out-Degree Slot Phase Space Constraints**]
 :::
 
-The calculated alignment probability $P_{\text{alignment}} = 2^{-6}$ functions as a foundational cosmological parameter—the topological permittivity of the pre-geometric vacuum. It dictates that even in a completely random and uncoordinated graph rewrite process, there is a small, non-zero probability that background fluctuations will align the out-degree slots of a directed 2-path to close a directed 3-cycle. 
+The calculated alignment probability $P_{\text{alignment}} = 2^{-6}$ functions as a foundational cosmological parameter, the topological permittivity of the pre-geometric vacuum. It dictates that even in a completely random and uncoordinated graph rewrite process, there is a small, non-zero probability that background fluctuations will align the out-degree slots of a directed 2-path to close a directed 3-cycle. 
 
 Because the slot configuration space scales exponentially with the coordination number ($D_{\text{slots}} = 2^6 = 64$ for a coordination number of $k=3$), this probability is strictly positive and constant. This guarantees that loop nucleation is not an impossible or highly suppressed event, but rather a mathematically inevitable fluctuation that ignites the dynamic evolution of the graph.
 
@@ -158,16 +165,16 @@ Let $G_0 = (V, E)$ be a directed regular Bethe tree on $N$ vertices. Every verte
 
 **III. Assembly**
 
-We enumerate all possible directed 2-paths $u \to v \to w$ in the graph. We observe that each vertex $u \in V$ has exactly $\operatorname{out}(u) = 2$ outgoing edges. For each outgoing edge to a vertex $v$, there are exactly $\operatorname{out}(v) = 2$ outgoing edges from $v$ to a vertex $w$. We compute the number of directed 2-paths originating at $u$ as:
+Enumerating all possible directed 2-paths $u \to v \to w$ in the graph reveals that each vertex $u \in V$ has exactly $\operatorname{out}(u) = 2$ outgoing edges. For each outgoing edge to a vertex $v$, there are exactly $\operatorname{out}(v) = 2$ outgoing edges from $v$ to a vertex $w$. We compute the number of directed 2-paths originating at $u$ as:
 $$ N_{2\text{-path}}(u) = \operatorname{out}(u) \cdot \operatorname{out}(v) = 2 \cdot 2 = 4 $$
-We sum this quantity over all $N$ vertices in the graph to obtain the total number of directed 2-paths:
+Summing this quantity over all $N$ vertices in the graph yields the total number of directed 2-paths:
 $$ N_{\text{total-paths}} = \sum_{u \in V} N_{2\text{-path}}(u) = 4N $$
-We now implement the conflict resolution constraint, which demands that active precursors must be edge-disjoint. We construct a bipartite matching on the set of paths. Since the graph is bipartite, the maximum independent set of edge-disjoint directed 2-paths partitions the total population by exactly half. We divide the total number of paths by this partition factor of 2:
+The conflict resolution constraint demands that active precursors be edge-disjoint. Bipartite matching on the set of paths partitions the total population by exactly half. We divide the total number of paths by this partition factor of 2:
 $$ N_{\text{active-precursors}} = \frac{N_{\text{total-paths}}}{2} = \frac{4N}{2} = 2N $$
 
 **IV. Formal Conclusion**
 
-We conclude that the number of non-overlapping active directed 2-path precursors on a directed bipartite Bethe tree is exactly $2N$.
+We conclude that the number of non-overlapping active directed 2-path precursors on a directed bipartite Bethe tree is exactly **2N**.
 
 Q.E.D.
 
@@ -180,11 +187,83 @@ Q.E.D.
 
 The derivation of the precursor path count $N_{\text{active-precursors}} = 2N$ demonstrates a critical physical feature of the pre-geometric vacuum: the number of potential loop nucleation sites scales linearly with the volume of the graph.
 
-While the total number of overlapping directed 2-paths is $4N$, the quantum error-correction syndrome rules restrict active updates to a maximal independent set of non-overlapping paths. Even under this strict conflict-free constraint, the bipartite tree topology partitions the population by exactly one-half, preserving a massive, uniform density of active precursors ($2$ precursors per vertex). This linear scaling guarantees that as the pre-geometric universe increases in volume, the spontaneous loop nucleation current grows proportionally, driving a uniform and homogeneous transition across the entire emerging manifold.
+While the total number of overlapping directed 2-paths is **4N**, the quantum error-correction syndrome rules restrict active updates to a maximal independent set of non-overlapping paths. Even under this strict conflict-free constraint, the bipartite tree topology partitions the population by exactly one-half, preserving a massive, uniform density of active precursors (**2** precursors per vertex). This linear scaling guarantees that as the pre-geometric universe increases in volume, the spontaneous loop nucleation current grows proportionally, driving a uniform and homogeneous transition across the entire emerging manifold.
 
 ---
 
-### 18.1.5 Proof: Primordial Loop Nucleation {#18.1.5}
+### 18.1.5 Lemma: Topological Parity Projection {#18.1.5}
+
+:::info[**Bipartite Parity Projection of the Loop Nucleation Operator**]
+:::
+
+Let $\mathcal{P}$ denote the parity operator acting on the bipartite partition spaces $V_A$ and $V_B$ of the tree $G_0$ such that $\mathcal{P}(v) = +1$ for $v \in V_A$ and $\mathcal{P}(v) = -1$ for $v \in V_B$, and let $\hat{T}$ be the directed 3-cycle operator. Then the expectation value of the loop nucleation rate satisfies $\langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right)$, where the transition rate corresponds to the tunneling amplitude through the parity barrier.
+
+---
+
+### 18.1.5.1 Proof: Topological Parity Projection {#18.1.5.1}
+
+:::tip[**Formal Proof of Topological Parity Projection via Bipartite State Trace Evaluation**]
+:::
+
+**I. Setup and Assumptions**
+
+Let the pre-geometric tree vacuum $G_0 = (V_A \cup V_B, E)$ be strictly bipartite. The state space is defined as $\mathcal{H} = \mathcal{H}_A \oplus \mathcal{H}_B$, where $\mathcal{H}_A$ and $\mathcal{H}_B$ correspond to the bipartite partition vertices $V_A$ and $V_B$ respectively. The parity operator $\mathcal{P}$ is defined as a diagonal operator with eigenvalues $+1$ on $\mathcal{H}_A$ and $-1$ on $\mathcal{H}_B$.
+
+**II. The Logic Chain**
+
+1.  **Bipartite Parity Eigenstates** <Ref id="18.1.1" label="§18.1.1" />: The bipartite partitioning of the Bethe tree defines eigenstates of the parity operator $\mathcal{P}$ such that $\mathcal{P} |v\rangle = (-1)^{\chi(v)} |v\rangle$, where $\chi(v) = 0$ for $v \in V_A$ and $\chi(v) = 1$ for $v \in V_B$.
+2.  **Even Path Restriction** <Ref id="18.1.1" label="§18.1.1" />: Any closed cycle on a bipartite graph has an even number of edges, which restricts transitions between partitions to preserve parity.
+3.  **Odd Cycle Generation** <Ref id="18.1.2" label="§18.1.2" />: The nucleation of a directed 3-cycle requires breaking the bipartite parity symmetry, which corresponds to the odd-parity sector of the configuration space.
+
+**III. Assembly**
+
+We evaluate the expectation value of the directed 3-cycle operator $\hat{T}$. The density matrix is written in the basis of parity eigenstates $\{|v\rangle\}$ as:
+$$ \rho_{\text{state}} = \sum_{u, v} \rho_{uv} |u\rangle \langle v| $$
+Decomposing the identity operator $I$ into the parity projection operators $P_+ = \frac{1}{2}(I + \mathcal{P})$ and $P_- = \frac{1}{2}(I - \mathcal{P})$, which project onto the even and odd parity subspaces respectively, reveals that the directed 3-cycle operator $\hat{T}$ acts as an odd-length transition operator. Specifically, because any directed 3-cycle consists of three edges, its execution maps a vertex to one in the same partition if parity is broken, or changes the partition parity an odd number of times. In a strict bipartite graph, the trace of any odd-length operator vanishes:
+$$ \text{Tr}(\rho_{\text{state}} \hat{T}) = 0 $$
+Let $\beta \in [0, 1]$ denote the parity-violating tunneling parameter. The state density matrix is written as a mixture of the symmetric stasis state $\rho_0$ and the parity-broken state $\rho_\beta$:
+$$ \rho_{\text{state}} = (1 - \beta) \rho_0 + \beta \rho_\beta $$
+We express the expectation value $\langle \hat{T} \rangle$ using the trace of the density matrix with the odd-parity projection $(I - \mathcal{P})$:
+$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) $$
+Expansion of this trace yields:
+$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} (P_+ + P_-) \right) = \text{Tr}\left( \rho_{\text{state}} \hat{T} P_+ \right) + \text{Tr}\left( \rho_{\text{state}} \hat{T} P_- \right) $$
+We evaluate the traces in the parity basis. Since $\hat{T}$ transitions between opposite parity states in the unbroken vacuum, it follows that:
+$$ \hat{T} P_+ |v\rangle = 0 \quad \text{for } v \in V_A \text{ and } v \in V_B \text{ under stasis} $$
+In the presence of the parity-violating tunneling coupling $\beta > 0$, the operator $\hat{T}$ couples vertices within the same partition. The trace expansion for the parity-violating projection evaluates to:
+$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = \sum_{v \in V} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle $$
+Expansion of this sum over the partitions $V_A$ and $V_B$ yields:
+$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = \sum_{v \in V_A} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle + \sum_{v \in V_B} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle $$
+Since $\mathcal{P} |v\rangle = |v\rangle$ for $v \in V_A$ and $\mathcal{P} |v\rangle = -|v\rangle$ for $v \in V_B$, the parity eigenvalues are:
+$$ I - \mathcal{P} |v\rangle = (1 - 1)|v\rangle = 0 \quad \text{for } v \in V_A $$
+$$ I - \mathcal{P} |v\rangle = (1 - (-1))|v\rangle = 2|v\rangle \quad \text{for } v \in V_B $$
+We substitute these values back into the trace expression:
+$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = 0 + 2 \sum_{v \in V_B} \langle v | \rho_{\text{state}} | v \rangle = 2 P(v \in V_B) $$
+We relate the expectation value of the loop nucleation rate to the odd-parity sector projection:
+$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) = \beta \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) $$
+We substitute the trace expansion:
+$$ \langle \hat{T} \rangle = 2 \beta \sum_{v \in V_B} \rho_{vv} $$
+This demonstrates that the loop nucleation rate is directly proportional to the trace projection onto the odd-parity sector, and vanishes when the parity-violating coupling $\beta = 0$.
+
+**IV. Formal Conclusion**
+
+We conclude that loop nucleation breaks the bipartite parity symmetry of the pre-geometric vacuum, and the rate is projected by the trace of the density matrix under the odd-parity projection operator.
+
+Q.E.D.
+
+---
+
+### 18.1.5.2 Commentary: Parity Symmetry Duality {#18.1.5.2}
+
+:::info[**Tunneling through the Bipartite Parity Barrier in pre-ignition stasis**]
+:::
+
+The formulation of the parity projection operator $\langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right)$ establishes a rigorous topological bridge between graph theory and quantum mechanics.
+
+In the pre-ignition stasis ($\beta = 0.0$), the graph is strictly bipartite, locking the system in a zero-entropy state where all closed loops have even length. Introducing the same-partition tunneling coupling $\beta > 0$ represents a non-perturbative quantum fluctuation that violates the bipartite partition parity, projecting the density matrix into the odd-parity sector. The expectation value of the loop nucleation rate is directly proportional to the magnitude of this parity-violating projection, providing a rigorous mathematical mechanism for how the universe tunnels out of static pre-geometric stasis into a cyclic, dynamical geometry.
+
+---
+
+### 18.1.6 Proof: Primordial Loop Nucleation {#18.1.6}
 
 :::tip[**Formal Proof of Primordial Loop Nucleation via Precursor and Probability Integration**]
 :::
@@ -196,26 +275,26 @@ Let $G_0$ be a directed regular Bethe tree vacuum on a finite volume containing 
 **II. The Logic Chain**
 
 1.  **Slot Alignment Probability** <Ref id="18.1.3" label="§18.1.3" />: The probability that any single active precursor closes a 3-cycle on a single sequencer step is $P_{\text{alignment}} = 2^{-6}$.
-2.  **Active Precursor Abundance** <Ref id="18.1.4" label="§18.1.4" />: There exist exactly $2N$ independent, non-overlapping active precursor 2-paths in the Bethe tree fragment.
+2.  **Active Precursor Abundance** <Ref id="18.1.4" label="§18.1.4" />: There exist exactly **2N** independent, non-overlapping active precursor 2-paths in the Bethe tree fragment.
 3.  **Permittivity Instability** <Ref id="18.1.2" label="§18.1.2" />: The vacuum permittivity $\Lambda > 0$ permits spontaneous slot transitions under background fluctuations.
 
 **III. Assembly**
 
 We calculate the probability that no loops nucleate at any of the active precursor sites during a single step. Since the active precursor paths are non-overlapping and independent, this probability is:
 $$ P_{\text{no-nucleation, step}} = (1 - P_{\text{alignment}})^{N_{\text{active-precursors}}} = (1 - P_{\text{alignment}})^{2N} $$
-We now consider $m$ independent steps of the dynamical sequencer. The probability that no loops nucleate across all $2N$ active precursors over $m$ steps is:
+Considering $m$ independent steps of the dynamical sequencer, the probability that no loops nucleate across all **2N** active precursors over $m$ steps evaluates to:
 $$ P_{\text{no-nucleation, } T} = (1 - P_{\text{alignment}})^{2N m} $$
-We substitute the exact value of $P_{\text{alignment}} = 2^{-6} = 1/64$:
+Substitution of the exact value $P_{\text{alignment}} = 2^{-6} = 1/64$ yields:
 $$ P_{\text{no-nucleation, } T} = \left(1 - \frac{1}{64}\right)^{2N m} = \left(\frac{63}{64}\right)^{2N m} $$
-We define the probability $P(T)$ of at least one spontaneous loop nucleation event occurring within proper time $T = m \delta t_L$:
+Let $P(T)$ denote the probability of at least one spontaneous loop nucleation event occurring within proper time $T = m \delta t_L$:
 $$ P(T) = 1 - P_{\text{no-nucleation, } T} = 1 - \left(1 - P_{\text{alignment}}\right)^{2N m} $$
-We take the thermodynamic limit where the volume (represented by the number of vertices $N$) or the time duration (represented by the number of steps $m$) becomes large. We evaluate the limit as $N m \to \infty$:
+Taking the thermodynamic limit where the volume (represented by the number of vertices $N$) or the time duration (represented by the number of steps $m$) becomes large, we evaluate the limit as $N m \to \infty$:
 $$ \lim_{N m \to \infty} P(T) = \lim_{N m \to \infty} \left[ 1 - \left(1 - \frac{1}{64}\right)^{2N m} \right] $$
-Since $0 < 1 - P_{\text{alignment}} < 1$, we evaluate the limit of the base raised to an infinite power:
+Since $0 < 1 - P_{\text{alignment}} < 1$, the limit of the base raised to an infinite power vanishes:
 $$ \lim_{N m \to \infty} \left(1 - P_{\text{alignment}}\right)^{2N m} = 0 $$
-We substitute this limit back into the expression for $P(T)$ to obtain:
-$$ \lim_{N m \to \infty} P(T) = 1 - 0 = 1 $$
-This proves that loop nucleation is mathematically certain in the thermodynamic limit. Even for finite $N$ and finite time $T > 0$, since $N > 0$ and $m \ge 1$, we have:
+Substituting this limit back into the expression for $P(T)$ yields:
+$$ \lim_{N m \to \infty} P(T) = \lim_{N m \to \infty} P(T) = 1 - 0 = 1 $$
+This proves that loop nucleation is mathematically certain in the thermodynamic limit. Even for finite $N$ and finite time $T > 0$, since $N > 0$ and $m \ge 1$, the inequality holds:
 $$ P(T) = 1 - \left(\frac{63}{64}\right)^{2N m} > 0 $$
 which is strictly positive.
 
@@ -227,19 +306,23 @@ Q.E.D.
 
 ---
 
-### 18.1.6 Calculation: Loop Nucleation Current {#18.1.6}
+### 18.1.7 Calculation: Loop Nucleation Current {#18.1.7}
 
 :::note[**Numerical Calculation of the Spontaneous Loop Nucleation Current across Graph Volumes**]
 :::
 
-Computational verification of the spontaneous loop nucleation current under **Demonstration of Primordial Loop Nucleation** <Ref id="18.1.5" label="§18.1.5" /> proceeds according to the following Python audit:
+Computational verification of the spontaneous loop nucleation current established by **Primordial Loop Nucleation** <Ref id="18.1.6" label="§18.1.6" /> is based on the following protocols:
+
+1.  **Vacuum Representation:** The algorithm constructs a directed Bethe lattice fragment to serve as the initial pre-geometric vacuum topology.
+2.  **Ignition Dynamics:** The protocol simulates the stochastic activation of rewrites to trigger spontaneous loop nucleation events.
+3.  **Current Measurement:** The metric tracks the emergent loop current across varying graph sizes to verify exponential growth.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Spontaneous Ignition and Symmetry-Breaking Audit
 # Subject:   Audits spontaneous loop nucleation and symmetry-breaking tunneling
-#            claims in Chapter 18.1.6 (Standalone Version).
+#            claims in Chapter 18.1.7 (Standalone Version).
 # Version:   1.1
 # -----------------------------------------------------------------------------
 
@@ -434,7 +517,7 @@ The calculation verifies that under stasis (Model 1), loop creation is exactly z
 
 ---
 
-### 18.1.7 Diagram: Triad Alignment Duality {#18.1.7}
+### 18.1.8 Diagram: Triad Alignment Duality {#18.1.8}
 
 :::note[**Visual Representation of the Transition from an Open 2-Path to a Closed 3-Cycle**]
 :::
@@ -456,90 +539,22 @@ OPEN 2-PATH (d=1 Tree)     CLOSED 3-CYCLE (d=4 Spacetime Quantum)
 
 ---
 
-### 18.1.8 Lemma: Topological Parity Projection {#18.1.8}
-
-:::info[**Bipartite Parity Projection of the Loop Nucleation Operator**]
-:::
-
-Let $\mathcal{P}$ denote the parity operator acting on the bipartite partition spaces $V_A$ and $V_B$ of the tree $G_0$ such that $\mathcal{P}(v) = +1$ for $v \in V_A$ and $\mathcal{P}(v) = -1$ for $v \in V_B$, and let $\hat{T}$ be the directed 3-cycle operator. Then the expectation value of the loop nucleation rate satisfies $\langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right)$, where the transition rate corresponds to the tunneling amplitude through the parity barrier.
-
----
-
-### 18.1.8.1 Proof: Topological Parity Projection {#18.1.8.1}
-
-:::tip[**Formal Proof of Topological Parity Projection via Bipartite State Trace Evaluation**]
-:::
-
-**I. Setup and Assumptions**
-
-Let the pre-geometric tree vacuum $G_0 = (V_A \cup V_B, E)$ be strictly bipartite. We define the state space $\mathcal{H} = \mathcal{H}_A \oplus \mathcal{H}_B$, where $\mathcal{H}_A$ and $\mathcal{H}_B$ correspond to the bipartite partition vertices $V_A$ and $V_B$ respectively, and define the parity operator $\mathcal{P}$ as a diagonal operator with eigenvalues $+1$ on $\mathcal{H}_A$ and $-1$ on $\mathcal{H}_B$.
-
-**II. The Logic Chain**
-
-1.  **Bipartite Parity Eigenstates** <Ref id="18.1.1" label="§18.1.1" />: The bipartite partitioning of the Bethe tree defines eigenstates of the parity operator $\mathcal{P}$ such that $\mathcal{P} |v\rangle = (-1)^{\chi(v)} |v\rangle$, where $\chi(v) = 0$ for $v \in V_A$ and $\chi(v) = 1$ for $v \in V_B$.
-2.  **Even Path Restriction** <Ref id="18.1.1" label="§18.1.1" />: Any closed cycle on a bipartite graph has an even number of edges, which restricts transitions between partitions to preserve parity.
-3.  **Odd Cycle Generation** <Ref id="18.1.2" label="§18.1.2" />: The nucleation of a directed 3-cycle requires breaking the bipartite parity symmetry, which corresponds to the odd-parity sector of the configuration space.
-
-**III. Assembly**
-
-We evaluate the expectation value of the directed 3-cycle operator $\hat{T}$. We write the density matrix in the basis of parity eigenstates $\{|v\rangle\}$ as:
-$$ \rho_{\text{state}} = \sum_{u, v} \rho_{uv} |u\rangle \langle v| $$
-We decompose the identity operator $I$ into the parity projection operators $P_+ = \frac{1}{2}(I + \mathcal{P})$ and $P_- = \frac{1}{2}(I - \mathcal{P})$, which project onto the even and odd parity subspaces respectively. We observe that the directed 3-cycle operator $\hat{T}$ acts as an odd-length transition operator. Specifically, because any directed 3-cycle consists of three edges, its execution maps a vertex to one in the same partition if parity is broken, or changes the partition parity an odd number of times. In a strict bipartite graph, the trace of any odd-length operator vanishes:
-$$ \text{Tr}(\rho_{\text{state}} \hat{T}) = 0 $$
-We introduce the parity-violating tunneling parameter $\beta \in [0, 1]$. We write the state density matrix as a mixture of the symmetric stasis state $\rho_0$ and the parity-broken state $\rho_\beta$:
-$$ \rho_{\text{state}} = (1 - \beta) \rho_0 + \beta \rho_\beta $$
-We express the expectation value $\langle \hat{T} \rangle$ using the trace of the density matrix with the odd-parity projection $(I - \mathcal{P})$:
-$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) $$
-We expand this trace explicitly by inserting the parity decomposition:
-$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} (P_+ + P_-) \right) = \text{Tr}\left( \rho_{\text{state}} \hat{T} P_+ \right) + \text{Tr}\left( \rho_{\text{state}} \hat{T} P_- \right) $$
-We evaluate the traces in the parity basis. Since $\hat{T}$ transitions between opposite parity states in the unbroken vacuum, we write:
-$$ \hat{T} P_+ |v\rangle = 0 \quad \text{for } v \in V_A \text{ and } v \in V_B \text{ under stasis} $$
-In the presence of the parity-violating tunneling coupling $\beta > 0$, the operator $\hat{T}$ couples vertices within the same partition. We evaluate the trace expansion for the parity-violating projection:
-$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = \sum_{v \in V} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle $$
-We expand this sum over the partitions $V_A$ and $V_B$:
-$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = \sum_{v \in V_A} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle + \sum_{v \in V_B} \langle v | \rho_{\text{state}} (I - \mathcal{P}) | v \rangle $$
-Since $\mathcal{P} |v\rangle = |v\rangle$ for $v \in V_A$ and $\mathcal{P} |v\rangle = -|v\rangle$ for $v \in V_B$, we evaluate the parity eigenvalues:
-$$ I - \mathcal{P} |v\rangle = (1 - 1)|v\rangle = 0 \quad \text{for } v \in V_A $$
-$$ I - \mathcal{P} |v\rangle = (1 - (-1))|v\rangle = 2|v\rangle \quad \text{for } v \in V_B $$
-We substitute these values back into the trace expression:
-$$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = 0 + 2 \sum_{v \in V_B} \langle v | \rho_{\text{state}} | v \rangle = 2 P(v \in V_B) $$
-We relate the expectation value of the loop nucleation rate to the odd-parity sector projection:
-$$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) = \beta \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) $$
-We substitute the trace expansion:
-$$ \langle \hat{T} \rangle = 2 \beta \sum_{v \in V_B} \rho_{vv} $$
-This demonstrates that the loop nucleation rate is directly proportional to the trace projection onto the odd-parity sector, and vanishes when the parity-violating coupling $\beta = 0$.
-
-**IV. Formal Conclusion**
-
-We conclude that loop nucleation breaks the bipartite parity symmetry of the pre-geometric vacuum, and the rate is projected by the trace of the density matrix under the odd-parity projection operator.
-
-Q.E.D.
-
----
-
-### 18.1.8.2 Commentary: Parity Symmetry Duality {#18.1.8.2}
-
-:::info[**Tunneling through the Bipartite Parity Barrier in pre-ignition stasis**]
-:::
-
-The formulation of the parity projection operator $\langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right)$ establishes a rigorous topological bridge between graph theory and quantum mechanics.
-
-In the pre-ignition stasis ($\beta = 0.0$), the graph is strictly bipartite, locking the system in a zero-entropy state where all closed loops have even length. Introducing the same-partition tunneling coupling $\beta > 0$ represents a non-perturbative quantum fluctuation that violates the bipartite partition parity, projecting the density matrix into the odd-parity sector. The expectation value of the loop nucleation rate is directly proportional to the magnitude of this parity-violating projection, providing a rigorous mathematical mechanism for how the universe tunnels out of static pre-geometric stasis into a cyclic, dynamical geometry.
-
----
-
 ### 18.1.9 Calculation: Bipartite Parity Phase Transition {#18.1.9}
 
 :::note[**Numerical Sweeping of Tunneling Coupling and Bipartite Parity Violation**]
 :::
 
-Verification of the topological phase transition under **Topological Parity Projection** <Ref id="18.1.8" label="§18.1.8" /> proceeds according to the following Python audit:
+Verification of the topological phase transition established by **Topological Parity Projection** <Ref id="18.1.5.1" label="§18.1.5.1" /> is based on the following protocols:
+
+1.  **State Initialization:** The algorithm builds a bipartite Bethe fragment representing the initial un-ignited vacuum state.
+2.  **Coupling Sweep:** The protocol sweeps the tunneling coupling parameter to simulate quantum fluctuations violating bipartite parity.
+3.  **Transition Evaluation:** The metric calculates the expectation value of parity violation to locate the critical phase transition threshold.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Bipartite Parity-Breaking Phase Transition Audit
-# Subject:   Audits dynamic parity symmetry-breaking transition in Chapter 18.1.8
+# Subject:   Audits dynamic parity symmetry-breaking transition in Chapter 18.1.5
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -770,7 +785,7 @@ Let $a(t)$ denote the cosmic scale factor satisfying the **Volume-Complexity Lin
 :::tip[**Structure of the Discrete Friedmann Scaling Argument via Metric Reconstruction, Geodesic Integration, and Scaling Synthesis**]
 :::
 
-The proof of the **Discrete Friedmann Scaling Theorem** <Ref id="18.2.2" label="§18.2.2" /> is established by the integration of two pre-geometric metric lemmas:
+The **Discrete Friedmann Scaling** <Ref id="18.2.2" label="§18.2.2" /> is established by the integration of two pre-geometric metric lemmas:
 
 ```text
 • 18.2.2 Theorem Discrete Friedmann Scaling
@@ -871,9 +886,9 @@ Let the spatial leaf be represented by a Riemannian 3-manifold with metric $g_{i
 
 We write the geodesic distance $L(t)$ between $x_1$ and $x_2$ as the path integral:
 $$ L(t) = \int_{x_1}^{x_2} \sqrt{g_{ij} dx^i dx^j} = \int_{x_1}^{x_2} \sqrt{a(t)^2 \bar{g}_{ij} dx^i dx^j} = a(t) \int_{x_1}^{x_2} \sqrt{\bar{g}_{ij} dx^i dx^j} $$
-We define $L_0 \equiv L(t_0)$ at the reference time $t_0$, where the scale factor is normalized to $a(t_0) = 1$:
+Let $L_0 \equiv L(t_0)$ denote the geodesic distance at the reference time $t_0$, where the scale factor is normalized to $a(t_0) = 1$:
 $$ L_0 = \int_{x_1}^{x_2} \sqrt{\bar{g}_{ij} dx^i dx^j} $$
-We express $L(t)$ in terms of the scale factor as $L(t) = a(t) L_0$. We substitute the scaling relation for $a(t)$ derived from the volume-complexity link, where $a(t) = \left[\frac{N_3(t)}{N_3(t_0)}\right]^{1/3}$:
+Expressing $L(t)$ in terms of the scale factor as $L(t) = a(t) L_0$, we substitute the scaling relation for $a(t)$ derived from the volume-complexity link, where $a(t) = \left[\frac{N_3(t)}{N_3(t_0)}\right]^{1/3}$:
 $$ L(t) = L_0 \cdot \left[ \frac{N_3(t)}{N_3(t_0)} \right]^{1/3} $$
 
 **IV. Formal Conclusion**
@@ -939,7 +954,11 @@ Q.E.D.
 :::note[**Numerical Calculation of the Emergent Scale Factor and Hubble Parameter from Cycle Currents**]
 :::
 
-Verification of the scale factor expansion under **Demonstration of Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> proceeds according to the following Python audit:
+Verification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> is based on the following protocols:
+
+1.  **Complexity Estimation:** The algorithm computes the local graph density and volume to serve as proxies for the spatial scale factor.
+2.  **Friedmann Integration:** The protocol integrates the discrete Friedmann equations using the measured complexity values.
+3.  **Expansion Rate Audit:** The metric evaluates the expansion rate against the analytical Friedmann scaling profile.
 
 ```python
 #!/usr/bin/env python
@@ -947,7 +966,7 @@ Verification of the scale factor expansion under **Demonstration of Discrete Fri
 # Title:     QBD Discrete Friedmann Scaling Audit
 # Subject:   Audits discrete Friedmann scaling claims in Chapter 18.2.6
 #            (Standalone 3D Grid Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -1131,7 +1150,7 @@ Let $\rho(t)$ denote the intensive cycle density of the expanding graph under th
 :::tip[**Structure of the de Sitter Expansion Argument via Growth Simplification, Bipartite Expansion, and Scaling Synthesis**]
 :::
 
-The proof of the **Emergence of de Sitter Expansion Theorem** <Ref id="18.3.1" label="§18.3.1" /> is established by integrating two dynamical lemmas:
+The **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" /> is established by integrating two dynamical lemmas:
 
 ```text
 • 18.3.1 Theorem Emergence of de Sitter Expansion
@@ -1168,7 +1187,7 @@ Let $\rho \ll \rho^*$ be the intensive cycle density immediately following ignit
 
 **I. Setup and Assumptions**
 
-Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda_{\text{cat}}\rho)$ <Ref id="5.4.1" label="§5.4.1" />. We assume the cycle density satisfies the post-ignition limit $\rho \ll 1$, and let the initial density at $t = 0$ be $\rho_0 > 1/18$.
+Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda_{\text{cat}}\rho)$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. We assume the cycle density satisfies the post-ignition limit $\rho \ll 1$, and let the initial density at $t = 0$ be $\rho_0 > 1/18$.
 
 **II. The Logic Chain**
 
@@ -1243,21 +1262,21 @@ Let $N(t)$ be the total number of vertices in the graph substrate at proper time
 
 **III. Assembly**
 
-We write the relation between total cycle population and intensive density:
+The relation between total cycle population and intensive density is written as:
 $$ N_3(t) = \rho(t) N(t) $$
-We differentiate this relation with respect to proper time $t$:
+Differentiating this relation with respect to proper time $t$ yields:
 $$ \dot{N}_3(t) = \dot{\rho}(t) N(t) + \rho(t) \dot{N}(t) $$
-We divide by $N_3(t) = \rho(t) N(t)$ to obtain the relative growth rate:
+Division by $N_3(t) = \rho(t) N(t)$ yields the relative growth rate:
 $$ \frac{\dot{N}_3(t)}{N_3(t)} = \frac{\dot{\rho}(t)}{\rho(t)} + \frac{\dot{N}(t)}{N(t)} $$
-We perform a Renormalization Group (RG) scaling analysis. We observe that the creation of new 3-cycles is localized at the boundary of the expanding graph, scaling as $\dot{N}_{3, \text{create}} \propto \partial \text{Vol} \sim R^{d-1}$, where $R$ is the topological radius. Conversely, the deletion of cycles under catalytic updates is a bulk process, scaling as $\dot{N}_{3, \text{delete}} \propto \text{Vol} \sim R^d$.
-At a stable boundary-bulk catalytic balance, the scale transformation of the graph stabilizes the intensive density to a fixed point $\dot{\rho}(t) \to 0$. We set $\dot{\rho}(t) = 0$ in the relative growth rate:
+We perform a Renormalization Group (RG) scaling analysis, observing that the creation of new 3-cycles is localized at the boundary of the expanding graph, scaling as $\dot{N}_{3, \text{create}} \propto \partial \text{Vol} \sim R^{d-1}$, where $R$ is the topological radius. Conversely, the deletion of cycles under catalytic updates is a bulk process, scaling as $\dot{N}_{3, \text{delete}} \propto \text{Vol} \sim R^d$.
+At a stable boundary-bulk catalytic balance, the scale transformation of the graph stabilizes the intensive density to a fixed point $\dot{\rho}(t) \to 0$. Setting $\dot{\rho}(t) = 0$ in the relative growth rate yields:
 $$ \frac{\dot{N}_3(t)}{N_3(t)} \approx \frac{\dot{N}(t)}{N(t)} \equiv r $$
 We evaluate the constant relative growth rate $r$ at the stabilized density fixed point $\rho_0 = 1/18$:
 $$ r = 9\rho_0 - \frac{1}{2} $$
-We integrate the constant growth equation $\dot{N}_3(t) = r N_3(t)$:
+Integration of the constant growth equation $\dot{N}_3(t) = r N_3(t)$ yields:
 $$ \int_{N_3(0)}^{N_3(t)} \frac{d N_3}{N_3} = \int_0^t r dt' $$
 $$ \ln\left(\frac{N_3(t)}{N_3(0)}\right) = r t $$
-We exponentiate both sides to obtain the exponential trajectory:
+Exponentiating both sides yields the exponential trajectory:
 $$ N_3(t) = N_3(0) e^{rt} $$
 
 **IV. Formal Conclusion**
@@ -1319,7 +1338,11 @@ Q.E.D.
 :::note[**Numerical Calculation of the Exponential de Sitter Expansion Coefficient**]
 :::
 
-Verification of the de Sitter growth coefficient under **Demonstration of de Sitter Expansion** <Ref id="18.3.4" label="§18.3.4" /> proceeds according to the following Python audit:
+Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.4" label="§18.3.4" /> is based on the following protocols:
+
+1.  **Stochastic Growth Simulation:** The algorithm simulates the growth of the causal graph under frictionless update rules.
+2.  **Volume Tracking:** The protocol logs the expansion of the vertex and edge counts over logical time steps.
+3.  **Coefficient Verification:** The metric fits the exponential expansion rate to extract the emergent de Sitter growth coefficient.
 
 ```python
 #!/usr/bin/env python
@@ -1327,7 +1350,7 @@ Verification of the de Sitter growth coefficient under **Demonstration of de Sit
 # Title:     QBD de Sitter Inflation Audit
 # Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.5
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -1423,7 +1446,7 @@ if __name__ == "__main__":
 |      0   |          0.06 |                100    |           4.6416 |         0.01333 |               0.0067 |
 |      0.5 |          0.06 |                102.02 |           4.6726 |         0.01333 |               0.0133 |
 |      1   |          0.06 |                104.08 |           4.7039 |         0.01333 |               0.02   |
-|      1.5 |          0.06 |                106.18 |           4.7354 |         0.01333 |               0.0267 |
+|      1.2 |          0.06 |                106.18 |           4.7354 |         0.01333 |               0.0267 |
 |      2   |          0.06 |                108.33 |           4.767  |         0.01333 |               0.0333 |
 |      2.5 |          0.06 |                110.52 |           4.7989 |         0.01333 |               0.04   |
 |      3   |          0.06 |                112.75 |           4.831  |         0.01333 |               0.0467 |
@@ -1469,7 +1492,7 @@ Let $\rho(t)$ denote the intensive cycle density flowing under the universal evo
 :::tip[**Structure of the Dimensional Emergence Argument via Ahlfors Regularity, Spectral Convergence, and Boundary-Bulk Synthesis**]
 :::
 
-The proof of the **Dimensional Emergence Theorem** <Ref id="18.3.7" label="§18.3.7" /> is established by integrating two pre-geometric metric lemmas:
+The **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> is established by integrating two pre-geometric metric lemmas:
 
 ```text
 • 18.3.7 Theorem Dimensional Emergence
@@ -1481,15 +1504,15 @@ The proof of the **Dimensional Emergence Theorem** <Ref id="18.3.7" label="§18.
 │   ├── 18.3.9.1 Proof Spectral Dimension Convergence
 │   └── 18.3.9.2 Commentary Infrared Operator Convergence
 │
-├── 18.3.10 Proof Dimensional Emergence
+├── 18.3.10 Lemma Gromov-Hausdorff Laplacian Convergence
+│   ├── 18.3.10.1 Proof Gromov-Hausdorff Laplacian Convergence
+│   └── 18.3.10.2 Commentary Variational Energy Stability
 │
-├── 18.3.11 Calculation Hausdorff Dimension Flow
+├── 18.3.11 Proof Dimensional Emergence
 │
-├── 18.3.12 Diagram Dimensional Crystallization RG Flow
+├── 18.3.12 Calculation Hausdorff Dimension Flow
 │
-├── 18.3.13 Lemma Gromov-Hausdorff Laplacian Convergence
-│   ├── 18.3.13.1 Proof Gromov-Hausdorff Laplacian Convergence
-│   └── 18.3.13.2 Commentary Variational Energy Stability
+├── 18.3.13 Diagram Dimensional Crystallization RG Flow
 │
 └── 18.3.14 Calculation Heat Kernel Spectral Walks
 ```
@@ -1524,15 +1547,15 @@ Let $v \in V$ be a vertex in the emergent graph at the stable attractor density 
 
 We write the volume of the topological ball under scale transformation. On a tree substrate, the volume scales exponentially with the radius $R$:
 $$ |B(v, R)|_{\text{tree}} \propto (k-1)^R $$
-We analyze the effect of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$. The steric factor acts as a local exponential damping on edge additions. We write the edge addition rate at topological distance $R$:
+Analysis of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$ reveals that it acts as a local exponential damping on edge additions. We write the edge addition rate at topological distance $R$ as:
 $$ \lambda_{\text{add}}(R) = \lambda_0 e^{-6\mu\rho^*} \propto R^{-1} $$
-We write the recursion relation for the volume $|B(v, R)|$:
+The recursion relation for the volume $|B(v, R)|$ is written as:
 $$ |B(v, R)| - |B(v, R-1)| = \partial |B(v, R)| $$
-where $\partial |B(v, R)|$ represents the boundary area of the ball. We write the boundary-bulk scaling relation. The boundary area $\partial |B(v, R)|$ scales as $R^{d-1}$, while the bulk volume $|B(v, R)|$ scales as $R^d$. We write the scale-invariant fixed point condition for the balance of cycle creation and deletion:
+where $\partial |B(v, R)|$ represents the boundary area of the ball. The boundary area $\partial |B(v, R)|$ scales as $R^{d-1}$, while the bulk volume $|B(v, R)|$ scales as $R^d$. The scale-invariant fixed-point condition for the balance of cycle creation and deletion requires:
 $$ \frac{\partial |B(v, R)|}{|B(v, R)|} \propto \frac{R^{d-1}}{R^d} = R^{-1} $$
-We substitute the boundary-bulk scaling relation into the fixed-point equation. We establish that cycle creation scales with the boundary area $R^{d-1}$ and catalytic deletion scales with the bulk volume $R^d$. A stable balance under scale transformation requires:
+Substituting the boundary-bulk scaling relation into the fixed-point equation establishes that cycle creation scales with the boundary area $R^{d-1}$ and catalytic deletion scales with the bulk volume $R^d$. A stable balance under scale transformation requires:
 $$ d - 1 = d - 1 \implies d = 4 $$
-We integrate the boundary relation $\partial |B(v, R)| \propto R^3$:
+Integrating the boundary relation $\partial |B(v, R)| \propto R^3$ yields:
 $$ |B(v, R)| = \sum_{r=1}^R \partial |B(v, r)| \propto \sum_{r=1}^R r^3 \propto R^4 $$
 We establish the existence of positive constants $c_1$ and $c_2$ such that:
 $$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
@@ -1577,7 +1600,7 @@ Let $G = (V, E)$ be the emergent graph at the stable attractor density $\rho^*$.
 **II. The Logic Chain**
 
 1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$.
-2.  **Laplacian Convergence** <Ref id="18.3.13" label="§18.3.13" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
+2.  **Laplacian Convergence** <Ref id="18.3.10" label="§18.3.10" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
 
 **III. Assembly**
 
@@ -1622,7 +1645,67 @@ The spectral dimension measures the effective dimensionality perceived by physic
 
 ---
 
-### 18.3.10 Proof: Dimensional Emergence {#18.3.10}
+### 18.3.10 Lemma: Gromov-Hausdorff Laplacian Convergence {#18.3.10}
+
+:::info[**Convergence of Discrete Graph Laplacian to Smooth Laplace-Beltrami Operator**]
+:::
+
+Let $\{G_n\}$ be a sequence of graphs satisfying the Ahlfors 4-regularity bounds with Gromov-Hausdorff limit space $(M, g)$, and let $\Delta_{G_n}$ represent the normalized discrete Laplacian. Then for any smooth test function $f \in C^{\infty}(M)$, the convergence limit satisfies:
+$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2} = 0 $$
+where $\phi_n: M \to V(G_n)$ are the Gromov-Hausdorff $\varepsilon_n$-approximations.
+
+---
+
+### 18.3.10.1 Proof: Gromov-Hausdorff Laplacian Convergence {#18.3.10.1}
+
+:::tip[**Formal Proof of Gromov-Hausdorff Laplacian Convergence via Dirichlet Form and Mosco Convergence**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $\{G_n = (V_n, E_n)\}$ be a sequence of finite graphs satisfying the Ahlfors 4-regularity bounds, with Gromov-Hausdorff limit space $(M, g)$ being a smooth compact Riemannian manifold. Let $f \in C^{\infty}(M)$ be a smooth test function. Let $\mathcal{E}_{G_n}(u) = \frac{1}{N_n} \sum_{x \sim y} (u(x) - u(y))^2$ be the discrete Dirichlet form on $G_n$.
+
+**II. The Logic Chain**
+
+1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$, establishing metric measure convergence.
+2.  **Spectral Dimension Convergence** <Ref id="18.3.9" label="§18.3.9" />: The spectral dimension is 4, matching the Laplace eigenvalues scaling.
+
+**III. Assembly**
+
+We express the Mosco convergence of Dirichlet forms. Let the continuous Dirichlet energy on the limit manifold $(M, g)$ be defined as:
+$$ \mathcal{E}_M(f) = \int_M |\nabla_g f|^2 d\mu_g $$
+We bound the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
+$$ C_1 \int_M |\nabla_g f|^2 d\mu_g \le \mathcal{E}_{G_n}(f \circ \phi_n) \le C_2 \int_M |\nabla_g f|^2 d\mu_g $$
+where $C_1$ and $C_2$ are positive constants determined by the Ahlfors bounds $c_1, c_2$.
+The relation between the Dirichlet form and the Laplacian generator is written for the discrete space as:
+$$ \mathcal{E}_{G_n}(u, v) = \langle u, \Delta_{G_n} v \rangle_{L^2(G_n)} $$
+And for the continuous manifold:
+$$ \mathcal{E}_M(f, \psi) = \langle f, \Delta_g \psi \rangle_{L^2(M)} = \int_M f (-\Delta_g \psi) d\mu_g $$
+By Mosco convergence, the sequence of discrete Dirichlet forms converges to the continuous Dirichlet form:
+$$ \lim_{n \to \infty} \mathcal{E}_{G_n}(f \circ \phi_n, f \circ \phi_n) = \mathcal{E}_M(f, f) $$
+Taking the variational derivative of the energy functional yields operator convergence in the strong operator topology. We evaluate the $L^2$ norm difference of the Laplacian actions:
+$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2(M)} = 0 $$
+
+**IV. Formal Conclusion**
+
+We conclude that the discrete graph Laplacian converges rigorously to the smooth Laplace-Beltrami operator in the Gromov-Hausdorff limit.
+
+Q.E.D.
+
+---
+
+### 18.3.10.2 Commentary: Variational Energy Stability {#18.3.10.2}
+
+:::info[**Mosco Convergence of Graph Dirichlet Forms**]
+:::
+
+The Gromov-Hausdorff Laplacian convergence theorem proves that the discrete graph energy converges to the smooth manifold energy in the thermodynamic limit.
+
+This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace Beltrami operator, the theorem guarantees that the discrete wave equations, green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
+
+---
+
+### 18.3.11 Proof: Dimensional Emergence {#18.3.11}
 
 :::tip[**Formal Proof of Dimensional Emergence via Gromov-Hausdorff Metric Limit Evaluation**]
 :::
@@ -1652,20 +1735,24 @@ Q.E.D.
 
 ---
 
-### 18.3.11 Calculation: Hausdorff Dimension Flow {#18.3.11}
+### 18.3.12 Calculation: Hausdorff Dimension Flow {#18.3.12}
 
 :::note[**Numerical Calculation of the Hausdorff Dimension from Ball Volumes**]
 :::
 
-Verification of the Hausdorff dimension under **Demonstration of Dimensional Emergence** <Ref id="18.3.10" label="§18.3.10" /> proceeds according to the following Python audit:
+Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.11" label="§18.3.11" /> is based on the following protocols:
+
+1.  **Distance Profiling:** The algorithm measures topological path lengths and volume growth from a set of reference nodes.
+2.  **Dimension Calculation:** The protocol computes the local Hausdorff dimension by taking the logarithmic derivative of volume growth.
+3.  **Flow Analysis:** The metric evaluates the flow of the dimension across scaling steps to verify convergence to the target dimension.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Dimensional Emergence and Hausdorff Scaling Audit
-# Subject:   Audits topological dimension crystallization in Chapter 18.3.11
+# Subject:   Audits topological dimension crystallization in Chapter 18.3.12
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -1770,7 +1857,7 @@ The calculation verifies that the asymptotic Hausdorff dimension fits to $d_H \a
 
 ---
 
-### 18.3.12 Diagram: Dimensional Crystallization RG Flow {#18.3.12}
+### 18.3.13 Diagram: Dimensional Crystallization RG Flow {#18.3.13}
 
 :::note[**Visual Representation of the Renormalization Group Flow toward Four Dimensions**]
 :::
@@ -1786,78 +1873,22 @@ RENORMALIZATION GROUP FLOW: DIMENSION
 
 ---
 
-### 18.3.13 Lemma: Gromov-Hausdorff Laplacian Convergence {#18.3.13}
-
-:::info[**Convergence of Discrete Graph Laplacian to Smooth Laplace-Beltrami Operator**]
-:::
-
-Let $\{G_n\}$ be a sequence of graphs satisfying the Ahlfors 4-regularity bounds with Gromov-Hausdorff limit space $(M, g)$, and let $\Delta_{G_n}$ represent the normalized discrete Laplacian. Then for any smooth test function $f \in C^{\infty}(M)$, the convergence limit satisfies:
-$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2} = 0 $$
-where $\phi_n: M \to V(G_n)$ are the Gromov-Hausdorff $\varepsilon_n$-approximations.
-
----
-
-### 18.3.13.1 Proof: Gromov-Hausdorff Laplacian Convergence {#18.3.13.1}
-
-:::tip[**Formal Proof of Gromov-Hausdorff Laplacian Convergence via Dirichlet Form and Mosco Convergence**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $\{G_n = (V_n, E_n)\}$ be a sequence of finite graphs satisfying the Ahlfors 4-regularity bounds, with Gromov-Hausdorff limit space $(M, g)$ being a smooth compact Riemannian manifold. Let $f \in C^{\infty}(M)$ be a smooth test function. Let $\mathcal{E}_{G_n}(u) = \frac{1}{N_n} \sum_{x \sim y} (u(x) - u(y))^2$ be the discrete Dirichlet form on $G_n$.
-
-**II. The Logic Chain**
-
-1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$, establishing metric measure convergence.
-2.  **Spectral Dimension Convergence** <Ref id="18.3.9" label="§18.3.9" />: The spectral dimension is 4, matching the Laplace eigenvalues scaling.
-
-**III. Assembly**
-
-We express the Mosco convergence of Dirichlet forms. We define the continuous Dirichlet energy on the limit manifold $(M, g)$ as:
-$$ \mathcal{E}_M(f) = \int_M |\nabla_g f|^2 d\mu_g $$
-We bound the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
-$$ C_1 \int_M |\nabla_g f|^2 d\mu_g \le \mathcal{E}_{G_n}(f \circ \phi_n) \le C_2 \int_M |\nabla_g f|^2 d\mu_g $$
-where $C_1$ and $C_2$ are positive constants determined by the Ahlfors bounds $c_1, c_2$.
-We write the relation between the Dirichlet form and the Laplacian generator. For the discrete space, we have:
-$$ \mathcal{E}_{G_n}(u, v) = \langle u, \Delta_{G_n} v \rangle_{L^2(G_n)} $$
-And for the continuous manifold:
-$$ \mathcal{E}_M(f, \psi) = \langle f, \Delta_g \psi \rangle_{L^2(M)} = \int_M f (-\Delta_g \psi) d\mu_g $$
-By Mosco convergence, the sequence of discrete Dirichlet forms converges to the continuous Dirichlet form:
-$$ \lim_{n \to \infty} \mathcal{E}_{G_n}(f \circ \phi_n, f \circ \phi_n) = \mathcal{E}_M(f, f) $$
-We take the variational derivative of the energy functional to obtain operator convergence in the strong operator topology. We evaluate the $L^2$ norm difference of the Laplacian actions:
-$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2(M)} = 0 $$
-
-**IV. Formal Conclusion**
-
-We conclude that the discrete graph Laplacian converges rigorously to the smooth Laplace-Beltrami operator in the Gromov-Hausdorff limit.
-
-Q.E.D.
-
----
-
-### 18.3.13.2 Commentary: Variational Energy Stability {#18.3.13.2}
-
-:::info[**Mosco Convergence of Graph Dirichlet Forms**]
-:::
-
-The Gromov-Hausdorff Laplacian convergence theorem proves that the discrete graph energy converges to the smooth manifold energy in the thermodynamic limit.
-
-This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace Beltrami operator, the theorem guarantees that the discrete wave equations, green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
-
----
-
 ### 18.3.14 Calculation: Heat Kernel Spectral Walks {#18.3.14}
 
-:::note[**Numerical Simulation of Random Walks and Return Probabilities to Verify Spectral Dimension d_S = 4.0**]
+:::note[**Numerical Simulation of Random Walks and Recurrence Probabilities to Verify Spectral Dimension d_S = 4.0**]
 :::
 
-Verification of the asymptotic spectral dimension under **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.13" label="§18.3.13" /> proceeds according to the following Python audit:
+Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.10.1" label="§18.3.10.1" /> is based on the following protocols:
+
+1.  **Laplacian Spectrum Generation:** The algorithm generates the eigenvalues of the rescaled discrete Laplacian on periodic structures.
+2.  **Heat Trace Computation:** The protocol calculates the heat kernel trace and recurrence probability over a range of diffusion times.
+3.  **Spectral Dimension Estimation:** The metric extracts the spectral dimension from the slope of the logarithmic recurrence probability plot.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Heat Kernel Spectral Dimension Convergence Audit
-# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.13
+# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.10
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -2026,7 +2057,7 @@ Let $P_{\mathcal{R}}(k)$ denote the primordial power spectrum of curvature pertu
 :::tip[**Structure of the Spectral Index Red Tilt Argument via Slow-Roll Dynamics, Noise Damping, and Scaling Synthesis**]
 :::
 
-The proof of the **Spectral Index Red Tilt Theorem** <Ref id="18.4.1" label="§18.4.1" /> is established by integrating two pre-geometric physical lemmas:
+The **Spectral Index Red Tilt** <Ref id="18.4.1" label="§18.4.1" /> is established by integrating two pre-geometric physical lemmas:
 
 ```text
 • 18.4.1 Theorem Spectral Index Red Tilt
@@ -2038,15 +2069,15 @@ The proof of the **Spectral Index Red Tilt Theorem** <Ref id="18.4.1" label="§1
 │   ├── 18.4.3.1 Proof Frictional Noise Damping
 │   └── 18.4.3.2 Commentary Frictional Noise Damping
 │
-├── 18.4.4 Proof Spectral Index Red Tilt
+├── 18.4.4 Lemma Steric Damping Slow-Roll Bounds
+│   ├── 18.4.4.1 Proof Steric Damping Slow-Roll Bounds
+│   └── 18.4.4.2 Commentary Parameter Bounds Robustness
 │
-├── 18.4.5 Calculation Power Spectrum Numerical Integration
+├── 18.4.5 Proof Spectral Index Red Tilt
 │
-├── 18.4.6 Diagram Slow-Roll Potential Horizon Exit
+├── 18.4.6 Calculation Power Spectrum Numerical Integration
 │
-├── 18.4.7 Lemma Steric Damping Slow-Roll Bounds
-│   ├── 18.4.7.1 Proof Steric Damping Slow-Roll Bounds
-│   └── 18.4.7.2 Commentary Parameter Bounds Robustness
+├── 18.4.7 Diagram Slow-Roll Potential Horizon Exit
 │
 └── 18.4.8 Calculation Langevin Slow-Roll Parameter Audit
 ```
@@ -2171,7 +2202,65 @@ Since each graph rewrite represents a discrete, stochastic quantum event, the ea
 
 ---
 
-### 18.4.4 Proof: Spectral Index Red Tilt {#18.4.4}
+### 18.4.4 Lemma: Steric Damping Slow-Roll Bounds {#18.4.4}
+
+:::info[**Slow-Roll Parameter Bounds under Steric Damping**]
+:::
+
+Let the intensive Master Equation rate function be represented as $F(\rho) = \dot{\rho}$, and the Hubble parameter as $H(\rho) = 3\rho - 1/6$. Then, for any density $\rho(t)$ in the inflationary interval $\rho(t) \in [\rho_{\text{ignition}}, \rho^* - \delta]$, the slow-roll parameters satisfy the positive bounds $0 < \varepsilon(\rho) < 0.025$ and $0 < \eta(\rho) < 0.015$.
+
+---
+
+### 18.4.4.1 Proof: Steric Damping Slow-Roll Bounds {#18.4.4.1}
+
+:::tip[**Formal Proof of Slow-Roll Parameter Bounds via Rate Extremization**]
+:::
+
+**I. Setup and Assumptions**
+
+Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$. Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
+
+**II. The Logic Chain**
+
+1.  **Master Equation Slow-Roll Dynamics** <Ref id="18.4.2" label="§18.4.2" />: The parameters are defined in terms of $F(\rho)$ and its derivative $F'(\rho)$.
+2.  **Attractor Stability**: The rate $F(\rho)$ is strictly positive and bounded from above by its value at ignition, while $F'(\rho)$ is negative and bounded by the stable attractor slope.
+
+**III. Assembly**
+
+We write the upper bound of the rate function $F(\rho)$ over the interval. Since $F(\rho)$ decreases monotonically from ignition to the attractor, we bound the rate:
+$$ F(\rho) < F(\rho_{\text{ignition}}) \approx \Lambda $$
+We substitute this upper bound into the expression for $\varepsilon$:
+$$ \varepsilon(\rho) = \frac{3 F(\rho)}{H^2} < \frac{3 \Lambda}{(3\rho_{\text{ignition}} - 0.1667)^2} $$
+We substitute $\Lambda = 0.0156$ and $\rho_{\text{ignition}} = 0.06$:
+$$ \varepsilon(\rho) < \frac{3(0.0156)}{(3(0.06) - 0.1667)^2} \approx 0.025 $$
+Evaluating the bounds for $\eta = -F'(\rho)/H$ requires differentiating the rate function:
+$$ F'(\rho) = e^{-6\mu\rho} \left[ 18\rho - 6\mu(\Lambda + 9\rho^2) \right] - 0.5 $$
+Since the exponential term $e^{-6\mu\rho}$ is bounded by 1, and the polynomial is bounded, we write the extremum of the derivative:
+$$ |F'(\rho)| < 6\mu\rho_{\text{ignition}} $$
+We substitute this into the expression for $\eta$:
+$$ \eta(\rho) < \frac{6\mu}{3\rho_{\text{ignition}} - 0.1667} \approx 0.015 $$
+These bounds hold strictly for all density values in the slow-roll growth interval.
+
+**IV. Formal Conclusion**
+
+We conclude that the pre-geometric slow-roll parameters are strictly bounded within $0 < \varepsilon < 0.025$ and $0 < \eta < 0.015$ during the entire inflationary epoch.
+
+Q.E.D.
+
+---
+
+### 18.4.4.2 Commentary: Parameter Bounds Robustness {#18.4.4.2}
+
+:::info[**Verification of Slow-Roll Bounds under Stochastic Langevin Noise**]
+:::
+
+The slow-roll parameters bounds during the inflationary interval confirm that the slow-roll parameters remain small and stable even in the presence of strong stochastic noise.
+
+The Langevin simulation demonstrates that while individual trajectories are subject to statistical fluctuations, the average slow-roll parameters are strictly bounded. This robustness ensures that the inflationary epoch is not disrupted by the inherent noise of the discrete rewrite sequencer. The steric friction mechanism provides a highly resilient restoring force that guides the system smoothly along the slow-roll trajectory toward the stable attractor density.
+
+---
+
+### 18.4.5 Proof: Spectral Index Red Tilt {#18.4.5}
 
 :::tip[**Formal Proof of the Spectral Index Red Tilt via Slow-Roll and Noise Integration**]
 :::
@@ -2200,7 +2289,7 @@ $$ \frac{d}{dt} (2\ln H) = 2 \frac{\dot{H}}{H} = -2\varepsilon H $$
 $$ \frac{d}{dt} (\ln \varepsilon) = \frac{\dot{\varepsilon}}{\varepsilon} $$
 We evaluate the time derivative of $\varepsilon = -\dot{H}/H^2$ using the quotient rule:
 $$ \dot{\varepsilon} = -\frac{\ddot{H} H^2 - \dot{H}(2H\dot{H})}{H^4} = -\frac{\ddot{H}}{H^2} + 2\frac{\dot{H}^2}{H^3} $$
-We express this in terms of slow-roll parameters, yielding $\dot{\varepsilon} \approx 2\varepsilon H (\varepsilon + \eta)$. We substitute this back into the logarithmic derivative of $\varepsilon$:
+Expressing this in terms of slow-roll parameters yields $\dot{\varepsilon} \approx 2\varepsilon H (\varepsilon + \eta)$. Substitution back into the logarithmic derivative of $\varepsilon$ then gives:
 $$ \frac{\dot{\varepsilon}}{\varepsilon} \approx 2H(\varepsilon + \eta) $$
 We combine all terms in the spectral index equation:
 $$ n_s - 1 = \frac{1}{H} \left[ -2\varepsilon H - 2H(\varepsilon + \eta) \right] = -2\varepsilon - 2(\varepsilon + \eta) $$
@@ -2215,20 +2304,24 @@ Q.E.D.
 
 ---
 
-### 18.4.5 Calculation: Power Spectrum Numerical Integration {#18.4.5}
+### 18.4.6 Calculation: Power Spectrum Numerical Integration {#18.4.6}
 
 :::note[**Numerical Integration of the Curvature Power Spectrum over Slow-Roll e-folds**]
 :::
 
-Verification of the spectral red tilt under **Demonstration of Spectral Index Red Tilt** <Ref id="18.4.4" label="§18.4.4" /> proceeds according to the following Python audit:
+Verification of the spectral red tilt established by **Spectral Index Red Tilt** <Ref id="18.4.5" label="§18.4.5" /> is based on the following protocols:
+
+1.  **Noise Generation:** The algorithm generates Gaussian fluctuations to represent primordial scalar perturbations.
+2.  **Mode Integration:** The protocol integrates the mode equations across horizon crossing using a discrete solver.
+3.  **Spectral Fitting:** The metric fits the resulting power spectrum to calculate the spectral index and verify the red tilt.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Spectral Index Red-Tilt Audit
-# Subject:   Audits primordial fluctuations and spectral red-tilt in Chapter 18.4.5
+# Subject:   Audits primordial fluctuations and spectral red-tilt in Chapter 18.4.6
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -2351,7 +2444,7 @@ The calculation verifies that comoving modes exiting the horizon later (smaller 
 
 ---
 
-### 18.4.6 Diagram: Slow-Roll Potential Horizon Exit {#18.4.6}
+### 18.4.7 Diagram: Slow-Roll Potential Horizon Exit {#18.4.7}
 
 :::note[**Visual Representation of the Noise Damping and Horizon Exit of Primordial Wavemodes**]
 :::
@@ -2371,77 +2464,23 @@ HORIZON EXIT CHRONOLOGY: SPECTRAL TILT
 
 ---
 
-### 18.4.7 Lemma: Steric Damping Slow-Roll Bounds {#18.4.7}
-
-:::info[**Slow-Roll Parameter Bounds under Steric Damping**]
-:::
-
-Let the intensive Master Equation rate function be represented as $F(\rho) = \dot{\rho}$, and the Hubble parameter as $H(\rho) = 3\rho - 1/6$. Then, for any density $\rho(t)$ in the inflationary interval $\rho(t) \in [\rho_{\text{ignition}}, \rho^* - \delta]$, the slow-roll parameters satisfy the positive bounds $0 < \varepsilon(\rho) < 0.025$ and $0 < \eta(\rho) < 0.015$.
-
----
-
-### 18.4.7.1 Proof: Steric Damping Slow-Roll Bounds {#18.4.7.1}
-
-:::tip[**Formal Proof of Slow-Roll Parameter Bounds via Rate Extremization**]
-:::
-
-**I. Setup and Assumptions**
-
-Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$. Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
-
-**II. The Logic Chain**
-
-1.  **Master Equation Slow-Roll Dynamics** <Ref id="18.4.2" label="§18.4.2" />: The parameters are defined in terms of $F(\rho)$ and its derivative $F'(\rho)$.
-2.  **Attractor Stability**: The rate $F(\rho)$ is strictly positive and bounded from above by its value at ignition, while $F'(\rho)$ is negative and bounded by the stable attractor slope.
-
-**III. Assembly**
-
-We write the upper bound of the rate function $F(\rho)$ over the interval. Since $F(\rho)$ decreases monotonically from ignition to the attractor, we bound the rate:
-$$ F(\rho) < F(\rho_{\text{ignition}}) \approx \Lambda $$
-We substitute this upper bound into the expression for $\varepsilon$:
-$$ \varepsilon(\rho) = \frac{3 F(\rho)}{H^2} < \frac{3 \Lambda}{(3\rho_{\text{ignition}} - 0.1667)^2} $$
-We substitute $\Lambda = 0.0156$ and $\rho_{\text{ignition}} = 0.06$:
-$$ \varepsilon(\rho) < \frac{3(0.0156)}{(3(0.06) - 0.1667)^2} \approx 0.025 $$
-We evaluate the bounds for $\eta = -F'(\rho)/H$. We differentiate the rate function:
-$$ F'(\rho) = e^{-6\mu\rho} \left[ 18\rho - 6\mu(\Lambda + 9\rho^2) \right] - 0.5 $$
-Since the exponential term $e^{-6\mu\rho}$ is bounded by 1, and the polynomial is bounded, we write the extremum of the derivative:
-$$ |F'(\rho)| < 6\mu\rho_{\text{ignition}} $$
-We substitute this into the expression for $\eta$:
-$$ \eta(\rho) < \frac{6\mu}{3\rho_{\text{ignition}} - 0.1667} \approx 0.015 $$
-These bounds hold strictly for all density values in the slow-roll growth interval.
-
-**IV. Formal Conclusion**
-
-We conclude that the pre-geometric slow-roll parameters are strictly bounded within $0 < \varepsilon < 0.025$ and $0 < \eta < 0.015$ during the entire inflationary epoch.
-
-Q.E.D.
-
----
-
-### 18.4.7.2 Commentary: Parameter Bounds Robustness {#18.4.7.2}
-
-:::info[**Verification of Slow-Roll Bounds under Stochastic Langevin Noise**]
-:::
-
-The slow-roll parameters bounds during the inflationary interval confirm that the slow-roll parameters remain small and stable even in the presence of strong stochastic noise.
-
-The Langevin simulation demonstrates that while individual trajectories are subject to statistical fluctuations, the average slow-roll parameters are strictly bounded. This robustness ensures that the inflationary epoch is not disrupted by the inherent noise of the discrete rewrite sequencer. The steric friction mechanism provides a highly resilient restoring force that guides the system smoothly along the slow-roll trajectory toward the stable attractor density.
-
----
-
 ### 18.4.8 Calculation: Langevin Slow-Roll Parameter Audit {#18.4.8}
 
 :::note[**Numerical Integration of Stochastic Langevin Trajectory and Slow-Roll Parameter Tracking**]
 :::
 
-Verification of the slow-roll parameter bounds under **Steric Damping Slow-Roll Bounds** <Ref id="18.4.7" label="§18.4.7" /> proceeds according to the following Python audit:
+Verification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4.1" label="§18.4.4.1" /> is based on the following protocols:
+
+1.  **Langevin Simulation:** The algorithm simulates the stochastic Langevin trajectory of the scalar inflaton on the discrete graph.
+2.  **Parameter Tracking:** The protocol monitors the slow-roll parameters during the inflationary phase.
+3.  **Bound Audit:** The metric evaluates the duration of inflation and parameter bounds to verify compliance with steric limits.
 
 ```python
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Langevin Slow-Roll Parameter Audit
 # Subject:   Audits Langevin trajectory of density and tracks slow-roll parameters
-#            in Chapter 18.4.7 (Standalone Version).
+#            in Chapter 18.4.4 (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
 
@@ -2601,7 +2640,7 @@ Let $\rho^*$ denote the stable equilibrium density fixed point ($\rho^* \approx 
 :::tip[**Structure of the Flatness Attractor Argument via Jacobian Linearization, Curvature Coupling, and Attractor Synthesis**]
 :::
 
-The proof of the **Flatness as Stable Attractor Theorem** <Ref id="18.5.1" label="§18.5.1" /> is established by integrating two dynamical lemmas:
+The **Flatness as Stable Attractor** <Ref id="18.5.1" label="§18.5.1" /> is established by integrating two dynamical lemmas:
 
 ```text
 • 18.5.1 Theorem Flatness as Stable Attractor
@@ -2667,7 +2706,7 @@ We differentiate the second term:
 $$ \frac{d}{d\rho} \left[ \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2 \right] = \frac{1}{2} + 6\lambda_{\text{cat}}\rho $$
 We combine both parts to write the complete derivative $F'(\rho)$:
 $$ F'(\rho) = \left( 18\rho - 6\mu(\Lambda + 9\rho^2) \right) e^{-6\mu\rho} - \frac{1}{2} - 6\lambda_{\text{cat}}\rho $$
-We substitute the physical parameters $\Lambda = 0.015625$, $\mu = 0.399$, and $\lambda_{\text{cat}} = 1.718$, and evaluate the derivative at the stable fixed point $\rho^* \approx 0.037$:
+Substituting the physical parameters $\Lambda = 0.015625$, $\mu = 0.399$, and $\lambda_{\text{cat}} = 1.718$ allows evaluation of the derivative at the stable fixed point $\rho^* \approx 0.037$:
 We compute the exponential term:
 $$ -6\mu\rho^* = -6(0.399)(0.037) = -0.088578 $$
 $$ e^{-6\mu\rho^*} = e^{-0.088578} \approx 0.915234 $$
@@ -2782,7 +2821,7 @@ We evaluate the initial curvature parameter at $t=0$:
 $$ \Omega_{k,0} \equiv \Omega_k(0) = -\zeta \delta\rho_0 $$
 We substitute $\Omega_{k,0}$ back into the curvature equation to obtain the evolution equation:
 $$ \Omega_k(t) = \Omega_{k,0} e^{J t} $$
-We evaluate the spatial curvature suppression over a slow-roll inflation duration of $t_f - t_i = 60$ units of proper time. We substitute $J \approx -0.3331$ and $t = 60$:
+Evaluating the spatial curvature suppression over a slow-roll inflation duration of $t_f - t_i = 60$ units of proper time, we substitute $J \approx -0.3331$ and $t = 60$:
 $$ \Omega_k(60) = \Omega_{k,0} e^{-0.3331 \times 60} = \Omega_{k,0} e^{-19.986} \approx \Omega_{k,0} e^{-20} $$
 We compute the numerical decay factor:
 $$ e^{-20} \approx 2.06 \times 10^{-9} $$
@@ -2800,10 +2839,14 @@ Q.E.D.
 
 ### 18.5.5 Calculation: Jacobian Eigenvalue Verification {#18.5.5}
 
-:::note[**Numerical Calculation of the Jacobian Eigenvalue at the Equilibrium Fixed Point**]
+:::note[**Numerical Jacobian Eigenvalue Verification**]
 :::
 
-Verification of the Jacobian eigenvalue under **Demonstration of Flatness Attractor** <Ref id="18.5.4" label="§18.5.4" /> proceeds according to the following Python audit:
+Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.4" label="§18.5.4" /> is based on the following protocols:
+
+1.  **System Linearization:** The algorithm linearizes the net flux equations of cycle dynamics around the flat equilibrium state.
+2.  **Jacobian Construction:** The protocol constructs the stability Jacobian matrix from the linearized flux coefficients.
+3.  **Eigenvalue Evaluation:** The metric calculates the eigenvalues of the Jacobian to verify that the real parts are strictly negative.
 
 ```python
 #!/usr/bin/env python
@@ -2925,7 +2968,7 @@ Let $G_0$ represent the pre-geometric trivalent tree vacuum substrate with total
 :::tip[**Structure of the Horizon Homogeneity Argument via Small-World Scaling, Propagator Spectrum, and Homogeneity Synthesis**]
 :::
 
-The proof of the **Horizon Homogeneity via Pre-Geometric Connectivity Theorem** <Ref id="18.5.7" label="§18.5.7" /> is established by integrating two topological lemmas:
+The **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.7" label="§18.5.7" /> is established by integrating the small-world tree scaling lemma and the relational causal propagator spectrum lemma:
 
 ```text
 • 18.5.7 Theorem Horizon Homogeneity via Pre-Geometric Connectivity
@@ -3093,10 +3136,14 @@ Q.E.D.
 
 ### 18.5.11 Calculation: Propagator Covariance Decay {#18.5.11}
 
-:::note[**Numerical Calculation of the Propagator Covariance Decay over Topological Steps**]
+:::note[**Numerical Propagator Covariance Decay**]
 :::
 
-Verification of the covariance decay under **Demonstration of Horizon Homogeneity** <Ref id="18.5.10" label="§18.5.10" /> proceeds according to the following Python audit:
+Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.10" label="§18.5.10" /> is based on the following protocols:
+
+1.  **Propagator Generation:** The algorithm generates the discrete relational propagator on the small-world Bethe fragment.
+2.  **Covariance Tracking:** The protocol monitors the covariance of the propagator field over topological distances.
+3.  **Decay Audit:** The metric measures the decay rate of the covariance to verify rapid information diffusion across the horizon.
 
 ```python
 #!/usr/bin/env python
@@ -3104,7 +3151,7 @@ Verification of the covariance decay under **Demonstration of Horizon Homogeneit
 # Title:     QBD Horizon Homogeneity and Propagator Decay Audit
 # Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.11
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -3232,7 +3279,9 @@ Total Vertices N: 46
 Max Geodesic Distance (Diameter): 8
 Logarithmic Bound 2 * log2(N): 11.0471
 Diameter Bounding Verification: SUCCESS (Diameter &lt;= Bound)
---------------------------------------------------------------------------------
+
+---
+
 |   Distance d |   Shell Count |   Mean Propagator G_uv |   Analytical (1/4)^d |   Calibration Ratio |
 |--------------|---------------|------------------------|----------------------|---------------------|
 |            1 |             3 |                0.09375 |              0.25    |              0.375  |
@@ -3277,6 +3326,8 @@ We have secured the thermodynamic stability and homogeneity of the emergent 4D s
 
 ---
 
+---
+
 ## 18.6 Formal Synthesis {#18.6}
 
 :::note[**End of Chapter 18**]
@@ -3294,28 +3345,26 @@ This synthesis resolves the classic fine-tuning paradoxes of early cosmology thr
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $G_0$ | Pre-geometric trivalent tree vacuum substrate | [§18.1.1](/monograph/output/inflation/18.1#18.1.1) |
-| $\rho_3$ | Density of directed 3-cycles | [§18.1.1](/monograph/output/inflation/18.1#18.1.1) |
-| $d_S$ | Spectral dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1#18.1.1) |
-| $d_H$ | Hausdorff dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1#18.1.1) |
-| $\Lambda$ | Vacuum permittivity constant | [§18.1.2](/monograph/output/inflation/18.1#18.1.2) |
-| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability | [§18.1.3](/monograph/output/inflation/18.1#18.1.3) |
-| $N_{\text{active-precursors}}$ | Active directed 2-path precursors | [§18.1.4](/monograph/output/inflation/18.1#18.1.4) |
-| $J_{\text{in}}$ | Spontaneous loop nucleation current | [§18.1.5](/monograph/output/inflation/18.1#18.1.5) |
-| $d(u,v)$ | Reconstructed physical distance between vertices | [§18.2.3](/monograph/output/inflation/18.2#18.2.3) |
-| $L(t)$ | Macroscopic geodesic separation | [§18.2.4](/monograph/output/inflation/18.2#18.2.4) |
-| $H(t)$ | Emergent macroscopic Hubble parameter | [§18.2.5](/monograph/output/inflation/18.2#18.2.5) |
-| $a(t)$ | Emergent macroscopic scale factor | [§18.2.5](/monograph/output/inflation/18.2#18.2.5) |
-| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.8](/monograph/output/inflation/18.3#18.3.8) |
-| $\Delta$ | Discrete graph Laplacian | [§18.3.9](/monograph/output/inflation/18.3#18.3.9) |
-| $\varepsilon, \eta$ | Dimensionless slow-roll parameters | [§18.4.2](/monograph/output/inflation/18.4#18.4.2) |
-| $P_{\mathcal{R}}(k)$ | Primordial power spectrum of curvature perturbations | [§18.4.1](/monograph/output/inflation/18.4#18.4.1) |
-| $n_s$ | Primordial spectral index | [§18.4.1](/monograph/output/inflation/18.4#18.4.1) |
-| $\Omega_k(t)$ | Macroscopic spatial curvature parameter | [§18.5.1](/monograph/output/inflation/18.5#18.5.1) |
-| $J$ | Jacobian eigenvalue at stable fixed point | [§18.5.1](/monograph/output/inflation/18.5#18.5.1) |
-| $G_{uv}(s)$ | Relational causal propagator resolvent | [§18.5.9](/monograph/output/inflation/18.5#18.5.9) |
-
------
+| $G_0$ | Pre-geometric trivalent tree vacuum substrate | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $\rho_3$ | Density of directed 3-cycles | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $d_S$ | Spectral dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $d_H$ | Hausdorff dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $\Lambda$ | Vacuum permittivity constant | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
+| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
+| $N_{\text{active-precursors}}$ | Active directed 2-path precursors | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
+| $J_{\text{in}}$ | Spontaneous loop nucleation current | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
+| $d(u,v)$ | Reconstructed physical distance between vertices | [§18.2.3](/monograph/output/inflation/18.2/#18.2.3) |
+| $L(t)$ | Macroscopic geodesic separation | [§18.2.4](/monograph/output/inflation/18.2/#18.2.4) |
+| $H(t)$ | Emergent macroscopic Hubble parameter | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
+| $a(t)$ | Emergent macroscopic scale factor | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
+| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.8](/monograph/output/inflation/18.3/#18.3.8) |
+| $\Delta$ | Discrete graph Laplacian | [§18.3.9](/monograph/output/inflation/18.3/#18.3.9) |
+| $\varepsilon, \eta$ | Dimensionless slow-roll parameters | [§18.4.2](/monograph/output/inflation/18.4/#18.4.2) |
+| $P_{\mathcal{R}}(k)$ | Primordial power spectrum of curvature perturbations | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $n_s$ | Primordial spectral index | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $\Omega_k(t)$ | Macroscopic spatial curvature parameter | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
+| $J$ | Jacobian eigenvalue at stable fixed point | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
+| $G_{uv}(s)$ | Relational causal propagator resolvent | [§18.5.9](/monograph/output/inflation/18.5/#18.5.9) |
 
 ---
 
@@ -3327,12 +3376,20 @@ Spacetime is not an empty stage; the rapid, autocatalytic growth of the inflatio
 
 ### 19.1.1 Definition: Reheating Temperature {#19.1.1}
 
-:::info[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
+:::tip[**Characterization of Reheating Temperature as Critical Attractor Density Scale**]
 :::
 
-*   **Attractor Boundary:** The reheating temperature $T_{RH}$ is defined as the intensive energy density scale where the graph density reaches the unique stable attractor $\rho^* \approx 0.037$ (§5.2.2).
+*   **Attractor Boundary:** The **Reheating Temperature** $T_{RH}$ is defined as the intensive energy density scale where the graph density reaches the unique stable attractor $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />).
 *   **Latent Heat Conversion:** As the autocatalytic cycle creation rate ($9\rho^2$) is braked by steric friction ($e^{-6\mu\rho}$), the kinetic energy of expansion is converted (reheated) into localized, non-contractible topological defects.
 *   **Thermalization:** This phase transition represents the "melting" of high-energy pre-geometric bonds, seeding the emergent 4D manifold with a thermal bath of the simplest braid defects (quarks, leptons).
+
+
+### 19.1.1.1 Commentary: Reheating Temperature {#19.1.1.1}
+
+:::info[**Role of Reheating Temperature in the Early Universe**]
+:::
+
+The **Reheating Temperature** characterizes the thermal state of the early universe at the onset of radiation domination. By defining this scale in terms of the stable intensive density attractor, the framework maps the end of inflation to a structural phase transition where excess pre-geometric connectivity is converted directly into a hot plasma of topological defects, establishing the initial thermodynamic conditions for big bang nucleosynthesis.
 
 ---
 
@@ -3341,9 +3398,9 @@ Spacetime is not an empty stage; the rapid, autocatalytic growth of the inflatio
 :::info[**Nucleation of Right-Handed Neutrino Braids from High-Energy Gravitational defect production**]
 :::
 
-*   **The Simplest Defect:** The heavy right-handed Majorana neutrino ($N_R$, topology defined in §9.6) is the most statistically favored defect to nucleate at the end of the Big Kindling. It consists of the simplest, color-neutral, charge-neutral 3-ribbon braid.
+*   **The Simplest Defect:** The heavy right-handed Majorana neutrino ($N_R$, topology defined in **Neutrino Mass** <Ref id="9.6" label="§9.6" />) is the most statistically favored defect to nucleate at the end of the Big Kindling. It consists of the simplest, color-neutral, charge-neutral 3-ribbon braid.
 *   **GUT-Scale Production:** As the graph's dimensionality crystallizes from $d=1$ to $d=4$, the thermal bath is dominated by $N_R$ states with mass $M_R \sim 10^{16}$ GeV.
-*   **Initial Condensate:** Gravity (manifested as the metric curvature changes of the expanding graph, §12.2) acts as the primary driver, producing an abundant primordial condensate of unstable heavy neutrinos.
+*   **Initial Condensate:** Gravity (manifested as the metric curvature changes of the expanding graph, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />) acts as the primary driver, producing an abundant primordial condensate of unstable heavy neutrinos.
 
 ---
 
@@ -3368,7 +3425,7 @@ Why is there a universe made of matter rather than a symmetric, sterile sea of r
 :::info[**Compliance with Sakharov Conditions through Chiral Braid Decay under Causal Timestamp Monotonicity**]
 :::
 
-*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph (§9.2.1) support leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$ (§9.3.1).
+*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />) support leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$ (**Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />).
 *   **CP Violation:** Topological rewrite rules are chiral: Parity (P) inverts crossings, while Charge Conjugation (C) inverts writhe. Because the underlying causal graph is timestamp-monotone ($t_L$), the loop interference phase $\delta$ differs for particles and antiparticles, causing decay rates to split: $\Gamma(N_R \to L H) \neq \Gamma(\bar{N}_R \to \bar{L} \bar{H})$.
 *   **Out-of-Equilibrium Departure:** The rapid expansion of the scale factor at the end of inflation ensures that the Hubble rate $H$ exceeds the decay rate ($H > \Gamma_{decay}$), freezing out the heavy neutrino states and preventing inverse washout reactions from restoring symmetry.
 
@@ -3403,7 +3460,7 @@ Why is there a universe made of matter rather than a symmetric, sterile sea of r
 :::info[**Redistribution of Lepton Excess into Baryon Numbers via Emergent SU(2) Sphaleron Tunneling**]
 :::
 
-*   **Emergent SU(2) Topology:** In the high-temperature plasma, the emergent $SU(2)$ electroweak sector (§8.5) supports non-trivial vacuum configurations (Sphalerons).
+*   **Emergent SU(2) Topology:** In the high-temperature plasma, the emergent $SU(2)$ electroweak sector (**Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />) supports non-trivial vacuum configurations (Sphalerons).
 *   **Symmetry Conversion:** Sphaleron transitions correspond to topological updates that violate $B$ and $L$ conservation while strictly preserving the $B-L$ invariant. 
 *   **Redistribution Flow:** This electroweak tunneling converts the lepton asymmetry generated by heavy neutrino decay into a stable baryon excess, seeding the universe with quarks.
 
@@ -3428,16 +3485,24 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
 
 ### 19.3.1 Definition: Topological Mass Splitting {#19.3.1}
 
-:::info[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
+:::tip[**Derivation of Hadronic Mass Splitting from Torsional Writhe Energy and Isospin Geometric Sharing**]
 :::
 
-*   **Topological Mass Functional:** The rest mass of a composite particle is proportional to its graph complexity:
+*   **Topological Mass Splitting:** The rest mass of a composite particle is governed by the **Topological Mass Splitting** functional, which is proportional to its graph complexity:
     $$ m \propto C_{total} = C[\beta] + k \cdot w^2 $$
     where $C[\beta]$ is the crossing complexity and $w^2$ is the torsional self-energy derived from writhe invariants.
 *   **Writhe Invariants:**
-    *   $w_u = +2$ (parallel twists, §7.3.5).
-    *   $w_d = -1$ (single twist, §7.3.5).
+    *   $w_u = +2$ (parallel twists, **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
+    *   $w_d = -1$ (single twist, **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
 *   **Geometric Isospin Sharing:** When two quark strands possess parallel writhes in a composite knot, they share structural edges in the graph (constructive interference), reducing their combined complexity cost. Antiparallel or orthogonal twists cannot share edges, maintaining their full independent self-energy.
+
+
+### 19.3.1.1 Commentary: Topological Mass Splitting {#19.3.1.1}
+
+:::info[**Physical Origin of Hadronic Mass Differences**]
+:::
+
+The **Topological Mass Splitting** resolves the origin of the neutron-proton mass difference without appealing to free parameter tuning. By showing that the parallel twists of the up quarks enjoy constructive edge sharing in the graph, the model explains why the proton is lighter than the neutron despite containing heavier valence quarks, linking the stability of hydrogen to the geometric properties of composite knots in the causal graph.
 
 ---
 
@@ -3449,7 +3514,7 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
 *   **Proton Structure ($uud$):** The proton consists of two up quarks and one down quark ($uud$). The parallel $uu$ pair ($+2, +2$) enjoys constructive **Geometric Isospin Sharing**, significantly lowering the proton's effective mass.
 *   **Neutron Structure ($udd$):** The neutron consists of one up quark and two down quarks ($udd$). To maintain color neutrality, the two down quarks ($+2, -1, -1$) must occupy an antiparallel/orthogonal alignment in the composite knot, preventing edge sharing.
 *   **Mass Splitting:** Because the neutron's configuration prevents sharing, it exhibits a slightly larger topological complexity gap than the proton:
-    $$ \Delta m = m_n - m_p \approx 1.3 \text{ MeV} $$
+    $$ \Delta m = m_n - m_p \approx 1.4 \text{ MeV} $$
 
 ---
 
@@ -3462,13 +3527,13 @@ As the hot plasma cools, the fundamental braids (quarks) bind into composite kno
     $$ \Delta C = C_{udd} - C_{uud} $$
 *   **Energy Calibration:** Using the calibrated coupling constant $\kappa$, it translates this complexity gap into energy, yielding:
     $$ \Delta m \approx 1.293 \text{ MeV} $$
-*   **Anthropic Necessity:** It demonstrates that this $1.3$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
+*   **Anthropic Necessity:** It demonstrates that this $1.4$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
 
 ---
 
 ## 19.4 Primordial Nucleosynthesis {#19.4}
 
-The chemical composition of the cosmos—specifically the dominance of Hydrogen and Helium-4—is the primary experimental fingerprint of the early universe. This section derives the primordial Helium abundance $Y_p$ from the coupling constants and mass difference derived in earlier chapters.
+The chemical composition of the cosmos (specifically the dominance of Hydrogen and Helium-4) is the primary experimental fingerprint of the early universe. This section derives the primordial Helium abundance $Y_p$ from the coupling constants and mass difference derived in earlier chapters.
 
 ---
 
@@ -3479,8 +3544,8 @@ The chemical composition of the cosmos—specifically the dominance of Hydrogen 
 
 *   **Rate Balance:** The ratio of neutrons to protons is governed by weak interactions ($n \leftrightarrow p$) until the reaction rate $\Gamma_{weak}$ falls below the expansion rate $H$.
 *   **Emergent Rates:**
-    *   $\Gamma_{weak} \propto G_F^2 T^5$ (derived from electroweak rewrites, §8.5).
-    *   $H \propto T^2 / M_{Pl}$ (derived from emergent gravity, §12.2).
+    *   $\Gamma_{weak} \propto G_F^2 T^5$ (derived from electroweak rewrites, **Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />).
+    *   $H \propto T^2 / M_{Pl}$ (derived from emergent gravity, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />).
 *   **Freeze-Out Scale:** Equating these rates ($\Gamma_{weak} \approx H$) yields the freeze-out temperature:
     $$ T_f \approx 0.8 \text{ MeV} $$
 
@@ -3503,8 +3568,8 @@ The chemical composition of the cosmos—specifically the dominance of Hydrogen 
 :::info[**Prediction of Helium-4 Mass Fraction from Derived Topological Mass Splitting and Weak Rates**]
 :::
 
-*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.3$ MeV:
-    $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.3/0.8} \approx 0.20 $$
+*   **Neutron Ratio:** At freeze-out, the equilibrium ratio of neutrons to protons is determined by the derived mass difference $\Delta m \approx 1.4$ MeV:
+    $$ \frac{n_n}{n_p} = e^{-\Delta m / T_f} \approx e^{-1.4/0.8} \approx 0.20 $$
 *   **Beta Decay Phase:** Prior to the onset of nucleosynthesis (the "Deuterium Bottleneck"), free neutrons undergo standard beta decay for approximately 300 seconds, reducing the ratio to:
     $$ \frac{n_n}{n_p} \approx \frac{1}{7} $$
 *   **Helium Fraction:** Assuming all available neutrons are captured into stable $^4\text{He}$ nuclei, the primordial Helium mass fraction $Y_p$ is:
@@ -3525,7 +3590,7 @@ The chemical composition of the cosmos—specifically the dominance of Hydrogen 
 
 ## 20.1 Primordial Plasma {#20.1}
 
-Spacetime has crystallized, and matter has synthesized, leaving the early universe filled with a hot, dense, and opaque plasma of interacting photons and braids. This section maps the "Last Scattering Surface"—the moment of recombination when the plasma cooled, became transparent, and released the Cosmic Microwave Background (CMB) as a perfect fossilized snapshot of the graph's primordial complexity.
+Spacetime has crystallized, and matter has synthesized, leaving the early universe filled with a hot, dense, and opaque plasma of interacting photons and braids. This section maps the "Last Scattering Surface", the moment of recombination when the plasma cooled, became transparent, and released the Cosmic Microwave Background (CMB) as a perfect fossilized snapshot of the graph's primordial complexity.
 
 ---
 
@@ -3534,7 +3599,7 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
 :::info[**Ergodicity of Primordial Plasma under Highly Frequent Graph Updates**]
 :::
 
-*   ** Primordial Scattering:** Before recombination ($t < 380,000$ years), the universe is a dense plasma of photon motifs and charged braids (electrons, quarks).
+*   **Primordial Scattering:** Before recombination ($t < 380,000$ years), the universe is a dense plasma of photon motifs and charged braids (electrons, quarks).
 *   **Ergodioc Mixing:** The rewrite rule $\mathcal{R}$ mediates highly frequent interactions (scattering, absorption, and emission). In this high-density regime, the frequency of updates ensures that the photon state space is fully explored.
 *   **Thermalization:** This ergodicity drives the system to the unique state of maximum entropy, which is mathematically described by the Planck Blackbody Distribution:
     $$ u(\nu, T) = \frac{8\pi h \nu^3}{c^3} \frac{1}{e^{h\nu / k_B T} - 1} $$
@@ -3542,29 +3607,19 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
 
 ---
 
-### 20.1.2 Proof: Blackbody Equilibrium {#20.1.2}
-
-:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
-:::
-
-*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate.
-*   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
-
----
-
-### 20.1.3 Lemma: Sachs-Wolfe Time Dilation {#20.1.3}
+### 20.1.2 Lemma: Sachs-Wolfe Time Dilation {#20.1.2}
 
 :::info[**Derivation of Temperature Anisotropies from Gravitational Redshift in Low-Lapse Complexity Wells**]
 :::
 
 *   **Complexity overdensities:** Primeval quantum noise during inflation leaves the graph with localized overdensities of 3-cycles ($\delta\rho_3 > 0$).
-*   **Gravitational Potential Wells:** By the discrete Einstein field equations (§12.2), these overdensities correspond to deep gravitational potential wells ($\Phi_c \propto \delta\rho_3$).
+*   **Gravitational Potential Wells:** By the discrete Einstein equations (**Discrete Field Equations** <Ref id="13.2" label="§13.2" />), these overdensities correspond to deep gravitational potential wells ($\Phi_c \propto \delta\rho_3$).
 *   **Lapse Time Dilation:** In these potential wells, proper time flows slower relative to global logical time ($t_L$), meaning the Lapse function $N(x)$ is strictly less than unity ($N < 1$).
 *   **Redshift Mapping:** A photon escaping this complexity well must climb out, losing logical frequency. The observer at infinity measures its frequency scaled by the Lapse: $\omega_{obs} = \omega_L \cdot N < \omega_L$. Overdense regions thus manifest as **Cold Spots** ($\delta T < 0$) on the sky.
 
 ---
 
-### 20.1.4 Proof: Sachs-Wolfe Time Dilation {#20.1.4}
+### 20.1.2.1 Proof: Sachs-Wolfe Time Dilation {#20.1.2.1}
 
 :::tip[**Verification of Sachs-Wolfe Temperature Anisotropies through Complexity Potential Field Maps**]
 :::
@@ -3574,6 +3629,21 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
     $$ \frac{\delta T}{T} \approx \frac{1}{3}\Phi_c $$
     verifying that the $10^{-5}$ temperature anisotropies measured in the CMB are direct maps of the graph's primordial complexity potentials.
 
+---
+
+### 20.1.3 Proof: Blackbody Equilibrium {#20.1.3}
+
+:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
+:::
+
+*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate.
+*   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
+
+---
+
+﻿---
+title: "Chapter 20: Structured Universe (Cosmic Web)"
+sidebar_label: "20.2 - Acoustic Oscillations"
 ---
 
 ## 20.2 Acoustic Oscillations {#20.2}
@@ -3598,7 +3668,7 @@ The spots in the CMB are not random; they form a highly structured, rhythmic pat
 :::warning[**Anchoring of Gravitational Potential Wells by Electromagnetically Inert Sterile Braid Structures**]
 :::
 
-*   **Dark Matter Relics:** The dark sector consists of "sterile braids" (§21.1)—braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs.
+*   **Dark Matter** <Ref id="21.1" label="§21.1" />: The dark sector consists of "sterile braids," which are braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs.
 *   **Shadow Scaffolding:** Because they lack charge topology, these sterile braids do not interact with photons and remain unaffected by radiation pressure. 
 *   **Oscillation Anchors:** While the baryonic plasma oscillates violently, the sterile braids remain stationary, forming a stable gravitational potential scaffolding that guides and amplifies the baryonic sound waves.
 
@@ -3637,23 +3707,13 @@ How did these subtle acoustic waves crystallize into the vast network of galaxie
 :::info[**Amplification of Primordial Anisotropy into Filamentary Sheets and Nodes via Ellipsoidal Gravitational Collapse**]
 :::
 
-*   **Primordial Anisotropy:** Because the graph's pre-geometric vacuum exhibits an exponential decay of correlations (§5.5.5), long-range correlations are absent, meaning primordial overdensities are generically non-spherical (ellipsoidal) with three unequal axes ($a < b < c$).
+*   **Primordial Anisotropy:** Because the graph's pre-geometric vacuum exhibits an exponential decay of correlations, as described in (**Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />), long-range correlations are absent, meaning primordial overdensities are generically non-spherical (ellipsoidal) with three unequal axes ($a < b < c$).
 *   **Zel'dovich Collapse:** Gravitational instability is inherently anisotropic: the gravitational force is strongest along the shortest axis ($a$), causing the cloud to collapse and flatten along that dimension first.
 *   **Filamentary Tapestry:** Collapse along the shortest axis forms a 2D sheet (wall); collapse along the second axis squeezes the sheet into a 1D filament; collapse along the final axis forms a dense 3D node (cluster). This hierarchical, anisotropic collapse weaves the Cosmic Web.
 
 ---
 
-### 20.3.2 Proof: Anisotropic Collapse {#20.3.2}
-
-:::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
-:::
-
-*   **Deformation Tensor Evaluation:** The proof calculates the eigenvalues of the gravitational deformation tensor in the emergent Riemannian manifold.
-*   **Hierarchical Singularity:** It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
-
----
-
-### 20.3.3 Lemma: Void Relaxation {#20.3.3}
+### 20.3.2 Lemma: Void Relaxation {#20.3.2}
 
 :::info[**Depletion of Voids through Local Thermodynamic Relaxation to Baseline Vacuum Attractor**]
 :::
@@ -3665,13 +3725,23 @@ How did these subtle acoustic waves crystallize into the vast network of galaxie
 
 ---
 
-### 20.3.4 Proof: Void Relaxation {#20.3.4}
+### 20.3.2.1 Proof: Void Relaxation {#20.3.2.1}
 
 :::tip[**Verification of Void Sparsity through Direct Measurement of Equilibrium Density Bounds**]
 :::
 
 *   **Master Equation Relaxation:** The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes.
 *   **Stable Convergence:** It shows that the local cycle density converges stably to $\rho^* \approx 0.037$ with a negative Jacobian, proving that voids represent the pure, unperturbed baseline vacuum state of the cosmos.
+
+---
+
+### 20.3.3 Proof: Anisotropic Collapse {#20.3.3}
+
+:::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
+:::
+
+*   **Deformation Tensor Evaluation:** The proof calculates the eigenvalues of the gravitational deformation tensor in the emergent Riemannian manifold.
+*   **Hierarchical Singularity:** It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
 
 ---
 
@@ -3683,12 +3753,20 @@ Spacetime is not an empty stage; the rapid phase transitions of the primordial e
 
 ### 21.1.1 Definition: Quadripartite Braid Defect {#21.1.1}
 
-:::info[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
+:::tip[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
 :::
 
-*   **Defect Identity:** During the phase transition where graph dimensionality crystallizes from a chaotic state to a stable $d=4$ manifold (§18.3.3), certain high-density graph segments fail to unravel into the standard 3-strand braid configurations ($B_3$). These represent localized 4-strand braid defects ($B_4$).
-*   **Topological Mass Functional:** By the Topological Mass Theorem (§7.4), mass is complexity. These four-strand defects are highly complex 3-cycle knots that possess substantial rest mass complexity ($m \propto C[\beta] + k \cdot w^2$).
+*   **Quadripartite Braid Defect:** A **Quadripartite Braid Defect** constitutes a localized 4-strand braid defect ($B_4$) that arises during the phase transition where graph dimensionality crystallizes from a chaotic state to a stable $d=4$ manifold (**Self-Similar Bipartite Expansion** <Ref id="18.3.3" label="§18.3.3" />), when certain high-density graph segments fail to unravel into the standard 3-strand braid configurations ($B_3$).
+*   **Topological Mass Functional** <Ref id="7.4" label="§7.4" />: Mass is complexity. These four-strand defects are highly complex 3-cycle knots that possess substantial rest mass complexity ($m \propto C[\beta] + k \cdot w^2$).
 *   **Absolute Stability:** There are no graph-local rewrite rules that can reduce or map a $B_4$ braid defect into the standard 3-strand Standard Model braids ($B_3$) without physically breaking graph strands (requiring energy scales far exceeding the Planck scale). They are thus topologically protected and absolutely stable.
+
+
+### 21.1.1.1 Commentary: Quadripartite Braid Defect {#21.1.1.1}
+
+:::info[**Cosmological Significance of Four-Strand Relics**]
+:::
+
+The **Quadripartite Braid Defect** provides a topological explanation for dark matter. In standard cosmology, dark matter is postulated as an ad-hoc particle species. In this framework, it is a geometric relic of the dimensional phase transition, where stable four-strand defects remain as the "ash" of space-time crystallization. Because they cannot couple to standard gauge forces, they are sterile and collisionless, while interacting normally with the gravitational field.
 
 ---
 
@@ -3699,7 +3777,7 @@ Spacetime is not an empty stage; the rapid phase transitions of the primordial e
 
 *   **Gauge Isolation:** Standard Model gauge forces ($SU(3) \times SU(2) \times U(1)$) are represented as local ribbon twists and charge-bearing braids on the 3-strand ($B_3$) manifold geometry (Chapter 8, Chapter 9).
 *   **Topological Sterility:** Because $B_4$ braids have a different topological structure, they cannot accept the standard $U(1)$ charge twists or $SU(3)$ color ribbon invariants. Consequently, their coupling constants to the electromagnetic, weak, and strong gauge fields are strictly zero.
-*   **Gravitational Coupling:** Although sterile to gauge forces, these defects participate in the global cycle count ($N_3$) that defines the metric field. Therefore, they couple normally to gravity through standard stress-energy tensor equivalents ($T_{ab}$, §12.2).
+*   **Gravitational Coupling:** Although sterile to gauge forces, these defects participate in the global cycle count ($N_3$) that defines the metric field. Therefore, they couple normally to gravity through standard stress-energy tensor equivalents ($T_{ab}$, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />).
 
 ---
 
@@ -3747,7 +3825,7 @@ Spacetime is not a static vacuum; it is a dynamic equilibrium of self-creation a
 *   **Spacetime Volume Operator:** In Quantum Braid Dynamics, spacetime volume is directly proportional to the total count of active 3-cycles ($Vol \propto N_3$).
 *   **Dynamic Vacuum:** The vacuum is not static but is maintained in a dynamic equilibrium governed by the Master Equation:
     $$ \frac{d\rho_3}{dt} = 9\rho_3^2 e^{-6\mu\rho} - \frac{1}{2}\rho_3 $$
-    At the stable attractor density $\rho^* \approx 0.037$ (§5.2.2), the net change is zero ($d\rho_3/dt = 0$), but the individual creation and deletion fluxes remain active.
+    At the stable attractor density $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />), the net change is zero ($d\rho_3/dt = 0$), but the individual creation and deletion fluxes remain active.
 *   **Creation Pressure:** The continuous generation of new 3-cycles by the creation term ($9\rho_3^2 e^{-6\mu\rho}$) acts as an isotropic, expansive pressure, driving the metric expansion of the manifold.
 
 ---
@@ -3858,7 +3936,7 @@ A central mystery of standard cosmology is the timing of cosmic acceleration: wh
 :::
 
 *   **Coincidence Problem:** Standard cosmology struggles to explain why the matter density $\Omega_m$ and vacuum energy density $\Omega_\Lambda$ are of comparable orders of magnitude today, given that they dilute at different rates during cosmic expansion.
-*   **Attractor Saturation:** In QBD, the evolution of the graph towards the stable attractor $\rho^* \approx 0.037$ (§5.2.2) follows a logistic growth curve.
+*   **Attractor Saturation:** In QBD, the evolution of the graph towards the stable attractor $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />) follows a logistic growth curve.
 *   **Crossover Epoch:** The comparable magnitudes of $\Omega_m$ and $\Omega_{DE}$ is not a coincidence, but a natural, extended epoch corresponding to the transition era where the logistic growth curve approaches saturation at the stable fixed point $\rho^*$, matching the observed crossover.
 
 ---
@@ -3875,18 +3953,26 @@ A central mystery of standard cosmology is the timing of cosmic acceleration: wh
 
 ## 22.1 Black Hole Interior {#22.1}
 
-In classical General Relativity, gravitational collapse inevitably leads to a singularity—a point of infinite density where the laws of physics break down. Quantum Braid Dynamics resolves this breakdown not by introducing arbitrary quantum corrections, but through the fundamental hardware limits of the discrete graph: steric friction and unique causality saturation.
+In classical General Relativity, gravitational collapse inevitably leads to a singularity: a point of infinite density where the laws of physics break down. Quantum Braid Dynamics resolves this breakdown not by introducing arbitrary quantum corrections, but through the fundamental hardware limits of the discrete graph: steric friction and unique causality saturation.
 
 ---
 
 ### 22.1.1 Definition: Saturated State {#22.1.1}
 
-:::info[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
+:::tip[**Characterization of Saturated Core States as Finite Density Computational Crystals**]
 :::
 
-*   **Maximum Density Constraint:** At the center of gravitational collapse, the local 3-cycle density $\rho_3$ does not diverge to infinity. Instead, it is bounded by a maximum critical density $\rho_{crit} \approx 1/(6\mu)$ defined by the steric friction limits of the Master Equation (§5.2).
+*   **Saturated State:** A **Saturated State** constitutes the maximum density configuration at the center of gravitational collapse, where the local 3-cycle density $\rho_3$ does not diverge to infinity, but is bounded by a maximum critical density $\rho_{crit} \approx 1/(6\mu)$ defined by the steric friction limits of the (**Master Equation** <Ref id="5.2" label="§5.2" />).
 *   **Saturated Core:** The resulting state is a highly complex, stable subgraph of maximal cycle packing, representing a "saturated core" or a dense computational crystal.
 *   **State Halting:** Because all available nodes and edges are fully saturated, no local rewrite operations are topologically permitted within the core bulk, causing local structural evolution to cease.
+
+
+### 22.1.1.1 Commentary: Saturated State {#22.1.1.1}
+
+:::info[**Physical Resolution of Singularities**]
+:::
+
+The **Saturated State** resolves the singularity problem of classical general relativity. Instead of a point of infinite density, the core of a black hole is a dense computational crystal where local structural evolution halts due to the maximum density constraint. This physical halting is the ultimate realization of space-time quantization, showing that the universe has a hardware-level limit that prevents infinite collapse.
 
 ---
 
@@ -3896,7 +3982,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::
 
 *   **Steric Friction Suppression:** The Master Equation's creation term contains an exponential damping factor $e^{-6\mu\rho}$. As density $\rho \to \rho_{crit}$, the creation rate of new cycles is exponentially suppressed to zero, mathematically preventing the density from diverging.
-*   **Unique Causality Obstruction:** The Principle of Unique Causality (PUC, §2.2) mandates that every valid graph rewrite must have a unique precursor 2-path. At critical saturation density, the high connectivity of nodes creates multiple overlapping paths, resulting in "topological jamming" where no PUC-compliant rewrites are possible.
+*   **Unique Causality Obstruction:** The Principle of Unique Causality (PUC, **Antisymmetry** <Ref id="2.2" label="§2.2" />) mandates that every valid graph rewrite must have a unique precursor 2-path. At critical saturation density, the high connectivity of nodes creates multiple overlapping paths, resulting in "topological jamming" where no PUC-compliant rewrites are possible.
 *   **Halting Probability:** The probability of rewrite acceptance drops to zero ($P_{acc}(\mathcal{R}) \to 0$), freezing the graph's topology and preventing collapse below the Planck length.
 
 ---
@@ -3906,7 +3992,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::tip[**Verification of Singularity Avoidance by Derivation of Vanishing Lapse Functions at Critical Density**]
 :::
 
-*   **Lapse Dilation:** The proper time interval $\Delta \tau$ is related to logical graph ticks $\Delta t$ via the emergent Lapse function $N(x)$, where $N(x) \propto 1/\rho_3$ (§14.1).
+*   **Lapse Dilation:** The proper time interval $\Delta \tau$ is related to logical graph ticks $\Delta t$ via the emergent Lapse function $N(x)$, where $N(x) \propto 1/\rho_3$ (**Time Recovery** <Ref id="14.1" label="§14.1" />).
 *   **Proper Time Stoppage:** The proof demonstrates that as density approaches the critical saturation threshold ($\rho_3 \to \rho_{crit}$), the Lapse function vanishes:
     $$ N(x) \to 0  $$
 *   **External Invariance:** From the perspective of an external observer at infinity, proper time inside the core stops completely, meaning the singularity is resolved as a static coordinate frozen state, while the global system remains strictly unitary.
@@ -3918,7 +4004,7 @@ In classical General Relativity, gravitational collapse inevitably leads to a si
 :::info[**Establishment of Finite Curvature Bound from Planck-Scale Node Spacing Constraints**]
 :::
 
-*   **Discrete Curvature Bounds:** In QBD, curvature is defined through discrete Ollivier-Ricci equivalents on the graph (§11.2), measuring the transport distance between neighboring cycles.
+*   **Discrete Curvature Bounds:** In QBD, curvature is defined through discrete Ollivier-Ricci equivalents on the graph (**Causal Geometry Construction** <Ref id="11.2" label="§11.2" />), measuring the transport distance between neighboring cycles.
 *   **Planck Spacing Limit:** Because graph edges represent discrete pre-geometric connections of finite length $\ell_0$, the distance between adjacent nodes has a hard lower bound of the Planck length.
 *   **Bounded Curvature:** Since node spacing cannot be compressed below the Planck scale, the Ollivier-Ricci curvature tensor $R(x, y)$ remains strictly bounded, proving that physical curvature never diverges.
 
@@ -3942,12 +4028,20 @@ Classical General Relativity characterizes the event horizon as a geometric surf
 
 ### 22.2.1 Definition: Desynchronization Boundary {#22.2.1}
 
-:::info[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
+:::tip[**Characterization of Event Horizons as Phase Boundaries of Infinite Error-Correction Latency**]
 :::
 
-*   **Lapse Dilation Divergence:** Near the horizon, the Lapse function $N(x)$ falls toward zero relative to the external asymptotic flat space (§14.1).
+*   **Desynchronization Boundary:** The **Desynchronization Boundary** (conventionally identified as the event horizon) constitutes the surface where the Lapse function $N(x)$ falls toward zero relative to the external asymptotic flat space (**Time Recovery** <Ref id="14.1" label="§14.1" />).
 *   **QECC Latency:** The Quantum Error Correction Code (QECC) stabilizing the manifold requires a finite number of logical ticks $\Delta t_{corr}$ to complete a full correction cycle.
 *   **Desynchronization Surface:** The physical time required for an error correction cycle diverges as $\Delta \tau = N(x) \Delta t_{corr} \to \infty$. This defines the Event Horizon not as a physical membrane, but as a computational phase boundary of infinite error-correction latency where the interior causally desynchronizes from the exterior.
+
+
+### 22.2.1.1 Commentary: Desynchronization Boundary {#22.2.1.1}
+
+:::info[**Information Theoretic Nature of Horizons**]
+:::
+
+The **Desynchronization Boundary** reinterprets the black hole event horizon as a computational phase boundary rather than a spatial manifold boundary. By linking the horizon to the infinite latency of quantum error correction, the framework explains why information cannot escape: the physical time needed to execute error-correcting codes diverges, freezing the interior's causal relations. Unitarity is preserved because boundary-spanning swaps allow information to leak out at a rate governed by the area of the boundary.
 
 ---
 
@@ -3980,12 +4074,20 @@ Standard condensed matter physics explains superconductivity through the pairing
 
 ### 22.3.1 Definition: Macroscopic Braid Condensate {#22.3.1}
 
-:::info[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
+:::tip[**Characterization of Superconducting States as Macroscopic Topological Braid Condensates**]
 :::
 
-*   **Phonon-Mediated Fusion:** In a superconductor, lattice vibrations (phonons) act as local rewrite operators that couple individual fermion braids ($\beta_e$) together, forming composite, Bosonic 6-ribbon braids ($\beta_{CP}$).
+*   **Macroscopic Braid Condensate:** A **Macroscopic Braid Condensate** constitutes the coherent state formed when lattice vibrations (phonons) act as local rewrite operators that couple individual fermion braids ($\beta_e$) together, forming composite, Bosonic 6-ribbon braids ($\beta_{CP}$).
 *   **Braid Condensation:** These composite braids condense into a single, highly ordered, macroscopic topological braid state $|\Psi_{SC}\rangle$ spanning the entire material bulk.
 *   **Coherence Length:** The coherence length of this macroscopic braid scales with the physical dimensions of the superconductor, representing a unified pre-geometric quantum state at human scales.
+
+
+### 22.3.1.1 Commentary: Macroscopic Braid Condensate {#22.3.1.1}
+
+:::info[**Topological Basis of Superconductivity**]
+:::
+
+The **Macroscopic Braid Condensate** describes superconductivity as a macroscopic manifestation of the universe's fault-tolerant stabilizer code. By pairing fermion braids into bosonic six-ribbon braids, the system forms a single topological structure spanning the material. The enormous code distance of this condensate prevents low-weight thermal fluctuations from disrupting the current, providing a structural explanation for zero resistance that is independent of phenomenological potentials.
 
 ---
 
@@ -3996,7 +4098,7 @@ Standard condensed matter physics explains superconductivity through the pairing
 
 *   **Resistance as Rewrite Errors:** In a classical conductor, resistance is caused by random electron-lattice scattering events. In QBD, these events are modeled as weight-1 "rewrite errors" (random graph edge flips) that disrupt the electron braids.
 *   **Macroscopic Code Distance:** The macroscopic braid condensate $|\Psi_{SC}\rangle$ possesses an extremely large code distance $d$ proportional to the total number of lattice atoms ($d \propto N_{atoms}$).
-*   **Frictionless Conduction:** Since the thermal errors have low weight ($w \ll d$), the comonad stabilization framework of the universe's stabilizer code (the **Awareness Comonad**, §4.3) automatically detects and corrects these fluctuations before they can decohere the state, allowing current to flow with strictly zero resistance.
+*   **Frictionless Conduction:** Since the thermal errors have low weight ($w \ll d$), the comonad stabilization framework of the universe's stabilizer code (the **Awareness Comonad**, **Awareness Layer** <Ref id="4.3" label="§4.3" />) automatically detects and corrects these fluctuations before they can decohere the state, allowing current to flow with strictly zero resistance.
 
 ---
 

@@ -19,7 +19,7 @@ These constraints act as the legislative bedrock of our model, clamping down on 
 * Synthesize exclusions for unique constraints regarding arrows, quanta uniqueness, and strict partial order.
 :::
 
------
+---
 
 ## 2.1 Causal Primitive {#2.1}
 
@@ -31,12 +31,12 @@ We resolve this foundational crisis by defining the causal primitive through the
 
 ---
 
-### 2.1.1 Axiom 1: The Directed Causal Link {#2.1.1}
+### 2.1.1 Definition: Axiom 1 Directed Causal Link {#2.1.1}
 
 :::tip[**Establishment of the Directed Causal Link as the Fundamental Relational Unit by Irreflexivity and Asymmetry**]
 :::
 
-It is herein established that the fundamental unit of relation within the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
+It is herein established that the fundamental unit of relation within the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> shall be the **Directed Causal Link**, denoted as the ordered pair $(u, v)$, acting upon the set of Abstract Events $V$. The validity of the edge set $E \subset V \times V$ is strictly conditioned upon the absolute satisfaction of the following two invariant properties for all elements within the domain:
 
 1.  **Strict Irreflexivity:** The relation shall not, under any circumstance, connect a vertex to itself. For every vertex $u$ contained within the set $V$, the edge $(u, u)$ is categorically excluded from the set $E$. This prohibition enforces the requirement that no event may serve as its own causal antecedent.
 2.  **Strict Asymmetry:** The relation shall not permit immediate reciprocity. For every distinct pair of vertices $u$ and $v$ contained within $V$, the existence of the direct edge $(u, v)$ within $E$ necessitates the absolute absence of the inverse edge $(v, u)$ from $E$. This prohibition enforces the local directionality of causal influence.
@@ -69,7 +69,7 @@ This shifts the ontology from a lattice of "being" to a network of "becoming," w
 
 The imposition of strict directionality drives the system relentlessly forward, ensuring that every update advances the causal order without the possibility of reversal. This microscopic irreversibility is the root of all macroscopic thermodynamics, establishing that the universe is not a reversible machine but a generative process that consumes logical potential to produce history. By locking the arrow of time into the definition of the edge itself, we render the concept of a "rewind" physically meaningless, as the topological structure that defines the present exists only as a consequence of the directed momentum of the past.
 
------
+---
 
 ---
 
@@ -88,7 +88,7 @@ We expose this theoretical vulnerability to justify the imposition of a stricter
 :::info[**Non-Equivalence between Antisymmetry and Irreflexivity through the Permissibility of Self-Loops**]
 :::
 
-We formally establish that the mathematical condition of **Antisymmetry**, conventionally defined by the proposition $\forall u, v \in V : ((u, v) \in E \land (v, u) \in E) \implies u = v$, is formally insufficient to satisfy the requirements of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The condition of Antisymmetry is satisfied vacuously by the reflexive relation $(u, u)$, whereas the Causal Primitive mandates Strict Irreflexivity. Consequently, a causal structure governed solely by the condition of Antisymmetry physically permits the existence of Directed Cycles of length $k=1$, which are prohibited otherwise.
+Let the condition of **Antisymmetry** be defined conventionally by the proposition $\forall u, v \in V : ((u, v) \in E \land (v, u) \in E) \implies u = v$. This condition is formally insufficient to satisfy the requirements of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />, as it is satisfied vacuously by the reflexive relation $(u, u)$ whereas the Causal Primitive mandates Strict Irreflexivity. Consequently, a causal structure governed solely by Antisymmetry physically permits Directed Cycles of length $k=1$, which are prohibited otherwise.
 
 ### 2.2.1.1 Commentary: Argument Outline {#2.2.1.1}
 
@@ -152,7 +152,7 @@ The proof proceeds via Direct Construction, identifying a topological loop-defec
 :::info[**Classification of Reflexive Edges as Directed Cycles of Length One**]
 :::
 
-Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structure constitutes a directed cycle of length $k=1$ **cycle definitions** <Ref id="1.5.3" label="§1.5.3" />, a configuration excluded by **Fundamental Graph Structures** <Ref id="1.5.1" label="§1.5.1" />.
+Let a self-loop incident to a vertex $u$ be denoted by $e = (u, u)$, which constitutes a directed cycle of length $k=1$ representing a **Cycle** <Ref id="1.2.6" label="§1.2.6" />. Consequently, this configuration is excluded under **Directed Acyclic Graph (DAG)** <Ref id="1.2.1" label="§1.2.1" />.
 
 ### 2.2.2.1 Proof: Pathology of Self-Loops {#2.2.2.1}
 
@@ -161,14 +161,14 @@ Let $e = (u, u)$ denote a self-loop incident to a vertex $u$. Then this structur
 
 **I. The Generalized Cycle Definition**
 
-Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying **conditions two** <Ref id="1.5.3" label="§1.5.3" />:
+Let a directed cycle of length $k$ be defined as a sequence of vertices $C_k = (v_0, v_1, \dots, v_k)$ satisfying **Cycle** <Ref id="1.2.6" label="§1.2.6" />:
 
 1.  **Connectivity:** $\forall i \in \{0, \dots, k-1\}, (v_i, v_{i+1}) \in E$
 2.  **Closure:** $v_0 = v_k$
 
 **II. Sequence Mapping**
 
-Let $e_{loop} = (u, u) \in E$ denote a self-loop incident to vertex $u$. We construct a sequence $S$ from this structure:
+Let $e_{loop} = (u, u) \in E$ denote a self-loop incident to vertex $u$. A sequence $S$ is defined from this structure:
 
 $$
 S = (v_0, v_1)
@@ -186,7 +186,7 @@ The sequence $S$ satisfies the topological criteria for a cycle:
 
 **IV. Conclusion**
 
-The self-loop $e_{loop}$ satisfies the definition of a directed cycle $C_1$. We conclude that the existence of such an edge violates the acyclicity condition required for a valid **history causal valid<Ref id="1.5.1" label="§1.5.1" />.
+The self-loop $e_{loop}$ satisfies the definition of a directed cycle $C_1$. We conclude that the existence of such an edge violates the acyclicity condition required for a valid history, as defined in **Directed Acyclic Graph (DAG)** <Ref id="1.2.1" label="§1.2.1" />.
 
 Q.E.D.
 
@@ -238,6 +238,7 @@ Let $\Omega(G)$ denote the cardinality of the set of simple paths connecting dis
 
 :::tip[**Formal Derivation of Invariance in the Path Ensemble**]
 :::
+
 **I. Definition of the Configuration Space**
 
 Let $\Omega(G)$ denote the cardinality of the set of simple directed paths between distinct vertices $u, v$. A simple path is defined strictly as a sequence of vertices containing no repetitions.
@@ -375,7 +376,7 @@ In the domains of abstract algebra and order theory, partial orders are typicall
 
 The Lean counter-model formally exposes the specific logical loophole inherent in the standard definition of antisymmetry. The condition states that if $u \to v$ and $v \to u$, then $u$ must equal $v$. This functions as a filter against mutual influence only when the interacting entities differ ($u \neq v$). However, the implication $u = v$ acts as a permission structure. It tacitly asserts that if mutual influence occurs, the actors must be identical. In a causal graph, this permission sanctions a process wherein the input serves simultaneously as the output at the identical instant: a state of existence that requires no antecedent other than itself. The proof instantiates the reflexive equality relation ($\text{Eq}$) over the Boolean domain, then derives a contradiction when irreflexivity is assumed, demonstrating that antisymmetry vacuously permits self-loops.
 
-This permission generates a universe populated by inert echoes. A vertex possessing a self-loop satisfies the mathematical constraints of antisymmetry, yet it fails the physical requirement of propagation. It consumes logical time without generating state evolution. To construct a universe capable of genuine evolution, the theory must strictly close this loophole. The requirement is not merely that mutual influence implies identity, but that mutual influence is impossible and that identity does not imply a causal connection. Irreflexivity is thus an independent axiom, not derivable from antisymmetry — a fact the type-checker certifies unconditionally. The algebraic relationship between irreflexivity, antisymmetry, and the stronger notion of asymmetry is established formally at **§2.7.7**, after Axiom 3 has been introduced.
+This permission generates a universe populated by inert echoes. A vertex possessing a self-loop satisfies the mathematical constraints of antisymmetry, yet it fails the physical requirement of propagation. It consumes logical time without generating state evolution. To construct a universe capable of genuine evolution, the theory must strictly close this loophole. The requirement is not merely that mutual influence implies identity, but that mutual influence is impossible and that identity does not imply a causal connection. Irreflexivity is thus an independent axiom, not derivable from antisymmetry, a fact the type-checker certifies unconditionally. The algebraic relationship between irreflexivity, antisymmetry, and the stronger notion of asymmetry is established formally at **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.7.7" label="§2.7.7" />, after Axiom 3 has been introduced.
 
 ---
 
@@ -390,7 +391,7 @@ This realization forces the adoption of strict irreflexivity, redefining physica
 
 By closing the loophole of self-reference, we guarantee that the causal graph remains thermodynamically active, preventing the formation of informational sinks that would stall the evolution of the cosmos. This mandate ensures that every quantum of logical time must purchase a quantum of relational change, enforcing a strict efficiency on the computational substrate. There can be no idle cycles in the engine of reality; the universe is forbidden from stuttering in place, ensuring that existence is synonymous with continuous, relational transformation.
 
------
+---
 
 ---
 
@@ -404,17 +405,33 @@ We solve this by imposing the axiom of geometric constructibility to mandate tha
 
 ---
 
-### 2.3.1 Axiom 2: Geometric Constructibility {#2.3.1}
+### 2.3.1 Definition: Axiom 2 Geometric Constructibility {#2.3.1}
 
-:::info[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
+:::tip[**Restriction of Topological Evolution to Geometric Quanta and Unique Paths by Positive and Negative Constraints**]
 :::
 
-The kinematic admissibility of any transformation $G \to G'$ involving the addition of an edge is restricted by the following two complementary clauses:
+The kinematic admissibility of any transformation $G \to G'$ involving the addition of an edge is restricted by the following two complementary clauses of **Geometric Constructibility**:
 
-1.  **Clause A (Positive Construction):** The formation of closed topological structures is restricted exclusively to **Geometric Quanta**, defined as **Directed 3-Cycles** <Ref id="1.5.3" label="§1.5.3" />. The closure of a causal loop is permissible if and only if the resulting path sequence has a length of exactly $L=3$.
+1.  **Clause A (Positive Construction):** The formation of closed topological structures is restricted exclusively to **Geometric Quanta**, defined as **3-Cycle** <Ref id="1.2.8" label="§1.2.8" />. The closure of a causal loop is permissible if and only if the resulting path sequence has a length of exactly $L=3$.
 2.  **Clause B (Negative Constraint):** The construction must adhere to the **Principle of Unique Causality (PUC)**. The instantiation of a return edge $(u, v)$ is prohibited if there already exists an alternative Simple Directed Path from $v$ to $u$ of length $\ell \le 2$ within the graph $G$.
 
-### 2.3.1.1 Commentary: Argument Outline {#2.3.1.1}
+### 2.3.1.1 Commentary: Physics of Constructibility {#2.3.1.1}
+
+:::info[**Physical Intuition Behind Positive Construction and Path Uniqueness Constraints**]
+:::
+
+Geometric Constructibility operates as a local filter on topological changes. By restricting loop closures to length-3 cycles (Clause A), the model prevents arbitrary high-dimensional shortcuts, forcing the emergence of a 2D simplicial manifold. Simultaneously, the Principle of Unique Causality (Clause B) enforces informational parsimony, ensuring that local regions do not collapse into trivial, over-connected cliques. Together, these constraints stabilize the vacuum and define emergent spatial locality.
+
+---
+
+### 2.3.2 Theorem: Geometric Constructibility {#2.3.2}
+
+:::info[**Convergence of Constructible Graph States to Acyclic Unions of Geometric Quanta**]
+:::
+
+For any graph state $G$ undergoing a sequence of edge addition and deletion tasks, the resulting configuration $G'$ converges to a stable, acyclic union of geometric quanta. This convergence is bounded and well-founded under the lexicographic potential.
+
+### 2.3.2.1 Commentary: Argument Outline {#2.3.2.1}
 
 :::tip[**Structure of the Geometric Constructibility Argument via Quantum Definition, Sparsity Constraints, and Potential Metrics**]
 :::
@@ -422,35 +439,37 @@ The kinematic admissibility of any transformation $G \to G'$ involving the addit
 The proof proceeds via Direct Construction, separating the generative capacity of the graph from its restrictive bounds to establish a well-founded metric topology.
 
 ```text
-• 2.3.1 Axiom 2 Geometric Constructibility
-├── 2.3.2 Lemma Geometric Quantum
-│   ├── 2.3.2.1 Proof Geometric Quantum
-│   ├── 2.3.2.2 Commentary Necessity of Three
-│   └── 2.3.2.3 Diagram Loop Hierarchy
+• 2.3.2 Theorem: Geometric Constructibility
+├── 2.3.3 Lemma: Geometric Quantum
+│   ├── 2.3.3.1 Proof: Geometric Quantum
+│   ├── 2.3.3.2 Commentary: Necessity of Three
+│   └── 2.3.3.3 Diagram: Loop Hierarchy
 │
-├── 2.3.3 Principle Unique Causality (PUC)
-│   ├── 2.3.3.1 Commentary Pseudocode for PUC Check
-│   ├── 2.3.3.2 Proof Redundancy Exclusion
-│   ├── 2.3.3.3 Commentary No-Cloning of History
-│   └── 2.3.3.4 Diagram Principle of Unique Causality
+├── 2.3.4 Lemma: Principle of Unique Causality (PUC)
+│   ├── 2.3.4.1 Commentary: Pseudocode for PUC Check
+│   ├── 2.3.4.2 Proof: Principle of Unique Causality (PUC)
+│   ├── 2.3.4.3 Commentary: No-Cloning of History
+│   └── 2.3.4.4 Diagram: Principle of Unique Causality
 │
-├── 2.3.4 Definition Lexicographic Potential
-│   └── 2.3.4.1 Commentary Descent to Simplicity
+├── 2.3.5 Definition: Lexicographic Potential
+│   └── 2.3.5.1 Commentary: Descent to Simplicity
 │
-└── 2.3.5 Lemma Well-Foundedness
-    └── 2.3.5.1 Proof Well-Foundedness
+├── 2.3.6 Lemma: Well-Foundedness
+│   └── 2.3.6.1 Proof: Well-Foundedness
+│
+└── 2.3.7 Proof: Geometric Constructibility
 ```
 
 ---
 
-### 2.3.2 Lemma: Geometric Quantum {#2.3.2}
+### 2.3.3 Lemma: Geometric Quantum {#2.3.3}
 
 :::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]
 :::
 
 Let the Geometric Quantum $\gamma$ denote the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\{(u, v), (v, w), (w, u)\}$. Then this structure constitutes the minimal closed cycle compatible with the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />, excluding cycles of length 1 and 2, and the set of all $\gamma \subset G$ constitutes the basis for emergent spatial area.
 
-### 2.3.2.1 Proof: Geometric Quantum {#2.3.2.1}
+### 2.3.3.1 Proof: Geometric Quantum {#2.3.3.1}
 
 :::tip[**Derivation of the Minimal Stable Cycle Length via Elimination of Forbidden Lower Orders**]
 :::
@@ -461,13 +480,13 @@ Let $L$ denote the length of a directed cycle $C_L$, analyzed for $L \in \mathbb
 
 **II. Elimination of Lower Orders**
 
-The case $L=1$ implies an edge $e = (u, u)$. This configuration is excluded by the **irreflexivity axiom** <Ref id="2.1.1" label="§2.1.1" />:
+The case $L=1$ implies an edge $e = (u, u)$. This configuration is excluded by the irreflexivity property of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />:
 
 $$
 (u, u) \notin E \implies L \neq 1
 $$
 
-The case $L=2$ implies edges $e_1 = (u, v)$ and $e_2 = (v, u)$ with $u \neq v$. This configuration is excluded by the **irreflexivity axiom** <Ref id="2.1.1" label="§2.1.1" />:
+The case $L=2$ implies edges $e_1 = (u, v)$ and $e_2 = (v, u)$ with $u \neq v$. This configuration is excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />:
 
 $$
 (u, v) \in E \implies (v, u) \notin E \implies L \neq 2
@@ -490,16 +509,16 @@ $$
 
 Q.E.D.
 
-### 2.3.2.2 Commentary: Necessity of Three {#2.3.2.2}
+### 2.3.3.2 Commentary: Necessity of Three {#2.3.3.2}
 
 :::info[**Identification of the 3-Cycle as the First Stable Closure permitting Feedback without Simultaneity**]
 :::
 
 The integer $3$ represents the fundamental topological limit for causal closure. It constitutes the first structure capable of closing a causal loop without violating the logical constraints of time and causality. This mirrors the findings of <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations (CDT), where spacetime is constructed from simplicial building blocks (triangles in 2D, tetrahedra in 3D) that respect a strict causal foliation. In both QBD and CDT, the triangle is not just a shape but the atom of geometry, the minimal unit required to define an "interior" and thus generate manifold-like properties from discrete data.
 
-Structures of length $1$ and $2$ imply logical contradictions within a directed causal framework. As established, the self-loop (length $1$) implies self-creation: a violation of the causal demand for antecedence. The feedback loop (length $2$) implies simultaneity: if $A$ causes $B$ and $B$ causes $A$, the temporal interval between them vanishes, collapsing them into a single event. The $3$-cycle, however, permits feedback (a return to the origin) while preserving local directionality. In the sequence $A \to B \to C \to A$, event $A$ precedes $B$, $B$ precedes $C$, and $C$ precedes $A$. Locally, every link maintains a strict forward orientation in logical time. The paradox of the loop is distributed across three events, creating a structure possessing an "interior" or area rather than a singularity. The triangle functions as the unique topological solution to the problem of creating a closed structure (a persistent object) from directed arrows of influence. Importantly, this spatial directed 3-cycle ($A \to B \to C \to A$) is a structural motif within the Spatial State Graph $G_t$ representing spatial adjacency and area. Because the timeline of global physical updates is governed by a strict Causal Poset of Events (<Ref id="1.3.4" label="§1.3.4" />), the spatial loop does not constitute a chronological loop of events, allowing spatial triangles to form while the history remains a strict Directed Acyclic Graph (DAG) under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+Structures of length $1$ and $2$ imply logical contradictions within a directed causal framework. As established, the self-loop (length $1$) implies self-creation: a violation of the causal demand for antecedence. The feedback loop (length $2$) implies simultaneity: if $A$ causes $B$ and $B$ causes $A$, the temporal interval between them vanishes, collapsing them into a single event. The $3$-cycle, however, permits feedback (a return to the origin) while preserving local directionality. In the sequence $A \to B \to C \to A$, event $A$ precedes $B$, $B$ precedes $C$, and $C$ precedes $A$. Locally, every link maintains a strict forward orientation in logical time. The paradox of the loop is distributed across three events, creating a structure possessing an "interior" or area rather than a singularity. The triangle functions as the unique topological solution to the problem of creating a closed structure (a persistent object) from directed arrows of influence. Importantly, this spatial directed 3-cycle ($A \to B \to C \to A$) is a structural motif within the Spatial State Graph $G_t$ representing spatial adjacency and area. Because the timeline of global physical updates is governed by a strict Causal Poset of Events, the spatial loop does not constitute a chronological loop of events (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />). Consequently, spatial triangles form while the history remains a strict Directed Acyclic Graph (DAG) under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
-### 2.3.2.3 Diagram: Loop Hierarchy {#2.3.2.3}
+### 2.3.3.3 Diagram: Loop Hierarchy {#2.3.3.3}
 
 :::note[**Hierarchy of Causal Closures illustrating the Transition from Forbidden to Permitted Structures**]
 :::
@@ -525,14 +544,14 @@ Structures of length $1$ and $2$ imply logical contradictions within a directed 
 
 ---
 
-### 2.3.3 Principle: Unique Causality (PUC) {#2.3.3}
+### 2.3.4 Lemma: Principle of Unique Causality (PUC) {#2.3.4}
 
 :::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
 :::
 
-Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Vacuum Repertoire** <Ref id="1.4.2" label="§1.4.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
+Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
-### 2.3.3.1 Commentary: Pseudocode for PUC Check {#2.3.3.1}
+### 2.3.4.1 Commentary: Pseudocode for PUC Check {#2.3.4.1}
 
 :::note[**Operational Implementation of the Uniqueness Constraint via Local Algorithmic Query**]
 :::
@@ -559,7 +578,7 @@ def is_permissible(G, v, w, u):
     return True
 ```
 
-### 2.3.3.2 Proof: Redundancy Exclusion {#2.3.3.2}
+### 2.3.4.2 Proof: Principle of Unique Causality (PUC) {#2.3.4.2}
 
 :::tip[**Formal Derivation of Path Uniqueness from the Principle of Informational Parsimony**]
 :::
@@ -601,7 +620,7 @@ The existence of the mediated path $P_1$ physically precludes the formation of t
 
 Q.E.D.
 
-### 2.3.3.3 Commentary: No-Cloning of History {#2.3.3.3}
+### 2.3.4.3 Commentary: No-Cloning of History {#2.3.4.3}
 
 :::info[**Preservation of Informational Integrity established by the Topological Analog of No-Cloning**]
 :::
@@ -609,9 +628,9 @@ Q.E.D.
 The Principle of Unique Causality (PUC) constitutes the topological analog of the Quantum No-Cloning Theorem. In a causal graph, a path from $u$ to $v$ represents a specific transmission of causal information; a lineage. The existence of a mediated path $u \to w \to v$ implies that the influence of $u$ reaches $v$ via the history of $w$. The addition of a second, direct path (an edge $u \to v$) creates a clone of this causal relationship. It introduces a fundamental ambiguity regarding the provenance of information at $v$; did the signal arrive via the mediated history or the direct injection?
 
 **The Limits of Locality:**
-It is critical to note that PUC enforces uniqueness only for *local* paths ($\ell \le 2$). It does not prevent the formation of larger cycles or global paradoxes, such as the "Bowtie Paradox" (two disjoint paths forming a mutual influence loop at a distance). While PUC prevents the *local* cloning of edges (ensuring that the local metric does not collapse into a trivial connectivity), it cannot police the global topology. The resolution of global causal consistency requires the stronger, transitive constraint of **Axiom $3$** (Acyclic Effective Causality). The PUC ensures the graph remains sparse and intelligible at the micro-scale, preventing the "short-circuiting" of causal history.
+It is critical to note that PUC enforces uniqueness only for *local* paths ($\ell \le 2$). It does not prevent the formation of larger cycles or global paradoxes, such as the "Bowtie Paradox" (two disjoint paths forming a mutual influence loop at a distance). While PUC prevents the *local* cloning of edges (ensuring that the local metric does not collapse into a trivial connectivity), it cannot police the global topology. The resolution of global causal consistency requires the stronger, transitive constraint of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The PUC ensures the graph remains sparse and intelligible at the micro-scale, preventing the "short-circuiting" of causal history.
 
-### 2.3.3.4 Diagram: Principle of Unique Causality {#2.3.3.4}
+### 2.3.4.4 Diagram: Principle of Unique Causality {#2.3.4.4}
 
 :::note[**Visualization of the No-Cloning Rule via Rejection of Redundant Direct Paths**]
 :::
@@ -652,14 +671,33 @@ It is critical to note that PUC enforces uniqueness only for *local* paths ($\el
 
 ---
 
-### 2.3.4 Definition: Lexicographic Potential {#2.3.4}
+### 2.3.5 Lemma: Lexicographic Potential {#2.3.5}
 
-:::tip[**Quantification of Topological Complexity via Cycle Ordering**]
+:::info[**Quantification of Topological Complexity via Cycle Ordering**]
 :::
 
-The **Lexicographic Potential** $\Phi(G)$ is defined as the ordered pair $(L_{\max}, N_{L_{\max}})$, where $L_{\max}$ denotes the length of the longest Simple Directed Cycle in $G$, and $N_{L_{\max}}$ denotes the cardinality of the set of cycles with length $L_{\max}$. The state space is ordered such that $\Phi(G') < \Phi(G)$ holds if $L'_{\max} < L_{\max}$ or if both $L'_{\max} = L_{\max}$ and $N'_{L_{\max}} < N_{L_{\max}}$.
+Let the **Lexicographic Potential** $\Phi(G)$ be the ordered pair $(L_{\max}, N_{L_{\max}})$ mapping a finite graph $G$ to the state space $\mathcal{P} = \mathbb{N} \times \mathbb{N}$ ordered lexicographically. The relation $<$ on $\mathcal{P}$ constitutes a strict order satisfying irreflexivity, asymmetry, and transitivity.
 
-### 2.3.4.1 Commentary: Descent to Simplicity {#2.3.4.1}
+### 2.3.5.1 Proof: Lexicographic Potential {#2.3.5.1}
+
+:::tip[**Verification of the Strict Ordering Properties of the Lexicographic Product**]
+:::
+
+**I. Irreflexivity**
+
+Let $\Phi(G) = (a, b) \in \mathcal{P}$. The relation $(a, b) < (a, b)$ is false because the standard order $<$ on $\mathbb{N}$ is strictly irreflexive, meaning $a \nless a$ and $b \nless b$.
+
+**II. Asymmetry**
+
+Let $(a, b) < (c, d)$. If $a < c$, then $c < a$ is false, hence $(c, d) \nless (a, b)$. If $a = c$ and $b < d$, then $d < b$ is false, hence $(c, d) \nless (a, b)$. Asymmetry holds.
+
+**III. Transitivity**
+
+Let $(a, b) < (c, d)$ and $(c, d) < (e, f)$. If $a < c$ and $c < e$, transitivity of $\mathbb{N}$ yields $a < e$, hence $(a, b) < (e, f)$. If $a = c$ and $c < e$, then $a < e$. Similarly, if $a < c$ and $c = e$, then $a < e$. Finally, if $a = c$ and $c = e$, then $b < d$ and $d < f$ which yields $b < f$ by transitivity of $\mathbb{N}$, establishing $(a, b) < (e, f)$.
+
+Q.E.D.
+
+### 2.3.5.2 Commentary: Descent to Simplicity {#2.3.5.2}
 
 :::info[**Directionality of Topological Evolution driven by the Thermodynamics of Geometric Ground States**]
 :::
@@ -670,14 +708,14 @@ The Lexicographic Potential provides a measure of the distance between a given g
 
 ---
 
-### 2.3.5 Lemma: Well-Foundedness {#2.3.5}
+### 2.3.6 Lemma: Well-Foundedness {#2.3.6}
 
 :::info[**Termination of Strictly Decreasing Topological Processes**]
 :::
 
-Let $\Phi(G)$ denote the Lexicographic Potential of a finite graph $G$ under **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />. Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
+Let $\Phi(G)$ denote the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> of a finite graph $G$. Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
 
-### 2.3.5.1 Proof: Well-Foundedness {#2.3.5.1}
+### 2.3.6.1 Proof: Well-Foundedness {#2.3.6.1}
 
 :::tip[**Verification of the Descent Property due to the Finiteness of Graph Configurations**]
 :::
@@ -713,6 +751,27 @@ Q.E.D.
 
 ---
 
+### 2.3.7 Proof: Geometric Constructibility {#2.3.7}
+
+:::tip[**Synthesis of Local Uniqueness, Quantum Minimality, and Well-Foundedness showing Geometric Convergence**]
+:::
+
+**I. Spatial Quantization**
+
+The local construction of cycles is restricted to the minimal stable topological closure, as established by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. Any larger macro-cycle is unstable under the constructor's rewrite rules.
+
+**II. Initial Configuration and Rewrite Admissibility**
+
+Let a sequence of rewrite tasks operate on a causal graph $G_0$. The admissibility of each addition task is constrained by the local check, satisfying the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
+
+**III. Convergence and Well-Foundedness**
+
+The sequence of configurations corresponds to a monotonic descent of the potential function, defined under **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />. By the **Well-Foundedness** <Ref id="2.3.6" label="§2.3.6" /> of this potential, this descent contains no infinite chains and must terminate. Upon termination, the target graph converges to a union of geometric quanta.
+
+Q.E.D.
+
+---
+
 ### 2.3.Z Implications and Synthesis {#2.3.Z}
 
 :::note[**Axiom 2: Geometric Constructibility**]
@@ -724,7 +783,7 @@ This establishes a discrete granularity to spacetime, replacing the smooth conti
 
 By mandating that geometry be built from indivisible triangular quanta, we ensure that the vacuum possesses a stable, intrinsic dimensionality that resists collapse into singularity. This quantization prevents the ultraviolet catastrophes associated with continuous fields by imposing a hard limit on the information density of any local region. The universe is not a bottomless well of detail but a finite assembly of distinct geometric acts, establishing a rigid floor to physics where the infinite divisibility of space ceases to be a valid concept.
 
------
+---
 
 ---
 
@@ -743,7 +802,7 @@ We identify a decomposition process that acts as a topological restorative force
 :::info[**Finite Decomposition of General Cycles via the Alternating Application of Chordal Addition and Entropic Deletion**]
 :::
 
-We formally prove that for any graph state $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the Lexicographic Potential $\Phi(G)$ under **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />.
+For all graph states $G$ containing a Simple Directed Cycle of length $L_{\max} \ge 4$, there exists a finite, computable sequence of admissible operations, specifically Chordal Addition followed by Entropic Deletion, that transforms $G$ into a state $G'$ where all cycles have length $L \le 3$. This decomposition sequence guarantees the strict monotonic reduction of the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />, denoted $\Phi(G)$.
 
 ### 2.4.1.1 Commentary: Argument Outline {#2.4.1.1}
 
@@ -827,9 +886,9 @@ The proof proceeds by Direct Construction, defining a finite sequence of constru
 :::info[**Local Confluence of Overlapping Rewrite Operations**]
 :::
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant 2-Paths $P_1$ and $P_2$, satisfying **2-Path** <Ref id="1.5.2" label="§1.5.2" />. Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
 
-### 2.4.2.1 Proof: Diamond Property {#2.4.2.1}
+### 2.4.2.1 Proof: Confluence of the Constructor {#2.4.2.1}
 
 :::tip[**Formal Verification of Commutativity in Overlapping Updates**]
 :::
@@ -846,6 +905,7 @@ The transition $G \xrightarrow{P_1} G_A$ yields the edge set $E_A = E \cup \{ (u
 **Check $P_2$ Validity in $G_A$:**
 The required edges $(w, u)$ and $(u, x)$ persist in $E_A$. The Uniqueness Constraint requires the absence of a path $w \to \dots \to x$ of length $\le 2$ utilizing the new edge $(u, v)$. Since $(u, v)$ originates at $u$ and terminates at $v$, a contribution to the target path necessitates a connection $v \to x$. The case $v=x$ implies that $P_2$ forms a cycle, a configuration excluded by compliance. It follows that no such path exists, and $P_2$ remains valid.
 The subsequent operation $\mathcal{R}(P_2)$ yields:
+
 $$
 E_{AB} = E \cup \{ (u, v), (x, w) \}
 $$
@@ -856,6 +916,7 @@ The transition $G \xrightarrow{P_2} G_B$ yields the edge set $E_B = E \cup \{ (x
 **Check $P_1$ Validity in $G_B$:**
 Symmetric analysis establishes that the addition of $(x, w)$ does not invalidate $P_1$.
 The operation $\mathcal{R}(P_1)$ yields:
+
 $$
 E_{BA} = E \cup \{ (x, w), (u, v) \}
 $$
@@ -863,9 +924,11 @@ $$
 **IV. Convergence**
 
 Comparison of the final edge sets reveals identity due to the commutativity of set union:
+
 $$
 E_{AB} = E \cup \{ e_1, e_2 \} = E \cup \{ e_2, e_1 \} = E_{BA}
 $$
+
 We conclude that the order of operations does not affect the final state.
 
 Q.E.D.
@@ -905,10 +968,13 @@ $$
 The chord $e$ partitions the cycle $C$ into two sub-cycles:
 
 1.  **Cycle $C_1$:** Composed of the path along $C$ from $v_k$ to $v_i$ and the chord $(v_i, v_k)$.
+
     $$
     L_1 = \text{dist}_C(v_k, v_i) + 1
     $$
+
 2.  **Cycle $C_2$:** Composed of the path along $C$ from $v_i$ to $v_k$ and the chord $(v_i, v_k)$.
+
     $$
     L_2 = \text{dist}_C(v_i, v_k) + 1
     $$
@@ -933,7 +999,7 @@ $$
 
 **V. Contradiction**
 
-The presence of the chord identifies $C$ as a composite structure formed by the union of $C_1$ and $C_2$. It follows that the elementary cycles contributing to the potential $\Phi(G)$ are $C_1$ and $C_2$. The maximum length in this subgraph evaluates to $\max(L_1, L_2) < L$. This contradicts the premise that a simple cycle of length $L$ exists as a **component fundamental** <Ref id="2.3.4" label="§2.3.4" />. We conclude that a maximal simple cycle must be chordless.
+The presence of the chord identifies $C$ as a composite structure formed by the union of $C_1$ and $C_2$. It follows that the elementary cycles contributing to the potential $\Phi(G)$ are $C_1$ and $C_2$. The maximum length in this subgraph evaluates to $\max(L_1, L_2) < L$. This contradicts the premise that a simple cycle of length $L$ exists under the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />. We conclude that a maximal simple cycle must be chordless.
 
 Q.E.D.
 
@@ -944,7 +1010,7 @@ Q.E.D.
 :::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]
 :::
 
-Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the Lexicographic Potential $\Phi(G)$ defined by **Lexicographic Potential** <Ref id="2.3.4" label="§2.3.4" />. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
+Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />, denoted $\Phi(G)$.. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
 
 ### 2.4.4.1 Proof: Reduction via Deletion {#2.4.4.1}
 
@@ -1004,8 +1070,9 @@ Let $G \to G_{add}$ denote the addition of chords to all compliant 2-paths withi
 
 1.  **Site Availability:** Maximal cycles satisfy **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />, ensuring the existence of valid 2-paths.
 2.  **Structure Decomposition:** The addition of chords partitions maximal cycles into 3-cycles and smaller loops.
-3.  **Cycle Bounding:** The **Principle of Unique Causality (PUC)** <Ref id="2.3.3" label="§2.3.3" /> restricts additions to sites lacking short paths. The creation of a cycle $L_{new} > L_{\max}$ requires a pre-existing path of length $> L_{\max}-1$ connecting vertices at distance 2. This implies a prior path violation.
+3.  **Cycle Bounding:** The **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> restricts additions to sites lacking short paths. The creation of a cycle $L_{new} > L_{\max}$ requires a pre-existing path of length $> L_{\max}-1$ connecting vertices at distance 2. This implies a prior path violation.
 4.  **Result:** The maximum cycle length satisfies the non-increasing condition.
+
     $$
     \Phi(G_{add}) \le \Phi(G)
     $$
@@ -1016,6 +1083,7 @@ Let $G_{add} \to G_{next}$ denote the removal of edges from the original maximal
 
 1.  **Operation:** Edges participating in the original cycle $C$ undergo deletion.
 2.  **Potential Drop:** Edge removal strictly reduces the Lexicographic Potential under **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />.
+
     $$
     \Phi(G_{next}) < \Phi(G_{add})
     $$
@@ -1036,7 +1104,7 @@ Q.E.D.
 
 ### 2.4.6 Proof: General Cycle Decomposition {#2.4.6}
 
-:::tip[**Formal Proof of General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
+:::tip[**General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> via Synthesis of Confluence and Potential Reduction]
 :::
 
 **I. Initial Conditions**
@@ -1045,21 +1113,22 @@ Let the universe exist in state $G_0$ with potential $\Phi(G_0) = (L, N_L)$ sati
 
 **II. Operational Accessibility**
 
-1.  **Site Existence:** Cycles of length $L$ possess **chordless topology** <Ref id="2.4.3" label="§2.4.3" />. This guarantees the presence of compliant 2-paths susceptible to the rewrite rule $\mathcal{R}$.
+1.  **Site Existence:** Cycles of length $L$ must satisfy **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />. This guarantees the presence of compliant 2-paths susceptible to the rewrite rule $\mathcal{R}$.
 2.  **Operational Set:** The set of valid operations is non-empty.
+
     $$
     |\mathcal{O}_{add}| \ge 1
     $$
 
 **III. Consistency and Reduction**
 
-1.  **Confluence:** The parallel application of operations proceeds **without conflict** <Ref id="2.4.2" label="§2.4.2" />, yielding state $G_{add}$.
-2.  **Net Descent:** The subsequent deletion phase produces state $G_1$ satisfying $\Phi(G_1) < \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />.
+1.  **Confluence:** The parallel application of operations proceeds concurrently, as established by the **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />, yielding state $G_{add}$.
+2.  **Net Descent:** The subsequent deletion phase produces state $G_1$ satisfying $\Phi(G_1) < \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />, which utilizes **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" /> to guarantee the potential decrease.
 
 **IV. Iterative Termination**
 
 1.  **Sequence Construction:** The dynamics generate a sequence of potentials $\Phi(G_0) > \Phi(G_1) > \dots$.
-2.  **Well-Foundedness:** The lexicographic order on finite graphs constitutes a proven well-founded invariant with no infinite **descending chains** <Ref id="2.3.4" label="§2.3.4" />.
+2.  **Well-Foundedness:** The lexicographic order on finite graphs constitutes a proven well-founded invariant with no infinite descending chains under the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />.
 3.  **Limit:** The sequence must terminate at a state $G_{min}$.
 
 **V. Final State Topology**
@@ -1095,9 +1164,11 @@ The rewrite rule $\mathcal{R}$ identifies all compliant 2-paths.
     * $\pi_3 = (2, 3, 0) \implies$ Add chord $(0, 2)$
     * $\pi_4 = (3, 0, 1) \implies$ Add chord $(1, 3)$
 2.  **Operational Execution:**
+
     $$
     E_{add} = E_0 \cup \{(2, 0), (3, 1), (0, 2), (1, 3)\}
     $$
+
     **Total Additions:** 4
 
 **III. Phase 2: Entropic Deletion**
@@ -1105,9 +1176,11 @@ The rewrite rule $\mathcal{R}$ identifies all compliant 2-paths.
 1.  **Cycle Detection:** The original cycle $(0, 1, 2, 3)$ persists.
 2.  **Target Selection:** The algorithm selects edge $e = (0, 1)$.
 3.  **Operational Execution:**
+
     $$
     E_{final} = E_{add} \setminus \{(0, 1)\}
     $$
+
     **Total Deletions:** 1
 
 **IV. Final State Analysis**
@@ -1142,9 +1215,11 @@ Let $G_0$ consist of a directed cycle of length $L=5$.
     * $(3, 4, 0) \to (0, 3)$
     * $(4, 0, 1) \to (1, 4)$
 2.  **Operational Execution:**
+
     $$
     E_{add} = E_0 \cup \{(2, 0), (3, 1), (4, 2), (0, 3), (1, 4)\}
     $$
+
     **Total Additions:** 5
 
 **III. Phase 2: Entropic Deletion**
@@ -1189,9 +1264,11 @@ Let $G_0$ consist of a directed cycle of length $L=6$.
 1.  **Site Identification:**
     Six compliant sites: $(0, 1, 2) \to (2, 0)$, $(1, 2, 3) \to (3, 1)$, $(2, 3, 4) \to (4, 2)$, $(3, 4, 5) \to (5, 3)$, $(4, 5, 0) \to (0, 4)$, $(5, 0, 1) \to (1, 5)$.
 2.  **Operational Execution:**
+
     $$
     E_{add} = E_0 \cup \{(2, 0), (3, 1), (4, 2), (5, 3), (0, 4), (1, 5)\}
     $$
+
     **Total Additions:** 6
 
 **III. Phase 2: Entropic Deletion**
@@ -1223,7 +1300,7 @@ Let $G_0$ consist of a directed cycle of length $L=6$.
 :::note[**Simulation Verification of the Cycle Reduction Algorithm via Deterministic Execution**]
 :::
 
-Verification of the finite termination condition established in the preceding proof is based on the following protocols:
+Verification of the finite termination condition established by **General Cycle Decomposition** <Ref id="2.4.6" label="§2.4.6" /> is based on the following protocols:
 
 1.  **Defect Initialization:** The algorithm constructs isolated directed cycles of length $k \in [4, 12]$ to serve as standardized topological defects. This mapping represents the initialization of unstable macroscopic loops within the vacuum.
 2.  **Topological Reduction:** The protocol simulates a maximally parallel update by instantiating chords across open 2-paths and subsequently prunes macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
@@ -1363,7 +1440,7 @@ The tabulated data establishes a linear correlation between the initial cycle le
 :::note[**Lean 4 Encoding of Lexicographic Well-Foundedness via Well-Order Instantiation**]
 :::
 
-Type-theoretic certification of the descent guarantee established in the **Well-Foundedness** <Ref id="2.3.5" label="§2.3.5" /> proof proceeds via the following verification strategy:
+Type-theoretic certification of the descent guarantee established in the **Well-Foundedness** <Ref id="2.3.6" label="§2.3.6" /> proof proceeds via the following verification strategy:
 
 1.  **Encoding:** The definitions `IsGeometricQuantum` and `IsCompliant2Path` encode the directed **3-cycle** and the **Principle of Unique Causality** as dependent propositions over an abstract causal relation, confirming that the type system admits the axiomatic vocabulary without contradiction.
 2.  **Theorem Statements:** The first theorem (`lexicographic_relation_wf`) certifies the well-foundedness of the lexicographic product order on $\mathbb{N} \times \mathbb{N}$ by kernel-delegated instance resolution; the second (`lexicographic_descent_admissible`) certifies that any state transition reducing either the maximum cycle length or its multiplicity constitutes a strictly descending step in this order.
@@ -1414,7 +1491,7 @@ theorem lexicographic_descent_admissible :
 ```
 
 **Verification Summary:**
-The auxiliary definitions `IsGeometricQuantum` and `IsCompliant2Path` confirm that the causal vocabulary of Axiom 2 is well-typed as Lean propositions, requiring no consistency workaround. The first theorem delegates the well-foundedness of $\mathbb{N} \times \mathbb{N}$ under the lexicographic product order to `inferInstance`, which resolves against Lean's standard library `WellFoundedRelation` instance; the kernel's acceptance of this one-liner constitutes the machine certificate that the codomain of $\Phi(G)$ possesses no infinite descending chains. The second theorem covers the two-case disjunction $(L_2 < L_1) \lor (L_2 = L_1 \land N_2 < N_1)$ that defines strict lexicographic descent: `Prod.Lex.left` closes the first case directly from the length inequality, while `subst h_eq` eliminates the equality $L_2 = L_1$ before `Prod.Lex.right` closes the count-reduction case. The Lean kernel's acceptance of both closed proof terms certifies the descent guarantee in the **Well-Foundedness** <Ref id="2.3.5" label="§2.3.5" /> proof: any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ is provably terminating.
+The auxiliary definitions `IsGeometricQuantum` and `IsCompliant2Path` confirm that the causal vocabulary of Axiom 2 is well-typed as Lean propositions, requiring no consistency workaround. The first theorem delegates the well-foundedness of $\mathbb{N} \times \mathbb{N}$ under the lexicographic product order to `inferInstance`, which resolves against Lean's standard library `WellFoundedRelation` instance; the kernel's acceptance of this one-liner constitutes the machine certificate that the codomain of $\Phi(G)$ possesses no infinite descending chains. The second theorem covers the two-case disjunction $(L_2 < L_1) \lor (L_2 = L_1 \land N_2 < N_1)$ that defines strict lexicographic descent: `Prod.Lex.left` closes the first case directly from the length inequality, while `subst h_eq` eliminates the equality $L_2 = L_1$ before `Prod.Lex.right` closes the count-reduction case. The Lean kernel's acceptance of both closed proof terms certifies the descent guarantee in the **Well-Foundedness** <Ref id="2.3.6" label="§2.3.6" /> proof: any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ is provably terminating.
 
 ---
 
@@ -1444,7 +1521,7 @@ This reveals the vacuum as a self-healing medium that actively suppresses non-lo
 
 The inevitability of this decomposition ensures that complex topology is transient, forcing the universe to settle into a stable, triangulated manifold that supports coherent physical laws. It acts as a thermodynamic filter that purges the graph of non-local entanglements, ensuring that the macroscopic structure of space is an emergent property of microscopic order. Complex geometries are not forbidden, but they are dynamically unstable, decaying rapidly into the simplicial foam that constitutes the vacuum, thereby protecting the causal structure from being overwhelmed by long-range paradoxes.
 
------
+---
 
 ---
 
@@ -1463,7 +1540,7 @@ We achieve this by constructing explicit countermodels where one axiom holds fir
 :::info[**Establishment of Logical Orthogonality between Causal and Geometric Primitives via Mutual Non-Entailment**]
 :::
 
-The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> are formally independent constraints. The satisfaction of the conditions of Axiom 1 does not logically entail the satisfaction of Axiom 2, nor does the satisfaction of Axiom 2 entail Axiom 1. The validity of this independence is established by the existence of specific graph models that satisfy one axiom while violating the other.
+Let the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> be established first. Let **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> be established second. These constraints are formally independent, meaning the satisfaction of either does not logically entail the satisfaction of the other, as demonstrated by orthogonal countermodels.
 
 ### 2.5.1.1 Commentary: Argument Outline {#2.5.1.1}
 
@@ -1517,7 +1594,7 @@ The proof proceeds by Direct Construction, establishing logical orthogonality be
 :::info[**Existence of Causal Validity amidst Geometric Non-Constructibility**]
 :::
 
-Let $G_A$ denote a chordless directed cycle of length $4$. Then this structure satisfies the Irreflexivity and Asymmetry of **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />, yet constitutes an irreducible configuration violating **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
+Let $G_A$ denote a chordless directed cycle of length $4$ satisfying **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. This structure constitutes an irreducible configuration violating **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
 
 ### 2.5.2.1 Proof: Independence Case A {#2.5.2.1}
 
@@ -1577,7 +1654,7 @@ Q.E.D.
 :::info[**Existence of Geometric Constructibility amidst Causal Invalidity**]
 :::
 
-Let $G_B$ denote the graph formed by the disjoint union of a simple directed $3$-cycle and an isolated vertex possessing a self-loop. Then this structure satisfies the criteria of **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />, yet constitutes a configuration excluded by the Irreflexivity constraint of **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
+Let $G_B$ denote the disjoint union of a simple directed $3$-cycle and a reflexive vertex, satisfying **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. This configuration is excluded by the irreflexive constraint of **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 ### 2.5.3.1 Proof: Independence Case B {#2.5.3.1}
 
@@ -1589,10 +1666,13 @@ Let $G_B$ denote the graph formed by the disjoint union of a simple directed $3$
 Let $G_B$ comprise the union of two disjoint subgraphs $C_1$ and $C_2$.
 
 1.  **Subgraph $C_1$:** A valid 3-cycle on vertices $\{A, B, C\}$ with edge set:
+
     $$
     E_1 = \{(A, B), (B, C), (C, A)\}
     $$
+
 2.  **Subgraph $C_2$:** An isolated vertex $X$ with edge set:
+
     $$
     E_2 = \{(X, X)\}
     $$
@@ -1601,7 +1681,7 @@ The composite graph is defined as $G_B = C_1 \cup C_2$.
 
 **II. Verification of The Directed Causal Link (Axiom 1)**
 
-The Directed Causal Link imposes a universal prohibition on self-reference. <Ref id="2.1.1" label="§2.1.1" />.
+The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> imposes a universal prohibition on self-reference.
 
 $$
 \forall u \in V, (u, u) \notin E
@@ -1615,7 +1695,7 @@ $$
 
 **III. Verification of Geometric Constructibility (Axiom 2)**
 
-Geometric Constructibility <Ref id="2.3.1" label="§2.3.1" /> identifies the directed $3$-cycle as the basis of spatial assembly. The subgraph $C_1$ constitutes a valid instance of the geometric quantum.
+**Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> identifies the directed $3$-cycle as the basis of spatial assembly. The subgraph $C_1$ constitutes a valid instance of the geometric quantum.
 
 $$
 C_1 \in \Omega_{geo}
@@ -1635,9 +1715,9 @@ Q.E.D.
 
 ---
 
-### 2.5.4 Proof: Mutual Independence {#2.5.4}
+### 2.5.4 Proof: Independence of Axioms 1 and 2 {#2.5.4}
 
-:::tip[**Independence of Axioms 1 and 2 via Orthogonal Counter-Models** <Ref id="2.5.1" label="§2.5.1" />]
+:::tip[Orthogonal Counter-Models demonstrating the **Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />]
 :::
 
 **I. The Independence Hypothesis**
@@ -1658,6 +1738,7 @@ Since neither logical implication holds, it is demonstrated that the axioms oper
 
 **IV. Formal Conclusion**
 The Causal Primitive (Axiom $1$) and Geometric Constructibility (Axiom $2$) are mutually independent constraints. Neither axiom can be derived from the other: both are required to fully specify the physical substrate.
+
 $$
 Ax1 \perp Ax2
 $$
@@ -1677,7 +1758,7 @@ This delineation clarifies the specific role of each axiom: directionality provi
 
 By establishing these axioms as distinct pillars, we secure a robust foundation where the failure of one principle does not collapse the entire theoretical framework, allowing for precise diagnosis of physical pathologies. This modularity implies that the arrow of time and the fabric of space are not the same entity but are coupled mechanical systems. The universe requires both the engine of causality and the chassis of geometry to function, and recognizing their independence allows us to understand how they constrain one another to produce a consistent physical reality.
 
------
+---
 
 ---
 
@@ -1691,19 +1772,84 @@ We address this inadequacy by exposing the specific failure modes of local axiom
 
 ---
 
-### 2.6.1 Definition: Effective Influence {#2.6.1}
+### 2.6.1 Theorem: Inadequacy of Local Axioms {#2.6.1}
 
-:::info[**Definition of the Effective Influence Relation as the Transitive Closure of Strictly Timestamped Paths**]
+:::info[**Demonstration of Global Inconsistency under Local Axioms due to Transitive Reflexivity and Symmetry Failures**]
 :::
 
-The **Effective Influence** relation, denoted as $u \le v$, is defined to hold between vertices $u$ and $v$ if and only if there exists a Simple Directed Path $\pi_{uv} = (v_0, v_1, \dots, v_k)$ satisfying the following three conditions:
-1.  **Connectivity:** The path initiates at $v_0 = u$ and terminates at $v_k = v$.
-2.  **Mediation:** The path length is strictly greater than or equal to 2 ($k \ge 2$), distinguishing mediated influence from direct interaction.
-3.  **Sequentiality:** The creation timestamps of the constituent edges are strictly increasing, such that $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all valid $i$, preserving **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" />.
+Let a system be constrained exclusively by Axioms 1 and 2. The **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits the emergence of **Reflexivity** ($u \le u$) and **Symmetry** ($u \le v \land v \le u$), thereby failing to enforce global causal consistency.
 
-**Technical Note on Cycle Traversal:** The definition of $\le$ requires $\pi_{uv}$ to be a *simple* directed path. Consequently, a vertex sequence containing repeated nodes does not constitute a valid trajectory for the purposes of establishing effective influence.
+### 2.6.1.1 Commentary: Argument Outline {#2.6.1.1}
 
-### 2.6.1.1 Commentary: Path Constraints {#2.6.1.1}
+:::tip[**Structure of the Inadequacy of Local Axioms Argument via Local Limit Diagnosis, Reflexive Loop Exposure, Symmetric Loop Construction, and Global Prophylaxis Necessity**]
+:::
+
+The proof proceeds via Contradiction, assuming that local constraints alone suffice for global consistency to expose the emergent causal violations that refute this assumption.
+
+```text
+• 2.6.1 Theorem Inadequacy of Local Axioms
+├── 2.6.2 Lemma Effective Influence
+│   ├── 2.6.2.1 Proof Effective Influence
+│   ├── 2.6.2.2 Commentary Path Constraints
+│   └── 2.6.2.3 Commentary Simultaneity Paradox
+│
+├── 2.6.3 Lemma Strict Timestamps
+│   └── 2.6.3.1 Proof Strict Timestamps
+│
+├── 2.6.4 Lemma Failure of Reflexivity
+│   └── 2.6.4.1 Proof Failure of Reflexivity
+│
+├── 2.6.5 Lemma Failure of Asymmetry
+│   ├── 2.6.5.1 Proof Failure of Asymmetry
+│   └── 2.6.5.2 Diagram Bowtie Paradox
+│
+├── 2.6.6 Lemma Causal Acyclicity vs. Spatial Triangulation
+│   └── 2.6.6.1 Proof Causal Acyclicity vs. Spatial Triangulation
+│
+└── 2.6.7 Proof Inadequacy of Local Axioms
+    ├── 2.6.7.1 Corollary Global Constraint
+    └── 2.6.7.2 Diagram Antisymmetry Failure
+```
+
+---
+
+### 2.6.2 Lemma: Effective Influence {#2.6.2}
+
+:::info[**Establishment of the Effective Influence Relation as the Transitive Closure of Timestamped Paths**]
+:::
+
+Let the **Effective Influence** relation $u \le v$ be defined over the set of vertices $V$ by the existence of a simple directed path with strictly increasing edge timestamps. The relation preserves the monotonicity of logical time and distinguishes mediated influence from direct causal interaction.
+
+### 2.6.2.1 Proof: Effective Influence {#2.6.2.1}
+
+:::tip[**Verification of the Transitive and Monotonic Properties of Effective Influence**]
+:::
+
+**I. Simple Path Construction**
+
+Let $\pi_{uv} = (v_0, v_1, \dots, v_k)$ be a simple directed path of length $k \ge 2$ initiating at $v_0 = u$ and terminating at $v_k = v$. The uniqueness of the sequence of vertices avoids cyclic self-intersection.
+
+**II. Monotonic Propagation**
+
+Let each edge $e_i = (v_i, v_{i+1})$ have a creation timestamp $H(e_i)$. The sequentiality condition mandates:
+
+$$
+H(e_0) < H(e_1) < \dots < H(e_{k-1})
+$$
+
+**III. Time Ordering Preservation**
+
+Since the standard order $<$ on logical time $\mathbb{R}$ is transitive, it follows that the initial timestamp strictly precedes the final timestamp:
+
+$$
+H(e_0) < H(e_{k-1})
+$$
+
+This establishes a directed causal gradient from $u$ to $v$.
+
+Q.E.D.
+
+### 2.6.2.2 Commentary: Path Constraints {#2.6.2.2}
 
 :::tip[**Justification of Mediation and Sequentiality Constraints via Physical Separation of Ontological Layers**]
 :::
@@ -1714,7 +1860,7 @@ The **Mediation Constraint** ($\ell \ge 2$) enforces a critical scale separation
 
 The **Sequentiality Constraint** ($t_i < t_{i+1}$) acts as the guardian of the causal order against the collapse of time. In a discrete and computational universe, the concept of "simultaneity" implies logical concurrency, events that occur within the same processing cycle. If the definition were relaxed to permit non-decreasing timestamps ($t_i \le t_{i+1}$), we would face a catastrophic failure of temporal distinctness. A chain of events $A \to B \to C$ occurring within a single logical tick would collapse into a simultaneous cluster, indistinguishable from a single complex interaction. By enforcing strictly increasing timestamps, the topological direction of the path is forced to align with the irreversible flow of logical time $t_L$. Influence is thereby physically constrained to flow strictly from the past to the future, which creates a universe where history is cumulative and the distinction between "before" and "after" is structurally invariant.
 
-### 2.6.1.2 Commentary: Simultaneity Paradox {#2.6.1.2}
+### 2.6.2.3 Commentary: Simultaneity Paradox {#2.6.2.3}
 
 :::info[**Identification of Paradoxes arising from Non-Decreasing Timestamps**]
 :::
@@ -1724,35 +1870,6 @@ To fully appreciate the necessity of strict inequality in our temporal definitio
 Under such a relaxed definition, the path $A \to B \to C$ would qualify as a valid carrier of influence ($A \le C$). However, because these edges formed simultaneously, there is no inherent temporal ordering between the events at $B$. If a subsequent parallel update at time $t_2$ were to insert a path from $C$ back to $A$, the system would recognize a reciprocal influence $C \le A$ (since $t_1 < t_2$).
 
 This scenario results in a profound logical contradiction: $A$ is the cause of $C$, and $C$ is the cause of $A$, yet locally no observer sees a violation of simple causality because the loop is closed via a "simultaneous" shortcut. The system forms a "loop of simultaneity" which functions physically as a Closed Timelike Curve of zero duration. This is not merely a geometric curiosity: it is a breakdown of the causal structure. By enforcing strictly increasing timestamps ($t_1 < t_2 < t_3$), the system invalidates the initial simultaneous path $A \to B \to C$ as a causal carrier. The universe (in effect) refuses to acknowledge instantaneous action at a distance. This mathematically precludes the formation of such paradoxes, ensuring that every causal chain has a finite duration and a definite direction.
-
----
-
-### 2.6.2 Theorem: Inadequacy of Local Axioms {#2.6.2}
-
-:::info[**Demonstration of Global Inconsistency under Local Axioms due to Transitive Reflexivity and Symmetry Failures**]
-:::
-
-In a system constrained exclusively by Axioms 1 and 2, the Effective Influence relation $\le$ <Ref id="2.6.1" label="§2.6.1" /> is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits the emergence of **Reflexivity** ($u \le u$) and **Symmetry** ($u \le v \land v \le u$), thereby failing to enforce global causal consistency.
-
-### 2.6.2.1 Commentary: Argument Outline {#2.6.2.1}
-
-:::tip[**Structure of the Inadequacy of Local Axioms Argument via Local Limit Diagnosis, Reflexive Loop Exposure, Symmetric Loop Construction, and Global Prophylaxis Necessity**]
-:::
-
-The proof proceeds via Contradiction, assuming that local constraints alone suffice for global consistency to expose the emergent causal violations that refute this assumption.
-
-```text
-• 2.6.2 Theorem Inadequacy of Local Axioms
-├── 2.6.3 Lemma Strict Timestamps
-│   └── 2.6.3.1 Proof Strict Timestamps
-│
-├── 2.6.4 Lemma Failure of Reflexivity
-│   └── 2.6.4.1 Proof Failure of Reflexivity
-│
-└── 2.6.5 Lemma Failure of Asymmetry
-    ├── 2.6.5.1 Proof Failure of Asymmetry
-    └── 2.6.5.2 Diagram Bowtie Paradox
-```
 
 ---
 
@@ -1843,11 +1960,14 @@ Evaluate the influence relation for the pair $(A, A)$.
 1.  **Path Existence:** A directed path $\pi = (A, B, C, A)$ exists.
     
 2.  **Length Constraint:** The path length is $L=3$.
+
     $$
     L \ge 2
     $$
+
     The mediation condition holds.
 3.  **Sequentiality:** The timestamp sequence corresponds to $(t_1, t_2, t_3)$. The strict ordering $t_1 < t_2 < t_3$ implies the sequence is strictly increasing.
+
     $$
     A \xrightarrow{t_1} B \xrightarrow{t_2} C \xrightarrow{t_3} A
     $$
@@ -1865,7 +1985,7 @@ Q.E.D.
 :::info[**Emergence of Mutual Influence via Disjoint Sub-paths in Higher-Order Cycles**]
 :::
 
-Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.3.4" label="§1.3.4" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
+Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid timestamp assignment such that distinct vertices $u, v$ possess disjoint sub-paths satisfying **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> in both directions, establishing the symmetric effective influence relation $u \le v \land v \le u$.
 
 ### 2.6.5.1 Proof: Failure of Asymmetry {#2.6.5.1}
 
@@ -1890,9 +2010,11 @@ Let the timestamp function $H$ assign values to the edge set to construct the "B
 Consider the path $\pi_{AC} = (A, B, C)$.
 
 1.  **Length:** The path length is $2$.
+
     $$
     2 \ge 2
     $$
+
 2.  **Timestamps:** The sequence is $(1, 4)$.
 3.  **Monotonicity:** The strictly increasing condition $1 < 4$ holds.
 4.  **Result:** The relation $A \le C$ holds.
@@ -1902,9 +2024,11 @@ Consider the path $\pi_{AC} = (A, B, C)$.
 Consider the path $\pi_{CA} = (C, D, A)$.
 
 1.  **Length:** The path length is $2$.
+
     $$
     2 \ge 2
     $$
+
 2.  **Timestamps:** The sequence is $(2, 3)$.
 3.  **Monotonicity:** The strictly increasing condition $2 < 3$ holds.
 4.  **Result:** The relation $C \le A$ holds.
@@ -1952,25 +2076,77 @@ Q.E.D.
 
 ---
 
-### 2.6.6 Proof: Inadequacy of Local Axioms {#2.6.6}
+### 2.6.6 Lemma: Causal Acyclicity vs. Spatial Triangulation {#2.6.6}
 
-:::tip[**Inadequacy of Local Axioms via the Synthesis of Transitive Failures** <Ref id="2.6.2" label="§2.6.2" />]
+:::info[**Independence of Spatial Area Closures from Causal Timeline Ordering**]
+:::
+
+Let $G_{space}$ represent the Spatial State Graph, and let $G_{event}$ represent the Causal Poset of Events. The existence of directed cycles representing spatial area in $G_{space}$ does not imply or construct directed cycles in the causal history $G_{event}$, which remains a strict Directed Acyclic Graph (DAG).
+
+### 2.6.6.1 Proof: Causal Acyclicity vs. Spatial Triangulation {#2.6.6.1}
+
+:::tip[**Topological Distinctions between Spatial Boundaries and Chronological Ordering**]
+:::
+
+**I. Spatial vs. Temporal Adjacency**
+
+Let spatial edges in $G_{space}$ be denoted by $(u, v)_{space}$, representing physical adjacency at a constant logical timestamp. Let causal events in $G_{event}$ be denoted by $e_i \in V_{event}$, where edges $(e_i, e_j)_{event}$ represent direct causal influence.
+
+**II. Path Non-Coincidence**
+
+A spatial cycle of length $L=3$ (a triangle) in $G_{space}$ comprises edges:
+
+$$
+(u, v)_{space}, \ (v, w)_{space}, \ (w, u)_{space}
+$$
+
+The creation of these spatial edges corresponds to distinct events in $G_{event}$ occurring at strictly increasing timestamps:
+
+$$
+t_1 < t_2 < t_3
+$$
+
+**III. Loop Independence**
+
+Although the spatial loop is closed in $G_{space}$, the causal path in $G_{event}$ connecting the creation events does not close: the sequence of events is strictly ordered by logical time. Because time is monotonic:
+
+$$
+t_3 > t_1
+$$
+
+The creation event of the final edge $(w, u)$ cannot influence the creation event of $(u, v)$ in $G_{event}$, precluding the closure of any causal cycle in history.
+
+Q.E.D.
+
+---
+
+### 2.6.7 Proof: Inadequacy of Local Axioms {#2.6.7}
+
+:::tip[Synthesis of Transitive Failures showing the **Inadequacy of Local Axioms** <Ref id="2.6.1" label="§2.6.1" />]
 :::
 
 **I. The Local Premise**
-Assume the existence of a causal system constrained *exclusively* by Axiom 1 (defining the Local Arrow) and Axiom 2 (defining the Local Geometry). The sufficiency of these axioms is tested by determining whether the transitive closure of the influence relation $\le$ consistently forms a strict partial order.
+
+Assume the existence of a causal system constrained *exclusively* by Axiom 1 (defining the Local Arrow) and Axiom 2 (defining the Local Geometry). The sufficiency of these axioms is tested by determining whether the transitive closure of the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ consistently forms a strict partial order. This relation necessitates strictly increasing timestamps along connected sequences, satisfying **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />.
 
 **II. The Failure Chain**
+
 The analysis identifies specific configurations where local validity permits global inconsistency:
 
 1.  **Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />: Within the local geometry of the $3$-cycle, the combination of directed edges and strictly increasing timestamps necessitates that upon closure of the loop, the relation $v \le v$ is established. This constitutes a violation of **Global Irreflexivity**.
+
 2.  **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />: Within a $4$-cycle "Bowtie" configuration, the existence of disjoint sub-paths allows for the simultaneous establishment of $u \le v$ and $v \le u$ with valid timestamps. This constitutes a violation of **Global Asymmetry**.
 
+3.  **Causal vs. Spatial Loops**: The occurrence of spatial closed paths is necessary to construct area under **Causal Acyclicity vs. Spatial Triangulation** <Ref id="2.6.6" label="§2.6.6" />. However, local axioms fail to prevent these spatial loops from collapsing the temporal ordering of events.
+
 **III. Convergence**
+
 The set of Local Axioms permits the formation of transitive structures that satisfy all local rules but generate global contradictions regarding the ordering of events.
 
 **IV. Formal Conclusion**
+
 The Local Axioms are insufficient to ensure Global Causal Consistency. An explicit global constraint, designated as **Axiom 3**, is required to strictly enforce the Directed Acyclic Graph (DAG) property on the transitive closure of the influence relation.
+
 $$
 Ax1 \land Ax2 \not\implies \text{DAG}
 $$
@@ -1979,16 +2155,16 @@ Q.E.D.
 
 ---
 
-### 2.6.6.1 Corollary: Global Constraint {#2.6.6.1}
+### 2.6.7.1 Corollary: Global Constraint {#2.6.7.1}
 
-:::tip[**Necessity of an Explicit Global Constraint required for the Definition of Causal Unidirectionality**]
+:::info[**Necessity of an Explicit Global Constraint required for the Definition of Causal Unidirectionality**]
 :::
 
 A physical theory requires a well-defined causal ordering (a "direction of time"). The proven failure of Axioms 1 and 2 to entail such an order necessitates a third axiom. This axiom must explicitly forbid states containing causal paradoxes, acting as a global topological constraint.
 
 Q.E.D.
 
-### 2.6.6.2 Diagram: Antisymmetry Failure {#2.6.6.2}
+### 2.6.7.2 Diagram: Antisymmetry Failure {#2.6.7.2}
 
 :::note[**Comparative Visualization of the Failure Modes of Antisymmetry versus Irreflexivity**]
 :::
@@ -2021,7 +2197,7 @@ This forces a shift from purely reductionist physics to a holistic view where gl
 
 The persistence of these transitive paradoxes demands the imposition of a third, global axiom to enforce acyclicity, preventing the universe from creating logical contradictions through the accumulation of local steps. Without this global check, the local laws of physics would eventually undermine themselves, creating regions of causality violation that would propagate and destroy the logical consistency of the timeline. The universe must possess a mechanism to censor these global loops, ensuring that the collective history remains a coherent narrative rather than a collection of disjointed and contradictory causal loops.
 
------
+---
 
 ---
 
@@ -2035,12 +2211,12 @@ We solve this by implementing a preemptive local enforcement mechanism that appr
 
 ---
 
-### 2.7.1 Axiom 3: Acyclic Effective Causality {#2.7.1}
+### 2.7.1 Definition: Axiom 3 Acyclic Effective Causality {#2.7.1}
 
-:::info[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]
+:::tip[**Imposition of Global Causal Consistency through the Enforcement of a Strict Partial Order**]
 :::
 
-The **Effective Influence** relation $\le$ <Ref id="2.6.1" label="§2.6.1" /> is axiomatically constrained to form a **Strict Partial Order** over the set of vertices $V$. This imposes the following global topological constraints:
+The **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ is axiomatically constrained to form a **Strict Partial Order** over the set of vertices $V$, establishing **Acyclic Effective Causality** via the following global topological constraints:
 1.  **Global Irreflexivity:** For all $v \in V$, the relation $v \le v$ is false ($\neg(v \le v)$).
 2.  **Global Asymmetry:** For all pairs $u, v \in V$, if $u \le v$, then the relation $v \le u$ must be false ($\neg(v \le u)$).
 Consequently, the transitive closure of the causal history must form a Directed Acyclic Graph (DAG) with respect to $\le$.
@@ -2125,7 +2301,7 @@ def is_path_monotone(G, path):
 :::info[**Necessity of Preemptive Local Enforcement dictated by the Thermodynamic Impossibility of Post-Hoc Correction**]
 :::
 
-The maintenance of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is asserted to be physically impossible in the thermodynamic limit ($N \to \infty$). This impossibility arises because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.2.3" label="§1.2.3" />.
+Assume the requirement of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. This requirement mandates the implementation of a preemptive local constraint within the Universal Constructor. The post-hoc correction of causal paradoxes is physically impossible in the thermodynamic limit ($N \to \infty$) because the energy required to synchronize the detection and deletion of a non-local cycle across the graph diameter diverges, violating the bounds of **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
 
 ### 2.7.2.1 Commentary: Argument Outline {#2.7.2.1}
 
@@ -2200,7 +2376,7 @@ Q.E.D.
 
 We encounter here the "Horizon Problem" in the specific context of discrete graph dynamics. This refers to the fundamental inability of a local observer (or a local physical law) to perceive global curvature or topology. This phenomenon is deeply rooted in the statistical mechanics of random graphs as described by <Cite id="A.23" label="(Erdős & Rényi, 1960)" /> and further elaborated by <Cite id="A.13" label="(Bollobás, 2001)" />. As the graph evolves and edge density increases, the system undergoes a phase transition (percolation) where the size of connected components and cycle lengths diverges. In this regime, the global topology (such as a large cycle) scales faster than any fixed local neighborhood radius $R$.
 
-Consider the analogy of an observer standing on the surface of a massive sphere: locally the ground appears perfectly flat. The observer requires measurements from a vast distance to detect the curvature. Similarly, a local rewrite rule operating on a specific node sees a long cycle simply as a straight line extending into the horizon. If the rule $\mathcal{R}$ is restricted to look only $R$ steps away, it cannot distinguish between an infinite linear chain and a closed circle of circumference $100R$. If the system relied on detecting the *geometry* of the loop to stop paradoxes, it would inevitably fail, as the loop closes beyond the "vision" of the local operator. This limitation underscores why the enforcement mechanism must rely on **Unique Causality** (preventing the cloning of information locally) and **Monotonicity** (checking timestamps locally), rather than attempting to measure the global topology directly. We cannot police the universe by looking at the whole thing at once: we must design local laws that make global violations impossible by their very nature.
+Consider the analogy of an observer standing on the surface of a massive sphere: locally the ground appears perfectly flat. The observer requires measurements from a vast distance to detect the curvature. Similarly, a local rewrite rule operating on a specific node sees a long cycle simply as a straight line extending into the horizon. If the rule $\mathcal{R}$ is restricted to look only $R$ steps away, it cannot distinguish between an infinite linear chain and a closed circle of circumference $100 \cdot R$. If the system relied on detecting the *geometry* of the loop to stop paradoxes, it would inevitably fail, as the loop closes beyond the "vision" of the local operator. This limitation underscores why the enforcement mechanism must rely on **Unique Causality** (preventing the cloning of information locally) and **Monotonicity** (checking timestamps locally), rather than attempting to measure the global topology directly. We cannot police the universe by looking at the whole thing at once: we must design local laws that make global violations impossible by their very nature.
 
 ### 2.7.3.3 Diagram: Horizon Problem
 
@@ -2309,9 +2485,67 @@ This mirrors the statistical laws of thermodynamics perfectly. It is *theoretica
 
 ---
 
-### 2.7.5 Proof: Thermodynamic Enforcement {#2.7.5}
+### 2.7.5 Lemma: Independence of Axiom 3 {#2.7.5}
 
-:::tip[**Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> via Demonstration of Energy Divergence]
+:::info[**Logical Independence of the Global Acyclicity Requirement**]
+:::
+
+Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The Directed Causal Link** and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. The timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> constitutes a valid graph under $\Sigma$ while violating Axiom 3, showing that Axiom 3 is logically independent.
+
+### 2.7.5.1 Proof: Independence of Axiom 3 {#2.7.5.1}
+
+:::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]
+:::
+
+**I. Model Construction**
+
+Let $G$ denote a directed $4$-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A,B), (B,C), (C,D), (D,A)\}$.
+
+**II. History Assignment**
+
+Let the timestamp function $H$ assign the sequential "Bowtie" values to the edge set:
+
+* $H(A, B) = 1$
+* $H(B, C) = 2$
+* $H(C, D) = 3$
+* $H(D, A) = 4$
+
+**III. Verification of Local Axioms**
+
+The graph satisfies the Irreflexivity and Asymmetry conditions for all individual edges, complying with Axiom 1. The $4$-cycle does not violate the constructive definition of Axiom 2, which governs formation rather than existence.
+
+**IV. Verification of Global Acyclicity (Axiom 3)**
+
+Consider the effective influence relations derived from the timestamp sequence.
+
+1.  **Forward Path:** The path $A \to B \to C$ corresponds to timestamps $(1, 2)$. The condition $1 < 2$ establishes the relation $A \le C$.
+2.  **Reverse Path:** The path $C \to D \to A$ corresponds to timestamps $(3, 4)$. The condition $3 < 4$ establishes the relation $C \le A$.
+3.  **Conflict:** The simultaneous validity of $A \le C$ and $C \le A$ for distinct vertices constitutes a symmetric dependency. This violates the strict partial order required by Axiom 3.
+
+**V. Conclusion**
+
+A model exists that satisfies Axioms 1 and 2 but violates Axiom 3. We conclude that Axiom 3 is logically independent.
+
+Q.E.D.
+
+### 2.7.5.2 Commentary: Tripartite Foundation {#2.7.5.2}
+
+:::info[**Establishment of the Three Pillars via the Separation of Direction, Structure, and Consistency**]
+:::
+
+**Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" /> serves as the capstone of the axiomatic chapter, confirming that the theory requires a "Tripartite" foundation where no single pillar is redundant. We may view these axioms as the three legs of a stool upon which physical reality rests.
+
+1.  **Axiom $1$** gives the universe **Direction** (Time). It ensures that arrows point somewhere, meaning there is a distinction between forward and backward.
+2.  **Axiom $2$** gives the universe **Structure** (Space). It provides the constructive logic for building geometry out of those directed links.
+3.  **Axiom $3$** gives the universe **Consistency** (Logic).
+
+It is possible (as our independence proofs demonstrate) to have a universe with Direction and Structure that nonetheless makes no sense: a reality where effects precede causes via complex and non-local loops. By proving the independence of Axiom $3$, we demonstrate that Consistency is not a free byproduct of Time and Space: it is an active constraint that must be legislated into the foundations of physics.
+
+---
+
+### 2.7.6 Proof: Thermodynamic Enforcement {#2.7.6}
+
+:::tip[**Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" /> via Demonstration of Energy Divergence]
 :::
 
 **I. Hypothesis**
@@ -2321,13 +2555,14 @@ Assume the system permits the formation of a global symmetric influence loop (Pa
 **II. Information Requirement**
 
 Unique correction (e.g., deleting the "latest" edge) requires identifying the edge with the maximal timestamp within the loop.
+
 $$
 e_{target} = \arg \max_{e \in C} H(e)
 $$
 
 **III. Non-Locality**
 
-By the **cycle diameter growth lemma** <Ref id="2.7.3" label="§2.7.3" />, the loop length $L$ exceeds the local horizon $R$.
+By the **Cycle Diameter Growth** <Ref id="2.7.3" label="§2.7.3" />, the loop length $L$ exceeds the local horizon $R$.
 The timestamp information is distributed across $L/R$ spacelike-separated patches.
 
 **IV. Synchronization Cost**
@@ -2339,6 +2574,7 @@ Correction at $t+1$ implies instantaneous (superluminal) coordination across $D$
 **V. Energy Divergence**
 
 In the thermodynamic limit ($N \to \infty, D \to \infty$), the energy required to synchronize this state approaches infinity.
+
 $$
 E_{sync} \to \infty
 $$
@@ -2346,11 +2582,11 @@ $$
 **VI. Conclusion**
 
 Post-hoc correction violates the finite-energy constraint.
-Enforcement must occur via the local pre-check, which requires only finite energy.
+Enforcement must occur via the local pre-check, which utilizes the **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> to guarantee global causal acyclicity with probability approaching unity in the thermodynamic limit. This is logically independent of the local constraints as shown in **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" />.
 
 Q.E.D.
 
-### 2.7.5.1 Commentary: Thermodynamic Wall {#2.7.5.1}
+### 2.7.6.1 Commentary: Thermodynamic Wall {#2.7.6.1}
 
 :::info[**Impossibility of Correction in the Thermodynamic Limit due to Signal Propagation Constraints**]
 :::
@@ -2363,70 +2599,12 @@ Synchronizing a correction across this distance would require a signal to propag
 
 ---
 
-### 2.7.6 Theorem: Independence of Axiom 3 {#2.7.6}
-
-:::info[**Logical Independence of the Global Acyclicity Requirement**]
-:::
-
-Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. Then the timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> constitutes a valid graph under $\Sigma$ while violating the Global Acyclicity condition of Axiom 3. Therefore, Axiom 3 constitutes a logically independent constraint not derivable from the local primitives.
-
-### 2.7.6.1 Proof: Independence of Axiom 3 {#2.7.6.1}
-
-:::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]
-:::
-
-**I. Model Construction**
-
-Let $G$ denote a directed $4$-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A,B), (B,C), (C,D), (D,A)\}$.
-
-**II. History Assignment**
-
-Let the timestamp function $H$ assign the non-sequential "Bowtie" values to the edge set:
-
-* $H(A, B) = 1$
-* $H(B, C) = 4$
-* $H(C, D) = 2$
-* $H(D, A) = 3$
-
-**III. Verification of Local Axioms**
-
-The graph satisfies the Irreflexivity and Asymmetry conditions for all individual edges, complying with Axiom 1. The $4$-cycle does not violate the constructive definition of Axiom 2, which governs formation rather than existence.
-
-**IV. Verification of Global Acyclicity (Axiom 3)**
-
-Consider the effective influence relations derived from the timestamp sequence.
-
-1.  **Forward Path:** The path $A \to B \to C$ corresponds to timestamps $(1, 4)$. The condition $1 < 4$ establishes the relation $A \le C$.
-2.  **Reverse Path:** The path $C \to D \to A$ corresponds to timestamps $(2, 3)$. The condition $2 < 3$ establishes the relation $C \le A$.
-3.  **Conflict:** The simultaneous validity of $A \le C$ and $C \le A$ for distinct vertices constitutes a symmetric dependency. This violates the strict partial order required by Axiom 3.
-
-**V. Conclusion**
-
-A model exists that satisfies Axioms 1 and 2 but violates Axiom 3. We conclude that Axiom 3 is logically independent.
-
-Q.E.D.
-
-### 2.7.6.2 Commentary: Tripartite Foundation {#2.7.6.2}
-
-:::info[**Establishment of the Three Pillars via the Separation of Direction, Structure, and Consistency**]
-:::
-
-**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> serves as the capstone of the axiomatic chapter, confirming that the theory requires a "Tripartite" foundation where no single pillar is redundant. We may view these axioms as the three legs of a stool upon which physical reality rests.
-
-1.  **Axiom $1$** gives the universe **Direction** (Time). It ensures that arrows point somewhere, meaning there is a distinction between forward and backward.
-2.  **Axiom $2$** gives the universe **Structure** (Space). It provides the constructive logic for building geometry out of those directed links.
-3.  **Axiom $3$** gives the universe **Consistency** (Logic).
-
-It is possible (as our independence proofs demonstrate) to have a universe with Direction and Structure that nonetheless makes no sense: a reality where effects precede causes via complex and non-local loops. By proving the independence of Axiom $3$, we demonstrate that Consistency is not a free byproduct of Time and Space: it is an active constraint that must be legislated into the foundations of physics.
-
----
-
 ### 2.7.7 Type-Theoretic Validation via Lean 4 Core {#2.7.7}
 
 :::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure via Biconditional Decomposition**]
 :::
 
-Type-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry — the three properties now united by Axiom 3 at <Ref id="2.7.1" label="§2.7.1" /> — proceeds via the following verification strategy:
+Type-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry (the three properties now united under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />) proceeds via the following verification strategy:
 
 1.  **Encoding:** The definitions `IsAsymmetric`, `IsIrreflexive`, and `IsAntisymmetric` encode the three relational predicates. `IsAsymmetric` is the formal expression of Axiom 3's Global Asymmetry requirement: if $u$ influences $v$, then $v$ cannot influence $u$.
 2.  **Theorem Statements:** The first theorem (`asymmetry_implies_irreflexivity`) certifies that asymmetry strictly subsumes irreflexivity by self-application; the second (`asymmetry_equiv`) certifies the full biconditional, proving that asymmetry is the exact algebraic conjunction of the two weaker conditions.
@@ -2485,7 +2663,7 @@ theorem asymmetry_equiv {V : Type} (R : CausalRelation₂ V) :
 ```
 
 **Verification Summary:**
-The definitions extend the vocabulary of §2.2.5 to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of Axiom 3 <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v → ¬ R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions. The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal.
+The definitions extend the vocabulary established in the **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.2.5" label="§2.2.5" /> to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v → ¬ R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions. The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" /> is also algebraically minimal.
 
 ---
 
@@ -2494,13 +2672,13 @@ The definitions extend the vocabulary of §2.2.5 to include `IsAsymmetric`, the 
 :::info[**Unification of the Three Causal Constraints into a Single Equivalence**]
 :::
 
-The two theorems at §2.7.7 constitute the algebraic capstone of the axiomatic chapter, arriving at the only point in the monograph where all three relational conditions — irreflexivity (Axiom 1, local), antisymmetry (the insufficient condition exposed in §2.2), and asymmetry (Axiom 3, global) — have been formally established and can be placed in their precise mutual relationship.
+The two theorems at **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.7.7" label="§2.7.7" /> constitute the algebraic capstone of the axiomatic chapter. They arrive at the only point in the monograph where all three relational conditions (irreflexivity (Axiom 1, local), the insufficient condition of **Antisymmetry** <Ref id="2.2" label="§2.2" />, and asymmetry (Axiom 3, global)) have been formally established and can be placed in their precise mutual relationship.
 
-Theorem 1 demonstrates that asymmetry subsumes irreflexivity by internal self-consistency alone. The mechanism is economical: the universal quantifier in `IsAsymmetric` ranges over all pairs $(u, v)$, and there is no restriction preventing the choice $u = v$. Instantiating both slots with the same vertex $v$ collapses the asymmetry condition onto itself, creating a self-refuting hypothesis whenever a self-loop is assumed. Irreflexivity therefore costs nothing to enforce separately once asymmetry has been legislated. This retroactively justifies the structure of §2.2: the chapter correctly introduced irreflexivity as the operative requirement while using antisymmetry as the foil, because at that stage asymmetry (the stronger condition) had not yet been formally introduced.
+Theorem 1 demonstrates that asymmetry subsumes irreflexivity by internal self-consistency alone. The mechanism is economical: the universal quantifier in `IsAsymmetric` ranges over all pairs $(u, v)$, and there is no restriction preventing the choice $u = v$. Instantiating both slots with the same vertex $v$ collapses the asymmetry condition onto itself, creating a self-refuting hypothesis whenever a self-loop is assumed. Irreflexivity therefore costs nothing to enforce separately once asymmetry has been legislated. This retroactively justifies the structure of **Antisymmetry** <Ref id="2.2" label="§2.2" />: the chapter correctly introduced irreflexivity as the operative requirement while using antisymmetry as the foil, because at that stage asymmetry (the stronger condition) had not yet been formally introduced.
 
 Theorem 2 provides the equivalence that allows the entire three-axiom system to be understood as an economy of constraints. The forward direction shows that asymmetry strictly dominates both weaker conditions: any mutual-edge pair is collapsed to a contradiction via `False.elim`, rendering antisymmetry vacuously satisfied. The reverse direction reveals that antisymmetry and irreflexivity together recover asymmetry through a two-step argument: antisymmetry forces coincidence of endpoints, and irreflexivity then annihilates the resulting self-loop. No third axiom is required to close the cycle.
 
-Physically, this equivalence confirms the **Tripartite Foundation** commentary at §2.7.6.2: the three axioms are genuinely independent in their physical roles (Direction, Structure, Consistency) yet algebraically unified in their relational constraint on the edge predicate. Axiom 1 introduces the local arrow of time; Axiom 3 promotes this to a global strict partial order; the biconditional proves that the global promotion is the precise algebraic completion of the local constraint. The universe's causal graph is therefore governed by a single, closed relational discipline, with no redundant clauses and no logical gaps.
+Physically, this equivalence confirms the **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" />: the three axioms are genuinely independent in their physical roles (Direction, Structure, Consistency) yet algebraically unified in their relational constraint on the edge predicate. Axiom 1 introduces the local arrow of time; Axiom 3 promotes this to a global strict partial order; the biconditional proves that the global promotion is the precise algebraic completion of the local constraint. The universe's causal graph is therefore governed by a single, closed relational discipline, with no redundant clauses and no logical gaps.
 
 ---
 
@@ -2515,7 +2693,7 @@ This establishes the "Thermodynamic Wall," a fundamental asymmetry where prevent
 
 By embedding global consistency into local interaction rules, we guarantee that the arrow of time emerges robustly, protecting the universe from causal paradoxes through the sheer statistical weight of its own geometry. This resolves the tension between locality and global order by utilizing the finite correlation length of the graph to censor paradoxes. The stability of the timeline is not a given but a dynamically maintained state, secured by the continuous expenditure of computational resources to verify the logical consistency of the future before it becomes the past.
 
------
+---
 
 ---
 
@@ -2548,18 +2726,18 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $L$ | Length of a cycle or path | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.2](/monograph/rules/axioms/2.3/#2.3.2) |
-| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
-| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
-| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
+| $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
+| $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
+| $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/rules/axioms/2.4/#2.4.2) |
 | $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/rules/axioms/2.4/#2.4.3) |
 | $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/rules/axioms/2.4/#2.4.3.1) |
 | $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.1](/monograph/rules/axioms/2.6/#2.6.1) |
+| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
 | $R$ | Radius of local computational patch | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
@@ -2569,4 +2747,4 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $E_{sync}$ | Energy required for global synchronization | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
 | $D$ | Graph Diameter | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
 
------
+---

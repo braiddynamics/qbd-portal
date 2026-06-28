@@ -8,12 +8,20 @@ Spacetime is not an empty stage; the rapid phase transitions of the primordial e
 
 ### 21.1.1 Definition: Quadripartite Braid Defect {#21.1.1}
 
-:::info[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
+:::tip[**Characterization of Four-Strand Braid Defects as Topologically Stable Sterile Relics**]
 :::
 
-*   **Defect Identity:** During the phase transition where graph dimensionality crystallizes from a chaotic state to a stable $d=4$ manifold (§18.3.3), certain high-density graph segments fail to unravel into the standard 3-strand braid configurations ($B_3$). These represent localized 4-strand braid defects ($B_4$).
-*   **Topological Mass Functional:** By the Topological Mass Theorem (§7.4), mass is complexity. These four-strand defects are highly complex 3-cycle knots that possess substantial rest mass complexity ($m \propto C[\beta] + k \cdot w^2$).
+*   **Quadripartite Braid Defect:** A **Quadripartite Braid Defect** constitutes a localized 4-strand braid defect ($B_4$) that arises during the phase transition where graph dimensionality crystallizes from a chaotic state to a stable $d=4$ manifold (**Self-Similar Bipartite Expansion** <Ref id="18.3.3" label="§18.3.3" />), when certain high-density graph segments fail to unravel into the standard 3-strand braid configurations ($B_3$).
+*   **Topological Mass Functional** <Ref id="7.4" label="§7.4" />: Mass is complexity. These four-strand defects are highly complex 3-cycle knots that possess substantial rest mass complexity ($m \propto C[\beta] + k \cdot w^2$).
 *   **Absolute Stability:** There are no graph-local rewrite rules that can reduce or map a $B_4$ braid defect into the standard 3-strand Standard Model braids ($B_3$) without physically breaking graph strands (requiring energy scales far exceeding the Planck scale). They are thus topologically protected and absolutely stable.
+
+
+### 21.1.1.1 Commentary: Quadripartite Braid Defect {#21.1.1.1}
+
+:::info[**Cosmological Significance of Four-Strand Relics**]
+:::
+
+The **Quadripartite Braid Defect** provides a topological explanation for dark matter. In standard cosmology, dark matter is postulated as an ad-hoc particle species. In this framework, it is a geometric relic of the dimensional phase transition, where stable four-strand defects remain as the "ash" of space-time crystallization. Because they cannot couple to standard gauge forces, they are sterile and collisionless, while interacting normally with the gravitational field.
 
 ---
 
@@ -24,7 +32,7 @@ Spacetime is not an empty stage; the rapid phase transitions of the primordial e
 
 *   **Gauge Isolation:** Standard Model gauge forces ($SU(3) \times SU(2) \times U(1)$) are represented as local ribbon twists and charge-bearing braids on the 3-strand ($B_3$) manifold geometry (Chapter 8, Chapter 9).
 *   **Topological Sterility:** Because $B_4$ braids have a different topological structure, they cannot accept the standard $U(1)$ charge twists or $SU(3)$ color ribbon invariants. Consequently, their coupling constants to the electromagnetic, weak, and strong gauge fields are strictly zero.
-*   **Gravitational Coupling:** Although sterile to gauge forces, these defects participate in the global cycle count ($N_3$) that defines the metric field. Therefore, they couple normally to gravity through standard stress-energy tensor equivalents ($T_{ab}$, §12.2).
+*   **Gravitational Coupling:** Although sterile to gauge forces, these defects participate in the global cycle count ($N_3$) that defines the metric field. Therefore, they couple normally to gravity through standard stress-energy tensor equivalents ($T_{ab}$, **Discrete Field Equations** <Ref id="13.2" label="§13.2" />).
 
 ---
 
@@ -72,7 +80,7 @@ Spacetime is not a static vacuum; it is a dynamic equilibrium of self-creation a
 *   **Spacetime Volume Operator:** In Quantum Braid Dynamics, spacetime volume is directly proportional to the total count of active 3-cycles ($Vol \propto N_3$).
 *   **Dynamic Vacuum:** The vacuum is not static but is maintained in a dynamic equilibrium governed by the Master Equation:
     $$ \frac{d\rho_3}{dt} = 9\rho_3^2 e^{-6\mu\rho} - \frac{1}{2}\rho_3 $$
-    At the stable attractor density $\rho^* \approx 0.037$ (§5.2.2), the net change is zero ($d\rho_3/dt = 0$), but the individual creation and deletion fluxes remain active.
+    At the stable attractor density $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />), the net change is zero ($d\rho_3/dt = 0$), but the individual creation and deletion fluxes remain active.
 *   **Creation Pressure:** The continuous generation of new 3-cycles by the creation term ($9\rho_3^2 e^{-6\mu\rho}$) acts as an isotropic, expansive pressure, driving the metric expansion of the manifold.
 
 ---
@@ -183,7 +191,7 @@ A central mystery of standard cosmology is the timing of cosmic acceleration: wh
 :::
 
 *   **Coincidence Problem:** Standard cosmology struggles to explain why the matter density $\Omega_m$ and vacuum energy density $\Omega_\Lambda$ are of comparable orders of magnitude today, given that they dilute at different rates during cosmic expansion.
-*   **Attractor Saturation:** In QBD, the evolution of the graph towards the stable attractor $\rho^* \approx 0.037$ (§5.2.2) follows a logistic growth curve.
+*   **Attractor Saturation:** In QBD, the evolution of the graph towards the stable attractor $\rho^* \approx 0.037$ (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />) follows a logistic growth curve.
 *   **Crossover Epoch:** The comparable magnitudes of $\Omega_m$ and $\Omega_{DE}$ is not a coincidence, but a natural, extended epoch corresponding to the transition era where the logistic growth curve approaches saturation at the stable fixed point $\rho^*$, matching the observed crossover.
 
 ---

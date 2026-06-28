@@ -2,7 +2,7 @@
 
 ## 20.1 Primordial Plasma {#20.1}
 
-Spacetime has crystallized, and matter has synthesized, leaving the early universe filled with a hot, dense, and opaque plasma of interacting photons and braids. This section maps the "Last Scattering Surface"—the moment of recombination when the plasma cooled, became transparent, and released the Cosmic Microwave Background (CMB) as a perfect fossilized snapshot of the graph's primordial complexity.
+Spacetime has crystallized, and matter has synthesized, leaving the early universe filled with a hot, dense, and opaque plasma of interacting photons and braids. This section maps the "Last Scattering Surface", the moment of recombination when the plasma cooled, became transparent, and released the Cosmic Microwave Background (CMB) as a perfect fossilized snapshot of the graph's primordial complexity.
 
 ---
 
@@ -11,7 +11,7 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
 :::info[**Ergodicity of Primordial Plasma under Highly Frequent Graph Updates**]
 :::
 
-*   ** Primordial Scattering:** Before recombination ($t < 380,000$ years), the universe is a dense plasma of photon motifs and charged braids (electrons, quarks).
+*   **Primordial Scattering:** Before recombination ($t < 380,000$ years), the universe is a dense plasma of photon motifs and charged braids (electrons, quarks).
 *   **Ergodioc Mixing:** The rewrite rule $\mathcal{R}$ mediates highly frequent interactions (scattering, absorption, and emission). In this high-density regime, the frequency of updates ensures that the photon state space is fully explored.
 *   **Thermalization:** This ergodicity drives the system to the unique state of maximum entropy, which is mathematically described by the Planck Blackbody Distribution:
     $$ u(\nu, T) = \frac{8\pi h \nu^3}{c^3} \frac{1}{e^{h\nu / k_B T} - 1} $$
@@ -19,29 +19,19 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
 
 ---
 
-### 20.1.2 Proof: Blackbody Equilibrium {#20.1.2}
-
-:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
-:::
-
-*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate.
-*   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
-
----
-
-### 20.1.3 Lemma: Sachs-Wolfe Time Dilation {#20.1.3}
+### 20.1.2 Lemma: Sachs-Wolfe Time Dilation {#20.1.2}
 
 :::info[**Derivation of Temperature Anisotropies from Gravitational Redshift in Low-Lapse Complexity Wells**]
 :::
 
 *   **Complexity overdensities:** Primeval quantum noise during inflation leaves the graph with localized overdensities of 3-cycles ($\delta\rho_3 > 0$).
-*   **Gravitational Potential Wells:** By the discrete Einstein field equations (§12.2), these overdensities correspond to deep gravitational potential wells ($\Phi_c \propto \delta\rho_3$).
+*   **Gravitational Potential Wells:** By the discrete Einstein equations (**Discrete Field Equations** <Ref id="13.2" label="§13.2" />), these overdensities correspond to deep gravitational potential wells ($\Phi_c \propto \delta\rho_3$).
 *   **Lapse Time Dilation:** In these potential wells, proper time flows slower relative to global logical time ($t_L$), meaning the Lapse function $N(x)$ is strictly less than unity ($N < 1$).
 *   **Redshift Mapping:** A photon escaping this complexity well must climb out, losing logical frequency. The observer at infinity measures its frequency scaled by the Lapse: $\omega_{obs} = \omega_L \cdot N < \omega_L$. Overdense regions thus manifest as **Cold Spots** ($\delta T < 0$) on the sky.
 
 ---
 
-### 20.1.4 Proof: Sachs-Wolfe Time Dilation {#20.1.4}
+### 20.1.2.1 Proof: Sachs-Wolfe Time Dilation {#20.1.2.1}
 
 :::tip[**Verification of Sachs-Wolfe Temperature Anisotropies through Complexity Potential Field Maps**]
 :::
@@ -51,6 +41,21 @@ Spacetime has crystallized, and matter has synthesized, leaving the early univer
     $$ \frac{\delta T}{T} \approx \frac{1}{3}\Phi_c $$
     verifying that the $10^{-5}$ temperature anisotropies measured in the CMB are direct maps of the graph's primordial complexity potentials.
 
+---
+
+### 20.1.3 Proof: Blackbody Equilibrium {#20.1.3}
+
+:::tip[**Verification of Blackbody Spectrum through Partition Function Evaluation of Photon Motifs**]
+:::
+
+*   **Bosonic Partition Function:** The proof constructs the partition function for the ensemble of massless photon motifs on the trivalent graph substrate.
+*   **Spectral Convergence:** It shows that the asymptotic distribution of edge-localized energy states converges exactly to the Planck distribution in the thermodynamic limit ($N \to \infty$).
+
+---
+
+﻿---
+title: "Chapter 20: Structured Universe (Cosmic Web)"
+sidebar_label: "20.2 - Acoustic Oscillations"
 ---
 
 ## 20.2 Acoustic Oscillations {#20.2}
@@ -75,7 +80,7 @@ The spots in the CMB are not random; they form a highly structured, rhythmic pat
 :::warning[**Anchoring of Gravitational Potential Wells by Electromagnetically Inert Sterile Braid Structures**]
 :::
 
-*   **Dark Matter Relics:** The dark sector consists of "sterile braids" (§21.1)—braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs.
+*   **Dark Matter** <Ref id="21.1" label="§21.1" />: The dark sector consists of "sterile braids," which are braid topologies that possess rest mass complexity ($C[\beta]$) but lack the electroweak twists/rungs required to couple to electromagnetic photon motifs.
 *   **Shadow Scaffolding:** Because they lack charge topology, these sterile braids do not interact with photons and remain unaffected by radiation pressure. 
 *   **Oscillation Anchors:** While the baryonic plasma oscillates violently, the sterile braids remain stationary, forming a stable gravitational potential scaffolding that guides and amplifies the baryonic sound waves.
 
@@ -114,23 +119,13 @@ How did these subtle acoustic waves crystallize into the vast network of galaxie
 :::info[**Amplification of Primordial Anisotropy into Filamentary Sheets and Nodes via Ellipsoidal Gravitational Collapse**]
 :::
 
-*   **Primordial Anisotropy:** Because the graph's pre-geometric vacuum exhibits an exponential decay of correlations (§5.5.5), long-range correlations are absent, meaning primordial overdensities are generically non-spherical (ellipsoidal) with three unequal axes ($a < b < c$).
+*   **Primordial Anisotropy:** Because the graph's pre-geometric vacuum exhibits an exponential decay of correlations, as described in (**Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />), long-range correlations are absent, meaning primordial overdensities are generically non-spherical (ellipsoidal) with three unequal axes ($a < b < c$).
 *   **Zel'dovich Collapse:** Gravitational instability is inherently anisotropic: the gravitational force is strongest along the shortest axis ($a$), causing the cloud to collapse and flatten along that dimension first.
 *   **Filamentary Tapestry:** Collapse along the shortest axis forms a 2D sheet (wall); collapse along the second axis squeezes the sheet into a 1D filament; collapse along the final axis forms a dense 3D node (cluster). This hierarchical, anisotropic collapse weaves the Cosmic Web.
 
 ---
 
-### 20.3.2 Proof: Anisotropic Collapse {#20.3.2}
-
-:::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
-:::
-
-*   **Deformation Tensor Evaluation:** The proof calculates the eigenvalues of the gravitational deformation tensor in the emergent Riemannian manifold.
-*   **Hierarchical Singularity:** It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
-
----
-
-### 20.3.3 Lemma: Void Relaxation {#20.3.3}
+### 20.3.2 Lemma: Void Relaxation {#20.3.2}
 
 :::info[**Depletion of Voids through Local Thermodynamic Relaxation to Baseline Vacuum Attractor**]
 :::
@@ -142,10 +137,20 @@ How did these subtle acoustic waves crystallize into the vast network of galaxie
 
 ---
 
-### 20.3.4 Proof: Void Relaxation {#20.3.4}
+### 20.3.2.1 Proof: Void Relaxation {#20.3.2.1}
 
 :::tip[**Verification of Void Sparsity through Direct Measurement of Equilibrium Density Bounds**]
 :::
 
 *   **Master Equation Relaxation:** The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes.
 *   **Stable Convergence:** It shows that the local cycle density converges stably to $\rho^* \approx 0.037$ with a negative Jacobian, proving that voids represent the pure, unperturbed baseline vacuum state of the cosmos.
+
+---
+
+### 20.3.3 Proof: Anisotropic Collapse {#20.3.3}
+
+:::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
+:::
+
+*   **Deformation Tensor Evaluation:** The proof calculates the eigenvalues of the gravitational deformation tensor in the emergent Riemannian manifold.
+*   **Hierarchical Singularity:** It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.

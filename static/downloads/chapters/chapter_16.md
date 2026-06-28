@@ -42,12 +42,12 @@ The **Causal Tensor Network** is herein defined as the hierarchical mapping $\ma
     where $D$ represents the depth of the renormalization flow.
 4.  **Emergent Dimension:** The depth coordinate $z = k \cdot \ell_0$ constitutes an emergent spatial dimension orthogonal to the boundary, identifying the renormalization scale with the radial coordinate of an Anti-de Sitter (AdS) geometry.
 
-#### 16.1.1.1 Commentary: Renormalization as Geometry {#16.1.1.1}
+### 16.1.1.1 Commentary: Renormalization as Geometry {#16.1.1.1}
 
 :::info[**Physical Interpretation: The Radial Direction is Scale**]
 :::
 
-The **causal tensor network definition** <Ref id="16.1.1" label="§16.1.1" /> of the Causal Tensor Network provides the "dictionary" for reading the geometry of the universe. In our standard experience, we perceive three spatial dimensions. In the QBD holographic view, one of these dimensions—specifically the one extending away from the observer into the deep bulk—is actually a manifestation of **Scale**.
+The **Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" /> of the Causal Tensor Network provides the "dictionary" for reading the geometry of the universe. In our standard experience, we perceive three spatial dimensions. In the QBD holographic view, one of these dimensions (specifically the one extending away from the observer into the deep bulk) is actually a manifestation of **Scale**.
 
 Imagine the universe as a hierarchy of resolution.
 * **The Boundary ($z=0$):** This is the screen of the hologram, containing the raw, high-frequency data of the graph (the Planck scale knots).
@@ -93,7 +93,7 @@ The tensor network (specifically the MERA structure shown above) physically cons
 
 ### 16.1.2 Theorem: Ryu-Takayanagi Correspondence {#16.1.2}
 
-:::tip[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
+:::info[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
 :::
 
 **Theorem (Ryu-Takayanagi):** It is herein established that the von Neumann entanglement entropy $S(\rho_A)$ of a boundary subregion $A \subset \partial G$ is strictly determined by the minimum information flux required to sever the causal connections between $A$ and its complement $A^c$ through the bulk graph $G_{bulk}$. Let $\gamma_A$ denote a homological surface in the bulk graph anchored to the boundary of $A$. The entropy satisfies the **Ryu-Takayanagi Formula**:
@@ -123,7 +123,7 @@ The argument proceeds via Direct Construction, mapping the boundary quantum enta
 
 ### 16.1.3 Lemma: Isometry Condition {#16.1.3}
 
-:::tip[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
+:::info[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
 :::
 
 **Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**. Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:
@@ -132,7 +132,7 @@ $$
 \Phi^\dagger \Phi = \hat{I}_{bulk}
 $$
 
-Consequently, the bulk Hilbert space $\mathcal{H}_{bulk}$ is isomorphic to a "code subspace" $\mathcal{C} \subset \mathcal{H}_{boundary}$. This ensures that any local operator $\hat{O}_{bulk}$ acting on the emergent geometry can be faithfully reconstructed as a non-local operator $\hat{O}_{boundary}$ acting on the graph boundary, preserving all information theoretic norms.
+Consequently, the bulk Hilbert space $\mathcal{H}_{bulk}$ is isomorphic to a "code subspace" $\mathcal{C} \subset \mathcal{H}_{boundary}$. Under this isomorphism, any local operator $\hat{O}_{bulk}$ acting on the emergent geometry can be faithfully reconstructed as a non-local operator $\hat{O}_{boundary}$ acting on the graph boundary, preserving all information theoretic norms.
 
 #### 16.1.3.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.3.1}
 
@@ -203,7 +203,7 @@ The Isometry Condition is the mathematical guarantee that the Universe does not 
 
 When you compress a file into a ZIP archive, you expect the process to be lossless. You want to be able to get the original file back perfectly. In linear algebra, "lossless" means "Isometric." If the mapping were not an isometry—if $w^\dagger w \neq I$—it would imply that two distinct bulk states could map to the same boundary state, or that bulk states could vanish entirely.
 
-The **isometry condition lemma** <Ref id="16.1.3" label="§16.1.3" /> proves that the geometry of spacetime acts like a **Quantum Error Correcting Code**. The local laws of physics (the $u$ and $w$ tensors) are specifically tuned to ensure that the information sitting in the deep bulk is redundantly encoded across the vast surface of the boundary. You can delete large chunks of the boundary (erasure errors), and because of the entanglement structure, the bulk state remains intact. "Reality" is the robust, error-corrected logical qubit protected by the surface code of the vacuum.
+The **Isometry Condition** <Ref id="16.1.3" label="§16.1.3" /> proves that the geometry of spacetime acts like a **Quantum Error Correcting Code**. The local laws of physics (the $u$ and $w$ tensors) are specifically tuned to ensure that the information sitting in the deep bulk is redundantly encoded across the vast surface of the boundary. You can delete large chunks of the boundary (erasure errors), and because of the entanglement structure, the bulk state remains intact. "Reality" is the robust, error-corrected logical qubit protected by the surface code of the vacuum.
 
 ---
 
@@ -213,14 +213,14 @@ The **isometry condition lemma** <Ref id="16.1.3" label="§16.1.3" /> proves tha
 :::
 
 **I. The Information Theoretic Premise**
-Let the boundary state $|\Psi_{\partial}\rangle$ be a ground state of a critical Hamiltonian, efficiently represented by the Causal Tensor Network $\mathcal{T}$ defined in Definition 16.1.1. The entanglement entropy of a boundary region $A$ is given by the von Neumann entropy of the reduced density matrix $\rho_A = \text{Tr}_{A^c}(|\Psi_{\partial}\rangle\langle\Psi_{\partial}|)$.
+Let the boundary state $|\Psi_{\partial}\rangle$ be a ground state of a critical Hamiltonian, efficiently represented by the tensor network $\mathcal{T}$ (**Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" />). The entanglement entropy of a boundary region $A$ is given by the von Neumann entropy of the reduced density matrix $\rho_A = \text{Tr}_{A^c}(|\Psi_{\partial}\rangle\langle\Psi_{\partial}|)$.
 
 $$
 S(A) = -\text{Tr}(\rho_A \ln \rho_A)
 $$
 
 **II. The Network Flow Identity**
-By the **Max-Flow Min-Cut Theorem** established in **Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" />, the calculation of $S(A)$ on the tensor network is strictly equivalent to finding the minimal set of bond indices (edges) $\gamma_{min}$ that must be severed to disconnect $A$ from the tensor network bulk.
+As established by max-flow min-cut duality (**Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" />), the calculation of $S(A)$ on the tensor network is strictly equivalent to finding the minimal set of bond indices (edges) $\gamma_{min}$ that must be severed to disconnect $A$ from the tensor network bulk.
 
 $$
 S(A) = \min_{\gamma} |\text{Cut}(\gamma)| \cdot (\ln \chi)
@@ -249,11 +249,12 @@ Q.E.D.
 ### 16.1.4.1 Calculation: Cut-Capacity Verification {#16.1.4.1}
 
 :::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]
+:::
 
-Verification of the holographic scaling law established in the Ryu-Takayanagi Correspondence **Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" /> is based on the following protocols:
+Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.4" label="§16.1.4" /> is based on the following protocols:
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
-2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of variable size to serve as the information source.
+2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
 3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size.
 
 ```python
@@ -401,11 +402,11 @@ We have successfully demystified the Holographic Principle. It is often presente
 * The "Bulk" is the hierarchy of coarse-grained descriptions (The Effective Scale).
 * The "Radial Dimension" is simply the zoom level.
 
-This result completes the derivation of Gravity commenced in Chapter 12. There, we saw gravity as the flux of topological defects. Here, we see that minimizing the surface area of a bulk region (the action of gravity) is equivalent to minimizing the entanglement entropy between that region and the rest of the universe.
+This result completes the derivation of Gravity commenced in Chapter 13. There, we saw gravity as the flux of topological defects. Here, we see that minimizing the surface area of a bulk region (the action of gravity) is equivalent to minimizing the entanglement entropy between that region and the rest of the universe.
 **Spacetime curves to optimize data compression.**
 Massive objects create high-entanglement regions (black holes), requiring "more surface area" to encode, thus warping the geometry around them.
 
-We have established *how* the bulk stores information (in the entanglement of the edges). Now we must ask: *how much* information can it store? If space is made of discrete bits, there must be a limit. We proceed to the **Bekenstein Bound** [(§16.2)](/monograph/stage/holography/16.2/#16.2), where we derive the **Bekenstein Bound**, proving that the universe has a finite resolution and cannot process infinite data.
+We have established *how* the bulk stores information (in the entanglement of the edges). Now we must ask: *how much* information can it store? If space is made of discrete bits, there must be a limit. We proceed to the **Bekenstein Bound** <Ref id="16.2" label="§16.2" />, where we derive the **Bekenstein Bound**, proving that the universe has a finite resolution and cannot process infinite data.
 
 ---
 
@@ -427,7 +428,7 @@ We demonstrate that the vacuum has a maximum "bit density" $\rho_{max}$. When a 
 
 The **Bulk Saturation Limit** $\rho_{max}$ is herein defined as the critical density of active stabilizer plaquettes (3-cycles) per unit volume of the graph such that the local update acceptance probability vanishes.
 1.  **Density Definition:** Let $\rho(\Omega) = \frac{N_{cycles}(\Omega)}{V_{nodes}(\Omega)}$ be the information density of a subgraph $\Omega$.
-2.  **Update Suppression:** The probability $P(\text{accept})$ of a graph rewrite rule $\mathcal{R}$ adding a new cycle is governed by the friction term derived in (§5.2.2):
+2.  **Update Suppression:** The probability $P(\text{accept})$ of a graph rewrite rule $\mathcal{R}$ adding a new cycle is governed by the friction term derived in (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />):
 
     $$
     P(\text{accept}) \propto \exp\left( -\mu \cdot \frac{\rho}{\rho_0} \right)
@@ -441,7 +442,7 @@ The **Bulk Saturation Limit** $\rho_{max}$ is herein defined as the critical den
 
     At this limit, the graph is "full." The Pauli Exclusion Principle for graph edges prevents the overlapping of distinct causal histories, rendering the bulk incompressible.
 
-#### 16.2.1.1 Commentary: The Incompressibility of the Vacuum {#16.2.1.1}
+### 16.2.1.1 Commentary: The Incompressibility of the Vacuum {#16.2.1.1}
 
 :::info[**Physical Interpretation: The Hard Drive is Full**]
 :::
@@ -450,7 +451,7 @@ To understand the Bekenstein Bound, we must view space not as a continuous stage
 
 In a standard hard drive, you can only write data until every magnetic domain is flipped. Once the drive is full, if you try to save a new file, the operating system rejects the command (or overwrites old data).
 
-The vacuum behaves identically. The "bits" of the vacuum are the topological twists (braids) in the graph. These twists require a minimum number of nodes to exist—you cannot tie a knot with zero string. Therefore, there is a maximum number of knots you can fit into a box of size $L$.
+The vacuum behaves identically. The "bits" of the vacuum are the topological twists (braids) in the graph. These twists require a minimum number of nodes to exist; you cannot tie a knot with zero string. Therefore, there is a maximum number of knots you can fit into a box of size $L$.
 
 When a region of space reaches this limit (typically in a Black Hole), the "Operating System" of the universe (the Master Equation) rejects any new write operations into the interior. The information has nowhere to go but to pile up on the surface. This is why Black Holes grow by surface area, not volume. The interior is a region of "Maximum Computational Density" where physics effectively freezes because the update rate drops to zero.
 
@@ -458,7 +459,7 @@ When a region of space reaches this limit (typically in a Black Hole), the "Oper
 
 ### 16.2.2 Theorem: Maximum Informational Density (The Bound) {#16.2.2}
 
-:::tip[**Establishment of the Universal Entropy Bound via Bulk Saturation**]
+:::info[**Establishment of the Universal Entropy Bound via Bulk Saturation**]
 :::
 
 It is herein established that the information content (entropy $S$) of any causally compact subgraph $\Omega \subset G$ is strictly bounded by the discrete area of its boundary surface $\partial \Omega$. Let $A[\partial \Omega]$ denote the number of plaquettes constituting the causal horizon. The entropy satisfies the **Bekenstein Bound**:
@@ -491,7 +492,7 @@ The argument proceeds via Direct Construction, analyzing the topological and the
 
 ### 16.2.3 Lemma: Holographic Screen Mechanism {#16.2.3}
 
-:::tip[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
+:::info[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
 :::
 
 **Lemma (Screen Mechanism):** It is herein established that the locus of information deposition for a subgraph $\Omega$ transitions from the bulk volume $V_{\Omega}$ to the boundary surface $\partial \Omega$ as the information density approaches the critical saturation limit $\rho_{max}$. Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
@@ -502,9 +503,9 @@ $$
 
 where $A$ is the area of the causal horizon and $\alpha$ is the structural proportionality constant determined by the lattice discreteness. This mechanism identifies the "Holographic Screen" as the physical phase boundary of the saturated vacuum.
 
-#### 16.2.3.1 Proof: Volume to Area Scaling Transition {#16.2.3.1}
+### 16.2.3.1 Proof: Volume to Area Scaling Transition {#16.2.3.1}
 
-:::note[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
+:::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
 :::
 
 **I. The Information Capacity Functional**
@@ -564,20 +565,23 @@ Thus, the scaling transitions from $R^D$ to $R^{D-1}$. The system effectively lo
 
 Q.E.D.
 
-#### 16.2.3.2 Commentary: The Saturated Horizon {#16.2.3.2}
+### 16.2.3.2 Commentary: The Saturated Horizon {#16.2.3.2}
 
 :::info[**Physical Interpretation: Sedimentation of Information**]
 :::
 
-The **holographic screen mechanism lemma** <Ref id="16.2.3" label="§16.2.3" /> explains *why* the universe acts like a hologram, but only under extreme conditions. It is a process of **Information Sedimentation**.
+The **Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" /> explains *why* the universe acts like a hologram, but only under extreme conditions. It is a process of **Information Sedimentation**.
 
 Imagine dropping pebbles (bits of information) into a pond (the vacuum).
 * **Sparse Phase (Empty Space):** The pebbles sink to the bottom and spread out. You can fit pebbles throughout the entire volume of the water. The capacity scales with the amount of water (Volume).
 * **Saturated Phase (Black Hole):** Eventually, the pond fills up with pebbles. It becomes a solid rock. You cannot fit a single new pebble *inside* the pile. If you add another pebble, it must sit on the *surface*.
 
-When a region of spacetime becomes a Black Hole, the graph is "full." The stabilizers are maximally entangled; there are no free degrees of freedom left to excite in the interior. The "bulk" freezes. Any new quantum information falling into the black hole cannot penetrate the bulk; it gets plastered onto the Event Horizon, increasing the area by one Planck unit. To an outside observer, it looks like the information lives on the surface (Holography), but structurally, it's just that the interior is a saturated solid that can only grow by accretion.
+When a region of spacetime becomes a Black Hole, the graph is "full." The stabilizers are maximally entangled; there are no free degrees of freedom left to excite in the interior. The "bulk" freezes. Any new quantum information falling into the black hole cannot penetrate the bulk; it gets plastered onto the Event Horizon, increasing the area by one Planck unit. To an outside observer, it looks like the information lives on the surface (Holography), but structurally, it is just that the interior is a saturated solid that can only grow by accretion.
 
 ### 16.2.3.3 Diagram: Saturated Horizon {#16.2.3.3}
+
+:::note[**Visualization of Saturated Horizon**]
+:::
 
 ```text
 
@@ -611,7 +615,7 @@ PHASE I: SPARSE VACUUM               PHASE II: SATURATED HORIZON
 
 ### 16.2.4 Lemma: Black Hole Entropy from Cycle Count {#16.2.4}
 
-:::tip[**Establishment of the Geometric Entropy Formula via Topological Crossing Number**]
+:::info[**Establishment of the Geometric Entropy Formula via Topological Crossing Number**]
 :::
 
 It is herein established that the Bekenstein-Hawking entropy $S_{BH}$ of a trapped surface (Black Hole Horizon) corresponds strictly to the cardinality of the fundamental 3-cycles (braid loops) intersecting the boundary manifold. Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:
@@ -667,16 +671,16 @@ Q.E.D.
 :::info[**Physical Interpretation: Digital Geometry**]
 :::
 
-The **black hole entropy from cycle count lemma** <Ref id="16.2.4" label="§16.2.4" /> demystifies the black hole entropy formula. Why is there a factor of $1/4$? Why Area and not Volume?
+The **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" /> demystifies the black hole entropy formula. Why is there a factor of $1/4$? Why Area and not Volume?
 
-The proof tells us that a Black Hole is essentially a **Geodesic Dome**. The Event Horizon is not a smooth, continuous surface; it is a lattice of interlocking triangles (3-cycles). Each triangle represents one fundamental bit of quantum information—one "Yes/No" question the universe can answer about the black hole's state.
+The proof tells us that a Black Hole is essentially a **Geodesic Dome**. The Event Horizon is not a smooth, continuous surface; it is a lattice of interlocking triangles (3-cycles). Each triangle represents one fundamental bit of quantum information, one "Yes/No" question the universe can answer about the black hole's state.
 
 When we calculate $S = A/4$, we are literally counting these triangles.
 * **$A$:** The total surface area.
 * **$1$ (implied unit):** The size of one triangle.
 * **$1/4$:** The "packing factor" or geometric efficiency. It accounts for the overlap and the specific geometry of how quantum spins map to surface area.
 
-This confirms the central thesis of Digital Physics: at the bottom, it's just bits. A Black Hole is simply the maximum density of bits allowed by the compiler. It is the universe's way of saying "Buffer Overflow."
+This confirms the central thesis of Digital Physics: at the bottom, it is just bits. A Black Hole is simply the maximum density of bits allowed by the compiler. It is the universe's way of saying "Buffer Overflow."
 
 ---
 
@@ -720,7 +724,7 @@ Q.E.D.
 :::note[**Verification of Bekenstein-Hawking Entropy Scaling via Trapped Surface Plaquette Tiling**]
 :::
 
-Verification of the holographic saturation limit established in the Maximum Density Theorem **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" /> is based on the following protocols:
+Verification of the holographic saturation limit established by **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
@@ -920,7 +924,7 @@ This suggests that **Quantum Braid Dynamics is the non-perturbative background f
 :::note[**End of Chapter 16**]
 :::
 
-We have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \text{Area}(\gamma_A)/4G_N$ <Ref id="16.1.2" label="§16.1.2" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states.
+We have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \text{Area}(\gamma_A)/4G_N$ **Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states.
 
 The broader implication is that spacetime behaves as a self-correcting codespace protecting bulk information with a finite maximum memory capacity dictated by the **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" />. This implies that information cannot be compressed indefinitely, but must nucleate onto spatial boundaries when it reaches maximum density. However, this creates a major tension: how does a finite boundary state resolve the infinite degrees of freedom of a continuous bulk theory? We must navigate this holographic finiteness, which restricts physical degrees of freedom to the boundary screen.
 

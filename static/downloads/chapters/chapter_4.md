@@ -19,7 +19,7 @@ Finally, we unify these elements into the Universal Operator $\mathcal{U}$. This
 * Confirm the operator is irreversible through projection and sampling entropy increase.
 :::
 
------
+---
 
 ## 4.1 Categorical Foundations: Definitions and Motivations {#4.1}
 
@@ -41,7 +41,7 @@ We resolve this foundational crisis by formalizing two complementary categories 
 
 The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components:
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
-2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Paths** <Ref id="1.5.1" label="§1.5.1" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
+2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
 4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
 
@@ -64,7 +64,7 @@ Crucially, this category acts as the "kinematic phase space" for the universe at
 :::
 
 The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the structure governing the progression of causal graphs across the domain of Logical Time.
-1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the **State Space and Graph Structure** <Ref id="1.3.1" label="§1.3.1" />.
+1.  **Objects:** The objects are Causal Graphs with History $G = (V, E, H)$, defined as valid states within the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />.
 2.  **Morphisms:** A morphism $f: G \to G'$ constitutes a **History-Respecting Embedding**, defined as an injective function $f: V \to V'$ satisfying two invariant conditions:
     * **Edge Preservation:** For all $(u, v) \in E$, the image $(f(u), f(v))$ must exist in $E'$.
     * **History Preservation:** For all $(u, v) \in E$, the timestamp values must satisfy the non-decreasing inequality $H((u, v)) \leq H'((f(u), f(v)))$.
@@ -78,9 +78,9 @@ The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the structur
 
 While $\mathbf{Caus}_t$ describes the internal structure of the "Now", the category $\mathbf{Hist}$ describes the "Timeline." This is the global container for cosmic evolution. The objects in this category are complete historical archives, tuples $(V, E, H)$ containing every event and relation that has existed up to that logical tick.
 
-The morphisms in $\mathbf{Hist}$ are **History-Respecting Embeddings**. The definition of **The Historical Category** <Ref id="4.1.2" label="§4.1.2" /> is physically profound, it asserts that time evolution is strictly cumulative. A morphism $f: G_t \to G_{t+1}$ maps the state of the universe at time $t$ into the state at time $t+1$ in a manner that strictly preserves the past. It forbids the deletion of events (injectivity on $V$) and the scrambling of causal order (monotonicity of $H$). If an edge existed at time $t$ with timestamp $H(e)$, its image must exist at time $t+1$ with a timestamp $H'(e') \ge H(e)$. This constraint creates a "Block Universe" that is built dynamically layer by layer, rather than existing eternally.
+The morphisms in $\mathbf{Hist}$ are **History-Respecting Embeddings**. The structure of the **Historical Category** <Ref id="4.1.2" label="§4.1.2" /> is physically profound; it asserts that time evolution is strictly cumulative. A morphism $f: G_t \to G_{t+1}$ maps the state of the universe at time $t$ into the state at time $t+1$ in a manner that strictly preserves the past. It forbids the deletion of events (injectivity on $V$) and the scrambling of causal order (monotonicity of $H$). If an edge existed at time $t$ with timestamp $H(e)$, its image must exist at time $t+1$ with a timestamp $H'(e') \ge H(e)$. This constraint creates a "Block Universe" that is built dynamically layer by layer, rather than existing eternally.
 
-This formulation acts as a rigorous safeguard against retrocausality. Because every valid evolution must be a morphism in $\mathbf{Hist}$, it is mathematically impossible for the system to "rewrite" a lower timestamp or alter the connectivity of a prior epoch. The arrow of time is thus encoded structurally into the definition of **The Historical Category** <Ref id="4.1.2" label="§4.1.2" /> itself. When the Universe evolves, it effectively "embeds" its past self into its future self, much like a biological organism retains its cellular history or a blockchain appends new blocks without altering the genesis block. This ensures that even as the geometry fluctuates and topology changes, the causal pedigree of every event remains invariant.
+This formulation acts as a rigorous safeguard against retrocausality. Because every valid evolution must be a morphism in $\mathbf{Hist}$, it is mathematically impossible for the system to "rewrite" a lower timestamp or alter the connectivity of a prior epoch. The arrow of time is thus encoded structurally into the **Historical Category** <Ref id="4.1.2" label="§4.1.2" /> itself. When the Universe evolves, it effectively "embeds" its past self into its future self, much like a biological organism retains its cellular history or a blockchain appends new blocks without altering the genesis block. This ensures that even as the geometry fluctuates and topology changes, the causal pedigree of every event remains invariant.
 
 ---
 
@@ -163,7 +163,7 @@ We have verified that the internal and historical structures function as categor
 
 This implies that the dynamical process itself is a directed sequence of morphisms within the historical category. Each arrow connects one state to the next while inheriting the full temporal constraints, preventing retrocausal loops or undefined transitions. However, extracting the internal causal influences requires a compatible slicing mechanism to restrict embeddings to local paths without introducing gaps.
 
-The categorical syntax establishes a "block universe" that is built dynamically rather than existing eternally. By defining history as a cumulative sequence of embeddings, we ensure that the past is structurally conserved within the present, providing a robust mathematical basis for the arrow of time. This formalism prevents the "rewriting" of history, as valid morphisms must respect the established timestamp order, thereby encoding the irreversibility of physical events directly into the definition of **The Historical Category** <Ref id="4.1.2" label="§4.1.2" /> of the state space.
+The categorical syntax establishes a "block universe" that is built dynamically rather than existing eternally. By defining history as a cumulative sequence of embeddings, we ensure that the past is structurally conserved within the present, providing a robust mathematical basis for the arrow of time. This formalism prevents the "rewriting" of history, as valid morphisms must respect the established timestamp order, thereby encoding the irreversibility of physical events directly into the **Historical Category** <Ref id="4.1.2" label="§4.1.2" /> of the state space.
 
 ---
 
@@ -184,7 +184,7 @@ We solve this verification problem by proving that the path concatenation operat
 :::info[**Formal Consistency of the Categorical Frameworks for Global and Internal Structures**]
 :::
 
-It is asserted that the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid mathematical categories. Specifically, both structures satisfy the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. These frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
+The structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid mathematical categories. Specifically, both structures satisfy the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. These frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
 
 ### 4.2.1.1 Commentary: Argument Outline {#4.2.1.1}
 
@@ -231,7 +231,7 @@ The proof proceeds via Direct Construction, verifying the algebraic requirements
 :::info[**Neutrality of Trivial Paths in the Internal Causal Category**]
 :::
 
-Let $p: u \to v$ be a morphism in $\mathbf{Caus}_t$. Then the composition with the **Trivial Path** <Ref id="4.1.1" label="§4.1.1" /> satisfies the identity laws $p \circ \text{id}_u = p$ and $\text{id}_v \circ p = p$, where the concatenation of a sequence with a zero-length sequence yields the original sequence invariant.
+Let $p: u \to v$ be a morphism in $\mathbf{Caus}_t$. Then the composition with the Trivial Path in the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" /> satisfies the identity laws $p \circ \text{id}_u = p$ and $\text{id}_v \circ p = p$, where the concatenation of a sequence with a zero-length sequence yields the original sequence invariant.
 
 ### 4.2.2.1 Proof: Identity Preservation for $\mathbf{Caus}_t$ {#4.2.2.1}
 
@@ -311,10 +311,13 @@ Let $p: u \to v$, $q: v \to w$, and $r: w \to x$ be composable morphisms defined
 Let $L$ denote the composite morphism $(r \circ q) \circ p$.
 
 1.  **Inner Step:** Let $y = r \circ q$.
+
     $$
     S_y = S_q \cdot S_r = (e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
     $$
+
 2.  **Outer Step:** The equality $L = y \circ p$ holds.
+
     $$
     S_L = S_p \cdot S_y = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
     $$
@@ -324,10 +327,13 @@ Let $L$ denote the composite morphism $(r \circ q) \circ p$.
 Let $R$ denote the composite morphism $r \circ (q \circ p)$.
 
 1.  **Inner Step:** Let $z = q \circ p$.
+
     $$
     S_z = S_p \cdot S_q = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m)
     $$
+
 2.  **Outer Step:** The equality $R = r \circ z$ holds.
+
     $$
     S_R = S_z \cdot S_r = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
     $$
@@ -353,7 +359,7 @@ Q.E.D.
 :::info[**Preservation of Timestamp Monotonicity**]
 :::
 
-Let $f: G \to G'$ and $g: G' \to G''$ be **History-Respecting Embeddings** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
 
 ### 4.2.4.1 Proof: Preservation of Monotonicity {#4.2.4.1}
 
@@ -389,6 +395,7 @@ Let $h = g \circ f$ denote the composite map. For an arbitrary edge $e \in E(G)$
 2.  The map $g$ sends $e'$ to $e'' = g(e')$. Condition B implies $H_{G'}(e') \le H_{G''}(e'')$.
 3.  Substitution yields $H_{G'}(f(e)) \le H_{G''}(g(f(e)))$.
 4.  Transitivity of $\le$ establishes the chain:
+
     $$
     H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))
     $$
@@ -432,7 +439,7 @@ $$
 H(e) \le H(\text{id}_G(u), \text{id}_G(v)) = H(e)
 $$
 
-It follows that $\text{id}_G$ satisfies **History-Respecting Embedding** <Ref id="4.1.2" label="§4.1.2" />.
+It follows that $\text{id}_G$ satisfies the conditions of a morphism in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />.
 
 **III. Left Neutrality**
 
@@ -500,7 +507,7 @@ For an element $x \in V(A)$:
 
 **III. Validity**
 
-Function composition is inherently associative in Set Theory. Combined with the **validity preservation** <Ref id="4.2.5" label="§4.2.5" />, this establishes associativity for all composable morphisms. We conclude that the associativity property holds for $\mathbf{Hist}$.
+Function composition is inherently associative in Set Theory. Combined with the **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />, this establishes associativity for all composable morphisms. We conclude that the associativity property holds for $\mathbf{Hist}$.
 
 Q.E.D.
 
@@ -537,20 +544,23 @@ C' = (y_0, \dots, y_k) \quad \text{where} \quad y_0 = y_k
 $$
 
 
-
 **III. Axiomatic Violation (Acyclicity)**
 
 The target graph $G'$ is a valid causal graph satisfying **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 1.  **Case A (Length 1):** If $\pi$ is a single edge $(u, v)$, then $f(\pi)$ is a Self-Loop $(w, w)$.
+
 $$
 E(G') \ni (w, w)
 $$
+
 This configuration violates the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 2.  **Case B (Length $\ge 2$):** If $\pi$ is a path, $f(\pi)$ forms a cycle of length $k \ge 1$.
+
 $$
 C' \subset G'
 $$
+
 This configuration violates **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 **IV. Timestamp Contradiction**
@@ -582,7 +592,7 @@ Q.E.D.
 :::info[**Categorical encoding of the effective influence relation**]
 :::
 
-Let the **Effective Influence** relation $\le$ <Ref id="2.6.1" label="§2.6.1" /> constitute a constrained subset of morphisms within $\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length satisfies $\ell(p) \ge 2$ and the sequence of edge timestamps is strictly increasing.
+Let the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ constitute a constrained subset of morphisms within $\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length satisfies $\ell(p) \ge 2$ and the sequence of edge timestamps is strictly increasing.
 
 ### 4.2.8.1 Proof: Encoding Verification {#4.2.8.1}
 
@@ -615,7 +625,7 @@ $$
 
 **IV. Conclusion**
 
-The category $\mathbf{Caus}_t$ constitutes the structural superset for the physical influence relation. We conclude that the axioms characterizing **Effective Influence** <Ref id="2.6.1" label="§2.6.1" /> filter the categorical morphism space, thereby defining physical causality.
+The category $\mathbf{Caus}_t$ constitutes the structural superset for the physical influence relation. We conclude that the axioms characterizing **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> filter the categorical morphism space, thereby defining physical causality.
 
 Q.E.D.
 
@@ -680,8 +690,8 @@ Q.E.D.
 We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
 **II. The Verification Chain**
-1.  **Identity** <Ref id="4.2.2" label="§4.2.2" /> <Ref id="4.2.5" label="§4.2.5" />: Verification of the neutral elements establishes that the trivial path in $\mathbf{Caus}_t$ serves as the identity on nodes and the identity function in $\mathbf{Hist}$ serves as the identity on graphs.
-2.  **Associativity** <Ref id="4.2.3" label="§4.2.3" /> <Ref id="4.2.6" label="§4.2.6" />: Verification of composition rules confirms that both path concatenation and function composition are associative.
+1.  **Identity for $\mathbf{Caus}_t$** <Ref id="4.2.2" label="§4.2.2" /> **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />: Verification of the neutral elements establishes that the trivial path in $\mathbf{Caus}_t$ serves as the identity on nodes and the identity function in $\mathbf{Hist}$ serves as the identity on graphs.
+2.  **Associativity for $\mathbf{Caus}_t$** <Ref id="4.2.3" label="§4.2.3" /> **Associativity for $\mathbf{Hist}$** <Ref id="4.2.6" label="§4.2.6" />: Verification of composition rules confirms that both path concatenation and function composition are associative.
 3.  **Timestamp Monotonicity** <Ref id="4.2.4" label="§4.2.4" />: Verification of the embedding maps demonstrates that composition preserves the inequality $H(e) \le H'(f(e))$ along all causal trajectories.
 4.  **Topological Injectivity** <Ref id="4.2.7" label="§4.2.7" />: Verification of structural injectivity proves that morphisms map connected components injectively to prevent topological collapse.
 
@@ -700,7 +710,7 @@ Q.E.D.
 :::note[**Empirical Verification of Order-Theoretic Properties via Path Traversal**]
 :::
 
-Computational verification of the strict partial order of effective influence established by **Partial Order Property** [§4.2.9.1](/monograph/rules/dynamics/4.2#4.2.9.1) proceeds according to the following protocols:
+Computational verification of the strict partial order of effective influence established by **Partial Order Property** <Ref id="4.2.9.1" label="§4.2.9.1" /> is based on the following protocols:
 
 1.  **Graph Generation:** The protocol constructs a Directed Acyclic Graph (DAG) with strictly increasing edge timestamps to model a valid causal history.
 2.  **Relation Extraction:** The algorithm computes the **Effective Influence** relation $u \le v$ by searching for at least one path between nodes that satisfies:
@@ -828,7 +838,7 @@ This syntax bridges directly to the thermodynamic considerations by providing a 
 
 The mathematical validation of these categories transforms the graph from a static data structure into a dynamic engine capable of supporting physics. By proving that the operations of path concatenation and history embedding are associative and possess identity elements, we guarantee that the "computation" of the universe is robust against the order of operations. This solidity allows us to build complex higher-order structures, such as the awareness comonad, with the confidence that the underlying logical substrate will not collapse under the weight of recursive definitions.
 
------
+---
 
 ---
 
@@ -842,14 +852,14 @@ We overcome this blindness by constructing the awareness layer as a store comona
 
 ---
 
-### 4.3.1 Definition: Annotated Category (AnnCG) {#4.3.1}
+### 4.3.1 Definition: Annotated Causal Graphs (AnnCG) {#4.3.1}
 
 :::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
 :::
 
-The **Category of Annotated Causal Graphs**, denoted $\mathbf{AnnCG}$, is defined by the following structural components:
-1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a valid Causal Graph with **History** <Ref id="1.3.1" label="§1.3.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with the **Geometric Check Operators** <Ref id="3.5.5" label="§3.5.5" />.
-2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a **History-Respecting Embedding** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation.
+The Category of **Annotated Causal Graphs (AnnCG)**, denoted $\mathbf{AnnCG}$, is defined by the following structural components:
+1.  **Objects:** The objects are ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a Causal Graph with **History**, as defined in **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G)$, consistent with **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />.
+2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation.
 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$.
 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
 
@@ -870,7 +880,7 @@ The morphisms in $\mathbf{AnnCG}$ enforce a dual preservation condition: a valid
 :::
 
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
-1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via the Syndrome **extraction** <Ref id="3.5.5" label="§3.5.5" />.
+1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> extraction.
 2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
 
 ### 4.3.2.1 Commentary: Mechanism of Self-Observation {#4.3.2.1}
@@ -968,7 +978,14 @@ The comultiplication $\delta$ provides the structural capacity for meta-verifica
 
 ---
 
+### 4.3.5 Theorem: Awareness Comonad {#4.3.5}
+
+:::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
+:::
+
 The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. Specifically, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
+
+---
 
 ### 4.3.5.1 Commentary: Argument Outline {#4.3.5.1}
 
@@ -983,9 +1000,21 @@ The proof proceeds via Direct Construction, proving that the self-observation an
 │   ├── 4.3.6.1 Proof Functoriality of Awareness
 │   └── 4.3.6.2 Commentary Structural Integrity
 │
-└── 4.3.7 Lemma Naturality of Transformations
-    ├── 4.3.7.1 Proof Commutative Squares
-    └── 4.3.7.2 Commentary Diagnostic Consistency
+├── 4.3.7 Lemma Naturality of Transformations
+│   ├── 4.3.7.1 Proof Commutative Squares
+│   └── 4.3.7.2 Commentary Diagnostic Consistency
+│
+├── 4.3.8 Lemma Axiom Satisfaction
+│   ├── 4.3.8.1 Proof Axiom Satisfaction
+│   ├── 4.3.8.2 Commentary Axiomatic Implications
+│   └── 4.3.8.3 Diagram Associativity of Awareness
+│
+├── 4.3.9 Lemma Comonadic Pauli Frame Tracking
+│   ├── 4.3.9.1 Proof Comonadic Pauli Frame Tracking
+│   └── 4.3.9.2 Commentary Phase Alignment
+│
+└── 4.3.10 Proof Demonstration of the Awareness Comonad
+    └── 4.3.10.1 Calculation Simulation Verification
 ```
 
 ---
@@ -1114,24 +1143,32 @@ The naturality condition requires the commutation $\epsilon_Y \circ R_T(f) = f \
 
 **Path A ($f \circ \epsilon_X$):**
 * **Apply Counit:** The counit $\epsilon_X$ projects the tuple to its first component.
+
     $$
     \epsilon_X(a, b) = a
     $$
+
 * **Apply Morphism:** The morphism $f$ maps the result.
+
     $$
     k(a)
     $$
+
 * **Result A:** $k(a)$.
 
 **Path B ($\epsilon_Y \circ R_T(f)$):**
 * **Apply Lifted Morphism:** The lifted morphism $R_T(f)$ maps the first component of the tuple.
+
     $$
     R_T(f)(a, b) = (k(a), b)
     $$
+
 * **Apply Counit:** The counit $\epsilon_Y$ projects the result.
+
     $$
     \epsilon_Y(k(a), b) = k(a)
     $$
+
 * **Result B:** $k(a)$.
 
 The results are identical. The diagram commutes.
@@ -1142,27 +1179,35 @@ The naturality condition requires the commutation $\delta_Y \circ R_T(f) = R_T^2
 
 **Path A ($\delta_Y \circ R_T(f)$):**
 * **Apply Lifted Morphism:** The lifted morphism $R_T(f)$ transforms the input.
+
     $$
     (a, b) \to (k(a), b)
     $$
+
 * **Apply Comultiplication:** The comultiplication $\delta_Y$ duplicates the context of the result.
+
     $$
     (k(a), b) \to ((k(a), b), b)
     $$
+
 * **Result A:** $((k(a), b), b)$.
 
 **Path B ($R_T^2(f) \circ \delta_X$):**
 * **Apply Comultiplication:** The comultiplication $\delta_X$ duplicates the context of the input.
+
 $$
 (a, b) \to ((a, b), b)
 $$
+
 * **Apply Doubly Lifted Morphism:** The doubly lifted morphism $R_T^2(f)$ lifts the map $R_T(f)$.
 The map $R_T(f)$ acts as $\phi(u, v) = (k(u), v)$.
 Let Input $T = ((a, b), b)$. The first component is $u=(a, b)$. The second is $v=b$.
 The operator $R_T(\phi)$ applies $\phi$ to the first component while preserving the outer context.
+
 $$
 R_T(\phi)(u, v) = (\phi(u), v) = (\phi(a, b), b) = ((k(a), b), b)
 $$
+
 * **Result B:** $((k(a), b), b)$.
 
 The results are identical. The diagram commutes.
@@ -1213,9 +1258,11 @@ The verification targets the equality $\epsilon_{R_T(X)} \circ \delta_X = \text{
 1.  **Input:** $(a, b)$.
 2.  **Apply $\delta_X$:** The operation maps $(a, b)$ to the nested tuple $((a, b), b)$.
 3.  **Apply $\epsilon_{R_T(X)}$:** The counit projects onto the first component of the input. The first component is the tuple $(a, b)$.
+
     $$
     ((a, b), b) \xrightarrow{\epsilon} (a, b)
     $$
+
 4.  **Result:** The output $(a, b)$ is identical to the input.
 
 **III. Right Identity**
@@ -1234,6 +1281,7 @@ The verification targets the equality $\delta \circ \delta = R_T(\delta) \circ \
 **LHS Derivation ($\delta_{R_T(X)} \circ \delta_X$):**
 * **Step 1:** Application of $\delta_X$ to $(a, b)$ yields $((a, b), b)$.
 * **Step 2:** Application of $\delta_{R_T(X)}$ duplicates the outer context. Let Input $Y = ((a, b), b)$. The operation maps $Y \to (Y, \text{context}(Y))$. The context of $Y$ is the second component, $b$.
+
     $$
     ((a, b), b) \to (((a, b), b), b)
     $$
@@ -1241,6 +1289,7 @@ The verification targets the equality $\delta \circ \delta = R_T(\delta) \circ \
 **RHS Derivation ($R_T(\delta_X) \circ \delta_X$):**
 * **Step 1:** Application of $\delta_X$ to $(a, b)$ yields $((a, b), b)$.
 * **Step 2:** Application of $R_T(\delta_X)$ lifts the duplication map to the inner component. The map acts on $((a, b), b)$ by applying $\delta_X$ to the first element $(a, b)$ and preserving the second element $b$. Since $\delta_X(a, b) = ((a, b), b)$, the result combines this transformed inner part with the preserved outer $b$:
+
     $$
     (((a, b), b), b)
     $$
@@ -1288,17 +1337,74 @@ The satisfaction of these axioms is locked by type geometry, guaranteeing that t
       RESULT: The square commutes. Diagnosis is consistent depth-wise.
 ```
 
----
+### 4.3.9 Lemma: Comonadic Pauli Frame Tracking {#4.3.9}
 
-### 4.3.9 Proof: Demonstration of the Awareness Comonad {#4.3.9}
-
-:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure**]
+:::info[**Comonadic Tracking of Stabilizer Parity Shifts**]
 :::
 
-**I. The Object Hypothesis**
-We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ as a candidate structure for a Comonad, intended to formalize self-reference.
+Let $\vec{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\vec{s}' = \vec{s} \oplus \vec{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
 
-**II. The Verification Chain**
+### 4.3.9.1 Proof: Comonadic Pauli Frame Tracking {#4.3.9.1}
+
+:::tip[**Formal Proof of Comonadic Pauli Frame Tracking via Stabilizer Commutation**]
+:::
+
+**I. Stabilizer and Update Operators**
+
+Let $G_t$ denote the causal graph. The stabilizer group $S(G_t)$ is generated by operators $S_i$. Edge insertions and deletions correspond to Pauli-$X$ operations acting on the edge qubit space.
+
+**II. Parity Shift Derivation**
+
+Let $U = \prod_{e} X_e$ denote the rewrite operator. Since $U$ consists of Pauli-$X$ operators, it anti-commutes with any stabilizer generator $S_i$ that shares an odd number of edges:
+
+$$
+S_i U = (-1)^{u_i} U S_i
+$$
+
+where $u_i \in \{0, 1\}$ represents the parity shift of the stabilizer. The measured syndrome elements $s_i$ are the eigenvalues of $S_i$. The shifts are tracked comonadically by updating the syndrome index:
+
+$$
+\vec{s}' = \vec{s} \oplus \vec{u}
+$$
+
+**III. Projector Formulation**
+
+Under the awareness endofunctor $R_T$, the state is adjoined with $\vec{s}'$ instead of the static syndrome $\vec{s}$. Checking the measurements against the updated syndrome $\vec{s}_{\text{measured}} \oplus \vec{s}'$ ensures that the projector:
+
+$$
+\mathcal{P} = \prod_i \frac{I + (-1)^{s_i'} S_i}{2}
+$$
+
+only projects out external errors rather than the intentional geometric updates.
+
+**IV. Conclusion**
+
+We conclude that comonadic syndrome updating tracks the Pauli frame shift, preserving codespace integrity during active geometric rewrites.
+
+Q.E.D.
+
+### 4.3.9.2 Commentary: Phase Alignment {#4.3.9.2}
+
+:::info[**Coherence Preservation of the Protected Codespace under Active Geometric Updates**]
+:::
+
+The comonadic tracking of the syndrome shift $\vec{u}$ resolves a fundamental conflict between active geometric rewrites and stabilizer error correction. In static quantum error-correcting codes, any operator that anti-commutes with a stabilizer generator is flagged as a defect or error. Since the physical updates that drive geometrogenesis are represented by Pauli-$X$ operations on edges, they inevitably alter the eigenvalues of local $Z$-stabilizers. Without a tracking mechanism, the stabilizer projector would interpret these updates as physical errors and project the state back to the initial configuration, effectively freezing the dynamics and annihilating the emerging geometry.
+
+By encoding the syndrome updating process $\vec{s}' = \vec{s} \oplus \vec{u}$ within the comonadic self-observation layer, the universe distinguishes between intentional, rule-governed geometric updates and random environmental noise. The Store Comonad provides the necessary memory structure to retain both the expected update profile and the actual measurement output. This alignment ensures that the code space dynamically evolves alongside the topology, maintaining macroscopic coherence while preserving local fault tolerance. The self-observing feedback loop thus acts as a phase-alignment protocol, enabling the smooth transition of the quantum vacuum into a stable pre-geometric substrate.
+
+---
+
+### 4.3.10 Proof: Demonstration of the Awareness Comonad {#4.3.10}
+
+:::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure via Functorial Mapping**]
+:::
+
+**I. Setup and Assumptions**
+
+Let the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ be defined as a candidate structure for a Comonad, formalizing self-reference.
+
+**II. The Logic Chain**
+
 1.  **Functoriality of Awareness** <Ref id="4.3.6" label="§4.3.6" />: It is proven that the mapping $R_T$, which adjoins the local syndrome $\sigma_G$ to the state, preserves both identity morphisms and composition, qualifying as a valid **Endofunctor**.
 2.  **Naturality of Transformations** <Ref id="4.3.7" label="§4.3.7" />: It is proven that Context Extraction ($\epsilon$) and Meta-Check duplication ($\delta$) commute with all state transformations $f: G \to G'$, qualifying them as **Natural Transformations**.
 3.  **Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" />: Explicit tuple tracing confirms the triplet satisfies the defining laws:
@@ -1306,20 +1412,22 @@ We define the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of An
     * **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$ (Checking the check then discarding the inner context returns the original).
     * **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$ (The order of recursive checking does not alter the nested structure).
 
-**III. Convergence**
+**III. Assembly**
+
 The structure satisfies the complete algebraic definition of a Comonad. The operations of self-diagnosis, context retrieval, and recursive verification form a closed and consistent algebraic system.
 
 **IV. Formal Conclusion**
-The **Awareness Comonad** constitutes a proven comonadic invariant. It formalizes the capacity for fault-tolerant self-diagnosis within the causal graph.
+
+We conclude that the Awareness Comonad constitutes a proven comonadic invariant, formalizing the capacity for fault-tolerant self-diagnosis within the causal graph.
 
 Q.E.D.
 
-### 4.3.9.1 Calculation: Simulation Verification {#4.3.9.1}
+### 4.3.10.1 Calculation: Simulation Verification {#4.3.10.1}
 
 :::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 :::
 
-Computational verification of the categorical consistency established by **The Awareness Comonad** <Ref id="4.3.9" label="§4.3.9" /> proceeds according to the following protocols:
+Computational verification of the categorical consistency established by **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
 
 1.  **State Definition:** The algorithm defines an `AnnotatedGraph` representation that couples a causal graph structure (via NetworkX) with a nested coordinate mapping, implementing the store comonad structure.
 2.  **Morphism Implementation:** The protocol implements the core comonadic operations:
@@ -1444,12 +1552,12 @@ These results validate the structural correctness of the Store Comonad model, co
 
 ---
 
-### 4.3.10 Type-Theoretic Validation via Lean 4 Core {#4.3.10}
+### 4.3.11 Type-Theoretic Validation via Lean 4 Core {#4.3.11}
 
 :::note[**Lean 4 Encoding of Comonadic Laws via Definitional Equality**]
 :::
 
-Type-theoretic certification of the comonad axioms established in the **Comonad Verification** argument at <Ref id="4.3.9" label="§4.3.9" /> proceeds via the following verification strategy:
+Type-theoretic certification of the comonad axioms established in **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
 
 1.  **Encoding:** The structure `GraphState G A` encodes an annotated causal graph as a dependent product of a graph carrier `G` and an annotation context `A`; `ε` (counit) and `δ` (comultiplication) encode the two structural maps, while `lift_history` encodes the action of `ε` lifted to the diagnostic stack.
 2.  **Theorem Statements:** Three theorems certify the three comonad axioms: Left Identity (`ε (δ Y) = Y`), Right Identity (`lift_history ε (δ Y) = Y`), and Comonadic Associativity (`δ (δ Y) = lift_history δ (δ Y)`), corresponding to the two unit laws and the coassociativity law respectively.
@@ -1509,7 +1617,7 @@ theorem comonad_associativity {G A S : Type} (Y : GraphState G (A × S)) :
 
 ### 4.3.Z Implications and Synthesis {#4.3.Z}
 
-:::note[**Awarness Layer**]
+:::note[**Awareness Layer**]
 :::
 
 We have defined the category of annotated graphs and constructed the awareness mechanism through the endofunctor, counit, and comultiplication, verifying that these components form a valid Store Comonad. The demonstration of functoriality, naturality, and axiomatic satisfaction confirms that this structure endows the substrate with the capacity for introspection, transforming the causal graph from a static object into a system capable of retaining and verifying its own diagnostic history.
@@ -1620,7 +1728,7 @@ Setting $T = \ln 2$ renders the vacuum "permeable" to geometry. It allows causal
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **compliant 2-Path** <Ref id="1.5.2" label="§1.5.2" /> form a **Geometric Quantum** <Ref id="2.3.2" label="§2.3.2" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
 ### 4.4.2.1 Proof: Entropy of Closure {#4.4.2.1}
 
@@ -1677,7 +1785,7 @@ Q.E.D.
 :::note[**Computational Verification of Local Entropy Gain**]
 :::
 
-Computational verification of the entropic driver established by **Entropy of Closure** [§4.4.2.1](/monograph/rules/dynamics/4.4#4.4.2.1) proceeds according to the following protocols:
+Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.2.1" label="§4.4.2.1" /> is based on the following protocols:
 
 1.  **System Definition:** The algorithm instantiates a minimal 2-path configuration $v \to w \to u$ to serve as the baseline state.
 2.  **Metric Computation:** The protocol calculates the relational entropy $\Delta S = \ln(k_{vu} \cdot k_{uv})$ based on the multiplicities of forward and reverse paths between the focus pair $(v, u)$.
@@ -1794,7 +1902,7 @@ Q.E.D.
 
 ### 4.4.4 Corollary: Geometric Self-Energy {#4.4.4}
 
-:::tip[**Derivation of the Cost of the Geometric Quantum**]
+:::info[**Derivation of the Cost of the Geometric Quantum**]
 :::
 
 **I. Synthesis of Components**
@@ -1808,14 +1916,17 @@ It is derived from:
 **II. Total Energy Calculation**
 
 The total thermodynamic energy required to stabilize the bit of entropy at the critical temperature is:
+
 $$
 E_{total} = T_c \cdot \text{Unity} = (\ln 2) \cdot 1 = \ln 2
 $$
+
 (Note: The entropy $\Delta S$ provides the magnitude, and the temperature scales it to energy).
 
 **III. Per-Degree Distribution**
 
 Applying the Equipartition Postulate:
+
 $$
 \epsilon_{geo} = \frac{E_{total}}{d} = \frac{\ln 2}{4}
 $$
@@ -1847,6 +1958,7 @@ In the normalized energy calculation, the quantum count is $N = 1$.
 **III. Total Energy**
 
 The total energy $E_{total}$ is the thermal energy associated with one unit quantum at the critical temperature.
+
 $$
 E_{total} = T \cdot 1 = \ln 2
 $$
@@ -1854,6 +1966,7 @@ $$
 **IV. Distribution**
 
 From **Dimensional Equipartition** <Ref id="4.4.3" label="§4.4.3" />, this energy distributes across $d=4$ dimensions.
+
 $$
 \epsilon_{geo} = \frac{\ln 2}{4} \approx 0.1732
 $$
@@ -2005,7 +2118,7 @@ Q.E.D.
 :::note[**Computational Check of Gaussian Normalization and Tail Damping**]
 :::
 
-Computational verification of the stress-dependent damping factor established by **Friction Coefficient** [§4.4.6.1](/monograph/rules/dynamics/4.4#4.4.6.1) proceeds according to the following protocols:
+Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.6.1" label="§4.4.6.1" /> is based on the following protocols:
 
 1.  **Normalization:** The algorithm calculates the friction coefficient $\mu = 1/\sqrt{2\pi\sigma^2}$ derived from the peak density of the standard Gaussian distribution ($N(0,1)$).
 2.  **Stress Sweep:** The protocol applies the damping factor $f(s) = e^{-\mu s}$ across a discrete range of stress levels $s \in [0, 5]$.
@@ -2073,7 +2186,7 @@ The simulation confirms the non-linear suppression of topological updates. A str
 
 Friction ($\mu$) acts as the "viscosity" of the vacuum, a crucial resistive force that prevents the system from overheating. In regions where the graph becomes dense and highly interconnected ("stressed"), the number of constraints on any new edge increases linearly. The friction coefficient converts this topological density into a suppression probability. This statistical suppression is consistent with the master equation formalism of <Cite id="A.63" label="(van Kampen, 1992)" />, where the macroscopic stability of a system emerges from the competitive balance between growth rates and density-dependent damping terms.
 
-Without this term, the universe would succumb to the "Small World Catastrophe." In a graph where every node can connect to every other node without penalty, the diameter of the universe would collapse to $\approx \log N$, effectively destroying the concept of dimensionality and locality. Friction ensures that geometry remains sparse and local. It imposes a cost on connectivity that scales with density, forcing the graph to spread out rather than bunch up. This mechanism enforces the emergence of an extended manifold structure, as derived in Chapter $5$, guaranteeing that "distance" remains a meaningful concept. It is the force that keeps space spacious. Critically, the friction coefficient $\mu = 1/\sqrt{2\pi} \approx 0.399$ is not an arbitrary parameter; it represents the dimensionless peak of the Gaussian probability density of local stress $s$, which is a purely combinatorial count of syndrome excitations (<Ref id="3.5.1" label="§3.5.1" />). Setting the damping rate to this statistical limit suppresses updates whose stress exceeds unit vacuum fluctuations, ensuring scale-invariant stability in the pre-geometric substrate.
+Without this term, the universe would succumb to the "Small World Catastrophe." In a graph where every node can connect to every other node without penalty, the diameter of the universe would collapse to $\approx \log N$, effectively destroying the concept of dimensionality and locality. Friction ensures that geometry remains sparse and local. It imposes a cost on connectivity that scales with density, forcing the graph to spread out rather than bunch up. This mechanism enforces the emergence of an extended manifold structure, as derived in Chapter $5$, guaranteeing that "distance" remains a meaningful concept. It is the force that keeps space spacious. Critically, the friction coefficient $\mu = 1/\sqrt{2\pi} \approx 0.399$ is not an arbitrary parameter; it represents the dimensionless peak of the Gaussian probability density of local stress $s$, which is a purely combinatorial count of syndrome excitations (**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />). Setting the damping rate to this statistical limit suppresses updates whose stress exceeds unit vacuum fluctuations, ensuring scale-invariant stability in the pre-geometric substrate.
 
 ---
 
@@ -2088,7 +2201,7 @@ This thermodynamic grounding implies a subtle bias in the overall flow, where th
 
 The identification of these thermodynamic constants transforms the abstract graph dynamics into a physical theory with predictive power. By anchoring the parameters to the information-theoretic properties of the bit, we remove the freedom to "tune" the universe, asserting that the laws of physics are consequences of the limits of information processing. This unification of thermodynamics and geometry provides the energy budget for the universal constructor, ensuring that every topological operation pays its way in entropy.
 
------
+---
 
 ---
 
@@ -2171,7 +2284,7 @@ def R(annotated_graph, T, mu, lambda_cat):
     return (add_proposals, del_proposals)
 ```
 
-This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Thermodynamic Foundations** [§4.4](/monograph/rules/dynamics/4.4#4.4).
+This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />.
 
 ### 4.5.1.1 Commentary: Argument Outline {#4.5.1.1}
 
@@ -2221,7 +2334,7 @@ Consider the physical implications: High stress (indicated by negative syndromes
 :::tip[**Constructive Operation Proposing Edge Additions**]
 :::
 
-The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Paths** <Ref id="1.5.2" label="§1.5.2" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Addition Mode** is defined as the constructive operation of the Action Layer. It accepts a set of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 ### 4.5.3.1 Commentary: Generative Drive {#4.5.3.1}
 
@@ -2266,7 +2379,7 @@ The Helmholtz free energy change is defined as $\Delta F = \Delta E - T \Delta S
 
 **II. Parameter Substitution**
 
-The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Thermodynamic Foundations** [§4.4](/monograph/rules/dynamics/4.4#4.4):
+The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />:
 
 1.  **Internal Energy Cost:** $\Delta E = \epsilon_{geo}$.
 2.  **Entropy Gain:** $\Delta S = \ln 2$.
@@ -2331,7 +2444,7 @@ Q.E.D.
 :::tip[**Destructive Operation Proposing Edge Removals**]
 :::
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing 3-**Cycles** <Ref id="2.3.2" label="§2.3.2" /> and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 ### 4.5.5.1 Commentary: Pruning and Balance {#4.5.5.1}
 
@@ -2364,7 +2477,7 @@ Let the deletion of a geometric quantum constitute the time-reverse of addition.
 
 **II. Free Energy Calculation**
 
-The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substitution of the **Critical Temperature** <Ref id="4.4.1" label="§4.4.1" /> yields:
+The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substitution of the **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" /> yields:
 
 $$
 \Delta F_{\text{del}} = -\frac{\ln 2}{4} - (\ln 2)(-\ln 2) = -\frac{\ln 2}{4} + (\ln 2)^2
@@ -2438,7 +2551,7 @@ This mechanism produces a distribution of potential futures, separating the prop
 
 The operationalization of the rewrite rule as a stochastic process governed by local stress completes the microscopic definition of the dynamics. It establishes the universe as a computational engine that actively seeks to maximize its internal complexity while minimizing logical contradictions. This biased random walk through the configuration space of graphs is the microscopic origin of the macroscopic laws of evolution, driving the system inevitably toward the geometric phase where matter and spacetime can emerge.
 
------
+---
 
 ---
 
@@ -2457,15 +2570,15 @@ We resolve this by defining the evolution operator $\mathcal{U}$ as the sequenti
 :::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all **axiomatically compliant graphs** <Ref id="1.3.1" label="§1.3.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
 
 $$
 \mathcal{U} = \mathcal{S} \circ \mathcal{M} \circ \mathcal{R}^\flat \circ \mathcal{P}(R_T)
 $$
 
 The component maps are formally defined as follows:
-1.  **Awareness Lift ($\mathcal{P}(R_T)$):** The functorial lift of the Awareness Endofunctor $R_T$ <Ref id="4.3.2" label="§4.3.2" />, mapping the measure space to the annotated domain $\mathcal{P}(\mathbf{AnnCG})$.
-2.  **Probabilistic Rewrite ($\mathcal{R}^\flat$):** The monadic extension of the Universal Constructor $\mathcal{R}$ **universal constructor** <Ref id="4.5.1" label="§4.5.1" />, acting as a transition kernel to generate a provisional measure $\mu_{prov}$ over potential successors.
+1.  **Awareness Lift ($\mathcal{P}(R_T)$):** The functorial lift of the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />, mapping the measure space to the annotated domain $\mathcal{P}(\mathbf{AnnCG})$.
+2.  **Probabilistic Rewrite ($\mathcal{R}^\flat$):** The monadic extension of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, acting as a transition kernel to generate a provisional measure $\mu_{prov}$ over potential successors.
 3.  **Measurement Projection ($\mathcal{M}$):** The non-linear projection map that annihilates support on states violating the **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> and re-normalizes the remaining measure.
 4.  **Sampling Collapse ($\mathcal{S}$):** The stochastic selection operator that maps a valid probability measure $\rho$ to a Dirac delta measure $\delta_{G_{next}}$ centered on a single state $G_{next}$ sampled from $\rho$.
 
@@ -2478,10 +2591,10 @@ The "Tick" of logical time is not a monolithic instant: it is a structured proce
 
 * **Awareness (Pre-Computation):** This step transforms the static topology into a self-referential state. By embedding the syndrome $\sigma_G$ into the object, it ensures that the subsequent dynamics are driven by the graph's internal diagnostics rather than arbitrary external parameters. The universe must "know" itself before it can change itself.
 * **Rewrite (Exploration):** This step generates the superposition of possible futures. It represents the "quantum" potentiality of the system, where the convolution of local probabilities creates a weighted ensemble of candidate histories. It is the generation of the "Many Worlds" of the next moment.
-* **Measurement (Selection):** This step enforces the "Laws of Physics" as a hard filter. Unlike the probabilistic generation, this operation is absolute. Any timeline containing a paradox (e.g., a causal cycle) is assigned zero probability, implementing the non-unitary enforcement of consistency. This is the rejection of unphysical histories.
+* **Measurement (Selection):** This step enforces the "Laws of Physics" as a hard filter. While the Universal Constructor $\mathcal{R}$ attempts to prevent obvious causal paradoxes locally via the `pre_check_aec` filter, it is subject to local horizon blindness (the Horizon Problem) in a concurrent or distributed setting. The Measurement Projection $\mathcal{M}$ acts as the global, non-unitary ontological filter: it audits the provisional superposition of all kinematically proposed futures, evaluates their global stabilizer syndromes, and strictly annihilates the amplitude of any state containing a non-local causal violation or loop contradiction, renormalizing the remaining valid measure. This ensures that global consistency is enforced as a hard physical law, not just a statistical likelihood.
 * **Sampling (Actualization):** This step introduces the fundamental irreversibility. By collapsing the ensemble to a single history, it generates entropy and defines the arrow of time. It converts information (possibility) into reality (structure), effectively "burning" the alternative futures to fuel the forward motion of the present.
 
-### 4.6.1.2 Diagram: Evolution Cycle {#4.6.1.1}
+### 4.6.1.2 Diagram: Evolution Cycle {#4.6.1.2}
 
 :::note[**Visual Flowchart of the Four-Stage Evolution Process**]
 :::
@@ -2588,7 +2701,7 @@ Q.E.D.
 :::note[**Computational Check of Product-Rule Transitions with Normalization**]
 :::
 
-Computational verification of the emergent probability weights established by **The Born Rule** [§4.6.2](/monograph/rules/dynamics/4.6#4.6.2) proceeds according to the following protocols:
+Computational verification of the emergent probability weights established by **The Born Rule** <Ref id="4.6.2.1" label="§4.6.2.1" /> is based on the following protocols:
 
 1.  **Path Definition:** The algorithm defines three distinct transition paths for a toy ensemble: two symmetric single-addition paths (Paths A and B) and one mixed path involving two additions and one deletion (Path C).
 2.  **Weight Assignment:** The protocol calculates the raw thermodynamic weight for each path in the vacuum limit ($\chi=1$), assigning a penalty factor of $0.5$ for deletion events.
@@ -2652,7 +2765,7 @@ Normalized probabilities:
   Exact match with ½ deletion penalty:     True
 ```
 
-The simulation confirms that the normalized probability of the single-addition path is $0.400$, while the mixed path (two additions + one deletion) is $0.200$. The ratio $P_C / P_A = 0.50$ confirms that the deletion event introduces an exact penalty factor of $1/2$. This validates the transition probability model <Ref id="4.6.2" label="§4.6.2" />, demonstrating that probabilities follow the product rule of their constituent micro-events, reproducing the quadratic probability structure from pure counting statistics.
+The simulation confirms that the normalized probability of the single-addition path is $0.400$, while the mixed path (two additions + one deletion) is $0.200$. The ratio $P_C / P_A = 0.50$ confirms that the deletion event introduces an exact penalty factor of $1/2$. This validates the transition probability model **Born Rule** <Ref id="4.6.2" label="§4.6.2" />, demonstrating that probabilities follow the product rule of their constituent micro-events, reproducing the quadratic probability structure from pure counting statistics.
 
 ### 4.6.2.3 Commentary: Classical Amplitudes {#4.6.2.3}
 
@@ -2661,7 +2774,7 @@ The simulation confirms that the normalized probability of the single-addition p
 
 This result provides a startlingly classical mechanism for the emergence of Born-like probabilities. The scaling factor $(1/2)^{N_{\text{del}}}$ does not arise from a complex wave equation or Hilbert space norm, but from the naked entropic "cost" of information erasure. This derivation suggests a physical origin for the principles of <Cite id="A.73" label="(Zurek, 2003)" />, where quantum probabilities (the Born rule) emerge from the symmetries of entanglement and the environment's selection of stable states. In QBD, the "environment" is the vacuum friction that selects against information loss.
 
-Every deletion operation reduces the phase space volume of the local neighborhood by a factor of two (destroying one bit of distinction). Consequently, paths that require such destruction are exponentially less likely to be realized. Conversely, additions (with cost $1$) are "free" at criticality. The universe probabilistically favors paths that create structure over those that destroy it, with the likelihood ratio explicitly quantified by the bit-entropy relation. This suggests that the "probability amplitude" in quantum mechanics might ultimately be traceable to the counting of valid micro-states in the underlying causal graph. This real-valued transition probability represents the classical projected history resulting from measurement collapse <Ref id="4.6.1" label="§4.6.1" />, acting as a shadow of the underlying ontic state space—the edge-qubit Hilbert space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ defined in the generalized stabilizer formulation <Ref id="3.5.1" label="§3.5.1" />—where complex phases and quantum interference emerge relationally from the topological braiding of the stabilizer codespace.
+Every deletion operation reduces the phase space volume of the local neighborhood by a factor of two (destroying one bit of distinction). Consequently, paths that require such destruction are exponentially less likely to be realized. Conversely, additions (with cost $1$) are "free" at criticality. The universe probabilistically favors paths that create structure over those that destroy it, with the likelihood ratio explicitly quantified by the bit-entropy relation. This suggests that the "probability amplitude" in quantum mechanics might ultimately be traceable to the counting of valid micro-states in the underlying causal graph. This real-valued transition probability represents the classical projected history resulting from measurement collapse **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, acting as a shadow of the underlying ontic state space (the edge-qubit Hilbert space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ defined in the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />) where complex phases and quantum interference emerge relationally from the topological braiding of the stabilizer codespace.
 
 ---
 
@@ -2738,7 +2851,7 @@ Q.E.D.
 :::note[**Computational Verification of Entropy Loss in Projection and Sampling**]
 :::
 
-Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **The Thermodynamic Arrow** [§4.6.3.1](/monograph/rules/dynamics/4.6#4.6.3.1) proceeds according to the following protocols:
+Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **The Thermodynamic Arrow** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
 
 1.  **Stochastic Initialization:** The algorithm generates a provisional probability distribution with Gaussian noise to simulate realistic branching fluctuations in the pre-projected state.
 2.  **Operator Application:** The protocol applies the Projection $\mathcal{P}$ (discarding invalid paths) and Sampling $\mathcal{S}$ (collapsing to a single history) operations.
@@ -2851,7 +2964,7 @@ In synthesizing the dynamics, we see the historical syntax accumulate immutable 
 
 The definition of the logical tick as a composite irreversible operator cements the fundamental nature of time in this theory. Time is not a smooth coordinate but a discrete sequence of computational cycles, each consuming information to produce history. The irreversibility of the sampling step provides a derivation of the Second Law of Thermodynamics from the microscopic dynamics of the graph, identifying the flow of time with the production of entropy inherent in the collapse of possibility into reality.
 
------
+---
 
 ---
 
@@ -2872,30 +2985,30 @@ This runtime transforms the static tree into a living, breathing process. Howeve
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1#4.1.1) |
-| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1#4.1.2) |
-| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3#4.3.1) |
-| $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3#4.3.2) |
-| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3#4.3.3) |
-| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3#4.3.4) |
-| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4#4.4.1) |
-| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/rules/dynamics/4.4#4.4.2) |
-| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/rules/dynamics/4.4#4.4.3) |
-| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/rules/dynamics/4.4#4.4.4) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§4.4.5](/monograph/rules/dynamics/4.4#4.4.5) |
-| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/rules/dynamics/4.4#4.4.6) |
-| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5#4.5.1) |
-| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5#4.5.2) |
-| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5#4.5.2) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/rules/dynamics/4.5#4.5.5) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/rules/dynamics/4.6#4.6.2) |
+| $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
+| $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
+| $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
+| $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
+| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
+| $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
+| $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
+| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
+| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
+| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
+| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
+| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
+| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
+| $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
+| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/rules/dynamics/4.5/#4.5.5) |
+| $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/rules/dynamics/4.6/#4.6.2) |
 
------
+---

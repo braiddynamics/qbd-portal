@@ -8,12 +8,20 @@ Why does our universe possess these specific laws of physics, stable particles, 
 
 ### 25.1.1 Definition: Computational Landscape {#25.1.1}
 
-:::info[**Characterization of Ruliad States as Graph Rewrite Signatures**]
+:::tip[**Characterization of Ruliad States as Graph Rewrite Signatures**]
 :::
 
-*   **Ruliad Space:** The Ruliad is defined as the abstract landscape containing all possible graph rewrite rules and signatures.
+*   **Computational Landscape:** The **Computational Landscape** (identified with the Ruliad) is defined as the abstract landscape containing all possible graph rewrite rules and signatures.
 *   **Rule Classification:** Universes within the Ruliad are categorized according to Wolfram's rule classes: Class 1 (collapsing or halting), Class 2 (sterile periodic loops), Class 3 (unstable chaotic tangles lacking an emergent metric), and Class 4 (universal complexity).
 *   **Observer Filter:** Only Class 4 rules are capable of maintaining localized, persistent topological structures (particles) long enough to support observers.
+
+
+### 25.1.1.1 Commentary: Computational Landscape {#25.1.1.1}
+
+:::info[**Selection of Physical Rules**]
+:::
+
+The **Computational Landscape** provides a background-independent framework for understanding the uniqueness of physical laws. Instead of assuming that our universe's parameters are arbitrary, the model treats them as the coordinates of a stable, self-correcting region within the space of all possible rewrite rules. Symmetries and conservation laws are not arbitrary constraints but the necessary protocols for maintaining metric stability, ensuring that only universes within this computational basin can support persistent structures.
 
 ---
 
@@ -23,8 +31,8 @@ Why does our universe possess these specific laws of physics, stable particles, 
 :::
 
 *   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad.
-*   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, §4.3), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze.
-*   **Conservation as Protection:** Fundamental principles—such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle—are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
+*   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, **Awareness Layer** <Ref id="4.3" label="§4.3" />), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze.
+*   **Conservation as Protection:** Fundamental principles (such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle) are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
 
 ---
 
@@ -60,7 +68,7 @@ Standard cosmology predicts that our universe will end in a state of maximum ent
 :::info[**Isomorphism of Macroscopic and Microscopic Spacetime Scales via Graph Duality**]
 :::
 
-*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, §16.2).
+*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, **Bekenstein Bound (Thermodynamic Limits)** <Ref id="16.2" label="§16.2" />).
 *   **Scale Inversion:** As the scale factor $a(t) \to \infty$ (heat death of the old aeon), this duality maps the physics directly onto a microscopic scale $a'(t) \to 0$ (the initial Zero-Point Information vacuum $G_0$).
 *   **Conformal Reset:** The end of one cosmic aeon is topologically identical to the beginning of the next, triggering a Conformal Reset.
 
@@ -99,5 +107,5 @@ We have reached the end of our physical derivation. From the single pre-geometri
 :::info[**Integration of Scale-Invariant Complexity as Causal Loop Synthesis**]
 :::
 
-*   **Fractal Unification:** Quantum Braid Dynamics unifies reality scale-invariantly, showing that the same computational patterns—error correction, topological stability, and optimization—govern the spin of the electron, the folding of proteins, and the structured web of the cosmos.
+*   **Fractal Unification:** Quantum Braid Dynamics unifies reality scale-invariantly, showing that the same computational patterns (error correction, topological stability, and optimization) govern the spin of the electron, the folding of proteins, and the structured web of the cosmos.
 *   **Closing the Loom:** Reality is derived not as a collection of disjointed static laws, but as a unified, self-generating, and self-correcting eternal computation. We are the stable topological knots woven into this pre-geometric loom, looking back to understand the code that made us.

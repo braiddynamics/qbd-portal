@@ -8,13 +8,20 @@ Since the development of classical mechanics, physics has been formulated in the
 
 ### 23.1.1 Definition: Discrete Gradient {#23.1.1}
 
-:::info[**Characterization of Discrete Gradients as Finite Differences on Emergent Manifold Coordinates**]
+:::tip[**Characterization of Discrete Gradients as Finite Differences on Emergent Manifold Coordinates**]
 :::
 
-*   **Edge Difference Field:** Let $\phi(v)$ represent a scalar field on vertices (such as cycle density $\rho_3$, §5.2). The change across an edge $e = (u, v)$ is the finite difference: $\Delta \phi = \phi(v) - \phi(u)$.
+*   **Discrete Gradient:** The **Discrete Gradient** is the discrete edge difference operator $\nabla_e$ acting on a scalar field $\phi(v)$ on vertices (such as cycle density $\rho_3$, **Master Equation** <Ref id="5.2" label="§5.2" />) across an edge $e = (u, v)$, defined by the finite difference: $\Delta \phi = \phi(v) - \phi(u)$.
 *   **Emergent Length Normalization:** Normalizing this difference by the pre-geometric edge length $\ell_0$ (Planck scale) yields the discrete edge gradient:
     $$ \nabla_e \phi \equiv \frac{\phi(v) - \phi(u)}{\ell_0} $$
 *   **Regularized Limits:** Because $\ell_0 > 0$ represents a hard lower bound on physical spacing, discrete differences prevent infinite gradients, regularizing classical divergences (such as $1/r$ gravitational potentials) at the Planck scale.
+
+### 23.1.1.1 Commentary: Discrete Gradient {#23.1.1.1}
+
+:::info[**Regularization through Discrete Gradients**]
+:::
+
+The **Discrete Gradient** replaces the continuous derivative in the fundamental description of physical fields. By grounding the derivative in finite differences normalized by the Planck scale $\ell_0$, the model introduces a natural ultraviolet cutoff. This discrete structure regularizes the singular behavior of classical potentials at zero distance, showing that physical quantities remain finite because the underlying graph cannot support infinitely sharp spatial gradients.
 
 ---
 
@@ -23,23 +30,13 @@ Since the development of classical mechanics, physics has been formulated in the
 :::info[**Derivation of Classical Covariant Derivatives from Large-Number Graph Limit**]
 :::
 
-*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (§13.2).
+*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (**Tensorial Reorganization** <Ref id="12.2" label="§12.2" />).
 *   **Covariant Emergence:** The discrete edge difference operator $\nabla_e$ converges mathematically to the classical covariant derivative $\nabla_\mu$ along the directional unit vector.
 *   **Statistical Continuity:** Continuous differential equations are not fundamental laws, but the coarse-grained thermodynamic limits of these discrete graph updates.
 
 ---
 
-### 23.1.3 Proof: Combinatorial Limit {#23.1.3}
-
-:::tip[**Verification of Covariant Derivative Emergence by Integration of Discrete Difference Scales**]
-:::
-
-*   **Manifold Projection:** The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
-*   **Limit Evaluation:** By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
-
----
-
-### 23.1.4 Lemma: Integration Representation {#23.1.4}
+### 23.1.3 Lemma: Integration Representation {#23.1.3}
 
 :::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
@@ -47,11 +44,11 @@ Since the development of classical mechanics, physics has been formulated in the
 *   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
 *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral:
     $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$
-*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, §11.1).
+*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
 
 ---
 
-### 23.1.5 Proof: Integration Representation {#23.1.5}
+### 23.1.3.1 Proof: Integration Representation {#23.1.3.1}
 
 :::tip[**Verification of Integral Convergence through Statistical Analysis of Thermodynamic Limits**]
 :::
@@ -61,9 +58,19 @@ Since the development of classical mechanics, physics has been formulated in the
 
 ---
 
+### 23.1.4 Proof: Combinatorial Limit {#23.1.4}
+
+:::tip[**Verification of Covariant Derivative Emergence by Integration of Discrete Difference Scales**]
+:::
+
+*   **Manifold Projection:** The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
+*   **Limit Evaluation:** By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
+
+---
+
 ## 23.2 Logic of Life {#23.2}
 
-If the universe is fundamentally a self-correcting computational graph, then its governing principles—error correction, topological stability, and optimization—should be fractally consistent across all scales of reality. This section explores these macroscopic isomorphisms in biological complexity, reinterpreting protein folding and biological homochirality as echoes of the vacuum's pre-geometric dynamics.
+If the universe is fundamentally a self-correcting computational graph, then its governing principles (error correction, topological stability, and optimization) should be fractally consistent across all scales of reality. This section explores these macroscopic isomorphisms in biological complexity, reinterpreting protein folding and biological homochirality as echoes of the vacuum's pre-geometric dynamics.
 
 ---
 
@@ -83,7 +90,7 @@ If the universe is fundamentally a self-correcting computational graph, then its
 :::info[**Derivation of Prebiotic Chirality Biases from Parity-Violating Braid Energy Functionals**]
 :::
 
-*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, §14.2), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
+*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, **Metric & Motion** <Ref id="14.2" label="§14.2" />), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
 *   **Chiral Seed:** This Braid CP violation creates a tiny microscopic energy difference ($\Delta E \sim 10^{-17} kT$) between L- and D-enantiomers.
 *   **Macroscopic Amplification:** In chaotic prebiotic conditions, this minute microscopic bias is amplified through autocatalytic feedback networks, selecting L-amino acids as a geometric necessity of the vacuum's chiral twist rather than a "frozen accident."
 
