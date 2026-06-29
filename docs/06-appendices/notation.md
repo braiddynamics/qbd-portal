@@ -151,14 +151,14 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/rules/dynamics/4.5/#4.5.5) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/rules/dynamics/4.6/#4.6.2) |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 | $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/rules/equilibrium/5.1/#5.1.1.1) |

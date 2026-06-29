@@ -1735,7 +1735,7 @@ Section 3.2.10.1 formalizes the properties of the QBD proof regarding quantitati
 
 ---
 
-### 3.2.10.2 Calculation: Small N Census {#3.2.10.2}
+### 3.2.10.3 Calculation: Small N Census {#3.2.10.3}
 
 :::note[**Algorithmic Census of Optimal Tree Topology**]
 :::
@@ -1743,11 +1743,11 @@ Section 3.2.10.1 formalizes the properties of the QBD proof regarding quantitati
 Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Quantitative Supremacy** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 3.2.10.2 formalizes the properties of the QBD calculation regarding small n census.
+Section 3.2.10.3 formalizes the properties of the QBD calculation regarding small n census.
 
 ---
 
-### 3.2.10.3 Calculation: Large Depth Scaling {#3.2.10.3}
+### 3.2.10.4 Calculation: Large Depth Scaling {#3.2.10.4}
 
 :::note[**Computational Analysis of Regularity Convergence in Large Bethe Fragments using Asymptotic Scaling**]
 :::
@@ -1755,7 +1755,7 @@ Section 3.2.10.2 formalizes the properties of the QBD calculation regarding smal
 Numerical quantification of the scaling behavior of the Bethe fragment established by **Degree Regularity** <Ref id="3.2.7.1" label="§3.2.7.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 3.2.10.3 formalizes the properties of the QBD calculation regarding large depth scaling.
+Section 3.2.10.4 formalizes the properties of the QBD calculation regarding large depth scaling.
 
 ---
 
@@ -1855,7 +1855,7 @@ Section 3.3.5.1 formalizes the properties of the QBD proof regarding conflict re
 
 ---
 
-### 3.3.5.2 Calculation: Cycle Resolution {#3.3.5.2}
+### 3.3.5.3 Calculation: Cycle Resolution {#3.3.5.3}
 
 :::note[**Resolution of Symmetric Overlaps via Parallel Operations**]
 :::
@@ -1863,11 +1863,11 @@ Section 3.3.5.1 formalizes the properties of the QBD proof regarding conflict re
 Algorithmic verification of the symmetry-preserving properties established by **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 3.3.5.2 formalizes the properties of the QBD calculation regarding cycle resolution.
+Section 3.3.5.3 formalizes the properties of the QBD calculation regarding cycle resolution.
 
 ---
 
-### 3.3.5.3 Calculation: Symmetry Metrics Pre/Post-Update {#3.3.5.3}
+### 3.3.5.4 Calculation: Symmetry Metrics Pre/Post-Update {#3.3.5.4}
 
 :::note[**Computational Verification of Automorphism Preservation**]
 :::
@@ -1875,7 +1875,7 @@ Section 3.3.5.2 formalizes the properties of the QBD calculation regarding cycle
 Algorithmic analysis of the scheduler's impact on vacuum symmetry established by **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 3.3.5.3 formalizes the properties of the QBD calculation regarding symmetry metrics pre/post-update.
+Section 3.3.5.4 formalizes the properties of the QBD calculation regarding symmetry metrics pre/post-update.
 
 ---
 
@@ -2040,7 +2040,7 @@ Section 3.4.4.1 formalizes the properties of the QBD proof regarding first geome
 :::info[**Non-Vanishing Tunneling Probability in the High-Temperature Regime**]
 :::
 
-Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />, where the free energy barrier to edge addition is thermodynamically negligible.
+Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, where the free energy barrier to edge addition is thermodynamically negligible.
 
 **In Plain English:**  
 Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition probability.
@@ -2316,7 +2316,7 @@ Section 4.1.2 formalizes the properties of the QBD definition regarding historic
 :::info[**Formal Consistency of the Categorical Frameworks for Global and Internal Structures**]
 :::
 
-The structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid mathematical categories. Specifically, both structures satisfy the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. These frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
+Consider the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ representing the internal causal path structure and the global historical embedding structure, respectively. Then the following holds: both structures constitute valid mathematical categories satisfying the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. Moreover, these frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
 
 **In Plain English:**  
 Section 4.2.1 formalizes the properties of the QBD theorem regarding categorical validity.
@@ -2335,7 +2335,7 @@ Section 4.2.2 formalizes the properties of the QBD lemma regarding identity for 
 
 ---
 
-### 4.2.2.1 Proof: Identity Preservation for $\mathbf{Caus}_t$ {#4.2.2.1}
+### 4.2.2.1 Proof: Identity for $\mathbf{Caus}_t$ {#4.2.2.1}
 
 :::tip[**Verification of Neutrality under Composition for Trivial Paths**]
 :::
@@ -2343,7 +2343,7 @@ Section 4.2.2 formalizes the properties of the QBD lemma regarding identity for 
 **I. Morphism Definition**
 
 **In Plain English:**  
-Section 4.2.2.1 formalizes the properties of the QBD proof regarding identity preservation for $\mathbf{caus}_t$.
+Section 4.2.2.1 formalizes the properties of the QBD proof regarding identity for $\mathbf{caus}_t$.
 
 ---
 
@@ -2359,7 +2359,7 @@ Section 4.2.3 formalizes the properties of the QBD lemma regarding associativity
 
 ---
 
-### 4.2.3.1 Proof: Associativity Preservation for $\mathbf{Caus}_t$ {#4.2.3.1}
+### 4.2.3.1 Proof: Associativity for $\mathbf{Caus}_t$ {#4.2.3.1}
 
 :::tip[**Verification of Associativity under Composition for Path Concatenation**]
 :::
@@ -2367,7 +2367,7 @@ Section 4.2.3 formalizes the properties of the QBD lemma regarding associativity
 **I. Morphism Definition**
 
 **In Plain English:**  
-Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativity preservation for $\mathbf{caus}_t$.
+Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativity for $\mathbf{caus}_t$.
 
 ---
 
@@ -2376,14 +2376,14 @@ Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativi
 :::info[**Preservation of Timestamp Monotonicity**]
 :::
 
-Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds; moreover, the composition $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
 
 **In Plain English:**  
 Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp monotonicity.
 
 ---
 
-### 4.2.4.1 Proof: Preservation of Monotonicity {#4.2.4.1}
+### 4.2.4.1 Proof: Timestamp Monotonicity {#4.2.4.1}
 
 :::tip[**Verification of Temporal Order Preservation under Morphism Composition**]
 :::
@@ -2391,7 +2391,7 @@ Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp mon
 **I. Morphism Definition**
 
 **In Plain English:**  
-Section 4.2.4.1 formalizes the properties of the QBD proof regarding preservation of monotonicity.
+Section 4.2.4.1 formalizes the properties of the QBD proof regarding timestamp monotonicity.
 
 ---
 
@@ -2407,7 +2407,7 @@ Section 4.2.5 formalizes the properties of the QBD lemma regarding identity for 
 
 ---
 
-### 4.2.5.1 Proof: Identity Preservation for $\mathbf{Hist}$ {#4.2.5.1}
+### 4.2.5.1 Proof: Identity for $\mathbf{Hist}$ {#4.2.5.1}
 
 :::tip[**Verification of Structure Preservation and Neutrality for Identity Functions**]
 :::
@@ -2415,7 +2415,7 @@ Section 4.2.5 formalizes the properties of the QBD lemma regarding identity for 
 **I. Identity Definition**
 
 **In Plain English:**  
-Section 4.2.5.1 formalizes the properties of the QBD proof regarding identity preservation for $\mathbf{hist}$.
+Section 4.2.5.1 formalizes the properties of the QBD proof regarding identity for $\mathbf{hist}$.
 
 ---
 
@@ -2431,7 +2431,7 @@ Section 4.2.6 formalizes the properties of the QBD lemma regarding associativity
 
 ---
 
-### 4.2.6.1 Proof: Associativity Preservation for $\mathbf{Hist}$ {#4.2.6.1}
+### 4.2.6.1 Proof: Associativity for $\mathbf{Hist}$ {#4.2.6.1}
 
 :::tip[**Verification of Associativity under Composition for Function Composition**]
 :::
@@ -2439,7 +2439,7 @@ Section 4.2.6 formalizes the properties of the QBD lemma regarding associativity
 **I. Composition Definition**
 
 **In Plain English:**  
-Section 4.2.6.1 formalizes the properties of the QBD proof regarding associativity preservation for $\mathbf{hist}$.
+Section 4.2.6.1 formalizes the properties of the QBD proof regarding associativity for $\mathbf{hist}$.
 
 ---
 
@@ -2455,7 +2455,7 @@ Section 4.2.7 formalizes the properties of the QBD lemma regarding topological i
 
 ---
 
-### 4.2.7.1 Proof: Irreflexivity Enforcement {#4.2.7.1}
+### 4.2.7.1 Proof: Topological Injectivity {#4.2.7.1}
 
 :::tip[**Instability of Non-Injective Morphisms via Induced Reflexivity**]
 :::
@@ -2463,7 +2463,7 @@ Section 4.2.7 formalizes the properties of the QBD lemma regarding topological i
 **I. Premise**
 
 **In Plain English:**  
-Section 4.2.7.1 formalizes the properties of the QBD proof regarding irreflexivity enforcement.
+Section 4.2.7.1 formalizes the properties of the QBD proof regarding topological injectivity.
 
 ---
 
@@ -2479,7 +2479,7 @@ Section 4.2.8 formalizes the properties of the QBD lemma regarding effective inf
 
 ---
 
-### 4.2.8.1 Proof: Encoding Verification {#4.2.8.1}
+### 4.2.8.1 Proof: Effective Influence Encoding {#4.2.8.1}
 
 :::tip[**Verification of Encoding Correspondence**]
 :::
@@ -2487,7 +2487,7 @@ Section 4.2.8 formalizes the properties of the QBD lemma regarding effective inf
 **I. Influence Relation Definition**
 
 **In Plain English:**  
-Section 4.2.8.1 formalizes the properties of the QBD proof regarding encoding verification.
+Section 4.2.8.1 formalizes the properties of the QBD proof regarding effective influence encoding.
 
 ---
 
@@ -2496,7 +2496,7 @@ Section 4.2.8.1 formalizes the properties of the QBD proof regarding encoding ve
 :::info[**Strict Partial Order Structure of Effective Influence within the Internal Causal Category**]
 :::
 
-Let $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$ denote the subset of morphisms satisfying length $\ell \ge 2$ and strictly increasing timestamps. Then the following holds: 1.  **Irreflexivity:** No morphism with $\ell \ge 2$ and strictly increasing timestamps maps $u$ to $u$ without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. 2.  **Transitivity:** The composition of morphisms in $\mathcal{M}_{eff}$ preserves timestamp ordering and length constraints.
+Let $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$ denote the subset of morphisms satisfying length $\ell \ge 2$ and strictly increasing timestamps. Then the following holds: *   **Irreflexivity:** no morphism with $\ell \ge 2$ and strictly increasing timestamps maps $u$ to $u$ without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />; *   **Transitivity:** the composition of morphisms in $\mathcal{M}_{eff}$ preserves timestamp ordering and length constraints.
 
 **In Plain English:**  
 Section 4.2.9 formalizes the properties of the QBD lemma regarding partial order property.
@@ -2515,15 +2515,15 @@ Section 4.2.9.1 formalizes the properties of the QBD proof regarding partial ord
 
 ---
 
-### 4.2.10 Proof: Demonstration of Categorical Validity {#4.2.10}
+### 4.2.10 Proof: Categorical Validity {#4.2.10}
 
 :::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$**]
 :::
 
-**I. The Structural Hypothesis** We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
+**I. The Structural Hypothesis** The collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) are asserted to satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
 **In Plain English:**  
-Section 4.2.10 formalizes the properties of the QBD proof regarding demonstration of categorical validity.
+Section 4.2.10 formalizes the properties of the QBD proof regarding categorical validity.
 
 ---
 
@@ -2592,7 +2592,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 :::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
 :::
 
-The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. Specifically, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
+Given the triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$, the following holds: this triplet is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. In particular, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
 
 **In Plain English:**  
 Section 4.3.5 formalizes the properties of the QBD theorem regarding awareness comonad.
@@ -2635,7 +2635,7 @@ Section 4.3.7 formalizes the properties of the QBD lemma regarding naturality of
 
 ---
 
-### 4.3.7.1 Proof: Commutative Squares {#4.3.7.1}
+### 4.3.7.1 Proof: Naturality of Transformations {#4.3.7.1}
 
 :::tip[**Verification of Naturality Conditions for $\epsilon$ and $\delta$**]
 :::
@@ -2643,7 +2643,7 @@ Section 4.3.7 formalizes the properties of the QBD lemma regarding naturality of
 **I. Setup and Definitions**
 
 **In Plain English:**  
-Section 4.3.7.1 formalizes the properties of the QBD proof regarding commutative squares.
+Section 4.3.7.1 formalizes the properties of the QBD proof regarding naturality of transformations.
 
 ---
 
@@ -2652,7 +2652,7 @@ Section 4.3.7.1 formalizes the properties of the QBD proof regarding commutative
 :::info[**Compliance of the Awareness Triplet with the Laws of Identity and Associativity**]
 :::
 
-Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities hold: 1. **Left Identity:** $\epsilon \circ \delta = \text{id}$ 2. **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$ 3. **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$
+Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities are satisfied: *   **Left Identity:** $\epsilon \circ \delta = \text{id}$; *   **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$; *   **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$.
 
 **In Plain English:**  
 Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfaction.
@@ -2695,7 +2695,7 @@ Section 4.3.9.1 formalizes the properties of the QBD proof regarding comonadic p
 
 ---
 
-### 4.3.10 Proof: Demonstration of the Awareness Comonad {#4.3.10}
+### 4.3.10 Proof: Awareness Comonad {#4.3.10}
 
 :::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure via Functorial Mapping**]
 :::
@@ -2703,7 +2703,7 @@ Section 4.3.9.1 formalizes the properties of the QBD proof regarding comonadic p
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 4.3.10 formalizes the properties of the QBD proof regarding demonstration of the awareness comonad.
+Section 4.3.10 formalizes the properties of the QBD proof regarding awareness comonad.
 
 ---
 
@@ -2712,7 +2712,7 @@ Section 4.3.10 formalizes the properties of the QBD proof regarding demonstratio
 :::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 :::
 
-Computational verification of the categorical consistency established by **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
+Computational verification of the categorical consistency established by **Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
 
 **In Plain English:**  
 Section 4.3.10.1 formalizes the properties of the QBD calculation regarding simulation verification.
@@ -2724,26 +2724,38 @@ Section 4.3.10.1 formalizes the properties of the QBD calculation regarding simu
 :::note[**Lean 4 Encoding of Comonadic Laws via Definitional Equality**]
 :::
 
-Type-theoretic certification of the comonad axioms established in **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
+Type-theoretic certification of the comonad axioms established in **Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
 
 **In Plain English:**  
 Section 4.3.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---
 
-### 4.4.1 Theorem: Bit-Nat Equivalence {#4.4.1}
+### 4.4.1 Theorem: Thermodynamic Foundations {#4.4.1}
 
-:::info[**Derivation of the vacuum temperature via information-theoretic energy equivalence**]
+:::info[**Calibration of the Causal Graph via Information-Theoretic and Thermodynamic Equivalence**]
 :::
 
-Let $T$ denote the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales. Then $T$ constitutes the dimensionless constant $T = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision. Moreover, this value establishes the thermodynamic threshold for information stability against thermal erasure [**(Landauer, 1991)**](/monograph/appendices/a-references#A.39).
+Given the thermodynamic representation of the causal graph, the following holds: the fundamental constants of the vacuum, consisting of the critical temperature $T$, the geometric self-energy $\epsilon_{geo}$, the catalysis coefficient $c_{cat}$, and the friction coefficient $f_{fric}$, are uniquely determined from the information-theoretic equivalence of bits and nats and the local entropic pressure of loop closures.
 
 **In Plain English:**  
 The vacuum has a fundamental temperature of ln(2), representing the exact thermodynamic energy required to delete one bit of relation.
 
 ---
 
-### 4.4.1.1 Proof: Bit-Nat Equivalence {#4.4.1.1}
+### 4.4.2 Lemma: Bit-Nat Equivalence {#4.4.2}
+
+:::info[**Derivation of the vacuum temperature via information-theoretic energy equivalence**]
+:::
+
+Given the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales, designated $T$, the following holds: $T$ constitutes the dimensionless constant $T = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision; moreover, this value establishes the thermodynamic threshold for information stability against thermal erasure <Cite id="A.39" label="(Landauer, 1991)" />.
+
+**In Plain English:**  
+Section 4.4.2 formalizes the properties of the QBD lemma regarding bit-nat equivalence.
+
+---
+
+### 4.4.2.1 Proof: Bit-Nat Equivalence {#4.4.2.1}
 
 :::tip[**Formal Derivation of the Critical Scale**]
 :::
@@ -2751,23 +2763,23 @@ The vacuum has a fundamental temperature of ln(2), representing the exact thermo
 **I. Statistical Mechanical Setup**
 
 **In Plain English:**  
-Section 4.4.1.1 formalizes the properties of the QBD proof regarding bit-nat equivalence.
+Section 4.4.2.1 formalizes the properties of the QBD proof regarding bit-nat equivalence.
 
 ---
 
-### 4.4.2 Theorem: Entropy of Closure {#4.4.2}
+### 4.4.3 Lemma: Entropy of Closure {#4.4.3}
 
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats; moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
 **In Plain English:**  
-Section 4.4.2 formalizes the properties of the QBD theorem regarding entropy of closure.
+Section 4.4.3 formalizes the properties of the QBD lemma regarding entropy of closure.
 
 ---
 
-### 4.4.2.1 Proof: Entropy of Closure {#4.4.2.1}
+### 4.4.3.1 Proof: Entropy of Closure {#4.4.3.1}
 
 :::tip[**Derivation via Causal Path Multiplicity**]
 :::
@@ -2775,35 +2787,35 @@ Section 4.4.2 formalizes the properties of the QBD theorem regarding entropy of 
 The relational ensemble partitions configurations by equivalence classes under the effective influence relation $\le$. The entropy is defined by the log-volume of the path space.
 
 **In Plain English:**  
-Section 4.4.2.1 formalizes the properties of the QBD proof regarding entropy of closure.
+Section 4.4.3.1 formalizes the properties of the QBD proof regarding entropy of closure.
 
 ---
 
-### 4.4.2.2 Calculation: Entropy Simulation {#4.4.2.2}
+### 4.4.3.3 Calculation: Entropy Simulation {#4.4.3.3}
 
 :::note[**Computational Verification of Local Entropy Gain**]
 :::
 
-Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.2.1" label="§4.4.2.1" /> is based on the following protocols:
+Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 4.4.2.2 formalizes the properties of the QBD calculation regarding entropy simulation.
+Section 4.4.3.3 formalizes the properties of the QBD calculation regarding entropy simulation.
 
 ---
 
-### 4.4.3 Theorem: Dimensional Equipartition {#4.4.3}
+### 4.4.4 Lemma: Dimensional Equipartition {#4.4.4}
 
 :::info[**Isotropic Distribution of Vacuum Energy**]
 :::
 
-Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions and satisfies **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. Moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric [**(Padmanabhan, 2009)**](/monograph/appendices/a-references#A.46).
+Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions satisfying **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />; moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric <Cite id="A.46" label="(Padmanabhan, 2009)" />.
 
 **In Plain English:**  
-Section 4.4.3 formalizes the properties of the QBD theorem regarding dimensional equipartition.
+Section 4.4.4 formalizes the properties of the QBD lemma regarding dimensional equipartition.
 
 ---
 
-### 4.4.3.1 Proof: Dimensional Equipartition {#4.4.3.1}
+### 4.4.4.1 Proof: Dimensional Equipartition {#4.4.4.1}
 
 :::tip[**Application of the Equipartition Theorem**]
 :::
@@ -2811,23 +2823,23 @@ Section 4.4.3 formalizes the properties of the QBD theorem regarding dimensional
 **I. Energy Distribution Principle**
 
 **In Plain English:**  
-Section 4.4.3.1 formalizes the properties of the QBD proof regarding dimensional equipartition.
+Section 4.4.4.1 formalizes the properties of the QBD proof regarding dimensional equipartition.
 
 ---
 
-### 4.4.4 Corollary: Geometric Self-Energy {#4.4.4}
+### 4.4.5 Lemma: Geometric Self-Energy {#4.4.5}
 
 :::info[**Derivation of the Cost of the Geometric Quantum**]
 :::
 
-**I. Synthesis of Components**
+Given the requirements of structural stabilization, the following holds: the **Geometric Self-Energy** $\epsilon_{geo}$ of a closed 3-cycle is uniquely determined as $\epsilon_{geo} = \frac{\ln 2}{4}$, representing the uniform distribution of the critical loop-closure energy across the four effective dimensions of the manifold.
 
 **In Plain English:**  
-Section 4.4.4 formalizes the properties of the QBD corollary regarding geometric self-energy.
+Section 4.4.5 formalizes the properties of the QBD lemma regarding geometric self-energy.
 
 ---
 
-### 4.4.4.1 Proof: Synthesis {#4.4.4.1}
+### 4.4.5.1 Proof: Geometric Self-Energy {#4.4.5.1}
 
 :::tip[**Combination of Temperature, Entropy, and Dimensionality**]
 :::
@@ -2835,23 +2847,23 @@ Section 4.4.4 formalizes the properties of the QBD corollary regarding geometric
 **I. Temperature**
 
 **In Plain English:**  
-Section 4.4.4.1 formalizes the properties of the QBD proof regarding synthesis.
+Section 4.4.5.1 formalizes the properties of the QBD proof regarding geometric self-energy.
 
 ---
 
-### 4.4.5 Theorem: Catalysis Coefficient {#4.4.5}
+### 4.4.6 Lemma: Catalysis Coefficient {#4.4.6}
 
 :::info[**Entropic Rate Enhancement Coefficient**]
 :::
 
-Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$. Moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy [(Gillespie, 1977)](/monograph/appendices/a-references#A.27).
+Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$; moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy <Cite id="A.27" label="(Gillespie, 1977)" />.
 
 **In Plain English:**  
-Section 4.4.5 formalizes the properties of the QBD theorem regarding catalysis coefficient.
+Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coefficient.
 
 ---
 
-### 4.4.5.1 Proof: Catalysis Coefficient {#4.4.5.1}
+### 4.4.6.1 Proof: Catalysis Coefficient {#4.4.6.1}
 
 :::tip[**Calculation via Arrhenius Factor**]
 :::
@@ -2859,23 +2871,23 @@ Section 4.4.5 formalizes the properties of the QBD theorem regarding catalysis c
 **I. Entropic Definition of Tension**
 
 **In Plain English:**  
-Section 4.4.5.1 formalizes the properties of the QBD proof regarding catalysis coefficient.
+Section 4.4.6.1 formalizes the properties of the QBD proof regarding catalysis coefficient.
 
 ---
 
-### 4.4.6 Theorem: Friction Coefficient {#4.4.6}
+### 4.4.7 Lemma: Friction Coefficient {#4.4.7}
 
 :::info[**Statistical Normalization Constant**]
 :::
 
-Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$. Moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
+Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$; moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
 
 **In Plain English:**  
-Section 4.4.6 formalizes the properties of the QBD theorem regarding friction coefficient.
+Section 4.4.7 formalizes the properties of the QBD lemma regarding friction coefficient.
 
 ---
 
-### 4.4.6.1 Proof: Friction Coefficient {#4.4.6.1}
+### 4.4.7.1 Proof: Friction Coefficient {#4.4.7.1}
 
 :::tip[**Peak Density Evaluation**]
 :::
@@ -2883,19 +2895,31 @@ Section 4.4.6 formalizes the properties of the QBD theorem regarding friction co
 **I. Statistical Premise**
 
 **In Plain English:**  
-Section 4.4.6.1 formalizes the properties of the QBD proof regarding friction coefficient.
+Section 4.4.7.1 formalizes the properties of the QBD proof regarding friction coefficient.
 
 ---
 
-### 4.4.6.2 Calculation: Friction Damping {#4.4.6.2}
+### 4.4.7.2 Calculation: Friction Damping {#4.4.7.2}
 
 :::note[**Computational Check of Gaussian Normalization and Tail Damping**]
 :::
 
-Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.6.1" label="§4.4.6.1" /> is based on the following protocols:
+Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 4.4.6.2 formalizes the properties of the QBD calculation regarding friction damping.
+Section 4.4.7.2 formalizes the properties of the QBD calculation regarding friction damping.
+
+---
+
+### 4.4.8 Proof: Thermodynamic Foundations {#4.4.8}
+
+:::tip[Formal Synthesis of the Thermodynamic Calibration of the Causal Graph, establishing the **Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" />]
+:::
+
+**I. Calibration of Scales** The thermodynamic scales of the vacuum are grounded in the bit-nat equivalence. The critical temperature of the vacuum is established as $T = \ln 2$, matching the entropic equivalent of a single binary decision per **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
+
+**In Plain English:**  
+Section 4.4.8 formalizes the properties of the QBD proof regarding thermodynamic foundations.
 
 ---
 
@@ -2935,31 +2959,7 @@ Section 4.5.3 formalizes the properties of the QBD definition regarding addition
 
 ---
 
-### 4.5.4 Theorem: Addition Probability {#4.5.4}
-
-:::info[**Unitary Thermodynamic Acceptance Probability for Edge Creation**]
-:::
-
-Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
-
-**In Plain English:**  
-Section 4.5.4 formalizes the properties of the QBD theorem regarding addition probability.
-
----
-
-### 4.5.4.1 Proof: Addition Probability {#4.5.4.1}
-
-:::tip[**Derivation of Barrierless Addition from Free Energy Minimization**]
-:::
-
-**I. Probability Decomposition**
-
-**In Plain English:**  
-Section 4.5.4.1 formalizes the properties of the QBD proof regarding addition probability.
-
----
-
-### 4.5.5 Definition: Deletion Mode {#4.5.5}
+### 4.5.4 Definition: Deletion Mode {#4.5.4}
 
 :::tip[**Destructive Operation Proposing Edge Removals**]
 :::
@@ -2967,23 +2967,59 @@ Section 4.5.4.1 formalizes the properties of the QBD proof regarding addition pr
 The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
 
 **In Plain English:**  
-Section 4.5.5 formalizes the properties of the QBD definition regarding deletion mode.
+Section 4.5.4 formalizes the properties of the QBD definition regarding deletion mode.
 
 ---
 
-### 4.5.6 Theorem: Deletion Probability {#4.5.6}
+### 4.5.5 Theorem: Universal Constructor {#4.5.5}
+
+:::info[**Thermodynamic Transition Probabilities and Feedback Modulation of the Rewrite Map**]
+:::
+
+Let $\mathcal{R}$ denote the Universal Constructor stochastically mapping annotated graphs. Then the base thermodynamic acceptance probability is $\mathbb{P}_{\text{acc,thermo}} = 1$ for edge addition and $\mathbb{P}_{\text{del,thermo}} = 1/2$ for edge deletion; moreover, the local rewrite rates are modulated by the Catalytic Tension Factor.
+
+**In Plain English:**  
+Section 4.5.5 formalizes the properties of the QBD theorem regarding universal constructor.
+
+---
+
+### 4.5.6 Lemma: Addition Probability {#4.5.6}
+
+:::info[**Unitary Thermodynamic Acceptance Probability for Edge Creation**]
+:::
+
+Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
+
+**In Plain English:**  
+Section 4.5.6 formalizes the properties of the QBD lemma regarding addition probability.
+
+---
+
+### 4.5.6.1 Proof: Addition Probability {#4.5.6.1}
+
+:::tip[**Derivation of Barrierless Addition from Free Energy Minimization**]
+:::
+
+**I. Probability Decomposition**
+
+**In Plain English:**  
+Section 4.5.6.1 formalizes the properties of the QBD proof regarding addition probability.
+
+---
+
+### 4.5.7 Lemma: Deletion Probability {#4.5.7}
 
 :::info[**Half-unit thermodynamic deletion probability**]
 :::
 
-Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion probability for geometric quanta in the critical vacuum regime. Then $\mathbb{P}_{\text{del,thermo}}$ is identically equal to $1/2$ (**Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />).
+Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion probability for geometric quanta in the critical vacuum regime. Then $\mathbb{P}_{\text{del,thermo}}$ is identically equal to $1/2$ (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />).
 
 **In Plain English:**  
-Section 4.5.6 formalizes the properties of the QBD theorem regarding deletion probability.
+Section 4.5.7 formalizes the properties of the QBD lemma regarding deletion probability.
 
 ---
 
-### 4.5.6.1 Proof: Deletion Probability {#4.5.6.1}
+### 4.5.7.1 Proof: Deletion Probability {#4.5.7.1}
 
 :::tip[**Limit Evaluation via Entropic Dominance**]
 :::
@@ -2991,7 +3027,19 @@ Section 4.5.6 formalizes the properties of the QBD theorem regarding deletion pr
 **I. Setup and Assumptions**
 
 **In Plain English:**  
-Section 4.5.6.1 formalizes the properties of the QBD proof regarding deletion probability.
+Section 4.5.7.1 formalizes the properties of the QBD proof regarding deletion probability.
+
+---
+
+### 4.5.8 Proof: Universal Constructor {#4.5.8}
+
+:::tip[**Synthesis of Transition Probabilities and Feedback Loops in Constructor Dynamics**]
+:::
+
+**I. Stochastic Update Map**
+
+**In Plain English:**  
+Section 4.5.8 formalizes the properties of the QBD proof regarding universal constructor.
 
 ---
 
@@ -3007,7 +3055,19 @@ Section 4.6.1 formalizes the properties of the QBD definition regarding evolutio
 
 ---
 
-### 4.6.2 Theorem: Born Rule {#4.6.2}
+### 4.6.2 Theorem: Emergent Dynamics {#4.6.2}
+
+:::info[**Emergence of Born-Rule Probabilities and Entropic Arrow from the Evolution Operator**]
+:::
+
+Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures over causal graphs. Then the transition probabilities of $\mathcal{U}$ are governed by Born-like product-rule amplitudes, and the sequential application of projection and collapse induces a strictly positive entropy production $\Delta S_{tick} > 0$ that establishes a macroscopic thermodynamic arrow of time.
+
+**In Plain English:**  
+Section 4.6.2 formalizes the properties of the QBD theorem regarding emergent dynamics.
+
+---
+
+### 4.6.3 Lemma: Born Rule {#4.6.3}
 
 :::info[**Emergence of Product-Rule Transition Probabilities from Local Independence**]
 :::
@@ -3015,11 +3075,11 @@ Section 4.6.1 formalizes the properties of the QBD definition regarding evolutio
 Let $\mathbb{P}(G \to G')$ denote the transition probability governing the evolution from an initial state $G$ to a specific successor $G'$. Then this probability is strictly determined by the product of the individual acceptance probabilities for the local rewrite events comprising the transition, satisfying the scaling relation:
 
 **In Plain English:**  
-Section 4.6.2 formalizes the properties of the QBD theorem regarding born rule.
+Section 4.6.3 formalizes the properties of the QBD lemma regarding born rule.
 
 ---
 
-### 4.6.2.1 Proof: Born Rule {#4.6.2.1}
+### 4.6.3.1 Proof: Born Rule {#4.6.3.1}
 
 :::tip[**Derivation of Born-Like Probabilities from the Convolution of Local Rates**]
 :::
@@ -3027,35 +3087,35 @@ Section 4.6.2 formalizes the properties of the QBD theorem regarding born rule.
 **I. Event Independence**
 
 **In Plain English:**  
-Section 4.6.2.1 formalizes the properties of the QBD proof regarding born rule.
+Section 4.6.3.1 formalizes the properties of the QBD proof regarding born rule.
 
 ---
 
-### 4.6.2.2 Calculation: Amplitude Normalization {#4.6.2.2}
+### 4.6.3.2 Calculation: Amplitude Normalization {#4.6.3.2}
 
 :::note[**Computational Check of Product-Rule Transitions with Normalization**]
 :::
 
-Computational verification of the emergent probability weights established by **The Born Rule** <Ref id="4.6.2.1" label="§4.6.2.1" /> is based on the following protocols:
+Computational verification of the emergent probability weights established by **Born Rule** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 4.6.2.2 formalizes the properties of the QBD calculation regarding amplitude normalization.
+Section 4.6.3.2 formalizes the properties of the QBD calculation regarding amplitude normalization.
 
 ---
 
-### 4.6.3 Theorem: Thermodynamic Arrow {#4.6.3}
+### 4.6.4 Lemma: Thermodynamic Arrow {#4.6.4}
 
 :::info[**Irreversibility and entropy production in the evolution operator**]
 :::
 
-Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is strictly positive ($\Delta S_{tick} > 0$), scaling as $dS/dt \propto (N_{\text{add}} - N_{\text{del}}) \ln 2$. Moreover, a global arrow of time follows from the information-theoretic asymmetry between creating a bit (cost $\approx 0$) and destroying a bit (cost $\approx \ln 2$) [(Bennett, 1982)](/monograph/appendices/a-references#A.12).
+Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is strictly positive ($\Delta S_{tick} > 0$), scaling as $dS/dt \propto (N_{\text{add}} - N_{\text{del}}) \ln 2$; moreover, a global arrow of time follows from the information-theoretic asymmetry between creating a bit (cost $\approx 0$) and destroying a bit (cost $\approx \ln 2$) [**(Bennett, 1982)**](/monograph/appendices/a-references#A.12).
 
 **In Plain English:**  
-Section 4.6.3 formalizes the properties of the QBD theorem regarding thermodynamic arrow.
+Section 4.6.4 formalizes the properties of the QBD lemma regarding thermodynamic arrow.
 
 ---
 
-### 4.6.3.1 Proof: Thermodynamic Arrow {#4.6.3.1}
+### 4.6.4.1 Proof: Thermodynamic Arrow {#4.6.4.1}
 
 :::tip[**Decomposition into Non-invertible Components**]
 :::
@@ -3063,19 +3123,31 @@ Section 4.6.3 formalizes the properties of the QBD theorem regarding thermodynam
 **I. Operator Decomposition**
 
 **In Plain English:**  
-Section 4.6.3.1 formalizes the properties of the QBD proof regarding thermodynamic arrow.
+Section 4.6.4.1 formalizes the properties of the QBD proof regarding thermodynamic arrow.
 
 ---
 
-### 4.6.3.2 Calculation: Irreversibility Check {#4.6.3.2}
+### 4.6.4.3 Calculation: Irreversibility Check {#4.6.4.3}
 
 :::note[**Computational Verification of Entropy Loss in Projection and Sampling**]
 :::
 
-Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **The Thermodynamic Arrow** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
+Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **Thermodynamic Arrow** <Ref id="4.6.4.1" label="§4.6.4.1" /> is based on the following protocols:
 
 **In Plain English:**  
-Section 4.6.3.2 formalizes the properties of the QBD calculation regarding irreversibility check.
+Section 4.6.4.3 formalizes the properties of the QBD calculation regarding irreversibility check.
+
+---
+
+### 4.6.5 Proof: Emergent Dynamics {#4.6.5}
+
+:::tip[**Synthesis of Transition Probabilities and Entropy Production in the Evolution Cycle**]
+:::
+
+**I. Composite Map Formulation**
+
+**In Plain English:**  
+Section 4.6.5 formalizes the properties of the QBD proof regarding emergent dynamics.
 
 ---
 
@@ -4848,7 +4920,7 @@ Section 8.2.6 formalizes the properties of the QBD lemma regarding ensemble clos
 :::tip[**Derivation of Near-Unity Closure Probability in the Equilibrium Limit**]
 :::
 
-**I. Stochastic Evolution Model** The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **Born Rule** <Ref id="4.6.2" label="§4.6.2" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
+**I. Stochastic Evolution Model** The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **Born Rule** <Ref id="4.6.3" label="§4.6.3" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
 
 **In Plain English:**  
 Section 8.2.6.1 formalizes the properties of the QBD proof regarding closure probability.
@@ -6156,7 +6228,7 @@ Section 9.6.6 formalizes the properties of the QBD lemma regarding friction supp
 :::tip[**Demonstration of Instability Onset at Critical Complexity**]
 :::
 
-**I. Maintenance Dynamics** The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it. * **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
+**I. Maintenance Dynamics** The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it. * **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
 
 **In Plain English:**  
 Section 9.6.6.1 formalizes the properties of the QBD proof regarding maintenance halt verification.
@@ -6996,7 +7068,7 @@ Section 10.7.3 formalizes the properties of the QBD lemma regarding control dyna
 :::tip[**Verification of Catalytic Enhancement for the $|1_L\rangle$ State**]
 :::
 
-**I. Friction Function** The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />. For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost). Thus, $P_{acc} \approx f(\sigma_{eff})$.
+**I. Friction Function** The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />. For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost). Thus, $P_{acc} \approx f(\sigma_{eff})$.
 
 **In Plain English:**  
 Section 10.7.3.1 formalizes the properties of the QBD proof regarding conditional friction verification.
