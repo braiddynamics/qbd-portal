@@ -749,6 +749,13 @@ Any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ te
 
 Q.E.D.
 
+### 2.3.6.2 Commentary: Causal Well-Foundedness {#2.3.6.2}
+
+:::info[**Minimal Elements and the Boundary of Time**]
+:::
+
+Well-foundedness serves as the mathematical guarantor that every chain of physical constructions terminates at an absolute, irreducible boundary in the past. This property precludes the existence of infinite descending causal chains, which would otherwise introduce infinite regress into the pre-geometric structure and prevent the definite calculation of transition histories. By establishing that every causal path contains a unique minimal element, the theory secures a well-defined beginning for the universe, ensuring that the relational network builds up from a stable, pre-geometric origin.
+
 ---
 
 ### 2.3.7 Proof: Geometric Constructibility {#2.3.7}
@@ -933,6 +940,13 @@ We conclude that the order of operations does not affect the final state.
 
 Q.E.D.
 
+### 2.4.2.2 Commentary: Confluence Properties {#2.4.2.2}
+
+:::info[**Convergence of Alternative Path Branches in the Macro-Timeline**]
+:::
+
+Confluence properties guarantee that independent rewrite paths eventually merge, ensuring that the macroscopic timeline remains unique regardless of execution order. If the system lacked confluence, different sequences of local updates would lead to disjoint, parallel universes with incompatible geometries. The existence of a confluent constructor ensures that localized choices at the planck scale do not destroy the coherent, singular structure of macroscopic spacetime. It provides the pre-geometric foundation for the uniqueness of classical histories and the stability of the physical timeline.
+
 ---
 
 ### 2.4.3 Lemma: Chordlessness of Maximal Cycles {#2.4.3}
@@ -1003,6 +1017,13 @@ The presence of the chord identifies $C$ as a composite structure formed by the 
 
 Q.E.D.
 
+### 2.4.3.2 Commentary: Chordless Cycles {#2.4.3.2}
+
+:::info[**Independence of Minimal Stabilizer Cycles in Gauge Structures**]
+:::
+
+Chordless cycles serve as the primitive stabilizer units in our pre-geometric model. If a maximal cycle possessed internal chords, it would decompose into smaller, independent sub-cycles, violating the minimality required for gauge invariance. The chordlessness constraint ensures that these cycles function as indivisible, non-local loops of causal flux, analogous to Wilson loops in gauge theories. By maintaining their topological independence, chordless cycles act as the stable, basic building blocks from which the quantum codespace and physical fields emerge.
+
 ---
 
 ### 2.4.4 Lemma: Reduction via Deletion {#2.4.4}
@@ -1049,6 +1070,13 @@ $$
 $$
 
 Q.E.D.
+
+### 2.4.4.2 Commentary: Reduction Properties {#2.4.4.2}
+
+:::info[**Thermodynamic Regulation of Graph Density via Cycle Dissolution**]
+:::
+
+Reduction via deletion describes how the removal of edges decreases local cycle density. This prevents structural runaway and regulates graph dimension. Without this pruning mechanism, the generative drive of addition would relentlessly add edges until the graph collapsed into a dense, high-dimensional structure lacking spatial locality. Deletion acts as the cooling mechanism of the vacuum, dissolving excess connections and ensuring that the emergent spacetime manifold maintains its physical, low-dimensional structure near criticality.
 
 ---
 
@@ -1647,6 +1675,13 @@ $$
 
 Q.E.D.
 
+### 2.5.2.2 Commentary: Local Independence A {#2.5.2.2}
+
+:::info[**Concurrency of Spatially Disjoint Updates in the Vacuum**]
+:::
+
+Local independence in case A applies to spatially separated rewrites. Their disjoint footprints ensure they can be computed concurrently without conflicts. This independence ensures that the micro-physics of the vacuum is strictly local, preventing instantaneous non-local interactions that would violate relativistic causality. Spatially separated regions of the graph evolve independently, establishing the pre-geometric foundation for local quantum field theory and the finite speed of information propagation.
+
 ---
 
 ### 2.5.3 Lemma: Independence Case B {#2.5.3}
@@ -1712,6 +1747,13 @@ Ax2 \not\implies Ax1
 $$
 
 Q.E.D.
+
+### 2.5.3.2 Commentary: Local Independence B {#2.5.3.2}
+
+:::info[**Order Invariance of Causally Unrelated Events**]
+:::
+
+Local independence in case B applies to causally unrelated events. Their independence guarantees that the order of their realization does not alter the physical outcome. This order invariance ensures that the emerging spacetime is invariant under changes of the update sequence, preventing the scheduler from introducing arbitrary, non-physical history dependence. It secures a coordinate-free description of physical evolution, laying the groundwork for general covariance in the macroscopic limit.
 
 ---
 
@@ -1925,6 +1967,13 @@ We conclude that strictly increasing timestamps are necessary for the validity o
 
 Q.E.D.
 
+### 2.6.3.2 Commentary: Timestamp Strictness {#2.6.3.2}
+
+:::info[**Constraint of Monotonicity on Event Causality**]
+:::
+
+Strict timestamping prevents simultaneous events from having causal relations. This reinforces the partial order structure of pre-geometric spacetime. In standard formulations of relativity, events on the same spatial hypersurface are causally disconnected. Strict timestamping enforces this principle at the planck scale, ensuring that causal influence must flow across definite, strictly increasing logical ticks. This prevents instantaneous causal loops and stabilizes the forward direction of time.
+
 ---
 
 ### 2.6.4 Lemma: Failure of Reflexivity {#2.6.4}
@@ -1977,6 +2026,13 @@ Evaluate the influence relation for the pair $(A, A)$.
 The existence of $\pi$ establishes the relation $A \le A$. We conclude that this self-influence violates the Irreflexivity axiom required for a strict partial order.
 
 Q.E.D.
+
+### 2.6.4.2 Commentary: Non-Reflexive Causality {#2.6.4.2}
+
+:::tip[**Elimination of Self-Causation at the Micro-Scale**]
+:::
+
+Non-reflexivity implies that no event can causally influence itself. This eliminates the possibility of circular causation at the microscopic scale. If self-causation were permitted, the causal light cone would bend back on itself, creating local closed timelike curves. The non-reflexivity constraint ensures that every event is causally distinct from its ancestors, securing the linear flow of causal influence and protecting the physical timeline from temporal paradoxes.
 
 ---
 
@@ -2039,7 +2095,16 @@ The relations $A \le C$ and $C \le A$ hold simultaneously for distinct vertices 
 
 Q.E.D.
 
-### 2.6.5.2 Diagram: Bowtie Paradox {#2.6.5.2}
+### 2.6.5.2 Commentary: Asymmetry Constraints {#2.6.5.2}
+
+:::tip[**Directional Coupling of Causal Relations**]
+:::
+
+Asymmetry dictates that if event A influences event B, then B cannot influence A. This establishes a consistent direction for the flow of cause to effect. If mutual influence were permitted, the distinction between cause and effect would dissolve, rendering the concept of causal directionality meaningless. Asymmetry enforces a strict, directed light cone structure, ensuring that information flows in a single, well-defined direction through the causal graph.
+
+---
+
+### 2.6.5.3 Diagram: Bowtie Paradox {#2.6.5.3}
 
 :::note[**Visualization of the Effective Influence Paradox illustrating Bidirectional Causality**]
 :::
@@ -2117,6 +2182,13 @@ $$
 The creation event of the final edge $(w, u)$ cannot influence the creation event of $(u, v)$ in $G_{event}$, precluding the closure of any causal cycle in history.
 
 Q.E.D.
+
+### 2.6.6.2 Commentary: Causal and Spatial Interactions {#2.6.6.2}
+
+:::info[**Prevention of Closed Timelike Loops in Curvature Fields**]
+:::
+
+The interaction between causal acyclicity and spatial triangulation highlights the constraint that physical geometry must not generate timelike loops. If the spatial triangulation process allowed the formation of cycles with non-increasing timestamps, the causal order would collapse. By enforcing that all spatial structures respect the causal partial order, the theory guarantees that the emergent geometry remains globally hyperbolic, providing a consistent Lorentzian manifold for the propagation of physical fields.
 
 ---
 

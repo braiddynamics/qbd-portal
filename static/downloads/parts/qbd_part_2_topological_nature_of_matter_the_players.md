@@ -1355,7 +1355,7 @@ The operation $\mathcal{R}_{M+1}$ must satisfy **Principle of Unique Causality (
 
 2.  **Resource Accumulation:**
     The rewrite operation $\mathcal{R}_{M+1}$ acts on a local neighborhood disjoint from the cores of previous crossings (or separated by a graph distance $\bar{d} > \xi$).
-    Due to the **Spatial Cluster Decomposition** <Ref id="5.1.1" label="§5.1.1" />, the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
+    Due to the **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />, the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
 
     $$
     N_3(\beta_{M+1}) = N_3(\beta_M) + \Delta N_3(\mathcal{R}_{M+1})
@@ -4442,7 +4442,7 @@ The depth follows from the path graph adjacency of the ribbons.
 3.  **Termination:** The process terminates at $d=n-1$, filling all $\binom{n}{2}$ off-diagonals. The diagonal generators arise from commutators of **Real and Imaginary** off-diagonal pairs, adding $O(1)$ complexity per off-diagonal.
 
 **II. Friction and Locality Bounds**
-1.  **PUC Compliance:** Each commutator composes disjoint 3-cycles. The validity is enforced by a friction coefficient $\mu=0.40$ **Friction Coefficient** <Ref id="4.4.6" label="§4.4.6" />, which suppresses higher-order non-local terms by $e^{-\mu d} < 10^{-3}$.
+1.  **PUC Compliance:** Each commutator composes disjoint 3-cycles. The validity is enforced by a friction coefficient $\mu=0.40$ defined under **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, which suppresses higher-order non-local terms by $e^{-\mu d} < 10^{-3}$.
 2.  **Correlation Length:** At depth $d$, the nested bracket acts on a chain of $d+1$ ribbons. Locality bounds the support to $O(d)$ vertices via the **Correlation Length** $\xi \sim 1/\rho_e$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />.
 3.  **BFS Search:** The search for PUC compliance scans the local ball $|B(R)| \sim R^4$ **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> within radius $R = \log_{\text{diam}} N$. The detection of short-path alternatives occurs with probability $1 - e^{-R} \approx 1$ for $R = \log_3 10^6 \approx 9.5$.
 
@@ -4632,7 +4632,7 @@ The set of fundamental Hamiltonians $\{\hat{H}_1, \hat{H}_2\}$, together with th
 :::
 
 **I. Explicit Matrix Form**
-The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge **Projector Validity** <Ref id="3.5.4.1" label="§3.5.4.1" />.
+The fundamental generators $\hat{H}_1$ and $\hat{H}_2$ act on the tripartite ribbon basis $|r_1\rangle, |r_2\rangle, |r_3\rangle$ by swapping the phases of adjacent rungs via Z-operators on the shared 3-cycle bridge, as governed by **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" />.
 
 $$
 \lambda^{(1,2)} = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad \lambda^{(2,3)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}
@@ -4766,7 +4766,7 @@ The constructive generation of the $\mathfrak{su}(3)$ basis is robust against st
 :::
 
 **I. Stochastic Evolution Model**
-The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **Born Rule** <Ref id="4.6.2" label="§4.6.2" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
+The configuration space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$ evolves under the universal update $\mathcal{U} = C \circ \mathcal{R}^\flat \circ P(R_T)$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The rewrite operator $\mathcal{R}^\flat$ samples rewrites with Born probabilities $(1/2)^{\#dels}$ **Born Rule** <Ref id="4.6.3" label="§4.6.3" />. The braid generators $\hat{H}_i = -i \log \mathcal{R}_i$ are realized in the code space $\mathcal{C}$.
 
 **II. Inductive Spanning Probability**
 The closure is shown by induction on ticks $t_L$.
@@ -5362,7 +5362,7 @@ The right-handed mirror process requires inverting the timestamp order to $H_t(e
 This inversion exposes pre-existing mediated paths as valid alternatives under the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$.
 The cardinality of the path set for the inverted case becomes $|\Pi(u,v)| > 1$ with high probability (proven in **8.3.5.1**).
 The existence of multiple paths violates the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
-Consequently, the local projector $\Pi_{local}$ **Projector Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> assigns a zero eigenvalue (annihilation) to the right-handed transition amplitude.
+Consequently, the local projector $\Pi_{local}$ defined under **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> assigns a zero eigenvalue (annihilation) to the right-handed transition amplitude.
 
 **III. Conclusion: V-A Structure**
 Weak currents are strictly left-handed because right-handed currents are axiomatically invalid state transitions.
@@ -5623,7 +5623,7 @@ A 4-cycle proposal is "riskier" and faces higher rejection rates from the pre-ch
 
 **III. Net Probability Ratio**
 The friction function $f(\sigma) = \exp(-\mu \cdot V_{int} \cdot \rho)$ yields a damping factor for the extra vertex exposure of $f_4 / f_3 = e^{-2\mu\rho}$.
-At the equilibrium density $\rho^* \approx 0.029$ with friction $\mu \approx 0.40$ **Friction Coefficient** <Ref id="4.4.6" label="§4.4.6" />, this factor evaluates to $e^{-0.0232} \approx 0.977$.
+At the equilibrium density $\rho^* \approx 0.029$ with friction $\mu \approx 0.40$ derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, this factor evaluates to $e^{-0.0232} \approx 0.977$.
 Because this value is extremely close to unity, the friction differential at sparse equilibrium is negligible.
 Combining factors, the probability ratio is dominated almost entirely by the combinatorial rarity:
 
@@ -5830,7 +5830,7 @@ $$
 
 This derivation is constrained by the simultaneous satisfaction of four physical parameters:
 1.  **Spherical Geometry:** The factor $4\pi$ represents the integration of the interaction vertex over the internal symmetry space $S^3$.
-2.  **Entropic Scale:** The constant $\alpha_{\text{topo}} = \ln 2 / 4$ represents the dimensionless energy cost per topological bit distributed across the 4 effective dimensions of the **Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />.
+2.  **Entropic Scale:** The constant $\alpha_{\text{topo}} = \ln 2 / 4$ represents the dimensionless energy cost per topological bit distributed across the 4 effective dimensions of the **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />.
 3.  **Local Multiplicity:** The integer $M=7$ enumerates the distinct, disjoint topological channels available for the rewrite operation on a single 3-cycle quantum, comprising spatial orientations, internal doublet states, and stabilizer constraints.
 4.  **Vacuum Density:** The value $\rho_3^* \approx 0.029$ represents the equilibrium concentration of compliant rewrite sites in the causal graph, as determined by the fixed point of the **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
 
@@ -5916,7 +5916,7 @@ $$
 $$
 
 **III. Born Rule and Coupling Identification**
-The **Born Rule** in the **Born Rule** <Ref id="4.6.2" label="§4.6.2" /> equates the rewrite probability $P(\mathcal{R}_W)$ to the squared amplitude:
+The **Born Rule** in the **Born Rule** <Ref id="4.6.3" label="§4.6.3" /> equates the rewrite probability $P(\mathcal{R}_W)$ to the squared amplitude:
 
 $$
 P(\mathcal{R}_W) = |M_{QBD}|^2 \approx \frac{g_{eff}^2 t^2}{2}
@@ -6064,7 +6064,7 @@ $$
 E_{nat} = T_{vac} \Delta S_{bit}
 $$
 
-With the vacuum temperature $T_{vac} = \ln 2$ **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
+With the vacuum temperature $T_{vac} = \ln 2$ **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
 
 **II. Dimensional Normalization**
 The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
@@ -6077,7 +6077,7 @@ $$
 
 **III. Scale Invariance**
 This value $\alpha_{topo}$ serves as the dimensionless fine-structure constant for topological vertices. It is invariant under scale transformations because the volume factor $r^{d_c}$ in the denominator cancels the extensive growth of the bit count in the numerator at the critical point where $T=\ln 2$.
-This constant dominates the writhe-neutral flips ($\Delta E \approx 0$) **Addition Probability** <Ref id="4.5.4" label="§4.5.4" /> that mediate the weak interaction.
+This constant dominates the writhe-neutral flips ($\Delta E \approx 0$) **Addition Probability** <Ref id="4.5.6" label="§4.5.6" /> that mediate the weak interaction.
 
 Q.E.D.
 
@@ -6592,7 +6592,7 @@ The magnitude of the Vacuum Expectation Value $v$ scales according to the relati
 :::tip[**Derivation of the 246 GeV Scale from Local Density of States**]
 :::
 
-Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.2" label="§5.1.2" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />.
+Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />.
 
 **I. Geometric Regularity**
 The volume $V_\xi$ satisfies **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> (volume scaling $c_1 r^4 \leq |B(r)| \leq c_2 r^4$), with curvature bounds $|K(u,v)| \leq 2$ (**Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />). Central limit theorem damping over independent subregions yields a stable intensive variance $\mathrm{Var}(\rho_3^*) \sim 1/N_\xi$, where $N_\xi = \frac{V_\xi}{\mathrm{vol}(\gamma)} \sim \rho_3^{*-3}$.
@@ -6779,7 +6779,7 @@ The covariance between the coupling $g$ and the VEV $v$ (both depend on $\rho^*$
 The Higgs mechanism is constructed as a geometric phase transition.
 
 **I. Ignition and VEV**
-The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation (**Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />).
+The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
 
 **II. Goldstone Breaking**
 Broken $SU(2) \times U(1)$ roots produce three Goldstone modes $T^{1,2}$ and $T^3 - \tan \theta_W Y$. These manifest as zero-modes in the stabilizer subgroup $\text{Stab}(\rho_3^*)$ preserving 3-cycle density. Counting rewrite-invariant orbits under the comonad $R_T$ **Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" /> yields $\dim(\text{Stab}_{\text{broken}}) = 3$. These modes are absorbed into $W^\pm$ and $Z$ longitudinal components, restoring unitarity via the topological equivalence theorem.
@@ -9077,7 +9077,7 @@ The stability of a topological particle is bounded by the syndrome-response fric
 
 **I. Maintenance Dynamics**
 The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it.
-* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
+* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
 
     $$
     R_{create} \propto N_3 \cdot P_{acc} \propto N_3 e^{-\mu N_3}
@@ -9151,7 +9151,7 @@ $$
 N_3 e^{-\mu N_3} = \frac{1}{2}
 $$
 
-The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ **Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **II. Solution Analysis**
 Let $f(x) = x e^{-\mu x} - 0.5 = 0$, where $x = N_3$.
@@ -11170,11 +11170,6 @@ This derivation completes the single-qubit logic by providing a geometric mechan
 
 ---
 
-﻿---
-title: "Chapter 10: Quantum Universality"
-sidebar_label: "10.6 - Hadamard"
----
-
 ## 10.6 Hadamard Gate {#10.6}
 
 How does a quantum system maintain coherence in the presence of the relentless thermal fluctuations of the vacuum? This challenge demands the construction of a thermodynamic cycle that utilizes the energy degeneracy of the basis states to drive the system into an unbiased mix and then freeze it into coherence, proving that randomness can be harnessed to create quantum potential.
@@ -11234,7 +11229,7 @@ $$
 T_{local}(t) = T_{vac} + k \frac{\rho_{rewrite}(t)}{|V|}
 $$
 
-where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from the **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" /> (denoted $\lambda_{cat} = e - 1$).
+where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> (denoted $\lambda_{cat} = e - 1$).
 
 **II. Driving Mechanism**
 The local rewrite density is increased by applying an external driver (e.g., a bias field) that enhances the acceptance probability of the Universal Constructor in the region $V$.
@@ -11519,7 +11514,7 @@ The conditional execution of the target operation is governed by the catalytic f
 :::
 
 **I. Friction Function**
-The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
+The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
 For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost).
 Thus, $P_{acc} \approx f(\sigma_{eff})$.
 
@@ -11539,7 +11534,7 @@ Thus, $P_{acc} \approx f(\sigma_{eff})$.
 * State: Asymmetric excited state.
 * Syndrome: High stress, $\sigma_C = -1$.
 * Effective Stress: $\sigma_{eff} \approx -1$ (Defect-like).
-* Catalysis: The function $f(-1)$ corresponds to the **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />, where $f_{cat} > 1$.
+* Catalysis: The function $f(-1)$ corresponds to the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />, where $f_{cat} > 1$.
 
     $$
     P_{acc} \approx f(-1) \approx 1
@@ -11857,7 +11852,7 @@ For a braid $\beta$ defined by writhe sequence $\{w_i\}$, the dual $\beta^*$ is 
 
 **II. Evaluation and Coevaluation**
 * **Coevaluation ($i_X: I \to X \otimes X^*$):** Pair creation from vacuum. $\mathcal{R}_{create}$ generates balanced writhe $\Delta w = 0$ **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />.
-* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ **Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **III. Zig-Zag Identity**
 The composition $(id_X \otimes e_X) \circ (i_X \otimes id_X) = id_X$.
@@ -12421,7 +12416,7 @@ Yet the simulation spotlights QBD's stakes, where the **causal graph** <Ref id="
 
 Consequently, **Tripartite Braid** <Ref id="6.2" label="§6.2" /> acting as qubits and rewrites serving as gates (as realized in sections 10.4–10.8) imply scalable hardware from the **Equilibrium Analysis** <Ref id="5.4" label="§5.4" />, potentially compressing that timeline.
 
-The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.3" label="§4.6.3" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
+The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
 

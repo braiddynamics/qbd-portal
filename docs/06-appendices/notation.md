@@ -159,12 +159,12 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/rules/equilibrium/5.1/#5.1.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
 | $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
 | $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |

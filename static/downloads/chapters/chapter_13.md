@@ -46,7 +46,7 @@ $$
 P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
 $$
 
-The deletion probability $P_{\text{del}}(a,b)$ quantifies the transition amplitude for the constructor to identify the edge $(a,b)$ as a participant in an existing 3-cycle $\gamma$ and effectuate its removal. This term expands according to the decay dynamics governed by the Born rule **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />:
+The deletion probability $P_{\text{del}}(a,b)$ quantifies the transition amplitude for the constructor to identify the edge $(a,b)$ as a participant in an existing 3-cycle $\gamma$ and effectuate its removal. This term expands according to the decay dynamics governed by the Born rule **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />:
 
 $$
 P_{\text{del}}(a,b) = \frac{1}{2} \cdot \mathbb{I}_{\gamma \ni (a,b)} \cdot \chi(\vec{\sigma}_{\gamma}) \cdot \mathbb{P}_{\text{acc}}.

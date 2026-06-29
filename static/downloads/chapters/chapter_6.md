@@ -1355,7 +1355,7 @@ The operation $\mathcal{R}_{M+1}$ must satisfy **Principle of Unique Causality (
 
 2.  **Resource Accumulation:**
     The rewrite operation $\mathcal{R}_{M+1}$ acts on a local neighborhood disjoint from the cores of previous crossings (or separated by a graph distance $\bar{d} > \xi$).
-    Due to the **Spatial Cluster Decomposition** <Ref id="5.1.1" label="§5.1.1" />, the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
+    Due to the **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />, the structural cost of the new crossing adds linearly to the existing complexity without interference terms.
 
     $$
     N_3(\beta_{M+1}) = N_3(\beta_M) + \Delta N_3(\mathcal{R}_{M+1})

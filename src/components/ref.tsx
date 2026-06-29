@@ -88,7 +88,7 @@ const renderLaTeX = (text: string) => {
   if (!text) return null;
 
   // Split by Display math ($$...$$) and Inline math ($...$)
-  const regex = /(\$\$.*?\$\$|\$.*?\$)/g;
+  const regex = /(\$\$[\s\S]*?\$\$|\$[\s\S]*?\$)/g;
   const parts = text.split(regex);
 
   return parts.map((part, index) => {

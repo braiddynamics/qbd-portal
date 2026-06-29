@@ -1751,11 +1751,6 @@ This derivation completes the single-qubit logic by providing a geometric mechan
 
 ---
 
-﻿---
-title: "Chapter 10: Quantum Universality"
-sidebar_label: "10.6 - Hadamard"
----
-
 ## 10.6 Hadamard Gate {#10.6}
 
 How does a quantum system maintain coherence in the presence of the relentless thermal fluctuations of the vacuum? This challenge demands the construction of a thermodynamic cycle that utilizes the energy degeneracy of the basis states to drive the system into an unbiased mix and then freeze it into coherence, proving that randomness can be harnessed to create quantum potential.
@@ -1815,7 +1810,7 @@ $$
 T_{local}(t) = T_{vac} + k \frac{\rho_{rewrite}(t)}{|V|}
 $$
 
-where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from the **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" /> (denoted $\lambda_{cat} = e - 1$).
+where $\rho_{rewrite}(t) = N_{\mathcal{R}}(t) / |V|$ is the instantaneous rewrite density and $k$ is a proportionality constant derived from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> (denoted $\lambda_{cat} = e - 1$).
 
 **II. Driving Mechanism**
 The local rewrite density is increased by applying an external driver (e.g., a bias field) that enhances the acceptance probability of the Universal Constructor in the region $V$.
@@ -2100,7 +2095,7 @@ The conditional execution of the target operation is governed by the catalytic f
 :::
 
 **I. Friction Function**
-The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
+The acceptance probability for a rewrite $\mathcal{R}$ is given by $P_{acc} = f(\sigma) \cdot P_{thermo}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
 For the Z-gate operation $\mathcal{R}_Z$, $P_{thermo} = 1$ (no energy cost).
 Thus, $P_{acc} \approx f(\sigma_{eff})$.
 
@@ -2120,7 +2115,7 @@ Thus, $P_{acc} \approx f(\sigma_{eff})$.
 * State: Asymmetric excited state.
 * Syndrome: High stress, $\sigma_C = -1$.
 * Effective Stress: $\sigma_{eff} \approx -1$ (Defect-like).
-* Catalysis: The function $f(-1)$ corresponds to the **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />, where $f_{cat} > 1$.
+* Catalysis: The function $f(-1)$ corresponds to the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />, where $f_{cat} > 1$.
 
     $$
     P_{acc} \approx f(-1) \approx 1
@@ -2438,7 +2433,7 @@ For a braid $\beta$ defined by writhe sequence $\{w_i\}$, the dual $\beta^*$ is 
 
 **II. Evaluation and Coevaluation**
 * **Coevaluation ($i_X: I \to X \otimes X^*$):** Pair creation from vacuum. $\mathcal{R}_{create}$ generates balanced writhe $\Delta w = 0$ **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />.
-* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ **Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+* **Evaluation ($e_X: X^* \otimes X \to I$):** Pair annihilation. $\mathcal{R}_{annihilate}$ removes the loop. This process is thermodynamically allowed as a $\sigma=+1$ stress-reducing process with $Q_{\text{del,thermo}}=1/2$ **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **III. Zig-Zag Identity**
 The composition $(id_X \otimes e_X) \circ (i_X \otimes id_X) = id_X$.
@@ -3002,7 +2997,7 @@ Yet the simulation spotlights QBD's stakes, where the **causal graph** <Ref id="
 
 Consequently, **Tripartite Braid** <Ref id="6.2" label="§6.2" /> acting as qubits and rewrites serving as gates (as realized in sections 10.4–10.8) imply scalable hardware from the **Equilibrium Analysis** <Ref id="5.4" label="§5.4" />, potentially compressing that timeline.
 
-The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.3" label="§4.6.3" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
+The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
 

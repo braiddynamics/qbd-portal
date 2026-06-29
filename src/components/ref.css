@@ -179,6 +179,7 @@ html[data-theme='dark'] .ref-badge:hover {
   line-height: 1.48;
   margin: 0;
   text-align: justify;
+  white-space: pre-wrap;
 }
 
 /* Formal statement math block container */

@@ -31,31 +31,7 @@ We resolve this foundational crisis by establishing the spatial cluster decompos
 
 ---
 
-### 5.1.1 Definition: Spatial Cluster Decomposition {#5.1.1}
-
-:::tip[**Exponential Decay of Mutual Information within Disjoint Subregions**]
-:::
-
-The **Spatial Cluster Decomposition** principle asserts that the statistical properties of the causal graph factorize over sufficient distances. Let $R_A$ and $R_B$ be disjoint subregions of the graph $G$, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
-
-$$
-I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
-$$
-
-where $\xi$ is the finite correlation length derived by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> and $K$ is a normalization constant. In the asymptotic limit $d(R_A, R_B) \gg \xi$, the joint configuration space factorizes as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$.
-
-### 5.1.1.1 Commentary: Defining "Volume" via Correlation {#5.1.1.1}
-
-:::info[**Emergence of Additivity from Causal Limits**]
-:::
-
-The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.1" label="§5.1.1" /> formalizes the concept of "separation" within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined *dynamically* via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
-
-The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a "causal patch" or "volume element." Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
-
----
-
-### 5.1.2 Theorem: Extensive Entropy {#5.1.2}
+### 5.1.1 Theorem: Extensive Entropy {#5.1.1}
 
 :::info[**Linear Scaling of the Configuration Space with Vertex Count**]
 :::
@@ -66,20 +42,95 @@ $$
 S(N) = c \cdot N + o(N)
 $$
 
-The coefficient $c > 0$ is the **Specific Entropy per Event**, a universal constant determined by the local constraint density (bounded degree and acyclicity). The term $o(N)$ represents sub-extensive corrections that vanish in the thermodynamic limit $\lim_{N \to \infty} S(N)/N = c$. This linearity confirms that the vacuum is a thermodynamically stable phase of matter.
+where the coefficient $c > 0$ is the **Specific Entropy per Event** determined by local constraint density, and $o(N)$ represents sub-extensive corrections that vanish in the thermodynamic limit $\lim_{N \to \infty} S(N)/N = c$.
 
-### 5.1.2.1 Commentary: Logic of Extensivity {#5.1.2.1}
+### 5.1.1.1 Commentary: Argument Outline {#5.1.1.1}
+
+:::tip[**Structure of the Extensive Entropy Derivation via Local Boundedness, Cluster Decomposition, and Linear Scaling**]
+:::
+
+The proof proceeds via Direct Construction, partitioning the global configuration space into independent local volumes to establish a well-defined thermodynamic limit.
+
+```text
+• 5.1.1 Theorem: Extensive Entropy [by partition]
+├── 5.1.2 Lemma: Spatial Cluster Decomposition
+│   ├── 5.1.2.1 Proof: Spatial Cluster Decomposition
+│   └── 5.1.2.2 Commentary: Defining "Volume" via Correlation
+├── 5.1.3 Lemma: Correlation Decay
+│   ├── 5.1.3.1 Proof: Correlation Decay
+│   └── 5.1.3.2 Commentary: Role of Acyclicity and Sparsity
+└── 5.1.4 Proof: Extensive Entropy
+```
+
+### 5.1.1.2 Commentary: Logic of Extensivity {#5.1.1.2}
 
 :::tip[**Transition from Combinatorial Counting to Physical Reservoirs**]
 :::
 
 The argument establishes the thermodynamic stability of the vacuum by decomposing the global configuration space into additive local contributions. This follows the foundational principles of statistical mechanics where extensivity is a prerequisite for a well-defined thermodynamic limit. <Cite id="A.10" label="(Bekenstein, 1981)" /> established that the entropy of any bounded system is fundamentally limited by its energy and size (the Bekenstein bound), implying that information capacity scales with the physical dimensions of the system. In our graph-theoretic context, the linear scaling of entropy $S \propto N$ validates that the causal graph behaves as a standard extensive system, akin to a gas or a lattice spin system, rather than a holographic surface or a system with long-range interactions that would lead to super-extensive scaling.
 
-1.  **The Finite Basis (Local Boundedness):** The argument first addresses the definition of entropy configuration counting ($S = \ln \Omega$). It invokes **Axiom 1 (Bounded Degree)** and **Axiom 3 (Acyclicity)** to prove that the number of possible directed graphs on any finite set of vertices is strictly bounded. This guarantees that no local singularity can drive the entropy to infinity.
+1.  **The Finite Basis (Local Boundedness):** We invoke Bounded Degree and Acyclicity to prove that the number of possible directed graphs on any finite set of vertices is strictly bounded. This guarantees that no local singularity can drive the entropy to infinity.
+2.  **The Decoupling (Cluster Decomposition):** We apply the **Spatial Cluster Decomposition** lemma <Ref id="5.1.2" label="§5.1.2" /> to partition the graph into $M \approx N / V_\xi$ quasi-independent subregions, where $V_\xi$ is the correlation volume. Explicit bounds on Mutual Information demonstrate that boundary corrections scale sub-extensively ($O(\sqrt{N})$), becoming negligible in the limit.
+3.  **The Scaling (Synthesis):** Finally, we sum the entropies of these independent regions. Since each region contributes a finite, constant amount of entropy determined by local constraints, the total entropy scales linearly: $S(N) = c \cdot N$. This confirms the existence of a well-defined **Specific Entropy per Event** ($c > 0$), validating the vacuum as a stable thermodynamic phase.
 
-2.  **The Decoupling (Cluster Decomposition):** The argument applies the **Spatial Cluster Decomposition** principle. It invokes the **Correlation Decay Lemma** to partition the graph into $M \approx N / V_\xi$ quasi-independent subregions, where $V_\xi$ is the correlation volume. Explicit bounds on Mutual Information demonstrate that boundary corrections scale sub-extensively ($O(\sqrt{N})$), becoming negligible in the limit.
+---
 
-3.  **The Scaling (Synthesis):** Finally, the proof sums the entropies of these independent regions. Since each region contributes a finite, constant amount of entropy determined by local constraints, the total entropy scales linearly: $S(N) = c \cdot N$. This confirms the existence of a well-defined **Specific Entropy per Event** ($c > 0$), validating the vacuum as a stable thermodynamic phase.
+### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
+
+:::info[**Exponential Decay of Mutual Information within Disjoint Subregions**]
+:::
+
+Let $R_A$ and $R_B$ be disjoint subregions of a causal graph $G_t$ at the homeostatic fixed point, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
+
+$$
+I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
+$$
+
+where $\xi$ is the finite correlation length derived by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> and $K$ is a normalization constant, ensuring that the joint configuration space factorizes asymptotically as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ in the limit $d(R_A, R_B) \gg \xi$.
+
+### 5.1.2.1 Proof: Spatial Cluster Decomposition {#5.1.2.1}
+
+:::tip[**Derivation of Quasi-Independence from Correlation Decay**]
+:::
+
+**I. Mutual Information Bound**
+
+Let $R_A$ and $R_B$ be disjoint subregions of the causal graph separated by a geodesic distance $d = d(R_A, R_B)$. The mutual information $I(R_A; R_B)$ between their configuration states is bounded by the sum of pairwise connected correlation functions between vertices in $R_A$ and $R_B$:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} \sum_{u \in R_A} \sum_{v \in R_B} \langle O_u O_v \rangle_c^2
+$$
+
+**II. Exponential Decay Insertion**
+
+We invoke **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> to bound the pairwise connected correlation functions. Substituting the exponential envelope $\langle O_u O_v \rangle_c \le C \exp\left(-\frac{d(u, v)}{\xi}\right)$ into the double sum yields:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} C^2 \sum_{u \in R_A} \sum_{v \in R_B} \exp\left(-\frac{2 d(u, v)}{\xi}\right)
+$$
+
+**III. Geodesic Distance Minimization**
+
+Using the triangle inequality, the geodesic distance satisfies $d(u, v) \ge d(R_A, R_B) = d$. The double sum is bounded by the product of the subregion volumes scaled by the minimum distance decay:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} C^2 |R_A| |R_B| \exp\left(-\frac{2d}{\xi}\right)
+$$
+
+**IV. Conclusion**
+
+Defining $K = \frac{1}{2} C^2 |R_A| |R_B|$, the mutual information is bounded by $K \exp\left(-\frac{2d}{\xi}\right) \le K \exp\left(-\frac{d}{\xi}\right)$. This establishes quasi-independence, and the factorization of the joint configuration space $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ follows directly in the limit $d \gg \xi$.
+
+Q.E.D.
+
+### 5.1.2.2 Commentary: Defining "Volume" via Correlation {#5.1.2.2}
+
+:::info[**Emergence of Additivity from Causal Limits**]
+:::
+
+The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" /> formalizes the concept of "separation" within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined *dynamically* via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
+
+The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a "causal patch" or "volume element." Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
 
 ---
 
@@ -181,7 +232,7 @@ The prohibition of directed cycles forces causal influence to propagate unidirec
 
 **I. Volume Decomposition**
 
-Partition the graph $G_N$ into a set of $M$ quasi-independent sub-volumes $\{V_1, V_2, \dots, V_M\}$.
+Partition the graph $G_N$ into a set of $M$ sub-volumes $\{V_1, V_2, \dots, V_M\}$ satisfying **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />.
 The characteristic size of each volume is set by the correlation length $\xi$ derived via **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />.
 
 $$
@@ -399,16 +450,16 @@ The Master Equation functions as the balance sheet of this competition. Unlike s
 :::info[**Establishment of the Fundamental Equation of Geometrogenesis**]
 :::
 
-The time evolution of the normalized 3-cycle density $\rho(t) = N_3(t) / N$ is governed by the nonlinear differential equation designated as the **Fundamental Equation of Geometrogenesis**:
+Let the time evolution of the normalized 3-cycle density $\rho(t) = N_3(t) / N$ be governed by the nonlinear ordinary differential equation designated as the **Fundamental Equation of Geometrogenesis**:
 
 $$
 \frac{d\rho}{dt} = (\Lambda + 9\rho^2) e^{-6\mu\rho} - 0.5\rho (1 + 6\lambda_{cat}\rho)
 $$
 
-The terms are defined as follows:
-* **$\Lambda$:** The Vacuum Drive, which is the baseline osmotic pressure derived via **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />.
-* **$9\rho^2$:** The combinatorial density of compliant 2-path precursors derived via **Geometric Autocatalysis ($J_{auto}$)**  <Ref id="5.2.4" label="§5.2.4" />.
-* **$e^{-6\mu\rho}$:** The frictional suppression factor derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
+where the terms are defined as follows:
+* **$\Lambda$:** The Vacuum Drive, which is the baseline osmotic pressure derived via **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />;
+* **$9\rho^2$:** The combinatorial density of compliant 2-path precursors derived via **Geometric Autocatalysis ($J_{auto}$)**  <Ref id="5.2.4" label="§5.2.4" />;
+* **$e^{-6\mu\rho}$:** The frictional suppression factor derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />;
 * **$0.5\rho(1 + 6\lambda_{cat}\rho)$:** The entropic decay rate derived via **Entropic & Catalytic Decay ($J_{out}$)**  <Ref id="5.2.6" label="§5.2.6" />.
 
 ### 5.2.2.1 Commentary: Anatomy of an Equation
@@ -907,7 +958,7 @@ $$
 
 **I. Setup and Assumptions**
 
-Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **II. Linear Component Derivation**
 
@@ -1048,7 +1099,7 @@ This induced instability is rooted in the physical sharing of vertex and edge ca
 
 This collective feedback loop functions as a crucial homeostatic mechanism for the expansion of the cosmos. While the quadratic driver of geometric autocatalysis accelerates connectivity in sparse regions, the stress-deletion coupling imposes an elegant quadratic penalty on localized packing. The quadratic term $3\lambda_{\text{cat}}\rho^2$ scales with the square of the density, ensuring that highly congested clusters experience an immediate, non-linear spike in deletion probability. Highly excited regions effectively melt under the weight of their own internal tension, shedding superfluous links to preserve the underlying sparsity of the vacuum. By coupling the erasure rate directly to the neighborhood crowding, the universe establishes a self-correcting structural balance, preventing the relational plasma from locking into disordered, high-density topological configurations and maintaining the smooth, open granularity required for macroscopic geometry. Crucially, the local interaction volume $V_{\text{int}} = 6$ constitutes a rigid topological invariant of the allowed task space $\mathfrak{T}$ under **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />, representing the $3 \text{ vertices} \times 2 \text{ directional ports}$ required to audit the boundary of a directed 3-cycle closure in the regular Bethe vacuum, proving that the vacuum drive $\Lambda = 1/64$ (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />) is a derived geometric consequence rather than an arbitrary fine-tuned parameter.
 
-### 5.2.7 Proof: Master Equation {#5.2.7}
+### 5.2.7 Proof: Macroscopic Evolution {#5.2.7}
 
 :::tip[**Formal Derivation of the Master Equation via Thermodynamic Flux Assembly**]
 :::
@@ -1061,24 +1112,22 @@ $$
 \frac{d\rho}{dt} = J_{\text{in}}(\rho) - J_{\text{out}}(\rho)
 $$
 
-where $J_{\text{in}}(\rho)$ constitutes the total creation flux and $J_{\text{out}}(\rho)$ constitutes the total deletion flux.
+where $J_{\text{in}}(\rho)$ constitutes the total creation flux and $J_{\text{out}}(\rho)$ constitutes the total deletion flux. The baseline spontaneous loop creation rate is initiated from the non-vanishing **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, establishing a background flux constant $\Lambda \approx 0.0156$.
 
 **II. The Flux Components**
 
-1. **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> establishes the baseline spontaneous loop closure probability at zero geometric density, yielding the background flux constant $\Lambda \approx 0.0156$.
-2. **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> quantifies the induced loop creation flux scaling with the density of open 2-paths, establishing the non-linear growth component $9\rho^2$.
-3. **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> enforces the exponential damping of update acceptance rates due to steric hindrance, imposing the suppression factor $e^{-6\mu\rho}$ where $\mu = \frac{1}{\sqrt{2\pi}}$.
-4. **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" /> aggregates the spontaneous informational evaporation and quadratic catalytic stress terms, establishing the total deletion current $0.5\rho(1 + 6\lambda_{\text{cat}}\rho)$ where $\lambda_{\text{cat}} = e - 1$.
+1. **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> quantifies the induced loop creation flux scaling with the density of open 2-paths, establishing the non-linear growth component $9\rho^2$.
+2. **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" /> aggregates the spontaneous informational evaporation and quadratic catalytic stress terms, establishing the total deletion current $0.5\rho(1 + 6\lambda_{\text{cat}}\rho)$ where $\lambda_{\text{cat}} = e - 1$.
 
 **III. Flux Assembly**
 
-The total creation flux $J_{\text{in}}(\rho)$ is constructed by shifting the baseline vacuum permittivity via the quadratic autocatalytic driver, then multiplying by the exponential governor of frictional suppression:
+The total creation flux $J_{\text{in}}(\rho)$ is constructed by shifting the baseline vacuum permittivity via the quadratic autocatalytic driver, then multiplying by the exponential governor of acceptor acceptance rates derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />:
 
 $$
 J_{\text{in}}(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}
 $$
 
-Substituting the creation flux $J_{\text{in}}(\rho)$ and the total deletion current $J_{\text{out}}(\rho)$ into the net topological current expression yields the non-linear ordinary differential equation:
+where $\mu = \frac{1}{\sqrt{2\pi}}$. Substituting the creation flux $J_{\text{in}}(\rho)$ and the total deletion current $J_{\text{out}}(\rho)$ into the net topological current expression yields the non-linear ordinary differential equation:
 
 $$
 \frac{d\rho}{dt} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho(1 + 6\lambda_{\text{cat}}\rho)
@@ -1246,7 +1295,7 @@ Let $\rho(t)$ denote the time-dependent cycle density of a causal graph simulati
 The Region of Physical Viability (RPV) represents the precise thermodynamic phase of matter compatible with the emergence of spatially extended geometry. The constraints formalized in Section $5.3.1$ protect the universe against two distinct and catastrophic failure modes inherent to random graph processes, each representing a collapse of the manifold structure.
 
 * **Over-Damping ($\mu \gg 1$):** If friction is excessive, the "Acyclic Pre-Check" rejects nearly all additions due to the high probability of finding conflicting paths in even moderately dense neighborhoods. The graph remains a tree (Hausdorff Dimension $\approx \infty$ and Volume $\approx 0$), failing the Ignition condition. This is a universe that freezes before it can begin, trapping itself in a topological stasis where no closed loops (and thus no geometry) can form.
-* **Runaway Densification ($\mu \ll 1$):** If friction is insufficient, the graph undergoes a percolation phase transition to a "Small World" network where every node connects to every other node with a path length of $\approx \log N$. This violates Sparsity, effectively destroying the **Spatial Cluster Decomposition** principle <Ref id="5.1.1" label="§5.1.1" /> required for thermodynamics. In this scenario, the concept of "locality" vanishes and the universe collapses into a dimensionless singularity of infinite connectivity.
+* **Runaway Densification ($\mu \ll 1$):** If friction is insufficient, the graph undergoes a percolation phase transition to a "Small World" network where every node connects to every other node with a path length of $\approx \log N$. This violates Sparsity, effectively destroying the **Spatial Cluster Decomposition** principle <Ref id="5.1.2" label="§5.1.2" /> required for thermodynamics. In this scenario, the concept of "locality" vanishes and the universe collapses into a dimensionless singularity of infinite connectivity.
 
 The channel defined by $0 < \rho < 0.10$ represents the "Goldilocks Zone": the only regime where the graph supports local excitations (particles) without collapsing into a singularity or dissolving into unconnected noise. It is a state of "critical connectivity" where structure is rich enough to be interesting but sparse enough to be spatial.
 
@@ -1259,7 +1308,7 @@ The channel defined by $0 < \rho < 0.10$ represents the "Goldilocks Zone": the o
 
 The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the exhaustive Monte Carlo exploration of the $(\mu, \lambda_{\text{cat}})$ phase space. The protocol consists of four strictly ordered phases:
 
-1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />.
+1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 2.  **Ensemble Initialization:** For each grid point, an ensemble of 100 independent trajectories is instantiated. Each trajectory is initialized from a **Zero-Point Information (ZPI) Vacuum**, defined as a finite, rooted, outward-directed Bethe fragment ($N \approx 100$) exhibiting trivalent coordination at the root and bivalent coordination at internal nodes.
 3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ by **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />, creating the first 3-Cycle ($H=1$) and transforming the inert vacuum into an active initial state.
 4.  **Evolution and Aggregation:** The system is advanced via 1500 iterative applications of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, denoted $\mathcal{U}$. Observables (specifically $N_3$ and $\rho_3$) are recorded at each tick, and statistical moments (mean, median, skew) are aggregated across the ensemble.
@@ -1647,7 +1696,7 @@ which implies $\lambda_{\text{cat}} < 3$.
 
 **III. Evaluation of the Physical Parameter**
 
-Substitution of the theoretical value established by **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" /> yields the relation:
+Substitution of the theoretical value established by **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> yields the relation:
 
 $$
 \lambda_{\text{cat}} = e - 1 \approx 1.718
@@ -1798,15 +1847,50 @@ We establish the geometric validity of the vacuum by proving five interlocking l
 :::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
 :::
 
-The sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants:
-1.  **Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
-2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />.
-3.  **Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />.
-4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops, as established in **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />.
-5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow, as proved in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
-6.  **Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
+Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfy the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit, where the graph sequence exhibits the conjunction of the following invariants:
+*   **(i) Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />;
+*   **(ii) Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />;
+*   **(iii) Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />;
+*   **(iv) Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops, as established in **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />;
+*   **(v) Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow, as proved in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />;
+*   **(vi) Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
 
-### 5.5.1.1 Commentary: Logic of Geometric Hypotheses {#5.5.1.1}
+### 5.5.1.1 Commentary: Argument Outline {#5.5.1.1}
+
+:::tip[**Structure of the Geometric Well-Posedness Argument via Metric Limit Convergence**]
+:::
+
+The proof proceeds via Direct Construction, establishing that the discrete poset relations converge to a continuous Lorentzian geometry under the causal Gromov-Hausdorff topology.
+
+```text
+• 5.5.1 Theorem: Geometric Well-Posedness [by limits]
+├── 5.5.2 Lemma: Strict Locality
+│   ├── 5.5.2.1 Proof: Strict Locality
+│   └── 5.5.2.2 Commentary: Causal Horizon
+├── 5.5.3 Lemma: Bounded Degree
+│   ├── 5.5.3.1 Proof: Bounded Degree
+│   └── 5.5.3.2 Commentary: Limits of Connectivity
+├── 5.5.4 Lemma: Uniform Curvature Bound
+│   ├── 5.5.4.1 Proof: Uniform Curvature Bound
+│   └── 5.5.4.2 Commentary: Preventing Singularities
+├── 5.5.5 Lemma: Correlation Decay
+│   ├── 5.5.5.1 Proof: Correlation Decay
+│   ├── 5.5.5.2 Corollary: Controlled Fluctuations
+│   ├── 5.5.5.3 Proof: Correlation Decay
+│   └── 5.5.5.4 Commentary: Self-Averaging Homogeneity
+├── 5.5.6 Lemma: Manifold Combinatorics
+│   ├── 5.5.6.1 Proof: Manifold Combinatorics
+│   └── 5.5.6.2 Commentary: Vanishing of Non-Locality
+├── 5.5.7 Lemma: Ahlfors 4-Regularity
+│   ├── 5.5.7.1 Proof: Ahlfors 4-Regularity
+│   └── 5.5.7.2 Commentary: Why Four Dimensions?
+├── 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence
+│   ├── 5.5.8.1 Proof: Lorentzian Gromov-Hausdorff Convergence
+│   └── 5.5.8.2 Commentary: Causal Diamond Metric
+└── 5.5.9 Proof: Geometric Well-Posedness
+```
+
+### 5.5.1.2 Commentary: Logic of Geometric Hypotheses {#5.5.1.2}
 
 :::tip[**Sequential Verification of Regularity Conditions**]
 :::
@@ -1827,15 +1911,15 @@ The argument proceeds through a systematic verification of five interdependent p
 :::info[**Restriction of Direct Edges to Undirected Distance Two**]
 :::
 
-Let $G_t = (V_t, E_t)$ denote a causal graph at the homeostatic fixed point. Let $\bar{d}(u, v)$ denote the undirected shortest-path distance between vertices $u$ and $v$. For any pair of vertices $u, v \in V_t$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the probability that a direct edge $(u, v)$ exists in $E_t$ is identically zero:
+Let $G_t = (V_t, E_t)$ denote a causal graph at the homeostatic fixed point, and let $\bar{d}(u, v)$ denote the undirected shortest-path distance between vertices $u$ and $v$. For any pair of vertices $u, v \in V_t$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the probability that a direct edge $(u, v)$ exists in $E_t$ is identically zero:
 
 $$
 \mathbb{P}[(u, v) \in E_t] = 0 \quad \forall u, v : \bar{d}(u, v) > 2
 $$
 
-This constraint ensures that causal connections remain strictly local with respect to the induced metric.
+thereby ensuring that causal connections remain strictly local with respect to the induced metric.
 
-### 5.5.2.1 Proof: Locality Verification {#5.5.2.1}
+### 5.5.2.1 Proof: Strict Locality {#5.5.2.1}
 
 :::tip[**Demonstration via Triangle Inequality**]
 :::
@@ -1934,9 +2018,9 @@ This constraint ensures that the graph remains "local" in the emergent metric se
 :::info[**Uniform Bounding of Vertex Degrees in the Thermodynamic Limit**]
 :::
 
-Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$. In the thermodynamic limit, $\langle k \rangle_t$ converges to a stable, size-independent fixed point $\langle k \rangle^* = O(1)$. Consequently, the maximum degree $D_{\max}$ is uniformly bounded by a constant independent of the system size $N$, preventing the formation of "hubs" that would violate the manifold topology.
+Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$. In the thermodynamic limit, the mean degree converges to a stable, size-independent fixed point $\langle k \rangle^* = O(1)$, which guarantees that the maximum degree $D_{\max}$ is uniformly bounded by a constant independent of the system size $N$, preventing the formation of "hubs" that would violate the manifold topology.
 
-### 5.5.3.1 Proof: Degree Boundedness {#5.5.3.1}
+### 5.5.3.1 Proof: Bounded Degree {#5.5.3.1}
 
 :::tip[**Derivation from Flux Balance**]
 :::
@@ -1946,14 +2030,14 @@ Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the me
 The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
 
 1.  **Creation Flux ($J_{in}$):**
-    The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient**  <Ref id="4.4.6" label="§4.4.6" />.
+    The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
 
     $$
     J_{in}(\rho) = (\Lambda + 9\rho^2) e^{-6\mu\rho}
     $$
 
 2.  **Deletion Flux ($J_{out}$):**
-    The deletion potential scales linearly with the base population but is dominated at high densities by the catalytic stress term derived via **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />.
+    The deletion potential scales linearly with the base population but is dominated at high densities by the catalytic stress term derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 
     $$
     J_{out}(\rho) = \frac{1}{2}\rho + 3\lambda_{cat}\rho^2
@@ -2035,7 +2119,7 @@ $$
 
 where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for the emergence of a smooth curvature tensor.
 
-### 5.5.4.1 Proof: Curvature Bounds {#5.5.4.1}
+### 5.5.4.1 Proof: Uniform Curvature Bound {#5.5.4.1}
 
 :::tip[**Derivation from Wasserstein Diameter**]
 :::
@@ -2137,7 +2221,7 @@ $$
 |\text{Cov}(f(x), f(y))| \leq C_{\text{cov}} \cdot \exp(-\gamma \cdot \bar{d}(x, y))
 $$
 
-### 5.5.5.1 Proof: Decay Verification {#5.5.5.1}
+### 5.5.5.1 Proof: Correlation Decay {#5.5.5.1}
 
 :::tip[**Formal Proof via Damped Propagation**]
 :::
@@ -2168,7 +2252,7 @@ $$
 
 1.  **Thermodynamic Base Rate:** $\mathbb{P}_{\text{thermo}} = 1/2$.
 2.  **Catalytic Enhancement:** The stress $\sigma = -1$ catalyzes its own decay via the factor $f_{\text{cat}}(\sigma) = 1 + \lambda_{cat}$.
-    Using the derived bound $\lambda_{cat} \approx 1.71$ from the **Catalysis Coefficient** theorem <Ref id="4.4.5" label="§4.4.5" />:
+    Using the derived bound $\lambda_{cat} \approx 1.71$ from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />:
 
     $$
     \mathbb{P}_{\text{del}} = \frac{1}{2}(1 + 1.71) \approx 1.35
@@ -2233,7 +2317,7 @@ Q.E.D.
 
 ---
 
-### 5.5.5.3 Proof: Fluctuation Control {#5.5.5.3}
+### 5.5.5.3 Proof: Correlation Decay {#5.5.5.3}
 
 :::tip[**Derivation of Self-Averaging via Covariance Sums**]
 :::
@@ -2320,7 +2404,7 @@ $$
 
 Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$, suppressing non-local topology.
 
-### 5.5.6.1 Proof: Topology Suppression {#5.5.6.1}
+### 5.5.6.1 Proof: Manifold Combinatorics {#5.5.6.1}
 
 :::tip[**Path Counting Bound for Cycle Exclusion**]
 :::
@@ -2402,15 +2486,15 @@ Long cycles represent a profound threat to the manifold structure: they function
 :::info[**Emergence of Hausdorff Dimension 4 via Renormalization Group Fixed Points**]
 :::
 
-The sequence of equilibrium graphs satisfies the Ahlfors 4-Regularity condition. There exist constants $c_1, c_2$ such that for any vertex $v$ and mesoscopic radius $r$, the volume of the ball $|B(v, r)|$ satisfies the scaling relation:
+Let the sequence of equilibrium graphs satisfy the Ahlfors 4-Regularity condition, meaning that there exist constants $c_1, c_2$ such that for any vertex $v$ and mesoscopic radius $r$, the volume of the ball $|B(v, r)|$ satisfies the scaling relation:
 
 $$
 c_1 r^4 \leq |B(v, r)| \leq c_2 r^4
 $$
 
-This dimensionality arises because $d=4$ is the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow.
+due to $d=4$ being the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow.
 
-### 5.5.7.1 Proof: Dimensionality Verification {#5.5.7.1}
+### 5.5.7.1 Proof: Ahlfors 4-Regularity {#5.5.7.1}
 
 :::tip[**RG Beta Function Analysis of Dimensional Scaling**]
 :::
@@ -2591,16 +2675,13 @@ where $f(d)$ is a monotonic function of the dimension. By proving that the event
 
 **I. Setup and Assumptions**
 
-Let $\{G_t\}$ denote the sequence of discrete causal graphs generated by the evolution operator at equilibrium. The limit space $(\mathcal{M}, g)$ is a candidate smooth 4-dimensional Lorentzian manifold.
+Let $\{G_t\}$ denote the sequence of discrete causal graphs generated by the evolution operator at equilibrium. The local compactness and metric consistency are established under **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />. The limit space $(\mathcal{M}, g)$ is a candidate smooth 4-dimensional Lorentzian manifold.
 
 **II. The Logic Chain**
 
-1.  **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />: Enforce local compactness and metric consistency.
-2.  **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />: Establishes uniform bounds on the discrete Ricci curvature: $|\kappa(u, v)| \le 2$.
-3.  **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />: Proves the exponential decay of correlations and the vanishing of global variance (Self-Averaging).
-4.  **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />: Ensures the suppression of non-local cycles, enforcing a manifold-like topology at macroscopic scales.
-5.  **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />: Fixes the Ahlfors regularity dimension to $d=4$.
-6.  **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />: Establishes that the poset converges under the causal diamond metric, recovering the Lorentzian signature $(-+++)$.
+1. **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />: Establishes uniform bounds on the discrete Ricci curvature: $|\kappa(u, v)| \le 2$.
+2. **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />: Proves the exponential decay of correlations and the vanishing of global variance (Self-Averaging).
+3. **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />: Ensures the suppression of non-local cycles, enforcing a manifold-like topology at macroscopic scales.
 
 **III. Assembly**
 
@@ -2610,7 +2691,7 @@ $$
 \lim_{N \to \infty} d_{GH}(G_N, M) = 0
 $$
 
-The limit space $M$ inherits the dimension $\dim(M) = 4$ from Ahlfors regularity. The limit metric $g$ is continuous due to the Curvature Bounds. The causal structure defined by the strict partial order $\le$ established in the **Demonstration of Categorical Validity** <Ref id="4.2.10" label="§4.2.10" /> induces a Lorentzian signature (-+++) on the tangent bundles via the causal set-continuum correspondence. Thus, the limit space is a Lorentzian manifold:
+The limit space $M$ inherits the dimension $\dim(M) = 4$ from **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The limit metric $g$ is continuous due to the Curvature Bounds. The causal structure defined by the strict partial order $\le$ established in the **Categorical Validity** <Ref id="4.2.10" label="§4.2.10" /> induces a Lorentzian signature (-+++) on the tangent bundles via the causal set-continuum correspondence, with the metric limit convergence established under **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />. Thus, the limit space is a Lorentzian manifold:
 
 $$
 G_{\infty} \cong \mathcal{M}^{(1,3)}
@@ -2654,12 +2735,12 @@ Our parameter sweep identifies a narrow **Region of Physical Viability**, a "Gol
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/rules/equilibrium/5.1/#5.1.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
 | $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
 | $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |

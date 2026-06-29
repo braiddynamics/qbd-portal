@@ -912,6 +912,13 @@ This scaling holds universally for any locally finite, causally expanding graph.
 
 Q.E.D.
 
+### 1.3.5.2 Commentary: Information Density {#1.3.5.2}
+
+:::info[**Conceptual Significance of Information Boundedness in Pre-geometric Substrates**]
+:::
+
+We examine the physical necessity of bounding the information density of the causal graph. If a finite spacetime volume were permitted to support an infinite number of vertices or edges, the relational complexity would diverge locally, making the calculation of transition amplitudes mathematically intractable. This constraint establishes a pre-geometric holographic bound: the volume of physical spacetime must scale proportionally with the number of discrete causally active sites. By capping the relational capacity of each local neighborhood, the theory avoids both the singularities of classical general relativity and the ultraviolet divergences of quantum field theory, grounding the emerging geometry in a strict, finite computational substrate.
+
 ---
 
 ### 1.3.6 Lemma: Backward Accumulation {#1.3.6}
@@ -1020,6 +1027,13 @@ Both dynamical regimes necessitate an infinite information content in the presen
 
 Q.E.D.
 
+### 1.3.6.2 Commentary: History Accumulation {#1.3.6.2}
+
+:::info[**Ontological Preservation of Past Causal States in Historical Categories**]
+:::
+
+The accumulation of historical states represents a core feature of the relational framework, ensuring that the passage of global logical time does not erase past causal linkages. In standard formulation, time is modeled as a shifting 'now' where past configurations exist only as memory or boundary conditions. In contrast, our model treats the category of histories as a cumulative record where every state transition adds a layer to the poset without modifying the past. This structural preservation guarantees that information is fundamentally conserved, preventing causal paradoxes and ensuring that any observer's timeline remains globally consistent and reconstructible from the relational network.
+
 ---
 
 ### 1.3.7 Lemma: Finite State Recurrence {#1.3.7}
@@ -1113,6 +1127,13 @@ $$
 The formation of the periodic cycle $C$ establishes that state $U_{t_a}$ constitutes a causal ancestor of itself ($U_{t_a} \prec U_{t_a}$), establishing a transitive relation within the causal network. This localized self-influence is incompatible with the global property of irreflexivity mandated by the strict partial order of the timeline. We conclude that an infinite past trajectory within a strictly finite configuration space is incompatible with the structural requirements of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 Q.E.D.
+
+### 1.3.7.2 Commentary: State Recurrence {#1.3.7.2}
+
+:::info[**Topological Implications of Cyclic Convergence in Finite Automata**]
+:::
+
+The inevitability of state recurrence in a finite, deterministic graph system connects relational dynamics to the classical Poincaré recurrence theorem. When we restrict the system to a finite number of active vertices, the state space is necessarily compact, dictating that the sequence of causal updates must eventually repeat. This recurrence, however, does not imply a simple circular flow of physical time; rather, it highlights the periodicity of the underlying state space transitions. It suggests that macroscopic physical time, which appears linear and irreversible to local observers, emerges from a micro-dynamical cycle that continuously repopulates the vacuum's structural degrees of freedom.
 
 ---
 
@@ -1758,7 +1779,7 @@ $$
 :::info[**Separation of Kinematic Feasibility from Dynamical Weighting**]
 :::
 
-A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.5" label="§4.5.5" /> is active.
+A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" /> is active.
  
  Within this space, transformations must not invoke infinite resources, permit retroactive revisions to timestamps, or violate the irreflexive causal primitive defined by **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The preservation of acyclicity ensures that the target graph $G'$ admits no directed cycles, enforcing **Acyclic Effective Causality**. Monotonicity of $H$ requires that new timestamps exceed predecessors, which aligns with **Monotonicity of History**, and finite growth bounds $|V'| \leq |V| + k$ preventing unbounded structural blooms. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from the discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.49" label="(Abramsky, 2023)" />.
  
@@ -1822,7 +1843,7 @@ where the target components are defined by:
 :::info[**Excision of Causal Links and Historical Poset Monotonicity**]
 :::
 
-The transformation $G \to G - e$, where $e = (u, v) \in E$, excises the link while preserving the historical imprint $H(e)$ and the acyclicity of $G'$. This task contracts superfluous connections, resolving topological tensions (e.g., pruning redundant paths to enforce parsimony under **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />).
+The transformation $G \to G - e$, where $e = (u, v) \in E$, excises the link while preserving the historical imprint $H(e)$ and the acyclicity of $G'$. This task contracts superfluous connections, resolving topological tensions (e.g., pruning redundant paths to enforce parsimony under **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
 
 $\mathfrak{T}_{del}$ is defined as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) but does not retroactively annihilate the *event of its creation*. The task space assumes an "Append-Only" metaphysics regarding the Global Sequencer's log: $t_L$ at which $e$ was created remains a persistent property of the universe's trajectory, even if the geometric constituent $e$ is removed from the active graph $G$. This distinction allows for the pruning of geometry without the paradox of altering the past. Critically, this append-only historical poset complies with the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> while incurring zero runtime memory overhead. When $e$ is pruned by $\mathfrak{T}_{del}$ (as established by the **Vacuum Repertoire** <Ref id="1.5.4" label="§1.5.4" />), it is fully excised from the active state graph data structure, maintaining strict structural sparsity and computational efficiency without retaining inactive or historically deleted edges in memory.
 

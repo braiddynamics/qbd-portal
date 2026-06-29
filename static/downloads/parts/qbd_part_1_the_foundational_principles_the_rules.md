@@ -912,6 +912,13 @@ This scaling holds universally for any locally finite, causally expanding graph.
 
 Q.E.D.
 
+### 1.3.5.2 Commentary: Information Density {#1.3.5.2}
+
+:::info[**Conceptual Significance of Information Boundedness in Pre-geometric Substrates**]
+:::
+
+We examine the physical necessity of bounding the information density of the causal graph. If a finite spacetime volume were permitted to support an infinite number of vertices or edges, the relational complexity would diverge locally, making the calculation of transition amplitudes mathematically intractable. This constraint establishes a pre-geometric holographic bound: the volume of physical spacetime must scale proportionally with the number of discrete causally active sites. By capping the relational capacity of each local neighborhood, the theory avoids both the singularities of classical general relativity and the ultraviolet divergences of quantum field theory, grounding the emerging geometry in a strict, finite computational substrate.
+
 ---
 
 ### 1.3.6 Lemma: Backward Accumulation {#1.3.6}
@@ -1020,6 +1027,13 @@ Both dynamical regimes necessitate an infinite information content in the presen
 
 Q.E.D.
 
+### 1.3.6.2 Commentary: History Accumulation {#1.3.6.2}
+
+:::info[**Ontological Preservation of Past Causal States in Historical Categories**]
+:::
+
+The accumulation of historical states represents a core feature of the relational framework, ensuring that the passage of global logical time does not erase past causal linkages. In standard formulation, time is modeled as a shifting 'now' where past configurations exist only as memory or boundary conditions. In contrast, our model treats the category of histories as a cumulative record where every state transition adds a layer to the poset without modifying the past. This structural preservation guarantees that information is fundamentally conserved, preventing causal paradoxes and ensuring that any observer's timeline remains globally consistent and reconstructible from the relational network.
+
 ---
 
 ### 1.3.7 Lemma: Finite State Recurrence {#1.3.7}
@@ -1113,6 +1127,13 @@ $$
 The formation of the periodic cycle $C$ establishes that state $U_{t_a}$ constitutes a causal ancestor of itself ($U_{t_a} \prec U_{t_a}$), establishing a transitive relation within the causal network. This localized self-influence is incompatible with the global property of irreflexivity mandated by the strict partial order of the timeline. We conclude that an infinite past trajectory within a strictly finite configuration space is incompatible with the structural requirements of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 Q.E.D.
+
+### 1.3.7.2 Commentary: State Recurrence {#1.3.7.2}
+
+:::info[**Topological Implications of Cyclic Convergence in Finite Automata**]
+:::
+
+The inevitability of state recurrence in a finite, deterministic graph system connects relational dynamics to the classical Poincaré recurrence theorem. When we restrict the system to a finite number of active vertices, the state space is necessarily compact, dictating that the sequence of causal updates must eventually repeat. This recurrence, however, does not imply a simple circular flow of physical time; rather, it highlights the periodicity of the underlying state space transitions. It suggests that macroscopic physical time, which appears linear and irreversible to local observers, emerges from a micro-dynamical cycle that continuously repopulates the vacuum's structural degrees of freedom.
 
 ---
 
@@ -1758,7 +1779,7 @@ $$
 :::info[**Separation of Kinematic Feasibility from Dynamical Weighting**]
 :::
 
-A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.5" label="§4.5.5" /> is active.
+A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" /> is active.
  
  Within this space, transformations must not invoke infinite resources, permit retroactive revisions to timestamps, or violate the irreflexive causal primitive defined by **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The preservation of acyclicity ensures that the target graph $G'$ admits no directed cycles, enforcing **Acyclic Effective Causality**. Monotonicity of $H$ requires that new timestamps exceed predecessors, which aligns with **Monotonicity of History**, and finite growth bounds $|V'| \leq |V| + k$ preventing unbounded structural blooms. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from the discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.49" label="(Abramsky, 2023)" />.
  
@@ -1822,7 +1843,7 @@ where the target components are defined by:
 :::info[**Excision of Causal Links and Historical Poset Monotonicity**]
 :::
 
-The transformation $G \to G - e$, where $e = (u, v) \in E$, excises the link while preserving the historical imprint $H(e)$ and the acyclicity of $G'$. This task contracts superfluous connections, resolving topological tensions (e.g., pruning redundant paths to enforce parsimony under **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />).
+The transformation $G \to G - e$, where $e = (u, v) \in E$, excises the link while preserving the historical imprint $H(e)$ and the acyclicity of $G'$. This task contracts superfluous connections, resolving topological tensions (e.g., pruning redundant paths to enforce parsimony under **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
 
 $\mathfrak{T}_{del}$ is defined as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) but does not retroactively annihilate the *event of its creation*. The task space assumes an "Append-Only" metaphysics regarding the Global Sequencer's log: $t_L$ at which $e$ was created remains a persistent property of the universe's trajectory, even if the geometric constituent $e$ is removed from the active graph $G$. This distinction allows for the pruning of geometry without the paradox of altering the past. Critically, this append-only historical poset complies with the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> while incurring zero runtime memory overhead. When $e$ is pruned by $\mathfrak{T}_{del}$ (as established by the **Vacuum Repertoire** <Ref id="1.5.4" label="§1.5.4" />), it is fully excised from the active state graph data structure, maintaining strict structural sparsity and computational efficiency without retaining inactive or historically deleted edges in memory.
 
@@ -2894,6 +2915,13 @@ Any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ te
 
 Q.E.D.
 
+### 2.3.6.2 Commentary: Causal Well-Foundedness {#2.3.6.2}
+
+:::info[**Minimal Elements and the Boundary of Time**]
+:::
+
+Well-foundedness serves as the mathematical guarantor that every chain of physical constructions terminates at an absolute, irreducible boundary in the past. This property precludes the existence of infinite descending causal chains, which would otherwise introduce infinite regress into the pre-geometric structure and prevent the definite calculation of transition histories. By establishing that every causal path contains a unique minimal element, the theory secures a well-defined beginning for the universe, ensuring that the relational network builds up from a stable, pre-geometric origin.
+
 ---
 
 ### 2.3.7 Proof: Geometric Constructibility {#2.3.7}
@@ -3078,6 +3106,13 @@ We conclude that the order of operations does not affect the final state.
 
 Q.E.D.
 
+### 2.4.2.2 Commentary: Confluence Properties {#2.4.2.2}
+
+:::info[**Convergence of Alternative Path Branches in the Macro-Timeline**]
+:::
+
+Confluence properties guarantee that independent rewrite paths eventually merge, ensuring that the macroscopic timeline remains unique regardless of execution order. If the system lacked confluence, different sequences of local updates would lead to disjoint, parallel universes with incompatible geometries. The existence of a confluent constructor ensures that localized choices at the planck scale do not destroy the coherent, singular structure of macroscopic spacetime. It provides the pre-geometric foundation for the uniqueness of classical histories and the stability of the physical timeline.
+
 ---
 
 ### 2.4.3 Lemma: Chordlessness of Maximal Cycles {#2.4.3}
@@ -3148,6 +3183,13 @@ The presence of the chord identifies $C$ as a composite structure formed by the 
 
 Q.E.D.
 
+### 2.4.3.2 Commentary: Chordless Cycles {#2.4.3.2}
+
+:::info[**Independence of Minimal Stabilizer Cycles in Gauge Structures**]
+:::
+
+Chordless cycles serve as the primitive stabilizer units in our pre-geometric model. If a maximal cycle possessed internal chords, it would decompose into smaller, independent sub-cycles, violating the minimality required for gauge invariance. The chordlessness constraint ensures that these cycles function as indivisible, non-local loops of causal flux, analogous to Wilson loops in gauge theories. By maintaining their topological independence, chordless cycles act as the stable, basic building blocks from which the quantum codespace and physical fields emerge.
+
 ---
 
 ### 2.4.4 Lemma: Reduction via Deletion {#2.4.4}
@@ -3194,6 +3236,13 @@ $$
 $$
 
 Q.E.D.
+
+### 2.4.4.2 Commentary: Reduction Properties {#2.4.4.2}
+
+:::info[**Thermodynamic Regulation of Graph Density via Cycle Dissolution**]
+:::
+
+Reduction via deletion describes how the removal of edges decreases local cycle density. This prevents structural runaway and regulates graph dimension. Without this pruning mechanism, the generative drive of addition would relentlessly add edges until the graph collapsed into a dense, high-dimensional structure lacking spatial locality. Deletion acts as the cooling mechanism of the vacuum, dissolving excess connections and ensuring that the emergent spacetime manifold maintains its physical, low-dimensional structure near criticality.
 
 ---
 
@@ -3792,6 +3841,13 @@ $$
 
 Q.E.D.
 
+### 2.5.2.2 Commentary: Local Independence A {#2.5.2.2}
+
+:::info[**Concurrency of Spatially Disjoint Updates in the Vacuum**]
+:::
+
+Local independence in case A applies to spatially separated rewrites. Their disjoint footprints ensure they can be computed concurrently without conflicts. This independence ensures that the micro-physics of the vacuum is strictly local, preventing instantaneous non-local interactions that would violate relativistic causality. Spatially separated regions of the graph evolve independently, establishing the pre-geometric foundation for local quantum field theory and the finite speed of information propagation.
+
 ---
 
 ### 2.5.3 Lemma: Independence Case B {#2.5.3}
@@ -3857,6 +3913,13 @@ Ax2 \not\implies Ax1
 $$
 
 Q.E.D.
+
+### 2.5.3.2 Commentary: Local Independence B {#2.5.3.2}
+
+:::info[**Order Invariance of Causally Unrelated Events**]
+:::
+
+Local independence in case B applies to causally unrelated events. Their independence guarantees that the order of their realization does not alter the physical outcome. This order invariance ensures that the emerging spacetime is invariant under changes of the update sequence, preventing the scheduler from introducing arbitrary, non-physical history dependence. It secures a coordinate-free description of physical evolution, laying the groundwork for general covariance in the macroscopic limit.
 
 ---
 
@@ -4070,6 +4133,13 @@ We conclude that strictly increasing timestamps are necessary for the validity o
 
 Q.E.D.
 
+### 2.6.3.2 Commentary: Timestamp Strictness {#2.6.3.2}
+
+:::info[**Constraint of Monotonicity on Event Causality**]
+:::
+
+Strict timestamping prevents simultaneous events from having causal relations. This reinforces the partial order structure of pre-geometric spacetime. In standard formulations of relativity, events on the same spatial hypersurface are causally disconnected. Strict timestamping enforces this principle at the planck scale, ensuring that causal influence must flow across definite, strictly increasing logical ticks. This prevents instantaneous causal loops and stabilizes the forward direction of time.
+
 ---
 
 ### 2.6.4 Lemma: Failure of Reflexivity {#2.6.4}
@@ -4122,6 +4192,13 @@ Evaluate the influence relation for the pair $(A, A)$.
 The existence of $\pi$ establishes the relation $A \le A$. We conclude that this self-influence violates the Irreflexivity axiom required for a strict partial order.
 
 Q.E.D.
+
+### 2.6.4.2 Commentary: Non-Reflexive Causality {#2.6.4.2}
+
+:::tip[**Elimination of Self-Causation at the Micro-Scale**]
+:::
+
+Non-reflexivity implies that no event can causally influence itself. This eliminates the possibility of circular causation at the microscopic scale. If self-causation were permitted, the causal light cone would bend back on itself, creating local closed timelike curves. The non-reflexivity constraint ensures that every event is causally distinct from its ancestors, securing the linear flow of causal influence and protecting the physical timeline from temporal paradoxes.
 
 ---
 
@@ -4184,7 +4261,16 @@ The relations $A \le C$ and $C \le A$ hold simultaneously for distinct vertices 
 
 Q.E.D.
 
-### 2.6.5.2 Diagram: Bowtie Paradox {#2.6.5.2}
+### 2.6.5.2 Commentary: Asymmetry Constraints {#2.6.5.2}
+
+:::tip[**Directional Coupling of Causal Relations**]
+:::
+
+Asymmetry dictates that if event A influences event B, then B cannot influence A. This establishes a consistent direction for the flow of cause to effect. If mutual influence were permitted, the distinction between cause and effect would dissolve, rendering the concept of causal directionality meaningless. Asymmetry enforces a strict, directed light cone structure, ensuring that information flows in a single, well-defined direction through the causal graph.
+
+---
+
+### 2.6.5.3 Diagram: Bowtie Paradox {#2.6.5.3}
 
 :::note[**Visualization of the Effective Influence Paradox illustrating Bidirectional Causality**]
 :::
@@ -4262,6 +4348,13 @@ $$
 The creation event of the final edge $(w, u)$ cannot influence the creation event of $(u, v)$ in $G_{event}$, precluding the closure of any causal cycle in history.
 
 Q.E.D.
+
+### 2.6.6.2 Commentary: Causal and Spatial Interactions {#2.6.6.2}
+
+:::info[**Prevention of Closed Timelike Loops in Curvature Fields**]
+:::
+
+The interaction between causal acyclicity and spatial triangulation highlights the constraint that physical geometry must not generate timelike loops. If the spatial triangulation process allowed the formation of cycles with non-increasing timestamps, the causal order would collapse. By enforcing that all spatial structures respect the causal partial order, the theory guarantees that the emergent geometry remains globally hyperbolic, providing a consistent Lorentzian manifold for the propagation of physical fields.
 
 ---
 
@@ -4978,14 +5071,19 @@ The definitions of the root, logical depth, parity, and tree sparsity establish 
 :::info[**Uniqueness of the Initial State Structure as a Finite Rooted Directed Tree**]
 :::
 
-The causal graph possesses a unique initial state at Logical Time $t_L = 0$, designated $G_0$. This state is constrained to satisfy the following topological conditions:
-1.  **Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$).
-2.  **Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$).
-3.  **Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$.
-4.  **Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root.
-5.  **Acyclicity:** The graph contains no **Cycle** <Ref id="1.2.6" label="§1.2.6" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
+Given the initial state of the causal graph at Logical Time $t_L = 0$, designated $G_0$, the following holds: $G_0$ is the unique topological configuration that satisfies the following conditions:
 
-This structure constitutes the unique topological solution compatible with the simultaneous enforcement of three core principles. Specifically, it enforces the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> alongside **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. It simultaneously satisfies the requirements of **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
+-   **(i) Finiteness:** The vertex set cardinality is finite ($|V_0| < \infty$);
+
+-   **(ii) Tree Sparsity:** The edge set cardinality satisfies the condition of exact sparsity ($|E_0| = |V_0| - 1$);
+
+-   **(iii) Rooted Orientation:** The graph constitutes a directed tree rooted at a unique vertex $r \in V_0$;
+
+-   **(iv) Divergence:** Every non-root vertex $v \neq r$ possesses an in-degree of exactly one, ensuring that causal flow is directed strictly away from the root;
+
+-   **(v) Acyclicity:** The graph contains no **Cycle** <Ref id="1.2.6" label="§1.2.6" /> and no redundant parallel paths, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
+
+Moreover, this structure constitutes the unique topological solution compatible with the simultaneous enforcement of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. This configuration additionally satisfies **Geometric Constructibility** as defined in <Ref id="2.3.1" label="§2.3.1" />.
 
 ### 3.1.3.1 Commentary: Argument Outline {#3.1.3.1}
 
@@ -4995,7 +5093,7 @@ This structure constitutes the unique topological solution compatible with the s
 The argument proceeds by sequentially eliminating alternative graph configurations, carving the unique acyclic vacuum state out of the space of all possible directed graphs.
 
 ```text
-• 3.1.3 Theorem Vacuum Structure
+• 3.1.3 Theorem Vacuum Structure  [by exclusion]
 ├── 3.1.3.2 Diagram Topology of Genesis
 │
 ├── 3.1.4 Lemma Existence and Finiteness
@@ -5016,12 +5114,12 @@ The argument proceeds by sequentially eliminating alternative graph configuratio
 │   └── 3.1.7.3 Commentary River of Time
 │
 ├── 3.1.8 Lemma Global Connectivity
-│   ├── 3.1.8.1 Proof Minimization of Automorphisms
+│   ├── 3.1.8.1 Proof Global Connectivity
 │   ├── 3.1.8.2 Calculation Connectivity Counterexample
 │   └── 3.1.8.3 Commentary Unity of the Vacuum
 │
 ├── 3.1.9 Lemma Path Uniqueness and Sparsity
-│   ├── 3.1.9.1 Proof Tree Condition
+│   ├── 3.1.9.1 Proof Path Uniqueness and Sparsity
 │   └── 3.1.9.2 Commentary Efficiency of the Tree
 │
 ├── 3.1.10 Lemma Depth-Parity Bipartition
@@ -5032,8 +5130,8 @@ The argument proceeds by sequentially eliminating alternative graph configuratio
 │   ├── 3.1.11.1 Proof Exclusion of Odd Cycles
 │   └── 3.1.11.2 Commentary Impossibility of Accidental Geometry
 │
-└── 3.1.12 Proof Demonstration of the Vacuum Structure
-    └── 3.1.12.2 Diagram Bipartite Vacuum Structure
+└── 3.1.12 Proof Vacuum Structure
+    └── 3.1.12.1 Diagram Bipartite Vacuum Structure
 ```
 
 ### 3.1.3.2 Diagram: Topology of Genesis {#3.1.3.2}
@@ -5131,9 +5229,7 @@ If the set of initial events $V_0$ were infinite, one could potentially construc
 :::info[**Exclusion of Self-Loops and Reciprocal Pairs from the Initial State**]
 :::
 
-Let $G_0$ denote the initial state of the universe, established in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Under the directed causal rules, the existence of the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming a **2-Cycle** <Ref id="1.2.7" label="§1.2.7" /> is topologically impossible.
-
-Thus, these configurations are strictly excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
+Suppose $G_0$ is the initial state of the universe established under the **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" /> principles. Under the directed causal rules, the existence of the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" /> and reciprocal edge pairs forming a 2-cycle is topologically impossible, being strictly excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 ### 3.1.5.1 Proof: Exclusion of Reflexivity and Reciprocity {#3.1.5.1}
 
@@ -5415,7 +5511,7 @@ This topological feature is what gives Time its direction. Without a DAG structu
 
 Let $G_0$ denote the initial state. Then $G_0$ constitutes a weakly connected graph, and disconnected configurations are excluded by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
-### 3.1.8.1 Proof: Minimization of Automorphisms {#3.1.8.1}
+### 3.1.8.1 Proof: Global Connectivity {#3.1.8.1}
 
 :::tip[**Derivation of Connectivity from Causal Unity and Symmetry Constraints**]
 :::
@@ -5449,7 +5545,7 @@ Q.E.D.
 :::note[**Computational Demonstration of Entropy Violation in Disconnected Graphs by Group Size Comparison**]
 :::
 
-Algorithmic validation of the entropic penalty for disconnected topologies established by **Minimization of Automorphisms** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
+Algorithmic validation of the entropic penalty for disconnected topologies established by **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
 
 1.  **Disconnected Topology:** The simulation instantiates a graph `G_disc` comprising two disjoint star subgraphs ($N=4$ each), representing a vacuum state with broken causal connectivity. Each star consists of a central root connected to three leaf nodes.
 2.  **Connected Topology:** A second graph `G_conn` is derived from the disconnected state by introducing a single bridge edge between the centers of the two stars, establishing a weak causal path between the previously disjoint regions.
@@ -5517,7 +5613,7 @@ The argument rests on **Entropy Minimization**. In graph theory, symmetry is oft
 
 Let $G$ denote a weakly connected DAG on $N$ vertices where the causal redundancy inherent to $|E| > N-1$ is excluded by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />. Therefore, the vacuum state satisfies the exact sparsity condition $|E| = N-1$.
 
-### 3.1.9.1 Proof: Tree Condition {#3.1.9.1}
+### 3.1.9.1 Proof: Path Uniqueness and Sparsity {#3.1.9.1}
 
 :::tip[**Derivation of the Exact Edge Count Constraint via Prohibition of Parallel Paths**]
 :::
@@ -5675,27 +5771,29 @@ Therefore, it is mathematically impossible for the vacuum to contain a Geometric
 
 ---
 
-### 3.1.12 Proof: Demonstration of the Vacuum Structure {#3.1.12}
+### 3.1.12 Proof: Vacuum Structure {#3.1.12}
 
 :::tip[Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion, demonstrating the **Vacuum Structure** <Ref id="3.1.3" label="§3.1.3" />]
 :::
 
 **I. The Configuration Space**
-Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains.
+Let $\Omega_{all}$ represent the universal set of all possible directed graphs. The proof proceeds by applying the established axiomatic constraints as sequential filters to progressively reduce this set until only the unique vacuum state $G_0$ remains. Basic topological boundaries are established per **Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />, **Exclusion of Reflexivity and Reciprocity** <Ref id="3.1.5" label="§3.1.5" />, and **Exclusion of Cyclic Paths** <Ref id="3.1.6" label="§3.1.6" />.
 
 **II. The Exclusion Chain**
-1.  **Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />: Filtered by **Well-Foundedness**, which strictly forbids infinite descending causal chains. $\Omega \to \Omega_{finite}$.
-2.  **Global Acyclicity** <Ref id="3.1.7" label="§3.1.7" />: Filtered by **Global Acyclicity**, which forbids the existence of closed directed loops based on depth monotonicity. $\Omega_{finite} \to \Omega_{DAG}$.
-3.  **Global Connectivity** <Ref id="3.1.8" label="§3.1.8" />: Filtered by **Entropy Minimization** and the requirement for causal unity. $\Omega_{DAG} \to \Omega_{connected}$.
-4.  **Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" />: Filtered by the Principle of Unique Causality, which mandates $|E| = |V|-1$ to prevent redundant parallel paths. $\Omega_{connected} \to \Omega_{tree}$.
-5.  **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />: Filtered by **Depth Parity**, which mandates a strict partition $V_{even} \sqcup V_{odd}$. This structure topologically forbids odd-length cycles (**Exclusion of Odd Cycles** <Ref id="3.1.11" label="§3.1.11" />), establishing the pre-geometric state.
-6.  **Demonstration of the Vacuum Structure** <Ref id="3.1.12" label="§3.1.12" />: Filtered by asymmetry, mandating a single source vertex (the Root) with strictly divergent flow.
+1.  **Existence and Finiteness**: Filtered by **Well-Foundedness**, which strictly forbids infinite descending causal chains. $\Omega \to \Omega_{finite}$.
+2.  **Exclusion of Reflexivity and Reciprocity**: Filtered by irreflexivity and asymmetry, which excludes self-loops and 2-cycles.
+3.  **Exclusion of Cyclic Paths**: Filtered by cycle exclusion, which prevents any local closed paths.
+4.  **Global Acyclicity** <Ref id="3.1.7" label="§3.1.7" />: Filtered by depth monotonicity, which forbids the existence of closed directed loops. $\Omega_{finite} \to \Omega_{DAG}$.
+5.  **Global Connectivity** <Ref id="3.1.8" label="§3.1.8" />: Filtered by **Entropy Minimization** and the requirement for causal unity. $\Omega_{DAG} \to \Omega_{connected}$.
+6.  **Path Uniqueness and Sparsity**: Filtered by the Principle of Unique Causality, which mandates $|E| = |V|-1$ to prevent redundant parallel paths. $\Omega_{connected} \to \Omega_{tree}$.
+7.  **Depth-Parity Bipartition**: Filtered by **Depth Parity**, which mandates a strict partition $V_{even} \sqcup V_{odd}$. This structure topologically forbids odd-length cycles, establishing the pre-geometric state.
+8.  **Vacuum Structure**: Filtered by asymmetry, mandating a single source vertex (the Root) with strictly divergent flow.
 
 **III. Convergence**
-The sole topological structure capable of surviving the full exclusion chain is a finite, weakly connected, acyclic, bipartite graph possessing an edge count of exactly $|E| = |V|-1$ and a unique source.
+The sole topological structure capable of surviving the full exclusion chain is a finite, weakly connected, acyclic, bipartite graph possessing an edge count of exactly $|E| = |V|-1$ and a unique source, as verified under **Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" /> and **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />.
 
 **IV. Formal Conclusion**
-The initial state $G_0$ is uniquely identified as a **Finite Rooted Directed Tree**. No other topology satisfies the conjunction of all physical axioms.
+The initial state $G_0$ is uniquely identified as a **Finite Rooted Directed Tree** defining the **Vacuum Structure** <Ref id="3.1.3" label="§3.1.3" />. No other topology satisfies the conjunction of all physical axioms, and odd cycles are completely eliminated per **Exclusion of Odd Cycles** <Ref id="3.1.11" label="§3.1.11" />.
 
 Q.E.D.
 
@@ -5759,7 +5857,7 @@ We solve this optimization problem by imposing a condition based on the maximiza
 :::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
 :::
 
-The initial state $G_0$ constitutes a unique structure designated as a **Regular Bethe Fragment**. This structure is a finite, rooted, outward-directed tree possessing a fixed internal coordination number $k_{deg} \ge 3$. The root vertex and all internal vertices exhibit an out-degree of exactly $k_{deg}$, while all leaf vertices exhibit an out-degree of zero. This structure maximizes the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity across vertices. [(Woess, 2000)](/monograph/appendices/a-references#A.70)
+Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** possessing a fixed internal coordination number $k_{deg} \ge 3$, where the root and all internal vertices exhibit an out-degree of exactly $k_{deg}$ and all leaf vertices exhibit an out-degree of zero, maximizing the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity. <Cite id="A.70" label="(Woess, 2000)" />
 
 ### 3.2.1.1 Definition: Regular Bethe Fragment {#3.2.1.1}
 
@@ -5811,7 +5909,9 @@ This structure serves as the unique optimal pre-geometric substrate that the axi
 The proof proceeds by sequentially eliminating suboptimal topologies, applying independent axiomatic filters to reduce the space of candidate vacuum states to a unique regular tree.
 
 ```text
-• 3.2.1.2 Diagram Fragment Topology
+• 3.2.1 Theorem Optimal Vacuum  [by exclusion]
+├── 3.2.1.1 Definition Regular Bethe Fragment
+├── 3.2.1.2 Diagram Fragment Topology
 ├── 3.2.2 Lemma Exclusion of Cyclic Topologies
 │   └── 3.2.2.1 Proof Exclusion of Cyclic Topologies
 │
@@ -5827,7 +5927,7 @@ The proof proceeds by sequentially eliminating suboptimal topologies, applying i
 │   └── 3.2.5.2 Commentary Efficiency of Sparsity
 │
 ├── 3.2.6 Lemma Site Maximality
-│   ├── 3.2.6.1 Proof Branching Optimization
+│   ├── 3.2.6.1 Proof Site Maximality
 │   └── 3.2.6.2 Commentary Parallel Processing
 │
 ├── 3.2.7 Lemma Degree Regularity
@@ -5839,8 +5939,13 @@ The proof proceeds by sequentially eliminating suboptimal topologies, applying i
 │   ├── 3.2.8.1 Proof Orbit Transitivity
 │   └── 3.2.8.2 Commentary Symmetry Breaking
 │
-└── 3.2.9 Lemma Structural Optimality Metric
-    └── 3.2.9.1 Proof Metric Validity
+├── 3.2.9 Lemma Structural Optimality Metric
+│   └── 3.2.9.1 Proof Structural Optimality Metric
+├── 3.2.10 Lemma Quantitative Supremacy
+│   ├── 3.2.10.1 Proof Quantitative Supremacy
+│   ├── 3.2.10.2 Calculation Small N Census
+│   └── 3.2.10.3 Calculation Large Depth Scaling
+└── 3.2.11 Proof Optimal Vacuum
 ```
 
 ---
@@ -5890,6 +5995,13 @@ The multiple independent violations force the exclusion of all graphs containing
 
 Q.E.D.
 
+### 3.2.2.2 Commentary: Cycle Exclusion {#3.2.2.2}
+
+:::info[**Manifold Integrity and Homology Protection**]
+:::
+
+Exclusion of cyclic topologies protects the manifold from self-intersection. This maintains the homeomorphic mapping of the emergent spacetime sheet. If cyclic loops were permitted to form arbitrarily in the vacuum tree, the tree structure would collapse into a highly connected network with multiple handles, destroying its planar character. Excluding cyclic topologies ensures that the graph can be embedded into a two-dimensional sheet, serving as the holographic boundary required for the emergence of physical spacetime.
+
 ---
 
 ### 3.2.3 Lemma: Exclusion of Short-Range Loops {#3.2.3}
@@ -5933,6 +6045,13 @@ A reciprocal pair constitutes a primitive geometric cycle of length 2. This stru
 Both structures constitute primitive geometric cycles existing prior to the application of the rewrite rule. We conclude that all such primitive cycles are excluded from the vacuum state by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
 
 Q.E.D.
+
+### 3.2.3.2 Commentary: Short Loop Exclusion {#3.2.3.2}
+
+:::info[**Ultraviolet Cutoff in Causal Curvature Fields**]
+:::
+
+Short-range loops are excluded to prevent infinite self-energy corrections. This acts as a natural ultraviolet cutoff in the pre-geometric theory. If the vacuum allowed loops of length one or two, the self-energy of the vertices would diverge, creating local singularities. By requiring all cycles to have length three or greater, the theory introduces a planck-scale cutoff that regularizes physical quantities and ensures that the vacuum remains stable against local fluctuations.
 
 ---
 
@@ -6047,7 +6166,7 @@ By enforcing **Tree Sparsity**, we ensure absolute historical clarity. Every nod
 
 For any tree graph yielding a strictly sub-maximal number of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> rewrite sites, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
 
-### 3.2.6.1 Proof: Branching Optimization {#3.2.6.1}
+### 3.2.6.1 Proof: Site Maximality {#3.2.6.1}
 
 :::tip[**Verification of Site Density Maximization in Maximally Branched Trees via Combinatorial Counting**]
 :::
@@ -6296,7 +6415,7 @@ The vacuum must be maximally symmetric, meaning it should not contain any inform
 
 Let $\mathcal{O}(G; \lambda)$ denote the **Structural Optimality Score**, defined as $\lambda \log_2 |\text{Aut}(G)| + (1 - \lambda) H_S(G)$, where $|\text{Aut}(G)|$ is the cardinality of the automorphism group and $H_S(G)$ is the Shannon entropy of the orbit size distribution. Then the parameter $\lambda \in [0,1]$ weights the balance between global symmetry and local homogeneity.
 
-### 3.2.9.1 Proof: Metric Validity {#3.2.9.1}
+### 3.2.9.1 Proof: Structural Optimality Metric {#3.2.9.1}
 
 :::tip[**Justification of Relational Uniformity via Extremal Case Analysis**]
 :::
@@ -6341,16 +6460,23 @@ We conclude that the metric identifies the Regular Bethe Fragment as the optimal
 
 Q.E.D.
 
+### 3.2.9.2 Commentary: Structural Optimality {#3.2.9.2}
+
+:::info[**Minimization of Curvature Stress Metrics**]
+:::
+
+The structural optimality metric defines the target state of the variational search. The universe naturally minimizes this metric to achieve stable geometry. It combines symmetry entropy and structural complexity to select the most stable and symmetric pre-geometric configurations. Minimizing this metric drives the graph toward the Bethe fragment topology, establishing the highly symmetric, isotropic background from which continuous space emerges.
+
 ---
 
-### 3.2.10 Corollary: Quantitative Supremacy {#3.2.10}
+### 3.2.10 Lemma: Quantitative Supremacy {#3.2.10}
 
 :::info[**Supremacy of the Bethe Fragment under the Structural Optimality Metric confirmed by Exhaustive Search**]
 :::
 
-**Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer of the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of axiomatically admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
+Given the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of candidate graph topologies, the following holds: the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer over all admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
 
-### 3.2.10.1 Proof: Supremacy Verification {#3.2.10.1}
+### 3.2.10.1 Proof: Quantitative Supremacy {#3.2.10.1}
 
 :::tip[**Formal Proof of the Bethe Fragment as the Unique Maximizer via Computational Census**]
 :::
@@ -6391,12 +6517,21 @@ $$
 
 Q.E.D.
 
-### 3.2.10.2 Calculation: Small N Census {#3.2.10.2}
+### 3.2.10.2 Commentary: Quantitative Bounds {#3.2.10.2}
+
+:::info[**Complexity Scaling Limits in Variational Searches**]
+:::
+
+Quantitative supremacy bounds represent the limit of classical simulation. Beyond these bounds, the relational complexity of the graph requires quantum description. When the number of vertices exceeds a critical value, the number of possible graph configurations grows exponentially, making classical search algorithms inefficient. This transition signals the emergence of true quantum behavior in the vacuum, where the system must be described by a superposition of states rather than a single classical graph.
+
+---
+
+### 3.2.10.3 Calculation: Small N Census {#3.2.10.3}
 
 :::note[**Algorithmic Census of Optimal Tree Topology**]
 :::
 
-Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Supremacy Verification** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
+Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Quantitative Supremacy** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
 
 1.  **Combinatorial Enumeration:** The algorithm utilizes `networkx` generators to produce the complete set of non-isomorphic free trees of size $N=10$, establishing the full configuration space for the vacuum candidates.
 2.  **Axiomatic Filtering:** Three sequential filters are applied to the candidate set:
@@ -6577,7 +6712,7 @@ Reason: Maximizes Optimality Score regardless of specific weighting.
 
 The census reveals that while 37 topologies satisfy the basic geometric constraints, only two satisfy the strict requirement for internal regularity: the **Balanced Bethe Fragment** (Isotropic, $|Aut|=48$) and the **Caterpillar** (Anisotropic, $|Aut|=8$). The Bethe Fragment consistently dominates the optimality score across the entire parameter sweep, confirming that the preference for isotropy is a robust feature of the vacuum axioms and not a result of fine-tuning. The data verifies that the vacuum optimizes for a "bushy" crystalline structure ($|Aut|=48$) rather than a "long" linear chain ($|Aut|=8$).
 
-### 3.2.10.3 Calculation: Large Depth Scaling {#3.2.10.3}
+### 3.2.10.4 Calculation: Large Depth Scaling {#3.2.10.4}
 
 :::note[**Computational Analysis of Regularity Convergence in Large Bethe Fragments using Asymptotic Scaling**]
 :::
@@ -6673,22 +6808,22 @@ The results demonstrate that as depth increases to 15, the regularity fraction c
 
 ---
 
-### 3.2.11 Proof: Demonstration of the Optimal Vacuum {#3.2.11}
+### 3.2.11 Proof: Optimal Vacuum {#3.2.11}
 
 :::tip[Formal Derivation of the Regular Bethe Fragment ($k=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />]
 :::
 
 **I. The Candidate Set**
-The set of candidate vacuum states is restricted to the class of Finite Rooted Trees, as established by **Demonstration of the Vacuum Structure** <Ref id="3.1.12" label="§3.1.12" />. The proof seeks to identify the specific tree topology that maximizes the physical potential for geometrogenesis.
+The set of candidate vacuum states is restricted to the class of Finite Rooted Trees. This restriction arises by sequentially applying topological filters to candidate graph configurations. Specifically, the **Exclusion of Cyclic Topologies** <Ref id="3.2.2" label="§3.2.2" /> and **Exclusion of Short-Range Loops** <Ref id="3.2.3" label="§3.2.3" /> are enforced. The configuration additionally satisfies the **Exclusion of Disconnected States** <Ref id="3.2.4" label="§3.2.4" /> and the **Exclusion of Redundant DAGs** <Ref id="3.2.5" label="§3.2.5" />.
 
 **II. The Optimization Chain**
 1.  **Geometric Lower Bound:** **Axiom 2** mandates the capacity to form 3-cycles (geometric quanta) via the rewrite rule. This imposes a strict lower bound on the coordination number, requiring $k \ge 3$. Linear chains ($k=2$) are excluded as they are topologically incapable of enclosing area.
 2.  **Site Maximality** <Ref id="3.2.6" label="§3.2.6" />: To maximize the rate of geometric evolution, the tree structure must maximize the density of compliant 2-path sites per vertex. This requirement favors maximal branching over linear extension.
-3.  **Orbit Transitivity** <Ref id="3.2.8" label="§3.2.8" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring $k$ to be constant across all internal nodes.
-4.  **Bulk Efficiency (Scaling Analysis):** The ratio of internal "bulk" nodes (capable of supporting history) to boundary leaves scales as $1/(k-1)$. To maximize the physical universe relative to its holographic boundary, the coordination number $k$ must be minimized.
+3.  **Orbit Transitivity** <Ref id="3.2.8" label="§3.2.8" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.7" label="§3.2.7" />.
+4.  **Bulk Efficiency (Scaling Analysis):** The ratio of internal "bulk" nodes (capable of supporting history) to boundary leaves scales as $1/(k-1)$. To maximize the physical universe relative to its boundary, the coordination number $k$ must be minimized, as confirmed under the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />.
 
 **III. Convergence**
-The constraints impose a lower bound of $k \ge 3$ for geometric viability and an optimization pressure of $k \to \min$ for bulk efficiency. The intersection of these constraints is the unique integer $k=3$.
+The constraints impose a lower bound of $k \ge 3$ for geometric viability and an optimization pressure of $k \to \min$ for bulk efficiency. The intersection of these constraints is the unique integer $k=3$, exhibiting strict supremacy under the optimality metric per **Quantitative Supremacy** <Ref id="3.2.10" label="§3.2.10" />.
 
 **IV. Formal Conclusion**
 The optimal vacuum state $G_0$ is uniquely identified as the **Regular Bethe Fragment** with internal coordination number $k=3$.
@@ -6776,7 +6911,7 @@ The formal symmetry framework ensures that the dynamical evolution rules are str
 :::info[**Necessity and Sufficiency of Maximal Parallelism for Symmetry Maintenance established by Biconditional Proof**]
 :::
 
-An update map $\mathcal{U}: G_0 \to G_1$ preserves the full automorphism group of the vacuum state, such that $\text{Aut}(G_1) \supseteq \text{Aut}(G_0)$, if and only if $\mathcal{U}$ constitutes a **Maximally Parallel Scheduler**. A Maximally Parallel Scheduler is defined as the operator that applies the rewrite rule simultaneously to the complete set of compliant sites $\mathcal{S}_{sites}(G_0)$ permitted by the axiomatic constraints. [(Wolfram, 2002)](/monograph/appendices/a-references#A.71)
+For any update map $\mathcal{U}: G_0 \to G_1$ on the initial vacuum state, the following holds: $\mathcal{U}$ preserves the full automorphism group of the vacuum state, satisfying $\text{Aut}(G_1) \supseteq \text{Aut}(G_0)$, if and only if $\mathcal{U}$ constitutes a **Maximally Parallel Scheduler** that applies the rewrite rule simultaneously to the complete set of compliant sites $\mathcal{S}_{sites}(G_0)$ permitted by the axiomatic constraints. <Cite id="A.71" label="(Wolfram, 2002)" />
 
 ### 3.3.3.1 Commentary: Argument Outline {#3.3.3.1}
 
@@ -6833,7 +6968,7 @@ SCHEDULER SYMMETRY OUTCOMES
 :::info[**Commutativity of Rewrite Site Identification with Graph Automorphisms**]
 :::
 
-Let $\mathcal{S}_{sites}(G)$ denote the set of candidate rewrite sites for a graph $G$. Then the identity $\varphi(\mathcal{S}_{sites}(G)) = \mathcal{S}_{sites}(\varphi(G)) = \mathcal{S}_{sites}(G)$ holds for any automorphism $\varphi \in \text{Aut}(G)$.
+Let $\mathcal{S}_{sites}(G)$ denote the set of candidate rewrite sites for a graph $G$. Then the identity $\varphi(\mathcal{S}_{sites}(G)) = \mathcal{S}_{sites}(\varphi(G)) = \mathcal{S}_{sites}(G)$ is satisfied for any automorphism $\varphi \in \text{Aut}(G)$.
 
 ### 3.3.4.1 Proof: Equivariance of Site Definition {#3.3.4.1}
 
@@ -6985,7 +7120,16 @@ Only the map where $S' = \mathcal{S}_{sites}$ avoids this contradiction. We conc
 
 Q.E.D.
 
-### 3.3.5.2 Calculation: Cycle Resolution {#3.3.5.2}
+### 3.3.5.2 Commentary: Conflict Resolution Rules {#3.3.5.2}
+
+:::info[**Arbitration of Overlapping Graph Updates**]
+:::
+
+Conflict resolution rules arbitrate overlapping rewrite proposals. This ensures that concurrent updates do not violate global topological consistency. If overlapping sites were updated without arbitration, the rules would conflict, leading to ill-defined successor states or breaking the graph's automorphism group. The conflict resolution rules ensure that joint updates are symmetric and equivariant, preserving the vacuum's structural integrity during simultaneous transitions.
+
+---
+
+### 3.3.5.3 Calculation: Cycle Resolution {#3.3.5.3}
 
 :::note[**Resolution of Symmetric Overlaps via Parallel Operations**]
 :::
@@ -7039,7 +7183,7 @@ This graph contains $8$ overlapping 2-paths: $s_1$: $A \to B \to C$, $s_2$: $B \
 
 It is confirmed that $D_8$ receives preservation: Rotations/reflections map remaining structures equivalently.
 
-### 3.3.5.3 Calculation: Symmetry Metrics Pre/Post-Update {#3.3.5.3}
+### 3.3.5.4 Calculation: Symmetry Metrics Pre/Post-Update {#3.3.5.4}
 
 :::note[**Computational Verification of Automorphism Preservation**]
 :::
@@ -7176,7 +7320,7 @@ This timestamp-based resolution mirrors the local proper time ordering in genera
 :::info[**Logarithmic Time Complexity via Quasi-Local Checks**]
 :::
 
-Assume the graph remains in the regime characterized by **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$. Moreover, the probability of conflict chains spanning the system decays exponentially.
+Assume the graph remains in the regime characterized by **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> subject to quasi-local constraints established by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> with a bounded check radius $R \propto \log N$. Then the time complexity of the maximally parallel update operation is bounded by $O(\log N)$, and the probability of conflict chains spanning the system decays exponentially.
 
 ### 3.3.7.1 Proof: Scalability of the Scheduler {#3.3.7.1}
 
@@ -7240,18 +7384,18 @@ Q.E.D.
 
 **I. Setup and Assumptions**
 
-Let $G_0$ be the vacuum state defined as a symmetry-maximal graph **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />. The set of candidate rewrite sites $\mathcal{S}_{\text{sites}}(G_0)$ is identified deterministically and equivariantly.
+Let $G_0$ be the vacuum state defined as a symmetry-maximal graph **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />. The set of candidate rewrite sites $\mathcal{S}_{\text{sites}}(G_0)$ is identified deterministically and equivariantly, as guaranteed by **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />.
 
 **II. The Logic Chain**
 
-1.  **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />: Guarantees that the identified rewrite sites commute with graph automorphisms.
+1.  **Equivariance of Site Definition**: Guarantees that the identified rewrite sites commute with graph automorphisms.
 2.  **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />: Establishes that overlapping sites are resolved while preserving the automorphism group.
-3.  **Covariant Conflict Resolution** <Ref id="3.3.6" label="§3.3.6" />: Proves that unique, monotonic edge timestamps provide a covariant tie-breaking mechanism.
-4.  **Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />: Confirms that conflict chains decay exponentially, ensuring that the scheduling operations remain local and bounded.
+3.  **Covariant Conflict Resolution**: Proves that unique, monotonic edge timestamps provide a covariant tie-breaking mechanism.
+4.  **Scalability of the Scheduler**: Confirms that conflict chains decay exponentially, ensuring that the scheduling operations remain local and bounded.
 
 **III. Assembly**
 
-Let the update map $\mathcal{U}$ denote the operator applying updates to a selected set of sites $S' \subseteq \mathcal{S}_{\text{sites}}$. Assume for the purpose of contradiction that $\mathcal{U}$ is not maximally parallel, such that $S'$ is a proper subset of $\mathcal{S}_{\text{sites}}$. Then there exist sites $s_a \in S'$ and $s_b \in \mathcal{S}_{\text{sites}} \setminus S'$. Since the vacuum state is site-transitive, there exists an automorphism $\sigma \in \text{Aut}(G_0)$ mapping $s_a$ to $s_b$. In the successor state $G_1$, the neighborhood of $s_a$ is modified by the rewrite rule, whereas the neighborhood of $s_b$ remains unmodified. This asymmetry implies that $\sigma$ cannot be extended to an automorphism of $G_1$, reducing the automorphism group size. Thus, symmetry preservation necessitates that the selection is uniform. Since the update must be non-trivial, the scheduler must select the complete set of compliant, non-conflicting sites. The covariant selection under the order $\succ_H$ resolves overlaps without introducing coordinate-dependent variables.
+Let the update map $\mathcal{U}$ denote the operator applying updates to a selected set of sites $S' \subseteq \mathcal{S}_{\text{sites}}$. Assume for the purpose of contradiction that $\mathcal{U}$ is not maximally parallel, such that $S'$ is a proper subset of $\mathcal{S}_{\text{sites}}$. Then there exist sites $s_a \in S'$ and $s_b \in \mathcal{S}_{\text{sites}} \setminus S'$. Since the vacuum state is site-transitive, there exists an automorphism $\sigma \in \text{Aut}(G_0)$ mapping $s_a$ to $s_b$. In the successor state $G_1$, the neighborhood of $s_a$ is modified by the rewrite rule, whereas the neighborhood of $s_b$ remains unmodified. This asymmetry implies that $\sigma$ cannot be extended to an automorphism of $G_1$, reducing the automorphism group size. Thus, symmetry preservation necessitates that the selection is uniform. Since the update must be non-trivial, the scheduler must select the complete set of compliant, non-conflicting sites, utilizing **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" /> to resolve overlaps. The covariant selection under the order $\succ_H$ resolves overlaps without introducing coordinate-dependent variables as established in **Covariant Conflict Resolution** <Ref id="3.3.6" label="§3.3.6" />, and the locality constraints ensure that conflict chains decay exponentially per **Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />.
 
 **IV. Formal Conclusion**
 
@@ -7356,7 +7500,7 @@ We overcome this stasis by modeling the first event as a thermodynamic tunneling
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
 :::
 
-The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, which topologically prohibits the formation of **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. A single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
+Suppose the initial vacuum state $G_0$ is a metastable **False Vacuum** characterized by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />. Then this bipartition topologically prohibits the formation of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. Therefore, a single non-perturbative **Tunneling Event** suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry, generates the first compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />), and initiates a first-order phase transition to the geometric vacuum.
 
 ### 3.4.1.1 Commentary: Argument Outline {#3.4.1.1}
 
@@ -7366,9 +7510,9 @@ The initial vacuum state $G_0$ constitutes a metastable **False Vacuum** charact
 The proof proceeds via Direct Construction, establishing a deterministic causal sequence that drives the transition from an inert vacuum to an active, expanding geometry.
 
 ```text
-• 3.4.1 Theorem Inevitable Geometrogenesis
+• 3.4.1 Theorem Inevitable Geometrogenesis  [by construction]
 ├── 3.4.2 Lemma Topological Tunneling
-│   ├── 3.4.2.1 Proof Symmetry Breaking
+│   ├── 3.4.2.1 Proof Topological Tunneling
 │   └── 3.4.2.2 Commentary Minimal Fluctuation
 │
 ├── 3.4.3 Lemma Nucleation of Compliant Sites
@@ -7381,7 +7525,7 @@ The proof proceeds via Direct Construction, establishing a deterministic causal 
 ├── 3.4.5 Lemma Ignition Probability
 │   └── 3.4.5.1 Proof Ignition Probability
 │
-└── 3.4.6 Proof Demonstration of Inevitable Ignition
+└── 3.4.6 Proof Inevitable Geometrogenesis
     └── 3.4.6.1 Calculation Simulated Ignition Trajectories
 ```
 
@@ -7394,7 +7538,7 @@ The proof proceeds via Direct Construction, establishing a deterministic causal 
 
 Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.18).
 
-### 3.4.2.1 Proof: Symmetry Breaking {#3.4.2.1}
+### 3.4.2.1 Proof: Topological Tunneling {#3.4.2.1}
 
 :::tip[**Demonstration of Minimal Topological Fragility via Hamming Distance Analysis**]
 :::
@@ -7524,6 +7668,13 @@ $$
 
 Q.E.D.
 
+### 3.4.3.2 Commentary: Site Nucleation {#3.4.3.2}
+
+:::info[**Birth of Geometric Compliant Regions**]
+:::
+
+Nucleation of compliant sites describes the birth of new geometric zones. These zones act as seeds for the growth of emergent dimensions. During geometrogenesis, local fluctuations in the vacuum graph create clusters of vertices that satisfy the requirements for cycle creation. These clusters act as nucleation points, growing and merging to form the continuous, higher-dimensional manifold of physical space.
+
 ---
 
 ### 3.4.4 Lemma: First Geometric Quantum {#3.4.4}
@@ -7593,7 +7744,7 @@ The moment the edge $w \to u$ closes the cycle, the first quantum of area emerge
 :::info[**Non-Vanishing Tunneling Probability in the High-Temperature Regime**]
 :::
 
-Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />, where the free energy barrier to edge addition is thermodynamically negligible.
+Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, where the free energy barrier to edge addition is thermodynamically negligible.
 
 ### 3.4.5.1 Proof: Ignition Probability {#3.4.5.1}
 
@@ -7660,24 +7811,31 @@ With $\mathbb{P}_{pair} > 0$, the limit as $N \to \infty$ yields $\mathbb{P}_{ig
 
 Q.E.D.
 
+### 3.4.5.2 Commentary: Ignition Mechanics {#3.4.5.2}
+
+:::info[**Modulation of Rung Creation in Cosmic Inflation**]
+:::
+
+Ignition probability modulates the creation rate of new rungs. This determines the expansion rate of the pre-geometric manifold during inflation. If the ignition probability were too high, the manifold would expand too rapidly, preventing the formation of stable matter. If it were too low, inflation would fail to start. The fine-tuning of the ignition probability determines the balance between expansion and structure formation in the early universe.
+
 ---
 
-### 3.4.6 Proof: Demonstration of Inevitable Ignition {#3.4.6}
+### 3.4.6 Proof: Inevitable Geometrogenesis {#3.4.6}
 
 :::tip[Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability, demonstrating **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />]
 :::
 
 **I. The Metastable Hypothesis**
-The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$).
+The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$). This barrier is breached via **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, which enables the **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />.
 
 **II. The Mechanism Chain**
-1.  **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />: It is established that the Hamming distance between the bipartite vacuum and a non-bipartite state is exactly $d_H = 1$ edge. The barrier to symmetry breaking is therefore not extensive but minimal.
-2.  **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />: A single symmetry-breaking edge $e=(u,v)$ where $\pi(u)=\pi(v)$ creates a valid rewrite site by connecting vertices of identical parity. This bypasses the topological deadlock.
-3.  **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />: The formation of the first 3-cycle alters the local topology, creating new compliant 2-paths on its periphery. This triggers a branching ratio $b > 1$, leading to a runaway geometric cascade.
-4.  **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />: In the pre-geometric limit where $T \to \infty$, the free energy barrier vanishes. The probability of a tunneling event per unit time is strictly positive ($P_{ign} > 0$).
+1.  **Topological Tunneling**: It is established that the Hamming distance between the bipartite vacuum and a non-bipartite state is exactly $d_H = 1$ edge. The barrier to symmetry breaking is therefore not extensive but minimal.
+2.  **Nucleation of Compliant Sites**: A single symmetry-breaking edge $e=(u,v)$ where $\pi(u)=\pi(v)$ creates a valid rewrite site by connecting vertices of identical parity. This bypasses the topological deadlock.
+3.  **First Geometric Quantum**: The formation of the first 3-cycle alters the local topology, creating new compliant 2-paths on its periphery. This triggers a branching ratio $b > 1$, leading to a runaway geometric cascade.
+4.  **Ignition Probability**: In the pre-geometric limit where $T \to \infty$, the free energy barrier vanishes. The probability of a tunneling event per unit time is strictly positive ($P_{ign} > 0$).
 
 **III. Convergence**
-Let $P_{vac}(t)$ be the probability that the universe remains in the vacuum state at time $t$. The cumulative probability of non-ignition is the product of survival probabilities over discrete time steps:
+Let $P_{vac}(t)$ be the probability that the universe remains in the vacuum state at time $t$. The cumulative probability of non-ignition is the product of survival probabilities over discrete time steps, governed by the tunneling rate derived in **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />:
 
 $$
 P_{vac}(t) = \prod_{i=0}^t (1 - P_{\text{ign}}) \approx e^{-t \cdot P_{\text{ign}}}
@@ -7690,7 +7848,7 @@ $$
 $$
 
 **IV. Formal Conclusion**
-The **Ignition of Geometrogenesis** is a deterministic inevitability of the axiomatic and thermodynamic conditions. The transition from the static tree to the geometric graph occurs with probability 1 over sufficient time.
+The **Ignition of Geometrogenesis** is a deterministic inevitability of the axiomatic and thermodynamic conditions, leading to the creation of the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />. The transition from the static tree to the geometric graph occurs with probability 1 over sufficient time.
 
 Q.E.D.
 
@@ -7868,14 +8026,14 @@ There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set 
 The proof proceeds via Direct Construction, establishing a rigorous algebraic mapping that binds the configurations of Quantum Braid Dynamics to a stabilizer quantum error-correcting code.
 
 ```text
-• 3.5.2 Theorem Stabilizer Isomorphism
+• 3.5.2 Theorem Stabilizer Isomorphism  [by construction]
 ├── 3.5.3 Lemma Configuration Space Validity
-│   ├── 3.5.3.1 Proof Mapping Validity
+│   ├── 3.5.3.1 Proof Configuration Space Validity
 │   ├── 3.5.3.2 Commentary Operator Interpretation
 │   └── 3.5.3.3 Diagram Z/X Duality
 │
 ├── 3.5.4 Lemma Hard Constraint Validity
-│   ├── 3.5.4.1 Proof Projector Validity
+│   ├── 3.5.4.1 Proof Hard Constraint Validity
 │   ├── 3.5.4.2 Calculation Eigenvalue Verification
 │   └── 3.5.4.3 Commentary Justification of the Undirected Metric
 │
@@ -7890,12 +8048,9 @@ The proof proceeds via Direct Construction, establishing a rigorous algebraic ma
 ├── 3.5.7 Lemma Codespace Non-Triviality
 │   └── 3.5.7.1 Proof Codespace Non-Triviality
 │
-├── 3.5.8 Proof Demonstration of the Stabilizer Isomorphism
-│   └── 3.5.8.2 Diagram Stabilizer Isomorphism
-│
-├── 3.5.9 Validation via Lean 4 Core
-│
-└── 3.5.10 Commentary Parity Closure and the Abelian Group Structure
+└── 3.5.8 Proof Stabilizer Isomorphism
+    ├── 3.5.8.1 Calculation End-to-End Codespace Verification
+    └── 3.5.8.2 Diagram Stabilizer Isomorphism
 ```
 
 ---
@@ -7907,7 +8062,7 @@ The proof proceeds via Direct Construction, establishing a rigorous algebraic ma
 
 Let $\Omega_{graph}$ denote the set of all classical combinatorial states of the directed causal graph on $N$ vertices, and let $\mathcal{H}$ denote the Hilbert space formed by the tensor product of edge-qubits. Then the mapping $\mathcal{M}: \Omega_{graph} \to \mathcal{H}$, defined by $\mathcal{M}(G) = \bigotimes_{u \neq v} |1_{(u,v) \in E(G)}\rangle$, constitutes a faithful, injective embedding that maps distinct graph topologies to orthogonal basis vectors.
 
-### 3.5.3.1 Proof: Mapping Validity {#3.5.3.1}
+### 3.5.3.1 Proof: Configuration Space Validity {#3.5.3.1}
 
 :::tip[**Verification of the Correspondence between Graph States and Qubit Basis States via Orthogonality Checks**]
 :::
@@ -8017,7 +8172,7 @@ Z-OPERATOR (Diagonal)      X-OPERATOR (Off-Diagonal)
 Let $\Pi_{cycle}$ and $\Pi_{local}$ denote the Hard Constraint Projectors established in **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Then, for any state $|\psi\rangle$ representing a graph that violates the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> or **Strict Locality** <Ref id="5.5.2" label="§5.5.2" />, the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
 
 
-### 3.5.4.1 Proof: Projector Validity {#3.5.4.1}
+### 3.5.4.1 Proof: Hard Constraint Validity {#3.5.4.1}
 
 :::tip[**Verification of the Annihilation of Invalid States through Operator Algebra**]
 :::
@@ -8091,7 +8246,7 @@ Q.E.D.
 :::note[**Computational Verification of Projector Eigenvalues using Matrix Multiplication**]
 :::
 
-Computational verification of the spectral properties of geometric stabilizers established by **Projector Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> is based on the following protocols:
+Computational verification of the spectral properties of geometric stabilizers established by **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> is based on the following protocols:
 
 1.  **Operator Construction:** The algorithm constructs the stabilizer operator $S$ as the tensor product of four Pauli-Z matrices ($Z^{\otimes 4}$). This operator represents the geometric parity check on a local plaquette of 4 qubits.
 2.  **Spectral Analysis:** The simulation iterates through the complete 16-dimensional computational basis. For each basis state $|\psi\rangle$, the expectation value $\langle \psi | S | \psi \rangle$ is computed via matrix multiplication.
@@ -8174,7 +8329,7 @@ We must distinguish between two concepts of distance. **Causal Distance** is asy
 :::info[**Classification of Local Geometry via Triplet Syndrome Tuples**]
 :::
 
-**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> checks generate syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. Then these tuples characterize the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
+Given the checks defined under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, the following holds: the generated syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$ constitute a characterization of the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
 
 ### 3.5.5.1 Proof: Syndrome Classification of Triplet Configurations {#3.5.5.1}
 
@@ -8416,6 +8571,13 @@ $$
 
 Q.E.D.
 
+### 3.5.6.2 Commentary: Commutativity Properties {#3.5.6.2}
+
+:::info[**Stabilizer Codespace Error-Correction Role**]
+:::
+
+Stabilizer commutativity ensures that the quantum code is error-correcting. This protects physical states from local decoherence in the codespace. If the stabilizer operators did not commute, the codespace would be unstable, allowing local errors to propagate and destroy the quantum information. Commutativity ensures that the vacuum acts as a robust quantum error-correcting code, preserving physical fields against local noise.
+
 ---
 
 ### 3.5.7 Lemma: Codespace Non-Triviality {#3.5.7}
@@ -8478,34 +8640,35 @@ Q.E.D.
 
 ---
 
-### 3.5.8 Proof: Demonstration of the Stabilizer Isomorphism {#3.5.8}
+### 3.5.8 Proof: Stabilizer Isomorphism {#3.5.8}
 
 :::tip[Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction, establishing the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />]
 :::
 
-**I. The Mapping Hypothesis**
+**I. Setup and Mapping**
 The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to \mathcal{T}_{\text{QEC}}$ that links the domain of physical graph theory to the domain of stabilizer quantum codes.
 
 **II. The Component Mapping**
 1.  **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />: It is established that graph configurations map injectively to basis states within the Hilbert space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$, where $|1\rangle$ denotes edge presence and $|0\rangle$ denotes absence.
 2.  **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />: The physical Axioms are mapped to diagonal **Hard Constraint Projectors**. Specifically, the 2-Cycle prohibition maps to $\Pi_{cycle} = I - |11\rangle\langle11|$, annihilating invalid reciprocal states.
 3.  **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />: Local topological configurations are mapped to **Syndrome Measurements** via the Geometric Check Operators ($K_{uv} = Z_{uv}Z_{vw}$). These operators yield eigenvalues $\lambda = \pm 1$ distinguishing vacuum, tension, and geometric states.
-4.  **Dynamics:** The rewrite rule corresponds to logical Pauli-X operations ($X_{uv}$) that evolve the state, while preserving the code subspace $\mathcal{C}$ through feedback.
+4.  **Commutativity:** The stabilizer check operators commute with each other, as proved in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />.
+5.  **Dynamics:** The rewrite rule corresponds to logical Pauli-X operations ($X_{uv}$) that evolve the state, while preserving the code subspace $\mathcal{C}$ through feedback.
 
 **III. Convergence**
-The set of axiomatically valid physical states corresponds exactly to the $+1$ simultaneous eigenspace (the **Codespace** $\mathcal{C}$) of the stabilizer group generated by the constraint operators. The dynamics are shown to preserve this subspace through the mechanism of syndrome-guided correction.
+The set of axiomatically valid physical states corresponds exactly to the $+1$ simultaneous eigenspace (the **Codespace** $\mathcal{C}$) of the stabilizer group generated by the constraint operators. The dynamics are shown to preserve this subspace through the mechanism of syndrome-guided correction. The non-triviality of this codespace is established in **Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />.
 
 **IV. Formal Conclusion**
 The physical theory of Quantum Braid Dynamics is formally isomorphic to a **Generalized Stabilizer Quantum Error-Correcting Code**.
 
 Q.E.D.
 
-### 3.5.8.1: End-to-End Codespace Verification {#3.5.8.1}
+### 3.5.8.1 Calculation: End-to-End Codespace Verification {#3.5.8.1}
 
 :::note[**Computational Verification of Codespace Projection and Syndrome Extraction for a Full Directed Triplet using Simulation**]
 :::
 
-Computational verification of the codespace projection and syndrome extraction under **Demonstration of the Stabilizer Isomorphism** <Ref id="3.5.8" label="§3.5.8" /> proceeds according to the following protocols:
+Computational verification of the codespace projection and syndrome extraction under **Stabilizer Isomorphism** <Ref id="3.5.8" label="§3.5.8" /> is based on the following protocols:
 
 1.  **System Embedding:** The simulation models a full geometric triplet using a 6-qubit Hilbert space, where each qubit represents one of the directed edges in the $\{u, v, w\}$ triad.
 2.  **Constraint Implementation:** Hard constraints are implemented as diagonal projectors $\Pi$ that strictly annihilate states containing reciprocal 2-cycles ($|11\rangle_{uv}$). Geometric checks are implemented as $Z$-operators measuring edge presence.
@@ -8949,7 +9112,7 @@ We solve this verification problem by proving that the path concatenation operat
 :::info[**Formal Consistency of the Categorical Frameworks for Global and Internal Structures**]
 :::
 
-The structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid mathematical categories. Specifically, both structures satisfy the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. These frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
+Consider the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ representing the internal causal path structure and the global historical embedding structure, respectively. Then the following holds: both structures constitute valid mathematical categories satisfying the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. Moreover, these frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
 
 ### 4.2.1.1 Commentary: Argument Outline {#4.2.1.1}
 
@@ -8998,7 +9161,7 @@ The proof proceeds via Direct Construction, verifying the algebraic requirements
 
 Let $p: u \to v$ be a morphism in $\mathbf{Caus}_t$. Then the composition with the Trivial Path in the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" /> satisfies the identity laws $p \circ \text{id}_u = p$ and $\text{id}_v \circ p = p$, where the concatenation of a sequence with a zero-length sequence yields the original sequence invariant.
 
-### 4.2.2.1 Proof: Identity Preservation for $\mathbf{Caus}_t$ {#4.2.2.1}
+### 4.2.2.1 Proof: Identity for $\mathbf{Caus}_t$ {#4.2.2.1}
 
 :::tip[**Verification of Neutrality under Composition for Trivial Paths**]
 :::
@@ -9047,6 +9210,13 @@ The trivial path $\text{id}_u$ satisfies the two-sided identity laws required fo
 
 Q.E.D.
 
+### 4.2.2.2 Commentary: Causal Neutrality {#4.2.2.2}
+
+:::info[**Role of Causal Identity in Path Concatenation**]
+:::
+
+We discuss the role of causal identity paths as neutral elements under composition. Causal identity represents a local state of rest or trivial delay, confirming that the absence of physical action does not generate spurious causal relations. Concatenating a causal path with an empty, zero-length path at its start or end leaves the path invariant, securing the physical requirement that inert intervals do not alter the topological structure of history.
+
 ---
 
 ### 4.2.3 Lemma: Associativity for $\mathbf{Caus}_t$ {#4.2.3}
@@ -9062,7 +9232,7 @@ $$
 
 Moreover, the linear order of edges in the resulting path is invariant regardless of the grouping of concatenation operations.
 
-### 4.2.3.1 Proof: Associativity Preservation for $\mathbf{Caus}_t$ {#4.2.3.1}
+### 4.2.3.1 Proof: Associativity for $\mathbf{Caus}_t$ {#4.2.3.1}
 
 :::tip[**Verification of Associativity under Composition for Path Concatenation**]
 :::
@@ -9117,6 +9287,13 @@ We conclude that $(r \circ q) \circ p = r \circ (q \circ p)$ for all composable 
 
 Q.E.D.
 
+### 4.2.3.2 Commentary: Associative Flow {#4.2.3.2}
+
+:::info[**Invariance of Path Composition Sequence**]
+:::
+
+The associativity of composition in the causal category guarantees that the grouping of sequential events does not affect their global topological connectivity. Whether we group the evolution from event A to B first and then compose with C, or group B to C first, the resulting causal path is identical. This invariance establishes a consistent global chain of causation, ensuring that physical processes are path-independent at the structural level and preventing history-dependent ambiguities in the poset.
+
 ---
 
 ### 4.2.4 Lemma: Timestamp Monotonicity {#4.2.4}
@@ -9124,9 +9301,9 @@ Q.E.D.
 :::info[**Preservation of Timestamp Monotonicity**]
 :::
 
-Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds. Moreover, $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f: G \to G'$ and $g: G' \to G''$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds; moreover, the composition $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
 
-### 4.2.4.1 Proof: Preservation of Monotonicity {#4.2.4.1}
+### 4.2.4.1 Proof: Timestamp Monotonicity {#4.2.4.1}
 
 :::tip[**Verification of Temporal Order Preservation under Morphism Composition**]
 :::
@@ -9174,6 +9351,13 @@ The composite function preserves the timestamp monotonicity constraint. We concl
 
 Q.E.D.
 
+### 4.2.4.2 Commentary: Causal Directionality {#4.2.4.2}
+
+:::info[**Role of Monotonic Timestamps in Time Arrow Encoding**]
+:::
+
+Timestamp monotonicity enforces a strict temporal directionality across the causal category, ensuring that a cause always precedes its effect in logical time. By requiring that the timestamp of every subsequent edge along a directed path increases strictly monotonically, the model excludes the possibility of closed timelike curves. This mathematical ordering anchors the micro-arrow of time, establishing a robust thermodynamic background where retroactive causal loops are logically impossible.
+
 ---
 
 ### 4.2.5 Lemma: Identity for $\mathbf{Hist}$ {#4.2.5}
@@ -9183,7 +9367,7 @@ Q.E.D.
 
 For any graph object $G \in \text{Obj}(\mathbf{Hist})$, let $\text{id}_G$ be the identity function on the vertex set $V(G)$. Then $\text{id}_G$ constitutes a morphism in $\mathbf{Hist}$, and for any morphism $f: G \to G'$, the relations $f \circ \text{id}_G = f$ and $\text{id}_{G'} \circ f = f$ hold.
 
-### 4.2.5.1 Proof: Identity Preservation for $\mathbf{Hist}$ {#4.2.5.1}
+### 4.2.5.1 Proof: Identity for $\mathbf{Hist}$ {#4.2.5.1}
 
 :::tip[**Verification of Structure Preservation and Neutrality for Identity Functions**]
 :::
@@ -9232,6 +9416,13 @@ The identity function satisfies the structural constraints and neutrality axioms
 
 Q.E.D.
 
+### 4.2.5.2 Commentary: Historical Neutrality {#4.2.5.2}
+
+:::info[**Neutrality of Identity Maps in Historical Morphisms**]
+:::
+
+The identity morphism in the category of histories represents a static snapshot of the universe. Its neutrality under composition confirms that a history category preserves the structure of past events without introducing spurious changes. Concatenating a history category with an empty, zero-length history at its start or end leaves the history invariant, securing the physical requirement that inert intervals do not alter the topological structure of history.
+
 ---
 
 ### 4.2.6 Lemma: Associativity for $\mathbf{Hist}$ {#4.2.6}
@@ -9241,7 +9432,7 @@ Q.E.D.
 
 Let $f: A \to B$, $g: B \to C$, and $h: C \to D$ be morphisms in $\mathbf{Hist}$. Then the relation $(h \circ g) \circ f = h \circ (g \circ f)$ holds.
 
-### 4.2.6.1 Proof: Associativity Preservation for $\mathbf{Hist}$ {#4.2.6.1}
+### 4.2.6.1 Proof: Associativity for $\mathbf{Hist}$ {#4.2.6.1}
 
 :::tip[**Verification of Associativity under Composition for Function Composition**]
 :::
@@ -9276,6 +9467,13 @@ Function composition is inherently associative in Set Theory. Combined with the 
 
 Q.E.D.
 
+### 4.2.6.2 Commentary: Historical Consistency {#4.2.6.2}
+
+:::info[**Associative Mapping of Historical Paths**]
+:::
+
+The associativity of historical composition guarantees that multiple histories can be convolved and grouped in any order without changing the final emergent history. This is essential for a consistent cosmological evolution. Whether we group the evolution from event A to B first and then compose with C, or group B to C first, the resulting history path is identical. This invariance establishes a consistent global chain of histories, ensuring that physical processes are path-independent at the structural level.
+
 ---
 
 ### 4.2.7 Lemma: Topological Injectivity {#4.2.7}
@@ -9285,7 +9483,7 @@ Q.E.D.
 
 Let $f: G \to G'$ be a structure-preserving map valid in $\mathbf{Hist}$. Then $f$ is injective on connected vertices, the identification of adjacent vertices yields a Self-Loop, which the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> excludes.
 
-### 4.2.7.1 Proof: Irreflexivity Enforcement {#4.2.7.1}
+### 4.2.7.1 Proof: Topological Injectivity {#4.2.7.1}
 
 :::tip[**Instability of Non-Injective Morphisms via Induced Reflexivity**]
 :::
@@ -9350,6 +9548,13 @@ No valid morphism in $\mathbf{Hist}$ maps distinct connected vertices to the sam
 
 Q.E.D.
 
+### 4.2.7.2 Commentary: Topological Injectivity {#4.2.7.2}
+
+:::info[**Injectivity of Causal-to-Historical Mappings**]
+:::
+
+Topological injectivity guarantees that distinct causal relations map to distinct historical pathways. This prevents the loss of causal information when transitioning from microscopic updates to macroscopic historical records. If multiple causal paths mapped to the same historical trace, the history category would fail to distinguish between different pre-geometric states, losing the detailed structure of physical events.
+
 ---
 
 ### 4.2.8 Lemma: Effective Influence Encoding {#4.2.8}
@@ -9359,7 +9564,7 @@ Q.E.D.
 
 Let the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ constitute a constrained subset of morphisms within $\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length satisfies $\ell(p) \ge 2$ and the sequence of edge timestamps is strictly increasing.
 
-### 4.2.8.1 Proof: Encoding Verification {#4.2.8.1}
+### 4.2.8.1 Proof: Effective Influence Encoding {#4.2.8.1}
 
 :::tip[**Verification of Encoding Correspondence**]
 :::
@@ -9394,6 +9599,13 @@ The category $\mathbf{Caus}_t$ constitutes the structural superset for the physi
 
 Q.E.D.
 
+### 4.2.8.2 Commentary: Information Preservation {#4.2.8.2}
+
+:::info[**Encoding of Influence Chains in Historical Sequences**]
+:::
+
+The preservation of influence chains ensures that every causal link has a footprint in the historical record. Information is neither created nor destroyed during the functorial mapping of causal states. By mapping each causal relation to a unique, non-trivial historical morphism, the functor guarantees that the historical record remains complete and faithful to the microscopic causal evolution.
+
 ---
 
 ### 4.2.9 Lemma: Partial Order Property {#4.2.9}
@@ -9402,8 +9614,8 @@ Q.E.D.
 :::
 
 Let $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$ denote the subset of morphisms satisfying length $\ell \ge 2$ and strictly increasing timestamps. Then the following holds:
-1.  **Irreflexivity:** No morphism with $\ell \ge 2$ and strictly increasing timestamps maps $u$ to $u$ without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-2.  **Transitivity:** The composition of morphisms in $\mathcal{M}_{eff}$ preserves timestamp ordering and length constraints.
+*   **Irreflexivity:** no morphism with $\ell \ge 2$ and strictly increasing timestamps maps $u$ to $u$ without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />;
+*   **Transitivity:** the composition of morphisms in $\mathcal{M}_{eff}$ preserves timestamp ordering and length constraints.
 
 ### 4.2.9.1 Proof: Partial Order Property {#4.2.9.1}
 
@@ -9444,24 +9656,33 @@ The relation $\le$ encoded by the subset $\mathcal{M}_{eff}$ satisfies Irreflexi
 
 Q.E.D.
 
+### 4.2.9.2 Commentary: Causal Ordering {#4.2.9.2}
+
+:::info[**Partial Order Structure of the Spacetime Manifold**]
+:::
+
+The partial order property confirms that the set of events in the causal graph forms a directed poset. This establishes a sound mathematical framework for defining local coordinate systems and causal light cones. Because the relation is irreflexive, asymmetric, and transitive, it prevents events from causally influencing their own past, ensuring that spacetime is globally hyperbolic.
+
 ---
 
-### 4.2.10 Proof: Demonstration of Categorical Validity {#4.2.10}
+### 4.2.10 Proof: Categorical Validity {#4.2.10}
 
 :::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$**]
 :::
 
 **I. The Structural Hypothesis**
-We assert that the collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
+The collection of internal causal paths ($\mathbf{Caus}_t$) and global historical embeddings ($\mathbf{Hist}$) are asserted to satisfy the rigorous Eilenberg-MacLane axioms required to define a Category.
 
 **II. The Verification Chain**
 1.  **Identity for $\mathbf{Caus}_t$** <Ref id="4.2.2" label="§4.2.2" /> **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />: Verification of the neutral elements establishes that the trivial path in $\mathbf{Caus}_t$ serves as the identity on nodes and the identity function in $\mathbf{Hist}$ serves as the identity on graphs.
-2.  **Associativity for $\mathbf{Caus}_t$** <Ref id="4.2.3" label="§4.2.3" /> **Associativity for $\mathbf{Hist}$** <Ref id="4.2.6" label="§4.2.6" />: Verification of composition rules confirms that both path concatenation and function composition are associative.
+1.  **Identity for $\mathbf{Caus}_t$** <Ref id="4.2.2" label="§4.2.2" /> and **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />: Verification of the neutral elements establishes that the trivial path in $\mathbf{Caus}_t$ serves as the identity on nodes and the identity function in $\mathbf{Hist}$ serves as the identity on graphs.
+2.  **Associativity for $\mathbf{Caus}_t$** <Ref id="4.2.3" label="§4.2.3" /> and **Associativity for $\mathbf{Hist}$** <Ref id="4.2.6" label="§4.2.6" />: Verification of composition rules confirms that both path concatenation and function composition are associative.
 3.  **Timestamp Monotonicity** <Ref id="4.2.4" label="§4.2.4" />: Verification of the embedding maps demonstrates that composition preserves the inequality $H(e) \le H'(f(e))$ along all causal trajectories.
 4.  **Topological Injectivity** <Ref id="4.2.7" label="§4.2.7" />: Verification of structural injectivity proves that morphisms map connected components injectively to prevent topological collapse.
 
 **III. Convergence**
-The defined structures satisfy all required algebraic properties (Identity, Associativity, Closure) without contradiction. The categorical syntax faithfully encodes the physical constraints.
+
+The defined structures satisfy all required algebraic properties (Identity, Associativity, Closure) without contradiction. The categorical syntax faithfully encodes the physical constraints of **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />, proving that the relation constitutes a **Partial Order Property** <Ref id="4.2.9" label="§4.2.9" />.
 
 **IV. Formal Conclusion**
 $\mathbf{Caus}_t$ and $\mathbf{Hist}$ constitute valid **Categories**. This confirms that the framework used to describe the dynamical evolution of the universe is mathematically consistent.
@@ -9748,7 +9969,7 @@ The comultiplication $\delta$ provides the structural capacity for meta-verifica
 :::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
 :::
 
-The triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$ is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. Specifically, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
+Given the triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$, the following holds: this triplet is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. In particular, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
 
 ---
 
@@ -9893,7 +10114,7 @@ This coherence is essential for the stability of the self-diagnostic mechanism o
 
 Let $\epsilon = \{\epsilon_X\}_{X \in \mathbf{AnnCG}}$ and $\delta = \{\delta_X\}_{X \in \mathbf{AnnCG}}$ denote the families of morphisms defining context extraction and meta-check duplication. Then $\epsilon$ and $\delta$ constitute valid natural transformations within the category.
 
-### 4.3.7.1 Proof: Commutative Squares {#4.3.7.1}
+### 4.3.7.1 Proof: Naturality of Transformations {#4.3.7.1}
 
 :::tip[**Verification of Naturality Conditions for $\epsilon$ and $\delta$**]
 :::
@@ -10002,10 +10223,10 @@ Without naturality, the diagnostic layer would become decoupled from the physica
 :::info[**Compliance of the Awareness Triplet with the Laws of Identity and Associativity**]
 :::
 
-Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities hold:
-1. **Left Identity:** $\epsilon \circ \delta = \text{id}$
-2. **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$
-3. **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$
+Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities are satisfied:
+*   **Left Identity:** $\epsilon \circ \delta = \text{id}$;
+*   **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$;
+*   **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$.
 
 ### 4.3.8.1 Proof: Axiom Satisfaction {#4.3.8.1}
 
@@ -10159,7 +10380,7 @@ By encoding the syndrome updating process $\vec{s}' = \vec{s} \oplus \vec{u}$ wi
 
 ---
 
-### 4.3.10 Proof: Demonstration of the Awareness Comonad {#4.3.10}
+### 4.3.10 Proof: Awareness Comonad {#4.3.10}
 
 :::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure via Functorial Mapping**]
 :::
@@ -10179,7 +10400,7 @@ Let the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotate
 
 **III. Assembly**
 
-The structure satisfies the complete algebraic definition of a Comonad. The operations of self-diagnosis, context retrieval, and recursive verification form a closed and consistent algebraic system.
+The structure satisfies the complete algebraic definition of a Comonad. The operations of self-diagnosis, context retrieval, and recursive verification form a closed and consistent algebraic system. Moreover, the coherence of the protected codespace under active updates is guaranteed by **Comonadic Pauli Frame Tracking** <Ref id="4.3.9" label="§4.3.9" />.
 
 **IV. Formal Conclusion**
 
@@ -10192,7 +10413,7 @@ Q.E.D.
 :::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 :::
 
-Computational verification of the categorical consistency established by **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
+Computational verification of the categorical consistency established by **Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> is based on the following protocols:
 
 1.  **State Definition:** The algorithm defines an `AnnotatedGraph` representation that couples a causal graph structure (via NetworkX) with a nested coordinate mapping, implementing the store comonad structure.
 2.  **Morphism Implementation:** The protocol implements the core comonadic operations:
@@ -10322,7 +10543,7 @@ These results validate the structural correctness of the Store Comonad model, co
 :::note[**Lean 4 Encoding of Comonadic Laws via Definitional Equality**]
 :::
 
-Type-theoretic certification of the comonad axioms established in **Demonstration of the Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
+Type-theoretic certification of the comonad axioms established in **Awareness Comonad** <Ref id="4.3.10" label="§4.3.10" /> proceeds via the following verification strategy:
 
 1.  **Encoding:** The structure `GraphState G A` encodes an annotated causal graph as a dependent product of a graph carrier `G` and an annotation context `A`; `ε` (counit) and `δ` (comultiplication) encode the two structural maps, while `lift_history` encodes the action of `ε` lifted to the diagnostic stack.
 2.  **Theorem Statements:** Three theorems certify the three comonad axioms: Left Identity (`ε (δ Y) = Y`), Right Identity (`lift_history ε (δ Y) = Y`), and Comonadic Associativity (`δ (δ Y) = lift_history δ (δ Y)`), corresponding to the two unit laws and the coassociativity law respectively.
@@ -10405,14 +10626,51 @@ We resolve this scaling problem by deriving the vacuum temperature $T = \ln 2$ f
 
 ---
 
-### 4.4.1 Theorem: Bit-Nat Equivalence {#4.4.1}
+### 4.4.1 Theorem: Thermodynamic Foundations {#4.4.1}
+
+:::info[**Calibration of the Causal Graph via Information-Theoretic and Thermodynamic Equivalence**]
+:::
+
+Given the thermodynamic representation of the causal graph, the following holds: the fundamental constants of the vacuum, consisting of the critical temperature $T$, the geometric self-energy $\epsilon_{geo}$, the catalysis coefficient $c_{cat}$, and the friction coefficient $f_{fric}$, are uniquely determined from the information-theoretic equivalence of bits and nats and the local entropic pressure of loop closures.
+
+### 4.4.1.1 Commentary: Argument Outline {#4.4.1.1}
+
+:::tip[**Calibration of Chapter 4.4 Constants via Bit-Nat Equivalence, Entropy of Closure, Dimensional Equipartition, Self-Energy, Catalysis, and Friction**]
+:::
+
+The constants of the vacuum are derived from information-theoretic first principles and local entropic bounds, establishing a self-consistent thermodynamic baseline for graph evolution.
+
+```text
+• 4.4.1 Theorem Thermodynamic Foundations  [by construction]
+├── 4.4.2 Lemma Bit-Nat Equivalence
+│   ├── 4.4.2.1 Proof Bit-Nat Equivalence
+│   └── 4.4.2.2 Commentary Currency of Structure
+├── 4.4.3 Lemma Entropy of Closure
+│   ├── 4.4.3.1 Proof Entropy of Closure
+│   └── 4.4.3.2 Calculation Entropy Simulation
+├── 4.4.4 Lemma Dimensional Equipartition
+│   └── 4.4.4.1 Proof Dimensional Equipartition
+├── 4.4.5 Lemma Geometric Self-Energy
+│   ├── 4.4.5.1 Proof Geometric Self-Energy
+│   └── 4.4.5.2 Commentary Tax on Structure
+├── 4.4.6 Lemma Catalysis Coefficient
+│   ├── 4.4.6.1 Proof Catalysis Coefficient
+│   └── 4.4.6.2 Commentary Entropic Pressure
+├── 4.4.7 Lemma Friction Coefficient
+│   ├── 4.4.7.1 Proof Friction Coefficient
+│   ├── 4.4.7.2 Calculation Friction Damping
+│   └── 4.4.7.3 Commentary Viscosity of Space
+└── 4.4.8 Proof Thermodynamic Foundations
+```
+
+### 4.4.2 Lemma: Bit-Nat Equivalence {#4.4.2}
 
 :::info[**Derivation of the vacuum temperature via information-theoretic energy equivalence**]
 :::
 
-Let $T$ denote the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales. Then $T$ constitutes the dimensionless constant $T = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision. Moreover, this value establishes the thermodynamic threshold for information stability against thermal erasure [**(Landauer, 1991)**](/monograph/appendices/a-references#A.39).
+Given the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales, designated $T$, the following holds: $T$ constitutes the dimensionless constant $T = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision; moreover, this value establishes the thermodynamic threshold for information stability against thermal erasure <Cite id="A.39" label="(Landauer, 1991)" />.
 
-### 4.4.1.1 Proof: Bit-Nat Equivalence {#4.4.1.1}
+### 4.4.2.1 Proof: Bit-Nat Equivalence {#4.4.2.1}
 
 :::tip[**Formal Derivation of the Critical Scale**]
 :::
@@ -10475,7 +10733,7 @@ The temperature $T = \ln 2$ aligns the continuous thermodynamic scale with the d
 
 Q.E.D.
 
-### 4.4.1.2 Commentary: Currency of Structure {#4.4.1.2}
+### 4.4.2.2 Commentary: Currency of Structure {#4.4.2.2}
 
 :::info[**Physical Interpretation of T = ln 2**]
 :::
@@ -10488,14 +10746,14 @@ Setting $T = \ln 2$ renders the vacuum "permeable" to geometry. It allows causal
 
 ---
 
-### 4.4.2 Theorem: Entropy of Closure {#4.4.2}
+### 4.4.3 Lemma: Entropy of Closure {#4.4.3}
 
 :::info[**Existence of Local Relational Entropy Increase**]
 :::
 
-Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats. Moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> within the causal graph. Then the local relational entropy satisfies $\Delta S = \ln 2$ nats; moreover, this magnitude corresponds to the doubling of path multiplicity in the local phase space.
 
-### 4.4.2.1 Proof: Entropy of Closure {#4.4.2.1}
+### 4.4.3.1 Proof: Entropy of Closure {#4.4.3.1}
 
 :::tip[**Derivation via Causal Path Multiplicity**]
 :::
@@ -10545,12 +10803,21 @@ We conclude that $\Delta S = \ln 2$ nats quantifies the bifurcation from a simpl
 
 Q.E.D.
 
-### 4.4.2.2 Calculation: Entropy Simulation {#4.4.2.2}
+### 4.4.3.2 Commentary: Relational Entropy {#4.4.3.2}
+
+:::info[**Stochastic Resolution of Relational Loop Closure in Causal Dynamics**]
+:::
+
+We examine the entropy of closure. By analyzing the information content of closed cycles in the causal graph, the theory establishes a thermodynamic metric for spatial complexity. The closure of a cycle represents a transition from open, unconstrained paths to a localized, bound state of causal flux. This transition releases entropic pressure, driving the graph toward stable, low-dimensional configurations and establishing the pre-geometric origin of gravitational attraction.
+
+---
+
+### 4.4.3.3 Calculation: Entropy Simulation {#4.4.3.3}
 
 :::note[**Computational Verification of Local Entropy Gain**]
 :::
 
-Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.2.1" label="§4.4.2.1" /> is based on the following protocols:
+Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following protocols:
 
 1.  **System Definition:** The algorithm instantiates a minimal 2-path configuration $v \to w \to u$ to serve as the baseline state.
 2.  **Metric Computation:** The protocol calculates the relational entropy $\Delta S = \ln(k_{vu} \cdot k_{uv})$ based on the multiplicities of forward and reverse paths between the focus pair $(v, u)$.
@@ -10613,16 +10880,17 @@ Exact match:                       True
 
 The output confirms that the entropy gain $\Delta S = 0.693147$ matches the theoretical target $\ln 2$ exactly. This gain arises deterministically from the topological bifurcation: closure doubles the forward multiplicity (mediated path + cycle-degenerate representation) while introducing the first reverse path, yielding a product increase from 0 to 2. This verifies that structural closure acts as a hard entropic driver independent of specific graph geometry.
 
+
 ---
 
-### 4.4.3 Theorem: Dimensional Equipartition {#4.4.3}
+### 4.4.4 Lemma: Dimensional Equipartition {#4.4.4}
 
 :::info[**Isotropic Distribution of Vacuum Energy**]
 :::
 
-Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions and satisfies **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. Moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric [**(Padmanabhan, 2009)**](/monograph/appendices/a-references#A.46).
+Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions satisfying **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />; moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric <Cite id="A.46" label="(Padmanabhan, 2009)" />.
 
-### 4.4.3.1 Proof: Dimensional Equipartition {#4.4.3.1}
+### 4.4.4.1 Proof: Dimensional Equipartition {#4.4.4.1}
 
 :::tip[**Application of the Equipartition Theorem**]
 :::
@@ -10663,61 +10931,34 @@ $$
 
 Q.E.D.
 
+### 4.4.4.2 Commentary: Dimensional Degrees {#4.4.4.2}
+
+:::info[**Isotropic Partitioning of Vacuum Energy in Spacetime Dimensionality**]
+:::
+
+We analyze the dimensional degrees of freedom. By partitioning the graph's vertices into distinct dimensions, the model regularizes the local coordinate system and bounds the growth of topological handles. This dimensional equipartition ensures that the vacuum does not collapse into a high-dimensional network, maintaining the Ahlfors regularity required for the emergence of a smooth, four-dimensional spacetime manifold.
+
 ---
 
-### 4.4.4 Corollary: Geometric Self-Energy {#4.4.4}
+### 4.4.5 Lemma: Geometric Self-Energy {#4.4.5}
 
 :::info[**Derivation of the Cost of the Geometric Quantum**]
 :::
 
-**I. Synthesis of Components**
+Given the requirements of structural stabilization, the following holds: the **Geometric Self-Energy** $\epsilon_{geo}$ of a closed 3-cycle is uniquely determined as $\epsilon_{geo} = \frac{\ln 2}{4}$, representing the uniform distribution of the critical loop-closure energy across the four effective dimensions of the manifold.
 
-The **Geometric Self-Energy** $\epsilon_{geo}$ is the internal energy cost required to instantiate a single 3-Cycle quantum.
-It is derived from:
-1.  **Entropic Gain:** $\Delta S = \ln 2$ (established by **Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />).
-2.  **Critical Temperature:** $T_c = \ln 2$ (established by **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />).
-3.  **Dimensionality:** $d=4$ (established by **Dimensional Equipartition** <Ref id="4.4.3" label="§4.4.3" />).
-
-**II. Total Energy Calculation**
-
-The total thermodynamic energy required to stabilize the bit of entropy at the critical temperature is:
-
-$$
-E_{total} = T_c \cdot \text{Unity} = (\ln 2) \cdot 1 = \ln 2
-$$
-
-(Note: The entropy $\Delta S$ provides the magnitude, and the temperature scales it to energy).
-
-**III. Per-Degree Distribution**
-
-Applying the Equipartition Postulate:
-
-$$
-\epsilon_{geo} = \frac{E_{total}}{d} = \frac{\ln 2}{4}
-$$
-
-**IV. Final Value**
-
-$$
-\epsilon_{geo} \approx 0.17328\dots
-$$
-
-Q.E.D.
-
----
-
-### 4.4.4.1 Proof: Synthesis {#4.4.4.1}
+### 4.4.5.1 Proof: Geometric Self-Energy {#4.4.5.1}
 
 :::tip[**Combination of Temperature, Entropy, and Dimensionality**]
 :::
 
 **I. Temperature**
 
-From **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />, the conversion factor is $T = \ln 2$.
+From **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, the conversion factor is $T = \ln 2$.
 
 **II. Entropy Unit**
 
-From **Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />, the entropic content is 1 bit ($\Delta S = \ln 2$ nats).
+From **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, the entropic content is 1 bit ($\Delta S = \ln 2$ nats).
 In the normalized energy calculation, the quantum count is $N = 1$.
 
 **III. Total Energy**
@@ -10730,7 +10971,7 @@ $$
 
 **IV. Distribution**
 
-From **Dimensional Equipartition** <Ref id="4.4.3" label="§4.4.3" />, this energy distributes across $d=4$ dimensions.
+From **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, this energy distributes across $d=4$ dimensions.
 
 $$
 \epsilon_{geo} = \frac{\ln 2}{4} \approx 0.1732
@@ -10738,7 +10979,7 @@ $$
 
 Q.E.D.
 
-### 4.4.4.2 Commentary: Tax on Structure {#4.4.4.2}
+### 4.4.5.2 Commentary: Tax on Structure {#4.4.5.2}
 
 :::info[**Structural Stability and Energy Scales**]
 :::
@@ -10749,14 +10990,14 @@ The derivation of $\epsilon_{geo} = \frac{\ln 2}{4}$ offers a profound insight i
 
 ---
 
-### 4.4.5 Theorem: Catalysis Coefficient {#4.4.5}
+### 4.4.6 Lemma: Catalysis Coefficient {#4.4.6}
 
 :::info[**Entropic Rate Enhancement Coefficient**]
 :::
 
-Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$. Moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy [(Gillespie, 1977)](/monograph/appendices/a-references#A.27).
+Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$; moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy <Cite id="A.27" label="(Gillespie, 1977)" />.
 
-### 4.4.5.1 Proof: Catalysis Coefficient {#4.4.5.1}
+### 4.4.6.1 Proof: Catalysis Coefficient {#4.4.6.1}
 
 :::tip[**Calculation via Arrhenius Factor**]
 :::
@@ -10797,7 +11038,7 @@ $$
 
 **IV. Coefficient Determination**
 
-We equate the physical enhancement factor to the algorithmic modifier.
+The physical enhancement factor is equated to the algorithmic modifier.
 
 $$
 1 + \lambda_{cat} = e
@@ -10811,7 +11052,7 @@ $$
 
 Q.E.D.
 
-### 4.4.5.2 Commentary: Entropic Pressure {#4.4.5.2}
+### 4.4.6.2 Commentary: Entropic Pressure {#4.4.6.2}
 
 :::info[**Catalysis as "Exhaling" Information**]
 :::
@@ -10822,14 +11063,14 @@ The coefficient $\lambda_{cat} = e - 1$ dictates that the system tends to "exhal
 
 ---
 
-### 4.4.6 Theorem: Friction Coefficient {#4.4.6}
+### 4.4.7 Lemma: Friction Coefficient {#4.4.7}
 
 :::info[**Statistical Normalization Constant**]
 :::
 
-Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$. Moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
+Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$; moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
 
-### 4.4.6.1 Proof: Friction Coefficient {#4.4.6.1}
+### 4.4.7.1 Proof: Friction Coefficient {#4.4.7.1}
 
 :::tip[**Peak Density Evaluation**]
 :::
@@ -10878,12 +11119,12 @@ $$
 
 Q.E.D.
 
-### 4.4.6.2 Calculation: Friction Damping {#4.4.6.2}
+### 4.4.7.2 Calculation: Friction Damping {#4.4.7.2}
 
 :::note[**Computational Check of Gaussian Normalization and Tail Damping**]
 :::
 
-Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.6.1" label="§4.4.6.1" /> is based on the following protocols:
+Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> is based on the following protocols:
 
 1.  **Normalization:** The algorithm calculates the friction coefficient $\mu = 1/\sqrt{2\pi\sigma^2}$ derived from the peak density of the standard Gaussian distribution ($N(0,1)$).
 2.  **Stress Sweep:** The protocol applies the damping factor $f(s) = e^{-\mu s}$ across a discrete range of stress levels $s \in [0, 5]$.
@@ -10944,7 +11185,7 @@ Match with μ:             True
 
 The simulation confirms the non-linear suppression of topological updates. A stress level of $s=1$ reduces the update rate by approximately $32.9\%$, while a high stress level of $s=5$ suppresses the rate by $86.4\%$. This validates the mechanism of **Friction**: highly excited regions ($s \gg 0$) effectively freeze, halting changes in the high-energy tail while permitting evolution in the low-stress vacuum.
 
-### 4.4.6.3 Commentary: Viscosity of Space {#4.4.6.3}
+### 4.4.7.3 Commentary: Viscosity of Space {#4.4.7.3}
 
 :::info[**Steric Hindrance in the Causal Graph**]
 :::
@@ -10952,6 +11193,27 @@ The simulation confirms the non-linear suppression of topological updates. A str
 Friction ($\mu$) acts as the "viscosity" of the vacuum, a crucial resistive force that prevents the system from overheating. In regions where the graph becomes dense and highly interconnected ("stressed"), the number of constraints on any new edge increases linearly. The friction coefficient converts this topological density into a suppression probability. This statistical suppression is consistent with the master equation formalism of <Cite id="A.63" label="(van Kampen, 1992)" />, where the macroscopic stability of a system emerges from the competitive balance between growth rates and density-dependent damping terms.
 
 Without this term, the universe would succumb to the "Small World Catastrophe." In a graph where every node can connect to every other node without penalty, the diameter of the universe would collapse to $\approx \log N$, effectively destroying the concept of dimensionality and locality. Friction ensures that geometry remains sparse and local. It imposes a cost on connectivity that scales with density, forcing the graph to spread out rather than bunch up. This mechanism enforces the emergence of an extended manifold structure, as derived in Chapter $5$, guaranteeing that "distance" remains a meaningful concept. It is the force that keeps space spacious. Critically, the friction coefficient $\mu = 1/\sqrt{2\pi} \approx 0.399$ is not an arbitrary parameter; it represents the dimensionless peak of the Gaussian probability density of local stress $s$, which is a purely combinatorial count of syndrome excitations (**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />). Setting the damping rate to this statistical limit suppresses updates whose stress exceeds unit vacuum fluctuations, ensuring scale-invariant stability in the pre-geometric substrate.
+
+---
+
+### 4.4.8 Proof: Thermodynamic Foundations {#4.4.8}
+
+:::tip[Formal Synthesis of the Thermodynamic Calibration of the Causal Graph, establishing the **Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" />]
+:::
+
+**I. Calibration of Scales**
+The thermodynamic scales of the vacuum are grounded in the bit-nat equivalence. The critical temperature of the vacuum is established as $T = \ln 2$, matching the entropic equivalent of a single binary decision per **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
+
+**II. Entropic Flow**
+The formation of cycles in the causal graph increases the local phase space volume. Each 3-cycle closure doubles the local path multiplicity, corresponding to a local entropy increase of exactly $\Delta S = \ln 2$ nats per **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />.
+
+**III. Energy Distribution**
+The self-energy of a relation is derived by distributing the thermal energy across the emergent spatial dimensions. Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the energy per dimension is $\epsilon_{dim} = \frac{1}{2} T$, which determines the geometric self-energy threshold per **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />.
+
+**IV. Dynamical Coefficients**
+The rate of geometric rewrites is regulated by opposing coefficients of activation and resistance. The transition probability is boosted by the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> under local stress, while runaway growth is suppressed by the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> that penalizes topological congestion.
+
+Q.E.D.
 
 ---
 
@@ -10970,9 +11232,9 @@ The identification of these thermodynamic constants transforms the abstract grap
 
 ---
 
-## 4.5 Action Layer (Mechanism) {#4.5}
+## 4.5 Universal Constructor {#4.5}
 
-We confront the operational necessity of designing a Universal Constructor that can execute topological rewrites while strictly respecting the axioms of causality. We must transform the abstract pressure of entropy into a concrete mechanical sequence of edge additions and deletions specifying an algorithm that takes the current state of the graph and produces a weighted distribution of potential futures without violating the logical consistency of the timeline. We are compelled to specify an algorithm that takes the current state of the graph and produces a weighted distribution of potential futures without violating the logical consistency of the timeline.
+We confront the operational necessity of designing a Universal Constructor that can execute topological rewrites while strictly respecting the axioms of causality. We must transform the abstract pressure of entropy into a concrete mechanical sequence of edge additions and deletions, specifying an algorithm that takes the current state of the graph and produces a weighted distribution of potential futures without violating the logical consistency of the timeline.
 
 A constructor that acts randomly without filtering for paradoxes would immediately generate closed timelike curves and destroy the causal order of the universe. If we allowed every energetically favorable transition to occur the graph would quickly become riddled with logical contradictions that render the concept of a consistent history impossible. Furthermore a constructor that operates without thermodynamic modulation would fail to regulate the density of the graph and lead to a catastrophe where the universe collapses into a singularity of infinite connectivity. A mechanism that cannot balance the drive for creation with the necessity of consistency cannot produce a stable spacetime.
 
@@ -11051,21 +11313,14 @@ def R(annotated_graph, T, mu, lambda_cat):
 
 This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />.
 
-### 4.5.1.1 Commentary: Argument Outline {#4.5.1.1}
+### 4.5.1.1 Commentary: Algorithmic Agency {#4.5.1.1}
 
-:::tip[**Structure of the Universal Constructor Argument via Generative Drive, Pruning Balance, and Adaptive Feedback**]
+:::info[**Stochastic Partitioning of Proposal and Realization in Constructor Dynamics**]
 :::
 
-The proof proceeds via Direct Construction, demonstrating that the scan-validate-weight sequence decomposes evolution into sequential phases that enforce thermodynamic balance and causal acyclicity.
+We design the Universal Constructor $\mathcal{R}$ to split the proposal of graph updates from their stochastic collapse. This separation is crucial for maintaining causality; it locates the source of physical irreversibility in the eventual collapse of the distribution (handled by the Evolution Operator $\mathcal{U}$) rather than in the mechanical proposal of local options.
 
-```text
-• 4.5.1 Definition Universal Constructor
-├── 4.5.2 Definition Catalytic Tension Factor
-│   └── 4.5.2.1 Commentary Adaptive Feedback
-│
-└── 4.5.3 Definition Addition Mode
-    └── 4.5.3.1 Commentary Generative Drive
-```
+Furthermore, the search space for proposals enforces strict locality. The constructor focuses all updates on neighborhoods of radius $O(1)$ centered around active vertices, maintaining computational feasibility and physical realism. By filtering this localized raw potential through a sieve of logical and thermodynamic constraints, the constructor ensures that only causality-preserving geometries propagate forward.
 
 ---
 
@@ -11108,20 +11363,65 @@ The **Addition Mode** is defined as the constructive operation of the Action Lay
 
 Addition is the default drive of the system: the "inertial" tendency of the vacuum. Because the base probability is unity ($\mathbb{P} \to 1$) at the critical temperature, the vacuum naturally and aggressively seeks to close open paths. This "generative drive" is an intrinsic consequence of the bit-nat equivalence ($T=\ln 2$).
 
-The system is poised at a critical threshold where creation is thermodynamically "free." The cost of instantiating a new relation is exactly balanced by the entropic gain of the new configuration. Therefore, the only barrier to infinite growth is the steric hindrance (friction) generated by the complexity of the graph itself. The universe expands because there is nothing to stop it until it becomes dense enough to resist its own growth.
-
 Crucially, the generative drive of edge additions is strictly audited by the Acyclic Effective Causality (AEC) pre-check, which acts as the absolute guardian of the timeline. The pre-check deterministically rejects any proposed edge that would close a causal loop, elevating the arrow of time to a hard, logical constraint rather than a statistical average. This gatekeeping mechanism introduces a fundamental physical asymmetry: while edge additions must undergo verification to prevent retroactive paradoxes, edge deletions require no such check. Removing connections can never introduce cycles or closed loops. The asymmetry between constructing and dismantling structure establishes a non-trivial directionality in the evolution of spacetime, demonstrating that thermodynamic irreversibility is deeply intertwined with logical consistency.
 
 ---
 
-### 4.5.4 Theorem: Addition Probability {#4.5.4}
+### 4.5.4 Definition: Deletion Mode {#4.5.4}
+
+:::tip[**Destructive Operation Proposing Edge Removals**]
+:::
+
+The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+
+### 4.5.4.1 Commentary: Pruning and Balance {#4.5.4.1}
+
+:::info[**Prevention of the Small World Catastrophe**]
+:::
+
+Without the counter-process of deletion, the generative drive would relentlessly fill the graph with edges until it became a complete graph ($K_N$), effectively destroying all topological information and dimensional structure. Deletion provides the necessary "pruning" mechanism.
+
+Crucially, this operator acts specifically on *geometry* (existing $3$-cycles) instead of random edges. This ensures that the system removes structure in a way that respects the geometric primitive, dissolving quanta back into the vacuum rather than randomly severing causal links and leaving disconnected artifacts. It is a targeted dissolution that maintains the integrity of the manifold while regulating its density, analogous to the apoptosis of cells in a biological organism which is essential for maintaining the overall form.
+
+---
+
+### 4.5.5 Theorem: Universal Constructor {#4.5.5}
+
+:::info[**Thermodynamic Transition Probabilities and Feedback Modulation of the Rewrite Map**]
+:::
+
+Let $\mathcal{R}$ denote the Universal Constructor stochastically mapping annotated graphs. Then the base thermodynamic acceptance probability is $\mathbb{P}_{\text{acc,thermo}} = 1$ for edge addition and $\mathbb{P}_{\text{del,thermo}} = 1/2$ for edge deletion; moreover, the local rewrite rates are modulated by the Catalytic Tension Factor.
+
+### 4.5.5.1 Commentary: Argument Outline {#4.5.5.1}
+
+:::tip[**Structure of the Universal Constructor Argument via Addition Probability and Deletion Probability**]
+:::
+
+The proof proceeds via Direct Construction, demonstrating that the base transition probabilities are established by entropic dominance and local stress feedback.
+
+```text
+• 4.5.5 Theorem: Universal Constructor  [by construction]
+├── 4.5.6 Lemma: Addition Probability
+│   ├── 4.5.6.1 Proof: Addition Probability
+│   └── 4.5.6.2 Commentary: Generative Drive
+├── 4.5.7 Lemma: Deletion Probability
+│   ├── 4.5.7.1 Proof: Deletion Probability
+│   └── 4.5.7.2 Commentary: Detailed Balance
+└── 4.5.8 Proof: Universal Constructor
+    ├── 4.5.8.1 Commentary: Adaptive Feedback
+    └── 4.5.8.2 Commentary: Pruning and Balance
+```
+
+---
+
+### 4.5.6 Lemma: Addition Probability {#4.5.6}
 
 :::info[**Unitary Thermodynamic Acceptance Probability for Edge Creation**]
 :::
 
-Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-nat Equivalence** <Ref id="4.4.1" label="§4.4.1" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
+Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
 
-### 4.5.4.1 Proof: Addition Probability {#4.5.4.1}
+### 4.5.6.1 Proof: Addition Probability {#4.5.6.1}
 
 :::tip[**Derivation of Barrierless Addition from Free Energy Minimization**]
 :::
@@ -11182,7 +11482,7 @@ $$
 
 **V. Finite-Size Robustness**
 
-Consider the finite energy cost $\epsilon_{geo} = \frac{\ln 2}{4}$ of **Geometric Self-Energy** <Ref id="4.4.4" label="§4.4.4" />. The free energy change is:
+Consider the finite energy cost $\epsilon_{geo} = \frac{\ln 2}{4}$ of **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />. The free energy change is:
 
 $$
 \Delta F = \frac{\ln 2}{4} - (\ln 2)^2 = (\ln 2)(0.25 - \ln 2) \approx -0.307
@@ -11202,34 +11502,25 @@ The update engine operates at maximal efficiency for additive processes. We conc
 
 Q.E.D.
 
----
+### 4.5.6.2 Commentary: Generative Drive {#4.5.6.2}
 
-### 4.5.5 Definition: Deletion Mode {#4.5.5}
-
-:::tip[**Destructive Operation Proposing Edge Removals**]
+:::info[**Interpretation of Unitary Creation Probability in Graph Expansion**]
 :::
 
-The **Deletion Mode** is defined as the destructive operation of the Action Layer. It accepts a set of existing directed 3-cycles (governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) and generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+We have shown that the base probability for edge creation is unity at the critical temperature. This generative drive represents the fundamental bias of the vacuum toward establishing new relations, establishing an arrow of structural growth. The cost of instantiating a new relation is exactly balanced by the entropic gain of the new configuration.
 
-### 4.5.5.1 Commentary: Pruning and Balance {#4.5.5.1}
-
-:::info[**Prevention of the Small World Catastrophe**]
-:::
-
-Without the counter-process of deletion, the generative drive would relentlessly fill the graph with edges until it became a complete graph ($K_N$), effectively destroying all topological information and dimensional structure. Deletion provides the necessary "pruning" mechanism.
-
-Crucially, this operator acts specifically on *geometry* (existing $3$-cycles) instead of random edges. This ensures that the system removes structure in a way that respects the geometric primitive, dissolving quanta back into the vacuum rather than randomly severing causal links and leaving disconnected artifacts. It is a targeted dissolution that maintains the integrity of the manifold while regulating its density, analogous to the apoptosis of cells in a biological organism which is essential for maintaining the overall form.
+Crucially, this drive is audited by the Acyclic Effective Causality (AEC) pre-check, which serves as the absolute guardian of the timeline. The pre-check rejects any proposed edge that would close a causal loop, elevating the arrow of time to a hard, logical constraint rather than a statistical average. This gatekeeping mechanism introduces a fundamental physical asymmetry: while edge additions must undergo verification to prevent retroactive paradoxes, edge deletions require no such check, creating a non-trivial directionality in the evolution of spacetime.
 
 ---
 
-### 4.5.6 Theorem: Deletion Probability {#4.5.6}
+### 4.5.7 Lemma: Deletion Probability {#4.5.7}
 
 :::info[**Half-unit thermodynamic deletion probability**]
 :::
 
-Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion probability for geometric quanta in the critical vacuum regime. Then $\mathbb{P}_{\text{del,thermo}}$ is identically equal to $1/2$ (**Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />).
+Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion probability for geometric quanta in the critical vacuum regime. Then $\mathbb{P}_{\text{del,thermo}}$ is identically equal to $1/2$ (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />).
 
-### 4.5.6.1 Proof: Deletion Probability {#4.5.6.1}
+### 4.5.7.1 Proof: Deletion Probability {#4.5.7.1}
 
 :::tip[**Limit Evaluation via Entropic Dominance**]
 :::
@@ -11237,12 +11528,12 @@ Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion prob
 **I. Setup and Assumptions**
 
 Let the deletion of a geometric quantum constitute the time-reverse of addition. The thermodynamic parameters are defined as follows:
-1.  **Energy Change:** The release of binding energy satisfies $\Delta E = -\epsilon_{geo}$ per the **Geometric Self-Energy** <Ref id="4.4.4" label="§4.4.4" />.
-2.  **Entropy Change:** The erasure of topological information satisfies $\Delta S = -\ln 2$ per the **Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />.
+1.  **Energy Change:** The release of binding energy satisfies $\Delta E = -\epsilon_{geo}$ per the **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />.
+2.  **Entropy Change:** The erasure of topological information satisfies $\Delta S = -\ln 2$ per the **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />.
 
 **II. Free Energy Calculation**
 
-The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substitution of the **Bit-Nat Equivalence** <Ref id="4.4.1" label="§4.4.1" /> yields:
+The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substitution of the **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> yields:
 
 $$
 \Delta F_{\text{del}} = -\frac{\ln 2}{4} - (\ln 2)(-\ln 2) = -\frac{\ln 2}{4} + (\ln 2)^2
@@ -11286,7 +11577,7 @@ $$
 \lim_{\epsilon_{geo} \to 0} \mathbb{P}_{\text{del}} = \exp(-\ln 2) = \frac{1}{2}
 $$
 
-This limit follows from the Boltzmann factor for one-bit erasure $\exp(-\Delta S) = 1/2$ (**Entropy of Closure** <Ref id="4.4.2" label="§4.4.2" />).
+This limit follows from the Boltzmann factor for one-bit erasure $\exp(-\Delta S) = 1/2$ (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />).
 
 **V. Conclusion**
 
@@ -11294,7 +11585,7 @@ The detailed balance at criticality dictates that the reverse rate is exactly ha
 
 Q.E.D.
 
-### 4.5.6.2 Commentary: Detailed Balance {#4.5.6.2}
+### 4.5.7.2 Commentary: Detailed Balance {#4.5.7.2}
 
 :::info[**Engine of Growth**]
 :::
@@ -11302,6 +11593,31 @@ Q.E.D.
 The fundamental asymmetry between Addition ($1.0$) and Deletion ($0.5$) constitutes the thermodynamic engine of the universe. It creates a net flow towards structure, a "pressure" to evolve. The universe builds twice as fast as it decays provided the local stress is low.
 
 Equilibrium is only reached when the friction from rising density ($\mu$) suppresses the addition rate enough to match the deletions or when catalysis ($\lambda_{cat}$) boosts the deletion rate to match the additions. This dynamic balance defines the emergent geometry. The "shape" of space is effectively the surface where these two opposing forces, the drive to connect and the drive to simplify, reach a standoff. This is why the universe is not a static crystal but a dynamic foam, constantly seething with creation and destruction even at equilibrium.
+
+---
+
+### 4.5.8 Proof: Universal Constructor {#4.5.8}
+
+:::tip[**Synthesis of Transition Probabilities and Feedback Loops in Constructor Dynamics**]
+:::
+
+**I. Stochastic Update Map**
+
+Let the annotated graph $(G, \sigma)$ evolve stochastically under the constructor map $\mathcal{R}$. The transition probabilities decompose into a base thermodynamic factor and a local syndrome-response factor.
+
+**II. Base Probability Calibration**
+
+The base thermodynamic probabilities are calibrated at the critical vacuum temperature. Edge additions occur barrierless with unitary probability $\mathbb{P}_{\text{acc,thermo}} = 1$ according to **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />. Edge deletions face an entropic barrier, yielding a half-unit probability $\mathbb{P}_{\text{del,thermo}} = 1/2$ according to **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
+
+**III. Dynamic Modulation**
+
+The base probabilities are modulated by the Catalytic Tension Factor defined in **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Adding edges is damped exponentially by local stress, whereas deleting edges is catalyzed linearly by syndrome resolution.
+
+**IV. Convergence to Criticality**
+
+The interplay between the unitary generative drive and the half-unit pruning force establishes a self-regulating feedback cycle. We conclude that the Universal Constructor stochastically evolves the causal graph while maintaining dynamic criticality.
+
+Q.E.D.
 
 ---
 
@@ -11347,48 +11663,49 @@ The component maps are formally defined as follows:
 3.  **Measurement Projection ($\mathcal{M}$):** The non-linear projection map that annihilates support on states violating the **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> and re-normalizes the remaining measure.
 4.  **Sampling Collapse ($\mathcal{S}$):** The stochastic selection operator that maps a valid probability measure $\rho$ to a Dirac delta measure $\delta_{G_{next}}$ centered on a single state $G_{next}$ sampled from $\rho$.
 
-### 4.6.1.1 Commentary: Anatomy of the Tick
+### 4.6.1.1 Commentary: Anatomy of the Tick {#4.6.1.1}
 
 :::info[**Decomposition separating the logical stages of time evolution into distinct physical roles**]
 :::
 
-The "Tick" of logical time is not a monolithic instant: it is a structured process composed of four distinct physical roles, each necessary for the coherent advancement of reality.
+The "Tick" of logical time is a structured process composed of four distinct physical roles, each necessary for the coherent advancement of reality.
 
 * **Awareness (Pre-Computation):** This step transforms the static topology into a self-referential state. By embedding the syndrome $\sigma_G$ into the object, it ensures that the subsequent dynamics are driven by the graph's internal diagnostics rather than arbitrary external parameters. The universe must "know" itself before it can change itself.
 * **Rewrite (Exploration):** This step generates the superposition of possible futures. It represents the "quantum" potentiality of the system, where the convolution of local probabilities creates a weighted ensemble of candidate histories. It is the generation of the "Many Worlds" of the next moment.
 * **Measurement (Selection):** This step enforces the "Laws of Physics" as a hard filter. While the Universal Constructor $\mathcal{R}$ attempts to prevent obvious causal paradoxes locally via the `pre_check_aec` filter, it is subject to local horizon blindness (the Horizon Problem) in a concurrent or distributed setting. The Measurement Projection $\mathcal{M}$ acts as the global, non-unitary ontological filter: it audits the provisional superposition of all kinematically proposed futures, evaluates their global stabilizer syndromes, and strictly annihilates the amplitude of any state containing a non-local causal violation or loop contradiction, renormalizing the remaining valid measure. This ensures that global consistency is enforced as a hard physical law, not just a statistical likelihood.
 * **Sampling (Actualization):** This step introduces the fundamental irreversibility. By collapsing the ensemble to a single history, it generates entropy and defines the arrow of time. It converts information (possibility) into reality (structure), effectively "burning" the alternative futures to fuel the forward motion of the present.
 
-### 4.6.1.2 Diagram: Evolution Cycle {#4.6.1.2}
+### 4.6.2 Theorem: Emergent Dynamics {#4.6.2}
 
-:::note[**Visual Flowchart of the Four-Stage Evolution Process**]
+:::info[**Emergence of Born-Rule Probabilities and Entropic Arrow from the Evolution Operator**]
 :::
 
-```
-THE EVOLUTION OPERATOR U (The 'Tick')
--------------------------------------
- 1. AWARENESS (R_T)
-    [ G ] -> [ G, (\sigma, \sigma_G) ]
-                  |
-                  v
- 2. PROBABILISTIC ACTION (R)
-    [ Calculate \mathbb{P}_{acc} = \chi(\sigma_G) * \mathbb{P}_{thermo} ]
-    [ Generate Distribution over G' (Convolution) ]
-                  |
-                  v
- 3. MEASUREMENT (M = \epsilon o R_T)
-    [ Compute \sigma_G' for each G' ]
-    [ PROJECT: If \sigma_G' == 0 (Paradox) -> Discard ]
-    [ RENORMALIZE valid probabilities ]
-                  |
-                  v
- 4. COLLAPSE (S)
-    [ Sample one valid G' from remaining distribution ]
+Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures over causal graphs. Then the transition probabilities of $\mathcal{U}$ are governed by Born-like product-rule amplitudes, and the sequential application of projection and collapse induces a strictly positive entropy production $\Delta S_{tick} > 0$ that establishes a macroscopic thermodynamic arrow of time.
+
+### 4.6.2.1 Commentary: Argument Outline {#4.6.2.1}
+
+:::tip[**Structure of the Emergent Dynamics Argument via Born-Rule Probabilities and the Thermodynamic Arrow of Time**]
+:::
+
+The proof proceeds via Direct Construction, synthesizing the local independence of rewrite events with the information-theoretic irreversibility of projection and sampling.
+
+```text
+• 4.6.2 Theorem: Emergent Dynamics [by construction]
+├── 4.6.3 Lemma: Born Rule
+│   ├── 4.6.3.1 Proof: Born Rule
+│   ├── 4.6.3.2 Calculation: Amplitude Normalization
+│   └── 4.6.3.3 Commentary: Classical Amplitudes
+├── 4.6.4 Lemma: Thermodynamic Arrow
+│   ├── 4.6.4.1 Proof: Thermodynamic Arrow
+│   ├── 4.6.4.2 Calculation: Irreversibility Check
+│   ├── 4.6.4.3 Commentary: Macroscopic Irreversibility
+│   └── 4.6.4.4 Diagram: Thermodynamic Arrow
+└── 4.6.5 Proof: Emergent Dynamics
 ```
 
 ---
 
-### 4.6.2 Theorem: Born Rule {#4.6.2}
+### 4.6.3 Lemma: Born Rule {#4.6.3}
 
 :::info[**Emergence of Product-Rule Transition Probabilities from Local Independence**]
 :::
@@ -11401,7 +11718,7 @@ $$
 
 Moreover, in the vacuum limit where stress is minimal and the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" /> satisfies $\chi \to 1$, this relation converges asymptotically to the binary scaling law $\mathbb{P} \propto (1/2)^{N_{\text{del}}}$, with the probability amplitude inversely proportional to the informational cost of erasure [**(Zurek, 2003)**](/monograph/appendices/a-references#A.73).
 
-### 4.6.2.1 Proof: Born Rule {#4.6.2.1}
+### 4.6.3.1 Proof: Born Rule {#4.6.3.1}
 
 :::tip[**Derivation of Born-Like Probabilities from the Convolution of Local Rates**]
 :::
@@ -11424,8 +11741,8 @@ $$
 
 The set $U$ partitions into additions ($A$, size $k$) and deletions ($D$, size $m$).
 
-1.  **Additions:** The base rate $\mathbb{P}_{\text{add}} = 1$ follows from **The Addition Probability** <Ref id="4.5.4" label="§4.5.4" />.
-2.  **Deletions:** The base rate $\mathbb{P}_{\text{del}} = 1/2$ follows from **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+1.  **Additions:** The base rate $\mathbb{P}_{\text{add}} = 1$ follows from **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
+2.  **Deletions:** The base rate $\mathbb{P}_{\text{del}} = 1/2$ follows from **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **III. Modulation Factor**
 
@@ -11461,12 +11778,12 @@ We conclude that the probability amplitude decays exponentially with the informa
 
 Q.E.D.
 
-### 4.6.2.2 Calculation: Amplitude Normalization {#4.6.2.2}
+### 4.6.3.2 Calculation: Amplitude Normalization {#4.6.3.2}
 
 :::note[**Computational Check of Product-Rule Transitions with Normalization**]
 :::
 
-Computational verification of the emergent probability weights established by **The Born Rule** <Ref id="4.6.2.1" label="§4.6.2.1" /> is based on the following protocols:
+Computational verification of the emergent probability weights established by **Born Rule** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
 
 1.  **Path Definition:** The algorithm defines three distinct transition paths for a toy ensemble: two symmetric single-addition paths (Paths A and B) and one mixed path involving two additions and one deletion (Path C).
 2.  **Weight Assignment:** The protocol calculates the raw thermodynamic weight for each path in the vacuum limit ($\chi=1$), assigning a penalty factor of $0.5$ for deletion events.
@@ -11489,7 +11806,7 @@ W_A = transition_weight(n_add=1, n_del=0)
 # Path B: single addition (e.g., add D→B) – symmetric to A
 W_B = transition_weight(n_add=1, n_del=0)
 
-# Path C: two additions + one deletion (e.g., add C→A, add D→B, then delete one edge)
+# Path C: two additions + one deletion (e.g., add C→A, add D→B, then delete one Participant edge)
 W_C = transition_weight(n_add=2, n_del=1)
 
 # Full ensemble of valid successors (two symmetric single-add paths + one mixed path)
@@ -11530,9 +11847,9 @@ Normalized probabilities:
   Exact match with ½ deletion penalty:     True
 ```
 
-The simulation confirms that the normalized probability of the single-addition path is $0.400$, while the mixed path (two additions + one deletion) is $0.200$. The ratio $P_C / P_A = 0.50$ confirms that the deletion event introduces an exact penalty factor of $1/2$. This validates the transition probability model **Born Rule** <Ref id="4.6.2" label="§4.6.2" />, demonstrating that probabilities follow the product rule of their constituent micro-events, reproducing the quadratic probability structure from pure counting statistics.
+The simulation confirms that the normalized probability of the single-addition path is $0.400$, while the mixed path (two additions + one deletion) is $0.200$. The ratio $P_C / P_A = 0.50$ confirms that the deletion event introduces an exact penalty factor of $1/2$. This validates the transition probability model **Born Rule** <Ref id="4.6.3" label="§4.6.3" />, demonstrating that probabilities follow the product rule of their constituent micro-events, reproducing the quadratic probability structure from pure counting statistics.
 
-### 4.6.2.3 Commentary: Classical Amplitudes {#4.6.2.3}
+### 4.6.3.3 Commentary: Classical Amplitudes {#4.6.3.3}
 
 :::info[**Information as the Basis of Probability**]
 :::
@@ -11543,14 +11860,14 @@ Every deletion operation reduces the phase space volume of the local neighborhoo
 
 ---
 
-### 4.6.3 Theorem: Thermodynamic Arrow {#4.6.3}
+### 4.6.4 Lemma: Thermodynamic Arrow {#4.6.4}
 
 :::info[**Irreversibility and entropy production in the evolution operator**]
 :::
 
-Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is strictly positive ($\Delta S_{tick} > 0$), scaling as $dS/dt \propto (N_{\text{add}} - N_{\text{del}}) \ln 2$. Moreover, a global arrow of time follows from the information-theoretic asymmetry between creating a bit (cost $\approx 0$) and destroying a bit (cost $\approx \ln 2$) [(Bennett, 1982)](/monograph/appendices/a-references#A.12).
+Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is strictly positive ($\Delta S_{tick} > 0$), scaling as $dS/dt \propto (N_{\text{add}} - N_{\text{del}}) \ln 2$; moreover, a global arrow of time follows from the information-theoretic asymmetry between creating a bit (cost $\approx 0$) and destroying a bit (cost $\approx \ln 2$) [**(Bennett, 1982)**](/monograph/appendices/a-references#A.12).
 
-### 4.6.3.1 Proof: Thermodynamic Arrow {#4.6.3.1}
+### 4.6.4.1 Proof: Thermodynamic Arrow {#4.6.4.1}
 
 :::tip[**Decomposition into Non-invertible Components**]
 :::
@@ -11611,12 +11928,21 @@ The total transition $G \to G'$ is mathematically non-invertible. We conclude th
 
 Q.E.D.
 
-### 4.6.3.2 Calculation: Irreversibility Check {#4.6.3.2}
+### 4.6.4.2 Commentary: Macroscopic Irreversibility {#4.6.4.2}
+
+:::info[**Thermodynamic Arrow as the Result of Global Projection and Collapse**]
+:::
+
+We analyze the thermodynamic arrow of time. The non-invertibility of the evolution operator establishes macroscopic irreversibility as a fundamental feature of the dynamics. While the microscopic rewrite proposals are stochastically symmetric, the measurement and collapse operators introduce a projection that loses phase information. This projection is the source of entropy production, driving the universe forward along a well-defined thermodynamic arrow.
+
+---
+
+### 4.6.4.3 Calculation: Irreversibility Check {#4.6.4.3}
 
 :::note[**Computational Verification of Entropy Loss in Projection and Sampling**]
 :::
 
-Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **The Thermodynamic Arrow** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
+Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **Thermodynamic Arrow** <Ref id="4.6.4.1" label="§4.6.4.1" /> is based on the following protocols:
 
 1.  **Stochastic Initialization:** The algorithm generates a provisional probability distribution with Gaussian noise to simulate realistic branching fluctuations in the pre-projected state.
 2.  **Operator Application:** The protocol applies the Projection $\mathcal{P}$ (discarding invalid paths) and Sampling $\mathcal{S}$ (collapsing to a single history) operations.
@@ -11689,7 +12015,8 @@ Strictly positive ΔS:       True
 
 The simulation yields a strictly positive average entropy production of $1.49976$ bits per tick. The minimum observed $\Delta S$ ($1.48$ bits) confirms that no individual trial violates the Second Law. This positive entropy production verifies the irreversible nature of the operator $\mathcal{U}$: the collapse of the wavefunction (Sampling) and the enforcement of consistency (Projection) are information-destroying processes that define the arrow of time.
 
-### 4.6.3.3 Diagram: Thermodynamic Arrow {#4.6.3.3}
+
+### 4.6.4.4 Diagram: Thermodynamic Arrow {#4.6.4.4}
 
 :::note[**Visualization of Irreversibility via Information Loss in Projection**]
 :::
@@ -11715,6 +12042,31 @@ The simulation yields a strictly positive average entropy production of $1.49976
       RESULT: Information is lost in the projection M.
               Entropy increases. Time is directed.
 ```
+
+---
+
+### 4.6.5 Proof: Emergent Dynamics {#4.6.5}
+
+:::tip[**Synthesis of Transition Probabilities and Entropy Production in the Evolution Cycle**]
+:::
+
+**I. Composite Map Formulation**
+
+Let the evolution operator $\mathcal{U}$ compose the awareness, constructor, measurement, and collapse maps. The transition probability for any discrete step $G \to G'$ is convolved from local micro-events.
+
+**II. Born-Rule Probability Scaling**
+
+Under the disjoint topological footprints of the vacuum limit, the joint probability factorizes. The resulting transition weights scale exponentially with the count of deleted geometric quanta as established in **Born Rule** <Ref id="4.6.3" label="§4.6.3" />.
+
+**III. Entropic Asymmetry**
+
+Each application of the projection map $\mathcal{M}$ and sampling map $\mathcal{S}$ erases state information. This non-unitary reduction of the density matrix produces a strictly positive local entropy change $\Delta S_{tick} > 0$ as established in **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />.
+
+**IV. Synthesis and Irreversibility**
+
+By combining the Born-rule transition weights with the strictly positive entropy production of the projection-collapse cycle, we conclude that the evolution operator $\mathcal{U}$ generates a macroscopically directed, causality-preserving sequence of states.
+
+Q.E.D.
 
 ---
 
@@ -11767,14 +12119,14 @@ This runtime transforms the static tree into a living, breathing process. Howeve
 | $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.5](/monograph/rules/dynamics/4.5/#4.5.5) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.2](/monograph/rules/dynamics/4.6/#4.6.2) |
+| $\mathbb{P}(G' \vert G)$ | Transition Probability (Born Rule) | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 
 ---
 
@@ -11811,31 +12163,7 @@ We resolve this foundational crisis by establishing the spatial cluster decompos
 
 ---
 
-### 5.1.1 Definition: Spatial Cluster Decomposition {#5.1.1}
-
-:::tip[**Exponential Decay of Mutual Information within Disjoint Subregions**]
-:::
-
-The **Spatial Cluster Decomposition** principle asserts that the statistical properties of the causal graph factorize over sufficient distances. Let $R_A$ and $R_B$ be disjoint subregions of the graph $G$, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
-
-$$
-I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
-$$
-
-where $\xi$ is the finite correlation length derived by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> and $K$ is a normalization constant. In the asymptotic limit $d(R_A, R_B) \gg \xi$, the joint configuration space factorizes as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$.
-
-### 5.1.1.1 Commentary: Defining "Volume" via Correlation {#5.1.1.1}
-
-:::info[**Emergence of Additivity from Causal Limits**]
-:::
-
-The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.1" label="§5.1.1" /> formalizes the concept of "separation" within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined *dynamically* via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
-
-The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a "causal patch" or "volume element." Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
-
----
-
-### 5.1.2 Theorem: Extensive Entropy {#5.1.2}
+### 5.1.1 Theorem: Extensive Entropy {#5.1.1}
 
 :::info[**Linear Scaling of the Configuration Space with Vertex Count**]
 :::
@@ -11846,20 +12174,95 @@ $$
 S(N) = c \cdot N + o(N)
 $$
 
-The coefficient $c > 0$ is the **Specific Entropy per Event**, a universal constant determined by the local constraint density (bounded degree and acyclicity). The term $o(N)$ represents sub-extensive corrections that vanish in the thermodynamic limit $\lim_{N \to \infty} S(N)/N = c$. This linearity confirms that the vacuum is a thermodynamically stable phase of matter.
+where the coefficient $c > 0$ is the **Specific Entropy per Event** determined by local constraint density, and $o(N)$ represents sub-extensive corrections that vanish in the thermodynamic limit $\lim_{N \to \infty} S(N)/N = c$.
 
-### 5.1.2.1 Commentary: Logic of Extensivity {#5.1.2.1}
+### 5.1.1.1 Commentary: Argument Outline {#5.1.1.1}
+
+:::tip[**Structure of the Extensive Entropy Derivation via Local Boundedness, Cluster Decomposition, and Linear Scaling**]
+:::
+
+The proof proceeds via Direct Construction, partitioning the global configuration space into independent local volumes to establish a well-defined thermodynamic limit.
+
+```text
+• 5.1.1 Theorem: Extensive Entropy [by partition]
+├── 5.1.2 Lemma: Spatial Cluster Decomposition
+│   ├── 5.1.2.1 Proof: Spatial Cluster Decomposition
+│   └── 5.1.2.2 Commentary: Defining "Volume" via Correlation
+├── 5.1.3 Lemma: Correlation Decay
+│   ├── 5.1.3.1 Proof: Correlation Decay
+│   └── 5.1.3.2 Commentary: Role of Acyclicity and Sparsity
+└── 5.1.4 Proof: Extensive Entropy
+```
+
+### 5.1.1.2 Commentary: Logic of Extensivity {#5.1.1.2}
 
 :::tip[**Transition from Combinatorial Counting to Physical Reservoirs**]
 :::
 
 The argument establishes the thermodynamic stability of the vacuum by decomposing the global configuration space into additive local contributions. This follows the foundational principles of statistical mechanics where extensivity is a prerequisite for a well-defined thermodynamic limit. <Cite id="A.10" label="(Bekenstein, 1981)" /> established that the entropy of any bounded system is fundamentally limited by its energy and size (the Bekenstein bound), implying that information capacity scales with the physical dimensions of the system. In our graph-theoretic context, the linear scaling of entropy $S \propto N$ validates that the causal graph behaves as a standard extensive system, akin to a gas or a lattice spin system, rather than a holographic surface or a system with long-range interactions that would lead to super-extensive scaling.
 
-1.  **The Finite Basis (Local Boundedness):** The argument first addresses the definition of entropy configuration counting ($S = \ln \Omega$). It invokes **Axiom 1 (Bounded Degree)** and **Axiom 3 (Acyclicity)** to prove that the number of possible directed graphs on any finite set of vertices is strictly bounded. This guarantees that no local singularity can drive the entropy to infinity.
+1.  **The Finite Basis (Local Boundedness):** We invoke Bounded Degree and Acyclicity to prove that the number of possible directed graphs on any finite set of vertices is strictly bounded. This guarantees that no local singularity can drive the entropy to infinity.
+2.  **The Decoupling (Cluster Decomposition):** We apply the **Spatial Cluster Decomposition** lemma <Ref id="5.1.2" label="§5.1.2" /> to partition the graph into $M \approx N / V_\xi$ quasi-independent subregions, where $V_\xi$ is the correlation volume. Explicit bounds on Mutual Information demonstrate that boundary corrections scale sub-extensively ($O(\sqrt{N})$), becoming negligible in the limit.
+3.  **The Scaling (Synthesis):** Finally, we sum the entropies of these independent regions. Since each region contributes a finite, constant amount of entropy determined by local constraints, the total entropy scales linearly: $S(N) = c \cdot N$. This confirms the existence of a well-defined **Specific Entropy per Event** ($c > 0$), validating the vacuum as a stable thermodynamic phase.
 
-2.  **The Decoupling (Cluster Decomposition):** The argument applies the **Spatial Cluster Decomposition** principle. It invokes the **Correlation Decay Lemma** to partition the graph into $M \approx N / V_\xi$ quasi-independent subregions, where $V_\xi$ is the correlation volume. Explicit bounds on Mutual Information demonstrate that boundary corrections scale sub-extensively ($O(\sqrt{N})$), becoming negligible in the limit.
+---
 
-3.  **The Scaling (Synthesis):** Finally, the proof sums the entropies of these independent regions. Since each region contributes a finite, constant amount of entropy determined by local constraints, the total entropy scales linearly: $S(N) = c \cdot N$. This confirms the existence of a well-defined **Specific Entropy per Event** ($c > 0$), validating the vacuum as a stable thermodynamic phase.
+### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
+
+:::info[**Exponential Decay of Mutual Information within Disjoint Subregions**]
+:::
+
+Let $R_A$ and $R_B$ be disjoint subregions of a causal graph $G_t$ at the homeostatic fixed point, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
+
+$$
+I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
+$$
+
+where $\xi$ is the finite correlation length derived by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> and $K$ is a normalization constant, ensuring that the joint configuration space factorizes asymptotically as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ in the limit $d(R_A, R_B) \gg \xi$.
+
+### 5.1.2.1 Proof: Spatial Cluster Decomposition {#5.1.2.1}
+
+:::tip[**Derivation of Quasi-Independence from Correlation Decay**]
+:::
+
+**I. Mutual Information Bound**
+
+Let $R_A$ and $R_B$ be disjoint subregions of the causal graph separated by a geodesic distance $d = d(R_A, R_B)$. The mutual information $I(R_A; R_B)$ between their configuration states is bounded by the sum of pairwise connected correlation functions between vertices in $R_A$ and $R_B$:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} \sum_{u \in R_A} \sum_{v \in R_B} \langle O_u O_v \rangle_c^2
+$$
+
+**II. Exponential Decay Insertion**
+
+We invoke **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> to bound the pairwise connected correlation functions. Substituting the exponential envelope $\langle O_u O_v \rangle_c \le C \exp\left(-\frac{d(u, v)}{\xi}\right)$ into the double sum yields:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} C^2 \sum_{u \in R_A} \sum_{v \in R_B} \exp\left(-\frac{2 d(u, v)}{\xi}\right)
+$$
+
+**III. Geodesic Distance Minimization**
+
+Using the triangle inequality, the geodesic distance satisfies $d(u, v) \ge d(R_A, R_B) = d$. The double sum is bounded by the product of the subregion volumes scaled by the minimum distance decay:
+
+$$
+I(R_A; R_B) \le \frac{1}{2} C^2 |R_A| |R_B| \exp\left(-\frac{2d}{\xi}\right)
+$$
+
+**IV. Conclusion**
+
+Defining $K = \frac{1}{2} C^2 |R_A| |R_B|$, the mutual information is bounded by $K \exp\left(-\frac{2d}{\xi}\right) \le K \exp\left(-\frac{d}{\xi}\right)$. This establishes quasi-independence, and the factorization of the joint configuration space $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ follows directly in the limit $d \gg \xi$.
+
+Q.E.D.
+
+### 5.1.2.2 Commentary: Defining "Volume" via Correlation {#5.1.2.2}
+
+:::info[**Emergence of Additivity from Causal Limits**]
+:::
+
+The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" /> formalizes the concept of "separation" within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined *dynamically* via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
+
+The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a "causal patch" or "volume element." Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
 
 ---
 
@@ -11961,7 +12364,7 @@ The prohibition of directed cycles forces causal influence to propagate unidirec
 
 **I. Volume Decomposition**
 
-Partition the graph $G_N$ into a set of $M$ quasi-independent sub-volumes $\{V_1, V_2, \dots, V_M\}$.
+Partition the graph $G_N$ into a set of $M$ sub-volumes $\{V_1, V_2, \dots, V_M\}$ satisfying **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />.
 The characteristic size of each volume is set by the correlation length $\xi$ derived via **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />.
 
 $$
@@ -12179,16 +12582,16 @@ The Master Equation functions as the balance sheet of this competition. Unlike s
 :::info[**Establishment of the Fundamental Equation of Geometrogenesis**]
 :::
 
-The time evolution of the normalized 3-cycle density $\rho(t) = N_3(t) / N$ is governed by the nonlinear differential equation designated as the **Fundamental Equation of Geometrogenesis**:
+Let the time evolution of the normalized 3-cycle density $\rho(t) = N_3(t) / N$ be governed by the nonlinear ordinary differential equation designated as the **Fundamental Equation of Geometrogenesis**:
 
 $$
 \frac{d\rho}{dt} = (\Lambda + 9\rho^2) e^{-6\mu\rho} - 0.5\rho (1 + 6\lambda_{cat}\rho)
 $$
 
-The terms are defined as follows:
-* **$\Lambda$:** The Vacuum Drive, which is the baseline osmotic pressure derived via **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />.
-* **$9\rho^2$:** The combinatorial density of compliant 2-path precursors derived via **Geometric Autocatalysis ($J_{auto}$)**  <Ref id="5.2.4" label="§5.2.4" />.
-* **$e^{-6\mu\rho}$:** The frictional suppression factor derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
+where the terms are defined as follows:
+* **$\Lambda$:** The Vacuum Drive, which is the baseline osmotic pressure derived via **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />;
+* **$9\rho^2$:** The combinatorial density of compliant 2-path precursors derived via **Geometric Autocatalysis ($J_{auto}$)**  <Ref id="5.2.4" label="§5.2.4" />;
+* **$e^{-6\mu\rho}$:** The frictional suppression factor derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />;
 * **$0.5\rho(1 + 6\lambda_{cat}\rho)$:** The entropic decay rate derived via **Entropic & Catalytic Decay ($J_{out}$)**  <Ref id="5.2.6" label="§5.2.6" />.
 
 ### 5.2.2.1 Commentary: Anatomy of an Equation
@@ -12687,7 +13090,7 @@ $$
 
 **I. Setup and Assumptions**
 
-Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.6" label="§4.5.6" />.
+Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **II. Linear Component Derivation**
 
@@ -12828,7 +13231,7 @@ This induced instability is rooted in the physical sharing of vertex and edge ca
 
 This collective feedback loop functions as a crucial homeostatic mechanism for the expansion of the cosmos. While the quadratic driver of geometric autocatalysis accelerates connectivity in sparse regions, the stress-deletion coupling imposes an elegant quadratic penalty on localized packing. The quadratic term $3\lambda_{\text{cat}}\rho^2$ scales with the square of the density, ensuring that highly congested clusters experience an immediate, non-linear spike in deletion probability. Highly excited regions effectively melt under the weight of their own internal tension, shedding superfluous links to preserve the underlying sparsity of the vacuum. By coupling the erasure rate directly to the neighborhood crowding, the universe establishes a self-correcting structural balance, preventing the relational plasma from locking into disordered, high-density topological configurations and maintaining the smooth, open granularity required for macroscopic geometry. Crucially, the local interaction volume $V_{\text{int}} = 6$ constitutes a rigid topological invariant of the allowed task space $\mathfrak{T}$ under **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />, representing the $3 \text{ vertices} \times 2 \text{ directional ports}$ required to audit the boundary of a directed 3-cycle closure in the regular Bethe vacuum, proving that the vacuum drive $\Lambda = 1/64$ (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />) is a derived geometric consequence rather than an arbitrary fine-tuned parameter.
 
-### 5.2.7 Proof: Master Equation {#5.2.7}
+### 5.2.7 Proof: Macroscopic Evolution {#5.2.7}
 
 :::tip[**Formal Derivation of the Master Equation via Thermodynamic Flux Assembly**]
 :::
@@ -12841,24 +13244,22 @@ $$
 \frac{d\rho}{dt} = J_{\text{in}}(\rho) - J_{\text{out}}(\rho)
 $$
 
-where $J_{\text{in}}(\rho)$ constitutes the total creation flux and $J_{\text{out}}(\rho)$ constitutes the total deletion flux.
+where $J_{\text{in}}(\rho)$ constitutes the total creation flux and $J_{\text{out}}(\rho)$ constitutes the total deletion flux. The baseline spontaneous loop creation rate is initiated from the non-vanishing **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, establishing a background flux constant $\Lambda \approx 0.0156$.
 
 **II. The Flux Components**
 
-1. **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> establishes the baseline spontaneous loop closure probability at zero geometric density, yielding the background flux constant $\Lambda \approx 0.0156$.
-2. **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> quantifies the induced loop creation flux scaling with the density of open 2-paths, establishing the non-linear growth component $9\rho^2$.
-3. **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> enforces the exponential damping of update acceptance rates due to steric hindrance, imposing the suppression factor $e^{-6\mu\rho}$ where $\mu = \frac{1}{\sqrt{2\pi}}$.
-4. **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" /> aggregates the spontaneous informational evaporation and quadratic catalytic stress terms, establishing the total deletion current $0.5\rho(1 + 6\lambda_{\text{cat}}\rho)$ where $\lambda_{\text{cat}} = e - 1$.
+1. **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> quantifies the induced loop creation flux scaling with the density of open 2-paths, establishing the non-linear growth component $9\rho^2$.
+2. **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" /> aggregates the spontaneous informational evaporation and quadratic catalytic stress terms, establishing the total deletion current $0.5\rho(1 + 6\lambda_{\text{cat}}\rho)$ where $\lambda_{\text{cat}} = e - 1$.
 
 **III. Flux Assembly**
 
-The total creation flux $J_{\text{in}}(\rho)$ is constructed by shifting the baseline vacuum permittivity via the quadratic autocatalytic driver, then multiplying by the exponential governor of frictional suppression:
+The total creation flux $J_{\text{in}}(\rho)$ is constructed by shifting the baseline vacuum permittivity via the quadratic autocatalytic driver, then multiplying by the exponential governor of acceptor acceptance rates derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />:
 
 $$
 J_{\text{in}}(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}
 $$
 
-Substituting the creation flux $J_{\text{in}}(\rho)$ and the total deletion current $J_{\text{out}}(\rho)$ into the net topological current expression yields the non-linear ordinary differential equation:
+where $\mu = \frac{1}{\sqrt{2\pi}}$. Substituting the creation flux $J_{\text{in}}(\rho)$ and the total deletion current $J_{\text{out}}(\rho)$ into the net topological current expression yields the non-linear ordinary differential equation:
 
 $$
 \frac{d\rho}{dt} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho(1 + 6\lambda_{\text{cat}}\rho)
@@ -13026,7 +13427,7 @@ Let $\rho(t)$ denote the time-dependent cycle density of a causal graph simulati
 The Region of Physical Viability (RPV) represents the precise thermodynamic phase of matter compatible with the emergence of spatially extended geometry. The constraints formalized in Section $5.3.1$ protect the universe against two distinct and catastrophic failure modes inherent to random graph processes, each representing a collapse of the manifold structure.
 
 * **Over-Damping ($\mu \gg 1$):** If friction is excessive, the "Acyclic Pre-Check" rejects nearly all additions due to the high probability of finding conflicting paths in even moderately dense neighborhoods. The graph remains a tree (Hausdorff Dimension $\approx \infty$ and Volume $\approx 0$), failing the Ignition condition. This is a universe that freezes before it can begin, trapping itself in a topological stasis where no closed loops (and thus no geometry) can form.
-* **Runaway Densification ($\mu \ll 1$):** If friction is insufficient, the graph undergoes a percolation phase transition to a "Small World" network where every node connects to every other node with a path length of $\approx \log N$. This violates Sparsity, effectively destroying the **Spatial Cluster Decomposition** principle <Ref id="5.1.1" label="§5.1.1" /> required for thermodynamics. In this scenario, the concept of "locality" vanishes and the universe collapses into a dimensionless singularity of infinite connectivity.
+* **Runaway Densification ($\mu \ll 1$):** If friction is insufficient, the graph undergoes a percolation phase transition to a "Small World" network where every node connects to every other node with a path length of $\approx \log N$. This violates Sparsity, effectively destroying the **Spatial Cluster Decomposition** principle <Ref id="5.1.2" label="§5.1.2" /> required for thermodynamics. In this scenario, the concept of "locality" vanishes and the universe collapses into a dimensionless singularity of infinite connectivity.
 
 The channel defined by $0 < \rho < 0.10$ represents the "Goldilocks Zone": the only regime where the graph supports local excitations (particles) without collapsing into a singularity or dissolving into unconnected noise. It is a state of "critical connectivity" where structure is rich enough to be interesting but sparse enough to be spatial.
 
@@ -13039,7 +13440,7 @@ The channel defined by $0 < \rho < 0.10$ represents the "Goldilocks Zone": the o
 
 The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the exhaustive Monte Carlo exploration of the $(\mu, \lambda_{\text{cat}})$ phase space. The protocol consists of four strictly ordered phases:
 
-1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />.
+1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 2.  **Ensemble Initialization:** For each grid point, an ensemble of 100 independent trajectories is instantiated. Each trajectory is initialized from a **Zero-Point Information (ZPI) Vacuum**, defined as a finite, rooted, outward-directed Bethe fragment ($N \approx 100$) exhibiting trivalent coordination at the root and bivalent coordination at internal nodes.
 3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ by **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />, creating the first 3-Cycle ($H=1$) and transforming the inert vacuum into an active initial state.
 4.  **Evolution and Aggregation:** The system is advanced via 1500 iterative applications of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, denoted $\mathcal{U}$. Observables (specifically $N_3$ and $\rho_3$) are recorded at each tick, and statistical moments (mean, median, skew) are aggregated across the ensemble.
@@ -13427,7 +13828,7 @@ which implies $\lambda_{\text{cat}} < 3$.
 
 **III. Evaluation of the Physical Parameter**
 
-Substitution of the theoretical value established by **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" /> yields the relation:
+Substitution of the theoretical value established by **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> yields the relation:
 
 $$
 \lambda_{\text{cat}} = e - 1 \approx 1.718
@@ -13578,15 +13979,50 @@ We establish the geometric validity of the vacuum by proving five interlocking l
 :::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
 :::
 
-The sequence of discrete causal graphs $\{G_t\}$ generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. The graph sequence exhibits the conjunction of the following invariants:
-1.  **Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
-2.  **Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />.
-3.  **Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />.
-4.  **Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops, as established in **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />.
-5.  **Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow, as proved in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
-6.  **Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
+Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfy the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit, where the graph sequence exhibits the conjunction of the following invariants:
+*   **(i) Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />;
+*   **(ii) Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />;
+*   **(iii) Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />;
+*   **(iv) Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops, as established in **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />;
+*   **(v) Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow, as proved in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />;
+*   **(vi) Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
 
-### 5.5.1.1 Commentary: Logic of Geometric Hypotheses {#5.5.1.1}
+### 5.5.1.1 Commentary: Argument Outline {#5.5.1.1}
+
+:::tip[**Structure of the Geometric Well-Posedness Argument via Metric Limit Convergence**]
+:::
+
+The proof proceeds via Direct Construction, establishing that the discrete poset relations converge to a continuous Lorentzian geometry under the causal Gromov-Hausdorff topology.
+
+```text
+• 5.5.1 Theorem: Geometric Well-Posedness [by limits]
+├── 5.5.2 Lemma: Strict Locality
+│   ├── 5.5.2.1 Proof: Strict Locality
+│   └── 5.5.2.2 Commentary: Causal Horizon
+├── 5.5.3 Lemma: Bounded Degree
+│   ├── 5.5.3.1 Proof: Bounded Degree
+│   └── 5.5.3.2 Commentary: Limits of Connectivity
+├── 5.5.4 Lemma: Uniform Curvature Bound
+│   ├── 5.5.4.1 Proof: Uniform Curvature Bound
+│   └── 5.5.4.2 Commentary: Preventing Singularities
+├── 5.5.5 Lemma: Correlation Decay
+│   ├── 5.5.5.1 Proof: Correlation Decay
+│   ├── 5.5.5.2 Corollary: Controlled Fluctuations
+│   ├── 5.5.5.3 Proof: Correlation Decay
+│   └── 5.5.5.4 Commentary: Self-Averaging Homogeneity
+├── 5.5.6 Lemma: Manifold Combinatorics
+│   ├── 5.5.6.1 Proof: Manifold Combinatorics
+│   └── 5.5.6.2 Commentary: Vanishing of Non-Locality
+├── 5.5.7 Lemma: Ahlfors 4-Regularity
+│   ├── 5.5.7.1 Proof: Ahlfors 4-Regularity
+│   └── 5.5.7.2 Commentary: Why Four Dimensions?
+├── 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence
+│   ├── 5.5.8.1 Proof: Lorentzian Gromov-Hausdorff Convergence
+│   └── 5.5.8.2 Commentary: Causal Diamond Metric
+└── 5.5.9 Proof: Geometric Well-Posedness
+```
+
+### 5.5.1.2 Commentary: Logic of Geometric Hypotheses {#5.5.1.2}
 
 :::tip[**Sequential Verification of Regularity Conditions**]
 :::
@@ -13607,15 +14043,15 @@ The argument proceeds through a systematic verification of five interdependent p
 :::info[**Restriction of Direct Edges to Undirected Distance Two**]
 :::
 
-Let $G_t = (V_t, E_t)$ denote a causal graph at the homeostatic fixed point. Let $\bar{d}(u, v)$ denote the undirected shortest-path distance between vertices $u$ and $v$. For any pair of vertices $u, v \in V_t$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the probability that a direct edge $(u, v)$ exists in $E_t$ is identically zero:
+Let $G_t = (V_t, E_t)$ denote a causal graph at the homeostatic fixed point, and let $\bar{d}(u, v)$ denote the undirected shortest-path distance between vertices $u$ and $v$. For any pair of vertices $u, v \in V_t$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the probability that a direct edge $(u, v)$ exists in $E_t$ is identically zero:
 
 $$
 \mathbb{P}[(u, v) \in E_t] = 0 \quad \forall u, v : \bar{d}(u, v) > 2
 $$
 
-This constraint ensures that causal connections remain strictly local with respect to the induced metric.
+thereby ensuring that causal connections remain strictly local with respect to the induced metric.
 
-### 5.5.2.1 Proof: Locality Verification {#5.5.2.1}
+### 5.5.2.1 Proof: Strict Locality {#5.5.2.1}
 
 :::tip[**Demonstration via Triangle Inequality**]
 :::
@@ -13714,9 +14150,9 @@ This constraint ensures that the graph remains "local" in the emergent metric se
 :::info[**Uniform Bounding of Vertex Degrees in the Thermodynamic Limit**]
 :::
 
-Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$. In the thermodynamic limit, $\langle k \rangle_t$ converges to a stable, size-independent fixed point $\langle k \rangle^* = O(1)$. Consequently, the maximum degree $D_{\max}$ is uniformly bounded by a constant independent of the system size $N$, preventing the formation of "hubs" that would violate the manifold topology.
+Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$. In the thermodynamic limit, the mean degree converges to a stable, size-independent fixed point $\langle k \rangle^* = O(1)$, which guarantees that the maximum degree $D_{\max}$ is uniformly bounded by a constant independent of the system size $N$, preventing the formation of "hubs" that would violate the manifold topology.
 
-### 5.5.3.1 Proof: Degree Boundedness {#5.5.3.1}
+### 5.5.3.1 Proof: Bounded Degree {#5.5.3.1}
 
 :::tip[**Derivation from Flux Balance**]
 :::
@@ -13726,14 +14162,14 @@ Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the me
 The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
 
 1.  **Creation Flux ($J_{in}$):**
-    The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient**  <Ref id="4.4.6" label="§4.4.6" />.
+    The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
 
     $$
     J_{in}(\rho) = (\Lambda + 9\rho^2) e^{-6\mu\rho}
     $$
 
 2.  **Deletion Flux ($J_{out}$):**
-    The deletion potential scales linearly with the base population but is dominated at high densities by the catalytic stress term derived via **Catalysis Coefficient** <Ref id="4.4.5" label="§4.4.5" />.
+    The deletion potential scales linearly with the base population but is dominated at high densities by the catalytic stress term derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 
     $$
     J_{out}(\rho) = \frac{1}{2}\rho + 3\lambda_{cat}\rho^2
@@ -13815,7 +14251,7 @@ $$
 
 where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for the emergence of a smooth curvature tensor.
 
-### 5.5.4.1 Proof: Curvature Bounds {#5.5.4.1}
+### 5.5.4.1 Proof: Uniform Curvature Bound {#5.5.4.1}
 
 :::tip[**Derivation from Wasserstein Diameter**]
 :::
@@ -13917,7 +14353,7 @@ $$
 |\text{Cov}(f(x), f(y))| \leq C_{\text{cov}} \cdot \exp(-\gamma \cdot \bar{d}(x, y))
 $$
 
-### 5.5.5.1 Proof: Decay Verification {#5.5.5.1}
+### 5.5.5.1 Proof: Correlation Decay {#5.5.5.1}
 
 :::tip[**Formal Proof via Damped Propagation**]
 :::
@@ -13948,7 +14384,7 @@ $$
 
 1.  **Thermodynamic Base Rate:** $\mathbb{P}_{\text{thermo}} = 1/2$.
 2.  **Catalytic Enhancement:** The stress $\sigma = -1$ catalyzes its own decay via the factor $f_{\text{cat}}(\sigma) = 1 + \lambda_{cat}$.
-    Using the derived bound $\lambda_{cat} \approx 1.71$ from the **Catalysis Coefficient** theorem <Ref id="4.4.5" label="§4.4.5" />:
+    Using the derived bound $\lambda_{cat} \approx 1.71$ from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />:
 
     $$
     \mathbb{P}_{\text{del}} = \frac{1}{2}(1 + 1.71) \approx 1.35
@@ -14013,7 +14449,7 @@ Q.E.D.
 
 ---
 
-### 5.5.5.3 Proof: Fluctuation Control {#5.5.5.3}
+### 5.5.5.3 Proof: Correlation Decay {#5.5.5.3}
 
 :::tip[**Derivation of Self-Averaging via Covariance Sums**]
 :::
@@ -14100,7 +14536,7 @@ $$
 
 Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$, suppressing non-local topology.
 
-### 5.5.6.1 Proof: Topology Suppression {#5.5.6.1}
+### 5.5.6.1 Proof: Manifold Combinatorics {#5.5.6.1}
 
 :::tip[**Path Counting Bound for Cycle Exclusion**]
 :::
@@ -14182,15 +14618,15 @@ Long cycles represent a profound threat to the manifold structure: they function
 :::info[**Emergence of Hausdorff Dimension 4 via Renormalization Group Fixed Points**]
 :::
 
-The sequence of equilibrium graphs satisfies the Ahlfors 4-Regularity condition. There exist constants $c_1, c_2$ such that for any vertex $v$ and mesoscopic radius $r$, the volume of the ball $|B(v, r)|$ satisfies the scaling relation:
+Let the sequence of equilibrium graphs satisfy the Ahlfors 4-Regularity condition, meaning that there exist constants $c_1, c_2$ such that for any vertex $v$ and mesoscopic radius $r$, the volume of the ball $|B(v, r)|$ satisfies the scaling relation:
 
 $$
 c_1 r^4 \leq |B(v, r)| \leq c_2 r^4
 $$
 
-This dimensionality arises because $d=4$ is the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow.
+due to $d=4$ being the unique upper critical dimension where the scaling of boundary creation balances the scaling of bulk deletion within the renormalization group flow.
 
-### 5.5.7.1 Proof: Dimensionality Verification {#5.5.7.1}
+### 5.5.7.1 Proof: Ahlfors 4-Regularity {#5.5.7.1}
 
 :::tip[**RG Beta Function Analysis of Dimensional Scaling**]
 :::
@@ -14371,16 +14807,13 @@ where $f(d)$ is a monotonic function of the dimension. By proving that the event
 
 **I. Setup and Assumptions**
 
-Let $\{G_t\}$ denote the sequence of discrete causal graphs generated by the evolution operator at equilibrium. The limit space $(\mathcal{M}, g)$ is a candidate smooth 4-dimensional Lorentzian manifold.
+Let $\{G_t\}$ denote the sequence of discrete causal graphs generated by the evolution operator at equilibrium. The local compactness and metric consistency are established under **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />. The limit space $(\mathcal{M}, g)$ is a candidate smooth 4-dimensional Lorentzian manifold.
 
 **II. The Logic Chain**
 
-1.  **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />: Enforce local compactness and metric consistency.
-2.  **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />: Establishes uniform bounds on the discrete Ricci curvature: $|\kappa(u, v)| \le 2$.
-3.  **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />: Proves the exponential decay of correlations and the vanishing of global variance (Self-Averaging).
-4.  **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />: Ensures the suppression of non-local cycles, enforcing a manifold-like topology at macroscopic scales.
-5.  **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />: Fixes the Ahlfors regularity dimension to $d=4$.
-6.  **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />: Establishes that the poset converges under the causal diamond metric, recovering the Lorentzian signature $(-+++)$.
+1. **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />: Establishes uniform bounds on the discrete Ricci curvature: $|\kappa(u, v)| \le 2$.
+2. **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />: Proves the exponential decay of correlations and the vanishing of global variance (Self-Averaging).
+3. **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />: Ensures the suppression of non-local cycles, enforcing a manifold-like topology at macroscopic scales.
 
 **III. Assembly**
 
@@ -14390,7 +14823,7 @@ $$
 \lim_{N \to \infty} d_{GH}(G_N, M) = 0
 $$
 
-The limit space $M$ inherits the dimension $\dim(M) = 4$ from Ahlfors regularity. The limit metric $g$ is continuous due to the Curvature Bounds. The causal structure defined by the strict partial order $\le$ established in the **Demonstration of Categorical Validity** <Ref id="4.2.10" label="§4.2.10" /> induces a Lorentzian signature (-+++) on the tangent bundles via the causal set-continuum correspondence. Thus, the limit space is a Lorentzian manifold:
+The limit space $M$ inherits the dimension $\dim(M) = 4$ from **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The limit metric $g$ is continuous due to the Curvature Bounds. The causal structure defined by the strict partial order $\le$ established in the **Categorical Validity** <Ref id="4.2.10" label="§4.2.10" /> induces a Lorentzian signature (-+++) on the tangent bundles via the causal set-continuum correspondence, with the metric limit convergence established under **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />. Thus, the limit space is a Lorentzian manifold:
 
 $$
 G_{\infty} \cong \mathcal{M}^{(1,3)}
@@ -14434,12 +14867,12 @@ Our parameter sweep identifies a narrow **Region of Physical Viability**, a "Gol
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.1.1](/monograph/rules/equilibrium/5.1/#5.1.1.1) |
-| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
+| $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
 | $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
 | $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
