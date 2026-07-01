@@ -3744,19 +3744,7 @@ Section 3.1.12 formalizes the properties of the QBD proof regarding vacuum struc
 
 ---
 
-### 3.2.1 Theorem: Optimal Vacuum {#3.2.1}
-
-:::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
-:::
-
-Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** possessing a fixed internal coordination number $k_{deg} \ge 3$, where the root and all internal vertices exhibit an out-degree of exactly $k_{deg}$ and all leaf vertices exhibit an out-degree of zero, maximizing the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity. <Cite id="A.70" label="(Woess, 2000)" />
-
-**In Plain English:**  
-Section 3.2.1 formalizes the properties of the QBD theorem regarding optimal vacuum.
-
----
-
-### 3.2.1.1 Definition: Regular Bethe Fragment {#3.2.1.1}
+### 3.2.1 Definition: Regular Bethe Fragment {#3.2.1}
 
 :::tip[**Structural Definition of the Vacuum derived from Truncated Cayley Trees**]
 :::
@@ -3772,11 +3760,23 @@ The Regular Bethe Fragment remains completely uniform away from the finite bound
 This structure serves as the unique optimal pre-geometric substrate that the axioms permit for the subsequent dynamical evolution of geometry and physics.
 
 **In Plain English:**  
-Section 3.2.1.1 formalizes the properties of the QBD definition regarding regular bethe fragment.
+Section 3.2.1 formalizes the properties of the QBD definition regarding regular bethe fragment.
 
 ---
 
-### 3.2.2 Lemma: Exclusion of Cyclic Topologies {#3.2.2}
+### 3.2.3 Theorem: Optimal Vacuum {#3.2.3}
+
+:::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
+:::
+
+Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> possessing a fixed internal coordination number $k_{deg} \ge 3$, where the root and all internal vertices exhibit an out-degree of exactly $k_{deg}$ and all leaf vertices exhibit an out-degree of zero, maximizing the number of compliant rewrite sites (governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />) per vertex while simultaneously maximizing relational uniformity. <Cite id="A.70" label="(Woess, 2000)" />
+
+**In Plain English:**  
+Section 3.2.3 formalizes the properties of the QBD theorem regarding optimal vacuum.
+
+---
+
+### 3.2.4 Lemma: Exclusion of Cyclic Topologies {#3.2.4}
 
 :::info[**Rejection of Cyclic Graphs via Pre-Geometric Constraints**]
 :::
@@ -3784,11 +3784,11 @@ Section 3.2.1.1 formalizes the properties of the QBD definition regarding regula
 For any graph containing a directed cycle of length greater than or equal to 3, candidacy for the vacuum state $G_0$ is excluded by **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
 
 **In Plain English:**  
-Section 3.2.2 formalizes the properties of the QBD lemma regarding exclusion of cyclic topologies.
+Section 3.2.4 formalizes the properties of the QBD lemma regarding exclusion of cyclic topologies.
 
 ---
 
-### 3.2.2.1 Proof: Exclusion of Cyclic Topologies {#3.2.2.1}
+### 3.2.4.1 Proof: Exclusion of Cyclic Topologies {#3.2.4.1}
 
 :::tip[**Verification of Incompatibility via Constructibility Analysis**]
 :::
@@ -3827,11 +3827,11 @@ The multiple independent violations force the exclusion of all graphs containing
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.2.1 formalizes the properties of the QBD proof regarding exclusion of cyclic topologies.
+Section 3.2.4.1 formalizes the properties of the QBD proof regarding exclusion of cyclic topologies.
 
 ---
 
-### 3.2.3 Lemma: Exclusion of Short-Range Loops {#3.2.3}
+### 3.2.5 Lemma: Exclusion of Short-Range Loops {#3.2.5}
 
 :::info[**Exclusion of Self-Loops and Reciprocal 2-Cycles**]
 :::
@@ -3839,11 +3839,11 @@ Section 3.2.2.1 formalizes the properties of the QBD proof regarding exclusion o
 For any graph containing a self-loop or a reciprocal 2-cycle, candidacy for the vacuum state $G_0$ is excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 **In Plain English:**  
-Section 3.2.3 formalizes the properties of the QBD lemma regarding exclusion of short-range loops.
+Section 3.2.5 formalizes the properties of the QBD lemma regarding exclusion of short-range loops.
 
 ---
 
-### 3.2.3.1 Proof: Exclusion of Short-Range Loops {#3.2.3.1}
+### 3.2.5.1 Proof: Exclusion of Short-Range Loops {#3.2.5.1}
 
 :::tip[**Verification of Incompatibility with Irreflexivity and Asymmetry**]
 :::
@@ -3879,11 +3879,11 @@ Both structures constitute primitive geometric cycles existing prior to the appl
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.3.1 formalizes the properties of the QBD proof regarding exclusion of short-range loops.
+Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion of short-range loops.
 
 ---
 
-### 3.2.4 Lemma: Exclusion of Disconnected States {#3.2.4}
+### 3.2.6 Lemma: Exclusion of Disconnected States {#3.2.6}
 
 :::info[**Rejection of Disconnected Graphs**]
 :::
@@ -3891,11 +3891,11 @@ Section 3.2.3.1 formalizes the properties of the QBD proof regarding exclusion o
 For all disconnected graphs, candidacy for the vacuum state $G_0$ is excluded by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. In particular, automorphism entropy is minimal and a single interacting universe exists.
 
 **In Plain English:**  
-Section 3.2.4 formalizes the properties of the QBD lemma regarding exclusion of disconnected states.
+Section 3.2.6 formalizes the properties of the QBD lemma regarding exclusion of disconnected states.
 
 ---
 
-### 3.2.4.1 Proof: Exclusion of Disconnected States {#3.2.4.1}
+### 3.2.6.1 Proof: Exclusion of Disconnected States {#3.2.6.1}
 
 :::tip[**Demonstration of the Necessity of Weak Connectivity via Automorphism Analysis**]
 :::
@@ -3931,11 +3931,11 @@ The contradiction establishes that the vacuum state must satisfy weak connectivi
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.4.1 formalizes the properties of the QBD proof regarding exclusion of disconnected states.
+Section 3.2.6.1 formalizes the properties of the QBD proof regarding exclusion of disconnected states.
 
 ---
 
-### 3.2.5 Lemma: Exclusion of Redundant DAGs {#3.2.5}
+### 3.2.7 Lemma: Exclusion of Redundant DAGs {#3.2.7}
 
 :::info[**Exclusion of Connected DAGs with Redundant Paths**]
 :::
@@ -3943,11 +3943,11 @@ Section 3.2.4.1 formalizes the properties of the QBD proof regarding exclusion o
 For any connected DAG with edge count strictly greater than $N-1$, candidacy for the vacuum state $G_0$ is excluded by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
 
 **In Plain English:**  
-Section 3.2.5 formalizes the properties of the QBD lemma regarding exclusion of redundant dags.
+Section 3.2.7 formalizes the properties of the QBD lemma regarding exclusion of redundant dags.
 
 ---
 
-### 3.2.5.1 Proof: Exclusion of Redundant DAGs {#3.2.5.1}
+### 3.2.7.1 Proof: Exclusion of Redundant DAGs {#3.2.7.1}
 
 :::tip[**Probabilistic Analysis of Compliant Site Reduction**]
 :::
@@ -3977,11 +3977,11 @@ Only graphs with exactly $|E| = N-1$ achieve the required maximum compliant frac
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion of redundant dags.
+Section 3.2.7.1 formalizes the properties of the QBD proof regarding exclusion of redundant dags.
 
 ---
 
-### 3.2.6 Lemma: Site Maximality {#3.2.6}
+### 3.2.8 Lemma: Site Maximality {#3.2.8}
 
 :::info[**Exclusion of Trees with Insufficient Rewrite Site Density via Branching Optimization**]
 :::
@@ -3989,11 +3989,11 @@ Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion o
 For any tree graph yielding a strictly sub-maximal number of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> rewrite sites, candidacy for the vacuum state $G_0$ is excluded. In particular, site maximization constitutes a necessary condition for geometric evolution.
 
 **In Plain English:**  
-Section 3.2.6 formalizes the properties of the QBD lemma regarding site maximality.
+Section 3.2.8 formalizes the properties of the QBD lemma regarding site maximality.
 
 ---
 
-### 3.2.6.1 Proof: Site Maximality {#3.2.6.1}
+### 3.2.8.1 Proof: Site Maximality {#3.2.8.1}
 
 :::tip[**Verification of Site Density Maximization in Maximally Branched Trees via Combinatorial Counting**]
 :::
@@ -4029,23 +4029,23 @@ The contrapositive establishes that only trees that maximize the total count of 
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.6.1 formalizes the properties of the QBD proof regarding site maximality.
+Section 3.2.8.1 formalizes the properties of the QBD proof regarding site maximality.
 
 ---
 
-### 3.2.7 Lemma: Degree Regularity {#3.2.7}
+### 3.2.9 Lemma: Degree Regularity {#3.2.9}
 
 :::info[**Exclusion of Non-Regular Trees under Orbit Entropy Maximization**]
 :::
 
-For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal structural optimality, as established by the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />.
+For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal structural optimality, as established by the **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" />.
 
 **In Plain English:**  
-Section 3.2.7 formalizes the properties of the QBD lemma regarding degree regularity.
+Section 3.2.9 formalizes the properties of the QBD lemma regarding degree regularity.
 
 ---
 
-### 3.2.7.1 Proof: Degree Regularity {#3.2.7.1}
+### 3.2.9.1 Proof: Degree Regularity {#3.2.9.1}
 
 :::tip[**Demonstration of Orbit Entropy Reduction via Distribution Analysis**]
 :::
@@ -4091,16 +4091,16 @@ We conclude that all non-regular trees are excluded.
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.7.1 formalizes the properties of the QBD proof regarding degree regularity.
+Section 3.2.9.1 formalizes the properties of the QBD proof regarding degree regularity.
 
 ---
 
-### 3.2.7.2 Calculation: Entropy Comparison {#3.2.7.2}
+### 3.2.9.2 Calculation: Entropy Comparison {#3.2.9.2}
 
 :::note[**Computational Comparison of Orbit Entropy between Star and Bethe Graphs using Spectral Analysis**]
 :::
 
-Numerical investigation of the entropic properties of regular versus irregular structures established by **Degree Regularity** <Ref id="3.2.7.1" label="§3.2.7.1" /> is based on the following protocols:
+Numerical investigation of the entropic properties of regular versus irregular structures established by **Degree Regularity** <Ref id="3.2.9.1" label="§3.2.9.1" /> is based on the following protocols:
 
 1.  **Structural Initialization:** The simulation defines two distinct topologies of size $N=10$: a Star Graph (representing maximum centralization and irregularity) and a Regular Bethe Fragment (representing maximum branching uniformity and regularity).
 2.  **Orbit Decomposition:** The algorithm identifies the full automorphism group for each graph and partitions the vertex set into equivalence partitions (orbits). Two vertices belong to the same orbit if a symmetry operation maps one to the other.
@@ -4166,23 +4166,23 @@ print(f"{'Bethe (Reg)':<15} | {aut_bethe:<10} | {hs_bethe:.4f}")
 Structure       | |Aut|      | Orbit Entropy
 
 **In Plain English:**  
-Section 3.2.7.2 formalizes the properties of the QBD calculation regarding entropy comparison.
+Section 3.2.9.2 formalizes the properties of the QBD calculation regarding entropy comparison.
 
 ---
 
-### 3.2.8 Lemma: Orbit Transitivity {#3.2.8}
+### 3.2.10 Lemma: Orbit Transitivity {#3.2.10}
 
 :::info[**Exclusion of Trees Lacking Level-Transitive Automorphism Action**]
 :::
 
-For any tree graph where the automorphism group fails to act transitively on vertex levels, candidacy for the vacuum state $G_0$ is excluded by the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />. In particular, level-transitivity constitutes a necessary condition for the absence of privileged positions within each generation.
+For any tree graph where the automorphism group fails to act transitively on vertex levels, candidacy for the vacuum state $G_0$ is excluded by the **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" />. In particular, level-transitivity constitutes a necessary condition for the absence of privileged positions within each generation.
 
 **In Plain English:**  
-Section 3.2.8 formalizes the properties of the QBD lemma regarding orbit transitivity.
+Section 3.2.10 formalizes the properties of the QBD lemma regarding orbit transitivity.
 
 ---
 
-### 3.2.8.1 Proof: Orbit Transitivity {#3.2.8.1}
+### 3.2.10.1 Proof: Orbit Transitivity {#3.2.10.1}
 
 :::tip[**Derivation of the Necessity of Level-Transitivity for Relational Uniformity via Group Action Analysis**]
 :::
@@ -4218,11 +4218,11 @@ The contrapositive establishes that only trees with level-transitive or near-lev
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.8.1 formalizes the properties of the QBD proof regarding orbit transitivity.
+Section 3.2.10.1 formalizes the properties of the QBD proof regarding orbit transitivity.
 
 ---
 
-### 3.2.9 Lemma: Structural Optimality Metric {#3.2.9}
+### 3.2.11 Lemma: Structural Optimality Metric {#3.2.11}
 
 :::info[**Definition of the Weighted Optimality Score Balancing Symmetry and Homogeneity**]
 :::
@@ -4230,11 +4230,11 @@ Section 3.2.8.1 formalizes the properties of the QBD proof regarding orbit trans
 Let $\mathcal{O}(G; \lambda)$ denote the **Structural Optimality Score**, defined as $\lambda \log_2 |\text{Aut}(G)| + (1 - \lambda) H_S(G)$, where $|\text{Aut}(G)|$ is the cardinality of the automorphism group and $H_S(G)$ is the Shannon entropy of the orbit size distribution. Then the parameter $\lambda \in [0,1]$ weights the balance between global symmetry and local homogeneity.
 
 **In Plain English:**  
-Section 3.2.9 formalizes the properties of the QBD lemma regarding structural optimality metric.
+Section 3.2.11 formalizes the properties of the QBD lemma regarding structural optimality metric.
 
 ---
 
-### 3.2.9.1 Proof: Structural Optimality Metric {#3.2.9.1}
+### 3.2.11.1 Proof: Structural Optimality Metric {#3.2.11.1}
 
 :::tip[**Justification of Relational Uniformity via Extremal Case Analysis**]
 :::
@@ -4280,30 +4280,30 @@ We conclude that the metric identifies the Regular Bethe Fragment as the optimal
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.9.1 formalizes the properties of the QBD proof regarding structural optimality metric.
+Section 3.2.11.1 formalizes the properties of the QBD proof regarding structural optimality metric.
 
 ---
 
-### 3.2.10 Lemma: Quantitative Supremacy {#3.2.10}
+### 3.2.12 Lemma: Quantitative Supremacy {#3.2.12}
 
 :::info[**Supremacy of the Bethe Fragment under the Structural Optimality Metric confirmed by Exhaustive Search**]
 :::
 
-Given the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of candidate graph topologies, the following holds: the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> constitutes the unique maximizer over all admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
+Given the Structural Optimality Score $\mathcal{O}(G; \lambda)$ over the class of candidate graph topologies, the following holds: the **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" /> constitutes the unique maximizer over all admissible graphs for the parameter range $\lambda \in [0.4, 0.6]$.
 
 **In Plain English:**  
-Section 3.2.10 formalizes the properties of the QBD lemma regarding quantitative supremacy.
+Section 3.2.12 formalizes the properties of the QBD lemma regarding quantitative supremacy.
 
 ---
 
-### 3.2.10.1 Proof: Quantitative Supremacy {#3.2.10.1}
+### 3.2.12.1 Proof: Quantitative Supremacy {#3.2.12.1}
 
 :::tip[**Formal Proof of the Bethe Fragment as the Unique Maximizer via Computational Census**]
 :::
 
 **I. Candidate Set Reduction**
 
-The class of axiomatically admissible graphs reduces, through the cumulative exclusions of the previous lemmas, to the singleton containing the **Regular Bethe Fragment** <Ref id="3.2.1.1" label="§3.2.1.1" /> with internal coordination number $k_{deg} \ge 3$.
+The class of axiomatically admissible graphs reduces, through the cumulative exclusions of the previous lemmas, to the singleton containing the **Regular Bethe Fragment** <Ref id="3.2.3" label="§3.2.3" /> with internal coordination number $k_{deg} \ge 3$.
 
 $$
 \Omega_{valid} = \{ T \mid T \cong \text{Bethe}(k), k \ge 3 \}
@@ -4312,7 +4312,7 @@ $$
 **II. Computational Census**
 
 The quantitative verification proceeds through complete enumeration of all non-isomorphic trees for small $N$.
-Sequential application of the lemma filters and explicit computation of the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" /> confirms the maximum.
+Sequential application of the lemma filters and explicit computation of the **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" /> confirms the maximum.
 
 $$
 \arg \max_{G} \mathcal{O}(G) = T_{Bethe}(k=3)
@@ -4338,16 +4338,16 @@ $$
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.10.1 formalizes the properties of the QBD proof regarding quantitative supremacy.
+Section 3.2.12.1 formalizes the properties of the QBD proof regarding quantitative supremacy.
 
 ---
 
-### 3.2.10.3 Calculation: Small N Census {#3.2.10.3}
+### 3.2.12.3 Calculation: Small N Census {#3.2.12.3}
 
 :::note[**Algorithmic Census of Optimal Tree Topology**]
 :::
 
-Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Quantitative Supremacy** <Ref id="3.2.10.1" label="§3.2.10.1" /> is based on the following protocols:
+Computational verification of the Regular Bethe Fragment as the unique maximizer established by **Quantitative Supremacy** <Ref id="3.2.12.1" label="§3.2.12.1" /> is based on the following protocols:
 
 1.  **Combinatorial Enumeration:** The algorithm utilizes `networkx` generators to produce the complete set of non-isomorphic free trees of size $N=10$, establishing the full configuration space for the vacuum candidates.
 2.  **Axiomatic Filtering:** Three sequential filters are applied to the candidate set:
@@ -4410,7 +4410,7 @@ def classify_structure(G):
 
 def filter_lemma_3_2_2_geometric_viability(G):
     """
-    Lemma 3.2.2: Exclusion of Cyclic Topologies (Geometric Viability).
+    Lemma 3.2.4: Exclusion of Cyclic Topologies (Geometric Viability).
     Constraint: Max degree <= 3.
     Physical Logic: A coordination number k > 3 is rejected because it is
     thermodynamically sub-optimal for bulk efficiency, violating the scaling 
@@ -4421,7 +4421,7 @@ def filter_lemma_3_2_2_geometric_viability(G):
 
 def filter_lemma_3_2_6_site_maximality(G):
     """
-    Lemma 3.2.6: Site Maximality.
+    Lemma 3.2.8: Site Maximality.
     Constraint: Max degree >= 3 (Branching).
     Physical Logic: Linear chains (degree 2) possess minimal compliant sites, 
     stalling geometric ignition. The vacuum must be maximally branched.
@@ -4431,7 +4431,7 @@ def filter_lemma_3_2_6_site_maximality(G):
 
 def filter_lemma_3_2_7_regularity(G):
     """
-    Lemma 3.2.7: Strict Degree Regularity.
+    Lemma 3.2.9: Strict Degree Regularity.
     Constraint: Uniform internal degree (Variance = 0).
     Physical Logic: Any variation in internal degree introduces distinguishability 
     between locations, violating the isotropy of the vacuum.
@@ -4450,22 +4450,22 @@ print("-" * 70)
 candidates = list(nx.nonisomorphic_trees(10))
 print(f"{'1. Enumerate Undirected Topologies':<45} | {len(candidates):<10} | -")
 
-# 2. Apply Lemma 3.2.2
+# 2. Apply Lemma 3.2.4
 survivors = [g for g in candidates if filter_lemma_3_2_2_geometric_viability(g)]
 dropped = len(candidates) - len(survivors)
-print(f"{'2. Lemma 3.2.2: Geometric Viability (k<=3)':<45} | {len(survivors):<10} | {dropped} (Stars/Hubs)")
+print(f"{'2. Lemma 3.2.4: Geometric Viability (k<=3)':<45} | {len(survivors):<10} | {dropped} (Stars/Hubs)")
 
-# 3. Apply Lemma 3.2.6
+# 3. Apply Lemma 3.2.8
 prev_len = len(survivors)
 survivors = [g for g in survivors if filter_lemma_3_2_6_site_maximality(g)]
 dropped = prev_len - len(survivors)
-print(f"{'3. Lemma 3.2.6: Site Maximality':<45} | {len(survivors):<10} | {dropped} (Linear Chains)")
+print(f"{'3. Lemma 3.2.8: Site Maximality':<45} | {len(survivors):<10} | {dropped} (Linear Chains)")
 
-# 4. Apply Lemma 3.2.7
+# 4. Apply Lemma 3.2.9
 prev_len = len(survivors)
 survivors = [g for g in survivors if filter_lemma_3_2_7_regularity(g)]
 dropped = prev_len - len(survivors)
-print(f"{'4. Lemma 3.2.7: Strict Regularity':<45} | {len(survivors):<10} | {dropped} (Irregular)")
+print(f"{'4. Lemma 3.2.9: Strict Regularity':<45} | {len(survivors):<10} | {dropped} (Irregular)")
 
 print("-" * 70)
 print(f"\n{'--- FINAL SCORECARD (Lambda Sweep [0.4 - 0.6]) ---':^70}")
@@ -4511,16 +4511,16 @@ if not df.empty:
 STEP                                          | SURVIVORS  | ELIMINATED
 
 **In Plain English:**  
-Section 3.2.10.3 formalizes the properties of the QBD calculation regarding small n census.
+Section 3.2.12.3 formalizes the properties of the QBD calculation regarding small n census.
 
 ---
 
-### 3.2.10.4 Calculation: Large Depth Scaling {#3.2.10.4}
+### 3.2.12.4 Calculation: Large Depth Scaling {#3.2.12.4}
 
 :::note[**Computational Analysis of Regularity Convergence in Large Bethe Fragments using Asymptotic Scaling**]
 :::
 
-Numerical quantification of the scaling behavior of the Bethe fragment established by **Degree Regularity** <Ref id="3.2.7.1" label="§3.2.7.1" /> is based on the following protocols:
+Numerical quantification of the scaling behavior of the Bethe fragment established by **Degree Regularity** <Ref id="3.2.9.1" label="§3.2.9.1" /> is based on the following protocols:
 
 1.  **Asymptotic Construction:** The algorithm generates regular Bethe fragments for a range of depths $d \in [3, 15]$ and coordination numbers $b \in [3, 6]$ to probe the behavior of the structure in the thermodynamic limit.
 2.  **Regularity Analysis:** The metric calculates the ratio of "bulk" nodes (those satisfying the full degree condition $k=b$) relative to the total population of the graph.
@@ -4610,26 +4610,26 @@ Bethe Fragment Regularity Scaling
 The results demonstrate that as depth increases to 15, the regularity fraction converges precisely to the theoretical limit of $1/(b-1)$. For $b=3$, the fraction converges to 50% ($1/2$), while for $b=6$, it converges to 20% ($1/5$). This convergence highlights the Bethe fragment's efficient approximation of uniform local structure at lower coordination numbers, which contributes to its high $H_S$ and overall optimality, confirming the fragment's suitability as an optimal vacuum structure.
 
 **In Plain English:**  
-Section 3.2.10.4 formalizes the properties of the QBD calculation regarding large depth scaling.
+Section 3.2.12.4 formalizes the properties of the QBD calculation regarding large depth scaling.
 
 ---
 
-### 3.2.11 Proof: Optimal Vacuum {#3.2.11}
+### 3.2.13 Proof: Optimal Vacuum {#3.2.13}
 
-:::tip[Formal Derivation of the Regular Bethe Fragment ($k=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />]
+:::tip[Formal Derivation of the Regular Bethe Fragment ($k=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" />]
 :::
 
 **I. The Candidate Set**
-The set of candidate vacuum states is restricted to the class of Finite Rooted Trees. This restriction arises by sequentially applying topological filters to candidate graph configurations. Specifically, the **Exclusion of Cyclic Topologies** <Ref id="3.2.2" label="§3.2.2" /> and **Exclusion of Short-Range Loops** <Ref id="3.2.3" label="§3.2.3" /> are enforced. The configuration additionally satisfies the **Exclusion of Disconnected States** <Ref id="3.2.4" label="§3.2.4" /> and the **Exclusion of Redundant DAGs** <Ref id="3.2.5" label="§3.2.5" />.
+The set of candidate vacuum states is restricted to the class of Finite Rooted Trees. This restriction arises by sequentially applying topological filters to candidate graph configurations. Specifically, the **Exclusion of Cyclic Topologies** <Ref id="3.2.4" label="§3.2.4" /> and **Exclusion of Short-Range Loops** <Ref id="3.2.5" label="§3.2.5" /> are enforced. The configuration additionally satisfies the **Exclusion of Disconnected States** <Ref id="3.2.6" label="§3.2.6" /> and the **Exclusion of Redundant DAGs** <Ref id="3.2.7" label="§3.2.7" />.
 
 **II. The Optimization Chain**
 1.  **Geometric Lower Bound:** **Axiom 2** mandates the capacity to form 3-cycles (geometric quanta) via the rewrite rule. This imposes a strict lower bound on the coordination number, requiring $k \ge 3$. Linear chains ($k=2$) are excluded as they are topologically incapable of enclosing area.
-2.  **Site Maximality** <Ref id="3.2.6" label="§3.2.6" />: To maximize the rate of geometric evolution, the tree structure must maximize the density of compliant 2-path sites per vertex. This requirement favors maximal branching over linear extension.
-3.  **Orbit Transitivity** <Ref id="3.2.8" label="§3.2.8" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.7" label="§3.2.7" />.
-4.  **Bulk Efficiency (Scaling Analysis):** The ratio of internal "bulk" nodes (capable of supporting history) to boundary leaves scales as $1/(k-1)$. To maximize the physical universe relative to its boundary, the coordination number $k$ must be minimized, as confirmed under the **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />.
+2.  **Site Maximality** <Ref id="3.2.8" label="§3.2.8" />: To maximize the rate of geometric evolution, the tree structure must maximize the density of compliant 2-path sites per vertex. This requirement favors maximal branching over linear extension.
+3.  **Orbit Transitivity** <Ref id="3.2.10" label="§3.2.10" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.9" label="§3.2.9" />.
+4.  **Bulk Efficiency (Scaling Analysis):** The ratio of internal "bulk" nodes (capable of supporting history) to boundary leaves scales as $1/(k-1)$. To maximize the physical universe relative to its boundary, the coordination number $k$ must be minimized, as confirmed under the **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" />.
 
 **III. Convergence**
-The constraints impose a lower bound of $k \ge 3$ for geometric viability and an optimization pressure of $k \to \min$ for bulk efficiency. The intersection of these constraints is the unique integer $k=3$, exhibiting strict supremacy under the optimality metric per **Quantitative Supremacy** <Ref id="3.2.10" label="§3.2.10" />.
+The constraints impose a lower bound of $k \ge 3$ for geometric viability and an optimization pressure of $k \to \min$ for bulk efficiency. The intersection of these constraints is the unique integer $k=3$, exhibiting strict supremacy under the optimality metric per **Quantitative Supremacy** <Ref id="3.2.12" label="§3.2.12" />.
 
 **IV. Formal Conclusion**
 The optimal vacuum state $G_0$ is uniquely identified as the **Regular Bethe Fragment** with internal coordination number $k=3$.
@@ -4637,7 +4637,7 @@ The optimal vacuum state $G_0$ is uniquely identified as the **Regular Bethe Fra
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.11 formalizes the properties of the QBD proof regarding optimal vacuum.
+Section 3.2.13 formalizes the properties of the QBD proof regarding optimal vacuum.
 
 ---
 
@@ -4826,7 +4826,7 @@ $$
 S' \neq \emptyset \land S' \neq \mathcal{S}_{sites}
 $$
 
-Consider $s_a \in S'$ and $s_b \in \mathcal{S}_{sites} \setminus S'$. The vacuum state $G_0$ is a vertex-transitive and site-transitive state, as established by the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />. There exists $\sigma \in \text{Aut}(G_0)$ such that $\sigma(s_a) = s_b$.
+Consider $s_a \in S'$ and $s_b \in \mathcal{S}_{sites} \setminus S'$. The vacuum state $G_0$ is a vertex-transitive and site-transitive state, as established by the **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" />. There exists $\sigma \in \text{Aut}(G_0)$ such that $\sigma(s_a) = s_b$.
 
 In the successor state $G_1$, the neighborhood of $s_a$ contains new structure $\mathcal{R}(s_a)$, while the neighborhood of $s_b$ remains unmodified. An extension of $\sigma$ to $G_1$ implies mapping the modified neighborhood of $s_a$ to the unmodified neighborhood of $s_b$:
 
@@ -5107,7 +5107,7 @@ Section 3.3.7.1 formalizes the properties of the QBD proof regarding scalability
 
 **I. Setup and Assumptions**
 
-Let $G_0$ be the vacuum state defined as a symmetry-maximal graph **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />. The set of candidate rewrite sites $\mathcal{S}_{\text{sites}}(G_0)$ is identified deterministically and equivariantly, as guaranteed by **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />.
+Let $G_0$ be the vacuum state defined as a symmetry-maximal graph **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" />. The set of candidate rewrite sites $\mathcal{S}_{\text{sites}}(G_0)$ is identified deterministically and equivariantly, as guaranteed by **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />.
 
 **II. The Logic Chain**
 
@@ -5295,7 +5295,7 @@ Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of
 
 **I. Initial Configuration**
 
-Let $G_1$ denote the state immediately following the tunneling event $e_{\text{tunnel}} = (u, v)$ where $u, v \in V_{\text{even}}$. The underlying structure of $G_0$ constitutes a tree satisfying **Site Maximality** <Ref id="3.2.6" label="§3.2.6" />. Consequently, the internal vertex $v$ possesses an out-degree $k \ge 1$:
+Let $G_1$ denote the state immediately following the tunneling event $e_{\text{tunnel}} = (u, v)$ where $u, v \in V_{\text{even}}$. The underlying structure of $G_0$ constitutes a tree satisfying **Site Maximality** <Ref id="3.2.8" label="§3.2.8" />. Consequently, the internal vertex $v$ possesses an out-degree $k \ge 1$:
 
 $$
 \exists w \in V : (v, w) \in E_0
@@ -6163,7 +6163,7 @@ Section 3.5.6.1 formalizes the properties of the QBD proof regarding stabilizer 
 :::info[**Existence of a Non-Empty Physical Codespace**]
 :::
 
-Let $G_0$ denote the vacuum structure **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />. Then the codespace $\mathcal{C}$ is non-empty, specifically containing the state vector $|G_0\rangle$ which satisfies the eigenvalue equation $\Pi |G_0\rangle = |G_0\rangle$ for the complete set of Hard Constraint Projectors.
+Let $G_0$ denote the vacuum structure **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" />. Then the codespace $\mathcal{C}$ is non-empty, specifically containing the state vector $|G_0\rangle$ which satisfies the eigenvalue equation $\Pi |G_0\rangle = |G_0\rangle$ for the complete set of Hard Constraint Projectors.
 
 **In Plain English:**  
 Section 3.5.7 formalizes the properties of the QBD lemma regarding codespace non-triviality.
@@ -9135,7 +9135,7 @@ Section 5.1.2.1 formalizes the properties of the QBD proof regarding spatial clu
 :::info[**Decay of Geometric Covariance**]
 :::
 
-Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
+Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
 
 **In Plain English:**  
 Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation decay.
@@ -9163,7 +9163,7 @@ $$
 
 **II. Branching Analysis**
 
-From the uniqueness of the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> as the vacuum state, the graph $G_0$ exhibits a locally tree-like topology with a finite branching factor $b$ bounded by the maximum vertex degree $d_{\max}$. For a distance $d = \text{dist}(u, v)$, the number of simple paths $N(L)$ of length $L \ge d$ satisfies the scaling relation $N(L) \sim b^{L-d}$, where the path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology. The total correlation function aggregates contributions from all path lengths $L \ge d$, implying the approximation:
+From the uniqueness of the **Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" /> as the vacuum state, the graph $G_0$ exhibits a locally tree-like topology with a finite branching factor $b$ bounded by the maximum vertex degree $d_{\max}$. For a distance $d = \text{dist}(u, v)$, the number of simple paths $N(L)$ of length $L \ge d$ satisfies the scaling relation $N(L) \sim b^{L-d}$, where the path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology. The total correlation function aggregates contributions from all path lengths $L \ge d$, implying the approximation:
 
 $$
 \langle O_u O_v \rangle_c \approx K \sum_{L=d}^{\infty} b^{L-d} \rho^L
@@ -14588,7 +14588,7 @@ The rewrite process $\mathcal{R}_i$ is a local operation affecting only the subg
 **II. Parallel Execution Equivariance**
 The sequence $\mathcal{R}_i \circ \mathcal{R}_j$ is valid as a **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />; PUC holds independently for each.
 1.  **Scheduler Automorphism:** The parallelism is enforced by the **Scheduler** $\Phi$, which applies rewrites equivariantly under the automorphism group $\text{Aut}(G)$ **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />. The relation $\Phi(\varphi(G)) = \varphi(\Phi(G))$ ensures that the parallel application treats equivalent disjoint sites identically.
-2.  **Entropy Preservation:** The scheduler preserves the **Orbit Entropy** $H_S(G)$ **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" /> by maximizing the Shannon entropy of orbit sizes, thereby avoiding order-dependent biases that could distinguish $\mathcal{R}_i \mathcal{R}_j$ from $\mathcal{R}_j \mathcal{R}_i$.
+2.  **Entropy Preservation:** The scheduler preserves the **Orbit Entropy** $H_S(G)$ **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" /> by maximizing the Shannon entropy of orbit sizes, thereby avoiding order-dependent biases that could distinguish $\mathcal{R}_i \mathcal{R}_j$ from $\mathcal{R}_j \mathcal{R}_i$.
 
 **III. Algebraic Tensor Factorization**
 Since the operators act on distinct, non-interacting subsystems, they commute due to the tensor product structure of the QECC Hilbert space $\mathcal{H}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />.
@@ -15897,7 +15897,7 @@ $$
 This factor $1/\sqrt{2}$ represents the geometric mean of the Bit ($Z$-basis) and Nat ($X$-basis) **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />.
 
 **III. Entropy Normalization**
-The vacuum entropy $H_S(G)$ scales with the logarithm of the automorphism group size $\log |\operatorname{Aut}(G)|$ **Structural Optimality Metric** <Ref id="3.2.9" label="§3.2.9" />.
+The vacuum entropy $H_S(G)$ scales with the logarithm of the automorphism group size $\log |\operatorname{Aut}(G)|$ **Structural Optimality Metric** <Ref id="3.2.11" label="§3.2.11" />.
 For the bipartite $Z_2$ symmetry inherent in the Bethe lattice stub (ribbon pair), the automorphism count doubles, contributing a factor of $\sqrt{2}$ to the normalization.
 Combining the qubit overlap and the symmetry factor:
 
@@ -16418,7 +16418,7 @@ Section 8.6.5 formalizes the properties of the QBD lemma regarding topological y
 The coupling $y_f$ constitutes a dimensionless efficiency factor derived from the balance of braid quanta demand against vacuum supply.
 
 **I. Particle Demand and Shared Quanta**
-The braid $\beta$ demands $N_{3,\text{net}}$ quanta for stability **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, defined by $N_{3,\text{net}} = \sum N_{3,\text{iso}} - k_{\text{share}} |L_{\parallel}| \geq 1$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />). This payload preserves the prime isotopy class under rewrites. Shared parallels in isospin doublets reduce effective demand via twist cost cancellation, yielding degenerate light masses. The integer $\geq 1$ follows from the minimal trefoil $N_3=3$ for generation 1, reduced to net $1$ after sharing $k_{\text{share}}=1$ in a Bethe degree-3 lattice (**Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />).
+The braid $\beta$ demands $N_{3,\text{net}}$ quanta for stability **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, defined by $N_{3,\text{net}} = \sum N_{3,\text{iso}} - k_{\text{share}} |L_{\parallel}| \geq 1$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />). This payload preserves the prime isotopy class under rewrites. Shared parallels in isospin doublets reduce effective demand via twist cost cancellation, yielding degenerate light masses. The integer $\geq 1$ follows from the minimal trefoil $N_3=3$ for generation 1, reduced to net $1$ after sharing $k_{\text{share}}=1$ in a Bethe degree-3 lattice (**Optimal Vacuum** <Ref id="3.2.3" label="§3.2.3" />).
 
 **II. Vacuum Supply**
 The condensate $\rho_3^*$ supplies quanta at a characteristic rate $N_{\text{scale}} = \frac{v}{\kappa_m}$, representing available quanta per braid volume $V_\beta \sim N_{3,\text{net}} \ell_0^3$. Dimensionally, $v$ sets the electroweak scale, yielding $N_{\text{scale}} \approx 1.445 \times 10^6$ cycles/GeV at $\rho_3^* \approx 0.029$. The supply flux $J_{\text{supply}} = \frac{\rho_3^* \langle k \rangle}{t_{\text{tick}}}$ ensures demand-matching in equilibrium.
