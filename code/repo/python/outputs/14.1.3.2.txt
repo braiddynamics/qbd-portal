@@ -1,0 +1,7 @@
+--- QBD Lapse Function Convergence Verification (Poisson-Shot Noise) ---
+Metric               | Raw Discrete    | Smoothed        | Reduction Factor
+----------------------------------------------------------------------
+L2 Norm (Value)      | 0.013411        | 0.004940        | 2.7x
+H1 Norm (Roughness)  | 0.009498        | 0.000346        | 27.4x
+----------------------------------------------------------------------
+PASS: Smoothing operator recovers continuum geometry and suppresses fractal noise.

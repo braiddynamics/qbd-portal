@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Dimensional Emergence and Hausdorff Scaling Audit
-# Subject:   Audits topological dimension crystallization in Chapter 18.3.11
+# Subject:   Audits topological dimension crystallization in Chapter 18.3.12
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np

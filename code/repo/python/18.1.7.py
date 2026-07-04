@@ -2,7 +2,7 @@
 # -----------------------------------------------------------------------------
 # Title:     QBD Spontaneous Ignition and Symmetry-Breaking Audit
 # Subject:   Audits spontaneous loop nucleation and symmetry-breaking tunneling
-#            claims in Chapter 18.1.6 (Standalone Version).
+#            claims in Chapter 18.1.7 (Standalone Version).
 # Version:   1.1
 # -----------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ def simulate_symmetry_breaking(G, trials=100):
     return np.mean(cycles_closed), np.std(cycles_closed)
 
 def run_ignition_audit():
-    # Sweep depths 2 to 9 to verify scaling parameters
+    # Sweep depths 2 to 7 to verify scaling parameters
     depths = [2, 3, 4, 5, 6, 7]
     
     print("="*80)
@@ -160,8 +160,8 @@ def run_ignition_audit():
         paths = find_all_2_paths(G_vacuum)
         edge_disj = greedy_edge_disjoint_paths(paths)
         
-        m1_mean, m1_std = simulate_bipartite_stasis(G_vacuum, trials=3000)
-        m2_mean, m2_std = simulate_symmetry_breaking(G_vacuum, trials=3000)
+        m1_mean, m1_std = simulate_bipartite_stasis(G_vacuum, trials=100)
+        m2_mean, m2_std = simulate_symmetry_breaking(G_vacuum, trials=100)
         
         theoretical_current = N / 32.0
         

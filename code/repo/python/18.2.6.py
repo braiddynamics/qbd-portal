@@ -3,7 +3,7 @@
 # Title:     QBD Discrete Friedmann Scaling Audit
 # Subject:   Audits discrete Friedmann scaling claims in Chapter 18.2.6
 #            (Standalone 3D Grid Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np

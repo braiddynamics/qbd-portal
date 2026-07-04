@@ -1,0 +1,16 @@
+Case: Balanced Topology (u=1)
+  Map: {1: 0.3333, 2: 0.3333, 0: 0.3333}
+  Sum: 1.0000
+
+Case: Empty Past (u=0)
+  Map: {0: 0.6667, 1: 0.3333}
+  Sum: 1.0000
+
+Case: Empty Future (u=2)
+  Map: {2: 0.6667, 1: 0.3333}
+  Sum: 1.0000
+
+Case: Isolated Singularity (u=99)
+  Map: {99: 1.0}
+  Sum: 1.0000
+

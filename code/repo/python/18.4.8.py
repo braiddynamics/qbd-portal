@@ -2,7 +2,7 @@
 # -----------------------------------------------------------------------------
 # Title:     QBD Langevin Slow-Roll Parameter Audit
 # Subject:   Audits Langevin trajectory of density and tracks slow-roll parameters
-#            in Chapter 18.4.7 (Standalone Version).
+#            in Chapter 18.4.8 (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
 

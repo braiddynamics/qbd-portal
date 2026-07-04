@@ -5,7 +5,7 @@ import networkx as nx
 def lazy_mu_dynamic(u, G, alpha=1.0/3.0, beta=1.0/3.0):
     """
     Computes μ_u dynamically based on graph topology.
-    Implements the Re-absorption Logic (**Measure Validity Lemma** [(§11.2.4)](/monograph/stage/discrete/11.2/#11.2.4)).
+    Implements the Re-absorption Logic (Measure Validity §11.2.4).
     """
     N_plus = list(G.successors(u))
     N_minus = list(G.predecessors(u))

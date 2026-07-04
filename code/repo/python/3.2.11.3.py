@@ -49,30 +49,29 @@ def classify_structure(G):
 
 # --- The Axiomatic Sieve ---
 
-def filter_lemma_3_2_2_geometric_viability(G):
+def filter_lemma_3_2_13_simplicial_closure(G):
     """
-    Lemma 3.2.2: Exclusion of Cyclic Topologies (Geometric Viability).
+    Lemma 3.2.13: The Simplicial Closure Constraint.
     Constraint: Max degree <= 3.
-    Physical Logic: A coordination number k > 3 implies the necessity of 
-    closed loops to tile space efficiently. To ensure the vacuum remains 
-    strictly pre-geometric (acyclic potential), we enforce k <= 3.
+    Physical Logic: A coordination number k_deg >= 4 is rejected because it
+    forces non-manifold combinatorial singularities upon parallel rewrite ignition.
     """
     degrees = [d for n, d in G.degree()]
     return max(degrees) <= 3
 
-def filter_lemma_3_2_6_site_maximality(G):
+def filter_lemma_3_2_7_site_maximality(G):
     """
-    Lemma 3.2.6: Site Maximality.
+    Lemma 3.2.7: Site Maximality.
     Constraint: Max degree >= 3 (Branching).
-    Physical Logic: Linear chains (degree 2) possess minimal compliant sites, 
-    stalling geometric ignition. The vacuum must be maximally branched.
+    Physical Logic: Linear chains possess minimal compliant sites, stalling 
+    geometric ignition. The vacuum must be branched.
     """
     degrees = [d for n, d in G.degree()]
     return max(degrees) >= 3
 
-def filter_lemma_3_2_7_regularity(G):
+def filter_lemma_3_2_8_regularity(G):
     """
-    Lemma 3.2.7: Strict Degree Regularity.
+    Lemma 3.2.8: Degree Regularity.
     Constraint: Uniform internal degree (Variance = 0).
     Physical Logic: Any variation in internal degree introduces distinguishability 
     between locations, violating the isotropy of the vacuum.
@@ -91,22 +90,22 @@ print("-" * 70)
 candidates = list(nx.nonisomorphic_trees(10))
 print(f"{'1. Enumerate Undirected Topologies':<45} | {len(candidates):<10} | -")
 
-# 2. Apply Lemma 3.2.2
-survivors = [g for g in candidates if filter_lemma_3_2_2_geometric_viability(g)]
+# 2. Apply Lemma 3.2.13
+survivors = [g for g in candidates if filter_lemma_3_2_13_simplicial_closure(g)]
 dropped = len(candidates) - len(survivors)
-print(f"{'2. Lemma 3.2.2: Geometric Viability (k<=3)':<45} | {len(survivors):<10} | {dropped} (Stars/Hubs)")
+print(f"{'2. Lemma 3.2.13: Simplicial Closure Constraint (k<=3)':<45} | {len(survivors):<10} | {dropped} (Stars/Hubs)")
 
-# 3. Apply Lemma 3.2.6
+# 3. Apply Lemma 3.2.7
 prev_len = len(survivors)
-survivors = [g for g in survivors if filter_lemma_3_2_6_site_maximality(g)]
+survivors = [g for g in survivors if filter_lemma_3_2_7_site_maximality(g)]
 dropped = prev_len - len(survivors)
-print(f"{'3. Lemma 3.2.6: Site Maximality':<45} | {len(survivors):<10} | {dropped} (Linear Chains)")
+print(f"{'3. Lemma 3.2.7: Site Maximality':<45} | {len(survivors):<10} | {dropped} (Linear Chains)")
 
-# 4. Apply Lemma 3.2.7
+# 4. Apply Lemma 3.2.8
 prev_len = len(survivors)
-survivors = [g for g in survivors if filter_lemma_3_2_7_regularity(g)]
+survivors = [g for g in survivors if filter_lemma_3_2_8_regularity(g)]
 dropped = prev_len - len(survivors)
-print(f"{'4. Lemma 3.2.7: Strict Regularity':<45} | {len(survivors):<10} | {dropped} (Irregular)")
+print(f"{'4. Lemma 3.2.8: Strict Regularity':<45} | {len(survivors):<10} | {dropped} (Irregular)")
 
 print("-" * 70)
 print(f"\n{'--- FINAL SCORECARD (Lambda Sweep [0.4 - 0.6]) ---':^70}")

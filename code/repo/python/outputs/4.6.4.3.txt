@@ -1,0 +1,7 @@
+Irreversibility via Entropy Production in 𝒰
+================================================
+Monte Carlo trials:         10,000
+Average ΔS per tick:        1.49976 bits
+Standard deviation:         0.00500 bits
+Minimum observed ΔS:        1.48093 bits
+Strictly positive ΔS:       True

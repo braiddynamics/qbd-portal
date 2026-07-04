@@ -1,0 +1,21 @@
+=================================================================
+   QBD DISCRETE FIELD EQUATION VERIFICATION SUITE
+=================================================================
+Protocol A: Exact Mechanism (3-Node Topology Change)
+-----------------------------------------------------------------
+  Vacuum Curvature (G_0): 0.166667 (Background)
+  Active Curvature (G_1): 0.500000 (Perturbed)
+  Flux Injection (ΔT):    1.000000
+  Curvature Response (ΔG):0.333333
+  Coupling Constant (κ):  0.333333 (Target: 0.333333)
+  >> RESULT: PASS (Exact Topological Coupling Confirmed)
+
+Protocol B: Thermodynamic Robustness (Affine Regression)
+-----------------------------------------------------------------
+  Sample Size:            1000
+  Vacuum Permittivity Λ:  0.015625
+  Linearity (R²):         0.997865
+  Extracted κ (Slope):    0.334780 (Err: 0.43%)
+  Extracted G_vac (Int):  0.165458 (Err: 0.73%)
+  >> RESULT: PASS (Affine Equation G = κT + Λ Validated)
+=================================================================

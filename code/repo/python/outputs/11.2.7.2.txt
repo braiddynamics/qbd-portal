@@ -1,0 +1,6 @@
+Measure A (Origin): {0: 0.6667, 1: 0.3333, 2: 0.0}
+Measure B (Center): {0: 0.3333, 1: 0.3333, 2: 0.3333}
+Excess Mass (A-B):  {0: 0.3333, 1: 0.0, 2: -0.3333}
+Transport Cost W1:  0.6667
+Curvature K(A,B):   0.3333
+Verification Pass:  True

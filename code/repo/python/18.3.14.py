@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Heat Kernel Spectral Dimension Convergence Audit
-# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.13
+# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.14
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------

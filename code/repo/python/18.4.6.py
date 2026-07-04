@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Spectral Index Red-Tilt Audit
-# Subject:   Audits primordial fluctuations and spectral red-tilt in Chapter 18.4.5
+# Subject:   Audits primordial fluctuations and spectral red-tilt in Chapter 18.4.6
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -64,7 +64,7 @@ def simulate_power_spectrum_horizon_exit(n_modes=10):
         # Primordial curvature power spectrum amplitude at horizon exit
         P_val = (H_exit ** 4) * noise_amplitude / (dot_rho ** 2)
         
-        # Scale to match physical CMB amplitudes (e.g. ~ 2e-9)
+        # Scale to match CMB amplitude calibrated_P
         calibrated_P = P_val * 7e-7
         power_amplitudes.append(calibrated_P)
         

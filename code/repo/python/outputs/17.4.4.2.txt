@@ -1,0 +1,17 @@
+=================================================================
+   FORCE-MATTER DECOMPOSITION
+   E8 -> SO(16) (Force) + Spinor (Matter)
+=================================================================
+   Total Roots: 240
+   Force Sector (SO(16) Adjoint):  112 roots
+   Matter Sector (Spinor Rep):     128 roots
+
+   [Subgroup Verification]
+   Roots confined to dims [0,1,2]: 12 (matches SO(6) embedding)
+   Roots confined to dims [3,4]:   4 (matches SO(4) embedding)
+
+   [Matter Capacity Analysis]
+   Matter Sector Size: 128
+   SO(10) Family Size: 16
+   Available Families: 8.0
+-----------------------------------------------------------------

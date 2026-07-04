@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Bipartite Parity-Breaking Phase Transition Audit
-# Subject:   Audits dynamic parity symmetry-breaking transition in Chapter 18.1.8
+# Subject:   Audits dynamic parity symmetry-breaking transition in Chapter 18.1.5
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -155,13 +155,6 @@ def run_transition_audit():
     results = simulate_symmetry_breaking_sweep()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
-    print("The simulation reveals a clear topological phase transition:")
-    print("At β = 0.0, parity violation is exactly zero, locking the system in stasis.")
-    # As beta increases, parity violation and loops scale up rapidly.
-    print("As the tunneling coupling increases, parity symmetry is spontaneously broken,")
-    print("closing geometric loops and triggering the transition to 3D space.")
     print("="*80)
 
 if __name__ == "__main__":

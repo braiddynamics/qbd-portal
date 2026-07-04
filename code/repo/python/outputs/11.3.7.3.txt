@@ -1,0 +1,16 @@
+--- State G0 (Pre-Nucleation) ---
+μ_u (0): {0: 0.6667, 1: 0.3333}
+μ_v (1): {1: 0.3333, 2: 0.3333, 0: 0.3333}
+W1_pre:  0.6667
+K_pre:   0.3333
+
+--- State G1 (Post-Nucleation) ---
+μ_u (0): {0: 0.3333, 1: 0.3333, 2: 0.3333}
+μ_v (1): {1: 0.3333, 2: 0.3333, 0: 0.3333}
+W1_post: 0.0000
+K_post:  1.0000
+
+--- Verification Results ---
+1. Measure Dilution (Phase 1) (§11.3.3) (Shared Mass > 0):   True (m_w = 0.3333)
+2. Cost Contraction (Phase 3) (§11.3.5) (W1_post < W1_pre):  True (ΔK = 0.6667)
+3. Corollary 11.3.7 (Sparse Scaling): c ≈ 0.3680 (per cycle)

@@ -1,0 +1,12 @@
+--- QBD Discrete Bianchi Identity Verification ---
+Objective: Check divergence-free condition ∇·G = 0 for conserved fluxes
+=================================================================
+N (Nodes)    | Mean Divergence (Error)   | Max Divergence      
+-----------------------------------------------------------------
+50           | 3.1086e-17                | 8.8818e-16          
+100          | 1.0769e-16                | 4.4409e-15          
+500          | 3.3640e-17                | 3.5527e-15          
+-----------------------------------------------------------------
+RESULT: Divergence vanishes to machine precision.
+        Geometric conservation is mathematically exact given G ~ T.
+=================================================================

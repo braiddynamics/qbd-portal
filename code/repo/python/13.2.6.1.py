@@ -79,7 +79,7 @@ def compute_curvature_exact(G, u, v, dist_matrix):
     if res.success:
         w1_dist = res.fun
         K = 1.0 - w1_dist
-        G_ab = 0.5 * K # Trace-Reversed Definition (12.2.1)
+        G_ab = 0.5 * K # Trace-Reversed Definition (13.2.1)
         return G_ab
     return 0.0
 
@@ -144,7 +144,7 @@ def protocol_b_affine_regression(G_vac_theory):
     print("-" * 65)
     
     # Parameters from Theory
-    LAMBDA_VAC = 0.015625  # 2^-6 (**vacuum state probability Lemma** [(§5.2.3)](/monograph/rules/equilibrium/5.2/#5.2.3))
+    LAMBDA_VAC = 0.015625  # 2^-6 (vacuum state probability Lemma §5.2.3)
     KAPPA_THEORY = 1.0/3.0
     
     # Generate Synthetic Data (N=1000)

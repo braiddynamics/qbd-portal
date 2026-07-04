@@ -3,7 +3,7 @@
 # Title:     QBD de Sitter Inflation Audit
 # Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.5
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np

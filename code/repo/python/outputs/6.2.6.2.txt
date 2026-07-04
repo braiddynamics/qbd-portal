@@ -1,0 +1,17 @@
+══════════════════════════════════════════════════════════════════════
+ENTROPIC SUPPRESSION OF EXOTIC BRAIDS
+Boltzmann Weights vs. Ribbon Count (n)
+══════════════════════════════════════════════════════════════════════
+
+Vacuum temperature T = ln 2 ≈ 0.693147
+Cost per ribbon ΔC = 1 nat
+Suppression per ribbon ≈ 0.236290
+
+Results (normalized to n=3):
+ Ribbon count (n) Relative probability Suppression factor
+                3             1.000000                1.0
+                4             0.236290                4.2
+                5             0.055833               17.9
+                6             0.013193               75.8
+                7             0.003117              320.8
+                8             0.000737             1357.6

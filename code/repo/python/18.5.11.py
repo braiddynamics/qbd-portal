@@ -3,7 +3,7 @@
 # Title:     QBD Horizon Homogeneity and Propagator Decay Audit
 # Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.11
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
