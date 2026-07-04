@@ -13,16 +13,16 @@ def IsCompliant2Path (R : CausalRelation V) (u w v : V) : Prop :=
   R u w ∧ R w v ∧ ¬ R u v ∧ (∀ z : V, R u z ∧ R z v → z = w)
 
 /--
-THEOREM: Lexicographic Potential Relation is Well-Founded
-Formally establishes that Prod.Lex on Nat x Nat is well-founded,
-guaranteeing the existence of no infinite descending chains.
+THEOREM 1: Lexicographic Potential Relation is Well-Founded
+Formally establishes that Prod.Lex on Nat × Nat is well-founded,
+guaranteeing the existence of no infinite descending chains in the state space.
 -/
 theorem lexicographic_relation_wf :
     WellFounded (Prod.Lex (fun (a b : Nat) => a < b) (fun (a b : Nat) => a < b)) :=
   (inferInstance : WellFoundedRelation (Nat × Nat)).wf
 
 /--
-THEOREM: Lexicographic Descent is Admissible
+THEOREM 2: Lexicographic Descent is Admissible
 Proves that any update step reducing either the maximum cycle length
 or its multiplicity transitions the state space along a strictly decreasing chain.
 -/

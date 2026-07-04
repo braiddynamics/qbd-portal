@@ -9,22 +9,16 @@ def IsAntisymmetric (V : Type) (R : CausalRelation V) : Prop :=
 def IsIrreflexive (V : Type) (R : CausalRelation V) : Prop :=
   ∀ v : V, ¬ R v v
 
--- Define Strict Asymmetry
-def IsAsymmetric (V : Type) (R : CausalRelation V) : Prop :=
-  ∀ u v : V, R u v → ¬ R v u
-
-/--
-Typeclass enforcing the strict legislative properties of a valid QBD Causal Primitive.
-Notice that we explicitly mandate Irreflexivity and Asymmetry.
--/
+-- Typeclass enforcing the strict legislative properties of a valid QBD Causal Primitive
 class AdmissibleCausalGraph (V : Type) (R : CausalRelation V) where
   irreflexive : IsIrreflexive V R
-  asymmetric  : IsAsymmetric V R
+  asymmetric  : ∀ u v : V, R u v → ¬ R v u
 
 /--
-THEOREM 1: Insufficiency of Antisymmetry
-Formally demonstrates that order-theoretic antisymmetry is physically insufficient
-because there exists a valid relation that is antisymmetric yet contains a self-loop.
+THEOREM: Insufficiency of Antisymmetry
+Formal counter-model proving that order-theoretic antisymmetry is physically
+insufficient: the reflexive equality relation satisfies antisymmetry yet
+contains a self-loop, demonstrating that irreflexivity is an independent axiom.
 -/
 theorem antisymmetry_insufficient :
     ∃ (V : Type) (R : CausalRelation V), IsAntisymmetric V R ∧ ¬ (IsIrreflexive V R) := by
@@ -36,6 +30,10 @@ theorem antisymmetry_insufficient :
     have h_loop : ¬ (true = true) := h_irref true
     exact h_loop rfl
   ⟩
+
+-- Define Strict Asymmetry
+def IsAsymmetric (V : Type) (R : CausalRelation V) : Prop :=
+  ∀ u v : V, R u v → ¬ R v u
 
 /--
 THEOREM 2: Asymmetry Implies Irreflexivity

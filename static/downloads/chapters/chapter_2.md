@@ -98,23 +98,23 @@ Let the condition of **Antisymmetry** be defined conventionally by the propositi
 The proof proceeds via Direct Construction, identifying a topological loop-defect and demonstrating its physical and thermodynamic inadmissibility.
 
 ```text
-• 2.2.1 Theorem Insufficiency of Antisymmetry
-├── 2.2.1.2 Diagram Ordering Constraints
+• 2.2.1 Theorem Insufficiency of Antisymmetry  [by construction]
+├── 2.2.1.2 Diagram: Ordering Constraints
 │
-├── 2.2.2 Lemma Pathology of Self-Loops
-│   ├── 2.2.2.1 Proof Pathology of Self-Loops
-│   ├── 2.2.2.2 Commentary Atomic Violation
-│   └── 2.2.2.3 Diagram Inertia of Self-Loops
+├── 2.2.2 Lemma: Pathology of Self-Loops
+│   ├── 2.2.2.1 Proof: Pathology of Self-Loops
+│   ├── 2.2.2.2 Commentary: Atomic Violation
+│   └── 2.2.2.3 Diagram: Inertia of Self-Loops
 │
-├── 2.2.3 Lemma Thermodynamic Nullity
-│   ├── 2.2.3.1 Proof Thermodynamic Nullity
-│   └── 2.2.3.2 Commentary Entropic Barrenness
+├── 2.2.3 Lemma: Thermodynamic Nullity
+│   ├── 2.2.3.1 Proof: Thermodynamic Nullity
+│   └── 2.2.3.2 Commentary: Entropic Barrenness
 │
-├── 2.2.4 Proof Insufficiency of Antisymmetry
+├── 2.2.4 Proof: Insufficiency of Antisymmetry
 │
-├── 2.2.5 Validation via Lean 4 Core
+├── 2.2.5 Validation: Lean 4 Core
 │
-└── 2.2.6 Commentary Loophole of Equality
+└── 2.2.6 Commentary: Loophole of Equality
 ```
 
 ### 2.2.1.2 Diagram: Ordering Constraints {#2.2.1.2}
@@ -326,7 +326,7 @@ Q.E.D.
 Type-theoretic certification of the logical gap established in the **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> proceeds via the following verification strategy:
 
 1.  **Encoding:** The definitions `CausalRelation`, `IsAntisymmetric`, and `IsIrreflexive` encode the three foundational predicates as Lean propositions, mapping the binary edge relation to a dependent type over the vertex universe `V`.
-2.  **Theorem Statement:** The theorem asserts the existence of a type `V` and relation `R` that simultaneously satisfies `IsAntisymmetric` and violates `IsIrreflexive`, instantiated concretely by the reflexive equality relation `Eq` over the two-element `Bool` domain.
+2.  **Theorem Statement:** The Lean proposition `antisymmetry_insufficient` asserts the existence of a type `V` and relation `R` that simultaneously satisfies `IsAntisymmetric` and violates `IsIrreflexive`, instantiated concretely by the reflexive equality relation `Eq` over the two-element `Bool` domain.
 3.  **Proof Closure:** The `exact` tactic closes the goal by providing the witness `⟨Bool, Eq, ...⟩` directly; the inner contradiction is discharged by applying `h_irref true` to the trivial proof `rfl : true = true`.
 
 ```lean
@@ -365,7 +365,7 @@ theorem antisymmetry_insufficient :
 ```
 
 **Verification Summary:**
-The three definitions encode the minimal vocabulary of the antisymmetry argument as Lean types. `CausalRelation V` is a function type `V → V → Prop`, faithfully capturing the binary predicate structure of a directed edge relation. `IsAntisymmetric` and `IsIrreflexive` encode the standard mathematical conditions as universally quantified propositions over `V`. The theorem existentially witnesses the counter-model `⟨Bool, Eq⟩`: Boolean equality satisfies antisymmetry because `h_fwd : u = v` is returned directly when both directions hold, yet it violates irreflexivity because `true = true` is provable by `rfl`, which immediately contradicts the assumed `h_irref true : ¬ (true = true)`. The Lean kernel's acceptance of this closed proof term certifies that the logical claim in **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> is correct: antisymmetry does not imply irreflexivity, and the stricter axiomatic requirement is independently necessary.
+The three definitions encode the minimal vocabulary of the antisymmetry argument as Lean types. `CausalRelation V` is a function type `V → V → Prop`, faithfully capturing the binary predicate structure of a directed edge relation. `IsAntisymmetric` and `IsIrreflexive` encode the standard mathematical conditions as universally quantified propositions over `V`. The verified counter-model `⟨Bool, Eq⟩` existentially witnesses this logical gap: Boolean equality satisfies antisymmetry because `h_fwd : u = v` is returned directly when both directions hold, yet it violates irreflexivity because `true = true` is provable by `rfl`, which immediately contradicts the assumed `h_irref true : ¬ (true = true)`. The Lean kernel's acceptance of this closed proof term certifies that the logical claim in **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> is correct: antisymmetry does not imply irreflexivity, and the stricter axiomatic requirement is independently necessary.
 
 ### 2.2.6 Commentary: Loophole of Equality {#2.2.6}
 
@@ -439,7 +439,8 @@ For any graph state $G$ undergoing a sequence of edge addition and deletion task
 The proof proceeds via Direct Construction, separating the generative capacity of the graph from its restrictive bounds to establish a well-founded metric topology.
 
 ```text
-• 2.3.2 Theorem: Geometric Constructibility
+• 2.3.2 Theorem Geometric Constructibility  [by construction]
+│
 ├── 2.3.3 Lemma: Geometric Quantum
 │   ├── 2.3.3.1 Proof: Geometric Quantum
 │   ├── 2.3.3.2 Commentary: Necessity of Three
@@ -819,34 +820,34 @@ For all graph states $G$ containing a Simple Directed Cycle of length $L_{\max} 
 The proof proceeds by Direct Construction, defining a finite sequence of constructive triangulation operations that systematically decompose higher-order cycles into stable geometric quanta.
 
 ```text
-• 2.4.1 Theorem General Cycle Decomposition
-├── 2.4.1.2 Diagram Digestion of Geometry
+• 2.4.1 Theorem General Cycle Decomposition  [by construction]
+├── 2.4.1.2 Diagram: Digestion of Geometry
 │
-├── 2.4.2 Lemma Confluence of the Constructor
-│   └── 2.4.2.1 Proof Diamond Property
+├── 2.4.2 Lemma: Confluence of the Constructor
+│   └── 2.4.2.1 Proof: Diamond Property
 │
-├── 2.4.3 Lemma Chordlessness of Maximal Cycles
-│   └── 2.4.3.1 Proof Chordlessness of Maximal Cycles
+├── 2.4.3 Lemma: Chordlessness of Maximal Cycles
+│   └── 2.4.3.1 Proof: Chordlessness of Maximal Cycles
 │
-├── 2.4.4 Lemma Reduction via Deletion
-│   └── 2.4.4.1 Proof Reduction via Deletion
+├── 2.4.4 Lemma: Reduction via Deletion
+│   └── 2.4.4.1 Proof: Reduction via Deletion
 │
-├── 2.4.5 Lemma Decrease in Parallel Updates
-│   └── 2.4.5.1 Proof Decrease in Parallel Updates
+├── 2.4.5 Lemma: Decrease in Parallel Updates
+│   └── 2.4.5.1 Proof: Decrease in Parallel Updates
 │
-├── 2.4.6 Proof General Cycle Decomposition
+├── 2.4.6 Proof: General Cycle Decomposition
 │
-├── 2.4.7 Example 4-Cycle Reduction
+├── 2.4.7 Example: 4-Cycle Reduction
 │
-├── 2.4.8 Example 5-Cycle Reduction
+├── 2.4.8 Example: 5-Cycle Reduction
 │
-├── 2.4.9 Example 6-Cycle Reduction
+├── 2.4.9 Example: 6-Cycle Reduction
 │
-├── 2.4.10 Calculation Simulation Verification
+├── 2.4.10 Calculation: Simulation Verification
 │
-├── 2.4.11 Validation via Lean 4 Core
+├── 2.4.11 Validation: Lean 4 Core
 │
-└── 2.4.12 Commentary Arrow of Simplicity
+└── 2.4.12 Commentary: Arrow of Simplicity
 ```
 
 ### 2.4.1.2 Diagram: Digestion of Geometry {#2.4.1.2}
@@ -1528,7 +1529,7 @@ The auxiliary definitions `IsGeometricQuantum` and `IsCompliant2Path` confirm th
 :::info[**Dynamical Restoration of the Quantum via the Mechanism of Topological Digestion**]
 :::
 
-The Theorem of General Cycle Decomposition guarantees that the "Geometric Quantum" (the $3$-cycle) functions as a global attractor within the state space of the universe. One might envision a dynamical system where fluctuations are permitted to cascade without restriction, generating structures of arbitrary and unbounded complexity such as squares, pentagons, or vast and tangled loops of causal influence. However, the fundamental laws of physics we have outlined act as a restorative force, a form of topological surface tension that resists the indefinite expansion of local complexity.
+The formal guarantee of the **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> establishes that the "Geometric Quantum" (the $3$-cycle) functions as a global attractor within the state space of the universe. One might envision a dynamical system where fluctuations are permitted to cascade without restriction, generating structures of arbitrary and unbounded complexity such as squares, pentagons, or vast and tangled loops of causal influence. However, the fundamental laws of physics we have outlined act as a restorative force, a form of topological surface tension that resists the indefinite expansion of local complexity.
 
 Consider the precise physical mechanism at play here. The **Rewrite Rule** functions as the agent of recognition: it scans the substrate for the specific geometric defect of a "hole" larger than the fundamental quantum. When such a defect is identified, the **Principle of Unique Causality (PUC)** functions as a precise discriminator. It constrains the repair mechanism by forbidding the duplication of existing short-range paths (cloning a specific history), yet crucially permits the **shortcutting** of long-range paths (triangulation). A critical distinction must be made to avoid logical deadlock: the PUC validates the site of the operation (ensuring the 2-path being bridged is unique) rather than blocking the closure based on the defect's perimeter. While a $4$-cycle implies a perimeter path of length $2$ between opposing vertices, this path belongs to the defect, not the quantum. The insertion of the chord does not "clone" this perimeter history: it supersedes it. The chord creates a strictly tighter topological metric ($L=1$ versus $L=2$), thereby establishing a new, distinct logical object, the Geometric Quantum, rather than a redundant copy of the macro-history.
 
@@ -1578,16 +1579,16 @@ Let the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> be establish
 The proof proceeds by Direct Construction, establishing logical orthogonality between the causal and geometric primitives by instantiating explicit counter-models.
 
 ```text
-• 2.5.1 Theorem Independence of Axioms 1 and 2
-├── 2.5.1.2 Diagram Independence Matrix
+• 2.5.1 Theorem Independence of Axioms 1 and 2  [by construction]
+├── 2.5.1.2 Diagram: Independence Matrix
 │
-├── 2.5.2 Lemma Independence Case A
-│   └── 2.5.2.1 Proof Independence Case A
+├── 2.5.2 Lemma: Independence Case A
+│   └── 2.5.2.1 Proof: Independence Case A
 │
-├── 2.5.3 Lemma Independence Case B
-│   └── 2.5.3.1 Proof Independence Case B
+├── 2.5.3 Lemma: Independence Case B
+│   └── 2.5.3.1 Proof: Independence Case B
 │
-└── 2.5.4 Proof Mutual Independence
+└── 2.5.4 Proof: Mutual Independence
 ```
 
 ### 2.5.1.2 Diagram: Independence Matrix {#2.5.1.2}
@@ -1829,28 +1830,29 @@ Let a system be constrained exclusively by Axioms 1 and 2. The **Effective Influ
 The proof proceeds via Contradiction, assuming that local constraints alone suffice for global consistency to expose the emergent causal violations that refute this assumption.
 
 ```text
-• 2.6.1 Theorem Inadequacy of Local Axioms
-├── 2.6.2 Lemma Effective Influence
-│   ├── 2.6.2.1 Proof Effective Influence
-│   ├── 2.6.2.2 Commentary Path Constraints
-│   └── 2.6.2.3 Commentary Simultaneity Paradox
+• 2.6.1 Theorem Inadequacy of Local Axioms  [by contradiction]
 │
-├── 2.6.3 Lemma Strict Timestamps
-│   └── 2.6.3.1 Proof Strict Timestamps
+├── 2.6.2 Lemma: Effective Influence
+│   ├── 2.6.2.1 Proof: Effective Influence
+│   ├── 2.6.2.2 Commentary: Path Constraints
+│   └── 2.6.2.3 Commentary: Simultaneity Paradox
 │
-├── 2.6.4 Lemma Failure of Reflexivity
-│   └── 2.6.4.1 Proof Failure of Reflexivity
+├── 2.6.3 Lemma: Strict Timestamps
+│   └── 2.6.3.1 Proof: Strict Timestamps
 │
-├── 2.6.5 Lemma Failure of Asymmetry
-│   ├── 2.6.5.1 Proof Failure of Asymmetry
-│   └── 2.6.5.2 Diagram Bowtie Paradox
+├── 2.6.4 Lemma: Failure of Reflexivity
+│   └── 2.6.4.1 Proof: Failure of Reflexivity
 │
-├── 2.6.6 Lemma Causal Acyclicity vs. Spatial Triangulation
-│   └── 2.6.6.1 Proof Causal Acyclicity vs. Spatial Triangulation
+├── 2.6.5 Lemma: Failure of Asymmetry
+│   ├── 2.6.5.1 Proof: Failure of Asymmetry
+│   └── 2.6.5.2 Diagram: Bowtie Paradox
 │
-└── 2.6.7 Proof Inadequacy of Local Axioms
-    ├── 2.6.7.1 Corollary Global Constraint
-    └── 2.6.7.2 Diagram Antisymmetry Failure
+├── 2.6.6 Lemma: Causal Acyclicity vs. Spatial Triangulation
+│   └── 2.6.6.1 Proof: Causal Acyclicity vs. Spatial Triangulation
+│
+└── 2.6.7 Proof: Inadequacy of Local Axioms
+    ├── 2.6.7.1 Corollary: Global Constraint
+    └── 2.6.7.2 Diagram: Antisymmetry Failure
 ```
 
 ---
@@ -2383,18 +2385,19 @@ Assume the requirement of **Acyclic Effective Causality** <Ref id="2.7.1" label=
 The proof proceeds via Contradiction, assuming that global causal violations can be resolved post-hoc to demonstrate that the required coordination energy diverges in the thermodynamic limit.
 
 ```text
-• 2.7.2 Theorem Thermodynamic Enforcement
-├── 2.7.3 Lemma Cycle Diameter Growth
-│   ├── 2.7.3.1 Proof Cycle Diameter Growth
-│   ├── 2.7.3.2 Commentary Blindness of Locality
-│   └── 2.7.3.3 Diagram Horizon Problem
+• 2.7.2 Theorem Thermodynamic Enforcement  [by contradiction]
 │
-├── 2.7.4 Lemma Local PUC Approximation
-│   ├── 2.7.4.1 Proof Local PUC Approximation
-│   └── 2.7.4.2 Commentary Cost of Certainty
+├── 2.7.3 Lemma: Cycle Diameter Growth
+│   ├── 2.7.3.1 Proof: Cycle Diameter Growth
+│   ├── 2.7.3.2 Commentary: Blindness of Locality
+│   └── 2.7.3.3 Diagram: Horizon Problem
 │
-└── 2.7.5 Proof Thermodynamic Enforcement
-    └── 2.7.5.1 Commentary Thermodynamic Wall
+├── 2.7.4 Lemma: Local PUC Approximation
+│   ├── 2.7.4.1 Proof: Local PUC Approximation
+│   └── 2.7.4.2 Commentary: Cost of Certainty
+│
+└── 2.7.5 Proof: Thermodynamic Enforcement
+    └── 2.7.5.1 Commentary: Thermodynamic Wall
 ```
 
 ---

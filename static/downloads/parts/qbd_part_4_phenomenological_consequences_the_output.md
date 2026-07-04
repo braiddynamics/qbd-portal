@@ -63,29 +63,30 @@ Let $G_0$ denote the pre-geometric tree vacuum with non-zero vacuum permittivity
 :::tip[**Structure of the Primordial Loop Nucleation Argument via Slot Alignment, Path Enumeration, and Current Synthesis**]
 :::
 
-The **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" /> is established by the systematic integration of combinatorial alignment probabilities and topological path counting:
+The proof proceeds by construction, establishing the **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" /> through the systematic integration of combinatorial alignment probabilities and topological path counting:
 
 ```text
-• 18.1.2 Theorem Primordial Loop Nucleation
-├── 18.1.3 Lemma Slot Alignment Probability
-│   ├── 18.1.3.1 Proof Slot Alignment Probability
-│   └── 18.1.3.2 Commentary Slot Alignment Duality
+• 18.1.2 Theorem Primordial Loop Nucleation  [by construction]
 │
-├── 18.1.4 Lemma Precursor Path Counting
-│   ├── 18.1.4.1 Proof Precursor Path Counting
-│   └── 18.1.4.2 Commentary Precursor Path Abundance
+├── 18.1.3 Lemma: Slot Alignment Probability
+│   ├── 18.1.3.1 Proof: Slot Alignment Probability
+│   └── 18.1.3.2 Commentary: Slot Alignment Duality
 │
-├── 18.1.5 Proof Primordial Loop Nucleation
+├── 18.1.4 Lemma: Precursor Path Counting
+│   ├── 18.1.4.1 Proof: Precursor Path Counting
+│   └── 18.1.4.2 Commentary: Precursor Path Abundance
 │
-├── 18.1.6 Calculation Loop Nucleation Current
+├── 18.1.5 Proof: Primordial Loop Nucleation
 │
-├── 18.1.7 Diagram Triad Alignment Duality
+├── 18.1.6 Calculation: Loop Nucleation Current
 │
-├── 18.1.8 Lemma Topological Parity Projection
-│   ├── 18.1.8.1 Proof Topological Parity Projection
-│   └── 18.1.8.2 Commentary Parity Symmetry Duality
+├── 18.1.7 Diagram: Triad Alignment Duality
 │
-└── 18.1.9 Calculation Bipartite Parity Phase Transition
+├── 18.1.8 Lemma: Topological Parity Projection
+│   ├── 18.1.8.1 Proof: Topological Parity Projection
+│   └── 18.1.8.2 Commentary: Parity Symmetry Duality
+│
+└── 18.1.9 Calculation: Bipartite Parity Phase Transition
 ```
 
 ---
@@ -785,23 +786,24 @@ Let $a(t)$ denote the cosmic scale factor satisfying the **Volume-Complexity Lin
 :::tip[**Structure of the Discrete Friedmann Scaling Argument via Metric Reconstruction, Geodesic Integration, and Scaling Synthesis**]
 :::
 
-The **Discrete Friedmann Scaling** <Ref id="18.2.2" label="§18.2.2" /> is established by the integration of two pre-geometric metric lemmas:
+The proof proceeds by construction, establishing the **Discrete Friedmann Scaling** <Ref id="18.2.2" label="§18.2.2" /> through the integration of two pre-geometric metric lemmas:
 
 ```text
-• 18.2.2 Theorem Discrete Friedmann Scaling
-├── 18.2.3 Lemma Metric Space Reconstruction
-│   ├── 18.2.3.1 Proof Metric Space Reconstruction
-│   └── 18.2.3.2 Commentary Metric Grid Normalization
+• 18.2.2 Theorem Discrete Friedmann Scaling  [by construction]
 │
-├── 18.2.4 Lemma Hypersurface Geodesic Integration
-│   ├── 18.2.4.1 Proof Hypersurface Geodesic Integration
-│   └── 18.2.4.2 Commentary Fractal Length Dimension
+├── 18.2.3 Lemma: Metric Space Reconstruction
+│   ├── 18.2.3.1 Proof: Metric Space Reconstruction
+│   └── 18.2.3.2 Commentary: Metric Grid Normalization
 │
-├── 18.2.5 Proof Discrete Friedmann Scaling
+├── 18.2.4 Lemma: Hypersurface Geodesic Integration
+│   ├── 18.2.4.1 Proof: Hypersurface Geodesic Integration
+│   └── 18.2.4.2 Commentary: Fractal Length Dimension
 │
-├── 18.2.6 Calculation Scale Factor Expansion
+├── 18.2.5 Proof: Discrete Friedmann Scaling
 │
-└── 18.2.7 Diagram Volume-Complexity Projection
+├── 18.2.6 Calculation: Scale Factor Expansion
+│
+└── 18.2.7 Diagram: Volume-Complexity Projection
 ```
 
 ---
@@ -1150,23 +1152,24 @@ Let $\rho(t)$ denote the intensive cycle density of the expanding graph under th
 :::tip[**Structure of the de Sitter Expansion Argument via Growth Simplification, Bipartite Expansion, and Scaling Synthesis**]
 :::
 
-The **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" /> is established by integrating two dynamical lemmas:
+The proof proceeds by construction, establishing the **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" /> through the integration of two dynamical lemmas:
 
 ```text
-• 18.3.1 Theorem Emergence of de Sitter Expansion
-├── 18.3.2 Lemma Frictionless Growth Simplification
-│   ├── 18.3.2.1 Proof Frictionless Growth Simplification
-│   └── 18.3.2.2 Commentary Frictionless Growth Velocity
+• 18.3.1 Theorem Emergence of de Sitter Expansion  [by construction]
 │
-├── 18.3.3 Lemma Self-Similar Bipartite Expansion
-│   ├── 18.3.3.1 Proof Self-Similar Bipartite Expansion
-│   └── 18.3.3.2 Commentary Substrate Growth Balance
+├── 18.3.2 Lemma: Frictionless Growth Simplification
+│   ├── 18.3.2.1 Proof: Frictionless Growth Simplification
+│   └── 18.3.2.2 Commentary: Frictionless Growth Velocity
 │
-├── 18.3.4 Proof Emergence of de Sitter Expansion
+├── 18.3.3 Lemma: Self-Similar Bipartite Expansion
+│   ├── 18.3.3.1 Proof: Self-Similar Bipartite Expansion
+│   └── 18.3.3.2 Commentary: Substrate Growth Balance
 │
-├── 18.3.5 Calculation de Sitter Scale Factor Growth
+├── 18.3.4 Proof: Emergence of de Sitter Expansion
 │
-└── 18.3.6 Diagram de Sitter Expansion Phase Profile
+├── 18.3.5 Calculation: de Sitter Scale Factor Growth
+│
+└── 18.3.6 Diagram: de Sitter Expansion Phase Profile
 ```
 
 ---
@@ -1492,29 +1495,30 @@ Let $\rho(t)$ denote the intensive cycle density flowing under the universal evo
 :::tip[**Structure of the Dimensional Emergence Argument via Ahlfors Regularity, Spectral Convergence, and Boundary-Bulk Synthesis**]
 :::
 
-The **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> is established by integrating two pre-geometric metric lemmas:
+The proof proceeds by construction, establishing the **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> through the integration of two pre-geometric metric lemmas:
 
 ```text
-• 18.3.7 Theorem Dimensional Emergence
-├── 18.3.8 Lemma Ahlfors Regularity Bounds
-│   ├── 18.3.8.1 Proof Ahlfors Regularity Bounds
-│   └── 18.3.8.2 Commentary Boundary Area Stabilization
+• 18.3.7 Theorem Dimensional Emergence  [by construction]
 │
-├── 18.3.9 Lemma Spectral Dimension Convergence
-│   ├── 18.3.9.1 Proof Spectral Dimension Convergence
-│   └── 18.3.9.2 Commentary Infrared Operator Convergence
+├── 18.3.8 Lemma: Ahlfors Regularity Bounds
+│   ├── 18.3.8.1 Proof: Ahlfors Regularity Bounds
+│   └── 18.3.8.2 Commentary: Boundary Area Stabilization
 │
-├── 18.3.10 Lemma Gromov-Hausdorff Laplacian Convergence
-│   ├── 18.3.10.1 Proof Gromov-Hausdorff Laplacian Convergence
-│   └── 18.3.10.2 Commentary Variational Energy Stability
+├── 18.3.9 Lemma: Spectral Dimension Convergence
+│   ├── 18.3.9.1 Proof: Spectral Dimension Convergence
+│   └── 18.3.9.2 Commentary: Infrared Operator Convergence
 │
-├── 18.3.11 Proof Dimensional Emergence
+├── 18.3.10 Lemma: Gromov-Hausdorff Laplacian Convergence
+│   ├── 18.3.10.1 Proof: Gromov-Hausdorff Laplacian Convergence
+│   └── 18.3.10.2 Commentary: Variational Energy Stability
 │
-├── 18.3.12 Calculation Hausdorff Dimension Flow
+├── 18.3.11 Proof: Dimensional Emergence
 │
-├── 18.3.13 Diagram Dimensional Crystallization RG Flow
+├── 18.3.12 Calculation: Hausdorff Dimension Flow
 │
-└── 18.3.14 Calculation Heat Kernel Spectral Walks
+├── 18.3.13 Diagram: Dimensional Crystallization RG Flow
+│
+└── 18.3.14 Calculation: Heat Kernel Spectral Walks
 ```
 
 ---
@@ -1701,7 +1705,7 @@ Q.E.D.
 
 The Gromov-Hausdorff Laplacian convergence theorem proves that the discrete graph energy converges to the smooth manifold energy in the thermodynamic limit.
 
-This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace Beltrami operator, the theorem guarantees that the discrete wave equations, green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
+This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace-Beltrami operator, this spectral convergence guarantees that the discrete wave equations, Green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
 
 ---
 
@@ -1888,7 +1892,7 @@ Verification of the asymptotic spectral dimension established by **Gromov-Hausdo
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Heat Kernel Spectral Dimension Convergence Audit
-# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.10
+# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.14
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -2057,29 +2061,30 @@ Let $P_{\mathcal{R}}(k)$ denote the primordial power spectrum of curvature pertu
 :::tip[**Structure of the Spectral Index Red Tilt Argument via Slow-Roll Dynamics, Noise Damping, and Scaling Synthesis**]
 :::
 
-The **Spectral Index Red Tilt** <Ref id="18.4.1" label="§18.4.1" /> is established by integrating two pre-geometric physical lemmas:
+The proof proceeds by construction, establishing the **Spectral Index Red Tilt** <Ref id="18.4.1" label="§18.4.1" /> through the integration of two pre-geometric physical lemmas:
 
 ```text
-• 18.4.1 Theorem Spectral Index Red Tilt
-├── 18.4.2 Lemma Master Equation Slow-Roll Dynamics
-│   ├── 18.4.2.1 Proof Master Equation Slow-Roll Dynamics
-│   └── 18.4.2.2 Commentary Slow-Roll Attractor Dynamics
+• 18.4.1 Theorem Spectral Index Red Tilt  [by construction]
 │
-├── 18.4.3 Lemma Frictional Noise Damping
-│   ├── 18.4.3.1 Proof Frictional Noise Damping
-│   └── 18.4.3.2 Commentary Frictional Noise Damping
+├── 18.4.2 Lemma: Master Equation Slow-Roll Dynamics
+│   ├── 18.4.2.1 Proof: Master Equation Slow-Roll Dynamics
+│   └── 18.4.2.2 Commentary: Slow-Roll Attractor Dynamics
 │
-├── 18.4.4 Lemma Steric Damping Slow-Roll Bounds
-│   ├── 18.4.4.1 Proof Steric Damping Slow-Roll Bounds
-│   └── 18.4.4.2 Commentary Parameter Bounds Robustness
+├── 18.4.3 Lemma: Frictional Noise Damping
+│   ├── 18.4.3.1 Proof: Frictional Noise Damping
+│   └── 18.4.3.2 Commentary: Frictional Noise Damping
 │
-├── 18.4.5 Proof Spectral Index Red Tilt
+├── 18.4.4 Lemma: Steric Damping Slow-Roll Bounds
+│   ├── 18.4.4.1 Proof: Steric Damping Slow-Roll Bounds
+│   └── 18.4.4.2 Commentary: Parameter Bounds Robustness
 │
-├── 18.4.6 Calculation Power Spectrum Numerical Integration
+├── 18.4.5 Proof: Spectral Index Red Tilt
 │
-├── 18.4.7 Diagram Slow-Roll Potential Horizon Exit
+├── 18.4.6 Calculation: Power Spectrum Numerical Integration
 │
-└── 18.4.8 Calculation Langevin Slow-Roll Parameter Audit
+├── 18.4.7 Diagram: Slow-Roll Potential Horizon Exit
+│
+└── 18.4.8 Calculation: Langevin Slow-Roll Parameter Audit
 ```
 
 ---
@@ -2480,7 +2485,7 @@ Verification of the slow-roll parameter bounds established by **Steric Damping S
 # -----------------------------------------------------------------------------
 # Title:     QBD Langevin Slow-Roll Parameter Audit
 # Subject:   Audits Langevin trajectory of density and tracks slow-roll parameters
-#            in Chapter 18.4.4 (Standalone Version).
+#            in Chapter 18.4.8 (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
 
@@ -2640,23 +2645,24 @@ Let $\rho^*$ denote the stable equilibrium density fixed point ($\rho^* \approx 
 :::tip[**Structure of the Flatness Attractor Argument via Jacobian Linearization, Curvature Coupling, and Attractor Synthesis**]
 :::
 
-The **Flatness as Stable Attractor** <Ref id="18.5.1" label="§18.5.1" /> is established by integrating two dynamical lemmas:
+The proof proceeds by construction, establishing the **Flatness as Stable Attractor** <Ref id="18.5.1" label="§18.5.1" /> through the integration of two dynamical lemmas:
 
 ```text
-• 18.5.1 Theorem Flatness as Stable Attractor
-├── 18.5.2 Lemma Net Flux Jacobian Linearization
-│   ├── 18.5.2.1 Proof Net Flux Jacobian Linearization
-│   └── 18.5.2.2 Commentary Linearized Stability Analysis
+• 18.5.1 Theorem Flatness as Stable Attractor  [by construction]
 │
-├── 18.5.3 Lemma Curvature-Density Coupling
-│   ├── 18.5.3.1 Proof Curvature-Density Coupling
-│   └── 18.5.3.2 Commentary Curvature Backpressure Duality
+├── 18.5.2 Lemma: Net Flux Jacobian Linearization
+│   ├── 18.5.2.1 Proof: Net Flux Jacobian Linearization
+│   └── 18.5.2.2 Commentary: Linearized Stability Analysis
 │
-├── 18.5.4 Proof Flatness as Stable Attractor
+├── 18.5.3 Lemma: Curvature-Density Coupling
+│   ├── 18.5.3.1 Proof: Curvature-Density Coupling
+│   └── 18.5.3.2 Commentary: Curvature Backpressure Duality
 │
-├── 18.5.5 Calculation Jacobian Eigenvalue Verification
+├── 18.5.4 Proof: Flatness as Stable Attractor
 │
-└── 18.5.6 Diagram Flatness Restoring Force Phase Portrait
+├── 18.5.5 Calculation: Jacobian Eigenvalue Verification
+│
+└── 18.5.6 Diagram: Flatness Restoring Force Phase Portrait
 ```
 
 ---
@@ -2968,23 +2974,24 @@ Let $G_0$ represent the pre-geometric trivalent tree vacuum substrate with total
 :::tip[**Structure of the Horizon Homogeneity Argument via Small-World Scaling, Propagator Spectrum, and Homogeneity Synthesis**]
 :::
 
-The **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.7" label="§18.5.7" /> is established by integrating the small-world tree scaling lemma and the relational causal propagator spectrum lemma:
+The proof proceeds by construction, establishing the **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.7" label="§18.5.7" /> through the integration of the small-world tree scaling lemma and the relational causal propagator spectrum lemma:
 
 ```text
-• 18.5.7 Theorem Horizon Homogeneity via Pre-Geometric Connectivity
-├── 18.5.8 Lemma Bethe Tree Small-World Scaling
-│   ├── 18.5.8.1 Proof Bethe Tree Small-World Scaling
-│   └── 18.5.8.2 Commentary Small-World Topological Scaling
+• 18.5.7 Theorem Horizon Homogeneity via Pre-Geometric Connectivity  [by construction]
 │
-├── 18.5.9 Lemma Relational Propagator Spectrum
-│   ├── 18.5.9.1 Proof Relational Propagator Spectrum
-│   └── 18.5.9.2 Commentary Relational Covariance Decay
+├── 18.5.8 Lemma: Bethe Tree Small-World Scaling
+│   ├── 18.5.8.1 Proof: Bethe Tree Small-World Scaling
+│   └── 18.5.8.2 Commentary: Small-World Topological Scaling
 │
-├── 18.5.10 Proof Horizon Homogeneity via Pre-Geometric Connectivity
+├── 18.5.9 Lemma: Relational Propagator Spectrum
+│   ├── 18.5.9.1 Proof: Relational Propagator Spectrum
+│   └── 18.5.9.2 Commentary: Relational Covariance Decay
 │
-├── 18.5.11 Calculation Propagator Covariance Decay
+├── 18.5.10 Proof: Horizon Homogeneity via Pre-Geometric Connectivity
 │
-└── 18.5.12 Diagram Small-World Information Diffusion
+├── 18.5.11 Calculation: Propagator Covariance Decay
+│
+└── 18.5.12 Diagram: Small-World Information Diffusion
 ```
 
 ---

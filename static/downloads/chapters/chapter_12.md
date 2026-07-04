@@ -71,21 +71,22 @@ This convergence implies that the limit space $M$ admits a smooth differentiable
 The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold. This strategy leverages the deep correspondence between the spectrum of the Laplacian and the metric geometry, effectively reconstructing the manifold structure from the "sound" of the graph.
 
 ```text
-• 12.1.2 Theorem Smooth Manifold Limit
-├── 12.1.3 Lemma Spectral Convergence
-│   ├── 12.1.3.1 Proof Spectral Convergence
-│   ├── 12.1.3.2 Calculation Spectral Convergence Verification
-│   └── 12.1.3.3 Commentary Hearing the Shape of Spacetime
+• 12.1.2 Theorem Smooth Manifold Limit  [by limits]
 │
-├── 12.1.4 Lemma Heat Kernel Asymptotics
-│   ├── 12.1.4.1 Proof Gaussian Bounds
-│   ├── 12.1.4.2 Calculation Heat Kernel Asymptotics Verification
-│   └── 12.1.4.3 Commentary Diffusion as a Geometry Probe
+├── 12.1.3 Lemma: Spectral Convergence
+│   ├── 12.1.3.1 Proof: Spectral Convergence
+│   ├── 12.1.3.2 Calculation: Spectral Convergence Verification
+│   └── 12.1.3.3 Commentary: Hearing the Shape of Spacetime
 │
-├── 12.1.5 Lemma Smoothness via Elliptic Regularity
-│   └── 12.1.5.1 Proof C-Infinity Smoothness
+├── 12.1.4 Lemma: Heat Kernel Asymptotics
+│   ├── 12.1.4.1 Proof: Gaussian Bounds
+│   ├── 12.1.4.2 Calculation: Heat Kernel Asymptotics Verification
+│   └── 12.1.4.3 Commentary: Diffusion as a Geometry Probe
 │
-└── 12.1.6 Proof Smooth Manifold Limit
+├── 12.1.5 Lemma: Smoothness via Elliptic Regularity
+│   └── 12.1.5.1 Proof: C-Infinity Smoothness
+│
+└── 12.1.6 Proof: Smooth Manifold Limit
 ```
 
 ---
@@ -465,7 +466,7 @@ The equation $-\Delta_g f_k - \lambda_k f_k = 0$ constitutes a linear, second-or
 * *Premise:* If $u \in W^{m,p}(M)$ is a weak solution to $Lu = \psi$ where $\psi \in W^{m,p}(M)$, and the coefficients of $L$ possess sufficient regularity,
 * *Conclusion:* Then $u \in W^{m+2,p}(M)$.
 
-We apply this theorem iteratively to the homogeneous equation where $\psi = \lambda_k f_k$:
+We apply this bootstrapping regularity iteration to the homogeneous equation where $\psi = \lambda_k f_k$:
 1.  **Base Step ($m=0$):** RHS $\lambda_k f_k \in W^{0,2}(M)$. Implies LHS $f_k \in W^{2,2}(M)$.
 2.  **Inductive Step:** Assume $f_k \in W^{m,2}(M)$. Then the RHS $\lambda_k f_k \in W^{m,2}(M)$. By the regularity theorem, the solution must belong to $W^{m+2,2}(M)$.
 3.  **Conclusion:** By mathematical induction, $f_k \in W^{m,2}(M)$ for all $m \in \mathbb{N}$.
@@ -641,21 +642,22 @@ The limit tensor field $S_{\mu\nu}$ is locally proportional to the metric tensor
 The proof proceeds via Direct Construction, mapping discrete edge-level equations to continuous symmetric tensor fields on the tangent bundle.
 
 ```text
-• 12.2.2 Theorem Tensorial Continuum Limit
-├── 12.2.3 Lemma Directional Measures
-│   ├── 12.2.3.1 Proof Haar Measure Convergence
-│   ├── 12.2.3.2 Calculation Directional Measures Verification
-│   └── 12.2.3.3 Commentary Texture of Spacetime
+• 12.2.2 Theorem Tensorial Continuum Limit  [by construction]
 │
-├── 12.2.4 Lemma Riemann Sum Approximation
-│   ├── 12.2.4.1 Proof Integral Convergence
-│   ├── 12.2.4.2 Calculation Riemann Sum Approximation Verification
-│   └── 12.2.4.3 Commentary Geometric Projection
+├── 12.2.3 Lemma: Directional Measures
+│   ├── 12.2.3.1 Proof: Haar Measure Convergence
+│   ├── 12.2.3.2 Calculation: Directional Measures Verification
+│   └── 12.2.3.3 Commentary: Texture of Spacetime
 │
-├── 12.2.5 Lemma EFE Convergence
-│   └── 12.2.5.1 Proof Equation Limit
+├── 12.2.4 Lemma: Riemann Sum Approximation
+│   ├── 12.2.4.1 Proof: Integral Convergence
+│   ├── 12.2.4.2 Calculation: Riemann Sum Approximation Verification
+│   └── 12.2.4.3 Commentary: Geometric Projection
 │
-└── 12.2.6 Proof Tensorial Continuum Limit
+├── 12.2.5 Lemma: EFE Convergence
+│   └── 12.2.5.1 Proof: Equation Limit
+│
+└── 12.2.6 Proof: Tensorial Continuum Limit
 ```
 
 ---
@@ -808,10 +810,10 @@ for m in Ms:
 --- Haar Moment Convergence on S^3 (Ensemble Statistics) ---
 M (Edges)  | R     | Target   | Mean Error   | Std Dev     
 -----------------------------------------------------------------
-256        | 4.0   | 0.2500   | 0.0122       | 0.0093      
-1296       | 6.0   | 0.2500   | 0.0056       | 0.0043      
+256        | 4.0   | 0.2500   | 0.0121       | 0.0092      
+1296       | 6.0   | 0.2500   | 0.0056       | 0.0042      
 4096       | 8.0   | 0.2500   | 0.0031       | 0.0023      
-10000      | 10.0  | 0.2500   | 0.0020       | 0.0015
+10000      | 10.0  | 0.2500   | 0.0020       | 0.0015      
 ```
 
 The high-precision ensemble simulation confirms robust convergence. The mean error decreases monotonically from $0.0122$ to $0.0020$ as the sample size increases, scaling precisely with $1/\sqrt{M}$. The standard deviation also shrinks proportionally, demonstrating that the deviations seen in single runs are purely statistical fluctuations that vanish in the thermodynamic limit. This validates that the local tangent bundle becomes statistically isotropic.
@@ -939,10 +941,10 @@ for m in Ms:
 --- Riemann Sum Convergence (Ensemble Statistics, N_trials=1000) ---
 M        | Diag Mean Err | Diag Std   | Off Mean Err  | Off Std   
 -----------------------------------------------------------------
-256      | 0.0122        | 0.0051     | 0.0101        | 0.0031    
-1296     | 0.0054        | 0.0023     | 0.0045        | 0.0014    
-4096     | 0.0030        | 0.0013     | 0.0026        | 0.0008    
-10000    | 0.0020        | 0.0009     | 0.0017        | 0.0005
+256      | 0.0125        | 0.0054     | 0.0103        | 0.0031    
+1296     | 0.0056        | 0.0024     | 0.0046        | 0.0014    
+4096     | 0.0031        | 0.0014     | 0.0025        | 0.0008    
+10000    | 0.0020        | 0.0008     | 0.0016        | 0.0005    
 ```
 
 The ensemble statistics demonstrate monotonic and robust convergence of the discrete sum to the continuous tensor integral. The mean diagonal error decreases from $0.0122$ to $0.0020$ as the sample size increases, scaling consistently with the expected $1/\sqrt{M}$ rate. The standard deviation shrinks proportionally ($0.0051 \to 0.0009$), confirming that finite-sample fluctuations are suppressed in the thermodynamic limit. The vanishing off-diagonal error ($0.0101 \to 0.0017$) rigorously confirms that the tensorial averaging map faithfully recovers the orthogonality of the metric tensor from isotropic inputs.
@@ -1143,17 +1145,18 @@ where $h_{\mu\nu}$ is the positive-definite Riemannian metric derived in the **T
 The argument proceeds via Direct Construction, reconciling the spatial isotropy with the temporal orientation to yield the hyperbolic signature.
 
 ```text
-• 12.3.2 Theorem Signature Selectivity
-├── 12.3.3 Lemma Causal Drift
-│   ├── 12.3.3.1 Proof Drift Non-Vanishing
-│   └── 12.3.3.2 Commentary Arrow of Time
+• 12.3.2 Theorem Signature Selectivity  [by construction]
 │
-├── 12.3.4 Lemma Null Boundary
-│   ├── 12.3.4.1 Proof Finite Propagation Speed
-│   └── 12.3.4.2 Commentary Speed of Light
+├── 12.3.3 Lemma: Causal Drift
+│   ├── 12.3.3.1 Proof: Drift Non-Vanishing
+│   └── 12.3.3.2 Commentary: Arrow of Time
 │
-└── 12.3.5 Proof Signature Selectivity
-    └── 12.3.5.1 Calculation Signature Verification
+├── 12.3.4 Lemma: Null Boundary
+│   ├── 12.3.4.1 Proof: Finite Propagation Speed
+│   └── 12.3.4.2 Commentary: Speed of Light
+│
+└── 12.3.5 Proof: Signature Selectivity
+    └── 12.3.5.1 Calculation: Signature Verification
 ```
 
 ---
@@ -1391,15 +1394,18 @@ def verify_signature_ensemble(N=10000, theta_c=np.pi/4, n_trials=100):
         print("Result: LORENTZIAN (-+++)")
     else:
         print("Result: RIEMANNIAN (++++)")
+
+if __name__ == "__main__":
+    verify_signature_ensemble()
 ```
 
 **Simulation Output**
 
 ```text
 --- Causal Signature Verification (Ensemble N_trials=100) ---
-Mean Eigenvalues:        [0.7359, 0.0896, 0.0882, 0.0864]
-Eigenvalue Std Dev:      [0.0015, 0.0008, 0.0006, 0.0008]
-Anisotropy Ratio (L/T):  8.3577 ± 0.0625
+Mean Eigenvalues:        [0.7359, 0.0895, 0.0881, 0.0865]
+Eigenvalue Std Dev:      [0.0013, 0.0006, 0.0006, 0.0007]
+Anisotropy Ratio (L/T):  8.3594 ± 0.0550
 Inferred Metric Signature: [-1.0000, 1.0000, 1.0000, 1.0000]
 Result: LORENTZIAN (-+++)
 ```

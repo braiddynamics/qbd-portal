@@ -177,7 +177,7 @@ This conservation law enforces the persistence of entanglement as a topological 
 
 #### 15.1.4.1 Proof: Invariance under Local Unitary Evolution {#15.1.4.1}
 
-:::note[**Verification of Stabilizer Commutation with Disjoint Local Operators**]
+:::tip[**Verification of Stabilizer Commutation with Disjoint Local Operators**]
 :::
 
 **I. Algebraic Locality of Rewrite Operations**
@@ -258,7 +258,7 @@ Satisfaction of this limit necessitates that the bridge edges be excluded from t
 
 #### 15.1.5.1 Proof: Dimensional Mismatch Forces Embedding Separation {#15.1.5.1}
 
-:::note[**Derivation of Metric Exclusion via Hausdorff Dimension Contrast**]
+:::tip[**Derivation of Metric Exclusion via Hausdorff Dimension Contrast**]
 :::
 
 **I. Manifold Volume Scaling Requirement**
@@ -521,17 +521,18 @@ provided that the metric divergence condition $\frac{d_{geo}(A, B)}{d_{topo}(A, 
 The proof proceeds via Direct Construction, showing that topological shortcuts bypass the bulk metric to violate local realism bounds while respecting algebraic causality.
 
 ```text
-• 15.2.1 Theorem Violation of Metric Locality (Bell's Theorem)
-├── 15.2.2 Lemma Path Integral Dominance
-│   └── 15.2.2.3 Visual Bell Shortcut
+• 15.2.1 Theorem Violation of Metric Locality (Bell's Theorem)  [by construction]
 │
-├── 15.2.3 Lemma Correlation Bridge
-│   └── 15.2.3.3 Visual Hub-and-Spoke vs Distributed Mesh
+├── 15.2.2 Lemma: Path Integral Dominance
+│   └── 15.2.2.3 Diagram: Bell Shortcut
 │
-├── 15.2.4 Lemma Tsirelson Bound
+├── 15.2.3 Lemma: Correlation Bridge
+│   └── 15.2.3.3 Diagram: Hub-and-Spoke vs Distributed Mesh
 │
-└── 15.2.5 Proof Formal Synthesis of Bell Violation
-    └── 15.2.5.1 Calculation CHSH Score Verification
+├── 15.2.4 Lemma: Tsirelson Bound
+│
+└── 15.2.5 Proof: Formal Synthesis of Bell Violation
+    └── 15.2.5.1 Calculation: CHSH Score Verification
 ```
 
 ---
@@ -794,7 +795,7 @@ This bound arises from the unitarity of the stabilizer generators and the finite
 
 #### 15.2.4.1 Proof: Geometric Limits of Braid Deformation {#15.2.4.1}
 
-:::note[**Formal Derivation of the Operator Norm Limit**]
+:::tip[**Formal Derivation of the Operator Norm Limit**]
 :::
 
 **I. The CHSH Operator Construction**
@@ -1048,16 +1049,17 @@ The divergence between the transport cost through the bulk ($W_{bulk} \sim d_{ge
 The proof proceeds via Direct Construction, establishing that the information-theoretic properties of entanglement are dual to the geometric properties of a wormhole throat.
 
 ```text
-• 15.3.1 Theorem Transport Cost Reduction (ER=EPR)
-├── 15.3.2 Lemma Isoperimetric Deficit
-│   └── 15.3.2.2 Visual Wasserstein Throat
+• 15.3.1 Theorem Transport Cost Reduction (ER=EPR)  [by construction]
 │
-├── 15.3.3 Lemma Emergent Throat
+├── 15.3.2 Lemma: Isoperimetric Deficit
+│   └── 15.3.2.2 Diagram: Wasserstein Throat
 │
-├── 15.3.4 Lemma Teleportation Protocol
+├── 15.3.3 Lemma: Emergent Throat
 │
-└── 15.3.5 Proof Formal Synthesis of ER=EPR
-    └── 15.3.5.1 Calculation Wormhole Length from Braid Complexity
+├── 15.3.4 Lemma: Teleportation Protocol
+│
+└── 15.3.5 Proof: Formal Synthesis of ER=EPR
+    └── 15.3.5.1 Calculation: Wormhole Length from Braid Complexity
 ```
 
 ---
@@ -1185,7 +1187,7 @@ This minimization identifies the entanglement entropy $S(A)$ with the cross-sect
 
 #### 15.3.3.1 Proof: Area Minimization at the Bridge {#15.3.3.1}
 
-:::note[**Formal Verification of the Min-Cut/Max-Flow Duality at the Topological Defect**]
+:::tip[**Formal Verification of the Min-Cut/Max-Flow Duality at the Topological Defect**]
 :::
 
 **I. The Cut Space Definition**
@@ -1250,7 +1252,7 @@ The **Teleportation Protocol** establishes that a quantum state can be transmitt
 
 #### 15.3.4.1 Proof: Algebraic Transmission {#15.3.4.1}
 
-:::note[**Formal Algebraic Verification of State Recovery**]
+:::tip[**Formal Algebraic Verification of State Recovery**]
 :::
 
 **I. Combined System State**
@@ -1497,13 +1499,14 @@ This constraint satisfaction necessitates that the "reality" of the event $E$ (e
 The argument proceeds via Direct Construction, re-framing the evolution of the graph not as a sequential process, but as a global boundary value problem.
 
 ```text
-• 15.4.2 Theorem Global Constraint Satisfaction
-├── 15.4.3 Lemma Ensemble Indeterminacy
-│   └── 15.4.3.3 Visual Eraser Filter Logic
+• 15.4.2 Theorem Global Constraint Satisfaction  [by construction]
 │
-├── 15.4.4 Lemma Block Universe as Fixed Point
+├── 15.4.3 Lemma: Ensemble Indeterminacy
+│   └── 15.4.3.3 Diagram: Eraser Filter Logic
 │
-└── 15.4.5 Proof Formal Synthesis of Causality Preservation
+├── 15.4.4 Lemma: Block Universe as Fixed Point
+│
+└── 15.4.5 Proof: Formal Synthesis of Causality Preservation
 ```
 
 ---
@@ -1632,7 +1635,7 @@ The "Eraser" operation constitutes a modification of the final boundary projecto
 
 #### 15.4.4.1 Proof: The Eraser is Global Consistency (Max Interference) {#15.4.4.1}
 
-:::note[**Formal Derivation of History Selection via Boundary Projection**]
+:::tip[**Formal Derivation of History Selection via Boundary Projection**]
 :::
 
 **I. The Boundary Projectors**
@@ -1775,7 +1778,7 @@ We have now constructed the complete "Engine" of the universe:
 2.  **Time:** A globally consistent **History Ensemble** satisfying boundary constraints (the **Quantum Eraser (Temporal Non-Locality)** <Ref id="15.4" label="§15.4" />).
 3.  **Dynamics:** The thermodynamic pressure to maximize these connections.
 
-We are now ready to assemble the final synthesis. In the **Formal Synthesis** <Ref id="15.5" label="§15.5" />, we will unite these lemmas into the single, governing theorem of Quantum Braid Dynamics: The Universe as a Self-Solving Topological Knot.
+We are now ready to assemble the final synthesis. In the **Formal Synthesis** <Ref id="15.5" label="§15.5" />, we will unite these discrete relational components into the governing formulation of Quantum Braid Dynamics: The Universe as a Self-Solving Topological Knot.
 
 ---
 

@@ -1,38 +1,45 @@
 import numpy as np
 
-def transition_weight(n_add: int, n_del: int, P_add: float = 1.0, P_del: float = 0.5) -> float:
-    """Raw thermodynamic weight of a transition path in the vacuum limit (χ = 1)."""
-    return P_add ** n_add * P_del ** n_del
+def compute_transition_probability(add_stresses, del_stresses, mu, lambda_cat):
+    """Compute the product of local transition probabilities."""
+    p_add = np.prod([np.exp(-mu * s) for s in add_stresses])
+    p_del = np.prod([0.5 * (1.0 + lambda_cat * s) for s in del_stresses])
+    return p_add * p_del
 
-print("Emergent Amplitude Normalization (Vacuum Limit)")
-print("=" * 54)
+def compute_kinematic_action(add_stresses, del_stresses, mu, lambda_cat):
+    """Compute the discrete variation in kinematic action."""
+    action_add = np.sum([mu * s for s in add_stresses])
+    action_del = np.sum([-np.log(0.5 * (1.0 + lambda_cat * s)) for s in del_stresses])
+    return action_add + action_del
 
-# Define the three concrete transition paths in the toy ensemble
-# Path A: single addition (e.g., add C→A)
-W_A = transition_weight(n_add=1, n_del=0)
+print("Euclidean Action Integration Verification")
+print("=" * 50)
 
-# Path B: single addition (e.g., add D→B) – symmetric to A
-W_B = transition_weight(n_add=1, n_del=0)
+# Parameter configuration
+mu = 0.15
+lambda_cat = 1.718  # e - 1
 
-# Path C: two additions + one deletion (e.g., add C→A, add D→B, then delete one Participant edge)
-W_C = transition_weight(n_add=2, n_del=1)
+# Test scenarios with different additions, deletions, and local stress profiles
+scenarios = [
+    # Scenario 1: Pure additions (low stress)
+    {"adds": [0.1, 0.2], "dels": []},
+    # Scenario 2: Pure deletions (moderate stress)
+    {"adds": [], "dels": [0.5, 0.8]},
+    # Scenario 3: Mixed updates (varying stress)
+    {"adds": [0.3, 0.4], "dels": [0.2, 0.6]}
+]
 
-# Full ensemble of valid successors (two symmetric single-add paths + one mixed path)
-total_weight = W_A + W_B + W_C
-
-P_A = W_A / total_weight
-P_B = W_B / total_weight  # identical to P_A
-P_C = W_C / total_weight
-
-ratio = P_C / P_A
-
-print(f"Raw weights:")
-print(f"  Single addition (Path A or B):           {W_A:.1f}")
-print(f"  Two additions + one deletion (Path C):   {W_C:.1f}")
-print(f"  Total ensemble weight:                   {total_weight:.1f}\n")
-
-print(f"Normalized probabilities:")
-print(f"  P(single addition):                      {P_A:.3f}")
-print(f"  P(two adds + one deletion):              {P_C:.3f}")
-print(f"  Ratio P(C)/P(A):                         {ratio:.2f}  (theoretical target: 0.50)")
-print(f"  Exact match with ½ deletion penalty:     {np.isclose(ratio, 0.5)}")
+for i, sc in enumerate(scenarios, 1):
+    adds = sc["adds"]
+    dels = sc["dels"]
+    
+    prob = compute_transition_probability(adds, dels, mu, lambda_cat)
+    action = compute_kinematic_action(adds, dels, mu, lambda_cat)
+    exp_action = np.exp(-action)
+    
+    print(f"Scenario {i}: {len(adds)} Additions, {len(dels)} Deletions")
+    print(f"  Transition Probability P(G->G'): {prob:.8f}")
+    print(f"  Kinematic Action Delta S:        {action:.8f}")
+    print(f"  Boltzmann Weight exp(-Delta S):  {exp_action:.8f}")
+    print(f"  Exact Match:                     {np.isclose(prob, exp_action)}")
+    print("-" * 50)

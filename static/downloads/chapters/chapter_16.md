@@ -112,11 +112,12 @@ where $\mathcal{A}(\gamma_A)$ is the discrete area defined by the cardinality of
 The argument proceeds via Direct Construction, mapping the boundary quantum entanglement entropy to a bulk network flow optimization problem.
 
 ```text
-• 16.1.2 Theorem Ryu-Takayanagi Correspondence
-├── 16.1.3 Lemma Isometry Condition
+• 16.1.2 Theorem Ryu-Takayanagi Correspondence  [by construction]
 │
-└── 16.1.4 Proof Formal Synthesis of Ryu-Takayanagi
-    └── 16.1.4.1 Calculation Cut-Capacity Verification
+├── 16.1.3 Lemma: Isometry Condition
+│
+└── 16.1.4 Proof: Formal Synthesis of Ryu-Takayanagi
+    └── 16.1.4.1 Calculation: Cut-Capacity Verification
 ```
 
 ---
@@ -136,7 +137,7 @@ Consequently, the bulk Hilbert space $\mathcal{H}_{bulk}$ is isomorphic to a "co
 
 #### 16.1.3.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.3.1}
 
-:::note[**Formal Verification of Information Preservation via Tensor Contraction**]
+:::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
 
 **I. The Local Tensor Constraints**
@@ -478,14 +479,15 @@ This inequality is derived not as a fundamental postulate, but as the necessary 
 The argument proceeds via Direct Construction, analyzing the topological and thermodynamic saturation constraints on information density within the causal graph bulk.
 
 ```text
-• 16.2.2 Theorem Maximum Informational Density (The Bound)
-├── 16.2.3 Lemma Holographic Screen Mechanism
-│   └── 16.2.3.3 Diagram Saturated Horizon
+• 16.2.2 Theorem Maximum Informational Density (The Bound)  [by construction]
 │
-├── 16.2.4 Lemma Black Hole Entropy from Cycle Count
+├── 16.2.3 Lemma: Holographic Screen Mechanism
+│   └── 16.2.3.3 Diagram: Saturated Horizon
 │
-└── 16.2.5 Proof Formal Synthesis of the Bekenstein Bound
-    └── 16.2.5.1 Calculation Bekenstein-Hawking Entropy Scaling
+├── 16.2.4 Lemma: Black Hole Entropy from Cycle Count
+│
+└── 16.2.5 Proof: Formal Synthesis of the Bekenstein Bound
+    └── 16.2.5.1 Calculation: Bekenstein-Hawking Entropy Scaling
 ```
 
 ---
@@ -628,7 +630,7 @@ where $N_{cycles}(\Sigma)$ is the integer number of irreducible stabilizer cycle
 
 #### 16.2.4.1 Proof: Counting Pierced 3-Cycles in Trapped Surface {#16.2.4.1}
 
-:::note[**Formal Verification of the Microstate Counting on the Horizon**]
+:::tip[**Formal Verification of the Microstate Counting on the Horizon**]
 :::
 
 **I. The Trapped Surface Definition**

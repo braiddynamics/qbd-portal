@@ -49,3 +49,6 @@ def verify_signature_ensemble(N=10000, theta_c=np.pi/4, n_trials=100):
         print("Result: LORENTZIAN (-+++)")
     else:
         print("Result: RIEMANNIAN (++++)")
+
+if __name__ == "__main__":
+    verify_signature_ensemble()

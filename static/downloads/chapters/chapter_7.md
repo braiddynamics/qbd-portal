@@ -71,18 +71,19 @@ The physical exchange of two identical tripartite braids, $\beta_1$ and $\beta_2
 The proof proceeds via Direct Construction, mapping topological phases under physical exchanges to rotational symmetries.
 
 ```text
-• 7.1.2 Theorem Topological Statistics
-├── 7.1.3 Lemma Unitary Twist Anticommutation
-│   ├── 7.1.3.1 Proof Eigenvalue Inversion
-│   ├── 7.1.3.2 Commentary Anticommutation Mechanism
-│   └── 7.1.3.3 Diagram Causal Dirac Sequence
+• 7.1.2 Theorem Topological Statistics  [by construction]
 │
-├── 7.1.4 Lemma Exchange-Rotation Equivalence
-│   ├── 7.1.4.1 Proof Topological Phase via Reidemeister Sequence
-│   ├── 7.1.4.2 Commentary Exchange-Rotation Identity
-│   └── 7.1.4.3 Diagram Exchange via Deletion
+├── 7.1.3 Lemma: Unitary Twist Anticommutation
+│   ├── 7.1.3.1 Proof: Eigenvalue Inversion
+│   ├── 7.1.3.2 Commentary: Anticommutation Mechanism
+│   └── 7.1.3.3 Diagram: Causal Dirac Sequence
 │
-└── 7.1.5 Proof Topological Statistics
+├── 7.1.4 Lemma: Exchange-Rotation Equivalence
+│   ├── 7.1.4.1 Proof: Topological Phase via Reidemeister Sequence
+│   ├── 7.1.4.2 Commentary: Exchange-Rotation Identity
+│   └── 7.1.4.3 Diagram: Exchange via Deletion
+│
+└── 7.1.5 Proof: Topological Statistics
 ```
 
 ---
@@ -485,11 +486,11 @@ Q.E.D.
 :::note[**Spin and Statistics**]
 :::
 
-The emergence of spin and statistics from the topology of braided defects marks a profound unification of quantum mechanics' most enigmatic features with the underlying geometry of the causal graph. At its core, this theorem reveals that the half-integer spin of fermions is not an abstract label imposed on point particles but a direct consequence of the odd parity inherent in the half-twist of a ribbon's frame. When two such braids exchange positions, the causal ordering of their world-tubes enforces a geometric phase that inverts the wavefunction's sign, compelling antisymmetric behavior under permutation.
+The emergence of spin and statistics from the topology of braided defects marks a profound unification of quantum mechanics' most enigmatic features with the underlying geometry of the causal graph. At its core, this spin-statistics correspondence reveals that the half-integer spin of fermions is not an abstract label imposed on point particles but a direct consequence of the odd parity inherent in the half-twist of a ribbon's frame. When two such braids exchange positions, the causal ordering of their world-tubes enforces a geometric phase that inverts the wavefunction's sign, compelling antisymmetric behavior under permutation.
 
 This implies a radical rethinking of quantum foundations: the Dirac equation's spinors, traditionally derived from Lorentz representations, now arise as the natural eigenvectors of the rung-parity stabilizer, with the minus-one phase accumulating not from abstract group actions but from the concrete flips induced by local rewrites during exchange. The braid's internal twist acts as a built-in gyroscope, registering angular momentum through the discrete count of causal intersections, much like how a classical gyroscope resists reorientation due to conserved angular momentum. This geometric encoding ensures that fermions inherently "remember" their orientation relative to the vacuum's causal flow, providing a mechanism for intrinsic angular momentum that aligns seamlessly with the graph's directed edges.
 
-The broader ramification extends to the fabric of reality itself: in a universe where particles are knots in spacetime, spin becomes a measure of how tightly those knots resist unravelling under rotation. This not only reproduces the observed fermionic statistics but suggests that bosonic behavior, symmetric under exchange, would require even-parity configurations, perhaps foreshadowing the integer spins of force carriers in subsequent chapters. Ultimately, this theorem posits that quantum weirdness like antisymmetry is not a departure from classical intuition but a restoration of it at a deeper level, where the "classical" objects are extended topological entities rather than points.
+The broader ramification extends to the fabric of reality itself: in a universe where particles are knots in spacetime, spin becomes a measure of how tightly those knots resist unravelling under rotation. This not only reproduces the observed fermionic statistics but suggests that bosonic behavior, symmetric under exchange, would require even-parity configurations, perhaps foreshadowing the integer spins of force carriers in subsequent chapters. Ultimately, the topological spin-statistics derivation posits that quantum weirdness like antisymmetry is not a departure from classical intuition but a restoration of it at a deeper level, where the "classical" objects are extended topological entities rather than points.
 
 ---
 
@@ -524,16 +525,17 @@ Simultaneous occupancy of a single quantum state by two identical fermions is to
 The proof proceeds via Contradiction, assuming that two fermions can occupy the same quantum state to show that this leads to a violation of the spacetime asymmetry axiom.
 
 ```text
-• 7.2.1 Theorem Pauli Exclusion Principle
-├── 7.2.2 Lemma Binary State Principle
-│   ├── 7.2.2.1 Proof Binary Encoding Verification
-│   └── 7.2.2.2 Commentary Quantum Bit Limit
+• 7.2.1 Theorem Pauli Exclusion Principle  [by contradiction]
 │
-├── 7.2.3 Lemma Forbidden Occupancy
-│   ├── 7.2.3.1 Proof Topological Violation
-│   └── 7.2.3.2 Diagram Exclusion Barrier
+├── 7.2.2 Lemma: Binary State Principle
+│   ├── 7.2.2.1 Proof: Binary Encoding Verification
+│   └── 7.2.2.2 Commentary: Quantum Bit Limit
 │
-└── 7.2.4 Proof Pauli Exclusion Principle
+├── 7.2.3 Lemma: Forbidden Occupancy
+│   ├── 7.2.3.1 Proof: Topological Violation
+│   └── 7.2.3.2 Diagram: Exclusion Barrier
+│
+└── 7.2.4 Proof: Pauli Exclusion Principle
 ```
 
 ---
@@ -817,7 +819,7 @@ Q.E.D.
 :::note[**Pauli Exclusion Principle**]
 :::
 
-The Pauli exclusion principle, long a cornerstone of quantum theory that underpins the diversity of matter from atomic shells to neutron stars, finds its origin here not in some mysterious antisymmetry of wavefunctions but in the stark geometry of the causal graph's binary edges. At heart, this theorem demonstrates that attempting to place two identical fermions in the same state inevitably forges a forbidden two-cycle, a closed causal loop that collapses the partial order of time into a paradox. The graph's axioms, enforcing irreflexivity and acyclicity, render such superpositions not improbable but impossible, annihilating the offending state vector through the hard constraint projectors of the QECC.
+The Pauli exclusion principle, long a cornerstone of quantum theory that underpins the diversity of matter from atomic shells to neutron stars, finds its origin here not in some mysterious antisymmetry of wavefunctions but in the stark geometry of the causal graph's binary edges. At heart, this topological exclusion derivation demonstrates that attempting to place two identical fermions in the same state inevitably forges a forbidden two-cycle, a closed causal loop that collapses the partial order of time into a paradox. The graph's axioms, enforcing irreflexivity and acyclicity, render such superpositions not improbable but impossible, annihilating the offending state vector through the hard constraint projectors of the QECC.
 
 For those versed in quantum foundations, this geometric exclusion recasts Pauli's rule as a causality safeguard: the binary saturation of edges mirrors the qubit nature of relational links, where occupancy flips from vacant to filled without room for multiplicity. Superimposing a second fermion demands a reverse path to encode distinction, but this creates the very reciprocity that the causal primitive forbids, triggering syndrome errors that the evolution operator erases outright. This mechanism elevates exclusion from a statistical preference to a logical necessity, akin to how digital bits cannot hold fractional values without error.
 
@@ -878,29 +880,30 @@ The electric charge $Q$ of a stable elementary fermion is identical to the topol
 The proof proceeds via Direct Construction, linking global topological invariants of the braid to conserved electric charge numbers.
 
 ```text
-• 7.3.2 Theorem Emergence of Electric Charge
-├── 7.3.3 Lemma Gauge Symmetry
-│   ├── 7.3.3.1 Proof Symmetry Verification
-│   └── 7.3.3.2 Commentary Global Phase Unobservability
+• 7.3.2 Theorem Emergence of Electric Charge  [by construction]
 │
-├── 7.3.4 Lemma Conservation of Total Writhe
-│   ├── 7.3.4.1 Proof Conservation Logic
-│   └── 7.3.4.2 Commentary Invariant Preservation
+├── 7.3.3 Lemma: Gauge Symmetry
+│   ├── 7.3.3.1 Proof: Symmetry Verification
+│   └── 7.3.3.2 Commentary: Global Phase Unobservability
 │
-├── 7.3.5 Lemma Lepton Charge Solutions
-│   ├── 7.3.5.1 Proof Singlet Charge Values
-│   └── 7.3.5.2 Commentary Integer Charge Geometry
+├── 7.3.4 Lemma: Conservation of Total Writhe
+│   ├── 7.3.4.1 Proof: Conservation Logic
+│   └── 7.3.4.2 Commentary: Invariant Preservation
 │
-├── 7.3.6 Lemma Quark Charge Solutions
-│   ├── 7.3.6.1 Proof Triplet Charge Values
-│   ├── 7.3.6.2 Commentary Fractional Charge Origin
-│   └── 7.3.6.3 Diagram Fermion Writhe Topology
+├── 7.3.5 Lemma: Lepton Charge Solutions
+│   ├── 7.3.5.1 Proof: Singlet Charge Values
+│   └── 7.3.5.2 Commentary: Integer Charge Geometry
 │
-├── 7.3.7 Lemma Charge Normalization
-│   ├── 7.3.7.1 Proof Anomaly Cancellation
-│   └── 7.3.7.2 Commentary Fractional Necessity
+├── 7.3.6 Lemma: Quark Charge Solutions
+│   ├── 7.3.6.1 Proof: Triplet Charge Values
+│   ├── 7.3.6.2 Commentary: Fractional Charge Origin
+│   └── 7.3.6.3 Diagram: Fermion Writhe Topology
 │
-└── 7.3.8 Proof Emergence of Electric Charge
+├── 7.3.7 Lemma: Charge Normalization
+│   ├── 7.3.7.1 Proof: Anomaly Cancellation
+│   └── 7.3.7.2 Commentary: Fractional Necessity
+│
+└── 7.3.8 Proof: Emergence of Electric Charge
 ```
 
 ---
@@ -1428,7 +1431,7 @@ Q.E.D.
 :::note[**Quantized Electric Charge**]
 :::
 
-The quantization of electric charge, a precision-tuned feature of our universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This theorem posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for quarks and integers for leptons arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
+The quantization of electric charge, a precision-tuned feature of our universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This geometric charge derivation posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for quarks and integers for leptons arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
 
 Technically, this derivation embeds the U(1) gauge symmetry directly into the braid's geometry: the writhe operator's eigenvalues, invariant under local rewrites, act as the source for the electromagnetic field, with the phase shifts demanding a compensating potential to maintain covariance. The spectrum's rationality stems from the indivisibility of integer twists by the braid's triality, yielding the exact fractions needed for the Standard Model without external tuning. This geometric charge resolves puzzles like the neutrality of atoms, where the proton's +1 balances the electron's -1 through complementary writhe configurations.
 
@@ -1494,22 +1497,23 @@ This functional is constituted by the following terms:
 The proof proceeds via Direct Construction, integrating crossing scaling and sharing efficiencies to construct the discrete mass spectrum.
 
 ```text
-• 7.4.2 Theorem Topological Mass Functional
-├── 7.4.3 Lemma Thermodynamic Equivalence
-│   ├── 7.4.3.1 Proof Entropic Vanishing
-│   └── 7.4.3.2 Commentary Thermodynamic Isolation
+• 7.4.2 Theorem Topological Mass Functional  [by construction]
 │
-├── 7.4.4 Lemma Base Mass Linear Scaling
-│   ├── 7.4.4.1 Proof Linear Scaling Verification
-│   └── 7.4.4.2 Commentary Complexity Additivity
+├── 7.4.3 Lemma: Thermodynamic Equivalence
+│   ├── 7.4.3.1 Proof: Entropic Vanishing
+│   └── 7.4.3.2 Commentary: Thermodynamic Isolation
 │
-├── 7.4.5 Lemma Integer Geometric Efficiency
-│   ├── 7.4.5.1 Proof Derivation of the Sharing Integer
-│   └── 7.4.5.2 Commentary Isospin Symmetry
+├── 7.4.4 Lemma: Base Mass Linear Scaling
+│   ├── 7.4.4.1 Proof: Linear Scaling Verification
+│   └── 7.4.4.2 Commentary: Complexity Additivity
 │
-└── 7.4.6 Proof Discrete Mass Spectrum
-    ├── 7.4.6.1 Calculation Generational Mass Hierarchy Verification
-    └── 7.4.6.2 Diagram Generational Mass Spectrum Table
+├── 7.4.5 Lemma: Integer Geometric Efficiency
+│   ├── 7.4.5.1 Proof: Derivation of the Sharing Integer
+│   └── 7.4.5.2 Commentary: Isospin Symmetry
+│
+└── 7.4.6 Proof: Discrete Mass Spectrum
+    ├── 7.4.6.1 Calculation: Generational Mass Hierarchy Verification
+    └── 7.4.6.2 Diagram: Generational Mass Spectrum Table
 ```
 
 ---
@@ -1912,16 +1916,16 @@ if __name__ == "__main__":
 
 ```text
 --- QBD Generational Mass Hierarchy Verification ---
-Particle Writhe Config   Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
-Electron  (-1, -1, -1)        3              0.5             0.5   0.00
-    Down    (-1, 0, 0)        1              0.2             4.7  96.38
-      Up     (1, 1, 0)        1              0.2             2.2  92.26
-    Muon (-14, -14, -14)    588            100.2           105.7   5.21
- Strange   (-24, 0, 0)      576             98.1            95.0   3.28
-   Charm   (62, 62, 0)     7626           1299.0          1275.0   1.88
-     Tau (-59, -59, -59)  10443           1778.8          1776.8   0.11
-  Bottom  (-157, 0, 0)    24649           4198.6          4180.0   0.44
-     Top (712, 712, 0)  1013176         172577.6        172900.0   0.19
+Particle   Writhe Config  Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
+Electron    (-1, -1, -1)       3              0.5             0.5   0.00
+    Down      (-1, 0, 0)       1              0.2             4.7  96.38
+      Up       (1, 1, 0)       1              0.2             2.2  92.26
+    Muon (-14, -14, -14)     588            100.2           105.7   5.21
+ Strange     (-24, 0, 0)     576             98.1            95.0   3.28
+   Charm     (62, 62, 0)    7626           1299.0          1275.0   1.88
+     Tau (-59, -59, -59)   10443           1778.8          1776.8   0.11
+  Bottom    (-157, 0, 0)   24649           4198.5          4180.0   0.44
+     Top   (712, 712, 0) 1013176         172577.6        172900.0   0.19
 ```
 
 The simulation confirms the profound predictive power of the quadratic scaling functional:
@@ -1959,7 +1963,7 @@ The following table demonstrates the mapping of integer topological harmonics to
 :::note[**Topological Mass Functional**]
 :::
 
-The topological mass functional redefines inertia as the vacuum's reluctance to reconfigure a braid's embedded structure, quantifying the fermion's rest energy through the net count of geometric quanta sustaining its twists and crossings. This theorem establishes mass not as a scalar coupled to a Higgs field but as informational resistance: the braid's complexity, measured in 3-cycles, imposes a barrier to acceleration by demanding proportional resources to maintain topology under motion. The functional's decomposition (linear in crossings for entanglements, quadratic in writhe for self-strain) captures the generational leaps, where heavier particles embody denser knots that the local dynamics struggle to perturb.
+The topological mass functional redefines inertia as the vacuum's reluctance to reconfigure a braid's embedded structure, quantifying the fermion's rest energy through the net count of geometric quanta sustaining its twists and crossings. The mass formulation establishes mass not as a scalar coupled to a Higgs field but as informational resistance: the braid's complexity, measured in 3-cycles, imposes a barrier to acceleration by demanding proportional resources to maintain topology under motion. The functional's decomposition (linear in crossings for entanglements, quadratic in writhe for self-strain) captures the generational leaps, where heavier particles embody denser knots that the local dynamics struggle to perturb.
 
 By replacing arbitrary Higgs couplings with the combinatorics of steric hindrance, this framework reveals that generations of matter are simply resonant topological isomers. A muon is geometrically identical to an electron, but its ribbons are wound exactly 14 times tighter. The top quark, long considered a mysterious outlier due to its colossal mass, is perfectly demystified: to encode an up-type charge at the third generation, its ribbons must wind $w=712$ times. Because mass scales quadratically ($2w^2 - w$), this integer generates over a million geometric quanta ($N_3 = 1,013,176$), naturally producing the observed $\sim 173$ GeV mass. The mass hierarchy is therefore not a list of free parameters, but a strict consequence of the quadratic energy barriers inherent to tying knots in a discrete causal space.
 

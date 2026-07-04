@@ -110,18 +110,19 @@ where $\Delta_g$ is the Laplace-Beltrami operator on $M$ and $\rho(x)$ is a smoo
 The proof proceeds via Direct Construction, establishing that the discrete lapse function converges to a smooth scalar field in the continuum.
 
 ```text
-• 14.1.2 Theorem Smoothness of the Lapse
-├── 14.1.3 Lemma Local Causal Averages
-│   ├── 14.1.3.1 Proof Construction via Mollification
-│   ├── 14.1.3.2 Calculation Lapse Function Smoothness
-│   └── 14.1.3.3 Commentary Suppressing Shot Noise
+• 14.1.2 Theorem Smoothness of the Lapse  [by construction]
 │
-├── 14.1.4 Lemma Sobolev Convergence
-│   ├── 14.1.4.1 Proof Convergence in $H^k$ Norms
-│   └── 14.1.4.2 Commentary No Fractal Edges in Time
+├── 14.1.3 Lemma: Local Causal Averages
+│   ├── 14.1.3.1 Proof: Construction via Mollification
+│   ├── 14.1.3.2 Calculation: Lapse Function Smoothness
+│   └── 14.1.3.3 Commentary: Suppressing Shot Noise
 │
-└── 14.1.5 Proof Smooth Time Foliation
-    └── 14.1.5.1 Calculation Global Monotonicity Check
+├── 14.1.4 Lemma: Sobolev Convergence
+│   ├── 14.1.4.1 Proof: Sobolev Norm Convergence
+│   └── 14.1.4.2 Commentary: No Fractal Edges in Time
+│
+└── 14.1.5 Proof: Smooth Time Foliation
+    └── 14.1.5.1 Calculation: Global Monotonicity Check
 ```
 
 ---
@@ -491,13 +492,13 @@ if __name__ == "__main__":
 ```text
 --- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---
 PASS: Global Time Function T(x) exists (Graph is Acyclic).
-Roughness (Raw):      0.6007
+Roughness (Raw):      0.5899
 Roughness (Smoothed): 0.0008
 PASS: Lapse field converges to smooth manifold limit.
 ```
 
 * **Monotonicity:** The topological sort completes successfully ("PASS"), confirming that the causal graph is a Directed Acyclic Graph (DAG) and admits a valid global time coordinate $T(x)$.
-* **Smoothness:** The raw discrete lapse exhibits high roughness ($\approx 0.6007$) due to the stochastic "shot noise" of the graph updates. The mollified field reduces this roughness to $\approx 0.0008$, a suppression factor of $>750x$. This confirms that the emergent temporal geometry is $C^\infty$-smooth in the continuum limit.
+* **Smoothness:** The raw discrete lapse exhibits high roughness ($\approx 0.5899$) due to the stochastic "shot noise" of the graph updates. The mollified field reduces this roughness to $\approx 0.0008$, a suppression factor of $>700x$. This confirms that the emergent temporal geometry is $C^\infty$-smooth in the continuum limit.
 :::
 
 ---
@@ -559,28 +560,29 @@ The sequence of causal graphs $\{G_t\}$, in the thermodynamic limit $t \to \inft
 The proof proceeds via Direct Construction, establishing a rigorous diffeomorphism between the discrete causal graph and a smooth Lorentzian manifold.
 
 ```text
-• 14.2.2 Theorem Emergent Lorentzian Manifold
-├── 14.2.3 Lemma Emergent Tetrad
-│   ├── 14.2.3.1 Proof Frame Orthogonality via Graph Laplacian
-│   └── 14.2.3.2 Commentary Coupling Matter to Geometry
+• 14.2.2 Theorem Emergent Lorentzian Manifold  [by construction]
 │
-├── 14.2.4 Lemma Causal Isomorphism
-│   ├── 14.2.4.1 Proof Limit of Transitive Closure
-│   └── 14.2.4.2 Commentary Skeleton of Spacetime
+├── 14.2.3 Lemma: Emergent Tetrad
+│   ├── 14.2.3.1 Proof: Frame Orthogonality via Graph Laplacian
+│   └── 14.2.3.2 Commentary: Coupling Matter to Geometry
 │
-├── 14.2.5 Lemma Coincidence of Null Cones
-│   ├── 14.2.5.1 Proof Null Vector Alignment
-│   └── 14.2.5.2 Commentary Why c is a constant
+├── 14.2.4 Lemma: Causal Isomorphism
+│   ├── 14.2.4.1 Proof: Limit of Transitive Closure
+│   └── 14.2.4.2 Commentary: Skeleton of Spacetime
 │
-├── 14.2.6 Lemma Global Hyperbolicity
-│   ├── 14.2.6.1 Proof Existence of Cauchy Surfaces
-│   └── 14.2.6.2 Commentary Prohibition of Time Loops
+├── 14.2.5 Lemma: Coincidence of Null Cones
+│   ├── 14.2.5.1 Proof: Null Vector Alignment
+│   └── 14.2.5.2 Commentary: Why c is a constant
 │
-├── 14.2.7 Lemma Geodesic Motion
-│   └── 14.2.7.1 Proof Stationary Phase of Path Integral
+├── 14.2.6 Lemma: Global Hyperbolicity
+│   ├── 14.2.6.1 Proof: Existence of Cauchy Surfaces
+│   └── 14.2.6.2 Commentary: Prohibition of Time Loops
 │
-└── 14.2.8 Proof Emergence of Relativistic Dynamics
-    └── 14.2.8.1 Calculation Geodesic Emergence Verification
+├── 14.2.7 Lemma: Geodesic Motion
+│   └── 14.2.7.1 Proof: Stationary Phase of Path Integral
+│
+└── 14.2.8 Proof: Emergence of Relativistic Dynamics
+    └── 14.2.8.1 Calculation: Geodesic Emergence Verification
 ```
 
 ---
@@ -1393,7 +1395,7 @@ This algebraic independence is the root of the commutator $[\phi(A), \phi(B)] = 
 :::info[**Linkage of Half-Integer Spin to Fermi-Dirac Statistics demanded by the Requirement of Consistency with Lorentz Invariance**]
 :::
 
-Fields with half-integer spin (topological fermions) obey Fermi-Dirac statistics (anticommutation relations), while fields with integer spin (topological bosons) obey Bose-Einstein statistics (commutation relations). This theorem is not an independent postulate but a necessary consequence of the topological phase $\phi = (-1)^{2s}$ established in the **Topological Statistics** <Ref id="7.1.2" label="§7.1.2" /> combined with the Lorentz invariance of the emergent manifold. The consistency of the emergent Quantum Field Theory requires:
+Fields with half-integer spin (topological fermions) obey Fermi-Dirac statistics (anticommutation relations), while fields with integer spin (topological bosons) obey Bose-Einstein statistics (commutation relations). This algebraic correspondence is not an independent postulate but a necessary consequence of the topological phase $\phi = (-1)^{2s}$ established in the **Topological Statistics** <Ref id="7.1.2" label="§7.1.2" /> combined with the Lorentz invariance of the emergent manifold. The consistency of the emergent Quantum Field Theory requires:
 
 $$
 \begin{cases}
@@ -1599,15 +1601,27 @@ This equation arises as the necessary condition for the First Law of Entanglemen
 
 ### 14.4.1.1 Commentary: Argument Outline {#14.4.1.1}
 
-:::info[**Logic Chain of the Derivation**]
+:::tip[**Structure of the Einstein Field Equations Argument via Entanglement Thermodynamics, Newton's Constant Identification, and Covariant Closure**]
 :::
 
-1. **Thermodynamic Setup**: We establish local causal horizons acting as graph cut-sets with entropy scaling as the number of boundary 3-cycles ($\delta S \propto \delta N_3$).
-2. **Defect-Flux Coupling**: Matter energy flux $\delta Q$ crossing the boundary is mediated by topological defect transitions, thermalized at the emergent Unruh temperature ($\delta Q = T_U \delta S$).
-3. **Geometric Deflection**: The flow of matter focuses causal paths, aligning the topological monotonicity relation with continuum Raychaudhuri focusing ($T_{\mu\nu} k^\mu k^\nu \propto R_{\mu\nu} k^\mu k^\nu$).
-4. **Covariant Closure**: Demanding local energy conservation ($\nabla^\mu T_{\mu\nu} = 0$) and invoking the contracted Bianchi identity uniquely fixes the coupling to the divergence-free Einstein tensor ($G_{\mu\nu} = \kappa T_{\mu\nu}$).
+The proof proceeds by construction, deriving the Einstein Field Equations as the equation of state of the causal graph by coupling entanglement entropy to geometric curvature through the First Law and the Bianchi identity.
 
----
+```text
+• 14.4.1 Theorem Einstein Field Equations  [by construction]
+│
+├── 14.4.2 Lemma: First Law of Entanglement
+│   ├── 14.4.2.1 Proof: dS = dE / T
+│   └── 14.4.2.2 Commentary: Jacobson's Argument on the Graph
+│
+├── 14.4.3 Lemma: Recovering Newton's Constant (G)
+│   ├── 14.4.3.1 Proof: G_from_planck_area
+│   └── 14.4.3.2 Commentary: Stiffness of Spacetime
+│
+└── 14.4.4 Proof: Einstein Field Equations
+    ├── 14.4.4.1 Calculation: Curvature-Entropy Coupling
+    └── 14.4.4.2 Commentary: Gravity is the Thermodynamics of Braid Statistics
+```
+
 
 ### 14.4.2 Lemma: First Law of Entanglement {#14.4.2}
 
@@ -1727,29 +1741,14 @@ This proof establishes that the Einstein Field Equations emerge as the equation 
 
 ### 14.4.4.1 Calculation: Curvature-Entropy Coupling {#14.4.4.1}
 
-:::tip[**Formal Linkage of the Monotonicity Theorem to the Raychaudhuri Equation**]
+:::note[**Verification of Curvature-Entropy Coupling via Relational Focusing**]
 :::
 
-**I. Geometric Deformation**
-Consider a small pencil of geodesics forming a local horizon. As matter (energy) passes through this horizon, it focuses the geodesics via the Raychaudhuri equation:
+Verification of the curvature-entropy coupling established in **Einstein Field Equations** <Ref id="14.4.4" label="§14.4.4" /> is based on the following protocols:
 
-$$
-\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} - R_{\mu\nu}k^\mu k^\nu
-$$
-
-where $\theta$ is the expansion (change in area).
-
-**II. The Monotonicity Link**
-In the discrete graph, the **Monotonicity Theorem (11.3.2)** established that the nucleation of each 3-cycle ($\Delta N_3 = +1$) generates positive Causal Ollivier-Ricci curvature ($\Delta K > 0$). This focusing of causal paths is the graph-theoretic origin of geodesic convergence in the continuum.
-
-**III. The Thermodynamic Constraint**
-We require $\delta S \propto \delta A$.
-From the First Law of Entanglement <Ref id="14.4.2" label="§14.4.2" />: $\delta Q = \int T_{\mu\nu} \xi^\mu d\Sigma$.
-From Geometry: $\delta A = \int R_{\mu\nu} \xi^\mu d\Sigma$ (via Raychaudhuri focusing).
-Equating the two implies $T_{\mu\nu} \propto R_{\mu\nu} + f(g_{\mu\nu})$.
-
-**IV. Conservation and Consistency**
-Since $\nabla^\mu T_{\mu\nu} = 0$ (energy conservation), the geometric tensor must also be divergence-free. Explicitly invoking the **Contracted Bianchi Identity** ($\nabla^\mu G_{\mu\nu} = 0$), we identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique solution. Thus, $G_{\mu\nu} = \kappa T_{\mu\nu}$.
+1.  **Geometric Deformation:** The protocol analyzes a geodesic pencil forming a local horizon, tracking the expansion parameter $\theta$ using the Raychaudhuri focusing equation $\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} - R_{\mu\nu}k^\mu k^\nu$.
+2.  **Thermodynamic Constraint:** The system equates the change in area $\delta A$ to the entanglement entropy change $\delta S$, relating the energy flux to the curvature tensor.
+3.  **Einstein Identification:** The derivation applies the contracted Bianchi identity to identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique divergence-free curvature coupling.
 
 Q.E.D.
 

@@ -1,0 +1,12 @@
+Foster-Lyapunov Drift Verification
+==================================================
+Density rho = 0.0 | Expected Drift: +5.0000 | Positive Drift (Expansion)
+Density rho = 0.5 | Expected Drift: +0.2880 | Positive Drift (Expansion)
+Density rho = 1.0 | Expected Drift: -3.9347 | Negative Drift (Restoring Force)
+Density rho = 1.5 | Expected Drift: -5.2763 | Negative Drift (Restoring Force)
+Density rho = 2.0 | Expected Drift: -6.3212 | Negative Drift (Restoring Force)
+Density rho = 2.5 | Expected Drift: -7.1350 | Negative Drift (Restoring Force)
+Density rho = 3.0 | Expected Drift: -7.7687 | Negative Drift (Restoring Force)
+==================================================
+Critical Density Threshold (rho_crit): ~1.0
+Foster-Lyapunov negative drift condition satisfied.

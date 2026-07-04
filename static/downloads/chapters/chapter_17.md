@@ -104,11 +104,12 @@ where $h_{ab}$ is the induced metric on the worldsheet and $T_0$ is the effectiv
 The argument proceeds via Direct Construction, establishing that the information-theoretic updates required to propagate a braid defect are dual to Nambu-Goto string dynamics.
 
 ```text
-• 17.1.2 Theorem Action Equivalence (Nambu-Goto)
-├── 17.1.3 Lemma Confinement and Berry Phase
+• 17.1.2 Theorem Action Equivalence (Nambu-Goto)  [by construction]
 │
-└── 17.1.4 Proof Formal Synthesis of String Dynamics
-    └── 17.1.4.1 Calculation Braid Confinement Verification
+├── 17.1.3 Lemma: Confinement and Berry Phase
+│
+└── 17.1.4 Proof: Formal Synthesis of String Dynamics
+    └── 17.1.4.1 Calculation: Braid Confinement Verification
 ```
 
 ---
@@ -464,11 +465,12 @@ under the simultaneous exchange of the momentum quantum number $n$ and the windi
 The argument proceeds via Direct Construction, proving the mathematical and physical equivalence of the mass-squared spectrum on reciprocal compactification radii.
 
 ```text
-• 17.2.2 Theorem Spectral Invariance (T-Duality)
-├── 17.2.3 Lemma T-Gate Phase
+• 17.2.2 Theorem Spectral Invariance (T-Duality)  [by construction]
 │
-└── 17.2.4 Proof Formal Synthesis of Spectral Invariance (T-Duality)
-    └── 17.2.4.1 Calculation T-Duality Verification
+├── 17.2.3 Lemma: T-Gate Phase
+│
+└── 17.2.4 Proof: Formal Synthesis of Spectral Invariance (T-Duality)
+    └── 17.2.4.1 Calculation: T-Duality Verification
 ```
 
 ---
@@ -484,7 +486,7 @@ The argument proceeds via Direct Construction, proving the mathematical and phys
 
 #### 17.2.3.1 Proof: Fermionic vs Bosonic {#17.2.3.1}
 
-:::note[**Formal Derivation of Spin Statistics from Gate Universality**]
+:::tip[**Formal Derivation of Spin Statistics from Gate Universality**]
 :::
 
 **I. The Bosonic Sector (Stabilizers)**
@@ -752,15 +754,16 @@ The physical string is the tensor product state $|\Psi\rangle = |\psi_R\rangle \
 The argument proceeds via Direct Construction, decomposing the worldsheet Hilbert space into decoupled left-moving and right-moving chiral sectors.
 
 ```text
-• 17.3.1 Theorem Chiral Split (Bosonic Left / Super Right)
-├── 17.3.2 Lemma Bott Periodicity (The Octonionic Lock)
+• 17.3.1 Theorem Chiral Split (Bosonic Left / Super Right)  [by construction]
 │
-├── 17.3.3 Lemma Tripartite Braid Saturation
+├── 17.3.2 Lemma: Bott Periodicity (The Octonionic Lock)
 │
-├── 17.3.4 Lemma ZPE Cancellation
+├── 17.3.3 Lemma: Tripartite Braid Saturation
 │
-└── 17.3.5 Proof Formal Synthesis of the Critical Dimension
-    └── 17.3.5.1 Calculation Algebra Closure Verification
+├── 17.3.4 Lemma: ZPE Cancellation
+│
+└── 17.3.5 Proof: Formal Synthesis of the Critical Dimension
+    └── 17.3.5.1 Calculation: Algebra Closure Verification
 ```
 
 ---
@@ -780,7 +783,7 @@ Consequently, the critical dimension of the Right-Moving (Supersymmetric) sector
 
 #### 17.3.2.1 Proof: Stability of Spinor Defects (k=8) {#17.3.2.1}
 
-:::note[**Formal Derivation of the Dimensional Constraint via Clifford Modules**]
+:::tip[**Formal Derivation of the Dimensional Constraint via Clifford Modules**]
 :::
 
 **I. The Transverse Vibration Problem**
@@ -855,7 +858,7 @@ Including the 2 longitudinal light-cone coordinates, the total critical dimensio
 
 #### 17.3.3.1 Proof: 3 Strands x 8 Modes = 24 {#17.3.3.1}
 
-:::note[**Formal Derivation of the Lattice Degrees of Freedom**]
+:::tip[**Formal Derivation of the Lattice Degrees of Freedom**]
 :::
 
 **I. The Fundamental Capacity (Octonions)**
@@ -911,7 +914,7 @@ The difference ($26 - 10 = 16$) is not "lost" space. It represents the internal 
 
 #### 17.3.4.1 Proof: Left (Bosonic -1) + Right (Super 0) {#17.3.4.1}
 
-:::note[**Formal Derivation of the Casimir Energy Contributions**]
+:::tip[**Formal Derivation of the Casimir Energy Contributions**]
 :::
 
 **I. The Zero-Point Sum**
@@ -1267,19 +1270,20 @@ Consequently, the gauge symmetry of the emergent spacetime is fixed to $G = E_8 
 The argument proceeds via Direct Construction, proving the modular invariance and optimal sphere-packing constraints that uniquely select the exceptional charge lattice.
 
 ```text
-• 17.4.2 Theorem Emergence of the E8 Lattice
-├── 17.4.3 Lemma Unimodular Basis (Modular Invariance)
+• 17.4.2 Theorem Emergence of the E8 Lattice  [by construction]
 │
-├── 17.4.4 Lemma Standard Model Embedding
-│   ├── 17.4.4.2 Calculation Force-Matter Decomposition
-│   └── 17.4.4.3 Commentary Generations from Braid Chirality
+├── 17.4.3 Lemma: Unimodular Basis (Modular Invariance)
 │
-├── 17.4.5 Lemma Anomaly Cancellation
+├── 17.4.4 Lemma: Standard Model Embedding
+│   ├── 17.4.4.2 Calculation: Force-Matter Decomposition
+│   └── 17.4.4.3 Commentary: Generations from Braid Chirality
 │
-├── 17.4.6 Lemma Landscape from Braid Vacua
+├── 17.4.5 Lemma: Anomaly Cancellation
 │
-└── 17.4.7 Proof Formal Synthesis of Heterotic String Theory
-    └── 17.4.7.1 Calculation Heterotic String Isomorphism Verification
+├── 17.4.6 Lemma: Landscape from Braid Vacua
+│
+└── 17.4.7 Proof: Formal Synthesis of Heterotic String Theory
+    └── 17.4.7.1 Calculation: Heterotic String Isomorphism Verification
 ```
 
 ---
@@ -1299,7 +1303,7 @@ This constraint mathematically forces the rank-16 lattice to be either $\Gamma_{
 
 #### 17.4.3.1 Proof: Self-Duality of the Braid Lattice {#17.4.3.1}
 
-:::note[**Formal Derivation of Lattice Constraints from Modular S-Invariance**]
+:::tip[**Formal Derivation of Lattice Constraints from Modular S-Invariance**]
 :::
 
 **I. The Partition Function**
@@ -1548,7 +1552,7 @@ This proves that the graph's constraint to the $E_8$ lattice is not merely effic
 
 #### 17.4.5.1 Proof: Computing Chiral Index from Spinor Roots {#17.4.5.1}
 
-:::note[**Formal Verification of the Anomaly Polynomial Factorization**]
+:::tip[**Formal Verification of the Anomaly Polynomial Factorization**]
 :::
 
 **I. The Anomaly Source**
@@ -1612,7 +1616,7 @@ where $\mathcal{K}$ is the knot topology of the internal manifold and $G$ is the
 
 #### 17.4.6.1 Proof: Different Knots = Different Physics {#17.4.6.1}
 
-:::note[**Formal Derivation of Symmetry Breaking via Wilson Lines**]
+:::tip[**Formal Derivation of Symmetry Breaking via Wilson Lines**]
 :::
 
 **I. The Wilson Line Operator**

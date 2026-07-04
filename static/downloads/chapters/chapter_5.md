@@ -46,19 +46,22 @@ where the coefficient $c > 0$ is the **Specific Entropy per Event** determined b
 
 ### 5.1.1.1 Commentary: Argument Outline {#5.1.1.1}
 
-:::tip[**Structure of the Extensive Entropy Derivation via Local Boundedness, Cluster Decomposition, and Linear Scaling**]
+:::tip[**Structure of the Extensive Entropy Argument via Local Boundedness, Cluster Decomposition, and Linear Scaling**]
 :::
 
 The proof proceeds via Direct Construction, partitioning the global configuration space into independent local volumes to establish a well-defined thermodynamic limit.
 
 ```text
-• 5.1.1 Theorem: Extensive Entropy [by partition]
+• 5.1.1 Theorem Extensive Entropy [by partition]
+│
 ├── 5.1.2 Lemma: Spatial Cluster Decomposition
 │   ├── 5.1.2.1 Proof: Spatial Cluster Decomposition
 │   └── 5.1.2.2 Commentary: Defining "Volume" via Correlation
+│
 ├── 5.1.3 Lemma: Correlation Decay
 │   ├── 5.1.3.1 Proof: Correlation Decay
 │   └── 5.1.3.2 Commentary: Role of Acyclicity and Sparsity
+│
 └── 5.1.4 Proof: Extensive Entropy
 ```
 
@@ -139,7 +142,7 @@ The correlation length $\xi$ constitutes an endogenous scale that emerges direct
 :::info[**Decay of Geometric Covariance**]
 :::
 
-Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
+Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
 
 ### 5.1.3.1 Proof: Correlation Decay {#5.1.3.1}
 
@@ -162,7 +165,7 @@ $$
 
 **II. Branching Analysis**
 
-From the uniqueness of the **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" /> as the vacuum state, the graph $G_0$ exhibits a locally tree-like topology with a finite branching factor $b$ bounded by the maximum vertex degree $d_{\max}$. For a distance $d = \text{dist}(u, v)$, the number of simple paths $N(L)$ of length $L \ge d$ satisfies the scaling relation $N(L) \sim b^{L-d}$, where the path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology. The total correlation function aggregates contributions from all path lengths $L \ge d$, implying the approximation:
+From the uniqueness of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> as the vacuum state, the graph $G_0$ exhibits a locally tree-like topology with a finite branching factor $b$ bounded by the maximum vertex degree $d_{\max}$. For a distance $d = \text{dist}(u, v)$, the number of simple paths $N(L)$ of length $L \ge d$ satisfies the scaling relation $N(L) \sim b^{L-d}$, where the path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology. The total correlation function aggregates contributions from all path lengths $L \ge d$, implying the approximation:
 
 $$
 \langle O_u O_v \rangle_c \approx K \sum_{L=d}^{\infty} b^{L-d} \rho^L
@@ -462,24 +465,7 @@ where the terms are defined as follows:
 * **$e^{-6\mu\rho}$:** The frictional suppression factor derived via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />;
 * **$0.5\rho(1 + 6\lambda_{cat}\rho)$:** The entropic decay rate derived via **Entropic & Catalytic Decay ($J_{out}$)**  <Ref id="5.2.6" label="§5.2.6" />.
 
-### 5.2.2.1 Commentary: Anatomy of an Equation
-
-:::info[**Dissecting the Law of Growth**]
-:::
-
-**The Vacuum Drive ($\Lambda$):**
-This term acts as the **Spark of Existence**. Unlike classical autocatalysis, which requires a seed to begin, the Vacuum Drive ensures that the creation rate is strictly positive even at zero density ($\rho=0$). It represents the intrinsic tendency of the graph's underlying tree structure to spontaneously close loops, lifting the system out of the void and topologically prohibiting total collapse.
-
-**The Quadratic Driver ($9\rho^2$):**
-This term is the engine of **Inflation**. It scales with the square of the density, meaning that the rate of growth accelerates with the amount of structure already present. Once the Vacuum Drive initiates the process, this term takes over, causing the number of opportunities for new connections to explode quadratically. This non-linearity allows the universe to bootstrap itself from a sparse vacuum into a complex manifold.
-
-**The Exponential Governor ($e^{-6\mu\rho}$):**
-This term is the **Friction Function**. It represents the increasing difficulty of finding a valid, non-paradoxical connection in a crowded graph. As $\rho$ increases, the probability of creating a causal violation rises, and the "Acyclic Pre-Check" rejects more updates. This term acts as the ultimate governor, forcing the creation flux to decay exponentially at high densities and stabilizing the universe at a finite, sparse equilibrium.
-
-**The Linear Brake and Catalytic Stress ($-0.5\rho(1 + \dots)$):**
-This term acts as the **Thermodynamic Cost**. The linear component ($0.5\rho$) represents the natural evaporation of information, the entropy tax required to maintain order. The stress component ($6\lambda_{cat}\rho$) acts as a "crowding tax": as density rises, local tension increases, making edges more fragile and prone to deletion. This non-linear decay prevents the runaway saturation that would otherwise occur.
-
-### 5.2.2.2 Commentary: Argument Outline {#5.2.2.2}
+### 5.2.2.1 Commentary: Argument Outline {#5.2.2.1}
 
 :::tip[**Structure of the Macroscopic Evolution Argument via Vacuum Permittivity, Autocatalytic Growth, Frictional Suppression, and Net Flux Synthesis**]
 :::
@@ -487,28 +473,29 @@ This term acts as the **Thermodynamic Cost**. The linear component ($0.5\rho$) r
 The proof proceeds via Direct Construction, aggregating microscopic transition rates into a macroscopic continuum equation that governs structural density evolution.
 
 ```text
-• 5.2.2.1 Commentary Anatomy of an Equation
-├── 5.2.3 Lemma Vacuum Permittivity ($\Lambda$)
-│   ├── 5.2.3.1 Proof Vacuum Permittivity ($\Lambda$)
-│   └── 5.2.3.2 Commentary Spark of Existence
+• 5.2.2 Theorem Macroscopic Evolution [by construction]
 │
-├── 5.2.4 Lemma Geometric Autocatalysis ($J_{auto}$)
-│   ├── 5.2.4.1 Proof Geometric Autocatalysis ($J_{auto}$)
-│   ├── 5.2.4.2 Calculation Precursor Scaling Verification
-│   └── 5.2.4.3 Commentary Nonlinear Dynamics
+├── 5.2.3 Lemma: Vacuum Permittivity
+│   ├── 5.2.3.1 Proof: Vacuum Permittivity
+│   └── 5.2.3.2 Commentary: Spark of Existence
 │
-├── 5.2.5 Lemma Frictional Suppression ($P_{acc}$)
-│   ├── 5.2.5.1 Proof Frictional Suppression ($P_{acc}$)
-│   ├── 5.2.5.2 Calculation Friction Verification
-│   └── 5.2.5.3 Commentary Saturation Mechanism
+├── 5.2.4 Lemma: Geometric Autocatalysis
+│   ├── 5.2.4.1 Proof: Geometric Autocatalysis
+│   ├── 5.2.4.2 Calculation: Precursor Scaling Verification
+│   └── 5.2.4.3 Commentary: Nonlinear Dynamics
 │
-├── 5.2.6 Lemma Entropic & Catalytic Decay ($J_{out}$)
-│   ├── 5.2.6.1 Proof Entropic & Catalytic Decay ($J_{out}$)
-│   ├── 5.2.6.2 Calculation Stress-Decay Verification
-│   └── 5.2.6.3 Commentary Stress-Deletion Coupling
+├── 5.2.5 Lemma: Frictional Suppression
+│   ├── 5.2.5.1 Proof: Frictional Suppression
+│   ├── 5.2.5.2 Calculation: Friction Verification
+│   └── 5.2.5.3 Commentary: Saturation Mechanism
 │
-└── 5.2.7 Proof Master Equation
-    └── 5.2.7.1 Calculation Equation Verification
+├── 5.2.6 Lemma: Entropic & Catalytic Decay
+│   ├── 5.2.6.1 Proof: Entropic & Catalytic Decay
+│   ├── 5.2.6.2 Calculation: Stress-Decay Verification
+│   └── 5.2.6.3 Commentary: Stress-Deletion Coupling
+│
+└── 5.2.7 Proof: Macroscopic Evolution
+    └── 5.2.7.1 Calculation: Equation Verification
 ```
 
 ---
@@ -570,7 +557,7 @@ Q.E.D.
 :::info[**Instability of Nothingness**]
 :::
 
-As established in **Optimal Vacuum** <Ref id="3.2.1" label="§3.2.1" />, the pre-geometric vacuum is structured as a directed Regular Bethe Fragment with root coordination number $k=3$ but internal nodes exhibiting exactly 1 incoming edge (from parent) and 2 outgoing edges (to children), yielding a binary branching factor $b=2$ for internal propagation. This precise topology enforces sparsity (no pre-existing cycles) and maximal compliant 2-path density without quanta, ensuring the vacuum remains inert yet primed for ignition. The derivations in **Vacuum Permittivity** <Ref id="5.2.3" label="§5.2.3" /> are rooted entirely in this binary foundation, with no free parameters or assumptions introduced.
+As established in **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />, the pre-geometric vacuum is structured as a directed Regular Bethe Fragment with root coordination number $k=3$ but internal nodes exhibiting exactly 1 incoming edge (from parent) and 2 outgoing edges (to children), yielding a binary branching factor $b=2$ for internal propagation. This precise topology enforces sparsity (no pre-existing cycles) and maximal compliant 2-path density without quanta, ensuring the vacuum remains inert yet primed for ignition. The derivations in **Vacuum Permittivity** <Ref id="5.2.3" label="§5.2.3" /> are rooted entirely in this binary foundation, with no free parameters or assumptions introduced.
 
 The dimensionless constant $\Lambda$ emerges as the **Background Reactivity** of the vacuum, quantifying the intrinsic rate at which the tree-like structure spontaneously attempts to form cycles even at zero density. In standard nucleation theory, systems often require overcoming a "critical barrier" of minimum size or energy to initiate growth, mirroring vacuum instability in quantum field theory where fluctuations trigger phase transitions from false to true vacua, as analyzed by <Cite id="A.18" label="(Coleman, 1977)" />. Here, the "fluctuation" manifests as the combinatorial alignment of a compliant 2-path with an open closing slot.
 
@@ -1567,21 +1554,22 @@ Assume the kinetic parameters satisfy the boundaries established by **Global Sta
 :::tip[**Structure of the Vacuum Stability Argument via Flux Linearization, Boundary Gradient Evaluation, and Local Perturbation Damping**]
 :::
 
-The proof proceeds via formal verification, constructing a linearized dynamic for the net flux function to evaluate the stability of the equilibrium point.
+The proof proceeds by construction, constructing a linearized dynamic for the net flux function to verify the stability of the equilibrium point.
 
 ```text
-• 5.4.2 Theorem Vacuum Stability
-├── 5.4.3 Lemma Global Stability
-│   ├── 5.4.3.1 Proof Global Stability
-│   └── 5.4.3.2 Commentary Inevitability of Structure
+• 5.4.2 Theorem Vacuum Stability  [by construction]
 │
-├── 5.4.4 Lemma Catalysis Bounds
-│   ├── 5.4.4.1 Proof Catalysis Bounds
-│   └── 5.4.4.2 Commentary Stability Buffer
+├── 5.4.3 Lemma: Global Stability
+│   ├── 5.4.3.1 Proof: Global Stability
+│   └── 5.4.3.2 Commentary: Inevitability of Structure
 │
-├── 5.4.5 Proof Vacuum Stability
+├── 5.4.4 Lemma: Catalysis Bounds
+│   ├── 5.4.4.1 Proof: Catalysis Bounds
+│   └── 5.4.4.2 Commentary: Stability Buffer
 │
-└── 5.4.6 Validation via Lean 4 Core
+├── 5.4.5 Proof: Vacuum Stability
+│
+└── 5.4.6 Validation: Lean 4 Core
 ```
 
 ---
@@ -1649,7 +1637,7 @@ Q.E.D.
 :::info[**Vacuum as a Self-Tuning System**]
 :::
 
-The theorem establishes that the cosmic vacuum is an intrinsically self-regulating system that bypasses the traditional fine-tuning dilemmas associated with initial cosmological parameters. The linear instability of the empty configuration ($\rho = 0$), driven by **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, forces the pre-geometric graph to spontaneously break its sterile stasis and nucleate structure. Conversely, the high-density regime is strictly suppressed by the combination of steric hindrance formalized via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> and stress-induced cycle collapse analyzed via **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
+This entropic balance establishes that the cosmic vacuum is an intrinsically self-regulating system that bypasses the traditional fine-tuning dilemmas associated with initial cosmological parameters. The linear instability of the empty configuration ($\rho = 0$), driven by **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, forces the pre-geometric graph to spontaneously break its sterile stasis and nucleate structure. Conversely, the high-density regime is strictly suppressed by the combination of steric hindrance formalized via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> and stress-induced cycle collapse analyzed via **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
 
 The dynamical system is thus trapped between dual asymmetric instabilities, forcing the network to converge onto the unique, non-vanishing fixed point $\rho^*$. This stable attractor acts as a thermodynamic well that anchors the emergent spacetime geometry. The persistence of a stable, macroscopic physical universe is therefore revealed to be an inevitable consequence of the system's global phase-space architecture, where the local pressure to create new relations is continuously tempered by the entropic cost of historical erasure.
 
@@ -1767,7 +1755,7 @@ Q.E.D.
 Type-theoretic certification of the stability criterion established in the **Vacuum Stability** <Ref id="5.4.5" label="§5.4.5" /> proceeds via the following verification strategy:
 
 1.  **Encoding:** The abstract `Real` structure and its associated `opaque` operators encode the minimum algebraic vocabulary needed to reason about the Jacobian of the master equation without importing analysis libraries; `IsNegative`, `jacobian`, and `IsStableAttractor` encode the stability predicate as a chain of definitional reductions over the gradient parameters $C'$ and $D'$.
-2.  **Theorem Statement:** The theorem asserts that the gradient dominance condition $C' < D'$ implies the Jacobian $C' - D'$ is strictly negative, which is the definition of a stable attractor; the hypothesis `h_gradient : C' < D'` is consumed by the order axiom `sub_neg_of_lt`.
+2.  **Theorem Statement:** The Lean proposition `stability_attractor` asserts that the gradient dominance condition $C' < D'$ implies the Jacobian $C' - D'$ is strictly negative, which is the definition of a stable attractor; the hypothesis `h_gradient : C' < D'` is consumed by the order axiom `sub_neg_of_lt`.
 3.  **Proof Closure:** Two `unfold` tactics reduce `IsStableAttractor` to `IsNegative (jacobian C' D')` and then to `IsNegative (C' - D')`; `exact sub_neg_of_lt h_gradient` closes the goal by applying the postulated order axiom directly to the gradient inequality hypothesis.
 
 ```lean
@@ -1860,33 +1848,41 @@ Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolu
 :::tip[**Structure of the Geometric Well-Posedness Argument via Metric Limit Convergence**]
 :::
 
-The proof proceeds via Direct Construction, establishing that the discrete poset relations converge to a continuous Lorentzian geometry under the causal Gromov-Hausdorff topology.
+The proof proceeds by limits, establishing that the discrete poset relations converge to a continuous Lorentzian geometry under the causal Gromov-Hausdorff topology.
 
 ```text
-• 5.5.1 Theorem: Geometric Well-Posedness [by limits]
+• 5.5.1 Theorem Geometric Well-Posedness [by limits]
+│
 ├── 5.5.2 Lemma: Strict Locality
 │   ├── 5.5.2.1 Proof: Strict Locality
 │   └── 5.5.2.2 Commentary: Causal Horizon
+│
 ├── 5.5.3 Lemma: Bounded Degree
 │   ├── 5.5.3.1 Proof: Bounded Degree
 │   └── 5.5.3.2 Commentary: Limits of Connectivity
+│
 ├── 5.5.4 Lemma: Uniform Curvature Bound
 │   ├── 5.5.4.1 Proof: Uniform Curvature Bound
 │   └── 5.5.4.2 Commentary: Preventing Singularities
+│
 ├── 5.5.5 Lemma: Correlation Decay
 │   ├── 5.5.5.1 Proof: Correlation Decay
 │   ├── 5.5.5.2 Corollary: Controlled Fluctuations
 │   ├── 5.5.5.3 Proof: Correlation Decay
 │   └── 5.5.5.4 Commentary: Self-Averaging Homogeneity
+│
 ├── 5.5.6 Lemma: Manifold Combinatorics
 │   ├── 5.5.6.1 Proof: Manifold Combinatorics
 │   └── 5.5.6.2 Commentary: Vanishing of Non-Locality
+│
 ├── 5.5.7 Lemma: Ahlfors 4-Regularity
 │   ├── 5.5.7.1 Proof: Ahlfors 4-Regularity
 │   └── 5.5.7.2 Commentary: Why Four Dimensions?
+│
 ├── 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence
 │   ├── 5.5.8.1 Proof: Lorentzian Gromov-Hausdorff Convergence
 │   └── 5.5.8.2 Commentary: Causal Diamond Metric
+│
 └── 5.5.9 Proof: Geometric Well-Posedness
 ```
 
@@ -2656,7 +2652,7 @@ Q.E.D.
 :::info[**Physical Interpretation of Causal Diamond Volumes and Myrheim-Meyer Estimators**]
 :::
 
-This lemma provides the crucial transition from order-theoretic properties to continuous Lorentzian metrics. In a discrete poset, one does not possess an explicit coordinate-based metric tensor. Instead, the metric information is encoded entirely in the causal relations. The volume of the intersection of the future of $u$ and the past of $v$ serves as the discrete analog of the metric ball in Riemannian geometry.
+The convergence of causal diamond volumes provides the crucial transition from order-theoretic properties to continuous Lorentzian metrics. In a discrete poset, one does not possess an explicit coordinate-based metric tensor. Instead, the metric information is encoded entirely in the causal relations. The volume of the intersection of the future of $u$ and the past of $v$ serves as the discrete analog of the metric ball in Riemannian geometry.
 
 The Myrheim-Meyer dimensional estimator uses the relation count within causal diamonds to estimate the local dimensionality of the poset:
 

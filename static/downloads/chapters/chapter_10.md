@@ -102,25 +102,26 @@ The topological pair $\{|\beta_e\rangle, |\beta_{e*}\rangle\}$ constitutes the u
 The proof proceeds via Direct Construction, evaluating candidate subgraphs against the storage, control, and measurement requirements for physical information storage.
 
 ```text
-• 10.1.2 Theorem Qubit Optimality
-├── 10.1.3 Lemma Topological Stability
-│   ├── 10.1.3.1 Proof Stability Verification
-│   └── 10.1.3.2 Commentary Protected Bit
+• 10.1.2 Theorem Qubit Optimality  [by construction]
 │
-├── 10.1.4 Lemma Topological Distinctness
-│   ├── 10.1.4.1 Proof Isotopy Verification
-│   └── 10.1.4.2 Commentary Geometric Orthogonality
+├── 10.1.3 Lemma: Topological Stability
+│   ├── 10.1.3.1 Proof: Stability Verification
+│   └── 10.1.3.2 Commentary: Protected Bit
 │
-├── 10.1.5 Lemma State Controllability
-│   ├── 10.1.5.1 Proof Transition Hamiltonian Construction
-│   └── 10.1.5.2 Commentary Writhe Shuffle
+├── 10.1.4 Lemma: Topological Distinctness
+│   ├── 10.1.4.1 Proof: Isotopy Verification
+│   └── 10.1.4.2 Commentary: Geometric Orthogonality
 │
-├── 10.1.6 Lemma Basis Measurability
-│   ├── 10.1.6.1 Proof Basis Measurability
-│   └── 10.1.6.2 Commentary Color Readout
+├── 10.1.5 Lemma: State Controllability
+│   ├── 10.1.5.1 Proof: Transition Hamiltonian Construction
+│   └── 10.1.5.2 Commentary: Writhe Shuffle
 │
-└── 10.1.7 Proof Qubit Optimality
-    └── 10.1.7.1 Diagram Color Measurement
+├── 10.1.6 Lemma: Basis Measurability
+│   ├── 10.1.6.1 Proof: Basis Measurability
+│   └── 10.1.6.2 Commentary: Color Readout
+│
+└── 10.1.7 Proof: Qubit Optimality
+    └── 10.1.7.1 Diagram: Color Measurement
 ```
 
 ---
@@ -546,33 +547,34 @@ The stabilizer group $\mathcal{S}$ defines a mathematically consistent Quantum E
 The proof proceeds via Direct Construction, establishing a mutually commuting set of stabilizer check operators to define the logical codespace.
 
 ```text
-• 10.2.2 Theorem Braid Code Consistency
-├── 10.2.3 Lemma Geometric Commutation
-│   ├── 10.2.3.1 Proof Commutation Verification
-│   └── 10.2.3.2 Commentary Even-Overlap Rule
+• 10.2.2 Theorem Braid Code Consistency  [by construction]
 │
-├── 10.2.4 Lemma Bit-Flip Localization
-│   ├── 10.2.4.1 Proof Error Localization Logic
-│   └── 10.2.4.2 Commentary Error Triangulation
+├── 10.2.3 Lemma: Geometric Commutation
+│   ├── 10.2.3.1 Proof: Commutation Verification
+│   └── 10.2.3.2 Commentary: Even-Overlap Rule
 │
-├── 10.2.5 Lemma Ribbon Integrity Commutation
-│   ├── 10.2.5.1 Proof Ribbon Commutation Verification
-│   └── 10.2.5.2 Commentary Strand Verification
+├── 10.2.4 Lemma: Bit-Flip Localization
+│   ├── 10.2.4.1 Proof: Error Localization Logic
+│   └── 10.2.4.2 Commentary: Error Triangulation
 │
-├── 10.2.6 Lemma Fraying Detection
-│   ├── 10.2.6.1 Proof Fraying Detection Logic
-│   └── 10.2.6.2 Commentary Fray Identification
+├── 10.2.5 Lemma: Ribbon Integrity Commutation
+│   ├── 10.2.5.1 Proof: Ribbon Commutation Verification
+│   └── 10.2.5.2 Commentary: Strand Verification
 │
-├── 10.2.7 Lemma Vertex Commutation
-│   ├── 10.2.7.1 Proof Vertex Commutation Verification
-│   └── 10.2.7.2 Commentary Flow Consistency
+├── 10.2.6 Lemma: Fraying Detection
+│   ├── 10.2.6.1 Proof: Fraying Detection Logic
+│   └── 10.2.6.2 Commentary: Fray Identification
 │
-├── 10.2.8 Lemma Phase Error Detection
-│   ├── 10.2.8.1 Proof Phase Detection Logic
-│   └── 10.2.8.2 Commentary Phase Flip Discovery
+├── 10.2.7 Lemma: Vertex Commutation
+│   ├── 10.2.7.1 Proof: Vertex Commutation Verification
+│   └── 10.2.7.2 Commentary: Flow Consistency
 │
-└── 10.2.9 Proof Synthesis of Code Properties
-    └── 10.2.9.1 Calculation Stabilizer Commutativity Verification
+├── 10.2.8 Lemma: Phase Error Detection
+│   ├── 10.2.8.1 Proof: Phase Detection Logic
+│   └── 10.2.8.2 Commentary: Phase Flip Discovery
+│
+└── 10.2.9 Proof: Synthesis of Code Properties
+    └── 10.2.9.1 Calculation: Stabilizer Commutativity Verification
 ```
 
 ---
@@ -1011,23 +1013,24 @@ The topological qubit constitutes a quantum error-correcting code with a minimum
 The proof proceeds via Direct Construction, utilizing topological distance and thermodynamic feedback loops to self-correct local defects.
 
 ```text
-• 10.3.2 Theorem Topological Fault Tolerance
-├── 10.3.3 Lemma Syndrome Flipping
-│   ├── 10.3.3.1 Proof Syndrome Flipping Logic
-│   └── 10.3.3.2 Commentary Alarm System
+• 10.3.2 Theorem Topological Fault Tolerance  [by construction]
 │
-├── 10.3.4 Lemma Minimum Weight
-│   ├── 10.3.4.1 Proof Weight Analysis
-│   └── 10.3.4.2 Commentary Coincidence Robustness
+├── 10.3.3 Lemma: Syndrome Flipping
+│   ├── 10.3.3.1 Proof: Syndrome Flipping Logic
+│   └── 10.3.3.2 Commentary: Alarm System
 │
-├── 10.3.5 Lemma Thermodynamic Correction
-│   ├── 10.3.5.1 Proof Thermodynamic Correction
-│   └── 10.3.5.2 Calculation Code Distance Verification
+├── 10.3.4 Lemma: Minimum Weight
+│   ├── 10.3.4.1 Proof: Weight Analysis
+│   └── 10.3.4.2 Commentary: Coincidence Robustness
 │
-├── 10.3.6 Lemma Vertex Fock Space Formalization
-│   └── 10.3.6.1 Proof Vertex Fock Space Formalization
+├── 10.3.5 Lemma: Thermodynamic Correction
+│   ├── 10.3.5.1 Proof: Thermodynamic Correction
+│   └── 10.3.5.2 Calculation: Code Distance Verification
 │
-└── 10.3.7 Proof Topological Fault Tolerance
+├── 10.3.6 Lemma: Vertex Fock Space Formalization
+│   └── 10.3.6.1 Proof: Vertex Fock Space Formalization
+│
+└── 10.3.7 Proof: Topological Fault Tolerance
 ```
 
 ---
@@ -1384,16 +1387,17 @@ The rewrite process $\mathcal{R}_X$ implements the unitary Pauli-X operator $\si
 The proof proceeds via Direct Construction, executing a charge-conserving rewrite sequence to implement the bit-flip operation on logical states.
 
 ```text
-• 10.4.2 Theorem Logical X Gate
-├── 10.4.3 Lemma Writhe Conservation
-│   ├── 10.4.3.1 Proof Invariance Verification
-│   └── 10.4.3.2 Commentary Writhe Shuffle
+• 10.4.2 Theorem Logical X Gate  [by construction]
 │
-├── 10.4.4 Lemma Charge Conservation
-│   ├── 10.4.4.1 Proof Charge Invariance Verification
-│   └── 10.4.4.2 Commentary Conservation Permission
+├── 10.4.3 Lemma: Writhe Conservation
+│   ├── 10.4.3.1 Proof: Invariance Verification
+│   └── 10.4.3.2 Commentary: Writhe Shuffle
 │
-└── 10.4.5 Proof Logical X Gate
+├── 10.4.4 Lemma: Charge Conservation
+│   ├── 10.4.4.1 Proof: Charge Invariance Verification
+│   └── 10.4.4.2 Commentary: Conservation Permission
+│
+└── 10.4.5 Proof: Logical X Gate
 ```
 
 ---
@@ -1575,16 +1579,17 @@ The **Logical Z Gate** is implemented by a Quantum Non-Demolition (QND) measurem
 The proof proceeds via Direct Construction, exploiting state-dependent gauge interactions to implement the logical phase flip.
 
 ```text
-• 10.5.1 Theorem Logical Z Gate
-├── 10.5.2 Lemma Singlet Transparency
-│   ├── 10.5.2.1 Proof Trivial Representation Analysis
-│   └── 10.5.2.2 Commentary Invisible Qubit
+• 10.5.1 Theorem Logical Z Gate  [by construction]
 │
-├── 10.5.3 Lemma Color Phase
-│   ├── 10.5.3.1 Proof Non-Trivial Holonomy Analysis
-│   └── 10.5.3.2 Commentary Phase Imprint
+├── 10.5.2 Lemma: Singlet Transparency
+│   ├── 10.5.2.1 Proof: Trivial Representation Analysis
+│   └── 10.5.2.2 Commentary: Invisible Qubit
 │
-└── 10.5.4 Proof Logical Z Gate
+├── 10.5.3 Lemma: Color Phase
+│   ├── 10.5.3.1 Proof: Non-Trivial Holonomy Analysis
+│   └── 10.5.3.2 Commentary: Phase Imprint
+│
+└── 10.5.4 Proof: Logical Z Gate
 ```
 
 ---
@@ -1776,17 +1781,18 @@ The **Hadamard Gate** is implemented by a thermodynamic rewrite cycle $\mathcal{
 The proof proceeds via Direct Construction, using thermal mixing and rapid quenches to prepare unbiased superposition states.
 
 ```text
-• 10.6.1 Theorem Hadamard Gate
-├── 10.6.2 Lemma Temperature Control
-│   ├── 10.6.2.1 Proof Thermo-Modulation Verification
-│   └── 10.6.2.2 Commentary Superposition Engine
+• 10.6.1 Theorem Hadamard Gate  [by construction]
 │
-├── 10.6.3 Lemma Topological Degeneracy
-│   ├── 10.6.3.1 Proof Mass Equality Verification
-│   └── 10.6.3.2 Commentary Unbiased Mixing
+├── 10.6.2 Lemma: Temperature Control
+│   ├── 10.6.2.1 Proof: Thermo-Modulation Verification
+│   └── 10.6.2.2 Commentary: Superposition Engine
 │
-└── 10.6.4 Proof Hadamard Gate
-    └── 10.6.4.1 Calculation Hadamard Quench Verification
+├── 10.6.3 Lemma: Topological Degeneracy
+│   ├── 10.6.3.1 Proof: Mass Equality Verification
+│   └── 10.6.3.2 Commentary: Unbiased Mixing
+│
+└── 10.6.4 Proof: Hadamard Gate
+    └── 10.6.4.1 Calculation: Hadamard Quench Verification
 ```
 
 ---
@@ -2026,16 +2032,17 @@ The **Controlled-Z Gate** is implemented by a composite process $\mathcal{R}_{CZ
 The proof proceeds via Direct Construction, linking qubit environments to implement conditional phase shifts.
 
 ```text
-• 10.7.1 Theorem Controlled-Z Gate
-├── 10.7.2 Lemma Syndrome Coupling
-│   ├── 10.7.2.1 Proof Bridge Construction Verification
-│   └── 10.7.2.2 Commentary Logic Wire
+• 10.7.1 Theorem Controlled-Z Gate  [by construction]
 │
-├── 10.7.3 Lemma Control Dynamics
-│   ├── 10.7.3.1 Proof Conditional Friction Verification
-│   └── 10.7.3.2 Commentary Entanglement Switch
+├── 10.7.2 Lemma: Syndrome Coupling
+│   ├── 10.7.2.1 Proof: Bridge Construction Verification
+│   └── 10.7.2.2 Commentary: Logic Wire
 │
-└── 10.7.4 Proof Controlled-Z Gate
+├── 10.7.3 Lemma: Control Dynamics
+│   ├── 10.7.3.1 Proof: Conditional Friction Verification
+│   └── 10.7.3.2 Commentary: Entanglement Switch
+│
+└── 10.7.4 Proof: Controlled-Z Gate
 ```
 
 ---
@@ -2266,32 +2273,33 @@ The process $\mathcal{R}_T$ implements the non-Clifford phase gate $T = \text{di
 The proof proceeds via Direct Construction, utilizing ribbon category Twist structures to execute fractional self-interactions.
 
 ```text
-• 10.8.2 Theorem T-Gate
-├── 10.8.3 Lemma Ribbon Category
-│   ├── 10.8.3.1 Proof Category Property Verification
-│   └── 10.8.3.2 Commentary Ribbon Algebra
+• 10.8.2 Theorem T-Gate  [by construction]
 │
-├── 10.8.4 Lemma Monoidal Structure
-│   ├── 10.8.4.1 Proof Monoidal Verification
-│   └── 10.8.4.2 Commentary System Combination
+├── 10.8.3 Lemma: Ribbon Category
+│   ├── 10.8.3.1 Proof: Category Property Verification
+│   └── 10.8.3.2 Commentary: Ribbon Algebra
 │
-├── 10.8.5 Lemma Braiding Structure
-│   ├── 10.8.5.1 Proof Braiding Verification
-│   └── 10.8.5.2 Commentary Exchange Rules
+├── 10.8.4 Lemma: Monoidal Structure
+│   ├── 10.8.4.1 Proof: Monoidal Verification
+│   └── 10.8.4.2 Commentary: System Combination
 │
-├── 10.8.6 Lemma Duality Structure
-│   ├── 10.8.6.1 Proof Duality Verification
-│   └── 10.8.6.2 Commentary Matter-Antimatter
+├── 10.8.5 Lemma: Braiding Structure
+│   ├── 10.8.5.1 Proof: Braiding Verification
+│   └── 10.8.5.2 Commentary: Exchange Rules
 │
-├── 10.8.7 Lemma Twist Structure
-│   ├── 10.8.7.1 Proof Twist Verification
-│   └── 10.8.7.2 Commentary Spin Phase
+├── 10.8.6 Lemma: Duality Structure
+│   ├── 10.8.6.1 Proof: Duality Verification
+│   └── 10.8.6.2 Commentary: Matter-Antimatter
 │
-├── 10.8.8 Proof T-Gate
-│   └── 10.8.8.1 Calculation T-Gate Phase Verification
+├── 10.8.7 Lemma: Twist Structure
+│   ├── 10.8.7.1 Proof: Twist Verification
+│   └── 10.8.7.2 Commentary: Spin Phase
 │
-└── 10.8.9 Corollary Gate Set Universality
-    └── 10.8.9.1 Proof Set Completeness Verification
+├── 10.8.8 Proof: T-Gate
+│   └── 10.8.8.1 Calculation: T-Gate Phase Verification
+│
+└── 10.8.9 Corollary: Gate Set Universality
+    └── 10.8.9.1 Proof: Set Completeness Verification
 ```
 
 ---
@@ -2649,18 +2657,19 @@ The physical gate set $\mathcal{G}_{phys} = \{\mathcal{R}_H, \mathcal{R}_{CZ}, \
 The proof proceeds via Direct Construction, utilizing Solovay-Kitaev approximations to establish the Turing-completeness of the braid gate set.
 
 ```text
-• 10.9.1 Theorem Group Closure
-├── 10.9.2 Lemma Clifford Generation
-│   └── 10.9.2.1 Proof Group Closure Verification
+• 10.9.1 Theorem Group Closure  [by construction]
 │
-├── 10.9.3 Proof Computational Universality
-│   └── 10.9.3.1 Calculation Solovay-Kitaev Verification
+├── 10.9.2 Lemma: Clifford Generation
+│   └── 10.9.2.1 Proof: Group Closure Verification
 │
-└── 10.9.4 Example Shor's Algorithm Implementation
-    ├── 10.9.4.1 Calculation Shor's Algorithm
-    ├── 10.9.4.2 Commentary Simulation Implications
-    ├── 10.9.4.3 Diagram Circuit Schematic
-    └── 10.9.4.4 Diagram Braid Circuit
+├── 10.9.3 Proof: Computational Universality
+│   └── 10.9.3.1 Calculation: Solovay-Kitaev Verification
+│
+└── 10.9.4 Example: Shor's Algorithm Implementation
+    ├── 10.9.4.1 Calculation: Shor's Algorithm
+    ├── 10.9.4.2 Commentary: Simulation Implications
+    ├── 10.9.4.3 Diagram: Circuit Schematic
+    └── 10.9.4.4 Diagram: Braid Circuit
 ```
 
 ---

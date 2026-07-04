@@ -126,18 +126,19 @@ This conservation law guarantees the preservation of statistical stationarity fo
 The argument proceeds via Direct Construction, deriving local flux conservation as the necessary consequence of thermodynamic homeostasis.
 
 ```text
-• 13.1.2 Theorem Conservation of Complexity Flux
-├── 13.1.3 Lemma Global Stationarity
-│   ├── 13.1.3.1 Proof Ergodic Degree Invariance
-│   └── 13.1.3.2 Commentary Global Balance
+• 13.1.2 Theorem Conservation of Complexity Flux  [by construction]
 │
-├── 13.1.4 Lemma Flux Separation (Detailed Balance)
-│   ├── 13.1.4.1 Proof Maximum Entropy Decomposition
-│   └── 13.1.4.2 Commentary Entropic Independence
+├── 13.1.3 Lemma: Global Stationarity
+│   ├── 13.1.3.1 Proof: Ergodic Degree Invariance
+│   └── 13.1.3.2 Commentary: Global Balance
 │
-└── 13.1.5 Proof Local Conservation Synthesis
-    ├── 13.1.5.1 Calculation Flux Conservation Verification
-    └── 13.1.5.2 Diagram Local Conservation
+├── 13.1.4 Lemma: Flux Separation (Detailed Balance)
+│   ├── 13.1.4.1 Proof: Maximum Entropy Decomposition
+│   └── 13.1.4.2 Commentary: Entropic Independence
+│
+└── 13.1.5 Proof: Local Conservation Synthesis
+    ├── 13.1.5.1 Calculation: Flux Conservation Verification
+    └── 13.1.5.2 Diagram: Local Conservation
 ```
 
 ---
@@ -629,22 +630,23 @@ The geometric evolution of the causal graph at the homeostatic fixed point is go
 The proof proceeds via Direct Construction, showing that the homeostatic state corresponds to the critical point of the discrete action.
 
 ```text
-• 13.2.2 Theorem Emergent Field Equations
-├── 13.2.3 Lemma Variational Action Principle
-│   ├── 13.2.3.1 Proof Topological Sensitivity
-│   ├── 13.2.3.2 Commentary Response Function
-│   └── 13.2.3.2 Diagram Gravitational Coupling
+• 13.2.2 Theorem Emergent Field Equations  [by construction]
 │
-├── 13.2.4 Lemma Curvature-Flux Coupling
-│   ├── 13.2.4.1 Proof Thermodynamic Work
-│   ├── 13.2.4.2 Commentary Geometry Doing Work
-│   └── 13.2.4.3 Diagram Curvature Response
+├── 13.2.3 Lemma: Variational Action Principle
+│   ├── 13.2.3.1 Proof: Topological Sensitivity
+│   ├── 13.2.3.2 Commentary: Response Function
+│   └── 13.2.3.2 Diagram: Gravitational Coupling
 │
-├── 13.2.5 Lemma Gravitational Coupling Scale
-│   └── 13.2.5.1 Proof Coupling Form
+├── 13.2.4 Lemma: Curvature-Flux Coupling
+│   ├── 13.2.4.1 Proof: Thermodynamic Work
+│   ├── 13.2.4.2 Commentary: Geometry Doing Work
+│   └── 13.2.4.3 Diagram: Curvature Response
 │
-└── 13.2.6 Proof Derivation from Stationary Action
-    └── 13.2.6.1 Calculation Unified Field Equation Verification
+├── 13.2.5 Lemma: Gravitational Coupling Scale
+│   └── 13.2.5.1 Proof: Coupling Form
+│
+└── 13.2.6 Proof: Derivation from Stationary Action
+    └── 13.2.6.1 Calculation: Unified Field Equation Verification
 ```
 
 ---
@@ -1257,17 +1259,18 @@ The **Discrete Divergence-Free Geometry Theorem** establishes that the emergent 
 The argument proceeds via Direct Construction, proving the mathematical necessity of the divergence-free curvature tensor from the coordinate invariance of the action.
 
 ```text
-• 13.3.2 Theorem Discrete Divergence-Free Geometry
-├── 13.3.3 Lemma Action Invariance
-│   ├── 13.3.3.1 Proof Vertex Relabeling Invariance
-│   └── 13.3.3.2 Commentary Discrete General Covariance
+• 13.3.2 Theorem Discrete Divergence-Free Geometry  [by construction]
 │
-├── 13.3.4 Lemma Discrete Schläfli Identity
-│   ├── 13.3.4.1 Proof Null Curvature Variation
-│   └── 13.3.4.2 Commentary Orthogonality of Metric Variation
+├── 13.3.3 Lemma: Action Invariance
+│   ├── 13.3.3.1 Proof: Vertex Relabeling Invariance
+│   └── 13.3.3.2 Commentary: Discrete General Covariance
 │
-└── 13.3.5 Proof Identity Derivation
-    └── 13.3.5.1 Calculation Bianchi Error Scaling
+├── 13.3.4 Lemma: Discrete Schläfli Identity
+│   ├── 13.3.4.1 Proof: Null Curvature Variation
+│   └── 13.3.4.2 Commentary: Orthogonality of Metric Variation
+│
+└── 13.3.5 Proof: Identity Derivation
+    └── 13.3.5.1 Calculation: Bianchi Error Scaling
 ```
 
 ---
@@ -1539,9 +1542,9 @@ Objective: Check divergence-free condition ∇·G = 0 for conserved fluxes
 =================================================================
 N (Nodes)    | Mean Divergence (Error)   | Max Divergence
 -----------------------------------------------------------------
-50           | 7.9936e-17                | 1.9984e-15
-100          | 4.8989e-17                | 2.0123e-15
-500          | 3.8587e-17                | 3.5527e-15
+50           | 3.1086e-17                | 8.8818e-16          
+100          | 1.0769e-16                | 4.4409e-15          
+500          | 3.3640e-17                | 3.5527e-15          
 -----------------------------------------------------------------
 RESULT: Divergence vanishes to machine precision.
         Geometric conservation is mathematically exact given G ~ T.
