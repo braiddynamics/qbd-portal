@@ -7,7 +7,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ---
 
-### 1.1.5 Axiom of Choice {#1.1.5}
+### 1.1.5 Axiom: of Choice {#1.1.5}
 
 :::info[**Acceptance of Non-Constructive Principles based on Systemic Fertility**]
 :::
@@ -11851,7 +11851,7 @@ Section 6.1.4 formalizes the properties of the QBD lemma regarding catalyzed ins
 
 ---
 
-### 6.1.4.1 Proof: Decay Rate Calculation {#6.1.4.1}
+### 6.1.4.1 Proof: Catalyzed Instability {#6.1.4.1}
 
 :::tip[**Explicit evaluation of net topological current under the Fundamental Equation**]
 :::
@@ -12211,7 +12211,7 @@ Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ---
 
-### 6.2.3.1 Proof: Triviality via Flux Dominance {#6.2.3.1}
+### 6.2.3.1 Proof: Exclusion of Unbraided Clusters (n=0) {#6.2.3.1}
 
 :::tip[**Verification of Instability via the Fundamental Equation**]
 :::
@@ -12282,7 +12282,7 @@ Section 6.2.4 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ---
 
-### 6.2.4.1 Proof: Reducibility via Formal Induction {#6.2.4.1}
+### 6.2.4.1 Proof: Exclusion of Single-Ribbon (n=1) {#6.2.4.1}
 
 :::tip[**Demonstration of Single-Ribbon Instability under Local Rewrite Operations**]
 :::
@@ -12386,7 +12386,7 @@ Section 6.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ---
 
-### 6.2.5.1 Proof: Algebraic Insufficiency {#6.2.5.1}
+### 6.2.5.1 Proof: Exclusion of Two-Ribbon (n=2) {#6.2.5.1}
 
 :::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group and its 1D Representations**]
 :::
@@ -12477,7 +12477,7 @@ Section 6.2.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ---
 
-### 6.2.6.1 Proof: Analytical Exclusion via TQFT Parsimony {#6.2.6.1}
+### 6.2.6.1 Proof: Exclusion of Higher Order Configurations (n > 3) {#6.2.6.1}
 
 :::tip[**Formal Demonstration of Non-Minimality for Higher Rank Generators**]
 :::
@@ -12740,7 +12740,7 @@ Section 6.3.4 formalizes the properties of the QBD lemma regarding linear scalin
 
 ---
 
-### 6.3.4.1 Proof of Scaling {#6.3.4.1}
+### 6.3.4.1 Proof: Linear Scaling of Crossings {#6.3.4.1}
 
 :::tip[**Formal Induction of Linear Scaling from Prime Braid Construction**]
 :::
@@ -12830,7 +12830,7 @@ Section 6.3.5 formalizes the properties of the QBD lemma regarding quadratic sca
 
 ---
 
-### 6.3.5.1 Proof: Scaling {#6.3.5.1}
+### 6.3.5.1 Proof: Quadratic Scaling of Torsion {#6.3.5.1}
 
 :::tip[**Formal Induction of Quadratic Scaling from Twist Accumulation**]
 :::
@@ -13010,7 +13010,7 @@ Section 6.3.6 formalizes the properties of the QBD lemma regarding entropy negli
 
 ---
 
-### 6.3.6.1 Proof of Single Microstate {#6.3.6.1}
+### 6.3.6.1 Proof: Entropy Negligibility {#6.3.6.1}
 
 :::tip[**Demonstration of Zero Entropy for Unique Prime Braid Configurations**]
 :::
@@ -13073,7 +13073,7 @@ Section 6.3.6.1 formalizes the properties of the QBD proof regarding proof of si
 
 ---
 
-### 6.3.7 Proof: Mass Functional {#6.3.7}
+### 6.3.7 Proof: Topological Mass {#6.3.7}
 
 :::tip[**Formal Synthesis of Crossing and Torsional Components via Energy Decomposition**]
 :::
@@ -13141,7 +13141,7 @@ Section 6.4.3 formalizes the properties of the QBD lemma regarding local horizon
 
 ---
 
-### 6.4.3.1 Proof: Local Blindness {#6.4.3.1}
+### 6.4.3.1 Proof: Local Horizon {#6.4.3.1}
 
 :::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants**]
 :::
@@ -13327,7 +13327,7 @@ Section 6.4.4 formalizes the properties of the QBD lemma regarding global unwind
 
 ---
 
-### 6.4.4.1 Proof: Cost Verification {#6.4.4.1}
+### 6.4.4.1 Proof: Global Unwinding Barrier {#6.4.4.1}
 
 :::tip[**Formal Derivation of the O(N) Unwinding Cost**]
 :::
@@ -13381,7 +13381,7 @@ Section 6.4.4.1 formalizes the properties of the QBD proof regarding cost verifi
 
 ---
 
-### 6.4.5 Proof: Stability via Impossibility {#6.4.5}
+### 6.4.5 Proof: Architectural Stability {#6.4.5}
 
 :::tip[**Formal Synthesis of Particle Persistence determined by Topological Selection**]
 :::
@@ -13480,7 +13480,7 @@ Section 7.1.3 formalizes the properties of the QBD lemma regarding unitary twist
 
 ---
 
-### 7.1.3.1 Proof: Eigenvalue Inversion {#7.1.3.1}
+### 7.1.3.1 Proof: Unitary Twist Anticommutation {#7.1.3.1}
 
 :::tip[**Verification of the -1 Eigenvalue Shift via Odd Pauli-X Intersection**]
 :::
@@ -13577,7 +13577,7 @@ Section 7.1.4 formalizes the properties of the QBD lemma regarding exchange-rota
 
 ---
 
-### 7.1.4.1 Proof: Topological Phase via Reidemeister Sequence {#7.1.4.1}
+### 7.1.4.1 Proof: Exchange-Rotation Equivalence {#7.1.4.1}
 
 :::tip[**Construction of the Exchange Phase from Local Rewrite Operations**]
 :::
@@ -13774,7 +13774,7 @@ Section 7.2.2 formalizes the properties of the QBD lemma regarding binary state 
 
 ---
 
-### 7.2.2.1 Proof: Binary Encoding Verification {#7.2.2.1}
+### 7.2.2.1 Proof: Binary State Principle {#7.2.2.1}
 
 :::tip[**Verification of the Single-Bit Capacity of Causal Edges**]
 :::
@@ -13849,7 +13849,7 @@ Section 7.2.3 formalizes the properties of the QBD lemma regarding forbidden occ
 
 ---
 
-### 7.2.3.1 Proof: Topological Violation {#7.2.3.1}
+### 7.2.3.1 Proof: Forbidden Occupancy {#7.2.3.1}
 
 :::tip[**Formal Demonstration of 2-Cycle Formation in Superposition Attempts**]
 :::
@@ -14050,7 +14050,7 @@ Section 7.3.3 formalizes the properties of the QBD lemma regarding gauge symmetr
 
 ---
 
-### 7.3.3.1 Proof: Symmetry Verification {#7.3.3.1}
+### 7.3.3.1 Proof: Gauge Symmetry {#7.3.3.1}
 
 :::tip[**Demonstration of Gauge Blindness via Local Operator Horizons**]
 :::
@@ -14128,7 +14128,7 @@ Section 7.3.4 formalizes the properties of the QBD lemma regarding conservation 
 
 ---
 
-### 7.3.4.1 Proof: Conservation Logic {#7.3.4.1}
+### 7.3.4.1 Proof: Conservation of Total Writhe {#7.3.4.1}
 
 :::tip[**Verification of Writhe Invariance via Topological Barriers**]
 :::
@@ -14197,7 +14197,7 @@ Section 7.3.5 formalizes the properties of the QBD lemma regarding lepton charge
 
 ---
 
-### 7.3.5.1 Proof: Singlet Charge Values {#7.3.5.1}
+### 7.3.5.1 Proof: Lepton Charge Solutions {#7.3.5.1}
 
 :::tip[**Verification of Charge Assignments for Neutrinos and Electrons**]
 :::
@@ -14296,7 +14296,7 @@ Section 7.3.6 formalizes the properties of the QBD lemma regarding quark charge 
 
 ---
 
-### 7.3.6.1 Proof: Triplet Charge Values {#7.3.6.1}
+### 7.3.6.1 Proof: Quark Charge Solutions {#7.3.6.1}
 
 :::tip[**Verification of Charge Assignments for Up and Down Quarks**]
 :::
@@ -14378,7 +14378,7 @@ Section 7.3.7 formalizes the properties of the QBD lemma regarding charge normal
 
 ---
 
-### 7.3.7.1 Proof: Anomaly Cancellation {#7.3.7.1}
+### 7.3.7.1 Proof: Charge Normalization {#7.3.7.1}
 
 :::tip[**Verification of Consistency with Standard Model Hypercharge Anomalies**]
 :::
@@ -14550,7 +14550,7 @@ Section 7.4.3 formalizes the properties of the QBD lemma regarding thermodynamic
 
 ---
 
-### 7.4.3.1 Proof: Entropic Vanishing {#7.4.3.1}
+### 7.4.3.1 Proof: Thermodynamic Equivalence {#7.4.3.1}
 
 :::tip[**Verification of Zero Entropy for Unique Logical Microstates**]
 :::
@@ -14631,7 +14631,7 @@ Section 7.4.4 formalizes the properties of the QBD lemma regarding base mass lin
 
 ---
 
-### 7.4.4.1 Proof: Linear Scaling Verification {#7.4.4.1}
+### 7.4.4.1 Proof: Base Mass Linear Scaling {#7.4.4.1}
 
 :::tip[**Linear Induction of Mass Scaling from Crossing Number**]
 :::
@@ -14705,7 +14705,7 @@ Section 7.4.5 formalizes the properties of the QBD lemma regarding integer geome
 
 ---
 
-### 7.4.5.1 Proof: Derivation of the Sharing Integer {#7.4.5.1}
+### 7.4.5.1 Proof: Integer Geometric Efficiency {#7.4.5.1}
 
 :::tip[**Verification of Unitary Mass Reduction per Parallel Link**]
 :::
@@ -14761,7 +14761,7 @@ Section 7.4.5.1 formalizes the properties of the QBD proof regarding derivation 
 
 ---
 
-### 7.4.6 Proof: Discrete Mass Spectrum {#7.4.6}
+### 7.4.6 Proof: Topological Mass Functional {#7.4.6}
 
 :::tip[**Formal Derivation of Fermion Masses from the Topological Functional**]
 :::
@@ -14986,7 +14986,7 @@ Section 8.1.2 formalizes the properties of the QBD lemma regarding braid group i
 
 ---
 
-### 8.1.2.1 Proof: Verification of Isomorphism {#8.1.2.1}
+### 8.1.2.1 Proof: Braid Group Isomorphism {#8.1.2.1}
 
 :::tip[**Formal Verification of Surjectivity, Injectivity, and Homomorphism for Rewrite Sequences**]
 :::
@@ -15035,7 +15035,7 @@ Section 8.1.3 formalizes the properties of the QBD lemma regarding distant commu
 
 ---
 
-### 8.1.3.1 Proof: Commutativity Verification {#8.1.3.1}
+### 8.1.3.1 Proof: Distant Commutativity {#8.1.3.1}
 
 :::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
 :::
@@ -15079,7 +15079,7 @@ Section 8.1.4 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ---
 
-### 8.1.4.1 Proof: Topological Equivalence {#8.1.4.1}
+### 8.1.4.1 Proof: Yang-Baxter Relations {#8.1.4.1}
 
 :::tip[**Verification of Isotopic Equivalence for Adjacent Rewrite Sequences**]
 :::
@@ -15122,7 +15122,7 @@ Section 8.1.5 formalizes the properties of the QBD lemma regarding bounded commu
 
 ---
 
-### 8.1.5.1 Proof: Depth Verification {#8.1.5.1}
+### 8.1.5.1 Proof: Bounded Commutator Depth {#8.1.5.1}
 
 :::tip[**Induction of Basis Spanning within O(n) Commutator Levels**]
 :::
@@ -15152,7 +15152,7 @@ Section 8.1.5.1 formalizes the properties of the QBD proof regarding depth verif
 
 ---
 
-### 8.1.6 Proof: Demonstration of The Generator Principle {#8.1.6}
+### 8.1.6 Proof: Lie Algebra Generator {#8.1.6}
 
 :::tip[**Formal Derivation of the Complete Lie Algebra from Discrete Braid Generators**]
 :::
@@ -15225,7 +15225,7 @@ Section 8.2.3 formalizes the properties of the QBD lemma regarding basis verific
 
 ---
 
-### 8.2.3.1 Proof: Matrix Construction {#8.2.3.1}
+### 8.2.3.1 Proof: Basis Verification {#8.2.3.1}
 
 :::tip[**Explicit Derivation of the Fundamental Generator Representation**]
 :::
@@ -15273,7 +15273,7 @@ Section 8.2.4 formalizes the properties of the QBD lemma regarding commutator ge
 
 ---
 
-### 8.2.4.1 Proof: Generation Logic {#8.2.4.1}
+### 8.2.4.1 Proof: Commutator Generation {#8.2.4.1}
 
 :::tip[**Algebraic Verification of Off-Diagonal Spanning via Commutators**]
 :::
@@ -15323,7 +15323,7 @@ Section 8.2.5 formalizes the properties of the QBD lemma regarding algebraic clo
 
 ---
 
-### 8.2.5.1 Proof: Closure Verification {#8.2.5.1}
+### 8.2.5.1 Proof: Algebraic Closure {#8.2.5.1}
 
 :::tip[**Formal Verification of Lie Algebra Closure and Semisimplicity**]
 :::
@@ -15356,7 +15356,7 @@ Section 8.2.6 formalizes the properties of the QBD lemma regarding ensemble clos
 
 ---
 
-### 8.2.6.1 Proof: Closure Probability {#8.2.6.1}
+### 8.2.6.1 Proof: Ensemble Closure Verification {#8.2.6.1}
 
 :::tip[**Derivation of Near-Unity Closure Probability in the Equilibrium Limit**]
 :::
@@ -15530,7 +15530,7 @@ Section 8.2.7 formalizes the properties of the QBD lemma regarding flux tube con
 
 ---
 
-### 8.2.7.1 Proof: Linear Potential and Berry Phase {#8.2.7.1}
+### 8.2.7.1 Proof: Flux Tube Confinement {#8.2.7.1}
 
 :::tip[**Derivation of String Tension and Phase Accumulation from Graph Geometry**]
 :::
@@ -15641,7 +15641,7 @@ Section 8.2.7.2 formalizes the properties of the QBD calculation regarding flux 
 
 ---
 
-### 8.2.8 Proof: Emergence of SU(3) from B3 {#8.2.8}
+### 8.2.8 Proof: Color Symmetry Emergence {#8.2.8}
 
 :::tip[**Formal Proof of the Isomorphism between Tripartite Dynamics and Color Symmetry**]
 :::
@@ -15710,7 +15710,7 @@ Section 8.3.3 formalizes the properties of the QBD lemma regarding chiral stabil
 
 ---
 
-### 8.3.3.1 Proof: Invariance Verification {#8.3.3.1}
+### 8.3.3.1 Proof: Chiral Stability {#8.3.3.1}
 
 :::tip[**Demonstration of Sign Preservation via Causal Functoriality**]
 :::
@@ -15761,7 +15761,7 @@ Section 8.3.4 formalizes the properties of the QBD lemma regarding weak algebra 
 
 ---
 
-### 8.3.4.1 Proof: Doublet Algebra Verification {#8.3.4.1}
+### 8.3.4.1 Proof: Weak Algebra Emergence {#8.3.4.1}
 
 :::tip[**Explicit Construction of Pauli Matrices from Flavor-Changing Operators**]
 :::
@@ -15836,7 +15836,7 @@ Section 8.3.5 formalizes the properties of the QBD lemma regarding right-handed 
 
 ---
 
-### 8.3.5.1 Proof: Rejection Logic {#8.3.5.1}
+### 8.3.5.1 Proof: Right-Handed Rejection {#8.3.5.1}
 
 :::tip[**Derivation of Rejection Rates from Path Redundancy and Local Checks**]
 :::
@@ -15893,7 +15893,7 @@ Section 8.3.6 formalizes the properties of the QBD lemma regarding topological p
 
 ---
 
-### 8.3.6.1 Proof: Parity Asymmetry Verification {#8.3.6.1}
+### 8.3.6.1 Proof: Topological Parity Violation {#8.3.6.1}
 
 :::tip[**Demonstration of the Exclusion of Right-Handed Currents by Axiomatic Constraints**]
 :::
@@ -15945,7 +15945,7 @@ Section 8.3.7 formalizes the properties of the QBD lemma regarding mirror puc vi
 
 ---
 
-### 8.3.7.1 Proof: PUC Violation Logic {#8.3.7.1}
+### 8.3.7.1 Proof: Mirror PUC Violation {#8.3.7.1}
 
 :::tip[**Formal Demonstration of Redundant Path Formation in Mirror Processes**]
 :::
@@ -15994,7 +15994,7 @@ Section 8.3.7.1 formalizes the properties of the QBD proof regarding puc violati
 
 ---
 
-### 8.3.8 Proof: Chiral Weak Interaction Structure {#8.3.8}
+### 8.3.8 Proof: Chiral Symmetry and Parity Violation {#8.3.8}
 
 :::tip[**Formal Derivation of the Complete Lie Algebra from Discrete Braid Generators**]
 :::
@@ -16068,7 +16068,7 @@ Section 8.4.2 formalizes the properties of the QBD lemma regarding computational
 
 ---
 
-### 8.4.2.1 Proof: Friction Inequality Verification {#8.4.2.1}
+### 8.4.2.1 Proof: Computational Friction Ratio {#8.4.2.1}
 
 :::tip[**Derivation of the Probability Ratio from Combinatorial and Friction Factors**]
 :::
@@ -16119,7 +16119,7 @@ Section 8.4.3 formalizes the properties of the QBD lemma regarding coupling-prob
 
 ---
 
-### 8.4.3.1 Proof: Amplitude Integration {#8.4.3.1}
+### 8.4.3.1 Proof: Coupling-Probability Correspondence {#8.4.3.1}
 
 :::tip[**Derivation from the Born Sampling of the Causal Graph**]
 :::
@@ -16169,7 +16169,7 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding topological c
 
 ---
 
-### 8.4.4.1 Proof: Generator Topology {#8.4.4.1}
+### 8.4.4.1 Proof: Topological Complexity Identification {#8.4.4.1}
 
 :::tip[**Analysis of Minimal Vertex Requirements for Doublet Transformations**]
 :::
@@ -16195,7 +16195,7 @@ Section 8.4.4.1 formalizes the properties of the QBD proof regarding generator t
 
 ---
 
-### 8.4.5 Proof: Ratio Construction {#8.4.5}
+### 8.4.5 Proof: Topological Weinberg Angle {#8.4.5}
 
 :::tip[**Calculation via Coupling Definitions and Topological Ratios**]
 :::
@@ -16275,7 +16275,7 @@ Section 8.5.2 formalizes the properties of the QBD lemma regarding probabilistic
 
 ---
 
-### 8.5.2.1 Proof: Identity Verification {#8.5.2.1}
+### 8.5.2.1 Proof: Probabilistic Coupling Identity {#8.5.2.1}
 
 :::tip[**Derivation of $g^2 = |M|^2$ from the Born Rule and Effective Action**]
 :::
@@ -16349,7 +16349,7 @@ Section 8.5.3 formalizes the properties of the QBD lemma regarding trace normali
 
 ---
 
-### 8.5.3.1 Proof: Normalization Logic {#8.5.3.1}
+### 8.5.3.1 Proof: Trace Normalization {#8.5.3.1}
 
 :::tip[**Verification of the Standard Trace Convention from Qubit Overlaps**]
 :::
@@ -16403,7 +16403,7 @@ Section 8.5.4 formalizes the properties of the QBD lemma regarding geometric nor
 
 ---
 
-### 8.5.4.1 Proof: Spherical Symmetry Verification {#8.5.4.1}
+### 8.5.4.1 Proof: Geometric Normalization {#8.5.4.1}
 
 :::tip[**Integration of the Vertex Amplitude over the Doublet Phase Space**]
 :::
@@ -16447,7 +16447,7 @@ Section 8.5.5 formalizes the properties of the QBD lemma regarding entropic dime
 
 ---
 
-### 8.5.5.1 Proof: Weight Verification {#8.5.5.1}
+### 8.5.5.1 Proof: Entropic Dimensionality {#8.5.5.1}
 
 :::tip[**Derivation of the Bit-Nat Energy Scale Normalized by Dimensionality**]
 :::
@@ -16496,7 +16496,7 @@ Section 8.5.6 formalizes the properties of the QBD lemma regarding local state s
 
 ---
 
-### 8.5.6.1 Proof: Degree Counting {#8.5.6.1}
+### 8.5.6.1 Proof: Local State Space Multiplier {#8.5.6.1}
 
 :::tip[**Combinatorial Enumeration of Valid Interaction Channels on a 3-Cycle**]
 :::
@@ -16647,7 +16647,7 @@ Section 8.5.6.2 formalizes the properties of the QBD calculation regarding su(2)
 
 ---
 
-### 8.5.7 Proof: Synthesis of the Coupling Constant {#8.5.7}
+### 8.5.7 Proof: Emergent Gauge Coupling {#8.5.7}
 
 :::tip[**Formal Synthesis of Factors into the Analytical Expression for $g$**]
 :::
@@ -16857,7 +16857,7 @@ Section 8.6.3 formalizes the properties of the QBD lemma regarding boson mass pr
 
 ---
 
-### 8.6.3.1 Proof: Mass Formula Verification {#8.6.3.1}
+### 8.6.3.1 Proof: Boson Mass Prediction {#8.6.3.1}
 
 :::tip[**Verification of Boson Masses via the Standard Model Relations and QBD Constants**]
 :::
@@ -16892,7 +16892,7 @@ Section 8.6.4 formalizes the properties of the QBD lemma regarding dimensionful 
 
 ---
 
-### 8.6.4.1 Proof: Scaling Logic {#8.6.4.1}
+### 8.6.4.1 Proof: Dimensionful VEV Scaling {#8.6.4.1}
 
 :::tip[**Derivation of the 246 GeV Scale from Local Density of States**]
 :::
@@ -16927,7 +16927,7 @@ Section 8.6.5 formalizes the properties of the QBD lemma regarding topological y
 
 ---
 
-### 8.6.5.1 Proof: Yukawa Ratio Verification {#8.6.5.1}
+### 8.6.5.1 Proof: Topological Yukawa Identity {#8.6.5.1}
 
 :::tip[**Derivation of the Yukawa Formula from Braid Complexity and Vacuum Supply**]
 :::
@@ -17033,7 +17033,7 @@ Section 8.6.6 formalizes the properties of the QBD lemma regarding sensitivity a
 
 ---
 
-### 8.6.6.1 Proof: Sensitivity Logic {#8.6.6.1}
+### 8.6.6.1 Proof: Sensitivity and Error Propagation {#8.6.6.1}
 
 :::tip[**Analytical and Numerical derivation of Error Bounds on Predicted Masses**]
 :::
@@ -17118,7 +17118,7 @@ Section 9.1.2 formalizes the properties of the QBD lemma regarding rank conditio
 
 ---
 
-### 9.1.2.1 Proof: Subgroup Rank Summation {#9.1.2.1}
+### 9.1.2.1 Proof: Rank Conditions {#9.1.2.1}
 
 :::tip[**Formal Derivation of Rank Inequality**]
 :::
@@ -17161,7 +17161,7 @@ Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank ex
 
 ---
 
-### 9.1.3.1 Proof: Inductive Elimination {#9.1.3.1}
+### 9.1.3.1 Proof: Lower Rank Exclusion {#9.1.3.1}
 
 :::tip[**Verification of Failure Modes for Low-Rank Algebras**]
 :::
@@ -17212,7 +17212,7 @@ Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate eli
 
 ---
 
-### 9.1.4.1 Proof: Representation and Hypercharge Analysis {#9.1.4.1}
+### 9.1.4.1 Proof: Candidate Elimination {#9.1.4.1}
 
 :::tip[**Demonstration of Spectrum Mismatch for Non-SU(5) Rank-4 Groups**]
 :::
@@ -17244,7 +17244,7 @@ Section 9.1.4.1 formalizes the properties of the QBD proof regarding representat
 
 ---
 
-### 9.1.5 Proof: Uniqueness Verification {#9.1.5}
+### 9.1.5 Proof: Minimal GUT Uniqueness {#9.1.5}
 
 :::tip[**Formal Verification of Representation Decomposition and Anomaly Cancellation**]
 :::
@@ -17431,7 +17431,7 @@ Section 9.2.3 formalizes the properties of the QBD lemma regarding distant commu
 
 ---
 
-### 9.2.3.1 Proof: Commutativity Verification {#9.2.3.1}
+### 9.2.3.1 Proof: Distant Commutativity {#9.2.3.1}
 
 :::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
 :::
@@ -17478,7 +17478,7 @@ Section 9.2.4 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ---
 
-### 9.2.4.1 Proof: Topological Equivalence {#9.2.4.1}
+### 9.2.4.1 Proof: Yang-Baxter Relations {#9.2.4.1}
 
 :::tip[**Verification of Isotopic Equivalence for Adjacent Rewrite Sequences**]
 :::
@@ -17519,7 +17519,7 @@ Section 9.2.5 formalizes the properties of the QBD lemma regarding closed lie al
 
 ---
 
-### 9.2.5.1 Proof: Isomorphism Verification {#9.2.5.1}
+### 9.2.5.1 Proof: Closed Lie Algebra {#9.2.5.1}
 
 :::tip[**Explicit Construction and Induction of the $\mathfrak{su}(5)$ Generators**]
 :::
@@ -17715,7 +17715,7 @@ Section 9.2.6 formalizes the properties of the QBD lemma regarding anti-fundamen
 
 ---
 
-### 9.2.6.1 Proof: Unlinked Structure Verification {#9.2.6.1}
+### 9.2.6.1 Proof: Anti-Fundamental Multiplet {#9.2.6.1}
 
 :::tip[**Demonstration of Minimal Complexity for the $\mathbf{\bar{5}}$ Multiplet**]
 :::
@@ -17753,7 +17753,7 @@ Section 9.2.7 formalizes the properties of the QBD lemma regarding antisymmetric
 
 ---
 
-### 9.2.7.1 Proof: Pairwise Interaction Verification {#9.2.7.1}
+### 9.2.7.1 Proof: Antisymmetric Multiplet {#9.2.7.1}
 
 :::tip[**Demonstration of Stable Complexity for the $\mathbf{10}$ Multiplet**]
 :::
@@ -17833,7 +17833,7 @@ Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity or
 
 ---
 
-### 9.3.2.1 Proof: Topological Complexity Counting {#9.3.2.1}
+### 9.3.2.1 Proof: Complexity Ordering {#9.3.2.1}
 
 :::tip[**Quantification of Braid Complexity for Generation $n$**]
 :::
@@ -17888,7 +17888,7 @@ Section 9.3.3 formalizes the properties of the QBD lemma regarding topological p
 
 ---
 
-### 9.3.3.1 Proof: Barrier Existence {#9.3.3.1}
+### 9.3.3.1 Proof: Topological Protection {#9.3.3.1}
 
 :::tip[**Demonstration of the Energy Barrier for Generational Decay**]
 :::
@@ -17932,7 +17932,7 @@ Section 9.3.4 formalizes the properties of the QBD lemma regarding decay tunneli
 
 ---
 
-### 9.3.4.1 Proof: Tunneling Rate Derivation {#9.3.4.1}
+### 9.3.4.1 Proof: Decay Tunneling {#9.3.4.1}
 
 :::tip[**Calculation of Transition Probability via Instantons**]
 :::
@@ -17974,7 +17974,7 @@ Section 9.3.4.1 formalizes the properties of the QBD proof regarding tunneling r
 
 ---
 
-### 9.3.5 Proof: Synthesis of the Three-Generation Structure {#9.3.5}
+### 9.3.5 Proof: Generational Metastability {#9.3.5}
 
 :::tip[**Formal Derivation of the Three-Generation Limit from Friction Saturation**]
 :::
@@ -18053,7 +18053,7 @@ Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction v
 
 ---
 
-### 9.4.3.1 Proof: Vertex Geometry Verification {#9.4.3.1}
+### 9.4.3.1 Proof: Interaction Vertex {#9.4.3.1}
 
 :::tip[**Demonstration of Subspace Projection at the Interaction Vertex**]
 :::
@@ -18100,7 +18100,7 @@ Section 9.4.4 formalizes the properties of the QBD lemma regarding fragmentation
 
 ---
 
-### 9.4.4.1 Proof: Complexity Reduction Verification {#9.4.4.1}
+### 9.4.4.1 Proof: Fragmentation Tunneling {#9.4.4.1}
 
 :::tip[**Demonstration of Energetic Favorability for Symmetry Breaking Transitions**]
 :::
@@ -18141,7 +18141,7 @@ Section 9.4.4.1 formalizes the properties of the QBD proof regarding complexity 
 
 ---
 
-### 9.4.5 Proof: Leptoquark Demonstration {#9.4.5}
+### 9.4.5 Proof: Leptoquark Generators {#9.4.5}
 
 :::tip[**Formal Verification of Leptoquark Dynamics within the Unified Algebra**]
 :::
@@ -18196,7 +18196,7 @@ Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verif
 
 ---
 
-### 9.5.2.1 Proof: Decay Rate Calculation {#9.5.2.1}
+### 9.5.2.1 Proof: Tension Verification {#9.5.2.1}
 
 :::tip[**Quantitative Derivation of the EFT Prediction vs. Experiment**]
 :::
@@ -18430,7 +18430,7 @@ Section 9.5.3 formalizes the properties of the QBD lemma regarding minimal actio
 
 ---
 
-### 9.5.3.1 Proof: Topological Complexity Minimization {#9.5.3.1}
+### 9.5.3.1 Proof: Minimal Action Pathway {#9.5.3.1}
 
 :::tip[**Comparative Analysis of Final State Invariants**]
 :::
@@ -18489,7 +18489,7 @@ Section 9.5.4 formalizes the properties of the QBD lemma regarding action-mass p
 
 ---
 
-### 9.5.4.1 Proof: Path Length-Mass Equivalence {#9.5.4.1}
+### 9.5.4.1 Proof: Action-Mass Proportionality {#9.5.4.1}
 
 :::tip[**Geometric Derivation via Configuration Space Distance**]
 :::
@@ -18551,7 +18551,7 @@ Section 9.5.4.1 formalizes the properties of the QBD proof regarding path length
 
 ---
 
-### 9.5.5 Proof: Stability Synthesis {#9.5.5}
+### 9.5.5 Proof: Proton Stability {#9.5.5}
 
 :::tip[**Formal Proof of Effective Proton Stability via Topological Barriers**]
 :::
@@ -18626,7 +18626,7 @@ Section 9.6.3 formalizes the properties of the QBD lemma regarding neutrality ve
 
 ---
 
-### 9.6.3.1 Proof: Exclusion of Standard Braids {#9.6.3.1}
+### 9.6.3.1 Proof: Neutrality Verification {#9.6.3.1}
 
 :::tip[**Formal Derivation of the Zero-Mass Constraint for Standard Symmetric Braids**]
 :::
@@ -18696,7 +18696,7 @@ Section 9.6.4 formalizes the properties of the QBD lemma regarding seesaw dynami
 
 ---
 
-### 9.6.4.1 Proof: Mixing Verification {#9.6.4.1}
+### 9.6.4.1 Proof: Seesaw Dynamics {#9.6.4.1}
 
 :::tip[**Diagonalization of the Mass Matrix Yielding Light and Heavy Eigenstates**]
 :::
@@ -18787,7 +18787,7 @@ Section 9.6.5 formalizes the properties of the QBD lemma regarding complexity de
 
 ---
 
-### 9.6.5.1 Proof: Density Increase Verification {#9.6.5.1}
+### 9.6.5.1 Proof: Complexity Density Scaling {#9.6.5.1}
 
 :::tip[**Derivation of Stress Scaling within Fixed Particle Volumes**]
 :::
@@ -18840,7 +18840,7 @@ Section 9.6.6 formalizes the properties of the QBD lemma regarding friction supp
 
 ---
 
-### 9.6.6.1 Proof: Maintenance Halt Verification {#9.6.6.1}
+### 9.6.6.1 Proof: Friction Suppression Limit {#9.6.6.1}
 
 :::tip[**Demonstration of Instability Onset at Critical Complexity**]
 :::
@@ -18902,7 +18902,7 @@ Section 9.6.7 formalizes the properties of the QBD lemma regarding critical comp
 
 ---
 
-### 9.6.7.1 Proof: Criticality Verification {#9.6.7.1}
+### 9.6.7.1 Proof: Critical Complexity Balance {#9.6.7.1}
 
 :::tip[**Derivation of the Critical Complexity $N_{3,\max}$**]
 :::
@@ -18965,7 +18965,7 @@ Section 9.6.8 formalizes the properties of the QBD lemma regarding planck anchor
 
 ---
 
-### 9.6.8.1 Proof: Scaling Verification {#9.6.8.1}
+### 9.6.8.1 Proof: Planck Anchor {#9.6.8.1}
 
 :::tip[**Derivation of $M_R$ from Critical Complexity and Planck Units**]
 :::
@@ -19018,7 +19018,7 @@ Section 9.6.8.1 formalizes the properties of the QBD proof regarding scaling ver
 
 ---
 
-### 9.6.9 Proof: Neutrino Mass Demonstration {#9.6.9}
+### 9.6.9 Proof: Neutrino Mass Mechanism {#9.6.9}
 
 :::tip[**Formal Proof of the Emergent Neutrino Mass and Seesaw Hierarchy**]
 :::
