@@ -96,18 +96,20 @@ The tensor network (specifically the MERA structure shown above) physically cons
 :::info[**Establishment of the Holographic Entanglement Entropy Formula via Graph Cut Minimization**]
 :::
 
-**Theorem (Ryu-Takayanagi):** It is herein established that the von Neumann entanglement entropy $S(\rho_A)$ of a boundary subregion $A \subset \partial G$ is strictly determined by the minimum information flux required to sever the causal connections between $A$ and its complement $A^c$ through the bulk graph $G_{bulk}$. Let $\gamma_A$ denote a homological surface in the bulk graph anchored to the boundary of $A$. The entropy satisfies the **Ryu-Takayanagi Formula**:
+Let **Theorem (Ryu-Takayanagi):** It is herein established that the von Neumann entanglement entropy $S(\rho_A)$ of a boundary subregion $A \subset \partial G$ is strictly determined by the minimum information flux required to sever the causal connections between $A$ and its complement $A^c$ through the bulk graph $G_{bulk}$. Let $\gamma_A$ be a homological surface in the bulk graph anchored to the boundary of $A$.
+
+### 16.1.2.1 Commentary: Argument Outline {#16.1.2.1}
+
+:::tip[**Structure of the Ryu-Takayanagi Correspondence Argument via the Isometry Condition and Formal Synthesis**]
+:::
+
+The entropy satisfies the **Ryu-Takayanagi Formula**:.
 
 $$
 S(\rho_A) = \frac{\min_{\gamma_A} \mathcal{A}(\gamma_A)}{4 G_N}
 $$
 
 where $\mathcal{A}(\gamma_A)$ is the discrete area defined by the cardinality of the edge cut $|E_{cut}(\gamma_A)|$, and $G_N$ is the effective gravitational coupling constant of the network. The ryu-takayanagi correspondence theorem identifies the measure of quantum entanglement on the boundary with the geometric area of the minimal surface in the bulk.
-
-### 16.1.2.1 Commentary: Argument Outline {#16.1.2.1}
-
-:::tip[**Structure of the Ryu-Takayanagi Correspondence Argument via the Isometry Condition and Formal Synthesis**]
-:::
 
 The argument proceeds via Direct Construction, mapping the boundary quantum entanglement entropy to a bulk network flow optimization problem.
 
@@ -127,18 +129,20 @@ The argument proceeds via Direct Construction, mapping the boundary quantum enta
 :::info[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
 :::
 
-**Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**. Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:
+Let **Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**.
+
+#### 16.1.3.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.3.1}
+
+:::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
+:::
+
+Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:.
 
 $$
 \Phi^\dagger \Phi = \hat{I}_{bulk}
 $$
 
 Consequently, the bulk Hilbert space $\mathcal{H}_{bulk}$ is isomorphic to a "code subspace" $\mathcal{C} \subset \mathcal{H}_{boundary}$. Under this isomorphism, any local operator $\hat{O}_{bulk}$ acting on the emergent geometry can be faithfully reconstructed as a non-local operator $\hat{O}_{boundary}$ acting on the graph boundary, preserving all information theoretic norms.
-
-#### 16.1.3.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.3.1}
-
-:::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
-:::
 
 **I. The Local Tensor Constraints**
 The MERA network is constructed from two fundamental gates:
@@ -208,11 +212,21 @@ The **Isometry Condition** <Ref id="16.1.3" label="§16.1.3" /> proves that the 
 
 ---
 
-### 16.1.4 Proof: Formal Synthesis of Ryu-Takayanagi {#16.1.4}
+---
+
+### 16.1.3.1 Commentary: Physical Significance {#16.1.3.1}
+
+:::info[**Physical Significance of Isometry Condition**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Isometry Condition** <Ref id="16.1.3" label="§16.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
+
+### 16.1.4 Proof: Ryu-Takayanagi Correspondence {#16.1.4}
 
 :::tip[**Formal Verification of the Geometrization of Quantum Information**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Isometry Condition** <Ref id="16.1.3" label="§16.1.3" />.
 **I. The Information Theoretic Premise**
 Let the boundary state $|\Psi_{\partial}\rangle$ be a ground state of a critical Hamiltonian, efficiently represented by the tensor network $\mathcal{T}$ (**Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" />). The entanglement entropy of a boundary region $A$ is given by the von Neumann entropy of the reduced density matrix $\rho_A = \text{Tr}_{A^c}(|\Psi_{\partial}\rangle\langle\Psi_{\partial}|)$.
 
@@ -463,18 +477,20 @@ When a region of space reaches this limit (typically in a Black Hole), the "Oper
 :::info[**Establishment of the Universal Entropy Bound via Bulk Saturation**]
 :::
 
-It is herein established that the information content (entropy $S$) of any causally compact subgraph $\Omega \subset G$ is strictly bounded by the discrete area of its boundary surface $\partial \Omega$. Let $A[\partial \Omega]$ denote the number of plaquettes constituting the causal horizon. The entropy satisfies the **Bekenstein Bound**:
+For any causally compact subgraph, the information content is strictly bounded by the discrete area of its boundary surface.
+
+### 16.2.2.1 Commentary: Argument Outline {#16.2.2.1}
+
+:::tip[**Structure of the Maximum Informational Density Argument via the Holographic Screen Mechanism, Black Hole Entropy from Cycle Count, and Formal Synthesis**]
+:::
+
+The entropy satisfies the **Bekenstein Bound**:.
 
 $$
 S(\Omega) \le \frac{A[\partial \Omega]}{4 \ell_P^2}
 $$
 
 This inequality is derived not as a fundamental postulate, but as the necessary consequence of the **Bulk Saturation Limit** ($\rho_{max}$). Any attempt to inject information $S > S_{max}$ into $\Omega$ triggers a phase transition in the update rule $\mathcal{R}$, causing the boundary area $A$ to expand to accommodate the flux, thereby enforcing the inequality $S/A \le \text{const}$.
-
-### 16.2.2.1 Commentary: Argument Outline {#16.2.2.1}
-
-:::tip[**Structure of the Maximum Informational Density Argument via the Holographic Screen Mechanism, Black Hole Entropy from Cycle Count, and Formal Synthesis**]
-:::
 
 The argument proceeds via Direct Construction, analyzing the topological and thermodynamic saturation constraints on information density within the causal graph bulk.
 
@@ -497,18 +513,20 @@ The argument proceeds via Direct Construction, analyzing the topological and the
 :::info[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
 :::
 
-**Lemma (Screen Mechanism):** It is herein established that the locus of information deposition for a subgraph $\Omega$ transitions from the bulk volume $V_{\Omega}$ to the boundary surface $\partial \Omega$ as the information density approaches the critical saturation limit $\rho_{max}$. Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
+Let **Lemma (Screen Mechanism):** It is herein established that the locus of information deposition for a subgraph $\Omega$ transitions from the bulk volume $V_{\Omega}$ to the boundary surface $\partial \Omega$ as the information density approaches the critical saturation limit $\rho_{max}$.
+
+### 16.2.3.1 Proof: Holographic Screen Mechanism {#16.2.3.1}
+
+:::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
+:::
+
+Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
 
 $$
 \lim_{\rho \to \rho_{max}} \frac{dS}{dt} = \alpha \cdot \frac{dA}{dt}
 $$
 
 where $A$ is the area of the causal horizon and $\alpha$ is the structural proportionality constant determined by the lattice discreteness. This mechanism identifies the "Holographic Screen" as the physical phase boundary of the saturated vacuum.
-
-### 16.2.3.1 Proof: Volume to Area Scaling Transition {#16.2.3.1}
-
-:::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
-:::
 
 **I. The Information Capacity Functional**
 The total information capacity $I(R)$ of a spherical region of radius $R$ in $D$ dimensions is defined by the integral of the local bit density $\rho(r)$:
@@ -620,18 +638,20 @@ PHASE I: SPARSE VACUUM               PHASE II: SATURATED HORIZON
 :::info[**Establishment of the Geometric Entropy Formula via Topological Crossing Number**]
 :::
 
-It is herein established that the Bekenstein-Hawking entropy $S_{BH}$ of a trapped surface (Black Hole Horizon) corresponds strictly to the cardinality of the fundamental 3-cycles (braid loops) intersecting the boundary manifold. Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:
+For any trapped surface, the Bekenstein-Hawking entropy corresponds strictly to the cardinality of the fundamental 3-cycles intersecting the boundary, which is well-defined.
+
+#### 16.2.4.1 Proof: Counting Pierced 3-Cycles in Trapped Surface {#16.2.4.1}
+
+:::tip[**Formal Verification of the Microstate Counting on the Horizon**]
+:::
+
+Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:.
 
 $$
 S_{BH}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\vec{A} \equiv \frac{N_{cycles}(\Sigma)}{4}
 $$
 
 where $N_{cycles}(\Sigma)$ is the integer number of irreducible stabilizer cycles pierced by the surface $\Sigma$. The factor of $1/4$ is the geometric packing efficiency of the cycle tiling on a spherical topology, recovering the standard result $S = A / 4\ell_P^2$ where the Planck area is identified with the effective cross-section of a single graph cycle.
-
-#### 16.2.4.1 Proof: Counting Pierced 3-Cycles in Trapped Surface {#16.2.4.1}
-
-:::tip[**Formal Verification of the Microstate Counting on the Horizon**]
-:::
 
 **I. The Trapped Surface Definition**
 A trapped surface $\Sigma$ in the causal graph is defined as a closed cut such that all outgoing null geodesics orthogonal to $\Sigma$ have non-positive expansion ($\theta \le 0$). In the discrete limit, this implies that the set of outgoing edges $E_{out}$ connects to a subgraph $\Omega_{ext}$ with lower information density than the interior $\Omega_{int}$.
@@ -686,11 +706,22 @@ This confirms the central thesis of Digital Physics: at the bottom, it is just b
 
 ---
 
-### 16.2.5 Proof: Formal Synthesis of the Bekenstein Bound {#16.2.5}
+---
+
+### 16.2.4.1 Commentary: Physical Significance {#16.2.4.1}
+
+:::info[**Physical Significance of Black Hole Entropy from Cycle Count**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />. It highlights how these bounds govern the global properties of the causal geometry.
+
+### 16.2.5 Proof: Maximum Informational Density (The Bound) {#16.2.5}
 
 :::tip[**Formal Verification of the 1/4 Coefficient via Geometric Packing**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" />.
+ This synthesis proof utilizes the structural results established in supporting **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />.
 **I. The Microstate Premise**
 Let the horizon $\Sigma$ be a closed 2-manifold tiled by a set of $N$ non-overlapping fundamental domains $\{d_i\}$, where each domain corresponds to the cross-section of a single stabilizer 3-cycle.
 The total area is $A = \sum_{i=1}^N \text{Area}(d_i) = N \cdot a_0$, where $a_0$ is the fundamental area quantum.

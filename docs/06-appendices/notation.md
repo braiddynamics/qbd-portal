@@ -295,8 +295,8 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\sigma_{eff}$ | Effective stress syndrome | [§10.7.2.1](/monograph/players/computation/10.7/#10.7.2.1) |
 | $\mathcal{R}_T$ | T-gate rewrite process (Self-Braiding) | [§10.8.1](/monograph/players/computation/10.8/#10.8.1) |
 | $\mathcal{C}_{QBD}$ | Ribbon Category of stable braids | [§10.8.3](/monograph/players/computation/10.8/#10.8.3) |
-| $\hat{D}$ | Dehn Twist Operator | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
-| $\mathcal{G}_{phys}$ | Universal Physical Gate Set | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
+| $\hat{D}$ | Dehn Twist Operator | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
+| $\mathcal{G}_{phys}$ | Universal Physical Gate Set | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
 | $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
 | $d_H(A,B)$ | Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
 | $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |

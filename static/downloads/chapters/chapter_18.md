@@ -224,7 +224,7 @@ Decomposing the identity operator $I$ into the parity projection operators $P_+ 
 $$ \text{Tr}(\rho_{\text{state}} \hat{T}) = 0 $$
 Let $\beta \in [0, 1]$ denote the parity-violating tunneling parameter. The state density matrix is written as a mixture of the symmetric stasis state $\rho_0$ and the parity-broken state $\rho_\beta$:
 $$ \rho_{\text{state}} = (1 - \beta) \rho_0 + \beta \rho_\beta $$
-We express the expectation value $\langle \hat{T} \rangle$ using the trace of the density matrix with the odd-parity projection $(I - \mathcal{P})$:
+we rewrite the expectation value $\langle \hat{T} \rangle$ using the trace of the density matrix with the odd-parity projection $(I - \mathcal{P})$:
 $$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) $$
 Expansion of this trace yields:
 $$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} (P_+ + P_-) \right) = \text{Tr}\left( \rho_{\text{state}} \hat{T} P_+ \right) + \text{Tr}\left( \rho_{\text{state}} \hat{T} P_- \right) $$
@@ -239,7 +239,7 @@ $$ I - \mathcal{P} |v\rangle = (1 - 1)|v\rangle = 0 \quad \text{for } v \in V_A 
 $$ I - \mathcal{P} |v\rangle = (1 - (-1))|v\rangle = 2|v\rangle \quad \text{for } v \in V_B $$
 We substitute these values back into the trace expression:
 $$ \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) = 0 + 2 \sum_{v \in V_B} \langle v | \rho_{\text{state}} | v \rangle = 2 P(v \in V_B) $$
-We relate the expectation value of the loop nucleation rate to the odd-parity sector projection:
+we obtain the expectation value of the loop nucleation rate to the odd-parity sector projection:
 $$ \langle \hat{T} \rangle = \text{Tr}\left( \rho_{\text{state}} \hat{T} \right) = \beta \text{Tr}\left( \rho_{\text{state}} (I - \mathcal{P}) \right) $$
 We substitute the trace expansion:
 $$ \langle \hat{T} \rangle = 2 \beta \sum_{v \in V_B} \rho_{vv} $$
@@ -269,6 +269,7 @@ In the pre-ignition stasis ($\beta = 0.0$), the graph is strictly bipartite, loc
 :::tip[**Formal Proof of Primordial Loop Nucleation via Precursor and Probability Integration**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Topological Parity Projection** <Ref id="18.1.5" label="§18.1.5" />.
 **I. Setup and Assumptions**
 
 Let $G_0$ be a directed regular Bethe tree vacuum on a finite volume containing $N$ vertices. Let $P_{\text{alignment}} = 2^{-6}$ represent the slot alignment probability per directed 2-path, and let $N_{\text{active-precursors}} = 2N$ represent the number of active, non-overlapping precursor paths. Let $m$ represent the number of discrete steps (ticks) of the dynamical sequencer $\mathcal{U}$, and let $T = m \delta t_L$ be the elapsed proper time.
@@ -281,7 +282,7 @@ Let $G_0$ be a directed regular Bethe tree vacuum on a finite volume containing 
 
 **III. Assembly**
 
-We calculate the probability that no loops nucleate at any of the active precursor sites during a single step. Since the active precursor paths are non-overlapping and independent, this probability is:
+we compute the probability that no loops nucleate at any of the active precursor sites during a single step. Since the active precursor paths are non-overlapping and independent, this probability is:
 $$ P_{\text{no-nucleation, step}} = (1 - P_{\text{alignment}})^{N_{\text{active-precursors}}} = (1 - P_{\text{alignment}})^{2N} $$
 Considering $m$ independent steps of the dynamical sequencer, the probability that no loops nucleate across all **2N** active precursors over $m$ steps evaluates to:
 $$ P_{\text{no-nucleation, } T} = (1 - P_{\text{alignment}})^{2N m} $$
@@ -833,11 +834,11 @@ Let $G_t$ be a graph representing the spatial slice at time $t$. Let $V$ denote 
 
 **III. Assembly**
 
-We express the physical volume $V_v$ associated with a single vertex as:
+we rewrite the physical volume $V_v$ associated with a single vertex as:
 $$ V_v = \frac{\text{Vol}(t)}{N} = \frac{\gamma N_3(t) \ell_0^3}{N} = \gamma \rho(t) \ell_0^3 $$
-We assume a three-dimensional emergent manifold, where the physical distance $\ell(t)$ associated with a single topological path step scales as the cube root of the physical volume per vertex:
+we invoke a three-dimensional emergent manifold, where the physical distance $\ell(t)$ associated with a single topological path step scales as the cube root of the physical volume per vertex:
 $$ \ell(t) = (V_v)^{1/3} = \gamma^{1/3} \rho(t)^{1/3} \ell_0 $$
-We reconstruct the physical distance $d(u,v)$ along a shortest topological path of length $\bar{d}_{top}(u,v)$ by multiplying the number of steps by the length scale. To ensure scale-invariance where the total volume is held constant under refinement, we scale the topological path by the inverse intensive density:
+we compute the physical distance $d(u,v)$ along a shortest topological path of length $\bar{d}_{top}(u,v)$ by multiplying the number of steps by the length scale. To ensure scale-invariance where the total volume is held constant under refinement, we compute the topological path by the inverse intensive density:
 $$ d(u,v) = \bar{d}_{top}(u,v) \cdot \rho(t)^{-1/3} \cdot \ell_0 $$
 We substitute the cycle density definition to obtain the explicit dependency:
 $$ d(u,v) = \bar{d}_{top}(u,v) \cdot \left(\frac{N}{N_3(t)}\right)^{1/3} \cdot \ell_0 $$
@@ -866,9 +867,9 @@ In a discrete pre-geometric graph, the physical "length" of a topological edge i
 :::info[**Scale Evolution of Hypersurface Geodesic Separations**]
 :::
 
-Let $L(t)$ denote the geodesic separation between two distant, non-interacting defects in the spatial leaf. Then $L(t)$ scales with the total number of cycles as $L(t) = L_0 \cdot \left[ \frac{N_3(t)}{N_3(t_0)} \right]^{1/3}$.
+Let $L(t)$ be the geodesic separation between two distant, non-interacting defects in the spatial leaf.
 
----
+---Then $L(t)$ scales with the total number of cycles as $L(t) = L_0 \cdot \left[ \frac{N_3(t)}{N_3(t_0)} \right]^{1/3}$.
 
 ### 18.2.4.1 Proof: Hypersurface Geodesic Integration {#18.2.4.1}
 
@@ -877,7 +878,7 @@ Let $L(t)$ denote the geodesic separation between two distant, non-interacting d
 
 **I. Setup and Assumptions**
 
-Let the spatial leaf be represented by a Riemannian 3-manifold with metric $g_{ij}(t)$. Let two defects be located at fixed coordinate markers $x_1$ and $x_2$. We assume the metric is isotropic and homogeneous, satisfying the FRW form $g_{ij}(t) = a(t)^2 \bar{g}_{ij}$.
+Let the spatial leaf be represented by a Riemannian 3-manifold with metric $g_{ij}(t)$. Let two defects be located at fixed coordinate markers $x_1$ and $x_2$. we invoke the metric is isotropic and homogeneous, satisfying the FRW form $g_{ij}(t) = a(t)^2 \bar{g}_{ij}$.
 
 **II. The Logic Chain**
 
@@ -886,7 +887,7 @@ Let the spatial leaf be represented by a Riemannian 3-manifold with metric $g_{i
 
 **III. Assembly**
 
-We write the geodesic distance $L(t)$ between $x_1$ and $x_2$ as the path integral:
+we obtain the geodesic distance $L(t)$ between $x_1$ and $x_2$ as the path integral:
 $$ L(t) = \int_{x_1}^{x_2} \sqrt{g_{ij} dx^i dx^j} = \int_{x_1}^{x_2} \sqrt{a(t)^2 \bar{g}_{ij} dx^i dx^j} = a(t) \int_{x_1}^{x_2} \sqrt{\bar{g}_{ij} dx^i dx^j} $$
 Let $L_0 \equiv L(t_0)$ denote the geodesic distance at the reference time $t_0$, where the scale factor is normalized to $a(t_0) = 1$:
 $$ L_0 = \int_{x_1}^{x_2} \sqrt{\bar{g}_{ij} dx^i dx^j} $$
@@ -917,9 +918,10 @@ While individual edges are subject to discrete, fluctuating local densities, the
 :::tip[**Formal Proof of Discrete Friedmann Scaling via Scale Factor Differentiation**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Metric Space Reconstruction** <Ref id="18.2.3" label="§18.2.3" />.
 **I. Setup and Assumptions**
 
-Let $a(t)$ be the emergent cosmic scale factor defined by $a(t) = C \cdot N_3(t)^{1/3}$, where $C \equiv \left(\frac{\gamma \ell_0^3}{V_0}\right)^{1/3}$ is a constant. We assume the time evolution is differentiable with respect to proper time $t$. Let $J_{\text{net}}(t) = \dot{N}_3(t)$ denote the net creation current of 3-cycles.
+Let $a(t)$ be the emergent cosmic scale factor defined by $a(t) = C \cdot N_3(t)^{1/3}$, where $C \equiv \left(\frac{\gamma \ell_0^3}{V_0}\right)^{1/3}$ is a constant. we invoke the time evolution is differentiable with respect to proper time $t$. Let $J_{\text{net}}(t) = \dot{N}_3(t)$ denote the net creation current of 3-cycles.
 
 **II. The Logic Chain**
 
@@ -928,15 +930,15 @@ Let $a(t)$ be the emergent cosmic scale factor defined by $a(t) = C \cdot N_3(t)
 
 **III. Assembly**
 
-We write the definition of the scale factor:
+we obtain the definition of the scale factor:
 $$ a(t) = C \cdot [N_3(t)]^{1/3} $$
-We differentiate $a(t)$ with respect to the proper cosmic time $t$ using the chain rule:
+we evaluate $a(t)$ with respect to the proper cosmic time $t$ using the chain rule:
 $$ \dot{a}(t) = \frac{d}{dt} \left( C \cdot [N_3(t)]^{1/3} \right) = C \cdot \frac{1}{3} [N_3(t)]^{-2/3} \cdot \frac{d N_3(t)}{dt} $$
 We substitute $\dot{N}_3(t) = J_{\text{net}}(t)$ to obtain the rate of change of the scale factor:
 $$ \dot{a}(t) = \frac{C}{3} [N_3(t)]^{-2/3} J_{\text{net}}(t) $$
 We evaluate the Hubble expansion parameter $H(t)$ defined as the relative expansion rate $H(t) \equiv \dot{a}(t)/a(t)$:
 $$ H(t) = \frac{\frac{C}{3} [N_3(t)]^{-2/3} J_{\text{net}}(t)}{C \cdot [N_3(t)]^{1/3}} $$
-We cancel the constant $C$ from the numerator and denominator:
+we simplify the constant $C$ from the numerator and denominator:
 $$ H(t) = \frac{1}{3} \frac{[N_3(t)]^{-2/3} J_{\text{net}}(t)}{[N_3(t)]^{1/3}} $$
 We combine the exponents of $N_3(t)$ in the fraction:
 $$ H(t) = \frac{1}{3} [N_3(t)]^{-2/3 - 1/3} J_{\text{net}}(t) = \frac{1}{3} [N_3(t)]^{-1} J_{\text{net}}(t) $$
@@ -1190,7 +1192,7 @@ Let $\rho \ll \rho^*$ be the intensive cycle density immediately following ignit
 
 **I. Setup and Assumptions**
 
-Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda_{\text{cat}}\rho)$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. We assume the cycle density satisfies the post-ignition limit $\rho \ll 1$, and let the initial density at $t = 0$ be $\rho_0 > 1/18$.
+Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda + 9\rho^2)e^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda_{\text{cat}}\rho)$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. we invoke the cycle density satisfies the post-ignition limit $\rho \ll 1$, and let the initial density at $t = 0$ be $\rho_0 > 1/18$.
 
 **II. The Logic Chain**
 
@@ -1199,13 +1201,13 @@ Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda 
 
 **III. Assembly**
 
-We write the simplified differential equation for the intensive cycle density:
+we obtain the simplified differential equation for the intensive cycle density:
 $$ \frac{d\rho}{dt} = 9\rho^2 - \frac{1}{2}\rho = \rho \left(9\rho - \frac{1}{2}\right) $$
 We separate the variables:
 $$ \frac{d\rho}{\rho \left(9\rho - \frac{1}{2}\right)} = dt $$
-We perform a partial fraction decomposition of the integrand:
+we compute a partial fraction decomposition of the integrand:
 $$ \frac{1}{\rho \left(9\rho - \frac{1}{2}\right)} = \frac{A}{\rho} + \frac{B}{9\rho - \frac{1}{2}} $$
-We solve for $A$ and $B$:
+we compute for $A$ and $B$:
 $$ 1 = A\left(9\rho - \frac{1}{2}\right) + B\rho $$
 Setting $\rho = 0$ yields $A = -2$. Setting $\rho = \frac{1}{18}$ yields $B = 18$. We substitute these back into the integral:
 $$ \int \left( -\frac{2}{\rho} + \frac{18}{9\rho - \frac{1}{2}} \right) d\rho = \int dt $$
@@ -1213,11 +1215,11 @@ We integrate both sides to obtain:
 $$ -2 \ln|\rho| + 2 \ln\left|9\rho - \frac{1}{2}\right| = t + C $$
 We divide by 2 and combine the logarithms:
 $$ \ln\left|\frac{9\rho - \frac{1}{2}}{\rho}\right| = \frac{t}{2} + C' $$
-We exponentiate both sides:
+we compute both sides:
 $$ \left| 9 - \frac{1}{2\rho} \right| = K e^{t/2} $$
-where $K = e^{C'}$. Since $\rho_0 > 1/18$, the term inside the absolute value is negative, so we resolve the absolute value to get:
+where $K = e^{C'}$. Since $\rho_0 > 1/18$, the term inside the absolute value is negative, so we compute the absolute value to get:
 $$ \frac{1}{2\rho} - 9 = \left(\frac{1}{2\rho_0} - 9\right) e^{t/2} $$
-We solve for $\rho(t)$:
+we compute for $\rho(t)$:
 $$ \frac{1}{2\rho(t)} = 9 + \left(\frac{1}{2\rho_0} - 9\right) e^{t/2} $$
 $$ \rho(t) = \frac{1}{18 + \left(\frac{1}{\rho_0} - 18\right) e^{t/2}} = \frac{\rho_0}{e^{t/2} + 18\rho_0(1 - e^{t/2})} $$
 
@@ -1245,9 +1247,9 @@ In this early-growth regime, steric constraints are completely negligible, permi
 :::info[**Self-Similar Vertex Growth in the Expanding Tree Substrate**]
 :::
 
-Let $N(t)$ denote the total vertex count of the expanding graph substrate. Then the vertex growth rate matches the cycle creation rate, which maintains the intensive cycle density $\rho(t) \approx \rho_0$ at a constant value and stabilizes the per-capita growth rate to a constant $r$.
+Let $N(t)$ be the total vertex count of the expanding graph substrate.
 
----
+---Then the vertex growth rate matches the cycle creation rate, which maintains the intensive cycle density $\rho(t) \approx \rho_0$ at a constant value and stabilizes the per-capita growth rate to a constant $r$.
 
 ### 18.3.3.1 Proof: Self-Similar Bipartite Expansion {#18.3.3.1}
 
@@ -1271,7 +1273,7 @@ Differentiating this relation with respect to proper time $t$ yields:
 $$ \dot{N}_3(t) = \dot{\rho}(t) N(t) + \rho(t) \dot{N}(t) $$
 Division by $N_3(t) = \rho(t) N(t)$ yields the relative growth rate:
 $$ \frac{\dot{N}_3(t)}{N_3(t)} = \frac{\dot{\rho}(t)}{\rho(t)} + \frac{\dot{N}(t)}{N(t)} $$
-We perform a Renormalization Group (RG) scaling analysis, observing that the creation of new 3-cycles is localized at the boundary of the expanding graph, scaling as $\dot{N}_{3, \text{create}} \propto \partial \text{Vol} \sim R^{d-1}$, where $R$ is the topological radius. Conversely, the deletion of cycles under catalytic updates is a bulk process, scaling as $\dot{N}_{3, \text{delete}} \propto \text{Vol} \sim R^d$.
+we compute a Renormalization Group (RG) scaling analysis, observing that the creation of new 3-cycles is localized at the boundary of the expanding graph, scaling as $\dot{N}_{3, \text{create}} \propto \partial \text{Vol} \sim R^{d-1}$, where $R$ is the topological radius. Conversely, the deletion of cycles under catalytic updates is a bulk process, scaling as $\dot{N}_{3, \text{delete}} \propto \text{Vol} \sim R^d$.
 At a stable boundary-bulk catalytic balance, the scale transformation of the graph stabilizes the intensive density to a fixed point $\dot{\rho}(t) \to 0$. Setting $\dot{\rho}(t) = 0$ in the relative growth rate yields:
 $$ \frac{\dot{N}_3(t)}{N_3(t)} \approx \frac{\dot{N}(t)}{N(t)} \equiv r $$
 We evaluate the constant relative growth rate $r$ at the stabilized density fixed point $\rho_0 = 1/18$:
@@ -1319,7 +1321,7 @@ Let the total cycle population grow exponentially as $N_3(t) = N_3(0) e^{rt}$. L
 
 We substitute the exponential growth solution $N_3(t) = N_3(0) e^{rt}$ into the scale factor relation:
 $$ a(t) = C \cdot [N_3(t)]^{1/3} = C \cdot [N_3(0) e^{rt}]^{1/3} $$
-We pull out the constant terms to define the initial scale factor $a(0) = C \cdot [N_3(0)]^{1/3}$:
+we obtain out the constant terms to define the initial scale factor $a(0) = C \cdot [N_3(0)]^{1/3}$:
 $$ a(t) = a(0) e^{(r/3)t} $$
 We evaluate the Hubble parameter $H(t) \equiv \dot{a}(t)/a(t)$:
 $$ H(t) = \frac{\frac{d}{dt} \left( a(0) e^{(r/3)t} \right)}{a(0) e^{(r/3)t}} = \frac{a(0) \cdot \frac{r}{3} e^{(r/3)t}}{a(0) e^{(r/3)t}} = \frac{r}{3} $$
@@ -1486,7 +1488,7 @@ PHASE I: NULLITY (Tree)    PHASE II: DE SITTER (Inflation)  PHASE III: ATTRACTOR
 :::info[**Crystallization of the Local Hausdorff and Spectral Dimensions to Four Dimensions at the Attractor**]
 :::
 
-Let $\rho(t)$ denote the intensive cycle density flowing under the universal evolution operator $\mathcal{U}$. Then the local Hausdorff and spectral dimensions of the graph transition from $d=1$ in the tree phase to exactly $d=4$ at the stable attractor density $\rho^* \approx 0.037$, converging to a smooth 4-dimensional Riemannian manifold in the Gromov-Hausdorff limit.
+Let $\rho(t)$ be the intensive cycle density flowing under the universal evolution operator $\mathcal{U}$, such that the local Hausdorff and spectral dimensions are well-defined.
 
 ---
 
@@ -1549,9 +1551,9 @@ Let $v \in V$ be a vertex in the emergent graph at the stable attractor density 
 
 **III. Assembly**
 
-We write the volume of the topological ball under scale transformation. On a tree substrate, the volume scales exponentially with the radius $R$:
+we obtain the volume of the topological ball under scale transformation. On a tree substrate, the volume scales exponentially with the radius $R$:
 $$ |B(v, R)|_{\text{tree}} \propto (k-1)^R $$
-Analysis of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$ reveals that it acts as a local exponential damping on edge additions. We write the edge addition rate at topological distance $R$ as:
+Analysis of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$ reveals that it acts as a local exponential damping on edge additions. we obtain the edge addition rate at topological distance $R$ as:
 $$ \lambda_{\text{add}}(R) = \lambda_0 e^{-6\mu\rho^*} \propto R^{-1} $$
 The recursion relation for the volume $|B(v, R)|$ is written as:
 $$ |B(v, R)| - |B(v, R-1)| = \partial |B(v, R)| $$
@@ -1561,7 +1563,7 @@ Substituting the boundary-bulk scaling relation into the fixed-point equation es
 $$ d - 1 = d - 1 \implies d = 4 $$
 Integrating the boundary relation $\partial |B(v, R)| \propto R^3$ yields:
 $$ |B(v, R)| = \sum_{r=1}^R \partial |B(v, r)| \propto \sum_{r=1}^R r^3 \propto R^4 $$
-We establish the existence of positive constants $c_1$ and $c_2$ such that:
+we conclude the existence of positive constants $c_1$ and $c_2$ such that:
 $$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
 
 **IV. Formal Conclusion**
@@ -1588,9 +1590,9 @@ On a purely tree-like substrate, volumes scale exponentially with the topologica
 :::info[**Convergence of the Spectral Dimension of Random Walks on the Emergent Graph**]
 :::
 
-Let $P(t)$ denote the return probability of a random walk after $t$ steps on the graph at the stable attractor density $\rho^*$. Then the spectral dimension $d_S$ converges to the limit $\lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} = 4$.
+Let $P(t)$ be the return probability of a random walk after $t$ steps on the graph at the stable attractor density $\rho^*$.
 
----
+---Then the spectral dimension $d_S$ converges to the limit $\lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} = 4$.
 
 ### 18.3.9.1 Proof: Spectral Dimension Convergence {#18.3.9.1}
 
@@ -1608,20 +1610,20 @@ Let $G = (V, E)$ be the emergent graph at the stable attractor density $\rho^*$.
 
 **III. Assembly**
 
-We write the return probability $P(t)$ of the random walk in terms of the heat kernel $e^{-\Delta t}$ at the origin:
+we obtain the return probability $P(t)$ of the random walk in terms of the heat kernel $e^{-\Delta t}$ at the origin:
 $$ P(t) = \langle v_0 | e^{-\Delta t} | v_0 \rangle = \int_0^\infty e^{-\lambda t} \rho(\lambda) d\lambda $$
 where $\rho(\lambda)$ is the spectral density (density of states) of the Laplacian eigenvalues $\lambda$.
-We write the spectral density $\rho(\lambda)$ for small $\lambda$ (infrared limit) in terms of the spectral dimension $d_S$:
+we obtain the spectral density $\rho(\lambda)$ for small $\lambda$ (infrared limit) in terms of the spectral dimension $d_S$:
 $$ \rho(\lambda) \propto \lambda^{d_S/2 - 1} $$
 We substitute the spectral density back into the heat kernel integral:
 $$ P(t) \propto \int_0^\infty e^{-\lambda t} \lambda^{d_S/2 - 1} d\lambda $$
-We perform a change of variable $u = \lambda t \implies d\lambda = \frac{1}{t} du$:
+we compute a change of variable $u = \lambda t \implies d\lambda = \frac{1}{t} du$:
 $$ P(t) \propto \int_0^\infty e^{-u} \left(\frac{u}{t}\right)^{d_S/2 - 1} \frac{1}{t} du = t^{-d_S/2} \int_0^\infty e^{-u} u^{d_S/2 - 1} du $$
-We recognize the integral as the Gamma function $\Gamma(d_S/2)$:
+we obtain the integral as the Gamma function $\Gamma(d_S/2)$:
 $$ P(t) = C \cdot t^{-d_S/2} \Gamma(d_S/2) \propto t^{-d_S/2} $$
-We take the logarithm of both sides:
+we apply the logarithm of both sides:
 $$ \ln P(t) = \ln C - \frac{d_S}{2} \ln t $$
-We solve for the spectral dimension $d_S$:
+we compute for the spectral dimension $d_S$:
 $$ d_S = -2 \frac{\ln P(t) - \ln C}{\ln t} $$
 We evaluate the limit as $t \to \infty$:
 $$ \lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} $$
@@ -1676,9 +1678,9 @@ Let $\{G_n = (V_n, E_n)\}$ be a sequence of finite graphs satisfying the Ahlfors
 
 **III. Assembly**
 
-We express the Mosco convergence of Dirichlet forms. Let the continuous Dirichlet energy on the limit manifold $(M, g)$ be defined as:
+we rewrite the Mosco convergence of Dirichlet forms. Let the continuous Dirichlet energy on the limit manifold $(M, g)$ be defined as:
 $$ \mathcal{E}_M(f) = \int_M |\nabla_g f|^2 d\mu_g $$
-We bound the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
+we obtain the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
 $$ C_1 \int_M |\nabla_g f|^2 d\mu_g \le \mathcal{E}_{G_n}(f \circ \phi_n) \le C_2 \int_M |\nabla_g f|^2 d\mu_g $$
 where $C_1$ and $C_2$ are positive constants determined by the Ahlfors bounds $c_1, c_2$.
 The relation between the Dirichlet form and the Laplacian generator is written for the discrete space as:
@@ -1714,6 +1716,7 @@ This convergence is not merely formal; it establishes that the discrete variatio
 :::tip[**Formal Proof of Dimensional Emergence via Gromov-Hausdorff Metric Limit Evaluation**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.10" label="§18.3.10" />.
 **I. Setup and Assumptions**
 
 Let $\{G_N\}$ be a sequence of finite graphs with bounded degree and intensive cycle density converging to the stable attractor density $\lim_{N\to\infty} \rho = \rho^* \approx 0.037$.
@@ -1727,9 +1730,9 @@ Let $\{G_N\}$ be a sequence of finite graphs with bounded degree and intensive c
 
 We apply Gromov's Compactness Theorem. Since the sequence of graphs $\{G_N\}$ has uniformly bounded vertex degree and satisfies Ahlfors 4-regularity, the sequence of metric measure spaces $(G_N, d_N, \mu_N)$ contains a subsequence that converges in the Gromov-Hausdorff metric to a compact metric space $X$:
 $$ \lim_{k\to\infty} d_{\text{GH}}(G_{N_k}, X) = 0 $$
-We determine the topological dimension of the limit space $X$. Since the volume of the metric balls in $G_N$ scales polynomially with exponent 4, the Hausdorff dimension $d_H(X)$ of the limit space is:
+we obtain the topological dimension of the limit space $X$. Since the volume of the metric balls in $G_N$ scales polynomially with exponent 4, the Hausdorff dimension $d_H(X)$ of the limit space is:
 $$ d_H(X) = \lim_{R\to\infty} \frac{\ln |B_X(x, R)|}{\ln R} = 4 $$
-We verify the spectral convergence of the Laplacian. Since the spectral dimension $d_S(X) = 4$, the eigenvalue distribution matches that of a smooth 4-dimensional Riemannian manifold. By the manifold reconstruction theorem under uniform curvature bounds, the limit space $X$ is a smooth 4-dimensional Riemannian manifold.
+we conclude the spectral convergence of the Laplacian. Since the spectral dimension $d_S(X) = 4$, the eigenvalue distribution matches that of a smooth 4-dimensional Riemannian manifold. By the manifold reconstruction theorem under uniform curvature bounds, the limit space $X$ is a smooth 4-dimensional Riemannian manifold.
 
 **IV. Formal Conclusion**
 
@@ -2114,9 +2117,9 @@ Let $\rho(t)$ denote the intensive cycle density, satisfying the Master Equation
 
 **III. Assembly**
 
-We write the rate of change of density:
+we obtain the rate of change of density:
 $$ \dot{\rho} = F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - \frac{1}{2}\rho $$
-We differentiate $F(\rho)$ with respect to $\rho$ to obtain the Jacobian $F'(\rho)$:
+we evaluate $F(\rho)$ with respect to $\rho$ to obtain the Jacobian $F'(\rho)$:
 $$ F'(\rho) = \frac{d}{d\rho} \left[ (\Lambda + 9\rho^2)e^{-6\mu\rho} \right] - \frac{1}{2} $$
 We apply the product rule to the first term:
 $$ F'(\rho) = 18\rho e^{-6\mu\rho} + (\Lambda + 9\rho^2)(-6\mu)e^{-6\mu\rho} - \frac{1}{2} $$
@@ -2180,11 +2183,11 @@ Let the cycle density be governed by the stochastic Langevin equation $\dot{\rho
 
 **III. Assembly**
 
-We write the noise covariance in terms of the creation rate:
+we obtain the noise covariance in terms of the creation rate:
 $$ \langle \xi(t) \xi(t') \rangle = 2 \sigma_0^2 C(\rho) \delta(t - t') $$
 where $\sigma_0^2$ is the bare quantum fluctuation amplitude. We substitute the creation rate $C(\rho)$ to find the explicit density dependence:
 $$ \langle \xi(t) \xi(t') \rangle = 2 \sigma_0^2 (\Lambda + 9\rho^2) e^{-6\mu\rho} \delta(t - t') $$
-We analyze the asymptotic behavior as the density $\rho(t)$ increases. The exponential steric hindrance factor $e^{-6\mu\rho}$ dampens the creation rate:
+we evaluate the asymptotic behavior as the density $\rho(t)$ increases. The exponential steric hindrance factor $e^{-6\mu\rho}$ dampens the creation rate:
 $$ \lim_{\rho \to \rho^*} D_{\text{noise}}(\rho) = \sigma_0^2 (\Lambda + 9(\rho^*)^2) e^{-6\mu\rho^*} \ll \sigma_0^2 \Lambda $$
 This exponential decay reduces the stochastic noise variance as the system approaches the stable attractor, suppressing density perturbations $\delta\rho(t)$.
 
@@ -2232,7 +2235,7 @@ Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} -
 
 **III. Assembly**
 
-We write the upper bound of the rate function $F(\rho)$ over the interval. Since $F(\rho)$ decreases monotonically from ignition to the attractor, we bound the rate:
+we obtain the upper bound of the rate function $F(\rho)$ over the interval. Since $F(\rho)$ decreases monotonically from ignition to the attractor, we obtain the rate:
 $$ F(\rho) < F(\rho_{\text{ignition}}) \approx \Lambda $$
 We substitute this upper bound into the expression for $\varepsilon$:
 $$ \varepsilon(\rho) = \frac{3 F(\rho)}{H^2} < \frac{3 \Lambda}{(3\rho_{\text{ignition}} - 0.1667)^2} $$
@@ -2240,7 +2243,7 @@ We substitute $\Lambda = 0.0156$ and $\rho_{\text{ignition}} = 0.06$:
 $$ \varepsilon(\rho) < \frac{3(0.0156)}{(3(0.06) - 0.1667)^2} \approx 0.025 $$
 Evaluating the bounds for $\eta = -F'(\rho)/H$ requires differentiating the rate function:
 $$ F'(\rho) = e^{-6\mu\rho} \left[ 18\rho - 6\mu(\Lambda + 9\rho^2) \right] - 0.5 $$
-Since the exponential term $e^{-6\mu\rho}$ is bounded by 1, and the polynomial is bounded, we write the extremum of the derivative:
+Since the exponential term $e^{-6\mu\rho}$ is bounded by 1, and the polynomial is bounded, we obtain the extremum of the derivative:
 $$ |F'(\rho)| < 6\mu\rho_{\text{ignition}} $$
 We substitute this into the expression for $\eta$:
 $$ \eta(\rho) < \frac{6\mu}{3\rho_{\text{ignition}} - 0.1667} \approx 0.015 $$
@@ -2270,6 +2273,7 @@ The Langevin simulation demonstrates that while individual trajectories are subj
 :::tip[**Formal Proof of the Spectral Index Red Tilt via Slow-Roll and Noise Integration**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4" label="§18.4.4" />.
 **I. Setup and Assumptions**
 
 Let the primordial power spectrum of curvature perturbations at horizon exit ($k = aH$) be represented by the slow-roll formula $P_{\mathcal{R}}(k) = \frac{H^2}{8\pi^2 M_{\text{pl}}^2 \varepsilon}$. Let the slow-roll parameters satisfy $\varepsilon \approx 0.02$ and $\eta \approx 0.01$.
@@ -2281,11 +2285,11 @@ Let the primordial power spectrum of curvature perturbations at horizon exit ($k
 
 **III. Assembly**
 
-We define the spectral index $n_s$ in terms of the logarithmic derivative of the power spectrum with respect to comoving scale $k$:
+we compute the spectral index $n_s$ in terms of the logarithmic derivative of the power spectrum with respect to comoving scale $k$:
 $$ n_s - 1 \equiv \frac{d\ln P_{\mathcal{R}}(k)}{d\ln k} $$
-We write the relation between comoving scale $k$ and proper time $t$ at horizon exit:
+we obtain the relation between comoving scale $k$ and proper time $t$ at horizon exit:
 $$ d\ln k = d\ln(aH) = H(1 - \varepsilon) dt \approx H dt $$
-We express the derivative using the chain rule with respect to proper time:
+we rewrite the derivative using the chain rule with respect to proper time:
 $$ n_s - 1 = \frac{1}{H} \frac{d}{dt} \left[ \ln \left( \frac{H^2}{8\pi^2 M_{\text{pl}}^2 \varepsilon} \right) \right] $$
 We expand the logarithm:
 $$ n_s - 1 = \frac{1}{H} \frac{d}{dt} \left[ 2\ln H - \ln \varepsilon - \ln(8\pi^2 M_{\text{pl}}^2) \right] $$
@@ -2694,7 +2698,7 @@ where the physical parameters are $\Lambda = 0.015625$, $\mu = 0.399$, and $\lam
 
 **III. Assembly**
 
-We linearize $F(\rho)$ about the fixed point $\rho^*$ using a Taylor expansion:
+we simplify $F(\rho)$ about the fixed point $\rho^*$ using a Taylor expansion:
 $$ F(18.5) = F(\rho^*) + F'(\rho^*) \delta\rho(t) + \mathcal{O}(\delta\rho^2) $$
 Since $F(\rho^*) = 0$ at the fixed point, the linearized Master Equation is:
 $$ \delta\dot{\rho}(t) = F'(\rho^*) \delta\rho(t) = J \cdot \delta\rho(t) $$
@@ -2708,7 +2712,7 @@ $$ \frac{d}{d\rho}(\Lambda + 9\rho^2) = 18\rho $$
 $$ \frac{d}{d\rho} e^{-6\mu\rho} = -6\mu e^{-6\mu\rho} $$
 We substitute these into the product rule:
 $$ \frac{d}{d\rho} \left[ (\Lambda + 9\rho^2)e^{-6\mu\rho} \right] = 18\rho e^{-6\mu\rho} - 6\mu (\Lambda + 9\rho^2) e^{-6\mu\rho} = \left( 18\rho - 6\mu(\Lambda + 9\rho^2) \right) e^{-6\mu\rho} $$
-We differentiate the second term:
+we evaluate the second term:
 $$ \frac{d}{d\rho} \left[ \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2 \right] = \frac{1}{2} + 6\lambda_{\text{cat}}\rho $$
 We combine both parts to write the complete derivative $F'(\rho)$:
 $$ F'(\rho) = \left( 18\rho - 6\mu(\Lambda + 9\rho^2) \right) e^{-6\mu\rho} - \frac{1}{2} - 6\lambda_{\text{cat}}\rho $$
@@ -2726,7 +2730,7 @@ We evaluate the second term:
 $$ \text{term2} = 0.5 + 6\lambda_{\text{cat}}\rho^* = 0.5 + 6(1.718)(0.037) = 0.5 + 0.381396 = 0.881396 $$
 We compute the Jacobian eigenvalue:
 $$ J = \text{term1} - \text{term2} = 0.548314 - 0.881396 \approx -0.333082 \approx -0.3331 $$
-We solve the linearized differential equation $\delta\dot{\rho}(t) = J \cdot \delta\rho(t)$:
+we compute the linearized differential equation $\delta\dot{\rho}(t) = J \cdot \delta\rho(t)$:
 $$ \delta\rho(t) = \delta\rho_0 e^{J t} \approx \delta\rho_0 e^{-0.3331 t} $$
 
 **IV. Formal Conclusion**
@@ -2773,17 +2777,17 @@ Let G = (V, E) be the spatial graph with cycle density $\rho(t)$ and stable attr
 
 **III. Assembly**
 
-We express the local Ollivier-Ricci curvature $K(u,v)$ on the graph:
+we rewrite the local Ollivier-Ricci curvature $K(u,v)$ on the graph:
 $$ K(u,v) = 1 - \frac{W_1(m_u, m_v)}{d(u,v)} $$
 where $W_1(m_u, m_v)$ is the Wasserstein-1 transport distance between the neighborhood probability distributions $m_u$ and $m_v$.
-We write the neighborhood distribution $m_v$ at the attractor density $\rho^*$, where the local graph matches the flat spatial leaf:
+we obtain the neighborhood distribution $m_v$ at the attractor density $\rho^*$, where the local graph matches the flat spatial leaf:
 $$ K(u,v)\Big|_{\rho = \rho^*} = 0 $$
 We expand the curvature $K(u,v)$ linearly about the stable density $\rho^*$:
 $$ K(u,v) \approx K(u,v)\Big|_{\rho^*} + \left(\frac{\partial K(u,v)}{\partial \rho}\right)\Big|_{\rho^*} (\rho(t) - \rho^*) $$
-We define the negative coupling constant $\zeta_{u,v} \equiv -\left(\frac{\partial K(u,v)}{\partial \rho}\right)\Big|_{\rho^*}$. Since cycle addition increases the local connectivity, it reduces the Wasserstein distance $W_1$, which makes $\zeta_{u,v}$ positive.
-We take the spatial average of local curvatures over the entire graph to construct the macroscopic curvature parameter $\Omega_k(t)$:
+we compute the negative coupling constant $\zeta_{u,v} \equiv -\left(\frac{\partial K(u,v)}{\partial \rho}\right)\Big|_{\rho^*}$. Since cycle addition increases the local connectivity, it reduces the Wasserstein distance $W_1$, which makes $\zeta_{u,v}$ positive.
+we apply the spatial average of local curvatures over the entire graph to construct the macroscopic curvature parameter $\Omega_k(t)$:
 $$ \Omega_k(t) = -\frac{1}{|E|} \sum_{(u,v) \in E} K(u,v) \approx -\left(\frac{1}{|E|} \sum_{(u,v) \in E} \zeta_{u,v}\right) \delta\rho(t) $$
-We define the global coupling constant $\zeta \equiv \frac{1}{|E|} \sum_{(u,v) \in E} \zeta_{u,v} > 0$:
+we compute the global coupling constant $\zeta \equiv \frac{1}{|E|} \sum_{(u,v) \in E} \zeta_{u,v} > 0$:
 $$ \Omega_k(t) \approx -\zeta \cdot \delta\rho(t) $$
 
 **IV. Formal Conclusion**
@@ -3020,15 +3024,15 @@ Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$,
 
 **III. Assembly**
 
-We write the number of nodes at topological distance $i$ from the root node. The root has 3 neighbors at distance 1. Each subsequent node has 2 children. We write the number of nodes at distance $i$:
+we obtain the number of nodes at topological distance $i$ from the root node. The root has 3 neighbors at distance 1. Each subsequent node has 2 children. we obtain the number of nodes at distance $i$:
 $$ N_i = 3 \cdot 2^{i-1} \quad \text{for } i \ge 1 $$
 We sum the nodes in all layers from $i=0$ (the root) to $R$:
 $$ N = 1 + \sum_{i=1}^R N_i = 1 + \sum_{i=1}^R 3 \cdot 2^{i-1} $$
 We apply the geometric series sum formula $\sum_{j=0}^{R-1} 2^j = 2^R - 1$:
 $$ N = 1 + 3 \sum_{j=0}^{R-1} 2^j = 1 + 3(2^R - 1) = 3 \cdot 2^R - 2 $$
-We solve for the radius $R$ as a function of the total vertex count $N$:
+we compute for the radius $R$ as a function of the total vertex count $N$:
 $$ 3 \cdot 2^R = N + 2 \implies 2^R = \frac{N+2}{3} $$
-We take the base-2 logarithm of both sides:
+we apply the base-2 logarithm of both sides:
 $$ R = \log_2 \left( \frac{N+2}{3} \right) $$
 Since the root is at the center of the tree, the maximum geodesic path length (diameter) $d(u,v)$ between any two arbitrary leaf vertices $u, v \in V$ is at most twice the radius $R$:
 $$ d(u,v) \le 2R = 2\log_2 \left( \frac{N+2}{3} \right) $$
@@ -3059,9 +3063,9 @@ In any low-dimensional coordinate grid, the geodesic distance between distant po
 :::info[**Exponential Geodesic Decay of the Relational Causal Propagator**]
 :::
 
-Let $G_{uv}(s)$ denote the relational causal propagator between vertices $u$ and $v$ on the Bethe tree $G_0$. Then $G_{uv}(s)$ decays exponentially with topological distance $d(u,v)$: $G_{uv}(s) \propto \left(\frac{1}{2}\right)^{d(u,v)} = e^{-d(u,v)\ln 2}$.
+Let $G_{uv}(s)$ be the relational causal propagator between vertices $u$ and $v$ on the Bethe tree $G_0$.
 
----
+---Then $G_{uv}(s)$ decays exponentially with topological distance $d(u,v)$: $G_{uv}(s) \propto \left(\frac{1}{2}\right)^{d(u,v)} = e^{-d(u,v)\ln 2}$.
 
 ### 18.5.9.1 Proof: Relational Propagator Spectrum {#18.5.9.1}
 
@@ -3070,7 +3074,7 @@ Let $G_{uv}(s)$ denote the relational causal propagator between vertices $u$ and
 
 **I. Setup and Assumptions**
 
-Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. We define the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
+Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
 
 **II. The Logic Chain**
 
@@ -3078,12 +3082,12 @@ Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be th
 
 **III. Assembly**
 
-We express the matrix resolvent as a Neumann series:
+we rewrite the matrix resolvent as a Neumann series:
 $$ (s I - A)^{-1} = s^{-1} \left( I - \frac{1}{s} A \right)^{-1} = \sum_{m=0}^\infty s^{-(m+1)} A^m $$
-We write the entry of $A^m$ at index $(u,v)$, which counts the number of walks of length $m$ from vertex $u$ to $v$:
+we obtain the entry of $A^m$ at index $(u,v)$, which counts the number of walks of length $m$ from vertex $u$ to $v$:
 $$ G_{uv}(s) = \sum_{m=0}^\infty s^{-(m+1)} (A^m)_{uv} $$
 On a tree graph, there is exactly one unique self-avoiding path $p$ connecting $u$ and $v$, and its length is the geodesic distance $d(u,v)$. Any walk of length $m \ge d(u,v)$ must traverse this unique path and include backtracking loops.
-We evaluate the resolvent at the spectral boundary $s=2$ for the branching limit. For the unique self-avoiding path of length $m = d(u,v)$, the entry is $(A^{d(u,v)})_{uv} = 1$. We write the leading-order contribution to the sum:
+We evaluate the resolvent at the spectral boundary $s=2$ for the branching limit. For the unique self-avoiding path of length $m = d(u,v)$, the entry is $(A^{d(u,v)})_{uv} = 1$. we obtain the leading-order contribution to the sum:
 $$ G_{uv}(s) \approx s^{-(d(u,v)+1)} = s^{-1} \left( \frac{1}{s} \right)^{d(u,v)} $$
 We substitute the coordination limit scale $s=2$:
 $$ G_{uv}(2) \propto \left( \frac{1}{2} \right)^{d(u,v)} = e^{-d(u,v)\ln 2} $$

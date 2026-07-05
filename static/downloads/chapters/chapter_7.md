@@ -58,10 +58,7 @@ If the number of twists is even, the product of $Z$ operators yields +1, corresp
 :::info[**Derivation of Fermionic Exchange Phases from Braid Topology**]
 :::
 
-The physical exchange of two identical tripartite braids, $\beta_1$ and $\beta_2$, necessitates the accumulation of a global phase factor $\phi = -1$ on the joint wavefunction, thereby enforcing Fermi-Dirac statistics. This statistical behavior is derived from the conjugation of the joint spin projector $\Pi_{joint}$ by the Exchange Operator $\hat{P}_{12}$, subject to the following topological constraints:
-1.  **Phase Accumulation:** The execution of $\hat{P}_{12}$ induces a geometric phase $\phi = (-1)^{2s}$ on the state vector, where the spin quantum number $s=1/2$ is fixed by the intrinsic odd parity of the ribbon's half-twist configuration.
-2.  **Algebraic Enforcement:** The emergence of the phase factor is enforced by the non-commutative algebra of the braid group generators acting on the edge qubits, specifically the anticommutation relation between the unitary twist operation and the spin stabilizer.
-3.  **Isotopic Invariance:** The resultant phase $\phi$ is invariant under ambient isotopy, ensuring that all physical realizations of the particle exchange trajectory within the codespace $\mathcal{C}$ yield the strictly fermionic sign, independent of the specific sequence of local rewrite operations.
+Given any physical exchange of two identical tripartite braids, $\beta_1$ and $\beta_2$, the joint wavefunction necessitates the accumulation of a global phase factor $\phi = -1$, thereby enforcing Fermi-Dirac statistics. This statistical behavior is derived from the conjugation of the joint spin projector $\Pi_{joint}$ by the Exchange Operator $\hat{P}_{12}$ under two conditions: the execution of $\hat{P}_{12}$ inducing a geometric phase $\phi = (-1)^{2s}$ where the spin quantum number $s=1/2$ is fixed by twist parity, and the non-commutative algebra of braid generators enforcing anticommutation between the unitary twist and spin stabilizer. Furthermore, the resultant phase $\phi$ remains invariant under ambient isotopy, ensuring that all physical realizations of the particle exchange trajectory within the codespace $\mathcal{C}$ yield the fermionic sign independent of the specific sequence of local rewrite operations.
 
 ### 7.1.2.1 Commentary: Argument Outline {#7.1.2.1}
 
@@ -93,12 +90,9 @@ The proof proceeds via Direct Construction, mapping topological phases under phy
 :::info[**Inversion of Spin Eigenvalues by Geometric Rotation Operators**]
 :::
 
-The geometric half-twist operation applied to a framed ribbon is represented in the Hilbert space by a unitary operator $\hat{\mathcal{T}}$ that satisfies a strict anticommutation relation with the Spin Operator $L_S$. This algebraic relationship is characterized by the following conditions:
-1.  **Operator Conjugation:** The action of the twist operator on the spin stabilizer yields the negated operator, defined by the identity $\hat{\mathcal{T}} L_S \hat{\mathcal{T}}^\dagger = -L_S$.
-2.  **Eigenspace Mapping:** The operator $\hat{\mathcal{T}}$ functions as a map between orthogonal eigenspaces, transforming the $+1$ eigenspace of $L_S$ (the untwisted state) to the $-1$ eigenspace (the twisted state), and vice versa.
-3.  **Intersection Parity:** The anticommutation property derives directly from the topological necessity that any trajectory implementing a geometric half-twist intersects the set of rung edges an odd number of times, thereby inducing an odd number of Pauli-X bit flips on the Z-basis stabilizer.
+Let the geometric half-twist operation applied to a framed ribbon be represented in the Hilbert space by a unitary operator $\hat{\mathcal{T}}$ that satisfies the anticommutation relation $\hat{\mathcal{T}} L_S \hat{\mathcal{T}}^\dagger = -L_S$ with the Spin Operator $L_S$, transforming the $+1$ eigenspace to the $-1$ eigenspace and vice versa. This anticommutation property derives directly from the topological necessity that any trajectory implementing a geometric half-twist intersects the set of rung edges an odd number of times, thereby inducing an odd number of Pauli-X bit flips on the Z-basis stabilizer.
 
-### 7.1.3.1 Proof: Eigenvalue Inversion {#7.1.3.1}
+### 7.1.3.1 Proof: Unitary Twist Anticommutation {#7.1.3.1}
 
 :::tip[**Verification of the -1 Eigenvalue Shift via Odd Pauli-X Intersection**]
 :::
@@ -138,18 +132,21 @@ $$
 \eta = | \{ e \mid e \in \text{supp}(\hat{\mathcal{T}}) \cap \text{supp}(L_S) \} |
 $$
 
-**III. Topological Intersection Constraint**
+**III. Topological Homology and Intersection Constraint**
 
-Topology mandates that a half-twist operation transforms the ribbon framing vector $\vec{f}$ to $-\vec{f}$.
-In the discrete graph representation, this inversion corresponds to traversing the ribbon width an odd number of times.
-Every traversal of a rung edge by the rewrite sequence flips the orientation of the local frame relative to the embedding.
-To achieve a net inversion (half-twist), the sequence must act on an odd number of rung edges.
+Let the ribbon be modeled as a directed graph bounded by two disjoint boundary paths $P_1$ and $P_2$, with rungs $E_{\text{rung}}$ forming a cochain dual to the path swap operator. A twist corresponds to a deformation path $\gamma$ that swaps $P_1$ and $P_2$. Topologically, the boundary of the deformation path is defined by:
+
+$$
+\partial \gamma = v_M - u_0
+$$
+
+representing a homology transfer between the distinct boundary components. Because $\gamma$ connects $P_1$ to $P_2$, it must intersect the dual rung cochain $E_{\text{rung}}$ an odd number of times. Every traversal of a rung edge $e \in E_{\text{rung}}$ by the rewrite sequence flips the orientation of the local framing vector $\vec{f} \to -\vec{f}$. To achieve a net inversion (half-twist), the cardinality of the intersection set $\eta$ must be odd:
 
 $$
 w = \frac{1}{2} \implies \eta \equiv 1 \pmod 2
 $$
 
-Conversely, an identity operation or full twist ($w=1$) requires an even intersection count ($\eta \equiv 0 \pmod 2$).
+Conversely, a full twist ($w=1$) requires an even intersection count ($\eta \equiv 0 \pmod 2$), preserving the relative orientation.
 
 **IV. Eigenvalue Shift**
 
@@ -244,11 +241,9 @@ Time flows downward ($t_L$ increases).
 :::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]
 :::
 
-The **Physical Braid Exchange Operation** $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon. This equivalence is established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> that continuously deforms the exchange path into a self-twist path. The validity of this isotopy enforces the following physical consequences:
-1.  **Invariant Preservation:** The deformation sequence preserves the global linking invariants of the braid configuration throughout the transformation.
-2.  **Phase Equality:** The topological equivalence enforces the strict equality of the quantum phase acquired during exchange $\phi_{exch}$ and the phase acquired during self-rotation $\phi_{spin}$, thereby extending the spin-statistics connection to the discrete causal graph substrate without recourse to continuum field postulates.
+Every physical braid exchange operation $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon, established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> that continuously deforms the exchange path into a self-twist path. Under this isotopy, the deformation sequence preserves the global linking invariants throughout the transformation and enforces the strict equality of the exchange phase $\phi_{exch}$ and the self-rotation phase $\phi_{spin}$ to extend the spin-statistics connection to the discrete causal graph substrate.
 
-### 7.1.4.1 Proof: Topological Phase via Reidemeister Sequence {#7.1.4.1}
+### 7.1.4.1 Proof: Exchange-Rotation Equivalence {#7.1.4.1}
 
 :::tip[**Construction of the Exchange Phase from Local Rewrite Operations**]
 :::
@@ -425,7 +420,7 @@ $$
 \hat{P}_{12} \Pi_{joint} \hat{P}_{12}^\dagger = \frac{1}{4} \hat{P}_{12} (I + \lambda_1 L_{S1} + \lambda_2 L_{S2} + \lambda_1 \lambda_2 L_{S1} L_{S2}) \hat{P}_{12}^\dagger
 $$
 
-Using the anticommutation relation derived in the **Eigenvalue Inversion** <Ref id="7.1.3.1" label="§7.1.3.1" /> ($\hat{T} L_S \hat{T}^\dagger = -L_S$ for half-twisted topologies):
+Using the anticommutation relation derived in the **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" /> ($\hat{T} L_S \hat{T}^\dagger = -L_S$ for half-twisted topologies):
 
 **Case A: Bosonic Topology (Untwisted, $\lambda=+1$)**
 The exchange path intersects the rung set an even number of times ($m=2k$).
@@ -511,11 +506,7 @@ Exclusion is established as a consequence of the binary saturation of causal lin
 :::info[**Prohibition of Identical Fermion Occupancy under Causal Graph Axioms**]
 :::
 
-Simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden. This prohibition is established by the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph:
-1.  **Binary Saturation:** The occupation of a causal link $(u, v)$ by a fermion saturates the local information capacity of the edge qubit, rendering the state $|1\rangle_{uv}$.
-2.  **Topological Conflict:** The encoding of a second identical fermion within the same local manifold necessitates the activation of the reverse causal link $(v, u)$ to satisfy the requirement for distinct state identification.
-3.  **Axiomatic Violation:** The simultaneous activation of $(u, v)$ and $(v, u)$ constitutes a Directed 2-Cycle, which violates **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> which enforces Asymmetry and **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> which enforces a strict partial ordering.
-4.  **State Annihilation:** Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
+Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the ordering of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
 
 ### 7.2.1.1 Commentary: Argument Outline {#7.2.1.1}
 
@@ -545,12 +536,9 @@ The proof proceeds via Contradiction, assuming that two fermions can occupy the 
 :::info[**Restriction of Edge Occupancy to Single-Bit Capacity**]
 :::
 
-The information capacity of any directed edge $(u, v)$ within the causal graph is strictly restricted to a binary value $n \in \{0, 1\}$. This restriction is enforced by the following structural properties:
-1.  **Set-Theoretic Definition:** The edge set $E$ is defined as a subset of the Cartesian product $V \times V$, precluding the existence of multi-edges or weighted connections between vertices.
-2.  **Hilbert Space Basis:** The configuration space $\mathcal{H}$ assigns a single qubit subsystem $q_{uv}$ to each potential edge, restricting the local basis states to the orthogonal set $\{|0\rangle, |1\rangle\}$.
-3.  **Operator Constraints:** The algebraic set of rewrite operations $\{\mathcal{R}_i\}$ acts exclusively via Pauli-X bit-flips, preserving the binary dimensionality of the local Hilbert space and prohibiting the generation of higher-occupancy states.
+For any directed edge $(u, v)$ within the causal graph, the information capacity is strictly restricted to a binary value $n \in \{0, 1\}$ because the edge set $E$ is defined as a subset of $V \times V$ and the configuration space $\mathcal{H}$ assigns a single qubit subsystem $q_{uv}$ restricting local basis states to $\{|0\rangle, |1\rangle\}$. This restriction is preserved by the algebraic set of rewrite operations $\{\mathcal{R}_i\}$ acting exclusively via Pauli-X bit-flips, thereby preserving the binary dimensionality of the local Hilbert space and prohibiting higher-occupancy states.
 
-### 7.2.2.1 Proof: Binary Encoding Verification {#7.2.2.1}
+### 7.2.2.1 Proof: Binary State Principle {#7.2.2.1}
 
 :::tip[**Verification of the Single-Bit Capacity of Causal Edges**]
 :::
@@ -620,13 +608,9 @@ This binary nature restricts the information capacity of any local region. A pai
 :::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]
 :::
 
-The attempted superposition of two identical fermions within the same local spatial mode necessitates the formation of a Directed 2-Cycle. This topological violation arises from the following sequential constraints:
-1.  **Primary Occupation:** The first fermion occupies the direct causal link $(u, v)$, saturating the forward channel.
-2.  **Locality Constraint:** The **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> and the high energy barrier for non-local **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" /> restrict the second fermion to the immediate neighborhood of $\{u, v\}$.
-3.  **Alternative Encoding:** The sole remaining local degree of freedom is the reverse causal link $(v, u)$.
-4.  **Cycle Closure:** The simultaneous existence of $(u, v)$ and $(v, u)$ forms a closed loop of length 2, violating the axiom of Asymmetry and collapsing the local causal order.
+Suppose two identical fermions attempt to superimpose within the same local spatial mode, which necessitates the formation of a Directed 2-Cycle as the first fermion occupies the direct link $(u, v)$ and the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> restricts the second fermion to the immediate neighborhood. Under this restriction, the sole remaining local degree of freedom is the reverse link $(v, u)$, which forms a closed loop of length 2 that violates asymmetry and is thermodynamically excluded by the **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />.
 
-### 7.2.3.1 Proof: Topological Violation {#7.2.3.1}
+### 7.2.3.1 Proof: Forbidden Occupancy {#7.2.3.1}
 
 :::tip[**Formal Demonstration of 2-Cycle Formation in Superposition Attempts**]
 :::
@@ -639,14 +623,9 @@ Let $\psi_B$ denote a second identical fermion attempting to occupy the same spa
 By the **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" />, the occupation limit of $e_{uv}$ is saturated ($n_{max}=1$).
 Encoding $\psi_B$ requires identifying an orthogonal degree of freedom within the local manifold.
 
-**II. Local Freedom Analysis**
+**II. Local Degrees of Freedom and Dimension Bounds**
 
-The local neighborhood $\mathcal{N}(\{u, v\})$ contains two directional slots: $(u, v)$ and $(v, u)$.
-Since $(u, v)$ is occupied, the only remaining local slot is the reverse link $(v, u)$.
-Any non-local encoding involves connecting to a third vertex $w$ to form a path $u \to w \to v$.
-By the **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />, the formation of such a non-local structure constitutes a global topology change with an $O(N)$ energy barrier.
-By the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, the creation of a path $u \to w \to v$ while $u \to v$ exists violates the **Principle of Unique Causality (PUC)**, triggering immediate deletion.
-Consequently, the system is topologically forced to utilize the reverse channel $(v, u)$ to accommodate the second particle locally.
+The local neighborhood $\mathcal{N}(\{u, v\})$ contains exactly two directed edge slots: $(u, v)$ and $(v, u)$, representing the edge-qubit subsystems $q_{uv}$ and $q_{vu}$ respectively. Any alternative non-local encoding connecting to a third vertex $w$ to form a path $u \to w \to v$ requires a global topology change with an $O(N)$ energy barrier (**Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />). Furthermore, creating a path $u \to w \to v$ while $(u, v)$ exists violates the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, forcing the deletion of the redundant path. Consequently, the local Hilbert space restricts any valid local encoding of the second fermion $\psi_B$ strictly to the state $|1\rangle_{vu}$ associated with the reverse channel $(v, u)$.
 
 **III. The Violation State**
 
@@ -660,25 +639,27 @@ The topological structure of this state corresponds to the edge set $\{(u, v), (
 This set forms a closed directed walk of length 2: $u \to v \to u$.
 This constitutes a **Directed 2-Cycle** $C_2$.
 
-**IV. Axiomatic Contradiction**
+**IV. Axiomatic Graph Contradiction**
 
-**Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> mandates strict Asymmetry:
+**Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> mandates strict asymmetry on the edge set $E$:
 
 $$
-\forall u, v: (u, v) \in E \implies (v, u) \notin E
+\forall u, v \in V: (u, v) \in E \implies (v, u) \notin E
 $$
 
-The state $|\psi_{AB}\rangle$ directly violates this condition.
-Furthermore, **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> requires a strict partial order $\le$.
-The existence of $C_2$ implies $u \le v$ and $v \le u$, which necessitates $u=v$.
-Since the vertices are distinct ($u \neq v$), the partial order collapses.
-The state is topologically forbidden.
+The state $|\psi_{AB}\rangle$ requires $(u, v) \in E$ and $(v, u) \in E$ simultaneously, which directly violates this asymmetry. Additionally, **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> requires that the causal relation induces a strict partial ordering $\le$ on the vertices:
+
+$$
+u \le v \land v \le u \implies u = v
+$$
+
+Since the vertices are distinct ($u \neq v$), the existence of $C_2$ collapses the partial order, rendering the state topologically impossible.
 
 Q.E.D.
 
-### 7.2.3.2 Diagram: Exclusion Barrier {#7.2.3.2}
+### 7.2.3.2 Commentary: Exclusion Barrier {#7.2.3.2}
 
-:::note[**Phase Diagram Illustrating Energetic Prohibition of Dual Occupancy**]
+:::info[**Phase Diagram Illustrating Energetic Prohibition of Dual Occupancy**]
 :::
 
 ```text
@@ -807,8 +788,7 @@ The transition is physically impossible.
 
 **VI. Conclusion**
 
-The geometric constraints of the causal graph, enforced by the stabilizer code, create an absolute prohibition against identical fermion occupancy.
-Pauli Exclusion is derived as a theorem of the background topology.
+By the **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" /> and **Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" />, the geometric constraints of the causal graph, enforced by the stabilizer code, create an absolute prohibition against identical fermion occupancy. Pauli Exclusion is derived as a theorem of the background topology.
 
 Q.E.D.
 
@@ -867,10 +847,7 @@ For a lepton like the electron, the ribbons are symmetric, each contributing $-1
 :::info[**Derivation of Quantized Charge from Normalized Writhe Invariants**]
 :::
 
-The electric charge $Q$ of a stable elementary fermion is identical to the topological invariant defined by the normalized total writhe of its braid topology. This emergence is characterized by the following invariant properties:
-1.  **Proportionality:** The charge satisfies the linear relation $Q = k \cdot w(\beta)$, where $w(\beta)$ is the integer-valued total writhe and $k=1/3$ is the universal coupling constant.
-2.  **Spectrum Partition:** The operator assigns integer charge values $Q \in \{0, \pm 1\}$ exclusively to color-singlet (symmetric) braid configurations, and fractional charge values $Q \in \{-1/3, +2/3\}$ exclusively to color-triplet (asymmetric) braid configurations.
-3.  **Conservation Law:** The global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, enforced by the topological barriers against local writhe modification.
+Suppose the electric charge $Q$ of a stable elementary fermion is identical to the topological invariant defined by the normalized total writhe of its braid topology, satisfying the linear relation $Q = k \cdot w(\beta)$ where $w(\beta)$ is the integer-valued total writhe and $k=1/3$ is the normalization constant. This emergence partitions the spectrum by assigning integer charges $Q \in \{0, \pm 1\}$ to symmetric color-singlet configurations and fractional charges $Q \in \{-1/3, +2/3\}$ to asymmetric color-triplet configurations. Furthermore, the global value of $Q$ is a conserved quantity under all unitary evolution operators $\mathcal{U}$ (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />), enforced by the topological barriers against local writhe modification.
 
 ### 7.3.2.1 Commentary: Argument Outline {#7.3.2.1}
 
@@ -913,12 +890,9 @@ The proof proceeds via Direct Construction, linking global topological invariant
 :::info[**Invariance of Physical Laws under Global Writhe Shifts**]
 :::
 
-The dynamical laws governing the causal graph exhibit a strict **Gauge Symmetry** with respect to the absolute value of the total writhe parameter. This symmetry is enforced by the following conditions:
-1.  **Local Blindness:** The Universal Constructor $\mathcal{R}$ operates within a bounded causal horizon $R \sim \log N$ **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, rendering it incapable of measuring global topological invariants such as the total winding number.
-2.  **Shift Invariance:** Consequently, the local transition probabilities are invariant under the global transformation $w \to w + n$, where $n \in \mathbb{Z}$.
-3.  **Field Necessity:** The preservation of local causal consistency under independent phase shifts necessitates the existence of a compensating gauge field, identified as the electromagnetic potential $A_\mu$.
+Assume the dynamical laws governing the causal graph exhibit a strict gauge symmetry with respect to the total writhe parameter, where local transition probabilities are invariant under the global transformation $w \to w + n$ for $n \in \mathbb{Z}$. This shift invariance is enforced by the bounded causal horizon $R \sim \log N$ of the Universal Constructor $\mathcal{R}$ (**Local Horizon** <Ref id="6.4.3" label="§6.4.3" />), rendering it incapable of measuring global invariants and necessitating a compensating gauge field $A_\mu$ to preserve local consistency.
 
-### 7.3.3.1 Proof: Symmetry Verification {#7.3.3.1}
+### 7.3.3.1 Proof: Gauge Symmetry {#7.3.3.1}
 
 :::tip[**Demonstration of Gauge Blindness via Local Operator Horizons**]
 :::
@@ -994,12 +968,9 @@ This blindness manifests as a symmetry. The local laws of physics must remain in
 :::info[**Invariance of Writhe Number under Unitary Evolution**]
 :::
 
-The **Total Writhe** $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the action of the Evolution Operator $\mathcal{U}$. The conservation of this quantity is enforced by the following topological prohibitions:
-1.  **Type I Prohibition:** The discrete alteration of writhe ($\Delta w = \pm 1$) necessitates the creation or annihilation of a twist loop via a Reidemeister Type I move.
-2.  **Axiomatic Barrier:** The graph-theoretic realization of a Type I move requires the formation of a self-loop or a 2-cycle, which are explicitly forbidden by the Causal Primitive the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
-3.  **Projective Annihilation:** Any quantum state component representing a writhe-changing fluctuation is annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
+Every total writhe $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the evolution operator $\mathcal{U}$, whose conservation is enforced by the axiomatic barrier against Reidemeister Type I moves (**Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />) and (**Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />). Under these axiomatic constraints, any writhe-changing fluctuation requires self-loops or 2-cycles that are annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
 
-### 7.3.4.1 Proof: Conservation Logic {#7.3.4.1}
+### 7.3.4.1 Proof: Conservation of Total Writhe {#7.3.4.1}
 
 :::tip[**Verification of Writhe Invariance via Topological Barriers**]
 :::
@@ -1064,12 +1035,9 @@ The Quantum Error-Correcting Code (QECC) enforces conservation by detecting this
 :::info[**Derivation of Integer Charges for Color-Singlet Fermions**]
 :::
 
-The set of stable, minimal-complexity braid configurations that transform as singlets under ribbon permutation (Color Symmetry) is restricted to the charge spectrum $Q \in \{0, \pm 1\}$. This restriction derives from the following geometric constraints:
-1.  **Symmetry Constraint:** A singlet state requires identical writhe values for all three ribbons, $w_1 = w_2 = w_3 = k$.
-2.  **Integer Divisibility:** The total writhe $W = 3k$ is strictly divisible by the charge normalization factor $3$, yielding an integer charge $Q = k$.
-3.  **Minimality:** The lowest-complexity solutions correspond to $k=0$ (Neutrino) and $k=-1$ (Electron).
+Every stable, minimal-complexity braid configuration transforming as a singlet under ribbon permutation (Color Symmetry) is restricted to the charge spectrum $Q \in \{0, \pm 1\}$ due to the symmetry constraint requiring identical ribbon writhe values $w_1 = w_2 = w_3 = k$. Under this constraint, the total writhe $W = 3k$ is divisible by the normalization factor $3$ to yield an integer charge $Q = k$, where the lowest-complexity solutions correspond to $k=0$ (Neutrino) and $k=-1$ (Electron) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
 
-### 7.3.5.1 Proof: Singlet Charge Values {#7.3.5.1}
+### 7.3.5.1 Proof: Lepton Charge Solutions {#7.3.5.1}
 
 :::tip[**Verification of Charge Assignments for Neutrinos and Electrons**]
 :::
@@ -1164,12 +1132,9 @@ When the charge operator $Q = W/3$ acts on this symmetric state, the factor of 3
 :::info[**Derivation of Fractional Charges for Color-Triplet Fermions**]
 :::
 
-The set of stable, minimal-complexity braid configurations that transform as triplets under ribbon permutation (Color Asymmetry) is restricted to the charge spectrum $Q \in \{-1/3, +2/3\}$. This restriction derives from the following geometric constraints:
-1.  **Asymmetry Constraint:** A triplet state requires distinct writhe values among the ribbons to distinguish color states.
-2.  **Fractional Indivisibility:** The minimal integer writhe vectors satisfying asymmetry yield total writhe sums $W$ that are not divisible by $3$, resulting in fractional charges.
-3.  **Ground States:** The minimal complexity solutions correspond to the vector $(-1, 0, 0)$ yielding $Q=-1/3$ (Down Quark) and the vector $(1, 1, 0)$ yielding $Q=+2/3$ (Up Quark).
+Every stable, minimal-complexity braid configuration transforming as a triplet under ribbon permutation (Color Asymmetry) is restricted to the charge spectrum $Q \in \{-1/3, +2/3\}$ because the asymmetry constraint requires distinct ribbon writhe values to distinguish color states. This asymmetry yields a total writhe $W$ indivisible by $3$, producing fractional charges where the ground states correspond to $(-1, 0, 0)$ yielding $Q=-1/3$ (Down Quark) and $(1, 1, 0)$ yielding $Q=+2/3$ (Up Quark) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
 
-### 7.3.6.1 Proof: Triplet Charge Values {#7.3.6.1}
+### 7.3.6.1 Proof: Quark Charge Solutions {#7.3.6.1}
 
 :::tip[**Verification of Charge Assignments for Up and Down Quarks**]
 :::
@@ -1285,11 +1250,9 @@ Legend: | = Straight (w=0), X = Half-Twist (w=±1)
 :::info[**Determination of the Normalization Constant through Anomaly Cancellation**]
 :::
 
-The normalization constant $k$ in the charge operator definition $Q = k \cdot w(\beta)$ is uniquely determined as $k = 1/3$. This value is mandated by the requirement for internal consistency of the gauge theory, specifically:
-1.  **Unit Definition:** The identification of the electron ground state ($w_{total}=-3$) with the fundamental unit charge $Q=-1$ requires $k(-3) = -1$.
-2.  **Anomaly Cancellation:** This normalization ensures that the sum of charges and cubic charges within the first generation vanishes, $\sum Q_f = 0$ and $\sum Q_f^3 = 0$, satisfying the renormalizability conditions of the Standard Model.
+Given the charge operator definition $Q = k \cdot w(\beta)$, the normalization constant $k$ is uniquely determined as $k = 1/3$ to satisfy the internal consistency of the gauge theory. This value is mandated by identifying the electron ground state ($w_{total}=-3$) with the unit charge $Q=-1$ and ensuring that the sum of charges and cubic charges within the first generation vanishes, $\sum Q_f = 0$ and $\sum Q_f^3 = 0$, to satisfy renormalizability.
 
-### 7.3.7.1 Proof: Anomaly Cancellation {#7.3.7.1}
+### 7.3.7.1 Proof: Charge Normalization {#7.3.7.1}
 
 :::tip[**Verification of Consistency with Standard Model Hypercharge Anomalies**]
 :::
@@ -1478,16 +1441,7 @@ The **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" /> resolve
 :::info[**Proportionality of Inertial Mass to Total Topological Complexity**]
 :::
 
-The rest mass $m$ of a fermion braid is determined by a functional of its topological complexity invariants. The mass functional is defined as:
-
-$$
-m = \kappa_m \left( \sum_{i=1}^3 N_3(R_i) - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)
-$$
-
-This functional is constituted by the following terms:
-1.  **Base Constant:** $\kappa_m \approx 0.170$ MeV, anchored to the electron mass.
-2.  **Isolated Complexity:** The term $\sum N_3(R_i)$ represents the sum of the complexities of the individual ribbons derived from crossing and torsion costs.
-3.  **Geometric Efficiency:** The term $k_{\text{share}} \cdot |L_{ij}|_{\parallel}$ represents the reduction in effective mass due to the sharing of geometric quanta between parallel ribbons, where $k_{\text{share}}=1$ is the lattice constant.
+Let the rest mass $m$ of a fermion braid be determined by the topological complexity functional $m = \kappa_m \left( \sum_{i=1}^3 N_3(R_i) - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)$ anchored to the electron mass constant $\kappa_m \approx 0.170$ MeV. This functional is defined by the sum of isolated ribbon complexities $\sum N_3(R_i)$ representing crossing and torsion costs, reduced by the geometric efficiency term $k_{\text{share}} \cdot |L_{ij}|_{\parallel}$ representing shared quanta between parallel ribbons. Under this formulation, the discrete mass spectrum of the Standard Model fermions arises from the quantized integer topologies of their constituent ribbons (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
 
 ### 7.4.2.1 Commentary: Argument Outline {#7.4.2.1}
 
@@ -1523,11 +1477,9 @@ The proof proceeds via Direct Construction, integrating crossing scaling and sha
 :::info[**Identity of Free Energy and Internal Energy for Protected States**]
 :::
 
-The Helmholtz Free Energy $F$ of a stable prime braid configuration is strictly equal to its Internal Energy $U$. This equivalence $F[\beta] = U[\beta]$ is a consequence of the **Zero Entropy Condition** for protected topological states:
-1.  **Logical Rigidity:** The Quantum Error-Correcting Code restricts the particle to a single valid logical microstate, yielding a Boltzmann entropy $S = k_B \ln(1) = 0$.
-2.  **Thermal Decoupling:** Consequently, the inertial mass of the particle is independent of the vacuum temperature $T$, determined solely by the structural energy of the graph.
+For any stable prime braid configuration, the Helmholtz Free Energy $F$ is strictly equal to its Internal Energy $U$ ($F[\beta] = U[\beta]$) due to the Zero Entropy Condition restricting the particle to a single valid logical microstate with Boltzmann entropy $S = 0$. Consequently, the inertial mass of the particle remains independent of the vacuum temperature $T$ and is determined solely by the structural energy of the graph (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
 
-### 7.4.3.1 Proof: Entropic Vanishing {#7.4.3.1}
+### 7.4.3.1 Proof: Thermodynamic Equivalence {#7.4.3.1}
 
 :::tip[**Verification of Zero Entropy for Unique Logical Microstates**]
 :::
@@ -1605,11 +1557,9 @@ Because the particle constitutes a single, rigid logical state (a code word), it
 :::info[**Linear Contribution of Complexity to Base Mass**]
 :::
 
-The base component of the topological mass scales linearly with the number of geometric quanta $N_3$. This scaling is derived from the additive nature of the structural resources required to bridge causal crossings:
-1.  **Additivity:** The total complexity is the arithmetic sum of the complexity of independent crossings, $N_3 \propto C[\beta]$.
-2.  **Quantization:** This linearity enforces the quantization of the mass spectrum into discrete integer multiples of the fundamental mass constant $\kappa_m$.
+Every base component of the topological mass scales linearly with the number of geometric quanta $N_3$ because the total complexity is the arithmetic sum of the complexity of independent crossings ($N_3 \propto C[\beta]$). This linear scaling enforces the quantization of the mass spectrum into discrete integer multiples of the fundamental mass constant $\kappa_m$ (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
 
-### 7.4.4.1 Proof: Linear Scaling Verification {#7.4.4.1}
+### 7.4.4.1 Proof: Base Mass Linear Scaling {#7.4.4.1}
 
 :::tip[**Linear Induction of Mass Scaling from Crossing Number**]
 :::
@@ -1679,48 +1629,52 @@ This linearity is crucial. It signifies that mass is quantized. A particle with 
 :::info[**Reduction of Mass through Parallel Ribbon Sharing**]
 :::
 
-The interaction energy between parallel ribbons in a composite braid manifests as a discrete reduction in the total topological mass. This **Geometric Efficiency** is governed by the following structural rules:
-1.  **Shared Support:** Ribbons with parallel writhe (homochirality) utilize shared vertex resources within the Bethe lattice to support their twist structures.
-2.  **Unitary Reduction:** The lattice geometry restricts this sharing to exactly one geometric quantum per parallel link interaction, fixing the sharing integer at $k_{\text{share}} = 1$.
-3.  **Isospin Origin:** This integer reduction precisely cancels the integer cost of an additional twist in the Up quark configuration, deriving the zeroth-order mass degeneracy $m_u \approx m_d$ (Isospin Symmetry) from geometric principles.
+Every interaction energy between parallel ribbons in a composite braid manifests as a discrete reduction in the total topological mass, which is governed by homochiral ribbons utilizing shared vertex resources on the Bethe lattice. This lattice configuration restricts the sharing to exactly one geometric quantum per parallel link ($k_{\text{share}} = 1$), thereby canceling the cost of an additional twist in the Up quark to yield the mass degeneracy $m_u \approx m_d$ (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
 
-### 7.4.5.1 Proof: Derivation of the Sharing Integer {#7.4.5.1}
+### 7.4.5.1 Proof: Integer Geometric Efficiency {#7.4.5.1}
 
 :::tip[**Verification of Unitary Mass Reduction per Parallel Link**]
 :::
 
 **I. Isolated Cost Analysis**
 
-Consider two disjoint ribbons, Ribbon A and Ribbon B, each undergoing a single twist operation.
-From the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, the minimal subgraph required to execute a twist (crossing) is a "bridge" consisting of a directed 3-cycle.
+Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
 
 $$
-\mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = 1 + 1 = 2
+\mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = |\{C_3 \subset G_A\}| + |\{C_3 \subset G_B\}| = 1 + 1 = 2
 $$
 
 **II. Merged Topology Analysis**
 
-Consider the ribbons arranged in a parallel configuration ($w_A = w_B = +1$) within the same local neighborhood.
-The **Universal Constructor** $\mathcal{R}$ acts on the joint vertex set $V_{AB}$.
-1.  **Shared Vertex Resource:** The bridge requires a vertex $v_{bridge}$ to close the cycle $u \to v_{bridge} \to w \to u$.
-2.  **Lattice Capacity:** The Bethe lattice geometry allows a vertex to support degree $k=3$. A single bridge vertex can sustain connections to both ribbon paths provided the paths are parallel (oriented identically) and satisfy the **Acyclicity** **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-3.  **Efficiency Mechanism:** The single 3-cycle $(u_A, u_B, v_{bridge})$ provides the topological support (the "pivot") for twisting both strands simultaneously.
+Consider the ribbons arranged in a parallel configuration ($w_A = w_B = +1$) within the same local neighborhood, such that the joint graph is the union $G_A \cup G_B$ embedded on a local vertex set $V$.
+1.  **Shared Vertex Resource:** The parallel orientation (homochirality) allows a single shared pivot vertex $v_{\text{bridge}} \in V(B_A) \cap V(B_B)$ to close both twist cycles.
+2.  **Lattice Capacity:** The Bethe lattice geometry supports degree $k=3$. A single vertex $v_{\text{bridge}}$ can sustain the incoming and outgoing causal connections for both ribbon paths simultaneously without violating the acyclicity required by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+3.  **Efficiency Mechanism:** The single joint 3-cycle:
 
     $$
-    \mathrm{Cost}_{\text{merged}} = 1
+    C_{\text{shared}} = (u_A, u_B, v_{\text{bridge}})
     $$
 
-    The second 3-cycle becomes redundant. The **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> mandates the excision of the redundant path to prevent causal loops.
+    provides the necessary topological support to execute the twists for both strands under the action of the Universal Constructor $\mathcal{R}$. The second 3-cycle becomes redundant, and the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> mandates the excision of the redundant path to preserve unique causal histories:
+
+    $$
+    \mathrm{Cost}_{\text{merged}} = |\{C_3 \subset G_A \cup G_B\}| = 1
+    $$
+
+    The geometric savings is exactly $\Delta N_3 = 2 - 1 = 1$, yielding the sharing reduction.
 
 **III. Limit on Sharing**
 
-The axioms prevent sharing more than one quantum ($k_{share} > 1$).
-Sharing two 3-cycles would imply determining the paths of both ribbons entirely by the same subgraph.
-This would map the two fermions to the same causal trajectory, violating the **Pauli Exclusion Principle** (distinctness of state) as derived in the **Pauli Exclusion Principle** <Ref id="7.2.4" label="§7.2.4" />.
-Therefore, the sharing is saturated at exactly one unit.
+The graph axioms prevent sharing more than one quantum ($k_{\text{share}} > 1$). Sharing multiple 3-cycles would require:
 
 $$
-k_{share} = 1
+|V(B_A) \cap V(B_B)| \ge 2
+$$
+
+This intersection would determine the paths of both ribbons entirely by the same local subgraph, mapping the two fermions to the same causal trajectory and violating the state distinctness mandated by the **Pauli Exclusion Principle** <Ref id="7.2.4" label="§7.2.4" />. Consequently, the color-sharing capacity is saturated at exactly one unit:
+
+$$
+k_{\text{share}} = 1
 $$
 
 **IV. Conclusion**
@@ -1748,14 +1702,14 @@ The math works out perfectly: The cost of the extra twist (+1) is canceled by th
 
 ---
 
-### 7.4.6 Proof: Discrete Mass Spectrum {#7.4.6}
+### 7.4.6 Proof: Topological Mass Functional {#7.4.6}
 
 :::tip[**Formal Derivation of Fermion Masses from the Topological Functional**]
 :::
 
 **I. The Topological Mass Functional**
 
-The mass functional $M(\beta)$ is defined by combining the isolated complexity and the sharing reduction:
+By the **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />, the Helmholtz free energy reduces to the structural energy of the graph, defining the mass functional $M(\beta)$ by combining the isolated complexity and the sharing reduction:
 
 $$
 M(\beta) = \kappa \left( \sum_{i=1}^3 |w_i| - k_{share} \cdot N_{parallel} \right)
@@ -1767,6 +1721,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
 
 * **Topology:** Triplet state with writhe vector $\vec{w}_d = (-1, 0, 0)$.
 * **Isolated Term:**
+    Under the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, the isolated contribution is:
 
     $$
     \sum |w_i| = |-1| + |0| + |0| = 1
@@ -1795,7 +1750,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
     $$
 
 * **Sharing Term:**
-    Ribbons 1 and 2 are parallel ($+1, +1$). This constitutes exactly one parallel link between active strands.
+    Under the **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />, ribbons 1 and 2 are parallel ($+1, +1$), constituting exactly one parallel link between active strands:
 
     $$
     \mathrm{Reduction} = 1 \cdot 1 = 1

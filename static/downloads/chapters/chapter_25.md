@@ -15,7 +15,6 @@ Why does our universe possess these specific laws of physics, stable particles, 
 *   **Rule Classification:** Universes within the Ruliad are categorized according to Wolfram's rule classes: Class 1 (collapsing or halting), Class 2 (sterile periodic loops), Class 3 (unstable chaotic tangles lacking an emergent metric), and Class 4 (universal complexity).
 *   **Observer Filter:** Only Class 4 rules are capable of maintaining localized, persistent topological structures (particles) long enough to support observers.
 
-
 ### 25.1.1.1 Commentary: Computational Landscape {#25.1.1.1}
 
 :::info[**Selection of Physical Rules**]
@@ -30,19 +29,36 @@ The **Computational Landscape** provides a background-independent framework for 
 :::info[**Selection of Physical Laws through Manifold Stability Requirements**]
 :::
 
-*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad.
+Given the conditions of **Selection Pressure**, **Stabilizing Comonad**, and **Conservation as Protection**, the properties of Selection of Physical Laws through Manifold Stability Requirements are established.
+
+---*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad.
 *   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, **Awareness Layer** <Ref id="4.3" label="§4.3" />), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze.
 *   **Conservation as Protection:** Fundamental principles (such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle) are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
 
 ---
 
-### 25.1.3 Corollary: Fine-Tuning Limits {#25.1.3}
+### 25.1.2.1 Commentary: Argument Outline {#25.1.2.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Minimal Robust Attractor** <Ref id="25.1.2" label="§25.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+
+### 25.1.3 Lemma: Fine-Tuning Limits {#25.1.3}
 
 :::info[**Establishment of Fundamental Constant Tolerances from Stabilizer Code Boundaries**]
 :::
 
-*   **Fine-Tuning Demystified:** The apparent "fine-tuning" of the constants of nature ($\alpha$, $G$, $\Lambda$) is not a cosmological coincidence.
-*   **Operating Tolerances:** These constants correspond to the mathematical stability boundaries (operating tolerances) of the stabilizing comonad code. Beyond these limits, the error-correction code fails, and the manifold collapses, explaining why we inhabit this specific physical regime.
+Let the apparent "fine-tuning" of the constants of nature ($\alpha$, $G$, $\Lambda$) be relationally defined by the mathematical stability boundaries of the stabilizing comonad code. Beyond these limits, the error-correction code fails and the manifold collapses, explaining why the physical parameters are confined to this stable regime.
+
+---
+
+### 25.1.3.1 Commentary: Physical Significance {#25.1.3.1}
+
+:::info[**Physical Significance of Fine-Tuning Limits**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Fine-Tuning Limits** <Ref id="25.1.3" label="§25.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ---
 
@@ -57,22 +73,31 @@ Standard cosmology predicts that our universe will end in a state of maximum ent
 :::info[**Emergence of Conformal Invariance from Massless Late-Aeon Dilution**]
 :::
 
-*   **Late Universe:** In the far future ($t \to \infty$), black holes evaporate completely and all matter decays (proton decay or extreme spatial dilution), leaving an empty de Sitter space with constant expansion pressure ($\Lambda > 0$).
+Given the conditions of **Late Universe**, **Scale Loss**, and **Conformal Invariance**, the properties of Emergence of Conformal Invariance from Massless Late-Aeon Dilution are established.
+
+---*   **Late Universe:** In the far future ($t \to \infty$), black holes evaporate completely and all matter decays (proton decay or extreme spatial dilution), leaving an empty de Sitter space with constant expansion pressure ($\Lambda > 0$).
 *   **Scale Loss:** Because there are no massive particles left to provide a reference scale (Compton wavelength), the physical universe loses its sense of scale.
 *   **Conformal Invariance:** The physics of the vast, expanding universe becomes conformally invariant (scale-free), rendering it topologically and physically indistinguishable from a zero-scale pre-ignition vacuum.
 
 ---
+
+### 25.2.1.1 Commentary: Physical Significance {#25.2.1.1}
+
+:::info[**Physical Significance of Loss of Scale**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Loss of Scale** <Ref id="25.2.1" label="§25.2.1" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 25.2.2 Theorem: T-Duality Flip {#25.2.2}
 
 :::info[**Isomorphism of Macroscopic and Microscopic Spacetime Scales via Graph Duality**]
 :::
 
-*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, **Bekenstein Bound (Thermodynamic Limits)** <Ref id="16.2" label="§16.2" />).
+Given the conditions of **T-Duality Spectra**, **Scale Inversion**, and **Conformal Reset**, the properties of Isomorphism of Macroscopic and Microscopic Spacetime Scales via Graph Duality are established.
+
+---*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, **Bekenstein Bound (Thermodynamic Limits)** <Ref id="16.2" label="§16.2" />).
 *   **Scale Inversion:** As the scale factor $a(t) \to \infty$ (heat death of the old aeon), this duality maps the physics directly onto a microscopic scale $a'(t) \to 0$ (the initial Zero-Point Information vacuum $G_0$).
 *   **Conformal Reset:** The end of one cosmic aeon is topologically identical to the beginning of the next, triggering a Conformal Reset.
-
----
 
 ### 25.2.3 Proof: T-Duality Flip {#25.2.3}
 
@@ -80,7 +105,7 @@ Standard cosmology predicts that our universe will end in a state of maximum ent
 :::
 
 *   **Spectral Mapping:** The proof constructs the isomorphism mapping the infinite-volume limit of the graph metric tensor to the zero-volume Bethe vacuum state $G_0$.
-*   **Cyclic Reset Result:** By integrating the spectral density of graph cycles, it demonstrates that entropy is renormalized to zero as the available degrees of freedom collapse, mathematically validating the cyclic Big Kindling reset.
+*   **Cyclic Reset Result:** By integrating the spectral density of graph cycles, it demonstrates that entropy is renormalized to zero as the available degrees of freedom collapse, mathematically validating the cyclic Big Kindling reset. Q.E.D.
 
 ---
 

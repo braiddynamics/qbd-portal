@@ -11,11 +11,11 @@ The Hodge Conjecture relates algebraic topology to algebraic geometry, asking wh
 :::info[**Derivation of Rational Hodge Classes from Integer Homology Cycle Quanta**]
 :::
 
-*   **Graph Cycles Homology:** On the discrete pre-geometric substrate, all topological cycles are formed by integer linear combinations of fundamental 3-cycles ($N_3$).
+Given the conditions of **Graph Cycles Homology**, **Harmonic Correspondence**, and **Rational Cohomology**, the properties of Derivation of Rational Hodge Classes from Integer Homology Cycle Quanta are established.
+
+---*   **Graph Cycles Homology:** On the discrete pre-geometric substrate, all topological cycles are formed by integer linear combinations of fundamental 3-cycles ($N_3$).
 *   **Harmonic Correspondence:** Every harmonic differential form on the emergent complex manifold corresponds to a stable topological cycle configuration on the underlying graph.
 *   **Rational Cohomology:** In the continuum limit, the rational cohomology classes (Hodge classes) are generated directly by these discrete, integer homology cycle bases, establishing the topological and rational foundation of the Hodge conjecture.
-
----
 
 ### 24.1.2 Proof: Integer Basis {#24.1.2}
 
@@ -23,7 +23,7 @@ The Hodge Conjecture relates algebraic topology to algebraic geometry, asking wh
 :::
 
 *   **Mapping Projection:** The proof constructs a projection map from the discrete graph cycle space to the rational de Rham cohomology group of the emergent manifold.
-*   **Rationality Result:** By showing that the kernel and image of the boundary operator are defined strictly over the ring of integers ($\mathbb{Z}$), it proves that the resulting cohomology classes are rational, validating the Hodge conjecture.
+*   **Rationality Result:** By showing that the kernel and image of the boundary operator are defined strictly over the ring of integers ($\mathbb{Z}$), it proves that the resulting cohomology classes are rational, validating the Hodge conjecture. Q.E.D.
 
 ---
 
@@ -49,8 +49,16 @@ The Riemann Hypothesis concerns the zeros of the Riemann Zeta function, postulat
 :::info[**Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities**]
 :::
 
-*   **Random Matrix Statistics:** The spacing of the Zeta zeros matches the Gaussian Unitary Ensemble (GUE) random matrix statistics.
-*   **Adjacency Multiplicity:** In QBD, this spectral signature arises naturally from the random adjacency statistics of the pre-geometric graph during spontaneous ignition (the "Big Kindling", **Primordial Ignition** <Ref id="18.1" label="§18.1" />), where the quantum chaotic spacing of zeros reflects the eigenvalue distribution of the vacuum's pre-geometric network.
+Given the conditions of **Random Matrix Statistics** and **Adjacency Multiplicity**, the properties of Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities are established.
+
+---
+
+### 24.2.2.1 Commentary: Physical Significance {#24.2.2.1}
+
+:::info[**Physical Significance of Spacing Statistics**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Spacing Statistics** <Ref id="24.2.2" label="§24.2.2" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ---
 
@@ -65,12 +73,12 @@ Yang-Mills existence and the mass gap problem is a fundamental challenge in math
 :::info[**Derivation of Finite Yang-Mills Mass Gap from Minimum Trefoil Braid Complexity**]
 :::
 
-*   **Braid Gauge Connections:** Gauge fields are discrete topological braids ($B_3$ group, Chapter 8).
+Given the conditions of **Braid Gauge Connections**, **Finite Mass Bound**, and **Massless Glueball Absence**, the properties of Derivation of Finite Yang-Mills Mass Gap from Minimum Trefoil Braid Complexity are established.
+
+---*   **Braid Gauge Connections:** Gauge fields are discrete topological braids ($B_3$ group, Chapter 8).
 *   **Finite Mass Bound:** Exciting the simplest gauge excitation requires forming a non-trivial topological knot. The simplest knot (the Trefoil, **Electroweak Mixing** <Ref id="8.4" label="§8.4" />) has a finite and non-zero minimum mass complexity bounded by the Planck scale:
     $$ m_{min} \propto \ell_0^{-1} $$
 *   **Massless Glueball Absence:** Any physical twist in the gauge connection possesses rest mass complexity ($m \propto C[\beta]$). Massless glueballs are thus topologically impossible, strictly establishing the Yang-Mills mass gap $\Delta > 0$.
-
----
 
 ### 24.3.2 Proof: Topological Mass Gap {#24.3.2}
 
@@ -78,7 +86,7 @@ Yang-Mills existence and the mass gap problem is a fundamental challenge in math
 :::
 
 *   **Braid Spectrum Evaluation:** The proof calculates the expectation value of the topological mass functional for the lowest energy states of the $SU(3)$ gauge braid representation.
-*   **Trefoil Energy Bounds:** It proves that all non-trivial states have an energy spectrum bounded below by $E \ge \hbar c / (6\mu\ell_0) > 0$, mathematically verifying the existence of the mass gap.
+*   **Trefoil Energy Bounds:** It proves that all non-trivial states have an energy spectrum bounded below by $E \ge \hbar c / (6\mu\ell_0) > 0$, mathematically verifying the existence of the mass gap. Q.E.D.
 
 ---
 
@@ -93,7 +101,9 @@ The Navier-Stokes regularity problem asks whether smooth, physically reasonable 
 :::info[**Avoidance of Navier-Stokes Singularities through Syndrome-Induced Viscosity Damping**]
 :::
 
-*   **Vorticity-Stress Coupling:** In the emergent fluid limits of QBD, high vorticity ($\omega$) induces significant topological stress ($\sigma = -1$) on the graph.
+Given the conditions of **Vorticity-Stress Coupling**, **Viscosity Amplification**, and **Singularity Quenching**, the properties of Avoidance of Navier-Stokes Singularities through Syndrome-Induced Viscosity Damping are established.
+
+---*   **Vorticity-Stress Coupling:** In the emergent fluid limits of QBD, high vorticity ($\omega$) induces significant topological stress ($\sigma = -1$) on the graph.
 *   **Viscosity Amplification:** Local graph stress catalyzes the graph's rewrite rate:
     $$ f_{cat}(\sigma) \propto e^{\mu |\sigma|} $$
     Since fluid viscosity $\nu$ is proportional to the local graph update rate, the effective viscosity scales exponentially with vorticity: $\nu_{eff} \propto e^{\beta |\omega|^2}$.
@@ -101,18 +111,27 @@ The Navier-Stokes regularity problem asks whether smooth, physically reasonable 
 
 ---
 
+### 24.4.1.1 Commentary: Argument Outline {#24.4.1.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+
 ### 24.4.2 Lemma: Quantum Cutoff {#24.4.2}
 
 :::info[**Suppression of Fluid Velocity Divergences by Transition to Discrete Graph Unitary Dynamics**]
 :::
 
-*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
-*   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
+Given the conditions of **Continuum Breakdown** and **Planck Cutoff**, the properties of Suppression of Fluid Velocity Divergences by Transition to Discrete Graph Unitary Dynamics are established.
 
 ### 24.4.2.1 Proof: Quantum Cutoff {#24.4.2.1}
 
 :::tip[**Verification of Bounded Operators on the Finite State Space**]
 :::
+
+*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
+*   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
 
 **I. Representation on Discrete Hilbert Space**
 
@@ -154,11 +173,21 @@ Q.E.D.
 
 ---
 
+---
+
+### 24.4.2.2 Commentary: Physical Significance {#24.4.2.2}
+
+:::info[**Physical Significance of Quantum Cutoff**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" />. It highlights how these bounds govern the global properties of the causal geometry.
+
 ### 24.4.3 Proof: Smart Viscosity {#24.4.3}
 
 :::tip[**Verification of Singularity Quenching by Integration of Rate-Dependent Dissipation Functions**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" />.
 **I. Viscosity Damping Dynamics**
 
 The proof integrates the energy dissipation rate over a region approaching a velocity singularity under the state-dependent viscosity $\nu_{eff}(\omega)$.
@@ -197,11 +226,11 @@ The P vs NP problem is the central open question of computer science, asking whe
 :::info[**Inevitability of Black Hole Collapse from Exponential Cycle Density Requirements**]
 :::
 
-*   **Density Saturation:** Exponential cycle demands require crowding an exponential number of 3-cycles in a finite volume.
+Given the conditions of **Density Saturation**, **Black Hole Collapse**, and **Event Horizon Censorship**, the properties of Inevitability of Black Hole Collapse from Exponential Cycle Density Requirements are established.
+
+---*   **Density Saturation:** Exponential cycle demands require crowding an exponential number of 3-cycles in a finite volume.
 *   **Black Hole Collapse:** As the local 3-cycle density exceeds the critical saturation threshold ($\rho \ge \rho_{crit} \approx 1/(6\mu)$), the rewrite rate is suppressed to zero by steric friction, causing the local Lapse function to vanish ($N(x) \to 0$, Chapter 22).
 *   **Event Horizon Censorship:** The region collapses into a black hole (saturated frozen core, Chapter 22) before the computation completes, censoring the NP-complete calculation behind a coordinate horizon.
-
----
 
 ### 24.5.3 Proof: Complexity Black Hole Collapse {#24.5.3}
 
@@ -209,7 +238,7 @@ The P vs NP problem is the central open question of computer science, asking whe
 :::
 
 *   **Entropic Volume Integration:** The proof integrates the required graph density for NP-complete state tracking over a finite spatial volume.
-*   **Censorship Verification:** It demonstrates that the Bekenstein bound is violated before the computation finishes, triggering inevitable gravitational collapse and proving that **P $\neq$ NP** acts as a physical law of nature.
+*   **Censorship Verification:** It demonstrates that the Bekenstein bound is violated before the computation finishes, triggering inevitable gravitational collapse and proving that **P $\neq$ NP** acts as a physical law of nature. Q.E.D.
 
 ---
 
@@ -235,5 +264,13 @@ The Monster Group $\mathbb{M}$ is the largest of the sporadic simple groups, pos
 :::info[**Derivation of Standard Model Subgroups from Vacuum Symmetry Branching Rules**]
 :::
 
-*   **Crystallization Symmetry Breaking:** As the graph undergoes spontaneous ignition and dimensional emergence, the high-dimensional symmetry of the Monster Group is spontaneously broken.
-*   **Emergent Gauge Subgroups:** The standard gauge symmetries ($SU(3) \times SU(2) \times U(1)$) emerge as low-energy residues of the Monster Group's branching rules during crystallization to $d=4$, linking the largest sporadic group directly to standard particle physics.
+Given the conditions of **Crystallization Symmetry Breaking** and **Emergent Gauge Subgroups**, the properties of Derivation of Standard Model Subgroups from Vacuum Symmetry Branching Rules are established.
+
+---
+
+### 24.6.2.1 Commentary: Physical Significance {#24.6.2.1}
+
+:::info[**Physical Significance of Symmetry Breaking**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Symmetry Breaking** <Ref id="24.6.2" label="§24.6.2" />. It highlights how these bounds govern the global properties of the causal geometry.

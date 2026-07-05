@@ -30,41 +30,71 @@ The **Discrete Gradient** replaces the continuous derivative in the fundamental 
 :::info[**Derivation of Classical Covariant Derivatives from Large-Number Graph Limit**]
 :::
 
-*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (**Tensorial Reorganization** <Ref id="12.2" label="§12.2" />).
+Given the conditions of **Hydrodynamic Limit**, **Covariant Emergence**, and **Statistical Continuity**, the properties of Derivation of Classical Covariant Derivatives from Large-Number Graph Limit are established.
+
+---*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (**Tensorial Reorganization** <Ref id="12.2" label="§12.2" />).
 *   **Covariant Emergence:** The discrete edge difference operator $\nabla_e$ converges mathematically to the classical covariant derivative $\nabla_\mu$ along the directional unit vector.
 *   **Statistical Continuity:** Continuous differential equations are not fundamental laws, but the coarse-grained thermodynamic limits of these discrete graph updates.
 
 ---
+
+### 23.1.2.1 Commentary: Argument Outline {#23.1.2.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
 
 ### 23.1.3 Lemma: Integration Representation {#23.1.3}
 
 :::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
 
-*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
+Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as Count**, the properties of Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals are established.
+
+---*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
 *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral:
     $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$
 *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
-
----
 
 ### 23.1.3.1 Proof: Integration Representation {#23.1.3.1}
 
 :::tip[**Verification of Integral Convergence through Statistical Analysis of Thermodynamic Limits**]
 :::
 
-*   **Measure Convergence:** The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
-*   **Thermodynamic Integration:** Using the Law of Large Numbers, it proves that the discrete cycle sum approaches the Riemann integral with probability 1 as $N \to \infty$, verifying that continuous integration is the statistical limit of counting.
+**I. Measure Convergence**
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
 
----
+**II. Thermodynamic Integration**
+Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
+
+**III. Convergence Limit**
+It proves that the sum approaches the Riemann integral with probability 1 as $N \to \infty$, verifying that continuous integration is the statistical limit of counting.
+
+Q.E.D.
+
+### 23.1.3.2 Commentary: Physical Significance {#23.1.3.2}
+
+:::info[**Physical Significance of Integration Representation**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Integration Representation** <Ref id="23.1.3" label="§23.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 23.1.4 Proof: Combinatorial Limit {#23.1.4}
 
 :::tip[**Verification of Covariant Derivative Emergence by Integration of Discrete Difference Scales**]
 :::
 
-*   **Manifold Projection:** The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
-*   **Limit Evaluation:** By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
+**I. Manifold Projection**
+The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
+
+**II. Scale Integration**
+The integration of discrete difference scales is consistent with the continuous measure convergence established in **Integration Representation** <Ref id="23.1.3" label="§23.1.3" />.
+
+**III. Limit Evaluation**
+By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
+
+Q.E.D.
 
 ---
 
@@ -90,11 +120,11 @@ If the universe is fundamentally a self-correcting computational graph, then its
 :::info[**Derivation of Prebiotic Chirality Biases from Parity-Violating Braid Energy Functionals**]
 :::
 
-*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, **Metric & Motion** <Ref id="14.2" label="§14.2" />), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
+Given the conditions of **Parity Violation**, **Chiral Seed**, and **Macroscopic Amplification**, the properties of Derivation of Prebiotic Chirality Biases from Parity-Violating Braid Energy Functionals are established.
+
+---*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, **Metric & Motion** <Ref id="14.2" label="§14.2" />), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
 *   **Chiral Seed:** This Braid CP violation creates a tiny microscopic energy difference ($\Delta E \sim 10^{-17} kT$) between L- and D-enantiomers.
 *   **Macroscopic Amplification:** In chaotic prebiotic conditions, this minute microscopic bias is amplified through autocatalytic feedback networks, selecting L-amino acids as a geometric necessity of the vacuum's chiral twist rather than a "frozen accident."
-
----
 
 ### 23.2.3 Proof: Chiral Vacuum Bias {#23.2.3}
 
@@ -102,7 +132,7 @@ If the universe is fundamentally a self-correcting computational graph, then its
 :::
 
 *   **Autocatalytic Integration:** The proof constructs the Frank model differential equations for prebiotic autocatalysis coupled with the microscopic energy difference $\Delta E$.
-*   **Bifurcation Analysis:** It solves the bifurcation dynamics, demonstrating that the L-handed state is the globally stable attractor, proving that life's homochirality is a macroscopic reflection of the vacuum's parity-violating pre-geometric structure.
+*   **Bifurcation Analysis:** It solves the bifurcation dynamics, demonstrating that the L-handed state is the globally stable attractor, proving that life's homochirality is a macroscopic reflection of the vacuum's parity-violating pre-geometric structure. Q.E.D.
 
 ---
 
@@ -117,11 +147,11 @@ The Standard Model gauge symmetries are often treated as fundamental postulates 
 :::info[**Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry**]
 :::
 
-*   **Braid Gauge Sectors:** In Chapter 8 and Chapter 9, the Standard Model gauge groups ($SU(3) \times SU(2) \times U(1)$) were derived as topological braid rewrite symmetries.
+Given the conditions of **Braid Gauge Sectors**, **Triple Fusion Complexity**, and **E8 Emergence**, the properties of Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry are established.
+
+---*   **Braid Gauge Sectors:** In Chapter 8 and Chapter 9, the Standard Model gauge groups ($SU(3) \times SU(2) \times U(1)$) were derived as topological braid rewrite symmetries.
 *   **Triple Fusion Complexity:** Consider the macroscopic fusion of the three fundamental braid sectors (Color, Weak, and Hypercharge) into a single, unified topological framework.
 *   **E8 Emergence:** The combinatorial growth of this unified algebra converges toward the largest exceptional Lie group, $E_8$. $E_8$ is not a primitive starting point, but the inevitable holographic destination of the graph's complexity growth as the number of nodes $N \to \infty$.
-
----
 
 ### 23.3.2 Proof: Chiral Triple Fusion {#23.3.2}
 
@@ -129,7 +159,7 @@ The Standard Model gauge symmetries are often treated as fundamental postulates 
 :::
 
 *   **Algebra Dimension Growth:** The proof calculates the dimension growth of the coupled generators of the three braid sectors.
-*   **Convergence Verification:** It demonstrates that the dimension of the coupled braid symmetries converges to exactly 248 dimensions under triple sector entanglement, mathematically validating the holographic $E_8$ convergence limit and illustrating that extreme mathematical symmetries are emergent structures.
+*   **Convergence Verification:** It demonstrates that the dimension of the coupled braid symmetries converges to exactly 248 dimensions under triple sector entanglement, mathematically validating the holographic $E_8$ convergence limit and illustrating that extreme mathematical symmetries are emergent structures. Q.E.D.
 
 ---
 
@@ -144,11 +174,11 @@ The Hodge Conjecture relates algebraic topology to algebraic geometry, asking wh
 :::info[**Derivation of Rational Hodge Classes from Integer Homology Cycle Quanta**]
 :::
 
-*   **Graph Cycles Homology:** On the discrete pre-geometric substrate, all topological cycles are formed by integer linear combinations of fundamental 3-cycles ($N_3$).
+Given the conditions of **Graph Cycles Homology**, **Harmonic Correspondence**, and **Rational Cohomology**, the properties of Derivation of Rational Hodge Classes from Integer Homology Cycle Quanta are established.
+
+---*   **Graph Cycles Homology:** On the discrete pre-geometric substrate, all topological cycles are formed by integer linear combinations of fundamental 3-cycles ($N_3$).
 *   **Harmonic Correspondence:** Every harmonic differential form on the emergent complex manifold corresponds to a stable topological cycle configuration on the underlying graph.
 *   **Rational Cohomology:** In the continuum limit, the rational cohomology classes (Hodge classes) are generated directly by these discrete, integer homology cycle bases, establishing the topological and rational foundation of the Hodge conjecture.
-
----
 
 ### 24.1.2 Proof: Integer Basis {#24.1.2}
 
@@ -156,7 +186,7 @@ The Hodge Conjecture relates algebraic topology to algebraic geometry, asking wh
 :::
 
 *   **Mapping Projection:** The proof constructs a projection map from the discrete graph cycle space to the rational de Rham cohomology group of the emergent manifold.
-*   **Rationality Result:** By showing that the kernel and image of the boundary operator are defined strictly over the ring of integers ($\mathbb{Z}$), it proves that the resulting cohomology classes are rational, validating the Hodge conjecture.
+*   **Rationality Result:** By showing that the kernel and image of the boundary operator are defined strictly over the ring of integers ($\mathbb{Z}$), it proves that the resulting cohomology classes are rational, validating the Hodge conjecture. Q.E.D.
 
 ---
 
@@ -182,8 +212,16 @@ The Riemann Hypothesis concerns the zeros of the Riemann Zeta function, postulat
 :::info[**Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities**]
 :::
 
-*   **Random Matrix Statistics:** The spacing of the Zeta zeros matches the Gaussian Unitary Ensemble (GUE) random matrix statistics.
-*   **Adjacency Multiplicity:** In QBD, this spectral signature arises naturally from the random adjacency statistics of the pre-geometric graph during spontaneous ignition (the "Big Kindling", **Primordial Ignition** <Ref id="18.1" label="§18.1" />), where the quantum chaotic spacing of zeros reflects the eigenvalue distribution of the vacuum's pre-geometric network.
+Given the conditions of **Random Matrix Statistics** and **Adjacency Multiplicity**, the properties of Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities are established.
+
+---
+
+### 24.2.2.1 Commentary: Physical Significance {#24.2.2.1}
+
+:::info[**Physical Significance of Spacing Statistics**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Spacing Statistics** <Ref id="24.2.2" label="§24.2.2" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ---
 
@@ -198,12 +236,12 @@ Yang-Mills existence and the mass gap problem is a fundamental challenge in math
 :::info[**Derivation of Finite Yang-Mills Mass Gap from Minimum Trefoil Braid Complexity**]
 :::
 
-*   **Braid Gauge Connections:** Gauge fields are discrete topological braids ($B_3$ group, Chapter 8).
+Given the conditions of **Braid Gauge Connections**, **Finite Mass Bound**, and **Massless Glueball Absence**, the properties of Derivation of Finite Yang-Mills Mass Gap from Minimum Trefoil Braid Complexity are established.
+
+---*   **Braid Gauge Connections:** Gauge fields are discrete topological braids ($B_3$ group, Chapter 8).
 *   **Finite Mass Bound:** Exciting the simplest gauge excitation requires forming a non-trivial topological knot. The simplest knot (the Trefoil, **Electroweak Mixing** <Ref id="8.4" label="§8.4" />) has a finite and non-zero minimum mass complexity bounded by the Planck scale:
     $$ m_{min} \propto \ell_0^{-1} $$
 *   **Massless Glueball Absence:** Any physical twist in the gauge connection possesses rest mass complexity ($m \propto C[\beta]$). Massless glueballs are thus topologically impossible, strictly establishing the Yang-Mills mass gap $\Delta > 0$.
-
----
 
 ### 24.3.2 Proof: Topological Mass Gap {#24.3.2}
 
@@ -211,7 +249,7 @@ Yang-Mills existence and the mass gap problem is a fundamental challenge in math
 :::
 
 *   **Braid Spectrum Evaluation:** The proof calculates the expectation value of the topological mass functional for the lowest energy states of the $SU(3)$ gauge braid representation.
-*   **Trefoil Energy Bounds:** It proves that all non-trivial states have an energy spectrum bounded below by $E \ge \hbar c / (6\mu\ell_0) > 0$, mathematically verifying the existence of the mass gap.
+*   **Trefoil Energy Bounds:** It proves that all non-trivial states have an energy spectrum bounded below by $E \ge \hbar c / (6\mu\ell_0) > 0$, mathematically verifying the existence of the mass gap. Q.E.D.
 
 ---
 
@@ -226,7 +264,9 @@ The Navier-Stokes regularity problem asks whether smooth, physically reasonable 
 :::info[**Avoidance of Navier-Stokes Singularities through Syndrome-Induced Viscosity Damping**]
 :::
 
-*   **Vorticity-Stress Coupling:** In the emergent fluid limits of QBD, high vorticity ($\omega$) induces significant topological stress ($\sigma = -1$) on the graph.
+Given the conditions of **Vorticity-Stress Coupling**, **Viscosity Amplification**, and **Singularity Quenching**, the properties of Avoidance of Navier-Stokes Singularities through Syndrome-Induced Viscosity Damping are established.
+
+---*   **Vorticity-Stress Coupling:** In the emergent fluid limits of QBD, high vorticity ($\omega$) induces significant topological stress ($\sigma = -1$) on the graph.
 *   **Viscosity Amplification:** Local graph stress catalyzes the graph's rewrite rate:
     $$ f_{cat}(\sigma) \propto e^{\mu |\sigma|} $$
     Since fluid viscosity $\nu$ is proportional to the local graph update rate, the effective viscosity scales exponentially with vorticity: $\nu_{eff} \propto e^{\beta |\omega|^2}$.
@@ -234,18 +274,27 @@ The Navier-Stokes regularity problem asks whether smooth, physically reasonable 
 
 ---
 
+### 24.4.1.1 Commentary: Argument Outline {#24.4.1.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+
 ### 24.4.2 Lemma: Quantum Cutoff {#24.4.2}
 
 :::info[**Suppression of Fluid Velocity Divergences by Transition to Discrete Graph Unitary Dynamics**]
 :::
 
-*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
-*   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
+Given the conditions of **Continuum Breakdown** and **Planck Cutoff**, the properties of Suppression of Fluid Velocity Divergences by Transition to Discrete Graph Unitary Dynamics are established.
 
 ### 24.4.2.1 Proof: Quantum Cutoff {#24.4.2.1}
 
 :::tip[**Verification of Bounded Operators on the Finite State Space**]
 :::
+
+*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
+*   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
 
 **I. Representation on Discrete Hilbert Space**
 
@@ -287,11 +336,21 @@ Q.E.D.
 
 ---
 
+---
+
+### 24.4.2.2 Commentary: Physical Significance {#24.4.2.2}
+
+:::info[**Physical Significance of Quantum Cutoff**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" />. It highlights how these bounds govern the global properties of the causal geometry.
+
 ### 24.4.3 Proof: Smart Viscosity {#24.4.3}
 
 :::tip[**Verification of Singularity Quenching by Integration of Rate-Dependent Dissipation Functions**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" />.
 **I. Viscosity Damping Dynamics**
 
 The proof integrates the energy dissipation rate over a region approaching a velocity singularity under the state-dependent viscosity $\nu_{eff}(\omega)$.
@@ -330,11 +389,11 @@ The P vs NP problem is the central open question of computer science, asking whe
 :::info[**Inevitability of Black Hole Collapse from Exponential Cycle Density Requirements**]
 :::
 
-*   **Density Saturation:** Exponential cycle demands require crowding an exponential number of 3-cycles in a finite volume.
+Given the conditions of **Density Saturation**, **Black Hole Collapse**, and **Event Horizon Censorship**, the properties of Inevitability of Black Hole Collapse from Exponential Cycle Density Requirements are established.
+
+---*   **Density Saturation:** Exponential cycle demands require crowding an exponential number of 3-cycles in a finite volume.
 *   **Black Hole Collapse:** As the local 3-cycle density exceeds the critical saturation threshold ($\rho \ge \rho_{crit} \approx 1/(6\mu)$), the rewrite rate is suppressed to zero by steric friction, causing the local Lapse function to vanish ($N(x) \to 0$, Chapter 22).
 *   **Event Horizon Censorship:** The region collapses into a black hole (saturated frozen core, Chapter 22) before the computation completes, censoring the NP-complete calculation behind a coordinate horizon.
-
----
 
 ### 24.5.3 Proof: Complexity Black Hole Collapse {#24.5.3}
 
@@ -342,7 +401,7 @@ The P vs NP problem is the central open question of computer science, asking whe
 :::
 
 *   **Entropic Volume Integration:** The proof integrates the required graph density for NP-complete state tracking over a finite spatial volume.
-*   **Censorship Verification:** It demonstrates that the Bekenstein bound is violated before the computation finishes, triggering inevitable gravitational collapse and proving that **P $\neq$ NP** acts as a physical law of nature.
+*   **Censorship Verification:** It demonstrates that the Bekenstein bound is violated before the computation finishes, triggering inevitable gravitational collapse and proving that **P $\neq$ NP** acts as a physical law of nature. Q.E.D.
 
 ---
 
@@ -368,8 +427,16 @@ The Monster Group $\mathbb{M}$ is the largest of the sporadic simple groups, pos
 :::info[**Derivation of Standard Model Subgroups from Vacuum Symmetry Branching Rules**]
 :::
 
-*   **Crystallization Symmetry Breaking:** As the graph undergoes spontaneous ignition and dimensional emergence, the high-dimensional symmetry of the Monster Group is spontaneously broken.
-*   **Emergent Gauge Subgroups:** The standard gauge symmetries ($SU(3) \times SU(2) \times U(1)$) emerge as low-energy residues of the Monster Group's branching rules during crystallization to $d=4$, linking the largest sporadic group directly to standard particle physics.
+Given the conditions of **Crystallization Symmetry Breaking** and **Emergent Gauge Subgroups**, the properties of Derivation of Standard Model Subgroups from Vacuum Symmetry Branching Rules are established.
+
+---
+
+### 24.6.2.1 Commentary: Physical Significance {#24.6.2.1}
+
+:::info[**Physical Significance of Symmetry Breaking**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Symmetry Breaking** <Ref id="24.6.2" label="§24.6.2" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ---
 
@@ -388,7 +455,6 @@ Why does our universe possess these specific laws of physics, stable particles, 
 *   **Rule Classification:** Universes within the Ruliad are categorized according to Wolfram's rule classes: Class 1 (collapsing or halting), Class 2 (sterile periodic loops), Class 3 (unstable chaotic tangles lacking an emergent metric), and Class 4 (universal complexity).
 *   **Observer Filter:** Only Class 4 rules are capable of maintaining localized, persistent topological structures (particles) long enough to support observers.
 
-
 ### 25.1.1.1 Commentary: Computational Landscape {#25.1.1.1}
 
 :::info[**Selection of Physical Rules**]
@@ -403,19 +469,36 @@ The **Computational Landscape** provides a background-independent framework for 
 :::info[**Selection of Physical Laws through Manifold Stability Requirements**]
 :::
 
-*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad.
+Given the conditions of **Selection Pressure**, **Stabilizing Comonad**, and **Conservation as Protection**, the properties of Selection of Physical Laws through Manifold Stability Requirements are established.
+
+---*   **Selection Pressure:** The physical laws of our universe are not arbitrary settings but represent a **Minimal Robust Attractor** in the Ruliad.
 *   **Stabilizing Comonad:** Without an inherent error-correcting code (the comonad stabilization framework or **Awareness Comonad**, **Awareness Layer** <Ref id="4.3" label="§4.3" />), stochastic rewrite errors would accumulate, causing the emergent manifold to dissolve into chaos or freeze.
 *   **Conservation as Protection:** Fundamental principles (such as gauge invariance, conservation of energy-momentum, and the Pauli exclusion principle) are derived as the stabilizer protocols of this comonad that keep the computational geometry from collapsing.
 
 ---
 
-### 25.1.3 Corollary: Fine-Tuning Limits {#25.1.3}
+### 25.1.2.1 Commentary: Argument Outline {#25.1.2.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Minimal Robust Attractor** <Ref id="25.1.2" label="§25.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+
+### 25.1.3 Lemma: Fine-Tuning Limits {#25.1.3}
 
 :::info[**Establishment of Fundamental Constant Tolerances from Stabilizer Code Boundaries**]
 :::
 
-*   **Fine-Tuning Demystified:** The apparent "fine-tuning" of the constants of nature ($\alpha$, $G$, $\Lambda$) is not a cosmological coincidence.
-*   **Operating Tolerances:** These constants correspond to the mathematical stability boundaries (operating tolerances) of the stabilizing comonad code. Beyond these limits, the error-correction code fails, and the manifold collapses, explaining why we inhabit this specific physical regime.
+Let the apparent "fine-tuning" of the constants of nature ($\alpha$, $G$, $\Lambda$) be relationally defined by the mathematical stability boundaries of the stabilizing comonad code. Beyond these limits, the error-correction code fails and the manifold collapses, explaining why the physical parameters are confined to this stable regime.
+
+---
+
+### 25.1.3.1 Commentary: Physical Significance {#25.1.3.1}
+
+:::info[**Physical Significance of Fine-Tuning Limits**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Fine-Tuning Limits** <Ref id="25.1.3" label="§25.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ---
 
@@ -430,22 +513,31 @@ Standard cosmology predicts that our universe will end in a state of maximum ent
 :::info[**Emergence of Conformal Invariance from Massless Late-Aeon Dilution**]
 :::
 
-*   **Late Universe:** In the far future ($t \to \infty$), black holes evaporate completely and all matter decays (proton decay or extreme spatial dilution), leaving an empty de Sitter space with constant expansion pressure ($\Lambda > 0$).
+Given the conditions of **Late Universe**, **Scale Loss**, and **Conformal Invariance**, the properties of Emergence of Conformal Invariance from Massless Late-Aeon Dilution are established.
+
+---*   **Late Universe:** In the far future ($t \to \infty$), black holes evaporate completely and all matter decays (proton decay or extreme spatial dilution), leaving an empty de Sitter space with constant expansion pressure ($\Lambda > 0$).
 *   **Scale Loss:** Because there are no massive particles left to provide a reference scale (Compton wavelength), the physical universe loses its sense of scale.
 *   **Conformal Invariance:** The physics of the vast, expanding universe becomes conformally invariant (scale-free), rendering it topologically and physically indistinguishable from a zero-scale pre-ignition vacuum.
 
 ---
+
+### 25.2.1.1 Commentary: Physical Significance {#25.2.1.1}
+
+:::info[**Physical Significance of Loss of Scale**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Loss of Scale** <Ref id="25.2.1" label="§25.2.1" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 25.2.2 Theorem: T-Duality Flip {#25.2.2}
 
 :::info[**Isomorphism of Macroscopic and Microscopic Spacetime Scales via Graph Duality**]
 :::
 
-*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, **Bekenstein Bound (Thermodynamic Limits)** <Ref id="16.2" label="§16.2" />).
+Given the conditions of **T-Duality Spectra**, **Scale Inversion**, and **Conformal Reset**, the properties of Isomorphism of Macroscopic and Microscopic Spacetime Scales via Graph Duality are established.
+
+---*   **T-Duality Spectra:** The graph spectrum of the pre-geometric substrate is invariant under T-duality ($R \leftrightarrow 1/R$, **Bekenstein Bound (Thermodynamic Limits)** <Ref id="16.2" label="§16.2" />).
 *   **Scale Inversion:** As the scale factor $a(t) \to \infty$ (heat death of the old aeon), this duality maps the physics directly onto a microscopic scale $a'(t) \to 0$ (the initial Zero-Point Information vacuum $G_0$).
 *   **Conformal Reset:** The end of one cosmic aeon is topologically identical to the beginning of the next, triggering a Conformal Reset.
-
----
 
 ### 25.2.3 Proof: T-Duality Flip {#25.2.3}
 
@@ -453,7 +545,7 @@ Standard cosmology predicts that our universe will end in a state of maximum ent
 :::
 
 *   **Spectral Mapping:** The proof constructs the isomorphism mapping the infinite-volume limit of the graph metric tensor to the zero-volume Bethe vacuum state $G_0$.
-*   **Cyclic Reset Result:** By integrating the spectral density of graph cycles, it demonstrates that entropy is renormalized to zero as the available degrees of freedom collapse, mathematically validating the cyclic Big Kindling reset.
+*   **Cyclic Reset Result:** By integrating the spectral density of graph cycles, it demonstrates that entropy is renormalized to zero as the available degrees of freedom collapse, mathematically validating the cyclic Big Kindling reset. Q.E.D.
 
 ---
 

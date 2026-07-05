@@ -89,7 +89,9 @@ If a subgraph admits a sequence of local operations that reduces its complexity 
 :::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
 :::
 
-The dynamical persistence of any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$ against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy. Specifically, the excitation must exhibit a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$) to occupy a protected logical state within the Quantum Error-Correcting Code subspace (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />) (denoted $\mathcal{C}$). This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> (denoted $\mathcal{R}$).
+Given any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$, its dynamical persistence against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy, specifically a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$), to occupy a protected logical state within the Quantum Error-Correcting Code codespace $\mathcal{C}$ (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />).
+
+This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> (denoted $\mathcal{R}$).
 
 Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
 
@@ -195,7 +197,7 @@ The **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> exerts 
 
 Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
 
-### 6.1.4.1 Proof: Decay Rate Calculation {#6.1.4.1}
+### 6.1.4.1 Proof: Catalyzed Instability {#6.1.4.1}
 
 :::tip[**Explicit evaluation of net topological current under the Fundamental Equation**]
 :::
@@ -494,16 +496,25 @@ To untie a knot, one must perform one of two operations: pass a strand physicall
 :::tip[**Formal Demonstration of the Persistence of Non-Trivial Excitations via Reductio Ad Absurdum**]
 :::
 
-**Synthesis:**
+**I. Hypothesis and Initial Conditions**
 
-1.  **Hypothesis:** Assume the existence of a persistent, localized excitation $\xi_{stable}$ that is topologically trivial ($V_\xi(t) = 1$).
-2.  **Reduction:** By the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />, the triviality of $\xi_{stable}$ implies the existence of a local rewrite sequence $\mathcal{S}$ that decomposes $\xi_{stable}$ into a set of disjoint, unlinked 3-cycles $\bigcup C_3$.
-3.  **Thermodynamic Response:** By the **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />, this decomposed state exhibits high local stress ($\rho > \rho^*$), triggering the catalytic deletion factor $\chi(\sigma)$. The net topological current becomes negative: $dN/dt < 0$.
-4.  **Contradiction:** The strictly negative current implies that $\xi_{stable}$ must lose elements until $\rho \to \rho^*$. At equilibrium density, the excitation is indistinguishable from the vacuum. Therefore, $\xi_{stable}$ is not persistent.
-5.  **Alternative:** Consider a non-trivial excitation $\xi_{knot}$ ($V_\xi(t) \neq 1$). By the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />, the reduction sequence $\mathcal{S}$ does not exist within the local horizon. The catalytic deletion mechanism is blocked by the topological barrier.
-6.  **Conclusion:** Only non-trivial topologies possess the architectural protection required to survive the vacuum's deletion flux.
+Let $\xi_{stable}$ be a persistent, localized excitation. Assume for contradiction that $\xi_{stable}$ is topologically trivial ($V_\xi(t) = 1$).
 
-Therefore, **Stability $\iff$ Non-Trivial Topology**.
+**II. Reducibility and Decomposition**
+
+Under the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />, the topological triviality of $\xi_{stable}$ implies the existence of a local rewrite sequence $\mathcal{S} \subseteq \mathcal{R}$ that decomposes the excitation into a set of disjoint, unlinked 3-cycles $\bigcup_j C_3^{(j)}$.
+
+**III. Thermodynamic Response and Catalyzed Decay**
+
+Under the **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />, the resulting decomposed state exhibits a high local cycle density exceeding the vacuum equilibrium, $\rho > \rho^*$. The master equation then dictates a strictly negative net topological current ($d\rho/dt \ll 0$), driving the system toward collapse.
+
+**IV. Obstruction and Topological Barrier**
+
+Conversely, let $\xi_{knot}$ be an excitation characterized by a non-trivial invariant ($V_\xi(t) \neq 1$). Under the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />, the reduction sequence $\mathcal{S}$ is inaccessible within the local horizon, blocking the deletion mechanism.
+
+**V. Synthesis and Conclusion**
+
+The contradiction between the assumed persistence of $\xi_{stable}$ and its decay establishes that only non-trivial topologies possess the architectural protection to survive the deletion flux. We conclude that stability is equivalent to non-trivial topology.
 
 Q.E.D.
 
@@ -604,11 +615,11 @@ The three-ribbon braid represents the first threshold of true complexity. It for
 :::info[**Uniqueness of the Prime Three-Ribbon Structure established by Inductive Exclusion**]
 :::
 
-Stable, first-generation elementary fermions are topologically isomorphic to prime, three-ribbon braids, denoted $n=3$, residing within the codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. This uniqueness is established by the exhaustive exclusion of all alternative ribbon counts through the following logical filters:
+Every stable, first-generation elementary fermion is topologically isomorphic to a prime, three-ribbon braid ($n=3$) residing within the codespace $\mathcal{C}$ (**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />), a uniqueness established by the exhaustive exclusion of all alternative ribbon counts.
 
-1.  **Lower Bound Exclusion:** Configurations with fewer than three ribbons ($n < 3$) are excluded on grounds of Topological Instability or Algebraic Insufficiency, wherein $n=1$ structures are reducible via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> and $n=2$ structures generate purely abelian algebras incapable of supporting **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />.
-2.  **Upper Bound Exclusion:** Configurations with greater than three ribbons ($n > 3$) are excluded on grounds of Entropic Parsimony, as such structures incur excess topological complexity costs $C[\beta] > 3$ that suppress their formation probability relative to the ground state of three ribbons within the equilibrium vacuum density $\rho_3^* \approx 0.03$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
-3.  **Triality Mandate:** The $n=3$ configuration constitutes the unique solution satisfying the 3-cycle **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />, providing the necessary basis for three color charges and the anomaly coefficient cancellation $A(3) + A(\bar{3}) = 0$.
+In particular, configurations with fewer than three ribbons ($n < 3$) are excluded due to topological instability for $n=1$ via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> or algebraic insufficiency for $n=2$ via **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />.
+
+Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> to provide the necessary basis for three color charges and anomaly cancellation.
 
 ### 6.2.2.1 Commentary: Argument Outline {#6.2.2.1}
 
@@ -647,9 +658,9 @@ The proof proceeds by induction, systematically disqualifying alternative geomet
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 :::
 
-Any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ **Master Equation** <Ref id="5.2.7" label="§5.2.7" />, which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2.7" label="§5.2.7" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
-### 6.2.3.1 Proof: Triviality via Flux Dominance {#6.2.3.1}
+### 6.2.3.1 Proof: Exclusion of Unbraided Clusters (n=0) {#6.2.3.1}
 
 :::tip[**Verification of Instability via the Fundamental Equation**]
 :::
@@ -719,9 +730,9 @@ Because the topology remains trivial, the cluster lacks the structural "interloc
 :::info[**Reducibility of Twisted Ribbons through Type II Reidemeister Moves**]
 :::
 
-A configuration consisting of a single framed ribbon ($n=1$) is excluded from the set of stable particles due to topological reducibility. Although such a structure may possess non-trivial writhe $w \neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> and are subsequently excised by the vacuum deletion mechanism.
+If a configuration consists of a single framed ribbon ($n=1$), it is excluded from the set of stable particles due to topological reducibility. Although such a structure may possess non-trivial writhe $w \neq 0$, it remains subject to **Local Reducibility** via Type II Reidemeister moves, which allow the decomposition of twists into redundant loops that violate the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> and are subsequently excised by the vacuum deletion mechanism.
 
-### 6.2.4.1 Proof: Reducibility via Formal Induction {#6.2.4.1}
+### 6.2.4.1 Proof: Exclusion of Single-Ribbon (n=1) {#6.2.4.1}
 
 :::tip[**Demonstration of Single-Ribbon Instability under Local Rewrite Operations**]
 :::
@@ -867,9 +878,9 @@ THE DECAY OF A SINGLE RIBBON (Type II Move)
 :::info[**Algebraic Insufficiency for Non-Abelian Gauge Generation**]
 :::
 
-A configuration consisting of exactly two braided ribbons ($n=2$) is excluded from the set of fundamental fermions due to algebraic insufficiency. While this configuration proves topologically stable against local deletion, it generates a strictly **Abelian** algebra isomorphic to the integers $\mathbb{Z}$, rendering it insufficient to support the non-abelian gauge symmetries, specifically the self-interacting gluons of Quantum Chromodynamics, required for standard matter.
+Consider a configuration consisting of exactly two braided ribbons ($n=2$), which is excluded from the set of fundamental fermions due to algebraic insufficiency. While this configuration proves topologically stable against local deletion, it generates a strictly **Abelian** algebra isomorphic to the integers $\mathbb{Z}$, rendering it insufficient to support the non-abelian gauge symmetries, specifically the self-interacting gluons of Quantum Chromodynamics, required for standard matter (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />).
 
-### 6.2.5.1 Proof: Algebraic Insufficiency {#6.2.5.1}
+### 6.2.5.1 Proof: Exclusion of Two-Ribbon (n=2) {#6.2.5.1}
 
 :::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group and its 1D Representations**]
 :::
@@ -990,9 +1001,9 @@ In physical terms, an Abelian gauge group generates forces that lack self-intera
 :::info[**Entropic Suppression of Hyper-Complex Braids**]
 :::
 
-Configurations comprising $n > 3$ ribbons are physically excluded from the first-generation fermion spectrum due to thermodynamic improbability. These structures are suppressed by **Entropic Parsimony** due to their excess topological complexity ($C[\beta] > 3$) and by **Rank Mismatch** in specific cases, preventing their spontaneous formation in the equilibrium vacuum relative to the entropically favored $n=3$ ground state.
+Every configuration comprising $n > 3$ ribbons is physically excluded from the first-generation fermion spectrum due to thermodynamic improbability (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). These structures are suppressed by **Entropic Parsimony** due to their excess topological complexity ($C[\beta] > 3$) and by **Rank Mismatch** in specific cases, preventing their spontaneous formation in the equilibrium vacuum relative to the entropically favored $n=3$ ground state.
 
-### 6.2.6.1 Proof: Analytical Exclusion via TQFT Parsimony {#6.2.6.1}
+### 6.2.6.1 Proof: Exclusion of Higher Order Configurations (n > 3) {#6.2.6.1}
 
 :::tip[**Formal Demonstration of Non-Minimality for Higher Rank Generators**]
 :::
@@ -1171,33 +1182,30 @@ As complexity increases linearly, however, suppression becomes severe. The simul
 :::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
 :::
 
-The proof employs formal induction on the ribbon count $n$, verifying that configurations with $n < 3$ ribbons fail either topological stability (absence of non-trivial invariants or susceptibility to local decay under $\mathcal{R}$ **universal constructor** <Ref id="4.5.1" label="§4.5.1" />) or algebraic sufficiency (inability to generate non-abelian $\mathfrak{su}(3)$ for QCD). Configurations with $n > 3$ ribbons surpass minimality per the Minimal Generation Theorem, introducing superfluous complexity (elevated $C[\beta]$) absent qualitative innovations for the first generation. This induction harmonizes with the **Axiom 2: Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and the general cycle decomposition in **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" />, where 3-cycles serve as minimal quanta ensuring non-trivial topology for excitations, and non-prime structures reduce under $\mathcal{R}$ to preserve primeness.
+**I. Initial Conditions and Inductive Framework**
 
-**Step 1: Base Case ($n=0$).** Unbraided structures correspond to $n=0$. **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" /> establishes topological triviality and instability, with $\sigma = -1$ catalyzing decay.
+The proof employs formal induction on the ribbon count $n$. Configurations with $n < 3$ ribbons fail either topological stability or algebraic sufficiency, while configurations with $n > 3$ ribbons introduce superfluous complexity. This induction matches the **Axiom 2: Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" />.
 
-**Step 2: Base Case ($n=1$).** Single-ribbon structures correspond to $n=1$. **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> demonstrates reducibility via Type II moves, lacking non-trivial topology for protection.
+**II. Lower Bound Exclusion**
 
-**Step 3: Base Case ($n=2$).** Two-ribbon structures correspond to $n=2$. **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> confirms non-trivial links yet abelian algebra $B_2 \cong \mathbb{Z}$ (matrix representation: $b_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$, single generator yielding zero commutators), inadequate for non-abelian gauges.
+For the base cases $n < 3$, the configurations are excluded systematically:
+1. **Unbraided structures ($n=0$):** **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" /> establishes topological triviality and instability under the deletion flux.
+2. **Single-ribbon structures ($n=1$):** **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> demonstrates reducibility via Type II moves, preventing stability.
+3. **Two-ribbon structures ($n=2$):** **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> confirms algebraic insufficiency, as the commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
 
-**Step 4: Base Case ($n=4$).** Four-ribbon structures correspond to $n=4$. The braid group $B_4$ generates $\mathfrak{su}(4)$ (rank 3) through representations (Jones polynomial at roots yielding q-deformed $\mathfrak{su}(4)_k$, classical limit $k \to \infty$). Generators include $b_1 = P_{12}$ (4×4 swap of strands 1-2), $b_2 = P_{23}$, $b_3 = P_{34}$; commutators span the 15-dimensional basis ($\dim \mathfrak{su}(4) = 15$). However, rank 3 falls below the rank 4 for Standard Model embedding (SU(3)×SU(2)×U(1) totals rank 4). The anomaly coefficient $A(\text{fund 4}) = 1 \neq 0$ precludes anomaly-free representations for 15 fermions (anomaly sum $\neq 0$). Exclusion follows as structurally insufficient.
+**III. Upper Bound Exclusion**
 
-**Step 5: Base Case ($n=5$).** Five-ribbon structures correspond to $n=5$. The braid group $B_5$ maps to $\mathfrak{su}(5)$ of rank 4 (SU(5) unification). This rank suffices for Standard Model embedding yet exceeds minimality for first-generation particles, demanding SU(5) grand unified theory with higher-dimensional representations unnecessary for QCD isolation and inflated $C[\beta]$. Exclusion arises from Standard Model minimality.
+For the base cases $n > 3$, the configurations are excluded due to complexity and rank mismatch:
+1. **Four-ribbon structures ($n=4$):** Under **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" />, the rank falls below that required to embed the Standard Model, and the fundamental representation exhibits non-zero cubic anomaly.
+2. **Five-ribbon structures ($n=5$):** Although $\mathfrak{su}(5)$ embeds the Standard Model, the ground state exceeds minimality, causing thermodynamic suppression in the equilibrium vacuum.
 
-**Step 6: Inductive Hypothesis.** For all $k < n$, any $k$-ribbon structure either exhibits topological triviality or instability under $\mathcal{R}$ (for permissible variations) or algebraic insufficiency (abelian symmetries incapable of supporting non-abelian Standard Model gauges).
+**IV. Synthesis and Tripartite Minimality**
 
-**Step 7: Inductive Step.** An $n$-ribbon structure satisfies the minimality and stability requirements if and only if $n=3$.
+We apply the inductive step to establish that the $n=3$ tripartite braid is the unique minimal configuration satisfying stability and symmetry:
+1. **Stability and Algebra:** The non-abelian group $B_3$ generates the $\mathfrak{su}(3)$ algebra, with stability derived from primeness as detailed in the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />.
+2. **Anomaly Cancellation:** The cubic anomaly cancels vectorially, $A(3) + A(\bar{3}) = 0$, for Standard Model fermions under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />.
 
-**Substep 7.1: For $n=3$.** Tripartite braids possess non-trivial invariants ($w \neq 0$, possible $L \neq 0$); stability derives from primeness (irreducibility, no complexity-lowering paths without rule violation; cross-ref. **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />). The non-abelian $B_3$ generates $\mathfrak{su}(3)$. Minimality traces to Axiom 2 (3 as primitive). **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> positions primes as protected logical qubits, with infinite $\Delta F$ established in **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" />.
-
-**Substep 7.2: For $n > 3$.** Elevated $n$ contravenes simplicity (Minimal Generation Theorem mandates minimal for first generation; higher-$n$ relics governed by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />), though viable for unification (e.g., pentaquarks for SU(5), as governed by the **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" />).
-
-**Step 8: Proof of $n=3$ Minimality for Non-Abelian $\mathfrak{su}(3)$ with Anomaly-Free Representations.** The value $n=3$ uniquely minimizes non-abelian $\mathfrak{su}(3)$ generation while fitting anomaly-free Standard Model fermions (cubic anomaly sum = 0).
-
-**Substep 8.1: $B_3$ algebra.** Generators $b_1, b_2$ obey $b_1 b_2 b_1 = b_2 b_1 b_2$ (Yang-Baxter equation), non-abelian via $[b_1, b_2] = b_1 b_2 b_1 - b_2 b_1 b_2 \neq 0$ (distinct reduced words). Representations: Fundamental 2D Burau ($b_1 = \begin{pmatrix} q & 1 \\ 0 & 1 \end{pmatrix}$, $b_2 = \begin{pmatrix} 1 & 0 \\ 1 & q^{-1} \end{pmatrix}$, $q$ root); for $\mathfrak{su}(3)$, 3D irreps from Jones (dimension 3 for $k>2$).
-
-**Substep 8.2: Anomaly fitting.** The anomaly coefficient is defined as $A(R) = \frac{1}{24} \operatorname{Tr}(T^a \{T^b, T^c\})$, where the trace is taken over the representation $R$, $T^a$ are the generators of the Lie algebra, and $\{ \cdot, \cdot \}$ denotes the anticommutator. For the fundamental representation 3 of $\mathfrak{su}(3)$, $A(3) = 1$. For the conjugate representation $\bar{3}$, $A(\bar{3}) = -1$. This yields a normalized coefficient $A(3) = 1/2$ when accounting for the standard normalization convention in QCD. In the Standard Model, left-handed quarks occupy SU(2) doublets with three colors ($Q_L = (u_L, d_L)$ in the (3,2) representation), while right-handed up quarks reside in the 3 and down quarks in the $\bar{3}$. The anomalies thus cancel: $A(3) + A(\bar{3}) = 1/2 - 1/2 = 0$, producing a vector-like strong force free of anomalies. For grand unification, $n=3$ minimally embeds the three color states required for QCD. In contrast, a two-ribbon structure generates $\mathfrak{su}(2)$ (rank 1, dimension 3), which is incapable of producing $\mathfrak{su}(3)$ (rank 2, dimension 8).
-
-**Substep 8.3: Explicit anomaly sum.** For $\mathfrak{su}(3)$, the coefficient $A(R) = \text{Tr} T^a \{T^b, T^c\}$ over representations; sum vanishes for consistency. Fundamentals satisfy $A(3) = 1$, $A(\bar{3}) = -1$, total 0. Standard Model per-generation anomalies (quarks $Q$, leptons $L$) sum to zero, including hypercharge $\sum Y_H^3 = 0$. SU(5) embedding (Georgi-Glashow) necessitates $n=3$ for color triplets.
+We conclude that the tripartite braid uniquely minimizes non-abelian generation while supporting stable, anomaly-free representations.
 
 Q.E.D.
 
@@ -1269,9 +1277,7 @@ Each successive unit of writhe forces the causal path to traverse an increasingl
 :::info[**Proportionality of Inertial Mass to Complexity under Energy-Entropy Equivalence**]
 :::
 
-The **Topological Mass** $m$ of a stable prime braid $\beta$ is defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />. The functional form is established by the following properties:
-1.  **Mass Summation:** The total mass is the sum $m \propto C_C + C_T$.
-2.  **Explicit Form:** The mass relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
+Assume a stable prime braid $\beta$ possesses a **Topological Mass** $m$ defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ (**Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />). Under these conditions, the total mass satisfies $m \propto C_C + C_T$, which explicitly relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
 
 ### 6.3.3.1 Commentary: Argument Outline {#6.3.3.1}
 
@@ -1307,11 +1313,9 @@ The proof proceeds via Direct Construction, decomposing the topological mass fun
 :::info[**Relationship between Minimal Crossing Number and Cycle Count established by Inductive Addition**]
 :::
 
-The total count of Geometric Quanta $N_3(\beta_M)$ requisite to sustain a prime braid $\beta_M$ constructed from $M$ crossings scales linearly with the minimal crossing number $C[\beta]$. This relation satisfies the equation $N_3(\beta) = k_c \cdot C[\beta]$, conditioned upon two structural requirements:
-1.  **Inductive Additivity:** The addition of a crossing operation $\sigma_i$ under the Principle of Unique Causality introduces a fixed, non-zero integer quantity of 3-cycles $\Delta N_3 = k_c$ to the graph topology.
-2.  **Cluster Decomposition:** The crossing events are spatially separated by distances $\bar{d} > \xi$, ensuring statistical independence of the structural costs.
+Suppose a prime braid $\beta_M$ is constructed from $M$ crossings, such that the total count of Geometric Quanta $N_3(\beta_M)$ requisite to sustain it scales linearly with the minimal crossing number $C[\beta_M]$, satisfying $N_3(\beta) = k_c \cdot C[\beta]$. This relation is conditioned upon the inductive additivity of crossing operations introducing a fixed integer quantity of 3-cycles $\Delta N_3 = k_c$ and the spatial cluster decomposition of crossing events at distances $\bar{d} > \xi$ to ensure statistical independence of structural costs.
 
-### 6.3.4.1 Proof of Scaling {#6.3.4.1}
+### 6.3.4.1 Proof: Linear Scaling of Crossings {#6.3.4.1}
 
 :::tip[**Formal Induction of Linear Scaling from Prime Braid Construction**]
 :::
@@ -1398,11 +1402,9 @@ This linearity ensures the stability and discreteness of the mass spectrum. It i
 :::info[**Relationship between Writhe and Strain Energy governed by Pathfinding Limits**]
 :::
 
-The internal energy cost $E_T$ required to maintain a ribbon with writhe $w$ scales strictly with the square of the writhe ($E_T \propto w^2$). This scaling is enforced by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which mandates the following pathfinding constraints:
-1.  **Steric Hindrance:** The addition of the $(k+1)$-th unit of twist requires the formation of a causal path of length $L \propto k$ to circumnavigate the topological core formed by previous twists.
-2.  **Cumulative Summation:** The total structural resource requirement is the arithmetic sum of the linear path costs, yielding a quadratic total complexity $\sum_{i=1}^{k} i \propto k^2$.
+For any ribbon configuration characterized by a writhe $w$, the internal energy cost $E_T$ required to maintain it scales strictly with the square of the writhe ($E_T \propto w^2$). This scaling is enforced by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which mandates that the $(k+1)$-th unit of twist requires a causal path of length $L \propto k$ to circumnavigate the topological core, yielding a quadratic cumulative complexity $\sum_{i=1}^{k} i \propto k^2$.
 
-### 6.3.5.1 Proof: Scaling {#6.3.5.1}
+### 6.3.5.1 Proof: Quadratic Scaling of Torsion {#6.3.5.1}
 
 :::tip[**Formal Induction of Quadratic Scaling from Twist Accumulation**]
 :::
@@ -1611,11 +1613,9 @@ The Principle of Unique Causality acts as a Pauli exclusion principle for causal
 :::info[**Vanishing of Configurational Entropy within Protected Logical States**]
 :::
 
-The configurational entropy $S_{\text{braid}}$ of a prime braid $\beta$ residing within the Quantum Error-Correcting Code subspace $\mathcal{C}$ is identically zero. This vanishing entropy implies the strict equality of the Helmholtz Free Energy $F[\beta]$ and the Internal Energy $U[\beta]$, derived from the following state properties:
-1.  **State Uniqueness:** The topological protection of the prime braid restricts the configuration to a single logical microstate $|\beta\rangle$, yielding a degeneracy $\Omega = 1$.
-2.  **Energy Equivalence:** Consequently, the mass functional is independent of the vacuum temperature $T$, satisfying the relation $F[\beta] = U[\beta]$.
+For all prime braids $\beta$ residing within the Quantum Error-Correcting Code codespace $\mathcal{C}$, the configurational entropy $S_{\text{braid}}$ is identically zero. This vanishing entropy restricts the configuration to a single logical microstate $|\beta\rangle$ with degeneracy $\Omega = 1$, implying that the Helmholtz Free Energy $F[\beta]$ and the Internal Energy $U[\beta]$ are strictly equal ($F[\beta] = U[\beta]$) and independent of the vacuum temperature $T$.
 
-### 6.3.6.1 Proof of Single Microstate {#6.3.6.1}
+### 6.3.6.1 Proof: Entropy Negligibility {#6.3.6.1}
 
 :::tip[**Demonstration of Zero Entropy for Unique Prime Braid Configurations**]
 :::
@@ -1684,7 +1684,7 @@ The Quantum Error-Correcting Code (QECC) protection locks the state vector into 
 
 ---
 
-### 6.3.7 Proof: Mass Functional {#6.3.7}
+### 6.3.7 Proof: Topological Mass {#6.3.7}
 
 :::tip[**Formal Synthesis of Crossing and Torsional Components via Energy Decomposition**]
 :::
@@ -1758,10 +1758,7 @@ Untying a prime knot requires either passing a strand physically through another
 :::info[**Persistence of Prime Braids due to the Impossibility of Global Unwinding**]
 :::
 
-Prime Braids exhibit dynamical persistence against the vacuum deletion flux. This stability is not intrinsic to the energy landscape but is a consequence of **Architectural Impossibility**, defined by the conjunction of the following constraints:
-1.  **Horizon Mismatch:** The global unwinding operation requires coordination across a scale $O(N)$, while the local operator $\mathcal{R}$ is restricted to a causal horizon $R \sim \log N$.
-2.  **Probability Vanishing:** The probability of a stochastic sequence of local fluctuations successfully executing the global unwinding scales as $P \sim e^{-N}$, vanishing for macroscopic complexity.
-3.  **Topological Lock:** Consequently, the prime topology is protected from decay by an effective infinite energy barrier relative to the local thermal fluctuations.
+If a prime braid configuration is subjected to the vacuum deletion flux, the configuration exhibits dynamical persistence against decay. This stability is not intrinsic to the energy landscape but is a consequence of **Architectural Impossibility** arising from the mismatch between the global coordination scale $O(N)$ required for unwinding and the local operator's horizon $R \sim \log N$. Under these conditions, the probability of a stochastic sequence of local fluctuations successfully executing the global unwinding scales as $P \sim e^{-N}$ (vanishing for macroscopic complexity), thereby protecting the prime topology via an effective infinite energy barrier.
 
 ### 6.4.2.1 Commentary: Argument Outline {#6.4.2.1}
 
@@ -1793,9 +1790,9 @@ The proof proceeds via Contradiction, assuming that local operations can untie a
 :::info[**Logarithmic Bound on Action Radius imposed by Causal Limits**]
 :::
 
-The operational scope of the rewrite rule $\mathcal{R}$ is strictly bounded by the **Local Horizon** radius $R$. This radius satisfies the scaling relation $R \sim \log N_{sys}$, imposed by the finite propagation speed of causal influence within the discrete graph. This constraint enforces the condition of **Global Blindness**, wherein the local operator cannot resolve or modify global topological invariants, specifically the Gauss Linking Number $L_{ij}$, which are defined over path lengths $S > R$.
+Let the operational scope of the rewrite rule $\mathcal{R}$ be strictly bounded by the **Local Horizon** radius $R \sim \log N_{sys}$ imposed by the finite propagation speed of causal influence within the discrete graph. Under this constraint, the local operator is subject to global blindness, preventing it from resolving or modifying global topological invariants, specifically the Gauss Linking Number $L_{ij}$, which are defined over path lengths $S > R$.
 
-### 6.4.3.1 Proof: Local Blindness {#6.4.3.1}
+### 6.4.3.1 Proof: Local Horizon {#6.4.3.1}
 
 :::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants**]
 :::
@@ -2011,12 +2008,9 @@ The operator $\mathcal{R}$ can manipulate local kinks and twists, but it cannot 
 :::info[**Linear Complexity of Untying demanding Isotopic Traversal**]
 :::
 
-The topological transition from a Prime Knot state to the unknot state via Isotopic Unwinding is constrained by a global energy barrier $E_{barrier}$. This barrier is characterized by three sequential requirements:
-1.  **Path Dependence:** The transition requires the propagation of a twist or loop along the full arc length of the knot, a distance $L \propto N$.
-2.  **Minimum Step Count:** The minimum number of sequential, causally connected rewrite steps required to effect this propagation is linearly proportional to the complexity $N$.
-3.  **Thermodynamic Exclusion:** The energetic cost of coordinating this sequence exceeds the available free energy of local vacuum fluctuations, rendering the transition thermodynamically forbidden.
+Given a prime knot configuration, the topological transition to the unknot state via Isotopic Unwinding is constrained by a global energy barrier $E_{barrier}$ (**Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />). This barrier requires twist propagation over the full path length $L \propto N$ in a minimum sequence of steps linearly proportional to $N$, whose coordination cost exceeds the available free energy of local vacuum fluctuations and renders the transition thermodynamically forbidden.
 
-### 6.4.4.1 Proof: Cost Verification {#6.4.4.1}
+### 6.4.4.1 Proof: Global Unwinding Barrier {#6.4.4.1}
 
 :::tip[**Formal Derivation of the O(N) Unwinding Cost**]
 :::
@@ -2076,7 +2070,7 @@ Because the local vacuum fluctuations operate within a logarithmic horizon $R \s
 
 ---
 
-### 6.4.5 Proof: Stability via Impossibility {#6.4.5}
+### 6.4.5 Proof: Architectural Stability {#6.4.5}
 
 :::tip[**Formal Synthesis of Particle Persistence determined by Topological Selection**]
 :::

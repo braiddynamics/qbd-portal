@@ -68,7 +68,6 @@ With this antisymmetric flow structure established, the tensor components map to
 2.  **Negative Flux ($T_{ab} < 0$):** A negative value signifies that the rate of structure dissolution (edge deletion) dominates. Physically, this corresponds to a sink or a vacuum fluctuation where geometry is evaporating.
 3.  **Vacuum Equilibrium ($T_{ab} = 0$):** A zero value indicates a detailed balance between the constructive and destructive processes. This defines the vacuum state of the theory: a dynamic equilibrium where the geometry appears macroscopically static despite the continuous microscopic turnover of its constituent edges.
 
-
 ### 13.1.1.2 Diagram: Flux Balance {#13.1.1.2}
 
 :::note[**Visualization of the Stress-Energy Tensor as the Net Flow of Computational Updates**]
@@ -104,24 +103,24 @@ THE DISCRETE STRESS-ENERGY TENSOR (Flux T_ab)
 :::info[**Derivation of the Local Conservation Law establishing the Mandatory Vanishing of Net Informational Flux Divergence at Homeostatic Equilibrium**]
 :::
 
-The discrete stress-energy tensor $T_{ab}$ **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> exhibits strict local conservation at the homeostatic fixed point of the Quantum Braid Dynamics evolution. For every vertex $a \in V_t$ within the causal graph $G_t$, the net outgoing probability flux across the 1-hop neighborhood $N(a)$ vanishes:
+Every discrete stress-energy tensor $T_{ab}$ satisfies strict local conservation at the homeostatic fixed point of the Quantum Braid Dynamics evolution.
+
+### 13.1.2.1 Commentary: Argument Outline {#13.1.2.1}
+
+:::tip[**Structure of the Conservation of Complexity Flux Argument via Global Stationarity, Flux Separation, and Local Conservation**]
+:::
 
 $$
 \sum_{b \in N(a)} T_{ab} = 0.
 $$
 
-By symmetry of the underlying undirected **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />, the net incoming flux also vanishes:
+By symmetry of the underlying undirected **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />, the net incoming flux also vanishes:.
 
 $$
 \sum_{b \in N(a)} T_{ba} = 0.
 $$
 
 This conservation law guarantees the preservation of statistical stationarity for the local **Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" /> (for $\rho_3$) under the action of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> (denoted $\mathcal{U}$), preventing the systematic accumulation (sources) or depletion (sinks) of informational complexity at any vertex in the vacuum state.
-
-### 13.1.2.1 Commentary: Argument Outline {#13.1.2.1}
-
-:::tip[**Structure of the Conservation of Complexity Flux Argument via Global Stationarity, Flux Separation, and Local Conservation**]
-:::
 
 The argument proceeds via Direct Construction, deriving local flux conservation as the necessary consequence of thermodynamic homeostasis.
 
@@ -156,7 +155,7 @@ $$
 
 This condition asserts that the sum of the net outgoing complexity flux ($T_{ab}$) and the net incoming complexity flux ($T_{ba}$) must vanish collectively to preserve the time-invariant expectation value of the local vertex degree $\mathbb{E}[\deg(a)]$.
 
-### 13.1.3.1 Proof: Ergodic Degree Invariance {#13.1.3.1}
+### 13.1.3.1 Proof: Global Stationarity {#13.1.3.1}
 
 :::tip[**Derivation of the Balance Equation via the Ergodic Stationarity of the Degree Observable**]
 :::
@@ -227,12 +226,14 @@ The equation $\sum (T_{ab} + T_{ba}) = 0$ simply states that **Total In + Total 
 :::info[**Decomposition of the Global Flux Balance Equation into Independent Directional Conservation Laws via Maximum-Entropy**]
 :::
 
-The global balance condition $\sum_{b} (T_{ab} + T_{ba}) = 0$ decomposes into two independent constraints: the vanishing of the outgoing flux divergence $\sum_{b} T_{ab} = 0$ and the vanishing of the incoming flux divergence $\sum_{b} T_{ba} = 0$. This decomposition asserts that the causal graph satisfies detailed balance at the level of directional flux, implying that the thermodynamic drive for edge addition equilibrates with the thermodynamic drive for edge deletion independently for the set of outgoing edges and the set of incoming edges, prohibiting persistent circulatory currents in the vacuum state.
+If the global balance condition $\sum_{b} (T_{ab} + T_{ba}) = 0$ holds, then it decomposes into two independent constraints: the vanishing of the outgoing flux divergence $\sum_{b} T_{ab} = 0$ and the vanishing of the incoming flux divergence $\sum_{b} T_{ba} = 0$, which is well-defined.
 
-### 13.1.4.1 Proof: Maximum Entropy Decomposition {#13.1.4.1}
+### 13.1.4.1 Proof: Flux Separation (Detailed Balance) {#13.1.4.1}
 
 :::tip[**Formal Demonstration of the Independence of Incoming and Outgoing Flux Constraints via the Analysis of Entropic Penalties**]
 :::
+
+This decomposition asserts that the causal graph satisfies detailed balance at the level of directional flux, implying that the thermodynamic drive for edge addition equilibrates with the thermodynamic drive for edge deletion independently for the set of outgoing edges and the set of incoming edges, prohibiting persistent circulatory currents in the vacuum state.
 
 **I. Formulation of the Constraint Space**
 From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />, the stationarity of the vertex degree imposes the linear constraint:
@@ -270,15 +271,15 @@ In contrast, the solution $C=0$ represents a "dead end" or a "reservoir" where t
 
 ---
 
-### 13.1.5 Proof: Local Conservation Synthesis {#13.1.5}
+### 13.1.5 Proof: Conservation of Complexity Flux {#13.1.5}
 
 :::tip[**Formal Synthesis of Stationarity and Detailed Balance Arguments to Establish the Discrete Divergence-Free Condition**]
 :::
 
 **I. Integration of Stationarity and Separation**
 The proof integrates the stationarity condition (**Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />) and the detailed balance relation (**Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />) to establish the local conservation law.
-From Stationarity, we have the constraint that the total net flux through a vertex is zero: $\sum (T_{ab} + T_{ba}) = 0$.
-From Detailed Balance, we established that the maximum entropy configuration requires the outgoing flux $\sum T_{ab}$ and incoming flux $\sum T_{ba}$ to vanish independently.
+From Stationarity, we obtain the constraint that the total net flux through a vertex is zero: $\sum (T_{ab} + T_{ba}) = 0$.
+From Detailed Balance, we conclude that the maximum entropy configuration requires the outgoing flux $\sum T_{ab}$ and incoming flux $\sum T_{ba}$ to vanish independently.
 Combining these results yields the discrete divergence-free condition:
 
 $$
@@ -617,15 +618,15 @@ Furthermore; the extension of the tensor to non-edges (virtual links where $\bar
 :::info[**Formal Establishment of the Linear Proportionality between the Discrete Einstein Tensor and the Stress-Energy Tensor at Homeostatic Fixed Point**]
 :::
 
-The geometric evolution of the causal graph at the homeostatic fixed point is governed by the **Discrete Einstein Field Equations**, defined by the linear constitutive relation $\mathcal{G}_{ab} = \kappa \cdot T_{ab}$ for all potential directed edges $(a,b) \in E_t$. This relation enforces a strict local proportionality between the **Discrete Einstein Tensor** <Ref id="13.2.1" label="§13.2.1" /> (denoted $\mathcal{G}_{ab}$) and the **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> (denoted $T_{ab}$), mediated by the gravitational coupling constant $\kappa > 0$. The validity of this equation is established by the simultaneous satisfaction of the following physical constraints:
-1.  **Stationary Action:** The equilibrium state minimizes the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to local topological perturbations, implying that the geometric response $\delta \mathcal{G}$ must strictly balance the informational flux $\delta T$.
-2.  **Local Conservation:** The divergence-free property of the stress-energy tensor $\sum_b T_{ab} = 0$ **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" /> necessitates a matching conservation law for the curvature tensor, satisfied only by the linear mapping $\mathcal{G} \propto T$ in the absence of higher-order curvature corrections.
-3.  **Continuum Convergence:** The discrete equation converges in the thermodynamic limit $N \to \infty$ to the continuum Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" />, ensuring the recovery of General Relativity as the effective field theory of the causal graph.
+Assume that the geometric evolution of the causal graph at the homeostatic fixed point is governed by the **Discrete Einstein Field Equations** $\mathcal{G}_{ab} = \kappa \cdot T_{ab}$.
 
 ### 13.2.2.1 Commentary: Argument Outline {#13.2.2.1}
 
 :::tip[**Structure of the Discrete Einstein Field Equations Argument via Action Variation, Curvature-Flux Coupling, Coupling Scaling, and Stationary Solution**]
 :::
+
+The validity of this equation is established by the simultaneous satisfaction of the following physical constraints:
+1. **Stationary Action:** The equilibrium state minimizes the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to local topological perturbations, implying that the geometric response $\delta \mathcal{G}$ must strictly balance the informational flux $\delta T$. 2. **Local Conservation:** The divergence-free property of the stress-energy tensor $\sum_b T_{ab} = 0$ **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" /> necessitates a matching conservation law for the curvature tensor, satisfied only by the linear mapping $\mathcal{G} \propto T$ in the absence of higher-order curvature corrections. 3. **Continuum Convergence:** The discrete equation converges in the thermodynamic limit $N \to \infty$ to the continuum Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" />, ensuring the recovery of General Relativity as the effective field theory of the causal graph.
 
 The proof proceeds via Direct Construction, showing that the homeostatic state corresponds to the critical point of the discrete action.
 
@@ -656,12 +657,14 @@ The proof proceeds via Direct Construction, showing that the homeostatic state c
 :::info[**Equivalence of Homeostatic Equilibrium and Stationary Action under Topological Variation**]
 :::
 
-The condition of homeostatic equilibrium $\frac{d\rho}{dt} = 0$ defined by the Master Equation **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" /> is mathematically equivalent to the principle of stationary action $\delta \mathcal{S}[G] = 0$ applied to the discrete Einstein-Hilbert action. This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
+Given the system, the condition of homeostatic equilibrium $\frac{d\rho}{dt} = 0$ defined by the Master Equation **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" /> is mathematically equivalent to the principle of stationary action $\delta \mathcal{S}[G] = 0$ applied to the discrete Einstein-Hilbert action
 
-### 13.2.3.1 Proof: Topological Sensitivity {#13.2.3.1}
+### 13.2.3.1 Proof: Variational Action Principle {#13.2.3.1}
 
 :::tip[**Formal Demonstration of Action Stationarity at the Density Fixed Point**]
 :::
+
+This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
 
 **I. Variation of the Action Functional**
 The discrete Einstein-Hilbert action $\mathcal{S}[G]$ defines itself as the summation of the causal curvature $K(e)$ over the edge set $E$. The first variation of the action $\delta \mathcal{S}$ with respect to the graph topology corresponds to the differential change induced by the elementary transition $G \to G' = G \pm \{e\}$.
@@ -761,18 +764,20 @@ THE GRAVITATIONAL COUPLING (Scaling Mechanism)
 :::info[**Linear Dependence of Action Variation on the Stress-Energy Tensor**]
 :::
 
-The variation of the discrete action $\delta \mathcal{S}$ with respect to the edge state configuration exhibits linear proportionality to the discrete stress-energy tensor $T_{ab}$. specifically, for a variation $\delta g_{ab}$ corresponding to the activation or deactivation of the directed edge $(a,b)$, the action response satisfies the relation
+Given the variation of the discrete action $\delta \mathcal{S}$ with respect to the edge state configuration, the response is linearly proportional to the discrete stress-energy tensor $T_{ab}$.
+
+### 13.2.4.1 Proof: Curvature-Flux Coupling {#13.2.4.1}
+
+:::tip[**Derivation of the Coupling Relation via the Work-Energy Theorem of the Graph**]
+:::
+
+specifically, for a variation $\delta g_{ab}$ corresponding to the activation or deactivation of the directed edge $(a,b)$, the action response satisfies the relation.
 
 $$
 \frac{\delta \mathcal{S}}{\delta g_{ab}} = \kappa T_{ab},
 $$
 
 where $\kappa$ is the gravitational coupling constant derived from the emergent scales $\ell_0^2/\xi$. This coupling serves as the discrete analogue of the continuum relation $\frac{\delta S_{EH}}{\delta g_{\mu\nu}} \propto T_{\mu\nu}$, identifying the stress-energy tensor as the functional derivative of the geometric action and establishing the mechanism by which informational flux performs thermodynamic work on the graph geometry.
-
-### 13.2.4.1 Proof: Thermodynamic Work {#13.2.4.1}
-
-:::tip[**Derivation of the Coupling Relation via the Work-Energy Theorem of the Graph**]
-:::
 
 **I. Definition of the Configuration Space Variation**
 Let the topology of the causal graph be represented by the adjacency matrix elements $g_{ab} \in \{0, 1\}$. A variation $\delta g_{ab}$ denotes a state transition corresponding to the creation or annihilation of the directed edge $(a,b)$. The functional derivative of the action with respect to this variation is defined as the discrete difference quotient:
@@ -843,7 +848,6 @@ THE EINSTEIN RESPONSE (Geometry follows Flux)
          (0) --------------> (1) --------------> (2)
                   d(0,2) = 2 (Long Path)
 
-
       2. PERTURBED STATE (Mass/Curved)
          Topology: Cycle 0 -> 1 -> 2 -> 0
          Transport: Direct path created.
@@ -872,12 +876,14 @@ THE EINSTEIN RESPONSE (Geometry follows Flux)
 :::info[**Derivation of the Discrete Coupling Constant as a Functional Dependency of the Emergent Discreteness Scale and Correlation Length**]
 :::
 
-The discrete gravitational coupling constant $\kappa$, which mediates the interaction in the field equation $\mathcal{G}_{ab} = \kappa T_{ab}$, constitutes a derived quantity determined by the emergent geometric scales of the homeostatic fixed point **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Specifically, the coupling strength is defined by the ratio of the squared fundamental discreteness scale $\ell_0^2$ to the vacuum correlation length $\xi$. This derivation anchors the gravitational interaction to the intrinsic granular structure of the causal graph substrate, eliminating $\kappa$ as a free parameter.
+Let $\kappa$ be the discrete gravitational coupling constant, which is a derived quantity determined by the emergent geometric scales of the homeostatic fixed point.
 
-### 13.2.5.1 Proof: Coupling Form {#13.2.5.1}
+### 13.2.5.1 Proof: Gravitational Coupling Scale {#13.2.5.1}
 
 :::tip[**Formal Derivation of the Scaling Relation via Dimensional Analysis and Renormalization Group Constraints**]
 :::
+
+Specifically, the coupling strength is defined by the ratio of the squared fundamental discreteness scale $\ell_0^2$ to the vacuum correlation length $\xi$. This derivation anchors the gravitational interaction to the intrinsic granular structure of the causal graph substrate, eliminating $\kappa$ as a free parameter.
 
 **I. Convergence Requirement**
 The validity of the discrete field equation $\mathcal{G}_{ab} = \kappa T_{ab}$ in the continuum limit necessitates that the coarse-grained expectation values converge to the Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$. The **Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" /> defines the limit process over mesoscopic balls $B(x,R)$ satisfying the scale hierarchy $\ell_0 \ll R \ll \xi$. Conservation of the integrated action requires the discrete coupling $\kappa$ to scale such that the lattice regularization recovers the physical gravitational constant:
@@ -917,11 +923,22 @@ Q.E.D.
 
 ---
 
-### 13.2.6 Proof: Derivation from Stationary Action {#13.2.6}
+---
+
+### 13.2.5.2 Commentary: Physical Significance {#13.2.5.2}
+
+:::info[**Physical Significance of Gravitational Coupling Scale**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Gravitational Coupling Scale** <Ref id="13.2.5" label="§13.2.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+
+### 13.2.6 Proof: Emergent Field Equations {#13.2.6}
 
 :::tip[**Formal Verification of the Discrete Einstein Field Equations via Variational Calculus on the Graph**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Curvature-Flux Coupling** <Ref id="13.2.4" label="§13.2.4" />.
+ This synthesis proof utilizes the structural results established in supporting **Gravitational Coupling Scale** <Ref id="13.2.5" label="§13.2.5" />.
 **I. The Field Hypothesis**
 It is asserted that the local geometric curvature $\mathcal{G}_{ab}$ and the complexity flux $T_{ab}$ satisfy the linear constitutive relation $\mathcal{G}_{ab} = \kappa T_{ab}$ at the homeostatic fixed point. This relation is tested against the constraints of stationary action, local conservation, and entropic exclusion of fine-tuning.
 
@@ -1243,18 +1260,18 @@ In the discrete context, this identity serves as a rigorous check on the Causal 
 :::info[**Proof that the Discrete Einstein Tensor is Divergence-Free in the Thermodynamic Limit**]
 :::
 
-The discrete Einstein tensor $\mathcal{G}_{ab}$, constructed from the trace-reversed Causal Ollivier-Ricci curvature, satisfies the divergence-free condition in the thermodynamic limit of the causal graph. Specifically, as the graph size $N \to \infty$ and the graph satisfies the Ahlfors regularity and directional isotropy conditions, the local divergence at any vertex $a$ vanishes:
+Suppose $\mathcal{G}_{ab}$ is the discrete Einstein tensor. Then it satisfies the divergence-free condition in the thermodynamic limit.
+
+### 13.3.2.1 Commentary: Argument Outline {#13.3.2.1}
+
+:::tip[**Structure of the Discrete Bianchi Identity Argument via Action Symmetry, Geometric Cancellation, and Divergence Vanishing**]
+:::
 
 $$
 \lim_{N \to \infty} \left| \sum_{b \in N(a)} \mathcal{G}_{ab} \right| \to 0.
 $$
 
 The **Discrete Divergence-Free Geometry Theorem** establishes that the emergent discrete geometry naturally respects the conservation laws required by General Relativity, identifying $\mathcal{G}_{ab}$ as a valid gravitational field tensor.
-
-### 13.3.2.1 Commentary: Argument Outline {#13.3.2.1}
-
-:::tip[**Structure of the Discrete Bianchi Identity Argument via Action Symmetry, Geometric Cancellation, and Divergence Vanishing**]
-:::
 
 The argument proceeds via Direct Construction, proving the mathematical necessity of the divergence-free curvature tensor from the coordinate invariance of the action.
 
@@ -1280,18 +1297,20 @@ The argument proceeds via Direct Construction, proving the mathematical necessit
 :::info[**Invariance of the Discrete Action under Vertex Relabeling Operations**]
 :::
 
-The discrete Einstein-Hilbert action $\mathcal{S}[G]$ is invariant under the group of graph automorphisms. For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:
+For any discrete Einstein-Hilbert action $\mathcal{S}[G]$, the functional is invariant under the group of graph automorphisms.
+
+### 13.3.3.1 Proof: Action Invariance {#13.3.3.1}
+
+:::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
+:::
+
+For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].
 $$
 
 This symmetry implies that the physical predictions of the theory are independent of the arbitrary labeling of events, constituting the discrete realization of **Diffeomorphism Invariance** or **General Covariance**.
-
-### 13.3.3.1 Proof: Vertex Relabeling Invariance {#13.3.3.1}
-
-:::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
-:::
 
 **I. Construction of the Isomorphism**
 Let $G = (V, E)$ be a causal graph equipped with the undirected shortest-path metric $\bar{d}$ and lazy causal measures $\mu$.
@@ -1344,18 +1363,20 @@ Because the physics of the graph (the Action) does not depend on which integer l
 :::info[**Geometric Cancellation of Metric Variations within the Action Functional**]
 :::
 
-The variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to the edge length parameters $d_{ab}$ vanishes identically when summed over the closed causal graph. Specifically, for any infinitesimal deformation of the edge metric $\delta d_{ab}$ that preserves the triangle inequality structure, the weighted summation of the curvature response satisfies the identity:
+Given the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to the edge length parameters $d_{ab}$, the weighted summation of the curvature response is identically zero.
+
+### 13.3.4.1 Proof: Discrete Schläfli Identity {#13.3.4.1}
+
+:::tip[**Verification via the Envelope Theorem applied to the Wasserstein Dual Linear Program**]
+:::
+
+Specifically, for any infinitesimal deformation of the edge metric $\delta d_{ab}$ that preserves the triangle inequality structure, the weighted summation of the curvature response satisfies the identity:.
 
 $$
 \sum_{(a,b) \in E} N_{ab} \delta K_{ab} = 0,
 $$
 
 where $N_{ab}$ represents the effective multiplicity or volume weight of the edge in the transport network. This identity ensures that the total action variation $\delta \mathcal{S}$ derives exclusively from topological transitions (edge creation/annihilation) rather than from the continuous deformation of the embedding metric, establishing the orthogonality of metric variation to the topological action principle.
-
-### 13.3.4.1 Proof: Null Curvature Variation {#13.3.4.1}
-
-:::tip[**Verification via the Envelope Theorem applied to the Wasserstein Dual Linear Program**]
-:::
 
 **I. Formulation of Curvature Variation**
 The local graph curvature is defined by the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />, where $K_{ab} = 1 - W_1(\mu_a, \mu_b) / d_{ab}$.
@@ -1419,11 +1440,12 @@ In the discrete context, the **Discrete Schläfli Identity** <Ref id="13.3.4" la
 
 ---
 
-### 13.3.5 Proof: Identity Derivation {#13.3.5}
+### 13.3.5 Proof: Discrete Divergence-Free Geometry {#13.3.5}
 
 :::tip[**Formal Verification of the Discrete Bianchi Identity via Action Invariance**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" />.
 **I. Invariance Principle**
 The **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> establishes that the discrete Einstein-Hilbert action $\mathcal{S}[G]$ remains constant under infinitesimal diffeomorphisms generated by a vector field $\xi^a$. This invariance implies $\delta_\xi \mathcal{S} = 0$.
 

@@ -57,16 +57,17 @@ The rescaling by $\ell_0^{-2}$ provides the necessary metric units, converting a
 :::info[**Convergence of the Discrete Causal Graph Sequence to a Smooth Riemannian Manifold via Spectral Convergence**]
 :::
 
-The sequence of causal graphs $\{G_t\}$ converges in the Gromov-Hausdorff sense to a smooth, compact, 4-dimensional Riemannian manifold $(M, g)$. This limit structure is guaranteed by the **Spectral Convergence** of the consistently weighted graph Laplacians $\tilde{\mathcal{L}}_t$ to the Laplace-Beltrami operator $-\Delta_g$. Specifically:
-1.  **Eigenvalue Convergence:** The discrete eigenvalues $\tilde{\lambda}_k^{(t)}$ converge uniformly to the continuum eigenvalues $\lambda_k$ of $-\Delta_g$.
-2.  **Eigenfunction Convergence:** The discrete eigenfunctions $\psi_k^{(t)}$ converge in $L^2(M)$ to the continuum eigenfunctions $f_k$.
-
-This convergence implies that the limit space $M$ admits a smooth differentiable structure and a Riemannian metric $g$ with $C^\infty$ regularity, derived via elliptic regularity theorems from the smooth eigenfunctions.
+For any sequence of causal graphs $\{G_t\}$ converging in the Gromov-Hausdorff sense, a smooth, compact, 4-dimensional Riemannian manifold $(M, g)$ is established as its limit.
 
 ### 12.1.2.1 Commentary: Argument Outline {#12.1.2.1}
 
 :::tip[**Structure of the Smooth Riemannian Limit Argument via Spectral Convergence, Heat Kernel Asymptotics, and Smoothness Bootstrapping**]
 :::
+
+Specifically:
+1. **Eigenvalue Convergence:** The discrete eigenvalues $\tilde{\lambda}_k^{(t)}$ converge uniformly to the continuum eigenvalues $\lambda_k$ of $-\Delta_g$. 2. **Eigenfunction Convergence:** The discrete eigenfunctions $\psi_k^{(t)}$ converge in $L^2(M)$ to the continuum eigenfunctions $f_k$.
+
+This convergence implies that the limit space $M$ admits a smooth differentiable structure and a Riemannian metric $g$ with $C^\infty$ regularity, derived via elliptic regularity theorems from the smooth eigenfunctions.
 
 The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold. This strategy leverages the deep correspondence between the spectrum of the Laplacian and the metric geometry, effectively reconstructing the manifold structure from the "sound" of the graph.
 
@@ -96,6 +97,13 @@ The proof establishing the smooth Riemannian limit proceeds by demonstrating tha
 :::info[**Asymptotic Convergence of the Discrete Spectrum to the Continuum Laplace-Beltrami Eigenvalues**]
 :::
 
+Given the conditions of **Eigenvalues** and **Eigenfunctions**, the properties of Asymptotic Convergence of the Discrete Spectrum to the Continuum Laplace-Beltrami Eigenvalues are established.
+
+### 12.1.3.1 Proof: Spectral Convergence {#12.1.3.1}
+
+:::tip[**Operator Decomposition and Perturbation Analysis**]
+:::
+
 As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$. Specifically:
 
 * **Eigenvalues:** For each fixed mode $k$, the discrete eigenvalues converge with the rate:
@@ -111,11 +119,6 @@ As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the
     $$
 
 The leading $\ell_0$ term reflects the geometric discretization error (bandwidth bias), the $N_t^{-1/2}$ term arises from finite-sample variance (Monte Carlo error), and the subdominant $(\log N_t)^4 / N_t$ term accounts for the residual entropic correlations in the vacuum fluctuations.
-
-### 12.1.3.1 Proof: Spectral Convergence {#12.1.3.1}
-
-:::tip[**Operator Decomposition and Perturbation Analysis**]
-:::
 
 The proof proceeds by decomposing the total error into a geometric bias component and a statistical variance component, then applying perturbation theory to the spectral data.
 
@@ -278,7 +281,14 @@ The convergence verified above proves that the graph and the manifold share the 
 :::info[**Demonstration of Gaussian Heat Kernel Bounds via Discrete Li-Yau Estimates**]
 :::
 
-The heat kernel $p_t(x,y)$ on the causal graph $G_t$ converges asymptotically to the Gaussian fundamental solution of the continuum heat equation. Specifically, within the injectivity radius and for diffusion times $t \sim \ell_0^2$, the discrete transition density admits the expansion:
+Suppose $p_t(x,y)$ is the heat kernel on the causal graph $G_t$. Then it converges asymptotically to the Gaussian fundamental solution of the continuum heat equation.
+
+### 12.1.4.1 Proof: Heat Kernel Asymptotics {#12.1.4.1}
+
+:::tip[**Derivation of Heat Kernel Bounds from Functional Inequalities on the Graph**]
+:::
+
+Specifically, within the injectivity radius and for diffusion times $t \sim \ell_0^2$, the discrete transition density admits the expansion:.
 
 $$
 p_t(x,y) = \frac{1}{(4\pi t)^{d/2}} \exp\left(-\frac{d_g(x,y)^2}{4t}\right) \left( 1 + \frac{t}{6} R_g(x) + O(t^2) \right)
@@ -286,13 +296,8 @@ $$
 
 with $d=4$. This asymptotic behavior is enforced not merely by dimensional scaling, but by the structural stability of the heat flow under the **Uniform Curvature Bound**. The strict lower bound on the Causal Ollivier-Ricci curvature $\kappa \geq -K_{min}$ guarantees a **Discrete Li-Yau Gradient Estimate**, which constrains the logarithmic derivative of the heat kernel, compelling it to decay no faster than a Gaussian envelope.
 
-### 12.1.4.1 Proof: Gaussian Bounds {#12.1.4.1}
-
-:::tip[**Derivation of Heat Kernel Bounds from Functional Inequalities on the Graph**]
-:::
-
 **I. The Equivalence of Geometry and Diffusion**
-The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). We establish that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
+The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). we conclude that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
 
 **II. Volume Doubling (Ahlfors Regularity)**
 The **Ahlfors 4-Regularity** condition **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> imposes polynomial volume growth $V(x,r) \sim r^4$. This implies the Volume Doubling property with a scale-invariant constant $C_D = 2^4 = 16$:
@@ -441,16 +446,15 @@ Why focus on the heat kernel? Because diffusion "feels" the geometry. A random w
 :::info[**Establishment of C-Infinity Smoothness for the Limit Manifold utilizing the Iterative Application of Sobolev Embedding Theorems**]
 :::
 
-The Gromov-Hausdorff limit space $(M, g)$ is necessarily equipped with a unique smooth differentiable structure compatible with its metric topology. This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:
-1.  **Eigenfunction Regularity:** The eigenfunctions $f_k$ of the limit operator $-\Delta_g$ belong to the intersection of all Sobolev spaces $W^{m,p}(M)$ for $m \in \mathbb{N}, p \in [1, \infty)$.
-2.  **Smooth Embedding:** By the Sobolev Embedding Theorem, this infinite Sobolev regularity implies containment in the space of smooth functions $C^\infty(M)$.
-3.  **Metric Regularity:** Since the components of the metric tensor $g_{\mu\nu}$ determine the coefficients of the elliptic operator $-\Delta_g$, the $C^\infty$ smoothness of the eigensolutions necessitates that the metric tensor itself is $C^\infty$-smooth.
-Consequently, the limit of the discrete causal graphs is not merely a topological manifold but a smooth Riemannian manifold.
+Given that the Gromov-Hausdorff limit space $(M, g)$ is equipped with a unique smooth differentiable structure, its metric topology satisfies the Sobolev regularity requirements.
 
-### 12.1.5.1 Proof: C-Infinity Smoothness {#12.1.5.1}
+### 12.1.5.1 Proof: Smoothness via Elliptic Regularity {#12.1.5.1}
 
 :::tip[**Formal Derivation of Metric Tensor Smoothness by means of the Bootstrapping of Weak Solutions to the Laplace-Beltrami Equation**]
 :::
+
+This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:
+1. **Eigenfunction Regularity:** The eigenfunctions $f_k$ of the limit operator $-\Delta_g$ belong to the intersection of all Sobolev spaces $W^{m,p}(M)$ for $m \in \mathbb{N}, p \in [1, \infty)$. 2. **Smooth Embedding:** By the Sobolev Embedding Theorem, this infinite Sobolev regularity implies containment in the space of smooth functions $C^\infty(M)$. 3. **Metric Regularity:** Since the components of the metric tensor $g_{\mu\nu}$ determine the coefficients of the elliptic operator $-\Delta_g$, the $C^\infty$ smoothness of the eigensolutions necessitates that the metric tensor itself is $C^\infty$-smooth. Consequently, the limit of the discrete causal graphs is not merely a topological manifold but a smooth Riemannian manifold.
 
 **I. Weak Formulation of the Spectral Limit**
 From the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />, the discrete eigenfunctions converge to limit functions $f_k \in L^2(M)$ which satisfy the weak eigenvalue equation for the Laplace-Beltrami operator:
@@ -479,7 +483,7 @@ W^{m,p}(M) \subset C^r(M) \quad \text{if } m > r + \frac{d}{p}.
 $$
 
 With $p=2$ and $d=4$, the condition simplifies to $m > r + 2$.
-Since $f_k \in W^{m,2}(M)$ for arbitrarily large $m$ (proven in Step II), for any desired degree of differentiability $r$, we can select an $m$ such that the embedding holds.
+Since $f_k \in W^{m,2}(M)$ for arbitrarily large $m$ (proven in Step II), for any desired degree of differentiability $r$, one can select an $m$ such that the embedding holds.
 
 $$
 f_k \in \bigcap_{r=0}^\infty C^r(M) \equiv C^\infty(M).
@@ -498,6 +502,15 @@ Any singularity or discontinuity in the metric $g$ would necessarily induce a co
 Q.E.D.
 
 ---
+
+---
+
+### 12.1.5.2 Commentary: Physical Significance {#12.1.5.2}
+
+:::info[**Physical Significance of Smoothness via Elliptic Regularity**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 12.1.6 Proof: Smooth Manifold Limit {#12.1.6}
 
@@ -520,7 +533,7 @@ $$
 By the **Reifenberg Metric Regularity Theorem** (Cheeger-Colding), a metric measure space satisfying Ahlfors 4-regularity and the Poincaré inequality, and whose heat kernel exhibits Euclidean asymptotic behavior, is homeomorphic to a topological manifold $M$. Thus, the limit space $X$ is a topological 4-manifold.
 
 **III. Construction of the Differentiable Structure**
-The limit eigenfunctions $\{f_k\}_{k=1}^\infty$ form a complete orthonormal basis for $L^2(M)$. From the **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />, these functions are $C^\infty$-smooth. We define the **Spectral Embedding** map $\Phi_K: M \to \mathbb{R}^K$ by:
+The limit eigenfunctions $\{f_k\}_{k=1}^\infty$ form a complete orthonormal basis for $L^2(M)$. From the **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />, these functions are $C^\infty$-smooth. we compute the **Spectral Embedding** map $\Phi_K: M \to \mathbb{R}^K$ by:
 
 $$
 \Phi_K(x) = (f_1(x), f_2(x), \dots, f_K(x)).
@@ -626,18 +639,18 @@ The Tensorial Averaging Map performs this alchemy by exploiting **Directional St
 
 Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Ahlfors 4-Regularity** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
 
-**Claim:** The sequence of tensor fields $\widetilde{\mathcal{S}}^{(t)}$ constructed via the **Tensorial Averaging Map** converges in the weak distributional sense to a smooth, symmetric (0,2)-tensor field $S_{\mu\nu}$ on the limit manifold $M$. Explicitly, for any smooth, compactly supported test tensor field $\phi^{\mu\nu} \in C_c^\infty(M, TM \otimes TM)$, the duality pairing satisfies:
+### 12.2.2.1 Commentary: Argument Outline {#12.2.2.1}
+
+:::tip[**Structure of the Tensorial Continuum Limit Argument via Tangent Bundle Isotropy, Riemann Sum Convergence, and Equation Transfer**]
+:::
+
+**Claim:** The sequence of tensor fields $\widetilde{\mathcal{S}}^{(t)}$ constructed via the **Tensorial Averaging Map** converges in the weak distributional sense to a smooth, symmetric (0,2)-tensor field $S_{\mu\nu}$ on the limit manifold $M$. Explicitly, for any smooth, compactly supported test tensor field $\phi^{\mu\nu} \in C_c^\infty(M, TM \otimes TM)$, the duality pairing satisfies:.
 
 $$
 \lim_{t \to \infty} \left| \int_M \widetilde{\mathcal{S}}_{ij}^{(t)}(x) \phi^{ij}(x) \, dV_t - \int_M S_{\mu\nu}(x) \phi^{\mu\nu}(x) \, dV_g \right| = 0.
 $$
 
 The limit tensor field $S_{\mu\nu}$ is locally proportional to the metric tensor $g_{\mu\nu}$, characterized by $S_{\mu\nu}(x) = \frac{1}{d} \mathbb{E}_x[\mathcal{S}] g_{\mu\nu}(x)$, where $\mathbb{E}_x[\mathcal{S}]$ is the local scalar expectation. This convergence guarantees that the algebraic structure of the discrete field equations is preserved in the continuum limit.
-
-### 12.2.2.1 Commentary: Argument Outline {#12.2.2.1}
-
-:::tip[**Structure of the Tensorial Continuum Limit Argument via Tangent Bundle Isotropy, Riemann Sum Convergence, and Equation Transfer**]
-:::
 
 The proof proceeds via Direct Construction, mapping discrete edge-level equations to continuous symmetric tensor fields on the tangent bundle.
 
@@ -667,35 +680,37 @@ The proof proceeds via Direct Construction, mapping discrete edge-level equation
 :::info[**Weak Convergence of Empirical Edge Direction Distributions to the Uniform Haar Measure on the Tangent Bundle**]
 :::
 
-Let $x \in M$ be a point on the limit manifold, and let $B_t(x, R_t)$ be a sequence of mesoscopic balls in $G_t$ with radius $R_t$ satisfying $\ell_0 \ll R_t \ll \operatorname{inj}(M)$. Let $E_{x,R}^{(t)} = \{e \in E_t : m_e \in B_t(x, R_t)\}$ be the set of edges localized within the ball.
+Let $x \in M$ be a point on the limit manifold, and let $B_t(x, R_t)$ be a sequence of mesoscopic balls in $G_t$ with radius $R_t$ satisfying $\ell_0 \ll R_t \ll \operatorname{inj}(M)$.
 
-The empirical probability measure $\mu_{x,R}^{(t)}$ defined on the unit tangent sphere $S^{d-1} \subset T_x M$ by the spectral embedding of edge directions:
+### 12.2.3.1 Proof: Directional Measures {#12.2.3.1}
+
+:::tip[**Establishment of Isotropic Mixing via Spectral Concentration and the Wasserstein Bound for Manifold-Valued Random Fields**]
+:::
+
+Let $E_{x,R}^{(t)} = \{e \in E_t : m_e \in B_t(x, R_t)\}$ be the set of edges localized within the ball.
+
+The empirical probability measure $\mu_{x,R}^{(t)}$ defined on the unit tangent sphere $S^{d-1} \subset T_x M$ by the spectral embedding of edge directions:.
 
 $$
 \mu_{x,R}^{(t)} = \frac{1}{|E_{x,R}^{(t)}|} \sum_{e \in E_{x,R}^{(t)}} \delta_{\hat{n}_e}
 $$
 
-converges weakly to the normalized Haar measure $\sigma$ on $S^{d-1}$ as $t \to \infty$. Specifically, for the Wasserstein-1 transport distance $W_1$, the convergence rate is:
+converges weakly to the normalized Haar measure $\sigma$ on $S^{d-1}$ as $t \to \infty$. Specifically, for the Wasserstein-1 transport distance $W_1$, the convergence rate is:.
 
 $$
 W_1(\mu_{x,R}^{(t)}, \sigma) \leq C \left( R_t^{-d} + N_t^{-1} \log N_t \right)
 $$
 
-where $d=4$ is the emergent dimension. This convergence implies that for any Lipschitz continuous function $f: S^{d-1} \to \mathbb{R}$, the expectation satisfies:
+where $d=4$ is the emergent dimension. This convergence implies that for any Lipschitz continuous function $f: S^{d-1} \to \mathbb{R}$, the expectation satisfies:.
 
 $$
 \left| \int_{S^{d-1}} f(\xi) \, d\mu_{x,R}^{(t)}(\xi) - \int_{S^{d-1}} f(\xi) \, d\sigma(\xi) \right| \xrightarrow{t \to \infty} 0.
 $$
 
-### 12.2.3.1 Proof: Haar Measure Convergence {#12.2.3.1}
-
-:::tip[**Establishment of Isotropic Mixing via Spectral Concentration and the Wasserstein Bound for Manifold-Valued Random Fields**]
-:::
-
 **I. Measure Theoretic Formulation**
 Let $(M, g)$ be the limit manifold. Fix a base point $x \in M$ and consider the mesoscopic ball $B(x, R)$ with radius satisfying $\ell_0 \ll R \ll \text{inj}(M)$, where $\text{inj}(M)$ is the injectivity radius. Let $S_x M \cong S^{d-1}$ be the unit tangent sphere at $x$.
 
-For each edge $e \in E_{x,R}^{(t)}$ with midpoint $m_e$, let $v_e \in T_{m_e}M$ be the tangent vector corresponding to the spectral embedding. Since $R < \text{inj}(M)$, there exists a unique minimizing geodesic $\gamma$ connecting $m_e$ to $x$ lying entirely within the normal neighborhood. We define the random variable $X_e$ on $S_x M$ by parallel transport $P_\gamma$:
+For each edge $e \in E_{x,R}^{(t)}$ with midpoint $m_e$, let $v_e \in T_{m_e}M$ be the tangent vector corresponding to the spectral embedding. Since $R < \text{inj}(M)$, there exists a unique minimizing geodesic $\gamma$ connecting $m_e$ to $x$ lying entirely within the normal neighborhood. we compute the random variable $X_e$ on $S_x M$ by parallel transport $P_\gamma$:
 
 $$
 X_e = P_{\gamma}^{m_e \to x}\left(\frac{v_e}{\|v_e\|}\right) \in S_x M.
@@ -722,7 +737,7 @@ $$
 This satisfies the strong mixing condition ($\alpha$-mixing), implying that the effective sample size $N_{eff} \approx N / \tau_{int}$ scales linearly with $N$.
 
 **IV. Error Decomposition**
-We analyze the convergence of the expectation $\mathbb{E}_{\mu_N}[f]$ for test functions $f \in C^2(S^{d-1})$. This class includes the quadratic forms $f(\xi) = \xi_i \xi_j$ required for tensor reconstruction. The total error $\mathcal{E} = |\mathbb{E}_{\mu_N}[f] - \mathbb{E}_{\sigma}[f]|$ decomposes into three physical components:
+we evaluate the convergence of the expectation $\mathbb{E}_{\mu_N}[f]$ for test functions $f \in C^2(S^{d-1})$. This class includes the quadratic forms $f(\xi) = \xi_i \xi_j$ required for tensor reconstruction. The total error $\mathcal{E} = |\mathbb{E}_{\mu_N}[f] - \mathbb{E}_{\sigma}[f]|$ decomposes into three physical components:
 
 $$
 \mathcal{E} \leq \mathcal{E}_{geom} + \mathcal{E}_{stat} + \mathcal{E}_{corr}
@@ -836,18 +851,20 @@ Physically, this means the "grain" of the discrete spacetime is randomized. Ther
 :::info[**Convergence of the Discrete Tensorial Average to the Metric-Proportional Spherical Integral**]
 :::
 
-Let $\mathcal{S}_e$ be a locally isotropic scalar field on the graph, such that $\mathcal{S}_e \approx \bar{\mathcal{S}}(x)$ for edges within $B(x,R)$ with vanishing local variance. The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$. Specifically, as $N_t \to \infty$:
+Let $\mathcal{S}_e$ be a locally isotropic scalar field on the graph, such that $\mathcal{S}_e \approx \bar{\mathcal{S}}(x)$ for edges within $B(x,R)$ with vanishing local variance.
+
+### 12.2.4.1 Proof: Riemann Sum Approximation {#12.2.4.1}
+
+:::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
+:::
+
+The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$. Specifically, as $N_t \to \infty$:.
 
 $$
 \lim_{t \to \infty} \left\| \widetilde{\mathcal{S}}_{ij}^{(t)}(x) - \frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}(x) \right\| \leq O(R^{-2} + N_t^{-1/2}).
 $$
 
 The factor $1/d$ (where $d=4$) arises from the projection of the scalar magnitude onto the orthonormal basis of the tangent space via the spherical integral $\int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi) = \frac{1}{d} \delta_{ij}$. The convergence rate is dominated by the statistical variance of the directional sampling, $O(R^{-2})$, while the scalar concentration contributes a subleading term $O(N_t^{-1/2})$.
-
-### 12.2.4.1 Proof: Integral Convergence {#12.2.4.1}
-
-:::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
-:::
 
 **I. Reduction to Spherical Integral**
 By the **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, the empirical measure $\mu_{x,R}^{(t)}$ approximates the Haar measure $\sigma$. For the tensorial projection $\xi_i \xi_j$, the discrete sum approximates the integral:
@@ -975,7 +992,7 @@ $$
 
 The macroscopic coupling constant $\kappa'$ is related to the microscopic coupling $\kappa$ by the dimensional renormalization factor arising from the spherical averaging, $\kappa' = \kappa \cdot \frac{\ell_0^d}{V_{cell}}$, ensuring the preservation of the linear algebraic relationship between geometry and matter content across the scale transition.
 
-### 12.2.5.1 Proof: Equation Limit {#12.2.5.1}
+### 12.2.5.1 Proof: EFE Convergence {#12.2.5.1}
 
 :::tip[**Verification of the Algebraic Preservation of the Field Equation Structure under the Pointwise Limits of the Coarse-Graining Operator**]
 :::
@@ -1021,13 +1038,24 @@ Q.E.D.
 
 ---
 
+---
+
+### 12.2.5.2 Commentary: Physical Significance {#12.2.5.2}
+
+:::info[**Physical Significance of EFE Convergence**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 
 :::tip[**Synthesis of Weak Convergence Arguments using the Dominated Convergence Theorem**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />.
+ This synthesis proof utilizes the structural results established in supporting **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />.
 **I. Construction of the Test Functional**
-Let $\phi^{\mu\nu} \in C_c^\infty(M)$ be a smooth test tensor with compact support $K$ and bound $C_\phi$. We define the integrated pairing functional:
+Let $\phi^{\mu\nu} \in C_c^\infty(M)$ be a smooth test tensor with compact support $K$ and bound $C_\phi$. we compute the integrated pairing functional:
 
 $$
 I^{(t)} = \int_M \widetilde{\mathcal{G}}_{ij}^{(t)}(x) \phi^{ij}(x) \, dV_t(x).
@@ -1127,20 +1155,20 @@ The **Causal Wedge** represents the "allowed" directions for information flow. I
 :::info[**Derivation of the Lorentzian Metric Signature from the Anisotropy of Causal Flux**]
 :::
 
-Let $M$ be the limit manifold of a sequence of causal graphs $\{G_t\}$ in QBD equilibrium. The effective metric tensor $g_{\mu\nu}$ induced by the graph dynamics possesses a **Lorentzian signature** $(-, +, +, +)$ everywhere on $M$.
+Let the effective metric tensor $g_{\mu\nu}$ induced by the graph dynamics on the limit manifold $M$ satisfy the condition that it possesses a **Lorentzian signature** $(-, +, +, +)$ everywhere.
 
-Specifically, there exists a globally defined, nowhere-vanishing timelike vector field $u^\mu$ (the "drift vector") such that the metric decomposes as:
+### 12.3.2.1 Commentary: Argument Outline {#12.3.2.1}
+
+:::tip[**Structure of the Lorentz Signature Emergence Argument via Causal Drift, Null Boundary Definition, and Signature Synthesis**]
+:::
+
+Specifically, there exists a globally defined, nowhere-vanishing timelike vector field $u^\mu$ (the "drift vector") such that the metric decomposes as:.
 
 $$
 g_{\mu\nu} = -u_\mu u_\nu + h_{\mu\nu}
 $$
 
 where $h_{\mu\nu}$ is the positive-definite Riemannian metric derived in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" />, acting on the spatial hypersurface orthogonal to $u^\mu$. This signature is not an ansatz but a derived consequence of the fact that the covariance of directed edges differs in sign along the flow of causality compared to the transverse directions, selecting a unique time axis at every point.
-
-### 12.3.2.1 Commentary: Argument Outline {#12.3.2.1}
-
-:::tip[**Structure of the Lorentz Signature Emergence Argument via Causal Drift, Null Boundary Definition, and Signature Synthesis**]
-:::
 
 The argument proceeds via Direct Construction, reconciling the spatial isotropy with the temporal orientation to yield the hyperbolic signature.
 
@@ -1166,18 +1194,20 @@ The argument proceeds via Direct Construction, reconciling the spatial isotropy 
 :::info[**Existence of a Non-Vanishing Mean Drift Vector Field Induced by Irreversible Graph Updates**]
 :::
 
-Let $\vec{e} \in T_x M$ denote the vector representation of a directed edge $e=(u,v)$ in the tangent space. Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:
+Let $\vec{e} \in T_x M$ be the vector representation of a directed edge $e=(u,v)$ in the tangent space.
+
+### 12.3.3.1 Proof: Causal Drift {#12.3.3.1}
+
+:::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
+:::
+
+Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:.
 
 $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\vec{e}] \neq 0.
 $$
 
 The vector field $D^\mu$ is the **Causal Drift**. It defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
-
-### 12.3.3.1 Proof: Drift Non-Vanishing {#12.3.3.1}
-
-:::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
-:::
 
 **I. Directed Edge Projection**
 Let $\phi: G_t \to M$ be the spectral embedding. For a causal edge $e=(u,v)$, the logical depth satisfies $L(v) \geq L(u) + 1$. The tangent vector is defined as the limit of the secant:
@@ -1234,18 +1264,18 @@ The **Drift Vector** $D^\mu$ represents the average direction in which the graph
 :::info[**Boundedness of the Edge Direction Distribution Defining the Causal Aperture**]
 :::
 
-The support of the directed edge measure $\mu_x$ is strictly contained within a cone of aperture $\Theta_c < \pi/2$ centered on the drift vector $D^\mu$.
+Given the system, the support of the directed edge measure $\mu_x$ is strictly contained within a cone of aperture $\Theta_c < \pi/2$ centered on the drift vector $D^\mu$, satisfying $\text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}$.
+
+### 12.3.4.1 Proof: Null Boundary {#12.3.4.1}
+
+:::tip[**Establishment of the Causal Cone via Lieb-Robinson Bounds on the Graph**]
+:::
 
 $$
 \text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}.
 $$
 
 This angular bound $\Theta_c$ corresponds to the maximum speed of information propagation (the "speed of light") relative to the mean drift speed. The boundary of this support, $\partial \mathcal{C}_x$, forms the Null Cone structure required for Lorentzian geometry.
-
-### 12.3.4.1 Proof: Finite Propagation Speed {#12.3.4.1}
-
-:::tip[**Establishment of the Causal Cone via Lieb-Robinson Bounds on the Graph**]
-:::
 
 **I. Speed Limit Definition**
 Define the propagation speed $c_g$ on the graph as the ratio of geodesic distance to logical depth difference:
@@ -1292,8 +1322,10 @@ If the graph were "fully connected" (every node linked to every other node), inf
 :::tip[**Derivation of the $(-+++)$ Signature via the Quadratic Form of the Causal Propagator**]
 :::
 
+ This synthesis proof utilizes the structural results established in supporting **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />.
+ This synthesis proof utilizes the structural results established in supporting **Null Boundary** <Ref id="12.3.4" label="§12.3.4" />.
 **I. The Causal Propagator Construction**
-To capture the full spacetime geometry, we analyze the second moment tensor of the *directed* edge distribution, termed the Causal Propagator $P^{\mu\nu}$. Unlike the undirected averaging in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" /> which yielded the identity $\delta^{\mu\nu}$, the directed propagator integrates only over the causal wedge:
+To capture the full spacetime geometry, we evaluate the second moment tensor of the *directed* edge distribution, termed the Causal Propagator $P^{\mu\nu}$. Unlike the undirected averaging in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" /> which yielded the identity $\delta^{\mu\nu}$, the directed propagator integrates only over the causal wedge:
 
 $$
 P^{\mu\nu} = \int_{\mathcal{C}_x} v^\mu v^\nu \, d\mu_x(v).
@@ -1321,7 +1353,7 @@ $$
 
 **IV. Result: The Sign Flip**
 Since the geometric terms $\cos^2 \Theta_c$ and $\sin^2 \Theta_c$ are strictly positive real numbers, the equation $A + B = 0$ necessitates that $g_{00}$ and $g_{ii}$ have **opposite algebraic signs**.
-We conventionally assign the positive sign to the spatial components $g_{ii}$ to match the Riemannian spatial metric $h_{ij}$ derived in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" />. This choice *forces* the temporal component $g_{00}$ to be negative:
+conventionally assign the positive sign to the spatial components $g_{ii}$ to match the Riemannian spatial metric $h_{ij}$ derived in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" />. This choice *forces* the temporal component $g_{00}$ to be negative:
 
 $$
 g_{00} = - g_{ii} \tan^2 \Theta_c.

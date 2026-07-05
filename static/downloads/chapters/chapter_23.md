@@ -30,41 +30,71 @@ The **Discrete Gradient** replaces the continuous derivative in the fundamental 
 :::info[**Derivation of Classical Covariant Derivatives from Large-Number Graph Limit**]
 :::
 
-*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (**Tensorial Reorganization** <Ref id="12.2" label="§12.2" />).
+Given the conditions of **Hydrodynamic Limit**, **Covariant Emergence**, and **Statistical Continuity**, the properties of Derivation of Classical Covariant Derivatives from Large-Number Graph Limit are established.
+
+---*   **Hydrodynamic Limit:** As the number of vertices $N \to \infty$ and the edge length scales relative to the system size ($\ell_0 \to 0$), the discrete graph converges to a smooth Riemannian manifold with metric $g_{\mu\nu}$ (**Tensorial Reorganization** <Ref id="12.2" label="§12.2" />).
 *   **Covariant Emergence:** The discrete edge difference operator $\nabla_e$ converges mathematically to the classical covariant derivative $\nabla_\mu$ along the directional unit vector.
 *   **Statistical Continuity:** Continuous differential equations are not fundamental laws, but the coarse-grained thermodynamic limits of these discrete graph updates.
 
 ---
+
+### 23.1.2.1 Commentary: Argument Outline {#23.1.2.1}
+
+:::tip[**Structure of the Multi-Part Proof**]
+:::
+
+The derivation of **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
 
 ### 23.1.3 Lemma: Integration Representation {#23.1.3}
 
 :::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
 
-*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
+Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as Count**, the properties of Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals are established.
+
+---*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
 *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral:
     $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$
 *   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
-
----
 
 ### 23.1.3.1 Proof: Integration Representation {#23.1.3.1}
 
 :::tip[**Verification of Integral Convergence through Statistical Analysis of Thermodynamic Limits**]
 :::
 
-*   **Measure Convergence:** The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
-*   **Thermodynamic Integration:** Using the Law of Large Numbers, it proves that the discrete cycle sum approaches the Riemann integral with probability 1 as $N \to \infty$, verifying that continuous integration is the statistical limit of counting.
+**I. Measure Convergence**
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
 
----
+**II. Thermodynamic Integration**
+Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
+
+**III. Convergence Limit**
+It proves that the sum approaches the Riemann integral with probability 1 as $N \to \infty$, verifying that continuous integration is the statistical limit of counting.
+
+Q.E.D.
+
+### 23.1.3.2 Commentary: Physical Significance {#23.1.3.2}
+
+:::info[**Physical Significance of Integration Representation**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Integration Representation** <Ref id="23.1.3" label="§23.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 23.1.4 Proof: Combinatorial Limit {#23.1.4}
 
 :::tip[**Verification of Covariant Derivative Emergence by Integration of Discrete Difference Scales**]
 :::
 
-*   **Manifold Projection:** The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
-*   **Limit Evaluation:** By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
+**I. Manifold Projection**
+The proof constructs the projection of the discrete edge difference onto the tangent space of the emergent manifold.
+
+**II. Scale Integration**
+The integration of discrete difference scales is consistent with the continuous measure convergence established in **Integration Representation** <Ref id="23.1.3" label="§23.1.3" />.
+
+**III. Limit Evaluation**
+By evaluating the limit as the correlation length $\xi \gg \ell_0$, it shows that the discrete error terms vanish as $O(\ell_0^2/L^2)$, mathematically proving that the discrete gradient converges to the covariant derivative.
+
+Q.E.D.
 
 ---
 
@@ -90,11 +120,11 @@ If the universe is fundamentally a self-correcting computational graph, then its
 :::info[**Derivation of Prebiotic Chirality Biases from Parity-Violating Braid Energy Functionals**]
 :::
 
-*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, **Metric & Motion** <Ref id="14.2" label="§14.2" />), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
+Given the conditions of **Parity Violation**, **Chiral Seed**, and **Macroscopic Amplification**, the properties of Derivation of Prebiotic Chirality Biases from Parity-Violating Braid Energy Functionals are established.
+
+---*   **Parity Violation:** In Chapter 7, we proved that the Braid Energy Functional is chiral. Due to the causal arrow of time (timestamp monotonicity, **Metric & Motion** <Ref id="14.2" label="§14.2" />), the energy cost of forming Left-handed knots is slightly lower than Right-handed knots: $\Delta E \neq 0$.
 *   **Chiral Seed:** This Braid CP violation creates a tiny microscopic energy difference ($\Delta E \sim 10^{-17} kT$) between L- and D-enantiomers.
 *   **Macroscopic Amplification:** In chaotic prebiotic conditions, this minute microscopic bias is amplified through autocatalytic feedback networks, selecting L-amino acids as a geometric necessity of the vacuum's chiral twist rather than a "frozen accident."
-
----
 
 ### 23.2.3 Proof: Chiral Vacuum Bias {#23.2.3}
 
@@ -102,7 +132,7 @@ If the universe is fundamentally a self-correcting computational graph, then its
 :::
 
 *   **Autocatalytic Integration:** The proof constructs the Frank model differential equations for prebiotic autocatalysis coupled with the microscopic energy difference $\Delta E$.
-*   **Bifurcation Analysis:** It solves the bifurcation dynamics, demonstrating that the L-handed state is the globally stable attractor, proving that life's homochirality is a macroscopic reflection of the vacuum's parity-violating pre-geometric structure.
+*   **Bifurcation Analysis:** It solves the bifurcation dynamics, demonstrating that the L-handed state is the globally stable attractor, proving that life's homochirality is a macroscopic reflection of the vacuum's parity-violating pre-geometric structure. Q.E.D.
 
 ---
 
@@ -117,11 +147,11 @@ The Standard Model gauge symmetries are often treated as fundamental postulates 
 :::info[**Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry**]
 :::
 
-*   **Braid Gauge Sectors:** In Chapter 8 and Chapter 9, the Standard Model gauge groups ($SU(3) \times SU(2) \times U(1)$) were derived as topological braid rewrite symmetries.
+Given the conditions of **Braid Gauge Sectors**, **Triple Fusion Complexity**, and **E8 Emergence**, the properties of Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry are established.
+
+---*   **Braid Gauge Sectors:** In Chapter 8 and Chapter 9, the Standard Model gauge groups ($SU(3) \times SU(2) \times U(1)$) were derived as topological braid rewrite symmetries.
 *   **Triple Fusion Complexity:** Consider the macroscopic fusion of the three fundamental braid sectors (Color, Weak, and Hypercharge) into a single, unified topological framework.
 *   **E8 Emergence:** The combinatorial growth of this unified algebra converges toward the largest exceptional Lie group, $E_8$. $E_8$ is not a primitive starting point, but the inevitable holographic destination of the graph's complexity growth as the number of nodes $N \to \infty$.
-
----
 
 ### 23.3.2 Proof: Chiral Triple Fusion {#23.3.2}
 
@@ -129,4 +159,4 @@ The Standard Model gauge symmetries are often treated as fundamental postulates 
 :::
 
 *   **Algebra Dimension Growth:** The proof calculates the dimension growth of the coupled generators of the three braid sectors.
-*   **Convergence Verification:** It demonstrates that the dimension of the coupled braid symmetries converges to exactly 248 dimensions under triple sector entanglement, mathematically validating the holographic $E_8$ convergence limit and illustrating that extreme mathematical symmetries are emergent structures.
+*   **Convergence Verification:** It demonstrates that the dimension of the coupled braid symmetries converges to exactly 248 dimensions under triple sector entanglement, mathematically validating the holographic $E_8$ convergence limit and illustrating that extreme mathematical symmetries are emergent structures. Q.E.D.
