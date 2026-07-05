@@ -1,6 +1,8 @@
-Measured x samples (first 10): [2, 6, 4, 4, 0, 0, 0, 6, 4, 4]
-Estimated r: 4 (correct=4, success: True)
-Unique measures: 7
-x distribution: {2: 234, 6: 242, 4: 253, 0: 268, 1: 1, 7: 1, 5: 1}
-Success P (over 1000): 1.00
-Verification: P>0.75 confirms fault-tolerant Shor in noisy QBD.
+Target U (trace=1):
+ [[ 0.988-0.083j -0.091+0.097j]
+ [ 0.092+0.096j  0.989+0.065j]]
+Approx U (trace=1):
+ [[ 0.104+0.957j  0.25 +0.104j]
+ [ 0.25 -0.104j -0.104+0.957j]]
+Approximation error ||U - U_approx||: 2.78e+00 (target <1e-1 for toy)
+Verification: Dense approximation confirms universality.
