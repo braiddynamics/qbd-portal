@@ -113,10 +113,20 @@ Given the conditions of **Vorticity-Stress Coupling**, **Viscosity Amplification
 
 ### 24.4.1.1 Commentary: Argument Outline {#24.4.1.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Smart Viscosity Argument via Quantum Cutoff and Exponential Dissipation**]
 :::
 
-The derivation of **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> proceeds by construction, establishing that the discrete Planck-scale structure imposes a hard cutoff on fluid velocity divergences, while the exponential scaling of effective viscosity with vorticity prevents finite-time blow-ups.
+
+```text
+• 24.4.1 Theorem Smart Viscosity  [by construction]
+│
+├── 24.4.2 Lemma: Quantum Cutoff
+│   ├── 24.4.2.1 Proof: Quantum Cutoff
+│   └── 24.4.2.2 Commentary: Physical Significance
+│
+└── 24.4.3 Proof: Smart Viscosity
+```
 
 ### 24.4.2 Lemma: Quantum Cutoff {#24.4.2}
 

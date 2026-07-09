@@ -40,10 +40,20 @@ Given the conditions of **Hydrodynamic Limit**, **Covariant Emergence**, and **S
 
 ### 23.1.2.1 Commentary: Argument Outline {#23.1.2.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Combinatorial Limit Argument via Integration Representation and Covariant Derivative Convergence**]
 :::
 
-The derivation of **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> proceeds by limits, establishing that discrete cycle sums and edge difference operators converge, in the thermodynamic limit, to the continuous Riemann integrals and covariant derivatives of classical field theory.
+
+```text
+• 23.1.2 Theorem Combinatorial Limit  [by limits]
+│
+├── 23.1.3 Lemma: Integration Representation
+│   ├── 23.1.3.1 Proof: Integration Representation
+│   └── 23.1.3.2 Commentary: Physical Significance
+│
+└── 23.1.4 Proof: Combinatorial Limit
+```
 
 ### 23.1.3 Lemma: Integration Representation {#23.1.3}
 

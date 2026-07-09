@@ -64,12 +64,7 @@ For any sequence of causal graphs $\{G_t\}$ converging in the Gromov-Hausdorff s
 :::tip[**Structure of the Smooth Riemannian Limit Argument via Spectral Convergence, Heat Kernel Asymptotics, and Smoothness Bootstrapping**]
 :::
 
-Specifically:
-1. **Eigenvalue Convergence:** The discrete eigenvalues $\tilde{\lambda}_k^{(t)}$ converge uniformly to the continuum eigenvalues $\lambda_k$ of $-\Delta_g$. 2. **Eigenfunction Convergence:** The discrete eigenfunctions $\psi_k^{(t)}$ converge in $L^2(M)$ to the continuum eigenfunctions $f_k$.
-
-This convergence implies that the limit space $M$ admits a smooth differentiable structure and a Riemannian metric $g$ with $C^\infty$ regularity, derived via elliptic regularity theorems from the smooth eigenfunctions.
-
-The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold. This strategy leverages the deep correspondence between the spectrum of the Laplacian and the metric geometry, effectively reconstructing the manifold structure from the "sound" of the graph.
+The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold.
 
 ```text
 • 12.1.2 Theorem Smooth Manifold Limit  [by limits]
@@ -644,14 +639,6 @@ Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the *
 :::tip[**Structure of the Tensorial Continuum Limit Argument via Tangent Bundle Isotropy, Riemann Sum Convergence, and Equation Transfer**]
 :::
 
-**Claim:** The sequence of tensor fields $\widetilde{\mathcal{S}}^{(t)}$ constructed via the **Tensorial Averaging Map** converges in the weak distributional sense to a smooth, symmetric (0,2)-tensor field $S_{\mu\nu}$ on the limit manifold $M$. Explicitly, for any smooth, compactly supported test tensor field $\phi^{\mu\nu} \in C_c^\infty(M, TM \otimes TM)$, the duality pairing satisfies:.
-
-$$
-\lim_{t \to \infty} \left| \int_M \widetilde{\mathcal{S}}_{ij}^{(t)}(x) \phi^{ij}(x) \, dV_t - \int_M S_{\mu\nu}(x) \phi^{\mu\nu}(x) \, dV_g \right| = 0.
-$$
-
-The limit tensor field $S_{\mu\nu}$ is locally proportional to the metric tensor $g_{\mu\nu}$, characterized by $S_{\mu\nu}(x) = \frac{1}{d} \mathbb{E}_x[\mathcal{S}] g_{\mu\nu}(x)$, where $\mathbb{E}_x[\mathcal{S}]$ is the local scalar expectation. This convergence guarantees that the algebraic structure of the discrete field equations is preserved in the continuum limit.
-
 The proof proceeds via Direct Construction, mapping discrete edge-level equations to continuous symmetric tensor fields on the tangent bundle.
 
 ```text
@@ -1161,14 +1148,6 @@ Let the effective metric tensor $g_{\mu\nu}$ induced by the graph dynamics on th
 
 :::tip[**Structure of the Lorentz Signature Emergence Argument via Causal Drift, Null Boundary Definition, and Signature Synthesis**]
 :::
-
-Specifically, there exists a globally defined, nowhere-vanishing timelike vector field $u^\mu$ (the "drift vector") such that the metric decomposes as:.
-
-$$
-g_{\mu\nu} = -u_\mu u_\nu + h_{\mu\nu}
-$$
-
-where $h_{\mu\nu}$ is the positive-definite Riemannian metric derived in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" />, acting on the spatial hypersurface orthogonal to $u^\mu$. This signature is not an ansatz but a derived consequence of the fact that the covariance of directed edges differs in sign along the flow of causality compared to the transverse directions, selecting a unique time axis at every point.
 
 The argument proceeds via Direct Construction, reconciling the spatial isotropy with the temporal orientation to yield the hyperbolic signature.
 

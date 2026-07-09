@@ -28662,7 +28662,73 @@ Section 16.1.2 formalizes the properties of the QBD theorem regarding ryu-takaya
 
 ---
 
-### 16.1.3 Lemma: Isometry Condition {#16.1.3}
+### 16.1.3 Lemma: Min-Cut Entropy Identity {#16.1.3}
+
+:::info[**Equivalence of Boundary Entropy and Bulk Cut Capacity**]
+:::
+
+For any boundary subregion $A \subset \partial G$ and any tensor network $\mathcal{T}$ composed of unitary and isometric local tensors, the von Neumann entropy $S(\rho_A)$ of the reduced boundary state is exactly equal to the minimum cut capacity through the bulk graph.
+
+**In Plain English:**  
+Section 16.1.3 formalizes the properties of the QBD lemma regarding min-cut entropy identity.
+
+---
+
+### 16.1.3.1 Proof: Min-Cut Entropy Identity {#16.1.3.1}
+
+:::tip[**Direct Construction via Schmidt Rank Saturation at the Minimal Cut Surface**]
+:::
+
+Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$.
+
+$$
+S(\rho_A) = \min_{\gamma} |\text{Cut}(\gamma)| \cdot \ln \chi
+$$
+
+**I. Schmidt Decomposition across an Arbitrary Cut**
+
+Consider any bulk surface $\gamma$ partitioning $\mathcal{T}$ into a left subnetwork $\mathcal{T}_A$ feeding region $A$ and a right subnetwork $\mathcal{T}_{A^c}$ feeding its complement. The boundary state $|\Psi_\partial\rangle$ admits a Schmidt decomposition across the virtual indices of $\gamma$:
+
+$$
+|\Psi_\partial\rangle = \sum_{k=1}^{\chi^{|\text{Cut}(\gamma)|}} \lambda_k \, |\phi_k^A\rangle \otimes |\phi_k^{A^c}\rangle
+$$
+
+where $\{|\phi_k^A\rangle\}$ and $\{|\phi_k^{A^c}\rangle\}$ are orthonormal sets in $\mathcal{H}_A$ and $\mathcal{H}_{A^c}$ respectively, and $\lambda_k \ge 0$ are Schmidt coefficients.
+
+**II. Entropy Upper Bound from Cut Capacity**
+
+The von Neumann entropy of the reduced state $\rho_A = \text{Tr}_{A^c}(|\Psi_\partial\rangle\langle\Psi_\partial|)$ is bounded by the logarithm of the Schmidt rank $r \le \chi^{|\text{Cut}(\gamma)|}$:
+
+$$
+S(\rho_A) = -\sum_k \lambda_k^2 \ln \lambda_k^2 \le \ln r \le |\text{Cut}(\gamma)| \cdot \ln \chi
+$$
+
+Since this bound holds for every admissible surface $\gamma$ anchored to $\partial A$, it holds in particular for the surface minimizing the right-hand side:
+
+$$
+S(\rho_A) \le \min_{\gamma} |\text{Cut}(\gamma)| \cdot \ln \chi
+$$
+
+**III. Saturation via Uniform Schmidt Spectrum**
+
+For tensor networks constructed exclusively from unitary disentanglers ($u^\dagger u = I$) and isometric coarse-grainers ($w^\dagger w = I$), contraction of any subnetwork $\mathcal{T}_A$ across its virtual boundary yields an isometry on the code subspace. The isometric property forces the singular values of the reduced tensor across any cut to be uniformly distributed: $\lambda_k = \chi^{-|\text{Cut}|/2}$ for all $k = 1, \ldots, \chi^{|\text{Cut}|}$. Substituting into the entropy formula saturates the bound exactly:
+
+$$
+S(\rho_A) = -\chi^{|\text{Cut}|} \cdot \chi^{-|\text{Cut}|} \cdot \ln\bigl(\chi^{-|\text{Cut}|}\bigr) = |\text{Cut}(\gamma_{min})| \cdot \ln \chi
+$$
+
+**IV. Conclusion**
+
+The entropy of any boundary subregion is determined exactly by the minimum number of virtual bonds separating it from the bulk complement, with each bond carrying $\ln \chi$ bits of entanglement capacity. The minimal cut surface $\gamma_{min}$ is the unique entanglement bottleneck of the holographic projection.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 16.1.3.1 formalizes the properties of the QBD proof regarding min-cut entropy identity.
+
+---
+
+### 16.1.4 Lemma: Isometry Condition {#16.1.4}
 
 :::info[**Establishment of the Unitary Equivalence between Bulk and Boundary Subspaces**]
 :::
@@ -28670,11 +28736,11 @@ Section 16.1.2 formalizes the properties of the QBD theorem regarding ryu-takaya
 Let **Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**.
 
 **In Plain English:**  
-Section 16.1.3 formalizes the properties of the QBD lemma regarding isometry condition.
+Section 16.1.4 formalizes the properties of the QBD lemma regarding isometry condition.
 
 ---
 
-### 16.1.3.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.3.1}
+### 16.1.4.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.4.1}
 
 :::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
@@ -28743,16 +28809,16 @@ Since the overlap $\langle \Psi_{bulk} | \Psi_{bulk} \rangle$ is invariant under
 Q.E.D.
 
 **In Plain English:**  
-Section 16.1.3.1 formalizes the properties of the QBD proof regarding unitarity of the coarse-graining map.
+Section 16.1.4.1 formalizes the properties of the QBD proof regarding unitarity of the coarse-graining map.
 
 ---
 
-### 16.1.4 Proof: Ryu-Takayanagi Correspondence {#16.1.4}
+### 16.1.5 Proof: Ryu-Takayanagi Correspondence {#16.1.5}
 
 :::tip[**Formal Verification of the Geometrization of Quantum Information**]
 :::
 
-This synthesis proof utilizes the structural results established in supporting **Isometry Condition** <Ref id="16.1.3" label="§16.1.3" />.
+This synthesis proof utilizes the structural results established in supporting **Min-Cut Entropy Identity** <Ref id="16.1.3" label="§16.1.3" /> and **Isometry Condition** <Ref id="16.1.4" label="§16.1.4" />.
 **I. The Information Theoretic Premise**
 Let the boundary state $|\Psi_{\partial}\rangle$ be a ground state of a critical Hamiltonian, efficiently represented by the tensor network $\mathcal{T}$ (**Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" />). The entanglement entropy of a boundary region $A$ is given by the von Neumann entropy of the reduced density matrix $\rho_A = \text{Tr}_{A^c}(|\Psi_{\partial}\rangle\langle\Psi_{\partial}|)$.
 
@@ -28788,16 +28854,16 @@ Thus, the geometric "Area" of the minimal surface in the bulk is physically iden
 Q.E.D.
 
 **In Plain English:**  
-Section 16.1.4 formalizes the properties of the QBD proof regarding ryu-takayanagi correspondence.
+Section 16.1.5 formalizes the properties of the QBD proof regarding ryu-takayanagi correspondence.
 
 ---
 
-### 16.1.4.1 Calculation: Cut-Capacity Verification {#16.1.4.1}
+### 16.1.5.1 Calculation: Cut-Capacity Verification {#16.1.5.1}
 
 :::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]
 :::
 
-Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.4" label="§16.1.4" /> is based on the following protocols:
+Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
@@ -28937,7 +29003,7 @@ Geometric Offset (k):             2.0000
 The tabulated data indicates a calculated entropy scaling of $S(L) \approx 1.00 \cdot \log_2(L) + 2.00$. This strictly logarithmic growth confirms that the bulk geometry constructed by the tensor network possesses negative curvature (Hyperbolic/AdS). If the geometry were flat (Euclidean grid), the cut would scale linearly or as a perimeter law. The reproduction of the logarithmic law confirms that the **Min-Cut** in the bulk graph correctly computes the **Entanglement Entropy** of the boundary CFT, validating the discrete Ryu-Takayanagi formula.
 
 **In Plain English:**  
-Section 16.1.4.1 formalizes the properties of the QBD calculation regarding cut-capacity verification.
+Section 16.1.5.1 formalizes the properties of the QBD calculation regarding cut-capacity verification.
 
 ---
 
@@ -29376,7 +29442,81 @@ Section 17.1.2 formalizes the properties of the QBD theorem regarding action equ
 
 ---
 
-### 17.1.3 Lemma: Confinement and Berry Phase {#17.1.3}
+### 17.1.3 Lemma: Geodesic Dominance of the Flux Chain {#17.1.3}
+
+:::info[**Uniqueness of the Minimal-Action Flux Configuration**]
+:::
+
+For any topological defect subject to the confinement constraint, the action-minimizing configuration of the flux chain connecting endpoints $x_A$ and $x_B$ is the directed geodesic path of length $d_{geo}(x_A, x_B)$.
+
+**In Plain English:**  
+Section 17.1.3 formalizes the properties of the QBD lemma regarding geodesic dominance of the flux chain.
+
+---
+
+### 17.1.3.1 Proof: Geodesic Dominance of the Flux Chain {#17.1.3.1}
+
+:::tip[**Reductio via Action Excess on Non-Minimal Paths**]
+:::
+
+Let $\mathcal{P}(x_A, x_B)$ denote the set of all directed paths $\gamma$ on the graph connecting endpoint $x_A$ to endpoint $x_B$, and let $\epsilon_{op}$ be the fundamental action cost per active graph edge.
+
+**I. Action Functional of the Flux Chain**
+
+The discrete action of any flux chain configuration $\gamma \in \mathcal{P}(x_A, x_B)$ is the aggregate cost of all active graph updates required to sustain the topological connection:
+
+$$
+S[\gamma] = |\gamma| \cdot \epsilon_{op}
+$$
+
+where $|\gamma|$ denotes the hop-count of the path. The geodesic distance $d_{geo}(x_A, x_B)$ is the minimum hop-count over all admissible paths:
+
+$$
+d_{geo}(x_A, x_B) = \min_{\gamma \in \mathcal{P}(x_A, x_B)} |\gamma|
+$$
+
+**II. Action Excess for Non-Geodesic Configurations**
+
+For any non-geodesic path $\gamma'$ satisfying $|\gamma'| > d_{geo}$, the action excess is:
+
+$$
+\Delta S[\gamma'] = (|\gamma'| - d_{geo}(x_A, x_B)) \cdot \epsilon_{op} > 0
+$$
+
+The path-integral amplitude for configuration $\gamma'$ in the Euclidean (Wick-rotated) regime is:
+
+$$
+\mathcal{A}[\gamma'] = e^{-S[\gamma']/\hbar} = e^{-|\gamma'| \cdot \epsilon_{op}/\hbar}
+$$
+
+The ratio of any non-geodesic amplitude to the geodesic amplitude is therefore strictly less than unity:
+
+$$
+\frac{\mathcal{A}[\gamma']}{\mathcal{A}[\gamma_{geo}]} = e^{-(|\gamma'| - d_{geo}) \cdot \epsilon_{op}/\hbar} < 1
+$$
+
+**III. Exponential Suppression in the Thermodynamic Limit**
+
+In the ordered phase of the vacuum graph, the mass-gap parameter $\mu = \epsilon_{op}/\hbar$ satisfies $\mu > 0$. For any non-minimal path with excess length $\Delta L = |\gamma'| - d_{geo} \ge 1$:
+
+$$
+\mathcal{A}[\gamma'] \le e^{-\mu} \cdot \mathcal{A}[\gamma_{geo}]
+$$
+
+In the thermodynamic limit where $\mu \Delta L \gg 1$, non-geodesic contributions vanish exponentially, in exact correspondence with the path-integral weight suppression established for bulk trajectories **Path Integral Dominance** <Ref id="15.2.2" label="§15.2.2" />.
+
+**IV. Conclusion**
+
+The minimum-action flux chain configuration is the directed geodesic, with action $S_{min} = d_{geo}(x_A, x_B) \cdot \epsilon_{op}$. All non-geodesic configurations are exponentially suppressed in the thermodynamic limit and contribute negligibly to the path integral. The flux chain length tracks the geodesic separation exactly.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 17.1.3.1 formalizes the properties of the QBD proof regarding geodesic dominance of the flux chain.
+
+---
+
+### 17.1.4 Lemma: Confinement and Berry Phase {#17.1.4}
 
 :::info[**Establishment of the Linear Potential via Topological Charge Conservation**]
 :::
@@ -29384,11 +29524,11 @@ Section 17.1.2 formalizes the properties of the QBD theorem regarding action equ
 For any separated pair of topological defects, the interaction potential $V(r)$ is bounded by a linear function of their separation distance $r$.
 
 **In Plain English:**  
-Section 17.1.3 formalizes the properties of the QBD lemma regarding confinement and berry phase.
+Section 17.1.4 formalizes the properties of the QBD lemma regarding confinement and berry phase.
 
 ---
 
-### 17.1.3.1 Proof: Confinement and Berry Phase {#17.1.3.1}
+### 17.1.4.1 Proof: Confinement and Berry Phase {#17.1.4.1}
 
 :::tip[**Formal Verification of the 1D Flux Constraint**]
 :::
@@ -29431,11 +29571,11 @@ Thus, the potential is strictly linear. The flux is confined to a 1D tube not by
 Q.E.D.
 
 **In Plain English:**  
-Section 17.1.3.1 formalizes the properties of the QBD proof regarding confinement and berry phase.
+Section 17.1.4.1 formalizes the properties of the QBD proof regarding confinement and berry phase.
 
 ---
 
-### 17.1.4 Proof: Action Equivalence (Nambu-Goto) {#17.1.4}
+### 17.1.5 Proof: Action Equivalence (Nambu-Goto) {#17.1.5}
 
 :::tip[**Formal Verification of the Emergence of the Nambu-Goto Action**]
 :::
@@ -29450,7 +29590,7 @@ $$
 where $\epsilon_{op}$ is the fundamental action quantum per rewrite.
 
 **II. The Braid Constraint**
-Consider a topological defect $\gamma$ (a braid) connecting two points $x_A$ and $x_B$. Due to the conservation of topological charge (**Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" />), the set of active edges $E_{active}$ must form a contiguous chain connecting the endpoints. The number of such edges is bounded by the geodesic distance:
+Consider a topological defect $\gamma$ (a braid) connecting two points $x_A$ and $x_B$. Due to the conservation of topological charge (**Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" />), the set of active edges $E_{active}$ must form a contiguous chain connecting the endpoints, and by **Geodesic Dominance of the Flux Chain** <Ref id="17.1.3" label="§17.1.3" />, the minimum-action chain adopts the geodesic length:
 
 $$
 |E_{active}(t)| \ge \frac{d_{geo}(x_A, x_B)}{\ell_P}
@@ -29478,16 +29618,16 @@ The propagation of a knot in the Quantum Braid Graph is mathematically isomorphi
 Q.E.D.
 
 **In Plain English:**  
-Section 17.1.4 formalizes the properties of the QBD proof regarding action equivalence (nambu-goto).
+Section 17.1.5 formalizes the properties of the QBD proof regarding action equivalence (nambu-goto).
 
 ---
 
-### 17.1.4.1 Calculation: Braid Confinement Verification {#17.1.4.1}
+### 17.1.5.1 Calculation: Braid Confinement Verification {#17.1.5.1}
 
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.3.1" label="§17.1.3.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -29593,7 +29733,7 @@ Self-Energy (V_0):      0.0000
 The tabulated data confirms a strict linear relationship $E(L) = 1.00 \cdot L$. The constant slope $\sigma = 1.00$ indicates that the "flux" (the chain of graph edges) does not spread into the bulk but remains collimated in a tight tube of fixed diameter. This validates the emergence of the **Nambu-Goto String** from the discrete graph dynamics: the energy of the particle is proportional to the length of the string connecting it to the vacuum.
 
 **In Plain English:**  
-Section 17.1.4.1 formalizes the properties of the QBD calculation regarding braid confinement verification.
+Section 17.1.5.1 formalizes the properties of the QBD calculation regarding braid confinement verification.
 
 ---
 
@@ -29640,7 +29780,77 @@ Section 17.2.2 formalizes the properties of the QBD theorem regarding spectral i
 
 ---
 
-### 17.2.3 Lemma: T-Gate Phase {#17.2.3}
+### 17.2.3 Lemma: Kinetic-Winding Mode Orthogonality {#17.2.3}
+
+:::info[**Independence of Translational and Topological Energy Sectors**]
+:::
+
+For any closed topological defect on a compactified graph dimension of radius $R$, the kinetic momentum operator $\hat{p}_n$ and the topological winding operator $\hat{E}_m$ satisfy $[\hat{p}_n, \hat{E}_m] = 0$, share a simultaneous eigenbasis labeled by quantum numbers $(n, m) \in \mathbb{Z}^2$, and contribute additively to the total mass-squared with no cross-sector coupling.
+
+**In Plain English:**  
+Section 17.2.3 formalizes the properties of the QBD lemma regarding kinetic-winding mode orthogonality.
+
+---
+
+### 17.2.3.1 Proof: Kinetic-Winding Mode Orthogonality {#17.2.3.1}
+
+:::tip[**Direct Construction via Operator Commutativity on the Compactified Lattice**]
+:::
+
+Let $T$ be the lattice translation operator advancing the defect by one graph edge along the compactified dimension, and let $W$ be the topological winding operator counting the homotopy class $[\gamma] \in \pi_1(S^1) \cong \mathbb{Z}$ of the closed braid.
+
+**I. Algebraic Independence on the Toroidal Lattice**
+
+The translation operator $T$ generates the Kaluza-Klein momentum spectrum. Its eigenvalue equation on the periodic lattice of circumference $2\pi R / \ell_P$ is:
+
+$$
+T |n\rangle = e^{i n \ell_P / R} |n\rangle, \quad n \in \mathbb{Z}
+$$
+
+The winding operator $W$ counts the number of times the closed path $\gamma$ wraps the compact dimension:
+
+$$
+W |m\rangle = m |m\rangle, \quad m \in \mathbb{Z}
+$$
+
+Since $T$ acts on local graph vertex positions and $W$ acts on global homotopy classes, the two operators act on algebraically independent degrees of freedom with no shared support.
+
+**II. Commutativity and Joint Eigenbasis**
+
+A translation of the defect by one lattice step does not alter the winding number of the closed path: the homotopy class is a global topological invariant unchanged by local position shifts. Therefore:
+
+$$
+[T, W] = T W - W T = 0
+$$
+
+Consequently $[\hat{p}_n, \hat{E}_m] = 0$, and the two operators share a common eigenbasis $\{|n, m\rangle\}_{n, m \in \mathbb{Z}}$ on the joint Hilbert space $\mathcal{H}_{KK} \otimes \mathcal{H}_{top}$.
+
+**III. Additive Decomposition of the Hamiltonian**
+
+The Virasoro constraint ($L_0 + \bar{L}_0 = 0$) requires the total mass-squared to equal the sum of kinetic and topological oscillator contributions. In the joint eigenbasis $|n, m\rangle$, the kinetic and winding energies evaluate to:
+
+$$
+E_{kinetic}(n) = \frac{n^2}{2R^2}, \qquad E_{winding}(m) = \frac{m^2 R^2}{2\ell_P^4}
+$$
+
+Since $[T, W] = 0$ implies vanishing off-diagonal (cross-sector) matrix elements in the joint eigenbasis, the Hamiltonian block-diagonalizes exactly:
+
+$$
+\hat{M}^2 = \hat{E}_{kinetic} + \hat{E}_{winding} + N_{osc} = \frac{\hat{n}^2}{R^2} + \frac{\hat{m}^2 R^2}{\ell_P^4} + N_{osc}
+$$
+
+**IV. Conclusion**
+
+The kinetic and winding sectors are orthogonal eigenspaces with no cross-coupling term. The mass-squared spectrum decomposes as a direct sum of independently quantized contributions from translational momentum and topological charge. This additive orthogonal decomposition is the algebraic prerequisite for the T-Duality transformation $n \leftrightarrow m$, $R \leftrightarrow \ell_P^2/R$ to constitute an exact spectral symmetry.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 17.2.3.1 formalizes the properties of the QBD proof regarding kinetic-winding mode orthogonality.
+
+---
+
+### 17.2.4 Lemma: T-Gate Phase {#17.2.4}
 
 :::info[**Establishment of the GSO Projection via Non-Clifford Rotation**]
 :::
@@ -29648,11 +29858,11 @@ Section 17.2.2 formalizes the properties of the QBD theorem regarding spectral i
 Let **Lemma (T-Gate Phase):** It is herein established that the inclusion of Fermionic modes (Matter) in the graph spectrum necessitates a local update rule capable of imparting a non-Clifford phase shift, specifically the $\pi/4$ rotation characteristic of the **T-Gate**.
 
 **In Plain English:**  
-Section 17.2.3 formalizes the properties of the QBD lemma regarding t-gate phase.
+Section 17.2.4 formalizes the properties of the QBD lemma regarding t-gate phase.
 
 ---
 
-### 17.2.3.1 Proof: Fermionic vs Bosonic {#17.2.3.1}
+### 17.2.4.1 Proof: T-Gate Phase {#17.2.4.1}
 
 :::tip[**Formal Derivation of Spin Statistics from Gate Universality**]
 :::
@@ -29681,16 +29891,16 @@ Thus, a "Classical" (Clifford-only) graph generates only forces (Bosons). A "Qua
 Q.E.D.
 
 **In Plain English:**  
-Section 17.2.3.1 formalizes the properties of the QBD proof regarding fermionic vs bosonic.
+Section 17.2.4.1 formalizes the properties of the QBD proof regarding t-gate phase.
 
 ---
 
-### 17.2.4 Proof: Spectral Invariance (T-Duality) {#17.2.4}
+### 17.2.5 Proof: Spectral Invariance (T-Duality) {#17.2.5}
 
 :::tip[**Formal Verification of the Minimum Length Scale via Spectral Symmetry**]
 :::
 
-This synthesis proof utilizes the structural results established in supporting **T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" />.
+This synthesis proof utilizes the structural results established in supporting **Kinetic-Winding Mode Orthogonality** <Ref id="17.2.3" label="§17.2.3" /> and **T-Gate Phase** <Ref id="17.2.4" label="§17.2.4" />.
 **I. The Hamiltonian Definition**
 Let the Hamiltonian for a closed string on a toroidal graph dimension of radius $R$ be defined by the sum of kinetic and topological potentials. The total mass-squared operator $M^2$ is derived from the Virasoro constraints ($L_0 + \bar{L}_0$):
 
@@ -29726,16 +29936,16 @@ The spectrum of the Hamiltonian is invariant under $\mathcal{T}$. Physically, th
 Q.E.D.
 
 **In Plain English:**  
-Section 17.2.4 formalizes the properties of the QBD proof regarding spectral invariance (t-duality).
+Section 17.2.5 formalizes the properties of the QBD proof regarding spectral invariance (t-duality).
 
 ---
 
-### 17.2.4.1 Calculation: T-Duality Verification {#17.2.4.1}
+### 17.2.5.1 Calculation: T-Duality Verification {#17.2.5.1}
 
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.4" label="§17.2.4" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -29853,7 +30063,7 @@ State |0, 1> at R=0.5 (Winding):   E^2 = 0.2500
 The tabulated data confirms a perfect match between the energy levels of the $R=2.0$ and $R=0.5$ systems (Deviation $= 0.0$). The kinetic mode $|1, 0\rangle$ at $R=2$ maps exactly to the winding mode $|0, 1\rangle$ at $R=0.5$ with $E^2=0.25$. This verifies that the causal graph geometry possesses no observable degrees of freedom below the Planck length; attempting to compress the graph further simply unwinds the topological sectors, effectively re-expanding the universe in the dual metric.
 
 **In Plain English:**  
-Section 17.2.4.1 formalizes the properties of the QBD calculation regarding t-duality verification.
+Section 17.2.5.1 formalizes the properties of the QBD calculation regarding t-duality verification.
 
 ---
 

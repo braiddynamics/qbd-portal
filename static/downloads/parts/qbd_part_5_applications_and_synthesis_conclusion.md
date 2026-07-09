@@ -40,10 +40,20 @@ Given the conditions of **Hydrodynamic Limit**, **Covariant Emergence**, and **S
 
 ### 23.1.2.1 Commentary: Argument Outline {#23.1.2.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Combinatorial Limit Argument via Integration Representation and Covariant Derivative Convergence**]
 :::
 
-The derivation of **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" /> proceeds by limits, establishing that discrete cycle sums and edge difference operators converge, in the thermodynamic limit, to the continuous Riemann integrals and covariant derivatives of classical field theory.
+
+```text
+• 23.1.2 Theorem Combinatorial Limit  [by limits]
+│
+├── 23.1.3 Lemma: Integration Representation
+│   ├── 23.1.3.1 Proof: Integration Representation
+│   └── 23.1.3.2 Commentary: Physical Significance
+│
+└── 23.1.4 Proof: Combinatorial Limit
+```
 
 ### 23.1.3 Lemma: Integration Representation {#23.1.3}
 
@@ -276,10 +286,20 @@ Given the conditions of **Vorticity-Stress Coupling**, **Viscosity Amplification
 
 ### 24.4.1.1 Commentary: Argument Outline {#24.4.1.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Smart Viscosity Argument via Quantum Cutoff and Exponential Dissipation**]
 :::
 
-The derivation of **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" /> proceeds by construction, establishing that the discrete Planck-scale structure imposes a hard cutoff on fluid velocity divergences, while the exponential scaling of effective viscosity with vorticity prevents finite-time blow-ups.
+
+```text
+• 24.4.1 Theorem Smart Viscosity  [by construction]
+│
+├── 24.4.2 Lemma: Quantum Cutoff
+│   ├── 24.4.2.1 Proof: Quantum Cutoff
+│   └── 24.4.2.2 Commentary: Physical Significance
+│
+└── 24.4.3 Proof: Smart Viscosity
+```
 
 ### 24.4.2 Lemma: Quantum Cutoff {#24.4.2}
 
@@ -479,10 +499,17 @@ Given the conditions of **Selection Pressure**, **Stabilizing Comonad**, and **C
 
 ### 25.1.2.1 Commentary: Argument Outline {#25.1.2.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Minimal Robust Attractor Argument via Fine-Tuning Limits and Stabilizer Code Boundaries**]
 :::
 
-The derivation of **Minimal Robust Attractor** <Ref id="25.1.2" label="§25.1.2" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Minimal Robust Attractor** <Ref id="25.1.2" label="§25.1.2" /> proceeds by construction, establishing that the mathematical stability boundaries of the comonad stabilizer code define the permitted range of fundamental constants, and that any rule outside this basin causes manifold collapse.
+
+```text
+• 25.1.2 Theorem Minimal Robust Attractor  [by construction]
+│
+└── 25.1.3 Lemma: Fine-Tuning Limits
+    └── 25.1.3.1 Commentary: Physical Significance
+```
 
 ### 25.1.3 Lemma: Fine-Tuning Limits {#25.1.3}
 

@@ -95,35 +95,102 @@ Let **Theorem (Action Equivalence):** It is herein established that the informat
 :::tip[**Structure of the Action Equivalence Argument via Confinement and Berry Phase, and Formal Synthesis**]
 :::
 
-The action is minimized when the discrete history approximates the **Nambu-Goto Action**:.
-
-$$
-S_{info}[\gamma] \cong -T_0 \int d\tau d\sigma \sqrt{-\det h_{ab}}
-$$
-
-where $h_{ab}$ is the induced metric on the worldsheet and $T_0$ is the effective string tension derived from the graph update cost $\epsilon_{op}$. The action equivalence (nambu-goto) theorem confirms that the dynamics of graph braids are governed by the principle of minimal area, indistinguishably from relativistic strings.
-
 The argument proceeds via Direct Construction, establishing that the information-theoretic updates required to propagate a braid defect are dual to Nambu-Goto string dynamics.
 
 ```text
 • 17.1.2 Theorem Action Equivalence (Nambu-Goto)  [by construction]
 │
-├── 17.1.3 Lemma: Confinement and Berry Phase
+├── 17.1.3 Lemma: Geodesic Dominance of the Flux Chain
 │
-└── 17.1.4 Proof: Formal Synthesis of String Dynamics
-    └── 17.1.4.1 Calculation: Braid Confinement Verification
+├── 17.1.4 Lemma: Confinement and Berry Phase
+│
+└── 17.1.5 Proof: Formal Synthesis of String Dynamics
+    └── 17.1.5.1 Calculation: Braid Confinement Verification
 ```
 
 ---
 
-### 17.1.3 Lemma: Confinement and Berry Phase {#17.1.3}
+### 17.1.3 Lemma: Geodesic Dominance of the Flux Chain {#17.1.3}
+
+:::info[**Uniqueness of the Minimal-Action Flux Configuration**]
+:::
+
+For any topological defect subject to the confinement constraint, the action-minimizing configuration of the flux chain connecting endpoints $x_A$ and $x_B$ is the directed geodesic path of length $d_{geo}(x_A, x_B)$.
+
+### 17.1.3.1 Proof: Geodesic Dominance of the Flux Chain {#17.1.3.1}
+
+:::tip[**Reductio via Action Excess on Non-Minimal Paths**]
+:::
+
+Let $\mathcal{P}(x_A, x_B)$ denote the set of all directed paths $\gamma$ on the graph connecting endpoint $x_A$ to endpoint $x_B$, and let $\epsilon_{op}$ be the fundamental action cost per active graph edge.
+
+**I. Action Functional of the Flux Chain**
+
+The discrete action of any flux chain configuration $\gamma \in \mathcal{P}(x_A, x_B)$ is the aggregate cost of all active graph updates required to sustain the topological connection:
+
+$$
+S[\gamma] = |\gamma| \cdot \epsilon_{op}
+$$
+
+where $|\gamma|$ denotes the hop-count of the path. The geodesic distance $d_{geo}(x_A, x_B)$ is the minimum hop-count over all admissible paths:
+
+$$
+d_{geo}(x_A, x_B) = \min_{\gamma \in \mathcal{P}(x_A, x_B)} |\gamma|
+$$
+
+**II. Action Excess for Non-Geodesic Configurations**
+
+For any non-geodesic path $\gamma'$ satisfying $|\gamma'| > d_{geo}$, the action excess is:
+
+$$
+\Delta S[\gamma'] = (|\gamma'| - d_{geo}(x_A, x_B)) \cdot \epsilon_{op} > 0
+$$
+
+The path-integral amplitude for configuration $\gamma'$ in the Euclidean (Wick-rotated) regime is:
+
+$$
+\mathcal{A}[\gamma'] = e^{-S[\gamma']/\hbar} = e^{-|\gamma'| \cdot \epsilon_{op}/\hbar}
+$$
+
+The ratio of any non-geodesic amplitude to the geodesic amplitude is therefore strictly less than unity:
+
+$$
+\frac{\mathcal{A}[\gamma']}{\mathcal{A}[\gamma_{geo}]} = e^{-(|\gamma'| - d_{geo}) \cdot \epsilon_{op}/\hbar} < 1
+$$
+
+**III. Exponential Suppression in the Thermodynamic Limit**
+
+In the ordered phase of the vacuum graph, the mass-gap parameter $\mu = \epsilon_{op}/\hbar$ satisfies $\mu > 0$. For any non-minimal path with excess length $\Delta L = |\gamma'| - d_{geo} \ge 1$:
+
+$$
+\mathcal{A}[\gamma'] \le e^{-\mu} \cdot \mathcal{A}[\gamma_{geo}]
+$$
+
+In the thermodynamic limit where $\mu \Delta L \gg 1$, non-geodesic contributions vanish exponentially, in exact correspondence with the path-integral weight suppression established for bulk trajectories **Path Integral Dominance** <Ref id="15.2.2" label="§15.2.2" />.
+
+**IV. Conclusion**
+
+The minimum-action flux chain configuration is the directed geodesic, with action $S_{min} = d_{geo}(x_A, x_B) \cdot \epsilon_{op}$. All non-geodesic configurations are exponentially suppressed in the thermodynamic limit and contribute negligibly to the path integral. The flux chain length tracks the geodesic separation exactly.
+
+Q.E.D.
+
+### 17.1.3.2 Commentary: The Shortest Rope {#17.1.3.2}
+
+:::info[**Physical Interpretation: Efficiency as a Topological Law**]
+:::
+
+The **Geodesic Dominance of the Flux Chain** <Ref id="17.1.3" label="§17.1.3" /> establishes that the vacuum does not waste graph resources. Any flux configuration longer than the geodesic carries a higher action cost and is exponentially suppressed in the path integral. The surviving configuration is not one the flux selects by a deliberative mechanism; it is the one the vacuum geometry enforces automatically by weighting configurations by $e^{-S}$. The flux chain behaves as a taut rope stretched between two fixed points: it finds the shortest path not because it searches for it, but because all longer paths are geometrically penalized. This result, combined with the confinement constraint from **Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" />, fully determines the energy of the flux tube as $E = \sigma \cdot d_{geo}(x_A, x_B)$.
+
+---
+
+### 17.1.4 Lemma: Confinement and Berry Phase {#17.1.4}
 
 :::info[**Establishment of the Linear Potential via Topological Charge Conservation**]
 :::
 
 For any separated pair of topological defects, the interaction potential $V(r)$ is bounded by a linear function of their separation distance $r$.
 
-### 17.1.3.1 Proof: Confinement and Berry Phase {#17.1.3.1}
+### 17.1.4.1 Proof: Confinement and Berry Phase {#17.1.4.1}
 
 :::tip[**Formal Verification of the 1D Flux Constraint**]
 :::
@@ -165,12 +232,12 @@ Thus, the potential is strictly linear. The flux is confined to a 1D tube not by
 
 Q.E.D.
 
-#### 17.1.3.2 Commentary: The Rubber Band Universe {#17.1.3.2}
+### 17.1.4.2 Commentary: The Rubber Band Universe {#17.1.4.2}
 
 :::info[**Physical Interpretation: Why Quarks are Confined**]
 :::
 
-The **Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" /> explains the "Strong Force" mechanism of confinement. In electromagnetism (Coulomb's Law), field lines can spread out into the void. If you pull two charges apart, the field gets weaker.
+The **Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" /> explains the "Strong Force" mechanism of confinement. In electromagnetism (Coulomb's Law), field lines can spread out into the void. If you pull two charges apart, the field gets weaker.
 
 But in Quantum Braid Dynamics (and Chromodynamics), the "field lines" are actual physical links in the graph. You cannot spread a single knot over a wide area; the knot is either here or there. To connect two distant particles that share a topological knot (like a quark-antiquark pair), you must build a bridge of twisted space between them.
 
@@ -180,14 +247,14 @@ As you pull the particles apart, you have to add more links to the bridge to spa
 
 ---
 
-### 17.1.3.2 Commentary: Physical Significance {#17.1.3.2}
+### 17.1.4.3 Commentary: Physical Significance {#17.1.4.3}
 
 :::info[**Physical Significance of Confinement and Berry Phase**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" />. It highlights how these bounds govern the global properties of the causal geometry.
+This commentary discusses the physical and mathematical significance of the results established in **Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
-### 17.1.4 Proof: Action Equivalence (Nambu-Goto) {#17.1.4}
+### 17.1.5 Proof: Action Equivalence (Nambu-Goto) {#17.1.5}
 
 :::tip[**Formal Verification of the Emergence of the Nambu-Goto Action**]
 :::
@@ -202,7 +269,7 @@ $$
 where $\epsilon_{op}$ is the fundamental action quantum per rewrite.
 
 **II. The Braid Constraint**
-Consider a topological defect $\gamma$ (a braid) connecting two points $x_A$ and $x_B$. Due to the conservation of topological charge (**Confinement and Berry Phase** <Ref id="17.1.3" label="§17.1.3" />), the set of active edges $E_{active}$ must form a contiguous chain connecting the endpoints. The number of such edges is bounded by the geodesic distance:
+Consider a topological defect $\gamma$ (a braid) connecting two points $x_A$ and $x_B$. Due to the conservation of topological charge (**Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" />), the set of active edges $E_{active}$ must form a contiguous chain connecting the endpoints, and by **Geodesic Dominance of the Flux Chain** <Ref id="17.1.3" label="§17.1.3" />, the minimum-action chain adopts the geodesic length:
 
 $$
 |E_{active}(t)| \ge \frac{d_{geo}(x_A, x_B)}{\ell_P}
@@ -229,12 +296,12 @@ The propagation of a knot in the Quantum Braid Graph is mathematically isomorphi
 
 Q.E.D.
 
-### 17.1.4.1 Calculation: Braid Confinement Verification {#17.1.4.1}
+### 17.1.5.1 Calculation: Braid Confinement Verification {#17.1.5.1}
 
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.3.1" label="§17.1.3.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -339,7 +406,7 @@ Self-Energy (V_0):      0.0000
 
 The tabulated data confirms a strict linear relationship $E(L) = 1.00 \cdot L$. The constant slope $\sigma = 1.00$ indicates that the "flux" (the chain of graph edges) does not spread into the bulk but remains collimated in a tight tube of fixed diameter. This validates the emergence of the **Nambu-Goto String** from the discrete graph dynamics: the energy of the particle is proportional to the length of the string connecting it to the vacuum.
 
-#### 17.1.4.2 Commentary: Strings are Effective Braids {#17.1.4.2}
+#### 17.1.5.2 Commentary: Strings are Effective Braids {#17.1.5.2}
 
 :::info[**Physical Interpretation: The String as a Dislocation Line**]
 :::
@@ -469,35 +536,98 @@ Let **Theorem (T-Duality):** It is herein established that the Hamiltonian spect
 :::tip[**Structure of the Spectral Invariance Argument via the T-Gate Phase and Formal Synthesis**]
 :::
 
-The system exhibits **T-Duality** such that:.
-
-$$
-H(R) \cong H\left(\frac{\ell_P^2}{R}\right)
-$$
-
-under the simultaneous exchange of the momentum quantum number $n$ and the winding quantum number $w$. This implies that a causal graph with radius $R < \ell_P$ is physically indistinguishable from a graph with radius $R' > \ell_P$, establishing the Planck length $\ell_P$ as the fundamental minimum length scale of the manifold.
-
 The argument proceeds via Direct Construction, proving the mathematical and physical equivalence of the mass-squared spectrum on reciprocal compactification radii.
 
 ```text
 • 17.2.2 Theorem Spectral Invariance (T-Duality)  [by construction]
 │
-├── 17.2.3 Lemma: T-Gate Phase
+├── 17.2.3 Lemma: Kinetic-Winding Mode Orthogonality
 │
-└── 17.2.4 Proof: Formal Synthesis of Spectral Invariance (T-Duality)
-    └── 17.2.4.1 Calculation: T-Duality Verification
+├── 17.2.4 Lemma: T-Gate Phase
+│
+└── 17.2.5 Proof: Formal Synthesis of Spectral Invariance (T-Duality)
+    └── 17.2.5.1 Calculation: T-Duality Verification
 ```
 
 ---
 
-### 17.2.3 Lemma: T-Gate Phase {#17.2.3}
+### 17.2.3 Lemma: Kinetic-Winding Mode Orthogonality {#17.2.3}
+
+:::info[**Independence of Translational and Topological Energy Sectors**]
+:::
+
+For any closed topological defect on a compactified graph dimension of radius $R$, the kinetic momentum operator $\hat{p}_n$ and the topological winding operator $\hat{E}_m$ satisfy $[\hat{p}_n, \hat{E}_m] = 0$, share a simultaneous eigenbasis labeled by quantum numbers $(n, m) \in \mathbb{Z}^2$, and contribute additively to the total mass-squared with no cross-sector coupling.
+
+### 17.2.3.1 Proof: Kinetic-Winding Mode Orthogonality {#17.2.3.1}
+
+:::tip[**Direct Construction via Operator Commutativity on the Compactified Lattice**]
+:::
+
+Let $T$ be the lattice translation operator advancing the defect by one graph edge along the compactified dimension, and let $W$ be the topological winding operator counting the homotopy class $[\gamma] \in \pi_1(S^1) \cong \mathbb{Z}$ of the closed braid.
+
+**I. Algebraic Independence on the Toroidal Lattice**
+
+The translation operator $T$ generates the Kaluza-Klein momentum spectrum. Its eigenvalue equation on the periodic lattice of circumference $2\pi R / \ell_P$ is:
+
+$$
+T |n\rangle = e^{i n \ell_P / R} |n\rangle, \quad n \in \mathbb{Z}
+$$
+
+The winding operator $W$ counts the number of times the closed path $\gamma$ wraps the compact dimension:
+
+$$
+W |m\rangle = m |m\rangle, \quad m \in \mathbb{Z}
+$$
+
+Since $T$ acts on local graph vertex positions and $W$ acts on global homotopy classes, the two operators act on algebraically independent degrees of freedom with no shared support.
+
+**II. Commutativity and Joint Eigenbasis**
+
+A translation of the defect by one lattice step does not alter the winding number of the closed path: the homotopy class is a global topological invariant unchanged by local position shifts. Therefore:
+
+$$
+[T, W] = T W - W T = 0
+$$
+
+Consequently $[\hat{p}_n, \hat{E}_m] = 0$, and the two operators share a common eigenbasis $\{|n, m\rangle\}_{n, m \in \mathbb{Z}}$ on the joint Hilbert space $\mathcal{H}_{KK} \otimes \mathcal{H}_{top}$.
+
+**III. Additive Decomposition of the Hamiltonian**
+
+The Virasoro constraint ($L_0 + \bar{L}_0 = 0$) requires the total mass-squared to equal the sum of kinetic and topological oscillator contributions. In the joint eigenbasis $|n, m\rangle$, the kinetic and winding energies evaluate to:
+
+$$
+E_{kinetic}(n) = \frac{n^2}{2R^2}, \qquad E_{winding}(m) = \frac{m^2 R^2}{2\ell_P^4}
+$$
+
+Since $[T, W] = 0$ implies vanishing off-diagonal (cross-sector) matrix elements in the joint eigenbasis, the Hamiltonian block-diagonalizes exactly:
+
+$$
+\hat{M}^2 = \hat{E}_{kinetic} + \hat{E}_{winding} + N_{osc} = \frac{\hat{n}^2}{R^2} + \frac{\hat{m}^2 R^2}{\ell_P^4} + N_{osc}
+$$
+
+**IV. Conclusion**
+
+The kinetic and winding sectors are orthogonal eigenspaces with no cross-coupling term. The mass-squared spectrum decomposes as a direct sum of independently quantized contributions from translational momentum and topological charge. This additive orthogonal decomposition is the algebraic prerequisite for the T-Duality transformation $n \leftrightarrow m$, $R \leftrightarrow \ell_P^2/R$ to constitute an exact spectral symmetry.
+
+Q.E.D.
+
+### 17.2.3.2 Commentary: The Two Clocks of a Compact Universe {#17.2.3.2}
+
+:::info[**Physical Interpretation: Independent Measurement of Position and Topology**]
+:::
+
+The **Kinetic-Winding Mode Orthogonality** <Ref id="17.2.3" label="§17.2.3" /> establishes that a compact universe maintains two entirely independent accounting systems. The kinetic modes count how rapidly the braid hops around the circle (its local velocity, measured by the translation operator $T$). The winding modes count how many complete circuits the braid has completed (its global topology, measured by the homotopy class $W$). These two counts are independent: knowing one tells nothing about the other. This independence is the deeper reason T-Duality is a true spectral symmetry rather than an approximate one: when the radius inverts, both ledgers remain complete and exact, and the universe simply relabels which is "position" and which is "topology."
+
+---
+
+### 17.2.4 Lemma: T-Gate Phase {#17.2.4}
 
 :::info[**Establishment of the GSO Projection via Non-Clifford Rotation**]
 :::
 
 Let **Lemma (T-Gate Phase):** It is herein established that the inclusion of Fermionic modes (Matter) in the graph spectrum necessitates a local update rule capable of imparting a non-Clifford phase shift, specifically the $\pi/4$ rotation characteristic of the **T-Gate**.
 
-#### 17.2.3.1 Proof: Fermionic vs Bosonic {#17.2.3.1}
+### 17.2.4.1 Proof: T-Gate Phase {#17.2.4.1}
 
 :::tip[**Formal Derivation of Spin Statistics from Gate Universality**]
 :::
@@ -525,12 +655,12 @@ Thus, a "Classical" (Clifford-only) graph generates only forces (Bosons). A "Qua
 
 Q.E.D.
 
-#### 17.2.3.2 Commentary: The Magic of Matter {#17.2.3.2}
+### 17.2.4.2 Commentary: The Magic of Matter {#17.2.4.2}
 
 :::info[**Physical Interpretation: Magic States and Supersymmetry**]
 :::
 
-The **T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" /> connects two seemingly unrelated fields: Quantum Computing and String Theory.
+The **T-Gate Phase** <Ref id="17.2.4" label="§17.2.4" /> connects two seemingly unrelated fields: Quantum Computing and String Theory.
 
 In Quantum Computing, there is a concept called "Magic." A circuit built only from Clifford gates (Hadamard, CNOT, Phase) is "easy" to simulate classically (Gottesman-Knill theorem). It is computationally "dead." To get true quantum advantage, you need to inject a "Magic State" (usually via a T-gate).
 
@@ -545,19 +675,19 @@ Matter *is* the "Magic" of the causal graph. You cannot build an electron out of
 
 ---
 
-### 17.2.3.1 Commentary: Physical Significance {#17.2.3.1}
+### 17.2.4.3 Commentary: Physical Significance {#17.2.4.3}
 
 :::info[**Physical Significance of T-Gate Phase**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" />. It highlights how these bounds govern the global properties of the causal geometry.
+This commentary discusses the physical and mathematical significance of the results established in **T-Gate Phase** <Ref id="17.2.4" label="§17.2.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
-### 17.2.4 Proof: Spectral Invariance (T-Duality) {#17.2.4}
+### 17.2.5 Proof: Spectral Invariance (T-Duality) {#17.2.5}
 
 :::tip[**Formal Verification of the Minimum Length Scale via Spectral Symmetry**]
 :::
 
- This synthesis proof utilizes the structural results established in supporting **T-Gate Phase** <Ref id="17.2.3" label="§17.2.3" />.
+ This synthesis proof utilizes the structural results established in supporting **Kinetic-Winding Mode Orthogonality** <Ref id="17.2.3" label="§17.2.3" /> and **T-Gate Phase** <Ref id="17.2.4" label="§17.2.4" />.
 **I. The Hamiltonian Definition**
 Let the Hamiltonian for a closed string on a toroidal graph dimension of radius $R$ be defined by the sum of kinetic and topological potentials. The total mass-squared operator $M^2$ is derived from the Virasoro constraints ($L_0 + \bar{L}_0$):
 
@@ -592,12 +722,12 @@ The spectrum of the Hamiltonian is invariant under $\mathcal{T}$. Physically, th
 
 Q.E.D.
 
-### 17.2.4.1 Calculation: T-Duality Verification {#17.2.4.1}
+### 17.2.5.1 Calculation: T-Duality Verification {#17.2.5.1}
 
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.4" label="§17.2.4" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -762,21 +892,6 @@ For any closed topological defect, the Hilbert space $\mathcal{H}_{defect}$ is a
 
 :::tip[**Structure of the Chiral Split Argument via Bott Periodicity, Tripartite Braid Saturation, ZPE Cancellation, and Formal Synthesis**]
 :::
-
-The graph update rules impose differing constraints on the forward and backward propagation of information:
-1. **The Right-Moving Sector ($\mathcal{H}_R$):** Corresponds to the propagation of the **Topological Twist** (the particle). This sector is governed by the Braid Group $B_3$ and requires Supersymmetry (GSO projection) to maintain topological stability.
-
-$$
-    D_R = 10 \quad (\text{Superstring Critical Dimension})
-    $$
-
-2. **The Left-Moving Sector ($\mathcal{H}_L$):** Corresponds to the back-reaction of the **Graph Lattice** (the vacuum). This sector is governed by the geometric connectivity of the tri-valent graph and obeys purely Bosonic statistics.
-
-$$
-    D_L = 26 \quad (\text{Bosonic String Critical Dimension})
-    $$
-
-The physical string is the tensor product state $|\Psi\rangle = |\psi_R\rangle \otimes |\phi_L\rangle$, constituting a **Heterotic String** structure.
 
 The argument proceeds via Direct Construction, decomposing the worldsheet Hilbert space into decoupled left-moving and right-moving chiral sectors.
 
@@ -1320,8 +1435,6 @@ For all 16 internal degrees of freedom of the Left-Moving sector, compactificati
 :::tip[**Structure of the Emergence of the E8 Lattice Argument via the Unimodular Basis, the Standard Model Embedding, Anomaly Cancellation, the Landscape from Braid Vacua, and Formal Synthesis**]
 :::
 
-**Modular Invariance:** The one-loop partition function $Z(\tau)$ of the graph history must be invariant under the modular group $SL(2, \mathbb{Z})$ to preserve unitarity (probability conservation). This restricts the internal momentum lattice $\Gamma$ to be an **Even Self-Dual Lattice**. 2. **Octonionic Packing:** The transverse phase space of the causal graph is generated by the algebra of Octonions $\mathbb{O}$ (dim 8). The root lattice of $E_8$ is the unique lattice generated by the integral Octonions (Coxeter-Dynkin diagram isomorphism). Consequently, the gauge symmetry of the emergent spacetime is fixed to $G = E_8 \times E_8$ (or the T-dual $Spin(32)/\mathbb{Z}_2$), representing the densest possible encoding of information in the internal dimensions.
-
 The argument proceeds via Direct Construction, proving the modular invariance and optimal sphere-packing constraints that uniquely select the exceptional charge lattice.
 
 ```text
@@ -1762,6 +1875,7 @@ we conclude that this sum factorizes into the Heterotic partition function:
 
 **I. Worldsheet Action Convergence**
 The worldsheet action converges as established in **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" />, where the Left (Lattice) and Right (Defect) movers factorize as:
+
 $$
 S_{info} \to \int_\Sigma (\partial_+ X_R \partial_- X_R + \psi_R \partial_- \psi_R) + \int_\Sigma \partial_+ X_L \partial_- X_L
 $$

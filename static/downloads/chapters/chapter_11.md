@@ -393,12 +393,6 @@ Let $\mathcal{G}$ be the class of finite, simple, directed graphs. The construct
 :::tip[**Structure of the Causal Geometry Construction Argument via Normalization, Entropy Maximization, and Metric Necessity**]
 :::
 
-Specifically, the following properties hold for all $G$:.
-
-1. **Measure Validity:** For all $u \in V$, the object $\mu_u$ defined in **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> is a valid probability measure, satisfying non-negativity and the normalization condition $\sum_{x \in V} \mu_u(x) = 1$. 2. **Metric Finiteness:** For any weakly connected component of $G$, the undirected shortest-path metric satisfies $\bar{d}(x,y) < \infty$ for all pairs $x,y$, ensuring the Wasserstein distance is finite. 3. **Curvature Boundedness:** The curvature is strictly bounded. In the general case, $K(u,v) \in [1 - \text{diam}(G), 1]$. Under the specific parameters $\alpha=\beta=1/3$, tight local bounds apply, ensuring $K$ remains finite and computable.
-
-The **Causal Geometry Construction Theorem** guarantees that the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v)$ is a well-defined functional for any physically realizable state of the causal graph.
-
 The proof proceeds via Direct Construction, establishing the normalization and well-posedness of the probability measures under discrete transport constraints.
 
 ```text
@@ -1475,12 +1469,6 @@ Let $G_0 = (V_0, E_0)$ denote a finite, simple, directed graph, and let $(u,v) \
 
 :::tip[**Structure of the Curvature Monotonicity Argument via Measure Dilution, Feasible Transport, Cost Delimitation, and Strict Augmentation**]
 :::
-
-Let $K^{(0)}(u,v)$ denote the causal Ollivier-Ricci curvature of the edge $(u,v)$ in $G_0$, and let $K^{(1)}(u,v)$ denote the causal Ollivier-Ricci curvature of the same edge in $G_1$. The curvature then increases strictly upon this addition:.
-
-$$
-K^{(1)}(u,v) > K^{(0)}(u,v).
-$$
 
 The argument proceeds via Direct Construction, tracing the reduction in optimal transport cost that results from the topological nucleation of a three-cycle.
 

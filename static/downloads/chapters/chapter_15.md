@@ -160,10 +160,23 @@ Therefore, any consistent mapping from the graph to a smooth manifold *must* ign
 
 ### 15.1.3.1 Commentary: Argument Outline {#15.1.3.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Distance Gap Argument via Stabilizer Conservation, Manifold Screening, and Bi-Metric Divergence**]
 :::
 
-The derivation of **Distance Gap** <Ref id="15.1.3" label="§15.1.3" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Distance Gap** <Ref id="15.1.3" label="§15.1.3" /> proceeds by construction, establishing that the topological shortcut created by a bridge edge is systematically hidden by the geometric smoothing process inherent in Geometrogenesis.
+
+```text
+• 15.1.3 Theorem Distance Gap  [by construction]
+│
+├── 15.1.4 Lemma: Stabilizer Conservation
+│   └── 15.1.4.1 Commentary: Physical Significance
+│
+├── 15.1.5 Lemma: Manifold Screening Condition
+│   └── 15.1.5.1 Commentary: Physical Significance
+│
+└── 15.1.6 Proof: Distance Gap
+    └── 15.1.6.1 Calculation: Bi-Metric Verification
+```
 
 ### 15.1.4 Lemma: Stabilizer Conservation {#15.1.4}
 
@@ -543,14 +556,6 @@ Suppose a bipartite system consists of subsystems $A$ and $B$ connected by a top
 
 :::tip[**Structure of the Violation of Metric Locality Argument via Path Integral Dominance, Correlation Persistence, and Unitary Constraints**]
 :::
-
-The existence of the bridge edge condition $d_{topo}(A, B) = 1$ necessitates that the upper bound of $S$ saturates the Tsirelson bound of quantum mechanics rather than the Bell bound of classical local realism:.
-
-$$
-2 < |S| \le 2\sqrt{2}
-$$
-
-provided that the metric divergence condition $\frac{d_{geo}(A, B)}{d_{topo}(A, B)} \gg 1$ holds. The violation of the classical inequality $|S| \le 2$ constitutes the physical signature of the topological bridge bypassing the bulk manifold metric.
 
 The proof proceeds via Direct Construction, showing that topological shortcuts bypass the bulk metric to violate local realism bounds while respecting algebraic causality.
 
@@ -1067,6 +1072,19 @@ The tabulated data indicates a calculated S-parameter of $S \approx 2.8284$. Thi
 
 ---
 
+### 15.2.Z Implications and Synthesis {#15.2.Z}
+
+:::note[**Bi-Metric Resolution of Bell Non-Locality**]
+:::
+
+The three lemmas converge on a single structural fact: the Bell inequality violation is not a signal from beyond the speed of light but a measurement of the gap between two coexisting metrics on the same graph. **Path Integral Dominance** <Ref id="15.2.2" label="§15.2.2" /> establishes that transition amplitudes are governed by the topological distance $d_{topo}$, not the emergent geometric distance $d_{geo}$. **Correlation Bridge** <Ref id="15.2.3" label="§15.2.3" /> proves that macroscopic quantum correlations survive at $\mathcal{O}(1)$ magnitude wherever a topological bridge reduces $d_{topo}$ to unity. **Tsirelson Bound** <Ref id="15.2.4" label="§15.2.4" /> establishes that the unitary structure of the braid algebra caps the correlation at $|S| \le 2\sqrt{2}$, forbidding super-quantum correlations regardless of how extreme the metric gap becomes. The bi-metric resolution eliminates both classical hidden-variable theories (which require $|S| \le 2$) and arbitrary post-quantum extensions (which would permit $|S| > 2\sqrt{2}$), isolating the quantum braid graph as the unique framework consistent with the observed CHSH experimental bounds.
+
+The physical architecture stands as follows. The entangled pair $(A, B)$ is not two particles sharing a mysterious non-local link but a single topological object (a stabilizer bridge) spanning two nodes of the graph. The geometric distance $d_{geo}(A, B) \gg \xi$ between the measurement events is a property of the emergent manifold, an artifact of how the Riemannian metric statistically averages the bulk node network. The intrinsic graph metric $d_{topo}(A, B) = 1$ is the physical reality: $A$ and $B$ are graph-adjacent. The Bell measurement does not probe non-local physics; it probes the mismatch between the two metrics, revealing the discrete, non-Riemannian substrate beneath the smooth spacetime approximation. The CHSH violation is the experimental signature of a universe whose causal structure is a graph, not a manifold.
+
+The bi-metric framework opens the next operational question: if the bridge passively preserves correlations, can it actively transmit quantum information with fidelity? The topological bridge established here extends into a full protocol for quantum state transmission **ER = EPR (Topological Wormholes)** <Ref id="15.3" label="§15.3" />, using the same stabilizer bridge to transmit an arbitrary quantum state from $A$ to $B$ via classical communication of measurement outcomes, completing the EPR duality from a geometric necessity into an operational resource.
+
+---
+
 ## 15.3 ER = EPR (Topological Wormholes) {#15.3}
 
 :::note[**Er=epr Throat Overview**]
@@ -1089,14 +1107,6 @@ If a topological bridge is introduced between disjoint subsystems, it induces a 
 
 :::tip[**Structure of the Transport Cost Reduction Argument via Isoperimetric Deficit, Throat Emergence, Traversability Limits, and Formal Synthesis**]
 :::
-
-The transport distance, defined as the infimum of the cost function over all transport plans $\pi$, satisfies the inequality:.
-
-$$
-W_1(\mu_A, \mu_B) \le d_{topo}(A, B) \ll d_{geo}(A, B)
-$$
-
-The divergence between the transport cost through the bulk ($W_{bulk} \sim d_{geo}$) and the transport cost through the bridge ($W_{bridge} \sim d_{topo}$) defines the **Einstein-Rosen Defect**. The entangled state constitutes a topological wormhole of length $\ell \sim \mathcal{O}(1)$ connecting regions of macroscopic separation $L \gg 1$.
 
 The proof proceeds via Direct Construction, establishing that the information-theoretic properties of entanglement are dual to the geometric properties of a wormhole throat.
 
@@ -1566,14 +1576,6 @@ Let **Theorem (Constraint Satisfaction):** It is herein established that the pro
 
 :::tip[**Structure of the Global Constraint Satisfaction Argument via Ensemble Indeterminacy, Block Universe Convergence, and Causality Preservation**]
 :::
-
-The probability of an intermediate event $E$ is given by the conditional ratio of squared amplitudes:.
-
-$$
-P(E | \hat{M}) = \frac{\left| \sum_{\gamma \in \mathcal{H}_{eff}, E \in \gamma} e^{iS[\gamma]} \right|^2}{\left| \sum_{\gamma \in \mathcal{H}_{eff}} e^{iS[\gamma]} \right|^2}
-$$
-
-This constraint satisfaction necessitates that the "reality" of the event $E$ (e.g., "which-path" information) remains indefinite if the set $\mathcal{H}_{eff}$ defined by $\hat{M}$ includes mutually exclusive trajectories (superposition), and crystallizes into a definite value only if $\mathcal{H}_{eff}$ filters the ensemble to a single logical history. The apparent retro-causal influence of $\hat{M}$ on $E$ is the manifestation of global consistency requirements on the spacetime cobordism.
 
 The argument proceeds via Direct Construction, re-framing the evolution of the graph not as a sequential process, but as a global boundary value problem.
 

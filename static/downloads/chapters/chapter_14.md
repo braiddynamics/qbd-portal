@@ -99,14 +99,6 @@ Let $\{G_t\}$ be a sequence of causal graphs converging to a Riemannian manifold
 :::tip[**Structure of the Smoothness of the Lapse Function Argument via Lapse Optimization, Operator Convergence, and Elliptic Regularity**]
 :::
 
-In the thermodynamic limit $t \to \infty$, the sequence $N^{(t)}$ converges uniformly on compact sets to a scalar field $N \in C^\infty(M)$ satisfying the elliptic regularity condition:.
-
-$$
-\Delta_g N(x) - \lambda N(x) = \rho(x)
-$$
-
-where $\Delta_g$ is the Laplace-Beltrami operator on $M$ and $\rho(x)$ is a smooth source term derived from the local graph density. Consequently, the emergent spacetime metric $ds^2 = -N^2 dT^2 + h_{ij} dx^i dx^j$ possesses a smooth differentiable structure.
-
 The proof proceeds via Direct Construction, establishing that the discrete lapse function converges to a smooth scalar field in the continuum.
 
 ```text
@@ -1085,24 +1077,40 @@ The Wightman Axioms provide a mathematically rigorous framework for constructing
 
 Given the Hilbert space of topological braid states $\mathcal{H}_{braid}$ and field operators $\Phi(x)$, the emergent physical theory satisfies the Wightman axioms.
 
-### 14.3.2.2 Commentary: Argument Outline {#14.3.2.2}
+### 14.3.2.1 Commentary: Argument Outline {#14.3.2.1}
 
-:::tip[**Roadmap for Axiomatic Proof**]
+:::tip[**Structure of the Wightman Compliance Argument via Poincaré Symmetry Recovery, Vacuum Uniqueness, Spectral Positivity, Microcausality, and Spin-Statistics Correspondence**]
 :::
 
-Specifically:.
+The verification proceeds by partition, with each lemma establishing one independent axiom.
 
-1. **Poincaré Covariance:** The state space admits a continuous unitary representation of the Poincaré group, $U(\Lambda, a)$, derived from the asymptotic symmetries of the causal graph limit. 2. **Vacuum Uniqueness:** The theory possesses a unique, invariant ground state $|0\rangle$ (the Empty Graph $\emptyset$), which is the sole vector annihilated by the energy-momentum generator $P^\mu$. 3. **Spectral Stability:** The joint spectrum of the energy-momentum operator is strictly contained within the closed forward light cone $\bar{V}^+$, ensuring that energy is positive definite relative to the vacuum. 4. **Microcausality:** The field operators satisfy the canonical commutation (or anti-commutation) relations at spacelike separations, inheriting the strict independence of causally disconnected graph regions.
-
-Consequently, the Quantum Braid Dynamics framework constitutes a mathematically consistent formulation of Relativistic Quantum Field Theory on the emergent Lorentzian manifold.
-
-The assertion that a discrete, information-theoretic substrate can reproduce the continuous symmetries of the Poincaré group is non-trivial. The verification (**Wightman Compliance** <Ref id="14.3.2" label="§14.3.2" />) is therefore distributed across five specific lemmas, each addressing a core structural requirement of the Wightman formalism:
-
-1.  **Symmetry Recovery (**Poincaré Covariance** <Ref id="14.3.3" label="§14.3.3" />):** We verify that the statistical isotropy of the graph translates into continuous rotational and boost invariance in the thermodynamic limit.
-2.  **Vacuum Stability (**Vacuum Invariance (Haar Measure)** <Ref id="14.3.4" label="§14.3.4" />):** We prove that the "Empty Graph" is legally equivalent to the QFT vacuum, a state of zero energy and zero momentum that looks the same in all reference frames.
-3.  **Positive Energy (**Spectral Condition** <Ref id="14.3.5" label="§14.3.5" />):** We demonstrate that because "energy" in this theory corresponds to topological complexity (which is a count of crossings), it is fundamentally bounded below by zero. Negative energy states are topologically impossible.
-4.  **Locality (**Microcausality** <Ref id="14.3.6" label="§14.3.6" />):** We derive the commutativity of fields from the simple fact that graph updates in disconnected components cannot influence each other.
-5.  **Spin-Statistics (**Spin-Statistics Relation** <Ref id="14.3.7" label="§14.3.7" />):** Finally, we verify the deep connection between rotation and exchange, proving that our topological braids naturally obey the exclusion principle required for fermions.
+```text
+• 14.3.2 Theorem Wightman Compliance  [by partition]
+│
+├── 14.3.3 Lemma: Poincaré Covariance
+│   ├── 14.3.3.1 Proof: Poincaré Covariance
+│   └── 14.3.3.2 Commentary: Physics of Invariance
+│
+├── 14.3.4 Lemma: Vacuum Invariance (Haar Measure)
+│   ├── 14.3.4.1 Proof: Vacuum Invariance (Haar Measure)
+│   └── 14.3.4.2 Commentary: Stability of the Ground State
+│
+├── 14.3.5 Lemma: Spectral Condition
+│   ├── 14.3.5.1 Proof: Spectral Condition
+│   └── 14.3.5.2 Commentary: Why Complexity is Positive
+│
+├── 14.3.6 Lemma: Microcausality
+│   ├── 14.3.6.1 Proof: Microcausality
+│   ├── 14.3.6.2 Calculation: Microcausality Check
+│   └── 14.3.6.3 Commentary: Locality in a Disconnected Graph
+│
+├── 14.3.7 Lemma: Spin-Statistics Relation
+│   ├── 14.3.7.1 Proof: Spin-Statistics Relation
+│   └── 14.3.7.2 Commentary: Necessity of Exclusion
+│
+└── 14.3.8 Proof: Wightman Compliance
+    └── 14.3.8.1 Calculation: Cluster Decomposition Check
+```
 
 ---
 
@@ -1630,8 +1638,6 @@ For any emergent metric $g_{\mu\nu}$ of the causal graph, the Einstein Field Equ
 
 :::tip[**Structure of the Einstein Field Equations Argument via Entanglement Thermodynamics, Newton's Constant Identification, and Covariant Closure**]
 :::
-
-This equation arises as the necessary condition for the First Law of Entanglement ($\delta Q = T \delta S$) to hold for all local Rindler horizons in the manifold. The source term $T_{\mu\nu}$ represents the density of topological defects, and the curvature $R_{\mu\nu}$ represents the deformation of the graph connectivity required to maintain the entropy-area proportionality.
 
 The proof proceeds by construction, deriving the Einstein Field Equations as the equation of state of the causal graph by coupling entanglement entropy to geometric curvature through the First Law and the Bianchi identity.
 

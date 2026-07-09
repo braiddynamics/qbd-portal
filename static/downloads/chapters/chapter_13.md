@@ -110,18 +110,6 @@ Every discrete stress-energy tensor $T_{ab}$ satisfies strict local conservation
 :::tip[**Structure of the Conservation of Complexity Flux Argument via Global Stationarity, Flux Separation, and Local Conservation**]
 :::
 
-$$
-\sum_{b \in N(a)} T_{ab} = 0.
-$$
-
-By symmetry of the underlying undirected **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />, the net incoming flux also vanishes:.
-
-$$
-\sum_{b \in N(a)} T_{ba} = 0.
-$$
-
-This conservation law guarantees the preservation of statistical stationarity for the local **Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" /> (for $\rho_3$) under the action of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> (denoted $\mathcal{U}$), preventing the systematic accumulation (sources) or depletion (sinks) of informational complexity at any vertex in the vacuum state.
-
 The argument proceeds via Direct Construction, deriving local flux conservation as the necessary consequence of thermodynamic homeostasis.
 
 ```text
@@ -624,9 +612,6 @@ Assume that the geometric evolution of the causal graph at the homeostatic fixed
 
 :::tip[**Structure of the Discrete Einstein Field Equations Argument via Action Variation, Curvature-Flux Coupling, Coupling Scaling, and Stationary Solution**]
 :::
-
-The validity of this equation is established by the simultaneous satisfaction of the following physical constraints:
-1. **Stationary Action:** The equilibrium state minimizes the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to local topological perturbations, implying that the geometric response $\delta \mathcal{G}$ must strictly balance the informational flux $\delta T$. 2. **Local Conservation:** The divergence-free property of the stress-energy tensor $\sum_b T_{ab} = 0$ **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" /> necessitates a matching conservation law for the curvature tensor, satisfied only by the linear mapping $\mathcal{G} \propto T$ in the absence of higher-order curvature corrections. 3. **Continuum Convergence:** The discrete equation converges in the thermodynamic limit $N \to \infty$ to the continuum Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" />, ensuring the recovery of General Relativity as the effective field theory of the causal graph.
 
 The proof proceeds via Direct Construction, showing that the homeostatic state corresponds to the critical point of the discrete action.
 
@@ -1266,12 +1251,6 @@ Suppose $\mathcal{G}_{ab}$ is the discrete Einstein tensor. Then it satisfies th
 
 :::tip[**Structure of the Discrete Bianchi Identity Argument via Action Symmetry, Geometric Cancellation, and Divergence Vanishing**]
 :::
-
-$$
-\lim_{N \to \infty} \left| \sum_{b \in N(a)} \mathcal{G}_{ab} \right| \to 0.
-$$
-
-The **Discrete Divergence-Free Geometry Theorem** establishes that the emergent discrete geometry naturally respects the conservation laws required by General Relativity, identifying $\mathcal{G}_{ab}$ as a valid gravitational field tensor.
 
 The argument proceeds via Direct Construction, proving the mathematical necessity of the divergence-free curvature tensor from the coordinate invariance of the action.
 

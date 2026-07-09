@@ -23,10 +23,20 @@ Given the conditions of **Primordial Scattering**, **Ergodioc Mixing**, **Therma
 
 ### 20.1.1.1 Commentary: Argument Outline {#20.1.1.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Blackbody Equilibrium Argument via Ergodic Mixing, Sachs-Wolfe Time Dilation, and Planck Spectral Convergence**]
 :::
 
-The derivation of **Blackbody Equilibrium** <Ref id="20.1.1" label="§20.1.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Blackbody Equilibrium** <Ref id="20.1.1" label="§20.1.1" /> proceeds by construction, establishing that photon motifs driven to maximum entropy by frequent scattering converge to the Planck distribution, with anisotropies imprinted by gravitational potential wells.
+
+```text
+• 20.1.1 Theorem Blackbody Equilibrium  [by construction]
+│
+├── 20.1.2 Lemma: Sachs-Wolfe Time Dilation
+│   ├── 20.1.2.1 Proof: Sachs-Wolfe Time Dilation
+│   └── 20.1.2.2 Commentary: Physical Significance
+│
+└── 20.1.3 Proof: Blackbody Equilibrium
+```
 
 ### 20.1.2 Lemma: Sachs-Wolfe Time Dilation {#20.1.2}
 
@@ -167,10 +177,20 @@ Given the conditions of **Primordial Anisotropy**, **Zel'dovich Collapse**, and 
 
 ### 20.3.1.1 Commentary: Argument Outline {#20.3.1.1}
 
-:::tip[**Structure of the Multi-Part Proof**]
+:::tip[**Structure of the Anisotropic Collapse Argument via Void Relaxation and Cosmic Web Synthesis**]
 :::
 
-The derivation of **Anisotropic Collapse** <Ref id="20.3.1" label="§20.3.1" /> is structured as a sequence of supporting lemmas that build the logical chain of the derivation.
+**Anisotropic Collapse** <Ref id="20.3.1" label="§20.3.1" /> proceeds by construction, establishing that ellipsoidal gravitational instability generates the hierarchical sheet-filament-node structure of the Cosmic Web, while underdense voids relax to the baseline vacuum attractor.
+
+```text
+• 20.3.1 Theorem Anisotropic Collapse  [by construction]
+│
+├── 20.3.2 Lemma: Void Relaxation
+│   ├── 20.3.2.1 Proof: Void Relaxation
+│   └── 20.3.2.2 Commentary: Physical Significance
+│
+└── 20.3.3 Proof: Anisotropic Collapse
+```
 
 ### 20.3.2 Lemma: Void Relaxation {#20.3.2}
 
