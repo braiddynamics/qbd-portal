@@ -106,7 +106,7 @@ dilution_verified = (m_w > 0)
 # 2. Verify Strict Inequality (Cost Contraction (Phase 3) §11.3.5)
 contraction_verified = (w1_post < w1_pre - 1e-6) # explicit tolerance
 
-# 3. Verify Sparse Scaling (Corollary 11.3.7)
+# 3. Verify Sparse Scaling (Corollary 11.3.6)
 m_w_sparse = beta / (0.087 + 1)  # Ch. 5 deg≈0.087 dilution
 delta_k_sparse = m_w_sparse * 1.2  # Est save ~1.2 avg \bar{d}
 
@@ -126,4 +126,4 @@ print(f"K_post:  {K_post:.4f}\n")
 print(f"--- Verification Results ---")
 print(f"1. Measure Dilution (Phase 1) (§11.3.3) (Shared Mass > 0):   {dilution_verified} (m_w = {m_w:.4f})")
 print(f"2. Cost Contraction (Phase 3) (§11.3.5) (W1_post < W1_pre):  {contraction_verified} (ΔK = {K_post - K_pre:.4f})")
-print(f"3. Corollary 11.3.7 (Sparse Scaling): c ≈ {delta_k_sparse:.4f} (per cycle)")
+print(f"3. Corollary 11.3.6 (Sparse Scaling): c ≈ {delta_k_sparse:.4f} (per cycle)")

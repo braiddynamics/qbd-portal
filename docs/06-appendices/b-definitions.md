@@ -30641,6 +30641,7 @@ we conclude that this sum factorizes into the Heterotic partition function:
 
 **I. Worldsheet Action Convergence**
 The worldsheet action converges as established in **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" />, where the Left (Lattice) and Right (Defect) movers factorize as:
+
 $$
 S_{info} \to \int_\Sigma (\partial_+ X_R \partial_- X_R + \psi_R \partial_- \psi_R) + \int_\Sigma \partial_+ X_L \partial_- X_L
 $$

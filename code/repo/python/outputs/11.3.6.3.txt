@@ -13,4 +13,4 @@ K_post:  1.0000
 --- Verification Results ---
 1. Measure Dilution (Phase 1) (§11.3.3) (Shared Mass > 0):   True (m_w = 0.3333)
 2. Cost Contraction (Phase 3) (§11.3.5) (W1_post < W1_pre):  True (ΔK = 0.6667)
-3. Corollary 11.3.7 (Sparse Scaling): c ≈ 0.3680 (per cycle)
+3. Corollary 11.3.6 (Sparse Scaling): c ≈ 0.3680 (per cycle)
