@@ -98,7 +98,7 @@ where $\xi$ is the finite correlation length derived by **Correlation Decay** <R
 
 **I. Mutual Information Bound**
 
-Let $R_A$ and $R_B$ be disjoint subregions of the causal graph separated by a geodesic distance $d = d(R_A, R_B)$. The mutual information $I(R_A; R_B)$ between their configuration states is bounded by the sum of pairwise connected correlation functions between vertices in $R_A$ and $R_B$:
+Let $R_A$ and $R_B$ be disjoint subregions of the causal graph separated by a geodesic distance $d = d(R_A, R_B)$, evaluated for **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />. The mutual information $I(R_A; R_B)$ between their configuration states is bounded by the sum of pairwise connected correlation functions between vertices in $R_A$ and $R_B$:
 
 $$
 I(R_A; R_B) \le \frac{1}{2} \sum_{u \in R_A} \sum_{v \in R_B} \langle O_u O_v \rangle_c^2
@@ -142,7 +142,7 @@ The correlation length $\xi$ constitutes an endogenous scale that emerges direct
 :::info[**Decay of Geometric Covariance**]
 :::
 
-Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> and the **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Then the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$, constituting the mean-field approximation for macroscopic dynamics.
+Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> under acyclic effective causality. Under this configuration, the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$ as established by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 ### 5.1.3.1 Proof: Correlation Decay {#5.1.3.1}
 
@@ -157,7 +157,7 @@ $$
 \langle O_u O_v \rangle_c = K \sum_{\pi: u \to v} w(\pi)
 $$
 
-where $K$ is a finite normalization constant. In the high-temperature vacuum phase, the weight $w(\pi)$ of each path decays exponentially with its length $\ell(\pi)$ due to the disorder average as a function of the edge density parameter $\rho$:
+where $K$ is a finite normalization constant. In the high-temperature vacuum phase, evaluated for **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, the weight $w(\pi)$ of each path decays exponentially with its length $\ell(\pi)$ due to the disorder average as a function of the edge density parameter $\rho$:
 
 $$
 w(\pi) = \rho^{\ell(\pi)}
@@ -311,7 +311,7 @@ Q.E.D.
 
 Computational verification of the subextensive boundary term and verification of the independence assumption established by **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" /> is based on the following protocols:
 
-1.  **Lattice Construction:** The algorithm generates a toroidal grid graph of size $N$ and partitions it into $\sqrt{N}$ blocks to mimic correlation volumes.
+1.  **Lattice Construction:** The algorithm generates a toroidal grid graph of size $N$ and partitions it into $\sqrt{N}$ blocks to mimic correlation volumes, satisfying the partition defined in the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />.
 2.  **Edge Counting:** The protocol iterates through all edges in the graph, identifying the block coordinates of each node. Edges connecting nodes in different blocks are flagged as "boundary edges."
 3.  **Scaling Analysis:** The metric computes the fraction of boundary edges relative to the total edge count across a range of system sizes $N \in [100, 10000]$ to verify the vanishing surface-to-volume ratio.
 
@@ -397,7 +397,7 @@ The data confirms the hypothesis: the fraction of boundary edges drops from 50% 
 :::note[**Extensive Entropy**]
 :::
 
-The entropy of the causal graph is established as strictly extensive, scaling linearly with the vertex count $N$. This property transforms the abstract graph into a physical reservoir, where information content behaves as a bulk quantity analogous to volume in a gas. By proving that correlations decay exponentially, we have decomposed the universe into a vast collection of quasi-independent volumes, validating the application of standard statistical mechanics to the discrete substrate.
+The entropy of the causal graph is established as strictly extensive, scaling linearly with the vertex count $N$ under **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" />. By proving **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, we have decomposed the universe into quasi-independent volumes under **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />.
 
 This result implies that the vacuum possesses a finite, measurable capacity for disorder. It ensures that local operations do not trigger instantaneous global reconfigurations, protecting the system from non-local instabilities. The linearity of the entropy scaling confirms that the universe is thermodynamically stable, capable of supporting heat exchange and local equilibrium without diverging into infinite complexity or collapsing into a singularity.
 
@@ -518,7 +518,7 @@ $$
 
 **I. Setup and Assumptions**
 
-Let $G_0$ denote the initial vacuum state structured as a directed Regular Bethe Fragment with coordination number $k = 3$. Every internal vertex $v$ possesses exactly one incoming edge and two outgoing edges.
+Let $G_0$ denote the initial vacuum state, satisfying **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> and evaluated for **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, structured as a directed Regular Bethe Fragment with coordination number $k = 3$. Every internal vertex $v$ possesses exactly one incoming edge and two outgoing edges.
 
 **II. Combinatorial Derivation**
 
@@ -585,7 +585,7 @@ $$
 
 **I. Setup and Structural Enumeration**
 
-Let a compliant 2-path denote two distinct edges incident to a common vertex $v$. The total count of such paths $N_{\text{path}}$ within a graph equals the sum of pairwise combinations of edges at every vertex:
+Let a compliant 2-path denote two distinct edges incident to a common vertex $v$, evaluated for **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" />. Every directed 3-cycle represents a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> in the local graph. The total count of such paths $N_{\text{path}}$ within a graph equals the sum of pairwise combinations of edges at every vertex:
 
 $$
 N_{\text{path}} = \sum_{v \in V} \binom{d(v)}{2} = \frac{1}{2} \sum_{v \in V} d(v)(d(v)-1)
@@ -634,7 +634,7 @@ Q.E.D.
 
 Computational verification of the combinatorial derivation established by **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4.1" label="§5.2.4.1" /> is based on the following protocols:
 
-1.  **Path Identification:** The simulation tracks the density of **Compliant 2-Paths** ($u \to v \to w$ where $u \not\sim w$) in a graph growing via random cycle addition. Crucially, the algorithm filters out closed paths internal to existing triangles to strictly isolate open paths created by cycle overlap.
+1.  **Path Identification:** The simulation tracks the density of **Compliant 2-Paths** ($u \to v \to w$ where $u \not\sim w$) as defined in the **2-Path** <Ref id="1.2.5" label="§1.2.5" />. Crucially, the algorithm filters out closed paths internal to existing triangles to strictly isolate open paths created by cycle overlap.
 2.  **Ensemble Averaging:** The results are averaged over 50 independent realizations to suppress finite-size fluctuations.
 3.  **Power Law Fit:** A least-squares fit ($y = Ax^B$) is performed on the density data to determine the scaling exponent of the growth term.
 
@@ -783,7 +783,7 @@ Assume a causal graph satisfies bounded-degree and acyclicity constraints with a
 
 **I. Setup and Assumptions**
 
-Let a directed graph $G = (V, E)$ denote a random graph configuration with a local structural capacity defined by the maximum vertex degree $k_{\text{max}} = 3$. An edge addition proposal $e_{\text{new}} = (u, w)$ is admissible if and only if the vertex states satisfy the joint conditions of source capacity $d(u) < k_{\text{max}}$, target capacity $d(w) < k_{\text{max}}$, and the global requirement of causal consistency $\nexists \, \pi: w \to \dots \to u$.
+Let a directed graph $G = (V, E)$ denote a random graph configuration, evaluated for **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> with the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />. An edge addition proposal $e_{\text{new}} = (u, w)$ is admissible if and only if the vertex states satisfy the joint conditions of source capacity $d(u) < k_{\text{max}}$, target capacity $d(w) < k_{\text{max}}$, and the global requirement of causal consistency $\nexists \, \pi: w \to \dots \to u$.
 
 **II. Combinatorial Derivation**
 
@@ -822,7 +822,7 @@ Q.E.D.
 
 Computational verification of the exponential suppression factor established by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5.1" label="§5.2.5.1" /> is based on the following protocols:
 
-1.  **Constrained Growth:** The algorithm models graph evolution under **Bounded Degree Constraints** ($k_{max}=3$), proposing random edges and rejecting those that violate the degree limit.
+1.  **Constrained Growth:** The algorithm models graph evolution under Bounded Degree Constraints ($k_{max}=3$) matching the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> properties, proposing random edges and rejecting those that violate the degree limit.
 2.  **Acceptance Tracking:** The protocol tracks the **Acceptance Ratio**, defined as the fraction of attempts where both target nodes possess available capacity ($d < k_{max}$).
 3.  **Decay Analysis:** The data is fit to an exponential model $y = A \cdot e^{-B\rho}$ to extract the decay constant and verify the functional form of the steric hindrance.
 
@@ -945,7 +945,7 @@ $$
 
 **I. Setup and Assumptions**
 
-Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
+Let $G = (V, E)$ denote a causal graph with a local cycle density $\rho$ representing the spatial configuration of geometric quanta. In the dilute limit where $\rho \to 0$, evaluated for **Entropic & Catalytic Decay ($J_{\text{out}}$)** <Ref id="5.2.6" label="§5.2.6" />, every individual 3-cycle is isolated. The erasure of an isolated geometric quantum constitutes a spontaneous symmetry-breaking event governed by the Boltzmann probability at the critical vacuum temperature. The base deletion probability per cycle is $\mathbb{P}_0 = 0.5$, which is established in **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
 **II. Linear Component Derivation**
 
@@ -994,7 +994,7 @@ Q.E.D.
 
 Computational verification of the catalytic stress term established by **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6.1" label="§5.2.6.1" /> is based on the following protocols:
 
-1.  **Flux Measurement:** The algorithm simulates graph growth and computes the normalized flux rate (deleted edges / total edges) under a stress-dependent probability rule $P_{del} \propto (1 + \lambda k_{local})$.
+1.  **Flux Measurement:** The algorithm simulates graph growth and computes the normalized flux rate (deleted edges / total edges) under a stress-dependent probability rule $P_{del} \propto (1 + \lambda k_{local})$ matching the **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" />.
 2.  **Density Sweep:** The protocol measures this flux across varying densities to determine how instability scales with system compactness.
 3.  **Linear Regression:** The data is fit to a linear model $Rate = A + B\rho$. A positive slope $B$ implies a quadratic term in the total deletion count ($J = \text{Rate} \cdot \rho \propto \rho^2$).
 
@@ -1084,7 +1084,7 @@ The architectural breakdown of the total deletion flux reveals that the system's
 
 This induced instability is rooted in the physical sharing of vertex and edge capacities among adjacent 3-cycles. When multiple geometric quanta crowd into a tight neighborhood, their constituent subgraphs overlap, forcing individual abstract events to serve simultaneously as intersections for multiple spatial areas. This spatial crowding generates local "topological tension" or shear stress across the shared boundaries. From the perspective of the stabilizer framework, this configuration creates a high concentration of localized syndrome excitations, which significantly alters the local potential energy landscape. The shared links become highly volatile, drastically lowering the free energy barrier required for the universal constructor to execute a deletion operation ($\mathfrak{T}_{\text{del}}$). Spacetime atoms in a crowded neighborhood actively catalyze the dissolution of their peers.
 
-This collective feedback loop functions as a crucial homeostatic mechanism for the expansion of the cosmos. While the quadratic driver of geometric autocatalysis accelerates connectivity in sparse regions, the stress-deletion coupling imposes an elegant quadratic penalty on localized packing. The quadratic term $3\lambda_{\text{cat}}\rho^2$ scales with the square of the density, ensuring that highly congested clusters experience an immediate, non-linear spike in deletion probability. Highly excited regions effectively melt under the weight of their own internal tension, shedding superfluous links to preserve the underlying sparsity of the vacuum. By coupling the erasure rate directly to the neighborhood crowding, the universe establishes a self-correcting structural balance, preventing the relational plasma from locking into disordered, high-density topological configurations and maintaining the smooth, open granularity required for macroscopic geometry. Crucially, the local interaction volume $V_{\text{int}} = 6$ constitutes a rigid topological invariant of the allowed task space $\mathfrak{T}$ under **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />, representing the $3 \text{ vertices} \times 2 \text{ directional ports}$ required to audit the boundary of a directed 3-cycle closure in the regular Bethe vacuum, proving that the vacuum drive $\Lambda = 1/64$ (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />) is a derived geometric consequence rather than an arbitrary fine-tuned parameter.
+This collective feedback loop functions as a crucial homeostatic mechanism for the expansion of the cosmos. While the quadratic driver of geometric autocatalysis accelerates connectivity in sparse regions, the stress-deletion coupling imposes an elegant quadratic penalty on localized packing. The quadratic term $3\lambda_{\text{cat}}\rho^2$ scales with the square of the density, ensuring that highly congested clusters experience an immediate, non-linear spike in deletion probability. Highly excited regions effectively melt under the weight of their own internal tension, shedding superfluous links to preserve the underlying sparsity of the vacuum. By coupling the erasure rate directly to the neighborhood crowding, the universe establishes a self-correcting structural balance, preventing the relational plasma from locking into disordered, high-density topological configurations and maintaining the smooth, open granularity required for macroscopic geometry. Crucially, the local interaction volume $V_{\text{int}} = 6$ constitutes a rigid topological invariant of the allowed task space $\mathfrak{T}$ under the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> definition. This represents the $3 \text{ vertices} \times 2 \text{ directional ports}$ required to audit the boundary of a directed 3-cycle closure in the regular Bethe vacuum. This structure proves that the vacuum drive $\Lambda = 1/64$ under **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> is a derived geometric consequence rather than an arbitrary fine-tuned parameter.
 
 ### 5.2.7 Proof: Macroscopic Evolution {#5.2.7}
 
@@ -1139,7 +1139,7 @@ Q.E.D.
 
 Computational verification of the equilibrium properties established in **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
 
-1.  **Parameter Definition:** The algorithm defines the precise physical constants derived in Chapter 4: Vacuum Permittivity $\Lambda_{vac} = 0.0156$, Friction $\mu \approx 0.3989$, and Catalysis $\lambda_{cat} \approx 1.7183$.
+1.  **Parameter Definition:** The algorithm defines the precise physical constants derived in Chapter 4, matching **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> properties: Vacuum Permittivity $\Lambda_{vac} = 0.0156$, Friction $\mu \approx 0.3989$, and Catalysis $\lambda_{cat} \approx 1.7183$.
 2.  **Root Finding:** The protocol uses Brent's search algorithm to numerically solve the differential equation $d\rho/dt = 0$ for the equilibrium density $\rho^*$.
 3.  **Stability Analysis:** The simulation calculates the Jacobian $d(\dot{\rho})/d\rho$ at the fixed point to confirm that the solution represents a stable attractor rather than an unstable node.
 
@@ -1243,7 +1243,7 @@ The solver identifies a stable fixed point at $\rho^* \approx 0.037$. At this de
 :::note[**Master Equation**]
 :::
 
-The derivation of the Master Equation transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure (quadratic growth) and the thermodynamics of information erasure (linear decay), we have uncovered a dynamical system that naturally seeks a stable, non-zero connectivity density. We observe that the universe is biased towards complexity, but bounded by self-regulation.
+The derivation of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure under **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" /> and the spontaneous background from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, we have uncovered a dynamical system that naturally seeks a stable, non-zero connectivity density. We observe that the universe is biased towards complexity, but bounded by self-regulation.
 
 This result proves that the vacuum is not a static void but a dynamic equilibrium, a "relational plasma" maintained by the constant flux of creation and destruction. The equation predicts a specific history: an initial "lag phase" of slow nucleation, followed by an "inflationary" burst of autocatalytic growth, ending in a "saturation" phase where the friction of steric hindrance brakes the expansion. The stability of the fixed point $\rho^*$ ensures that this process does not result in a singularity or a collapse, but rather a persistent, structured state.
 
@@ -1328,11 +1328,7 @@ algorithm, two key physical modeling choices are made:
     of $2$. This represents a non-zero self-interaction coupling (self-energy) of the 
     cycle with itself, regulating its lifetime in the sparse vacuum.
 
-While the analytical formulation in **Master Equation** <Ref id="5.2" label="§5.2" /> represents a simplified bulk mean-field 
-approximation (where deletion friction is neglected and the self-stress coupling is 
-zero to allow closed-form solutions), the discrete simulation in **Computational Verification (The Simulation)** <Ref id="5.3" label="§5.3" /> retains these 
-self-interaction and boundary-relaxation terms to ensure structural stability on the 
-Bethe tree substrate.
+The analytical formulation in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> represents a simplified bulk mean-field approximation. By contrast, the discrete simulation of **Computational Verification (The Simulation)** <Ref id="5.3" label="§5.3" /> retains these self-interaction and boundary-relaxation terms to ensure structural stability on the Bethe tree substrate.
 
 ---
 
@@ -1344,7 +1340,7 @@ Bethe tree substrate.
 Computational verification of the phase space trajectories established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
 
 1.  **Worker Orchestration:** The algorithm coordinates the spatial trajectory of parallel workers traversing the network substrate. This maps to the localized propagation of events in the physical vacuum.
-2.  **Awareness Computation:** The protocol evaluates local syndromes and causal histories to determine update eligibility at active sites.
+2.  **Awareness Computation:** The protocol evaluates local syndromes and causal histories to determine update eligibility at active sites, implementing the comonadic checks of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />.
 3.  **Proposal Generation:** The metric tracks the thermodynamic acceptance weights for proposed structural transitions across the phase space.
 
 The following snippets from the full simulation illustrate the core logic of the worker trajectory, the localized awareness computation, and the thermodynamic proposal generation.
@@ -1492,11 +1488,11 @@ Deviations beyond the channel yield pathologies that reinforce the underpinnings
 :::note[**Computational Verification**]
 :::
 
-The parameter sweep validates the Master Equation by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of our theoretical predictions, confirming that the constants we derived from first principles lead to a physically plausible universe.
+The parameter sweep validates the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations, validating the comonadic tracking of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of our theoretical predictions, confirming that the constants we derived from first principles lead to a physically plausible universe.
 
 This stable density is the **Cosmological Constant** of the graph. It represents the baseline energy density of the vacuum. With the existence and stability of this state confirmed by $13,200$ independent trajectories, we have a firm prediction for the ground state of the universe. The robustness of this result against stochastic noise demonstrates that the vacuum is a resilient attractor.
 
-The discovery of the "Goldilocks Zone" of viability implies that the universe is fine-tuned by its own internal logic. The specific values of friction and catalysis are not arbitrary, they are the only values that permit a universe that is neither dead nor chaotic. This computational evidence elevates the theory from abstract speculation to a predictive model, asserting that the fundamental constants of nature are determined by the requirements of graph stability.
+The discovery of the **Region of Physical Viability (RPV)** <Ref id="5.3.1" label="§5.3.1" /> implies that the universe is fine-tuned by its own internal logic. The specific values of friction and catalysis are not arbitrary, they are the only values that permit a universe that is neither dead nor chaotic. This computational evidence elevates the theory from abstract speculation to a predictive model, asserting that the fundamental constants of nature are determined by the requirements of graph stability.
 
 ---
 
@@ -1547,7 +1543,7 @@ Mathematically, this defines a transcendental root problem. Unlike simpler model
 :::info[**Existence and attractor stability of the equilibrium density**]
 :::
 
-Assume the kinetic parameters satisfy the boundaries established by **Global Stability** <Ref id="5.4.3" label="§5.4.3" /> and **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />. Then a unique, non-zero equilibrium density $\rho^*$ is verified definitionally to exist and satisfy the transcendental balance equation. In particular, this fixed point constitutes a proven stable attractor characterized by a strictly negative Jacobian eigenvalue $J < 0$.
+Assume the kinetic parameters satisfy the boundaries established by **Global Stability** <Ref id="5.4.3" label="§5.4.3" />. Furthermore, let the coefficients respect the **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />. Then a unique, non-zero equilibrium density $\rho^*$ exists and satisfies the transcendental balance equation, constituting a stable attractor with a strictly negative Jacobian eigenvalue $J < 0$.
 
 ### 5.4.2.1 Commentary: Argument Outline {#5.4.2.1}
 
@@ -1588,7 +1584,7 @@ Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exis
 
 **I. Setup and Function Definition**
 
-Let $F(\rho)$ denote the net flux function, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
+Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
 
 $$
 F(\rho) = C(\rho) - D(\rho)
@@ -1637,7 +1633,9 @@ Q.E.D.
 :::info[**Vacuum as a Self-Tuning System**]
 :::
 
-This entropic balance establishes that the cosmic vacuum is an intrinsically self-regulating system that bypasses the traditional fine-tuning dilemmas associated with initial cosmological parameters. The linear instability of the empty configuration ($\rho = 0$), driven by **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, forces the pre-geometric graph to spontaneously break its sterile stasis and nucleate structure. Conversely, the high-density regime is strictly suppressed by the combination of steric hindrance formalized via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> and stress-induced cycle collapse analyzed via **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
+This entropic balance establishes that the cosmic vacuum is an intrinsically self-regulating system that bypasses the traditional fine-tuning dilemmas associated with initial cosmological parameters. The linear instability of the empty configuration ($\rho = 0$), driven by **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, forces the pre-geometric graph to spontaneously break its sterile stasis and nucleate structure.
+
+Conversely, the high-density regime is strictly suppressed by steric hindrance, formalized via **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />. Furthermore, stress-induced cycle collapse, analyzed via **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />, provides an active regulatory force.
 
 The dynamical system is thus trapped between dual asymmetric instabilities, forcing the network to converge onto the unique, non-vanishing fixed point $\rho^*$. This stable attractor acts as a thermodynamic well that anchors the emergent spacetime geometry. The persistence of a stable, macroscopic physical universe is therefore revealed to be an inevitable consequence of the system's global phase-space architecture, where the local pressure to create new relations is continuously tempered by the entropic cost of historical erasure.
 
@@ -1835,13 +1833,7 @@ We establish the geometric validity of the vacuum by proving five interlocking l
 :::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
 :::
 
-Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium satisfy the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit, where the graph sequence exhibits the conjunction of the following invariants:
-*   **(i) Uniform Local Geometry:** Enforced by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />;
-*   **(ii) Uniform Curvature Bounds:** Causal Ollivier-Ricci curvature bounded strictly by $|K(u, v)| \le C_1$ as established by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />;
-*   **(iii) Statistical Homogeneity:** Exponential decay of covariance derived by **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />;
-*   **(iv) Manifold-Like Combinatorics:** Exponential suppression of non-contractible loops, as established in **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />;
-*   **(v) Dimensionality Scaling:** Ahlfors 4-regularity enforced by Renormalization Group flow, as proved in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />;
-*   **(vi) Lorentzian Convergence:** Convergence of causal diamond volumes to pseudo-Riemannian volumes under the Causal Gromov-Hausdorff limit as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
+Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium. This sequence satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. Specifically, the sequence exhibits uniform local geometry, uniform curvature bounds, statistical homogeneity, manifold-like combinatorics, dimensionality scaling, and Lorentzian convergence.
 
 ### 5.5.1.1 Commentary: Argument Outline {#5.5.1.1}
 
@@ -1922,7 +1914,7 @@ thereby ensuring that causal connections remain strictly local with respect to t
 
 **I. The Generative Mechanism**
 
-The **Quantum Binary Dynamics (QBD)** framework restricts the addition of new edges solely to the operation of the rewrite rule $\mathcal{R}$.
+The rewrite rule $\mathcal{R}$ of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> restricts the addition of new edges, evaluated for the **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> constraint.
 This rule proposes a new directed edge $(u, v)$ if and only if a compliant 2-path exists:
 
 $$
@@ -2120,9 +2112,7 @@ where $C_1 = 2$ is the explicit bound derived from the diameter of the local nei
 :::tip[**Derivation from Wasserstein Diameter**]
 :::
 
-**I. Ollivier-Ricci Curvature Definition**
-
-The curvature $\kappa(u, v)$ along an edge $(u, v)$ is defined via the **Wasserstein-1 Distance** $W_1$ between the neighborhood probability measures $\mu_u$ and $\mu_v$.
+The curvature $\kappa(u, v)$ along an edge $(u, v)$, evaluated for **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, is defined via the **Wasserstein-1 Distance** $W_1$ between the neighborhood probability measures $\mu_u$ and $\mu_v$, where each local closed loop corresponds to a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />:
 
 $$
 \kappa(u, v) = 1 - W_1(\mu_u, \mu_v)
@@ -2318,9 +2308,7 @@ Q.E.D.
 :::tip[**Derivation of Self-Averaging via Covariance Sums**]
 :::
 
-**I. Variance Decomposition**
-
-The variance of the global mean decomposes into diagonal (local) and off-diagonal (correlation) terms:
+The variance of the global mean, evaluated for **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" /> under the **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> properties of the vacuum phase, decomposes into diagonal (local) and off-diagonal (correlation) terms:
 
 $$
 \text{Var}(\langle \rho \rangle) = \frac{1}{N^2} \left[ \sum_{x \in V} \text{Var}(\rho(x)) + \sum_{x \neq y} \text{Cov}(\rho(x), \rho(y)) \right]
@@ -2407,7 +2395,7 @@ Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$
 
 **I. Combinatorial Cycle Enumeration**
 
-A potential $k$-cycle is represented by a closed vertex sequence $(v_1, \dots, v_k, v_1)$.
+A potential $k$-cycle, representing a closed loop evaluated for **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" /> where $k \ge 3$ represents a cycle of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> scale, is represented by a closed vertex sequence $(v_1, \dots, v_k, v_1)$.
 The number of such potential trajectories is bounded by the branching structure.
 
 1.  **Start Vertex:** $N_t$ choices for $v_1$.
@@ -2597,7 +2585,7 @@ where $x, y$ are the continuous representatives of $u, v$ in the limit manifold 
 
 **I. Causal Diamond Volumes**
 
-Let $(\mathcal{M}, g)$ denote a smooth, globally hyperbolic Lorentzian manifold. The topology of $\mathcal{M}$ is generated by the family of open causal diamonds $I^+(x) \cap I^-(y)$ for $x, y \in \mathcal{M}$. The volume of a causal diamond in a flat Minkowski spacetime $\mathbb{M}^d$ is given by $\text{Vol}(I^+(x) \cap I^-(y)) = v_d \cdot \tau(x, y)^d$, where $\tau(x, y)$ is the proper time (Lorentzian distance) between $x$ and $y$, and $v_d$ is a dimension-dependent constant:
+Let $(\mathcal{M}, g)$ denote a smooth, globally hyperbolic Lorentzian manifold, analyzed for **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />. The scaling behaves under the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> dimension bound $d=4$. The volume of a causal diamond in a flat Minkowski spacetime $\mathbb{M}^d$ is given by $\text{Vol}(I^+(x) \cap I^-(y)) = v_d \cdot \tau(x, y)^d$, where $\tau(x, y)$ is the proper time (Lorentzian distance) between $x$ and $y$, and $v_d$ is a dimension-dependent constant:
 
 $$
 v_d = \frac{\pi^{(d-1)/2}}{d \cdot 2^{d-1} \cdot \Gamma((d+1)/2)}
@@ -2706,7 +2694,7 @@ Q.E.D.
 :::note[**Geometric Stabilization**]
 :::
 
-Well-posedness solidifies through the chained lemmas. Locality confines connections to spans of two via the path uniqueness rule and triangle inequality. Degrees limit branching to finite $D_{\max}$ from the frictional balance. Curvatures bound $|K| \leq 2$ from Wasserstein diameters. Correlations decay exponentially yielding self-averaging homogeneity. Ahlfors $4$-regularity fixes the Hausdorff dimension at four via the marginal stability of the renormalization group flow. We have effectively proven that the "pixels" of our universe are fine enough and regular enough to form a smooth picture.
+Well-posedness solidifies through the chained lemmas. The **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> confines connections to spans of two. The **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> fixes the Hausdorff dimension at four. The **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" /> ensures that the "pixels" of our universe are fine enough and regular enough to form a smooth picture.
 
 The graphs at equilibrium converge to a Lorentzian manifold without singularities or anomalous scalings, where the discrete causal clamps yield continuous geometry through these layered bounds. The genesis rounds complete: entropy volumes the possibilities, the master equation balances the flux, sweeps map the viable channel, and geometry mends the mesh to a manifold. The stage is set.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Flatness Attractor and Jacobian Stability Audit
-# Subject:   Audits spatial flatness attractor eigenvalue in Chapter 18.5.5
+# Subject:   Audits spatial flatness attractor eigenvalue in Chapter 18.5.8
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------

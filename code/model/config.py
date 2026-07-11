@@ -64,4 +64,17 @@ DEFAULT_CONFIG = {
 
     # Directory to save simulation data (e.g., CSVs, plots).
     "OUTPUT_DIR": "./outputs",
+
+    # --- Optional configuration parameters for topological and geometric observables ---
+
+    # Lazy causal measure weights for discrete geometry.
+    "GEOMETRY_ALPHA": 1.0 / 3.0,
+    "GEOMETRY_BETA": 1.0 / 3.0,
+
+    # Opt-in topological protection for extended braid sims; default off.
+    "ENABLE_TOPOLOGICAL_PROTECTION": False,
+    "RHO_CORE": 0.082,
+
+    # Cap for exact OT solves on large graphs (geometry helpers).
+    "MAX_OT_NODES": 64,
 }

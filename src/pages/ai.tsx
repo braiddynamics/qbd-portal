@@ -13,7 +13,7 @@ const SITE_INFO = {
   github: 'https://github.com/braiddynamics/qbd-portal',
   contact: 'https://x.com/BraidDynamics',
   license: 'https://braiddynamics.com/legal',
-  lastUpdated: '2026-05-31',
+  lastUpdated: '2026-07-11',
 };
 
 const DESCRIPTION = `Quantum Braid Dynamics (QBD) is an independent theoretical physics research project
@@ -128,21 +128,28 @@ const CHAPTERS = [
 ];
 
 const LEAN_PROOFS = [
-  { name: 'awareness-comonad.lean',      url: '/downloads/code/repo/lean/awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
-  { name: 'causal-primitive.lean',       url: '/downloads/code/repo/lean/causal-primitive.lean',       desc: 'Topological axioms for causal set spacetime primitives.' },
-  { name: 'geometric-decomposition.lean', url: '/downloads/code/repo/lean/geometric-decomposition.lean', desc: 'Topological geometric decomposition formalization.' },
-  { name: 'maximal-parallelism.lean',    url: '/downloads/code/repo/lean/maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
-  { name: 'stabilizer-isomorphism.lean', url: '/downloads/code/repo/lean/stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
-  { name: 'vacuum-stability.lean',       url: '/downloads/code/repo/lean/vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
+  { name: 's2.2-causal-primitive.lean',       url: '/downloads/code/repo/lean/s2.2-causal-primitive.lean',       desc: 'Topological axioms for causal set spacetime primitives.' },
+  { name: 's2.4-geometric-decomposition.lean', url: '/downloads/code/repo/lean/s2.4-geometric-decomposition.lean', desc: 'Topological geometric decomposition formalization.' },
+  { name: 's2.7-asymmetry.lean',               url: '/downloads/code/repo/lean/s2.7-asymmetry.lean',               desc: 'Proof of causal asymmetry conservation under evolution.' },
+  { name: 's3.3-maximal-parallelism.lean',    url: '/downloads/code/repo/lean/s3.3-maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
+  { name: 's3.5-stabilizer-isomorphism.lean', url: '/downloads/code/repo/lean/s3.5-stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
+  { name: 's4.3-awareness-comonad.lean',      url: '/downloads/code/repo/lean/s4.3-awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
+  { name: 's5.4-vacuum-stability.lean',       url: '/downloads/code/repo/lean/s5.4-vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
+  { name: 's6.1-task-reidemeister.lean',      url: '/downloads/code/repo/lean/s6.1-task-reidemeister.lean',      desc: 'Formalization of Reidemeister-like strand transformations on tripartite braids.' },
 ];
 
 const MODEL_CODE = [
-  { name: 'config.py',      url: '/downloads/code/model/config.py',      desc: 'System configs, boundary conditions, global physics constants.' },
-  { name: 'dynamics.py',    url: '/downloads/code/model/dynamics.py',    desc: 'Core quantum braiding dynamics, vertex updates, transition models.' },
-  { name: 'graph_setup.py', url: '/downloads/code/model/graph_setup.py', desc: 'Lattice graph initialization, causal set creation, adjacency lists.' },
-  { name: 'observables.py', url: '/downloads/code/model/observables.py', desc: 'Network observables, entanglement entropy, graph-theoretical energy.' },
-  { name: 'qecc.py',        url: '/downloads/code/model/qecc.py',        desc: 'Topological Quantum Error Correcting Code calculations.' },
-  { name: 'utils.py',       url: '/downloads/code/model/utils.py',       desc: 'Graph parsing, visualization export, data conversion helpers.' },
+  { name: 'braids.py',      url: '/downloads/code/model/braids.py',      desc: 'Topological braids and fermions layer, writhe configurations, and mass hierarchy formulas.' },
+  { name: 'config.py',      url: '/downloads/code/model/config.py',      desc: 'System configs, boundary conditions, and global physics constants.' },
+  { name: 'dynamics.py',    url: '/downloads/code/model/dynamics.py',    desc: 'Core simulation of quantum braiding dynamics, vertex updates, and transition models.' },
+  { name: 'geometry.py',    url: '/downloads/code/model/geometry.py',    desc: 'Discrete differential geometry, Wasserstein-1 metrics, lazy causal measures, and Einstein tensors.' },
+  { name: 'graph_setup.py', url: '/downloads/code/model/graph_setup.py', desc: 'Initialization of the lattice graph, causal set creation, and adjacency lists.' },
+  { name: 'observables.py', url: '/downloads/code/model/observables.py', desc: 'Calculating network observables, entanglement entropy, and graph-theoretical energy.' },
+  { name: 'qecc.py',        url: '/downloads/code/model/qecc.py',        desc: 'Topological Quantum Error Correcting Code (QECC) calculations and estimators.' },
+  { name: 'stabilizers.py', url: '/downloads/code/model/stabilizers.py', desc: 'Classical stabilizer/syndrome evaluation, parity check matrices, and comonadic error-correcting codes.' },
+  { name: 'stress_energy.py', url: '/downloads/code/model/stress_energy.py', desc: 'Discrete stress-energy tensor Tab calculations and local conservation/flux audits.' },
+  { name: 'utils.py',       url: '/downloads/code/model/utils.py',       desc: 'Helper methods for graph parsing, visualization export, and data conversion.' },
+  { name: 'worldsheets.py', url: '/downloads/code/model/worldsheets.py', desc: 'String and worldsheet limit helpers, Nambu-Goto area proxies, and critical-dimension counting.' },
 ];
 
 const KEY_CONCEPTS = [

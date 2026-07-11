@@ -1,5 +1,10 @@
 # Chapter 12: Discrete Field Equations (Einstein)
 
+﻿---
+title: " "
+sidebar_label: "12.1 - Convergence"
+---
+
 # Chapter 12: Continuum Limit (Convergence)
 
 We now ask a critical mathematical question: how does a discrete, relational graph of finite size converge to a smooth, continuous Riemannian manifold in the thermodynamic limit? The previous chapters derived the discrete curvature and field equations, but physical gravity operates on a continuous stage. We must prove that taking the Gromov-Hausdorff-Wasserstein limit of our sequence of graphs reconstructs the smooth kinematics of General Relativity, showing that the discrete relations transition to the continuous fields of classical physics.
@@ -498,14 +503,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 12.1.5.2 Commentary: Physical Significance {#12.1.5.2}
 
-:::info[**Physical Significance of Smoothness via Elliptic Regularity**]
+:::info[**Emergence of Smooth Geometry from Elliptic Regularity in Spectral Limits**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+The bootstrap mechanism of the Laplace-Beltrami operator ensures that weak solutions on the Gromov-Hausdorff limit space achieve infinite differentiability. This mathematical regularity of the eigenfunctions forces the underlying metric tensor itself to be smooth ($C^\infty$). This spectrally-mediated smoothing is the bridge between the discrete graph and continuous, differentiable manifolds.
 
 ### 12.1.6 Proof: Smooth Manifold Limit {#12.1.6}
 
@@ -558,6 +561,11 @@ This result implies a profound shift in the ontological status of spacetime. Gen
 
 With the stage now constructed (a smooth manifold $(M, g)$ equipped with a differential structure) we must populate it with physics. The geometric container is ready; the next step is to map the dynamical content (the flux of information) onto this manifold. We must demonstrate that the discrete stress-energy tensor $T_{ab}$ coarse-grains into a smooth tensor field $T_{\mu\nu}$ that sources the curvature of our newly derived metric, thereby recovering the Einstein Field Equations in their full continuum glory.
 
+---
+
+﻿---
+title: "Chapter 12: Continuum Limit"
+sidebar_label: "12.2 - Coarse-Graining"
 ---
 
 ## 12.2 Tensorial Reorganization {#12.2}
@@ -1025,14 +1033,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 12.2.5.2 Commentary: Physical Significance {#12.2.5.2}
 
-:::info[**Physical Significance of EFE Convergence**]
+:::info[**Pointwise Emergence of Einstein Field Equations via Renormalized Averaging**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+The convergence of the discrete Einstein field equations to their continuum counterparts proves that the local, statistical relationship between graph curvature and matter flux is preserved across the scale transition. The macroscopic gravitational coupling constant $G_N$ is revealed not as a fundamental constant, but as a renormalized value determined by the spherical averaging of microscopic graph elements.
 
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 

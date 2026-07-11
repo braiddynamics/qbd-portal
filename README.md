@@ -39,11 +39,23 @@ qbd-portal/
 │   │   ├── graph_setup.py    # Zero-Point Information (ZPI) vacuum generation
 │   │   ├── observables.py    # Macroscopic measurements (Density, N3 count)
 │   │   ├── qecc.py           # Awareness Comonad & local geometric stress
-│   │   └── utils.py          # Topological constraint checks (PUC, AEC)
-│   ├── simulations/          # Executable experiments
+│   │   ├── braids.py         # Topological braids / fermion layer
+│   │   ├── geometry.py       # Discrete geometry & Wasserstein-1 metric
+│   │   ├── stabilizers.py    # Classical stabilizer & syndrome layer
+│   │   ├── stress_energy.py  # Discrete stress-energy tensor Tab calculations
+│   │   └── worldsheets.py    # String / worldsheet limit helpers
+│   ├── simulations/          # Executable library validation runners
 │   │   ├── repo/             # Simulations from the Monograph
 │   │   ├── find_vacuum.py    # Phase space sweep for the Region of Physical Viability
 │   │   ├── run_ensemble.py   # Statistical ensemble runner
+│   │   ├── run_vacuum_regression.py   # Regression lock on vacuum physics
+│   │   ├── run_invariant_audit.py     # Hard-constraint audits during evolution
+│   │   ├── run_flux_balance.py        # Rate-based stress-energy time series
+│   │   ├── run_protocol_a_live.py     # Protocol A curvature-stress coupling
+│   │   ├── run_local_einstein_map.py  # Local Einstein maps on evolved vacuum
+│   │   ├── run_braid_survival.py      # Braid survival vs decay
+│   │   ├── run_confinement_on_vacuum.py # Vacuum geodesic distance scaling
+│   │   ├── run_validation_suite.py    # Orchestrates all validation runners
 │   │   └── test.py           # Verification script for local execution
 │   ├── tests/                # pyTest unit tests and code verification
 ├── docs/                     # Markdown source files for the Monograph
@@ -57,6 +69,21 @@ qbd-portal/
 ├── docusaurus.config.ts      # Site configuration and KaTeX macros
 └── package.json              # Node.js dependencies
 ```
+
+## Library Validation & Simulations Coverage
+
+Monograph theorem scripts live in `code/repo/python/` (standalone; no `model` imports). Validation runners under `code/simulations/` exercise the **shared library** (`code/model/`) and integrate components that only appear separately in the monograph:
+
+| Library Runner | Target Physics / Verification Scope | Validation Details |
+|---|---|---|
+| `find_vacuum.py` / `run_ensemble.py` | Vacuum phase space & parameter sweep | Full ensemble harness on shared engine |
+| `run_vacuum_regression.py` | Mean-field vacuum density and equilibrium stability | Regression lock with density tolerance bands |
+| `run_invariant_audit.py` | Causal constraints & stabilizer hard projectors | Audits structural graph properties during evolution |
+| `run_flux_balance.py` | Stress-energy tensor Tab and rate conservation | Computes Tab and local flux residuals over time series |
+| `run_protocol_a_live.py` | Einstein tensor vs stress (Protocol A coupling) | Computes kappa coupling on simple and large graphs |
+| `run_local_einstein_map.py` | Local curvature-stress spatial correlation | Samples Einstein tensor on equilibrated vacuum graphs |
+| `run_braid_survival.py` | Topological braid survival and deletion barriers | Evaluates knot stability vs trivial graph cluster decay |
+| `run_confinement_on_vacuum.py` | Geodesic path-cost scaling (confinement proxy) | Fits potential slope sigma on undirected vacuum graphs |
 
 ## Running the Portal Locally
 

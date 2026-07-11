@@ -258,7 +258,7 @@ Despite these paradoxes, the Axiom of Choice is a standard and indispensable com
   * Every commutative ring with a unit element contains a maximal ideal (Krull's Theorem).
   * The product of any collection of compact topological spaces is compact (Tychonoff's Theorem).
 
-The mathematical community has largely accepted AC because rejecting it would mean abandoning these and countless other foundational results, effectively crippling vast areas of modern algebra, analysis, and topology. The justification is not its intuitive plausibility, but its mathematical fertility. The matter was settled formally when Kurt Gödel (1938) and Paul Cohen (1963) proved that AC is independent of the other axioms of ZF set theory; it can be neither proved nor disproved from them. Its inclusion is a genuine choice, and that choice has been made in favor of systemic power over intuitive comfort <Cite id="A.42" label="(Marker, 2002)" />.
+The mathematical community has largely accepted AC because rejecting it would mean abandoning these and countless other foundational results, effectively crippling vast areas of modern algebra, analysis, and topology. The justification is not its intuitive plausibility, but its mathematical fertility. The matter was settled formally when Kurt Gödel (1938) and Paul Cohen (1963) proved that AC is independent of the other axioms of ZF set theory; it can be neither proved nor disproved from them. Its inclusion is a genuine choice, and that choice has been made in favor of systemic power over intuitive comfort.
 
 ---
 
@@ -355,7 +355,7 @@ This process mirrors the justification of non-Euclidean geometry. The measuremen
 
 This analysis has traced the distinction between the proof of a theorem and the justification of an axiom, arguing that the latter is a rational process grounded in systemic coherence and utility. The very definition of a formal deductive system renders its axioms unprovable from within; they are the starting points from which all proofs begin. Gödel’s incompleteness theorems elevate this definitional truth to a fundamental proof, a limitation of logic, demonstrating that any sufficiently powerful axiomatic system is necessarily incomplete and cannot prove its own consistency. This mathematical reality precludes the foundationalist dream of a complete and self-verifying basis for all knowledge, forcing the acceptance of axioms to be an act of justified, meta-systemic choice.
 
-The historical case studies of Euclidean geometry and the Axiom of Choice serve as powerful illustrations of this principle in action. The centuries-long effort to prove the parallel postulate gave way to the realization that it was an independent choice, defining one of several possible consistent geometries. Its justification shifted from an appeal to physical intuition to a demonstration of its role within a coherent system. The Axiom of Choice presents an even more modern case, where a physically counterintuitive and non-constructive principle is widely accepted based almost entirely on its mathematical fertility (the immense power and elegance of the mathematical structures and proofs it enables).
+The historical case studies of **Euclidean geometry** (detailed in the chapter **Epistemological Foundations** <Ref id="1.1" label="§1.1" />) and the **Axiom of Choice** <Ref id="1.1.5" label="§1.1.5" /> serve as powerful illustrations of this principle in action. The centuries-long effort to prove the parallel postulate gave way to the realization that it was an independent choice, defining one of several possible consistent geometries. Its justification shifted from an appeal to physical intuition to a demonstration of its role within a coherent system. The Axiom of Choice presents an even more modern case, where a physically counterintuitive and non-constructive principle is widely accepted based almost entirely on its mathematical fertility (the immense power and elegance of the mathematical structures and proofs it enables).
 
 This mode of justification is best understood through the epistemological framework of coherentism, where beliefs (or in this case, axioms) are validated by their mutual support within a larger system. This holistic process is distinct from fallacious circular reasoning. It is a rational, highly constrained procedure guided by the principles of consistency, parsimony, and systemic utility. The analogy with Rovelli's Relational Quantum Mechanics underscores that this is not a feature unique to mathematics but a fundamental aspect of theory-building in the face of foundational questions.
 
@@ -368,11 +368,11 @@ Ultimately, foundational axioms are not the bedrock of truth in the sense of bei
 :::note[**Epistemological Foundations**]
 :::
 
-We have justified our starting points by the physics they produce. This approach allows us to accept them without the impossible requirement of absolute, antecedent proof. By abandoning the search for a static or self-evident truth, we have committed to constructing logical self-consistency through a coherentist framework. We have traded the illusion of a proven foundation for the utility of a computable one. This clears the ground for a constructive physics that does not require an infinite chain of prior causes to function, it is a strategic alignment with the nature of formal systems. We acknowledge that the map must be drawn before it can be read.
+We have justified our starting points by the physics they produce. This approach allows us to accept them without the impossible requirement of absolute, antecedent proof. By abandoning the search for a static or self-evident truth, we have committed to constructing logical self-consistency through a **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" />. We have traded the illusion of a proven foundation for the utility of a computable one. This clears the ground for a constructive physics that does not require an infinite chain of prior causes to function, it is a strategic alignment with the nature of formal systems. We acknowledge that the map must be drawn before it can be read.
 
-This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches us that any such foundation is arbitrary unless it justifies itself through operation. We are not digging for a foundation that sits passively beneath the universe. We are identifying the operating system that keeps the universe running. The truth of our axioms lies not in their divine origin but in their structural stability. We are asserting that the physical universe is isomorphic to a formal system because it is a deduction being executed. Therefore, the constraints we place upon our theory, such as finiteness and consistency, are ontological requirements for existence itself.
+This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches us that any such foundation is arbitrary unless it justifies itself through operation. We are not digging for a foundation that sits passively beneath the universe. We are identifying the operating system that keeps the universe running. The truth of our axioms lies not in their divine origin but in their structural stability. We are asserting that the physical universe is isomorphic to a formal system because it is a deduction being executed, establishing our **Epistemological Foundations** <Ref id="1.1" label="§1.1" />. This justification is rooted in the **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.42" label="(Marker, 2002)" />. Therefore, the constraints we place upon our theory, such as finiteness and consistency, are ontological requirements for existence itself.
 
-Furthermore, this finiteness imposes a strict boundary on the physical structure because it cannot support infinite histories or undefined origins. If the logic requires a starting point to be computable, we must conclude that the universe itself must be constructed from discrete, well-defined relations. We cannot hide behind the concept of continuous space or infinite regress. These are computationally undefined operations that would prevent the system from ever initializing. To build a computable universe, we must first define the primitive relational shapes and structures that can be realized within a network. This epistemological constraint forces our hand regarding the nature of space. We are thus compelled to define the graph-theoretic primitives that will serve as our geometric vocabulary, leading us directly to the definition of graph shapes.
+Furthermore, this finiteness imposes a strict boundary on the physical structure because it cannot support infinite histories or undefined origins. If the logic requires a starting point to be computable, we must conclude that the universe itself must be constructed from discrete, well-defined relations. We cannot hide behind the concept of continuous space or infinite regress. These are computationally undefined operations that would prevent the system from ever initializing. To build a computable universe, we must first define the primitive relational shapes and structures that can be realized within a **Directed Acyclic Graph** <Ref id="1.2.1" label="§1.2.1" />. This epistemological constraint forces our hand regarding the nature of space. We are thus compelled to define the graph-theoretic primitives that will serve as our geometric vocabulary, leading us directly to the definition of graph shapes.
 
 ---
 
@@ -587,9 +587,9 @@ A 3-cycle represents the minimal closed loop enclosing a topological area (the G
 :::note[**Graph-Theoretic Definitions**]
 :::
 
-Identification of the fundamental motifs gives us our building blocks for the chapters to come. The open path represents the potential for interaction and causal flow. The closed loop represents the realization of structure and geometric area. These simple shapes constitute the alphabet of our physical geometry. We are building the periodic table of graph elements. We are identifying the stable isotopes of connectivity that can endure in a fluctuating universe. Without these definitions, we would be unable to distinguish a random tangle from a meaningful structure like a particle or a vacuum manifold.
+Identification of the fundamental motifs gives us our building blocks for the chapters to come. The open path represents the potential for interaction and causal flow, as characterized by the **Directed Path** <Ref id="1.2.3" label="§1.2.3" />. The closed loop represents the realization of structure and geometric area, as defined by the **Cycle** <Ref id="1.2.6" label="§1.2.6" />. These simple shapes constitute the alphabet of our physical geometry. We are building the periodic table of graph elements. We are identifying the stable isotopes of connectivity that can endure in a fluctuating universe. Without these definitions, we would be unable to distinguish a random tangle from a meaningful structure like a particle or a vacuum manifold.
 
-By defining them clearly, we give the system the capacity to recognize its own local topology. We distinguish between a connection and a closure. This is the first step toward the emergence of geometry from pure relation. An open path defines a one-dimensional causal relation, a sequence of before and after. A closed loop defines a two-dimensional area, a boundary that separates inside from outside. By categorizing these shapes, we prepare the ground for a physics that constructs dimensionality from the bottom up, rather than assuming it as a background stage. The graph is no longer just a list of edges. It is a collection of geometric objects waiting to be assembled into a manifold.
+By defining them clearly, we give the system the capacity to recognize its own local topology. We distinguish between a connection and a closure. This is the first step toward the emergence of geometry from pure relation. An open path defines a one-dimensional causal relation, a sequence of before and after, formalizing the **2-Path** <Ref id="1.2.5" label="§1.2.5" />. A closed loop defines a two-dimensional area, a boundary that separates inside from outside, constituting the **3-Cycle** <Ref id="1.2.8" label="§1.2.8" />. By categorizing these shapes, we prepare the ground for a physics that constructs dimensionality from the bottom up, rather than assuming it as a background stage. The graph is no longer just a list of edges. It is a collection of geometric objects waiting to be assembled into a manifold.
 
 With the graph-theoretic shapes defined, we have our structural vocabulary. However, these shapes are static configurations. To establish a physical universe, we must introduce a mechanism of change and an ordering of states. We must define what it means for one configuration to succeed another. This leads directly to the question of time. We must construct a temporal ontology that defines the absolute logical sequence of updates and the emergent physical coordinate time. We turn next to the temporal ontology.
 
@@ -798,7 +798,7 @@ Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})
 
 **I. Setup and Assumptions**
 
-Let $\Omega_{t}$ denote the set of admissible physical states at logical time $t$. Let $S(U_{t}) = \log_2 |\Omega_{t}|$ quantify the information content.
+Let $\Omega_{t}$ denote the set of admissible physical states at logical time $t$, as governed by the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> coordinate. Let $S(U_{t}) = \log_2 |\Omega_{t}|$ quantify the information content of the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> state.
 
 The physical postulates impose the following growth constraints:
 
@@ -1052,13 +1052,13 @@ Given a universal configuration space $\Omega$ characterized by a strictly finit
 
 **I. Boundary Conditions and State Space Setup**
 
-Let $\Omega$ denote the universal configuration space of admissible states. Assume the cardinality of this state space is strictly finite:
+Let $\Omega$ denote the universal configuration space of admissible states, whose finite cardinality is established in the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />. Assume the cardinality of this state space is strictly finite:
 
 $$
 |\Omega| = N < \infty
 $$
 
-Let the global logical timeline be hypothesized as unbounded in the past direction, generating an infinite sequence of states $\mathcal{T}$ indexed by non-positive logical time integers:
+Let the global logical timeline be hypothesized as unbounded in the past direction, generating an infinite sequence of states $\mathcal{T}$ indexed by non-positive logical time integers in the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> poset:
 
 $$
 \mathcal{T = (\dots, U_{-2}, U_{-1}, U_0)}
@@ -1153,7 +1153,7 @@ Given an infinite sequence of discrete computational steps required to generate 
 
 **I. Initial Conditions and History Definition**
 
-Let $\mathcal{H}$ denote the ordered set of computational operations $\mathcal{U}_i$ required to generate the present state $U_0$ from a precedent state. Under the hypothesis of an infinite past ($t \in \mathbb{Z}_{\le 0}$), the index set is the negative integers $\mathbb{Z}_{\le -1}$:
+Let $\mathcal{H}$ denote the ordered set of computational operations $\mathcal{U}_i$ required to generate the present state $U_0$ from a precedent state. Under the hypothesis of an infinite past, the index set of the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> is the negative integers, violating the well-foundedness required for physical causation outlined in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />:
 
 $$
 \mathcal{H} = \{ \dots, \mathcal{U}_{-3}, \mathcal{U}_{-2}, \mathcal{U}_{-1} \}
@@ -1347,9 +1347,9 @@ The universe thus mandates a **finite history**, with the Global Sequencer initi
 :::note[**Temporal Ontology**]
 :::
 
-Forcing the timeline to be finite cuts off the infinite regress. This ensures that every state possesses a definite causal ancestry traceable back to a singular origin. The conclusion is inescapable. "Becoming" is a discrete process. It is a sequence of state transitions that can be counted but not divided. This eliminates the possibility of a universe that has always existed. It grounds physics in a definite genesis where the first state acts as the uncaused cause of the computational chain. It implies that the history of the universe is a finite string of data. It is fully enumerable and logically bounded. This prevents the singularities associated with infinite pasts.
+Forcing the timeline to be finite cuts off the infinite regress, as established in **Temporal Finitude** <Ref id="1.3.9" label="§1.3.9" />. This ensures that every state possesses a definite causal ancestry traceable back to a singular origin, avoiding the paradoxes of **Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />. The conclusion is inescapable. "Becoming" is a discrete process. It is a sequence of state transitions that can be counted but not divided. This eliminates the possibility of a universe that has always existed. It grounds physics in a definite genesis where the first state acts as the uncaused cause of the computational chain. It implies that the history of the universe is a finite string of data. It is fully enumerable and logically bounded. This prevents the singularities associated with infinite pasts.
 
-The logical clock $t_L$ emerges here not as a coordinate dimension that one can travel through. It emerges as the relentless driver of existence itself. It acts as the fundamental CPU cycle of the universe. It is an external iterator that processes the state transition function. This distinction is vital because it separates the act of change from the measurement of change. Physical time is the variable that appears in relativity equations and is measured by atomic clocks. It is an emergent property of the relations inside the graph and is subject to dilation and curvature. Logical time is the absolute ordering of the computation. It is immune to these relativistic effects. By separating these two concepts, we resolve the Problem of Time in quantum gravity. The universe has a heartbeat, but it is not a clock hanging on the wall of spacetime.
+The logical clock $t_L$ emerges here not as a coordinate dimension that one can travel through, but as defined in the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. It separates the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> from the **Emergent Physical Time** <Ref id="1.3.2" label="§1.3.2" />. It acts as the fundamental CPU cycle of the universe. It is an external iterator that processes the state transition function. This distinction is vital because it separates the act of change from the measurement of change. Physical time is the variable that appears in relativity equations and is measured by atomic clocks. It is an emergent property of the relations inside the graph and is subject to dilation and curvature. Logical time is the absolute ordering of the computation. It is immune to these relativistic effects. By separating these two concepts, we resolve the Problem of Time in quantum gravity. The universe has a heartbeat, but it is not a clock hanging on the wall of spacetime.
 
 With the clock established, the nature of the object that evolves must be defined. We have secured the timing and the mechanism of the update cycle. However, a heartbeat requires a body to animate. Time cannot exist in a vacuum because it requires a state to transition from and to. We turn now to the definition of the spatial substrate. We must define the graph that serves as the memory of the system. We must define the canvas upon which this temporal iterator paints the history of the cosmos.
 
@@ -1487,7 +1487,7 @@ $$
 H(e) = 1 + \max\left( \lbrace H(e') \mid e' = (w, u) \in E \rbrace \cup \lbrace0\rbrace \right)
 $$
 
-where the maximum is taken over all edges $e'$ incoming to the source vertex $u$. The timestamp function $H$ induces a well-founded partial order on $E$ and enforces that $G$ is a directed acyclic graph, preserving the forward arrow of logical time <Cite id="A.38" label="(Lamport, 1978)" />.
+where the maximum is taken over all edges $e'$ incoming to the source vertex $u$. The timestamp function $H$ induces a well-founded partial order on $E$ and enforces that $G$ is a directed acyclic graph, preserving the forward arrow of logical time.
 
 ---
 
@@ -1557,7 +1557,7 @@ Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. 
 
 **I. Pre-computation of the Source History**
 
-Let the constructor function query the pre-existing history of vertex $u$.  Let $T_{max}$ represent the maximum timestamp among all pre-existing incoming edges:
+Let the proposed self-loop $e_{self} = (u, u)$ be defined on the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. Its calculated **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> is governed by the recurrence relation defined in the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />. Let the constructor function query the pre-existing history of vertex $u$.  Let $T_{max}$ represent the maximum timestamp among all pre-existing incoming edges:
 
 $$
 T_{max} = \max \left( \{ H(e') \mid e' \in \text{In}(u)_{\text{pre}} \} \cup \{0\} \right)
@@ -1642,7 +1642,7 @@ $$
  
  Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent edges along the path $\pi$.  By definition, $e_1$ terminates at $v_1$, making $e_1 \in \text{In}(v_1)$.
  
- The timestamp of $e_2$ is assigned according to the recursive relation:
+ The **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> of $e_2$ is assigned according to the recursive relation defined in **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />:
  
  $$
  H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
@@ -1738,9 +1738,9 @@ Q.E.D.
 :::note[**Causal Graph**]
 :::
 
-A network of relations has replaced the coordinate system. The timestamp functions as a permanent label. It freezes the moment of creation for every link and embeds the arrow of time directly into the topology. This creates a static skeleton. It is a record of events and their causes that stands independent of any observer. The abstract concept of causality is successfully translated into a concrete, countable structure. This graph is the absolute floor of reality. Beneath this graph there is no sub-structure. There is only the logic of the code itself.
+A network of relations has replaced the coordinate system. The timestamp functions as a permanent label, defined on the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. It freezes the moment of creation for every link and embeds the arrow of time directly into the topology, which ensures the **Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />. This creates a static skeleton. It is a record of events and their causes that stands independent of any observer. The abstract concept of causality is successfully translated into a concrete, countable structure. This graph is the absolute floor of reality. Beneath this graph there is no sub-structure. There is only the logic of the code itself.
 
-This structure provides the memory of the system. It encodes the past interactions that define the present state. In this ontology, space is not a pre-existing container that events happen within. Space is the relationship between events. If two particles are far apart, it is not because there is a lot of empty void separating them. It is because the graph distance is large. The graph distance is the sheer number of causal links one must traverse to get from one to the other. This is a background-independent description of reality that does not require an external ruler or grid. By embedding the timestamp $t_L$ onto the edges, the graph is not just a spatial web; it is a spacetime history. It is a growing block of causal connections where the past is preserved in the topology of the present.
+This structure provides the memory of the system. It encodes the past **Causal Relation** <Ref id="1.4.3" label="§1.4.3" /> states that define the present state, satisfying the strict ordering of the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />. In this ontology, space is not a pre-existing container that events happen within. Space is the relationship between events. If two particles are far apart, it is not because there is a lot of empty void separating them. It is because the graph distance is large. The graph distance is the sheer number of causal links one must traverse to get from one to the other. This is a background-independent description of reality that does not require an external ruler or grid. By embedding the timestamp $t_L$ onto the edges, the graph is not just a spatial web; it is a spacetime history. It is a growing block of causal connections where the past is preserved in the topology of the present.
 
 The inquiry now turns to the dynamics. Defining the specific operations allowed to transform this graph from one moment to the next is the next logical step. The object is defined, but the motion is not yet defined. It must be determined how this static web becomes a living, evolving universe. A graph that sits eternally unchanged does not represent a physics; it represents a painting. To breathe life into this structure, the legal moves that can alter it must be defined. This leads to the definition of the task space.
 
@@ -1981,9 +1981,9 @@ For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$,
 
 **I. Evaluation of the Edge Addition Inverse**
 
-Let $G = (V, E, H)$ be a causal graph, and let $T = \mathfrak{T}_{add}(u, v)$ be defined on $G$.  The resulting graph is $G' = (V, E \cup \{(u, v)\}, H')$, where $H'$ assigns $t_L$ to the new edge.
+Let $G = (V, E, H)$ be a causal graph, and let $T = \mathfrak{T}_{add}(u, v)$ be the **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> defined on $G$.  The resulting graph is $G' = (V, E \cup \{(u, v)\}, H')$, where $H'$ assigns $t_L$ to the new edge.
 
-We apply the primitive task $T^{-1} = \mathfrak{T}_{del}(u, v)$ to $G'$:
+We apply the primitive task $T^{-1} = \mathfrak{T}_{del}(u, v)$ (the **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />) to $G'$:
 
 1.  **Vertex Set**: $V'' = V' = V$.
 2.  **Edge Set**: $E'' = E' \setminus \{(u, v)\} = (E \cup \{(u, v)\}) \setminus \{(u, v)\} = E$.
@@ -2075,9 +2075,9 @@ Q.E.D.
 :::note[**Task Space**]
 :::
 
-Limiting dynamics to the bare minimum allows the system simply to make or break a link. This symmetry reveals itself as a vital feature of the theory because it ensures the universe is not structurally biased by its own mechanics toward either infinite density or total emptiness. The machinery of the universe is neutral. This allows the outcome to be determined by the interaction of the parts rather than the design of the tools. This neutrality is essential. If the laws of physics were biased toward creation, the universe would explode instantly. If they were biased toward destruction, it would vanish.
+Limiting dynamics to the bare minimum allows the system simply to make or break a link, as defined in the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />. The machinery of the universe is neutral, governed by the symmetric operators of **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> and **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />. This symmetry reveals itself as a vital feature of the theory because it ensures the universe is not structurally biased by its own mechanics toward either infinite density or total emptiness. The machinery of the universe is neutral. This allows the outcome to be determined by the interaction of the parts rather than the design of the tools. This neutrality is essential. If the laws of physics were biased toward creation, the universe would explode instantly. If they were biased toward destruction, it would vanish.
 
-Structures can be built and dissolved with equal facility. This allows the system to explore its configuration space freely. This neutrality guarantees that any order that eventually emerges does so because of the thermodynamic rules of selection, not because the kinematic machinery was predisposed to produce it. By restricting the universe to these two operations, a conservation of possibility is established. Nothing is created that cannot be destroyed, and nothing is destroyed that cannot be recreated. This balance allows for a dynamic equilibrium to eventually form. It creates a state of flux that mimics the stability of matter.
+Structures can be built and dissolved with equal facility. This allows the system to explore its configuration space freely, ensuring the **Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />. This neutrality guarantees that any order that eventually emerges does so because of the thermodynamic rules of selection, not because the kinematic machinery was predisposed to produce it. By restricting the universe to these two operations, a conservation of possibility is established. Nothing is created that cannot be destroyed, and nothing is destroyed that cannot be recreated. This balance allows for a dynamic equilibrium to eventually form. It creates a state of flux that mimics the stability of matter.
 
 This kinematic freedom is necessary but insufficient. While the ability to add and delete edges provides the vocabulary of change, it does not provide the rules of selection. A universe that can do anything at random will likely do nothing coherent. The verbs of the physical language, which are the creation and destruction of relations, are defined. However, the grammar that governs them remains to be formulated. We must assemble these primitives, definitions, and temporal constructs into a unified mathematical syntax. We turn to the formal synthesis of our ontological symbols.
 

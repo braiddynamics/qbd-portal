@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD de Sitter Inflation Audit
-# Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.5
+# Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.9
 #            (Standalone Version).
 # Version:   1.3
 # -----------------------------------------------------------------------------

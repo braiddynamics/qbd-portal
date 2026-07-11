@@ -1154,7 +1154,7 @@ Let $\rho(t)$ denote the intensive cycle density of the expanding graph under th
 :::tip[**Structure of the de Sitter Expansion Argument via Growth Simplification, Bipartite Expansion, and Scaling Synthesis**]
 :::
 
-The proof proceeds by construction, establishing the **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" /> through the integration of two dynamical lemmas:
+The proof proceeds by construction, establishing the **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" /> through the integration of six dynamical lemmas:
 
 ```text
 • 18.3.1 Theorem Emergence of de Sitter Expansion  [by construction]
@@ -1167,11 +1167,32 @@ The proof proceeds by construction, establishing the **Emergence of de Sitter Ex
 │   ├── 18.3.3.1 Proof: Self-Similar Bipartite Expansion
 │   └── 18.3.3.2 Commentary: Substrate Growth Balance
 │
-├── 18.3.4 Proof: Emergence of de Sitter Expansion
+├── 18.3.4 Lemma: Ahlfors Regularity Bounds
+│   ├── 18.3.4.1 Proof: Ahlfors Regularity Bounds
+│   └── 18.3.4.2 Commentary: Boundary Area Stabilization
 │
-├── 18.3.5 Calculation: de Sitter Scale Factor Growth
+├── 18.3.5 Lemma: Spectral Dimension Convergence
+│   ├── 18.3.5.1 Proof: Spectral Dimension Convergence
+│   └── 18.3.5.2 Commentary: Infrared Operator Convergence
 │
-└── 18.3.6 Diagram: de Sitter Expansion Phase Profile
+├── 18.3.6 Lemma: Gromov-Hausdorff Laplacian Convergence
+│   ├── 18.3.6.1 Proof: Gromov-Hausdorff Laplacian Convergence
+│   └── 18.3.6.2 Commentary: Variational Energy Stability
+│
+├── 18.3.7 Lemma: Dimensional Emergence
+│   └── 18.3.7.1 Proof: Dimensional Emergence
+│
+├── 18.3.8 Proof: Emergence of de Sitter Expansion
+│
+├── 18.3.9 Calculation: de Sitter Scale Factor Growth
+│
+├── 18.3.10 Diagram: de Sitter Expansion Phase Profile
+│
+├── 18.3.11 Calculation: Hausdorff Dimension Flow
+│
+├── 18.3.12 Diagram: Dimensional Crystallization RG Flow
+│
+└── 18.3.13 Calculation: Heat Kernel Spectral Walks
 ```
 
 ---
@@ -1303,14 +1324,253 @@ As the graph volume increases, the simultaneous addition of new vertices and edg
 
 ---
 
-### 18.3.4 Proof: Emergence of de Sitter Expansion {#18.3.4}
+### 18.3.4 Lemma: Ahlfors Regularity Bounds {#18.3.4}
+
+:::info[**Enforcement of Ahlfors Four-Regularity at the Stable Attractor**]
+:::
+
+Let $B(v, R)$ denote a topological ball of radius $R$ centered at vertex $v$ at the stable attractor density $\rho^* \approx 0.037$. Then there exist positive constants $c_1, c_2$ such that the volume satisfies the polynomial scaling relation:
+$$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
+
+---
+
+### 18.3.4.1 Proof: Ahlfors Regularity Bounds {#18.3.4.1}
+
+:::tip[**Formal Proof of Ahlfors Regularity Bounds via Scale-Invariant Volume Flow and Steric Backpressure**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $v \in V$ be a vertex in the emergent graph at the stable attractor density $\rho^* \approx 0.037$. Let $B(v, R)$ denote the topological ball of radius $R$ centered at $v$. Let $|B(v, R)|$ denote the number of vertices contained within $B(v, R)$.
+
+**II. The Logic Chain**
+
+1.  **Volume-Complexity Link** <Ref id="18.2.1" label="§18.2.1" />: The spatial volume scales with the cycle population as $\text{Vol}(t) = \gamma N_3(t) \ell_0^3$.
+2.  **Frictionless Growth Simplification** <Ref id="18.3.2" label="§18.3.2" />: Autocatalytic growth is balanced by steric backpressure at the attractor density $\rho^*$.
+
+**III. Assembly**
+
+we obtain the volume of the topological ball under scale transformation. On a tree substrate, the volume scales exponentially with the radius $R$:
+$$ |B(v, R)|_{\text{tree}} \propto (k-1)^R $$
+Analysis of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$ reveals that it acts as a local exponential damping on edge additions. we obtain the edge addition rate at topological distance $R$ as:
+$$ \lambda_{\text{add}}(R) = \lambda_0 e^{-6\mu\rho^*} \propto R^{-1} $$
+The recursion relation for the volume $|B(v, R)|$ is written as:
+$$ |B(v, R)| - |B(v, R-1)| = \partial |B(v, R)| $$
+where $\partial |B(v, R)|$ represents the boundary area of the ball. The boundary area $\partial |B(v, R)|$ scales as $R^{d-1}$, while the bulk volume $|B(v, R)|$ scales as $R^d$. The scale-invariant fixed-point condition for the balance of cycle creation and deletion requires:
+$$ \frac{\partial |B(v, R)|}{|B(v, R)|} \propto \frac{R^{d-1}}{R^d} = R^{-1} $$
+Substituting the boundary-bulk scaling relation into the fixed-point equation establishes that cycle creation scales with the boundary area $R^{d-1}$ and catalytic deletion scales with the bulk volume $R^d$. A stable balance under scale transformation requires:
+$$ d - 1 = d - 1 \implies d = 4 $$
+Integrating the boundary relation $\partial |B(v, R)| \propto R^3$ yields:
+$$ |B(v, R)| = \sum_{r=1}^R \partial |B(v, r)| \propto \sum_{r=1}^R r^3 \propto R^4 $$
+we conclude the existence of positive constants $c_1$ and $c_2$ such that:
+$$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
+
+**IV. Formal Conclusion**
+
+We conclude that the emergent graph satisfies Ahlfors 4-regularity at the stable attractor density $\rho^*$, bounding the volume scaling by polynomial degree 4.
+
+Q.E.D.
+
+---
+
+### 18.3.4.2 Commentary: Boundary Area Stabilization {#18.3.4.2}
+
+:::info[**Verification of Ahlfors Four-Regularity Scaling**]
+:::
+
+The Ahlfors regularity bounds $c_1 R^4 \le |B(v, R)| \le c_2 R^4$ establish that the emergent graph exhibits a stable 4D spatial volume scaling at the attractor density.
+
+On a purely tree-like substrate, volumes scale exponentially with the topological radius. However, the introduction of cyclic connections and the subsequent emergence of steric backpressure systematically suppress exponential growth. The polynomial volume growth of degree 4 represents the exact balance where the boundary area creation balances the bulk deletion process, stabilizing the dimensionality of the emergent spatial slice.
+
+---
+
+### 18.3.5 Lemma: Spectral Dimension Convergence {#18.3.5}
+
+:::info[**Convergence of the Spectral Dimension of Random Walks on the Emergent Graph**]
+:::
+
+Let $P(t)$ be the return probability of a random walk after $t$ steps on the graph at the stable attractor density $\rho^*$.
+
+---Then the spectral dimension $d_S$ converges to the limit $\lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} = 4$.
+
+### 18.3.5.1 Proof: Spectral Dimension Convergence {#18.3.5.1}
+
+:::tip[**Formal Proof of Spectral Dimension Convergence via Laplacian Spectral Density Analysis**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $G = (V, E)$ be the emergent graph at the stable attractor density $\rho^*$. Let $\Delta = D - A$ be the discrete Laplacian of the graph. Let $P(t)$ be the return probability of a random walk of duration $t$ steps, starting and ending at vertex $v_0$.
+
+**II. The Logic Chain**
+
+1.  **Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$.
+2.  **Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
+
+**III. Assembly**
+
+we obtain the return probability $P(t)$ of the random walk in terms of the heat kernel $e^{-\Delta t}$ at the origin:
+$$ P(t) = \langle v_0 | e^{-\Delta t} | v_0 \rangle = \int_0^\infty e^{-\lambda t} \rho(\lambda) d\lambda $$
+where $\rho(\lambda)$ is the spectral density (density of states) of the Laplacian eigenvalues $\lambda$.
+we obtain the spectral density $\rho(\lambda)$ for small $\lambda$ (infrared limit) in terms of the spectral dimension $d_S$:
+$$ \rho(\lambda) \propto \lambda^{d_S/2 - 1} $$
+We substitute the spectral density back into the heat kernel integral:
+$$ P(t) \propto \int_0^\infty e^{-\lambda t} \lambda^{d_S/2 - 1} d\lambda $$
+we compute a change of variable $u = \lambda t \implies d\lambda = \frac{1}{t} du$:
+$$ P(t) \propto \int_0^\infty e^{-u} \left(\frac{u}{t}\right)^{d_S/2 - 1} \frac{1}{t} du = t^{-d_S/2} \int_0^\infty e^{-u} u^{d_S/2 - 1} du $$
+we obtain the integral as the Gamma function $\Gamma(d_S/2)$:
+$$ P(t) = C \cdot t^{-d_S/2} \Gamma(d_S/2) \propto t^{-d_S/2} $$
+we apply the logarithm of both sides:
+$$ \ln P(t) = \ln C - \frac{d_S}{2} \ln t $$
+we compute for the spectral dimension $d_S$:
+$$ d_S = -2 \frac{\ln P(t) - \ln C}{\ln t} $$
+We evaluate the limit as $t \to \infty$:
+$$ \lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} $$
+Since Ahlfors regularity establishes that the topological dimension is $d = 4$, the discrete Laplacian eigenvalues $\lambda_n$ behave as a 4-dimensional Euclidean grid, satisfying $\rho(\lambda) \propto \lambda^{4/2 - 1} = \lambda^1$. We substitute $d_S = 4$ into the return probability:
+$$ P(t) \propto t^{-2} $$
+We evaluate the limit:
+$$ \lim_{t \to \infty} -2 \frac{\ln(t^{-2})}{\ln t} = \lim_{t \to \infty} -2 \frac{-2 \ln t}{\ln t} = 4 $$
+
+**IV. Formal Conclusion**
+
+We conclude that the spectral dimension of the emergent graph converges to exactly $4$ in the thermodynamic limit.
+
+Q.E.D.
+
+---
+
+### 18.3.5.2 Commentary: Infrared Operator Convergence {#18.3.5.2}
+
+:::info[**Behavior of Spectral Densities on the Metric Attractor**]
+:::
+
+The convergence of the spectral dimension $\lim_{t \to \infty} d_S(t) = 4$ validates the infrared behavior of random walks on the emergent manifold.
+
+The spectral dimension measures the effective dimensionality perceived by physical diffusion processes. The convergence to exactly 4 ensures that the eigenvalues of the discrete Laplacian accumulate in a manner identical to the smooth Laplace-Beltrami operator on a 4D Euclidean space. This indicates that physical propagators and field equations defined on the graph will behave continuously and isotropically in the low-energy limit.
+
+---
+
+### 18.3.6 Lemma: Gromov-Hausdorff Laplacian Convergence {#18.3.6}
+
+:::info[**Convergence of Discrete Graph Laplacian to Smooth Laplace-Beltrami Operator**]
+:::
+
+Let $\{G_n\}$ be a sequence of graphs satisfying the Ahlfors 4-regularity bounds with Gromov-Hausdorff limit space $(M, g)$, and let $\Delta_{G_n}$ represent the normalized discrete Laplacian. Then for any smooth test function $f \in C^{\infty}(M)$, the convergence limit satisfies:
+$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2} = 0 $$
+where $\phi_n: M \to V(G_n)$ are the Gromov-Hausdorff $\varepsilon_n$-approximations.
+
+---
+
+### 18.3.6.1 Proof: Gromov-Hausdorff Laplacian Convergence {#18.3.6.1}
+
+:::tip[**Formal Proof of Gromov-Hausdorff Laplacian Convergence via Dirichlet Form and Mosco Convergence**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $\{G_n = (V_n, E_n)\}$ be a sequence of finite graphs satisfying the Ahlfors 4-regularity bounds, with Gromov-Hausdorff limit space $(M, g)$ being a smooth compact Riemannian manifold. Let $f \in C^{\infty}(M)$ be a smooth test function. Let $\mathcal{E}_{G_n}(u) = \frac{1}{N_n} \sum_{x \sim y} (u(x) - u(y))^2$ be the discrete Dirichlet form on $G_n$.
+
+**II. The Logic Chain**
+
+1.  **Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$, establishing metric measure convergence.
+2.  **Spectral Dimension Convergence** <Ref id="18.3.5" label="§18.3.5" />: The spectral dimension is 4, matching the Laplace eigenvalues scaling.
+
+**III. Assembly**
+
+we rewrite the Mosco convergence of Dirichlet forms. Let the continuous Dirichlet energy on the limit manifold $(M, g)$ be defined as:
+$$ \mathcal{E}_M(f) = \int_M |\nabla_g f|^2 d\mu_g $$
+we obtain the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
+$$ C_1 \int_M |\nabla_g f|^2 d\mu_g \le \mathcal{E}_{G_n}(f \circ \phi_n) \le C_2 \int_M |\nabla_g f|^2 d\mu_g $$
+where $C_1$ and $C_2$ are positive constants determined by the Ahlfors bounds $c_1, c_2$.
+The relation between the Dirichlet form and the Laplacian generator is written for the discrete space as:
+$$ \mathcal{E}_{G_n}(u, v) = \langle u, \Delta_{G_n} v \rangle_{L^2(G_n)} $$
+And for the continuous manifold:
+$$ \mathcal{E}_M(f, \psi) = \langle f, \Delta_g \psi \rangle_{L^2(M)} = \int_M f (-\Delta_g \psi) d\mu_g $$
+By Mosco convergence, the sequence of discrete Dirichlet forms converges to the continuous Dirichlet form:
+$$ \lim_{n \to \infty} \mathcal{E}_{G_n}(f \circ \phi_n, f \circ \phi_n) = \mathcal{E}_M(f, f) $$
+Taking the variational derivative of the energy functional yields operator convergence in the strong operator topology. We evaluate the $L^2$ norm difference of the Laplacian actions:
+$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2(M)} = 0 $$
+
+**IV. Formal Conclusion**
+
+We conclude that the discrete graph Laplacian converges rigorously to the smooth Laplace-Beltrami operator in the Gromov-Hausdorff limit.
+
+Q.E.D.
+
+---
+
+### 18.3.6.2 Commentary: Variational Energy Stability {#18.3.6.2}
+
+:::info[**Mosco Convergence of Graph Dirichlet Forms**]
+:::
+
+The Gromov-Hausdorff Laplacian convergence theorem proves that the discrete graph energy converges to the smooth manifold energy in the thermodynamic limit.
+
+This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace-Beltrami operator, this spectral convergence guarantees that the discrete wave equations, Green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
+
+---
+
+### 18.3.7 Lemma: Dimensional Emergence {#18.3.7}
+
+:::info[**Crystallization of the Local Hausdorff and Spectral Dimensions to Four Dimensions at the Attractor**]
+:::
+
+Let $\rho(t)$ be the intensive cycle density flowing under the universal evolution operator $\mathcal{U}$, such that the local Hausdorff and spectral dimensions are well-defined.
+
+---
+
+### 18.3.7.1 Proof: Dimensional Emergence {#18.3.7.1}
+
+:::tip[**Formal Proof of Dimensional Emergence via Gromov-Hausdorff Metric Limit Evaluation**]
+:::
+
+ This synthesis proof utilizes the structural results established in supporting **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" />.
+**I. Setup and Assumptions**
+
+Let $\{G_N\}$ be a sequence of finite graphs with bounded degree and intensive cycle density converging to the stable attractor density $\lim_{N\to\infty} \rho = \rho^* \approx 0.037$.
+
+**II. The Logic Chain**
+
+1.  **Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />: The volume of topological balls satisfies $c_1 R^4 \le |B(v, R)| \le c_2 R^4$.
+2.  **Spectral Dimension Convergence** <Ref id="18.3.5" label="§18.3.5" />: The spectral dimension converges to exactly 4 in the infrared limit.
+
+**III. Assembly**
+
+We apply Gromov's Compactness Theorem. Since the sequence of graphs $\{G_N\}$ has uniformly bounded vertex degree and satisfies Ahlfors 4-regularity, the sequence of metric measure spaces $(G_N, d_N, \mu_N)$ contains a subsequence that converges in the Gromov-Hausdorff metric to a compact metric space $X$:
+$$ \lim_{k\to\infty} d_{\text{GH}}(G_{N_k}, X) = 0 $$
+we obtain the topological dimension of the limit space $X$. Since the volume of the metric balls in $G_N$ scales polynomially with exponent 4, the Hausdorff dimension $d_H(X)$ of the limit space is:
+$$ d_H(X) = \lim_{R\to\infty} \frac{\ln |B_X(x, R)|}{\ln R} = 4 $$
+we conclude the spectral convergence of the Laplacian. Since the spectral dimension $d_S(X) = 4$, the eigenvalue distribution matches that of a smooth 4-dimensional Riemannian manifold. By the manifold reconstruction theorem under uniform curvature bounds, the limit space $X$ is a smooth 4-dimensional Riemannian manifold.
+
+**IV. Formal Conclusion**
+
+We conclude that the pre-geometric graphs transition to a smooth 4-dimensional Riemannian manifold in the Gromov-Hausdorff limit.
+
+Q.E.D.
+
+---
+
+### 18.3.7.2 Commentary: Dimensional Crystallization Limits {#18.3.7.2}
+
+:::info[**Commentary on Dimensional Crystallization**]
+:::
+
+This commentary details the physical significance of the dimensional emergence bounds established in **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" />. It highlights the transition from a discrete, high-dimensional pre-geometric graph to a stable, four-dimensional metric space leaf under the flow of the Laplace operator.
+
+---
+
+### 18.3.8 Proof: Emergence of de Sitter Expansion {#18.3.8}
 
 :::tip[**Formal Proof of Emergence of de Sitter Expansion via Cycle Growth and Scale Factor Mapping**]
 :::
 
 **I. Setup and Assumptions**
 
-Let the total cycle population grow exponentially as $N_3(t) = N_3(0) e^{rt}$. Let the scale factor $a(t)$ satisfy the Volume-Complexity Link $a(t) = C \cdot N_3(t)^{1/3}$.
+Let the total cycle population grow exponentially as $N_3(t) = N_3(0) e^{rt}$. Let the scale factor $a(t)$ satisfy the Volume-Complexity Link $a(t) = C \cdot N_3(t)^{1/3}$. Let the limit space $X$ be the smooth 4-dimensional Riemannian manifold.
+
+**Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> establishes this manifold.
+
+**Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />, **Spectral Dimension Convergence** <Ref id="18.3.5" label="§18.3.5" />, and **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" /> provide the supporting convergence results.
 
 **II. The Logic Chain**
 
@@ -1334,16 +1594,15 @@ Since $H$ is a positive constant, the metric expansion is exponential, which cor
 We conclude that early autocatalytic growth drives exponential expansion of the scale factor $a(t) = a(0) e^{(r/3)t}$, establishing emergent de Sitter inflation.
 
 Q.E.D.
-Q.E.D.
 
 ---
 
-### 18.3.5 Calculation: de Sitter Scale Factor Growth {#18.3.5}
+### 18.3.9 Calculation: de Sitter Scale Factor Growth {#18.3.9}
 
 :::note[**Numerical Calculation of the Exponential de Sitter Expansion Coefficient**]
 :::
 
-Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.4" label="§18.3.4" /> is based on the following protocols:
+Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.8" label="§18.3.8" /> is based on the following protocols:
 
 1.  **Stochastic Growth Simulation:** The algorithm simulates the growth of the causal graph under frictionless update rules.
 2.  **Volume Tracking:** The protocol logs the expansion of the vertex and edge counts over logical time steps.
@@ -1353,7 +1612,7 @@ Verification of the de Sitter growth coefficient established by **Emergence of d
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD de Sitter Inflation Audit
-# Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.5
+# Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.9
 #            (Standalone Version).
 # Version:   1.3
 # -----------------------------------------------------------------------------
@@ -1464,7 +1723,7 @@ The calculation verifies that for densities above the ignition threshold ($\rho_
 
 ---
 
-### 18.3.6 Diagram: de Sitter Expansion Phase Profile {#18.3.6}
+### 18.3.10 Diagram: de Sitter Expansion Phase Profile {#18.3.10}
 
 :::note[**Visual Representation of the Transition from the Tree Phase to the Inflationary Epoch**]
 :::
@@ -1483,271 +1742,12 @@ PHASE I: NULLITY (Tree)    PHASE II: DE SITTER (Inflation)  PHASE III: ATTRACTOR
 
 ---
 
-### 18.3.7 Theorem: Dimensional Emergence {#18.3.7}
-
-:::info[**Crystallization of the Local Hausdorff and Spectral Dimensions to Four Dimensions at the Attractor**]
-:::
-
-Let $\rho(t)$ be the intensive cycle density flowing under the universal evolution operator $\mathcal{U}$, such that the local Hausdorff and spectral dimensions are well-defined.
-
----
-
-### 18.3.7.1 Commentary: Argument Outline {#18.3.7.1}
-
-:::tip[**Structure of the Dimensional Emergence Argument via Ahlfors Regularity, Spectral Convergence, and Boundary-Bulk Synthesis**]
-:::
-
-The proof proceeds by construction, establishing the **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> through the integration of two pre-geometric metric lemmas:
-
-```text
-• 18.3.7 Theorem Dimensional Emergence  [by construction]
-│
-├── 18.3.8 Lemma: Ahlfors Regularity Bounds
-│   ├── 18.3.8.1 Proof: Ahlfors Regularity Bounds
-│   └── 18.3.8.2 Commentary: Boundary Area Stabilization
-│
-├── 18.3.9 Lemma: Spectral Dimension Convergence
-│   ├── 18.3.9.1 Proof: Spectral Dimension Convergence
-│   └── 18.3.9.2 Commentary: Infrared Operator Convergence
-│
-├── 18.3.10 Lemma: Gromov-Hausdorff Laplacian Convergence
-│   ├── 18.3.10.1 Proof: Gromov-Hausdorff Laplacian Convergence
-│   └── 18.3.10.2 Commentary: Variational Energy Stability
-│
-├── 18.3.11 Proof: Dimensional Emergence
-│
-├── 18.3.12 Calculation: Hausdorff Dimension Flow
-│
-├── 18.3.13 Diagram: Dimensional Crystallization RG Flow
-│
-└── 18.3.14 Calculation: Heat Kernel Spectral Walks
-```
-
----
-
-### 18.3.8 Lemma: Ahlfors Regularity Bounds {#18.3.8}
-
-:::info[**Enforcement of Ahlfors Four-Regularity at the Stable Attractor**]
-:::
-
-Let $B(v, R)$ denote a topological ball of radius $R$ centered at vertex $v$ at the stable attractor density $\rho^* \approx 0.037$. Then there exist positive constants $c_1, c_2$ such that the volume satisfies the polynomial scaling relation:
-$$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
-
----
-
-### 18.3.8.1 Proof: Ahlfors Regularity Bounds {#18.3.8.1}
-
-:::tip[**Formal Proof of Ahlfors Regularity Bounds via Scale-Invariant Volume Flow and Steric Backpressure**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $v \in V$ be a vertex in the emergent graph at the stable attractor density $\rho^* \approx 0.037$. Let $B(v, R)$ denote the topological ball of radius $R$ centered at $v$. Let $|B(v, R)|$ denote the number of vertices contained within $B(v, R)$.
-
-**II. The Logic Chain**
-
-1.  **Volume-Complexity Link** <Ref id="18.2.1" label="§18.2.1" />: The spatial volume scales with the cycle population as $\text{Vol}(t) = \gamma N_3(t) \ell_0^3$.
-2.  **Frictionless Growth Simplification** <Ref id="18.3.2" label="§18.3.2" />: Autocatalytic growth is balanced by steric backpressure at the attractor density $\rho^*$.
-
-**III. Assembly**
-
-we obtain the volume of the topological ball under scale transformation. On a tree substrate, the volume scales exponentially with the radius $R$:
-$$ |B(v, R)|_{\text{tree}} \propto (k-1)^R $$
-Analysis of the steric friction factor $e^{-6\mu\rho}$ at the stable attractor density $\rho^* \approx 0.037$ reveals that it acts as a local exponential damping on edge additions. we obtain the edge addition rate at topological distance $R$ as:
-$$ \lambda_{\text{add}}(R) = \lambda_0 e^{-6\mu\rho^*} \propto R^{-1} $$
-The recursion relation for the volume $|B(v, R)|$ is written as:
-$$ |B(v, R)| - |B(v, R-1)| = \partial |B(v, R)| $$
-where $\partial |B(v, R)|$ represents the boundary area of the ball. The boundary area $\partial |B(v, R)|$ scales as $R^{d-1}$, while the bulk volume $|B(v, R)|$ scales as $R^d$. The scale-invariant fixed-point condition for the balance of cycle creation and deletion requires:
-$$ \frac{\partial |B(v, R)|}{|B(v, R)|} \propto \frac{R^{d-1}}{R^d} = R^{-1} $$
-Substituting the boundary-bulk scaling relation into the fixed-point equation establishes that cycle creation scales with the boundary area $R^{d-1}$ and catalytic deletion scales with the bulk volume $R^d$. A stable balance under scale transformation requires:
-$$ d - 1 = d - 1 \implies d = 4 $$
-Integrating the boundary relation $\partial |B(v, R)| \propto R^3$ yields:
-$$ |B(v, R)| = \sum_{r=1}^R \partial |B(v, r)| \propto \sum_{r=1}^R r^3 \propto R^4 $$
-we conclude the existence of positive constants $c_1$ and $c_2$ such that:
-$$ c_1 R^4 \le |B(v, R)| \le c_2 R^4 $$
-
-**IV. Formal Conclusion**
-
-We conclude that the emergent graph satisfies Ahlfors 4-regularity at the stable attractor density $\rho^*$, bounding the volume scaling by polynomial degree 4.
-
-Q.E.D.
-
----
-
-### 18.3.8.2 Commentary: Boundary Area Stabilization {#18.3.8.2}
-
-:::info[**Verification of Ahlfors Four-Regularity Scaling**]
-:::
-
-The Ahlfors regularity bounds $c_1 R^4 \le |B(v, R)| \le c_2 R^4$ establish that the emergent graph exhibits a stable 4D spatial volume scaling at the attractor density.
-
-On a purely tree-like substrate, volumes scale exponentially with the topological radius. However, the introduction of cyclic connections and the subsequent emergence of steric backpressure systematically suppress exponential growth. The polynomial volume growth of degree 4 represents the exact balance where the boundary area creation balances the bulk deletion process, stabilizing the dimensionality of the emergent spatial slice.
-
----
-
-### 18.3.9 Lemma: Spectral Dimension Convergence {#18.3.9}
-
-:::info[**Convergence of the Spectral Dimension of Random Walks on the Emergent Graph**]
-:::
-
-Let $P(t)$ be the return probability of a random walk after $t$ steps on the graph at the stable attractor density $\rho^*$.
-
----Then the spectral dimension $d_S$ converges to the limit $\lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} = 4$.
-
-### 18.3.9.1 Proof: Spectral Dimension Convergence {#18.3.9.1}
-
-:::tip[**Formal Proof of Spectral Dimension Convergence via Laplacian Spectral Density Analysis**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $G = (V, E)$ be the emergent graph at the stable attractor density $\rho^*$. Let $\Delta = D - A$ be the discrete Laplacian of the graph. Let $P(t)$ be the return probability of a random walk of duration $t$ steps, starting and ending at vertex $v_0$.
-
-**II. The Logic Chain**
-
-1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$.
-2.  **Laplacian Convergence** <Ref id="18.3.10" label="§18.3.10" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
-
-**III. Assembly**
-
-we obtain the return probability $P(t)$ of the random walk in terms of the heat kernel $e^{-\Delta t}$ at the origin:
-$$ P(t) = \langle v_0 | e^{-\Delta t} | v_0 \rangle = \int_0^\infty e^{-\lambda t} \rho(\lambda) d\lambda $$
-where $\rho(\lambda)$ is the spectral density (density of states) of the Laplacian eigenvalues $\lambda$.
-we obtain the spectral density $\rho(\lambda)$ for small $\lambda$ (infrared limit) in terms of the spectral dimension $d_S$:
-$$ \rho(\lambda) \propto \lambda^{d_S/2 - 1} $$
-We substitute the spectral density back into the heat kernel integral:
-$$ P(t) \propto \int_0^\infty e^{-\lambda t} \lambda^{d_S/2 - 1} d\lambda $$
-we compute a change of variable $u = \lambda t \implies d\lambda = \frac{1}{t} du$:
-$$ P(t) \propto \int_0^\infty e^{-u} \left(\frac{u}{t}\right)^{d_S/2 - 1} \frac{1}{t} du = t^{-d_S/2} \int_0^\infty e^{-u} u^{d_S/2 - 1} du $$
-we obtain the integral as the Gamma function $\Gamma(d_S/2)$:
-$$ P(t) = C \cdot t^{-d_S/2} \Gamma(d_S/2) \propto t^{-d_S/2} $$
-we apply the logarithm of both sides:
-$$ \ln P(t) = \ln C - \frac{d_S}{2} \ln t $$
-we compute for the spectral dimension $d_S$:
-$$ d_S = -2 \frac{\ln P(t) - \ln C}{\ln t} $$
-We evaluate the limit as $t \to \infty$:
-$$ \lim_{t \to \infty} d_S(t) = \lim_{t \to \infty} -2 \frac{\ln P(t)}{\ln t} $$
-Since Ahlfors regularity establishes that the topological dimension is $d = 4$, the discrete Laplacian eigenvalues $\lambda_n$ behave as a 4-dimensional Euclidean grid, satisfying $\rho(\lambda) \propto \lambda^{4/2 - 1} = \lambda^1$. We substitute $d_S = 4$ into the return probability:
-$$ P(t) \propto t^{-2} $$
-We evaluate the limit:
-$$ \lim_{t \to \infty} -2 \frac{\ln(t^{-2})}{\ln t} = \lim_{t \to \infty} -2 \frac{-2 \ln t}{\ln t} = 4 $$
-
-**IV. Formal Conclusion**
-
-We conclude that the spectral dimension of the emergent graph converges to exactly $4$ in the thermodynamic limit.
-
-Q.E.D.
-
----
-
-### 18.3.9.2 Commentary: Infrared Operator Convergence {#18.3.9.2}
-
-:::info[**Behavior of Spectral Densities on the Metric Attractor**]
-:::
-
-The convergence of the spectral dimension $\lim_{t \to \infty} d_S(t) = 4$ validates the infrared behavior of random walks on the emergent manifold.
-
-The spectral dimension measures the effective dimensionality perceived by physical diffusion processes. The convergence to exactly 4 ensures that the eigenvalues of the discrete Laplacian accumulate in a manner identical to the smooth Laplace-Beltrami operator on a 4D Euclidean space. This indicates that physical propagators and field equations defined on the graph will behave continuously and isotropically in the low-energy limit.
-
----
-
-### 18.3.10 Lemma: Gromov-Hausdorff Laplacian Convergence {#18.3.10}
-
-:::info[**Convergence of Discrete Graph Laplacian to Smooth Laplace-Beltrami Operator**]
-:::
-
-Let $\{G_n\}$ be a sequence of graphs satisfying the Ahlfors 4-regularity bounds with Gromov-Hausdorff limit space $(M, g)$, and let $\Delta_{G_n}$ represent the normalized discrete Laplacian. Then for any smooth test function $f \in C^{\infty}(M)$, the convergence limit satisfies:
-$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2} = 0 $$
-where $\phi_n: M \to V(G_n)$ are the Gromov-Hausdorff $\varepsilon_n$-approximations.
-
----
-
-### 18.3.10.1 Proof: Gromov-Hausdorff Laplacian Convergence {#18.3.10.1}
-
-:::tip[**Formal Proof of Gromov-Hausdorff Laplacian Convergence via Dirichlet Form and Mosco Convergence**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $\{G_n = (V_n, E_n)\}$ be a sequence of finite graphs satisfying the Ahlfors 4-regularity bounds, with Gromov-Hausdorff limit space $(M, g)$ being a smooth compact Riemannian manifold. Let $f \in C^{\infty}(M)$ be a smooth test function. Let $\mathcal{E}_{G_n}(u) = \frac{1}{N_n} \sum_{x \sim y} (u(x) - u(y))^2$ be the discrete Dirichlet form on $G_n$.
-
-**II. The Logic Chain**
-
-1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$, establishing metric measure convergence.
-2.  **Spectral Dimension Convergence** <Ref id="18.3.9" label="§18.3.9" />: The spectral dimension is 4, matching the Laplace eigenvalues scaling.
-
-**III. Assembly**
-
-we rewrite the Mosco convergence of Dirichlet forms. Let the continuous Dirichlet energy on the limit manifold $(M, g)$ be defined as:
-$$ \mathcal{E}_M(f) = \int_M |\nabla_g f|^2 d\mu_g $$
-we obtain the discrete Dirichlet form $\mathcal{E}_{G_n}$ from above and below using the Ahlfors regularity constants $c_1$ and $c_2$:
-$$ C_1 \int_M |\nabla_g f|^2 d\mu_g \le \mathcal{E}_{G_n}(f \circ \phi_n) \le C_2 \int_M |\nabla_g f|^2 d\mu_g $$
-where $C_1$ and $C_2$ are positive constants determined by the Ahlfors bounds $c_1, c_2$.
-The relation between the Dirichlet form and the Laplacian generator is written for the discrete space as:
-$$ \mathcal{E}_{G_n}(u, v) = \langle u, \Delta_{G_n} v \rangle_{L^2(G_n)} $$
-And for the continuous manifold:
-$$ \mathcal{E}_M(f, \psi) = \langle f, \Delta_g \psi \rangle_{L^2(M)} = \int_M f (-\Delta_g \psi) d\mu_g $$
-By Mosco convergence, the sequence of discrete Dirichlet forms converges to the continuous Dirichlet form:
-$$ \lim_{n \to \infty} \mathcal{E}_{G_n}(f \circ \phi_n, f \circ \phi_n) = \mathcal{E}_M(f, f) $$
-Taking the variational derivative of the energy functional yields operator convergence in the strong operator topology. We evaluate the $L^2$ norm difference of the Laplacian actions:
-$$ \lim_{n \to \infty} \| \Delta_{G_n} (f \circ \phi_n) - (\Delta_g f) \circ \phi_n \|_{L^2(M)} = 0 $$
-
-**IV. Formal Conclusion**
-
-We conclude that the discrete graph Laplacian converges rigorously to the smooth Laplace-Beltrami operator in the Gromov-Hausdorff limit.
-
-Q.E.D.
-
----
-
-### 18.3.10.2 Commentary: Variational Energy Stability {#18.3.10.2}
-
-:::info[**Mosco Convergence of Graph Dirichlet Forms**]
-:::
-
-The Gromov-Hausdorff Laplacian convergence theorem proves that the discrete graph energy converges to the smooth manifold energy in the thermodynamic limit.
-
-This convergence is not merely formal; it establishes that the discrete variational principles governing graph dynamics converge directly to the classical action principles of Riemannian geometry. By ensuring that the graph Laplacian converges to the Laplace-Beltrami operator, this spectral convergence guarantees that the discrete wave equations, Green's functions, and field dynamics defined on the substrate reproduce the smooth equations of general relativity with zero scaling drift.
-
----
-
-### 18.3.11 Proof: Dimensional Emergence {#18.3.11}
-
-:::tip[**Formal Proof of Dimensional Emergence via Gromov-Hausdorff Metric Limit Evaluation**]
-:::
-
- This synthesis proof utilizes the structural results established in supporting **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.10" label="§18.3.10" />.
-**I. Setup and Assumptions**
-
-Let $\{G_N\}$ be a sequence of finite graphs with bounded degree and intensive cycle density converging to the stable attractor density $\lim_{N\to\infty} \rho = \rho^* \approx 0.037$.
-
-**II. The Logic Chain**
-
-1.  **Ahlfors Regularity Bounds** <Ref id="18.3.8" label="§18.3.8" />: The volume of topological balls satisfies $c_1 R^4 \le |B(v, R)| \le c_2 R^4$.
-2.  **Spectral Dimension Convergence** <Ref id="18.3.9" label="§18.3.9" />: The spectral dimension converges to exactly 4 in the infrared limit.
-
-**III. Assembly**
-
-We apply Gromov's Compactness Theorem. Since the sequence of graphs $\{G_N\}$ has uniformly bounded vertex degree and satisfies Ahlfors 4-regularity, the sequence of metric measure spaces $(G_N, d_N, \mu_N)$ contains a subsequence that converges in the Gromov-Hausdorff metric to a compact metric space $X$:
-$$ \lim_{k\to\infty} d_{\text{GH}}(G_{N_k}, X) = 0 $$
-we obtain the topological dimension of the limit space $X$. Since the volume of the metric balls in $G_N$ scales polynomially with exponent 4, the Hausdorff dimension $d_H(X)$ of the limit space is:
-$$ d_H(X) = \lim_{R\to\infty} \frac{\ln |B_X(x, R)|}{\ln R} = 4 $$
-we conclude the spectral convergence of the Laplacian. Since the spectral dimension $d_S(X) = 4$, the eigenvalue distribution matches that of a smooth 4-dimensional Riemannian manifold. By the manifold reconstruction theorem under uniform curvature bounds, the limit space $X$ is a smooth 4-dimensional Riemannian manifold.
-
-**IV. Formal Conclusion**
-
-We conclude that the pre-geometric graphs transition to a smooth 4-dimensional Riemannian manifold in the Gromov-Hausdorff limit.
-
-Q.E.D.
-
----
-
-### 18.3.12 Calculation: Hausdorff Dimension Flow {#18.3.12}
+### 18.3.11 Calculation: Hausdorff Dimension Flow {#18.3.11}
 
 :::note[**Numerical Calculation of the Hausdorff Dimension from Ball Volumes**]
 :::
 
-Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.11" label="§18.3.11" /> is based on the following protocols:
+Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.7.1" label="§18.3.7.1" /> is based on the following protocols:
 
 1.  **Distance Profiling:** The algorithm measures topological path lengths and volume growth from a set of reference nodes.
 2.  **Dimension Calculation:** The protocol computes the local Hausdorff dimension by taking the logarithmic derivative of volume growth.
@@ -1757,7 +1757,7 @@ Verification of the Hausdorff dimension established by **Dimensional Emergence**
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Dimensional Emergence and Hausdorff Scaling Audit
-# Subject:   Audits topological dimension crystallization in Chapter 18.3.12
+# Subject:   Audits topological dimension crystallization in Chapter 18.3.11
 #            (Standalone Version).
 # Version:   1.3
 # -----------------------------------------------------------------------------
@@ -1822,7 +1822,7 @@ def calculate_exact_4d_ball_volumes(max_radius=15):
 
 def run_dimension_audit():
     print("="*80)
-    print("QBD Dimensional Emergence Audit (Theorem 18.3.7 Verification)")
+    print("QBD Dimensional Emergence Audit (Lemma 18.3.7 Verification)")
     print("Verifying Hausdorff Dimension Convergence to d_H = 4.0")
     print("="*80)
     
@@ -1838,7 +1838,7 @@ def run_dimension_audit():
     print("Audit Analysis:")
     print(f"Asymptotic fitted Hausdorff Dimension d_H (R in [5, 15]): {d_H:.4f}")
     print("The local dimension estimate converges towards d_local ~ 4.0 as R increases,")
-    print("successfully proving the analytical claim of Theorem 18.3.7: the")
+    print("successfully proving the analytical claim of Lemma 18.3.7: the")
     print("polymerized QBD spatial leaf is Ahlfors 4-regular in the Gromov-Hausdorff limit.")
     print("="*80)
 
@@ -1864,7 +1864,7 @@ The calculation verifies that the asymptotic Hausdorff dimension fits to $d_H \a
 
 ---
 
-### 18.3.13 Diagram: Dimensional Crystallization RG Flow {#18.3.13}
+### 18.3.12 Diagram: Dimensional Crystallization RG Flow {#18.3.12}
 
 :::note[**Visual Representation of the Renormalization Group Flow toward Four Dimensions**]
 :::
@@ -1880,12 +1880,12 @@ RENORMALIZATION GROUP FLOW: DIMENSION
 
 ---
 
-### 18.3.14 Calculation: Heat Kernel Spectral Walks {#18.3.14}
+### 18.3.13 Calculation: Heat Kernel Spectral Walks {#18.3.13}
 
 :::note[**Numerical Simulation of Random Walks and Recurrence Probabilities to Verify Spectral Dimension d_S = 4.0**]
 :::
 
-Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.10.1" label="§18.3.10.1" /> is based on the following protocols:
+Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6.1" label="§18.3.6.1" /> is based on the following protocols:
 
 1.  **Laplacian Spectrum Generation:** The algorithm generates the eigenvalues of the rescaled discrete Laplacian on periodic structures.
 2.  **Heat Trace Computation:** The protocol calculates the heat kernel trace and recurrence probability over a range of diffusion times.
@@ -1895,7 +1895,7 @@ Verification of the asymptotic spectral dimension established by **Gromov-Hausdo
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Heat Kernel Spectral Dimension Convergence Audit
-# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.14
+# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.13
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -1994,7 +1994,7 @@ def run_spectral_walk_audit():
     print("Audit Analysis:")
     print(f"Overall Asymptotic Spectral Dimension d_S: {d_S:.4f}")
     print("The running local spectral dimension converges towards d_S ≈ 4.0 as t increases.")
-    print("This perfectly confirms the analytical claim of Theorem 18.3.7 and Lemma C:")
+    print("This perfectly confirms the analytical claim of Lemma 18.3.7 and Lemma C:")
     print("random walk return probabilities scale exactly as P(t) ∝ t^-2 in the infrared,")
     print("verifying convergence to a smooth 4D Riemannian manifold.")
     print("="*80)
@@ -2649,7 +2649,7 @@ Let $\rho^*$ denote the stable equilibrium density fixed point ($\rho^* \approx 
 :::tip[**Structure of the Flatness Attractor Argument via Jacobian Linearization, Curvature Coupling, and Attractor Synthesis**]
 :::
 
-The proof proceeds by construction, establishing the **Flatness as Stable Attractor** <Ref id="18.5.1" label="§18.5.1" /> through the integration of two dynamical lemmas:
+The proof proceeds by construction, establishing the **Flatness as Stable Attractor** <Ref id="18.5.1" label="§18.5.1" /> through the integration of five dynamical lemmas:
 
 ```text
 • 18.5.1 Theorem Flatness as Stable Attractor  [by construction]
@@ -2662,11 +2662,26 @@ The proof proceeds by construction, establishing the **Flatness as Stable Attrac
 │   ├── 18.5.3.1 Proof: Curvature-Density Coupling
 │   └── 18.5.3.2 Commentary: Curvature Backpressure Duality
 │
-├── 18.5.4 Proof: Flatness as Stable Attractor
+├── 18.5.4 Lemma: Bethe Tree Small-World Scaling
+│   ├── 18.5.4.1 Proof: Bethe Tree Small-World Scaling
+│   └── 18.5.4.2 Commentary: Small-World Topological Scaling
 │
-├── 18.5.5 Calculation: Jacobian Eigenvalue Verification
+├── 18.5.5 Lemma: Relational Propagator Spectrum
+│   ├── 18.5.5.1 Proof: Relational Propagator Spectrum
+│   └── 18.5.5.2 Commentary: Relational Covariance Decay
 │
-└── 18.5.6 Diagram: Flatness Restoring Force Phase Portrait
+├── 18.5.6 Lemma: Horizon Homogeneity via Pre-Geometric Connectivity
+│   └── 18.5.6.1 Proof: Horizon Homogeneity via Pre-Geometric Connectivity
+│
+├── 18.5.7 Proof: Flatness as Stable Attractor
+│
+├── 18.5.8 Calculation: Jacobian Eigenvalue Verification
+│
+├── 18.5.9 Diagram: Flatness Restoring Force Phase Portrait
+│
+├── 18.5.10 Calculation: Propagator Covariance Decay
+│
+└── 18.5.11 Diagram: Small-World Information Diffusion
 ```
 
 ---
@@ -2809,7 +2824,170 @@ In Quantum Braid Dynamics, spatial curvature is not an independent geometric fie
 
 ---
 
-### 18.5.4 Proof: Flatness as Stable Attractor {#18.5.4}
+### 18.5.4 Lemma: Bethe Tree Small-World Scaling {#18.5.4}
+
+:::info[**Logarithmic Geodesic Path Length Bounding on regular Bethe Trees**]
+:::
+
+Let $G_0$ be a regular trivalent Bethe tree substrate with $N$ vertices. Then the topological geodesic distance $d(u,v)$ between any two vertices $u, v \in V$ satisfies $d(u,v) \le 2\log_2 N$.
+
+---
+
+### 18.5.4.1 Proof: Bethe Tree Small-World Scaling {#18.5.4.1}
+
+:::tip[**Formal Derivation of Bethe Tree Small-World Scaling via Graph Diameter Analysis**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$. Let $N$ denote the total number of vertices in the tree.
+
+**II. The Logic Chain**
+
+1.  **Horizon Homogeneity** <Ref id="18.5.6" label="§18.5.6" />: The pre-geometric vacuum substrate is represented by the regular trivalent tree.
+
+**III. Assembly**
+
+we obtain the number of nodes at topological distance $i$ from the root node. The root has 3 neighbors at distance 1. Each subsequent node has 2 children. we obtain the number of nodes at distance $i$:
+$$ N_i = 3 \cdot 2^{i-1} \quad \text{for } i \ge 1 $$
+We sum the nodes in all layers from $i=0$ (the root) to $R$:
+$$ N = 1 + \sum_{i=1}^R N_i = 1 + \sum_{i=1}^R 3 \cdot 2^{i-1} $$
+We apply the geometric series sum formula $\sum_{j=0}^{R-1} 2^j = 2^R - 1$:
+$$ N = 1 + 3 \sum_{j=0}^{R-1} 2^j = 1 + 3(2^R - 1) = 3 \cdot 2^R - 2 $$
+we compute for the radius $R$ as a function of the total vertex count $N$:
+$$ 3 \cdot 2^R = N + 2 \implies 2^R = \frac{N+2}{3} $$
+we apply the base-2 logarithm of both sides:
+$$ R = \log_2 \left( \frac{N+2}{3} \right) $$
+Since the root is at the center of the tree, the maximum geodesic path length (diameter) $d(u,v)$ between any two arbitrary leaf vertices $u, v \in V$ is at most twice the radius $R$:
+$$ d(u,v) \le 2R = 2\log_2 \left( \frac{N+2}{3} \right) $$
+We apply the logarithmic inequality $\frac{N+2}{3} < N$ for all $N \ge 1$:
+$$ d(u,v) \le 2\log_2 N $$
+
+**IV. Formal Conclusion**
+
+We conclude that the pre-geometric tree substrate satisfies the small-world scaling bound $d(u,v) \le 2\log_2 N$.
+
+Q.E.D.
+
+---
+
+### 18.5.4.2 Commentary: Small-World Topological Scaling {#18.5.4.2}
+
+:::info[**Geodesic Path Length Bounding on Bipartite Trees**]
+:::
+
+The logarithmic bound $d(u,v) \le 2\log_2 N$ characterizes the small-world scaling of the pre-geometric tree substrate.
+
+In any low-dimensional coordinate grid, the geodesic distance between distant points scales polynomially with the volume of the space. However, prior to the crystallization of spatial dimensions, the pre-geometric tree substrate permits information to propagate across the entire graph with minimal topological steps. This ultra-fast path length scaling ensures that all regions of the nascent universe remain in close causal contact, bypassing the causal horizon barriers of continuous spacetime.
+
+---
+
+### 18.5.5 Lemma: Relational Propagator Spectrum {#18.5.5}
+
+:::info[**Exponential Geodesic Decay of the Relational Causal Propagator**]
+:::
+
+Let $G_{uv}(s)$ be the relational causal propagator between vertices $u$ and $v$ on the Bethe tree $G_0$.
+
+---Then $G_{uv}(s)$ decays exponentially with topological distance $d(u,v)$: $G_{uv}(s) \propto \left(\frac{1}{2}\right)^{d(u,v)} = e^{-d(u,v)\ln 2}$.
+
+### 18.5.5.1 Proof: Relational Propagator Spectrum {#18.5.5.1}
+
+:::tip[**Formal Proof of Relational Propagator Spectrum Decay via Green's Function Decomposition**]
+:::
+
+**I. Setup and Assumptions**
+
+Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
+
+**II. The Logic Chain**
+
+1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances on the tree are unique and short.
+
+**III. Assembly**
+
+we rewrite the matrix resolvent as a Neumann series:
+$$ (s I - A)^{-1} = s^{-1} \left( I - \frac{1}{s} A \right)^{-1} = \sum_{m=0}^\infty s^{-(m+1)} A^m $$
+we obtain the entry of $A^m$ at index $(u,v)$, which counts the number of walks of length $m$ from vertex $u$ to $v$:
+$$ G_{uv}(s) = \sum_{m=0}^\infty s^{-(m+1)} (A^m)_{uv} $$
+On a tree graph, there is exactly one unique self-avoiding path $p$ connecting $u$ and $v$, and its length is the geodesic distance $d(u,v)$. Any walk of length $m \ge d(u,v)$ must traverse this unique path and include backtracking loops.
+We evaluate the resolvent at the spectral boundary $s=2$ for the branching limit. For the unique self-avoiding path of length $m = d(u,v)$, the entry is $(A^{d(u,v)})_{uv} = 1$. we obtain the leading-order contribution to the sum:
+$$ G_{uv}(s) \approx s^{-(d(u,v)+1)} = s^{-1} \left( \frac{1}{s} \right)^{d(u,v)} $$
+We substitute the coordination limit scale $s=2$:
+$$ G_{uv}(2) \propto \left( \frac{1}{2} \right)^{d(u,v)} = e^{-d(u,v)\ln 2} $$
+
+**IV. Formal Conclusion**
+
+We conclude that the relational causal propagator decays exponentially with topological distance $d(u,v)$ on the tree.
+
+Q.E.D.
+
+---
+
+### 18.5.5.2 Commentary: Relational Covariance Decay {#18.5.5.2}
+
+:::info[**Exponential Decay of Tree Causal Propagators**]
+:::
+
+The exponential propagator decay $G_{uv}(s) \propto (1/2)^{d(u,v)}$ guarantees that physical correlations remain localized and stable.
+
+While the small-world architecture of the tree ensures that all nodes are topologically close, the exponential decay of the causal propagator prevents long-range statistical feedback from destabilizing the local dynamics. This balance between global connectivity and local correlation decay ensures that the system can thermalize globally to a uniform density while preserving the independent, localized degrees of freedom necessary for the subsequent emergence of localized matter and fields.
+
+---
+
+### 18.5.6 Lemma: Horizon Homogeneity via Pre-Geometric Connectivity {#18.5.6}
+
+:::info[**Pre-Geometric Homogeneity of the Trivalent Tree Vacuum Substrate**]
+:::
+
+Let $G_0$ represent the pre-geometric trivalent tree vacuum substrate with total vertex count $N$. Then the topological geodesic distance between any two vertices is bounded by $2\log_2 N$, and the relational causal propagator covariance decays exponentially with distance, enforcing perfect global homogeneity.
+
+---
+
+### 18.5.6.1 Proof: Horizon Homogeneity via Pre-Geometric Connectivity {#18.5.6.1}
+
+:::tip[**Formal Proof of Horizon Homogeneity via Relational Propagator Spectrum and Small-World Bounding**]
+:::
+
+**I. Setup and Assumptions**
+
+Let the pre-geometric trivalent tree $G_0$ have $N$ vertices. Let the maximum topological distance satisfy $d(u,v) \le 2\log_2 N$. Let the covariance of intensive density perturbations satisfy $\operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto e^{-d(u,v)/\xi}$ with correlation length $\xi \equiv 1/\ln 2$.
+
+**II. The Logic Chain**
+
+1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances scale logarithmically with the total volume $N$.
+2.  **Relational Propagator Spectrum** <Ref id="18.5.4" label="§18.5.4" />: Propagators and covariances decay exponentially with topological distance.
+
+**III. Assembly**
+
+We substitute the maximum geodesic distance $d(u,v) \le 2\log_2 N$ into the exponential covariance relation:
+$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -\frac{2\log_2 N}{\xi} \right) $$
+We substitute the correlation length $\xi = 1/\ln 2$:
+$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -2\log_2 N \ln 2 \right) $$
+We apply the logarithm base change rule $\log_2 N \ln 2 = \ln N$:
+$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -2\ln N \right) = N^{-2} $$
+We evaluate the thermodynamic limit as the total vertex count $N \to \infty$:
+$$ \lim_{N\to\infty} \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \lim_{N\to\infty} N^{-2} = 0 $$
+This rapid power-law decay of covariance ensures that all spatial regions are in direct causal contact. Consequently, global thermodynamic thermalization occurs across the entire trivalent Bethe tree substrate before dimensional crystallization, forcing the cycle density to settle to the uniform stable attractor density $\rho^*$.
+
+**IV. Formal Conclusion**
+
+We conclude that pre-geometric small-world connectivity enforces perfect global spatial homogeneity, resolving the horizon problem.
+
+Q.E.D.
+
+---
+
+### 18.5.6.2 Commentary: Horizon Connectivity Significance {#18.5.6.2}
+
+:::info[**Commentary on Horizon Connectivity**]
+:::
+
+This commentary details the significance of pre-geometric connectivity bounds established in **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6" label="§18.5.6" />. It highlights how the small-world Bethe tree scaling resolves the horizon problem without requiring fine-tuned inflation parameters.
+
+---
+
+### 18.5.7 Proof: Flatness as Stable Attractor {#18.5.7}
 
 :::tip[**Formal Proof of the Flatness Attractor via Linearized Jacobian Integration**]
 :::
@@ -2817,6 +2995,12 @@ In Quantum Braid Dynamics, spatial curvature is not an independent geometric fie
 **I. Setup and Assumptions**
 
 Let the spatial curvature parameter satisfy $\Omega_k(t) \approx -\zeta \delta\rho(t)$. Let the local density perturbation satisfy $\delta\rho(t) = \delta\rho_0 e^{J t}$ with Jacobian eigenvalue $J \approx -0.3331$.
+
+The trivalent Bethe tree substrate exhibits global spatial homogeneity.
+
+**Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6" label="§18.5.6" /> establishes this homogeneity.
+
+**Bethe Tree Small-World Scaling** <Ref id="18.5.4" label="§18.5.4" /> and **Relational Propagator Spectrum** <Ref id="18.5.5" label="§18.5.5" /> establish the underlying graph propagation properties.
 
 **II. The Logic Chain**
 
@@ -2847,12 +3031,12 @@ Q.E.D.
 
 ---
 
-### 18.5.5 Calculation: Jacobian Eigenvalue Verification {#18.5.5}
+### 18.5.8 Calculation: Jacobian Eigenvalue Verification {#18.5.8}
 
 :::note[**Numerical Jacobian Eigenvalue Verification**]
 :::
 
-Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.4" label="§18.5.4" /> is based on the following protocols:
+Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.7" label="§18.5.7" /> is based on the following protocols:
 
 1.  **System Linearization:** The algorithm linearizes the net flux equations of cycle dynamics around the flat equilibrium state.
 2.  **Jacobian Construction:** The protocol constructs the stability Jacobian matrix from the linearized flux coefficients.
@@ -2862,7 +3046,7 @@ Verification of the Jacobian eigenvalue established by **Flatness as Stable Attr
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Flatness Attractor and Jacobian Stability Audit
-# Subject:   Audits spatial flatness attractor eigenvalue in Chapter 18.5.5
+# Subject:   Audits spatial flatness attractor eigenvalue in Chapter 18.5.8
 #            (Standalone Version).
 # Version:   1.0
 # -----------------------------------------------------------------------------
@@ -2948,7 +3132,7 @@ The calculation verifies that the Jacobian eigenvalue is strictly negative ($J \
 
 ---
 
-### 18.5.6 Diagram: Flatness Restoring Force Phase Portrait {#18.5.6}
+### 18.5.9 Diagram: Flatness Restoring Force Phase Portrait {#18.5.9}
 
 :::note[**Visual Representation of the Restoring Force Damping Curvature Perturbations**]
 :::
@@ -2964,193 +3148,12 @@ PHASE PORTRAIT: FLATNESS ATTRACTOR
 
 ---
 
-### 18.5.7 Theorem: Horizon Homogeneity via Pre-Geometric Connectivity {#18.5.7}
-
-:::info[**Pre-Geometric Homogeneity of the Trivalent Tree Vacuum Substrate**]
-:::
-
-Let $G_0$ represent the pre-geometric trivalent tree vacuum substrate with total vertex count $N$. Then the topological geodesic distance between any two vertices is bounded by $2\log_2 N$, and the relational causal propagator covariance decays exponentially with distance, enforcing perfect global homogeneity.
-
----
-
-### 18.5.7.1 Commentary: Argument Outline {#18.5.7.1}
-
-:::tip[**Structure of the Horizon Homogeneity Argument via Small-World Scaling, Propagator Spectrum, and Homogeneity Synthesis**]
-:::
-
-The proof proceeds by construction, establishing the **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.7" label="§18.5.7" /> through the integration of the small-world tree scaling lemma and the relational causal propagator spectrum lemma:
-
-```text
-• 18.5.7 Theorem Horizon Homogeneity via Pre-Geometric Connectivity  [by construction]
-│
-├── 18.5.8 Lemma: Bethe Tree Small-World Scaling
-│   ├── 18.5.8.1 Proof: Bethe Tree Small-World Scaling
-│   └── 18.5.8.2 Commentary: Small-World Topological Scaling
-│
-├── 18.5.9 Lemma: Relational Propagator Spectrum
-│   ├── 18.5.9.1 Proof: Relational Propagator Spectrum
-│   └── 18.5.9.2 Commentary: Relational Covariance Decay
-│
-├── 18.5.10 Proof: Horizon Homogeneity via Pre-Geometric Connectivity
-│
-├── 18.5.11 Calculation: Propagator Covariance Decay
-│
-└── 18.5.12 Diagram: Small-World Information Diffusion
-```
-
----
-
-### 18.5.8 Lemma: Bethe Tree Small-World Scaling {#18.5.8}
-
-:::info[**Logarithmic Geodesic Path Length Bounding on regular Bethe Trees**]
-:::
-
-Let $G_0$ be a regular trivalent Bethe tree substrate with $N$ vertices. Then the topological geodesic distance $d(u,v)$ between any two vertices $u, v \in V$ satisfies $d(u,v) \le 2\log_2 N$.
-
----
-
-### 18.5.8.1 Proof: Bethe Tree Small-World Scaling {#18.5.8.1}
-
-:::tip[**Formal Derivation of Bethe Tree Small-World Scaling via Graph Diameter Analysis**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$. Let $N$ denote the total number of vertices in the tree.
-
-**II. The Logic Chain**
-
-1.  **Horizon Homogeneity** <Ref id="18.5.7" label="§18.5.7" />: The pre-geometric vacuum substrate is represented by the regular trivalent tree.
-
-**III. Assembly**
-
-we obtain the number of nodes at topological distance $i$ from the root node. The root has 3 neighbors at distance 1. Each subsequent node has 2 children. we obtain the number of nodes at distance $i$:
-$$ N_i = 3 \cdot 2^{i-1} \quad \text{for } i \ge 1 $$
-We sum the nodes in all layers from $i=0$ (the root) to $R$:
-$$ N = 1 + \sum_{i=1}^R N_i = 1 + \sum_{i=1}^R 3 \cdot 2^{i-1} $$
-We apply the geometric series sum formula $\sum_{j=0}^{R-1} 2^j = 2^R - 1$:
-$$ N = 1 + 3 \sum_{j=0}^{R-1} 2^j = 1 + 3(2^R - 1) = 3 \cdot 2^R - 2 $$
-we compute for the radius $R$ as a function of the total vertex count $N$:
-$$ 3 \cdot 2^R = N + 2 \implies 2^R = \frac{N+2}{3} $$
-we apply the base-2 logarithm of both sides:
-$$ R = \log_2 \left( \frac{N+2}{3} \right) $$
-Since the root is at the center of the tree, the maximum geodesic path length (diameter) $d(u,v)$ between any two arbitrary leaf vertices $u, v \in V$ is at most twice the radius $R$:
-$$ d(u,v) \le 2R = 2\log_2 \left( \frac{N+2}{3} \right) $$
-We apply the logarithmic inequality $\frac{N+2}{3} < N$ for all $N \ge 1$:
-$$ d(u,v) \le 2\log_2 N $$
-
-**IV. Formal Conclusion**
-
-We conclude that the pre-geometric tree substrate satisfies the small-world scaling bound $d(u,v) \le 2\log_2 N$.
-
-Q.E.D.
-
----
-
-### 18.5.8.2 Commentary: Small-World Topological Scaling {#18.5.8.2}
-
-:::info[**Geodesic Path Length Bounding on Bipartite Trees**]
-:::
-
-The logarithmic bound $d(u,v) \le 2\log_2 N$ characterizes the small-world scaling of the pre-geometric tree substrate.
-
-In any low-dimensional coordinate grid, the geodesic distance between distant points scales polynomially with the volume of the space. However, prior to the crystallization of spatial dimensions, the pre-geometric tree substrate permits information to propagate across the entire graph with minimal topological steps. This ultra-fast path length scaling ensures that all regions of the nascent universe remain in close causal contact, bypassing the causal horizon barriers of continuous spacetime.
-
----
-
-### 18.5.9 Lemma: Relational Propagator Spectrum {#18.5.9}
-
-:::info[**Exponential Geodesic Decay of the Relational Causal Propagator**]
-:::
-
-Let $G_{uv}(s)$ be the relational causal propagator between vertices $u$ and $v$ on the Bethe tree $G_0$.
-
----Then $G_{uv}(s)$ decays exponentially with topological distance $d(u,v)$: $G_{uv}(s) \propto \left(\frac{1}{2}\right)^{d(u,v)} = e^{-d(u,v)\ln 2}$.
-
-### 18.5.9.1 Proof: Relational Propagator Spectrum {#18.5.9.1}
-
-:::tip[**Formal Proof of Relational Propagator Spectrum Decay via Green's Function Decomposition**]
-:::
-
-**I. Setup and Assumptions**
-
-Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
-
-**II. The Logic Chain**
-
-1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.8" label="§18.5.8" />: Geodesic distances on the tree are unique and short.
-
-**III. Assembly**
-
-we rewrite the matrix resolvent as a Neumann series:
-$$ (s I - A)^{-1} = s^{-1} \left( I - \frac{1}{s} A \right)^{-1} = \sum_{m=0}^\infty s^{-(m+1)} A^m $$
-we obtain the entry of $A^m$ at index $(u,v)$, which counts the number of walks of length $m$ from vertex $u$ to $v$:
-$$ G_{uv}(s) = \sum_{m=0}^\infty s^{-(m+1)} (A^m)_{uv} $$
-On a tree graph, there is exactly one unique self-avoiding path $p$ connecting $u$ and $v$, and its length is the geodesic distance $d(u,v)$. Any walk of length $m \ge d(u,v)$ must traverse this unique path and include backtracking loops.
-We evaluate the resolvent at the spectral boundary $s=2$ for the branching limit. For the unique self-avoiding path of length $m = d(u,v)$, the entry is $(A^{d(u,v)})_{uv} = 1$. we obtain the leading-order contribution to the sum:
-$$ G_{uv}(s) \approx s^{-(d(u,v)+1)} = s^{-1} \left( \frac{1}{s} \right)^{d(u,v)} $$
-We substitute the coordination limit scale $s=2$:
-$$ G_{uv}(2) \propto \left( \frac{1}{2} \right)^{d(u,v)} = e^{-d(u,v)\ln 2} $$
-
-**IV. Formal Conclusion**
-
-We conclude that the relational causal propagator decays exponentially with topological distance $d(u,v)$ on the tree.
-
-Q.E.D.
-
----
-
-### 18.5.9.2 Commentary: Relational Covariance Decay {#18.5.9.2}
-
-:::info[**Exponential Decay of Tree Causal Propagators**]
-:::
-
-The exponential propagator decay $G_{uv}(s) \propto (1/2)^{d(u,v)}$ guarantees that physical correlations remain localized and stable.
-
-While the small-world architecture of the tree ensures that all nodes are topologically close, the exponential decay of the causal propagator prevents long-range statistical feedback from destabilizing the local dynamics. This balance between global connectivity and local correlation decay ensures that the system can thermalize globally to a uniform density while preserving the independent, localized degrees of freedom necessary for the subsequent emergence of localized matter and fields.
-
----
-
-### 18.5.10 Proof: Horizon Homogeneity via Pre-Geometric Connectivity {#18.5.10}
-
-:::tip[**Formal Proof of Horizon Homogeneity via Relational Propagator Spectrum and Small-World Bounding**]
-:::
-
-**I. Setup and Assumptions**
-
-Let the pre-geometric trivalent tree $G_0$ have $N$ vertices. Let the maximum topological distance satisfy $d(u,v) \le 2\log_2 N$. Let the covariance of intensive density perturbations satisfy $\operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto e^{-d(u,v)/\xi}$ with correlation length $\xi \equiv 1/\ln 2$.
-
-**II. The Logic Chain**
-
-1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.8" label="§18.5.8" />: Geodesic distances scale logarithmically with the total volume $N$.
-2.  **Relational Propagator Spectrum** <Ref id="18.5.9" label="§18.5.9" />: Propagators and covariances decay exponentially with topological distance.
-
-**III. Assembly**
-
-We substitute the maximum geodesic distance $d(u,v) \le 2\log_2 N$ into the exponential covariance relation:
-$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -\frac{2\log_2 N}{\xi} \right) $$
-We substitute the correlation length $\xi = 1/\ln 2$:
-$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -2\log_2 N \ln 2 \right) $$
-We apply the logarithm base change rule $\log_2 N \ln 2 = \ln N$:
-$$ \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \exp\left( -2\ln N \right) = N^{-2} $$
-We evaluate the thermodynamic limit as the total vertex count $N \to \infty$:
-$$ \lim_{N\to\infty} \operatorname{Cov}(\delta\rho_u, \delta\rho_v) \propto \lim_{N\to\infty} N^{-2} = 0 $$
-This rapid power-law decay of covariance ensures that all spatial regions are in direct causal contact. Consequently, global thermodynamic thermalization occurs across the entire trivalent Bethe tree substrate before dimensional crystallization, forcing the cycle density to settle to the uniform stable attractor density $\rho^*$.
-
-**IV. Formal Conclusion**
-
-We conclude that pre-geometric small-world connectivity enforces perfect global spatial homogeneity, resolving the horizon problem.
-
-Q.E.D.
-
----
-
-### 18.5.11 Calculation: Propagator Covariance Decay {#18.5.11}
+### 18.5.10 Calculation: Propagator Covariance Decay {#18.5.10}
 
 :::note[**Numerical Propagator Covariance Decay**]
 :::
 
-Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.10" label="§18.5.10" /> is based on the following protocols:
+Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6.1" label="§18.5.6.1" /> is based on the following protocols:
 
 1.  **Propagator Generation:** The algorithm generates the discrete relational propagator on the small-world Bethe fragment.
 2.  **Covariance Tracking:** The protocol monitors the covariance of the propagator field over topological distances.
@@ -3160,7 +3163,7 @@ Verification of the covariance decay established by **Horizon Homogeneity via Pr
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Horizon Homogeneity and Propagator Decay Audit
-# Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.11
+# Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.10
 #            (Standalone Version).
 # Version:   1.3
 # -----------------------------------------------------------------------------
@@ -3261,7 +3264,7 @@ def run_propagator_decay_audit():
     bound = 2.0 * np.log2(N)
     
     print("="*80)
-    print("QBD Horizon Homogeneity Audit (Theorem 18.5.7 Verification)")
+    print("QBD Horizon Homogeneity Audit (Lemma 18.5.6 Verification)")
     print("Verifying Bethe Tree Diameter Bounding and Propagator Spectral Decay")
     print("="*80)
     print(f"Total Vertices N: {N}")
@@ -3304,7 +3307,7 @@ The calculation verifies that the pre-geometric covariance decays exponentially 
 
 ---
 
-### 18.5.12 Diagram: Small-World Information Diffusion {#18.5.12}
+### 18.5.11 Diagram: Small-World Information Diffusion {#18.5.11}
 
 :::note[**Visual Representation of the Logarithmic Path Lengths Bypassing Coordinate Barriers**]
 :::

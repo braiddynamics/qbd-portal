@@ -192,6 +192,11 @@ Ultimately, the GHW convergence ensures that the physical states of the quantum 
 
 ---
 
+﻿---
+title: "Chapter 11: Differential Geometry (Discrete)"
+sidebar_label: "11.2 - Geometry"
+---
+
 ## 11.2 Causal Geometry Construction {#11.2}
 
 :::note[**Section 11.2 Overview**]
@@ -1361,14 +1366,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 11.2.8.2 Commentary: Physical Significance {#11.2.8.2}
 
-:::info[**Physical Significance of Combinatorial Reifenberg Flatness**]
+:::info[**Macroscopic Homology Stability of Emergent Metrics in Reifenberg Flatness**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" />. It highlights how these bounds govern the global properties of the causal geometry.
+Reifenberg Flatness ensures that despite the chaotic, discrete fluctuations of the microscopic causal graph, the emergent macroscopic space remains topologically stable and behaves as a smooth, flat Euclidean space. Microscopic edge-flip fluctuations are dynamically suppressed at large distances, preventing the metric space from degenerating into a fractal geometry or developing singular, highly crumpled regions.
 
 ### 11.2.9 Proof: Causal Geometry Construction {#11.2.9}
 
@@ -2172,6 +2175,11 @@ We now possess a fully defined geometric spacetime that arises directly from dis
 
 ---
 
+﻿---
+title: " "
+sidebar_label: "12.1 - Convergence"
+---
+
 # Chapter 12: Continuum Limit (Convergence)
 
 We now ask a critical mathematical question: how does a discrete, relational graph of finite size converge to a smooth, continuous Riemannian manifold in the thermodynamic limit? The previous chapters derived the discrete curvature and field equations, but physical gravity operates on a continuous stage. We must prove that taking the Gromov-Hausdorff-Wasserstein limit of our sequence of graphs reconstructs the smooth kinematics of General Relativity, showing that the discrete relations transition to the continuous fields of classical physics.
@@ -2670,14 +2678,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 12.1.5.2 Commentary: Physical Significance {#12.1.5.2}
 
-:::info[**Physical Significance of Smoothness via Elliptic Regularity**]
+:::info[**Emergence of Smooth Geometry from Elliptic Regularity in Spectral Limits**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+The bootstrap mechanism of the Laplace-Beltrami operator ensures that weak solutions on the Gromov-Hausdorff limit space achieve infinite differentiability. This mathematical regularity of the eigenfunctions forces the underlying metric tensor itself to be smooth ($C^\infty$). This spectrally-mediated smoothing is the bridge between the discrete graph and continuous, differentiable manifolds.
 
 ### 12.1.6 Proof: Smooth Manifold Limit {#12.1.6}
 
@@ -2730,6 +2736,11 @@ This result implies a profound shift in the ontological status of spacetime. Gen
 
 With the stage now constructed (a smooth manifold $(M, g)$ equipped with a differential structure) we must populate it with physics. The geometric container is ready; the next step is to map the dynamical content (the flux of information) onto this manifold. We must demonstrate that the discrete stress-energy tensor $T_{ab}$ coarse-grains into a smooth tensor field $T_{\mu\nu}$ that sources the curvature of our newly derived metric, thereby recovering the Einstein Field Equations in their full continuum glory.
 
+---
+
+﻿---
+title: "Chapter 12: Continuum Limit"
+sidebar_label: "12.2 - Coarse-Graining"
 ---
 
 ## 12.2 Tensorial Reorganization {#12.2}
@@ -3197,14 +3208,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 12.2.5.2 Commentary: Physical Significance {#12.2.5.2}
 
-:::info[**Physical Significance of EFE Convergence**]
+:::info[**Pointwise Emergence of Einstein Field Equations via Renormalized Averaging**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+The convergence of the discrete Einstein field equations to their continuum counterparts proves that the local, statistical relationship between graph curvature and matter flux is preserved across the scale transition. The macroscopic gravitational coupling constant $G_N$ is revealed not as a fundamental constant, but as a renormalized value determined by the spherical averaging of microscopic graph elements.
 
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 
@@ -4211,6 +4220,11 @@ The local conservation of $T_{ab}$ positions the discrete stress-energy tensor a
 
 ---
 
+﻿---
+title: "Chapter 13: Field Equations (Einstein)"
+sidebar_label: "13.2 - Equations"
+---
+
 ## 13.2 Discrete Field Equations {#13.2}
 
 :::note[**Section 13.2 Overview**]
@@ -4553,14 +4567,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 13.2.5.2 Commentary: Physical Significance {#13.2.5.2}
 
-:::info[**Physical Significance of Gravitational Coupling Scale**]
+:::info[**Renormalization of Gravitational Coupling via Vacuum Correlation Length**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Gravitational Coupling Scale** <Ref id="13.2.5" label="§13.2.5" />. It highlights how these bounds govern the global properties of the causal geometry.
+Expressing the gravitational coupling scale as a function of the vacuum correlation length and cell size removes Newton's constant as an independent free parameter of the theory. Gravity is shown to be a direct consequence of the zero-point information flow and the spatial distribution of entropic correlations across the underlying causal substrate.
 
 ### 13.2.6 Proof: Emergent Field Equations {#13.2.6}
 
@@ -5758,6 +5770,11 @@ In regions where the graph is dense (representing high computational activity or
 
 ---
 
+﻿---
+title: "Chapter 14: The Lorentzian Reality (Time & QFT)"
+sidebar_label: "14.2 - Metric"
+---
+
 ## 14.2 Metric & Motion {#14.2}
 
 :::note[**Section 14.2 Overview**]
@@ -6083,14 +6100,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 14.2.7.2 Commentary: Physical Significance {#14.2.7.2}
 
-:::info[**Physical Significance of Geodesic Motion**]
+:::info[**Derivation of the Equivalence Principle from Action Minimization**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />. It highlights how these bounds govern the global properties of the causal geometry.
+The geodesic motion of particles emerges from the requirement that localized topological twists (braids) must minimize their action cost as they propagate. The paths of least resistance through the discrete causal network correspond exactly to the geodesics of the emergent Riemannian manifold, providing a microscopic, topological derivation of the Equivalence Principle.
 
 ### 14.2.8 Proof: Emergent Lorentzian Manifold {#14.2.8}
 
@@ -7132,6 +7147,11 @@ Having established the local dynamics of space and time on the stage, we must no
 
 ---
 
+﻿---
+title: " "
+sidebar_label: "15.1 - Entanglement"
+---
+
 # Chapter 15: Geometry of Entanglement (ER = EPR)
 
 We confront a profound physical paradox: if physical information propagates strictly locally along the edges of a causal graph, how can the universe manifest the non-local quantum correlations that violate the Bell-CHSH inequalities? Spacetime appears continuous and locally Einstein-causal, yet quantum entanglement requires a connection between distant points that seems to bypass space entirely. We must discover the mechanical bridge that reconciles the locality of General Relativity with the non-locality of quantum mechanics without introducing action-at-a-distance.
@@ -7267,26 +7287,11 @@ Consequently, the manifold is constructed with a "hole" or "separation" between 
 
 Let $A$ and $B$ be two subgraphs of $G$ connected by a Topological Link $\ell_{AB}$ consisting of a single edge or short path such that $d_{topo}(A, B) \sim \mathcal{O}(1)$. If the emergent manifold $M$ maintains local manifold structure (specifically, if the Ricci curvature remains finite), then the geodesic distance $d_{geo}(A, B)$ measured through the bulk must satisfy the inequality:
 
-#### 15.1.3.1 Argument: Logic of Geodesic Divergence {#15.1.3.1}
-
-:::info[**Derivation of the Screening Effect in Emergent Manifolds**]
-:::
-
 $$
 d_{geo}(A, B) \ge \frac{\mathcal{N}_{bulk}}{\kappa} \cdot \ell_P
 $$
 
 where $\mathcal{N}_{bulk}$ is the number of nodes in the bulk separating $A$ and $B$, and $\kappa$ is a constant related to the connectivity degree of the graph.
-
-**Corollary:** As the bulk separation $\mathcal{N}_{bulk} \to \infty$, the ratio $\frac{d_{geo}}{d_{topo}} \to \infty$. The existence of an entanglement bridge implies a breakdown of the isometric embedding of $G$ into $M$.
-
-The proof of this divergence rests on the requirement that the emergent manifold $M$ must look like flat space (or slowly curving space) locally. For a manifold to possess a well-defined dimension $D$ (e.g., $D=3$), the volume of a ball of radius $r$ must scale as $r^D$.
-
-If the single edge connecting $A$ and $B$ were faithfully represented in the geometry (i.e., if $d_{geo} \approx d_{topo}$), it would "pinch" the manifold, effectively setting the distance between two distinct regions to zero. This would cause the volume scaling of the neighborhood to violate the $r^D$ law, collapsing the manifold dimension or creating a singularity of infinite curvature.
-
-Therefore, any consistent mapping from the graph to a smooth manifold *must* ignore the sparse entanglement bridges. The "smoothing" process inherent in Geometrogenesis acts as a low-pass filter, discarding high-frequency (short-range, long-distance) connections. This forces the geodesic $d_{geo}$ to take the long way around through the bulk, traversing the chain of nearest-neighbor interactions. The "Distance Gap" is thus the inevitable price of enforcing a smooth, low-dimensional geometry on a highly interconnected quantum graph. The manifold serves as a "screen" that hides the true connectivity of the quantum state.
-
----
 
 ---
 
@@ -7301,14 +7306,26 @@ Therefore, any consistent mapping from the graph to a smooth manifold *must* ign
 • 15.1.3 Theorem Distance Gap  [by construction]
 │
 ├── 15.1.4 Lemma: Stabilizer Conservation
-│   └── 15.1.4.1 Commentary: Physical Significance
+│   ├── 15.1.4.1 Proof: Stabilizer Conservation
+│   └── 15.1.4.2 Commentary: Topology Persists Through Time
 │
 ├── 15.1.5 Lemma: Manifold Screening Condition
-│   └── 15.1.5.1 Commentary: Physical Significance
+│   ├── 15.1.5.1 Proof: Manifold Screening Condition
+│   ├── 15.1.5.2 Commentary: The Invisibility of High-Frequency Topology
+│   └── 15.1.5.3 Diagram: The Embedding Failure
 │
 └── 15.1.6 Proof: Distance Gap
     └── 15.1.6.1 Calculation: Bi-Metric Verification
 ```
+
+**Corollary:** As the bulk separation $\mathcal{N}_{bulk} \to \infty$, the ratio $\frac{d_{geo}}{d_{topo}} \to \infty$. The existence of an entanglement bridge implies a breakdown of the isometric embedding of $G$ into $M$.
+
+The proof of this divergence rests on the requirement that the emergent manifold $M$ must look like flat space (or slowly curving space) locally. For a manifold to possess a well-defined dimension $D$ (e.g., $D=3$), the volume of a ball of radius $r$ must scale as $r^D$.
+
+If the single edge connecting $A$ and $B$ were faithfully represented in the geometry (i.e., if $d_{geo} \approx d_{topo}$), it would "pinch" the manifold, effectively setting the distance between two distinct regions to zero. This would cause the volume scaling of the neighborhood to violate the $r^D$ law, collapsing the manifold dimension or creating a singularity of infinite curvature.
+
+Therefore, any consistent mapping from the graph to a smooth manifold *must* ignore the sparse entanglement bridges. The "smoothing" process inherent in Geometrogenesis acts as a low-pass filter, discarding high-frequency (short-range, long-distance) connections. This forces the geodesic $d_{geo}$ to take the long way around through the bulk, traversing the chain of nearest-neighbor interactions. The "Distance Gap" is thus the inevitable price of enforcing a smooth, low-dimensional geometry on a highly interconnected quantum graph. The manifold serves as a "screen" that hides the true connectivity of the quantum state.
+
 
 ### 15.1.4 Lemma: Stabilizer Conservation {#15.1.4}
 
@@ -7317,7 +7334,7 @@ Therefore, any consistent mapping from the graph to a smooth manifold *must* ign
 
 If the topological connectivity between two disjoint subgraphs $A$ and $B$ is encoded by the stabilizer operator $S_{AB}$, it remains invariant under unitary evolution.
 
-#### 15.1.4.1 Proof: Invariance under Local Unitary Evolution {#15.1.4.1}
+### 15.1.4.1 Proof: Stabilizer Conservation {#15.1.4.1}
 
 :::tip[**Verification of Stabilizer Commutation with Disjoint Local Operators**]
 :::
@@ -7390,7 +7407,7 @@ This confirms that the topological linkage $S_{AB}$ constitutes a conserved quan
 
 Q.E.D.
 
-#### 15.1.4.2 Commentary: Topology Persists Through Time {#15.1.4.2}
+### 15.1.4.2 Commentary: Topology Persists Through Time {#15.1.4.2}
 
 :::info[**Stability of Non-Local Correlations**]
 :::
@@ -7399,15 +7416,6 @@ The **Stabilizer Conservation** <Ref id="15.1.4" label="§15.1.4" /> explains wh
 
 ---
 
----
-
-### 15.1.4.1 Commentary: Physical Significance {#15.1.4.1}
-
-:::info[**Physical Significance of Stabilizer Conservation**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Stabilizer Conservation** <Ref id="15.1.4" label="§15.1.4" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 15.1.5 Lemma: Manifold Screening Condition {#15.1.5}
 
 :::info[**Establishment of the Vanishing Measure Criterion for Entanglement Bridges in the Continuum Limit**]
@@ -7415,7 +7423,7 @@ This commentary discusses the physical and mathematical significance of the resu
 
 For any embedding $\phi: G \to M$ of a causal graph into a manifold, it satisfies the manifold screening condition if and only if the bridge edges form a set of measure zero.
 
-#### 15.1.5.1 Proof: Dimensional Mismatch Forces Embedding Separation {#15.1.5.1}
+### 15.1.5.1 Proof: Manifold Screening Condition {#15.1.5.1}
 
 :::tip[**Derivation of Metric Exclusion via Hausdorff Dimension Contrast**]
 :::
@@ -7464,7 +7472,7 @@ The construction of the smooth metric $g_{\mu\nu}$ proceeds via a coarse-grainin
 
 Q.E.D.
 
-#### 15.1.5.2 Commentary: The Invisibility of High-Frequency Topology {#15.1.5.2}
+### 15.1.5.2 Commentary: The Invisibility of High-Frequency Topology {#15.1.5.2}
 
 :::info[**Physical Interpretation of Screening as a Low-Pass Geometric Filter**]
 :::
@@ -7473,7 +7481,10 @@ The proof of the Screening Condition reveals that the emergent spacetime manifol
 
 Topological bridges (entanglement) represent singular, high-frequency connections, single threads of causality that defy the local average. Because they lack the volume scaling required to define a 3D neighborhood, the manifold reconstruction process treats them as noise rather than signal. They are mathematically "screened" out of the metric tensor much like a single wire is invisible to a map of a mountain range. The wire exists (the graph is connected), but the map (the geometry) cannot resolve it. This creates the physical reality of the Bi-Metric system: particles communicate via the wire ($d_{topo}$), while gravity propagates through the mountain ($d_{geo}$).
 
-#### 15.1.5.3 Diagram: The Embedding Failure {#15.1.5.3}
+### 15.1.5.3 Diagram: The Embedding Failure {#15.1.5.3}
+
+:::note[**Visualization of the Embedding Failure of Entanglement Bridges in the Continuum Limit**]
+:::
 
 ```text
     [ THE GRAPH (G) ]                     [ THE MANIFOLD (M) ]
@@ -7492,15 +7503,6 @@ Topological bridges (entanglement) represent singular, high-frequency connection
 ```
 
 ---
-
----
-
-### 15.1.5.1 Commentary: Physical Significance {#15.1.5.1}
-
-:::info[**Physical Significance of Manifold Screening Condition**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Manifold Screening Condition** <Ref id="15.1.5" label="§15.1.5" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 15.1.6 Proof: Distance Gap {#15.1.6}
 
@@ -7664,6 +7666,11 @@ When $d_{topo} \ll d_{geo}$, a signal respecting the causal limit of the graph (
 
 Having established that the graph contains these hidden shortcuts, the immediate physical question becomes: can we detect them? If the universe truly possesses this bi-metric architecture, it must manifest in statistical correlations that exceed the bounds of any theory constrained to the manifold alone. We turn now to the **Bell Violation** <Ref id="15.2" label="§15.2" />, where we verify that this topological structure rigorously produces the violation of Bell's Inequality.
 
+---
+
+﻿---
+title: "Chapter 15: EPR Duality (ER=EPR)"
+sidebar_label: "15.2 - Bell Theorem"
 ---
 
 ## 15.2 Bell Violation {#15.2}
@@ -7962,7 +7969,7 @@ This illustrates the **Teleportation Protocol** <Ref id="15.3.4" label="§15.3.4
 
 Suppose while the existence of a topological bridge allows the correlation parameter $S$ to exceed the classical local realism bound ($|S| \le 2$), the magnitude of $S$ remains strictly bounded by the geometric constraints of the graph Hilbert space $\mathcal{H}_G$
 
-#### 15.2.4.1 Proof: Geometric Limits of Braid Deformation {#15.2.4.1}
+### 15.2.4.1 Proof: Tsirelson Bound {#15.2.4.1}
 
 :::tip[**Formal Derivation of the Operator Norm Limit**]
 :::
@@ -8021,7 +8028,7 @@ Thus, even with a direct topological bridge ($d_{topo}=1$), the algebraic struct
 
 Q.E.D.
 
-#### 15.2.4.2 Commentary: Finite Correlation from Finite Connectivity {#15.2.4.2}
+### 15.2.4.2 Commentary: Finite Correlation from Finite Connectivity {#15.2.4.2}
 
 :::info[**Physical Interpretation: The Structural Rigidity of Quantum Logic**]
 :::
@@ -8033,15 +8040,6 @@ The answer lies in the "pixelation" of the graph. The topological bridge is a co
 The bridge bypasses the *spatial* distance ($d_{geo}$), allowing the signal to survive. But it cannot bypass the *logical* geometry of the operators themselves. The value $2\sqrt{2}$ represents the maximum "tension" the graph can support before the logical consistency of the measurement outcomes breaks down. It is the "speed limit" of the graph's internal logic, distinct from the speed limit of the bulk's external geometry.
 
 ---
-
----
-
-### 15.2.4.1 Commentary: Physical Significance {#15.2.4.1}
-
-:::info[**Physical Significance of Tsirelson Bound**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Tsirelson Bound** <Ref id="15.2.4" label="§15.2.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 15.2.5 Proof: Violation of Metric Locality (Bell's Theorem) {#15.2.5}
 
@@ -8375,7 +8373,7 @@ This diagram corresponds to the **Transport Cost Reduction (ER=EPR)** <Ref id="1
 
 Given that the set of topological bridge edges constitutes the minimal cut surface, the area satisfies the minimization condition at the locus of entanglement.
 
-#### 15.3.3.1 Proof: Area Minimization at the Bridge {#15.3.3.1}
+### 15.3.3.1 Proof: Emergent Throat {#15.3.3.1}
 
 :::tip[**Formal Verification of the Min-Cut/Max-Flow Duality at the Topological Defect**]
 :::
@@ -8428,7 +8426,7 @@ Consequently, the global minimum of the area functional lies strictly on the top
 
 Q.E.D.
 
-#### 15.3.3.2 Commentary: The Einstein-Rosen Bridge Topology {#15.3.3.2}
+### 15.3.3.2 Commentary: The Einstein-Rosen Bridge Topology {#15.3.3.2}
 
 :::info[**Physical Interpretation: The Bottleneck of Spacetime**]
 :::
@@ -8441,15 +8439,6 @@ In General Relativity, this exact geometry (two vast regions connected by a narr
 
 ---
 
----
-
-### 15.3.3.1 Commentary: Physical Significance {#15.3.3.1}
-
-:::info[**Physical Significance of Emergent Throat**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Emergent Throat** <Ref id="15.3.3" label="§15.3.3" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 15.3.4 Lemma: Teleportation Protocol {#15.3.4}
 
 :::info[**Establishment of Quantum State Transmission through Entangled Links**]
@@ -8457,7 +8446,7 @@ This commentary discusses the physical and mathematical significance of the resu
 
 Given the system, the **Teleportation Protocol** establishes that a quantum state can be transmitted between spatially separated regions $A$ and $B$ via a shared entanglement channel $E_{bridge}$ and classical coordination
 
-#### 15.3.4.1 Proof: Algebraic Transmission {#15.3.4.1}
+### 15.3.4.1 Proof: Teleportation Protocol {#15.3.4.1}
 
 :::tip[**Formal Algebraic Verification of State Recovery**]
 :::
@@ -8474,7 +8463,7 @@ $$
 
 **II. Projection onto the Bell Basis**
 
-We perform a joint projection of qubits $C$ and $A$ onto the Bell basis at $A$. The joint state can be algebraically rewritten as:
+We apply a joint projection of qubits $C$ and $A$ onto the Bell basis at $A$. The joint state can be algebraically rewritten as:
 
 $$
 |\Psi_{CAB}\rangle = \frac{1}{2} \left[ |\Phi^+\rangle_{CA} (\alpha|0\rangle_B + \beta|1\rangle_B) + |\Phi^-\rangle_{CA} (\alpha|0\rangle_B - \beta|1\rangle_B) + |\Psi^+\rangle_{CA} (\beta|0\rangle_B + \alpha|1\rangle_B) + |\Psi^-\rangle_{CA} (-\beta|0\rangle_B + \alpha|1\rangle_B) \right].
@@ -8492,7 +8481,7 @@ Applying the corresponding unitary correction based on the classical message rec
 
 Q.E.D.
 
-#### 15.3.4.2 Commentary: Causal Traversability of the Throat {#15.3.4.2}
+### 15.3.4.2 Commentary: Causal Traversability of the Throat {#15.3.4.2}
 
 :::info[**Physical Interpretation: Why the Wormhole is Non-Traversable Classically**]
 :::
@@ -8502,15 +8491,6 @@ The **Teleportation Protocol** <Ref id="15.3.4" label="§15.3.4" /> provides the
 The protocol shows that the quantum state is indeed transported through the topological bridge. However, the receiver at $B$ cannot extract or decode this state without the classical bits transmitted from $A$. Since these classical bits must travel through the macroscopic bulk geometry at a speed bounded by the speed of light ($c$), the complete teleportation event is strictly subluminal. The quantum shortcut (the wormhole throat) cannot be used to violate causality. It functions as a "latent traversable bridge" that requires a classical key to unlock, perfectly aligning the thermodynamics of information with the constraints of Lorentzian relativity.
 
 ---
-
----
-
-### 15.3.4.1 Commentary: Physical Significance {#15.3.4.1}
-
-:::info[**Physical Significance of Teleportation Protocol**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Teleportation Protocol** <Ref id="15.3.4" label="§15.3.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 15.3.5 Proof: Transport Cost Reduction (ER=EPR) {#15.3.5}
 
@@ -8654,6 +8634,11 @@ If one were to sever all entanglement bridges (setting $S \to 0$), the geometric
 **The Bridge: From Structure to Thermodynamics**
 We have defined the *structure* of the vacuum (a Bi-Metric Graph) and the *topology* of its connections (Wormholes). However, a static graph is dead. The universe is dynamic. If geometry is emergent from information, then the *curvature* of geometry (Gravity) must be emergent from the *flow* of information. We must now determine the energetic cost of this topology. We turn to the **Quantum Eraser (Temporal Non-Locality)** <Ref id="15.4" label="§15.4" />, where we derive the Thermodynamics of Spacetime, proving that the Einstein Field Equations are the equation of state for this information network.
 
+---
+
+﻿---
+title: "Chapter 15: EPR Duality (ER=EPR)"
+sidebar_label: "15.4 - Quantum Eraser"
 ---
 
 ## 15.4 Quantum Eraser (Temporal Non-Locality) {#15.4}
@@ -8842,7 +8827,7 @@ This visualizes the **Quantum Eraser** mechanism in QBD (**Block Universe as Fix
 
 Let **Lemma (Block Universe Fixed Point):** It is herein established that the observable history of the causal graph $\Gamma_{obs}$ is the unique fixed point of the global constraint satisfaction problem defined by the initial state $|\Psi_{in}\rangle$ and the final measurement context $\hat{M}$.
 
-#### 15.4.4.1 Proof: The Eraser is Global Consistency (Max Interference) {#15.4.4.1}
+### 15.4.4.1 Proof: Block Universe as Fixed Point {#15.4.4.1}
 
 :::tip[**Formal Derivation of History Selection via Boundary Projection**]
 :::
@@ -8894,7 +8879,7 @@ The physical reality of the intermediate state (wave vs. particle) is determined
 
 Q.E.D.
 
-#### 15.4.4.2 Commentary: The Puzzle of the Block {#15.4.4.2}
+### 15.4.4.2 Commentary: The Puzzle of the Block {#15.4.4.2}
 
 :::info[**Physical Interpretation: Spacetime as a Sudoku Grid**]
 :::
@@ -8911,15 +8896,6 @@ The Quantum Eraser is a spacetime Sudoku.
 When we set up the "Eraser" measurement at the bottom, we are writing a specific number (a specific boundary condition) into the grid. The *only* valid solution for the middle rows that matches that bottom number is the "Interference Pattern." If we swap the bottom number for a "Which-Path" measurement, the solution for the middle rows instantly shifts to "Particle Trajectory" because that is the only pattern that fits the new constraint. The universe solves the whole puzzle at once.
 
 ---
-
----
-
-### 15.4.4.1 Commentary: Physical Significance {#15.4.4.1}
-
-:::info[**Physical Significance of Block Universe as Fixed Point**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Block Universe as Fixed Point** <Ref id="15.4.4" label="§15.4.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 15.4.5 Proof: Global Constraint Satisfaction {#15.4.5}
 
@@ -9039,6 +9015,11 @@ The quantum network stands as the fundamental arena of our stage, where space st
 | $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§15.3.2](/monograph/stage/epr/15.3/#15.3.2) |
 | $\mathcal{E}_{\Gamma}$ | Causal history path ensemble | [§15.4.1](/monograph/stage/epr/15.4/#15.4.1) |
 
+---
+
+﻿---
+title: " "
+sidebar_label: "16.1 - Surface Code"
 ---
 
 # Chapter 16: Isomorphism Principle (Holography)
@@ -9231,7 +9212,7 @@ The **Min-Cut Entropy Identity** <Ref id="16.1.3" label="§16.1.3" /> establishe
 
 Let **Lemma (Isometry Condition):** It is herein established that the coarse-graining map $\Phi: \mathcal{H}_{bulk} \to \mathcal{H}_{boundary}$ defining the Causal Tensor Network constitutes an **Isometric Embedding**.
 
-#### 16.1.4.1 Proof: Unitarity of the Coarse-Graining Map {#16.1.4.1}
+### 16.1.4.1 Proof: Isometry Condition {#16.1.4.1}
 
 :::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
@@ -9299,7 +9280,7 @@ Since the overlap $\langle \Psi_{bulk} | \Psi_{bulk} \rangle$ is invariant under
 
 Q.E.D.
 
-#### 16.1.4.2 Commentary: Information Conservation {#16.1.4.2}
+### 16.1.4.2 Commentary: Information Conservation {#16.1.4.2}
 
 :::info[**Physical Interpretation: The Universe as a Hard Drive**]
 :::
@@ -9311,15 +9292,6 @@ When you compress a file into a ZIP archive, you expect the process to be lossle
 The **Isometry Condition** <Ref id="16.1.4" label="§16.1.4" /> proves that the geometry of spacetime acts like a **Quantum Error Correcting Code**. The local laws of physics (the $u$ and $w$ tensors) are specifically tuned to ensure that the information sitting in the deep bulk is redundantly encoded across the vast surface of the boundary. You can delete large chunks of the boundary (erasure errors), and because of the entanglement structure, the bulk state remains intact. "Reality" is the robust, error-corrected logical qubit protected by the surface code of the vacuum.
 
 ---
-
----
-
-### 16.1.4.3 Commentary: Physical Significance {#16.1.4.3}
-
-:::info[**Physical Significance of Isometry Condition**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Isometry Condition** <Ref id="16.1.4" label="§16.1.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 16.1.5 Proof: Ryu-Takayanagi Correspondence {#16.1.5}
 
@@ -9732,7 +9704,7 @@ PHASE I: SPARSE VACUUM               PHASE II: SATURATED HORIZON
 
 For any trapped surface, the Bekenstein-Hawking entropy corresponds strictly to the cardinality of the fundamental 3-cycles intersecting the boundary, which is well-defined.
 
-#### 16.2.4.1 Proof: Counting Pierced 3-Cycles in Trapped Surface {#16.2.4.1}
+### 16.2.4.1 Proof: Black Hole Entropy from Cycle Count {#16.2.4.1}
 
 :::tip[**Formal Verification of the Microstate Counting on the Horizon**]
 :::
@@ -9754,7 +9726,7 @@ Let the boundary state be $|\Psi_{\Sigma}\rangle$. The dimension of the Hilbert 
 In QBD, the fundamental degree of freedom is the **3-Cycle** (the smallest braid).
 
 **III. The Tiling Problem**
-We model the horizon $\Sigma$ as a spherical shell tessellated by these fundamental cycles.
+The horizon $\Sigma$ is represented as a spherical shell tessellated by these fundamental cycles.
 Let the area of the horizon be $A$.
 Let the effective cross-sectional area of a single 3-cycle be $a_{cycle}$.
 The number of cycles that can be packed onto the surface is:
@@ -9769,7 +9741,7 @@ The number of microstates is $\Omega = 2^{N_{cycles}}$.
 The entropy is $S = \ln \Omega = N_{cycles} \ln 2$.
 
 **V. The Area Normalization**
-We identify the fundamental length scale $\ell_P$ such that the discrete area unit is $a_{cycle} = 4 \ln 2 \cdot \ell_P^2$ (calibrating to the Schwarzschild metric). Alternatively, in natural units where the bit area is unit, we derive the scaling coefficient directly from the simplex geometry.
+The fundamental length scale $\ell_P$ is defined such that the discrete area unit is $a_{cycle} = 4 \ln 2 \cdot \ell_P^2$ (calibrating to the Schwarzschild metric). Alternatively, in natural units where the bit area is unit, we derive the scaling coefficient directly from the simplex geometry.
 For a triangular tiling (dual to the 3-cycle interactions) on a sphere, the geometric factor relating the number of faces to the area yields the coefficient $\eta = 1/4$.
 
 $$
@@ -9780,7 +9752,7 @@ Thus, the entropy counts the "pixels" of the event horizon.
 
 Q.E.D.
 
-#### 16.2.4.2 Commentary: The Event Horizon as a Pixelated Screen {#16.2.4.2}
+### 16.2.4.2 Commentary: The Event Horizon as a Pixelated Screen {#16.2.4.2}
 
 :::info[**Physical Interpretation: Digital Geometry**]
 :::
@@ -9797,15 +9769,6 @@ When we calculate $S = A/4$, we are literally counting these triangles.
 This confirms the central thesis of Digital Physics: at the bottom, it is just bits. A Black Hole is simply the maximum density of bits allowed by the compiler. It is the universe's way of saying "Buffer Overflow."
 
 ---
-
----
-
-### 16.2.4.1 Commentary: Physical Significance {#16.2.4.1}
-
-:::info[**Physical Significance of Black Hole Entropy from Cycle Count**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 16.2.5 Proof: Maximum Informational Density (The Bound) {#16.2.5}
 
@@ -10009,7 +9972,7 @@ Geometric Scaling Analysis:
 
 The tabulated data indicates a strict areal scaling exponent of $d_{ent} \approx 1.95$, contrasting with the volumetric exponent of $d_{vol} \approx 2.95$. While the volume of the region grows cubically, the information capacity grows quadratically. The coefficient $S/A$ remains constant at exactly $0.25$, validating the geometric derivation of the Bekenstein factor. This confirms that at the saturation limit (black hole), the information content decouples from the bulk volume and becomes strictly a function of the boundary topology.
 
-#### 16.2.5.2 Commentary: Why the Universe is Pixelated {#16.2.5.2}
+### 16.2.5.2 Commentary: Why the Universe is Pixelated {#16.2.5.2}
 
 :::info[**Physical Interpretation: The Finite Resolution of Reality**]
 :::
@@ -10072,6 +10035,11 @@ Spacetime is now understood not as a container, but as an error-correcting compu
 | $S_{BH}$ | Bekenstein-Hawking horizon entropy | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
 | $A$ | Area of black hole horizon / holographic screen | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
 
+---
+
+﻿---
+title: " "
+sidebar_label: "17.1 - Worldsheet"
 ---
 
 # Chapter 17: String Limit (Worldsheets)
@@ -10319,15 +10287,6 @@ As you pull the particles apart, you have to add more links to the bridge to spa
 
 ---
 
----
-
-### 17.1.4.3 Commentary: Physical Significance {#17.1.4.3}
-
-:::info[**Physical Significance of Confinement and Berry Phase**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Confinement and Berry Phase** <Ref id="17.1.4" label="§17.1.4" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 17.1.5 Proof: Action Equivalence (Nambu-Goto) {#17.1.5}
 
 :::tip[**Formal Verification of the Emergence of the Nambu-Goto Action**]
@@ -10512,6 +10471,11 @@ The derivation of the linear potential $V(r) \sim r$ explains why quarks are con
 **The Bridge: From Worldsheet to Spectrum**
 We have the string (the Causal Tube). Now we need the music (the Spectrum). A static string is just a line; a vibrating string is a particle zoo. In the **T-Duality and Spectrum** <Ref id="17.2" label="§17.2" />, we will derive the vibrational modes of this discrete string and show how T-Duality emerges from the discrete symmetry of the graph lattice.
 
+---
+
+﻿---
+title: "Chapter 17: The String Limit (Worldsheets)"
+sidebar_label: "17.2 - T-Duality"
 ---
 
 ## 17.2 T-Duality and Spectrum {#17.2}
@@ -10746,15 +10710,6 @@ We have just proven that these are the *same constraint*.
 Matter *is* the "Magic" of the causal graph. You cannot build an electron out of stabilizers alone; you need that extra $\pi/4$ twist to unlock the spinor physics.
 
 ---
-
----
-
-### 17.2.4.3 Commentary: Physical Significance {#17.2.4.3}
-
-:::info[**Physical Significance of T-Gate Phase**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **T-Gate Phase** <Ref id="17.2.4" label="§17.2.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 17.2.5 Proof: Spectral Invariance (T-Duality) {#17.2.5}
 
@@ -10991,7 +10946,7 @@ The argument proceeds via Direct Construction, decomposing the worldsheet Hilber
 
 Suppose a supersymmetric topological defect propagates on the graph. Then the number of stable transverse degrees of freedom is strictly limited to 8.
 
-#### 17.3.2.1 Proof: Stability of Spinor Defects (k=8) {#17.3.2.1}
+### 17.3.2.1 Proof: Bott Periodicity (The Octonionic Lock) {#17.3.2.1}
 
 :::tip[**Formal Derivation of the Dimensional Constraint via Clifford Modules**]
 :::
@@ -11014,7 +10969,7 @@ $$
 
 **II. The Clifford Algebra Classification**
 Spinors are modules over the Clifford algebra. The representation theory of Real Clifford Algebras is periodic modulo 8 (Bott Periodicity). The number of irreducible spinor components for $SO(N)$ scales as $2^{\lfloor (N-1)/2 \rfloor}$.
-We seek the minimal $N$ where the spinor dimension matches the vector dimension $N$.
+We compute the minimal $N$ where the spinor dimension matches the vector dimension $N$.
 
 **III. The Triality Check**
 * $N=1$: Vector=1, Spinor=1. (Trivial).
@@ -11035,7 +10990,7 @@ This proves that the graph defect must live in an effective 10-dimensional tange
 
 Q.E.D.
 
-#### 17.3.2.2 Commentary: The Topological Origin of "8" {#17.3.2.2}
+### 17.3.2.2 Commentary: The Topological Origin of "8" {#17.3.2.2}
 
 :::info[**Physical Interpretation: The Four Mathematical Universes**]
 :::
@@ -11059,15 +11014,6 @@ The "10 dimensions" of string theory are not 10 random directions. They are 2 (T
 
 ---
 
----
-
-### 17.3.2.1 Commentary: Physical Significance {#17.3.2.1}
-
-:::info[**Physical Significance of Bott Periodicity (The Octonionic Lock)**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Bott Periodicity (The Octonionic Lock)** <Ref id="17.3.2" label="§17.3.2" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 17.3.3 Lemma: Tripartite Braid Saturation {#17.3.3}
 
 :::info[**Establishment of the Bosonic Critical Dimension via Trivalent Vertex Counting**]
@@ -11075,7 +11021,7 @@ This commentary discusses the physical and mathematical significance of the resu
 
 Let **Lemma (Braid Saturation):** It is herein established that the critical dimension of the Left-Moving (Bosonic) sector of the causal graph is $D_L = 26$.
 
-#### 17.3.3.1 Proof: 3 Strands x 8 Modes = 24 {#17.3.3.1}
+### 17.3.3.1 Proof: Tripartite Braid Saturation {#17.3.3.1}
 
 :::tip[**Formal Derivation of the Lattice Degrees of Freedom**]
 :::
@@ -11089,7 +11035,7 @@ $$
 Including the 2 longitudinal light-cone coordinates, the total critical dimension is $D_L = 24 + 2 = 26$. :::.
 
 **I. The Fundamental Capacity (Octonions)**
-From **Bott Periodicity (The Octonionic Lock)** <Ref id="17.3.2" label="§17.3.2" />, we established that the maximum number of independent transverse modes for a stable, supersymmetric 1D defect is fixed by the dimension of the Octonions (or the Bott periodicity of Clifford algebras):
+From **Bott Periodicity (The Octonionic Lock)** <Ref id="17.3.2" label="§17.3.2" />, the maximum number of independent transverse modes for a stable, supersymmetric 1D defect is established by the dimension of the Octonions (or the Bott periodicity of Clifford algebras):
 
 $$
 N_{fund} = 8
@@ -11113,7 +11059,7 @@ In QBD, this is not an anomaly cancellation but a combinatorial saturation: the 
 
 Q.E.D.
 
-#### 17.3.3.2 Commentary: The Thicker Vacuum {#17.3.3.2}
+### 17.3.3.2 Commentary: The Thicker Vacuum {#17.3.3.2}
 
 :::info[**Physical Interpretation: The Signal vs. The Wire**]
 :::
@@ -11129,15 +11075,6 @@ The difference ($26 - 10 = 16$) is not "lost" space. It represents the internal 
 
 ---
 
----
-
-### 17.3.3.1 Commentary: Physical Significance {#17.3.3.1}
-
-:::info[**Physical Significance of Tripartite Braid Saturation**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Tripartite Braid Saturation** <Ref id="17.3.3" label="§17.3.3" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 17.3.4 Lemma: ZPE Cancellation {#17.3.4}
 
 :::info[**Establishment of the Vacuum Energy Balance Condition**]
@@ -11145,7 +11082,7 @@ This commentary discusses the physical and mathematical significance of the resu
 
 Let **Lemma (ZPE Cancellation):** It is herein established that the stability of the Heterotic graph vacuum is guaranteed by the precise cancellation of Zero-Point Energies (ZPE) between the chiral sectors, subject to the level-matching constraint.
 
-#### 17.3.4.1 Proof: Left (Bosonic -1) + Right (Super 0) {#17.3.4.1}
+### 17.3.4.1 Proof: ZPE Cancellation {#17.3.4.1}
 
 :::tip[**Formal Derivation of the Casimir Energy Contributions**]
 :::
@@ -11181,7 +11118,7 @@ This implies that the Left sector must always have 1 unit of excitation energy m
 
 Q.E.D.
 
-#### 17.3.4.2 Commentary: Consistent 10D Spectrum {#17.3.4.2}
+### 17.3.4.2 Commentary: Consistent 10D Spectrum {#17.3.4.2}
 
 :::info[**Physical Interpretation: The Cost of Existence**]
 :::
@@ -11196,15 +11133,6 @@ To balance the scale ($M_L = M_R$), you must add exactly +1 unit of weight to th
 So, every particle in our universe exists only because the underlying 26D lattice is "humming" with a specific internal vibration that offsets the vacuum instability. We see the particle (10D); we do not see the hum (16D), but we feel it as the force charges (Electric, Weak, Strong) carried by the particle.
 
 ---
-
----
-
-### 17.3.4.1 Commentary: Physical Significance {#17.3.4.1}
-
-:::info[**Physical Significance of ZPE Cancellation**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **ZPE Cancellation** <Ref id="17.3.4" label="§17.3.4" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 17.3.5 Proof: Chiral Split (Bosonic Left / Super Right) {#17.3.5}
 
@@ -11401,6 +11329,11 @@ We have derived the container for the Standard Model. We do not need to add fiel
 
 ---
 
+﻿---
+title: "Chapter 17: The String Limit (Worldsheets)"
+sidebar_label: "17.4 - Heterotic"
+---
+
 ## 17.4 Heterotic Unification (E8 x E8) {#17.4}
 
 :::note[**Gauge Group and Anomaly Cancellation Overview**]
@@ -11537,7 +11470,7 @@ The argument proceeds via Direct Construction, proving the modular invariance an
 
 Let **Lemma (Unimodular Basis):** It is herein established that the internal momentum lattice $\Gamma$ of the Heterotic graph must be an **Even Self-Dual Lattice** (Unimodular) to preserve the unitarity of the theory at the one-loop level.
 
-#### 17.4.3.1 Proof: Self-Duality of the Braid Lattice {#17.4.3.1}
+### 17.4.3.1 Proof: Unimodular Basis (Modular Invariance) {#17.4.3.1}
 
 :::tip[**Formal Derivation of Lattice Constraints from Modular S-Invariance**]
 :::
@@ -11583,7 +11516,7 @@ In $D=16$, the classification of even self-dual lattices yields exactly two solu
 
 Q.E.D.
 
-#### 17.4.3.2 Commentary: The Shape of Consistency {#17.4.3.2}
+### 17.4.3.2 Commentary: The Shape of Consistency {#17.4.3.2}
 
 :::info[**Physical Interpretation: Why the Universe Does Not Break**]
 :::
@@ -11597,15 +11530,6 @@ To ensure the answer is independent of the drawing, the internal lattice $\Gamma
 The lattice $E_8$ is the supreme geometric palindrome. This is why the universe chose it. It was not an arbitrary decision; it was the only way to build a 16-dimensional structure that looks the same from every angle of the modular group.
 
 ---
-
----
-
-### 17.4.3.1 Commentary: Physical Significance {#17.4.3.1}
-
-:::info[**Physical Significance of Unimodular Basis (Modular Invariance)**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 17.4.4 Lemma: Standard Model Embedding {#17.4.4}
 
@@ -11797,7 +11721,7 @@ If the graph were 4-valent, we would see 4 generations. We are 3-generation crea
 
 If the heterotic causal graph is defined, it is free from perturbative chiral anomalies.
 
-#### 17.4.5.1 Proof: Computing Chiral Index from Spinor Roots {#17.4.5.1}
+### 17.4.5.1 Proof: Anomaly Cancellation {#17.4.5.1}
 
 :::tip[**Formal Verification of the Anomaly Polynomial Factorization**]
 :::
@@ -11838,7 +11762,7 @@ The existence of this factorization for $N=496$ (dimension of $E_8 \times E_8$) 
 
 Q.E.D.
 
-#### 17.4.5.2 Commentary: Gravitational + Gauge Anomaly Cancel {#17.4.5.2}
+### 17.4.5.2 Commentary: Gravitational + Gauge Anomaly Cancel {#17.4.5.2}
 
 :::info[**Physical Interpretation: The Delicate Balance**]
 :::
@@ -11855,15 +11779,6 @@ This tells us that **Gravity and the Standard Model Forces are not separate.** T
 
 ---
 
----
-
-### 17.4.5.1 Commentary: Physical Significance {#17.4.5.1}
-
-:::info[**Physical Significance of Anomaly Cancellation**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Anomaly Cancellation** <Ref id="17.4.5" label="§17.4.5" />. It highlights how these bounds govern the global properties of the causal geometry.
-
 ### 17.4.6 Lemma: Landscape from Braid Vacua {#17.4.6}
 
 :::info[**Establishment of the Vacuum Moduli Space via Knot Invariants**]
@@ -11871,7 +11786,7 @@ This commentary discusses the physical and mathematical significance of the resu
 
 Given that the compactification of the internal dimensions can be deformed by Wilson lines, the vacuum state exhibits a topological degeneracy.
 
-#### 17.4.6.1 Proof: Different Knots = Different Physics {#17.4.6.1}
+### 17.4.6.1 Proof: Landscape from Braid Vacua {#17.4.6.1}
 
 :::tip[**Formal Derivation of Symmetry Breaking via Wilson Lines**]
 :::
@@ -11908,7 +11823,7 @@ Therefore, a specific configuration of twists determines the specific low-energy
 
 Q.E.D.
 
-#### 17.4.6.2 Commentary: The Code of the Constants {#17.4.6.2}
+### 17.4.6.2 Commentary: The Code of the Constants {#17.4.6.2}
 
 :::info[**Physical Interpretation: Why is Fine Structure Constant 1/137?**]
 :::
@@ -11923,15 +11838,6 @@ In QBD, these constants are not arbitrary numbers written by a deity. They are *
 We live in a "1/137" universe because our local patch of the causal graph is tied in a specific "1/137" knot. The "Landscape" is simply the catalog of all possible knots you can tie in the vacuum lattice.
 
 ---
-
----
-
-### 17.4.6.1 Commentary: Physical Significance {#17.4.6.1}
-
-:::info[**Physical Significance of Landscape from Braid Vacua**]
-:::
-
-This commentary discusses the physical and mathematical significance of the results established in **Landscape from Braid Vacua** <Ref id="17.4.6" label="§17.4.6" />. It highlights how these bounds govern the global properties of the causal geometry.
 
 ### 17.4.7 Proof: Emergence of the E8 Lattice {#17.4.7}
 

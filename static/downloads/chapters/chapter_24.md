@@ -90,6 +90,11 @@ Given the conditions of **Braid Gauge Connections**, **Finite Mass Bound**, and 
 
 ---
 
+﻿---
+title: "Chapter 24: Mathematical Universe (Derivations)"
+sidebar_label: "24.4 - Navier-Stokes Regularity"
+---
+
 ## 24.4 Navier-Stokes Regularity {#24.4}
 
 The Navier-Stokes regularity problem asks whether smooth, physically reasonable solutions to the Navier-Stokes equations for fluid dynamics always exist in three dimensions. Quantum Braid Dynamics resolves this question by deriving a state-dependent "smart viscosity" from the graph's stabilizer error correction and by establishing a hard physical quantum cutoff at the Planck scale.
@@ -183,14 +188,12 @@ Q.E.D.
 
 ---
 
----
-
 ### 24.4.2.2 Commentary: Physical Significance {#24.4.2.2}
 
-:::info[**Physical Significance of Quantum Cutoff**]
+:::info[**Planck-Scale Resolution Limits and Singularity Suppression in Unitary Fluid Dynamics**]
 :::
 
-This commentary discusses the physical and mathematical significance of the results established in **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" />. It highlights how these bounds govern the global properties of the causal geometry.
+The breakdown of the continuum fluid model at the Planck scale prevents physical quantities like velocity or density from diverging to infinity. By resolving the fluid into discrete, interacting topological defects governed by bounded unitary operators on a finite Hilbert space, QBD naturally quenches the singularities that plague classical continuum fluid mechanics.
 
 ### 24.4.3 Proof: Smart Viscosity {#24.4.3}
 

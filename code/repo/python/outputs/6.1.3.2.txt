@@ -1,0 +1,13 @@
+========================================================================
+§6.1.3.2 Legal-Task Reduction of Trivial Patterns
+========================================================================
+Arm                            C0   Cf  steps   ok  detail
+------------------------------------------------------------------------
+Type_II_digon                   3    2      1    Y  deleted=[(0, 1)]
+Type_II_double_path             4    3      1    Y  deleted=[(0, 1)]
+Type_III_slide                  2    2      2    Y  tasks=[('add', (2, 0)), ('del', (0, 1))]
+Type_I_add_rejected             1    1      0    Y  LegalAdd(0,0)=False
+Isolated_3_cycle_stochastic     3    2     40    Y  evaporated_fraction=1.000 trials=200
+------------------------------------------------------------------------
+ALL_ARMS_REDUCED: True
+========================================================================

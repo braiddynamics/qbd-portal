@@ -63,11 +63,11 @@ The selection of a strictly directed and irreflexive primitive constitutes the f
 :::note[**Axiom 1: The Causal Primitive**]
 :::
 
-The directed causal link establishes the fundamental asymmetry of the universe, enforcing that influence propagates as an irreversible vector rather than a static bond. Irreflexivity prohibits events from causing themselves, eliminating the possibility of causal stagnation, while asymmetry ensures that no pair of events can influence each other simultaneously. These constraints physically encode the arrow of time at the atomic level, mandating that every connection contributes to a net displacement in the relational landscape.
+The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> establishes the fundamental asymmetry of the universe, enforcing that influence propagates as an irreversible vector rather than a static bond. Irreflexivity prohibits events from causing themselves, eliminating the possibility of causal stagnation, while asymmetry ensures that no pair of events can influence each other simultaneously. These constraints physically encode the arrow of time at the atomic level, mandating that every connection contributes to a net displacement in the relational landscape.
 
-This shifts the ontology from a lattice of "being" to a network of "becoming," where the structure of the graph itself enforces the distinction between past and future. By forbidding instantaneous loops and self-reference, we ensure that the system cannot become trapped in tautological states, compelling it to evolve through interaction with distinct elements. This mechanism prevents the universe from freezing into a crystalline block, guaranteeing that history is a dynamic process of accumulation rather than a static arrangement.
+This shifts the ontology from a lattice of "being" to a network of "becoming," where the structure of the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> itself enforces the distinction between past and future. By forbidding instantaneous loops and self-reference, we ensure that the system cannot become trapped in tautological states, compelling it to evolve through interaction with distinct elements. This mechanism prevents the universe from freezing into a crystalline block, guaranteeing that history is a dynamic process of accumulation rather than a static arrangement.
 
-The imposition of strict directionality drives the system relentlessly forward, ensuring that every update advances the causal order without the possibility of reversal. This microscopic irreversibility is the root of all macroscopic thermodynamics, establishing that the universe is not a reversible machine but a generative process that consumes logical potential to produce history. By locking the arrow of time into the definition of the edge itself, we render the concept of a "rewind" physically meaningless, as the topological structure that defines the present exists only as a consequence of the directed momentum of the past.
+The imposition of strict directionality of the **Causal Relation** <Ref id="1.4.3" label="§1.4.3" /> drives the system relentlessly forward, ensuring that every update advances the causal order without the possibility of reversal. This microscopic irreversibility is the root of all macroscopic thermodynamics, establishing that the universe is not a reversible machine but a generative process that consumes logical potential to produce history. By locking the arrow of time into the definition of the edge itself, we render the concept of a "rewind" physically meaningless, as the topological structure that defines the present exists only as a consequence of the directed momentum of the past.
 
 ---
 
@@ -241,13 +241,13 @@ Let $\Omega(G)$ denote the cardinality of the set of simple paths connecting dis
 
 **I. Definition of the Configuration Space**
 
-Let $\Omega(G)$ denote the cardinality of the set of simple directed paths between distinct vertices $u, v$. A simple path is defined strictly as a sequence of vertices containing no repetitions.
+Let $\Omega(G)$ denote the cardinality of the set of simple directed paths between distinct vertices $u, v$ in a graph governed by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. A simple path is defined strictly as a sequence of vertices containing no repetitions.
 
 $$
 \Omega(G) = | \{ \pi_{uv} \mid u \neq v, \pi \text{ is simple} \} |
 $$
 
-**II. Structural Analysis of Self-Loops**
+The presence of self-loops, studied in **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" />, is evaluated.
 
 Let $\mathcal{T}_{self}$ denote the operation adding a self-loop $e = (x, x)$ to the graph $G$, yielding $G'$. Any candidate path $\pi'$ in $G'$ that traverses $e$ necessarily contains the subsequence $(x, x)$. This repetition of the vertex $x$ violates the definition of a simple path. It follows that no valid simple path utilizes the self-loop edge.
 
@@ -385,11 +385,11 @@ This permission generates a universe populated by inert echoes. A vertex possess
 :::note[**Antisymmetry**]
 :::
 
-Mathematical antisymmetry is proven insufficient for physical causality because it permits self-loops that masquerade as valid relations while contributing zero thermodynamic progress. These loops satisfy the formal condition of non-reciprocity only because the source and target are identical, creating pockets of causal inertia where logical time passes without state evolution. By allowing events to be their own antecedents, antisymmetry creates a permission structure for solipsistic existence that decouples from the external universe.
+Mathematical **Insufficiency of Antisymmetry** <Ref id="2.2.1" label="§2.2.1" /> is proven insufficient for physical causality because it permits self-loops that masquerade as valid relations while contributing zero thermodynamic progress. These loops satisfy the formal condition of non-reciprocity only because the source and target are identical, creating pockets of causal inertia where logical time passes without state evolution. By allowing events to be their own antecedents, antisymmetry creates a permission structure for solipsistic existence that decouples from the external universe.
 
-This realization forces the adoption of strict irreflexivity, redefining physical existence as inherently relational and interactive. A universe governed by simple antisymmetry would be cluttered with inert debris, ghostly loops that consume resources but generate no history, whereas irreflexivity purges these artifacts, ensuring that every valid edge represents a genuine transfer of information between distinct entities. This cleans the ontology, demanding that to exist is to affect something else.
+This realization forces the adoption of strict irreflexivity, avoiding the **Pathology of Self-Loops** <Ref id="2.2.2" label="§2.2.2" />. A universe governed by simple antisymmetry would be cluttered with inert debris, ghostly loops that consume resources but generate no history, whereas irreflexivity purges these artifacts, ensuring that every valid edge represents a genuine transfer of information between distinct entities. This cleans the ontology, demanding that to exist is to affect something else.
 
-By closing the loophole of self-reference, we guarantee that the causal graph remains thermodynamically active, preventing the formation of informational sinks that would stall the evolution of the cosmos. This mandate ensures that every quantum of logical time must purchase a quantum of relational change, enforcing a strict efficiency on the computational substrate. There can be no idle cycles in the engine of reality; the universe is forbidden from stuttering in place, ensuring that existence is synonymous with continuous, relational transformation.
+By closing the loophole of self-reference, we guarantee that the causal graph remains thermodynamically active, verifying the **Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />. This mandate ensures that every quantum of logical time must purchase a quantum of relational change, enforcing a strict efficiency on the computational substrate. There can be no idle cycles in the engine of reality; the universe is forbidden from stuttering in place, ensuring that existence is synonymous with continuous, relational transformation.
 
 ---
 
@@ -586,7 +586,7 @@ def is_permissible(G, v, w, u):
 
 **I. Initial State**
 
-Let $G$ be a graph containing a mediated path between $u$ and $v$.
+Let $G$ be a graph satisfying **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> containing a mediated path between $u$ and $v$ whose admissibility is governed by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
 
 $$
 P_1 = (u, w, v) \implies (u, w) \in E \land (w, v) \in E
@@ -686,7 +686,7 @@ Let the **Lexicographic Potential** $\Phi(G)$ be the ordered pair $(L_{\max}, N_
 
 **I. Irreflexivity**
 
-Let $\Phi(G) = (a, b) \in \mathcal{P}$. The relation $(a, b) < (a, b)$ is false because the standard order $<$ on $\mathbb{N}$ is strictly irreflexive, meaning $a \nless a$ and $b \nless b$.
+Let $\Phi(G) = (a, b) \in \mathcal{P}$ represent the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> mapping of the cycles, defined in **Cycle** <Ref id="1.2.6" label="§1.2.6" />. The relation $(a, b) < (a, b)$ is false because the standard order $<$ on $\mathbb{N}$ is strictly irreflexive, meaning $a \nless a$ and $b \nless b$.
 
 **II. Asymmetry**
 
@@ -731,7 +731,7 @@ $$
 
 **II. The Potential Function**
 
-Let $\Phi(G) = (L_{\max}, N_{L_{\max}})$ map to the domain $\mathbb{N} \times \mathbb{N}$ under the lexicographical order.
+Let $\Phi(G) = (L_{\max}, N_{L_{\max}})$ represent the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> mapping under the **Well-Foundedness** <Ref id="2.3.6" label="§2.3.6" /> relation.
 
 1.  **Length Bound:** $L_{\max} \in \{0, \dots, N\}$.
 2.  **Count Bound:** $N_{L_{\max}}$ is finite.
@@ -785,9 +785,9 @@ Q.E.D.
 :::note[**Axiom 2: Geometric Constructibility**]
 :::
 
-The universe constructs its geometry exclusively through the closure of 3-cycles, establishing the triangle as the fundamental quantum of spatial area. This positive constraint forces the graph to tessellate into discrete, manageable units, while the negative constraint of unique causality prevents the formation of redundant connections that would collapse the local metric. Together, these rules ensure that space emerges as a sparse, triangulated manifold rather than a dense, dimensionless tangle.
+The universe constructs its geometry exclusively through the closure of 3-cycles, establishing the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> as the fundamental quantum of spatial area. This positive constraint forces the graph to satisfy **Geometric Constructibility** <Ref id="2.3.2" label="§2.3.2" />, while the negative constraint of unique causality prevents the formation of redundant connections that would collapse the local metric. Together, these rules ensure that space emerges as a sparse, triangulated manifold rather than a dense, dimensionless tangle.
 
-This establishes a discrete granularity to spacetime, replacing the smooth continuum with a constructed lattice of definite relations. It resolves the problem of scale by defining the "pixel" of reality, ensuring that distance and area have precise, quantized meanings derived from the graph topology. The prohibition of redundant paths enforces a principle of economy, preventing the system from wasting computational resources on duplicate histories and ensuring that every causal route is distinct and meaningful.
+This establishes a discrete granularity to spacetime, replacing the smooth continuum with a constructed lattice of definite relations. It resolves the problem of scale by defining the "pixel" of reality, ensuring that distance and area have precise, quantized meanings derived from the graph topology, satisfying the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />. The prohibition of redundant paths enforces a principle of economy, preventing the system from wasting computational resources on duplicate histories and ensuring that every causal route is distinct and meaningful.
 
 By mandating that geometry be built from indivisible triangular quanta, we ensure that the vacuum possesses a stable, intrinsic dimensionality that resists collapse into singularity. This quantization prevents the ultraviolet catastrophes associated with continuous fields by imposing a hard limit on the information density of any local region. The universe is not a bottomless well of detail but a finite assembly of distinct geometric acts, establishing a rigid floor to physics where the infinite divisibility of space ceases to be a valid concept.
 
@@ -903,7 +903,7 @@ Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a s
 
 **I. Initial State with Overlap**
 
-Let $G = (V, E)$ denote a graph containing two compliant 2-paths sharing a common edge $(w, u)$.
+Let $G = (V, E)$ denote a graph governed by the **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" /> containing two compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> states sharing a common edge $(w, u)$.
 1.  $P_1 = (v, w, u)$ targeting the chord $e_1 = (u, v)$.
 2.  $P_2 = (w, u, x)$ targeting the chord $e_2 = (x, w)$.
 
@@ -964,7 +964,7 @@ Let $C$ denote a Simple Directed Cycle within $G$ possessing the maximal length 
 
 **I. The Maximality Hypothesis**
 
-Let $C = (v_0, \dots, v_{L-1})$ denote a simple cycle of length $L$. Assume $L$ represents the global maximum cycle length in $G$.
+Let $C = (v_0, \dots, v_{L-1})$ denote a simple **Cycle** <Ref id="1.2.6" label="§1.2.6" /> of length $L$. Assume $L$ represents the global maximum cycle length in $G$.
 
 $$
 L = L_{\max}
@@ -1041,11 +1041,11 @@ Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within 
 
 **I. Initial State Definition**
 
-Let $G = (V, E)$ denote a graph with lexicographic potential $\Phi(G) = (L_{\max}, N_{L_{\max}})$. Let $C$ denote a simple cycle of length $L_{\max}$, and let $e \in C$ denote a specific edge within this cycle.
+Let $G = (V, E)$ denote a graph with **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> $\Phi(G) = (L_{\max}, N_{L_{\max}})$. Let $C$ denote a simple cycle of length $L_{\max}$, and let $e \in C$ denote a specific edge within this cycle.
 
 **II. The Deletion Operation**
 
-Let $G'$ denote the graph resulting from the operation $E' = E \setminus \{e\}$.
+Let $G'$ denote the graph resulting from the **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" /> operation $E' = E \setminus \{e\}$, satisfying **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />.
 
 **III. Connectivity Analysis**
 
@@ -1333,7 +1333,7 @@ Verification of the finite termination condition established by **General Cycle 
 
 1.  **Defect Initialization:** The algorithm constructs isolated directed cycles of length $k \in [4, 12]$ to serve as standardized topological defects. This mapping represents the initialization of unstable macroscopic loops within the vacuum.
 2.  **Topological Reduction:** The protocol simulates a maximally parallel update by instantiating chords across open 2-paths and subsequently prunes macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
-3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$).
+3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$), verifying the descent of the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />.
 
 ```python
 import networkx as nx
@@ -1544,9 +1544,9 @@ This indicates that the topological stress generated by a macro-cycle is localiz
 :::note[**Decomposition**]
 :::
 
-The topological restorative force of decomposition actively digests complex macro-cycles, breaking them down into stable 3-cycle quanta through the insertion of chords. This mechanism acts as a universal solvent for geometric anomalies, ensuring that any structure attempting to bypass the metric by forming a large loop is systematically reduced to the ground state. The process is driven by a strict monotonic descent in lexicographic potential, guaranteeing that the system always evolves toward simplicity and local coherence.
+The topological restorative force of **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> actively digests complex macro-cycles, breaking them down into stable 3-cycle quanta through the insertion of chords. This mechanism acts as a universal solvent for geometric anomalies, ensuring that any structure attempting to bypass the metric by forming a large loop is systematically reduced to the ground state, satisfying the **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />. The process is driven by a strict monotonic descent in **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />, guaranteeing that the system always evolves toward simplicity and local coherence.
 
-This reveals the vacuum as a self-healing medium that actively suppresses non-local connections, enforcing the principle of locality by destroying shortcuts. It transforms the graph from a passive record of events into an active dynamical system that polices its own topology, preventing the emergence of wormholes that would violate the causal order. This constant "digestion" of complexity maintains the flatness and uniformity of spacetime on large scales, ensuring that the laws of physics remain consistent across the universe.
+This reveals the vacuum as a self-healing medium that actively suppresses non-local connections, enforcing the **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" /> by destroying shortcuts. It transforms the graph from a passive record of events into an active dynamical system that polices its own topology, preventing the emergence of wormholes that would violate the causal order. This constant "digestion" of complexity maintains the flatness and uniformity of spacetime on large scales, ensuring that the laws of physics remain consistent across the universe.
 
 The inevitability of this decomposition ensures that complex topology is transient, forcing the universe to settle into a stable, triangulated manifold that supports coherent physical laws. It acts as a thermodynamic filter that purges the graph of non-local entanglements, ensuring that the macroscopic structure of space is an emergent property of microscopic order. Complex geometries are not forbidden, but they are dynamically unstable, decaying rapidly into the simplicial foam that constitutes the vacuum, thereby protecting the causal structure from being overwhelmed by long-range paradoxes.
 
@@ -1638,9 +1638,9 @@ $$
 E \cap \{(A, C), (B, D)\} = \emptyset
 $$
 
-**II. Verification of The Directed Causal Link (Axiom 1)**
+**II. Verification of the Causal Primitive**
 
-Inspection of the edge set $E$ reveals no reflexive edges.
+Inspection of the edge set $E$ reveals no reflexive edges, satisfying the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
 
 $$
 \forall v \in V, (v, v) \notin E
@@ -1795,9 +1795,9 @@ Q.E.D.
 :::note[**Independence**]
 :::
 
-The logical orthogonality of the causal and geometric axioms is confirmed by the existence of specific countermodels that violate one while satisfying the other. This proves that time (directionality) and space (triangulation) are distinct, irreducible features of the physical substrate, not derived consequences of a single underlying rule. The separation of these constraints ensures that the theory is not circular, but rather built upon a minimal set of necessary and sufficient conditions.
+The logical orthogonality of the causal and geometric axioms is confirmed by the **Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" /> through the existence of specific countermodels that violate one while satisfying the other. This proves that time (directionality) and space (triangulation) are distinct, irreducible features of the physical substrate, not derived consequences of a single underlying rule. The separation of these constraints ensures that the theory is not circular, but rather built upon a minimal set of necessary and sufficient conditions.
 
-This delineation clarifies the specific role of each axiom: directionality provides the thrust of evolution, while geometry provides the stage. It prevents the conflation of cause with structure, allowing us to analyze the universe as a system where temporal progress and spatial extension are independent but interacting degrees of freedom. This independence guarantees that the resulting physics is rich and non-trivial, arising from the interplay of distinct legislative forces rather than the unfolding of a single tautology.
+This delineation clarifies the specific role of each foundational principle: **Independence Case A** <Ref id="2.5.2" label="§2.5.2" /> demonstrates that causal validity does not require geometry, while **Independence Case B** <Ref id="2.5.3" label="§2.5.3" /> shows that geometric constructibility is separate from causal rules. It prevents the conflation of cause with structure, allowing us to analyze the universe as a system where temporal progress and spatial extension are independent but interacting degrees of freedom. This independence guarantees that the resulting physics is rich and non-trivial, arising from the interplay of distinct legislative forces rather than the unfolding of a single tautology.
 
 By establishing these axioms as distinct pillars, we secure a robust foundation where the failure of one principle does not collapse the entire theoretical framework, allowing for precise diagnosis of physical pathologies. This modularity implies that the arrow of time and the fabric of space are not the same entity but are coupled mechanical systems. The universe requires both the engine of causality and the chassis of geometry to function, and recognizing their independence allows us to understand how they constrain one another to produce a consistent physical reality.
 
@@ -1871,7 +1871,7 @@ Let the **Effective Influence** relation $u \le v$ be defined over the set of ve
 
 **I. Simple Path Construction**
 
-Let $\pi_{uv} = (v_0, v_1, \dots, v_k)$ be a simple directed path of length $k \ge 2$ initiating at $v_0 = u$ and terminating at $v_k = v$. The uniqueness of the sequence of vertices avoids cyclic self-intersection.
+Let $\pi_{uv} = (v_0, v_1, \dots, v_k)$ be a simple **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> of length $k \ge 2$ initiating at $v_0 = u$ and terminating at $v_k = v$, forming the basis of **Effective Influence** <Ref id="2.6.2" label="§2.6.2" />. The uniqueness of the sequence of vertices avoids cyclic self-intersection.
 
 **II. Monotonic Propagation**
 
@@ -1935,7 +1935,7 @@ Let the relation $\le$ satisfy the axioms of a strict partial order. The propert
 
 **II. Hypothesis (Relaxed Equality)**
 
-Suppose the timestamp function $H$ permits equality for connected events.
+Suppose the **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> function $H$ permits equality for connected events, violating **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />.
 
 $$
 H(u, v) \le H(v, w) \implies \exists (u, v, w) \text{ such that } H(u, v) = H(v, w)
@@ -1992,7 +1992,7 @@ Let $v$ denote a vertex participating in a Geometric Quantum (Directed $3$-Cycle
 
 **I. Model Construction**
 
-Let $G$ denote a single directed $3$-cycle defined by the vertex set $V = \{A, B, C\}$ and the edge set $E = \{(A,B), (B,C), (C,A)\}$.
+Let $G$ denote a single directed **3-Cycle** <Ref id="1.2.8" label="§1.2.8" /> defined by the vertex set $V = \{A, B, C\}$ and the edge set $E = \{(A,B), (B,C), (C,A)\}$, analyzed for **Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />.
 
 **II. History Assignment**
 
@@ -2052,7 +2052,7 @@ Let $G$ denote a directed cycle of length $L \ge 4$. Then there exists a valid t
 
 **I. Model Construction**
 
-Let $G$ denote a directed $4$-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$.
+Let $G$ denote a directed 4-**Cycle** <Ref id="1.2.6" label="§1.2.6" /> defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$, analyzed for **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />.
 
 **II. History Assignment**
 
@@ -2157,7 +2157,7 @@ Let $G_{space}$ represent the Spatial State Graph, and let $G_{event}$ represent
 
 **I. Spatial vs. Temporal Adjacency**
 
-Let spatial edges in $G_{space}$ be denoted by $(u, v)_{space}$, representing physical adjacency at a constant logical timestamp. Let causal events in $G_{event}$ be denoted by $e_i \in V_{event}$, where edges $(e_i, e_j)_{event}$ represent direct causal influence.
+Let spatial edges in $G_{space}$ be defined on the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and denoted by $(u, v)_{space}$, representing physical adjacency at a constant logical timestamp. Let causal events in $G_{event}$ represent the **Causal Acyclicity vs. Spatial Triangulation** <Ref id="2.6.6" label="§2.6.6" /> mapping, where edges $(e_i, e_j)_{event}$ represent direct causal influence.
 
 **II. Path Non-Coincidence**
 
@@ -2265,9 +2265,9 @@ Pure Directionality     Loophole for u->u         Thermodynamic Arrow
 :::note[**Inadequacy of Local Axioms**]
 :::
 
-Local constraints alone fail to prevent global paradoxes, as transitive chains of valid links can curl back to form closed timelike curves that are invisible to local inspection. This inadequacy reveals that a universe built solely on neighbor-to-neighbor rules is vulnerable to non-local inconsistencies, where the distinction between past and future collapses along extended paths. The failure of reflexivity and asymmetry in larger cycles demonstrates that causality is a global property that cannot be fully captured by local enforcement.
+Local constraints alone fail to prevent global paradoxes, as established in **Inadequacy of Local Axioms** <Ref id="2.6.1" label="§2.6.1" />. Transitive chains of valid links can curl back to form closed timelike curves that are invisible to local inspection. This is demonstrated by the **Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" /> and **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> in larger cycles, showing that causality is a global property that cannot be fully captured by local enforcement.
 
-This forces a shift from purely reductionist physics to a holistic view where global consistency imposes constraints on local actions. It implies that the arrow of time is a coherent global ordering that must be actively maintained against the natural tendency of the graph to tangle. The realization that local validity does not imply global sanity necessitates a mechanism that bridges the gap between the micro and the macro, ensuring that the timeline remains linear and acyclic across all scales.
+This forces a shift from purely reductionist physics to a holistic view where global consistency imposes constraints on local actions, establishing **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> as a strict partial order requiring **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />. It implies that the arrow of time is a coherent global ordering that must be actively maintained against the natural tendency of the graph to tangle. The realization that local validity does not imply global sanity necessitates a mechanism that bridges the gap between the micro and the macro, ensuring that the timeline remains linear and acyclic across all scales.
 
 The persistence of these transitive paradoxes demands the imposition of a third, global axiom to enforce acyclicity, preventing the universe from creating logical contradictions through the accumulation of local steps. Without this global check, the local laws of physics would eventually undermine themselves, creating regions of causality violation that would propagate and destroy the logical consistency of the timeline. The universe must possess a mechanism to censor these global loops, ensuring that the collective history remains a coherent narrative rather than a collection of disjointed and contradictory causal loops.
 
@@ -2416,7 +2416,7 @@ Let the graph evolve under the rewrite rule $\mathcal{R}$. Then the length of th
 
 **I. Micro-Dynamics**
 
-The rewrite rule $\mathcal{R}$ acts as the engine of geometrogenesis, injecting 3-cycles into the topology. This increases the edge density $\rho$ of the graph over logical time.
+The rewrite rule $\mathcal{R}$ acts as the engine of geometrogenesis, injecting **3-Cycle** <Ref id="1.2.8" label="§1.2.8" /> structures into the topology, leading to **Cycle Diameter Growth** <Ref id="2.7.3" label="§2.7.3" />. This increases the edge density $\rho$ of the graph over logical time.
 
 **II. Macro-State Evolution**
 
@@ -2509,7 +2509,7 @@ Let $P_{err}(R)$ denote the probability that a paradox-inducing cycle of length 
 
 **I. Premise**
 
-Let the causal graph operate in the sparse regime where the edge density satisfies $\rho \ll 1$.
+Let the causal graph operate in the sparse regime where the edge density satisfies $\rho \ll 1$, evaluated for **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
 
 **II. Path Extension Probability**
 
@@ -2574,7 +2574,7 @@ Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The D
 
 **I. Model Construction**
 
-Let $G$ denote a directed $4$-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A,B), (B,C), (C,D), (D,A)\}$.
+Let $G$ denote a directed $4$-cycle defined by the vertex set $V = \{A, B, C, D\}$ and the edge set $E = \{(A,B), (B,C), (C,D), (D,A)\}$, analyzed for **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" /> utilizing the **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> model.
 
 **II. History Assignment**
 
@@ -2762,9 +2762,9 @@ Physically, this equivalence confirms the **Independence of Axiom 3** <Ref id="2
 :::note[**Axiom 3: Global Consistency and Enforcement**]
 :::
 
-Global causal consistency is enforced through a preemptive local mechanism that approximates global knowledge via logarithmic-depth probes. Because post-hoc correction of paradoxes would require infinite energy to synchronize across the universe, the system must filter out violations before they occur. This statistical enforcement bounds the probability of error exponentially, aligning the computational limits of the local agent with the physical requirement for a consistent history.
+Global causal consistency of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> is enforced through a preemptive local mechanism, satisfying the **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />. Because **Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> of post-hoc correction of paradoxes would require infinite energy to synchronize across the universe, the system must filter out violations before they occur. This statistical enforcement bounds the probability of error exponentially, aligning the computational limits of the local agent with the physical requirement for a consistent history.
 
-This establishes the "Thermodynamic Wall," a fundamental asymmetry where prevention is possible but correction is physically prohibited by the speed of information. It redefines physical laws as probabilistic filters that operate with near-certainty in the thermodynamic limit, rather than absolute mathematical decrees. This mechanism ensures that the universe remains a Directed Acyclic Graph, preserving the sanctity of the causal order without requiring an omniscient observer to police the timeline.
+This establishes the "Thermodynamic Wall," preventing the **Cycle Diameter Growth** <Ref id="2.7.3" label="§2.7.3" /> from introducing non-local paradoxes. It redefines physical laws as probabilistic filters that operate with near-certainty in the thermodynamic limit, rather than absolute mathematical decrees. This mechanism ensures that the universe remains a Directed Acyclic Graph, preserving the sanctity of the causal order without requiring an omniscient observer to police the timeline.
 
 By embedding global consistency into local interaction rules, we guarantee that the arrow of time emerges robustly, protecting the universe from causal paradoxes through the sheer statistical weight of its own geometry. This resolves the tension between locality and global order by utilizing the finite correlation length of the graph to censor paradoxes. The stability of the timeline is not a given but a dynamically maintained state, secured by the continuous expenditure of computational resources to verify the logical consistency of the future before it becomes the past.
 

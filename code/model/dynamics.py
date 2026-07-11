@@ -120,6 +120,120 @@ def _calculate_del_proposals(G: nx.DiGraph, T: float, mu: float, lam: float,
     return proposals_del
 
 
+# --- Rate-based stress-energy measurements ---
+
+def build_stress_map(G: nx.DiGraph) -> Tuple[List[list], Dict[int, int]]:
+    """
+    Build the awareness stress cache used by the micro-rule R.
+
+    Returns:
+        (all_cycles, stress_map) where stress_map[node] is the number of
+        3-cycles incident on that node.
+    """
+    all_cycles = find_all_3_cycles(G)
+    stress_map: Dict[int, int] = {}
+    for cycle_edges in all_cycles:
+        cycle_nodes = {v for e in cycle_edges for v in e}
+        for node in cycle_nodes:
+            stress_map[node] = stress_map.get(node, 0) + 1
+    return all_cycles, stress_map
+
+
+def compute_add_rates(G: nx.DiGraph, T: float, mu: float,
+                      stress_map: Dict[int, int]
+                      ) -> Dict[Tuple[int, int], float]:
+    """
+    Deterministic add-acceptance probabilities for compliant 2-paths.
+
+    Mirrors the micro-rule in _calculate_add_proposals but returns
+    P_acc for each candidate edge (u, v) instead of Bernoulli samples.
+    N-agnostic and α-agnostic. Does not mutate G.
+    """
+    rates: Dict[Tuple[int, int], float] = {}
+    P_THERMO_ADD = 1.0
+
+    for v in G.nodes():
+        for w in list(G.successors(v)):
+            for u in list(G.successors(w)):
+                if v == u or G.has_edge(u, v):
+                    continue
+                if not is_permissible(G, u, v, w):
+                    continue
+
+                in_edges = G.in_edges(u, data=True)
+                max_h_in = max((data.get('H', 0) for _, _, data in in_edges), default=0)
+                H_new = max_h_in + 1
+
+                if not pre_check_aec(G, u, v, H_new):
+                    continue
+
+                base_neighborhood = {v, w, u}
+                stress_count = sum(stress_map.get(node, 0) for node in base_neighborhood)
+                f_friction = math.exp(-mu * stress_count)
+                P_acc = f_friction * P_THERMO_ADD
+                # Multiple 2-paths may close the same edge; keep max weight.
+                rates[(u, v)] = max(rates.get((u, v), 0.0), P_acc)
+
+    return rates
+
+
+def compute_del_rates(G: nx.DiGraph, T: float, mu: float, lam: float,
+                      all_cycles: List[list],
+                      stress_map: Dict[int, int]
+                      ) -> Dict[Tuple[int, int], float]:
+    """
+    Deterministic deletion probabilities attributed to edges in 3-cycles.
+
+    Mirrors the micro-rule in _calculate_del_proposals. When a cycle is
+    selected for deletion, one of its three edges is chosen uniformly;
+    the per-edge rate therefore receives Q_del / 3 from each parent cycle.
+    Does not mutate G.
+    """
+    rates: Dict[Tuple[int, int], float] = {}
+    Q_THERMO_DEL = 0.5
+
+    for cycle_edges in all_cycles:
+        base_nodes = {v for e in cycle_edges for v in e}
+        stress_count = sum(stress_map.get(node, 0) for node in base_nodes)
+        local_stress = max(0, stress_count - 1)
+
+        f_friction = math.exp(-mu * local_stress)
+        f_catalysis_del = (1.0 + lam * local_stress)
+        Q_del = min(1.0, f_friction * f_catalysis_del * Q_THERMO_DEL)
+
+        edge_list = list(cycle_edges)
+        if not edge_list:
+            continue
+        share = Q_del / len(edge_list)
+        for edge in edge_list:
+            # Normalize frozenset-style cycle members to ordered tuples.
+            if isinstance(edge, tuple) and len(edge) == 2:
+                e = edge
+            else:
+                e = tuple(edge)
+            rates[e] = rates.get(e, 0.0) + share
+
+    return rates
+
+
+def compute_proposal_rates(G: nx.DiGraph, config: dict
+                           ) -> Tuple[Dict[Tuple[int, int], float],
+                                      Dict[Tuple[int, int], float]]:
+    """
+    Compute (P_add, P_del) maps for the current graph snapshot.
+
+    Public entry point for stress-energy tensor construction. Leaves the
+    stochastic evolve path untouched.
+    """
+    T = config["T_VACUUM"]
+    mu = config["MU"]
+    lam = config["LAMBDA"]
+    all_cycles, stress_map = build_stress_map(G)
+    p_add = compute_add_rates(G, T, mu, stress_map)
+    p_del = compute_del_rates(G, T, mu, lam, all_cycles, stress_map)
+    return p_add, p_del
+
+
 # --- PUBLIC EVOLUTION FUNCTION (The "Scheduler" / Operator E) ---
 
 def evolve_graph_to_equilibrium(G: nx.DiGraph, config: dict):

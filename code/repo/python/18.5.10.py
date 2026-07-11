@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -----------------------------------------------------------------------------
 # Title:     QBD Horizon Homogeneity and Propagator Decay Audit
-# Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.11
+# Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.10
 #            (Standalone Version).
 # Version:   1.3
 # -----------------------------------------------------------------------------
@@ -102,7 +102,7 @@ def run_propagator_decay_audit():
     bound = 2.0 * np.log2(N)
     
     print("="*80)
-    print("QBD Horizon Homogeneity Audit (Theorem 18.5.7 Verification)")
+    print("QBD Horizon Homogeneity Audit (Lemma 18.5.6 Verification)")
     print("Verifying Bethe Tree Diameter Bounding and Propagator Spectral Decay")
     print("="*80)
     print(f"Total Vertices N: {N}")

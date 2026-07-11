@@ -3,7 +3,7 @@
 # Title:     QBD Dimensional Emergence and Hausdorff Scaling Audit
 # Subject:   Audits topological dimension crystallization in Chapter 18.3.11
 #            (Standalone Version).
-# Version:   1.2
+# Version:   1.3
 # -----------------------------------------------------------------------------
 
 import numpy as np
@@ -66,7 +66,7 @@ def calculate_exact_4d_ball_volumes(max_radius=15):
 
 def run_dimension_audit():
     print("="*80)
-    print("QBD Dimensional Emergence Audit (Theorem 18.3.7 Verification)")
+    print("QBD Dimensional Emergence Audit (Lemma 18.3.7 Verification)")
     print("Verifying Hausdorff Dimension Convergence to d_H = 4.0")
     print("="*80)
     
@@ -82,7 +82,7 @@ def run_dimension_audit():
     print("Audit Analysis:")
     print(f"Asymptotic fitted Hausdorff Dimension d_H (R in [5, 15]): {d_H:.4f}")
     print("The local dimension estimate converges towards d_local ~ 4.0 as R increases,")
-    print("successfully proving the analytical claim of Theorem 18.3.7: the")
+    print("successfully proving the analytical claim of Lemma 18.3.7: the")
     print("polymerized QBD spatial leaf is Ahlfors 4-regular in the Gromov-Hausdorff limit.")
     print("="*80)
 

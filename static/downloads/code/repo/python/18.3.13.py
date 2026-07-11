@@ -100,7 +100,7 @@ def run_spectral_walk_audit():
     print("Audit Analysis:")
     print(f"Overall Asymptotic Spectral Dimension d_S: {d_S:.4f}")
     print("The running local spectral dimension converges towards d_S ≈ 4.0 as t increases.")
-    print("This perfectly confirms the analytical claim of Theorem 18.3.7 and Lemma C:")
+    print("This perfectly confirms the analytical claim of Lemma 18.3.7 and Lemma C:")
     print("random walk return probabilities scale exactly as P(t) ∝ t^-2 in the infrared,")
     print("verifying convergence to a smooth 4D Riemannian manifold.")
     print("="*80)
