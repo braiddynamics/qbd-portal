@@ -65,7 +65,7 @@ The selection of a strictly directed and irreflexive primitive constitutes the f
 
 The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> establishes the fundamental asymmetry of the universe, enforcing that influence propagates as an irreversible vector rather than a static bond. Irreflexivity prohibits events from causing themselves, eliminating the possibility of causal stagnation, while asymmetry ensures that no pair of events can influence each other simultaneously. These constraints physically encode the arrow of time at the atomic level, mandating that every connection contributes to a net displacement in the relational landscape.
 
-This shifts the ontology from a lattice of "being" to a network of "becoming," where the structure of the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> itself enforces the distinction between past and future. By forbidding instantaneous loops and self-reference, we ensure that the system cannot become trapped in tautological states, compelling it to evolve through interaction with distinct elements. This mechanism prevents the universe from freezing into a crystalline block, guaranteeing that history is a dynamic process of accumulation rather than a static arrangement.
+This shifts the ontology from a lattice of "being" to a network of "becoming," where the structure of the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> itself enforces the distinction between past and future. By forbidding instantaneous loops and self-reference, the system is prevented from becoming trapped in tautological states, compelling it to evolve through interaction with distinct elements. This mechanism prevents the universe from freezing into a crystalline block, guaranteeing that history is a dynamic process of accumulation rather than a static arrangement.
 
 The imposition of strict directionality of the **Causal Relation** <Ref id="1.4.3" label="§1.4.3" /> drives the system relentlessly forward, ensuring that every update advances the causal order without the possibility of reversal. This microscopic irreversibility is the root of all macroscopic thermodynamics, establishing that the universe is not a reversible machine but a generative process that consumes logical potential to produce history. By locking the arrow of time into the definition of the edge itself, we render the concept of a "rewind" physically meaningless, as the topological structure that defines the present exists only as a consequence of the directed momentum of the past.
 
@@ -449,8 +449,7 @@ The proof proceeds via Direct Construction, separating the generative capacity o
 ├── 2.3.4 Lemma: Principle of Unique Causality (PUC)
 │   ├── 2.3.4.1 Commentary: Pseudocode for PUC Check
 │   ├── 2.3.4.2 Proof: Principle of Unique Causality (PUC)
-│   ├── 2.3.4.3 Commentary: No-Cloning of History
-│   └── 2.3.4.4 Diagram: Principle of Unique Causality
+│   └── 2.3.4.3 Diagram: Principle of Unique Causality
 │
 ├── 2.3.5 Definition: Lexicographic Potential
 │   └── 2.3.5.1 Commentary: Descent to Simplicity
@@ -552,34 +551,7 @@ Structures of length $1$ and $2$ imply logical contradictions within a directed 
 
 Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
 
-### 2.3.4.1 Commentary: Pseudocode for PUC Check {#2.3.4.1}
-
-:::note[**Operational Implementation of the Uniqueness Constraint via Local Algorithmic Query**]
-:::
-
-The following algorithm operationalizes the Principle of Unique Causality. It functions as a local query, verifying that the addition of an edge does not duplicate an existing short-range path. This check runs in $O(\text{deg})$ time, ensuring scalability.
-
-```python
-def is_permissible(G, v, w, u):  
-    """
-    Checks if adding edge (u,v) to close the 2-path v->w->u is valid.
-    Constraint: No other path of length <= 2 may exist between v and u.
-    """
-    # 1. Check for Direct Path (Length 1)
-    if G.has_edge(v, u):         
-        return False  # Forbidden: Cloning a direct link
-
-    # 2. Check for Alternative 2-Paths (Length 2)
-    # Scan neighbors of v to see if any connect to u (other than w)
-    for x in G.successors(v):    
-        if x != w and G.has_edge(x, u):
-            return False  # Forbidden: Cloning an existing 2-path
-
-    # 3. Path is Unique
-    return True
-```
-
-### 2.3.4.2 Proof: Principle of Unique Causality (PUC) {#2.3.4.2}
+### 2.3.4.1 Proof: Principle of Unique Causality (PUC) {#2.3.4.1}
 
 :::tip[**Formal Derivation of Path Uniqueness from the Principle of Informational Parsimony**]
 :::
@@ -621,17 +593,43 @@ The existence of the mediated path $P_1$ physically precludes the formation of t
 
 Q.E.D.
 
-### 2.3.4.3 Commentary: No-Cloning of History {#2.3.4.3}
+---
 
-:::info[**Preservation of Informational Integrity established by the Topological Analog of No-Cloning**]
+### 2.3.4.2 Commentary: Operational Implementation and No-Cloning {#2.3.4.2}
+
+:::info[**Operational Query of PUC and Causal No-Cloning of History**]
 :::
 
-The Principle of Unique Causality (PUC) constitutes the topological analog of the Quantum No-Cloning Theorem. In a causal graph, a path from $u$ to $v$ represents a specific transmission of causal information; a lineage. The existence of a mediated path $u \to w \to v$ implies that the influence of $u$ reaches $v$ via the history of $w$. The addition of a second, direct path (an edge $u \to v$) creates a clone of this causal relationship. It introduces a fundamental ambiguity regarding the provenance of information at $v$; did the signal arrive via the mediated history or the direct injection?
+The Principle of Unique Causality (PUC) restricts edge addition to prevent local causal redundancy. The following algorithm operationalizes this check by performing a local query, verifying that the addition of an edge does not duplicate an existing path of length $\le 2$ in $O(\text{deg})$ time, securing computational scalability:
 
-**The Limits of Locality:**
-It is critical to note that PUC enforces uniqueness only for *local* paths ($\ell \le 2$). It does not prevent the formation of larger cycles or global paradoxes, such as the "Bowtie Paradox" (two disjoint paths forming a mutual influence loop at a distance). While PUC prevents the *local* cloning of edges (ensuring that the local metric does not collapse into a trivial connectivity), it cannot police the global topology. The resolution of global causal consistency requires the stronger, transitive constraint of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The PUC ensures the graph remains sparse and intelligible at the micro-scale, preventing the "short-circuiting" of causal history.
+```python
+def is_permissible(G, v, w, u):  
+    """
+    Checks if adding edge (u,v) to close the 2-path v->w->u is valid.
+    Constraint: No other path of length <= 2 may exist between v and u.
+    """
+    # 1. Check for Direct Path (Length 1)
+    if G.has_edge(v, u):         
+        return False  # Forbidden: Cloning a direct link
 
-### 2.3.4.4 Diagram: Principle of Unique Causality {#2.3.4.4}
+    # 2. Check for Alternative 2-Paths (Length 2)
+    # Scan neighbors of v to see if any connect to u (other than w)
+    for x in G.successors(v):    
+        if x != w and G.has_edge(x, u):
+            return False  # Forbidden: Cloning an existing 2-path
+
+    # 3. Path is Unique
+    return True
+```
+
+From a physical standpoint, the PUC acts as a topological analog of the quantum no-cloning theorem. In QBD, a path represents a specific lineage of causal information transmission. The existence of a mediated path $u \to w \to v$ implies that the influence of $u$ reaches $v$ via the history of $w$. The addition of a second, direct path (an edge $u \to v$) would clone this relationship, introducing a fundamental ambiguity regarding the provenance of information at $v$. The restriction prevents this cloning, ensuring that the local metric remains sparse and causal histories remain distinct.
+
+Crucially, this uniqueness constraint operates locally ($\ell \le 2$). It does not prevent the formation of larger cycles or global temporal loops, such as a bowtie paradox where disjoint pathways form a mutual influence loop at a distance. While the PUC ensures the graph remains sparse and intelligible at the micro-scale, preventing the local short-circuiting of history, global consistency must be policed by the stronger transitive constraint of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+
+---
+
+### 2.3.4.3 Diagram: Principle of Unique Causality {#2.3.4.3}
+
 
 :::note[**Visualization of the No-Cloning Rule via Rejection of Redundant Direct Paths**]
 :::
@@ -1797,9 +1795,9 @@ Q.E.D.
 
 The logical orthogonality of the causal and geometric axioms is confirmed by the **Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" /> through the existence of specific countermodels that violate one while satisfying the other. This proves that time (directionality) and space (triangulation) are distinct, irreducible features of the physical substrate, not derived consequences of a single underlying rule. The separation of these constraints ensures that the theory is not circular, but rather built upon a minimal set of necessary and sufficient conditions.
 
-This delineation clarifies the specific role of each foundational principle: **Independence Case A** <Ref id="2.5.2" label="§2.5.2" /> demonstrates that causal validity does not require geometry, while **Independence Case B** <Ref id="2.5.3" label="§2.5.3" /> shows that geometric constructibility is separate from causal rules. It prevents the conflation of cause with structure, allowing us to analyze the universe as a system where temporal progress and spatial extension are independent but interacting degrees of freedom. This independence guarantees that the resulting physics is rich and non-trivial, arising from the interplay of distinct legislative forces rather than the unfolding of a single tautology.
+This delineation clarifies the specific role of each foundational principle: **Independence Case A** <Ref id="2.5.2" label="§2.5.2" /> demonstrates that causal validity does not require geometry, while **Independence Case B** <Ref id="2.5.3" label="§2.5.3" /> shows that geometric constructibility is separate from causal rules. It prevents the conflation of cause with structure, allowing the universe to be analyzed as a system where temporal progress and spatial extension are independent but interacting degrees of freedom. This independence guarantees that the resulting physics is rich and non-trivial, arising from the interplay of distinct legislative forces rather than the unfolding of a single tautology.
 
-By establishing these axioms as distinct pillars, we secure a robust foundation where the failure of one principle does not collapse the entire theoretical framework, allowing for precise diagnosis of physical pathologies. This modularity implies that the arrow of time and the fabric of space are not the same entity but are coupled mechanical systems. The universe requires both the engine of causality and the chassis of geometry to function, and recognizing their independence allows us to understand how they constrain one another to produce a consistent physical reality.
+By establishing these axioms as distinct pillars, this framework secures a robust foundation where the failure of one principle does not collapse the entire theoretical framework, allowing for precise diagnosis of physical pathologies. This modularity implies that the arrow of time and the fabric of space are not the same entity but are coupled mechanical systems. The universe requires both the engine of causality and the chassis of geometry to function, and recognizing their independence provides an understanding of how they constrain one another to produce a consistent physical reality.
 
 ---
 
@@ -1834,8 +1832,7 @@ The proof proceeds via Contradiction, assuming that local constraints alone suff
 │
 ├── 2.6.2 Lemma: Effective Influence
 │   ├── 2.6.2.1 Proof: Effective Influence
-│   ├── 2.6.2.2 Commentary: Path Constraints
-│   └── 2.6.2.3 Commentary: Simultaneity Paradox
+│   └── 2.6.2.2 Commentary: Path Constraints
 │
 ├── 2.6.3 Lemma: Strict Timestamps
 │   └── 2.6.3.1 Proof: Strict Timestamps
@@ -1893,27 +1890,17 @@ This establishes a directed causal gradient from $u$ to $v$.
 
 Q.E.D.
 
-### 2.6.2.2 Commentary: Path Constraints {#2.6.2.2}
+### 2.6.2.2 Commentary: Causal Mediation and Simultaneity Evasion {#2.6.2.2}
 
-:::tip[**Justification of Mediation and Sequentiality Constraints via Physical Separation of Ontological Layers**]
+:::info[**Role of Mediation, Monotonicity, and Simultaneity Evasion in Effective Influence**]
 :::
 
-The constraints imposed upon the effective influence relation ($\le$) are the necessary conditions that enforce the physical separation of ontological layers within the theory. We must distinguish between the atomic events that constitute the machinery of the universe and the historical narrative that emerges from their interaction.
+The constraints imposed upon the effective influence relation ($\le$) enforce a critical scale separation between the atomic events that constitute the raw machinery of the causal network and the historical narrative emerging from their interaction. By requiring a path length of $\ell \ge 2$, the **Mediation Constraint** ensures that effective influence exclusively describes emergent, multi-step causal pathways rather than individual update steps. The direct causal link ($\to$) represents the immediate, irreducible quantum of action, whereas the influence relation ($\le$) describes the history of those actions as they propagate across the network. This distinction prevents the conflation of local topological adjacency with global historical consequence, preserving the hierarchical order of the theory.
 
-The **Mediation Constraint** ($\ell \ge 2$) enforces a critical scale separation. The direct causal link ($\to$) defined by Axiom $1$ represents the irreducible quantum of action: it is the immediate "now" of the rewrite rule and the spark of change itself. In contrast, effective influence ($\le$) represents the *history* of those actions as they propagate through the network. By requiring $\ell \ge 2$, the definition ensures that $\le$ exclusively describes emergent and multi-step causal pathways. If we were to conflate these two (treating the atomic rewrite as identical to the historical influence), we would lose the ability to distinguish between the operator and the operand. This distinction prevents the conflation of atomic adjacency with historical consequence, preserving the hierarchical structure of the theory.
+To maintain temporal consistency, the **Sequentiality Constraint** mandates strictly increasing timestamps ($t_i < t_{i+1}$), acting as the guardian of causal order against the collapse of time. In a discrete and computational substrate, simultaneity implies concurrency, where events occur within the same logical update tick. Permitting non-decreasing timestamps ($t_i \le t_{i+1}$) would cause a chain of events to collapse into a simultaneous cluster, rendering the sequential flow of time indistinguishable from a single complex interaction. Enforcing strictly increasing timestamps aligns the topological direction of the path with the irreversible flow of logical time, ensuring that influence flows strictly from the past to the future and that history remains cumulative.
 
-The **Sequentiality Constraint** ($t_i < t_{i+1}$) acts as the guardian of the causal order against the collapse of time. In a discrete and computational universe, the concept of "simultaneity" implies logical concurrency, events that occur within the same processing cycle. If the definition were relaxed to permit non-decreasing timestamps ($t_i \le t_{i+1}$), we would face a catastrophic failure of temporal distinctness. A chain of events $A \to B \to C$ occurring within a single logical tick would collapse into a simultaneous cluster, indistinguishable from a single complex interaction. By enforcing strictly increasing timestamps, the topological direction of the path is forced to align with the irreversible flow of logical time $t_L$. Influence is thereby physically constrained to flow strictly from the past to the future, which creates a universe where history is cumulative and the distinction between "before" and "after" is structurally invariant.
+Without this strict inequality constraint, the system would succumb to a profound logical contradiction known as the **Simultaneity Paradox**. In a relaxed framework allowing equal timestamps, simultaneous edges $A \to B$ and $B \to C$ formed at logical time $t_1$ would establish a valid path of influence ($A \le C$). If a subsequent update at $t_2$ were to insert a path from $C$ back to $A$, the system would recognize a reciprocal influence $C \le A$. This closes a zero-duration Closed Timelike Curve, creating an instantaneous causal loop. By enforcing strictly increasing timestamps, the framework invalidates simultaneous paths as causal carriers. This mathematically precludes the formation of such temporal paradoxes, ensuring that every causal chain has a finite duration and a definite direction in pre-geometric spacetime.
 
-### 2.6.2.3 Commentary: Simultaneity Paradox {#2.6.2.3}
-
-:::info[**Identification of Paradoxes arising from Non-Decreasing Timestamps**]
-:::
-
-To fully appreciate the necessity of strict inequality in our temporal definitions, let us consider the alternative: a graph state where the constraint is relaxed to allow equality ($\le$). Let us imagine vertices $\{A, B, C\}$ connected by edges $A \to B$ and $B \to C$, where both edges were created at the identical logical time $t_1$.
-
-Under such a relaxed definition, the path $A \to B \to C$ would qualify as a valid carrier of influence ($A \le C$). However, because these edges formed simultaneously, there is no inherent temporal ordering between the events at $B$. If a subsequent parallel update at time $t_2$ were to insert a path from $C$ back to $A$, the system would recognize a reciprocal influence $C \le A$ (since $t_1 < t_2$).
-
-This scenario results in a profound logical contradiction: $A$ is the cause of $C$, and $C$ is the cause of $A$, yet locally no observer sees a violation of simple causality because the loop is closed via a "simultaneous" shortcut. The system forms a "loop of simultaneity" which functions physically as a Closed Timelike Curve of zero duration. This is not merely a geometric curiosity: it is a breakdown of the causal structure. By enforcing strictly increasing timestamps ($t_1 < t_2 < t_3$), the system invalidates the initial simultaneous path $A \to B \to C$ as a causal carrier. The universe (in effect) refuses to acknowledge instantaneous action at a distance. This mathematically precludes the formation of such paradoxes, ensuring that every causal chain has a finite duration and a definite direction.
 
 ---
 
@@ -2779,7 +2766,7 @@ By embedding global consistency into local interaction rules, we guarantee that 
 
 The three axioms forge the substrate's unyielding frame, erecting a rigid skeleton upon which the fabric of reality can be braided. The **Causal Primitive** acts as a ratchet, directing influence without reversal and sharpening the arrow of time. **Geometric Constructibility** mandates the tiling of the vacuum with $3$-cycle quanta, ensuring space is woven from fundamental areas. Finally, **Acyclic Effective Causality** projects these local rules into a global order, preventing the universe from trapping itself in the paradox of closed loops.
 
-This triad delimits the boundaries of the possible. Our countermodels prove that each axiom serves as a unique load-bearing pillar of the theory, independent and necessary. Furthermore, the mechanism of **Decomposition** ensures that complex tangles dissolve into simplices, enforcing an inexorable drive toward geometric simplicity. Physically, the graph now accretes as a directed lattice, where every cycle resolves to a quantum of area and every edge preserves the integrity of history.
+This triad delimits the boundaries of the possible. The countermodels prove that each axiom serves as a unique load-bearing pillar of the theory, independent and necessary. Furthermore, the mechanism of **Decomposition** ensures that complex tangles dissolve into simplices, enforcing an inexorable drive toward geometric simplicity. Physically, the graph now accretes as a directed lattice, where every cycle resolves to a quantum of area and every edge preserves the integrity of history.
 
 But a set of rules is not a universe: laws require a jurisdiction. Possessing the constraints but lacking the initial state, the investigation must now determine the specific configuration of the graph at $t=0$ that satisfies these strictures while maximizing potential. This leads us to **Chapter 3**, where the unique topology of the vacuum is derived.
 

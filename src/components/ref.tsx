@@ -61,7 +61,8 @@ const parseMarkdown = (text: string) => {
       if (match) {
         const [_, refId, refLabel] = match;
         const targetDef = definitions[refId];
-        const destination = targetDef ? getChapterUrl(targetDef.file, refId) : `/monograph/appendices/b-definitions#${refId}`;
+        const chNum = refId.split('.')[0] || '1';
+        const destination = targetDef ? getChapterUrl(targetDef.file, refId) : `/monograph/appendices/b-definitions-ch${chNum}#${refId}`;
         return (
           <a key={index} href={destination} className="ref-badge">
             {refLabel}

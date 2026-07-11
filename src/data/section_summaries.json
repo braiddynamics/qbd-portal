@@ -582,7 +582,7 @@
   "1.6": {
     "id": "1.6",
     "title": "Formal Synthesis",
-    "summary": "Avoiding the shifting sands of space and time, our inquiry anchors the universe in the bedrock of discrete events and causal links. By rejecting the siren call of the continuum, this chapter establishes a finite, computable substrate where \"where\" is defined strictly by connectivity and \"when\" by the relentless iterator $t_L$. The graph is a living record of existence, growing step by step from a definitive origin."
+    "summary": "Avoiding the shifting sands of space and time, the inquiry anchors the universe in the bedrock of discrete events and causal links. By rejecting the siren call of the continuum, this chapter establishes a finite, computable substrate where \"where\" is defined strictly by connectivity and \"when\" by the relentless iterator $t_L$. The graph is a living record of existence, growing step by step from a definitive origin."
   },
   "2.8": {
     "id": "2.8",
@@ -607,22 +607,22 @@
   "6.5": {
     "id": "6.5",
     "title": "Formal Synthesis",
-    "summary": "We have successfully shown that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD."
+    "summary": "The derivation establishes that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD."
   },
   "7.5": {
     "id": "7.5",
     "title": "Formal Synthesis",
-    "summary": "We have successfully decoded the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model."
+    "summary": "The derivation decodes the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model."
   },
   "8.7": {
     "id": "8.7",
     "title": "Formal Synthesis",
-    "summary": "We have successfully derived the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. By identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras, we have bridged the gap between discrete graph rewrites and continuous gauge fields, deriving the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios."
+    "summary": "The derivation establishes the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. Identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras bridges the gap between discrete graph rewrites and continuous gauge fields, yielding the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios."
   },
   "9.7": {
     "id": "9.7",
     "title": "Formal Synthesis",
-    "summary": "We have successfully unified the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
+    "summary": "The derivation unifies the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
   },
   "10.9": {
     "id": "10.9",
@@ -632,37 +632,37 @@
   "11.4": {
     "id": "11.4",
     "title": "Formal Synthesis",
-    "summary": "We have successfully constructed a rigorous discrete differential geometry upon the foundation of the causal graph, using the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal measure** <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the **Causal Ollivier-Ricci curvature** <Ref id=\"11.2.2\" label=\"§11.2.2\" />."
+    "summary": "The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal** measure <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the **Causal Ollivier-Ricci** curvature <Ref id=\"11.2.2\" label=\"§11.2.2\" />."
   },
   "12.4": {
     "id": "12.4",
     "title": "Formal Synthesis",
-    "summary": "We have successfully achieved the rigorous reconstruction of the **Continuum Kinematics** of General Relativity from our discrete substrate, proving that the causal graph converges to a smooth differentiable manifold via Spectral Embedding while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$)."
+    "summary": "The rigorous reconstruction of the continuum kinematics of General Relativity from the discrete substrate is achieved by proving that the causal graph converges to a smooth differentiable manifold via spectral embedding, while coarse-graining into smooth tensor fields ($G_{\\mu\\nu}, T_{\\mu\\nu}$)."
   },
   "13.4": {
     "id": "13.4",
     "title": "Formal Synthesis",
-    "summary": "We have successfully derived the **Microscopic Field Equations** governing the causal graph, obtaining the discrete analogue of General Relativity $\\mathcal{G}_{ab} = \\kappa T_{ab}$ directly from variational principles. By applying discrete calculus, we have established local conservation of the stress-energy tensor $T_{ab}$ and verified the **Discrete Bianchi Identity** ($\\nabla \\cdot \\mathcal{G} = 0$) under vertex relabeling invariance."
+    "summary": "The derivation of the microscopic field equations governing the causal graph yields the discrete analogue of General Relativity, $\\mathcal{G}_{ab} = \\kappa T_{ab}$, directly from variational principles. Through the application of discrete calculus, the local conservation of the stress-energy tensor $T_{ab}$ is established, and the Discrete Bianchi Identity ($\\nabla \\cdot \\mathcal{G} = 0$) is verified under vertex relabeling invariance."
   },
   "14.6": {
     "id": "14.6",
     "title": "Formal Synthesis",
-    "summary": "We have successfully established the emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ under the **3+1 ADM Decomposition**, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network."
+    "summary": "The emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ is established under the 3+1 ADM Decomposition, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network."
   },
   "15.5": {
     "id": "15.5",
     "title": "Formal Synthesis",
-    "summary": "We have successfully established the topological equivalence between the quantum state vector $|\\Psi\\rangle$ and emergent spatial geometry $(M, g_{\\mu\\nu})$ under stabilizer group symmetries. This identifies entanglement entropy directly with the isoperimetric deficit of topological shortcuts in the graph, providing a solid mechanical basis for the **ER = EPR** duality."
+    "summary": "The topological equivalence between the quantum state vector $|\\Psi\\rangle$ and emergent spatial geometry $(M, g_{\\mu\\nu})$ is established under stabilizer group symmetries. This identifies entanglement entropy directly with the isoperimetric deficit of topological shortcuts in the graph, providing a solid mechanical basis for the ER = EPR duality."
   },
   "16.3": {
     "id": "16.3",
     "title": "Formal Synthesis",
-    "summary": "We have derived the holographic principle as a necessary consequence of discrete causal relations, proving the **Ryu-Takayanagi relation** $S(A) = \\text{Area}(\\gamma_A)/4G_N$ **Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" /> scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states."
+    "summary": "The holographic principle is derived as a necessary consequence of discrete causal relations, proving the Ryu-Takayanagi relation $S(A) = \\text{Area}(\\gamma_A)/4G_N$ scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states."
   },
   "17.5": {
     "id": "17.5",
     "title": "Formal Synthesis",
-    "summary": "We have successfully derived the continuum limit of propagating braid configurations, establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ (**Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" />) from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the (**Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />) alongside the self-dual (**Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />)."
+    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Equivalence to Nambu-Goto Action** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split on Octonionic Graph** <Ref id=\"17.3.1\" label=\"§17.3.1\" /> alongside the **Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />."
   },
   "18.6": {
     "id": "18.6",

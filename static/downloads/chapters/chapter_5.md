@@ -65,19 +65,6 @@ The proof proceeds via Direct Construction, partitioning the global configuratio
 └── 5.1.4 Proof: Extensive Entropy
 ```
 
-### 5.1.1.2 Commentary: Logic of Extensivity {#5.1.1.2}
-
-:::tip[**Transition from Combinatorial Counting to Physical Reservoirs**]
-:::
-
-The argument establishes the thermodynamic stability of the vacuum by decomposing the global configuration space into additive local contributions. This follows the foundational principles of statistical mechanics where extensivity is a prerequisite for a well-defined thermodynamic limit. <Cite id="A.10" label="(Bekenstein, 1981)" /> established that the entropy of any bounded system is fundamentally limited by its energy and size (the Bekenstein bound), implying that information capacity scales with the physical dimensions of the system. In our graph-theoretic context, the linear scaling of entropy $S \propto N$ validates that the causal graph behaves as a standard extensive system, akin to a gas or a lattice spin system, rather than a holographic surface or a system with long-range interactions that would lead to super-extensive scaling.
-
-1.  **The Finite Basis (Local Boundedness):** We invoke Bounded Degree and Acyclicity to prove that the number of possible directed graphs on any finite set of vertices is strictly bounded. This guarantees that no local singularity can drive the entropy to infinity.
-2.  **The Decoupling (Cluster Decomposition):** We apply the **Spatial Cluster Decomposition** lemma <Ref id="5.1.2" label="§5.1.2" /> to partition the graph into $M \approx N / V_\xi$ quasi-independent subregions, where $V_\xi$ is the correlation volume. Explicit bounds on Mutual Information demonstrate that boundary corrections scale sub-extensively ($O(\sqrt{N})$), becoming negligible in the limit.
-3.  **The Scaling (Synthesis):** Finally, we sum the entropies of these independent regions. Since each region contributes a finite, constant amount of entropy determined by local constraints, the total entropy scales linearly: $S(N) = c \cdot N$. This confirms the existence of a well-defined **Specific Entropy per Event** ($c > 0$), validating the vacuum as a stable thermodynamic phase.
-
----
-
 ### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
 
 :::info[**Exponential Decay of Mutual Information within Disjoint Subregions**]
@@ -135,7 +122,10 @@ The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.
 
 The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a "causal patch" or "volume element." Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
 
+This decomposition establishes the thermodynamic stability of the vacuum by transitioning the system from combinatorial graph counting to a physical thermodynamic reservoir. In standard statistical mechanics, extensivity is a prerequisite for a well-defined thermodynamic limit. By proving that boundary corrections between adjacent correlation volumes scale sub-extensively (proportional to $O(\sqrt{N})$) and vanish in the limit, the total entropy is shown to scale linearly with system size ($S \propto N$). In this discrete context, the linear scaling of configuration states validates that the causal graph behaves as a standard extensive system (akin to a gas or a lattice spin system) where information capacity scales with the physical volume. This behavior is bounded by local degree constraints and acyclicity, ensuring that no local singularity can drive the local entropy to infinity and protecting the vacuum from non-local entropic collapse.
+
 ---
+
 
 ### 5.1.3 Lemma: Correlation Decay {#5.1.3}
 
@@ -397,9 +387,9 @@ The data confirms the hypothesis: the fraction of boundary edges drops from 50% 
 :::note[**Extensive Entropy**]
 :::
 
-The entropy of the causal graph is established as strictly extensive, scaling linearly with the vertex count $N$ under **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" />. By proving **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, we have decomposed the universe into quasi-independent volumes under **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />.
+The entropy of the causal graph is established as strictly extensive, scaling linearly with the vertex count $N$ under **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" />. By proving **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, the universe is decomposed into quasi-independent volumes under **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />. This linear scaling of entropy ($S \propto N$) validates that the causal graph behaves as a standard extensive system (akin to a gas or a lattice spin system) where boundary corrections scale sub-extensively and become negligible in the thermodynamic limit. Consequently, local degree bounds and acyclicity ensure that the configuration space remains finite, preventing local singularities from driving the entropy to infinity.
 
-This result implies that the vacuum possesses a finite, measurable capacity for disorder. It ensures that local operations do not trigger instantaneous global reconfigurations, protecting the system from non-local instabilities. The linearity of the entropy scaling confirms that the universe is thermodynamically stable, capable of supporting heat exchange and local equilibrium without diverging into infinite complexity or collapsing into a singularity.
+This result implies that the vacuum possesses a finite, measurable capacity for disorder, establishing a well-defined thermodynamic limit where global configuration space decomposes into additive local contributions. It ensures that local operations do not trigger instantaneous global reconfigurations, protecting the system from non-local instabilities. The linearity of the entropy scaling confirms that the universe is thermodynamically stable, capable of supporting heat exchange and local equilibrium without diverging into infinite complexity or collapsing into a singularity.
 
 The existence of a well-defined specific entropy per event provides the necessary thermodynamic potential to drive evolution. It converts the combinatorial vastness of graph space into a manageable physical quantity, allowing us to treat the growth of the universe not as a random walk, but as a directed flow down a free energy gradient. This extensivity is the bedrock that permits the formulation of a master equation, ensuring that the microscopic rules of the graph aggregate into coherent macroscopic laws.
 
@@ -1243,7 +1233,7 @@ The solver identifies a stable fixed point at $\rho^* \approx 0.037$. At this de
 :::note[**Master Equation**]
 :::
 
-The derivation of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure under **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" /> and the spontaneous background from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, we have uncovered a dynamical system that naturally seeks a stable, non-zero connectivity density. We observe that the universe is biased towards complexity, but bounded by self-regulation.
+The derivation of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure under **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" /> and the spontaneous background from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, the model reveals a dynamical system that naturally seeks a stable, non-zero connectivity density. The universe is observed to be biased towards complexity, but bounded by self-regulation.
 
 This result proves that the vacuum is not a static void but a dynamic equilibrium, a "relational plasma" maintained by the constant flux of creation and destruction. The equation predicts a specific history: an initial "lag phase" of slow nucleation, followed by an "inflationary" burst of autocatalytic growth, ending in a "saturation" phase where the friction of steric hindrance brakes the expansion. The stability of the fixed point $\rho^*$ ensures that this process does not result in a singularity or a collapse, but rather a persistent, structured state.
 
@@ -1488,9 +1478,9 @@ Deviations beyond the channel yield pathologies that reinforce the underpinnings
 :::note[**Computational Verification**]
 :::
 
-The parameter sweep validates the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations, validating the comonadic tracking of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of our theoretical predictions, confirming that the constants we derived from first principles lead to a physically plausible universe.
+The parameter sweep validates the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations, validating the comonadic tracking of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of theoretical predictions, confirming that the constants derived from first principles lead to a physically plausible universe.
 
-This stable density is the **Cosmological Constant** of the graph. It represents the baseline energy density of the vacuum. With the existence and stability of this state confirmed by $13,200$ independent trajectories, we have a firm prediction for the ground state of the universe. The robustness of this result against stochastic noise demonstrates that the vacuum is a resilient attractor.
+This stable density is the **Cosmological Constant** of the graph. It represents the baseline energy density of the vacuum. With the existence and stability of this state confirmed by $13,200$ independent trajectories, a firm prediction for the ground state of the universe is established. The robustness of this result against stochastic noise demonstrates that the vacuum is a resilient attractor.
 
 The discovery of the **Region of Physical Viability (RPV)** <Ref id="5.3.1" label="§5.3.1" /> implies that the universe is fine-tuned by its own internal logic. The specific values of friction and catalysis are not arbitrary, they are the only values that permit a universe that is neither dead nor chaotic. This computational evidence elevates the theory from abstract speculation to a predictive model, asserting that the fundamental constants of nature are determined by the requirements of graph stability.
 
@@ -1877,22 +1867,6 @@ The proof proceeds by limits, establishing that the discrete poset relations con
 │
 └── 5.5.9 Proof: Geometric Well-Posedness
 ```
-
-### 5.5.1.2 Commentary: Logic of Geometric Hypotheses {#5.5.1.2}
-
-:::tip[**Sequential Verification of Regularity Conditions**]
-:::
-
-The argument proceeds through a systematic verification of five interdependent preconditions, demonstrating that the discrete graph naturally evolves toward a structure compatible with a smooth manifold.
-
-1.  **The Metric Basis (Strict Locality):** The argument enforces that no direct edges span a distance greater than 2 in the undirected metric. The **Path Uniqueness** constraint makes non-local links topologically impossible, ensuring the graph's connectivity remains short-range and amenable to local curvature approximations.
-2.  **The Kinematic Stability (Bounded Degree):** The argument proves that the mean degree $\langle k \rangle$ converges to a finite fixed point $\langle k \rangle^* = O(1)$. This prevents the formation of "hubs" (infinite degree nodes) which would violate the local Euclidean structure of a manifold.
-3.  **The Smoothness (Uniform Curvature):** The argument establishes bounds on the **Causal Ollivier-Ricci Curvature**. With the diameter of local neighborhoods strictly bounded by the axioms, the transport distance for curvature calculation is capped, yielding a uniform bound $|K| \leq 2$.
-4.  **The Homogeneity (Correlation Decay):** The synthesis of locality and stability proves that the covariance of geometric observables decays exponentially. This **Self-Averaging** property allows the discrete graph to approximate a continuous field at macroscopic scales.
-5.  **The Dimensionality (Ahlfors 4-Regularity):** The argument culminates in the derivation of the Hausdorff dimension. It argues that $d=4$ is the unique fixed point in the Renormalization Group flow where the boundary-scaling creation ($r^{d-1}$) precisely balances the bulk-scaling deletion ($r^d$).
-6.  **The Metric Signature (Lorentzian Convergence):** The argument reframes the Gromov-Hausdorff limit in terms of causal diamonds ($I^+(x) \cap I^-(y)$). By proving that the discrete event volume $N(x, y)$ converges to the continuous volume of causal diamonds, it recovers the pseudo-Riemannian signature $(-+++)$ directly from the poset ordering.
-
----
 
 ### 5.5.2 Lemma: Strict Locality {#5.5.2}
 
@@ -2694,9 +2668,9 @@ Q.E.D.
 :::note[**Geometric Stabilization**]
 :::
 
-Well-posedness solidifies through the chained lemmas. The **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> confines connections to spans of two. The **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> fixes the Hausdorff dimension at four. The **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" /> ensures that the "pixels" of our universe are fine enough and regular enough to form a smooth picture.
+Well-posedness solidifies through the sequential verification of the interdependent regularizing lemmas. The **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> confines connections to spans of two, preventing non-local links and enforcing short-range interactions. Crucially, the bounded mean degree prevents the formation of scale-free hubs, while uniform bounds on the Causal Ollivier-Ricci curvature ensure geometric smoothness. Furthermore, the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> establishes four dimensions as the unique fixed point where boundary-scaling creation balances bulk-scaling deletion, and the **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" /> guarantees that discrete causal diamonds converge to a pseudo-Riemannian signature (-+++) in the continuum limit.
 
-The graphs at equilibrium converge to a Lorentzian manifold without singularities or anomalous scalings, where the discrete causal clamps yield continuous geometry through these layered bounds. The genesis rounds complete: entropy volumes the possibilities, the master equation balances the flux, sweeps map the viable channel, and geometry mends the mesh to a manifold. The stage is set.
+The sequence of equilibrium graphs converges to a smooth Lorentzian manifold without singularities or anomalous scalings, where the discrete causal relations yield continuous geometry through these layered bounds. An exponential decay of spatial correlations provides a self-averaging property, allowing the discrete graph to approximate a continuous field at macroscopic scales. The genesis rounds complete: entropy volumes the possibilities, the master equation balances the flux, computational sweeps map the parameter channel, and geometry stabilizes the mesh to a manifold. The stage is set.
 
 This convergence resolves the tension between the discrete and the continuous. It demonstrates that a granular, finite graph can mimic the properties of a smooth spacetime so perfectly that macroscopic observers would perceive it as a continuum. The selection of four dimensions is not an arbitrary choice but a critical point of the dynamics, the only dimension where the surface-area scaling of creation balances the volume scaling of deletion. This grounds the dimensionality of spacetime in the thermodynamics of the causal graph.
 
@@ -2711,7 +2685,11 @@ This convergence resolves the tension between the discrete and the continuous. I
 
 Space is born from the statistical tumult of relations. The entropy of the causal graph proves extensive, scaling linearly with system size $N$, which justifies treating the vacuum as a thermodynamic reservoir. From this, the **Fundamental Equation of Geometrogenesis** emerges, a master equation that balances the explosive force of autocatalysis against the damping force of geometric friction, revealing the heartbeat of cosmic expansion.
 
-Our parameter sweep identifies a narrow **Region of Physical Viability**, a "Goldilocks zone" where the universe neither freezes into a crystalline tree nor explodes into a small-world singularity, but stabilizes at a sparse equilibrium density $\rho^* \approx 0.029$. Within this stable phase, the graph naturally satisfies the conditions for **Ahlfors 4-Regularity**, fixing the macroscopic dimension of spacetime at $d=4$. Physically, the vacuum is no longer a void, but a dynamic "relational plasma" fluctuating around a stable density.
+The parameter sweep identifies a narrow **Region of Physical Viability**, a "Goldilocks zone" where the universe neither freezes into a crystalline tree nor explodes into a small-world singularity, but stabilizes at a sparse equilibrium density $\rho^* \approx 0.029$. Within this stable phase, the graph naturally satisfies the conditions for **Ahlfors 4-Regularity**, fixing the macroscopic dimension of spacetime at $d=4$. Physically, the vacuum is no longer a void, but a dynamic "relational plasma" fluctuating around a stable density.
+
+Having established the stable four-dimensional Lorentzian vacuum, the foundational, deductive derivation of the physical background stands secured. The combination of local axiomatic constraints on the discrete causal substrate generates a dynamical vacuum that evolves from a singularity into a stable, finite-dimensional manifold. This thermodynamic machinery yields a geometrically coherent, temporally directed, and physically viable spacetime manifold capable of supporting information but, as yet, devoid of persistent actors.
+
+The master equation ensures the vacuum fluctuates around a stable density, but fluctuation alone does not constitute matter. To understand how persistent excitations can exist within this self-correcting substrate, the inquiry shifts from how the graph weaves itself into space to how it knots itself into substance. We turn now to **Chapter 6**, marking the beginning of **Part 2**, where the topological invariants that define particles will be derived.
 
 ---
 
@@ -2744,15 +2722,5 @@ Our parameter sweep identifies a narrow **Region of Physical Viability**, a "Gol
 | $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
 | $d_c$ | Upper critical dimension ($d=4$) | [§5.5.7.1](/monograph/rules/equilibrium/5.5/#5.5.7.1) |
 
----
-
-### Conclusion to Part 1: The Emergence of the Stage
-
-:::note[**End of Part 1**]
-:::
-
-Completion of the physical background derivation is achieved. Enforcement of strict axiomatic constraints on a discrete causal substrate generates a dynamical vacuum that evolves from a singularity into a stable, finite-dimensional manifold. Thermodynamic machinery yields a universe that is geometrically coherent, temporally directed, and physically viable. The stage is built: a self-regulating spacetime capable of supporting information but, as yet, devoid of persistent actors.
-
-The master equation ensures the vacuum fluctuates around a stable density, but fluctuation alone does not constitute matter. Existence of a physical universe requires specific configurations to arise that resist the relentless entropy of the rewrite rule: structures possessing topological fortitude to survive as distinct, durable entities. The inquiry shifts from how the graph weaves itself into space to how it knots itself into substance. Derivation of these persistent excitations follows, moving from statistical laws of geometry to topological invariants of the particle.
 
 ---
