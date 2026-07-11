@@ -44,6 +44,10 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
 
+  future: {
+    faster: true,
+  },
+
   // Pointing the site icon to logo
   favicon: 'img/logo.png',
 

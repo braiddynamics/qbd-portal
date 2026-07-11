@@ -1548,7 +1548,7 @@ Section 2.3.4 formalizes the properties of the QBD lemma regarding principle of 
 
 ---
 
-### 2.3.4.2 Proof: Principle of Unique Causality (PUC) {#2.3.4.2}
+### 2.3.4.1 Proof: Principle of Unique Causality (PUC) {#2.3.4.1}
 
 :::tip[**Formal Derivation of Path Uniqueness from the Principle of Informational Parsimony**]
 :::
@@ -1591,7 +1591,7 @@ The existence of the mediated path $P_1$ physically precludes the formation of t
 Q.E.D.
 
 **In Plain English:**  
-Section 2.3.4.2 formalizes the properties of the QBD proof regarding principle of unique causality (puc).
+Section 2.3.4.1 formalizes the properties of the QBD proof regarding principle of unique causality (puc).
 
 ---
 
