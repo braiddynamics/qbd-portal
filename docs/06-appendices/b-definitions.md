@@ -26730,7 +26730,7 @@ This continuum property is the rigorous limit of the **Directed Acyclic Graph (D
 **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
 
 **II. The Time Function**
-In the continuum limit [(**Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />)](/monograph/stage/time/14.1/#14.1.5), this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
+In the continuum limit **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
 
 **III. The Foliation**
 The level sets of this function, $\Sigma_t = T^{-1}(t)$, constitute spacelike hypersurfaces. Because the graph history is finite and bounded by the initial state $\emptyset$, every causal path is anchored in the past. Thus, the topology of the manifold is $M \cong \mathbb{R} \times \Sigma$, satisfying the Geroch Theorem conditions for global hyperbolicity.
@@ -26810,17 +26810,17 @@ The emergent physical system constitutes a metric theory of gravity if and only 
 
 **II. The Derivation Chain**
 1.  **Geometric Instantiation ($Ax1 \to g_{\mu\nu}$):**
-    * *Discrete Premise:* The graph Laplacian admits a local spectral decomposition [(**Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />)](/monograph/stage/time/14.2/#14.2.3).
+    * *Discrete Premise:* The graph Laplacian admits a local spectral decomposition **Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />.
     * *Continuum Limit:* This enforces the existence of a local orthonormal tetrad $e^a_\mu$ at every point $p \in M$, decomposing the metric as $g_{\mu\nu} = \eta_{ab} e^a_\mu e^b_\nu$.
     * *Deduction:* The manifold $M$ is strictly Pseudo-Riemannian with Lorentzian signature, distinguishing timelike (update) and spacelike (network) directions.
 
 2.  **Causal Determinism ($Ax2 \to \Sigma_t$):**
-    * *Discrete Premise:* The underlying causal graph is strictly acyclic [(**Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />)](/monograph/rules/axioms/2.7/#2.7.1).
+    * *Discrete Premise:* The underlying causal graph is strictly acyclic **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
     * *Continuum Limit:* the **Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" /> proves that the transitive closure of the graph maps to a globally hyperbolic spacetime foliated by Cauchy surfaces $\Sigma_t$.
     * *Deduction:* The emergent physics is free of causal pathologies (CTCs) and admits a well-posed initial value formulation.
 
 3.  **Kinematic Universality ($Ax3 \to \Gamma^\mu_{\alpha\beta}$):**
-    * *Discrete Premise:* Matter is constituted by topological defects (braids) whose mass is proportional to complexity [(**Topological Mass** <Ref id="6.3.3" label="§6.3.3" />)](/monograph/players/fermions/6.3/#6.3.3).
+    * *Discrete Premise:* Matter is constituted by topological defects (braids) whose mass is proportional to complexity **Topological Mass** <Ref id="6.3.3" label="§6.3.3" />.
     * *Continuum Limit:* the **Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" /> establishes that the graph evolution operator $\mathcal{U}$ acts on these defects such that their stationary phase trajectory maximizes proper time $\tau$.
     * *Deduction:* The equation of motion $\delta \int m d\tau = 0$ yields the Geodesic Equation. Since the mass $m$ factors out of the variation, the trajectory is independent of composition.
 
@@ -27139,7 +27139,7 @@ $$
 where $\mu > 0$ is the mass gap constant. Since $N_3$ represents a cardinal count of discrete geometric features (twists), it is defined on the domain of non-negative integers $\mathbb{N}_0$. Consequently, $m \ge 0$ is a structural necessity; a braid cannot possess "negative crossings."
 
 **III. Kinetic Contribution**
-The total energy of a propagating state includes the kinetic term derived from the graph evolution. Since the metric signature is Lorentzian $(-1, +1, +1, +1)$ and the causal propagation speed is bounded by $c=1$ [(**Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />)](/monograph/stage/time/14.2/#14.2.5), the dispersion relation satisfies:
+The total energy of a propagating state includes the kinetic term derived from the graph evolution. Since the metric signature is Lorentzian $(-1, +1, +1, +1)$ and the causal propagation speed is bounded by $c=1$ **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />, the dispersion relation satisfies:
 
 $$
 E^2 = |\vec{p}|^2 + m^2
