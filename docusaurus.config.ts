@@ -49,27 +49,6 @@ markdown: {
   },
   themes: ['@docusaurus/theme-mermaid'],
 
-  // Custom inline plugin to force asset splitting under 25MB
-plugins: [
-    () => ({
-      name: 'cloudflare-chunk-splitter',
-      configureWebpack(config, isServer) {
-        // Do not split chunks for the server compilation pass
-        if (isServer) return {}; 
-        
-        return {
-          optimization: {
-            splitChunks: {
-              chunks: 'all',
-              maxSize: 20 * 1024 * 1024, // Keep client pieces under 20MB
-            },
-          },
-        };
-      },
-    }),
-  ],
-
-  
   future: {
     faster: true,
     v4: {
