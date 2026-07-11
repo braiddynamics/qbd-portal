@@ -44,9 +44,11 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
 
-  future: {
+future: {
     faster: true,
-    v4: true,
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
   },
 
   // Pointing the site icon to logo
