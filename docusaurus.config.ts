@@ -46,6 +46,7 @@ const config: Config = {
 
   future: {
     faster: true,
+    v4: true,
   },
 
   // Pointing the site icon to logo
