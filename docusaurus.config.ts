@@ -44,20 +44,34 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
 
-future: {
+markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
+  // Custom inline plugin to force asset splitting under 25MB
+  plugins: [
+    () => ({
+      name: 'cloudflare-chunk-splitter',
+      configureWebpack() {
+        return {
+          optimization: {
+            splitChunks: {
+              chunks: 'all',
+              maxSize: 20 * 1024 * 1024, // 20MB chunk limit
+            },
+          },
+        };
+      },
+    }),
+  ],
+
+  future: {
     faster: true,
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
     },
   },
-
-  // Pointing the site icon to logo
-  favicon: 'img/logo.png',
-
-  markdown: {
-    mermaid: true,
-  },
-  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
