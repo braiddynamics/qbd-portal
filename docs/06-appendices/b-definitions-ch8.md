@@ -415,7 +415,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding ensemble cl
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Closure Probability** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -604,7 +604,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding flux tube c
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Linear Potential and Berry Phase** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -1532,7 +1532,7 @@ g \propto \sqrt{M \rho_3^*}
 $$
 
 With $\rho_3^* \approx 0.029$ and $M=7$, the active density is $7 \times 0.029 \approx 0.203$.
-The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
+The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
 
 Q.E.D.
 
@@ -1546,7 +1546,7 @@ Section 8.5.6.1 formalizes the properties of the QBD proof regarding local state
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Degree Counting** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -1706,7 +1706,7 @@ Section 8.5.7 formalizes the properties of the QBD proof regarding emergent gaug
 :::note[**Computational Verification of the Predicted Coupling against Experimental Data**]
 :::
 
-Validation of the analytical coupling derivation established in the **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
+Validation of the analytical coupling derivation established in the **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
@@ -1959,7 +1959,7 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding topological
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Yukawa Ratio Verification** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).

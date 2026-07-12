@@ -242,7 +242,7 @@ Section 9.1.5 formalizes the properties of the QBD proof regarding minimal gut u
 :::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
 :::
 
-Verification of the anomaly freedom condition established in the **Uniqueness Verification** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
+Verification of the anomaly freedom condition established in the **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
@@ -501,7 +501,7 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding closed lie 
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **Isomorphism Verification** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
 
 1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
 2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
@@ -1203,7 +1203,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding tension ver
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Decay Rate Calculation** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -1950,7 +1950,7 @@ $$
 M_R \approx 1.22 \times 10^{19} \cdot (1.0 \times 10^{-3})
 $$
 
-Refined by the specific pre-factor from the **Criticality Verification** <Ref id="9.6.7.1" label="§9.6.7.1" />:
+Refined by the specific pre-factor from the **Critical Complexity Balance** <Ref id="9.6.7.1" label="§9.6.7.1" />:
 
 $$
 M_R \approx 2.36 \times 10^{16} \text{ GeV}
@@ -2006,7 +2006,7 @@ Section 9.6.9 formalizes the properties of the QBD proof regarding neutrino mass
 :::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
 :::
 
-Verification of the seesaw hierarchy established in the **Neutrino Mass Demonstration** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.

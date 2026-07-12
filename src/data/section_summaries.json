@@ -662,7 +662,7 @@
   "17.5": {
     "id": "17.5",
     "title": "Formal Synthesis",
-    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Equivalence to Nambu-Goto Action** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split on Octonionic Graph** <Ref id=\"17.3.1\" label=\"§17.3.1\" /> alongside the **Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />."
+    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" /> alongside the **Emergence of the E8 Lattice** <Ref id=\"17.4.2\" label=\"§17.4.2\" />."
   },
   "18.6": {
     "id": "18.6",

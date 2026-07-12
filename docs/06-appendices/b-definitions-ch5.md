@@ -1015,7 +1015,7 @@ Section 5.2.7 formalizes the properties of the QBD proof regarding macroscopic e
 :::note[**Exact Solution of the Geometrogenesis Equation**]
 :::
 
-Computational verification of the equilibrium properties established in **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the equilibrium properties established in **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the precise physical constants derived in Chapter 4, matching **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> properties: Vacuum Permittivity $\Lambda_{vac} = 0.0156$, Friction $\mu \approx 0.3989$, and Catalysis $\lambda_{cat} \approx 1.7183$.
 2.  **Root Finding:** The protocol uses Brent's search algorithm to numerically solve the differential equation $d\rho/dt = 0$ for the equilibrium density $\rho^*$.
@@ -1157,7 +1157,7 @@ Section 5.3.2 formalizes the properties of the QBD definition regarding paramete
 :::note[**Algorithmic Sweep of Phase Space via Parallel Execution**]
 :::
 
-Computational verification of the phase space trajectories established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the phase space trajectories established by the **Master Equation** <Ref id="5.2" label="§5.2" /> is based on the following protocols:
 
 1.  **Worker Orchestration:** The algorithm coordinates the spatial trajectory of parallel workers traversing the network substrate. This maps to the localized propagation of events in the physical vacuum.
 2.  **Awareness Computation:** The protocol evaluates local syndromes and causal histories to determine update eligibility at active sites, implementing the comonadic checks of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />.
@@ -1293,7 +1293,7 @@ Section 5.4.3 formalizes the properties of the QBD lemma regarding global stabil
 
 **I. Setup and Function Definition**
 
-Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
+Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2" label="§5.2" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
 
 $$
 F(\rho) = C(\rho) - D(\rho)
@@ -1361,7 +1361,7 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 
 **I. Setup and Flux Potentials**
 
-Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" />:
+Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by the **Master Equation** <Ref id="5.2" label="§5.2" />:
 
 $$
 J_{\text{in}} \approx 9\rho^2
@@ -1624,7 +1624,7 @@ Section 5.5.3 formalizes the properties of the QBD lemma regarding bounded degre
 
 **I. The Rate Equations**
 
-The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
+The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2" label="§5.2" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
 
 1.  **Creation Flux ($J_{in}$):**
     The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.

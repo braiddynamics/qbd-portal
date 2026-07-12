@@ -575,7 +575,7 @@ Section 6.1.3.3 formalizes the properties of the QBD type-theoretic regarding va
 :::info[**Amplification of deletion probability at high local densities**]
 :::
 
-Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
+Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2" label="§5.2" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
 
 **In Plain English:**  
 Section 6.1.4 formalizes the properties of the QBD lemma regarding catalyzed instability.
@@ -667,7 +667,7 @@ Section 6.1.4.1 formalizes the properties of the QBD proof regarding catalyzed i
 :::note[**Computational Verification via the Fundamental Equation of Geometrogenesis**]
 :::
 
-Quantification of the density-dependent instability established by **Decay Rate Calculation** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
+Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
 1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the Master Equation parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
 2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
@@ -944,7 +944,7 @@ Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite 
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 :::
 
-For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2.7" label="§5.2.7" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2" label="§5.2" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
 **In Plain English:**  
 Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of unbraided clusters (n=0).
@@ -1316,7 +1316,7 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding exclusion o
 :::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
 :::
 
-Quantification of the formation probabilities for higher-order structures established by **Analytical Exclusion via TQFT Parsimony** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
+Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 1.  **Thermodynamic Definition:** The algorithm sets the vacuum environment temperature to the critical value $T_{vac} = \ln 2$.
 2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands.
@@ -1651,7 +1651,7 @@ Section 6.3.5.1 formalizes the properties of the QBD proof regarding quadratic s
 :::note[**Computational Verification of Quadratic Mass Scaling via Pathfinding Constraints**]
 :::
 
-Verification of the non-linear complexity growth established by **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
+Verification of the non-linear complexity growth established by **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
 1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the Principle of Unique Causality, which forbids the reuse of existing edges for new causal paths.
 2.  **Cost Measurement:** The protocol measures the topological cost $N_3$ required to add each successive unit of writhe $w$, defined as the graph distance required to circumnavigate the existing twist structure.
@@ -1922,7 +1922,7 @@ Section 6.4.3.1 formalizes the properties of the QBD proof regarding local horiz
 :::note[**Computational Verification of Operator Blindness via Entropic Drift**]
 :::
 
-Validation of the operational limits established by **Local Blindness** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
+Validation of the operational limits established by **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
 
 1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves.
 2.  **Agent Logic:** The protocol defines two traversal agents: a Local Agent that selects moves stochastically based on a limited horizon radius $R$, and a Global Agent that selects the optimal path to the solution state.

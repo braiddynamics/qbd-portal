@@ -655,7 +655,7 @@ Type I patterns are excluded at the constructor level by irreflexivity of the **
 :::info[**Amplification of deletion probability at high local densities**]
 :::
 
-Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
+Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2" label="§5.2" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
 
 ### 6.1.4.1 Proof: Catalyzed Instability {#6.1.4.1}
 
@@ -737,7 +737,7 @@ Q.E.D.
 :::note[**Computational Verification via the Fundamental Equation of Geometrogenesis**]
 :::
 
-Quantification of the density-dependent instability established by **Decay Rate Calculation** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
+Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
 1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the Master Equation parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
 2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
@@ -985,11 +985,11 @@ Q.E.D.
 :::note[**Principles of Particle Formation**]
 :::
 
-The vacuum functions as a relentless filter that actively deletes any topological structure capable of simplification. Through the lens of local reducibility <Ref id="6.1.1" label="§6.1.1" />, transient fluctuations and reducible loops dissolve back into the equilibrium state, leaving only prime configurations as persistent entities. This mechanism establishes that particle existence is not an intrinsic property of fields but a survival characteristic of specific geometries that lack a decay channel within the local causal horizon.
+The vacuum functions as a relentless filter that actively deletes any topological structure capable of simplification. Through the lens of **Local Reducibility** <Ref id="6.1.1" label="§6.1.1" />, transient fluctuations and reducible loops dissolve back into the equilibrium state, leaving only prime configurations as persistent entities. This mechanism establishes that particle existence is not an intrinsic property of fields but a survival characteristic of specific geometries that lack a decay channel within the local causal horizon.
 
-This insight redefines the ontology of the fermion from a fundamental object to a topological scar. Matter is revealed to be the residue of the vacuum's self-correction process, a knot that the local rewrite system cannot dismantle. The discrete spectrum of particles arises not from arbitrary constants but from the quantization of knot types, where stability is a binary outcome determined by the presence of a topological barrier <Ref id="6.1.5" label="§6.1.5" /> preventing spontaneous erasure.
+This insight redefines the ontology of the fermion from a fundamental object to a topological scar. Matter is revealed to be the residue of the vacuum's self-correction process, a knot that the local rewrite system cannot dismantle. The discrete spectrum of particles arises not from arbitrary constants but from the quantization of knot types, where stability is a binary outcome determined by the presence of a topological barrier as established by the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> preventing spontaneous erasure.
 
-The survival of these defects implies that the universe is inhabited exclusively by structures that are computationally irreducible to the vacuum state. This selection pressure, rooted in the necessity of non-trivial topological invariants <Ref id="6.1.2" label="§6.1.2" />, forces the material world to be composed of robust, non-trivial topologies, ensuring that the macroscopic reality we observe is built upon a foundation of indestructible logical errors that the vacuum cannot erase.
+The survival of these defects implies that the universe is inhabited exclusively by structures that are computationally irreducible to the vacuum state. This selection pressure, rooted in the **Particle Necessity** <Ref id="6.1.2" label="§6.1.2" /> forces the material world to be composed of robust, non-trivial topologies, ensuring that the macroscopic reality we observe is built upon a foundation of indestructible logical errors that the vacuum cannot erase.
 
 ---
 
@@ -1118,7 +1118,7 @@ The proof proceeds by induction, systematically disqualifying alternative geomet
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 :::
 
-For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2.7" label="§5.2.7" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2" label="§5.2" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
 ### 6.2.3.1 Proof: Exclusion of Unbraided Clusters (n=0) {#6.2.3.1}
 
@@ -1557,7 +1557,7 @@ Q.E.D.
 :::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
 :::
 
-Quantification of the formation probabilities for higher-order structures established by **Analytical Exclusion via TQFT Parsimony** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
+Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 1.  **Thermodynamic Definition:** The algorithm sets the vacuum environment temperature to the critical value $T_{vac} = \ln 2$.
 2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands.
@@ -1676,9 +1676,9 @@ Q.E.D.
 :::note[**Inevitability of Triality**]
 :::
 
-The thermodynamic and algebraic constraints of the vacuum converge to select the tripartite braid as the unique minimal constituent of matter <Ref id="6.2.2" label="§6.2.2" />. Configurations with fewer strands fail to generate the non-Abelian symmetries required for strong interactions or collapse under local rewrite rules, while those with more strands are suppressed by the exponential entropic penalty of their formation as demonstrated by entropic exclusion studies <Ref id="6.2.6" label="§6.2.6" />. This selection process identifies the tripartite braid not as an arbitrary choice but as the lowest-energy configuration that satisfies the dual requirements of topological stability and gauge complexity.
+The thermodynamic and algebraic constraints of the vacuum converge to select the tripartite braid as the unique constituent of matter, as established by the **Tripartite Braid Theorem** <Ref id="6.2.2" label="§6.2.2" />. Configurations with fewer strands fail to generate the non-Abelian symmetries required for strong interactions or collapse under local rewrite rules, while those with more strands are suppressed by the exponential entropic penalty of their formation as demonstrated by the **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" />. This selection process identifies the tripartite braid not as an arbitrary choice but as the lowest-energy configuration that satisfies the dual requirements of topological stability and gauge complexity.
 
-This geometric inevitability strips the Standard Model of its arbitrary nature, revealing the three color charges and the quark structure as direct consequences of knot theory. The "color" of a quark is physically instantiated as the braiding relationship between three causal world-lines, grounding the abstract algebra of QCD in the concrete topology of the graph. The universe does not design quarks; it converges upon them as the simplest possible knots that can support self-interacting forces, a minimality verified by the exhaustive classification of lower and higher-order topologies <Ref id="6.2.7" label="§6.2.7" />.
+This geometric inevitability strips the Standard Model of its arbitrary nature, revealing the three color charges and the quark structure as direct consequences of knot theory. The "color" of a quark is physically instantiated as the braiding relationship between three causal world-lines, grounding the abstract algebra of QCD in the concrete topology of the graph. The universe does not design quarks; it converges upon them as the simplest possible knots that can support self-interacting forces, a minimality verified by the exhaustive classification of lower and higher-order topologies under the **Tripartite Braid Theorem** <Ref id="6.2.7" label="§6.2.7" />.
 
 The identification of the $n=3$ braid as the fundamental atom of topology locks the particle spectrum into a rigid hierarchy defined by the braid group $B_3$. This forces the material universe to be built from triplets, establishing the structural basis for protons and neutrons as the unavoidable result of the vacuum's search for the simplest stable complexity.
 
@@ -1949,7 +1949,7 @@ Q.E.D.
 :::note[**Computational Verification of Quadratic Mass Scaling via Pathfinding Constraints**]
 :::
 
-Verification of the non-linear complexity growth established by **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
+Verification of the non-linear complexity growth established by **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
 1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the Principle of Unique Causality, which forbids the reuse of existing edges for new causal paths.
 2.  **Cost Measurement:** The protocol measures the topological cost $N_3$ required to add each successive unit of writhe $w$, defined as the graph distance required to circumnavigate the existing twist structure.
@@ -2173,9 +2173,9 @@ Q.E.D.
 :::note[**Braid Complexity Functional**]
 :::
 
-Inertial mass is physically identified as the informational resistance of a topological defect to acceleration through the causal graph, as formalised by the topological mass theorem <Ref id="6.3.3" label="§6.3.3" />. The complexity functional maps the abstract geometry of the braid directly to a metabolic cost, where every crossing represents a linear addition of structural bridges <Ref id="6.3.1" label="§6.3.1" /> and every unit of writhe imposes a quadratic pathfinding penalty <Ref id="6.3.2" label="§6.3.2" />. This relationship quantifies mass not as a coupling to an external field but as the count of geometric quanta required to sustain the particle's existence against the entropic pressure of the vacuum.
+Inertial mass is physically identified as the informational resistance of a topological defect to acceleration through the causal graph, as formalised by the **Topological Mass** <Ref id="6.3.3" label="§6.3.3" />. The complexity functional maps the abstract geometry of the braid directly to a metabolic cost, where every crossing represents a linear addition of **Crossing Complexity** <Ref id="6.3.1" label="§6.3.1" /> and every unit of writhe imposes a quadratic **Torsional Complexity** <Ref id="6.3.2" label="§6.3.2" /> penalty. This relationship quantifies mass not as a coupling to an external field but as the count of geometric quanta required to sustain the particle's existence against the entropic pressure of the vacuum.
 
-This geometric origin of mass explains the generation hierarchy as a consequence of torsional strain. The quadratic scaling of the writhe term implies that small increases in topological complexity result in massive increases in inertial rest energy, naturally separating the light first generation from the heavy third generation without fine-tuning. The vanishing entropy of the protected knot, certified under codespace conditions <Ref id="6.3.6" label="§6.3.6" />, ensures that this mass remains an invariant property of the particle, independent of the thermal fluctuations of the environment.
+This geometric origin of mass explains the generation hierarchy as a consequence of torsional strain. The quadratic scaling of the writhe term implies that small increases in topological complexity result in massive increases in inertial rest energy, naturally separating the light first generation from the heavy third generation without fine-tuning. The vanishing entropy of the protected knot, certified under **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />, ensures that this mass remains an invariant property of the particle, independent of the thermal fluctuations of the environment.
 
 The definition of mass as geometric cost resolves the hierarchy problem by grounding it in combinatorial topology. The specific masses of the elementary particles are the eigenvalues of the braid complexity functional, rendering the spectrum of matter a derived output of the vacuum's geometric constraints rather than a set of arbitrary input parameters.
 
@@ -2302,7 +2302,7 @@ Q.E.D.
 :::note[**Computational Verification of Operator Blindness via Entropic Drift**]
 :::
 
-Validation of the operational limits established by **Local Blindness** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
+Validation of the operational limits established by **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
 
 1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves.
 2.  **Agent Logic:** The protocol defines two traversal agents: a Local Agent that selects moves stochastically based on a limited horizon radius $R$, and a Global Agent that selects the optimal path to the solution state.
@@ -2586,9 +2586,9 @@ Q.E.D.
 :::note[**Topological Stability**]
 :::
 
-The persistence of matter is secured by the computational blindness of the local vacuum to global topological invariants. Because the operations required to untie a prime knot scale linearly with the knot's size <Ref id="6.4.1" label="§6.4.1" /> while the vacuum's rewrite rules operate within a fixed logarithmic horizon <Ref id="6.4.3" label="§6.4.3" />, the decay of a proton becomes a statistically impossible event. This scale separation creates an effective infinite potential barrier, protecting the global structure of the fermion from the local erosion that dissolves trivial fluctuations.
+The persistence of matter is secured by the computational blindness of the local vacuum to global topological invariants. Because the operations required to untie a prime knot scale according to the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" /> while the vacuum's rewrite rules operate within a fixed **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, the decay of a proton becomes a statistically impossible event. This scale separation creates an effective infinite potential barrier, protecting the global structure of the fermion from the local erosion that dissolves trivial fluctuations.
 
-This mechanism shifts the definition of stability from an energetic minimum to a computational prohibition. Particles persist not because they are energetically favorable, but because the vacuum lacks the non-local coordination required to delete them. This architectural stability <Ref id="6.4.2" label="§6.4.2" /> ensures that the universe retains a permanent memory in the form of matter, protecting the coherent history of the cosmos from being overwritten by the entropy of the micro-scale.
+This mechanism shifts the definition of stability from an energetic minimum to a computational prohibition. Particles persist not because they are energetically favorable, but because the vacuum lacks the non-local coordination required to delete them. This **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" /> ensures that the universe retains a permanent memory in the form of matter, protecting the coherent history of the cosmos from being overwritten by the entropy of the micro-scale.
 
 The existence of this topological lock guarantees that the universe is populated by enduring entities rather than transient resonances. It solidifies the distinction between the ephemeral quantum foam and the permanent material world, establishing a universe where complex structures can survive and evolve over cosmological timescales protected by the very limits of causal propagation.
 
@@ -2938,7 +2938,7 @@ $$
 **IV. Operator Mapping**
 
 The local rewrite sequence $\mathcal{S}$ implements a unitary operator $\hat{U}_{exch}$.
-Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Eigenvalue Inversion** <Ref id="7.1.3.1" label="§7.1.3.1" />.
+Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Unitary Twist Anticommutation** <Ref id="7.1.3.1" label="§7.1.3.1" />.
 
 $$
 \hat{U}_{exch} \cong \hat{\mathcal{T}}
@@ -3914,7 +3914,7 @@ Condition: $\sum_{f} Q_f = 0$ (including color multiplicity).
 
 **II. Charge Spectrum Input**
 
-From the **Singlet Charge Values** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Triplet Charge Values** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
+From the **Lepton Charge Solutions** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Quark Charge Solutions** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
 * **Neutrino ($\nu_L$):** $Q=0$ (Singlet, Multiplicity 1)
 * **Electron ($e_L$):** $Q=-1$ (Singlet, Multiplicity 1)
 * **Up Quark ($u_L$):** $Q=+2/3$ (Triplet, Multiplicity 3)
@@ -4043,7 +4043,7 @@ Q.E.D.
 :::note[**Quantized Electric Charge**]
 :::
 
-The quantization of electric charge, a precision-tuned feature of the universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This geometric charge derivation, formalised via the charge operator <Ref id="7.3.1" label="§7.3.1" />, posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for quarks <Ref id="7.3.6" label="§7.3.6" /> and integers for leptons <Ref id="7.3.5" label="§7.3.5" /> arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
+The quantization of electric charge, a precision-tuned feature of the universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This geometric charge derivation, formalised via the **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />, posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for **Quark Charge Solutions** <Ref id="7.3.6" label="§7.3.6" /> and integers for **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" /> arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
 
 Technically, this derivation embeds the U(1) gauge symmetry directly into the braid's geometry: the writhe operator's eigenvalues, invariant under local rewrites, act as the source for the electromagnetic field, with the phase shifts demanding a compensating potential to maintain covariance. The spectrum's rationality stems from the indivisibility of integer twists by the braid's triality, yielding the exact fractions needed for the Standard Model without external tuning. This geometric charge resolves puzzles like the neutrality of atoms, where the proton's +1 balances the electron's -1 through complementary writhe configurations.
 
@@ -4195,7 +4195,7 @@ Q.E.D.
 :::info[**Decoupling of Particle Mass from Vacuum Thermal Fluctuations**]
 :::
 
-This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. The **Entropic Vanishing** <Ref id="7.4.3.1" label="§7.4.3.1" /> establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
+This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. The **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" /> establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
 
 Because the particle constitutes a single, rigid logical state (a code word), it lacks internal microstates that thermal noise could excite without breaking the particle entirely. The free energy $F = U - TS$ reduces to $F = U$. The mass is purely determined by the internal structural energy (the number of 3-cycles). This isolation shields the properties of matter from the chaotic environment of the quantum foam. An electron possesses the same mass whether in a cryostat or the center of a star because its topology protects its internal "machinery" from thermal degradation.
 
@@ -4233,7 +4233,7 @@ $$
 
 **III. Linear Term (Crossings)**
 
-By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
 For the minimal basis ($k_c=1$):
 
 $$
@@ -4244,7 +4244,7 @@ This establishes the linear dependence of mass on the topological crossing numbe
 
 **IV. Quadratic Term (Torsion)**
 
-By the **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+By the **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
 
 $$
 N_{torsion} \propto \int L dw \propto w^2
@@ -4287,7 +4287,7 @@ Every interaction energy between parallel ribbons in a composite braid manifests
 
 **I. Isolated Cost Analysis**
 
-Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
+Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
 
 $$
 \mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = |\{C_3 \subset G_A\}| + |\{C_3 \subset G_B\}| = 1 + 1 = 2
@@ -4430,7 +4430,7 @@ Q.E.D.
 :::note[**Computational Verification of the Full Standard Model Mass Spectrum via Integer Topological Harmonics**]
 :::
 
-Quantification of the mass spectrum predicted by the **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
+Quantification of the mass spectrum predicted by the **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 
@@ -5183,7 +5183,7 @@ Q.E.D.
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Closure Probability** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -5368,7 +5368,7 @@ Q.E.D.
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Linear Potential and Berry Phase** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -6532,7 +6532,7 @@ g \propto \sqrt{M \rho_3^*}
 $$
 
 With $\rho_3^* \approx 0.029$ and $M=7$, the active density is $7 \times 0.029 \approx 0.203$.
-The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
+The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
 
 Q.E.D.
 
@@ -6541,7 +6541,7 @@ Q.E.D.
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Degree Counting** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -6708,7 +6708,7 @@ Q.E.D.
 :::note[**Computational Verification of the Predicted Coupling against Experimental Data**]
 :::
 
-Validation of the analytical coupling derivation established in the **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
+Validation of the analytical coupling derivation established in the **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
@@ -7046,7 +7046,7 @@ Q.E.D.
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Yukawa Ratio Verification** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
@@ -7518,7 +7518,7 @@ Q.E.D.
 :::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
 :::
 
-Verification of the anomaly freedom condition established in the **Uniqueness Verification** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
+Verification of the anomaly freedom condition established in the **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
@@ -7862,7 +7862,7 @@ Q.E.D.
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **Isomorphism Verification** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
 
 1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
 2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
@@ -8820,7 +8820,7 @@ Q.E.D.
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Decay Rate Calculation** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -9676,7 +9676,7 @@ $$
 M_R \approx 1.22 \times 10^{19} \cdot (1.0 \times 10^{-3})
 $$
 
-Refined by the specific pre-factor from the **Criticality Verification** <Ref id="9.6.7.1" label="§9.6.7.1" />:
+Refined by the specific pre-factor from the **Critical Complexity Balance** <Ref id="9.6.7.1" label="§9.6.7.1" />:
 
 $$
 M_R \approx 2.36 \times 10^{16} \text{ GeV}
@@ -9733,7 +9733,7 @@ Q.E.D.
 :::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
 :::
 
-Verification of the seesaw hierarchy established in the **Neutrino Mass Demonstration** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
@@ -10740,7 +10740,7 @@ Q.E.D.
 :::note[**Computational Verification of Stabilizer Commutation Relations**]
 :::
 
-Verification of the abelian structure of the stabilizer group established in the **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
+Verification of the abelian structure of the stabilizer group established in the **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
@@ -11028,7 +11028,7 @@ The **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> establishe
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Weight Analysis** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
@@ -12938,7 +12938,7 @@ Yet the simulation spotlights QBD's stakes, where the **causal graph** <Ref id="
 
 Consequently, **Tripartite Braid** <Ref id="6.2" label="§6.2" /> acting as qubits and rewrites serving as gates (as realized in sections 10.4–10.8) imply scalable hardware from the **Equilibrium Analysis** <Ref id="5.4" label="§5.4" />, potentially compressing that timeline.
 
-The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
+The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
 

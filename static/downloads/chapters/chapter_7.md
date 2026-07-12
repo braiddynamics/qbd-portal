@@ -289,7 +289,7 @@ $$
 **IV. Operator Mapping**
 
 The local rewrite sequence $\mathcal{S}$ implements a unitary operator $\hat{U}_{exch}$.
-Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Eigenvalue Inversion** <Ref id="7.1.3.1" label="§7.1.3.1" />.
+Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Unitary Twist Anticommutation** <Ref id="7.1.3.1" label="§7.1.3.1" />.
 
 $$
 \hat{U}_{exch} \cong \hat{\mathcal{T}}
@@ -1265,7 +1265,7 @@ Condition: $\sum_{f} Q_f = 0$ (including color multiplicity).
 
 **II. Charge Spectrum Input**
 
-From the **Singlet Charge Values** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Triplet Charge Values** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
+From the **Lepton Charge Solutions** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Quark Charge Solutions** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
 * **Neutrino ($\nu_L$):** $Q=0$ (Singlet, Multiplicity 1)
 * **Electron ($e_L$):** $Q=-1$ (Singlet, Multiplicity 1)
 * **Up Quark ($u_L$):** $Q=+2/3$ (Triplet, Multiplicity 3)
@@ -1394,7 +1394,7 @@ Q.E.D.
 :::note[**Quantized Electric Charge**]
 :::
 
-The quantization of electric charge, a precision-tuned feature of the universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This geometric charge derivation, formalised via the charge operator <Ref id="7.3.1" label="§7.3.1" />, posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for quarks <Ref id="7.3.6" label="§7.3.6" /> and integers for leptons <Ref id="7.3.5" label="§7.3.5" /> arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
+The quantization of electric charge, a precision-tuned feature of the universe that enables the stability of atoms and the flow of currents, emerges here as a straightforward tally of topological twists in the tripartite braid. This geometric charge derivation, formalised via the **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />, posits that charge is not an arbitrary quantum number sprinkled onto particles but a normalized measure of the braid's total writhe, conserved by the graph's inability to locally alter global invariants. The fractional values for **Quark Charge Solutions** <Ref id="7.3.6" label="§7.3.6" /> and integers for **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" /> arise naturally from the asymmetry or symmetry of writhe distribution among the three ribbons, with the 1/3 factor fixed by anomaly cancellation to ensure the gauge theory's consistency.
 
 Technically, this derivation embeds the U(1) gauge symmetry directly into the braid's geometry: the writhe operator's eigenvalues, invariant under local rewrites, act as the source for the electromagnetic field, with the phase shifts demanding a compensating potential to maintain covariance. The spectrum's rationality stems from the indivisibility of integer twists by the braid's triality, yielding the exact fractions needed for the Standard Model without external tuning. This geometric charge resolves puzzles like the neutrality of atoms, where the proton's +1 balances the electron's -1 through complementary writhe configurations.
 
@@ -1546,7 +1546,7 @@ Q.E.D.
 :::info[**Decoupling of Particle Mass from Vacuum Thermal Fluctuations**]
 :::
 
-This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. The **Entropic Vanishing** <Ref id="7.4.3.1" label="§7.4.3.1" /> establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
+This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. The **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" /> establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
 
 Because the particle constitutes a single, rigid logical state (a code word), it lacks internal microstates that thermal noise could excite without breaking the particle entirely. The free energy $F = U - TS$ reduces to $F = U$. The mass is purely determined by the internal structural energy (the number of 3-cycles). This isolation shields the properties of matter from the chaotic environment of the quantum foam. An electron possesses the same mass whether in a cryostat or the center of a star because its topology protects its internal "machinery" from thermal degradation.
 
@@ -1584,7 +1584,7 @@ $$
 
 **III. Linear Term (Crossings)**
 
-By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
 For the minimal basis ($k_c=1$):
 
 $$
@@ -1595,7 +1595,7 @@ This establishes the linear dependence of mass on the topological crossing numbe
 
 **IV. Quadratic Term (Torsion)**
 
-By the **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+By the **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
 
 $$
 N_{torsion} \propto \int L dw \propto w^2
@@ -1638,7 +1638,7 @@ Every interaction energy between parallel ribbons in a composite braid manifests
 
 **I. Isolated Cost Analysis**
 
-Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
+Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
 
 $$
 \mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = |\{C_3 \subset G_A\}| + |\{C_3 \subset G_B\}| = 1 + 1 = 2
@@ -1781,7 +1781,7 @@ Q.E.D.
 :::note[**Computational Verification of the Full Standard Model Mass Spectrum via Integer Topological Harmonics**]
 :::
 
-Quantification of the mass spectrum predicted by the **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
+Quantification of the mass spectrum predicted by the **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 

@@ -839,7 +839,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -1414,7 +1414,7 @@ $$
 $$
 
 **III. Curvature Contribution**
-From the **Monotonicity Synthesis (Phase 4)** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
+From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
 For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a high positive value due to the tight coupling of the cycle (shared neighbors in the new triad).
 Let the net curvature gain per cycle be $c \approx 3 - K_{baseline}$.
 Since $K_{baseline} < 1$, the constant $c$ is strictly positive.
@@ -1439,7 +1439,7 @@ Section 11.3.6.1 formalizes the properties of the QBD proof regarding action-com
 :::note[**Verification of Curvature Monotonicity via Graph Augmentation and Linear Programming**]
 :::
 
-Verification of the curvature monotonicity and scaling laws established by **Localized Variation** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
+Verification of the curvature monotonicity and scaling laws established by **Action-Complexity Proportionality** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
 
 1.  **Measure Dilution Check:** The algorithm computes the lazy causal measures on the augmented graph to confirm positive shared mass across the added 3-cycle.
 2.  **Cost Contraction Check:** The protocol solves the optimal transport problem using linear programming to confirm a strict decrease in Wasserstein distance upon augmentation.

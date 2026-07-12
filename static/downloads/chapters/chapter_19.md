@@ -65,7 +65,7 @@ The proof proceeds by construction, establishing **Right-Handed Neutrino Product
 :::info[**Kinetics of Three-Ribbon Braid Defect Nucleation during Attractor Deceleration**]
 :::
 
-Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ (<Ref id="5.2.2" label="§5.2.2" />) during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
+Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ under the **Master Equation** <Ref id="5.2" label="§5.2" /> during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
 $$ R_N(t) = \Gamma_{RH} \left( \rho(t) - \rho^* \right)^2 $$
 where the transition rate $\Gamma_{RH}$ is well-defined by the comonad annotation map.
 
@@ -140,7 +140,7 @@ Q.E.D.
 :::info[**Origin of the Primordial Particle Spectrum**]
 :::
 
-The **Braid Combinatorial Dominance** explains why the early universe is not filled with complex topological tangles or exotic high-mass defects. The high energy cost of complex configurations acts as a statistical filter, ensuring that only the simplest stable braid defect—the right-handed Majorana neutrino—nucleates in abundance, establishing it as the primary component of the primordial plasma.
+The **Braid Combinatorial Dominance** explains why the early universe is not filled with complex topological tangles or exotic high-mass defects. The high energy cost of complex configurations acts as a statistical filter, ensuring that only the simplest stable braid defect, the right-handed Majorana neutrino, nucleates in abundance, establishing it as the primary component of the primordial plasma.
 
 ---
 

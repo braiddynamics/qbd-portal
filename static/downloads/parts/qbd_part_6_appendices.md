@@ -2728,7 +2728,7 @@ Section 10.2.9 formalizes the properties of the QBD proof regarding braid code c
 :::note[**Computational Verification of Stabilizer Commutation Relations**]
 :::
 
-Verification of the abelian structure of the stabilizer group established in the **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
+Verification of the abelian structure of the stabilizer group established in the **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
@@ -2961,7 +2961,7 @@ Section 10.3.5.1 formalizes the properties of the QBD proof regarding thermodyna
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Weight Analysis** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
@@ -5363,7 +5363,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -5938,7 +5938,7 @@ $$
 $$
 
 **III. Curvature Contribution**
-From the **Monotonicity Synthesis (Phase 4)** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
+From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
 For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a high positive value due to the tight coupling of the cycle (shared neighbors in the new triad).
 Let the net curvature gain per cycle be $c \approx 3 - K_{baseline}$.
 Since $K_{baseline} < 1$, the constant $c$ is strictly positive.
@@ -5963,7 +5963,7 @@ Section 11.3.6.1 formalizes the properties of the QBD proof regarding action-com
 :::note[**Verification of Curvature Monotonicity via Graph Augmentation and Linear Programming**]
 :::
 
-Verification of the curvature monotonicity and scaling laws established by **Localized Variation** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
+Verification of the curvature monotonicity and scaling laws established by **Action-Complexity Proportionality** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
 
 1.  **Measure Dilution Check:** The algorithm computes the lazy causal measures on the augmented graph to confirm positive shared mass across the added 3-cycle.
 2.  **Cost Contraction Check:** The protocol solves the optimal transport problem using linear programming to confirm a strict decrease in Wasserstein distance upon augmentation.
@@ -8838,7 +8838,7 @@ Section 14.1.3.1 formalizes the properties of the QBD proof regarding local caus
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Construction via Mollification** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
+Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
 
 1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
 2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
@@ -9034,7 +9034,7 @@ Section 14.1.5 formalizes the properties of the QBD proof regarding smoothness o
 :::note[**Verification of Global Monotonicity and Lapse Regularity via Causal Graph Sort**]
 :::
 
-Verification of the global time foliation properties established in the **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
+Verification of the global time foliation properties established in the **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
 
 1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
 2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
@@ -9222,7 +9222,7 @@ $$
 
 where $\eta_{ab} = \text{diag}(-1, 1, 1, 1)$ represents the Minkowski metric of the local tangent space $T_p M$, indices $a, b \in \{0, 1, 2, 3\}$ denote the internal Lorentz frame, and indices $\mu, \nu$ denote the spacetime coordinate frame. This field $e^a_\mu$ is uniquely determined (up to a local Lorentz transformation) by the principal component analysis of the local causal graph edge distribution relative to the gradient of the global time function $T$.
 
-The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />.
+The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />.
 
 **I. Temporal Basis Construction**
 The zeroth tetrad co-vector $\theta^0$ is defined as the normalized 1-form of the global time gradient. Using the Lapse function $N$ derived in **Smoothness of the Lapse** <Ref id="14.1.2" label="§14.1.2" />, the co-vector is $\theta^0_\mu = N \nabla_\mu T$. The corresponding vector field is $e_0^\mu = \frac{1}{N} g^{\mu\nu} \nabla_\nu T$. By the definition of the Lapse as the proper time normalization factor, this vector is strictly unit timelike and future-directed:
@@ -9383,7 +9383,7 @@ This continuum property is the rigorous limit of the **Directed Acyclic Graph (D
 **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
 
 **II. The Time Function**
-In the continuum limit **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
+In the continuum limit **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
 
 **III. The Foliation**
 The level sets of this function, $\Sigma_t = T^{-1}(t)$, constitute spacelike hypersurfaces. Because the graph history is finite and bounded by the initial state $\emptyset$, every causal path is anchored in the past. Thus, the topology of the manifold is $M \cong \mathbb{R} \times \Sigma$, satisfying the Geroch Theorem conditions for global hyperbolicity.
@@ -9499,7 +9499,7 @@ Section 14.2.8 formalizes the properties of the QBD proof regarding emergent lor
 :::note[**Verification of Geodesic Motion via Shortest-Path Optimization on Weighted Lorentzian Graphs**]
 :::
 
-Verification of the geodesic emergence and proper time maximization established in the **Emergence of Relativistic Dynamics** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
+Verification of the geodesic emergence and proper time maximization established in the **Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
 
 1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
 2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
@@ -9870,7 +9870,7 @@ Section 14.3.6.1 formalizes the properties of the QBD proof regarding microcausa
 :::note[**Verification of Microcausality and Commutator Vanishing via DAG Path Connectivity**]
 :::
 
-Verification of the spacelike commutator vanishing established by **Commutation from Graph Disconnection** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
+Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
 
 1.  **Causal Connectivity Matrix Assembly:** The algorithm maps the causal structure of a spacetime patch using a directed acyclic graph representing local relations.
 2.  **Spacelike Separation Check:** The protocol determines the pairwise causal connectivity to identify all pairs of causally disconnected nodes.
@@ -10065,7 +10065,7 @@ Section 14.3.8 formalizes the properties of the QBD proof regarding wightman com
 :::note[**Verification of Spatial Correlation Decay via Discrete massive Laplacian Solvers**]
 :::
 
-Verification of the spatial correlation decay established by **Formal Synthesis of Field Axiomatics** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
+Verification of the spatial correlation decay established by **Wightman Compliance** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
 
 1.  **Massive Propagator Construction:** The algorithm constructs a massive scalar field on a 1D spatial lattice by computing the inverse of the discrete massive Laplacian.
 2.  **Correlator Measurement:** The protocol evaluates the two-point correlator with respect to spatial distance across the lattice.
@@ -10633,7 +10633,7 @@ Section 15.1.6 formalizes the properties of the QBD proof regarding distance gap
 :::note[**Confirmation of Metric Divergence via Manifold Scaling**]
 :::
 
-Verification of the metric divergence established in the **Formal Synthesis of The Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
+Verification of the metric divergence established in the **Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
 
 1.  **Manifold Instantiation:** The algorithm constructs a cyclic graph representing a discrete 1D compact Riemannian manifold across varying scales.
 2.  **Bridge Injection:** The protocol establishes a direct topological edge between antipodal vertices to simulate a singular wormhole bridge.
@@ -11032,7 +11032,7 @@ Section 15.2.5 formalizes the properties of the QBD proof regarding violation of
 :::note[**Verification of Non-Local Graph Correlation Statistics via CHSH Inequality Testing**]
 :::
 
-Verification of the metric locality violation established by **Formal Synthesis of Bell Violation** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
+Verification of the metric locality violation established by **Violation of Metric Locality (Bell's Theorem)** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
 
 1.  **State Preparation:** The algorithm initializes the maximally entangled Bell state on a graph topology containing a single stabilizer bridge.
 2.  **Basis Measurement:** The protocol applies rotated local Pauli operators to the boundary vertices to maximize the geometric conflict between measurement bases.
@@ -11401,7 +11401,7 @@ Section 15.3.5 formalizes the properties of the QBD proof regarding transport co
 :::note[**Verification of the Complexity-Volume Correspondence via Topological Path Length Tracking**]
 :::
 
-Verification of the geometric expansion of the entanglement bridge established in the **Formal Synthesis of ER=EPR** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
+Verification of the geometric expansion of the entanglement bridge established in the **Transport Cost Reduction (ER=EPR)** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm initializes the system in the Thermofield Double ground state represented by a single bridge edge.
 2.  **Unitary Evolution:** The protocol applies a sequence of unitary gate rewrites to insert new nodes into the topological channel, incrementing the path length.
@@ -11968,7 +11968,7 @@ Section 16.1.5 formalizes the properties of the QBD proof regarding ryu-takayana
 :::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]
 :::
 
-Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
+Verification of the holographic scaling law established by **Ryu-Takayanagi Correspondence** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
@@ -12349,7 +12349,7 @@ Section 16.2.5 formalizes the properties of the QBD proof regarding maximum info
 :::note[**Verification of Bekenstein-Hawking Entropy Scaling via Trapped Surface Plaquette Tiling**]
 :::
 
-Verification of the holographic saturation limit established by **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
+Verification of the holographic saturation limit established by **Maximum Informational Density (The Bound)** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
@@ -12738,7 +12738,7 @@ Section 17.1.5 formalizes the properties of the QBD proof regarding action equiv
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -13056,7 +13056,7 @@ Section 17.2.5 formalizes the properties of the QBD proof regarding spectral inv
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -13410,7 +13410,7 @@ Section 17.3.5 formalizes the properties of the QBD proof regarding chiral split
 :::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]
 :::
 
-Verification of the dimensional consistency established by **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
+Verification of the dimensional consistency established by **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
 
 1.  **Transverse Mode Evaluation:** The algorithm evaluates the transverse degrees of freedom of the right-moving defect and left-moving background lattice.
 2.  **Criticality Validation:** The protocol verifies that the total dimensions satisfy the Bosonic and Supersymmetric anomaly cancellation bounds.
@@ -13714,7 +13714,7 @@ Section 17.4.4.1 formalizes the properties of the QBD proof regarding standard m
 :::note[**Verification of Force-Matter Decomposition via Exceptional Algebra Root Space Analysis**]
 :::
 
-Verification of the Standard Model embedding established by **Decomposition of E8 to SU(3)xSU(2)xU(1)** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
+Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
 
 1.  **Algebraic Root Analysis:** The algorithm generates the root vectors of the exceptional Lie algebra and divides them into integer-type force and half-integer matter sectors.
 2.  **Subgroup Root Identification:** The protocol scans the root space to identify closed subgroups satisfying the commutation relations of color and weak interactions.
@@ -13991,7 +13991,7 @@ Section 17.4.7 formalizes the properties of the QBD proof regarding emergence of
 :::note[**Verification of Heterotic Braid Isomorphism via exceptional root Lattice Mapping**]
 :::
 
-Verification of the non-perturbative loop limit established by **Formal Synthesis of Heterotic Braid Theory** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
+Verification of the non-perturbative loop limit established by **Emergence of the E8 Lattice** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
 
 1.  **Chiral Mode Evaluation:** The algorithm evaluates the total left-moving and right-moving dimensions to verify anomaly cancellation and sector decoupling.
 2.  **Modular Unimodularity Search:** The protocol performs a basis search to verify that the generated charge lattice is integral, even, and self-dual.
@@ -17064,7 +17064,7 @@ Section 19.1.2 formalizes the properties of the QBD theorem regarding right-hand
 :::info[**Kinetics of Three-Ribbon Braid Defect Nucleation during Attractor Deceleration**]
 :::
 
-Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ (<Ref id="5.2.2" label="§5.2.2" />) during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
+Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ under the **Master Equation** <Ref id="5.2" label="§5.2" /> during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
 $$ R_N(t) = \Gamma_{RH} \left( \rho(t) - \rho^* \right)^2 $$
 where the transition rate $\Gamma_{RH}$ is well-defined by the comonad annotation map.
 
@@ -19610,7 +19610,38 @@ Section 20.3.2.1 formalizes the properties of the QBD proof regarding void relax
 
 ---
 
-### 20.3.3 Proof: Anisotropic Collapse {#20.3.3}
+### 20.3.3 Lemma: Axis Collapse Hierarchy {#20.3.3}
+
+:::info[**Hierarchical Sequencing of Ellipsoidal Collapse Driven by Deformation Eigenvalue Ordering**]
+:::
+
+**In Plain English:**  
+Section 20.3.3 formalizes the properties of the QBD lemma regarding axis collapse hierarchy.
+
+---
+
+### 20.3.3.1 Proof: Axis Collapse Hierarchy {#20.3.3.1}
+
+:::tip[**Verification of Sequential Collapse Timescales via Eigenvalue Evolution Analysis**]
+:::
+
+**I. Eigenvalue Ordering**
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.
+
+**II. Critical Timescales**
+It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.
+
+**III. Caustic Dimensionality**
+It demonstrates that the density diverges at $t_1$, $t_2$, and $t_3$, corresponding to the transition from 3D to 2D (sheet), 1D (filament), and 0D (node) topologies.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 20.3.3.1 formalizes the properties of the QBD proof regarding axis collapse hierarchy.
+
+---
+
+### 20.3.4 Proof: Anisotropic Collapse {#20.3.4}
 
 :::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
 :::
@@ -19622,12 +19653,12 @@ The proof calculates the eigenvalues of the gravitational deformation tensor in 
 The matter flows out of the underdense regions according to the attractor dynamics established in **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" />.
 
 **III. Hierarchical Singularity**
-It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
+It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, according to the sequential timescales derived in **Axis Collapse Hierarchy** <Ref id="20.3.3" label="§20.3.3" />, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 20.3.3 formalizes the properties of the QBD proof regarding anisotropic collapse.
+Section 20.3.4 formalizes the properties of the QBD proof regarding anisotropic collapse.
 
 ---
 
@@ -28850,7 +28881,7 @@ Section 5.2.7 formalizes the properties of the QBD proof regarding macroscopic e
 :::note[**Exact Solution of the Geometrogenesis Equation**]
 :::
 
-Computational verification of the equilibrium properties established in **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the equilibrium properties established in **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the precise physical constants derived in Chapter 4, matching **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> properties: Vacuum Permittivity $\Lambda_{vac} = 0.0156$, Friction $\mu \approx 0.3989$, and Catalysis $\lambda_{cat} \approx 1.7183$.
 2.  **Root Finding:** The protocol uses Brent's search algorithm to numerically solve the differential equation $d\rho/dt = 0$ for the equilibrium density $\rho^*$.
@@ -28992,7 +29023,7 @@ Section 5.3.2 formalizes the properties of the QBD definition regarding paramete
 :::note[**Algorithmic Sweep of Phase Space via Parallel Execution**]
 :::
 
-Computational verification of the phase space trajectories established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the phase space trajectories established by the **Master Equation** <Ref id="5.2" label="§5.2" /> is based on the following protocols:
 
 1.  **Worker Orchestration:** The algorithm coordinates the spatial trajectory of parallel workers traversing the network substrate. This maps to the localized propagation of events in the physical vacuum.
 2.  **Awareness Computation:** The protocol evaluates local syndromes and causal histories to determine update eligibility at active sites, implementing the comonadic checks of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />.
@@ -29128,7 +29159,7 @@ Section 5.4.3 formalizes the properties of the QBD lemma regarding global stabil
 
 **I. Setup and Function Definition**
 
-Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
+Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2" label="§5.2" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
 
 $$
 F(\rho) = C(\rho) - D(\rho)
@@ -29196,7 +29227,7 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 
 **I. Setup and Flux Potentials**
 
-Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" />:
+Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by the **Master Equation** <Ref id="5.2" label="§5.2" />:
 
 $$
 J_{\text{in}} \approx 9\rho^2
@@ -29459,7 +29490,7 @@ Section 5.5.3 formalizes the properties of the QBD lemma regarding bounded degre
 
 **I. The Rate Equations**
 
-The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
+The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2" label="§5.2" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
 
 1.  **Creation Flux ($J_{in}$):**
     The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
@@ -30699,7 +30730,7 @@ Section 6.1.3.3 formalizes the properties of the QBD type-theoretic regarding va
 :::info[**Amplification of deletion probability at high local densities**]
 :::
 
-Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
+Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2" label="§5.2" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
 
 **In Plain English:**  
 Section 6.1.4 formalizes the properties of the QBD lemma regarding catalyzed instability.
@@ -30791,7 +30822,7 @@ Section 6.1.4.1 formalizes the properties of the QBD proof regarding catalyzed i
 :::note[**Computational Verification via the Fundamental Equation of Geometrogenesis**]
 :::
 
-Quantification of the density-dependent instability established by **Decay Rate Calculation** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
+Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
 1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the Master Equation parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
 2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
@@ -31068,7 +31099,7 @@ Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite 
 :::info[**Topological Triviality and Instability under Catalytic Deletion**]
 :::
 
-For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2.7" label="§5.2.7" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
+For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2" label="§5.2" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
 
 **In Plain English:**  
 Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of unbraided clusters (n=0).
@@ -31440,7 +31471,7 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding exclusion o
 :::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
 :::
 
-Quantification of the formation probabilities for higher-order structures established by **Analytical Exclusion via TQFT Parsimony** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
+Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 1.  **Thermodynamic Definition:** The algorithm sets the vacuum environment temperature to the critical value $T_{vac} = \ln 2$.
 2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands.
@@ -31775,7 +31806,7 @@ Section 6.3.5.1 formalizes the properties of the QBD proof regarding quadratic s
 :::note[**Computational Verification of Quadratic Mass Scaling via Pathfinding Constraints**]
 :::
 
-Verification of the non-linear complexity growth established by **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
+Verification of the non-linear complexity growth established by **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
 1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the Principle of Unique Causality, which forbids the reuse of existing edges for new causal paths.
 2.  **Cost Measurement:** The protocol measures the topological cost $N_3$ required to add each successive unit of writhe $w$, defined as the graph distance required to circumnavigate the existing twist structure.
@@ -32046,7 +32077,7 @@ Section 6.4.3.1 formalizes the properties of the QBD proof regarding local horiz
 :::note[**Computational Verification of Operator Blindness via Entropic Drift**]
 :::
 
-Validation of the operational limits established by **Local Blindness** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
+Validation of the operational limits established by **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
 
 1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves.
 2.  **Agent Logic:** The protocol defines two traversal agents: a Local Agent that selects moves stochastically based on a limited horizon radius $R$, and a Global Agent that selects the optimal path to the solution state.
@@ -32471,7 +32502,7 @@ $$
 **IV. Operator Mapping**
 
 The local rewrite sequence $\mathcal{S}$ implements a unitary operator $\hat{U}_{exch}$.
-Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Eigenvalue Inversion** <Ref id="7.1.3.1" label="§7.1.3.1" />.
+Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Unitary Twist Anticommutation** <Ref id="7.1.3.1" label="§7.1.3.1" />.
 
 $$
 \hat{U}_{exch} \cong \hat{\mathcal{T}}
@@ -33207,7 +33238,7 @@ Condition: $\sum_{f} Q_f = 0$ (including color multiplicity).
 
 **II. Charge Spectrum Input**
 
-From the **Singlet Charge Values** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Triplet Charge Values** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
+From the **Lepton Charge Solutions** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Quark Charge Solutions** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
 * **Neutrino ($\nu_L$):** $Q=0$ (Singlet, Multiplicity 1)
 * **Electron ($e_L$):** $Q=-1$ (Singlet, Multiplicity 1)
 * **Up Quark ($u_L$):** $Q=+2/3$ (Triplet, Multiplicity 3)
@@ -33459,7 +33490,7 @@ $$
 
 **III. Linear Term (Crossings)**
 
-By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
 For the minimal basis ($k_c=1$):
 
 $$
@@ -33470,7 +33501,7 @@ This establishes the linear dependence of mass on the topological crossing numbe
 
 **IV. Quadratic Term (Torsion)**
 
-By the **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+By the **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
 
 $$
 N_{torsion} \propto \int L dw \propto w^2
@@ -33512,7 +33543,7 @@ Section 7.4.5 formalizes the properties of the QBD lemma regarding integer geome
 
 **I. Isolated Cost Analysis**
 
-Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
+Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
 
 $$
 \mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = |\{C_3 \subset G_A\}| + |\{C_3 \subset G_B\}| = 1 + 1 = 2
@@ -33652,7 +33683,7 @@ Section 7.4.6 formalizes the properties of the QBD proof regarding topological m
 :::note[**Computational Verification of the Full Standard Model Mass Spectrum via Integer Topological Harmonics**]
 :::
 
-Quantification of the mass spectrum predicted by the **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
+Quantification of the mass spectrum predicted by the **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 
@@ -34179,7 +34210,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding ensemble cl
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Closure Probability** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -34368,7 +34399,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding flux tube c
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Linear Potential and Berry Phase** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -35296,7 +35327,7 @@ g \propto \sqrt{M \rho_3^*}
 $$
 
 With $\rho_3^* \approx 0.029$ and $M=7$, the active density is $7 \times 0.029 \approx 0.203$.
-The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
+The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" />, consistent with the precision of the derived coupling.
 
 Q.E.D.
 
@@ -35310,7 +35341,7 @@ Section 8.5.6.1 formalizes the properties of the QBD proof regarding local state
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Degree Counting** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -35470,7 +35501,7 @@ Section 8.5.7 formalizes the properties of the QBD proof regarding emergent gaug
 :::note[**Computational Verification of the Predicted Coupling against Experimental Data**]
 :::
 
-Validation of the analytical coupling derivation established in the **Synthesis of the Coupling Constant** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
+Validation of the analytical coupling derivation established in the **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
@@ -35723,7 +35754,7 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding topological
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Yukawa Ratio Verification** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
@@ -36092,7 +36123,7 @@ Section 9.1.5 formalizes the properties of the QBD proof regarding minimal gut u
 :::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
 :::
 
-Verification of the anomaly freedom condition established in the **Uniqueness Verification** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
+Verification of the anomaly freedom condition established in the **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
@@ -36351,7 +36382,7 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding closed lie 
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **Isomorphism Verification** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
 
 1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
 2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
@@ -37053,7 +37084,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding tension ver
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Decay Rate Calculation** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -37800,7 +37831,7 @@ $$
 M_R \approx 1.22 \times 10^{19} \cdot (1.0 \times 10^{-3})
 $$
 
-Refined by the specific pre-factor from the **Criticality Verification** <Ref id="9.6.7.1" label="§9.6.7.1" />:
+Refined by the specific pre-factor from the **Critical Complexity Balance** <Ref id="9.6.7.1" label="§9.6.7.1" />:
 
 $$
 M_R \approx 2.36 \times 10^{16} \text{ GeV}
@@ -37856,7 +37887,7 @@ Section 9.6.9 formalizes the properties of the QBD proof regarding neutrino mass
 :::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
 :::
 
-Verification of the seesaw hierarchy established in the **Neutrino Mass Demonstration** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
@@ -38114,7 +38145,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
 | $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/rules/equilibrium/5.2/#5.2.5) |
 | $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/rules/equilibrium/5.2/#5.2.7) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2](/monograph/rules/equilibrium/5.2/#5.2) |
 | $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
 | $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |
 | $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/rules/equilibrium/5.4/#5.4.4.1) |

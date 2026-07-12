@@ -106,7 +106,7 @@ Section 14.1.3.1 formalizes the properties of the QBD proof regarding local caus
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Construction via Mollification** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
+Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
 
 1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
 2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
@@ -302,7 +302,7 @@ Section 14.1.5 formalizes the properties of the QBD proof regarding smoothness o
 :::note[**Verification of Global Monotonicity and Lapse Regularity via Causal Graph Sort**]
 :::
 
-Verification of the global time foliation properties established in the **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
+Verification of the global time foliation properties established in the **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
 
 1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
 2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
@@ -490,7 +490,7 @@ $$
 
 where $\eta_{ab} = \text{diag}(-1, 1, 1, 1)$ represents the Minkowski metric of the local tangent space $T_p M$, indices $a, b \in \{0, 1, 2, 3\}$ denote the internal Lorentz frame, and indices $\mu, \nu$ denote the spacetime coordinate frame. This field $e^a_\mu$ is uniquely determined (up to a local Lorentz transformation) by the principal component analysis of the local causal graph edge distribution relative to the gradient of the global time function $T$.
 
-The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />.
+The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />.
 
 **I. Temporal Basis Construction**
 The zeroth tetrad co-vector $\theta^0$ is defined as the normalized 1-form of the global time gradient. Using the Lapse function $N$ derived in **Smoothness of the Lapse** <Ref id="14.1.2" label="§14.1.2" />, the co-vector is $\theta^0_\mu = N \nabla_\mu T$. The corresponding vector field is $e_0^\mu = \frac{1}{N} g^{\mu\nu} \nabla_\nu T$. By the definition of the Lapse as the proper time normalization factor, this vector is strictly unit timelike and future-directed:
@@ -651,7 +651,7 @@ This continuum property is the rigorous limit of the **Directed Acyclic Graph (D
 **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
 
 **II. The Time Function**
-In the continuum limit **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
+In the continuum limit **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
 
 **III. The Foliation**
 The level sets of this function, $\Sigma_t = T^{-1}(t)$, constitute spacelike hypersurfaces. Because the graph history is finite and bounded by the initial state $\emptyset$, every causal path is anchored in the past. Thus, the topology of the manifold is $M \cong \mathbb{R} \times \Sigma$, satisfying the Geroch Theorem conditions for global hyperbolicity.
@@ -767,7 +767,7 @@ Section 14.2.8 formalizes the properties of the QBD proof regarding emergent lor
 :::note[**Verification of Geodesic Motion via Shortest-Path Optimization on Weighted Lorentzian Graphs**]
 :::
 
-Verification of the geodesic emergence and proper time maximization established in the **Emergence of Relativistic Dynamics** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
+Verification of the geodesic emergence and proper time maximization established in the **Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
 
 1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
 2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
@@ -1138,7 +1138,7 @@ Section 14.3.6.1 formalizes the properties of the QBD proof regarding microcausa
 :::note[**Verification of Microcausality and Commutator Vanishing via DAG Path Connectivity**]
 :::
 
-Verification of the spacelike commutator vanishing established by **Commutation from Graph Disconnection** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
+Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
 
 1.  **Causal Connectivity Matrix Assembly:** The algorithm maps the causal structure of a spacetime patch using a directed acyclic graph representing local relations.
 2.  **Spacelike Separation Check:** The protocol determines the pairwise causal connectivity to identify all pairs of causally disconnected nodes.
@@ -1333,7 +1333,7 @@ Section 14.3.8 formalizes the properties of the QBD proof regarding wightman com
 :::note[**Verification of Spatial Correlation Decay via Discrete massive Laplacian Solvers**]
 :::
 
-Verification of the spatial correlation decay established by **Formal Synthesis of Field Axiomatics** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
+Verification of the spatial correlation decay established by **Wightman Compliance** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
 
 1.  **Massive Propagator Construction:** The algorithm constructs a massive scalar field on a 1D spatial lattice by computing the inverse of the discrete massive Laplacian.
 2.  **Correlator Measurement:** The protocol evaluates the two-point correlator with respect to spatial distance across the lattice.

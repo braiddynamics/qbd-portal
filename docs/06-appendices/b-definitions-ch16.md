@@ -242,7 +242,7 @@ Section 16.1.5 formalizes the properties of the QBD proof regarding ryu-takayana
 :::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]
 :::
 
-Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
+Verification of the holographic scaling law established by **Ryu-Takayanagi Correspondence** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
@@ -623,7 +623,7 @@ Section 16.2.5 formalizes the properties of the QBD proof regarding maximum info
 :::note[**Verification of Bekenstein-Hawking Entropy Scaling via Trapped Surface Plaquette Tiling**]
 :::
 
-Verification of the holographic saturation limit established by **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
+Verification of the holographic saturation limit established by **Maximum Informational Density (The Bound)** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.

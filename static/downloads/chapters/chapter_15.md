@@ -421,7 +421,7 @@ Q.E.D.
 :::note[**Confirmation of Metric Divergence via Manifold Scaling**]
 :::
 
-Verification of the metric divergence established in the **Formal Synthesis of The Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
+Verification of the metric divergence established in the **Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
 
 1.  **Manifold Instantiation:** The algorithm constructs a cyclic graph representing a discrete 1D compact Riemannian manifold across varying scales.
 2.  **Bridge Injection:** The protocol establishes a direct topological edge between antipodal vertices to simulate a singular wormhole bridge.
@@ -658,7 +658,7 @@ Consider the choice facing the quantum state:
 1.  **Path A (The Bulk):** Transmit the qubit state by swapping it neighbor-to-neighbor through a billion intermediate nodes ($d_{geo}$). Each swap introduces a chance for decoherence and costs thermodynamic action. The probability amplitude for this path is $e^{-\text{huge number}}$.
 2.  **Path B (The Bridge):** Transmit the state across the single stabilizer link ($d_{topo}$). One swap. Done. The probability amplitude is $e^{-\text{small number}}$.
 
-The mathematical derivation (**Amplitude Weight of the Shortest Path** <Ref id="15.2.2.1" label="§15.2.2.1" />) is simply formalizing the obvious: the universe is efficient. It doesn't "know" that the bulk path corresponds to a straight line in our emergent 3D space. It only knows that the bridge path is cheaper. The signal "tunnels" through the bulk not because it violates the speed limit, but because it found a wormhole where the speed limit ($c=1$ hop/tick) gets you there in one tick. To the graph, $A$ and $B$ are not far apart; they are touching. The mystery of Bell non-locality is resolved by realizing that "distance" is an emergent statistical cost function, and entanglement is a subsidy that sets that cost to zero.
+The mathematical derivation (**Path Integral Dominance** <Ref id="15.2.2.1" label="§15.2.2.1" />) is simply formalizing the obvious: the universe is efficient. It doesn't "know" that the bulk path corresponds to a straight line in our emergent 3D space. It only knows that the bridge path is cheaper. The signal "tunnels" through the bulk not because it violates the speed limit, but because it found a wormhole where the speed limit ($c=1$ hop/tick) gets you there in one tick. To the graph, $A$ and $B$ are not far apart; they are touching. The mystery of Bell non-locality is resolved by realizing that "distance" is an emergent statistical cost function, and entanglement is a subsidy that sets that cost to zero.
 
 ### 15.2.2.3 Visual: Bell Shortcut
 
@@ -932,7 +932,7 @@ Q.E.D.
 :::note[**Verification of Non-Local Graph Correlation Statistics via CHSH Inequality Testing**]
 :::
 
-Verification of the metric locality violation established by **Formal Synthesis of Bell Violation** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
+Verification of the metric locality violation established by **Violation of Metric Locality (Bell's Theorem)** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
 
 1.  **State Preparation:** The algorithm initializes the maximally entangled Bell state on a graph topology containing a single stabilizer bridge.
 2.  **Basis Measurement:** The protocol applies rotated local Pauli operators to the boundary vertices to maximize the geometric conflict between measurement bases.
@@ -1373,7 +1373,7 @@ Q.E.D.
 :::note[**Verification of the Complexity-Volume Correspondence via Topological Path Length Tracking**]
 :::
 
-Verification of the geometric expansion of the entanglement bridge established in the **Formal Synthesis of ER=EPR** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
+Verification of the geometric expansion of the entanglement bridge established in the **Transport Cost Reduction (ER=EPR)** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm initializes the system in the Thermofield Double ground state represented by a single bridge edge.
 2.  **Unitary Evolution:** The protocol applies a sequence of unitary gate rewrites to insert new nodes into the topological channel, incrementing the path length.

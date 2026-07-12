@@ -879,7 +879,7 @@ Q.E.D.
 :::note[**Computational Verification of Stabilizer Commutation Relations**]
 :::
 
-Verification of the abelian structure of the stabilizer group established in the **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
+Verification of the abelian structure of the stabilizer group established in the **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
@@ -1167,7 +1167,7 @@ The **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> establishe
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Weight Analysis** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
@@ -3077,7 +3077,7 @@ Yet the simulation spotlights QBD's stakes, where the **causal graph** <Ref id="
 
 Consequently, **Tripartite Braid** <Ref id="6.2" label="§6.2" /> acting as qubits and rewrites serving as gates (as realized in sections 10.4–10.8) imply scalable hardware from the **Equilibrium Analysis** <Ref id="5.4" label="§5.4" />, potentially compressing that timeline.
 
-The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
+The $d=3$ code's resilience here (off-peaks $<0.3\%$, $P=1.00$ decoding) previews self-correcting systems via **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" />, where **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, a boon for non-crypto apps like protein folding or fusion optimization. This potential for scalable, fault-tolerant computation directly addresses the "quantum supremacy" threshold discussed by <Cite id="A.1" label="(Acharya et al., 2024)" />, suggesting that topological substrates may offer a more direct path to utility than noisy intermediate-scale quantum (NISQ) devices.
 
 For cryptography, the horizon is actionable: NIST's post-quantum standards (Kyber for encryption, Dilithium for signatures, finalized August 2024) harden protocols against Shor, mandating migration by 2030 (deprecation) and 2035 (sunset). Banks and governments are shifting (Chrome flags PQC-ready sites now) but legacy exposure lingers, risking a "harvest now, decrypt later" surge.
 

@@ -1138,7 +1138,7 @@ Q.E.D.
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -1870,7 +1870,7 @@ $$
 $$
 
 **III. Curvature Contribution**
-From the **Monotonicity Synthesis (Phase 4)** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
+From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
 For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a high positive value due to the tight coupling of the cycle (shared neighbors in the new triad).
 Let the net curvature gain per cycle be $c \approx 3 - K_{baseline}$.
 Since $K_{baseline} < 1$, the constant $c$ is strictly positive.
@@ -1899,7 +1899,7 @@ Every time the universe creates a 3-cycle, it adds a fixed quantum of action to 
 :::note[**Verification of Curvature Monotonicity via Graph Augmentation and Linear Programming**]
 :::
 
-Verification of the curvature monotonicity and scaling laws established by **Localized Variation** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
+Verification of the curvature monotonicity and scaling laws established by **Action-Complexity Proportionality** <Ref id="11.3.6.1" label="§11.3.6.1" /> is based on the following protocols:
 
 1.  **Measure Dilution Check:** The algorithm computes the lazy causal measures on the augmented graph to confirm positive shared mass across the added 3-cycle.
 2.  **Cost Contraction Check:** The protocol solves the optimal transport problem using linear programming to confirm a strict decrease in Wasserstein distance upon augmentation.
@@ -5413,7 +5413,7 @@ Q.E.D.
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Construction via Mollification** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
+Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
 
 1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
 2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
@@ -5609,7 +5609,7 @@ Q.E.D.
 :::note[**Verification of Global Monotonicity and Lapse Regularity via Causal Graph Sort**]
 :::
 
-Verification of the global time foliation properties established in the **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
+Verification of the global time foliation properties established in the **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
 
 1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
 2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
@@ -5748,7 +5748,7 @@ PASS: Lapse field converges to smooth manifold limit.
 
 This section marks the full recovery of proper time from pure information processing. The flow of time in the emergent universe constitutes not a uniform background parameter but a dynamic, geometric field $N(x)$, defined as the **Lapse function** in <Ref id="14.1.1" label="§14.1.1" /> and determined entirely by the local density of causal events. Through **local causal averages** analyzed in <Ref id="14.1.3" label="§14.1.3" />, these updates stack into a smooth 4-dimensional block where the distance between the slices is dictated by the Lapse function. Where the graph is dense (high complexity), the slices are close together, establishing that a discrete, ordered computational history coarse-grains into the curved foliation of Einstein's Block Universe.
 
-In regions where the graph is dense, representing high computational activity or mass-energy, the spatial distance traversed per logical tick is smaller, leading to a smaller Lapse function $N$. Physically, this manifests as gravitational time dilation, since clocks run slower in regions of higher density because the underlying causal graph must process more local events per unit of global update. The smooth foliation $\Sigma_t$ validates the intuition that the universe evolves layer by layer, while the **Smoothness of Lapse Function** <Ref id="14.1.2" label="§14.1.2" /> ensures that this evolution is governed by differential equations, seamlessly connecting discrete graph dynamics to the continuum field equations.
+In regions where the graph is dense, representing high computational activity or mass-energy, the spatial distance traversed per logical tick is smaller, leading to a smaller Lapse function $N$. Physically, this manifests as gravitational time dilation, since clocks run slower in regions of higher density because the underlying causal graph must process more local events per unit of global update. The smooth foliation $\Sigma_t$ validates the intuition that the universe evolves layer by layer, while the **Smoothness of the Lapse** <Ref id="14.1.2" label="§14.1.2" /> ensures that this evolution is governed by differential equations, seamlessly connecting discrete graph dynamics to the continuum field equations.
 
 This smooth recovery of time relies on **Sobolev Convergence** <Ref id="14.1.4" label="§14.1.4" /> to prevent fractal irregularities. We are now ready to combine this temporal structure with the spatial metric to construct the full Lorentzian manifold. In the subsequent section, we will formulate the Shift vector, mapping the transverse coordinate drift that completes the 3+1 ADM decomposition of emergent spacetime.
 
@@ -5845,7 +5845,7 @@ $$
 
 where $\eta_{ab} = \text{diag}(-1, 1, 1, 1)$ represents the Minkowski metric of the local tangent space $T_p M$, indices $a, b \in \{0, 1, 2, 3\}$ denote the internal Lorentz frame, and indices $\mu, \nu$ denote the spacetime coordinate frame. This field $e^a_\mu$ is uniquely determined (up to a local Lorentz transformation) by the principal component analysis of the local causal graph edge distribution relative to the gradient of the global time function $T$.
 
-The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />.
+The construction of the tetrad field proceeds via the explicit diagonalization of the local metric tensor with respect to the gradient of the global time function defined in **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />.
 
 **I. Temporal Basis Construction**
 The zeroth tetrad co-vector $\theta^0$ is defined as the normalized 1-form of the global time gradient. Using the Lapse function $N$ derived in **Smoothness of the Lapse** <Ref id="14.1.2" label="§14.1.2" />, the co-vector is $\theta^0_\mu = N \nabla_\mu T$. The corresponding vector field is $e_0^\mu = \frac{1}{N} g^{\mu\nu} \nabla_\nu T$. By the definition of the Lapse as the proper time normalization factor, this vector is strictly unit timelike and future-directed:
@@ -6013,7 +6013,7 @@ This continuum property is the rigorous limit of the **Directed Acyclic Graph (D
 **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> strictly forbids directed cycles in the causal graph at the micro-level. This ensures that the logical depth function $L: V \to \mathbb{N}$ is strictly monotonic along any causal chain.
 
 **II. The Time Function**
-In the continuum limit **Smooth Time Foliation** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
+In the continuum limit **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />, this depth function maps to a global scalar time field $T: M \to \mathbb{R}$ with a timelike gradient $\nabla T$.
 
 **III. The Foliation**
 The level sets of this function, $\Sigma_t = T^{-1}(t)$, constitute spacelike hypersurfaces. Because the graph history is finite and bounded by the initial state $\emptyset$, every causal path is anchored in the past. Thus, the topology of the manifold is $M \cong \mathbb{R} \times \Sigma$, satisfying the Geroch Theorem conditions for global hyperbolicity.
@@ -6129,7 +6129,7 @@ Q.E.D.
 :::note[**Verification of Geodesic Motion via Shortest-Path Optimization on Weighted Lorentzian Graphs**]
 :::
 
-Verification of the geodesic emergence and proper time maximization established in the **Emergence of Relativistic Dynamics** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
+Verification of the geodesic emergence and proper time maximization established in the **Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
 
 1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
 2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
@@ -6242,7 +6242,7 @@ The particle trajectory demonstrates a clear "free fall" behavior. Despite start
 
 The construction of the **Lorentzian Metric** <Ref id="14.2.1" label="§14.2.1" /> successfully bridges the gap between the discrete causal graph and the kinematic framework of General Relativity. By formally building $g_{\mu\nu}$ from the Lapse and Shift functions, and by deriving the Geodesic Equation from the stationary phase of the graph evolution as established in **Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />, the emergent spacetime geometry is shown to be a coarse-grained statistical summary of the graph's local update density. The classical trajectory of a particle curves toward regions of higher graph density simply because those regions contain a higher concentration of updates, representing an optimization of proper time.
 
-This result implies that the smoothness of spacetime is an emergent property of the Law of Large Numbers, where gravity represents a statistical drive rather than a physical pull. Furthermore, the rigorous preservation of the graph's acyclic order verified via **Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" /> protects the causal structure against closed timelike curves, ensuring a well-posed initial value problem. The coincidence of the null cones establishes a stable speed of light, ensuring that the macroscopic limit behaves as a **Lorentzian Manifold** <Ref id="14.2.2" label="§14.2.2" />.
+This result implies that the smoothness of spacetime is an emergent property of the Law of Large Numbers, where gravity represents a statistical drive rather than a physical pull. Furthermore, the rigorous preservation of the graph's acyclic order verified via **Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" /> protects the causal structure against closed timelike curves, ensuring a well-posed initial value problem. The coincidence of the null cones establishes a stable speed of light, ensuring that the macroscopic limit behaves as an **Emergent Lorentzian Manifold** <Ref id="14.2.2" label="§14.2.2" />.
 
 With the Lorentzian manifold constructed and the rules of geodesic motion derived, the kinematic foundation is complete. We now proceed to the subsequent section, where we will derive the dynamic laws and field equations that dictate how this Lorentzian geometry itself evolves in response to topological matter content.
 
@@ -6553,7 +6553,7 @@ Q.E.D.
 :::note[**Verification of Microcausality and Commutator Vanishing via DAG Path Connectivity**]
 :::
 
-Verification of the spacelike commutator vanishing established by **Commutation from Graph Disconnection** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
+Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
 
 1.  **Causal Connectivity Matrix Assembly:** The algorithm maps the causal structure of a spacetime patch using a directed acyclic graph representing local relations.
 2.  **Spacelike Separation Check:** The protocol determines the pairwise causal connectivity to identify all pairs of causally disconnected nodes.
@@ -6754,7 +6754,7 @@ Q.E.D.
 :::note[**Verification of Spatial Correlation Decay via Discrete massive Laplacian Solvers**]
 :::
 
-Verification of the spatial correlation decay established by **Formal Synthesis of Field Axiomatics** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
+Verification of the spatial correlation decay established by **Wightman Compliance** <Ref id="14.3.8" label="§14.3.8" /> is based on the following protocols:
 
 1.  **Massive Propagator Construction:** The algorithm constructs a massive scalar field on a 1D spatial lattice by computing the inverse of the discrete massive Laplacian.
 2.  **Correlator Measurement:** The protocol evaluates the two-point correlator with respect to spatial distance across the lattice.
@@ -7048,7 +7048,7 @@ Matter, which is just topologically constrained information, curves spacetime be
 :::note[**Synthesis of Section 14.4: The Dynamic Closure**]
 :::
 
-The **Derivation of Semiclassical Einstein Equations** <Ref id="14.4.1" label="§14.4.1" /> completes the dynamical coupling between matter and geometry in the Quantum Braid Dynamics framework. Through the entropic response of the causal graph to information flux, the gravitational field equations arise as a statistical consequence of the system's underlying thermodynamic equilibrium. This relation is mediated by the **first law of entanglement** entropy analyzed on the graph in <Ref id="14.4.2" label="§14.4.2" />, showing that variations in entanglement density correspond directly to variations in local curvature.
+The **Einstein Field Equations** <Ref id="14.4.1" label="§14.4.1" /> completes the dynamical coupling between matter and geometry in the Quantum Braid Dynamics framework. Through the entropic response of the causal graph to information flux, the gravitational field equations arise as a statistical consequence of the system's underlying thermodynamic equilibrium. This relation is mediated by the **first law of entanglement** entropy analyzed on the graph in <Ref id="14.4.2" label="§14.4.2" />, showing that variations in entanglement density correspond directly to variations in local curvature.
 
 Within this thermodynamic description, the gravitational constant $G$ is identified not as an arbitrary fundamental scale, but as the physical area-per-bit of the vacuum, as proven in **Recovering Newton's Constant (G)** <Ref id="14.4.3" label="§14.4.3" />. This identification matches General Relativity ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$) in the continuum limit, establishing that the stiffness of spacetime is determined by the entanglement capacity of the discrete braid structures as verified by the **Einstein Field Equations** <Ref id="14.4.4" label="§14.4.4" />. The resulting field equations govern the backreaction of quantum states, ensuring that mass-energy and spatial curvature are two aspects of a single information-theoretic constraint.
 
@@ -7542,7 +7542,7 @@ Q.E.D.
 :::note[**Confirmation of Metric Divergence via Manifold Scaling**]
 :::
 
-Verification of the metric divergence established in the **Formal Synthesis of The Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
+Verification of the metric divergence established in the **Distance Gap** <Ref id="15.1.6" label="§15.1.6" /> is based on the following protocols:
 
 1.  **Manifold Instantiation:** The algorithm constructs a cyclic graph representing a discrete 1D compact Riemannian manifold across varying scales.
 2.  **Bridge Injection:** The protocol establishes a direct topological edge between antipodal vertices to simulate a singular wormhole bridge.
@@ -7779,7 +7779,7 @@ Consider the choice facing the quantum state:
 1.  **Path A (The Bulk):** Transmit the qubit state by swapping it neighbor-to-neighbor through a billion intermediate nodes ($d_{geo}$). Each swap introduces a chance for decoherence and costs thermodynamic action. The probability amplitude for this path is $e^{-\text{huge number}}$.
 2.  **Path B (The Bridge):** Transmit the state across the single stabilizer link ($d_{topo}$). One swap. Done. The probability amplitude is $e^{-\text{small number}}$.
 
-The mathematical derivation (**Amplitude Weight of the Shortest Path** <Ref id="15.2.2.1" label="§15.2.2.1" />) is simply formalizing the obvious: the universe is efficient. It doesn't "know" that the bulk path corresponds to a straight line in our emergent 3D space. It only knows that the bridge path is cheaper. The signal "tunnels" through the bulk not because it violates the speed limit, but because it found a wormhole where the speed limit ($c=1$ hop/tick) gets you there in one tick. To the graph, $A$ and $B$ are not far apart; they are touching. The mystery of Bell non-locality is resolved by realizing that "distance" is an emergent statistical cost function, and entanglement is a subsidy that sets that cost to zero.
+The mathematical derivation (**Path Integral Dominance** <Ref id="15.2.2.1" label="§15.2.2.1" />) is simply formalizing the obvious: the universe is efficient. It doesn't "know" that the bulk path corresponds to a straight line in our emergent 3D space. It only knows that the bridge path is cheaper. The signal "tunnels" through the bulk not because it violates the speed limit, but because it found a wormhole where the speed limit ($c=1$ hop/tick) gets you there in one tick. To the graph, $A$ and $B$ are not far apart; they are touching. The mystery of Bell non-locality is resolved by realizing that "distance" is an emergent statistical cost function, and entanglement is a subsidy that sets that cost to zero.
 
 ### 15.2.2.3 Visual: Bell Shortcut
 
@@ -8053,7 +8053,7 @@ Q.E.D.
 :::note[**Verification of Non-Local Graph Correlation Statistics via CHSH Inequality Testing**]
 :::
 
-Verification of the metric locality violation established by **Formal Synthesis of Bell Violation** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
+Verification of the metric locality violation established by **Violation of Metric Locality (Bell's Theorem)** <Ref id="15.2.5" label="§15.2.5" /> is based on the following protocols:
 
 1.  **State Preparation:** The algorithm initializes the maximally entangled Bell state on a graph topology containing a single stabilizer bridge.
 2.  **Basis Measurement:** The protocol applies rotated local Pauli operators to the boundary vertices to maximize the geometric conflict between measurement bases.
@@ -8494,7 +8494,7 @@ Q.E.D.
 :::note[**Verification of the Complexity-Volume Correspondence via Topological Path Length Tracking**]
 :::
 
-Verification of the geometric expansion of the entanglement bridge established in the **Formal Synthesis of ER=EPR** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
+Verification of the geometric expansion of the entanglement bridge established in the **Transport Cost Reduction (ER=EPR)** <Ref id="15.3.5" label="§15.3.5" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm initializes the system in the Thermofield Double ground state represented by a single bridge edge.
 2.  **Unitary Evolution:** The protocol applies a sequence of unitary gate rewrites to insert new nodes into the topological channel, incrementing the path length.
@@ -9281,7 +9281,7 @@ Q.E.D.
 :::note[**Verification of Holographic Entanglement Scaling via Tree Tensor Network Min-Cut Solvers**]
 :::
 
-Verification of the holographic scaling law established by **Formal Synthesis of Ryu-Takayanagi** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
+Verification of the holographic scaling law established by **Ryu-Takayanagi Correspondence** <Ref id="16.1.5" label="§16.1.5" /> is based on the following protocols:
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
@@ -9750,7 +9750,7 @@ Q.E.D.
 :::note[**Verification of Bekenstein-Hawking Entropy Scaling via Trapped Surface Plaquette Tiling**]
 :::
 
-Verification of the holographic saturation limit established by **Formal Synthesis of the Bekenstein Bound** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
+Verification of the holographic saturation limit established by **Maximum Informational Density (The Bound)** <Ref id="16.2.5" label="§16.2.5" /> is based on the following protocols:
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
@@ -10258,7 +10258,7 @@ Q.E.D.
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -10388,7 +10388,7 @@ This resolves the question of why strings have tension. They have tension becaus
 
 The derivation of the relativistic string from information geometry is achieved by defining the **causal tube** in <Ref id="17.1.1" label="§17.1.1" />. By proving the equivalence of the action to the Nambu-Goto **action** as established in <Ref id="17.1.2" label="§17.1.2" />, any topological defect propagating through the discrete causal graph is shown to necessarily obey the relativistic string equations of motion. This correspondence validates the emergence of string theory as a natural continuum limit of quantum braid dynamics, where the worldsheet is swept out by the causal evolution of the defect.
 
-This mapping reveals that confinement is fundamentally topological, explaining the linear potential between defects without requiring the introduction of complex gauge fields. The **Geodesic Dominance of Flux Chain** <Ref id="17.1.3" label="§17.1.3" /> mechanism, verified proves that separating the ends of a topological defect requires constructing a bridge of twisted edges that functions as a physical flux tube. The tension of this tube arises from the thermodynamic pressure of the vacuum to relax to its ground state, a mechanism audited through the **confinement and Berry phase** lemma in <Ref id="17.1.4" label="§17.1.4" />.
+This mapping reveals that confinement is fundamentally topological, explaining the linear potential between defects without requiring the introduction of complex gauge fields. The **Geodesic Dominance of the Flux Chain** <Ref id="17.1.3" label="§17.1.3" /> mechanism, verified proves that separating the ends of a topological defect requires constructing a bridge of twisted edges that functions as a physical flux tube. The tension of this tube arises from the thermodynamic pressure of the vacuum to relax to its ground state, a mechanism audited through the **confinement and Berry phase** lemma in <Ref id="17.1.4" label="§17.1.4" />.
 
 This stable topological defect provides the worldsheet structure. We now possess the string representation of matter. In the next section, we turn to the vibrational spectrum and duality relations of this emergent string, demonstrating how T-duality arises from the discrete symmetries of the causal graph lattice.
 
@@ -10672,7 +10672,7 @@ Q.E.D.
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -11085,7 +11085,7 @@ Q.E.D.
 :::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]
 :::
 
-Verification of the dimensional consistency established by **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
+Verification of the dimensional consistency established by **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
 
 1.  **Transverse Mode Evaluation:** The algorithm evaluates the transverse degrees of freedom of the right-moving defect and left-moving background lattice.
 2.  **Criticality Validation:** The protocol verifies that the total dimensions satisfy the Bosonic and Supersymmetric anomaly cancellation bounds.
@@ -11480,7 +11480,7 @@ Q.E.D.
 :::note[**Verification of Force-Matter Decomposition via Exceptional Algebra Root Space Analysis**]
 :::
 
-Verification of the Standard Model embedding established by **Decomposition of E8 to SU(3)xSU(2)xU(1)** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
+Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
 
 1.  **Algebraic Root Analysis:** The algorithm generates the root vectors of the exceptional Lie algebra and divides them into integer-type force and half-integer matter sectors.
 2.  **Subgroup Root Identification:** The protocol scans the root space to identify closed subgroups satisfying the commutation relations of color and weak interactions.
@@ -11773,7 +11773,7 @@ Q.E.D.
 :::note[**Verification of Heterotic Braid Isomorphism via exceptional root Lattice Mapping**]
 :::
 
-Verification of the non-perturbative loop limit established by **Formal Synthesis of Heterotic Braid Theory** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
+Verification of the non-perturbative loop limit established by **Emergence of the E8 Lattice** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
 
 1.  **Chiral Mode Evaluation:** The algorithm evaluates the total left-moving and right-moving dimensions to verify anomaly cancellation and sector decoupling.
 2.  **Modular Unimodularity Search:** The protocol performs a basis search to verify that the generated charge lattice is integral, even, and self-dual.
@@ -11941,7 +11941,7 @@ The computational results confirm the structural isomorphism between the Causal 
 
 The realization of **Chiral Fusion** <Ref id="17.4.1" label="§17.4.1" /> reframes the ontological status of String Theory within the Quantum Braid Dynamics framework. The string is revealed not as a fundamental physical object, but as an emergent excitation of the underlying causal graph. Just as phonons behave as physical particles within an atomic crystal lattice, strings appear as topological defects that sweep out worldsheets as they propagate through the discrete network. Under the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" /> theorem, string theory is shown to be the effective acoustics of this self-dual relational substrate.
 
-This relational perspective explains the modular invariance and consistency of the theory. The **Unimodularity and Self-Duality** <Ref id="17.4.3" label="§17.4.3" /> basis guarantees that the charges of the graph yield a probability-conserving quantum field theory, while the **Anomaly Cancellation on Octonionic Graph** <Ref id="17.4.5" label="§17.4.5" /> protects the system against topological singularities. Furthermore, standard forces are derived as the internal geometry of the graph, where macroscopic gravity corresponds to spatial curvature and gauge forces correspond to the internal lattice phases mapped in the **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />.
+This relational perspective explains the modular invariance and consistency of the theory. The **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" /> basis guarantees that the charges of the graph yield a probability-conserving quantum field theory, while the **Anomaly Cancellation** <Ref id="17.4.5" label="§17.4.5" /> protects the system against topological singularities. Furthermore, standard forces are derived as the internal geometry of the graph, where macroscopic gravity corresponds to spatial curvature and gauge forces correspond to the internal lattice phases mapped in the **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />.
 
 This unification eliminates the arbitrariness of the string landscape by introducing computational efficiency as a selection principle. We have shown that the physical vacuum selects the simplest knot structure that supports complexity, resolving the landscape degeneracies. In the next section, we will assemble the formal synthesis of Chapter 17, tracing how these discrete worldsheet dynamics converge to establish the macroscopic particle and gravitational spectrum.
 
@@ -11952,7 +11952,7 @@ This unification eliminates the arbitrariness of the string landscape by introdu
 :::note[**End of Chapter 17**]
 :::
 
-The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Equivalence to Nambu-Goto Action** <Ref id="17.1.2" label="§17.1.2" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split on Octonionic Graph** <Ref id="17.3.1" label="§17.3.1" /> alongside the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" />.
+The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id="17.1.2" label="§17.1.2" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.1" label="§17.3.1" /> alongside the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" />.
 
 This implies that the standard string action and the unified gauge symmetries of the Standard Model are emergent properties of discrete, relational braid updates. Yet, this model introduces a profound theoretical friction: while the gap to continuum string theory is successfully bridged, the Planck length remains an absolute, impenetrable resolution limit under **Spectral Invariance (T-Duality)** <Ref id="17.2.2" label="§17.2.2" />. The resulting vacuum is topologically finite, leaving the continuous, infinite limit as a convenient mathematical fiction rather than a physical reality.
 

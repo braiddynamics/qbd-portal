@@ -292,7 +292,7 @@ Q.E.D.
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -422,7 +422,7 @@ This resolves the question of why strings have tension. They have tension becaus
 
 The derivation of the relativistic string from information geometry is achieved by defining the **causal tube** in <Ref id="17.1.1" label="§17.1.1" />. By proving the equivalence of the action to the Nambu-Goto **action** as established in <Ref id="17.1.2" label="§17.1.2" />, any topological defect propagating through the discrete causal graph is shown to necessarily obey the relativistic string equations of motion. This correspondence validates the emergence of string theory as a natural continuum limit of quantum braid dynamics, where the worldsheet is swept out by the causal evolution of the defect.
 
-This mapping reveals that confinement is fundamentally topological, explaining the linear potential between defects without requiring the introduction of complex gauge fields. The **Geodesic Dominance of Flux Chain** <Ref id="17.1.3" label="§17.1.3" /> mechanism, verified proves that separating the ends of a topological defect requires constructing a bridge of twisted edges that functions as a physical flux tube. The tension of this tube arises from the thermodynamic pressure of the vacuum to relax to its ground state, a mechanism audited through the **confinement and Berry phase** lemma in <Ref id="17.1.4" label="§17.1.4" />.
+This mapping reveals that confinement is fundamentally topological, explaining the linear potential between defects without requiring the introduction of complex gauge fields. The **Geodesic Dominance of the Flux Chain** <Ref id="17.1.3" label="§17.1.3" /> mechanism, verified proves that separating the ends of a topological defect requires constructing a bridge of twisted edges that functions as a physical flux tube. The tension of this tube arises from the thermodynamic pressure of the vacuum to relax to its ground state, a mechanism audited through the **confinement and Berry phase** lemma in <Ref id="17.1.4" label="§17.1.4" />.
 
 This stable topological defect provides the worldsheet structure. We now possess the string representation of matter. In the next section, we turn to the vibrational spectrum and duality relations of this emergent string, demonstrating how T-duality arises from the discrete symmetries of the causal graph lattice.
 
@@ -706,7 +706,7 @@ Q.E.D.
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -1119,7 +1119,7 @@ Q.E.D.
 :::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]
 :::
 
-Verification of the dimensional consistency established by **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
+Verification of the dimensional consistency established by **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
 
 1.  **Transverse Mode Evaluation:** The algorithm evaluates the transverse degrees of freedom of the right-moving defect and left-moving background lattice.
 2.  **Criticality Validation:** The protocol verifies that the total dimensions satisfy the Bosonic and Supersymmetric anomaly cancellation bounds.
@@ -1514,7 +1514,7 @@ Q.E.D.
 :::note[**Verification of Force-Matter Decomposition via Exceptional Algebra Root Space Analysis**]
 :::
 
-Verification of the Standard Model embedding established by **Decomposition of E8 to SU(3)xSU(2)xU(1)** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
+Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
 
 1.  **Algebraic Root Analysis:** The algorithm generates the root vectors of the exceptional Lie algebra and divides them into integer-type force and half-integer matter sectors.
 2.  **Subgroup Root Identification:** The protocol scans the root space to identify closed subgroups satisfying the commutation relations of color and weak interactions.
@@ -1807,7 +1807,7 @@ Q.E.D.
 :::note[**Verification of Heterotic Braid Isomorphism via exceptional root Lattice Mapping**]
 :::
 
-Verification of the non-perturbative loop limit established by **Formal Synthesis of Heterotic Braid Theory** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
+Verification of the non-perturbative loop limit established by **Emergence of the E8 Lattice** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
 
 1.  **Chiral Mode Evaluation:** The algorithm evaluates the total left-moving and right-moving dimensions to verify anomaly cancellation and sector decoupling.
 2.  **Modular Unimodularity Search:** The protocol performs a basis search to verify that the generated charge lattice is integral, even, and self-dual.
@@ -1975,7 +1975,7 @@ The computational results confirm the structural isomorphism between the Causal 
 
 The realization of **Chiral Fusion** <Ref id="17.4.1" label="§17.4.1" /> reframes the ontological status of String Theory within the Quantum Braid Dynamics framework. The string is revealed not as a fundamental physical object, but as an emergent excitation of the underlying causal graph. Just as phonons behave as physical particles within an atomic crystal lattice, strings appear as topological defects that sweep out worldsheets as they propagate through the discrete network. Under the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" /> theorem, string theory is shown to be the effective acoustics of this self-dual relational substrate.
 
-This relational perspective explains the modular invariance and consistency of the theory. The **Unimodularity and Self-Duality** <Ref id="17.4.3" label="§17.4.3" /> basis guarantees that the charges of the graph yield a probability-conserving quantum field theory, while the **Anomaly Cancellation on Octonionic Graph** <Ref id="17.4.5" label="§17.4.5" /> protects the system against topological singularities. Furthermore, standard forces are derived as the internal geometry of the graph, where macroscopic gravity corresponds to spatial curvature and gauge forces correspond to the internal lattice phases mapped in the **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />.
+This relational perspective explains the modular invariance and consistency of the theory. The **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" /> basis guarantees that the charges of the graph yield a probability-conserving quantum field theory, while the **Anomaly Cancellation** <Ref id="17.4.5" label="§17.4.5" /> protects the system against topological singularities. Furthermore, standard forces are derived as the internal geometry of the graph, where macroscopic gravity corresponds to spatial curvature and gauge forces correspond to the internal lattice phases mapped in the **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />.
 
 This unification eliminates the arbitrariness of the string landscape by introducing computational efficiency as a selection principle. We have shown that the physical vacuum selects the simplest knot structure that supports complexity, resolving the landscape degeneracies. In the next section, we will assemble the formal synthesis of Chapter 17, tracing how these discrete worldsheet dynamics converge to establish the macroscopic particle and gravitational spectrum.
 
@@ -1986,7 +1986,7 @@ This unification eliminates the arbitrariness of the string landscape by introdu
 :::note[**End of Chapter 17**]
 :::
 
-The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Equivalence to Nambu-Goto Action** <Ref id="17.1.2" label="§17.1.2" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split on Octonionic Graph** <Ref id="17.3.1" label="§17.3.1" /> alongside the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" />.
+The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id="17.1.2" label="§17.1.2" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.1" label="§17.3.1" /> alongside the **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" />.
 
 This implies that the standard string action and the unified gauge symmetries of the Standard Model are emergent properties of discrete, relational braid updates. Yet, this model introduces a profound theoretical friction: while the gap to continuum string theory is successfully bridged, the Planck length remains an absolute, impenetrable resolution limit under **Spectral Invariance (T-Duality)** <Ref id="17.2.2" label="§17.2.2" />. The resulting vacuum is topologically finite, leaving the continuous, infinite limit as a convenient mathematical fiction rather than a physical reality.
 

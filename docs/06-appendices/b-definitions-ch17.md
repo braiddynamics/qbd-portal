@@ -225,7 +225,7 @@ Section 17.1.5 formalizes the properties of the QBD proof regarding action equiv
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Flux Tube Energy Scaling** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -543,7 +543,7 @@ Section 17.2.5 formalizes the properties of the QBD proof regarding spectral inv
 :::note[**Verification of T-Duality Spectral Invariance via Reciprocal Geometry Comparison**]
 :::
 
-Verification of the spectral invariance hypothesis established by **Formal Synthesis of Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
+Verification of the spectral invariance hypothesis established by **Spectral Invariance (T-Duality)** <Ref id="17.2.5" label="§17.2.5" /> is based on the following protocols:
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
@@ -897,7 +897,7 @@ Section 17.3.5 formalizes the properties of the QBD proof regarding chiral split
 :::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]
 :::
 
-Verification of the dimensional consistency established by **Formal Synthesis of the Critical Dimension** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
+Verification of the dimensional consistency established by **Chiral Split (Bosonic Left / Super Right)** <Ref id="17.3.5" label="§17.3.5" /> is based on the following protocols:
 
 1.  **Transverse Mode Evaluation:** The algorithm evaluates the transverse degrees of freedom of the right-moving defect and left-moving background lattice.
 2.  **Criticality Validation:** The protocol verifies that the total dimensions satisfy the Bosonic and Supersymmetric anomaly cancellation bounds.
@@ -1201,7 +1201,7 @@ Section 17.4.4.1 formalizes the properties of the QBD proof regarding standard m
 :::note[**Verification of Force-Matter Decomposition via Exceptional Algebra Root Space Analysis**]
 :::
 
-Verification of the Standard Model embedding established by **Decomposition of E8 to SU(3)xSU(2)xU(1)** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
+Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
 
 1.  **Algebraic Root Analysis:** The algorithm generates the root vectors of the exceptional Lie algebra and divides them into integer-type force and half-integer matter sectors.
 2.  **Subgroup Root Identification:** The protocol scans the root space to identify closed subgroups satisfying the commutation relations of color and weak interactions.
@@ -1478,7 +1478,7 @@ Section 17.4.7 formalizes the properties of the QBD proof regarding emergence of
 :::note[**Verification of Heterotic Braid Isomorphism via exceptional root Lattice Mapping**]
 :::
 
-Verification of the non-perturbative loop limit established by **Formal Synthesis of Heterotic Braid Theory** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
+Verification of the non-perturbative loop limit established by **Emergence of the E8 Lattice** <Ref id="17.4.7" label="§17.4.7" /> is based on the following protocols:
 
 1.  **Chiral Mode Evaluation:** The algorithm evaluates the total left-moving and right-moving dimensions to verify anomaly cancellation and sector decoupling.
 2.  **Modular Unimodularity Search:** The protocol performs a basis search to verify that the generated charge lattice is integral, even, and self-dual.

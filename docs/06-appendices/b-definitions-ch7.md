@@ -190,7 +190,7 @@ $$
 **IV. Operator Mapping**
 
 The local rewrite sequence $\mathcal{S}$ implements a unitary operator $\hat{U}_{exch}$.
-Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Eigenvalue Inversion** <Ref id="7.1.3.1" label="§7.1.3.1" />.
+Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Unitary Twist Anticommutation** <Ref id="7.1.3.1" label="§7.1.3.1" />.
 
 $$
 \hat{U}_{exch} \cong \hat{\mathcal{T}}
@@ -926,7 +926,7 @@ Condition: $\sum_{f} Q_f = 0$ (including color multiplicity).
 
 **II. Charge Spectrum Input**
 
-From the **Singlet Charge Values** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Triplet Charge Values** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
+From the **Lepton Charge Solutions** <Ref id="7.3.5.1" label="§7.3.5.1" /> and the **Quark Charge Solutions** <Ref id="7.3.6.1" label="§7.3.6.1" />, the QBD charge spectrum for the first generation is:
 * **Neutrino ($\nu_L$):** $Q=0$ (Singlet, Multiplicity 1)
 * **Electron ($e_L$):** $Q=-1$ (Singlet, Multiplicity 1)
 * **Up Quark ($u_L$):** $Q=+2/3$ (Triplet, Multiplicity 3)
@@ -1178,7 +1178,7 @@ $$
 
 **III. Linear Term (Crossings)**
 
-By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
+By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
 For the minimal basis ($k_c=1$):
 
 $$
@@ -1189,7 +1189,7 @@ This establishes the linear dependence of mass on the topological crossing numbe
 
 **IV. Quadratic Term (Torsion)**
 
-By the **Scaling** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+By the **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
 
 $$
 N_{torsion} \propto \int L dw \propto w^2
@@ -1231,7 +1231,7 @@ Section 7.4.5 formalizes the properties of the QBD lemma regarding integer geome
 
 **I. Isolated Cost Analysis**
 
-Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Proof of Scaling** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
+Let the two ribbon graphs be denoted $G_A = (V_A, E_A)$ and $G_B = (V_B, E_B)$. In the isolated case where the ribbons are disjoint and do not share any vertex resources ($V_A \cap V_B = \emptyset$), the crossing bridges $B_A, B_B \subset G$ required to execute the twists are disjoint subgraphs. By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, each crossing bridge requires a minimum of one directed 3-cycle, yielding:
 
 $$
 \mathrm{Cost}_{\text{isolated}} = N_3(A) + N_3(B) = |\{C_3 \subset G_A\}| + |\{C_3 \subset G_B\}| = 1 + 1 = 2
@@ -1371,7 +1371,7 @@ Section 7.4.6 formalizes the properties of the QBD proof regarding topological m
 :::note[**Computational Verification of the Full Standard Model Mass Spectrum via Integer Topological Harmonics**]
 :::
 
-Quantification of the mass spectrum predicted by the **Discrete Mass Spectrum** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
+Quantification of the mass spectrum predicted by the **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 

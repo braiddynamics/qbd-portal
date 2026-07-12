@@ -261,7 +261,38 @@ Section 20.3.2.1 formalizes the properties of the QBD proof regarding void relax
 
 ---
 
-### 20.3.3 Proof: Anisotropic Collapse {#20.3.3}
+### 20.3.3 Lemma: Axis Collapse Hierarchy {#20.3.3}
+
+:::info[**Hierarchical Sequencing of Ellipsoidal Collapse Driven by Deformation Eigenvalue Ordering**]
+:::
+
+**In Plain English:**  
+Section 20.3.3 formalizes the properties of the QBD lemma regarding axis collapse hierarchy.
+
+---
+
+### 20.3.3.1 Proof: Axis Collapse Hierarchy {#20.3.3.1}
+
+:::tip[**Verification of Sequential Collapse Timescales via Eigenvalue Evolution Analysis**]
+:::
+
+**I. Eigenvalue Ordering**
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.
+
+**II. Critical Timescales**
+It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.
+
+**III. Caustic Dimensionality**
+It demonstrates that the density diverges at $t_1$, $t_2$, and $t_3$, corresponding to the transition from 3D to 2D (sheet), 1D (filament), and 0D (node) topologies.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 20.3.3.1 formalizes the properties of the QBD proof regarding axis collapse hierarchy.
+
+---
+
+### 20.3.4 Proof: Anisotropic Collapse {#20.3.4}
 
 :::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
 :::
@@ -273,11 +304,11 @@ The proof calculates the eigenvalues of the gravitational deformation tensor in 
 The matter flows out of the underdense regions according to the attractor dynamics established in **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" />.
 
 **III. Hierarchical Singularity**
-It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
+It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, according to the sequential timescales derived in **Axis Collapse Hierarchy** <Ref id="20.3.3" label="§20.3.3" />, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 20.3.3 formalizes the properties of the QBD proof regarding anisotropic collapse.
+Section 20.3.4 formalizes the properties of the QBD proof regarding anisotropic collapse.
 
 ---

@@ -3447,7 +3447,7 @@ The proof proceeds by construction, establishing **Right-Handed Neutrino Product
 :::info[**Kinetics of Three-Ribbon Braid Defect Nucleation during Attractor Deceleration**]
 :::
 
-Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ (<Ref id="5.2.2" label="§5.2.2" />) during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
+Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ under the **Master Equation** <Ref id="5.2" label="§5.2" /> during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
 $$ R_N(t) = \Gamma_{RH} \left( \rho(t) - \rho^* \right)^2 $$
 where the transition rate $\Gamma_{RH}$ is well-defined by the comonad annotation map.
 
@@ -3522,7 +3522,7 @@ Q.E.D.
 :::info[**Origin of the Primordial Particle Spectrum**]
 :::
 
-The **Braid Combinatorial Dominance** explains why the early universe is not filled with complex topological tangles or exotic high-mass defects. The high energy cost of complex configurations acts as a statistical filter, ensuring that only the simplest stable braid defect—the right-handed Majorana neutrino—nucleates in abundance, establishing it as the primary component of the primordial plasma.
+The **Braid Combinatorial Dominance** explains why the early universe is not filled with complex topological tangles or exotic high-mass defects. The high energy cost of complex configurations acts as a statistical filter, ensuring that only the simplest stable braid defect, the right-handed Majorana neutrino, nucleates in abundance, establishing it as the primary component of the primordial plasma.
 
 ---
 
@@ -4310,7 +4310,11 @@ Given the conditions of **Primordial Anisotropy**, **Zel'dovich Collapse**, and 
 │   ├── 20.3.2.1 Proof: Void Relaxation
 │   └── 20.3.2.2 Commentary: Physical Significance
 │
-└── 20.3.3 Proof: Anisotropic Collapse
+├── 20.3.3 Lemma: Axis Collapse Hierarchy
+│   ├── 20.3.3.1 Proof: Axis Collapse Hierarchy
+│   └── 20.3.3.2 Commentary: Physical Significance
+│
+└── 20.3.4 Proof: Anisotropic Collapse
 ```
 
 ### 20.3.2 Lemma: Void Relaxation {#20.3.2}
@@ -4348,7 +4352,39 @@ Q.E.D.
 
 This commentary discusses the physical and mathematical significance of the results established in **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" />. It highlights how these bounds govern the global properties of the causal geometry.
 
-### 20.3.3 Proof: Anisotropic Collapse {#20.3.3}
+### 20.3.3 Lemma: Axis Collapse Hierarchy {#20.3.3}
+
+:::info[**Hierarchical Sequencing of Ellipsoidal Collapse Driven by Deformation Eigenvalue Ordering**]
+:::
+
+---*   **Deformation Tensor:** The gravitational deformation tensor $D_{ij}$ governs the local displacement of graph vertices relative to the background flow, with eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ corresponding to the principal deformation axes.
+*   **Sequential Collapse:** Because the collapse time along each axis scales inversely with its eigenvalue ($t_i \propto 1/\lambda_i$), collapse occurs sequentially: first along the axis of maximum eigenvalue $\lambda_1$ (forming a sheet), then $\lambda_2$ (forming a filament), and finally $\lambda_3$ (forming a node).
+*   **Hierarchy Emergence:** This eigenvalue ordering guarantees that 3D isotropic collapse is statistical measure zero, forcing the emergent matter structures to transition through a stable, nested hierarchy of lower-dimensional caustics.
+
+### 20.3.3.1 Proof: Axis Collapse Hierarchy {#20.3.3.1}
+
+:::tip[**Verification of Sequential Collapse Timescales via Eigenvalue Evolution Analysis**]
+:::
+
+**I. Eigenvalue Ordering**
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.
+
+**II. Critical Timescales**
+It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.
+
+**III. Caustic Dimensionality**
+It demonstrates that the density diverges at $t_1$, $t_2$, and $t_3$, corresponding to the transition from 3D to 2D (sheet), 1D (filament), and 0D (node) topologies.
+
+Q.E.D.
+
+### 20.3.3.2 Commentary: Physical Significance {#20.3.3.2}
+
+:::info[**Geometric Origin of Filamentary Networks**]
+:::
+
+This commentary discusses the physical and mathematical significance of the results established in **Axis Collapse Hierarchy** <Ref id="20.3.3" label="§20.3.3" />. It explains how the sequential collapse of cosmic structures prevents homogeneous collapse, seeding the web-like distribution of galaxies.
+
+### 20.3.4 Proof: Anisotropic Collapse {#20.3.4}
 
 :::tip[**Verification of Filamentary Network Convergence through Numerical Simulation of Anisotropic Collapse**]
 :::
@@ -4360,7 +4396,7 @@ The proof calculates the eigenvalues of the gravitational deformation tensor in 
 The matter flows out of the underdense regions according to the attractor dynamics established in **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" />.
 
 **III. Hierarchical Singularity**
-It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
+It demonstrates that the shortest axis collapses first to form a caustic (sheet) at a critical time $t_c$, according to the sequential timescales derived in **Axis Collapse Hierarchy** <Ref id="20.3.3" label="§20.3.3" />, proving mathematically that anisotropic collapse is a universal geometric catastrophe of emergent gravity.
 
 Q.E.D.
 

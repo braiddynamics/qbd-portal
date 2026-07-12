@@ -1127,7 +1127,7 @@ Q.E.D.
 :::note[**Exact Solution of the Geometrogenesis Equation**]
 :::
 
-Computational verification of the equilibrium properties established in **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the equilibrium properties established in **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines the precise physical constants derived in Chapter 4, matching **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> properties: Vacuum Permittivity $\Lambda_{vac} = 0.0156$, Friction $\mu \approx 0.3989$, and Catalysis $\lambda_{cat} \approx 1.7183$.
 2.  **Root Finding:** The protocol uses Brent's search algorithm to numerically solve the differential equation $d\rho/dt = 0$ for the equilibrium density $\rho^*$.
@@ -1233,7 +1233,7 @@ The solver identifies a stable fixed point at $\rho^* \approx 0.037$. At this de
 :::note[**Master Equation**]
 :::
 
-The derivation of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure under **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" /> and the spontaneous background from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, the model reveals a dynamical system that naturally seeks a stable, non-zero connectivity density. The universe is observed to be biased towards complexity, but bounded by self-regulation.
+The derivation of the **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> transforms the microscopic rules of the Universal Constructor into a macroscopic law of cosmic evolution. By aggregating the combinatorics of $2$-path closure under **Geometric Autocatalysis ($J_{\text{auto}}$)** <Ref id="5.2.4" label="§5.2.4" /> and the spontaneous background from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, the model reveals a dynamical system that naturally seeks a stable, non-zero connectivity density. The universe is observed to be biased towards complexity, but bounded by self-regulation.
 
 This result proves that the vacuum is not a static void but a dynamic equilibrium, a "relational plasma" maintained by the constant flux of creation and destruction. The equation predicts a specific history: an initial "lag phase" of slow nucleation, followed by an "inflationary" burst of autocatalytic growth, ending in a "saturation" phase where the friction of steric hindrance brakes the expansion. The stability of the fixed point $\rho^*$ ensures that this process does not result in a singularity or a collapse, but rather a persistent, structured state.
 
@@ -1318,7 +1318,7 @@ algorithm, two key physical modeling choices are made:
     of $2$. This represents a non-zero self-interaction coupling (self-energy) of the 
     cycle with itself, regulating its lifetime in the sparse vacuum.
 
-The analytical formulation in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> represents a simplified bulk mean-field approximation. By contrast, the discrete simulation of **Computational Verification (The Simulation)** <Ref id="5.3" label="§5.3" /> retains these self-interaction and boundary-relaxation terms to ensure structural stability on the Bethe tree substrate.
+The analytical formulation in the **Master Equation** <Ref id="5.2" label="§5.2" /> represents a simplified bulk mean-field approximation. By contrast, the discrete simulation of **Computational Verification (The Simulation)** <Ref id="5.3" label="§5.3" /> retains these self-interaction and boundary-relaxation terms to ensure structural stability on the Bethe tree substrate.
 
 ---
 
@@ -1327,7 +1327,7 @@ The analytical formulation in the **Master Equation** <Ref id="5.2.7" label="§5
 :::note[**Algorithmic Sweep of Phase Space via Parallel Execution**]
 :::
 
-Computational verification of the phase space trajectories established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the phase space trajectories established by the **Master Equation** <Ref id="5.2" label="§5.2" /> is based on the following protocols:
 
 1.  **Worker Orchestration:** The algorithm coordinates the spatial trajectory of parallel workers traversing the network substrate. This maps to the localized propagation of events in the physical vacuum.
 2.  **Awareness Computation:** The protocol evaluates local syndromes and causal histories to determine update eligibility at active sites, implementing the comonadic checks of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />.
@@ -1478,7 +1478,7 @@ Deviations beyond the channel yield pathologies that reinforce the underpinnings
 :::note[**Computational Verification**]
 :::
 
-The parameter sweep validates the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations, validating the comonadic tracking of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of theoretical predictions, confirming that the constants derived from first principles lead to a physically plausible universe.
+The parameter sweep validates the **Master Equation** <Ref id="5.2" label="§5.2" /> by confirming that the discrete, causal dynamics do not dissolve into chaos or freeze into stasis, provided the kinetic coefficients align with the entropic derivations, validating the comonadic tracking of the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />. The emergence of a stable density $\rho^* \approx 0.03$ confirms that the vacuum possesses a finite, non-zero capacity for information storage. This numerical proof acts as the experimental verification of theoretical predictions, confirming that the constants derived from first principles lead to a physically plausible universe.
 
 This stable density is the **Cosmological Constant** of the graph. It represents the baseline energy density of the vacuum. With the existence and stability of this state confirmed by $13,200$ independent trajectories, a firm prediction for the ground state of the universe is established. The robustness of this result against stochastic noise demonstrates that the vacuum is a resilient attractor.
 
@@ -1574,7 +1574,7 @@ Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exis
 
 **I. Setup and Function Definition**
 
-Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2.7" label="§5.2.7" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
+Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2" label="§5.2" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
 
 $$
 F(\rho) = C(\rho) - D(\rho)
@@ -1645,7 +1645,7 @@ Let $\lambda_{\text{cat}}$ denote the catalysis coefficient governing the non-li
 
 **I. Setup and Flux Potentials**
 
-Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by **Master Equation** <Ref id="5.2.7" label="§5.2.7" />:
+Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, defined respectively by the quadratic approximations from the non-linear flux terms established by the **Master Equation** <Ref id="5.2" label="§5.2" />:
 
 $$
 J_{\text{in}} \approx 9\rho^2
@@ -1989,7 +1989,7 @@ Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the me
 
 **I. The Rate Equations**
 
-The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2.7" label="§5.2.7" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
+The equilibrium degree distribution emerges from the balance of edge creation and deletion fluxes defined in the **Master Equation** <Ref id="5.2" label="§5.2" />. The cycle density $\rho$ is directly proportional to the average degree $\langle k \rangle$.
 
 1.  **Creation Flux ($J_{in}$):**
     The creation potential is driven by the vacuum permittivity and autocatalytic 2-path interactions ($9\rho^2$). This growth is modulated by the friction factor derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
@@ -2708,7 +2708,7 @@ The master equation ensures the vacuum fluctuates around a stable density, but f
 | $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
 | $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/rules/equilibrium/5.2/#5.2.5) |
 | $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2.7](/monograph/rules/equilibrium/5.2/#5.2.7) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2](/monograph/rules/equilibrium/5.2/#5.2) |
 | $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
 | $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
 | $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |

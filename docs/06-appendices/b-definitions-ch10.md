@@ -612,7 +612,7 @@ Section 10.2.9 formalizes the properties of the QBD proof regarding braid code c
 :::note[**Computational Verification of Stabilizer Commutation Relations**]
 :::
 
-Verification of the abelian structure of the stabilizer group established in the **Synthesis of Code Properties** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
+Verification of the abelian structure of the stabilizer group established in the **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" /> is based on the following protocols:
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
@@ -845,7 +845,7 @@ Section 10.3.5.1 formalizes the properties of the QBD proof regarding thermodyna
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Weight Analysis** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.

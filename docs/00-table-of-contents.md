@@ -11,8 +11,11 @@ sidebar_position: 0
 ## 📚 Assembled Table of Contents
 
 * [**Monograph Abstract**](/monograph/abstract)
-* [**Interactive Summary**](/monograph/summary)
 * [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
+  * [c. -600–1500](/monograph/intro/intro-a)
+  * [c. 1500–1900](/monograph/intro/intro-b)
+  * [c. 1900–1950](/monograph/intro/intro-c)
+  * [c. 1950–2025](/monograph/intro/intro-d)
 
 ### 1. The Foundational Principles (The Rules)
 * [Chapter 1: Substrate (Ontology)](/monograph/category/1-ontology)
