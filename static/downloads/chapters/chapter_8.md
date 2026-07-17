@@ -88,7 +88,7 @@ The proof explicitly constructs the isomorphism $\Phi: B_n \to \langle \mathcal{
 **I. Surjectivity Verification**
 The mapping covers the full algebraic structure of $B_n$ through inductive construction.
 1.  **Generator Realization:** The homomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ is defined on the generators $\sigma_i$ by setting $\Phi(\sigma_i) = \mathcal{R}_i$. Every braid word $w = \sigma_{i_1}^{\epsilon_1} \dots \sigma_{i_k}^{\epsilon_k}$ is mapped to the composition of graph rewrites $\Phi(w) = \mathcal{R}_{i_1}^{\epsilon_1} \circ \dots \circ \mathcal{R}_{i_k}^{\epsilon_k}$ in the category of annotated causal graphs $\mathbf{AnnCG}$. The **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> implements each generator as a local swap of adjacent ribbons via rung flips, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
-2.  **Inductive Extension:** The construction extends inductively on the word length $k$. Assuming all words of length $k$ map surjectively, a word of length $k+1$ is represented by $w_{k+1} = w_k \cdot \sigma_j$, which maps to $\Phi(w_k) \circ \mathcal{R}_j$, preserving the **Crossing Complexity** <Ref id="6.3.1" label="§6.3.1" /> (denoted $C[\beta]$).
+2.  **Inductive Extension:** The construction extends inductively on the word length $k$. Assuming all words of length $k$ map surjectively, a word of length $k+1$ is represented by $w_{k+1} = w_k \cdot \sigma_j$, which maps to $\Phi(w_k) \circ \mathcal{R}_j$, preserving the **Crossing Complexity** (denoted $C[\beta]$).
 3.  **Relation Preservation:** The mapping respects the defining relations of $B_n$. For $|i-j| \geq 2$, the disjoint support of the local subgraphs ensures $\Phi(\sigma_i \sigma_j) = \mathcal{R}_i \circ \mathcal{R}_j = \mathcal{R}_j \circ \mathcal{R}_i = \Phi(\sigma_j \sigma_i)$. For adjacent crossings, the isotopic equivalence of the paths ensures $\Phi(\sigma_i \sigma_{i+1} \sigma_i) = \mathcal{R}_i \circ \mathcal{R}_{i+1} \circ \mathcal{R}_i = \mathcal{R}_{i+1} \circ \mathcal{R}_i \circ \mathcal{R}_{i+1} = \Phi(\sigma_{i+1} \sigma_i \sigma_{i+1})$, satisfying the **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />.
 
 **II. Injectivity Verification**
@@ -100,7 +100,7 @@ The kernel of the mapping is trivial, $\operatorname{Ker}(\Phi) = \{e\}$, proved
 The mapping preserves group multiplication: $\Phi(w_a \cdot w_b) = \Phi(w_a) \circ \Phi(w_b)$.
 1.  **Categorical Composition:** The composition is associative via the category $\mathbf{Caus}_t$ **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />, where path morphisms concatenate end-to-end. The functor maps the **Effective Influence** relation $\le$ to braid isotopy, ensuring the algebraic product mirrors topological concatenation. $\phi(\mathcal{R}_i \mathcal{R}_j) = \sigma_i \sigma_j$ holds directly.
 2.  **Syndrome Additivity:** The functoriality is preserved because the syndrome map $\sigma_G$ commutes with the composition: $\sigma_G(\mathcal{R}_i \circ \mathcal{R}_j) = \sigma_G(\mathcal{R}_i) + \sigma_G(\mathcal{R}_j)$ in the additive group of annotations.
-3.  **Catalytic Resolution:** Local checks in the pre-validation Universal Constructor accumulate independently for disjoint supports. For overlapping supports, causal conflicts are resolved coherently via the **Catalytic Tension Factor** $\chi(\vec{\sigma}_e)$ **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />, maintaining the homomorphism under the annotated category structure.
+3.  **Catalytic Resolution:** Local checks in the pre-validation Universal Constructor accumulate independently for disjoint supports. For overlapping supports, causal conflicts are resolved coherently via the **Catalytic Tension Factor** $\chi(\vec{\sigma}_e)$, maintaining the homomorphism under the annotated category structure.
 
 **Conclusion:**
 Having proven that the elementary physical rewrite processes satisfy both defining relations of the braid group $B_n$, the algebra of the physical dynamics is isomorphic to the algebra of $B_n$. This result foundations the constructive proof of $\mathfrak{su}(n)$, extending to the full representation theory via the quantum double construction on the code space $\mathcal{C}$.
@@ -281,7 +281,7 @@ Q.E.D.
 :::note[**Generator Principle**]
 :::
 
-The generator principle establishes that the continuous Lie algebras of gauge theory are the inevitable algebraic closure of discrete topological rewrites. By mapping the unitary operations of the causal graph to Hermitian generators via the exponential map, it is proven that the non-Abelian symmetries of the Standard Model arise directly from the finite connectivity of the braid. The recursive generation of commutators saturates at a specific depth determined by the number of ribbons, forcing the emergent algebra to be compact and finite-dimensional ($n^2-1$) rather than infinite, matching the special unitary groups observed in nature.
+The generator principle establishes that the continuous Lie algebras of gauge theory are the inevitable algebraic closure of discrete topological rewrites. By mapping the unitary operations of the causal graph to Hermitian generators via the exponential map, it is proven that the non-Abelian symmetries of the Standard Model arise directly from the finite connectivity of the braid. The recursive generation of commutators saturates at a specific depth determined by the number of ribbons, forcing the emergent algebra to be compact and finite-dimensional ($n^2-1$) rather than infinite, matching the special unitary groups observed in nature. This is grounded in the **Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />. The structural consequences are further developed in the **Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" /> and **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />.
 
 This result reverses the traditional ontological priority of physics, asserting that symmetry is an output of dynamics rather than an input of design. Gauge invariance is revealed to be a macroscopic approximation of the graph's microscopic combinatorics, where the abstract "rotation" of a state vector corresponds to the concrete shuffling of braid strands. The mystery of why specific groups govern the universe is resolved by the finite topology of the underlying ribbon graph, which can only support a specific, bounded set of distinct transformations.
 
@@ -459,7 +459,7 @@ Suppose a recursive application of the Lie bracket operation $[\cdot, \cdot]$ to
 :::
 
 **I. Fundamental Representation**
-Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$:
+Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$:  **Commutator Generation** <Ref id="8.2.4" label="§8.2.4" /> and  **Basis Verification** <Ref id="8.2.3" label="§8.2.3" />
 
 $$
 \hat{H}_1 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad \hat{H}_2 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}
@@ -507,7 +507,7 @@ Assume the algebra generated by the set of eight matrices $\{\lambda_1, \dots, \
 :::
 
 **I. Linear Independence**
-The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated. The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
+The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated.  **Algebraic Closure** <Ref id="8.2.5" label="§8.2.5" /> and  **Commutator Generation** <Ref id="8.2.4" label="§8.2.4" /> The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
 
 **II. Semisimplicity via Killing Form**
 The **Killing Form** $K(X,Y) = -2 \operatorname{Tr}(\operatorname{ad}_X \operatorname{ad}_Y)$ is evaluated on the real span. The form is negative-definite, yielding eigenvalues $\lambda_i < 0$ for all roots. By the **Cartan Criterion**, this verifies the semisimple structure. The ad-representation matrices are computed explicitly for each root, with the negative eigenvalues ensuring no abelian factors exist.
@@ -550,7 +550,7 @@ The closure is shown by induction on ticks $t_L$.
 * Given $N \sim 10^6$, the probability of generating the third off-diagonal is high. Nested levels fill imaginaries and diagonals via phase flips, terminating as the graph percolates to equilibrium $\rho_3^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
 
 **III. Convergence Limit**
-The probability of full closure $P(\dim=8 | t_L \to \infty) = 1 - e^{-\lambda t_L}$ with $\lambda = \#\text{sites} \cdot P(\text{compliant}) \approx N \rho_3^* \cdot 0.01$. Since $\lambda \gg 1$, the probability converges to unity exponentially rapidly ($\tau \approx 10$ ticks). This is consistent with the **Confluence** of the rewrite rule <Ref id="2.4.2" label="§2.4.2" />, ensuring no divergent branches. The ensembles incorporate syndrome noise with variance $\sigma^2 = e^{-R} \approx 10^{-4}$ **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />, confirming closure probability remains $>0.99$ even under error.
+The probability of full closure $P(\dim=8 | t_L \to \infty) = 1 - e^{-\lambda t_L}$ with $\lambda = \#\text{sites} \cdot P(\text{compliant}) \approx N \rho_3^* \cdot 0.01$. Since $\lambda \gg 1$, the probability converges to unity exponentially rapidly ($\tau \approx 10$ ticks). This is consistent with the **Confluence** of the rewrite rule  **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />, ensuring no divergent branches. The ensembles incorporate syndrome noise with variance $\sigma^2 = e^{-R} \approx 10^{-4}$ **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />, confirming closure probability remains $>0.99$ even under error.
 
 Q.E.D.
 
@@ -559,7 +559,7 @@ Q.E.D.
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6" label="§8.2.6" /> is based on the generator representations verified in **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -744,7 +744,7 @@ Q.E.D.
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7" label="§8.2.7" /> is based on the tension constraints verified in **Algebraic Closure** <Ref id="8.2.5" label="§8.2.5" />. This verification utilizes the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -827,7 +827,7 @@ The linear potential $V(L) \approx \sigma L$ is the hallmark of physical confine
 :::
 
 **I. Application of the Generator Principle**
-Under the **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> and **Commutator Generation** <Ref id="8.2.4" label="§8.2.4" />, every unitary rewrite $\mathcal{R}_i$ is generated by a unique Hermitian $\hat{H}_i$ via $\mathcal{R}_i = e^{i \hat{H}_i t}$ **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />. For $n=3$, the two generators $\hat{H}_1, \hat{H}_2$ suffice, as the braid path connectivity ensures full spanning (diameter $n-1=2$).
+According to the **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> and **Commutator Generation** <Ref id="8.2.4" label="§8.2.4" /> protocols, the system requires a generator mapping. Under this mapping, every unitary rewrite $\mathcal{R}_i$ is generated by a unique Hermitian operator $\hat{H}_i$ via $\mathcal{R}_i = e^{i \hat{H}_i t}$ **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />. For $n=3$, the two generators $\hat{H}_1, \hat{H}_2$ suffice, as the braid path connectivity ensures full spanning (diameter $n-1=2$).
 
 **II. Induction on Dimensions**
 The dimension of $\mathfrak{su}(3)$ is $3^2 - 1 = 8$.
@@ -847,7 +847,7 @@ Q.E.D.
 :::note[**Strong Interaction**]
 :::
 
-The strong interaction is physically identified as the algebraic exhaust of the tripartite braid, where the exchange of three ribbons generates the complete $SU(3)$ octet. It is proven that the commutator algebra of adjacent swaps spans the full eight-dimensional vector space of the gluon field, necessitating exactly eight force carriers to mediate the topological rearrangements of a three-strand cable. The linear confining potential emerges naturally from the finite information density of the graph, where separating strands requires the creation of a chain of new edges, imposing an energetic cost proportional to distance.
+The strong interaction is physically identified as the algebraic exhaust of the tripartite braid, where the exchange of three ribbons generates the complete $SU(3)$ octet. It is proven that the commutator algebra of adjacent swaps spans the full eight-dimensional vector space of the gluon field, necessitating exactly eight force carriers to mediate the topological rearrangements of a three-strand cable. The linear confining potential emerges naturally from the finite information density of the graph, where separating strands requires the creation of a chain of new edges, imposing an energetic cost proportional to distance. This is grounded in the **Color Symmetry Emergence** <Ref id="8.2.2" label="§8.2.2" />. The structural consequences are further developed in the **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> and **Commutator Generation** <Ref id="8.2.4" label="§8.2.4" />.
 
 This redefines color charge from an abstract quantum number to a concrete set of topological operations. Quarks are not point particles carrying a label, but entangled strands that must constantly swap positions to maintain their coherent group structure. The phenomenon of asymptotic freedom arises because local swaps are energetically cheap, while long-range separation stretches the causal fabric itself. Confinement is no longer an arbitrary feature of the Lagrangian but a structural impossibility of the vacuum to support isolated strands.
 
@@ -959,7 +959,7 @@ This defines the Left-Handed Chirality intrinsic to the forward causal evolution
 
 **II. Stability Under Local Transformations**
 Consider a local transformation $T: G \to G'$ (e.g., a planar isotopy or a disjoint rewrite).
-1.  **Functoriality:** The evolution defines a functor in the **History Category** $\mathbf{Hist}$ **categorical ties to prior foundations** definition <Ref id="4.1.2" label="§4.1.2" />. Morphisms $f: G \to G'$ map edges $e$ to $f(e)$ while preserving the partial order: $e_a \le e_b \implies f(e_a) \le f(e_b)$.
+1.  **Functoriality:** The evolution defines a functor in the **History Category** $\mathbf{Hist}$ **categorical ties to prior foundations** defined in **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Morphisms $f: G \to G'$ map edges $e$ to $f(e)$ while preserving the partial order: $e_a \le e_b \implies f(e_a) \le f(e_b)$.
 2.  **Order Preservation:** Consequently, $H_t'(f(e_1)) < H_t'(f(e_2))$. The magnitude of the timestamp difference scales uniformly as $\Delta H' = \alpha \Delta H$ with $\alpha > 0$, but the sign is invariant.
 
     $$
@@ -1072,7 +1072,7 @@ Assume the probability of realizing a right-handed mirror process within the cau
 :::
 
 **I. Statistical Failure Probability**
-The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph.
+The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph.  **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and  **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />
 Using a Poisson model for alternatives in an Erdos-Renyi graph with edge probability $\rho_e = \langle k \rangle / N \approx 0.029$:
 The probability of no alternative short path is $P(\text{unique}) = \exp(-\lambda)$, where $\lambda$ is the expected number of alternatives.
 For a local distance $\bar{d}=2$, amplified by the 3-path span in the braid support:
@@ -1272,14 +1272,14 @@ When the rewrite rule attempts to construct the Right-Handed crossing, it must c
 The proof integrates the component derivations of doublet algebra, chiral invariance, and parity violation to construct the full electroweak structure, verifying the V-A coupling form.
 
 **I. Doublet Representation Embedding**
-The electroweak doublet $(\nu_e, e^-)_L$ is embedded in the tripartite braid as the subspace of writhe-neutral **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />.
+The electroweak doublet $(\nu_e, e^-)_L$ is embedded in the tripartite braid as the subspace of writhe-neutral **Lepton Charge Solutions**.
 Basis: $|\nu_e\rangle$ ($w=0, \lambda=(1,1,1)$) and $|e^-\rangle$ ($w=-3, \lambda=(-1,-1,-1)$).
 These states are mixed by $\mathcal{R}_W$ via rung shuffles on the shared 3-cycle **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />.
 The operator $\mathcal{R}_W$ acts as $\sigma_x$, flipping between the states while conserving Total Charge $Q = w/3$ modulo the weak mixing angle.
 The writhe-neutral span is the kernel of the total writhe operator $\sum w_i$, projecting out charged excitations.
 
 **II. Chiral Invariant Enforcement**
-For every valid $\mathcal{R}_W$, the path edges $e_1, e_2$ satisfy $H_t(e_1) < H_t(e_2)$ by **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />.
+For every valid $\mathcal{R}_W$, the path edges $e_1, e_2$ satisfy $H_t(e_1) < H_t(e_2)$ by **Monotonicity of History**.
 This imposes the chiral sign $\chi = -1$ **Chiral Stability** <Ref id="8.3.3" label="§8.3.3" />.
 The acceptance weight for the rewrite is biased by $e^{\chi \mu \cdot \text{stress}}$ Catalytic Tension Factor.
 Since $\chi = -1$, the free energy barrier is reduced, favoring left-handed proposals.
@@ -1291,7 +1291,7 @@ This inversion creates a redundant alternative path, violating $|\Pi(u,v)|=1$ **
 The violation triggers a syndrome $\sigma = -1$ in the local stabilizer $S_{uv}$.
 The **Correction Map** $C$ projects this state out with probability $\approx 1$.
 The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and **Mirror PUC Violation** <Ref id="8.3.7" label="§8.3.7" />.
-For global inversions, the **O(N) Barrier** from **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" /> renders the flip infeasible within a single tick.
+For global inversions, the **O(N) Barrier** from **Thermodynamic Enforcement** renders the flip infeasible within a single tick.
 
 **IV. SU(2)_L Closure and Current Form**
 The generators $\hat{H}_{x,y,z} \propto \sigma_{x,y,z}$ act exclusively within the left-handed subspace, yielding the current form defined by **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />.
@@ -1314,7 +1314,7 @@ Q.E.D.
 :::note[**Chiral Weak Interaction**]
 :::
 
-The chiral nature of the weak interaction is derived as a topological filter imposed by the arrow of time. It is demonstrated that the "mirror" process of a right-handed interaction requires an inversion of timestamp ordering that violates the Principle of Unique Causality, generating forbidden closed causal loops. The causal graph acts as a diode, permitting only left-handed topological transformations to propagate while suppressing their mirror images with a probability approaching unity.
+The chiral nature of the weak interaction is derived as a topological filter imposed by the arrow of time. It is demonstrated that the "mirror" process of a right-handed interaction requires an inversion of timestamp ordering that violates the Principle of Unique Causality, generating forbidden closed causal loops. The causal graph acts as a diode, permitting only left-handed topological transformations to propagate while suppressing their mirror images with a probability approaching unity. This is grounded in the **Chiral Symmetry and Parity Violation** <Ref id="8.3.2" label="§8.3.2" />. The structural consequences are further developed in the **Chiral Stability** <Ref id="8.3.3" label="§8.3.3" /> and **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />.
 
 This transforms parity violation from an unexplained symmetry breaking into a fundamental feature of causal geometry. The universe is not asymmetric by accident; it is asymmetric because the alternative violates the logic of sequence. The V-A structure of the weak current is the algebraic signature of a timeline that flows in only one direction. Matter distinguishes left from right because the vacuum distinguishes past from future.
 
@@ -1383,7 +1383,7 @@ Assume the probability of a 4-cycle rewrite process is strictly less than that o
 :::tip[**Derivation of the Probability Ratio from Combinatorial and Friction Factors**]
 :::
 
-The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$.
+The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$.  **Computational Friction Ratio** <Ref id="8.4.2" label="§8.4.2" /> and  **Topological Weinberg Angle** <Ref id="8.4.1" label="§8.4.1" />
 The inequality $p_4 < p_3$ is demonstrated by decomposing these factors in the sparse limit.
 
 **I. Combinatorial Rarity**
@@ -1438,7 +1438,7 @@ For any fundamental interaction $F$, the square of the gauge coupling constant $
 :::
 
 **I. Born Probability Definition**
-In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:
+In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:  **Coupling-Probability Correspondence** <Ref id="8.4.3" label="§8.4.3" /> and  **Computational Friction Ratio** <Ref id="8.4.2" label="§8.4.2" />
 
 $$
 P(\mathcal{R}_F) = |M(G \to G')|^2
@@ -1485,7 +1485,7 @@ Suppose every fundamental interaction of the electroweak sector is mapped to a s
 :::
 
 **I. The SU(2) Interaction ($p_3$)**
-The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$).
+The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$).  **Topological Complexity Identification** <Ref id="8.4.4" label="§8.4.4" /> and  **Coupling-Probability Correspondence** <Ref id="8.4.3" label="§8.4.3" />
 1.  **Action:** It transforms one basis state of the doublet into the other.
 2.  **Minimal Topology:** As proven in the **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid.
 3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot).
@@ -1589,7 +1589,7 @@ Q.E.D.
 :::note[**Electroweak Mixing**]
 :::
 
-The electroweak mixing angle is physically determined by the ratio of thermodynamic probabilities for closing triangular versus quadrangular cycles. Calculations demonstrate that the formation of the $SU(2)$ interaction vertex is entropically favored over the $U(1)$ vertex due to the lower topological friction associated with smaller loop lengths. This geometric bias fixes the value of $\sin^2 \theta_W \approx 0.231$, deriving the mixing of the neutral currents directly from the combinatorial properties of the vacuum graph.
+The electroweak mixing angle is physically determined by the ratio of thermodynamic probabilities for closing triangular versus quadrangular cycles. Calculations demonstrate that the formation of the $SU(2)$ interaction vertex is entropically favored over the $U(1)$ vertex due to the lower topological friction associated with smaller loop lengths. This geometric bias fixes the value of $\sin^2 \theta_W \approx 0.231$, deriving the mixing of the neutral currents directly from the combinatorial properties of the vacuum graph. This is grounded in the **Computational Friction Ratio** <Ref id="8.4.2" label="§8.4.2" />. The structural consequences are further developed in the **Coupling-Probability Correspondence** <Ref id="8.4.3" label="§8.4.3" /> and **Topological Complexity Identification** <Ref id="8.4.4" label="§8.4.4" />.
 
 This implies that the relative strengths of the fundamental forces are not arbitrary tuning parameters but measures of geometric accessibility. The weak force is "stronger" (more probable) than the electromagnetic force at the unification scale because it requires fewer graph operations to instantiate. Symmetry breaking is revealed as a statistical process where the vacuum settles into the path of least topological resistance.
 
@@ -1794,7 +1794,7 @@ Given an interaction probability density, a geometric prefactor of $4\pi$ arises
 :::
 
 **I. Phase Space Integral**
-The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet. The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
+The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet.  **Geometric Normalization** <Ref id="8.5.4" label="§8.5.4" /> and  **Trace Normalization** <Ref id="8.5.3" label="§8.5.3" /> The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
 The volume of the unit 3-sphere is $2\pi^2$. However, the vertex normalization in the effective Lagrangian utilizes the **Haar Measure** on the group adjoint representation.
 
 **II. Adjoint Trace Adjustment**
@@ -1917,7 +1917,7 @@ Q.E.D.
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6" label="§8.5.6" /> is based on the normalization protocols verified in **Trace Normalization** <Ref id="8.5.3" label="§8.5.3" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -2088,7 +2088,7 @@ Validation of the analytical coupling derivation established in the **Emergent G
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
-3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error.
+3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error. This verifies the result established in  **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" />.
 
 ```python
 import math
@@ -2202,7 +2202,7 @@ The calculation yields a predicted mean coupling of $g \approx 0.6649$. This val
 :::note[**Emergent Gauge Coupling**]
 :::
 
-The gauge coupling constant is quantified as the square root of the rewrite probability density within the equilibrium vacuum. By integrating the spherical geometry of the interaction vertex with the entropic weight of a topological bit, a theoretical value of $g \approx 0.664$ is derived that aligns with experimental measurements. This establishes that the strength of a fundamental interaction is nothing more than the likelihood of a specific topological fluctuation occurring in the graph.
+The gauge coupling constant is quantified as the square root of the rewrite probability density within the equilibrium vacuum. By integrating the spherical geometry of the interaction vertex with the entropic weight of a topological bit, a theoretical value of $g \approx 0.664$ is derived that aligns with experimental measurements. This establishes that the strength of a fundamental interaction is nothing more than the likelihood of a specific topological fluctuation occurring in the graph. This is grounded in the **Probabilistic Coupling Identity** <Ref id="8.5.2" label="§8.5.2" />. The structural consequences are further developed in the **Trace Normalization** <Ref id="8.5.3" label="§8.5.3" /> and **Geometric Normalization** <Ref id="8.5.4" label="§8.5.4" />.
 
 This result demotes the coupling constants from fundamental inputs to derived environmental variables. The intensity of the forces is set by the saturation density of the vacuum, connecting the micro-physics of particle interactions to the macro-physics of the cosmological background. The forces are as strong as the vacuum allows them to be, limited by the available bandwidth of the causal network.
 
@@ -2363,7 +2363,7 @@ For any configuration of the local vacuum, the Vacuum Expectation Value $v$ scal
 :::tip[**Derivation of the 246 GeV Scale from Local Density of States**]
 :::
 
-Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />.
+Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay**. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence**.
 
 **I. Geometric Regularity**
 The volume $V_\xi$ satisfies **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> (volume scaling $c_1 r^4 \leq |B(r)| \leq c_2 r^4$), with curvature bounds $|K(u,v)| \leq 2$ (**Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />). Central limit theorem damping over independent subregions yields a stable intensive variance $\mathrm{Var}(\rho_3\*) \sim 1/N_\xi$, where $N_\xi = \frac{V_\xi}{\mathrm{vol}(\gamma)} \sim \rho_3^{*-3}$.
@@ -2422,7 +2422,7 @@ Q.E.D.
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" /> is based on the scaling relations verified in **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
@@ -2503,7 +2503,7 @@ Assume the predictive stability of the emergent mass spectrum against stochastic
 :::tip[**Analytical and Numerical derivation of Error Bounds on Predicted Masses**]
 :::
 
-Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.
+Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.  **Sensitivity and Error Propagation** <Ref id="8.6.6" label="§8.6.6" /> and  **Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" />
 
 **I. Sensitivity to $\mu$**
 Implicit differentiation of $f(\rho_3^*, \mu) = 18 \rho_3^* e^{-6\mu \rho_3^*} - 1 = 0$ yields:
@@ -2562,7 +2562,7 @@ Q.E.D.
 :::note[**Mass Generation**]
 :::
 
-Mass generation is physically identified as the frictional drag experienced by a topological defect as it propagates through the geometric condensate of the vacuum. The scalar Higgs field is replaced with the effective density of 3-cycles, defining the Vacuum Expectation Value as the square root of the background geometric availability. This mechanism endows the $W$ and $Z$ bosons with mass by absorbing the Goldstone modes of the graph's stabilizers, while fermions acquire mass in proportion to their topological complexity relative to the vacuum supply.
+Mass generation is physically identified as the frictional drag experienced by a topological defect as it propagates through the geometric condensate of the vacuum. The scalar Higgs field is replaced with the effective density of 3-cycles, defining the Vacuum Expectation Value as the square root of the background geometric availability. This mechanism endows the $W$ and $Z$ bosons with mass by absorbing the Goldstone modes of the graph's stabilizers, while fermions acquire mass in proportion to their topological complexity relative to the vacuum supply. This is grounded in the **Emergent Mass Generation** <Ref id="8.6.2" label="§8.6.2" />. The structural consequences are further developed in the **Boson Mass Prediction** <Ref id="8.6.3" label="§8.6.3" /> and **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />.
 
 This reinterprets inertia as a relational cost rather than an intrinsic property. A particle is heavy not because it couples to a field, but because it is topologically expensive to compute. The "Higgs mechanism" is revealed to be a phase transition where the vacuum fills with geometric noise, creating a viscous medium that resists the motion of complex knots. The mass hierarchy reflects the non-linear scaling of this resistance with the internal twisting of the particle braid.
 

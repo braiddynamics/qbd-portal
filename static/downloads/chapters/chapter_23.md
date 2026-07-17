@@ -69,7 +69,7 @@ Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as 
 ---*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
 *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral:
     $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$
-*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
+*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature**  **The Continuum Limit** <Ref id="11.1" label="§11.1" />).
 
 ### 23.1.3.1 Proof: Integration Representation {#23.1.3.1}
 
@@ -77,7 +77,7 @@ Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as 
 :::
 
 **I. Measure Convergence**
-The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.  **Integration Representation** <Ref id="23.1.3" label="§23.1.3" /> and  **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" />
 
 **II. Thermodynamic Integration**
 Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
@@ -108,7 +108,7 @@ Consider the discrete finite-difference operator $\Delta_h$ defined on the node 
 
 **I. Node Interpolation**
 
-Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. Using the Taylor series expansion:
+Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$.  **Discrete Differentiability** <Ref id="23.1.4" label="§23.1.4" /> and  **Integration Representation** <Ref id="23.1.3" label="§23.1.3" /> Using the Taylor series expansion:
 
 $$
 f(v_1) = f(v_0) + h \partial_x f(v_0) + \frac{h^2}{2} f''(y)
@@ -224,7 +224,7 @@ The proof proceeds by construction, establishing **Chiral Vacuum Bias** <Ref id=
 :::info[**Derivation of Microscopic Energy Bias between Enantiomeric Braid Configurations**]
 :::
 
-Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />, let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
+Let the weak self-energy difference under right-handed weak isospin currents be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" /> constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
 
 ### 23.2.3.1 Proof: Prebiotic Enantiomer Energy Bias {#23.2.3.1}
 
@@ -233,7 +233,7 @@ Given the projection of right-handed weak isospin currents under **Topological P
 
 **I. Electroweak Perturbation**
 
-Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:
+Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:  **Prebiotic Enantiomer Energy Bias** <Ref id="23.2.3" label="§23.2.3" /> and  **Chiral Vacuum Bias** <Ref id="23.2.2" label="§23.2.2" />
 
 $$
 \Delta E = 2 \operatorname{Re} \langle \Psi_L | \hat{H}_{PV} | \Psi_R \rangle
@@ -276,7 +276,7 @@ If the prebiotic chemical network undergoes autocatalytic replication with mutua
 
 **I. Frank Model Dynamics**
 
-Let the concentrations of the two enantiomers be $x_L$ and $x_D$. The dynamical equations with mutual antagonism are:
+Let the concentrations of the two enantiomers be $x_L$ and $x_D$.  **Autocatalytic Bifurcation** <Ref id="23.2.4" label="§23.2.4" /> and  **Prebiotic Enantiomer Energy Bias** <Ref id="23.2.3" label="§23.2.3" /> The dynamical equations with mutual antagonism are:
 
 $$
 \frac{dx_L}{dt} = k_S x_L - k_A x_L x_D
@@ -379,7 +379,7 @@ Suppose the $SU(3)_c$, $SU(2)_L$, and $U(1)_Y$ gauge generators are embedded as 
 
 **I. Generator Embedding**
 
-Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
+Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges. This verifies the closure constraints of the **Unified Braid Generators** <Ref id="23.3.2" label="§23.3.2" />, satisfying the conditions for **Chiral Triple Fusion** <Ref id="23.3.1" label="§23.3.1" />.
 
 **II. Coupling Operator Construction**
 
@@ -420,7 +420,7 @@ Let $D(N)$ be the dimension of the coupled braid rewrite symmetry algebra as the
 
 **I. Root System Embedding**
 
-Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
+Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph.  **E8 Dimensional Limit** <Ref id="23.3.3" label="§23.3.3" /> and  **Unified Braid Generators** <Ref id="23.3.2" label="§23.3.2" /> The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
 
 **II. Loop Constraint**
 

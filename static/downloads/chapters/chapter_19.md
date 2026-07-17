@@ -76,7 +76,7 @@ where the transition rate $\Gamma_{RH}$ is well-defined by the comonad annotatio
 
 **I. Attractor Transition Integration**
 
-Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction. The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
+Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction.  **Braid Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" /> and  **Right-Handed Neutrino Production** <Ref id="19.1.2" label="§19.1.2" /> The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
 
 **II. Rate Formulation**
 
@@ -117,7 +117,7 @@ Assume the combinatorial multiplicity $\Omega(C)$ of topological defects of comp
 
 **I. Multiplicity Enumeration**
 
-Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$. The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
+Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$.  **Braid Combinatorial Dominance** <Ref id="19.1.4" label="§19.1.4" /> and  **Braid Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" /> The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
 
 **II. Partition Function Extremization**
 
@@ -169,7 +169,9 @@ Why is there a universe made of matter rather than a symmetric, sterile sea of r
 
 Given the conditions of **Baryon & Lepton Violation**, **CP Violation**, and **Out-of-Equilibrium Departure**, the properties of Compliance with Sakharov Conditions through Chiral Braid Decay under Causal Timestamp Monotonicity are established.
 
----*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />) support leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$ (**Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />).
+---
+
+*   **Baryon & Lepton Violation:** The unified SU(5) dynamics of the graph rely on the **Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />. This configuration supports leptoquark rewrite rules (X/Y bosons) that allow transitions between quark and lepton ribbon topologies while conserving $B-L$, guaranteeing **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />.
 *   **CP Violation:** Topological rewrite rules are chiral: Parity (P) inverts crossings, while Charge Conjugation (C) inverts writhe. Because the underlying causal graph is timestamp-monotone ($t_L$), the loop interference phase $\delta$ differs for particles and antiparticles, causing decay rates to split: $\Gamma(N_R \to L H) \neq \Gamma(\bar{N}_R \to \bar{L} \bar{H})$.
 *   **Out-of-Equilibrium Departure:** The rapid expansion of the scale factor at the end of inflation ensures that the Hubble rate $H$ exceeds the decay rate ($H > \Gamma_{decay}$), freezing out the heavy neutrino states and preventing inverse washout reactions from restoring symmetry.
 
@@ -237,8 +239,8 @@ Let the high-temperature plasma contain $N_f = 3$ fermion generations and $N_H =
 
 **II. The Logic Chain**
 
-1.  **Emergent SU(2) Topology** <Ref id="8.5" label="§8.5" />: Non-trivial vacuum configurations support non-perturbative transitions at high temperatures.
-2.  **Symmetry Conversion** <Ref id="19.2.1" label="§19.2.1" />: Electroweak sphaleron updates violate $B$ and $L$ conservation but preserve $B-L$.
+1.  **Emergent SU(2) Topology**  **Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />: Non-trivial vacuum configurations support non-perturbative transitions at high temperatures.
+2.  **Symmetry Conversion**  **Sakharov Compliance** <Ref id="19.2.1" label="§19.2.1" />: Electroweak sphaleron updates violate $B$ and $L$ conservation but preserve $B-L$.
 
 **III. Assembly**
 
@@ -285,7 +287,7 @@ This commentary details the significance of the results established in **Sphaler
 :::note[**Baryogenesis Dynamics**]
 :::
 
-The compliance of chiral braid decay with the **Sakharov Conditions** <Ref id="19.2.1" label="§19.2.1" />, establishes a pre-geometric explanation for the baryon asymmetry of the universe. By deriving the **CP-Asymmetry Parameter** <Ref id="19.2.2" label="§19.2.2" /> directly from topological invariants rather than choosing arbitrary coupling constants, the matter-antimatter ratio is fixed by the topological properties of the graph embedding itself. The resulting baryon asymmetry arises from the irreversible decay modes of braid structures in the early high-density vacuum.
+The compliance of chiral braid decay with the **Sakharov Conditions**  **Sakharov Compliance** <Ref id="19.2.1" label="§19.2.1" />, establishes a pre-geometric explanation for the baryon asymmetry of the universe. By deriving the **CP-Asymmetry Parameter** <Ref id="19.2.2" label="§19.2.2" /> directly from topological invariants rather than choosing arbitrary coupling constants, the matter-antimatter ratio is fixed by the topological properties of the graph embedding itself. The resulting baryon asymmetry arises from the irreversible decay modes of braid structures in the early high-density vacuum.
 
 This chiral asymmetry propagates through the cooling history of the early universe, where non-perturbative electroweak sphaleron transitions redistribute the lepton excess into stable quarks. The **Sphaleron Conversion** <Ref id="19.2.3" label="§19.2.3" /> process shows that the topological charges are conserved during these transitions, converting the early leptonic asymmetry into a stable baryonic surplus. Consequently, the presence of baryonic matter is shown to be a topological consequence of the pre-geometric arrow of time, laying the groundwork for nucleosynthesis and structure formation in subsequent epochs.
 
@@ -372,7 +374,7 @@ Given the mapping of **Electroweak Mixing** <Ref id="8.4" label="§8.4" />, let 
 
 **I. Knot Representation**
 
-Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands. The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
+Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands.  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> and  **Neutron-Proton Mass Difference** <Ref id="19.3.2" label="§19.3.2" /> The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
 
 **II. Shared Edge Count**
 
@@ -411,7 +413,7 @@ Suppose the total valence writhe of the neutron $w_n$ is determined by the sum o
 
 **I. Orthogonal Embedding**
 
-Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3. The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
+Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3.  **Neutron Writhe Configuration** <Ref id="19.3.4" label="§19.3.4" /> and  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
 
 **II. Boundary Isolation**
 
@@ -520,7 +522,7 @@ Given the conditions of **Rate Balance**, **Emergent Rates**, **$\Gamma_{weak} \
 
 **I. Boltzmann Integration**
 
-The proof integrates the Boltzmann equation for weak rate equilibrium.
+The proof integrates the Boltzmann equation for weak rate equilibrium.  **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> and  **Helium Abundance Prediction** <Ref id="19.4.1" label="§19.4.1" />
 
 **II. Scale Equivalence**
 
@@ -560,7 +562,7 @@ Let $\tau_n$ represent the neutron lifetime determined by topological decay rewr
 
 **I. Decay Dynamics**
 
-Let $\tau_n \approx 880$ seconds represent the free neutron lifetime. Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
+Let $\tau_n \approx 880$ seconds represent the free neutron lifetime.  **Neutron Beta Decay Scaling** <Ref id="19.4.3" label="§19.4.3" /> and  **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
 
 **II. Fraction Calculation**
 
@@ -611,7 +613,7 @@ Q.E.D.
 :::note[**Primordial Abundances Synthesis**]
 :::
 
-The **Helium Abundance** <Ref id="19.4.1" label="§19.4.1" /> derivation ($Y_p \approx 0.25$) represents a major success of the QBD model. Because the neutron-proton mass difference is derived topologically rather than fitted, the chemical profile of the early universe is shown to be a direct consequence of the graph's pre-geometric structure. This calculation relies on the **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> temperature, showing that the expansion rate of the emergent spacetime determines the initial neutron-to-proton ratio.
+The **Helium Abundance**  **Helium Abundance Prediction** <Ref id="19.4.1" label="§19.4.1" /> derivation ($Y_p \approx 0.25$) represents a major success of the QBD model. Because the neutron-proton mass difference is derived topologically rather than fitted, the chemical profile of the early universe is shown to be a direct consequence of the graph's pre-geometric structure. This calculation relies on the **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> temperature, showing that the expansion rate of the emergent spacetime determines the initial neutron-to-proton ratio.
 
 The **Neutron Beta Decay Scaling** <Ref id="19.4.3" label="§19.4.3" /> determines the fraction of neutrons that survive until nucleosynthesis begins. This prediction matches astronomical observations of metal-poor gas clouds, confirming that the early universe's hot phase is governed by the same relational causal dynamics as low-energy laboratory physics. Consequently, the chemical composition of the cosmos provides a direct, observable window into the pre-geometric structure of spacetime.
 

@@ -40,7 +40,7 @@ $$
 T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b).
 $$
 
-The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" /> (denoted $\chi$) and the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
+The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Its dynamics are further governed by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
 
 $$
 P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
@@ -287,11 +287,11 @@ Q.E.D.
 :::note[**Verification of Flux Divergence Conservation via Trivalent Graph Simulation**]
 :::
 
-Verification of the local stress-energy conservation laws established in the **Local Conservation Synthesis** <Ref id="13.1.5" label="§13.1.5" /> is based on the following protocols:
+Verification of the local stress-energy conservation laws established in the **Local Conservation Synthesis**  **Conservation of Complexity Flux** <Ref id="13.1.5" label="§13.1.5" /> is based on the following protocols:
 
 1.  **Experimental Initialization:** The algorithm initializes a five-node Zero-Point Ignition vacuum as a minimal Bethe fragment to represent the seed of geometric growth.
 2.  **Dynamic Graph Evolution:** The protocol applies the universal rewrite rules and thermodynamic regulation suite under strict acyclic causal constraints to evolve the graph.
-3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis.
+3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in  **Conservation of Complexity Flux** <Ref id="13.1.5" label="§13.1.5" />.
 
 ```python
 import numpy as np
@@ -564,7 +564,7 @@ The local conservation of complexity flux positions the **discrete stress-energy
 
 This neutral configuration also implies a vanishing vacuum energy at leading order, as established by the detailed balance conditions investigated in **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />. The preservation of local divergence invariance ensures that topological updates do not lead to unphysical energy generation or leakage. Furthermore, the gl **Global Stationarity** obal stationarity condition derived in <Ref id="13.1.3" label="§13.1.3" /> guarantees that the total energy flux of the network remains conserved over cosmological scales, even as local regions undergo rapid, discrete updates.
 
-This stable thermodynamic substrate provides the necessary background for coupling space and matter. By showing that the discrete divergence vanishes locally as proven in the **conservation** theorem of <Ref id="13.1.2" label="§13.1.2" />, we establish a firm mathematical constraint that maps directly onto the Bianchi identities of General Relativity. In the subsequent sections, we will trace how this conserved stress-energy sources the discrete Einstein tensor, forcing the emergent geometry to satisfy the Einstein field equations at the hydrodynamic limit.
+This stable thermodynamic substrate provides the necessary background for coupling space and matter. By showing that the discrete divergence vanishes locally as established in **Conservation of Complexity Flux** <Ref id="13.1.2" label="§13.1.2" />, we establish a firm mathematical constraint that maps directly onto the Bianchi identities of General Relativity. In the subsequent sections, we will trace how this conserved stress-energy sources the discrete Einstein tensor, forcing the emergent geometry to satisfy the Einstein field equations at the hydrodynamic limit.
 
 
 ---
@@ -576,7 +576,8 @@ This stable thermodynamic substrate provides the necessary background for coupli
 :::note[**Section 13.2 Overview**]
 :::
 
-We confront the necessity of deriving a deterministic geometric law from the stochastic fluctuations of the causal substrate. The definitions of the discrete **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> (for $T_{ab}$) and the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> (for $K(a,b)$) provide the source and the geometry, yet they remain kinematically decoupled. We must identify the specific constraint that binds the flux of information to the curvature of the graph, ensuring that the evolution of the universe satisfies the principle of stationary action. This inquiry demands that we translate the thermodynamic equilibrium of the master equation into a variational principle for the discrete action, proving that the homeostatic state corresponds to a saddle point in the geometric phase space.
+We confront the necessity of deriving a deterministic geometric law from the stochastic fluctuations of the causal substrate. The definitions of the discrete **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> (for $T_{ab}$) provide the source. The **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> (for $K(a,b)$) provides the geometry, yet these two descriptions remain kinematically decoupled.
+We must identify the specific constraint that binds the flux of information to the curvature of the graph, ensuring that the evolution of the universe satisfies the principle of stationary action. This inquiry demands that we translate the thermodynamic equilibrium of the master equation into a variational principle for the discrete action, proving that the homeostatic state corresponds to a saddle point in the geometric phase space.
 
 Standard discrete gravity models often impose the Einstein equations as an asymptotic target rather than a derived consequence, fitting parameters to recover the continuum limit. A theory that cannot derive the proportionality of curvature and stress from its own internal logic fails to explain why gravity couples to energy at all. If the field equations do not emerge from the minimization of a graph-theoretic action, then the laws of General Relativity are merely an effective description of a deeper, unconnected physics, rather than a necessary outcome of the substrate's dynamics. We must demonstrate that the graph cannot remain in equilibrium unless the local curvature exactly balances the net complexity flux, enforcing the field equation as a condition of stability.
 
@@ -960,11 +961,11 @@ Q.E.D.
 :::note[**Verification of the Discrete Field Equation via Exact Topological Response and Statistical Regression**]
 :::
 
-Verification of the discrete coupling relations established in the **Derivation from Stationary Action** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
+Verification of the discrete coupling relations established in the **Derivation from Stationary Action**  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
 
 1.  **Deterministic Response Evaluation:** The algorithm constructs a minimal three-node graph representing a closed 3-cycle to compute the exact coupling constant in the absence of noise.
 2.  **Statistical Permittivity Simulation:** The protocol simulates a statistical ensemble of edge configurations subject to vacuum fluctuations and Poissonian noise.
-3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept.
+3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" />.
 
 ```python
 import numpy as np
@@ -1287,7 +1288,7 @@ For any discrete Einstein-Hilbert action $\mathcal{S}[G]$, the functional is inv
 :::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
 :::
 
-For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.
+For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.  **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> and  **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" />
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].
@@ -1470,7 +1471,7 @@ Q.E.D.
 :::note[**Verification of the Discrete Bianchi Identity via Divergence Minimization**]
 :::
 
-Verification of the geometric divergence conservation established in the **Identity Derivation** <Ref id="13.3.5" label="§13.3.5" /> is based on the following protocols:
+Verification of the geometric divergence conservation established in the **Identity Derivation**  **Discrete Divergence-Free Geometry** <Ref id="13.3.5" label="§13.3.5" /> is based on the following protocols:
 
 1.  **Conserved Flux Generation:** The algorithm constructs regular graphs and injects strictly conserved stress-energy flux configurations generated from closed cycle flows.
 2.  **Geometric Curvature Mapping:** The protocol maps the conserved flux to the discrete Einstein curvature tensor using the Einstein-Hilbert coupling constant.
@@ -1565,7 +1566,7 @@ The simulation confirms the **Discrete Divergence-Free Geometry** <Ref id="13.3.
 :::note[**Synthesis: The Integrity of Discrete Spacetime**]
 :::
 
-The **Discrete Bianchi Identity** <Ref id="13.3.1" label="§13.3.1" /> completes the theoretical foundation of the field equations. It guarantees that the emergent geometry acts not merely as a static background but as a consistent dynamic field that respects the conservation laws of the underlying information substrate. The identity $\nabla \cdot \mathcal{G} = 0$, verified through the **Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" /> theorem, ensures that the field equation $\mathcal{G} = \kappa T$ is mathematically solvable, preventing contradictions whenever matter-flux is conserved.
+The **Discrete Bianchi Identity** <Ref id="13.3.1" label="§13.3.1" /> completes the theoretical foundation of the field equations. It guarantees that the emergent geometry acts not merely as a static background but as a consistent dynamic field that respects the conservation laws of the underlying information substrate. The identity $\nabla \cdot \mathcal{G} = 0$, verified through the **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" /> formulation, ensures that the field equation $\mathcal{G} = \kappa T$ is mathematically solvable, preventing contradictions whenever matter-flux is conserved.
 
 Furthermore, the derivation of this identity from the **action invariance** properties in <Ref id="13.3.3" label="§13.3.3" /> links the conservation of geometry directly to the principle of General Covariance. This connection establishes that the Quantum Braid Dynamics framework constitutes a relativistic theory of gravity, respecting the independence of physical laws from vertex labeling. Under this symmetry protection, the vanishing divergence implies that the geometry cannot spontaneously develop instabilities in the vacuum, ensuring the long-term stability of the homeostatic fixed point.
 

@@ -76,7 +76,7 @@ Assume the rank of the Grand Unified Group, denoted $G_{GUT}$, is strictly bound
 :::
 
 **I. Rank Definition**
-The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$). For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
+The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$).  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" /> and  **Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
 
 **II. Standard Model Rank**
 The Standard Model gauge group $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$ possesses the following rank structure:
@@ -119,7 +119,7 @@ For any simple Lie group with rank $r < 4$, the candidate is categorically exclu
 :::tip[**Verification of Failure Modes for Low-Rank Algebras**]
 :::
 
-The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.
+The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />
 
 **I. Rank 1 ($A_1$)**
 * **Candidate:** $SU(2)$.
@@ -166,7 +166,7 @@ Suppose every simple Lie group of rank $r=4$, excluding $SU(5)$, is rejected as 
 :::tip[**Demonstration of Spectrum Mismatch for Non-SU(5) Rank-4 Groups**]
 :::
 
-The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.
+The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.  **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" /> and  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />
 
 **I. Exclusion of $Sp(8)$ ($C_4$)**
 * **Structure:** Symplectic group of rank 4.
@@ -284,7 +284,7 @@ Verification of the anomaly freedom condition established in the **Minimal GUT U
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
-3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically.
+3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically. This verifies the result established in  **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" />.
 
 ```python
 import sympy as sp
@@ -359,7 +359,7 @@ The symbolic evaluation yields $A(\mathbf{\bar{5}}) = -1$ and $A(\mathbf{10}) = 
 :::note[**Necessity of Unification**]
 :::
 
-The systematic exclusion of lower-rank and real-representation groups establishes $SU(5)$ as the unique minimal gauge group capable of embedding the Standard Model without anomalies. The monograph has proven that any group with a rank less than 4 lacks the diagonal capacity to encode the observed quantum numbers, while rank-4 alternatives like $SO(9)$ and $Sp(8)$ fail to support the chiral asymmetry of the weak interaction. Only $SU(5)$ possesses the complex representation structure required to distinguish left from right, naturally splitting the fermion generation into an antifundamental $\mathbf{\bar{5}}$ and an antisymmetric $\mathbf{10}$.
+The systematic exclusion of lower-rank and real-representation groups establishes $SU(5)$ as the unique minimal gauge group capable of embedding the Standard Model without anomalies. The monograph has proven that any group with a rank less than 4 lacks the diagonal capacity to encode the observed quantum numbers, while rank-4 alternatives like $SO(9)$ and $Sp(8)$ fail to support the chiral asymmetry of the weak interaction. Only $SU(5)$ possesses the complex representation structure required to distinguish left from right, naturally splitting the fermion generation into an antifundamental $\mathbf{\bar{5}}$ and an antisymmetric $\mathbf{10}$. This is grounded in the **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />. The structural consequences are further developed in the **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />.
 
 This algebraic uniqueness forces a topological conclusion: the fundamental object of the unified theory must be a braid of exactly five ribbons. The geometry of the gauge group dictates the geometry of the particle, implying that the quarks and leptons are not separate entities but different knotting configurations of a single underlying structure. This unifies the discrete combinatorics of the braid group with the continuous symmetries of Lie algebras, grounding the abstract properties of the Grand Unified Theory in the concrete topology of a 5-strand cable.
 
@@ -576,7 +576,7 @@ Given the four fundamental Hermitian Hamiltonians $\{\hat{H}_1, \hat{H}_2, \hat{
 :::tip[**Explicit Construction and Induction of the $\mathfrak{su}(5)$ Generators**]
 :::
 
-The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.
+The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> and  **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />
 
 **I. Generator Identification**
 The four fundamental rewrite processes $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$ correspond to swaps of adjacent ribbons $(i, i+1)$.
@@ -624,7 +624,7 @@ Q.E.D.
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> is based on the commutativity constraints verified in **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> is based on the following protocols:
 
 1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
 2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
@@ -782,7 +782,7 @@ Let the fermion multiplet transforming under the $\mathbf{\bar{5}}$ (anti-fundam
 :::tip[**Demonstration of Minimal Complexity for the $\mathbf{\bar{5}}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.
+The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" /> and  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />
 
 **I. Representation Decomposition**
 The $\mathbf{\bar{5}}$ decomposes under $SU(3) \times SU(2)$ as $(\mathbf{\bar{3}}, \mathbf{1}) \oplus (\mathbf{1}, \mathbf{2})$.
@@ -854,7 +854,7 @@ Suppose the fermion multiplet transforming under the $\mathbf{10}$ (antisymmetri
 :::tip[**Demonstration of Stable Complexity for the $\mathbf{10}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.
+The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.  **Antisymmetric Multiplet** <Ref id="9.2.7" label="§9.2.7" /> and  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />
 
 **I. Representation Topology**
 The $\mathbf{10}$ is isomorphic to $\wedge^2 \mathbf{5}$. This algebraic antisymmetry maps to a topological configuration of pairwise crossings.
@@ -913,7 +913,7 @@ Q.E.D.
 :::note[**Penta-Ribbon Braid**]
 :::
 
-The Penta-Ribbon Braid is established as the topological progenitor of all matter and force. The analysis has demonstrated that the local rewrite operations of a 5-strand cable generate the full 24-dimensional algebra of $SU(5)$, identifying the gluons, weak bosons, and leptoquarks as specific braid permutations. Furthermore, the particles themselves emerge as stable knot configurations of this same cable: the $\mathbf{\bar{5}}$ multiplet corresponds to the unlinked parallel bundle, while the $\mathbf{10}$ multiplet corresponds to the pairwise-linked web.
+The Penta-Ribbon Braid is established as the topological progenitor of all matter and force. The analysis has demonstrated that the local rewrite operations of a 5-strand cable generate the full 24-dimensional algebra of $SU(5)$, identifying the gluons, weak bosons, and leptoquarks as specific braid permutations. Furthermore, the particles themselves emerge as stable knot configurations of this same cable: the $\mathbf{\bar{5}}$ multiplet corresponds to the unlinked parallel bundle, while the $\mathbf{10}$ multiplet corresponds to the pairwise-linked web. This is grounded in the **Topological Unification** <Ref id="9.2.2" label="§9.2.2" />. The structural consequences are further developed in the **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> and **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />.
 
 This isomorphism confirms that matter and forces are not separate ontological categories but different aspects of the same underlying geometry. A force is a dynamic rearrangement of the braid (a rewrite), while a particle is a static, persistent configuration of the braid (a knot). This unification resolves the distinction between the mover and the moved, framing the entire Standard Model as the inevitable topological exhaust of a single pentagonal object.
 
@@ -981,7 +981,7 @@ Let the topological complexity $C_n$ associated with the $n$-th fermion generati
 :::
 
 **I. Complexity Metric**
-The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.
+The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> and  **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />
 
 $$
 C[\beta] = \alpha N_{cross} + \gamma N_{link}
@@ -1035,7 +1035,7 @@ Assume the states corresponding to higher fermion generations are dynamically st
 :::
 
 **I. Stability Condition**
-A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.
+A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> and  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />
 
 $$
 \forall \mathcal{R}_i, \quad E[\mathcal{R}_i(\beta)] > E[\beta]
@@ -1125,7 +1125,7 @@ Suppose the decay of a higher-generation particle to a lower-generation state is
 :::
 
 **I. Tunneling Amplitude**
-The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).
+The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).  **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> and  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />
 The amplitude for this process is governed by the path integral over the barrier:
 
 $$
@@ -1216,7 +1216,7 @@ Q.E.D.
 :::note[**Origin of Generations**]
 :::
 
-The three fermion generations are physically identified as discrete metastable minima in the topological complexity landscape. The analysis has shown that the particle families correspond to progressively more complex knot configurations, ordered by their crossing number $C_1 < C_2 < C_3$. Each generation is protected from decay by a topological barrier that requires a global unlinking operation to traverse, ensuring the stability of the muon and tau on physical timescales.
+The three fermion generations are physically identified as discrete metastable minima in the topological complexity landscape. The analysis has shown that the particle families correspond to progressively more complex knot configurations, ordered by their crossing number $C_1 < C_2 < C_3$. Each generation is protected from decay by a topological barrier that requires a global unlinking operation to traverse, ensuring the stability of the muon and tau on physical timescales. This is grounded in the **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />. The structural consequences are further developed in the **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> and **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />.
 
 Most crucially, a hard upper limit on the number of generations has been derived. The vacuum friction $\mu$ acts as a thermodynamic filter, exponentially suppressing the formation probability of any $C_4$ or higher complexity structure. This truncation mechanism explains why the universe contains exactly three families of matter: the fourth generation is not forbidden by algebra, but it is dynamically impossible to form within the cooling constraints of the vacuum.
 
@@ -1298,7 +1298,7 @@ Suppose the leptoquark interaction vertex is defined as the specific topological
 :::
 
 **I. Generator Matrix Action**
-The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.
+The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.  **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> and  **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />
 Let $|\psi_q\rangle = (c_1, c_2, c_3, 0, 0)^T$ denote a quark state in the color subspace.
 Let $|\psi_l\rangle = (0, 0, 0, w_1, w_2)^T$ denote a lepton state in the weak subspace.
 The general form of the off-diagonal generator in $\mathfrak{su}(5)$ is:
@@ -1466,7 +1466,7 @@ Q.E.D.
 :::note[**Leptoquark Dynamics**]
 :::
 
-Leptoquarks are demystified as transient "bridging" events, specific rewrite operations that twist a color ribbon into a weak ribbon. The analysis has shown that these events are generated by the off-diagonal elements of the $SU(5)$ algebra, acting as the agents of unification. The breaking of the unified symmetry is identified as a **Fragmentation Tunneling** event, where the fully linked Penta-Ribbon relaxes into the separate $SU(3)$ and $SU(2)$ clusters to lower its topological complexity.
+Leptoquarks are demystified as transient "bridging" events, specific rewrite operations that twist a color ribbon into a weak ribbon. The analysis has shown that these events are generated by the off-diagonal elements of the $SU(5)$ algebra, acting as the agents of unification. The breaking of the unified symmetry is identified as a **Fragmentation Tunneling** event, where the fully linked Penta-Ribbon relaxes into the separate $SU(3)$ and $SU(2)$ clusters to lower its topological complexity. This is grounded in the **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />. The structural consequences are further developed in the **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> and **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />.
 
 This establishes the Standard Model as the broken, low-energy "sediment" of the unified high-energy topology. Symmetry breaking is not a spontaneous choice of a Higgs potential but a thermodynamic relaxation of the vacuum graph. The universe "snapped" the costly leptoquark links to save energy, isolating the quarks from the leptons and stabilizing the proton.
 
@@ -1534,7 +1534,7 @@ Assume the perturbative decay rate prediction derived from Effective Field Theor
 :::
 
 **I. Standard Model EFT Prediction**
-In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons. The process is described by a dimension-6 operator in the effective Lagrangian:
+In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons.  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> and  **Proton Stability** <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
 
 $$
 \mathcal{L}_{eff} \sim \frac{g_{GUT}^2}{M_X^2} (\bar{q} \gamma^\mu l)(\bar{q} \gamma_\mu q)
@@ -1582,7 +1582,7 @@ Q.E.D.
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> is based on the pathway dynamics verified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -1764,7 +1764,7 @@ Suppose the decay channel $p \to e^+ + \pi^0$ is identified as the unique transi
 :::
 
 **I. Principle of Minimal Complexity Change**
-The decay rate for a non-perturbative topological transition is governed by the instanton action $S$:
+The decay rate for a non-perturbative topological transition is governed by the instanton action $S$:  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> and  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />
 
 $$
 \Gamma \propto e^{-S} \propto e^{-\Delta C}
@@ -1824,7 +1824,7 @@ Let the instanton action $S_{inst}$ governing the proton decay rate be linearly 
 :::
 
 **I. Tunneling Path Length**
-The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry. This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
+The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry.  **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> and  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
 The transition requires creating and annihilating the intermediate $X$ boson state $|G_X\rangle$.
 The "distance" in configuration space (number of rewrites) required to create the structure of $|G_X\rangle$ from the vacuum (or simple background) is denoted by $L_{min}$.
 
@@ -1924,7 +1924,7 @@ Q.E.D.
 :::note[**Proton Decay**]
 :::
 
-The proton is stable because it is topologically locked. The analysis has proven that the perturbative mechanism of standard GUTs fails to protect the proton, but the topological mechanism succeeds. The decay $p \to e^+ \pi^0$ requires a transition through the hyper-complex X-boson geometry. This incurs an instanton action penalty $S_{inst}$ proportional to the mass scale $M_X$. This exponential suppression pushes the proton lifetime well beyond $10^{34}$ years, reconciling the unification of forces with the existence of a stable material universe.
+The proton is stable because it is topologically locked. The analysis has proven that the perturbative mechanism of standard GUTs fails to protect the proton, but the topological mechanism succeeds. The decay $p \to e^+ \pi^0$ requires a transition through the hyper-complex X-boson geometry. This incurs an instanton action penalty $S_{inst}$ proportional to the mass scale $M_X$. This exponential suppression pushes the proton lifetime well beyond $10^{34}$ years, reconciling the unification of forces with the existence of a stable material universe. This is grounded in the **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. The structural consequences are further developed in the **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> and **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />.
 
 The proton lives because the vacuum cannot compute its deletion. The decay process requires a global reconfiguration of the knot that exceeds the causal horizon of the local rewrite rules. This "Architectural Stability" ensures that the baryon number is effectively conserved not by a fundamental symmetry, but by the computational complexity of violating it.
 
@@ -2132,7 +2132,7 @@ Suppose the physical neutrino mass spectrum is derived from the diagonalization 
 :::tip[**Diagonalization of the Mass Matrix Yielding Light and Heavy Eigenstates**]
 :::
 
-The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.
+The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.  **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> and  **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />
 
 **I. Mass Matrix Construction**
 The system is described in the basis $(\nu_L, N_R)$ by the mass matrix $M$:
@@ -2343,7 +2343,7 @@ Suppose the maximum sustainable topological complexity $N_{3,\max}$ is determine
 :::
 
 **I. Balance Equation**
-The critical state occurs when the creation rate exactly balances the deletion rate.
+The critical state occurs when the creation rate exactly balances the deletion rate under **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> and **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />
 
 $$
 R_{create} = R_{delete}
@@ -2499,7 +2499,7 @@ Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanis
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
-3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data.
+3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in  **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" />.
 
 ```python
 import numpy as np
@@ -2572,7 +2572,7 @@ The calculation yields a Dirac mass term of $24.6$ GeV and a heavy mass term of 
 :::note[**Neutrino Mass**]
 :::
 
-The neutrino mass emerges as the first low-energy observable tied directly to the high-energy friction dynamics of the causal graph. The exponential suppression $e^{-\mu N_3}$ resolves the hierarchy problem without tuning: the light $m_\nu$ probes the Planck-anchored percolation limit, unifying Grand Unified Theory scales with cosmological vacuum stability. This closes the loop from axiomatic 3-cycles to phenomenology, predicting variations in $\Delta m_{\nu}$ testable via next-generation oscillation experiments.
+The neutrino mass emerges as the first low-energy observable tied directly to the high-energy friction dynamics of the causal graph. The exponential suppression $e^{-\mu N_3}$ resolves the hierarchy problem without tuning: the light $m_\nu$ probes the Planck-anchored percolation limit, unifying Grand Unified Theory scales with cosmological vacuum stability. This closes the loop from axiomatic 3-cycles to phenomenology, predicting variations in $\Delta m_{\nu}$ testable via next-generation oscillation experiments. This is grounded in the **Neutrino Mass Mechanism** <Ref id="9.6.2" label="§9.6.2" />. The structural consequences are further developed in the **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" /> and **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />.
 
 The folded topology identifies the neutrino as the unique bridge between the matter sector and the vacuum geometry. Its mass is not an intrinsic property like the electron's, but a "seesaw" echo of the vacuum's maximum complexity limit. The neutrino is light because its heavy partner, the right-handed neutrino, is anchored to the GUT scale by the friction of the graph.
 

@@ -31,39 +31,48 @@ const introTabs: IntroTabInfo[] = [
   },
   {
     id: 'part_a',
-    shortName: 'c. -600–1500',
-    title: 'Search for the Primitive: c. -600–1500',
+    shortName: 'Ancient Divide',
+    title: 'Ancient Divide',
     subtitle: 'From Ancient Atomism to the Informational Substrate',
     description: 'Traces the ancient struggle between continuous plenum and discrete atomism. In the Western tradition, Milesian materialists posited continuous arche principles (Thales\' water, Anaximander\'s boundless Apeiron), leading to the Eleatic crisis of Parmenides and Zeno who declared change logically impossible. In response, Democritus in Greece and Kaṇāda in India independently formulated atomism to reconcile permanence and change by proposing indivisible corpuscles traversing an active void.\n\nIn parallel, Chinese natural philosophy developed the concept of Daoist Qi, a fluidic breath of continuous resonance, while Aristotle rejected the void entirely to establish qualitative teleology. This millennia-long clash culminated in medieval impetus theories (Buridan, Oresme), which challenged Aristotelian mechanics and mathematically prepared the ground for absolute inertia.',
     linkUrl: '/monograph/intro/intro-a',
-    buttonLabel: 'Read c. -600–1500 →'
+    buttonLabel: 'Read Ancient Divide →'
   },
   {
     id: 'part_b',
-    shortName: 'c. 1500–1900',
-    title: 'Renaissance & Mechanistic Synthesis: c. 1500–1900',
-    subtitle: 'Archimedean revival, absolute containers, relational monads, and thermodynamics',
-    description: 'Witnesses the mathematical idealization of motion. Galileo attacked Aristotelian qualitative gravity by utilizing Archimedean hydrostatics in thought-experiment voids, establishing Galilean relativity and proving that projectile trajectories are geometric parabolas. Descartes attempted to mechanize space entirely as a continuous vortex plenum, stripping the pre-geometric void of qualitative parameters and treating planetary orbits as hydrodynamic whirlpools.\n\nThis mechanics was synthesized by Isaac Newton, who formalized absolute space and duration as an eternal, rigid container for colliding corpuscles. Leibniz opposed this container model, proposing relational monads where spatial coordinates are mere artifacts of connectivity. The period closed with the thermodynamic insights of Boltzmann, who reduced heat to molecular statistics, and Faraday and Maxwell, who unified forces as continuous electrodynamic fields.',
+    shortName: 'Mechanical Age',
+    title: 'Mechanical Age',
+    subtitle: 'Archimedean revival, absolute containers, and thermodynamics',
+    description: 'Witnesses the mathematical idealization of motion. Galileo attacked Aristotelian qualitative gravity by utilizing Archimedean hydrostatics in thought-experiment voids, establishing Galilean relativity and proving that projectile trajectories are geometric parabolas. Descartes attempted to mechanize space entirely as a continuous vortex plenum, treating planetary orbits as hydrodynamic whirlpools.\n\nThis mechanics was synthesized by Isaac Newton, who formalized absolute space and duration as an eternal, rigid container for colliding corpuscles. Leibniz opposed this container model, proposing relational monads where spatial coordinates are mere artifacts of connectivity. The period closed with the thermodynamic insights of Boltzmann, who reduced heat to molecular statistics, and Faraday and Maxwell, who unified forces as continuous electrodynamic fields.',
     linkUrl: '/monograph/intro/intro-b',
-    buttonLabel: 'Read c. 1500–1900 →'
+    buttonLabel: 'Read Mechanical Age →'
   },
   {
     id: 'part_c',
-    shortName: 'c. 1900–1950',
-    title: 'Spacetime and Quantum Dissolution: c. 1900–1950',
+    shortName: 'Double Revolution',
+    title: 'Double Revolution',
     subtitle: 'The dissolution of classical trajectories into configurational information',
     description: 'Dismantles the Newtonian container. Hermann Minkowski recognized that Special Relativity unified rod-and-clock dynamics into an invariant four-dimensional spacetime manifold, declaring distinct space and time categories dead. Einstein generalized this, showing that gravity is curved geometry, thereby transforming spacetime into a dynamic participant. However, the continuous spacetime stage was soon challenged by the quantum revolution.\n\nHeisenberg\'s matrix mechanics eliminated physical electron orbits entirely, replacing classical trajectories with tables of observable transition probabilities. Schrödinger introduced wave functions, initially hoping to restore continuous wave packets, only to discover that multi-particle systems live in high-dimensional configuration space. This dissolved the classical object into mathematical information.',
     linkUrl: '/monograph/intro/intro-c',
-    buttonLabel: 'Read c. 1900–1950 →'
+    buttonLabel: 'Read Double Revolution →'
   },
   {
     id: 'part_d',
-    shortName: 'c. 1950–2025',
-    title: 'Information, Holography, and Code: c. 1950–2025',
+    shortName: 'Informational Turn',
+    title: 'Informational Turn',
     subtitle: 'From Geometrodynamics to "It from Bit" and computational spacetime',
     description: 'Pivots natural philosophy toward pure computation. John Archibald Wheeler pursued a monistic "Geometrodynamics" before realizing that Planck-scale quantum foam breaks continuous geometry. This drove his ultimate philosophical pivot, "It from Bit," which states that physical matter, energy, and spacetime emerge from binary informational questions.\n\nJacob Bekenstein and Stephen Hawking formalized this by demonstrating that black hole entropy scales with event horizon surface area, not volume. This led \'t Hooft and Susskind to formulate the Holographic Principle, proving bulk reality can be mapped to boundary codes. In parallel, Causal Set Theory and Loop Gravity constructed spacetime from discrete, relational networks, setting the stage for fault-tolerant pre-geometric spacetime.',
     linkUrl: '/monograph/intro/intro-d',
-    buttonLabel: 'Read c. 1950–2025 →'
+    buttonLabel: 'Read Informational Turn →'
+  },
+  {
+    id: 'part_e',
+    shortName: 'The Threshold',
+    title: 'The Threshold',
+    subtitle: 'From physical laws to algorithm rules and causal connection primitives',
+    description: 'Presents the transition from classical physical laws to computational and algorithmic rules. Across the frontiers of modern physics, the physical stuff of the universe has vanished, replaced by four distinct pillars of information: qubits, error-correcting codes, and causal sets.\n\nTo cross the final boundary, physics must abandon the search for the ultimate "stuff" or "geometry" and search instead for the ultimate algorithmic rule. We reframe the search as "It from It", the drive of inequality and constraint physically manifest. We posit that the most primitive element of reality is the directed causal link ($A \\to B$) and the simplest stable geometric structure is the closed 3-cycle ($A \\to B \\to C \\to A$), the founding commitments of Quantum Braid Dynamics.',
+    linkUrl: '/monograph/intro/intro-e',
+    buttonLabel: 'Read The Threshold →'
   }
 ];
 

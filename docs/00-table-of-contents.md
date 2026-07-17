@@ -12,10 +12,11 @@ sidebar_position: 0
 
 * [**Monograph Abstract**](/monograph/abstract)
 * [**Introduction: The Search for the Primitive**](/monograph/category/introduction/)
-  * [c. -600–1500](/monograph/intro/intro-a)
-  * [c. 1500–1900](/monograph/intro/intro-b)
-  * [c. 1900–1950](/monograph/intro/intro-c)
-  * [c. 1950–2025](/monograph/intro/intro-d)
+  * [Ancient Divide](/monograph/intro/intro-a)
+  * [Mechanical Age](/monograph/intro/intro-b)
+  * [Double Revolution](/monograph/intro/intro-c)
+  * [Informational Turn](/monograph/intro/intro-d)
+  * [The Threshold](/monograph/intro/intro-e)
 
 ### 1. The Foundational Principles (The Rules)
 * [Chapter 1: Substrate (Ontology)](/monograph/category/1-ontology)

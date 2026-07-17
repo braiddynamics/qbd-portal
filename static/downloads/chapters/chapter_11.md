@@ -55,7 +55,9 @@ We resolve this foundational crisis by constructing a rigorous discrete differen
 :::note[**Section 11.1 Overview**]
 :::
 
-The framework of Quantum Braid Dynamics requires a precise mechanism to connect the discrete relational structure of the causal graph with the continuous pseudo-Riemannian geometry of spacetime in General Relativity. This mechanism takes the form of a curvature concept that operates not as an approximate analogy but as a fully rigorous mathematical construct. This construct quantifies the geometric properties inherent in the causal graph while permitting a well-controlled continuum limit under appropriate scaling conditions. The curvature concept incorporates sensitivity to the elementary units of geometry, namely the 3-cycles that serve as the indivisible quanta of spatial structure (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />). Simultaneously, it adheres to the directed causal relations enforced by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Furthermore, the curvature concept integrates directly with the theory of optimal transport that defines the Gromov-Hausdorff-Wasserstein metric, since convergence within this metric forms the foundational element of the strategy for proving the Continuum Theorem.
+The framework of Quantum Braid Dynamics requires a precise mechanism to connect the discrete relational structure of the causal graph with the continuous pseudo-Riemannian geometry of spacetime in General Relativity. This mechanism takes the form of a curvature concept that operates not as an approximate analogy but as a fully rigorous mathematical construct. This construct quantifies the geometric properties inherent in the causal graph while permitting a well-controlled continuum limit under appropriate scaling conditions. The curvature concept incorporates sensitivity to the elementary units of geometry, namely the 3-cycles that serve as the indivisible quanta of spatial structure (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />).
+
+Simultaneously, it adheres to the directed causal relations enforced by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The structure is also constrained by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Furthermore, the curvature concept integrates directly with the theory of optimal transport that defines the Gromov-Hausdorff-Wasserstein metric, since convergence within this metric forms the foundational element of the strategy for proving the Continuum Theorem.
 
 Combinatorial definitions of discrete curvature, such as the Forman curvature introduced by Forman in 2003, offer simplicity and applicability in specific combinatorial settings. However, these definitions demonstrate fundamental limitations within the Quantum Braid Dynamics framework. The Forman curvature computes itself as a weighted sum involving the faces and edges adjacent to a given vertex or edge, and the Forman curvature depends exclusively on the degrees of vertices and the counts of higher-dimensional simplices incident to those vertices. This method captures certain effects related to local connectivity density, yet the Forman curvature exhibits no intrinsic sensitivity to metric properties, because the Forman curvature omits any consideration of distances or the costs associated with transporting mass between distinct points. In graphs where edges correspond to physical separations of varying scales (as occurs in Quantum Braid Dynamics, where such scales emerge from the lengths of causal paths) a purely combinatorial curvature fails to differentiate between a highly interconnected cluster, which manifests high positive curvature, and a sparsely connected region if the combinatorial tallies of simplices in the two regions exhibit similarity. Even more critically, the Forman curvature does not facilitate proofs of convergence within metric-measure spaces governed by the Gromov-Hausdorff-Wasserstein metric, because such proofs demand a curvature formulation that interacts explicitly with probability measures and transport distances to regulate the geometric behavior during the limiting process. Absent this incorporation of metric elements, the framework cannot establish rigorous bounds on the Wasserstein components that prove indispensable for demonstrating compactness and convergence in the Gromov-Hausdorff-Wasserstein sense. In summary, combinatorial curvatures such as the Forman curvature remain excessively discrete in nature; these curvatures fail to encode the continuous geometric information necessary to reconstruct a metric manifold in the continuum limit.
 
@@ -182,7 +184,7 @@ THE GHW METRIC COMPONENTS
 :::note[**Causal Curvature**]
 :::
 
-The synthesis of the Gromov-Hausdorff-Wasserstein (GHW) convergence and the Causal Gromov-Hausdorff limit establishes a rigorous mathematical foundation for the continuum limit of Quantum Braid Dynamics. The spatial geometry of individual slices, bounded by strict locality and bounded degree, converges to Riemannian manifolds via the GHW metric, ensuring that the distribution of physical information matches the spatial volume measure. Concurrently, the bulk poset converges under the causal diamond metric, recovering the Lorentzian metric signature and proper time intervals. This dual-limit framework guarantees that the discrete causal structure converges to a globally hyperbolic pseudo-Riemannian manifold, providing the necessary geometric background for the formulation of field equations.
+The synthesis of the Gromov-Hausdorff-Wasserstein (GHW) convergence and the Causal Gromov-Hausdorff limit establishes a rigorous mathematical foundation for the continuum limit of Quantum Braid Dynamics. The spatial geometry of individual slices, bounded by strict locality and bounded degree, converges to Riemannian manifolds via the GHW metric, ensuring that the distribution of physical information matches the spatial volume measure. Concurrently, the bulk poset converges under the causal diamond metric, recovering the Lorentzian metric signature and proper time intervals. This dual-limit framework guarantees that the discrete causal structure converges to a globally hyperbolic pseudo-Riemannian manifold, providing the necessary geometric background for the formulation of field equations. This is grounded in the **Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" /> and the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />. The structural consequences are further developed in the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />.
 
 The connection between the discrete causal relation and the continuous metric tensor is mediated by the volume of causal diamonds. Because the number of events in a causal diamond corresponds directly to its spacetime volume, the local geometry of the emergent manifold is determined by the distribution of events. Variations in event density and causal connectivity manifest macroscopic curvature, where the discrete causal Ollivier-Ricci curvature converges to the continuous Ricci curvature tensor. This convergence provides the mechanism for the emergence of General Relativity from the thermodynamics of the causal graph, as the homeostatic equilibrium of the rewrite rules enforces the Einstein field equations in the low-energy limit.
 
@@ -441,7 +443,7 @@ For any finite directed graph $G=(V,E)$ and any vertex $u \in V$, the function $
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.
+The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> and  **Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
@@ -487,7 +489,7 @@ Q.E.D.
 :::note[**Validation of Measure Normalization via Directed Chain Simulation**]
 :::
 
-Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4.1" label="§11.2.4.1" /> is based on the following protocols:
+Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the measure properties verified in **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />. This verification utilizes the following protocols:
 
 1.  **Lattice Generation:** The algorithm constructs a representative directed chain graph representing the sparse causal regime.
 2.  **Neighborhood Evaluation:** The protocol applies the lazy causal measure formula to the vertices under the four exhaustive topological configurations.
@@ -609,7 +611,7 @@ For any vertex $u$ possessing balanced causal degrees $ d_+ = |N^+(u)| = d_- = |
 :::tip[**Derivation of the Optimal Self-Weighting from the Analytical Maximization of the Macroscopic Temporal Entropy**]
 :::
 
-This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors.
+This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors.  **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" /> and  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />
 
 **I. Definition of Temporal Macro-States**
 The vacuum acts to maximize the uncertainty of the temporal locus of the state, independent of the spatial dispersion within those loci. we compute three distinct causal sectors (macro-states) for a vertex $u$: the Present $S_0 = \{u\}$, the Future $S_+ = N^+(u)$, and the Past $S_- = N^-(u)$. The total probability measure allocated to these macroscopic sectors is defined as:
@@ -913,7 +915,7 @@ Q.E.D.
 :::note[**Evaluation of Transport Costs via Linear Programming**]
 :::
 
-Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6.1" label="§11.2.6.1" /> is based on the following protocols:
+Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the validity criteria verified in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the following protocols:
 
 1.  **Metric Construction:** The algorithm constructs shortest-path distance matrices for a representative chain graph under both directed and undirected metrics.
 2.  **Wasserstein Resolution:** The protocol solves the optimal transport problem using a linear programming solver to evaluate forward and reverse transport costs.
@@ -1138,7 +1140,7 @@ Q.E.D.
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> is based on the constraints verified in **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -1328,7 +1330,7 @@ Let $G = (V, E)$ be a causal graph.
 :::tip[**Establishment of Boundary Homology Stability via Simplicial Link Decomposition**]
 :::
 
-For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
+For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$.  **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" /> and  **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = 16 + \mathcal{O}(r^{-1})
@@ -1646,7 +1648,7 @@ There exists a feasible transport coupling $\pi_1$ between the post-nucleation m
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
 
 The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
 
@@ -2119,7 +2121,7 @@ Q.E.D.
 :::note[**Monotonicity Theorem**]
 :::
 
-The Monotonicity Theorem establishes the fundamental causality of emergent gravity. By demonstrating that the topological act of closing a 3-cycle strictly increases the local causal **curvature** as formulated in <Ref id="11.3.2" label="§11.3.2" />, the discrete origin of the continuum geometric field is identified. This result implies that curvature is not a background stage upon which dynamics play out; rather, it is the direct, cumulative artifact of the system's underlying information processing.
+The Monotonicity Theorem establishes the fundamental causality of emergent gravity. By demonstrating that the topological act of closing a 3-cycle strictly increases the local causal **curvature** as formulated in  **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the discrete origin of the continuum geometric field is identified. This result implies that curvature is not a background stage upon which dynamics play out; rather, it is the direct, cumulative artifact of the system's underlying information processing.
 
 The physical consequence of this topological-geometric isomorphism is the unification of information and geometry. In this framework, a region of high curvature is not merely a region of warped space; it is a region of high computational density, characterized by a dense network of causal feedback loops. The force of gravity, therefore, emerges as an entropic pressure. Since the system is driven thermodynamically to maximize its structural complexity, the Monotonicity Theorem guarantees that this thermodynamic drive maps isomorphically onto a geometric drive, providing the microscopic justification for the **discrete Einstein-Hilbert Action** defined in <Ref id="11.3.1" label="§11.3.1" />.
 
@@ -2132,11 +2134,11 @@ This alignment between thermodynamic complexity and geometric curvature provides
 :::note[**End of Chapter 11**]
 :::
 
-The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> as the ruler of causal space. Within this metric space, the **lazy causal** measure <Ref id="11.2.1" label="§11.2.1" /> is employed to define the **Causal Ollivier-Ricci** curvature <Ref id="11.2.2" label="§11.2.2" />.
+The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> as the ruler of causal space. Within this metric space, the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> is employed to define the volume.
 
-This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. The **Curvature Monotonicity** theorem <Ref id="11.3.2" label="§11.3.2" /> proves that the discrete Einstein-Hilbert action scales with complexity, ensuring that thermodynamic relaxation generates a coherent spatial history. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
+This volume measure defines the local geometry. Specifically, the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> is constructed from the Wasserstein transport distance between these measures. This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. The **Curvature Monotonicity** theorem <Ref id="11.3.2" label="§11.3.2" /> proves that the discrete Einstein-Hilbert action scales with complexity, ensuring that thermodynamic relaxation generates a coherent spatial history. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
 
-We now possess a fully defined geometric spacetime that arises directly from discrete causal relations. The stage is set for the final deductive leap: demonstrating the convergence to a continuous manifold. We turn next to Chapter 12, where the convergence of the discrete causal graph to a smooth, continuous space will be proved.
+We now possess a fully defined geometric spacetime that arises directly from discrete causal relations. The stage is set for the final deductive leap: demonstrating the convergence to a continuous manifold. We turn next to **Chapter 12**, where the convergence of the discrete causal graph to a smooth, continuous space will be proved.
 
 ---
 

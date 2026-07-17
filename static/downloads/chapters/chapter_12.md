@@ -99,7 +99,7 @@ Given the conditions of **Eigenvalues** and **Eigenfunctions**, the properties o
 :::tip[**Operator Decomposition and Perturbation Analysis**]
 :::
 
-As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$. Specifically:
+As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$.  **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> and  **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" /> Specifically:
 
 * **Eigenvalues:** For each fixed mode $k$, the discrete eigenvalues converge with the rate:
 
@@ -167,7 +167,7 @@ Q.E.D.
 :::note[**Verification of Laplacian Spectral Convergence via Periodic 4D Grid Approximations**]
 :::
 
-Verification of the eigenvalue convergence rates established by **Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" /> is based on the following protocols:
+Verification of the eigenvalue **Spectral Convergence** rates established by **Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" /> and **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> is based on the following protocols:
 
 1.  **Grid Discretization:** The algorithm constructs a sequence of periodic 4D grid graphs representing discrete approximations of the Riemannian manifold.
 2.  **Spectrum Eigendecomposition:** The protocol performs numerical eigendecomposition of the consistently weighted discrete Laplacian to isolate the first non-zero eigenvalue.
@@ -331,7 +331,7 @@ Q.E.D.
 :::note[**Validation of Heat Kernel Asymptotics via Matrix Exponential Diffusion Solvers**]
 :::
 
-Verification of the short-time Gaussian diffusion asymptotics established by **Gaussian Bounds** <Ref id="12.1.4.1" label="§12.1.4.1" /> is based on the following protocols:
+Verification of the short-time Gaussian diffusion **Heat Kernel Asymptotics** established by **Gaussian Bounds** <Ref id="12.1.4.1" label="§12.1.4.1" /> and **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" /> is based on the following protocols:
 
 1.  **Heat Kernel Computation:** The algorithm computes the recurrence probability at a reference node using the matrix exponential of the discrete Laplacian.
 2.  **Dimensional Extraction:** The protocol evaluates the slope of the recurrence probability in the short-time logarithmic regime to estimate the effective system dimension.
@@ -448,7 +448,7 @@ Given that the Gromov-Hausdorff limit space $(M, g)$ is equipped with a unique s
 :::tip[**Formal Derivation of Metric Tensor Smoothness by means of the Bootstrapping of Weak Solutions to the Laplace-Beltrami Equation**]
 :::
 
-This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:
+This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:  **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" /> and  **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />
 1. **Eigenfunction Regularity:** The eigenfunctions $f_k$ of the limit operator $-\Delta_g$ belong to the intersection of all Sobolev spaces $W^{m,p}(M)$ for $m \in \mathbb{N}, p \in [1, \infty)$. 2. **Smooth Embedding:** By the Sobolev Embedding Theorem, this infinite Sobolev regularity implies containment in the space of smooth functions $C^\infty(M)$. 3. **Metric Regularity:** Since the components of the metric tensor $g_{\mu\nu}$ determine the coefficients of the elliptic operator $-\Delta_g$, the $C^\infty$ smoothness of the eigensolutions necessitates that the metric tensor itself is $C^\infty$-smooth. Consequently, the limit of the discrete causal graphs is not merely a topological manifold but a smooth Riemannian manifold.
 
 **I. Weak Formulation of the Spectral Limit**
@@ -550,7 +550,7 @@ Q.E.D.
 :::note[**Emergence of the Continuum**]
 :::
 
-The bridging of the chasm between the discrete and the continuous is achieved by proving that the spectral properties of the causal graph converge to those of the Laplace-Beltrami operator, as established in the **Smooth Manifold Limit** theorem <Ref id="12.1.2" label="§12.1.2" />. This demonstrates that the resonant frequencies and modes of the graph, analyzed through **spectral convergence** in <Ref id="12.1.3" label="§12.1.3" /> based on a **consistently weighted** Laplacian <Ref id="12.1.1" label="§12.1.1" />, reconstruct the geometry of a smooth 4-dimensional manifold. The discreteness of the underlying substrate does not vanish; rather, it is smoothed out by the statistical law of large numbers, much as the discrete molecular chaos of water resolves into the smooth hydrodynamics of a fluid, with the metric tensor $g_{\mu\nu}$ emerging as a statistical property of the graph's information flow.
+The bridging of the chasm between the discrete and the continuous is achieved by proving that the spectral properties of the causal graph converge to those of the Laplace-Beltrami operator, as established in the **Smooth Manifold Limit** theorem <Ref id="12.1.2" label="§12.1.2" />. This demonstrates that the resonant frequencies and modes of the graph, analyzed through **spectral convergence** in <Ref id="12.1.3" label="§12.1.3" /> based on a **consistently weighted** **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />, reconstruct the geometry of a smooth 4-dimensional manifold. The discreteness of the underlying substrate does not vanish; rather, it is smoothed out by the statistical law of large numbers, much as the discrete molecular chaos of water resolves into the smooth hydrodynamics of a fluid, with the metric tensor $g_{\mu\nu}$ emerging as a statistical property of the graph's information flow.
 
 This result implies a profound shift in the ontological status of spacetime, where General Relativity is revealed not as a fundamental interaction, but as the hydrodynamic limit of the causal network's thermodynamics. The smoothness of spacetime is an emergent phenomenon, valid only at scales significantly larger than the discreteness length, a boundary audited through **heat kernel asymptotics** in <Ref id="12.1.4" label="§12.1.4" />. Just as fluid mechanics fails at the mean free path, the smooth Riemannian description is expected to break down at the scale of the causal graph, revealing the granular, stochastic machinery beneath, whose differential structure is nonetheless preserved by elliptic regular **Smoothness via Elliptic Regularity** ity <Ref id="12.1.5" label="§12.1.5" />.
 
@@ -766,7 +766,7 @@ Q.E.D.
 :::note[**Verification of Directional Measures Convergence via Monte Carlo Sampling**]
 :::
 
-Verification of the spatial isotropy convergence established by **Haar Measure Convergence** <Ref id="12.2.3.1" label="§12.2.3.1" /> is based on the following protocols:
+Verification of the spatial isotropy convergence established by **Directional Measures** <Ref id="12.2.3.1" label="§12.2.3.1" /> and **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> is based on the following protocols:
 
 1.  **Empirical Direction Sampling:** The algorithm generates Monte Carlo samples of unit vectors distributed uniformly on the 4D sphere to represent edge directions.
 2.  **Moment Computation:** The protocol calculates the empirical second moment of the coordinates across the generated vector ensemble.
@@ -825,7 +825,7 @@ The high-precision ensemble simulation confirms robust convergence. The mean err
 
 The **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> is the mathematical guarantee that the QBD universe does not look like a crystal. In a crystalline lattice, particles can only move along specific axes (like the ranks and files of a chessboard). Such a structure would manifestly violate Lorentz invariance, the speed of light would depend on the direction of travel.
 
-The **Haar Measure Convergence** <Ref id="12.2.3.1" label="§12.2.3.1" /> demonstrates that the QBD graph avoids this fate through **ergodic mixing**. Because the graph is constantly rewriting itself under the influence of the update rule $\mathcal{U}$, the local connectivity pattern at any point $x$ cycles through the full ensemble of possible geometric configurations allowed by the vacuum constraints. Over the mesoscopic timescale of the averaging window, the set of edge directions fills the tangent sphere $S^3$ densely and uniformly.
+The **Haar Measure Convergence**  **Directional Measures** <Ref id="12.2.3.1" label="§12.2.3.1" /> demonstrates that the QBD graph avoids this fate through **ergodic mixing**. Because the graph is constantly rewriting itself under the influence of the update rule $\mathcal{U}$, the local connectivity pattern at any point $x$ cycles through the full ensemble of possible geometric configurations allowed by the vacuum constraints. Over the mesoscopic timescale of the averaging window, the set of edge directions fills the tangent sphere $S^3$ densely and uniformly.
 
 Physically, this means the "grain" of the discrete spacetime is randomized. There is no persistent "up" or "down" at the Planck scale. The weak convergence to the Haar measure ensures that when we compute integrals (like the flux of momentum across a surface), the discrete sum behaves exactly like a continuous integral over a smooth, isotropic manifold. The $W_1$ error bound tells us precisely how "smooth" this approximation is: it improves with the fourth power of the averaging radius, confirming that 4D geometry emerges rapidly as we zoom out from the graph scale.
 
@@ -843,7 +843,7 @@ Let $\mathcal{S}_e$ be a locally isotropic scalar field on the graph, such that 
 :::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
 :::
 
-The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$. Specifically, as $N_t \to \infty$:.
+The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$.  **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" /> and  **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> Specifically, as $N_t \to \infty$:.
 
 $$
 \lim_{t \to \infty} \left\| \widetilde{\mathcal{S}}_{ij}^{(t)}(x) - \frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}(x) \right\| \leq O(R^{-2} + N_t^{-1/2}).
@@ -889,7 +889,7 @@ Q.E.D.
 :::note[**Verification of Riemann Sum Tensor Reconstruction via Ensemble Statistics**]
 :::
 
-Verification of the metric tensor reconstruction accuracy established by **Integral Convergence** <Ref id="12.2.4.1" label="§12.2.4.1" /> is based on the following protocols:
+Verification of the metric tensor reconstruction accuracy established by **Riemann Sum Approximation** <Ref id="12.2.4.1" label="§12.2.4.1" /> and **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" /> is based on the following protocols:
 
 1.  **Tensor Reconstructor Sampling:** The algorithm generates a large family of random unit vectors on the 3-sphere representing discrete local directions.
 2.  **Tensorial Average Reconstruction:** The protocol evaluates the empirical tensorial average matrix of the outer products of the random vectors.
@@ -1079,9 +1079,9 @@ Q.E.D.
 :::note[**Tensorial Reorganization**]
 :::
 
-The transition from scalar graph dynamics to continuum tensor calculus is executed by mapping discrete features to smooth manifold objects. By demonstrating that the statistical thermodynamics of the causal graph coarse-grains into smooth tensor fields satisfying $G_{\mu\nu} = \kappa T_{\mu\nu}$, as verified in the **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" /> using **directional** measures <Ref id="12.2.3" label="§12.2.3" />, the Einstein Field Equations are shown to be the exact hydrodynamic limit of the discrete informational balance equations. The linearity of the **tensorial averaging map** defined in <Ref id="12.2.1" label="§12.2.1" /> guarantees that the microscopic equilibrium between curvature flux and complexity flux scales up undistorted, validating the hypothesis that gravity is an emergent entropic force.
+The transition from scalar graph dynamics to continuum tensor calculus is executed by mapping discrete features to smooth manifold objects. By demonstrating that the statistical thermodynamics of the causal graph coarse-grains into smooth tensor fields satisfying $G_{\mu\nu} = \kappa T_{\mu\nu}$, as verified in the **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" /> using **directional** **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, the Einstein Field Equations are shown to be the exact hydrodynamic limit of the discrete informational balance equations. The linearity of the **tensorial averaging map** defined in <Ref id="12.2.1" label="§12.2.1" /> guarantees that the microscopic equilibrium between curvature flux and complexity flux scales up undistorted, validating the hypothesis that gravity is an emergent entropic force.
 
-This result implies a fundamental shift in the interpretation of the metric tensor, since $g_{\mu\nu}$ is not a fundamental field but a derived statistical property of the graph's connectivity, much as temperature is a derived property of molecular motion. The stiffness of spacetime, characterized by the coupling constant $\kappa$, is determined by the correlation length of the underlying vacuum fluctuations. This confirms that General Relativity is an effective field theory valid only at scales larger than the discreteness length, with specific, calculable deviations expected in the high-energy regime where the averaging breaks down, a limit analyzed in the **EFE convergence** framework of <Ref id="12.2.5" label="§12.2.5" /> under **Riemann sum** approximations <Ref id="12.2.4" label="§12.2.4" />.
+This result implies a fundamental shift in the interpretation of the metric tensor, since $g_{\mu\nu}$ is not a fundamental field but a derived statistical property of the graph's connectivity, much as temperature is a derived property of molecular motion. The stiffness of spacetime, characterized by the coupling constant $\kappa$, is determined by the correlation length of the underlying vacuum fluctuations. This confirms that General Relativity is an effective field theory valid only at scales larger than the discreteness length, with specific, calculable deviations expected in the high-energy regime where the averaging breaks down, a limit analyzed in the **EFE convergence** framework of <Ref id="12.2.5" label="§12.2.5" /> under **Riemann sum** **Riemann Sum Approximation**s <Ref id="12.2.4" label="§12.2.4" />.
 
 With the geometric and dynamical structures now established, one critical component remains: the signature of the metric. We have derived a Riemannian metric $g_{\mu\nu}$ that describes the spatial geometry, but physical spacetime is Lorentzian. The final stage of the proof, presented in the subsequent section, must recover the light cone structure. We will demonstrate that the intrinsic directedness of the causal graph induces a temporal orientation on the manifold, upgrading the emergent geometry from Riemannian to pseudo-Riemannian and completing the recovery of classical spacetime.
 
@@ -1176,7 +1176,7 @@ Let $\vec{e} \in T_x M$ be the vector representation of a directed edge $e=(u,v)
 :::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
 :::
 
-Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:.
+Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:.  **Causal Drift** <Ref id="12.3.3" label="§12.3.3" /> and  **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />
 
 $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\vec{e}] \neq 0.
@@ -1246,9 +1246,12 @@ Given the system, the support of the directed edge measure $\mu_x$ is strictly c
 :::tip[**Establishment of the Causal Cone via Lieb-Robinson Bounds on the Graph**]
 :::
 
+The causal cone bound is established under **Null Boundary** <Ref id="12.3.4" label="§12.3.4" /> and **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />:
+
 $$
 \text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}.
 $$
+
 
 This angular bound $\Theta_c$ corresponds to the maximum speed of information propagation (the "speed of light") relative to the mean drift speed. The boundary of this support, $\partial \mathcal{C}_x$, forms the Null Cone structure required for Lorentzian geometry.
 
@@ -1347,7 +1350,7 @@ Verification of the emergent Lorentzian signature established in the **Signature
 
 1.  **Causal Propagator Assembly:** The algorithm generates a large ensemble of unit vectors distributed uniformly within a 4D cone representing the local tangent space.
 2.  **Eigendecomposition Analysis:** The protocol performs numerical eigendecomposition of the causal propagator matrix to extract the spatial and temporal eigenvalues.
-3.  **Null Condition Solve:** The metric evaluates the anisotropy ratio and enforces the null boundary condition to algebraically solve for the metric signature.
+3.  **Null Condition Solve:** The metric evaluates the anisotropy ratio and enforces the null boundary condition to algebraically solve for the metric signature. This verifies the result established in  **Signature Selectivity** <Ref id="12.3.5" label="§12.3.5" />.
 
 ```python
 import numpy as np
@@ -1428,7 +1431,7 @@ This spectral gap provides the rigorous geometric justification for the signatur
 :::note[**Emergence of Causal Structure**]
 :::
 
-The derivation of the spacetime signature is completed by analyzing the statistical anisotropy of the directed graph. By showing that the continuum limit of the causal graph is not a Riemannian solid but a Lorentzian manifold as established in **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />, the Wick rotation from Euclidean to Minkowski signature is revealed as a derived consequence of the directedness of the underlying edges rather than an ad hoc postulate. The **causal** drift vector analyzed in <Ref id="12.3.3" label="§12.3.3" /> breaks the symmetry of the vacuum, forcing the metric to assign a negative sign to the temporal dimension to satisfy the null condition at the boundary of the causal wedge.
+The derivation of the spacetime signature is completed by analyzing the statistical anisotropy of the directed graph. By showing that the continuum limit of the causal graph is not a Riemannian solid but a Lorentzian manifold as established in **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />, the Wick rotation from Euclidean to Minkowski signature is revealed as a derived consequence of the directedness of the underlying edges rather than an ad hoc postulate. The **causal** **Causal Drift** vector analyzed in <Ref id="12.3.3" label="§12.3.3" /> breaks the symmetry of the vacuum, forcing the metric to assign a negative sign to the temporal dimension to satisfy the null condition at the boundary of the causal wedge.
 
 This result has profound implications for the ontology of time, identifying the temporal dimension physically with the longitudinal flux of logical depth. It represents the direction of maximum graph growth, where the speed of light is identified geometrically with the aperture of the **emergent light cone** <Ref id="12.3.1" label="§12.3.1" />, a strict bound imposed by the finite connectivity of the discrete network and evaluated at the **null boundary** in <Ref id="12.3.4" label="§12.3.4" />. The causal structure of Special Relativity (including light cones, timelike paths, and spacelike separation) is thus recovered from the purely combinatorial properties of the underlying graph.
 

@@ -167,7 +167,7 @@ Given the spectral density of a graph of size $R$ satisfying the duality relatio
 
 **I. Spectral Density Formulation**
 
-Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function:
+Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function:  **Graph Scale Inversion** <Ref id="25.2.3" label="§25.2.3" /> and  **Loss of Scale** <Ref id="25.2.2" label="§25.2.2" />
 
 $$
 Z(R) = \sum_{n} e^{-\lambda_n(R) t}

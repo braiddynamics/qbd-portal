@@ -69,7 +69,7 @@ Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as 
 ---*   **Cycle Summation:** Physical quantities (such as mass or charge) are discrete counts of topological structures, represented as finite sums over graph vertices: $Q = \sum_v q(v)$.
 *   **Riemann Limit:** As the cell volume $\ell_0^3 \to dx^3$ and the count of nodes diverges, this discrete summation converges to the continuous volume integral:
     $$ Q \approx \int q(x) \sqrt{-g} \, d^3x $$
-*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature** <Ref id="11.1" label="§11.1" />).
+*   **Volume as Count:** Spacetime volume is strictly an emergent measure proportional to the total count of background vacuum 3-cycles ($Vol \propto N_3$, **Causal Curvature**  **The Continuum Limit** <Ref id="11.1" label="§11.1" />).
 
 ### 23.1.3.1 Proof: Integration Representation {#23.1.3.1}
 
@@ -77,7 +77,7 @@ Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as 
 :::
 
 **I. Measure Convergence**
-The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.  **Integration Representation** <Ref id="23.1.3" label="§23.1.3" /> and  **Combinatorial Limit** <Ref id="23.1.2" label="§23.1.2" />
 
 **II. Thermodynamic Integration**
 Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
@@ -108,7 +108,7 @@ Consider the discrete finite-difference operator $\Delta_h$ defined on the node 
 
 **I. Node Interpolation**
 
-Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. Using the Taylor series expansion:
+Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$.  **Discrete Differentiability** <Ref id="23.1.4" label="§23.1.4" /> and  **Integration Representation** <Ref id="23.1.3" label="§23.1.3" /> Using the Taylor series expansion:
 
 $$
 f(v_1) = f(v_0) + h \partial_x f(v_0) + \frac{h^2}{2} f''(y)
@@ -224,7 +224,7 @@ The proof proceeds by construction, establishing **Chiral Vacuum Bias** <Ref id=
 :::info[**Derivation of Microscopic Energy Bias between Enantiomeric Braid Configurations**]
 :::
 
-Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />, let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
+Let the weak self-energy difference under right-handed weak isospin currents be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" /> constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
 
 ### 23.2.3.1 Proof: Prebiotic Enantiomer Energy Bias {#23.2.3.1}
 
@@ -233,7 +233,7 @@ Given the projection of right-handed weak isospin currents under **Topological P
 
 **I. Electroweak Perturbation**
 
-Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:
+Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:  **Prebiotic Enantiomer Energy Bias** <Ref id="23.2.3" label="§23.2.3" /> and  **Chiral Vacuum Bias** <Ref id="23.2.2" label="§23.2.2" />
 
 $$
 \Delta E = 2 \operatorname{Re} \langle \Psi_L | \hat{H}_{PV} | \Psi_R \rangle
@@ -276,7 +276,7 @@ If the prebiotic chemical network undergoes autocatalytic replication with mutua
 
 **I. Frank Model Dynamics**
 
-Let the concentrations of the two enantiomers be $x_L$ and $x_D$. The dynamical equations with mutual antagonism are:
+Let the concentrations of the two enantiomers be $x_L$ and $x_D$.  **Autocatalytic Bifurcation** <Ref id="23.2.4" label="§23.2.4" /> and  **Prebiotic Enantiomer Energy Bias** <Ref id="23.2.3" label="§23.2.3" /> The dynamical equations with mutual antagonism are:
 
 $$
 \frac{dx_L}{dt} = k_S x_L - k_A x_L x_D
@@ -379,7 +379,7 @@ Suppose the $SU(3)_c$, $SU(2)_L$, and $U(1)_Y$ gauge generators are embedded as 
 
 **I. Generator Embedding**
 
-Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
+Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges. This verifies the closure constraints of the **Unified Braid Generators** <Ref id="23.3.2" label="§23.3.2" />, satisfying the conditions for **Chiral Triple Fusion** <Ref id="23.3.1" label="§23.3.1" />.
 
 **II. Coupling Operator Construction**
 
@@ -420,7 +420,7 @@ Let $D(N)$ be the dimension of the coupled braid rewrite symmetry algebra as the
 
 **I. Root System Embedding**
 
-Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
+Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph.  **E8 Dimensional Limit** <Ref id="23.3.3" label="§23.3.3" /> and  **Unified Braid Generators** <Ref id="23.3.2" label="§23.3.2" /> The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
 
 **II. Loop Constraint**
 
@@ -515,7 +515,7 @@ For all topological cycles on the trivalent graph represented as a formal linear
 
 **I. Cycle Space Definition**
 
-Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$.
+Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$.  **Graph Cycle Homology** <Ref id="24.1.2" label="§24.1.2" /> and  **Integer Basis** <Ref id="24.1.1" label="§24.1.1" />
 
 **II. Boundary Operator Action**
 
@@ -556,7 +556,7 @@ Let $\phi: G \to M$ denote the embedding of the trivalent graph into a complex p
 
 **I. Cycle Embedding**
 
-Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$. The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
+Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$.  **Cohomology Mapping Projection** <Ref id="24.1.3" label="§24.1.3" /> and  **Graph Cycle Homology** <Ref id="24.1.2" label="§24.1.2" /> The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
 
 $$
 \phi_* c \in Z_k(M, \mathbb{Z}
@@ -697,7 +697,7 @@ Suppose a non-trivial excitation of the quantum gauge field corresponds to a clo
 
 **I. Braid Word Representation**
 
-Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation. The generators are $\sigma_1$ and $\sigma_2$.
+Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation.  **Minimal Gauge Braid Representation** <Ref id="24.3.2" label="§24.3.2" /> and  **Topological Mass Gap** <Ref id="24.3.1" label="§24.3.1" /> The generators are $\sigma_1$ and $\sigma_2$.
 
 **II. Minimality Search**
 
@@ -736,7 +736,7 @@ Let the energy of a braid configuration be determined by the **Topological Mass 
 
 **I. Energy Functional**
 
-Let the energy of any braid configuration $\beta$ be given by the topological mass functional:
+Let the energy of any braid configuration $\beta$ be given by the topological mass functional:  **Lower Energy Bounds** <Ref id="24.3.3" label="§24.3.3" /> and  **Minimal Gauge Braid Representation** <Ref id="24.3.2" label="§24.3.2" />
 
 $$
 E(\beta) = \kappa \frac{\hbar c}{\ell_0} C[\beta]
@@ -833,7 +833,7 @@ Given the conditions of **Continuum Breakdown** and **Planck Cutoff**, the prope
 :::tip[**Verification of Bounded Operators on the Finite State Space**]
 :::
 
-*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
+*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.  **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" /> and  **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" />
 *   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
 
 **I. Representation on Discrete Hilbert Space**
@@ -897,7 +897,7 @@ Assume local fluid vorticity $\omega$ acts as a topological syndrome $\sigma$ re
 
 **I. Stress Operator Definition**
 
-Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch. The relaxation of the stress follows the comonad stabilization equation:
+Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch.  **Syndrome-Induced Damping** <Ref id="24.4.3" label="§24.4.3" /> and  **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" /> The relaxation of the stress follows the comonad stabilization equation:
 
 $$
 \frac{d\hat{T}_{ij}}{dt} = -\Gamma(\hat{T}) \hat{T}_{ij}
@@ -1004,7 +1004,7 @@ For any NP-complete search of problem size $N$, let the number of parallel topol
 
 **I. Path Representation**
 
-Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph. The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
+Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph.  **Exponential Cycle Demands** <Ref id="24.5.3" label="§24.5.3" /> and  **Complexity Black Hole Collapse** <Ref id="24.5.2" label="§24.5.2" /> The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
 
 **II. Vertex Packing Constraint**
 
@@ -1049,7 +1049,7 @@ If the graph update rate $\Gamma(\rho)$ decays to zero under **Core Density Limi
 
 **I. Density Bound Substitution**
 
-Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. From the results of **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" />, the local curvature scales with density.
+Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. From the results of **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" />, the local curvature scales with density. This is consistent with the **Gravitational Collapse Threshold** <Ref id="24.5.4" label="§24.5.4" />. It also satisfies the **Exponential Cycle Demands** <Ref id="24.5.3" label="§24.5.3" />.
 
 **II. Lapse Function Vanishing**
 
@@ -1290,7 +1290,7 @@ Given the spectral density of a graph of size $R$ satisfying the duality relatio
 
 **I. Spectral Density Formulation**
 
-Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function:
+Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function:  **Graph Scale Inversion** <Ref id="25.2.3" label="§25.2.3" /> and  **Loss of Scale** <Ref id="25.2.2" label="§25.2.2" />
 
 $$
 Z(R) = \sum_{n} e^{-\lambda_n(R) t}

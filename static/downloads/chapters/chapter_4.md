@@ -1492,9 +1492,9 @@ By proving that $k$ is rigidly locked to the symmetric difference $\Delta E$, we
 :::
 
 Type-theoretic certification of the deterministic constriction established in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" /> proceeds via the following verification strategy under the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />:
-1. **Encoding:** The `BitVector` type and `xor_vec` function encode the algebraic structure of the syndrome vectors and Pauli frame shifts. `GraphState` encodes the spatial manifold as a boolean map, and `symmetric_difference` encodes the topological rewrite $\Delta E$.
-2. **Theorem Statement:** The Lean code-level proposition asserts that if a physical update is defined by XOR anti-commutation (`h_physical_update`) and the category map is defined as $k(\sigma)$ (`h_categorical_map`), then $k(\sigma)$ must exactly equal the physical update.
-3. **Proof Closure:** The proof is resolved by `rw [← h_categorical_map]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
+1.  **Encoding:** The `BitVector` type and `xor_vec` function encode the algebraic structure of the syndrome vectors and Pauli frame shifts. `GraphState` encodes the spatial manifold as a boolean map, and `symmetric_difference` encodes the topological rewrite $\Delta E$.
+2.  **Theorem Statement:** The Lean code-level proposition asserts that if a physical update is defined by XOR anti-commutation (`h_physical_update`) and the category map is defined as $k(\sigma)$ (`h_categorical_map`), then $k(\sigma)$ must exactly equal the physical update.
+3.  **Proof Closure:** The proof is resolved by `rw [← h_categorical_map]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
 
 ```lean
 -- A generic representation of boolean vectors (syndromes and incidence vectors)
@@ -1532,6 +1532,9 @@ theorem algebraic_rigidity_of_k
   rw [← h_categorical_map]
   exact h_physical_update
 ```
+
+**Verification Summary:**
+The type definitions `BitVector` and `xor_vec` encode the boolean syndrome spaces and the physical updates as coordinate-wise XOR actions. The algebraic rigidity proof of `algebraic_rigidity_of_k` consumes the physical update constraint and the categorical mapping relation, resolving the goal by rewriting the categorical definition with the physical update. The Lean kernel's acceptance of this closed proof term certifies that the updated syndrome map is deterministically fixed by the XOR action, verifying the logical claim in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />.
 
 ---
 

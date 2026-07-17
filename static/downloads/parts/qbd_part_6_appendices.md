@@ -2168,7 +2168,7 @@ Section 10.1.3 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Ground State Stability ($|0_L\rangle$)**
-The configuration $\vec{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$.
+The configuration $\vec{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$. <Ref id="10.1.3" label="§10.1.3" /> and <Ref id="10.1.2" label="§10.1.2" />
 Any local rewrite operation $\mathcal{R}$ acting on this state either:
 1.  Increases the crossing number (adding energy), which is suppressed by the Boltzmann factor $e^{-\Delta E/T}$.
 2.  Maintains the topology (identity operation).
@@ -2213,7 +2213,7 @@ Section 10.1.4 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Permutation Operator Action**
-Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$.
+Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$. <Ref id="10.1.4" label="§10.1.4" /> and <Ref id="10.1.3" label="§10.1.3" />
 For the ground state $|0_L\rangle$ with $\vec{w}_0 = (-1, -1, -1)$:
 
 $$
@@ -2266,7 +2266,7 @@ Section 10.1.5 formalizes the properties of the QBD lemma regarding state contro
 :::
 
 **I. Conservation Constraints**
-Any control operation must preserve the total writhe $W = \sum w_i$ to maintain electric charge conservation.
+Any control operation must preserve the total writhe $W = \sum w_i$ to maintain electric charge conservation. <Ref id="10.1.5" label="§10.1.5" /> and <Ref id="10.1.4" label="§10.1.4" />
 
 $$
 \Delta W = W_{final} - W_{initial} = (-3) - (-3) = 0
@@ -2320,7 +2320,7 @@ Section 10.1.6 formalizes the properties of the QBD lemma regarding basis measur
 :::
 
 **I. Measurement Operator**
-The measurement observable is the quadratic Casimir operator of the $SU(3)$ gauge group, $\hat{C}^2_{SU(3)}$. In the physical implementation, this corresponds to scattering a high-energy gluon (or color probe) off the state.
+The measurement observable is the quadratic Casimir operator of the $SU(3)$ gauge group, $\hat{C}^2_{SU(3)}$. <Ref id="10.1.6" label="§10.1.6" /> and <Ref id="10.1.5" label="§10.1.5" /> In the physical implementation, this corresponds to scattering a high-energy gluon (or color probe) off the state.
 
 **II. Eigenvalue Spectrum**
 * **State $|0_L\rangle$:** This state is a color singlet. It transforms under the trivial representation $\mathbf{1}$.
@@ -2424,7 +2424,7 @@ Section 10.2.3 formalizes the properties of the QBD lemma regarding geometric co
 :::
 
 **I. Self-Commutation ($Z$-$Z$ Type)**
-The geometric stabilizers are defined as products of Pauli-$Z$ operators on the edges of a closed 3-cycle $\gamma$:
+The geometric stabilizers are defined as products of Pauli-$Z$ operators on the edges of a closed 3-cycle $\gamma$: <Ref id="10.2.3" label="§10.2.3" /> and <Ref id="10.2.2" label="§10.2.2" />
 
 $$
 S_{\text{geom}}^{(\gamma)} = \prod_{e \in \gamma} Z_e
@@ -2490,7 +2490,7 @@ Section 10.2.4 formalizes the properties of the QBD lemma regarding bit-flip loc
 :::
 
 **I. Syndrome Definition**
-The syndrome $\sigma_k$ for a stabilizer $S_k$ acting on a state $|\psi\rangle$ with error $E$ is defined by $S_k (E|\psi\rangle) = \sigma_k (E|\psi\rangle)$, where $\sigma_k \in \{+1, -1\}$.
+The syndrome $\sigma_k$ for a stabilizer $S_k$ acting on a state $|\psi\rangle$ with error $E$ is defined by $S_k (E|\psi\rangle) = \sigma_k (E|\psi\rangle)$, where $\sigma_k \in \{+1, -1\}$. <Ref id="10.2.4" label="§10.2.4" /> and <Ref id="10.2.3" label="§10.2.3" />
 For Pauli operators, if $\{S_k, E\} = 0$ (anticommute), then $\sigma_k = -1$ (flipped). If $[S_k, E] = 0$, $\sigma_k = +1$.
 
 **II. Cycle Error Analysis**
@@ -2530,7 +2530,7 @@ Section 10.2.5 formalizes the properties of the QBD lemma regarding ribbon integ
 :::
 
 **I. Ribbon Operator Definition**
-Ribbon stabilizers enforce correlations along the linear segments of the braid. They are typically defined as plaquette operators $S_{\text{ribbon}}^{(k,i)} = Z_{r_i} Z_{e_{top}} Z_{r_{i+1}} Z_{e_{bot}}$ involving two rung edges and two strand edges.
+Ribbon stabilizers enforce correlations along the linear segments of the braid. <Ref id="10.2.5" label="§10.2.5" /> and <Ref id="10.2.4" label="§10.2.4" /> They are typically defined as plaquette operators $S_{\text{ribbon}}^{(k,i)} = Z_{r_i} Z_{e_{top}} Z_{r_{i+1}} Z_{e_{bot}}$ involving two rung edges and two strand edges.
 
 **II. Self-Commutation ($Z$-$Z$)**
 As with geometric stabilizers, ribbon stabilizers consist purely of $Z$ operators.
@@ -2574,7 +2574,7 @@ Section 10.2.6 formalizes the properties of the QBD lemma regarding fraying dete
 :::
 
 **I. Error Mapping**
-Consider an $X$ error on rung $r_i$ connecting ribbon $k$ and $k+1$.
+Consider an $X$ error on rung $r_i$ connecting ribbon $k$ and $k+1$. <Ref id="10.2.6" label="§10.2.6" /> and <Ref id="10.2.5" label="§10.2.5" />
 The relevant stabilizers are the ribbon segments to the left ($S_{i-1}$) and right ($S_i$) of the rung.
 
 $$
@@ -2620,7 +2620,7 @@ Section 10.2.7 formalizes the properties of the QBD lemma regarding vertex commu
 :::
 
 **I. Operator Definition**
-Vertex stabilizers are of Pauli-$X$ type:
+Vertex stabilizers are of Pauli-$X$ type: <Ref id="10.2.7" label="§10.2.7" /> and <Ref id="10.2.6" label="§10.2.6" />
 
 $$
 S_v^X = \prod_{e \in \text{star}(v)} X_e
@@ -2664,7 +2664,7 @@ Section 10.2.8 formalizes the properties of the QBD lemma regarding phase error 
 :::
 
 **I. Error Mapping**
-Consider a phase error $E = Z_e$ on the edge $e$ connecting vertices $u$ and $v$.
+Consider a phase error $E = Z_e$ on the edge $e$ connecting vertices $u$ and $v$. <Ref id="10.2.8" label="§10.2.8" /> and <Ref id="10.2.7" label="§10.2.7" />
 The relevant checks are the vertex stabilizers $S_u^X$ and $S_v^X$, which contain $X_e$.
 
 **II. Syndrome Calculation**
@@ -2732,7 +2732,7 @@ Verification of the abelian structure of the stabilizer group established in the
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
-3.  **Commutator Metric:** The simulation computes the norm of the commutator $[A, B]$ for each pair. A norm of zero confirms commutation, while a non-zero norm indicates anticommutation.
+3.  **Commutator Metric:** The simulation computes the norm of the commutator $[A, B]$ for each pair. A norm of zero confirms commutation, while a non-zero norm indicates anticommutation. This verifies the result established in <Ref id="10.2.9" label="§10.2.9" />.
 
 ```python
 import qutip as qt
@@ -2844,7 +2844,7 @@ Section 10.3.3 formalizes the properties of the QBD lemma regarding syndrome fli
 :::
 
 **I. Initial State Properties**
-Let $|\psi_L\rangle$ denote a valid logical state. This state satisfies the stabilizer conditions with eigenvalue $+1$:
+Let $|\psi_L\rangle$ denote a valid logical state. <Ref id="10.3.3" label="§10.3.3" /> and <Ref id="10.3.2" label="§10.3.2" /> This state satisfies the stabilizer conditions with eigenvalue $+1$:
 * Geometric: $S_{\text{geom}} |\psi_L\rangle = + |\psi_L\rangle$.
 * Ribbon: $S^{(k,i)}_{\text{ribbon}} |\psi_L\rangle = + |\psi_L\rangle$.
 * Vertex: $S_v^X |\psi_L\rangle = + |\psi_L\rangle$.
@@ -2890,7 +2890,7 @@ Section 10.3.4 formalizes the properties of the QBD lemma regarding minimum weig
 :::tip[**Exhaustive Enumeration of Low-Weight Operators**]
 :::
 
-**I. Weight-1 Errors**
+**I. Weight-1 Errors** <Ref id="10.3.4" label="§10.3.4" />
 As proven in the **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
 
 **II. Weight-2 Errors**
@@ -2961,7 +2961,7 @@ Section 10.3.5.1 formalizes the properties of the QBD proof regarding thermodyna
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> <Ref id="10.3.5" label="§10.3.5" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
@@ -3051,7 +3051,7 @@ Vertex Fock Space represents the quantum state of the causal graph as a direct s
 
 **I. Direct Sum Decomposition of State Space**
 
-The global state space is decomposed into orthogonal sectors of fixed vertex number. For each $N \in \mathbb{N}$, the basis of $\mathcal{H}_N$ is spanned by the set of isomorphism classes of directed acyclic graphs on $N$ vertices, denoted $\{|G^{(N)}_i\rangle\}$. Since these sectors are orthogonal by definition, the direct sum structure holds:
+The global state space is decomposed into orthogonal sectors of fixed vertex number. <Ref id="10.3.6" label="§10.3.6" /> and <Ref id="10.3.5" label="§10.3.5" /> For each $N \in \mathbb{N}$, the basis of $\mathcal{H}_N$ is spanned by the set of isomorphism classes of directed acyclic graphs on $N$ vertices, denoted $\{|G^{(N)}_i\rangle\}$. Since these sectors are orthogonal by definition, the direct sum structure holds:
 
 $$
 \langle G^{(N)}_i | G^{(M)}_j \rangle = \delta_{NM} \delta_{ij}.
@@ -3159,7 +3159,7 @@ Section 10.4.3 formalizes the properties of the QBD lemma regarding writhe conse
 :::
 
 **I. Initial Configuration ($|0_L\rangle$)**
-The ground state is defined by the writhe vector $\vec{w}_0 = (-1, -1, -1)$.
+The ground state is defined by the writhe vector $\vec{w}_0 = (-1, -1, -1)$. <Ref id="10.4.3" label="§10.4.3" /> and <Ref id="10.4.2" label="§10.4.2" />
 The total writhe $W_0$ is the scalar sum of the components:
 
 $$
@@ -3313,7 +3313,7 @@ Section 10.5.2 formalizes the properties of the QBD lemma regarding singlet tran
 :::
 
 **I. State Representation**
-The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$.
+The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$. <Ref id="10.5.2" label="§10.5.2" /> and <Ref id="10.5.1" label="§10.5.1" />
 As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
 
 **II. Interaction Hamiltonian**
@@ -3369,7 +3369,7 @@ Section 10.5.3 formalizes the properties of the QBD lemma regarding color phase.
 :::
 
 **I. State Representation**
-The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\vec{w}_1 = (-2, -1, 0)$.
+The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\vec{w}_1 = (-2, -1, 0)$. <Ref id="10.5.3" label="§10.5.3" /> and <Ref id="10.5.2" label="§10.5.2" />
 This state transforms non-trivially under $SU(3)$ (e.g., triplet $\mathbf{3}$ or octet $\mathbf{8}$), implying a non-zero color charge vector $\vec{Q}_{color} \neq 0$.
 
 **II. Interaction Holonomy**
@@ -3518,7 +3518,7 @@ Section 10.6.3 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Mass-Complexity Relation**
-The rest energy of a braid state is proportional to its net topological complexity $N_{net}$, factoring in both isolated torsional strain and geometric sharing between parallel ribbons (**Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />):
+The rest energy of a braid state is proportional to its net topological complexity $N_{net}$, factoring in both isolated torsional strain and geometric sharing between parallel ribbons (**Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />): <Ref id="10.6.3" label="§10.6.3" /> and <Ref id="10.6.2" label="§10.6.2" />
 
 $$
 E \propto m \propto N_{net} = \sum_{i=1}^3 w_i^2 - k_{share} \cdot N_{parallel}
@@ -3608,7 +3608,7 @@ Verification of the thermodynamic mixing mechanism established in the **Hadamard
 
 1.  **System Definition:** The algorithm defines a two-level qubit system initialized in the ground state $|0\rangle\langle 0|$.
 2.  **Dynamics Simulation:** The protocol evolves the density matrix under a coherent drive Hamiltonian $H = (\Omega/2)\sigma_y$ and a low dissipation rate $\Gamma$, simulating the heating and quench cycle.
-3.  **Coherence Measurement:** The metric extracts the final population distribution and the off-diagonal coherence elements $\rho_{01}$ to quantify the fidelity of the created superposition.
+3.  **Coherence Measurement:** The metric extracts the final population distribution and the off-diagonal coherence elements $\rho_{01}$ to quantify the fidelity of the created superposition. This verifies the result established in <Ref id="10.6.4" label="§10.6.4" />.
 
 ```python
 import qutip as qt
@@ -3686,7 +3686,7 @@ Section 10.7.2 formalizes the properties of the QBD lemma regarding syndrome cou
 :::
 
 **I. Bridge Topology**
-A "bridge" is defined as a sequence of edge additions connecting the causal patch of $Q_C$ to the causal patch of $Q_T$.
+A "bridge" is defined as a sequence of edge additions connecting the causal patch of $Q_C$ to the causal patch of $Q_T$. <Ref id="10.7.2" label="§10.7.2" /> and <Ref id="10.7.1" label="§10.7.1" />
 This operation is performed by the Universal Constructor via a sequence of rewrites $\mathcal{B}$ that preserves the acyclicity of the global graph.
 The bridge essentially extends the "neighborhood" definition for the syndrome extraction functor $T$.
 
@@ -3896,7 +3896,7 @@ Section 10.8.4 formalizes the properties of the QBD lemma regarding monoidal str
 :::
 
 **I. Tensor Definition**
-For objects $A, B \in \mathcal{C}_{QBD}$, the tensor product $A \otimes B$ is defined as the disjoint union of their subgraphs $G_A \cup G_B$ embedded in the global causal graph $G$, separated by a vacuum region distance $d > \xi$.
+For objects $A, B \in \mathcal{C}_{QBD}$, the tensor product $A \otimes B$ is defined as the disjoint union of their subgraphs $G_A \cup G_B$ embedded in the global causal graph $G$, separated by a vacuum region distance $d > \xi$. <Ref id="10.8.4" label="§10.8.4" /> and <Ref id="10.8.3" label="§10.8.3" />
 This construction is compliant with the Principle of Unique Causality (PUC) as the vertex sets are disjoint: $V_A \cap V_B = \emptyset$.
 
 **II. Unit Object**
@@ -3942,7 +3942,7 @@ Section 10.8.5 formalizes the properties of the QBD lemma regarding braiding str
 :::
 
 **I. Braiding Morphism**
-The morphism $\sigma_{A,B}$ is the physical transport process that exchanges the spatial positions of braids $A$ and $B$.
+The morphism $\sigma_{A,B}$ is the physical transport process that exchanges the spatial positions of braids $A$ and $B$. <Ref id="10.8.5" label="§10.8.5" /> and <Ref id="10.8.4" label="§10.8.4" />
 Unlike a symmetric permutation, $\sigma_{A,B} \neq \sigma_{B,A}^{-1}$ generally, encoding the topological over/under-crossing information.
 
 **II. Yang-Baxter Equation**
@@ -4030,7 +4030,7 @@ Section 10.8.7 formalizes the properties of the QBD lemma regarding twist struct
 :::
 
 **I. Twist Morphism**
-The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$). This introduces a full twist ($360^\circ$) to the framing of the ribbons.
+The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$). <Ref id="10.8.7" label="§10.8.7" /> and <Ref id="10.8.6" label="§10.8.6" /> This introduces a full twist ($360^\circ$) to the framing of the ribbons.
 The operator anticommutes with the specific link stabilizer $L_S$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />, enforcing non-trivial phase accumulation.
 
 **II. Balancing Equation**
@@ -4140,7 +4140,7 @@ Verification of the non-Clifford phase accumulation established in the **T-Gate*
 
 1.  **Operator Definition:** The algorithm defines the T-gate unitary $T = \text{diag}(1, e^{i\pi/4})$ acting on the logical basis.
 2.  **State Evolution:** The protocol applies the operator to the basis states $|0_L\rangle$ and $|1_L\rangle$, as well as an equal superposition.
-3.  **Phase Extraction:** The metric computes the expectation value $\text{Re}(\langle \psi | T | \psi \rangle)$ to measure the phase rotation induced on each component.
+3.  **Phase Extraction:** The metric computes the expectation value $\text{Re}(\langle \psi | T | \psi \rangle)$ to measure the phase rotation induced on each component. This verifies the result established in <Ref id="10.8.9" label="§10.8.9" />.
 
 ```python
 import qutip as qt
@@ -4219,7 +4219,7 @@ Section 10.9.2 formalizes the properties of the QBD lemma regarding clifford gen
 :::
 
 **I. The Phase Gate ($S$)**
-The $S$ gate is defined as $\text{diag}(1, i)$. Since $T = \text{diag}(1, e^{i\pi/4})$ and $T^2 = \text{diag}(1, e^{i\pi/2}) = \text{diag}(1, i)$, the physical implementation is the repeated application of the T-process:
+The $S$ gate is defined as $\text{diag}(1, i)$. <Ref id="10.9.2" label="§10.9.2" /> and <Ref id="10.9.1" label="§10.9.1" /> Since $T = \text{diag}(1, e^{i\pi/4})$ and $T^2 = \text{diag}(1, e^{i\pi/2}) = \text{diag}(1, i)$, the physical implementation is the repeated application of the T-process:
 
 $$
 S_{phys} = \mathcal{R}_T \circ \mathcal{R}_T
@@ -4268,7 +4268,7 @@ Section 10.9.3 formalizes the properties of the QBD lemma regarding solovay-kita
 :::
 
 **I. Grid Construction**
-Let $\mathcal{G} = \{H, T\}$ be the generating set. The set of word sequences of length $L$, denoted $\mathcal{G}_L$, forms a grid of points on the $SU(2)$ manifold. Since the generators do not form a discrete finite subgroup, the closure of the group generated by $\mathcal{G}$ is dense in $SU(2)$.
+Let $\mathcal{G} = \{H, T\}$ be the generating set. <Ref id="10.9.3" label="§10.9.3" /> and <Ref id="10.9.2" label="§10.9.2" /> The set of word sequences of length $L$, denoted $\mathcal{G}_L$, forms a grid of points on the $SU(2)$ manifold. Since the generators do not form a discrete finite subgroup, the closure of the group generated by $\mathcal{G}$ is dense in $SU(2)$.
 
 **II. Epsilon-Net Density**
 Let $\epsilon > 0$ be the target approximation error. An $\epsilon$-net is constructed by compiling sequences of gates. The Solovay-Kitaev theorem guarantees that for any target unitary $U \in SU(2)$ and any $\epsilon > 0$, there exists a sequence $S \in \mathcal{G}_L$ of length $L$ such that the operator norm satisfies:
@@ -4326,7 +4326,7 @@ Section 10.9.4 formalizes the properties of the QBD proof regarding group closur
 :::note[**Computational Verification of Unitary Approximation via Gate Sequences**]
 :::
 
-Verification of the universality principle established by **Clifford Generation** <Ref id="10.9.2.1" label="§10.9.2.1" /> is based on the following protocols:
+Verification of the universality principle established by **Clifford Generation** <Ref id="10.9.2.1" label="§10.9.2.1" /> <Ref id="10.9.4" label="§10.9.4" /> is based on the following protocols:
 
 1.  **Target Generation:** The algorithm generates a random unitary matrix $U$ in $SU(2)$ to serve as the approximation target.
 2.  **Sequence Construction:** The protocol implements a simplified iterative decomposition algorithm (depth 4) using the discrete gate set $\{H, T\}$ to build an approximation $U_{approx}$.
@@ -4391,7 +4391,7 @@ Section 10.9.4.1 formalizes the properties of the QBD calculation regarding solo
 :::note[**Realization of Factoring via Topological Rewrite Sequences**]
 :::
 
-Demonstration of the computational power and fault tolerance established in the **Group Closure** <Ref id="10.9.4" label="§10.9.4" /> is based on the following protocols:
+Demonstration of the computational power and fault tolerance established in the **Group Closure** <Ref id="10.9.4" label="§10.9.4" /> <Ref id="10.9.5" label="§10.9.5" /> is based on the following protocols:
 
 1.  **Circuit Definition:** The algorithm constructs a quantum circuit for factoring $N=15$ ($a=7$), including state preparation, modular exponentiation, and the Inverse Quantum Fourier Transform (IQFT) on 3 qubits.
 2.  **Noise Model:** The protocol applies a depolarizing noise channel ($p=0.01$) to the input register to simulate environmental errors in the causal graph.
@@ -4686,7 +4686,7 @@ Section 11.2.4 formalizes the properties of the QBD lemma regarding measure vali
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.
+The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$. <Ref id="11.2.4" label="§11.2.4" /> and <Ref id="11.2.3" label="§11.2.3" />
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
@@ -4737,7 +4737,7 @@ Section 11.2.4.1 formalizes the properties of the QBD proof regarding measure va
 :::note[**Validation of Measure Normalization via Directed Chain Simulation**]
 :::
 
-Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4.1" label="§11.2.4.1" /> is based on the following protocols:
+Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the space definition verified in **Probability Space** <Ref id="11.2.2" label="§11.2.2" /> is based on the following protocols:
 
 1.  **Lattice Generation:** The algorithm constructs a representative directed chain graph representing the sparse causal regime.
 2.  **Neighborhood Evaluation:** The protocol applies the lazy causal measure formula to the vertices under the four exhaustive topological configurations.
@@ -4858,7 +4858,7 @@ Section 11.2.5 formalizes the properties of the QBD lemma regarding entropy maxi
 :::tip[**Derivation of the Optimal Self-Weighting from the Analytical Maximization of the Macroscopic Temporal Entropy**]
 :::
 
-This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors.
+This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors. <Ref id="11.2.5" label="§11.2.5" /> and <Ref id="11.2.4" label="§11.2.4" />
 
 **I. Definition of Temporal Macro-States**
 The vacuum acts to maximize the uncertainty of the temporal locus of the state, independent of the spatial dispersion within those loci. we compute three distinct causal sectors (macro-states) for a vertex $u$: the Present $S_0 = \{u\}$, the Future $S_+ = N^+(u)$, and the Past $S_- = N^-(u)$. The total probability measure allocated to these macroscopic sectors is defined as:
@@ -5136,7 +5136,7 @@ Section 11.2.6.1 formalizes the properties of the QBD proof regarding metric nec
 :::note[**Evaluation of Transport Costs via Linear Programming**]
 :::
 
-Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6.1" label="§11.2.6.1" /> is based on the following protocols:
+Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the validity criteria verified in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the following protocols:
 
 1.  **Metric Construction:** The algorithm constructs shortest-path distance matrices for a representative chain graph under both directed and undirected metrics.
 2.  **Wasserstein Resolution:** The protocol solves the optimal transport problem using a linear programming solver to evaluate forward and reverse transport costs.
@@ -5363,7 +5363,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> is based on the constraints verified in **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -5516,7 +5516,7 @@ Combinatorial Reifenberg Flatness establishes that space looks flat and manifold
 :::tip[**Establishment of Boundary Homology Stability via Simplicial Link Decomposition**]
 :::
 
-For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
+For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. <Ref id="11.2.8" label="§11.2.8" /> and <Ref id="11.2.7" label="§11.2.7" /> The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = 16 + \mathcal{O}(r^{-1})
@@ -5720,7 +5720,7 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. <Ref id="11.3.4" label="§11.3.4" /> and <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
 
 The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
 
@@ -6240,7 +6240,7 @@ Section 12.1.3 formalizes the properties of the QBD lemma regarding spectral con
 :::tip[**Operator Decomposition and Perturbation Analysis**]
 :::
 
-As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$. Specifically:
+As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$. <Ref id="12.1.3" label="§12.1.3" /> and <Ref id="12.1.2" label="§12.1.2" /> Specifically:
 
 * **Eigenvalues:** For each fixed mode $k$, the discrete eigenvalues converge with the rate:
 
@@ -6313,7 +6313,7 @@ Section 12.1.3.1 formalizes the properties of the QBD proof regarding spectral c
 :::note[**Verification of Laplacian Spectral Convergence via Periodic 4D Grid Approximations**]
 :::
 
-Verification of the eigenvalue convergence rates established by **Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" /> is based on the following protocols:
+Verification of the eigenvalue convergence rates established by **Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" /> <Ref id="12.1.3" label="§12.1.3" /> is based on the following protocols:
 
 1.  **Grid Discretization:** The algorithm constructs a sequence of periodic 4D grid graphs representing discrete approximations of the Riemannian manifold.
 2.  **Spectrum Eigendecomposition:** The protocol performs numerical eigendecomposition of the consistently weighted discrete Laplacian to isolate the first non-zero eigenvalue.
@@ -6481,7 +6481,7 @@ Section 12.1.4.1 formalizes the properties of the QBD proof regarding heat kerne
 :::note[**Validation of Heat Kernel Asymptotics via Matrix Exponential Diffusion Solvers**]
 :::
 
-Verification of the short-time Gaussian diffusion asymptotics established by **Gaussian Bounds** <Ref id="12.1.4.1" label="§12.1.4.1" /> is based on the following protocols:
+Verification of the short-time Gaussian diffusion asymptotics established by **Gaussian Bounds** <Ref id="12.1.4.1" label="§12.1.4.1" /> <Ref id="12.1.4" label="§12.1.4" /> is based on the following protocols:
 
 1.  **Heat Kernel Computation:** The algorithm computes the recurrence probability at a reference node using the matrix exponential of the discrete Laplacian.
 2.  **Dimensional Extraction:** The protocol evaluates the slope of the recurrence probability in the short-time logarithmic regime to estimate the effective system dimension.
@@ -6597,7 +6597,7 @@ Section 12.1.5 formalizes the properties of the QBD lemma regarding smoothness v
 :::tip[**Formal Derivation of Metric Tensor Smoothness by means of the Bootstrapping of Weak Solutions to the Laplace-Beltrami Equation**]
 :::
 
-This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:
+This regularity derives from the spectral properties of the Laplacian through the following logical implication chain: <Ref id="12.1.5" label="§12.1.5" /> and <Ref id="12.1.4" label="§12.1.4" />
 1. **Eigenfunction Regularity:** The eigenfunctions $f_k$ of the limit operator $-\Delta_g$ belong to the intersection of all Sobolev spaces $W^{m,p}(M)$ for $m \in \mathbb{N}, p \in [1, \infty)$. 2. **Smooth Embedding:** By the Sobolev Embedding Theorem, this infinite Sobolev regularity implies containment in the space of smooth functions $C^\infty(M)$. 3. **Metric Regularity:** Since the components of the metric tensor $g_{\mu\nu}$ determine the coefficients of the elliptic operator $-\Delta_g$, the $C^\infty$ smoothness of the eigensolutions necessitates that the metric tensor itself is $C^\infty$-smooth. Consequently, the limit of the discrete causal graphs is not merely a topological manifold but a smooth Riemannian manifold.
 
 **I. Weak Formulation of the Spectral Limit**
@@ -6843,7 +6843,7 @@ Section 12.2.3.1 formalizes the properties of the QBD proof regarding directiona
 :::note[**Verification of Directional Measures Convergence via Monte Carlo Sampling**]
 :::
 
-Verification of the spatial isotropy convergence established by **Haar Measure Convergence** <Ref id="12.2.3.1" label="§12.2.3.1" /> is based on the following protocols:
+Verification of the spatial isotropy convergence established by **Haar Measure Convergence** <Ref id="12.2.3.1" label="§12.2.3.1" /> <Ref id="12.2.3" label="§12.2.3" /> is based on the following protocols:
 
 1.  **Empirical Direction Sampling:** The algorithm generates Monte Carlo samples of unit vectors distributed uniformly on the 4D sphere to represent edge directions.
 2.  **Moment Computation:** The protocol calculates the empirical second moment of the coordinates across the generated vector ensemble.
@@ -6917,7 +6917,7 @@ Section 12.2.4 formalizes the properties of the QBD lemma regarding riemann sum 
 :::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
 :::
 
-The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$. Specifically, as $N_t \to \infty$:.
+The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$. <Ref id="12.2.4" label="§12.2.4" /> and <Ref id="12.2.3" label="§12.2.3" /> Specifically, as $N_t \to \infty$:.
 
 $$
 \lim_{t \to \infty} \left\| \widetilde{\mathcal{S}}_{ij}^{(t)}(x) - \frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}(x) \right\| \leq O(R^{-2} + N_t^{-1/2}).
@@ -6968,7 +6968,7 @@ Section 12.2.4.1 formalizes the properties of the QBD proof regarding riemann su
 :::note[**Verification of Riemann Sum Tensor Reconstruction via Ensemble Statistics**]
 :::
 
-Verification of the metric tensor reconstruction accuracy established by **Integral Convergence** <Ref id="12.2.4.1" label="§12.2.4.1" /> is based on the following protocols:
+Verification of the metric tensor reconstruction accuracy established by **Integral Convergence** <Ref id="12.2.4.1" label="§12.2.4.1" /> <Ref id="12.2.4" label="§12.2.4" /> is based on the following protocols:
 
 1.  **Tensor Reconstructor Sampling:** The algorithm generates a large family of random unit vectors on the 3-sphere representing discrete local directions.
 2.  **Tensorial Average Reconstruction:** The protocol evaluates the empirical tensorial average matrix of the outer products of the random vectors.
@@ -7206,7 +7206,7 @@ Section 12.3.3 formalizes the properties of the QBD lemma regarding causal drift
 :::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
 :::
 
-Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:.
+Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero:. <Ref id="12.3.3" label="§12.3.3" /> and <Ref id="12.3.2" label="§12.3.2" />
 
 $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\vec{e}] \neq 0.
@@ -7275,9 +7275,12 @@ Section 12.3.4 formalizes the properties of the QBD lemma regarding null boundar
 :::tip[**Establishment of the Causal Cone via Lieb-Robinson Bounds on the Graph**]
 :::
 
+The causal cone bound is established under **Null Boundary** <Ref id="12.3.4" label="§12.3.4" /> and **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />:
+
 $$
 \text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}.
 $$
+
 
 This angular bound $\Theta_c$ corresponds to the maximum speed of information propagation (the "speed of light") relative to the mean drift speed. The boundary of this support, $\partial \mathcal{C}_x$, forms the Null Cone structure required for Lorentzian geometry.
 
@@ -7373,7 +7376,7 @@ Verification of the emergent Lorentzian signature established in the **Signature
 
 1.  **Causal Propagator Assembly:** The algorithm generates a large ensemble of unit vectors distributed uniformly within a 4D cone representing the local tangent space.
 2.  **Eigendecomposition Analysis:** The protocol performs numerical eigendecomposition of the causal propagator matrix to extract the spatial and temporal eigenvalues.
-3.  **Null Condition Solve:** The metric evaluates the anisotropy ratio and enforces the null boundary condition to algebraically solve for the metric signature.
+3.  **Null Condition Solve:** The metric evaluates the anisotropy ratio and enforces the null boundary condition to algebraically solve for the metric signature. This verifies the result established in <Ref id="12.3.5" label="§12.3.5" />.
 
 ```python
 import numpy as np
@@ -7469,7 +7472,8 @@ $$
 T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b).
 $$
 
-The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" /> (denoted $\chi$) and the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
+The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+3.4" label="§2.3.4" />:
 
 $$
 P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
@@ -7662,7 +7666,7 @@ Verification of the local stress-energy conservation laws established in the **L
 
 1.  **Experimental Initialization:** The algorithm initializes a five-node Zero-Point Ignition vacuum as a minimal Bethe fragment to represent the seed of geometric growth.
 2.  **Dynamic Graph Evolution:** The protocol applies the universal rewrite rules and thermodynamic regulation suite under strict acyclic causal constraints to evolve the graph.
-3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis.
+3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in <Ref id="13.1.5" label="§13.1.5" />.
 
 ```python
 import numpy as np
@@ -8177,7 +8181,7 @@ Verification of the discrete coupling relations established in the **Derivation 
 
 1.  **Deterministic Response Evaluation:** The algorithm constructs a minimal three-node graph representing a closed 3-cycle to compute the exact coupling constant in the absence of noise.
 2.  **Statistical Permittivity Simulation:** The protocol simulates a statistical ensemble of edge configurations subject to vacuum fluctuations and Poissonian noise.
-3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept.
+3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in <Ref id="13.2.6" label="§13.2.6" />.
 
 ```python
 import numpy as np
@@ -8459,7 +8463,7 @@ Section 13.3.3 formalizes the properties of the QBD lemma regarding action invar
 :::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
 :::
 
-For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.
+For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:. <Ref id="13.3.3" label="§13.3.3" /> and <Ref id="13.3.2" label="§13.3.2" />
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].
@@ -8792,7 +8796,7 @@ Section 14.1.3 formalizes the properties of the QBD lemma regarding local causal
 :::tip[**Verification of Variance Suppression owing to the Application of the Central Limit Theorem to Graph Neighborhoods**]
 :::
 
-For any bounded discrete field $f$ with independent, identically distributed stochastic noise of variance $\sigma^2$, the variance of the averaged field scales as:.
+For any bounded discrete field $f$ with independent, identically distributed stochastic noise of variance $\sigma^2$, the variance of the averaged field scales as:. <Ref id="14.1.3" label="§14.1.3" /> and <Ref id="14.1.2" label="§14.1.2" />
 
 $$
 \text{Var}(\mathcal{A}_R f) \sim O(R^{-4})
@@ -8838,7 +8842,7 @@ Section 14.1.3.1 formalizes the properties of the QBD proof regarding local caus
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
+Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" /> is based on the proper time scaling verified in **Proper Time** <Ref id="14.1.2" label="§14.1.2" /> is based on the following protocols:
 
 1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
 2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
@@ -9038,7 +9042,7 @@ Verification of the global time foliation properties established in the **Smooth
 
 1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
 2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
-3.  **Roughness Gradient Analysis:** The metric evaluates the discrete lapse field gradients and roughness measures before and after applying the local causal average operator.
+3.  **Roughness Gradient Analysis:** The metric evaluates the discrete lapse field gradients and roughness measures before and after applying the local causal average operator. This verifies the result established in <Ref id="14.1.5" label="§14.1.5" />.
 
 ```python
 import networkx as nx
@@ -9174,7 +9178,8 @@ Section 14.1.5.1 formalizes the properties of the QBD calculation regarding glob
 :::tip[**Definition of the Emergent Pseudo-Riemannian Metric Tensor following the Arnowitt-Deser-Misner Decomposition**]
 :::
 
-The **Emergent Lorentzian Metric**, denoted $g_{\mu\nu}$, constitutes the fundamental dynamical tensor field on the differentiable manifold $M$. This tensor unifies the spatial Riemannian metric $g_{ij}$ **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" /> and the scalar **Lapse Function** <Ref id="14.1.1" label="§14.1.1" /> (denoted $N$) through the line element of the Arnowitt-Deser-Misner (ADM) decomposition:
+The **Emergent Lorentzian Metric**, denoted $g_{\mu\nu}$, constitutes the fundamental dynamical tensor field on the differentiable manifold $M$. This tensor unifies the spatial Riemannian metric $g_{ij}$ **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />.
+1.1" label="§14.1.1" /> (denoted $N$) through the line element of the Arnowitt-Deser-Misner (ADM) decomposition:
 
 $$
 \mathrm{d}s^2 = g_{\mu\nu} \mathrm{d}x^\mu \mathrm{d}x^\nu = -N^2 \mathrm{d}T^2 + g_{ij} (\mathrm{d}x^i + \beta^i \mathrm{d}T) (\mathrm{d}x^j + \beta^j \mathrm{d}T)
@@ -9412,7 +9417,7 @@ Section 14.2.7 formalizes the properties of the QBD lemma regarding geodesic mot
 :::tip[**Deduction of Inertial Trajectories determined by the Maximization of Proper Time in the Geometric Optics Limit**]
 :::
 
-This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
+This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. <Ref id="14.2.7" label="§14.2.7" /> and <Ref id="14.2.6" label="§14.2.6" /> Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
 
 The proof derives the classical equation of motion from the quantum statistical mechanics of the causal graph by taking the limit where the particle complexity (mass) is large compared to the lattice discretization scale.
 
@@ -9503,7 +9508,7 @@ Verification of the geodesic emergence and proper time maximization established 
 
 1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
 2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
-3.  **Trajectory Deviation Analysis:** The metric compares the resulting path against flat space coordinates to verify gravitational attraction and proper time maximization.
+3.  **Trajectory Deviation Analysis:** The metric compares the resulting path against flat space coordinates to verify gravitational attraction and proper time maximization. This verifies the result established in <Ref id="14.2.8" label="§14.2.8" />.
 
 ```python
 import networkx as nx
@@ -9731,6 +9736,8 @@ Section 14.3.4 formalizes the properties of the QBD lemma regarding vacuum invar
 :::tip[**Demonstration of Invariance via the Uniqueness of the Maximum Entropy Stationary Distribution**]
 :::
 
+The Poincaré invariance of the vacuum state is established under **Vacuum Invariance (Haar Measure)** <Ref id="14.3.4" label="§14.3.4" /> and **Hyperbolic Rotations** <Ref id="14.3.3" label="§14.3.3" />:
+
 $$
 U(\Lambda, a) |0\rangle = |0\rangle \quad \forall (\Lambda, a) \in \mathcal{P}
 $$
@@ -9870,7 +9877,7 @@ Section 14.3.6.1 formalizes the properties of the QBD proof regarding microcausa
 :::note[**Verification of Microcausality and Commutator Vanishing via DAG Path Connectivity**]
 :::
 
-Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
+Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6" label="§14.3.6" /> is based on the coordinate bounds verified in **Spacelike Separation** <Ref id="14.3.3" label="§14.3.3" /> is based on the following protocols:
 
 1.  **Causal Connectivity Matrix Assembly:** The algorithm maps the causal structure of a spacetime patch using a directed acyclic graph representing local relations.
 2.  **Spacelike Separation Check:** The protocol determines the pairwise causal connectivity to identify all pairs of causally disconnected nodes.
@@ -10069,7 +10076,7 @@ Verification of the spatial correlation decay established by **Wightman Complian
 
 1.  **Massive Propagator Construction:** The algorithm constructs a massive scalar field on a 1D spatial lattice by computing the inverse of the discrete massive Laplacian.
 2.  **Correlator Measurement:** The protocol evaluates the two-point correlator with respect to spatial distance across the lattice.
-3.  **Exponential Decay Verification:** The metric tracks the exponential decay rate of the correlations to verify vacuum locality and the existence of a mass gap.
+3.  **Exponential Decay Verification:** The metric tracks the exponential decay rate of the correlations to verify vacuum locality and the existence of a mass gap. This verifies the result established in <Ref id="14.3.8" label="§14.3.8" />.
 
 ```python
 import numpy as np
@@ -10191,7 +10198,7 @@ Section 14.4.2 formalizes the properties of the QBD lemma regarding first law of
 :::
 
 **I. The Horizon as a Cut-Set**
-In the discrete causal graph, a "horizon" $\mathcal{H}$ corresponds to a cut-set $C$ separating the accessible subgraph $G_{obs}$ from the inaccessible subgraph $G_{hidden}$. The entropy of the region is defined by the Von Neumann entropy of the reduced density matrix $\rho_{obs} = \text{tr}_{hidden}|\psi\rangle\langle\psi|$.
+In the discrete causal graph, a "horizon" $\mathcal{H}$ corresponds to a cut-set $C$ separating the accessible subgraph $G_{obs}$ from the inaccessible subgraph $G_{hidden}$. <Ref id="14.4.2" label="§14.4.2" /> and <Ref id="14.4.1" label="§14.4.1" /> The entropy of the region is defined by the Von Neumann entropy of the reduced density matrix $\rho_{obs} = \text{tr}_{hidden}|\psi\rangle\langle\psi|$.
 
 **II. The Cycle-Area Relation**
 By the definition of the graph topology, the cut-set size is enumerated by the number of irreducible cycles it intersects. we compute the count of 3-cycles $N_3$ with the geometric area in Planck units:
@@ -10230,7 +10237,7 @@ Section 14.4.3 formalizes the properties of the QBD lemma regarding recovering n
 :::tip[**Dimensional Derivation from the Bekenstein-Hawking Limit**]
 :::
 
-Newton's constant $G$ is derived from the fundamental discreteness scale of the graph, specifically the effective area $A_3$ of a single logical 3-cycle:.
+Newton's constant $G$ is derived from the fundamental discreteness scale of the graph, specifically the effective area $A_3$ of a single logical 3-cycle:. <Ref id="14.4.3" label="§14.4.3" /> and <Ref id="14.4.2" label="§14.4.2" />
 
 $$
 G \sim \frac{c^3}{\hbar} A_3 \approx \ell_0^2 \frac{c^3}{\hbar}
@@ -10306,7 +10313,7 @@ Verification of the curvature-entropy coupling established in **Einstein Field E
 
 1.  **Geometric Deformation:** The protocol analyzes a geodesic pencil forming a local horizon, tracking the expansion parameter $\theta$ using the Raychaudhuri focusing equation $\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} - R_{\mu\nu}k^\mu k^\nu$.
 2.  **Thermodynamic Constraint:** The system equates the change in area $\delta A$ to the entanglement entropy change $\delta S$, relating the energy flux to the curvature tensor.
-3.  **Einstein Identification:** The derivation applies the contracted Bianchi identity to identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique divergence-free curvature coupling.
+3.  **Einstein Identification:** The derivation applies the contracted Bianchi identity to identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique divergence-free curvature coupling. This verifies the result established in <Ref id="14.4.4" label="§14.4.4" />.
 
 Q.E.D.
 
@@ -10420,7 +10427,7 @@ Section 15.1.4 formalizes the properties of the QBD lemma regarding stabilizer c
 :::tip[**Verification of Stabilizer Commutation with Disjoint Local Operators**]
 :::
 
-Let $S_{AB}$ denote a stabilizer generator acting non-trivially on the edge set $E_{bridge}$ connecting $A$ and $B$. Let $U(t)$ denote the global unitary evolution operator generated by the sequence of local rewrite rules $\mathcal{R} = \{r_i\}$ acting on the graph vertex set $V$. The invariance condition:.
+Let $S_{AB}$ denote a stabilizer generator acting non-trivially on the edge set $E_{bridge}$ connecting $A$ and $B$. <Ref id="15.1.4" label="§15.1.4" /> and <Ref id="15.1.3" label="§15.1.3" /> Let $U(t)$ denote the global unitary evolution operator generated by the sequence of local rewrite rules $\mathcal{R} = \{r_i\}$ acting on the graph vertex set $V$. The invariance condition:.
 
 $$
 U(t) S_{AB} U^\dagger(t) = S_{AB}
@@ -10637,7 +10644,7 @@ Verification of the metric divergence established in the **Distance Gap** <Ref i
 
 1.  **Manifold Instantiation:** The algorithm constructs a cyclic graph representing a discrete 1D compact Riemannian manifold across varying scales.
 2.  **Bridge Injection:** The protocol establishes a direct topological edge between antipodal vertices to simulate a singular wormhole bridge.
-3.  **Metric Evaluation:** The metric concurrently computes the geometric shortest path along the bulk and the topological shortest path across the bridge to measure their decoupling.
+3.  **Metric Evaluation:** The metric concurrently computes the geometric shortest path along the bulk and the topological shortest path across the bridge to measure their decoupling. This verifies the result established in <Ref id="15.1.6" label="§15.1.6" />.
 
 ```python
 import networkx as nx
@@ -10744,7 +10751,7 @@ Section 15.2.2 formalizes the properties of the QBD lemma regarding path integra
 :::tip[**Derivation of Exponential Suppression for Bulk Trajectories**]
 :::
 
-In the Geometrogenesis limit defined by high inverse temperature $\beta \to \infty$, this summation is asymptotically dominated by the subset of paths minimizing the topological hop-count. Specifically, if there exists a bridge edge $\ell_{AB}$ such that $d_{topo}(A, B) \ll d_{geo}(A, B)$, the transition probability $P(A \to B)$ satisfies the dominance condition:.
+In the Geometrogenesis limit defined by high inverse temperature $\beta \to \infty$, this summation is asymptotically dominated by the subset of paths minimizing the topological hop-count. <Ref id="15.2.2" label="§15.2.2" /> and <Ref id="15.2.1" label="§15.2.1" /> Specifically, if there exists a bridge edge $\ell_{AB}$ such that $d_{topo}(A, B) \ll d_{geo}(A, B)$, the transition probability $P(A \to B)$ satisfies the dominance condition:.
 
 $$
 P(A \to B) \approx |\psi_{bridge}|^2 \cdot \left[ 1 + \mathcal{O}\left( e^{-\alpha(d_{geo} - d_{topo})} \right) \right]
@@ -10841,7 +10848,7 @@ Section 15.2.3 formalizes the properties of the QBD lemma regarding correlation 
 :::tip[**Formal Derivation of the Correlation Function via Minimal Path Dominance**]
 :::
 
-Let $\xi$ denote the correlation length of the vacuum state. The correlation magnitude satisfies the inequality:.
+Let $\xi$ denote the correlation length of the vacuum state. <Ref id="15.2.3" label="§15.2.3" /> and <Ref id="15.2.2" label="§15.2.2" /> The correlation magnitude satisfies the inequality:.
 
 $$
 |C(A, B)| \ge \mathcal{K} \cdot \exp\left( -\frac{d_{topo}(A, B)}{\xi} \right)
@@ -10922,7 +10929,7 @@ Section 15.2.4 formalizes the properties of the QBD lemma regarding tsirelson bo
 :::tip[**Formal Derivation of the Operator Norm Limit**]
 :::
 
-Specifically, for any set of local observables defined by the braid group algebra $\mathcal{B}_N$, the CHSH correlation is bounded by the Tsirelson limit:.
+Specifically, for any set of local observables defined by the braid group algebra $\mathcal{B}_N$, the CHSH correlation is bounded by the Tsirelson limit:. <Ref id="15.2.4" label="§15.2.4" /> and <Ref id="15.2.3" label="§15.2.3" />
 
 $$
 |S| \le 2\sqrt{2}
@@ -11036,7 +11043,7 @@ Verification of the metric locality violation established by **Violation of Metr
 
 1.  **State Preparation:** The algorithm initializes the maximally entangled Bell state on a graph topology containing a single stabilizer bridge.
 2.  **Basis Measurement:** The protocol applies rotated local Pauli operators to the boundary vertices to maximize the geometric conflict between measurement bases.
-3.  **CHSH Parameter Evaluation:** The metric computes the four joint correlation expectation values to evaluate the Clauser-Horne-Shimony-Holt parameter.
+3.  **CHSH Parameter Evaluation:** The metric computes the four joint correlation expectation values to evaluate the Clauser-Horne-Shimony-Holt parameter. This verifies the result established in <Ref id="15.2.5" label="§15.2.5" />.
 
 ```python
 import numpy as np
@@ -11179,7 +11186,7 @@ Section 15.3.2 formalizes the properties of the QBD lemma regarding isoperimetri
 :::tip[**Formal Verification of Anomalous Volume Scaling**]
 :::
 
-Let $\Omega \subset V$ be a subgraph volume and $\partial \Omega$ be its boundary edge set. In a $D$-dimensional manifold, the isoperimetric ratio scales as $|\partial \Omega| \ge c_D |\Omega|^{(D-1)/D}$. However, for a partition defined by the bridge cut $\partial \Omega = \{\ell_{AB}\}$, the ratio satisfies the **Isoperimetric Deficit Condition**:.
+Let $\Omega \subset V$ be a subgraph volume and $\partial \Omega$ be its boundary edge set. <Ref id="15.3.2" label="§15.3.2" /> and <Ref id="15.3.1" label="§15.3.1" /> In a $D$-dimensional manifold, the isoperimetric ratio scales as $|\partial \Omega| \ge c_D |\Omega|^{(D-1)/D}$. However, for a partition defined by the bridge cut $\partial \Omega = \{\ell_{AB}\}$, the ratio satisfies the **Isoperimetric Deficit Condition**:.
 
 $$
 \frac{|\partial \Omega|}{|\Omega|} \sim \frac{1}{N} \ll N^{-1/D}
@@ -11255,7 +11262,7 @@ Section 15.3.3 formalizes the properties of the QBD lemma regarding emergent thr
 :::tip[**Formal Verification of the Min-Cut/Max-Flow Duality at the Topological Defect**]
 :::
 
-Let $\Sigma$ be a homological surface separating the boundary regions $\partial A$ and $\partial B$. The area of the minimal surface, defined by the edge count $|E_{cut}|$, satisfies the minimization condition strictly at the locus of entanglement:.
+Let $\Sigma$ be a homological surface separating the boundary regions $\partial A$ and $\partial B$. <Ref id="15.3.3" label="§15.3.3" /> and <Ref id="15.3.2" label="§15.3.2" /> The area of the minimal surface, defined by the edge count $|E_{cut}|$, satisfies the minimization condition strictly at the locus of entanglement:.
 
 $$
 \text{Area}(\gamma_{min}) \equiv \min_{\Sigma} |E_{\Sigma}| = |E_{bridge}|
@@ -11325,7 +11332,7 @@ Section 15.3.4 formalizes the properties of the QBD lemma regarding teleportatio
 :::tip[**Formal Algebraic Verification of State Recovery**]
 :::
 
-Let $|\psi\rangle$ denote the arbitrary state to be transmitted from $A$ to $B$, and let $|\Phi^+\rangle_{AB}$ be the shared Bell pair supported on the bridge edges. The transmission is achieved through a joint measurement at $A$, classical transmission of the two-bit result, and a local unitary correction at $B$. The protocol recovers the exact state $|\psi\rangle$ at the target locus with fidelity $F \equiv 1.0$, demonstrating that the topological bridge acts as a traversable quantum channel.
+Let $|\psi\rangle$ denote the arbitrary state to be transmitted from $A$ to $B$, and let $|\Phi^+\rangle_{AB}$ be the shared Bell pair supported on the bridge edges. <Ref id="15.3.4" label="§15.3.4" /> and <Ref id="15.3.3" label="§15.3.3" /> The transmission is achieved through a joint measurement at $A$, classical transmission of the two-bit result, and a local unitary correction at $B$. The protocol recovers the exact state $|\psi\rangle$ at the target locus with fidelity $F \equiv 1.0$, demonstrating that the topological bridge acts as a traversable quantum channel.
 
 **I. Combined System State**
 
@@ -11405,7 +11412,7 @@ Verification of the geometric expansion of the entanglement bridge established i
 
 1.  **State Initialization:** The algorithm initializes the system in the Thermofield Double ground state represented by a single bridge edge.
 2.  **Unitary Evolution:** The protocol applies a sequence of unitary gate rewrites to insert new nodes into the topological channel, incrementing the path length.
-3.  **Complexity Scaling Analysis:** The metric monitors the geodesic distance through the bridge relative to circuit complexity to verify linear growth.
+3.  **Complexity Scaling Analysis:** The metric monitors the geodesic distance through the bridge relative to circuit complexity to verify linear growth. This verifies the result established in <Ref id="15.3.5" label="§15.3.5" />.
 
 ```python
 import networkx as nx
@@ -11544,7 +11551,7 @@ Section 15.4.3 formalizes the properties of the QBD lemma regarding ensemble ind
 :::tip[**Formal Verification of Historical Interference via Projector Algebra**]
 :::
 
-The state exists as a coherent superposition of all topologically distinct causal histories $\gamma_i$ compatible with the boundary constraints. Specifically, the density matrix $\rho(t)$ describing the system at time $t$ contains non-vanishing off-diagonal terms (coherences) between mutually exclusive geometric configurations:.
+The state exists as a coherent superposition of all topologically distinct causal histories $\gamma_i$ compatible with the boundary constraints. <Ref id="15.4.3" label="§15.4.3" /> and <Ref id="15.4.2" label="§15.4.2" /> Specifically, the density matrix $\rho(t)$ describing the system at time $t$ contains non-vanishing off-diagonal terms (coherences) between mutually exclusive geometric configurations:.
 
 $$
 \exists \gamma_i, \gamma_j \in \mathcal{E}, \quad \gamma_i(t) \neq \gamma_j(t) \implies \langle \gamma_i(t) | \rho(t) | \gamma_j(t) \rangle \neq 0
@@ -11616,7 +11623,7 @@ Section 15.4.4 formalizes the properties of the QBD lemma regarding block univer
 :::tip[**Formal Derivation of History Selection via Boundary Projection**]
 :::
 
-The effective spacetime block is not generated iteratively by forward evolution alone, but is the solution set $\mathcal{S}$ to the boundary equation:.
+The effective spacetime block is not generated iteratively by forward evolution alone, but is the solution set $\mathcal{S}$ to the boundary equation:. <Ref id="15.4.4" label="§15.4.4" /> and <Ref id="15.4.3" label="§15.4.3" />
 
 $$
 \mathcal{S} = \left\{ \gamma \in \Gamma \ : \ \hat{P}_{in} \left( \prod_{t=t_0}^{t_f} U_t \right) \hat{P}_{out}[\hat{M}] \neq 0 \right\}
@@ -11784,7 +11791,7 @@ Section 16.1.3 formalizes the properties of the QBD lemma regarding min-cut entr
 :::tip[**Direct Construction via Schmidt Rank Saturation at the Minimal Cut Surface**]
 :::
 
-Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$.
+Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$. <Ref id="16.1.3" label="§16.1.3" /> and <Ref id="16.1.2" label="§16.1.2" />
 
 $$
 S(\rho_A) = \min_{\gamma} |\text{Cut}(\gamma)| \cdot \ln \chi
@@ -11850,7 +11857,7 @@ Section 16.1.4 formalizes the properties of the QBD lemma regarding isometry con
 :::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
 
-Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:.
+Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). <Ref id="16.1.4" label="§16.1.4" /> and <Ref id="16.1.3" label="§16.1.3" /> The global mapping preserves the inner product of the bulk state space:.
 
 $$
 \Phi^\dagger \Phi = \hat{I}_{bulk}
@@ -11972,7 +11979,7 @@ Verification of the holographic scaling law established by **Ryu-Takayanagi Corr
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
-3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size.
+3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size. This verifies the result established in <Ref id="16.1.5" label="§16.1.5" />.
 
 ```python
 import networkx as nx
@@ -12167,7 +12174,7 @@ Section 16.2.3 formalizes the properties of the QBD lemma regarding holographic 
 :::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
 :::
 
-Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
+Let $\vec{J}_S$ denote the information flux vector field. <Ref id="16.2.3" label="§16.2.3" /> and <Ref id="16.2.2" label="§16.2.2" /> Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
 
 $$
 \lim_{\rho \to \rho_{max}} \frac{dS}{dt} = \alpha \cdot \frac{dA}{dt}
@@ -12254,7 +12261,7 @@ Section 16.2.4 formalizes the properties of the QBD lemma regarding black hole e
 :::tip[**Formal Verification of the Microstate Counting on the Horizon**]
 :::
 
-Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:.
+Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. <Ref id="16.2.4" label="§16.2.4" /> and <Ref id="16.2.3" label="§16.2.3" /> The entropy is given by the topological counting function:.
 
 $$
 S_{BH}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\vec{A} \equiv \frac{N_{cycles}(\Sigma)}{4}
@@ -12353,7 +12360,7 @@ Verification of the holographic saturation limit established by **Maximum Inform
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
-3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth.
+3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth. This verifies the result established in <Ref id="16.2.5" label="§16.2.5" />.
 
 ```python
 import networkx as nx
@@ -12570,7 +12577,7 @@ Section 17.1.3 formalizes the properties of the QBD lemma regarding geodesic dom
 :::tip[**Reductio via Action Excess on Non-Minimal Paths**]
 :::
 
-Let $\mathcal{P}(x_A, x_B)$ denote the set of all directed paths $\gamma$ on the graph connecting endpoint $x_A$ to endpoint $x_B$, and let $\epsilon_{op}$ be the fundamental action cost per active graph edge.
+Let $\mathcal{P}(x_A, x_B)$ denote the set of all directed paths $\gamma$ on the graph connecting endpoint $x_A$ to endpoint $x_B$, and let $\epsilon_{op}$ be the fundamental action cost per active graph edge. <Ref id="17.1.3" label="§17.1.3" /> and <Ref id="17.1.2" label="§17.1.2" />
 
 **I. Action Functional of the Flux Chain**
 
@@ -12738,7 +12745,7 @@ Section 17.1.5 formalizes the properties of the QBD proof regarding action equiv
 :::note[**Verification of the Linear Confinement Potential via Topological Defect Insertion**]
 :::
 
-Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> is based on the following protocols:
+Verification of the confinement mechanism established by **Confinement and Berry Phase** <Ref id="17.1.4.1" label="§17.1.4.1" /> <Ref id="17.1.5" label="§17.1.5" /> is based on the following protocols:
 
 1.  **Metric Space Definition:** The algorithm defines a grid representing the spatial leaf and sets the tension parameter $\sigma_{flux} = 1.0$.
 2.  **Flux Tube Insertion:** The protocol places two topological defects at a varying separation distance to simulate a flux channel.
@@ -12908,7 +12915,7 @@ Section 17.2.3 formalizes the properties of the QBD lemma regarding kinetic-wind
 :::tip[**Direct Construction via Operator Commutativity on the Compactified Lattice**]
 :::
 
-Let $T$ be the lattice translation operator advancing the defect by one graph edge along the compactified dimension, and let $W$ be the topological winding operator counting the homotopy class $[\gamma] \in \pi_1(S^1) \cong \mathbb{Z}$ of the closed braid.
+Let $T$ be the lattice translation operator advancing the defect by one graph edge along the compactified dimension, and let $W$ be the topological winding operator counting the homotopy class $[\gamma] \in \pi_1(S^1) \cong \mathbb{Z}$ of the closed braid. <Ref id="17.2.3" label="§17.2.3" /> and <Ref id="17.2.2" label="§17.2.2" />
 
 **I. Algebraic Independence on the Toroidal Lattice**
 
@@ -12978,7 +12985,7 @@ Section 17.2.4 formalizes the properties of the QBD lemma regarding t-gate phase
 :::tip[**Formal Derivation of Spin Statistics from Gate Universality**]
 :::
 
-Let $U(\theta)$ be the rotation operator for a topological defect. 1. **Clifford constraint:** If $U(\theta) \in \mathcal{C}$ (the Clifford Group), the rotational eigenvalues are restricted to $\{1, -1, i, -i\}$. This spectrum generates only Bosonic statistics (integer spin). 2. **T-Gate extension:** The inclusion of the T-gate ($R_z(\pi/4)$) extends the group to a universal set, enabling eigenvalues of the form $e^{i\pi/4}$. This fractional phase allows for the construction of spinor representations (half-integer spin) and implements the discrete analog of the **GSO Projection** required to remove tachyons and stabilize the string vacuum.
+Let $U(\theta)$ be the rotation operator for a topological defect. <Ref id="17.2.4" label="§17.2.4" /> and <Ref id="17.2.3" label="§17.2.3" /> 1. **Clifford constraint:** If $U(\theta) \in \mathcal{C}$ (the Clifford Group), the rotational eigenvalues are restricted to $\{1, -1, i, -i\}$. This spectrum generates only Bosonic statistics (integer spin). 2. **T-Gate extension:** The inclusion of the T-gate ($R_z(\pi/4)$) extends the group to a universal set, enabling eigenvalues of the form $e^{i\pi/4}$. This fractional phase allows for the construction of spinor representations (half-integer spin) and implements the discrete analog of the **GSO Projection** required to remove tachyons and stabilize the string vacuum.
 
 **I. The Bosonic Sector (Stabilizers)**
 Consider a string modeled as a chain of graph qubits evolving under the Stabilizer formalism (Clifford gates only).
@@ -13060,7 +13067,7 @@ Verification of the spectral invariance hypothesis established by **Spectral Inv
 
 1.  **Spectrum Eigenvalue Generation:** The algorithm generates the mass-squared spectrum for closed loops on Kaluza-Klein compactifications.
 2.  **Reciprocal Duality Mapping:** The protocol computes the dual spectrum on a reciprocal radius with momentum and winding numbers exchanged.
-3.  **Spectral Equivalence Check:** The metric sorts and compares the eigenvalues of both configurations to verify exact mathematical isomorphism.
+3.  **Spectral Equivalence Check:** The metric sorts and compares the eigenvalues of both configurations to verify exact mathematical isomorphism. This verifies the result established in <Ref id="17.2.5" label="§17.2.5" />.
 
 ```python
 import numpy as np
@@ -13207,7 +13214,7 @@ Section 17.3.2 formalizes the properties of the QBD lemma regarding bott periodi
 :::tip[**Formal Derivation of the Dimensional Constraint via Clifford Modules**]
 :::
 
-This constraint arises from **Bott Periodicity** in the homotopy groups of the orthogonal group $O(N)$ and the classification of Real Clifford Algebras $Cl_{p,q}$.
+This constraint arises from **Bott Periodicity** in the homotopy groups of the orthogonal group $O(N)$ and the classification of Real Clifford Algebras $Cl_{p,q}$. <Ref id="17.3.2" label="§17.3.2" /> and <Ref id="17.3.1" label="§17.3.1" />
 
 $$
 \pi_{k}(O) \cong \pi_{k+8}(O)
@@ -13268,7 +13275,7 @@ Section 17.3.3 formalizes the properties of the QBD lemma regarding tripartite b
 :::tip[**Formal Derivation of the Lattice Degrees of Freedom**]
 :::
 
-This dimensionality arises from the **Tripartite** nature of the fundamental graph interaction (the trivalent vertex), which triples the transverse information capacity relative to the supersymmetric sector. Let $\delta_{\perp}^{(R)} = 8$ be the transverse capacity of a single spinor defect. The transverse capacity of the background lattice $\delta_{\perp}^{(L)}$ satisfies:.
+This dimensionality arises from the **Tripartite** nature of the fundamental graph interaction (the trivalent vertex), which triples the transverse information capacity relative to the supersymmetric sector. <Ref id="17.3.3" label="§17.3.3" /> and <Ref id="17.3.2" label="§17.3.2" /> Let $\delta_{\perp}^{(R)} = 8$ be the transverse capacity of a single spinor defect. The transverse capacity of the background lattice $\delta_{\perp}^{(L)}$ satisfies:.
 
 $$
 \delta_{\perp}^{(L)} = 3 \times \delta_{\perp}^{(R)} = 24
@@ -13323,7 +13330,7 @@ Section 17.3.4 formalizes the properties of the QBD lemma regarding zpe cancella
 :::tip[**Formal Derivation of the Casimir Energy Contributions**]
 :::
 
-1. **Left Sector (Bosonic):** The vacuum energy of the 24 transverse bosonic modes is $E_0^{(L)} = -1$. 2. **Right Sector (Super):** The vacuum energy of the 8 transverse bosonic modes plus 8 transverse fermionic modes is $E_0^{(R)} = 0$ (due to Supersymmetry). 3. **The Matching Condition:** Physical states satisfy the mass-shell condition $M_L^2 = M_R^2$. The mismatch in vacuum energies ($E_0^{(L)} \neq E_0^{(R)}$) is compensated by the excitation of the internal lattice modes (the 16 extra dimensions), ensuring a consistent, tachyon-free spectrum in the effective 10D spacetime.
+1. <Ref id="17.3.4" label="§17.3.4" /> and <Ref id="17.3.3" label="§17.3.3" /> **Left Sector (Bosonic):** The vacuum energy of the 24 transverse bosonic modes is $E_0^{(L)} = -1$. 2. **Right Sector (Super):** The vacuum energy of the 8 transverse bosonic modes plus 8 transverse fermionic modes is $E_0^{(R)} = 0$ (due to Supersymmetry). 3. **The Matching Condition:** Physical states satisfy the mass-shell condition $M_L^2 = M_R^2$. The mismatch in vacuum energies ($E_0^{(L)} \neq E_0^{(R)}$) is compensated by the excitation of the internal lattice modes (the 16 extra dimensions), ensuring a consistent, tachyon-free spectrum in the effective 10D spacetime.
 
 **I. The Zero-Point Sum**
 The vacuum energy of a harmonic oscillator is $\frac{1}{2} \hbar \omega$. For a string, we sum over all integer modes $n \ge 1$. This divergent sum is regularized via the Riemann Zeta function $\zeta(-1) = -1/12$.
@@ -13414,7 +13421,7 @@ Verification of the dimensional consistency established by **Chiral Split (Boson
 
 1.  **Transverse Mode Evaluation:** The algorithm evaluates the transverse degrees of freedom of the right-moving defect and left-moving background lattice.
 2.  **Criticality Validation:** The protocol verifies that the total dimensions satisfy the Bosonic and Supersymmetric anomaly cancellation bounds.
-3.  **Vacuum Energy Balance Check:** The metric computes the sum of the zero-point energies in both sectors to confirm stable, tachyon-free matching.
+3.  **Vacuum Energy Balance Check:** The metric computes the sum of the zero-point energies in both sectors to confirm stable, tachyon-free matching. This verifies the result established in <Ref id="17.3.5" label="§17.3.5" />.
 
 ```python
 import numpy as np
@@ -13604,7 +13611,7 @@ Section 17.4.3 formalizes the properties of the QBD lemma regarding unimodular b
 :::tip[**Formal Derivation of Lattice Constraints from Modular S-Invariance**]
 :::
 
-Let $Z(\tau)$ be the partition function of the closed string on the torus with modulus $\tau$. Invariance under the modular transformation $S: \tau \to -1/\tau$ imposes the condition:.
+Let $Z(\tau)$ be the partition function of the closed string on the torus with modulus $\tau$. <Ref id="17.4.3" label="§17.4.3" /> and <Ref id="17.4.2" label="§17.4.2" /> Invariance under the modular transformation $S: \tau \to -1/\tau$ imposes the condition:.
 
 $$
 \Gamma = \Gamma^* \quad \text{and} \quad \vec{k}^2 \in 2\mathbb{Z}, \quad \forall \vec{k} \in \Gamma
@@ -13667,7 +13674,7 @@ Section 17.4.4 formalizes the properties of the QBD lemma regarding standard mod
 :::tip[**Formal Derivation of Particle Content from Group Branching Rules**]
 :::
 
-The breaking of $E_8$ to $G_{SM}$ occurs via the **Exceptional Chain**:.
+The breaking of $E_8$ to $G_{SM}$ occurs via the **Exceptional Chain**:. <Ref id="17.4.4" label="§17.4.4" /> and <Ref id="17.4.3" label="§17.4.3" />
 
 $$
 E_8 \supset E_6 \supset SO(10) \supset SU(5) \supset G_{SM}
@@ -13714,7 +13721,7 @@ Section 17.4.4.1 formalizes the properties of the QBD proof regarding standard m
 :::note[**Verification of Force-Matter Decomposition via Exceptional Algebra Root Space Analysis**]
 :::
 
-Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4.1" label="§17.4.4.1" /> is based on the following protocols:
+Verification of the Standard Model embedding established by **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" /> is based on the representations verified in **Gauge Group Embedding** <Ref id="17.4.2" label="§17.4.2" /> is based on the following protocols:
 
 1.  **Algebraic Root Analysis:** The algorithm generates the root vectors of the exceptional Lie algebra and divides them into integer-type force and half-integer matter sectors.
 2.  **Subgroup Root Identification:** The protocol scans the root space to identify closed subgroups satisfying the commutation relations of color and weak interactions.
@@ -13851,7 +13858,7 @@ Section 17.4.5 formalizes the properties of the QBD lemma regarding anomaly canc
 :::tip[**Formal Verification of the Anomaly Polynomial Factorization**]
 :::
 
-The potentially fatal quantum inconsistencies arising from the chiral nature of the fermions (Gauge Anomaly) and the chiral nature of the gravitinos (Gravitational Anomaly) cancel each other exactly if and only if the gauge group is $SO(32)$ or $E_8 \times E_8$. The anomaly polynomial $I_{12}$ factorizes only for these specific groups, allowing the inclusion of a counter-term (the $B$-field shift) via the **Green-Schwarz Mechanism**:.
+The potentially fatal quantum inconsistencies arising from the chiral nature of the fermions (Gauge Anomaly) and the chiral nature of the gravitinos (Gravitational Anomaly) cancel each other exactly if and only if the gauge group is $SO(32)$ or $E_8 \times E_8$. <Ref id="17.4.5" label="§17.4.5" /> and <Ref id="17.4.4" label="§17.4.4" /> The anomaly polynomial $I_{12}$ factorizes only for these specific groups, allowing the inclusion of a counter-term (the $B$-field shift) via the **Green-Schwarz Mechanism**:.
 
 $$
 I_{12} = (I_4) \times (I_8) \implies \delta S_{counter} = - \int B \wedge I_8
@@ -13909,7 +13916,7 @@ Section 17.4.6 formalizes the properties of the QBD lemma regarding landscape fr
 :::tip[**Formal Derivation of Symmetry Breaking via Wilson Lines**]
 :::
 
-The compactification of the 16 internal dimensions is not fixed to a single trivial torus but can be deformed by **Wilson Lines** (non-contractible loops of flux) around the cycles of the internal graph. Each distinct topological configuration of these Wilson Lines corresponds to a distinct minimum of the potential energy, defining a specific "Vacuum" with unique effective parameters (fine structure constant $\alpha$, Yukawa couplings, etc.).
+The compactification of the 16 internal dimensions is not fixed to a single trivial torus but can be deformed by **Wilson Lines** (non-contractible loops of flux) around the cycles of the internal graph. <Ref id="17.4.6" label="§17.4.6" /> and <Ref id="17.4.5" label="§17.4.5" /> Each distinct topological configuration of these Wilson Lines corresponds to a distinct minimum of the potential energy, defining a specific "Vacuum" with unique effective parameters (fine structure constant $\alpha$, Yukawa couplings, etc.).
 
 $$
 \text{Vacuum}(\mathcal{K}) \cong \text{Hom}(\pi_1(\mathcal{K}), G) / G
@@ -13995,7 +14002,7 @@ Verification of the non-perturbative loop limit established by **Emergence of th
 
 1.  **Chiral Mode Evaluation:** The algorithm evaluates the total left-moving and right-moving dimensions to verify anomaly cancellation and sector decoupling.
 2.  **Modular Unimodularity Search:** The protocol performs a basis search to verify that the generated charge lattice is integral, even, and self-dual.
-3.  **Tachyonic Stability Check:** The metric computes the minimum square norm of all lattice roots to verify that the ground state remains stable.
+3.  **Tachyonic Stability Check:** The metric computes the minimum square norm of all lattice roots to verify that the ground state remains stable. This verifies the result established in <Ref id="17.4.7" label="§17.4.7" />.
 
 ```python
 import numpy as np
@@ -14402,7 +14409,7 @@ Section 18.1.6 formalizes the properties of the QBD proof regarding primordial l
 :::note[**Numerical Calculation of the Spontaneous Loop Nucleation Current across Graph Volumes**]
 :::
 
-Computational verification of the spontaneous loop nucleation current established by **Primordial Loop Nucleation** <Ref id="18.1.6" label="§18.1.6" /> is based on the following protocols:
+Computational verification of the spontaneous loop nucleation current established by **Primordial Loop Nucleation** <Ref id="18.1.6" label="§18.1.6" /> <Ref id="18.1" label="§18.1" /> is based on the following protocols:
 
 1.  **Vacuum Representation:** The algorithm constructs a directed Bethe lattice fragment to serve as the initial pre-geometric vacuum topology.
 2.  **Ignition Dynamics:** The protocol simulates the stochastic activation of rewrites to trigger spontaneous loop nucleation events.
@@ -14616,7 +14623,7 @@ Section 18.1.7 formalizes the properties of the QBD calculation regarding loop n
 :::note[**Numerical Sweeping of Tunneling Coupling and Bipartite Parity Violation**]
 :::
 
-Verification of the topological phase transition established by **Topological Parity Projection** <Ref id="18.1.5.1" label="§18.1.5.1" /> is based on the following protocols:
+Verification of the topological phase transition established by **Topological Parity Projection** <Ref id="18.1.5.1" label="§18.1.5.1" /> <Ref id="18.1" label="§18.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm builds a bipartite Bethe fragment representing the initial un-ignited vacuum state.
 2.  **Coupling Sweep:** The protocol sweeps the tunneling coupling parameter to simulate quantum fluctuations violating bipartite parity.
@@ -14984,7 +14991,7 @@ Section 18.2.5 formalizes the properties of the QBD proof regarding discrete fri
 :::note[**Numerical Calculation of the Emergent Scale Factor and Hubble Parameter from Cycle Currents**]
 :::
 
-Verification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> is based on the following protocols:
+Verification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> <Ref id="18.2" label="§18.2" /> is based on the following protocols:
 
 1.  **Complexity Estimation:** The algorithm computes the local graph density and volume to serve as proxies for the spatial scale factor.
 2.  **Friedmann Integration:** The protocol integrates the discrete Friedmann equations using the measured complexity values.
@@ -15487,7 +15494,8 @@ Let the total cycle population grow exponentially as $N_3(t) = N_3(0) e^{rt}$. L
 
 **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" /> establishes this manifold.
 
-**Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />, **Spectral Dimension Convergence** <Ref id="18.3.5" label="§18.3.5" />, and **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" /> provide the supporting convergence results.
+**Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />, **Spectral Dimension Convergence** <Ref id="18.3.5" label="§18.3.5" />.
+And **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" /> provide the supporting convergence results.
 
 **II. The Logic Chain**
 
@@ -15522,7 +15530,7 @@ Section 18.3.8 formalizes the properties of the QBD proof regarding emergence of
 :::note[**Numerical Calculation of the Exponential de Sitter Expansion Coefficient**]
 :::
 
-Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.8" label="§18.3.8" /> is based on the following protocols:
+Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.8" label="§18.3.8" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Stochastic Growth Simulation:** The algorithm simulates the growth of the causal graph under frictionless update rules.
 2.  **Volume Tracking:** The protocol logs the expansion of the vertex and edge counts over logical time steps.
@@ -15651,7 +15659,7 @@ Section 18.3.9 formalizes the properties of the QBD calculation regarding de sit
 :::note[**Numerical Calculation of the Hausdorff Dimension from Ball Volumes**]
 :::
 
-Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.7.1" label="§18.3.7.1" /> is based on the following protocols:
+Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.7.1" label="§18.3.7.1" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Distance Profiling:** The algorithm measures topological path lengths and volume growth from a set of reference nodes.
 2.  **Dimension Calculation:** The protocol computes the local Hausdorff dimension by taking the logarithmic derivative of volume growth.
@@ -15776,7 +15784,7 @@ Section 18.3.11 formalizes the properties of the QBD calculation regarding hausd
 :::note[**Numerical Simulation of Random Walks and Recurrence Probabilities to Verify Spectral Dimension d_S = 4.0**]
 :::
 
-Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6.1" label="§18.3.6.1" /> is based on the following protocols:
+Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6.1" label="§18.3.6.1" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Laplacian Spectrum Generation:** The algorithm generates the eigenvalues of the rescaled discrete Laplacian on periodic structures.
 2.  **Heat Trace Computation:** The protocol calculates the heat kernel trace and recurrence probability over a range of diffusion times.
@@ -16017,7 +16025,7 @@ Section 18.4.3 formalizes the properties of the QBD lemma regarding frictional n
 
 **I. Setup and Assumptions**
 
-Let the cycle density be governed by the stochastic Langevin equation $\dot{\rho} = F(\rho) + \xi(t)$, where $\xi(t)$ is a Gaussian white noise process with zero mean and covariance $\langle \xi(t) \xi(t') \rangle = 2 D_{\text{noise}}(\rho) \delta(t - t')$.
+Let the cycle density be governed by the stochastic Langevin equation $\dot{\rho} = F(\rho) + \xi(t)$, where $\xi(t)$ is a Gaussian white noise process with zero mean and covariance $\langle \xi(t) \xi(t') \rangle = 2 D_{\text{noise}}(\rho) \delta(t - t')$. <Ref id="18.4.3" label="§18.4.3" /> and <Ref id="18.4.2" label="§18.4.2" />
 
 **II. The Logic Chain**
 
@@ -16064,7 +16072,7 @@ Section 18.4.4 formalizes the properties of the QBD lemma regarding steric dampi
 
 **I. Setup and Assumptions**
 
-Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$. Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
+Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$. <Ref id="18.4.4" label="§18.4.4" /> and <Ref id="18.4.3" label="§18.4.3" /> Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
 
 **II. The Logic Chain**
 
@@ -16151,7 +16159,7 @@ Section 18.4.5 formalizes the properties of the QBD proof regarding spectral ind
 :::note[**Numerical Integration of the Curvature Power Spectrum over Slow-Roll e-folds**]
 :::
 
-Verification of the spectral red tilt established by **Spectral Index Red Tilt** <Ref id="18.4.5" label="§18.4.5" /> is based on the following protocols:
+Verification of the spectral red tilt established by **Spectral Index Red Tilt** <Ref id="18.4.5" label="§18.4.5" /> <Ref id="18.4" label="§18.4" /> is based on the following protocols:
 
 1.  **Noise Generation:** The algorithm generates Gaussian fluctuations to represent primordial scalar perturbations.
 2.  **Mode Integration:** The protocol integrates the mode equations across horizon crossing using a discrete solver.
@@ -16294,7 +16302,7 @@ Section 18.4.6 formalizes the properties of the QBD calculation regarding power 
 :::note[**Numerical Integration of Stochastic Langevin Trajectory and Slow-Roll Parameter Tracking**]
 :::
 
-Verification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4.1" label="§18.4.4.1" /> is based on the following protocols:
+Verification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4.1" label="§18.4.4.1" /> <Ref id="18.4" label="§18.4" /> is based on the following protocols:
 
 1.  **Langevin Simulation:** The algorithm simulates the stochastic Langevin trajectory of the scalar inflaton on the discrete graph.
 2.  **Parameter Tracking:** The protocol monitors the slow-roll parameters during the inflationary phase.
@@ -16542,7 +16550,7 @@ Section 18.5.3 formalizes the properties of the QBD lemma regarding curvature-de
 
 **I. Setup and Assumptions**
 
-Let G = (V, E) be the spatial graph with cycle density $\rho(t)$ and stable attractor density $\rho^* \approx 0.037$. Let the local Ollivier-Ricci curvature on an edge $(u,v)$ be denoted by $K(u,v)$.
+Let G = (V, E) be the spatial graph with cycle density $\rho(t)$ and stable attractor density $\rho^* \approx 0.037$. <Ref id="18.5.3" label="§18.5.3" /> and <Ref id="18.5.2" label="§18.5.2" /> Let the local Ollivier-Ricci curvature on an edge $(u,v)$ be denoted by $K(u,v)$.
 
 **II. The Logic Chain**
 
@@ -16594,7 +16602,7 @@ Section 18.5.4 formalizes the properties of the QBD lemma regarding bethe tree s
 
 **I. Setup and Assumptions**
 
-Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$. Let $N$ denote the total number of vertices in the tree.
+Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$. <Ref id="18.5.4" label="§18.5.4" /> and <Ref id="18.5.3" label="§18.5.3" /> Let $N$ denote the total number of vertices in the tree.
 
 **II. The Logic Chain**
 
@@ -16647,7 +16655,7 @@ Section 18.5.5 formalizes the properties of the QBD lemma regarding relational p
 
 **I. Setup and Assumptions**
 
-Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
+Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. <Ref id="18.5.5" label="§18.5.5" /> and <Ref id="18.5.4" label="§18.5.4" /> Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
 
 **II. The Logic Chain**
 
@@ -16777,7 +16785,7 @@ Section 18.5.7 formalizes the properties of the QBD proof regarding flatness as 
 :::note[**Numerical Jacobian Eigenvalue Verification**]
 :::
 
-Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.7" label="§18.5.7" /> is based on the following protocols:
+Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.7" label="§18.5.7" /> <Ref id="18.5" label="§18.5" /> is based on the following protocols:
 
 1.  **System Linearization:** The algorithm linearizes the net flux equations of cycle dynamics around the flat equilibrium state.
 2.  **Jacobian Construction:** The protocol constructs the stability Jacobian matrix from the linearized flux coefficients.
@@ -16881,7 +16889,7 @@ Section 18.5.8 formalizes the properties of the QBD calculation regarding jacobi
 :::note[**Numerical Propagator Covariance Decay**]
 :::
 
-Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6.1" label="§18.5.6.1" /> is based on the following protocols:
+Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6.1" label="§18.5.6.1" /> <Ref id="18.5" label="§18.5" /> is based on the following protocols:
 
 1.  **Propagator Generation:** The algorithm generates the discrete relational propagator on the small-world Bethe fragment.
 2.  **Covariance Tracking:** The protocol monitors the covariance of the propagator field over topological distances.
@@ -17080,7 +17088,7 @@ Section 19.1.3 formalizes the properties of the QBD lemma regarding braid nuclea
 
 **I. Attractor Transition Integration**
 
-Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction. The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
+Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction. <Ref id="19.1.3" label="§19.1.3" /> and <Ref id="19.1.2" label="§19.1.2" /> The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
 
 **II. Rate Formulation**
 
@@ -17122,7 +17130,7 @@ Section 19.1.4 formalizes the properties of the QBD lemma regarding braid combin
 
 **I. Multiplicity Enumeration**
 
-Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$. The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
+Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$. <Ref id="19.1.4" label="§19.1.4" /> and <Ref id="19.1.3" label="§19.1.3" /> The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
 
 **II. Partition Function Extremization**
 
@@ -17295,7 +17303,7 @@ Section 19.3.3 formalizes the properties of the QBD lemma regarding proton writh
 
 **I. Knot Representation**
 
-Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands. The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
+Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands. <Ref id="19.3.3" label="§19.3.3" /> and <Ref id="19.3.2" label="§19.3.2" /> The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
 
 **II. Shared Edge Count**
 
@@ -17335,7 +17343,7 @@ Section 19.3.4 formalizes the properties of the QBD lemma regarding neutron writ
 
 **I. Orthogonal Embedding**
 
-Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3. The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
+Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3. <Ref id="19.3.4" label="§19.3.4" /> and <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
 
 **II. Boundary Isolation**
 
@@ -17406,7 +17414,7 @@ Section 19.4.2 formalizes the properties of the QBD lemma regarding weak interac
 
 **I. Boltzmann Integration**
 
-The proof integrates the Boltzmann equation for weak rate equilibrium.
+The proof integrates the Boltzmann equation for weak rate equilibrium. <Ref id="19.4.2" label="§19.4.2" /> and <Ref id="19.4.1" label="§19.4.1" />
 
 **II. Scale Equivalence**
 
@@ -17443,7 +17451,7 @@ Section 19.4.3 formalizes the properties of the QBD lemma regarding neutron beta
 
 **I. Decay Dynamics**
 
-Let $\tau_n \approx 880$ seconds represent the free neutron lifetime. Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
+Let $\tau_n \approx 880$ seconds represent the free neutron lifetime. <Ref id="19.4.3" label="§19.4.3" /> and <Ref id="19.4.2" label="§19.4.2" /> Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
 
 **II. Fraction Calculation**
 
@@ -19386,7 +19394,7 @@ Section 20.1.2 formalizes the properties of the QBD lemma regarding sachs-wolfe 
 :::
 
 **I. Lapse Evaluation**
-The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster.
+The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster. <Ref id="20.1.2" label="§20.1.2" /> and <Ref id="20.1.1" label="§20.1.1" />
 
 **II. Anisotropy Derivation**
 It mathematically derives the Sachs-Wolfe relation:
@@ -19421,7 +19429,7 @@ Section 20.1.3 formalizes the properties of the QBD lemma regarding recombinatio
 
 **I. Chemical Equilibrium Setup**
 
-Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate:
+Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate: <Ref id="20.1.3" label="§20.1.3" /> and <Ref id="20.1.2" label="§20.1.2" />
 
 $$
 \frac{n_e n_p}{n_H} = \left( \frac{m_e k T}{2\pi \hbar^2} \right)^{3/2} e^{-E_0/kT}
@@ -19515,7 +19523,7 @@ Section 20.2.3 formalizes the properties of the QBD lemma regarding sound horizo
 
 **I. Speed of Sound Definition**
 
-In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$. For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
+In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$. <Ref id="20.2.3" label="§20.2.3" /> and <Ref id="20.2.2" label="§20.2.2" /> For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
 
 **II. Scale Factor Integration**
 
@@ -19556,7 +19564,8 @@ Section 20.2.4 formalizes the properties of the QBD postulate regarding sterile 
 *   **Perturbation Integration:** The proof solves the linearized Einstein-Boltzmann equations on the graph-metric background for baryon and photon density perturbations.
 *   **Peak Match:** Calculating the angular transfer functions projects the spatial sound horizon onto the sphere, deriving the first three CMB acoustic peaks at $\ell \approx 220.4, 538.1, 796.5$, proving the consistency of the model with CMB data.
 
-This synthesis proof utilizes the structural results established in supporting **Gravitational and Entropic Competing Forces** <Ref id="20.2.2" label="§20.2.2" />, **Sound Horizon Scale** <Ref id="20.2.3" label="§20.2.3" />, and **Sterile Braid Scaffolding** <Ref id="20.2.4" label="§20.2.4" />.
+This synthesis proof utilizes the structural results established in supporting **Gravitational and Entropic Competing Forces** <Ref id="20.2.2" label="§20.2.2" />.
+**Sound Horizon Scale** <Ref id="20.2.3" label="§20.2.3" />, and **Sterile Braid Scaffolding** <Ref id="20.2.4" label="§20.2.4" />.
 
 Q.E.D.
 
@@ -19595,7 +19604,7 @@ Section 20.3.2 formalizes the properties of the QBD lemma regarding void relaxat
 :::
 
 **I. Master Equation Relaxation**
-The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes.
+The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes. <Ref id="20.3.2" label="§20.3.2" /> and <Ref id="20.3.1" label="§20.3.1" />
 
 **II. Attractor Convergence**
 It shows that the local cycle density converges stably to $\rho^* \approx 0.037$ with a negative Jacobian.
@@ -19626,7 +19635,7 @@ Section 20.3.3 formalizes the properties of the QBD lemma regarding axis collaps
 :::
 
 **I. Eigenvalue Ordering**
-The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations. <Ref id="20.3.3" label="§20.3.3" /> and <Ref id="20.3.2" label="§20.3.2" />
 
 **II. Critical Timescales**
 It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.
@@ -19699,7 +19708,8 @@ Section 21.1.2 formalizes the properties of the QBD lemma regarding braid defect
 
 **I. Braid Complexity**
 
-Let the rest mass of the four-strand defect scale with its topological complexity ($m \propto C[\beta] + k \cdot w^2$, **Topological Mass Functional** <Ref id="7.4" label="§7.4" />).
+Let the rest mass of the four-strand defect scale with its topological complexity ($m \propto C[\beta] + k \cdot w^2$, **Topological Mass Functional** <Ref id="7.4" label="§7.4" />). <Ref id="21.1.2" label="§21.1.2" />.
+1.1" label="§21.1.1" />
 
 **II. Rewrite Invariance**
 
@@ -19735,7 +19745,7 @@ Section 21.1.3 formalizes the properties of the QBD lemma regarding collisionles
 
 **I. Setup and Assumptions**
 
-Let standard gauge symmetries correspond to topological charge twists on $B_3$ braid representations. Let the defect be represented by a $B_4$ braid configuration.
+Let standard gauge symmetries correspond to topological charge twists on $B_3$ braid representations. <Ref id="21.1.3" label="§21.1.3" /> and <Ref id="21.1.2" label="§21.1.2" /> Let the defect be represented by a $B_4$ braid configuration.
 
 **II. Knot Polynomial Invariance**
 
@@ -19805,7 +19815,7 @@ Section 21.2.2 formalizes the properties of the QBD lemma regarding vacuum creat
 
 **I. Setup and Assumptions**
 
-Let the spacetime volume operator scale with the count of active 3-cycles. Let the vacuum dynamics follow the Master Equation with a stable fixed point $\rho^*$.
+Let the spacetime volume operator scale with the count of active 3-cycles. <Ref id="21.2.2" label="§21.2.2" /> and <Ref id="21.2.1" label="§21.2.1" /> Let the vacuum dynamics follow the Master Equation with a stable fixed point $\rho^*$.
 
 **II. Flux Balance Calculation**
 
@@ -19848,7 +19858,7 @@ Section 21.2.3 formalizes the properties of the QBD lemma regarding equation of 
 
 **I. Setup and Assumptions**
 
-Let the vacuum density be governed by the constant stable fixed point $\rho^*$ of the Master Equation. Let the cosmic fluid satisfy the relativistic continuity equation.
+Let the vacuum density be governed by the constant stable fixed point $\rho^*$ of the Master Equation. <Ref id="21.2.3" label="§21.2.3" /> and <Ref id="21.2.2" label="§21.2.2" /> Let the cosmic fluid satisfy the relativistic continuity equation.
 
 **II. Conservation Verification**
 
@@ -19934,7 +19944,7 @@ Section 21.3.3 formalizes the properties of the QBD lemma regarding pion product
 
 **I. Transition Amplitude Definition**
 
-Let the transition amplitude $\mathcal{M}$ for pion production off a defect $\beta$ be represented by the contraction of the photon gauge operator $\hat{A}_\mu$ and the pion field operator $\hat{\Phi}_\pi$ with the defect's vertex state:
+Let the transition amplitude $\mathcal{M}$ for pion production off a defect $\beta$ be represented by the contraction of the photon gauge operator $\hat{A}_\mu$ and the pion field operator $\hat{\Phi}_\pi$ with the defect's vertex state: <Ref id="21.3.3" label="§21.3.3" /> and <Ref id="21.3.2" label="§21.3.2" />
 
 $$
 \mathcal{M} = \langle \beta' \pi^0 | \hat{H}_{int} | \beta \gamma_{CMB} \rangle
@@ -19978,7 +19988,7 @@ Section 21.3.4 formalizes the properties of the QBD lemma regarding relic mean f
 
 **I. Mean Free Path Definition**
 
-Let the mean free path $\lambda$ of a defect $B_4$ propagating through the cosmic microwave background be defined by:
+Let the mean free path $\lambda$ of a defect $B_4$ propagating through the cosmic microwave background be defined by: <Ref id="21.3.4" label="§21.3.4" /> and <Ref id="21.3.3" label="§21.3.3" />
 
 $$
 \lambda = \frac{1}{\sigma(B_4 + \gamma_{CMB}) \cdot n_{\gamma}}
@@ -20037,8 +20047,8 @@ Section 21.4.1 formalizes the properties of the QBD lemma regarding saturation e
 :::tip[**Verification of Saturation Epoch Convergence by Phase Portrait Analysis of Cosmic Evolution**]
 :::
 
-**I. Phase Portrait Construction**
-The proof maps the phase portrait of the Master Equation coupled to the cosmic fluid expansion equations.
+**I. Phase Portrait Construction** <Ref id="21.4.1" label="§21.4.1" />
+The proof maps the phase portrait of the Master Equation coupled to the cosmic fluid expansion equations. <Ref id="21.4.1" label="§21.4.1" />
 
 **II. Attractor Convergence**
 It solves for the timeline of the attractor convergence, demonstrating that the ratio $\Omega_m / \Omega_{DE}$ remains within a single order of magnitude for a substantial fraction of the active lifetime of the 4D manifold.
@@ -20135,7 +20145,7 @@ Section 22.1.3 formalizes the properties of the QBD lemma regarding core density
 
 **I. Setup and Assumptions**
 
-Let the graph distance between adjacent nodes be bounded from below by the pre-geometric connection length $\ell_0$. Let the maximum cycle density be $\rho_{crit}$.
+Let the graph distance between adjacent nodes be bounded from below by the pre-geometric connection length $\ell_0$. <Ref id="22.1.3" label="§22.1.3" /> and <Ref id="22.1.2" label="§22.1.2" /> Let the maximum cycle density be $\rho_{crit}$.
 
 **II. Ricci Curvature Integration**
 
@@ -20225,7 +20235,7 @@ Section 22.2.3 formalizes the properties of the QBD lemma regarding boundary-spa
 
 **I. Path-Sum Representation**
 
-Let the transition amplitude for horizon crossing be represented as a sum over histories in the discrete path-sum formalism:
+Let the transition amplitude for horizon crossing be represented as a sum over histories in the discrete path-sum formalism: <Ref id="22.2.3" label="§22.2.3" /> and <Ref id="22.2.2" label="§22.2.2" />
 
 $$
 \mathcal{P} = \sum_{\gamma \in \mathcal{C}} e^{i S[\gamma] / \hbar}
@@ -20275,7 +20285,7 @@ Section 22.2.4 formalizes the properties of the QBD lemma regarding entanglement
 
 **I. Radiation Entanglement Entropy**
 
-Let the Hilbert space of the system be decomposed into the black hole interior $H_{BH}$ and the radiation field $H_{rad}$. The entanglement entropy is:
+Let the Hilbert space of the system be decomposed into the black hole interior $H_{BH}$ and the radiation field $H_{rad}$. <Ref id="22.2.4" label="§22.2.4" /> and <Ref id="22.2.3" label="§22.2.3" /> The entanglement entropy is:
 
 $$
 S_{rad} = -\operatorname{Tr} \left( \hat{\rho}_{rad} \ln \hat{\rho}_{rad} \right)
@@ -20360,7 +20370,7 @@ Section 22.3.3 formalizes the properties of the QBD lemma regarding bosonic brai
 
 **I. Doublet Braid Product**
 
-Let two electron braids be represented by the tensor product state $|\beta_1\rangle \otimes |\beta_2\rangle$ on the trivalent graph. The phonon interaction corresponds to a vertex-sharing rewrite operator $\hat{V}_{phonon}$ connecting the boundary edges of the two braids.
+Let two electron braids be represented by the tensor product state $|\beta_1\rangle \otimes |\beta_2\rangle$ on the trivalent graph. <Ref id="22.3.3" label="§22.3.3" /> and <Ref id="22.3.2" label="§22.3.2" /> The phonon interaction corresponds to a vertex-sharing rewrite operator $\hat{V}_{phonon}$ connecting the boundary edges of the two braids.
 
 **II. Coupled State Representation**
 
@@ -20402,7 +20412,7 @@ Section 22.3.4 formalizes the properties of the QBD lemma regarding stabilizer e
 
 **I. Stabilizer Projector**
 
-Let the codespace project be $\hat{P}_{codespace}$, which projects the state onto the ground state of the stabilizer comonad. For any error operator $\hat{E}$ of weight $w$:
+Let the codespace project be $\hat{P}_{codespace}$, which projects the state onto the ground state of the stabilizer comonad. <Ref id="22.3.4" label="§22.3.4" /> and <Ref id="22.3.3" label="§22.3.3" /> For any error operator $\hat{E}$ of weight $w$:
 
 $$
 \hat{P}_{codespace} \hat{E} \hat{P}_{codespace} = C \cdot \hat{P}_{codespace}
@@ -20495,7 +20505,7 @@ Section 23.1.3 formalizes the properties of the QBD lemma regarding integration 
 :::
 
 **I. Measure Convergence**
-The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold. <Ref id="23.1.3" label="§23.1.3" /> and <Ref id="23.1.2" label="§23.1.2" />
 
 **II. Thermodynamic Integration**
 Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
@@ -20529,7 +20539,7 @@ Section 23.1.4 formalizes the properties of the QBD lemma regarding discrete dif
 
 **I. Node Interpolation**
 
-Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. Using the Taylor series expansion:
+Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. <Ref id="23.1.4" label="§23.1.4" /> and <Ref id="23.1.3" label="§23.1.3" /> Using the Taylor series expansion:
 
 $$
 f(v_1) = f(v_0) + h \partial_x f(v_0) + \frac{h^2}{2} f''(y)
@@ -20617,7 +20627,8 @@ Section 23.2.2 formalizes the properties of the QBD theorem regarding chiral vac
 :::info[**Derivation of Microscopic Energy Bias between Enantiomeric Braid Configurations**]
 :::
 
-Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />, let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
+Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />.
+Let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
 
 **In Plain English:**  
 Section 23.2.3 formalizes the properties of the QBD lemma regarding prebiotic enantiomer energy bias.
@@ -20631,7 +20642,7 @@ Section 23.2.3 formalizes the properties of the QBD lemma regarding prebiotic en
 
 **I. Electroweak Perturbation**
 
-Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:
+Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers: <Ref id="23.2.3" label="§23.2.3" /> and <Ref id="23.2.2" label="§23.2.2" />
 
 $$
 \Delta E = 2 \operatorname{Re} \langle \Psi_L | \hat{H}_{PV} | \Psi_R \rangle
@@ -20675,7 +20686,7 @@ Section 23.2.4 formalizes the properties of the QBD lemma regarding autocatalyti
 
 **I. Frank Model Dynamics**
 
-Let the concentrations of the two enantiomers be $x_L$ and $x_D$. The dynamical equations with mutual antagonism are:
+Let the concentrations of the two enantiomers be $x_L$ and $x_D$. <Ref id="23.2.4" label="§23.2.4" /> and <Ref id="23.2.3" label="§23.2.3" /> The dynamical equations with mutual antagonism are:
 
 $$
 \frac{dx_L}{dt} = k_S x_L - k_A x_L x_D
@@ -20752,7 +20763,8 @@ Section 23.3.2 formalizes the properties of the QBD lemma regarding unified brai
 
 **I. Generator Embedding**
 
-Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
+Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). <Ref id="23.3.2" label="§23.3.2" /> and <Ref id="23.3.1" label="§23.3.1" />.
+4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
 
 **II. Coupling Operator Construction**
 
@@ -20794,7 +20806,7 @@ Section 23.3.3 formalizes the properties of the QBD lemma regarding e8 dimension
 
 **I. Root System Embedding**
 
-Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
+Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. <Ref id="23.3.3" label="§23.3.3" /> and <Ref id="23.3.2" label="§23.3.2" /> The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
 
 **II. Loop Constraint**
 
@@ -20869,7 +20881,7 @@ Section 24.1.2 formalizes the properties of the QBD lemma regarding graph cycle 
 
 **I. Cycle Space Definition**
 
-Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$.
+Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$. <Ref id="24.1.2" label="§24.1.2" /> and <Ref id="24.1.1" label="§24.1.1" />
 
 **II. Boundary Operator Action**
 
@@ -20911,7 +20923,7 @@ Section 24.1.3 formalizes the properties of the QBD lemma regarding cohomology m
 
 **I. Cycle Embedding**
 
-Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$. The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
+Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$. <Ref id="24.1.3" label="§24.1.3" /> and <Ref id="24.1.2" label="§24.1.2" /> The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
 
 $$
 \phi_* c \in Z_k(M, \mathbb{Z}
@@ -21002,7 +21014,7 @@ Section 24.3.2 formalizes the properties of the QBD lemma regarding minimal gaug
 
 **I. Braid Word Representation**
 
-Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation. The generators are $\sigma_1$ and $\sigma_2$.
+Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation. <Ref id="24.3.2" label="§24.3.2" /> and <Ref id="24.3.1" label="§24.3.1" /> The generators are $\sigma_1$ and $\sigma_2$.
 
 **II. Minimality Search**
 
@@ -21042,7 +21054,7 @@ Section 24.3.3 formalizes the properties of the QBD lemma regarding lower energy
 
 **I. Energy Functional**
 
-Let the energy of any braid configuration $\beta$ be given by the topological mass functional:
+Let the energy of any braid configuration $\beta$ be given by the topological mass functional: <Ref id="24.3.3" label="§24.3.3" /> and <Ref id="24.3.2" label="§24.3.2" />
 
 $$
 E(\beta) = \kappa \frac{\hbar c}{\ell_0} C[\beta]
@@ -21113,7 +21125,7 @@ Section 24.4.2 formalizes the properties of the QBD lemma regarding quantum cuto
 :::tip[**Verification of Bounded Operators on the Finite State Space**]
 :::
 
-*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
+*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete. <Ref id="24.4.2" label="§24.4.2" /> and <Ref id="24.4.1" label="§24.4.1" />
 *   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
 
 **I. Representation on Discrete Hilbert Space**
@@ -21178,7 +21190,7 @@ Section 24.4.3 formalizes the properties of the QBD lemma regarding syndrome-ind
 
 **I. Stress Operator Definition**
 
-Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch. The relaxation of the stress follows the comonad stabilization equation:
+Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch. <Ref id="24.4.3" label="§24.4.3" /> and <Ref id="24.4.2" label="§24.4.2" /> The relaxation of the stress follows the comonad stabilization equation:
 
 $$
 \frac{d\hat{T}_{ij}}{dt} = -\Gamma(\hat{T}) \hat{T}_{ij}
@@ -21264,7 +21276,7 @@ Section 24.5.3 formalizes the properties of the QBD lemma regarding exponential 
 
 **I. Path Representation**
 
-Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph. The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
+Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph. <Ref id="24.5.3" label="§24.5.3" /> and <Ref id="24.5.2" label="§24.5.2" /> The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
 
 **II. Vertex Packing Constraint**
 
@@ -21310,7 +21322,8 @@ Section 24.5.4 formalizes the properties of the QBD lemma regarding gravitationa
 
 **I. Density Bound Substitution**
 
-Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. From the results of **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" />, the local curvature scales with density.
+Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. <Ref id="24.5.4" label="§24.5.4" /> and <Ref id="24.5.3" label="§24.5.3" />.
+1.2" label="§22.1.2" />, the local curvature scales with density.
 
 **II. Lapse Function Vanishing**
 
@@ -21459,7 +21472,7 @@ Section 25.2.3 formalizes the properties of the QBD lemma regarding graph scale 
 
 **I. Spectral Density Formulation**
 
-Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function:
+Let the spectral density of the graph Laplace operator on a graph of scale $R$ be represented by the partition function: <Ref id="25.2.3" label="§25.2.3" /> and <Ref id="25.2.2" label="§25.2.2" />
 
 $$
 Z(R) = \sum_{n} e^{-\lambda_n(R) t}
@@ -31069,7 +31082,7 @@ Section 6.1.6 formalizes the properties of the QBD proof regarding particle nece
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
 
 1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and maintains the causal orientation mandated by the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
-2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
+2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the **Principle of Unique Causality**, yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
 3.  **Algebraic Generation:** The configuration generates the non-abelian Braid Group on three strands, denoted $B_3$, which satisfies the Yang-Baxter equation $b_1 b_2 b_1 = b_2 b_1 b_2$ and embeds the Special Unitary algebra $\mathfrak{su}(3)$ via three-dimensional fundamental representations.
 4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />.
 
@@ -31087,7 +31100,7 @@ Every stable, first-generation elementary fermion is topologically isomorphic to
 
 In particular, configurations with fewer than three ribbons ($n < 3$) are excluded due to topological instability for $n=1$ via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> or algebraic insufficiency for $n=2$ via **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />.
 
-Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> to provide the necessary basis for three color charges and anomaly cancellation.
+Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** to provide the necessary basis for three color charges and anomaly cancellation.
 
 **In Plain English:**  
 Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite braid theorem.
@@ -32627,7 +32640,8 @@ Section 7.1.5 formalizes the properties of the QBD proof regarding topological s
 :::info[**Prohibition of Identical Fermion Occupancy under Causal Graph Axioms**]
 :::
 
-Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the ordering of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
+Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
+Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
 
 **In Plain English:**  
 Section 7.2.1 formalizes the properties of the QBD theorem regarding pauli exclusion principle.
@@ -34107,7 +34121,7 @@ Section 8.2.4 formalizes the properties of the QBD lemma regarding commutator ge
 :::
 
 **I. Fundamental Representation**
-Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$:
+Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$: <Ref id="8.2.4" label="§8.2.4" /> and <Ref id="8.2.3" label="§8.2.3" />
 
 $$
 \hat{H}_1 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad \hat{H}_2 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}
@@ -34154,7 +34168,7 @@ Section 8.2.5 formalizes the properties of the QBD lemma regarding algebraic clo
 :::
 
 **I. Linear Independence**
-The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated. The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
+The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated. <Ref id="8.2.5" label="§8.2.5" /> and <Ref id="8.2.4" label="§8.2.4" /> The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
 
 **II. Semisimplicity via Killing Form**
 The **Killing Form** $K(X,Y) = -2 \operatorname{Tr}(\operatorname{ad}_X \operatorname{ad}_Y)$ is evaluated on the real span. The form is negative-definite, yielding eigenvalues $\lambda_i < 0$ for all roots. By the **Cartan Criterion**, this verifies the semisimple structure. The ad-representation matrices are computed explicitly for each root, with the negative eigenvalues ensuring no abelian factors exist.
@@ -34210,7 +34224,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding ensemble cl
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6" label="§8.2.6" /> is based on the generator representations verified in **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -34399,7 +34413,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding flux tube c
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7" label="§8.2.7" /> is based on the tension constraints verified in **Algebraic Torsion** <Ref id="8.2.5" label="§8.2.5" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -34664,7 +34678,7 @@ Section 8.3.5 formalizes the properties of the QBD lemma regarding right-handed 
 :::
 
 **I. Statistical Failure Probability**
-The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph.
+The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph. <Ref id="8.3.5" label="§8.3.5" /> and <Ref id="8.3.4" label="§8.3.4" />
 Using a Poisson model for alternatives in an Erdos-Renyi graph with edge probability $\rho_e = \langle k \rangle / N \approx 0.029$:
 The probability of no alternative short path is $P(\text{unique}) = \exp(-\lambda)$, where $\lambda$ is the expected number of alternatives.
 For a local distance $\bar{d}=2$, amplified by the 3-path span in the braid support:
@@ -34839,7 +34853,7 @@ The mirror process requires $H_t(e_2) < H_t(e_1)$, contradicting global **Acycli
 This inversion creates a redundant alternative path, violating $|\Pi(u,v)|=1$ **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
 The violation triggers a syndrome $\sigma = -1$ in the local stabilizer $S_{uv}$.
 The **Correction Map** $C$ projects this state out with probability $\approx 1$.
-The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and **Mirror PUC Violation** <Ref id="8.3.7" label="§8.3.7" />.
+The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and **Mirror PUC Violation**.
 For global inversions, the **O(N) Barrier** from **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" /> renders the flip infeasible within a single tick.
 
 **IV. SU(2)_L Closure and Current Form**
@@ -34890,7 +34904,7 @@ Section 8.4.2 formalizes the properties of the QBD lemma regarding computational
 :::tip[**Derivation of the Probability Ratio from Combinatorial and Friction Factors**]
 :::
 
-The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$.
+The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$. <Ref id="8.4.2" label="§8.4.2" /> and <Ref id="8.4.1" label="§8.4.1" />
 The inequality $p_4 < p_3$ is demonstrated by decomposing these factors in the sparse limit.
 
 **I. Combinatorial Rarity**
@@ -34942,7 +34956,7 @@ Section 8.4.3 formalizes the properties of the QBD lemma regarding coupling-prob
 :::
 
 **I. Born Probability Definition**
-In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:
+In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$: <Ref id="8.4.3" label="§8.4.3" /> and <Ref id="8.4.2" label="§8.4.2" />
 
 $$
 P(\mathcal{R}_F) = |M(G \to G')|^2
@@ -34990,7 +35004,7 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding topological c
 :::
 
 **I. The SU(2) Interaction ($p_3$)**
-The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$).
+The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$). <Ref id="8.4.4" label="§8.4.4" /> and <Ref id="8.4.3" label="§8.4.3" />
 1.  **Action:** It transforms one basis state of the doublet into the other.
 2.  **Minimal Topology:** As proven in the **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid.
 3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot).
@@ -35215,7 +35229,7 @@ Section 8.5.4 formalizes the properties of the QBD lemma regarding geometric nor
 :::
 
 **I. Phase Space Integral**
-The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet. The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
+The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet. <Ref id="8.5.4" label="§8.5.4" /> and <Ref id="8.5.3" label="§8.5.3" /> The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
 The volume of the unit 3-sphere is $2\pi^2$. However, the vertex normalization in the effective Lagrangian utilizes the **Haar Measure** on the group adjoint representation.
 
 **II. Adjoint Trace Adjustment**
@@ -35341,7 +35355,7 @@ Section 8.5.6.1 formalizes the properties of the QBD proof regarding local state
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6" label="§8.5.6" /> is based on the normalization protocols verified in **Trace Normalization** <Ref id="8.5.3" label="§8.5.3" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -35505,7 +35519,7 @@ Validation of the analytical coupling derivation established in the **Emergent G
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
-3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error.
+3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error. This verifies the result established in <Ref id="8.5.7" label="§8.5.7" />.
 
 ```python
 import math
@@ -35754,7 +35768,7 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding topological
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" /> is based on the scaling relations verified in **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
@@ -35831,7 +35845,7 @@ Section 8.6.6 formalizes the properties of the QBD lemma regarding sensitivity a
 :::tip[**Analytical and Numerical derivation of Error Bounds on Predicted Masses**]
 :::
 
-Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.
+Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity. <Ref id="8.6.6" label="§8.6.6" /> and <Ref id="8.6.5" label="§8.6.5" />
 
 **I. Sensitivity to $\mu$**
 Implicit differentiation of $f(\rho_3^*, \mu) = 18 \rho_3^* e^{-6\mu \rho_3^*} - 1 = 0$ yields:
@@ -35918,7 +35932,7 @@ Section 9.1.2 formalizes the properties of the QBD lemma regarding rank conditio
 :::
 
 **I. Rank Definition**
-The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$). For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
+The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$). <Ref id="9.1.2" label="§9.1.2" /> and <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
 
 **II. Standard Model Rank**
 The Standard Model gauge group $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$ possesses the following rank structure:
@@ -35960,7 +35974,7 @@ Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank ex
 :::tip[**Verification of Failure Modes for Low-Rank Algebras**]
 :::
 
-The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.
+The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3. <Ref id="9.1.3" label="§9.1.3" /> and <Ref id="9.1.2" label="§9.1.2" />
 
 **I. Rank 1 ($A_1$)**
 * **Candidate:** $SU(2)$.
@@ -36008,7 +36022,7 @@ Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate eli
 :::tip[**Demonstration of Spectrum Mismatch for Non-SU(5) Rank-4 Groups**]
 :::
 
-The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.
+The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation. <Ref id="9.1.4" label="§9.1.4" /> and <Ref id="9.1.3" label="§9.1.3" />
 
 **I. Exclusion of $Sp(8)$ ($C_4$)**
 * **Structure:** Symplectic group of rank 4.
@@ -36127,7 +36141,7 @@ Verification of the anomaly freedom condition established in the **Minimal GUT U
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
-3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically.
+3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically. This verifies the result established in <Ref id="9.1.5" label="§9.1.5" />.
 
 ```python
 import sympy as sp
@@ -36329,7 +36343,7 @@ Section 9.2.5 formalizes the properties of the QBD lemma regarding closed lie al
 :::tip[**Explicit Construction and Induction of the $\mathfrak{su}(5)$ Generators**]
 :::
 
-The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.
+The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis. <Ref id="9.2.5" label="§9.2.5" /> and <Ref id="9.2.4" label="§9.2.4" />
 
 **I. Generator Identification**
 The four fundamental rewrite processes $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$ correspond to swaps of adjacent ribbons $(i, i+1)$.
@@ -36382,7 +36396,7 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding closed lie 
 :::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
 :::
 
-Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5.1" label="§9.2.5.1" /> is based on the following protocols:
+Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> is based on the commutativity constraints verified in **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> is based on the following protocols:
 
 1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
 2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
@@ -36539,7 +36553,7 @@ Section 9.2.6 formalizes the properties of the QBD lemma regarding anti-fundamen
 :::tip[**Demonstration of Minimal Complexity for the $\mathbf{\bar{5}}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.
+The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid. <Ref id="9.2.6" label="§9.2.6" /> and <Ref id="9.2.5" label="§9.2.5" />
 
 **I. Representation Decomposition**
 The $\mathbf{\bar{5}}$ decomposes under $SU(3) \times SU(2)$ as $(\mathbf{\bar{3}}, \mathbf{1}) \oplus (\mathbf{1}, \mathbf{2})$.
@@ -36580,7 +36594,7 @@ Section 9.2.7 formalizes the properties of the QBD lemma regarding antisymmetric
 :::tip[**Demonstration of Stable Complexity for the $\mathbf{10}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.
+The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations. <Ref id="9.2.7" label="§9.2.7" /> and <Ref id="9.2.6" label="§9.2.6" />
 
 **I. Representation Topology**
 The $\mathbf{10}$ is isomorphic to $\wedge^2 \mathbf{5}$. This algebraic antisymmetry maps to a topological configuration of pairwise crossings.
@@ -36661,7 +36675,7 @@ Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity or
 :::
 
 **I. Complexity Metric**
-The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.
+The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy. <Ref id="9.3.2" label="§9.3.2" /> and <Ref id="9.3.1" label="§9.3.1" />
 
 $$
 C[\beta] = \alpha N_{cross} + \gamma N_{link}
@@ -36716,7 +36730,7 @@ Section 9.3.3 formalizes the properties of the QBD lemma regarding topological p
 :::
 
 **I. Stability Condition**
-A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.
+A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps. <Ref id="9.3.3" label="§9.3.3" /> and <Ref id="9.3.2" label="§9.3.2" />
 
 $$
 \forall \mathcal{R}_i, \quad E[\mathcal{R}_i(\beta)] > E[\beta]
@@ -36760,7 +36774,7 @@ Section 9.3.4 formalizes the properties of the QBD lemma regarding decay tunneli
 :::
 
 **I. Tunneling Amplitude**
-The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).
+The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory). <Ref id="9.3.4" label="§9.3.4" /> and <Ref id="9.3.3" label="§9.3.3" />
 The amplitude for this process is governed by the path integral over the barrier:
 
 $$
@@ -36885,7 +36899,7 @@ Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction v
 :::
 
 **I. Generator Matrix Action**
-The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.
+The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$. <Ref id="9.4.3" label="§9.4.3" /> and <Ref id="9.4.2" label="§9.4.2" />
 Let $|\psi_q\rangle = (c_1, c_2, c_3, 0, 0)^T$ denote a quark state in the color subspace.
 Let $|\psi_l\rangle = (0, 0, 0, w_1, w_2)^T$ denote a lepton state in the weak subspace.
 The general form of the off-diagonal generator in $\mathfrak{su}(5)$ is:
@@ -37031,7 +37045,7 @@ Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verif
 :::
 
 **I. Standard Model EFT Prediction**
-In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons. The process is described by a dimension-6 operator in the effective Lagrangian:
+In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons. <Ref id="9.5.2" label="§9.5.2" /> and <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
 
 $$
 \mathcal{L}_{eff} \sim \frac{g_{GUT}^2}{M_X^2} (\bar{q} \gamma^\mu l)(\bar{q} \gamma_\mu q)
@@ -37084,7 +37098,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding tension ver
 :::note[**Computational Verification of the EFT Decay Rate Tension**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2.1" label="§9.5.2.1" /> is based on the following protocols:
+Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> is based on the pathway dynamics verified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -37265,7 +37279,7 @@ Section 9.5.3 formalizes the properties of the QBD lemma regarding minimal actio
 :::
 
 **I. Principle of Minimal Complexity Change**
-The decay rate for a non-perturbative topological transition is governed by the instanton action $S$:
+The decay rate for a non-perturbative topological transition is governed by the instanton action $S$: <Ref id="9.5.3" label="§9.5.3" /> and <Ref id="9.5.2" label="§9.5.2" />
 
 $$
 \Gamma \propto e^{-S} \propto e^{-\Delta C}
@@ -37324,7 +37338,7 @@ Section 9.5.4 formalizes the properties of the QBD lemma regarding action-mass p
 :::
 
 **I. Tunneling Path Length**
-The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry. This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
+The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry. <Ref id="9.5.4" label="§9.5.4" /> and <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
 The transition requires creating and annihilating the intermediate $X$ boson state $|G_X\rangle$.
 The "distance" in configuration space (number of rewrites) required to create the structure of $|G_X\rangle$ from the vacuum (or simple background) is denoted by $L_{min}$.
 
@@ -37530,7 +37544,7 @@ Section 9.6.4 formalizes the properties of the QBD lemma regarding seesaw dynami
 :::tip[**Diagonalization of the Mass Matrix Yielding Light and Heavy Eigenstates**]
 :::
 
-The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.
+The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$. <Ref id="9.6.4" label="§9.6.4" /> and <Ref id="9.6.3" label="§9.6.3" />
 
 **I. Mass Matrix Construction**
 The system is described in the basis $(\nu_L, N_R)$ by the mass matrix $M$:
@@ -37737,7 +37751,7 @@ Section 9.6.7 formalizes the properties of the QBD lemma regarding critical comp
 :::
 
 **I. Balance Equation**
-The critical state occurs when the creation rate exactly balances the deletion rate.
+The critical state occurs when the creation rate exactly balances the deletion rate. <Ref id="9.6.7" label="§9.6.7" /> and <Ref id="9.6.6" label="§9.6.6" />
 
 $$
 R_{create} = R_{delete}
@@ -37891,7 +37905,7 @@ Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanis
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
-3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data.
+3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in <Ref id="9.6.9" label="§9.6.9" />.
 
 ```python
 import numpy as np

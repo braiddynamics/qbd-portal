@@ -56,7 +56,7 @@ Let $B_4$ represent a localized 4-strand braid defect arising during the dimensi
 
 **I. Braid Complexity**
 
-Let the rest mass of the four-strand defect scale with its topological complexity ($m \propto C[\beta] + k \cdot w^2$, **Topological Mass Functional** <Ref id="7.4" label="§7.4" />).
+Let the rest mass of the four-strand defect scale with its topological complexity ($m \propto C[\beta] + k \cdot w^2$, **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />). This mass scaling is verified under **Relic Abundance Scaling** <Ref id="21.1.1" label="§21.1.1" /> and **Braid Defect Topological Stability** <Ref id="21.1.2" label="§21.1.2" />.
 
 **II. Rewrite Invariance**
 
@@ -99,7 +99,7 @@ Given the conditions of **Gauge Isolation**, **Topological Sterility**, and **Gr
 
 **I. Setup and Assumptions**
 
-Let standard gauge symmetries correspond to topological charge twists on $B_3$ braid representations. Let the defect be represented by a $B_4$ braid configuration.
+Let standard gauge symmetries correspond to topological charge twists on $B_3$ braid representations.  **Collisionless Gauge Neutrality** <Ref id="21.1.3" label="§21.1.3" /> and  **Braid Defect Topological Stability** <Ref id="21.1.2" label="§21.1.2" /> Let the defect be represented by a $B_4$ braid configuration.
 
 **II. Knot Polynomial Invariance**
 
@@ -216,7 +216,7 @@ Given the conditions of **Spacetime Volume Operator**, **Dynamic Vacuum**, and *
 
 **I. Setup and Assumptions**
 
-Let the spacetime volume operator scale with the count of active 3-cycles. Let the vacuum dynamics follow the Master Equation with a stable fixed point $\rho^*$.
+Let the spacetime volume operator scale with the count of active 3-cycles.  **Vacuum Creation Pressure** <Ref id="21.2.2" label="§21.2.2" /> and  **Cosmological Constant Scale** <Ref id="21.2.1" label="§21.2.1" /> Let the vacuum dynamics follow the Master Equation with a stable fixed point $\rho^*$.
 
 **II. Flux Balance Calculation**
 
@@ -267,7 +267,7 @@ Given the conditions of **Non-Diluting Density**, **Fluid Continuity Constraint*
 
 **I. Setup and Assumptions**
 
-Let the vacuum density be governed by the constant stable fixed point $\rho^*$ of the Master Equation. Let the cosmic fluid satisfy the relativistic continuity equation.
+Let the vacuum density be governed by the constant stable fixed point $\rho^*$ of the Master Equation.  **Equation of State Identity** <Ref id="21.2.3" label="§21.2.3" /> and  **Vacuum Creation Pressure** <Ref id="21.2.2" label="§21.2.2" /> Let the cosmic fluid satisfy the relativistic continuity equation.
 
 **II. Conservation Verification**
 
@@ -394,7 +394,7 @@ Consider a sterile four-strand braid defect $B_4$ carrying zero Standard Model g
 
 **I. Transition Amplitude Definition**
 
-Let the transition amplitude $\mathcal{M}$ for pion production off a defect $\beta$ be represented by the contraction of the photon gauge operator $\hat{A}_\mu$ and the pion field operator $\hat{\Phi}_\pi$ with the defect's vertex state:
+Let the transition amplitude $\mathcal{M}$ for pion production off a defect $\beta$ be represented by the contraction of the photon gauge operator $\hat{A}_\mu$ and the pion field operator $\hat{\Phi}_\pi$ with the defect's vertex state:  **Pion Production Suppression** <Ref id="21.3.3" label="§21.3.3" /> and  **Electromagnetic Transparency** <Ref id="21.3.2" label="§21.3.2" />
 
 $$
 \mathcal{M} = \langle \beta' \pi^0 | \hat{H}_{int} | \beta \gamma_{CMB} \rangle
@@ -437,7 +437,7 @@ For any cosmic ray in the CMB photon bath, let the mean free path $\lambda$ be g
 
 **I. Mean Free Path Definition**
 
-Let the mean free path $\lambda$ of a defect $B_4$ propagating through the cosmic microwave background be defined by:
+Let the mean free path $\lambda$ of a defect $B_4$ propagating through the cosmic microwave background be defined by:  **Relic Mean Free Path** <Ref id="21.3.4" label="§21.3.4" /> and  **Pion Production Suppression** <Ref id="21.3.3" label="§21.3.3" />
 
 $$
 \lambda = \frac{1}{\sigma(B_4 + \gamma_{CMB}) \cdot n_{\gamma}}
@@ -512,7 +512,7 @@ This commentary discusses the physical and mathematical significance of the resu
 :::
 
 **I. Phase Portrait Construction**
-The proof maps the phase portrait of the Master Equation coupled to the cosmic fluid expansion equations.
+The proof maps the phase portrait of the Master Equation coupled to the cosmic fluid expansion equations under **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />. This mapping establishes **Saturation Epoch Convergence** <Ref id="21.4.1" label="§21.4.1" />.
 
 **II. Attractor Convergence**
 It solves for the timeline of the attractor convergence, demonstrating that the ratio $\Omega_m / \Omega_{DE}$ remains within a single order of magnitude for a substantial fraction of the active lifetime of the 4D manifold.

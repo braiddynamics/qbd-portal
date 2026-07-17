@@ -2533,7 +2533,7 @@ theorem antisymmetry_insufficient :
 ```
 
 **Verification Summary:**
-The three definitions encode the minimal vocabulary of the antisymmetry argument as Lean types. `CausalRelation V` is a function type `V → V → Prop`, faithfully capturing the binary predicate structure of a directed edge relation. `IsAntisymmetric` and `IsIrreflexive` encode the standard mathematical conditions as universally quantified propositions over `V`. The verified counter-model `⟨Bool, Eq⟩` existentially witnesses this logical gap: Boolean equality satisfies antisymmetry because `h_fwd : u = v` is returned directly when both directions hold, yet it violates irreflexivity because `true = true` is provable by `rfl`, which immediately contradicts the assumed `h_irref true : ¬ (true = true)`. The Lean kernel's acceptance of this closed proof term certifies that the logical claim in **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> is correct: antisymmetry does not imply irreflexivity, and the stricter axiomatic requirement is independently necessary.
+The three definitions encode the minimal vocabulary of the antisymmetry derivation as Lean types. `CausalRelation V` is a function type `V → V → Prop`, faithfully capturing the binary predicate structure of a directed edge relation. `IsAntisymmetric` and `IsIrreflexive` encode the standard mathematical conditions as universally quantified propositions over `V`. The verified counter-model `⟨Bool, Eq⟩` existentially witnesses this logical gap: Boolean equality satisfies antisymmetry because `h_fwd : u = v` is obtained directly when both directions hold, yet it violates irreflexivity because `true = true` is provable by `rfl`, which immediately contradicts the assumed `h_irref true : ¬ (true = true)`. The Lean kernel's acceptance of this closed proof term certifies that the logical claim in **Insufficiency of Antisymmetry** <Ref id="2.2.4" label="§2.2.4" /> is correct: antisymmetry does not imply irreflexivity, and the stricter axiomatic requirement is independently necessary.
 
 ### 2.2.6 Commentary: Loophole of Equality {#2.2.6}
 
@@ -5644,7 +5644,7 @@ Therefore, the **Tree** is the topological structure that maximizes connectivity
 :::info[**Canonical Depth-Parity Bipartition of Vertices**]
 :::
 
-For any rooted tree with all edges directed away from the root, the parity of the **Logical Depth** function <Ref id="3.1.2" label="§3.1.2" /> forms a strict bipartition of the vertex set into $V_{even}$ and $V_{odd}$ such that all edges in $E_0$ connect a vertex in $V_{even}$ to a vertex in $V_{odd}$ or vice versa.
+For any rooted tree with all edges directed away from the root, the parity of the **Logical Depth** function  **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> forms a strict bipartition of the vertex set into $V_{even}$ and $V_{odd}$ such that all edges in $E_0$ connect a vertex in $V_{even}$ to a vertex in $V_{odd}$ or vice versa.
 
 ### 3.1.10.1 Proof: Depth-Parity Bipartition {#3.1.10.1}
 
@@ -6983,10 +6983,10 @@ For any update map $\mathcal{U}: G_0 \to G_1$ on the initial vacuum state, the f
 :::tip[**Structure of the Preservation of Automorphisms Argument via Sufficiency Verification, Conflict Resolution, and Necessity Demonstration**]
 :::
 
-The proof proceeds via Direct Construction, establishing that a maximally parallel scheduler is both necessary and sufficient to preserve the background symmetry of the vacuum state.
+The proof proceeds by contradiction, establishing that a maximally parallel scheduler is both necessary and sufficient to preserve the background symmetry of the vacuum state.
 
 ```text
-• 3.3.3 Theorem Preservation of Automorphisms  [by construction]
+• 3.3.3 Theorem Preservation of Automorphisms  [by contradiction]
 ├── 3.3.3.2 Diagram: Scheduler Symmetry Outcomes
 │
 ├── 3.3.4 Lemma: Equivariance of Site Definition
@@ -7518,7 +7518,7 @@ theorem parallel_update_preserves_symmetry {G X : Type} [Group G] [MulAction G X
 ```
 
 **Verification Summary:**
-The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the smul operator `•`. `IsSymmetricState x g` is the proposition `g • x = x`, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition `∀ g x, f (g • x) = g • f x`, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [← h_equiv]`) to rewrite the target `g • f x` as `f (g • x)`, and then applies the symmetry hypothesis (`rw [h_symm]`) to reduce `f (g • x)` to `f x`, closing the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
+The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the smul operator `•`. `IsSymmetricState x g` is the proposition `g • x = x`, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition `∀ g x, f (g • x) = g • f x`, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from  **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [← h_equiv]`) to rewrite the target `g • f x` as `f (g • x)`, and then applies the symmetry hypothesis (`rw [h_symm]`) to reduce `f (g • x)` to `f x`, closing the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
 
 ### 3.3.10 Commentary: Equivariance as Necessity {#3.3.10}
 
@@ -8869,7 +8869,7 @@ This verifies that the quantum code subspace correctly mirrors the physical cons
 :::note[**Lean 4 Encoding of Stabilizer Group Closure via Boolean Parity Composition**]
 :::
 
-Type-theoretic certification of the closure property established in the **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" /> argument proceeds via the following verification strategy:
+Type-theoretic certification of the closure property established in the **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" /> proof proceeds via the following verification strategy:
 
 1.  **Encoding:** The type definitions `State E` and `Stabilizer E` encode, respectively, an edge-assignment as a boolean map and a parity-check functional as a boolean measurement; `Stabilizes` encodes the null-space membership condition as the proposition `s state = false`.
 2.  **Theorem Statement:** The Lean proposition `stabilizer_group_closure` asserts group closure: if a vacuum state is stabilized by both `s1` and `s2` independently, then it is stabilized by their XOR composition `composite_stabilizer s1 s2`.
@@ -10485,9 +10485,9 @@ By proving that $k$ is rigidly locked to the symmetric difference $\Delta E$, we
 :::
 
 Type-theoretic certification of the deterministic constriction established in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" /> proceeds via the following verification strategy under the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />:
-1. **Encoding:** The `BitVector` type and `xor_vec` function encode the algebraic structure of the syndrome vectors and Pauli frame shifts. `GraphState` encodes the spatial manifold as a boolean map, and `symmetric_difference` encodes the topological rewrite $\Delta E$.
-2. **Theorem Statement:** The Lean code-level proposition asserts that if a physical update is defined by XOR anti-commutation (`h_physical_update`) and the category map is defined as $k(\sigma)$ (`h_categorical_map`), then $k(\sigma)$ must exactly equal the physical update.
-3. **Proof Closure:** The proof is resolved by `rw [← h_categorical_map]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
+1.  **Encoding:** The `BitVector` type and `xor_vec` function encode the algebraic structure of the syndrome vectors and Pauli frame shifts. `GraphState` encodes the spatial manifold as a boolean map, and `symmetric_difference` encodes the topological rewrite $\Delta E$.
+2.  **Theorem Statement:** The Lean code-level proposition asserts that if a physical update is defined by XOR anti-commutation (`h_physical_update`) and the category map is defined as $k(\sigma)$ (`h_categorical_map`), then $k(\sigma)$ must exactly equal the physical update.
+3.  **Proof Closure:** The proof is resolved by `rw [← h_categorical_map]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
 
 ```lean
 -- A generic representation of boolean vectors (syndromes and incidence vectors)
@@ -10525,6 +10525,9 @@ theorem algebraic_rigidity_of_k
   rw [← h_categorical_map]
   exact h_physical_update
 ```
+
+**Verification Summary:**
+The type definitions `BitVector` and `xor_vec` encode the boolean syndrome spaces and the physical updates as coordinate-wise XOR actions. The algebraic rigidity proof of `algebraic_rigidity_of_k` consumes the physical update constraint and the categorical mapping relation, resolving the goal by rewriting the categorical definition with the physical update. The Lean kernel's acceptance of this closed proof term certifies that the updated syndrome map is deterministically fixed by the XOR action, verifying the logical claim in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />.
 
 ---
 

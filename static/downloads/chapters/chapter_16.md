@@ -130,7 +130,7 @@ For any boundary subregion $A \subset \partial G$ and any tensor network $\mathc
 :::tip[**Direct Construction via Schmidt Rank Saturation at the Minimal Cut Surface**]
 :::
 
-Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$.
+Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$.  **Min-Cut Entropy Identity** <Ref id="16.1.3" label="§16.1.3" /> and  **Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" />
 
 $$
 S(\rho_A) = \min_{\gamma} |\text{Cut}(\gamma)| \cdot \ln \chi
@@ -195,7 +195,7 @@ Let **Lemma (Isometry Condition):** It is herein established that the coarse-gra
 :::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
 
-Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:.
+Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary).  **Isometry Condition** <Ref id="16.1.4" label="§16.1.4" /> and  **Min-Cut Entropy Identity** <Ref id="16.1.3" label="§16.1.3" /> The global mapping preserves the inner product of the bulk state space:.
 
 $$
 \Phi^\dagger \Phi = \hat{I}_{bulk}
@@ -320,7 +320,7 @@ Verification of the holographic scaling law established by **Ryu-Takayanagi Corr
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
-3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size.
+3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size. This verifies the result established in  **Ryu-Takayanagi Correspondence** <Ref id="16.1.5" label="§16.1.5" />.
 
 ```python
 import networkx as nx
@@ -557,7 +557,7 @@ Let **Lemma (Screen Mechanism):** It is herein established that the locus of inf
 :::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
 :::
 
-Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
+Let $\vec{J}_S$ denote the information flux vector field.  **Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" /> and  **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" /> Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
 
 $$
 \lim_{\rho \to \rho_{max}} \frac{dS}{dt} = \alpha \cdot \frac{dA}{dt}
@@ -682,7 +682,7 @@ For any trapped surface, the Bekenstein-Hawking entropy corresponds strictly to 
 :::tip[**Formal Verification of the Microstate Counting on the Horizon**]
 :::
 
-Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:.
+Let $\Sigma$ be the 2-dimensional spatial slice of the horizon. **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" /> and **Holographic Screen Mechanism** <Ref id="16.2.3" label="§16.2.3" /> The entropy is given by the topological counting function:.
 
 $$
 S_{BH}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\vec{A} \equiv \frac{N_{cycles}(\Sigma)}{4}
@@ -789,7 +789,7 @@ Verification of the holographic saturation limit established by **Maximum Inform
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
-3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth.
+3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth. This verifies the result established in  **Maximum Informational Density (The Bound)** <Ref id="16.2.5" label="§16.2.5" />.
 
 ```python
 import networkx as nx
@@ -963,7 +963,7 @@ The Area Law forbids this. It says there is a smallest possible "pixel" of space
 :::note[**Unification of Counting: From Graph to String**]
 :::
 
-The derivation of the Bekenstein Bound, formulated as the **bulk saturation limit** in <Ref id="16.2.1" label="§16.2.1" /> and proved as the **maximum** informational density theorem in <Ref id="16.2.2" label="§16.2.2" />, answers one of the deepest questions in physics regarding the nature of space. If space were continuous, an infinite amount of information could be encoded into a finite volume by using arbitrarily small spatial separations. The Bekenstein-Hawking area law ($S \le A/4$), however, forbids this by establishing the existence of a minimal spatial pixel size $A \approx \ell_P^2$. Under the **holographic screen mechanism** analyzed in <Ref id="16.2.3" label="§16.2.3" />, this pixelation establishes that the universe has a finite informational resolution, where the factor of $1/4$ reflects the geometry of the horizon boundary tiles.
+The derivation of the Bekenstein Bound, formulated as the **bulk saturation limit** in <Ref id="16.2.1" label="§16.2.1" /> and proved as the **maximum** informational density limit of **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" />, answers one of the deepest questions in physics regarding the nature of space. If space were continuous, an infinite amount of information could be encoded into a finite volume by using arbitrarily small spatial separations. The Bekenstein-Hawking area law ($S \le A/4$), however, forbids this by establishing the existence of a minimal spatial pixel size $A \approx \ell_P^2$. Under the **holographic screen mechanism** analyzed in <Ref id="16.2.3" label="§16.2.3" />, this pixelation establishes that the universe has a finite informational resolution, where the factor of $1/4$ reflects the geometry of the horizon boundary tiles.
 
 This discrete structure allows for the derivation of black hole entropy from the combinatorial counting of 3-cycles on the graph boundary, as proven in **Black Hole Entropy from Cycle Count** <Ref id="16.2.4" label="§16.2.4" />. In high-energy physics, this same entropy corresponds to the partition function of a vibrating string, suggesting a deep duality where static 3-cycles correspond to string harmonics. The QBD framework reveals that these are dual descriptions of the same phenomenon: the static graph edges at the boundary are frozen snapshots of the string's worldsheet. This duality bridges discrete graph theory and continuum string theory, indicating that the partition of cycle counts matches the partition of string harmonics.
 

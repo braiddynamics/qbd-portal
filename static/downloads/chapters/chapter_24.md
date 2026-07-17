@@ -56,7 +56,7 @@ For all topological cycles on the trivalent graph represented as a formal linear
 
 **I. Cycle Space Definition**
 
-Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$.
+Let the chain complex of the graph $G$ be represented by $C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0$, where the chain spaces $C_k$ consist of formal linear combinations of $k$-simplices with integer coefficients: $C_k \cong \mathbb{Z}^{V_k}$.  **Graph Cycle Homology** <Ref id="24.1.2" label="§24.1.2" /> and  **Integer Basis** <Ref id="24.1.1" label="§24.1.1" />
 
 **II. Boundary Operator Action**
 
@@ -97,7 +97,7 @@ Let $\phi: G \to M$ denote the embedding of the trivalent graph into a complex p
 
 **I. Cycle Embedding**
 
-Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$. The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
+Let $c \in Z_k(G, \mathbb{Z})$ be an integer cycle on the graph $G$.  **Cohomology Mapping Projection** <Ref id="24.1.3" label="§24.1.3" /> and  **Graph Cycle Homology** <Ref id="24.1.2" label="§24.1.2" /> The embedding map $\phi: G \to M$ induces a pushforward mapping of chains:
 
 $$
 \phi_* c \in Z_k(M, \mathbb{Z}
@@ -238,7 +238,7 @@ Suppose a non-trivial excitation of the quantum gauge field corresponds to a clo
 
 **I. Braid Word Representation**
 
-Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation. The generators are $\sigma_1$ and $\sigma_2$.
+Let a closed gauge excitation be represented by a braid word $\beta \in B_3$ closed under conjugation.  **Minimal Gauge Braid Representation** <Ref id="24.3.2" label="§24.3.2" /> and  **Topological Mass Gap** <Ref id="24.3.1" label="§24.3.1" /> The generators are $\sigma_1$ and $\sigma_2$.
 
 **II. Minimality Search**
 
@@ -277,7 +277,7 @@ Let the energy of a braid configuration be determined by the **Topological Mass 
 
 **I. Energy Functional**
 
-Let the energy of any braid configuration $\beta$ be given by the topological mass functional:
+Let the energy of any braid configuration $\beta$ be given by the topological mass functional:  **Lower Energy Bounds** <Ref id="24.3.3" label="§24.3.3" /> and  **Minimal Gauge Braid Representation** <Ref id="24.3.2" label="§24.3.2" />
 
 $$
 E(\beta) = \kappa \frac{\hbar c}{\ell_0} C[\beta]
@@ -374,7 +374,7 @@ Given the conditions of **Continuum Breakdown** and **Planck Cutoff**, the prope
 :::tip[**Verification of Bounded Operators on the Finite State Space**]
 :::
 
-*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.
+*   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.  **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" /> and  **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" />
 *   **Planck Cutoff:** At the Planck scale $\ell_0$, the continuum approximation fails. The fluid resolves into discrete interacting braids governed by bounded unitary quantum mechanics, which strictly forbids infinite densities or velocities.
 
 **I. Representation on Discrete Hilbert Space**
@@ -438,7 +438,7 @@ Assume local fluid vorticity $\omega$ acts as a topological syndrome $\sigma$ re
 
 **I. Stress Operator Definition**
 
-Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch. The relaxation of the stress follows the comonad stabilization equation:
+Let the graph stress tensor operator $\hat{T}_{ij}$ be proportional to the vertex update mismatch.  **Syndrome-Induced Damping** <Ref id="24.4.3" label="§24.4.3" /> and  **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" /> The relaxation of the stress follows the comonad stabilization equation:
 
 $$
 \frac{d\hat{T}_{ij}}{dt} = -\Gamma(\hat{T}) \hat{T}_{ij}
@@ -545,7 +545,7 @@ For any NP-complete search of problem size $N$, let the number of parallel topol
 
 **I. Path Representation**
 
-Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph. The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
+Let an NP-complete search space be represented by a tree of causal paths embedded on a trivalent graph.  **Exponential Cycle Demands** <Ref id="24.5.3" label="§24.5.3" /> and  **Complexity Black Hole Collapse** <Ref id="24.5.2" label="§24.5.2" /> The number of leaves (solutions) is $M = 2^N$, where $N$ is the problem size.
 
 **II. Vertex Packing Constraint**
 
@@ -590,7 +590,7 @@ If the graph update rate $\Gamma(\rho)$ decays to zero under **Core Density Limi
 
 **I. Density Bound Substitution**
 
-Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. From the results of **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" />, the local curvature scales with density.
+Let the cycle density $\rho(x)$ approach the critical threshold $\rho_{crit}$. From the results of **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" />, the local curvature scales with density. This is consistent with the **Gravitational Collapse Threshold** <Ref id="24.5.4" label="§24.5.4" />. It also satisfies the **Exponential Cycle Demands** <Ref id="24.5.3" label="§24.5.3" />.
 
 **II. Lapse Function Vanishing**
 
