@@ -769,7 +769,7 @@ Section 10.3.4 formalizes the properties of the QBD lemma regarding minimum weig
 
 ---
 
-### 10.3.4.1 Proof: Minimum Weight {#10.3.4.1} <Ref id="10.3.4" label="§10.3.4" /> {#10.3.4.1}
+### 10.3.4.1 Proof: Minimum Weight {#10.3.4.1}
 
 :::tip[**Exhaustive Enumeration of Low-Weight Operators**]
 :::
@@ -792,7 +792,7 @@ Since logical operators exist at weight 3, the distance is exactly $d=3$.
 Q.E.D.
 
 **In Plain English:**  
-Section 10.3.4.1 formalizes the properties of the QBD proof regarding minimum weight {#10.3.4.1} <ref id="10.3.4" label="§10.3.4" />.
+Section 10.3.4.1 formalizes the properties of the QBD proof regarding minimum weight.
 
 ---
 

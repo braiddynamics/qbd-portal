@@ -372,7 +372,7 @@ Section 21.4.1 formalizes the properties of the QBD lemma regarding saturation e
 
 ---
 
-### 21.4.1.2 Proof: Saturation Epoch Convergence {#21.4.1.2} <Ref id="21.4.1" label="§21.4.1" /> {#21.4.1.2}
+### 21.4.1.2 Proof: Saturation Epoch Convergence {#21.4.1.2}
 
 :::tip[**Verification of Saturation Epoch Convergence by Phase Portrait Analysis of Cosmic Evolution**]
 :::
@@ -389,6 +389,6 @@ This resolves the cosmic coincidence problem dynamically without fine-tuned init
 Q.E.D.
 
 **In Plain English:**  
-Section 21.4.1.2 formalizes the properties of the QBD proof regarding saturation epoch convergence {#21.4.1.2} <ref id="21.4.1" label="§21.4.1" />.
+Section 21.4.1.2 formalizes the properties of the QBD proof regarding saturation epoch convergence.
 
 ---
