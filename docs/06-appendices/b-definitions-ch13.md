@@ -18,7 +18,8 @@ $$
 T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b).
 $$
 
-The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" /> (denoted $\chi$) and the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
+The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
+3.4" label="§2.3.4" />:
 
 $$
 P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
@@ -211,7 +212,7 @@ Verification of the local stress-energy conservation laws established in the **L
 
 1.  **Experimental Initialization:** The algorithm initializes a five-node Zero-Point Ignition vacuum as a minimal Bethe fragment to represent the seed of geometric growth.
 2.  **Dynamic Graph Evolution:** The protocol applies the universal rewrite rules and thermodynamic regulation suite under strict acyclic causal constraints to evolve the graph.
-3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis.
+3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in <Ref id="13.1.5" label="§13.1.5" />.
 
 ```python
 import numpy as np
@@ -726,7 +727,7 @@ Verification of the discrete coupling relations established in the **Derivation 
 
 1.  **Deterministic Response Evaluation:** The algorithm constructs a minimal three-node graph representing a closed 3-cycle to compute the exact coupling constant in the absence of noise.
 2.  **Statistical Permittivity Simulation:** The protocol simulates a statistical ensemble of edge configurations subject to vacuum fluctuations and Poissonian noise.
-3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept.
+3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in <Ref id="13.2.6" label="§13.2.6" />.
 
 ```python
 import numpy as np
@@ -1008,7 +1009,7 @@ Section 13.3.3 formalizes the properties of the QBD lemma regarding action invar
 :::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
 :::
 
-For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.
+For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:. <Ref id="13.3.3" label="§13.3.3" /> and <Ref id="13.3.2" label="§13.3.2" />
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].

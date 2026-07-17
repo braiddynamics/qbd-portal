@@ -162,7 +162,7 @@ Section 11.2.4 formalizes the properties of the QBD lemma regarding measure vali
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.
+The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$. <Ref id="11.2.4" label="§11.2.4" /> and <Ref id="11.2.3" label="§11.2.3" />
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
@@ -213,7 +213,7 @@ Section 11.2.4.1 formalizes the properties of the QBD proof regarding measure va
 :::note[**Validation of Measure Normalization via Directed Chain Simulation**]
 :::
 
-Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4.1" label="§11.2.4.1" /> is based on the following protocols:
+Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the space definition verified in **Probability Space** <Ref id="11.2.2" label="§11.2.2" /> is based on the following protocols:
 
 1.  **Lattice Generation:** The algorithm constructs a representative directed chain graph representing the sparse causal regime.
 2.  **Neighborhood Evaluation:** The protocol applies the lazy causal measure formula to the vertices under the four exhaustive topological configurations.
@@ -334,7 +334,7 @@ Section 11.2.5 formalizes the properties of the QBD lemma regarding entropy maxi
 :::tip[**Derivation of the Optimal Self-Weighting from the Analytical Maximization of the Macroscopic Temporal Entropy**]
 :::
 
-This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors.
+This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors. <Ref id="11.2.5" label="§11.2.5" /> and <Ref id="11.2.4" label="§11.2.4" />
 
 **I. Definition of Temporal Macro-States**
 The vacuum acts to maximize the uncertainty of the temporal locus of the state, independent of the spatial dispersion within those loci. we compute three distinct causal sectors (macro-states) for a vertex $u$: the Present $S_0 = \{u\}$, the Future $S_+ = N^+(u)$, and the Past $S_- = N^-(u)$. The total probability measure allocated to these macroscopic sectors is defined as:
@@ -612,7 +612,7 @@ Section 11.2.6.1 formalizes the properties of the QBD proof regarding metric nec
 :::note[**Evaluation of Transport Costs via Linear Programming**]
 :::
 
-Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6.1" label="§11.2.6.1" /> is based on the following protocols:
+Verification of the undirected metric requirement established by **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the validity criteria verified in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the following protocols:
 
 1.  **Metric Construction:** The algorithm constructs shortest-path distance matrices for a representative chain graph under both directed and undirected metrics.
 2.  **Wasserstein Resolution:** The protocol solves the optimal transport problem using a linear programming solver to evaluate forward and reverse transport costs.
@@ -839,7 +839,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7.1" label="§11.2.7.1" /> is based on the following protocols:
+Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> is based on the constraints verified in **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the following protocols:
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -992,7 +992,7 @@ Combinatorial Reifenberg Flatness establishes that space looks flat and manifold
 :::tip[**Establishment of Boundary Homology Stability via Simplicial Link Decomposition**]
 :::
 
-For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
+For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. <Ref id="11.2.8" label="§11.2.8" /> and <Ref id="11.2.7" label="§11.2.7" /> The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = 16 + \mathcal{O}(r^{-1})
@@ -1196,7 +1196,7 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. <Ref id="11.3.4" label="§11.3.4" /> and <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
 
 The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
 

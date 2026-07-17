@@ -312,7 +312,7 @@ Section 8.2.4 formalizes the properties of the QBD lemma regarding commutator ge
 :::
 
 **I. Fundamental Representation**
-Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$:
+Let the set of fundamental generators be defined by the adjacent swaps in the fundamental representation acting on basis states $|1\rangle, |2\rangle, |3\rangle$: <Ref id="8.2.4" label="§8.2.4" /> and <Ref id="8.2.3" label="§8.2.3" />
 
 $$
 \hat{H}_1 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad \hat{H}_2 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}
@@ -359,7 +359,7 @@ Section 8.2.5 formalizes the properties of the QBD lemma regarding algebraic clo
 :::
 
 **I. Linear Independence**
-The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated. The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
+The eight matrices $\{\lambda_1, \dots, \lambda_8\}$ (standard basis) are generated. <Ref id="8.2.5" label="§8.2.5" /> and <Ref id="8.2.4" label="§8.2.4" /> The explicit Gram matrix $G_{ab} = \operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is computed (Gell-Mann normalization). The determinant $\det G = 2^8 \neq 0$ confirms the linear independence of the basis vectors in the operator space.
 
 **II. Semisimplicity via Killing Form**
 The **Killing Form** $K(X,Y) = -2 \operatorname{Tr}(\operatorname{ad}_X \operatorname{ad}_Y)$ is evaluated on the real span. The form is negative-definite, yielding eigenvalues $\lambda_i < 0$ for all roots. By the **Cartan Criterion**, this verifies the semisimple structure. The ad-representation matrices are computed explicitly for each root, with the negative eigenvalues ensuring no abelian factors exist.
@@ -415,7 +415,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding ensemble cl
 :::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
 :::
 
-Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6.1" label="§8.2.6.1" /> is based on the following protocols:
+Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6" label="§8.2.6" /> is based on the generator representations verified in **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> is based on the following protocols:
 
 1.  **Basis Definition:** The algorithm instantiates the standard 8 Gell-Mann matrices normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ to serve as the target Lie algebra basis.
 2.  **Ensemble Evolution:** The protocol simulates an ensemble of "braid rewrites" by randomly ordering the discovery of generators, starting from the two fundamental real off-diagonal matrices. New generators are added to the set only if they increase the linear span rank, mimicking the generation of commutators.
@@ -604,7 +604,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding flux tube c
 :::note[**Computational Verification of Linear Confinement and Monopole Phases**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7.1" label="§8.2.7.1" /> is based on the following protocols:
+Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7" label="§8.2.7" /> is based on the tension constraints verified in **Algebraic Torsion** <Ref id="8.2.5" label="§8.2.5" /> is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
 2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
@@ -869,7 +869,7 @@ Section 8.3.5 formalizes the properties of the QBD lemma regarding right-handed 
 :::
 
 **I. Statistical Failure Probability**
-The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph.
+The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph. <Ref id="8.3.5" label="§8.3.5" /> and <Ref id="8.3.4" label="§8.3.4" />
 Using a Poisson model for alternatives in an Erdos-Renyi graph with edge probability $\rho_e = \langle k \rangle / N \approx 0.029$:
 The probability of no alternative short path is $P(\text{unique}) = \exp(-\lambda)$, where $\lambda$ is the expected number of alternatives.
 For a local distance $\bar{d}=2$, amplified by the 3-path span in the braid support:
@@ -1044,7 +1044,7 @@ The mirror process requires $H_t(e_2) < H_t(e_1)$, contradicting global **Acycli
 This inversion creates a redundant alternative path, violating $|\Pi(u,v)|=1$ **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
 The violation triggers a syndrome $\sigma = -1$ in the local stabilizer $S_{uv}$.
 The **Correction Map** $C$ projects this state out with probability $\approx 1$.
-The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and **Mirror PUC Violation** <Ref id="8.3.7" label="§8.3.7" />.
+The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.3.5" label="§8.3.5" /> and **Mirror PUC Violation**.
 For global inversions, the **O(N) Barrier** from **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" /> renders the flip infeasible within a single tick.
 
 **IV. SU(2)_L Closure and Current Form**
@@ -1095,7 +1095,7 @@ Section 8.4.2 formalizes the properties of the QBD lemma regarding computational
 :::tip[**Derivation of the Probability Ratio from Combinatorial and Friction Factors**]
 :::
 
-The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$.
+The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$. <Ref id="8.4.2" label="§8.4.2" /> and <Ref id="8.4.1" label="§8.4.1" />
 The inequality $p_4 < p_3$ is demonstrated by decomposing these factors in the sparse limit.
 
 **I. Combinatorial Rarity**
@@ -1147,7 +1147,7 @@ Section 8.4.3 formalizes the properties of the QBD lemma regarding coupling-prob
 :::
 
 **I. Born Probability Definition**
-In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:
+In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$: <Ref id="8.4.3" label="§8.4.3" /> and <Ref id="8.4.2" label="§8.4.2" />
 
 $$
 P(\mathcal{R}_F) = |M(G \to G')|^2
@@ -1195,7 +1195,7 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding topological c
 :::
 
 **I. The SU(2) Interaction ($p_3$)**
-The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$).
+The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$). <Ref id="8.4.4" label="§8.4.4" /> and <Ref id="8.4.3" label="§8.4.3" />
 1.  **Action:** It transforms one basis state of the doublet into the other.
 2.  **Minimal Topology:** As proven in the **Weak Algebra Emergence** <Ref id="8.3.4" label="§8.3.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid.
 3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot).
@@ -1420,7 +1420,7 @@ Section 8.5.4 formalizes the properties of the QBD lemma regarding geometric nor
 :::
 
 **I. Phase Space Integral**
-The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet. The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
+The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet. <Ref id="8.5.4" label="§8.5.4" /> and <Ref id="8.5.3" label="§8.5.3" /> The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
 The volume of the unit 3-sphere is $2\pi^2$. However, the vertex normalization in the effective Lagrangian utilizes the **Haar Measure** on the group adjoint representation.
 
 **II. Adjoint Trace Adjustment**
@@ -1546,7 +1546,7 @@ Section 8.5.6.1 formalizes the properties of the QBD proof regarding local state
 :::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6.1" label="§8.5.6.1" /> is based on the following protocols:
+Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.5.6" label="§8.5.6" /> is based on the normalization protocols verified in **Trace Normalization** <Ref id="8.5.3" label="§8.5.3" /> is based on the following protocols:
 
 1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
 2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
@@ -1710,7 +1710,7 @@ Validation of the analytical coupling derivation established in the **Emergent G
 
 1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
 2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
-3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error.
+3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error. This verifies the result established in <Ref id="8.5.7" label="§8.5.7" />.
 
 ```python
 import math
@@ -1959,7 +1959,7 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding topological
 :::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
 :::
 
-Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5.1" label="§8.6.5.1" /> is based on the following protocols:
+Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" /> is based on the scaling relations verified in **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" /> is based on the following protocols:
 
 1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
 2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
@@ -2036,7 +2036,7 @@ Section 8.6.6 formalizes the properties of the QBD lemma regarding sensitivity a
 :::tip[**Analytical and Numerical derivation of Error Bounds on Predicted Masses**]
 :::
 
-Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.
+Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity. <Ref id="8.6.6" label="§8.6.6" /> and <Ref id="8.6.5" label="§8.6.5" />
 
 **I. Sensitivity to $\mu$**
 Implicit differentiation of $f(\rho_3^*, \mu) = 18 \rho_3^* e^{-6\mu \rho_3^*} - 1 = 0$ yields:

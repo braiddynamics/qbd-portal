@@ -914,7 +914,7 @@ Section 6.1.6 formalizes the properties of the QBD proof regarding particle nece
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
 
 1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and maintains the causal orientation mandated by the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
-2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
+2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the **Principle of Unique Causality**, yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
 3.  **Algebraic Generation:** The configuration generates the non-abelian Braid Group on three strands, denoted $B_3$, which satisfies the Yang-Baxter equation $b_1 b_2 b_1 = b_2 b_1 b_2$ and embeds the Special Unitary algebra $\mathfrak{su}(3)$ via three-dimensional fundamental representations.
 4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />.
 
@@ -932,7 +932,7 @@ Every stable, first-generation elementary fermion is topologically isomorphic to
 
 In particular, configurations with fewer than three ribbons ($n < 3$) are excluded due to topological instability for $n=1$ via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> or algebraic insufficiency for $n=2$ via **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />.
 
-Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> to provide the necessary basis for three color charges and anomaly cancellation.
+Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** to provide the necessary basis for three color charges and anomaly cancellation.
 
 **In Plain English:**  
 Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite braid theorem.

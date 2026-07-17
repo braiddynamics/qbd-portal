@@ -58,7 +58,7 @@ Section 16.1.3 formalizes the properties of the QBD lemma regarding min-cut entr
 :::tip[**Direct Construction via Schmidt Rank Saturation at the Minimal Cut Surface**]
 :::
 
-Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$.
+Let $\chi$ denote the bond dimension of each virtual index in the tensor network, and let $|\text{Cut}(\gamma)|$ denote the number of virtual bonds severed by a bulk surface $\gamma$ anchored to the boundary of $A$. <Ref id="16.1.3" label="§16.1.3" /> and <Ref id="16.1.2" label="§16.1.2" />
 
 $$
 S(\rho_A) = \min_{\gamma} |\text{Cut}(\gamma)| \cdot \ln \chi
@@ -124,7 +124,7 @@ Section 16.1.4 formalizes the properties of the QBD lemma regarding isometry con
 :::tip[**Formal Verification of Information Preservation via Tensor Contraction**]
 :::
 
-Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). The global mapping preserves the inner product of the bulk state space:.
+Let $w$ denote the local coarse-graining tensor (isometry) and $u$ denote the local disentangler (unitary). <Ref id="16.1.4" label="§16.1.4" /> and <Ref id="16.1.3" label="§16.1.3" /> The global mapping preserves the inner product of the bulk state space:.
 
 $$
 \Phi^\dagger \Phi = \hat{I}_{bulk}
@@ -246,7 +246,7 @@ Verification of the holographic scaling law established by **Ryu-Takayanagi Corr
 
 1.  **Network Discretization:** The algorithm constructs a MERA-like hyperbolic tensor network modeled as a binary tree with lateral disentangler links.
 2.  **Boundary Partition Cut:** The protocol establishes a contiguous boundary subregion of varying size to serve as the information source.
-3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size.
+3.  **Min-Cut Capacity Measurement:** The metric computes the graph-theoretic minimal cut to verify the logarithmic scaling of entanglement entropy with region size. This verifies the result established in <Ref id="16.1.5" label="§16.1.5" />.
 
 ```python
 import networkx as nx
@@ -441,7 +441,7 @@ Section 16.2.3 formalizes the properties of the QBD lemma regarding holographic 
 :::tip[**Formal Derivation of the Dimensional Reduction in Information Scaling**]
 :::
 
-Let $\vec{J}_S$ denote the information flux vector field. Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
+Let $\vec{J}_S$ denote the information flux vector field. <Ref id="16.2.3" label="§16.2.3" /> and <Ref id="16.2.2" label="§16.2.2" /> Under the saturation condition $\nabla \cdot \vec{J}_S \to 0$ (incompressibility), any net influx of entropy $\Phi_S = \oint \vec{J}_S \cdot d\vec{A} > 0$ necessitates the geometric expansion of the boundary surface rather than the densification of the interior.
 
 $$
 \lim_{\rho \to \rho_{max}} \frac{dS}{dt} = \alpha \cdot \frac{dA}{dt}
@@ -528,7 +528,7 @@ Section 16.2.4 formalizes the properties of the QBD lemma regarding black hole e
 :::tip[**Formal Verification of the Microstate Counting on the Horizon**]
 :::
 
-Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. The entropy is given by the topological counting function:.
+Let $\Sigma$ be the 2-dimensional spatial cross-section of the horizon. <Ref id="16.2.4" label="§16.2.4" /> and <Ref id="16.2.3" label="§16.2.3" /> The entropy is given by the topological counting function:.
 
 $$
 S_{BH}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\vec{A} \equiv \frac{N_{cycles}(\Sigma)}{4}
@@ -627,7 +627,7 @@ Verification of the holographic saturation limit established by **Maximum Inform
 
 1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon.
 2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area.
-3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth.
+3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth. This verifies the result established in <Ref id="16.2.5" label="§16.2.5" />.
 
 ```python
 import networkx as nx

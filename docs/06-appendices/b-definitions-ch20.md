@@ -37,7 +37,7 @@ Section 20.1.2 formalizes the properties of the QBD lemma regarding sachs-wolfe 
 :::
 
 **I. Lapse Evaluation**
-The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster.
+The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster. <Ref id="20.1.2" label="§20.1.2" /> and <Ref id="20.1.1" label="§20.1.1" />
 
 **II. Anisotropy Derivation**
 It mathematically derives the Sachs-Wolfe relation:
@@ -72,7 +72,7 @@ Section 20.1.3 formalizes the properties of the QBD lemma regarding recombinatio
 
 **I. Chemical Equilibrium Setup**
 
-Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate:
+Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate: <Ref id="20.1.3" label="§20.1.3" /> and <Ref id="20.1.2" label="§20.1.2" />
 
 $$
 \frac{n_e n_p}{n_H} = \left( \frac{m_e k T}{2\pi \hbar^2} \right)^{3/2} e^{-E_0/kT}
@@ -166,7 +166,7 @@ Section 20.2.3 formalizes the properties of the QBD lemma regarding sound horizo
 
 **I. Speed of Sound Definition**
 
-In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$. For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
+In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$. <Ref id="20.2.3" label="§20.2.3" /> and <Ref id="20.2.2" label="§20.2.2" /> For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
 
 **II. Scale Factor Integration**
 
@@ -207,7 +207,8 @@ Section 20.2.4 formalizes the properties of the QBD postulate regarding sterile 
 *   **Perturbation Integration:** The proof solves the linearized Einstein-Boltzmann equations on the graph-metric background for baryon and photon density perturbations.
 *   **Peak Match:** Calculating the angular transfer functions projects the spatial sound horizon onto the sphere, deriving the first three CMB acoustic peaks at $\ell \approx 220.4, 538.1, 796.5$, proving the consistency of the model with CMB data.
 
-This synthesis proof utilizes the structural results established in supporting **Gravitational and Entropic Competing Forces** <Ref id="20.2.2" label="§20.2.2" />, **Sound Horizon Scale** <Ref id="20.2.3" label="§20.2.3" />, and **Sterile Braid Scaffolding** <Ref id="20.2.4" label="§20.2.4" />.
+This synthesis proof utilizes the structural results established in supporting **Gravitational and Entropic Competing Forces** <Ref id="20.2.2" label="§20.2.2" />.
+**Sound Horizon Scale** <Ref id="20.2.3" label="§20.2.3" />, and **Sterile Braid Scaffolding** <Ref id="20.2.4" label="§20.2.4" />.
 
 Q.E.D.
 
@@ -246,7 +247,7 @@ Section 20.3.2 formalizes the properties of the QBD lemma regarding void relaxat
 :::
 
 **I. Master Equation Relaxation**
-The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes.
+The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes. <Ref id="20.3.2" label="§20.3.2" /> and <Ref id="20.3.1" label="§20.3.1" />
 
 **II. Attractor Convergence**
 It shows that the local cycle density converges stably to $\rho^* \approx 0.037$ with a negative Jacobian.
@@ -277,7 +278,7 @@ Section 20.3.3 formalizes the properties of the QBD lemma regarding axis collaps
 :::
 
 **I. Eigenvalue Ordering**
-The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations. <Ref id="20.3.3" label="§20.3.3" /> and <Ref id="20.3.2" label="§20.3.2" />
 
 **II. Critical Timescales**
 It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.

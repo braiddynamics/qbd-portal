@@ -52,7 +52,7 @@ Section 23.1.3 formalizes the properties of the QBD lemma regarding integration 
 :::
 
 **I. Measure Convergence**
-The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold.
+The proof establishes measure convergence by mapping the discrete graph vertex set to a Borel measure space on the emergent manifold. <Ref id="23.1.3" label="§23.1.3" /> and <Ref id="23.1.2" label="§23.1.2" />
 
 **II. Thermodynamic Integration**
 Using the Law of Large Numbers, it evaluates the convergence of the discrete cycle sum to the Riemann integral.
@@ -86,7 +86,7 @@ Section 23.1.4 formalizes the properties of the QBD lemma regarding discrete dif
 
 **I. Node Interpolation**
 
-Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. Using the Taylor series expansion:
+Let the function $f(x)$ be evaluated at two adjacent graph vertices $v_0$ and $v_1$ separated by a causal edge of length $h$. <Ref id="23.1.4" label="§23.1.4" /> and <Ref id="23.1.3" label="§23.1.3" /> Using the Taylor series expansion:
 
 $$
 f(v_1) = f(v_0) + h \partial_x f(v_0) + \frac{h^2}{2} f''(y)
@@ -174,7 +174,8 @@ Section 23.2.2 formalizes the properties of the QBD theorem regarding chiral vac
 :::info[**Derivation of Microscopic Energy Bias between Enantiomeric Braid Configurations**]
 :::
 
-Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />, let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
+Given the projection of right-handed weak isospin currents under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" />.
+Let the weak self-energy difference be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
 
 **In Plain English:**  
 Section 23.2.3 formalizes the properties of the QBD lemma regarding prebiotic enantiomer energy bias.
@@ -188,7 +189,7 @@ Section 23.2.3 formalizes the properties of the QBD lemma regarding prebiotic en
 
 **I. Electroweak Perturbation**
 
-Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers:
+Let the chiral energy difference $\Delta E$ be computed from the parity-violating electroweak interaction Hamiltonian $\hat{H}_{PV}$ acting on the electron-nucleus configuration of the L- and D-enantiomers: <Ref id="23.2.3" label="§23.2.3" /> and <Ref id="23.2.2" label="§23.2.2" />
 
 $$
 \Delta E = 2 \operatorname{Re} \langle \Psi_L | \hat{H}_{PV} | \Psi_R \rangle
@@ -232,7 +233,7 @@ Section 23.2.4 formalizes the properties of the QBD lemma regarding autocatalyti
 
 **I. Frank Model Dynamics**
 
-Let the concentrations of the two enantiomers be $x_L$ and $x_D$. The dynamical equations with mutual antagonism are:
+Let the concentrations of the two enantiomers be $x_L$ and $x_D$. <Ref id="23.2.4" label="§23.2.4" /> and <Ref id="23.2.3" label="§23.2.3" /> The dynamical equations with mutual antagonism are:
 
 $$
 \frac{dx_L}{dt} = k_S x_L - k_A x_L x_D
@@ -309,7 +310,8 @@ Section 23.3.2 formalizes the properties of the QBD lemma regarding unified brai
 
 **I. Generator Embedding**
 
-Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). Under **Standard Model Embedding** <Ref id="17.4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
+Let the generators of the three sectors be represented by the operators $\lambda_a$ (for $SU(3)_c$), $\sigma_i$ (for $SU(2)_L$), and $Y$ (for $U(1)_Y$). <Ref id="23.3.2" label="§23.3.2" /> and <Ref id="23.3.1" label="§23.3.1" />.
+4.4" label="§17.4.4" />, these generators act on disjoint sets of edges.
 
 **II. Coupling Operator Construction**
 
@@ -351,7 +353,7 @@ Section 23.3.3 formalizes the properties of the QBD lemma regarding e8 dimension
 
 **I. Root System Embedding**
 
-Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
+Let the root system of the coupled braid symmetry algebra be mapped onto the vertices of the trivalent graph. <Ref id="23.3.3" label="§23.3.3" /> and <Ref id="23.3.2" label="§23.3.2" /> The nodes represent the simple roots, and the edges represent the Dynkin diagram links.
 
 **II. Loop Constraint**
 

@@ -60,7 +60,7 @@ Section 14.1.3 formalizes the properties of the QBD lemma regarding local causal
 :::tip[**Verification of Variance Suppression owing to the Application of the Central Limit Theorem to Graph Neighborhoods**]
 :::
 
-For any bounded discrete field $f$ with independent, identically distributed stochastic noise of variance $\sigma^2$, the variance of the averaged field scales as:.
+For any bounded discrete field $f$ with independent, identically distributed stochastic noise of variance $\sigma^2$, the variance of the averaged field scales as:. <Ref id="14.1.3" label="§14.1.3" /> and <Ref id="14.1.2" label="§14.1.2" />
 
 $$
 \text{Var}(\mathcal{A}_R f) \sim O(R^{-4})
@@ -106,7 +106,7 @@ Section 14.1.3.1 formalizes the properties of the QBD proof regarding local caus
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" /> is based on the following protocols:
+Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" /> is based on the proper time scaling verified in **Proper Time** <Ref id="14.1.2" label="§14.1.2" /> is based on the following protocols:
 
 1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
 2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
@@ -306,7 +306,7 @@ Verification of the global time foliation properties established in the **Smooth
 
 1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
 2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
-3.  **Roughness Gradient Analysis:** The metric evaluates the discrete lapse field gradients and roughness measures before and after applying the local causal average operator.
+3.  **Roughness Gradient Analysis:** The metric evaluates the discrete lapse field gradients and roughness measures before and after applying the local causal average operator. This verifies the result established in <Ref id="14.1.5" label="§14.1.5" />.
 
 ```python
 import networkx as nx
@@ -442,7 +442,8 @@ Section 14.1.5.1 formalizes the properties of the QBD calculation regarding glob
 :::tip[**Definition of the Emergent Pseudo-Riemannian Metric Tensor following the Arnowitt-Deser-Misner Decomposition**]
 :::
 
-The **Emergent Lorentzian Metric**, denoted $g_{\mu\nu}$, constitutes the fundamental dynamical tensor field on the differentiable manifold $M$. This tensor unifies the spatial Riemannian metric $g_{ij}$ **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" /> and the scalar **Lapse Function** <Ref id="14.1.1" label="§14.1.1" /> (denoted $N$) through the line element of the Arnowitt-Deser-Misner (ADM) decomposition:
+The **Emergent Lorentzian Metric**, denoted $g_{\mu\nu}$, constitutes the fundamental dynamical tensor field on the differentiable manifold $M$. This tensor unifies the spatial Riemannian metric $g_{ij}$ **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />.
+1.1" label="§14.1.1" /> (denoted $N$) through the line element of the Arnowitt-Deser-Misner (ADM) decomposition:
 
 $$
 \mathrm{d}s^2 = g_{\mu\nu} \mathrm{d}x^\mu \mathrm{d}x^\nu = -N^2 \mathrm{d}T^2 + g_{ij} (\mathrm{d}x^i + \beta^i \mathrm{d}T) (\mathrm{d}x^j + \beta^j \mathrm{d}T)
@@ -680,7 +681,7 @@ Section 14.2.7 formalizes the properties of the QBD lemma regarding geodesic mot
 :::tip[**Deduction of Inertial Trajectories determined by the Maximization of Proper Time in the Geometric Optics Limit**]
 :::
 
-This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
+This trajectory constitutes the path of stationary phase for the graph evolution operator $\mathcal{U}$ in the thermodynamic limit. <Ref id="14.2.7" label="§14.2.7" /> and <Ref id="14.2.6" label="§14.2.6" /> Specifically, for a particle of mass $m$, the probability amplitude is dominated by the causal chain that maximizes the proper time interval $\tau$ between fixed endpoints, thereby recovering the **Weak Equivalence Principle**: the acceleration of the body is independent of its internal composition, determined solely by the connection coefficients $\Gamma^\mu_{\alpha\beta}$ of the emergent geometry.
 
 The proof derives the classical equation of motion from the quantum statistical mechanics of the causal graph by taking the limit where the particle complexity (mass) is large compared to the lattice discretization scale.
 
@@ -771,7 +772,7 @@ Verification of the geodesic emergence and proper time maximization established 
 
 1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
 2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
-3.  **Trajectory Deviation Analysis:** The metric compares the resulting path against flat space coordinates to verify gravitational attraction and proper time maximization.
+3.  **Trajectory Deviation Analysis:** The metric compares the resulting path against flat space coordinates to verify gravitational attraction and proper time maximization. This verifies the result established in <Ref id="14.2.8" label="§14.2.8" />.
 
 ```python
 import networkx as nx
@@ -999,6 +1000,8 @@ Section 14.3.4 formalizes the properties of the QBD lemma regarding vacuum invar
 :::tip[**Demonstration of Invariance via the Uniqueness of the Maximum Entropy Stationary Distribution**]
 :::
 
+The Poincaré invariance of the vacuum state is established under **Vacuum Invariance (Haar Measure)** <Ref id="14.3.4" label="§14.3.4" /> and **Hyperbolic Rotations** <Ref id="14.3.3" label="§14.3.3" />:
+
 $$
 U(\Lambda, a) |0\rangle = |0\rangle \quad \forall (\Lambda, a) \in \mathcal{P}
 $$
@@ -1138,7 +1141,7 @@ Section 14.3.6.1 formalizes the properties of the QBD proof regarding microcausa
 :::note[**Verification of Microcausality and Commutator Vanishing via DAG Path Connectivity**]
 :::
 
-Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6.1" label="§14.3.6.1" /> is based on the following protocols:
+Verification of the spacelike commutator vanishing established by **Microcausality** <Ref id="14.3.6" label="§14.3.6" /> is based on the coordinate bounds verified in **Spacelike Separation** <Ref id="14.3.3" label="§14.3.3" /> is based on the following protocols:
 
 1.  **Causal Connectivity Matrix Assembly:** The algorithm maps the causal structure of a spacetime patch using a directed acyclic graph representing local relations.
 2.  **Spacelike Separation Check:** The protocol determines the pairwise causal connectivity to identify all pairs of causally disconnected nodes.
@@ -1337,7 +1340,7 @@ Verification of the spatial correlation decay established by **Wightman Complian
 
 1.  **Massive Propagator Construction:** The algorithm constructs a massive scalar field on a 1D spatial lattice by computing the inverse of the discrete massive Laplacian.
 2.  **Correlator Measurement:** The protocol evaluates the two-point correlator with respect to spatial distance across the lattice.
-3.  **Exponential Decay Verification:** The metric tracks the exponential decay rate of the correlations to verify vacuum locality and the existence of a mass gap.
+3.  **Exponential Decay Verification:** The metric tracks the exponential decay rate of the correlations to verify vacuum locality and the existence of a mass gap. This verifies the result established in <Ref id="14.3.8" label="§14.3.8" />.
 
 ```python
 import numpy as np
@@ -1459,7 +1462,7 @@ Section 14.4.2 formalizes the properties of the QBD lemma regarding first law of
 :::
 
 **I. The Horizon as a Cut-Set**
-In the discrete causal graph, a "horizon" $\mathcal{H}$ corresponds to a cut-set $C$ separating the accessible subgraph $G_{obs}$ from the inaccessible subgraph $G_{hidden}$. The entropy of the region is defined by the Von Neumann entropy of the reduced density matrix $\rho_{obs} = \text{tr}_{hidden}|\psi\rangle\langle\psi|$.
+In the discrete causal graph, a "horizon" $\mathcal{H}$ corresponds to a cut-set $C$ separating the accessible subgraph $G_{obs}$ from the inaccessible subgraph $G_{hidden}$. <Ref id="14.4.2" label="§14.4.2" /> and <Ref id="14.4.1" label="§14.4.1" /> The entropy of the region is defined by the Von Neumann entropy of the reduced density matrix $\rho_{obs} = \text{tr}_{hidden}|\psi\rangle\langle\psi|$.
 
 **II. The Cycle-Area Relation**
 By the definition of the graph topology, the cut-set size is enumerated by the number of irreducible cycles it intersects. we compute the count of 3-cycles $N_3$ with the geometric area in Planck units:
@@ -1498,7 +1501,7 @@ Section 14.4.3 formalizes the properties of the QBD lemma regarding recovering n
 :::tip[**Dimensional Derivation from the Bekenstein-Hawking Limit**]
 :::
 
-Newton's constant $G$ is derived from the fundamental discreteness scale of the graph, specifically the effective area $A_3$ of a single logical 3-cycle:.
+Newton's constant $G$ is derived from the fundamental discreteness scale of the graph, specifically the effective area $A_3$ of a single logical 3-cycle:. <Ref id="14.4.3" label="§14.4.3" /> and <Ref id="14.4.2" label="§14.4.2" />
 
 $$
 G \sim \frac{c^3}{\hbar} A_3 \approx \ell_0^2 \frac{c^3}{\hbar}
@@ -1574,7 +1577,7 @@ Verification of the curvature-entropy coupling established in **Einstein Field E
 
 1.  **Geometric Deformation:** The protocol analyzes a geodesic pencil forming a local horizon, tracking the expansion parameter $\theta$ using the Raychaudhuri focusing equation $\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma_{\mu\nu}\sigma^{\mu\nu} - R_{\mu\nu}k^\mu k^\nu$.
 2.  **Thermodynamic Constraint:** The system equates the change in area $\delta A$ to the entanglement entropy change $\delta S$, relating the energy flux to the curvature tensor.
-3.  **Einstein Identification:** The derivation applies the contracted Bianchi identity to identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique divergence-free curvature coupling.
+3.  **Einstein Identification:** The derivation applies the contracted Bianchi identity to identify the Einstein tensor $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}R g_{\mu\nu}$ as the unique divergence-free curvature coupling. This verifies the result established in <Ref id="14.4.4" label="§14.4.4" />.
 
 Q.E.D.
 

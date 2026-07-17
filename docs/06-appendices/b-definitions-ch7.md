@@ -315,7 +315,8 @@ Section 7.1.5 formalizes the properties of the QBD proof regarding topological s
 :::info[**Prohibition of Identical Fermion Occupancy under Causal Graph Axioms**]
 :::
 
-Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and the ordering of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
+Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
+Consequently, the quantum state representing dual occupancy lies within the kernel of the Hard Constraint Projector $\Pi_{\text{cycle}}$, resulting in a transition probability of identically zero.
 
 **In Plain English:**  
 Section 7.2.1 formalizes the properties of the QBD theorem regarding pauli exclusion principle.
