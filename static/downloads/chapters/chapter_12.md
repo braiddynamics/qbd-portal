@@ -1,5 +1,11 @@
 # Chapter 12: Discrete Field Equations (Einstein)
 
+**Abstract**
+
+Chapter 12 establishes the mathematical convergence of the discrete causal graph sequence to a smooth, four-dimensional pseudo-Riemannian manifold in the thermodynamic limit ($N \to \infty, \ell_0 \to 0$). It addresses the fundamental pathology of coordinate artifacts and geometric instability encountered when continuous spacetime is recovered without a rigorous, measure-sensitive metric. This structural resolution is executed via a dual-limit framework combining spectral geometry and optimal transport. First, the consistently weighted graph Laplacian $\tilde{\mathcal{L}}_t$ is proven to converge in a strong resolvent sense to the continuous Laplace-Beltrami operator $-\Delta_g$, while heat kernel asymptotics provide discrete Li-Yau gradient estimates that guarantee smooth four-dimensional Hausdorff and spectral dimensions. Second, a tensorial averaging map $\mathcal{A}_R$ projects discrete edge scalars onto the unit tangent bundle, where weak convergence to the uniform Haar measure reconstructs smooth symmetric tensor fields like $G_{\mu\nu}$ and $T_{\mu\nu}$. Finally, the directed causal edge distribution breaks local $O(4)$ rotational invariance down to the Lorentz group $SO(3,1)$. This anisotropic drift vector field coupled with a null boundary condition transforms the Riemannian spatial metric into a pseudo-Riemannian metric of Lorentzian signature (-,+,+,+), thereby completing the rigorous synthesis of general relativistic spacetime.
+
+---
+
 # Chapter 12: Continuum Limit (Convergence)
 
 We now ask a critical mathematical question: how does a discrete, relational graph of finite size converge to a smooth, continuous Riemannian manifold in the thermodynamic limit? The previous chapters derived the discrete curvature and field equations, but physical gravity operates on a continuous stage. We must prove that taking the Gromov-Hausdorff-Wasserstein limit of our sequence of graphs reconstructs the smooth kinematics of General Relativity, showing that the discrete relations transition to the continuous fields of classical physics.
@@ -1469,3 +1475,31 @@ The stage is now set with a smooth continuous manifold and coarse-grained fields
 | $\kappa'$ | Continuum gravitational coupling constant | [§12.2.5](/monograph/stage/reconstruction/12.2/#12.2.5) |
 
 ---
+
+\newpage
+# References
+
+### 2. **Adams, R. A., & Fournier, J. J. (2003).** {#A.2}
+**"Sobolev Spaces"**
+    * **Link:** [https://www.sciencedirect.com/book/9780120441433/sobolev-spaces](https://www.sciencedirect.com/book/9780120441433/sobolev-spaces)
+
+
+**Overview:**
+Adams and Fournier present a comprehensive and classic monograph on the theory of Sobolev spaces. They cover the fundamental properties of these spaces, including approximation theorems, embedding theorems, and compactness results. Their work supplies the analytical machinery used to analyze partial differential equations on continuous domains.
+
+**Relevance to QBD:**
+This reference is indispensable for the continuum limit derivations of QBD. In Chapter 12, the discrete graph Laplacian and its associated energy functionals are proved to converge to continuous differential operators. This convergence requires mapping graph functions to Sobolev spaces. The embedding theorems derived by Adams and Fournier provide the required bounds to ensure that the discrete solutions remain well-behaved as the graph spacing approaches zero.
+
+---
+
+### 26. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.26}
+**"Elliptic Partial Differential Equations of Second Order"**
+- *Springer*
+    * **Link:** [https://link.springer.com/book/10.1007/978-3-642-61798-0](https://link.springer.com/book/10.1007/978-3-642-61798-0)
+
+
+**Overview:**
+Gilbarg and Trudinger present a definitive and thorough treatment of classical elliptic partial differential equations. They cover maximum principles, Sobolev spaces, Schauder estimates, and existence theorems, supplying the standard analytical tools used to analyze smooth geometric operators.
+
+**Relevance to QBD:**
+This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.

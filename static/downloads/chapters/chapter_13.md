@@ -1,5 +1,11 @@
 # Chapter 13: Continuum Limit (Convergence)
 
+**Abstract**
+
+Chapter 13: Discrete Field Equations (Einstein) formalizes the variational synthesis of Quantum Braid Dynamics (QBD), resolving the structural pathology of the passive geometry trap where matter is artificially coupled to a static lattice as an extrinsic phenomenological parameter. This ontology resolves the tension between planck-scale stochastic fluctuations and macroscopic conservation laws by deriving the field equations directly from the variational properties of the discrete Einstein-Hilbert action. Spacetime curvature and mass energy are unified into an intrinsic thermodynamic equilibrium where the discrete Einstein tensor $\mathcal{G}_{ab}$, defined as the trace-reversed causal Ollivier-Ricci curvature, couples linearly to the discrete stress-energy tensor $T_{ab}$. This source term is physicalized as the net probability flux of three-cycle geometric quanta under the universal constructor. By demonstrating that the principle of stationary action $\delta\mathcal{S}=0$ is mathematically isomorphic to the non-equilibrium detailed balance of the master equation, the framework establishes the discrete field equations $\mathcal{G}_{ab} = \kappa T_{ab}$. This convergence is policed by an intrinsic discrete Bianchi identity $\nabla \cdot \mathcal{G} = 0$ derived from vertex relabeling general covariance, ensuring a conservative, self-consistent hydrodynamic limit for the emergent Lorentzian spacetime fabric.
+
+---
+
 # Chapter 13: Discrete Field Equations (Einstein)
 
 How does a discrete, stochastic network give rise to the rigorous conservation laws required by General Relativity? The transition from a probabilistic graph evolution to a deterministic geometric field equation presents a profound conceptual gap: the underlying substrate fluctuates violently at the Planck scale, yet the emergent spacetime must satisfy the strict continuity of the Bianchi identities. A consistent theory of quantum gravity must demonstrate how these continuum symmetries survive the chaotic discrete dynamics without imposing them as axiomatic constraints.

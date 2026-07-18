@@ -12,12 +12,12 @@ The Quantum Braid Dynamics framework was developed to explore the intersection o
 This monograph proposes a novel theoretical framework for the unification of quantum mechanics and general relativity. It is presented as a formal hypothesis subject to peer review, experimental verification, and the falsifiability criteria of the scientific method.
 
 ### Copyright (Monograph Text)
-**© 2025 Braid Dynamics. All Rights Reserved.**
+**© 2026 Braid Dynamics. All Rights Reserved.**
 
 The text, diagrams, and intellectual property contained within the *Quantum Braid Dynamics* monograph are the exclusive property of the authors. Unauthorized reproduction or distribution without attribution is prohibited.
 
 ### License for Code (Simulation & QECC)
-**© 2025 Braid Dynamics. All Rights Reserved.**
+**© 2026 Braid Dynamics. All Rights Reserved.**
 
 The simulation code, algorithms, and QECC (Quantum Error Correction Code) implementations provided herein or in associated repositories are for **educational and scientific verification purposes only**.
 
@@ -32,4 +32,4 @@ The simulation code, algorithms, and QECC (Quantum Error Correction Code) implem
 ### Citation
 We encourage the citation and discussion of this work. Please use the following format when referencing this material:
 
-> **Fisher, R (2025).** *Quantum Braid Dynamics: A Computational Process*
+> **Fisher, R (2026).** *Quantum Braid Dynamics: A Computational Process*

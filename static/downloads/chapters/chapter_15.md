@@ -1,5 +1,11 @@
 # Chapter 15: Geometry of Entanglement (ER = EPR)
 
+**Abstract**
+
+Chapter 15: Geometry of Entanglement (ER = EPR) formalizes the resolution of the non-locality paradox within Quantum Braid Dynamics (QBD) by demonstrating that quantum entanglement is the physical manifestation of topological connectivity within the causal graph. This chapter addresses the tension between the locality of Einsteinian spacetime and the observed violations of Bell's inequalities, resolving it through the construction of a bi-metric structure. The theory proves that the causal graph admits two distinct distance measures: the topological metric ($d_{topo}$), which governs information latency, and the geometric metric ($d_{geo}$), which arises from the coarse-grained bulk manifold approximation. Entanglement bridge edges, defined as singular topological shortcuts, are shown to contract the Wasserstein-1 transport distance between spatially separated regions. This contraction identifies the EPR bridge as the microscopic origin of the Einstein-Rosen wormhole geometry, demonstrating that the observed non-locality is an artifact of the bulk metric's failure to resolve the graph's internal connectivity.
+
+---
+
 # Chapter 15: Geometry of Entanglement (ER = EPR)
 
 We confront a profound physical paradox: if physical information propagates strictly locally along the edges of a causal graph, how can the universe manifest the non-local quantum correlations that violate the Bell-CHSH inequalities? Spacetime appears continuous and locally Einstein-causal, yet quantum entanglement requires a connection between distant points that seems to bypass space entirely. We must discover the mechanical bridge that reconciles the locality of General Relativity with the non-locality of quantum mechanics without introducing action-at-a-distance.

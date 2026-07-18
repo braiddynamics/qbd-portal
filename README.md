@@ -111,11 +111,11 @@ npm run start
 
 We encourage the citation and discussion of this work. Please use the following format when referencing this material:
 
-> **Fisher, R (2025).** *Quantum Braid Dynamics: A Computational Process*
+> **Fisher, R (2026).** *Quantum Braid Dynamics: A Computational Process*
 
 ## License & Usage Restrictions
 
-**© 2025 Braid Dynamics. All Rights Reserved.**
+**© 2026 Braid Dynamics. All Rights Reserved.**
 
 This repository and its contents are **NOT OPEN SOURCE**. The simulation code, algorithms, and QECC implementations are proprietary technology.
 

@@ -1,5 +1,11 @@
 # Chapter 14: Lorentzian Reality (Time)
 
+**Abstract**
+
+Chapter 14: Lorentzian Reality (Time) formalizes the extraction of the temporal dimension and the recovery of the hyperbolic pseudo-Riemannian metric signature within the Quantum Braid Dynamics (QBD) framework, resolving the frozen-time pathology endemic to background-independent quantum cosmology. Time is derived as an emergent parameter of local information processing throughput rather than a passive coordinate grid. Utilizing the Arnowitt-Deser-Misner (ADM) decomposition, the scalar Lapse function $N(x)$ is extracted as the continuum limit of the ratio between local proper time edge histories $H(e)$ and global logical sequencer steps $t_L$, physicalizing gravitational time dilation as a regional update lag induced by topological complexity. By evaluating the directed edge distributions under strict causal partial orders, local $O(4)$ rotational invariance collapses to the Lorentz group $SO(3,1)$ with an exact $(-1,+1,+1,+1)$ signature. This geometric completion allows the matter field operators to fulfill the Wightman Axioms for a consistent Relativistic Quantum Field Theory. Finally, by mapping local causal horizons to graph cut-sets, the Einstein Field Equations emerge as the statistical equations of state for vacuum entanglement entropy, proving that classical gravity is the thermodynamic manifestation of quantum bits.
+
+---
+
 # Chapter 14: Lorentzian Reality (Time)
 
 We confront a fundamental paradox: if our microscopic substrate is a static causal graph of events, how does the smooth, dynamic flow of time and the Lorentzian signature of physical spacetime emerge? The spatial connectivity of the graph coarse-grains into a smooth Riemannian manifold, but physical reality is not a static spatial block. We must explain how the causal ordering of events generates a global time coordinate and a dynamic history without introducing them by hand.

@@ -1,5 +1,11 @@
 # Chapter 7: Quantum Numbers (Topology)
 
+**Abstract**
+
+Chapter 7: Quantum Numbers (Topology) formalizes the pre-geometric derivation of intrinsic particle properties within the Quantum Braid Dynamics (QBD) framework, resolving the pathology of arbitrary parameter fine-tuning in standard quantum field theory. Instead of treating spin, exclusion, charge, and mass as axiomatic inputs, this topological formulation constructs them as invariants of the tripartite braid codespace $\mathcal{C}$. Spin-1/2 statistics and the spin-statistics connection are structurally resolved via the global Spin Operator $L_S$, where a $\pi$ half-twist introduces an odd parity of rung excitations, making particle exchange isotopic to a self-rotation that yields a global phase of minus one. Pauli exclusion is enforced mechanically by the binary capacity of causal links, projecting overlapping identical fermion states out of the physical Hilbert space due to forbidden directed 2-cycle loop closures. Electric charge emerges as the normalized total writhe $w(\beta)$ of the braid, where triality dictates rational Standard Model fractions ($0, -1, -1/3, +2/3$) under a strict charge normalization constraint driven by anomaly cancellation. Finally, inertial rest mass is derived from a complexity functional mapping linear crossing configurations and quadratic torsional strain directly to network resource expenditure.
+
+---
+
 ---
 
 # Chapter 7: Quantum Numbers (Topology)
@@ -1973,3 +1979,71 @@ To understand how these persistent defects interact, we must move from static pr
 | $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
 
 ---
+
+\newpage
+# References
+
+### 8. **Baader, F., & Nipkow, T. (1998).** {#A.8}
+**"Term Rewriting and All That"**
+    * **Link:** [http://dx.doi.org/10.1017/CBO9781139172752](http://dx.doi.org/10.1017/CBO9781139172752)
+
+
+**Overview:**
+Baader and Nipkow present a comprehensive guide to the theory of term rewriting systems. They cover abstract reduction systems, confluence, termination, and unification. Their work documents the core logical principles that govern how symbolic expressions can be systematically modified under a set of deterministic rewrite rules.
+
+**Relevance to QBD:**
+QBD operates as a discrete dynamical system driven by graph rewriting. In Chapter 2, we prove that the update rule is confluent and terminating within the causal horizon, ensuring that physical history is unique and well-defined. Appealing to Baader and Nipkow supplies the logical tools required for this confluence proof, showing that our local rewrite rules behave as a consistent term rewriting system.
+
+---
+
+### 20. **Diestel, R. (2017).** {#A.20}
+**"Graph Theory (5th ed.)"**
+- *Springer*
+    * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
+
+
+**Overview:**
+Diestel presents a detailed and standard textbook on graph theory. The author covers infinite graphs, graph limits, topological aspects of graphs, and the structural properties that emerge in large-scale networks. The book serves as the leading reference for advanced graph-theoretic structures.
+
+**Relevance to QBD:**
+This textbook is the foundation for the graph-theoretic proofs across the monograph. In Chapter 11, we utilize Diestel's theorems on infinite graphs to formulate the infinite-volume limit of our causal network. The connection to these results confirms that the discrete graph structures remain mathematically consistent and well-defined even when the number of vertices approaches infinity, paving the way for the continuous spacetime manifold.
+
+---
+
+### 41. **Maldacena, J. M. (1998).** {#A.41}
+**"The Large N Limit of Superconformal Field Theories and Supergravity"**
+    * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
+
+
+**Overview:**
+Maldacena introduces the Anti-de Sitter / Conformal Field Theory (AdS/CFT) correspondence, proposing a duality between a gravity theory in the bulk of a spacetime and a gauge theory on its boundary. This holographic duality proves that continuous gravitational degrees of freedom can be completely mapped to lower-dimensional, non-gravitational quantum field theories.
+
+**Relevance to QBD:**
+This seminal duality provides the central conceptual paradigm for the holographic screens developed in Chapter 16. In QBD, the interior causal graph represents the gravitational bulk, which is mapped to a discrete boundary screen through code mappings. Maldacena's correspondence grounds the theoretical precedent for our discrete holographic mapping, demonstrating that our graph-theoretic bulk arises from a boundary code.
+
+---
+
+### 56. **Sachs, H. (1962).** {#A.56}
+**"Über selbstkomplementäre Graphen"**
+- *Publicationes Mathematicae Debrecen*, 9, 270-288
+    * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
+
+
+**Overview:**
+Sachs presents the foundational work on self-complementary graphs, which are graphs that are isomorphic to their own complement. He derives key algebraic properties and structural constraints that govern the distribution of edges in these graphs, establishing precise bounds on their cycle structure.
+
+**Relevance to QBD:**
+This reference is necessary for the tripartite braid audits conducted in Chapter 6. We model the stable particle braids using self-complementary topological configurations. Sachs's structural constraints confirm that these self-complementary configurations are protected from untying by local graph updates, supporting the stability of fermions.
+
+---
+
+### 65. **Verlinde, E. (2011).** {#A.65}
+**"On the Origin of Gravity and the Laws of Newton"**
+    * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
+
+
+**Overview:**
+Verlinde proposes that gravity is not a fundamental interaction but rather an entropic force arising from information changes on holographic screens. By combining Bekenstein's horizon thermodynamics with holographic principles, he derives Newton's laws and the Einstein field equations as emergent thermodynamic equations of state.
+
+**Relevance to QBD:**
+Verlinde's entropic gravity is a central conceptual foundation for the discrete field equations formulated in Chapter 13. In QBD, the spatial curvature of the causal graph is shown to emerge from the entropic forces generated by local graph update fluxes. Verlinde's treatment supports our interpretation of gravity as an entropic force, showing that geometry is an emergent information phenomenon.

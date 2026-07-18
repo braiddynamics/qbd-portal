@@ -433,8 +433,8 @@
   background-color: #161b22;
   border: 1px solid rgba(0, 245, 255, 0.3);
   border-radius: 12px;
-  max-width: 850px;
-  width: 100%;
+  max-width: 1200px;
+  width: 75%;
   padding: 2.5rem;
   position: relative;
   box-shadow: 0 0 40px rgba(0, 245, 255, 0.15);
@@ -443,9 +443,10 @@
 
 .spectrum-modal-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2rem;
-  margin-top: 1rem;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  align-items: start;
 }
 
 .spectrum-modal-left {
@@ -459,7 +460,7 @@
   padding: 1.5rem;
   position: relative;
   overflow: hidden;
-  height: 280px;
+  height: 350px;
 }
 
 .spectrum-modal-left.amber-border {
@@ -468,7 +469,7 @@
 
 .spectrum-modal-left-symbol {
   position: absolute;
-  font-size: 8rem;
+  font-size: 14rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.03);
   font-family: monospace, sans-serif;
@@ -477,8 +478,8 @@
 }
 
 .spectrum-modal-left-graphic {
-  width: 220px;
-  height: 220px;
+  width: 290px;
+  height: 290px;
   z-index: 1;
   filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.2));
   transition: all 0.3s ease;
@@ -488,7 +489,32 @@
   filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.2));
 }
 
+@media screen and (max-width: 992px) {
+  .spectrum-modal-content {
+    width: 90%;
+    padding: 2rem;
+  }
+  .spectrum-modal-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+  }
+  .spectrum-modal-left {
+    height: 280px;
+  }
+  .spectrum-modal-left-graphic {
+    width: 220px;
+    height: 220px;
+  }
+  .spectrum-modal-left-symbol {
+    font-size: 8rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .spectrum-modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
   .spectrum-modal-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -496,6 +522,21 @@
   .spectrum-modal-left {
     height: 240px;
     width: 100%;
+  }
+  .spectrum-modal-title {
+    font-size: 1.8rem;
+  }
+  .spectrum-modal-subtitle {
+    font-size: 0.9rem;
+  }
+  .spectrum-modal-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .spectrum-modal-parameters {
+    font-size: 0.85rem;
+    gap: 0.75rem;
+    padding: 0.85rem;
   }
 }
 
@@ -520,33 +561,38 @@
 }
 
 .spectrum-modal-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 0.25rem;
+  transition: font-size 0.2s ease;
 }
 
 .spectrum-modal-subtitle {
   font-family: monospace;
   color: #00f5ff;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
+  transition: font-size 0.2s ease;
 }
 
 .spectrum-modal-body {
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  transition: font-size 0.2s ease;
 }
 
 .spectrum-modal-parameters {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.25rem;
   margin: 1.5rem 0;
-  padding: 1rem;
+  padding: 1.25rem;
   background-color: rgba(13, 17, 23, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 6px;
   font-family: monospace;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  transition: font-size 0.2s ease, padding 0.2s ease, gap 0.2s ease;
 }
 
 .spectrum-modal-param-label {

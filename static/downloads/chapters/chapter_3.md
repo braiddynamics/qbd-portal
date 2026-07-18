@@ -1,5 +1,11 @@
 # Chapter 3: Object Model (Architecture)
 
+**Abstract**
+
+Chapter 3: Object Model (Architecture) derives the unique pre-geometric vacuum topology of the universal initial state ($t_L = 0$) within the Quantum Braid Dynamics (QBD) framework, addressing the pathologies of causal loop infinite regress and spatial fine-tuning. By systematically filtering out configurations with cyclic dependencies, transitivity redundancies, or disjoint realities, the configuration space converges uniquely upon a finite weakly connected directed acyclic graph structured as a regular Bethe tree fragment with coordination number $k_{deg} = 3$. This architecture enforces a canonical depth-parity bipartition ($V_{even} \sqcup V_{odd}$) that initially suppresses odd-length cycles, maintaining a flat pre-geometric vacuum state of maximum relational entropy and global automorphism symmetry. To animate this crystalline stasis covariantly without breaking local node indistinguishability, a maximally parallel scheduling map executes updates across all equivalent rewrite footprints simultaneously. The structural stasis collapses via a non-perturbative tunneling event, where a single parity-violating single-edge fluctuation acts as an instanton seed that nucleates a supercritical branching cascade of 3-cycle geometric area quanta. Spacetime integrity is actively policed against entropic decay through a structural isomorphism to stabilizer quantum error-correcting codes, embedding axioms as commuting $Z$-type constraint projectors and graph updates as logical $X$-type transformations.
+
+---
+
 ---
 
 # Chapter 3: Object Model (Architecture)
@@ -4009,3 +4015,96 @@ This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and prim
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 
 ---
+
+\newpage
+# References
+
+### 18. **Coleman, S. (1977).** {#A.18}
+**"The Uses of Instantons"**
+    * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
+
+
+**Overview:**
+Coleman presents a set of lectures on the role of instantons, which are classical solutions to the equations of motion in Euclidean spacetime. He explains how these non-perturbative configurations correspond to quantum tunneling events between different vacuum states, documenting the physical basis for non-abelian gauge vacuum structure.
+
+**Relevance to QBD:**
+Instantons are the continuous analogs of the non-perturbative transition operations that drive gauge dynamics in Chapter 8. In QBD, the tunneling of a tripartite braid between different topological phases corresponds to a discrete instanton-like event in the causal history. Coleman's lectures are cited to draw this physical analogy, grounding why non-abelian gauge structures emerge from topological updates.
+
+---
+
+### 19. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.19}
+**"Stabilizer Formalism for Operator Algebra Quantum Error Correction"**
+    * **Link:** [https://quantum-journal.org/papers/q-2024-02-21-1261/pdf](https://quantum-journal.org/papers/q-2024-02-21-1261/pdf)
+
+
+**Overview:**
+Dauphinais, Kribs, and Vasmer generalize the stabilizer formalism from finite-dimensional quantum systems to infinite-dimensional operator algebras. They develop a careful algebraic treatment that permits stabilizer codes to be defined on operator algebras, proving that the standard error correction conditions are preserved under this algebraic generalization.
+
+**Relevance to QBD:**
+This algebraic apparatus is indispensable for formalizing topological protection in QBD. In Chapter 10, the tripartite braid quantum states are shown to reside within a stable, topologically protected codespace. This work provides the backing required to define stabilizer operators on the infinite-dimensional algebra of our emergent graph, ensuring that the quantum information remains protected from local graph perturbations.
+
+---
+
+### 28. **Gottesman, D. (1997).** {#A.28}
+**"Stabilizer Codes and Quantum Error Correction"**
+    * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
+
+
+**Overview:**
+Gottesman introduces the stabilizer formalism, a powerful algebraic structure that simplifies the design and analysis of quantum error-correcting codes. By representing quantum codes in terms of their stabilizer groups, he provides the essential tools used to construct fault-tolerant quantum gates and correct arbitrary errors.
+
+**Relevance to QBD:**
+The stabilizer formalism is the leading tool used to protect the topological graph structures in QBD. In Chapter 10, we utilize Gottesman's formalism to define stabilizer operators on the vertices and edges of our tripartite braid configurations. This ensures that the logical information remains protected from local vacuum fluctuations, demonstrating that topological qubits are stable.
+
+---
+
+### 50. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.50}
+**"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
+    * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
+
+
+**Overview:**
+Pastawski and his co-authors introduce the HaPPY code, a toy model for AdS/CFT bulk reconstruction constructed using pentagon tensor networks. They prove that the bulk geometry is robustly mapped to the boundary through a holographic quantum error-correcting code, providing a concrete realization of bulk protection from boundary errors.
+
+**Relevance to QBD:**
+The HaPPY code is the direct template for the holographic screen mechanisms developed in Chapter 16. In QBD, we model the interior of the causal graph as a logical bulk protected by boundary stabilizers. The HaPPY tensor-network structure maps bulk coordinates to boundary screens, showing that space is a holographic error-correcting code.
+
+---
+
+### 59. **Sorkin, R. D. (2005).** {#A.59}
+**"Causal sets: Discrete gravity"**
+- *In Lectures on Quantum Gravity (pp. 305-327). Springer*
+    * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
+
+
+**Overview:**
+Sorkin presents a comprehensive review of the causal set approach to quantum gravity, postulating that spacetime is fundamentally discrete and represented by a partially ordered set (poset) of events. He demonstrates that discrete causal relations are sufficient to recover the causal structure, topology, and volume of a continuous Lorentzian spacetime manifold.
+
+**Relevance to QBD:**
+Sorkin's causal set model is a core physical pillar for the discrete causal substrate defined in Chapter 1. We adopt his insight that causality is fundamental and volume is discrete. However, we expand his poset setting by adding relational graph connectivity, which is necessary to support quantum states. Sorkin's work underpins the physical basis for our discrete spacetime model.
+
+---
+
+### 70. **Woess, W. (2000).** {#A.70}
+**"Random Walks on Infinite Graphs and Groups"**
+    * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
+
+
+**Overview:**
+Woess presents a comprehensive and exacting study of random walks on infinite graphs, focusing on how the graph's algebraic and geometric structure governs diffusion processes. He covers transient and recurrent walks, spectral radii, and boundary behavior, establishing the standard tools for discrete diffusion.
+
+**Relevance to QBD:**
+This reference is necessary for the discrete diffusion analyses conducted in Chapter 11. To prove that the causal graph converges to a continuous manifold, we analyze how localized random walks diffuse across the network. Woess's bounds confirm that this diffusion is stable and recovers the metric of continuous spacetime.
+
+---
+
+### 71. **Wolfram, S. (2002).** {#A.71}
+**"A New Kind of Science"**
+    * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
+
+
+**Overview:**
+Wolfram presents an extensive study of cellular automata and other simple computational systems, arguing that complex structures in nature can emerge from simple, deterministic update rules. He proposes that the universe itself operates as a discrete cellular automaton, suggesting that computational rules are more fundamental than continuous physical equations.
+
+**Relevance to QBD:**
+Wolfram's computational paradigm is a key conceptual precursor to the graph rewrite dynamics developed in Chapter 2. We adopt his core insight that discrete, localized update rules can generate complex, emergent physical structures. Citing this book frames our work within the history of discrete physical models, highlighting our use of network-based rewriting.

@@ -1,5 +1,13 @@
 # Chapter 17: String Limit (Worldsheets)
 
+**Abstract**
+
+Whoops, good catch! That was a bit of rogue text that slipped through the cracks. Let's get Chapter 17 cleaned up into the proper, fully readable academic English tone.
+
+Here is the corrected reference report for Chapter 17:
+
+---
+
 # Chapter 17: String Limit (Worldsheets)
 
 We have successfully constructed a holographic theory of quantum gravity from the discrete mechanics of a causal graph. However, the final unification requires us to bridge the gap between our topological defects (braids) and the fundamental objects of high-energy physics: **Strings**. In standard string theory, matter and forces arise from the vibrational modes of **1D** filaments. In Quantum Braid Dynamics (QBD), we have asserted that these filaments are not fundamental, but emergent. We must now prove this assertion. We dive into the "String Limit," demonstrating that the collective behavior of a chain of excited plaquettes in the bulk graph is mathematically indistinguishable from the dynamics of a Nambu-Goto string.

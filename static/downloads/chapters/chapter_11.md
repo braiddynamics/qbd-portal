@@ -1,5 +1,11 @@
 # Chapter 11: Differential Geometry (Discrete)
 
+**Abstract**
+
+Chapter 11: Differential Geometry (Discrete) establishes a rigorous, coordinate-free mathematical syntax for quantifying the geometric invariants of the discrete causal graph substrate, bypassing the pathologies of background-dependent triangulations and metric-insensitive combinatorial curvatures. This ontology addresses the failure of traditional frameworks to regulate topological fluctuations during continuum limits by embedding the graph within a Gromov-Hausdorff-Wasserstein metric space. Spacetime curvature is structurally resolved at the micro-scale through a specialized formulation of the Causal Ollivier-Ricci curvature, which evaluates the optimal transport efficiency between localized probability distributions. By introducing an asymmetrically weighted lazy causal measure across past, present, and future temporal neighborhoods, the framework preserves causal directionality over an undirected shortest-path cost function. The chapter culminates in the proof of the Curvature Monotonicity Theorem, demonstrating that the algorithmic nucleation of three-cycle geometric quanta injects shared local support that strictly contracts the Wasserstein-1 transport distance. This contraction forces a monotonic elevation of local positive scalar curvature, providing an explicit, information-theoretic foundation for a discrete Einstein-Hilbert action where global geometric complexity scales linearly with the accumulation of fundamental computational bits.
+
+---
+
 # Part 3: The Emergent Reality
 
 :::note[**The Stage**]

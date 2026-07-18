@@ -27,24 +27,24 @@ with formal Lean 4 proofs and Python simulations embedded directly in the monogr
 
 const QUICK_START = [
   {
-    label: 'Downloads index (JSON) — START HERE',
+    label: 'Downloads index (JSON) - START HERE',
     url: 'https://braiddynamics.com/data/ai-downloads-info.json',
     note: 'Machine-readable catalogue of every available download with byte sizes and token counts. Use this to locate the specific chapter URL(s) you need.',
   },
   {
-    label: 'Individual chapter — Markdown pattern',
+    label: 'Individual chapter - Markdown pattern',
     url: 'https://braiddynamics.com/downloads/chapters/chapter_N.md',
-    note: 'Replace N with chapter number (1–25). This is the recommended unit of analysis. See chapter index below for titles and token counts.',
+    note: 'Replace N with chapter number (1-25). This is the recommended unit of analysis. See chapter index below for titles and token counts.',
   },
   {
-    label: 'Individual chapter — JSON pattern',
+    label: 'Individual chapter - JSON pattern',
     url: 'https://braiddynamics.com/downloads/chapters/chapter_N.json',
     note: 'Structured JSON version. Better for section-level lookups or equation ID queries.',
   },
   {
     label: 'Download portal (browser / visual agents only)',
     url: 'https://braiddynamics.com/monograph/download',
-    note: 'Human-facing interactive page. Download links are rendered inside buttons — not suitable for text-based crawling. Use the JSON catalogue above instead.',
+    note: 'Human-facing interactive page. Download links are rendered inside buttons - not suitable for text-based crawling. Use the JSON catalogue above instead.',
   },
 ];
 
@@ -52,7 +52,7 @@ const PARTS = [
   {
     number: 1,
     title: 'The Foundational Principles (The Rules)',
-    chapters: '1–5',
+    chapters: '1-5',
     tokens: '~310K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md',
     summary: 'Substrate ontology, axioms, object model (causal network architecture), dynamics (update rules), and geometrogenesis (equilibrium spacetime emergence).',
@@ -60,7 +60,7 @@ const PARTS = [
   {
     number: 2,
     title: 'Topological Nature of Matter (The Players)',
-    chapters: '6–10',
+    chapters: '6-10',
     tokens: '~303K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md',
     summary: 'Tripartite braid fermions, quantum numbers from topology, gauge symmetries as braid automorphisms, particle generations and decay, quantum universality as computation.',
@@ -68,7 +68,7 @@ const PARTS = [
   {
     number: 3,
     title: 'Emergent Reality (The Stage)',
-    chapters: '11–17',
+    chapters: '11-17',
     tokens: '~268K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_3_emergent_reality_the_stage.md',
     summary: 'Discrete differential geometry, discrete Einstein field equations, continuum limit convergence, Lorentzian time, geometry of entanglement (ER=EPR), isomorphism/holography principle, string limit.',
@@ -76,10 +76,11 @@ const PARTS = [
   {
     number: 4,
     title: 'Phenomenological Consequences (The Output)',
-    chapters: '18–25',
+    chapters: '18-25',
     tokens: '~83K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md',
     summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector, singularities and condensates, holographic universality, mathematical universe, cosmological natural selection. (Several chapters are active drafts.)',
+    draft: true,
   },
   {
     number: 5,
@@ -88,11 +89,12 @@ const PARTS = [
     tokens: '~10K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.md',
     summary: 'Synthesis and future directions.',
+    draft: true,
   },
   {
     number: 6,
     title: 'Appendices',
-    chapters: 'A–E',
+    chapters: 'A-E',
     tokens: '~168K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_6_appendices.md',
     summary: 'Notation reference, definitions glossary, bibliography, Lean 4 proof listings, Python model source.',
@@ -117,7 +119,7 @@ const CHAPTERS = [
   { n: 15, title: 'Geometry of Entanglement (ER = EPR)',         tokens: '~43K',  md: '/downloads/chapters/chapter_15.md' },
   { n: 16, title: 'Isomorphism Principle (Holography)',          tokens: '~20K',  md: '/downloads/chapters/chapter_16.md' },
   { n: 17, title: 'String Limit (Worldsheets)',                  tokens: '~41K',  md: '/downloads/chapters/chapter_17.md' },
-  { n: 18, title: 'Big Kindling (Inflation)',                    tokens: '~66K',  md: '/downloads/chapters/chapter_18.md' },
+  { n: 18, title: 'Big Kindling (Inflation)',                    tokens: '~66K',  md: '/downloads/chapters/chapter_18.md', draft: true },
   { n: 19, title: 'Hot Universe (Nucleosynthesis)',              tokens: '~5K',   md: '/downloads/chapters/chapter_19.md', draft: true },
   { n: 20, title: 'Structured Universe (Cosmic Web)',            tokens: '~4K',   md: '/downloads/chapters/chapter_20.md', draft: true },
   { n: 21, title: 'Dark Sector (Relics)',                        tokens: '~5K',   md: '/downloads/chapters/chapter_21.md', draft: true },
@@ -424,7 +426,7 @@ Machine-readable download catalogue:
   https://braiddynamics.com/data/ai-downloads-info.json`}</pre>
 
         {/* ── Parts ── */}
-        <h2 style={s.h2}>MONOGRAPH STRUCTURE — PARTS</h2>
+        <h2 style={s.h2}>MONOGRAPH STRUCTURE - PARTS</h2>
         <table style={s.table}>
           <thead>
             <tr>
@@ -445,14 +447,20 @@ Machine-readable download catalogue:
                 </td>
                 <td style={s.td}>{p.chapters}</td>
                 <td style={s.td}>{p.tokens}</td>
-                <td style={s.td}><a href={p.md} style={s.a}>{p.md.split('/').pop()}</a></td>
+                <td style={s.td}>
+                  {p.draft ? (
+                    <span style={{ color: 'var(--ifm-color-emphasis-600)' }}>Draft - No download</span>
+                  ) : (
+                    <a href={p.md} style={s.a}>{p.md.split('/').pop()}</a>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
 
         {/* ── Chapters ── */}
-        <h2 style={s.h2}>MONOGRAPH STRUCTURE — CHAPTERS</h2>
+        <h2 style={s.h2}>MONOGRAPH STRUCTURE - CHAPTERS</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
           Each chapter is available at{' '}
           <code>https://braiddynamics.com/downloads/chapters/chapter_N.md</code> (Markdown),{' '}
@@ -475,11 +483,17 @@ Machine-readable download catalogue:
               <tr key={c.n}>
                 <td style={s.td}>{c.n}</td>
                 <td style={s.td}>
-                  <a href={`https://braiddynamics.com${c.md}`} style={s.a}>
-                    Chapter {c.n}: {c.title}
-                  </a>
+                  {c.draft ? (
+                    <span style={{ color: 'var(--ifm-color-emphasis-600)' }}>
+                      Chapter {c.n}: {c.title} (Draft)
+                    </span>
+                  ) : (
+                    <a href={`https://braiddynamics.com${c.md}`} style={s.a}>
+                      Chapter {c.n}: {c.title}
+                    </a>
+                  )}
                 </td>
-                <td style={s.td}>{c.tokens}</td>
+                <td style={s.td}>{c.draft ? ' - ' : c.tokens}</td>
                 <td style={s.td}>
                   {c.draft
                     ? <span style={s.badge}>DRAFT</span>
