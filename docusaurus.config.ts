@@ -50,7 +50,15 @@ markdown: {
   themes: ['@docusaurus/theme-mermaid'],
 
   future: {
-    faster: true,
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: false,
+      rspackPersistentCache: false,
+      ssgWorkerThreads: true,
+      mdxCrossCompilerCache: true,
+    },
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
     },
