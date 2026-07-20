@@ -2,7 +2,7 @@ import networkx as nx
 import numpy as np
 
 def verify_microcausality():
-    print("--- QBD Microcausality Verification ---")
+    print("--- §14.3.6.2 Microcausality ---")
     
     # 1. Create a Causal Graph (Light Cone structure)
     G = nx.DiGraph()

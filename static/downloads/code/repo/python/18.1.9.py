@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Bipartite Parity-Breaking Phase Transition Audit
-# Subject:   Audits dynamic parity symmetry-breaking transition in Chapter 18.1.5
-#            (Standalone Version).
-# Version:   1.0
-# -----------------------------------------------------------------------------
+# §18.1.9 — Bipartite Parity Phase Transition
 
 import numpy as np
 import pandas as pd
@@ -33,16 +27,8 @@ def build_directed_bethe_fragment(depth=4, k=3):
     return G
 
 def simulate_symmetry_breaking_sweep():
-    """
-    Sweeps a tunneling coupling parameter beta from 0.0 to 1.0.
-    For each step, we model out-degree slot alignments:
-      - With probability 1 - beta: slots align strictly within opposite partitions
-        (Stasis, preserving bipartite structure).
-      - With probability beta: slots can tunnel to same-partition nodes at distance 2
-        (Symmetry Breaking).
-        
-    Tracks the bipartite parity fraction Phi = |N_A - N_B| / N and loop density rho.
-    """
+    """§18.1.9: sweep tunneling beta; track bipartite parity Phi and loop density under stasis vs breaking."""
+    np.random.seed(42)
     results = []
     
     # Generate trivalent Bethe tree substrate
@@ -58,7 +44,7 @@ def simulate_symmetry_breaking_sweep():
     beta_vals = np.linspace(0.0, 1.0, 11)
     
     for beta in beta_vals:
-        # We run multiple trials and average
+        # Run multiple trials and average
         trials = 100
         trial_parities = []
         trial_cycles = []
@@ -108,9 +94,9 @@ def simulate_symmetry_breaking_sweep():
             cycles = count // 3
             
             # Reconstruct partitions on the new trial graph
-            # If the trial graph remains bipartite, we can partition it perfectly.
+            # If the trial graph remains bipartite, it admits a perfect partition.
             # Otherwise, some same-partition edges exist.
-            # We measure the fraction of edges that connect same-partition nodes.
+            # Measure the fraction of edges that connect same-partition nodes.
             same_part_edges = 0
             total_edges = G_trial.number_of_edges()
             
@@ -146,16 +132,16 @@ def simulate_symmetry_breaking_sweep():
         
     return results
 
-def run_transition_audit():
-    print("="*80)
-    print("QBD Parity-Breaking Phase Transition Audit (Lemma B Verification)")
+def run_transition():
+    print("-" * 72)
+    print("§18.1.9 Bipartite Parity Phase Transition")
     print("Sweeping Tunneling Coupling and Tracking Bipartite Parity Violations")
-    print("="*80)
+    print("-" * 72)
     
     results = simulate_symmetry_breaking_sweep()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_transition_audit()
+    run_transition()

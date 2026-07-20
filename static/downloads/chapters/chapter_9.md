@@ -54,16 +54,18 @@ The proof proceeds by exclusion, systematically disqualifying alternative algebr
 • 9.1.1 Theorem Minimal GUT Uniqueness  [by exclusion]
 │
 ├── 9.1.2 Lemma: Rank Conditions
-│   ├── 9.1.2.1 Proof: Subgroup Rank Summation
+│   ├── 9.1.2.1 Proof: Rank Conditions
 │   └── 9.1.2.2 Commentary: Rank Necessity
 │
 ├── 9.1.3 Lemma: Lower Rank Exclusion
-│   └── 9.1.3.1 Proof: Inductive Elimination
+│   ├── 9.1.3.1 Proof: Lower Rank Exclusion
+│   └── 9.1.3.2 Commentary: Lower Rank Exclusion
 │
 ├── 9.1.4 Lemma: Candidate Elimination
-│   └── 9.1.4.1 Proof: Representation and Hypercharge Analysis
+│   ├── 9.1.4.1 Proof: Candidate Elimination
+│   └── 9.1.4.2 Commentary: Candidate Elimination
 │
-└── 9.1.5 Proof: Uniqueness Verification
+└── 9.1.5 Proof: Minimal GUT Uniqueness
     └── 9.1.5.1 Calculation: Anomaly Check Verification
 ```
 
@@ -298,19 +300,19 @@ import sympy as sp
 def verify_su5_anomaly_cancellation():
     """
     Verification of Cubic Anomaly Cancellation in Minimal SU(5)
-    
+
     The anomaly coefficient A(R) for a representation R in SU(N) is:
     - A(fund) = 1
     - A(antifund) = -1
     - A(antisymmetric 2-tensor) = N - 4
-    
+
     For SU(5), the fermion generation fits into \bar{5} + 10.
     We compute A(\bar{5}) + A(10) and confirm exact cancellation.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION")
-    print("Minimal Chiral Generation in \bar{5} ⊕ 10 Representations")
-    print("═" * 70)
+    print("Minimal Chiral Generation in \\bar{5} ⊕ 10 Representations")
+    print("=" * 70)
 
     # Symbolic definition
     N = sp.symbols('N', integer=True, positive=True)
@@ -340,13 +342,13 @@ if __name__ == "__main__":
     verify_su5_anomaly_cancellation()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION
-Minimal Chiral Generation inar{5} ⊕ 10 Representations
-══════════════════════════════════════════════════════════════════════
+Minimal Chiral Generation in \bar{5} ⊕ 10 Representations
+======================================================================
 
 Anomaly Coefficients (SU(5)):
   A(\bar{5})   = -1
@@ -356,6 +358,7 @@ Anomaly Coefficients (SU(5)):
 RESULT: Exact cancellation confirmed.
 ```
 
+**Conclusion:**
 The symbolic evaluation yields $A(\mathbf{\bar{5}}) = -1$ and $A(\mathbf{10}) = 1$. The summation results in a total anomaly of exactly 0. This confirms that the combination of the antifundamental and antisymmetric tensor representations in $SU(5)$ satisfies the renormalizability constraint without requiring additional mirror fermions.
 
 ---
@@ -454,25 +457,25 @@ The proof proceeds via Direct Construction, constructing the special unitary gro
 • 9.2.2 Theorem Topological Unification  [by construction]
 │
 ├── 9.2.3 Lemma: Distant Commutativity
-│   ├── 9.2.3.1 Proof: Commutativity Verification
+│   ├── 9.2.3.1 Proof: Distant Commutativity
 │   └── 9.2.3.2 Commentary: Swap Independence
 │
 ├── 9.2.4 Lemma: Yang-Baxter Relations
-│   ├── 9.2.4.1 Proof: Topological Equivalence
+│   ├── 9.2.4.1 Proof: Yang-Baxter Relations
 │   └── 9.2.4.2 Commentary: Crossing Logic
 │
 ├── 9.2.5 Lemma: Closed Lie Algebra
-│   ├── 9.2.5.1 Proof: Isomorphism Verification
+│   ├── 9.2.5.1 Proof: Closed Lie Algebra
 │   ├── 9.2.5.2 Calculation: SU(5) Closure Simulation
 │   └── 9.2.5.3 Commentary: Closure of Unified Force
 │
 ├── 9.2.6 Lemma: Anti-Fundamental Multiplet
-│   ├── 9.2.6.1 Proof: Unlinked Structure Verification
+│   ├── 9.2.6.1 Proof: Anti-Fundamental Multiplet
 │   ├── 9.2.6.2 Commentary: Anti-Matter Topology
 │   └── 9.2.6.3 Diagram: Unlinked Configuration
 │
 ├── 9.2.7 Lemma: Antisymmetric Multiplet
-│   ├── 9.2.7.1 Proof: Pairwise Interaction Verification
+│   ├── 9.2.7.1 Proof: Antisymmetric Multiplet
 │   └── 9.2.7.2 Commentary: Matter Topology
 │
 └── 9.2.8 Proof: Topological Unification
@@ -653,10 +656,10 @@ def verify_su5_closure_robustness(num_ensembles=500):
     Iteratively adds commutators if they increase linear span (SVD rank).
     Confirms deterministic full closure (dim=24) across stochastic orders.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE")
     print("Robustness under Random Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     n = 5
     elements = []
@@ -718,26 +721,26 @@ def verify_su5_closure_robustness(num_ensembles=500):
     avg_dim = np.mean(dimensions)
     full_prob = np.mean(np.array(dimensions) == 24)
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     print(f"Ensembles simulated : {num_ensembles}")
     print(f"Average final dim   : {avg_dim:.2f}")
     print(f"Full closure prob   : {full_prob:.3f} ({full_prob*100:.1f}%)")
-    print("─" * 70)
+    print("-" * 70)
 
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
 
 if __name__ == "__main__":
     verify_su5_closure_robustness(num_ensembles=500)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE
 Robustness under Random Generator Discovery Order
-══════════════════════════════════════════════════════════════════════
+======================================================================
 Initial generators: 8 (4 adjacent pairs × 2)
 Ensemble   1 → Final dimension: 24
 Ensemble   2 → Final dimension: 24
@@ -755,14 +758,15 @@ Ensemble 300 → Final dimension: 24
 Ensemble 400 → Final dimension: 24
 Ensemble 500 → Final dimension: 24
 
-──────────────────────────────────────────────────────────────────────
+----------------------------------------------------------------------
 Ensembles simulated : 500
 Average final dim   : 24.00
 Full closure prob   : 1.000 (100.0%)
-──────────────────────────────────────────────────────────────────────
-RESULT: Deterministic closure confirmed.
+----------------------------------------------------------------------
+status: pass
 ```
 
+**Conclusion:**
 The simulation achieves a final basis dimension of 24 within 2 iterations (10 additions in the first pass, 6 in the second). The subsample Gram determinant ($2.56 \times 10^2$) is strictly positive, confirming full rank. The self-evaluated Killing form for the root generator is negative ($-12.00$), confirming the non-abelian, semisimple structure. These results verify that the fundamental swaps of a 5-strand braid generate the complete $\mathfrak{su}(5)$ Lie algebra.
 
 ### 9.2.5.3 Commentary: Closure of Unified Force {#9.2.5.3}
@@ -957,19 +961,19 @@ The proof proceeds via Direct Construction, demonstrating that generational fami
 • 9.3.1 Theorem Generational Metastability  [by construction]
 │
 ├── 9.3.2 Lemma: Complexity Ordering
-│   ├── 9.3.2.1 Proof: Topological Complexity Counting
+│   ├── 9.3.2.1 Proof: Complexity Ordering
 │   └── 9.3.2.2 Commentary: Knot Counting
 │
 ├── 9.3.3 Lemma: Topological Protection
-│   ├── 9.3.3.1 Proof: Barrier Existence
+│   ├── 9.3.3.1 Proof: Topological Protection
 │   ├── 9.3.3.2 Commentary: Topological Persistence
 │   └── 9.3.3.3 Diagram: Complexity Potential
 │
 ├── 9.3.4 Lemma: Decay Tunneling
-│   ├── 9.3.4.1 Proof: Tunneling Rate Derivation
+│   ├── 9.3.4.1 Proof: Decay Tunneling
 │   └── 9.3.4.2 Commentary: Rare Decay
 │
-└── 9.3.5 Proof: Synthesis of the Three-Generation Structure
+└── 9.3.5 Proof: Generational Metastability
 ```
 
 ---
@@ -1278,15 +1282,15 @@ The proof proceeds via Direct Construction, mapping off-diagonal grand unified g
 • 9.4.2 Theorem Leptoquark Generators  [by construction]
 │
 ├── 9.4.3 Lemma: Interaction Vertex
-│   ├── 9.4.3.1 Proof: Vertex Geometry Verification
+│   ├── 9.4.3.1 Proof: Interaction Vertex
 │   ├── 9.4.3.2 Commentary: Transmutation Geometry
 │   └── 9.4.3.3 Diagram: Leptoquark Vertex
 │
 ├── 9.4.4 Lemma: Fragmentation Tunneling
-│   ├── 9.4.4.1 Proof: Complexity Reduction Verification
+│   ├── 9.4.4.1 Proof: Fragmentation Tunneling
 │   └── 9.4.4.2 Commentary: Symmetry Breaking
 │
-└── 9.4.5 Proof: Leptoquark Demonstration
+└── 9.4.5 Proof: Leptoquark Generators
 ```
 
 ---
@@ -1510,19 +1514,19 @@ The proof proceeds via Contradiction, assuming that the proton decays via standa
 • 9.5.1 Theorem Proton Stability  [by contradiction]
 │
 ├── 9.5.2 Lemma: Tension Verification
-│   ├── 9.5.2.1 Proof: Decay Rate Calculation
+│   ├── 9.5.2.1 Proof: Tension Verification
 │   ├── 9.5.2.2 Calculation: EFT Rate Calculation
 │   └── 9.5.2.3 Commentary: Standard Theory Failure
 │
 ├── 9.5.3 Lemma: Minimal Action Pathway
-│   ├── 9.5.3.1 Proof: Topological Complexity Minimization
+│   ├── 9.5.3.1 Proof: Minimal Action Pathway
 │   └── 9.5.3.2 Commentary: Minimal Action Path
 │
 ├── 9.5.4 Lemma: Action-Mass Proportionality
-│   ├── 9.5.4.1 Proof: Path Length-Mass Equivalence
+│   ├── 9.5.4.1 Proof: Action-Mass Proportionality
 │   └── 9.5.4.2 Commentary: Topological Shield
 │
-└── 9.5.5 Proof: Stability Synthesis
+└── 9.5.5 Proof: Proton Stability
 ```
 
 ---
@@ -1606,10 +1610,10 @@ def verify_proton_decay_suppression():
     This calculation quantifies the shortfall and demonstrates the requirement
     for additional non-perturbative (topological) suppression.
     """
-    print("═" * 78)
+    print("=" * 78)
     print("PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS")
     print("Quantifying the Shortfall in Minimal SU(5) Predictions")
-    print("═" * 78)
+    print("=" * 78)
 
     # Physical constants and benchmarks
     alpha_gut = 1 / 42.0                  # Typical GUT coupling
@@ -1700,13 +1704,13 @@ if __name__ == "__main__":
     verify_proton_decay_suppression()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════════════
+==============================================================================
 PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS
 Quantifying the Shortfall in Minimal SU(5) Predictions
-══════════════════════════════════════════════════════════════════════════════
+==============================================================================
 
 Base Parameters:
   α_GUT   ≈ 0.0238
@@ -1744,7 +1748,8 @@ log₁₀(τ_p)  Count Percentage
      36.64     98       9.8%
 ```
 
-The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to guarantee proton stability, validating the necessity for the exponential topological barrier.
+**Conclusion:**
+The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to ensure proton stability, validating the necessity for the exponential topological barrier.
 
 ### 9.5.2.3 Commentary: Standard Theory Failure {#9.5.2.3}
 
@@ -2026,30 +2031,30 @@ The proof proceeds via Direct Construction, deriving sub-electron-volt neutrino 
 • 9.6.2 Theorem Neutrino Mass Mechanism  [by construction]
 │
 ├── 9.6.3 Lemma: Neutrality Verification
-│   ├── 9.6.3.1 Proof: Exclusion of Standard Braids
+│   ├── 9.6.3.1 Proof: Neutrality Verification
 │   └── 9.6.3.2 Commentary: Folded Logic
 │
 ├── 9.6.4 Lemma: Seesaw Dynamics
-│   ├── 9.6.4.1 Proof: Mixing Verification
+│   ├── 9.6.4.1 Proof: Seesaw Dynamics
 │   └── 9.6.4.2 Commentary: Neutrino Mass Origin
 │
 ├── 9.6.5 Lemma: Complexity Density Scaling
-│   ├── 9.6.5.1 Proof: Density Increase Verification
+│   ├── 9.6.5.1 Proof: Complexity Density Scaling
 │   └── 9.6.5.2 Commentary: Complexity Density
 │
 ├── 9.6.6 Lemma: Friction Suppression Limit
-│   ├── 9.6.6.1 Proof: Maintenance Halt Verification
+│   ├── 9.6.6.1 Proof: Friction Suppression Limit
 │   └── 9.6.6.2 Commentary: Existence Limit
 │
 ├── 9.6.7 Lemma: Critical Complexity Balance
-│   ├── 9.6.7.1 Proof: Criticality Verification
+│   ├── 9.6.7.1 Proof: Critical Complexity Balance
 │   └── 9.6.7.2 Commentary: Balance Point
 │
 ├── 9.6.8 Lemma: Planck Anchor
-│   ├── 9.6.8.1 Proof: Scaling Verification
+│   ├── 9.6.8.1 Proof: Planck Anchor
 │   └── 9.6.8.2 Commentary: Planck Anchor
 │
-└── 9.6.9 Proof: Neutrino Mass Demonstration
+└── 9.6.9 Proof: Neutrino Mass Mechanism
     └── 9.6.9.1 Calculation: Neutrino Mass Prediction
 ```
 
@@ -2551,7 +2556,7 @@ if __name__ == "__main__":
     verify_neutrino_seesaw()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION
@@ -2569,6 +2574,7 @@ Yukawa (y)   m_D (GeV)      m_D² (GeV²)      m_ν (GeV)          m_ν (eV)
 ----------------------------------------------------------------------
 ```
 
+**Conclusion:**
 The calculation yields a Dirac mass term of $24.6$ GeV and a heavy mass term of $2 \times 10^{16}$ GeV. The resulting light neutrino mass is approximately $3.03 \times 10^{-14}$ GeV, or $3.03 \times 10^{-5}$ eV. This value is consistent with the lower bounds derived from atmospheric neutrino oscillations. The output confirms that the topological friction scale naturally generates the sub-eV neutrino mass without fine-tuning.
 
 ---

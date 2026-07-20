@@ -77,12 +77,12 @@ The proof proceeds via Direct Construction, mapping topological phases under phy
 • 7.1.2 Theorem Topological Statistics  [by construction]
 │
 ├── 7.1.3 Lemma: Unitary Twist Anticommutation
-│   ├── 7.1.3.1 Proof: Eigenvalue Inversion
+│   ├── 7.1.3.1 Proof: Unitary Twist Anticommutation
 │   ├── 7.1.3.2 Commentary: Anticommutation Mechanism
 │   └── 7.1.3.3 Diagram: Causal Dirac Sequence
 │
 ├── 7.1.4 Lemma: Exchange-Rotation Equivalence
-│   ├── 7.1.4.1 Proof: Topological Phase via Reidemeister Sequence
+│   ├── 7.1.4.1 Proof: Exchange-Rotation Equivalence
 │   ├── 7.1.4.2 Commentary: Exchange-Rotation Identity
 │   └── 7.1.4.3 Diagram: Exchange via Deletion
 │
@@ -526,12 +526,12 @@ The proof proceeds via Contradiction, assuming that two fermions can occupy the 
 • 7.2.1 Theorem Pauli Exclusion Principle  [by contradiction]
 │
 ├── 7.2.2 Lemma: Binary State Principle
-│   ├── 7.2.2.1 Proof: Binary Encoding Verification
+│   ├── 7.2.2.1 Proof: Binary State Principle
 │   └── 7.2.2.2 Commentary: Quantum Bit Limit
 │
 ├── 7.2.3 Lemma: Forbidden Occupancy
-│   ├── 7.2.3.1 Proof: Topological Violation
-│   └── 7.2.3.2 Diagram: Exclusion Barrier
+│   ├── 7.2.3.1 Proof: Forbidden Occupancy
+│   └── 7.2.3.2 Commentary: Exclusion Barrier
 │
 └── 7.2.4 Proof: Pauli Exclusion Principle
 ```
@@ -867,24 +867,24 @@ The proof proceeds via Direct Construction, linking global topological invariant
 • 7.3.2 Theorem Emergence of Electric Charge  [by construction]
 │
 ├── 7.3.3 Lemma: Gauge Symmetry
-│   ├── 7.3.3.1 Proof: Symmetry Verification
+│   ├── 7.3.3.1 Proof: Gauge Symmetry
 │   └── 7.3.3.2 Commentary: Global Phase Unobservability
 │
 ├── 7.3.4 Lemma: Conservation of Total Writhe
-│   ├── 7.3.4.1 Proof: Conservation Logic
+│   ├── 7.3.4.1 Proof: Conservation of Total Writhe
 │   └── 7.3.4.2 Commentary: Invariant Preservation
 │
 ├── 7.3.5 Lemma: Lepton Charge Solutions
-│   ├── 7.3.5.1 Proof: Singlet Charge Values
+│   ├── 7.3.5.1 Proof: Lepton Charge Solutions
 │   └── 7.3.5.2 Commentary: Integer Charge Geometry
 │
 ├── 7.3.6 Lemma: Quark Charge Solutions
-│   ├── 7.3.6.1 Proof: Triplet Charge Values
+│   ├── 7.3.6.1 Proof: Quark Charge Solutions
 │   ├── 7.3.6.2 Commentary: Fractional Charge Origin
 │   └── 7.3.6.3 Diagram: Fermion Writhe Topology
 │
 ├── 7.3.7 Lemma: Charge Normalization
-│   ├── 7.3.7.1 Proof: Anomaly Cancellation
+│   ├── 7.3.7.1 Proof: Charge Normalization
 │   └── 7.3.7.2 Commentary: Fractional Necessity
 │
 └── 7.3.8 Proof: Emergence of Electric Charge
@@ -1461,18 +1461,18 @@ The proof proceeds via Direct Construction, integrating crossing scaling and sha
 • 7.4.2 Theorem Topological Mass Functional  [by construction]
 │
 ├── 7.4.3 Lemma: Thermodynamic Equivalence
-│   ├── 7.4.3.1 Proof: Entropic Vanishing
+│   ├── 7.4.3.1 Proof: Thermodynamic Equivalence
 │   └── 7.4.3.2 Commentary: Thermodynamic Isolation
 │
 ├── 7.4.4 Lemma: Base Mass Linear Scaling
-│   ├── 7.4.4.1 Proof: Linear Scaling Verification
+│   ├── 7.4.4.1 Proof: Base Mass Linear Scaling
 │   └── 7.4.4.2 Commentary: Complexity Additivity
 │
 ├── 7.4.5 Lemma: Integer Geometric Efficiency
-│   ├── 7.4.5.1 Proof: Derivation of the Sharing Integer
+│   ├── 7.4.5.1 Proof: Integer Geometric Efficiency
 │   └── 7.4.5.2 Commentary: Isospin Symmetry
 │
-└── 7.4.6 Proof: Discrete Mass Spectrum
+└── 7.4.6 Proof: Topological Mass Functional
     ├── 7.4.6.1 Calculation: Generational Mass Hierarchy Verification
     └── 7.4.6.2 Diagram: Generational Mass Spectrum Table
 ```
@@ -1802,7 +1802,7 @@ import pandas as pd
 import numpy as np
 
 def verify_full_mass_hierarchy():
-    print("--- QBD Generational Mass Hierarchy Verification ---")
+    print("--- §7.4.6.1 Generational Mass Hierarchy ---")
     
     # 1. Constants
     # Mass Constant (kappa_m) anchored to Electron
@@ -1874,10 +1874,10 @@ if __name__ == "__main__":
     verify_full_mass_hierarchy()
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
---- QBD Generational Mass Hierarchy Verification ---
+--- §7.4.6.1 Generational Mass Hierarchy ---
 Particle   Writhe Config  Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
 Electron    (-1, -1, -1)       3              0.5             0.5   0.00
     Down      (-1, 0, 0)       1              0.2             4.7  96.38
@@ -1890,12 +1890,10 @@ Electron    (-1, -1, -1)       3              0.5             0.5   0.00
      Top   (712, 712, 0) 1013176         172577.6        172900.0   0.19
 ```
 
-The simulation confirms the profound predictive power of the quadratic scaling functional:
+**Conclusion:**
 
-1.  **Generational Gaps:** The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.
-2.  **High-Mass Convergence:** For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$. 
-3.  **Low-Mass Deviation:** The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
-
+The simulation confirms the predictive accuracy of the quadratic scaling functional.
+Generational Gaps: The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.; High-Mass Convergence: For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$.; Low-Mass Deviation: The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
 ### 7.4.6.2 Diagram: Generational Mass Spectrum Table {#7.4.6.2}
 
 :::note[**Tabular Verification of the Full Standard Model Mass Hierarchy**]

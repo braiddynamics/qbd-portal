@@ -114,11 +114,11 @@ The proof proceeds by contradiction, identifying a topological loop-defect and d
 ├── 6.1.3 Lemma: Reducibility of Trivial Topologies
 │   ├── 6.1.3.1 Proof: Reducibility of Trivial Topologies
 │   ├── 6.1.3.2 Calculation: Legal-Task Reduction of Trivial Patterns
-│   ├── 6.1.3.3 Validation: Type-Theoretic Validation via Lean 4 Core
+│   ├── 6.1.3.3 Validation: Lean 4 Core
 │   └── 6.1.3.4 Commentary: Thermodynamic Simplification
 │
 ├── 6.1.4 Lemma: Catalyzed Instability
-│   ├── 6.1.4.1 Proof: Decay Rate Calculation
+│   ├── 6.1.4.1 Proof: Catalyzed Instability
 │   ├── 6.1.4.2 Calculation: Cluster Decay Simulation
 │   └── 6.1.4.3 Commentary: Erasure Mechanism
 │
@@ -756,61 +756,60 @@ def simulate_cluster_decay():
     """
     Simulates the thermodynamic fate of a high-density excitation under the
     Fundamental Equation of Geometrogenesis.
-    
+
     Compares:
     - Trivial (reducible) cluster: Fully exposed to deletion flux.
     - Prime knot: Protected by topological barrier below core density.
-    
+
     Demonstrates architectural stability of non-trivial topology.
     """
-    
-    print("═" * 60)
+
     print("SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES")
     print("Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux")
-    print("═" * 60)
-    
+    print("=" * 60)
+
     # ── Physical Constants (Derived in Chapter 5) ─────────────────────
     Λ_vac     = 0.0156                          # Vacuum Permittivity
     μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
     λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
-    
+
     ρ_star    = 0.0370                          # Equilibrium vacuum density
     ρ_core    = 0.0820                          # Knot core threshold (topological lock)
-    
+
     # ── Simulation Parameters ────────────────────────────────────────
     initial_ρ = 0.50                            # High-stress fluctuation
     dt        = 0.10                            # Time step
     n_steps   = 600                             # Total steps (ensures convergence)
-    
+
     time = np.arange(0, n_steps * dt, dt)
-    
+
     # ── State Initialization ─────────────────────────────────────────
     ρ_trivial = np.zeros_like(time)
     ρ_knotted = np.zeros_like(time)
-    
+
     ρ_trivial[0] = initial_ρ
     ρ_knotted[0] = initial_ρ
-    
+
     # ── Flux Calculation Helper ──────────────────────────────────────
     def fluxes(ρ):
         j_in  = (Λ_vac + 9 * ρ**2) * np.exp(-6 * μ * ρ)
         j_out = 0.5 * ρ + 3 * λ_cat * ρ**2
         return j_in, j_out
-    
+
     # ── Time Evolution Loop ──────────────────────────────────────────
     for i in range(1, len(time)):
         # Trivial cluster: Full exposure
         j_in_t, j_out_t = fluxes(ρ_trivial[i-1])
         dρ_t = j_in_t - j_out_t
         ρ_trivial[i] = max(ρ_star, ρ_trivial[i-1] + dρ_t * dt)
-        
+
         # Prime knot: Deletion suppressed below core
         j_in_k, j_out_k = fluxes(ρ_knotted[i-1])
         if ρ_knotted[i-1] <= ρ_core:
             j_out_k = 0.0  # Topological barrier activates
         dρ_k = j_in_k - j_out_k
         ρ_knotted[i] = max(ρ_star, ρ_knotted[i-1] + dρ_k * dt)
-    
+
     # ── Results Output ───────────────────────────────────────────────
     print(f"\nPhysical Parameters:")
     print(f"  Vacuum Drive (Λ)      : {Λ_vac:.4f}")
@@ -824,7 +823,7 @@ def simulate_cluster_decay():
     print(f"  Trivial Cluster       : {ρ_trivial[-1]:.6f} → Vacuum Equilibrium")
     print(f"  Prime Knot            : {ρ_knotted[-1]:.6f} → Stable Particle")
     print("-" * 60)
-    
+
     # Initial flux balance verification
     j_in_0, j_out_0 = fluxes(initial_ρ)
     print(f"Initial Flux Balance (ρ = {initial_ρ}):")
@@ -835,12 +834,12 @@ if __name__ == "__main__":
     simulate_cluster_decay()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```
 SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES
 Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
-════════════════════════════════════════════════════════════
+============================================================
 
 Physical Parameters:
   Vacuum Drive (Λ)      : 0.0156
@@ -861,6 +860,7 @@ Initial Flux Balance (ρ = 0.5):
   Net Rate dρ/dt  : -0.8542 (Strong Decay)
 ```
 
+**Conclusion:**
 The simulation data indicates that at the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.54$ significantly exceeds the creation flux $J_{in} \approx 0.69$, yielding a net negative current of $-0.85$. This imbalance drives the trivial cluster to collapse to the vacuum fixed point $\rho^* \approx 0.037$. In contrast, the knotted cluster trajectory stabilizes at $\rho \approx 0.081$, confirming that the activation of the topological barrier arrests the decay process despite the high catalytic stress. These results validate the decay mechanics and the barrier efficiency described in the derivation.
 
 ### 6.1.4.3 Commentary: Erasure Mechanism {#6.1.4.3}
@@ -1100,23 +1100,25 @@ The proof proceeds by induction, systematically disqualifying alternative geomet
 • 6.2.2 Theorem Tripartite Braid Theorem  [by induction]
 │
 ├── 6.2.3 Lemma: Exclusion of Unbraided Clusters (n=0)
-│   ├── 6.2.3.1 Proof: Triviality via Flux Dominance
+│   ├── 6.2.3.1 Proof: Exclusion of Unbraided Clusters (n=0)
 │   └── 6.2.3.2 Commentary: Fate of the Unknotted Cluster
 │
 ├── 6.2.4 Lemma: Exclusion of Single-Ribbon (n=1)
-│   ├── 6.2.4.1 Proof: Reducibility via Formal Induction
+│   ├── 6.2.4.1 Proof: Exclusion of Single-Ribbon (n=1)
 │   ├── 6.2.4.2 Commentary: Torsional Instability
 │   └── 6.2.4.3 Diagram: Decay of Single Ribbon
 │
 ├── 6.2.5 Lemma: Exclusion of Two-Ribbon (n=2)
-│   ├── 6.2.5.1 Proof: Algebraic Insufficiency
+│   ├── 6.2.5.1 Proof: Exclusion of Two-Ribbon (n=2)
 │   ├── 6.2.5.2 Commentary: Binary Insufficiency
 │   └── 6.2.5.3 Diagram: Abelian Limit
 │
-└── 6.2.6 Lemma: Exclusion of Higher Order Configurations (n > 3)
-    ├── 6.2.6.1 Proof: Analytical Exclusion via TQFT Parsimony
-    ├── 6.2.6.2 Calculation: Entropic Exclusion Simulation
-    └── 6.2.6.3 Commentary: Entropic Cost of Exotics
+├── 6.2.6 Lemma: Exclusion of Higher Order Configurations (n > 3)
+│   ├── 6.2.6.1 Proof: Exclusion of Higher Order Configurations (n > 3)
+│   ├── 6.2.6.2 Calculation: Entropic Exclusion Simulation
+│   └── 6.2.6.3 Commentary: Entropic Cost of Exotics
+│
+└── 6.2.7 Proof: Tripartite Braid Theorem
 ```
 
 ---
@@ -1582,10 +1584,10 @@ def simulate_entropic_exclusion():
     
     Continuous Boltzmann model: ΔC = 1 nat per ribbon, T = ln 2.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("ENTROPIC SUPPRESSION OF EXOTIC BRAIDS")
     print("Boltzmann Weights vs. Ribbon Count (n)")
-    print("═" * 70)
+    print("=" * 70)
     
     T_vac = np.log(2)                                 # ≈ 0.693147
     suppression_per_ribbon = np.exp(-1 / T_vac)        # ≈ 0.236928
@@ -1610,11 +1612,13 @@ if __name__ == "__main__":
     simulate_entropic_exclusion()
 ```
 
+**Simulation Results:**
+
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 ENTROPIC SUPPRESSION OF EXOTIC BRAIDS
 Boltzmann Weights vs. Ribbon Count (n)
-══════════════════════════════════════════════════════════════════════
+======================================================================
 
 Vacuum temperature T = ln 2 ≈ 0.693147
 Cost per ribbon ΔC = 1 nat
@@ -1630,6 +1634,7 @@ Results (normalized to n=3):
                 8             0.000737             1357.6
 ```
 
+**Conclusion:**
 The calculated relative abundances demonstrate an exponential decay in formation probability as the ribbon count increases. While the $n=3$ configuration represents the unitary baseline ($P=1.0$), the $n=4$ population is suppressed to approximately $23.6\%$ (a factor of 1 in 4.2). The suppression factor increases rapidly for higher orders, reaching 1 in 17.9 for $n=5$ and 1 in 1357 for $n=8$. This statistical distribution confirms that hyper-complex braids are thermodynamically rarefied relative to the tripartite ground state.
 
 ### 6.2.6.3 Commentary: Entropic Cost of Exotics {#6.2.6.3}
@@ -1758,20 +1763,20 @@ The proof proceeds via Direct Construction, decomposing the topological mass fun
 • 6.3.3 Theorem Topological Mass  [by construction]
 │
 ├── 6.3.4 Lemma: Linear Scaling of Crossings
-│   ├── 6.3.4.1 Proof: of Scaling
+│   ├── 6.3.4.1 Proof: Linear Scaling of Crossings
 │   └── 6.3.4.2 Commentary: Braid Additivity
 │
 ├── 6.3.5 Lemma: Quadratic Scaling of Torsion
-│   ├── 6.3.5.1 Proof: of Scaling
+│   ├── 6.3.5.1 Proof: Quadratic Scaling of Torsion
 │   ├── 6.3.5.2 Calculation: Torsional Strain Simulation
 │   ├── 6.3.5.3 Commentary: Mass Hierarchy Origin
 │   └── 6.3.5.4 Diagram: Torsional Strain
 │
 ├── 6.3.6 Lemma: Entropy Negligibility
-│   ├── 6.3.6.1 Proof: of Single Microstate
+│   ├── 6.3.6.1 Proof: Entropy Negligibility
 │   └── 6.3.6.2 Commentary: Entropic Vanishing
 │
-└── 6.3.7 Proof: Mass Functional
+└── 6.3.7 Proof: Topological Mass
 ```
 
 ---
@@ -1971,10 +1976,10 @@ def simulate_torsional_strain(max_writhe=15):
     Measures marginal and cumulative geometric quanta (N3) for successive writhe units.
     Demonstrates quadratic scaling of total complexity with writhe.
     """
-    print("═" * 60)
+    print("=" * 60)
     print("SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING")
     print("Accumulated Geometric Quanta vs. Writhe (w)")
-    print("═" * 60)
+    print("=" * 60)
     
     print(f"{'Writhe (w)':<12} {'Marginal Cost':<15} {'Cumulative N3':<15}")
     print("-" * 58)
@@ -1996,13 +2001,13 @@ if __name__ == "__main__":
     simulate_torsional_strain(max_writhe=15)
 ```
 
-Simulation Output:
+**Simulation Results:**
 
 ```text
-════════════════════════════════════════════════════════════
+============================================================
 SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING
 Accumulated Geometric Quanta vs. Writhe (w)
-════════════════════════════════════════════════════════════
+============================================================
 Writhe (w)   Marginal Cost   Cumulative N3
 ----------------------------------------------------------
 1            5               5
@@ -2026,6 +2031,7 @@ Final state (w = 15):
   Scaling: quadratic in writhe (w² dominant term)
 ```
 
+**Conclusion:**
 The simulation output establishes a linear relationship between the marginal path cost and the writhe, described by $Cost(w) = 2w + 3$. Consequently, the total integrated complexity follows the quadratic function $N(w) = w^2 + 4w$. The data point at $w=10$ yields a total complexity of $140$, matching the predicted quadratic value exactly. This result confirms that the linear increase in pathfinding difficulty integrates to a quadratic scaling of total inertial mass.
 
 ### 6.3.5.3 Commentary: Mass Hierarchy Origin {#6.3.5.3}
@@ -2239,16 +2245,16 @@ The proof proceeds via Contradiction, assuming that local operations can untie a
 • 6.4.2 Theorem Architectural Stability  [by contradiction]
 │
 ├── 6.4.3 Lemma: Local Horizon
-│   ├── 6.4.3.1 Proof: Local Blindness
+│   ├── 6.4.3.1 Proof: Local Horizon
 │   ├── 6.4.3.2 Calculation: Horizon Simulation
 │   ├── 6.4.3.3 Commentary: Horizon Limit
 │   └── 6.4.3.4 Diagram: Horizon Limit
 │
 ├── 6.4.4 Lemma: Global Unwinding Barrier
-│   ├── 6.4.4.1 Proof: Cost Verification
+│   ├── 6.4.4.1 Proof: Global Unwinding Barrier
 │   └── 6.4.4.2 Commentary: Energetic Topology Cost
 │
-└── 6.4.5 Proof: Stability via Impossibility
+└── 6.4.5 Proof: Architectural Stability
 ```
 
 ---
@@ -2405,7 +2411,7 @@ if __name__ == "__main__":
     horizon_test()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 --- HORIZON TEST: THE MYOPIC VACUUM ---
@@ -2419,6 +2425,7 @@ Final Progress:             2/50
 >>> RESULT: The Entropic Barrier prevents unwinding.
 ```
 
+**Conclusion:**
 The simulation results show that the Global Agent resolves the configuration in exactly 50 steps. In contrast, the Local Agent fails to reach the target within 20,000 steps, stalling at a progress distance of $2/50$. The random walk exhibits a statistical bias away from the solution due to the 2:1 ratio of incorrect to correct moves in the trivalent space. This entropic drift confirms that a myopic operator cannot traverse the linear solution path against the exponential growth of the configuration space.
 
 ### 6.4.3.3 Commentary: Horizon Limit {#6.4.3.3}

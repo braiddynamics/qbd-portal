@@ -1,5 +1,7 @@
 import numpy as np
 
+np.random.seed(42)
+
 def sphere_riemann_errors(M=1000, d=4):
     # Generate M random directions (Haar measure via Gaussian)
     z = np.random.normal(0, 1, (M, d))

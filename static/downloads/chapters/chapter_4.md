@@ -245,30 +245,38 @@ The proof proceeds via Direct Construction, verifying the algebraic requirements
 • 4.2.1 Theorem Categorical Validity  [by construction]
 │
 ├── 4.2.2 Lemma: Causal Category Identity
-│   └── 4.2.2.1 Proof: Causal Category Identity
+│   ├── 4.2.2.1 Proof: Causal Category Identity
+│   └── 4.2.2.2 Commentary: Causal Neutrality
 │
 ├── 4.2.3 Lemma: Causal Category Associativity
-│   └── 4.2.3.1 Proof: Causal Category Associativity
+│   ├── 4.2.3.1 Proof: Causal Category Associativity
+│   └── 4.2.3.2 Commentary: Associative Flow
 │
 ├── 4.2.4 Lemma: Timestamp Monotonicity
-│   └── 4.2.4.1 Proof: Preservation of Monotonicity
+│   ├── 4.2.4.1 Proof: Timestamp Monotonicity
+│   └── 4.2.4.2 Commentary: Causal Directionality
 │
 ├── 4.2.5 Lemma: History Category Identity
-│   └── 4.2.5.1 Proof: History Category Identity
+│   ├── 4.2.5.1 Proof: History Category Identity
+│   └── 4.2.5.2 Commentary: Historical Neutrality
 │
 ├── 4.2.6 Lemma: History Category Associativity
-│   └── 4.2.6.1 Proof: History Category Associativity
+│   ├── 4.2.6.1 Proof: History Category Associativity
+│   └── 4.2.6.2 Commentary: Historical Consistency
 │
 ├── 4.2.7 Lemma: Topological Injectivity
-│   └── 4.2.7.1 Proof: Irreflexivity Enforcement
+│   ├── 4.2.7.1 Proof: Topological Injectivity
+│   └── 4.2.7.2 Commentary: Topological Injectivity
 │
 ├── 4.2.8 Lemma: Effective Influence Encoding
-│   └── 4.2.8.1 Proof: Encoding Verification
+│   ├── 4.2.8.1 Proof: Effective Influence Encoding
+│   └── 4.2.8.2 Commentary: Information Preservation
 │
 ├── 4.2.9 Lemma: Partial Order Property
-│   └── 4.2.9.1 Proof: Partial Order Property
+│   ├── 4.2.9.1 Proof: Partial Order Property
+│   └── 4.2.9.2 Commentary: Causal Ordering
 │
-├── 4.2.10 Proof: Demonstration of Categorical Validity
+├── 4.2.10 Proof: Categorical Validity
 │
 └── 4.2.11 Calculation: Partial Order Verification
 ```
@@ -841,13 +849,13 @@ def verify_partial_order():
         (0, 2, {'t': 15}) # Shortcut, valid but length=1
     ]
     G.add_edges_from(edges)
-    
+
     nodes = list(G.nodes())
-    
+
     # 2. Define the Effective Influence Check (u <= v)
     def has_effective_influence(u, v):
         if u == v: return False # Optimization, but checked formally below
-        
+
         try:
             paths = nx.all_simple_paths(G, source=u, target=v)
         except nx.NodeNotFound:
@@ -858,7 +866,7 @@ def verify_partial_order():
             # path list contains nodes; edges = len(path) - 1
             if len(path) - 1 < 2:
                 continue
-            
+
             # Check Monotonicity Constraint
             timestamps = []
             valid_time = True
@@ -869,14 +877,14 @@ def verify_partial_order():
                     valid_time = False
                     break
                 timestamps.append(t)
-            
+
             if valid_time:
                 return True # Found at least one valid causal morphism
-        
+
         return False
 
     print("Partial Order Property Verification")
-    print("=" * 50)
+    print("=" * 34)
 
     # 3. Check Irreflexivity (u !<= u)
     # Axiom: No node should effectively influence itself (requires cycle)
@@ -885,7 +893,7 @@ def verify_partial_order():
         if has_effective_influence(n, n):
             print(f"Violation: Reflexive loop found at {n}")
             irreflexive = False
-    
+
     print(f"Irreflexivity Verification: {'PASS' if irreflexive else 'FAIL'}")
 
     # 4. Check Transitivity (u <= v AND v <= w => u <= w)
@@ -895,7 +903,7 @@ def verify_partial_order():
         u_v = has_effective_influence(u, v)
         v_w = has_effective_influence(v, w)
         u_w = has_effective_influence(u, w)
-        
+
         if u_v and v_w:
             if not u_w:
                 print(f"Violation: Transitivity failed for {u}->{v}->{w}")
@@ -914,21 +922,20 @@ if __name__ == "__main__":
     verify_partial_order()
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```
 Partial Order Property Verification
-==================================================
+==================================
 Irreflexivity Verification: PASS
 Transitivity Verification:  PASS
 Check 0->2 (via 0->1->2):     PASS (Expected True)
 ```
 
-The simulation output confirms that the constraints applied to the raw graph topology successfully induce a strict partial order:
+**Conclusion:**
 
-1.  **Irreflexivity:** The `PASS` result verifies that no node exerts effective influence upon itself, confirming the absence of valid cyclic morphisms.
-2.  **Transitivity:** The `PASS` result confirms that for all valid sequential influence chains ($u \le v$ and $v \le w$), the composite influence $u \le w$ exists and satisfies the requisite constraints.
-3.  **Constraint Filtering:** The specific check on the $0 \to 2$ relationship verifies the structure defined in **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />, although a direct edge exists, the "Effective Influence" relation is established only via the mediated path $0 \to 1 \to 2$, demonstrating the correct application of the length constraint ($\ell \ge 2$).
+The simulation output confirms that the constraints applied to the raw graph topology successfully induce a strict partial order.
+The `PASS` result for irreflexivity verifies that no node exerts effective influence upon itself, confirming the absence of valid cyclic morphisms. The `PASS` result for transitivity confirms that for all valid sequential influence chains ($u \le v$ and $v \le w$), the composite influence $u \le w$ exists and satisfies the requisite constraints. The specific check on the $0 \to 2$ relationship verifies the structure defined in **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />: although a direct edge exists, the effective influence relation is established only via the mediated path $0 \to 1 \to 2$, demonstrating the correct application of the length constraint ($\ell \ge 2$).
 
 ---
 
@@ -1107,7 +1114,7 @@ The proof proceeds via Direct Construction, proving that the self-observation an
 │   └── 4.3.6.2 Commentary: Structural Integrity
 │
 ├── 4.3.7 Lemma: Naturality of Transformations
-│   ├── 4.3.7.1 Proof: Commutative Squares
+│   ├── 4.3.7.1 Proof: Naturality of Transformations
 │   └── 4.3.7.2 Commentary: Diagnostic Consistency
 │
 ├── 4.3.8 Lemma: Axiom Satisfaction
@@ -1116,16 +1123,18 @@ The proof proceeds via Direct Construction, proving that the self-observation an
 │   └── 4.3.8.3 Diagram: Associativity of Awareness
 │
 ├── 4.3.9 Lemma: Algebraic Rigidity of the Annotation Map
-│   ├── 4.3.9.1 Proof: Algebraic Rigidity
+│   ├── 4.3.9.1 Proof: Algebraic Rigidity of the Annotation Map
 │   ├── 4.3.9.2 Commentary: Eliminating Diagnostic Hallucinations
-│   └── 4.3.9.3 Validation: Type-Theoretic Validation via Lean 4 Core
+│   └── 4.3.9.3 Validation: Lean 4 Core
 │
 ├── 4.3.10 Lemma: Comonadic Pauli Frame Tracking
 │   ├── 4.3.10.1 Proof: Comonadic Pauli Frame Tracking
 │   └── 4.3.10.2 Commentary: Phase Alignment
 │
-└── 4.3.11 Proof: Demonstration of the Awareness Comonad
-    └── 4.3.11.1 Calculation: Simulation Verification
+├── 4.3.11 Proof: Awareness Comonad
+│   └── 4.3.11.1 Calculation: Simulation Verification
+│
+└── 4.3.12 Validation: Lean 4 Core
 ```
 
 ---
@@ -1727,7 +1736,7 @@ print(f"   LHS (δ ∘ δ):           {lhs3}")
 print(f"   RHS (R_T(δ) ∘ δ):      {rhs3}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Store Comonad Axiom Verification
@@ -1748,11 +1757,10 @@ Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)
    RHS (R_T(δ) ∘ δ):      AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
 ```
 
-The comonad axioms hold with mathematical certainty under type theory, with Docusaurus-aligned execution confirmed.
-1.  **Left Identity** ($\epsilon \circ \delta = id$) holds, returning the original annotated structure.
-2.  **Right Identity** ($R_T(\epsilon) \circ \delta = id$) holds, confirming that lifting the counit preserves the context.
-3.  **Associativity** ($\delta \circ \delta = R_T(\delta) \circ \delta$) holds, producing identical nested structures for both orderings.
+**Conclusion:**
 
+The comonad axioms hold with mathematical certainty under type theory, with Docusaurus-aligned execution confirmed.
+**Left Identity** ($\epsilon \circ \delta = id$) holds, returning the original annotated structure.; **Right Identity** ($R_T(\epsilon) \circ \delta = id$) holds, confirming that lifting the counit preserves the context.; **Associativity** ($\delta \circ \delta = R_T(\delta) \circ \delta$) holds, producing identical nested structures for both orderings.
 These results validate the structural correctness of the Store Comonad model, confirming that the awareness mechanism is mathematically consistent and suitable for rigorous recursive application in the causal graph.
 
 ---
@@ -1868,10 +1876,12 @@ The proof proceeds by construction, deriving the constants of the vacuum from in
 │
 ├── 4.4.3 Lemma: Entropy of Closure
 │   ├── 4.4.3.1 Proof: Entropy of Closure
-│   └── 4.4.3.2 Calculation: Entropy Simulation
+│   ├── 4.4.3.2 Commentary: Relational Entropy
+│   └── 4.4.3.3 Calculation: Entropy Simulation
 │
 ├── 4.4.4 Lemma: Dimensional Equipartition
-│   └── 4.4.4.1 Proof: Dimensional Equipartition
+│   ├── 4.4.4.1 Proof: Dimensional Equipartition
+│   └── 4.4.4.2 Commentary: Dimensional Degrees
 │
 ├── 4.4.5 Lemma: Geometric Self-Energy
 │   ├── 4.4.5.1 Proof: Geometric Self-Energy
@@ -2056,10 +2066,10 @@ import numpy as np
 def relational_entropy(G, source, target):
     """
     Local entropy for directed pair (source, target).
-    Entropy = ln(k_forward × k_reverse), where:
-      - k_forward: number of simple paths source → target
-      - +1 if cycle present (degenerate representation under ≤)
-      - k_reverse: number of simple paths target → source
+    Entropy = ln(k_forward x k_reverse), where:
+      - k_forward: number of simple paths source -> target
+      - +1 if cycle present (degenerate representation under <=)
+      - k_reverse: number of simple paths target -> source
     Returns 0 if product = 0.
     """
     k_fwd = len(list(nx.all_simple_paths(G, source, target)))
@@ -2069,12 +2079,12 @@ def relational_entropy(G, source, target):
     product = k_fwd * k_rev
     return np.log(product) if product > 0 else 0.0
 
-# Minimal 2-path: v=0 → w=1 → u=2, focus pair (v,u)=(0,2)
+# Minimal 2-path: v=0 -> w=1 -> u=2, focus pair (v,u)=(0,2)
 G_pre = nx.DiGraph([(0, 1), (1, 2)])
 
 S_pre = relational_entropy(G_pre, 0, 2)
 
-# Closure: add return edge u → v
+# Closure: add return edge u -> v
 G_post = G_pre.copy()
 G_post.add_edge(2, 0)
 
@@ -2085,25 +2095,26 @@ target = np.log(2)
 
 print("Local Entropy Gain from Relational Loop Closure")
 print("=" * 52)
-print(f"Pre-closure multiplicity product:  1 × 0 = 0  → S = {S_pre:.6f}")
-print(f"Post-closure multiplicity product: 2 × 1 = 2  → S = {S_post:.6f}")
-print(f"ΔS:                                {delta_S:.6f}")
+print(f"Pre-closure multiplicity product:  1 x 0 = 0  -> S = {S_pre:.6f}")
+print(f"Post-closure multiplicity product: 2 x 1 = 2  -> S = {S_post:.6f}")
+print(f"dS:                                {delta_S:.6f}")
 print(f"Theoretical ln(2):                 {target:.6f}")
 print(f"Exact match:                       {np.isclose(delta_S, target)}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
-```
+```text
 Local Entropy Gain from Relational Loop Closure
 ====================================================
-Pre-closure multiplicity product:  1 × 0 = 0  → S = 0.000000
-Post-closure multiplicity product: 2 × 1 = 2  → S = 0.693147
-ΔS:                                0.693147
+Pre-closure multiplicity product:  1 x 0 = 0  -> S = 0.000000
+Post-closure multiplicity product: 2 x 1 = 2  -> S = 0.693147
+dS:                                0.693147
 Theoretical ln(2):                 0.693147
 Exact match:                       True
 ```
 
+**Conclusion:**
 The output confirms that the entropy gain $\Delta S = 0.693147$ matches the theoretical target $\ln 2$ exactly. This gain arises deterministically from the topological bifurcation: closure doubles the forward multiplicity (mediated path + cycle-degenerate representation) while introducing the first reverse path, yielding a product increase from 0 to 2. This verifies that structural closure acts as a hard entropic driver independent of specific graph geometry.
 
 
@@ -2387,7 +2398,7 @@ print(f"\nGaussian PDF peak at s=0: {pdf_peak:.6f}")
 print(f"Match with μ:             {np.isclose(mu, pdf_peak)}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Friction Coefficient from Gaussian Normalization
@@ -2409,6 +2420,7 @@ Gaussian PDF peak at s=0: 0.398942
 Match with μ:             True
 ```
 
+**Conclusion:**
 The simulation confirms the non-linear suppression of topological updates. A stress level of $s=1$ reduces the update rate by approximately $32.9\%$, while a high stress level of $s=5$ suppresses the rate by $86.4\%$. This validates the mechanism of **Friction**: highly excited regions ($s \gg 0$) effectively freeze, halting changes in the high-energy tail while permitting evolution in the low-stress vacuum.
 
 ### 4.4.7.3 Commentary: Viscosity of Space {#4.4.7.3}
@@ -2477,7 +2489,7 @@ The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mat
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):
-    """
+    r"""
     Takes an annotated graph T(G) = (G, \sigma) and returns a
     probability distribution over successor graphs \mathbb{P}(G_t+1).
     Constants T, mu, lambda_cat derived in the thermodynamic parameters section (§4.4).
@@ -2637,8 +2649,6 @@ The proof proceeds via Direct Construction, demonstrating that the base transiti
 │   └── 4.5.7.2 Commentary: Detailed Balance
 │
 └── 4.5.8 Proof: Universal Constructor
-    ├── 4.5.8.1 Commentary: Adaptive Feedback
-    └── 4.5.8.2 Commentary: Pruning and Balance
 ```
 
 ---
@@ -2919,7 +2929,7 @@ Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures o
 The proof proceeds via Direct Construction, synthesizing the local independence of rewrite events with the information-theoretic irreversibility of projection and sampling.
 
 ```text
-• 4.6.2 Theorem Emergent Dynamics [by construction]
+• 4.6.2 Theorem Emergent Dynamics  [by construction]
 │
 ├── 4.6.3 Lemma: Euclidean Transition Measure
 │   ├── 4.6.3.1 Proof: Euclidean Transition Measure
@@ -3064,7 +3074,7 @@ for i, sc in enumerate(scenarios, 1):
     print("-" * 50)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Euclidean Action Integration Verification
@@ -3089,6 +3099,7 @@ Scenario 3: 2 Additions, 2 Deletions
 --------------------------------------------------
 ```
 
+**Conclusion:**
 The simulation confirms that the convolved product of transition probabilities is identical to $\exp(-\Delta \mathcal{S})$ to machine precision. This verifies the transition probability model **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />, demonstrating that discrete stochastic updates map directly to the positive-definite weight of a Euclidean path integral.
 
 ### 4.6.3.3 Commentary: The Thermodynamic Origin of the Modulus {#4.6.3.3}
@@ -3206,6 +3217,7 @@ def shannon_entropy(p):
 
 # Number of Monte Carlo trials for statistical precision
 n_trials = 10_000
+np.random.seed(42)
 
 entropy_production = []
 
@@ -3216,20 +3228,20 @@ for _ in range(n_trials):
     p_A = max(0.0, 0.50 + noise[0])
     p_B = max(0.0, 0.25 + noise[1])
     p_C = max(0.0, 1.0 - p_A - p_B)     # Ensure non-negative and sum = 1
-    
+
     provisional = np.array([p_A, p_B, p_C])
     S_provisional = shannon_entropy(provisional)
-    
+
     # Projection: discard invalid path C, renormalize valid paths
     valid_mass = p_A + p_B
     if valid_mass > 0:
         projected = np.array([p_A / valid_mass, p_B / valid_mass, 0.0])
     else:
         projected = np.array([1.0, 0.0, 0.0])  # Degenerate fallback
-    
+
     # Sampling: collapse to single outcome → entropy = 0
     S_final = 0.0
-    
+
     # Entropy production = information lost to the environment
     delta_S = S_provisional - S_final
     entropy_production.append(delta_S)
@@ -3246,18 +3258,19 @@ print(f"Minimum observed ΔS:        {min(entropy_production):.5f} bits")
 print(f"Strictly positive ΔS:       {avg_delta > 0}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Irreversibility via Entropy Production in 𝒰
 ================================================
 Monte Carlo trials:         10,000
-Average ΔS per tick:        1.49976 bits
-Standard deviation:         0.00500 bits
-Minimum observed ΔS:        1.48093 bits
+Average ΔS per tick:        1.49973 bits
+Standard deviation:         0.00507 bits
+Minimum observed ΔS:        1.48072 bits
 Strictly positive ΔS:       True
 ```
 
+**Conclusion:**
 The simulation yields a strictly positive average entropy production of $1.49976$ bits per tick. The minimum observed $\Delta S$ ($1.48$ bits) confirms that no individual trial violates the Second Law. This positive entropy production verifies the irreversible nature of the operator $\mathcal{U}$: the collapse of the wavefunction (Sampling) and the enforcement of consistency (Projection) are information-destroying processes that define the arrow of time.
 
 
@@ -3377,7 +3390,7 @@ print(f"Critical Density Threshold (rho_crit): ~{rho_crit:.1f}")
 print("Foster-Lyapunov negative drift condition satisfied.")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Foster-Lyapunov Drift Verification
@@ -3394,6 +3407,7 @@ Critical Density Threshold (rho_crit): ~1.0
 Foster-Lyapunov negative drift condition satisfied.
 ```
 
+**Conclusion:**
 The simulation verifies that expected drift becomes strictly negative ($\Delta V \approx -3.9$) once graph density exceeds $\rho = 1.0$. This demonstrates that the system satisfies the Foster-Lyapunov drift condition, guaranteeing convergence to a unique stationary distribution.
 
 ### 4.6.5.3 Commentary: The Foundation for the Continuum Limit {#4.6.5.3}

@@ -48,7 +48,7 @@ def verify_partial_order():
         return False
 
     print("Partial Order Property Verification")
-    print("=" * 50)
+    print("=" * 34)
 
     # 3. Check Irreflexivity (u !<= u)
     # Axiom: No node should effectively influence itself (requires cycle)

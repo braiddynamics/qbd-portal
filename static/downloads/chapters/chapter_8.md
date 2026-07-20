@@ -399,7 +399,8 @@ The proof proceeds via Direct Construction, generating the full special unitary 
 │
 ├── 8.2.7 Lemma: Flux Tube Confinement
 │   ├── 8.2.7.1 Proof: Flux Tube Confinement
-│   └── 8.2.7.2 Commentary: Flux Tube Phase Simulation
+│   ├── 8.2.7.2 Calculation: Flux Tube Phase Simulation
+│   └── 8.2.7.3 Commentary: Physical Confinement
 │
 └── 8.2.8 Proof: Color Symmetry Emergence
 ```
@@ -637,10 +638,10 @@ def simulate_random_order_closure(num_ensembles=500):
     return np.array(dimensions)
 
 if __name__ == "__main__":
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE")
     print("Robustness under Stochastic Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     dims = simulate_random_order_closure(num_ensembles=500)
 
@@ -661,20 +662,20 @@ if __name__ == "__main__":
     })
     print(df.to_string(index=False))
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
     else:
-        print("RESULT: Partial closure observed – check parameters.")
+        print("status: partial")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE
 Robustness under Stochastic Generator Discovery Order
-══════════════════════════════════════════════════════════════════════
+======================================================================
 
 Ensembles simulated       : 500
 Initial generators        : 2 (λ¹, λ⁴ – real off-diagonals)
@@ -685,10 +686,11 @@ Distribution of final algebra dimensions:
  Dimension  Count  Percentage
          8    500       100.0
 
-──────────────────────────────────────────────────────────────────────
-RESULT: Deterministic closure confirmed.
+----------------------------------------------------------------------
+status: pass
 ```
 
+**Conclusion:**
 The simulation yields an average span dimension of 8.0 across all ensembles, with a probability of full closure equal to 1.000. The final dimensions sample consists entirely of integers with value 8. These results confirm that the constructive generation of the $\mathfrak{su}(3)$ basis is deterministic and robust against stochastic ordering; every random permutation of the rewrite sequence converges to the full 8-dimensional algebra. This validates that the basis is minimal and that no subset of commutators suffices for partial spanning, aligning with the irreducibility of the adjoint representation.
 
 ### 8.2.6.3 Commentary: Structural Inevitability {#8.2.6.3}
@@ -797,6 +799,8 @@ if __name__ == "__main__":
     verify_flux_tube_confinement()
 ```
 
+**Simulation Results:**
+
 ```text
 ======================================================================
 FLUX TUBE CONFINEMENT & BERRY PHASE
@@ -816,6 +820,7 @@ Length | Energy (V=σL)   | Berry Phase (rad)  | Phase mod 2π
 ------------------------------------------------------------
 ```
 
+**Conclusion:**
 The output confirms three physical properties. First, the energy scales strictly linearly with length (e.g., $E=5.00$ at $L=10$), validating the linear confinement model. Second, the Berry phase accumulates in discrete steps of $\pi/4$, reflecting the lattice quantization. Third, the phase exhibits a $2\pi$ periodicity (resetting to 0.00 at $L=8$), characteristic of a $U(1)$ monopole topology. These results verify that the graph geometry reproduces the string-like behavior required for quark confinement.
 
 ### 8.2.7.3 Commentary: Physical Confinement {#8.2.7.3}
@@ -1373,6 +1378,7 @@ The proof proceeds via Direct Construction, deriving the Electroweak mixing rati
 │   └── 8.4.4.2 Commentary: Topological Complexity Identification
 │
 └── 8.4.5 Proof: Topological Weinberg Angle
+    └── 8.4.5.1 Diagram: Electroweak Mixing Topology
 ```
 
 ---
@@ -1933,7 +1939,7 @@ Enumeration of the local degrees of freedom established by **Local State Space M
 import pandas as pd
 
 def verify_su2_local_dof():
-    print("--- QBD SU(2) Local State Space Verification ---")
+    print("--- §8.5.6.2 SU(2) Local State Space ---")
     print("Objective: Enumerate valid interaction channels on a single 3-cycle quantum.")
     
     # 1. Define the Geometric Quantum
@@ -2002,10 +2008,10 @@ if __name__ == "__main__":
     verify_su2_local_dof()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
---- QBD SU(2) Local State Space Verification ---
+--- §8.5.6.2 SU(2) Local State Space ---
 Objective: Enumerate valid interaction channels on a single 3-cycle quantum.
 
 [Enumerated Channels]
@@ -2025,6 +2031,7 @@ PASS: Combinatorial count matches the SU(2) multiplier (M=7).
       (3 Orientations * 2 States) + 1 Stabilizer
 ```
 
+**Conclusion:**
 The enumeration explicitly lists the interaction channels: 6 active rewrite channels (3 edges $\times$ 2 operations) and 1 passive stabilizer check. The sum yields a total local degree of freedom count of 7. This matches the expected multiplier $M=7$ used in the coupling constant derivation, confirming that the value is derived from precise combinatorial counting of the available topological modes.
 
 ### 8.5.6.3 Commentary: Combinatorial Multiplier {#8.5.6.3}
@@ -2100,7 +2107,7 @@ Validation of the analytical coupling derivation established in the **Emergent G
 import math
 
 def verify_gauge_coupling_consistency():
-    print("--- QBD Gauge Coupling (g) Consistency Check ---")
+    print("--- §8.5.7.1 Gauge Coupling (g) Consistency ---")
     
     # 1. Fundamental Constants (Derived in Ch 4, 5, 8)
     
@@ -2178,10 +2185,10 @@ if __name__ == "__main__":
     verify_gauge_coupling_consistency()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
---- QBD Gauge Coupling (g) Consistency Check ---
+--- §8.5.7.1 Gauge Coupling (g) Consistency ---
 METRIC                    | VALUE      | NOTES
 -----------------------------------------------------------------
 Alpha_topo                | 0.1733     | ln(2)/4
@@ -2199,6 +2206,7 @@ Upper Bound (rho + sigma): g = 0.7199
 PASS: Experimental value falls within the natural vacuum fluctuation range.
 ```
 
+**Conclusion:**
 The calculation yields a predicted mean coupling of $g \approx 0.6649$. This value deviates from the experimental benchmark ($0.6530$) by approximately 1.82%, which is within the defined 2% target accuracy. The calculated $1\sigma$ confidence interval $[0.6048, 0.7199]$ fully encompasses the experimental value. This confirms that the derived coupling constant is consistent with physical observations within the natural variance of the vacuum density.
 
 ---
@@ -2265,20 +2273,20 @@ The proof proceeds via Direct Construction, deriving mass values from geometric 
 ├── 8.6.2.2 Diagram: Geometric Higgs Mechanism
 │
 ├── 8.6.3 Lemma: Boson Mass Prediction
-│   ├── 8.6.3.1 Proof: Mass Formula Verification
+│   ├── 8.6.3.1 Proof: Boson Mass Prediction
 │   └── 8.6.3.2 Commentary: Prediction Precision
 │
 ├── 8.6.4 Lemma: Dimensionful VEV Scaling
-│   ├── 8.6.4.1 Proof: Scaling Logic
+│   ├── 8.6.4.1 Proof: Dimensionful VEV Scaling
 │   └── 8.6.4.2 Commentary: Reality Scale
 │
 ├── 8.6.5 Lemma: Topological Yukawa Identity
-│   ├── 8.6.5.1 Proof: Yukawa Ratio Verification
+│   ├── 8.6.5.1 Proof: Topological Yukawa Identity
 │   ├── 8.6.5.2 Calculation: Yukawa Hierarchy Verification
 │   └── 8.6.5.3 Commentary: Hierarchy Origin
 │
 ├── 8.6.6 Lemma: Sensitivity and Error Propagation
-│   ├── 8.6.6.1 Proof: Sensitivity Logic
+│   ├── 8.6.6.1 Proof: Sensitivity and Error Propagation
 │   └── 8.6.6.2 Commentary: Standard Model Stability
 │
 └── 8.6.7 Proof: Emergent Mass Generation
@@ -2469,7 +2477,7 @@ for gen, config in gen_configs.items():
 print("-" * 75)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 GENERATION           | N_net    | <y_f>    | <m_f> (GeV)  | σ_m (GeV) 
@@ -2481,6 +2489,7 @@ Gen3_τ/b/t           | 1000000  | 4.100022 | 1009.507 | 89.239
 ---------------------------------------------------------------------------
 ```
 
+**Conclusion:**
 The simulation confirms the vast hierarchy of fermion masses. Generation 1 yields a mass of $\sim 1$ MeV, consistent with light quarks. Generation 2 yields $\sim 4$ MeV (before QCD adjustments). Generation 3 yields $\sim 1009$ GeV, which scales to the observed Top quark mass ($\sim 173$ GeV) when accounting for specific torsion factors. The hierarchy ratio between Generation 3 and Generation 1 is approximately $10^6$. The data validates that the quadratic scaling of writhe complexity ($N \propto w^2$) combined with the vacuum supply ratio naturally generates the six-order-of-magnitude span observed in the fermion spectrum.
 
 ### 8.6.5.3 Commentary: Hierarchy Origin {#8.6.5.3}

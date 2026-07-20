@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Horizon Homogeneity and Propagator Decay Audit
-# Subject:   Audits pre-geometric small-world connectivity in Chapter 18.5.10
-#            (Standalone Version).
-# Version:   1.3
-# -----------------------------------------------------------------------------
+# §18.5.10 — Propagator Covariance Decay
 
 import numpy as np
 import pandas as pd
@@ -36,7 +30,7 @@ def build_directed_bethe_fragment(depth, k=3):
         
     return G
 
-def run_propagator_decay_audit():
+def run_propagator_decay():
     # 1. Generate trivalent Bethe tree substrate of depth 4
     # coordination k=3, N = 1 + 3 + 6 + 12 + 24 = 46 vertices
     G = build_directed_bethe_fragment(depth=4, k=3)
@@ -50,8 +44,8 @@ def run_propagator_decay_audit():
     # To ensure stable convergence, the spectral parameter s must reside
     # strictly outside the adjacency matrix spectrum.
     # For a graph with maximum degree 3, the spectral radius is bounded by 3.
-    # We choose s = 4.0, which guarantees perfect Neumann series convergence:
-    # G_uv(s) ≈ s^-1 * (1/s)^d
+    # Spectral parameter s=4.0 lies outside the degree-3 spectral radius bound.
+    # Neumann series for the resolvent then converges: G_uv(s) ~ s^-1 (1/s)^d
     A = nx.adjacency_matrix(undirected_G).todense()
     s = 4.0
     resolvent = np.linalg.inv(s * np.eye(N) - A)
@@ -101,26 +95,24 @@ def run_propagator_decay_audit():
     max_d = nx.diameter(undirected_G)
     bound = 2.0 * np.log2(N)
     
-    print("="*80)
-    print("QBD Horizon Homogeneity Audit (Lemma 18.5.6 Verification)")
+    print("-" * 72)
+    print("§18.5.10 Propagator Covariance Decay")
     print("Verifying Bethe Tree Diameter Bounding and Propagator Spectral Decay")
-    print("="*80)
+    print("-" * 72)
     print(f"Total Vertices N: {N}")
     print(f"Max Geodesic Distance (Diameter): {max_d}")
     print(f"Logarithmic Bound 2 * log2(N): {bound:.4f}")
-    print(f"Diameter Bounding Verification: {'SUCCESS (Diameter <= Bound)' if max_d <= bound else 'FAILURE'}")
-    print("-"*80)
+    print(f"Diameter bound: {'pass' if max_d <= bound else 'FAILURE'}")
+    print("-" * 72)
     print(df_summary.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
-    print("Choosing s = 4.0 (strictly outside the adjacency spectrum) guarantees")
-    print("perfect resolvent convergence. The propagator decays exponentially with")
-    print("topological distance by exactly one-fourth per step, resulting in a")
-    print("highly stable Calibration Ratio (~ 0.35).")
-    print("Because the maximum separation scales logarithmically, all vertices are in")
-    print("strong causal contact. This guarantees perfect global thermalization and")
-    print("homogeneity before spatial dimensions crystallize, solving the horizon problem.")
-    print("="*80)
+    print("-" * 72)
+    print("Analysis:")
+    print("With s = 4.0 (outside the adjacency spectrum), the resolvent converges.")
+    print("The propagator decays exponentially with topological distance by a factor")
+    print("of one-fourth per step (calibration ratio ~ 0.35).")
+    print("Maximum separation scales logarithmically with N, so geodesic diameters")
+    print("remain within the 2 log2(N) bound on this fragment.")
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_propagator_decay_audit()
+    run_propagator_decay()

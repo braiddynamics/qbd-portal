@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def verify_full_mass_hierarchy():
-    print("--- QBD Generational Mass Hierarchy Verification ---")
+    print("--- §7.4.6.1 Generational Mass Hierarchy ---")
     
     # 1. Constants
     # Mass Constant (kappa_m) anchored to Electron

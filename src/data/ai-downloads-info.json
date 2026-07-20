@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 2906585,
-      "estimated_tokens": 1053425,
+      "file_size_bytes": 2997733,
+      "estimated_tokens": 1086979,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 3183190,
-      "estimated_tokens": 1171092,
+      "file_size_bytes": 3276850,
+      "estimated_tokens": 1206091,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 3527644,
-      "estimated_tokens": 1053425,
+      "file_size_bytes": 3638352,
+      "estimated_tokens": 1086979,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -34,48 +34,48 @@
       "name": "Part 1: The Foundational Principles (The Rules)",
       "filename": "qbd_part_1_the_foundational_principles_the_rules.md",
       "url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md",
-      "file_size_bytes": 1200856,
-      "estimated_tokens": 435064,
+      "file_size_bytes": 1203104,
+      "estimated_tokens": 435781,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 1: The Foundational Principles (The Rules).",
       "json_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.json",
-      "json_file_size_bytes": 1230369,
-      "json_estimated_tokens": 452112,
+      "json_file_size_bytes": 1232643,
+      "json_estimated_tokens": 452862,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1498311,
-      "pdf_estimated_tokens": 435064
+      "pdf_file_size_bytes": 1499127,
+      "pdf_estimated_tokens": 435781
     },
     {
       "part_number": 2,
       "name": "Part 2: Topological Nature of Matter (The Players)",
       "filename": "qbd_part_2_topological_nature_of_matter_the_players.md",
       "url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md",
-      "file_size_bytes": 886415,
-      "estimated_tokens": 320729,
+      "file_size_bytes": 884585,
+      "estimated_tokens": 320847,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 2: Topological Nature of Matter (The Players).",
       "json_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.json",
-      "json_file_size_bytes": 914542,
-      "json_estimated_tokens": 336053,
+      "json_file_size_bytes": 912712,
+      "json_estimated_tokens": 336182,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1156031,
-      "pdf_estimated_tokens": 320729
+      "pdf_file_size_bytes": 1156752,
+      "pdf_estimated_tokens": 320847
     },
     {
       "part_number": 3,
       "name": "Part 3: Emergent Reality (The Stage)",
       "filename": "qbd_part_3_emergent_reality_the_stage.md",
       "url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.md",
-      "file_size_bytes": 764439,
-      "estimated_tokens": 277774,
+      "file_size_bytes": 855169,
+      "estimated_tokens": 310493,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 3: Emergent Reality (The Stage).",
       "json_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.json",
-      "json_file_size_bytes": 784209,
-      "json_estimated_tokens": 289531,
+      "json_file_size_bytes": 877425,
+      "json_estimated_tokens": 323650,
       "pdf_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.pdf",
-      "pdf_file_size_bytes": 1044377,
-      "pdf_estimated_tokens": 277774
+      "pdf_file_size_bytes": 1154192,
+      "pdf_estimated_tokens": 310493
     },
     {
       "part_number": 6,
@@ -90,7 +90,7 @@
       "json_file_size_bytes": 117477,
       "json_estimated_tokens": 43365,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 211021,
+      "pdf_file_size_bytes": 211022,
       "pdf_estimated_tokens": 42651
     }
   ],
@@ -100,272 +100,272 @@
       "name": "Chapter 1: Substrate (Ontology)",
       "filename": "chapter_1.md",
       "url": "/downloads/chapters/chapter_1.md",
-      "file_size_bytes": 365208,
-      "estimated_tokens": 132910,
+      "file_size_bytes": 365377,
+      "estimated_tokens": 132962,
       "type": "markdown",
       "description": "Markdown source for Chapter 1.",
       "json_url": "/downloads/chapters/chapter_1.json",
-      "json_file_size_bytes": 366854,
-      "json_estimated_tokens": 134744,
+      "json_file_size_bytes": 367023,
+      "json_estimated_tokens": 134798,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 490411,
-      "pdf_estimated_tokens": 132910
+      "pdf_file_size_bytes": 490091,
+      "pdf_estimated_tokens": 132962
     },
     {
       "chapter_number": 2,
       "name": "Chapter 2: Constraints (Axioms)",
       "filename": "chapter_2.md",
       "url": "/downloads/chapters/chapter_2.md",
-      "file_size_bytes": 187115,
-      "estimated_tokens": 67457,
+      "file_size_bytes": 188125,
+      "estimated_tokens": 67775,
       "type": "markdown",
       "description": "Markdown source for Chapter 2.",
       "json_url": "/downloads/chapters/chapter_2.json",
-      "json_file_size_bytes": 188488,
-      "json_estimated_tokens": 69037,
+      "json_file_size_bytes": 189498,
+      "json_estimated_tokens": 69363,
       "pdf_url": "/downloads/chapters/chapter_2.pdf",
-      "pdf_file_size_bytes": 299496,
-      "pdf_estimated_tokens": 67457
+      "pdf_file_size_bytes": 299323,
+      "pdf_estimated_tokens": 67775
     },
     {
       "chapter_number": 3,
       "name": "Chapter 3: Object Model (Architecture)",
       "filename": "chapter_3.md",
       "url": "/downloads/chapters/chapter_3.md",
-      "file_size_bytes": 257870,
-      "estimated_tokens": 93046,
+      "file_size_bytes": 258453,
+      "estimated_tokens": 93244,
       "type": "markdown",
       "description": "Markdown source for Chapter 3.",
       "json_url": "/downloads/chapters/chapter_3.json",
-      "json_file_size_bytes": 260552,
-      "json_estimated_tokens": 95560,
+      "json_file_size_bytes": 261165,
+      "json_estimated_tokens": 95776,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 407740,
-      "pdf_estimated_tokens": 93046
+      "pdf_file_size_bytes": 406154,
+      "pdf_estimated_tokens": 93244
     },
     {
       "chapter_number": 4,
       "name": "Chapter 4: Operations (Dynamics)",
       "filename": "chapter_4.md",
       "url": "/downloads/chapters/chapter_4.md",
-      "file_size_bytes": 224751,
-      "estimated_tokens": 81527,
+      "file_size_bytes": 225220,
+      "estimated_tokens": 81677,
       "type": "markdown",
       "description": "Markdown source for Chapter 4.",
       "json_url": "/downloads/chapters/chapter_4.json",
-      "json_file_size_bytes": 227410,
-      "json_estimated_tokens": 83833,
+      "json_file_size_bytes": 227877,
+      "json_estimated_tokens": 83987,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 364222,
-      "pdf_estimated_tokens": 81527
+      "pdf_file_size_bytes": 364267,
+      "pdf_estimated_tokens": 81677
     },
     {
       "chapter_number": 5,
       "name": "Chapter 5: Geometrogensis (Equilibrium)",
       "filename": "chapter_5.md",
       "url": "/downloads/chapters/chapter_5.md",
-      "file_size_bytes": 181326,
-      "estimated_tokens": 65771,
+      "file_size_bytes": 181343,
+      "estimated_tokens": 65770,
       "type": "markdown",
       "description": "Markdown source for Chapter 5.",
       "json_url": "/downloads/chapters/chapter_5.json",
-      "json_file_size_bytes": 183596,
-      "json_estimated_tokens": 67655,
+      "json_file_size_bytes": 183611,
+      "json_estimated_tokens": 67656,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 316976,
-      "pdf_estimated_tokens": 65771
+      "pdf_file_size_bytes": 316975,
+      "pdf_estimated_tokens": 65770
     },
     {
       "chapter_number": 6,
       "name": "Chapter 6: Tripartite Braid (Fermions)",
       "filename": "chapter_6.md",
       "url": "/downloads/chapters/chapter_6.md",
-      "file_size_bytes": 167672,
-      "estimated_tokens": 60421,
+      "file_size_bytes": 167130,
+      "estimated_tokens": 60454,
       "type": "markdown",
       "description": "Markdown source for Chapter 6.",
       "json_url": "/downloads/chapters/chapter_6.json",
-      "json_file_size_bytes": 169424,
-      "json_estimated_tokens": 62077,
+      "json_file_size_bytes": 168880,
+      "json_estimated_tokens": 62112,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 295987,
-      "pdf_estimated_tokens": 60421
+      "pdf_file_size_bytes": 295949,
+      "pdf_estimated_tokens": 60454
     },
     {
       "chapter_number": 7,
       "name": "Chapter 7: Quantum Numbers (Topology)",
       "filename": "chapter_7.md",
       "url": "/downloads/chapters/chapter_7.md",
-      "file_size_bytes": 129208,
-      "estimated_tokens": 46902,
+      "file_size_bytes": 129177,
+      "estimated_tokens": 46892,
       "type": "markdown",
       "description": "Markdown source for Chapter 7.",
       "json_url": "/downloads/chapters/chapter_7.json",
-      "json_file_size_bytes": 130738,
-      "json_estimated_tokens": 48225,
+      "json_file_size_bytes": 130707,
+      "json_estimated_tokens": 48214,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 247479,
-      "pdf_estimated_tokens": 46902
+      "pdf_file_size_bytes": 247220,
+      "pdf_estimated_tokens": 46892
     },
     {
       "chapter_number": 8,
       "name": "Chapter 8: Gauge Symmetries (Braids)",
       "filename": "chapter_8.md",
       "url": "/downloads/chapters/chapter_8.md",
-      "file_size_bytes": 215204,
-      "estimated_tokens": 78088,
+      "file_size_bytes": 214929,
+      "estimated_tokens": 78134,
       "type": "markdown",
       "description": "Markdown source for Chapter 8.",
       "json_url": "/downloads/chapters/chapter_8.json",
-      "json_file_size_bytes": 217977,
-      "json_estimated_tokens": 80126,
+      "json_file_size_bytes": 217702,
+      "json_estimated_tokens": 80176,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 357152,
-      "pdf_estimated_tokens": 78088
+      "pdf_file_size_bytes": 356845,
+      "pdf_estimated_tokens": 78134
     },
     {
       "chapter_number": 9,
       "name": "Chapter 9: Generations and Decay (Unification)",
       "filename": "chapter_9.md",
       "url": "/downloads/chapters/chapter_9.md",
-      "file_size_bytes": 178638,
-      "estimated_tokens": 64391,
+      "file_size_bytes": 177441,
+      "estimated_tokens": 64372,
       "type": "markdown",
       "description": "Markdown source for Chapter 9.",
       "json_url": "/downloads/chapters/chapter_9.json",
-      "json_file_size_bytes": 180734,
-      "json_estimated_tokens": 66168,
+      "json_file_size_bytes": 179539,
+      "json_estimated_tokens": 66152,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 308813,
-      "pdf_estimated_tokens": 64391
+      "pdf_file_size_bytes": 308442,
+      "pdf_estimated_tokens": 64372
     },
     {
       "chapter_number": 10,
       "name": "Chapter 10: Quantum Universality (Computation)",
       "filename": "chapter_10.md",
       "url": "/downloads/chapters/chapter_10.md",
-      "file_size_bytes": 208084,
-      "estimated_tokens": 75464,
+      "file_size_bytes": 208299,
+      "estimated_tokens": 75532,
       "type": "markdown",
       "description": "Markdown source for Chapter 10.",
       "json_url": "/downloads/chapters/chapter_10.json",
-      "json_file_size_bytes": 210455,
-      "json_estimated_tokens": 77528,
+      "json_file_size_bytes": 210670,
+      "json_estimated_tokens": 77599,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 339972,
-      "pdf_estimated_tokens": 75464
+      "pdf_file_size_bytes": 340513,
+      "pdf_estimated_tokens": 75532
     },
     {
       "chapter_number": 11,
       "name": "Chapter 11: Differential Geometry (Discrete)",
       "filename": "chapter_11.md",
       "url": "/downloads/chapters/chapter_11.md",
-      "file_size_bytes": 139375,
-      "estimated_tokens": 50638,
+      "file_size_bytes": 141126,
+      "estimated_tokens": 51278,
       "type": "markdown",
       "description": "Markdown source for Chapter 11.",
       "json_url": "/downloads/chapters/chapter_11.json",
-      "json_file_size_bytes": 141094,
-      "json_estimated_tokens": 52078,
+      "json_file_size_bytes": 142912,
+      "json_estimated_tokens": 52745,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 258770,
-      "pdf_estimated_tokens": 50638
+      "pdf_file_size_bytes": 262157,
+      "pdf_estimated_tokens": 51278
     },
     {
       "chapter_number": 12,
       "name": "Chapter 12: Discrete Field Equations (Einstein)",
       "filename": "chapter_12.md",
       "url": "/downloads/chapters/chapter_12.md",
-      "file_size_bytes": 102174,
-      "estimated_tokens": 37155,
+      "file_size_bytes": 107515,
+      "estimated_tokens": 39087,
       "type": "markdown",
       "description": "Markdown source for Chapter 12.",
       "json_url": "/downloads/chapters/chapter_12.json",
-      "json_file_size_bytes": 103693,
-      "json_estimated_tokens": 38273,
+      "json_file_size_bytes": 109153,
+      "json_estimated_tokens": 40277,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 228614,
-      "pdf_estimated_tokens": 37155
+      "pdf_file_size_bytes": 235566,
+      "pdf_estimated_tokens": 39087
     },
     {
       "chapter_number": 13,
       "name": "Chapter 13: Continuum Limit (Convergence)",
       "filename": "chapter_13.md",
       "url": "/downloads/chapters/chapter_13.md",
-      "file_size_bytes": 100748,
-      "estimated_tokens": 36583,
+      "file_size_bytes": 107337,
+      "estimated_tokens": 38961,
       "type": "markdown",
       "description": "Markdown source for Chapter 13.",
       "json_url": "/downloads/chapters/chapter_13.json",
-      "json_file_size_bytes": 101888,
-      "json_estimated_tokens": 37600,
+      "json_file_size_bytes": 108694,
+      "json_estimated_tokens": 40093,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 205282,
-      "pdf_estimated_tokens": 36583
+      "pdf_file_size_bytes": 216019,
+      "pdf_estimated_tokens": 38961
     },
     {
       "chapter_number": 14,
       "name": "Chapter 14: Lorentzian Reality (Time)",
       "filename": "chapter_14.md",
       "url": "/downloads/chapters/chapter_14.md",
-      "file_size_bytes": 127168,
-      "estimated_tokens": 46198,
+      "file_size_bytes": 145667,
+      "estimated_tokens": 52918,
       "type": "markdown",
       "description": "Markdown source for Chapter 14.",
       "json_url": "/downloads/chapters/chapter_14.json",
-      "json_file_size_bytes": 128626,
-      "json_estimated_tokens": 47432,
+      "json_file_size_bytes": 147688,
+      "json_estimated_tokens": 54447,
       "pdf_url": "/downloads/chapters/chapter_14.pdf",
-      "pdf_file_size_bytes": 248156,
-      "pdf_estimated_tokens": 46198
+      "pdf_file_size_bytes": 274735,
+      "pdf_estimated_tokens": 52918
     },
     {
       "chapter_number": 15,
       "name": "Chapter 15: Geometry of Entanglement (ER = EPR)",
       "filename": "chapter_15.md",
       "url": "/downloads/chapters/chapter_15.md",
-      "file_size_bytes": 118790,
-      "estimated_tokens": 43203,
+      "file_size_bytes": 121501,
+      "estimated_tokens": 44163,
       "type": "markdown",
       "description": "Markdown source for Chapter 15.",
       "json_url": "/downloads/chapters/chapter_15.json",
-      "json_file_size_bytes": 120409,
-      "json_estimated_tokens": 44486,
+      "json_file_size_bytes": 123193,
+      "json_estimated_tokens": 45479,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 233579,
-      "pdf_estimated_tokens": 43203
+      "pdf_file_size_bytes": 236091,
+      "pdf_estimated_tokens": 44163
     },
     {
       "chapter_number": 16,
       "name": "Chapter 16: Isomorphism Principle (Holography)",
       "filename": "chapter_16.md",
       "url": "/downloads/chapters/chapter_16.md",
-      "file_size_bytes": 61208,
-      "estimated_tokens": 22248,
+      "file_size_bytes": 105556,
+      "estimated_tokens": 38247,
       "type": "markdown",
       "description": "Markdown source for Chapter 16.",
       "json_url": "/downloads/chapters/chapter_16.json",
-      "json_file_size_bytes": 61946,
-      "json_estimated_tokens": 22892,
+      "json_file_size_bytes": 107342,
+      "json_estimated_tokens": 39544,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 156883,
-      "pdf_estimated_tokens": 22248
+      "pdf_file_size_bytes": 216866,
+      "pdf_estimated_tokens": 38247
     },
     {
       "chapter_number": 17,
       "name": "Chapter 17: String Limit (Worldsheets)",
       "filename": "chapter_17.md",
       "url": "/downloads/chapters/chapter_17.md",
-      "file_size_bytes": 120158,
-      "estimated_tokens": 43657,
+      "file_size_bytes": 131649,
+      "estimated_tokens": 47747,
       "type": "markdown",
       "description": "Markdown source for Chapter 17.",
       "json_url": "/downloads/chapters/chapter_17.json",
-      "json_file_size_bytes": 121512,
-      "json_estimated_tokens": 44905,
+      "json_file_size_bytes": 133402,
+      "json_estimated_tokens": 49200,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 240559,
-      "pdf_estimated_tokens": 43657
+      "pdf_file_size_bytes": 259544,
+      "pdf_estimated_tokens": 47747
     }
   ],
   "codebase": {
@@ -643,24 +643,24 @@
       {
         "name": "10.8.9.1.py",
         "url": "/downloads/code/repo/python/10.8.9.1.py",
-        "file_size_bytes": 936,
-        "estimated_tokens": 333,
+        "file_size_bytes": 939,
+        "estimated_tokens": 334,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 10.8.9.1."
       },
       {
         "name": "10.9.4.1.py",
         "url": "/downloads/code/repo/python/10.9.4.1.py",
-        "file_size_bytes": 1017,
-        "estimated_tokens": 365,
+        "file_size_bytes": 1043,
+        "estimated_tokens": 375,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 10.9.4.1."
       },
       {
         "name": "10.9.5.1.py",
         "url": "/downloads/code/repo/python/10.9.5.1.py",
-        "file_size_bytes": 3562,
-        "estimated_tokens": 1279,
+        "file_size_bytes": 3554,
+        "estimated_tokens": 1276,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 10.9.5.1."
       },
@@ -683,8 +683,8 @@
       {
         "name": "11.2.6.2.py",
         "url": "/downloads/code/repo/python/11.2.6.2.py",
-        "file_size_bytes": 3069,
-        "estimated_tokens": 1100,
+        "file_size_bytes": 3057,
+        "estimated_tokens": 1096,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 11.2.6.2."
       },
@@ -707,274 +707,298 @@
       {
         "name": "12.1.3.2.py",
         "url": "/downloads/code/repo/python/12.1.3.2.py",
-        "file_size_bytes": 2392,
-        "estimated_tokens": 859,
+        "file_size_bytes": 2398,
+        "estimated_tokens": 861,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 12.1.3.2."
       },
       {
         "name": "12.1.4.2.py",
         "url": "/downloads/code/repo/python/12.1.4.2.py",
-        "file_size_bytes": 2279,
-        "estimated_tokens": 817,
+        "file_size_bytes": 2273,
+        "estimated_tokens": 815,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 12.1.4.2."
       },
       {
         "name": "12.2.3.2.py",
         "url": "/downloads/code/repo/python/12.2.3.2.py",
-        "file_size_bytes": 919,
-        "estimated_tokens": 329,
+        "file_size_bytes": 941,
+        "estimated_tokens": 337,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 12.2.3.2."
       },
       {
         "name": "12.2.4.2.py",
         "url": "/downloads/code/repo/python/12.2.4.2.py",
-        "file_size_bytes": 1220,
-        "estimated_tokens": 437,
+        "file_size_bytes": 1242,
+        "estimated_tokens": 444,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 12.2.4.2."
       },
       {
         "name": "12.3.5.1.py",
         "url": "/downloads/code/repo/python/12.3.5.1.py",
-        "file_size_bytes": 2115,
-        "estimated_tokens": 762,
+        "file_size_bytes": 2139,
+        "estimated_tokens": 771,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 12.3.5.1."
       },
       {
-        "name": "13.1.5.1.py",
-        "url": "/downloads/code/repo/python/13.1.5.1.py",
-        "file_size_bytes": 8160,
-        "estimated_tokens": 2943,
+        "name": "13.1.6.1.py",
+        "url": "/downloads/code/repo/python/13.1.6.1.py",
+        "file_size_bytes": 8349,
+        "estimated_tokens": 3012,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 13.1.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 13.1.6.1."
       },
       {
         "name": "13.2.6.1.py",
         "url": "/downloads/code/repo/python/13.2.6.1.py",
-        "file_size_bytes": 7102,
-        "estimated_tokens": 2551,
+        "file_size_bytes": 7087,
+        "estimated_tokens": 2545,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 13.2.6.1."
       },
       {
-        "name": "13.3.5.1.py",
-        "url": "/downloads/code/repo/python/13.3.5.1.py",
-        "file_size_bytes": 2281,
-        "estimated_tokens": 821,
+        "name": "13.3.6.1.py",
+        "url": "/downloads/code/repo/python/13.3.6.1.py",
+        "file_size_bytes": 2280,
+        "estimated_tokens": 820,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 13.3.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 13.3.6.1."
       },
       {
         "name": "14.1.3.2.py",
         "url": "/downloads/code/repo/python/14.1.3.2.py",
-        "file_size_bytes": 2591,
-        "estimated_tokens": 937,
+        "file_size_bytes": 2582,
+        "estimated_tokens": 933,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.1.3.2."
       },
       {
         "name": "14.1.5.1.py",
         "url": "/downloads/code/repo/python/14.1.5.1.py",
-        "file_size_bytes": 4060,
-        "estimated_tokens": 1464,
+        "file_size_bytes": 4054,
+        "estimated_tokens": 1461,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.1.5.1."
       },
       {
         "name": "14.2.8.1.py",
         "url": "/downloads/code/repo/python/14.2.8.1.py",
-        "file_size_bytes": 3220,
-        "estimated_tokens": 1162,
+        "file_size_bytes": 3188,
+        "estimated_tokens": 1151,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.2.8.1."
       },
       {
         "name": "14.3.6.2.py",
         "url": "/downloads/code/repo/python/14.3.6.2.py",
-        "file_size_bytes": 2331,
-        "estimated_tokens": 835,
+        "file_size_bytes": 2325,
+        "estimated_tokens": 833,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.3.6.2."
       },
       {
         "name": "14.3.8.1.py",
         "url": "/downloads/code/repo/python/14.3.8.1.py",
-        "file_size_bytes": 2216,
-        "estimated_tokens": 798,
+        "file_size_bytes": 2210,
+        "estimated_tokens": 796,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.3.8.1."
       },
       {
+        "name": "14.4.5.1.py",
+        "url": "/downloads/code/repo/python/14.4.5.1.py",
+        "file_size_bytes": 4484,
+        "estimated_tokens": 1647,
+        "type": "code",
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.4.5.1."
+      },
+      {
         "name": "15.1.6.1.py",
         "url": "/downloads/code/repo/python/15.1.6.1.py",
-        "file_size_bytes": 2301,
-        "estimated_tokens": 832,
+        "file_size_bytes": 2161,
+        "estimated_tokens": 800,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 15.1.6.1."
       },
       {
         "name": "15.2.5.1.py",
         "url": "/downloads/code/repo/python/15.2.5.1.py",
-        "file_size_bytes": 3700,
-        "estimated_tokens": 1338,
+        "file_size_bytes": 2348,
+        "estimated_tokens": 869,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 15.2.5.1."
       },
       {
         "name": "15.3.5.1.py",
         "url": "/downloads/code/repo/python/15.3.5.1.py",
-        "file_size_bytes": 2696,
-        "estimated_tokens": 975,
+        "file_size_bytes": 2245,
+        "estimated_tokens": 831,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 15.3.5.1."
       },
       {
-        "name": "16.1.5.1.py",
-        "url": "/downloads/code/repo/python/16.1.5.1.py",
-        "file_size_bytes": 4314,
-        "estimated_tokens": 1556,
+        "name": "16.1.7.1.py",
+        "url": "/downloads/code/repo/python/16.1.7.1.py",
+        "file_size_bytes": 3387,
+        "estimated_tokens": 1254,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.1.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.1.7.1."
       },
       {
-        "name": "16.2.5.1.py",
-        "url": "/downloads/code/repo/python/16.2.5.1.py",
-        "file_size_bytes": 4801,
-        "estimated_tokens": 1729,
+        "name": "16.2.7.1.py",
+        "url": "/downloads/code/repo/python/16.2.7.1.py",
+        "file_size_bytes": 3544,
+        "estimated_tokens": 1312,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.2.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.2.7.1."
       },
       {
-        "name": "17.1.5.1.py",
-        "url": "/downloads/code/repo/python/17.1.5.1.py",
-        "file_size_bytes": 3050,
-        "estimated_tokens": 1102,
+        "name": "16.3.6.1.py",
+        "url": "/downloads/code/repo/python/16.3.6.1.py",
+        "file_size_bytes": 2797,
+        "estimated_tokens": 1035,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.1.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.3.6.1."
       },
       {
-        "name": "17.2.5.1.py",
-        "url": "/downloads/code/repo/python/17.2.5.1.py",
-        "file_size_bytes": 2924,
-        "estimated_tokens": 1052,
+        "name": "16.4.6.1.py",
+        "url": "/downloads/code/repo/python/16.4.6.1.py",
+        "file_size_bytes": 2393,
+        "estimated_tokens": 885,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.2.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 16.4.6.1."
       },
       {
-        "name": "17.3.5.1.py",
-        "url": "/downloads/code/repo/python/17.3.5.1.py",
-        "file_size_bytes": 4189,
-        "estimated_tokens": 1515,
+        "name": "17.1.6.1.py",
+        "url": "/downloads/code/repo/python/17.1.6.1.py",
+        "file_size_bytes": 2669,
+        "estimated_tokens": 988,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.3.5.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.1.6.1."
+      },
+      {
+        "name": "17.2.6.1.py",
+        "url": "/downloads/code/repo/python/17.2.6.1.py",
+        "file_size_bytes": 1960,
+        "estimated_tokens": 725,
+        "type": "code",
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.2.6.1."
+      },
+      {
+        "name": "17.3.6.1.py",
+        "url": "/downloads/code/repo/python/17.3.6.1.py",
+        "file_size_bytes": 1979,
+        "estimated_tokens": 732,
+        "type": "code",
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.3.6.1."
       },
       {
         "name": "17.4.4.2.py",
         "url": "/downloads/code/repo/python/17.4.4.2.py",
-        "file_size_bytes": 2993,
-        "estimated_tokens": 1079,
+        "file_size_bytes": 3467,
+        "estimated_tokens": 1283,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.4.4.2."
       },
       {
-        "name": "17.4.7.1.py",
-        "url": "/downloads/code/repo/python/17.4.7.1.py",
-        "file_size_bytes": 4714,
-        "estimated_tokens": 1703,
+        "name": "17.4.8.1.py",
+        "url": "/downloads/code/repo/python/17.4.8.1.py",
+        "file_size_bytes": 2933,
+        "estimated_tokens": 1085,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.4.7.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 17.4.8.1."
       },
       {
         "name": "18.1.7.py",
         "url": "/downloads/code/repo/python/18.1.7.py",
-        "file_size_bytes": 6431,
-        "estimated_tokens": 2381,
+        "file_size_bytes": 6079,
+        "estimated_tokens": 2250,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.1.7."
       },
       {
         "name": "18.1.9.py",
         "url": "/downloads/code/repo/python/18.1.9.py",
-        "file_size_bytes": 6121,
-        "estimated_tokens": 2266,
+        "file_size_bytes": 5410,
+        "estimated_tokens": 2001,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.1.9."
       },
       {
         "name": "18.2.6.py",
         "url": "/downloads/code/repo/python/18.2.6.py",
-        "file_size_bytes": 4407,
-        "estimated_tokens": 1632,
+        "file_size_bytes": 4031,
+        "estimated_tokens": 1491,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.2.6."
       },
       {
         "name": "18.3.11.py",
         "url": "/downloads/code/repo/python/18.3.11.py",
-        "file_size_bytes": 3435,
-        "estimated_tokens": 1271,
+        "file_size_bytes": 2959,
+        "estimated_tokens": 1093,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.3.11."
       },
       {
         "name": "18.3.13.py",
         "url": "/downloads/code/repo/python/18.3.13.py",
-        "file_size_bytes": 4208,
-        "estimated_tokens": 1556,
+        "file_size_bytes": 3488,
+        "estimated_tokens": 1287,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.3.13."
       },
       {
         "name": "18.3.9.py",
         "url": "/downloads/code/repo/python/18.3.9.py",
-        "file_size_bytes": 3436,
-        "estimated_tokens": 1272,
+        "file_size_bytes": 2527,
+        "estimated_tokens": 934,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.3.9."
       },
       {
         "name": "18.4.6.py",
         "url": "/downloads/code/repo/python/18.4.6.py",
-        "file_size_bytes": 4390,
-        "estimated_tokens": 1623,
+        "file_size_bytes": 3372,
+        "estimated_tokens": 1245,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.4.6."
       },
       {
         "name": "18.4.8.py",
         "url": "/downloads/code/repo/python/18.4.8.py",
-        "file_size_bytes": 3921,
-        "estimated_tokens": 1450,
+        "file_size_bytes": 3559,
+        "estimated_tokens": 1315,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.4.8."
       },
       {
         "name": "18.5.10.py",
         "url": "/downloads/code/repo/python/18.5.10.py",
-        "file_size_bytes": 4778,
-        "estimated_tokens": 1768,
+        "file_size_bytes": 4241,
+        "estimated_tokens": 1569,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.5.10."
       },
       {
         "name": "18.5.8.py",
         "url": "/downloads/code/repo/python/18.5.8.py",
-        "file_size_bytes": 2693,
-        "estimated_tokens": 996,
+        "file_size_bytes": 2331,
+        "estimated_tokens": 861,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 18.5.8."
       },
       {
-        "name": "2.3.4.1.py",
-        "url": "/downloads/code/repo/python/2.3.4.1.py",
+        "name": "2.3.4.2.py",
+        "url": "/downloads/code/repo/python/2.3.4.2.py",
         "file_size_bytes": 642,
         "estimated_tokens": 231,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.3.4.1."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.3.4.2."
       },
       {
         "name": "2.4.10.py",
@@ -1051,8 +1075,8 @@
       {
         "name": "3.5.4.2.py",
         "url": "/downloads/code/repo/python/3.5.4.2.py",
-        "file_size_bytes": 940,
-        "estimated_tokens": 329,
+        "file_size_bytes": 934,
+        "estimated_tokens": 327,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 3.5.4.2."
       },
@@ -1091,8 +1115,8 @@
       {
         "name": "4.4.3.3.py",
         "url": "/downloads/code/repo/python/4.4.3.3.py",
-        "file_size_bytes": 1487,
-        "estimated_tokens": 528,
+        "file_size_bytes": 1475,
+        "estimated_tokens": 531,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 4.4.3.3."
       },
@@ -1107,7 +1131,7 @@
       {
         "name": "4.5.1.py",
         "url": "/downloads/code/repo/python/4.5.1.py",
-        "file_size_bytes": 2475,
+        "file_size_bytes": 2476,
         "estimated_tokens": 894,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 4.5.1."
@@ -1123,8 +1147,8 @@
       {
         "name": "4.6.4.3.py",
         "url": "/downloads/code/repo/python/4.6.4.3.py",
-        "file_size_bytes": 1864,
-        "estimated_tokens": 668,
+        "file_size_bytes": 1884,
+        "estimated_tokens": 675,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 4.6.4.3."
       },
@@ -1139,8 +1163,8 @@
       {
         "name": "5.1.4.1.py",
         "url": "/downloads/code/repo/python/5.1.4.1.py",
-        "file_size_bytes": 1896,
-        "estimated_tokens": 681,
+        "file_size_bytes": 1835,
+        "estimated_tokens": 659,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 5.1.4.1."
       },
@@ -1163,16 +1187,16 @@
       {
         "name": "5.2.6.2.py",
         "url": "/downloads/code/repo/python/5.2.6.2.py",
-        "file_size_bytes": 1992,
-        "estimated_tokens": 713,
+        "file_size_bytes": 1988,
+        "estimated_tokens": 712,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 5.2.6.2."
       },
       {
         "name": "5.2.7.1.py",
         "url": "/downloads/code/repo/python/5.2.7.1.py",
-        "file_size_bytes": 2301,
-        "estimated_tokens": 818,
+        "file_size_bytes": 2294,
+        "estimated_tokens": 815,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 5.2.7.1."
       },
@@ -1195,15 +1219,15 @@
       {
         "name": "6.1.4.2.py",
         "url": "/downloads/code/repo/python/6.1.4.2.py",
-        "file_size_bytes": 4117,
-        "estimated_tokens": 1292,
+        "file_size_bytes": 4092,
+        "estimated_tokens": 1285,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 6.1.4.2."
       },
       {
         "name": "6.2.6.2.py",
         "url": "/downloads/code/repo/python/6.2.6.2.py",
-        "file_size_bytes": 1277,
+        "file_size_bytes": 1273,
         "estimated_tokens": 454,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 6.2.6.2."
@@ -1211,7 +1235,7 @@
       {
         "name": "6.3.5.2.py",
         "url": "/downloads/code/repo/python/6.3.5.2.py",
-        "file_size_bytes": 1176,
+        "file_size_bytes": 1172,
         "estimated_tokens": 422,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 6.3.5.2."
@@ -1227,16 +1251,16 @@
       {
         "name": "7.4.6.1.py",
         "url": "/downloads/code/repo/python/7.4.6.1.py",
-        "file_size_bytes": 2816,
-        "estimated_tokens": 1015,
+        "file_size_bytes": 2809,
+        "estimated_tokens": 1012,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 7.4.6.1."
       },
       {
         "name": "8.2.6.2.py",
         "url": "/downloads/code/repo/python/8.2.6.2.py",
-        "file_size_bytes": 3675,
-        "estimated_tokens": 1312,
+        "file_size_bytes": 3602,
+        "estimated_tokens": 1288,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 8.2.6.2."
       },
@@ -1251,8 +1275,8 @@
       {
         "name": "8.5.6.2.py",
         "url": "/downloads/code/repo/python/8.5.6.2.py",
-        "file_size_bytes": 2455,
-        "estimated_tokens": 883,
+        "file_size_bytes": 2448,
+        "estimated_tokens": 880,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 8.5.6.2."
       },
@@ -1260,7 +1284,7 @@
         "name": "8.5.7.1.py",
         "url": "/downloads/code/repo/python/8.5.7.1.py",
         "file_size_bytes": 3252,
-        "estimated_tokens": 1174,
+        "estimated_tokens": 1173,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 8.5.7.1."
       },
@@ -1275,7 +1299,7 @@
       {
         "name": "9.1.5.1.py",
         "url": "/downloads/code/repo/python/9.1.5.1.py",
-        "file_size_bytes": 1345,
+        "file_size_bytes": 1342,
         "estimated_tokens": 478,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 9.1.5.1."
@@ -1283,15 +1307,15 @@
       {
         "name": "9.2.5.2.py",
         "url": "/downloads/code/repo/python/9.2.5.2.py",
-        "file_size_bytes": 3377,
-        "estimated_tokens": 1212,
+        "file_size_bytes": 3341,
+        "estimated_tokens": 1201,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 9.2.5.2."
       },
       {
         "name": "9.5.2.2.py",
         "url": "/downloads/code/repo/python/9.5.2.2.py",
-        "file_size_bytes": 3941,
+        "file_size_bytes": 3937,
         "estimated_tokens": 1405,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 9.5.2.2."
@@ -1308,7 +1332,7 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 143616,
+      "file_size_bytes": 151212,
       "description": "Download the complete simulations repository bundle containing all 84 numerical derivation scripts in a single ZIP archive."
     }
   }

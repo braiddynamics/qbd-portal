@@ -8,10 +8,10 @@ def simulate_entropic_exclusion():
     
     Continuous Boltzmann model: ΔC = 1 nat per ribbon, T = ln 2.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("ENTROPIC SUPPRESSION OF EXOTIC BRAIDS")
     print("Boltzmann Weights vs. Ribbon Count (n)")
-    print("═" * 70)
+    print("=" * 70)
     
     T_vac = np.log(2)                                 # ≈ 0.693147
     suppression_per_ribbon = np.exp(-1 / T_vac)        # ≈ 0.236928

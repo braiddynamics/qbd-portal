@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Langevin Slow-Roll Parameter Audit
-# Subject:   Audits Langevin trajectory of density and tracks slow-roll parameters
-#            in Chapter 18.4.8 (Standalone Version).
-# Version:   1.0
-# -----------------------------------------------------------------------------
+# §18.4.8 — Langevin Slow-Roll Parameters
 
 import numpy as np
 import pandas as pd
@@ -20,6 +14,7 @@ def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
       epsilon = -dot_H / H^2
       eta = -dot_dot_rho / (H * dot_rho)
     """
+    np.random.seed(42)
     t_steps = int(t_max / dt)
     results = []
     
@@ -57,7 +52,7 @@ def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
         rho = rho_next
         
     # Calculate derivatives and slow-roll parameters numerically
-    # We use central differences for smooth derivatives
+    # Central differences for smooth derivatives
     for i in range(2, t_steps - 2):
         t_curr = traj_t[i]
         rho_curr = traj_rho[i]
@@ -67,7 +62,7 @@ def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
         ddot_rho = (traj_rho[i+1] - 2.0 * traj_rho[i] + traj_rho[i-1]) / (dt ** 2)
         
         # Hubble parameter: H = 3*rho - 1/6
-        # We cap H to remain in the positive slow-roll expansion regime
+        # Cap H to remain in the positive slow-roll expansion regime
         H = max(0.01, 3.0 * rho_curr + 0.05)
         dot_H = 3.0 * dot_rho
         
@@ -88,23 +83,23 @@ def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
             
     return results
 
-def run_slowroll_audit():
-    print("="*80)
-    print("QBD Langevin Slow-Roll Parameter Audit (Lemma A Verification)")
+def run_slowroll():
+    print("-" * 72)
+    print("§18.4.8 Langevin Slow-Roll Parameters")
     print("Simulating Stochastic Langevin Density Trajectory and Slow-Roll Bounds")
-    print("="*80)
+    print("-" * 72)
     
     results = run_langevin_slowroll()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print("The stochastic Langevin simulation confirms that during the slow-roll")
     print("growth phase, the empirical parameters remain positive and small:")
     print("  0 < ε < 0.025   and   0 < η < 0.015")
     print("This numerically validates the robust self-tuning slow-roll mechanism")
     print("of pre-geometric inflation without fine-tuned continuous potentials.")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_slowroll_audit()
+    run_slowroll()

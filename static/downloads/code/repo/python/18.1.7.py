@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Spontaneous Ignition and Symmetry-Breaking Audit
-# Subject:   Audits spontaneous loop nucleation and symmetry-breaking tunneling
-#            claims in Chapter 18.1.7 (Standalone Version).
-# Version:   1.1
-# -----------------------------------------------------------------------------
+# §18.1.7 — Spontaneous Loop Nucleation
 
 import random
 import numpy as np
@@ -138,14 +132,16 @@ def simulate_symmetry_breaking(G, trials=100):
         cycles_closed.append(count_directed_3_cycles_fast(G_trial))
     return np.mean(cycles_closed), np.std(cycles_closed)
 
-def run_ignition_audit():
+def run_ignition():
+    random.seed(42)
+    np.random.seed(42)
     # Sweep depths 2 to 7 to verify scaling parameters
     depths = [2, 3, 4, 5, 6, 7]
     
-    print("="*80)
-    print("Spontaneous Loop Nucleation Audit (Theorem 18.1.2 Verification)")
+    print("-" * 72)
+    print("§18.1.7 Spontaneous Loop Nucleation")
     print("Pre-Geometric Bipartite Stasis vs. Symmetry-Breaking Tunneling")
-    print("="*80)
+    print("-" * 72)
     
     results = []
     for d in depths:
@@ -177,7 +173,7 @@ def run_ignition_audit():
         
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_ignition_audit()
+    run_ignition()

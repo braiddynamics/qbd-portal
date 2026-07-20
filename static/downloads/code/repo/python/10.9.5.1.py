@@ -104,4 +104,4 @@ print(f"Unique measures: {len(hist)}")
 print(f"x distribution: {dict(hist)}")
 print(f"Success P (over 1000): {np.mean([estimate_period(measures[:i+1])==4 for i in range(1000)]):.2f}")
 
-print("Verification: P>0.75 confirms fault-tolerant Shor in noisy QBD.")
+print("Check: P>0.75 confirms fault-tolerant Shor under noise.")

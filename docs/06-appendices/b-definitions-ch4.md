@@ -2093,7 +2093,7 @@ The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mat
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):
-    """
+    r"""
     Takes an annotated graph T(G) = (G, \sigma) and returns a
     probability distribution over successor graphs \mathbb{P}(G_t+1).
     Constants T, mu, lambda_cat derived in the thermodynamic parameters section (§4.4).

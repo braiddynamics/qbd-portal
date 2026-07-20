@@ -6,7 +6,7 @@ def verify_cluster_decomposition_integration():
     print("\n--- INTEGRATION TEST: Cluster Decomposition (Correlation Decay) ---")
     
     # 1. SETUP: spatial Graph (1D Chain for simplicity)
-    # We simulate a massive scalar field on a discrete spatial slice.
+    # Simulate a massive scalar field on a discrete spatial slice.
     # The propagator G(x,y) is the inverse of the massive Laplacian (-D + m^2).
     L = 50
     m_mass = 0.5
@@ -25,7 +25,7 @@ def verify_cluster_decomposition_integration():
     propagator = inv(matrix).toarray()
     
     # 3. VERIFY: Exponential Decay
-    # We measure correlation from center (L/2) to edge
+    # Measure correlation from center (L/2) to edge
     center = L // 2
     correlations = propagator[center, center:]
     distances = np.arange(len(correlations))

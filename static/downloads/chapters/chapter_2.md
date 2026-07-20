@@ -453,15 +453,17 @@ The proof proceeds via Direct Construction, separating the generative capacity o
 │   └── 2.3.3.3 Diagram: Loop Hierarchy
 │
 ├── 2.3.4 Lemma: Principle of Unique Causality (PUC)
-│   ├── 2.3.4.1 Commentary: Pseudocode for PUC Check
-│   ├── 2.3.4.2 Proof: Principle of Unique Causality (PUC)
+│   ├── 2.3.4.1 Proof: Principle of Unique Causality (PUC)
+│   ├── 2.3.4.2 Commentary: Operational Implementation and No-Cloning
 │   └── 2.3.4.3 Diagram: Principle of Unique Causality
 │
-├── 2.3.5 Definition: Lexicographic Potential
-│   └── 2.3.5.1 Commentary: Descent to Simplicity
+├── 2.3.5 Lemma: Lexicographic Potential
+│   ├── 2.3.5.1 Proof: Lexicographic Potential
+│   └── 2.3.5.2 Commentary: Descent to Simplicity
 │
 ├── 2.3.6 Lemma: Well-Foundedness
-│   └── 2.3.6.1 Proof: Well-Foundedness
+│   ├── 2.3.6.1 Proof: Well-Foundedness
+│   └── 2.3.6.2 Commentary: Causal Well-Foundedness
 │
 └── 2.3.7 Proof: Geometric Constructibility
 ```
@@ -828,13 +830,16 @@ The proof proceeds by Direct Construction, defining a finite sequence of constru
 ├── 2.4.1.2 Diagram: Digestion of Geometry
 │
 ├── 2.4.2 Lemma: Confluence of the Constructor
-│   └── 2.4.2.1 Proof: Diamond Property
+│   ├── 2.4.2.1 Proof: Confluence of the Constructor
+│   └── 2.4.2.2 Commentary: Confluence Properties
 │
 ├── 2.4.3 Lemma: Chordlessness of Maximal Cycles
-│   └── 2.4.3.1 Proof: Chordlessness of Maximal Cycles
+│   ├── 2.4.3.1 Proof: Chordlessness of Maximal Cycles
+│   └── 2.4.3.2 Commentary: Chordless Cycles
 │
 ├── 2.4.4 Lemma: Reduction via Deletion
-│   └── 2.4.4.1 Proof: Reduction via Deletion
+│   ├── 2.4.4.1 Proof: Reduction via Deletion
+│   └── 2.4.4.2 Commentary: Reduction Properties
 │
 ├── 2.4.5 Lemma: Decrease in Parallel Updates
 │   └── 2.4.5.1 Proof: Decrease in Parallel Updates
@@ -1464,6 +1469,7 @@ print(df.to_markdown(index=False))
 |                 11 |        11 |         3 |            14 |
 |                 12 |        12 |         3 |            15 |
 
+**Conclusion:**
 The tabulated data establishes a linear correlation between the initial cycle length $k$ and the addition count ($Ops_{add} = k$). The deletion count stabilizes at a constant value ($Ops_{del} = 3$) for all topologies with $k \ge 7$. This finite scaling confirms that the algorithmic reduction complexity is proportional to the defect size $O(k)$, validating the termination logic of the proof.
 
 ---
@@ -1587,12 +1593,14 @@ The proof proceeds by Direct Construction, establishing logical orthogonality be
 ├── 2.5.1.2 Diagram: Independence Matrix
 │
 ├── 2.5.2 Lemma: Independence Case A
-│   └── 2.5.2.1 Proof: Independence Case A
+│   ├── 2.5.2.1 Proof: Independence Case A
+│   └── 2.5.2.2 Commentary: Local Independence A
 │
 ├── 2.5.3 Lemma: Independence Case B
-│   └── 2.5.3.1 Proof: Independence Case B
+│   ├── 2.5.3.1 Proof: Independence Case B
+│   └── 2.5.3.2 Commentary: Local Independence B
 │
-└── 2.5.4 Proof: Mutual Independence
+└── 2.5.4 Proof: Independence of Axioms 1 and 2
 ```
 
 ### 2.5.1.2 Diagram: Independence Matrix {#2.5.1.2}
@@ -1838,20 +1846,24 @@ The proof proceeds via Contradiction, assuming that local constraints alone suff
 │
 ├── 2.6.2 Lemma: Effective Influence
 │   ├── 2.6.2.1 Proof: Effective Influence
-│   └── 2.6.2.2 Commentary: Path Constraints
+│   └── 2.6.2.2 Commentary: Causal Mediation and Simultaneity Evasion
 │
 ├── 2.6.3 Lemma: Strict Timestamps
-│   └── 2.6.3.1 Proof: Strict Timestamps
+│   ├── 2.6.3.1 Proof: Strict Timestamps
+│   └── 2.6.3.2 Commentary: Timestamp Strictness
 │
 ├── 2.6.4 Lemma: Failure of Reflexivity
-│   └── 2.6.4.1 Proof: Failure of Reflexivity
+│   ├── 2.6.4.1 Proof: Failure of Reflexivity
+│   └── 2.6.4.2 Commentary: Non-Reflexive Causality
 │
 ├── 2.6.5 Lemma: Failure of Asymmetry
 │   ├── 2.6.5.1 Proof: Failure of Asymmetry
-│   └── 2.6.5.2 Diagram: Bowtie Paradox
+│   ├── 2.6.5.2 Commentary: Asymmetry Constraints
+│   └── 2.6.5.3 Diagram: Bowtie Paradox
 │
 ├── 2.6.6 Lemma: Causal Acyclicity vs. Spatial Triangulation
-│   └── 2.6.6.1 Proof: Causal Acyclicity vs. Spatial Triangulation
+│   ├── 2.6.6.1 Proof: Causal Acyclicity vs. Spatial Triangulation
+│   └── 2.6.6.2 Commentary: Causal and Spatial Interactions
 │
 └── 2.6.7 Proof: Inadequacy of Local Axioms
     ├── 2.6.7.1 Corollary: Global Constraint
@@ -2389,8 +2401,16 @@ The proof proceeds via Contradiction, assuming that global causal violations can
 │   ├── 2.7.4.1 Proof: Local PUC Approximation
 │   └── 2.7.4.2 Commentary: Cost of Certainty
 │
-└── 2.7.5 Proof: Thermodynamic Enforcement
-    └── 2.7.5.1 Commentary: Thermodynamic Wall
+├── 2.7.5 Lemma: Independence of Axiom 3
+│   ├── 2.7.5.1 Proof: Independence of Axiom 3
+│   └── 2.7.5.2 Commentary: Tripartite Foundation
+│
+├── 2.7.6 Proof: Thermodynamic Enforcement
+│   └── 2.7.6.1 Commentary: Thermodynamic Wall
+│
+├── 2.7.7 Validation: Lean 4 Core
+│
+└── 2.7.8 Commentary: Asymmetry as Algebraic Closure
 ```
 
 ---

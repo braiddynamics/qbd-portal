@@ -5,10 +5,10 @@ def simulate_torsional_strain(max_writhe=15):
     Measures marginal and cumulative geometric quanta (N3) for successive writhe units.
     Demonstrates quadratic scaling of total complexity with writhe.
     """
-    print("═" * 60)
+    print("=" * 60)
     print("SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING")
     print("Accumulated Geometric Quanta vs. Writhe (w)")
-    print("═" * 60)
+    print("=" * 60)
     
     print(f"{'Writhe (w)':<12} {'Marginal Cost':<15} {'Cumulative N3':<15}")
     print("-" * 58)

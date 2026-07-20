@@ -63,10 +63,10 @@ def simulate_random_order_closure(num_ensembles=500):
     return np.array(dimensions)
 
 if __name__ == "__main__":
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE")
     print("Robustness under Stochastic Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     dims = simulate_random_order_closure(num_ensembles=500)
 
@@ -87,8 +87,8 @@ if __name__ == "__main__":
     })
     print(df.to_string(index=False))
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
     else:
-        print("RESULT: Partial closure observed – check parameters.")
+        print("status: partial")

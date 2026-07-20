@@ -27,7 +27,7 @@ def graph_heat_kernel_trace(G, t, ell0):
     # Scale time by metric factor
     # Heat equation: du/dt = -L u. 
     # If spatial dx = ell0, then L_physical ~ L_graph / ell0^2
-    # So we compute exp(- t * L_graph / ell0^2)
+    # Compute exp(- t * L_graph / ell0^2)
     
     scaled_t = t / (ell0**2)
     

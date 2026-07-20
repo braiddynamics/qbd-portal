@@ -58,7 +58,7 @@ where the coefficient $c > 0$ is the **Specific Entropy per Event** determined b
 The proof proceeds via Direct Construction, partitioning the global configuration space into independent local volumes to establish a well-defined thermodynamic limit.
 
 ```text
-• 5.1.1 Theorem Extensive Entropy [by partition]
+• 5.1.1 Theorem Extensive Entropy  [by partition]
 │
 ├── 5.1.2 Lemma: Spatial Cluster Decomposition
 │   ├── 5.1.2.1 Proof: Spatial Cluster Decomposition
@@ -69,6 +69,7 @@ The proof proceeds via Direct Construction, partitioning the global configuratio
 │   └── 5.1.3.2 Commentary: Role of Acyclicity and Sparsity
 │
 └── 5.1.4 Proof: Extensive Entropy
+    └── 5.1.4.1 Calculation: Boundary Correction
 ```
 
 ### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
@@ -321,36 +322,36 @@ def boundary_fraction(N: int):
     side = int(np.sqrt(N))
     if side * side != N:
         raise ValueError("N must be a perfect square for a square toroidal grid.")
-    
+
     # Create toroidal 2D grid graph
     G = nx.grid_2d_graph(side, side, periodic=True)
     # Relabel nodes to linear indices 0..N-1
     mapping = {(i, j): i * side + j for i in range(side) for j in range(side)}
     G = nx.relabel_nodes(G, mapping)
-    
+
     total_edges = G.number_of_edges()
-    
+
     # Block size ≈ side // 4 (mimics correlation volume)
     block_side = max(2, side // 4)
     blocks_per_side = side // block_side
-    
+
     boundary_edges = 0
-    
+
     # Iterate over all edges and count those crossing block boundaries
     for u, v in G.edges():
         # Block coordinates of u and v
         block_u = (u // side // block_side, (u % side) // block_side)
         block_v = (v // side // block_side, (v % side) // block_side)
-        
+
         if block_u != block_v:
             boundary_edges += 1
-    
+
     # Each edge counted once (undirected graph)
     fraction = boundary_edges / total_edges if total_edges > 0 else 0.0
-    
+
     # Relative correction term (as in original)
     rel_correction = np.sqrt(N) * np.log(total_edges + 1) / (N * np.log(2) + 1e-10)
-    
+
     return {
         'N': N,
         'Boundary Edge Fraction': fraction,
@@ -363,12 +364,11 @@ results = [boundary_fraction(N) for N in sizes]
 
 df = pd.DataFrame(results)
 
-print("Subextensive Boundary Terms in 2D Toroidal Lattice")
 print("=" * 54)
 print(df.round(4).to_markdown(index=False, tablefmt="github"))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ======================================================
 |     N |   Boundary Edge Fraction |   Relative Correction |
@@ -384,6 +384,7 @@ print(df.round(4).to_markdown(index=False, tablefmt="github"))
 |  8100 |                   0.0556 |                0.1554 |
 | 10000 |                   0.04   |                0.1429 |
 
+**Conclusion:**
 The data confirms the hypothesis: the fraction of boundary edges drops from 50% at $N=100$ to merely 4% at $N=10,000$. This validates that for large systems, the vast majority of interactions are internal to the quasi-independent volumes. The vanishing boundary term justifies the additive approximation $S \approx \sum S_{local}$, confirming that the extensive bulk term dominates regardless of emergent dimension.
 
 ---
@@ -469,7 +470,7 @@ where the terms are defined as follows:
 The proof proceeds via Direct Construction, aggregating microscopic transition rates into a macroscopic continuum equation that governs structural density evolution.
 
 ```text
-• 5.2.2 Theorem Macroscopic Evolution [by construction]
+• 5.2.2 Theorem Macroscopic Evolution  [by construction]
 │
 ├── 5.2.3 Lemma: Vacuum Permittivity
 │   ├── 5.2.3.1 Proof: Vacuum Permittivity
@@ -727,7 +728,7 @@ print(f"Measured Exponent:   {exponent:.4f} ± {std_err:.4f}")
 print(f"Theoretical Value:   2.0000")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Number of Nodes (N): 1000
@@ -736,6 +737,7 @@ Measured Exponent:   2.0008 ± 0.0022
 Theoretical Value:   2.0000
 ```
 
+**Conclusion:**
 The simulation yields a scaling exponent of $\approx 2.0008$, which is in close agreement with the theoretical prediction of 2. Crucially, the removal of internal closed paths eliminates the linear bias, confirming that the density of new opportunities for geometric growth arises purely from the quadratic interaction of existing structures. This validates the $9\rho^2$ autocatalytic term in the Master Equation.
 
 ### 5.2.4.3 Commentary: Nonlinear Dynamics {#5.2.4.3}
@@ -900,7 +902,7 @@ print(f"Sample Size (N): {N} | Degree Limit (k): 3")
 print(f"Decay Constant (B): {B_fit:.4f}")
 print(f"Fit Amplitude (A):  {A_fit:.4f}")
 ```
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Sample Size (N): 500 | Degree Limit (k): 3
@@ -908,6 +910,7 @@ Decay Constant (B): 3.5788
 Fit Amplitude (A):  2.6981
 ```
 
+**Conclusion:**
 The simulation yields a clear exponential decay profile with a decay constant $B \approx 3.6$. This result empirically validates the Steric Hindrance model: as the graph fills, the probability of finding two compatible ports decreases exponentially rather than linearly. The high decay constant confirms that degree saturation acts as a potent frictional force, validating the suppression term $e^{-6\mu\rho}$ in the Master Equation.
 
 ### 5.2.5.3 Commentary: Saturation Mechanism {#5.2.5.3}
@@ -1006,11 +1009,11 @@ np.random.seed(42)
 
 def measure_deletion_flux(N, max_density_cycles=100):
     densities = []
-    flux_rates = [] 
-    
+    flux_rates = []
+
     # Simulation Rule: P_delete = P_base * (1 + lambda * local_density)
     lambda_sim = 0.5  # Catalytic coefficient (example value)
-    
+
     for cycles in range(10, max_density_cycles, 5):
         # Create Graph
         G = nx.Graph()
@@ -1018,30 +1021,30 @@ def measure_deletion_flux(N, max_density_cycles=100):
         for _ in range(cycles):
             triad = random.sample(range(N), 3)
             nx.add_cycle(G, triad)
-            
+
         rho = cycles / N
-        
+
         # Measure Deletion Flux
         deleted_count = 0
         edges = list(G.edges())
         if not edges:
             continue
-        
+
         for u, v in edges:
             # Local Stress Metric (Average Degree in Neighborhood)
-            k_local = (G.degree[u] + G.degree[v]) / 4.0 
+            k_local = (G.degree[u] + G.degree[v]) / 4.0
             p_base = 0.05
             p_stress = p_base * (lambda_sim * k_local)
-            
+
             if random.random() < (p_base + p_stress):
                 deleted_count += 1
-        
+
         # Normalized Flux = Deleted / Total Edges
-        normalized_flux = deleted_count / len(edges) 
-        
+        normalized_flux = deleted_count / len(edges)
+
         densities.append(rho)
         flux_rates.append(normalized_flux)
-        
+
     return densities, flux_rates
 
 # Simulation parameters
@@ -1056,17 +1059,18 @@ popt, pcov = curve_fit(linear_fit, densities, normalized_rates)
 intercept, slope = popt
 std_err_intercept, std_err_slope = np.sqrt(np.diag(pcov))
 
-# Formatted console output
-print(f"Base Rate (Intercept): {intercept:.4f} ± {std_err_intercept:.4f}")
-print(f"Catalytic Coeff (Slope): {slope:.4f} ± {std_err_slope:.4f}")
+# Formatted console output (point estimates; std err available via pcov)
+print(f"Base Rate (Intercept): {intercept:.4f}")
+print(f"Catalytic Coeff (Slope): {slope:.4f}")
 ```
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Base Rate (Intercept): 0.0643
 Catalytic Coeff (Slope): 0.0904
 ```
 
+**Conclusion:**
 The simulation yields a positive slope ($0.0904$) for the normalized decay rate. This confirms that the total deletion flux scales as $J \propto A\rho + B\rho^2$. The existence of this quadratic term validates the Catalytic Stress model: as the universe densifies, it becomes increasingly unstable, providing a necessary counter-force to the autocatalytic growth of geometry.
 
 ---
@@ -1188,7 +1192,7 @@ jacobian = d_creation - d_deletion
 
 # Formatted console output
 print("=============================")
-print("QBD Master Equation Verification")
+print("§5.2.7.1 Master Equation")
 print("=============================")
 print(f"Constants:")
 print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.4f}")
@@ -1207,11 +1211,11 @@ print(f"  Jacobian J:           {jacobian:.4f}")
 print(f"  Status:               {'Stable Attractor' if jacobian < 0 else 'Unstable'}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 =============================
-QBD Master Equation Verification
+§5.2.7.1 Master Equation
 =============================
 Constants:
   Λ (Vacuum Drive):    0.0156
@@ -1230,6 +1234,7 @@ Stability Analysis:
   Status:               Stable Attractor
 ```
 
+**Conclusion:**
 The solver identifies a stable fixed point at $\rho^* \approx 0.037$. At this density, the creation flux ($0.02555$) exactly balances the deletion flux, resulting in a net rate of change effectively zero ($-3.47 \times 10^{-18}$). The negative Jacobian ($-0.3331$) confirms that this state is a stable attractor. This result verifies that the physical vacuum state emerges naturally from the interplay of entropic release and Gaussian stress damping.
 
 ---
@@ -1839,11 +1844,12 @@ Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolu
 The proof proceeds by limits, establishing that the discrete poset relations converge to a continuous Lorentzian geometry under the causal Gromov-Hausdorff topology.
 
 ```text
-• 5.5.1 Theorem Geometric Well-Posedness [by limits]
+• 5.5.1 Theorem Geometric Well-Posedness  [by limits]
 │
 ├── 5.5.2 Lemma: Strict Locality
 │   ├── 5.5.2.1 Proof: Strict Locality
-│   └── 5.5.2.2 Commentary: Causal Horizon
+│   ├── 5.5.2.2 Commentary: Causal Horizon
+│   └── 5.5.2.3 Diagram: Causal Horizon Restriction
 │
 ├── 5.5.3 Lemma: Bounded Degree
 │   ├── 5.5.3.1 Proof: Bounded Degree

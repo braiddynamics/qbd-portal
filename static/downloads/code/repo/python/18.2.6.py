@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Discrete Friedmann Scaling Audit
-# Subject:   Audits discrete Friedmann scaling claims in Chapter 18.2.6
-#            (Standalone 3D Grid Version).
-# Version:   1.3
-# -----------------------------------------------------------------------------
+# §18.2.6 — Discrete Friedmann Scaling
 
 import numpy as np
 import pandas as pd
@@ -20,7 +14,7 @@ def generate_expanding_3d_lattice_with_cycles():
     """
     results = []
     
-    # We sweep 3D grid dimensions to represent expansion
+    # Sweep 3D grid dimensions to represent expansion
     grid_sizes = [3, 4, 5, 6, 7, 8, 9]
     
     for idx, dim in enumerate(grid_sizes):
@@ -30,10 +24,10 @@ def generate_expanding_3d_lattice_with_cycles():
         
         # 2. Add diagonal edges within each unit cube to create 3-cycles (triangles)
         # This models spontaneous nucleation of geometric cycles in 3D
-        # For a 3D coordinate (x,y,z), we add diagonals in the xy, yz, and xz planes
+        # For a 3D coordinate (x,y,z), add diagonals in the xy, yz, and xz planes
         nodes = list(G.nodes())
         
-        # We can reconstruct coordinates to add diagonals systematically
+        # Reconstruct coordinates to add diagonals systematically
         coord_map = {}
         node_id = 0
         for x in range(dim):
@@ -98,22 +92,22 @@ def generate_expanding_3d_lattice_with_cycles():
         
     return results
 
-def run_friedmann_audit():
-    print("="*80)
-    print("QBD Discrete Friedmann Scaling Audit (Theorem 18.2.2 Verification)")
+def run_friedmann():
+    print("-" * 72)
+    print("§18.2.6 Discrete Friedmann Scaling")
     print("Verifying 3D Metric Reconstruction and Volume-Complexity Link")
-    print("="*80)
+    print("-" * 72)
     
     results = generate_expanding_3d_lattice_with_cycles()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print("In 3 spatial dimensions, the ratio of Reconstructed Geodesic Length L")
     print("to Scale Factor a(t) remains strictly constant (Ratio L/a ~ 1.34) across")
     print("all volume scales, with zero scaling drift in the thermodynamic limit.")
     print("This perfectly validates the analytical claim: L(t) proportional to N3(t)^(1/3).")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_friedmann_audit()
+    run_friedmann()

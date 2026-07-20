@@ -14,10 +14,10 @@ def verify_su5_closure_robustness(num_ensembles=500):
     Iteratively adds commutators if they increase linear span (SVD rank).
     Confirms deterministic full closure (dim=24) across stochastic orders.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE")
     print("Robustness under Random Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     n = 5
     elements = []
@@ -79,14 +79,14 @@ def verify_su5_closure_robustness(num_ensembles=500):
     avg_dim = np.mean(dimensions)
     full_prob = np.mean(np.array(dimensions) == 24)
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     print(f"Ensembles simulated : {num_ensembles}")
     print(f"Average final dim   : {avg_dim:.2f}")
     print(f"Full closure prob   : {full_prob:.3f} ({full_prob*100:.1f}%)")
-    print("─" * 70)
+    print("-" * 70)
 
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
 
 if __name__ == "__main__":
     verify_su5_closure_robustness(num_ensembles=500)
