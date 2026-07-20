@@ -30,7 +30,7 @@ def compute_fiedler_value(G, ell0):
     degrees = np.array(A.sum(axis=1)).flatten()
     
     # Construct Unnormalized Laplacian L = D - A
-    # We use unnormalized because on a regular grid D is constant (2d),
+    # Unnormalized form is used because on a regular grid D is constant (2d),
     # matching the standard finite difference Laplacian.
     L_unnorm = diags(degrees) - A
     

@@ -99,7 +99,7 @@ def protocol_a_exact_mechanism():
     nodes = [0, 1, 2]
     # Fixed Distance Metric (Undirected Shortest Path)
     # 0-1 (1), 1-2 (1), 0-2 (2 if chain, 1 if cycle? No, metric is background fixed for variation)
-    # To check the tensor G_ab on edge (0,1), we use the underlying metric d(0,2)=2.
+    # To check the tensor G_ab on edge (0,1), use the underlying metric d(0,2)=2.
     d_mat = {
         0: {0:0, 1:1, 2:2},
         1: {0:1, 1:0, 2:1},
@@ -182,7 +182,7 @@ def protocol_b_affine_regression(G_vac_theory):
 
 if __name__ == "__main__":
     print("=================================================================")
-    print("   QBD DISCRETE FIELD EQUATION VERIFICATION SUITE")
+    print("   §13.2.6.1 Discrete Field Equation")
     print("=================================================================")
     
     # Run Protocol A

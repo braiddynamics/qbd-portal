@@ -1,4 +1,4 @@
---- QBD Discrete Bianchi Identity Verification ---
+--- §13.3.6.1 Discrete Bianchi Identity ---
 Objective: Check divergence-free condition ∇·G = 0 for conserved fluxes
 =================================================================
 N (Nodes)    | Mean Divergence (Error)   | Max Divergence      

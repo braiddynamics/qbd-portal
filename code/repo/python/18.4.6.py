@@ -1,41 +1,21 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Spectral Index Red-Tilt Audit
-# Subject:   Audits primordial fluctuations and spectral red-tilt in Chapter 18.4.6
-#            (Standalone Version).
-# Version:   1.3
-# -----------------------------------------------------------------------------
+# §18.4.6 — Power Spectrum Red-Tilt
 
 import numpy as np
 import pandas as pd
 
 def simulate_power_spectrum_horizon_exit(n_modes=10):
-    """
-    Simulates the freeze-out of primordial perturbation modes at comoving horizon exit.
-    
-    The comoving scale is k = a * H.
-    The power spectrum of density perturbations freezes out as:
-      P_R(k) = [ H^4 * C(rho) / (dot_rho)^2 ] at horizon exit k = a*H
-    
-    During the slow-roll epoch, the Hubble parameter H is nearly constant (slowly
-    decaying as epsilon = -dot_H/H^2 ≈ 0.02), whereas the steric friction factor
-    dampens stochastic update noise exponentially as density increases:
-      C(rho) = exp(-6*mu*rho)
-    
-    Earlier-exiting modes (smaller k) exit at lower density (higher update noise).
-    Later-exiting modes (larger k) exit at higher density (steric friction suppresses noise).
-    """
+    """§18.4.6: freeze-out of P_R(k) at horizon exit k=aH under slow-roll H and steric friction C(rho)."""
     results = []
     
-    # We sweep comoving scales k from small to large (large to small physical scales)
+    # Sweep comoving scales k from small to large (large to small physical scales)
     k_scales = np.logspace(1, 4, n_modes)
     
     # Physical vacuum parameter
     mu = 0.399
     
-    # We map comoving scale k to the proper time of horizon exit: k = a(t) * H
+    # Map comoving scale k to the proper time of horizon exit: k = a(t) * H
     # Since proper time scales logarithmically with comoving scale: t_exit = ln(k) / H
-    # We set a realistic slow-roll Hubble expansion rate: H ≈ 0.125
+    # Slow-roll Hubble expansion rate: H ≈ 0.125
     H_avg = 0.125
     t_exit_arr = np.log(k_scales) / H_avg
     
@@ -86,23 +66,23 @@ def simulate_power_spectrum_horizon_exit(n_modes=10):
     
     return results, n_s
 
-def run_spectral_audit():
-    print("="*80)
-    print("QBD Spectral Index Red-Tilt Audit (Theorem 18.4.1 Verification)")
+def run_spectral():
+    print("-" * 72)
+    print("§18.4.6 Power Spectrum Red-Tilt")
     print("Verifying Steric Noise Suppression at Comoving Horizon Exit")
-    print("="*80)
+    print("-" * 72)
     
     results, n_s = simulate_power_spectrum_horizon_exit(n_modes=10)
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print(f"Fitted Spectral Index n_s: {n_s:.4f}")
     print(f"Deviation from Scale Invariance (1 - n_s): {1.0 - n_s:.4f}")
     print("This perfectly confirms the analytical claim of Theorem 18.4.1:")
     print("the primordial perturbations exhibit a robust red tilt (n_s ~ 0.96) due to")
     print("the slow-roll Hubble decay and exponential steric noise damping.")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_spectral_audit()
+    run_spectral()

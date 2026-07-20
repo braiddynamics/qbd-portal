@@ -13,7 +13,7 @@ def w1_linprog(mu_source, mu_target, dist_dict, nodes):
     idx = 0
     
     # 1. Construct Cost Vector
-    # If distance is infinite, we assign a finite proxy but restrict flow to 0 later.
+    # Infinite distance: assign a finite proxy; restrict flow to 0 later.
     for i, x in enumerate(nodes):
         for j, y in enumerate(nodes):
             d = dist_dict.get((x, y), np.inf)

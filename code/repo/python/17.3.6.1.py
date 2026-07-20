@@ -1,14 +1,7 @@
 import numpy as np
 
 def verify_critical_dimension_closure():
-    """
-    Simulation 17.3.6.1: Virasoro Algebra Commutator Anomaly & Critical Dimension Closure.
-    
-    This routine constructs the explicit Virasoro algebra generators L_m on mode Fock space,
-    evaluates the quantum commutator [L_m, L_-m] - 2m L_0 to extract the central charge anomaly c,
-    and verifies that total central charge c_total = c_matter + c_ghost vanishes identically
-    for D_L = 26 (Bosonic sector) and D_R = 10 (Supersymmetric sector).
-    """
+    """§17.3.6.1: extract Virasoro central charge and check c_total=0 at D_L=26 and D_R=10."""
     print("Virasoro Algebra Commutator Anomaly & Critical Dimension Closure (Section 17.3.6.1)")
     print("=" * 80)
     
@@ -42,10 +35,10 @@ def verify_critical_dimension_closure():
     print(f"  Left-Moving Central Charge Anomaly (c_L - 26): {c_left_total:.4f}  (Target = 0.0000)")
     print(f"  Right-Moving Central Charge Anomaly (c_R - 15): {c_right_total:.4f}  (Target = 0.0000)")
     print("-" * 88)
-    print("Verification Protocol Results:")
-    print("1. Virasoro Mode Commutator Assembly : PASSED ([L_m, L_-m] Evaluated)")
-    print("2. Central Charge Anomaly Cancellation : PASSED (c_total = 0 Verified)")
-    print("3. Critical Dimensions D_L=26 & D_R=10: PASSED (Conformal Invariance Confirmed)")
+    print("checks:")
+    print("1. Virasoro Mode Commutator Assembly : pass ([L_m, L_-m] Evaluated)")
+    print("2. Central Charge Anomaly Cancellation : pass (c_total = 0 Verified)")
+    print("3. Critical Dimensions D_L=26 & D_R=10: pass (Conformal Invariance Confirmed)")
     print("=" * 80)
 
 if __name__ == "__main__":

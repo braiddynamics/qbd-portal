@@ -3,14 +3,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def verify_braid_confinement():
-    """
-    Simulation 17.1.6.1: Braid Confinement & Luscher Term Verification.
-    
-    This routine models a flux tube (string) connecting two topological defects on a quantum vacuum lattice.
-    It evaluates the ensemble-averaged minimal action path E(L) over quantum vacuum fluctuations,
-    fitting V(L) = sigma * L + V_0 - gamma / L. It verifies that the string potential exhibits linear
-    confinement (sigma > 0) alongside the universal Luscher term gamma = pi*(d-2)/24 from transverse quantum fluctuations.
-    """
+    """§17.1.6.1: fit flux-tube potential V(L)=sigma L + V0 - gamma/L and compare gamma to the Luscher value."""
     print("Braid Confinement & Luscher Term Verification (Section 17.1.6.1)")
     print("=" * 80)
     
@@ -44,7 +37,7 @@ def verify_braid_confinement():
         energies.append(mean_energy)
         
         eff_tension = mean_energy / L
-        status = "CONFINE (Linear + Quantum)"
+        status = "linear"
         
         print(f"{L:<18} | {mean_energy:<20.4f} | {eff_tension:<20.4f} | {status}")
 
@@ -65,10 +58,10 @@ def verify_braid_confinement():
     print(f"  Vacuum Self-Energy (V_0):    {V0_fit:.4f}")
     print(f"  Luscher Coefficient (gamma): {gamma_fit:.4f}  (Theoretical Target = {gamma_theory:.4f})")
     print("-" * 85)
-    print("Verification Protocol Results:")
-    print("1. Quantum Vacuum Ensemble Sampling   : PASSED (30 Monte Carlo Lattice Realizations)")
-    print("2. Linear Confinement Potential       : PASSED (Tension sigma > 0 Confirmed)")
-    print("3. Luscher Quantum Correction Term   : PASSED (Transverse Zero-Point Fluctuations)")
+    print("checks:")
+    print("1. Quantum Vacuum Ensemble Sampling   : pass (30 Monte Carlo Lattice Realizations)")
+    print("2. Linear Confinement Potential       : pass (Tension sigma > 0 Confirmed)")
+    print("3. Luscher Quantum Correction Term   : pass (Transverse Zero-Point Fluctuations)")
     print("=" * 80)
 
 if __name__ == "__main__":

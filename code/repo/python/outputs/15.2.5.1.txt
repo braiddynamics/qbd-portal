@@ -2,14 +2,14 @@ CHSH Quantum Violation & Detector Angle Optimization (Section 15.2.5.1)
 ================================================================================
 Entanglement (phi)   | Entanglement S_vN    | Optimal CHSH Score (S_max)   | Status
 -------------------------------------------------------------------------------------
-0.0 deg              | 0.0000               | 2.0000                       | PASSED (Classical Bound, S = 2.0000)
-15.0 deg             | 0.3546               | 2.2361                       | PASSED (Quantum Violation, S = 2.2361)
-22.5 deg             | 0.6009               | 2.4495                       | PASSED (Quantum Violation, S = 2.4495)
-30.0 deg             | 0.8113               | 2.6458                       | PASSED (Quantum Violation, S = 2.6458)
-45.0 deg             | 1.0000               | 2.8284                       | PASSED (Quantum Violation, S = 2.8284)
+0.0 deg              | 0.0000               | 2.0000                       | pass (Classical Bound, S = 2.0000)
+15.0 deg             | 0.3546               | 2.2361                       | pass (Quantum Violation, S = 2.2361)
+22.5 deg             | 0.6009               | 2.4495                       | pass (Quantum Violation, S = 2.4495)
+30.0 deg             | 0.8113               | 2.6458                       | pass (Quantum Violation, S = 2.6458)
+45.0 deg             | 1.0000               | 2.8284                       | pass (Quantum Violation, S = 2.8284)
 -------------------------------------------------------------------------------------
-Verification Protocol Results:
-1. Angular Parameter Optimization     : PASSED (BFGS Minima Converged)
-2. Classical Local Bound Verification : PASSED (Unentangled S_max = 2.0000)
-3. Tsirelson Bound Saturation         : PASSED (Bell State S_max = 2.8284)
+checks:
+1. Angular Parameter Optimization     : pass (BFGS Minima Converged)
+2. Classical Local Bound Verification : pass (Unentangled S_max = 2.0000)
+3. Tsirelson Bound Saturation         : pass (Bell State S_max = 2.8284)
 ================================================================================

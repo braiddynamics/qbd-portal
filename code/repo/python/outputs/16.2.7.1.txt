@@ -15,8 +15,8 @@ Lattice Geometry & Microstate Counting Analysis:
   Entropy Scaling Exponent (d_ent): 1.9467  (Expected ~ 2.0)
   Bekenstein Coeff (S / A):        0.2500  (Exact Target = 0.2500)
 -------------------------------------------------------------------------------------
-Verification Protocol Results:
-1. Trapped Plaquette Cycle Counting  : PASSED (N_cycles Identified)
-2. Microstate Degeneracy Entropy      : PASSED (S = N * ln 2)
-3. Bekenstein Bound Saturation        : PASSED (S/A = 1/(4 ell_P^2) = 0.2500)
+checks:
+1. Trapped Plaquette Cycle Counting  : pass (N_cycles Identified)
+2. Microstate Degeneracy Entropy      : pass (S = N * ln 2)
+3. Bekenstein Bound Saturation        : pass (S/A = 1/(4 ell_P^2) = 0.2500)
 =====================================================================================

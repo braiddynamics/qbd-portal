@@ -35,8 +35,8 @@ Fit Results (chi = 8):
   Fitted Central Charge (c_eff): 9.0000  (Theoretical MERA Target = 9.0000)
   Geometric Offset (k):         4.1589
 ---------------------------------------------------------------------------
-Verification Protocol Results:
-1. Min-Cut Network Optimization       : PASSED (Edmonds-Karp Max-Flow Converged)
-2. Bond Dimension Scaling (ln chi)    : PASSED (Exact Proportionality Verified)
-3. Holographic Central Charge Scaling : PASSED (c_eff ~ log2(chi))
+checks:
+1. Min-Cut Network Optimization       : pass (Edmonds-Karp Max-Flow Converged)
+2. Bond Dimension Scaling (ln chi)    : pass (Exact Proportionality Verified)
+3. Holographic Central Charge Scaling : pass (c_eff ~ log2(chi))
 ===========================================================================

@@ -1,5 +1,5 @@
 =================================================================
-   QBD DISCRETE FIELD EQUATION VERIFICATION SUITE
+   §13.2.6.1 Discrete Field Equation
 =================================================================
 Protocol A: Exact Mechanism (3-Node Topology Change)
 -----------------------------------------------------------------

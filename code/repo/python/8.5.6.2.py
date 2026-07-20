@@ -1,7 +1,7 @@
 import pandas as pd
 
 def verify_su2_local_dof():
-    print("--- QBD SU(2) Local State Space Verification ---")
+    print("--- §8.5.6.2 SU(2) Local State Space ---")
     print("Objective: Enumerate valid interaction channels on a single 3-cycle quantum.")
     
     # 1. Define the Geometric Quantum

@@ -1,4 +1,4 @@
---- QBD Lapse Function Convergence Verification (Poisson-Shot Noise) ---
+--- §14.1.3.2 Lapse Function Convergence (Poisson-Shot Noise) ---
 Metric               | Raw Discrete    | Smoothed        | Reduction Factor
 ----------------------------------------------------------------------
 L2 Norm (Value)      | 0.013411        | 0.004940        | 2.7x

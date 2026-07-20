@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Flatness Attractor and Jacobian Stability Audit
-# Subject:   Audits spatial flatness attractor eigenvalue in Chapter 18.5.8
-#            (Standalone Version).
-# Version:   1.0
-# -----------------------------------------------------------------------------
+# §18.5.8 — Flatness Attractor Stability
 
 import numpy as np
 import pandas as pd
@@ -50,23 +44,23 @@ def run_flatness_stabilization(initial_curvatures=[-0.5, -0.2, 0.2, 0.5], t_max=
         
     return results, J
 
-def run_flatness_audit():
-    print("="*80)
-    print("QBD Flatness Attractor Audit (Theorem 18.5.1 Verification)")
+def run_flatness():
+    print("-" * 72)
+    print("§18.5.8 Flatness Attractor Stability")
     print("Verifying Jacobian Linearization and Curvature Relaxation")
-    print("="*80)
+    print("-" * 72)
     
     results, J = run_flatness_stabilization()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print(f"Calculated Jacobian Eigenvalue J: {J:.5f}")
     print("Regardless of the initial spatial curvature (positive or negative),")
     print("the negative feedback of the Master Equation dampens the perturbation.")
     print("Over 60 ticks of logical proper time, the spatial curvature is suppressed")
     print("by a factor of 2.2e-9 (e^-20), driving the universe to perfect flatness.")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_flatness_audit()
+    run_flatness()

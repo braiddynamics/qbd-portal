@@ -2,7 +2,7 @@ import numpy as np
 import networkx as nx
 
 def verify_bianchi_identity():
-    print("--- QBD Discrete Bianchi Identity Verification ---")
+    print("--- §13.3.6.1 Discrete Bianchi Identity ---")
     print("Objective: Check divergence-free condition ∇·G = 0 for conserved fluxes")
     print("=" * 65)
 
@@ -18,8 +18,8 @@ def verify_bianchi_identity():
         G = nx.random_regular_graph(k, N, seed=42)
         
         # 2. Generate Conserved Flux T_ab (Simulating Equilibrium)
-        # To strictly satisfy sum_b T_ab = 0, we treat edges as flow pipes.
-        # We assign random cycle flows which are inherently divergence-free.
+        # To strictly satisfy sum_b T_ab = 0, treat edges as flow pipes.
+        # Random cycle flows are inherently divergence-free.
         T_matrix = np.zeros((N, N))
         
         # Add random cycle flows

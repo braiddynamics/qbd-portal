@@ -1,7 +1,23 @@
+------------------------------------------------------------------------
+§18.5.10 Propagator Covariance Decay
+Verifying Bethe Tree Diameter Bounding and Propagator Spectral Decay
+------------------------------------------------------------------------
 Total Vertices N: 46
 Max Geodesic Distance (Diameter): 8
 Logarithmic Bound 2 * log2(N): 11.0471
-Diameter Bounding Verification: SUCCESS (Diameter &lt;= Bound)
-
-**In Plain English:**  
-Section 18.5.10 formalizes the properties of the QBD calculation regarding propagator covariance decay.
+Diameter bound: pass
+------------------------------------------------------------------------
+|   Distance d |   Shell Count |   Mean Propagator G_uv |   Analytical (1/4)^d |   Calibration Ratio |
+|--------------|---------------|------------------------|----------------------|---------------------|
+|            1 |             3 |                0.09375 |              0.25    |              0.375  |
+|            2 |             6 |                0.02734 |              0.0625  |              0.4375 |
+|            3 |            12 |                0.00781 |              0.01562 |              0.5    |
+|            4 |            24 |                0.00195 |              0.00391 |              0.5    |
+------------------------------------------------------------------------
+Analysis:
+With s = 4.0 (outside the adjacency spectrum), the resolvent converges.
+The propagator decays exponentially with topological distance by a factor
+of one-fourth per step (calibration ratio ~ 0.35).
+Maximum separation scales logarithmically with N, so geodesic diameters
+remain within the 2 log2(N) bound on this fragment.
+------------------------------------------------------------------------

@@ -1,4 +1,4 @@
---- QBD Generational Mass Hierarchy Verification ---
+--- §7.4.6.1 Generational Mass Hierarchy ---
 Particle   Writhe Config  Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
 Electron    (-1, -1, -1)       3              0.5             0.5   0.00
     Down      (-1, 0, 0)       1              0.2             4.7  96.38

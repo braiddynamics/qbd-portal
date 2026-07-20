@@ -1,4 +1,4 @@
---- QBD Gauge Coupling (g) Consistency Check ---
+--- §8.5.7.1 Gauge Coupling (g) Consistency ---
 METRIC                    | VALUE      | NOTES
 -----------------------------------------------------------------
 Alpha_topo                | 0.1733     | ln(2)/4

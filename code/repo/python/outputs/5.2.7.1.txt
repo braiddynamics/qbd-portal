@@ -1,5 +1,5 @@
 =============================
-QBD Master Equation Verification
+§5.2.7.1 Master Equation
 =============================
 Constants:
   Λ (Vacuum Drive):    0.0156

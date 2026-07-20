@@ -1,6 +1,6 @@
 SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES
 Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
-════════════════════════════════════════════════════════════
+============================================================
 
 Physical Parameters:
   Vacuum Drive (Λ)      : 0.0156

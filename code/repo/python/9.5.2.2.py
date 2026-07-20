@@ -9,10 +9,10 @@ def verify_proton_decay_suppression():
     This calculation quantifies the shortfall and demonstrates the requirement
     for additional non-perturbative (topological) suppression.
     """
-    print("═" * 78)
+    print("=" * 78)
     print("PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS")
     print("Quantifying the Shortfall in Minimal SU(5) Predictions")
-    print("═" * 78)
+    print("=" * 78)
 
     # Physical constants and benchmarks
     alpha_gut = 1 / 42.0                  # Typical GUT coupling

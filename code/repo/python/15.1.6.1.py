@@ -2,15 +2,7 @@ import networkx as nx
 import numpy as np
 
 def verify_distance_gap():
-    """
-    Simulation 15.1.6.1: Bi-Metric Distance Gap & EPR Conductance Verification.
-    
-    This routine models an emergent 2D spatial manifold M (L x L lattice) with spatial metric d_geo,
-    and introduces an EPR entanglement bridge network connecting antipodal regions A and B with
-    variable stabilizer bond count k in {1, 2, 3, 4, 5}. It evaluates the topological graph metric d_topo
-    and spectral Laplacian effective conductance G_eff(A, B), proving that while d_geo scales with spatial
-    extent L, d_topo = 1 remains invariant and G_eff scales linearly with mutual entanglement entropy S(A:B).
-    """
+    """§15.1.6.1: compare spatial geodesic d_geo, topological d_topo, and EPR conductance G_eff vs grid size and bond count k."""
     print("Bi-Metric Distance Gap & EPR Conductance Verification (Section 15.1.6.1)")
     print("=" * 80)
     
@@ -51,10 +43,10 @@ def verify_distance_gap():
         print(f"{f'{L}x{L}':<18} | {d_geo:<15} | {d_topo:<20} | {k_bonds:<15} | {G_eff:<20.4f}")
 
     print("-" * 88)
-    print("Verification Protocol Results:")
-    print("1. Spatial Geodesic Metric (d_geo)    : PASSED (Scales linearly with grid extent L)")
-    print("2. Topological Causal Metric (d_topo) : PASSED (Invariantly bounded d_topo = 1)")
-    print("3. EPR Information Throughput (G_eff): PASSED (G_eff grows with stabilizer bonds k)")
+    print("checks:")
+    print("1. Spatial Geodesic Metric (d_geo)    : pass (Scales linearly with grid extent L)")
+    print("2. Topological Causal Metric (d_topo) : pass (Invariantly bounded d_topo = 1)")
+    print("3. EPR Information Throughput (G_eff): pass (G_eff grows with stabilizer bonds k)")
     print("=" * 80)
 
 if __name__ == "__main__":

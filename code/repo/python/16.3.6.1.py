@@ -1,14 +1,7 @@
 import numpy as np
 
 def run_entanglement_wedge_reconstruction():
-    """
-    Simulation 16.3.6.1: Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction.
-    
-    This routine evaluates the Hamilton-Kabat-Lifschytz-Lowe (HKLL) operator reconstruction kernel
-    and Quantum Error-Correcting Code (QECC) protection threshold on a discrete boundary CFT_2.
-    It evaluates bulk operator reconstruction fidelity F(A) for varying subregion fractions f of boundary A,
-    verifying that F(A) = 1.000000 if and only if subregion A covers the Ryu-Takayanagi Entanglement Wedge.
-    """
+    """§16.3.6.1: HKLL reconstruction fidelity F(A) vs boundary fraction; pass inside the entanglement wedge."""
     print("Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction (Section 16.3.6.1)")
     print("=" * 80)
     
@@ -53,19 +46,19 @@ def run_entanglement_wedge_reconstruction():
             
             if inside_wedge:
                 fidelity = 1.000000
-                status = "PASSED (QECC Protected)"
+                status = "pass (QECC Protected)"
             else:
                 # Outside wedge: Partial code recovery capacity capped by subregion size ratio
                 fidelity = float(np.sin(np.pi * frac / (2.0 * f_RT_threshold))**2)
-                status = "FAILED (Outside Wedge)"
+                status = "fail (Outside Wedge)"
                 
             print(f"{z:<14.2f} | {frac:<18.2f} | {f_RT_threshold:<14.4f} | {str(inside_wedge):<14} | {fidelity:<14.6f} | {status}")
 
     print("-" * 90)
-    print("Verification Protocol Results:")
-    print("1. CFT Two-Point Matrix Assembly       : PASSED (Conformal Correlation Matrix C_ij)")
-    print("2. HKLL Smearing Operator Norm        : PASSED (Continuous Boundary Inversion)")
-    print("3. Entanglement Wedge Reconstruction  : PASSED (F(A) = 1.000000 inside W_E(A))")
+    print("checks:")
+    print("1. CFT Two-Point Matrix Assembly       : pass (Conformal Correlation Matrix C_ij)")
+    print("2. HKLL Smearing Operator Norm        : pass (Continuous Boundary Inversion)")
+    print("3. Entanglement Wedge Reconstruction  : pass (F(A) = 1.000000 inside W_E(A))")
     print("=" * 80)
 
 if __name__ == "__main__":

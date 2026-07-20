@@ -11,9 +11,9 @@ def verify_geodesic_emergence():
     X_width = 11
     
     # Define Gravity Well: "Slow" time (high density) in the center (x=5)
-    # We assign "weights" to edges. Weight = Proper Time.
+    # Assign weights to edges. Weight = Proper Time.
     # In vacuum (edges), weight = 1.0.
-    # In gravity well, we add extra nodes/weight effectively making the path "longer" (more proper time).
+    # In a gravity well, extra nodes/weight make the path longer (more proper time).
     # Heuristic: Lapse N is low, so Proper Time (1/N) is high.
     
     def get_proper_time_weight(x):
@@ -34,11 +34,11 @@ def verify_geodesic_emergence():
                     v = (t + 1, next_x)
                     
                     # Edge Weight = Proper Time accumulated
-                    # We average the proper time potential of start and end x
+                    # Average the proper time potential of start and end x
                     weight = (get_proper_time_weight(x) + get_proper_time_weight(next_x)) / 2.0
                     
-                    # We negate weight because algorithms usually find SHORTEST path.
-                    # We want LONGEST path (Maximal Proper Time).
+                    # Negate weight because path algorithms minimize length.
+                    # Target is the longest path (maximal proper time).
                     # Bellman-Ford or negating weights works for DAGs.
                     G.add_edge(u, v, weight=-weight)
 

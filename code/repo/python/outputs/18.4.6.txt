@@ -1,3 +1,7 @@
+------------------------------------------------------------------------
+§18.4.6 Power Spectrum Red-Tilt
+Verifying Steric Noise Suppression at Comoving Horizon Exit
+------------------------------------------------------------------------
 |   Comoving Scale k |   Exit Time t_exit |   Exit Density rho |   Exit Hubble H |   Noise Damping Factor |   Power Amplitude P(k) |
 |--------------------|--------------------|--------------------|-----------------|------------------------|------------------------|
 |               10   |              10    |             0.0145 |         0.1235  |                 0.9659 |              0.0017476 |
@@ -10,3 +14,11 @@
 |             2154.4 |              48.89 |             0.032  |         0.11767 |                 0.9263 |              0.001381  |
 |             4641.6 |              54.44 |             0.0345 |         0.11683 |                 0.9207 |              0.0013343 |
 |            10000   |              60    |             0.037  |         0.116   |                 0.9152 |              0.0012889 |
+------------------------------------------------------------------------
+Analysis:
+Fitted Spectral Index n_s: 0.9559
+Deviation from Scale Invariance (1 - n_s): 0.0441
+This perfectly confirms the analytical claim of Theorem 18.4.1:
+the primordial perturbations exhibit a robust red tilt (n_s ~ 0.96) due to
+the slow-roll Hubble decay and exponential steric noise damping.
+------------------------------------------------------------------------

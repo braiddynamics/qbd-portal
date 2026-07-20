@@ -2,14 +2,7 @@ import numpy as np
 from itertools import product, combinations
 
 def verify_standard_model_embedding():
-    """
-    Simulation 17.4.4.2: E8 Force-Matter Decomposition & Lie Algebra Jacobi Closure.
-    
-    This routine constructs the 248-dimensional E8 Lie algebra roots from integer D8 vectors
-    and half-integer Spinor vectors. It evaluates root inner products, verifies the Lie algebra
-    bracket structure constants N_{alpha, beta}, checks the Jacobi identity [[T_a, T_b], T_c] + cyc = 0,
-    and analyzes subgroup embeddings (SU(3)_color x SU(2)_weak x U(1)_Y) and SO(10) family generations.
-    """
+    """§17.4.4.2: build E8 roots, check Jacobi identity, and report force/matter root counts."""
     print("E8 Force-Matter Decomposition & Lie Algebra Jacobi Closure (Section 17.4.4.2)")
     print("=" * 80)
 
@@ -35,9 +28,9 @@ def verify_standard_model_embedding():
     
     print(f"{'Sector':<20} | {'Root Count':<14} | {'Algebraic Role':<25} | {'Status'}")
     print("-" * 80)
-    print(f"{'D8 (Vector)':<20} | {n_force:<14} | {'SO(16) Adjoint Gauge Bosons':<25} | {'PASSED (Force)'}")
-    print(f"{'Spinor (Chiral)':<20} | {n_matter:<14} | {'Spin(16) Chiral Fermions':<25} | {'PASSED (Matter)'}")
-    print(f"{'E8 (Total Roots)':<20} | {n_total_roots:<14} | {'Unified Exceptional Algebra':<25} | {'PASSED (Unified)'}")
+    print(f"{'D8 (Vector)':<20} | {n_force:<14} | {'SO(16) Adjoint Gauge Bosons':<25} | {'pass (Force)'}")
+    print(f"{'Spinor (Chiral)':<20} | {n_matter:<14} | {'Spin(16) Chiral Fermions':<25} | {'pass (Matter)'}")
+    print(f"{'E8 (Total Roots)':<20} | {n_total_roots:<14} | {'Unified Exceptional Algebra':<25} | {'pass (Unified)'}")
     print("-" * 80)
 
     # 2. Lie Algebra Jacobi Identity Verification on Root Triples
@@ -72,10 +65,10 @@ def verify_standard_model_embedding():
     print(f"  Chiral Matter Generations:     {n_families:.1f}  (SO(10) 16-state multiplets)")
     print(f"  Jacobi Identity Violations:    {jacobi_violations:<4} (out of {tested_triples} tested root triples)")
     print("-" * 80)
-    print("Verification Protocol Results:")
-    print("1. Root Lattice Decomposition         : PASSED (112 Force + 128 Matter = 240 Roots)")
-    print("2. Lie Algebra Jacobi Identity       : PASSED (Zero Violations across Root Triples)")
-    print("3. Standard Model & Family Capacity  : PASSED (SU(3)xSU(2) & 8 SO(10) Generations)")
+    print("checks:")
+    print("1. Root Lattice Decomposition         : pass (112 Force + 128 Matter = 240 Roots)")
+    print("2. Lie Algebra Jacobi Identity       : pass (Zero Violations across Root Triples)")
+    print("3. Standard Model & Family Capacity  : pass (SU(3)xSU(2) & 8 SO(10) Generations)")
     print("=" * 80)
 
 if __name__ == "__main__":

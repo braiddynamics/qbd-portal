@@ -1,28 +1,10 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD de Sitter Inflation Audit
-# Subject:   Audits early-phase de Sitter exponential growth in Chapter 18.3.9
-#            (Standalone Version).
-# Version:   1.3
-# -----------------------------------------------------------------------------
+# §18.3.9 — de Sitter Scale Factor Growth
 
 import numpy as np
 import pandas as pd
 
 def run_desitter_evolution(rho_0=0.06, t_max=5.0, dt=0.5):
-    """
-    Simulates the intensive Master Equation under early frictionless limits
-    coupled to expansion dilution to verify de Sitter exponential growth.
-    
-    In the early autocatalytic phase, the expansion of the graph substrate
-    (vertex growth) exerts an intensive dilution force -3 * H * rho.
-    Since H = (9*rho - 0.5) / 3, the dilution term is exactly:
-      -3 * H * rho = -(9*rho - 0.5) * rho = -9*rho^2 + 0.5*rho
-    
-    This dilution exactly cancels the autocatalytic growth rate, stabilizing
-    the intensive density to a constant plateau (rho_dot = 0), yielding a
-    perfectly constant Hubble parameter H and pure exponential scale factor growth.
-    """
+    """§18.3.9: integrate early Master Equation with dilution; check constant H and exponential scale growth."""
     t_steps = int(t_max / dt)
     results = []
     
@@ -71,23 +53,23 @@ def run_desitter_evolution(rho_0=0.06, t_max=5.0, dt=0.5):
         
     return results
 
-def run_desitter_audit():
-    print("="*80)
-    print("QBD de Sitter Inflation Audit (Theorem 18.3.1 Verification)")
+def run_desitter():
+    print("-" * 72)
+    print("§18.3.9 de Sitter Scale Factor Growth")
     print("Verifying Early frictionless Autocatalytic Proliferation with Dilution")
-    print("="*80)
+    print("-" * 72)
     
     # Run simulation with initial density above the growth threshold of 1/18
     results = run_desitter_evolution(rho_0=0.06, t_max=5.0, dt=0.5)
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print("Under the early post-ignition limit, the expansion dilution balances")
     print("the autocatalytic growth, stabilizing the intensive density (rho = 0.06).")
     print("This yields a perfectly constant Hubble parameter (H = 0.01333) and a")
     print("pure exponential growth in scale factor, verifying Theorem 18.3.1.")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_desitter_audit()
+    run_desitter()

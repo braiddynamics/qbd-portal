@@ -1,4 +1,4 @@
---- QBD Microcausality Verification ---
+--- §14.3.6.2 Microcausality ---
 Pair       | Relation        | Commutator
 ---------------------------------------------
 O-A        | Timelike        | 1.0 (OK)

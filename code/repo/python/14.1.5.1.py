@@ -57,7 +57,7 @@ def verify_time_foliation_integration():
 
     # 3. VERIFY: Lapse Smoothness
     # Lapse N ~ 1 / (d_tau / dt)
-    # We measure local d_tau for each column x across time steps
+    # Measure local d_tau for each column x across time steps
     
     raw_lapse_field = np.zeros(width)
     samples = 0
@@ -83,7 +83,7 @@ def verify_time_foliation_integration():
     # Add artificial "Measurement Noise" to simulate the microscopic discreteness 
     # that mollification is supposed to cure (The "Shot Noise" of vacuum)
     # The graph structure provided some, but averaging over T smooths it too fast for this test size.
-    # We inject high-frequency noise to demonstrate the filter.
+    # Inject high-frequency noise to demonstrate the filter.
     np.random.seed(42)
     raw_lapse_field += np.random.normal(0, 0.1, size=width)
 

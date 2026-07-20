@@ -1,18 +1,18 @@
-================================================================================
-QBD Parity-Breaking Phase Transition Audit (Lemma B Verification)
+------------------------------------------------------------------------
+§18.1.9 Bipartite Parity Phase Transition
 Sweeping Tunneling Coupling and Tracking Bipartite Parity Violations
-================================================================================
+------------------------------------------------------------------------
 |   Coupling (β) | Tunneling Prob   |   Parity Violation (Φ) |   3-Cycles Closed | Phase State           |
 |----------------|------------------|------------------------|-------------------|-----------------------|
 |            0   | 0%               |                 0      |              0    | Pre-Geometric Stasis  |
-|            0.1 | 10%              |                 0.1361 |              8.87 | Igniting Plasma       |
-|            0.2 | 20%              |                 0.2388 |             12.64 | Crystallized Geometry |
-|            0.3 | 30%              |                 0.3603 |             14.68 | Crystallized Geometry |
-|            0.4 | 40%              |                 0.468  |             16.32 | Crystallized Geometry |
-|            0.5 | 50%              |                 0.5723 |             15.17 | Crystallized Geometry |
-|            0.6 | 60%              |                 0.6699 |             14.71 | Crystallized Geometry |
-|            0.7 | 70%              |                 0.753  |             14.53 | Crystallized Geometry |
-|            0.8 | 80%              |                 0.845  |             16.06 | Crystallized Geometry |
-|            0.9 | 90%              |                 0.9259 |             18.6  | Crystallized Geometry |
-|            1   | 100%             |                 1      |             24.84 | Crystallized Geometry |
-================================================================================
+|            0.1 | 10%              |                 0.1292 |              8.35 | Igniting Plasma       |
+|            0.2 | 20%              |                 0.247  |             12.63 | Crystallized Geometry |
+|            0.3 | 30%              |                 0.3663 |             15.27 | Crystallized Geometry |
+|            0.4 | 40%              |                 0.4629 |             15.09 | Crystallized Geometry |
+|            0.5 | 50%              |                 0.563  |             15.14 | Crystallized Geometry |
+|            0.6 | 60%              |                 0.673  |             14.6  | Crystallized Geometry |
+|            0.7 | 70%              |                 0.7592 |             15.16 | Crystallized Geometry |
+|            0.8 | 80%              |                 0.8386 |             15.39 | Crystallized Geometry |
+|            0.9 | 90%              |                 0.927  |             19.19 | Crystallized Geometry |
+|            1   | 100%             |                 1      |             24.65 | Crystallized Geometry |
+------------------------------------------------------------------------

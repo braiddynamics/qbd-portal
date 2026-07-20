@@ -7,8 +7,8 @@ Regression Slope (dQ vs Curvature Integral)  : 1.000000
 Regression Intercept                        : -1.734723e-18
 Coefficient of Determination (R^2)          : 1.000000
 --------------------------------------------------------------------
-Verification Protocol Results:
-1. Raychaudhuri Area Focusing match         : PASSED (Residual < 1e-12)
-2. Unruh Heat / Entropy Equilibrium         : PASSED (dQ = T_U * dS)
-3. Einstein Tensor Identification G_ab=8piGT: PASSED (Slope = 1.000000)
+checks:
+1. Raychaudhuri Area Focusing match         : pass (Residual < 1e-12)
+2. Unruh Heat / Entropy Equilibrium         : pass (dQ = T_U * dS)
+3. Einstein Tensor Identification G_ab=8piGT: pass (Slope = 1.000000)
 ====================================================================

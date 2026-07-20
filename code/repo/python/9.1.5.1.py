@@ -12,10 +12,10 @@ def verify_su5_anomaly_cancellation():
     For SU(5), the fermion generation fits into \bar{5} + 10.
     We compute A(\bar{5}) + A(10) and confirm exact cancellation.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION")
     print("Minimal Chiral Generation in \bar{5} ⊕ 10 Representations")
-    print("═" * 70)
+    print("=" * 70)
 
     # Symbolic definition
     N = sp.symbols('N', integer=True, positive=True)

@@ -1,7 +1,7 @@
 import math
 
 def verify_gauge_coupling_consistency():
-    print("--- QBD Gauge Coupling (g) Consistency Check ---")
+    print("--- §8.5.7.1 Gauge Coupling (g) Consistency ---")
     
     # 1. Fundamental Constants (Derived in Ch 4, 5, 8)
     

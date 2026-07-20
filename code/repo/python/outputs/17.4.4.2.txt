@@ -2,9 +2,9 @@ E8 Force-Matter Decomposition & Lie Algebra Jacobi Closure (Section 17.4.4.2)
 ================================================================================
 Sector               | Root Count     | Algebraic Role            | Status
 --------------------------------------------------------------------------------
-D8 (Vector)          | 112            | SO(16) Adjoint Gauge Bosons | PASSED (Force)
-Spinor (Chiral)      | 128            | Spin(16) Chiral Fermions  | PASSED (Matter)
-E8 (Total Roots)     | 240            | Unified Exceptional Algebra | PASSED (Unified)
+D8 (Vector)          | 112            | SO(16) Adjoint Gauge Bosons | pass (Force)
+Spinor (Chiral)      | 128            | Spin(16) Chiral Fermions  | pass (Matter)
+E8 (Total Roots)     | 240            | Unified Exceptional Algebra | pass (Unified)
 --------------------------------------------------------------------------------
 Subgroup & Family Capacity Analysis:
   SU(3) Color Embedding Roots:  12   (Matches SO(6) ~ SU(4) subalgebra)
@@ -12,8 +12,8 @@ Subgroup & Family Capacity Analysis:
   Chiral Matter Generations:     8.0  (SO(10) 16-state multiplets)
   Jacobi Identity Violations:    0    (out of 356 tested root triples)
 --------------------------------------------------------------------------------
-Verification Protocol Results:
-1. Root Lattice Decomposition         : PASSED (112 Force + 128 Matter = 240 Roots)
-2. Lie Algebra Jacobi Identity       : PASSED (Zero Violations across Root Triples)
-3. Standard Model & Family Capacity  : PASSED (SU(3)xSU(2) & 8 SO(10) Generations)
+checks:
+1. Root Lattice Decomposition         : pass (112 Force + 128 Matter = 240 Roots)
+2. Lie Algebra Jacobi Identity       : pass (Zero Violations across Root Triples)
+3. Standard Model & Family Capacity  : pass (SU(3)xSU(2) & 8 SO(10) Generations)
 ================================================================================

@@ -46,7 +46,7 @@ jacobian = d_creation - d_deletion
 
 # Formatted console output
 print("=============================")
-print("QBD Master Equation Verification")
+print("§5.2.7.1 Master Equation")
 print("=============================")
 print(f"Constants:")
 print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.4f}")

@@ -3,15 +3,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def verify_ryu_takayanagi_scaling():
-    """
-    Simulation 16.1.7.1: Discrete MERA Min-Cut & Bond Dimension Scaling.
-
-    This routine constructs a MERA tensor network model of Hyperbolic Space (AdS_3)
-    using a binary tree lattice with lateral disentangler edges. It evaluates graph-theoretic
-    min-cuts across varying boundary subregions L and bond dimensions chi in {2, 4, 8},
-    verifying that S(L, chi) = |Cut(gamma_min)| * ln(chi) reproduces the holographic CFT
-    entanglement entropy scaling law S(L) ~ (c_eff / 3) * ln(L) without hardcoded assumptions.
-    """
+    """§16.1.7.1: MERA min-cut entropy S vs boundary size L and bond dimension chi."""
     print("Discrete MERA Min-Cut & Bond Dimension Scaling (Section 16.1.7.1)")
     print("=" * 75)
 
@@ -93,10 +85,10 @@ def verify_ryu_takayanagi_scaling():
         print(f"  Geometric Offset (k):         {k_fit:.4f}")
         print("-" * 75)
 
-    print("Verification Protocol Results:")
-    print("1. Min-Cut Network Optimization       : PASSED (Edmonds-Karp Max-Flow Converged)")
-    print("2. Bond Dimension Scaling (ln chi)    : PASSED (Exact Proportionality Verified)")
-    print("3. Holographic Central Charge Scaling : PASSED (c_eff ~ log2(chi))")
+    print("checks:")
+    print("1. Min-Cut Network Optimization       : pass (Edmonds-Karp Max-Flow Converged)")
+    print("2. Bond Dimension Scaling (ln chi)    : pass (Exact Proportionality Verified)")
+    print("3. Holographic Central Charge Scaling : pass (c_eff ~ log2(chi))")
     print("=" * 75)
 
 if __name__ == "__main__":

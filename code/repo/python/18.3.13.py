@@ -1,29 +1,13 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Heat Kernel Spectral Dimension Convergence Audit
-# Subject:   Audits random walks and spectral dimension convergence in Chapter 18.3.13
-#            (Standalone Version).
-# Version:   1.0
-# -----------------------------------------------------------------------------
+# §18.3.13 — Spectral Dimension Convergence
 
 import numpy as np
 import pandas as pd
 
 def simulate_heat_kernel_spectral_dimension(max_steps=40, n_walks=100000):
-    """
-    Simulates millions of random walks on a 4D crystallized spatial grid
-    to calculate the return probability P(t) after t steps and extract
-    the emergent spectral dimension d_S.
-    
-    The running spectral dimension is defined as:
-      d_S(t) = -2 * d(ln P(t)) / d(ln t)
-    
-    On a bipartite 4D grid, walks can only return to the origin in an even
-    number of steps. We sweep even steps t = 2, 4, 6, 8, ... up to max_steps.
-    """
+    """§18.3.13: random walks on a 4D grid; estimate spectral dimension d_S from return probability P(t)."""
     results = []
     
-    # We will simulate random walks in 4D space
+    # Simulate random walks in 4D space
     # Origin is at (0,0,0,0)
     steps_sweep = list(range(2, max_steps + 1, 2))
     return_counts = {t: 0 for t in steps_sweep}
@@ -56,7 +40,7 @@ def simulate_heat_kernel_spectral_dimension(max_steps=40, n_walks=100000):
     for idx, t in enumerate(steps_sweep):
         P_t = power_amplitudes[idx]
         
-        # We calculate the running local derivative of spectral dimension:
+        # Running local derivative of spectral dimension:
         # d_S(t) = -2 * ln(P(t) / P(t_prev)) / ln(t / t_prev)
         if idx > 1:
             P_prev = power_amplitudes[idx-1]
@@ -87,23 +71,23 @@ def simulate_heat_kernel_spectral_dimension(max_steps=40, n_walks=100000):
     
     return results, d_S_fitted
 
-def run_spectral_walk_audit():
-    print("="*80)
-    print("QBD Heat Kernel Spectral Dimension Audit (Lemma C Verification)")
+def run_spectral_walk():
+    print("-" * 72)
+    print("§18.3.13 Spectral Dimension Convergence")
     print("Simulating Random Walks on 4D Grid to Verify d_S = 4.0")
-    print("="*80)
+    print("-" * 72)
     
     results, d_S = simulate_heat_kernel_spectral_dimension()
     df = pd.DataFrame(results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print(f"Overall Asymptotic Spectral Dimension d_S: {d_S:.4f}")
     print("The running local spectral dimension converges towards d_S ≈ 4.0 as t increases.")
     print("This perfectly confirms the analytical claim of Lemma 18.3.7 and Lemma C:")
     print("random walk return probabilities scale exactly as P(t) ∝ t^-2 in the infrared,")
     print("verifying convergence to a smooth 4D Riemannian manifold.")
-    print("="*80)
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_spectral_walk_audit()
+    run_spectral_walk()

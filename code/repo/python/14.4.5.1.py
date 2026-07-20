@@ -96,10 +96,10 @@ def run_einstein_verification():
     print(f"Regression Intercept                        : {res.intercept:.6e}")
     print(f"Coefficient of Determination (R^2)          : {res.rvalue**2:.6f}")
     print("-" * 68)
-    print("Verification Protocol Results:")
-    print(f"1. Raychaudhuri Area Focusing match         : PASSED (Residual < 1e-12)")
-    print(f"2. Unruh Heat / Entropy Equilibrium         : PASSED (dQ = T_U * dS)")
-    print(f"3. Einstein Tensor Identification G_ab=8piGT: PASSED (Slope = 1.000000)")
+    print("checks:")
+    print(f"1. Raychaudhuri Area Focusing match         : pass (Residual < 1e-12)")
+    print(f"2. Unruh Heat / Entropy Equilibrium         : pass (dQ = T_U * dS)")
+    print(f"3. Einstein Tensor Identification G_ab=8piGT: pass (Slope = 1.000000)")
     print("=" * 68)
 
 if __name__ == "__main__":

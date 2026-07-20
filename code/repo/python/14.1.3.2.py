@@ -2,10 +2,10 @@ import numpy as np
 from scipy.ndimage import gaussian_filter
 
 def verify_lapse_smoothness():
-    print("--- QBD Lapse Function Convergence Verification (Poisson-Shot Noise) ---")
+    print("--- §14.1.3.2 Lapse Function Convergence (Poisson-Shot Noise) ---")
     
     # 1. SETUP: Continuum Target (Schwarzschild-like Potential)
-    # We model a spatial slice starting at r=3.0 (safe distance from horizon singularity)
+    # Model a spatial slice starting at r=3.0 (safe distance from horizon singularity)
     # to avoid smoothing bias artifacts near the vertical asymptote.
     r_points = 1000
     r_domain = np.linspace(3.0, 20.0, r_points)

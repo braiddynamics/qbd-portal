@@ -1865,24 +1865,22 @@ Section 3.3.5.1 formalizes the properties of the QBD proof regarding conflict re
 
 ---
 
-### 3.3.5.3 Calculation: Cycle Resolution {#3.3.5.3}
+### 3.3.5.3 Example: Cycle Resolution {#3.3.5.3}
 
-:::note[**Resolution of Symmetric Overlaps via Parallel Operations**]
+:::tip[**Worked Resolution of Symmetric Overlaps via Parallel Chordal Operations**]
 :::
 
-Algorithmic verification of the symmetry-preserving properties established by **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> is based on the following protocols:
+This example applies the conflict-resolution rules of **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> to an explicit cyclic graph. The graph is taken from the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" />. No numerical simulation is required: the steps are a manual walkthrough of chordal addition, overlap flagging, and parallel deletion.
 
-1.  **Chordal Addition:** The algorithm instantiates chords across all open 2-paths in the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" /> to partition symmetric overlaps. This maps the initial expansion of cycles under background-independent rules.
-2.  **Overlap Identification:** The protocol flags shared boundary edges within newly created cycles of length four or greater.
-3.  **Parallel Deletion:** The metric tracks the elimination of all flagged overlap edges to break the original cycle and restore symmetry.
+**I. Initial State**
 
-Initial state with timestamps: A → B (H=1), B → C (H=2), C → D (H=3), D → E (H=4), E → F (H=5), F → A (H=6).
-Initial syndromes: For triplet A-B-C, $\sigma_{\text{geom}} = +1$ (vacuum), similar for all triplets.
+Initial state with timestamps: $A \to B$ ($H=1$), $B \to C$ ($H=2$), $C \to D$ ($H=3$), $D \to E$ ($H=4$), $E \to F$ ($H=5$), $F \to A$ ($H=6$).
+Initial syndromes: for triplet $A$-$B$-$C$, $\sigma_{\text{geom}} = +1$ (vacuum), and likewise for all consecutive triplets on the 6-cycle.
 
-**Step 1: Addition of Chords**
-Add C → A (H=7), D → B (H=8), E → C (H=9), F → D (H=10), A → E (H=11), B → F (H=12).
-Post-addition syndromes: For A-B-C-A, $\sigma_{\text{geom}} = -1$ (excitation), similar for all new 3-cycles.
-with all chords: C→A, D→B, E→C, F→D, A→E, B→F
+**II. Phase 1: Addition of Chords**
+
+Add $C \to A$ ($H=7$), $D \to B$ ($H=8$), $E \to C$ ($H=9$), $F \to D$ ($H=10$), $A \to E$ ($H=11$), $B \to F$ ($H=12$).
+Post-addition syndromes: for $A$-$B$-$C$-$A$, $\sigma_{\text{geom}} = -1$ (excitation), and likewise for all new 3-cycles formed by the chords $C\to A$, $D\to B$, $E\to C$, $F\to D$, $A\to E$, $B\to F$.
 
 **ASCII Before/After Addition**
 
@@ -1894,8 +1892,11 @@ A → B → C → D → E → F → A
     D→B F→D B→F
 ```
 
-**Step 2: Parallel Deletion on Overlaps**
-Delete B → C, D → E, F → A (flagged -1 overlaps). These shared edges undergo removal, which breaks the original 6-cycle while resolving the overlaps. Each 3-cycle retains two original edges and one chord, and the residual edges preserve geometric identity with resolved flux.
+**III. Phase 2: Parallel Deletion on Overlaps**
+
+Delete $B \to C$, $D \to E$, $F \to A$ (flagged $-1$ overlaps). These shared edges undergo removal, which breaks the original 6-cycle while resolving the overlaps. Each 3-cycle retains two original edges and one chord, and the residual edges preserve geometric identity with resolved flux.
+
+*(deleted: $B\to C$, $D\to E$, $F\to A$, leaving the original cycle broken, with 3-cycles remaining via chords and residual edges)*
 
 **ASCII Post-Deletion**
 
@@ -1907,20 +1908,20 @@ A → B C → D E → F A
     D→B F→D B→F
 ```
 
-*(deleted: B→C, D→E, F→A, leaving the original cycle broken, with 3-cycles remaining via chords and residual edges)*
+**IV. Extension to the 8-Cycle**
 
 This expanded 6-cycle example demonstrates overlap resolution in a smaller symmetric graph and now progresses to the 8-cycle example, which introduces greater complexity through a larger dihedral group and more overlapping sites.
 
 For an $8$-cycle with vertices $A$-$H$, the dihedral $D_8$ group governs symmetries (rotations/reflections).
 This graph contains $8$ overlapping 2-paths: $s_1$: $A \to B \to C$, $s_2$: $B \to C \to D$, ..., $s_8$: $H \to A \to B$.
 
-1.  Add all $8$ chords (C→A, D→B, E→C, F→D, G→E, H→F, A→G, B→H), which forms $8$ $3$-cycles (A-B-C-A, B-C-D-B, etc.), with shared edges like B-C flagged $-1$.
-2.  Parallel deletion on $-1$ overlaps (e.g., B→C, D→E, F→G, H→A).
+1.  Add all $8$ chords ($C\to A$, $D\to B$, $E\to C$, $F\to D$, $G\to E$, $H\to F$, $A\to G$, $B\to H$), which forms $8$ $3$-cycles ($A$-$B$-$C$-$A$, $B$-$C$-$D$-$B$, etc.), with shared edges like $B$-$C$ flagged $-1$.
+2.  Parallel deletion on $-1$ overlaps (e.g., $B\to C$, $D\to E$, $F\to G$, $H\to A$).
 
-It is confirmed that $D_8$ receives preservation: Rotations/reflections map remaining structures equivalently.
+It is confirmed that $D_8$ receives preservation: rotations and reflections map remaining structures equivalently.
 
 **In Plain English:**  
-Section 3.3.5.3 formalizes the properties of the QBD calculation regarding cycle resolution.
+Section 3.3.5.3 is a worked example of cycle resolution under parallel chordal conflict handling (not a numerical calculation).
 
 ---
 

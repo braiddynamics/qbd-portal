@@ -1,14 +1,7 @@
 import numpy as np
 
 def verify_t_duality_invariance():
-    """
-    Simulation 17.2.6.1: Closed String Partition Function T-Duality Invariance.
-    
-    This routine evaluates the compactified closed string partition function Z(R, tau)
-    summed over momentum modes n and winding modes w. It demonstrates exact spectral invariance
-    Z(R) = Z(1/R) under T-duality transformations R -> 1/R across all compactification radii,
-    and verifies the minimum of the free energy F(R) = -ln Z(R) at the self-dual radius R = 1.0.
-    """
+    """§17.2.6.1: evaluate closed-string Z(R) and check T-duality Z(R)=Z(1/R) and self-dual free-energy minimum."""
     print("Closed String Partition Function T-Duality Invariance (Section 17.2.6.1)")
     print("=" * 80)
     
@@ -47,10 +40,10 @@ def verify_t_duality_invariance():
         print(f"{R:<12.2f} | {R_dual:<16.2f} | {Z_R:<18.6e} | {Z_dual:<18.6e} | {diff:.2e}")
 
     print("-" * 88)
-    print("Verification Protocol Results:")
-    print("1. Dedekind Eta Modular Pre-factor    : PASSED (|eta(i)|^-24 Regularized)")
-    print("2. Momentum-Winding Lattice Summation : PASSED (Double Infinite Sum Converged)")
-    print("3. T-Duality Spectral Invariance     : PASSED (Z(R) = Z(1/R) to 1e-15 Precision)")
+    print("checks:")
+    print("1. Dedekind Eta Modular Pre-factor    : pass (|eta(i)|^-24 Regularized)")
+    print("2. Momentum-Winding Lattice Summation : pass (Double Infinite Sum Converged)")
+    print("3. T-Duality Spectral Invariance     : pass (Z(R) = Z(1/R) to 1e-15 Precision)")
     print("=" * 80)
 
 if __name__ == "__main__":

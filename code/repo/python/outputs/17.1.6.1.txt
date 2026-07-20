@@ -2,23 +2,23 @@ Braid Confinement & Luscher Term Verification (Section 17.1.6.1)
 ================================================================================
 Separation (L)     | Flux Action E(L)     | Effective Tension    | Status
 -------------------------------------------------------------------------------------
-2                  | 1.9534               | 0.9767               | CONFINE (Linear + Quantum)
-4                  | 4.0229               | 1.0057               | CONFINE (Linear + Quantum)
-6                  | 6.0378               | 1.0063               | CONFINE (Linear + Quantum)
-8                  | 8.0510               | 1.0064               | CONFINE (Linear + Quantum)
-10                 | 9.8751               | 0.9875               | CONFINE (Linear + Quantum)
-12                 | 11.9791              | 0.9983               | CONFINE (Linear + Quantum)
-16                 | 16.0875              | 1.0055               | CONFINE (Linear + Quantum)
-20                 | 19.7975              | 0.9899               | CONFINE (Linear + Quantum)
-24                 | 24.0523              | 1.0022               | CONFINE (Linear + Quantum)
+2                  | 1.9534               | 0.9767               | linear
+4                  | 4.0229               | 1.0057               | linear
+6                  | 6.0378               | 1.0063               | linear
+8                  | 8.0510               | 1.0064               | linear
+10                 | 9.8751               | 0.9875               | linear
+12                 | 11.9791              | 0.9983               | linear
+16                 | 16.0875              | 1.0055               | linear
+20                 | 19.7975              | 0.9899               | linear
+24                 | 24.0523              | 1.0022               | linear
 -------------------------------------------------------------------------------------
 String Potential Fit Analysis:
   String Tension (sigma):      0.9966 Action/Length (Linear Confinement)
   Vacuum Self-Energy (V_0):    0.0434
   Luscher Coefficient (gamma): 0.1324  (Theoretical Target = 0.1309)
 -------------------------------------------------------------------------------------
-Verification Protocol Results:
-1. Quantum Vacuum Ensemble Sampling   : PASSED (30 Monte Carlo Lattice Realizations)
-2. Linear Confinement Potential       : PASSED (Tension sigma > 0 Confirmed)
-3. Luscher Quantum Correction Term   : PASSED (Transverse Zero-Point Fluctuations)
+checks:
+1. Quantum Vacuum Ensemble Sampling   : pass (30 Monte Carlo Lattice Realizations)
+2. Linear Confinement Potential       : pass (Tension sigma > 0 Confirmed)
+3. Luscher Quantum Correction Term   : pass (Transverse Zero-Point Fluctuations)
 ================================================================================

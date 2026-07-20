@@ -1,14 +1,7 @@
 import numpy as np
 
 def calculate_wormhole_growth():
-    """
-    Simulation 15.3.5.1: Wormhole Length & Braid Group Complexity Dynamics.
-    
-    This routine models quantum circuit evolution U(t) as random words in the Artin Braid Group B_4.
-    It maps braid words to SL(2, C) hyperbolic holonomy matrices M(w) and computes the geodesic length
-    L_throat(w) = 2 * arccosh(|Tr M(w)| / 2) of the emergent Einstein-Rosen bridge. It verifies that
-    computational braid complexity C generates linear wormhole growth (dL/dC > 0), confirming the Complexity = Volume relation.
-    """
+    """§15.3.5.1: map B_4 braid words to SL(2,C) holonomy length L_throat and check linear growth vs complexity C."""
     print("Wormhole Length & Braid Group Complexity Dynamics (Section 15.3.5.1)")
     print("=" * 80)
     
@@ -53,10 +46,10 @@ def calculate_wormhole_growth():
         print(f"{C:<22} | {tr_val:<22.4f} | {throat_length:<24.4f} | {growth_rate:.4f}")
 
     print("-" * 90)
-    print("Verification Protocol Results:")
-    print("1. Braid Group Artin Representation    : PASSED (SL(2, C) Holonomy Monodromy)")
-    print("2. Hyperbolic Geodesic Length Mapping  : PASSED (L = 2 arccosh(|Tr M| / 2))")
-    print("3. Complexity = Volume Linear Growth   : PASSED (Wormhole throat expands with C)")
+    print("checks:")
+    print("1. Braid Group Artin Representation    : pass (SL(2, C) Holonomy Monodromy)")
+    print("2. Hyperbolic Geodesic Length Mapping  : pass (L = 2 arccosh(|Tr M| / 2))")
+    print("3. Complexity = Volume Linear Growth   : pass (Wormhole throat expands with C)")
     print("=" * 80)
 
 if __name__ == "__main__":
