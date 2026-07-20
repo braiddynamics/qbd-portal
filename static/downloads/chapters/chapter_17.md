@@ -2,9 +2,7 @@
 
 **Abstract**
 
-Whoops, good catch! That was a bit of rogue text that slipped through the cracks. Let's get Chapter 17 cleaned up into the proper, fully readable academic English tone.
-
-Here is the corrected reference report for Chapter 17:
+Chapter 17 establishes the non-perturbative geometric convergence of localized topological braid defects into emergent relativistic strings within the QBD framework. This synchronization addresses the structural pathology of the dimensional and dynamical mismatch between discrete, relational network updates and continuous, one-dimensional extended filaments. The trajectory of a propagating braid is formalized as a three-dimensional causal tube or topological cobordism that maps in the continuum limit to a smooth two-dimensional worldsheet embedded within a four-dimensional Lorentzian manifold. By analyzing the computational and thermodynamic cost of sequential graph updates, the minimization of informational action is proven to be isomorphic to the minimization of worldsheet area under the Nambu-Goto action. This formulation derives the string tension from the fundamental energy cost per active edge rewrite. Localized flux confinement constraints force the topological charge to collimate into narrow channels, reproducing the linear potential of quantum chromodynamics. Furthermore, compactification of the dual energy storage mechanisms maps momentum and winding modes onto reciprocal target geometries, revealing that string theory emerges as the definitive low-energy effective field theory of discrete graph processing networks.
 
 ---
 
