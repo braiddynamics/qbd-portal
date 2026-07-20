@@ -52,7 +52,7 @@ Section 10.1.3 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Ground State Stability ($|0_L\rangle$)**
-The configuration $\vec{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$. <Ref id="10.1.3" label="§10.1.3" /> and <Ref id="10.1.2" label="§10.1.2" />
+The configuration $\vec{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$.  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" /> and  **Qubit Optimality** <Ref id="10.1.2" label="§10.1.2" />
 Any local rewrite operation $\mathcal{R}$ acting on this state either:
 1.  Increases the crossing number (adding energy), which is suppressed by the Boltzmann factor $e^{-\Delta E/T}$.
 2.  Maintains the topology (identity operation).
@@ -97,7 +97,7 @@ Section 10.1.4 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Permutation Operator Action**
-Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$. <Ref id="10.1.4" label="§10.1.4" /> and <Ref id="10.1.3" label="§10.1.3" />
+Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$.  **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" /> and  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" />
 For the ground state $|0_L\rangle$ with $\vec{w}_0 = (-1, -1, -1)$:
 
 $$
@@ -150,7 +150,7 @@ Section 10.1.5 formalizes the properties of the QBD lemma regarding state contro
 :::
 
 **I. Conservation Constraints**
-Any control operation must preserve the total writhe $W = \sum w_i$ to maintain electric charge conservation. <Ref id="10.1.5" label="§10.1.5" /> and <Ref id="10.1.4" label="§10.1.4" />
+Any control operation must preserve the total writhe $W = \sum w_i$ to maintain electric charge conservation.  **State Controllability** <Ref id="10.1.5" label="§10.1.5" /> and  **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />
 
 $$
 \Delta W = W_{final} - W_{initial} = (-3) - (-3) = 0
@@ -204,7 +204,7 @@ Section 10.1.6 formalizes the properties of the QBD lemma regarding basis measur
 :::
 
 **I. Measurement Operator**
-The measurement observable is the quadratic Casimir operator of the $SU(3)$ gauge group, $\hat{C}^2_{SU(3)}$. <Ref id="10.1.6" label="§10.1.6" /> and <Ref id="10.1.5" label="§10.1.5" /> In the physical implementation, this corresponds to scattering a high-energy gluon (or color probe) off the state.
+The measurement observable is the quadratic Casimir operator of the $SU(3)$ gauge group, $\hat{C}^2_{SU(3)}$.  **Basis Measurability** <Ref id="10.1.6" label="§10.1.6" /> and  **State Controllability** <Ref id="10.1.5" label="§10.1.5" /> In the physical implementation, this corresponds to scattering a high-energy gluon (or color probe) off the state.
 
 **II. Eigenvalue Spectrum**
 * **State $|0_L\rangle$:** This state is a color singlet. It transforms under the trivial representation $\mathbf{1}$.
@@ -308,7 +308,7 @@ Section 10.2.3 formalizes the properties of the QBD lemma regarding geometric co
 :::
 
 **I. Self-Commutation ($Z$-$Z$ Type)**
-The geometric stabilizers are defined as products of Pauli-$Z$ operators on the edges of a closed 3-cycle $\gamma$: <Ref id="10.2.3" label="§10.2.3" /> and <Ref id="10.2.2" label="§10.2.2" />
+The geometric stabilizers are defined as products of Pauli-$Z$ operators on the edges of a closed 3-cycle $\gamma$:  **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" /> and  **Braid Code Consistency** <Ref id="10.2.2" label="§10.2.2" />
 
 $$
 S_{\text{geom}}^{(\gamma)} = \prod_{e \in \gamma} Z_e
@@ -374,7 +374,7 @@ Section 10.2.4 formalizes the properties of the QBD lemma regarding bit-flip loc
 :::
 
 **I. Syndrome Definition**
-The syndrome $\sigma_k$ for a stabilizer $S_k$ acting on a state $|\psi\rangle$ with error $E$ is defined by $S_k (E|\psi\rangle) = \sigma_k (E|\psi\rangle)$, where $\sigma_k \in \{+1, -1\}$. <Ref id="10.2.4" label="§10.2.4" /> and <Ref id="10.2.3" label="§10.2.3" />
+The syndrome $\sigma_k$ for a stabilizer $S_k$ acting on a state $|\psi\rangle$ with error $E$ is defined by $S_k (E|\psi\rangle) = \sigma_k (E|\psi\rangle)$, where $\sigma_k \in \{+1, -1\}$.  **Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" /> and  **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" />
 For Pauli operators, if $\{S_k, E\} = 0$ (anticommute), then $\sigma_k = -1$ (flipped). If $[S_k, E] = 0$, $\sigma_k = +1$.
 
 **II. Cycle Error Analysis**
@@ -414,7 +414,7 @@ Section 10.2.5 formalizes the properties of the QBD lemma regarding ribbon integ
 :::
 
 **I. Ribbon Operator Definition**
-Ribbon stabilizers enforce correlations along the linear segments of the braid. <Ref id="10.2.5" label="§10.2.5" /> and <Ref id="10.2.4" label="§10.2.4" /> They are typically defined as plaquette operators $S_{\text{ribbon}}^{(k,i)} = Z_{r_i} Z_{e_{top}} Z_{r_{i+1}} Z_{e_{bot}}$ involving two rung edges and two strand edges.
+Ribbon stabilizers enforce correlations along the linear segments of the braid.  **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" /> and  **Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" /> They are typically defined as plaquette operators $S_{\text{ribbon}}^{(k,i)} = Z_{r_i} Z_{e_{top}} Z_{r_{i+1}} Z_{e_{bot}}$ involving two rung edges and two strand edges.
 
 **II. Self-Commutation ($Z$-$Z$)**
 As with geometric stabilizers, ribbon stabilizers consist purely of $Z$ operators.
@@ -458,7 +458,7 @@ Section 10.2.6 formalizes the properties of the QBD lemma regarding fraying dete
 :::
 
 **I. Error Mapping**
-Consider an $X$ error on rung $r_i$ connecting ribbon $k$ and $k+1$. <Ref id="10.2.6" label="§10.2.6" /> and <Ref id="10.2.5" label="§10.2.5" />
+Consider an $X$ error on rung $r_i$ connecting ribbon $k$ and $k+1$.  **Fraying Detection** <Ref id="10.2.6" label="§10.2.6" /> and  **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" />
 The relevant stabilizers are the ribbon segments to the left ($S_{i-1}$) and right ($S_i$) of the rung.
 
 $$
@@ -504,7 +504,7 @@ Section 10.2.7 formalizes the properties of the QBD lemma regarding vertex commu
 :::
 
 **I. Operator Definition**
-Vertex stabilizers are of Pauli-$X$ type: <Ref id="10.2.7" label="§10.2.7" /> and <Ref id="10.2.6" label="§10.2.6" />
+Vertex stabilizers are of Pauli-$X$ type:  **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" /> and  **Fraying Detection** <Ref id="10.2.6" label="§10.2.6" />
 
 $$
 S_v^X = \prod_{e \in \text{star}(v)} X_e
@@ -548,7 +548,7 @@ Section 10.2.8 formalizes the properties of the QBD lemma regarding phase error 
 :::
 
 **I. Error Mapping**
-Consider a phase error $E = Z_e$ on the edge $e$ connecting vertices $u$ and $v$. <Ref id="10.2.8" label="§10.2.8" /> and <Ref id="10.2.7" label="§10.2.7" />
+Consider a phase error $E = Z_e$ on the edge $e$ connecting vertices $u$ and $v$.  **Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" /> and  **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />
 The relevant checks are the vertex stabilizers $S_u^X$ and $S_v^X$, which contain $X_e$.
 
 **II. Syndrome Calculation**
@@ -574,7 +574,7 @@ Section 10.2.8.1 formalizes the properties of the QBD proof regarding phase erro
 :::
 
 **I. Commutativity (Abelian Group)**
-From **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" />, **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" />, and **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />, all generators in $\mathcal{S}$ mutually commute.
+Mutually commuting generators are established by combining several key relations. Specifically, the generators satisfy both **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" /> and **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" /> properties. When paired with **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />, these ensure all generators in $\mathcal{S}$ commute with one another.
 
 $$
 [S_i, S_j] = 0 \quad \forall S_i, S_j \in \mathcal{S}
@@ -616,7 +616,7 @@ Verification of the abelian structure of the stabilizer group established in the
 
 1.  **Operator Construction:** The algorithm constructs tensor product operators representing geometric stabilizers (Z-type cycles), ribbon integrity checks (Z-type segments), and vertex stabilizers (X-type stars) on a 6-qubit system.
 2.  **Overlap Definition:** The protocol defines specific test cases for disjoint supports, even overlaps (sharing 2 edges), and odd overlaps (sharing 1 edge) to test the commutation logic.
-3.  **Commutator Metric:** The simulation computes the norm of the commutator $[A, B]$ for each pair. A norm of zero confirms commutation, while a non-zero norm indicates anticommutation. This verifies the result established in <Ref id="10.2.9" label="§10.2.9" />.
+3.  **Commutator Metric:** The simulation computes the norm of the commutator $[A, B]$ for each pair. A norm of zero confirms commutation, while a non-zero norm indicates anticommutation. This verifies the result established in  **Braid Code Consistency** <Ref id="10.2.9" label="§10.2.9" />.
 
 ```python
 import qutip as qt
@@ -728,7 +728,7 @@ Section 10.3.3 formalizes the properties of the QBD lemma regarding syndrome fli
 :::
 
 **I. Initial State Properties**
-Let $|\psi_L\rangle$ denote a valid logical state. <Ref id="10.3.3" label="§10.3.3" /> and <Ref id="10.3.2" label="§10.3.2" /> This state satisfies the stabilizer conditions with eigenvalue $+1$:
+Let $|\psi_L\rangle$ denote a valid logical state.  **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" /> and  **Topological Fault Tolerance** <Ref id="10.3.2" label="§10.3.2" /> This state satisfies the stabilizer conditions with eigenvalue $+1$:
 * Geometric: $S_{\text{geom}} |\psi_L\rangle = + |\psi_L\rangle$.
 * Ribbon: $S^{(k,i)}_{\text{ribbon}} |\psi_L\rangle = + |\psi_L\rangle$.
 * Vertex: $S_v^X |\psi_L\rangle = + |\psi_L\rangle$.
@@ -774,8 +774,8 @@ Section 10.3.4 formalizes the properties of the QBD lemma regarding minimum weig
 :::tip[**Exhaustive Enumeration of Low-Weight Operators**]
 :::
 
-**I. Weight-1 Errors** <Ref id="10.3.4" label="§10.3.4" />
-As proven in the **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
+**I. Weight-1 Errors**
+As proven in the **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" /> and required for the **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" /> bounds, any single-qubit Pauli error $E$ on an edge $e$ anticommutes with at least one stabilizer $S \in \mathcal{S}$. Therefore, $E \notin N(\mathcal{S})$ (the normalizer). It is detectable. Distance $d > 1$.
 
 **II. Weight-2 Errors**
 Consider an error $E = P_j \otimes P_k$ acting on two distinct edges $j$ and $k$.
@@ -845,7 +845,7 @@ Section 10.3.5.1 formalizes the properties of the QBD proof regarding thermodyna
 :::note[**Computational Verification of Code Distance via Error Simulation**]
 :::
 
-Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> <Ref id="10.3.5" label="§10.3.5" /> is based on the following protocols:
+Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> and **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
 2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
@@ -935,7 +935,7 @@ Vertex Fock Space represents the quantum state of the causal graph as a direct s
 
 **I. Direct Sum Decomposition of State Space**
 
-The global state space is decomposed into orthogonal sectors of fixed vertex number. <Ref id="10.3.6" label="§10.3.6" /> and <Ref id="10.3.5" label="§10.3.5" /> For each $N \in \mathbb{N}$, the basis of $\mathcal{H}_N$ is spanned by the set of isomorphism classes of directed acyclic graphs on $N$ vertices, denoted $\{|G^{(N)}_i\rangle\}$. Since these sectors are orthogonal by definition, the direct sum structure holds:
+The global state space is decomposed into orthogonal sectors of fixed vertex number.  **Vertex Fock Space Formalization** <Ref id="10.3.6" label="§10.3.6" /> and  **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> For each $N \in \mathbb{N}$, the basis of $\mathcal{H}_N$ is spanned by the set of isomorphism classes of directed acyclic graphs on $N$ vertices, denoted $\{|G^{(N)}_i\rangle\}$. Since these sectors are orthogonal by definition, the direct sum structure holds:
 
 $$
 \langle G^{(N)}_i | G^{(M)}_j \rangle = \delta_{NM} \delta_{ij}.
@@ -1043,7 +1043,7 @@ Section 10.4.3 formalizes the properties of the QBD lemma regarding writhe conse
 :::
 
 **I. Initial Configuration ($|0_L\rangle$)**
-The ground state is defined by the writhe vector $\vec{w}_0 = (-1, -1, -1)$. <Ref id="10.4.3" label="§10.4.3" /> and <Ref id="10.4.2" label="§10.4.2" />
+The ground state is defined by the writhe vector $\vec{w}_0 = (-1, -1, -1)$.  **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" /> and  **Logical X Gate** <Ref id="10.4.2" label="§10.4.2" />
 The total writhe $W_0$ is the scalar sum of the components:
 
 $$
@@ -1197,8 +1197,7 @@ Section 10.5.2 formalizes the properties of the QBD lemma regarding singlet tran
 :::
 
 **I. State Representation**
-The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$. <Ref id="10.5.2" label="§10.5.2" /> and <Ref id="10.5.1" label="§10.5.1" />
-As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
+The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$ under **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
 
 **II. Interaction Hamiltonian**
 The interaction with the probe field $A_\mu^a$ is governed by the current coupling:
@@ -1253,7 +1252,7 @@ Section 10.5.3 formalizes the properties of the QBD lemma regarding color phase.
 :::
 
 **I. State Representation**
-The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\vec{w}_1 = (-2, -1, 0)$. <Ref id="10.5.3" label="§10.5.3" /> and <Ref id="10.5.2" label="§10.5.2" />
+The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\vec{w}_1 = (-2, -1, 0)$.  **Color Phase** <Ref id="10.5.3" label="§10.5.3" /> and  **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />
 This state transforms non-trivially under $SU(3)$ (e.g., triplet $\mathbf{3}$ or octet $\mathbf{8}$), implying a non-zero color charge vector $\vec{Q}_{color} \neq 0$.
 
 **II. Interaction Holonomy**
@@ -1402,7 +1401,7 @@ Section 10.6.3 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Mass-Complexity Relation**
-The rest energy of a braid state is proportional to its net topological complexity $N_{net}$, factoring in both isolated torsional strain and geometric sharing between parallel ribbons (**Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />): <Ref id="10.6.3" label="§10.6.3" /> and <Ref id="10.6.2" label="§10.6.2" />
+The rest energy of a braid state is proportional to its net topological complexity $N_{net}$, factoring in both isolated torsional strain and geometric sharing between parallel ribbons (**Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />). The equivalence of the states is established under **Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" /> and **Temperature Control** <Ref id="10.6.2" label="§10.6.2" />.
 
 $$
 E \propto m \propto N_{net} = \sum_{i=1}^3 w_i^2 - k_{share} \cdot N_{parallel}
@@ -1492,7 +1491,7 @@ Verification of the thermodynamic mixing mechanism established in the **Hadamard
 
 1.  **System Definition:** The algorithm defines a two-level qubit system initialized in the ground state $|0\rangle\langle 0|$.
 2.  **Dynamics Simulation:** The protocol evolves the density matrix under a coherent drive Hamiltonian $H = (\Omega/2)\sigma_y$ and a low dissipation rate $\Gamma$, simulating the heating and quench cycle.
-3.  **Coherence Measurement:** The metric extracts the final population distribution and the off-diagonal coherence elements $\rho_{01}$ to quantify the fidelity of the created superposition. This verifies the result established in <Ref id="10.6.4" label="§10.6.4" />.
+3.  **Coherence Measurement:** The metric extracts the final population distribution and the off-diagonal coherence elements $\rho_{01}$ to quantify the fidelity of the created superposition. This verifies the result established in  **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" />.
 
 ```python
 import qutip as qt
@@ -1570,7 +1569,7 @@ Section 10.7.2 formalizes the properties of the QBD lemma regarding syndrome cou
 :::
 
 **I. Bridge Topology**
-A "bridge" is defined as a sequence of edge additions connecting the causal patch of $Q_C$ to the causal patch of $Q_T$. <Ref id="10.7.2" label="§10.7.2" /> and <Ref id="10.7.1" label="§10.7.1" />
+A "bridge" is defined as a sequence of edge additions connecting the causal patch of $Q_C$ to the causal patch of $Q_T$.  **Syndrome Coupling** <Ref id="10.7.2" label="§10.7.2" /> and  **Controlled-Z Gate** <Ref id="10.7.1" label="§10.7.1" />
 This operation is performed by the Universal Constructor via a sequence of rewrites $\mathcal{B}$ that preserves the acyclicity of the global graph.
 The bridge essentially extends the "neighborhood" definition for the syndrome extraction functor $T$.
 
@@ -1780,7 +1779,7 @@ Section 10.8.4 formalizes the properties of the QBD lemma regarding monoidal str
 :::
 
 **I. Tensor Definition**
-For objects $A, B \in \mathcal{C}_{QBD}$, the tensor product $A \otimes B$ is defined as the disjoint union of their subgraphs $G_A \cup G_B$ embedded in the global causal graph $G$, separated by a vacuum region distance $d > \xi$. <Ref id="10.8.4" label="§10.8.4" /> and <Ref id="10.8.3" label="§10.8.3" />
+For objects $A, B \in \mathcal{C}_{QBD}$, the tensor product $A \otimes B$ is defined as the disjoint union of their subgraphs $G_A \cup G_B$ embedded in the global causal graph $G$, separated by a vacuum region distance $d > \xi$.  **Monoidal Structure** <Ref id="10.8.4" label="§10.8.4" /> and  **Ribbon Category** <Ref id="10.8.3" label="§10.8.3" />
 This construction is compliant with the Principle of Unique Causality (PUC) as the vertex sets are disjoint: $V_A \cap V_B = \emptyset$.
 
 **II. Unit Object**
@@ -1826,7 +1825,7 @@ Section 10.8.5 formalizes the properties of the QBD lemma regarding braiding str
 :::
 
 **I. Braiding Morphism**
-The morphism $\sigma_{A,B}$ is the physical transport process that exchanges the spatial positions of braids $A$ and $B$. <Ref id="10.8.5" label="§10.8.5" /> and <Ref id="10.8.4" label="§10.8.4" />
+The morphism $\sigma_{A,B}$ is the physical transport process that exchanges the spatial positions of braids $A$ and $B$.  **Braiding Structure** <Ref id="10.8.5" label="§10.8.5" /> and  **Monoidal Structure** <Ref id="10.8.4" label="§10.8.4" />
 Unlike a symmetric permutation, $\sigma_{A,B} \neq \sigma_{B,A}^{-1}$ generally, encoding the topological over/under-crossing information.
 
 **II. Yang-Baxter Equation**
@@ -1914,7 +1913,7 @@ Section 10.8.7 formalizes the properties of the QBD lemma regarding twist struct
 :::
 
 **I. Twist Morphism**
-The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$). <Ref id="10.8.7" label="§10.8.7" /> and <Ref id="10.8.6" label="§10.8.6" /> This introduces a full twist ($360^\circ$) to the framing of the ribbons.
+The twist $\theta_X$ corresponds to a $2\pi$ rotation of the braid $X$ around its own axis ($\mathcal{R}_{self-twist}$).  **Twist Structure** <Ref id="10.8.7" label="§10.8.7" /> and  **Duality Structure** <Ref id="10.8.6" label="§10.8.6" /> This introduces a full twist ($360^\circ$) to the framing of the ribbons.
 The operator anticommutes with the specific link stabilizer $L_S$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />, enforcing non-trivial phase accumulation.
 
 **II. Balancing Equation**
@@ -2024,7 +2023,7 @@ Verification of the non-Clifford phase accumulation established in the **T-Gate*
 
 1.  **Operator Definition:** The algorithm defines the T-gate unitary $T = \text{diag}(1, e^{i\pi/4})$ acting on the logical basis.
 2.  **State Evolution:** The protocol applies the operator to the basis states $|0_L\rangle$ and $|1_L\rangle$, as well as an equal superposition.
-3.  **Phase Extraction:** The metric computes the expectation value $\text{Re}(\langle \psi | T | \psi \rangle)$ to measure the phase rotation induced on each component. This verifies the result established in <Ref id="10.8.9" label="§10.8.9" />.
+3.  **Phase Extraction:** The metric computes the expectation value $\text{Re}(\langle \psi | T | \psi \rangle)$ to measure the phase rotation induced on each component. This verifies the result established in  **T-Gate** <Ref id="10.8.9" label="§10.8.9" />.
 
 ```python
 import qutip as qt
@@ -2103,7 +2102,7 @@ Section 10.9.2 formalizes the properties of the QBD lemma regarding clifford gen
 :::
 
 **I. The Phase Gate ($S$)**
-The $S$ gate is defined as $\text{diag}(1, i)$. <Ref id="10.9.2" label="§10.9.2" /> and <Ref id="10.9.1" label="§10.9.1" /> Since $T = \text{diag}(1, e^{i\pi/4})$ and $T^2 = \text{diag}(1, e^{i\pi/2}) = \text{diag}(1, i)$, the physical implementation is the repeated application of the T-process:
+The $S$ gate is defined as $\text{diag}(1, i)$.  **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" /> and  **Group Closure** <Ref id="10.9.1" label="§10.9.1" /> Since $T = \text{diag}(1, e^{i\pi/4})$ and $T^2 = \text{diag}(1, e^{i\pi/2}) = \text{diag}(1, i)$, the physical implementation is the repeated application of the T-process:
 
 $$
 S_{phys} = \mathcal{R}_T \circ \mathcal{R}_T
@@ -2152,7 +2151,7 @@ Section 10.9.3 formalizes the properties of the QBD lemma regarding solovay-kita
 :::
 
 **I. Grid Construction**
-Let $\mathcal{G} = \{H, T\}$ be the generating set. <Ref id="10.9.3" label="§10.9.3" /> and <Ref id="10.9.2" label="§10.9.2" /> The set of word sequences of length $L$, denoted $\mathcal{G}_L$, forms a grid of points on the $SU(2)$ manifold. Since the generators do not form a discrete finite subgroup, the closure of the group generated by $\mathcal{G}$ is dense in $SU(2)$.
+Let $\mathcal{G} = \{H, T\}$ be the generating set.  **Solovay-Kitaev Density** <Ref id="10.9.3" label="§10.9.3" /> and  **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" /> The set of word sequences of length $L$, denoted $\mathcal{G}_L$, forms a grid of points on the $SU(2)$ manifold. Since the generators do not form a discrete finite subgroup, the closure of the group generated by $\mathcal{G}$ is dense in $SU(2)$.
 
 **II. Epsilon-Net Density**
 Let $\epsilon > 0$ be the target approximation error. An $\epsilon$-net is constructed by compiling sequences of gates. The Solovay-Kitaev theorem guarantees that for any target unitary $U \in SU(2)$ and any $\epsilon > 0$, there exists a sequence $S \in \mathcal{G}_L$ of length $L$ such that the operator norm satisfies:
@@ -2210,7 +2209,7 @@ Section 10.9.4 formalizes the properties of the QBD proof regarding group closur
 :::note[**Computational Verification of Unitary Approximation via Gate Sequences**]
 :::
 
-Verification of the universality principle established by **Clifford Generation** <Ref id="10.9.2.1" label="§10.9.2.1" /> <Ref id="10.9.4" label="§10.9.4" /> is based on the following protocols:
+Verification of the universality principle established by **Clifford Generation** <Ref id="10.9.2.1" label="§10.9.2.1" /> and **Group Closure** <Ref id="10.9.4" label="§10.9.4" /> is based on the following protocols:
 
 1.  **Target Generation:** The algorithm generates a random unitary matrix $U$ in $SU(2)$ to serve as the approximation target.
 2.  **Sequence Construction:** The protocol implements a simplified iterative decomposition algorithm (depth 4) using the discrete gate set $\{H, T\}$ to build an approximation $U_{approx}$.
@@ -2275,7 +2274,7 @@ Section 10.9.4.1 formalizes the properties of the QBD calculation regarding solo
 :::note[**Realization of Factoring via Topological Rewrite Sequences**]
 :::
 
-Demonstration of the computational power and fault tolerance established in the **Group Closure** <Ref id="10.9.4" label="§10.9.4" /> <Ref id="10.9.5" label="§10.9.5" /> is based on the following protocols:
+Demonstration of the computational power and fault tolerance established in the **Group Closure** <Ref id="10.9.4" label="§10.9.4" /> and the **Solovay-Kitaev Density** <Ref id="10.9.3.1" label="§10.9.3.1" /> is based on the following protocols:
 
 1.  **Circuit Definition:** The algorithm constructs a quantum circuit for factoring $N=15$ ($a=7$), including state preparation, modular exponentiation, and the Inverse Quantum Fourier Transform (IQFT) on 3 qubits.
 2.  **Noise Model:** The protocol applies a depolarizing noise channel ($p=0.01$) to the input register to simulate environmental errors in the causal graph.

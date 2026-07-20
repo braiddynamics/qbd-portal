@@ -1,0 +1,15 @@
+Closed String Partition Function T-Duality Invariance (Section 17.2.6.1)
+================================================================================
+Radius R     | Dual Radius 1/R  | Partition Z(R)     | Partition Z(1/R)   | Residual |Z(R)-Z(1/R)|
+----------------------------------------------------------------------------------------
+0.20         | 5.00             | 2.800540e+03       | 2.800540e+03       | 0.00e+00
+0.50         | 2.00             | 1.120232e+03       | 1.120232e+03       | 0.00e+00
+1.00         | 1.00             | 6.611183e+02       | 6.611183e+02       | 0.00e+00
+2.00         | 0.50             | 1.120232e+03       | 1.120232e+03       | 0.00e+00
+5.00         | 0.20             | 2.800540e+03       | 2.800540e+03       | 0.00e+00
+----------------------------------------------------------------------------------------
+Verification Protocol Results:
+1. Dedekind Eta Modular Pre-factor    : PASSED (|eta(i)|^-24 Regularized)
+2. Momentum-Winding Lattice Summation : PASSED (Double Infinite Sum Converged)
+3. T-Duality Spectral Invariance     : PASSED (Z(R) = Z(1/R) to 1e-15 Precision)
+================================================================================

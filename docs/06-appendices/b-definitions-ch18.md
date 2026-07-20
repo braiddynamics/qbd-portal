@@ -61,9 +61,9 @@ Let $\{u, v, w\}$ denote three vertices forming a directed 2-path $u \to v \to w
 
 **II. The Logic Chain**
 
-1.  **Pre-Geometric Substrate** <Ref id="18.1.1" label="§18.1.1" />: The vacuum state is a directed regular Bethe tree where each vertex possesses exactly two outgoing ports.
-2.  **Configuration Space Independence** <Ref id="18.1.1" label="§18.1.1" />: Each out-degree port is directed independently under background fluctuations, creating a total configuration space of size $2^6 = 64$ for a triad of adjacent vertices.
-3.  **Alignment Constraint** <Ref id="18.1.1" label="§18.1.1" />: A closed directed 3-cycle requires a unique alignment of outgoing ports along the cycle path, matching exactly one successful configuration.
+1.  **Pre-Geometric Substrate**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: The vacuum state is a directed regular Bethe tree where each vertex possesses exactly two outgoing ports.
+2.  **Configuration Space Independence**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: Each out-degree port is directed independently under background fluctuations, creating a total configuration space of size $2^6 = 64$ for a triad of adjacent vertices.
+3.  **Alignment Constraint**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: A closed directed 3-cycle requires a unique alignment of outgoing ports along the cycle path, matching exactly one successful configuration.
 
 **III. Assembly**
 
@@ -106,8 +106,8 @@ Let $G_0 = (V, E)$ be a directed regular Bethe tree on $N$ vertices. Every verte
 
 **II. The Logic Chain**
 
-1.  **Trivalent Bethe Tree Topology** <Ref id="18.1.1" label="§18.1.1" />: Each vertex in the graph has a coordination number of $k=3$ and an out-degree of 2.
-2.  **Conflict Resolution Constraints** <Ref id="18.1.1" label="§18.1.1" />: Overlapping directed 2-paths share edges and are excluded to avoid update collisions under the quantum error-correction syndrome rules.
+1.  **Trivalent Bethe Tree Topology**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: Each vertex in the graph has a coordination number of $k=3$ and an out-degree of 2.
+2.  **Conflict Resolution Constraints**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: Overlapping directed 2-paths share edges and are excluded to avoid update collisions under the quantum error-correction syndrome rules.
 
 **III. Assembly**
 
@@ -152,9 +152,9 @@ Let the pre-geometric tree vacuum $G_0 = (V_A \cup V_B, E)$ be strictly bipartit
 
 **II. The Logic Chain**
 
-1.  **Bipartite Parity Eigenstates** <Ref id="18.1.1" label="§18.1.1" />: The bipartite partitioning of the Bethe tree defines eigenstates of the parity operator $\mathcal{P}$ such that $\mathcal{P} |v\rangle = (-1)^{\chi(v)} |v\rangle$, where $\chi(v) = 0$ for $v \in V_A$ and $\chi(v) = 1$ for $v \in V_B$.
-2.  **Even Path Restriction** <Ref id="18.1.1" label="§18.1.1" />: Any closed cycle on a bipartite graph has an even number of edges, which restricts transitions between partitions to preserve parity.
-3.  **Odd Cycle Generation** <Ref id="18.1.2" label="§18.1.2" />: The nucleation of a directed 3-cycle requires breaking the bipartite parity symmetry, which corresponds to the odd-parity sector of the configuration space.
+1.  **Bipartite Parity Eigenstates**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: The bipartite partitioning of the Bethe tree defines eigenstates of the parity operator $\mathcal{P}$ such that $\mathcal{P} |v\rangle = (-1)^{\chi(v)} |v\rangle$, where $\chi(v) = 0$ for $v \in V_A$ and $\chi(v) = 1$ for $v \in V_B$.
+2.  **Even Path Restriction**  **Pre-Geometric Vacuum** <Ref id="18.1.1" label="§18.1.1" />: Any closed cycle on a bipartite graph has an even number of edges, which restricts transitions between partitions to preserve parity.
+3.  **Odd Cycle Generation**  **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" />: The nucleation of a directed 3-cycle requires breaking the bipartite parity symmetry, which corresponds to the odd-parity sector of the configuration space.
 
 **III. Assembly**
 
@@ -209,8 +209,8 @@ Let $G_0$ be a directed regular Bethe tree vacuum on a finite volume containing 
 **II. The Logic Chain**
 
 1.  **Slot Alignment Probability** <Ref id="18.1.3" label="§18.1.3" />: The probability that any single active precursor closes a 3-cycle on a single sequencer step is $P_{\text{alignment}} = 2^{-6}$.
-2.  **Active Precursor Abundance** <Ref id="18.1.4" label="§18.1.4" />: There exist exactly **2N** independent, non-overlapping active precursor 2-paths in the Bethe tree fragment.
-3.  **Permittivity Instability** <Ref id="18.1.2" label="§18.1.2" />: The vacuum permittivity $\Lambda > 0$ permits spontaneous slot transitions under background fluctuations.
+2.  **Active Precursor Abundance**  **Precursor Path Counting** <Ref id="18.1.4" label="§18.1.4" />: There exist exactly **2N** independent, non-overlapping active precursor 2-paths in the Bethe tree fragment.
+3.  **Permittivity Instability**  **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" />: The vacuum permittivity $\Lambda > 0$ permits spontaneous slot transitions under background fluctuations.
 
 **III. Assembly**
 
@@ -248,7 +248,7 @@ Section 18.1.6 formalizes the properties of the QBD proof regarding primordial l
 :::note[**Numerical Calculation of the Spontaneous Loop Nucleation Current across Graph Volumes**]
 :::
 
-Computational verification of the spontaneous loop nucleation current established by **Primordial Loop Nucleation** <Ref id="18.1.6" label="§18.1.6" /> <Ref id="18.1" label="§18.1" /> is based on the following protocols:
+Computational verification of the spontaneous loop nucleation current established by **Primordial Loop Nucleation** <Ref id="18.1.6" label="§18.1.6" /> and **Primordial Ignition** <Ref id="18.1" label="§18.1" /> is based on the following protocols:
 
 1.  **Vacuum Representation:** The algorithm constructs a directed Bethe lattice fragment to serve as the initial pre-geometric vacuum topology.
 2.  **Ignition Dynamics:** The protocol simulates the stochastic activation of rewrites to trigger spontaneous loop nucleation events.
@@ -462,7 +462,7 @@ Section 18.1.7 formalizes the properties of the QBD calculation regarding loop n
 :::note[**Numerical Sweeping of Tunneling Coupling and Bipartite Parity Violation**]
 :::
 
-Verification of the topological phase transition established by **Topological Parity Projection** <Ref id="18.1.5.1" label="§18.1.5.1" /> <Ref id="18.1" label="§18.1" /> is based on the following protocols:
+Verification of the topological phase transition established by **Topological Parity Projection** <Ref id="18.1.5.1" label="§18.1.5.1" /> and **Primordial Ignition** <Ref id="18.1" label="§18.1" /> is based on the following protocols:
 
 1.  **State Initialization:** The algorithm builds a bipartite Bethe fragment representing the initial un-ignited vacuum state.
 2.  **Coupling Sweep:** The protocol sweeps the tunneling coupling parameter to simulate quantum fluctuations violating bipartite parity.
@@ -712,7 +712,7 @@ Let $G_t$ be a graph representing the spatial slice at time $t$. Let $V$ denote 
 **II. The Logic Chain**
 
 1.  **Volume-Complexity Link** <Ref id="18.2.1" label="§18.2.1" />: The spatial volume occupied by $N_3(t)$ cycles is $\text{Vol}(t) = \gamma N_3(t) \ell_0^3$.
-2.  **Vertex Density Scale** <Ref id="18.2.1" label="§18.2.1" />: The physical volume per vertex scale is inversely proportional to the intensive cycle density $\rho(t)$.
+2.  **Vertex Density Scale**  **Volume-Complexity Link** <Ref id="18.2.1" label="§18.2.1" />: The physical volume per vertex scale is inversely proportional to the intensive cycle density $\rho(t)$.
 
 **III. Assembly**
 
@@ -830,7 +830,7 @@ Section 18.2.5 formalizes the properties of the QBD proof regarding discrete fri
 :::note[**Numerical Calculation of the Emergent Scale Factor and Hubble Parameter from Cycle Currents**]
 :::
 
-Verification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> <Ref id="18.2" label="§18.2" /> is based on the following protocols:
+Verification of the scale factor expansion established by **Discrete Friedmann Scaling** <Ref id="18.2.5" label="§18.2.5" /> and **Scaling Relation** <Ref id="18.2" label="§18.2" /> is based on the following protocols:
 
 1.  **Complexity Estimation:** The algorithm computes the local graph density and volume to serve as proxies for the spatial scale factor.
 2.  **Friedmann Integration:** The protocol integrates the discrete Friedmann equations using the measured complexity values.
@@ -1011,8 +1011,8 @@ Let the full intensive Master Equation be represented as $\dot{\rho} = (\Lambda 
 
 **II. The Logic Chain**
 
-1.  **Friction Expansion** <Ref id="18.1.2" label="§18.1.2" />: Taylor expansion of the exponential friction yields $e^{-6\mu\rho} = 1 - 6\mu\rho + \mathcal{O}(\rho^2) \approx 1$.
-2.  **Deletion Suppression** <Ref id="18.1.2" label="§18.1.2" />: For $\rho \ll 1$, the quadratic deletion term $3\lambda_{\text{cat}}\rho^2$ is negligible compared to the linear bare dilution term $\frac{1}{2}\rho$.
+1.  **Friction Expansion**  **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" />: Taylor expansion of the exponential friction yields $e^{-6\mu\rho} = 1 - 6\mu\rho + \mathcal{O}(\rho^2) \approx 1$.
+2.  **Deletion Suppression**  **Primordial Loop Nucleation** <Ref id="18.1.2" label="§18.1.2" />: For $\rho \ll 1$, the quadratic deletion term $3\lambda_{\text{cat}}\rho^2$ is negligible compared to the linear bare dilution term $\frac{1}{2}\rho$.
 
 **III. Assembly**
 
@@ -1184,7 +1184,7 @@ Let $G = (V, E)$ be the emergent graph at the stable attractor density $\rho^*$.
 **II. The Logic Chain**
 
 1.  **Ahlfors Regularity Bounds** <Ref id="18.3.4" label="§18.3.4" />: The volume of topological balls scales as $|B(v, R)| \sim R^4$.
-2.  **Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
+2.  **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6" label="§18.3.6" />: The discrete Laplacian converges to the Laplace-Beltrami operator on a smooth Riemannian manifold.
 
 **III. Assembly**
 
@@ -1369,7 +1369,7 @@ Section 18.3.8 formalizes the properties of the QBD proof regarding emergence of
 :::note[**Numerical Calculation of the Exponential de Sitter Expansion Coefficient**]
 :::
 
-Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.8" label="§18.3.8" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
+Verification of the de Sitter growth coefficient established by **Emergence of de Sitter Expansion** <Ref id="18.3.8" label="§18.3.8" /> and **Autocatalytic Growth** <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Stochastic Growth Simulation:** The algorithm simulates the growth of the causal graph under frictionless update rules.
 2.  **Volume Tracking:** The protocol logs the expansion of the vertex and edge counts over logical time steps.
@@ -1498,7 +1498,7 @@ Section 18.3.9 formalizes the properties of the QBD calculation regarding de sit
 :::note[**Numerical Calculation of the Hausdorff Dimension from Ball Volumes**]
 :::
 
-Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.7.1" label="§18.3.7.1" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
+Verification of the Hausdorff dimension established by **Dimensional Emergence** <Ref id="18.3.7.1" label="§18.3.7.1" /> and **Autocatalytic Growth** <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Distance Profiling:** The algorithm measures topological path lengths and volume growth from a set of reference nodes.
 2.  **Dimension Calculation:** The protocol computes the local Hausdorff dimension by taking the logarithmic derivative of volume growth.
@@ -1623,7 +1623,7 @@ Section 18.3.11 formalizes the properties of the QBD calculation regarding hausd
 :::note[**Numerical Simulation of Random Walks and Recurrence Probabilities to Verify Spectral Dimension d_S = 4.0**]
 :::
 
-Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6.1" label="§18.3.6.1" /> <Ref id="18.3" label="§18.3" /> is based on the following protocols:
+Verification of the asymptotic spectral dimension established by **Gromov-Hausdorff Laplacian Convergence** <Ref id="18.3.6.1" label="§18.3.6.1" /> and **Autocatalytic Growth** <Ref id="18.3" label="§18.3" /> is based on the following protocols:
 
 1.  **Laplacian Spectrum Generation:** The algorithm generates the eigenvalues of the rescaled discrete Laplacian on periodic structures.
 2.  **Heat Trace Computation:** The protocol calculates the heat kernel trace and recurrence probability over a range of diffusion times.
@@ -1864,7 +1864,7 @@ Section 18.4.3 formalizes the properties of the QBD lemma regarding frictional n
 
 **I. Setup and Assumptions**
 
-Let the cycle density be governed by the stochastic Langevin equation $\dot{\rho} = F(\rho) + \xi(t)$, where $\xi(t)$ is a Gaussian white noise process with zero mean and covariance $\langle \xi(t) \xi(t') \rangle = 2 D_{\text{noise}}(\rho) \delta(t - t')$. <Ref id="18.4.3" label="§18.4.3" /> and <Ref id="18.4.2" label="§18.4.2" />
+Let the cycle density be governed by the stochastic Langevin equation $\dot{\rho} = F(\rho) + \xi(t)$, where $\xi(t)$ is a Gaussian white noise process with zero mean and covariance $\langle \xi(t) \xi(t') \rangle = 2 D_{\text{noise}}(\rho) \delta(t - t')$.  **Frictional Noise Damping** <Ref id="18.4.3" label="§18.4.3" /> and  **Master Equation Slow-Roll Dynamics** <Ref id="18.4.2" label="§18.4.2" />
 
 **II. The Logic Chain**
 
@@ -1911,7 +1911,7 @@ Section 18.4.4 formalizes the properties of the QBD lemma regarding steric dampi
 
 **I. Setup and Assumptions**
 
-Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$. <Ref id="18.4.4" label="§18.4.4" /> and <Ref id="18.4.3" label="§18.4.3" /> Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
+Let the intensive rate function be $F(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$ for the density interval $\rho \in [\rho_{\text{ignition}}, \rho^* - \delta]$, where $\rho_{\text{ignition}} \approx 0.0556$ and $\rho^* \approx 0.037$.  **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4" label="§18.4.4" /> and  **Frictional Noise Damping** <Ref id="18.4.3" label="§18.4.3" /> Let the slow-roll parameters be defined as $\varepsilon = -3F(\rho)/H^2$ and $\eta = -F'(\rho)/H$.
 
 **II. The Logic Chain**
 
@@ -1998,7 +1998,7 @@ Section 18.4.5 formalizes the properties of the QBD proof regarding spectral ind
 :::note[**Numerical Integration of the Curvature Power Spectrum over Slow-Roll e-folds**]
 :::
 
-Verification of the spectral red tilt established by **Spectral Index Red Tilt** <Ref id="18.4.5" label="§18.4.5" /> <Ref id="18.4" label="§18.4" /> is based on the following protocols:
+Verification of the spectral red tilt established by **Spectral Index Red Tilt** <Ref id="18.4.5" label="§18.4.5" /> and **Primordial Fluctuations** <Ref id="18.4" label="§18.4" /> is based on the following protocols:
 
 1.  **Noise Generation:** The algorithm generates Gaussian fluctuations to represent primordial scalar perturbations.
 2.  **Mode Integration:** The protocol integrates the mode equations across horizon crossing using a discrete solver.
@@ -2141,7 +2141,7 @@ Section 18.4.6 formalizes the properties of the QBD calculation regarding power 
 :::note[**Numerical Integration of Stochastic Langevin Trajectory and Slow-Roll Parameter Tracking**]
 :::
 
-Verification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4.1" label="§18.4.4.1" /> <Ref id="18.4" label="§18.4" /> is based on the following protocols:
+Verification of the slow-roll parameter bounds established by **Steric Damping Slow-Roll Bounds** <Ref id="18.4.4.1" label="§18.4.4.1" /> and **Primordial Fluctuations** <Ref id="18.4" label="§18.4" /> is based on the following protocols:
 
 1.  **Langevin Simulation:** The algorithm simulates the stochastic Langevin trajectory of the scalar inflaton on the discrete graph.
 2.  **Parameter Tracking:** The protocol monitors the slow-roll parameters during the inflationary phase.
@@ -2320,7 +2320,7 @@ where the physical parameters are $\Lambda = 0.015625$, $\mu = 0.399$, and $\lam
 **II. The Logic Chain**
 
 1.  **Master Equation Slow-Roll Dynamics** <Ref id="18.4.2" label="§18.4.2" />: The intensive rate of change of cycle density is governed by the Master Equation $\dot{\rho} = F(\rho)$.
-2.  **Stable Equilibrium Attractor** <Ref id="18.3.1" label="§18.3.1" />: At the stable fixed point, the net flux vanishes: $F(\rho^*) = 0$.
+2.  **Stable Equilibrium Attractor**  **Emergence of de Sitter Expansion** <Ref id="18.3.1" label="§18.3.1" />: At the stable fixed point, the net flux vanishes: $F(\rho^*) = 0$.
 
 **III. Assembly**
 
@@ -2389,7 +2389,7 @@ Section 18.5.3 formalizes the properties of the QBD lemma regarding curvature-de
 
 **I. Setup and Assumptions**
 
-Let G = (V, E) be the spatial graph with cycle density $\rho(t)$ and stable attractor density $\rho^* \approx 0.037$. <Ref id="18.5.3" label="§18.5.3" /> and <Ref id="18.5.2" label="§18.5.2" /> Let the local Ollivier-Ricci curvature on an edge $(u,v)$ be denoted by $K(u,v)$.
+Let G = (V, E) be the spatial graph with cycle density $\rho(t)$ and stable attractor density $\rho^* \approx 0.037$.  **Curvature-Density Coupling** <Ref id="18.5.3" label="§18.5.3" /> and  **Net Flux Jacobian Linearization** <Ref id="18.5.2" label="§18.5.2" /> Let the local Ollivier-Ricci curvature on an edge $(u,v)$ be denoted by $K(u,v)$.
 
 **II. The Logic Chain**
 
@@ -2441,11 +2441,11 @@ Section 18.5.4 formalizes the properties of the QBD lemma regarding bethe tree s
 
 **I. Setup and Assumptions**
 
-Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$. <Ref id="18.5.4" label="§18.5.4" /> and <Ref id="18.5.3" label="§18.5.3" /> Let $N$ denote the total number of vertices in the tree.
+Let $G_0 = (V, E)$ be a regular trivalent Bethe tree (coordination number $k=3$, out-degree of root is 3, out-degree of all subsequent nodes is 2) of topological radius $R$.  **Bethe Tree Small-World Scaling** <Ref id="18.5.4" label="§18.5.4" /> and  **Curvature-Density Coupling** <Ref id="18.5.3" label="§18.5.3" /> Let $N$ denote the total number of vertices in the tree.
 
 **II. The Logic Chain**
 
-1.  **Horizon Homogeneity** <Ref id="18.5.6" label="§18.5.6" />: The pre-geometric vacuum substrate is represented by the regular trivalent tree.
+1.  **Horizon Homogeneity**  **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6" label="§18.5.6" />: The pre-geometric vacuum substrate is represented by the regular trivalent tree.
 
 **III. Assembly**
 
@@ -2494,11 +2494,11 @@ Section 18.5.5 formalizes the properties of the QBD lemma regarding relational p
 
 **I. Setup and Assumptions**
 
-Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$. <Ref id="18.5.5" label="§18.5.5" /> and <Ref id="18.5.4" label="§18.5.4" /> Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
+Let $A$ be the adjacency matrix of the trivalent tree graph $G_0$.  **Relational Propagator Spectrum** <Ref id="18.5.5" label="§18.5.5" /> and  **Bethe Tree Small-World Scaling** <Ref id="18.5.4" label="§18.5.4" /> Let $I$ be the identity matrix. Let $s > 3$ be a real spectral parameter. we compute the Green's function resolvent propagator between vertices $u$ and $v$ as $G_{uv}(s) = \left( (s I - A)^{-1} \right)_{uv}$.
 
 **II. The Logic Chain**
 
-1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances on the tree are unique and short.
+1.  **Bethe Tree Small-World Scaling**  **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances on the tree are unique and short.
 
 **III. Assembly**
 
@@ -2546,8 +2546,8 @@ Let the pre-geometric trivalent tree $G_0$ have $N$ vertices. Let the maximum to
 
 **II. The Logic Chain**
 
-1.  **Bethe Tree Small-World Scaling** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances scale logarithmically with the total volume $N$.
-2.  **Relational Propagator Spectrum** <Ref id="18.5.4" label="§18.5.4" />: Propagators and covariances decay exponentially with topological distance.
+1.  **Bethe Tree Small-World Scaling**  **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6" label="§18.5.6" />: Geodesic distances scale logarithmically with the total volume $N$.
+2.  **Relational Propagator Spectrum**  **Bethe Tree Small-World Scaling** <Ref id="18.5.4" label="§18.5.4" />: Propagators and covariances decay exponentially with topological distance.
 
 **III. Assembly**
 
@@ -2624,7 +2624,7 @@ Section 18.5.7 formalizes the properties of the QBD proof regarding flatness as 
 :::note[**Numerical Jacobian Eigenvalue Verification**]
 :::
 
-Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.7" label="§18.5.7" /> <Ref id="18.5" label="§18.5" /> is based on the following protocols:
+Verification of the Jacobian eigenvalue established by **Flatness as Stable Attractor** <Ref id="18.5.7" label="§18.5.7" /> and **Cosmic Equilibrium** <Ref id="18.5" label="§18.5" /> is based on the following protocols:
 
 1.  **System Linearization:** The algorithm linearizes the net flux equations of cycle dynamics around the flat equilibrium state.
 2.  **Jacobian Construction:** The protocol constructs the stability Jacobian matrix from the linearized flux coefficients.
@@ -2728,7 +2728,7 @@ Section 18.5.8 formalizes the properties of the QBD calculation regarding jacobi
 :::note[**Numerical Propagator Covariance Decay**]
 :::
 
-Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6.1" label="§18.5.6.1" /> <Ref id="18.5" label="§18.5" /> is based on the following protocols:
+Verification of the covariance decay established by **Horizon Homogeneity via Pre-Geometric Connectivity** <Ref id="18.5.6.1" label="§18.5.6.1" /> and **Cosmic Equilibrium** <Ref id="18.5" label="§18.5" /> is based on the following protocols:
 
 1.  **Propagator Generation:** The algorithm generates the discrete relational propagator on the small-world Bethe fragment.
 2.  **Covariance Tracking:** The protocol monitors the covariance of the propagator field over topological distances.

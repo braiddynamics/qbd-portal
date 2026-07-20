@@ -1,0 +1,7 @@
+Local Entropy Gain from Relational Loop Closure
+====================================================
+Pre-closure multiplicity product:  1 x 0 = 0  -> S = 0.000000
+Post-closure multiplicity product: 2 x 1 = 2  -> S = 0.693147
+dS:                                0.693147
+Theoretical ln(2):                 0.693147
+Exact match:                       True

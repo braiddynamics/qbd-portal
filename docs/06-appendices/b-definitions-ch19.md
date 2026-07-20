@@ -54,7 +54,7 @@ Section 19.1.3 formalizes the properties of the QBD lemma regarding braid nuclea
 
 **I. Attractor Transition Integration**
 
-Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction. <Ref id="19.1.3" label="§19.1.3" /> and <Ref id="19.1.2" label="§19.1.2" /> The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
+Let the time-dependent cycle density $\rho(t)$ evolve according to the master equation with steric friction.  **Braid Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" /> and  **Right-Handed Neutrino Production** <Ref id="19.1.2" label="§19.1.2" /> The transition interval $\Delta t_{RH}$ represents the period where the density relaxes from the inflationary regime to the homeostatic fixed point.
 
 **II. Rate Formulation**
 
@@ -96,7 +96,7 @@ Section 19.1.4 formalizes the properties of the QBD lemma regarding braid combin
 
 **I. Multiplicity Enumeration**
 
-Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$. <Ref id="19.1.4" label="§19.1.4" /> and <Ref id="19.1.3" label="§19.1.3" /> The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
+Let the number of configurations of a defect of crossing complexity $C$ be bounded by $\Omega(C) \le 2^C$.  **Braid Combinatorial Dominance** <Ref id="19.1.4" label="§19.1.4" /> and  **Braid Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" /> The energy cost of maintaining this defect is given by the topological mass functional $E(C) = \kappa_m C$.
 
 **II. Partition Function Extremization**
 
@@ -181,8 +181,8 @@ Let the high-temperature plasma contain $N_f = 3$ fermion generations and $N_H =
 
 **II. The Logic Chain**
 
-1.  **Emergent SU(2) Topology** <Ref id="8.5" label="§8.5" />: Non-trivial vacuum configurations support non-perturbative transitions at high temperatures.
-2.  **Symmetry Conversion** <Ref id="19.2.1" label="§19.2.1" />: Electroweak sphaleron updates violate $B$ and $L$ conservation but preserve $B-L$.
+1.  **Emergent SU(2) Topology**  **Emergent Gauge Coupling** <Ref id="8.5" label="§8.5" />: Non-trivial vacuum configurations support non-perturbative transitions at high temperatures.
+2.  **Symmetry Conversion**  **Sakharov Compliance** <Ref id="19.2.1" label="§19.2.1" />: Electroweak sphaleron updates violate $B$ and $L$ conservation but preserve $B-L$.
 
 **III. Assembly**
 
@@ -269,7 +269,7 @@ Section 19.3.3 formalizes the properties of the QBD lemma regarding proton writh
 
 **I. Knot Representation**
 
-Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands. <Ref id="19.3.3" label="§19.3.3" /> and <Ref id="19.3.2" label="§19.3.2" /> The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
+Let the proton be represented by a composite knot $\beta_{uud}$ on three parallel ribbon strands.  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> and  **Neutron-Proton Mass Difference** <Ref id="19.3.2" label="§19.3.2" /> The up quarks correspond to the first two strands, each carrying a writhe $w_1 = +2$ and $w_2 = +2$.
 
 **II. Shared Edge Count**
 
@@ -309,7 +309,7 @@ Section 19.3.4 formalizes the properties of the QBD lemma regarding neutron writ
 
 **I. Orthogonal Embedding**
 
-Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3. <Ref id="19.3.4" label="§19.3.4" /> and <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
+Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3.  **Neutron Writhe Configuration** <Ref id="19.3.4" label="§19.3.4" /> and  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
 
 **II. Boundary Isolation**
 
@@ -380,7 +380,7 @@ Section 19.4.2 formalizes the properties of the QBD lemma regarding weak interac
 
 **I. Boltzmann Integration**
 
-The proof integrates the Boltzmann equation for weak rate equilibrium. <Ref id="19.4.2" label="§19.4.2" /> and <Ref id="19.4.1" label="§19.4.1" />
+The proof integrates the Boltzmann equation for weak rate equilibrium.  **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> and  **Helium Abundance Prediction** <Ref id="19.4.1" label="§19.4.1" />
 
 **II. Scale Equivalence**
 
@@ -417,7 +417,7 @@ Section 19.4.3 formalizes the properties of the QBD lemma regarding neutron beta
 
 **I. Decay Dynamics**
 
-Let $\tau_n \approx 880$ seconds represent the free neutron lifetime. <Ref id="19.4.3" label="§19.4.3" /> and <Ref id="19.4.2" label="§19.4.2" /> Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
+Let $\tau_n \approx 880$ seconds represent the free neutron lifetime.  **Neutron Beta Decay Scaling** <Ref id="19.4.3" label="§19.4.3" /> and  **Weak Interaction Freeze-Out** <Ref id="19.4.2" label="§19.4.2" /> Prior to the deuterium bottleneck at $t \approx 300$ seconds, neutrons decay to protons via $\beta$-decay rewrite rules.
 
 **II. Fraction Calculation**
 

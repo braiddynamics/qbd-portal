@@ -1,0 +1,30 @@
+Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction (Section 16.3.6.1)
+================================================================================
+Bulk Depth (z) | Subregion A Frac   | RT Threshold   | Inside Wedge   | Fidelity F(A)  | Status
+------------------------------------------------------------------------------------------
+0.10           | 0.20               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
+0.10           | 0.40               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
+0.10           | 0.60               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
+0.10           | 0.80               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
+0.30           | 0.20               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
+0.30           | 0.40               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
+0.30           | 0.60               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
+0.30           | 0.80               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
+0.50           | 0.20               | 0.3333         | False          | 0.654508       | FAILED (Outside Wedge)
+0.50           | 0.40               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
+0.50           | 0.60               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
+0.50           | 0.80               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
+0.70           | 0.20               | 0.4936         | False          | 0.353219       | FAILED (Outside Wedge)
+0.70           | 0.40               | 0.4936         | False          | 0.913821       | FAILED (Outside Wedge)
+0.70           | 0.60               | 0.4936         | True           | 1.000000       | PASSED (QECC Protected)
+0.70           | 0.80               | 0.4936         | True           | 1.000000       | PASSED (QECC Protected)
+0.90           | 0.20               | 0.7129         | False          | 0.181963       | FAILED (Outside Wedge)
+0.90           | 0.40               | 0.7129         | False          | 0.595409       | FAILED (Outside Wedge)
+0.90           | 0.60               | 0.7129         | False          | 0.939412       | FAILED (Outside Wedge)
+0.90           | 0.80               | 0.7129         | True           | 1.000000       | PASSED (QECC Protected)
+------------------------------------------------------------------------------------------
+Verification Protocol Results:
+1. CFT Two-Point Matrix Assembly       : PASSED (Conformal Correlation Matrix C_ij)
+2. HKLL Smearing Operator Norm        : PASSED (Continuous Boundary Inversion)
+3. Entanglement Wedge Reconstruction  : PASSED (F(A) = 1.000000 inside W_E(A))
+================================================================================

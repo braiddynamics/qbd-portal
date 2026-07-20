@@ -1,10 +1,15 @@
-Correlation Term     | Angle Diff (deg)   | Expectation Value
-------------------------------------------------------------
-E(A1, B1)            | -45.0              | 0.7071
-E(A1, B2)            | 45.0               | 0.7071
-E(A2, B1)            | 45.0               | 0.7071
-E(A2, B2)            | 135.0              | -0.7071
-------------------------------------------------------------
-Calculated S Parameter:    2.8284
-Classical Bound (Local):   2.0000
-Tsirelson Bound (Graph):   2.8284
+CHSH Quantum Violation & Detector Angle Optimization (Section 15.2.5.1)
+================================================================================
+Entanglement (phi)   | Entanglement S_vN    | Optimal CHSH Score (S_max)   | Status
+-------------------------------------------------------------------------------------
+0.0 deg              | 0.0000               | 2.0000                       | PASSED (Classical Bound, S = 2.0000)
+15.0 deg             | 0.3546               | 2.2361                       | PASSED (Quantum Violation, S = 2.2361)
+22.5 deg             | 0.6009               | 2.4495                       | PASSED (Quantum Violation, S = 2.4495)
+30.0 deg             | 0.8113               | 2.6458                       | PASSED (Quantum Violation, S = 2.6458)
+45.0 deg             | 1.0000               | 2.8284                       | PASSED (Quantum Violation, S = 2.8284)
+-------------------------------------------------------------------------------------
+Verification Protocol Results:
+1. Angular Parameter Optimization     : PASSED (BFGS Minima Converged)
+2. Classical Local Bound Verification : PASSED (Unentangled S_max = 2.0000)
+3. Tsirelson Bound Saturation         : PASSED (Bell State S_max = 2.8284)
+================================================================================

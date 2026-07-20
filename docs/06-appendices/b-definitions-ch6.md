@@ -29,7 +29,7 @@ Section 6.1.1 formalizes the properties of the QBD definition regarding local re
 
 Given any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$, its dynamical persistence against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy, specifically a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$), to occupy a protected logical state within the Quantum Error-Correcting Code codespace $\mathcal{C}$ (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />).
 
-This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> (denoted $\mathcal{R}$).
+This stability derives from the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />, wherein the untwining of a prime topology necessitates a global operation requiring computational resources scaling as order $O(N)$, a requirement that strictly exceeds the logarithmic causal horizon $O(\log N)$ accessible to the local **Universal Constructor** (denoted $\mathcal{R}$).
 
 Conversely, any excitation lacking these invariants constitutes a topologically trivial state and remains subject to reducible decomposition via Type II Reidemeister moves, a process that triggers the projection of syndrome inconsistencies ($\sigma = -1$) and results in immediate dissolution via the catalyzed **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
 
@@ -43,7 +43,7 @@ Section 6.1.2 formalizes the properties of the QBD theorem regarding particle ne
 :::info[**Reducibility of topologically trivial subgraphs via PUC-indexed elementary tasks**]
 :::
 
-Let $\xi \subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\xi(t) = 1$, and let $\mathfrak{T}(G)$ denote the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> restricted to $G$ as the dependent family of **Edge Addition Task** and **Edge Deletion Task** instances inhabiting the legality predicates $\mathrm{LegalAdd}(G;u,v)$ and $\mathrm{LegalDel}(G;u,v)$ (irreflexivity, edge presence or absence, and the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). Then there exists a finite sequence of legal tasks $\mathcal{S} = \{T_1, \dots, T_k\} \subset \mathfrak{T}(G)$ realizing a word of reducing Reidemeister generators that maps $\xi$ into a disjoint union of non-interacting 3-cycles $\coprod_j C_3^{(j)}$.
+Let $\xi \subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\xi(t) = 1$, and let $\mathfrak{T}(G)$ denote the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> restricted to $G$ as the dependent family of **Edge Addition Task** and **Edge Deletion Task** instances. Under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, there exists a finite sequence of legal tasks $\mathcal{S} = \{T_1, \dots, T_k\} \subset \mathfrak{T}(G)$ inhabiting the legality predicates $\mathrm{LegalAdd}(G;u,v)$ and $\mathrm{LegalDel}(G;u,v)$ (irreflexivity, edge presence or absence) that realizes a word of reducing Reidemeister generators mapping $\xi$ into a disjoint union of non-interacting 3-cycles $\coprod_j C_3^{(j)}$.
 
 **In Plain English:**  
 Section 6.1.3 formalizes the properties of the QBD lemma regarding reducibility of trivial topologies.
@@ -455,9 +455,9 @@ Section 6.1.3.2 formalizes the properties of the QBD calculation regarding legal
 :::note[**Lean 4 Encoding of Legality-Indexed Elementary Tasks via Dependent Task Space and Reidemeister Realization**]
 :::
 
-Type-theoretic certification of the dependent task constructors and the Task-Reidemeister realization established in the Reducibility of Trivial Topologies proceeds via the following verification strategy:
+Type-theoretic certification of the dependent task constructors and the Task-Reidemeister realization established in the **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" /> proceeds via the following verification strategy:
 
-1.  **Encoding:** Finite vertices and edge lists encode local graph fragments. The structures `LegalDel` and `LegalAdd` package the kinematic guards (membership, irreflexivity, freshness). The inductive type `AllowedTask` is the dependent family $\mathfrak{T}(G)$. The map `phi` assigns each reducing Reidemeister letter its realizing task kind.
+1.  **Encoding:** Finite vertices and edge lists encode local graph fragments. The structures `LegalDel` and `LegalAdd` package the kinematic guards (membership, irreflexivity, freshness). The inductive type `AllowedTask` is the dependent family $\mathfrak{T}(G)$ defined in the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />. The map `phi` assigns each reducing Reidemeister letter its realizing task kind.
 2.  **Theorem Statement:** The kernel checks (i) that Type I and Type II letters realize as deletion tasks, (ii) that Type III realizes as the composite add-then-delete word, (iii) that a witnessed digon edge admits a legal deletion decreasing complexity, and (iv) that a self-loop is rejected by the addition legality predicate.
 3.  **Proof Closure:** Definitional equalities close the realization map with `rfl`. Complexity descent and legality facts close by `simp` on list membership and Boolean guards.
 
@@ -563,7 +563,7 @@ theorem legal_add_rejects_loop (G : Graph) (u : V)
 ```
 
 **Verification Summary:**
-The definitions `LegalDel`, `LegalAdd`, and `AllowedTask` encode the dependent family $\mathfrak{T}(G)$ in which only legality-witnessed additions and deletions exist as constructors. The map `phi` certifies that reducing Type I and Type II letters realize as deletions while Type III realizes as the composite add-then-delete word, matching the case analysis of the prose proof. Definitional verification of `del_decreases_complexity` certifies strict descent of $C$ under legal deletion, and `legal_add_rejects_loop` certifies that self-loops never inhabit $\mathrm{LegalAdd}$. Kernel acceptance of these proof terms certifies the logical skeleton of the Task-Reidemeister realization used in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
+The definitions `LegalDel`, `LegalAdd`, and `AllowedTask` encode the dependent family $\mathfrak{T}(G)$ in which only legality-witnessed additions and deletions exist as constructors. The map `phi` certifies that reducing Type I and Type II letters realize as deletions while Type III realizes as the composite add-then-delete word, matching the case analysis of the prose proof. Definitional verification of `del_decreases_complexity` under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> certifies strict descent of $C$ under legal deletion, and `legal_add_rejects_loop` certifies that self-loops never inhabit $\mathrm{LegalAdd}$. Kernel acceptance of these proof terms certifies the logical skeleton of the Task-Reidemeister realization used in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
 
 **In Plain English:**  
 Section 6.1.3.3 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -596,8 +596,8 @@ $$
 $$
 
 The derivation employs the physical constants derived in Chapter 4 and verified in Chapter 5:
-- Vacuum Permittivity: $\Lambda = 0.0156$
-- Friction Coefficient: $\mu = 1/\sqrt{2\pi} \approx 0.3989$
+- Vacuum Permittivity: $\Lambda = 0.0156$  **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />
+- Friction Coefficient: $\mu = 1/\sqrt{2\pi} \approx 0.3989$  **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />
 - Catalysis Coefficient: $\lambda_{cat} = e - 1 \approx 1.718$
 
 **II. Creation Flux Evaluation**
@@ -669,7 +669,7 @@ Section 6.1.4.1 formalizes the properties of the QBD proof regarding catalyzed i
 
 Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
-1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the Master Equation parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
+1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the **Master Equation** <Ref id="5.2" label="§5.2" /> parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
 2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
 3.  **Flux Integration:** The simulation integrates the net topological current $d\rho/dt$ over time to map the trajectory of a high-stress fluctuation ($\rho = 0.50$) toward equilibrium.
 
@@ -913,10 +913,10 @@ Section 6.1.6 formalizes the properties of the QBD proof regarding particle nece
 
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
 
-1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and maintains the causal orientation mandated by the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
+1.  **World-Tube Geometry:** Each constituent ribbon defines a time-like world-tube formed by a directed, framed chain of 3-cycles, which satisfies the requirements of the **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and maintains the causal orientation mandated by the **Axiom 1: The Directed Causal Link**.
 2.  **Topological Non-Triviality:** The ribbons interweave via crossings compliant with the **Principle of Unique Causality**, yielding strictly non-zero global invariants, specifically a non-zero Writhe $w(\beta_3) \neq 0$ and non-zero pairwise Linking Numbers $L_{ij} \neq 0$ derived from Gauss integrals over pairwise axes.
 3.  **Algebraic Generation:** The configuration generates the non-abelian Braid Group on three strands, denoted $B_3$, which satisfies the Yang-Baxter equation $b_1 b_2 b_1 = b_2 b_1 b_2$ and embeds the Special Unitary algebra $\mathfrak{su}(3)$ via three-dimensional fundamental representations.
-4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />.
+4.  **Logical Protection:** The configuration occupies a protected logical subspace within the Quantum Error-Correcting Code codespace $\mathcal{C}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, characterized by the enforcement of $+1$ eigenvalues for the Geometric Stabilizers $K_{\text{geom}} = ZZZ$ **Hard Constraint Validity**.
 
 **In Plain English:**  
 Section 6.2.1 formalizes the properties of the QBD definition regarding tripartite braid.
@@ -930,7 +930,7 @@ Section 6.2.1 formalizes the properties of the QBD definition regarding triparti
 
 Every stable, first-generation elementary fermion is topologically isomorphic to a prime, three-ribbon braid ($n=3$) residing within the codespace $\mathcal{C}$ (**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />), a uniqueness established by the exhaustive exclusion of all alternative ribbon counts.
 
-In particular, configurations with fewer than three ribbons ($n < 3$) are excluded due to topological instability for $n=1$ via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> or algebraic insufficiency for $n=2$ via **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />.
+In particular, configurations with fewer than three ribbons ($n < 3$) are excluded due to topological instability for $n=1$ via **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> or algebraic insufficiency for $n=2$ via **Exclusion of Two-Ribbon (n=2)**.
 
 Furthermore, configurations with greater than three ribbons ($n > 3$) are excluded by Entropic Parsimony (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />), leaving the tripartite braid as the unique solution satisfying the 3-cycle **Geometric Quantum** to provide the necessary basis for three color charges and anomaly cancellation.
 
@@ -959,7 +959,7 @@ Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of 
 **I. High-Density Condition**
 
 Let $\xi$ denote a trivial cluster reduced by Type II moves to a compact volume $V_\xi$.
-This geometric concentration forces the local density significantly above the vacuum fixed point.
+This geometric concentration forces the local density significantly above the vacuum fixed point **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
 
 $$
 \rho_\xi \gg \rho^* \approx 0.037
@@ -969,7 +969,7 @@ The analysis evaluates stability at the characteristic high-stress value $\rho_\
 
 **II. Flux Imbalance Analysis**
 
-The evaluation of the competing terms within the Master Equation $\dot{\rho} = J_{in} - J_{out}$ utilizes the robust physical constants derived in Chapter 5 ($\Lambda \approx 0.016, \mu \approx 0.40, \lambda_{cat} \approx 1.72$).
+The evaluation of the competing terms within the Master Equation $\dot{\rho} = J_{in} - J_{out}$ utilizes the robust physical constants derived in Chapter 5 ($\Lambda \approx 0.016, \mu \approx 0.40, \lambda_{cat} \approx 1.72$)  **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />.
 
 1.  **Creation Flux ($J_{in}$):**
     Growth is driven by the autocatalytic term but suppressed by the geometric friction term.
@@ -1029,7 +1029,7 @@ Section 6.2.4 formalizes the properties of the QBD lemma regarding exclusion of 
 
 **I. Inductive Framework**
 
-Let $\mathcal{C}_1$ denote the configuration space of a single framed ribbon.
+Let $\mathcal{C}_1$ denote the configuration space of a single framed ribbon under **Local Reducibility** <Ref id="6.1.1" label="§6.1.1" />.
 Let $k \in \mathbb{Z}$ represent the number of half-twists, yielding a writhe $w = k/2$.
 Let $N_{strain}(k)$ denote the number of **Geometric Quanta** (3-cycles) required to support the configuration under the strictures of the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
 The hypothesis $N_{strain}(k) \propto k^2$ is established via mathematical induction.
@@ -1134,7 +1134,7 @@ Section 6.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 **I. Generator Definition**
 
 Let the braid $\beta$ be formed by $n=2$ strands.
-The **Braid Group** $B_2$ is generated by the single elementary generator $\sigma_1$, representing the right-handed exchange of strand 1 and strand 2.
+The **Braid Group** $B_2$ is generated by the single elementary generator $\sigma_1$  **Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />, representing the right-handed exchange of strand 1 and strand 2.
 The group presentation is:
 
 $$
@@ -1174,7 +1174,7 @@ This vanishing commutator subgroup confirms that $B_2$ is abelian: every pair of
 
 **III. Lie Algebra Embedding via Linear Representations**
 
-The connection between the Braid Group $B_n$ and continuous gauge symmetries is established through its linear representations $\rho: B_n \to GL(V)$, which relate to the quantum groups $U_q(\mathfrak{sl}_n)$ and map, in the classical limit ($q \to 1$), to the Special Unitary algebras $\mathfrak{su}(n)$.
+The connection between the Braid Group $B_n$ and continuous gauge symmetries is established through its linear representations $\rho: B_n \to GL(V)$, which relate to the quantum groups $U_q(\mathfrak{sl}_n)$ and map, in the classical limit ($q \to 1$), to the Special Unitary algebras $\mathfrak{su}(n)$  **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />.
 Because the group $B_2$ is strictly abelian, Schur's Lemma dictates that all of its irreducible representations over the complex numbers must be exactly one-dimensional.
 A one-dimensional representation maps exclusively to the general linear group of degree one, $GL(1, \mathbb{C}) \cong \mathbb{C}^*$, which corresponds to the abelian Lie algebra $\mathfrak{u}(1)$.
 Consequently, the embedded Lie algebra possesses only commuting generators. The structure constants $f^{abc}$ of the Lie algebra, defined by the relation:
@@ -1319,7 +1319,7 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding exclusion o
 Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 1.  **Thermodynamic Definition:** The algorithm sets the vacuum environment temperature to the critical value $T_{vac} = \ln 2$.
-2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands.
+2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands relative to the equilibrium vacuum density derived via **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
 3.  **Probability Normalization:** The simulation calculates the relative Boltzmann weights for ribbon counts $n \in [3, 8]$ and normalizes these values against the $n=3$ ground state to determine the suppression factors.
 
 ```python
@@ -1569,7 +1569,7 @@ Section 6.3.5 formalizes the properties of the QBD lemma regarding quadratic sca
 **I. Inductive Framework**
 
 Let $k$ represent the integer count of half-twists applied to a ribbon, corresponding to a total writhe $w = k/2$.
-Let $N_{strain}(k)$ denote the number of 3-cycle quanta required to maintain the causal connectivity of the twisted ribbon under **PUC** constraints.
+Let $N_{strain}(k)$ denote the number of 3-cycle quanta required to maintain the causal connectivity of the twisted ribbon under **PUC**  **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> constraints.
 The hypothesis $N_{strain}(k) \propto k^2$ is tested via induction.
 
 **II. Base Case ($k=1$)**
@@ -1653,7 +1653,7 @@ Section 6.3.5.1 formalizes the properties of the QBD proof regarding quadratic s
 
 Verification of the non-linear complexity growth established by **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
-1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the Principle of Unique Causality, which forbids the reuse of existing edges for new causal paths.
+1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which forbids the reuse of existing edges for new causal paths.
 2.  **Cost Measurement:** The protocol measures the topological cost $N_3$ required to add each successive unit of writhe $w$, defined as the graph distance required to circumnavigate the existing twist structure.
 3.  **Metric Analysis:** The simulation aggregates the marginal costs to determine the total accumulated complexity as a mapping of total writhe.
 
@@ -1924,7 +1924,7 @@ Section 6.4.3.1 formalizes the properties of the QBD proof regarding local horiz
 
 Validation of the operational limits established by **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
 
-1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves.
+1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves under the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />.
 2.  **Agent Logic:** The protocol defines two traversal agents: a Local Agent that selects moves stochastically based on a limited horizon radius $R$, and a Global Agent that selects the optimal path to the solution state.
 3.  **Stall Detection:** The metric tracks the progress of both agents toward the target distance $N=50$ over a fixed number of steps to detect entropic stalling.
 
@@ -2076,7 +2076,7 @@ For a prime knot of complexity $N$ (consisting of $N$ crossing quanta), the remo
 This requires rotating the frame of the ribbon relative to the embedding space.
 Because the ribbon is a closed loop or connects to infinity, the twist cannot simply be "wiped away"; it must be pushed along the curve until it annihilates with a counter-twist or exits the system boundaries.
 The path length for this propagation is $L \propto N$.
-The number of elementary rewrite steps $k$ required to propagate a twist over distance $L$ is $k \ge L$.
+The number of elementary rewrite steps $k$ required to propagate a twist over distance $L$ is $k \ge L$, governed by the local operations of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />.
 
 $$
 \mathrm{Cost}_{\text{unwind}} \propto N

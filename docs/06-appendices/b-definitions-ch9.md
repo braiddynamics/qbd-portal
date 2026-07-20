@@ -37,7 +37,7 @@ Section 9.1.2 formalizes the properties of the QBD lemma regarding rank conditio
 :::
 
 **I. Rank Definition**
-The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$). <Ref id="9.1.2" label="§9.1.2" /> and <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
+The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$).  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" /> and  **Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
 
 **II. Standard Model Rank**
 The Standard Model gauge group $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$ possesses the following rank structure:
@@ -79,7 +79,7 @@ Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank ex
 :::tip[**Verification of Failure Modes for Low-Rank Algebras**]
 :::
 
-The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3. <Ref id="9.1.3" label="§9.1.3" /> and <Ref id="9.1.2" label="§9.1.2" />
+The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />
 
 **I. Rank 1 ($A_1$)**
 * **Candidate:** $SU(2)$.
@@ -127,7 +127,7 @@ Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate eli
 :::tip[**Demonstration of Spectrum Mismatch for Non-SU(5) Rank-4 Groups**]
 :::
 
-The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation. <Ref id="9.1.4" label="§9.1.4" /> and <Ref id="9.1.3" label="§9.1.3" />
+The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.  **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" /> and  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />
 
 **I. Exclusion of $Sp(8)$ ($C_4$)**
 * **Structure:** Symplectic group of rank 4.
@@ -246,7 +246,7 @@ Verification of the anomaly freedom condition established in the **Minimal GUT U
 
 1.  **Coefficient Definition:** The algorithm defines the symbolic anomaly coefficients for $SU(N)$ representations, where the fundamental has weight $A=1$, the antifundamental $A=-1$, and the antisymmetric tensor $A = N-4$.
 2.  **Substitution:** The protocol substitutes $N=5$ into the symbolic expressions to derive the specific coefficients for the $\mathbf{\bar{5}}$ and $\mathbf{10}$ representations.
-3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically. This verifies the result established in <Ref id="9.1.5" label="§9.1.5" />.
+3.  **Summation:** The simulation computes the total anomaly $\Sigma A = A(\mathbf{\bar{5}}) + A(\mathbf{10})$ to verify that the net result vanishes identically. This verifies the result established in  **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" />.
 
 ```python
 import sympy as sp
@@ -448,7 +448,7 @@ Section 9.2.5 formalizes the properties of the QBD lemma regarding closed lie al
 :::tip[**Explicit Construction and Induction of the $\mathfrak{su}(5)$ Generators**]
 :::
 
-The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis. <Ref id="9.2.5" label="§9.2.5" /> and <Ref id="9.2.4" label="§9.2.4" />
+The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> and  **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />
 
 **I. Generator Identification**
 The four fundamental rewrite processes $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$ correspond to swaps of adjacent ribbons $(i, i+1)$.
@@ -658,7 +658,7 @@ Section 9.2.6 formalizes the properties of the QBD lemma regarding anti-fundamen
 :::tip[**Demonstration of Minimal Complexity for the $\mathbf{\bar{5}}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid. <Ref id="9.2.6" label="§9.2.6" /> and <Ref id="9.2.5" label="§9.2.5" />
+The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" /> and  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />
 
 **I. Representation Decomposition**
 The $\mathbf{\bar{5}}$ decomposes under $SU(3) \times SU(2)$ as $(\mathbf{\bar{3}}, \mathbf{1}) \oplus (\mathbf{1}, \mathbf{2})$.
@@ -699,7 +699,7 @@ Section 9.2.7 formalizes the properties of the QBD lemma regarding antisymmetric
 :::tip[**Demonstration of Stable Complexity for the $\mathbf{10}$ Multiplet**]
 :::
 
-The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations. <Ref id="9.2.7" label="§9.2.7" /> and <Ref id="9.2.6" label="§9.2.6" />
+The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.  **Antisymmetric Multiplet** <Ref id="9.2.7" label="§9.2.7" /> and  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />
 
 **I. Representation Topology**
 The $\mathbf{10}$ is isomorphic to $\wedge^2 \mathbf{5}$. This algebraic antisymmetry maps to a topological configuration of pairwise crossings.
@@ -780,7 +780,7 @@ Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity or
 :::
 
 **I. Complexity Metric**
-The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy. <Ref id="9.3.2" label="§9.3.2" /> and <Ref id="9.3.1" label="§9.3.1" />
+The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> and  **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />
 
 $$
 C[\beta] = \alpha N_{cross} + \gamma N_{link}
@@ -835,7 +835,7 @@ Section 9.3.3 formalizes the properties of the QBD lemma regarding topological p
 :::
 
 **I. Stability Condition**
-A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps. <Ref id="9.3.3" label="§9.3.3" /> and <Ref id="9.3.2" label="§9.3.2" />
+A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> and  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />
 
 $$
 \forall \mathcal{R}_i, \quad E[\mathcal{R}_i(\beta)] > E[\beta]
@@ -879,7 +879,7 @@ Section 9.3.4 formalizes the properties of the QBD lemma regarding decay tunneli
 :::
 
 **I. Tunneling Amplitude**
-The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory). <Ref id="9.3.4" label="§9.3.4" /> and <Ref id="9.3.3" label="§9.3.3" />
+The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).  **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> and  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />
 The amplitude for this process is governed by the path integral over the barrier:
 
 $$
@@ -1004,7 +1004,7 @@ Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction v
 :::
 
 **I. Generator Matrix Action**
-The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$. <Ref id="9.4.3" label="§9.4.3" /> and <Ref id="9.4.2" label="§9.4.2" />
+The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.  **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> and  **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />
 Let $|\psi_q\rangle = (c_1, c_2, c_3, 0, 0)^T$ denote a quark state in the color subspace.
 Let $|\psi_l\rangle = (0, 0, 0, w_1, w_2)^T$ denote a lepton state in the weak subspace.
 The general form of the off-diagonal generator in $\mathfrak{su}(5)$ is:
@@ -1150,7 +1150,7 @@ Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verif
 :::
 
 **I. Standard Model EFT Prediction**
-In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons. <Ref id="9.5.2" label="§9.5.2" /> and <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
+In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons.  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> and  **Proton Stability** <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
 
 $$
 \mathcal{L}_{eff} \sim \frac{g_{GUT}^2}{M_X^2} (\bar{q} \gamma^\mu l)(\bar{q} \gamma_\mu q)
@@ -1384,7 +1384,7 @@ Section 9.5.3 formalizes the properties of the QBD lemma regarding minimal actio
 :::
 
 **I. Principle of Minimal Complexity Change**
-The decay rate for a non-perturbative topological transition is governed by the instanton action $S$: <Ref id="9.5.3" label="§9.5.3" /> and <Ref id="9.5.2" label="§9.5.2" />
+The decay rate for a non-perturbative topological transition is governed by the instanton action $S$:  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> and  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />
 
 $$
 \Gamma \propto e^{-S} \propto e^{-\Delta C}
@@ -1443,7 +1443,7 @@ Section 9.5.4 formalizes the properties of the QBD lemma regarding action-mass p
 :::
 
 **I. Tunneling Path Length**
-The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry. <Ref id="9.5.4" label="§9.5.4" /> and <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
+The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry.  **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> and  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
 The transition requires creating and annihilating the intermediate $X$ boson state $|G_X\rangle$.
 The "distance" in configuration space (number of rewrites) required to create the structure of $|G_X\rangle$ from the vacuum (or simple background) is denoted by $L_{min}$.
 
@@ -1649,7 +1649,7 @@ Section 9.6.4 formalizes the properties of the QBD lemma regarding seesaw dynami
 :::tip[**Diagonalization of the Mass Matrix Yielding Light and Heavy Eigenstates**]
 :::
 
-The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$. <Ref id="9.6.4" label="§9.6.4" /> and <Ref id="9.6.3" label="§9.6.3" />
+The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.  **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> and  **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />
 
 **I. Mass Matrix Construction**
 The system is described in the basis $(\nu_L, N_R)$ by the mass matrix $M$:
@@ -1856,7 +1856,7 @@ Section 9.6.7 formalizes the properties of the QBD lemma regarding critical comp
 :::
 
 **I. Balance Equation**
-The critical state occurs when the creation rate exactly balances the deletion rate. <Ref id="9.6.7" label="§9.6.7" /> and <Ref id="9.6.6" label="§9.6.6" />
+The critical state occurs when the creation rate exactly balances the deletion rate under **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> and **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />
 
 $$
 R_{create} = R_{delete}
@@ -2010,7 +2010,7 @@ Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanis
 
 1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
 2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
-3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in <Ref id="9.6.9" label="§9.6.9" />.
+3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in  **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" />.
 
 ```python
 import numpy as np

@@ -1,17 +1,19 @@
-=================================================================
-   FORCE-MATTER DECOMPOSITION
-   E8 -> SO(16) (Force) + Spinor (Matter)
-=================================================================
-   Total Roots: 240
-   Force Sector (SO(16) Adjoint):  112 roots
-   Matter Sector (Spinor Rep):     128 roots
-
-   [Subgroup Verification]
-   Roots confined to dims [0,1,2]: 12 (matches SO(6) embedding)
-   Roots confined to dims [3,4]:   4 (matches SO(4) embedding)
-
-   [Matter Capacity Analysis]
-   Matter Sector Size: 128
-   SO(10) Family Size: 16
-   Available Families: 8.0
------------------------------------------------------------------
+E8 Force-Matter Decomposition & Lie Algebra Jacobi Closure (Section 17.4.4.2)
+================================================================================
+Sector               | Root Count     | Algebraic Role            | Status
+--------------------------------------------------------------------------------
+D8 (Vector)          | 112            | SO(16) Adjoint Gauge Bosons | PASSED (Force)
+Spinor (Chiral)      | 128            | Spin(16) Chiral Fermions  | PASSED (Matter)
+E8 (Total Roots)     | 240            | Unified Exceptional Algebra | PASSED (Unified)
+--------------------------------------------------------------------------------
+Subgroup & Family Capacity Analysis:
+  SU(3) Color Embedding Roots:  12   (Matches SO(6) ~ SU(4) subalgebra)
+  SU(2) Weak Embedding Roots:   4    (Matches SO(4) ~ SU(2)xSU(2) subalgebra)
+  Chiral Matter Generations:     8.0  (SO(10) 16-state multiplets)
+  Jacobi Identity Violations:    0    (out of 356 tested root triples)
+--------------------------------------------------------------------------------
+Verification Protocol Results:
+1. Root Lattice Decomposition         : PASSED (112 Force + 128 Matter = 240 Roots)
+2. Lie Algebra Jacobi Identity       : PASSED (Zero Violations across Root Triples)
+3. Standard Model & Family Capacity  : PASSED (SU(3)xSU(2) & 8 SO(10) Generations)
+================================================================================

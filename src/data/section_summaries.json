@@ -632,7 +632,7 @@
   "11.4": {
     "id": "11.4",
     "title": "Formal Synthesis",
-    "summary": "The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **lazy causal** measure <Ref id=\"11.2.1\" label=\"§11.2.1\" />. 2.2\" label=\"§11.2.2\" />."
+    "summary": "The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id=\"11.1.1\" label=\"§11.1.1\" /> as the ruler of causal space. Within this metric space, the **Lazy Causal Measure** <Ref id=\"11.2.1\" label=\"§11.2.1\" /> is employed to define the volume."
   },
   "12.4": {
     "id": "12.4",
@@ -656,13 +656,23 @@
   },
   "16.3": {
     "id": "16.3",
+    "title": "Entanglement Wedge Reconstruction (Quantum Error Correction)",
+    "summary": "Having established the Ryu-Takayanagi minimal cut correspondence and the Bekenstein entropy saturation limit in the preceding sections, we now address the central mechanism of holographic duality: **Bulk Reconstruction**. In the continuous AdS/CFT correspondence, a fundamental paradox arises regarding how local operators $\\hat{\\Phi}(x, z)$ deep inside the bulk interior can be mapped to non-local operators $\\hat{\\mathcal{O}}(x)$ residing on a boundary subregion $A \\subset \\partial M$. If the bulk geometry is an emergent macroscopic entity, there must exist a discrete quantum error-correcting mechanism that protects interior logical states against local boundary erasures."
+  },
+  "16.4": {
+    "id": "16.4",
+    "title": "Holographic RG Flow & Bulk Gravity (AdS/CFT Dictionary)",
+    "summary": "Having established that bulk subregions correspond to entanglement wedges protected by quantum error correction, we now complete the bridge between boundary quantum states and bulk gravitational field equations. In traditional General Relativity, the metric tensor $g_{\\mu\\nu}$ is an independent dynamical variable governed by the Einstein Hilbert action. In Holographic Gravity, the bulk Einstein field equations $G_{\\mu\\nu} = 8\\pi G T_{\\mu\\nu}$ emerge directly from the **Thermodynamics of Boundary Entanglement**."
+  },
+  "16.5": {
+    "id": "16.5",
     "title": "Formal Synthesis",
-    "summary": "The holographic principle is derived as a necessary consequence of discrete causal relations, proving the Ryu-Takayanagi relation $S(A) = \\text{Area}(\\gamma_A)/4G_N$ scale-by-scale through the isometry of renormalization group flows. Entanglement entropy is shown to be the minimal bulk surface area, demonstrating that the bulk space is a holographic projection of boundary quantum states."
+    "summary": "The Holographic Principle and Isomorphism Correspondence are established as exact mathematical dualities within Quantum Braid Dynamics. The framework establishes that the causal graph's renormalization group flow is strictly isomorphic to a MERA tensor network **Causal Tensor Network** <Ref id=\"16.1.1\" label=\"§16.1.1\" />, deriving the Ryu-Takayanagi correspondence **Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" /> from Schmidt rank capacity limits **Schmidt Rank Capacity Bound** <Ref id=\"16.1.3\" label=\"§16.1.3\" />, min-cut entropy identities **Min-Cut Entropy Identity** <Ref id=\"16.1.4\" label=\"§16.1.4\" />, code-space isometries **Isometry Condition** <Ref id=\"16.1.5\" label=\"§16.1.5\" />, and hyperbolic geodesic isomorphisms **Geodesic Distance Isomorphism** <Ref id=\"16.1.6\" label=\"§16.1.6\" />."
   },
   "17.5": {
     "id": "17.5",
     "title": "Formal Synthesis",
-    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />. 4.2\" label=\"§17.4.2\" />."
+    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />."
   },
   "18.6": {
     "id": "18.6",

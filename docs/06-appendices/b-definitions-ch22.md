@@ -83,7 +83,7 @@ Section 22.1.3 formalizes the properties of the QBD lemma regarding core density
 
 **I. Setup and Assumptions**
 
-Let the graph distance between adjacent nodes be bounded from below by the pre-geometric connection length $\ell_0$. <Ref id="22.1.3" label="§22.1.3" /> and <Ref id="22.1.2" label="§22.1.2" /> Let the maximum cycle density be $\rho_{crit}$.
+Let the graph distance between adjacent nodes be bounded from below by the pre-geometric connection length $\ell_0$.  **Core Density Limitation** <Ref id="22.1.3" label="§22.1.3" /> and  **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" /> Let the maximum cycle density be $\rho_{crit}$.
 
 **II. Ricci Curvature Integration**
 
@@ -173,7 +173,7 @@ Section 22.2.3 formalizes the properties of the QBD lemma regarding boundary-spa
 
 **I. Path-Sum Representation**
 
-Let the transition amplitude for horizon crossing be represented as a sum over histories in the discrete path-sum formalism: <Ref id="22.2.3" label="§22.2.3" /> and <Ref id="22.2.2" label="§22.2.2" />
+Let the transition amplitude for horizon crossing be represented as a sum over histories in the discrete path-sum formalism:  **Boundary-Spanning Transition Probability** <Ref id="22.2.3" label="§22.2.3" /> and  **Unitary Evaporation** <Ref id="22.2.2" label="§22.2.2" />
 
 $$
 \mathcal{P} = \sum_{\gamma \in \mathcal{C}} e^{i S[\gamma] / \hbar}
@@ -223,7 +223,7 @@ Section 22.2.4 formalizes the properties of the QBD lemma regarding entanglement
 
 **I. Radiation Entanglement Entropy**
 
-Let the Hilbert space of the system be decomposed into the black hole interior $H_{BH}$ and the radiation field $H_{rad}$. <Ref id="22.2.4" label="§22.2.4" /> and <Ref id="22.2.3" label="§22.2.3" /> The entanglement entropy is:
+Let the Hilbert space of the system be decomposed into the black hole interior $H_{BH}$ and the radiation field $H_{rad}$.  **Entanglement Entropy Page Curve** <Ref id="22.2.4" label="§22.2.4" /> and  **Boundary-Spanning Transition Probability** <Ref id="22.2.3" label="§22.2.3" /> The entanglement entropy is:
 
 $$
 S_{rad} = -\operatorname{Tr} \left( \hat{\rho}_{rad} \ln \hat{\rho}_{rad} \right)
@@ -308,7 +308,7 @@ Section 22.3.3 formalizes the properties of the QBD lemma regarding bosonic brai
 
 **I. Doublet Braid Product**
 
-Let two electron braids be represented by the tensor product state $|\beta_1\rangle \otimes |\beta_2\rangle$ on the trivalent graph. <Ref id="22.3.3" label="§22.3.3" /> and <Ref id="22.3.2" label="§22.3.2" /> The phonon interaction corresponds to a vertex-sharing rewrite operator $\hat{V}_{phonon}$ connecting the boundary edges of the two braids.
+Let two electron braids be represented by the tensor product state $|\beta_1\rangle \otimes |\beta_2\rangle$ on the trivalent graph.  **Bosonic Braid Coupling** <Ref id="22.3.3" label="§22.3.3" /> and  **Infinite Code Distance** <Ref id="22.3.2" label="§22.3.2" /> The phonon interaction corresponds to a vertex-sharing rewrite operator $\hat{V}_{phonon}$ connecting the boundary edges of the two braids.
 
 **II. Coupled State Representation**
 
@@ -350,7 +350,7 @@ Section 22.3.4 formalizes the properties of the QBD lemma regarding stabilizer e
 
 **I. Stabilizer Projector**
 
-Let the codespace project be $\hat{P}_{codespace}$, which projects the state onto the ground state of the stabilizer comonad. <Ref id="22.3.4" label="§22.3.4" /> and <Ref id="22.3.3" label="§22.3.3" /> For any error operator $\hat{E}$ of weight $w$:
+Let the codespace project be $\hat{P}_{codespace}$, which projects the state onto the ground state of the stabilizer comonad.  **Stabilizer Error Correction Bounds** <Ref id="22.3.4" label="§22.3.4" /> and  **Bosonic Braid Coupling** <Ref id="22.3.3" label="§22.3.3" /> For any error operator $\hat{E}$ of weight $w$:
 
 $$
 \hat{P}_{codespace} \hat{E} \hat{P}_{codespace} = C \cdot \hat{P}_{codespace}

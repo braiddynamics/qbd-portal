@@ -37,7 +37,7 @@ Section 20.1.2 formalizes the properties of the QBD lemma regarding sachs-wolfe 
 :::
 
 **I. Lapse Evaluation**
-The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster. <Ref id="20.1.2" label="§20.1.2" /> and <Ref id="20.1.1" label="§20.1.1" />
+The proof calculates the proper time lapse factor $N$ for a geodesic path climbing out of a cycle overdensity cluster.  **Sachs-Wolfe Time Dilation** <Ref id="20.1.2" label="§20.1.2" /> and  **Blackbody Equilibrium** <Ref id="20.1.1" label="§20.1.1" />
 
 **II. Anisotropy Derivation**
 It mathematically derives the Sachs-Wolfe relation:
@@ -72,7 +72,7 @@ Section 20.1.3 formalizes the properties of the QBD lemma regarding recombinatio
 
 **I. Chemical Equilibrium Setup**
 
-Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate: <Ref id="20.1.3" label="§20.1.3" /> and <Ref id="20.1.2" label="§20.1.2" />
+Let the number densities of free electron braids $n_e$, proton braids $n_p$, and neutral hydrogen composite knots $n_H$ satisfy the Saha equation on the trivalent graph substrate:  **Recombination Threshold** <Ref id="20.1.3" label="§20.1.3" /> and  **Sachs-Wolfe Time Dilation** <Ref id="20.1.2" label="§20.1.2" />
 
 $$
 \frac{n_e n_p}{n_H} = \left( \frac{m_e k T}{2\pi \hbar^2} \right)^{3/2} e^{-E_0/kT}
@@ -166,7 +166,7 @@ Section 20.2.3 formalizes the properties of the QBD lemma regarding sound horizo
 
 **I. Speed of Sound Definition**
 
-In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$. <Ref id="20.2.3" label="§20.2.3" /> and <Ref id="20.2.2" label="§20.2.2" /> For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
+In the radiation-dominated era, the speed of sound is determined by the ratio of pressure to energy density, $c_s^2 = \delta P / \delta \rho$.  **Sound Horizon Scale** <Ref id="20.2.3" label="§20.2.3" /> and  **Gravitational and Entropic Competing Forces** <Ref id="20.2.2" label="§20.2.2" /> For a relativistic fluid on the trivalent graph, this ratio converges to $c_s = 1/\sqrt{3}$.
 
 **II. Scale Factor Integration**
 
@@ -192,7 +192,7 @@ Section 20.2.3.1 formalizes the properties of the QBD proof regarding sound hori
 :::warning[**Postulate of Dark Matter Scaffolding as Gravitational Anchors for Acoustic Oscillations**]
 :::
 
-In the pre-recombination plasma, the sterile four-strand braid defects ($B_4$, **Quadripartite Braid Defect** <Ref id="21.1.2" label="§21.1.2" />) do not couple to photons and are unaffected by entropic pressure. They remain stationary, acting as stable gravitational potential wells (scaffolding) that anchor the baryonic oscillations and amplify the acoustic peak amplitudes.
+In the pre-recombination plasma, the sterile four-strand braid defects ($B_4$, **Quadripartite Braid Defect**  **Braid Defect Topological Stability** <Ref id="21.1.2" label="§21.1.2" />) do not couple to photons and are unaffected by entropic pressure. They remain stationary, acting as stable gravitational potential wells (scaffolding) that anchor the baryonic oscillations and amplify the acoustic peak amplitudes.
 
 **In Plain English:**  
 Section 20.2.4 formalizes the properties of the QBD postulate regarding sterile braid scaffolding.
@@ -247,7 +247,7 @@ Section 20.3.2 formalizes the properties of the QBD lemma regarding void relaxat
 :::
 
 **I. Master Equation Relaxation**
-The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes. <Ref id="20.3.2" label="§20.3.2" /> and <Ref id="20.3.1" label="§20.3.1" />
+The proof evaluates the net topological current $J_{net}$ in underdense regions where matter density vanishes.  **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" /> and  **Anisotropic Collapse** <Ref id="20.3.1" label="§20.3.1" />
 
 **II. Attractor Convergence**
 It shows that the local cycle density converges stably to $\rho^* \approx 0.037$ with a negative Jacobian.
@@ -278,7 +278,7 @@ Section 20.3.3 formalizes the properties of the QBD lemma regarding axis collaps
 :::
 
 **I. Eigenvalue Ordering**
-The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations. <Ref id="20.3.3" label="§20.3.3" /> and <Ref id="20.3.2" label="§20.3.2" />
+The proof establishes the local deformation tensor $D_{ij}$ and orders its eigenvalues $\lambda_1 > \lambda_2 > \lambda_3$ under primordial anisotropic perturbations.  **Axis Collapse Hierarchy** <Ref id="20.3.3" label="§20.3.3" /> and  **Void Relaxation** <Ref id="20.3.2" label="§20.3.2" />
 
 **II. Critical Timescales**
 It derives the collapse timescales $t_i = 1/\lambda_i$ and proves the strict ordering $t_1 < t_2 < t_3$ for non-degenerate ellipsoids.

@@ -162,7 +162,7 @@ Section 11.2.4 formalizes the properties of the QBD lemma regarding measure vali
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$. <Ref id="11.2.4" label="§11.2.4" /> and <Ref id="11.2.3" label="§11.2.3" />
+The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> and  **Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
@@ -213,7 +213,7 @@ Section 11.2.4.1 formalizes the properties of the QBD proof regarding measure va
 :::note[**Validation of Measure Normalization via Directed Chain Simulation**]
 :::
 
-Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the space definition verified in **Probability Space** <Ref id="11.2.2" label="§11.2.2" /> is based on the following protocols:
+Verification of the probability measure validity established in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> is based on the measure properties verified in **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />. This verification utilizes the following protocols:
 
 1.  **Lattice Generation:** The algorithm constructs a representative directed chain graph representing the sparse causal regime.
 2.  **Neighborhood Evaluation:** The protocol applies the lazy causal measure formula to the vertices under the four exhaustive topological configurations.
@@ -334,7 +334,7 @@ Section 11.2.5 formalizes the properties of the QBD lemma regarding entropy maxi
 :::tip[**Derivation of the Optimal Self-Weighting from the Analytical Maximization of the Macroscopic Temporal Entropy**]
 :::
 
-This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors. <Ref id="11.2.5" label="§11.2.5" /> and <Ref id="11.2.4" label="§11.2.4" />
+This condition corresponds to the maximization of the uncertainty regarding the temporal locus of the state, enforcing an equipartition of probability mass among the Past, Present, and Future causal sectors.  **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" /> and  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />
 
 **I. Definition of Temporal Macro-States**
 The vacuum acts to maximize the uncertainty of the temporal locus of the state, independent of the spatial dispersion within those loci. we compute three distinct causal sectors (macro-states) for a vertex $u$: the Present $S_0 = \{u\}$, the Future $S_+ = N^+(u)$, and the Past $S_- = N^-(u)$. The total probability measure allocated to these macroscopic sectors is defined as:
@@ -992,7 +992,7 @@ Combinatorial Reifenberg Flatness establishes that space looks flat and manifold
 :::tip[**Establishment of Boundary Homology Stability via Simplicial Link Decomposition**]
 :::
 
-For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$. <Ref id="11.2.8" label="§11.2.8" /> and <Ref id="11.2.7" label="§11.2.7" /> The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
+For any vertex $v \in V$ and combinatorial radius $r \in \mathbb{N}$, let $B_r(v) \subseteq V$ denote the metric ball under the undirected shortest-path metric $\bar{d}$.  **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" /> and  **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> The boundary shell is defined as the simplicial link $\partial B_r(v) = \{ u \in V \setminus B_{r-1}(v) \mid \exists w \in B_{r-1}(v) \text{ s.t. } (w,u) \in E \text{ or } (u,w) \in E \}$. The causal graph exhibits Combinatorial Reifenberg Flatness at scale $r_0$ if for all $v \in V$ and $r \ge r_0$, the volume growth ratio satisfies:.
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = 16 + \mathcal{O}(r^{-1})
@@ -1004,7 +1004,7 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices given by cliques of mutual adjacency.
 
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).
@@ -1071,7 +1071,7 @@ $$
 \mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v).
 $$
 
-This functional serves as the intrinsic measure of the total geometric content of the graph, analogous to the continuum integral $\int R \sqrt{-g} \, d^4x$. The variation of this action with respect to graph topology governs the emergent dynamics of the system.
+This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The asymptotic convergence of $\mathcal{S}[G]$ to the continuous Einstein-Hilbert action integral $\int R \sqrt{-g} \, d^4x$ is formally derived in **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" />. The variation of this action with respect to graph topology governs the emergent dynamics of the system.
 
 **In Plain English:**  
 Section 11.3.1 formalizes the properties of the QBD definition regarding discrete einstein-hilbert action.
@@ -1196,7 +1196,7 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$. <Ref id="11.3.4" label="§11.3.4" /> and <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
 
 The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
 
@@ -1414,10 +1414,15 @@ $$
 $$
 
 **III. Curvature Contribution**
-From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, we obtain established $\Delta K_{uv} > 0$.
-For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a high positive value due to the tight coupling of the cycle (shared neighbors in the new triad).
-Let the net curvature gain per cycle be $c \approx 3 - K_{baseline}$.
-Since $K_{baseline} < 1$, the constant $c$ is strictly positive.
+From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, $\Delta K_{uv} > 0$ holds. For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a positive value due to the shared neighbor $w$ in the triad.
+From **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, the shared mass fraction $m_w = \min\left(\frac{\beta}{n_u^-+1}, \frac{\beta}{n_v^++1}\right)$ is bounded below by $m_{\text{min}} = \frac{\beta}{n_{\text{max}}+1} > 0$.
+The net action variation per cycle insertion satisfies the strict analytical bounds:
+
+$$
+\frac{\beta}{n_{\text{max}} + 1} \le c \le 3(1 - K_{\text{min}}).
+$$
+
+Since $n_{\text{max}} < \infty$ by **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />, the constant $c > 0$ is strictly bounded away from zero.
 
 **IV. Conclusion**
 

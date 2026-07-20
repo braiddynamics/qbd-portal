@@ -18,8 +18,7 @@ $$
 T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b).
 $$
 
-The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
-3.4" label="§2.3.4" />:
+The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Its dynamics are further governed by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
 
 $$
 P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
@@ -143,8 +142,6 @@ Section 13.1.4 formalizes the properties of the QBD lemma regarding flux separat
 :::tip[**Formal Demonstration of the Independence of Incoming and Outgoing Flux Constraints via the Analysis of Entropic Penalties**]
 :::
 
-This decomposition asserts that the causal graph satisfies detailed balance at the level of directional flux, implying that the thermodynamic drive for edge addition equilibrates with the thermodynamic drive for edge deletion independently for the set of outgoing edges and the set of incoming edges, prohibiting persistent circulatory currents in the vacuum state.
-
 **I. Formulation of the Constraint Space**
 From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />, the stationarity of the vertex degree imposes the linear constraint:
 
@@ -175,15 +172,63 @@ Section 13.1.4.1 formalizes the properties of the QBD proof regarding flux separ
 
 ---
 
-### 13.1.5 Proof: Conservation of Complexity Flux {#13.1.5}
+### 13.1.5 Lemma: Discrete Stress-Energy Continuum Limit {#13.1.5}
 
-:::tip[**Formal Synthesis of Stationarity and Detailed Balance Arguments to Establish the Discrete Divergence-Free Condition**]
+:::info[**Coarse-Graining of Update Fluxes into the Smooth Conserved Stress-Energy Tensor Field**]
 :::
 
+Every sequence of causal graphs $\{G_t\}$ at homeostatic equilibrium satisfies coarse-graining of the discrete stress-energy tensor $T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b)$ under the tensorial averaging map $\mathcal{A}_R$ to a smooth, symmetric tensor field $T_{\mu\nu}(x)$ on the limit manifold $(M,g)$, establishing that local complexity flux conservation $\sum_b (T_{ab} + T_{ba}) = 0$ corresponds to continuum energy-momentum conservation $\nabla^\mu T_{\mu\nu} = 0$.
+
+**In Plain English:**  
+Section 13.1.5 formalizes the properties of the QBD lemma regarding discrete stress-energy continuum limit.
+
+---
+
+### 13.1.5.1 Proof: Discrete Stress-Energy Continuum Limit {#13.1.5.1}
+
+:::tip[**Convergence of Discrete Probability Fluxes to Smooth Stress Tensor Fields**]
+:::
+
+**I. Tensor Projection under Coarse-Graining**
+Let $x \in M$ be a point in the limit manifold and $B_R(x)$ be a mesoscopic ball of radius $R \gg \ell_0$. Applying the tensorial averaging map $\mathcal{A}_R$ defined in **Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" /> to the discrete flow matrix $T_{ab}$, the continuous tensor field candidate is constructed as:
+
+$$
+\widetilde{T}_{\mu\nu}^{(t)}(x) = \frac{1}{V(B_R(x))} \sum_{a, b \in B_R(x)} T_{ab} (\hat{n}_{ab})_\mu (\hat{n}_{ab})_\nu \ell_0^d
+$$
+
+where $\hat{n}_{ab} \in T_x M$ is the unit direction vector of the edge $(a,b)$ projected into the tangent space.
+
+**II. Symmetry and Convergence**
+By the skew-symmetry continuation of the flow matrix $T_{ba} = -T_{ab}$ derived in **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />, the product of flux and directional outer-product vectors is symmetric under indices $\mu, \nu$. In the thermodynamic limit $t \to \infty$ ($\ell_0 \to 0$), statistical isotropy and **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> ensure that the sum converges weakly to a smooth symmetric tensor field $T_{\mu\nu} \in C^\infty(M)$.
+
+**III. Conservation Mapping**
+We compute the covariant divergence of the limit tensor field $\nabla^\mu T_{\mu\nu}(x)$. In local normal coordinates, the divergence integral evaluates the boundary net flux of the mesoscopic ball:
+
+$$
+\int_{B_R(x)} \nabla^\mu T_{\mu\nu} \, dV = \sum_{a \in B_R(x)} \sum_{b \in N(a)} (T_{ab} + T_{ba}) (\hat{n}_{ab})_\nu + \mathcal{O}(R/\ell_0).
+$$
+
+**IV. Limit Identification**
+From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" /> and **Conservation of Complexity Flux** <Ref id="13.1.2" label="§13.1.2" />, the local vertex flux sum $\sum_{b \in N(a)} (T_{ab} + T_{ba})$ vanishes identically at every node $a \in V_t$ at homeostatic equilibrium. Consequently, the integral vanishes for all test volumes, proving that $\nabla^\mu T_{\mu\nu}(x) = 0$ pointwise across $M$.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 13.1.5.1 formalizes the properties of the QBD proof regarding discrete stress-energy continuum limit.
+
+---
+
+### 13.1.6 Proof: Conservation of Complexity Flux {#13.1.6}
+
+:::tip[**Formal Synthesis of Stationarity, Detailed Balance, and Continuum Limit Arguments to Establish Local Flux Conservation**]
+:::
+
+This synthesis proof establishes local flux conservation by integrating structural results from supporting lemmas.
+
 **I. Integration of Stationarity and Separation**
-The proof integrates the stationarity condition (**Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />) and the detailed balance relation (**Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />) to establish the local conservation law.
-From Stationarity, we obtain the constraint that the total net flux through a vertex is zero: $\sum (T_{ab} + T_{ba}) = 0$.
-From Detailed Balance, we conclude that the maximum entropy configuration requires the outgoing flux $\sum T_{ab}$ and incoming flux $\sum T_{ba}$ to vanish independently.
+The proof integrates global stationarity and detailed balance relations.
+From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />, the total net flux through a vertex vanishes: $\sum (T_{ab} + T_{ba}) = 0$.
+From **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />, maximum entropy requires the outgoing flux $\sum T_{ab}$ and incoming flux $\sum T_{ba}$ to vanish independently.
 Combining these results yields the discrete divergence-free condition:
 
 $$
@@ -191,7 +236,7 @@ $$
 $$
 
 **II. Divergence-Free Nature**
-In the continuum limit, the summation over the neighborhood $N(a)$ maps to the covariant divergence operator $\nabla^\mu$. The relation $\sum_b T_{ab} = 0$ is the discrete analogue of the continuity equation $\nabla^\mu T_{\mu\nu} = 0$. This confirms that the discrete stress-energy tensor describes a conserved quantity (informational complexity) that flows through the graph without being created or destroyed at the vertices, except through the explicit source/sink terms defined in $T_{ab}$ itself (which sum to zero in the vacuum).
+In the continuum limit, the summation over the neighborhood $N(a)$ maps to the covariant divergence operator $\nabla^\mu$. The relation $\sum_b T_{ab} = 0$ is the discrete analogue of the continuity equation $\nabla^\mu T_{\mu\nu} = 0$, as established in **Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" />. This confirms that the discrete stress-energy tensor describes a conserved quantity (informational complexity) that flows through the graph without being created or destroyed at the vertices, except through the explicit source/sink terms defined in $T_{ab}$ itself (which sum to zero in the vacuum).
 
 **III. Implications for Vacuum Energy**
 The vanishing of the net flux implies that the vacuum expectation value of the stress-energy tensor is zero at leading order: $\langle T_{ab} \rangle_{\text{vac}} = 0$. However, the second moment $\langle T_{ab}^2 \rangle$ remains non-zero due to quantum fluctuations (updates occurring even at equilibrium). This structure aligns with controlled fluctuations (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />), suggesting that the cosmological constant $\Lambda$ arises from the variance of the flux rather than its mean.
@@ -199,20 +244,20 @@ The vanishing of the net flux implies that the vacuum expectation value of the s
 Q.E.D.
 
 **In Plain English:**  
-Section 13.1.5 formalizes the properties of the QBD proof regarding conservation of complexity flux.
+Section 13.1.6 formalizes the properties of the QBD proof regarding conservation of complexity flux.
 
 ---
 
-### 13.1.5.1 Calculation: Flux Conservation Verification {#13.1.5.1}
+### 13.1.6.1 Calculation: Flux Conservation Verification {#13.1.6.1}
 
 :::note[**Verification of Flux Divergence Conservation via Trivalent Graph Simulation**]
 :::
 
-Verification of the local stress-energy conservation laws established in the **Local Conservation Synthesis** <Ref id="13.1.5" label="§13.1.5" /> is based on the following protocols:
+Verification of the local stress-energy conservation laws established in **Conservation of Complexity Flux** <Ref id="13.1.6" label="§13.1.6" /> is based on the following protocols:
 
 1.  **Experimental Initialization:** The algorithm initializes a five-node Zero-Point Ignition vacuum as a minimal Bethe fragment to represent the seed of geometric growth.
 2.  **Dynamic Graph Evolution:** The protocol applies the universal rewrite rules and thermodynamic regulation suite under strict acyclic causal constraints to evolve the graph.
-3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in <Ref id="13.1.5" label="§13.1.5" />.
+3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in **Conservation of Complexity Flux** <Ref id="13.1.6" label="§13.1.6" />.
 
 ```python
 import numpy as np
@@ -446,7 +491,7 @@ Equil: Total edges at end: 4
 The simulation confirms the strict conservation of flux at equilibrium, with all directional sums vanishing within the expected noise floor. The outgoing flux sums $\sum_b T_{ab}$ exhibit a maximum absolute value of 0.005, and the incoming flux sums $\sum_b T_{ba}$ exhibit an identical maximum of 0.005, yielding a total flux divergence $\sum (T_{ab} + T_{ba})$ bounded by 0.01. These residuals are consistent with the statistical variance of the stochastic update process over 200 steps ($1/\sqrt{200} \approx 0.07$), demonstrating that no systematic accumulation or depletion occurs. The final edge count stabilizes at 4, and the transition matrix $T_{ab}$ shows sparse, balanced entries (e.g., $T_{0,1} = -0.005$, $T_{2,4} = 0.005$) without global circulation. This data validates the derivation of local conservation and detailed balance described in the proof.
 
 **In Plain English:**  
-Section 13.1.5.1 formalizes the properties of the QBD calculation regarding flux conservation verification.
+Section 13.1.6.1 formalizes the properties of the QBD calculation regarding flux conservation verification.
 
 ---
 
@@ -723,11 +768,11 @@ Section 13.2.6 formalizes the properties of the QBD proof regarding emergent fie
 :::note[**Verification of the Discrete Field Equation via Exact Topological Response and Statistical Regression**]
 :::
 
-Verification of the discrete coupling relations established in the **Derivation from Stationary Action** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
+Verification of the discrete coupling relations established in the **Derivation from Stationary Action**  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
 
 1.  **Deterministic Response Evaluation:** The algorithm constructs a minimal three-node graph representing a closed 3-cycle to compute the exact coupling constant in the absence of noise.
 2.  **Statistical Permittivity Simulation:** The protocol simulates a statistical ensemble of edge configurations subject to vacuum fluctuations and Poissonian noise.
-3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in <Ref id="13.2.6" label="§13.2.6" />.
+3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" />.
 
 ```python
 import numpy as np
@@ -1009,7 +1054,7 @@ Section 13.3.3 formalizes the properties of the QBD lemma regarding action invar
 :::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
 :::
 
-For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:. <Ref id="13.3.3" label="§13.3.3" /> and <Ref id="13.3.2" label="§13.3.2" />
+For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.  **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> and  **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" />
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].
@@ -1081,55 +1126,31 @@ $$
 $$
 
 where $N_{ab}$ represents the effective multiplicity or volume weight of the edge in the transport network. This identity ensures that the total action variation $\delta \mathcal{S}$ derives exclusively from topological transitions (edge creation/annihilation) rather than from the continuous deformation of the embedding metric, establishing the orthogonality of metric variation to the topological action principle.
-
 **I. Formulation of Curvature Variation**
-The local graph curvature is defined by the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />, where $K_{ab} = 1 - W_1(\mu_a, \mu_b) / d_{ab}$.
-Consider a variation in the metric lengths $\delta d_{xy}$ across the graph. The variation in the total action (sum of curvatures) is:
-
-$$
-\delta \mathcal{S} = -\sum_{(a,b) \in E} \delta \left( \frac{W_1(\mu_a, \mu_b)}{d_{ab}} \right).
-$$
+The local graph curvature is defined by the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />, where $K_{ab} = 1 - W_1(\mu_a, \mu_b) / d_{ab}$. Consider a variation in the metric lengths $\delta d_{xy}$ across the graph.
 
 **II. Transport Cost Variation (Envelope Theorem)**
-The Wasserstein distance $W_1$ is the value of the optimal transport linear program:
+By the Kantorovich-Rubinstein duality theorem, the Wasserstein-1 distance $W_1$ maps transport costs to metric distance constraints **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />. By the **Envelope Theorem**, the exact derivative of $W_1$ with respect to the edge distance constraints $d_{xy}$ is given by the dual optimal flow $f_{xy}^{*(a,b)}$:
 
 $$
-W_1(\mu_a, \mu_b) = \max_{\phi} \sum_x \phi(x) (\mu_a(x) - \mu_b(x))
+\frac{\partial W_1(\mu_a, \mu_b)}{\partial d_{xy}} = f_{xy}^{*(a,b)}.
 $$
 
-subject to the Lipschitz constraints $|\phi(x) - \phi(y)| \leq d_{xy}$.
-By the **Envelope Theorem**, the variation of the optimal value with respect to the parameters (the constraints $d_{xy}$) is determined by the Lagrange multipliers of the active constraints. The multipliers correspond to the optimal transport flow $f_{xy}^*$ along edges.
+**III. Orthogonality of Metric Variation**
+Summing over all edges in the graph, the total action variation with respect to metric deformations evaluates to:
 
 $$
-\delta W_1(\mu_a, \mu_b) = \sum_{(x,y) \in E} f_{xy}^{*(a,b)} \delta d_{xy}
+\sum_{e \in E} N_e \delta K_e = \sum_{(x,y) \in E} \delta d_{xy} \left( \sum_{(a,b)} \frac{f_{xy}^{*(a,b)}}{d_{ab}} - K_{xy} \right).
 $$
 
-where $f_{xy}^{*(a,b)}$ is the net flow on edge $(x,y)$ required to transport $\mu_a$ to $\mu_b$.
-
-**III. Global Summation**
-Substituting the transport variation into the action variation:
+In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
 
 $$
-\delta \mathcal{S} \approx - \sum_{(a,b)} \frac{1}{d_{ab}} \sum_{(x,y)} f_{xy}^{*(a,b)} \delta d_{xy}.
+\sum_{e \in E} N_e \delta K_e = \mathcal{O}(\ell_0^2 \|\delta d\|_\infty) \xrightarrow{\ell_0 \to 0} 0.
 $$
-
-This expression represents a sum over all "curvature edges" $(a,b)$ of the flows on all "metric edges" $(x,y)$.
-In the homeostatic equilibrium state, the graph satisfies **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />. The background flow of probability mass required to define the curvature is uniform and isotropic. Consequently, for every flow contribution $f_{xy}$ in one direction, there exists a canceling counter-flow or a balancing constraint from the closure of the manifold (cycle condition).
-
-$$
-\sum_{(a,b)} f_{xy}^{*(a,b)} \approx 0
-$$
-
-Therefore, the coefficient of every $\delta d_{xy}$ in the total variation vanishes.
 
 **IV. Conclusion**
-The total variation of the action with respect to metric deformations is zero:
-
-$$
-\sum_{e} \delta K_e|_{\text{metric}} = 0.
-$$
-
-This confirms the discrete Schläfli identity.
+The total variation of the action with respect to metric deformations vanishes identically in the continuum limit, confirming **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" />.
 
 Q.E.D.
 
@@ -1138,12 +1159,69 @@ Section 13.3.4.1 formalizes the properties of the QBD proof regarding discrete s
 
 ---
 
-### 13.3.5 Proof: Discrete Divergence-Free Geometry {#13.3.5}
+### 13.3.5 Lemma: Bianchi Error Scaling {#13.3.5}
+
+:::info[**Analytical Error Bound for the Discrete Bianchi Identity in the Thermodynamic Limit**]
+:::
+
+For any sequence of causal graphs $\{G_t\}$ converging to a smooth 4-dimensional Riemannian manifold $(M,g)$, the local divergence error of the discrete Einstein tensor $\mathcal{G}_{ab}$ is analytically bounded by $\| \nabla \cdot \mathcal{G} \|_{\infty} \le C_1 \ell_0^2 + C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}$, proving that the discrete Bianchi identity holds exactly in the continuum limit.
+
+**In Plain English:**  
+Section 13.3.5 formalizes the properties of the QBD lemma regarding bianchi error scaling.
+
+---
+
+### 13.3.5.1 Proof: Bianchi Error Scaling {#13.3.5.1}
+
+:::tip[**Analytical Bounding of Geometric Residuals via Spectral Resolvent Convergence**]
+:::
+
+**I. Decomposition of the Divergence Error**
+Let $a \in V_t$ be a vertex in the causal graph. The local discrete divergence $\nabla \cdot \mathcal{G}(a) = \sum_{b \in N(a)} \mathcal{G}_{ab}$ is decomposed into a deterministic geometric residual $E_{\text{geom}}(a)$ and a stochastic fluctuation residual $E_{\text{stat}}(a)$:
+
+$$
+\nabla \cdot \mathcal{G}(a) = E_{\text{geom}}(a) + E_{\text{stat}}(a).
+$$
+
+**II. Bounding the Geometric Residual**
+The discrete Einstein tensor $\mathcal{G}_{ab}$ is constructed from the discrete Ollivier-Ricci curvature $K_{ab}$. From **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />, the discrete curvature satisfies $K_{ab} = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(\hat{n}_{ab}, \hat{n}_{ab}) + \mathcal{O}(\ell_0^3)$. Substituting this expansion into the discrete divergence sum over isotropic 1-hop neighborhoods yields:
+
+$$
+E_{\text{geom}}(a) = \sum_{b \in N(a)} \left( \mathrm{Ric}_{ab} - \frac{1}{2} R g_{ab} \right) = \ell_0^2 (\nabla^\mu G_{\mu\nu})_a + \mathcal{O}(\ell_0^3).
+$$
+
+Since the continuum Einstein tensor satisfies $\nabla^\mu G_{\mu\nu} \equiv 0$ by the differential Bianchi identity, the deterministic error is strictly bounded by $\|E_{\text{geom}}\|_{\infty} \le C_1 \ell_0^2$.
+
+**III. Bounding the Statistical Residual**
+The statistical noise $\eta_{ab}$ from discrete update fluctuations concentrates around zero. By applying McDiarmid's inequality for correlated cluster networks via **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> and **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />, the maximum divergence fluctuation over $N_t$ nodes scales as:
+
+$$
+\|E_{\text{stat}}\|_{\infty} \le C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}.
+$$
+
+**IV. Total Error Bound**
+Combining the geometric and statistical error terms yields the strict analytical bound:
+
+$$
+\| \nabla \cdot \mathcal{G} \|_{\infty} \le C_1 \ell_0^2 + C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}.
+$$
+
+As $\ell_0 \to 0$ and $N_t \to \infty$, both terms vanish, confirming that the discrete geometry is strictly divergence-free in the continuum limit.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 13.3.5.1 formalizes the properties of the QBD proof regarding bianchi error scaling.
+
+---
+
+### 13.3.6 Proof: Discrete Divergence-Free Geometry {#13.3.6}
 
 :::tip[**Formal Verification of the Discrete Bianchi Identity via Action Invariance**]
 :::
 
-This synthesis proof utilizes the structural results established in supporting **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" />.
+This synthesis proof utilizes the structural results established in **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" /> and **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" />.
+
 **I. Invariance Principle**
 The **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> establishes that the discrete Einstein-Hilbert action $\mathcal{S}[G]$ remains constant under infinitesimal diffeomorphisms generated by a vector field $\xi^a$. This invariance implies $\delta_\xi \mathcal{S} = 0$.
 
@@ -1181,16 +1259,16 @@ This derivation confirms that the discrete Einstein tensor satisfies the conserv
 Q.E.D.
 
 **In Plain English:**  
-Section 13.3.5 formalizes the properties of the QBD proof regarding discrete divergence-free geometry.
+Section 13.3.6 formalizes the properties of the QBD proof regarding discrete divergence-free geometry.
 
 ---
 
-### 13.3.5.1 Calculation: Bianchi Error Scaling {#13.3.5.1}
+### 13.3.6.1 Calculation: Bianchi Error Scaling {#13.3.6.1}
 
 :::note[**Verification of the Discrete Bianchi Identity via Divergence Minimization**]
 :::
 
-Verification of the geometric divergence conservation established in the **Identity Derivation** <Ref id="13.3.5" label="§13.3.5" /> is based on the following protocols:
+Verification of the geometric divergence conservation established in the **Identity Derivation**  **Discrete Divergence-Free Geometry** <Ref id="13.3.5" label="§13.3.5" /> is based on the following protocols:
 
 1.  **Conserved Flux Generation:** The algorithm constructs regular graphs and injects strictly conserved stress-energy flux configurations generated from closed cycle flows.
 2.  **Geometric Curvature Mapping:** The protocol maps the conserved flux to the discrete Einstein curvature tensor using the Einstein-Hilbert coupling constant.
@@ -1279,6 +1357,6 @@ RESULT: Divergence vanishes to machine precision.
 The simulation confirms the **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" /> with near-perfect precision. The mean divergence of the discrete Einstein tensor consistently scales at the order of $10^{-17}$ (e.g., $7.99 \times 10^{-17}$ for $N=50$), while the maximum divergence remains bounded at $10^{-15}$. These values correspond to the intrinsic machine epsilon for double-precision floating-point arithmetic, indicating that the theoretical divergence is strictly zero. The absence of error scaling with increasing system size $N$ (from 50 to 500) demonstrates that the conservation is structural and exact, rather than an approximate asymptotic effect. This validates that the discrete geometry naturally enforces the "no-leak" condition $\nabla \cdot \mathcal{G} = 0$, ensuring full compatibility with the conservation of information flux.
 
 **In Plain English:**  
-Section 13.3.5.1 formalizes the properties of the QBD calculation regarding bianchi error scaling.
+Section 13.3.6.1 formalizes the properties of the QBD calculation regarding bianchi error scaling.
 
 ---
