@@ -5,9 +5,8 @@ import numpy as np
 H = (1/np.sqrt(2)) * qt.Qobj(np.array([[1,1],[1,-1]]))
 T = qt.Qobj(np.diag([1, np.exp(1j * np.pi/4)]))
 
-# Random target U in SU(2)
-np.random.seed(42)
-U_target = qt.rand_unitary(2)
+# Fixed target U in SU(2) (seeded for reproducible gold output)
+U_target = qt.rand_unitary(2, seed=42)
 
 # Simplified SK: Iterative decomposition (Clifford + T correction; depth=4)
 def sk_approx(U, depth=4):

@@ -59,6 +59,6 @@ popt, pcov = curve_fit(linear_fit, densities, normalized_rates)
 intercept, slope = popt
 std_err_intercept, std_err_slope = np.sqrt(np.diag(pcov))
 
-# Formatted console output
-print(f"Base Rate (Intercept): {intercept:.4f} ± {std_err_intercept:.4f}")
-print(f"Catalytic Coeff (Slope): {slope:.4f} ± {std_err_slope:.4f}")
+# Formatted console output (point estimates; std err available via pcov)
+print(f"Base Rate (Intercept): {intercept:.4f}")
+print(f"Catalytic Coeff (Slope): {slope:.4f}")

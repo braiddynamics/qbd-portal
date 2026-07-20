@@ -1,6 +1,6 @@
 ======================================================================
 COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION
-Minimal Chiral Generation inar{5} ⊕ 10 Representations
+Minimal Chiral Generation in \bar{5} ⊕ 10 Representations
 ======================================================================
 
 Anomaly Coefficients (SU(5)):

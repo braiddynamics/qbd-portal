@@ -1,5 +1,5 @@
 --- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---
 PASS: Global Time Function T(x) exists (Graph is Acyclic).
-Roughness (Raw):      0.5899
-Roughness (Smoothed): 0.0008
+Roughness (Raw):      2.0153
+Roughness (Smoothed): 0.0023
 PASS: Lapse field converges to smooth manifold limit.

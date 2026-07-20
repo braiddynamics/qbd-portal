@@ -14,7 +14,7 @@ def verify_su5_anomaly_cancellation():
     """
     print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION")
-    print("Minimal Chiral Generation in \bar{5} ⊕ 10 Representations")
+    print("Minimal Chiral Generation in \\bar{5} ⊕ 10 Representations")
     print("=" * 70)
 
     # Symbolic definition

@@ -133,6 +133,8 @@ def simulate_symmetry_breaking(G, trials=100):
     return np.mean(cycles_closed), np.std(cycles_closed)
 
 def run_ignition():
+    random.seed(42)
+    np.random.seed(42)
     # Sweep depths 2 to 7 to verify scaling parameters
     depths = [2, 3, 4, 5, 6, 7]
     

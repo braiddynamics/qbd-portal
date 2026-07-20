@@ -5,6 +5,7 @@ import pandas as pd
 
 def simulate_heat_kernel_spectral_dimension(max_steps=40, n_walks=100000):
     """§18.3.13: random walks on a 4D grid; estimate spectral dimension d_S from return probability P(t)."""
+    np.random.seed(42)
     results = []
     
     # Simulate random walks in 4D space

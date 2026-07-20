@@ -14,6 +14,7 @@ def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
       epsilon = -dot_H / H^2
       eta = -dot_dot_rho / (H * dot_rho)
     """
+    np.random.seed(42)
     t_steps = int(t_max / dt)
     results = []
     

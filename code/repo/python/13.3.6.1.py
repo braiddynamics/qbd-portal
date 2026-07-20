@@ -2,6 +2,7 @@ import numpy as np
 import networkx as nx
 
 def verify_bianchi_identity():
+    np.random.seed(42)
     print("--- §13.3.6.1 Discrete Bianchi Identity ---")
     print("Objective: Check divergence-free condition ∇·G = 0 for conserved fluxes")
     print("=" * 65)

@@ -10,6 +10,7 @@ def shannon_entropy(p):
 
 # Number of Monte Carlo trials for statistical precision
 n_trials = 10_000
+np.random.seed(42)
 
 entropy_production = []
 

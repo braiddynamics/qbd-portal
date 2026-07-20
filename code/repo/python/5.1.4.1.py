@@ -49,6 +49,5 @@ results = [boundary_fraction(N) for N in sizes]
 
 df = pd.DataFrame(results)
 
-print("Subextensive Boundary Terms in 2D Toroidal Lattice")
 print("=" * 54)
 print(df.round(4).to_markdown(index=False, tablefmt="github"))

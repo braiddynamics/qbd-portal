@@ -1,5 +1,7 @@
 import numpy as np
 
+np.random.seed(42)
+
 def sample_sphere_moment(M, d=4):
     # Gaussian projection method generates uniform points on S^(d-1)
     z = np.random.normal(0, 1, (M, d))

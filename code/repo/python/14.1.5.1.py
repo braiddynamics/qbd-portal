@@ -3,6 +3,7 @@ import numpy as np
 from scipy.ndimage import gaussian_filter
 
 def verify_time_foliation_integration():
+    np.random.seed(42)
     print("--- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---")
     
     # 1. SETUP: 1+1D Spacetime Graph
@@ -84,7 +85,6 @@ def verify_time_foliation_integration():
     # that mollification is supposed to cure (The "Shot Noise" of vacuum)
     # The graph structure provided some, but averaging over T smooths it too fast for this test size.
     # Inject high-frequency noise to demonstrate the filter.
-    np.random.seed(42)
     raw_lapse_field += np.random.normal(0, 0.1, size=width)
 
     # Apply Smoothing

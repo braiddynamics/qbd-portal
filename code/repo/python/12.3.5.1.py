@@ -1,6 +1,7 @@
 import numpy as np
 
 def verify_signature_ensemble(N=10000, theta_c=np.pi/4, n_trials=100):
+    np.random.seed(42)
     evals_list = []
     ratios_list = []
     

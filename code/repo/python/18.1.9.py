@@ -28,6 +28,7 @@ def build_directed_bethe_fragment(depth=4, k=3):
 
 def simulate_symmetry_breaking_sweep():
     """§18.1.9: sweep tunneling beta; track bipartite parity Phi and loop density under stasis vs breaking."""
+    np.random.seed(42)
     results = []
     
     # Generate trivalent Bethe tree substrate

@@ -12,7 +12,6 @@ def simulate_cluster_decay():
     Demonstrates architectural stability of non-trivial topology.
     """
     
-    print("=" * 60)
     print("SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES")
     print("Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux")
     print("=" * 60)

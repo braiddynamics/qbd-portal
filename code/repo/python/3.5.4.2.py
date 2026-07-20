@@ -22,10 +22,10 @@ for i in range(16):
     parity = "Even" if excitations % 2 == 0 else "Odd"
     
     results.append({
-        "State |ψ⟩": f"|{binary}⟩",
+        "State ψ⟩": f"{binary}⟩",
         "Excitations": excitations,
         "Parity": parity,
-        "Eigenvalue λ": f"{eigenvalue:+.1f}"
+        "Eigenvalue λ": int(eigenvalue),
     })
 
 # Render as aligned Markdown table
