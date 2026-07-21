@@ -2062,7 +2062,7 @@ Section 4.4.7.2 formalizes the properties of the QBD calculation regarding frict
 
 ### 4.4.8 Proof: Thermodynamic Foundations {#4.4.8}
 
-:::tip[Formal Synthesis of the Thermodynamic Calibration of the Causal Graph, establishing the **Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" />]
+:::tip[**Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Calibration of the Causal Graph]
 :::
 
 **I. Calibration of Scales**

@@ -1165,7 +1165,7 @@ Section 2.5.3.1 formalizes the properties of the QBD proof regarding independenc
 
 ### 2.5.4 Proof: Independence of Axioms 1 and 2 {#2.5.4}
 
-:::tip[Orthogonal Counter-Models demonstrating the **Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />]
+:::tip[**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" /> via Orthogonal Counter-Models]
 :::
 
 **I. The Independence Hypothesis**
@@ -1502,7 +1502,7 @@ Section 2.6.6.1 formalizes the properties of the QBD proof regarding causal acyc
 
 ### 2.6.7 Proof: Inadequacy of Local Axioms {#2.6.7}
 
-:::tip[Synthesis of Transitive Failures showing the **Inadequacy of Local Axioms** <Ref id="2.6.1" label="§2.6.1" />]
+:::tip[**Inadequacy of Local Axioms** <Ref id="2.6.1" label="§2.6.1" /> via Synthesis of Transitive Failures]
 :::
 
 **I. The Local Premise**

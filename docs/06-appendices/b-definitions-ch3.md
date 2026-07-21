@@ -642,7 +642,7 @@ Section 3.1.11.1 formalizes the properties of the QBD proof regarding exclusion 
 
 ### 3.1.12 Proof: Vacuum Structure {#3.1.12}
 
-:::tip[Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion]
+:::tip[**Formal Derivation of the Finite Rooted Tree Topology via Sequential Exclusion**]
 :::
 
 **I. The Configuration Space**
@@ -1630,7 +1630,7 @@ Section 3.2.13.1 formalizes the properties of the QBD proof regarding the simpli
 
 ### 3.2.14 Proof: Optimal Vacuum {#3.2.14}
 
-:::tip[Formal Derivation of the Regular Bethe Fragment ($k_{deg}=3$) from the Intersection of Constraints, establishing the **Optimal Vacuum**]
+:::tip[**Formal Derivation of the Regular Bethe Fragment ($k_{deg}=3$) from the Intersection of Constraints, establishing the Optimal Vacuum**]
 :::
 
 **I. The Candidate Set**
@@ -2516,7 +2516,7 @@ Section 3.4.5.1 formalizes the properties of the QBD proof regarding ignition pr
 
 ### 3.4.6 Proof: Inevitable Geometrogenesis {#3.4.6}
 
-:::tip[Formal Derivation of the Deterministic Transition to Geometry via Thermodynamic Probability, demonstrating **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />]
+:::tip[**Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" /> via Thermodynamic Transition to Geometry]
 :::
 
 **I. The Metastable Hypothesis**
@@ -3257,7 +3257,7 @@ Section 3.5.7.1 formalizes the properties of the QBD proof regarding codespace n
 
 ### 3.5.8 Proof: Stabilizer Isomorphism {#3.5.8}
 
-:::tip[Formal Proof of the Equivalence between Causal Consistency and Quantum Error Correction, establishing the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />]
+:::tip[**Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" /> via Equivalence of Causal Consistency and Quantum Error Correction]
 :::
 
 **I. Setup and Mapping**

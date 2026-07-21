@@ -99,7 +99,7 @@ Greek philosophy had hit a total structural dead end. If the continuous continuu
 
 ## Pluralist Divergence
 
-:::info[Greek and Indian Answers to the One and the Many]
+:::info[**Greek and Indian Answers to the One and the Many**]
 :::
 
 In response to the Eleatic paralysis, thinkers in Greece and India converged, largely independently, on a shared strategy: reality must be plural at some level, even if Parmenides was right that nothing at that level is ever created or destroyed. What differed was where each tradition drew the line between the changeless and the changing, and how many kinds of changeless thing it needed.
