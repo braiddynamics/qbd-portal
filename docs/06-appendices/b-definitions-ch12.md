@@ -1067,7 +1067,7 @@ Section 12.3.2 formalizes the properties of the QBD theorem regarding signature 
 :::info[**Existence of a Non-Vanishing Mean Drift Vector Field Induced by Irreversible Graph Updates**]
 :::
 
-Let $\vec{e} \in T_x M$ be the vector representation of a directed edge $e=(u,v)$ in the tangent space.
+Let $\boldsymbol{e} \in T_x M$ be the vector representation of a directed edge $e=(u,v)$ in the tangent space.
 
 **In Plain English:**  
 Section 12.3.3 formalizes the properties of the QBD lemma regarding causal drift.
@@ -1079,10 +1079,10 @@ Section 12.3.3 formalizes the properties of the QBD lemma regarding causal drift
 :::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
 :::
 
-Unlike the undirected case where orientational symmetry implies $\langle \vec{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero as established in **Causal Drift** <Ref id="12.3.3" label="§12.3.3" /> and **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />:
+Unlike the undirected case where orientational symmetry implies $\langle \boldsymbol{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero as established in **Causal Drift** <Ref id="12.3.3" label="§12.3.3" /> and **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />:
 
 $$
-D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\vec{e}] \neq 0.
+D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\boldsymbol{e}] \neq 0.
 $$
 
 The vector field $D^\mu$ is the **Causal Drift**. Grounded in the volume scaling of **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, it defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.

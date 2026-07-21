@@ -39,7 +39,9 @@ Section 22.1.2 formalizes the properties of the QBD lemma regarding saturated co
 **I. Core Density Setup**
 
 Let the local core density approach the critical saturation threshold:
-$$ \rho_3 \to \rho_{crit} \approx \frac{1}{6\mu} $$
+$$
+\rho_3 \to \rho_{crit} \approx \frac{1}{6\mu}
+$$
 under the gravitational collapse flow of the Master Equation (**Master Equation** <Ref id="5.2" label="§5.2" />).
 
 **II. Unique Causality Violation**
@@ -50,7 +52,9 @@ under the gravitational collapse flow of the Master Equation (**Master Equation*
 **III. Algebraic Halting**
 
 The multiplicity of precursor paths prevents the execution of any valid elementary rewrite tasks. The set of allowed updates collapses:
-$$ \text{Set}(\mathcal{R}_{allowed}) = \emptyset $$
+$$
+\text{Set}(\mathcal{R}_{allowed}) = \emptyset
+$$
 resulting in a complete halting of topological evolution.
 
 **IV. Formal Conclusion**
@@ -93,7 +97,9 @@ Let the graph distance between adjacent nodes be bounded from below by the pre-g
 **III. Finiteness Result**
 
 We compute the curvature eigenvalues from the transport metrics, showing they are strictly bounded:
-$$ R_{max} \sim \frac{1}{\ell_0^2} $$
+$$
+R_{max} \sim \frac{1}{\ell_0^2}
+$$
 which confirms that physical curvature remains finite and verifies the resolution of the classical singularity.
 
 **IV. Formal Conclusion**
@@ -114,7 +120,9 @@ Section 22.1.3.1 formalizes the properties of the QBD proof regarding core densi
 
 *   **Lapse Dilation:** The proper time interval $\Delta \tau$ is related to logical graph ticks $\Delta t$ via the emergent Lapse function $N(x)$, where $N(x) \propto 1/\rho_3$ (**Time Recovery** <Ref id="14.1" label="§14.1" />).
 *   **Proper Time Stoppage:** The proof demonstrates that as density approaches the critical saturation threshold ($\rho_3 \to \rho_{crit}$), the Lapse function vanishes:
-    $$ N(x) \to 0  $$
+    $$
+    N(x) \to 0
+    $$
 *   **External Invariance:** From the perspective of an external observer at infinity, proper time inside the core stops completely, meaning the singularity is resolved as a static coordinate frozen state, while the global system remains strictly unitary.
 
 This synthesis proof utilizes the structural results established in supporting **Saturated Core States** <Ref id="22.1.2" label="§22.1.2" /> and **Core Density Limitation** <Ref id="22.1.3" label="§22.1.3" />.
@@ -158,7 +166,9 @@ Section 22.2.2 formalizes the properties of the QBD theorem regarding unitary ev
 :::
 
 Assume a graph rewrite operator $\mathcal{R}_{span}$ acts on vertices spanning across the desynchronization horizon boundary. Then the non-perturbative transition rate $\Gamma$ of these spanning rewrites is governed by the instanton-like path-sum weight:
-$$ \Gamma \propto e^{-S/\hbar} $$
+$$
+\Gamma \propto e^{-S/\hbar}
+$$
 where the action cost $S$ is proportional to the area of the horizon boundary in units of the Planck scale.
 
 **In Plain English:**  

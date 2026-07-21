@@ -1131,7 +1131,7 @@ Section 4.3.8.1 formalizes the properties of the QBD proof regarding axiom satis
 :::info[**Deterministic Constriction of Categorical Morphisms via Pauli Anti-Commutation**]
 :::
 
-Let $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$ be a morphism in the category $\mathbf{AnnCG}$. Then the annotation map $k: \sigma \to \sigma'$ is uniquely and deterministically fixed by the topological rewrite $\Delta E = E_{t+1} \oplus E_t$ via the Pauli anti-commutation relations, enforcing the algebraic constraint $k(\sigma) = \sigma \oplus \vec{u}_{\Delta E}$ where $\vec{u}_{\Delta E}$ is the binary vector of check-operator phase flips.
+Let $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$ be a morphism in the category $\mathbf{AnnCG}$. Then the annotation map $k: \sigma \to \sigma'$ is uniquely and deterministically fixed by the topological rewrite $\Delta E = E_{t+1} \oplus E_t$ via the Pauli anti-commutation relations, enforcing the algebraic constraint $k(\sigma) = \sigma \oplus \boldsymbol{u}_{\Delta E}$ where $\boldsymbol{u}_{\Delta E}$ is the binary vector of check-operator phase flips.
 
 **In Plain English:**  
 Section 4.3.9 formalizes the properties of the QBD lemma regarding algebraic rigidity of the annotation map.
@@ -1155,14 +1155,14 @@ $$
 The application of a rewrite $\Delta E$ alters the eigenvalue of $K_i$ via a phase flip if and only if the intersection of $\Delta E$ and $\text{supp}(K_i)$ is odd.
 
 **III. Deterministic Syndrome Shift**
-Let $\vec{u}_{\Delta E}$ be the binary incidence vector where the $i$-th component is 1 if $|\Delta E \cap \text{supp}(K_i)|$ is odd, and 0 if even. The updated syndrome $\sigma'$ is algebraically bound to the prior syndrome $\sigma$ by the XOR addition of this incidence vector:
+Let $\boldsymbol{u}_{\Delta E}$ be the binary incidence vector where the $i$-th component is 1 if $|\Delta E \cap \text{supp}(K_i)|$ is odd, and 0 if even. The updated syndrome $\sigma'$ is algebraically bound to the prior syndrome $\sigma$ by the XOR addition of this incidence vector:
 
 $$
-\sigma' = \sigma \oplus \vec{u}_{\Delta E}
+\sigma' = \sigma \oplus \boldsymbol{u}_{\Delta E}
 $$
 
 **IV. Conclusion**
-Because the category $\mathbf{AnnCG}$ demands that $k$ must preserve the diagnostic structure under the transformation $f$, the map $k$ cannot be chosen arbitrarily. It is uniquely defined as $k(\sigma) = \sigma \oplus \vec{u}_{\Delta E}$. The categorical morphism $k$ is therefore perfectly rigid, acting as a faithful, deterministic tracker of the Pauli frame.
+Because the category $\mathbf{AnnCG}$ demands that $k$ must preserve the diagnostic structure under the transformation $f$, the map $k$ cannot be chosen arbitrarily. It is uniquely defined as $k(\sigma) = \sigma \oplus \boldsymbol{u}_{\Delta E}$. The categorical morphism $k$ is therefore perfectly rigid, acting as a faithful, deterministic tracker of the Pauli frame.
 
 Q.E.D.
 
@@ -1231,7 +1231,7 @@ Section 4.3.9.3 formalizes the properties of the QBD type-theoretic regarding va
 :::info[**Comonadic Tracking of Stabilizer Parity Shifts**]
 :::
 
-Let $\vec{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\vec{s}' = \vec{s} \oplus \vec{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
+Let $\boldsymbol{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\boldsymbol{s}' = \boldsymbol{s} \oplus \boldsymbol{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
 
 **In Plain English:**  
 Section 4.3.10 formalizes the properties of the QBD lemma regarding comonadic pauli frame tracking.
@@ -1256,12 +1256,12 @@ $$
 where $u_i \in \{0, 1\}$ represents the parity shift of the stabilizer. The measured syndrome elements $s_i$ are the eigenvalues of $S_i$. The shifts are tracked comonadically by updating the syndrome index:
 
 $$
-\vec{s}' = \vec{s} \oplus \vec{u}
+\boldsymbol{s}' = \boldsymbol{s} \oplus \boldsymbol{u}
 $$
 
 **III. Projector Formulation**
 
-Under the awareness endofunctor $R_T$, the state is adjoined with $\vec{s}'$ instead of the static syndrome $\vec{s}$. Checking the measurements against the updated syndrome $\vec{s}_{\text{measured}} \oplus \vec{s}'$ ensures that the projector:
+Under the awareness endofunctor $R_T$, the state is adjoined with $\boldsymbol{s}'$ instead of the static syndrome $\boldsymbol{s}$. Checking the measurements against the updated syndrome $\boldsymbol{s}_{\text{measured}} \oplus \boldsymbol{s}'$ ensures that the projector:
 
 $$
 \mathcal{P} = \prod_i \frac{I + (-1)^{s_i'} S_i}{2}
@@ -2165,10 +2165,10 @@ Spacetime updates are governed by a Universal Constructor that stochastically sc
 :::tip[**Syndrome-Response Function Modulating Base Probabilities**]
 :::
 
-The **Catalytic Tension Factor**, denoted $\chi(\vec{\sigma}_e)$, is defined as the scalar modulation function acting on the base transition probabilities. It is constructed as the product of two distinct terms:
+The **Catalytic Tension Factor**, denoted $\chi(\boldsymbol{\sigma}_e)$, is defined as the scalar modulation function acting on the base transition probabilities. It is constructed as the product of two distinct terms:
 
 $$
-\chi(\vec{\sigma}_e) = \underbrace{\left( \prod_{s \in \mathcal{S}_{\text{sites}, e}} (1 + \lambda_{\text{cat}} \cdot I[\Delta s(e) = +2]) \right)}_{\text{Catalysis Term}} \cdot \underbrace{\exp\left( -\mu \cdot \sum_{x \in \text{nbhd}(e)} I[\sigma_x = -1] \right)}_{\text{Friction Term}}
+\chi(\boldsymbol{\sigma}_e) = \underbrace{\left( \prod_{s \in \mathcal{S}_{\text{sites}, e}} (1 + \lambda_{\text{cat}} \cdot I[\Delta s(e) = +2]) \right)}_{\text{Catalysis Term}} \cdot \underbrace{\exp\left( -\mu \cdot \sum_{x \in \text{nbhd}(e)} I[\sigma_x = -1] \right)}_{\text{Friction Term}}
 $$
 
 1.  **Catalysis Term:** The product over the set of local sites where the proposed action resolves a syndrome excitation ($\Delta s = +2$). This term applies a linear scaling factor of $(1 + \lambda_{cat})$ for every resolved defect.

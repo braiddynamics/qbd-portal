@@ -1223,7 +1223,7 @@ Section 17.4.3 formalizes the properties of the QBD lemma regarding unimodular b
 Let $Z(\tau)$ be the partition function of the closed string on the torus with modulus $\tau$.  **Unimodular Basis (Modular Invariance)** <Ref id="17.4.3" label="§17.4.3" /> and  **Emergence of the E8 Lattice** <Ref id="17.4.2" label="§17.4.2" /> Invariance under the modular transformation $S: \tau \to -1/\tau$ imposes the condition:.
 
 $$
-\Gamma = \Gamma^* \quad \text{and} \quad \vec{k}^2 \in 2\mathbb{Z}, \quad \forall \vec{k} \in \Gamma
+\Gamma = \Gamma^* \quad \text{and} \quad \boldsymbol{k}^2 \in 2\mathbb{Z}, \quad \forall \boldsymbol{k} \in \Gamma
 $$
 
 This constraint mathematically forces the rank-16 lattice to be either $\Gamma_{E_8 \times E_8}$ or $\Gamma_{Spin(32)/\mathbb{Z}_2}$, excluding all continuous spectra and ensuring that the discrete graph charges form a consistent quantum field theory.
@@ -1235,17 +1235,17 @@ $$
 Z(\tau) = \text{Tr} \left( q^{L_0 - c/24} \bar{q}^{\bar{L}_0 - \bar{c}/24} \right)
 $$
 
-where $q = e^{2\pi i \tau}$. For the Heterotic string, the Left sector (bosonic) contributes a sum over the internal lattice momenta $\vec{k} \in \Gamma$:
+where $q = e^{2\pi i \tau}$. For the Heterotic string, the Left sector (bosonic) contributes a sum over the internal lattice momenta $\boldsymbol{k} \in \Gamma$:
 
 $$
-\Theta_\Gamma(\tau) = \sum_{\vec{k} \in \Gamma} q^{\frac{1}{2} \vec{k}^2}
+\Theta_\Gamma(\tau) = \sum_{\boldsymbol{k} \in \Gamma} q^{\frac{1}{2} \boldsymbol{k}^2}
 $$
 
 **II. The Modular Transformation (S)**
 Under the inversion $\tau \to -1/\tau$, the theta function transforms according to the Poisson Summation Formula:
 
 $$
-\Theta_\Gamma(-1/\tau) = (\tau/i)^{D/2} \frac{1}{\text{Vol}(\Gamma)} \sum_{\vec{w} \in \Gamma^*} q^{\frac{1}{2} \vec{w}^2}
+\Theta_\Gamma(-1/\tau) = (\tau/i)^{D/2} \frac{1}{\text{Vol}(\Gamma)} \sum_{\boldsymbol{w} \in \Gamma^*} q^{\frac{1}{2} \boldsymbol{w}^2}
 $$
 
 where $\Gamma^*$ is the dual lattice (reciprocal lattice).
@@ -1254,7 +1254,7 @@ where $\Gamma^*$ is the dual lattice (reciprocal lattice).
 For $Z(-1/\tau) = Z(\tau)$ (up to phases that cancel with the oscillator determinants), the lattice sum must map onto itself.
 1.  **Volume Constraint:** $\text{Vol}(\Gamma) = 1$ (Unimodular).
 2.  **Lattice Constraint:** $\Gamma = \Gamma^*$ (Self-Dual).
-3.  **Phase Constraint:** To avoid unphysical phases in the fermionic partition function, the norms must be even integers: $\vec{k}^2 \in 2\mathbb{Z}$.
+3.  **Phase Constraint:** To avoid unphysical phases in the fermionic partition function, the norms must be even integers: $\boldsymbol{k}^2 \in 2\mathbb{Z}$.
 
 **IV. Uniqueness in Dimension 16**
 In $D=16$, the classification of even self-dual lattices yields exactly two solutions. The causal graph, being a discrete structure, cannot support a continuous spectrum; it must lock into one of these two discrete "islands" of stability.

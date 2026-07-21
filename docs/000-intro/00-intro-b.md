@@ -48,7 +48,7 @@ Buridan's own student Nicole Oresme (c. 1320–1382), working in Paris rather th
 
 ## Kinematic Awakening
 
-:::info[**The Archimedean Revival and the Newtonian Synthesis**]
+:::info[**Archimedean Revival and the Newtonian Synthesis**]
 :::
 
 The Scientific Revolution was neither a sudden break with ancient philosophy nor a wholesale rejection of the past; rather, it represented the ultimate triumph of Archimedean mathematical rigor over Aristotelian qualitative teleology.

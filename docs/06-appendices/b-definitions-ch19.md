@@ -39,7 +39,9 @@ Section 19.1.2 formalizes the properties of the QBD theorem regarding right-hand
 :::
 
 Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ under the **Master Equation** <Ref id="5.2" label="§5.2" /> during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
-$$ R_N(t) = \Gamma_{RH} \left( \rho(t) - \rho^* \right)^2 $$
+$$
+R_N(t) = \Gamma_{RH} \left( \rho(t) - \rho^* \right)^2
+$$
 where the transition rate $\Gamma_{RH}$ is well-defined by the comonad annotation map.
 
 **In Plain English:**  
@@ -187,11 +189,17 @@ Let the high-temperature plasma contain $N_f = 3$ fermion generations and $N_H =
 **III. Assembly**
 
 Calculation of the equilibrium partition function of the plasma, relating the chemical potentials of quarks, leptons, and Higgs fields, yields the relation:
-$$ B = \frac{8N_f + 4N_H}{22N_f + 13N_H} (B-L) $$
+$$
+B = \frac{8N_f + 4N_H}{22N_f + 13N_H} (B-L)
+$$
 Substituting $N_f = 3$ and $N_H = 1$, we obtain the sphaleron conversion factor:
-$$ C_{sph} = \frac{8(3) + 4(1)}{22(3) + 13(1)} = \frac{28}{79} \approx 0.354 $$
+$$
+C_{sph} = \frac{8(3) + 4(1)}{22(3) + 13(1)} = \frac{28}{79} \approx 0.354
+$$
 Evaluating the baryon yield from the initial lepton asymmetry $L_0$ (where $B_0 = 0$):
-$$ B_{final} = C_{sph} (B_0 - L_0) = \frac{28}{79} (-L_0) \approx -0.354 L_0 $$
+$$
+B_{final} = C_{sph} (B_0 - L_0) = \frac{28}{79} (-L_0) \approx -0.354 L_0
+$$
 This proves that approximately $35.4\%$ of the lepton asymmetry is converted into baryon number, establishing the final matter abundance.
 
 **IV. Formal Conclusion**
@@ -212,7 +220,9 @@ Section 19.2.3.1 formalizes the properties of the QBD proof regarding sphaleron 
 
 *   **Quantitative Derivation:** The proof calculates the asymmetry parameter using Seesaw parameters ($m_\nu \approx 0.05$ eV, $M_R \approx 10^{16}$ GeV). 
 *   **Observation Match:** Integrating the CP-violating decay rates over the cooling history yields the baryon-to-photon ratio:
-    $$ \eta = \frac{n_B - n_{\bar{B}}}{n_\gamma} \sim 10^{-10} $$
+    $$
+    \eta = \frac{n_B - n_{\bar{B}}}{n_\gamma} \sim 10^{-10}
+    $$
     This matches the observed value $\eta_{obs} \approx 6 \times 10^{-10}$ within order-of-magnitude precision.
 
 **In Plain English:**  
@@ -226,7 +236,9 @@ Section 19.2.4 formalizes the properties of the QBD proof regarding sakharov com
 :::
 
 *   **Topological Mass Splitting:** The rest mass of a composite particle is governed by the **Topological Mass Splitting** functional, which is proportional to its graph complexity:
-    $$ m \propto C_{total} = C[\beta] + k \cdot w^2 $$
+    $$
+    m \propto C_{total} = C[\beta] + k \cdot w^2
+    $$
     where $C[\beta]$ is the crossing complexity and $w^2$ is the torsional self-energy derived from writhe invariants.
 *   **Writhe Invariants:**
     *   $w_u = +2$ (parallel twists, **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
@@ -309,7 +321,7 @@ Section 19.3.4 formalizes the properties of the QBD lemma regarding neutron writ
 
 **I. Orthogonal Embedding**
 
-Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3.  **Neutron Writhe Configuration** <Ref id="19.3.4" label="§19.3.4" /> and  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\vec{t}_2 \cdot \vec{t}_3 = 0$.
+Let the neutron be represented by the composite knot $\beta_{udd}$, where the down-quark ribbons occupy strands 2 and 3.  **Neutron Writhe Configuration** <Ref id="19.3.4" label="§19.3.4" /> and  **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> The twist generators are orthogonal, meaning the inner product of their twist vectors vanishes: $\boldsymbol{t}_2 \cdot \boldsymbol{t}_3 = 0$.
 
 **II. Boundary Isolation**
 
@@ -336,10 +348,14 @@ Section 19.3.4.1 formalizes the properties of the QBD proof regarding neutron wr
 :::
 
 *   **Complexity Gap Calculation:** The proof evaluates the topological complexity gap:
-    $$ \Delta C = C_{udd} - C_{uud} $$
+    $$
+    \Delta C = C_{udd} - C_{uud}
+    $$
     using the results from **Proton Writhe Configuration** <Ref id="19.3.3" label="§19.3.3" /> and **Neutron Writhe Configuration** <Ref id="19.3.4" label="§19.3.4" />.
 *   **Energy Calibration:** Using the calibrated coupling constant $\kappa$, it translates this complexity gap into energy, yielding:
-    $$ \Delta m \approx 1.293 \text{ MeV} $$
+    $$
+    \Delta m \approx 1.293 \text{ MeV}
+    $$
 *   **Anthropic Necessity:** It demonstrates that this $1.4$ MeV difference is what prevents the proton from decaying, ensuring that hydrogen remains stable and can support cosmic chemistry.
 
 Q.E.D.
@@ -385,7 +401,9 @@ The proof integrates the Boltzmann equation for weak rate equilibrium.  **Weak I
 **II. Scale Equivalence**
 
 Using the emergent Fermi constant $G_F$ and the emergent Planck mass $M_{Pl}$, the calculation evaluates the freeze-out temperature:
-$$ T_f = 0.812 \text{ MeV} $$
+$$
+T_f = 0.812 \text{ MeV}
+$$
 
 **III. Scale Stability**
 
@@ -422,7 +440,9 @@ Let $\tau_n \approx 880$ seconds represent the free neutron lifetime.  **Neutron
 **II. Fraction Calculation**
 
 Integrating the exponential decay equation yields the surviving neutron ratio:
-$$ \left( \frac{n_n}{n_p} \right)_{t=300} = \left( \frac{n_n}{n_p} \right)_{t=0} e^{-300/\tau_n} \approx 0.20 \cdot e^{-300/880} \approx 0.20 \cdot 0.71 \approx 0.14 \approx \frac{1}{7} $$
+$$
+\left( \frac{n_n}{n_p} \right)_{t=300} = \left( \frac{n_n}{n_p} \right)_{t=0} e^{-300/\tau_n} \approx 0.20 \cdot e^{-300/880} \approx 0.20 \cdot 0.71 \approx 0.14 \approx \frac{1}{7}
+$$
 
 **III. Scaling Stability**
 

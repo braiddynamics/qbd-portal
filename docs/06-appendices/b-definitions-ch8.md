@@ -53,7 +53,7 @@ The kernel of the mapping is trivial, $\operatorname{Ker}(\Phi) = \{e\}$, proved
 The mapping preserves group multiplication: $\Phi(w_a \cdot w_b) = \Phi(w_a) \circ \Phi(w_b)$.
 1.  **Categorical Composition:** The composition is associative via the category $\mathbf{Caus}_t$ **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />, where path morphisms concatenate end-to-end. The functor maps the **Effective Influence** relation $\le$ to braid isotopy, ensuring the algebraic product mirrors topological concatenation. $\phi(\mathcal{R}_i \mathcal{R}_j) = \sigma_i \sigma_j$ holds directly.
 2.  **Syndrome Additivity:** The functoriality is preserved because the syndrome map $\sigma_G$ commutes with the composition: $\sigma_G(\mathcal{R}_i \circ \mathcal{R}_j) = \sigma_G(\mathcal{R}_i) + \sigma_G(\mathcal{R}_j)$ in the additive group of annotations.
-3.  **Catalytic Resolution:** Local checks in the pre-validation Universal Constructor accumulate independently for disjoint supports. For overlapping supports, causal conflicts are resolved coherently via the **Catalytic Tension Factor** $\chi(\vec{\sigma}_e)$, maintaining the homomorphism under the annotated category structure.
+3.  **Catalytic Resolution:** Local checks in the pre-validation Universal Constructor accumulate independently for disjoint supports. For overlapping supports, causal conflicts are resolved coherently via the **Catalytic Tension Factor** $\chi(\boldsymbol{\sigma}_e)$, maintaining the homomorphism under the annotated category structure.
 
 **Conclusion:**
 Having proven that the elementary physical rewrite processes satisfy both defining relations of the braid group $B_n$, the algebra of the physical dynamics is isomorphic to the algebra of $B_n$. This result foundations the constructive proof of $\mathfrak{su}(n)$, extending to the full representation theory via the quantum double construction on the code space $\mathcal{C}$.
@@ -802,8 +802,8 @@ The proof identifies the flavor-changing rewrite rule $\mathcal{R}_W$ as the gen
 The weak interaction transforms an electron braid state into a neutrino braid state ($e^- \to \nu_e$).
 In the QBD framework, this is realized by the rewrite process $\mathcal{R}_W$ acting on the tripartite doublet configurations within the 3-ribbon manifold.
 The doublet subspace is spanned by the writhe-neutral basis states:
-* $|\nu_e\rangle$: Writhe vector $\vec{w}=(0,0,0)$, Stabilizer $\lambda=(1,1,1)$.
-* $|e^-\rangle$: Writhe vector $\vec{w}=(-1,-1,-1)$, Stabilizer $\lambda=(-1,-1,-1)$.
+* $|\nu_e\rangle$: Writhe vector $\boldsymbol{w}=(0,0,0)$, Stabilizer $\lambda=(1,1,1)$.
+* $|e^-\rangle$: Writhe vector $\boldsymbol{w}=(-1,-1,-1)$, Stabilizer $\lambda=(-1,-1,-1)$.
 $\mathcal{R}_W$ operates on this two-dimensional subspace by swapping or mixing the basis states via local rung modifications on the shared 3-cycle **Tripartite Braid** <Ref id="6.2.1" label="§6.2.1" />. The preservation of triality follows from the modulo-3 invariance of the braid word, as the third ribbon's linking $L_{13}, L_{23}$ remains unchanged, ensuring the representation decomposes into the $2+1$ irreps of $SU(3)_c \times SU(2)_L$.
 
 **II. Application of the Generator Principle**

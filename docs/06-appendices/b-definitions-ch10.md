@@ -13,8 +13,8 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 :::
 
 The **Logical Basis** of the topological qubit, denoted $\mathcal{B}_L = \{|0_L\rangle, |1_L\rangle\}$, is constituted by the exclusive mapping of binary computational states to the two distinct stable prime braid configurations of the electron topology within the tripartite causal graph. This mapping is defined by the following exhaustive structural specifications:
-1.  **Logical Zero ($|0_L\rangle$):** The ground state is identified strictly with the symmetric electron braid configuration $\beta_e$, characterized by the uniform writhe vector $\vec{w} = (-1, -1, -1)$. This state transforms as the trivial singlet representation $\mathbf{1}$ under the permutation group $S_3$ acting on the ribbons, rendering it topologically decoupled from the color gauge field.
-2.  **Logical One ($|1_L\rangle$):** The excited state is identified strictly with the asymmetric electron braid configuration $\beta_{e*}$, characterized by the redistributed writhe vector $\vec{w} = (-2, -1, 0)$. This state transforms as a non-trivial multiplet (triplet $\mathbf{3}$ or octet $\mathbf{8}$) under the permutation group $S_3$, rendering it topologically coupled to the color gauge field.
+1.  **Logical Zero ($|0_L\rangle$):** The ground state is identified strictly with the symmetric electron braid configuration $\beta_e$, characterized by the uniform writhe vector $\boldsymbol{w} = (-1, -1, -1)$. This state transforms as the trivial singlet representation $\mathbf{1}$ under the permutation group $S_3$ acting on the ribbons, rendering it topologically decoupled from the color gauge field.
+2.  **Logical One ($|1_L\rangle$):** The excited state is identified strictly with the asymmetric electron braid configuration $\beta_{e*}$, characterized by the redistributed writhe vector $\boldsymbol{w} = (-2, -1, 0)$. This state transforms as a non-trivial multiplet (triplet $\mathbf{3}$ or octet $\mathbf{8}$) under the permutation group $S_3$, rendering it topologically coupled to the color gauge field.
 3.  **Invariant Constraint:** Both states are subject to the global topological conservation law $w_{\text{total}} = \sum_{i=1}^3 w_i = -3$, thereby ensuring that the electric charge observable $Q = \frac{1}{3}w_{\text{total}}$ remains invariant at $Q=-1$ across the entire logical subspace.
 
 **In Plain English:**  
@@ -52,15 +52,15 @@ Section 10.1.3 formalizes the properties of the QBD lemma regarding topological 
 :::
 
 **I. Ground State Stability ($|0_L\rangle$)**
-The configuration $\vec{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$.  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" /> and  **Qubit Optimality** <Ref id="10.1.2" label="§10.1.2" />
+The configuration $\boldsymbol{w}_0 = (-1, -1, -1)$ represents the global minimum of the complexity functional $C[\beta]$ for the charge sector $Q=-1$.  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" /> and  **Qubit Optimality** <Ref id="10.1.2" label="§10.1.2" />
 Any local rewrite operation $\mathcal{R}$ acting on this state either:
 1.  Increases the crossing number (adding energy), which is suppressed by the Boltzmann factor $e^{-\Delta E/T}$.
 2.  Maintains the topology (identity operation).
 No decay channel exists to a lower energy state with the same charge invariant, as verified by the exhaustion of lower-complexity braids **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />. Thus, $|0_L\rangle$ is absolutely stable.
 
 **II. Excited State Metastability ($|1_L\rangle$)**
-The configuration $\vec{w}_1 = (-2, -1, 0)$ is a local minimum.
-To decay to the ground state $\vec{w}_0$, the system must redistribute the writhe integers.
+The configuration $\boldsymbol{w}_1 = (-2, -1, 0)$ is a local minimum.
+To decay to the ground state $\boldsymbol{w}_0$, the system must redistribute the writhe integers.
 This redistribution requires a non-local "pass-through" of ribbons (a change in linking number relative to the frame) or a sequence of rewrites that temporarily increases the complexity $C$ before reducing it.
 The intermediate state constitutes a topological barrier $\Delta E_{barrier}$.
 The spontaneous decay rate $\Gamma$ is governed by the tunneling probability:
@@ -98,7 +98,7 @@ Section 10.1.4 formalizes the properties of the QBD lemma regarding topological 
 
 **I. Permutation Operator Action**
 Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$.  **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" /> and  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" />
-For the ground state $|0_L\rangle$ with $\vec{w}_0 = (-1, -1, -1)$:
+For the ground state $|0_L\rangle$ with $\boldsymbol{w}_0 = (-1, -1, -1)$:
 
 $$
 \hat{P}_{ij} |0_L\rangle = |0_L\rangle \quad \forall i,j
@@ -107,7 +107,7 @@ $$
 The state transforms as the trivial representation (scalar) of $S_3$.
 
 **II. Symmetry Breaking in Excited State**
-For the excited state $|1_L\rangle$ with $\vec{w}_1 = (-2, -1, 0)$:
+For the excited state $|1_L\rangle$ with $\boldsymbol{w}_1 = (-2, -1, 0)$:
 
 $$
 \hat{P}_{13} |1_L\rangle \neq |1_L\rangle
@@ -123,7 +123,7 @@ $$
 \langle 0_L | 1_L \rangle = \frac{1}{|S_3|} \sum_{g \in S_3} \chi_{\text{triv}}(g)^*\chi_{\mathbf{2}}(g) = \frac{1}{6} (1 \cdot 2 + 3 \cdot 0 + 2 \cdot (-1)) = 0
 $$
 
-where $\chi_{\text{triv}}(g) = 1$ is the trivial representation character, and $\chi_{\mathbf{2}}$ is the character of the two-dimensional irreducible representation (with values 2 for identity, 0 for 2-cycles, and -1 for 3-cycles). Furthermore, no continuous deformation of the braid (isotopy) can transform $\vec{w}_0$ to $\vec{w}_1$ without passing through a singular configuration where strands intersect (a rewrite event), ensuring they are topologically distinct.
+where $\chi_{\text{triv}}(g) = 1$ is the trivial representation character, and $\chi_{\mathbf{2}}$ is the character of the two-dimensional irreducible representation (with values 2 for identity, 0 for 2-cycles, and -1 for 3-cycles). Furthermore, no continuous deformation of the braid (isotopy) can transform $\boldsymbol{w}_0$ to $\boldsymbol{w}_1$ without passing through a singular configuration where strands intersect (a rewrite event), ensuring they are topologically distinct.
 
 Q.E.D.
 
@@ -361,7 +361,7 @@ Section 10.2.3.1 formalizes the properties of the QBD proof regarding geometric 
 :::info[**Identification of X-Errors via Geometric Stabilizers**]
 :::
 
-Let a single Pauli-X error occurring on an arbitrary edge $e$ be uniquely identified by the simultaneous sign inversion of the geometric stabilizers associated with the specific 3-cycles containing $e$. The mapping from the edge error location $X_e$ to the syndrome vector $\vec{\sigma}$ is injective within the local neighborhood, enabling the precise spatial localization of bit-flip defects.
+Let a single Pauli-X error occurring on an arbitrary edge $e$ be uniquely identified by the simultaneous sign inversion of the geometric stabilizers associated with the specific 3-cycles containing $e$. The mapping from the edge error location $X_e$ to the syndrome vector $\boldsymbol{\sigma}$ is injective within the local neighborhood, enabling the precise spatial localization of bit-flip defects.
 
 **In Plain English:**  
 Section 10.2.4 formalizes the properties of the QBD lemma regarding bit-flip localization.
@@ -385,9 +385,9 @@ The geometric stabilizer for cycle $\gamma$ is $S_{\gamma} = \prod_{i \in \gamma
 
 **III. Uniqueness (Prime Braid Structure)**
 In the Prime Braid configuration, the mapping between edges and fundamental 3-cycles is injective for local neighborhoods (triangles do not share faces in the sparse limit, or share them in a defined lattice way).
-* If $e$ belongs to a single cycle $\gamma$, the error syndrome vector is $\vec{\sigma} = (\dots, -1_{\gamma}, \dots)$, uniquely identifying $e$.
-* If $e$ is a shared edge between $\gamma_1, \gamma_2$, the syndrome is $\vec{\sigma} = (\dots, -1_{\gamma_1}, -1_{\gamma_2}, \dots)$. This pair uniquely identifies the shared edge.
-The mapping $E \to \vec{\sigma}$ is injective, ensuring unambiguous localization.
+* If $e$ belongs to a single cycle $\gamma$, the error syndrome vector is $\boldsymbol{\sigma} = (\dots, -1_{\gamma}, \dots)$, uniquely identifying $e$.
+* If $e$ is a shared edge between $\gamma_1, \gamma_2$, the syndrome is $\boldsymbol{\sigma} = (\dots, -1_{\gamma_1}, -1_{\gamma_2}, \dots)$. This pair uniquely identifies the shared edge.
+The mapping $E \to \boldsymbol{\sigma}$ is injective, ensuring unambiguous localization.
 
 Q.E.D.
 
@@ -595,7 +595,7 @@ For any single-qubit error $E \in \{X, Z, Y\}$:
 * $X_e$ is detected by $S_{\text{geom}}$ or $S_{\text{ribbon}}$ (the **Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" />).
 * $Z_e$ is detected by $S_{\text{vert}}$ (the **Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />).
 * $Y_e = i X_e Z_e$ is detected by both sets (syndrome is the union of X and Z syndromes).
-Since every error produces a unique non-zero syndrome vector $\vec{\sigma} \neq \vec{0}$, the code has distance $d \ge 3$ (it can correct at least 1 error).
+Since every error produces a unique non-zero syndrome vector $\boldsymbol{\sigma} \neq \boldsymbol{0}$, the code has distance $d \ge 3$ (it can correct at least 1 error).
 
 **V. Conclusion**
 The Braid Code satisfies the conditions of the Stabilizer Formalism. The code space $\mathcal{C} = \{ |\psi\rangle : S |\psi\rangle = |\psi\rangle \forall S \in \mathcal{S} \}$ is a protected subspace in which topological information can be stored and manipulated fault-tolerantly.
@@ -715,7 +715,7 @@ Section 10.3.2 formalizes the properties of the QBD theorem regarding topologica
 :::info[**Verification of Non-Trivial Syndromes for Single-Qubit Errors**]
 :::
 
-For any valid state within the logical codespace, the action of any single Pauli error operator $E \in \{X, Y, Z\}$ on any constituent edge qubit is characterized by a state orthogonal to the codespace, producing a non-trivial syndrome vector $\vec{\sigma} \neq \vec{1}$ through necessary anticommutation with stabilizers in $\mathcal{S}$.
+For any valid state within the logical codespace, the action of any single Pauli error operator $E \in \{X, Y, Z\}$ on any constituent edge qubit is characterized by a state orthogonal to the codespace, producing a non-trivial syndrome vector $\boldsymbol{\sigma} \neq \boldsymbol{1}$ through necessary anticommutation with stabilizers in $\mathcal{S}$.
 
 **In Plain English:**  
 Section 10.3.3 formalizes the properties of the QBD lemma regarding syndrome flipping.
@@ -748,7 +748,7 @@ Consider a single edge qubit $q_{uv}$.
     * Result: The syndromes flip from $+1$ to $-1$.
 
 **III. Error Correction**
-Since any single-qubit error flips at least one stabilizer syndrome to $-1$, the error syndrome vector $\vec{\sigma}$ is non-trivial. This non-trivial syndrome serves as the trigger for the corrective deletion or rewrite processes, ensuring that any single local defect is detected and handled immediately.
+Since any single-qubit error flips at least one stabilizer syndrome to $-1$, the error syndrome vector $\boldsymbol{\sigma}$ is non-trivial. This non-trivial syndrome serves as the trigger for the corrective deletion or rewrite processes, ensuring that any single local defect is detected and handled immediately.
 
 Q.E.D.
 
@@ -1043,7 +1043,7 @@ Section 10.4.3 formalizes the properties of the QBD lemma regarding writhe conse
 :::
 
 **I. Initial Configuration ($|0_L\rangle$)**
-The ground state is defined by the writhe vector $\vec{w}_0 = (-1, -1, -1)$.  **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" /> and  **Logical X Gate** <Ref id="10.4.2" label="§10.4.2" />
+The ground state is defined by the writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$.  **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" /> and  **Logical X Gate** <Ref id="10.4.2" label="§10.4.2" />
 The total writhe $W_0$ is the scalar sum of the components:
 
 $$
@@ -1051,7 +1051,7 @@ W_0 = \sum_{i=1}^{3} w_{0,i} = (-1) + (-1) + (-1) = -3
 $$
 
 **II. Final Configuration ($|1_L\rangle$)**
-The excited state is defined by the writhe vector $\vec{w}_1 = (-2, -1, 0)$.
+The excited state is defined by the writhe vector $\boldsymbol{w}_1 = (-2, -1, 0)$.
 The total writhe $W_1$ is the scalar sum:
 
 $$
@@ -1125,20 +1125,20 @@ Section 10.4.4.1 formalizes the properties of the QBD proof regarding charge con
 The rewrite process $\mathcal{R}_X$ implements the Pauli-$\sigma_x$ operator on the logical subspace $\mathcal{H}_L = \text{span}\{|0_L\rangle, |1_L\rangle\}$.
 
 **I. Action on Basis States**
-The operator $\mathcal{R}_X$ is defined as the physical process that drives the writhe transition $\vec{w} \to \vec{w}'$.
+The operator $\mathcal{R}_X$ is defined as the physical process that drives the writhe transition $\boldsymbol{w} \to \boldsymbol{w}'$.
 1.  **Transition $|0_L\rangle \to |1_L\rangle$:**
-    Initial state: $\vec{w}_0 = (-1, -1, -1)$.
+    Initial state: $\boldsymbol{w}_0 = (-1, -1, -1)$.
     The process applies the writhe transfer $\hat{T}_{13}$ (transfer twist from ribbon 3 to 1).
-    Final state: $\vec{w}' = (-2, -1, 0) = \vec{w}_1$.
+    Final state: $\boldsymbol{w}' = (-2, -1, 0) = \boldsymbol{w}_1$.
 
     $$
     \mathcal{R}_X |0_L\rangle = |1_L\rangle
     $$
 
 2.  **Transition $|1_L\rangle \to |0_L\rangle$:**
-    Initial state: $\vec{w}_1 = (-2, -1, 0)$.
+    Initial state: $\boldsymbol{w}_1 = (-2, -1, 0)$.
     The inverse process $\mathcal{R}_X^\dagger$ applies the reverse transfer.
-    Final state: $\vec{w}' = (-1, -1, -1) = \vec{w}_0$.
+    Final state: $\boldsymbol{w}' = (-1, -1, -1) = \boldsymbol{w}_0$.
 
     $$
     \mathcal{R}_X |1_L\rangle = |0_L\rangle
@@ -1197,7 +1197,7 @@ Section 10.5.2 formalizes the properties of the QBD lemma regarding singlet tran
 :::
 
 **I. State Representation**
-The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\vec{w}_0 = (-1, -1, -1)$ under **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
+The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$ under **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
 
 **II. Interaction Hamiltonian**
 The interaction with the probe field $A_\mu^a$ is governed by the current coupling:
@@ -1252,15 +1252,15 @@ Section 10.5.3 formalizes the properties of the QBD lemma regarding color phase.
 :::
 
 **I. State Representation**
-The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\vec{w}_1 = (-2, -1, 0)$.  **Color Phase** <Ref id="10.5.3" label="§10.5.3" /> and  **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />
-This state transforms non-trivially under $SU(3)$ (e.g., triplet $\mathbf{3}$ or octet $\mathbf{8}$), implying a non-zero color charge vector $\vec{Q}_{color} \neq 0$.
+The logical one state $|1_L\rangle$ is defined by the asymmetric vector $\boldsymbol{w}_1 = (-2, -1, 0)$.  **Color Phase** <Ref id="10.5.3" label="§10.5.3" /> and  **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />
+This state transforms non-trivially under $SU(3)$ (e.g., triplet $\mathbf{3}$ or octet $\mathbf{8}$), implying a non-zero color charge vector $\boldsymbol{Q}_{color} \neq 0$.
 
 **II. Interaction Holonomy**
 The interaction with the probe field generates a unitary evolution operator involving the path-ordered exponential of the gauge field (Wilson loop).
 For a color-charged particle moving through the vacuum or interacting with a probe, the wavefunction acquires a geometric phase $\gamma$ dependent on the representation $R$:
 
 $$
-\gamma_1 = \oint \vec{A} \cdot d\vec{l} \propto C_2(R)
+\gamma_1 = \oint \boldsymbol{A} \cdot d\boldsymbol{l} \propto C_2(R)
 $$
 
 where $C_2(R)$ is the quadratic Casimir invariant.
@@ -1411,13 +1411,13 @@ where the lattice constant $k_{share} = 1$.
 
 **II. State Analysis**
 1.  **Ground State ($|0_L\rangle$):**
-    * Writhe vector $\vec{w}_0 = (-1, -1, -1)$.
+    * Writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$.
     * Isolated Complexity: $\sum w_i^2 = (-1)^2 + (-1)^2 + (-1)^2 = 3$.
     * Sharing Reduction: As a singlet, internal symmetry prevents effective color-binding efficiency, yielding $N_{parallel} = 0$.
     * Net Complexity: $N_{net}(0) = 3 - 0 = 3$.
 
 2.  **Excited State ($|1_L\rangle$):**
-    * Writhe vector $\vec{w}_1 = (-2, -1, 0)$.
+    * Writhe vector $\boldsymbol{w}_1 = (-2, -1, 0)$.
     * Isolated Complexity: $\sum w_i^2 = (-2)^2 + (-1)^2 + 0^2 = 4 + 1 + 0 = 5$.
     * Sharing Reduction: Ribbon 1 ($w=-2$) and Ribbon 2 ($w=-1$) are parallel (homochiral) and highly wound, establishing shared geometric links that reduce the topological burden by $N_{parallel} = 2$.
     * Net Complexity: $N_{net}(1) = 5 - 2 = 3$.

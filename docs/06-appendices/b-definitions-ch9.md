@@ -1604,7 +1604,7 @@ W(\beta) = \sum_{i=1}^{n} w_{\text{int}} = n \cdot w_{\text{int}} = 0
 $$
 
 Since the number of ribbons $n \geq 1$, the unique integer solution for the internal writhe is $w_{\text{int}} = 0$.
-Consequently, the configuration vector is the null vector $\vec{w} = (0, 0, \dots, 0)$.
+Consequently, the configuration vector is the null vector $\boldsymbol{w} = (0, 0, \dots, 0)$.
 
 **III. Mass Vanishing Theorem**
 A standard braid with zero writhe on all ribbons minimizes the Generalized Braid Energy Functional at the trivial topology.

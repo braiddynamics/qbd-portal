@@ -507,7 +507,7 @@ Section 16.2.3.1 formalizes the properties of the QBD proof regarding vacuum inc
 :::info[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
 :::
 
-Suppose a subgraph $\Omega$ has reached critical density $\rho_{\text{max}}$. Then any net entropy influx $\Phi_S = \oint_{\partial \Omega} \vec{J}_S \cdot d\vec{A} > 0$ satisfies $\Delta S = \rho_{\text{max}} \ell_0 \cdot \text{Area}(\partial \Omega)$, establishing that the locus of information deposition transitions to the boundary surface $\partial \Omega$.
+Suppose a subgraph $\Omega$ has reached critical density $\rho_{\text{max}}$. Then any net entropy influx $\Phi_S = \oint_{\partial \Omega} \boldsymbol{J}_S \cdot d\boldsymbol{A} > 0$ satisfies $\Delta S = \rho_{\text{max}} \ell_0 \cdot \text{Area}(\partial \Omega)$, establishing that the locus of information deposition transitions to the boundary surface $\partial \Omega$.
 
 **In Plain English:**  
 Section 16.2.4 formalizes the properties of the QBD lemma regarding holographic screen mechanism.
@@ -519,14 +519,14 @@ Section 16.2.4 formalizes the properties of the QBD lemma regarding holographic 
 :::tip[**Formal Derivation of Dimensional Reduction under Saturated Boundary Flux**]
 :::
 
-Let $\vec{J}_S$ denote the information flux vector field. In accordance with **Vacuum Incompressibility at Critical Density** <Ref id="16.2.3" label="§16.2.3" />, interior incompressibility requires $\nabla \cdot \vec{J}_S = 0$ inside $\Omega$.
+Let $\boldsymbol{J}_S$ denote the information flux vector field. In accordance with **Vacuum Incompressibility at Critical Density** <Ref id="16.2.3" label="§16.2.3" />, interior incompressibility requires $\nabla \cdot \boldsymbol{J}_S = 0$ inside $\Omega$.
 
 **I. Boundary Divergence Integration**
 
 Applying Gauss's theorem to the entropy flux $\Phi_S$ yields (**Vacuum Incompressibility at Critical Density** <Ref id="16.2.3" label="§16.2.3" />):
 
 $$
-\Phi_S = \int_{\Omega} (\nabla \cdot \vec{J}_S) dV + \oint_{\partial \Omega} \vec{J}_S \cdot d\vec{A} = \oint_{\partial \Omega} \vec{J}_S \cdot d\vec{A}
+\Phi_S = \int_{\Omega} (\nabla \cdot \boldsymbol{J}_S) dV + \oint_{\partial \Omega} \boldsymbol{J}_S \cdot d\boldsymbol{A} = \oint_{\partial \Omega} \boldsymbol{J}_S \cdot d\boldsymbol{A}
 $$
 
 **II. Surface Radial Expansion**
@@ -614,7 +614,7 @@ Section 16.2.6 formalizes the properties of the QBD lemma regarding black hole e
 Let $\Sigma$ be the 2-dimensional spatial slice of the horizon. In accordance with **Holographic Screen Mechanism** <Ref id="16.2.4" label="§16.2.4" /> and **Geometric Tiling Factor of Trapped Surfaces** <Ref id="16.2.5" label="§16.2.5" />, the entropy evaluates as:
 
 $$
-S_{\text{BH}}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\vec{A} \equiv \frac{N_{\text{cycles}}(\Sigma)}{4}
+S_{\text{BH}}(\Sigma) = \frac{1}{4} \int_{\Sigma} \hat{n}_3 \cdot d\boldsymbol{A} \equiv \frac{N_{\text{cycles}}(\Sigma)}{4}
 $$
 
 **I. Trapped Surface Criterion**

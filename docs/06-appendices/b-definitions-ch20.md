@@ -41,7 +41,9 @@ The proof calculates the proper time lapse factor $N$ for a geodesic path climbi
 
 **II. Anisotropy Derivation**
 It mathematically derives the Sachs-Wolfe relation:
-$$ \frac{\delta T}{T} \approx \frac{1}{3}\Phi_c $$
+$$
+\frac{\delta T}{T} \approx \frac{1}{3}\Phi_c
+$$
 
 **III. Verification Conclusion**
 This verifies that the $10^{-5}$ temperature anisotropies measured in the CMB are direct maps of the graph's primordial complexity potentials.

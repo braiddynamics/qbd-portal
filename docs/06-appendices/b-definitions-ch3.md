@@ -673,7 +673,7 @@ Section 3.1.12 formalizes the properties of the QBD proof regarding vacuum struc
 
 ### 3.2.1 Definition: Regular Bethe Fragment {#3.2.1}
 
-:::tip[**The Regular Bethe Fragment ($G_0$) as the Pre-Geometric Vacuum State of the Causal Graph Substrate**]
+:::tip[**Regular Bethe Fragment ($G_0$) as the Pre-Geometric Vacuum State of the Causal Graph Substrate**]
 :::
 
 Let $G_0 = (V_0, E_0, H_0)$ denote the **Regular Bethe Fragment** of coordination number $k_{deg} \ge 3$ and finite depth $d \in \mathbb{N}^+$. The vertex set $V_0$ is partitioned into disjoint generational levels $L_n$ for $0 \le n \le d$, where the root vertex $r$ defines level $L_0 = \{r\}$, and the set of leaves defines level $L_d$. The graph is characterized by the following degree constraints on its vertices $u \in V_0$:
@@ -1568,7 +1568,7 @@ Section 3.2.11.4 formalizes the properties of the QBD calculation regarding larg
 
 ---
 
-### 3.2.12 Corollary: The Simplicial Manifold Condition {#3.2.12}
+### 3.2.12 Corollary: Simplicial Manifold Condition {#3.2.12}
 
 :::info[**Requirement of Topological Regularity for Emergent Metric Spaces**]
 :::
@@ -1580,7 +1580,7 @@ Section 3.2.12 formalizes the properties of the QBD corollary regarding the simp
 
 ---
 
-### 3.2.13 Lemma: The Simplicial Closure Constraint {#3.2.13}
+### 3.2.13 Lemma: Simplicial Closure Constraint {#3.2.13}
 
 :::info[**Exclusion of Hyper-Branched Vacua via Combinatorial Singularities Induced by Unique Causality**]
 :::
@@ -1592,7 +1592,7 @@ Section 3.2.13 formalizes the properties of the QBD lemma regarding the simplici
 
 ---
 
-### 3.2.13.1 Proof: The Simplicial Closure Constraint {#3.2.13.1}
+### 3.2.13.1 Proof: Simplicial Closure Constraint {#3.2.13.1}
 
 :::tip[**Derivation of Non-Manifold Pinch-Points from Sibling Causal Isolation**]
 :::
@@ -2454,7 +2454,7 @@ Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition prob
 The acceptance probability for an edge addition, which determines the **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" /> under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, follows the detailed balance relation:
 
 $$
-\mathbb{P}_{acc} = \chi(\vec{\sigma}) \cdot \min \left( 1, \exp \left( -\frac{\Delta F}{T} \right) \right)
+\mathbb{P}_{acc} = \chi(\boldsymbol{\sigma}) \cdot \min \left( 1, \exp \left( -\frac{\Delta F}{T} \right) \right)
 $$
 
 where $\Delta F = \Delta U - T \Delta S$.
@@ -2959,7 +2959,7 @@ Because $S_1 S_2 = S_3$, these operators generate a group $\mathcal{G}_{triad} \
 
 **II. Syndrome Calculation Table**
 
-The action of the Pauli-Z operator satisfies $Z|0\rangle = (+1)|0\rangle$ and $Z|1\rangle = (-1)|1\rangle$. Let $\lambda_i$ denote the eigenvalue of $S_i$ for a given basis state $|q_{12}q_{23}q_{31}\rangle$, yielding the syndrome vector $\vec{s} = (\lambda_1, \lambda_2, \lambda_3)$.
+The action of the Pauli-Z operator satisfies $Z|0\rangle = (+1)|0\rangle$ and $Z|1\rangle = (-1)|1\rangle$. Let $\lambda_i$ denote the eigenvalue of $S_i$ for a given basis state $|q_{12}q_{23}q_{31}\rangle$, yielding the syndrome vector $\boldsymbol{s} = (\lambda_1, \lambda_2, \lambda_3)$.
 
 | Configuration | State $\Vert q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Classification |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -3134,7 +3134,7 @@ $$
 
 **II. Commutation Analysis**
 
-Let $A, B \in \mathcal{S}$ denote arbitrary operators defined by binary vectors $\vec{a}$ and $\vec{b}$:
+Let $A, B \in \mathcal{S}$ denote arbitrary operators defined by binary vectors $\boldsymbol{a}$ and $\boldsymbol{b}$:
 
 $$
 A = \bigotimes_e Z_e^{a_e}, \quad B = \bigotimes_e Z_e^{b_e}

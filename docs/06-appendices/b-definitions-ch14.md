@@ -430,7 +430,6 @@ PASS: Lapse field converges to smooth manifold limit.
 
 * **Monotonicity:** The topological sort completes successfully ("PASS"), confirming that the causal graph is a Directed Acyclic Graph (DAG) and admits a valid global time coordinate $T(x)$.
 * **Smoothness:** The raw discrete lapse exhibits high roughness ($\approx 0.5899$) due to the stochastic "shot noise" of the graph updates. The mollified field reduces this roughness to $\approx 0.0008$, a suppression factor of $>700x$. This confirms that the emergent temporal geometry is $C^\infty$-smooth in the continuum limit.
-:::
 
 **In Plain English:**  
 Section 14.1.5.1 formalizes the properties of the QBD calculation regarding global monotonicity check.
@@ -1065,10 +1064,10 @@ where $\mu > 0$ is the mass gap constant. Since $N_3$ represents a cardinal coun
 The total energy of a propagating state includes the kinetic term derived from the graph evolution. Since the metric signature is Lorentzian $(-1, +1, +1, +1)$ and the causal propagation speed is bounded by $c=1$ (**Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />), the dispersion relation satisfies:
 
 $$
-E^2 = |\vec{p}|^2 + m^2
+E^2 = |\boldsymbol{p}|^2 + m^2
 $$
 
-Since the squared momentum $|\vec{p}|^2 \ge 0$ and the squared mass $m^2 \ge 0$, the total energy squared $E^2$ is non-negative. Selection of the positive root (consistent with the future-directed time evolution) ensures $E \ge 0$.
+Since the squared momentum $|\boldsymbol{p}|^2 \ge 0$ and the squared mass $m^2 \ge 0$, the total energy squared $E^2$ is non-negative. Selection of the positive root (consistent with the future-directed time evolution) ensures $E \ge 0$.
 
 Q.E.D.
 

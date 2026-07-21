@@ -94,7 +94,7 @@ $$
 \partial \gamma = v_M - u_0
 $$
 
-representing a homology transfer between the distinct boundary components. Because $\gamma$ connects $P_1$ to $P_2$, it must intersect the dual rung cochain $E_{\text{rung}}$ an odd number of times. Every traversal of a rung edge $e \in E_{\text{rung}}$ by the rewrite sequence flips the orientation of the local framing vector $\vec{f} \to -\vec{f}$. To achieve a net inversion (half-twist), the cardinality of the intersection set $\eta$ must be odd:
+representing a homology transfer between the distinct boundary components. Because $\gamma$ connects $P_1$ to $P_2$, it must intersect the dual rung cochain $E_{\text{rung}}$ an odd number of times. Every traversal of a rung edge $e \in E_{\text{rung}}$ by the rewrite sequence flips the orientation of the local framing vector $\boldsymbol{f} \to -\boldsymbol{f}$. To achieve a net inversion (half-twist), the cardinality of the intersection set $\eta$ must be odd:
 
 $$
 w = \frac{1}{2} \implies \eta \equiv 1 \pmod 2
@@ -745,17 +745,17 @@ Section 7.3.5 formalizes the properties of the QBD lemma regarding lepton charge
 
 **I. Configuration Space Definition**
 
-Let the state of a tripartite braid be defined by the writhe vector $\vec{w} = (w_1, w_2, w_3) \in \mathbb{Z}^3$.
+Let the state of a tripartite braid be defined by the writhe vector $\boldsymbol{w} = (w_1, w_2, w_3) \in \mathbb{Z}^3$.
 The **Electric Charge Operator** $Q$ **Charge Operator** <Ref id="7.3.1" label="§7.3.1" /> is defined linearly:
 
 $$
-Q(\vec{w}) = \frac{1}{3} \sum_{i=1}^{3} w_i
+Q(\boldsymbol{w}) = \frac{1}{3} \sum_{i=1}^{3} w_i
 $$
 
-The **Topological Complexity** $C(\vec{w})$ **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> scales with the absolute writhe sum (approximating crossing number scaling):
+The **Topological Complexity** $C(\boldsymbol{w})$ **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> scales with the absolute writhe sum (approximating crossing number scaling):
 
 $$
-C(\vec{w}) = \sum_{i=1}^{3} |w_i|
+C(\boldsymbol{w}) = \sum_{i=1}^{3} |w_i|
 $$
 
 **II. Color Singlet Constraint**
@@ -763,7 +763,7 @@ $$
 A physical state corresponds to a Color Singlet (Lepton) if and only if the braid configuration is invariant under the permutation group $S_3$ acting on the ribbons.
 
 $$
-P \vec{w} = \vec{w} \quad \forall P \in S_3
+P \boldsymbol{w} = \boldsymbol{w} \quad \forall P \in S_3
 $$
 
 This symmetry constraint forces the writhe components to be identical across all three ribbons.
@@ -842,7 +842,7 @@ Section 7.3.6 formalizes the properties of the QBD lemma regarding quark charge 
 **I. The Color-Charged Constraint**
 
 A fermion qualifies as a color triplet (Quark) if and only if its braid representation breaks the permutation symmetry $S_3$ of the ribbons.
-This requires the writhe vector $\vec{w}$ to be asymmetric.
+This requires the writhe vector $\boldsymbol{w}$ to be asymmetric.
 
 $$
 \exists i, j : w_i \neq w_j
@@ -1305,7 +1305,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
 
 **II. Case 1: The Down Quark ($d$)**
 
-* **Topology:** Triplet state with writhe vector $\vec{w}_d = (-1, 0, 0)$.
+* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_d = (-1, 0, 0)$.
 * **Isolated Term:**
     Under the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, the isolated contribution is:
 
@@ -1328,7 +1328,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
 
 **III. Case 2: The Up Quark ($u$)**
 
-* **Topology:** Triplet state with writhe vector $\vec{w}_u = (+1, +1, 0)$.
+* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$.
 * **Isolated Term:**
 
     $$
