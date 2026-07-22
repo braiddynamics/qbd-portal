@@ -170,7 +170,7 @@ Section 22.2.2 formalizes the properties of the QBD theorem regarding unitary ev
 
 ### 22.2.3 Lemma: Boundary-Spanning Transition Probability {#22.2.3}
 
-:::info[**Derivation of Transition Probability for Horizon-Crossing Graph Rewrite Operators**]
+:::info[**Derivation of Transition Probability via Horizon-Crossing Graph Rewrite Operators**]
 :::
 
 Assume a graph rewrite operator $\mathcal{R}_{span}$ acts on vertices spanning across the desynchronization horizon boundary. Then the non-perturbative transition rate $\Gamma$ of these spanning rewrites is governed by the instanton-like path-sum weight:
@@ -226,7 +226,7 @@ Section 22.2.3.1 formalizes the properties of the QBD proof regarding boundary-s
 
 ### 22.2.4 Lemma: Entanglement Entropy Page Curve {#22.2.4}
 
-:::info[**Verification of Entanglement Entropy Convergence for Unitary Evaporation**]
+:::info[**Verification of Entanglement Entropy Convergence via Unitary Evaporation**]
 :::
 
 Given the evaporation of a black hole, let the entanglement entropy $S_{rad}$ of the emitted radiation satisfy the Page Curve relation. Then the entanglement entropy increases monotonically until the Page time, after which it decays to zero at the complete evaporation of the core state.

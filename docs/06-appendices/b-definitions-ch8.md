@@ -21,7 +21,7 @@ Section 8.1.1 formalizes the properties of the QBD theorem regarding lie algebra
 
 ### 8.1.2 Lemma: Braid Group Isomorphism {#8.1.2}
 
-:::info[**Mapping of Physical Rewrite Algebras to Braid Group Relations**]
+:::info[**Mapping via Physical Rewrite Algebras to Braid Group Relations**]
 :::
 
 For any $n$-ribbon braid configuration, the algebra of elementary physical rewrite processes $\{\mathcal{R}_i\}$ is strictly isomorphic to the Braid Group $B_n$. This isomorphism is established by the far commutativity relation $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$ for $|i-j| \geq 2$ and the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ for adjacent indices.
@@ -33,7 +33,7 @@ Section 8.1.2 formalizes the properties of the QBD lemma regarding braid group i
 
 ### 8.1.2.1 Proof: Braid Group Isomorphism {#8.1.2.1}
 
-:::tip[**Formal Verification of Surjectivity, Injectivity, and Homomorphism for Rewrite Sequences**]
+:::tip[**Formal Verification of Surjectivity, Injectivity, through Homomorphism for Rewrite Sequences**]
 :::
 
 The proof explicitly constructs the isomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ by systematically verifying surjectivity, injectivity, and the homomorphism property within the category of annotated causal graphs $\mathbf{AnnCG}$, ensuring that the mapping respects the syndrome annotations and timestamp monotonicity defined in the axioms.
@@ -67,7 +67,7 @@ Section 8.1.2.1 formalizes the properties of the QBD proof regarding braid group
 
 ### 8.1.3 Lemma: Distant Commutativity {#8.1.3}
 
-:::info[**Verification of Operator Independence using Disjoint Spatial Supports**]
+:::info[**Verification through Operator Independence using Disjoint Spatial Supports**]
 :::
 
 For any $n$-ribbon braid, the physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ satisfy the commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ if and only if the indices satisfy $|i-j| \geq 2$. This commutation is enforced by the spatial separation of their local subgraphs ($\bar{d} > 2$) and the factorization of the global Hilbert space $\mathcal{H}$ into distinct tensor factors, where the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> forbids any bridging edges between their disjoint neighborhoods.
@@ -108,7 +108,7 @@ Section 8.1.3.1 formalizes the properties of the QBD proof regarding distant com
 
 ### 8.1.4 Lemma: Yang-Baxter Relations {#8.1.4}
 
-:::info[**Compliance of Physical Rewrite Sequences with Topological Isotopy**]
+:::info[**Compliance of Physical Rewrite Sequences by Topological Isotopy**]
 :::
 
 Assume the physical rewrite processes satisfy the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ due to the topological equivalence of their corresponding graph transformation sequences which result in ambiently isotopic final states. Under this equivalence, the transformation path of the over-crossing ribbon is homotopic to that of the second sequence while satisfying **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> at every intermediate step.
@@ -120,7 +120,7 @@ Section 8.1.4 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ### 8.1.4.1 Proof: Yang-Baxter Relations {#8.1.4.1}
 
-:::tip[**Verification of Isotopic Equivalence for Adjacent Rewrite Sequences**]
+:::tip[**Verification of Isotopic Equivalence via Adjacent Rewrite Sequences**]
 :::
 
 The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ by demonstrating that the distinct sequences result in ambiently isotopic causal graphs.
@@ -148,7 +148,7 @@ Section 8.1.4.1 formalizes the properties of the QBD proof regarding yang-baxter
 
 ### 8.1.5 Lemma: Bounded Commutator Depth {#8.1.5}
 
-:::info[**Finite Termination of Nested Commutators in Lie Basis Generation**]
+:::info[**Finite Termination of Nested Commutators via Lie Basis Generation**]
 :::
 
 Given the recursive generation of the Lie algebra basis from the set of fundamental generators $\{\hat{H}_i\}$, the generation process terminates at a finite commutator depth $D \propto O(n)$. This termination occurs when the nested commutators have bridged all possible pairs of ribbons $(i, j)$ within the braid, strictly bounding the dimension of the generated algebra by $n^2 - 1$, corresponding to the special unitary group $\mathfrak{su}(n)$.
@@ -160,7 +160,7 @@ Section 8.1.5 formalizes the properties of the QBD lemma regarding bounded commu
 
 ### 8.1.5.1 Proof: Bounded Commutator Depth {#8.1.5.1}
 
-:::tip[**Induction of Basis Spanning within O(n) Commutator Levels**]
+:::tip[**Induction of Basis Spanning through O(n) Commutator Levels**]
 :::
 
 The proof demonstrates by induction that the commutator closure spans the full algebra within depth $n-1$, bounded by friction and computational complexity limits.
@@ -225,7 +225,7 @@ Section 8.1.6 formalizes the properties of the QBD proof regarding lie algebra g
 
 ### 8.2.1 Definition: Tripartite Basis {#8.2.1}
 
-:::tip[**Identification of Fundamental Hamiltonians for Three-Ribbon Swaps**]
+:::tip[**Identification of Fundamental Hamiltonians via Three-Ribbon Swaps**]
 :::
 
 The physical dynamics of the **Tripartite Basis** are generated by a basis set of two fundamental rewrite processes, denoted $\{\mathcal{R}_1, \mathcal{R}_2\}$, which correspond to the unitary swapping of adjacent constituent ribbons. The associated Hermitian Hamiltonians $\hat{H}_i$ are identified with the traceless operators connecting the computational basis states $|i\rangle$ and $|i+1\rangle$ within the 3-dimensional local state space. These generators are defined by the proportionality relations:
@@ -239,7 +239,7 @@ Section 8.2.1 formalizes the properties of the QBD definition regarding triparti
 
 ### 8.2.2 Theorem: Color Symmetry Emergence {#8.2.2}
 
-:::info[**Isomorphism between Tripartite Dynamics and the Special Unitary Algebra**]
+:::info[**Isomorphism between Tripartite Dynamics via the Special Unitary Algebra**]
 :::
 
 Given a tripartite braid configuration, every Lie algebra generated by the physical rewrite processes is isomorphic to the Special Unitary algebra $\mathfrak{su}(3)$. This isomorphism is established by the closure of the commutator algebra of the fundamental generators $\{\hat{H}_1, \hat{H}_2\}$ under the constraints of the Yang-Baxter equation, yielding a set of eight linearly independent operators that satisfy the structure constants of Quantum Chromodynamics.
@@ -263,7 +263,7 @@ Section 8.2.3 formalizes the properties of the QBD lemma regarding basis verific
 
 ### 8.2.3.1 Proof: Basis Verification {#8.2.3.1}
 
-:::tip[**Explicit Derivation of the Fundamental Generator Representation**]
+:::tip[**Explicit Derivation of the Fundamental Generator Representation from Basis Verification**]
 :::
 
 **I. Explicit Matrix Form**
@@ -343,7 +343,7 @@ Section 8.2.4.1 formalizes the properties of the QBD proof regarding commutator 
 
 ### 8.2.5 Lemma: Algebraic Closure {#8.2.5}
 
-:::info[**Verification of Completeness and Semisimplicity of the Generated Algebra**]
+:::info[**Verification of Completeness through Semisimplicity of the Generated Algebra**]
 :::
 
 Assume the algebra generated by the set of eight matrices $\{\lambda_1, \dots, \lambda_8\}$ is closed under commutation and constitutes a semisimple Lie algebra. This algebraic closure is verified by the structure constants $f_{abc}$ satisfying the Jacobi identity $[T_a, [T_b, T_c]] + \text{cycl} = 0$, a negative-definite Killing form $K(X,Y)$ on the real span, and the absence of any external generators.
@@ -355,7 +355,7 @@ Section 8.2.5 formalizes the properties of the QBD lemma regarding algebraic clo
 
 ### 8.2.5.1 Proof: Algebraic Closure {#8.2.5.1}
 
-:::tip[**Formal Verification of Lie Algebra Closure and Semisimplicity**]
+:::tip[**Formal Verification of Lie Algebra Closure through Semisimplicity**]
 :::
 
 **I. Linear Independence**
@@ -376,7 +376,7 @@ Section 8.2.5.1 formalizes the properties of the QBD proof regarding algebraic c
 
 ### 8.2.6 Lemma: Ensemble Closure Verification {#8.2.6}
 
-:::info[**Empirical Confirmation of Algebra Closure using Stochastic Rewrite Ensembles**]
+:::info[**Empirical Confirmation via Algebra Closure using Stochastic Rewrite Ensembles**]
 :::
 
 Let the constructive generation of the $\mathfrak{su}(3)$ basis be robust against stochastic variations in the rewrite sequence, where ensemble simulations confirm that the probability of generating the full eight-dimensional closure approaches unity ($P \to 1$) in the equilibrium regime. This convergence is driven by the high density of compliant rewrite sites, which ensures that all necessary commutators are physically realized with probability $1 - e^{-\lambda t}$.
@@ -388,7 +388,7 @@ Section 8.2.6 formalizes the properties of the QBD lemma regarding ensemble clos
 
 ### 8.2.6.1 Proof: Ensemble Closure Verification {#8.2.6.1}
 
-:::tip[**Derivation of Near-Unity Closure Probability in the Equilibrium Limit**]
+:::tip[**Derivation of Near-Unity Closure Probability from the Equilibrium Limit**]
 :::
 
 **I. Stochastic Evolution Model**
@@ -412,7 +412,7 @@ Section 8.2.6.1 formalizes the properties of the QBD proof regarding ensemble cl
 
 ### 8.2.6.2 Calculation: SU(3) Closure Simulation {#8.2.6.2}
 
-:::note[**Computational Verification of Basis Spanning under Stochastic Generation**]
+:::note[**Computational Verification of Basis Spanning through Stochastic Generation**]
 :::
 
 Verification of the algebraic robustness established by **Ensemble Closure Verification** <Ref id="8.2.6" label="§8.2.6" /> is based on the generator representations verified in **Basis Verification** <Ref id="8.2.3" label="§8.2.3" /> is based on the following protocols:
@@ -487,10 +487,10 @@ def simulate_random_order_closure(num_ensembles=500):
     return np.array(dimensions)
 
 if __name__ == "__main__":
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE")
     print("Robustness under Stochastic Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     dims = simulate_random_order_closure(num_ensembles=500)
 
@@ -511,20 +511,20 @@ if __name__ == "__main__":
     })
     print(df.to_string(index=False))
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
     else:
-        print("RESULT: Partial closure observed – check parameters.")
+        print("status: partial")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION OF SU(3) ALGEBRA CLOSURE
 Robustness under Stochastic Generator Discovery Order
-══════════════════════════════════════════════════════════════════════
+======================================================================
 
 Ensembles simulated       : 500
 Initial generators        : 2 (λ¹, λ⁴ – real off-diagonals)
@@ -535,10 +535,11 @@ Distribution of final algebra dimensions:
  Dimension  Count  Percentage
          8    500       100.0
 
-──────────────────────────────────────────────────────────────────────
-RESULT: Deterministic closure confirmed.
+----------------------------------------------------------------------
+status: pass
 ```
 
+**Conclusion:**
 The simulation yields an average span dimension of 8.0 across all ensembles, with a probability of full closure equal to 1.000. The final dimensions sample consists entirely of integers with value 8. These results confirm that the constructive generation of the $\mathfrak{su}(3)$ basis is deterministic and robust against stochastic ordering; every random permutation of the rewrite sequence converges to the full 8-dimensional algebra. This validates that the basis is minimal and that no subset of commutators suffices for partial spanning, aligning with the irreducibility of the adjoint representation.
 
 **In Plain English:**  
@@ -548,7 +549,7 @@ Section 8.2.6.2 formalizes the properties of the QBD calculation regarding su(3)
 
 ### 8.2.7 Lemma: Flux Tube Confinement {#8.2.7}
 
-:::info[**Topological Origin of the Linear Potential and Monopole Flux**]
+:::info[**Topological Origin of the Linear Potential from Monopole Flux**]
 :::
 
 For any separation of color-charged endpoints within a tripartite braid, a confining potential energy $V(L) \approx \sigma L$ and a geometric phase $\gamma(L) = n \pi/4$ are generated by the topological structure of the connecting ribbon segments. Under this separation, the linear potential energy identifies the ribbon segments as a flux tube with string tension $\sigma$, while the accumulated Berry phase indicates a magnetic monopole flux $U(1)$ topology consistent with dual superconductor models.
@@ -601,7 +602,7 @@ Section 8.2.7.1 formalizes the properties of the QBD proof regarding flux tube c
 
 ### 8.2.7.2 Calculation: Flux Tube Phase Simulation {#8.2.7.2}
 
-:::note[**Computational Verification of Linear Confinement and Monopole Phases**]
+:::note[**Computational Verification of Linear Confinement through Monopole Phases**]
 :::
 
 Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.2.7" label="§8.2.7" /> is based on the tension constraints verified in **Algebraic Closure** <Ref id="8.2.5" label="§8.2.5" />. This verification utilizes the following protocols:
@@ -651,6 +652,8 @@ if __name__ == "__main__":
     verify_flux_tube_confinement()
 ```
 
+**Simulation Results:**
+
 ```text
 ======================================================================
 FLUX TUBE CONFINEMENT & BERRY PHASE
@@ -670,6 +673,7 @@ Length | Energy (V=σL)   | Berry Phase (rad)  | Phase mod 2π
 ------------------------------------------------------------
 ```
 
+**Conclusion:**
 The output confirms three physical properties. First, the energy scales strictly linearly with length (e.g., $E=5.00$ at $L=10$), validating the linear confinement model. Second, the Berry phase accumulates in discrete steps of $\pi/4$, reflecting the lattice quantization. Third, the phase exhibits a $2\pi$ periodicity (resetting to 0.00 at $L=8$), characteristic of a $U(1)$ monopole topology. These results verify that the graph geometry reproduces the string-like behavior required for quark confinement.
 
 **In Plain English:**  
@@ -679,7 +683,7 @@ Section 8.2.7.2 formalizes the properties of the QBD calculation regarding flux 
 
 ### 8.2.8 Proof: Color Symmetry Emergence {#8.2.8}
 
-:::tip[**Formal Proof of the Isomorphism between Tripartite Dynamics and Color Symmetry**]
+:::tip[**Formal Proof of the Isomorphism between Tripartite Dynamics through Color Symmetry**]
 :::
 
 **I. Application of the Generator Principle**
@@ -730,7 +734,7 @@ Section 8.3.2 formalizes the properties of the QBD theorem regarding chiral symm
 
 ### 8.3.3 Lemma: Chiral Stability {#8.3.3}
 
-:::info[**Verification of Invariant Persistence under Local Transformations**]
+:::info[**Verification of Invariant Persistence through Local Transformations**]
 :::
 
 Suppose the value of the chiral invariant $\chi(\mathcal{R}_W)$ is stable against all local graph transformations that preserve the causal order, enforced by the evolution constituting a functor in the History Category (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />) preserving edge partial ordering. Under this stability, local deformations preserve the signum $\operatorname{sgn}(\Delta H)$ of the timestamp difference, preventing spontaneous handedness inversion without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
@@ -781,7 +785,7 @@ Section 8.3.3.1 formalizes the properties of the QBD proof regarding chiral stab
 
 ### 8.3.4 Lemma: Weak Algebra Emergence {#8.3.4}
 
-:::info[**Isomorphism between Doublet Flavor Rewrites and the Special Unitary Group**]
+:::info[**Isomorphism between Doublet Flavor Rewrites via the Special Unitary Group**]
 :::
 
 Let the Lie algebra generated by the set of flavor-changing rewrite processes $\{\mathcal{R}_W\}$ acting upon the electroweak doublet subspace be isomorphic to $\mathfrak{su}(2)$. This isomorphism is established by the closure of the commutator algebra formed by the fundamental swap operator and the diagonal writhe-measurement operator, satisfying the structure constants $\epsilon_{ijk}$ of the weak isospin group.
@@ -853,7 +857,7 @@ Section 8.3.4.1 formalizes the properties of the QBD proof regarding weak algebr
 
 ### 8.3.5 Lemma: Right-Handed Rejection {#8.3.5}
 
-:::info[**Calculation of Near-Unity Suppression for Mirror Processes**]
+:::info[**Calculation of Near-Unity Suppression via Mirror Processes**]
 :::
 
 Assume the probability of realizing a right-handed mirror process within the causal graph is suppressed to a value approaching zero due to timestamp inversion creating redundant local paths of length $\le 2$ that scale with edge density $\rho_e$. This suppression is enforced by local stabilizer checks within the quasi-local radius $R \sim \log N$ detecting redundancies with fidelity $1 - e^{-R}$, resulting in a projective collapse where the rejection rate satisfies $P(\text{reject}) \approx 1$.
@@ -971,7 +975,7 @@ Section 8.3.7 formalizes the properties of the QBD lemma regarding mirror puc vi
 
 ### 8.3.7.1 Proof: Mirror PUC Violation {#8.3.7.1}
 
-:::tip[**Formal Demonstration of Redundant Path Formation in Mirror Processes**]
+:::tip[**Formal Demonstration of Redundant Path Formation through Mirror Processes**]
 :::
 
 **I. Path Uniqueness Condition**
@@ -1080,7 +1084,7 @@ Section 8.4.1 formalizes the properties of the QBD theorem regarding topological
 
 ### 8.4.2 Lemma: Computational Friction Ratio {#8.4.2}
 
-:::info[**Quantification of the Inequality between Three-Cycle and Four-Cycle Rewrites**]
+:::info[**Quantification of the Inequality between Three-Cycle via Four-Cycle Rewrites**]
 :::
 
 Assume the probability of a 4-cycle rewrite process is strictly less than that of a 3-cycle rewrite process ($p_4 < p_3$), enforced by the differential computational friction and the combinatorial rarity of 4-cycle precursors relative to 3-cycle precursors. Under this friction differential, the larger interaction volume of the 4-cycle vertex ($V_4 > V_3$) incurs a greater exponential suppression factor $e^{-\mu V}$ from the Acyclic Pre-Check.
@@ -1131,7 +1135,7 @@ Section 8.4.2.1 formalizes the properties of the QBD proof regarding computation
 
 ### 8.4.3 Lemma: Coupling-Probability Correspondence {#8.4.3}
 
-:::info[**Equivalence of Gauge Couplings and Rewrite Amplitudes**]
+:::info[**Equivalence of Gauge Couplings via Rewrite Amplitudes**]
 :::
 
 For any fundamental interaction $F$, the square of the gauge coupling constant $g_F^2$ is linearly proportional to the probability density $P(\mathcal{R}_F)$ of the associated topological rewrite class. This correspondence $g_F^2 \propto P(\mathcal{R}_F)$ is derived from the Born rule applied to the unitary evolution operator in the discrete time limit.
@@ -1179,7 +1183,7 @@ Section 8.4.3.1 formalizes the properties of the QBD proof regarding coupling-pr
 
 ### 8.4.4 Lemma: Topological Complexity Identification {#8.4.4}
 
-:::info[**Mapping Gauge Groups to Minimal Graph Cycles**]
+:::info[**Mapping Gauge Groups to Minimal Graph Cycles via Topological Complexity Identification**]
 :::
 
 Suppose every fundamental interaction of the electroweak sector is mapped to a specific topological rewrite class based on the minimal complexity required to generate its respective symmetry group. In particular, the $SU(2)_L$ flavor-changing interaction is mapped to 3-cycle rewrites ($p_3$) representing adjacent ribbon swaps, while the $U(1)_Y$ phase-rotating interaction is mapped to 4-cycle rewrites ($p_4$) representing the minimal loop required to enclose and rotate the doublet.
@@ -1191,7 +1195,7 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding topological c
 
 ### 8.4.4.1 Proof: Topological Complexity Identification {#8.4.4.1}
 
-:::tip[**Analysis of Minimal Vertex Requirements for Doublet Transformations**]
+:::tip[**Analysis of Minimal Vertex Requirements through Doublet Transformations**]
 :::
 
 **I. The SU(2) Interaction ($p_3$)**
@@ -1278,7 +1282,7 @@ Section 8.5.1 formalizes the properties of the QBD theorem regarding emergent ga
 
 ### 8.5.2 Lemma: Probabilistic Coupling Identity {#8.5.2}
 
-:::info[**Equivalence of Coupling Squared and Rewrite Probability**]
+:::info[**Equivalence of Coupling Squared via Rewrite Probability**]
 :::
 
 Assume that in the effective field theory limit of the causal graph dynamics, the square of the gauge coupling constant $g^2$ is equivalent to the probability amplitude $P(\mathcal{R})$ of the associated topological rewrite process. Under this identity, the equivalence is established by the Born Rule applied to the **Universal Evolution Operator**, which identifies the interaction vertex of the Lagrangian with the transition kernel of the discrete graph update.
@@ -1416,7 +1420,7 @@ Section 8.5.4 formalizes the properties of the QBD lemma regarding geometric nor
 
 ### 8.5.4.1 Proof: Geometric Normalization {#8.5.4.1}
 
-:::tip[**Integration of the Vertex Amplitude over the Doublet Phase Space**]
+:::tip[**Integration of the Vertex Amplitude over the Doublet Phase Space via Geometric Normalization**]
 :::
 
 **I. Phase Space Integral**
@@ -1448,7 +1452,7 @@ Section 8.5.4.1 formalizes the properties of the QBD proof regarding geometric n
 
 ### 8.5.5 Lemma: Entropic Dimensionality {#8.5.5}
 
-:::info[**Identification of the Dimensionless Weighting Factor**]
+:::info[**Identification of the Dimensionless Weighting Factor via Entropic Dimensionality**]
 :::
 
 Let the dimensionless topological fine-structure constant be defined as $\alpha_{\text{topo}} = \ln 2 / 4 \approx 0.173$, representing the energy cost of a single bit of topological information distributed across the 4 effective dimensions of the emergent spacetime manifold. Under this definition, the value is derived from the ratio of the entropic gain of a decision ($\ln 2$) to the dimensionality of the manifold ($d_c = 4$).
@@ -1494,7 +1498,7 @@ Section 8.5.5.1 formalizes the properties of the QBD proof regarding entropic di
 
 ### 8.5.6 Lemma: Local State Space Multiplier {#8.5.6}
 
-:::info[**Enumeration of Local Degrees of Freedom contributing to the Coupling**]
+:::info[**Enumeration of Local Degrees via Freedom contributing to the Coupling**]
 :::
 
 Suppose the probability of a rewrite event is scaled by a combinatorial multiplier $M=7$, representing the total count of distinct, valid interaction channels available on a single 3-cycle geometric quantum. Under this state space decomposition, the multiplier is determined by the sum of 3 spatial orientations, 2 internal doublet states, and 1 global spin stabilizer constraint channel.
@@ -1506,7 +1510,7 @@ Section 8.5.6 formalizes the properties of the QBD lemma regarding local state s
 
 ### 8.5.6.1 Proof: Local State Space Multiplier {#8.5.6.1}
 
-:::tip[**Combinatorial Enumeration of Valid Interaction Channels on a 3-Cycle**]
+:::tip[**Combinatorial Enumeration via Valid Interaction Channels on a 3-Cycle**]
 :::
 
 **I. Channel Decomposition**
@@ -1556,7 +1560,7 @@ Enumeration of the local degrees of freedom established by **Local State Space M
 import pandas as pd
 
 def verify_su2_local_dof():
-    print("--- QBD SU(2) Local State Space Verification ---")
+    print("--- §8.5.6.2 SU(2) Local State Space ---")
     print("Objective: Enumerate valid interaction channels on a single 3-cycle quantum.")
     
     # 1. Define the Geometric Quantum
@@ -1625,10 +1629,10 @@ if __name__ == "__main__":
     verify_su2_local_dof()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
---- QBD SU(2) Local State Space Verification ---
+--- §8.5.6.2 SU(2) Local State Space ---
 Objective: Enumerate valid interaction channels on a single 3-cycle quantum.
 
 [Enumerated Channels]
@@ -1648,6 +1652,7 @@ PASS: Combinatorial count matches the SU(2) multiplier (M=7).
       (3 Orientations * 2 States) + 1 Stabilizer
 ```
 
+**Conclusion:**
 The enumeration explicitly lists the interaction channels: 6 active rewrite channels (3 edges $\times$ 2 operations) and 1 passive stabilizer check. The sum yields a total local degree of freedom count of 7. This matches the expected multiplier $M=7$ used in the coupling constant derivation, confirming that the value is derived from precise combinatorial counting of the available topological modes.
 
 **In Plain English:**  
@@ -1657,7 +1662,7 @@ Section 8.5.6.2 formalizes the properties of the QBD calculation regarding su(2)
 
 ### 8.5.7 Proof: Emergent Gauge Coupling {#8.5.7}
 
-:::tip[**Formal Synthesis of Factors into the Analytical Expression for $g$**]
+:::tip[**Formal Synthesis of Factors into the Analytical Expression via $g$**]
 :::
 
 **I. Component Assembly**
@@ -1703,7 +1708,7 @@ Section 8.5.7 formalizes the properties of the QBD proof regarding emergent gaug
 
 ### 8.5.7.1 Calculation: Numerical Consistency Check {#8.5.7.1}
 
-:::note[**Computational Verification of the Predicted Coupling against Experimental Data**]
+:::note[**Computational Verification of the Predicted Coupling against Experimental Data through Numerical Consistency Check**]
 :::
 
 Validation of the analytical coupling derivation established in the **Emergent Gauge Coupling** <Ref id="8.5.7" label="§8.5.7" /> is based on the following protocols:
@@ -1716,7 +1721,7 @@ Validation of the analytical coupling derivation established in the **Emergent G
 import math
 
 def verify_gauge_coupling_consistency():
-    print("--- QBD Gauge Coupling (g) Consistency Check ---")
+    print("--- §8.5.7.1 Gauge Coupling (g) Consistency ---")
     
     # 1. Fundamental Constants (Derived in Ch 4, 5, 8)
     
@@ -1794,10 +1799,10 @@ if __name__ == "__main__":
     verify_gauge_coupling_consistency()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
---- QBD Gauge Coupling (g) Consistency Check ---
+--- §8.5.7.1 Gauge Coupling (g) Consistency ---
 METRIC                    | VALUE      | NOTES
 -----------------------------------------------------------------
 Alpha_topo                | 0.1733     | ln(2)/4
@@ -1815,6 +1820,7 @@ Upper Bound (rho + sigma): g = 0.7199
 PASS: Experimental value falls within the natural vacuum fluctuation range.
 ```
 
+**Conclusion:**
 The calculation yields a predicted mean coupling of $g \approx 0.6649$. This value deviates from the experimental benchmark ($0.6530$) by approximately 1.82%, which is within the defined 2% target accuracy. The calculated $1\sigma$ confidence interval $[0.6048, 0.7199]$ fully encompasses the experimental value. This confirms that the derived coupling constant is consistent with physical observations within the natural variance of the vacuum density.
 
 **In Plain English:**  
@@ -1824,7 +1830,7 @@ Section 8.5.7.1 formalizes the properties of the QBD calculation regarding numer
 
 ### 8.6.1 Definition: Geometric Reservoir {#8.6.1}
 
-:::tip[**Identification of the Vacuum Expectation Value with Equilibrium Three-Cycle Density**]
+:::tip[**Identification of the Vacuum Expectation Value by Equilibrium Three-Cycle Density**]
 :::
 
 The **Geometric Reservoir** (manifesting as the Higgs Vacuum Expectation Value, denoted $v$) is defined strictly as the macroscopic order parameter associated with the equilibrium density $\rho_3^*$ of the geometric vacuum. The value of $v$ scales with the square root of the density, $v \propto \sqrt{\rho_3^*}$, representing the availability of geometric quanta to sustain topological defects. The dimensionful scale $v \approx 246$ GeV is anchored by the finite volume of the causal graph $N$ and the universal mass constant $\kappa_m$, establishing the reservoir from which particles extract the structural resources required for their existence.
@@ -1836,7 +1842,7 @@ Section 8.6.1 formalizes the properties of the QBD definition regarding geometri
 
 ### 8.6.2 Theorem: Emergent Mass Generation {#8.6.2}
 
-:::info[**Generation of Particle Masses using Geometric Phase Transition**]
+:::info[**Generation via Particle Masses using Geometric Phase Transition**]
 :::
 
 Given a thermodynamic phase transition of the vacuum from a sparse tree-like state to a geometric condensate, every elementary particle is endowed with mass. This transition breaks the electroweak symmetry via the proliferation of 3-cycles, establishing a non-zero vacuum expectation value. Under this symmetry breaking, the mass generation operates either through bosons absorbing Goldstone modes or through fermions coupling via the Topological Yukawa interaction $y_f$.
@@ -1883,7 +1889,7 @@ Section 8.6.3.1 formalizes the properties of the QBD proof regarding boson mass 
 
 ### 8.6.4 Lemma: Dimensionful VEV Scaling {#8.6.4}
 
-:::info[**Scaling of the Vacuum Expectation Value with Local Correlation Density**]
+:::info[**Scaling of the Vacuum Expectation Value by Local Correlation Density**]
 :::
 
 For any configuration of the local vacuum, the Vacuum Expectation Value $v$ scales according to the relation $v = \sqrt{2 \kappa_m \rho_3^* N_\xi}$ to anchor the electroweak scale. Under this scaling, the condensate strength is constant regardless of the total cosmic volume $N$, ensuring a stable reservoir from which particles extract structural resources.
@@ -2000,7 +2006,7 @@ for gen, config in gen_configs.items():
 print("-" * 75)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 GENERATION           | N_net    | <y_f>    | <m_f> (GeV)  | σ_m (GeV) 
@@ -2012,6 +2018,7 @@ Gen3_τ/b/t           | 1000000  | 4.100022 | 1009.507 | 89.239
 ---------------------------------------------------------------------------
 ```
 
+**Conclusion:**
 The simulation confirms the vast hierarchy of fermion masses. Generation 1 yields a mass of $\sim 1$ MeV, consistent with light quarks. Generation 2 yields $\sim 4$ MeV (before QCD adjustments). Generation 3 yields $\sim 1009$ GeV, which scales to the observed Top quark mass ($\sim 173$ GeV) when accounting for specific torsion factors. The hierarchy ratio between Generation 3 and Generation 1 is approximately $10^6$. The data validates that the quadratic scaling of writhe complexity ($N \propto w^2$) combined with the vacuum supply ratio naturally generates the six-order-of-magnitude span observed in the fermion spectrum.
 
 **In Plain English:**  
@@ -2021,7 +2028,7 @@ Section 8.6.5.2 formalizes the properties of the QBD calculation regarding yukaw
 
 ### 8.6.6 Lemma: Sensitivity and Error Propagation {#8.6.6}
 
-:::info[**Analysis of Prediction Sensitivity to Vacuum Density Fluctuations**]
+:::info[**Analysis via Prediction Sensitivity to Vacuum Density Fluctuations**]
 :::
 
 Assume the predictive stability of the emergent mass spectrum against stochastic vacuum fluctuations is governed by the sensitivity derivatives and covariance structure of the equilibrium state. Under this propagation, the mass observable $m_W$ exhibits linear sensitivity to the equilibrium 3-cycle density, while the effective variance of $m_Z$ is structurally suppressed by the negative covariance $\text{Cov}(\rho_3^*, \sin^2 \theta_W) \approx -0.023$ arising from shared frictional dependencies.
@@ -2033,7 +2040,7 @@ Section 8.6.6 formalizes the properties of the QBD lemma regarding sensitivity a
 
 ### 8.6.6.1 Proof: Sensitivity and Error Propagation {#8.6.6.1}
 
-:::tip[**Analytical and Numerical derivation of Error Bounds on Predicted Masses**]
+:::tip[**Analytical from Numerical derivation of Error Bounds on Predicted Masses**]
 :::
 
 Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.  **Sensitivity and Error Propagation** <Ref id="8.6.6" label="§8.6.6" /> and  **Topological Yukawa Identity** <Ref id="8.6.5" label="§8.6.5" />

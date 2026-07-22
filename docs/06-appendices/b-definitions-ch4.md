@@ -9,7 +9,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 4.1.1 Definition: Internal Causal Category {#4.1.1}
 
-:::tip[**Structure of Vertices and Directed Path Morphisms within a Single Snapshot**]
+:::tip[**Structure of Vertices via Directed Path Morphisms within a Single Snapshot**]
 :::
 
 The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the mathematical structure encapsulating the instantaneous causal relationships within a graph snapshot at Logical Time $t$. The category comprises the following components:
@@ -25,7 +25,7 @@ Section 4.1.1 formalizes the properties of the QBD definition regarding internal
 
 ### 4.1.2 Definition: Historical Category {#4.1.2}
 
-:::tip[**Structure of Cumulative Trajectories utilizing History-Preserving Embeddings**]
+:::tip[**Structure as Cumulative Trajectories utilizing History-Preserving Embeddings**]
 :::
 
 The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the meta-theoretical structure governing the irreversible progression of the universe across the domain of Logical Time.
@@ -41,25 +41,25 @@ Section 4.1.2 formalizes the properties of the QBD definition regarding historic
 
 ---
 
-### 4.1.3 Lemma: Orthogonality of Kinematic State and Historical Trajectory {#4.1.3}
+### 4.1.3 Lemma: Orthogonality of Kinematic and Historical State {#4.1.3}
 
-:::info[**Resolution of Topological Deletion within History-Respecting Embeddings**]
+:::info[**Resolution of Topological Deletion through History-Respecting Embeddings**]
 :::
 
 Let the active kinematic state $G_t$ be decoupled from the cumulative causal trajectory $\mathcal{H}_t = \bigcup_{i=0}^t G_i$ such that the deletion operator $\mathfrak{T}_{del}$ excises edges strictly from $G_t$. Then the inclusion morphism $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ in the Historical Category $\mathbf{Hist}$ is well-defined and preserves timestamp monotonicity under active edge excision.
 
 **In Plain English:**  
-Section 4.1.3 formalizes the properties of the QBD lemma regarding orthogonality of kinematic state and historical trajectory.
+Section 4.1.3 formalizes the properties of the QBD lemma regarding orthogonality of kinematic and historical state.
 
 ---
 
-### 4.1.3.1 Proof: Orthogonality of Kinematic State and Historical Trajectory {#4.1.3.1}
+### 4.1.3.1 Proof: Orthogonality of Kinematic and Historical State {#4.1.3.1}
 
-:::tip[**Verification of Morphism Validity under Edge Excision**]
+:::tip[**Verification of Morphism Validity through Edge Excision**]
 :::
 
 **I. State Space vs. Trajectory Space**
-The Universal Constructor $\mathcal{R}$ acts exclusively upon the Kinematic State $G_t$, governed by the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. This ensures the **Orthogonality of Kinematic State and Historical Trajectory** <Ref id="4.1.3" label="§4.1.3" /> is maintained:
+The Universal Constructor $\mathcal{R}$ acts exclusively upon the Kinematic State $G_t$, governed by the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. This ensures the **Orthogonality of Kinematic and Historical State** <Ref id="4.1.3" label="§4.1.3" /> is maintained:
 1.  **Creation:** An edge $e$ is appended to $G_t$.
 2.  **Deletion:** An edge $e$ is completely excised from $G_t$ ($E_{t+1} \subset E_t$), incurring zero runtime memory overhead as required by the **Elementary Task Space** constraint.
 
@@ -80,13 +80,13 @@ The topological pruning of the spatial manifold is mathematically orthogonal to 
 Q.E.D.
 
 **In Plain English:**  
-Section 4.1.3.1 formalizes the properties of the QBD proof regarding orthogonality of kinematic state and historical trajectory.
+Section 4.1.3.1 formalizes the properties of the QBD proof regarding orthogonality of kinematic and historical state.
 
 ---
 
 ### 4.2.1 Theorem: Categorical Validity {#4.2.1}
 
-:::info[**Formal Consistency of the Categorical Frameworks for Global and Internal Structures**]
+:::info[**Formal Consistency of the Categorical Frameworks for Global via Internal Structures**]
 :::
 
 Consider the structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ representing the internal causal path structure and the global historical embedding structure, respectively. Then the following holds: both structures constitute valid mathematical categories satisfying the axioms of **Associativity** of composition and the existence of neutral **Identity** elements. Moreover, these frameworks provide the consistent syntactic domain for the dynamical operations of the Universal Constructor.
@@ -244,7 +244,7 @@ Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativi
 
 ### 4.2.4 Lemma: Timestamp Monotonicity {#4.2.4}
 
-:::info[**Preservation of Timestamp Monotonicity**]
+:::info[**Preservation via Timestamp Monotonicity**]
 :::
 
 Let $f: \mathcal{H}_t \to \mathcal{H}_{t+1}$ and $g: \mathcal{H}_{t+1} \to \mathcal{H}_{t+2}$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in G$, the inequality $H_G(e) \le H_{G'}(f(e)) \le H_{G''}(g(f(e)))$ holds; moreover, the composition $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
@@ -256,7 +256,7 @@ Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp mon
 
 ### 4.2.4.1 Proof: Timestamp Monotonicity {#4.2.4.1}
 
-:::tip[**Verification of Temporal Order Preservation under Morphism Composition**]
+:::tip[**Verification of Temporal Order Preservation through Morphism Composition**]
 :::
 
 Let $f: G \to G'$ denote a structure-preserving map, evaluated for **Timestamp Monotonicity** <Ref id="4.2.4" label="§4.2.4" /> in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, satisfying the timestamp constraint:
@@ -426,7 +426,7 @@ Section 4.2.6.1 formalizes the properties of the QBD proof regarding associativi
 
 ### 4.2.7 Lemma: Topological Injectivity {#4.2.7}
 
-:::info[**Necessity of Injectivity under Irreflexivity**]
+:::info[**Necessity of Injectivity via Irreflexivity**]
 :::
 
 Let $f: \mathcal{H}_t \to \mathcal{H}_{t+1}$ be a structure-preserving map valid in $\mathbf{Hist}$. Then $f$ is injective on connected vertices, the identification of adjacent vertices yields a Self-Loop, which the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> excludes.
@@ -508,7 +508,7 @@ Section 4.2.7.1 formalizes the properties of the QBD proof regarding topological
 
 ### 4.2.8 Lemma: Effective Influence Encoding {#4.2.8}
 
-:::info[**Categorical encoding of the effective influence relation**]
+:::info[**Categorical encoding of the effective influence relation via Effective Influence Encoding**]
 :::
 
 Let the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ constitute a constrained subset of morphisms within $\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length satisfies $\ell(p) \ge 2$ and the sequence of edge timestamps is strictly increasing.
@@ -520,7 +520,7 @@ Section 4.2.8 formalizes the properties of the QBD lemma regarding effective inf
 
 ### 4.2.8.1 Proof: Effective Influence Encoding {#4.2.8.1}
 
-:::tip[**Verification of Encoding Correspondence**]
+:::tip[**Verification through Encoding Correspondence**]
 :::
 
 Let $\le$ denote the relation, analyzed for **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />. The condition $u \le v$ requires the existence of a causal trajectory satisfying three constraints:
@@ -558,7 +558,7 @@ Section 4.2.8.1 formalizes the properties of the QBD proof regarding effective i
 
 ### 4.2.9 Lemma: Partial Order Property {#4.2.9}
 
-:::info[**Strict Partial Order Structure of Effective Influence within the Internal Causal Category**]
+:::info[**Strict Partial Order Structure of Effective Influence through the Internal Causal Category**]
 :::
 
 Let $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$ denote the subset of morphisms satisfying length $\ell \ge 2$ and strictly increasing timestamps. Then the following holds:
@@ -572,7 +572,7 @@ Section 4.2.9 formalizes the properties of the QBD lemma regarding partial order
 
 ### 4.2.9.1 Proof: Partial Order Property {#4.2.9.1}
 
-:::tip[**Cycle-Exclusion Verification of Strict Partial Order**]
+:::tip[**Cycle-Exclusion Verification of Strict Partial Order through Partial Order Property**]
 :::
 
 **I. Irreflexivity ($u \not\le u$)**
@@ -616,7 +616,7 @@ Section 4.2.9.1 formalizes the properties of the QBD proof regarding partial ord
 
 ### 4.2.10 Proof: Categorical Validity {#4.2.10}
 
-:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ and $\mathbf{Hist}$**]
+:::tip[**Formal Verification of the Axiomatic Consistency of $\mathbf{Caus}_t$ through $\mathbf{Hist}$**]
 :::
 
 **I. The Structural Hypothesis**
@@ -673,13 +673,13 @@ def verify_partial_order():
         (0, 2, {'t': 15}) # Shortcut, valid but length=1
     ]
     G.add_edges_from(edges)
-    
+
     nodes = list(G.nodes())
-    
+
     # 2. Define the Effective Influence Check (u <= v)
     def has_effective_influence(u, v):
         if u == v: return False # Optimization, but checked formally below
-        
+
         try:
             paths = nx.all_simple_paths(G, source=u, target=v)
         except nx.NodeNotFound:
@@ -690,7 +690,7 @@ def verify_partial_order():
             # path list contains nodes; edges = len(path) - 1
             if len(path) - 1 < 2:
                 continue
-            
+
             # Check Monotonicity Constraint
             timestamps = []
             valid_time = True
@@ -701,14 +701,14 @@ def verify_partial_order():
                     valid_time = False
                     break
                 timestamps.append(t)
-            
+
             if valid_time:
                 return True # Found at least one valid causal morphism
-        
+
         return False
 
     print("Partial Order Property Verification")
-    print("=" * 50)
+    print("=" * 34)
 
     # 3. Check Irreflexivity (u !<= u)
     # Axiom: No node should effectively influence itself (requires cycle)
@@ -717,7 +717,7 @@ def verify_partial_order():
         if has_effective_influence(n, n):
             print(f"Violation: Reflexive loop found at {n}")
             irreflexive = False
-    
+
     print(f"Irreflexivity Verification: {'PASS' if irreflexive else 'FAIL'}")
 
     # 4. Check Transitivity (u <= v AND v <= w => u <= w)
@@ -727,7 +727,7 @@ def verify_partial_order():
         u_v = has_effective_influence(u, v)
         v_w = has_effective_influence(v, w)
         u_w = has_effective_influence(u, w)
-        
+
         if u_v and v_w:
             if not u_w:
                 print(f"Violation: Transitivity failed for {u}->{v}->{w}")
@@ -746,21 +746,20 @@ if __name__ == "__main__":
     verify_partial_order()
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```
 Partial Order Property Verification
-==================================================
+==================================
 Irreflexivity Verification: PASS
 Transitivity Verification:  PASS
 Check 0->2 (via 0->1->2):     PASS (Expected True)
 ```
 
-The simulation output confirms that the constraints applied to the raw graph topology successfully induce a strict partial order:
+**Conclusion:**
 
-1.  **Irreflexivity:** The `PASS` result verifies that no node exerts effective influence upon itself, confirming the absence of valid cyclic morphisms.
-2.  **Transitivity:** The `PASS` result confirms that for all valid sequential influence chains ($u \le v$ and $v \le w$), the composite influence $u \le w$ exists and satisfies the requisite constraints.
-3.  **Constraint Filtering:** The specific check on the $0 \to 2$ relationship verifies the structure defined in **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />, although a direct edge exists, the "Effective Influence" relation is established only via the mediated path $0 \to 1 \to 2$, demonstrating the correct application of the length constraint ($\ell \ge 2$).
+The simulation output confirms that the constraints applied to the raw graph topology successfully induce a strict partial order.
+The `PASS` result for irreflexivity verifies that no node exerts effective influence upon itself, confirming the absence of valid cyclic morphisms. The `PASS` result for transitivity confirms that for all valid sequential influence chains ($u \le v$ and $v \le w$), the composite influence $u \le w$ exists and satisfies the requisite constraints. The specific check on the $0 \to 2$ relationship verifies the structure defined in **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />: although a direct edge exists, the effective influence relation is established only via the mediated path $0 \to 1 \to 2$, demonstrating the correct application of the length constraint ($\ell \ge 2$).
 
 **In Plain English:**  
 Section 4.2.11 formalizes the properties of the QBD calculation regarding partial order verification.
@@ -769,11 +768,11 @@ Section 4.2.11 formalizes the properties of the QBD calculation regarding partia
 
 ### 4.3.1 Definition: Annotated Causal Graphs (AnnCG) {#4.3.1}
 
-:::tip[**Structure of Causal Graphs Augmented with Diagnostic Syndrome Maps**]
+:::tip[**Structure of Causal Graphs Augmented by Diagnostic Syndrome Maps**]
 :::
 
 The Category of **Annotated Causal Graphs (AnnCG)**, denoted $\mathbf{AnnCG}$, is defined by the following structural components:
-1.  **Objects:** The objects are ordered pairs $(G_t, \sigma)$, where $G_t = (V_t, E_t, H_t)$ is the instantaneous **Kinematic State**, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G_t) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G_t)$, consistent with **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />.
+1.  **Objects:** The objects are ordered pairs $(G_t, \sigma)$, where $G_t = (V_t, E_t, H_t)$ is the instantaneous **Kinematic State**, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G_t) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G_t)$, consistent with **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />.
 2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation.
 3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$.
 4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
@@ -785,11 +784,11 @@ Section 4.3.1 formalizes the properties of the QBD definition regarding annotate
 
 ### 4.3.2 Definition: Awareness Endofunctor ($R_T$) {#4.3.2}
 
-:::tip[**Endofunctor $R_T$ Adjoining Fresh Syndromes to Graph States**]
+:::tip[**Endofunctor $R_T$ Adjoining Fresh Syndromes to Graph States via Awareness Endofunctor ($R_T$)**]
 :::
 
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
-1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> extraction.
+1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> extraction.
 2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
 
 **In Plain English:**  
@@ -799,7 +798,7 @@ Section 4.3.2 formalizes the properties of the QBD definition regarding awarenes
 
 ### 4.3.3 Definition: Context Extraction (Counit $\epsilon$) {#4.3.3}
 
-:::tip[**Natural Transformation Retrieving Prior Annotations**]
+:::tip[**Natural Transformation Retrieving Prior Annotations via Context Extraction (Counit $\epsilon$)**]
 :::
 
 The **Counit** $\epsilon: R_T \to \text{Id}_{\mathbf{AnnCG}}$ is defined as a natural transformation by the following component-wise mapping:
@@ -813,7 +812,7 @@ Section 4.3.3 formalizes the properties of the QBD definition regarding context 
 
 ### 4.3.4 Definition: Meta-Check (Comultiplication $\delta$) {#4.3.4}
 
-:::tip[**Natural Transformation Duplicating Diagnostic Data**]
+:::tip[**Natural Transformation Duplicating Diagnostic Data via Meta-Check (Comultiplication $\delta$)**]
 :::
 
 The **Comultiplication** $\delta: R_T \to R_T^2$ is defined as a natural transformation by the following component-wise mapping:
@@ -827,7 +826,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 
 ### 4.3.5 Theorem: Awareness Comonad {#4.3.5}
 
-:::info[**Verification of the comonadic axioms (identity and coassociativity) for the self-observation triplet**]
+:::info[**Verification of the comonadic axioms (identity and coassociativity) via the self-observation triplet**]
 :::
 
 Given the triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$, the following holds: this triplet is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. In particular, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
@@ -851,7 +850,7 @@ Section 4.3.6 formalizes the properties of the QBD lemma regarding functoriality
 
 ### 4.3.6.1 Proof: Functoriality of Awareness {#4.3.6.1}
 
-:::tip[**Formal Verification of Functorial Properties with Explicit Inductive Steps**]
+:::tip[**Formal Verification of Functorial Properties through Explicit Inductive Steps**]
 :::
 
 **I. Setup and Definitions**
@@ -940,7 +939,7 @@ Section 4.3.6.1 formalizes the properties of the QBD proof regarding functoriali
 
 ### 4.3.7 Lemma: Naturality of Transformations {#4.3.7}
 
-:::info[**Commutativity of Context Extraction and Meta-Check with State Morphisms**]
+:::info[**Commutativity of Context Extraction through Meta-Check with State Morphisms**]
 :::
 
 Let $\epsilon = \{\epsilon_X\}_{X \in \mathbf{AnnCG}}$ and $\delta = \{\delta_X\}_{X \in \mathbf{AnnCG}}$ denote the families of morphisms defining context extraction and meta-check duplication. Then $\epsilon$ and $\delta$ constitute valid natural transformations within the category.
@@ -952,7 +951,7 @@ Section 4.3.7 formalizes the properties of the QBD lemma regarding naturality of
 
 ### 4.3.7.1 Proof: Naturality of Transformations {#4.3.7.1}
 
-:::tip[**Verification of Naturality Conditions for $\epsilon$ and $\delta$**]
+:::tip[**Verification of Naturality Conditions for $\epsilon$ through $\delta$**]
 :::
 
 **I. Setup and Definitions**
@@ -1047,7 +1046,7 @@ Section 4.3.7.1 formalizes the properties of the QBD proof regarding naturality 
 
 ### 4.3.8 Lemma: Axiom Satisfaction {#4.3.8}
 
-:::info[**Compliance of the Awareness Triplet with the Laws of Identity and Associativity**]
+:::info[**Compliance of the Awareness Triplet with the Laws of Identity via Associativity**]
 :::
 
 Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities are satisfied:
@@ -1062,7 +1061,7 @@ Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfa
 
 ### 4.3.8.1 Proof: Axiom Satisfaction {#4.3.8.1}
 
-:::tip[**Tuple Tracing of Comonad Axioms**]
+:::tip[**Tuple Tracing via Comonad Axioms**]
 :::
 
 **I. Setup and Definitions**
@@ -1228,7 +1227,7 @@ Section 4.3.9.3 formalizes the properties of the QBD type-theoretic regarding va
 
 ### 4.3.10 Lemma: Comonadic Pauli Frame Tracking {#4.3.10}
 
-:::info[**Comonadic Tracking of Stabilizer Parity Shifts**]
+:::info[**Comonadic Tracking via Stabilizer Parity Shifts**]
 :::
 
 Let $\boldsymbol{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\boldsymbol{s}' = \boldsymbol{s} \oplus \boldsymbol{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
@@ -1413,7 +1412,7 @@ print(f"   LHS (δ ∘ δ):           {lhs3}")
 print(f"   RHS (R_T(δ) ∘ δ):      {rhs3}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Store Comonad Axiom Verification
@@ -1434,11 +1433,10 @@ Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)
    RHS (R_T(δ) ∘ δ):      AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
 ```
 
-The comonad axioms hold with mathematical certainty under type theory, with Docusaurus-aligned execution confirmed.
-1.  **Left Identity** ($\epsilon \circ \delta = id$) holds, returning the original annotated structure.
-2.  **Right Identity** ($R_T(\epsilon) \circ \delta = id$) holds, confirming that lifting the counit preserves the context.
-3.  **Associativity** ($\delta \circ \delta = R_T(\delta) \circ \delta$) holds, producing identical nested structures for both orderings.
+**Conclusion:**
 
+The comonad axioms hold with mathematical certainty under type theory, with Docusaurus-aligned execution confirmed.
+**Left Identity** ($\epsilon \circ \delta = id$) holds, returning the original annotated structure.; **Right Identity** ($R_T(\epsilon) \circ \delta = id$) holds, confirming that lifting the counit preserves the context.; **Associativity** ($\delta \circ \delta = R_T(\delta) \circ \delta$) holds, producing identical nested structures for both orderings.
 These results validate the structural correctness of the Store Comonad model, confirming that the awareness mechanism is mathematically consistent and suitable for rigorous recursive application in the causal graph.
 
 **In Plain English:**  
@@ -1538,7 +1536,7 @@ Section 4.4.2 formalizes the properties of the QBD lemma regarding bit-nat equiv
 
 ### 4.4.2.1 Proof: Bit-Nat Equivalence {#4.4.2.1}
 
-:::tip[**Formal Derivation of the Critical Scale**]
+:::tip[**Formal Derivation of the Critical Scale from Bit-Nat Equivalence**]
 :::
 
 **I. Statistical Mechanical Setup**
@@ -1606,7 +1604,7 @@ Section 4.4.2.1 formalizes the properties of the QBD proof regarding bit-nat equ
 
 ### 4.4.3 Lemma: Entropy of Closure {#4.4.3}
 
-:::info[**Existence of Local Relational Entropy Increase**]
+:::info[**Existence via Local Relational Entropy Increase**]
 :::
 
 Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a cycle within the causal graph. The resulting **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> has a local relational entropy of $\Delta S = \ln 2$ nats, which corresponds to the doubling of path multiplicity in the local phase space.
@@ -1673,7 +1671,7 @@ Section 4.4.3.1 formalizes the properties of the QBD proof regarding entropy of 
 
 ### 4.4.3.3 Calculation: Entropy Simulation {#4.4.3.3}
 
-:::note[**Computational Verification of Local Entropy Gain**]
+:::note[**Computational Verification through Local Entropy Gain**]
 :::
 
 Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following protocols:
@@ -1725,7 +1723,7 @@ print(f"Theoretical ln(2):                 {target:.6f}")
 print(f"Exact match:                       {np.isclose(delta_S, target)}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 Local Entropy Gain from Relational Loop Closure
@@ -1737,6 +1735,7 @@ Theoretical ln(2):                 0.693147
 Exact match:                       True
 ```
 
+**Conclusion:**
 The output confirms that the entropy gain $\Delta S = 0.693147$ matches the theoretical target $\ln 2$ exactly. This gain arises deterministically from the topological bifurcation: closure doubles the forward multiplicity (mediated path + cycle-degenerate representation) while introducing the first reverse path, yielding a product increase from 0 to 2. This verifies that structural closure acts as a hard entropic driver independent of specific graph geometry.
 
 **In Plain English:**  
@@ -1746,7 +1745,7 @@ Section 4.4.3.3 formalizes the properties of the QBD calculation regarding entro
 
 ### 4.4.4 Lemma: Dimensional Equipartition {#4.4.4}
 
-:::info[**Isotropic Distribution of Vacuum Energy**]
+:::info[**Isotropic Distribution via Vacuum Energy**]
 :::
 
 Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions satisfying **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />; moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric.
@@ -1758,7 +1757,7 @@ Section 4.4.4 formalizes the properties of the QBD lemma regarding dimensional e
 
 ### 4.4.4.1 Proof: Dimensional Equipartition {#4.4.4.1}
 
-:::tip[**Application of the Equipartition Theorem**]
+:::tip[**Application of the Equipartition Theorem via Dimensional Equipartition**]
 :::
 
 **I. Energy Distribution Principle**
@@ -1804,7 +1803,7 @@ Section 4.4.4.1 formalizes the properties of the QBD proof regarding dimensional
 
 ### 4.4.5 Lemma: Geometric Self-Energy {#4.4.5}
 
-:::info[**Derivation of the Cost of the Geometric Quantum**]
+:::info[**Derivation of the Cost of the Geometric Quantum from Geometric Self-Energy**]
 :::
 
 Given the requirements of structural stabilization, the following holds: the **Geometric Self-Energy** $\epsilon_{geo}$ of a closed 3-cycle is uniquely determined as $\epsilon_{geo} = \frac{\ln 2}{4}$, representing the uniform distribution of the critical loop-closure energy across the four effective dimensions of the manifold.
@@ -1816,7 +1815,7 @@ Section 4.4.5 formalizes the properties of the QBD lemma regarding geometric sel
 
 ### 4.4.5.1 Proof: Geometric Self-Energy {#4.4.5.1}
 
-:::tip[**Combination of Temperature, Entropy, and Dimensionality**]
+:::tip[**Combination of Temperature, Entropy, via Dimensionality**]
 :::
 
 **I. Temperature**
@@ -1853,7 +1852,7 @@ Section 4.4.5.1 formalizes the properties of the QBD proof regarding geometric s
 
 ### 4.4.6 Lemma: Catalysis Coefficient {#4.4.6}
 
-:::info[**Entropic Rate Enhancement Coefficient**]
+:::info[**Entropic Rate Enhancement Coefficient via Catalysis Coefficient**]
 :::
 
 Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$; moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy.
@@ -1925,7 +1924,7 @@ Section 4.4.6.1 formalizes the properties of the QBD proof regarding catalysis c
 
 ### 4.4.7 Lemma: Friction Coefficient {#4.4.7}
 
-:::info[**Statistical Normalization Constant**]
+:::info[**Statistical Normalization Constant via Friction Coefficient**]
 :::
 
 Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$; moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
@@ -1937,7 +1936,7 @@ Section 4.4.7 formalizes the properties of the QBD lemma regarding friction coef
 
 ### 4.4.7.1 Proof: Friction Coefficient {#4.4.7.1}
 
-:::tip[**Peak Density Evaluation**]
+:::tip[**Peak Density Evaluation via Friction Coefficient**]
 :::
 
 **I. Statistical Premise**
@@ -1991,7 +1990,7 @@ Section 4.4.7.1 formalizes the properties of the QBD proof regarding friction co
 
 ### 4.4.7.2 Calculation: Friction Damping {#4.4.7.2}
 
-:::note[**Computational Check of Gaussian Normalization and Tail Damping**]
+:::note[**Computational Check of Gaussian Normalization through Tail Damping**]
 :::
 
 Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> is based on the following protocols:
@@ -2031,7 +2030,7 @@ print(f"\nGaussian PDF peak at s=0: {pdf_peak:.6f}")
 print(f"Match with μ:             {np.isclose(mu, pdf_peak)}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Friction Coefficient from Gaussian Normalization
@@ -2053,6 +2052,7 @@ Gaussian PDF peak at s=0: 0.398942
 Match with μ:             True
 ```
 
+**Conclusion:**
 The simulation confirms the non-linear suppression of topological updates. A stress level of $s=1$ reduces the update rate by approximately $32.9\%$, while a high stress level of $s=5$ suppresses the rate by $86.4\%$. This validates the mechanism of **Friction**: highly excited regions ($s \gg 0$) effectively freeze, halting changes in the high-energy tail while permitting evolution in the low-stress vacuum.
 
 **In Plain English:**  
@@ -2086,7 +2086,7 @@ Section 4.4.8 formalizes the properties of the QBD proof regarding thermodynamic
 
 ### 4.5.1 Definition: Universal Constructor {#4.5.1}
 
-:::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ with Thermodynamic Modulation**]
+:::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
 The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.27)
@@ -2162,7 +2162,7 @@ Spacetime updates are governed by a Universal Constructor that stochastically sc
 
 ### 4.5.2 Definition: Catalytic Tension Factor {#4.5.2}
 
-:::tip[**Syndrome-Response Function Modulating Base Probabilities**]
+:::tip[**Syndrome-Response Function Modulating Base Probabilities via Catalytic Tension Factor**]
 :::
 
 The **Catalytic Tension Factor**, denoted $\chi(\boldsymbol{\sigma}_e)$, is defined as the scalar modulation function acting on the base transition probabilities. It is constructed as the product of two distinct terms:
@@ -2181,7 +2181,7 @@ Section 4.5.2 formalizes the properties of the QBD definition regarding catalyti
 
 ### 4.5.3 Definition: Addition Mode {#4.5.3}
 
-:::tip[**Constructive Operation Proposing Edge Additions**]
+:::tip[**Constructive Operation Proposing Edge Additions via Addition Mode**]
 :::
 
 The **Addition Mode** is defined as the constructive operation of the Action Layer, operating on a set of compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" /> structures. It generates a set of tuples `(proposed_edge, H_new, P_acc)`, where $P_{acc}$ is the friction-damped probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
@@ -2193,7 +2193,7 @@ Section 4.5.3 formalizes the properties of the QBD definition regarding addition
 
 ### 4.5.4 Definition: Deletion Mode {#4.5.4}
 
-:::tip[**Destructive Operation Proposing Edge Removals**]
+:::tip[**Destructive Operation Proposing Edge Removals via Deletion Mode**]
 :::
 
 The **Deletion Mode** is defined as the destructive operation of the Action Layer, acting on directed 3-cycles governed by the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. It generates a set of tuples `(target_edge, P_del)`, where $P_{del}$ is the catalysis-boosted probability derived from the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />.
@@ -2205,7 +2205,7 @@ Section 4.5.4 formalizes the properties of the QBD definition regarding deletion
 
 ### 4.5.5 Theorem: Universal Constructor {#4.5.5}
 
-:::info[**Thermodynamic Transition Probabilities and Feedback Modulation of the Rewrite Map**]
+:::info[**Thermodynamic Transition Probabilities by Feedback Modulation of the Rewrite Map**]
 :::
 
 Let $\mathcal{R}$ denote the Universal Constructor stochastically mapping annotated graphs. Then the base thermodynamic acceptance probability is $\mathbb{P}_{\text{acc,thermo}} = 1$ for edge addition and $\mathbb{P}_{\text{del,thermo}} = 1/2$ for edge deletion; moreover, the local rewrite rates are modulated by the Catalytic Tension Factor.
@@ -2217,7 +2217,7 @@ Section 4.5.5 formalizes the properties of the QBD theorem regarding universal c
 
 ### 4.5.6 Lemma: Addition Probability {#4.5.6}
 
-:::info[**Unitary Thermodynamic Acceptance Probability for Edge Creation**]
+:::info[**Unitary Thermodynamic Acceptance Probability via Edge Creation**]
 :::
 
 Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
@@ -2315,7 +2315,7 @@ Section 4.5.6.1 formalizes the properties of the QBD proof regarding addition pr
 
 ### 4.5.7 Lemma: Deletion Probability {#4.5.7}
 
-:::info[**Half-unit thermodynamic deletion probability**]
+:::info[**Half-unit thermodynamic deletion probability via Deletion Probability**]
 :::
 
 Let $\mathbb{P}_{\text{del,thermo}}$ denote the base thermodynamic deletion probability for geometric quanta in the critical vacuum regime. Then $\mathbb{P}_{\text{del,thermo}}$ is identically equal to $1/2$ (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />).
@@ -2397,7 +2397,7 @@ Section 4.5.7.1 formalizes the properties of the QBD proof regarding deletion pr
 
 ### 4.5.8 Proof: Universal Constructor {#4.5.8}
 
-:::tip[**Synthesis of Transition Probabilities and Feedback Loops in Constructor Dynamics**]
+:::tip[**Synthesis of Transition Probabilities via Feedback Loops in Constructor Dynamics**]
 :::
 
 **I. Stochastic Update Map**
@@ -2425,7 +2425,7 @@ Section 4.5.8 formalizes the properties of the QBD proof regarding universal con
 
 ### 4.6.1 Definition: Evolution Operator {#4.6.1}
 
-:::tip[**Composition of Awareness, Action, Measurement, and Collapse into the Logical Tick**]
+:::tip[**Composition of Awareness, Action, Measurement, by Collapse into the Logical Tick**]
 :::
 
 The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
@@ -2532,7 +2532,7 @@ Section 4.6.3.1 formalizes the properties of the QBD proof regarding euclidean t
 
 ### 4.6.3.2 Calculation: Euclidean Action Integration {#4.6.3.2}
 
-:::note[**Computational Verification of the Exponential Action Scaling Relation**]
+:::note[**Computational Verification of the Exponential Action Scaling Relation through Euclidean Action Integration**]
 :::
 
 Computational verification of the action equivalence established by **Euclidean Transition Measure** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
@@ -2589,7 +2589,7 @@ for i, sc in enumerate(scenarios, 1):
     print("-" * 50)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Euclidean Action Integration Verification
@@ -2614,6 +2614,7 @@ Scenario 3: 2 Additions, 2 Deletions
 --------------------------------------------------
 ```
 
+**Conclusion:**
 The simulation confirms that the convolved product of transition probabilities is identical to $\exp(-\Delta \mathcal{S})$ to machine precision. This verifies the transition probability model **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />, demonstrating that discrete stochastic updates map directly to the positive-definite weight of a Euclidean path integral.
 
 **In Plain English:**  
@@ -2623,7 +2624,7 @@ Section 4.6.3.2 formalizes the properties of the QBD calculation regarding eucli
 
 ### 4.6.4 Lemma: Thermodynamic Arrow {#4.6.4}
 
-:::info[**Irreversibility and entropy production in the evolution operator**]
+:::info[**Irreversibility from entropy production in the evolution operator**]
 :::
 
 Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is strictly positive ($\Delta S_{tick} > 0$), scaling as $dS/dt \propto (N_{\text{add}} - N_{\text{del}}) \ln 2$; moreover, a global arrow of time follows from the information-theoretic asymmetry between creating a bit (cost $\approx 0$) and destroying a bit (cost $\approx \ln 2$) [**(Bennett, 1982)**](/monograph/appendices/a-references#A.12).
@@ -2635,7 +2636,7 @@ Section 4.6.4 formalizes the properties of the QBD lemma regarding thermodynamic
 
 ### 4.6.4.1 Proof: Thermodynamic Arrow {#4.6.4.1}
 
-:::tip[**Decomposition into Non-invertible Components**]
+:::tip[**Decomposition into Non-invertible Components via Thermodynamic Arrow**]
 :::
 
 Let $\mathcal{U}$ denote the global update operator, representing the **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" /> evaluated for the **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, defined as the composition $\mathcal{S} \circ \mathcal{M} \circ \mathcal{T}$. Irreversibility follows from the non-invertible nature of $\mathcal{M}$ and $\mathcal{S}$.
@@ -2699,7 +2700,7 @@ Section 4.6.4.1 formalizes the properties of the QBD proof regarding thermodynam
 
 ### 4.6.4.3 Calculation: Irreversibility Check {#4.6.4.3}
 
-:::note[**Computational Verification of Entropy Loss in Projection and Sampling**]
+:::note[**Computational Verification of Entropy Loss in Projection through Sampling**]
 :::
 
 Computational verification of the information loss inherent in the Time Evolution Operator $\mathcal{U}$ established by **Thermodynamic Arrow** <Ref id="4.6.4.1" label="§4.6.4.1" /> is based on the following protocols:
@@ -2721,6 +2722,7 @@ def shannon_entropy(p):
 
 # Number of Monte Carlo trials for statistical precision
 n_trials = 10_000
+np.random.seed(42)
 
 entropy_production = []
 
@@ -2731,20 +2733,20 @@ for _ in range(n_trials):
     p_A = max(0.0, 0.50 + noise[0])
     p_B = max(0.0, 0.25 + noise[1])
     p_C = max(0.0, 1.0 - p_A - p_B)     # Ensure non-negative and sum = 1
-    
+
     provisional = np.array([p_A, p_B, p_C])
     S_provisional = shannon_entropy(provisional)
-    
+
     # Projection: discard invalid path C, renormalize valid paths
     valid_mass = p_A + p_B
     if valid_mass > 0:
         projected = np.array([p_A / valid_mass, p_B / valid_mass, 0.0])
     else:
         projected = np.array([1.0, 0.0, 0.0])  # Degenerate fallback
-    
+
     # Sampling: collapse to single outcome → entropy = 0
     S_final = 0.0
-    
+
     # Entropy production = information lost to the environment
     delta_S = S_provisional - S_final
     entropy_production.append(delta_S)
@@ -2761,18 +2763,19 @@ print(f"Minimum observed ΔS:        {min(entropy_production):.5f} bits")
 print(f"Strictly positive ΔS:       {avg_delta > 0}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Irreversibility via Entropy Production in 𝒰
 ================================================
 Monte Carlo trials:         10,000
-Average ΔS per tick:        1.49976 bits
-Standard deviation:         0.00500 bits
-Minimum observed ΔS:        1.48093 bits
+Average ΔS per tick:        1.49973 bits
+Standard deviation:         0.00507 bits
+Minimum observed ΔS:        1.48072 bits
 Strictly positive ΔS:       True
 ```
 
+**Conclusion:**
 The simulation yields a strictly positive average entropy production of $1.49976$ bits per tick. The minimum observed $\Delta S$ ($1.48$ bits) confirms that no individual trial violates the Second Law. This positive entropy production verifies the irreversible nature of the operator $\mathcal{U}$: the collapse of the wavefunction (Sampling) and the enforcement of consistency (Projection) are information-destroying processes that define the arrow of time.
 
 **In Plain English:**  
@@ -2794,7 +2797,7 @@ Section 4.6.5 formalizes the properties of the QBD lemma regarding positive recu
 
 ### 4.6.5.1 Proof: Positive Recurrence and the Invariant Measure {#4.6.5.1}
 
-:::tip[**Demonstration of Irreducibility, Aperiodicity, and Lyapunov Drift**]
+:::tip[**Demonstration of Irreducibility, Aperiodicity, through Lyapunov Drift**]
 :::
 
 The sampling collapse map $\mathcal{S}$ within $\mathcal{U}$ stochastically selects a successor state, evaluated for **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" /> under the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> updates:
@@ -2832,7 +2835,7 @@ Section 4.6.5.1 formalizes the properties of the QBD proof regarding positive re
 
 ### 4.6.5.2 Calculation: Foster-Lyapunov Drift Verification {#4.6.5.2}
 
-:::note[**Computational Verification of the Negative Drift Condition and Stability**]
+:::note[**Computational Verification of the Negative Drift Condition through Stability**]
 :::
 
 Computational verification of the stability condition established by **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5.1" label="§4.6.5.1" /> is based on the following protocols:
@@ -2877,7 +2880,7 @@ print(f"Critical Density Threshold (rho_crit): ~{rho_crit:.1f}")
 print("Foster-Lyapunov negative drift condition satisfied.")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Foster-Lyapunov Drift Verification
@@ -2894,6 +2897,7 @@ Critical Density Threshold (rho_crit): ~1.0
 Foster-Lyapunov negative drift condition satisfied.
 ```
 
+**Conclusion:**
 The simulation verifies that expected drift becomes strictly negative ($\Delta V \approx -3.9$) once graph density exceeds $\rho = 1.0$. This demonstrates that the system satisfies the Foster-Lyapunov drift condition, guaranteeing convergence to a unique stationary distribution.
 
 **In Plain English:**  
@@ -2903,7 +2907,7 @@ Section 4.6.5.2 formalizes the properties of the QBD calculation regarding foste
 
 ### 4.6.6 Proof: Emergent Dynamics {#4.6.6}
 
-:::tip[**Synthesis of Transition Probabilities and Entropy Production in the Evolution Cycle**]
+:::tip[**Synthesis of Transition Probabilities via Entropy Production in the Evolution Cycle**]
 :::
 
 **I. Composite Map Formulation**

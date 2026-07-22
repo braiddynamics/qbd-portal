@@ -197,7 +197,7 @@ Section 1.2.8 formalizes the properties of the QBD definition regarding 3-cycle.
 
 ### 1.3.1 Definition: Dual Time Architecture {#1.3.1}
 
-:::tip[**Mathematical Characterization of the Dual Temporal Scales**]
+:::tip[**Mathematical Characterization of the Dual Temporal Scales as a Formal Architecture**]
 :::
 
 The temporal structure of the physical theory is defined as a **Dual Time Architecture** constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
@@ -209,7 +209,7 @@ Time in QBD operates in a dual fashion: physical time (the relativistic, continu
 
 ### 1.3.2 Definition: Emergent Physical Time {#1.3.2}
 
-:::tip[**Mathematical Characterization of Relational Physical Duration**]
+:::tip[**Mathematical Characterization as Relational Physical Duration**]
 :::
 
 Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
@@ -257,7 +257,7 @@ The universe must have had a beginning (a logical step zero) because an infinite
 
 ### 1.3.5 Lemma: Finite Information Substrate {#1.3.5}
 
-:::info[**Finiteness and Quadratic Boundedness of the Information Substrate**]
+:::info[**Finiteness via Quadratic Boundedness of the Information Substrate**]
 :::
 
 Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
@@ -395,7 +395,7 @@ Section 1.3.5.1 formalizes the properties of the QBD proof regarding finite info
 
 ### 1.3.6 Lemma: Backward Accumulation {#1.3.6}
 
-:::info[**Exclusion of Unbounded Past Direction**]
+:::info[**Exclusion of Unbounded Past Direction due to Backward Accumulation**]
 :::
 
 Assume the domain of the global logical time parameter $T$ extends to the infinite past. Therefore, this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
@@ -509,7 +509,7 @@ Section 1.3.6.1 formalizes the properties of the QBD proof regarding backward ac
 
 ### 1.3.7 Lemma: Finite State Recurrence {#1.3.7}
 
-:::info[**Incompatibility of Infinite Past Duration with Strictly Finite Configuration Spaces**]
+:::info[**Incompatibility of Infinite Past Duration due to Strictly Finite Configuration Spaces**]
 :::
 
 Given a universal configuration space $\Omega$ characterized by a strictly finite cardinality $|\Omega| = N < \infty$, let the historical trajectory be indexed by an unbounded sequence of non-positive temporal increments. Therefore, a state recurrence forming a closed causal loop arises, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
@@ -621,7 +621,7 @@ Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask imp
 
 ### 1.3.8.1 Proof: Supertask Impossibility {#1.3.8.1}
 
-:::tip[**Order-Theoretic Non-Well-Foundedness and Thermodynamic Entropy Divergence Proof**]
+:::tip[**Order-Theoretic Non-Well-Foundedness through Thermodynamic Entropy Divergence Proof**]
 :::
 
 **I. Initial Conditions and History Definition**
@@ -695,7 +695,7 @@ Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask i
 
 ### 1.3.9 Proof: Temporal Finitude {#1.3.9}
 
-:::tip[**Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />]
+:::tip[**Temporal Finitude** due to Entropy Limits <Ref id="1.3.4" label="§1.3.4" />]
 :::
 
 **I. The Infinite Hypothesis**
@@ -728,7 +728,7 @@ Section 1.3.9 formalizes the properties of the QBD proof regarding temporal fini
 
 ### 1.4.1 Definition: Causal Graph Substrate {#1.4.1}
 
-:::tip[**Mathematical Characterization of the Relational Configuration Space**]
+:::tip[**Mathematical Characterization of the Relational Configuration Space as a Formal Architecture**]
 :::
 
 Let $\Omega$ denote the universal configuration space of all valid states of the **Causal Graph Substrate**. A specific causal graph configuration is a triplet $G = (V, E, H)$ where:
@@ -773,7 +773,7 @@ Causal Relation defines the edge set E of directed links representing irreducibl
 
 ### 1.4.4 Definition: Creation Timestamp {#1.4.4}
 
-:::tip[**Formal Characterization of the Historical Edge Timestamp Mapping**]
+:::tip[**Formal Characterization of the Historical Edge Timestamp Mapping as a Formal Architecture**]
 :::
 
 Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a **Creation Timestamp** $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
@@ -785,7 +785,7 @@ Creation Timestamp defines the mapping H assigning to each edge a discrete, immu
 
 ### 1.4.5 Theorem: Monotonicity of History {#1.4.5}
 
-:::info[**Strict Monotonicity and Well-Foundedness of Causal Timestamp Sequences**]
+:::info[**Strict Monotonicity via Well-Foundedness of Causal Timestamp Sequences**]
 :::
 
 Let $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:
@@ -803,7 +803,7 @@ The Monotonicity of History Theorem states that the creation timestamp assignmen
 
 ### 1.4.6 Lemma: Irreflexivity of Timestamps {#1.4.6}
 
-:::info[**Unsatisfiability of Recursive Timestamp Assignment for Self-Loops**]
+:::info[**Unsatisfiability of Recursive Timestamp Assignment via Self-Loops**]
 :::
 
 Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \max \left( \{H(e') \mid e' \in \text{In}(u)\} \cup \{0\} \right)$ is inconsistent and admits no stable timestamp assignment.
@@ -815,7 +815,7 @@ The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the r
 
 ### 1.4.6.1 Proof: Irreflexivity of Timestamps {#1.4.6.1}
 
-:::tip[**Formal Stability Analysis of Self-Loop Timestamps**]
+:::tip[**Formal Stability Analysis via Self-Loop Timestamps**]
 :::
 
 **I. Pre-computation of the Source History**
@@ -877,7 +877,7 @@ Section 1.4.6.1 formalizes the properties of the QBD proof regarding irreflexivi
 
 ### 1.4.7 Lemma: Transitive Causal Monotonicity {#1.4.7}
 
-:::info[**Monotonic Timestamp Progression along Directed Causal Chains**]
+:::info[**Monotonic Timestamp Progression along Directed Causal Chains via Transitive Causal Monotonicity**]
 :::
 
 Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
@@ -893,7 +893,7 @@ The Transitive Causal Monotonicity Lemma proves that timestamps along any causal
 
 ### 1.4.7.1 Proof: Transitive Causal Monotonicity {#1.4.7.1}
 
-:::tip[**Inductive Demonstration of Strict Timestamp Increase**]
+:::tip[**Inductive Demonstration via Strict Timestamp Increase**]
 :::
 
 **I. Inductive Base Case**
@@ -955,7 +955,7 @@ Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive 
 
 ### 1.4.8 Proof: Monotonicity of History {#1.4.8}
 
-:::tip[**Synthesis of Irreflexivity and Transitivity to Establish Global Acyclicity**]
+:::tip[**Synthesis of Irreflexivity via Transitivity to Establish Global Acyclicity**]
 :::
 
 **I. Assumption of a Causal Cycle**
@@ -990,7 +990,7 @@ Section 1.4.8 formalizes the properties of the QBD proof regarding monotonicity 
 
 ### 1.5.1 Definition: Elementary Task Space {#1.5.1}
 
-:::tip[**Mathematical Characterization of the Admissible Transformation Space**]
+:::tip[**Mathematical Characterization of the Admissible Transformation Space as a Formal Architecture**]
 :::
 
 Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \to G'$ where $G' = (V', E', H')$ such that:
@@ -1011,7 +1011,7 @@ Elementary Task Space defines the set of all structurally possible graph transfo
 
 ### 1.5.2 Definition: Edge Addition Task {#1.5.2}
 
-:::tip[**Formal Specification of the Primitive Edge Insertion Operator**]
+:::tip[**Formal Specification of the Primitive Edge Insertion Operator via Edge Addition Task**]
 :::
 
 Let $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \in V$ such that $u \neq v$ and $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{add}(u, v)$ is the mapping:
@@ -1038,7 +1038,7 @@ Edge Addition Task defines the primitive operator that creates a directed causal
 
 ### 1.5.3 Definition: Edge Deletion Task {#1.5.3}
 
-:::tip[**Formal Specification of the Primitive Edge Excision Operator**]
+:::tip[**Formal Specification of the Primitive Edge Excision Operator via Edge Deletion Task**]
 :::
 
 Let $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{del}(u, v)$ is the mapping:
@@ -1059,7 +1059,7 @@ Edge Deletion Task defines the primitive operator that removes an active directe
 
 ### 1.5.4 Theorem: Vacuum Repertoire {#1.5.4}
 
-:::info[**Sufficiency and Completeness of Primitive Edge Operators**]
+:::info[**Sufficiency via Completeness of Primitive Edge Operators**]
 :::
 
 Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
@@ -1071,7 +1071,7 @@ The Vacuum Repertoire Theorem proves that edge addition and deletion are suffici
 
 ### 1.5.5 Lemma: Relational Vertex Emergence {#1.5.5}
 
-:::info[**Subordination of Vertex Existence to Edge Topology**]
+:::info[**Subordination via Vertex Existence to Edge Topology**]
 :::
 
 Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ such that } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
@@ -1083,7 +1083,7 @@ The Relational Vertex Emergence Lemma states that vertices cannot be directly cr
 
 ### 1.5.5.1 Proof: Relational Vertex Emergence {#1.5.5.1}
 
-:::tip[**Verification of Vertex Subordination under Primitive Operations**]
+:::tip[**Verification of Vertex Subordination through Primitive Operations**]
 :::
 
 **I. Definition of the Vertex Modification Operator**
@@ -1122,7 +1122,7 @@ Section 1.5.5.1 formalizes the properties of the QBD proof regarding relational 
 
 ### 1.5.6 Lemma: Reversibility of Primitives {#1.5.6}
 
-:::info[**Kinematic Reversibility of Edge Operations**]
+:::info[**Kinematic Reversibility via Edge Operations**]
 :::
 
 For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
@@ -1134,7 +1134,7 @@ The Reversibility of Primitives Lemma proves that every primitive edge addition 
 
 ### 1.5.6.1 Proof: Reversibility of Primitives {#1.5.6.1}
 
-:::tip[**Verification of the Inverse Relations of Primitive Operators**]
+:::tip[**Verification of the Inverse Relations of Primitive Operators through Reversibility of Primitives**]
 :::
 
 **I. Evaluation of the Edge Addition Inverse**
@@ -1174,7 +1174,7 @@ Section 1.5.6.1 formalizes the properties of the QBD proof regarding reversibili
 
 ### 1.5.7 Proof: Vacuum Repertoire {#1.5.7}
 
-:::tip[**Completeness of the Primitive Operators**]
+:::tip[**Completeness of the Primitive Operators via Vacuum Repertoire**]
 :::
 
 **I. Characterization of the Target Space**

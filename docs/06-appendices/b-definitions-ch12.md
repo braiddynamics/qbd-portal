@@ -42,7 +42,7 @@ Section 12.1.2 formalizes the properties of the QBD theorem regarding smooth man
 
 ### 12.1.3 Lemma: Spectral Convergence {#12.1.3}
 
-:::info[**Asymptotic Convergence of the Discrete Spectrum to the Continuum Laplace-Beltrami Eigenvalues**]
+:::info[**Asymptotic Convergence of the Discrete Spectrum to the Continuum Laplace-Beltrami Eigenvalues via Spectral Convergence**]
 :::
 
 Given the conditions of **Eigenvalues** and **Eigenfunctions**, the properties of Asymptotic Convergence of the Discrete Spectrum to the Continuum Laplace-Beltrami Eigenvalues are established.
@@ -54,7 +54,7 @@ Section 12.1.3 formalizes the properties of the QBD lemma regarding spectral con
 
 ### 12.1.3.1 Proof: Spectral Convergence {#12.1.3.1}
 
-:::tip[**Operator Decomposition and Perturbation Analysis**]
+:::tip[**Operator Decomposition via Perturbation Analysis**]
 :::
 
 As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$.  **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> and  **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" /> Specifically:
@@ -169,7 +169,7 @@ def compute_fiedler_value(G, ell0):
     degrees = np.array(A.sum(axis=1)).flatten()
     
     # Construct Unnormalized Laplacian L = D - A
-    # We use unnormalized because on a regular grid D is constant (2d),
+    # Unnormalized form is used because on a regular grid D is constant (2d),
     # matching the standard finite difference Laplacian.
     L_unnorm = diags(degrees) - A
     
@@ -208,7 +208,7 @@ for k in [4, 6, 8, 10]:
     print(f"{N:<8} | {ell0:<8.4f} | {lam:<10.4f} | {target:<10.4f} | {err:<10.2f}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Spectral Convergence Verification (4D Torus) ---
@@ -221,6 +221,7 @@ N        | ell_0    | Lambda_1   | Theory     | Error %
 10000    | 0.1000   | 38.1966    | 39.4784    | 3.25
 ```
 
+**Conclusion:**
 The simulation confirms the spectral convergence of the discrete Laplacian to the continuum limit. The first non-zero eigenvalue $\lambda_1$ approaches the theoretical value of $(2\pi)^2 \approx 39.48$ as the graph resolution refines ($\ell_0 \to 0$). The error scales monotonically with the edge length, consistent with the expected discretization error of the operator on a regular lattice. This verifies that the "consistently weighted" operator correctly encodes the Riemannian metric information, ensuring that the spectral geometry of the causal graph faithfully reproduces the manifold Laplacian in the thermodynamic limit.
 
 **In Plain English:**  
@@ -334,7 +335,7 @@ def graph_heat_kernel_trace(G, t, ell0):
     # Scale time by metric factor
     # Heat equation: du/dt = -L u. 
     # If spatial dx = ell0, then L_physical ~ L_graph / ell0^2
-    # So we compute exp(- t * L_graph / ell0^2)
+    # Compute exp(- t * L_graph / ell0^2)
     
     scaled_t = t / (ell0**2)
     
@@ -378,7 +379,7 @@ for N in [81, 256, 625]: # k=3, 4, 5
     print(f"{N:<8} | {ell0:<8.4f} | {slope:<10.3f} | {d_eff:<10.2f} | {r2:<10.4f}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Heat Kernel Asymptotics Verification ---
@@ -390,6 +391,7 @@ N        | ell_0    | Slope      | Eff. Dim   | R^2
 625      | 0.2000   | -1.751     | 3.50       | 0.9806
 ```
 
+**Conclusion:**
 The simulation demonstrates monotonic convergence toward the expected 4-dimensional behavior as the graph scale increases. For small graphs ($N=81$), the effective dimension is significantly underestimated ($d_{\text{eff}} \approx 2.16$) due to finite-size effects where the diffusion rapidly wraps around the small torus, saturating the heat kernel. However, as the lattice resolution improves ($N=625$), the effective dimension rises sharply to $d_{\text{eff}} \approx 3.50$, and the linearity of the log-log fit improves ($R^2 \approx 0.98$). This trend confirms that the discrete Laplacian correctly encodes the higher-dimensional geometry, approaching the theoretical limit of $d=4$ as $\ell_0 \to 0$ and boundary effects are pushed to infinity.
 
 **In Plain English:**  
@@ -399,7 +401,7 @@ Section 12.1.4.2 formalizes the properties of the QBD calculation regarding heat
 
 ### 12.1.5 Lemma: Smoothness via Elliptic Regularity {#12.1.5}
 
-:::info[**Establishment of C-Infinity Smoothness for the Limit Manifold utilizing the Iterative Application of Sobolev Embedding Theorems**]
+:::info[**Establishment of C-Infinity Smoothness via the Limit Manifold utilizing the Iterative Application of Sobolev Embedding Theorems**]
 :::
 
 Given that the Gromov-Hausdorff limit space $(M, g)$ is equipped with a unique smooth differentiable structure, its metric topology satisfies the Sobolev regularity requirements.
@@ -469,7 +471,7 @@ Section 12.1.5.1 formalizes the properties of the QBD proof regarding smoothness
 
 ### 12.1.6 Lemma: Ollivier-Ricci Asymptotic Limit {#12.1.6}
 
-:::info[**Asymptotic Expansion of Causal Ollivier-Ricci Curvature to the Continuum Ricci Tensor**]
+:::info[**Asymptotic Expansion via Causal Ollivier-Ricci Curvature to the Continuum Ricci Tensor**]
 :::
 
 For any sequence of measured metric spaces $\{ (V_t, \bar{d}_t, \mu_t) \}$ converging to a smooth $d$-dimensional Riemannian manifold $(M, g)$, the discrete Causal Ollivier-Ricci curvature along a unit tangent vector $v$ with discreteness step $\ell_0$ satisfies the asymptotic expansion $K(u, v) = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3)$. Consequently, the discrete Einstein-Hilbert action sum $\mathcal{S}[G] = \sum_{e \in E} K(e)$ converges in the thermodynamic limit $\ell_0 \to 0$ to the continuum Einstein-Hilbert action integral $\frac{1}{2(d+2)\ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x$.
@@ -525,7 +527,7 @@ Section 12.1.6.1 formalizes the properties of the QBD proof regarding ollivier-r
 
 ### 12.1.7 Proof: Smooth Manifold Limit {#12.1.7}
 
-:::tip[**Synthesis of Spectral Convergence and Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
+:::tip[**Synthesis of Spectral Convergence via Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
 :::
 
 **I. Convergence of the Spectral Data**
@@ -602,7 +604,7 @@ Gravity is not a fundamental force but rather an entropic force arising from inf
 
 ### 12.2.3 Lemma: Directional Measures {#12.2.3}
 
-:::info[**Weak Convergence of Empirical Edge Direction Distributions to the Uniform Haar Measure on the Tangent Bundle**]
+:::info[**Weak Convergence via Empirical Edge Direction Distributions to the Uniform Haar Measure on the Tangent Bundle**]
 :::
 
 Let $x \in M$ be a point on the limit manifold, and let $B_t(x, R_t)$ be a sequence of mesoscopic balls in $G_t$ with radius $R_t$ satisfying $\ell_0 \ll R_t \ll \operatorname{inj}(M)$.
@@ -725,6 +727,8 @@ Verification of the spatial isotropy convergence established by **Directional Me
 ```python
 import numpy as np
 
+np.random.seed(42)
+
 def sample_sphere_moment(M, d=4):
     # Gaussian projection method generates uniform points on S^(d-1)
     z = np.random.normal(0, 1, (M, d))
@@ -746,26 +750,27 @@ for m in Ms:
     for _ in range(n_trials):
         emp_mom = sample_sphere_moment(m)
         errors.append(abs(emp_mom - target))
-    
+
     mean_err = np.mean(errors)
     std_err = np.std(errors)
     r = m**(1/4)
-    
+
     print(f"{m:<10} | {r:<5.1f} | {target:<8.4f} | {mean_err:<12.4f} | {std_err:<12.4f}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Haar Moment Convergence on S^3 (Ensemble Statistics) ---
-M (Edges)  | R     | Target   | Mean Error   | Std Dev     
+M (Edges)  | R     | Target   | Mean Error   | Std Dev
 -----------------------------------------------------------------
-256        | 4.0   | 0.2500   | 0.0121       | 0.0092      
-1296       | 6.0   | 0.2500   | 0.0056       | 0.0042      
-4096       | 8.0   | 0.2500   | 0.0031       | 0.0023      
-10000      | 10.0  | 0.2500   | 0.0020       | 0.0015      
+256        | 4.0   | 0.2500   | 0.0126       | 0.0092
+1296       | 6.0   | 0.2500   | 0.0055       | 0.0042
+4096       | 8.0   | 0.2500   | 0.0031       | 0.0023
+10000      | 10.0  | 0.2500   | 0.0020       | 0.0015
 ```
 
+**Conclusion:**
 The high-precision ensemble simulation confirms robust convergence. The mean error decreases monotonically from $0.0122$ to $0.0020$ as the sample size increases, scaling precisely with $1/\sqrt{M}$. The standard deviation also shrinks proportionally, demonstrating that the deviations seen in single runs are purely statistical fluctuations that vanish in the thermodynamic limit. This validates that the local tangent bundle becomes statistically isotropic.
 
 **In Plain English:**  
@@ -775,7 +780,7 @@ Section 12.2.3.2 formalizes the properties of the QBD calculation regarding dire
 
 ### 12.2.4 Lemma: Riemann Sum Approximation {#12.2.4}
 
-:::info[**Convergence of the Discrete Tensorial Average to the Metric-Proportional Spherical Integral**]
+:::info[**Convergence of the Discrete Tensorial Average to the Metric-Proportional Spherical Integral via Riemann Sum Approximation**]
 :::
 
 Let $\mathcal{S}_e$ be a locally isotropic scalar field on the graph, such that $\mathcal{S}_e \approx \bar{\mathcal{S}}(x)$ for edges within $B(x,R)$ with vanishing local variance.
@@ -850,24 +855,26 @@ Verification of the metric tensor reconstruction accuracy established by **Riema
 ```python
 import numpy as np
 
+np.random.seed(42)
+
 def sphere_riemann_errors(M=1000, d=4):
     # Generate M random directions (Haar measure via Gaussian)
     z = np.random.normal(0, 1, (M, d))
     n = z / np.linalg.norm(z, axis=1, keepdims=True)
-    
+
     # Compute Tensor Sum: < n_i n_j > = (n.T @ n) / M
     S_tilde = (n.T @ n) / M
-    
+
     # Target: 1/d on diagonal, 0 off-diagonal
     true_diag = 1.0 / d
-    
+
     # Extract errors
     diag_vals = np.diag(S_tilde)
     diag_err = np.mean(np.abs(diag_vals - true_diag))
-    
+
     off_mask = ~np.eye(d, dtype=bool)
     off_err = np.mean(np.abs(S_tilde[off_mask]))
-    
+
     return diag_err, off_err
 
 print("--- Riemann Sum Convergence (Ensemble Statistics, N_trials=1000) ---")
@@ -884,23 +891,24 @@ for m in Ms:
         de, oe = sphere_riemann_errors(m)
         d_errs.append(de)
         o_errs.append(oe)
-        
+
     print(f"{m:<8} | {np.mean(d_errs):<13.4f} | {np.std(d_errs):<10.4f} | "
           f"{np.mean(o_errs):<13.4f} | {np.std(o_errs):<10.4f}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Riemann Sum Convergence (Ensemble Statistics, N_trials=1000) ---
-M        | Diag Mean Err | Diag Std   | Off Mean Err  | Off Std   
+M        | Diag Mean Err | Diag Std   | Off Mean Err  | Off Std
 -----------------------------------------------------------------
-256      | 0.0125        | 0.0054     | 0.0103        | 0.0031    
-1296     | 0.0056        | 0.0024     | 0.0046        | 0.0014    
-4096     | 0.0031        | 0.0014     | 0.0025        | 0.0008    
-10000    | 0.0020        | 0.0008     | 0.0016        | 0.0005    
+256      | 0.0125        | 0.0054     | 0.0104        | 0.0032
+1296     | 0.0055        | 0.0024     | 0.0045        | 0.0014
+4096     | 0.0031        | 0.0013     | 0.0026        | 0.0008
+10000    | 0.0020        | 0.0009     | 0.0016        | 0.0005
 ```
 
+**Conclusion:**
 The ensemble statistics demonstrate monotonic and robust convergence of the discrete sum to the continuous tensor integral. The mean diagonal error decreases from $0.0122$ to $0.0020$ as the sample size increases, scaling consistently with the expected $1/\sqrt{M}$ rate. The standard deviation shrinks proportionally ($0.0051 \to 0.0009$), confirming that finite-sample fluctuations are suppressed in the thermodynamic limit. The vanishing off-diagonal error ($0.0101 \to 0.0017$) rigorously confirms that the tensorial averaging map faithfully recovers the orthogonality of the metric tensor from isotropic inputs.
 
 **In Plain English:**  
@@ -928,7 +936,7 @@ Section 12.2.5 formalizes the properties of the QBD lemma regarding efe converge
 
 ### 12.2.5.1 Proof: EFE Convergence {#12.2.5.1}
 
-:::tip[**Verification of the Algebraic Preservation of the Field Equation Structure under the Pointwise Limits of the Coarse-Graining Operator**]
+:::tip[**Verification of the Algebraic Preservation of the Field Equation Structure through the Pointwise Limits of the Coarse-Graining Operator**]
 :::
 
 **I. Linearity of the Coarse-Graining Operator**
@@ -977,7 +985,7 @@ Section 12.2.5.1 formalizes the properties of the QBD proof regarding efe conver
 
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 
-:::tip[**Synthesis of Weak Convergence Arguments using the Dominated Convergence Theorem**]
+:::tip[**Synthesis via Weak Convergence Arguments using the Dominated Convergence Theorem**]
 :::
 
 This synthesis proof utilizes the structural results established in supporting **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />.
@@ -1133,7 +1141,7 @@ Section 12.3.3.1 formalizes the properties of the QBD proof regarding causal dri
 
 ### 12.3.4 Lemma: Null Boundary {#12.3.4}
 
-:::info[**Boundedness of the Edge Direction Distribution Defining the Causal Aperture**]
+:::info[**Boundedness of the Edge Direction Distribution Defining the Causal Aperture via Null Boundary**]
 :::
 
 Given the system, the support of the directed edge measure $\mu_x$ is strictly contained within a cone of aperture $\Theta_c < \pi/2$ centered on the drift vector $D^\mu$, satisfying $\text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}$.
@@ -1255,30 +1263,31 @@ Verification of the emergent Lorentzian signature established in the **Signature
 import numpy as np
 
 def verify_signature_ensemble(N=10000, theta_c=np.pi/4, n_trials=100):
+    np.random.seed(42)
     evals_list = []
     ratios_list = []
-    
+
     # Target Metric components based on Null Condition
     # G_00 * cos^2(theta) + G_ii * sin^2(theta) = 0
     # For theta=45 deg, sin^2 = cos^2 = 0.5, so G_00 = -G_ii
     target_G_time = -1.0 * (np.sin(theta_c)**2 / np.cos(theta_c)**2)
-    
+
     for _ in range(n_trials):
         # 1. Generate Causal Edges in a 4D Cone
         spatial_dir = np.random.normal(0, 1, (N, 3))
         spatial_dir /= np.linalg.norm(spatial_dir, axis=1, keepdims=True)
-        
+
         # Random angles within the cone (uniform area measure)
         cos_theta = np.random.uniform(np.cos(theta_c), 1.0, N)
         sin_theta = np.sqrt(1 - cos_theta**2)
-        
+
         v = np.zeros((N, 4))
-        v[:, 0] = cos_theta 
-        v[:, 1:] = sin_theta[:, None] * spatial_dir 
-        
+        v[:, 0] = cos_theta
+        v[:, 1:] = sin_theta[:, None] * spatial_dir
+
         # 2. Compute Propagator P_ab
         P = (v.T @ v) / N
-        
+
         # 3. Eigendecomposition
         w, _ = np.linalg.eigh(P)
         w = w[::-1] # Sort descending
@@ -1290,15 +1299,15 @@ def verify_signature_ensemble(N=10000, theta_c=np.pi/4, n_trials=100):
     std_evals = np.std(evals_list, axis=0)
     mean_ratio = np.mean(ratios_list)
     std_ratio = np.std(ratios_list)
-    
+
     print(f"--- Causal Signature Verification (Ensemble N_trials={n_trials}) ---")
     print(f"Mean Eigenvalues:        [{mean_evals[0]:.4f}, {mean_evals[1]:.4f}, {mean_evals[2]:.4f}, {mean_evals[3]:.4f}]")
     print(f"Eigenvalue Std Dev:      [{std_evals[0]:.4f}, {std_evals[1]:.4f}, {std_evals[2]:.4f}, {std_evals[3]:.4f}]")
     print(f"Anisotropy Ratio (L/T):  {mean_ratio:.4f} ± {std_ratio:.4f}")
-    
+
     G_spatial = 1.0
     print(f"Inferred Metric Signature: [{target_G_time:.4f}, {G_spatial:.4f}, {G_spatial:.4f}, {G_spatial:.4f}]")
-    
+
     if target_G_time < 0:
         print("Result: LORENTZIAN (-+++)")
     else:
@@ -1308,17 +1317,18 @@ if __name__ == "__main__":
     verify_signature_ensemble()
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Causal Signature Verification (Ensemble N_trials=100) ---
-Mean Eigenvalues:        [0.7359, 0.0895, 0.0881, 0.0865]
-Eigenvalue Std Dev:      [0.0013, 0.0006, 0.0006, 0.0007]
-Anisotropy Ratio (L/T):  8.3594 ± 0.0550
+Mean Eigenvalues:        [0.7358, 0.0898, 0.0880, 0.0864]
+Eigenvalue Std Dev:      [0.0014, 0.0009, 0.0006, 0.0007]
+Anisotropy Ratio (L/T):  8.3550 ± 0.0611
 Inferred Metric Signature: [-1.0000, 1.0000, 1.0000, 1.0000]
 Result: LORENTZIAN (-+++)
 ```
 
+**Conclusion:**
 The ensemble analysis confirms the stability of the emergent causal structure. The longitudinal eigenvalue converges to $\lambda_0 \approx 0.7359$ with an exceptionally low standard deviation of $\sigma \approx 0.0015$, indicating a highly consistent drift direction across all realizations. The transverse eigenvalues are suppressed by nearly an order of magnitude ($\lambda_i \approx 0.088$), yielding a robust anisotropy ratio of $8.36 \pm 0.06$.
 
 This spectral gap provides the rigorous geometric justification for the signature change. When the boundary of the edge distribution is identified with the null cone ($ds^2=0$), this anisotropy forces the metric component along the drift axis to take the opposite sign of the transverse components. The result is a stable, emergent Lorentzian signature $(-1, +1, +1, +1)$, proving that the arrow of time is a statistical necessity of the directed graph dynamics.

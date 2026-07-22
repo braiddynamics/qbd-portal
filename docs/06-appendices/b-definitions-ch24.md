@@ -21,7 +21,7 @@ Section 24.1.1 formalizes the properties of the QBD theorem regarding integer ba
 
 ### 24.1.2 Lemma: Graph Cycle Homology {#24.1.2}
 
-:::info[**Quantization of Topological Cycles on Trivalent Graphs**]
+:::info[**Quantization via Topological Cycles on Trivalent Graphs**]
 :::
 
 For all topological cycles on the trivalent graph represented as a formal linear combination of closed node-sharing paths, let the discrete homology groups $H_k(G, \mathbb{Z})$ be free abelian groups. Then these groups are generated strictly by the integer cycle vectors.
@@ -63,7 +63,7 @@ Section 24.1.2.1 formalizes the properties of the QBD proof regarding graph cycl
 
 ### 24.1.3 Lemma: Cohomology Mapping Projection {#24.1.3}
 
-:::info[**Uniform Projection of Discrete Graph Cycles to Rational de Rham Cohomology Classes**]
+:::info[**Uniform Projection via Discrete Graph Cycles to Rational de Rham Cohomology Classes**]
 :::
 
 Let $\phi: G \to M$ denote the embedding of the trivalent graph into a complex projective manifold. Then the pushforward map $\phi_*$ projects the integer cycle space $Z_k(G, \mathbb{Z})$ to the rational homology group $H_k(M, \mathbb{Q})$, which constitutes the rational cohomology classes (Hodge classes).
@@ -130,7 +130,7 @@ Section 24.1.4 formalizes the properties of the QBD proof regarding integer basi
 
 ### 24.2.2 Lemma: Spacing Statistics {#24.2.2}
 
-:::info[**Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities**]
+:::info[**Establishment via Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities**]
 :::
 
 Given the conditions of **Random Matrix Statistics** and **Adjacency Multiplicity**, the properties of Establishment of Eigenvalue Spacing Correspondence to Random Matrix Spectral Densities are established.
@@ -194,7 +194,7 @@ Section 24.3.2.1 formalizes the properties of the QBD proof regarding minimal ga
 
 ### 24.3.3 Lemma: Lower Energy Bounds {#24.3.3}
 
-:::info[**Derivation of the Lower-Bound Energy Spectrum for Trivial and Non-Trivial Braid States**]
+:::info[**Derivation of the Lower-Bound Energy Spectrum for Trivial from Non-Trivial Braid States**]
 :::
 
 Let the energy of a braid configuration be determined by the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> where the crossing energy is bounded by the Planck scale $\ell_0$. Then the energy spectrum of all non-trivial gauge excitations is strictly bounded below by the energy of the trefoil state $E_{min} = 3 \kappa \frac{\hbar c}{\ell_0} > 0$.
@@ -279,7 +279,7 @@ Section 24.4.2 formalizes the properties of the QBD lemma regarding quantum cuto
 
 ### 24.4.2.1 Proof: Quantum Cutoff {#24.4.2.1}
 
-:::tip[**Verification of Bounded Operators on the Finite State Space**]
+:::tip[**Verification through Bounded Operators on the Finite State Space**]
 :::
 
 *   **Continuum Breakdown:** Even if classical Navier-Stokes equations permitted singularities, the fluid is fundamentally discrete.  **Quantum Cutoff** <Ref id="24.4.2" label="§24.4.2" /> and  **Smart Viscosity** <Ref id="24.4.1" label="§24.4.1" />
@@ -330,7 +330,7 @@ Section 24.4.2.1 formalizes the properties of the QBD proof regarding quantum cu
 
 ### 24.4.3 Lemma: Syndrome-Induced Damping {#24.4.3}
 
-:::info[**Exponential Rate of Graph Stress Relaxation under Syndrome-Driven Updates**]
+:::info[**Exponential Rate of Graph Stress Relaxation via Syndrome-Driven Updates**]
 :::
 
 Assume local fluid vorticity $\omega$ acts as a topological syndrome $\sigma$ representing edge tension on the graph. Then the comonad stabilizer increases the rate of rewrite updates to exponentially damp local stress as $\Gamma(\sigma) = \Gamma_0 e^{\beta |\sigma|}$, which is sufficient to prevent the buildup of infinite gradients.
@@ -416,7 +416,7 @@ Section 24.5.2 formalizes the properties of the QBD theorem regarding complexity
 
 ### 24.5.3 Lemma: Exponential Cycle Demands {#24.5.3}
 
-:::info[**Scaling Bounds for Graph Resources Required in NP-Complete Calculations**]
+:::info[**Scaling Bounds for Graph Resources Required via NP-Complete Calculations**]
 :::
 
 For any NP-complete search of problem size $N$, let the number of parallel topological paths be $2^N$ which must be embedded in a 3D spatial region of radius $R$. Then the total number of 3-cycles required is bounded by $N_3 \ge C \cdot 2^N$, which is sufficient to force the cycle density to grow exponentially.
@@ -462,7 +462,7 @@ Section 24.5.3.1 formalizes the properties of the QBD proof regarding exponentia
 
 ### 24.5.4 Lemma: Gravitational Collapse Threshold {#24.5.4}
 
-:::info[**Suppression of Graph Update Rates and Collapse to Saturated Core States**]
+:::info[**Suppression of Graph Update Rates due to Collapse to Saturated Core States**]
 :::
 
 If the graph update rate $\Gamma(\rho)$ decays to zero under **Core Density Limitation** <Ref id="22.1.3" label="§22.1.3" /> as the cycle density approaches the critical saturation threshold $\rho_{crit} \approx 1/(6\mu)$, then the local Lapse function $N(x) \propto \Gamma(\rho)$ vanishes. This vanishing is sufficient to freeze local time and induce gravitational collapse to a stable black hole core.

@@ -56,7 +56,7 @@ Section 16.1.3 formalizes the properties of the QBD lemma regarding schmidt rank
 
 ### 16.1.3.1 Proof: Schmidt Rank Capacity Bound {#16.1.3.1}
 
-:::tip[**Derivation of the Bipartite Schmidt Rank Constraint across Virtual Tensor Indices**]
+:::tip[**Derivation of the Bipartite Schmidt Rank Constraint across Virtual Tensor Indices from Schmidt Rank Capacity Bound**]
 :::
 
 Let $\gamma$ be any spatial cut partitioning the tensor network into subnetwork $\mathcal{T}_A$ and complement $\mathcal{T}_{A^c}$. In accordance with **Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" />, the Schmidt decomposition of state $|\Psi_{\partial}\rangle$ evaluates as:
@@ -94,7 +94,7 @@ Section 16.1.3.1 formalizes the properties of the QBD proof regarding schmidt ra
 
 ### 16.1.4 Lemma: Min-Cut Entropy Identity {#16.1.4}
 
-:::info[**Exact Saturation of the Min-Cut Bound for Isometric Tensor Networks**]
+:::info[**Exact Saturation of the Min-Cut Bound via Isometric Tensor Networks**]
 :::
 
 Suppose $\mathcal{T}$ is a Causal Tensor Network composed of unitary disentanglers $u$ and isometric coarse-grainers $w$. Then the von Neumann entropy $S(\rho_A)$ of subregion $A$ exactly saturates the minimum cut bound $S(\rho_A) = |\text{Cut}(\gamma_{\text{min}})| \ln \chi$.
@@ -106,7 +106,7 @@ Section 16.1.4 formalizes the properties of the QBD lemma regarding min-cut entr
 
 ### 16.1.4.1 Proof: Min-Cut Entropy Identity {#16.1.4.1}
 
-:::tip[**Direct Verification of Uniform Schmidt Spectra under Isometric Layer Action**]
+:::tip[**Direct Verification of Uniform Schmidt Spectra through Isometric Layer Action**]
 :::
 
 Let $\gamma_{\text{min}}$ be the minimal surface minimizing $|\text{Cut}(\gamma)|$. In accordance with **Schmidt Rank Capacity Bound** <Ref id="16.1.3" label="§16.1.3" />, the entitlement entropy satisfies $S(\rho_A) \le |\text{Cut}(\gamma_{\text{min}})| \ln \chi$.
@@ -136,7 +136,7 @@ Section 16.1.4.1 formalizes the properties of the QBD proof regarding min-cut en
 
 ### 16.1.5 Lemma: Isometry Condition {#16.1.5}
 
-:::info[**Unitary Information Preservation of the Causal RG Flow**]
+:::info[**Unitary Information Preservation of the Causal RG Flow via Isometry Condition**]
 :::
 
 Suppose $\Phi: \mathcal{H}_{\text{bulk}} \to \mathcal{H}_{\text{boundary}}$ is the global coarse-graining super-operator defining the Causal Tensor Network. Then $\Phi^\dagger \Phi = \hat{I}_{\text{bulk}}$, establishing that $\Phi$ is an isometric embedding.
@@ -178,7 +178,7 @@ Section 16.1.5.1 formalizes the properties of the QBD proof regarding isometry c
 
 ### 16.1.6 Lemma: Geodesic Distance Isomorphism {#16.1.6}
 
-:::info[**Equivalence of Discrete MERA Graph Distance to Anti-de Sitter Geodesics**]
+:::info[**Equivalence via Discrete MERA Graph Distance to Anti-de Sitter Geodesics**]
 :::
 
 Suppose $v_1 = (x_1, z_1)$ and $v_2 = (x_2, z_2)$ are two vertices in the Causal Tensor Network $\mathcal{T}$. Then the shortest graph path $d_{\mathcal{T}}(v_1, v_2)$ is strictly isomorphic to the Anti-de Sitter geodesic distance $d_{\text{AdS}}(v_1, v_2) = R_{\text{AdS}} \cosh^{-1}\left( 1 + \frac{(x_1 - x_2)^2 + z_1^2 + z_2^2}{2 z_1 z_2} \right)$.
@@ -190,7 +190,7 @@ Section 16.1.6 formalizes the properties of the QBD lemma regarding geodesic dis
 
 ### 16.1.6.1 Proof: Geodesic Distance Isomorphism {#16.1.6.1}
 
-:::tip[**Derivation of Logarithmic Metric Scaling on MERA Binary Trees**]
+:::tip[**Derivation from Logarithmic Metric Scaling on MERA Binary Trees**]
 :::
 
 Let $\mathcal{T}$ be a MERA lattice with scale depth step $\ell_0$ and lateral disentangler links. In accordance with **Causal Tensor Network** <Ref id="16.1.1" label="§16.1.1" />, the discrete graph metric evaluates as:
@@ -220,7 +220,7 @@ Section 16.1.6.1 formalizes the properties of the QBD proof regarding geodesic d
 
 ### 16.1.7 Proof: Ryu-Takayanagi Correspondence {#16.1.7}
 
-:::tip[**Formal Verification of the Geometrization of Quantum Information**]
+:::tip[**Formal Verification of the Geometrization of Quantum Information through Ryu-Takayanagi Correspondence**]
 :::
 
 This synthesis proof assembles the structural results established in supporting lemmas.
@@ -265,15 +265,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def verify_ryu_takayanagi_scaling():
-    """
-    Simulation 16.1.7.1: Discrete MERA Min-Cut & Bond Dimension Scaling.
-
-    This routine constructs a MERA tensor network model of Hyperbolic Space (AdS_3)
-    using a binary tree lattice with lateral disentangler edges. It evaluates graph-theoretic
-    min-cuts across varying boundary subregions L and bond dimensions chi in {2, 4, 8},
-    verifying that S(L, chi) = |Cut(gamma_min)| * ln(chi) reproduces the holographic CFT
-    entanglement entropy scaling law S(L) ~ (c_eff / 3) * ln(L) without hardcoded assumptions.
-    """
+    """§16.1.7.1: MERA min-cut entropy S vs boundary size L and bond dimension chi."""
     print("Discrete MERA Min-Cut & Bond Dimension Scaling (Section 16.1.7.1)")
     print("=" * 75)
 
@@ -355,17 +347,17 @@ def verify_ryu_takayanagi_scaling():
         print(f"  Geometric Offset (k):         {k_fit:.4f}")
         print("-" * 75)
 
-    print("Verification Protocol Results:")
-    print("1. Min-Cut Network Optimization       : PASSED (Edmonds-Karp Max-Flow Converged)")
-    print("2. Bond Dimension Scaling (ln chi)    : PASSED (Exact Proportionality Verified)")
-    print("3. Holographic Central Charge Scaling : PASSED (c_eff ~ log2(chi))")
+    print("checks:")
+    print("1. Min-Cut Network Optimization       : pass (Edmonds-Karp Max-Flow Converged)")
+    print("2. Bond Dimension Scaling (ln chi)    : pass (Exact Proportionality Verified)")
+    print("3. Holographic Central Charge Scaling : pass (c_eff ~ log2(chi))")
     print("=" * 75)
 
 if __name__ == "__main__":
     verify_ryu_takayanagi_scaling()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Discrete MERA Min-Cut & Bond Dimension Scaling (Section 16.1.7.1)
@@ -405,10 +397,10 @@ Fit Results (chi = 8):
   Fitted Central Charge (c_eff): 9.0000  (Theoretical MERA Target = 9.0000)
   Geometric Offset (k):         4.1589
 ---------------------------------------------------------------------------
-Verification Protocol Results:
-1. Min-Cut Network Optimization       : PASSED (Edmonds-Karp Max-Flow Converged)
-2. Bond Dimension Scaling (ln chi)    : PASSED (Exact Proportionality Verified)
-3. Holographic Central Charge Scaling : PASSED (c_eff ~ log2(chi))
+checks:
+1. Min-Cut Network Optimization       : pass (Edmonds-Karp Max-Flow Converged)
+2. Bond Dimension Scaling (ln chi)    : pass (Exact Proportionality Verified)
+3. Holographic Central Charge Scaling : pass (c_eff ~ log2(chi))
 ===========================================================================
 ```
 
@@ -419,7 +411,7 @@ Section 16.1.7.1 formalizes the properties of the QBD calculation regarding cut-
 
 ### 16.2.1 Definition: Bulk Saturation Limit {#16.2.1}
 
-:::tip[**Formalization of the Maximum Topological Density**]
+:::tip[**Formalization of the Maximum Topological Density via Bulk Saturation Limit**]
 :::
 
 The **Bulk Saturation Limit** $\rho_{\text{max}}$ is defined as the critical density of active stabilizer plaquettes (3-cycles) per unit volume of the graph such that the local update acceptance probability vanishes.
@@ -458,7 +450,7 @@ The information density of any bounded space is strictly limited by its surface 
 
 ### 16.2.3 Lemma: Vacuum Incompressibility at Critical Density {#16.2.3}
 
-:::info[**Vanishing Acceptance Probability for Topological Graph Rewrites at Saturated Densities**]
+:::info[**Vanishing Acceptance Probability via Topological Graph Rewrites at Saturated Densities**]
 :::
 
 Suppose a spatial subgraph $\Omega$ has local 3-cycle density $\rho(\Omega) = \rho_{\text{max}}$. Then the probability $P(\text{accept})$ of any graph rewrite rule adding an additional stabilizer cycle is equal to zero.
@@ -470,7 +462,7 @@ Section 16.2.3 formalizes the properties of the QBD lemma regarding vacuum incom
 
 ### 16.2.3.1 Proof: Vacuum Incompressibility at Critical Density {#16.2.3.1}
 
-:::tip[**Derivation of Master Equation Suppression under Maximum Stabilizer Density**]
+:::tip[**Derivation of Master Equation Suppression via Maximum Stabilizer Density**]
 :::
 
 Let $\mathcal{R}$ be a local graph rewrite rule attempting to insert a 3-cycle stabilizer into subgraph $\Omega$. In accordance with **Bulk Saturation Limit** <Ref id="16.2.1" label="§16.2.1" />, the acceptance probability evaluates as:
@@ -504,7 +496,7 @@ Section 16.2.3.1 formalizes the properties of the QBD proof regarding vacuum inc
 
 ### 16.2.4 Lemma: Holographic Screen Mechanism {#16.2.4}
 
-:::info[**Establishment of Boundary Nucleation Dynamics at Critical Density**]
+:::info[**Establishment via Boundary Nucleation Dynamics at Critical Density**]
 :::
 
 Suppose a subgraph $\Omega$ has reached critical density $\rho_{\text{max}}$. Then any net entropy influx $\Phi_S = \oint_{\partial \Omega} \boldsymbol{J}_S \cdot d\boldsymbol{A} > 0$ satisfies $\Delta S = \rho_{\text{max}} \ell_0 \cdot \text{Area}(\partial \Omega)$, establishing that the locus of information deposition transitions to the boundary surface $\partial \Omega$.
@@ -516,7 +508,7 @@ Section 16.2.4 formalizes the properties of the QBD lemma regarding holographic 
 
 ### 16.2.4.1 Proof: Holographic Screen Mechanism {#16.2.4.1}
 
-:::tip[**Formal Derivation of Dimensional Reduction under Saturated Boundary Flux**]
+:::tip[**Formal Derivation of Dimensional Reduction via Saturated Boundary Flux**]
 :::
 
 Let $\boldsymbol{J}_S$ denote the information flux vector field. In accordance with **Vacuum Incompressibility at Critical Density** <Ref id="16.2.3" label="§16.2.3" />, interior incompressibility requires $\nabla \cdot \boldsymbol{J}_S = 0$ inside $\Omega$.
@@ -550,7 +542,7 @@ Section 16.2.4.1 formalizes the properties of the QBD proof regarding holographi
 
 ### 16.2.5 Lemma: Geometric Tiling Factor of Trapped Surfaces {#16.2.5}
 
-:::info[**Derivation of the Universal 1/4 Efficiency Coefficient for Triangular Plaquette Horizons**]
+:::info[**Derivation of the Universal 1/4 Efficiency Coefficient via Triangular Plaquette Horizons**]
 :::
 
 Suppose $\Sigma$ is a 2-dimensional spherical horizon tessellated by irreducible 3-cycle stabilizer plaquettes. Then the geometric packing ratio between boundary bit capacity and Planck area is equal to $\eta = \frac{S_{\text{BH}}}{A / \ell_P^2} = \frac{1}{4}$.
@@ -562,7 +554,7 @@ Section 16.2.5 formalizes the properties of the QBD lemma regarding geometric ti
 
 ### 16.2.5.1 Proof: Geometric Tiling Factor of Trapped Surfaces {#16.2.5.1}
 
-:::tip[**Combinatorial Derivation of Spherical 3-Cycle Horizon Tiling Ratios**]
+:::tip[**Combinatorial Derivation from Spherical 3-Cycle Horizon Tiling Ratios**]
 :::
 
 Let $\Sigma$ be a 2-sphere of area $A$ tiled by $N_{\text{faces}}$ triangular 3-cycle plaquettes. In accordance with **Holographic Screen Mechanism** <Ref id="16.2.4" label="§16.2.4" />, the packing efficiency evaluates as:
@@ -608,7 +600,7 @@ Section 16.2.6 formalizes the properties of the QBD lemma regarding black hole e
 
 ### 16.2.6.1 Proof: Black Hole Entropy from Cycle Count {#16.2.6.1}
 
-:::tip[**Formal Verification of Microstate Counting on the Horizon**]
+:::tip[**Formal Verification through Microstate Counting on the Horizon**]
 :::
 
 Let $\Sigma$ be the 2-dimensional spatial slice of the horizon. In accordance with **Holographic Screen Mechanism** <Ref id="16.2.4" label="§16.2.4" /> and **Geometric Tiling Factor of Trapped Surfaces** <Ref id="16.2.5" label="§16.2.5" />, the entropy evaluates as:
@@ -679,15 +671,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def verify_bekenstein_scaling():
-    """
-    Simulation 16.2.7.1: Trapped Horizon Stabilizer Plaquette Microstate Counting.
-    
-    This routine models a Black Hole as a discrete trapped horizon surface within a 3D bulk lattice.
-    It counts the exact number of independent 3-cycle stabilizer plaquettes N_cycles crossing the horizon,
-    evaluates the quantum microstate entropy S_micro = N_cycles * ln(2), and verifies that substituting
-    the elementary plaquette cross-section a_0 = 4 * ln(2) * ell_P^2 non-trivially yields the Bekenstein
-    coefficient S / A = 0.2500 ell_P^-2 alongside dimensional reduction (S ~ R^2 vs Vol ~ R^3).
-    """
+    """§16.2.7.1: count horizon stabilizer plaquettes and check S/A against the Bekenstein coefficient 1/4."""
     print("Trapped Horizon Stabilizer Plaquette Microstate Counting (Section 16.2.7.1)")
     print("=" * 75)
     
@@ -777,17 +761,17 @@ def verify_bekenstein_scaling():
     print(f"  Entropy Scaling Exponent (d_ent): {exp_ent:.4f}  (Expected ~ 2.0)")
     print(f"  Bekenstein Coeff (S / A):        {mean_ratio:.4f}  (Exact Target = 0.2500)")
     print("-" * 85)
-    print("Verification Protocol Results:")
-    print("1. Trapped Plaquette Cycle Counting  : PASSED (N_cycles Identified)")
-    print("2. Microstate Degeneracy Entropy      : PASSED (S = N * ln 2)")
-    print("3. Bekenstein Bound Saturation        : PASSED (S/A = 1/(4 ell_P^2) = 0.2500)")
+    print("checks:")
+    print("1. Trapped Plaquette Cycle Counting  : pass (N_cycles Identified)")
+    print("2. Microstate Degeneracy Entropy      : pass (S = N * ln 2)")
+    print("3. Bekenstein Bound Saturation        : pass (S/A = 1/(4 ell_P^2) = 0.2500)")
     print("=" * 85)
 
 if __name__ == "__main__":
     verify_bekenstein_scaling()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Trapped Horizon Stabilizer Plaquette Microstate Counting (Section 16.2.7.1)
@@ -807,10 +791,10 @@ Lattice Geometry & Microstate Counting Analysis:
   Entropy Scaling Exponent (d_ent): 1.9467  (Expected ~ 2.0)
   Bekenstein Coeff (S / A):        0.2500  (Exact Target = 0.2500)
 -------------------------------------------------------------------------------------
-Verification Protocol Results:
-1. Trapped Plaquette Cycle Counting  : PASSED (N_cycles Identified)
-2. Microstate Degeneracy Entropy      : PASSED (S = N * ln 2)
-3. Bekenstein Bound Saturation        : PASSED (S/A = 1/(4 ell_P^2) = 0.2500)
+checks:
+1. Trapped Plaquette Cycle Counting  : pass (N_cycles Identified)
+2. Microstate Degeneracy Entropy      : pass (S = N * ln 2)
+3. Bekenstein Bound Saturation        : pass (S/A = 1/(4 ell_P^2) = 0.2500)
 =====================================================================================
 ```
 
@@ -858,7 +842,7 @@ Section 16.3.2 formalizes the properties of the QBD theorem regarding subregion-
 
 ### 16.3.3 Lemma: Bulk-to-Boundary Operator Reconstruction {#16.3.3}
 
-:::info[**Establishment of the Discrete HKLL Reconstruction Kernel on the Causal Tensor Network**]
+:::info[**Establishment of the Discrete HKLL Reconstruction Kernel on the Causal Tensor Network via Bulk-to-Boundary Operator Reconstruction**]
 :::
 
 Suppose $\hat{\Phi}(x, z)$ is a bulk scalar field operator at radial depth $z$. Then there exists a boundary smearing kernel $K(x, z; x')$ supported on subregion $A$ such that $\hat{\Phi}(x, z)$ is represented by a boundary integral over subregion $A$.
@@ -870,7 +854,7 @@ Section 16.3.3 formalizes the properties of the QBD lemma regarding bulk-to-boun
 
 ### 16.3.3.1 Proof: Bulk-to-Boundary Operator Reconstruction {#16.3.3.1}
 
-:::tip[**Derivation of the Discrete HKLL Smearing Representation**]
+:::tip[**Derivation of the Discrete HKLL Smearing Representation from Bulk-to-Boundary Operator Reconstruction**]
 :::
 
 Let $\hat{\Phi}(x, z)$ be a bulk field operator at spatial location $x$ and radial scale depth $z = k \cdot \ell_0$. In accordance with **Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" />, the discrete HKLL representation evaluates as:
@@ -906,7 +890,7 @@ Section 16.3.3.1 formalizes the properties of the QBD proof regarding bulk-to-bo
 
 ### 16.3.4 Lemma: Discrete AdS Spacelike Green Function Inversion {#16.3.4}
 
-:::info[**Existence and Support Bounds for the Boundary HKLL Integration Kernel**]
+:::info[**Existence via Support Bounds for the Boundary HKLL Integration Kernel**]
 :::
 
 Suppose $(\square_g - m^2) \hat{\Phi}(x, z) = 0$ holds on an asymptotically Anti-de Sitter lattice with $m^2 R_{\text{AdS}}^2 = \Delta(\Delta - d)$. Then the spacelike Green function kernel $K(x, z; x')$ is non-zero if and only if boundary point $x'$ lies within the spacelike boundary shadow of $(x, z)$ inside subregion $A$.
@@ -918,7 +902,7 @@ Section 16.3.4 formalizes the properties of the QBD lemma regarding discrete ads
 
 ### 16.3.4.1 Proof: Discrete AdS Spacelike Green Function Inversion {#16.3.4.1}
 
-:::tip[**Derivation of Spacelike Support Bounds for the HKLL Smearing Function**]
+:::tip[**Derivation of Spacelike Support Bounds via the HKLL Smearing Function**]
 :::
 
 Let $G_{\text{bulk}}(x, z; x', z')$ be the bulk-to-bulk Klein-Gordon propagator. In accordance with **Bulk-to-Boundary Operator Reconstruction** <Ref id="16.3.3" label="§16.3.3" />, the boundary smearing kernel $K(x, z; x')$ evaluates as:
@@ -952,7 +936,7 @@ Section 16.3.4.1 formalizes the properties of the QBD proof regarding discrete a
 
 ### 16.3.5 Lemma: Code-Space Protection against Boundary Erasure {#16.3.5}
 
-:::info[**Establishment of Fault-Tolerant Quantum Error Correction Thresholds for Bulk Geometries**]
+:::info[**Establishment of Fault-Tolerant Quantum Error Correction Thresholds via Bulk Geometries**]
 :::
 
 Suppose $\mathcal{H}_{\text{code}} \subset \mathcal{H}_{\text{boundary}}$ is the subspace of boundary states corresponding to smooth semiclassical bulk geometries. Then erasure of boundary subregion $A^c$ leaves bulk operators in $\mathcal{W}_E(A)$ perfectly recoverable with Unitary fidelity $F = 1.0$.
@@ -964,7 +948,7 @@ Section 16.3.5 formalizes the properties of the QBD lemma regarding code-space p
 
 ### 16.3.5.1 Proof: Code-Space Protection against Boundary Erasure {#16.3.5.1}
 
-:::tip[**Verification of Exact Subregion Decoupling and Code Fidelity**]
+:::tip[**Verification of Exact Subregion Decoupling through Code Fidelity**]
 :::
 
 Let $\mathcal{H}_{\text{code}} \subset \mathcal{H}_{\text{boundary}}$ be the subspace of boundary states corresponding to smooth semiclassical bulk geometries. In accordance with **Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" />, for any bulk operator $\hat{O}_{\text{bulk}}$ supported on $\mathcal{W}_E(A)$ and any boundary erasure operator $\mathcal{E}_{A^c}$ acting on $A^c$, the code fidelity satisfies:
@@ -998,7 +982,7 @@ Section 16.3.5.1 formalizes the properties of the QBD proof regarding code-space
 
 ### 16.3.6 Proof: Subregion-Subregion Duality {#16.3.6}
 
-:::tip[**Formal Verification of Subregion-Subregion Duality and Quantum Code Saturation**]
+:::tip[**Formal Verification of Subregion-Subregion Duality through Quantum Code Saturation**]
 :::
 
 This formal synthesis assembles the structural results established in supporting lemmas.
@@ -1024,7 +1008,7 @@ Section 16.3.6 formalizes the properties of the QBD proof regarding subregion-su
 
 ### 16.3.6.1 Calculation: Entanglement Wedge Reconstruction Protocol {#16.3.6.1}
 
-:::note[**Verification of HKLL Reconstruction Fidelity and QECC Thresholds**]
+:::note[**Verification of HKLL Reconstruction Fidelity through QECC Thresholds**]
 :::
 
 Verification of the Subregion-Subregion Duality established in **Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" /> is based on the following simulation protocol:
@@ -1037,14 +1021,7 @@ Verification of the Subregion-Subregion Duality established in **Subregion-Subre
 import numpy as np
 
 def run_entanglement_wedge_reconstruction():
-    """
-    Simulation 16.3.6.1: Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction.
-    
-    This routine evaluates the Hamilton-Kabat-Lifschytz-Lowe (HKLL) operator reconstruction kernel
-    and Quantum Error-Correcting Code (QECC) protection threshold on a discrete boundary CFT_2.
-    It evaluates bulk operator reconstruction fidelity F(A) for varying subregion fractions f of boundary A,
-    verifying that F(A) = 1.000000 if and only if subregion A covers the Ryu-Takayanagi Entanglement Wedge.
-    """
+    """§16.3.6.1: HKLL reconstruction fidelity F(A) vs boundary fraction; pass inside the entanglement wedge."""
     print("Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction (Section 16.3.6.1)")
     print("=" * 80)
     
@@ -1089,57 +1066,57 @@ def run_entanglement_wedge_reconstruction():
             
             if inside_wedge:
                 fidelity = 1.000000
-                status = "PASSED (QECC Protected)"
+                status = "pass (QECC Protected)"
             else:
                 # Outside wedge: Partial code recovery capacity capped by subregion size ratio
                 fidelity = float(np.sin(np.pi * frac / (2.0 * f_RT_threshold))**2)
-                status = "FAILED (Outside Wedge)"
+                status = "fail (Outside Wedge)"
                 
             print(f"{z:<14.2f} | {frac:<18.2f} | {f_RT_threshold:<14.4f} | {str(inside_wedge):<14} | {fidelity:<14.6f} | {status}")
 
     print("-" * 90)
-    print("Verification Protocol Results:")
-    print("1. CFT Two-Point Matrix Assembly       : PASSED (Conformal Correlation Matrix C_ij)")
-    print("2. HKLL Smearing Operator Norm        : PASSED (Continuous Boundary Inversion)")
-    print("3. Entanglement Wedge Reconstruction  : PASSED (F(A) = 1.000000 inside W_E(A))")
+    print("checks:")
+    print("1. CFT Two-Point Matrix Assembly       : pass (Conformal Correlation Matrix C_ij)")
+    print("2. HKLL Smearing Operator Norm        : pass (Continuous Boundary Inversion)")
+    print("3. Entanglement Wedge Reconstruction  : pass (F(A) = 1.000000 inside W_E(A))")
     print("=" * 80)
 
 if __name__ == "__main__":
     run_entanglement_wedge_reconstruction()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Discrete HKLL Smearing Kernel & CFT Correlation Matrix Reconstruction (Section 16.3.6.1)
 ================================================================================
 Bulk Depth (z) | Subregion A Frac   | RT Threshold   | Inside Wedge   | Fidelity F(A)  | Status
 ------------------------------------------------------------------------------------------
-0.10           | 0.20               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
-0.10           | 0.40               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
-0.10           | 0.60               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
-0.10           | 0.80               | 0.0638         | True           | 1.000000       | PASSED (QECC Protected)
-0.30           | 0.20               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
-0.30           | 0.40               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
-0.30           | 0.60               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
-0.30           | 0.80               | 0.1940         | True           | 1.000000       | PASSED (QECC Protected)
-0.50           | 0.20               | 0.3333         | False          | 0.654508       | FAILED (Outside Wedge)
-0.50           | 0.40               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
-0.50           | 0.60               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
-0.50           | 0.80               | 0.3333         | True           | 1.000000       | PASSED (QECC Protected)
-0.70           | 0.20               | 0.4936         | False          | 0.353219       | FAILED (Outside Wedge)
-0.70           | 0.40               | 0.4936         | False          | 0.913821       | FAILED (Outside Wedge)
-0.70           | 0.60               | 0.4936         | True           | 1.000000       | PASSED (QECC Protected)
-0.70           | 0.80               | 0.4936         | True           | 1.000000       | PASSED (QECC Protected)
-0.90           | 0.20               | 0.7129         | False          | 0.181963       | FAILED (Outside Wedge)
-0.90           | 0.40               | 0.7129         | False          | 0.595409       | FAILED (Outside Wedge)
-0.90           | 0.60               | 0.7129         | False          | 0.939412       | FAILED (Outside Wedge)
-0.90           | 0.80               | 0.7129         | True           | 1.000000       | PASSED (QECC Protected)
+0.10           | 0.20               | 0.0638         | True           | 1.000000       | pass (QECC Protected)
+0.10           | 0.40               | 0.0638         | True           | 1.000000       | pass (QECC Protected)
+0.10           | 0.60               | 0.0638         | True           | 1.000000       | pass (QECC Protected)
+0.10           | 0.80               | 0.0638         | True           | 1.000000       | pass (QECC Protected)
+0.30           | 0.20               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
+0.30           | 0.40               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
+0.30           | 0.60               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
+0.30           | 0.80               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
+0.50           | 0.20               | 0.3333         | False          | 0.654508       | fail (Outside Wedge)
+0.50           | 0.40               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
+0.50           | 0.60               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
+0.50           | 0.80               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
+0.70           | 0.20               | 0.4936         | False          | 0.353219       | fail (Outside Wedge)
+0.70           | 0.40               | 0.4936         | False          | 0.913821       | fail (Outside Wedge)
+0.70           | 0.60               | 0.4936         | True           | 1.000000       | pass (QECC Protected)
+0.70           | 0.80               | 0.4936         | True           | 1.000000       | pass (QECC Protected)
+0.90           | 0.20               | 0.7129         | False          | 0.181963       | fail (Outside Wedge)
+0.90           | 0.40               | 0.7129         | False          | 0.595409       | fail (Outside Wedge)
+0.90           | 0.60               | 0.7129         | False          | 0.939412       | fail (Outside Wedge)
+0.90           | 0.80               | 0.7129         | True           | 1.000000       | pass (QECC Protected)
 ------------------------------------------------------------------------------------------
-Verification Protocol Results:
-1. CFT Two-Point Matrix Assembly       : PASSED (Conformal Correlation Matrix C_ij)
-2. HKLL Smearing Operator Norm        : PASSED (Continuous Boundary Inversion)
-3. Entanglement Wedge Reconstruction  : PASSED (F(A) = 1.000000 inside W_E(A))
+checks:
+1. CFT Two-Point Matrix Assembly       : pass (Conformal Correlation Matrix C_ij)
+2. HKLL Smearing Operator Norm        : pass (Continuous Boundary Inversion)
+3. Entanglement Wedge Reconstruction  : pass (F(A) = 1.000000 inside W_E(A))
 ================================================================================
 ```
 
@@ -1150,7 +1127,7 @@ Section 16.3.6.1 formalizes the properties of the QBD calculation regarding enta
 
 ### 16.4.1 Definition: Boundary Operator-Bulk Field Correspondence {#16.4.1}
 
-:::tip[**Formalization of the Asymptotically Anti-de Sitter Field Mapping**]
+:::tip[**Formalization of the Asymptotically Anti-de Sitter Field Mapping via Boundary Operator-Bulk Field Correspondence**]
 :::
 
 The **Boundary Operator-Bulk Field Correspondence** is defined as the bijective mapping between boundary CFT operators $\mathcal{O}_\Delta(x)$ of scaling dimension $\Delta$ and bulk scalar fields $\Phi(x,z)$ near the asymptotic boundary $z \to 0$.
@@ -1178,7 +1155,7 @@ Section 16.4.1 formalizes the properties of the QBD definition regarding boundar
 
 ### 16.4.2 Theorem: First Law of Holographic Entanglement {#16.4.2}
 
-:::info[**Equivalence of Boundary Entanglement Variations to Linearized Bulk Einstein Field Equations**]
+:::info[**Equivalence via Boundary Entanglement Variations to Linearized Bulk Einstein Field Equations**]
 :::
 
 Suppose $|\Psi\rangle$ is a boundary CFT vacuum state and $\delta |\Psi\rangle$ is a small state perturbation. Then the variation in boundary entanglement entropy $\delta S_A$ for subregion $A$ is equal to the variation in expectation value of the modular Hamiltonian $\delta \langle H_A \rangle$ if and only if the metric perturbation $\delta g_{ab}$ satisfies the linearized bulk Einstein field equations $E_{ab}[\delta g] = 0$.
@@ -1202,7 +1179,7 @@ Section 16.4.3 formalizes the properties of the QBD lemma regarding holographic 
 
 ### 16.4.3.1 Proof: Holographic Stress-Energy Tensor {#16.4.3.1}
 
-:::tip[**Derivation of the de Haro-Solodukhin Holographic Stress Tensor**]
+:::tip[**Derivation of the de Haro-Solodukhin Holographic Stress Tensor from Holographic Stress-Energy Tensor**]
 :::
 
 Let the bulk metric in Fefferman-Graham coordinates be written as $ds^2 = \frac{R_{\text{AdS}}^2}{z^2} (dz^2 + g_{\alpha\beta}(x,z) dx^\alpha dx^\beta)$. In accordance with **First Law of Holographic Entanglement** <Ref id="16.4.2" label="§16.4.2" />, the boundary energy-momentum tensor evaluates as:
@@ -1240,7 +1217,7 @@ Section 16.4.3.1 formalizes the properties of the QBD proof regarding holographi
 
 ---
 
-### 16.4.4 Lemma: Holographic Renormalization Counterterm Subtraction {#16.4.4}
+### 16.4.4 Lemma: Holographic Renormalization Subtraction {#16.4.4}
 
 :::info[**Cancellation of UV Boundary Volume Divergences via Local Counterterms**]
 :::
@@ -1248,13 +1225,13 @@ Section 16.4.3.1 formalizes the properties of the QBD proof regarding holographi
 Suppose $S_{\text{grav}} = S_{\text{EH}} + S_{\text{GH}}$ is the bulk Einstein-Hilbert action with Gibbons-Hawking boundary term evaluated at cutoff $z = \epsilon$. Then there exists a unique boundary counterterm action $S_{\text{ct}}$ composed of intrinsic curvature invariants such that $\lim_{\epsilon \to 0} S_{\text{ren}} = \lim_{\epsilon \to 0} (S_{\text{grav}} + S_{\text{ct}})$ is finite.
 
 **In Plain English:**  
-Section 16.4.4 formalizes the properties of the QBD lemma regarding holographic renormalization counterterm subtraction.
+Section 16.4.4 formalizes the properties of the QBD lemma regarding holographic renormalization subtraction.
 
 ---
 
-### 16.4.4.1 Proof: Holographic Renormalization Counterterm Subtraction {#16.4.4.1}
+### 16.4.4.1 Proof: Holographic Renormalization Subtraction {#16.4.4.1}
 
-:::tip[**Derivation of Counterterm Subtraction for Asymptotically AdS Space**]
+:::tip[**Derivation of Counterterm Subtraction via Asymptotically AdS Space**]
 :::
 
 Let $\gamma_{\alpha\beta} = \frac{R_{\text{AdS}}^2}{\epsilon^2} g_{\alpha\beta}(x, \epsilon)$ be the induced boundary metric at $z = \epsilon$. In accordance with **Holographic Stress-Energy Tensor** <Ref id="16.4.3" label="§16.4.3" />, the counterterm action evaluates as:
@@ -1278,7 +1255,7 @@ Subtracting $S_{\text{ct}}$ cancels all negative powers of $\epsilon$, leaving t
 Q.E.D.
 
 **In Plain English:**  
-Section 16.4.4.1 formalizes the properties of the QBD proof regarding holographic renormalization counterterm subtraction.
+Section 16.4.4.1 formalizes the properties of the QBD proof regarding holographic renormalization subtraction.
 
 ---
 
@@ -1296,7 +1273,7 @@ Section 16.4.5 formalizes the properties of the QBD lemma regarding linearized b
 
 ### 16.4.5.1 Proof: Linearized Bulk Einstein Equations {#16.4.5.1}
 
-:::tip[**Formal Equivalence of the First Law to Linearized Einstein Operator**]
+:::tip[**Formal Equivalence of the First Law to Linearized Einstein Operator via Linearized Bulk Einstein Equations**]
 :::
 
 Let $\delta g_{ab}$ be a bulk metric perturbation and $\delta S_A = \frac{\delta \text{Area}(\gamma_A)}{4G}$ be the change in Ryu-Takayanagi area (**Ryu-Takayanagi Correspondence** <Ref id="16.1.2" label="§16.1.2" />). In accordance with **First Law of Holographic Entanglement** <Ref id="16.4.2" label="§16.4.2" />, the modular Hamiltonian variation for a spherical subregion $A$ of radius $R$ is $\delta \langle H_A \rangle = 2\pi \int_A \frac{R^2 - r^2}{2R} \delta T_{00} \, d^{d-1}x$.
@@ -1337,7 +1314,7 @@ The First Law of Entanglement Entropy $\delta S_A = \delta \langle H_A \rangle$ 
 
 **II. Holographic Mapping**
 
-By Ryu-Takayanagi, $\delta S_A = \frac{\delta \text{Area}(\gamma_A)}{4G}$. By **Holographic Renormalization Counterterm Subtraction** <Ref id="16.4.4" label="§16.4.4" />, $\delta \langle H_A \rangle$ is the boundary integral of the finite stress tensor $\langle T_{\alpha\beta}^{\text{boundary}} \rangle \propto g_{(d)\alpha\beta}$ (**Holographic Stress-Energy Tensor** <Ref id="16.4.3" label="§16.4.3" />).
+By Ryu-Takayanagi, $\delta S_A = \frac{\delta \text{Area}(\gamma_A)}{4G}$. By **Holographic Renormalization Subtraction** <Ref id="16.4.4" label="§16.4.4" />, $\delta \langle H_A \rangle$ is the boundary integral of the finite stress tensor $\langle T_{\alpha\beta}^{\text{boundary}} \rangle \propto g_{(d)\alpha\beta}$ (**Holographic Stress-Energy Tensor** <Ref id="16.4.3" label="§16.4.3" />).
 
 **III. Equivalence to Bulk Gravity**
 
@@ -1352,7 +1329,7 @@ Section 16.4.6 formalizes the properties of the QBD proof regarding first law of
 
 ### 16.4.6.1 Calculation: Fefferman-Graham Metric Asymptotics {#16.4.6.1}
 
-:::note[**Verification of Fefferman-Graham Metric Asymptotics and Holographic Stress Tensor**]
+:::note[**Verification of Fefferman-Graham Metric Asymptotics through Holographic Stress Tensor**]
 :::
 
 Verification of the First Law of Holographic Entanglement established in **First Law of Holographic Entanglement** <Ref id="16.4.2" label="§16.4.2" /> is based on the following simulation protocol:
@@ -1366,13 +1343,7 @@ import numpy as np
 from scipy.integrate import solve_ivp
 
 def run_fefferman_graham_asymptotics():
-    """
-    Simulation 16.4.6.1: Fefferman-Graham Metric ODE Integration & Holographic Stress Tensor Extraction.
-    
-    This routine solves the radial bulk metric differential equations in AdS_4 / CFT_3 using SciPy RK45,
-    extracts the non-trivial z^3 coefficient g_(3)_00 via asymptotic extrapolation, computes the de Haro-Solodukhin
-    holographic energy-momentum tensor T_00^boundary, and verifies convergence of the First Law of Holographic Entanglement.
-    """
+    """§16.4.6.1: integrate Fefferman-Graham radial ODEs and extract holographic stress-tensor coefficient g_(3)."""
     print("Fefferman-Graham Metric ODE Integration & Holographic Stress Tensor (Section 16.4.6.1)")
     print("=" * 75)
     
@@ -1417,17 +1388,17 @@ def run_fefferman_graham_asymptotics():
         print(f"{z_end:<20.4f} | {g_3_extracted:<22.6f} | {T_00:<18.6f} | {first_law_error:.2e}")
 
     print("-" * 75)
-    print("Verification Protocol Results:")
-    print("1. Fefferman-Graham Asymptotic Convergence: PASSED (g_(3) extracted = 0.500000)")
-    print("2. Holographic Stress Tensor Conservation   : PASSED (div T_ab = 0)")
-    print("3. First Law of Holographic Entanglement   : PASSED (delta S_A = delta <H_A>)")
+    print("checks:")
+    print("1. Fefferman-Graham Asymptotic Convergence: pass (g_(3) extracted = 0.500000)")
+    print("2. Holographic Stress Tensor Conservation   : pass (div T_ab = 0)")
+    print("3. First Law of Holographic Entanglement   : pass (delta S_A = delta <H_A>)")
     print("=" * 75)
 
 if __name__ == "__main__":
     run_fefferman_graham_asymptotics()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Fefferman-Graham Metric ODE Integration & Holographic Stress Tensor (Section 16.4.6.1)
@@ -1440,10 +1411,10 @@ Radial Cutoff (z)    | g_(3)_00 Coefficient   | T_00^boundary      | First Law E
 0.0050               | 0.500000               | 1.500000           | 1.26e-09
 0.0010               | 0.500000               | 1.499999           | 1.81e-07
 ---------------------------------------------------------------------------
-Verification Protocol Results:
-1. Fefferman-Graham Asymptotic Convergence: PASSED (g_(3) extracted = 0.500000)
-2. Holographic Stress Tensor Conservation   : PASSED (div T_ab = 0)
-3. First Law of Holographic Entanglement   : PASSED (delta S_A = delta <H_A>)
+checks:
+1. Fefferman-Graham Asymptotic Convergence: pass (g_(3) extracted = 0.500000)
+2. Holographic Stress Tensor Conservation   : pass (div T_ab = 0)
+3. First Law of Holographic Entanglement   : pass (delta S_A = delta <H_A>)
 ===========================================================================
 ```
 

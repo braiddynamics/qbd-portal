@@ -40,7 +40,7 @@ Section 23.1.2 formalizes the properties of the QBD theorem regarding combinator
 
 ### 23.1.3 Lemma: Integration Representation {#23.1.3}
 
-:::info[**Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
+:::info[**Convergence via Discrete Cycle Summation to Continuous Riemann Volume Integrals**]
 :::
 
 Given the conditions of **Cycle Summation**, **Riemann Limit**, and **Volume as Count**, the properties of Convergence of Discrete Cycle Summation to Continuous Riemann Volume Integrals are established.
@@ -73,7 +73,7 @@ Section 23.1.3.1 formalizes the properties of the QBD proof regarding integratio
 
 ### 23.1.4 Lemma: Discrete Differentiability {#23.1.4}
 
-:::info[**uniform Convergence of Discrete Graph Differences to Continuous Partial Derivatives**]
+:::info[**uniform Convergence via Discrete Graph Differences to Continuous Partial Derivatives**]
 :::
 
 Consider the discrete finite-difference operator $\Delta_h$ defined on the node coordinates along a causal trajectory. Then for any smooth function $f$, the difference operator $\Delta_h$ converges uniformly to the continuous partial derivative $\partial_x$ as the average edge length $h \to 0$.
@@ -175,7 +175,7 @@ Section 23.2.2 formalizes the properties of the QBD theorem regarding chiral vac
 
 ### 23.2.3 Lemma: Prebiotic Enantiomer Energy Bias {#23.2.3}
 
-:::info[**Derivation of Microscopic Energy Bias between Enantiomeric Braid Configurations**]
+:::info[**Derivation from Microscopic Energy Bias between Enantiomeric Braid Configurations**]
 :::
 
 Let the weak self-energy difference under right-handed weak isospin currents be evaluated using the **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />. Then the resulting energy bias $\Delta E = E_D - E_L$ between D- and L-enantiomers under **Topological Parity Violation** <Ref id="8.3.6" label="§8.3.6" /> constitutes a constant bias $\Delta E \sim 10^{-17} kT$ at room temperature.
@@ -284,7 +284,7 @@ Section 23.2.5 formalizes the properties of the QBD proof regarding chiral vacuu
 
 ### 23.3.1 Theorem: Chiral Triple Fusion {#23.3.1}
 
-:::info[**Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry**]
+:::info[**Convergence via Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry**]
 :::
 
 Given the conditions of **Braid Gauge Sectors**, **Triple Fusion Complexity**, and **E8 Emergence**, the properties of Convergence of Braid Gauge Sectors to Exceptional E8 Lie Algebra Symmetry are established.
@@ -338,7 +338,7 @@ Section 23.3.2.1 formalizes the properties of the QBD proof regarding unified br
 
 ### 23.3.3 Lemma: E8 Dimensional Limit {#23.3.3}
 
-:::info[**Convergence of the Coupled Symmetry Dimension to the Exceptional E8 Bound**]
+:::info[**Convergence of the Coupled Symmetry Dimension to the Exceptional E8 Bound via E8 Dimensional Limit**]
 :::
 
 Let $D(N)$ be the dimension of the coupled braid rewrite symmetry algebra as the number of sector-crossing nodes $N$ diverges. Then the dimension $D(N)$ converges asymptotically to the exceptional bound of 248, which constitutes the dimension of the exceptional Lie algebra $E_8$.

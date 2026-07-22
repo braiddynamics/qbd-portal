@@ -35,7 +35,7 @@ Section 19.1.2 formalizes the properties of the QBD theorem regarding right-hand
 
 ### 19.1.3 Lemma: Braid Nucleation Rate {#19.1.3}
 
-:::info[**Kinetics of Three-Ribbon Braid Defect Nucleation during Attractor Deceleration**]
+:::info[**Kinetics via Three-Ribbon Braid Defect Nucleation during Attractor Deceleration**]
 :::
 
 Let the local edge density $\rho(t)$ of the graph decay toward the stable attractor state $\rho^* \approx 0.037$ under the **Master Equation** <Ref id="5.2" label="§5.2" /> during the reheating phase. Then the nucleation rate $R_N(t)$ of three-ribbon defect motifs per unit volume is proportional to the local curvature deviation:
@@ -83,7 +83,7 @@ Section 19.1.3.1 formalizes the properties of the QBD proof regarding braid nucl
 
 ### 19.1.4 Lemma: Braid Combinatorial Dominance {#19.1.4}
 
-:::info[**Statistical Dominance of Minimally Twisted Three-Ribbon Braids in the Defect Spectrum**]
+:::info[**Statistical Dominance of Minimally Twisted Three-Ribbon Braids via the Defect Spectrum**]
 :::
 
 Assume the combinatorial multiplicity $\Omega(C)$ of topological defects of complexity $C$ increases exponentially as $\ln \Omega(C) \propto C$. If the energy cost is proportional to the crossing count, then the defect spectrum is dominated by the minimally twisted, color-neutral, charge-neutral 3-ribbon braid ($N_R$) in the low-energy limit of reheating.
@@ -316,7 +316,7 @@ Section 19.3.3.1 formalizes the properties of the QBD proof regarding proton wri
 
 ### 19.3.4 Lemma: Neutron Writhe Configuration {#19.3.4}
 
-:::info[**Topological Complexity Bounds of the Orthogonal Twist Neutron Configuration**]
+:::info[**Topological Complexity Bounds of the Orthogonal Twist Neutron Configuration via Neutron Writhe Configuration**]
 :::
 
 Suppose the total valence writhe of the neutron $w_n$ is determined by the sum of the constituent quark writhes $w(u) = +1/3$ and $w(d) = -2/3$ under **Electroweak Mixing** <Ref id="8.4" label="§8.4" />. Then the resulting non-zero total valence writhe ($w_n = -1$) induces a positive topological mass contribution to the neutron, establishing the positive mass difference.
@@ -435,7 +435,7 @@ Section 19.4.2.1 formalizes the properties of the QBD proof regarding weak inter
 
 ### 19.4.3 Lemma: Neutron Beta Decay Scaling {#19.4.3}
 
-:::info[**Topological Decay and Beta Decay Dynamics of Free Neutrons Prior to Nucleosynthesis**]
+:::info[**Topological Decay via Beta Decay Dynamics of Free Neutrons Prior to Nucleosynthesis**]
 :::
 
 Let $\tau_n$ represent the neutron lifetime determined by topological decay rewrite rules on the graph. Then the fraction of neutrons surviving until the onset of nucleosynthesis decays exponentially as $e^{-t/\tau_n}$, yielding a stable neutron-to-proton ratio before nuclear capture.

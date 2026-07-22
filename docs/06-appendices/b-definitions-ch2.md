@@ -50,7 +50,7 @@ Section 2.2.2 formalizes the properties of the QBD lemma regarding pathology of 
 
 ### 2.2.2.1 Proof: Pathology of Self-Loops {#2.2.2.1}
 
-:::tip[**Verification of the Cycle Definition for Length One**]
+:::tip[**Verification of the Cycle Definition via Length One**]
 :::
 
 **I. The Generalized Cycle Definition**
@@ -103,7 +103,7 @@ Section 2.2.3 formalizes the properties of the QBD lemma regarding thermodynamic
 
 ### 2.2.3.1 Proof: Thermodynamic Nullity {#2.2.3.1}
 
-:::tip[**Formal Derivation of Invariance in the Path Ensemble**]
+:::tip[**Formal Derivation of Invariance from the Path Ensemble**]
 :::
 
 **I. Definition of the Configuration Space**
@@ -155,7 +155,7 @@ Section 2.2.3.1 formalizes the properties of the QBD proof regarding thermodynam
 
 ### 2.2.4 Proof: Insufficiency of Antisymmetry {#2.2.4}
 
-:::tip[**Insufficiency of Antisymmetry** <Ref id="2.2.1" label="§2.2.1" />]
+:::tip[**Insufficiency via Antisymmetry** <Ref id="2.2.1" label="§2.2.1" />]
 :::
 
 **I. The Mathematical Condition**
@@ -257,7 +257,7 @@ Section 2.3.1 formalizes the properties of the QBD definition regarding axiom 2 
 
 ### 2.3.2 Theorem: Geometric Constructibility {#2.3.2}
 
-:::info[**Convergence of Constructible Graph States to Acyclic Unions of Geometric Quanta**]
+:::info[**Convergence of Constructible Graph States to Acyclic Unions via Geometric Quanta**]
 :::
 
 For any graph state $G$ undergoing a sequence of edge addition and deletion tasks, the resulting configuration $G'$ converges to a stable, acyclic union of geometric quanta. This convergence is bounded and well-founded under the lexicographic potential.
@@ -269,7 +269,7 @@ A 3-cycle represents the minimal closed loop of causality, constituting the fund
 
 ### 2.3.3 Lemma: Geometric Quantum {#2.3.3}
 
-:::info[**Minimal Closed Cycle Compatible with the Causal Primitive**]
+:::info[**Minimal Closed Cycle Compatible by the Causal Primitive**]
 :::
 
 Let the Geometric Quantum $\gamma$ denote the subgraph induced by the ordered triplet of vertices $(u, v, w)$ such that the edge set contains exactly $\{(u, v), (v, w), (w, u)\}$. Then this structure constitutes the minimal closed cycle compatible with the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />, excluding cycles of length 1 and 2, and the set of all $\gamma \subset G$ constitutes the basis for emergent spatial area.
@@ -326,7 +326,7 @@ Section 2.3.3.1 formalizes the properties of the QBD proof regarding geometric q
 
 ### 2.3.4 Lemma: Principle of Unique Causality (PUC) {#2.3.4}
 
-:::info[**Prohibition of Causal Redundancy under the Sparsity Constraint on Local Paths**]
+:::info[**Prohibition of Causal Redundancy via the Sparsity Constraint on Local Paths**]
 :::
 
 Let $\Pi_{\ell \le 2}(u, v)$ denote the set of all Simple Directed Paths originating at $u$ and terminating at $v$ with a path length strictly less than or equal to 2. The operation $\mathfrak{T}_{add}(u, v)$ defined in **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> is admissible if and only if the cardinality of this set is zero, and is excluded otherwise.
@@ -397,7 +397,7 @@ Section 2.3.5 formalizes the properties of the QBD lemma regarding lexicographic
 
 ### 2.3.5.1 Proof: Lexicographic Potential {#2.3.5.1}
 
-:::tip[**Verification of the Strict Ordering Properties of the Lexicographic Product**]
+:::tip[**Verification of the Strict Ordering Properties of the Lexicographic Product through Lexicographic Potential**]
 :::
 
 **I. Irreflexivity**
@@ -421,7 +421,7 @@ Section 2.3.5.1 formalizes the properties of the QBD proof regarding lexicograph
 
 ### 2.3.6 Lemma: Well-Foundedness {#2.3.6}
 
-:::info[**Termination of Strictly Decreasing Topological Processes**]
+:::info[**Termination via Strictly Decreasing Topological Processes**]
 :::
 
 Let $\Phi(G)$ denote the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> of a finite graph $G$. Then the codomain of $\Phi$ is well-ordered, and any trajectory $G_0, G_1, \dots$ satisfying the descent condition $\Phi(G_{t+1}) < \Phi(G_t)$ constitutes a finite sequence.
@@ -472,7 +472,7 @@ Section 2.3.6.1 formalizes the properties of the QBD proof regarding well-founde
 
 ### 2.3.7 Proof: Geometric Constructibility {#2.3.7}
 
-:::tip[**Synthesis of Local Uniqueness, Quantum Minimality, and Well-Foundedness showing Geometric Convergence**]
+:::tip[**Synthesis of Local Uniqueness, Quantum Minimality, via Well-Foundedness showing Geometric Convergence**]
 :::
 
 **I. Spatial Quantization**
@@ -508,7 +508,7 @@ Section 2.4.1 formalizes the properties of the QBD theorem regarding general cyc
 
 ### 2.4.2 Lemma: Confluence of the Constructor {#2.4.2}
 
-:::info[**Local Confluence of Overlapping Rewrite Operations**]
+:::info[**Local Confluence via Overlapping Rewrite Operations**]
 :::
 
 Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant paths $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
@@ -520,7 +520,7 @@ Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of
 
 ### 2.4.2.1 Proof: Confluence of the Constructor {#2.4.2.1}
 
-:::tip[**Formal Verification of Commutativity in Overlapping Updates**]
+:::tip[**Formal Verification of Commutativity through Overlapping Updates**]
 :::
 
 **I. Initial State with Overlap**
@@ -570,7 +570,7 @@ Section 2.4.2.1 formalizes the properties of the QBD proof regarding confluence 
 
 ### 2.4.3 Lemma: Chordlessness of Maximal Cycles {#2.4.3}
 
-:::info[**Topological Chordlessness of Maximal Cycles**]
+:::info[**Topological Chordlessness via Maximal Cycles**]
 :::
 
 Let $C$ denote a Simple Directed Cycle within $G$ possessing the maximal length $L = L_{\max} \ge 4$. Then $C$ constitutes a strictly **Chordless** cycle, satisfying the condition that no edges exist between non-adjacent vertices.
@@ -648,7 +648,7 @@ Section 2.4.3.1 formalizes the properties of the QBD proof regarding chordlessne
 
 ### 2.4.4 Lemma: Reduction via Deletion {#2.4.4}
 
-:::info[**Strict Descent of the Lexicographic Potential under Edge Deletion**]
+:::info[**Strict Descent of the Lexicographic Potential via Edge Deletion**]
 :::
 
 Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />, denoted $\Phi(G)$.. Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
@@ -703,7 +703,7 @@ Section 2.4.4.1 formalizes the properties of the QBD proof regarding reduction v
 
 ### 2.4.5 Lemma: Decrease in Parallel Updates {#2.4.5}
 
-:::info[**Net Reduction of Topological Complexity under Composite Updates**]
+:::info[**Net Reduction of Topological Complexity via Composite Updates**]
 :::
 
 Let $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$ denote a composite update step comprising edge addition and subsequent deletion. Then the operation satisfies the strict descent condition for the Lexicographic Potential, $\Phi(G_{next}) < \Phi(G)$.
@@ -715,7 +715,7 @@ Section 2.4.5 formalizes the properties of the QBD lemma regarding decrease in p
 
 ### 2.4.5.1 Proof: Decrease in Parallel Updates {#2.4.5.1}
 
-:::tip[**Verification of Net Descent across the Two-Phase Update Cycle**]
+:::tip[**Verification through Net Descent across the Two-Phase Update Cycle**]
 :::
 
 **I. Phase 1: Chordal Addition**
@@ -941,6 +941,7 @@ print(df.to_markdown(index=False))
 |                 11 |        11 |         3 |            14 |
 |                 12 |        12 |         3 |            15 |
 
+**Conclusion:**
 The tabulated data establishes a linear correlation between the initial cycle length $k$ and the addition count ($Ops_{add} = k$). The deletion count stabilizes at a constant value ($Ops_{del} = 3$) for all topologies with $k \ge 7$. This finite scaling confirms that the algorithmic reduction complexity is proportional to the defect size $O(k)$, validating the termination logic of the proof.
 
 **In Plain English:**  
@@ -1025,7 +1026,7 @@ Section 2.5.1 formalizes the properties of the QBD theorem regarding independenc
 
 ### 2.5.2 Lemma: Independence Case A {#2.5.2}
 
-:::info[**Existence of Causal Validity amidst Geometric Non-Constructibility**]
+:::info[**Existence via Causal Validity amidst Geometric Non-Constructibility**]
 :::
 
 Let $G_A$ denote a chordless directed cycle of length $4$ satisfying **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. This structure constitutes an irreducible configuration violating **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />.
@@ -1037,7 +1038,7 @@ Section 2.5.2 formalizes the properties of the QBD lemma regarding independence 
 
 ### 2.5.2.1 Proof: Independence Case A {#2.5.2.1}
 
-:::tip[**Formal Verification of the Chordless 4-Cycle Model against Axiomatic Criteria**]
+:::tip[**Formal Verification of the Chordless 4-Cycle Model against Axiomatic Criteria through Independence Case A**]
 :::
 
 **I. Model Construction**
@@ -1093,7 +1094,7 @@ Section 2.5.2.1 formalizes the properties of the QBD proof regarding independenc
 
 ### 2.5.3 Lemma: Independence Case B {#2.5.3}
 
-:::info[**Existence of Geometric Constructibility amidst Causal Invalidity**]
+:::info[**Existence via Geometric Constructibility amidst Causal Invalidity**]
 :::
 
 Let $G_B$ denote the disjoint union of a simple directed $3$-cycle and a reflexive vertex, satisfying **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. This configuration is excluded by the irreflexive constraint of **The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
@@ -1105,7 +1106,7 @@ Section 2.5.3 formalizes the properties of the QBD lemma regarding independence 
 
 ### 2.5.3.1 Proof: Independence Case B {#2.5.3.1}
 
-:::tip[**Formal Verification of the Disjoint Reflexive Model against Axiomatic Criteria**]
+:::tip[**Formal Verification of the Disjoint Reflexive Model against Axiomatic Criteria through Independence Case B**]
 :::
 
 **I. Model Construction**
@@ -1226,7 +1227,7 @@ Section 2.6.2 formalizes the properties of the QBD lemma regarding effective inf
 
 ### 2.6.2.1 Proof: Effective Influence {#2.6.2.1}
 
-:::tip[**Verification of the Transitive and Monotonic Properties of Effective Influence**]
+:::tip[**Verification of the Transitive through Monotonic Properties of Effective Influence**]
 :::
 
 **I. Simple Path Construction**
@@ -1260,7 +1261,7 @@ Section 2.6.2.1 formalizes the properties of the QBD proof regarding effective i
 
 ### 2.6.3 Lemma: Strict Timestamps {#2.6.3}
 
-:::info[**Necessity of Strictly Increasing Timestamps for Strict Partial Ordering**]
+:::info[**Necessity of Strictly Increasing Timestamps via Strict Partial Ordering**]
 :::
 
 Let the effective influence relation $\le$ constitute a strict partial order. Then the associated timestamp function $H$ satisfies the strict inequality condition $H(v_i, v_{i+1}) < H(v_{i+1}, v_{i+2})$ for all connected sequences of events.
@@ -1322,7 +1323,7 @@ Section 2.6.3.1 formalizes the properties of the QBD proof regarding strict time
 
 ### 2.6.4 Lemma: Failure of Reflexivity {#2.6.4}
 
-:::info[**Violation of Irreflexivity within the Geometric Quantum**]
+:::info[**Violation of Irreflexivity through the Geometric Quantum**]
 :::
 
 Let $v$ denote a vertex participating in a Geometric Quantum (Directed $3$-Cycle) with strictly increasing timestamps along the edges. Then the Effective Influence relation satisfies the reflexive condition $v \le v$, violating the global constraint of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
@@ -1464,7 +1465,7 @@ Section 2.6.6 formalizes the properties of the QBD lemma regarding causal acycli
 
 ### 2.6.6.1 Proof: Causal Acyclicity vs. Spatial Triangulation {#2.6.6.1}
 
-:::tip[**Topological Distinctions between Spatial Boundaries and Chronological Ordering**]
+:::tip[**Topological Distinctions between Spatial Boundaries via Chronological Ordering**]
 :::
 
 **I. Spatial vs. Temporal Adjacency**
@@ -1542,7 +1543,7 @@ Section 2.6.7 formalizes the properties of the QBD proof regarding inadequacy of
 
 ### 2.6.7.1 Corollary: Global Constraint {#2.6.7.1}
 
-:::info[**Necessity of an Explicit Global Constraint required for the Definition of Causal Unidirectionality**]
+:::info[**Necessity of an Explicit Global Constraint required via the Definition of Causal Unidirectionality**]
 :::
 
 A physical theory requires a well-defined causal ordering (a "direction of time"). The proven failure of Axioms 1 and 2 to entail such an order necessitates a third axiom. This axiom must explicitly forbid states containing causal paradoxes, acting as a global topological constraint.
@@ -1583,7 +1584,7 @@ Section 2.7.2 formalizes the properties of the QBD theorem regarding thermodynam
 
 ### 2.7.3 Lemma: Cycle Diameter Growth {#2.7.3}
 
-:::info[**Divergence of Cycle Diameters beyond Finite Computational Radii**]
+:::info[**Divergence via Cycle Diameters beyond Finite Computational Radii**]
 :::
 
 Let the graph evolve under the rewrite rule $\mathcal{R}$. Then the length of the longest simple cycle $L_{\max}$ diverges as a function of logical time, and for any finite computational radius $R$ there exists a critical time $t_{crit}$ such that $L_{\max} > 2R$ holds and local operators bounded by radius $R$ are topologically blind to the closure of global cycles.
@@ -1635,7 +1636,7 @@ Section 2.7.3.1 formalizes the properties of the QBD proof regarding cycle diame
 
 ### 2.7.4 Lemma: Local PUC Approximation {#2.7.4}
 
-:::info[**Exponential Suppression of Global Paradoxes under Local Search Constraints**]
+:::info[**Exponential Suppression of Global Paradoxes via Local Search Constraints**]
 :::
 
 Let $P_{err}(R)$ denote the probability that a paradox-inducing cycle of length $L > R$ evades detection by a local search of radius $R$ in the sparse graph regime. Then this probability satisfies the exponential decay bound $P_{err}(R) < e^{-R}$, and a search depth scaling as $R \sim \ln N$ constitutes a sufficient condition to suppress the probability of global paradox formation below any arbitrary fixed threshold.
@@ -1699,7 +1700,7 @@ Section 2.7.4.1 formalizes the properties of the QBD proof regarding local puc a
 
 ### 2.7.5 Lemma: Independence of Axiom 3 {#2.7.5}
 
-:::info[**Logical Independence of the Global Acyclicity Requirement**]
+:::info[**Logical Independence of the Global Acyclicity Requirement via Independence of Axiom 3**]
 :::
 
 Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The Directed Causal Link** and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. The timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> constitutes a valid graph under $\Sigma$ while violating Axiom 3, showing that Axiom 3 is logically independent.

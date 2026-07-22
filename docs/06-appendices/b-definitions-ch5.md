@@ -9,7 +9,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 5.1.1 Theorem: Extensive Entropy {#5.1.1}
 
-:::info[**Linear Scaling of the Configuration Space with Vertex Count**]
+:::info[**Linear Scaling of the Configuration Space by Vertex Count**]
 :::
 
 Let $\Omega_N$ denote the cardinality of the set of all axiomatically compliant causal graphs on $N$ vertices. The system exhibits **Extensive Entropy**, defined by the asymptotic scaling law of the total entropy $S(N) \equiv \ln \Omega_N$:
@@ -27,7 +27,7 @@ Section 5.1.1 formalizes the properties of the QBD theorem regarding extensive e
 
 ### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
 
-:::info[**Exponential Decay of Mutual Information within Disjoint Subregions**]
+:::info[**Exponential Decay of Mutual Information through Disjoint Subregions**]
 :::
 
 Let $R_A$ and $R_B$ be disjoint subregions of a causal graph $G_t$ at the homeostatic fixed point, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
@@ -85,7 +85,7 @@ Section 5.1.2.1 formalizes the properties of the QBD proof regarding spatial clu
 
 ### 5.1.3 Lemma: Correlation Decay {#5.1.3}
 
-:::info[**Decay of Geometric Covariance**]
+:::info[**Decay via Geometric Covariance**]
 :::
 
 Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> under acyclic effective causality. Under this configuration, the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$ as established by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
@@ -256,7 +256,7 @@ Section 5.1.4 formalizes the properties of the QBD proof regarding extensive ent
 
 ### 5.1.4.1 Calculation: Boundary Correction {#5.1.4.1}
 
-:::note[**Computational Verification of Subextensive Boundary Terms using Lattice Simulation**]
+:::note[**Computational Verification through Subextensive Boundary Terms using Lattice Simulation**]
 :::
 
 Computational verification of the subextensive boundary term and verification of the independence assumption established by **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" /> is based on the following protocols:
@@ -275,36 +275,36 @@ def boundary_fraction(N: int):
     side = int(np.sqrt(N))
     if side * side != N:
         raise ValueError("N must be a perfect square for a square toroidal grid.")
-    
+
     # Create toroidal 2D grid graph
     G = nx.grid_2d_graph(side, side, periodic=True)
     # Relabel nodes to linear indices 0..N-1
     mapping = {(i, j): i * side + j for i in range(side) for j in range(side)}
     G = nx.relabel_nodes(G, mapping)
-    
+
     total_edges = G.number_of_edges()
-    
+
     # Block size ≈ side // 4 (mimics correlation volume)
     block_side = max(2, side // 4)
     blocks_per_side = side // block_side
-    
+
     boundary_edges = 0
-    
+
     # Iterate over all edges and count those crossing block boundaries
     for u, v in G.edges():
         # Block coordinates of u and v
         block_u = (u // side // block_side, (u % side) // block_side)
         block_v = (v // side // block_side, (v % side) // block_side)
-        
+
         if block_u != block_v:
             boundary_edges += 1
-    
+
     # Each edge counted once (undirected graph)
     fraction = boundary_edges / total_edges if total_edges > 0 else 0.0
-    
+
     # Relative correction term (as in original)
     rel_correction = np.sqrt(N) * np.log(total_edges + 1) / (N * np.log(2) + 1e-10)
-    
+
     return {
         'N': N,
         'Boundary Edge Fraction': fraction,
@@ -317,12 +317,11 @@ results = [boundary_fraction(N) for N in sizes]
 
 df = pd.DataFrame(results)
 
-print("Subextensive Boundary Terms in 2D Toroidal Lattice")
 print("=" * 54)
 print(df.round(4).to_markdown(index=False, tablefmt="github"))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ======================================================
 |     N |   Boundary Edge Fraction |   Relative Correction |
@@ -338,6 +337,7 @@ print(df.round(4).to_markdown(index=False, tablefmt="github"))
 |  8100 |                   0.0556 |                0.1554 |
 | 10000 |                   0.04   |                0.1429 |
 
+**Conclusion:**
 The data confirms the hypothesis: the fraction of boundary edges drops from 50% at $N=100$ to merely 4% at $N=10,000$. This validates that for large systems, the vast majority of interactions are internal to the quasi-independent volumes. The vanishing boundary term justifies the additive approximation $S \approx \sum S_{local}$, confirming that the extensive bulk term dominates regardless of emergent dimension.
 
 **In Plain English:**  
@@ -347,7 +347,7 @@ Section 5.1.4.1 formalizes the properties of the QBD calculation regarding bound
 
 ### 5.2.1 Definition: Thermodynamic Fluxes {#5.2.1}
 
-:::tip[**Decomposition of the Net Topological Current into Creation and Deletion**]
+:::tip[**Decomposition of the Net Topological Current into Creation via Deletion**]
 :::
 
 The time evolution of the system is governed by the **Net Topological Current**, denoted $J_{net}$, acting on the population of Geometric Quanta $N_3(t)$. The current decomposes into two opposing **Thermodynamic Fluxes**:
@@ -366,7 +366,7 @@ Section 5.2.1 formalizes the properties of the QBD definition regarding thermody
 
 ### 5.2.2 Theorem: Macroscopic Evolution {#5.2.2}
 
-:::info[**Establishment of the Fundamental Equation of Geometrogenesis**]
+:::info[**Establishment of the Fundamental Equation of Geometrogenesis via Macroscopic Evolution**]
 :::
 
 Let the time evolution of the normalized 3-cycle density $\rho(t) = N_3(t) / N$ be governed by the nonlinear ordinary differential equation designated as the **Fundamental Equation of Geometrogenesis**:
@@ -388,7 +388,7 @@ Section 5.2.2 formalizes the properties of the QBD theorem regarding macroscopic
 
 ### 5.2.3 Lemma: Vacuum Permittivity ($\Lambda$) {#5.2.3}
 
-:::info[**Probability of Spontaneous Closure in the Vacuum**]
+:::info[**Probability of Spontaneous Closure via the Vacuum**]
 :::
 
 Assume the vacuum state constitutes a directed tree with zero geometric density $\rho = 0$, binary branching factor $b = 2$, and interaction volume $V_{\text{int}} = 6$. Then the vacuum permittivity $\Lambda$ satisfies the relation
@@ -520,7 +520,7 @@ Section 5.2.4.1 formalizes the properties of the QBD proof regarding geometric a
 
 ### 5.2.4.2 Calculation: Precursor Scaling Verification {#5.2.4.2}
 
-:::note[**Monte Carlo Validation of Quadratic Path Growth**]
+:::note[**Monte Carlo Validation via Quadratic Path Growth**]
 :::
 
 Computational verification of the combinatorial derivation established by **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4.1" label="§5.2.4.1" /> is based on the following protocols:
@@ -622,7 +622,7 @@ print(f"Measured Exponent:   {exponent:.4f} ± {std_err:.4f}")
 print(f"Theoretical Value:   2.0000")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Number of Nodes (N): 1000
@@ -631,6 +631,7 @@ Measured Exponent:   2.0008 ± 0.0022
 Theoretical Value:   2.0000
 ```
 
+**Conclusion:**
 The simulation yields a scaling exponent of $\approx 2.0008$, which is in close agreement with the theoretical prediction of 2. Crucially, the removal of internal closed paths eliminates the linear bias, confirming that the density of new opportunities for geometric growth arises purely from the quadratic interaction of existing structures. This validates the $9\rho^2$ autocatalytic term in the Master Equation.
 
 **In Plain English:**  
@@ -696,7 +697,7 @@ Section 5.2.5.1 formalizes the properties of the QBD proof regarding frictional 
 
 ### 5.2.5.2 Calculation: Friction Verification {#5.2.5.2}
 
-:::note[**Monte Carlo Validation of Steric Hindrance**]
+:::note[**Monte Carlo Validation via Steric Hindrance**]
 :::
 
 Computational verification of the exponential suppression factor established by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5.1" label="§5.2.5.1" /> is based on the following protocols:
@@ -783,7 +784,7 @@ print(f"Sample Size (N): {N} | Degree Limit (k): 3")
 print(f"Decay Constant (B): {B_fit:.4f}")
 print(f"Fit Amplitude (A):  {A_fit:.4f}")
 ```
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Sample Size (N): 500 | Degree Limit (k): 3
@@ -791,6 +792,7 @@ Decay Constant (B): 3.5788
 Fit Amplitude (A):  2.6981
 ```
 
+**Conclusion:**
 The simulation yields a clear exponential decay profile with a decay constant $B \approx 3.6$. This result empirically validates the Steric Hindrance model: as the graph fills, the probability of finding two compatible ports decreases exponentially rather than linearly. The high decay constant confirms that degree saturation acts as a potent frictional force, validating the suppression term $e^{-6\mu\rho}$ in the Master Equation.
 
 **In Plain English:**  
@@ -870,7 +872,7 @@ Section 5.2.6.1 formalizes the properties of the QBD proof regarding entropic & 
 
 ### 5.2.6.2 Calculation: Stress-Decay Verification {#5.2.6.2}
 
-:::note[**Monte Carlo Validation of Induced Instability**]
+:::note[**Monte Carlo Validation via Induced Instability**]
 :::
 
 Computational verification of the catalytic stress term established by **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6.1" label="§5.2.6.1" /> is based on the following protocols:
@@ -891,11 +893,11 @@ np.random.seed(42)
 
 def measure_deletion_flux(N, max_density_cycles=100):
     densities = []
-    flux_rates = [] 
-    
+    flux_rates = []
+
     # Simulation Rule: P_delete = P_base * (1 + lambda * local_density)
     lambda_sim = 0.5  # Catalytic coefficient (example value)
-    
+
     for cycles in range(10, max_density_cycles, 5):
         # Create Graph
         G = nx.Graph()
@@ -903,30 +905,30 @@ def measure_deletion_flux(N, max_density_cycles=100):
         for _ in range(cycles):
             triad = random.sample(range(N), 3)
             nx.add_cycle(G, triad)
-            
+
         rho = cycles / N
-        
+
         # Measure Deletion Flux
         deleted_count = 0
         edges = list(G.edges())
         if not edges:
             continue
-        
+
         for u, v in edges:
             # Local Stress Metric (Average Degree in Neighborhood)
-            k_local = (G.degree[u] + G.degree[v]) / 4.0 
+            k_local = (G.degree[u] + G.degree[v]) / 4.0
             p_base = 0.05
             p_stress = p_base * (lambda_sim * k_local)
-            
+
             if random.random() < (p_base + p_stress):
                 deleted_count += 1
-        
+
         # Normalized Flux = Deleted / Total Edges
-        normalized_flux = deleted_count / len(edges) 
-        
+        normalized_flux = deleted_count / len(edges)
+
         densities.append(rho)
         flux_rates.append(normalized_flux)
-        
+
     return densities, flux_rates
 
 # Simulation parameters
@@ -941,17 +943,18 @@ popt, pcov = curve_fit(linear_fit, densities, normalized_rates)
 intercept, slope = popt
 std_err_intercept, std_err_slope = np.sqrt(np.diag(pcov))
 
-# Formatted console output
-print(f"Base Rate (Intercept): {intercept:.4f} ± {std_err_intercept:.4f}")
-print(f"Catalytic Coeff (Slope): {slope:.4f} ± {std_err_slope:.4f}")
+# Formatted console output (point estimates; std err available via pcov)
+print(f"Base Rate (Intercept): {intercept:.4f}")
+print(f"Catalytic Coeff (Slope): {slope:.4f}")
 ```
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Base Rate (Intercept): 0.0643
 Catalytic Coeff (Slope): 0.0904
 ```
 
+**Conclusion:**
 The simulation yields a positive slope ($0.0904$) for the normalized decay rate. This confirms that the total deletion flux scales as $J \propto A\rho + B\rho^2$. The existence of this quadratic term validates the Catalytic Stress model: as the universe densifies, it becomes increasingly unstable, providing a necessary counter-force to the autocatalytic growth of geometry.
 
 **In Plain English:**  
@@ -1012,7 +1015,7 @@ Section 5.2.7 formalizes the properties of the QBD proof regarding macroscopic e
 
 ### 5.2.7.1 Calculation: Equation Verification {#5.2.7.1}
 
-:::note[**Exact Solution of the Geometrogenesis Equation**]
+:::note[**Exact Solution of the Geometrogenesis Equation via Equation Verification**]
 :::
 
 Computational verification of the equilibrium properties established in **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
@@ -1070,7 +1073,7 @@ jacobian = d_creation - d_deletion
 
 # Formatted console output
 print("=============================")
-print("QBD Master Equation Verification")
+print("§5.2.7.1 Master Equation")
 print("=============================")
 print(f"Constants:")
 print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.4f}")
@@ -1089,11 +1092,11 @@ print(f"  Jacobian J:           {jacobian:.4f}")
 print(f"  Status:               {'Stable Attractor' if jacobian < 0 else 'Unstable'}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 =============================
-QBD Master Equation Verification
+§5.2.7.1 Master Equation
 =============================
 Constants:
   Λ (Vacuum Drive):    0.0156
@@ -1112,6 +1115,7 @@ Stability Analysis:
   Status:               Stable Attractor
 ```
 
+**Conclusion:**
 The solver identifies a stable fixed point at $\rho^* \approx 0.037$. At this density, the creation flux ($0.02555$) exactly balances the deletion flux, resulting in a net rate of change effectively zero ($-3.47 \times 10^{-18}$). The negative Jacobian ($-0.3331$) confirms that this state is a stable attractor. This result verifies that the physical vacuum state emerges naturally from the interplay of entropic release and Gaussian stress damping.
 
 **In Plain English:**  
@@ -1121,7 +1125,7 @@ Section 5.2.7.1 formalizes the properties of the QBD calculation regarding equat
 
 ### 5.3.1 Definition: Region of Physical Viability {#5.3.1}
 
-:::tip[**Criteria for a Stable Geometric Vacuum**]
+:::tip[**Criteria through a Stable Geometric Vacuum**]
 :::
 
 Let $\rho(t)$ denote the time-dependent cycle density of a causal graph simulation. The **Region of Physical Viability (RPV)** is defined as the subset of the parameter space $(\mu, \lambda_{\text{cat}})$ wherein the ensemble average of the density evolution, denoted $\langle \rho(t) \rangle$, satisfies the conjunction of three invariant conditions:
@@ -1137,7 +1141,7 @@ Section 5.3.1 formalizes the properties of the QBD definition regarding region o
 
 ### 5.3.2 Definition: Parameter Sweep Protocol {#5.3.2}
 
-:::tip[**Monte Carlo Exploration of the Phase Space**]
+:::tip[**Monte Carlo Exploration of the Phase Space via Parameter Sweep Protocol**]
 :::
 
 The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the exhaustive Monte Carlo exploration of the $(\mu, \lambda_{\text{cat}})$ phase space. The protocol consists of four strictly ordered phases:
@@ -1230,7 +1234,7 @@ Section 5.3.3 formalizes the properties of the QBD calculation regarding phase s
 
 ### 5.3.4 Definition: Viability Channel {#5.3.4}
 
-:::tip[**Empirical Validation of the Axiomatic Constants**]
+:::tip[**Empirical Validation of the Axiomatic Constants via Viability Channel**]
 :::
 
 The **Viability Channel** (or Region of Physical Viability) forms a contiguous, oblique band in the $(\mu, \lambda_{\text{cat}})$ phase plane. The theoretical constants derived in Chapter 4 ($\mu \approx 0.40, \lambda_{\text{cat}} \approx 1.72$) reside precisely in the center of this channel.
@@ -1264,7 +1268,7 @@ Section 5.4.1 formalizes the properties of the QBD definition regarding transcen
 
 ### 5.4.2 Theorem: Vacuum Stability {#5.4.2}
 
-:::info[**Existence and attractor stability of the equilibrium density**]
+:::info[**Existence via attractor stability of the equilibrium density**]
 :::
 
 Assume the kinetic parameters satisfy the boundaries established by **Global Stability** <Ref id="5.4.3" label="§5.4.3" />. Furthermore, let the coefficients respect the **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />. Then a unique, non-zero equilibrium density $\rho^*$ exists and satisfies the transcendental balance equation, constituting a stable attractor with a strictly negative Jacobian eigenvalue $J < 0$.
@@ -1276,7 +1280,7 @@ Section 5.4.2 formalizes the properties of the QBD theorem regarding vacuum stab
 
 ### 5.4.3 Lemma: Global Stability {#5.4.3}
 
-:::info[**Existence and stability of the geometric equilibrium**]
+:::info[**Existence via stability of the geometric equilibrium**]
 :::
 
 Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exists a unique fixed point $\rho^* > 0$ satisfying the transcendental balance equation, and the equilibrium constitutes a global attractor with a strictly negative Jacobian $J \equiv \frac{d}{d\rho}(\dot{\rho})$ evaluated at $\rho^*$.
@@ -1344,7 +1348,7 @@ Section 5.4.3.1 formalizes the properties of the QBD proof regarding global stab
 
 ### 5.4.4 Lemma: Catalysis Bounds {#5.4.4}
 
-:::info[**Bounds on the catalysis coefficient**]
+:::info[**Bounds on the catalysis coefficient via Catalysis Bounds**]
 :::
 
 Let $\lambda_{\text{cat}}$ denote the catalysis coefficient governing the non-linear stress-induced deletion rate of geometric quanta. Then $\lambda_{\text{cat}}$ satisfies the strict inequality $0 < \lambda_{\text{cat}} < 3$, and the theoretical value $\lambda_{\text{cat}} = e - 1$ constitutes a stable configuration below this geometric stability limit.
@@ -1356,7 +1360,7 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 
 ### 5.4.4.1 Proof: Catalysis Bounds {#5.4.4.1}
 
-:::tip[**Coefficient Comparison of Non-Linear Flux Potentials**]
+:::tip[**Coefficient Comparison via Non-Linear Flux Potentials**]
 :::
 
 **I. Setup and Flux Potentials**
@@ -1511,7 +1515,7 @@ Section 5.4.6 formalizes the properties of the QBD type-theoretic regarding vali
 
 ### 5.5.1 Theorem: Geometric Well-Posedness {#5.5.1}
 
-:::info[**Satisfaction of Geometric Preconditions for Convergence to a Smooth Manifold**]
+:::info[**Satisfaction of Geometric Preconditions through Convergence to a Smooth Manifold**]
 :::
 
 Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> at equilibrium. This sequence satisfies the necessary geometric preconditions to converge to a smooth 4-dimensional pseudo-Riemannian manifold in the Gromov-Hausdorff limit. Specifically, the sequence exhibits uniform local geometry, uniform curvature bounds, statistical homogeneity, manifold-like combinatorics, dimensionality scaling, and Lorentzian convergence.
@@ -1523,7 +1527,7 @@ Section 5.5.1 formalizes the properties of the QBD theorem regarding geometric w
 
 ### 5.5.2 Lemma: Strict Locality {#5.5.2}
 
-:::info[**Restriction of Direct Edges to Undirected Distance Two**]
+:::info[**Restriction via Direct Edges to Undirected Distance Two**]
 :::
 
 Let $G_t = (V_t, E_t)$ denote a causal graph at the homeostatic fixed point, and let $\bar{d}(u, v)$ denote the undirected shortest-path distance between vertices $u$ and $v$. For any pair of vertices $u, v \in V_t$ where the undirected distance satisfies $\bar{d}(u, v) > 2$, the probability that a direct edge $(u, v)$ exists in $E_t$ is identically zero:
@@ -1607,7 +1611,7 @@ Section 5.5.2.1 formalizes the properties of the QBD proof regarding strict loca
 
 ### 5.5.3 Lemma: Bounded Degree {#5.5.3}
 
-:::info[**Uniform Bounding of Vertex Degrees in the Thermodynamic Limit**]
+:::info[**Uniform Bounding of Vertex Degrees via the Thermodynamic Limit**]
 :::
 
 Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$. In the thermodynamic limit, the mean degree converges to a stable, size-independent fixed point $\langle k \rangle^* = O(1)$, which guarantees that the maximum degree $D_{\max}$ is uniformly bounded by a constant independent of the system size $N$, preventing the formation of "hubs" that would violate the manifold topology.
@@ -1697,7 +1701,7 @@ Section 5.5.3.1 formalizes the properties of the QBD proof regarding bounded deg
 
 ### 5.5.4 Lemma: Uniform Curvature Bound {#5.5.4}
 
-:::info[**Bounding of Causal Ollivier-Ricci Curvature**]
+:::info[**Bounding via Causal Ollivier-Ricci Curvature**]
 :::
 
 There exists a constant $C_1 > 0$ such that for all graphs $G_t$ in the equilibrium sequence and for all edges $(u, v) \in E_t$, the Causal Ollivier-Ricci curvature is uniformly bounded:
@@ -1798,7 +1802,7 @@ Section 5.5.4.1 formalizes the properties of the QBD proof regarding uniform cur
 
 ### 5.5.5 Lemma: Correlation Decay {#5.5.5}
 
-:::info[**Exponential Decay of Geometric Covariance**]
+:::info[**Exponential Decay via Geometric Covariance**]
 :::
 
 Let $f(x)$ denote a local geometric observable at vertex $x$ depending solely on a fixed-radius neighborhood. For any vertices $x, y \in V_t$, there exist constants $C_{\text{cov}} > 0$ and $\gamma > 0$ such that the covariance decays exponentially with distance:
@@ -1895,7 +1899,7 @@ Section 5.5.5.1 formalizes the properties of the QBD proof regarding correlation
 
 ### 5.5.5.2 Corollary: Controlled Fluctuations {#5.5.5.2}
 
-:::info[**Vanishing Variance of Global Averages in the Thermodynamic Limit**]
+:::info[**Vanishing Variance of Global Averages via the Thermodynamic Limit**]
 :::
 
 The variance of the global average 3-cycle density $\langle \rho_3 \rangle$ over the vertex set $V_t$ satisfies the scaling law:
@@ -1982,7 +1986,7 @@ Section 5.5.5.3 formalizes the properties of the QBD proof regarding correlation
 
 ### 5.5.6 Lemma: Manifold Combinatorics {#5.5.6}
 
-:::info[**Exponential Suppression of Non-Manifold Cycles**]
+:::info[**Exponential Suppression of Non-Manifold Cycles through Gromov-Hausdorff Continuum Limits**]
 :::
 
 Let $C_k$ denote the random variable counting simple directed cycles of length $k$. Assuming the bounded degree $D_{\max}$ and uniform edge probability $p_{\max}$ satisfying $D_{\max} \cdot p_{\max} < 1$, the expected number of cycles of length $k$ is bounded by:
@@ -2000,7 +2004,7 @@ Section 5.5.6 formalizes the properties of the QBD lemma regarding manifold comb
 
 ### 5.5.6.1 Proof: Manifold Combinatorics {#5.5.6.1}
 
-:::tip[**Path Counting Bound for Cycle Exclusion**]
+:::tip[**Path Counting Bound via Cycle Exclusion**]
 :::
 
 **I. Combinatorial Cycle Enumeration**
@@ -2089,7 +2093,7 @@ Section 5.5.7 formalizes the properties of the QBD lemma regarding ahlfors 4-reg
 
 ### 5.5.7.1 Proof: Ahlfors 4-Regularity {#5.5.7.1}
 
-:::tip[**RG Beta Function Analysis of Dimensional Scaling**]
+:::tip[**RG Beta Function Analysis via Dimensional Scaling**]
 :::
 
 The proof employs dynamical Renormalization Group (RG) analysis to establish the Upper Critical Dimension of the phase transition governed via **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />.
@@ -2172,7 +2176,7 @@ Section 5.5.7.1 formalizes the properties of the QBD proof regarding ahlfors 4-r
 
 ### 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence {#5.5.8}
 
-:::info[**Convergence of Causal Diamond Volumes under the Causal Gromov-Hausdorff Limit**]
+:::info[**Convergence of Causal Diamond Volumes via the Causal Gromov-Hausdorff Limit**]
 :::
 
 Let $\{G_t = (V_t, \preceq_t)\}$ denote the sequence of causal graphs at the homeostatic fixed point, and let $N(u, v) = |\{w \in V_t \mid u \preceq_t w \preceq_t v\}|$ denote the discrete causal diamond event volume. Then the renormalized event volume satisfies the limit:

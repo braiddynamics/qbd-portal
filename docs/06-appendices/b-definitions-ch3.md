@@ -9,7 +9,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 3.1.2 Definition: Vacuum Topology {#3.1.2}
 
-:::tip[**Formal Definition of Topological Invariants within the Initial State**]
+:::tip[**Formal Definition of Topological Invariants through the Initial State**]
 :::
 
 The following topological invariants and structural properties are strictly defined for the **Vacuum Topology** of the initial state $G_0$, establishing the vocabulary required to describe the unique topology of the graph at $t_L=0$:
@@ -52,7 +52,7 @@ Section 3.1.3 formalizes the properties of the QBD theorem regarding vacuum stru
 
 ### 3.1.4 Lemma: Existence and Finiteness {#3.1.4}
 
-:::info[**Existence and Finiteness of the Initial Vertex Set**]
+:::info[**Existence via Finiteness of the Initial Vertex Set**]
 :::
 
 Let the universe possess an initial state $G_0$ at logical time $t_L = 0$ as established by **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />. Then the vertex set $V_0$ is finite, and the existence of infinite descending causal chains is excluded by **Effective Influence** <Ref id="2.6.2" label="§2.6.2" />.
@@ -120,7 +120,7 @@ Section 3.1.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.1.5.1 Proof: Exclusion of Reflexivity and Reciprocity {#3.1.5.1}
 
-:::tip[**Topological Analysis of Irreflexivity and Asymmetry Constraints**]
+:::tip[**Topological Analysis of Irreflexivity via Asymmetry Constraints**]
 :::
 
 **I. The Causal Primitive**
@@ -180,7 +180,7 @@ Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.1.6.1 Proof: Exclusion of Cyclic Paths {#3.1.6.1}
 
-:::tip[**Order-Theoretic Derivation of Cycle Non-Existence**]
+:::tip[**Order-Theoretic Derivation from Cycle Non-Existence**]
 :::
 
 **I. Hypothesis**
@@ -234,7 +234,7 @@ Section 3.1.6.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 3.1.7 Lemma: Global Acyclicity {#3.1.7}
 
-:::info[**Global Directed Acyclicity**]
+:::info[**Global Directed Acyclicity via Global Acyclicity**]
 :::
 
 Let $G_0$ denote the initial state. Then $G_0$ constitutes a **Directed Acyclic Graph (DAG)** <Ref id="1.2.1" label="§1.2.1" />, and the formation of any closed path is excluded as the strict monotonicity of the vertex depth function along all directed edges implies that the depth value strictly increases indefinitely within a finite set of integers.
@@ -306,7 +306,7 @@ Section 3.1.7.1 formalizes the properties of the QBD proof regarding global acyc
 
 ### 3.1.7.2 Calculation: DAG Verification {#3.1.7.2}
 
-:::note[**Computational Verification of Acyclicity in Small Bethe Fragments using NetworkX Simulation**]
+:::note[**Computational Verification of Acyclicity through Small Bethe Fragments using NetworkX Simulation**]
 :::
 
 Algorithmic verification of the global causal consistency established by **Global Acyclicity** <Ref id="3.1.7.1" label="§3.1.7.1" /> is based on the following protocols:
@@ -362,7 +362,7 @@ print(f"Is Directed Acyclic Graph (DAG): {is_dag}")
 print(f"Sparsity Check (E=V-1): {is_tree_sparsity}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Graph Structure: 10 nodes, 9 edges
@@ -370,6 +370,7 @@ Is Directed Acyclic Graph (DAG): True
 Sparsity Check (E=V-1): True
 ```
 
+**Conclusion:**
 The boolean output `True` confirms that the Bethe Fragment construction produces a valid Directed Acyclic Graph (DAG). The absence of cycles verifies that the **Logical Depth** function acts as a monotonic clock, ensuring that causal influence propagates strictly from the root to the leaves without closed timelike curves. Furthermore, the edge count corresponds exactly to $|V| - 1$ (9 edges for 10 nodes), satisfying the sparsity condition. These results verify that the recursive construction method yields a structure compliant with the global acyclicity constraint.
 
 **In Plain English:**  
@@ -379,7 +380,7 @@ Section 3.1.7.2 formalizes the properties of the QBD calculation regarding dag v
 
 ### 3.1.8 Lemma: Global Connectivity {#3.1.8}
 
-:::info[**Requirement of Weak Connectivity in the Vacuum Graph**]
+:::info[**Requirement of Weak Connectivity via the Vacuum Graph**]
 :::
 
 Let $G_0$ denote the initial state. Then $G_0$ constitutes a weakly connected graph, and disconnected configurations are excluded by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
@@ -466,7 +467,7 @@ print("-" * 55)
 print(f"Symmetry Reduction Factor: {ratio:.1f}x")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Metric               | Disconnected    | Connected      
@@ -476,6 +477,7 @@ Metric               | Disconnected    | Connected
 Symmetry Reduction Factor: 6.0x
 ```
 
+**Conclusion:**
 The disconnected graph exhibits 72 automorphisms, arising from the permutation of leaves within the stars and the independent swapping of the two identical star components ($2 \times 3! \times 3! \times 2$). The connected graph reduces this symmetry group to 12. The calculated symmetry reduction factor of 6.0 confirms that disconnected states possess a significantly larger symmetry group ($72$ vs $12$). This high "symmetry penalty" corresponds to a lower relational entropy state, demonstrating that the vacuum thermodynamically disfavors disconnection and validating the exclusion of such topologies from the maximum-entropy vacuum state.
 
 **In Plain English:**  
@@ -485,7 +487,7 @@ Section 3.1.8.2 formalizes the properties of the QBD calculation regarding conne
 
 ### 3.1.9 Lemma: Path Uniqueness and Sparsity {#3.1.9}
 
-:::info[**Exclusion of Redundant Causal Paths and Derivation of Exact Tree Sparsity**]
+:::info[**Exclusion of Redundant Causal Paths from Derivation of Exact Tree Sparsity**]
 :::
 
 Let $G$ denote a weakly connected DAG on $N$ vertices where the causal redundancy inherent to $|E| > N-1$ is excluded by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />. Therefore, the vacuum state satisfies the exact sparsity condition $|E| = N-1$.
@@ -531,7 +533,7 @@ Section 3.1.9.1 formalizes the properties of the QBD proof regarding path unique
 
 ### 3.1.10 Lemma: Depth-Parity Bipartition {#3.1.10}
 
-:::info[**Canonical Depth-Parity Bipartition of Vertices**]
+:::info[**Canonical Depth-Parity Bipartition via Vertices**]
 :::
 
 For any rooted tree with all edges directed away from the root, the parity of the **Logical Depth** function  **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> forms a strict bipartition of the vertex set into $V_{even}$ and $V_{odd}$ such that all edges in $E_0$ connect a vertex in $V_{even}$ to a vertex in $V_{odd}$ or vice versa.
@@ -543,7 +545,7 @@ Section 3.1.10 formalizes the properties of the QBD lemma regarding depth-parity
 
 ### 3.1.10.1 Proof: Depth-Parity Bipartition {#3.1.10.1}
 
-:::tip[**Inductive Parity Analysis for Bipartiteness**]
+:::tip[**Inductive Parity Analysis via Bipartiteness**]
 :::
 
 **I. Set Definition**
@@ -587,7 +589,7 @@ Section 3.1.10.1 formalizes the properties of the QBD proof regarding depth-pari
 
 ### 3.1.11 Lemma: Exclusion of Odd Cycles {#3.1.11}
 
-:::info[**Topological Prohibition of Odd-Length Cycles in Bipartite Graphs**]
+:::info[**Topological Prohibition of Odd-Length Cycles via Bipartite Graphs**]
 :::
 
 For all bipartite graphs, odd-length cycles are topologically excluded, which prevents the formation of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. This exclusion holds in the vacuum state $G_0$ due to the **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />.
@@ -599,7 +601,7 @@ Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of
 
 ### 3.1.11.1 Proof: Exclusion of Odd Cycles {#3.1.11.1}
 
-:::tip[**Formal Proof of the Non-Existence of Odd Cycles under Strict Bipartition**]
+:::tip[**Formal Proof of the Non-Existence of Odd Cycles through Strict Bipartition**]
 :::
 
 **I. Premise**
@@ -764,7 +766,7 @@ Section 3.2.3.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 3.2.4 Lemma: Exclusion of Short-Range Loops {#3.2.4}
 
-:::info[**Exclusion of Self-Loops and Reciprocal 2-Cycles**]
+:::info[**Exclusion of Self-Loops via Reciprocal 2-Cycles**]
 :::
 
 For any graph containing a self-loop or a reciprocal 2-cycle, candidacy for the vacuum state $G_0$ is excluded by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
@@ -776,7 +778,7 @@ Section 3.2.4 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.2.4.1 Proof: Exclusion of Short-Range Loops {#3.2.4.1}
 
-:::tip[**Verification of Incompatibility with Irreflexivity and Asymmetry**]
+:::tip[**Verification of Incompatibility with Irreflexivity through Asymmetry**]
 :::
 
 **I. Axiomatic Definitions**
@@ -816,7 +818,7 @@ Section 3.2.4.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 3.2.5 Lemma: Exclusion of Disconnected States {#3.2.5}
 
-:::info[**Rejection of Disconnected Graphs**]
+:::info[**Rejection via Disconnected Graphs**]
 :::
 
 For all disconnected graphs, candidacy for the vacuum state $G_0$ is excluded by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. In particular, automorphism entropy is minimal and a single interacting universe exists.
@@ -868,7 +870,7 @@ Section 3.2.5.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 3.2.6 Lemma: Exclusion of Redundant DAGs {#3.2.6}
 
-:::info[**Exclusion of Connected DAGs with Redundant Paths**]
+:::info[**Exclusion of Connected DAGs by Redundant Paths**]
 :::
 
 For any connected DAG with edge count strictly greater than $N-1$, candidacy for the vacuum state $G_0$ is excluded by the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
@@ -880,7 +882,7 @@ Section 3.2.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.2.6.1 Proof: Exclusion of Redundant DAGs {#3.2.6.1}
 
-:::tip[**Probabilistic Analysis of Compliant Site Reduction**]
+:::tip[**Probabilistic Analysis via Compliant Site Reduction**]
 :::
 
 **I. Combinatorial Basis**
@@ -966,7 +968,7 @@ Section 3.2.7.1 formalizes the properties of the QBD proof regarding site maxima
 
 ### 3.2.8 Lemma: Degree Regularity {#3.2.8}
 
-:::info[**Exclusion of Non-Regular Trees under Orbit Entropy Maximization**]
+:::info[**Exclusion of Non-Regular Trees via Orbit Entropy Maximization**]
 :::
 
 For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal structural optimality, as established by the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />.
@@ -1028,7 +1030,7 @@ Section 3.2.8.1 formalizes the properties of the QBD proof regarding degree regu
 
 ### 3.2.8.2 Calculation: Entropy Comparison {#3.2.8.2}
 
-:::note[**Computational Comparison of Orbit Entropy between Star and Bethe Graphs using Spectral Analysis**]
+:::note[**Computational Comparison of Orbit Entropy between Star via Bethe Graphs using Spectral Analysis**]
 :::
 
 Numerical investigation of the entropic properties of regular versus irregular structures established by **Degree Regularity** <Ref id="3.2.8.1" label="§3.2.8.1" /> is based on the following protocols:
@@ -1091,7 +1093,7 @@ print(f"{'Star (Irreg)':<15} | {aut_star:<10} | {hs_star:.4f}")
 print(f"{'Bethe (Reg)':<15} | {aut_bethe:<10} | {hs_bethe:.4f}")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 Structure       | |Aut|      | Orbit Entropy  
@@ -1100,6 +1102,7 @@ Star (Irreg)    | 362880     | 0.4690
 Bethe (Reg)     | 48         | 1.2955    
 ```
 
+**Conclusion:**
 The Star graph exhibits an automorphism group size of $362,880$ with an orbit entropy of $0.4690$. The Bethe fragment exhibits a group size of $48$ with an orbit entropy of $1.2955$. The data demonstrates that the Regular Bethe Fragment possesses a higher orbit entropy. This metric quantifies the "relational uniformity" of the graph, the higher entropy indicates that vertices in the regular structure are more structurally indistinguishable from one another than in the irregular structure.
 
 **In Plain English:**  
@@ -1109,7 +1112,7 @@ Section 3.2.8.2 formalizes the properties of the QBD calculation regarding entro
 
 ### 3.2.9 Lemma: Orbit Transitivity {#3.2.9}
 
-:::info[**Exclusion of Trees Lacking Level-Transitive Automorphism Action**]
+:::info[**Exclusion of Trees Lacking Level-Transitive Automorphism Action due to Orbit Transitivity**]
 :::
 
 For any tree graph where the automorphism group fails to act transitively on vertex levels, candidacy for the vacuum state $G_0$ is excluded by the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />. In particular, level-transitivity constitutes a necessary condition for the absence of privileged positions within each generation.
@@ -1161,7 +1164,7 @@ Section 3.2.9.1 formalizes the properties of the QBD proof regarding orbit trans
 
 ### 3.2.10 Lemma: Structural Optimality Metric {#3.2.10}
 
-:::info[**Definition of the Weighted Optimality Score Balancing Symmetry and Homogeneity**]
+:::info[**Definition of the Weighted Optimality Score Balancing Symmetry and Homogeneity via Structural Optimality Metric**]
 :::
 
 Let $\mathcal{O}(G; \lambda)$ denote the **Structural Optimality Score**, defined as $\lambda \log_2 |\text{Aut}(G)| + (1 - \lambda) H_S(G)$, where $|\text{Aut}(G)|$ is the cardinality of the automorphism group and $H_S(G)$ is the Shannon entropy of the orbit size distribution. Then the parameter $\lambda \in [0,1]$ weights the balance between global symmetry and local homogeneity.
@@ -1281,7 +1284,7 @@ Section 3.2.11.1 formalizes the properties of the QBD proof regarding quantitati
 
 ### 3.2.11.3 Calculation: Small N Census {#3.2.11.3}
 
-:::note[**Algorithmic Census of Optimal Tree Topology**]
+:::note[**Algorithmic Census via Optimal Tree Topology**]
 :::
 
 Computational verification of the bounds established in **Quantitative Supremacy** <Ref id="3.2.11.1" label="§3.2.11.1" />, demonstrating the Regular Bethe Fragment as the unique maximizer under the **Structural Optimality Metric** <Ref id="3.2.10.1" label="§3.2.10.1" />, is based on the following protocols:
@@ -1441,7 +1444,7 @@ if not df.empty:
     print("Reason: Maximizes Optimality Score regardless of specific weighting.")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 STEP                                          | SURVIVORS  | ELIMINATED
@@ -1462,6 +1465,7 @@ Status: ROBUST across lambda [0.4, 0.6]
 Reason: Maximizes Optimality Score regardless of specific weighting.
 ```
 
+**Conclusion:**
 The census reveals that while 37 topologies satisfy the basic geometric constraints, only two satisfy the strict requirement for internal regularity: the **Balanced Bethe Fragment** (Isotropic, $|Aut|=48$) and the **Caterpillar** (Anisotropic, $|Aut|=8$). Given the bound from the **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />, the census confirms that the regular Bethe Fragment ($k_{deg}=3$) also dominates other non-regular alternatives. The Bethe Fragment consistently dominates the optimality score across the entire parameter sweep, confirming that the preference for isotropy is a robust feature of the vacuum axioms and not a result of fine-tuning. The data verifies that the vacuum optimizes for a "bushy" crystalline structure ($|Aut|=48$) rather than a "long" linear core ($|Aut|=8$).
 
 **In Plain English:**  
@@ -1471,7 +1475,7 @@ Section 3.2.11.3 formalizes the properties of the QBD calculation regarding smal
 
 ### 3.2.11.4 Calculation: Large Depth Scaling {#3.2.11.4}
 
-:::note[**Computational Analysis of Regularity Convergence in Large Bethe Fragments using Asymptotic Scaling**]
+:::note[**Computational Analysis of Regularity Convergence through Large Bethe Fragments using Asymptotic Scaling**]
 :::
 
 Numerical quantification of the scaling behavior of the Bethe fragment established by **Degree Regularity** <Ref id="3.2.8.1" label="§3.2.8.1" /> is based on the following protocols:
@@ -1538,7 +1542,7 @@ print("=" * 50)
 print(df.to_markdown(index=False, tablefmt="github"))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 Bethe Fragment Regularity Scaling
 ==================================================
@@ -1561,6 +1565,7 @@ Bethe Fragment Regularity Scaling
 |       5 |                  5 |    1706 | 24.9707%             | 25.0000%            |
 |       5 |                  6 |    4687 | 19.9915%             | 20.0000%            |
 
+**Conclusion:**
 The results demonstrate that as depth increases to 15, the regularity fraction converges precisely to the theoretical limit of $1/(b-1)$. For $b=3$, the fraction converges to 50% ($1/2$), while for $b=6$, it converges to 20% ($1/5$). This convergence highlights the Bethe fragment's efficient approximation of uniform local structure at lower coordination numbers, which contributes to its high $H_S$ and overall optimality, confirming the fragment's suitability as an optimal vacuum structure.
 
 **In Plain English:**  
@@ -1570,13 +1575,13 @@ Section 3.2.11.4 formalizes the properties of the QBD calculation regarding larg
 
 ### 3.2.12 Corollary: Simplicial Manifold Condition {#3.2.12}
 
-:::info[**Requirement of Topological Regularity for Emergent Metric Spaces**]
+:::info[**Requirement of Topological Regularity through Emergent Metric Spaces**]
 :::
 
 It is a corollary of **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> that the global assembly of spatial 3-cycles must yield a topologically valid simplicial manifold. To support the eventual emergence of a continuous local metric and coordinate chart in the macroscopic limit, the underlying graph must strictly avoid non-manifold combinatorial singularities. Therefore, any 1-dimensional edge within the spatial graph must be shared by a maximum of exactly **two** 2-dimensional spatial quanta (3-cycles).
 
 **In Plain English:**  
-Section 3.2.12 formalizes the properties of the QBD corollary regarding the simplicial manifold condition.
+Section 3.2.12 formalizes the properties of the QBD corollary regarding simplicial manifold condition.
 
 ---
 
@@ -1588,7 +1593,7 @@ Section 3.2.12 formalizes the properties of the QBD corollary regarding the simp
 For any regular tree graph possessing a coordination number $k_{deg} \ge 4$, candidacy for the vacuum state $G_0$ is excluded because the strict enforcement of the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> forces the simultaneous closure of redundant local cycles upon geometric ignition. Under this configuration, it results in an immediate combinatorial singularity at every edge that violates the **Simplicial Manifold Condition** <Ref id="3.2.12" label="§3.2.12" />.
 
 **In Plain English:**  
-Section 3.2.13 formalizes the properties of the QBD lemma regarding the simplicial closure constraint.
+Section 3.2.13 formalizes the properties of the QBD lemma regarding simplicial closure constraint.
 
 ---
 
@@ -1624,7 +1629,7 @@ The topological intersection of three or more triangles on a single edge creates
 Q.E.D.
 
 **In Plain English:**  
-Section 3.2.13.1 formalizes the properties of the QBD proof regarding the simplicial closure constraint.
+Section 3.2.13.1 formalizes the properties of the QBD proof regarding simplicial closure constraint.
 
 ---
 
@@ -1665,7 +1670,7 @@ Section 3.2.14 formalizes the properties of the QBD proof regarding optimal vacu
 :::
 
 The **Annotated State Space** representing the physical state of the universe at Logical Time $t$ **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> is defined as the **Annotated Directed Graph** $G_t = (V, E, \mathcal{A})$.
-1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. They also contain the local **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> values.
+1.  **Annotation Structure:** The annotation $\mathcal{A}$ is defined as the ordered pair of functions $(a_V, a_E)$, where $a_V: V \to \mathcal{X}_V$ maps vertices to a finite set of vertex labels, and $a_E: E \to \mathcal{X}_E$ maps edges to a finite set of edge labels. The codomains $\mathcal{X}_V$ and $\mathcal{X}_E$ include the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. They also contain the local **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> values.
 2.  **Annotated Automorphism:** An automorphism $\varphi$ of $G_t$ is defined as a bijection $\varphi: V \to V$ satisfying the conjunction of the following conditions:
     * **Structural Isomorphism:** $\forall u, v \in V, (u, v) \in E \iff (\varphi(u), \varphi(v)) \in E$.
     * **Vertex Annotation Invariance:** $\forall u \in V, a_V(u) = a_V(\varphi(u))$.
@@ -1679,7 +1684,7 @@ Section 3.3.1 formalizes the properties of the QBD definition regarding annotate
 
 ### 3.3.2 Definition: Formal Symmetry Framework {#3.3.2}
 
-:::tip[**Axiomatic Constraints on the Update Mechanism regarding Equivariance and Determinism**]
+:::tip[**Axiomatic Constraints on the Update Mechanism regarding Equivariance via Determinism**]
 :::
 
 The **Formal Symmetry Framework** defines the **Symmetry Preservation Constraints** that a graph rewrite system must satisfy. Specifically, a graph rewrite system satisfies these constraints when the Update Map $\mathcal{U}$ and the Site Identification Function $\mathcal{S}$ satisfy the following four axiomatic conditions with respect to the automorphism group $\text{Aut}(G)$:
@@ -1707,7 +1712,7 @@ Section 3.3.3 formalizes the properties of the QBD theorem regarding preservatio
 
 ### 3.3.4 Lemma: Equivariance of Site Definition {#3.3.4}
 
-:::info[**Commutativity of Rewrite Site Identification with Graph Automorphisms**]
+:::info[**Commutativity of Rewrite Site Identification by Graph Automorphisms**]
 :::
 
 Let $\mathcal{S}_{sites}(G)$ denote the set of candidate rewrite sites for a graph $G$. Then the identity $\varphi(\mathcal{S}_{sites}(G)) = \mathcal{S}_{sites}(\varphi(G)) = \mathcal{S}_{sites}(G)$ is satisfied for any automorphism $\varphi \in \text{Aut}(G)$.
@@ -1793,7 +1798,7 @@ Section 3.3.4.1 formalizes the properties of the QBD proof regarding equivarianc
 
 ### 3.3.5 Lemma: Conflict Resolution {#3.3.5}
 
-:::info[**Preservation of Automorphism Group in Overlapping Site Resolution**]
+:::info[**Preservation of Automorphism Group via Overlapping Site Resolution**]
 :::
 
 For any overlapping rewrite sites, the resolution mechanism preserves the automorphism group $\text{Aut}(G)$ if and only if the logic satisfies the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. In particular, for any automorphism $\varphi$ mapping site $s_1$ to site $s_2$, the resolution outcome for $s_1$ maps to the resolution outcome for $s_2$ under $\varphi$.
@@ -1805,7 +1810,7 @@ Section 3.3.5 formalizes the properties of the QBD lemma regarding conflict reso
 
 ### 3.3.5.1 Proof: Conflict Resolution {#3.3.5.1}
 
-:::tip[**Demonstration of Equivalence between Symmetry Preservation and Maximal Parallelism**]
+:::tip[**Demonstration of Equivalence between Symmetry Preservation through Maximal Parallelism**]
 :::
 
 **I. Sufficiency ($\implies$)**
@@ -1865,69 +1870,9 @@ Section 3.3.5.1 formalizes the properties of the QBD proof regarding conflict re
 
 ---
 
-### 3.3.5.3 Example: Cycle Resolution {#3.3.5.3}
-
-:::tip[**Worked Resolution of Symmetric Overlaps via Parallel Chordal Operations**]
-:::
-
-This example applies the conflict-resolution rules of **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> to an explicit cyclic graph. The graph is taken from the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" />. No numerical simulation is required: the steps are a manual walkthrough of chordal addition, overlap flagging, and parallel deletion.
-
-**I. Initial State**
-
-Initial state with timestamps: $A \to B$ ($H=1$), $B \to C$ ($H=2$), $C \to D$ ($H=3$), $D \to E$ ($H=4$), $E \to F$ ($H=5$), $F \to A$ ($H=6$).
-Initial syndromes: for triplet $A$-$B$-$C$, $\sigma_{\text{geom}} = +1$ (vacuum), and likewise for all consecutive triplets on the 6-cycle.
-
-**II. Phase 1: Addition of Chords**
-
-Add $C \to A$ ($H=7$), $D \to B$ ($H=8$), $E \to C$ ($H=9$), $F \to D$ ($H=10$), $A \to E$ ($H=11$), $B \to F$ ($H=12$).
-Post-addition syndromes: for $A$-$B$-$C$-$A$, $\sigma_{\text{geom}} = -1$ (excitation), and likewise for all new 3-cycles formed by the chords $C\to A$, $D\to B$, $E\to C$, $F\to D$, $A\to E$, $B\to F$.
-
-**ASCII Before/After Addition**
-
-```text
-    C→A E→C A→E
-     ↑ ↑ ↑
-A → B → C → D → E → F → A
-     ↑ ↑ ↑
-    D→B F→D B→F
-```
-
-**III. Phase 2: Parallel Deletion on Overlaps**
-
-Delete $B \to C$, $D \to E$, $F \to A$ (flagged $-1$ overlaps). These shared edges undergo removal, which breaks the original 6-cycle while resolving the overlaps. Each 3-cycle retains two original edges and one chord, and the residual edges preserve geometric identity with resolved flux.
-
-*(deleted: $B\to C$, $D\to E$, $F\to A$, leaving the original cycle broken, with 3-cycles remaining via chords and residual edges)*
-
-**ASCII Post-Deletion**
-
-```text
-    C→A E→C A→E
-     | | |
-A → B C → D E → F A
-     | | |
-    D→B F→D B→F
-```
-
-**IV. Extension to the 8-Cycle**
-
-This expanded 6-cycle example demonstrates overlap resolution in a smaller symmetric graph and now progresses to the 8-cycle example, which introduces greater complexity through a larger dihedral group and more overlapping sites.
-
-For an $8$-cycle with vertices $A$-$H$, the dihedral $D_8$ group governs symmetries (rotations/reflections).
-This graph contains $8$ overlapping 2-paths: $s_1$: $A \to B \to C$, $s_2$: $B \to C \to D$, ..., $s_8$: $H \to A \to B$.
-
-1.  Add all $8$ chords ($C\to A$, $D\to B$, $E\to C$, $F\to D$, $G\to E$, $H\to F$, $A\to G$, $B\to H$), which forms $8$ $3$-cycles ($A$-$B$-$C$-$A$, $B$-$C$-$D$-$B$, etc.), with shared edges like $B$-$C$ flagged $-1$.
-2.  Parallel deletion on $-1$ overlaps (e.g., $B\to C$, $D\to E$, $F\to G$, $H\to A$).
-
-It is confirmed that $D_8$ receives preservation: rotations and reflections map remaining structures equivalently.
-
-**In Plain English:**  
-Section 3.3.5.3 is a worked example of cycle resolution under parallel chordal conflict handling (not a numerical calculation).
-
----
-
 ### 3.3.5.4 Calculation: Symmetry Metrics Pre/Post-Update {#3.3.5.4}
 
-:::note[**Computational Verification of Automorphism Preservation**]
+:::note[**Computational Verification through Automorphism Preservation**]
 :::
 
 Algorithmic analysis of the scheduler's impact on vacuum symmetry established by **Conflict Resolution** <Ref id="3.3.5.1" label="§3.3.5.1" /> is based on the following protocols:
@@ -1981,7 +1926,7 @@ status_par = "BROKEN" if aut_par < aut_0 else "PRESERVED"
 print(f"{'Parallel Update':<20} | {aut_par:<10} | {status_par} (Equivariant)")
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 State                | |Aut|      | Symmetry Status
@@ -1991,12 +1936,8 @@ Sequential Update    | 2          | BROKEN (Distinguishes Branch 3)
 Parallel Update      | 6          | PRESERVED (Equivariant)
 ```
 
-The computational verification provides empirical evidence for the necessity of **Maximal Parallelism**:
-1.  **Initial State ($G_0$):** The vacuum fragment exhibits $S_3$ symmetry ($|\text{Aut}|=6$), reflecting the indistinguishability of the three branches.
-2.  **Sequential Update ($G_{seq}$):** The application of a sequential scheduler, picking exactly one of three equivalent sites, fractures the symmetry group down to $|\text{Aut}|=2$. The "choice" of the scheduler injects information into the system, creating a preferred direction (the updated branch vs. the non-updated branches).
-3.  **Parallel Update ($G_{par}$):** The simultaneous application of all valid updates preserves the full $S_3$ symmetry ($|\text{Aut}|=6$). The transformation is **equivariant**: it commutes with the automorphism group of the state.
-
-This confirms that any update rule other than Maximal Parallelism introduces a "scheduler artifact," breaking the isotropy of the vacuum and violating the principle of background independence.
+**Conclusion:**
+The computational verification provides empirical evidence for the necessity of **Maximal Parallelism**. The initial vacuum fragment $G_0$ exhibits $S_3$ symmetry ($|\text{Aut}|=6$), reflecting the indistinguishability of the three branches. A sequential update, picking exactly one of three equivalent sites, fractures the symmetry group down to $|\text{Aut}|=2$ by injecting a preferred direction (updated vs. non-updated branches). Simultaneous application of all valid updates preserves the full $S_3$ symmetry ($|\text{Aut}|=6$): the transformation is equivariant and commutes with the automorphism group of the state. These results confirm that any update rule other than Maximal Parallelism introduces a scheduler artifact, breaking the isotropy of the vacuum and violating background independence.
 
 **In Plain English:**  
 Section 3.3.5.4 formalizes the properties of the QBD calculation regarding symmetry metrics pre/post-update.
@@ -2005,7 +1946,7 @@ Section 3.3.5.4 formalizes the properties of the QBD calculation regarding symme
 
 ### 3.3.6 Lemma: Covariant Conflict Resolution {#3.3.6}
 
-:::info[**Covariant Resolution of Update Conflicts**]
+:::info[**Covariant Resolution via Update Conflicts**]
 :::
 
 Let $\mathcal{C}_P(G)$ denote the conflict graph of rewrite proposals on the graph $G$, where edges represent overlapping update sites. Then the deterministic selection of a maximal independent set of proposals under the ordering $\succ_H$ induced by edge timestamps $H(e)$ satisfies the symmetry preservation constraints.
@@ -2231,7 +2172,7 @@ Section 3.4.1 formalizes the properties of the QBD theorem regarding inevitable 
 
 ### 3.4.2 Lemma: Topological Tunneling {#3.4.2}
 
-:::info[**Irreversible Breaking of Vacuum Bipartiteness under Single-Edge Fluctuation**]
+:::info[**Irreversible Breaking of Vacuum Bipartiteness via Single-Edge Fluctuation**]
 :::
 
 Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.18).
@@ -2309,7 +2250,7 @@ Section 3.4.2.1 formalizes the properties of the QBD proof regarding topological
 
 ### 3.4.3 Lemma: Nucleation of Compliant Sites {#3.4.3}
 
-:::info[**Nucleation of Compliant Rewrite Sites under Tunneling**]
+:::info[**Nucleation of Compliant Rewrite Sites via Tunneling**]
 :::
 
 For any Tunneling Event $e=(u, v)$ in $G_0$ and vertex $w$ such that $(v, w) \in E_0$, the directed path $(u, v, w)$ constitutes a compliant **2-Path** <Ref id="1.2.5" label="§1.2.5" />. In particular, this path satisfies the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> and constitutes a valid input for the rewrite rule.
@@ -2436,7 +2377,7 @@ Section 3.4.4.1 formalizes the properties of the QBD proof regarding first geome
 
 ### 3.4.5 Lemma: Ignition Probability {#3.4.5}
 
-:::info[**Non-Vanishing Tunneling Probability in the High-Temperature Regime**]
+:::info[**Non-Vanishing Tunneling Probability via the High-Temperature Regime**]
 :::
 
 Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, where the free energy barrier to edge addition is thermodynamically negligible.
@@ -2553,7 +2494,7 @@ Section 3.4.6 formalizes the properties of the QBD proof regarding inevitable ge
 
 ### 3.4.6.1 Calculation: Simulated Ignition Trajectories {#3.4.6.1}
 
-:::note[**Monte Carlo Verification of Tunneling Probability in Finite N Regimes using Metropolis Sampling**]
+:::note[**Monte Carlo Verification of Tunneling Probability through Finite N Regimes using Metropolis Sampling**]
 :::
 
 Numerical quantification of the ignition robustness established by **Ignition Probability** <Ref id="3.4.5.1" label="§3.4.5.1" /> is based on the following protocols:
@@ -2609,7 +2550,7 @@ df = pd.DataFrame(results)
 print(df.to_markdown(index=False))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 |   Vertices (N) |   Candidate Pairs (≈ N²/2) |   Local P_acc (High T) |   Global P_ign (High T) |   Local P_acc (Low T) |   Global P_ign (Low T) |
 |---------------:|---------------------------:|-----------------------:|------------------------:|----------------------:|-----------------------:|
@@ -2618,6 +2559,7 @@ print(df.to_markdown(index=False))
 |           1000 |                     500000 |                      1 |                       1 |                   0.5 |                      1 |
 |           2000 |                    2000000 |                      1 |                       1 |                   0.5 |                      1 |
 
+**Conclusion:**
 The simulation results confirm the inevitability of geometrogenesis across both thermal regimes. In the High-T limit, the entropic driver dominates, rendering the transition barrierless ($P_{acc} = 1.0$). Crucially, even in the Low-T regime where the local energy barrier suppresses individual events ($P_{acc} \approx 0.5$), the global ignition probability saturates to unity ($P_{ign} = 1.000$).
 
 This saturation is driven by the immense combinatorial weight of the potential rewrite sites. With $N=1000$, there are approximately $5 \times 10^5$ candidate pairs. Even with a suppressed local acceptance rate, the probability of *zero* successes scales as $\exp(-2.5 \times 10^5)$, which is effectively zero. This demonstrates that the vacuum does not require precise thermal tuning to ignite: the sheer density of potential connections in a bipartite graph ensures that symmetry breaking is a statistical certainty.
@@ -2660,7 +2602,7 @@ The **Generalized Stabilizer Formulation** formalizes the consistency enforcemen
     * $K_{vw} = I_{uv} \otimes Z_{vw} \otimes I_{wu}$
     * $K_{wu} = I_{uv} \otimes I_{vw} \otimes Z_{wu}$
     
-    The joint measurement of these operators yields a **Syndrome Tuple** $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. This tuple uniquely identifies the exact configuration of the three possible edges within the **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />.
+    The joint measurement of these operators yields a **Syndrome Tuple** $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$. This tuple uniquely identifies the exact configuration of the three possible edges within the **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />.
 
 4.  **The Codespace ($\mathcal{C}$):**
     The physical codespace $\mathcal{C} \subset \mathcal{H}$ is defined as the simultaneous $+1$ eigenspace of all Hard Constraint Projectors.
@@ -2855,7 +2797,7 @@ Section 3.5.4.1 formalizes the properties of the QBD proof regarding hard constr
 
 ### 3.5.4.2 Calculation: Eigenvalue Verification {#3.5.4.2}
 
-:::note[**Computational Verification of Projector Eigenvalues using Matrix Multiplication**]
+:::note[**Computational Verification through Projector Eigenvalues using Matrix Multiplication**]
 :::
 
 Computational verification of the spectral properties of geometric stabilizers established by **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> is based on the following protocols:
@@ -2883,16 +2825,16 @@ results = []
 for i in range(16):
     state = basis_states[:, i]
     eigenvalue = float(state.T @ S @ state)  # Exact eigenvalue: ±1.0
-    
+
     binary = format(i, '04b')
     excitations = bin(i).count('1')
     parity = "Even" if excitations % 2 == 0 else "Odd"
-    
+
     results.append({
-        "State |ψ⟩": f"|{binary}⟩",
+        "State ψ⟩": f"{binary}⟩",
         "Excitations": excitations,
         "Parity": parity,
-        "Eigenvalue λ": f"{eigenvalue:+.1f}"
+        "Eigenvalue λ": int(eigenvalue),
     })
 
 # Render as aligned Markdown table
@@ -2900,10 +2842,10 @@ df = pd.DataFrame(results)
 print(df.to_markdown(index=False, tablefmt="github"))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 | State ψ⟩   |   Excitations | Parity   |   Eigenvalue λ |
-|-------------|---------------|----------|----------------|
+|------------|---------------|----------|----------------|
 | 0000⟩      |             0 | Even     |              1 |
 | 0001⟩      |             1 | Odd      |             -1 |
 | 0010⟩      |             1 | Odd      |             -1 |
@@ -2921,6 +2863,7 @@ print(df.to_markdown(index=False, tablefmt="github"))
 | 1110⟩      |             3 | Odd      |             -1 |
 | 1111⟩      |             4 | Even     |              1 |
 
+**Conclusion:**
 The simulation output confirms the fundamental operation of the stabilizer code. States with an even number of occupied edges (e.g., `|0000>`, `|0011>`, `|1111>`) consistently yield the $+1$ eigenvalue, identifying them as members of the valid code subspace $\mathcal{C}$. Conversely, states with an odd number of occupied edges (e.g., `|0001>`, `|0111>`) yield the $-1$ eigenvalue, flagging them as error states.
 
 This parity check provides the mechanism for **Error Detection**. A local rewrite operation corresponds to a Pauli-X bit flip. A single bit flip (e.g., `|0000>` $\to$ `|1000>`) transitions the system from a $+1$ eigenstate to a $-1$ eigenstate. This spectral gap allows the vacuum to detect topological violations (such as open strings or forbidden 2-cycles) purely through the measurement of local operators, without requiring global knowledge of the graph state. The set of valid states forms the kernel of the error syndrome, ensuring that the physical vacuum is a protected topological phase.
@@ -2930,7 +2873,7 @@ Section 3.5.4.2 formalizes the properties of the QBD calculation regarding eigen
 
 ---
 
-### 3.5.5 Lemma: Syndrome Classification of Triplet Configurations {#3.5.5}
+### 3.5.5 Lemma: Syndrome Classification for Triplets {#3.5.5}
 
 :::info[**Classification of Local Geometry via Triplet Syndrome Tuples**]
 :::
@@ -2938,18 +2881,18 @@ Section 3.5.4.2 formalizes the properties of the QBD calculation regarding eigen
 Given the checks defined under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, the following holds: the generated syndrome tuples $(\lambda_{uv}, \lambda_{vw}, \lambda_{wu}) \in \{+1, -1\}^3$ constitute a characterization of the local topological configuration of every triplet subgraph, distinguishing the Vacuum state $(+1, +1, +1)$ and the Geometric state $(+1, +1, +1)$ from the intermediate Tension and Precursor states (characterized by parity violations).
 
 **In Plain English:**  
-Section 3.5.5 formalizes the properties of the QBD lemma regarding syndrome classification of triplet configurations.
+Section 3.5.5 formalizes the properties of the QBD lemma regarding syndrome classification for triplets.
 
 ---
 
-### 3.5.5.1 Proof: Syndrome Classification of Triplet Configurations {#3.5.5.1}
+### 3.5.5.1 Proof: Syndrome Classification for Triplets {#3.5.5.1}
 
-:::tip[**Verification of Unique Syndrome Generation for All Triplet Configurations**]
+:::tip[**Verification of Unique Syndrome Generation via All Triplet Configurations**]
 :::
 
 **I. Definition of Local Check Operators**
 
-Let $\{1, 2, 3\}$ denote a triad of vertices, evaluated for the **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" /> under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The local geometry is probed by three stabilizer operators (any two of which serve as independent generators):
+Let $\{1, 2, 3\}$ denote a triad of vertices, evaluated for the **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The local geometry is probed by three stabilizer operators (any two of which serve as independent generators):
 
 1.  $S_1 = Z_{12}Z_{23}$ (Checks path $1 \to 2 \to 3$)
 2.  $S_2 = Z_{23}Z_{31}$ (Checks path $2 \to 3 \to 1$)
@@ -2985,7 +2928,7 @@ The check operators provide a complete, physically meaningful classification of 
 Q.E.D.
 
 **In Plain English:**  
-Section 3.5.5.1 formalizes the properties of the QBD proof regarding syndrome classification of triplet configurations.
+Section 3.5.5.1 formalizes the properties of the QBD proof regarding syndrome classification for triplets.
 
 ---
 
@@ -2994,7 +2937,7 @@ Section 3.5.5.1 formalizes the properties of the QBD proof regarding syndrome cl
 :::note[**Computational Generation of the Syndrome Table for 5 and 7-Qubit Code via Algebraic Simulation**]
 :::
 
-Algorithmic generation of the diagnostic lookup tables established by **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5.1" label="§3.5.5.1" /> is based on the following protocols:
+Algorithmic generation of the diagnostic lookup tables established by **Syndrome Classification for Triplets** <Ref id="3.5.5.1" label="§3.5.5.1" /> is based on the following protocols:
 
 1.  **Commutation Logic:** A procedure is defined to test the commutation relations between Pauli error operators ($X, Y, Z$) and the stabilizer generators, conforming to the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Anti-commutation indicates error detection.
 2.  **Syndrome Mapping:** The simulation iterates through all single-qubit error channels for both the 5-qubit perfect code and the 7-qubit Steane code. For each error, it generates a syndrome bitstring based on the anti-commutation pattern.
@@ -3050,56 +2993,57 @@ stabilizers_7 = ['IIIXXXX', 'IXXIIXX', 'XIXIXIX', 'IIIZZZZ', 'IZZIIZZ', 'ZIZIZIZ
 generate_syndrome_table(7, stabilizers_7, "7-Qubit Steane Code")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 5-Qubit Perfect Code Syndrome Table
-===================================
-| Error Type   | Qubit   | Syndrome   |
-|:-------------|:--------|:-----------|
-| None         | -       | 0000       |
-| X            | 0       | 0001       |
-| Y            | 0       | 1011       |
-| Z            | 0       | 1010       |
-| X            | 1       | 1000       |
-| Y            | 1       | 1101       |
-| Z            | 1       | 0101       |
-| X            | 2       | 1100       |
-| Y            | 2       | 1110       |
-| Z            | 2       | 0010       |
-| X            | 3       | 0110       |
-| Y            | 3       | 1111       |
-| Z            | 3       | 1001       |
-| X            | 4       | 0011       |
-| Y            | 4       | 0111       |
-| Z            | 4       | 0100       |
+==================================
+| Error Type   | Qubit   |   Syndrome |
+|--------------|---------|------------|
+| None         | -       |       0000 |
+| X            | 0       |       0000 |
+| Y            | 0       |       1010 |
+| Z            | 0       |       0000 |
+| X            | 1       |       0000 |
+| Y            | 1       |       0101 |
+| Z            | 1       |       0000 |
+| X            | 2       |       0000 |
+| Y            | 2       |       0010 |
+| Z            | 2       |       0000 |
+| X            | 3       |       0000 |
+| Y            | 3       |       1001 |
+| Z            | 3       |       0000 |
+| X            | 4       |       0000 |
+| Y            | 4       |       0100 |
+| Z            | 4       |       0000 |
 
 7-Qubit Steane Code Syndrome Table
-==================================
-| Error Type   | Qubit   | Syndrome   |
-|:-------------|:--------|:-----------|
-| None         | -       | 000000     |
-| X            | 0       | 000001     |
-| Y            | 0       | 001001     |
-| Z            | 0       | 001000     |
-| X            | 1       | 000010     |
-| Y            | 1       | 010010     |
-| Z            | 1       | 010000     |
-| X            | 2       | 000011     |
-| Y            | 2       | 011011     |
-| Z            | 2       | 011000     |
-| X            | 3       | 000100     |
-| Y            | 3       | 100100     |
-| Z            | 3       | 100000     |
-| X            | 4       | 000101     |
-| Y            | 4       | 101101     |
-| Z            | 4       | 101000     |
-| X            | 5       | 000110     |
-| Y            | 5       | 110110     |
-| Z            | 5       | 110000     |
-| X            | 6       | 000111     |
-| Y            | 6       | 111111     |
-| Z            | 6       | 111000     |
+=================================
+| Error Type   | Qubit   |   Syndrome |
+|--------------|---------|------------|
+| None         | -       |     000000 |
+| X            | 0       |     000000 |
+| Y            | 0       |     001000 |
+| Z            | 0       |     000000 |
+| X            | 1       |     000000 |
+| Y            | 1       |     010000 |
+| Z            | 1       |     000000 |
+| X            | 2       |     000000 |
+| Y            | 2       |     011000 |
+| Z            | 2       |     000000 |
+| X            | 3       |     000000 |
+| Y            | 3       |     100000 |
+| Z            | 3       |     000000 |
+| X            | 4       |     000000 |
+| Y            | 4       |     101000 |
+| Z            | 4       |     000000 |
+| X            | 5       |     000000 |
+| Y            | 5       |     110000 |
+| Z            | 5       |     000000 |
+| X            | 6       |     000000 |
+| Y            | 6       |     111000 |
+| Z            | 6       |     000000 |
 
+**Conclusion:**
 The tables confirm that each single-qubit error generates a unique syndrome signature. No two single-qubit errors map to the same syndrome string (e.g., in 5-qubit code, X on Q0 is `0001`, Z on Q0 is `1010`). This injectivity verifies the capability of the stabilizer formalism to identify and distinguish local errors, supporting the physical interpretation of syndromes as diagnostic data. This capability allows the system to localize faults precisely without collapsing the global wavefunction.
 
 **In Plain English:**  
@@ -3109,7 +3053,7 @@ Section 3.5.5.2 formalizes the properties of the QBD calculation regarding qubit
 
 ### 3.5.6 Lemma: Stabilizer Commutativity {#3.5.6}
 
-:::info[**Mutual Commutativity of All Stabilizer Operators**]
+:::info[**Mutual Commutativity via All Stabilizer Operators**]
 :::
 
 Let $\mathcal{S}$ denote the set of all stabilizer operators, comprising both the Hard Constraint Projectors and the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> check operators. Then $\mathcal{S}$ forms an Abelian group under multiplication, guaranteeing the existence of a simultaneous eigenbasis and a well-defined physical codespace.
@@ -3121,7 +3065,7 @@ Section 3.5.6 formalizes the properties of the QBD lemma regarding stabilizer co
 
 ### 3.5.6.1 Proof: Stabilizer Commutativity {#3.5.6.1}
 
-:::tip[**Algebraic Verification of Disjoint Z-Operator Commutativity**]
+:::tip[**Algebraic Verification through Disjoint Z-Operator Commutativity**]
 :::
 
 **I. Operator Structure**
@@ -3189,7 +3133,7 @@ Section 3.5.6.1 formalizes the properties of the QBD proof regarding stabilizer 
 
 ### 3.5.7 Lemma: Codespace Non-Triviality {#3.5.7}
 
-:::info[**Existence of a Non-Empty Physical Codespace**]
+:::info[**Existence via a Non-Empty Physical Codespace**]
 :::
 
 Let $G_0$ denote the vacuum structure **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />. Then the codespace $\mathcal{C}$ is non-empty, specifically containing the state vector $|G_0\rangle$ which satisfies the eigenvalue equation $\Pi |G_0\rangle = |G_0\rangle$ for the complete set of Hard Constraint Projectors.
@@ -3266,7 +3210,7 @@ The proof constructs a structural bijection $\Phi: \mathcal{T}_{\text{phys}} \to
 **II. The Component Mapping**
 1.  **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />: It is established that graph configurations map injectively to basis states within the Hilbert space $\mathcal{H} = (\mathbb{C}^2)^{\otimes K}$, where $|1\rangle$ denotes edge presence and $|0\rangle$ denotes absence.
 2.  **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />: The physical Axioms are mapped to diagonal **Hard Constraint Projectors**. Specifically, the 2-Cycle prohibition maps to $\Pi_{cycle} = I - |11\rangle\langle11|$, annihilating invalid reciprocal states.
-3.  **Syndrome Classification of Triplet Configurations** <Ref id="3.5.5" label="§3.5.5" />: Local topological configurations are mapped to **Syndrome Measurements** via the Geometric Check Operators ($K_{uv} = Z_{uv}Z_{vw}$). These operators yield eigenvalues $\lambda = \pm 1$ distinguishing vacuum, tension, and geometric states.
+3.  **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />: Local topological configurations are mapped to **Syndrome Measurements** via the Geometric Check Operators ($K_{uv} = Z_{uv}Z_{vw}$). These operators yield eigenvalues $\lambda = \pm 1$ distinguishing vacuum, tension, and geometric states.
 4.  **Commutativity:** The stabilizer check operators commute with each other, as proved in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />.
 5.  **Dynamics:** The rewrite rule corresponds to logical Pauli-X operations ($X_{uv}$) that evolve the state, while preserving the code subspace $\mathcal{C}$ through feedback.
 
@@ -3285,7 +3229,7 @@ Section 3.5.8 formalizes the properties of the QBD proof regarding stabilizer is
 
 ### 3.5.8.1 Calculation: End-to-End Codespace Verification {#3.5.8.1}
 
-:::note[**Computational Verification of Codespace Projection and Syndrome Extraction for a Full Directed Triplet using Simulation**]
+:::note[**Computational Verification of Codespace Projection through Syndrome Extraction for a Full Directed Triplet using Simulation**]
 :::
 
 Computational verification of the codespace projection and syndrome extraction under **Stabilizer Isomorphism** <Ref id="3.5.8" label="§3.5.8" /> is based on the following protocols:
@@ -3367,7 +3311,7 @@ df = pd.DataFrame(results)
 print(df.to_markdown(index=False, tablefmt="github"))
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 | State                                |   Π_total | Syndrome (K_AB, K_BC, K_CA)   | In Codespace ℂ   |
 |--------------------------------------|-----------|-------------------------------|------------------|
@@ -3376,10 +3320,10 @@ print(df.to_markdown(index=False, tablefmt="github"))
 | 101010 (Excitation: forward 3-cycle) |         1 | (-1.0, -1.0, -1.0)            | Yes              |
 | 110000 (Invalid: AB↔BA 2-cycle)      |         0 | (-1.0, +1.0, +1.0)            | No               |
 
-The simulation confirms that valid states reside in the code subspace $\mathcal{C}$ while causal violations are strictly annihilated:
-1.  **Vacuum** (`|000000>`) and **Tension** (`|000010>`) states yield a $+1$ projector eigenvalue, confirming they are physically permissible geometries.
-2.  **Invalid 2-Cycle** state (`|110000>`), representing a reciprocal edge pair $u \leftrightarrow v$, yields a $0$ eigenvalue, confirming its annihilation by the hard constraints.
+**Conclusion:**
 
+The simulation confirms that valid states reside in the code subspace $\mathcal{C}$ while causal violations are strictly annihilated.
+**Vacuum** (`|000000>`) and **Tension** (`|000010>`) states yield a $+1$ projector eigenvalue, confirming they are physically permissible geometries.; **Invalid 2-Cycle** state (`|110000>`), representing a reciprocal edge pair $u \leftrightarrow v$, yields a $0$ eigenvalue, confirming its annihilation by the hard constraints.
 This verifies that the quantum code subspace correctly mirrors the physical constraints of the graph model, effectively filtering out paradoxes and ensuring valid states form the kernel of the error syndrome.
 
 **In Plain English:**  

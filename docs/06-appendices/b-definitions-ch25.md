@@ -47,7 +47,7 @@ Section 25.1.3 formalizes the properties of the QBD lemma regarding fine-tuning 
 
 ### 25.1.4 Lemma: Stabilizer Code Boundaries {#25.1.4}
 
-:::info[**Determination of the Threshold Theorem Boundaries for Spacetime Stabilizer Codes**]
+:::info[**Determination of the Threshold Theorem Boundaries via Spacetime Stabilizer Codes**]
 :::
 
 Let the threshold for topological stability in the pre-geometric graph be determined by the error rate $p$ of the local edge rewrites. If the noise rate exceeds the code threshold ($p \ge p_{th} \approx 0.109$), the stabilizer comonad cannot identify error syndromes faster than they accumulate, causing the logical codespace to decohere and leading to the collapse of the emergent spacetime manifold.
@@ -83,7 +83,7 @@ Section 25.2.2 formalizes the properties of the QBD lemma regarding loss of scal
 
 ### 25.2.3 Lemma: Graph Scale Inversion {#25.2.3}
 
-:::info[**Verification of Spectral Scale Inversion Duality under late-Aeon Cosmological Limits**]
+:::info[**Verification of Spectral Scale Inversion Duality through late-Aeon Cosmological Limits**]
 :::
 
 Given the spectral density of a graph of size $R$ satisfying the duality relation $R \leftrightarrow \ell_0^2/R$ established under **Spectral Invariance (T-Duality)** <Ref id="17.2.2" label="§17.2.2" />, let the comoving spatial distance $R \to \infty$ in the late aeon. Then the physical degrees of freedom map onto the microscopic limit $R' \to 0$, rendering the infinite-volume universe spectrally identical to the zero-volume Bethe vacuum state $G_0$, which is the initial state of the next aeon.

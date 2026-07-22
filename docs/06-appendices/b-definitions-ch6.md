@@ -24,7 +24,7 @@ Section 6.1.1 formalizes the properties of the QBD definition regarding local re
 
 ### 6.1.2 Theorem: Particle Necessity {#6.1.2}
 
-:::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
+:::info[**Requirement of Topological Non-Triviality through Dynamical Persistence**]
 :::
 
 Given any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$, its dynamical persistence against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy, specifically a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$), to occupy a protected logical state within the Quantum Error-Correcting Code codespace $\mathcal{C}$ (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />).
@@ -572,7 +572,7 @@ Section 6.1.3.3 formalizes the properties of the QBD type-theoretic regarding va
 
 ### 6.1.4 Lemma: Catalyzed Instability {#6.1.4}
 
-:::info[**Amplification of deletion probability at high local densities**]
+:::info[**Amplification via deletion probability at high local densities**]
 :::
 
 Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2" label="§5.2" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
@@ -584,7 +584,7 @@ Section 6.1.4 formalizes the properties of the QBD lemma regarding catalyzed ins
 
 ### 6.1.4.1 Proof: Catalyzed Instability {#6.1.4.1}
 
-:::tip[**Explicit evaluation of net topological current under the Fundamental Equation**]
+:::tip[**Explicit evaluation of net topological current via the Fundamental Equation**]
 :::
 
 **I. Initial State Parameters**
@@ -680,61 +680,60 @@ def simulate_cluster_decay():
     """
     Simulates the thermodynamic fate of a high-density excitation under the
     Fundamental Equation of Geometrogenesis.
-    
+
     Compares:
     - Trivial (reducible) cluster: Fully exposed to deletion flux.
     - Prime knot: Protected by topological barrier below core density.
-    
+
     Demonstrates architectural stability of non-trivial topology.
     """
-    
-    print("═" * 60)
+
     print("SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES")
     print("Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux")
-    print("═" * 60)
-    
+    print("=" * 60)
+
     # ── Physical Constants (Derived in Chapter 5) ─────────────────────
     Λ_vac     = 0.0156                          # Vacuum Permittivity
     μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
     λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
-    
+
     ρ_star    = 0.0370                          # Equilibrium vacuum density
     ρ_core    = 0.0820                          # Knot core threshold (topological lock)
-    
+
     # ── Simulation Parameters ────────────────────────────────────────
     initial_ρ = 0.50                            # High-stress fluctuation
     dt        = 0.10                            # Time step
     n_steps   = 600                             # Total steps (ensures convergence)
-    
+
     time = np.arange(0, n_steps * dt, dt)
-    
+
     # ── State Initialization ─────────────────────────────────────────
     ρ_trivial = np.zeros_like(time)
     ρ_knotted = np.zeros_like(time)
-    
+
     ρ_trivial[0] = initial_ρ
     ρ_knotted[0] = initial_ρ
-    
+
     # ── Flux Calculation Helper ──────────────────────────────────────
     def fluxes(ρ):
         j_in  = (Λ_vac + 9 * ρ**2) * np.exp(-6 * μ * ρ)
         j_out = 0.5 * ρ + 3 * λ_cat * ρ**2
         return j_in, j_out
-    
+
     # ── Time Evolution Loop ──────────────────────────────────────────
     for i in range(1, len(time)):
         # Trivial cluster: Full exposure
         j_in_t, j_out_t = fluxes(ρ_trivial[i-1])
         dρ_t = j_in_t - j_out_t
         ρ_trivial[i] = max(ρ_star, ρ_trivial[i-1] + dρ_t * dt)
-        
+
         # Prime knot: Deletion suppressed below core
         j_in_k, j_out_k = fluxes(ρ_knotted[i-1])
         if ρ_knotted[i-1] <= ρ_core:
             j_out_k = 0.0  # Topological barrier activates
         dρ_k = j_in_k - j_out_k
         ρ_knotted[i] = max(ρ_star, ρ_knotted[i-1] + dρ_k * dt)
-    
+
     # ── Results Output ───────────────────────────────────────────────
     print(f"\nPhysical Parameters:")
     print(f"  Vacuum Drive (Λ)      : {Λ_vac:.4f}")
@@ -748,7 +747,7 @@ def simulate_cluster_decay():
     print(f"  Trivial Cluster       : {ρ_trivial[-1]:.6f} → Vacuum Equilibrium")
     print(f"  Prime Knot            : {ρ_knotted[-1]:.6f} → Stable Particle")
     print("-" * 60)
-    
+
     # Initial flux balance verification
     j_in_0, j_out_0 = fluxes(initial_ρ)
     print(f"Initial Flux Balance (ρ = {initial_ρ}):")
@@ -759,12 +758,12 @@ if __name__ == "__main__":
     simulate_cluster_decay()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```
 SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES
 Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
-════════════════════════════════════════════════════════════
+============================================================
 
 Physical Parameters:
   Vacuum Drive (Λ)      : 0.0156
@@ -785,6 +784,7 @@ Initial Flux Balance (ρ = 0.5):
   Net Rate dρ/dt  : -0.8542 (Strong Decay)
 ```
 
+**Conclusion:**
 The simulation data indicates that at the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.54$ significantly exceeds the creation flux $J_{in} \approx 0.69$, yielding a net negative current of $-0.85$. This imbalance drives the trivial cluster to collapse to the vacuum fixed point $\rho^* \approx 0.037$. In contrast, the knotted cluster trajectory stabilizes at $\rho \approx 0.081$, confirming that the activation of the topological barrier arrests the decay process despite the high catalytic stress. These results validate the decay mechanics and the barrier efficiency described in the derivation.
 
 **In Plain English:**  
@@ -794,7 +794,7 @@ Section 6.1.4.2 formalizes the properties of the QBD calculation regarding clust
 
 ### 6.1.5 Lemma: Topological Barrier {#6.1.5}
 
-:::info[**Existence of topological protection barriers**]
+:::info[**Existence via topological protection barriers**]
 :::
 
 Let $\beta$ denote a prime knot configuration characterized by a non-trivial global invariant $\mathcal{I} \in \{w, L\}$, and let $\mathfrak{T}(G)$ be the legality-indexed **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> of the ambient graph. Then no finite sequence of tasks drawn from $\mathfrak{T}(G)$ and supported inside the causal horizon $R$ realizes a reducing Reidemeister word that sets $\mathcal{I}\to 0$, so $\mathcal{I}$ induces an infinite effective potential barrier against local reduction to the unknot.
@@ -908,7 +908,7 @@ Section 6.1.6 formalizes the properties of the QBD proof regarding particle nece
 
 ### 6.2.1 Definition: Tripartite Braid {#6.2.1}
 
-:::tip[**Structural Definition based on World-Tube Geometry and Group Generators**]
+:::tip[**Structural Definition based on World-Tube Geometry and Group Generators via Tripartite Braid**]
 :::
 
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
@@ -941,7 +941,7 @@ Section 6.2.2 formalizes the properties of the QBD theorem regarding tripartite 
 
 ### 6.2.3 Lemma: Exclusion of Unbraided Clusters (n=0) {#6.2.3}
 
-:::info[**Topological Triviality and Instability under Catalytic Deletion**]
+:::info[**Topological Triviality via Instability under Catalytic Deletion**]
 :::
 
 For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2" label="§5.2" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
@@ -1024,7 +1024,7 @@ Section 6.2.4 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 6.2.4.1 Proof: Exclusion of Single-Ribbon (n=1) {#6.2.4.1}
 
-:::tip[**Demonstration of Single-Ribbon Instability under Local Rewrite Operations**]
+:::tip[**Demonstration of Single-Ribbon Instability via Local Rewrite Operations**]
 :::
 
 **I. Inductive Framework**
@@ -1116,7 +1116,7 @@ Section 6.2.4.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 6.2.5 Lemma: Exclusion of Two-Ribbon (n=2) {#6.2.5}
 
-:::info[**Algebraic Insufficiency for Non-Abelian Gauge Generation**]
+:::info[**Algebraic Insufficiency via Non-Abelian Gauge Generation**]
 :::
 
 Consider a configuration consisting of exactly two braided ribbons ($n=2$), which is excluded from the set of fundamental fermions due to algebraic insufficiency. While this configuration proves topologically stable against local deletion, it generates a strictly **Abelian** algebra isomorphic to the integers $\mathbb{Z}$, rendering it insufficient to support the non-abelian gauge symmetries, specifically the self-interacting gluons of Quantum Chromodynamics, required for standard matter (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />).
@@ -1128,7 +1128,7 @@ Section 6.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 6.2.5.1 Proof: Exclusion of Two-Ribbon (n=2) {#6.2.5.1}
 
-:::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group and its 1D Representations**]
+:::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group as its 1D Representations**]
 :::
 
 **I. Generator Definition**
@@ -1207,7 +1207,7 @@ Section 6.2.5.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 6.2.6 Lemma: Exclusion of Higher Order Configurations (n > 3) {#6.2.6}
 
-:::info[**Entropic Suppression of Hyper-Complex Braids**]
+:::info[**Entropic Suppression of Hyper-Complex Braids from Chiral Braid Invariants**]
 :::
 
 Every configuration comprising $n > 3$ ribbons is physically excluded from the first-generation fermion spectrum due to thermodynamic improbability (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). These structures are suppressed by **Entropic Parsimony** due to their excess topological complexity ($C[\beta] > 3$) and by **Rank Mismatch** in specific cases, preventing their spontaneous formation in the equilibrium vacuum relative to the entropically favored $n=3$ ground state.
@@ -1219,7 +1219,7 @@ Section 6.2.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 6.2.6.1 Proof: Exclusion of Higher Order Configurations (n > 3) {#6.2.6.1}
 
-:::tip[**Formal Demonstration of Non-Minimality for Higher Rank Generators**]
+:::tip[**Formal Demonstration of Non-Minimality via Higher Rank Generators**]
 :::
 
 **I. Case $n=4$ Analysis**
@@ -1313,7 +1313,7 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 6.2.6.2 Calculation: Entropic Exclusion Simulation {#6.2.6.2}
 
-:::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
+:::note[**Computational Verification of Entropic Suppression via High-Order Braids**]
 :::
 
 Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
@@ -1333,10 +1333,10 @@ def simulate_entropic_exclusion():
     
     Continuous Boltzmann model: ΔC = 1 nat per ribbon, T = ln 2.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("ENTROPIC SUPPRESSION OF EXOTIC BRAIDS")
     print("Boltzmann Weights vs. Ribbon Count (n)")
-    print("═" * 70)
+    print("=" * 70)
     
     T_vac = np.log(2)                                 # ≈ 0.693147
     suppression_per_ribbon = np.exp(-1 / T_vac)        # ≈ 0.236928
@@ -1361,11 +1361,13 @@ if __name__ == "__main__":
     simulate_entropic_exclusion()
 ```
 
+**Simulation Results:**
+
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 ENTROPIC SUPPRESSION OF EXOTIC BRAIDS
 Boltzmann Weights vs. Ribbon Count (n)
-══════════════════════════════════════════════════════════════════════
+======================================================================
 
 Vacuum temperature T = ln 2 ≈ 0.693147
 Cost per ribbon ΔC = 1 nat
@@ -1381,6 +1383,7 @@ Results (normalized to n=3):
                 8             0.000737             1357.6
 ```
 
+**Conclusion:**
 The calculated relative abundances demonstrate an exponential decay in formation probability as the ribbon count increases. While the $n=3$ configuration represents the unitary baseline ($P=1.0$), the $n=4$ population is suppressed to approximately $23.6\%$ (a factor of 1 in 4.2). The suppression factor increases rapidly for higher orders, reaching 1 in 17.9 for $n=5$ and 1 in 1357 for $n=8$. This statistical distribution confirms that hyper-complex braids are thermodynamically rarefied relative to the tripartite ground state.
 
 **In Plain English:**  
@@ -1451,7 +1454,7 @@ Section 6.3.2 formalizes the properties of the QBD definition regarding torsiona
 
 ### 6.3.3 Theorem: Topological Mass {#6.3.3}
 
-:::info[**Proportionality of Inertial Mass to Complexity under Energy-Entropy Equivalence**]
+:::info[**Proportionality of Inertial Mass to Complexity via Energy-Entropy Equivalence**]
 :::
 
 Assume a stable prime braid $\beta$ possesses a **Topological Mass** $m$ defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ (**Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />). Under these conditions, the total mass satisfies $m \propto C_C + C_T$, which explicitly relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
@@ -1665,10 +1668,10 @@ def simulate_torsional_strain(max_writhe=15):
     Measures marginal and cumulative geometric quanta (N3) for successive writhe units.
     Demonstrates quadratic scaling of total complexity with writhe.
     """
-    print("═" * 60)
+    print("=" * 60)
     print("SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING")
     print("Accumulated Geometric Quanta vs. Writhe (w)")
-    print("═" * 60)
+    print("=" * 60)
     
     print(f"{'Writhe (w)':<12} {'Marginal Cost':<15} {'Cumulative N3':<15}")
     print("-" * 58)
@@ -1690,13 +1693,13 @@ if __name__ == "__main__":
     simulate_torsional_strain(max_writhe=15)
 ```
 
-Simulation Output:
+**Simulation Results:**
 
 ```text
-════════════════════════════════════════════════════════════
+============================================================
 SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING
 Accumulated Geometric Quanta vs. Writhe (w)
-════════════════════════════════════════════════════════════
+============================================================
 Writhe (w)   Marginal Cost   Cumulative N3
 ----------------------------------------------------------
 1            5               5
@@ -1720,6 +1723,7 @@ Final state (w = 15):
   Scaling: quadratic in writhe (w² dominant term)
 ```
 
+**Conclusion:**
 The simulation output establishes a linear relationship between the marginal path cost and the writhe, described by $Cost(w) = 2w + 3$. Consequently, the total integrated complexity follows the quadratic function $N(w) = w^2 + 4w$. The data point at $w=10$ yields a total complexity of $140$, matching the predicted quadratic value exactly. This result confirms that the linear increase in pathfinding difficulty integrates to a quadratic scaling of total inertial mass.
 
 **In Plain English:**  
@@ -1729,7 +1733,7 @@ Section 6.3.5.2 formalizes the properties of the QBD calculation regarding torsi
 
 ### 6.3.6 Lemma: Entropy Negligibility {#6.3.6}
 
-:::info[**Vanishing of Configurational Entropy within Protected Logical States**]
+:::info[**Vanishing of Configurational Entropy through Protected Logical States**]
 :::
 
 For all prime braids $\beta$ residing within the Quantum Error-Correcting Code codespace $\mathcal{C}$, the configurational entropy $S_{\text{braid}}$ is identically zero. This vanishing entropy restricts the configuration to a single logical microstate $|\beta\rangle$ with degeneracy $\Omega = 1$, implying that the Helmholtz Free Energy $F[\beta]$ and the Internal Energy $U[\beta]$ are strictly equal ($F[\beta] = U[\beta]$) and independent of the vacuum temperature $T$.
@@ -1741,7 +1745,7 @@ Section 6.3.6 formalizes the properties of the QBD lemma regarding entropy negli
 
 ### 6.3.6.1 Proof: Entropy Negligibility {#6.3.6.1}
 
-:::tip[**Demonstration of Zero Entropy for Unique Prime Braid Configurations**]
+:::tip[**Demonstration of Zero Entropy via Unique Prime Braid Configurations**]
 :::
 
 **I. State Definition**
@@ -1831,7 +1835,7 @@ Section 6.3.7 formalizes the properties of the QBD proof regarding topological m
 
 ### 6.4.1 Definition: Linear Barrier {#6.4.1}
 
-:::tip[**Computational Cost of Untying Prime Topologies requiring Global Coordination**]
+:::tip[**Computational Cost via Untying Prime Topologies requiring Global Coordination**]
 :::
 
 The **Linear Barrier** is defined as the minimum computational cost required to transform a prime knot configuration $\mathcal{K}$ into the trivial vacuum state $\emptyset$ via non-intersecting isotopies. This cost is characterized by the following computational properties:
@@ -1869,7 +1873,7 @@ Section 6.4.3 formalizes the properties of the QBD lemma regarding local horizon
 
 ### 6.4.3.1 Proof: Local Horizon {#6.4.3.1}
 
-:::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants**]
+:::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants through Local Horizon**]
 :::
 
 **I. Invariant Definition via Gauss Integral**
@@ -2017,7 +2021,7 @@ if __name__ == "__main__":
     horizon_test()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 --- HORIZON TEST: THE MYOPIC VACUUM ---
@@ -2031,6 +2035,7 @@ Final Progress:             2/50
 >>> RESULT: The Entropic Barrier prevents unwinding.
 ```
 
+**Conclusion:**
 The simulation results show that the Global Agent resolves the configuration in exactly 50 steps. In contrast, the Local Agent fails to reach the target within 20,000 steps, stalling at a progress distance of $2/50$. The random walk exhibits a statistical bias away from the solution due to the 2:1 ratio of incorrect to correct moves in the trivalent space. This entropic drift confirms that a myopic operator cannot traverse the linear solution path against the exponential growth of the configuration space.
 
 **In Plain English:**  
@@ -2040,7 +2045,7 @@ Section 6.4.3.2 formalizes the properties of the QBD calculation regarding horiz
 
 ### 6.4.4 Lemma: Global Unwinding Barrier {#6.4.4}
 
-:::info[**Linear Complexity of Untying demanding Isotopic Traversal**]
+:::info[**Linear Complexity via Untying demanding Isotopic Traversal**]
 :::
 
 Given a prime knot configuration, the topological transition to the unknot state via Isotopic Unwinding is constrained by a global energy barrier $E_{barrier}$ (**Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />). This barrier requires twist propagation over the full path length $L \propto N$ in a minimum sequence of steps linearly proportional to $N$, whose coordination cost exceeds the available free energy of local vacuum fluctuations and renders the transition thermodynamically forbidden.
@@ -2052,7 +2057,7 @@ Section 6.4.4 formalizes the properties of the QBD lemma regarding global unwind
 
 ### 6.4.4.1 Proof: Global Unwinding Barrier {#6.4.4.1}
 
-:::tip[**Formal Derivation of the O(N) Unwinding Cost**]
+:::tip[**Formal Derivation of the O(N) Unwinding Cost from Global Unwinding Barrier**]
 :::
 
 **I. Topological State Space**

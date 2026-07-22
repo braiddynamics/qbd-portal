@@ -21,7 +21,7 @@ Section 21.1.1 formalizes the properties of the QBD theorem regarding relic abun
 
 ### 21.1.2 Lemma: Braid Defect Topological Stability {#21.1.2}
 
-:::info[**Topological Protected Stability of Four-Strand Braid Defects under Local Rewrite Operations**]
+:::info[**Topological Protected Stability of Four-Strand Braid Defects via Local Rewrite Operations**]
 :::
 
 Let $B_4$ represent a localized 4-strand braid defect arising during the dimensional phase transition where graph segments fail to simplify into standard 3-strand configurations ($B_3$). Then there exist no graph-local rewrite rules that can reduce or map $B_4$ into standard SM braids ($B_3$) without breaking graph strands.
@@ -57,7 +57,7 @@ Section 21.1.2.1 formalizes the properties of the QBD proof regarding braid defe
 
 ### 21.1.3 Lemma: Collisionless Gauge Neutrality {#21.1.3}
 
-:::info[**Suppression of Electromagnetic and Strong Cross-Sections in Sterile Braid Motifs**]
+:::info[**Suppression of Electromagnetic due to Strong Cross-Sections in Sterile Braid Motifs**]
 :::
 
 Given the conditions of **Gauge Isolation**, **Topological Sterility**, and **Gravitational Coupling**, the properties of Suppression of Electromagnetic and Strong Cross-Sections in Sterile Braid Motifs are established.
@@ -264,7 +264,7 @@ Section 21.3.2 formalizes the properties of the QBD theorem regarding electromag
 
 ### 21.3.3 Lemma: Pion Production Suppression {#21.3.3}
 
-:::info[**Suppression of Pion Production Resonances in Sterile Braid Defects**]
+:::info[**Suppression of Pion Production Resonances due to Sterile Braid Defects**]
 :::
 
 Consider a sterile four-strand braid defect $B_4$ carrying zero Standard Model gauge coupling under **Collisionless Gauge Neutrality** <Ref id="21.1.3" label="§21.1.3" />. Then the resonant pion production reaction $p + \gamma_{CMB} \to \Delta^+ \to p + \pi^0$ is topologically suppressed, completely eliminating GZK attenuation.
@@ -308,7 +308,7 @@ Section 21.3.3.1 formalizes the properties of the QBD proof regarding pion produ
 
 ### 21.3.4 Lemma: Relic Mean Free Path {#21.3.4}
 
-:::info[**Derivation of Infinite Mean Free Path for Sterile Relics in the Cosmic Microwave Background**]
+:::info[**Derivation of Infinite Mean Free Path for Sterile Relics from the Cosmic Microwave Background**]
 :::
 
 For any cosmic ray in the CMB photon bath, let the mean free path $\lambda$ be given by the inverse product of the target density and cross-section: $\lambda = 1 / (\sigma n_{\gamma})$. If the interaction cross-section of a sterile relic vanishes ($\sigma = 0$), then the comoving mean free path is infinite.

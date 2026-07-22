@@ -9,7 +9,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 20.1.1 Theorem: Blackbody Equilibrium {#20.1.1}
 
-:::info[**Ergodicity of Primordial Plasma under Highly Frequent Graph Updates**]
+:::info[**Ergodicity of Primordial Plasma via Highly Frequent Graph Updates**]
 :::
 
 Given the conditions of **Primordial Scattering**, **Ergodioc Mixing**, **Thermalization**, and **Fossilized Equilibrium**, the properties of Ergodicity of Primordial Plasma under Highly Frequent Graph Updates are established.
@@ -58,7 +58,7 @@ Section 20.1.2.1 formalizes the properties of the QBD proof regarding sachs-wolf
 
 ### 20.1.3 Lemma: Recombination Threshold {#20.1.3}
 
-:::info[**Determination of the Critical Temperature and Density Scale for Braid Recombination**]
+:::info[**Determination of the Critical Temperature via Density Scale for Braid Recombination**]
 :::
 
 If the temperature of the early universe is below the critical recombination threshold $T_{rec} \approx 0.3$ eV, where the rate of composite atomic formation exceeds the photo-dissociation rate, then the Standard Model fermion braids decouple from the photon motifs, which allows the photon motifs to propagate unscattered.
@@ -128,7 +128,7 @@ Section 20.1.4 formalizes the properties of the QBD proof regarding blackbody eq
 
 ### 20.2.1 Theorem: Angular Power Spectrum Peaks {#20.2.1}
 
-:::info[**Prediction of Acoustic Peak Locations in the Cosmic Microwave Background Angular Power Spectrum**]
+:::info[**Prediction of Acoustic Peak Locations via the Cosmic Microwave Background Angular Power Spectrum**]
 :::
 
 Given the conditions of **Sound Horizon scale**, **Braid Density Fluctuations**, and **Acoustic Harmonics**, the properties of Prediction of Acoustic Peak Locations in the Cosmic Microwave Background Angular Power Spectrum are established.

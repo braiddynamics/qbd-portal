@@ -9,7 +9,7 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 7.1.1 Definition: Spin Operator {#7.1.1}
 
-:::tip[**Parity Measurement of Rung Excitations using Z-Product Stabilizers**]
+:::tip[**Parity Measurement via Rung Excitations using Z-Product Stabilizers**]
 :::
 
 The **Spin Operator**, denoted $L_S$, is defined strictly as the global stabilizer check operator acting upon the transverse rung edges of a framed ribbon configuration within the causal graph $G_t$. The operator is constituted by the tensor product of Pauli-Z operators assigned to the set of rung edges $\{e_i\}$, formulated as $L_S = \prod_{i=1}^n Z_{e_i}$. This operator functions as a parity measurement device on the computational basis of the edge qubits, possessing the following invariant properties:
@@ -134,7 +134,7 @@ Section 7.1.3.1 formalizes the properties of the QBD proof regarding unitary twi
 
 ### 7.1.4 Lemma: Exchange-Rotation Equivalence {#7.1.4}
 
-:::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]
+:::info[**Isotopy via Particle Exchange to Self-Rotation using Reidemeister Moves**]
 :::
 
 Every physical braid exchange operation $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon, established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> that continuously deforms the exchange path into a self-twist path. Under this isotopy, the deformation sequence preserves the global linking invariants throughout the transformation and enforces the strict equality of the exchange phase $\phi_{exch}$ and the self-rotation phase $\phi_{spin}$ to extend the spin-statistics connection to the discrete causal graph substrate.
@@ -219,7 +219,7 @@ Section 7.1.4.1 formalizes the properties of the QBD proof regarding exchange-ro
 
 ### 7.1.5 Proof: Topological Statistics {#7.1.5}
 
-:::tip[**Formal Verification of the Minus-One Exchange Phase for Half-Twisted Braids**]
+:::tip[**Formal Verification of the Minus-One Exchange Phase via Half-Twisted Braids**]
 :::
 
 **I. System Definition**
@@ -312,7 +312,7 @@ Section 7.1.5 formalizes the properties of the QBD proof regarding topological s
 
 ### 7.2.1 Theorem: Pauli Exclusion Principle {#7.2.1}
 
-:::info[**Prohibition of Identical Fermion Occupancy under Causal Graph Axioms**]
+:::info[**Prohibition of Identical Fermion Occupancy via Causal Graph Axioms**]
 :::
 
 Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
@@ -325,7 +325,7 @@ Section 7.2.1 formalizes the properties of the QBD theorem regarding pauli exclu
 
 ### 7.2.2 Lemma: Binary State Principle {#7.2.2}
 
-:::info[**Restriction of Edge Occupancy to Single-Bit Capacity**]
+:::info[**Restriction via Edge Occupancy to Single-Bit Capacity**]
 :::
 
 For any directed edge $(u, v)$ within the causal graph, the information capacity is strictly restricted to a binary value $n \in \{0, 1\}$ because the edge set $E$ is defined as a subset of $V \times V$ and the configuration space $\mathcal{H}$ assigns a single qubit subsystem $q_{uv}$ restricting local basis states to $\{|0\rangle, |1\rangle\}$. This restriction is preserved by the algebraic set of rewrite operations $\{\mathcal{R}_i\}$ acting exclusively via Pauli-X bit-flips, thereby preserving the binary dimensionality of the local Hilbert space and prohibiting higher-occupancy states.
@@ -337,7 +337,7 @@ Section 7.2.2 formalizes the properties of the QBD lemma regarding binary state 
 
 ### 7.2.2.1 Proof: Binary State Principle {#7.2.2.1}
 
-:::tip[**Verification of the Single-Bit Capacity of Causal Edges**]
+:::tip[**Verification of the Single-Bit Capacity of Causal Edges through Binary State Principle**]
 :::
 
 **I. Set-Theoretic Definition**
@@ -396,7 +396,7 @@ Section 7.2.2.1 formalizes the properties of the QBD proof regarding binary stat
 
 ### 7.2.3 Lemma: Forbidden Occupancy {#7.2.3}
 
-:::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]
+:::info[**Inevitable Formation of Two-Cycles via Superimposed Fermion States**]
 :::
 
 Suppose two identical fermions attempt to superimpose within the same local spatial mode, which necessitates the formation of a Directed 2-Cycle as the first fermion occupies the direct link $(u, v)$ and the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> restricts the second fermion to the immediate neighborhood. Under this restriction, the sole remaining local degree of freedom is the reverse link $(v, u)$, which forms a closed loop of length 2 that violates asymmetry and is thermodynamically excluded by the **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />.
@@ -408,7 +408,7 @@ Section 7.2.3 formalizes the properties of the QBD lemma regarding forbidden occ
 
 ### 7.2.3.1 Proof: Forbidden Occupancy {#7.2.3.1}
 
-:::tip[**Formal Demonstration of 2-Cycle Formation in Superposition Attempts**]
+:::tip[**Formal Demonstration of 2-Cycle Formation through Superposition Attempts**]
 :::
 
 **I. Initial State Constraints**
@@ -560,7 +560,7 @@ Section 7.2.4 formalizes the properties of the QBD proof regarding pauli exclusi
 
 ### 7.3.1 Definition: Charge Operator {#7.3.1}
 
-:::tip[**Formulation of Net Topological Charge using the Writhe Stabilizer**]
+:::tip[**Formulation via Net Topological Charge using the Writhe Stabilizer**]
 :::
 
 The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications:
@@ -587,7 +587,7 @@ Section 7.3.2 formalizes the properties of the QBD theorem regarding emergence o
 
 ### 7.3.3 Lemma: Gauge Symmetry {#7.3.3}
 
-:::info[**Invariance of Physical Laws under Global Writhe Shifts**]
+:::info[**Invariance of Physical Laws through Global Writhe Shifts**]
 :::
 
 Assume the dynamical laws governing the causal graph exhibit a strict gauge symmetry with respect to the total writhe parameter, where local transition probabilities are invariant under the global transformation $w \to w + n$ for $n \in \mathbb{Z}$. This shift invariance is enforced by the bounded causal horizon $R \sim \log N$ of the Universal Constructor $\mathcal{R}$ (**Local Horizon** <Ref id="6.4.3" label="§6.4.3" />), rendering it incapable of measuring global invariants and necessitating a compensating gauge field $A_\mu$ to preserve local consistency.
@@ -662,7 +662,7 @@ Section 7.3.3.1 formalizes the properties of the QBD proof regarding gauge symme
 
 ### 7.3.4 Lemma: Conservation of Total Writhe {#7.3.4}
 
-:::info[**Invariance of Writhe Number under Unitary Evolution**]
+:::info[**Invariance of Writhe Number through Unitary Evolution**]
 :::
 
 Every total writhe $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the evolution operator $\mathcal{U}$, whose conservation is enforced by the axiomatic barrier against Reidemeister Type I moves (**Directed Causal Link**) and (**Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />). Under these axiomatic constraints, any writhe-changing fluctuation requires self-loops or 2-cycles that are annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
@@ -728,7 +728,7 @@ Section 7.3.4.1 formalizes the properties of the QBD proof regarding conservatio
 
 ### 7.3.5 Lemma: Lepton Charge Solutions {#7.3.5}
 
-:::info[**Derivation of Integer Charges for Color-Singlet Fermions**]
+:::info[**Derivation of Integer Charges via Color-Singlet Fermions**]
 :::
 
 Every stable, minimal-complexity braid configuration transforming as a singlet under ribbon permutation (Color Symmetry) is restricted to the charge spectrum $Q \in \{0, \pm 1\}$ due to the symmetry constraint requiring identical ribbon writhe values $w_1 = w_2 = w_3 = k$. Under this constraint, the total writhe $W = 3k$ is divisible by the normalization factor $3$ to yield an integer charge $Q = k$, where the lowest-complexity solutions correspond to $k=0$ (Neutrino) and $k=-1$ (Electron) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
@@ -740,7 +740,7 @@ Section 7.3.5 formalizes the properties of the QBD lemma regarding lepton charge
 
 ### 7.3.5.1 Proof: Lepton Charge Solutions {#7.3.5.1}
 
-:::tip[**Verification of Charge Assignments for Neutrinos and Electrons**]
+:::tip[**Verification of Charge Assignments for Neutrinos through Electrons**]
 :::
 
 **I. Configuration Space Definition**
@@ -824,7 +824,7 @@ Section 7.3.5.1 formalizes the properties of the QBD proof regarding lepton char
 
 ### 7.3.6 Lemma: Quark Charge Solutions {#7.3.6}
 
-:::info[**Derivation of Fractional Charges for Color-Triplet Fermions**]
+:::info[**Derivation of Fractional Charges via Color-Triplet Fermions**]
 :::
 
 Every stable, minimal-complexity braid configuration transforming as a triplet under ribbon permutation (Color Asymmetry) is restricted to the charge spectrum $Q \in \{-1/3, +2/3\}$ because the asymmetry constraint requires distinct ribbon writhe values to distinguish color states. This asymmetry yields a total writhe $W$ indivisible by $3$, producing fractional charges where the ground states correspond to $(-1, 0, 0)$ yielding $Q=-1/3$ (Down Quark) and $(1, 1, 0)$ yielding $Q=+2/3$ (Up Quark) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
@@ -836,7 +836,7 @@ Section 7.3.6 formalizes the properties of the QBD lemma regarding quark charge 
 
 ### 7.3.6.1 Proof: Quark Charge Solutions {#7.3.6.1}
 
-:::tip[**Verification of Charge Assignments for Up and Down Quarks**]
+:::tip[**Verification of Charge Assignments for Up through Down Quarks**]
 :::
 
 **I. The Color-Charged Constraint**
@@ -916,7 +916,7 @@ Section 7.3.7 formalizes the properties of the QBD lemma regarding charge normal
 
 ### 7.3.7.1 Proof: Charge Normalization {#7.3.7.1}
 
-:::tip[**Verification of Consistency with Standard Model Hypercharge Anomalies**]
+:::tip[**Verification of Consistency through Standard Model Hypercharge Anomalies**]
 :::
 
 **I. The Anomaly Condition**
@@ -993,7 +993,7 @@ Section 7.3.7.1 formalizes the properties of the QBD proof regarding charge norm
 
 ### 7.3.8 Proof: Emergence of Electric Charge {#7.3.8}
 
-:::tip[**Formal Synthesis of Writhe Invariants into the Charge Operator**]
+:::tip[**Formal Synthesis via Writhe Invariants into the Charge Operator**]
 :::
 
 **I. Invariant Foundation**
@@ -1053,7 +1053,7 @@ Section 7.4.1 formalizes the properties of the QBD definition regarding mass as 
 
 ### 7.4.2 Theorem: Topological Mass Functional {#7.4.2}
 
-:::info[**Proportionality of Inertial Mass to Total Topological Complexity**]
+:::info[**Proportionality via Inertial Mass to Total Topological Complexity**]
 :::
 
 Let the rest mass $m$ of a fermion braid be determined by the topological complexity functional $m = \kappa_m \left( \sum_{i=1}^3 N_3(R_i) - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)$ anchored to the electron mass constant $\kappa_m \approx 0.170$ MeV. This functional is defined by the sum of isolated ribbon complexities $\sum N_3(R_i)$ representing crossing and torsion costs, reduced by the geometric efficiency term $k_{\text{share}} \cdot |L_{ij}|_{\parallel}$ representing shared quanta between parallel ribbons. Under this formulation, the discrete mass spectrum of the Standard Model fermions arises from the quantized integer topologies of their constituent ribbons (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
@@ -1065,7 +1065,7 @@ Section 7.4.2 formalizes the properties of the QBD theorem regarding topological
 
 ### 7.4.3 Lemma: Thermodynamic Equivalence {#7.4.3}
 
-:::info[**Identity of Free Energy and Internal Energy for Protected States**]
+:::info[**Identity of Free Energy via Internal Energy for Protected States**]
 :::
 
 For any stable prime braid configuration, the Helmholtz Free Energy $F$ is strictly equal to its Internal Energy $U$ ($F[\beta] = U[\beta]$) due to the Zero Entropy Condition restricting the particle to a single valid logical microstate with Boltzmann entropy $S = 0$. Consequently, the inertial mass of the particle remains independent of the vacuum temperature $T$ and is determined solely by the structural energy of the graph (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
@@ -1077,7 +1077,7 @@ Section 7.4.3 formalizes the properties of the QBD lemma regarding thermodynamic
 
 ### 7.4.3.1 Proof: Thermodynamic Equivalence {#7.4.3.1}
 
-:::tip[**Verification of Zero Entropy for Unique Logical Microstates**]
+:::tip[**Verification of Zero Entropy via Unique Logical Microstates**]
 :::
 
 **I. Thermodynamic Decomposition**
@@ -1144,7 +1144,7 @@ Section 7.4.3.1 formalizes the properties of the QBD proof regarding thermodynam
 
 ### 7.4.4 Lemma: Base Mass Linear Scaling {#7.4.4}
 
-:::info[**Linear Contribution of Complexity to Base Mass**]
+:::info[**Linear Contribution via Complexity to Base Mass**]
 :::
 
 Every base component of the topological mass scales linearly with the number of geometric quanta $N_3$ because the total complexity is the arithmetic sum of the complexity of independent crossings ($N_3 \propto C[\beta]$). This linear scaling enforces the quantization of the mass spectrum into discrete integer multiples of the fundamental mass constant $\kappa_m$ (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
@@ -1227,7 +1227,7 @@ Section 7.4.5 formalizes the properties of the QBD lemma regarding integer geome
 
 ### 7.4.5.1 Proof: Integer Geometric Efficiency {#7.4.5.1}
 
-:::tip[**Verification of Unitary Mass Reduction per Parallel Link**]
+:::tip[**Verification through Unitary Mass Reduction per Parallel Link**]
 :::
 
 **I. Isolated Cost Analysis**
@@ -1376,9 +1376,9 @@ Quantification of the mass spectrum predicted by the **Topological Mass Function
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) under **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" /> and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 
-    * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
-    * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
-    * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
+    * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
+    * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
+    * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
 3.  **Spectrum Matching:** The simulation compares the resulting discrete Topological Rest Masses against the observed empirical masses of the Standard Model fermions, calculating the geometric delta.
 
 ```python
@@ -1386,7 +1386,7 @@ import pandas as pd
 import numpy as np
 
 def verify_full_mass_hierarchy():
-    print("--- QBD Generational Mass Hierarchy Verification ---")
+    print("--- §7.4.6.1 Generational Mass Hierarchy ---")
     
     # 1. Constants
     # Mass Constant (kappa_m) anchored to Electron
@@ -1458,10 +1458,10 @@ if __name__ == "__main__":
     verify_full_mass_hierarchy()
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
---- QBD Generational Mass Hierarchy Verification ---
+--- §7.4.6.1 Generational Mass Hierarchy ---
 Particle   Writhe Config  Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
 Electron    (-1, -1, -1)       3              0.5             0.5   0.00
     Down      (-1, 0, 0)       1              0.2             4.7  96.38
@@ -1474,11 +1474,10 @@ Electron    (-1, -1, -1)       3              0.5             0.5   0.00
      Top   (712, 712, 0) 1013176         172577.6        172900.0   0.19
 ```
 
-The simulation confirms the profound predictive power of the quadratic scaling functional:
+**Conclusion:**
 
-1.  **Generational Gaps:** The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.
-2.  **High-Mass Convergence:** For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$. 
-3.  **Low-Mass Deviation:** The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
+The simulation confirms the predictive accuracy of the quadratic scaling functional.
+Generational Gaps: The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.; High-Mass Convergence: For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$.; Low-Mass Deviation: The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
 
 **In Plain English:**  
 Section 7.4.6.1 formalizes the properties of the QBD calculation regarding generational mass hierarchy verification.

@@ -70,7 +70,7 @@ Section 11.1.2 formalizes the properties of the QBD definition regarding undirec
 
 ### 11.2.1 Definition: Lazy Causal Measure {#11.2.1}
 
-:::tip[**Allocation of Probability Mass according to the Balanced Weighting of Past, Present, and Future Neighborhoods**]
+:::tip[**Allocation of Probability Mass according to the Balanced Weighting of Past, Present, via Future Neighborhoods**]
 :::
 
 Let $G = (V, E)$ denote a finite, simple, directed graph. For any vertex $u \in V$, the **Lazy Causal Measure** $\mu_u$ is defined as a probability distribution over $V$ that distributes mass among the vertex itself, its immediate past, and its immediate future.
@@ -134,7 +134,7 @@ Section 11.2.2 formalizes the properties of the QBD definition regarding causal 
 
 ### 11.2.3 Theorem: Causal Geometry Construction {#11.2.3}
 
-:::info[**Establishment of Well-Posedness for the Discrete Geometric Space**]
+:::info[**Establishment of Well-Posedness via the Discrete Geometric Space**]
 :::
 
 Let $\mathcal{G}$ be the class of finite, simple, directed graphs. The construction mapping any $G \in \mathcal{G}$ to the causal geometry $(G, \bar{d}, \{\mu_u\}, K)$ is well-posed.
@@ -290,7 +290,7 @@ mu_iso, sum_iso = lazy_mu(99, G_iso)
 print_case("Isolated Singularity (u=99)", mu_iso, sum_iso)
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 Case: Balanced Topology (u=1)
@@ -310,6 +310,7 @@ Case: Isolated Singularity (u=99)
   Sum: 1.0000
 ```
 
+**Conclusion:**
 The results confirm exact conservation. The balanced case distributes mass evenly (1/3) across the triad (past, present, future). The semi-vacuous cases (empty past or future) correctly reallocate the missing $\beta$ portion to the self-mass, raising it to $2/3$. The isolated case concentrates the entire probability mass ($\alpha + 2\beta = 1.0$) onto the vertex itself. This confirms that the measure remains well-posed even in the highly sparse, disconnected regimes often encountered during the initial phases of the universe simulation.
 
 **In Plain English:**  
@@ -523,7 +524,7 @@ print(f"\n--- Unbalanced Sensitivity ---")
 print(f"Sparse Max α (d-=0.087): {max_alpha_sparse:.4f}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- Balanced Case (d=1) ---
@@ -537,9 +538,10 @@ h''(1/3):           -4.5000 (Expected: -4.5)
 Sparse Max α (d-=0.087): 0.6290
 ```
 
-The verification validates the proof with strict numerical rigor. The optimization identifies the entropy maximum at $\alpha = 0.33333333$, aligning with the theoretical fraction $1/3$ to eight decimal places.
+**Conclusion:**
+The verification matches the proof within floating-point precision. The optimization identifies the entropy maximum at $\alpha = 0.33333333$, aligning with the theoretical fraction $1/3$ to eight decimal places.
 
-Crucially, the first derivative check returns a residual of $2.2204 \times 10^{-16}$. This is the fingerprint of a perfect zero in 64-bit computing. This value is **Machine Epsilon** ($\epsilon_{mach}$): the smallest possible difference between $1.0$ and the next representable number in binary floating-point arithmetic. Because computers cannot store the infinite repeating decimal $0.333...$ perfectly, this tiny residual is the mathematical equivalent of "zero within the absolute physical limits of the hardware." The boolean check in the code confirms this, proving the derivative vanishes exactly as predicted.
+The first derivative check returns a residual of $2.2204 \times 10^{-16}$. This residual is **machine epsilon** ($\epsilon_{mach}$): the smallest difference between $1.0$ and the next representable binary floating-point number. Because $0.333\ldots$ cannot be stored exactly, this residual is the numerical equivalent of a zero at double precision. The boolean check in the code confirms the derivative vanishes within that limit.
 
 The sensitivity analysis further reveals that in the sparse regime ($d_- \approx 0.087$), the entropic pressure shifts the optimal laziness to $\alpha \approx 0.63$. This occurs because a nearly-empty past neighborhood offers less "space" to store information (lower configurational entropy), forcing the system to store more information in the present (increasing $\alpha$) to compensate. However, the vacuum re-absorption mechanism defined in **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> effectively renormalizes these degrees back toward unity in the measure's definition, preserving the $\alpha=1/3$ equilibrium as the robust structural baseline.
 
@@ -634,7 +636,7 @@ def w1_linprog(mu_source, mu_target, dist_dict, nodes):
     idx = 0
     
     # 1. Construct Cost Vector
-    # If distance is infinite, we assign a finite proxy but restrict flow to 0 later.
+    # Infinite distance: assign a finite proxy; restrict flow to 0 later.
     for i, x in enumerate(nodes):
         for j, y in enumerate(nodes):
             d = dist_dict.get((x, y), np.inf)
@@ -718,7 +720,7 @@ print(f"Directed Fwd W1 (A -> B): {val_dir_fwd:.4f}")
 print(f"Directed Rev W1 (B -> A): {val_dir_rev}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 Undirected W1 (A -> B):   0.6667
@@ -726,12 +728,10 @@ Directed Fwd W1 (A -> B): 0.6667
 Directed Rev W1 (B -> A): inf
 ```
 
-The verification demonstrates the operational divergence of directed metrics in causal graphs, yielding the following outcomes:
+**Conclusion:**
 
-1.  **Undirected Case:** The transport cost converges to a finite value of approximately $0.6667$. The optimal coupling plan $\pi$ shifts the excess mass from node 0 (in $\mu_A$) to node 2 (in $\mu_B$) across a metric distance of 2. The weighted cost is $(1/3) \times 2 \approx 0.67$.
-2.  **Directed Forward Case:** Since the mass moves "downstream" ($0 \to 2$) aligned with the direction of the edges, the directed metric coincides with the undirected metric ($d_{\text{dir}}(0,2) = 2$). The cost remains $0.6667$.
-3.  **Directed Reverse Case:** The transport fails ($W_1 = \infty$). The target measure $\mu_A$ requires mass at node 0, but the source $\mu_B$ possesses mass at node 2. Moving mass from $2 \to 0$ requires traversing edges against the causal arrow. Since $d_{\text{dir}}(2,0) = \infty$, no finite coupling exists.
-
+The verification demonstrates the operational divergence of directed metrics in causal graphs, yielding the following outcomes.
+Undirected Case: The transport cost converges to a finite value of approximately $0.6667$. The optimal coupling plan $\pi$ shifts the excess mass from node 0 (in $\mu_A$) to node 2 (in $\mu_B$) across a metric distance of 2. The weighted cost is $(1/3) \times 2 \approx 0.67$.; Directed Forward Case: Since the mass moves "downstream" ($0 \to 2$) aligned with the direction of the edges, the directed metric coincides with the undirected metric ($d_{\text{dir}}(0,2) = 2$). The cost remains $0.6667$.; Directed Reverse Case: The transport fails ($W_1 = \infty$). The target measure $\mu_A$ requires mass at node 0, but the source $\mu_B$ possesses mass at node 2. Moving mass from $2 \to 0$ requires traversing edges against the causal arrow. Since $d_{\text{dir}}(2,0) = \infty$, no finite coupling exists.
 This confirms that directed metrics render the Wasserstein distance ill-posed for any pair of measures requiring reverse-time transport, a frequent occurrence in fluctuating graph topologies.
 
 **In Plain English:**  
@@ -741,7 +741,7 @@ Section 11.2.6.2 formalizes the properties of the QBD calculation regarding metr
 
 ### 11.2.7 Lemma: Compensation by Causal Measures {#11.2.7}
 
-:::info[**Encoding of Causal Directionality within the Asymmetric Bias of Neighborhood Probability Measures**]
+:::info[**Encoding of Causal Directionality through the Asymmetric Bias of Neighborhood Probability Measures**]
 :::
 
 Given the local causal topology, the specific configuration of the probability mass distributions $\mu_u$ and $\mu_v$ satisfies the property that it recovers the directional structure of the graph $G$.
@@ -951,7 +951,7 @@ transport_verified = np.isclose(w1_val, 2.0/3.0)
 print(f"Verification Pass:  {transport_verified}")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 Measure A (Origin): {0: 0.6667, 1: 0.3333, 2: 0.0}
@@ -962,13 +962,10 @@ Curvature K(A,B):   0.3333
 Verification Pass:  True
 ```
 
+**Conclusion:**
+
 The simulation provides exact confirmation of the analytical proof.
-
-1. **Measures:** `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.
-
-2. **Excess Mass:** The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).
-
-3. **Cost:** The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This validates that the asymmetry of the measures successfully enforces a directional transport cost, compensating for the undirected metric.
+Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This validates that the asymmetry of the measures successfully enforces a directional transport cost, compensating for the undirected metric.
 
 **In Plain English:**  
 Section 11.2.7.2 formalizes the properties of the QBD calculation regarding compensation verification.
@@ -1030,7 +1027,7 @@ Section 11.2.8.1 formalizes the properties of the QBD proof regarding combinator
 
 ### 11.2.9 Proof: Causal Geometry Construction {#11.2.9}
 
-:::tip[**Synthesis of Metric and Measure Validations establishing the Well-Posedness for the Curvature Definition**]
+:::tip[**Synthesis of Metric and Measure Validations establishing the Well-Posedness via the Curvature Definition**]
 :::
 
 The derivation (**Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />) proceeds by aggregating the independent validation lemmas established in this section. This synthesis confirms that the tuple $(G, \bar{d}, \{\mu_u\}, K)$ constitutes a mathematically rigorous metric measure space capable of supporting a finite, time-oriented curvature calculus.
@@ -1092,7 +1089,7 @@ Section 11.3.2 formalizes the properties of the QBD theorem regarding curvature 
 
 ### 11.3.3 Lemma: Measure Dilution (Phase 1) {#11.3.3}
 
-:::info[**Quantification of Probability Mass Redistribution upon Topological Nucleation**]
+:::info[**Quantification via Probability Mass Redistribution upon Topological Nucleation**]
 :::
 
 If the nucleation of a 3-cycle involving a new vertex $w$ occurs, then the lazy causal measures of the incident vertices $u$ and $v$ are altered.
@@ -1181,7 +1178,7 @@ Section 11.3.3.1 formalizes the properties of the QBD proof regarding measure di
 
 ### 11.3.4 Lemma: Transport Feasibility (Phase 2) {#11.3.4}
 
-:::info[**Construction of a Valid Transport Plan Exploiting Shared Geometry**]
+:::info[**Construction via a Valid Transport Plan Exploiting Shared Geometry**]
 :::
 
 There exists a feasible transport coupling $\pi_1$ between the post-nucleation measures $\mu_u^{(1)}$ and $\mu_v^{(1)}$ within the expanded graph $G_1$ that explicitly utilizes the shared probability mass at vertex $w$
@@ -1278,7 +1275,7 @@ Section 11.3.4.1 formalizes the properties of the QBD proof regarding transport 
 
 ### 11.3.5 Lemma: Cost Contraction (Phase 3) {#11.3.5}
 
-:::info[**Demonstration of Strict Inequality for Wasserstein Distances**]
+:::info[**Demonstration of Strict Inequality via Wasserstein Distances**]
 :::
 
 Given the system, the Wasserstein-1 transport cost associated with the feasible plan $\pi_1$ in the nucleated graph $G_1$ is strictly less than the optimal transport cost $W_1^{(0)}$ required in the antecedent graph $G_0$
@@ -1383,7 +1380,7 @@ Section 11.3.5.1 formalizes the properties of the QBD proof regarding cost contr
 
 ### 11.3.6 Lemma: Action-Complexity Proportionality {#11.3.6}
 
-:::info[**Linear Scaling of Total Action with the Count of Geometric Quanta**]
+:::info[**Linear Scaling of Total Action by the Count of Geometric Quanta**]
 :::
 
 For any nucleation of a single three-cycle (geometric quantum), the variation of the total discrete action $\Delta \mathcal{S}$ satisfies the relation $\Delta \mathcal{S} \approx c \cdot \Delta N_3$, where $c > 0$ is a positive constant determined by the baseline curvature of the vacuum.
@@ -1582,7 +1579,7 @@ print(f"2. Cost Contraction (Phase 3) (§11.3.5) (W1_post < W1_pre):  {contracti
 print(f"3. Corollary 11.3.6 (Sparse Scaling): c ≈ {delta_k_sparse:.4f} (per cycle)")
 ```
 
-**Simulation Output**
+**Simulation Results:**
 
 ```text
 --- State G0 (Pre-Nucleation) ---
@@ -1603,12 +1600,12 @@ K_post:  1.0000
 3. Corollary 11.3.6 (Sparse Scaling): c ≈ 0.3680 (per cycle)
 ```
 
-The verification confirms the entire proof chain:
+**Conclusion:**
 
-1. Measure Dilution: The post-state measures show shared mass at node 2 ($m_w = 0.333$), confirming **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />.
-2. Cost Contraction: The Wasserstein distance drops from 0.667 to 0.0, confirming the strict inequality of **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />.
-3. Monotonicity: Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />.
-4. Sparse Scaling: The calculation estimates a curvature gain of $\approx 0.46$ in the realistic sparse regime, confirming the proportionality of the subsequent **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
+The verification confirms the entire proof chain.
+The post-state measures show shared mass at node 2 ($m_w = 0.333$), confirming **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />. The Wasserstein distance drops from 0.667 to 0.0, confirming the strict inequality of **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />.
+
+Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The calculation estimates a curvature gain of $\approx 0.46$ in the realistic sparse regime, confirming the proportionality of the subsequent **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
 
 **In Plain English:**  
 Section 11.3.6.3 formalizes the properties of the QBD calculation regarding monotonicity verification.
@@ -1617,7 +1614,7 @@ Section 11.3.6.3 formalizes the properties of the QBD calculation regarding mono
 
 ### 11.3.7 Proof: Curvature Monotonicity {#11.3.7}
 
-:::tip[**Formal Verification of the Link between Topological Nucleation and Geometric Action**]
+:::tip[**Formal Verification of the Link between Topological Nucleation through Geometric Action**]
 :::
 
 The proof synthesizes the definitions and lemmas established in Phases 1 through 3 to rigorously demonstrate the global monotonicity of the geometric evolution asserted in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The derivation proceeds by chaining the logical implications of the mass redistribution, transport feasibility, and cost contraction.

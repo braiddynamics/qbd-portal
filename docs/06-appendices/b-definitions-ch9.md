@@ -21,7 +21,7 @@ Section 9.1.1 formalizes the properties of the QBD theorem regarding minimal gut
 
 ### 9.1.2 Lemma: Rank Conditions {#9.1.2}
 
-:::info[**Requirement of Minimum Rank for Standard Model Embedding**]
+:::info[**Requirement of Minimum Rank through Standard Model Embedding**]
 :::
 
 Assume the rank of the Grand Unified Group, denoted $G_{GUT}$, is strictly bounded from below by the integer value of 4. This lower bound is mandated by the embedding morphism $\phi: G_{SM} \hookrightarrow G_{GUT}$ requiring the unified Cartan subalgebra to contain the direct sum of the constituent Standard Model Cartan subalgebras.
@@ -33,7 +33,7 @@ Section 9.1.2 formalizes the properties of the QBD lemma regarding rank conditio
 
 ### 9.1.2.1 Proof: Rank Conditions {#9.1.2.1}
 
-:::tip[**Formal Derivation of Rank Inequality**]
+:::tip[**Formal Derivation from Rank Inequality**]
 :::
 
 **I. Rank Definition**
@@ -64,7 +64,7 @@ Section 9.1.2.1 formalizes the properties of the QBD proof regarding rank condit
 
 ### 9.1.3 Lemma: Lower Rank Exclusion {#9.1.3}
 
-:::info[**Systematic Elimination of Simple Lie Groups with Insufficient Rank**]
+:::info[**Systematic Elimination of Simple Lie Groups by Insufficient Rank**]
 :::
 
 For any simple Lie group with rank $r < 4$, the candidate is categorically excluded from the domain of viable Grand Unified Theories. This exclusion is absolute and is predicated upon the failure of the group to satisfy the rank condition established in **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />.
@@ -76,7 +76,7 @@ Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank ex
 
 ### 9.1.3.1 Proof: Lower Rank Exclusion {#9.1.3.1}
 
-:::tip[**Verification of Failure Modes for Low-Rank Algebras**]
+:::tip[**Verification of Failure Modes via Low-Rank Algebras**]
 :::
 
 The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />
@@ -112,7 +112,7 @@ Section 9.1.3.1 formalizes the properties of the QBD proof regarding lower rank 
 
 ### 9.1.4 Lemma: Candidate Elimination {#9.1.4}
 
-:::info[**Disproof of Alternative Groups based on Chiral Representation Failures**]
+:::info[**Disproof through Alternative Groups based on Chiral Representation Failures**]
 :::
 
 Suppose every simple Lie group of rank $r=4$, excluding $SU(5)$, is rejected as a viable candidate for the Grand Unified Group. This rejection is established under **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> on the basis of representation reality, as symplectic, orthogonal, and exceptional algebras of rank 4 admit only real or pseudoreal representations.
@@ -124,7 +124,7 @@ Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate eli
 
 ### 9.1.4.1 Proof: Candidate Elimination {#9.1.4.1}
 
-:::tip[**Demonstration of Spectrum Mismatch for Non-SU(5) Rank-4 Groups**]
+:::tip[**Demonstration of Spectrum Mismatch via Non-SU(5) Rank-4 Groups**]
 :::
 
 The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.  **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" /> and  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />
@@ -156,7 +156,7 @@ Section 9.1.4.1 formalizes the properties of the QBD proof regarding candidate e
 
 ### 9.1.5 Proof: Minimal GUT Uniqueness {#9.1.5}
 
-:::tip[**Formal Verification of Representation Decomposition and Anomaly Cancellation**]
+:::tip[**Formal Verification of Representation Decomposition as Anomaly Cancellation**]
 :::
 
 The proof synthesizes the embedding and representation analyses to establish $SU(5)$ as the unique solution and verifies its consistency with the Standard Model content.
@@ -239,7 +239,7 @@ Section 9.1.5 formalizes the properties of the QBD proof regarding minimal gut u
 
 ### 9.1.5.1 Calculation: Anomaly Check Verification {#9.1.5.1}
 
-:::note[**Computational Verification of Cubic Anomaly Cancellation in SU(5) Representations**]
+:::note[**Computational Verification of Cubic Anomaly Cancellation due to SU(5) Representations**]
 :::
 
 Verification of the anomaly freedom condition established in the **Minimal GUT Uniqueness** <Ref id="9.1.5" label="§9.1.5" /> is based on the following protocols:
@@ -254,19 +254,19 @@ import sympy as sp
 def verify_su5_anomaly_cancellation():
     """
     Verification of Cubic Anomaly Cancellation in Minimal SU(5)
-    
+
     The anomaly coefficient A(R) for a representation R in SU(N) is:
     - A(fund) = 1
     - A(antifund) = -1
     - A(antisymmetric 2-tensor) = N - 4
-    
+
     For SU(5), the fermion generation fits into \bar{5} + 10.
     We compute A(\bar{5}) + A(10) and confirm exact cancellation.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION")
-    print("Minimal Chiral Generation in \bar{5} ⊕ 10 Representations")
-    print("═" * 70)
+    print("Minimal Chiral Generation in \\bar{5} ⊕ 10 Representations")
+    print("=" * 70)
 
     # Symbolic definition
     N = sp.symbols('N', integer=True, positive=True)
@@ -296,13 +296,13 @@ if __name__ == "__main__":
     verify_su5_anomaly_cancellation()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION: SU(5) ANOMALY CANCELLATION
-Minimal Chiral Generation inar{5} ⊕ 10 Representations
-══════════════════════════════════════════════════════════════════════
+Minimal Chiral Generation in \bar{5} ⊕ 10 Representations
+======================================================================
 
 Anomaly Coefficients (SU(5)):
   A(\bar{5})   = -1
@@ -312,6 +312,7 @@ Anomaly Coefficients (SU(5)):
 RESULT: Exact cancellation confirmed.
 ```
 
+**Conclusion:**
 The symbolic evaluation yields $A(\mathbf{\bar{5}}) = -1$ and $A(\mathbf{10}) = 1$. The summation results in a total anomaly of exactly 0. This confirms that the combination of the antifundamental and antisymmetric tensor representations in $SU(5)$ satisfies the renormalizability constraint without requiring additional mirror fermions.
 
 **In Plain English:**  
@@ -333,7 +334,7 @@ Section 9.2.1 formalizes the properties of the QBD definition regarding penta-ri
 
 ### 9.2.2 Theorem: Topological Unification {#9.2.2}
 
-:::info[**Isomorphism between Penta-Ribbon Braid Dynamics and the Unified Lie Algebra**]
+:::info[**Isomorphism between Penta-Ribbon Braid Dynamics via the Unified Lie Algebra**]
 :::
 
 Let the Lie algebra generated by the aggregate of physical rewrite processes acting upon the penta-ribbon braid be strictly isomorphic to the Special Unitary algebra of degree 5, $\mathfrak{su}(5)$. This isomorphism is constructively established by the bijective mapping between the four fundamental adjacent swap operators of the braid $\{\sigma_1, \sigma_2, \sigma_3, \sigma_4\}$ and the simple roots of the $\mathfrak{su}(5)$ algebra. Under this mapping, the closure of the operator algebra under the commutator bracket generates the complete 24-dimensional adjoint representation required for the unified gauge bosons.
@@ -345,7 +346,7 @@ Section 9.2.2 formalizes the properties of the QBD theorem regarding topological
 
 ### 9.2.3 Lemma: Distant Commutativity {#9.2.3}
 
-:::info[**Commutativity of Rewrite Operations on Disjoint Ribbon Pairs**]
+:::info[**Commutativity via Rewrite Operations on Disjoint Ribbon Pairs**]
 :::
 
 Assume the physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the penta-ribbon braid satisfy the strict commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ if and only if $|i-j| \geq 2$. This commutation relation is physically enforced by the spatial disjointness of the interaction supports within the causal graph, ensuring that rewrite operations acting on non-adjacent ribbon pairs proceed independently within the causal order.
@@ -392,7 +393,7 @@ Section 9.2.3.1 formalizes the properties of the QBD proof regarding distant com
 
 ### 9.2.4 Lemma: Yang-Baxter Relations {#9.2.4}
 
-:::info[**Compliance of Penta-Ribbon Rewrite Sequences with Topological Isotopy**]
+:::info[**Compliance of Penta-Ribbon Rewrite Sequences by Topological Isotopy**]
 :::
 
 Suppose the sequence of adjacent rewrite operations acting on the penta-ribbon braid satisfies the **Yang-Baxter Equation**, formally expressed as $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$. This relation is physically enforced by the topological isotopy of the underlying graph transformations, which guarantees that the two distinct causal orderings of a three-strand permutation operation yield identical final connectivity states with respect to all global topological invariants.
@@ -404,7 +405,7 @@ Section 9.2.4 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ### 9.2.4.1 Proof: Yang-Baxter Relations {#9.2.4.1}
 
-:::tip[**Verification of Isotopic Equivalence for Adjacent Rewrite Sequences**]
+:::tip[**Verification of Isotopic Equivalence via Adjacent Rewrite Sequences**]
 :::
 
 The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ for adjacent ribbons in the 5-strand braid group $B_5$.
@@ -445,7 +446,7 @@ Section 9.2.5 formalizes the properties of the QBD lemma regarding closed lie al
 
 ### 9.2.5.1 Proof: Closed Lie Algebra {#9.2.5.1}
 
-:::tip[**Explicit Construction and Induction of the $\mathfrak{su}(5)$ Generators**]
+:::tip[**Explicit Construction via Induction of the $\mathfrak{su}(5)$ Generators**]
 :::
 
 The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> and  **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />
@@ -498,7 +499,7 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding closed lie 
 
 ### 9.2.5.2 Calculation: SU(5) Closure Simulation {#9.2.5.2}
 
-:::note[**Computational Verification of Basis Spanning for the 24-Dimensional Algebra**]
+:::note[**Computational Verification of Basis Spanning via the 24-Dimensional Algebra**]
 :::
 
 Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> is based on the commutativity constraints verified in **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> is based on the following protocols:
@@ -524,10 +525,10 @@ def verify_su5_closure_robustness(num_ensembles=500):
     Iteratively adds commutators if they increase linear span (SVD rank).
     Confirms deterministic full closure (dim=24) across stochastic orders.
     """
-    print("═" * 70)
+    print("=" * 70)
     print("COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE")
     print("Robustness under Random Generator Discovery Order")
-    print("═" * 70)
+    print("=" * 70)
 
     n = 5
     elements = []
@@ -589,26 +590,26 @@ def verify_su5_closure_robustness(num_ensembles=500):
     avg_dim = np.mean(dimensions)
     full_prob = np.mean(np.array(dimensions) == 24)
 
-    print("\n" + "─" * 70)
+    print("\n" + "-" * 70)
     print(f"Ensembles simulated : {num_ensembles}")
     print(f"Average final dim   : {avg_dim:.2f}")
     print(f"Full closure prob   : {full_prob:.3f} ({full_prob*100:.1f}%)")
-    print("─" * 70)
+    print("-" * 70)
 
     if full_prob == 1.0:
-        print("RESULT: Deterministic closure confirmed.")
+        print("status: pass")
 
 if __name__ == "__main__":
     verify_su5_closure_robustness(num_ensembles=500)
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════
+======================================================================
 COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE
 Robustness under Random Generator Discovery Order
-══════════════════════════════════════════════════════════════════════
+======================================================================
 Initial generators: 8 (4 adjacent pairs × 2)
 Ensemble   1 → Final dimension: 24
 Ensemble   2 → Final dimension: 24
@@ -626,14 +627,15 @@ Ensemble 300 → Final dimension: 24
 Ensemble 400 → Final dimension: 24
 Ensemble 500 → Final dimension: 24
 
-──────────────────────────────────────────────────────────────────────
+----------------------------------------------------------------------
 Ensembles simulated : 500
 Average final dim   : 24.00
 Full closure prob   : 1.000 (100.0%)
-──────────────────────────────────────────────────────────────────────
-RESULT: Deterministic closure confirmed.
+----------------------------------------------------------------------
+status: pass
 ```
 
+**Conclusion:**
 The simulation achieves a final basis dimension of 24 within 2 iterations (10 additions in the first pass, 6 in the second). The subsample Gram determinant ($2.56 \times 10^2$) is strictly positive, confirming full rank. The self-evaluated Killing form for the root generator is negative ($-12.00$), confirming the non-abelian, semisimple structure. These results verify that the fundamental swaps of a 5-strand braid generate the complete $\mathfrak{su}(5)$ Lie algebra.
 
 **In Plain English:**  
@@ -655,7 +657,7 @@ Section 9.2.6 formalizes the properties of the QBD lemma regarding anti-fundamen
 
 ### 9.2.6.1 Proof: Anti-Fundamental Multiplet {#9.2.6.1}
 
-:::tip[**Demonstration of Minimal Complexity for the $\mathbf{\bar{5}}$ Multiplet**]
+:::tip[**Demonstration of Minimal Complexity via the $\mathbf{\bar{5}}$ Multiplet**]
 :::
 
 The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" /> and  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />
@@ -696,7 +698,7 @@ Section 9.2.7 formalizes the properties of the QBD lemma regarding antisymmetric
 
 ### 9.2.7.1 Proof: Antisymmetric Multiplet {#9.2.7.1}
 
-:::tip[**Demonstration of Stable Complexity for the $\mathbf{10}$ Multiplet**]
+:::tip[**Demonstration of Stable Complexity via the $\mathbf{10}$ Multiplet**]
 :::
 
 The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.  **Antisymmetric Multiplet** <Ref id="9.2.7" label="§9.2.7" /> and  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />
@@ -723,7 +725,7 @@ Section 9.2.7.1 formalizes the properties of the QBD proof regarding antisymmetr
 
 ### 9.2.8 Proof: Topological Unification {#9.2.8}
 
-:::tip[**Formal Proof of Equivalence between Penta-Ribbon Braid Topology and Unified Algebra**]
+:::tip[**Formal Proof of Equivalence between Penta-Ribbon Braid Topology through Unified Algebra**]
 :::
 
 The proof synthesizes the algebraic isomorphism and topological realizations to demonstrate total unification.
@@ -764,7 +766,7 @@ Section 9.3.1 formalizes the properties of the QBD theorem regarding generationa
 
 ### 9.3.2 Lemma: Complexity Ordering {#9.3.2}
 
-:::info[**Strict Hierarchy of Generational Complexity**]
+:::info[**Strict Hierarchy via Generational Complexity**]
 :::
 
 Let the topological complexity $C_n$ associated with the $n$-th fermion generation satisfy the strict monotonic inequality $C_n < C_{n+1}$. This ordering is mandated by the discrete quantization of the 3-cycle count $N_3$ required to construct the successively higher-order prime knot invariants that define the identity of each generation.
@@ -776,7 +778,7 @@ Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity or
 
 ### 9.3.2.1 Proof: Complexity Ordering {#9.3.2.1}
 
-:::tip[**Quantification of Braid Complexity for Generation $n$**]
+:::tip[**Quantification of Braid Complexity via Generation $n$**]
 :::
 
 **I. Complexity Metric**
@@ -819,7 +821,7 @@ Section 9.3.2.1 formalizes the properties of the QBD proof regarding complexity 
 
 ### 9.3.3 Lemma: Topological Protection {#9.3.3}
 
-:::info[**Stability of Higher Generations against Local Decay**]
+:::info[**Stability via Higher Generations against Local Decay**]
 :::
 
 Assume the states corresponding to higher fermion generations are dynamically stable against all local $O(1)$ rewrite operations. This protection arises because the transition to a lower-complexity isotopy class requires a global change in the knot invariant (untying), which is explicitly forbidden by the Principle of Unique Causality.
@@ -831,7 +833,7 @@ Section 9.3.3 formalizes the properties of the QBD lemma regarding topological p
 
 ### 9.3.3.1 Proof: Topological Protection {#9.3.3.1}
 
-:::tip[**Demonstration of the Energy Barrier for Generational Decay**]
+:::tip[**Demonstration of the Energy Barrier via Generational Decay**]
 :::
 
 **I. Stability Condition**
@@ -976,7 +978,7 @@ Section 9.4.1 formalizes the properties of the QBD definition regarding leptoqua
 
 ### 9.4.2 Theorem: Leptoquark Generators {#9.4.2}
 
-:::info[**Identification of Off-Diagonal Generators Mediating Quark-Lepton Transitions**]
+:::info[**Identification via Off-Diagonal Generators Mediating Quark-Lepton Transitions**]
 :::
 
 Let the complete set of 24 generators of the $\mathfrak{su}(5)$ algebra decompose into the 12 generators of the Standard Model subalgebra and a complementary set of 12 **Leptoquark Generators**. These generators are uniquely identified as the specific operators possessing non-zero matrix elements connecting the color indices $i \in \{1,2,3\}$ to the weak indices $j \in \{4,5\}$, thus serving as the algebraic agents of quark-lepton unification.
@@ -988,7 +990,7 @@ Section 9.4.2 formalizes the properties of the QBD theorem regarding leptoquark 
 
 ### 9.4.3 Lemma: Interaction Vertex {#9.4.3}
 
-:::info[**Topological Structure of the Vertex Linking Color and Weak Sectors**]
+:::info[**Topological Structure of the Vertex Linking Color via Weak Sectors**]
 :::
 
 Suppose the leptoquark interaction vertex is defined as the specific topological locus within the penta-ribbon braid where the sub-braid of color ribbons and the sub-braid of weak ribbons spatially converge. This convergence permits the off-diagonal generator $\hat{\lambda}_{LQ}$ to execute a swap operation that transfers causal flux directly between the color and weak sectors.
@@ -1000,7 +1002,7 @@ Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction v
 
 ### 9.4.3.1 Proof: Interaction Vertex {#9.4.3.1}
 
-:::tip[**Demonstration of Subspace Projection at the Interaction Vertex**]
+:::tip[**Demonstration via Subspace Projection at the Interaction Vertex**]
 :::
 
 **I. Generator Matrix Action**
@@ -1050,7 +1052,7 @@ Section 9.4.4 formalizes the properties of the QBD lemma regarding fragmentation
 
 ### 9.4.4.1 Proof: Fragmentation Tunneling {#9.4.4.1}
 
-:::tip[**Demonstration of Energetic Favorability for Symmetry Breaking Transitions**]
+:::tip[**Demonstration of Energetic Favorability via Symmetry Breaking Transitions**]
 :::
 
 **I. Complexity Functional Definition**
@@ -1091,7 +1093,7 @@ Section 9.4.4.1 formalizes the properties of the QBD proof regarding fragmentati
 
 ### 9.4.5 Proof: Leptoquark Generators {#9.4.5}
 
-:::tip[**Formal Verification of Leptoquark Dynamics within the Unified Algebra**]
+:::tip[**Formal Verification of Leptoquark Dynamics through the Unified Algebra**]
 :::
 
 **I. Algebraic Identification**
@@ -1134,7 +1136,7 @@ Section 9.5.1 formalizes the properties of the QBD theorem regarding proton stab
 
 ### 9.5.2 Lemma: Tension Verification {#9.5.2}
 
-:::info[**Demonstration of the Failure of Perturbative Methods for Proton Stability**]
+:::info[**Demonstration of the Failure of Perturbative Methods via Proton Stability**]
 :::
 
 Assume the perturbative decay rate prediction derived from Effective Field Theory, scaling as $\Gamma \propto M_X^{-4}$, is approximately $\tau \sim 10^{32}$ years. This prediction contradicts the experimental lower bound of $\tau > 10^{34}$ years, necessitating a non-perturbative suppression mechanism intrinsic to the ultraviolet completion of the theory.
@@ -1146,7 +1148,7 @@ Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verif
 
 ### 9.5.2.1 Proof: Tension Verification {#9.5.2.1}
 
-:::tip[**Quantitative Derivation of the EFT Prediction vs. Experiment**]
+:::tip[**Quantitative Derivation of the EFT Prediction vs. Experiment from Tension Verification**]
 :::
 
 **I. Standard Model EFT Prediction**
@@ -1200,7 +1202,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding tension ver
 
 ### 9.5.2.2 Calculation: EFT Rate Calculation {#9.5.2.2}
 
-:::note[**Computational Verification of the EFT Decay Rate Tension**]
+:::note[**Computational Verification of the EFT Decay Rate Tension through EFT Rate Calculation**]
 :::
 
 Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> is based on the pathway dynamics verified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> is based on the following protocols:
@@ -1221,10 +1223,10 @@ def verify_proton_decay_suppression():
     This calculation quantifies the shortfall and demonstrates the requirement
     for additional non-perturbative (topological) suppression.
     """
-    print("═" * 78)
+    print("=" * 78)
     print("PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS")
     print("Quantifying the Shortfall in Minimal SU(5) Predictions")
-    print("═" * 78)
+    print("=" * 78)
 
     # Physical constants and benchmarks
     alpha_gut = 1 / 42.0                  # Typical GUT coupling
@@ -1315,13 +1317,13 @@ if __name__ == "__main__":
     verify_proton_decay_suppression()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
-══════════════════════════════════════════════════════════════════════════════
+==============================================================================
 PROTON DECAY: PERTURBATIVE EFT vs. EXPERIMENTAL BOUNDS
 Quantifying the Shortfall in Minimal SU(5) Predictions
-══════════════════════════════════════════════════════════════════════════════
+==============================================================================
 
 Base Parameters:
   α_GUT   ≈ 0.0238
@@ -1359,7 +1361,8 @@ log₁₀(τ_p)  Count Percentage
      36.64     98       9.8%
 ```
 
-The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to guarantee proton stability, validating the necessity for the exponential topological barrier.
+**Conclusion:**
+The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to ensure proton stability, validating the necessity for the exponential topological barrier.
 
 **In Plain English:**  
 Section 9.5.2.2 formalizes the properties of the QBD calculation regarding eft rate calculation.
@@ -1368,7 +1371,7 @@ Section 9.5.2.2 formalizes the properties of the QBD calculation regarding eft r
 
 ### 9.5.3 Lemma: Minimal Action Pathway {#9.5.3}
 
-:::info[**Identification of the Least Suppressed Decay Channel**]
+:::info[**Identification of the Least Suppressed Decay Channel via Minimal Action Pathway**]
 :::
 
 Suppose the decay channel $p \to e^+ + \pi^0$ is identified as the unique transition pathway that minimizes the change in topological complexity $\Delta C$. This selection is enforced by the Principle of Minimal Complexity Change, which suppresses all alternative channels involving higher-generation final states.
@@ -1380,7 +1383,7 @@ Section 9.5.3 formalizes the properties of the QBD lemma regarding minimal actio
 
 ### 9.5.3.1 Proof: Minimal Action Pathway {#9.5.3.1}
 
-:::tip[**Comparative Analysis of Final State Invariants**]
+:::tip[**Comparative Analysis via Final State Invariants**]
 :::
 
 **I. Principle of Minimal Complexity Change**
@@ -1427,7 +1430,7 @@ Section 9.5.3.1 formalizes the properties of the QBD proof regarding minimal act
 
 ### 9.5.4 Lemma: Action-Mass Proportionality {#9.5.4}
 
-:::info[**Derivation of the Topological Suppression Factor**]
+:::info[**Derivation of the Topological Suppression Factor from Action-Mass Proportionality**]
 :::
 
 Let the instanton action $S_{inst}$ governing the proton decay rate be linearly proportional to the mass of the mediating X-boson, satisfying the relation $S_{inst} \propto M_X$. This relationship converts the unification mass scale directly into an exponential suppression factor $\Gamma \propto e^{-\lambda M_X}$, providing the necessary correction to the polynomial suppression.
@@ -1564,7 +1567,7 @@ Section 9.6.2 formalizes the properties of the QBD theorem regarding neutrino ma
 
 ### 9.6.3 Lemma: Neutrality Verification {#9.6.3}
 
-:::info[**Demonstration of the Uniqueness of the Folded Braid for Massive Neutral Leptons**]
+:::info[**Demonstration of the Uniqueness of the Folded Braid via Massive Neutral Leptons**]
 :::
 
 Suppose any standard (non-folded) braid configuration satisfying electric neutrality and color symmetry constraints possesses zero topological complexity ($C=0$), corresponding to a massless state. Consequently, the folded braid topology is the unique solution for a massive, neutral lepton.
@@ -1576,7 +1579,7 @@ Section 9.6.3 formalizes the properties of the QBD lemma regarding neutrality ve
 
 ### 9.6.3.1 Proof: Neutrality Verification {#9.6.3.1}
 
-:::tip[**Formal Derivation of the Zero-Mass Constraint for Standard Symmetric Braids**]
+:::tip[**Formal Derivation of the Zero-Mass Constraint via Standard Symmetric Braids**]
 :::
 
 **I. Constraints on Standard Braids**
@@ -1646,7 +1649,7 @@ Section 9.6.4 formalizes the properties of the QBD lemma regarding seesaw dynami
 
 ### 9.6.4.1 Proof: Seesaw Dynamics {#9.6.4.1}
 
-:::tip[**Diagonalization of the Mass Matrix Yielding Light and Heavy Eigenstates**]
+:::tip[**Diagonalization of the Mass Matrix Yielding Light via Heavy Eigenstates**]
 :::
 
 The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.  **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> and  **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />
@@ -1725,7 +1728,7 @@ Section 9.6.4.1 formalizes the properties of the QBD proof regarding seesaw dyna
 
 ### 9.6.5 Lemma: Complexity Density Scaling {#9.6.5}
 
-:::info[**Linear Scaling of Local Density with Braid Complexity**]
+:::info[**Linear Scaling of Local Density by Braid Complexity**]
 :::
 
 Assume the local edge density $\rho_{local}$ within the effective volume of a particle braid is linear in the topological complexity $N_3$. This scaling $\rho_{local} \sim N_3$ induces a linear increase in the topological stress $\sigma$ exerted by the vacuum on the braid structure.
@@ -1737,7 +1740,7 @@ Section 9.6.5 formalizes the properties of the QBD lemma regarding complexity de
 
 ### 9.6.5.1 Proof: Complexity Density Scaling {#9.6.5.1}
 
-:::tip[**Derivation of Stress Scaling within Fixed Particle Volumes**]
+:::tip[**Derivation of Stress Scaling through Fixed Particle Volumes**]
 :::
 
 **I. Volume Constraint**
@@ -1790,7 +1793,7 @@ Section 9.6.6 formalizes the properties of the QBD lemma regarding friction supp
 
 ### 9.6.6.1 Proof: Friction Suppression Limit {#9.6.6.1}
 
-:::tip[**Demonstration of Instability Onset at Critical Complexity**]
+:::tip[**Demonstration via Instability Onset at Critical Complexity**]
 :::
 
 **I. Maintenance Dynamics**
@@ -1852,7 +1855,7 @@ Section 9.6.7 formalizes the properties of the QBD lemma regarding critical comp
 
 ### 9.6.7.1 Proof: Critical Complexity Balance {#9.6.7.1}
 
-:::tip[**Derivation of the Critical Complexity $N_{3,\max}$**]
+:::tip[**Derivation of the Critical Complexity $N_{3,\max}$ from Critical Complexity Balance**]
 :::
 
 **I. Balance Equation**
@@ -1968,7 +1971,7 @@ Section 9.6.8.1 formalizes the properties of the QBD proof regarding planck anch
 
 ### 9.6.9 Proof: Neutrino Mass Mechanism {#9.6.9}
 
-:::tip[**Formal Proof of the Emergent Neutrino Mass and Seesaw Hierarchy**]
+:::tip[**Formal Proof of the Emergent Neutrino Mass through Seesaw Hierarchy**]
 :::
 
 The proof synthesizes the topological structure, mass matrix diagonalization, and friction-limited scaling to deriving the neutrino mass.
@@ -2056,7 +2059,7 @@ if __name__ == "__main__":
     verify_neutrino_seesaw()
 ```
 
-**Simulation Output:**
+**Simulation Results:**
 
 ```text
 TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION
@@ -2074,6 +2077,7 @@ Yukawa (y)   m_D (GeV)      m_D² (GeV²)      m_ν (GeV)          m_ν (eV)
 ----------------------------------------------------------------------
 ```
 
+**Conclusion:**
 The calculation yields a Dirac mass term of $24.6$ GeV and a heavy mass term of $2 \times 10^{16}$ GeV. The resulting light neutrino mass is approximately $3.03 \times 10^{-14}$ GeV, or $3.03 \times 10^{-5}$ eV. This value is consistent with the lower bounds derived from atmospheric neutrino oscillations. The output confirms that the topological friction scale naturally generates the sub-eV neutrino mass without fine-tuning.
 
 **In Plain English:**  
