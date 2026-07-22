@@ -14,9 +14,11 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 *   **Discrete Gradient:** The **Discrete Gradient** is the discrete edge difference operator $\nabla_e$ acting on a scalar field $\phi(v)$ on vertices (such as cycle density $\rho_3$, **Master Equation** <Ref id="5.2" label="§5.2" />) across an edge $e = (u, v)$, defined by the finite difference: $\Delta \phi = \phi(v) - \phi(u)$.
 *   **Emergent Length Normalization:** Normalizing this difference by the pre-geometric edge length $\ell_0$ (Planck scale) yields the discrete edge gradient:
+
     $$
     \nabla_e \phi \equiv \frac{\phi(v) - \phi(u)}{\ell_0}
     $$
+
 *   **Regularized Limits:** Because $\ell_0 > 0$ represents a hard lower bound on physical spacing, discrete differences prevent infinite gradients, regularizing classical divergences (such as $1/r$ gravitational potentials) at the Planck scale.
 
 **In Plain English:**  

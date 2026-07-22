@@ -160,9 +160,11 @@ Section 2.2.3.1 formalizes the properties of the QBD proof regarding thermodynam
 
 **I. The Mathematical Condition**
 Let the axiom of **Antisymmetry** be defined by the standard order-theoretic implication:
+
 $$
 \forall u, v \in V, \quad ((u, v) \in E \land (v, u) \in E) \implies u = v
 $$
+
 This condition operates as a conditional restraint. Crucially, it is verified definitionally to permit the existence of a reflexive edge $e = (u, u)$, as the consequent of the implication ($u=u$) holds true, rendering the statement valid regardless of the edge's existence.
 
 **II. The Constraint Chain**

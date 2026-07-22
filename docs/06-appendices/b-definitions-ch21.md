@@ -154,9 +154,11 @@ Let the spacetime volume operator scale with the count of active 3-cycles.  **Va
 **III. Stress-Energy Integration**
 
 We integrate this creation flux over a spatial hypersurface, demonstrating that the constant creation rate of geometric cells induces a positive spatial volume expansion term:
+
 $$
 H^2 = \frac{8\pi G}{3} \rho_{vac}
 $$
+
 which proves that self-creation behaves as a constant vacuum pressure.
 
 **IV. Formal Conclusion**
@@ -199,9 +201,11 @@ Let the vacuum density be governed by the constant stable fixed point $\rho^*$ o
 **III. Pressure Calculation**
 
 Calculation of the spatial pressure eigenvalues from the cycle creation operator confirms that the pressure is strictly negative, isotropic, and equal in magnitude to the energy density:
+
 $$
 P_{vac} = -\rho_{vac}
 $$
+
 yielding $w = P_{vac}/\rho_{vac} = -1.000$ to high precision.
 
 **IV. Formal Conclusion**
