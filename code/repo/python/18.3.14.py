@@ -1,4 +1,4 @@
-# §18.3.13 — Spectral Dimension Convergence
+# §18.3.14 — Spectral Dimension Convergence
 
 import numpy as np
 import pandas as pd

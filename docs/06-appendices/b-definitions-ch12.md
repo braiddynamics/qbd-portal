@@ -276,7 +276,7 @@ $$
 This inequality guarantees that local relaxation times scale as $r^2$, locking the diffusion process to the metric distance.
 
 **IV. Discrete Li-Yau Gradient Estimate**
-The **Uniform Curvature Bound** on the Causal Ollivier-Ricci curvature $\kappa(x,y) \geq -K$ **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" /> implies a differential constraint on the heat kernel. Following the discrete analysis of Bauer et al. (2015), a lower bound on Ricci curvature yields a discrete Li-Yau inequality for positive solutions $u > 0$ of the heat equation:
+The uniform lower bound on the Causal Ollivier-Ricci curvature $\kappa(x,y) \geq -K$, as established in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, implies a differential constraint on the heat kernel. Following the discrete analysis of Bauer et al. (2015), a lower bound on Ricci curvature yields a discrete Li-Yau inequality for positive solutions $u > 0$ of the heat equation:
 
 $$
 \frac{|\nabla u|^2}{u^2} - \alpha \frac{\partial_t u}{u} \leq C \frac{d}{t} + C' K.
@@ -501,7 +501,7 @@ W_1(\mu_u, \mu_v) = \ell_0 \left( 1 - \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v)
 $$
 
 **III. Ricci Tensor Identification**
-Substituting this transport cost expansion into the operational definition of Causal Ollivier-Ricci curvature established in **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> yields:
+Substituting this transport cost expansion into the operational definition of Causal Ollivier-Ricci curvature (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />) yields:
 
 $$
 K(u, v) = 1 - \frac{W_1(\mu_u, \mu_v)}{\ell_0} = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3).
@@ -537,7 +537,7 @@ From the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />, the sequ
 This establishes that the spectral invariants of the discrete graphs stabilize to those of a limit operator defined on the limit metric space $X = \lim_{GH} G_t$.
 
 **II. Identification of the Topological Manifold**
-the **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" /> establishes that the heat kernel $p_t(x,y)$ of the limit space admits short-time Gaussian bounds characteristic of a 4-dimensional Euclidean space.
+As established in **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />, the heat kernel $p_t(x,y)$ of the limit space admits short-time Gaussian bounds characteristic of a 4-dimensional Euclidean space.
 
 $$
 \lim_{t \to 0} 4t \log p_t(x,y) = -d(x,y)^2.

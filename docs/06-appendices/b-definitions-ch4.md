@@ -1178,7 +1178,7 @@ Section 4.3.9.1 formalizes the properties of the QBD proof regarding algebraic r
 Type-theoretic certification of the deterministic constriction established in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" /> proceeds via the following verification strategy under the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />:
 1.  **Encoding:** The `BitVector` type and `xor_vec` function encode the algebraic structure of the syndrome vectors and Pauli frame shifts. `GraphState` encodes the spatial manifold as a boolean map, and `symmetric_difference` encodes the topological rewrite $\Delta E$.
 2.  **Theorem Statement:** The Lean code-level proposition asserts that if a physical update is defined by XOR anti-commutation (`h_physical_update`) and the category map is defined as $k(\sigma)$ (`h_categorical_map`), then $k(\sigma)$ must exactly equal the physical update.
-3.  **Proof Closure:** The proof is resolved by `rw [← h_categorical_map]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
+3.  **Proof Closure:** The proof is resolved by `rw [h_categorical_map.symm]` to substitute the categorical definition into the goal, followed by `exact h_physical_update` to close it via transitive equality.
 
 ```lean
 -- A generic representation of boolean vectors (syndromes and incidence vectors)
@@ -1503,7 +1503,7 @@ theorem comonad_associativity {G A S : Type} (Y : GraphState G (A × S)) :
 ```
 
 **Verification Summary:**
-`GraphState G A` is a `structure` with fields `graph : G` and `annotation : A`, encoding the pair of a raw causal graph and its attached diagnostic context. When `A = A' × S`, the annotation decomposes into a history layer `A'` and a syndrome layer `S`. The counit `ε` projects out `annotation.1`, stripping the syndrome and returning the clean history; `δ` duplicates the annotation as `(annotation, annotation.2)`, recording the current full context alongside the syndrome layer to prepare for meta-level verification. `lift_history f` applies a map `f` to the history sector while leaving the syndrome unchanged. All three comonad laws reduce to structural equalities on `GraphState` field projections: `ε (δ Y)` evaluates to `⟨Y.graph, Y.annotation.1⟩` which is definitionally equal to `Y` when `Y.annotation = (Y.annotation.1, Y.annotation.2)`; the remaining two laws reduce analogously. The Lean kernel's acceptance of all three `rfl` closures certifies that the awareness mechanism is a provably valid comonad, providing the formal machine certificate that the graph's self-diagnostic structure is algebraically well-formed and free from coherence defects.
+`GraphState G A` is a `structure` with fields `graph : G` and `annotation : A`, encoding the pair of a raw causal graph and its attached diagnostic context. When `A = A' * S`, the annotation decomposes into a history layer `A'` and a syndrome layer `S`. The counit `e` projects out `annotation.1`, stripping the syndrome and returning the clean history; `d` duplicates the annotation as `(annotation, annotation.2)`, recording the current full context alongside the syndrome layer to prepare for meta-level verification. `lift_history f` applies a map `f` to the history sector while leaving the syndrome unchanged. All three comonad laws reduce to structural equalities on `GraphState` field projections: `e (d Y)` evaluates to the structure `(Y.graph, Y.annotation.1)`, which is definitionally equal to `Y` when `Y.annotation = (Y.annotation.1, Y.annotation.2)`; the remaining two laws reduce analogously. The Lean kernel's acceptance of all three `rfl` closures certifies that the awareness mechanism is a provably valid comonad, providing the formal machine certificate that the graph's self-diagnostic structure is algebraically well-formed and free from coherence defects.
 
 **In Plain English:**  
 Section 4.3.12 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -2338,7 +2338,7 @@ Let the deletion of a geometric quantum constitute the time-reverse of addition.
 
 **II. Free Energy Calculation**
 
-The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substitution of the **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> yields:
+The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substituting the value from **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> into this expression yields:
 
 $$
 \Delta F_{\text{del}} = -\frac{\ln 2}{4} - (\ln 2)(-\ln 2) = -\frac{\ln 2}{4} + (\ln 2)^2

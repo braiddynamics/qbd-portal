@@ -38,7 +38,7 @@ This foundational crisis is resolved by identifying the spin operator with the p
 
 ### 7.1.1 Definition: Spin Operator {#7.1.1}
 
-:::tip[**Parity Measurement of Rung Excitations using Z-Product Stabilizers**]
+:::tip[**Parity Measurement via Rung Excitations using Z-Product Stabilizers**]
 :::
 
 The **Spin Operator**, denoted $L_S$, is defined strictly as the global stabilizer check operator acting upon the transverse rung edges of a framed ribbon configuration within the causal graph $G_t$. The operator is constituted by the tensor product of Pauli-Z operators assigned to the set of rung edges $\{e_i\}$, formulated as $L_S = \prod_{i=1}^n Z_{e_i}$. This operator functions as a parity measurement device on the computational basis of the edge qubits, possessing the following invariant properties:
@@ -146,7 +146,7 @@ $$
 \partial \gamma = v_M - u_0
 $$
 
-representing a homology transfer between the distinct boundary components. Because $\gamma$ connects $P_1$ to $P_2$, it must intersect the dual rung cochain $E_{\text{rung}}$ an odd number of times. Every traversal of a rung edge $e \in E_{\text{rung}}$ by the rewrite sequence flips the orientation of the local framing vector $\vec{f} \to -\vec{f}$. To achieve a net inversion (half-twist), the cardinality of the intersection set $\eta$ must be odd:
+representing a homology transfer between the distinct boundary components. Because $\gamma$ connects $P_1$ to $P_2$, it must intersect the dual rung cochain $E_{\text{rung}}$ an odd number of times. Every traversal of a rung edge $e \in E_{\text{rung}}$ by the rewrite sequence flips the orientation of the local framing vector $\boldsymbol{f} \to -\boldsymbol{f}$. To achieve a net inversion (half-twist), the cardinality of the intersection set $\eta$ must be odd:
 
 $$
 w = \frac{1}{2} \implies \eta \equiv 1 \pmod 2
@@ -186,7 +186,7 @@ Q.E.D.
 
 The **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" /> formalizes the interaction between a physical twist and the measurement of spin. The spin operator $L_S$ measures parity via a product of $Z$ operators. A physical twist, implemented by the unitary $\hat{\mathcal{T}}$, involves the creation and rearrangement of edges, actions that correspond to Pauli-$X$ operations in the qubit basis defined in the **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />.
 
-Quantum mechanics dictates that $X$ and $Z$ anticommute ($XZ = -ZX$). Consequently, applying a twist operation ($\hat{\mathcal{T}}$) to a state flips the sign of the spin measurement ($L_S$). If the ribbon occupied a +1 eigenstate (untwisted), the twist transforms the system into a -1 eigenstate (twisted).
+Quantum mechanics dictates that $X$ and $Z$ anticommute ($XZ = -ZX$). Consequently, applying a physical twist operation ($\hat{\mathcal{T}}$) to a state flips the sign of the spin measurement ($L_S$). If the ribbon occupied a +1 eigenstate (untwisted), the twist transforms the system into a -1 eigenstate (twisted).
 
 The universality of this relation implies that any process capable of twisting a ribbon, regardless of specific micro-causal details, must introduce a sign flip in the wavefunction relative to the untwisted state. This -1 phase factor serves as the seed of Fermi-Dirac statistics. It ensures that a rotation of $360^\circ$ (two half-twists) returns the system to the original state but with a negated amplitude ($|\psi\rangle \to -|\psi\rangle$), the defining characteristic of a spinor. The anticommutation relation $\hat{\mathcal{T}} L_S \hat{\mathcal{T}}^\dagger = -L_S$ functions as the algebraic engine enforcing spinor behavior across the graph.
 
@@ -244,7 +244,7 @@ Time flows downward ($t_L$ increases).
 
 ### 7.1.4 Lemma: Exchange-Rotation Equivalence {#7.1.4}
 
-:::info[**Isotopy of Particle Exchange to Self-Rotation using Reidemeister Moves**]
+:::info[**Isotopy via Particle Exchange to Self-Rotation using Reidemeister Moves**]
 :::
 
 Every physical braid exchange operation $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon, established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> that continuously deforms the exchange path into a self-twist path. Under this isotopy, the deformation sequence preserves the global linking invariants throughout the transformation and enforces the strict equality of the exchange phase $\phi_{exch}$ and the self-rotation phase $\phi_{spin}$ to extend the spin-statistics connection to the discrete causal graph substrate.
@@ -322,7 +322,7 @@ Q.E.D.
 :::info[**Topological Unification of Spin and Statistics by Isotopic Deformation**]
 :::
 
-In standard quantum mechanics, the Spin-Statistics Theorem constitutes a derived result requiring the axioms of relativity and causality. In Quantum Braid Dynamics, it exists as a topological tautology. The **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" /> proves that exchanging two particles is geometrically identical to rotating one of them.
+In standard quantum mechanics, the Spin-Statistics Theorem constitutes a derived result requiring the axioms of relativity and causality. In Quantum Braid Dynamics, it exists as a topological tautology: as established in **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" />, exchanging two particles is geometrically identical to rotating one of them.
 
 Consider two ribbons situated side-by-side. Swapping their positions by passing one over the other creates a crossing. By applying a sequence of local deformations (Reidemeister moves), this crossing "slides" down one of the ribbons, effectively converting the swap of position into a twist of the ribbon itself.
 
@@ -394,7 +394,7 @@ STATE 3: THE SHIFT (Adding New Rung)
 
 ### 7.1.5 Proof: Topological Statistics {#7.1.5}
 
-:::tip[**Formal Verification of the Minus-One Exchange Phase for Half-Twisted Braids**]
+:::tip[**Formal Verification of the Minus-One Exchange Phase via Half-Twisted Braids**]
 :::
 
 **I. System Definition**
@@ -509,7 +509,7 @@ Exclusion is established as a consequence of the binary saturation of causal lin
 
 ### 7.2.1 Theorem: Pauli Exclusion Principle {#7.2.1}
 
-:::info[**Prohibition of Identical Fermion Occupancy under Causal Graph Axioms**]
+:::info[**Prohibition of Identical Fermion Occupancy via Causal Graph Axioms**]
 :::
 
 Every simultaneous occupancy of a single quantum state by two identical fermions is topologically forbidden due to the structural incompatibility between dual occupancy and the axiomatic constraints of the causal graph. In particular, the occupation of a causal link $(u, v)$ by a fermion saturates the local capacity to $|1\rangle_{uv}$, whereas encoding a second identical fermion locally necessitates the reverse link $(v, u)$ to form a directed 2-cycle that violates the asymmetry of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
@@ -531,7 +531,8 @@ The proof proceeds via Contradiction, assuming that two fermions can occupy the 
 │
 ├── 7.2.3 Lemma: Forbidden Occupancy
 │   ├── 7.2.3.1 Proof: Forbidden Occupancy
-│   └── 7.2.3.2 Commentary: Exclusion Barrier
+│   ├── 7.2.3.2 Commentary: Exclusion Barrier
+│   └── 7.2.3.3 Diagram: Exclusion Barrier
 │
 └── 7.2.4 Proof: Pauli Exclusion Principle
 ```
@@ -540,14 +541,14 @@ The proof proceeds via Contradiction, assuming that two fermions can occupy the 
 
 ### 7.2.2 Lemma: Binary State Principle {#7.2.2}
 
-:::info[**Restriction of Edge Occupancy to Single-Bit Capacity**]
+:::info[**Restriction via Edge Occupancy to Single-Bit Capacity**]
 :::
 
 For any directed edge $(u, v)$ within the causal graph, the information capacity is strictly restricted to a binary value $n \in \{0, 1\}$ because the edge set $E$ is defined as a subset of $V \times V$ and the configuration space $\mathcal{H}$ assigns a single qubit subsystem $q_{uv}$ restricting local basis states to $\{|0\rangle, |1\rangle\}$. This restriction is preserved by the algebraic set of rewrite operations $\{\mathcal{R}_i\}$ acting exclusively via Pauli-X bit-flips, thereby preserving the binary dimensionality of the local Hilbert space and prohibiting higher-occupancy states.
 
 ### 7.2.2.1 Proof: Binary State Principle {#7.2.2.1}
 
-:::tip[**Verification of the Single-Bit Capacity of Causal Edges**]
+:::tip[**Verification of the Single-Bit Capacity of Causal Edges through Binary State Principle**]
 :::
 
 **I. Set-Theoretic Definition**
@@ -612,14 +613,14 @@ This binary nature restricts the information capacity of any local region. A pai
 
 ### 7.2.3 Lemma: Forbidden Occupancy {#7.2.3}
 
-:::info[**Inevitable Formation of Two-Cycles in Superimposed Fermion States**]
+:::info[**Inevitable Formation of Two-Cycles via Superimposed Fermion States**]
 :::
 
 Suppose two identical fermions attempt to superimpose within the same local spatial mode, which necessitates the formation of a Directed 2-Cycle as the first fermion occupies the direct link $(u, v)$ and the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> restricts the second fermion to the immediate neighborhood. Under this restriction, the sole remaining local degree of freedom is the reverse link $(v, u)$, which forms a closed loop of length 2 that violates asymmetry and is thermodynamically excluded by the **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />.
 
 ### 7.2.3.1 Proof: Forbidden Occupancy {#7.2.3.1}
 
-:::tip[**Formal Demonstration of 2-Cycle Formation in Superposition Attempts**]
+:::tip[**Formal Demonstration of 2-Cycle Formation through Superposition Attempts**]
 :::
 
 **I. Initial State Constraints**
@@ -666,7 +667,16 @@ Q.E.D.
 
 ### 7.2.3.2 Commentary: Exclusion Barrier {#7.2.3.2}
 
-:::info[**Phase Diagram Illustrating Energetic Prohibition of Dual Occupancy**]
+:::info[**Energetic Prohibition of Dual Occupancy via Topological Projectors**]
+:::
+
+The physical origin of the Pauli Exclusion Principle within Quantum Braid Dynamics follows from the **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" />. This local state limit works in tandem with the **Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" />. In standard quantum mechanics, exclusion is introduced as an axiomatic postulate or a consequence of antisymmetrized wavefunctions. In QBD, exclusion emerges directly from the structural topology of the underlying causal graph, where any attempt to place two identical fermions into the same local state requires the creation of directed 2-cycles.
+
+Directed 2-cycles violate the foundational asymmetry mandated by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. Furthermore, such closed walks collapse the partial ordering mandated by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />, forcing the cycle projector $\Pi_{\text{cycle}}$ to annihilate any dual-occupancy state vector. Consequently, the transition probability to a doubly occupied state vanishes identically. The phase diagram in the following section illustrates this infinite energetic barrier, demonstrating that single-particle states remain stable local minima while dual occupancy is strictly prohibited by graph topology.
+
+### 7.2.3.3 Diagram: Exclusion Barrier {#7.2.3.3}
+
+:::note[**Phase Diagram Illustrating Energetic Prohibition of Dual Occupancy via Topological Projectors**]
 :::
 
 ```text
@@ -828,7 +838,7 @@ Electric charge is defined as the normalized total writhe of the tripartite brai
 
 ### 7.3.1 Definition: Charge Operator {#7.3.1}
 
-:::tip[**Formulation of Net Topological Charge using the Writhe Stabilizer**]
+:::tip[**Formulation via Net Topological Charge using the Writhe Stabilizer**]
 :::
 
 The **Charge Operator**, denoted $Q$, is defined strictly as a composite global stabilizer acting upon the tripartite braid configuration $\beta$ within the QECC Hilbert space $\mathcal{H}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The operator is constituted by the normalized summation of the twist parities of the three constituent ribbons $\{R_1, R_2, R_3\}$, subject to the following structural specifications:
@@ -845,7 +855,7 @@ The Charge Operator $Q$ transforms the abstract concept of electric charge into 
 
 The operator scans the three ribbons of a particle and sums their writhe (twist). The normalization factor of $1/3$ reflects the tripartite nature of the **Tripartite Braid** <Ref id="6.2.1" label="§6.2.1" />. This implies that the "elementary" charge $e$ constitutes a composite of three fractional sub-charges, each carried by one of the ribbons.
 
-For a lepton like the electron, the ribbons are symmetric, each contributing $-1$ to the writhe sum, resulting in a total charge of $-1$. For quarks, the asymmetry allows for fractional totals like $-1/3$ or $+2/3$. The **Charge Operator** <Ref id="7.3.1" label="§7.3.1" /> implies that charge conservation equates to the conservation of topology. Changing the net charge of a system requires physically creating or destroying twists, a process constrained by the global conservation laws. Charge is geometry, counted.
+For a lepton like the electron, the ribbons are symmetric, each contributing $-1$ to the writhe sum, resulting in a total charge of $-1$. For quarks, the asymmetry allows for fractional totals like $-1/3$ or $+2/3$. Under the **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />, charge conservation equates to the conservation of topology. Changing the net charge of a system requires physically creating or destroying twists, a process constrained by the global conservation laws. Charge is geometry, counted.
 
 ---
 
@@ -894,7 +904,7 @@ The proof proceeds via Direct Construction, linking global topological invariant
 
 ### 7.3.3 Lemma: Gauge Symmetry {#7.3.3}
 
-:::info[**Invariance of Physical Laws under Global Writhe Shifts**]
+:::info[**Invariance of Physical Laws through Global Writhe Shifts**]
 :::
 
 Assume the dynamical laws governing the causal graph exhibit a strict gauge symmetry with respect to the total writhe parameter, where local transition probabilities are invariant under the global transformation $w \to w + n$ for $n \in \mathbb{Z}$. This shift invariance is enforced by the bounded causal horizon $R \sim \log N$ of the Universal Constructor $\mathcal{R}$ (**Local Horizon** <Ref id="6.4.3" label="§6.4.3" />), rendering it incapable of measuring global invariants and necessitating a compensating gauge field $A_\mu$ to preserve local consistency.
@@ -962,7 +972,7 @@ Q.E.D.
 :::info[**Derivation of Gauge Invariance from Local Horizon Constraints**]
 :::
 
-This commentary explains the origin of gauge invariance. Charge is defined as the *total* writhe of a braid. However, the rewrite rule $\mathcal{R}$, the engine of physics, operates as a nearsighted agent, perceiving only a small patch of the graph.
+The geometric origin of gauge invariance stems from the local nature of graph rewrites. Charge is defined as the *total* writhe of a braid. However, the rewrite rule $\mathcal{R}$, the engine of physics, operates as a nearsighted agent, perceiving only a small patch of the graph.
 
 Consider a macroscopic filament. A local observer viewing a small segment perceives the local twist but cannot count the *total* number of twists in the entire filament without traversing its length. Since the rewrite rule cannot traverse the particle instantaneously due to the **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, it remains blind to the total charge.
 
@@ -972,7 +982,7 @@ This blindness manifests as a symmetry. The local laws of physics must remain in
 
 ### 7.3.4 Lemma: Conservation of Total Writhe {#7.3.4}
 
-:::info[**Invariance of Writhe Number under Unitary Evolution**]
+:::info[**Invariance of Writhe Number through Unitary Evolution**]
 :::
 
 Every total writhe $w(\beta)$ of an isolated prime braid configuration is an invariant of motion under the evolution operator $\mathcal{U}$, whose conservation is enforced by the axiomatic barrier against Reidemeister Type I moves (**Directed Causal Link**) and (**Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />). Under these axiomatic constraints, any writhe-changing fluctuation requires self-loops or 2-cycles that are annihilated by the Hard Constraint Projector $\Pi_{cycle}$, yielding a transition probability of zero.
@@ -1031,7 +1041,7 @@ Q.E.D.
 :::info[**Stability of Total Writhe against Local Topological Perturbations**]
 :::
 
-The **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" /> establishes the absolute conservation of total writhe under unitary evolution. A change in writhe necessitates a Type I Reidemeister move, the creation or deletion of a twist loop. However, such a move constitutes a local operation that alters a global invariant.
+As codified in **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" />, total writhe is strictly conserved under unitary evolution. A change in writhe necessitates a Type I Reidemeister move, the creation or deletion of a twist loop. However, such a move constitutes a local operation that alters a global invariant.
 
 The Quantum Error-Correcting Code (QECC) enforces conservation by detecting this discrepancy. A local twist creates a syndrome violation in the stabilizer group measuring writhe. The system identifies the state as a logical error, a fluctuation that violates the global consistency of the braid. The evolution operator $\mathcal{U}$ projects out such invalid states, ensuring they have zero probability of realization. Consequently, the total writhe of an isolated particle remains invariant not because it is energetically favorable, but because the path to changing it is blocked by the logical structure of the vacuum. The particle retains its identity (charge) because the universe forbids the specific topological surgeries required to alter it locally.
 
@@ -1039,29 +1049,29 @@ The Quantum Error-Correcting Code (QECC) enforces conservation by detecting this
 
 ### 7.3.5 Lemma: Lepton Charge Solutions {#7.3.5}
 
-:::info[**Derivation of Integer Charges for Color-Singlet Fermions**]
+:::info[**Derivation of Integer Charges via Color-Singlet Fermions**]
 :::
 
 Every stable, minimal-complexity braid configuration transforming as a singlet under ribbon permutation (Color Symmetry) is restricted to the charge spectrum $Q \in \{0, \pm 1\}$ due to the symmetry constraint requiring identical ribbon writhe values $w_1 = w_2 = w_3 = k$. Under this constraint, the total writhe $W = 3k$ is divisible by the normalization factor $3$ to yield an integer charge $Q = k$, where the lowest-complexity solutions correspond to $k=0$ (Neutrino) and $k=-1$ (Electron) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
 
 ### 7.3.5.1 Proof: Lepton Charge Solutions {#7.3.5.1}
 
-:::tip[**Verification of Charge Assignments for Neutrinos and Electrons**]
+:::tip[**Verification of Charge Assignments for Neutrinos through Electrons**]
 :::
 
 **I. Configuration Space Definition**
 
-Let the state of a tripartite braid be defined by the writhe vector $\vec{w} = (w_1, w_2, w_3) \in \mathbb{Z}^3$.
+Let the state of a tripartite braid be defined by the writhe vector $\boldsymbol{w} = (w_1, w_2, w_3) \in \mathbb{Z}^3$.
 The **Electric Charge Operator** $Q$ **Charge Operator** <Ref id="7.3.1" label="§7.3.1" /> is defined linearly:
 
 $$
-Q(\vec{w}) = \frac{1}{3} \sum_{i=1}^{3} w_i
+Q(\boldsymbol{w}) = \frac{1}{3} \sum_{i=1}^{3} w_i
 $$
 
-The **Topological Complexity** $C(\vec{w})$ **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> scales with the absolute writhe sum (approximating crossing number scaling):
+The **Topological Complexity** $C(\boldsymbol{w})$ **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> scales with the absolute writhe sum (approximating crossing number scaling):
 
 $$
-C(\vec{w}) = \sum_{i=1}^{3} |w_i|
+C(\boldsymbol{w}) = \sum_{i=1}^{3} |w_i|
 $$
 
 **II. Color Singlet Constraint**
@@ -1069,7 +1079,7 @@ $$
 A physical state corresponds to a Color Singlet (Lepton) if and only if the braid configuration is invariant under the permutation group $S_3$ acting on the ribbons.
 
 $$
-P \vec{w} = \vec{w} \quad \forall P \in S_3
+P \boldsymbol{w} = \boldsymbol{w} \quad \forall P \in S_3
 $$
 
 This symmetry constraint forces the writhe components to be identical across all three ribbons.
@@ -1136,20 +1146,20 @@ When the charge operator $Q = W/3$ acts on this symmetric state, the factor of 3
 
 ### 7.3.6 Lemma: Quark Charge Solutions {#7.3.6}
 
-:::info[**Derivation of Fractional Charges for Color-Triplet Fermions**]
+:::info[**Derivation of Fractional Charges via Color-Triplet Fermions**]
 :::
 
 Every stable, minimal-complexity braid configuration transforming as a triplet under ribbon permutation (Color Asymmetry) is restricted to the charge spectrum $Q \in \{-1/3, +2/3\}$ because the asymmetry constraint requires distinct ribbon writhe values to distinguish color states. This asymmetry yields a total writhe $W$ indivisible by $3$, producing fractional charges where the ground states correspond to $(-1, 0, 0)$ yielding $Q=-1/3$ (Down Quark) and $(1, 1, 0)$ yielding $Q=+2/3$ (Up Quark) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
 
 ### 7.3.6.1 Proof: Quark Charge Solutions {#7.3.6.1}
 
-:::tip[**Verification of Charge Assignments for Up and Down Quarks**]
+:::tip[**Verification of Charge Assignments for Up through Down Quarks**]
 :::
 
 **I. The Color-Charged Constraint**
 
 A fermion qualifies as a color triplet (Quark) if and only if its braid representation breaks the permutation symmetry $S_3$ of the ribbons.
-This requires the writhe vector $\vec{w}$ to be asymmetric.
+This requires the writhe vector $\boldsymbol{w}$ to be asymmetric.
 
 $$
 \exists i, j : w_i \neq w_j
@@ -1209,13 +1219,13 @@ Q.E.D.
 :::info[**Emergence of Rational Values due to Asymmetric Writhe Distribution**]
 :::
 
-Quarks carry fractional charges because they violate the symmetry of the lepton. A quark is a color-triplet state, meaning its ribbons are distinguishable and not invariant under permutation. This freedom allows the ribbons to carry different writhe values.
+Quarks carry fractional charges because they violate the singlet symmetry of the lepton. A quark is a color-triplet state, meaning its ribbons are distinguishable and not invariant under permutation. This freedom allows the ribbons to carry different writhe values.
 
 The minimal complexity principle selects the simplest configurations that break symmetry. For the down quark, a single twist on one ribbon breaks the symmetry: $(-1, 0, 0)$. The total writhe is $-1$. Applying the charge operator yields $Q = \frac{1}{3}(-1) = -1/3$. For the up quark, the stable configuration involves two parallel twists: $(+1, +1, 0)$. The total writhe is $+2$, yielding $Q = +2/3$. These fractions are not arbitrary constants; they are the result of dividing an integer number of twists ($1$ or $2$) by the three-ribbon structure of the fermion. Quarks are fractional because they are "incomplete" braids, carrying a topological load that is not divisible by the braid's cardinality.
 
 ### 7.3.6.3 Diagram: Fermion Writhe Topology {#7.3.6.3}
 
-:::note[**Visual Taxonomy of Writhe Configurations for First-Generation Fermions**]
+:::note[**Visual Taxonomy of Writhe Configurations via First-Generation Fermions**]
 :::
 
 ```text
@@ -1261,7 +1271,7 @@ Given the charge operator definition $Q = k \cdot w(\beta)$, the normalization c
 
 ### 7.3.7.1 Proof: Charge Normalization {#7.3.7.1}
 
-:::tip[**Verification of Consistency with Standard Model Hypercharge Anomalies**]
+:::tip[**Verification of Consistency through Standard Model Hypercharge Anomalies**]
 :::
 
 **I. The Anomaly Condition**
@@ -1336,26 +1346,26 @@ Q.E.D.
 :::info[**Requirement of Rational Charges for Consistency with Standard Model Anomalies**]
 :::
 
-The derivation of the normalization constant $k=1/3$ resolves the origin of fractional charges. The **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" /> demonstrates that this constant is a requirement for the internal consistency of the theory. The "Anomaly Cancellation" condition constitutes a mathematical requirement for the Standard Model to function without breaking down at high energies. Specifically, the sum of charges in a generation must balance out such that the sum of the cubes of the charges equals zero. This constraint is well-known in quantum field theory, but here it emerges from the topological necessity of the tripartite braid structure, linking the discrete geometry directly to the algebraic consistency of gauge theory as described by <Cite id="A.41" label="(Maldacena, 1998)" /> in the context of large-N limits and dualities.
+The derivation of the normalization constant $k=1/3$ resolves the origin of fractional charges. As shown in **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />, this constant is a requirement for the internal consistency of the theory. The "Anomaly Cancellation" condition constitutes a mathematical requirement for the Standard Model to function without breaking down at high energies. Specifically, the sum of charges in a generation must balance out such that the sum of the cubes of the charges equals zero. This constraint is well-known in quantum field theory, but here it emerges from the topological necessity of the tripartite braid structure, linking the discrete geometry directly to the algebraic consistency of gauge theory as described by <Cite id="A.41" label="(Maldacena, 1998)" /> in the context of large-N limits and dualities.
 
 Setting the normalization to any value other than $1/3$ (e.g., $1/2$ or $1$) destroys this delicate balance. The topological model *forces* quarks to possess fractional charges because they represent "one-third" of a lepton structure in terms of symmetry. A lepton acts as a symmetric braid where all three ribbons twist together ($3 \times 1/3 = 1$). A quark acts as an asymmetric braid where the ribbons twist independently ($1 \times 1/3$). The fractions serve as the fingerprints of the tripartite braid structure.
 
-| Field | Rep | Y | Multiplicity | Y^3 Contrib | Total |
+| Field | Rep | $Y$ | Multiplicity | $Y^3$ Contrib | Total |
 |-------|-----|---|--------------|-------------|-------|
-| Q_L (u_L,d_L) | (3,2) | 1/6 | 6 (3col×2) | 6×(1/216) = 1/36 | 1/36 |
-| L_L (ν_L,e_L) | (1,2) | -1/2 | 2 | 2×(-1/8) = -1/4 | -1/4 |
-| u_R | 3 | 2/3 | 3 | 3×(8/27) = 24/27 | 24/27 |
-| d_R | bar{3} | -1/3 | 3 | 3×(-1/27) = -3/27 | -3/27 |
-| e_R | 1 | -1 | 1 | 1×(-1) = -1 | -1 |
-| Left Sum | | | | 1/36 - 1/4 = -2/9 | -2/9 |
-| Right Sum (opp chir sign) | | | | +2/9 | +2/9 |
-| Grand Total | | | | 0 | 0 |
+| $Q_L (u_L,d_L)$ | $(3,2)$ | $1/6$ | $6\ (3\text{col} \times 2)$ | $6 \times (1/216) = 1/36$ | $1/36$ |
+| $L_L (\nu_L,e_L)$ | $(1,2)$ | $-1/2$ | $2$ | $2 \times (-1/8) = -1/4$ | $-1/4$ |
+| $u_R$ | $3$ | $2/3$ | $3$ | $3 \times (8/27) = 24/27$ | $24/27$ |
+| $d_R$ | $\bar{3}$ | $-1/3$ | $3$ | $3 \times (-1/27) = -3/27$ | $-3/27$ |
+| $e_R$ | $1$ | $-1$ | $1$ | $1 \times (-1) = -1$ | $-1$ |
+| Left Sum | | | | $1/36 - 1/4 = -2/9$ | $-2/9$ |
+| Right Sum (opp chir sign) | | | | $+2/9$ | $+2/9$ |
+| Grand Total | | | | $0$ | $0$ |
 
 ---
 
 ### 7.3.8 Proof: Emergence of Electric Charge {#7.3.8}
 
-:::tip[**Formal Synthesis of Writhe Invariants into the Charge Operator**]
+:::tip[**Formal Synthesis via Writhe Invariants into the Charge Operator**]
 :::
 
 **I. Invariant Foundation**
@@ -1368,7 +1378,7 @@ This identifies $w(\beta)$ as the topological source of the electromagnetic coup
 
 The Charge Operator is defined as $Q = k \cdot w$.
 The value of the constant $k$ is constrained by the algebraic embedding of the braid group into the Standard Model gauge group.
-The **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" /> proves that $k=1/3$ is the unique normalization satisfying the definition of the fundamental charge unit and anomaly cancellation.
+Furthermore, as proved in **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />, $k=1/3$ is the unique normalization satisfying the definition of the fundamental charge unit and anomaly cancellation.
 
 **III. Spectrum Generation**
 
@@ -1435,7 +1445,7 @@ The **Inertial Mass** $m$ of a stable particle is defined as the measure of its 
 :::info[**Origin of Inertia in a Discrete Relational Universe**]
 :::
 
-This commentary redefines mass. Classical physics treats mass as "stuff." Quantum Braid Dynamics treats mass as "trouble", specifically, the computational cost the universe incurs to maintain a complex structure.
+In Quantum Braid Dynamics, rest mass receives a topological definition. Classical physics treats mass as scalar "stuff," whereas QBD treats mass as informational "trouble", specifically, the computational cost and graph real estate the universe incurs to maintain a complex topological structure against vacuum decay.
 
 A particle exists as a knot in the causal graph. To persist, this knot requires a specific allocation of edges and 3-cycles to define its shape. This allocation constitutes its "informational inertia." The more complex the knot (more crossings, more twists), the more geometric quanta ($N_3$) are required to sustain it against the vacuum's tendency to smooth it out.
 
@@ -1445,7 +1455,7 @@ The **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" /> resolve
 
 ### 7.4.2 Theorem: Topological Mass Functional {#7.4.2}
 
-:::info[**Proportionality of Inertial Mass to Total Topological Complexity**]
+:::info[**Proportionality via Inertial Mass to Total Topological Complexity**]
 :::
 
 Let the rest mass $m$ of a fermion braid be determined by the topological complexity functional $m = \kappa_m \left( \sum_{i=1}^3 N_3(R_i) - k_{\text{share}} \cdot |L_{ij}|_{\parallel} \right)$ anchored to the electron mass constant $\kappa_m \approx 0.170$ MeV. This functional is defined by the sum of isolated ribbon complexities $\sum N_3(R_i)$ representing crossing and torsion costs, reduced by the geometric efficiency term $k_{\text{share}} \cdot |L_{ij}|_{\parallel}$ representing shared quanta between parallel ribbons. Under this formulation, the discrete mass spectrum of the Standard Model fermions arises from the quantized integer topologies of their constituent ribbons (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
@@ -1473,22 +1483,21 @@ The proof proceeds via Direct Construction, integrating crossing scaling and sha
 │   └── 7.4.5.2 Commentary: Isospin Symmetry
 │
 └── 7.4.6 Proof: Topological Mass Functional
-    ├── 7.4.6.1 Calculation: Generational Mass Hierarchy Verification
-    └── 7.4.6.2 Diagram: Generational Mass Spectrum Table
+    └── 7.4.6.1 Calculation: Generational Mass Hierarchy Verification
 ```
 
 ---
 
 ### 7.4.3 Lemma: Thermodynamic Equivalence {#7.4.3}
 
-:::info[**Identity of Free Energy and Internal Energy for Protected States**]
+:::info[**Identity of Free Energy via Internal Energy for Protected States**]
 :::
 
 For any stable prime braid configuration, the Helmholtz Free Energy $F$ is strictly equal to its Internal Energy $U$ ($F[\beta] = U[\beta]$) due to the Zero Entropy Condition restricting the particle to a single valid logical microstate with Boltzmann entropy $S = 0$. Consequently, the inertial mass of the particle remains independent of the vacuum temperature $T$ and is determined solely by the structural energy of the graph (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
 
 ### 7.4.3.1 Proof: Thermodynamic Equivalence {#7.4.3.1}
 
-:::tip[**Verification of Zero Entropy for Unique Logical Microstates**]
+:::tip[**Verification of Zero Entropy via Unique Logical Microstates**]
 :::
 
 **I. Thermodynamic Decomposition**
@@ -1553,7 +1562,7 @@ Q.E.D.
 :::info[**Decoupling of Particle Mass from Vacuum Thermal Fluctuations**]
 :::
 
-This commentary explains why fundamental particles maintain stable masses despite the thermodynamic nature of the vacuum. The **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" /> establishes that for a protected topological state, the entropy $S$ vanishes. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
+Fundamental particles maintain stable rest masses despite the thermodynamic nature of the vacuum. As demonstrated in **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" />, the entropy $S$ vanishes for a protected topological state. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
 
 Because the particle constitutes a single, rigid logical state (a code word), it lacks internal microstates that thermal noise could excite without breaking the particle entirely. The free energy $F = U - TS$ reduces to $F = U$. The mass is purely determined by the internal structural energy (the number of 3-cycles). This isolation shields the properties of matter from the chaotic environment of the quantum foam. An electron possesses the same mass whether in a cryostat or the center of a star because its topology protects its internal "machinery" from thermal degradation.
 
@@ -1561,7 +1570,7 @@ Because the particle constitutes a single, rigid logical state (a code word), it
 
 ### 7.4.4 Lemma: Base Mass Linear Scaling {#7.4.4}
 
-:::info[**Linear Contribution of Complexity to Base Mass**]
+:::info[**Linear Contribution via Complexity to Base Mass**]
 :::
 
 Every base component of the topological mass scales linearly with the number of geometric quanta $N_3$ because the total complexity is the arithmetic sum of the complexity of independent crossings ($N_3 \propto C[\beta]$). This linear scaling enforces the quantization of the mass spectrum into discrete integer multiples of the fundamental mass constant $\kappa_m$ (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />).
@@ -1625,7 +1634,7 @@ Q.E.D.
 :::info[**Quantization of Mass into Discrete Topological Steps**]
 :::
 
-The **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" /> establishes the linear relationship between the crossing number and mass. It implies that topological complexity accumulates additively. Taking a braid with 3 crossings and adding another crossing increases the mass by a fixed amount, the mass of one geometric quantum.
+As established in **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, crossing number and mass exhibit a linear relationship, implying that topological complexity accumulates additively. Taking a braid with 3 crossings and adding another crossing increases the mass by a fixed amount, the mass of one geometric quantum.
 
 This linearity is crucial. It signifies that mass is quantized. A particle with "3.5" crossings cannot exist. The mass spectrum of the universe builds from integer blocks of complexity. The base mass of the electron derives from its minimal 3 crossings. The differences between particle masses correspond not to random continuous values but to discrete steps on a topological ladder. This quantization of mass constitutes a direct prediction of the discrete nature of the causal graph.
 
@@ -1640,7 +1649,7 @@ Every interaction energy between parallel ribbons in a composite braid manifests
 
 ### 7.4.5.1 Proof: Integer Geometric Efficiency {#7.4.5.1}
 
-:::tip[**Verification of Unitary Mass Reduction per Parallel Link**]
+:::tip[**Verification through Unitary Mass Reduction per Parallel Link**]
 :::
 
 **I. Isolated Cost Analysis**
@@ -1701,7 +1710,7 @@ Q.E.D.
 :::info[**Geometric Origin of Mass Degeneracy in Up and Down Quarks**]
 :::
 
-One of the subtle features of the Standard Model is that the Up and Down quarks possess almost the same mass (Isospin symmetry). The **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" /> provides a geometric explanation.
+One of the subtle features of the Standard Model is that the Up and Down quarks possess almost the same mass, a property known as Isospin symmetry. In **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />, this approximate mass degeneracy receives a natural geometric explanation.
 
 The Up quark possesses more writhe ($w=+2$) than the Down quark ($w=-1$). Naively, it should be heavier. However, the Up quark's two twists are *parallel* (same sign). The derivation shows that parallel ribbons can "share" geometric quanta, essentially, the same graph structure supports both twists simultaneously. This "Geometric Efficiency" reduces the effective complexity of the Up quark by exactly one unit.
 
@@ -1726,7 +1735,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
 
 **II. Case 1: The Down Quark ($d$)**
 
-* **Topology:** Triplet state with writhe vector $\vec{w}_d = (-1, 0, 0)$.
+* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_d = (-1, 0, 0)$.
 * **Isolated Term:**
     Under the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, the isolated contribution is:
 
@@ -1749,7 +1758,7 @@ with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
 
 **III. Case 2: The Up Quark ($u$)**
 
-* **Topology:** Triplet state with writhe vector $\vec{w}_u = (+1, +1, 0)$.
+* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$.
 * **Isolated Term:**
 
     $$
@@ -1792,9 +1801,9 @@ Quantification of the mass spectrum predicted by the **Topological Mass Function
 
 1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) under **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" /> and enforces the unitary lattice sharing constraint $k_{share} = 1$.
 2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 
-    * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
-    * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
-    * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
+    * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
+    * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
+    * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
 3.  **Spectrum Matching:** The simulation compares the resulting discrete Topological Rest Masses against the observed empirical masses of the Standard Model fermions, calculating the geometric delta.
 
 ```python
@@ -1894,12 +1903,13 @@ Electron    (-1, -1, -1)       3              0.5             0.5   0.00
 
 The simulation confirms the predictive accuracy of the quadratic scaling functional.
 Generational Gaps: The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.; High-Mass Convergence: For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$.; Low-Mass Deviation: The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
-### 7.4.6.2 Diagram: Generational Mass Spectrum Table {#7.4.6.2}
 
-:::note[**Tabular Verification of the Full Standard Model Mass Hierarchy**]
+---
+
+### 7.4.Z Implications and Synthesis {#7.4.Z}
+
+:::note[**Topological Mass Functional**]
 :::
-
-The following table demonstrates the mapping of integer topological harmonics to the observed fermion mass spectrum. The Topological Mass is anchored to the electron base state ($\kappa_m \approx 0.17033$ MeV).
 
 | Particle | Type | Writhe Config | Net Complexity ($N_3$) | Topo Mass (MeV) | Observed (MeV) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -1914,22 +1924,11 @@ The following table demonstrates the mapping of integer topological harmonics to
 | **Bottom** ($b$) | Quark | $(-157, 0, 0)$ | **24,649** | 4,198.6 | 4,180.0 |
 | **Top** ($t$) | Quark | $(712, 712, 0)$ | **1,013,176** | 172,577.6 | 172,900.0 |
 
-*\*Note: The significant delta in first-generation quarks is an expected feature, as the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the ultra-low bare geometric mass at this scale.*
-
----
-
-### 7.4.Z Implications and Synthesis {#7.4.Z}
-
-:::note[**Topological Mass Functional**]
-:::
-
-The topological mass functional redefines inertia as the vacuum's reluctance to reconfigure a braid's embedded structure, quantifying the fermion's rest energy through the net count of geometric quanta sustaining its twists and crossings, matching the principles of **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />. The mass formulation establishes mass not as a scalar coupled to a Higgs field but as informational resistance: the braid's complexity, measured in 3-cycles, imposes a barrier to acceleration by demanding proportional resources to maintain topology under motion. The functional's decomposition (linear in crossings for entanglements, quadratic in writhe for self-strain) captures the generational leaps, where heavier particles embody denser knots that the local dynamics struggle to perturb.
+The topological mass functional redefines inertia as the vacuum's reluctance to reconfigure a braid's embedded structure, quantifying the fermion's rest energy through the net count of geometric quanta sustaining its twists and crossings, matching the principles of **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />. The mass formulation establishes mass not as a scalar coupled to a Higgs field but as informational resistance: the braid's complexity, measured in 3-cycles, imposes a barrier to acceleration by demanding proportional resources to maintain topology under motion. The functional's decomposition (linear in crossings for entanglements, quadratic in writhe for self-strain) captures the generational leaps, where heavier particles embody denser knots that local dynamics struggle to perturb.
 
 By replacing arbitrary Higgs couplings with the combinatorics of steric hindrance, this framework reveals that generations of matter are simply resonant topological isomers. A muon is geometrically identical to an electron, but its ribbons are wound exactly 14 times tighter. The top quark, long considered a mysterious outlier due to its colossal mass, is perfectly demystified: to encode an up-type charge at the third generation, its ribbons must wind $w=712$ times. Because mass scales quadratically ($2w^2 - w$), this integer generates over a million geometric quanta ($N_3 = 1,013,176$), naturally producing the observed $\sim 173$ GeV mass. The mass hierarchy is therefore not a list of free parameters, but a strict consequence of the quadratic energy barriers inherent to tying knots in a discrete causal space.
 
-For a technical audience, this implies a shift from field-theoretic masses to graph-theoretic costs: the electron's lightness reflects its minimal three-unit complexity, while the top quark's heft arises from compounded torsions scaling as $w^2$ **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />, with sharing efficiencies explaining isospin near-degeneracies **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />. The zero-entropy equivalence $F=U$ isolates mass from thermal fluctuations, anchoring spectra as invariants of the codespace rather than environmental variables. This resolves the preon mass paradox by distributing strain over extended topology, evading point-like divergences while yielding finite limits through uncertainty in braid embeddings.
-
-Broader still, this functional posits that mass hierarchies are echoes of topological minima: the universe populates low-writhe states abundantly, with deeper writhe wells accessed only through rare, high-energy processes. This predicts a discrete spectrum without infinities, where generations occupy metastable attractors in the writhe landscape. These quantum numbers now stand as topological exhausts of the braid engine, completing the fermionic profile as emergent logic in the causal weave.
+For a technical audience, this implies a shift from field-theoretic masses to graph-theoretic costs: the electron's lightness reflects its minimal three-unit complexity, while the top quark's heft arises from compounded torsions scaling as $w^2$ **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />, with sharing efficiencies explaining isospin near-degeneracies **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />. The zero-entropy equivalence $F=U$ isolates mass from thermal fluctuations, anchoring spectra as invariants of the codespace rather than environmental variables, resolving the preon mass paradox by distributing strain over extended topology while yielding finite limits through uncertainty in braid embeddings. Broader still, this functional posits that mass hierarchies are echoes of topological minima: the universe populates low-writhe states abundantly, with deeper writhe wells accessed only through rare, high-energy processes. This predicts a discrete spectrum without infinities, where generations occupy metastable attractors in the writhe landscape; quantum numbers serving as topological exhausts of the braid engine that complete the fermionic profile as emergent logic in the causal weave.
 
 ---
 
@@ -1966,7 +1965,7 @@ To understand how these persistent defects interact, we must move from static pr
 | $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/topology/7.3/#7.3.7) |
 | $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
-| $C(\vec{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
+| $C(\boldsymbol{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/topology/7.3/#7.3.7.2) |
 | $m$ | Topological Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
 | $N_3$ | Count of 3-cycles (Geometric Quanta) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |

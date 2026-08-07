@@ -1,0 +1,20 @@
+------------------------------------------------------------------------
+§19.2.4.2 Electroweak Sphaleron Chemical Equilibrium
+------------------------------------------------------------------------
+Fermion Generations N_f: 3
+Higgs Doublets N_H: 1
+Analytical Sphaleron Conversion Factor C_sph: 0.35443038 (28/79)
+Primordial B-L Asymmetry Y_{B-L}: 2.447009e-10
+Predicted Baryon-to-Photon Ratio eta: 6.1058e-10
+Planck 2020 Observational Benchmark: 6.12e-10 ± 4.00e-12
+Relative Deviation from Benchmark: 0.23%
+------------------------------------------------------------------------
+|   Fermion Generations N_f |   Higgs Doublets N_H |   Sphaleron Ratio C_sph | Ratio Fraction   |   Baryon Asymmetry eta |
+|---------------------------|----------------------|-------------------------|------------------|------------------------|
+|                         1 |                    1 |                0.342857 | 12/35            |             5.9064e-10 |
+|                         2 |                    1 |                0.350877 | 20/57            |             6.0445e-10 |
+|                         3 |                    1 |                0.35443  | 28/79            |             6.1058e-10 |
+|                         4 |                    1 |                0.356436 | 36/101           |             6.1403e-10 |
+------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------

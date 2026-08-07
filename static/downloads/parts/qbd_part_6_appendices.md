@@ -1130,7 +1130,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
 | $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
-| $\chi(\vec{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\chi(\boldsymbol{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
 | $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
@@ -1210,7 +1210,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/topology/7.3/#7.3.7) |
 | $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
-| $C(\vec{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
+| $C(\boldsymbol{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
 | $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/topology/7.3/#7.3.7.2) |
 | $m$ | Topological Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
 | $N_3$ | Count of 3-cycles (Geometric Quanta) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |

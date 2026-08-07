@@ -149,7 +149,7 @@ Section 6.1.3.1 formalizes the properties of the QBD proof regarding reducibilit
 :::note[**Verification of Kinematic Reducibility via Legality-Indexed Task Sequences**]
 :::
 
-Verification of the Task-Reidemeister reduction trajectories established in the **Reducibility of Trivial Topologies** proof <Ref id="6.1.3.1" label="§6.1.3.1" /> is based on the following protocols:
+Verification of the Task-Reidemeister reduction trajectories established in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" /> is based on the following protocols:
 
 1.  **Pattern Construction:** The algorithm instantiates five local graph fragments encoding Type II digons, double short paths, a Type III slide composite, a forbidden Type I self-loop addition, and an isolated directed 3-cycle.
 2.  **Legal Task Execution:** The protocol applies only tasks inhabiting $\mathrm{LegalDel}$ or $\mathrm{LegalAdd}$ (irreflexivity, edge presence or absence, and short-path uniqueness), recording each complexity change $C=|E|$.
@@ -443,7 +443,7 @@ ALL_ARMS_REDUCED: True
 ```
 
 **Conclusion:**
-All five arms satisfy their reduction predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as $\mathfrak{T}_{add}$ followed by $\mathfrak{T}_{del}$. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These numerical outcomes validate the kinematic reduction logic of the **Reducibility of Trivial Topologies** proof <Ref id="6.1.3.1" label="§6.1.3.1" />.
+All five arms satisfy their reduction predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as $\mathfrak{T}_{add}$ followed by $\mathfrak{T}_{del}$. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These numerical outcomes validate the kinematic reduction logic of **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
 
 **In Plain English:**  
 Section 6.1.3.2 formalizes the properties of the QBD calculation regarding legal-task reduction of trivial patterns.
@@ -1403,9 +1403,9 @@ The proof employs formal induction on the ribbon count $n$. Configurations with 
 **II. Lower Bound Exclusion**
 
 For the base cases $n < 3$, the configurations are excluded systematically:
-1. **Unbraided structures ($n=0$):** **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" /> establishes topological triviality and instability under the deletion flux.
-2. **Single-ribbon structures ($n=1$):** **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> demonstrates reducibility via Type II moves, preventing stability.
-3. **Two-ribbon structures ($n=2$):** **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> confirms algebraic insufficiency, as the commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
+1. **Unbraided structures ($n=0$):** As shown in **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" />, these exhibit topological triviality and instability under the deletion flux.
+2. **Single-ribbon structures ($n=1$):** As demonstrated in **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />, these suffer from reducibility via Type II moves, preventing stability.
+3. **Two-ribbon structures ($n=2$):** As confirmed in **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />, these exhibit algebraic insufficiency because commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
 
 **III. Upper Bound Exclusion**
 
@@ -1630,7 +1630,7 @@ $$
 
 **V. Empirical Calibration**
 
-For a full twist ($k=2$), the **Torsional Strain Simulation** <Ref id="6.3.5.2" label="§6.3.5.2" /> yields the result $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
+For a full twist ($k=2$), data from **Torsional Strain Simulation** <Ref id="6.3.5.2" label="§6.3.5.2" /> indicates that $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
 This result confirms the quadratic scaling $2^2 = 4$.
 The pathfinding penalty enforces quadratic mass scaling for higher torsion states.
 
@@ -1760,7 +1760,7 @@ $$
 
 **II. Uniqueness and Degeneracy**
 
-**Architectural Stability** <Ref id="6.4.2" label="§6.4.2" /> establishes that prime braids are protected from local deformation by an $O(N)$ barrier.
+As derived in **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" />, prime braids are protected from local deformation by an $O(N)$ barrier.
 Within the local horizon $R$ of the rewrite rule, the topology of $\beta$ is invariant.
 This implies that for a given set of quantum numbers (writhe, crossing number), there exists exactly one topological configuration that satisfies the energy minimization condition of the vacuum.
 Therefore, the ground state degeneracy of the particle is $\Omega = 1$.

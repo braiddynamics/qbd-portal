@@ -24,9 +24,6 @@ This chapter resolves this dichotomy by deriving the field equations directly fr
 
 ## 13.1 Discrete Stress-Energy {#13.1}
 
-:::note[**Section 13.1 Overview**]
-:::
-
 How does a purely relational graph generate the "mass" and "energy" required to curve the emergent geometry? In the standard formulation of General Relativity, the stress-energy tensor $T_{\mu\nu}$ serves as the mathematical input that dictates the curvature of spacetime, yet its microscopic origin remains obscured by the continuum approximation. Within a theory of discrete quantum gravity, one cannot simply paint matter fields onto the vertices; one must discover the specific graph-theoretical mechanism that acts as the source of the gravitational field.
 
 Traditional discrete models frequently succumb to the "passive geometry" trap, where mass is introduced either as a static defect in the lattice or as a distinct degree of freedom coupled to the edges. Simplicial gravity approaches often simulate matter by modifying the edge lengths or assigning weights to the dual skeleton, effectively treating the stress-energy tensor as a phenomenological parameter rather than a dynamical consequence. These methods fail to capture the active, generative nature of mass-energy, viewing it as a burden the geometry carries rather than a process the geometry performs.
@@ -49,30 +46,29 @@ $$
 The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Its dynamics are further governed by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
 
 $$
-P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\vec{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
+P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\boldsymbol{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
 $$
 
 The deletion probability $P_{\text{del}}(a,b)$ quantifies the transition amplitude for the constructor to identify the edge $(a,b)$ as a participant in an existing 3-cycle $\gamma$ and effectuate its removal. This term expands according to the decay dynamics governed by the Born rule **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />:
 
 $$
-P_{\text{del}}(a,b) = \frac{1}{2} \cdot \mathbb{I}_{\gamma \ni (a,b)} \cdot \chi(\vec{\sigma}_{\gamma}) \cdot \mathbb{P}_{\text{acc}}.
+P_{\text{del}}(a,b) = \frac{1}{2} \cdot \mathbb{I}_{\gamma \ni (a,b)} \cdot \chi(\boldsymbol{\sigma}_{\gamma}) \cdot \mathbb{P}_{\text{acc}}.
 $$
 
 The tensor satisfies the antisymmetry condition $T_{ba} = -T_{ab}$, imposed by the strict timestamp ordering of the history function $H(e)$ **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />, and remains strictly bounded within the interval $[-1, 1]$ by the normalization of the constituent probabilities.
 
 ### 13.1.1.1 Commentary: Flux Interpretation {#13.1.1.1}
 
-:::info[**Physical Interpretation of the Tensor Components as Sources of Geometric Syndrome**]
+:::info[**Physical Interpretation of Stress-Energy Components via Directed Microscopic Flow**]
 :::
 
-The discrete stress-energy tensor functions as the microscopic engine of geometric evolution, effectively converting the thermodynamics of the graph into the physics of the field. 
+Relational quantum geometry replaces static background fields with dynamic measure-theoretic update kinetics. Within Quantum Braid Dynamics, energy and momentum do not exist as primitive scalar values anchored to continuous coordinates; rather, they emerge as macroscopic hydrodynamics derived from local graph rewrites. The discrete stress-energy tensor $T_{ab} \equiv P_{\text{add}}(a,b) - P_{\text{del}}(a,b)$ serves as the fundamental translation matrix, bridging microscopic topological graph mutations to the continuum stress-energy tensor $T_{\mu\nu}$ of General Relativity.
 
-A critical algebraic nuance underpins the **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />: because the causal graph is strictly acyclic, any reverse edge $(b,a)$ constitutes a forbidden acausal path, meaning the raw physical probabilities $P_{\text{add}}(b,a)$ and $P_{\text{del}}(b,a)$ are identically zero. To function as a mathematically consistent representation of conserved flow, $T_{ab}$ is constructed as a *directed flow matrix*. For the reverse orientation $(b,a)$ representing flow against the causal arrow, the tensor is defined algebraically via the skew-symmetric continuation $T_{ba} \equiv -T_{ab}$, formally encoding the conservation of flux entering and leaving a vertex. 
+A crucial algebraic insight governs the definition of $T_{ab}$ across acyclic causal networks. Because the causal graph is strictly DAG-structured (directed acyclic graph), physical edge additions and deletions occur exclusively along forward-pointing temporal edges, rendering raw physical backward probabilities identically zero ($P_{\text{add}}(b,a) = 0$). To construct a mathematically rigorous representation of conserved physical flux capable of satisfying continuity equations, the tensor is extended via skew-symmetric continuation $T_{ba} \equiv -T_{ab}$. This algebraic formulation ensures that net probability mass entering a vertex star precisely balances outgoing flux, enforcing microscopic divergence-free flow across every node.
 
-With this antisymmetric flow structure established, the tensor components map to physical phenomena:
-1.  **Positive Flux ($T_{ab} > 0$):** A positive value signifies that the rate of structure formation (edge addition) exceeds the rate of decay. Physically, this corresponds to a localized source of mass-energy, a region where the graph is actively "clumping" and increasing its complexity density.
-2.  **Negative Flux ($T_{ab} < 0$):** A negative value signifies that the rate of structure dissolution (edge deletion) dominates. Physically, this corresponds to a sink or a vacuum fluctuation where geometry is evaporating.
-3.  **Vacuum Equilibrium ($T_{ab} = 0$):** A zero value indicates a detailed balance between the constructive and destructive processes. This defines the vacuum state of the theory: a dynamic equilibrium where the geometry appears macroscopically static despite the continuous microscopic turnover of its constituent edges.
+The quantitative value of $T_{ab}$ maps directly to distinct physical regimes of spacetime and matter. Positive net flux ($T_{ab} > 0$) identifies regions where 3-cycle nucleation outpaces decay, acting as a localized source of mass-energy that increases local graph complexity density and warps spatial transport paths. Conversely, negative net flux ($T_{ab} < 0$) characterizes geometric sinks where 3-cycles undergo topological dissolution into the background vacuum. When creation and deletion rates achieve exact detailed balance ($T_{ab} = 0$), the causal graph resides in its homeostatic vacuum ground state, appearing macroscopically static despite continuous microscopic turnover.
+
+Coarse-graining $T_{ab}$ over local spatial correlation volumes $\Omega$ reveals the full continuum energy-momentum tensor $T_{\mu\nu}$. Isotropic 3-cycle creation rates aggregate into the zero-zero component $T_{00}$, governing rest mass and energy density. Spatial asymmetries in update directionality map to the Poynting-like momentum flux $T_{0i}$, while internal topological strand tension across intersecting ribbon bundles maps to the anisotropic stress tensor $T_{ij}$. Skew-symmetric flux conservation on the discrete graph thus guarantees the vanishing continuum divergence $\nabla^\mu T_{\mu\nu} = 0$, establishing that classical conservation laws are the direct macroscopic limit of microscopic graph homeostasis.
 
 ### 13.1.1.2 Diagram: Flux Balance {#13.1.1.2}
 
@@ -106,7 +102,7 @@ THE DISCRETE STRESS-ENERGY TENSOR (Flux T_ab)
 
 ### 13.1.2 Theorem: Conservation of Complexity Flux {#13.1.2}
 
-:::info[**Derivation of the Local Conservation Law establishing the Mandatory Vanishing of Net Informational Flux Divergence at Homeostatic Equilibrium**]
+:::info[**Derivation of the Local Conservation Law establishing the Mandatory Vanishing of Net Informational Flux Divergence at Homeostatic Equilibrium from Conservation of Complexity Flux**]
 :::
 
 Every discrete stress-energy tensor $T_{ab}$ satisfies strict local conservation at the homeostatic fixed point of the Quantum Braid Dynamics evolution.
@@ -162,7 +158,7 @@ This condition asserts that the sum of the net outgoing complexity flux ($T_{ab}
 The homeostatic fixed point is defined by the invariance of the probability distribution $\pi(G)$ under the evolution operator $\mathcal{U}$. Consequently, for any local observable $\mathcal{O}(G)$, the ensemble average remains constant in time:
 
 $$
-\frac{d}{dt} \mathbb{E}_{\pi}[\mathcal{O}(G)] = 0.
+\frac{\mathrm{d}}{\mathrm{d}t} \mathbb{E}_{\pi}[\mathcal{O}(G)] = 0.
 $$
 
 Let the observable be the vertex degree $\deg(a)$, defined as the total count of incident edges (both incoming and outgoing) connected to vertex $a$. The stationarity condition requires:
@@ -269,14 +265,14 @@ In contrast, the solution $C=0$ represents a "dead end" or a "reservoir" where t
 
 ### 13.1.5 Lemma: Discrete Stress-Energy Continuum Limit {#13.1.5}
 
-:::info[**Coarse-Graining of Update Fluxes into the Smooth Conserved Stress-Energy Tensor Field**]
+:::info[**Coarse-Graining via Update Fluxes into the Smooth Conserved Stress-Energy Tensor Field**]
 :::
 
 Every sequence of causal graphs $\{G_t\}$ at homeostatic equilibrium satisfies coarse-graining of the discrete stress-energy tensor $T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b)$ under the tensorial averaging map $\mathcal{A}_R$ to a smooth, symmetric tensor field $T_{\mu\nu}(x)$ on the limit manifold $(M,g)$, establishing that local complexity flux conservation $\sum_b (T_{ab} + T_{ba}) = 0$ corresponds to continuum energy-momentum conservation $\nabla^\mu T_{\mu\nu} = 0$.
 
 ### 13.1.5.1 Proof: Discrete Stress-Energy Continuum Limit {#13.1.5.1}
 
-:::tip[**Convergence of Discrete Probability Fluxes to Smooth Stress Tensor Fields**]
+:::tip[**Convergence via Discrete Probability Fluxes to Smooth Stress Tensor Fields**]
 :::
 
 **I. Tensor Projection under Coarse-Graining**
@@ -305,16 +301,20 @@ Q.E.D.
 
 ### 13.1.5.2 Commentary: Physical Origin of Mass-Energy {#13.1.5.2}
 
-:::info[**Physical Meaning of Discrete Stress-Energy Coarse-Graining**]
+:::info[**Physical Meaning of Mass-Energy Coarse-Graining via Graph Update Kinetics**]
 :::
 
-The **Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" /> establishes that mass-energy is not a static substance added to space, but the coarse-grained manifestation of microscopic topological update dynamics. Localized concentrations of 3-cycle creation rates produce positive energy density ($T_{00} > 0$), while directional update fluxes generate physical momentum density ($T_{0i}$). The vanishing divergence $\nabla^\mu T_{\mu\nu} = 0$ confirms that General Relativity's energy-momentum conservation is the direct macroscopic limit of graph thermodynamic homeostasis.
+Establishing the continuum limit of the discrete stress-energy tensor provides a profound physical insight into the nature of mass and energy. In classical field theory, the energy-momentum tensor $T_{\mu\nu}$ is introduced as an exogenous source term driving gravitational curvature. In Quantum Braid Dynamics, mass-energy is revealed not as an external substance added to space, but as the coarse-grained manifestation of microscopic graph rewrite kinetics.
+
+Localized concentrations of 3-cycle nucleation rates generate positive energy density ($T_{00} > 0$), while directional asymmetries in graph update rates generate physical momentum flux ($T_{0i}$). Spatial stress components ($T_{ij}$) represent internal anisotropic topological tensions transmitted across intersecting ribbon strands. Continuous mass-energy is thus an emergent hydrodynamic property of relational graph dynamics, reflecting the collective density and momentum of underlying graph updates.
+
+Proving that the continuum divergence vanishes identically ($\nabla^\mu T_{\mu\nu} = 0$) demonstrates that general relativity's fundamental conservation laws derive from graph thermodynamic homeostasis. Localized matter-energy cannot be created or destroyed arbitrarily because microscopic rewrite rules strictly conserve local topological flux. Energy-momentum conservation is the macroscopic manifestation of microscopic detailed balance across relational graph networks.
 
 ---
 
 ### 13.1.6 Proof: Conservation of Complexity Flux {#13.1.6}
 
-:::tip[**Formal Synthesis of Stationarity, Detailed Balance, and Continuum Limit Arguments to Establish Local Flux Conservation**]
+:::tip[**Formal Synthesis of Stationarity, Detailed Balance, via Continuum Limit Arguments to Establish Local Flux Conservation**]
 :::
 
 This synthesis proof establishes local flux conservation by integrating structural results from supporting lemmas.
@@ -589,7 +589,7 @@ The simulation confirms the strict conservation of flux at equilibrium, with all
 
 ### 13.1.6.2 Diagram: Local Conservation {#13.1.6.2}
 
-:::note[**Visualization of the Detailed Balance Mechanism restoring Equilibrium at a Vertex**]
+:::note[**Visualization of the Detailed Balance Mechanism restoring Equilibrium at a Vertex as Local Conservation**]
 :::
 
 ```
@@ -623,7 +623,7 @@ LOCAL CONSERVATION (Detailed Balance)
 :::note[**Dynamics of Substrate**]
 :::
 
-The local conservation of complexity flux positions the **discrete stress-energy tensor** defined in <Ref id="13.1.1" label="§13.1.1" /> as the gravitational source in the Quantum Braid Dynamics framework. Flux imbalances drive local geometric responses, mirroring the manner in which matter-energy curves spacetime in the continuum theory. In a homeostatic vacuum, a zero net flux yields a flat geometry, whereas local perturbations in complexity flux induce curvature, establishing a purely thermodynamic origin for gravitational attraction. Furthermore, the **Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" /> proves that this discrete update flux coarse-grains smoothly into the energy-momentum tensor field $T_{\mu\nu}$ satisfying $\nabla^\mu T_{\mu\nu} = 0$.
+The local conservation of complexity flux positions the **discrete stress-energy tensor** defined in <Ref id="13.1.1" label="§13.1.1" /> as the gravitational source in the Quantum Braid Dynamics framework. Flux imbalances drive local geometric responses, mirroring the manner in which matter-energy curves spacetime in the continuum theory. In a homeostatic vacuum, a zero net flux yields a flat geometry, whereas local perturbations in complexity flux induce curvature, establishing a purely thermodynamic origin for gravitational attraction. Furthermore, as proved in **Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" />, this discrete update flux coarse-grains smoothly into the energy-momentum tensor field $T_{\mu\nu}$ satisfying $\nabla^\mu T_{\mu\nu} = 0$.
 
 This neutral configuration also implies a vanishing vacuum energy at leading order, as established by the detailed balance conditions investigated in **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />. The preservation of local divergence invariance ensures that topological updates do not lead to unphysical energy generation or leakage. Furthermore, the **Global Stationarity** condition derived in <Ref id="13.1.3" label="§13.1.3" /> guarantees that the total energy flux of the network remains conserved over cosmological scales, even as local regions undergo rapid, discrete updates.
 
@@ -635,15 +635,11 @@ This stable thermodynamic substrate provides the necessary background for coupli
 
 ## 13.2 Discrete Field Equations {#13.2}
 
-:::note[**Section 13.2 Overview**]
-:::
+Deriving a deterministic geometric field equation from the stochastic dynamics of a discrete causal graph presents a fundamental mathematical challenge. The framework defines the discrete stress-energy tensor $T_{ab}$ as the net probability flux of geometric updates and the Causal Ollivier-Ricci curvature $K(a,b)$ as the transport-centric measure of graph density, yet these two quantities remain kinematically decoupled. Reconstructing General Relativity requires establishing the precise dynamical constraint that couples information flux directly to spatial curvature. The central challenge is to demonstrate that the homeostatic equilibrium of the master equation corresponds to a stationary point of a discrete action, forcing the graph to satisfy an emergent Einstein relation.
 
-We confront the necessity of deriving a deterministic geometric law from the stochastic fluctuations of the causal substrate. The definitions of the discrete **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> (for $T_{ab}$) provide the source. The **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> (for $K(a,b)$) provides the geometry, yet these two descriptions remain kinematically decoupled.
-We must identify the specific constraint that binds the flux of information to the curvature of the graph, ensuring that the evolution of the universe satisfies the principle of stationary action. This inquiry demands that we translate the thermodynamic equilibrium of the master equation into a variational principle for the discrete action, proving that the homeostatic state corresponds to a saddle point in the geometric phase space.
+Conventional models of discrete gravity frequently treat the Einstein equations as an external target, manually tuning lattice parameters to match continuum General Relativity. This phenomenological approach fails to explain why spacetime curvature must couple to stress-energy with a universal gravitational constant $\kappa$. If the field equations do not emerge as a variational necessity of graph dynamics, the theory cannot prove that gravitational attraction is an intrinsic property of discrete causal networks. A model that lacks a stationary action principle cannot guarantee that local graph rewrites satisfy conservation laws or preserve geometric stability across coarse-graining scales.
 
-Standard discrete gravity models often impose the Einstein equations as an asymptotic target rather than a derived consequence, fitting parameters to recover the continuum limit. A theory that cannot derive the proportionality of curvature and stress from its own internal logic fails to explain why gravity couples to energy at all. If the field equations do not emerge from the minimization of a graph-theoretic action, then the laws of General Relativity are merely an effective description of a deeper, unconnected physics, rather than a necessary outcome of the substrate's dynamics. We must demonstrate that the graph cannot remain in equilibrium unless the local curvature exactly balances the net complexity flux, enforcing the field equation as a condition of stability.
-
-We resolve this by proving the **Discrete Einstein Field Equations** $\mathcal{G}_{ab} = \kappa T_{ab}$. We derive this relation from the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum K(e)$, demonstrating that the stationarity condition $\delta \mathcal{S} = 0$ is mathematically equivalent to the detailed balance of the master equation. This establishes that the "force" of gravity is the restoring force of the vacuum's information density, locking the geometry to the matter distribution through the rigid constraints of optimal transport.
+We resolve this decoupling by proving the Discrete Einstein Field Equations Theorem, establishing the exact tensor relation $\mathcal{G}_{ab} = \kappa T_{ab}$. We derive this balance by varying the Discrete Einstein-Hilbert Action $\mathcal{S}[G] = \sum_{(a,b)\in E} K(a,b)$ with respect to local graph updates. We demonstrate that the stationarity condition $\delta \mathcal{S} = 0$ is mathematically equivalent to the detailed balance of the master equation at homeostatic equilibrium. This variational proof establishes that gravity operates as the entropic restoring force of the network, rigidly coupling local curvature to information flux.
 
 ---
 
@@ -671,7 +667,7 @@ Furthermore; the extension of the tensor to non-edges (virtual links where $\bar
 
 ### 13.2.2 Theorem: Emergent Field Equations {#13.2.2}
 
-:::info[**Formal Establishment of the Linear Proportionality between the Discrete Einstein Tensor and the Stress-Energy Tensor at Homeostatic Fixed Point**]
+:::info[**Formal Establishment of the Linear Proportionality between the Discrete Einstein Tensor via the Stress-Energy Tensor at Homeostatic Fixed Point**]
 :::
 
 Assume that the geometric evolution of the causal graph at the homeostatic fixed point is governed by the **Discrete Einstein Field Equations** $\mathcal{G}_{ab} = \kappa \cdot T_{ab}$.
@@ -708,14 +704,14 @@ The proof proceeds via Direct Construction, showing that the homeostatic state c
 
 ### 13.2.3 Lemma: Variational Action Principle {#13.2.3}
 
-:::info[**Equivalence of Homeostatic Equilibrium and Stationary Action under Topological Variation**]
+:::info[**Equivalence of Homeostatic Equilibrium by Stationary Action under Topological Variation**]
 :::
 
 Given the system, the condition of homeostatic equilibrium $\frac{d\rho}{dt} = 0$ defined by the Master Equation **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" /> is mathematically equivalent to the principle of stationary action $\delta \mathcal{S}[G] = 0$ applied to the discrete Einstein-Hilbert action
 
 ### 13.2.3.1 Proof: Variational Action Principle {#13.2.3.1}
 
-:::tip[**Formal Demonstration of Action Stationarity at the Density Fixed Point**]
+:::tip[**Formal Demonstration via Action Stationarity at the Density Fixed Point**]
 :::
 
 This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
@@ -727,7 +723,7 @@ $$
 \delta \mathcal{S} = \mathcal{S}[G \pm e] - \mathcal{S}[G] = \sum_{e' \in G'} K(e') - \sum_{e \in G} K(e).
 $$
 
-The **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" /> establishes that the curvature increment $\Delta K$ scales linearly with the 3-cycle count increment $\Delta N_3$ localized to the edge neighborhood. Consequently, the total action variation expresses as a linear function of the complexity variation:
+As established in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the curvature increment $\Delta K$ scales linearly with the 3-cycle count increment $\Delta N_3$ localized to the edge neighborhood. Consequently, the total action variation expresses as a linear function of the complexity variation:
 
 $$
 \delta \mathcal{S} = c_K \cdot \delta N_3,
@@ -771,7 +767,7 @@ Q.E.D.
 :::info[**Interpretation of Geometry as the Repository of Action History**]
 :::
 
-The **Variational Action Principle** <Ref id="13.2.3" label="§13.2.3" /> provides the bridge between the "hot" thermodynamics of the graph and the "cold" geometry of the field equations. It proves that the universe does not need to "know" calculus to minimize action; it simply needs to balance its books.
+In **Variational Action Principle** <Ref id="13.2.3" label="§13.2.3" />, the bridge connecting the "hot" thermodynamics of the graph to the "cold" geometry of the field equations is established. It proves that the universe does not need to "know" calculus to minimize action; it simply needs to balance its books.
 
 The Monotonicity Theorem established that every 3-cycle adds a quantum of curvature. Therefore, the total curvature (Action) is simply a count of the total structural complexity. Minimizing the change in action ($\delta S = 0$) means finding a state where the creation of new structure exactly cancels the decay of old structure. This is exactly what the Master Equation describes at equilibrium. Thus, General Relativity's requirement for a stationary action is revealed to be the macroscopic manifestation of the vacuum's microscopic detailed balance. The geometry stabilizes because the computation has reached a steady state.
 
@@ -815,7 +811,7 @@ THE GRAVITATIONAL COUPLING (Scaling Mechanism)
 
 ### 13.2.4 Lemma: Curvature-Flux Coupling {#13.2.4}
 
-:::info[**Linear Dependence of Action Variation on the Stress-Energy Tensor**]
+:::info[**Linear Dependence via Action Variation on the Stress-Energy Tensor**]
 :::
 
 Given the variation of the discrete action $\delta \mathcal{S}$ with respect to the edge state configuration, the response is linearly proportional to the discrete stress-energy tensor $T_{ab}$.
@@ -880,11 +876,11 @@ Q.E.D.
 
 The **Curvature-Flux Coupling** <Ref id="13.2.4" label="§13.2.4" /> derives the mechanical "mechanism" of the field equation. In classical physics, force is the negative gradient of a potential, $F = -\nabla V$. Here, the "potential" is the geometric action $\mathcal{S}$, and the "coordinate" is the edge state of the graph.
 
-The **Curvature-Flux Coupling** <Ref id="13.2.4" label="§13.2.4" /> proves that the "force" exerted by the geometry to resist change ($\delta \mathcal{S}$) is exactly proportional to the "flux" of information trying to change it ($T_{ab}$). This constitutes a statement of Newton's Third Law applied to spacetime: **Action = Reaction**. The geometry curves (reacts) exactly as much as the matter flux pushes it. The discrete Einstein equation $\mathcal{G} = \kappa T$ is simply the statement that the geometry deforms until the "elastic force" of the curvature balances the "pressure" of the information flux. Gravity is the vacuum's elastic response to processing information.
+As proved in **Curvature-Flux Coupling** <Ref id="13.2.4" label="§13.2.4" />, the "force" exerted by the geometry to resist change ($\delta \mathcal{S}$) is strictly proportional to the "flux" of information trying to change it ($T_{ab}$). This constitutes a statement of Newton's Third Law applied to spacetime: **Action = Reaction**. The geometry curves (reacts) exactly as much as the matter flux pushes it. The discrete Einstein equation $\mathcal{G} = \kappa T$ is simply the statement that the geometry deforms until the "elastic force" of the curvature balances the "pressure" of the information flux. Gravity is the vacuum's elastic response to processing information.
 
 ### 13.2.4.3 Diagram: Curvature Response {#13.2.4.3}
 
-:::note[**Visualization of the Geometric Response to a Topological Perturbation**]
+:::note[**Visualization of the Geometric Response to a Topological Perturbation as Curvature Response**]
 :::
 
 ```text
@@ -982,7 +978,11 @@ Q.E.D.
 :::info[**Renormalization of Gravitational Coupling via Vacuum Correlation Length**]
 :::
 
-Expressing the gravitational coupling scale as a function of the vacuum correlation length and cell size removes Newton's constant as an independent free parameter of the theory. Gravity is shown to be a direct consequence of the zero-point information flow and the spatial distribution of entropic correlations across the underlying causal substrate.
+Deriving Newton's gravitational constant $G_N$ from the vacuum correlation length $\xi$ and elementary cell volume $V_0$ eliminates the gravitational coupling constant as an independent, ad-hoc parameter of fundamental physics. In standard general relativity, $G_N$ is inserted manually to calibrate the strength of spacetime curvature response to matter-energy sources. In Quantum Braid Dynamics, the gravitational coupling constant is calculated directly from the microscopic statistics of relational graph networks.
+
+The analytical formula $\kappa = \frac{8\pi G_N}{c^4} = \frac{V_0}{\xi^2 \cdot \hbar \cdot c}$ expresses gravitational coupling strength as a ratio of local volumetric geometry to long-range entropic correlation length. Small vacuum correlation lengths $\xi$ correspond to high entropic stiffness, suppressing metric perturbations and yielding weak macroscopic gravitational forces. Conversely, larger correlation lengths permit long-range entropic deformation, increasing the effective strength of gravitational attraction.
+
+This renormalization mechanism establishes gravity as an emergent entropic force driven by zero-point information flow. Physical gravitational attraction does not require introducing fundamental spin-2 graviton fields into the vacuum. Gravitational interactions emerge as the thermodynamic response of the causal graph substrate, where localized matter-energy densities induce long-range entropic gradients across the network.
 
 ### 13.2.6 Proof: Emergent Field Equations {#13.2.6}
 
@@ -1276,18 +1276,17 @@ This synthesis demonstrates that the affine relation $\mathcal{G}_{ab} = \kappa 
 
 ## 13.3 Geometric Conservation {#13.3}
 
-:::note[**Discrete Bianchi Identity Overview**]
-:::
+Deriving the discrete field relation $\mathcal{G}_{ab} = \kappa T_{ab}$ connects spatial curvature to matter flux, but for this equation to represent a consistent physical law, the discrete Einstein tensor $\mathcal{G}_{ab}$ must satisfy an intrinsic conservation identity independent of the matter source. In continuum General Relativity, the contracted Bianchi identity guarantees that the Einstein tensor is automatically divergence-free ($\nabla^\mu G_{\mu\nu} \equiv 0$), reflecting the underlying diffeomorphism invariance of the action. The central challenge in discrete quantum gravity is to prove that graph-theoretic geometry satisfies an exact discrete analogue of the Bianchi identity, ensuring that local curvature updates cannot create or destroy geometric charge spuriously.
 
-The derivation of the discrete field equations in the preceding section relied on the thermodynamic balance between curvature and flux. However, for the equation $\mathcal{G}_{ab} = \kappa T_{ab}$ to constitute a valid physical law, the geometric tensor $\mathcal{G}_{ab}$ must satisfy an intrinsic conservation law independent of the matter source. In continuum General Relativity, the contracted Bianchi identities ensure that the Einstein tensor is divergence-free ($\nabla^\mu G_{\mu\nu} \equiv 0$), a property that follows from the geometric definition of the Riemann tensor and the invariance of the action under coordinate transformations.
+If a discrete geometric tensor fails to satisfy an exact conservation identity, the emergent field equations break down into unphysical over-constrained or mathematically inconsistent systems. A discrete model that permits a non-zero divergence in its geometric tensor inevitably forces fictitious sources into the stress-energy tensor, violating local momentum conservation and allowing spurious energy creation across graph sectors. Without a discrete Bianchi identity, graph updates introduce unphysical boundary terms that destroy local general covariance during coarse-graining. Such mathematical inconsistencies prevent the discrete action from yielding a well-posed initial value problem in the continuum limit.
 
-This section establishes the discrete analogue of this consistency condition. We prove the **Discrete Bianchi Identity**, demonstrating that the divergence of the discrete Einstein tensor vanishes identically in the thermodynamic limit. This proof proceeds not from the dynamics of the master equation, but from the fundamental symmetries of the causal graph itself. By establishing the invariance of the discrete action under vertex relabeling (General Covariance) and deriving the Discrete Schläfli Identity, we confirm that the geometry of the causal graph is self-consistent and "watertight," capable of supporting a conservative stress-energy tensor without violation of local causality.
+We resolve this necessity by establishing the Discrete Bianchi Identity for the causal graph, proving that the discrete divergence of $\mathcal{G}_{ab}$ vanishes identically in the thermodynamic limit ($\text{div}_a \mathcal{G}_{ab} = 0$). We derive this conservation law from the fundamental topological invariance of the discrete Einstein-Hilbert action under vertex relabeling, which expresses the graph-theoretic manifestation of General Covariance. By combining combinatorial Schläfli variations with optimal transport bounds, we demonstrate that the discrete causal geometry is mathematically self-consistent, ensuring exact stress-energy conservation without imposing auxiliary constraints.
 
 ---
 
 ### 13.3.1 Definition: Discrete Bianchi Identity {#13.3.1}
 
-:::tip[**Definition of the Geometric Consistency Condition for the Discrete Einstein Tensor**]
+:::tip[**Definition of the Geometric Consistency Condition via the Discrete Einstein Tensor**]
 :::
 
 The **Discrete Bianchi Identity** is defined as the local orthogonality condition satisfied by the discrete Einstein tensor $\mathcal{G}_{ab}$ with respect to the discrete divergence operator. For every vertex $a \in V_t$ within the causal graph $G_t$, the summation of the curvature response over the local 1-hop neighborhood $N(a)$ must satisfy the condition:
@@ -1311,7 +1310,7 @@ In the discrete context, this identity serves as a rigorous check on the Causal 
 
 ### 13.3.2 Theorem: Discrete Divergence-Free Geometry {#13.3.2}
 
-:::info[**Proof that the Discrete Einstein Tensor is Divergence-Free in the Thermodynamic Limit**]
+:::info[**Proof that the Discrete Einstein Tensor is Divergence-Free due to the Thermodynamic Limit**]
 :::
 
 Suppose $\mathcal{G}_{ab}$ is the discrete Einstein tensor. Then it satisfies the divergence-free condition in the thermodynamic limit.
@@ -1346,7 +1345,7 @@ The argument proceeds via Direct Construction, proving the mathematical necessit
 
 ### 13.3.3 Lemma: Action Invariance {#13.3.3}
 
-:::info[**Invariance of the Discrete Action under Vertex Relabeling Operations**]
+:::info[**Invariance of the Discrete Action through Vertex Relabeling Operations**]
 :::
 
 For any discrete Einstein-Hilbert action $\mathcal{S}[G]$, the functional is invariant under the group of graph automorphisms.
@@ -1404,7 +1403,7 @@ Q.E.D.
 :::info[**Freedom of the Observer in Discrete Spacetime**]
 :::
 
-**Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> establishes the foundation for geometric conservation. In physics, conservation laws arise from symmetries. The conservation of energy arises from time-translation invariance; the conservation of momentum from spatial translation invariance. Here, the **Discrete Bianchi Identity** arises from **Relabeling Invariance**.
+In **Action Invariance** <Ref id="13.3.3" label="§13.3.3" />, the foundation for geometric conservation is established. In physics, conservation laws arise from symmetries. The conservation of energy arises from time-translation invariance; the conservation of momentum from spatial translation invariance. Here, the **Discrete Bianchi Identity** arises from **Relabeling Invariance**.
 
 Because the physics of the graph (the Action) does not depend on which integer label we assign to a vertex, the geometry cannot depend on the coordinate system we use to describe it. This independence forces the geometry to satisfy a conservation law: if we "move" a vertex (change its relations locally), the geometry must respond in a way that preserves the total action, leading to the zero-divergence condition. This confirms that the QBD framework respects the **Principle of Relativity** at the most fundamental level.
 
@@ -1412,7 +1411,7 @@ Because the physics of the graph (the Action) does not depend on which integer l
 
 ### 13.3.4 Lemma: Discrete Schläfli Identity {#13.3.4}
 
-:::info[**Geometric Cancellation of Metric Variations within the Action Functional**]
+:::info[**Geometric Cancellation of Metric Variations through the Action Functional**]
 :::
 
 Given the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to the edge length parameters $d_{ab}$, the weighted summation of the curvature response is identically zero.
@@ -1459,16 +1458,20 @@ Q.E.D.
 
 ### 13.3.4.2 Commentary: Orthogonality of Metric Variation {#13.3.4.2}
 
-:::info[**Ensuring the Action Principle Targets Topology**]
+:::info[**Ensuring the Action Principle Targets Topology via the Discrete Schläfli Identity**]
 :::
 
-In the discrete context, the **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" /> performs the same function. It guarantees that when we vary the action to derive the field equations, we do not need to account for the "stretching" of the edges (metric variation $\delta d$). The geometry is "rigid" in the sense that pure metric deformations do not change the total action; only topological changes (creating or destroying edges) contribute. This orthogonality ensures that the derivative $\delta \mathcal{S} / \delta g_{ab}$ isolates the stress-energy contribution correctly, validating the derivation of the field equations in the **Emergent Field Equations** <Ref id="13.2.2" label="§13.2.2" />.
+Establishing the discrete Schläfli identity ensures that the variational principle governing Quantum Braid Dynamics targets topological graph rewrites rather than continuous metric stretching. In classical Regge calculus, varying the action requires tracking edge-length variations alongside angle deficits. In QBD, the discrete Schläfli identity proves that variations in edge distances $\delta d$ decouple orthogonally from curvature variations in the continuum limit.
+
+The mathematical vanishing of metric variations ($\sum N_e \delta K_e \to 0$) demonstrates that pure edge length adjustments do not alter the total discrete action. The underlying graph geometry behaves as a rigid combinatorial structure, where action variation is driven exclusively by topological modifications, such as the nucleation or deletion of 3-cycle geometric quanta.
+
+This orthogonality isolates the stress-energy tensor variation $\delta \mathcal{S} / \delta g_{ab}$ cleanly. Variational derivatives reflect true physical matter-geometry coupling without contamination from metric coordinate stretching. The discrete Schläfli identity thus provides the analytical foundation required to derive exact continuum field equations from discrete graph action principles.
 
 ---
 
 ### 13.3.5 Lemma: Bianchi Error Scaling {#13.3.5}
 
-:::info[**Analytical Error Bound for the Discrete Bianchi Identity in the Thermodynamic Limit**]
+:::info[**Analytical Error Bound for the Discrete Bianchi Identity via the Thermodynamic Limit**]
 :::
 
 For any sequence of causal graphs $\{G_t\}$ converging to a smooth 4-dimensional Riemannian manifold $(M,g)$, the local divergence error of the discrete Einstein tensor $\mathcal{G}_{ab}$ is analytically bounded by $\| \nabla \cdot \mathcal{G} \|_{\infty} \le C_1 \ell_0^2 + C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}$, proving that the discrete Bianchi identity holds exactly in the continuum limit.
@@ -1514,10 +1517,14 @@ Q.E.D.
 
 ### 13.3.5.2 Commentary: Suppression of Geometric Leaks {#13.3.5.2}
 
-:::info[**Physical Meaning of the Bianchi Error Bound**]
+:::info[**Physical Meaning of the Bianchi Error Bound via Multiscale Error Bounds**]
 :::
 
-The **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" /> establishes that discrete geometric "leaks" are quadratically suppressed by the lattice scale $\ell_0^2$ and stochastically averaged out by $1/\sqrt{N_t}$. This guarantees that the field equations $\mathcal{G}_{ab} = \kappa T_{ab}$ remain mathematically consistent and free of artificial sources across all scales.
+Deriving the Bianchi error bound $\|\nabla \cdot \mathcal{G}\|_{\infty} \le C_1 \ell_0^2 + C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}$ guarantees that discrete geometric "leaks" are systematically eliminated in the continuum limit. In continuous general relativity, the Bianchi identity $\nabla^\mu G_{\mu\nu} \equiv 0$ enforces exact energy-momentum conservation. In discrete graph models, local discretization errors threaten to introduce unphysical sources or sinks of geometry.
+
+The total divergence error decomposes into a deterministic geometric residual $E_{\text{geom}}$ and a stochastic fluctuation residual $E_{\text{stat}}$. The geometric residual decays quadratically with the discreteness scale $\ell_0^2$, matching the Taylor expansion order of the Ricci curvature tensor. Simultaneously, stochastic update fluctuations are dynamically suppressed by the central limit scaling $1/\sqrt{N_t}$ across correlated node clusters.
+
+This dual error suppression confirms that the discrete field equations $\mathcal{G}_{ab} = \kappa T_{ab}$ remain divergence-free at macroscopic scales. As the graph size $N_t \to \infty$ and discreteness step $\ell_0 \to 0$, geometric residuals vanish identically. The Bianchi error bound guarantees that emergent spacetime remains free of artificial unphysical energy sources across all scales.
 
 ---
 
@@ -1529,7 +1536,7 @@ The **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" /> establishes t
 This synthesis proof utilizes the structural results established in **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" /> and **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" />.
 
 **I. Invariance Principle**
-The **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> establishes that the discrete Einstein-Hilbert action $\mathcal{S}[G]$ remains constant under infinitesimal diffeomorphisms generated by a vector field $\xi^a$. This invariance implies $\delta_\xi \mathcal{S} = 0$.
+As established in **Action Invariance** <Ref id="13.3.3" label="§13.3.3" />, the discrete Einstein-Hilbert action $\mathcal{S}[G]$ remains constant under infinitesimal diffeomorphisms generated by a vector field $\xi^a$. This invariance implies $\delta_\xi \mathcal{S} = 0$.
 
 **II. Variational Formula**
 The variation of the action with respect to the edge structure is defined by the contraction of the discrete Einstein tensor with the variation of the metric field:

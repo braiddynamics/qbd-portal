@@ -382,15 +382,15 @@ h(\alpha) = -\alpha \log \alpha - (1 - \alpha)\log(1 - \alpha) + (1 - \alpha)\lo
 $$
 
 **V. Derivation of the First Order Condition**
-The location of the extremum requires the computation of the first derivative $\frac{dh}{d\alpha}$. Applying the product rule $\frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
-1.  **Self Term:** $\frac{d}{d\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
-2.  **Complement Term:** $\frac{d}{d\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $du/d\alpha = -1$.
+The location of the extremum requires the computation of the first derivative $\frac{\mathrm{d}h}{\mathrm{d}\alpha}$. Applying the product rule $\frac{\mathrm{d}}{\mathrm{d}x}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
+1.  **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
+2.  **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
 
     $$
-    \frac{d}{d\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
+    \frac{\mathrm{d}}{\mathrm{d}\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
     $$
 
-3.  **Linear Term:** $\frac{d}{d\alpha}((1-\alpha)\log 2) = -\log 2$.
+3.  **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
 
 Combining these components yields:
 
@@ -423,7 +423,7 @@ Consequently, the associated directional mass becomes $\beta = (1 - 1/3)/2 = 1/3
 The characterization of the critical point as a maximum requires the evaluation of the second derivative $h''(\alpha)$. Differentiating $h'(\alpha) = \log(1-\alpha) - \log(2\alpha)$:
 
 $$
-h''(\alpha) = \frac{d}{d\alpha}[\log(1-\alpha)] - \frac{d}{d\alpha}[\log \alpha + \log 2] = \frac{-1}{1 - \alpha} - \frac{1}{\alpha}.
+h''(\alpha) = \frac{\mathrm{d}}{\mathrm{d}\alpha}[\log(1-\alpha)] - \frac{\mathrm{d}}{\mathrm{d}\alpha}[\log \alpha + \log 2] = \frac{-1}{1 - \alpha} - \frac{1}{\alpha}.
 $$
 
 For any $\alpha$ in the domain $(0,1)$, both terms $-\frac{1}{1-\alpha}$ and $-\frac{1}{\alpha}$ assume strictly negative values. Thus, $h''(\alpha) < 0$ universally across the domain. This strict concavity guarantees that the stationary point $\alpha = 1/3$ represents a unique global maximum.
@@ -1033,19 +1033,19 @@ Section 11.2.8.1 formalizes the properties of the QBD proof regarding combinator
 The derivation (**Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />) proceeds by aggregating the independent validation lemmas established in this section. This synthesis confirms that the tuple $(G, \bar{d}, \{\mu_u\}, K)$ constitutes a mathematically rigorous metric measure space capable of supporting a finite, time-oriented curvature calculus.
 
 **I. Measure Existence and Normalization**
-**Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> guarantees that for every vertex $u \in V$, the object $\mu_u$ constitutes a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
+Under **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />, for every vertex $u \in V$, the object $\mu_u$ is guaranteed to constitute a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
 
 **II. Metric Finiteness and Stability**
-**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> establishes that the undirected shortest-path metric $\bar{d}$ is strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
+In **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />, the undirected shortest-path metric $\bar{d}$ is established as strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
 
 **III. Causal Fidelity and Orientation**
-**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> demonstrates that the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
+As demonstrated in **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
 
 **IV. Curvature Boundedness**
 Since $\bar{d}(x,y) \le \text{diam}(G)$ and $\mu_u, \mu_v$ are probability measures, the Wasserstein distance is bounded by $0 \le W_1 \le \text{diam}(G)$. Consequently, the curvature $K = 1 - W_1$ is strictly bounded within $[1 - \text{diam}(G), 1]$. In the sparse equilibrium regime where diameters of relevant neighborhoods are small, this bound tightens effectively to $[-1, 1]$.
 
 **V. Manifold-Like Regularity**
-**Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" /> guarantees that the emergent space exhibits stable 4D scaling and boundary topology, preventing dimensional collapse and stabilizing the geometry.
+Under **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" />, the emergent space is guaranteed to exhibit stable 4D scaling and boundary topology, preventing dimensional collapse and stabilizing the geometry.
 
 **Conclusion:**
 The construction is well-posed. The resulting scalar curvature $K(u,v)$ serves as a finite, causally sensitive geometric invariant suitable for summation into the Einstein-Hilbert action.

@@ -1,0 +1,16 @@
+------------------------------------------------------------------------
+§18.3.8.2 Relativistic Degrees of Freedom Counting
+------------------------------------------------------------------------
+GUT Scale Relativistic Degrees of Freedom g_* (GUT): 106.75
+Weak Freeze-Out Degrees of Freedom g_* (BBN): 10.75
+Post-Annihilation Degrees of Freedom g_* (CMB): 3.363
+------------------------------------------------------------------------
+| Cosmological Epoch                   |   Bosonic Modes g_b | Fermionic Modes g_f   |   Derived g_* |   Standard Value |
+|--------------------------------------|---------------------|-----------------------|---------------|------------------|
+| GUT / Reheating (T > 100 GeV)        |                  28 | 90                    |       106.75  |          106.75  |
+| Electroweak Freeze-Out (T ~ 100 MeV) |                  19 | 18.0                  |        34.75  |           34.75  |
+| Weak Freeze-Out / BBN (T ~ 1 MeV)    |                   2 | 10.0                  |        10.75  |           10.75  |
+| Post-e+e- Annihilation (T < 0.1 MeV) |                   2 | 6.00 (decoupled)      |         3.363 |            3.362 |
+------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------

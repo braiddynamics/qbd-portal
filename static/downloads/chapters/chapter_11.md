@@ -8,7 +8,7 @@ Chapter 11: Differential Geometry (Discrete) establishes a rigorous, coordinate-
 
 # Part 3: The Emergent Reality
 
-:::note[**The Stage**]
+:::note[**Stage**]
 :::
 
 In the preceding sections, we have established the ontological and material foundations of the physical universe. Part 1, *The Rules*, defined the discrete, relational substrate, the causal graph, and the axiomatic dynamics that drive its evolution from a singular origin to a stable, homeostatic equilibrium. Part 2, *The Players*, demonstrated that the stable topological excitations of this vacuum constitute the fermions and gauge bosons of the Standard Model. We now turn to the final and most ambitious component of the theory: the emergence of the *stage* itself, the smooth, four-dimensional spacetime of General Relativity.
@@ -58,18 +58,11 @@ We resolve this foundational crisis by constructing a rigorous discrete differen
 
 ## 11.1 Causal Curvature {#11.1}
 
-:::note[**Section 11.1 Overview**]
-:::
+Connecting the discrete relational architecture of a causal graph to the continuous pseudo-Riemannian geometry of General Relativity demands a mathematically rigorous curvature construct that operates far beyond superficial structural analogy. This curvature must quantify the internal geometric properties of the graph while admitting a well-controlled continuum limit under coarse-graining. The formulation must remain sensitive to the elementary 3-cycle loops that serve as indivisible quanta of spatial volume, while respecting the directed, acyclic temporal flow enforced by causal links. Crucially, the curvature framework must integrate with optimal transport theory, as convergence within the Gromov-Hausdorff-Wasserstein metric provides the foundational strategy for proving that smooth spacetime geometry emerges from discrete graph rewrites.
 
-The framework of Quantum Braid Dynamics requires a precise mechanism to connect the discrete relational structure of the causal graph with the continuous pseudo-Riemannian geometry of spacetime in General Relativity. This mechanism takes the form of a curvature concept that operates not as an approximate analogy but as a fully rigorous mathematical construct. This construct quantifies the geometric properties inherent in the causal graph while permitting a well-controlled continuum limit under appropriate scaling conditions. The curvature concept incorporates sensitivity to the elementary units of geometry, namely the 3-cycles that serve as the indivisible quanta of spatial structure (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />).
+Conventional combinatorial definitions of discrete curvature, such as Forman curvature, prove fundamentally inadequate for the requirements of Quantum Braid Dynamics. Because Forman curvature relies exclusively on local vertex degrees and incident simplex counts, it omits any consideration of transport distances or the metric costs of moving mass across the graph. In causal networks where edge weights correspond to physical separations, a purely combinatorial metric cannot differentiate between a dense spatial cluster with high positive curvature and a sparse, weakly connected region that happens to share similar combinatorial tallies. Furthermore, combinatorial curvatures fail to facilitate convergence proofs in metric-measure spaces, as they lack the measure-theoretic machinery needed to establish rigorous bounds on Wasserstein transport distances during the continuum limit.
 
-Simultaneously, it adheres to the directed causal relations enforced by the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The structure is also constrained by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Furthermore, the curvature concept integrates directly with the theory of optimal transport that defines the Gromov-Hausdorff-Wasserstein metric, since convergence within this metric forms the foundational element of the strategy for proving the Continuum Theorem.
-
-Combinatorial definitions of discrete curvature, such as the Forman curvature introduced by Forman in 2003, offer simplicity and applicability in specific combinatorial settings. However, these definitions demonstrate fundamental limitations within the Quantum Braid Dynamics framework. The Forman curvature computes itself as a weighted sum involving the faces and edges adjacent to a given vertex or edge, and the Forman curvature depends exclusively on the degrees of vertices and the counts of higher-dimensional simplices incident to those vertices. This method captures certain effects related to local connectivity density, yet the Forman curvature exhibits no intrinsic sensitivity to metric properties, because the Forman curvature omits any consideration of distances or the costs associated with transporting mass between distinct points. In graphs where edges correspond to physical separations of varying scales (as occurs in Quantum Braid Dynamics, where such scales emerge from the lengths of causal paths) a purely combinatorial curvature fails to differentiate between a highly interconnected cluster, which manifests high positive curvature, and a sparsely connected region if the combinatorial tallies of simplices in the two regions exhibit similarity. Even more critically, the Forman curvature does not facilitate proofs of convergence within metric-measure spaces governed by the Gromov-Hausdorff-Wasserstein metric, because such proofs demand a curvature formulation that interacts explicitly with probability measures and transport distances to regulate the geometric behavior during the limiting process. Absent this incorporation of metric elements, the framework cannot establish rigorous bounds on the Wasserstein components that prove indispensable for demonstrating compactness and convergence in the Gromov-Hausdorff-Wasserstein sense. In summary, combinatorial curvatures such as the Forman curvature remain excessively discrete in nature; these curvatures fail to encode the continuous geometric information necessary to reconstruct a metric manifold in the continuum limit.
-
-By contrast, the Ollivier-Ricci curvature, developed by Ollivier in 2009, emerges as the optimal selection for this purpose, precisely because the Ollivier-Ricci curvature constructs itself upon the foundation of the Wasserstein-1 distance. This distance defines a metric on the space of probability measures by measuring the minimal cost required to relocate mass from one distribution to another. This grounding in optimal transport endows the Ollivier-Ricci curvature with an inherently geometric character, since the Ollivier-Ricci curvature accounts for both local mass densities and the metric discrepancies between neighboring regions. The adaptation of the Ollivier-Ricci curvature to the directed causal graphs of Quantum Braid Dynamics proceeds through the introduction of a "lazy" causal probability measure that allocates weights equally among the past, present, and future neighborhoods of each vertex. This adaptation generates a curvature that honors the causal directedness of the model while simultaneously supporting the rigorous demonstrations of Gromov-Hausdorff-Wasserstein convergence. The alignment between the Wasserstein metric embedded in the Gromov-Hausdorff-Wasserstein distance and the transport-centric formulation of the Ollivier-Ricci curvature enables the framework to invoke advanced results from metric geometry and optimal transport theory, as detailed by Villani in 2009, to regulate the limiting geometry. This selection originates from mathematical compulsion rather than arbitrary preference: the curvature provides a provably sound pathway from the discrete regime to the continuous regime, thereby securing the logical integrity of the Continuum Theorem.
-
-The subsequent subsections establish the formal definitions for the key mathematical structures that support the formulation of the Continuum Theorem.
+We resolve this limitation by constructing a Causal Ollivier-Ricci curvature grounded in the Wasserstein-1 optimal transport distance between local vertex probability measures. By defining a balanced lazy causal measure that distributes weight equally across the past, present, and future neighborhoods of each vertex, we create a curvature that honors causal directedness while providing a geometric description of local spatial density. We demonstrate that this transport-centric formulation directly couples the metric discrepancies of neighboring regions to the underlying graph rewrites. The alignment between the Wasserstein metric and Ollivier-Ricci curvature enables the framework to invoke advanced results from metric geometry, securing a mathematically sound pathway from discrete topological dynamics to smooth pseudo-Riemannian manifolds.
 
 ---
 
@@ -110,7 +103,7 @@ $$
 
 Convergence of a sequence of measured metric spaces within the Gromov-Hausdorff-Wasserstein metric guarantees that the sequence converges simultaneously in geometric shape, as captured by the Gromov-Hausdorff component, and in the distribution of the measure across that shape, as captured by the Wasserstein component.
 
-### 11.1.1.1 Commentary: Integration of Geometry and Probability for Causal Convergence {#11.1.1.1}
+### 11.1.1.1 Commentary: Geometric and Probabilistic Causal Convergence {#11.1.1.1}
 
 :::info[**Justification of the GHW Metric for Directed Causal Convergence via Measure Biasing**]
 :::
@@ -141,7 +134,7 @@ The **Undirected Shortest-Path Metric** $\bar{d}: V \times V \to \mathbb{N} \cup
 
 These axioms ensure that $\bar{d}$ defines a valid metric structure on the vertex set $V$, enabling its use as the cost function in optimal transport computations.
 
-### 11.1.2.1 Commentary: Necessity of Metric Symmetry for Transport Well-Posedness {#11.1.2.1}
+### 11.1.2.1 Commentary: Metric Symmetry for Transport Well-Posedness {#11.1.2.1}
 
 :::info[**Justification of Undirected Distance for Transport Costs via Avoidance of Infinite Penalties**]
 :::
@@ -206,23 +199,17 @@ Ultimately, the GHW convergence ensures that the physical states of the quantum 
 
 ## 11.2 Causal Geometry Construction {#11.2}
 
-:::note[**Section 11.2 Overview**]
-:::
+Constructing a rigorous causal geometry on a discrete graph $G_t = (V_t, E_t)$ requires equipping the network with both spatial metric distances and local measure dynamics without presupposing a background manifold. The framework must assign probability measures to vertices while maintaining a well-defined metric for transport costs across directed causal edges. Establishing this dual structure is necessary to compute the Causal Ollivier-Ricci curvature along each edge, converting local topological rewrites into quantifiable geometric curvature. The challenge lies in ensuring that the discrete measure assignment reflects the asymmetric flow of time while preserving the spatial symmetry required for isotropic continuum geometry.
 
-The causal geometry within the Quantum Braid Dynamics framework emerges through the equipping of the discrete causal graph $G_t = (V_t, E_t)$ with two fundamental structures: the **Undirected Shortest-Path Metric** $\bar{d}_t$ and the **Lazy Causal Probability Measure** $\mu_u$. These structures enable the computation of the Causal Ollivier-Ricci curvature $K(u,v)$ along each directed edge.
+Naïve graph geometries often define distances purely through topological hop counts while ignoring local volume density and the directed arrow of time. This unweighted combinatorial approach treats past, present, and future neighborhoods identically, obscuring the physical distinction between spatial expansion and causal propagation. Without a balanced measure that accounts for causal directedness, optimal transport calculations yield degenerate curvature values that fail to capture the geometric overlap of adjacent regions. Furthermore, unweighted hop-count metrics cannot accommodate varying physical scales across graph sectors, rendering the resulting geometry incapable of satisfying the smooth differential properties required by General Relativity.
 
-The construction proceeds in three logical steps:
-1.  **Measure Assignment:** Every vertex $u$ is assigned a probability measure $\mu_u$ that encodes its local causal environment (past, present, and future).
-2.  **Metric Integration:** The graph is equipped with a metric space structure $(V, \bar{d})$ that allows for the rigorous calculation of transport costs.
-3.  **Curvature Evaluation:** The curvature $K$ is derived as the deviation of optimal transport cost from the metric distance, quantifying the graph's geometric "overlap."
-
-This section formally defines these components and proves that the resulting geometry is well-posed, establishing the mathematical arena in which **Monotonicity Theorem** <Ref id="11.3" label="§11.3" /> operates.
+We resolve this challenge by equipping the causal graph with an Undirected Shortest-Path Metric $\bar{d}_t$ and a Lazy Causal Probability Measure $\mu_u$ that distributes probability mass equally across the past, present, and future neighborhoods of each vertex. We establish the Causal Ollivier-Ricci curvature $K(u,v)$ as the exact fractional deviation between the Wasserstein-1 transport distance of these measures and the underlying metric separation. We prove that this balanced weighting ensures the geometry is mathematically well-posed, providing the precise metric-measure arena required for the Monotonicity Theorem and the emergence of gravitational field equations.
 
 ---
 
 ### 11.2.1 Definition: Lazy Causal Measure {#11.2.1}
 
-:::tip[**Allocation of Probability Mass according to the Balanced Weighting of Past, Present, and Future Neighborhoods**]
+:::tip[**Allocation of Probability Mass according to the Balanced Weighting of Past, Present, via Future Neighborhoods**]
 :::
 
 Let $G = (V, E)$ denote a finite, simple, directed graph. For any vertex $u \in V$, the **Lazy Causal Measure** $\mu_u$ is defined as a probability distribution over $V$ that distributes mass among the vertex itself, its immediate past, and its immediate future.
@@ -257,14 +244,14 @@ If a neighborhood is empty, its allocated mass $\beta$ is reassigned to the vert
 Standard Ollivier-Ricci curvature is typically defined on undirected graphs using a measure distributed uniformly over immediate neighbors. In a directed causal graph, however, such a definition fails to capture the arrow of time. A measure that only looks "forward" (at children) or "backward" (at parents) would result in infinite transport distances when calculating curvature between causally connected nodes, as the supports of $\mu_u$ and $\mu_v$ might become disjoint.
 
 The **Lazy Causal Measure** solves this by enforcing a "Causal Triality": the geometry at $u$ is the superposition of where it came from ($N^-$), where it is ($u$), and where it is going ($N^+$).
-* **$\alpha = 1/3$ (The Present):** Ensures that the measures of adjacent nodes always overlap at least partially (via the lazy component), guaranteeing finite transport cost.
-* **$\beta = 1/3$ (Past/Future):** Weights the incoming and outgoing information equally. This symmetry is crucial; it ensures that the geometry reflects the *flow* of information, not just the static topology.
+* **$\alpha = 1/3$ (The Present):** Concentrates mass $\alpha$ at the central vertex $u$, ensuring that the measures of adjacent nodes always overlap at least partially (via the lazy component), guaranteeing finite transport cost.
+* **$\beta = 1/3$ (Past/Future):** Distributes the remaining mass equally among past neighbors ($x, y \in N^-(u)$, each receiving $\beta / |N^-(u)|$) and future neighbors ($z, w \in N^+(u)$, each receiving $\beta / |N^+(u)|$). This balances past causal influences, the present state, and future potential, maintaining probabilistic normalization ($\sum \mu_u = \alpha + 2\beta = 1$) while ensuring the geometry reflects the directed flow of information.
 
 The resulting measure acts as a "probe" that is "tilted" along the time orientation of the edges. When we compute the transport from $\mu_u$ to $\mu_v$, we are measuring how easily the entire causal history and future potential of $u$ can be mapped onto that of $v$.
 
 ### 11.2.1.2 Diagram: Measure Distribution {#11.2.1.2}
 
-:::note[**Depiction of Mass Distribution across Temporal Neighborhoods**]
+:::note[**Depiction via Mass Distribution across Temporal Neighborhoods**]
 :::
 
 ```
@@ -301,8 +288,6 @@ TIME FLOW (t)
 ---------------------------------------------------------
 ```
 
-The diagram illustrates the neighborhood mass distribution for the lazy causal measure $\mu_u$. The measure concentrates mass $\alpha$ at the central vertex $u$, representing the present temporal mode. This measure then distributes the remaining mass equally among the past neighbors (for example, $x, y \in N^-(u)$, each receiving $\beta / |N^-(u)|$) and the future neighbors (for example, $z, w \in N^+(u)$, each receiving $\beta / |N^+(u)|$). This allocation balances the causal influences from the past, the local present state, and the future, thereby ensuring that the measure respects the directed architecture of the graph while maintaining probabilistic normalization.
-
 ---
 
 ### 11.2.2 Definition: Causal Ollivier-Ricci Curvature {#11.2.2}
@@ -337,14 +322,14 @@ where $\Pi(\mu_u, \mu_v)$ is the set of all transport couplings $\pi: V \times V
 
 The **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> of $K(u,v)$ provides a direct operational interpretation of curvature:
 * **$W_1 = 1$ (Flatness):** If the transport cost exactly equals the metric distance, the "average" neighbor of $u$ is exactly distance 1 from the "average" neighbor of $v$. The geometry is Euclidean-like (locally flat).
-* **$W_1 < 1$ (Positive Curvature):** If the transport cost is *less* than the distance, it means the neighborhoods of $u$ and $v$ are "closer" than the nodes themselves. This occurs when there are **shared neighbors** (triangles/3-cycles) that act as bridges, allowing mass to move "for free" or effectively shorter distances. This indicates spherical-like geometry (convergence of geodesics).
-* **$W_1 > 1$ (Negative Curvature):** If the transport cost is *greater* than the distance, the neighborhoods are dispersing. This occurs in tree-like structures or grids where neighbors fan out, indicating hyperbolic-like geometry.
+* **$W_1 < 1$ (Positive Curvature):** As shown in high-connectivity configurations with shared neighbors $w$, a channel for zero-cost transport between $\mu_u$ and $\mu_v$ is established. The neighborhoods of $u$ and $v$ are "closer" than the nodes themselves, lowering $W_1$ and yielding $K > 0$ (spherical-like geometry).
+* **$W_1 > 1$ (Negative Curvature):** In tree-like or linear configurations with disjoint supports (e.g. mass at past neighbor $x$ having to travel to future neighbor $y$), mass must relocate over longer paths, yielding $W_1 > 1$ and non-positive $K \le 0$ (hyperbolic-like dispersion).
 
-The uniform curvature bound $-2 \le K(u,v) \le 1$ established in **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" /> guarantees that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
+As established in **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the uniform curvature bound $-2 \le K(u,v) \le 1$ ensures that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
 
 ### 11.2.2.2 Diagram: Transport Cost {#11.2.2.2}
 
-:::note[**Illustration of Transport Costs for Positive and Negative Curvature Configurations**]
+:::note[**Illustration of Transport Costs for Positive as Negative Curvature Configurations**]
 :::
 
 ```
@@ -389,13 +374,11 @@ The uniform curvature bound $-2 \le K(u,v) \le 1$ established in **Uniform Curva
     Result: High W_1 cost => Low/Negative K.
 ```
 
-The diagram provides a visual interpretation of the causal Ollivier-Ricci curvature through transport costs. Panel (a) depicts a configuration yielding positive curvature: the presence of a shared neighbor $w$ establishes a channel for zero-cost transport between $\mu_u$ and $\mu_v$, resulting in a small value for $W_1$ and thus a positive value for $K > 0$. Panel (b) depicts a configuration yielding negative or flat curvature: the disjoint supports of $\mu_u$ (concentrated on $x, u, v$) and $\mu_v$ (concentrated on $u, v, y$) necessitate the relocation of mass over longer distances, such as from $x$ to $y$, producing a large value for $W_1$ and a non-positive value for $K \le 0$.
-
 ---
 
 ### 11.2.3 Theorem: Causal Geometry Construction {#11.2.3}
 
-:::info[**Establishment of Well-Posedness for the Discrete Geometric Space**]
+:::info[**Establishment of Well-Posedness via the Discrete Geometric Space**]
 :::
 
 Let $\mathcal{G}$ be the class of finite, simple, directed graphs. The construction mapping any $G \in \mathcal{G}$ to the causal geometry $(G, \bar{d}, \{\mu_u\}, K)$ is well-posed.
@@ -670,15 +653,15 @@ h(\alpha) = -\alpha \log \alpha - (1 - \alpha)\log(1 - \alpha) + (1 - \alpha)\lo
 $$
 
 **V. Derivation of the First Order Condition**
-The location of the extremum requires the computation of the first derivative $\frac{dh}{d\alpha}$. Applying the product rule $\frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
-1.  **Self Term:** $\frac{d}{d\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
-2.  **Complement Term:** $\frac{d}{d\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $du/d\alpha = -1$.
+The location of the extremum requires the computation of the first derivative $\frac{\mathrm{d}h}{\mathrm{d}\alpha}$. Applying the product rule $\frac{\mathrm{d}}{\mathrm{d}x}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
+1.  **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
+2.  **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
 
     $$
-    \frac{d}{d\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
+    \frac{\mathrm{d}}{\mathrm{d}\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
     $$
 
-3.  **Linear Term:** $\frac{d}{d\alpha}((1-\alpha)\log 2) = -\log 2$.
+3.  **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
 
 Combining these components yields:
 
@@ -711,7 +694,7 @@ Consequently, the associated directional mass becomes $\beta = (1 - 1/3)/2 = 1/3
 The characterization of the critical point as a maximum requires the evaluation of the second derivative $h''(\alpha)$. Differentiating $h'(\alpha) = \log(1-\alpha) - \log(2\alpha)$:
 
 $$
-h''(\alpha) = \frac{d}{d\alpha}[\log(1-\alpha)] - \frac{d}{d\alpha}[\log \alpha + \log 2] = \frac{-1}{1 - \alpha} - \frac{1}{\alpha}.
+h''(\alpha) = \frac{\mathrm{d}}{\mathrm{d}\alpha}[\log(1-\alpha)] - \frac{\mathrm{d}}{\mathrm{d}\alpha}[\log \alpha + \log 2] = \frac{-1}{1 - \alpha} - \frac{1}{\alpha}.
 $$
 
 For any $\alpha$ in the domain $(0,1)$, both terms $-\frac{1}{1-\alpha}$ and $-\frac{1}{\alpha}$ assume strictly negative values. Thus, $h''(\alpha) < 0$ universally across the domain. This strict concavity guarantees that the stationary point $\alpha = 1/3$ represents a unique global maximum.
@@ -830,20 +813,18 @@ The sensitivity analysis further reveals that in the sparse regime ($d_- \approx
 
 ### 11.2.5.3 Commentary: Universal Constant Alpha {#11.2.5.3}
 
-:::info[**Necessity of Entropic Equilibrium for Geometric Stability**]
+:::info[**Necessity of Entropic Equilibrium for Geometric Stability via Tripartite Weights**]
 :::
 
-The derivation of the parameter $\alpha = 1/3$ elevates this value from an arbitrary heuristic to a fundamental constant of the discrete geometry. In the absence of this entropic maximization, the definitions of curvature would suffer from temporal bias.
+The mathematical derivation of the weighting parameter $\alpha = 1/3$ elevates this value from a heuristic tuning choice to a fundamental structural constant of discrete quantum geometry. In defining causal Ollivier-Ricci curvature across discrete relational networks, probability measures must be distributed across three temporal modes: the past lightcone, the present node, and the future lightcone. In the absence of maximal entropic balance across these three modes, discrete curvature definitions suffer from severe temporal bias.
 
-1.  **Bias toward Stagnation ($\alpha > 1/3$):** If the measure over-weights the vertex itself, the transport cost becomes dominated by the static mass (the "lazy" component). This artificially lowers the Wasserstein distance $W_1$, effectively suppressing the detection of geometric curvature. The geometry becomes "stiff" and unresponsive to topological changes, behaving like a medium with infinite viscosity.
+If the weighting parameter exceeds the entropic equilibrium value ($\alpha > 1/3$), the probability measure over-weights the central vertex, causing the optimal transport cost to be dominated by static mass. This artificial weighting suppresses the Wasserstein distance $W_1$, rendering the emergent geometry stiff, unresponsive to local topological modifications, and infinitely viscous. Conversely, if the parameter falls below equilibrium ($\alpha < 1/3$), the measure over-weights local neighborhoods, making transport costs hyper-sensitive to microscopic degree fluctuations and causing curvature values to oscillate erratically under ambient thermal noise.
 
-2.  **Bias toward Volatility ($\alpha < 1/3$):** If the measure over-weights the neighborhoods, the transport cost becomes hypersensitive to local degree fluctuations (jitter). The geometry becomes unstable, with curvature values oscillating wildly due to minor topological noise rather than structural features.
-
-By fixing $\alpha$ at the unique entropic maximum, the framework ensures that the resulting curvature $K$ serves as a pure measurement of the **causal topology**, uncorrupted by the specific biases of the measuring instrument. The value $1/3$ represents the thermodynamic equilibrium where the system retains maximum uncertainty regarding the "location" of the state (Past vs. Present vs. Future), thereby maximizing the informational content of any observed geometric deviation.
+Fixing $\alpha = 1/3$ uniquely maximizes the Shannon entropy of the probability measure across the tripartite temporal modes, ensuring equal statistical weight between past, present, and future causal boundaries. This entropic equilibrium guarantees that the causal Ollivier-Ricci curvature serves as a pure, unbiased measurement of network topology. By eliminating temporal measure distortions, the universal constant $\alpha = 1/3$ anchors discrete curvature calculations to the true informational geometry of the causal graph.
 
 ### 11.2.5.4 Diagram: Entropic Triality {#11.2.5.4}
 
-:::note[**Representation of Entropic Balance among the Tripartite Temporal Modes**]
+:::note[**Representation via Entropic Balance among the Tripartite Temporal Modes**]
 :::
 
 ```text
@@ -870,7 +851,6 @@ MAXIMUM ENTROPY STATE (α = 1/3)
       At α = 1/3:  Past = Present = Future.
                    Information spreads optimally.
 ```
-:::
 
 ---
 
@@ -1063,7 +1043,7 @@ The construction utilized in Quantum Braid Dynamics (Undirected Metric + Lazy Ca
 
 ### 11.2.7 Lemma: Compensation by Causal Measures {#11.2.7}
 
-:::info[**Encoding of Causal Directionality within the Asymmetric Bias of Neighborhood Probability Measures**]
+:::info[**Encoding of Causal Directionality through the Asymmetric Bias of Neighborhood Probability Measures**]
 :::
 
 Given the local causal topology, the specific configuration of the probability mass distributions $\mu_u$ and $\mu_v$ satisfies the property that it recovers the directional structure of the graph $G$.
@@ -1289,7 +1269,7 @@ By defining the measure $\mu_u$ based on the directed neighborhoods $N^-$ and $N
 
 ### 11.2.7.4 Diagram: Compensation Mechanism {#11.2.7.4}
 
-:::note[**Illustration of the Directional Compensation Mechanism between Metric Symmetry and Measure Asymmetry**]
+:::note[**Illustration of the Directional Compensation Mechanism between Metric Symmetry as Measure Asymmetry**]
 :::
 
 ```text
@@ -1372,32 +1352,36 @@ Q.E.D.
 
 ### 11.2.8.2 Commentary: Physical Significance {#11.2.8.2}
 
-:::info[**Macroscopic Homology Stability of Emergent Metrics in Reifenberg Flatness**]
+:::info[**Macroscopic Homology Stability of Emergent Metrics via Reifenberg Flatness**]
 :::
 
-Reifenberg Flatness ensures that despite the chaotic, discrete fluctuations of the microscopic causal graph, the emergent macroscopic space remains topologically stable and behaves as a smooth, flat Euclidean space. Microscopic edge-flip fluctuations are dynamically suppressed at large distances, preventing the metric space from degenerating into a fractal geometry or developing singular, highly crumpled regions.
+Establishing macroscopic metric stability across discrete quantum spacetime represents a foundational challenge for relational graph theories. In discrete models of quantum gravity, microscopic network dynamics frequently give rise to pathological geometric degeneracies, where local edge-flip fluctuations cause the network to collapse into a highly crumpled fractal geometry or break apart into disconnected topological sectors. Resolving this instability requires proving that discrete metric spaces converge to smooth, flat manifolds at large spatial scales.
+
+Reifenberg Flatness provides the mathematical framework to prove that chaotic, discrete graph fluctuations produce smooth macroscopic geometries. The Reifenberg condition evaluates the Hausdorff distance between local metric balls and ideal Euclidean tangent spaces across scaling radii $r$. Proving that the causal graph satisfies Reifenberg Flatness demonstrates that microscopic edge-flip noise is dynamically suppressed over multi-link correlation distances, preventing metric singularities and fractal collapse.
+
+This macroscopic stability proof confirms that continuous spacetime manifolds emerge naturally from discrete relational network dynamics. At large distances, boundary spheres on the causal graph become homeomorphic to smooth three-spheres $S^3$, establishing an un-crumpled, flat Euclidean background geometry. Reifenberg Flatness thus bridges discrete micro-geometry with classical differential geometry, guaranteeing the stability of emergent physical space.
 
 ### 11.2.9 Proof: Causal Geometry Construction {#11.2.9}
 
-:::tip[**Synthesis of Metric and Measure Validations establishing the Well-Posedness for the Curvature Definition**]
+:::tip[**Synthesis of Metric and Measure Validations establishing the Well-Posedness via the Curvature Definition**]
 :::
 
 The derivation (**Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />) proceeds by aggregating the independent validation lemmas established in this section. This synthesis confirms that the tuple $(G, \bar{d}, \{\mu_u\}, K)$ constitutes a mathematically rigorous metric measure space capable of supporting a finite, time-oriented curvature calculus.
 
 **I. Measure Existence and Normalization**
-**Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> guarantees that for every vertex $u \in V$, the object $\mu_u$ constitutes a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
+Under **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />, for every vertex $u \in V$, the object $\mu_u$ is guaranteed to constitute a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
 
 **II. Metric Finiteness and Stability**
-**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> establishes that the undirected shortest-path metric $\bar{d}$ is strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
+In **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />, the undirected shortest-path metric $\bar{d}$ is established as strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
 
 **III. Causal Fidelity and Orientation**
-**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> demonstrates that the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
+As demonstrated in **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
 
 **IV. Curvature Boundedness**
 Since $\bar{d}(x,y) \le \text{diam}(G)$ and $\mu_u, \mu_v$ are probability measures, the Wasserstein distance is bounded by $0 \le W_1 \le \text{diam}(G)$. Consequently, the curvature $K = 1 - W_1$ is strictly bounded within $[1 - \text{diam}(G), 1]$. In the sparse equilibrium regime where diameters of relevant neighborhoods are small, this bound tightens effectively to $[-1, 1]$.
 
 **V. Manifold-Like Regularity**
-**Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" /> guarantees that the emergent space exhibits stable 4D scaling and boundary topology, preventing dimensional collapse and stabilizing the geometry.
+Under **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" />, the emergent space is guaranteed to exhibit stable 4D scaling and boundary topology, preventing dimensional collapse and stabilizing the geometry.
 
 **Conclusion:**
 The construction is well-posed. The resulting scalar curvature $K(u,v)$ serves as a finite, causally sensitive geometric invariant suitable for summation into the Einstein-Hilbert action.
@@ -1423,14 +1407,11 @@ Finally, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.
 
 ## 11.3 Monotonicity Theorem {#11.3}
 
-:::note[**Monotonicity Theorem Overview**]
-:::
+The Monotonicity Theorem serves as the conceptual cornerstone for deriving the Emergent Field Equations, providing the mathematical conduit between discrete computational thermodynamics and the continuous geometry of spacetime. The master equation and homeostatic equilibrium govern the proliferation of 3-cycles, establishing a positive equilibrium density that constitutes the geometric vacuum. Elevating this discrete combinatorial dynamics into a physical theory of gravitation requires proving that local topological updates induce a precise, quantifiable signature in the causal Ollivier-Ricci metric. The central challenge is to demonstrate that the physical operation of 3-cycle nucleation maps bijectively to positive curvature generation, transforming informational updates into gravitational sources.
 
-The Monotonicity Theorem functions as the conceptual cornerstone for deriving the Emergent Field Equations, providing the mathematical conduit between the discrete computational thermodynamics and the continuous geometry of spacetime. The axioms and dynamical rules of the framework dictate the genesis of 3-cycles, the atomic quanta of geometric information. The master equation and homeostatic equilibrium dictate the proliferation and stabilization of these quanta at a positive density $\rho_3^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />, constituting the "geometric vacuum." To ascend this combinatorial dynamics to a gravitational theory, the framework demands a rigorous demonstration that the dynamics induce a quantifiable geometric signature. The Monotonicity Theorem supplies this demonstration by establishing that the model's core physical operation equates mathematically to the generation of positive curvature ($\Delta K > 0$) in the causal Ollivier-Ricci metric.
+Without a rigorous mathematical proof connecting topological updates to metric curvature, graph-based models of spacetime remain abstract combinatorial exercises detached from General Relativity. If the nucleation of 3-cycles does not systematically increase local curvature, the density of geometric quanta cannot serve as a physical source for gravitational field equations. A model that lacks a monotonic curvature response fails to connect information-theoretic complexity with energy-momentum distributions, leaving the discrete action as an ungrounded formal construct. Furthermore, without proving that every local topological addition enhances the global Einstein-Hilbert action, the framework cannot justify using stationary action principles to derive field equations in the continuum limit.
 
-This equivalence originates as a deductive imperative rather than happenstance. The nucleation of each 3-cycle forges a shared causal neighbor, which diminishes the Wasserstein transport cost between the associated measures and thereby augments $K$ (as the detailed proof formalizes below). By forging this bijective correspondence, this curvature coupling legitimates the identification of the 3-cycle density $\rho_3$ as the progenitor of curvature: locales with heightened $\rho_3$ manifest amplified positive $K$, paralleling how energy density sources Ricci curvature in General Relativity. Additionally, this monotonic mapping ratifies the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v)$ as the intrinsic global quantifier of the graph's geometry. Given that each $\Delta N_3 > 0$ induces $\Delta \mathcal{S} > 0$, the action $\mathcal{S}$ couples monotonically to the aggregate informational complexity $N_3$, furnishing the thermodynamic-geometric nexus essential for deriving the discrete EFE via stationary action in subsequent sections.
-
-In summary, the Monotonicity Theorem transfigures Quantum Braid Dynamics from a paradigm of discrete relations into a bona fide theory of emergent geometry, demonstrating that the universe's computational quanta (3-cycles) forge its continuous form (curvature).
+We establish the Monotonicity Theorem by proving that the nucleation of each 3-cycle creates a shared causal neighbor between adjacent vertices, strictly diminishing the Wasserstein transport cost between their local measures and thereby increasing the Causal Ollivier-Ricci curvature ($\Delta K > 0$). We demonstrate that this curvature coupling legitimates the identification of 3-cycle density as the progenitor of curvature, where regions of elevated topological density manifest amplified positive curvature in direct analogy to energy-momentum sourcing in General Relativity. This monotonic mapping ratifies the Discrete Einstein-Hilbert Action $\mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v)$ as the global invariant of graph geometry, completing the thermodynamic-geometric nexus required to derive the Einstein field equations.
 
 ---
 
@@ -1449,14 +1430,14 @@ This functional serves as the intrinsic measure of the total geometric content o
 
 ### 11.3.1.1 Commentary: Cost of Curvature {#11.3.1.1}
 
-:::info[**Interpretation of the Action as an Aggregate Transport Score**]
+:::info[**Interpretation of the Action as an Aggregate Transport Score via Network Connectivity**]
 :::
 
-The **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" /> of the discrete action discrete action definition performs the crucial work of translating the abstract concept of "gravity" into the mechanistic language of information transport. In the continuum of General Relativity, the Einstein-Hilbert action serves as a measure of the total curvature of spacetime, effectively quantifying how much the geometry deviates from flatness. In the discrete regime of Quantum Braid Dynamics, the action $\mathcal{S}$ reinterprets this deviation as a measure of the total "transport efficiency" of the causal graph.
+The discrete Einstein-Hilbert action translates continuous geometric curvature into the informational language of causal graph transport efficiency. In general relativity, the Einstein-Hilbert action measures the total curvature of spacetime, quantifying how local geometry deviates from flat Minkowski space. Within Quantum Braid Dynamics, the discrete action $\mathcal{S}[G]$ reinterprets curvature as an aggregate measure of information transfer efficiency across the causal network.
 
-Recall that the causal Ollivier-Ricci curvature is defined as $K = 1 - W_1$, where $W_1$ represents the Wasserstein transport cost, the difficulty of moving probability mass from one causal neighborhood to another. A high curvature value $K$ therefore corresponds to a low transport cost $W_1$. By defining the global action as the sum of these local curvatures, we establish that a graph with "high action" is geometrically equivalent to a graph with high transport efficiency. In such a graph, information flows readily between neighborhoods because the geometric structure (specifically, the shared neighbors provided by 3-cycles) minimizes the "distance" mass must travel.
+Causal Ollivier-Ricci curvature is defined on directed graph edges as $K = 1 - W_1$, where $W_1$ represents the Wasserstein optimal transport distance required to move probability mass from a source lightcone to a target lightcone. A high local curvature $K$ corresponds directly to a low transport cost $W_1$. By defining the global action as the sum of local edge curvatures $\mathcal{S}[G] = \sum K(e)$, a high-action graph is established as geometrically equivalent to a network with high global transport efficiency.
 
-The **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" /> sets the stage for the dynamical principle of the theory. Just as physical systems evolve to minimize action in classical mechanics, or maximize probability amplitudes in quantum mechanics, the causal graph evolves to maximize its transport efficiency. As we will see in the subsequent theorem, this maximization corresponds directly to maximizing the number of geometric structures (3-cycles). Thus, the "force" of gravity is revealed not as a fundamental interaction, but as the statistical result of the universe evolving toward a state of optimal informational connectivity.
+This action formulation governs the fundamental dynamical principle of discrete quantum spacetime. Just as physical trajectories maximize action in Hamilton's principle, the causal graph evolves to maximize its global transport efficiency. Maximizing action corresponds directly to increasing local 3-cycle density, establishing that gravitational attraction is not an arbitrary fundamental force, but the statistical consequence of the network evolving toward optimal informational connectivity.
 
 ---
 
@@ -1472,7 +1453,7 @@ Let $G_0 = (V_0, E_0)$ denote a finite, simple, directed graph, and let $(u,v) \
 :::tip[**Structure of the Curvature Monotonicity Argument via Measure Dilution, Feasible Transport, Cost Delimitation, and Strict Augmentation**]
 :::
 
-The argument proceeds via Direct Construction, tracing the reduction in optimal transport cost that results from the topological nucleation of a three-cycle.
+The argument proceeds via Direct Construction, tracing the evolution of transport plans across two phases. In Phase 1 (pre-nucleation state G_0), measures mu_u and mu_v exhibit disjoint supports, compelling mass relocation along extended, high-cost paths. In Phase 2 (post-nucleation state G_1), the insertion of a new 3-cycle u -> v -> w -> u injects shared support at vertex w into both measures. This permits zero-cost self-transport at w, contracting overall transport cost and strictly augmenting local curvature.
 
 ```text
 • 11.3.2 Theorem Curvature Monotonicity  [by construction]
@@ -1500,7 +1481,7 @@ The argument proceeds via Direct Construction, tracing the reduction in optimal 
 
 ### 11.3.2.2 Diagram: Monotonicity Proof {#11.3.2.2}
 
-:::note[**Visualization of Transport Cost Reduction following the Introduction of a Shared Causal Neighbor**]
+:::note[**Visualization of Transport Cost Reduction following the Introduction via a Shared Causal Neighbor**]
 :::
 
 ```text
@@ -1549,13 +1530,11 @@ Cycle: u -> v -> w -> u.
    Result: W_1^(1) < W_1^(0) implies K^(1) > K^(0).
 ```
 
-The diagram visualizes the Monotonicity Theorem through the evolution of transport plans. Panel (a) portrays the initial graph $G_0$, where the measures $\mu_u$ and $\mu_v$ exhibit disjoint supports, compelling mass relocations along extended, high-cost paths (depicted as arrows). Panel (b) portrays the updated graph $G_1$ after 3-cycle addition, where the shared vertex $w$ injects common support into both measures, permitting zero-cost self-transport (bold loop at $w$) and abbreviating residual paths, thereby contracting $W_1$ and expanding $K(u,v)$. This evolution elucidates the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />'s core: 3-cycle nucleation curtails transport expenses, augmenting local curvature.
-
 ---
 
 ### 11.3.3 Lemma: Measure Dilution (Phase 1) {#11.3.3}
 
-:::info[**Quantification of Probability Mass Redistribution upon Topological Nucleation**]
+:::info[**Quantification via Probability Mass Redistribution upon Topological Nucleation**]
 :::
 
 If the nucleation of a 3-cycle involving a new vertex $w$ occurs, then the lazy causal measures of the incident vertices $u$ and $v$ are altered.
@@ -1645,7 +1624,7 @@ When a 3-cycle nucleates ($u \to v \to w \to u$), the node $w$ fundamentally alt
 
 ### 11.3.4 Lemma: Transport Feasibility (Phase 2) {#11.3.4}
 
-:::info[**Construction of a Valid Transport Plan Exploiting Shared Geometry**]
+:::info[**Construction via a Valid Transport Plan Exploiting Shared Geometry**]
 :::
 
 There exists a feasible transport coupling $\pi_1$ between the post-nucleation measures $\mu_u^{(1)}$ and $\mu_v^{(1)}$ within the expanded graph $G_1$ that explicitly utilizes the shared probability mass at vertex $w$
@@ -1745,7 +1724,7 @@ This hybrid strategy exploits the sub-additivity of the transport problem. We is
 
 ### 11.3.5 Lemma: Cost Contraction (Phase 3) {#11.3.5}
 
-:::info[**Demonstration of Strict Inequality for Wasserstein Distances**]
+:::info[**Demonstration of Strict Inequality via Wasserstein Distances**]
 :::
 
 Given the system, the Wasserstein-1 transport cost associated with the feasible plan $\pi_1$ in the nucleated graph $G_1$ is strictly less than the optimal transport cost $W_1^{(0)}$ required in the antecedent graph $G_0$
@@ -1853,7 +1832,7 @@ This "free" transport for the shared fraction $m_w$ is the mechanism of **geomet
 
 ### 11.3.6 Lemma: Action-Complexity Proportionality {#11.3.6}
 
-:::info[**Linear Scaling of Total Action with the Count of Geometric Quanta**]
+:::info[**Linear Scaling of Total Action by the Count of Geometric Quanta**]
 :::
 
 For any nucleation of a single three-cycle (geometric quantum), the variation of the total discrete action $\Delta \mathcal{S}$ satisfies the relation $\Delta \mathcal{S} \approx c \cdot \Delta N_3$, where $c > 0$ is a positive constant determined by the baseline curvature of the vacuum.
@@ -1901,12 +1880,14 @@ Q.E.D.
 
 ### 11.3.6.2 Commentary: Geometric Quantum {#11.3.6.2}
 
-:::info[**Identification of the 3-Cycle as the Unit of Curvature**]
+:::info[**Identification of the 3-Cycle via Action-Complexity Proportionality**]
 :::
 
-This corollary formalizes the central geometric identity of the theory. We previously established that the 3-cycle is the "atom" of topology (the geometric quantum). Here, we prove it is also the "atom" of action.
+Establishing a linear scaling relationship between total discrete action and the count of elementary 3-cycles formalizes the central geometric quantum hypothesis of Quantum Braid Dynamics. In topological graph theory, 3-cycles serve as the minimal non-trivial geometric building blocks capable of supporting non-zero local curvature. Proving that action variations scale linearly with 3-cycle count ($\Delta \mathcal{S} = c \cdot \Delta N_3$) demonstrates that 3-cycles serve simultaneously as the fundamental units of topology and action.
 
-Every time the universe creates a 3-cycle, it adds a fixed quantum of action to the total sum. This means that "Action" is not just an abstract integral we minimize; it is a counter. It counts the number of geometric structures in the universe. This provides the mechanism for the emergence of gravity: systems evolve to maximize their structure (complexity), which appears mathematically as stationary action in the presence of constraints.
+Every time a graph rewrite nucleates a new 3-cycle ($u \to v \to w \to u$), it adds a discrete, positive quantum of action $c > 0$ to the global action sum. This proportionality converts the abstract continuous action integral into a discrete counting functional. Global action measures the total volume of geometric structure synthesized within the network, establishing a direct link between graph complexity and gravitational field energy.
+
+This discrete action quantization provides the physical mechanism for emergent gravity. Because the thermodynamic evolution of the causal graph favors configurations that maximize entropy under topological constraints, the network naturally drives toward states of higher 3-cycle density. Gravitational dynamics emerge as the macroscopic realization of discrete action quantization, pulling causal neighborhoods together to maximize total geometric connectivity.
 
 ### 11.3.6.3 Calculation: Monotonicity Verification {#11.3.6.3}
 
@@ -2083,7 +2064,7 @@ Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Mon
 
 ### 11.3.7 Proof: Curvature Monotonicity {#11.3.7}
 
-:::tip[**Formal Verification of the Link between Topological Nucleation and Geometric Action**]
+:::tip[**Formal Verification of the Link between Topological Nucleation through Geometric Action**]
 :::
 
 The proof synthesizes the definitions and lemmas established in Phases 1 through 3 to rigorously demonstrate the global monotonicity of the geometric evolution asserted in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The derivation proceeds by chaining the logical implications of the mass redistribution, transport feasibility, and cost contraction.
@@ -2148,7 +2129,7 @@ This alignment between thermodynamic complexity and geometric curvature provides
 
 The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> as the ruler of causal space. Within this metric space, the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> is employed to define the volume.
 
-This volume measure defines the local geometry. Specifically, the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> is constructed from the Wasserstein transport distance between these measures. This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. The **Curvature Monotonicity** theorem <Ref id="11.3.2" label="§11.3.2" /> proves that the discrete Einstein-Hilbert action scales with complexity, ensuring that thermodynamic relaxation generates a coherent spatial history. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
+This volume measure defines the local geometry. Specifically, the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> is constructed from the Wasserstein transport distance between these measures. This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. As demonstrated in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the discrete Einstein-Hilbert action scales with complexity, ensuring that thermodynamic relaxation generates a coherent spatial history. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
 
 We now possess a fully defined geometric spacetime that arises directly from discrete causal relations. The stage is set for the final deductive leap: demonstrating the convergence to a continuous manifold. We turn next to **Chapter 12**, where the convergence of the discrete causal graph to a smooth, continuous space will be proved.
 

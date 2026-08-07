@@ -1,4 +1,4 @@
-# §18.3.9 — de Sitter Scale Factor Growth
+# §18.3.10 — de Sitter Scale Factor Growth
 
 import numpy as np
 import pandas as pd

@@ -1,0 +1,19 @@
+------------------------------------------------------------------------
+§19.4.7.1 Helium Abundance Prediction
+------------------------------------------------------------------------
+Freeze-Out Ratio (n_n/n_p)_0: 0.2040
+Deuterium Bottleneck Time t_BBN: 387.6 s
+Surviving Neutron Ratio (n_n/n_p)_BBN: 0.1313
+Primary Analytical Yield Y_primary: 0.2321
+Reaction Network Corrected Yield Y_p: 0.2481
+Planck 2020 Observational Benchmark: 0.2450 ± 0.0030
+Relative Deviation from Benchmark: 1.28%
+------------------------------------------------------------------------
+| Stage                         | Temp T (MeV)   |   Time t (s) |   n_n / n_p Ratio |   Helium Mass Fraction Y_p |
+|-------------------------------|----------------|--------------|-------------------|----------------------------|
+| 1. Weak Freeze-Out Decoupling | 0.8135         |         3.45 |            0.204  |                     0.3389 |
+| 2. Neutron Beta Decay Delay   | 0.0767         |       387.6  |            0.1313 |                     0.2321 |
+| 3. Nuclear Network Completion | < 0.0500       |       567.6  |            0.1293 |                     0.2481 |
+------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------

@@ -606,7 +606,7 @@ Section 3.1.11 formalizes the properties of the QBD lemma regarding exclusion of
 
 **I. Premise**
 
-The **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" /> establishes the bipartition $(V_{\text{even}}, V_{\text{odd}})$. No edges exist within $V_{\text{even}}$ or within $V_{\text{odd}}$.
+The bipartition $(V_{\text{even}}, V_{\text{odd}})$ is given by **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />. No edges exist within $V_{\text{even}}$ or within $V_{\text{odd}}$.
 
 **II. Cycle Hypothesis**
 
@@ -745,7 +745,7 @@ The axiom explicitly designates directed 3-cycles as the sole minimal quanta of 
 
 **III. The Static Irreducibility Paradox**
 
-The **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" /> demonstrates that cycles of length $L > 3$ remain dynamically reducible to compositions of 3-cycles in evolving states. In the static vacuum state $G_0$, however, no dynamical reduction mechanism operates. Any such cycle therefore remains irreducible in the initial state. This irreducibility violates the primitive status that the **Axiom of Geometric Constructibility** assigns exclusively to controlled 3-cycles.
+By **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" />, cycles of length $L > 3$ remain dynamically reducible to compositions of 3-cycles in evolving states. In the static vacuum state $G_0$, however, no dynamical reduction mechanism operates. Any such cycle therefore remains irreducible in the initial state. This irreducibility violates the primitive status that the **Axiom of Geometric Constructibility** assigns exclusively to controlled 3-cycles.
 
 **IV. The Causal Order Violation**
 
@@ -1252,7 +1252,7 @@ $$
 **II. Computational Census**
 
 The quantitative verification proceeds through complete enumeration of all non-isomorphic trees for small $N$.
-Sequential application of the structural filters and explicit computation of the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> confirms the maximum.
+Sequential application of the structural filters and explicit computation of the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> reveals the maximum.
 
 $$
 \arg \max_{G} \mathcal{O}(G) = T_{Bethe}(k=3)
@@ -1647,7 +1647,7 @@ The set of candidate vacuum states is restricted to the class of Finite Rooted T
 1.  **Geometric Lower Bound:** **Axiom 2** mandates the capacity to form 3-cycles (geometric quanta) via the rewrite rule. This imposes a strict lower bound on the coordination number, requiring $k_{deg} \ge 3$. Linear chains ($k_{deg}=2$) are excluded as they are topologically incapable of enclosing area.
 2.  **Site Maximality** <Ref id="3.2.7" label="§3.2.7" />: To maximize the rate of geometric evolution, the tree structure must maximize the density of compliant 2-path sites per vertex. This requirement favors maximal branching over linear extension.
 3.  **Orbit Transitivity** <Ref id="3.2.9" label="§3.2.9" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k_{deg}$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.8" label="§3.2.8" />.
-4.  **Topological Upper Bound:** The **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" /> establishes that coordination numbers $k_{deg} \ge 4$ force the formation of non-manifold combinatorial singularities upon ignition, violating the **Simplicial Manifold Condition** <Ref id="3.2.12" label="§3.2.12" />. This imposes a strict upper bound of $k_{deg} \le 3$ for geometric viability.
+4.  **Topological Upper Bound:** By **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />, coordination numbers $k_{deg} \ge 4$ force the formation of non-manifold combinatorial singularities upon ignition, violating the **Simplicial Manifold Condition** <Ref id="3.2.12" label="§3.2.12" />. This imposes a strict upper bound of $k_{deg} \le 3$ for geometric viability.
 
 **III. Convergence**
 
@@ -1815,7 +1815,7 @@ Section 3.3.5 formalizes the properties of the QBD lemma regarding conflict reso
 
 **I. Sufficiency ($\implies$)**
 
-Let $\mathcal{U}_{max}$ denote the maximally parallel update map acting on $G_0$, and let $\phi \in \text{Aut}(G_0)$. **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" /> implies $\phi(\mathcal{S}_{sites}) = \mathcal{S}_{sites}$. The map $\mathcal{U}_{max}$ applies the rewrite rule $\mathcal{R}$ to every element in $\mathcal{S}_{sites}$:
+Let $\mathcal{U}_{max}$ denote the maximally parallel update map acting on $G_0$, and let $\phi \in \text{Aut}(G_0)$. By **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />, $\phi(\mathcal{S}_{sites}) = \mathcal{S}_{sites}$. The map $\mathcal{U}_{max}$ applies the rewrite rule $\mathcal{R}$ to every element in $\mathcal{S}_{sites}$:
 
 $$
 E_{new} = \bigcup_{s \in \mathcal{S}_{sites}} \mathcal{R}(s)
@@ -2112,7 +2112,7 @@ Type-theoretic certification of the symmetry invariance established in the **Pre
 
 1.  **Encoding:** The typeclasses `Group` and `MulAction` encode the algebraic structure of the automorphism group acting on the state space; `IsSymmetricState` and `IsEquivariantOperator` encode the two physical requirements as dependent propositions over an abstract group-action pair.
 2.  **Theorem Statement:** The Lean proposition `parallel_update_preserves_symmetry` asserts that an equivariant operator maps symmetric states to symmetric states, consuming both the equivariance hypothesis `h_equiv` and the symmetry hypothesis `h_symm` to produce a new symmetry certificate for the updated state.
-3.  **Proof Closure:** The proof unfolds both predicates, then applies `rw [← h_equiv]` to rewrite the goal from `g • f x = f x` into `f (g • x) = f x` using the equivariance condition in reverse, after which `rw [h_symm]` closes the goal by substituting the symmetry hypothesis.
+3.  **Proof Closure:** The proof unfolds both predicates, then applies `rw [h_equiv.symm]` to rewrite the goal from the equivariance condition in reverse, after which `rw [h_symm]` closes the goal by substituting the symmetry hypothesis.
 
 ```lean
 -- Define the abstract algebraic structures and group action typeclasses
@@ -2151,7 +2151,7 @@ theorem parallel_update_preserves_symmetry {G X : Type} [Group G] [MulAction G X
 ```
 
 **Verification Summary:**
-The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the smul operator `•`. `IsSymmetricState x g` is the proposition `g • x = x`, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition `∀ g x, f (g • x) = g • f x`, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from  **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [← h_equiv]`) to rewrite the target `g • f x` as `f (g • x)`, and then applies the symmetry hypothesis (`rw [h_symm]`) to reduce `f (g • x)` to `f x`, closing the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
+The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the scalar-multiplication (smul) action. `IsSymmetricState x g` is the proposition that the group element $g$ fixes $x$, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition that $f$ commutes with the group action for all $g$ and $x$, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [h_equiv.symm]`) to convert the target, and then applies the symmetry hypothesis (`rw [h_symm]`) to close the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
 
 **In Plain English:**  
 Section 3.3.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -2189,7 +2189,7 @@ Section 3.4.2 formalizes the properties of the QBD lemma regarding topological t
 
 **I. Topological State Definition**
 
-Let $G_0 = (V, E_0)$ denote the vacuum state. The **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" /> establishes that $G_0$ admits a canonical 2-coloring:
+Let $G_0 = (V, E_0)$ denote the vacuum state. By **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />, $G_0$ admits a canonical 2-coloring:
 
 $$
 V = V_{\text{even}} \sqcup V_{\text{odd}}
@@ -2552,7 +2552,7 @@ print(df.to_markdown(index=False))
 
 **Simulation Results:**
 
-|   Vertices (N) |   Candidate Pairs (≈ N²/2) |   Local P_acc (High T) |   Global P_ign (High T) |   Local P_acc (Low T) |   Global P_ign (Low T) |
+|   Vertices (N) |   Candidate Pairs ($\approx N^2/2$) |   Local P_acc (High T) |   Global P_ign (High T) |   Local P_acc (Low T) |   Global P_ign (Low T) |
 |---------------:|---------------------------:|-----------------------:|------------------------:|----------------------:|-----------------------:|
 |            100 |                       5000 |                      1 |                       1 |                   0.5 |                      1 |
 |            500 |                     125000 |                      1 |                       1 |                   0.5 |                      1 |
@@ -3318,7 +3318,7 @@ print(df.to_markdown(index=False, tablefmt="github"))
 | 000000 (Vacuum)                      |         1 | (+1.0, +1.0, +1.0)            | Yes              |
 | 000010 (Tension: CA present)         |         1 | (+1.0, +1.0, -1.0)            | Yes              |
 | 101010 (Excitation: forward 3-cycle) |         1 | (-1.0, -1.0, -1.0)            | Yes              |
-| 110000 (Invalid: AB↔BA 2-cycle)      |         0 | (-1.0, +1.0, +1.0)            | No               |
+| 110000 (Invalid: $AB \leftrightarrow BA$ 2-cycle)      |         0 | (-1.0, +1.0, +1.0)            | No               |
 
 **Conclusion:**
 
@@ -3340,7 +3340,7 @@ Type-theoretic certification of the closure property established in the **Stabil
 
 1.  **Encoding:** The type definitions `State E` and `Stabilizer E` encode, respectively, an edge-assignment as a boolean map and a parity-check functional as a boolean measurement; `Stabilizes` encodes the null-space membership condition as the proposition `s state = false`.
 2.  **Theorem Statement:** The Lean proposition `stabilizer_group_closure` asserts group closure: if a vacuum state is stabilized by both `s1` and `s2` independently, then it is stabilized by their XOR composition `composite_stabilizer s1 s2`.
-3.  **Proof Closure:** After unfolding all definitions, `rw [h1, h2]` substitutes both null-space values (`false`) into the goal, reducing the expression `false ≠ false` to `false`; `rfl` closes the resulting definitional equality.
+3.  **Proof Closure:** After unfolding all definitions, `rw [h1, h2]` substitutes both null-space values (`false`) into the goal, reducing the expression `false` XOR `false` to `false`; `rfl` closes the resulting definitional equality.
 
 ```lean
 -- A State maps an abstract set of edges/elements to a binary phase value (False = 0, True = 1)
@@ -3374,7 +3374,7 @@ theorem stabilizer_group_closure {E : Type} (s1 s2 : Stabilizer E) (state : Stat
 ```
 
 **Verification Summary:**
-`State E` is modeled as `E → Bool`, capturing the qubit interpretation where `false` ($|0⟩$) denotes an absent edge and `true` ($|1⟩$) denotes a present edge. `Stabilizer E` is the functional type `(E → Bool) → Bool`, mirroring the $Z$-check operator $K_{uv} = Z_{uv} \otimes Z_{vw}$ from **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. `Stabilizes s state` asserts `s state = false`, the boolean form of the $+1$-eigenspace condition. `composite_stabilizer` defines the XOR product via boolean inequality `s1 state ≠ s2 state`, which evaluates to `true` when the parities disagree and `false` when they agree, exactly modeling operator multiplication. The type-theoretic proof unfolds all three definitions, then applies `rw [h1, h2]` to substitute the two null-space values into the composite expression, reducing `false ≠ false` to `false` by boolean definination equality, which `rfl` closes. The Lean kernel's acceptance of this closed proof term certifies the group closure property: any vacuum state satisfying the local parity constraints for two individual stabilizer operators is automatically consistent with every product of those operators, providing the formal machine certificate for the global self-healing property argued in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />.
+`State E` is modeled as a boolean map from `E` to `Bool`, capturing the qubit interpretation where `false` ($|0\rangle$) denotes an absent edge and `true` ($|1\rangle$) denotes a present edge. `Stabilizer E` is the functional type mapping a `State E` to `Bool`, mirroring the $Z$-check operator $K_{uv} = Z_{uv} \otimes Z_{vw}$ from **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. `Stabilizes s state` asserts `s state = false`, the boolean form of the $+1$-eigenspace condition. `composite_stabilizer` defines the XOR product via boolean inequality (true when the parities disagree, false when they agree), which evaluates to `true` if and only if the two stabilizers disagree, exactly modeling operator multiplication. The type-theoretic proof unfolds all three definitions, then applies `rw [h1, h2]` to substitute the two null-space values into the composite expression, reducing the XOR of `false` with `false` to `false` by boolean definitional equality, which `rfl` closes. The Lean kernel's acceptance of this closed proof term certifies the group closure property: any vacuum state satisfying the local parity constraints for two individual stabilizer operators is automatically consistent with every product of those operators, providing the formal machine certificate for the global self-healing property argued in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />.
 
 **In Plain English:**  
 Section 3.5.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.

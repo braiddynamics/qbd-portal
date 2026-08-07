@@ -1,4 +1,4 @@
-# §18.3.11 — Hausdorff Dimension Flow
+# §18.3.12 — Hausdorff Dimension Flow
 
 import numpy as np
 import pandas as pd

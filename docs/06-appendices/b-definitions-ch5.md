@@ -1283,7 +1283,7 @@ Section 5.4.2 formalizes the properties of the QBD theorem regarding vacuum stab
 :::info[**Existence via stability of the geometric equilibrium**]
 :::
 
-Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exists a unique fixed point $\rho^* > 0$ satisfying the transcendental balance equation, and the equilibrium constitutes a global attractor with a strictly negative Jacobian $J \equiv \frac{d}{d\rho}(\dot{\rho})$ evaluated at $\rho^*$.
+Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exists a unique fixed point $\rho^* > 0$ satisfying the transcendental balance equation, and the equilibrium constitutes a global attractor with a strictly negative Jacobian $J \equiv \frac{\mathrm{d}}{\mathrm{d}\rho}(\dot{\rho})$ evaluated at $\rho^*$.
 
 **In Plain English:**  
 Section 5.4.3 formalizes the properties of the QBD lemma regarding global stability.
@@ -1392,7 +1392,7 @@ which implies $\lambda_{\text{cat}} < 3$.
 
 **III. Evaluation of the Physical Parameter**
 
-Substitution of the theoretical value established by **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> yields the relation:
+Substituting the theoretical value from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> into the equilibrium balance equation:
 
 $$
 \lambda_{\text{cat}} = e - 1 \approx 1.718
@@ -1424,7 +1424,7 @@ Section 5.4.4.1 formalizes the properties of the QBD proof regarding catalysis b
 
 **I. The Stability Criterion**
 
-Let $\rho^*$ denote the unique positive root satisfying the transcendental balance equation. Define the time-dependent rate equation governing cycle density fluctuations as $\dot{\rho} = C(\rho) - D(\rho)$, where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ represents the creation flux and $D(\rho) = \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2$ represents the deletion flux. The fixed point $\rho^*$ is locked by type geometry to be linearly stable if and only if the first derivative of the net flux satisfies the Jacobian constraint $J \equiv \frac{d}{d\rho}(C(\rho) - D(\rho))\vert_{\rho^*} < 0$, which requires the inequality $C'(\rho^*) < D'(\rho^*)$.
+Let $\rho^*$ denote the unique positive root satisfying the transcendental balance equation. Define the time-dependent rate equation governing cycle density fluctuations as $\dot{\rho} = C(\rho) - D(\rho)$, where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ represents the creation flux and $D(\rho) = \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2$ represents the deletion flux. The fixed point $\rho^*$ is locked by type geometry to be linearly stable if and only if the first derivative of the net flux satisfies the Jacobian constraint $J \equiv \frac{\mathrm{d}}{\mathrm{d}\rho}(C(\rho) - D(\rho))\vert_{\rho^*} < 0$, which requires the inequality $C'(\rho^*) < D'(\rho^*)$.
 
 **II. The Flux Gradients**
 
@@ -1843,7 +1843,7 @@ $$
 
 **III. Suppression Bound**
 
-**Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" /> ensures that non-protected $\sigma = -1$ states are dynamically unstable.
+By **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />, non-protected $\sigma = -1$ states are dynamically unstable.
 
 1.  **Thermodynamic Base Rate:** $\mathbb{P}_{\text{thermo}} = 1/2$.
 2.  **Catalytic Enhancement:** The stress $\sigma = -1$ catalyzes its own decay via the factor $f_{\text{cat}}(\sigma) = 1 + \lambda_{cat}$.
@@ -1868,7 +1868,7 @@ $$
 
 **IV. Convergence of Path Sum**
 
-The number of paths of length $L$ grows as $(D_{max})^L$, where $D_{max}$ is the maximum degree established in the **Bounded Degree** lemma <Ref id="5.5.3" label="§5.5.3" />.
+The number of paths of length $L$ grows as $(D_{max})^L$, where $D_{max}$ is the maximum degree from **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
 The weighted sum behaves as a geometric series:
 
 $$

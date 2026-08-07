@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -----------------------------------------------------------------------------
-# Title:     QBD Dimensional Emergence and Hausdorff Scaling Audit
-# Subject:   Audits topological dimension crystallization in Chapter 18.3.12
-#            (Standalone Version).
-# Version:   1.3
-# -----------------------------------------------------------------------------
+# §18.3.12 — Hausdorff Dimension Flow
 
 import numpy as np
 import pandas as pd
@@ -19,7 +13,7 @@ def calculate_exact_4d_ball_volumes(max_radius=15):
     """
     results = []
     
-    # We sweep R from 1 to max_radius
+    # Sweep R from 1 to max_radius
     radii = list(range(1, max_radius + 1))
     ball_volumes = []
     
@@ -64,27 +58,26 @@ def calculate_exact_4d_ball_volumes(max_radius=15):
     
     return results, slope
 
-def run_dimension_audit():
-    print("="*80)
-    print("QBD Dimensional Emergence Audit (Theorem 18.3.7 Verification)")
+def run_dimension():
+    print("-" * 72)
+    print("§18.3.11 Hausdorff Dimension Flow")
     print("Verifying Hausdorff Dimension Convergence to d_H = 4.0")
-    print("="*80)
+    print("-" * 72)
     
     results, d_H = calculate_exact_4d_ball_volumes(max_radius=15)
     
-    # We display a selection of steps to keep the output beautiful and readable
+    # Display a selection of steps for a compact table
     display_indices = [0, 1, 2, 3, 4, 6, 8, 10, 12, 14]
     display_results = [results[i] for i in display_indices]
     
     df = pd.DataFrame(display_results)
     print(df.to_markdown(index=False, tablefmt="github"))
-    print("="*80)
-    print("Audit Analysis:")
+    print("-" * 72)
+    print("Analysis:")
     print(f"Asymptotic fitted Hausdorff Dimension d_H (R in [5, 15]): {d_H:.4f}")
     print("The local dimension estimate converges towards d_local ~ 4.0 as R increases,")
-    print("successfully proving the analytical claim of Theorem 18.3.7: the")
-    print("polymerized QBD spatial leaf is Ahlfors 4-regular in the Gromov-Hausdorff limit.")
-    print("="*80)
+    print("consistent with Ahlfors 4-regularity of the spatial leaf in the continuum limit.")
+    print("-" * 72)
 
 if __name__ == "__main__":
-    run_dimension_audit()
+    run_dimension()

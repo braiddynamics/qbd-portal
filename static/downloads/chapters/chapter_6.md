@@ -10,7 +10,7 @@ Chapter 6 establishes the topological foundation of matter within Quantum Braid 
 
 # Part 2: Topological Nature of Matter
 
-:::note[**The Players**]
+:::note[**Players**]
 :::
 
 Having constructed the vacuum stage in Part 1, we now turn to the actors that inhabit it. This section derives the complete taxonomy of matter and forces as inevitable topological features of the causal graph. We begin by identifying the specific knot-like configurations that can survive the vacuum's deletion noise in Chapter 6. From these stable structures, we extract the invariant properties we recognize as mass, charge, and spin, proving they are measures of topological complexity rather than intrinsic labels in Chapter 7. We then set these braids in motion, demonstrating how their twisting interactions generate the gauge symmetries of the Standard Model and the mechanism of mass generation in Chapter 8. This culminates in a unification proof, showing how all forces descend from a single penta-ribbon geometry in Chapter 9, before finally reframing the entire particle spectrum as the hardware of a universal topological quantum computer in Chapter 10.
@@ -61,11 +61,11 @@ This arc reveals the braid not merely as a stable knot, but as the engine genera
 
 ## 6.1 Principles of Particle Formation {#6.1}
 
-We confront the existential challenge of explaining why the universe is inhabited by stable fermions rather than being dominated by a chaotic soup of ephemeral fluctuations that dissolve as quickly as they form. This inquiry demands that we identify a mechanism capable of shielding localized geometric information from the thermodynamic solvent of the vacuum which naturally seeks to erode all gradients. 
+We confront the existential challenge of explaining why the universe is inhabited by stable fermions rather than being dominated by a chaotic soup of ephemeral fluctuations that dissolve as quickly as they form. This inquiry demands that we identify a mechanism capable of shielding localized geometric information from the thermodynamic solvent of the vacuum which naturally seeks to erode all gradients. Without such structural protection, any localized defect decays into maximum entropy long before it can manifest as observable matter.
 
 Standard quantum field theory sidesteps this fragility by postulating fields as fundamental entities which grants stability by fiat through imposed symmetries and conservation laws that predate the dynamics. A discrete causal approach cannot rely on these continuous crutches because the second law of thermodynamics acts as a universal pressure that grinds every localized defect down into the maximum entropy of the background foam. If we merely treated particles as statistical fluctuations or high-density clusters they would dissipate back into the void on the timescale of the update cycle and leave the universe devoid of memory or matter. Furthermore, the master equation derived in the previous chapter drives the system toward a sparse equilibrium that actively suppresses the very complexity required to encode a particle.
 
-We resolve this foundational crisis by identifying topological obstruction as the only mechanism capable of rendering specific geometric configurations invisible to the local simplification algorithms of the vacuum. By proving that certain knot-like structures cannot be untied by the restricted set of local moves available to the constructor we establish the existence of a protected sector where information survives simply because the universe lacks the computational capacity to erase it.
+We resolve this foundational crisis by identifying topological obstruction as the only mechanism capable of rendering specific geometric configurations invisible to the local simplification algorithms of the vacuum. By proving that certain knot-like structures cannot be untied by the restricted set of local moves available to the constructor we establish the existence of a protected sector where information survives simply because the universe lacks the computational capacity to erase it. Topological invariants thereby convert fragile geometric fluctuations into permanently conserved physical states.
 
 ---
 
@@ -92,7 +92,7 @@ If a subgraph admits a sequence of local operations that reduces its complexity 
 
 ### 6.1.2 Theorem: Particle Necessity {#6.1.2}
 
-:::info[**Requirement of Topological Non-Triviality for Dynamical Persistence**]
+:::info[**Requirement of Topological Non-Triviality through Dynamical Persistence**]
 :::
 
 Given any localized subgraph $\xi \subset G_t^*$ characterized by a local 3-cycle density $\rho(\xi)$ strictly exceeding the vacuum equilibrium $\rho^*$, its dynamical persistence against the vacuum deletion flux necessitates the possession of non-trivial topological invariants under ambient isotopy, specifically a non-zero Writhe ($w(\xi) \neq 0$) or non-zero pairwise Linking Numbers ($L_{ij}(\xi) \neq 0$), to occupy a protected logical state within the Quantum Error-Correcting Code codespace $\mathcal{C}$ (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />).
@@ -232,7 +232,7 @@ Q.E.D.
 :::note[**Verification of Kinematic Reducibility via Legality-Indexed Task Sequences**]
 :::
 
-Verification of the Task-Reidemeister reduction trajectories established in the **Reducibility of Trivial Topologies** proof <Ref id="6.1.3.1" label="§6.1.3.1" /> is based on the following protocols:
+Verification of the Task-Reidemeister reduction trajectories established in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" /> is based on the following protocols:
 
 1.  **Pattern Construction:** The algorithm instantiates five local graph fragments encoding Type II digons, double short paths, a Type III slide composite, a forbidden Type I self-loop addition, and an isolated directed 3-cycle.
 2.  **Legal Task Execution:** The protocol applies only tasks inhabiting $\mathrm{LegalDel}$ or $\mathrm{LegalAdd}$ (irreflexivity, edge presence or absence, and short-path uniqueness), recording each complexity change $C=|E|$.
@@ -526,7 +526,7 @@ ALL_ARMS_REDUCED: True
 ```
 
 **Conclusion:**
-All five arms satisfy their reduction predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as $\mathfrak{T}_{add}$ followed by $\mathfrak{T}_{del}$. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These numerical outcomes validate the kinematic reduction logic of the **Reducibility of Trivial Topologies** proof <Ref id="6.1.3.1" label="§6.1.3.1" />.
+All five arms satisfy their reduction predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as $\mathfrak{T}_{add}$ followed by $\mathfrak{T}_{del}$. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These numerical outcomes validate the kinematic reduction logic of **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
 
 ### 6.1.3.3 Type-Theoretic Validation via Lean 4 Core {#6.1.3.3}
 
@@ -658,14 +658,14 @@ Type I patterns are excluded at the constructor level by irreflexivity of the **
 
 ### 6.1.4 Lemma: Catalyzed Instability {#6.1.4}
 
-:::info[**Amplification of deletion probability at high local densities**]
+:::info[**Amplification via deletion probability at high local densities**]
 :::
 
 Let $\xi \subset G_t$ denote a decomposed cluster of isolated 3-cycles whose local cycle density $\rho_\xi$ strictly exceeds the equilibrium fixed point $\rho^*$ **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Then the net topological current $\dot{\rho}$ obtained from the **Master Equation** <Ref id="5.2" label="§5.2" /> is strictly negative $(\dot{\rho} \ll 0)$, with the catalytic flux $J_{cat} = 3\lambda_{cat}\rho^2$ dominating the dynamics.
 
 ### 6.1.4.1 Proof: Catalyzed Instability {#6.1.4.1}
 
-:::tip[**Explicit evaluation of net topological current under the Fundamental Equation**]
+:::tip[**Explicit evaluation of net topological current via the Fundamental Equation**]
 :::
 
 **I. Initial State Parameters**
@@ -872,13 +872,13 @@ The **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" /> supplies the *t
 
 Calculation 6.1.4.2 is a mean-field effective model of that rate competition: the trivial arm exposes the full $J_{\mathrm{out}}$, while the knotted arm encodes the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> as a provisional suppression of $J_{\mathrm{out}}$ below a core density. The kinematic layer does not itself insert that suppression into $\mathfrak{T}_{del}$; barrier legitimacy is established by the topological barrier and the architectural analysis of Chapter 6.4.
 
-Together, the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" /> governs the legal reduction of trivial patterns. This works in tandem with the **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" /> to select against quantity without topology, leaving persistence to non-trivial invariants.
+Together, the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" /> governs the legal reduction of trivial patterns. This works in tandem with the **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" /> to select against quantity without topology, leaving long-term topological persistence strictly to non-trivial invariants embedded within the causal graph.
 
 ---
 
 ### 6.1.5 Lemma: Topological Barrier {#6.1.5}
 
-:::info[**Existence of topological protection barriers**]
+:::info[**Existence via topological protection barriers**]
 :::
 
 Let $\beta$ denote a prime knot configuration characterized by a non-trivial global invariant $\mathcal{I} \in \{w, L\}$, and let $\mathfrak{T}(G)$ be the legality-indexed **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> of the ambient graph. Then no finite sequence of tasks drawn from $\mathfrak{T}(G)$ and supported inside the causal horizon $R$ realizes a reducing Reidemeister word that sets $\mathcal{I}\to 0$, so $\mathcal{I}$ induces an infinite effective potential barrier against local reduction to the unknot.
@@ -1009,13 +1009,13 @@ We must determine the specific integer count of strands required to weave the fa
 
 Conventional model building often treats the color charge and quark generations as empirical inputs to be fit rather than structural necessities to be derived from the geometry itself. Relying on simple knots or binary tangles fails to reproduce the non-abelian complexity of the strong interaction which demands a richer symmetry group than what elementary pairs can offer. Furthermore, postulating high-order braids without justification ignores the heavy entropic penalty of the vacuum which ruthlessly suppresses unnecessary complexity and ensures that only the most parsimonious non-trivial structures survive the ignition phase. A theory that permits arbitrary braid orders would predict a zoo of exotic matter that is not observed in nature and fails to explain the rigidity of the standard model spectrum.
 
-We solve this selection problem by deriving the prime tripartite braid as the inevitable solution to the minimax problem of maximizing algebraic symmetry while minimizing topological complexity. We demonstrate that the three-strand braid is the unique configuration that possesses the non-abelian character required for gauge interactions while remaining robust against the entropic pressure that dismantles more complex knots.
+The prime tripartite braid emerges as the inevitable solution to the minimax trade-off between algebraic symmetry and topological complexity. The three-strand braid is the unique configuration possessing the non-abelian character required for gauge interactions while remaining robust against the entropic pressure that dismantles more complex knots. This minimal three-strand topology thereby anchors the fundamental particle spectrum within the discrete causal graph.
 
 ---
 
 ### 6.2.1 Definition: Tripartite Braid {#6.2.1}
 
-:::tip[**Structural Definition based on World-Tube Geometry and Group Generators**]
+:::tip[**Structural Definition based on World-Tube Geometry and Group Generators via Tripartite Braid**]
 :::
 
 The **Tripartite Braid**, denoted as $\beta_3$, is defined strictly as a prime topological configuration comprising exactly three interacting ribbons within the causal graph $G_t$. The validity of this structure is constituted by the simultaneous satisfaction of the following four invariant properties:
@@ -1036,7 +1036,7 @@ The three-ribbon braid represents the first threshold of true complexity. It for
 
 ### 6.2.1.2 Diagram: Prime Braid Diagram {#6.2.1.2}
 
-:::note[**Visual Representation of the Tripartite Knot Structure and Algebraic Generators**]
+:::note[**Visual Representation of the Tripartite Knot Structure as Algebraic Generators**]
 :::
 
 ```text
@@ -1125,7 +1125,7 @@ The proof proceeds by induction, systematically disqualifying alternative geomet
 
 ### 6.2.3 Lemma: Exclusion of Unbraided Clusters (n=0) {#6.2.3}
 
-:::info[**Topological Triviality and Instability under Catalytic Deletion**]
+:::info[**Topological Triviality via Instability under Catalytic Deletion**]
 :::
 
 For any localized excitation characterized by a trivial topology, constituting an unbraided cluster with trivial Jones Polynomial $V_{\xi}(t) = 1$, the configuration is dynamically unstable and subject to immediate dissolution. The absence of non-trivial invariants ($w=0, L=0$) renders the cluster susceptible to the Catalytic Deletion Flux $J_{out}$ (**Master Equation** <Ref id="5.2" label="§5.2" />) which is amplified by the density-dependent stress term $3\lambda_{cat}\rho^2$, driving the configuration toward the vacuum equilibrium.
@@ -1191,7 +1191,7 @@ Q.E.D.
 
 Consider a region of the vacuum where a stochastic fluctuation creates a dense cluster of edges that fails to achieve a knotted topology. To the regulatory mechanisms of the vacuum, this "unbraided cluster" manifests as a high-energy defect, a localized spike in the 3-cycle density $\rho$. This density deviation triggers the catalytic response derived in the thermodynamics chapter, amplifying the probability of edge deletion.
 
-Because the topology remains trivial, the cluster lacks the structural "interlocks" necessary to halt the simplification process. No crossings exist that would require a global, coordinated unwind to resolve. Consequently, the deletion operator, acting locally and aggressively, prunes the excess edges without obstruction. The cluster evaporates, its constituent relations dissolving back into the sparse, tree-like equilibrium of the background. The **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" /> establishes a fundamental physical truth: "matter" cannot exist simply as a concentration of graph connectivity. Without the protective, non-local constraint of a non-trivial topology, any density spike acts merely as a thermal fluctuation that the vacuum swiftly erases. Structure requires the topological lock to survive the thermodynamic grind.
+Because the topology remains trivial, the cluster lacks the structural "interlocks" necessary to halt the simplification process. No crossings exist that would require a global, coordinated unwind to resolve. Consequently, the deletion operator, acting locally and aggressively, prunes the excess edges without obstruction. The cluster evaporates, its constituent relations dissolving back into the sparse, tree-like equilibrium of the background. As established in **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" />, "matter" cannot exist simply as a concentration of graph connectivity. Without the protective, non-local constraint of a non-trivial topology, any density spike acts merely as a thermal fluctuation that the vacuum swiftly erases. Structure requires the topological lock to survive the thermodynamic grind.
 
 ---
 
@@ -1204,7 +1204,7 @@ If a configuration consists of a single framed ribbon ($n=1$), it is excluded fr
 
 ### 6.2.4.1 Proof: Exclusion of Single-Ribbon (n=1) {#6.2.4.1}
 
-:::tip[**Demonstration of Single-Ribbon Instability under Local Rewrite Operations**]
+:::tip[**Demonstration of Single-Ribbon Instability via Local Rewrite Operations**]
 :::
 
 **I. Inductive Framework**
@@ -1345,14 +1345,14 @@ THE DECAY OF A SINGLE RIBBON (Type II Move)
 
 ### 6.2.5 Lemma: Exclusion of Two-Ribbon (n=2) {#6.2.5}
 
-:::info[**Algebraic Insufficiency for Non-Abelian Gauge Generation**]
+:::info[**Algebraic Insufficiency via Non-Abelian Gauge Generation**]
 :::
 
 Consider a configuration consisting of exactly two braided ribbons ($n=2$), which is excluded from the set of fundamental fermions due to algebraic insufficiency. While this configuration proves topologically stable against local deletion, it generates a strictly **Abelian** algebra isomorphic to the integers $\mathbb{Z}$, rendering it insufficient to support the non-abelian gauge symmetries, specifically the self-interacting gluons of Quantum Chromodynamics, required for standard matter (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />).
 
 ### 6.2.5.1 Proof: Exclusion of Two-Ribbon (n=2) {#6.2.5.1}
 
-:::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group and its 1D Representations**]
+:::tip[**Demonstration of the Abelian Nature of the Two-Strand Braid Group as its 1D Representations**]
 :::
 
 **I. Generator Definition**
@@ -1435,7 +1435,7 @@ In physical terms, an Abelian gauge group generates forces that lack self-intera
 
 ### 6.2.5.3 Diagram: Abelian Limit {#6.2.5.3}
 
-:::note[**Visual Demonstration of Commutativity in Two-Strand Braids**]
+:::note[**Visual Demonstration of Commutativity through Two-Strand Braids**]
 :::
 
 ```text
@@ -1468,14 +1468,14 @@ In physical terms, an Abelian gauge group generates forces that lack self-intera
 
 ### 6.2.6 Lemma: Exclusion of Higher Order Configurations (n > 3) {#6.2.6}
 
-:::info[**Entropic Suppression of Hyper-Complex Braids**]
+:::info[**Entropic Suppression of Hyper-Complex Braids from Chiral Braid Invariants**]
 :::
 
 Every configuration comprising $n > 3$ ribbons is physically excluded from the first-generation fermion spectrum due to thermodynamic improbability (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). These structures are suppressed by **Entropic Parsimony** due to their excess topological complexity ($C[\beta] > 3$) and by **Rank Mismatch** in specific cases, preventing their spontaneous formation in the equilibrium vacuum relative to the entropically favored $n=3$ ground state.
 
 ### 6.2.6.1 Proof: Exclusion of Higher Order Configurations (n > 3) {#6.2.6.1}
 
-:::tip[**Formal Demonstration of Non-Minimality for Higher Rank Generators**]
+:::tip[**Formal Demonstration of Non-Minimality via Higher Rank Generators**]
 :::
 
 **I. Case $n=4$ Analysis**
@@ -1564,7 +1564,7 @@ Q.E.D.
 
 ### 6.2.6.2 Calculation: Entropic Exclusion Simulation {#6.2.6.2}
 
-:::note[**Computational Verification of Entropic Suppression for High-Order Braids**]
+:::note[**Computational Verification of Entropic Suppression via High-Order Braids**]
 :::
 
 Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
@@ -1662,9 +1662,9 @@ The proof employs formal induction on the ribbon count $n$. Configurations with 
 **II. Lower Bound Exclusion**
 
 For the base cases $n < 3$, the configurations are excluded systematically:
-1. **Unbraided structures ($n=0$):** **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" /> establishes topological triviality and instability under the deletion flux.
-2. **Single-ribbon structures ($n=1$):** **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> demonstrates reducibility via Type II moves, preventing stability.
-3. **Two-ribbon structures ($n=2$):** **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> confirms algebraic insufficiency, as the commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
+1. **Unbraided structures ($n=0$):** As shown in **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" />, these exhibit topological triviality and instability under the deletion flux.
+2. **Single-ribbon structures ($n=1$):** As demonstrated in **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />, these suffer from reducibility via Type II moves, preventing stability.
+3. **Two-ribbon structures ($n=2$):** As confirmed in **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />, these exhibit algebraic insufficiency because commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
 
 **III. Upper Bound Exclusion**
 
@@ -1705,7 +1705,7 @@ Can the inertial mass of a fundamental particle be decoded directly from the geo
 
 Classical mechanics and even the Higgs mechanism treat mass as a coupling constant or an intrinsic parameter that must be measured rather than calculated from first principles. Attempting to assign energy to graph structures using standard Hamiltonian formulations fails because the vacuum lacks a pre-existing metric to define the distance or tension required for a potential energy term. A purely informational approach that counts bits risks decoupling the particle from the dynamical resistance of the substrate and fails to explain why different topological isomers possess distinct inertial signatures. Without a mechanism to couple the internal complexity of the knot to the update cycles of the universe, the concept of mass remains purely phenomenological and disconnected from the underlying geometry.
 
-This is resolved by defining the Complexity Mass functional which maps the discrete crossings and torsions of the braid directly to the thermodynamic strain they impose on the surrounding causal lattice. This perspective reveals that mass is not an intrinsic property of the particle but a measure of the vacuum's resistance to the topological defect and allows the derivation of the mass spectrum as a series of energetic costs associated with specific geometric invariants.
+The Complexity Mass functional maps the discrete crossings and torsions of the braid directly to the thermodynamic strain they impose on the surrounding causal lattice. Inertial mass measures the thermodynamic resistance of the vacuum lattice to a localized topological defect. This formulation determines the mass spectrum as a precise series of energetic costs associated with specific geometric invariants.
 
 ---
 
@@ -1747,7 +1747,7 @@ Each successive unit of writhe forces the causal path to traverse an increasingl
 
 ### 6.3.3 Theorem: Topological Mass {#6.3.3}
 
-:::info[**Proportionality of Inertial Mass to Complexity under Energy-Entropy Equivalence**]
+:::info[**Proportionality of Inertial Mass to Complexity via Energy-Entropy Equivalence**]
 :::
 
 Assume a stable prime braid $\beta$ possesses a **Topological Mass** $m$ defined as the scalar sum of its constituent topological complexities. The mass functional is constituted by the linear superposition of the Crossing Complexity $C_C$ and the Torsional Complexity $C_T$, governed by the equivalence of internal energy $U$ and free energy $F$ within the protected codespace $\mathcal{C}$ (**Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />). Under these conditions, the total mass satisfies $m \propto C_C + C_T$, which explicitly relates to the invariants as $m \propto k_c \cdot C[\beta] + k_{writhe} \cdot w(\beta)^2$.
@@ -1943,7 +1943,7 @@ $$
 
 **V. Empirical Calibration**
 
-For a full twist ($k=2$), the **Torsional Strain Simulation** <Ref id="6.3.5.2" label="§6.3.5.2" /> yields the result $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
+For a full twist ($k=2$), data from **Torsional Strain Simulation** <Ref id="6.3.5.2" label="§6.3.5.2" /> indicates that $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
 This result confirms the quadratic scaling $2^2 = 4$.
 The pathfinding penalty enforces quadratic mass scaling for higher torsion states.
 
@@ -2039,7 +2039,7 @@ The simulation output establishes a linear relationship between the marginal pat
 :::info[**Emergence of Generational Gaps via Steric Hindrance**]
 :::
 
-This commentary provides the physical interpretation for the quadratic scaling derived in the **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />. The question of why the Top quark possesses a mass orders of magnitude larger than the Up quark finds its answer here: the **Pathfinding Penalty**. within a discrete graph, space lacks infinite divisibility. Adding writhe (twist) to a ribbon effectively packs more causal information into a fixed volume.
+The physical interpretation for the quadratic scaling derived in the **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" /> follows directly from the graph geometry. The question of why the Top quark possesses a mass orders of magnitude larger than the Up quark finds its answer here: the **Pathfinding Penalty**. within a discrete graph, space lacks infinite divisibility. Adding writhe (twist) to a ribbon effectively packs more causal information into a fixed volume.
 
 The Principle of Unique Causality acts as a Pauli exclusion principle for causal paths; it forbids the reuse of edges. Therefore, higher writhe states force the causal links to traverse increasingly complex trajectories to close the loop without intersecting existing paths. The "cost" of adding the $k$-th twist depends on $k$, because the new path must navigate the steric hindrance of the $k-1$ twists already present. This cumulative difficulty generates the $w^2$ scaling. The generations of matter do not represent random masses; they exist as harmonics of this topological strain, corresponding to the discrete stable solutions of the writhe equation.
 
@@ -2084,14 +2084,14 @@ The Principle of Unique Causality acts as a Pauli exclusion principle for causal
 
 ### 6.3.6 Lemma: Entropy Negligibility {#6.3.6}
 
-:::info[**Vanishing of Configurational Entropy within Protected Logical States**]
+:::info[**Vanishing of Configurational Entropy through Protected Logical States**]
 :::
 
 For all prime braids $\beta$ residing within the Quantum Error-Correcting Code codespace $\mathcal{C}$, the configurational entropy $S_{\text{braid}}$ is identically zero. This vanishing entropy restricts the configuration to a single logical microstate $|\beta\rangle$ with degeneracy $\Omega = 1$, implying that the Helmholtz Free Energy $F[\beta]$ and the Internal Energy $U[\beta]$ are strictly equal ($F[\beta] = U[\beta]$) and independent of the vacuum temperature $T$.
 
 ### 6.3.6.1 Proof: Entropy Negligibility {#6.3.6.1}
 
-:::tip[**Demonstration of Zero Entropy for Unique Prime Braid Configurations**]
+:::tip[**Demonstration of Zero Entropy via Unique Prime Braid Configurations**]
 :::
 
 **I. State Definition**
@@ -2106,7 +2106,7 @@ $$
 
 **II. Uniqueness and Degeneracy**
 
-**Architectural Stability** <Ref id="6.4.2" label="§6.4.2" /> establishes that prime braids are protected from local deformation by an $O(N)$ barrier.
+As derived in **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" />, prime braids are protected from local deformation by an $O(N)$ barrier.
 Within the local horizon $R$ of the rewrite rule, the topology of $\beta$ is invariant.
 This implies that for a given set of quantum numbers (writhe, crossing number), there exists exactly one topological configuration that satisfies the energy minimization condition of the vacuum.
 Therefore, the ground state degeneracy of the particle is $\Omega = 1$.
@@ -2203,13 +2203,13 @@ Does the microscopic turmoil of the vacuum eventually pick the locks of the univ
 
 Assuming stability based on simple energy barriers ignores the immense combinatorial probability of tunneling events in a system that iterates infinitely. A distinct danger arises from the heat death of information where the cumulative effect of random local updates might slowly degrade the global invariants of a knot until it slips into a trivial state. Standard perturbative stability analysis is insufficient here because it cannot account for the rare non-local conspiracies of noise that might bridge the topological gap and unravel the fermion from the inside out. If the barrier to decay scales linearly with the size of the particle rather than exponentially, then the proton would be a transient resonance rather than a stable building block of reality.
 
-The permanence of matter is established by demonstrating that the computational complexity required to undo a prime braid exceeds the horizon of the local constructor. By proving that the untying of a non-trivial knot requires a coordinated sequence of moves that scales with the global size of the braid, local updates are confirmed to be topologically causally disconnected from the global invariant, ensuring the lifetime of the particle exceeds the age of the universe.
+Local rewrite operations cannot undo a prime braid because untying a non-trivial knot requires a coordinated sequence of moves exceeding the local constructor horizon. Because the computational complexity of this untying sequence scales exponentially with braid size, stochastic graph updates cannot spontaneously unravel the knot. Local updates remain topologically decoupled from global invariants, guaranteeing that fundamental fermions persist stably over cosmological timescales.
 
 ---
 
 ### 6.4.1 Definition: Linear Barrier {#6.4.1}
 
-:::tip[**Computational Cost of Untying Prime Topologies requiring Global Coordination**]
+:::tip[**Computational Cost via Untying Prime Topologies requiring Global Coordination**]
 :::
 
 The **Linear Barrier** is defined as the minimum computational cost required to transform a prime knot configuration $\mathcal{K}$ into the trivial vacuum state $\emptyset$ via non-intersecting isotopies. This cost is characterized by the following computational properties:
@@ -2268,7 +2268,7 @@ Let the operational scope of the rewrite rule $\mathcal{R}$ be strictly bounded 
 
 ### 6.4.3.1 Proof: Local Horizon {#6.4.3.1}
 
-:::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants**]
+:::tip[**Verification of the Operator's Inability to Detect Global Topological Invariants through Local Horizon**]
 :::
 
 **I. Invariant Definition via Gauss Integral**
@@ -2433,13 +2433,13 @@ The simulation results show that the Global Agent resolves the configuration in 
 :::info[**Restriction of Causal Influence to Logarithmic Scales**]
 :::
 
-The **Local Horizon** represents the maximum distance causal influence can propagate within a single update step. This radius scales logarithmically with the system size, $R \sim \log N$, acting as the "speed of light" limit for the graph's internal computation. The **Local Horizon** <Ref id="6.4.3" label="§6.4.3" /> establishes that any structure physically larger than $R$ remains effectively frozen to the rewrite rule.
+The **Local Horizon** represents the maximum distance causal influence can propagate within a single update step. This radius scales logarithmically with the system size, $R \sim \log N$, acting as the "speed of light" limit for the graph's internal computation. As established in **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, any structure physically larger than $R$ remains effectively frozen to the rewrite rule.
 
 The operator $\mathcal{R}$ can manipulate local kinks and twists, but it cannot perceive or alter the global topology of a loop spanning a distance $D \gg R$. This separation of scales constitutes the origin of stability. The chaotic, thermal fluctuations of the vacuum stay confined to the sub-horizon scale ($< R$), while the stable particles exist at the super-horizon scale ($> R$). Matter survives because it inhabits the "blind spot" of the vacuum's deletion mechanism, protected by the very finiteness of the causal speed limit.
 
 ### 6.4.3.4 Diagram: Horizon Limit {#6.4.3.4}
 
-:::note[**Visualization of Global Stability illustrating Local Operator Blindness**]
+:::note[**Visualization via Global Stability illustrating Local Operator Blindness**]
 :::
 
 ```text
@@ -2480,14 +2480,14 @@ The operator $\mathcal{R}$ can manipulate local kinks and twists, but it cannot 
 
 ### 6.4.4 Lemma: Global Unwinding Barrier {#6.4.4}
 
-:::info[**Linear Complexity of Untying demanding Isotopic Traversal**]
+:::info[**Linear Complexity via Untying demanding Isotopic Traversal**]
 :::
 
 Given a prime knot configuration, the topological transition to the unknot state via Isotopic Unwinding is constrained by a global energy barrier $E_{barrier}$ (**Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />). This barrier requires twist propagation over the full path length $L \propto N$ in a minimum sequence of steps linearly proportional to $N$, whose coordination cost exceeds the available free energy of local vacuum fluctuations and renders the transition thermodynamically forbidden.
 
 ### 6.4.4.1 Proof: Global Unwinding Barrier {#6.4.4.1}
 
-:::tip[**Formal Derivation of the O(N) Unwinding Cost**]
+:::tip[**Formal Derivation of the O(N) Unwinding Cost from Global Unwinding Barrier**]
 :::
 
 **I. Topological State Space**
@@ -2603,7 +2603,7 @@ Q.E.D.
 
 The persistence of matter is secured by the computational blindness of the local vacuum to global topological invariants. Because the operations required to untie a prime knot scale according to the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" /> while the vacuum's rewrite rules operate within a fixed **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, the decay of a proton becomes a statistically impossible event. This scale separation creates an effective infinite potential barrier, protecting the global structure of the fermion from the local erosion that dissolves trivial fluctuations.
 
-This mechanism shifts the definition of stability from an energetic minimum to a computational prohibition. Particles persist not because they are energetically favorable, but because the vacuum lacks the non-local coordination required to delete them. This **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" /> ensures that the universe retains a permanent memory in the form of matter, protecting the coherent history of the cosmos from being overwritten by the entropy of the micro-scale.
+This mechanism shifts the definition of stability from an energetic minimum to a computational prohibition. Particles persist not because they are energetically favorable, but because the vacuum lacks the non-local coordination required to delete them. Through **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" />, the universe retains a permanent memory in the form of matter, protecting the coherent history of the cosmos from being overwritten by the entropy of the micro-scale.
 
 The existence of this topological lock guarantees that the universe is populated by enduring entities rather than transient resonances. It solidifies the distinction between the ephemeral quantum foam and the permanent material world, establishing a universe where complex structures can survive and evolve over cosmological timescales protected by the very limits of causal propagation.
 

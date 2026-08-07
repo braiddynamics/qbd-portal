@@ -1006,7 +1006,7 @@ This identifies $w(\beta)$ as the topological source of the electromagnetic coup
 
 The Charge Operator is defined as $Q = k \cdot w$.
 The value of the constant $k$ is constrained by the algebraic embedding of the braid group into the Standard Model gauge group.
-The **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" /> proves that $k=1/3$ is the unique normalization satisfying the definition of the fundamental charge unit and anomaly cancellation.
+Furthermore, as proved in **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />, $k=1/3$ is the unique normalization satisfying the definition of the fundamental charge unit and anomaly cancellation.
 
 **III. Spectrum Generation**
 
