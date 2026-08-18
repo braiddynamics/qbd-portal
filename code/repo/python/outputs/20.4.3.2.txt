@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------
+§20.4.3.2 Doroshkevich Eigenvalue Distribution Monte Carlo Simulation
+------------------------------------------------------------------------------
+Monte Carlo Sample Size: N = 100,000 random 3x3 deformation tensors
+Primordial Overdensity Baseline: <delta> = 0.5, sigma = 1.0
+------------------------------------------------------------------------------
+Cosmic Web Morphological Fraction Distribution:
+| Cosmic Web Structure            | Eigenvalue Signature                     | Volume Fraction (%)   | Collapse Order          |
+|---------------------------------|------------------------------------------|-----------------------|-------------------------|
+| Sheets / Pancakes (2D Caustics) | lambda_1 > 0, lambda_2 < 0, lambda_3 < 0 | 29.35%                | 1st (t_1 = 1/lambda_1)  |
+| Filaments (1D Bridges)          | lambda_1 > 0, lambda_2 > 0, lambda_3 < 0 | 50.83%                | 2nd (t_2 = 1/lambda_2)  |
+| Nodes / Halos (0D Clusters)     | lambda_1 > 0, lambda_2 > 0, lambda_3 > 0 | 16.68%                | 3rd (t_3 = 1/lambda_3)  |
+| Voids (3D Basins)               | lambda_1 < 0, lambda_2 < 0, lambda_3 < 0 | 3.14%                 | Uncollapsed (Expanding) |
+------------------------------------------------------------------------------
+Principal Deformation Eigenvalue Hierarchy:
+| Principal Axis                   |   Mean Eigenvalue |   Std Dev |   Median Collapse Time t_i |
+|----------------------------------|-------------------|-----------|----------------------------|
+| Axis 1 (Maximum Compression e_1) |            0.7012 |    0.3844 |                      1.407 |
+| Axis 2 (Intermediate Axis e_2)   |            0.1663 |    0.3655 |                      3.131 |
+| Axis 3 (Minimum Compression e_3) |           -0.3699 |    0.3837 |                      6.364 |
+------------------------------------------------------------------------------
+1. Strict Eigenvalue Ordering Verified: lambda_1 > lambda_2 > lambda_3 almost everywhere (min delta_12 = 0.003056)
+2. Spherical Collapse Measure: P(lambda_1 = lambda_2 = lambda_3) = 0.0000% (exact measure zero)
+3. Sequential Collapse Timescale Ordering: t_1 (1.41) < t_2 (3.13) < t_3 (6.36)
+4. Dominant Cosmic Web Topologies: Filaments + Sheets comprise 80.18% of collapsing structures
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

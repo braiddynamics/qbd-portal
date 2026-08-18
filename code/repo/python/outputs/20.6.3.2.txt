@@ -1,0 +1,39 @@
+------------------------------------------------------------------------------
+§20.6.3.2 Matter Power Spectrum P(k) & BAO Correlation Peak xi(r)
+------------------------------------------------------------------------------
+Cosmological Parameters: Omega_m = 0.3138, Omega_b = 0.0493, h = 0.6736, n_s = 0.965, sigma_8 = 0.811
+------------------------------------------------------------------------------
+Matter Power Spectrum P(k) across Characteristic Scales:
+|   Wavenumber k (h Mpc^-1) |   Power P(k) (h^-3 Mpc^3) |   Dimensionless Delta^2(k) | Spectral Regime                     |
+|---------------------------|---------------------------|----------------------------|-------------------------------------|
+|                    0.001  |                   1435.47 |                    0       | Harrison-Zeldovich Tail (k < k_eq)  |
+|                    0.005  |                   5650.3  |                    4e-05   | Harrison-Zeldovich Tail (k < k_eq)  |
+|                    0.015  |                   8767.35 |                    0.0015  | Harrison-Zeldovich Tail (k < k_eq)  |
+|                    0.05   |                   5225.64 |                    0.03304 | Meszaros Suppressed Tail (k > k_eq) |
+|                    0.1001 |                   3508.62 |                    0.17804 | Meszaros Suppressed Tail (k > k_eq) |
+|                    0.2001 |                   2241.86 |                    0.90949 | Meszaros Suppressed Tail (k > k_eq) |
+|                    0.5    |                    573.12 |                    3.63008 | Meszaros Suppressed Tail (k > k_eq) |
+|                    0.9999 |                    158.08 |                    8.00513 | Meszaros Suppressed Tail (k > k_eq) |
+|                    4.9969 |                      3.47 |                   21.9069  | Meszaros Suppressed Tail (k > k_eq) |
+------------------------------------------------------------------------------
+Two-Point Correlation Function xi(r) across BAO Scales:
+|   Separation r (h^-1 Mpc) |   Correlation xi(r) |   r^2 * xi(r) (h^-2 Mpc^2) | Feature Identification           |
+|---------------------------|---------------------|----------------------------|----------------------------------|
+|                      20   |             0.03229 |                    12.9677 | Smooth Clustering Profile        |
+|                      39.9 |             0.0033  |                     5.2724 | Smooth Clustering Profile        |
+|                      60   |             0.00047 |                     1.6827 | Smooth Clustering Profile        |
+|                      79.9 |            -0.00065 |                    -4.1496 | Smooth Clustering Profile        |
+|                      94.9 |             0.00196 |                    17.6465 | Smooth Clustering Profile        |
+|                     100   |             0.0035  |                    34.9838 | Smooth Clustering Profile        |
+|                     101.7 |             0.00357 |                    36.9441 | BAO Acoustic Standard Ruler Peak |
+|                     110.1 |             0.00094 |                    11.382  | Smooth Clustering Profile        |
+|                     119.9 |            -0.0013  |                   -18.6766 | Smooth Clustering Profile        |
+|                     140   |            -0.0005  |                    -9.7129 | Smooth Clustering Profile        |
+------------------------------------------------------------------------------
+1. Equality Turnover Scale:         k_eq = 0.0167 h Mpc^-1 (peak of P(k) at ~0.0248 Mpc^-1)
+2. Extracted BAO Correlation Peak:  r_BAO = 101.72 h^-1 Mpc (151.01 Mpc)
+3. Theoretical Sound Horizon Match: r_s = 151.09 Mpc (agreement within 0.3%)
+4. Observational Verification:      Matches SDSS/BOSS/DESI galaxy clustering standard ruler (~105 h^-1 Mpc)
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------
