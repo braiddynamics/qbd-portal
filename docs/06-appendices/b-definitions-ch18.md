@@ -1703,7 +1703,7 @@ Section 18.3.8 formalizes the properties of the QBD lemma regarding relativistic
 
 **I. High-Energy Mode Spectrum ($T > 100\text{ GeV}$)**
 
-Under high-temperature topological graph update kinetics, all 3-ribbon braid excitations are fully un-frozen. Summing the internal helicity states of emergent Standard Model fields yields $g_b = 28$ bosonic modes ($\gamma [2]$, gluons $[16]$, $W^\pm, Z^0 [9]$, Higgs $[1]$) and $g_f = 90$ fermionic modes (quarks $[72]$, charged leptons $[12]$, neutrinos $[6]$). Applying Fermi-Dirac thermal weight factor $7/8$ yields $g_*(GUT) = 28 + \frac{7}{8}(90) = 106.75$.
+Under high-temperature topological graph update kinetics, all 3-ribbon braid excitations are fully un-frozen under **Dimensional Emergence** <Ref id="18.3.7" label="§18.3.7" />. Summing the internal helicity states of emergent Standard Model fields yields $g_b = 28$ bosonic modes ($\gamma [2]$, gluons $[16]$, $W^\pm, Z^0 [9]$, Higgs $[1]$) and $g_f = 90$ fermionic modes (quarks $[72]$, charged leptons $[12]$, neutrinos $[6]$). Applying Fermi-Dirac thermal weight factor $7/8$ yields $g_*(GUT) = 28 + \frac{7}{8}(90) = 106.75$.
 
 **II. Weak Decoupling Mode Spectrum ($T \sim 1\text{ MeV}$)**
 
@@ -1725,7 +1725,7 @@ Section 18.3.8.1 formalizes the properties of the QBD proof regarding relativist
 :::note[**Relativistic Degrees of Freedom Integration via Braid Mode Operators**]
 :::
 
-Verification of the relativistic mode counting derived in the **Relativistic Degrees of Freedom Counting Proof** <Ref id="18.3.8.1" label="§18.3.8.1" /> is performed via the following computational script:
+Verification of the relativistic mode counting derived in **Relativistic Degrees of Freedom Counting** <Ref id="18.3.8" label="§18.3.8" /> and the **Relativistic Degrees of Freedom Counting Proof** <Ref id="18.3.8.1" label="§18.3.8.1" /> is performed via the following computational script:
 
 ```python
 # §18.3.8.2 — Relativistic Degrees of Freedom Counting

@@ -1,0 +1,20 @@
+------------------------------------------------------------------------------
+§21.4.4.2 Coincidence Phase Portrait Integration & Epoch Duration
+------------------------------------------------------------------------------
+Present Epoch Cosmic Age t0: 13.82 Gyr (Hubble Time 1/H0 = 14.52 Gyr)
+Matter-Vacuum Crossover Redshift z_cross: 0.2980 (t_cross = 10.30 Gyr)
+Coincidence Window e-fold Span: 1.535057 (Theory 2/3 ln 10: 1.535057)
+Coincidence Window Duration Delta t: 18.19 Gyr
+------------------------------------------------------------------------------
+| Cosmic Epoch                          |   Scale Factor a |   Redshift z |   Time t (Gyr) |   Omega_m(a) |   Omega_L(a) |   Ratio Om/OL |   dOm/dlna |
+|---------------------------------------|------------------|--------------|----------------|--------------|--------------|---------------|------------|
+| Primordial Matter Era                 |           0.1    |        9     |           0.55 |       0.9978 |       0.0022 |      457.301  |    -0.0065 |
+| Coincidence Window Onset (Ratio = 10) |           0.3576 |        1.796 |           3.64 |       0.9091 |       0.0909 |       10      |    -0.2479 |
+| Galaxy Cluster Formation Era          |           0.5    |        1     |           5.86 |       0.7853 |       0.2147 |        3.6584 |    -0.5058 |
+| Matter-Vacuum Equality (Crossover)    |           0.7704 |        0.298 |          10.3  |       0.5    |       0.5    |        1      |    -0.75   |
+| Present Cosmic Epoch (Today)          |           1      |        0     |          13.82 |       0.3138 |       0.6862 |        0.4573 |    -0.646  |
+| Coincidence Window Exit (Ratio = 0.1) |           1.6598 |       -0.398 |          21.83 |       0.0909 |       0.9091 |        0.1    |    -0.2479 |
+| Asymptotic De Sitter Era              |           3      |       -0.667 |          31.97 |       0.0167 |       0.9833 |        0.0169 |    -0.0491 |
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

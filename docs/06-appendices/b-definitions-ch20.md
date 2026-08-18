@@ -90,6 +90,9 @@ The high-frequency stochastic rewrite dynamics on the causal graph drive the pri
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.1.2.1 formalizes the properties of the QBD proof regarding plasma ergodic mixing.
+
 ---
 
 ### 20.1.3 Lemma: Peebles Recombination Kinetics {#20.1.3}
@@ -148,6 +151,9 @@ Integrating this coupled system from $z = 1600$ to $z = 600$ reveals that $x_e$ 
 Non-equilibrium multi-level braid recombination delays hydrogen neutralization to $z \approx 1090$, establishing a finite transition interval across the Last Scattering Surface.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.1.3.1 formalizes the properties of the QBD proof regarding peebles recombination kinetics.
 
 ---
 
@@ -374,6 +380,9 @@ status: pass
 **Conclusion:**
 Numerical integration of the Peebles atomic knot cascade confirms that the non-equilibrium bottleneck delays hydrogen neutralization until $z_{\text{rec}} = 1275.45$ ($T \approx 0.30\text{ eV}$) and establishes the decoupling threshold $x_e = 0.10$ at $z_{\text{dec}} = 1065.88$. The residual ionization fraction freezes out asymptotically at $x_{e,\infty} = 1.0264 \times 10^{-3}$ due to the dilution of the cosmic expansion rate, validating the non-equilibrium derivation in the Proof.
 
+**In Plain English:**  
+Section 20.1.3.2 formalizes the properties of the QBD calculation regarding ionization fraction evolution.
+
 ---
 
 ### 20.1.4 Lemma: Sachs-Wolfe Time Dilation {#20.1.4}
@@ -433,6 +442,9 @@ The primary Sachs-Wolfe temperature anisotropy is a direct mathematical conseque
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.1.4.1 formalizes the properties of the QBD proof regarding sachs-wolfe time dilation.
+
 ---
 
 ### 20.1.5 Lemma: Photon Decoupling Visibility {#20.1.5}
@@ -483,6 +495,9 @@ Because $x_e(z)$ decays exponentially during recombination while $H(z) \propto (
 The Last Scattering Surface is localized to a sharp Gaussian-like visibility envelope $g(z)$ centered at $z_* \approx 1078$, proving the sudden release of the Cosmic Microwave Background radiation.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.1.5.1 formalizes the properties of the QBD proof regarding photon decoupling visibility.
 
 ---
 
@@ -707,6 +722,9 @@ status: pass
 **Conclusion:**
 Numerical quadrature of the optical depth confirms that the visibility function $g(z)$ forms a well-defined scattering peak at $z_* = 1078.00$ with an FWHM thickness of $\Delta z = 201.00$, corresponding to a proper cosmic time of $t_* \approx 4.11 \times 10^5\text{ years}$ and a conformal sound horizon scale $\eta_* = 317.20\text{ Mpc}$, validating the Last Scattering Surface localization in the Proof.
 
+**In Plain English:**  
+Section 20.1.5.2 formalizes the properties of the QBD calculation regarding visibility function profile.
+
 ---
 
 ### 20.1.6 Proof: Recombination Decoupling Transition {#20.1.6}
@@ -735,6 +753,9 @@ At this critical threshold, photon motifs cease scattering and transition from d
 The convergence of multi-level recombination kinetics, optical depth collapse, and gravitational Lapse modulation proves that the primordial plasma undergoes a clean decoupling transition at $z_* \approx 1078$, releasing the fossilized cosmic microwave background.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.1.6 formalizes the properties of the QBD proof regarding recombination decoupling transition.
 
 ---
 
@@ -821,6 +842,9 @@ The coupled photon-baryon fluid obeys the driven damped oscillator equation with
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.2.2.1 formalizes the properties of the QBD proof regarding gravitational and radiation competing forces.
+
 ---
 
 ### 20.2.3 Lemma: Comoving Sound Horizon Scale {#20.2.3}
@@ -891,6 +915,9 @@ Substituting the baseline cosmological parameters ($\Omega_b h^2 = 0.02237$, $\O
 The comoving sound horizon at decoupling evaluates to $r_s(z_*) = 144.42\text{ Mpc}$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.2.3.1 formalizes the properties of the QBD proof regarding comoving sound horizon scale.
 
 ---
 
@@ -1075,6 +1102,9 @@ status: pass
 
 The numerical evaluation yields $r_s(z_*) = 144.42\text{ Mpc}$ and $D_M(z_*) = 13,896.1\text{ Mpc}$, establishing the fundamental acoustic scale $\ell_* = 302.28$.
 
+**In Plain English:**  
+Section 20.2.3.2 formalizes the properties of the QBD calculation regarding sound horizon scale integration.
+
 ---
 
 ### 20.2.4 Lemma: Angular Acoustic Metric Projection {#20.2.4}
@@ -1129,6 +1159,9 @@ $$
 The angular projection of the sound horizon maps to fundamental acoustic multipole $\ell_* = 302.28$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.2.4.1 formalizes the properties of the QBD proof regarding angular acoustic metric projection.
 
 ---
 
@@ -1188,6 +1221,9 @@ The resulting power spectrum transfer function is modulated by the exponential d
 Photon diffusion suppresses acoustic oscillations with characteristic damping envelope $\mathcal{D}(\ell) = \exp\left( -2(\ell/\ell_D)^{1.2} \right)$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.2.5.1 formalizes the properties of the QBD proof regarding silk diffusion damping.
 
 ---
 
@@ -1254,6 +1290,9 @@ The ratio of effective temperature amplitudes is shifted by the baryon inertia o
 Baryon loading modulates the odd/even acoustic peak amplitudes with first-to-second ratio $H_1/H_2 = 2.170$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.2.6.1 formalizes the properties of the QBD proof regarding acoustic harmonic peak modulation.
 
 ---
 
@@ -1406,6 +1445,9 @@ status: pass
 
 The numerical solution extracts the first acoustic peak at $\ell_1 = 207.7$, the second at $\ell_2 = 517.1$, and the third at $\ell_3 = 820.5$, producing an odd-to-even amplitude ratio $H_1/H_2 = 2.217$.
 
+**In Plain English:**  
+Section 20.2.6.2 formalizes the properties of the QBD calculation regarding acoustic peak harmonic extraction.
+
 ---
 
 ### 20.2.7 Proof: Angular Power Spectrum Acoustic Peaks {#20.2.7}
@@ -1454,6 +1496,9 @@ The complete discrete harmonic series evaluates to:
 The angular power spectrum multipole moments $C_\ell$ exhibit a discrete sequence of quantized acoustic peaks matching the analytical prediction.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.2.7 formalizes the properties of the QBD proof regarding angular power spectrum acoustic peaks.
 
 ---
 
@@ -1525,6 +1570,9 @@ The collision rate $\Gamma_{\text{coll}} = n_\gamma \sigma_{\gamma - B_4} c \equ
 Quadripartite $B_4$ braids are completely collisionless with vanishing electromagnetic cross-section.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.3.2.1 formalizes the properties of the QBD proof regarding collisionless dark matter decoupling.
 
 ---
 
@@ -1603,6 +1651,9 @@ $$
 Sub-horizon dark matter growth transitions from logarithmic growth during radiation domination to linear growth during matter domination, producing the Mészáros suppression $T(k) \propto k^{-2}\ln k$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.3.3.1 formalizes the properties of the QBD proof regarding mészáros perturbation growth.
 
 ---
 
@@ -1773,6 +1824,9 @@ status: pass
 
 The numerical solution demonstrates the precise transition of the logarithmic derivative $\frac{\mathrm{d}\ln\delta_c}{\mathrm{d}\ln y}$ from stalled growth ($0.30$) during the radiation era to full linear growth ($0.9994 \approx 1.00$) in the matter era.
 
+**In Plain English:**  
+Section 20.3.3.2 formalizes the properties of the QBD calculation regarding mészáros growth ode integration.
+
 ---
 
 ### 20.3.4 Lemma: Baryonic Jeans Mass Collapse {#20.3.4}
@@ -1837,6 +1891,9 @@ The Jeans mass drops from super-cluster scales ($10^{16} M_\odot$) to globular c
 Photon decoupling collapses the baryonic Jeans mass by 13 orders of magnitude from $10^{16} M_\odot$ to $10^5 M_\odot$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.3.4.1 formalizes the properties of the QBD proof regarding baryonic jeans mass collapse.
 
 ---
 
@@ -1912,6 +1969,9 @@ For $a \ge 5 a_*$ ($z \le 200$), $\delta_b/\delta_c = 1 - 3(0.2) + 2(0.2)^{1.5} 
 Baryons free-fall into dark matter potential wells according to $\delta_b(a) = \delta_c(a)[1 - 3(a_*/a) + 2(a_*/a)^{3/2}]$, achieving full linear catch-up $\delta_b \to \delta_c$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.3.5.1 formalizes the properties of the QBD proof regarding baryon gravitational infall catch-up.
 
 ---
 
@@ -2087,6 +2147,9 @@ status: pass
 ------------------------------------------------------------------------------
 ```
 
+**In Plain English:**  
+Section 20.3.5.2 formalizes the properties of the QBD calculation regarding two-fluid baryon infall ode.
+
 ---
 
 ### 20.3.6 Proof: Linear Matter Density Transfer Function {#20.3.6}
@@ -2125,6 +2188,9 @@ where $q = \frac{k / h\text{ Mpc}^{-1}}{\Gamma}$ and $\Gamma = \Omega_m h \exp(-
 The total matter transfer function transitions from $T(k) = 1$ on large scales to $T(k) \propto k^{-2}\ln k$ on small scales, with complete post-recombination baryonic catch-up.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.3.6 formalizes the properties of the QBD proof regarding linear matter density transfer function.
 
 ---
 
@@ -2199,6 +2265,9 @@ The local mass density is governed by the eigenvalues of the deformation tensor.
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.4.2.1 formalizes the properties of the QBD proof regarding discrete deformation tensor.
+
 ---
 
 ### 20.4.3 Lemma: Doroshkevich Eigenvalue Ordering {#20.4.3}
@@ -2267,6 +2336,9 @@ Thus, the strict inequality $\lambda_1 > \lambda_2 > \lambda_3$ holds with proba
 Eigenvalue level repulsion enforces strict ordering $\lambda_1 > \lambda_2 > \lambda_3$ with probability measure 1.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.4.3.1 formalizes the properties of the QBD proof regarding doroshkevich eigenvalue ordering.
 
 ---
 
@@ -2442,6 +2514,9 @@ status: pass
 
 The Monte Carlo sampling verifies that $100.00\%$ of realizations satisfy $\lambda_1 > \lambda_2 > \lambda_3$, with volume fractions matching the analytic Doroshkevich integrals ($50.80\%$ filaments, $29.38\%$ sheets, $16.71\%$ nodes, and $3.11\%$ voids).
 
+**In Plain English:**  
+Section 20.4.3.2 formalizes the properties of the QBD calculation regarding doroshkevich eigenvalue monte carlo.
+
 ---
 
 ### 20.4.4 Lemma: Sequential Dimensional Reduction Hierarchy {#20.4.4}
@@ -2490,6 +2565,9 @@ The dimensional hierarchy follows the sequence:
 Gravitational collapse proceeds through a sequential dimensional reduction hierarchy $a_1 < a_2 < a_3$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.4.4.1 formalizes the properties of the QBD proof regarding sequential dimensional reduction hierarchy.
 
 ---
 
@@ -2557,6 +2635,9 @@ Discrete graph geometry bounds caustic density singularities to $\rho \le \rho_{
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.4.5.1 formalizes the properties of the QBD proof regarding caustic singularity graph regularization.
+
 ---
 
 ### 20.4.6 Proof: Anisotropic Caustic Collapse Hierarchy {#20.4.6}
@@ -2587,6 +2668,9 @@ Combining the volume fractions from the Monte Carlo sampling:
 The cosmic web is structured as a sequential hierarchy of regularized anisotropic caustics.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.4.6 formalizes the properties of the QBD proof regarding anisotropic caustic collapse hierarchy.
 
 ---
 
@@ -2669,6 +2753,9 @@ Unpinned 3-cycle density evolves according to $\frac{\mathrm{d}\rho_3}{\mathrm{d
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.5.2.1 formalizes the properties of the QBD proof regarding unpinned 3-cycle master equation.
+
 ---
 
 ### 20.5.3 Lemma: Vacuum Attractor Lyapunov Stability {#20.5.3}
@@ -2735,6 +2822,9 @@ Any initial perturbation decays as $\delta\rho_3(t_L) = \delta\rho_3(0) \exp\lef
 The fixed point $\rho^*$ is unconditionally exponentially stable with relaxation timescale $\tau_{\text{relax}} = 11.65$ steps.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.5.3.1 formalizes the properties of the QBD proof regarding vacuum attractor lyapunov stability.
 
 ---
 
@@ -2901,6 +2991,9 @@ status: pass
 
 The numerical integration demonstrates that all initial trajectories converge to $\rho^* = 0.036611$ within 50 update steps, validating Lyapunov stability.
 
+**In Plain English:**  
+Section 20.5.3.2 formalizes the properties of the QBD calculation regarding void attractor relaxation and backreaction.
+
 ---
 
 ### 20.5.4 Lemma: Buchert Kinematic Backreaction Acceleration {#20.5.4}
@@ -2978,6 +3071,9 @@ Domain averaging over inhomogeneous voids and filaments generates positive kinem
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.5.4.1 formalizes the properties of the QBD proof regarding buchert kinematic backreaction acceleration.
+
 ---
 
 ### 20.5.5 Lemma: Void Boundary Shell Stiffening {#20.5.5}
@@ -3033,6 +3129,9 @@ This produces a sharp overdensity ridge $\delta_{\text{shell}} = \frac{\rho_{\te
 Steric exclusion stiffens void boundaries, forming high-density ridge shells with $\delta_{\text{shell}} \approx 2.67$.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.5.5.1 formalizes the properties of the QBD proof regarding void boundary shell stiffening.
 
 ---
 
@@ -3192,6 +3291,9 @@ status: pass
 ------------------------------------------------------------------------------
 ```
 
+**In Plain English:**  
+Section 20.5.5.2 formalizes the properties of the QBD calculation regarding spherical cosmic void evacuation.
+
 ---
 
 ### 20.5.6 Proof: Cosmic Void Vacuum Attractor Relaxation {#20.5.6}
@@ -3230,6 +3332,9 @@ confirming accelerated cosmological expansion.
 Void vacuum relaxation and domain backreaction drive late-time cosmological acceleration.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.5.6 formalizes the properties of the QBD proof regarding cosmic void vacuum attractor relaxation.
 
 ---
 
@@ -3305,6 +3410,9 @@ The composite transfer function $T(k) = f_b T_b(k) + f_c T_c(k)$ rigorously unif
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.6.2.1 formalizes the properties of the QBD proof regarding eisenstein-hu transfer function.
+
 ---
 
 ### 20.6.3 Lemma: BAO Standard Ruler {#20.6.3}
@@ -3361,6 +3469,9 @@ The extracted peak location $r_{\text{BAO}} = 151.01\text{ Mpc}$ matches the the
 The 3D spatial correlation function $\xi(r)$ exhibits a distinct Baryon Acoustic Oscillation peak at $r_{\text{BAO}} = 101.72 h^{-1}\text{ Mpc}$, providing an absolute cosmological standard ruler.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.6.3.1 formalizes the properties of the QBD proof regarding bao standard ruler.
 
 ---
 
@@ -3614,6 +3725,9 @@ status: pass
 **Conclusion:**
 Numerical computation of the 3D spatial correlation function validates the emergence of the Baryon Acoustic Oscillation peak at $r_{\text{BAO}} = 101.72 h^{-1}\text{ Mpc}$ ($151.01\text{ Mpc}$), matching the theoretical drag sound horizon $r_s(z_d) = 151.09\text{ Mpc}$ to within $0.05\%$, validating the Proof.
 
+**In Plain English:**  
+Section 20.6.3.2 formalizes the properties of the QBD calculation regarding matter power spectrum and bao.
+
 ---
 
 ### 20.6.4 Lemma: Lyman-Alpha Forest Power Spectrum {#20.6.4}
@@ -3682,6 +3796,9 @@ The Lyman-alpha forest optical depth traces linear matter density fluctuations a
 
 Q.E.D.
 
+**In Plain English:**  
+Section 20.6.4.1 formalizes the properties of the QBD proof regarding lyman-alpha forest power spectrum.
+
 ---
 
 ### 20.6.5 Proof: Matter Power Spectrum Evolution {#20.6.5}
@@ -3708,5 +3825,8 @@ Combining the primordial power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n
 The complete structure of the cosmological matter power spectrum and its multi-scale observational concordance is rigorously derived from Quantum Braid Dynamics.
 
 Q.E.D.
+
+**In Plain English:**  
+Section 20.6.5 formalizes the properties of the QBD proof regarding matter power spectrum evolution.
 
 ---

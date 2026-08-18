@@ -858,10 +858,10 @@ Section 1.4.6.1 formalizes the properties of the QBD proof regarding irreflexivi
 
 ### 1.4.7 Lemma: Transitive Causal Monotonicity {#1.4.7}
 
-:::info[**Monotonic Timestamp Progression along Directed Causal Chains via Transitive Causal Monotonicity**]
+:::info[**Monotonic Timestamp Progression along Directed Causal Chains by Inductive Path Extension**]
 :::
 
-Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
+Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. Then the sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
 
 $$
 H(e_1) < H(e_2) < \dots < H(e_k).
@@ -879,55 +879,59 @@ The Transitive Causal Monotonicity Lemma proves that timestamps along any causal
 
 **I. Inductive Base Case**
  
- Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent edges along the path $\pi$.  By definition, $e_1$ terminates at $v_1$, making $e_1 \in \text{In}(v_1)$.
+Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along the path $\pi$. By incidence definition, the edge $e_1$ terminates at vertex $v_1$, establishing the membership $e_1 \in \text{In}(v_1)$.
  
- The **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> of $e_2$ is assigned according to the recursive relation defined in **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />:
+The creation timestamp $H(e_2)$ of the outgoing edge $e_2$ is assigned by the recursive relation governing edge creation (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />), satisfying the historical ordering (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />):
  
- $$
- H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
- $$
+$$
+H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
+$$
  
- Since $e_1 \in \text{In}(v_1)$, the maximum value satisfies:
+The incidence condition $e_1 \in \text{In}(v_1)$ yields the bound on the maximum incoming timestamp:
  
- $$
- \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \right) \ge H(e_1)
- $$
+$$
+\max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \right) \ge H(e_1)
+$$
  
- Therefore:
+Evaluating the inequality yields:
  
- $$
- H(e_2) \ge 1 + H(e_1) > H(e_1)
- $$
+$$
+H(e_2) \ge 1 + H(e_1) > H(e_1)
+$$
  
- establishing the base inequality $H(e_1) < H(e_2)$.
+establishing the base inequality $H(e_1) < H(e_2)$.
  
- **II. Inductive Hypothesis**
+**II. Inductive Hypothesis**
  
- Assume that the strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
+Assume that strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
  
- $$
- H(e_1) < H(e_2) < \dots < H(e_n)
- $$
+$$
+H(e_1) < H(e_2) < \dots < H(e_n)
+$$
  
- where the final edge $e_n$ in this subpath terminates at vertex $v_n$.
+where the terminal edge $e_n$ in this subpath terminates at vertex $v_n$.
  
- **III. Inductive Step**
+**III. Inductive Step**
  
- Consider the adjacent edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. Since $e_n \in \text{In}(v_n)$, the assignment for $H(e_{n+1})$ satisfies the recursive relation:
+Consider the adjacent outgoing edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. The incoming incidence $e_n \in \text{In}(v_n)$ yields the recursive assignment inequality for $H(e_{n+1})$:
  
- $$
- H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n)
- $$
+$$
+H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n)
+$$
  
- Applying this inequality to the inductive hypothesis yields the strict monotonicity condition:
+Applying this single-step inequality to the inductive hypothesis yields the strict monotonicity condition:
  
- $$
- H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1})
- $$
+$$
+H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1})
+$$
  
- This completes the induction. It is established that timestamps strictly increase along any directed path.
+establishing the extended monotonicity chain to path length $n+1$.
  
- Q.E.D.
+**IV. Transitive Conclusion**
+ 
+We conclude that edge timestamps strictly increase monotonically along every directed causal path ($H(e_1) < H(e_2) < \dots < H(e_k)$), which establishes that $H(e_1) < H(e_k)$ for all $k \ge 2$ and induces a well-founded causal partial order on history.
+ 
+Q.E.D.
 
 **In Plain English:**  
 Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive causal monotonicity.
@@ -945,14 +949,20 @@ Let $G = (V, E, H)$ be a causal graph, and assume $G$ contains a directed cycle 
 
 **II. Evaluation of Cycle Categories**
 
-1.  **Length $k=1$**: Under this condition, the cycle is a self-loop $e = (v_0, v_0)$.  By **Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />, no stable timestamp assignment can exist for a self-loop, generating a contradiction.
-2.  **Length $k \ge 2$**: Under this condition, the cycle forms a directed path from $v_0$ to $v_k$.  By **Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />, the edge timestamps must satisfy:
+1.  **Length $k=1$**: Under this condition, the cycle is a self-loop $e = (v_0, v_0)$. The recursive assignment admits no stable timestamp for a self-loop (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />), establishing a contradiction.
+2.  **Length $k \ge 2$**: Under this condition, the cycle forms a directed path from $v_0$ to $v_k$. The sequence of edge timestamps is strictly monotonically increasing (**Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />), satisfying:
 
 $$
 H(e_1) < H(e_2) < \dots < H(e_k)
 $$
 
-Since $v_0 = v_k$, the incoming edge set at $v_0$ is identical to the incoming edge set at $v_k$.  This requires the final step $e_k = (v_{k-1}, v_0)$ to satisfy $H(e_1) > H(e_k)$, which contradicts the transitive chain of inequalities:
+which establishes the inequality $H(e_1) < H(e_k)$. The boundary identification $v_0 = v_k$ establishes that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to the incoming set $\text{In}(v_0)$. The recursive creation timestamp assignment for the initial outgoing edge $e_1 = (v_0, v_1)$ yields:
+
+$$
+H(e_1) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_0) \} \cup \{0\} \right) \ge 1 + H(e_k) > H(e_k)
+$$
+
+Combining the inequality $H(e_1) > H(e_k)$ with the transitive inequality $H(e_1) < H(e_k)$ yields the contradiction:
 
 $$
 H(e_1) < H(e_1)
@@ -960,7 +970,7 @@ $$
 
 **III. Conclusion**
 
-Both cases result in a logical contradiction.  Therefore, the assumption of a causal cycle must be false, and the causal graph $G = (V, E, H)$ is a directed acyclic graph.
+Both cases establish a contradiction. Therefore, the assumption of a causal cycle is false, and the causal graph $G = (V, E, H)$ is a directed acyclic graph.
 
 Q.E.D.
 

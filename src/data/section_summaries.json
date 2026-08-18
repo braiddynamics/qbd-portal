@@ -678,5 +678,25 @@
     "id": "18.6",
     "title": "Formal Synthesis",
     "summary": "The pre-geometric vacuum has successfully transitioned into a stable, flat, and homogeneous 4-dimensional spatial manifold. This transition rests upon the **Bipartite Bethe Tree Vacuum** and **Spontaneous Loop Nucleation**, which serve as the foundational primitives of the inflationary epoch. The spontaneous tunneling event breaks the parity stasis of the tree substrate, nucleating the first directed 3-cycles that function as the primitive area quanta of emergent geometry."
+  },
+  "20.4": {
+    "id": "20.4",
+    "title": "Non-Linear Collapse and The Cosmic Web",
+    "summary": "When gravitational perturbations transition from the linear regime into non-linear collapse ($\\delta \\gtrsim 1$), spherical symmetry breaks down completely. Primordial tidal fields deform collapsing matter distributions anisotropically along three orthogonal principal axes. This anisotropic collapse transforms a nearly uniform cosmological matter distribution into the complex cosmic web observed across the modern universe."
+  },
+  "20.5": {
+    "id": "20.5",
+    "title": "Void Dynamics and Vacuum Relaxation",
+    "summary": "Cosmic voids dominate the physical volume of the modern universe, occupying more than eighty percent of space as vast underdense basins enclosed by filamentary walls. As surrounding sheets and filaments contract under gravity, they evacuate matter from these interior regions, creating expansive subgraphs that are virtually devoid of topological defects. Understanding how the physical vacuum behaves within these evacuated regions is central to resolving the cosmological constant problem and the nature of dark energy."
+  },
+  "20.6": {
+    "id": "20.6",
+    "title": "Matter Power Spectrum and Observational Tests",
+    "summary": "The ultimate empirical validation of any cosmological framework lies in its ability to predict the matter power spectrum $P(k)$ across four decades of spatial scale, from macroscopic cosmological horizons down to galactic sub-halos. The central physical challenge is to unify the distinct physical regimes governing cosmic structure into a single, mathematically closed observational prediction. These regimes encompass the primordial scale-invariant inflationary spectrum, the Mészáros radiation-damped transfer function, the Baryon Acoustic Oscillation standard ruler, and the neutral gas absorption profiles of the high-redshift Lyman-alpha forest."
+  },
+  "21.5": {
+    "id": "21.5",
+    "title": "Formal Synthesis",
+    "summary": "The structural bedrock of the cosmological dark sector is anchored in the homological stability of 4-strand topological braid defects and the thermodynamic equilibrium of the Master Equation. Rather than postulating undiscovered particle families or fine-tuned scalar potentials, Quantum Braid Dynamics demonstrates that dark matter and dark energy are mandatory geometric consequences of discrete spacetime emergence. Dark matter arises as unreduced 4-strand braid configurations nucleated during the dimensional crystallization phase transition, while dark energy represents the active 3-cycle creation current required to sustain the homeostatic vacuum attractor density $\\rho^* \\approx 0.037$."
   }
 }
