@@ -95,6 +95,10 @@ export const part4Chapters: ChapterData[] = [
       {
         title: "19.4 Primordial Nucleosynthesis",
         content: "Derives primordial nucleosynthesis abundances, matching observational bounds strictly from topological decay ratios."
+      },
+      {
+        title: "19.5 Formal Synthesis",
+        content: "Synthesizes primordial matter abundance and nucleosynthesis into a unified closing ledger and table of symbols."
       }
     ],
     specialists: [
@@ -144,12 +148,28 @@ export const part4Chapters: ChapterData[] = [
         content: "Models the primordial plasma, showing how high-temperature networks behave like a fluid of decoupled event clusters."
       },
       {
-        title: "20.2 Acoustic Oscillations",
+        title: "20.2 Acoustic Oscillations and Angular Power Spectrum",
         content: "Simulates acoustic oscillations, proving that stress-erasure cycles generate density waves matching baryon acoustic oscillations."
       },
       {
-        title: "20.3 Structure Formation",
-        content: "Derives cosmic structure formation, demonstrating that gravitational clustering emerges naturally from relational stress-deletion."
+        title: "20.3 Dark Matter Scaffolding and Baryonic Catch-Up",
+        content: "Derives linear matter density growth and baryonic infall into cold dark matter potential wells."
+      },
+      {
+        title: "20.4 Non-Linear Collapse and The Cosmic Web",
+        content: "Formulates anisotropic caustic collapse and sequential dimensional reduction of large-scale structures."
+      },
+      {
+        title: "20.5 Void Dynamics and Vacuum Relaxation",
+        content: "Analyzes cosmic void expansion, unpinned 3-cycle creation currents, and vacuum attractor relaxation."
+      },
+      {
+        title: "20.6 Matter Power Spectrum and Observational Tests",
+        content: "Evolves the non-linear matter power spectrum, matching BAO standard ruler and Lyman-alpha forest constraints."
+      },
+      {
+        title: "20.7 Formal Synthesis",
+        content: "Synthesizes cosmological structure formation and cosmic web dynamics into a unified closing ledger and symbol table."
       }
     ],
     specialists: [
@@ -265,6 +285,10 @@ export const part4Chapters: ChapterData[] = [
       {
         title: "22.3 Superconductivity",
         content: "Models the black hole interior as a superconductive graph condensate of maximum logical connectivity."
+      },
+      {
+        title: "22.4 Formal Synthesis",
+        content: "Synthesizes singularity avoidance, horizon evaporation, and macroscopic condensates into the closing ledger of Part IV."
       }
     ],
     specialists: [

@@ -22,6 +22,10 @@ export const part5Chapters: ChapterData[] = [
       {
         title: "23.3 Mathematical Universe",
         content: "Synthesizes the mathematical universe hypothesis, proving that all physical laws emerge as stable phases of computation."
+      },
+      {
+        title: "23.4 Formal Synthesis",
+        content: "Synthesizes discrete calculus, biological homochirality, and exceptional Lie algebra embeddings into a unified closing ledger."
       }
     ],
     specialists: [
@@ -95,6 +99,10 @@ export const part5Chapters: ChapterData[] = [
       {
         title: "24.6 Monster Group",
         content: "Derives the Monster Group directly from the automorphism symmetries of twenty-six dimensional lattice configurations."
+      },
+      {
+        title: "24.7 Formal Synthesis",
+        content: "Synthesizes the discrete graph resolutions of Millennium Prize Problems into a unified mathematical closing ledger."
       }
     ],
     specialists: [

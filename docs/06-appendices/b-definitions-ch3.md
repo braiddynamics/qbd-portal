@@ -3201,7 +3201,7 @@ Section 3.5.7.1 formalizes the properties of the QBD proof regarding codespace n
 
 ### 3.5.8 Proof: Stabilizer Isomorphism {#3.5.8}
 
-:::tip[**Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" /> via Equivalence of Causal Consistency and Quantum Error Correction]
+:::tip[**Derivation of Stabilizer Isomorphism via Equivalence of Causal Consistency and Quantum Error Correction**]
 :::
 
 **I. Setup and Mapping**

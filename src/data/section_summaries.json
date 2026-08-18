@@ -469,6 +469,11 @@
     "title": "Primordial Nucleosynthesis",
     "summary": "Derives primordial nucleosynthesis abundances, matching observational bounds strictly from topological decay ratios."
   },
+  "19.5": {
+    "id": "19.5",
+    "title": "Formal Synthesis",
+    "summary": "Synthesizes primordial matter abundance and nucleosynthesis into a unified closing ledger and table of symbols."
+  },
   "20.1": {
     "id": "20.1",
     "title": "Primordial Plasma",
@@ -476,13 +481,33 @@
   },
   "20.2": {
     "id": "20.2",
-    "title": "Acoustic Oscillations",
+    "title": "Acoustic Oscillations and Angular Power Spectrum",
     "summary": "Simulates acoustic oscillations, proving that stress-erasure cycles generate density waves matching baryon acoustic oscillations."
   },
   "20.3": {
     "id": "20.3",
-    "title": "Structure Formation",
-    "summary": "Derives cosmic structure formation, demonstrating that gravitational clustering emerges naturally from relational stress-deletion."
+    "title": "Dark Matter Scaffolding and Baryonic Catch-Up",
+    "summary": "Derives linear matter density growth and baryonic infall into cold dark matter potential wells."
+  },
+  "20.4": {
+    "id": "20.4",
+    "title": "Non-Linear Collapse and The Cosmic Web",
+    "summary": "Formulates anisotropic caustic collapse and sequential dimensional reduction of large-scale structures."
+  },
+  "20.5": {
+    "id": "20.5",
+    "title": "Void Dynamics and Vacuum Relaxation",
+    "summary": "Analyzes cosmic void expansion, unpinned 3-cycle creation currents, and vacuum attractor relaxation."
+  },
+  "20.6": {
+    "id": "20.6",
+    "title": "Matter Power Spectrum and Observational Tests",
+    "summary": "Evolves the non-linear matter power spectrum, matching BAO standard ruler and Lyman-alpha forest constraints."
+  },
+  "20.7": {
+    "id": "20.7",
+    "title": "Formal Synthesis",
+    "summary": "Synthesizes cosmological structure formation and cosmic web dynamics into a unified closing ledger and symbol table."
   },
   "21.1": {
     "id": "21.1",
@@ -519,6 +544,11 @@
     "title": "Superconductivity",
     "summary": "Models the black hole interior as a superconductive graph condensate of maximum logical connectivity."
   },
+  "22.4": {
+    "id": "22.4",
+    "title": "Formal Synthesis",
+    "summary": "Synthesizes singularity avoidance, horizon evaporation, and macroscopic condensates into the closing ledger of Part IV."
+  },
   "23.1": {
     "id": "23.1",
     "title": "Calculus Translation",
@@ -533,6 +563,11 @@
     "id": "23.3",
     "title": "Mathematical Universe",
     "summary": "Synthesizes the mathematical universe hypothesis, proving that all physical laws emerge as stable phases of computation."
+  },
+  "23.4": {
+    "id": "23.4",
+    "title": "Formal Synthesis",
+    "summary": "Synthesizes discrete calculus, biological homochirality, and exceptional Lie algebra embeddings into a unified closing ledger."
   },
   "24.1": {
     "id": "24.1",
@@ -563,6 +598,11 @@
     "id": "24.6",
     "title": "Monster Group",
     "summary": "Derives the Monster Group directly from the automorphism symmetries of twenty-six dimensional lattice configurations."
+  },
+  "24.7": {
+    "id": "24.7",
+    "title": "Formal Synthesis",
+    "summary": "Synthesizes the discrete graph resolutions of Millennium Prize Problems into a unified mathematical closing ledger."
   },
   "25.1": {
     "id": "25.1",
@@ -678,21 +718,6 @@
     "id": "18.6",
     "title": "Formal Synthesis",
     "summary": "The pre-geometric vacuum has successfully transitioned into a stable, flat, and homogeneous 4-dimensional spatial manifold. This transition rests upon the **Bipartite Bethe Tree Vacuum** and **Spontaneous Loop Nucleation**, which serve as the foundational primitives of the inflationary epoch. The spontaneous tunneling event breaks the parity stasis of the tree substrate, nucleating the first directed 3-cycles that function as the primitive area quanta of emergent geometry."
-  },
-  "20.4": {
-    "id": "20.4",
-    "title": "Non-Linear Collapse and The Cosmic Web",
-    "summary": "When gravitational perturbations transition from the linear regime into non-linear collapse ($\\delta \\gtrsim 1$), spherical symmetry breaks down completely. Primordial tidal fields deform collapsing matter distributions anisotropically along three orthogonal principal axes. This anisotropic collapse transforms a nearly uniform cosmological matter distribution into the complex cosmic web observed across the modern universe."
-  },
-  "20.5": {
-    "id": "20.5",
-    "title": "Void Dynamics and Vacuum Relaxation",
-    "summary": "Cosmic voids dominate the physical volume of the modern universe, occupying more than eighty percent of space as vast underdense basins enclosed by filamentary walls. As surrounding sheets and filaments contract under gravity, they evacuate matter from these interior regions, creating expansive subgraphs that are virtually devoid of topological defects. Understanding how the physical vacuum behaves within these evacuated regions is central to resolving the cosmological constant problem and the nature of dark energy."
-  },
-  "20.6": {
-    "id": "20.6",
-    "title": "Matter Power Spectrum and Observational Tests",
-    "summary": "The ultimate empirical validation of any cosmological framework lies in its ability to predict the matter power spectrum $P(k)$ across four decades of spatial scale, from macroscopic cosmological horizons down to galactic sub-halos. The central physical challenge is to unify the distinct physical regimes governing cosmic structure into a single, mathematically closed observational prediction. These regimes encompass the primordial scale-invariant inflationary spectrum, the Mészáros radiation-damped transfer function, the Baryon Acoustic Oscillation standard ruler, and the neutral gas absorption profiles of the high-redshift Lyman-alpha forest."
   },
   "21.5": {
     "id": "21.5",
