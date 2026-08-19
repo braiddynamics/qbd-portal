@@ -1,44 +1,120 @@
-import numpy as np
+# §3.4.6.1 — Simulated Ignition Trajectories
+# Checks: First-tick burst ignition probability and barrier crossing across finite N
+
+import math
+import networkx as nx
 import pandas as pd
 
-# Thermodynamic parameters
-ε_geo = 1.0                    # Energy cost of edge addition
-ΔS = np.log(2)                 # Entropy gain from parity symmetry breaking
 
-# Temperature regimes
-T_high = 10 * ε_geo / ΔS       # Entropy-dominated (primordial) regime
-T_low  = 0.5 * ε_geo / ΔS      # Energy-entropic crossover regime
+def generate_bethe_fragment(N: int = 100) -> nx.DiGraph:
+    """Construct an outward-directed regular Bethe fragment with k_deg = 3."""
+    G = nx.DiGraph()
+    G.add_node(0)
+    current_node = 1
+    queue = []
 
-def acceptance_probability(T):
-    """Exact Metropolis acceptance for ΔF = ε_geo - T ΔS"""
-    ΔF = ε_geo - T * ΔS
-    return min(1.0, np.exp(-ΔF / T))
+    # Root has 3 outgoing children
+    for _ in range(3):
+        if current_node < N:
+            G.add_node(current_node)
+            G.add_edge(0, current_node, H=0)
+            queue.append(current_node)
+            current_node += 1
 
-# Exact local acceptance rates
-P_acc_high = acceptance_probability(T_high)
-P_acc_low  = acceptance_probability(T_low)
+    # Internal vertices have 2 outgoing children
+    while queue and current_node < N:
+        parent = queue.pop(0)
+        for _ in range(2):
+            if current_node < N:
+                G.add_node(current_node)
+                G.add_edge(parent, current_node, H=0)
+                queue.append(current_node)
+                current_node += 1
 
-# Scaling demonstration
-vertices = [100, 500, 1000, 2000]
-results = []
+    return G
 
-for N in vertices:
-    candidate_pairs = N**2 / 2
-    rate_high = candidate_pairs * P_acc_high
-    rate_low  = candidate_pairs * P_acc_low
-    
-    P_ign_high = 1 - np.exp(-rate_high)
-    P_ign_low  = 1 - np.exp(-rate_low)
-    
-    results.append({
-        'Vertices (N)': N,
-        'Candidate Pairs (≈ N²/2)': f'{candidate_pairs:.0f}',
-        'Local P_acc (High T)': f'{P_acc_high:.4f}',
-        'Global P_ign (High T)': f'{P_ign_high:.4f}',
-        'Local P_acc (Low T)': f'{P_acc_low:.4f}',
-        'Global P_ign (Low T)': f'{P_ign_low:.4f}'
-    })
 
-# Render Markdown table
-df = pd.DataFrame(results)
-print(df.to_markdown(index=False))
+def inject_seed_defect(G: nx.DiGraph) -> nx.DiGraph:
+    """Inject a single directed 3-cycle connecting grandchild to root with H=1."""
+    children = list(G.successors(0))
+    if children:
+        w = children[0]
+        grandchildren = list(G.successors(w))
+        if grandchildren:
+            G.add_edge(grandchildren[0], 0, H=1)
+    return G
+
+
+def find_all_3_cycles(G: nx.DiGraph) -> list:
+    """Identify all directed 3-cycles in the graph."""
+    cycles = []
+    for u in G.nodes():
+        for v in G.successors(u):
+            for w in G.successors(v):
+                if G.has_edge(w, u) and u < v and u < w:
+                    cycles.append([(u, v), (v, w), (w, u)])
+    return cycles
+
+
+def find_legal_addition_sites(G: nx.DiGraph) -> list:
+    """Identify candidate 2-paths satisfying the Parent-Uniqueness Condition."""
+    sites = []
+    for v in G.nodes():
+        for w in list(G.successors(v)):
+            for u in list(G.successors(w)):
+                if v == u or G.has_edge(u, v):
+                    continue
+                # Parent-Uniqueness Condition (PUC) check
+                puc = True
+                for x in G.successors(v):
+                    if x != w and G.has_edge(x, u):
+                        puc = False
+                        break
+                if not puc:
+                    continue
+                sites.append((v, w, u))
+    return sites
+
+
+def run_ignition_census() -> pd.DataFrame:
+    """Evaluate first-tick ignition probability and burst density across system sizes."""
+    mu_0 = 1.0 / math.sqrt(2.0 * math.pi)
+    lambda_0 = math.e - 1.0
+    rho_c = 1.0 / (2.0 * (9.0 - 3.0 * lambda_0))
+
+    results = []
+    for N in [50, 100, 200, 500, 1000]:
+        G = generate_bethe_fragment(N)
+        G = inject_seed_defect(G)
+
+        legal_sites = find_legal_addition_sites(G)
+        root_sites = [s for s in legal_sites if s[0] == 0]
+
+        # Tree-supported sites have zero addition stress: P_acc(0) = 1.0
+        p_acc_0 = math.exp(-mu_0 * 0.0)
+        p_ign = 1.0 - (1.0 - p_acc_0) ** len(root_sites) if root_sites else 1.0
+
+        # Execute parallel additions on tick 1
+        for (v, w, u) in legal_sites:
+            G.add_edge(u, v, H=1)
+
+        n3_t1 = len(find_all_3_cycles(G))
+        rho_t1 = n3_t1 / float(N)
+
+        results.append({
+            "Vertices (N)": N,
+            "Root 2-Paths (M_1)": len(root_sites),
+            "Total 2-Paths": len(legal_sites),
+            "P_acc(0)": f"{p_acc_0:.4f}",
+            "P(Ignition)": f"{p_ign:.4f}",
+            "Burst Density rho(t=1)": f"{rho_t1:.4f}",
+            "Barrier rho_c": f"{rho_c:.4f}",
+            "Jump Ratio (rho/rho_c)": f"{rho_t1/rho_c:.2f}x"
+        })
+
+    return pd.DataFrame(results)
+
+
+if __name__ == "__main__":
+    df = run_ignition_census()
+    print(df.to_markdown(index=False))

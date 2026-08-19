@@ -39,3 +39,15 @@ theorem lexicographic_descent_admissible :
     | intro h_eq h_right =>
       subst h_eq
       exact Prod.Lex.right _ h_right
+
+/--
+THEOREM 3: PUC Precludes Alternative Intermediate Nodes
+Proves that under the Principle of Unique Causality, no alternative intermediate node z ≠ w
+can form a 2-path from u to v, certifying that 2-path routing channels are unique.
+-/
+theorem puc_precludes_alternative_intermediate :
+    ∀ (R : CausalRelation V) (u w v : V),
+    IsCompliant2Path R u w v →
+    ∀ z : V, R u z → R z v → z = w := by
+  intro R u w v h_puc z h_uz h_zv
+  exact h_puc.2.2.2 z ⟨h_uz, h_zv⟩

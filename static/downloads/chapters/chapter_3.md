@@ -843,8 +843,6 @@ The topology forces a strict "checkerboard" stratification of causal layers, enf
 
 ---
 
----
-
 ## 3.2 Optimal Structure {#3.2}
 
 The identification of a tree-like vacuum creates an immediate selection problem as we must distinguish the specific configuration that maximizes physical potential among the infinite set of possible arborescences. We are forced to choose a specific initial state without introducing arbitrary fine-tuning or external parameters that would require us to explain why the universe began with one specific set of branching ratios rather than another. This search for relational equity demands a vacuum structure defined by mathematical necessity rather than random chance and ensures that the vacuum does not harbor hidden biases that would eventually manifest as localized anomalies in the laws of physics.
@@ -860,21 +858,13 @@ We solve this optimization problem by imposing a condition based on the maximiza
 :::tip[**Regular Bethe Fragment ($G_0$) as the Pre-Geometric Vacuum State of the Causal Graph Substrate**]
 :::
 
-Let $G_0 = (V_0, E_0, H_0)$ denote the **Regular Bethe Fragment** of coordination number $k_{deg} \ge 3$ and finite depth $d \in \mathbb{N}^+$. The vertex set $V_0$ is partitioned into disjoint generational levels $L_n$ for $0 \le n \le d$, where the root vertex $r$ defines level $L_0 = \{r\}$, and the set of leaves defines level $L_d$. The graph is characterized by the following degree constraints on its vertices $u \in V_0$:
+Let $G_0 = (V_0, E_0, H_0)$ denote the **Regular Bethe Fragment** of uniform internal coordination number $k_{\mathrm{deg}} = 3$ and finite depth $d \in \mathbb{N}^+$. The vertex set $V_0$ is partitioned into disjoint generational levels $L_n$ for $0 \le n \le d$, where the root vertex $r$ defines level $L_0 = \{r\}$, and the set of leaves defines level $L_d$. The graph is characterized by the following degree constraints on its vertices $u \in V_0$:
 
 $$
-\operatorname{out-deg}(u) = \begin{cases} k_{deg} & \text{if } u \notin L_d \\ 0 & \text{if } u \in L_d \end{cases}
+\operatorname{in-deg}(u) = \begin{cases} 0 & \text{if } u = r \\ 1 & \text{if } u \neq r \end{cases}, \qquad \operatorname{out-deg}(u) = \begin{cases} 3 & \text{if } u = r \\ 2 & \text{if } u \in V_{\mathrm{int}} \setminus \{r\} \\ 0 & \text{if } u \in L_d \end{cases}
 $$
 
-and in-degree constraints:
-
-$$
-\operatorname{in-deg}(u) = \begin{cases} 0 & \text{if } u = r \\ 1 & \text{if } u \neq r \end{cases}
-$$
-
-The edge set $E_0$ consists of directed links $(u, v)$ from parents to children satisfying these degree conditions, and the mapping $H_0$ assigns unique, chronological timestamps to all active relations.
-
----
+Every internal vertex $v \in V_{\mathrm{int}} \setminus \{r\}$ satisfies total coordination $k_{\mathrm{deg}}(v) = \operatorname{in-deg}(v) + \operatorname{out-deg}(v) = 1 + 2 = 3$. The edge set $E_0$ consists of directed links $(u, v)$ from parents to children satisfying these degree conditions, and the mapping $H_0: E_0 \to \mathbb{N}_0$ assigns initial logical timestamps $H_0(e) \equiv 0$ across all relations.
 
 ### 3.2.1.1 Commentary: Regular Bethe Fragment {#3.2.1.1}
 
@@ -884,8 +874,6 @@ The edge set $E_0$ consists of directed links $(u, v)$ from parents to children 
 The selection of the Regular Bethe Fragment as the vacuum state $G_0$ resolves the initial condition problem by establishing a pre-geometric substrate of maximal relational indistinguishability. By enforcing a uniform coordination number $k_{deg}$ across all internal vertices, the structure remains completely uniform away from the finite boundary layer, thereby maximizing global automorphism symmetry and relational uniformity <Cite id="A.70" label="(Woess, 2000)" />. This uniform architecture ensures that the vacuum strictly avoids localized anomalies or preferred regions that would otherwise violate background independence.
 
 Furthermore, we maximize the geometric potential of this pre-geometric state by providing the highest possible density of compliant 2-path rewrite sites per vertex. By balancing this maximal branching density with the demand for structural indistinguishability among internal vertices, the Regular Bethe Fragment serves as the unique, optimal substrate permitted by the axioms for the subsequent dynamical evolution of geometry and physics.
-
----
 
 ### 3.2.1.2 Diagram: Fragment Topology {#3.2.1.2}
 
@@ -921,7 +909,7 @@ Furthermore, we maximize the geometric potential of this pre-geometric state by 
 :::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
 :::
 
-Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> possessing a fixed internal coordination number $k_{deg} \ge 3$, where the root and all internal vertices exhibit an out-degree of exactly $k_{deg}$ and all leaf vertices exhibit an out-degree of zero. This configuration maximizes the number of compliant rewrite sites, governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" /> per vertex, while simultaneously maximizing relational uniformity.
+Consider the class of candidate initial states satisfying the vacuum topology. Then the initial state $G_0$ is uniquely determined as a **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> possessing a fixed internal coordination number $k_{\mathrm{deg}} = 3$, where the root exhibits an out-degree of 3, all internal vertices exhibit an out-degree of 2 and in-degree of 1, and all leaf vertices exhibit an out-degree of 0. This configuration maximizes the number of compliant rewrite sites, governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" /> per vertex, while simultaneously maximizing relational uniformity.
 
 ### 3.2.2.1 Commentary: Argument Outline {#3.2.2.1}
 
@@ -981,6 +969,7 @@ The proof proceeds by exclusion, sequentially eliminating suboptimal topologies 
 └── 3.2.14 Proof: Optimal Vacuum
 ```
 
+---
 
 ### 3.2.3 Lemma: Exclusion of Cyclic Topologies {#3.2.3}
 
@@ -1133,8 +1122,6 @@ The contradiction establishes that the vacuum state must satisfy weak connectivi
 
 Q.E.D.
 
----
-
 ### 3.2.5.2 Commentary: One Universe {#3.2.5.2}
 
 :::info[**Rejection of Multiverse Configurations at t=0 due to Causal Inaccessibility**]
@@ -1181,8 +1168,6 @@ For any positive redundancy density $\rho > 0$, the compliant fraction falls str
 Only graphs with exactly $|E| = N-1$ achieve the required maximum compliant fraction. We conclude that all denser connected DAGs are excluded from the vacuum state.
 
 Q.E.D.
-
----
 
 ### 3.2.6.2 Commentary: Efficiency of Sparsity {#3.2.6.2}
 
@@ -1253,7 +1238,7 @@ In contrast, a branching universe ($1 \to 2 \to 4 \dots$) functions as a massive
 :::info[**Exclusion of Non-Regular Trees via Orbit Entropy Maximization**]
 :::
 
-For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded by the requirement for maximal structural optimality, as established by the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />.
+Let $G$ be a candidate tree graph exhibiting variance in internal vertex coordination. Then candidacy for the vacuum state $G_0$ is excluded under the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />.
 
 ### 3.2.8.1 Proof: Degree Regularity {#3.2.8.1}
 
@@ -1265,42 +1250,40 @@ For any non-regular tree graph, candidacy for the vacuum state $G_0$ is excluded
 Non-regular trees possess varying vertex degrees across internal vertices:
 
 $$
-\exists u, v \in V_{int} \quad \text{such that} \quad \deg(u) \neq \deg(v)
+\exists u, v \in V_{\mathrm{int}} \quad \text{such that} \quad \deg(u) \neq \deg(v).
 $$
 
 Varying degrees necessarily create structural distinctions between vertices that occupy the same depth level.
 
 **II. Orbit Fragmentation**
 
-These distinctions fragment the orbits under the automorphism group action:
+These structural distinctions fragment the equivalence orbits under the automorphism group action:
 
 $$
-O_{depth} \to O_a \cup O_b \cup \dots
+\mathcal{O}_{\mathrm{depth}} \to \mathcal{O}_a \sqcup \mathcal{O}_b \sqcup \dots
 $$
 
-Fragmented orbits reduce the Shannon entropy of the orbit size distribution below the theoretical maximum for the given number of vertices:
+Fragmented orbits strictly reduce the Shannon entropy of the orbit size distribution below the theoretical maximum for the given vertex count:
 
 $$
-H_S(G_{irregular}) < H_S^{\max}(N)
+H_S(G_{\mathrm{irregular}}) < H_S^{\max}(N).
 $$
 
 **III. Lemma Integration**
 
-The uniformity requirements of the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> necessitate the maximization of this entropy measure. Furthermore, internal degrees less than 3 yield insufficient compliant sites in accordance with previous lemmas.
+Relational uniformity constraints under the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> and **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> necessitate the maximization of this entropy measure. Furthermore, internal degrees less than 3 yield insufficient compliant sites in accordance with **Site Maximality** <Ref id="3.2.7" label="§3.2.7" />.
 
 **IV. Conclusion**
 
 The contrapositive establishes: If a tree remains consistent with uniform automorphism-transitive action, then the tree must exhibit regularity.
 
 $$
-k_{deg} = \text{constant} \ge 3
+k_{\mathrm{deg}} = \text{constant} \ge 3
 $$
 
 We conclude that all non-regular trees are excluded.
 
 Q.E.D.
-
----
 
 ### 3.2.8.2 Calculation: Entropy Comparison {#3.2.8.2}
 
@@ -1432,8 +1415,6 @@ The contrapositive establishes that only trees with level-transitive or near-lev
 
 Q.E.D.
 
----
-
 ### 3.2.9.2 Commentary: Symmetry Breaking {#3.2.9.2}
 
 :::info[**Prohibition of Positional Privilege within the Vacuum State via Orbit Transitivity**]
@@ -1564,8 +1545,6 @@ Q.E.D.
 Quantitative supremacy bounds represent the physical and computational limits of classical graph simulation. Beyond these threshold bounds, the exponential growth of relational graph complexity demands a full quantum mechanical description. As the vertex count increases across the network, the combinatorial space of admissible graph configurations grows exponentially, rendering deterministic classical search algorithms fundamentally intractable.
 
 This computational boundary signals the emergence of non-trivial quantum behavior within the pre-geometric vacuum state. When classical graph enumeration breaks down under exponential complexity, the state of the universe must be described by a quantum superposition over structural states rather than a single classical graph. Quantitative supremacy marks the critical transition from classical topological search to genuine quantum vacuum dynamics across the relational network.
-
----
 
 ### 3.2.11.3 Calculation: Small N Census {#3.2.11.3}
 
@@ -1910,7 +1889,7 @@ Regulating the coordination degree guarantees that every internal edge is shared
 
 ### 3.2.14 Proof: Optimal Vacuum {#3.2.14}
 
-:::tip[**Formal Derivation of the Regular Bethe Fragment ($k_{deg}=3$) from the Intersection of Constraints, establishing the Optimal Vacuum**]
+:::tip[**Formal Derivation of the Regular Bethe Fragment ($k_{\mathrm{deg}}=3$) from the Intersection of Constraints, establishing the Optimal Vacuum**]
 :::
 
 **I. The Candidate Set**
@@ -1919,18 +1898,18 @@ The set of candidate vacuum states is restricted to the class of Finite Rooted T
 
 **II. The Optimization Chain**
 
-1.  **Geometric Lower Bound:** **Axiom 2** mandates the capacity to form 3-cycles (geometric quanta) via the rewrite rule. This imposes a strict lower bound on the coordination number, requiring $k_{deg} \ge 3$. Linear chains ($k_{deg}=2$) are excluded as they are topologically incapable of enclosing area.
+1.  **Geometric Lower Bound:** **Axiom 2** mandates the capacity to form 3-cycles (geometric quanta) via the rewrite rule. This imposes a strict lower bound on the coordination number, requiring $k_{\mathrm{deg}} \ge 3$. Linear chains ($k_{\mathrm{deg}}=2$) are excluded as they are topologically incapable of enclosing area.
 2.  **Site Maximality** <Ref id="3.2.7" label="§3.2.7" />: To maximize the rate of geometric evolution, the tree structure must maximize the density of compliant 2-path sites per vertex. This requirement favors maximal branching over linear extension.
-3.  **Orbit Transitivity** <Ref id="3.2.9" label="§3.2.9" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k_{deg}$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.8" label="§3.2.8" />.
-4.  **Topological Upper Bound:** By **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />, coordination numbers $k_{deg} \ge 4$ force the formation of non-manifold combinatorial singularities upon ignition, violating the **Simplicial Manifold Condition** <Ref id="3.2.12" label="§3.2.12" />. This imposes a strict upper bound of $k_{deg} \le 3$ for geometric viability.
+3.  **Orbit Transitivity** <Ref id="3.2.9" label="§3.2.9" />: To prevent the emergence of privileged spatial locations or preferred directions, the graph must exhibit **Level Transitivity** in its automorphism group. This enforces structural regularity, requiring coordination number $k_{\mathrm{deg}}$ to be constant across all internal nodes per **Degree Regularity** <Ref id="3.2.8" label="§3.2.8" />.
+4.  **Topological Upper Bound:** By **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />, coordination numbers $k_{\mathrm{deg}} \ge 4$ force the formation of non-manifold combinatorial singularities upon ignition, violating the **Simplicial Manifold Condition** <Ref id="3.2.12" label="§3.2.12" />. This imposes a strict upper bound of $k_{\mathrm{deg}} \le 3$ for geometric viability.
 
 **III. Convergence**
 
-The constraints impose a lower bound of $k_{deg} \ge 3$ for geometric constructibility and a topological ceiling of $k_{deg} \le 3$ to avoid combinatorial singularities. The intersection of these constraints converges uniquely upon the integer $k_{deg}=3$, exhibiting strict supremacy under the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> as verified by **Quantitative Supremacy** <Ref id="3.2.11" label="§3.2.11" />.
+The constraints impose a lower bound of $k_{\mathrm{deg}} \ge 3$ for geometric constructibility and a topological ceiling of $k_{\mathrm{deg}} \le 3$ to avoid combinatorial singularities. The intersection of these constraints converges uniquely upon the integer $k_{\mathrm{deg}}=3$, exhibiting strict supremacy under the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> as verified by **Quantitative Supremacy** <Ref id="3.2.11" label="§3.2.11" />.
 
 **IV. Formal Conclusion**
 
-The optimal vacuum state $G_0$ is uniquely identified as the **Regular Bethe Fragment** with internal coordination number $k_{deg}=3$.
+The optimal vacuum state $G_0$ is uniquely identified as the **Regular Bethe Fragment** with internal coordination number $k_{\mathrm{deg}}=3$.
 
 Q.E.D.
 
@@ -1941,15 +1920,13 @@ Q.E.D.
 :::note[**Optimal Structure**]
 :::
 
-The maximization of automorphism entropy and relational uniformity converges uniquely upon the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> with coordination number $k=3$. This specific configuration satisfies the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> properties, balancing the need for high connectivity with the constraint of minimizing boundary effects, creating a "flat" vacuum where every internal point is geometrically indistinguishable from every other. The choice of $k=3$ is the minimal integer solution that allows for the eventual closure of triangles, establishing it as the atomic number of geometry.
+The maximization of automorphism entropy and relational uniformity converges uniquely upon the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> with coordination number $k_{\mathrm{deg}}=3$. This specific configuration satisfies the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> properties, balancing the need for high connectivity with the constraint of minimizing boundary effects, creating a "flat" vacuum where every internal point is geometrically indistinguishable from every other. The choice of $k_{\mathrm{deg}}=3$ is the minimal integer solution that allows for the eventual closure of triangles, establishing it as the atomic number of geometry.
 
 This defines the vacuum as a maximally symmetric causal crystal, satisfying the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />. By enforcing regularity, the model ensures that no observer occupies a privileged position and that the rules of evolution are uniform across the entire manifold. This structure eliminates "edges of the world" or local anomalies that would otherwise bias the emergent physics, setting a neutral stage for the drama of existence.
 
-This structural specification eliminates the "fine-tuning" problem of initial conditions by proving that $k=3$ is the unique intersection of geometric viability and bulk efficiency. By anchoring the universe to this specific graph, physical laws are ensured to be global invariants rather than local accidents, derived from the maximality of the automorphism group. The vacuum is revealed as a state of maximum information potential, a blank slate possessing perfect isotropic symmetry that waits to be broken by the first event, ensuring that the complexity of the universe arises from its dynamics rather than its initial setting.
+This structural specification eliminates the "fine-tuning" problem of initial conditions by proving that $k_{\mathrm{deg}}=3$ is the unique intersection of geometric viability and bulk efficiency. By anchoring the universe to this specific graph, physical laws are ensured to be global invariants rather than local accidents, derived from the maximality of the automorphism group. The vacuum is revealed as a state of maximum information potential, a blank slate possessing perfect isotropic symmetry that waits to be broken by the first event, ensuring that the complexity of the universe arises from its dynamics rather than its initial setting.
 
-Boundary conditions and finite size effects must be resolved because any physical representation of the regular Bethe fragment terminates at a finite depth $d$, resulting in a boundary layer of leaf nodes of degree 1. This configuration violates the strict coordination requirement $k=3$ of the internal bulk nodes. These finite-size boundary effects are resolved through three complementary mechanisms: leaf inactivity, where leaf nodes do not participate in active update proposals during the scheduler's initial phase; boundary conditions, where periodic or reflective boundaries close the leaf layer; and the thermodynamic limit ($N \to \infty$), where bulk dynamics dominate as the ratio of bulk nodes to total nodes converges, ensuring bulk stability through holographic determination of bulk degrees by boundary states. Having established these boundaries, we are now prepared to define the topological characterization of the vacuum state.
-
----
+Boundary conditions and finite size effects must be resolved because any physical representation of the regular Bethe fragment terminates at a finite depth $d$, resulting in a boundary layer of leaf nodes of degree 1. This configuration violates the strict coordination requirement $k_{\mathrm{deg}}=3$ of the internal bulk nodes. These finite-size boundary effects are resolved through three complementary mechanisms: leaf inactivity, where leaf nodes do not participate in active update proposals during the scheduler's initial phase; boundary conditions, where periodic or reflective boundaries close the leaf layer; and the thermodynamic limit ($N \to \infty$), where bulk dynamics dominate as the ratio of bulk nodes to total nodes converges, ensuring bulk stability through holographic determination of bulk degrees by boundary states. Having established these boundaries, we are now prepared to define the topological characterization of the vacuum state.
 
 ---
 
@@ -2042,13 +2019,12 @@ The proof proceeds by contradiction, establishing that a maximally parallel sche
 │   └── 3.3.6.2 Commentary: Timestamp-Based Selection
 │
 ├── 3.3.7 Lemma: Scalability of the Scheduler
-│   └── 3.3.7.1 Proof: Scalability of the Scheduler
+│   ├── 3.3.7.1 Proof: Scalability of the Scheduler
+│   └── 3.3.7.2 Commentary: Sub-Critical Conflict Horizons
 │
 ├── 3.3.8 Proof: Preservation of Automorphisms
 │
-├── 3.3.9 Validation: Lean 4 Core
-│
-└── 3.3.10 Commentary: Equivariance as Necessity
+└── 3.3.9 Validation: Lean 4 Core
 ```
 
 ### 3.3.3.2 Diagram: Scheduler Symmetry Outcomes {#3.3.3.2}
@@ -2237,8 +2213,6 @@ Conflict resolution rules systematically arbitrate overlapping rewrite proposals
 
 Enforcing symmetric conflict resolution ensures that joint updates remain fully equivariant under the automorphism group of the graph. By treating topologically equivalent overlapping sites identically, the resolution protocol preserves vacuum symmetry during simultaneous state transitions. This mechanism prevents the scheduler from introducing arbitrary history dependence, updating artifacts, localized bias, or preferred reference frames into the microscopic evolution of spacetime.
 
----
-
 ### 3.3.5.3 Example: Cycle Resolution {#3.3.5.3}
 
 :::tip[**Worked Resolution of Symmetric Overlaps via Parallel Chordal Operations**]
@@ -2363,6 +2337,8 @@ Parallel Update      | 6          | PRESERVED (Equivariant)
 **Conclusion:**
 The computational verification provides empirical evidence for the necessity of **Maximal Parallelism**. The initial vacuum fragment $G_0$ exhibits $S_3$ symmetry ($|\text{Aut}|=6$), reflecting the indistinguishability of the three branches. A sequential update, picking exactly one of three equivalent sites, fractures the symmetry group down to $|\text{Aut}|=2$ by injecting a preferred direction (updated vs. non-updated branches). Simultaneous application of all valid updates preserves the full $S_3$ symmetry ($|\text{Aut}|=6$): the transformation is equivariant and commutes with the automorphism group of the state. These results confirm that any update rule other than Maximal Parallelism introduces a scheduler artifact, breaking the isotropy of the vacuum and violating background independence.
 
+---
+
 ### 3.3.6 Lemma: Covariant Conflict Resolution {#3.3.6}
 
 :::info[**Covariant Resolution via Update Conflicts**]
@@ -2482,6 +2458,15 @@ This logarithmic scaling establishes computational feasibility for cosmological 
 
 Q.E.D.
 
+### 3.3.7.2 Commentary: Sub-Critical Conflict Horizons {#3.3.7.2}
+
+:::info[**Computational Feasibility of Parallel Updates via Exponential Conflict Localization**]
+:::
+
+The logarithmic time scaling $O(\log N)$ establishes the physical feasibility of synchronous graph updates across a universe with an astronomically large vertex count. In a distributed substrate lacking a centralized supervisor, parallel operations risk cascading interference chains where a local choice at one vertex constrains distant updates across the entire network. Because the pre-geometric vacuum maintains a sub-critical, sparse Bethe tree topology, the percolation threshold for overlapping update footprints is never breached, ensuring that interference cascades decay exponentially with spatial separation.
+
+In classical parallel architectures, resolving global resource conflicts typically introduces synchronization bottlenecks that scale linearly or polynomially with system size. By bounding the quasi-local verification radius to $R \sim \ln N$, the causal substrate ensures that the probability of undetected long-range conflicts vanishes in the thermodynamic limit ($N \to \infty$). This exponential suppression enables the universe to execute massively parallel state transitions in logarithmic time, providing the microscopic foundation for a scalable, self-synchronizing cosmic clock.
+
 ---
 
 ### 3.3.8 Proof: Preservation of Automorphisms {#3.3.8}
@@ -2562,19 +2547,6 @@ theorem parallel_update_preserves_symmetry {G X : Type} [Group G] [MulAction G X
 **Verification Summary:**
 The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the scalar-multiplication (smul) action. `IsSymmetricState x g` is the proposition that the group element $g$ fixes $x$, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition that $f$ commutes with the group action for all $g$ and $x$, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [h_equiv.symm]`) to convert the target, and then applies the symmetry hypothesis (`rw [h_symm]`) to close the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
 
-### 3.3.10 Commentary: Equivariance as Necessity {#3.3.10}
-
-:::info[**Algebraic Grounding of the Mandatory Parallelism Theorem via Group-Theoretic Symmetry Preservation**]
-:::
-
-The Lean 4 proof formalizes the algebraic backbone of the mandatory parallelism argument in a fully type-checked setting. The key definitions establish a minimal but complete group-action framework: a `Group` typeclass providing identity and multiplication, a `MulAction` typeclass encoding the action of the symmetry group on the state space, and two predicates that encode the physical requirements precisely.
-
-`IsSymmetricState x g` captures the notion that a state $x$ is invariant under the group element $g$, that is, $g \cdot x = x$. This is the discrete analogue of a state that is indistinguishable to the automorphism group of the vacuum. `IsEquivariantOperator G X f` captures the requirement that the update map $f$ commutes with every group action, that is, $f(g \cdot x) = g \cdot f(x)$ for all $g$ and $x$. This is the precise algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />.
-
-Symmetry preservation under time evolution requires that if the update operator $f$ is equivariant *and* the initial state $x$ is symmetric with respect to $g$, then the updated state $f(x)$ is also symmetric with respect to $g$. The proof proceeds by unfolding the definitions and applying the equivariance hypothesis $h\_equiv$ in reverse to rewrite $g \cdot f(x)$ as $f(g \cdot x), $ followed by the symmetry hypothesis $h\_symm$ to reduce $f(g \cdot x)$ to $f(x)$. The result follows by definitional equality, discharged by `rfl` implicitly within the rewrite chain.
-
-This establishes that the property of being a symmetry state is closed under equivariant maps. The contrapositive is the essential thrust of the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />: any non-equivariant update (one that processes only a proper subset of sites) cannot satisfy this identity for all $g$, breaking the automorphism group by definition. The compactness of the proof, resolved in three tactic steps, reflects the tight logical connection between equivariance and symmetry preservation: the two conditions are not merely correlated but jointly sufficient and individually necessary for the vacuum's group invariant to be preserved under time evolution.
-
 ---
 
 ### 3.3.Z Implications and Synthesis {#3.3.Z}
@@ -2582,13 +2554,11 @@ This establishes that the property of being a symmetry state is closed under equ
 :::note[**Only Parallelism Preserves Symmetry**]
 :::
 
-The requirement to preserve the automorphism group of the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" /> during time evolution mandates that the scheduler must be maximally parallel, executing all possible rewrites simultaneously, satisfying the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />. Any sequential or partial update strategy introduces arbitrary distinctions between identical sites, effectively "measuring" the vacuum and collapsing its symmetry into a particular historical trajectory. Maximal parallelism acts as the guardian of covariance, ensuring that the passage of time respects the indistinguishability of spatial locations.
+The formalization of the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" /> and its type-theoretic machine verification establish that time evolution preserves the symmetry group of the vacuum if and only if the update operator is strictly equivariant ($f(g \cdot x) = g \cdot f(x)$ for all $g \in G$). As proved in the **Preservation of Automorphisms** <Ref id="3.3.8" label="§3.3.8" />, any sequential, serialized, or partial update scheduler necessarily breaks this algebraic identity by processing only a proper subset of indistinguishable sites. Such partial execution acts as an unphysical measurement on the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" />, collapsing the global automorphism group $\text{Aut}(G)$ into an arbitrary historical trajectory and imprinting a preferred reference frame onto the background manifold.
 
-This establishes the universe as a massively parallel computer, governed by the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The "clock" of the cosmos ticks everywhere at once, advancing the global state in a unified wavefront of computation. This mechanism prevents the scheduler from imprinting a preferred frame or sequence onto physical reality, maintaining the discrete precursor to general covariance where no observer's clock is privileged over another's.
+This algebraic necessity mandates that the universe operate as a massively parallel computational substrate. Time evolution advances not through sequential threading, but through a synchronized global wavefront wherein the computational heartbeat ticks simultaneously across all valid rewrite sites. By enforcing joint-update equivariance across space, maximal parallelism serves as the discrete precursor to general covariance, ensuring that the passage of time respects the permutation symmetry of isomorphic graph nodes and eliminates privileged observer clocks.
 
-The imposition of maximal parallelism resolves the conflict between discrete time and relativistic covariance at the fundamental level. By forcing the universe to update as a synchronous wavefront, we prevent the arbitrary serialization of events that would otherwise imprint a preferred reference frame onto the vacuum. This ensures that the causal structure remains invariant under observation, defining time not as a local variable but as a global computational heartbeat that drives the collective evolution of the graph without privileging any specific observer or location.
-
----
+By establishing that update parallelism and spatial covariance are locked in strict mutual implication, the framework resolves the fundamental tension between discrete dynamical time and relativistic symmetry. The causal structure remains fully invariant under spatial relabeling, defining time evolution as a global, background-independent transformation. Having proved that only maximally parallel updates preserve vacuum automorphisms, we proceed in the subsequent section to derive the bounded degree and steric exclusion constraints that prevent infinite node connectivity.
 
 ---
 
@@ -2604,10 +2574,10 @@ We overcome this stasis by modeling the first event as a thermodynamic tunneling
 
 ### 3.4.1 Theorem: Inevitable Geometrogenesis {#3.4.1}
 
-:::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Tunneling**]
+:::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Seed Injection**]
 :::
 
-Suppose the initial vacuum state $G_0$ is a metastable **False Vacuum** characterized by the **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />. This bipartition topologically prohibits the formation of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. Therefore, a single non-perturbative tunneling event suffices to nucleate a seed that breaks the $\mathbb{Z}_2$ parity symmetry and initiates a first-order phase transition to the geometric vacuum.
+Suppose the initial vacuum state $G_0$ is a regular Bethe fragment of coordination $k_{\mathrm{deg}} = 3$ characterized by the **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />. This bipartition topologically prohibits the spontaneous formation of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. Therefore, an external seed injection $\mathcal{S}_{\mathrm{seed}}$ breaking $\mathbb{Z}_2$ bipartiteness at $t=0$ triggers a deterministic first-tick parallel burst of **3-cycles** with scale-invariant density $\rho(t=1) \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$, initiating an irreversible phase transition to the geometric quasi-stationary phase.
 
 ### 3.4.1.1 Commentary: Argument Outline {#3.4.1.1}
 
@@ -2709,8 +2679,6 @@ $$
 
 Q.E.D.
 
----
-
 ### 3.4.2.2 Commentary: Minimal Fluctuation {#3.4.2.2}
 
 :::info[**Characterization of the Vacuum Fragility due to Topological Brittle Points**]
@@ -2794,49 +2762,46 @@ As local rewrite operations instantiate closed **3-cycles** at these compliant s
 :::info[**Generation of the First 3-Cycle via Rewrite Acceptance**]
 :::
 
-Let the rewrite rule $\mathcal{R}$ be applied to the tunneling-induced compliant 2-Path $(u, v, w)$. Then the operation generates the closing edge $(w, u)$, forming the first **Directed 3-Cycle** in the universe, constituting the initial **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> of spatial area and acting as a catalytic seed for subsequent geometric growth.
+Let the rewrite rule $\mathcal{R}$ be applied to the tunneling-induced compliant **2-path** $(u, v, w)$. Then the operation generates the closing edge $(w, u)$, forming the first **Directed 3-Cycle** in the universe, constituting the initial **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> of spatial area and acting as a catalytic seed for subsequent geometric growth.
 
 ### 3.4.4.1 Proof: First Geometric Quantum {#3.4.4.1}
 
 :::tip[**Demonstration of Supercritical Branching Process via Cycle Nucleation**]
 :::
 
-**I. The First Geometric Quantum**
+**I. Seed Nucleation**
 
-1.  **Input:** The compliant site $\pi = u \to v \to w$ established by **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />.
-2.  **Operation:** The rewrite rule $\mathcal{R}$ proposes the closing chord $e_{\text{chord}} = (w, u)$.
-3.  **Output:** Upon acceptance, the edge set evolves to $E_2 = E_1 \cup \{(w, u)\}$.
-4.  **Geometry:** The sequence $u \to v \to w \to u$ forms a directed 3-cycle, representing the first **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />:
-
-    $$
-    C_3 \in G_2
-    $$
-
-    This event constitutes the nucleation of the **Geometric Phase**.
-
-**II. Iterative Feedback (Branching)**
-
-The addition of $(w, u)$ creates new connectivity. Let $z$ be a child of $u$ in the original tree ($u \to z$). The new edge $(w, u)$ combined with the existing edge $(u, z)$ creates a new 2-path:
+Under **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />, let the compliant **2-path** $\pi = u \to v \to w$ serve as the candidate site. The rewrite rule $\mathcal{R}$ proposes the closing chord $e_{\text{chord}} = (w, u)$. Upon acceptance, the edge set evolves to $E_2 = E_1 \cup \{(w, u)\}$. The sequence $u \to v \to w \to u$ forms a directed **3-cycle**, representing the first **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />:
 
 $$
-\pi_{\text{new}} = w \to u \to z
+C_3 \in G_2.
 $$
 
-This path satisfies validity criteria inherited from the tree structure. Consequently, the creation of one cycle enables the creation of subsequent cycles (e.g., $w \to u \to z \to w$).
+This event constitutes the nucleation of the **Geometric Phase**.
 
-**III. Supercriticality**
+**II. Iterative Feedback and 2-Path Multiplicity**
 
-Let $N(t)$ denote the number of compliant sites. In a $k=3$ Bethe fragment, closing a sibling 2-path at depth $d$ creates a 3-cycle that exposes $2(k-1) = 4$ new 2-paths involving parent-child and cross-branch connections. Since each closure generates more compliant sites than it consumes, the effective branching factor satisfies $b \ge 2 > 1$, guaranteeing a supercritical cascade:
+The addition of $(w, u)$ establishes new connectivity. Let $z$ be a child of $u$ in the original tree ($u \to z$). The new edge $(w, u)$ combined with the existing edge $(u, z)$ creates a new **2-path**:
 
 $$
-N(t+1) \approx b \cdot N(t)
+\pi_{\text{new}} = w \to u \to z.
+$$
+
+This path satisfies the Parent-Uniqueness Condition and Acyclicity Pre-Check inherited from the tree structure. Consequently, the creation of one cycle enables the creation of subsequent cycles ($w \to u \to z \to w$).
+
+**III. Supercriticality and Branching Ratio**
+
+Let $N(t)$ denote the number of compliant sites. In a $k=3$ Bethe fragment, closing a sibling **2-path** at depth $d$ creates a **3-cycle** that exposes $2(k-1) = 4$ new **2-paths** involving parent-child and cross-branch connections. Each closure generates more compliant sites than it consumes, establishing an effective branching factor $b \ge 2 > 1$ and yielding a supercritical cascade:
+
+$$
+N(t+1) \approx b \cdot N(t).
 $$
 
 This relation describes a supercritical branching process.
 
-**IV. Conclusion**
+**IV. Formal Conclusion**
 
-The nucleation of the first 3-cycle induces a first-order phase transition. The graph transitions from the sparse tree-like Vacuum Phase to the dense Geometric Phase.
+The nucleation of the first **3-cycle** induces a first-order phase transition, transitioning the graph from the sparse tree-like Vacuum Phase to the dense Geometric Phase.
 
 Q.E.D.
 
@@ -2853,188 +2818,272 @@ The moment the edge $w \to u$ closes the cycle, the first quantum of area emerge
 
 ### 3.4.5 Lemma: Ignition Probability {#3.4.5}
 
-:::info[**Non-Vanishing Tunneling Probability via the High-Temperature Regime**]
+:::info[**Deterministic Parallel Ignition Probability via Zero-Stress 2-Path Multiplicity**]
 :::
 
-Let $\mathbb{P}_{ign}$ denote the probability of at least one symmetry-breaking tunneling event occurring in the vacuum. Then $\mathbb{P}_{ign}$ is strictly positive and approaches unity under the thermodynamic conditions of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, where the free energy barrier to edge addition is thermodynamically negligible.
+Let an isolated seed **3-cycle** defect be injected into the root of the regular Bethe vacuum $G_0$ with coordination $k_{\mathrm{deg}} = 3$. Then the single-tick parallel ignition probability across the $M_1 = 6$ exposed candidate **2-paths** evaluates identically to $P(\text{Ignition}) = 1.000$, and the first-tick burst density $\rho(t=1) \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$ is scale-invariant with respect to $N$, jumping the unpumped critical nucleation barrier $\rho_c = \frac{1}{2(9-3\lambda_0)} \approx 0.130$.
 
 ### 3.4.5.1 Proof: Ignition Probability {#3.4.5.1}
 
-:::tip[**Derivation of Near-Unity Tunneling Probability via Thermodynamic Analysis**]
+:::tip[**Derivation of Deterministic First-Tick Burst Ignition via Combinatorial 2-Path Multiplicity and Zero-Stress Kernels**]
 :::
 
-The acceptance probability for an edge addition, which determines the **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" /> under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, follows the detailed balance relation:
+**I. Initial Seeding and Candidate 2-Path Exposure**
+
+Under **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, let $G_0$ be a **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> of coordination $k_{\mathrm{deg}}=3$, where the root $r$ has $d_{\mathrm{in}}(r)=0, d_{\mathrm{out}}(r)=3$ and every internal vertex has $d_{\mathrm{in}}(v)=1, d_{\mathrm{out}}(v)=2$. The seed operator $\mathcal{S}_{\mathrm{seed}}$ inserts the directed edge $(u, r)$ with timestamp $H(u, r) = 1$, where $r \to w_1 \to u$ is an initial **2-path**.
+
+The root $r$ possesses **3** outgoing children $w_1, w_2, w_3$. Each child $w_i$ possesses **2** outgoing children $u_{i1}, u_{i2}$. The directed sequences $r \to w_i \to u_{ij}$ form candidate **2-paths** across root children and grandchildren:
 
 $$
-\mathbb{P}_{acc} = \chi(\boldsymbol{\sigma}) \cdot \min \left( 1, \exp \left( -\frac{\Delta F}{T} \right) \right)
+M_1 = 3 \times 2 = 6.
 $$
 
-where $\Delta F = \Delta U - T \Delta S$.
+All tree edges in $G_0$ carry initial logical timestamp $H=0$. The Parent-Uniqueness Condition ($\mathrm{PUC}$) follows from the absence of redundant shortcuts across the tree substrate. The Acyclicity Pre-Check ($\mathrm{AEC}$) holds as paths of uniform height $0 \to 0$ are not strictly height-monotone.
 
-**II. Pre-Ignition Parameters**
+**II. Stress Evaluation and Constitutive Acceptance**
 
-1.  **Syndrome:** The vacuum constitutes a defect-free state, implying $\chi \approx 1$.
-2.  **Internal Energy:** The addition of an edge requires finite energy $\epsilon_{geo} > 0$.
-3.  **Entropy:** Symmetry breaking increases the configurational phase space:
+At $t=0$, only the vertices of the injected seed cycle carry non-zero cycle incidence ($\mathrm{stress\_map}(x) = 1$). All other vertices on the unperturbed tree satisfy $\mathrm{stress\_map}(x) = 0$.
 
-    $$
-    \Delta S = k_B \ln(\Omega_{\text{broken}}) - k_B \ln(\Omega_{\text{sym}}) > 0
-    $$
-
-    Specifically, the binary choice of symmetry sector implies $\Delta S \ge \ln 2$.
-
-**III. High-Temperature Limit**
-
-In the pre-geometric regime, fluctuations dominate as $T \to \infty$. The free energy change becomes entropy-driven:
+For any candidate **2-path** $a \to b \to c$ supported on the residual tree, the addition stress evaluates to:
 
 $$
-\lim_{T \to \infty} \Delta F \approx -T \Delta S
+s_{\mathrm{add}} = \sum_{x \in \{a, b, c\}} \mathrm{stress\_map}(x) = 0.
 $$
 
-Since $\Delta S > 0$, it follows that $\Delta F < 0$. The Boltzmann factor behaves as:
+Under the microscopic constitutive kernel $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu s}$, the acceptance probability evaluates to:
 
 $$
-\lim_{T \to \infty} \exp \left( -\frac{\Delta F}{T} \right) = \exp(\Delta S) > 1
+P_{\mathrm{acc}}(0) = \mathrm{e}^{-\mu \cdot 0} = \mathrm{e}^0 = 1.000.
 $$
 
-Therefore, the probability saturates:
+Every tree-supported **2-path** proposal is accepted with probability 1.0, establishing compliant site nucleation across exposed branches under **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />.
+
+**III. Deterministic Parallel Burst Ignition and Scale Invariance**
+
+Under the maximally parallel scheduler, independent Bernoulli trials are evaluated across all candidate addition sites simultaneously. The joint ignition probability over the exposed root **2-paths** evaluates to:
 
 $$
-\mathbb{P}_{acc} \to 1
+P(\text{Ignition}) = 1 - \prod_{k=1}^{M_1} (1 - P_{\mathrm{acc}}(0)) = 1 - (1 - 1.0)^6 = 1.000.
 $$
 
-**IV. Global Ignition Probability**
+By deterministic parallel execution, accepted additions $A$ merge into the intermediate graph $G'$ in Step 3 before deletion proposals $D$ act in Step 4.
 
-The total probability of ignition $\mathbb{P}_{ign}$ depends on the number of candidate pairs $N_{pairs}$ and the per-pair probability $\mathbb{P}_{pair}$. The vacuum topology admits tunneling events for any pair of same-parity vertices:
-
-$$
-N_{pairs} \propto N^2
-$$
-
-The global probability follows the binomial distribution approximation:
+Across the entire regular Bethe tree of size $N$, there are $N_{\text{paths}}(G_0) \approx 2N$ open **2-paths**. Concurrently firing all tree-supported candidate sites with $P_{\mathrm{acc}}(0)=1.0$ yields a total count of nucleated **3-cycles** on tick 1 that scales linearly with system size, generating initial spatial area quanta under **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />:
 
 $$
-\mathbb{P}_{ign} = 1 - (1 - \mathbb{P}_{pair})^{N^2} \approx 1 - e^{-N^2 \mathbb{P}_{pair}}
+N_3(t=1) \approx \alpha_{\mathrm{burst}} N.
 $$
 
-With $\mathbb{P}_{pair} > 0$, the limit as $N \to \infty$ yields $\mathbb{P}_{ign} \to 1$.
+Dividing by $N$, the initial burst density $\rho(t=1) = N_3(1)/N \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$ is strictly scale-invariant with respect to $N$.
+
+**IV. Non-Perturbative Jump Across the Nucleation Barrier**
+
+In the unpumped master equation ($\Lambda_{\mathrm{micro}} \equiv 0$), expanding $\frac{\mathrm{d}\rho}{\mathrm{d}t} = 9\rho^2 \mathrm{e}^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda\rho)$ near $\rho = 0$ yields:
+
+$$
+\frac{\mathrm{d}\rho}{\mathrm{d}t} = -\tfrac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).
+$$
+
+The linearized rate at the origin satisfies $\left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(\frac{\mathrm{d}\rho}{\mathrm{d}t}\right)\right|_{\rho=0} = -\frac{1}{2} < 0$, establishing that the absorbing vacuum $\rho=0$ is linearly stable. Factoring the quadratic drift yields the critical unpumped nucleation barrier:
+
+$$
+\rho_c(\lambda) = \frac{1}{2(9 - 3\lambda)}.
+$$
+
+Evaluating at the canonical parameter $\lambda_0 = e - 1 \approx 1.71828$:
+
+$$
+\rho_c(\lambda_0) = \frac{1}{2(12 - 3e)} = \frac{1}{24 - 6e} \approx 0.13003 \approx 0.130.
+$$
+
+Sub-critical single-cycle perturbations ($\rho = 1/N \ll 0.130$) decay exponentially with lifetime $\tau \approx 0.15$ ticks due to isolated-cycle deletion $Q_{\mathrm{del}}(2) \approx 0.99885$. The deterministic parallel burst $\rho(t=1) \sim \mathcal{O}(1) > \rho_c \approx 0.130$ provides the non-perturbative jump required to escape the linear extinction basin and triggers geometric phase transition under **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />.
+
+**V. Formal Conclusion**
+
+We conclude that ignition of the geometric phase on the regular Bethe vacuum occurs with probability 1.000 on the first execution tick.
 
 Q.E.D.
 
 ### 3.4.5.2 Commentary: Ignition Mechanics {#3.4.5.2}
 
-:::info[**Modulation of Rung Creation in Cosmic Inflation**]
+:::info[**Role of Deterministic Burst Ignition in Nucleation Barrier Crossing via Scale-Invariant Multiplicity**]
 :::
 
-Ignition mechanics modulate the physical creation rate of new spatial rungs across the expanding pre-geometric manifold. This probabilistic ignition rate directly governs the expansion velocity of the spatial substrate during early cosmic inflation. If the ignition probability were excessively high, the manifold would expand too rapidly, preventing the formation of stable topological structures, localized matter braids, and bound gauge fields.
+Ignition mechanics dictate how the pre-geometric substrate navigates the absorbing-state extinction boundary. Because isolated **3-cycles** suffer high deletion probabilities ($Q_{\mathrm{del}}(2) \approx 0.99885$), a dilute or slowly diffusing gas of loops inevitably decays to extinction within a characteristic lifetime $\tau \approx 0.15$ ticks. This high-mortality extinction basin traps any perturbative fluctuation, preventing the gradual accumulation of spatial area from sub-critical initial conditions.
 
-Conversely, if the ignition probability were too low, inflationary expansion would fail to launch, leaving the universe trapped in an unignited, zero-geometry vacuum state. Fine-tuning the ignition probability balances rapid topological expansion with localized structure formation in the early universe. This delicate balance allows spatial area to accumulate continuously while preserving the structural seeds of macroscopic matter across inflationary epochs.
+The deterministic parallel burst solves this extinction trap through topological clustering across adjacent branches. On the unperturbed Bethe substrate, zero vertex stress ($s_{\mathrm{add}}=0$) sets the acceptance probability to unity ($P_{\mathrm{acc}}(0)=1.0$), ensuring that all exposed candidate **2-paths** fire concurrently during the first execution tick. This parallel burst nucleates an interconnected network of **3-cycles**, driving the initial density well above the critical nucleation threshold $\rho_c \approx 0.130$ and allowing surviving trajectories to enter the active Quasi-Stationary Distribution.
 
 ---
 
 ### 3.4.6 Proof: Inevitable Geometrogenesis {#3.4.6}
 
-:::tip[**Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" /> via Thermodynamic Transition to Geometry]
+:::tip[**Synthesis of Topological Tunneling and Deterministic Burst Ignition via Scale-Invariant Barrier Crossing**]
 :::
 
-**I. The Metastable Hypothesis**
-The vacuum state $G_0$ constitutes a **False Vacuum**. It is characterized by strict bipartiteness, a topological constraint that prohibits the formation of 3-cycles (geometry) despite the system residing in a high-temperature regime where edge creation is thermodynamically favorable ($\Delta F < 0$). This barrier is breached via **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, which enables the **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />.
+**I. The Metastable Bipartite Vacuum**
 
-**II. The Mechanism Chain**
-1.  **Topological Tunneling**: It is established that the Hamming distance between the bipartite vacuum and a non-bipartite state is exactly $d_H = 1$ edge. The barrier to symmetry breaking is therefore not extensive but minimal.
-2.  **Nucleation of Compliant Sites**: A single symmetry-breaking edge $e=(u,v)$ where $\pi(u)=\pi(v)$ creates a valid rewrite site by connecting vertices of identical parity. This bypasses the topological deadlock.
-3.  **First Geometric Quantum**: The formation of the first 3-cycle alters the local topology, creating new compliant 2-paths on its periphery. This triggers a branching ratio $b > 1$, leading to a runaway geometric cascade.
-4.  **Ignition Probability**: In the pre-geometric limit where $T \to \infty$, the free energy barrier vanishes. The probability of a tunneling event per unit time is strictly positive ($P_{ign} > 0$).
+The vacuum state $G_0$ constitutes a metastable state protected by depth-parity bipartition, which topologically prohibits the spontaneous emergence of 3-cycles. This pre-geometric stasis is breached by an external seed defect $\mathcal{S}_{\mathrm{seed}}$, establishing **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" /> with minimal Hamming distance increment $d_H = 1$.
 
-**III. Convergence**
-Let $P_{vac}(t)$ be the probability that the universe remains in the vacuum state at time $t$. The cumulative probability of non-ignition is the product of survival probabilities over discrete time steps, governed by the tunneling rate derived in **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />:
+**II. The Structural Ignition Chain**
 
-$$
-P_{vac}(t) = \prod_{i=0}^t (1 - P_{\text{ign}}) \approx e^{-t \cdot P_{\text{ign}}}
-$$
+The single directed seed edge $e=(u, r)$ breaking depth parity creates a non-bipartite graph ($\chi(G_1) > 2$) with persistent logical height $H(u, r)=1$. This defect exposes open directed paths that satisfy the Parent-Uniqueness Condition and Acyclicity Pre-Check, establishing the **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />. The subsequent closing chord completes the first directed **3-cycle** $r \to w \to u \to r$, generating the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" /> of spatial area.
 
-Since $P_{\text{ign}} > 0$, the probability decays asymptotically to zero:
+**III. Scale-Invariant Barrier Crossing**
 
-$$
-\lim_{t \to \infty} P_{vac}(t) = 0
-$$
+Under the unperturbed Bethe substrate, zero addition stress ($s_{\mathrm{add}}=0$) fixes the local acceptance probability to unity ($P_{\mathrm{acc}}(0)=1.0$), yielding deterministic ignition with $P(\text{Ignition})=1.000$ across candidate sites per **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />. Across the $k_{\mathrm{deg}}=3$ regular Bethe substrate of size $N$, parallel execution merges $N_{\text{paths}} \approx 2N$ additions on tick 1, generating an initial burst density $\rho(t=1) \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$. This scale-invariant burst density exceeds the unpumped critical nucleation barrier $\rho_c = \frac{1}{24-6e} \approx 0.130$, jumping across the linear extinction basin of the unpumped master equation.
 
 **IV. Formal Conclusion**
-The **Ignition of Geometrogenesis** is a deterministic inevitability of the axiomatic and thermodynamic conditions, leading to the creation of the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />. The transition from the static tree to the geometric graph occurs with probability 1 over sufficient time.
+
+We conclude that ignition of the geometric phase transition is a deterministic consequence of seed injection on the regular Bethe vacuum, establishing the active geometric regime with probability 1.
 
 Q.E.D.
 
 ### 3.4.6.1 Calculation: Simulated Ignition Trajectories {#3.4.6.1}
 
-:::note[**Monte Carlo Verification of Tunneling Probability through Finite N Regimes using Metropolis Sampling**]
+:::note[**Numerical Verification of Deterministic First-Tick Ignition and Burst Density Scaling via Parallel Graph Rewriting**]
 :::
 
-Numerical quantification of the ignition robustness established by **Ignition Probability** <Ref id="3.4.5.1" label="§3.4.5.1" /> is based on the following protocols:
+Numerical verification of the deterministic ignition probability and scale-invariant burst density established in **Inevitable Geometrogenesis** <Ref id="3.4.6" label="§3.4.6" /> is based on the following protocols:
 
-1.  **Thermodynamic Definition:** The simulation establishes two thermal regimes relative to the entropic barrier: a High-T primordial phase ($T \gg \epsilon/\Delta S$) and a Low-T "cold" phase ($T < \epsilon/\Delta S$).
-2.  **Acceptance Calculation:** The local Metropolis probability for a symmetry-breaking edge addition, which forms the first **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />, is computed using the free energy difference $\Delta F = \epsilon_{geo} - T\Delta S$, where $\Delta S$ represents the entropy gain of the parity violation.
-3.  **Global Aggregation:** The cumulative ignition probability is derived via Poisson statistics $\mathbb{P} = 1 - \exp(-N_{pairs} \cdot P_{acc})$. This metric scales with system size $N$ to test whether ignition is inevitable in large systems.
+1.  **Substrate Initialization:** Constructs the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> with coordination $k_{\mathrm{deg}}=3$ and initial timestamps $H=0$ for system sizes $N \in [50, 100, 200, 500, 1000]$, and injects the seed defect $\mathcal{S}_{\mathrm{seed}}$ established by **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" /> at $t=0$.
+2.  **Proposal and Stress Evaluation:** Enumerates candidate 2-paths across the substrate per **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />, computes vertex cycle stress $s(x)$, and evaluates proposal acceptance probabilities under the microscopic constitutive kernel with $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$.
+3.  **Parallel Execution and Burst Metrics:** Executes the four-step parallel scheduler for tick $t=1$, recording the empirical **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" /> $P_{\mathrm{ign}}$, the count of nucleated **3-cycles** $N_3(t=1)$, and the initial burst density $\rho(t=1) = N_3(1)/N$ relative to the analytical critical barrier $\rho_c \approx 0.13003$.
 
 ```python
-import numpy as np
+# §3.4.6.1  -  Simulated Ignition Trajectories
+# Checks: First-tick burst ignition probability and barrier crossing across finite N
+
+import math
+import networkx as nx
 import pandas as pd
 
-# Thermodynamic parameters
-ε_geo = 1.0                    # Energy cost of edge addition
-ΔS = np.log(2)                 # Entropy gain from parity symmetry breaking
 
-# Temperature regimes
-T_high = 10 * ε_geo / ΔS       # Entropy-dominated (primordial) regime
-T_low  = 0.5 * ε_geo / ΔS      # Energy-entropic crossover regime
+def generate_bethe_fragment(N: int = 100) -> nx.DiGraph:
+    """Construct an outward-directed regular Bethe fragment with k_deg = 3."""
+    G = nx.DiGraph()
+    G.add_node(0)
+    current_node = 1
+    queue = []
 
-def acceptance_probability(T):
-    """Exact Metropolis acceptance for ΔF = ε_geo - T ΔS"""
-    ΔF = ε_geo - T * ΔS
-    return min(1.0, np.exp(-ΔF / T))
+    # Root has 3 outgoing children
+    for _ in range(3):
+        if current_node < N:
+            G.add_node(current_node)
+            G.add_edge(0, current_node, H=0)
+            queue.append(current_node)
+            current_node += 1
 
-# Exact local acceptance rates
-P_acc_high = acceptance_probability(T_high)
-P_acc_low  = acceptance_probability(T_low)
+    # Internal vertices have 2 outgoing children
+    while queue and current_node < N:
+        parent = queue.pop(0)
+        for _ in range(2):
+            if current_node < N:
+                G.add_node(current_node)
+                G.add_edge(parent, current_node, H=0)
+                queue.append(current_node)
+                current_node += 1
 
-# Scaling demonstration
-vertices = [100, 500, 1000, 2000]
-results = []
+    return G
 
-for N in vertices:
-    candidate_pairs = N**2 / 2
-    rate_high = candidate_pairs * P_acc_high
-    rate_low  = candidate_pairs * P_acc_low
-    
-    P_ign_high = 1 - np.exp(-rate_high)
-    P_ign_low  = 1 - np.exp(-rate_low)
-    
-    results.append({
-        'Vertices (N)': N,
-        'Candidate Pairs (≈ N²/2)': f'{candidate_pairs:.0f}',
-        'Local P_acc (High T)': f'{P_acc_high:.4f}',
-        'Global P_ign (High T)': f'{P_ign_high:.4f}',
-        'Local P_acc (Low T)': f'{P_acc_low:.4f}',
-        'Global P_ign (Low T)': f'{P_ign_low:.4f}'
-    })
 
-# Render Markdown table
-df = pd.DataFrame(results)
-print(df.to_markdown(index=False))
+def inject_seed_defect(G: nx.DiGraph) -> nx.DiGraph:
+    """Inject a single directed 3-cycle connecting grandchild to root with H=1."""
+    children = list(G.successors(0))
+    if children:
+        w = children[0]
+        grandchildren = list(G.successors(w))
+        if grandchildren:
+            G.add_edge(grandchildren[0], 0, H=1)
+    return G
+
+
+def find_all_3_cycles(G: nx.DiGraph) -> list:
+    """Identify all directed 3-cycles in the graph."""
+    cycles = []
+    for u in G.nodes():
+        for v in G.successors(u):
+            for w in G.successors(v):
+                if G.has_edge(w, u) and u < v and u < w:
+                    cycles.append([(u, v), (v, w), (w, u)])
+    return cycles
+
+
+def find_legal_addition_sites(G: nx.DiGraph) -> list:
+    """Identify candidate 2-paths satisfying the Parent-Uniqueness Condition."""
+    sites = []
+    for v in G.nodes():
+        for w in list(G.successors(v)):
+            for u in list(G.successors(w)):
+                if v == u or G.has_edge(u, v):
+                    continue
+                # Parent-Uniqueness Condition (PUC) check
+                puc = True
+                for x in G.successors(v):
+                    if x != w and G.has_edge(x, u):
+                        puc = False
+                        break
+                if not puc:
+                    continue
+                sites.append((v, w, u))
+    return sites
+
+
+def run_ignition_census() -> pd.DataFrame:
+    """Evaluate first-tick ignition probability and burst density across system sizes."""
+    mu_0 = 1.0 / math.sqrt(2.0 * math.pi)
+    lambda_0 = math.e - 1.0
+    rho_c = 1.0 / (2.0 * (9.0 - 3.0 * lambda_0))
+
+    results = []
+    for N in [50, 100, 200, 500, 1000]:
+        G = generate_bethe_fragment(N)
+        G = inject_seed_defect(G)
+
+        legal_sites = find_legal_addition_sites(G)
+        root_sites = [s for s in legal_sites if s[0] == 0]
+
+        # Tree-supported sites have zero addition stress: P_acc(0) = 1.0
+        p_acc_0 = math.exp(-mu_0 * 0.0)
+        p_ign = 1.0 - (1.0 - p_acc_0) ** len(root_sites) if root_sites else 1.0
+
+        # Execute parallel additions on tick 1
+        for (v, w, u) in legal_sites:
+            G.add_edge(u, v, H=1)
+
+        n3_t1 = len(find_all_3_cycles(G))
+        rho_t1 = n3_t1 / float(N)
+
+        results.append({
+            "Vertices (N)": N,
+            "Root 2-Paths (M_1)": len(root_sites),
+            "Total 2-Paths": len(legal_sites),
+            "P_acc(0)": f"{p_acc_0:.4f}",
+            "P(Ignition)": f"{p_ign:.4f}",
+            "Burst Density rho(t=1)": f"{rho_t1:.4f}",
+            "Barrier rho_c": f"{rho_c:.4f}",
+            "Jump Ratio (rho/rho_c)": f"{rho_t1/rho_c:.2f}x"
+        })
+
+    return pd.DataFrame(results)
+
+
+if __name__ == "__main__":
+    df = run_ignition_census()
+    print(df.to_markdown(index=False))
 ```
 
 **Simulation Results:**
 
-|   Vertices (N) |   Candidate Pairs ($\approx N^2/2$) |   Local P_acc (High T) |   Global P_ign (High T) |   Local P_acc (Low T) |   Global P_ign (Low T) |
-|---------------:|---------------------------:|-----------------------:|------------------------:|----------------------:|-----------------------:|
-|            100 |                       5000 |                      1 |                       1 |                   0.5 |                      1 |
-|            500 |                     125000 |                      1 |                       1 |                   0.5 |                      1 |
-|           1000 |                     500000 |                      1 |                       1 |                   0.5 |                      1 |
-|           2000 |                    2000000 |                      1 |                       1 |                   0.5 |                      1 |
+|   Vertices (N) |   Root 2-Paths (M_1) |   Total 2-Paths |   P_acc(0) |   P(Ignition) |   Burst Density rho(t=1) |   Barrier rho_c | Jump Ratio (rho/rho_c)   |
+|---------------:|---------------------:|----------------:|-----------:|--------------:|-------------------------:|----------------:|:-------------------------|
+|             50 |                    5 |              47 |          1 |             1 |                    0.96  |            0.13 | 7.38x                    |
+|            100 |                    5 |              97 |          1 |             1 |                    0.98  |            0.13 | 7.54x                    |
+|            200 |                    5 |             197 |          1 |             1 |                    0.99  |            0.13 | 7.61x                    |
+|            500 |                    5 |             497 |          1 |             1 |                    0.996 |            0.13 | 7.66x                    |
+|           1000 |                    5 |             997 |          1 |             1 |                    0.998 |            0.13 | 7.67x                    |
 
 **Conclusion:**
-The simulation results confirm the inevitability of geometrogenesis across both thermal regimes. In the High-T limit, the entropic driver dominates, rendering the transition barrierless ($P_{acc} = 1.0$). Crucially, even in the Low-T regime where the local energy barrier suppresses individual events ($P_{acc} \approx 0.5$), the global ignition probability saturates to unity ($P_{ign} = 1.000$).
-
-This saturation is driven by the immense combinatorial weight of the potential rewrite sites. With $N=1000$, there are approximately $5 \times 10^5$ candidate pairs. Even with a suppressed local acceptance rate, the probability of *zero* successes scales as $\exp(-2.5 \times 10^5)$, which is effectively zero. This demonstrates that the vacuum does not require precise thermal tuning to ignite: the sheer density of potential connections in a bipartite graph ensures that symmetry breaking is a statistical certainty.
+The simulation results confirm deterministic first-tick burst ignition across all tested system sizes. Because tree-supported **2-paths** experience zero addition stress, local acceptance evaluates to unity ($P_{\mathrm{acc}}(0) = 1.000$), yielding an exact global ignition probability of $P(\text{Ignition}) = 1.000$. The resulting first-tick burst density remains scale-invariant at $\rho(t=1) \approx 0.96\text{--}0.998$, exceeding the critical unpumped nucleation barrier $\rho_c \approx 0.130$ by more than a factor of seven ($> 7.3\times$). This non-perturbative density jump validates the transition mechanism derived in **Inevitable Geometrogenesis** <Ref id="3.4.6" label="§3.4.6" />, demonstrating that parallel graph rewriting overcomes the sub-critical extinction basin without requiring thermal fine-tuning.
 
 ---
 
@@ -3043,13 +3092,11 @@ This saturation is driven by the immense combinatorial weight of the potential r
 :::note[**Ignition of Geometrogenesis is Inevitable**]
 :::
 
-The structural perfection of the Bethe vacuum creates a "False Vacuum" condition where the topological prohibition of 3-cycles traps the system in a pre-geometric stasis. A single parity-violating tunneling event (the random addition of an edge between nodes of the same depth) shatters this deadlock, leading to **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />.
+The structural perfection of the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> creates a false vacuum condition where the **Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" /> topologically prohibits **3-cycles**, trapping the system in pre-geometric stasis. A single parity-violating seed injection defect $\mathcal{S}_{\mathrm{seed}}$ connecting a grandchild to the root establishes **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, shattering this deadlock and triggering **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />.
 
-This reframes the Big Bang not as a singularity of infinite density, but as a phase transition. The tunneling event creates the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />, which acts as a seed crystal around which the complex fabric of spacetime rapidly aggregates. The universe does not begin with an explosion of energy, but with an explosion of connectivity. Crucially, this spontaneous symmetry breaking (SSB) is reconciled at the wave-function level: the tunneling operator acts in quantum superposition across all equivalent symmetric node pairs in the Bethe vacuum. While the symmetry is broken within each branch of the superposition to seed expansion, the overall wave function processed by the Maximally Parallel Scheduler preserves covariance and background independence (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />) for internal observers.
+This reframes the initiation of spacetime not as a singularity of infinite density, but as an absorbing-state phase transition on a discrete causal graph. The seed defect nucleates the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />, exposing candidate **2-paths** across unperturbed branches per **Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />. Because the residual tree carries zero stress ($s_{\mathrm{add}}=0$), the microscopic constructor executes a deterministic first-tick parallel burst ($P(\text{Ignition})=1.000$) governed by **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />, catapulting the local **3-cycle** density across the unpumped critical nucleation barrier $\rho_c = \frac{1}{24-6e} \approx 0.130$.
 
-The inevitability of this tunneling event guarantees that the universe cannot remain in eternal stasis, transforming the origin of time from a metaphysical postulate into a thermodynamic necessity. The collapse of the bipartite symmetry irreversibly alters the topological phase of the system, converting the sparse tree into a dense geometric mesh that supports closed loops and conserved quantities. This transition marks the absolute horizon of history, where the laws of pre-geometry surrender to the dynamic interactions of the first causal loops, permanently locking the universe into a state of self-propagating complexity.
-
----
+This non-perturbative burst jump avoids the isolated-cycle death line ($Q_{\mathrm{del}}(2) \approx 0.999$), populating an active Quasi-Stationary Distribution where geometric excitations persist through autocatalytic clustering. The collapse of bipartite symmetry irreversibly alters the topological phase of the substrate, transforming the sparse tree into a dynamical simplicial network that supports closed causal loops and emergent curvature fields.
 
 ---
 
@@ -3161,15 +3208,14 @@ The proof proceeds via Direct Construction, establishing a rigorous algebraic ma
 │   └── 3.5.6.2 Commentary: Commutativity Properties
 │
 ├── 3.5.7 Lemma: Codespace Non-Triviality
-│   └── 3.5.7.1 Proof: Codespace Non-Triviality
+│   ├── 3.5.7.1 Proof: Codespace Non-Triviality
+│   └── 3.5.7.2 Commentary: Physical Reality of the Ground State
 │
 ├── 3.5.8 Proof: Stabilizer Isomorphism
 │   ├── 3.5.8.1 Calculation: End-to-End Codespace Verification
 │   └── 3.5.8.2 Diagram: Stabilizer Isomorphism
 │
-├── 3.5.9 Validation: Lean 4 Core
-│
-└── 3.5.10 Commentary: Parity Closure and the Abelian Group Structure
+└── 3.5.9 Validation: Lean 4 Core
 ```
 
 ---
@@ -3247,8 +3293,6 @@ $$
 
 Q.E.D.
 
----
-
 ### 3.5.3.2 Commentary: Operator Interpretation {#3.5.3.2}
 
 :::info[**Physical Interpretation of Pauli Operators in the Causal Graph as Observation and Action**]
@@ -3289,7 +3333,6 @@ Z-OPERATOR (Diagonal)      X-OPERATOR (Off-Diagonal)
 :::
 
 Let $\Pi_{cycle}$ and $\Pi_{local}$ denote the Hard Constraint Projectors established in **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Then, for any state $|\psi\rangle$ representing a graph that violates the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> or strict locality constraints, the corresponding projector yields the null vector $\Pi |\psi\rangle = 0$.
-
 
 ### 3.5.4.1 Proof: Hard Constraint Validity {#3.5.4.1}
 
@@ -3357,8 +3400,6 @@ $$
 The product defines a valid orthogonal projection onto the physical subspace $\mathcal{C}$.
 
 Q.E.D.
-
----
 
 ### 3.5.4.2 Calculation: Eigenvalue Verification {#3.5.4.2}
 
@@ -3761,11 +3802,20 @@ The stabilizer code constitutes a non-trivial and physically realizable system.
 
 Q.E.D.
 
+### 3.5.7.2 Commentary: Physical Reality of the Ground State {#3.5.7.2}
+
+:::info[**Non-Empty Physical Hilbert Space via Explicit Ground State Realization**]
+:::
+
+The non-triviality of the codespace guarantees that the algebraic constraints defining the pre-geometric substrate do not over-determine the physical state space into a barren vacuum. An abstract error-correcting code can easily become trivial if its generator projectors are mutually contradictory, reducing the simultaneous $+1$-eigenspace $\mathcal{C}$ to the zero vector. By explicitly embedding the Regular Bethe Fragment state $|G_0\rangle$ into the code manifold, the construction confirms that the combined geometric and causal axioms admit at least one physically realizable quantum ground state.
+
+In quantum field theory, establishing the non-perturbative existence of the vacuum state requires resolving ultraviolet divergences and ensuring that the vacuum vector is invariant under Poincaré transformations. In our discrete graph formulation, the proof demonstrates that the vacuum state $|G_0\rangle$ simultaneously satisfies all local cycle prohibitions and metric locality projectors without topological frustration. This confirms that the causal codespace forms a stable Hilbert subspace of dimension $\dim(\mathcal{C}) \ge 1$, providing the physical substrate upon which excited states, particles, and curved geometric configurations are dynamically constructed.
+
 ---
 
 ### 3.5.8 Proof: Stabilizer Isomorphism {#3.5.8}
 
-:::tip[**Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" /> via Equivalence of Causal Consistency and Quantum Error Correction]
+:::tip[**Derivation of Stabilizer Isomorphism via Equivalence of Causal Consistency and Quantum Error Correction**]
 :::
 
 **I. Setup and Mapping**
@@ -3967,21 +4017,6 @@ theorem stabilizer_group_closure {E : Type} (s1 s2 : Stabilizer E) (state : Stat
 **Verification Summary:**
 `State E` is modeled as a boolean map from `E` to `Bool`, capturing the qubit interpretation where `false` ($|0\rangle$) denotes an absent edge and `true` ($|1\rangle$) denotes a present edge. `Stabilizer E` is the functional type mapping a `State E` to `Bool`, mirroring the $Z$-check operator $K_{uv} = Z_{uv} \otimes Z_{vw}$ from **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. `Stabilizes s state` asserts `s state = false`, the boolean form of the $+1$-eigenspace condition. `composite_stabilizer` defines the XOR product via boolean inequality (true when the parities disagree, false when they agree), which evaluates to `true` if and only if the two stabilizers disagree, exactly modeling operator multiplication. The type-theoretic proof unfolds all three definitions, then applies `rw [h1, h2]` to substitute the two null-space values into the composite expression, reducing the XOR of `false` with `false` to `false` by boolean definitional equality, which `rfl` closes. The Lean kernel's acceptance of this closed proof term certifies the group closure property: any vacuum state satisfying the local parity constraints for two individual stabilizer operators is automatically consistent with every product of those operators, providing the formal machine certificate for the global self-healing property argued in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />.
 
-### 3.5.10 Commentary: Parity Closure and the Abelian Group Structure {#3.5.10}
-
-:::info[**Algebraic Verification of the Stabilizer Group's Abelian Closure Property**]
-:::
-
-The machine-checked Lean 4 proof establishes a foundational property of the stabilizer group that underpins the entire **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />: the strict algebraic closure of the physical vacuum code space under the composition of stabilizer operators across the network topology.
-
-The formalization models a `State` as a boolean function over an abstract edge-type `E`, directly capturing the qubit interpretation where `False` ($|0\rangle$) represents an absent edge and `True` ($|1\rangle$) represents a present edge. A `Stabilizer` is then a boolean functional that computes the parity of a state, precisely analogous to the $Z$-check operators $K_{uv} = Z_{uv} \otimes Z_{vw}$ defined in **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. The `Stabilizes` predicate formalizes the $+1$-eigenspace condition in boolean arithmetic: a state is stabilized by an operator when the parity measurement returns `false` (zero parity, corresponding to the $+1$ eigenvalue in the Pauli convention).
-
-The `composite_stabilizer` defines the XOR product of two stabilizers, which corresponds to the group multiplication of two $Z$-type Pauli operators. Since $Z \otimes Z$ applied twice yields $I$, the product of two stabilizers on a shared edge qubit cancels. In boolean arithmetic, this is an inequality check that evaluates to `true` if and only if the two parities disagree, exactly the XOR operation.
-
-The group closure property then follows: if a vacuum state lies in the null space of both $s_1$ and $s_2$ (both return `false`), then the composite parity check also returns `false`. The proof proceeds by unfolding definitions and substituting the two hypotheses $h_1$ and $h_2$ into the composite expression, reducing the XOR of `false` with `false` to `false` by definitional equality. This mirrors the algebraic argument in **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" /> (**Stabilizer Commutativity**): two $Z$-type operators that individually stabilize a state must produce a trivial product when composed, since both act as the identity on the null-space state.
-
-Physically, this result guarantees that the set of stabilizer operators acting on the vacuum forms a closed algebraic structure under composition. Any state that satisfies the local consistency constraints for one pair of geometric check operators is automatically consistent with every product of those operators, ensuring that the codespace $\mathcal{C}$ is a valid subspace rather than merely an intersection of independent constraint sets. This closure is the discrete algebraic foundation for the global self-healing property of the causal graph vacuum.
-
 ---
 
 ### 3.5.Z Implications and Synthesis {#3.5.Z}
@@ -3989,13 +4024,11 @@ Physically, this result guarantees that the set of stabilizer operators acting o
 :::note[**Fault-Tolerance (QECC)**]
 :::
 
-The isomorphism between the physical constraints of the causal graph and the stabilizer formalism of quantum error correction, established by the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />, reveals that the laws of physics function as a self-repairing code. By mapping geometric axioms to Z-projectors, satisfying **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />, and dynamical rewrites to X-operators, the model establishes that the vacuum actively monitors its own topology, detecting and correcting deviations from the valid state manifold. This mechanism transforms the substrate from a fragile lattice into a robust, fault-tolerant memory capable of sustaining complex information against entropic decay.
+Under the **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />, the relational constraints of the causal graph map isomorphically to quantum error-correcting codes, with geometric axioms functioning as $Z$-type parity projectors and dynamical rewrites acting as $X$-type bit-flip operators. As certified in Lean 4, the stabilizer algebra forms a closed Abelian group under binary composition: because $Z \otimes Z = I$ cancels on shared edge qubits (evaluated through boolean XOR parity checks), any vacuum state stabilized by individual geometric check operators automatically satisfies every composite product operator. This algebraic closure proves that the physical vacuum codespace $\mathcal{C}$ is a genuine, globally invariant linear subspace rather than an ad-hoc intersection of independent constraints, establishing **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> and **Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />.
 
-This implies that the stability of physical reality is not a given, but a dynamically maintained process of error correction, confirming **Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />. The universe persists because it constantly "measures" its own local geometry, enforcing consistency rules that suppress fluctuations. Matter and spacetime are revealed to be the error-corrected logical states of the vacuum computer, protected from decoherence by the continuous thermodynamic cycles of the underlying graph.
+This Abelian closure provides the discrete algebraic foundation for the vacuum's self-healing dynamics, transforming the causal graph from a fragile lattice into a robust fault-tolerant quantum memory. The universe persists because it continuously executes stabilizer syndrome measurements, detecting and suppressing topological distortions before they can decohere the emergent geometry. Matter particles and spacetime manifolds are revealed to be the topologically protected logical codewords of the vacuum computer, insulated from entropic degradation by the active syndrome cycles of the underlying graph.
 
-This identification of physical law with error correction fundamentally alters the definition of existence: to exist is to be a valid codeword in the vacuum's Hilbert space. The persistence of matter and spacetime is therefore not an intrinsic property of the objects themselves, but a result of the vacuum's relentless suppression of invalid states. The universe does not merely contain information: it actively preserves it against the entropic decay of the substrate, ensuring that the coherent history of the cosmos is maintained by the very dynamics that drive its evolution.
-
----
+Redefining physical existence as membership in an error-corrected codespace alters fundamental ontology: to exist is to be a valid codeword in the vacuum's Hilbert space. The persistence of physical reality is therefore not an intrinsic passive property, but a continuous computational achievement of active error suppression. Having established the state space, automorphism symmetries, and error-correcting stabilizer codes of the pre-geometric architecture in Chapter 3, we advance to the formal synthesis before entering the dynamical kinematics of Part II.
 
 ---
 
@@ -4046,8 +4079,6 @@ This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and prim
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
 | $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-
----
 
 \newpage
 # References

@@ -85,6 +85,8 @@ The morphisms in $\mathbf{Hist}$ are strict inclusion maps. The structure of the
 
 This formulation acts as a rigorous safeguard against retrocausality. Because every valid evolution must be a morphism in $\mathbf{Hist}$, it is mathematically impossible for the system to "rewrite" a lower timestamp or alter the connectivity of a prior epoch. The arrow of time is thus encoded structurally into the **Historical Category** <Ref id="4.1.2" label="§4.1.2" /> itself. The physical universe "forgets" edges in the active spatial manifold $G_t$ to prevent the Small-World Catastrophe, but the mathematical trajectory $\mathcal{H}_t$ retains the permanent "scar" of every interaction, ensuring the causal pedigree of the cosmos remains invariant.
 
+---
+
 ### 4.1.3 Lemma: Orthogonality of Kinematic and Historical State {#4.1.3}
 
 :::info[**Resolution of Topological Deletion through History-Respecting Embeddings**]
@@ -190,8 +192,6 @@ The verification that the internal and historical structures function as categor
 This implies that the dynamical process itself is a directed sequence of morphisms within the historical category, preserving the **Orthogonality of Kinematic and Historical State** <Ref id="4.1.3" label="§4.1.3" />. Each arrow connects one state to the next while inheriting the full temporal constraints, preventing retrocausal loops or undefined transitions. However, extracting the internal causal influences requires a compatible slicing mechanism to restrict embeddings to local paths without introducing gaps.
 
 The categorical syntax establishes a "block universe" that is built dynamically rather than existing eternally. By defining history as a cumulative sequence of embeddings, we ensure that the past is structurally conserved within the present, providing a robust mathematical basis for the arrow of time. This formalism prevents the "rewriting" of history, as valid morphisms must respect the established timestamp order, thereby encoding the irreversibility of physical events directly into the **Historical Category** <Ref id="4.1.2" label="§4.1.2" /> of the state space.
-
----
 
 ---
 
@@ -946,8 +946,6 @@ The mathematical validation of these categories transforms the graph from a stat
 
 ---
 
----
-
 ## 4.3 Awareness Layer {#4.3}
 
 Imagine a causal graph poised at the threshold of change with its paths and cycles laden with both compliant influences and latent tensions. We must determine how the system itself detects these internal strains to identify valid sites for expansion without stepping outside the universe to look. This self-reference requirement forces us to define a mechanism for introspection that is internal to the graph to allow the universe to assess its configuration without violating the principle of background independence.
@@ -1100,8 +1098,6 @@ This meta-checking capability establishes the foundation for physical robustness
 :::
 
 Given the triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$, the following holds: this triplet is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. In particular, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
-
----
 
 ### 4.3.5.1 Commentary: Argument Outline {#4.3.5.1}
 
@@ -1460,6 +1456,8 @@ Satisfying these comonadic axioms is locked by structural type geometry, guarant
       PATH 2 (Right-Down): Duplicate, then Duplicate Outer.
       RESULT: The square commutes. Diagnosis is consistent depth-wise.
 ```
+
+---
 
 ### 4.3.9 Lemma: Algebraic Rigidity of the Annotation Map {#4.3.9}
 
@@ -1845,31 +1843,29 @@ The realization of the awareness layer as a comonad integrates the concept of ob
 
 ---
 
----
-
 ## 4.4 Thermodynamic Foundations {#4.4}
 
-The awareness layer illuminates local syndromes but we must calibrate the energetic scales that govern the system's response to these signals to prevent the dynamics from becoming arbitrary. We face the challenge of determining the precise threshold where the resolution of a defect becomes thermodynamically favorable to establish a physical basis for evolution. We are forced to derive the fundamental constants of the vacuum from first principles rather than arbitrary fitting parameters to ensure that the engine respects the limits of information processing. This calibration demands that we equate the abstract cost of a logical decision with the physical cost of energy expenditure.
+The awareness layer illuminates local syndromes across the graph substrate, but we must calibrate the energetic scales that govern the system's dynamical response to these signals to prevent graph rewriting from becoming arbitrary. We face the challenge of determining the precise thresholds where the resolution of a defect or the closure of a cycle becomes thermodynamically favorable, establishing a rigorous physical baseline for causal evolution. We derive the five fundamental constitutive scales of the vacuum from discrete combinatorial conservation principles, discrete port equipartition, and local fiber maximum entropy on the integer counting lattice $\mathbb{Z}$, ensuring that the constructor operates at the boundary of information-theoretic optimality.
 
-Calibrating the system with arbitrary constants inevitably leads to a universe that either freezes into stasis due to excessive barriers or explodes into noise due to unrestrained growth. A temperature set too low creates an insurmountable energy barrier for structure formation and leaves the universe as a featureless frozen void incapable of supporting complexity. Conversely a temperature set too high allows the entropic drive to overwhelm structural constraints and dissolves the graph into a chaotic soup of random connections where no persistent forms can survive known as an ultraviolet catastrophe of connectivity. A theory dependent on magic numbers to avoid these fates fails to explain the origin of the fine-tuning required for a habitable cosmos and leaves the stability of the vacuum as an unexplained coincidence.
+Calibrating the system with arbitrary constants inevitably leads to a universe that either freezes into stasis due to excessive barriers or explodes into noise due to unrestrained growth. A temperature set too low creates an insurmountable energy barrier for structure formation, trapping the substrate in an inert pre-geometric void. Conversely, a temperature set too high allows the entropic drive to overwhelm structural constraints, dissolving the graph into a chaotic soup of random connections where no persistent forms can survive, known as an ultraviolet catastrophe of connectivity. A theory dependent on arbitrary fitting parameters fails to explain the physical origin of stability, leaving the emergence of spacetime as an unexplained coincidence.
 
-We resolve this scaling problem by deriving the vacuum temperature $T = \ln 2$ from the principle of bit-nat equivalence where the information content of one bit equals the thermal energy of one nat. We determine the geometric self-energy $\epsilon_{geo}$ by distributing this energy across the effective dimensions of the manifold and establish the coefficients of catalysis and friction as statistical responses to local stress. These derivations ground the dynamics in the iron laws of thermodynamics and ensure that the universe operates at the precise critical point where information creation is energetically neutral and allows structure to emerge naturally from the vacuum.
+We resolve this calibration challenge by deriving the vacuum temperature $T_c = \ln 2$ from Landauer bit-nat equivalence, where the information content of one bit equals the thermal energy of one nat. We determine the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ by distributing the loop-closure energy uniformly across the $k_{\mathrm{deg}}=3$ incident topological routing ports of the regular Bethe substrate. We establish the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$ across the 6-port triad interaction boundary, derive the Arrhenius defect relaxation constant $\lambda_0 = e - 1$ as the unique linear Markov jump generator preserving move additivity, and fix the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$ from discrete Poisson summation on the 1D integer counting fiber $\mathbb{Z}$.
 
 ---
 
 ### 4.4.1 Theorem: Thermodynamic Foundations {#4.4.1}
 
-:::info[**Calibration of the Causal Graph via Information-Theoretic and Thermodynamic Equivalence**]
+:::info[**Calibration of the Causal Graph via Information-Theoretic and Discrete Combinatorial Equivalence**]
 :::
 
-Given the thermodynamic representation of the causal graph, the following holds: the fundamental constants of the vacuum, consisting of the critical temperature $T$, the geometric self-energy $\epsilon_{geo}$, the catalysis coefficient $c_{cat}$, and the friction coefficient $f_{fric}$, are uniquely determined from the information-theoretic equivalence of bits and nats and the local entropic pressure of loop closures.
+Given the thermodynamic representation of the causal graph, the following holds: the five fundamental constitutive scales of the vacuum, consisting of the critical temperature $T_c = \ln 2$, the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$, the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$, the Arrhenius defect relaxation constant $\lambda_0 = e - 1$, and the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$, are uniquely determined from discrete combinatorial conservation principles, discrete incident port equipartition, and local fiber maximum entropy on the integer counting lattice $\mathbb{Z}$.
 
 ### 4.4.1.1 Commentary: Argument Outline {#4.4.1.1}
 
 :::tip[**Structure of the Thermodynamic Foundations Argument via Bit-Nat Equivalence, Entropy of Closure, Dimensional Equipartition, Self-Energy, Catalysis, and Friction**]
 :::
 
-The proof proceeds by construction, deriving the constants of the vacuum from information-theoretic first principles and local entropic bounds to establish a self-consistent thermodynamic baseline for graph evolution.
+The proof proceeds by direct construction, deriving the five constitutive scales of the vacuum from information-theoretic first principles, discrete graph symmetries, and local entropic bounds to establish a self-consistent thermodynamic baseline for graph evolution.
 
 ```text
 • 4.4.1 Theorem Thermodynamic Foundations  [by construction]
@@ -1903,160 +1899,158 @@ The proof proceeds by construction, deriving the constants of the vacuum from in
 └── 4.4.8 Proof: Thermodynamic Foundations
 ```
 
+---
+
 ### 4.4.2 Lemma: Bit-Nat Equivalence {#4.4.2}
 
-:::info[**Derivation of the vacuum temperature via information-theoretic energy equivalence**]
+:::info[**Derivation of the Vacuum Temperature via Information-Theoretic Energy Equivalence**]
 :::
 
-Given the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales, designated $T$, the following holds: $T$ constitutes the dimensionless constant $T = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision; moreover, this value establishes the thermodynamic threshold for information stability against thermal erasure.
+Given the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales, designated $T_c$, the following holds: $T_c$ constitutes the dimensionless constant $T_c = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision ($\Delta F = 0$).
 
 ### 4.4.2.1 Proof: Bit-Nat Equivalence {#4.4.2.1}
 
-:::tip[**Formal Derivation of the Critical Scale from Bit-Nat Equivalence**]
+:::tip[**Formal Derivation of the Critical Scale via Bit-Nat Equivalence and Landauer Neutrality**]
 :::
 
-**I. Statistical Mechanical Setup**
+**I. Statistical Mechanical Canonical Ensemble**
 
-Let the vacuum be modeled as a canonical ensemble, evaluated for **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> under the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. The probability $P(\omega)$ of observing a specific microstate $\omega$ with internal energy $E(\omega)$ follows the exponential law:
-
-$$
-P(\omega) = \frac{1}{Z} \exp \left( -\frac{E(\omega)}{k_B T} \right)
-$$
-
-The adoption of natural units establishes the Boltzmann constant as unity ($k_B = 1$). Consequently, the relative probability weight of a fluctuation with energy cost $\Delta E$ scales as $\exp(-\Delta E/T)$.
-
-**II. Derivation of the Entropic Quantum**
-
-Let the creation of an elementary causal relation be defined by the reduction of local uncertainty, corresponding to the selection of a specific configuration from the binary phase space. The multiplicity of the initial binary state is $\Omega_{initial} = 2$, and the multiplicity of the final realized state is $\Omega_{final} = 1$. The change in entropy $\Delta S$ evaluates to:
+Let the vacuum substrate be modeled as a canonical ensemble evaluated under the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> and **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. The probability $P(\omega)$ of observing a specific relational microstate $\omega$ with internal energy $E(\omega)$ follows the canonical Gibbs distribution:
 
 $$
-\Delta S_{bit} = \ln(\Omega_{initial}) - \ln(\Omega_{final}) = \ln 2
+P(\omega) = \frac{1}{Z} \exp \left( -\frac{E(\omega)}{k_B T} \right).
 $$
 
-This quantity, $S_{bit} = \ln 2$, represents the irreducible entropic magnitude of a single bit expressed in thermodynamic units (nats).
+Setting natural informational units fixes the Boltzmann constant to unity ($k_B = 1$). Consequently, the relative statistical weight of a state fluctuation with energetic cost $\Delta E$ scales as $\exp(-\Delta E/T)$.
 
-**III. Free Energy Analysis**
+**II. Landauer Entropic Quantum**
 
-The thermodynamic favorability of structure formation is governed by the change in Helmholtz Free Energy $\Delta F = \Delta U - T \Delta S$. In the pre-geometric limit, the internal energy cost associated with the topological existence of a relation vanishes ($\Delta U = 0$). Substituting the vacuum condition and the derived bit entropy into the free energy equation yields the potential:
-
-$$
-\Delta F(T) = 0 - T (\ln 2) = -T \ln 2
-$$
-
-This relation implies that spontaneous formation is thermodynamically favored ($\Delta F < 0$) at any positive temperature. However, to sustain the bit against thermal fluctuations and erasure, the thermal energy scale must match the informational content.
-
-**IV. Determination of the Critical Scale**
-
-The critical temperature $T_c$ is defined as the scale at which the thermal energy quantum provided by the vacuum bath exactly balances the energetic equivalent of the bit entropy. Let $E_{therm}$ denote the fundamental quantum of thermal energy per degree of freedom:
+Let the creation of an elementary causal relation be defined by the reduction of local binary uncertainty, selecting a specific realized configuration from a two-state phase space. The multiplicity of the unconstrained binary state is $\Omega_{\mathrm{initial}} = 2$, and the multiplicity of the selected state is $\Omega_{\mathrm{final}} = 1$. The change in entropy $\Delta S$ evaluates to:
 
 $$
-E_{therm} = k_B T \cdot 1 = T
+\Delta S_{\mathrm{bit}} = \ln(\Omega_{\mathrm{initial}}) - \ln(\Omega_{\mathrm{final}}) = \ln 2.
 $$
 
-Let $E_{info}$ denote the energetic equivalent of the binary entropy $S_{bit}$ assuming unit conversion efficiency:
+This quantity, $S_{\mathrm{bit}} = \ln 2\text{ nats} \equiv 1\text{ bit}$, represents the irreducible entropic magnitude of a single bit expressed in thermodynamic units (nats).
+
+**III. Helmholtz Free Energy Neutrality**
+
+The thermodynamic favorability of structure formation is governed by the change in Helmholtz Free Energy $\Delta F = \Delta U - T \Delta S$. In the relational ground state, the bare internal energy cost associated with creating an elementary causal edge vanishes ($\Delta U = 0$). Substituting the vacuum condition and the derived bit entropy into the free energy equation yields:
 
 $$
-E_{info} = 1 \cdot S_{bit} = \ln 2
+\Delta F(T) = 0 - T (\ln 2) = -T \ln 2.
 $$
 
-Equating the thermal quantum to the information quantum yields the stability threshold:
+Spontaneous edge creation is thermodynamically favored ($\Delta F < 0$) at any positive temperature. To sustain the discrete distinction against thermal fluctuations and erasure without energetic dissipation, the thermal background energy scale must match the informational content.
+
+**IV. Determination of the Critical Vacuum Temperature**
+
+The critical temperature $T_c$ is defined as the scale at which the thermal energy quantum provided by the vacuum bath exactly balances the energetic equivalent of the bit entropy. Let $E_{\mathrm{therm}}$ denote the fundamental quantum of thermal energy per degree of freedom:
 
 $$
-T_c = \ln 2
+E_{\mathrm{therm}} = k_B T \cdot 1 = T.
 $$
 
-At this temperature, the thermal background energy is strictly sufficient to encode one bit of information.
+Let $E_{\mathrm{info}}$ denote the energetic equivalent of the binary entropy $S_{\mathrm{bit}}$ under unit conversion efficiency:
 
-**V. Conclusion**
+$$
+E_{\mathrm{info}} = 1 \cdot S_{\mathrm{bit}} = \ln 2.
+$$
 
-The temperature $T = \ln 2$ aligns the continuous thermodynamic scale with the discrete logic of the bit. We conclude that this constant constitutes the fundamental temperature of the vacuum.
+Equating the thermal quantum to the information quantum yields the unique critical vacuum temperature:
+
+$$
+T_c = \ln 2.
+$$
+
+At this temperature, the thermal background energy is strictly sufficient to instantiate one bit of information with marginal thermodynamic neutrality ($\Delta F = 0$).
+
+**V. Formal Conclusion**
+
+We conclude that the dimensionless temperature $T_c = \ln 2$ aligns continuous thermodynamics with discrete binary logic, establishing the fundamental thermal scale of the vacuum.
 
 Q.E.D.
 
 ### 4.4.2.2 Commentary: Currency of Structure {#4.4.2.2}
 
-:::info[**Physical Interpretation of T = ln 2**]
+:::info[**Physical Interpretation of Vacuum Temperature as an Information-Theoretic Conversion Factor**]
 :::
 
-In standard statistical mechanics, temperature ($T$) is typically conceptualized as a measure of kinetic vibration, the mean energy of particles jiggling within a box. However, in the context of a discrete relational universe, this intuition must be discarded. Here, temperature functions as a dimensionless conversion factor between two distinct ontological currencies: **Information** (measured in bits) and **Thermodynamics** (measured in nats of free energy). This derivation is rooted in the principle that "Information is Physical" as articulated by <Cite id="A.39" label="(Landauer, 1991)" />, who demonstrated that the erasure of information carries an unavoidable energetic cost. We invert this logic to define the vacuum temperature as the precise scale where the energetic *creation* of a bit is exactly balanced by its entropic value.
+In standard statistical mechanics, temperature is conceptualized as a measure of kinetic vibration, quantifying the mean thermal energy of particles moving in a continuous container. In a discrete relational universe, this continuous intuition is replaced by an informational perspective. Temperature functions as a dimensionless conversion factor between two distinct physical representations: information measured in discrete bits and thermodynamics measured in nats of free energy. This derivation grounds the dynamics in Landauer's principle, establishing that the physical instantiation of a binary distinction carries an unavoidable entropic equivalent.
 
-The value $T_c = \ln 2$ anchors the universe to a precise "critical point" where this specific temperature, the energy required to thermally instantiate a degree of freedom ($E = k_B T$), is exactly equal to the entropic gain of creating a binary distinction ($S = \ln 2$). This equality implies that the creation of structure is thermodynamically neutral at the margin. If $T$ were lower than $\ln 2$, the energy cost would exceed the entropic benefit, suppressing creation and leading to a frozen, empty universe (a "Heat Death" at birth). If $T$ were higher, the entropic drive would overwhelm the energy cost, leading to an exponentially explosive proliferation of random edges (a "Ultraviolet Catastrophe" of noise).
-
-Setting $T = \ln 2$ renders the vacuum "permeable" to geometry. It allows causal relations to form with zero net free energy cost, driven solely by the combinatorial expansion of the phase space. This condition is what permits the universe to bootstrap itself from nothingness: structure emerges because it is "free" in the thermodynamic sense, transforming the vacuum from a void into a superfluid of potentiality.
+The critical value $T_c = \ln 2$ anchors the universe to a precise marginal stability threshold. At this temperature, the energy required to thermally excite a degree of freedom matches the entropic gain of creating a binary distinction. This equality implies that structure creation is thermodynamically neutral at the margin. If $T$ were lower than $\ln 2$, the energy barrier would suppress new relations, freezing the substrate in an inert state. If $T$ were higher, entropic pressure would overwhelm structural constraints, driving an explosive proliferation of random edges. Setting $T_c = \ln 2$ renders the vacuum permeable to geometry, permitting causal relations to nucleate without external energetic pumping.
 
 ---
 
 ### 4.4.3 Lemma: Entropy of Closure {#4.4.3}
 
-:::info[**Existence via Local Relational Entropy Increase**]
+:::info[**Existence via Local Relational Entropy Increase in Directed Cycle Formation**]
 :::
 
-Let the closure of a **2-Path** <Ref id="1.2.5" label="§1.2.5" /> form a cycle within the causal graph. The resulting **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> has a local relational entropy of $\Delta S = \ln 2$ nats, which corresponds to the doubling of path multiplicity in the local phase space.
+Let the closure of a **2-path** form a directed **3-cycle** within the causal graph. Then the resulting **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> exhibits a local relational entropy increase of $\Delta S_{\mathrm{close}} = \ln 2$ nats, corresponding to the doubling of path multiplicity in the local phase space ($\Omega_{\mathrm{closed}} / \Omega_{\mathrm{open}} = 2$).
 
 ### 4.4.3.1 Proof: Entropy of Closure {#4.4.3.1}
 
-:::tip[**Derivation via Causal Path Multiplicity**]
+:::tip[**Derivation of Loop Closure Entropy via Causal Path Multiplicity and Topological Bifurcation**]
 :::
 
-The relational ensemble partitions configurations by equivalence classes under the effective influence relation $\le$. The entropy is defined by the log-volume of the path space.
+**I. Pre-Closure Phase Space Configuration**
 
-**I. Pre-Closure Phase Space ($\Omega_{open}$)**
+Let $\pi = (v \to w \to u)$ denote a compliant **2-path** site on the sparse vacuum graph $G_0$, satisfying the Parent-Uniqueness Condition under **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. The local phase space consists of the established influence relations among $\{u, v, w\}$:
 
-Let $\pi = (v \to w \to u)$ denote a compliant 2-path site in the sparse vacuum graph $G_0$, satisfying the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />. The local phase space, evaluated for **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, consists of the established influence relations among $\{u, v, w\}$:
+1. The relation $v \le w$ is realized by the unique edge $(v, w)$ with multiplicity $k=1$.
+2. The relation $w \le u$ is realized by the unique edge $(w, u)$ with multiplicity $k=1$.
+3. The relation $v \le u$ is realized by the unique path $(v, w, u)$ with multiplicity $k=1$.
 
-1.  **Relation $v \le w$:** Realized by unique edge $(v, w)$ with multiplicity $k=1$.
-2.  **Relation $w \le u$:** Realized by unique edge $(w, u)$ with multiplicity $k=1$.
-3.  **Relation $v \le u$:** Realized by unique path $(v, w, u)$ with multiplicity $k=1$.
-
-The total phase volume is defined by the product of multiplicities:
+The total pre-closure phase volume evaluates to:
 
 $$
-\Omega_{open} = 1 \cdot 1 \cdot 1 = 1
+\Omega_{\mathrm{open}} = 1 \cdot 1 \cdot 1 = 1.
 $$
 
-The baseline entropy is $S_{open} = \ln(\Omega_{open}) = 0$.
+The baseline pre-closure entropy is $S_{\mathrm{open}} = \ln(\Omega_{\mathrm{open}}) = \ln(1) = 0$.
 
-**II. Post-Closure Phase Space ($\Omega_{closed}$)**
+**II. Post-Closure Phase Space Bifurcation**
 
-The addition of the direct edge $e_{new} = (u, v)$ by the rewrite rule $\mathcal{R}$ forms the 3-cycle $C = v \to w \to u \to v$. The influence structure admits a bifurcation:
+The insertion of the directed chord edge $e_{\mathrm{new}} = (u, v)$ by the rewrite rule completes the directed **3-cycle** $C = v \to w \to u \to v$. The local influence structure admits a topological bifurcation:
 
-1.  **New Relation:** The relation $u \le v$ is established via $e_{new}$ with multiplicity $k_{uv} = 1$.
-2.  **Topological Duality:** The closure creates a non-trivial fundamental group $\pi_1(G) \neq 0$. A distinction exists between the direct influence $u \le v$ and the pre-existing mediated influence $v \le u$.
+1. The direct relation $u \le v$ is established via $e_{\mathrm{new}}$ with multiplicity $k_{uv} = 1$.
+2. The cycle creates a non-trivial fundamental group ($\pi_1(G) \neq 0$). A physical distinction exists between the direct influence $u \le v$ and the pre-existing mediated influence $v \le u$.
 
-The cycle introduces a binary degree of freedom: the orientation of the loop (or the presence/absence of the hole in the geometric complex). The number of distinct topological microstates doubles:
-
-$$
-\Omega_{closed} = 2 \cdot \Omega_{open} = 2
-$$
-
-**III. Entropy Calculation**
-
-The change in entropy is the log-ratio of the phase volumes:
+The cycle introduces a binary topological distinction, doubling the number of distinct relational microstates:
 
 $$
-\Delta S = \ln \left( \frac{\Omega_{closed}}{\Omega_{open}} \right) = \ln 2
+\Omega_{\mathrm{closed}} = 2 \cdot \Omega_{\mathrm{open}} = 2.
 $$
 
-**IV. Conclusion**
+**III. Evaluation of Relational Entropy Increase**
 
-We conclude that $\Delta S = \ln 2$ nats quantifies the bifurcation from a simply connected topology to a multiply connected topology.
+The change in local relational entropy is the log-ratio of the phase space volumes:
+
+$$
+\Delta S_{\mathrm{close}} = \ln \left( \frac{\Omega_{\mathrm{closed}}}{\Omega_{\mathrm{open}}} \right) = \ln 2\text{ nats} \equiv 1\text{ bit}.
+$$
+
+Under Metropolis-Hastings acceptance at critical temperature $T_c = \ln 2$, this entropic increase yields the baseline addition rate $P_{\mathrm{add}} = \min(1, \mathrm{e}^{\Delta S_{\mathrm{close}}}) = 1.0$.
+
+**IV. Formal Conclusion**
+
+We conclude that the closure of a directed **3-cycle** releases exactly $\Delta S_{\mathrm{close}} = \ln 2$ nats of local relational entropy into the network.
 
 Q.E.D.
 
 ### 4.4.3.2 Commentary: Relational Entropy {#4.4.3.2}
 
-:::info[**Stochastic Resolution of Relational Loop Closure in Causal Dynamics**]
+:::info[**Thermodynamic Driving Force of Relational Loop Closure in Causal Dynamics**]
 :::
 
-Relational entropy quantifies the thermodynamic information gain associated with cycle closure across the pre-geometric causal graph. Closing a directed **3-cycle** transforms open, unconstrained path sequences into a localized, bound state of causal flux. This topological transition releases a discrete quantity of entropic pressure, precisely evaluated as $\Delta S = \ln 2$ nats, establishing the microscopic information floor for spatial area creation across the network.
+Relational entropy quantifies the thermodynamic information gain associated with cycle closure across the pre-geometric causal graph. Closing a directed **3-cycle** transforms open, unconstrained path sequences into a localized, bound state of causal flux. This topological transition releases a discrete quantity of entropic pressure, precisely evaluated as $\Delta S_{\mathrm{close}} = \ln 2$ nats, establishing the microscopic information floor for spatial area creation across the network.
 
-This entropy of closure provides the thermodynamic driving force for spatial geometry emergence, structural stability, and gravitational attraction. By favoring configurations that maximize local relational entropy, the system naturally drives graph rewrites toward cycle formation. Relational loop closure acts as an entropic engine that binds discrete topological vertices into stable, low-dimensional spatial patches, establishing the pre-geometric origin of spacetime curvature.
-
----
+This entropy of closure provides the thermodynamic driving force for spatial geometry emergence, structural stability, and curvature localization. By favoring configurations that maximize local relational entropy, the system naturally drives graph rewrites toward cycle formation. Relational loop closure acts as an entropic engine that binds discrete topological vertices into stable, low-dimensional spatial patches, establishing the pre-geometric origin of metric connectivity.
 
 ### 4.4.3.3 Calculation: Entropy Simulation {#4.4.3.3}
 
-:::note[**Computational Verification through Local Entropy Gain**]
+:::note[**Computational Verification of Local Entropy Gain via Relational Path Multiplicity**]
 :::
 
 Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following protocols:
@@ -2123,255 +2117,275 @@ Exact match:                       True
 **Conclusion:**
 The output confirms that the entropy gain $\Delta S = 0.693147$ matches the theoretical target $\ln 2$ exactly. This gain arises deterministically from the topological bifurcation: closure doubles the forward multiplicity (mediated path + cycle-degenerate representation) while introducing the first reverse path, yielding a product increase from 0 to 2. This verifies that structural closure acts as a hard entropic driver independent of specific graph geometry.
 
-
 ---
 
 ### 4.4.4 Lemma: Dimensional Equipartition {#4.4.4}
 
-:::info[**Isotropic Distribution via Vacuum Energy**]
+:::info[**Discrete Port Equipartition of Loop-Closure Self-Energy via Coordination Degree**]
 :::
 
-Let $E_{total}$ denote the energy associated with a geometric quantum partitioning across effective degrees of freedom. Then the distribution is isotropic across exactly $d=4$ dimensions satisfying **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />; moreover, the vacuum energy density is uniform with respect to the emergent spacetime metric.
+Let the total relational energy required to instantiate an elementary **3-cycle** defect be $E_{\mathrm{total}} = T_c \cdot \Delta S_{\mathrm{close}} = \ln 2$. Then on the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> with coordination degree $k_{\mathrm{deg}} = 3$, discrete equipartition allocates this energy uniformly across all **3** incident topological routing ports, yielding a discrete channel self-energy of $\varepsilon_{\mathrm{geo}} = \frac{E_{\mathrm{total}}}{k_{\mathrm{deg}}} = \frac{\ln 2}{3} \approx 0.231049$.
 
 ### 4.4.4.1 Proof: Dimensional Equipartition {#4.4.4.1}
 
-:::tip[**Application of the Equipartition Theorem via Dimensional Equipartition**]
+:::tip[**Derivation of Discrete Port Self-Energy via Incident Coordination Channel Equipartition**]
 :::
 
-**I. Energy Distribution Principle**
+**I. Total Relational Defect Energy**
 
-The total energy of a system in thermal equilibrium partitions equally among independent quadratic degrees of freedom.
-
-$$
-E_{mode} = \frac{1}{2} k_B T_{eff} \quad \text{(Classical)}
-$$
-
-The total energy $E_{total}$ distributes uniformly over the available macroscopic dimensions in the discrete vacuum, satisfying **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />.
-
-**II. Dimensionality Postulate**
-
-The emergent spacetime manifold exhibits $d=4$ macroscopic dimensions. This dimensionality is established in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
-
-**III. Isotropy Constraint**
-
-Any energy $E_{total}$ injected into the vacuum to sustain a quantum distributes among these modes to maintain isotropy and Lorentz invariance.
-1.  **Spatial Concentration ($d=3$):** Localization in spatial modes alone would create a preferred foliation, violating background independence.
-2.  **Temporal Concentration ($d=1$):** Localization in the temporal mode alone would decouple time from space, freezing evolution.
-
-**IV. Energy per Degree of Freedom**
-
-Let $\epsilon$ denote the energy per degree of freedom.
+Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, instantiating an elementary directed **3-cycle** defect incurs an entropic change of $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ at vacuum temperature $T_c = \ln 2$. The total relational energy associated with the loop closure evaluates to:
 
 $$
-E_{total} = \sum_{i=1}^d \epsilon_i
+E_{\mathrm{total}} = T_c \cdot \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
 $$
 
-For $d=4$, isotropy implies $\epsilon_i = \epsilon$ for all $i$.
+**II. Discrete Substrate Coordination**
+
+On the pre-geometric substrate $G_0$, internal vertices follow the regular trivalent coordination structure established in **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />. Each internal vertex possesses $d_{\mathrm{in}}(v) = 1$ incoming parent edge and $d_{\mathrm{out}}(v) = 2$ outgoing child edges. The total number of incident routing channels per internal vertex evaluates to:
 
 $$
-\epsilon = \frac{E_{total}}{4}
+k_{\mathrm{deg}} = d_{\mathrm{in}}(v) + d_{\mathrm{out}}(v) = 1 + 2 = 3.
 $$
+
+This trivalent coordination degree is invariant across all internal vertices of the substrate.
+
+**III. Discrete Microcanonical Equipartition Principle**
+
+In the absence of preferred spatial directions, background independence requires the total loop-closure energy $E_{\mathrm{total}}$ to partition uniformly among all available incident routing ports. Each topological routing channel constitutes an independent degree of freedom for causal propagation under **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />.
+
+**IV. Evaluation of Channel Self-Energy**
+
+Allocating the total energy $E_{\mathrm{total}} = \ln 2$ equally across the $k_{\mathrm{deg}} = 3$ incident topological routing ports yields the discrete channel self-energy:
+
+$$
+\varepsilon_{\mathrm{geo}} = \frac{E_{\mathrm{total}}}{k_{\mathrm{deg}}} = \frac{\ln 2}{3} \approx 0.231049.
+$$
+
+**V. Formal Conclusion**
+
+We conclude that $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ constitutes the unique discrete self-energy allocated to each incident topological routing channel on the trivalent vacuum substrate.
 
 Q.E.D.
 
 ### 4.4.4.2 Commentary: Dimensional Degrees {#4.4.4.2}
 
-:::info[**Isotropic Partitioning of Vacuum Energy in Spacetime Dimensionality**]
+:::info[**Role of Discrete Incident Port Equipartition in Regulating Topological Energy Scales**]
 :::
 
-Dimensional equipartition establishes the uniform distribution of vacuum energy across the effective degrees of freedom of the emergent manifold. By partitioning local graph energy equally among four macroscopic dimensions, the thermodynamic structure prevents energy from concentrating in preferred spatial or temporal directions. This isotropic energy distribution enforces background independence, structural covariance, and Lorentz invariance at macroscopic physical scales across all sectors.
+Discrete incident port equipartition establishes the uniform distribution of vacuum self-energy across the active topological channels of the emergent manifold. By partitioning the elementary loop-closure energy $\ln 2$ equally among the three incident ports of each trivalent vertex ($k_{\mathrm{deg}}=3$), the thermodynamic structure prevents energy from concentrating in asymmetric routing paths. This uniform distribution enforces covariance and background independence across the discrete substrate.
 
-Equipartition plays a crucial role in stabilizing spacetime dimensionality across cosmic epochs. If vacuum energy partitioned unequally, local graph regions would undergo runaway dimensional expansion or collapse into hyper-connected, high-dimensional topological handles. Dimensional equipartition regulates vertex coordination and maintains **Ahlfors 4-regularity**, ensuring that the macroscopic limit of the relational graph converges to a smooth, four-dimensional spacetime manifold.
+Equipartition plays a fundamental role in setting the energy scale $\varepsilon_{\mathrm{geo}} \approx 0.231049$. This value represents the exact energetic cost required to maintain an active geometric channel without causing local graph congestion. If $\varepsilon_{\mathrm{geo}}$ were higher, the high channel cost would suppress cycle nucleation, trapping the network in an inert state. If $\varepsilon_{\mathrm{geo}}$ were lower, channels would proliferate without energetic penalty, destabilizing the degree regularity of the graph. Dividing by three reflects the intrinsic trivalent coordination of the pre-geometric Bethe vacuum.
 
 ---
 
 ### 4.4.5 Lemma: Geometric Self-Energy {#4.4.5}
 
-:::info[**Derivation of the Cost of the Geometric Quantum from Geometric Self-Energy**]
+:::info[**Simplicial Interaction Boundary Permittivity via Triad Port Configuration Combinatorics**]
 :::
 
-Given the requirements of structural stabilization, the following holds: the **Geometric Self-Energy** $\epsilon_{geo}$ of a closed 3-cycle is uniquely determined as $\epsilon_{geo} = \frac{\ln 2}{4}$, representing the uniform distribution of the critical loop-closure energy across the four effective dimensions of the manifold.
+Let an elementary **3-cycle** defect comprise **3** trivalent vertices on the $k_{\mathrm{deg}} = 3$ substrate. Then each vertex contributes $k_{\mathrm{deg}} - 1 = 2$ external routing channels, establishing a simplicial interaction boundary of $V_{\mathrm{int}} = 3 \times 2 = 6$ binary routing ports, and the unconditioned concurrent alignment probability is uniquely $\Lambda_{\mathrm{theory}} = (1/2)^6 = 2^{-6} = \frac{1}{64} = 0.015625$.
 
 ### 4.4.5.1 Proof: Geometric Self-Energy {#4.4.5.1}
 
-:::tip[**Combination of Temperature, Entropy, via Dimensionality**]
+:::tip[**Derivation of Simplicial Permittivity via Interaction Boundary Combinatorics**]
 :::
 
-**I. Temperature**
+**I. Simplicial Defect Boundary Geometry**
 
-From **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, the conversion factor is $T = \ln 2$.
+Let an elementary directed **3-cycle** $C = \{(u, v), (v, w), (w, u)\}$ be embedded in the regular Bethe substrate under **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" /> with coordination degree $k_{\mathrm{deg}} = 3$. The defect occupies exactly $|V(C)| = 3$ vertices.
 
-**II. Entropy Unit**
+**II. Interaction Boundary Port Enumeration**
 
-From **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, the entropic content is 1 bit ($\Delta S = \ln 2$ nats).
-In the normalized energy calculation, the quantum count is $N = 1$.
-
-**III. Total Energy**
-
-The total energy $E_{total}$ is the thermal energy associated with one unit quantum at the critical temperature.
+At each constituent vertex $x \in V(C)$, exactly **2** incident edges are consumed by internal cycle connectivity (one incoming cycle edge and one outgoing cycle edge). Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the remaining incident capacity forms the external interaction boundary:
 
 $$
-E_{total} = T \cdot 1 = \ln 2
+\text{Ports per vertex} = k_{\mathrm{deg}} - 1 = 3 - 1 = 2.
 $$
 
-**IV. Distribution**
-
-From **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, this energy distributes across $d=4$ dimensions.
+Summing across all **3** constituent vertices, the total simplicial interaction volume evaluates to:
 
 $$
-\epsilon_{geo} = \frac{\ln 2}{4} \approx 0.1732
+V_{\mathrm{int}} = |V(C)| \times (k_{\mathrm{deg}} - 1) = 3 \times 2 = 6\text{ binary routing ports}.
 $$
+
+**III. Binary Configuration Permutations**
+
+Each external routing port independently admits a binary routing decision under symmetric baseline probability $p = 1/2$. For $V_{\mathrm{int}} = 6$ independent ports, the total configuration state space has volume:
+
+$$
+\Omega_{\mathrm{boundary}} = 2^{V_{\mathrm{int}}} = 2^6 = 64.
+$$
+
+**IV. Evaluation of Simplicial Permittivity**
+
+The unconditioned probability of concurrent structural alignment across the entire simplicial interaction boundary evaluates to:
+
+$$
+\Lambda_{\mathrm{theory}} = \left(\frac{1}{2}\right)^{V_{\mathrm{int}}} = 2^{-6} = \frac{1}{64} = 0.015625.
+$$
+
+**V. Operational Engine Status**
+
+In the unpumped microscopic rewrite engine, spontaneous background edge generation is disabled ($\Lambda_{\mathrm{micro}} \equiv 0$) under **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> to isolate pure absorbing-state dynamics. The quantity $\Lambda_{\mathrm{theory}} = 2^{-6}$ serves as the exact theoretical upper bound utilized in auxiliary driven continuum comparisons.
 
 Q.E.D.
 
 ### 4.4.5.2 Commentary: Tax on Structure {#4.4.5.2}
 
-:::info[**Structural Stability and Energy Scales**]
+:::info[**Physical Interpretation of Simplicial Permittivity in Driven Graph Regimes**]
 :::
 
-While the *creation* of a relation is entropically neutral at criticality (as established above), the *maintenance* of a stable geometric quantum (a closed $3$-cycle) requires a localized binding energy. This $\epsilon_{geo}$ effectively acts as the "mass" or "rest energy" of the spacetime atom. It is the cost the universe pays to keep a piece of geometry from dissolving back into the topological foam. This partition of energy aligns with the thermodynamic view of gravity proposed by Padmanabhan <Cite id="A.46" label="(Padmanabhan, 2009)" />, where the degrees of freedom associated with a horizon or bulk region scale with the available energy equipartitioned across the spatial dimensions.
+Simplicial permittivity quantifies the geometric cross-section of an elementary **3-cycle** defect interacting with the surrounding substrate. Because each trivalent vertex in a directed triad must route through two external channels, the complete boundary of the cycle exposes six binary interaction ports ($V_{\mathrm{int}} = 6$). This 6-port boundary forms a structural interface through which external causal influences couple to the internal degrees of freedom of the simplex.
 
-The derivation of $\epsilon_{geo} = \frac{\ln 2}{4}$ offers a profound insight into the dimensionality of spacetime. The division by $4$ arises from the equipartition of the creation energy across $d=4$ effective degrees of freedom, suggesting that the stability of our $3+1$ dimensional universe is intrinsic to the energy scales of its smallest components. If $\epsilon_{geo}$ were higher, the vacuum would be too "stiff". Structure would be prohibitively expensive and spacetime would likely collapse under its own weight or fail to inflate. If $\epsilon_{geo}$ were lower, the vacuum would be too "loose". Structures would lack the binding energy to resist thermal fluctuations, dissolving into uncoupled noise. The value $\approx 0.173$ represents a precise value where geometry is stable enough to persist as a manifold but fluid enough to evolve dynamically.
+The value $\Lambda_{\mathrm{theory}} = 2^{-6} = 0.015625$ represents the statistical likelihood that all six boundary channels simultaneously align to support an unconditioned creation event. In the unpumped simulation engine, setting $\Lambda_{\mathrm{micro}} \equiv 0$ guarantees that no edges form spontaneously without compliant **2-paths**, preserving the absorbing nature of the vacuum. When analyzing driven continuum regimes, $\Lambda_{\mathrm{theory}}$ provides the exact microscopic coupling constant governing vacuum polarization and background cosmological driving.
 
 ---
 
 ### 4.4.6 Lemma: Catalysis Coefficient {#4.4.6}
 
-:::info[**Entropic Rate Enhancement Coefficient via Catalysis Coefficient**]
+:::info[**Unique Linear Markov Jump Generator via Arrhenius Defect Relaxation and Move Additivity**]
 :::
 
-Let $\lambda_{cat}$ denote the catalysis coefficient for defect deletion rate enhancement. Then this coefficient satisfies the identity $\lambda_{cat} = e - 1 \approx 1.718$; moreover, the quantity $1 + \lambda_{cat}$ equals the Arrhenius expansion factor for the release of 1 nat of trapped entropy.
+Let an elementary **3-cycle** defect possess Landauer creation energy $E_{\mathrm{defect}} = T_c \cdot \Delta S_{\mathrm{close}} = \ln 2$ at vacuum temperature $T_c = \ln 2$. Then in the microscopic deletion kernel $Q_{\mathrm{del}}(s) = \frac{1}{2}(1 + \lambda s)\mathrm{e}^{-\mu s}$, the linear catalytic reaction velocity $(1 + \lambda s)$ is the unique infinitesimal Markov jump generator preserving move additivity and scheduler non-interference, and matching this generator at fundamental unit self-stress $s = 1$ to the discrete Arrhenius defect relaxation factor $\Omega_{\mathrm{released}}/\Omega_{\mathrm{bound}} = e^1$ uniquely determines $\lambda_0 = e - 1 \approx 1.718282$.
 
 ### 4.4.6.1 Proof: Catalysis Coefficient {#4.4.6.1}
 
-:::tip[**Calculation via Arrhenius Factor**]
+:::tip[**Derivation of the Catalytic Relaxation Constant via Arrhenius Rates and Markov Generator Linearity**]
 :::
 
-**I. Entropic Definition of Tension**
+**I. Landauer Defect Energy and Entropic Phase Space**
 
-Let a topological defect represent a constrained degree of freedom, evaluated for the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. Removing the defect liberates this constraint. The entropy of release equals 1 nat.
-
-$$
-\Delta S_{release} = 1
-$$
-
-The expansion of the phase space scales by a factor of $e^{\Delta S} = e^1$.
-
-**II. Application of the Arrhenius Law**
-
-The transition rate $k$ for a process with activation energy $E_a$ and entropy change $\Delta S$ follows the Arrhenius relation:
+Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, closing a **2-path** into a **3-cycle** traps one bit of relational entropy ($\Delta S_{\mathrm{close}} = \ln 2$), storing relational defect energy:
 
 $$
-k \propto A \exp \left( -\frac{E_a - T\Delta S}{T} \right) = A e^{-E_a/T} e^{\Delta S}
+E_{\mathrm{defect}} = k_B T_c \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
 $$
 
-For a barrierless reverse process where $E_a \approx 0$, the enhancement factor equals the entropic term.
+**II. Discrete Arrhenius Defect Relaxation**
+
+Under Eyring-Arrhenius transition state theory for discrete Markov jumps on graphs, the activation rate for a transition that liberates trapped defect energy $E_{\mathrm{defect}}$ at bath temperature $T_c$ scales as $\exp(E_{\mathrm{defect}} / k_B T_c)$. Evaluating at Landauer vacuum parameters yields:
 
 $$
-\text{Enhancement Factor} = e^{\Delta S}
+\frac{E_{\mathrm{defect}}}{k_B T_c} = \frac{\ln 2}{\ln 2} \equiv 1.
 $$
 
-Substitution of $\Delta S = 1$ yields an enhancement factor of $e$.
-
-**III. Algorithmic Formulation**
-
-The update rule defines the modified rate as a linear catalysis function of the base rate.
+The discrete Arrhenius defect relaxation factor evaluates to:
 
 $$
-\text{Rate}_{new} = \text{Rate}_{base} \cdot (1 + \lambda_{cat})
+\frac{\Omega_{\mathrm{released}}}{\Omega_{\mathrm{bound}}} = \exp\left(\frac{E_{\mathrm{defect}}}{k_B T_c}\right) = \mathrm{e}^{\ln 2 / \ln 2} = \mathrm{e}^1 = e \approx 2.718282.
 $$
 
-**IV. Coefficient Determination**
+**III. Markov Jump Lie Algebra Linearity and Scheduler Non-Interference**
 
-The physical enhancement factor is equated to the algorithmic modifier.
-
-$$
-1 + \lambda_{cat} = e
-$$
-
-This yields the final coefficient:
+In a discrete execution tick $\Delta t = 1$, the infinitesimal transition rate operator $\mathcal{W}$ governing independent single-edge excisions must be strictly additive across independent cycle deletion channels sharing a vertex under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />:
 
 $$
-\lambda_{cat} = e - 1 \approx 1.71828
+\mathcal{W}(s) = \mathcal{W}_0 + s \Delta \mathcal{W} = \mathcal{W}_0(1 + \lambda s).
 $$
+
+An exponential rate $\mathcal{W}(s) \propto \mathrm{e}^{\lambda s}$ represents the integrated finite-time group action $\mathrm{e}^{t\mathcal{W}}$ for compound multi-edge simultaneous collapses. Assigning an exponential rate inside a single discrete execution tick would violate single-move locality and move disjointness by assigning non-zero probability to simultaneous multi-cycle collapses. The linear velocity $(1 + \lambda s)$ is the unique single-move generator of the Markov transition Lie algebra preserving scheduler non-interference.
+
+**IV. Evaluation of the Canonical Catalysis Constant**
+
+Matching the linear generator at fundamental unit self-stress $s = 1$ to the discrete single-defect Arrhenius relaxation factor requires:
+
+$$
+1 + \lambda_0(1) = e \implies \lambda_0 = e - 1 \approx 1.718282.
+$$
+
+**V. Isolated Cycle Self-Stress and Deletion Probability**
+
+On an isolated **3-cycle**, each of the **3** vertices has $\mathrm{stress\_map}(x) = 1$. Subtracting the base self-contribution leaves isolated self-stress $s_{\mathrm{del}} = (1+1+1) - 1 = 2$. At $s_{\mathrm{del}} = 2$, the deletion probability evaluates to:
+
+$$
+Q_{\mathrm{del}}(2) = \tfrac{1}{2}(1 + 2(e-1))\mathrm{e}^{-2/\sqrt{2\pi}} \approx 0.99885.
+$$
+
+This establishes the single-cycle death probability governing the absorbing-state boundary.
 
 Q.E.D.
 
 ### 4.4.6.2 Commentary: Entropic Pressure {#4.4.6.2}
 
-:::info[**Catalysis as "Exhaling" Information**]
+:::info[**Role of Markov Generator Linearity and Arrhenius Defect Relaxation in Vacuum Self-Healing**]
 :::
 
-The catalysis coefficient $\lambda_{cat}$ quantifies the thermodynamic inevitability of self-correction where a topological defect or tension, such as a dangling edge or a frustrated cycle, corresponds to a region of high trapped entropy. The system is locally constrained, possessing fewer accessible microstates than a relaxed configuration. We model the dynamics of this relaxation using the stochastic simulation principles of <Cite id="A.27" label="(Gillespie, 1977)" />, treating the topological update as a chemical reaction where the transition rate is strictly modulated by the change in the combinatorial availability of states.
+The Arrhenius defect relaxation constant $\lambda_0 = e - 1$ establishes the exact rate at which topological stress accelerates cycle deletion. When a **3-cycle** forms, it traps one bit of relational entropy ($\ln 2$), storing localized tension in the causal graph. Resolving this defect through edge excision liberates the constrained phase space, expanding the available microstates by an Arrhenius factor of $e^1 \approx 2.718$. This expansion creates an effective entropic restoring force that drives the system toward topological relaxation.
 
-The coefficient $\lambda_{cat} = e - 1$ dictates that the system tends to "exhale" this entropy. When a defect is resolved (deleted), the phase space volume expands by a factor of $e$ (corresponding to the release of $1$ nat of information). This expansion creates an effective entropic pressure that accelerates the deletion of defects. We can view this as an adaptive homeostasis mechanism, analogous to enzyme kinetics where entropic release lowers activation barriers. By coupling the reaction rate to the local stress, the universe ensures that errors are pruned faster than they can propagate. It provides a physical basis for the "self-healing" property of the spacetime manifold, ensuring that the vacuum remains smooth and regular despite the constant stochastic flux of the quantum foam.
+The linear form $(1 + \lambda s)$ is required by Markov generator additivity and scheduler non-interference. In a parallel execution environment, rate operators must sum linearly over independent channels sharing a vertex to prevent non-local multi-edge collapses within a single tick. By fixing $\lambda_0 = e - 1$, the rewrite engine couples local stress directly to the fundamental Landauer energy quantum, ensuring that unclustered defects are pruned rapidly while preserving the integrity of dense geometric clusters.
 
 ---
 
 ### 4.4.7 Lemma: Friction Coefficient {#4.4.7}
 
-:::info[**Statistical Normalization Constant via Friction Coefficient**]
+:::info[**Discrete Fiber Maximum Entropy Ground-State Normalization via Modular S-Duality on Z**]
 :::
 
-Let $\mu$ denote the **Friction Coefficient**. Then $\mu$ constitutes the normalization constant $\mu = \frac{1}{\sqrt{2\pi}} \approx 0.399$; moreover, this value forms the Gaussian normalization required by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
+Let the vertex stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ map each vertex $x \in V(G)$ to a scalar integer counting state on the discrete fiber $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ with elementary single-triad quantum $\Delta s_{\mathrm{elem}} = 1$. Then under Poisson summation on the integer counting lattice $\mathbb{Z}$, the discrete partition function $Z_{\mathbb{Z}}(\beta)$ possesses a unique modular self-dual fixed point at $\beta = 1$ with unit quadratic dispersion $\sigma^2 = 1$, and evaluating the discrete Maximum Entropy ground-state projection probability on the local fiber yields the exact friction constant $\mu_0 = P_{\mathbb{Z}}(s=0) = \frac{1}{\sqrt{2\pi}} \approx 0.398942$.
 
 ### 4.4.7.1 Proof: Friction Coefficient {#4.4.7.1}
 
-:::tip[**Peak Density Evaluation via Friction Coefficient**]
+:::tip[**Derivation of the Modular S-Duality Friction Constant via Integer Lattice Poisson Summation and Fiber MaxEnt**]
 :::
 
-**I. Statistical Premise**
+**I. One-Dimensional Discrete Integer Counting Fiber**
 
-The local stress $s$ on an edge, which defines the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> utilized in **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />, arises from the superposition of numerous independent causal influences. The **Central Limit Theorem** implies that the distribution of stress values in the large-graph limit converges to a Gaussian distribution.
+On any discrete causal graph $G$, the local stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ counts the number of directed **3-cycles** incident on vertex $x$. The local state space of syndrome excitations over any vertex is the 1D discrete integer counting lattice $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ evaluated under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. The fiber $\mathcal{F}_x$ of a scalar counting observable is strictly 1-dimensional.
 
-$$
-P(s) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left( -\frac{(s - m)^2}{2\sigma^2} \right)
-$$
+**II. Modular S-Duality on the Discrete Integer Lattice**
 
-**II. Vacuum Variance**
-
-In the vacuum state, fluctuations are minimal and standardized. The stress scale is normalized such that the variance is unity.
+Under Poisson summation on the 1D integer counting lattice $\mathbb{Z}$, the discrete partition function with parameter $\beta$ defines the Jacobi theta function:
 
 $$
-\sigma^2 = 1, \quad m \approx 0
+Z_{\mathbb{Z}}(\beta) = \sum_{n \in \mathbb{Z}} \mathrm{e}^{-\pi n^2 / \beta^2} = \beta \sum_{k \in \mathbb{Z}} \mathrm{e}^{-\pi k^2 \beta^2} = \beta Z_{\mathbb{Z}}(1/\beta).
 $$
 
-**III. The Friction Function**
+The integer lattice $\mathbb{Z}$ and its reciprocal dual $\mathbb{Z}^*$ are isomorphic under the modular transformation $S: \beta \mapsto 1/\beta$ if and only if $\beta = 1$. At this modular self-dual fixed point $\beta = 1$, standard Gaussian normalization fixes the discrete excitation variance to $\sigma^2 = 1$ in dimensionless counting units ($[s]=1$). Any choice $\sigma^2 \neq 1$ breaks the modular S-duality of the integer counting lattice.
 
-The friction function $f(s) = e^{-\mu s}$ constitutes a damping probability in the update rule, suppressing high-stress updates. This exponential decay approximates the Gaussian tail probability for large positive stress.
+**III. Jaynesian Maximum Entropy on the Local Fiber**
 
-**IV. Probability Conservation**
-
-Probability conservation in the update dynamics requires the damping coefficient $\mu$ to scale with the peak probability density of the stress distribution. This implies the damping rate equals the peak probability density.
+Under Jaynes' Principle of Maximum Entropy on $\mathbb{Z}$, given an integer counting variable $n \in \mathbb{Z}$ with unperturbed expectation $\langle n \rangle_0 = 0$ and unit modular self-dual variance $\langle n^2 \rangle_0 = \sigma^2 = 1$, the discrete Gaussian distribution:
 
 $$
-\mu = \max(P(s)) = P(0)
+P_{\mathbb{Z}}(n) = \frac{1}{Z_{\mathbb{Z}}} \mathrm{e}^{-n^2 / 2}, \qquad Z_{\mathbb{Z}} = \sum_{n \in \mathbb{Z}} \mathrm{e}^{-n^2 / 2} = \vartheta_3\left(0, \mathrm{e}^{-1/2}\right),
 $$
 
-**V. Calculation**
+is the unique probability distribution that maximizes Shannon-von Neumann entropy without assuming unmeasured higher-order moments.
 
-We evaluate the peak of the standard Normal distribution $N(0, 1)$.
+**IV. Exact Evaluation via Poisson Summation**
 
-$$
-\mu = \frac{1}{\sqrt{2\pi (1)}} = \frac{1}{\sqrt{2\pi}}
-$$
-
-**VI. Final Value**
+Applying the Poisson Summation Formula to the discrete Gaussian sum on the integer lattice $\mathbb{Z}$ establishes the partition sum, consistent with the single-defect energy scale in **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />:
 
 $$
-\mu \approx 0.3989
+\sum_{n \in \mathbb{Z}} \mathrm{e}^{-n^2 / 2} = \sqrt{2\pi} \sum_{k \in \mathbb{Z}} \mathrm{e}^{-2\pi^2 k^2} = \sqrt{2\pi} \left(1 + 2\mathrm{e}^{-2\pi^2} + 2\mathrm{e}^{-8\pi^2} + \dots\right).
 $$
+
+Because $2\mathrm{e}^{-2\pi^2} \approx 5.37 \times 10^{-9}$, the discrete integer partition function evaluates to:
+
+$$
+Z_{\mathbb{Z}} = \sqrt{2\pi} \cdot \left(1 + 5.37 \times 10^{-9}\right) \approx \sqrt{2\pi}.
+$$
+
+**V. Discrete Vacuum Ground-State Projector**
+
+The exact discrete probability of the zero-stress unperturbed vacuum state ($n = 0$) on the local fiber evaluates to:
+
+$$
+P_{\mathbb{Z}}(s = 0) = \frac{\mathrm{e}^0}{Z_{\mathbb{Z}}} = \frac{1}{\sqrt{2\pi}} = \mu_0 \approx 0.398942.
+$$
+
+Setting the exponential damping coefficient $\mu$ in $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu s}$ to this discrete vacuum projector yields a single-triad damping factor of $\mathrm{e}^{-\mu_0 \cdot 1} = \mathrm{e}^{-1/\sqrt{2\pi}} \approx 0.6711$, suppressing diameter collapse while preserving the spatial sparsity of the network.
 
 Q.E.D.
 
 ### 4.4.7.2 Calculation: Friction Damping {#4.4.7.2}
 
-:::note[**Computational Check of Gaussian Normalization through Tail Damping**]
+:::note[**Computational Check of Gaussian Normalization via Tail Damping**]
 :::
 
-Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> is based on the following protocols:
+Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" /> is based on the following protocols:
 
-1.  **Normalization:** The algorithm calculates the friction coefficient $\mu = 1/\sqrt{2\pi\sigma^2}$ derived from the peak density of the standard Gaussian distribution ($N(0,1)$), satisfying **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
+1.  **Normalization:** The algorithm calculates the friction coefficient $\mu = 1/\sqrt{2\pi\sigma^2}$ derived from the peak density of the standard Gaussian distribution ($N(0,1)$), satisfying the bound in **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
 2.  **Stress Sweep:** The protocol applies the damping factor $f(s) = e^{-\mu s}$ across a discrete range of stress levels $s \in [0, 5]$.
 3.  **Verification:** The simulation compares the calculated damping curve against the theoretical tail suppression of the normal distribution to verify the suppression of high-stress updates.
 
@@ -2433,31 +2447,41 @@ The simulation confirms the non-linear suppression of topological updates. A str
 
 ### 4.4.7.3 Commentary: Viscosity of Space {#4.4.7.3}
 
-:::info[**Steric Hindrance in the Causal Graph**]
+:::info[**Role of Modular S-Duality and Discrete Fiber MaxEnt in Steric Rate Damping**]
 :::
 
-Friction ($\mu$) acts as the "viscosity" of the vacuum, a crucial resistive force that prevents the system from overheating. In regions where the graph becomes dense and highly interconnected ("stressed"), the number of constraints on any new edge increases linearly. The friction coefficient converts this topological density into a suppression probability. This statistical suppression is consistent with the master equation formalism of <Cite id="A.63" label="(van Kampen, 1992)" />, where the macroscopic stability of a system emerges from the competitive balance between growth rates and density-dependent damping terms.
+Friction ($\mu_0 = 1/\sqrt{2\pi}$) acts as the microscopic viscosity of the vacuum, a crucial damping parameter that prevents the causal network from collapsing into a hyper-connected graph. In regions where multiple cycles intersect, the local vertex stress $s(x)$ increments as an integer counting variable on the discrete fiber $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$. The friction constant translates this integer count into an exponential acceptance penalty, suppressing additional edge additions at congested sites.
 
-Without this term, the universe would succumb to the "Small World Catastrophe." In a graph where every node can connect to every other node without penalty, the diameter of the universe would collapse to $\approx \log N$, effectively destroying the concept of dimensionality and locality. Friction ensures that geometry remains sparse and local. It imposes a cost on connectivity that scales with density, forcing the graph to spread out rather than bunch up. This mechanism enforces the emergence of an extended manifold structure, as derived in Chapter $5$, guaranteeing that "distance" remains a meaningful concept. It is the force that keeps space spacious. Critically, the friction coefficient $\mu = 1/\sqrt{2\pi} \approx 0.399$ is not an arbitrary parameter; it represents the dimensionless peak of the Gaussian probability density of local stress $s$, which is a purely combinatorial count of syndrome excitations (**Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />). Setting the damping rate to this statistical limit suppresses updates whose stress exceeds unit vacuum fluctuations, ensuring scale-invariant stability in the pre-geometric substrate.
+Deriving $\mu_0$ from Poisson summation on $\mathbb{Z}$ at the modular self-dual fixed point ($\beta=1$) reveals that vacuum friction is not an arbitrary phenomenological coefficient. It represents the exact maximum-entropy projection probability of the unperturbed ground state on the 1D counting fiber. Setting $\mu_0 = 1/\sqrt{2\pi}$ ensures that single-excitation fluctuations are damped by exactly $e^{-1/\sqrt{2\pi}} \approx 0.6711$, maintaining graph sparsity while allowing low-stress regions to evolve dynamically into an extended spatial manifold.
 
 ---
 
 ### 4.4.8 Proof: Thermodynamic Foundations {#4.4.8}
 
-:::tip[**Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Calibration of the Causal Graph]
+:::tip[**Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Synthesis of the Five Constitutive Scales]
 :::
 
-**I. Calibration of Scales**
-The thermodynamic scales of the vacuum are grounded in the bit-nat equivalence. The critical temperature of the vacuum is established as $T = \ln 2$, matching the entropic equivalent of a single binary decision per **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
+**I. Critical Vacuum Temperature and Base Rates**
 
-**II. Entropic Flow**
-The formation of cycles in the causal graph increases the local phase space volume. Each 3-cycle closure doubles the local path multiplicity, corresponding to a local entropy increase of exactly $\Delta S = \ln 2$ nats per **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />.
+Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, equating the thermal background energy quantum to the informational content of a single binary decision yields the critical vacuum temperature $T_c = \ln 2$. This temperature sets the baseline operating rates $(P_{\mathrm{add}}, Q_{\mathrm{del}}) = (1, 1/2)$, ensuring that structure creation is thermodynamically neutral at the margin ($\Delta F = 0$).
 
-**III. Energy Distribution**
-The self-energy of a relation is derived by distributing the thermal energy across the emergent spatial dimensions. Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the energy per dimension is $\epsilon_{dim} = \frac{1}{2} T$, which determines the geometric self-energy threshold per **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />.
+**II. Entropic Loop Closure**
 
-**IV. Dynamical Coefficients**
-The rate of geometric rewrites is regulated by opposing coefficients of activation and resistance. The transition probability is boosted by the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> under local stress, while runaway growth is suppressed by the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> that penalizes topological congestion.
+Under **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, completing a directed **3-cycle** doubles the local causal path volume ($\Omega_{\mathrm{closed}} / \Omega_{\mathrm{open}} = 2$), releasing $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ of relational entropy and establishing the entropic driving force for spatial area accumulation.
+
+**III. Discrete Incident Port Equipartition**
+
+Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the total loop-closure energy $E_{\mathrm{total}} = \ln 2$ distributes uniformly across the $k_{\mathrm{deg}} = 3$ incident routing ports of the trivalent Bethe substrate, fixing the discrete channel self-energy to $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$.
+
+**IV. Simplicial Interaction Boundary Permittivity**
+
+Under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />, the **3** constituent vertices of a triad defect expose $V_{\mathrm{int}} = 3 \times 2 = 6$ binary routing ports to the exterior substrate, determining the theoretical unconditioned alignment probability $\Lambda_{\mathrm{theory}} = 2^{-6} = 1/64 = 0.015625$.
+
+**V. Dynamical Relaxation and Steric Friction**
+
+Under **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> and **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, matching the unique linear Markov jump generator to the discrete Arrhenius relaxation factor fixes $\lambda_0 = e - 1 \approx 1.718282$, while Poisson summation on the 1D integer counting lattice $\mathbb{Z}$ fixes the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$.
+
+We conclude that the five fundamental constitutive scales of the vacuum are uniquely determined from discrete combinatorial first principles.
 
 Q.E.D.
 
@@ -2468,13 +2492,11 @@ Q.E.D.
 :::note[**Thermodynamic Foundations**]
 :::
 
-The derivations have set the fundamental scales of the vacuum with precision: the temperature under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> equates the discrete entropy of a bit to the continuous thermal unit of a nat, rendering creations neutral at the threshold. The **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" /> allocates the bit-equivalent energy evenly over four dimensions, while the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> modulates the transition rates based on local stress. These specific values establish a regime where informational bifurcations drive net assembly without external forcing, quantifying the entropic nudge from open paths to closed cycles.
+The derivation of the five constitutive scales establishes a rigorous, parameter-free foundation for the microscopic rewrite engine. The critical vacuum temperature $T_c = \ln 2$ under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> aligns thermal fluctuations with binary information, rendering edge creation thermodynamically neutral at the margin. Loop closure under **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" /> generates an entropic release of $\Delta S_{\mathrm{close}} = \ln 2$ nats, which drives topological growth across the pre-geometric substrate.
 
-This thermodynamic grounding implies a subtle bias in the overall flow, where the cumulative effect of base rates tilts toward elaboration. Entropy production accumulates as the system explores denser relational configurations, driving the universe away from the simple tree structure. The precise calibration of these constants ensures that the vacuum sits exactly at the critical point of phase transition, allowing for the spontaneous emergence of complexity without runaway instability.
+This loop-closure energy distributes across the three incident routing channels of the trivalent substrate under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" /> to set the channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$. Simplicial boundary combinatorics under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" /> fix the 6-port theoretical permittivity $\Lambda_{\mathrm{theory}} = 2^{-6} = 0.015625$, setting the upper bound for driven vacuum polarization.
 
-The identification of these thermodynamic constants transforms the abstract graph dynamics into a physical theory with predictive power. By anchoring the parameters to the information-theoretic properties of the bit, we remove the freedom to "tune" the universe, asserting that the laws of physics are consequences of the limits of information processing. This unification of thermodynamics and geometry provides the energy budget for the universal constructor, ensuring that every topological operation pays its way in entropy.
-
----
+The dynamical coefficients $\lambda_0 = e - 1$ under **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> and $\mu_0 = 1/\sqrt{2\pi}$ under **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> regulate the competitive balance between catalytic defect removal and steric growth suppression. Together, these five scales ensure that the pre-geometric substrate evolves stably within the active non-equilibrium phase, preventing both premature freeze-out and high-density connectivity collapse.
 
 ---
 
@@ -2881,15 +2903,13 @@ The operationalization of the rewrite rule as a stochastic process governed by l
 
 ---
 
----
-
 ## 4.6 Single Tick of Logical Time {#4.6}
 
-We face the final dynamical problem of defining the tick of logical time as an irreversible physical event that locks the present into the past. We must integrate the distinct processes of awareness and action and selection into a unified operator that advances the state of the universe by one discrete step to ensure the continuity of existence. We are forced to describe the process that collapses a cloud of potential futures into a single immutable history without an external observer.
+We face the final dynamical problem of defining the tick of logical time as an irreversible physical event that locks the present into the past. We must integrate the distinct processes of awareness, proposal, merge, and deletion into a unified operator that advances the state of the universe by one discrete step to ensure the continuity of existence. We are forced to describe the process that collapses a cloud of potential futures into a single immutable history without relying on an external observer.
 
-A universe that remains in a superposition of all possible futures fails to manifest a concrete reality and leaves the specific trajectory of the cosmos undefined. If the distribution of potential graphs is never collapsed then history remains an abstract probability amplitude and the thermodynamic arrow of time cannot emerge from the reversible laws of micro-physics. Treating time as a continuous flow obscures the discrete computational nature of the underlying process and fails to account for the generation of entropy associated with the reduction of possibilities. Without a mechanism to irrevocably commit to a specific path the universe would lack a definite past and a determinate future.
+A universe that remains in an unpruned superposition of all possible futures fails to manifest a concrete reality and leaves the specific trajectory of the cosmos undefined. If the distribution of potential graphs is never collapsed, history remains an abstract probability amplitude and the thermodynamic arrow of time cannot emerge from the reversible laws of micro-physics. Treating time as a continuous flow obscures the discrete computational nature of the underlying process and fails to account for the generation of entropy associated with the reduction of possibilities. Without a mechanism to irrevocably commit to a specific path, the universe would lack a definite past and a determinate future.
 
-We resolve this by defining the evolution operator $\mathcal{U}$ as the sequential composition of awareness and probabilistic rewrite and measurement projection and sampling collapse. This operator enforces the laws of physics as a hard filter that annihilates invalid states and then selects a single outcome from the remaining valid distribution. This cycle generates the thermodynamic arrow of time through the information loss inherent in the projection and sampling steps and ensures that the universe evolves as a distinct and irreversible sequence of events.
+We resolve this by defining the evolution operator $\mathcal{U}$ as the deterministic four-step composition of awareness diagnostic mapping, parallel stochastic proposal, symmetric reciprocal addition merge, and intermediate deletion excision. This operator enforces the laws of physics as a hard filter that annihilates invalid states and selects a single outcome from the remaining valid distribution. This cycle generates the thermodynamic arrow of time through the information loss inherent in the projection and sampling steps, ensuring that the universe evolves as a distinct, race-free, and irreversible sequence of events.
 
 ---
 
@@ -2898,36 +2918,38 @@ We resolve this by defining the evolution operator $\mathcal{U}$ as the sequenti
 :::tip[**Composition of Awareness, Action, Measurement, by Collapse into the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct maps:
+The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct operational stages executing within each discrete tick $t \mapsto t+1$:
 
 $$
-\mathcal{U} = \mathcal{S} \circ \mathcal{M} \circ \mathcal{R}^\flat \circ \mathcal{P}(R_T)
+\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}
 $$
 
 The component maps are formally defined as follows:
-1.  **Awareness Lift ($\mathcal{P}(R_T)$):** The functorial lift of the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />, mapping the measure space to the annotated domain $\mathcal{P}(\mathbf{AnnCG})$.
-2.  **Probabilistic Rewrite ($\mathcal{R}^\flat$):** The monadic extension of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, acting as a transition kernel to generate a provisional measure $\mu_{prov}$ over potential successors.
-3.  **Measurement Projection ($\mathcal{M}$):** The non-linear projection map that annihilates support on states violating the **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> and re-normalizes the remaining measure.
-4.  **Sampling Collapse ($\mathcal{S}$):** The stochastic selection operator that maps a valid probability measure $\rho$ to a Dirac delta measure $\delta_{G_{next}}$ centered on a single state $G_{next}$ sampled from $\rho$.
+1.  **Awareness Mapping ($\mathcal{A}$):** The diagnostic analysis map evaluating the complete set of directed **3-cycles** $\mathcal{C}_3(G_t)$ and establishing the local vertex stress field $\mathrm{stress\_map}(x) = |\{C \in \mathcal{C}_3(G_t) \mid x \in V(C)\}|$ across $V(G_t)$.
+2.  **Stochastic Proposal ($\mathcal{P}_{\mathrm{prop}}$):** The parallel stochastic proposal kernel executing independent Bernoulli trials for candidate edge additions $A$ on compliant **2-paths** ($P_{\mathrm{acc}}(s_{\mathrm{add}}) = \mathrm{e}^{-\mu s_{\mathrm{add}}}$) and candidate edge deletions $D$ on active **3-cycles** ($Q_{\mathrm{del}}(s_{\mathrm{del}}) = \min(1, \frac{1}{2}(1+\lambda s_{\mathrm{del}})\mathrm{e}^{-\mu s_{\mathrm{del}}}$), where $s_{\mathrm{del}} = \sum_{x \in V(C)} \mathrm{stress\_map}(x) - 1$.
+3.  **Addition Merge ($\mathcal{M}$):** The symmetric reciprocal filter and idempotent addition merge constructing the intermediate graph $G' = (V, E(G_t) \cup A_{\mathrm{filt}}, H_t \cup H_{\mathrm{new}})$, where $A_{\mathrm{filt}} = \{((u,v), H_{\mathrm{new}}) \in A \mid (v,u) \notin A_{\mathrm{edges}} \land u \neq v\}$.
+4.  **Excision Deletion ($\mathcal{D}$):** The deterministic edge excision operator executing accepted removals strictly on the intermediate graph, yielding the finalized successor state $G_{t+1} = (V, E(G') \setminus (D \cap E(G')), H'|_{E(G_{t+1})})$.
 
 ### 4.6.1.1 Commentary: Anatomy of the Tick {#4.6.1.1}
 
 :::info[**Decomposition separating the logical stages of time evolution into distinct physical roles**]
 :::
 
-The "Tick" of logical time represents a deeply structured, non-unitary physical cycle composed of four distinct operational stages. Each stage fulfills a necessary, specialized role in advancing the relational state of the universe while preserving background independence, causal consistency, and thermodynamic stability across the network.
+The tick of logical time represents a structured, non-unitary physical cycle composed of four distinct operational stages. Each stage fulfills a necessary, specialized role in advancing the relational state of the universe while preserving background independence, causal consistency, and thermodynamic stability across the network.
 
-* **Awareness (Pre-Computation):** This step transforms the static topology into a self-referential state. By embedding the syndrome $\sigma_G$ into the object, it ensures that the subsequent dynamics are driven by the graph's internal diagnostics rather than arbitrary external parameters. The universe must "know" itself before it can change itself.
-* **Rewrite (Exploration):** This step generates the superposition of possible futures. It represents the "quantum" potentiality of the system, where the convolution of local probabilities creates a weighted ensemble of candidate histories. It is the generation of the "Many Worlds" of the next moment.
-* **Measurement (Selection):** This step enforces the "Laws of Physics" as a hard filter. While the Universal Constructor $\mathcal{R}$ attempts to prevent obvious causal paradoxes locally via the `pre_check_aec` filter, it is subject to local horizon blindness (the Horizon Problem) in a concurrent or distributed setting. The Measurement Projection $\mathcal{M}$ acts as the global, non-unitary ontological filter: it audits the provisional superposition of all kinematically proposed futures, evaluates their global stabilizer syndromes, and strictly annihilates the amplitude of any state containing a non-local causal violation or loop contradiction, renormalizing the remaining valid measure. This ensures that global consistency is enforced as a hard physical law, not just a statistical likelihood.
-* **Sampling (Actualization):** This step introduces the fundamental irreversibility. By collapsing the ensemble to a single history, it generates entropy and defines the arrow of time. It converts information (possibility) into reality (structure), effectively "burning" the alternative futures to fuel the forward motion of the present.
+* **Awareness (Diagnostic Sensing):** This step transforms the static topology into a self-referential state. By computing $\mathcal{C}_3(G_t)$ and mapping local stress counts $\mathrm{stress\_map}(x)$, the rewrite engine guarantees that subsequent dynamics are driven entirely by the graph's internal diagnostics rather than arbitrary external coordinates.
+* **Proposal (Stochastic Sampling):** This step explores candidate updates via independent Bernoulli trials. By evaluating addition probabilities $P_{\mathrm{acc}}$ and catalytic deletion probabilities $Q_{\mathrm{del}}$ across disjoint topological sites, the engine samples from the physical state space without violating local move independence.
+* **Merge (Idempotent Addition):** This step applies a symmetric reciprocal filter $A_{\mathrm{filt}}$ to eliminate bidirectional edge hazards and merges accepted directed chords into the intermediate graph $G'$. Because $A_{\mathrm{edges}} \cap E(G_t) = \emptyset$, additions introduce strictly new edges without mutating pre-existing edges.
+* **Deletion (Deterministic Excision):** This step excises the accepted deletion set $D \subseteq E(G_t)$ from the intermediate graph $G'$. Because additions merge in Step 3 before deletions act in Step 4, and because $A_{\mathrm{edges}} \cap D = \emptyset$, no edge added in tick $t$ can be removed in tick $t$, guaranteeing race-free parallel execution.
+
+---
 
 ### 4.6.2 Theorem: Emergent Dynamics {#4.6.2}
 
 :::info[**Emergence of Born-Rule Probabilities and Entropic Arrow from the Evolution Operator**]
 :::
 
-Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures over causal graphs. Then the transition probabilities of $\mathcal{U}$ are governed by Born-like product-rule amplitudes, and the sequential application of projection and collapse induces a strictly positive entropy production $\Delta S_{tick} > 0$ that establishes a macroscopic thermodynamic arrow of time.
+Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures over causal graphs under the four-step execution cycle. Then the transition probabilities of $\mathcal{U}$ are governed by Born-like product-rule amplitudes convolving to a Euclidean action functional, and the sequential application of projection and collapse induces a strictly positive entropy production $\Delta S_{\mathrm{tick}} > 0$ that establishes a macroscopic thermodynamic arrow of time.
 
 ### 4.6.2.1 Commentary: Argument Outline {#4.6.2.1}
 
@@ -2942,7 +2964,7 @@ The proof proceeds via Direct Construction, synthesizing the local independence 
 ├── 4.6.3 Lemma: Euclidean Transition Measure
 │   ├── 4.6.3.1 Proof: Euclidean Transition Measure
 │   ├── 4.6.3.2 Calculation: Euclidean Action Integration
-│   └── 4.6.3.3 Commentary: The Thermodynamic Origin of the Modulus
+│   └── 4.6.3.3 Commentary: Thermodynamic Origin of the Modulus
 │
 ├── 4.6.4 Lemma: Thermodynamic Arrow
 │   ├── 4.6.4.1 Proof: Thermodynamic Arrow
@@ -2953,7 +2975,7 @@ The proof proceeds via Direct Construction, synthesizing the local independence 
 ├── 4.6.5 Lemma: Positive Recurrence and the Invariant Measure
 │   ├── 4.6.5.1 Proof: Positive Recurrence and the Invariant Measure
 │   ├── 4.6.5.2 Calculation: Foster-Lyapunov Drift Verification
-│   └── 4.6.5.3 Commentary: The Foundation for the Continuum Limit
+│   └── 4.6.5.3 Commentary: Foundation for the Continuum Limit
 │
 └── 4.6.6 Proof: Emergent Dynamics
 ```
@@ -2980,7 +3002,7 @@ where $\Delta \mathcal{S}_{\text{kinematic}}$ is the discrete kinematic action, 
 
 **I. Event Independence and Product Rule**
 
-Let the transition $G \to G'$ involve a set of independent local updates $U = A \cup D$, partitioned into additions $A$ and deletions $D$. In the sparse vacuum regime, the topological footprints are disjoint, allowing the joint probability to factorize:
+Let the transition $G \to G'$ involve a set of independent local updates $U = A \cup D$, partitioned into additions $A$ and deletions $D$ under the **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" />. In the sparse vacuum regime, the topological footprints are disjoint, allowing the joint probability to factorize:
 
 $$
 \mathbb{P}(G \to G') = \prod_{u \in A} P_{\text{acc}}(u) \cdot \prod_{v \in D} P_{\text{del}}(v)
@@ -2992,8 +3014,7 @@ From the Universal Constructor definitions of **Addition Mode** <Ref id="4.5.3" 
 1. **Additions:** $P_{\text{acc}}(u) = \exp(-\mu \cdot \text{stress}_u)$
 2. **Deletions:** $P_{\text{del}}(v) = \frac{1}{2} (1 + \lambda_{\text{cat}} \cdot \text{stress}_v)$
 
-We substitute the deletion probability with a strict exponential form by defining the effective entropic cost $E_{del}(v) = -\ln\left[\frac{1}{2}(1 + \lambda_{\text{cat}} \cdot \text{stress}_v)\right]$.
-Thus, $P_{\text{del}}(v) = \exp(-E_{del}(v))$.
+We substitute the deletion probability with a strict exponential form by defining the effective entropic cost $E_{del}(v) = -\ln\left[\frac{1}{2}(1 + \lambda_{\text{cat}} \cdot \text{stress}_v)\right]$. Thus, $P_{\text{del}}(v) = \exp(-E_{del}(v))$.
 
 **III. Exponential Convolution**
 
@@ -3115,14 +3136,9 @@ The simulation confirms that the convolved product of transition probabilities i
 :::info[**Distinguishing Classical Transition Measures from Quantum Interference**]
 :::
 
-It is critical to distinguish the classical transition measure derived here from the full quantum Born rule. The multiplication of independent probabilities characterizes a classical Markov chain. A common pitfall in discrete physics is conflating this stochastic matrix with a unitary quantum evolution operator. We explicitly do not make this claim. 
+It is critical to distinguish the classical transition measure derived here from the full quantum Born rule. The multiplication of independent probabilities characterizes a classical Markov chain. A common pitfall in discrete physics is conflating this stochastic matrix with a unitary quantum evolution operator. We explicitly do not make this claim. Rather, the exponential scaling $\exp(-\Delta \mathcal{S}_{\text{kinematic}})$ provides the foundational thermodynamic measure: the **modulus squared** $|\mathcal{A}|^2$ of the path. Paths that require massive information destruction or forced connectivity in high-stress regions incur a massive action penalty, suppressing their probability amplitude exponentially. This maps the thermodynamics of the causal graph directly to the statistical weighting of a Euclidean path integral ($e^{-S_E}$).
 
-Rather, the exponential scaling $\exp(-\Delta \mathcal{S}_{\text{kinematic}})$ provides the foundational thermodynamic measure: the **modulus squared** $|\mathcal{A}|^2$ of the path. Paths that require massive information destruction or forced connectivity in high-stress regions incur a massive action penalty, suppressing their probability amplitude exponentially. This maps the thermodynamics of the causal graph directly to the statistical weighting of a Euclidean path integral ($e^{-S_E}$).
-
-Crucially, because the underlying causal graph intrinsically tracks the arrow of time as a strictly monotonic poset (as derived in Chapter 11 and Chapter 12), the limit manifold inherently possesses a Lorentzian signature $(-+++)$. Therefore, the theory does not require the continuous, background-dependent mathematical artifact of a "Wick rotation" ($\tau = it$) to force the path integral to converge. The probability measure is naturally positive-definite and exponentially bounded by vacuum friction, while the temporal orientation is provided by the topology. 
-
-The emergence of true quantum interference (and thus the full realization of the Born rule) requires complex phases ($\mathcal{A} = |\mathcal{A}| e^{i\theta}$) to allow these amplitudes to destructively or constructively sum. As demonstrated in Chapter 10, these phases are strictly topological, arising from the non-trivial holonomy of gauge fields and the self-braiding of persistent structures (Dehn twists). By isolating the derivation of the amplitude modulus here in the thermodynamic layer, we establish that the "probability" aspect of quantum mechanics is driven by vacuum friction and entropy, leaving the "interference" aspect to emerge naturally from the geometry of the stable topological codespace.
-
+Crucially, because the underlying causal graph intrinsically tracks the arrow of time as a strictly monotonic poset, the limit manifold inherently possesses a Lorentzian signature $(-+++)$. Therefore, the theory does not require the continuous, background-dependent mathematical artifact of a Wick rotation to force the path integral to converge. The probability measure is naturally positive-definite and exponentially bounded by vacuum friction, while the temporal orientation is provided by the topology. This separation ensures that the thermodynamic driver of probability remains distinct from the topological phase holonomies that generate constructive and destructive quantum interference across the network.
 
 ---
 
@@ -3137,6 +3153,8 @@ Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally 
 
 :::tip[**Decomposition into Non-invertible Components via Thermodynamic Arrow**]
 :::
+
+**I. Non-Invertible Operator Composition**
 
 Let $\mathcal{U}$ denote the global update operator, representing the **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" /> evaluated for the **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, defined as the composition $\mathcal{S} \circ \mathcal{M} \circ \mathcal{T}$. Irreversibility follows from the non-invertible nature of $\mathcal{M}$ and $\mathcal{S}$.
 
@@ -3200,8 +3218,6 @@ Q.E.D.
 The non-invertibility of the global evolution operator $\mathcal{U}$ establishes macroscopic irreversibility as a fundamental, inescapable property of physical dynamics. While microscopic local rewrite proposals exhibit stochastic symmetry under individual creation and deletion modes, the global measurement projection and stochastic sampling collapse operators introduce non-unitary state reductions that permanently discard phase information, interference terms, and unselected alternative histories across the network.
 
 This information loss is the true physical origin of entropy production, driving the universe forward along an indelible thermodynamic arrow of time. By projecting out invalid or unselected state branches, the collapse mechanism converts quantum potentiality into actualized, permanent historical structure. Macroscopic irreversibility guarantees that the universe evolves continuously toward higher relational complexity without risking spontaneous collapse back into the featureless vacuum across all temporal epochs.
-
----
 
 ### 4.6.4.3 Calculation: Irreversibility Check {#4.6.4.3}
 
@@ -3281,8 +3297,7 @@ Strictly positive ΔS:       True
 ```
 
 **Conclusion:**
-The simulation yields a strictly positive average entropy production of $1.49976$ bits per tick. The minimum observed $\Delta S$ ($1.48$ bits) confirms that no individual trial violates the Second Law. This positive entropy production verifies the irreversible nature of the operator $\mathcal{U}$: the collapse of the wavefunction (Sampling) and the enforcement of consistency (Projection) are information-destroying processes that define the arrow of time.
-
+The simulation yields a strictly positive average entropy production of $1.49973$ bits per tick. The minimum observed $\Delta S$ ($1.48$ bits) confirms that no individual trial violates the Second Law. This positive entropy production verifies the irreversible nature of the operator $\mathcal{U}$: the collapse of the wavefunction (Sampling) and the enforcement of consistency (Projection) are information-destroying processes that define the arrow of time.
 
 ### 4.6.4.4 Diagram: Thermodynamic Arrow {#4.6.4.4}
 
@@ -3318,38 +3333,40 @@ The simulation yields a strictly positive average entropy production of $1.49976
 :::info[**Verification of a Unique Equilibrium Ensemble via Foster-Lyapunov Drift**]
 :::
 
-Let the stochastic Evolution Operator $\mathcal{U}$ act on the countably infinite space of valid causal graphs $\Sigma_{\text{valid}}$, defining a discrete-time Markov process that is strictly ergodic on the dynamically connected component of the state space. Specifically, the system is **Positive Recurrent**, driven by a Foster-Lyapunov drift condition where thermodynamic friction and catalytic stress exponentially bound the graph's expansion to admit a unique, globally attracting invariant probability measure $\pi^* \in \mathcal{P}(\Sigma_{\text{valid}})$ such that $\mathcal{U}(\pi^*) = \pi^*$. 
+Let the stochastic Evolution Operator $\mathcal{U}$ act on the countably infinite space of valid causal graphs $\Sigma_{\text{valid}}$, defining a discrete-time Markov process that is strictly ergodic on the dynamically connected component of the state space. Then the system is Positive Recurrent under the Foster-Lyapunov drift condition, where thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$ and catalytic defect relaxation $\lambda_0 = e - 1$ exponentially bound graph expansion, admitting a unique, globally attracting invariant probability measure $\pi^* \in \mathcal{P}(\Sigma_{\text{valid}})$ such that $\mathcal{U}(\pi^*) = \pi^*$.
 
 ### 4.6.5.1 Proof: Positive Recurrence and the Invariant Measure {#4.6.5.1}
 
 :::tip[**Demonstration of Irreducibility, Aperiodicity, through Lyapunov Drift**]
 :::
 
-The sampling collapse map $\mathcal{S}$ within $\mathcal{U}$ stochastically selects a successor state, evaluated for **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" /> under the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> updates:
-Because the base thermodynamic deletion probability is fractional ($\mathbb{P}_{\text{del,thermo}} = 1/2$) and addition is subject to friction ($\mu > 0$), there exists a strictly positive probability that all proposed updates are rejected, resulting in a self-transition ($G_t \to G_t$). These non-zero diagonal probabilities guarantee the Markov chain is **aperiodic**.
-Furthermore, the Universal Constructor permits the reduction of any state to the sparse vacuum $G_0$ via sequential deletions, and the expansion from $G_0$ to any valid state $G_B$ via additions. Because all valid states communicate through $G_0$ with non-zero probability, the state space is **irreducible**.
+**I. State Space Irreducibility and Aperiodicity**
 
-**II. The Foster-Lyapunov Drift Condition**
+The sampling collapse map within $\mathcal{U}$ stochastically selects a successor state, evaluated for **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" /> under the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> updates. Because the base thermodynamic deletion probability is fractional ($\mathbb{P}_{\text{del,thermo}} = 1/2$) and addition is subject to friction ($\mu > 0$), there exists a strictly positive probability that all proposed updates are rejected, resulting in a self-transition ($G_t \to G_t$). These non-zero diagonal probabilities guarantee that the Markov chain is aperiodic. Furthermore, the Universal Constructor permits the reduction of any state to the sparse vacuum $G_0$ via sequential deletions, and the expansion from $G_0$ to any valid state $G_B$ via additions. Because all valid states communicate through $G_0$ with non-zero probability, the state space is irreducible.
 
-Preventing the infinite state space from leaking probability mass to infinity (transience) requires establishing positive recurrence. The proof utilizes a Lyapunov function (an energy-like scalar) on the state space defined as the structural density of the graph: $V(G) = \rho(G)$.
-We evaluate the expected one-step drift operator: $\Delta V(G) = \mathbb{E}[V(G_{t+1}) - V(G_t) \mid G_t = G]$.
-The expected drift is governed exactly by the transition probabilities established in the Universal Constructor:
-1.  **Outward Drift (Addition):** Bounded by the generative drive, but exponentially suppressed by the friction term $e^{-6\mu\rho}$.
-2.  **Inward Drift (Deletion):** Bounded by the catalytic stress term $(1 + 6\lambda_{cat}\rho)$.
+**II. Foster-Lyapunov Drift Functional**
 
-**III. Strict Negative Drift Outside a Compact Set**
+Preventing the infinite state space from leaking probability mass to infinity (transience) requires establishing positive recurrence. The proof utilizes a Lyapunov function on the state space defined as the structural density of the graph: $V(G) = \rho(G)$. We evaluate the expected one-step drift operator $\Delta V(G) = \mathbb{E}[V(G_{t+1}) - V(G_t) \mid G_t = G]$. The expected drift is governed by the transition probabilities established in the Universal Constructor:
+1.  **Outward Drift (Addition):** Bounded by the generative drive, but exponentially suppressed by the friction term $\mathrm{e}^{-\mu_0 \cdot \rho}$ where $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$.
+2.  **Inward Drift (Deletion):** Bounded by the catalytic defect relaxation term $\frac{1}{2}(1 + \lambda_0 \rho)\mathrm{e}^{-\mu_0 \rho}$ where $\lambda_0 = e - 1 \approx 1.718282$.
 
-Because the deletion probability scales with density while the addition probability decays exponentially, there exists a critical threshold density $\rho_{crit}$ such that for all states $G$ where $V(G) > \rho_{crit}$, the expected change in density is strictly negative:
+**III. Deterministic Merge Confluence and Move Disjointness**
+
+In the four-step scheduler $\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$, candidate addition edges $A_{\mathrm{edges}}$ are chosen from non-edges ($A_{\mathrm{edges}} \cap E(G_t) = \emptyset$), while candidate deletion edges $D$ are subsets of pre-existing edges ($D \subseteq E(G_t)$). Therefore, the move sets are strictly disjoint ($A_{\mathrm{edges}} \cap D = \emptyset$). By formal verification in Lean 4 (`dynamic_move_disjointness`, `dynamic_race_free_invariance`, `parallel_addition_commutes`, and `parallel_addition_idempotent`), parallel multi-site updates commute and merge deterministically into $G_{t+1}$, preserving race-free execution across all vertices.
+
+**IV. Strict Negative Drift Outside Compact Density Bound**
+
+Because the catalytic deletion probability scales with density while the addition probability decays exponentially, there exists a critical threshold density $\rho_{\mathrm{crit}}$ such that for all states $G$ where $V(G) > \rho_{\mathrm{crit}}$, the expected change in density is strictly negative:
 
 $$
-\Delta V(G) \le -\epsilon \quad \text{for some } \epsilon > 0
+\Delta V(G) \le -\epsilon \quad \text{for some } \epsilon > 0.
 $$
 
-This establishes that outside a finite, compact set of low-density graphs, the "restoring force" of the vacuum's thermodynamics strictly pulls the system back toward the origin. 
+This establishes that outside a finite, compact set of low-density graphs, the restoring force of the vacuum thermodynamics pulls the system back toward the low-stress ground state.
 
-**IV. Conclusion**
+**V. Formal Convergence to Unique Invariant Measure**
 
-By Foster's Theorem for Markov chains, an irreducible, aperiodic chain satisfying a strict negative drift condition outside a finite set is **Positive Recurrent**. Therefore, the sequence of probability distributions $\rho_t = \mathcal{U}^t(\rho_0)$ converges strongly in total variation distance to a unique stationary distribution $\pi^*$. This invariant measure defines the canonical equilibrium ensemble of the universe.
+By Foster's Theorem for discrete Markov chains, an irreducible, aperiodic chain satisfying a strict negative drift condition outside a finite set is Positive Recurrent. Therefore, the sequence of probability distributions $\rho_t = \mathcal{U}^t(\rho_0)$ converges strongly in total variation distance to a unique stationary distribution $\pi^*$. This invariant measure defines the canonical equilibrium ensemble of the universe.
 
 Q.E.D.
 
@@ -3425,9 +3442,9 @@ The simulation verifies that expected drift becomes strictly negative ($\Delta V
 :::info[**Physical Implications of the Unique Invariant Measure**]
 :::
 
-This ergodic stability is the mathematical bridge that makes statistical cosmology possible. By proving that the Evolution Operator $\mathcal{U}$ satisfies the Foster-Lyapunov criteria, we guarantee that the universe does not suffer an "ultraviolet catastrophe of connectivity." The dynamics continuously flush the system through the configuration space, but the thermodynamic friction ensures the universe spends the vast majority of its eternity fluctuating within a bounded "Goldilocks zone" of density.
+This ergodic stability is the mathematical bridge that makes statistical cosmology possible. By proving that the Evolution Operator $\mathcal{U}$ satisfies the Foster-Lyapunov criteria, we guarantee that the universe does not suffer an ultraviolet catastrophe of connectivity. The dynamics continuously flush the system through the configuration space, but the thermodynamic friction ensures the universe spends the vast majority of its history fluctuating within a bounded equilibrium zone of density.
 
-Crucially, the existence of the unique invariant measure $\pi^*$ rigorously defines the macroscopic equilibrium referenced in the master equations of Chapter 5, and it validates the "ensemble averages" utilized in Chapter 12. When we calculate the convergence of the discrete Laplacian or the emergence of the Lorentzian signature in the continuum limit, we are integrating over this exact, mathematically guaranteed stationary distribution. Without positive recurrence, the macroscopic limits of the universe would depend arbitrarily on its initial micro-state, violating the universality of physical laws.
+Crucially, the existence of the unique invariant measure $\pi^*$ rigorously defines the macroscopic equilibrium referenced throughout the dynamics, and it validates the ensemble averages utilized in the continuum limit. When we calculate the convergence of the discrete Laplacian or the emergence of the Lorentzian signature, we are integrating over this exact, mathematically guaranteed stationary distribution. Without positive recurrence, the macroscopic limits of the universe would depend arbitrarily on its initial micro-state, violating the universality of physical laws.
 
 ---
 
@@ -3436,21 +3453,25 @@ Crucially, the existence of the unique invariant measure $\pi^*$ rigorously defi
 :::tip[**Synthesis of Transition Probabilities via Entropy Production in the Evolution Cycle**]
 :::
 
-**I. Composite Map Formulation**
+**I. Four-Step Composite Operator Structure**
 
-Let the evolution operator $\mathcal{U}$ compose the awareness, constructor, measurement, and collapse maps. The transition probability for any discrete step $G \to G'$ is convolved from local micro-events.
+Let the Evolution Operator $\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$ compose the diagnostic awareness, parallel stochastic proposal, symmetric addition merge, and intermediate deletion stages under **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" />. The transition probability for any discrete step $G_t \to G_{t+1}$ is convolved from local microscopic rewrite events.
 
 **II. Action-Probability Scaling**
 
-Under the disjoint topological footprints of the vacuum limit, the joint probability factorizes. The resulting transition weights scale exponentially with the kinematic action as established in **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />.
+Under the disjoint topological footprints of the vacuum limit, the joint transition probability factorizes across independent update sites. The resulting transition weights scale exponentially with the discrete kinematic action $\Delta \mathcal{S}_{\text{kinematic}}$ as established in **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />.
 
-**III. Entropic Asymmetry**
+**III. Entropic Asymmetry and Irreversibility**
 
-Each application of the projection map $\mathcal{M}$ and sampling map $\mathcal{S}$ erases state information. This non-unitary reduction of the density matrix produces a strictly positive local entropy change $\Delta S_{tick} > 0$ as established in **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />.
+Each application of the merge projection map $\mathcal{M}$ and sampling collapse map within $\mathcal{U}$ erases microstate phase information. This non-unitary reduction produces a strictly positive local entropy change $\Delta S_{\mathrm{tick}} > 0$ as established in **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />.
 
-**IV. Synthesis and Irreversibility**
+**IV. Ergodic Stability and Invariant Measure**
 
-By combining the convolved transition weights with the strictly positive entropy production of the projection-collapse cycle, and under the stability guaranteed by the invariant measure established in **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" />, we conclude that the evolution operator $\mathcal{U}$ generates a macroscopically directed, causality-preserving sequence of states.
+Under thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$ and catalytic defect relaxation $\lambda_0 = e - 1$, the Markov transition kernel satisfies the Foster-Lyapunov drift condition outside a compact density bound as established in **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" />. The chain converges strongly to the unique stationary distribution $\pi^*$.
+
+**V. Synthesis and Formal Conclusion**
+
+Combining the convolved Euclidean transition weights with the strictly positive entropy production of the four-step execution cycle and the ergodic stability of the unique invariant measure, we conclude that the Evolution Operator $\mathcal{U}$ generates a macroscopically directed, causality-preserving sequence of states.
 
 Q.E.D.
 
@@ -3461,13 +3482,11 @@ Q.E.D.
 :::note[**Single Tick of Logical Time**]
 :::
 
-The **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" /> integrates the stages of awareness, action, and selection into a seamless cycle. Annotations refresh diagnostic cues, rewrites convolve provisionals, projection culls the invalid, and sampling collapses the remainder to a definite state, yielding transition probabilities and an arrow of time forged from discards. This tick reveals how the forward bias under the **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" /> crystallizes from multiple sources, with information losses in verification and choice imposing a one-way progression that prevents reversal.
+The **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" /> integrates the four sequential stages of awareness diagnostic mapping, stochastic proposal sampling, symmetric reciprocal addition merge, and intermediate deletion excision into a seamless computational cycle. Diagnostic awareness refreshes local stress indicators, parallel proposals generate candidate update sets, reciprocal filtering eliminates bidirectional hazards, and deletion execution finalizes the next kinematic state without race conditions.
 
-In synthesizing the dynamics, the historical syntax accumulates immutable records, causal paths propagate mediated influences, comonads layer introspective checks, thermodynamic scales calibrate costs, rewrites propose variants, and ticks realize directed strides under **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" />. The reverse path stays barred by the inexorable dissipation of potential, where discarded possibilities and collapsed uncertainties quantify the leak that fuels time's unyielding flow.
+Under **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" /> and **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />, the factorization of independent local acceptance probabilities maps classical Markov transitions directly to the modulus squared of a Euclidean path integral. The non-unitary projection and collapse operations discard unselected alternative branches, generating a strictly positive entropy production $\Delta S_{\mathrm{tick}} > 0$ that establishes an indelible macroscopic arrow of time.
 
-The definition of the logical tick as a composite irreversible operator cements the fundamental nature of time in this theory. Time is not a smooth coordinate but a discrete sequence of computational cycles, each consuming information to produce history. The irreversibility of the sampling step provides a derivation of the Second Law of Thermodynamics from the microscopic dynamics of the graph, identifying the flow of time with the production of entropy inherent in the collapse of possibility into reality.
-
----
+Ergodic stability is guaranteed under **Positive Recurrence and the Invariant Measure** <Ref id="4.6.5" label="§4.6.5" />, where the competitive balance between exponential friction $\mu_0 = 1/\sqrt{2\pi}$ and catalytic defect relaxation $\lambda_0 = e - 1$ prevents both explosive graph densification and inert void freeze-out. This positive recurrence ensures strong convergence to a unique stationary distribution $\pi^*$, providing the foundational measure over which continuous spacetime geometry and Lorentzian causality emerge in the continuum limit.
 
 ---
 
@@ -3513,8 +3532,6 @@ This runtime transforms the static tree into a living, breathing process. Howeve
 | $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathbb{P}(G \to G')$ | Transition Probability | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
-
----
 
 \newpage
 # References

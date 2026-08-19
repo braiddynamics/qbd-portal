@@ -1153,49 +1153,30 @@ The mathematical community has largely accepted AC because rejecting it would me
 :::info[**Justification of Unprovable Postulates by Coherentist Criteria**]
 :::
 
-The historical evolution of axiomatic justification, as seen in the cases of the parallel postulate and the Axiom of Choice, points toward a specific epistemological framework: coherentism. This view contrasts sharply with the classical foundationalist approach that once dominated mathematical philosophy.
+The historical evolution of axiomatic justification, epitomized by the independence of Euclid's parallel postulate and the pragmatic acceptance of the Axiom of Choice, demonstrates that when foundational postulates cannot be syntactically derived or intuitively verified as "self-evident," their legitimacy rests upon **Coherentist Justification**. Rather than seeking validation from an impossible chain of antecedent proofs, the axiomatic basis $\mathcal{A}$ of a formal deductive system $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$ is justified holistically by the emergent properties of the global structure it generates.
 
-The justification for the adoption of the Axiomatic Basis $\mathcal{A}$ is determined exclusively by the **Coherence Criteria** of the generated system, defined as the conjunction of the following properties:
-1.  **Consistency:** The absolute inability to derive a contradiction ($\perp$) from $\mathcal{A}$.
-2.  **Independence:** The non-derivability of any axiom $a \in \mathcal{A}$ from the set difference $\mathcal{A} \setminus \{a\}$.
-3.  **Parsimony:** The minimization of the cardinality $|\mathcal{A}|$ relative to the explanatory power of the system.
-4.  **Fertility:** The capacity of the system to generate theorems that map isomorphically to observable physical phenomena.
+The adoption of an Axiomatic Basis $\mathcal{A}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
 
-**Foundationalism vs. Coherentism in Epistemology**
+1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A} \nvdash \perp$.
+2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}$, $\mathcal{A} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
+3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
+4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
 
-Foundationalism posits that knowledge is structured like a building, resting upon a secure foundation of basic, self-justifying beliefs. In mathematics, the classical view of axioms as "self-evident truth" is a quintessential form of foundationalism. These axioms were thought to be directly apprehended as true and required no further support; all other mathematical knowledge (theorems) was then built upon this unshakeable base.
+**Holistic Support vs. Linear Circularity**
 
-In coherentism, the structure of knowledge is envisioned instead as Otto Neurath's famous ship, where each component is supported by its relationship to all the others within a holistic web of belief. The modern, formalist justification of axioms is explicitly coherentist. Axioms are chosen not because they are self-evident truths, but because they serve as the starting points for a system that, as a whole, exhibits desirable properties.
+Coherentist justification replaces the classical foundationalist model, which envisions knowledge as a hierarchical tower resting upon "self-evident" bedrock, with a relational model (analogous to Otto Neurath's ship), wherein foundational postulates and derived theorems exist in a web of mutual support.
 
-**Criteria for a Coherent Axiomatic System**
-
-The justification for a set of axioms, from a coherentist perspective, is evaluated based on the properties of the entire system they generate. The primary criteria include:
-
-  * **Consistency**: The system must be free from internal contradiction. It should be impossible to derive both a proposition $P$ and its negation $\neg P$ from the axioms. This is the absolute, non-negotiable requirement for any logical system.
-
-  * **Independence**: No axiom should be derivable from the others. While not strictly necessary for consistency, independence is highly valued according to the principle of parsimony, thus ensuring that the set of foundational assumptions is minimal.
-
-  * **Parsimony**: Often associated with Occam's Razor, this principle suggests that the set of axioms should be as small and conceptually simple as possible while still being sufficient to generate the desired theoretical framework.
-
-  * **Fertility (or Utility)**: The axiomatic system should be powerful and productive. It should generate a rich body of interesting and useful theorems, unify disparate results, and provide elegant proofs for known facts. This is the criterion that most strongly guided the acceptance of the Axiom of Choice.
-
-**Distinguishing Coherence from Fallacy (Petitio Principii)**
-
-A common objection to coherentism is that it endorses circular reasoning. However, there is a crucial distinction between the holistic justification of coherentism and the fallacy of *petitio principii*, or begging the question.
-
-  * **Petitio Principii**: This is a fallacy of linear argument where a conclusion is supported by a premise that is either identical to or already presupposes the conclusion. The argument "$P$ is true because $P$ is true" provides no new support for $P$.
-
-  * **Coherentist Justification**: This is non-linear and holistic. An axiom $A$ is not justified by an argument that presupposes $A$. Rather, $A$ is justified because the entire system it generates (the set of axioms and all derivable theorems $\{A, T_1, T_2, \dots\}$) exhibits the virtues of consistency, parsimony, and fertility. The justification flows from the emergent properties of the whole system back to its foundational parts. The relationship is one of mutual support within an interconnected web, not a simple derivational loop.
+Crucially, this mode of justification does not commit the fallacy of circular reasoning (*petitio principii*). A circular argument operates linearly ($P \vdash P$), providing no new explanatory content. Coherentist validation operates non-linearly: the axiomatic basis $\mathcal{A}$ is not proved by its consequences, but rather justified by the global stability, parsimony, and mathematical and empirical fertility of the complete deductive edifice.
 
 :::note[**Summary Table: Epistemological Approaches**]
 :::
 
-| Criterion | Foundationalist View (Classical) | Coherentist View (Modern/Formalist) |
-|-----------|----------------------------------|-------------------------------------|
-| Nature of Axioms | Self-evident truths; descriptions of a pre-existing reality (mathematical or physical). | Foundational assumptions; definitions that construct a formal system. |
-| Source of Justification | Direct intuition, self-evidence, correspondence to reality. | Systemic properties: consistency, parsimony, and the fertility/utility of the resulting theorems. |
-| Structure of Knowledge | Linear and hierarchical. Theorems are built upon the unshakeable foundation of axioms. | Holistic and non-linear. Axioms and theorems are mutually supporting parts of a coherent web. |
-| Response to Alternatives | Alternative axioms (e.g., non-Euclidean) are considered "false" as they do not correspond to reality. | Alternative axioms are valid starting points for different, equally consistent systems. The choice between them is pragmatic. |
+| Dimension | Foundationalist View (Classical) | Coherentist View (Formalist / Constructive) |
+| :--- | :--- | :--- |
+| **Nature of Axioms** | Self-evident truths; direct descriptions of an absolute, pre-existing reality. | Foundational assumptions; formal rules defining a generative system. |
+| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}|$), and generative fertility. |
+| **Structure of Knowledge** | Hierarchical pyramid resting on basic, unshakeable beliefs. | Holistic web of mutual logical and structural coherence. |
+| **Status of Alternatives** | Categorically false if non-corresponding to intuitive reality. | Valid alternative formal systems; selection is adjudicated pragmatically by systemic fertility and coherence. |
 
 ---
 
@@ -1259,8 +1240,6 @@ The starting points of physical theory are justified by the concrete physics the
 This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches that any such foundation is arbitrary unless it justifies itself through operation. Rather than digging for a foundation that sits passively beneath the universe, the goal is to identify the operating system that keeps the universe running. The truth of the axioms lies not in their divine origin but in their structural stability. The physical universe is asserted to be isomorphic to a formal system because it is a deduction being executed, establishing the **Epistemological Foundations** <Ref id="1.1" label="§1.1" />. This justification is rooted in the **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.42" label="(Marker, 2002)" />. Therefore, the constraints placed upon the theory, such as finiteness and consistency, are ontological requirements for existence itself.
 
 Furthermore, this finiteness imposes a strict boundary on the physical structure because it cannot support infinite histories or undefined origins. If the logic requires a starting point to be computable, we must conclude that the universe itself must be constructed from discrete, well-defined relations. We cannot hide behind the concept of continuous space or infinite regress. These are computationally undefined operations that would prevent the system from ever initializing. To build a computable universe, we must first define the primitive relational shapes and structures that can be realized within a **Directed Acyclic Graph** <Ref id="1.2.1" label="§1.2.1" />. This epistemological constraint forces our hand regarding the nature of space. We are thus compelled to define the graph-theoretic primitives that will serve as our geometric vocabulary, leading us directly to the definition of graph shapes.
-
----
 
 ---
 
@@ -1497,8 +1476,6 @@ With the graph-theoretic shapes defined, we have our structural vocabulary. Howe
 
 ---
 
----
-
 ## 1.3 Temporal Ontology {#1.3}
 
 Defining time in a universe that does not yet possess entropy or clocks presents a distinct challenge. While imagining a universal metronome ticking in the background is tempting, we know that in a background-independent theory, no such external reference exists. We must strip time down to its barest function. We must identify the mechanism that distinguishes one state from the next. Without this separation, there is no cause and effect. There is only a static singularity of information where everything happens at once. To rely on a pre-existing temporal coordinate would be to assume the very thing we are trying to derive. We must build time from the ground up as a process of change.
@@ -1515,8 +1492,6 @@ Establishing a dual architecture for time resolves this difficulty by separating
 :::
 
 The temporal structure of the physical theory is defined as a **Dual Time Architecture** constituted by the pair $(t_{phys}, t_L)$, consisting of an emergent Physical Time ($t_{phys}$) and a fundamental Global Logical Time ($t_L$).
-
----
 
 ### 1.3.1.1 Commentary: Dual Temporal Scales {#1.3.1.1}
 
@@ -1550,8 +1525,6 @@ $$
 
 where $k$ is the topological path length and $f$ is a scaling function mapping discrete edge creation timestamps to proper time, emerging as continuous physical time in the macroscopic limit.
 
----
-
 ### 1.3.2.1 Commentary: Relational Proper Duration {#1.3.2.1}
 
 :::info[**Ontological Characterization of Emergent Relational Proper Time**]
@@ -1577,8 +1550,6 @@ U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\ma
 $$
 
 where each application of $\mathcal{U}$ maps state $U_{t_L}$ to $U_{t_L+1}$, establishing a strict total order on the history of the universe.
-
----
 
 ### 1.3.3.1 Commentary: Ontological Status {#1.3.3.1}
 
@@ -1691,14 +1662,14 @@ The proof proceeds by contradiction, assuming an unbounded temporal regress to d
     └── 1.3.9.2 Diagram: Grim Reaper Paradox
 ```
 
+---
+
 ### 1.3.5 Lemma: Finite Information Substrate {#1.3.5}
 
 :::info[**Finiteness via Quadratic Boundedness of the Information Substrate**]
 :::
 
 Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
-
----
 
 ### 1.3.5.1 Proof: Finite Information Substrate {#1.3.5.1}
 
@@ -1839,8 +1810,6 @@ This information bound establishes a pre-geometric precursor to holographic entr
 
 Assume the domain of the global logical time parameter $T$ extends to the infinite past. Therefore, this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
 
----
-
 ### 1.3.6.1 Proof: Backward Accumulation {#1.3.6.1}
 
 :::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
@@ -1956,8 +1925,6 @@ This cumulative preservation of historical states constitutes a fundamental feat
 
 Given a universal configuration space $\Omega$ characterized by a strictly finite cardinality $|\Omega| = N < \infty$, let the historical trajectory be indexed by an unbounded sequence of non-positive temporal increments. Therefore, a state recurrence forming a closed causal loop arises, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
----
-
 ### 1.3.7.1 Proof: Finite State Recurrence {#1.3.7.1}
 
 :::tip[**Combinatorial Contradiction via the Dirichlet Pigeonhole Principle and Mathematical Induction**]
@@ -2058,8 +2025,6 @@ However, state recurrence does not imply a physical time loop for observers embe
 :::
 
 Given an infinite sequence of discrete computational steps required to generate a present state $U_0$, the execution of this sequence constitutes a **Supertask**. Therefore, the completion of this **Supertask** is physically excluded within the dynamical constraints of the theory, as the realization of $\aleph_0$ operations within a finite proper time interval implies a completed infinity, which is impermissible in a constructive ontology **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />.
-
----
 
 ### 1.3.8.1 Proof: Supertask Impossibility {#1.3.8.1}
 
@@ -2282,8 +2247,6 @@ Let $\Omega$ denote the universal configuration space of all valid states of the
 
 The graph $G$ must be a finite directed acyclic graph.
 
----
-
 ### 1.4.1.1 Commentary: State Space Snapshots {#1.4.1.1}
 
 :::info[**Epistemological Interpretation of the Snapshot Configuration Space**]
@@ -2301,8 +2264,6 @@ Unlike graph models in condensed matter or 3D spatial networks, the graph in Qua
 :::
 
 Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
-
----
 
 ### 1.4.2.1 Commentary: Pre-Geometric Event Identity {#1.4.2.1}
 
@@ -2326,8 +2287,6 @@ $$
 (u, v) \in E \implies (v, u) \notin E.
 $$
 
----
-
 ### 1.4.3.1 Commentary: Irreducible Influence {#1.4.3.1}
 
 :::info[**Sparsity and Irreducibility of Causal Edge Connections**]
@@ -2346,8 +2305,6 @@ This unmediated edge structure highlights a key distinction between QBD and trad
 
 Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a **Creation Timestamp** $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
 
----
-
 ### 1.4.4.1 Commentary: Temporal Discreteness {#1.4.4.1}
 
 :::info[**Thermodynamic and Topological Role of Discretized Creation Markers**]
@@ -2356,8 +2313,6 @@ Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a **C
 The codomain $\mathbb{N}$ (non-negative integers starting from 0) underscores the sequential, constructive nature of physical processes: timestamps increment monotonically, recording the exact order of genesis without allowing continuous interpolation or retroactive assignment. This discreteness prevents paradoxes associated with infinite past histories or fractional times, as each edge receives its timestamp upon instantiation via the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, ensuring $H$ embeds the full temporal archive immutably.
 
 $H$ is defined as an intrinsic attribute of the edge isomorphism class, not as a mutable data register. The timestamp is a topological invariant of the edge's existence profile. Therefore, the "record" of an edge is not a separate resource that requires storage allocation; it is a fundamental definitional component of the edge itself. To delete an edge is to alter the graph topology, but the state space and graph structure of the deleted element remains mathematically distinct from a non-existent element due to its historical index.
-
----
 
 ### 1.4.4.2 Diagram: Timestamp Evolution {#1.4.4.2}
 
@@ -2398,8 +2353,6 @@ $$
 
 where the maximum is taken over all edges $e'$ incoming to the source vertex $u$. The timestamp function $H$ induces a well-founded partial order on $E$ and enforces that $G$ is a directed acyclic graph, preserving the forward arrow of logical time.
 
----
-
 ### 1.4.5.1 Commentary: Argument Outline {#1.4.5.1}
 
 :::tip[**Structure of the Monotonicity of History Argument via Timestamp Irreflexivity, Transitive Causal Monotonicity, and Inductive Synthesis**]
@@ -2421,8 +2374,6 @@ The proof proceeds by induction, demonstrating that self-loops admit no stable t
 │
 └── 1.4.8 Proof: Monotonicity of History
 ```
-
----
 
 ### 1.4.5.2 Diagram: Causal Cone {#1.4.5.2}
 
@@ -2456,8 +2407,6 @@ The proof proceeds by induction, demonstrating that self-loops admit no stable t
 :::
 
 Let $e_{self} = (u, u)$ be a self-loop incident to a vertex $u$ in a graph $G$. The recursive timestamp assignment $H(e_{self}) = 1 + \max \left( \{H(e') \mid e' \in \text{In}(u)\} \cup \{0\} \right)$ is inconsistent and admits no stable timestamp assignment.
-
----
 
 ### 1.4.6.1 Proof: Irreflexivity of Timestamps {#1.4.6.1}
 
@@ -2516,8 +2465,6 @@ The inequality $x > x$ is false for all real numbers.  Therefore, no stable time
 
 Q.E.D.
 
----
-
 ### 1.4.6.2 Commentary: Loop Exclusion {#1.4.6.2}
 
 :::info[**Logical and Topological Prevention of Grandfather Paradoxes**]
@@ -2531,84 +2478,84 @@ This structure maintains a rigorous distinction between the 4D event-level Causa
 
 ### 1.4.7 Lemma: Transitive Causal Monotonicity {#1.4.7}
 
-:::info[**Monotonic Timestamp Progression along Directed Causal Chains via Transitive Causal Monotonicity**]
+:::info[**Monotonic Timestamp Progression along Directed Causal Chains by Inductive Path Extension**]
 :::
 
-Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. The sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
+Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. Then the sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
 
 $$
 H(e_1) < H(e_2) < \dots < H(e_k).
 $$
 
----
-
 ### 1.4.7.1 Proof: Transitive Causal Monotonicity {#1.4.7.1}
  
 :::tip[**Inductive Demonstration via Strict Timestamp Increase**]
- :::
+:::
  
- **I. Inductive Base Case**
+**I. Inductive Base Case**
  
- Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent edges along the path $\pi$.  By definition, $e_1$ terminates at $v_1$, making $e_1 \in \text{In}(v_1)$.
+Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along the path $\pi$. By incidence definition, the edge $e_1$ terminates at vertex $v_1$, establishing the membership $e_1 \in \text{In}(v_1)$.
  
- The **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> of $e_2$ is assigned according to the recursive relation defined in **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />:
+The creation timestamp $H(e_2)$ of the outgoing edge $e_2$ is assigned by the recursive relation governing edge creation (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />), satisfying the historical ordering (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />):
  
- $$
- H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
- $$
+$$
+H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
+$$
  
- Since $e_1 \in \text{In}(v_1)$, the maximum value satisfies:
+The incidence condition $e_1 \in \text{In}(v_1)$ yields the bound on the maximum incoming timestamp:
  
- $$
- \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \right) \ge H(e_1)
- $$
+$$
+\max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \right) \ge H(e_1)
+$$
  
- Therefore:
+Evaluating the inequality yields:
  
- $$
- H(e_2) \ge 1 + H(e_1) > H(e_1)
- $$
+$$
+H(e_2) \ge 1 + H(e_1) > H(e_1)
+$$
  
- establishing the base inequality $H(e_1) < H(e_2)$.
+establishing the base inequality $H(e_1) < H(e_2)$.
  
- **II. Inductive Hypothesis**
+**II. Inductive Hypothesis**
  
- Assume that the strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
+Assume that strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
  
- $$
- H(e_1) < H(e_2) < \dots < H(e_n)
- $$
+$$
+H(e_1) < H(e_2) < \dots < H(e_n)
+$$
  
- where the final edge $e_n$ in this subpath terminates at vertex $v_n$.
+where the terminal edge $e_n$ in this subpath terminates at vertex $v_n$.
  
- **III. Inductive Step**
+**III. Inductive Step**
  
- Consider the adjacent edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. Since $e_n \in \text{In}(v_n)$, the assignment for $H(e_{n+1})$ satisfies the recursive relation:
+Consider the adjacent outgoing edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. The incoming incidence $e_n \in \text{In}(v_n)$ yields the recursive assignment inequality for $H(e_{n+1})$:
  
- $$
- H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n)
- $$
+$$
+H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n)
+$$
  
- Applying this inequality to the inductive hypothesis yields the strict monotonicity condition:
+Applying this single-step inequality to the inductive hypothesis yields the strict monotonicity condition:
  
- $$
- H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1})
- $$
+$$
+H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1})
+$$
  
- This completes the induction. It is established that timestamps strictly increase along any directed path.
+establishing the extended monotonicity chain to path length $n+1$.
  
- Q.E.D.
+**IV. Transitive Conclusion**
  
- ---
+We conclude that edge timestamps strictly increase monotonically along every directed causal path ($H(e_1) < H(e_2) < \dots < H(e_k)$), which establishes that $H(e_1) < H(e_k)$ for all $k \ge 2$ and induces a well-founded causal partial order on history.
+ 
+Q.E.D.
 
 ### 1.4.7.2 Commentary: Lamport Ordering {#1.4.7.2}
 
-:::info[**Clock Synchronization and the Topological Arrow of Time**]
+:::info[**Clock Synchronization and Topological Arrow of Time**]
 :::
 
-This strict timestamp monotonicity establishes a direct topological mapping to Lamport logical clocks <Cite id="A.38" label="(Lamport, 1978)" /> in distributed systems. By embedding chronological order directly into the topology of edge updates, the history function $H$ guarantees a well-founded partial order on the events across the entire 4D causal graph. The local ratio of proper time to logical time $\Delta H(e) / \Delta t_L$ defines the discrete **Lapse Function** <Ref id="14.1.1" label="§14.1.1" />, denoted $N(x)$, which governs emergent gravitational time dilation.
+Strict timestamp monotonicity establishes a direct topological mapping to Lamport logical clocks <Cite id="A.38" label="(Lamport, 1978)" /> in distributed asynchronous systems. By embedding chronological ordering directly into the relational topology of edge creation events rather than assigning mutable clock registers to static vertices, the history mapping $H: E \to \mathbb{N}_0$ guarantees that physical influence propagates strictly along a well-founded causal poset. Each update step queries the maximum incoming timestamp of its antecedent vertex and increments the assigned value by unity, ensuring that no event can exert unmediated causal influence across negative or zero proper duration. The local ratio of proper timestamp advancement to global logical time $\Delta H(e) / \Delta t_L$ defines the discrete lapse function $N(x)$ (**Lapse Function** <Ref id="14.1.1" label="§14.1.1" />), governing emergent gravitational time dilation.
 
-In the continuum limit, physical distance and time elapsed emerge as operational cost functions over graph paths. By computing path weights along these monotonically ordered links, the 4D causal graph generates the metric geometry of 4D Lorentzian spacetime without invoking a pre-existing metric tensor, providing a self-contained relational foundation for emergent physics.
+In the continuum limit, physical distance and proper time elapsed emerge as operational cost functions evaluated over causal path integrals. By computing geodesic weights along these monotonically ordered links, the **4D** causal graph generates the metric geometry of **4D** Lorentzian spacetime without presupposing an extrinsic background metric tensor. The strict transitivity $H(e_1) < H(e_k)$ guarantees that the emergent manifold satisfies discrete global hyperbolicity, precluding closed timelike curves and securing a mathematically rigorous foundation for thermodynamic irreversibility and quantum state propagation across the relational substrate.
 
 ---
 
@@ -2623,14 +2570,20 @@ Let $G = (V, E, H)$ be a causal graph, and assume $G$ contains a directed cycle 
 
 **II. Evaluation of Cycle Categories**
 
-1.  **Length $k=1$**: Under this condition, the cycle is a self-loop $e = (v_0, v_0)$.  By **Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />, no stable timestamp assignment can exist for a self-loop, generating a contradiction.
-2.  **Length $k \ge 2$**: Under this condition, the cycle forms a directed path from $v_0$ to $v_k$.  By **Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />, the edge timestamps must satisfy:
+1.  **Length $k=1$**: Under this condition, the cycle is a self-loop $e = (v_0, v_0)$. The recursive assignment admits no stable timestamp for a self-loop (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />), establishing a contradiction.
+2.  **Length $k \ge 2$**: Under this condition, the cycle forms a directed path from $v_0$ to $v_k$. The sequence of edge timestamps is strictly monotonically increasing (**Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />), satisfying:
 
 $$
 H(e_1) < H(e_2) < \dots < H(e_k)
 $$
 
-Since $v_0 = v_k$, the incoming edge set at $v_0$ is identical to the incoming edge set at $v_k$.  This requires the final step $e_k = (v_{k-1}, v_0)$ to satisfy $H(e_1) > H(e_k)$, which contradicts the transitive chain of inequalities:
+which establishes the inequality $H(e_1) < H(e_k)$. The boundary identification $v_0 = v_k$ establishes that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to the incoming set $\text{In}(v_0)$. The recursive creation timestamp assignment for the initial outgoing edge $e_1 = (v_0, v_1)$ yields:
+
+$$
+H(e_1) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_0) \} \cup \{0\} \right) \ge 1 + H(e_k) > H(e_k)
+$$
+
+Combining the inequality $H(e_1) > H(e_k)$ with the transitive inequality $H(e_1) < H(e_k)$ yields the contradiction:
 
 $$
 H(e_1) < H(e_1)
@@ -2638,7 +2591,7 @@ $$
 
 **III. Conclusion**
 
-Both cases result in a logical contradiction.  Therefore, the assumption of a causal cycle must be false, and the causal graph $G = (V, E, H)$ is a directed acyclic graph.
+Both cases establish a contradiction. Therefore, the assumption of a causal cycle is false, and the causal graph $G = (V, E, H)$ is a directed acyclic graph.
 
 Q.E.D.
 
@@ -2683,8 +2636,6 @@ $$
 \mathfrak{T} = \lbrace T: \mathcal{G} \to \mathcal{G} \mid T(G) \text{ preserves acyclicity, monotonicity of } H, \text{ and finite growth} \rbrace.
 $$
 
----
-
 ### 1.5.1.1 Commentary: Kinematic Purity and Independence {#1.5.1.1}
 
 :::info[**Separation of Kinematic Feasibility from Dynamical Weighting**]
@@ -2720,8 +2671,6 @@ $$
 
 The operation is defined if and only if $G'$ is a directed acyclic graph.
 
----
-
 ### 1.5.2.1 Commentary: Causal Construction {#1.5.2.1}
 
 :::info[**Accretion of Causal Links and Relational Horizon Expansion**]
@@ -2749,8 +2698,6 @@ where the target components are defined by:
 2.  **Edge Set**: $E' = E \setminus \{(u, v)\}$.
 3.  **Timestamp Assignment**: $H'$ is the restriction of $H$ to $E'$, satisfying $H'(e') = H(e')$ for all $e' \in E'$.
 
----
-
 ### 1.5.3.1 Commentary: Causal Destruction {#1.5.3.1}
 
 :::info[**Excision of Causal Links and Historical Poset Monotonicity**]
@@ -2768,8 +2715,6 @@ $\mathfrak{T}_{del}$ is defined as a topological modification, not an informatio
 :::
 
 Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
-
----
 
 ### 1.5.4.1 Commentary: Argument Outline {#1.5.4.1}
 
@@ -2792,8 +2737,6 @@ The proof proceeds by construction, decomposing any valid transformation in the 
 │
 └── 1.5.7 Proof: Vacuum Repertoire
 ```
-
----
 
 ### 1.5.4.2 Diagram: Task Repertoire {#1.5.4.2}
 
@@ -2831,8 +2774,6 @@ The proof proceeds by construction, decomposing any valid transformation in the 
 
 Let $G = (V, E, H)$ be a causal graph, and let $V_{act} = \{ v \in V \mid \exists u \in V \text{ such that } (u, v) \in E \lor (v, u) \in E \}$ be the active vertex set. The creation or destruction of a vertex is strictly subordinate to edge operations, with no primitive task in $\mathfrak{T}_{vac}$ directly mutating the vertex set $V$.
 
----
-
 ### 1.5.5.1 Proof: Relational Vertex Emergence {#1.5.5.1}
 
 :::tip[**Verification of Vertex Subordination through Primitive Operations**]
@@ -2867,8 +2808,6 @@ Since $V' = V$ under all primitive operators, the vertex set $V$ itself is invar
 
 Q.E.D.
 
----
-
 ### 1.5.5.2 Commentary: Ontological Minimality {#1.5.5.2}
 
 :::info[**Ontological Significance of Vertex Subordination**]
@@ -2886,8 +2825,6 @@ This relational subordination guarantees that empty space cannot exist as an aut
 :::
 
 For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
-
----
 
 ### 1.5.6.1 Proof: Reversibility of Primitives {#1.5.6.1}
 
@@ -2923,8 +2860,6 @@ Thus, $T^{-1}(T(G)) = G$.
 Both operations possess unique inverses within the primitive set, demonstrating that state distinguishability is conserved across transitions.
 
 Q.E.D.
-
----
 
 ### 1.5.6.2 Commentary: Constructor Reversibility {#1.5.6.2}
 
@@ -3078,8 +3013,6 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.5.2](/monograph/rules/ontology/1.5/#1.5.2) |
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
 | $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
-
----
 
 \newpage
 # References

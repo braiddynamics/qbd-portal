@@ -292,8 +292,6 @@ The finiteness of the ribbon count imposes a hard physical limit on the complexi
 
 ---
 
----
-
 ## 8.2 Strong Interaction {#8.2}
 
 The specific manifestation of the strong nuclear force through the non-abelian geometry of $SU(3)$ demands a geometric explanation that transcends empirical fitting. We examine why the tripartite braid necessitates exactly eight self-interacting gluons and how the topological entanglement of three ribbons enforces the phenomenon of color confinement. The challenge lies in demonstrating that the elementary act of swapping adjacent strands in a braid generates the complete algebraic structure of Quantum Chromodynamics, including the non-linear terms responsible for asymptotic freedom.
@@ -865,8 +863,6 @@ The geometric necessity of the braid structure mandates that the strong force is
 
 ---
 
----
-
 ## 8.3 Chiral Weak Interaction {#8.3}
 
 
@@ -1334,8 +1330,6 @@ The suppression of right-handed currents is therefore absolute in the low-energy
 
 ---
 
----
-
 ## 8.4 Electroweak Mixing {#8.4}
 
 
@@ -1422,8 +1416,6 @@ $$
 This confirms $p_4 < p_3$, consistent with the geometric requirements.
 
 Q.E.D.
-
----
 
 ### 8.4.2.2 Commentary: Geometric Cost {#8.4.2.2}
 
@@ -1609,8 +1601,6 @@ The electroweak mixing angle is physically determined by the ratio of thermodyna
 This implies that the relative strengths of the fundamental forces are not arbitrary tuning parameters but measures of geometric accessibility. The weak force is "stronger" (more probable) than the electromagnetic force at the unification scale because it requires fewer graph operations to instantiate. Symmetry breaking is revealed as a statistical process where the vacuum settles into the path of least topological resistance.
 
 The mixing angle acts as a rigid structural constant of the causal lattice. It defines the precise proportion in which the neutral current splits, dictating the mass ratio of the W and Z bosons. This geometric determinism eliminates the freedom to adjust the coupling strengths, locking the electroweak sector into a specific, predictable configuration based solely on the topology of the substrate.
-
----
 
 ---
 
@@ -2227,8 +2217,6 @@ The coupling strength is consequently invariant under local perturbations but ti
 
 ---
 
----
-
 ## 8.6 Mass Generation {#8.6}
 
 The generation of mass for the W and Z bosons and the fermion spectrum requires a mechanism that endows massless topological defects with inertia without invoking a fundamental scalar Higgs field. The necessity of reproducing the phenomenology of the Higgs mechanism through a geometric phase transition in the vacuum structure is apparent. This problem demands the reinterpretation of mass not as a coupling to a pervasive field but as the drag experienced by particles as they propagate through the finite density of geometric quanta in the vacuum condensate.
@@ -2586,8 +2574,6 @@ The origin of mass is therefore dynamic and structural. The universe does not co
 
 ---
 
----
-
 ## 8.7 Formal Synthesis {#8.7}
 
 :::note[**End of Chapter 8**]
@@ -2625,8 +2611,6 @@ The vacuum, the particles, and their individual gauge forces are now fully const
 | $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.6.3](/monograph/players/braids/8.6/#8.6.3) |
 | $J^\mu$ | Weak Current | [§8.3.2.1](/monograph/players/braids/8.3/#8.3.2.1) |
 | $\gamma^5$ | Chirality Operator | [§8.3.2.1](/monograph/players/braids/8.3/#8.3.2.1) |
-
----
 
 \newpage
 # References

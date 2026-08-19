@@ -128,7 +128,6 @@ The argument proceeds via Direct Construction, establishing that the information
 
 ---
 
-
 ### 17.1.3 Lemma: Geodesic Dominance of the Flux Chain {#17.1.3}
 
 :::info[**Uniqueness of the Minimal-Action Flux Configuration via Geodesic Dominance of the Flux Chain**]
@@ -265,6 +264,8 @@ Establishing linear potential bounds provides the microscopic physical mechanism
 Topological Berry phases associated with non-commuting braid twists enforce one-dimensional flux collimation. Distributing a single discrete topological twist over a spatial continuum would violate graph causality and un-braid the defect structure. Connecting two separated topological defects requires constructing a contiguous bridge of twisted graph edges, where every additional link added to span spatial distance costs a constant quantum of excitation energy.
 
 Separating topological defects requires an energy expenditure that scales linearly with distance, mimicking the restoring force of an ideal elastic band. Attempting to isolate an individual defect requires an infinite supply of energy to build an infinitely long flux tube. Below the Schwinger pair-production threshold, isolated free quarks cannot form, guaranteeing that color topological charges remain permanently confined within composite braid structures.
+
+---
 
 ### 17.1.5 Lemma: Polyakov Action Discrete Equivalence {#17.1.5}
 
@@ -497,6 +498,8 @@ checks:
 **Conclusion:**
 The tabulated data confirms a strict linear relationship $E(L) = 1.00 \cdot L$. The constant slope $\sigma = 1.00$ indicates that the "flux" (the chain of graph edges) does not spread into the bulk but remains collimated in a tight tube of fixed diameter. This validates the emergence of the **Nambu-Goto String** from the discrete graph dynamics: the energy of the particle is proportional to the length of the string connecting it to the vacuum.
 
+---
+
 ### 17.1.Z Implications and Synthesis {#17.1.Z}
 
 :::note[**Synthesis of Relativistic Strings and Topological Lattice Dislocations**]
@@ -626,7 +629,6 @@ The argument proceeds via Direct Construction, proving the mathematical and phys
 ```
 
 ---
-
 
 ### 17.2.3 Lemma: Kinetic-Winding Mode Orthogonality {#17.2.3}
 
@@ -1285,8 +1287,6 @@ Decoupling of negative-norm ghost states and BRST nilpotency $\mathcal{Q}_{BRST}
 
 Q.E.D.
 
----
-
 ### 17.3.6.1 Calculation: Algebra Closure Verification {#17.3.6.1}
 
 :::note[**Verification of Critical Dimension Anomaly Cancellation via Chiral Mode Analysis**]
@@ -1522,7 +1522,6 @@ The argument proceeds via Direct Construction, proving the modular invariance an
 
 ---
 
-
 ### 17.4.3 Lemma: Unimodular Basis (Modular Invariance) {#17.4.3}
 
 :::info[**Establishment of the Self-Dual Lattice Constraint via One-Loop Unitarity**]
@@ -1755,6 +1754,7 @@ checks:
 
 The analysis of the lattice algebra confirms the natural emergence of Standard Model physics.
 Natural Split: The lattice spontaneously divides into a 112-root "Bosonic" sector (Forces) and a 128-root "Fermionic" sector (Matter), mirroring the physical distinction between gauge fields and particles.; Gauge Groups: The Force sector is shown to strictly contain the root systems for $SU(3)$ and $SU(2)$. The simulation identified 12 roots forming the color sector (matching $SO(6) \cong SU(4)$) and 4 roots forming the weak sector (matching $SO(4) \cong SU(2) \times SU(2)$).; Generational Depth: The Matter sector contains 128 states. Given that a single chiral family in $SO(10)$ unification requires 16 states, the graph vacuum has the capacity to support exactly $128/16 = 8$ primitive families. This suggests that the observed 3 generations are the light remnants of a larger pre-symmetry breaking structure.
+
 ### 17.4.4.3 Commentary: Generations from Braid Chirality {#17.4.4.3}
 
 :::info[**Physical Interpretation of Three Generations via Tripartite Vertex Triality**]
@@ -2001,8 +2001,6 @@ The modular invariance forces the 16 internal left-moving bosons to compactify o
 The Causal Graph provides the rigorous non-perturbative definition of the Heterotic String. The string is not a fundamental entity but the **effective order parameter** of the graph's topological excitations.
 
 Q.E.D.
-
----
 
 ### 17.4.8.1 Calculation: Heterotic Braid Isomorphism Verification {#17.4.8.1}
 

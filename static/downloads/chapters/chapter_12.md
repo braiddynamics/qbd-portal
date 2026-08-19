@@ -512,8 +512,6 @@ Any singularity or discontinuity in the metric $g$ would necessarily induce a co
 
 Q.E.D.
 
----
-
 ### 12.1.5.2 Commentary: Physical Significance {#12.1.5.2}
 
 :::info[**Emergence of Smooth Geometry via Elliptic Regularity**]
@@ -665,8 +663,6 @@ where:
 2.  **Directional Projection:** The term $(\hat{n}_e)_i$ denotes the $i$-th component of the unit tangent vector $\hat{n}_e \in T_x M$ corresponding to the direction of the edge $e$ under the spectral embedding.
 3.  **Dimensional Distribution:** The projection distributes the scalar magnitude across the $d=4$ orthogonal axes of the tangent space. In an isotropic distribution, the trace of the output tensor evaluates exactly to the scalar average of the input ($\text{Tr}(\widetilde{S}) = \langle \mathcal{S} \rangle$), with each diagonal component carrying $1/d$ of the total magnitude.
 4.  **Uniform Weighting:** The weights $w_e = 1$ reflect the uniform measure of the Ahlfors-regular graph.
-
----
 
 ### 12.2.1.1 Commentary: From Scalars to Tensors {#12.2.1.1}
 
@@ -1108,8 +1104,6 @@ in the distributional sense. Since the limit fields are smooth (by the elliptic 
 
 Q.E.D.
 
----
-
 ### 12.2.5.2 Commentary: Physical Significance {#12.2.5.2}
 
 :::info[**Pointwise Emergence of Einstein Field Equations via Renormalized Averaging**]
@@ -1120,6 +1114,8 @@ Proving the pointwise convergence of discrete graph field equations to continuou
 This convergence theorem illuminates the physical origin of Newton's gravitational constant $G_N$. Rather than acting as an ad-hoc fundamental constant of nature, $G_N$ emerges as a renormalized coupling coefficient determined by the spherical averaging measure over discrete graph elements. The trace-reversal factor $1/2$ embedded within the discrete Einstein tensor $\mathcal{G}_{ab}$ matches the four-dimensional spacetime metric trace, ensuring exact tensor compliance without tuning parameters.
 
 Pointwise emergence guarantees that general relativity operates as a local field theory at every point on the emergent manifold. Because weak distribution convergence holds continuously across compact testing regions, localized energy-momentum distributions generate corresponding spacetime curvature distortions without non-local anomalies. Spherical averaging thus bridges microscopic graph rewrites with classical gravitational field dynamics.
+
+---
 
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 
@@ -1561,8 +1557,6 @@ The stage is now set with a smooth continuous manifold and coarse-grained fields
 | $\hat{n}_e$ | Unit direction vector of edge $e$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $B(x,R)$ | Mesoscopic ball of radius $R$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $\kappa'$ | Continuum gravitational coupling constant | [§12.2.5](/monograph/stage/reconstruction/12.2/#12.2.5) |
-
----
 
 \newpage
 # References

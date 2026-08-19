@@ -585,8 +585,6 @@ Equil: Total edges at end: 4
 **Conclusion:**
 The simulation confirms the strict conservation of flux at equilibrium, with all directional sums vanishing within the expected noise floor. The outgoing flux sums $\sum_b T_{ab}$ exhibit a maximum absolute value of 0.005, and the incoming flux sums $\sum_b T_{ba}$ exhibit an identical maximum of 0.005, yielding a total flux divergence $\sum (T_{ab} + T_{ba})$ bounded by 0.01. These residuals are consistent with the statistical variance of the stochastic update process over 200 steps ($1/\sqrt{200} \approx 0.07$), demonstrating that no systematic accumulation or depletion occurs. The final edge count stabilizes at 4, and the transition matrix $T_{ab}$ shows sparse, balanced entries (e.g., $T_{0,1} = -0.005$, $T_{2,4} = 0.005$) without global circulation. This data validates the derivation of local conservation and detailed balance described in the proof.
 
----
-
 ### 13.1.6.2 Diagram: Local Conservation {#13.1.6.2}
 
 :::note[**Visualization of the Detailed Balance Mechanism restoring Equilibrium at a Vertex as Local Conservation**]
@@ -628,8 +626,6 @@ The local conservation of complexity flux positions the **discrete stress-energy
 This neutral configuration also implies a vanishing vacuum energy at leading order, as established by the detailed balance conditions investigated in **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />. The preservation of local divergence invariance ensures that topological updates do not lead to unphysical energy generation or leakage. Furthermore, the **Global Stationarity** condition derived in <Ref id="13.1.3" label="§13.1.3" /> guarantees that the total energy flux of the network remains conserved over cosmological scales, even as local regions undergo rapid, discrete updates.
 
 This stable thermodynamic substrate provides the necessary background for coupling space and matter. By showing that the discrete divergence vanishes locally as established in **Conservation of Complexity Flux** <Ref id="13.1.6" label="§13.1.6" />, we establish a firm mathematical constraint that maps directly onto the Bianchi identities of General Relativity. In the subsequent sections, we will trace how this conserved stress-energy sources the discrete Einstein tensor, forcing the emergent geometry to satisfy the Einstein field equations at the hydrodynamic limit.
-
----
 
 ---
 
@@ -971,8 +967,6 @@ This relation fixes the gravitational coupling as a derived property of the vacu
 
 Q.E.D.
 
----
-
 ### 13.2.5.2 Commentary: Physical Significance {#13.2.5.2}
 
 :::info[**Renormalization of Gravitational Coupling via Vacuum Correlation Length**]
@@ -983,6 +977,8 @@ Deriving Newton's gravitational constant $G_N$ from the vacuum correlation lengt
 The analytical formula $\kappa = \frac{8\pi G_N}{c^4} = \frac{V_0}{\xi^2 \cdot \hbar \cdot c}$ expresses gravitational coupling strength as a ratio of local volumetric geometry to long-range entropic correlation length. Small vacuum correlation lengths $\xi$ correspond to high entropic stiffness, suppressing metric perturbations and yielding weak macroscopic gravitational forces. Conversely, larger correlation lengths permit long-range entropic deformation, increasing the effective strength of gravitational attraction.
 
 This renormalization mechanism establishes gravity as an emergent entropic force driven by zero-point information flow. Physical gravitational attraction does not require introducing fundamental spin-2 graviton fields into the vacuum. Gravitational interactions emerge as the thermodynamic response of the causal graph substrate, where localized matter-energy densities induce long-range entropic gradients across the network.
+
+---
 
 ### 13.2.6 Proof: Emergent Field Equations {#13.2.6}
 
@@ -1678,9 +1674,6 @@ The **Discrete Bianchi Identity** <Ref id="13.3.1" label="§13.3.1" /> completes
 Furthermore, the derivation of this identity from the **action invariance** properties in <Ref id="13.3.3" label="§13.3.3" /> links the conservation of geometry directly to the principle of General Covariance. This connection establishes that the Quantum Braid Dynamics framework constitutes a relativistic theory of gravity, respecting the independence of physical laws from vertex labeling. Under this symmetry protection, the vanishing divergence implies that the geometry cannot spontaneously develop instabilities in the vacuum, ensuring the long-term stability of the homeostatic fixed point.
 
 This divergence-free behavior, which relies on the **discrete Schläfli identity** proved in <Ref id="13.3.4" label="§13.3.4" />, confirms the local consistency of our field equations. We have successfully shown that the local dynamics of the causal graph are governed by the coupled evolution of information flux and geometric curvature, unifying thermodynamics and gravity under a single discrete law. In the subsequent chapter, we will extend this local dynamical framework to temporal slicing, tracing how these discrete field equations govern the causal evolution of spatial geometry.
-
-
----
 
 ---
 

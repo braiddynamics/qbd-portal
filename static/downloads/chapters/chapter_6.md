@@ -643,8 +643,6 @@ theorem legal_add_rejects_loop (G : Graph) (u : V)
 **Verification Summary:**
 The definitions `LegalDel`, `LegalAdd`, and `AllowedTask` encode the dependent family $\mathfrak{T}(G)$ in which only legality-witnessed additions and deletions exist as constructors. The map `phi` certifies that reducing Type I and Type II letters realize as deletions while Type III realizes as the composite add-then-delete word, matching the case analysis of the prose proof. Definitional verification of `del_decreases_complexity` under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> certifies strict descent of $C$ under legal deletion, and `legal_add_rejects_loop` certifies that self-loops never inhabit $\mathrm{LegalAdd}$. Kernel acceptance of these proof terms certifies the logical skeleton of the Task-Reidemeister realization used in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
 
----
-
 ### 6.1.3.4 Commentary: Thermodynamic Simplification {#6.1.3.4}
 
 :::info[**Elimination of Topological Redundancies via the Principle of Unique Causality**]
@@ -998,8 +996,6 @@ The vacuum functions as a relentless filter that actively deletes any topologica
 This insight redefines the ontology of the fermion from a fundamental object to a topological scar. Matter is revealed to be the residue of the vacuum's self-correction process, a knot that the local rewrite system cannot dismantle. The discrete spectrum of particles arises not from arbitrary constants but from the quantization of knot types, where stability is a binary outcome determined by the presence of a topological barrier as established by the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> preventing spontaneous erasure.
 
 The survival of these defects implies that the universe is inhabited exclusively by structures that are computationally irreducible to the vacuum state. This selection pressure, rooted in the **Particle Necessity** <Ref id="6.1.2" label="§6.1.2" /> forces the material world to be composed of robust, non-trivial topologies, ensuring that the macroscopic reality we observe is built upon a foundation of indestructible logical errors that the vacuum cannot erase.
-
----
 
 ---
 
@@ -1697,8 +1693,6 @@ The identification of the $n=3$ braid as the fundamental atom of topology locks 
 
 ---
 
----
-
 ## 6.3 Braid Complexity Functional {#6.3}
 
 Can the inertial mass of a fundamental particle be decoded directly from the geometric cost of its existence within the causal graph? The necessity arises to translate the abstract topology of the tripartite braid into the concrete observable of mass by quantifying the strain it imposes on the surrounding vacuum. This requirement compels a bridge across the gap between discrete knot theory and continuous mechanics to assign a precise energetic value to the crossings and torsions that define the particle's identity.
@@ -2195,8 +2189,6 @@ The definition of mass as geometric cost resolves the hierarchy problem by groun
 
 ---
 
----
-
 ## 6.4 Topological Stability {#6.4}
 
 Does the microscopic turmoil of the vacuum eventually pick the locks of the universe's most stable structures? The final dynamical hurdle is faced to verify whether the local nature of the vacuum's rewrite rules truly preserves the global invariants of prime braids over cosmological timescales. Testing the longevity of fermions against the constant probing of the deletion flux is compelled to ensure that the accumulated probability of a rare untying event does not render matter unstable.
@@ -2609,8 +2601,6 @@ The existence of this topological lock guarantees that the universe is populated
 
 ---
 
----
-
 ## 6.5 Formal Synthesis {#6.5}
 
 :::note[**End of Chapter 6**]
@@ -2659,8 +2649,6 @@ While we now understand the structural layout of these persistent defects, their
 | $k_c$ | Crossing proportionality constant | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
 | $k_t$ | Torsional proportionality constant | [§6.3.7](/monograph/players/fermions/6.3/#6.3.7) |
 | $\Xi$ | Set of all localized excitations | [§6.4.5](/monograph/players/fermions/6.4/#6.4.5) |
-
----
 
 \newpage
 # References

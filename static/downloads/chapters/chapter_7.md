@@ -495,8 +495,6 @@ The broader ramification extends to the fabric of reality itself: in a universe 
 
 ---
 
----
-
 ## 7.2 Pauli Exclusion Principle {#7.2}
 
 Can two distinct entities occupy the exact same locus of causal influence without generating a logical contradiction? Grounding the Pauli exclusion principle in the hard geometry of the graph (rather than treating it as a statistical artifact of wavefunction antisymmetry) stands as a foundational challenge. Resolving this challenge requires demonstrating that the superposition of identical fermions inevitably creates a topological pathology that the axioms of the system cannot tolerate.
@@ -821,8 +819,6 @@ The Pauli exclusion principle, long a cornerstone of quantum theory that underpi
 For those versed in quantum foundations, this geometric exclusion recasts Pauli's rule as a causality safeguard: the binary saturation of edges mirrors the qubit nature of relational links, where occupancy flips from vacant to filled without room for multiplicity. Superimposing a second fermion demands a reverse path to encode distinction, but this creates the very reciprocity that the causal primitive forbids, triggering syndrome errors that the evolution operator erases outright. This mechanism elevates exclusion from a statistical preference to a logical necessity, akin to how digital bits cannot hold fractional values without error.
 
 This principle illuminates why the universe favors diversity over uniformity: without exclusion, matter would collapse into degenerate piles, unable to form the structured hierarchies of chemistry and life. The causal graph's refusal to tolerate loops ensures that fermions must spread out, filling states uniquely and building complexity layer by layer. This topological rigidity not only stabilizes atoms but primes the system for quantized charges, as the conserved writhe of braids provides the next invariant to label these exclusive occupants.
-
----
 
 ---
 
@@ -1419,8 +1415,6 @@ On a deeper level, this result suggests that electromagnetism is the "echo" of t
 
 ---
 
----
-
 ## 7.4 Topological Mass Functional {#7.4}
 
 How does a purely relational web of causal links acquire the property of inertia that resists acceleration? Deriving the fermion mass hierarchy from the combinatorics of the causal graph (without relying on arbitrary coupling constants to the Higgs field) stands as a primary physical requirement. This task demands translating the abstract complexity of knots into a quantifiable energy cost that determines the rest mass of the particle.
@@ -1932,8 +1926,6 @@ For a technical audience, this implies a shift from field-theoretic masses to gr
 
 ---
 
----
-
 ## 7.5 Formal Synthesis {#7.5}
 
 :::note[**End of Chapter 7**]
@@ -1974,8 +1966,6 @@ To understand how these persistent defects interact, we must move from static pr
 | $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/topology/7.4/#7.4.5) |
 | $U_{\text{braid}}$ | Internal Energy (Topological) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
 | $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
-
----
 
 \newpage
 # References

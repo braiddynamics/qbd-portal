@@ -259,6 +259,7 @@ PASS: Smoothing operator recovers continuum geometry and suppresses fractal nois
 
 The simulation demonstrates a dual convergence characteristic.
 Value Convergence ($L^2$): The averaging operator reduces the deviation from the analytical target by a factor of **2.7x**, confirming that the macroscopic lapse accurately reflects the underlying graph density.; Smoothness Convergence ($H^1$): Crucially, the "roughness" of the field (measured by the gradient norm) is suppressed by a factor of **27.4x**. This empirically confirms that while the raw causal graph is fractal and non-differentiable at the micro-scale, the emergent field satisfies the $C^\infty$ smoothness requirements of the ADM formalism.
+
 ### 14.1.3.3 Commentary: Suppressing Shot Noise {#14.1.3.3}
 
 :::info[**Physical Interpretation of the Smoothing Mechanism via Local Causal Averaging**]
@@ -849,8 +850,6 @@ Thus, the probabilistic graph dynamics converge rigorously to classical geodesic
 
 Q.E.D.
 
----
-
 ### 14.2.7.2 Commentary: Physical Significance {#14.2.7.2}
 
 :::info[**Derivation of the Equivalence Principle via Action Minimization**]
@@ -861,6 +860,8 @@ Proving that test particles propagate along timelike geodesics provides a micros
 Massive particles correspond to localized topological ribbon braids whose rest mass $m$ scales linearly with braid complexity $N_3$. In the macroscopic limit ($m \gg \hbar$), the Feynman path integral over graph histories is dominated by the path of stationary phase where variation of proper time vanishes ($\delta \int m \mathrm{d}\tau = 0$). Constructive phase interference selects the classical trajectory that maximizes accumulated proper time.
 
 Solving the corresponding Euler-Lagrange variational equations yields the standard geodesic equation $\frac{\mathrm{d}^2 x^\mu}{\mathrm{d}\tau^2} + \Gamma^\mu_{\alpha\beta} \frac{\mathrm{d}x^\alpha}{\mathrm{d}\tau} \frac{\mathrm{d}x^\beta}{\mathrm{d}\tau} = 0$. Because particle mass $m$ cancels identically from the equation of motion, all physical braid configurations follow identical geodesic paths through curved spacetime. The Equivalence Principle is thus established as an emergent property of stationary phase path integration across relational graph networks.
+
+---
 
 ### 14.2.8 Proof: Emergent Lorentzian Manifold {#14.2.8}
 
@@ -2034,8 +2035,6 @@ The **Einstein Field Equations** <Ref id="14.4.1" label="§14.4.1" /> completes 
 Within this thermodynamic description, the gravitational constant $G$ is identified not as an arbitrary fundamental scale, but as the physical area-per-bit of the vacuum, as proven in **Recovering Newton's Constant (G)** <Ref id="14.4.3" label="§14.4.3" />. This identification matches General Relativity ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$) in the continuum limit, establishing that the stiffness of spacetime is determined by the entanglement capacity of the discrete braid structures as verified by the **Einstein Field Equations** <Ref id="14.4.1" label="§14.4.1" />. The resulting field equations govern the backreaction of quantum states, ensuring that mass-energy and spatial curvature are two aspects of a single information-theoretic constraint.
 
 This completes the physical description of the emergent semiclassical universe. We now possess the stage (Lorentzian manifold), the actors (quantum fields), and the script (Einstein equations) that coordinates their interaction. In the next section, we will address the global initial value formulation, establishing the ADM Hamiltonian constraint that governs the slicing and evolution of this dynamical spacetime.
-
----
 
 ---
 

@@ -195,8 +195,6 @@ Ultimately, the GHW convergence ensures that the physical states of the quantum 
 
 ---
 
----
-
 ## 11.2 Causal Geometry Construction {#11.2}
 
 Constructing a rigorous causal geometry on a discrete graph $G_t = (V_t, E_t)$ requires equipping the network with both spatial metric distances and local measure dynamics without presupposing a background manifold. The framework must assign probability measures to vertices while maintaining a well-defined metric for transport costs across directed causal edges. Establishing this dual structure is necessary to compute the Causal Ollivier-Ricci curvature along each edge, converting local topological rewrites into quantifiable geometric curvature. The challenge lies in ensuring that the discrete measure assignment reflects the asymmetric flow of time while preserving the spatial symmetry required for isotropic continuum geometry.
@@ -1258,6 +1256,7 @@ Verification Pass:  True
 
 The simulation provides exact confirmation of the analytical proof.
 Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This validates that the asymmetry of the measures successfully enforces a directional transport cost, compensating for the undirected metric.
+
 ### 11.2.7.3 Commentary: Arrow of Time in Static Geometry {#11.2.7.3}
 
 :::info[**Emergence of Directed Physics from Undirected Metrics**]
@@ -1348,8 +1347,6 @@ The alternating sum is evaluated to obtain $\chi(L_r(v)) = 0$ as $r \to \infty$.
 
 Q.E.D.
 
----
-
 ### 11.2.8.2 Commentary: Physical Significance {#11.2.8.2}
 
 :::info[**Macroscopic Homology Stability of Emergent Metrics via Reifenberg Flatness**]
@@ -1360,6 +1357,8 @@ Establishing macroscopic metric stability across discrete quantum spacetime repr
 Reifenberg Flatness provides the mathematical framework to prove that chaotic, discrete graph fluctuations produce smooth macroscopic geometries. The Reifenberg condition evaluates the Hausdorff distance between local metric balls and ideal Euclidean tangent spaces across scaling radii $r$. Proving that the causal graph satisfies Reifenberg Flatness demonstrates that microscopic edge-flip noise is dynamically suppressed over multi-link correlation distances, preventing metric singularities and fractal collapse.
 
 This macroscopic stability proof confirms that continuous spacetime manifolds emerge naturally from discrete relational network dynamics. At large distances, boundary spheres on the causal graph become homeomorphic to smooth three-spheres $S^3$, establishing an un-crumpled, flat Euclidean background geometry. Reifenberg Flatness thus bridges discrete micro-geometry with classical differential geometry, guaranteeing the stability of emergent physical space.
+
+---
 
 ### 11.2.9 Proof: Causal Geometry Construction {#11.2.9}
 
@@ -2157,5 +2156,3 @@ We now possess a fully defined geometric spacetime that arises directly from dis
 | $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3](/monograph/stage/discrete/11.3/#11.3.3) |
 | $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
 | $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
-
----
