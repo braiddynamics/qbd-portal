@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------
+§22.3.7.1 Page Curve Integration and Information Recovery Time
+------------------------------------------------------------------------------
+Initial Black Hole Mass M_0: 100.0 M_Pl
+Initial Bekenstein-Hawking Entropy S_0: 125663.7 nats
+Calculated Page Time Ratio t_Page / t_evap: 0.5680 (~56.79% lifetime)
+Maximum Entanglement Entropy at Page Time: 71807.8 nats
+Final Radiation Entanglement Entropy S_rad(t_evap): 0.0 nats (Pure state: pass)
+------------------------------------------------------------------------------
+|   t / t_evap |   Mass M(t) |   S_BH (Horizon) |   S_rad (Semi) |   S_rad (Island) | Active Min-Cut Surface   |
+|--------------|-------------|------------------|----------------|------------------|--------------------------|
+|        0     |      100    |         125664   |            0   |              0   | Empty Set (No Island)    |
+|        0.15  |       94.73 |         112760   |        17204.7 |          17204.7 | Empty Set (No Island)    |
+|        0.35  |       86.62 |          94294.3 |        41825.9 |          41825.9 | Empty Set (No Island)    |
+|        0.5   |       79.37 |          79163.2 |        62000.7 |          62000.7 | Empty Set (No Island)    |
+|        0.568 |       75.59 |          71807.8 |        71807.8 |          71807.8 | Horizon (Core Island)    |
+|        0.7   |       66.94 |          56315   |        92465   |          56315   | Horizon (Core Island)    |
+|        0.85  |       53.13 |          35476.2 |       120250   |          35476.2 | Horizon (Core Island)    |
+|        0.98  |       27.14 |           9259   |       155206   |           9259   | Horizon (Core Island)    |
+|        1     |        0    |              0   |       167552   |              0   | Horizon (Core Island)    |
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

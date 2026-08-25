@@ -68,8 +68,8 @@ export const papers: PaperRecord[] = [
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/vacuum-phase', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '303 KB' },
-      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '160 KB' }
+      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '1.2 MB' },
+      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '188 KB' }
     ],
     companionAssets: [
       {
@@ -88,20 +88,20 @@ export const papers: PaperRecord[] = [
         name: 'Full Replication Bundle (ZIP)',
         type: 'bundle',
         typeLabel: 'Replication Archive',
-        description: 'Self-contained replication package including single-file Python simulation engine, 8 unit test suites, Lakefile, and README.',
+        description: 'Self-contained replication package including C++20 multithreaded simulation engine, Python engine, Makefile, and multi-scale datasets (N=10 to 10,000).',
         href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip',
         isDownload: true,
         icon: '📦',
-        badge: '35 KB ZIP',
-        size: '35 KB'
+        badge: '31 KB ZIP',
+        size: '31 KB'
       },
       {
         id: 'vacuum-phase-dataset',
-        name: 'Design Point Trajectories (N = 100 CSV)',
+        name: 'Multi-Scale Production Trajectories (N = 10 to 10,000 CSV)',
         type: 'dataset',
         typeLabel: 'Monte Carlo Dataset',
-        description: 'Raw 100-trajectory simulation records and time-series data at the canonical analytical prior (μ₀ = 1/√2π, λ₀ = e - 1).',
-        href: 'pathname:///papers/vacuum-phase/data/p_surv_N100_design.csv',
+        description: 'Raw simulation records across four orders of magnitude (N = 10, 100, 1,000, 10,000) at the canonical prior (μ₀ = 1/√2π, λ₀ = e - 1).',
+        href: 'pathname:///papers/vacuum-phase/data/p_surv_N10000_cpp_production.csv',
         isDownload: true,
         icon: '📊',
         badge: 'CSV (Pandas-ready)'

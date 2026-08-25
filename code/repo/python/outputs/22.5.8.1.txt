@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------
+§22.5.8.1 Stabilizer Error Suppression and Zero-Resistance Transport
+------------------------------------------------------------------------------
+Material: Niobium Superconducting Braid Lattice (T_c = 9.25 K)
+Operating Temperature T: 4.20 K (T/T_c = 0.454)
+Topological Energy Gap Ratio Delta_SC / k_B T_c: 1.764
+Fitted 3D Fault-Tolerance Threshold p_th: 0.104
+Thermal Noise Rate p_thermal: 1.4688e-03 (Sub-threshold: p < p_th)
+Laboratory Scale DC Resistivity (L >= 1000): 0.000 Ohm*cm (Dissipationless: pass)
+------------------------------------------------------------------------------
+|   Lattice L |   Code Dist d |      Atoms N |   log10(P_err) | Logical Error Rate P_L   | DC Resistivity rho_DC   | Regime                   |
+|-------------|---------------|--------------|----------------|--------------------------|-------------------------|--------------------------|
+|           4 |             4 |     64       |           -3.7 | 1.99e-04                 | 3.35e-10 Ohm*cm         | Microscopic (4 cells)    |
+|           8 |             8 |    510       |           -7.4 | 3.98e-08                 | 6.68e-14 Ohm*cm         | Nanoscale (8 cells)      |
+|          16 |            16 |   4100       |          -14.8 | 1.58e-15                 | 2.66e-21 Ohm*cm         | Mesoscopic (16-64 cells) |
+|          32 |            32 |  33000       |          -29.6 | 2.51e-30                 | 4.21e-36 Ohm*cm         | Mesoscopic (16-64 cells) |
+|          64 |            64 | 260000       |          -59.2 | 6.28e-60                 | 1.05e-65 Ohm*cm         | Mesoscopic (16-64 cells) |
+|         128 |           128 |      2.1e+06 |         -118.4 | 3.94e-119                | 6.62e-125 Ohm*cm        | Macroscopic (10^3 cells) |
+|        1000 |          1000 |      1e+09   |         -925   | 0.0 (Exact Zero)         | 0.000 (Superconducting) | Macroscopic (10^3 cells) |
+|     1000000 |       1000000 |      1e+18   |      -925035   | 0.0 (Exact Zero)         | 0.000 (Superconducting) | Laboratory (10^6 cells)  |
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

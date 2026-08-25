@@ -723,5 +723,20 @@
     "id": "21.5",
     "title": "Formal Synthesis",
     "summary": "The structural bedrock of the cosmological dark sector is anchored in the homological stability of 4-strand topological braid defects and the thermodynamic equilibrium of the Master Equation. Rather than postulating undiscovered particle families or fine-tuned scalar potentials, Quantum Braid Dynamics demonstrates that dark matter and dark energy are mandatory geometric consequences of discrete spacetime emergence. Dark matter arises as unreduced 4-strand braid configurations nucleated during the dimensional crystallization phase transition, while dark energy represents the active 3-cycle creation current required to sustain the homeostatic vacuum attractor density $\\rho^* \\approx 0.037$."
+  },
+  "22.5": {
+    "id": "22.5",
+    "title": "Macroscopic Braid Condensates",
+    "summary": "In condensed matter physics, superconductivity and superfluidity represent macroscopic quantum phenomena wherein electrical currents flow indefinitely without dissipation and fluids circulate without viscosity. Conventional Bardeen-Cooper-Schrieffer (BCS) theory explains this behavior through the pairing of electrons into bosonic Cooper pairs that condense into a macroscopic ground state protected by an energy gap $\\Delta$. However, continuous phenomenological models treat the superconducting phase as an ad-hoc spontaneous breaking of global $U(1)$ gauge symmetry, leaving the topological mechanism of fault-tolerant charge transport and dissipationless current flow unexplained at the discrete informational level."
+  },
+  "22.6": {
+    "id": "22.6",
+    "title": "Topological Meissner Effect",
+    "summary": "The expulsion of magnetic flux from the interior of a superconductor (known as the Meissner-Ochsenfeld effect) distinguishes true superconductivity from an idealized classical perfect conductor. In classical electrodynamics, a material with zero resistance would merely trap whatever magnetic flux was present when it cooled below its transition temperature. In contrast, a superconductor actively expels pre-existing magnetic fields upon entering the superconducting state, demonstrating that perfect diamagnetism is an intrinsic thermodynamic ground-state property. However, continuous phenomenological theories describe this expulsion via the London equations or the Anderson-Higgs mechanism without explaining the microscopic discrete origin of gauge field mass."
+  },
+  "22.7": {
+    "id": "22.7",
+    "title": "Formal Synthesis",
+    "summary": "The structural bedrock of gravitational singularities, horizon thermodynamics, and macroscopic quantum condensates is established through the discrete information capacity and topological error-correcting properties of the relational causal graph. Rather than accepting unphysical infinite curvature divergences or treating black holes as information-destroying thermodynamic sinks, Quantum Braid Dynamics demonstrates that physical extremes are strictly regulated by finite graph saturation limits. Gravitational collapse terminates in a frozen saturated graph core governed by steric friction, while event horizons emerge as causal desynchronization boundaries across which syndrome extraction latency diverges, generating the Bekenstein-Hawking area-entropy relation directly from boundary graph cut capacity."
   }
 }

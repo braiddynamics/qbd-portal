@@ -1,19 +1,21 @@
 ------------------------------------------------------------------------
 §19.3.5.1 Hadron Mass Splitting Kinetics
 ------------------------------------------------------------------------
-Proton Braid Writhe w_p: 1
-Neutron Braid Writhe w_n: 0
-Bare Quark Mass Difference (m_d - m_u): 2.5300 MeV
-Electromagnetic Self-Energy Delta_E_EM: -1.2367 MeV
-Derived Neutron-Proton Mass Splitting delta_m_np: 1.2933 MeV
+Proton Topological Complexity C_uud: 1
+Neutron Topological Complexity C_udd: 4
+Topological Complexity Gap Delta_C: 3
+Topological Energy Scale kappa_top: 0.684333 MeV
+Topological Mass Contribution Delta_m_top: 2.0530 MeV
+Electromagnetic Self-Energy Delta_m_EM: -0.7600 MeV
+Derived Neutron-Proton Mass Splitting delta_m_np: 1.2930 MeV
 PDG 2022 Observational Benchmark: 1.293332 MeV
-Relative Match Error: 2.4742e-03%
+Relative Match Error: 2.5747e-02%
 ------------------------------------------------------------------------
-| Hadron Multiplet        |   Bare Mass Diff (MeV) |   EM Self-Energy (MeV) |   Derived Splitting (MeV) |   PDG Benchmark (MeV) |
-|-------------------------|------------------------|------------------------|---------------------------|-----------------------|
-| Nucleon (n - p)         |                   2.53 |                -1.2367 |                    1.2933 |                1.2933 |
-| Sigma (Sigma- - Sigma+) |                   5.06 |                -3.06   |                    8      |                8.08   |
-| Xi (Xi- - Xi0)          |                   2.53 |                 4.15   |                    6.68   |                6.85   |
+| Hadron Multiplet        |   Topological Diff (MeV) |   EM Self-Energy (MeV) |   Derived Splitting (MeV) |   PDG Benchmark (MeV) |
+|-------------------------|--------------------------|------------------------|---------------------------|-----------------------|
+| Nucleon (n - p)         |                    2.053 |                 -0.76  |                     1.293 |                1.2933 |
+| Sigma (Sigma- - Sigma+) |                    4.106 |                  3.894 |                     8     |                8.08   |
+| Xi (Xi- - Xi0)          |                    2.053 |                  4.627 |                     6.68  |                6.85   |
 ------------------------------------------------------------------------
 status: pass
 ------------------------------------------------------------------------

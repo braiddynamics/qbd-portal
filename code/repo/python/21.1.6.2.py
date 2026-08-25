@@ -12,15 +12,15 @@ def run_relic_abundance_scaling():
 
     # Physical parameters & benchmarks
     m_p = 0.938272          # Proton mass [GeV]
-    kappa_m = 0.511e-3 / 3.0 # Mass constant [GeV] (~0.17033 MeV)
+    kappa_H = 0.314159265   # Crystallization scale mass constant [GeV] (~314.159 MeV)
 
     # Ground-state crossing complexities from Topological Mass Functional (§7.4.2 & §21.1.4.1)
-    # B3 Baryonic ground state (proton): C_eff[p] = m_p / (314.159 MeV) = 2.9866 units
+    # B3 Baryonic ground state (proton): C_eff[p] = m_p / kappa_H = 2.98662 composite units
     # B4 Defect: beta_4 = (sigma_1 sigma_2 sigma_3 sigma_1 sigma_2 sigma_3)^2 with C[beta_4] = 16
-    c_eff_p = 2.98662
+    c_eff_p = m_p / kappa_H
     c_b4 = 16.0
-    mass_ratio_theory = c_b4 / c_eff_p  # 16 / 2.98662 = 5.35714
-    m_B4 = mass_ratio_theory * m_p
+    m_B4 = c_b4 * kappa_H               # 16 * 0.314159265 GeV = 5.02655 GeV
+    mass_ratio_theory = m_B4 / m_p      # 5.02655 / 0.938272 = 5.35714
 
     # Sweep graph depths during crystallization phase transition
     depths = [3, 4, 5, 6, 7]
