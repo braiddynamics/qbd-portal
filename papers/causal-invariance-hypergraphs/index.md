@@ -56,7 +56,7 @@ description: "Information-theoretic, open-system thermodynamic, and combinatoria
       <tr>
         <td><strong>causal-invariance-hypergraphs.pdf</strong></td>
         <td>Complete Camera-Ready Manuscript (XeLaTeX)</td>
-        <td>897 KB</td>
+        <td>908 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.pdf" download style={{ fontWeight: 600 }}>Download PDF ↓</a>
         </td>
@@ -64,7 +64,7 @@ description: "Information-theoretic, open-system thermodynamic, and combinatoria
       <tr>
         <td><strong>causal-invariance-hypergraphs.md</strong></td>
         <td>Full Markdown Source Manuscript</td>
-        <td>97 KB</td>
+        <td>95 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md" download style={{ fontWeight: 600 }}>Download MD ↓</a>
         </td>

@@ -69,7 +69,7 @@ export const papers: PaperRecord[] = [
     primaryLinks: [
       { label: 'Read Online', href: '/papers/vacuum-phase', icon: '📖' },
       { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '1.2 MB' },
-      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '188 KB' }
+      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '190 KB' }
     ],
     companionAssets: [
       {
@@ -92,8 +92,8 @@ export const papers: PaperRecord[] = [
         href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip',
         isDownload: true,
         icon: '📦',
-        badge: '31 KB ZIP',
-        size: '31 KB'
+        badge: '32 KB ZIP',
+        size: '32 KB'
       },
       {
         id: 'vacuum-phase-dataset',
@@ -138,8 +138,8 @@ export const papers: PaperRecord[] = [
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/causal-invariance-hypergraphs', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.pdf', isDownload: true, icon: '📄', size: '897 KB' },
-      { label: 'Markdown', href: 'pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md', isDownload: true, icon: '📝', size: '97 KB' }
+      { label: 'PDF', href: 'pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.pdf', isDownload: true, icon: '📄', size: '908 KB' },
+      { label: 'Markdown', href: 'pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md', isDownload: true, icon: '📝', size: '95 KB' }
     ],
     companionAssets: [
       {
@@ -207,8 +207,8 @@ export const papers: PaperRecord[] = [
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/maximal-entropy-random-walk', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.pdf', isDownload: true, icon: '📄', size: '40 KB' },
-      { label: 'Markdown', href: 'pathname:///papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.md', isDownload: true, icon: '📝', size: '8 KB' }
+      { label: 'PDF', href: 'pathname:///papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.pdf', isDownload: true, icon: '📄', size: '49 KB' },
+      { label: 'Markdown', href: 'pathname:///papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.md', isDownload: true, icon: '📝', size: '9 KB' }
     ],
     companionAssets: [
       {

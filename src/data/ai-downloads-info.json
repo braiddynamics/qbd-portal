@@ -1640,10 +1640,14 @@
       "pdf_url": "https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.pdf",
       "replication_zip_url": "https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase-replication.zip",
       "lean4_kernel_url": "https://braiddynamics.com/papers/vacuum-phase/code/VacuumPhase.lean",
-      "dataset_csv_url": "https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N100_design.csv",
+      "dataset_csv_url": "https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N10000_cpp_production.csv",
       "formal_theorems_count": 34,
       "unproven_axioms": 0,
-      "estimated_tokens_md": 45000
+      "estimated_tokens_md": 60000,
+      "file_size_pdf_bytes": 1240293,
+      "file_size_markdown_bytes": 194126,
+      "file_size_replication_zip_bytes": 32474,
+      "file_size_lean4_bytes": 28959
     },
     {
       "id": "causal-invariance-hypergraphs",
@@ -1655,7 +1659,11 @@
       "category": "Discrete Physics & Information Theory",
       "html_url": "https://braiddynamics.com/papers/causal-invariance-hypergraphs",
       "markdown_url": "https://braiddynamics.com/papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md",
-      "estimated_tokens_md": 15000
+      "estimated_tokens_md": 28000,
+      "file_size_pdf_bytes": 929543,
+      "file_size_markdown_bytes": 97442,
+      "file_size_replication_zip_bytes": 604501,
+      "file_size_lean4_bytes": 14939
     },
     {
       "id": "maximal-entropy-random-walk",
@@ -1669,7 +1677,9 @@
       "markdown_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.md",
       "pdf_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.pdf",
       "simulation_py_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/simulations/maximal_entropy_random_walk_simulation.py",
-      "estimated_tokens_md": 2500
+      "estimated_tokens_md": 3000,
+      "file_size_pdf_bytes": 50390,
+      "file_size_markdown_bytes": 9309
     }
   ]
 }

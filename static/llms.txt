@@ -16,7 +16,7 @@ Independent academic manuscripts, formal critiques, and computational replicatio
   - Markdown: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.md
   - PDF: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.pdf
   - Lean 4 Formal Kernel (34 Theorems, 0 Axioms): https://braiddynamics.com/papers/vacuum-phase/code/VacuumPhase.lean
-  - Monte Carlo Dataset (N=100 CSV): https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N100_design.csv
+  - Production Monte Carlo Dataset (N=10,000 CSV): https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N10000_cpp_production.csv
   - Replication ZIP Package: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase-replication.zip
 - [Causal Invariance & Landauer Limits in Hypergraphs (Working Paper v0.9.0, August 2026)](https://braiddynamics.com/papers/causal-invariance-hypergraphs)
   - Markdown: https://braiddynamics.com/papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md

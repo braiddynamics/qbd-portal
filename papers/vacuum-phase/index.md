@@ -56,7 +56,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
       <tr>
         <td><strong>vacuum-phase.pdf</strong></td>
         <td>Complete Publication Manuscript (XeLaTeX)</td>
-        <td>1211 KB</td>
+        <td>1.2 MB (1,211 KB)</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf" download className="button button--xs button--primary">Download PDF</a>
         </td>
@@ -64,7 +64,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
       <tr>
         <td><strong>vacuum-phase.md</strong></td>
         <td>Clean Markdown Manuscript (LaTeX math, standard tables)</td>
-        <td>189 KB</td>
+        <td>190 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/vacuum-phase/downloads/vacuum-phase.md" download className="button button--xs button--secondary">Download MD</a>
         </td>
@@ -72,7 +72,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
       <tr>
         <td><strong>vacuum-phase-replication.zip</strong></td>
         <td>Full Replication Bundle (C++20 engine, Python engine, tests, multi-scale datasets)</td>
-        <td>31 KB</td>
+        <td>32 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip" download className="button button--xs button--secondary">Download ZIP</a>
         </td>
@@ -80,7 +80,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
       <tr>
         <td><strong>VacuumPhase.lean</strong></td>
         <td>Standalone Formal Verification Kernel (34 Theorems, 0 Axioms)</td>
-        <td>32 KB</td>
+        <td>29 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/vacuum-phase/code/VacuumPhase.lean" download className="button button--xs button--secondary">Download Lean</a>
         </td>
@@ -88,7 +88,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
       <tr>
         <td><strong>p_surv_N10000_cpp_production.csv</strong></td>
         <td>Production Monte Carlo Scaling Dataset (N=10,000)</td>
-        <td>3 KB</td>
+        <td>2.4 KB</td>
         <td style={{ textAlign: 'right' }}>
           <a href="pathname:///papers/vacuum-phase/data/p_surv_N10000_cpp_production.csv" download className="button button--xs button--secondary">Download Data</a>
         </td>
