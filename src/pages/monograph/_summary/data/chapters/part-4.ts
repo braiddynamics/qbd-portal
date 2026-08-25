@@ -6,7 +6,7 @@ export const part4Chapters: ChapterData[] = [
     part: "Part IV: Phenomenological Consequences (The Output)",
     title: "Big Kindling",
     taxonomy: "Inflation",
-    status: "Draft WIP",
+    status: "Complete",
     leanProofs: 0,
     pythonSims: 11,
     executiveEvaluation: "Early inflation is simulated as a rapid branching process of the pre-geometric causal set network, driven by comonadic write self-reinforcement.",
@@ -47,7 +47,7 @@ export const part4Chapters: ChapterData[] = [
       }
     ],
     analogy: "Blowing bubbles in soapy water: a single tiny bubble rapidly divides and branches into a massive, interconnected cluster of bubbles, creating spatial volume almost instantly.",
-    link: "/wip?chapter=18",
+    link: "/monograph/output/inflation/18.1",
     style: "C",
     image: {
       src: "/img/vacuum_stabilizer_code.png",
@@ -75,7 +75,7 @@ export const part4Chapters: ChapterData[] = [
     part: "Part IV: Phenomenological Consequences (The Output)",
     title: "Hot Universe",
     taxonomy: "Nucleosynthesis",
-    status: "Draft WIP",
+    status: "Complete",
     leanProofs: 0,
     pythonSims: 0,
     executiveEvaluation: "Primordial matter abundance and baryogenesis are computed directly from the topological decay rewrites of heavy pre-geometric braid defects.",
@@ -116,7 +116,7 @@ export const part4Chapters: ChapterData[] = [
       }
     ],
     analogy: "Cooking soup: as the hot liquid cools, fat droplets naturally group together and form solid, distinct globules. The early universe cooling lets energy settle into stable particle braids.",
-    link: "/wip?chapter=19",
+    link: "/monograph/output/nucleosynthesis/19.1",
     style: "D",
     definitions: [
       {
@@ -138,7 +138,7 @@ export const part4Chapters: ChapterData[] = [
     part: "Part IV: Phenomenological Consequences (The Output)",
     title: "Structured Universe",
     taxonomy: "Cosmic Web",
-    status: "Draft WIP",
+    status: "Complete",
     leanProofs: 0,
     pythonSims: 0,
     executiveEvaluation: "Cosmic filament structures and void regions emerge naturally as thermodynamic graph cluster networks of the pre-geometric event lattice.",
@@ -187,7 +187,7 @@ export const part4Chapters: ChapterData[] = [
       }
     ],
     analogy: "Water droplets condensing on a windowpane. Random updates pull connections together into dense droplets (galaxies) while leaving dry, empty spaces (cosmic voids) in between.",
-    link: "/wip?chapter=20",
+    link: "/monograph/output/web/20.1",
     style: "E",
     sandbox: "timeline",
     definitions: [
@@ -210,7 +210,7 @@ export const part4Chapters: ChapterData[] = [
     part: "Part IV: Phenomenological Consequences (The Output)",
     title: "Dark Sector",
     taxonomy: "Relics",
-    status: "Draft WIP",
+    status: "Complete",
     leanProofs: 0,
     pythonSims: 0,
     executiveEvaluation: "Vacuum vacancy defects ('ash') left behind during geometerogenesis are shown to possess energy-momentum equivalents, modeling dark matter and energy.",
@@ -247,7 +247,7 @@ export const part4Chapters: ChapterData[] = [
       }
     ],
     analogy: "Missing bricks in a brick wall. The empty spaces do not contain any braided matter, but they still alter the structural balance and weight distribution of the wall, creating gravitational pull.",
-    link: "/wip?chapter=21",
+    link: "/monograph/output/relics/21.1",
     style: "A",
     definitions: [
       {

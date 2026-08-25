@@ -1,65 +1,57 @@
-# Quantum Braid Dynamics
-# https://braiddynamics.com
+# Quantum Braid Dynamics (QBD)
 
-> A background-independent, parameter-free formulation of quantum gravity that
-> derives spacetime geometry, matter, and gauge symmetries from a discrete causal
-> network — without free parameters.
+> Quantum Braid Dynamics (QBD) is an independent theoretical physics research project that models the cosmos as a computational process running on a discrete causal network. Spacetime geometry, fermions, bosons, and gauge symmetries emerge from topological invariants of braided 3-cycles on directed graphs without free parameters.
 
-## AI Agent Entry Point
+## Primary AI Entry Points
+- [AI Gateway & Review Guide](https://braiddynamics.com/ai): Structured documentation and guidance for LLM/AI reasoning agents.
+- [Machine-Readable Download Index (JSON)](https://braiddynamics.com/data/ai-downloads-info.json): Complete catalogue of all monograph chapters, standalone papers, formal proofs, and simulations with byte sizes and token counts.
 
-**AI Portal**: https://braiddynamics.com/ai
-This page is purpose-built for AI agents and LLMs. It contains a full site
-navigation map, chapter-by-chapter content index with token estimates, key
-concept glossary, direct download links, and guidance on how to review the
-monograph accurately.
+---
 
-## Machine-Readable Resources
+## 1. Standalone Research Papers & Preprints Archive
+Independent academic manuscripts, formal critiques, and computational replication packages (distinct publications from the 25-chapter monograph):
 
-**Download Index (JSON)**: https://braiddynamics.com/data/ai-downloads-info.json
-Catalogue of every available download with filenames, byte sizes, and token counts.
-Fetch this first to locate the specific chapter URL(s) you need.
+- [Research Papers Repository Hub](https://braiddynamics.com/papers): Web archive with interactive readers, BibTeX citations, and replication packages (sorted by publishing date).
+- [Vacuum Phase & Quasi-Stationary Distributions (Preprint v1.0.0, August 24, 2026)](https://braiddynamics.com/papers/vacuum-phase)
+  - Markdown: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.md
+  - PDF: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.pdf
+  - Lean 4 Formal Kernel (34 Theorems, 0 Axioms): https://braiddynamics.com/papers/vacuum-phase/code/VacuumPhase.lean
+  - Monte Carlo Dataset (N=100 CSV): https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N100_design.csv
+  - Replication ZIP Package: https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase-replication.zip
+- [Causal Invariance & Landauer Limits in Hypergraphs (Working Paper v0.9.0, August 2026)](https://braiddynamics.com/papers/causal-invariance-hypergraphs)
+  - Markdown: https://braiddynamics.com/papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md
+- [Comment on "Localization of the Maximal Entropy Random Walk" (Formal Comment v1.0.0, June 21, 2026)](https://braiddynamics.com/papers/maximal-entropy-random-walk)
+  - Markdown: https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.md
+  - PDF: https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.pdf
+  - Python Verification Simulation: https://braiddynamics.com/papers/maximal-entropy-random-walk/simulations/maximal_entropy_random_walk_simulation.py
 
-**Definitions Glossary (JSON)**: https://braiddynamics.com/data/definitions.json
-All ~300 formal definitions, lemmas, theorems, and proofs used in the monograph,
-keyed by section ID (e.g. "2.3.2" → Geometric Quantum).
+---
 
-**Bibliography (JSON)**: https://braiddynamics.com/data/references.json
-Full reference list with all citations used in the monograph.
+## 2. The Monograph (25 Chapters)
+The comprehensive theoretical physics treatise *Quantum Braid Dynamics: A Computational Process*:
 
-## Monograph Downloads
+- [Monograph Web Reader](https://braiddynamics.com/monograph): Full book table of contents and online chapters.
+- [Complete Monograph (Markdown, ~1.15M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.md)
+- [Complete Monograph (Structured JSON, ~1.26M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.json)
+- [Individual Chapter Pattern (Markdown)](https://braiddynamics.com/downloads/chapters/chapter_N.md): Replace `N` with chapter number (1 to 25).
+- [Individual Chapter Pattern (JSON)](https://braiddynamics.com/downloads/chapters/chapter_N.json): Replace `N` with chapter number (1 to 25).
 
-The primary content is a 25-chapter scientific monograph available in three formats:
+### Monograph Structure
+- Part 1: The Foundational Principles (Chapters 1–5): Substrate ontology, axioms, object model, dynamics, geometrogenesis.
+- Part 2: Topological Nature of Matter (Chapters 6–10): Tripartite braids, quantum numbers, gauge symmetries, generations, quantum universality.
+- Part 3: Emergent Reality (Chapters 11–17): Discrete differential geometry, Einstein equations, continuum limit, Lorentzian time, ER=EPR, holography.
+- Part 4: Phenomenological Consequences (Chapters 18–22): Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics (Chapters 18–21 published; Chapter 22 active draft).
+- Part 5: Applications and Synthesis (Chapters 23–25): Multiverse thermodynamics, mathematical universe derivations, cosmological natural selection.
 
-Full book — Markdown (~1.19M tokens):
-  https://braiddynamics.com/downloads/qbd_monograph_complete.md
+---
 
-Full book — Structured JSON (~1.22M tokens):
-  https://braiddynamics.com/downloads/qbd_monograph_complete.json
+## 3. Mathematical Validation & Code
+- [Lean 4 Monograph Proofs Directory](https://braiddynamics.com/downloads/code/repo/lean/): Six machine-checked theorem files.
+- [Python Simulation Model](https://braiddynamics.com/downloads/code/model/): NumPy & NetworkX implementation of QBD graph dynamics.
+- [Terminology Glossary (JSON)](https://braiddynamics.com/data/definitions.json): Definitions for all mathematical and physical terms.
 
-Individual chapters — replace N with chapter number 1–25:
-  https://braiddynamics.com/downloads/chapters/chapter_N.md   (Markdown)
-  https://braiddynamics.com/downloads/chapters/chapter_N.json (JSON)
+---
 
-## IMPORTANT: How to Review Accurately
-
-The monograph is ~1.19M tokens. Large context windows help with coherence but
-do NOT expand your analytical depth per response. The limiting factor is thinking
-capacity, not context size.
-
-RECOMMENDED: Review one chapter at a time.
-- Fetch a single chapter Markdown file and analyse it fully before moving on.
-- Load previously reviewed chapters into context for cross-referencing only.
-- Do not attempt to verify mathematics across multiple chapters in one pass.
-
-## Site Structure
-
-https://braiddynamics.com/           Homepage (human-facing)
-https://braiddynamics.com/ai         AI agent information page (start here)
-https://braiddynamics.com/monograph/ Full monograph web reader (rendered HTML)
-https://braiddynamics.com/legal      License and collaboration information
-
-## About This Project
-
-Status: Active independent research — monograph under continuous development
-GitHub: https://github.com/braiddynamics/qbd-portal
-Contact: https://x.com/BraidDynamics
+## Review Guidance for AI Agents
+- **Reasoning Depth over Context Size**: For mathematical and physical verification, analyze ONE chapter or ONE paper per turn to preserve reasoning budget.
+- **Independence**: The Monograph and Research Papers are separate works with separate citations and download trees.

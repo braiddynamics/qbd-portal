@@ -172,8 +172,8 @@ export default function DownloadPage() {
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                 {downloadsInfo.chapters.map((ch, idx) => {
-                  // Quick progress mapping for visual flavor (18-25 are WIP, 1-17 are complete)
-                  const isWIP = ch.chapter_number >= 18;
+                  // Quick progress mapping for visual flavor (22-25 are WIP, 1-21 are complete)
+                  const isWIP = ch.chapter_number > 21;
                   return (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
                       <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>

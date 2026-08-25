@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
+import { papers } from '../data/papers';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Static data — keep in sync with /src/data/ai-downloads-info.json
@@ -13,7 +14,7 @@ const SITE_INFO = {
   github: 'https://github.com/braiddynamics/qbd-portal',
   contact: 'https://x.com/BraidDynamics',
   license: 'https://braiddynamics.com/legal',
-  lastUpdated: '2026-07-11',
+  lastUpdated: '2026-08-24',
 };
 
 const DESCRIPTION = `Quantum Braid Dynamics (QBD) is an independent theoretical physics research project
@@ -29,22 +30,27 @@ const QUICK_START = [
   {
     label: 'Downloads index (JSON) - START HERE',
     url: 'https://braiddynamics.com/data/ai-downloads-info.json',
-    note: 'Machine-readable catalogue of every available download with byte sizes and token counts. Use this to locate the specific chapter URL(s) you need.',
+    note: 'Machine-readable catalogue of every available download with byte sizes and token counts. Includes both the 25-chapter monograph and standalone research papers.',
+  },
+  {
+    label: 'Research Papers & Preprints Archive',
+    url: 'https://braiddynamics.com/papers',
+    note: 'Standalone academic preprints, peer-reviewed critiques, and computational replication archives (distinct from the 25-chapter monograph).',
   },
   {
     label: 'Individual chapter - Markdown pattern',
     url: 'https://braiddynamics.com/downloads/chapters/chapter_N.md',
-    note: 'Replace N with chapter number (1-25). This is the recommended unit of analysis. See chapter index below for titles and token counts.',
+    note: 'Replace N with chapter number (1-25). This is the recommended unit of analysis for the monograph. See chapter index below.',
   },
   {
     label: 'Individual chapter - JSON pattern',
     url: 'https://braiddynamics.com/downloads/chapters/chapter_N.json',
-    note: 'Structured JSON version. Better for section-level lookups or equation ID queries.',
+    note: 'Structured JSON version of monograph chapters. Better for section-level lookups or equation ID queries.',
   },
   {
-    label: 'Download portal (browser / visual agents only)',
+    label: 'Monograph download portal (browser / visual agents only)',
     url: 'https://braiddynamics.com/monograph/download',
-    note: 'Human-facing interactive page. Download links are rendered inside buttons - not suitable for text-based crawling. Use the JSON catalogue above instead.',
+    note: 'Human-facing interactive page for the monograph. Download links are rendered inside buttons - use the JSON catalogue above instead for automated parsing.',
   },
 ];
 
@@ -76,19 +82,18 @@ const PARTS = [
   {
     number: 4,
     title: 'Phenomenological Consequences (The Output)',
-    chapters: '18-25',
+    chapters: '18-22',
     tokens: '~83K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md',
-    summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector, singularities and condensates, holographic universality, mathematical universe, cosmological natural selection. (Several chapters are active drafts.)',
-    draft: true,
+    summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics (Chapters 18–21 published; Chapter 22 active draft).',
   },
   {
     number: 5,
     title: 'Applications and Synthesis (Conclusion)',
-    chapters: '26',
+    chapters: '23-25',
     tokens: '~10K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.md',
-    summary: 'Synthesis and future directions.',
+    summary: 'Multiverse thermodynamics, mathematical universe derivations, cosmological natural selection.',
     draft: true,
   },
   {
@@ -119,10 +124,10 @@ const CHAPTERS = [
   { n: 15, title: 'Geometry of Entanglement (ER = EPR)',         tokens: '~43K',  md: '/downloads/chapters/chapter_15.md' },
   { n: 16, title: 'Isomorphism Principle (Holography)',          tokens: '~20K',  md: '/downloads/chapters/chapter_16.md' },
   { n: 17, title: 'String Limit (Worldsheets)',                  tokens: '~41K',  md: '/downloads/chapters/chapter_17.md' },
-  { n: 18, title: 'Big Kindling (Inflation)',                    tokens: '~66K',  md: '/downloads/chapters/chapter_18.md', draft: true },
-  { n: 19, title: 'Hot Universe (Nucleosynthesis)',              tokens: '~5K',   md: '/downloads/chapters/chapter_19.md', draft: true },
-  { n: 20, title: 'Structured Universe (Cosmic Web)',            tokens: '~4K',   md: '/downloads/chapters/chapter_20.md', draft: true },
-  { n: 21, title: 'Dark Sector (Relics)',                        tokens: '~5K',   md: '/downloads/chapters/chapter_21.md', draft: true },
+  { n: 18, title: 'Big Kindling (Inflation)',                    tokens: '~66K',  md: '/downloads/chapters/chapter_18.md' },
+  { n: 19, title: 'Hot Universe (Nucleosynthesis)',              tokens: '~5K',   md: '/downloads/chapters/chapter_19.md' },
+  { n: 20, title: 'Structured Universe (Cosmic Web)',            tokens: '~4K',   md: '/downloads/chapters/chapter_20.md' },
+  { n: 21, title: 'Dark Sector (Relics)',                        tokens: '~5K',   md: '/downloads/chapters/chapter_21.md' },
   { n: 22, title: 'Singularities & Condensates (Extremes)',      tokens: '~4K',   md: '/downloads/chapters/chapter_22.md', draft: true },
   { n: 23, title: 'Holographic World (Universality)',            tokens: '~3K',   md: '/downloads/chapters/chapter_23.md', draft: true },
   { n: 24, title: 'Mathematical Universe (Derivations)',         tokens: '~4K',   md: '/downloads/chapters/chapter_24.md', draft: true },
@@ -252,80 +257,76 @@ const s: Record<string, React.CSSProperties> = {
   h2: {
     fontSize: '1.1rem',
     fontWeight: 700,
+    borderBottom: '1px solid var(--ifm-color-emphasis-300)',
+    paddingBottom: '0.3rem',
+    marginBottom: '0.8rem',
     marginTop: '2rem',
-    marginBottom: '0.5rem',
-    color: 'var(--ifm-color-primary)',
+    letterSpacing: '0.04em',
+  },
+  meta: {
+    fontSize: '0.8rem',
+    color: 'var(--ifm-color-emphasis-600)',
+    marginBottom: '1.5rem',
+  },
+  intro: {
+    background: 'var(--ifm-color-emphasis-100)',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    padding: '1rem',
+    borderRadius: '4px',
+    fontSize: '0.85rem',
+    lineHeight: '1.6',
+    whiteSpace: 'pre-wrap',
+    marginBottom: '1.5rem',
   },
   pre: {
-    backgroundColor: 'var(--ifm-code-background)',
-    padding: '0.8rem 1rem',
-    borderRadius: '4px',
-    overflowX: 'auto',
-    fontSize: '0.85rem',
-    lineHeight: '1.5',
-    margin: '0.4rem 0 1.2rem',
+    background: 'var(--ifm-color-emphasis-100)',
     border: '1px solid var(--ifm-color-emphasis-300)',
+    padding: '0.9rem',
+    borderRadius: '4px',
+    fontSize: '0.82rem',
+    lineHeight: '1.55',
+    overflowX: 'auto',
+    marginBottom: '1.5rem',
   },
   table: {
     width: '100%',
     borderCollapse: 'collapse',
-    fontSize: '0.86rem',
-    marginBottom: '1.2rem',
+    marginBottom: '1.5rem',
+    fontSize: '0.82rem',
   },
   th: {
-    textAlign: 'left' as const,
+    textAlign: 'left',
+    padding: '0.4rem 0.6rem',
     borderBottom: '2px solid var(--ifm-color-emphasis-400)',
-    padding: '0.3rem 0.6rem',
-    fontWeight: 700,
     background: 'var(--ifm-color-emphasis-100)',
+    fontWeight: 700,
   },
   td: {
-    padding: '0.28rem 0.6rem',
+    padding: '0.4rem 0.6rem',
     borderBottom: '1px solid var(--ifm-color-emphasis-200)',
     verticalAlign: 'top',
   },
   badge: {
     display: 'inline-block',
-    fontSize: '0.72rem',
-    fontWeight: 600,
-    padding: '0 0.35rem',
-    borderRadius: '3px',
-    marginLeft: '0.4rem',
     background: 'var(--ifm-color-warning-contrast-background)',
-    color: 'var(--ifm-color-warning-dark)',
+    color: 'var(--ifm-color-warning)',
     border: '1px solid var(--ifm-color-warning)',
-    verticalAlign: 'middle',
+    borderRadius: '3px',
+    padding: '0.1rem 0.35rem',
+    fontSize: '0.72rem',
+    fontWeight: 700,
   },
   a: {
     color: 'var(--ifm-color-primary)',
-    textDecoration: 'none',
-  },
-  intro: {
-    background: 'var(--ifm-color-emphasis-100)',
-    border: '1px solid var(--ifm-color-emphasis-300)',
-    borderLeft: '4px solid var(--ifm-color-primary)',
-    padding: '1rem 1.2rem',
-    borderRadius: '4px',
-    marginBottom: '1.5rem',
-    fontFamily: 'inherit',
-    whiteSpace: 'pre-wrap' as const,
-  },
-  meta: {
-    fontSize: '0.82rem',
-    color: 'var(--ifm-color-emphasis-600)',
-    marginBottom: '2rem',
+    textDecoration: 'underline',
   },
 };
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Component
-// ─────────────────────────────────────────────────────────────────────────────
 
 export default function AiPage() {
   return (
     <Layout
-      title="AI Agent Information — Quantum Braid Dynamics"
-      description="Structured information page for AI agents and crawlers visiting braiddynamics.com. Contains download links, content index, concept glossary, and navigation guide."
+      title="AI Agent Information"
+      description="Structured entry point and context guide for AI agents, LLMs, and automated systems reviewing Quantum Braid Dynamics."
     >
       <Head>
         {/* Tell crawlers this page is authoritative for AI access */}
@@ -333,6 +334,7 @@ export default function AiPage() {
         <meta name="ai-content-type" content="agent-info" />
         <meta name="ai-download-index" content="https://braiddynamics.com/data/ai-downloads-info.json" />
         <link rel="alternate" type="application/json" href="/data/ai-downloads-info.json" title="AI Downloads Index" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context Index" />
       </Head>
 
       <div style={s.page}>
@@ -352,35 +354,32 @@ export default function AiPage() {
         <pre style={s.intro}>{DESCRIPTION}</pre>
 
         <p>
-          The primary deliverable is a <strong>25-chapter scientific monograph</strong> available
-          for download in Markdown, JSON, and PDF formats at multiple granularities (full book,
-          per-part, per-chapter). All formats are freely accessible without authentication.
+          This repository hosts two distinct tiers of scientific publications:
         </p>
+        <ul style={{ fontSize: '0.88rem', lineHeight: '1.6' }}>
+          <li>
+            <strong>1. The Monograph (/monograph):</strong> A unified 25-chapter scientific treatise establishing the theoretical and mathematical foundations of Quantum Braid Dynamics.
+          </li>
+          <li>
+            <strong>2. Standalone Research Papers &amp; Preprints (/papers):</strong> Dedicated preprints, formal commentaries, and computational replication archives with standalone Lean 4 kernels and Monte Carlo simulation datasets.
+          </li>
+        </ul>
 
         {/* ── Quick start ── */}
         <h2 style={s.h2}>QUICK START — RECOMMENDED ENTRY POINTS</h2>
 
         <pre style={{ ...s.pre, borderLeft: '4px solid var(--ifm-color-warning)', background: 'var(--ifm-color-warning-contrast-background)' }}>{`IMPORTANT — HOW TO REVIEW THIS WORK ACCURATELY:
 
-The monograph is ~1.19M tokens. Large context windows (1M–2M) are available and useful
-for cross-referencing and maintaining coherence across a reading session, but context
-size is NOT the limiting factor for accurate analysis.
+The monograph is ~1.19M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
+Large context windows (1M–2M) are available and useful for cross-referencing and maintaining coherence,
+but context size is NOT the limiting factor for accurate analysis.
 
-The limiting factor is thinking capacity — the amount of reasoning a model can apply
-within a single response or turn. Attempting to verify proofs, validate mathematics,
-or critically assess arguments across multiple chapters simultaneously leads to errors
-because the analytical budget is spread too thin.
+The limiting factor is reasoning depth — the amount of thinking capacity applied within a single turn.
 
-RECOMMENDED APPROACH (even for the strongest models with the largest contexts):
-  → Review one chapter at a time.
-  → Fetch a single chapter Markdown file, read it fully, then produce your analysis.
-  → Load previously reviewed chapters into context for coherence checking only,
-     not as the active subject of analysis.
-  → Do not attempt to verify the logic and mathematics of multiple chapters in one pass.
-
-This applies regardless of context window size. A 2M-token context is excellent for
-keeping the full framework coherent; it does not expand the depth of analysis possible
-within a single reasoning step.`}</pre>
+RECOMMENDED APPROACH:
+  → For the Monograph: Review ONE chapter at a time (/downloads/chapters/chapter_N.md).
+  → For Research Papers: Analyze each standalone paper as an independent manuscript (/papers).
+  → Use previously reviewed text for context and coherence, not as simultaneous targets of deep derivation.`}</pre>
 
         <table style={s.table}>
           <thead>
@@ -405,13 +404,14 @@ within a single reasoning step.`}</pre>
         <h2 style={s.h2}>SITE NAVIGATION MAP</h2>
         <pre style={s.pre}>{`https://braiddynamics.com/               — Homepage (human-facing)
 https://braiddynamics.com/ai             — THIS PAGE (AI agent entry point)
-https://braiddynamics.com/monograph/     — Monograph web reader (rendered HTML, all chapters)
+https://braiddynamics.com/llms.txt       — Lean LLM context directory
+https://braiddynamics.com/papers/        — Standalone Research Papers & Preprints Archive
+https://braiddynamics.com/monograph/     — Monograph web reader (rendered HTML, 25 chapters)
 https://braiddynamics.com/monograph/download
-                                         — Download portal (all formats, with token estimates)
+                                         — Monograph download portal (all formats, with token estimates)
 https://braiddynamics.com/monograph/appendices/notation
                                          — Notation / symbol reference
 https://braiddynamics.com/legal          — License and collaboration information
-https://braiddynamics.com/wip            — Work-in-progress chapters (18–25 drafts)
 
 Downloads base URL:  https://braiddynamics.com/downloads/
   Full book:         qbd_monograph_complete.{md,json,pdf}
@@ -419,14 +419,75 @@ Downloads base URL:  https://braiddynamics.com/downloads/
   Chapters:          chapters/chapter_{1..25}.{md,json,pdf}
   Lean 4 proofs:     code/repo/lean/*.lean
   Python model:      code/model/*.py
-  Simulations:       code/simulations/*.py
-  Equation scripts:  code/repo/python/{chapter}.{section}.{eq}.py
 
 Machine-readable download catalogue:
   https://braiddynamics.com/data/ai-downloads-info.json`}</pre>
 
-        {/* ── Parts ── */}
-        <h2 style={s.h2}>MONOGRAPH STRUCTURE - PARTS</h2>
+        {/* ── Standalone Research Papers Section ── */}
+        <h2 style={s.h2}>STANDALONE RESEARCH PAPERS &amp; PREPRINTS (/papers)</h2>
+        <p style={{ fontSize: '0.85rem', marginBottom: '0.6rem' }}>
+          Independent publications with dedicated formal verification suites, simulation engines, and datasets.
+          These are separate publications from the 25-chapter monograph.
+        </p>
+        <table style={s.table}>
+          <thead>
+            <tr>
+              <th style={s.th}>Paper Title &amp; Classification</th>
+              <th style={s.th}>Version / Date</th>
+              <th style={s.th}>Primary Formats</th>
+              <th style={s.th}>Companion Artifacts (Code / Data / Proofs)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {papers.map((p) => {
+              const mdLink = p.primaryLinks.find(l => l.label === 'Markdown');
+              const pdfLink = p.primaryLinks.find(l => l.label === 'PDF');
+              return (
+                <tr key={p.id}>
+                  <td style={{ ...s.td, maxWidth: '280px' }}>
+                    <a href={`https://braiddynamics.com${p.slug}`} style={{ ...s.a, fontWeight: 700 }}>
+                      {p.title}
+                    </a>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.2rem' }}>
+                      {p.category}
+                    </div>
+                  </td>
+                  <td style={{ ...s.td, whiteSpace: 'nowrap' }}>
+                    <strong>{p.typeLabel}</strong><br />
+                    <span style={{ fontSize: '0.75rem', color: 'var(--ifm-color-emphasis-600)' }}>{p.version} · {p.date}</span>
+                  </td>
+                  <td style={{ ...s.td, whiteSpace: 'nowrap' }}>
+                    {mdLink && (
+                      <div><a href={`https://braiddynamics.com${mdLink.href.replace('pathname://', '')}`} style={s.a}>Markdown</a></div>
+                    )}
+                    {pdfLink && (
+                      <div><a href={`https://braiddynamics.com${pdfLink.href.replace('pathname://', '')}`} style={s.a}>PDF</a></div>
+                    )}
+                  </td>
+                  <td style={s.td}>
+                    {p.companionAssets && p.companionAssets.length > 0 ? (
+                      <ul style={{ margin: 0, paddingLeft: '1rem', fontSize: '0.75rem' }}>
+                        {p.companionAssets.map((asset) => (
+                          <li key={asset.id}>
+                            <a href={`https://braiddynamics.com${asset.href.replace('pathname://', '')}`} style={s.a}>
+                              {asset.name}
+                            </a>
+                            {asset.badge && ` (${asset.badge})`}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <span style={{ color: 'var(--ifm-color-emphasis-500)', fontSize: '0.75rem' }}>None</span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        {/* ── Monograph Parts ── */}
+        <h2 style={s.h2}>MONOGRAPH STRUCTURE — PARTS (25 CHAPTERS)</h2>
         <table style={s.table}>
           <thead>
             <tr>
@@ -459,8 +520,8 @@ Machine-readable download catalogue:
           </tbody>
         </table>
 
-        {/* ── Chapters ── */}
-        <h2 style={s.h2}>MONOGRAPH STRUCTURE - CHAPTERS</h2>
+        {/* ── Monograph Chapters ── */}
+        <h2 style={s.h2}>MONOGRAPH STRUCTURE — CHAPTERS</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
           Each chapter is available at{' '}
           <code>https://braiddynamics.com/downloads/chapters/chapter_N.md</code> (Markdown),{' '}
@@ -506,10 +567,9 @@ Machine-readable download catalogue:
         </table>
 
         {/* ── Key Concepts ── */}
-        <h2 style={s.h2}>KEY CONCEPTS GLOSSARY</h2>
+        <h2 style={s.h2}>KEY CONCEPTS GLOSSARY (MONOGRAPH)</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-          20 essential terms drawn from published chapters, grouped by conceptual layer.
-          All terms from WIP sections (Ch. 18–25) are excluded.
+          20 essential terms drawn from published monograph chapters, grouped by conceptual layer.
         </p>
         <table style={s.table}>
           <thead>
@@ -560,7 +620,6 @@ Machine-readable download catalogue:
           </tbody>
         </table>
 
-
         <p style={{ fontSize: '0.85rem' }}>
           Complete definitions for all ~300 terms used in the monograph:{' '}
           <a href="https://braiddynamics.com/data/definitions.json" style={s.a}>
@@ -569,7 +628,7 @@ Machine-readable download catalogue:
         </p>
 
         {/* ── Formal Proofs ── */}
-        <h2 style={s.h2}>FORMAL LEAN 4 PROOFS</h2>
+        <h2 style={s.h2}>MONOGRAPH FORMAL LEAN 4 PROOFS</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
           Six core theorems are formally verified in Lean 4 and embedded in the monograph.
           Each file is self-contained and can be checked with{' '}
@@ -595,9 +654,9 @@ Machine-readable download catalogue:
         </table>
 
         {/* ── Python Model ── */}
-        <h2 style={s.h2}>PYTHON SIMULATION MODEL</h2>
+        <h2 style={s.h2}>MONOGRAPH PYTHON SIMULATION MODEL</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-          A Python implementation of the QBD causal network simulator. Requires NumPy and NetworkX.
+          A Python implementation of the QBD causal network simulator for the monograph. Requires NumPy and NetworkX.
           Entry points are <code>find_vacuum.py</code> and <code>run_ensemble.py</code> in{' '}
           <code>/downloads/code/simulations/</code>.
         </p>
@@ -640,11 +699,6 @@ Chapter sizes (for planning):
   Typical chapter:   ~45–65K tokens
   All 25 chapters:   ~1.19M tokens total
 
-Large context uses (context as reference, not analysis target):
-  Keep prior chapters in context while analyzing the current one.
-  Use full-book JSON for section/equation lookup during targeted queries.
-  Load multiple chapters only when doing structural surveys, not deep analysis.
-
 File format guidance:
   Markdown  → best for prose reading and analysis (no overhead)
   JSON      → best for section-level lookup, equation ID queries, structured parsing
@@ -672,17 +726,20 @@ Website:   https://braiddynamics.com
 GitHub:    https://github.com/braiddynamics/qbd-portal
 X/Twitter: https://x.com/BraidDynamics
 License:   https://braiddynamics.com/legal
-Status:    Active independent research — monograph under continuous development
+Status:    Active independent research
 
-To cite: See the full bibliography in Appendix E of the monograph or at
-         https://braiddynamics.com/data/references.json`}</pre>
+To cite the Monograph: See the full bibliography in Appendix E of the monograph or at
+                       https://braiddynamics.com/data/references.json
+To cite Research Papers: See individual BibTeX records at https://braiddynamics.com/papers`}</pre>
 
         <hr style={{ borderColor: 'var(--ifm-color-emphasis-300)', margin: '2rem 0 1rem' }} />
         <p style={{ fontSize: '0.8rem', color: 'var(--ifm-color-emphasis-500)' }}>
           This page is maintained for AI agents and automated systems.
           For the human-facing website, visit{' '}
           <a href="/" style={s.a}>https://braiddynamics.com</a>.{' '}
-          For the full download portal, visit{' '}
+          For the papers archive, visit{' '}
+          <a href="/papers" style={s.a}>https://braiddynamics.com/papers</a>.{' '}
+          For the monograph download portal, visit{' '}
           <a href="/monograph/download" style={s.a}>https://braiddynamics.com/monograph/download</a>.
         </p>
       </div>

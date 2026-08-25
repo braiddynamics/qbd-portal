@@ -21,7 +21,7 @@ export const monographSections = [
     part: "4",
     title: "4. The Output",
     subtitle: "Phenomenological Consequences",
-    linkUrl: "/wip?part=4",
+    linkUrl: "/monograph/output/inflation/18.1",
   },
   {
     part: "5",

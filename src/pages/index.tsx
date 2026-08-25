@@ -108,9 +108,10 @@ export default function Home() {
         <meta name="twitter:title" content="Quantum Braid Dynamics: A Computational Process" />
         {/* AI Crawler Metadata Directives */}
         <meta name="ai-portal" content="/ai" />
-        <meta name="ai-download-index" content="/monograph/download" />
+        <meta name="ai-download-index" content="/data/ai-downloads-info.json" />
         <link rel="ai-portal" href="/ai" />
         <link rel="alternate" type="text/html" href="/ai" title="AI Agent Information Page" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context Index" />
       </Head>
 
       <HomepageHeader />
@@ -295,19 +296,18 @@ export default function Home() {
             id="ai-agent-notice"
             style={{
               marginTop: '3rem',
-              padding: '0.6rem 1rem',
+              padding: '0.75rem 1rem',
               borderTop: '1px solid var(--ifm-color-emphasis-200)',
-              fontSize: '0.75rem',
-              color: 'var(--ifm-color-emphasis-500)',
+              fontSize: '0.8rem',
+              color: 'var(--ifm-color-emphasis-600)',
               lineHeight: '1.6',
             }}
           >
-            <strong>AI Agents &amp; Crawlers:</strong>{' '}
-            A structured entry point built for you is at{' '}
-            <a href="/ai" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/ai</a>
-            {' '}— includes content index, chapter token estimates, and direct download links.{' '}
-            Machine-readable catalogue:{' '}
-            <a href="/data/ai-downloads-info.json" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/data/ai-downloads-info.json</a>.
+            <strong>AI Agents &amp; Automated Systems:</strong>{' '}
+            Structured entry point: <a href="/ai" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/ai</a> |{' '}
+            LLM Index: <a href="/llms.txt" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/llms.txt</a> |{' '}
+            Machine-readable catalog: <a href="/data/ai-downloads-info.json" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/data/ai-downloads-info.json</a> |{' '}
+            Research papers archive: <a href="/papers" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/papers</a>.
           </div>
 
         </div>

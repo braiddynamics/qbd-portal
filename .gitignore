@@ -45,3 +45,6 @@ Thumbs.db
 
 # Untracked draft papers
 /papers-drafts/
+
+# Untracked comments workspace
+/comments/

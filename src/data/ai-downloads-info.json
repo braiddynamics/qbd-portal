@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 3154898,
-      "estimated_tokens": 1145188,
+      "file_size_bytes": 3930244,
+      "estimated_tokens": 1426388,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 3436652,
-      "estimated_tokens": 1265420,
+      "file_size_bytes": 4227070,
+      "estimated_tokens": 1557009,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -23,7 +23,7 @@
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
       "file_size_bytes": 3638352,
-      "estimated_tokens": 1145188,
+      "estimated_tokens": 1426388,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -34,16 +34,16 @@
       "name": "Part 1: The Foundational Principles (The Rules)",
       "filename": "qbd_part_1_the_foundational_principles_the_rules.md",
       "url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md",
-      "file_size_bytes": 1247346,
-      "estimated_tokens": 452257,
+      "file_size_bytes": 1248920,
+      "estimated_tokens": 452797,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 1: The Foundational Principles (The Rules).",
       "json_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.json",
-      "json_file_size_bytes": 1277902,
-      "json_estimated_tokens": 469748,
+      "json_file_size_bytes": 1279482,
+      "json_estimated_tokens": 470311,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1548910,
-      "pdf_estimated_tokens": 452257
+      "pdf_file_size_bytes": 1549865,
+      "pdf_estimated_tokens": 452797
     },
     {
       "part_number": 2,
@@ -58,7 +58,7 @@
       "json_file_size_bytes": 949181,
       "json_estimated_tokens": 349710,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1192225,
+      "pdf_file_size_bytes": 1192205,
       "pdf_estimated_tokens": 334401
     },
     {
@@ -78,6 +78,19 @@
       "pdf_estimated_tokens": 338205
     },
     {
+      "part_number": 4,
+      "name": "Part 4: Phenomenological Consequences (The Output)",
+      "filename": "qbd_part_4_phenomenological_consequences_the_output.md",
+      "url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md",
+      "file_size_bytes": 777600,
+      "estimated_tokens": 282008,
+      "type": "markdown",
+      "description": "Contains the compiled text and equations for Part 4: Phenomenological Consequences (The Output).",
+      "json_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.json",
+      "json_file_size_bytes": 791414,
+      "json_estimated_tokens": 291967
+    },
+    {
       "part_number": 6,
       "name": "Part 6: Appendices",
       "filename": "qbd_part_6_appendices.md",
@@ -90,7 +103,7 @@
       "json_file_size_bytes": 117491,
       "json_estimated_tokens": 43370,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 211106,
+      "pdf_file_size_bytes": 211094,
       "pdf_estimated_tokens": 42656
     }
   ],
@@ -108,7 +121,7 @@
       "json_file_size_bytes": 381908,
       "json_estimated_tokens": 140301,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 504340,
+      "pdf_file_size_bytes": 504313,
       "pdf_estimated_tokens": 138475
     },
     {
@@ -124,7 +137,7 @@
       "json_file_size_bytes": 201189,
       "json_estimated_tokens": 73700,
       "pdf_url": "/downloads/chapters/chapter_2.pdf",
-      "pdf_file_size_bytes": 319184,
+      "pdf_file_size_bytes": 319152,
       "pdf_estimated_tokens": 71924
     },
     {
@@ -140,7 +153,7 @@
       "json_file_size_bytes": 272803,
       "json_estimated_tokens": 100110,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 417254,
+      "pdf_file_size_bytes": 417247,
       "pdf_estimated_tokens": 97494
     },
     {
@@ -148,32 +161,32 @@
       "name": "Chapter 4: Operations (Dynamics)",
       "filename": "chapter_4.md",
       "url": "/downloads/chapters/chapter_4.md",
-      "file_size_bytes": 240628,
-      "estimated_tokens": 87378,
+      "file_size_bytes": 240908,
+      "estimated_tokens": 87478,
       "type": "markdown",
       "description": "Markdown source for Chapter 4.",
       "json_url": "/downloads/chapters/chapter_4.json",
-      "json_file_size_bytes": 243654,
-      "json_estimated_tokens": 89835,
+      "json_file_size_bytes": 243937,
+      "json_estimated_tokens": 89941,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 385284,
-      "pdf_estimated_tokens": 87378
+      "pdf_file_size_bytes": 384834,
+      "pdf_estimated_tokens": 87478
     },
     {
       "chapter_number": 5,
       "name": "Chapter 5: Geometrogensis (Equilibrium)",
       "filename": "chapter_5.md",
       "url": "/downloads/chapters/chapter_5.md",
-      "file_size_bytes": 172536,
-      "estimated_tokens": 62632,
+      "file_size_bytes": 173830,
+      "estimated_tokens": 63073,
       "type": "markdown",
       "description": "Markdown source for Chapter 5.",
       "json_url": "/downloads/chapters/chapter_5.json",
-      "json_file_size_bytes": 174879,
-      "json_estimated_tokens": 64519,
+      "json_file_size_bytes": 176176,
+      "json_estimated_tokens": 64977,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 309311,
-      "pdf_estimated_tokens": 62632
+      "pdf_file_size_bytes": 310263,
+      "pdf_estimated_tokens": 63073
     },
     {
       "chapter_number": 6,
@@ -188,7 +201,7 @@
       "json_file_size_bytes": 169263,
       "json_estimated_tokens": 62254,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 296451,
+      "pdf_file_size_bytes": 296407,
       "pdf_estimated_tokens": 60601
     },
     {
@@ -204,7 +217,7 @@
       "json_file_size_bytes": 131938,
       "json_estimated_tokens": 48673,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 246992,
+      "pdf_file_size_bytes": 246973,
       "pdf_estimated_tokens": 47345
     },
     {
@@ -220,7 +233,7 @@
       "json_file_size_bytes": 220223,
       "json_estimated_tokens": 81111,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 359648,
+      "pdf_file_size_bytes": 359629,
       "pdf_estimated_tokens": 79085
     },
     {
@@ -236,7 +249,7 @@
       "json_file_size_bytes": 186847,
       "json_estimated_tokens": 68861,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 315407,
+      "pdf_file_size_bytes": 315385,
       "pdf_estimated_tokens": 67091
     },
     {
@@ -252,7 +265,7 @@
       "json_file_size_bytes": 235696,
       "json_estimated_tokens": 86882,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 367194,
+      "pdf_file_size_bytes": 367166,
       "pdf_estimated_tokens": 84817
     },
     {
@@ -268,7 +281,7 @@
       "json_file_size_bytes": 141698,
       "json_estimated_tokens": 52298,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 261028,
+      "pdf_file_size_bytes": 261014,
       "pdf_estimated_tokens": 50856
     },
     {
@@ -284,7 +297,7 @@
       "json_file_size_bytes": 116640,
       "json_estimated_tokens": 43051,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 242336,
+      "pdf_file_size_bytes": 242314,
       "pdf_estimated_tokens": 41854
     },
     {
@@ -300,7 +313,7 @@
       "json_file_size_bytes": 113890,
       "json_estimated_tokens": 42020,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 221245,
+      "pdf_file_size_bytes": 221220,
       "pdf_estimated_tokens": 40882
     },
     {
@@ -332,7 +345,7 @@
       "json_file_size_bytes": 136732,
       "json_estimated_tokens": 50481,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 254447,
+      "pdf_file_size_bytes": 254410,
       "pdf_estimated_tokens": 49016
     },
     {
@@ -348,7 +361,7 @@
       "json_file_size_bytes": 128719,
       "json_estimated_tokens": 47467,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 238466,
+      "pdf_file_size_bytes": 238458,
       "pdf_estimated_tokens": 46109
     },
     {
@@ -364,8 +377,69 @@
       "json_file_size_bytes": 148523,
       "json_estimated_tokens": 54807,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 275087,
+      "pdf_file_size_bytes": 275058,
       "pdf_estimated_tokens": 53360
+    },
+    {
+      "chapter_number": 18,
+      "name": "Chapter 18: Big Kindling (Inflation)",
+      "filename": "chapter_18.md",
+      "url": "/downloads/chapters/chapter_18.md",
+      "file_size_bytes": 226389,
+      "estimated_tokens": 81954,
+      "type": "markdown",
+      "description": "Markdown source for Chapter 18.",
+      "json_url": "/downloads/chapters/chapter_18.json",
+      "json_file_size_bytes": 229588,
+      "json_estimated_tokens": 84702,
+      "pdf_url": "/downloads/chapters/chapter_18.pdf",
+      "pdf_file_size_bytes": 361490,
+      "pdf_estimated_tokens": 81954
+    },
+    {
+      "chapter_number": 19,
+      "name": "Chapter 19: Hot Universe (Nucleosynthesis)",
+      "filename": "chapter_19.md",
+      "url": "/downloads/chapters/chapter_19.md",
+      "file_size_bytes": 149314,
+      "estimated_tokens": 54177,
+      "type": "markdown",
+      "description": "Markdown source for Chapter 19.",
+      "json_url": "/downloads/chapters/chapter_19.json",
+      "json_file_size_bytes": 151720,
+      "json_estimated_tokens": 55973,
+      "pdf_url": "/downloads/chapters/chapter_19.pdf",
+      "pdf_file_size_bytes": 265792,
+      "pdf_estimated_tokens": 54177
+    },
+    {
+      "chapter_number": 20,
+      "name": "Chapter 20: Structured Universe (Cosmic Web)",
+      "filename": "chapter_20.md",
+      "url": "/downloads/chapters/chapter_20.md",
+      "file_size_bytes": 263562,
+      "estimated_tokens": 95711,
+      "type": "markdown",
+      "description": "Markdown source for Chapter 20.",
+      "json_url": "/downloads/chapters/chapter_20.json",
+      "json_file_size_bytes": 267869,
+      "json_estimated_tokens": 98855
+    },
+    {
+      "chapter_number": 21,
+      "name": "Chapter 21: Dark Sector (Relics)",
+      "filename": "chapter_21.md",
+      "url": "/downloads/chapters/chapter_21.md",
+      "file_size_bytes": 139402,
+      "estimated_tokens": 50563,
+      "type": "markdown",
+      "description": "Markdown source for Chapter 21.",
+      "json_url": "/downloads/chapters/chapter_21.json",
+      "json_file_size_bytes": 141897,
+      "json_estimated_tokens": 52316,
+      "pdf_url": "/downloads/chapters/chapter_21.pdf",
+      "pdf_file_size_bytes": 238996,
+      "pdf_estimated_tokens": 50563
     }
   ],
   "codebase": {
@@ -413,16 +487,16 @@
       {
         "name": "s4.3-awareness-comonad.lean",
         "url": "/downloads/code/repo/lean/s4.3-awareness-comonad.lean",
-        "file_size_bytes": 3323,
-        "estimated_tokens": 1211,
+        "file_size_bytes": 4252,
+        "estimated_tokens": 1556,
         "type": "code",
         "description": "Source code for s4.3-awareness-comonad.lean."
       },
       {
         "name": "s5.4-vacuum-stability.lean",
         "url": "/downloads/code/repo/lean/s5.4-vacuum-stability.lean",
-        "file_size_bytes": 1701,
-        "estimated_tokens": 621,
+        "file_size_bytes": 6151,
+        "estimated_tokens": 2238,
         "type": "code",
         "description": "Source code for s5.4-vacuum-stability.lean."
       },
@@ -511,8 +585,8 @@
       {
         "name": "utils.py",
         "url": "/downloads/code/model/utils.py",
-        "file_size_bytes": 3124,
-        "estimated_tokens": 1121,
+        "file_size_bytes": 3137,
+        "estimated_tokens": 1126,
         "type": "code",
         "description": "Helper methods for graph parsing, visualization export, and data conversion."
       },
@@ -545,7 +619,7 @@
       {
         "name": "run_braid_survival.py",
         "url": "/downloads/code/simulations/run_braid_survival.py",
-        "file_size_bytes": 7850,
+        "file_size_bytes": 8055,
         "estimated_tokens": 2907,
         "type": "code",
         "description": "Source code for run_braid_survival.py."
@@ -569,7 +643,7 @@
       {
         "name": "run_flux_balance.py",
         "url": "/downloads/code/simulations/run_flux_balance.py",
-        "file_size_bytes": 5470,
+        "file_size_bytes": 5626,
         "estimated_tokens": 2024,
         "type": "code",
         "description": "Source code for run_flux_balance.py."
@@ -1548,8 +1622,54 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 217476,
+      "file_size_bytes": 218886,
       "description": "Download the complete simulations repository bundle containing all 84 numerical derivation scripts in a single ZIP archive."
     }
-  }
+  },
+  "papers": [
+    {
+      "id": "vacuum-phase",
+      "title": "A Constrained Stochastic Rewrite System on Timestamped DAGs: Microscopic Rules, Absorbing-State Dynamics, and Finite-N Quasi-Stationary Ensembles",
+      "authors": "R. Fisher",
+      "date": "2026-08-24",
+      "version": "1.0.0",
+      "type": "preprint",
+      "category": "Statistical Mechanics & Discrete Gravity",
+      "html_url": "https://braiddynamics.com/papers/vacuum-phase",
+      "markdown_url": "https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.md",
+      "pdf_url": "https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase.pdf",
+      "replication_zip_url": "https://braiddynamics.com/papers/vacuum-phase/downloads/vacuum-phase-replication.zip",
+      "lean4_kernel_url": "https://braiddynamics.com/papers/vacuum-phase/code/VacuumPhase.lean",
+      "dataset_csv_url": "https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N100_design.csv",
+      "formal_theorems_count": 34,
+      "unproven_axioms": 0,
+      "estimated_tokens_md": 45000
+    },
+    {
+      "id": "causal-invariance-hypergraphs",
+      "title": "Information-Theoretic Constraints on Causal Invariance and Dimensional Reduction in Discrete Hypergraph Models",
+      "authors": "R. Fisher",
+      "date": "2026-08",
+      "version": "0.9.0",
+      "type": "working-paper",
+      "category": "Discrete Physics & Information Theory",
+      "html_url": "https://braiddynamics.com/papers/causal-invariance-hypergraphs",
+      "markdown_url": "https://braiddynamics.com/papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md",
+      "estimated_tokens_md": 15000
+    },
+    {
+      "id": "maximal-entropy-random-walk",
+      "title": "Comment on \"Localization of the Maximal Entropy Random Walk\"",
+      "authors": "R. Fisher",
+      "date": "2026-06-21",
+      "version": "1.0.0",
+      "type": "comment",
+      "category": "Statistical Mechanics & Spectral Graph Theory",
+      "html_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk",
+      "markdown_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.md",
+      "pdf_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/downloads/maximal-entropy-random-walk.pdf",
+      "simulation_py_url": "https://braiddynamics.com/papers/maximal-entropy-random-walk/simulations/maximal_entropy_random_walk_simulation.py",
+      "estimated_tokens_md": 2500
+    }
+  ]
 }

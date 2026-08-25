@@ -14,8 +14,8 @@ interface ParticleData {
   complexity: React.ReactNode;
   mass: string;
   writheConfig: string;
-  description: string;
-  colorType: 'blue' | 'green' | 'red' | 'gold';
+  description: React.ReactNode;
+  colorType: 'blue' | 'green' | 'red' | 'gold' | 'amber';
 }
 
 const particles: ParticleData[] = [

@@ -37,6 +37,42 @@ const qbdMacros = {
   "\\ash": "\\text{ash}",                          // Dark Matter defects
 };
 
+import path from 'path';
+import fs from 'fs';
+
+function papersAssetsPlugin() {
+  return {
+    name: 'papers-assets-plugin',
+    async postBuild({ outDir }: { outDir: string }) {
+      const srcDir = path.join(__dirname, 'papers');
+      const destDir = path.join(outDir, 'papers');
+      const paperDirs = ['vacuum-phase', 'causal-invariance-hypergraphs', 'maximal-entropy-random-walk'];
+      const assetSubdirs = ['downloads', 'simulations', 'code', 'data'];
+      for (const p of paperDirs) {
+        for (const a of assetSubdirs) {
+          const src = path.join(srcDir, p, a);
+          const dest = path.join(destDir, p, a);
+          if (fs.existsSync(src)) {
+            fs.cpSync(src, dest, { recursive: true });
+          }
+        }
+      }
+    },
+    configureWebpack(): any {
+      return {
+        devServer: {
+          static: [
+            {
+              directory: path.join(__dirname, 'papers'),
+              publicPath: '/papers',
+            },
+          ],
+        },
+      };
+    },
+  };
+}
+
 const config: Config = {
   title: 'Quantum Braid Dynamics',
   tagline: 'A Computational Process of Discrete Gravity',
@@ -44,7 +80,7 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
 
-markdown: {
+  markdown: {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
@@ -76,6 +112,30 @@ markdown: {
     ],
   ],
 
+  plugins: [
+    papersAssetsPlugin,
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'papers',
+        path: 'papers',
+        routeBasePath: 'papers',
+        sidebarPath: false,
+        exclude: [
+          '**/downloads/**',
+          '**/simulations/**',
+          '**/code/**',
+          '**/data/**',
+        ],
+        remarkPlugins: [require('remark-math')],
+        rehypePlugins: [[require('rehype-katex'), {
+          strict: false,
+          macros: qbdMacros,
+        }]],
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/qbd-social-card.png',
 
@@ -92,6 +152,7 @@ markdown: {
           label: 'Table of Contents',
         },
         { to: '/spectrum', label: 'Braid Model', position: 'left' },
+        { to: '/papers', label: 'Papers', position: 'left' },
         { to: '/ai', label: 'AI Portal', position: 'left' },
         { to: '/monograph/download', label: 'Downloads', position: 'left' },
         {

@@ -65,7 +65,7 @@ def pre_check_aec(G: nx.DiGraph, u: int, v: int, H_new: int) -> bool:
     N = G.number_of_nodes()
     if N > 1:
         # +3 is a safety buffer. Minimum cutoff of 3.
-        cutoff = int(math.log(N)) + 3 
+        cutoff = int(math.floor(math.log2(N))) + 3 
     else:
         cutoff = 1
 
