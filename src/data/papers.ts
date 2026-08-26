@@ -49,27 +49,29 @@ export const papers: PaperRecord[] = [
   {
     id: 'vacuum-phase',
     slug: '/papers/vacuum-phase',
-    type: 'preprint',
-    typeLabel: 'Preprint / Article',
-    version: 'v1.0.0',
+    type: 'working-paper',
+    typeLabel: 'WIP Draft',
+    version: 'v1.0.0 (WIP)',
     date: 'August 24, 2026',
     dateISO: '2026-08-24',
     isOpenAccess: true,
     licenseLabel: 'CC BY 4.0',
-    title: 'A Constrained Stochastic Rewrite System on Timestamped DAGs: Microscopic Rules, Absorbing-State Dynamics, and Finite-N Quasi-Stationary Ensembles',
-    shortTitle: 'Vacuum Phase & Quasi-Stationary Distributions',
+    title: 'Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry',
+    shortTitle: 'Vacuum Phase & Causal Geometry',
     authors: 'R. Fisher',
     orcid: '0009-0006-2441-3282',
     category: 'Statistical Mechanics & Discrete Gravity',
     subMeta: 'Category: Statistical Mechanics & Discrete Gravity',
+    abstract: 'We present a computational framework based on a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. The unperturbed vacuum is uniquely deduced as a regular Bethe fragment possessing bipartite pre-geometric symmetry, where a localized parity-breaking instanton triggers an initial parallel burst that nucleates geometry. By establishing a stabilizer codespace over causal diamonds, we construct a fault-tolerant structure where physical updates correspond to logical operations. Dynamic evolution on timestamped directed acyclic graphs is driven by a comonadic self-observation and stochastic rewrite constructor operating under information-theoretic principles. Rapid single-cycle decay and boundary leaf dissipation establish an analytical nucleation barrier, while multi-scale simulations from N = 10 to 10,000 demonstrate that boundary quenching diminishes with volume to sustain a stable quasi-stationary active phase. Finally, we prove the geometric well-posedness and convergence of the discrete graph sequence to a smooth, globally hyperbolic four-dimensional Lorentzian manifold under the Lorentzian Gromov-Hausdorff-Prokhorov metric, establishing that macroscopic spacetime and physical conservation laws emerge naturally from the thermodynamic limits of information processing.',
     verifiedBadges: [
+      'WIP Draft',
       '34 Machine-Checked Lean 4 Theorems (0 Axioms)',
       '25 Dedicated Pytest Checks (8 Modules)'
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/vacuum-phase', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '1.2 MB' },
-      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '190 KB' }
+      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '774 KB' },
+      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '112 KB' }
     ],
     companionAssets: [
       {
@@ -92,8 +94,8 @@ export const papers: PaperRecord[] = [
         href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip',
         isDownload: true,
         icon: '📦',
-        badge: '32 KB ZIP',
-        size: '32 KB'
+        badge: '92 KB ZIP',
+        size: '92 KB'
       },
       {
         id: 'vacuum-phase-dataset',
@@ -108,7 +110,7 @@ export const papers: PaperRecord[] = [
       }
     ],
     bibtex: `@article{fisher2026vacuumphase,
-  title={A Constrained Stochastic Rewrite System on Timestamped DAGs: Microscopic Rules, Absorbing-State Dynamics, and Finite-$N$ Quasi-Stationary Ensembles},
+  title={Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry},
   author={Fisher, R.},
   journal={Quantum Braid Dynamics Research Archive},
   year={2026},

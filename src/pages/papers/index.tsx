@@ -150,14 +150,15 @@ export default function PapersHub() {
 
                         {/* Type Badge */}
                         <span style={{
-                          backgroundColor: 'var(--ifm-color-emphasis-200)',
-                          color: 'var(--ifm-color-emphasis-800)',
+                          backgroundColor: rec.typeLabel.includes('WIP') ? 'rgba(245, 158, 11, 0.15)' : 'var(--ifm-color-emphasis-200)',
+                          color: rec.typeLabel.includes('WIP') ? '#d97706' : 'var(--ifm-color-emphasis-800)',
+                          border: rec.typeLabel.includes('WIP') ? '1px solid rgba(245, 158, 11, 0.35)' : 'none',
                           padding: '0.15rem 0.55rem',
                           borderRadius: '4px',
                           fontSize: '0.75rem',
                           fontWeight: 600
                         }}>
-                          {rec.typeLabel}
+                          {rec.typeLabel.includes('WIP') ? '🚧 ' + rec.typeLabel : rec.typeLabel}
                         </span>
 
                         {/* Open Access Badge */}

@@ -47,13 +47,23 @@ function papersAssetsPlugin() {
       const srcDir = path.join(__dirname, 'papers');
       const destDir = path.join(outDir, 'papers');
       const paperDirs = ['vacuum-phase', 'causal-invariance-hypergraphs', 'maximal-entropy-random-walk'];
-      const assetSubdirs = ['downloads', 'simulations', 'code', 'data'];
+      const assetSubdirs = ['downloads', 'simulations', 'code', 'data', 'figures'];
       for (const p of paperDirs) {
         for (const a of assetSubdirs) {
           const src = path.join(srcDir, p, a);
           const dest = path.join(destDir, p, a);
           if (fs.existsSync(src)) {
             fs.cpSync(src, dest, { recursive: true });
+          }
+        }
+        const pSrc = path.join(srcDir, p);
+        const pDest = path.join(destDir, p);
+        if (fs.existsSync(pSrc)) {
+          const files = fs.readdirSync(pSrc);
+          for (const f of files) {
+            if (f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.svg') || f.endsWith('.pdf')) {
+              fs.cpSync(path.join(pSrc, f), path.join(pDest, f));
+            }
           }
         }
       }
