@@ -1,126 +1,44 @@
 ---
-id: causal-invariance-hypergraphs
+layout: default
 title: "Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models"
-sidebar_label: "Causal Invariance & Landauer Limits"
-slug: /causal-invariance-hypergraphs
-description: "Information-theoretic, open-system thermodynamic, and combinatorial bounds on finite-time causal invariance and discrete dimensional reduction."
+author: "Braid Dynamics Research Report"
+date: "2026-08-31"
+description: "An evaluation of the Wolfram-Gorard discrete spacetime framework, examining the logical independence of confluence and causal invariance, open-system thermodynamic irreversibility, and constraints on classical hydrodynamic tensor closures."
 ---
 
-<nav aria-label="Breadcrumbs" style={{
-  display: 'flex',
-  alignItems: 'center',
-  flexWrap: 'wrap',
-  gap: '0.45rem',
-  fontSize: '0.85rem',
-  marginBottom: '1.25rem',
-  color: 'var(--ifm-color-emphasis-700)'
-}}>
-  <a href="/" style={{ color: 'var(--ifm-color-emphasis-700)', textDecoration: 'none' }}>Home</a>
-  <span style={{ opacity: 0.4 }}>/</span>
-  <a href="/papers" style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>Research Papers</a>
-  <span style={{ opacity: 0.4 }}>/</span>
-  <span style={{ color: 'var(--ifm-color-emphasis-900)', fontWeight: 500 }}>Causal Invariance &amp; Landauer Limits</span>
-</nav>
+---
+title: "Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models"
+author: 'R. Fisher \orcidlink{0009-0006-2441-3282}^[Braid Dynamics Group]'
+date: "July 27, 2026"
+documentclass: article
+fontsize: 11pt
+geometry: margin=1in
+abstract: |
+  Discrete pre-geometric hypergraph rewriting models rely on asymptotic confluence, often termed causal invariance, to recover continuous general covariance. However, enforcing coordinate invariance over finite observational timescales introduces fundamental thermodynamic and combinatorial obstructions. Because physical observers operate within localized causal horizons, alternative update sequences branch into physically distinct, non-isomorphic topologies rather than gauge-equivalent descriptions of a single manifold.
 
-:::info[**Working Paper & Replication Record**]
-**Title:** Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models  
-**Author:** **R. Fisher**, *Principal Investigator* ([ORCID: 0009-0006-2441-3282](https://orcid.org/0009-0006-2441-3282))  
-**Affiliation:** Braid Dynamics  
-**Date:** July 27, 2026 · **Version:** 1.0.0 (Preprint) · **License:** [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)  
-**Classification:** Discrete Physics · Quantum Information · General Relativity · Graph Rewriting  
-**Formal Verification:** Machine-Checked Lean 4 Proof Suite (`leanprover/lean4:v4.33.1`, 0 Axioms, 0 Sorry)  
-**Replication Engine:** Dual-Mode Python 3.8+ Simulation Engine with 28 Unit and Integration Tests.
-:::
-
-<div style={{
-  backgroundColor: 'var(--ifm-card-background-color)',
-  border: '1px solid var(--ifm-color-emphasis-300)',
-  borderRadius: '10px',
-  padding: '1.25rem',
-  marginBottom: '2rem',
-  boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
-}}>
-  <h4 style={{ margin: '0 0 0.75rem 0', fontSize: '1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-    📁 Downloadable Publication & Replication Files
-  </h4>
-  <table style={{ width: '100%', margin: 0, fontSize: '0.875rem' }}>
-    <thead>
-      <tr>
-        <th style={{ textAlign: 'left' }}>File Name</th>
-        <th style={{ textAlign: 'left' }}>Description</th>
-        <th style={{ textAlign: 'left' }}>Size</th>
-        <th style={{ textAlign: 'right' }}>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>causal-invariance-hypergraphs.pdf</strong></td>
-        <td>Complete Camera-Ready Manuscript (XeLaTeX)</td>
-        <td>908 KB</td>
-        <td style={{ textAlign: 'right' }}>
-          <a href="pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.pdf" download style={{ fontWeight: 600 }}>Download PDF ↓</a>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>causal-invariance-hypergraphs.md</strong></td>
-        <td>Full Markdown Source Manuscript</td>
-        <td>95 KB</td>
-        <td style={{ textAlign: 'right' }}>
-          <a href="pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md" download style={{ fontWeight: 600 }}>Download MD ↓</a>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>CausalInvariance.lean</strong></td>
-        <td>Lean 4 Machine-Checked Formal Kernel (0 Sorry, 0 Axioms)</td>
-        <td>15 KB</td>
-        <td style={{ textAlign: 'right' }}>
-          <a href="pathname:///papers/causal-invariance-hypergraphs/code/CausalInvariance.lean" download style={{ fontWeight: 600 }}>Download Lean ↓</a>
-        </td>
-      </tr>
-      <tr>
-        <td><strong>causal-invariance-replication.zip</strong></td>
-        <td>Complete Replication Bundle (Python Engine, 28 Pytest Tests, Figures, Lean 4 Kernel)</td>
-        <td>590 KB</td>
-        <td style={{ textAlign: 'right' }}>
-          <a href="pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-replication.zip" download style={{ fontWeight: 600 }}>Download ZIP ↓</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  Reconciling these divergent histories requires an irreversible, many-to-one coarse-graining map. Under Jacobson's entanglement equilibrium framework, the resulting informational entropy production excites the vacuum modular Hamiltonian, precluding an unperturbed flat classical vacuum ($T_{\mu\nu} = 0$). Furthermore, analyzing pre-geometric dimensional reduction from complete substrates via the Lovász Graph Homomorphism Theorem demonstrates that unguided local rules suffer super-quadratic phase-space explosion and collapse into disconnected island topologies via subcritical percolation. Machine-checked formal proofs in Lean 4 establish the logical independence of confluence and causal invariance, while kinetic analysis confirms that generic graph rewriting operators lack the tensor collision invariants required for Chapman-Enskog hydrodynamic closure. These results establish that stable continuum spacetime cannot emerge from unguided asymptotic confluence without explicit microscopic conservation laws.
+---
 
 ## 1. Introduction
 
-The emergence of continuous Lorentzian spacetime from a discrete pre-geometric substrate is a central objective of modern quantum gravity programs. Frameworks such as causal dynamical triangulations (CDT) [1] and causal set theory [2] enforce covariance and geometric consistency by constraining the path-integral measure or imposing causal order constraints. In contrast, the Wolfram Model replaces Riemannian geometry with an evolving spatial hypergraph, where physical spacetime and quantum phenomena are posited to emerge as large-scale algorithmic features of asynchronous multiway graph rewriting [3, 4].
+The emergence of continuous Lorentzian spacetime from a discrete pre-geometric substrate is a central objective of quantum gravity. Approaches such as Causal Dynamical Triangulations (CDT) [1] and Causal Set Theory [2] constrain the microscopic path-integral measure or enforce explicit causal orderings to guarantee geometric consistency. In contrast, the Wolfram Model posits that spacetime, matter, and gauge fields emerge from the unconstrained, asynchronous rewriting of discrete spatial hypergraphs [3, 4].
 
-Within this framework, **causal invariance** is introduced as the discrete foundation for general covariance [4]. Informally, causal invariance requires that different sequences of independent local rewriting operations produce isomorphic directed acyclic graphs (DAGs) of causal event dependencies. Under this correspondence, alternative update schedules are interpreted as discrete gauge transformations, playing a role analogous to the choice of lapse and shift functions in the Arnowitt-Deser-Misner (ADM) foliation of general relativity [4, 5].
+Within this framework, **causal invariance** is proposed as the microscopic origin of general covariance [4]. The central hypothesis asserts that when independent local update paths generate isomorphic directed acyclic graphs (DAGs) of causal event dependencies, alternative rewrite schedules act as discrete gauge transformations, playing a role analogous to the lapse and shift functions in the Arnowitt-Deser-Misner (ADM) $3+1$ foliation of general relativity [4, 5].
 
-**Table 1: Structural Comparison: Continuous General Relativity vs. Discrete Multiway Rewriting**
+![Structural Comparison: Continuous General Relativity vs. Discrete Multiway Rewriting. (A) General relativity enforces diffeomorphism gauge invariance over a single, unique spacetime manifold $(M, g_{\mu\nu})$, where alternative foliation slices $\Sigma_t, \Sigma'_t$ describe the identical physical geometry without information loss ($\Delta H = 0$). (B) Discrete hypergraph models branch asynchronously into structurally distinct, non-isomorphic physical topologies ($G_1 \not\cong G_2$), where state equivalence requires an irreversible many-to-one quotient producing macroscopic entropy ($\Delta H > 0$).\label{fig:gr_vs_multiway}](figures/gr-vs-multiway-comparison.png){width=95%}
 
-| Feature | Continuous General Relativity | Discrete Multiway Rewriting |
-|:---|:---|:---|
-| **Underlying Substrate** | Single Lorentzian manifold $(M, g_{\mu\nu})$ | Branching multiway tree of distinct hypergraphs |
-| **Gauge Symmetries** | Diffeomorphism group $\operatorname{Diff}(M)$ | Asynchronous update schedules (rewrite orderings) |
-| **Coordinate Freedom** | Smooth lapse and shift functions | Choice of local substitution sequence |
-| **Invariance Domain** | Exact, local invariance at all $(t, \mathbf{x})$ | Asymptotic confluence only as $t \to \infty$ |
-| **State Equivalence** | Single geometric reality in different charts | Many-to-one coarse-graining across non-isomorphic states |
+As illustrated in Figure \ref{fig:gr_vs_multiway}, this correspondence contains a fundamental structural asymmetry:
 
+- **Continuous General Relativity:** Gauge freedom describes coordinate transformations over a *single spacetime geometry* on a fixed manifold; foliation shifts ($\Sigma_t \to \Sigma'_t$) produce zero entropy ($\Delta H = 0$).
+- **Discrete Multiway Systems:** Asynchronous updates generate *non-isomorphic spatial topologies* ($G_1 \not\cong G_2$), requiring an irreversible quotient map ($\pi \colon G_i \to [G]$) that produces macroscopic entropy ($\Delta H > 0$).
 
-However, the formal mapping between classical general relativity and multiway graph rewriting contains a fundamental structural asymmetry:
-
-1. **Single Manifold vs. Branching Ensemble:** In general relativity, gauge freedom represents different coordinate descriptions of a *single, unique spacetime geometry* on a fixed manifold. In contrast, causal invariance in a multiway system operates over a branching ensemble of *distinct, non-isomorphic physical configurations*. Establishing an invariant classical timeline requires an explicit, many-to-one equivalence mapping across divergent branches—a step with no counterpart in classical relativity.
-2. **Local Covariance vs. Asymptotic Confluence:** General relativity demands local covariance holding smoothly at every localized spacetime point. In the Wolfram Model, path convergence is strictly an asymptotic, infinite-time property. Jonathan Gorard writes [4, pp. 9–10]:
+Furthermore, while classical general relativity requires local covariance to hold at every point in spacetime, causal invariance in multiway systems is defined strictly as an asymptotic, infinite-time property. As Jonathan Gorard notes [4, pp. 9–10]:
 
 > *“The paths that one must follow in order to obtain convergence may be arbitrarily long, so although causal invariance necessitates that the causal graphs generated by following every path through the multiway system must eventually become isomorphic, those causal graphs are not guaranteed to be isomorphic after any finite number of update steps. As such, causal invariance is best interpreted as a limiting statement about the global structure of the multiway system.”*
 
-Defining coordinate equivalence strictly as an asymptotic post-condition leaves intermediate states unconstrained. For an embedded physical observer restricted to a finite causal diamond, alternative rewriting trajectories do not represent gauge choices; they represent structurally distinguishable physical geometries.
+For an observer operating within a finite observational domain, intermediate states cannot be treated as gauge choices. Because alternative rewrite schedules yield non-isomorphic topologies over finite intervals (Figure \ref{fig:gorard_fig8}), path reconciliation imposes physical, thermodynamic, and combinatorial constraints on continuum emergence.
 
-This finite-time coordinate dependence is illustrated by the alternative update schedules in Figure 1, demonstrating how different updating orders produce non-isomorphic spatial topologies over finite timescales.
-
-![Non-causal-invariant foliations yielding non-isomorphic spatial geometries, replicated from Ref. [4].](./figures/gorard-figure-8.png)
-
-This paper analyzes the information-theoretic, thermodynamic, and combinatorial bounds governing finite-time hypergraph evolution. We examine whether an embedded observer in a closed, background-independent ontology can reconcile finitely divergent histories into a stable, zero-energy continuum vacuum without perturbing the geometric background.
+![Non-causal-invariant foliations yielding non-isomorphic spatial geometries, replicated from Ref. [4].\label{fig:gorard_fig8}](figures/gorard-figure-8.png){width=65%}
 
 ### 1.1 Formal Definitions of Finite-Time Invariance and Observer Algebras
 
@@ -142,6 +60,16 @@ An abstract rewriting system $(V, \mathcal{R})$ satisfies *Finite-Time Spatial C
 
 **Definition 3 (Local Causal Diamond Observer Algebra $\mathcal{A}(\mathcal{D})$).**
 Let $\mathcal{D}$ be a localized causal diamond spanned by a base spacelike hypergraph subregion $\mathcal{A} \subset V(G)$. The operational observable algebra $\mathcal{A}(\mathcal{D})$ consists of all gauge-invariant relational operators (spectral moments $\operatorname{Tr}(A_{\mathcal{A}}^k)$, local cycle counts, and geodesic distances) whose support is strictly confined to $\mathcal{A}$. An embedded observer restricted to $\mathcal{D}$ accesses the reduced density operator $\rho_{\mathcal{A}} = \operatorname{Tr}_{\mathcal{A}^c \otimes \text{branchial}}(\rho_{\text{multiway}})$.
+
+### 1.2 Paper Organization
+
+The remainder of this paper evaluates the mathematical and physical limits of finite-time causal invariance across five core sections:
+
+1. **Formal Independence of Confluence and Invariance (§2):** Machine-checked proofs in Lean 4 establishing the logical independence of confluence (Church-Rosser) and causal DAG isomorphism.
+2. **Causal Non-Acyclicity and Locality Constraints (§3):** Analysis of asynchronous update cycles, the breakdown of causal DAGs, and the "wait-and-fix" locality dilemma.
+3. **Open-System Quantum Channel Dynamics (§4):** Derivation of the CPTP Kraus map and Davies-Lindblad generator governing macroscopic Landauer entropy production.
+4. **Pre-Geometric Dimensional Reduction (§5):** Analysis of complete substrates $K_N$ via the Lovász Graph Homomorphism Theorem, proving super-quadratic phase-space explosion and subcritical percolation collapse.
+5. **Entropic Gravity & Vacuum Obstruction (§6):** Application of Jacobson's entanglement equilibrium to prove that topological mixedness excites the modular Hamiltonian ($\Delta \langle K \rangle > 0$), precluding a flat classical vacuum ($T_{\mu\nu} = 0$).
 
 ---
 
@@ -203,11 +131,20 @@ Because $\mathcal{M}_1$ isolates causal invariance without confluence, and $\mat
 
 ### 2.1 Formal Verification in Lean 4
 
-To eliminate ambiguity in the definitions of confluence and causal invariance, Lemma 1 has been formalized and verified in the Lean 4 interactive theorem prover. The formal kernel—including the inductive definition of reflexive transitive closure (`RTC`), derivation traces (`Trace`), the formal predicates for confluence (`IsConfluent`), normal forms (`IsNormalForm`), strong normalization (`IsStronglyNormalizing`), causal DAG structures (`CausalDAG`), and order-preserving DAG isomorphisms (`CausalDAGIsomorphism`, `AreIsomorphicDAGs`), along with the constructive proofs for Theorems 1.1 and 1.2 over counterexample systems $\mathcal{M}_1$ and $\mathcal{M}_2$—is provided in **Appendix A**.
+To eliminate ambiguity in the definitions of confluence and causal invariance, Lemma 1 has been formalized and verified in the Lean 4 interactive theorem prover. The formal kernel—including the inductive definition of reflexive transitive closure (`RTC`), derivation traces (`Trace`), the formal predicates for confluence (`IsConfluent`), normal forms (`IsNormalForm`), strong normalization (`IsStronglyNormalizing`), causal DAG structures (`CausalDAG`), and order-preserving DAG isomorphisms (`CausalDAGIsomorphism`, `AreIsomorphicDAGs`), along with the constructive proofs for Theorems 1.1 and 1.2 over counterexample systems $\mathcal{M}_1$ and $\mathcal{M}_2$—is provided in the machine-checked Lean 4 formalization (`formal-proofs/CausalInvariance.lean` and Supplementary Material, Section 1).
 
 In our formalization, causal DAG isomorphism is evaluated over unlabelled causal dependency posets $(E, \prec)$, which represents the minimal, weakest criterion for relational equivalence. In hypergraph substitution systems, rewrite events carry specific boundary hyperedge input/output labels. Because adding event-type or boundary-label equality constraints strictly restricts the set of admissible isomorphisms, any rewriting system exhibiting DAG non-isomorphism at the unlabelled poset level is guaranteed to remain non-isomorphic under any labeled refinement.
 
 This formal decoupling demonstrates that within discrete graph rewriting, global confluence does not guarantee causal invariance, nor does causal invariance guarantee unique terminal state convergence [6]. Path uniqueness is not an automatic consequence of graph dynamics; it requires explicit, separate axiomatic enforcement.
+
+### 2.2 The Knuth-Bendix Fallacy: Dynamic Law Injection and $\Sigma_1^0$ Algorithmic Freezing
+
+To rescue non-confluent multiway rule spaces from permanent branchial fragmentation, the Wolfram Model proposes invoking the **Knuth-Bendix critical pair completion algorithm** [4]. When an abstract rewriting system encounters an unresolvable critical pair (a state bifurcation $a \to b$ and $a \to c$ with no downstream common successor), the Knuth-Bendix procedure generates and dynamically adjoins new rewrite rules (e.g., $b \to c$ or $c \to b$) to force structural confluence.
+
+Importing symbolic completion procedures into a fundamental discrete spacetime ontology creates two insurmountable physical failures:
+
+1. **Dynamic Law Injection vs. Stationary Action Principle:** In fundamental physics, dynamical laws are stationary and governed by a fixed Hamiltonian or Lagrangian action ($\delta S = 0$). Invoking Knuth-Bendix completion implies that the fundamental replacement rules $H_1 \to H_2$ are non-stationary: the universe must dynamically mutate its own physical laws in real time, inventing bespoke substitution rules on the fly to patch topological branchial divergences as they emerge.
+2. **$\Sigma_1^0$-Undecidability and Macroscopic Algorithmic Freezing:** By the Post-Markov-Novikov theorem, the Word Problem for semi-Thue systems and graph rewriting languages is Turing-undecidable ($\Sigma_1^0$). Consequently, Knuth-Bendix completion on generic rewrite systems is not guaranteed to terminate and generically enters infinite rule-generation loops. If physical causal consistency or wave-function branch reconciliation relies on dynamic rule completion, localized spatial regions undergoing multiway entanglement would suffer infinite computational halting ("algorithmic freezing"), predicting macroscopic temporal freezes that are empirically absent in nature.
 
 ---
 
@@ -224,6 +161,7 @@ $$
 Because the updates occur at spatially separated locations without a centralized global coordinator, the local hypergraph geometries diverge along independent multiway branches $\Gamma_1$ and $\Gamma_2$.
 
 To preserve causal invariance, these two divergent branches must eventually reconverge to an isomorphic downstream state $G_{\text{target}}$. Information propagation across the hypergraph is strictly bounded by the maximum rewrite propagation speed, which defines the model's emergent speed of light $c_{\text{emergent}}$:
+
 * Under **serial execution** (one replacement applied globally per step), physical propagation speed is volume-dependent ($c \propto 1/|V|$), breaking continuum Lorentz invariance.
 * Under **maximally parallel execution**, signal propagation is bounded by the substitution rule diameter $\Delta x \le \operatorname{diam}(H_1) + \operatorname{diam}(H_2)$ edges per causal layer.
 
@@ -238,17 +176,37 @@ For the rewriting rules at $x_1$ to steer the local topology to compensate for t
 
 3. **Exponential Branchial Proliferation:** If the rate of independent local rewrite events across the spatial volume exceeds the reconciliation rate ($\Gamma_{\text{branch}} > \tau_{\text{reconcile}}^{-1}$), the multiway system branches exponentially, permanently preventing path convergence.
 
-### 3.2 The Scheduler Artifact and Vacuum Asymmetry
+### 3.2 The Scheduler Artifact, Vacuum Asymmetry, and Ollivier-Ricci Fluctuations
 
 To execute a discrete replacement rule on a hypergraph, any asynchronous computational process must employ an update **scheduler** to identify matching subgraphs and sequence substitutions [4]. Gorard asserts that asymptotic confluence erases the scheduler's path history, rendering the choice of updater unobservable [4].
 
 However, this erasure is exact only at the infinite asymptotic horizon ($t \to \infty$). On any finite physical timescale, the sequential updater leaves permanent structural asymmetries in the underlying network:
 
-This desynchronization mechanism is illustrated schematically in Figure 2.
+This desynchronization mechanism is illustrated schematically in Figure \ref{fig:vacuum_scars}.
 
-![Asymmetric update scheduling generating uncompensated graph distance deficits and metric vacuum scars over finite timescales.](./figures/scheduler-vacuum-scars.png)
+![Asymmetric update scheduling generating uncompensated graph distance deficits and metric vacuum scars over finite timescales.\label{fig:vacuum_scars}](figures/scheduler-vacuum-scars.png){width=85%}
 
 In general relativity, a region of space that is evacuated of matter returns to a unique vacuum solution (e.g., Minkowski or Schwarzschild, depending on global boundary conditions and conserved charges, governed by Birkhoff's theorem). In discrete hypergraphs, regions undergoing intense local computation accumulate intermediate edge rewrites. Lacking a global clock to normalize graph growth, the evacuated region retains persistent topological deficits, violating diffeomorphism invariance and the equivalence principle over finite timescales. Unlike Lattice Gauge Theory or Causal Dynamical Triangulations (CDT)—where continuum Lorentz symmetry is recovered in the infrared via a path-integral action $e^{-S}$ tuned to a second-order critical point—asynchronous graph rewriting possesses no Hamiltonian action, partition function, or restoring potential. Consequently, local scheduler desynchronizations are secularly cumulative rather than mean-zero Gaussian fluctuations.
+
+#### 1-Wasserstein Distance and Discrete Ollivier-Ricci Curvature Fluctuations
+
+To evaluate the metric asymmetry introduced by asynchronous scheduling quantitatively, we examine the discrete Ollivier-Ricci curvature $\kappa(e)$ on directed hyperedges $e = (u, v)$ [4]:
+$$
+\kappa(e) = 1 - W_1(\mu_{u}^{\text{in}}, \mu_{v}^{\text{out}})
+$$
+where $W_1$ is the $L^1$-Wasserstein (Earth Mover's) metric between localized degree-normalized neighborhood probability measures $\mu_u(x) = 1/\deg(u)$ for $x \in \mathcal{N}(u)$:
+$$
+W_1(\mu_u, \mu_v) = \inf_{\gamma \in \Pi(\mu_u, \mu_v)} \sum_{x, y} d_G(x, y) \gamma(x, y)
+$$
+Under sequential or asynchronous execution, applying a local rewrite rule $H_1 \to H_2$ at node $u$ before node $v$ perturbs the local coordination degree by $\Delta d_u = |V(H_2)| - |V(H_1)| = \mathcal{O}(1)$. This localized topological modification introduces an instantaneous jump in the optimal 1-Wasserstein transport plan:
+$$
+\Delta W_1(\mu_u, \mu_v) \ge \frac{1}{\max(\deg(u), \deg(v))} \cdot d_G(u, v) = \mathcal{O}(1)
+$$
+yielding violent, microscopic fluctuations in the Ollivier-Ricci scalar curvature:
+$$
+\Delta \kappa(e) \sim \mathcal{O}(1)
+$$
+Because discrete hypergraph rewriting contains no Hamiltonian restoring action or thermal dissipation bath, these discrete curvature spikes do not average out to a smooth Ricci tensor in the continuum limit; instead, they accumulate as persistent, directional vacuum scars that explicitly break local Lorentz covariance.
 
 ### 3.3 Post-Hoc DAG Assumption vs. Directed Causal Cycles
 
@@ -257,6 +215,8 @@ $$
 E_1 \longrightarrow E_2 \longrightarrow E_3 \longrightarrow E_1
 $$
 If a rewrite sequence generates a closed cycle, event $E_1$ becomes its own ancestor, rendering joint probability distributions and time evolution non-computable. Gorard's assertion that closed timelike curves cannot occur under causal invariance relies on assuming DAG structure at the outset. In an axiomatic discrete spacetime ontology, DAG acyclicity is an externally imposed irreflexivity constraint, not a dynamical consequence of confluence.
+
+In our Lean 4 formal verification (`formal-proofs/CausalInvariance.lean`, Section 4), we machine-check the general incompatibility theorem (`cycle_violates_irreflexivity`): for any binary relation $R$ on an arbitrary type, the existence of a cyclic dependency in its transitive closure strictly violates irreflexivity, precluding the formation of a strict partial order or causal DAG. DAG acyclicity is an externally imposed filter rather than a dynamical consequence of rewriting confluence.
 
 ---
 
@@ -272,7 +232,9 @@ Whenever multiple distinct historical trajectories $\gamma_1, \gamma_2 \in \math
 $$
 |\phi_t^{-1}(G)| \ge 2
 $$
-The projection $\phi_t$ is strictly many-to-one (non-injective), as formalized in Theorem 3 of Appendix A. While the complete historical lineage remains formally preserved in the global multiway causal graph $\mathcal{M}$, the active relational spatial geometry at time $t$ retains only the quotiented isomorphism class $G$.
+In our Lean 4 formalization (`formal-proofs/CausalInvariance.lean`, Section 2), we prove the general trace non-injectivity theorem (`trace_projection_non_injective_of_length_diff` and `trace_length_ne_implies_trace_ne`), showing that whenever derivation paths of unequal length terminate at the identical normal form, the history-to-state projection is strictly non-injective ($|\phi_t^{-1}(G)| \ge 2$), constructively demonstrated in Model $\mathcal{M}_2$ (`M2_trace_non_injectivity`).
+
+The projection $\phi_t$ is strictly many-to-one (non-injective), as machine-checked in Theorem 3 of our Lean 4 formalization. While the complete historical lineage remains formally preserved in the global multiway causal graph $\mathcal{M}$, the active relational spatial geometry at time $t$ retains only the quotiented isomorphism class $G$.
 
 ---
 
@@ -407,7 +369,8 @@ We prove that **any** local, deterministic substitution rule operating on an ini
    P(\Gamma_{\text{manifold}}) \le \exp\left(-\mu N_0\right) \xrightarrow{N_0 \to \infty} 0
    $$
 
-**Proof.** 
+**Proof.**
+
 1. *Homomorphism Density Expansion:* In Lovász's theory of dense graph limits, the homomorphism density $t(H, G)$ measures the probability that a random map $V(H) \to V(G)$ is a graph homomorphism. For a complete substrate $K_{N_0}$, $t(H_1, K_{N_0}) = 1 - \mathcal{O}(1/N_0)$. Multiplying by $N(t)^{v_1}$ and quotienting by the automorphism group $|\operatorname{Aut}(H_1)|$ yields $M_{\text{matches}} = \binom{N(t)}{v_1} \frac{v_1!}{|\operatorname{Aut}(H_1)|} \sim \Theta(N(t)^{v_1}) \ge \Theta(N_0^{v_1})$.
 2. *Path Volume Integration:* At step $t$, after modifying $t \cdot \Delta e$ edges, the instantaneous edge density is $p_t = 1 - \frac{t \Delta e}{E_0}$. The available matching count satisfies $b_t \ge \frac{p_t^{e_1} N_0^{v_1}}{|\operatorname{Aut}(H_1)|}$. The dense homomorphism limit holds across the entire interval where $p_t \gg N_0^{-1/e_1}$, which accounts for $L - \mathcal{O}(N_0^{2 - 1/e_1}) = \Theta(N_0^2)$ steps. Integrating $\log_2(b_t)$ over $L = \Theta(N_0^2)$ steps yields:
    $$
@@ -456,38 +419,74 @@ $$
 
 ### 5.4 Multi-Scale Numerical Simulation Atlas
 
-To verify these analytical bounds empirically, an exhaustive layer-by-layer multiway state space enumeration was executed up to $N = 8$. Intermediate graph states were canonicalized at each layer boundary via dynamic programming over all $N!$ vertex permutations:
+To verify these analytical bounds empirically, we implemented a dual simulation architecture: an initial reference auditor in Python for combinatorial baseline checks (`causal_invariance_auditor.py`), and a high-performance, multithreaded bitset engine in C++20 (`cpp/causal_invariance_engine.cpp`). The C++20 engine employs hardware `std::popcount`, stack-allocated 64-bit and 128-bit integer bitsets, exact `unsigned __int128` trajectory accumulation, and precomputed $N!$ permutation tables.
+
+Using this C++20 engine, we executed an exact layer-by-layer dynamic programming state space enumeration up to $N = 8$, canonicalizing intermediate graph states at each layer boundary across all $N!$ vertex permutations:
 $$
 \operatorname{CanonicalForm}(G) = \min_{\sigma \in S_N} \sigma(G)
 $$
+The C++20 engine verified all $M = 8.9476 \times 10^{23}$ paths at $N=8$ in **51.29 seconds** on an 8-core commodity workstation—a **$268\times$ speedup** over the single-threaded CPython prototype (3.82 hours). 
 
-While Table 2 provides an exact, exhaustive numerical baseline for monotonic edge contraction, Theorem 5.2 proves that any generic hypergraph substitution rule $H_1 \to H_2$ preserves the same asymptotic branching lower bound $\Theta(N^{v_1})$ and super-quadratic trajectory volume $\Theta(N^2 \log N)$ via Lovász homomorphism densities. The numerical simulation serves as the minimal, exactly solvable instance of this universal phase-space proliferation.
+To extend our empirical verification beyond the memory ceiling of full dynamic programming tables, the C++20 engine executed high-dimensional parallel Monte Carlo percolation sampling across 600,000 independent trajectories for $N = 9 \dots 16$ at a sustained throughput exceeding **$3.1 \times 10^6$ trajectories/second**.
 
-The simulation results across all computed scales are summarized in Table 2.
+While Table \ref{tab:matrix2} provides the exact numerical baseline for monotonic edge contraction, Theorem 5.2 proves that any generic hypergraph substitution rule $H_1 \to H_2$ preserves the same asymptotic branching lower bound $\Theta(N^{v_1})$ and super-quadratic trajectory volume $\Theta(N^2 \log N)$ via Lovász homomorphism densities. The numerical simulation serves as the minimal, exactly solvable instance of this universal phase-space proliferation.
 
-**Table 2: Multi-Scale Multiway Trajectory Evaluation ($k = 3$, $N = 5 \dots 8$)**
+The exact enumeration results across $N=5 \dots 8$ are summarized in Table \ref{tab:matrix2}, and the high-dimensional sampling data across $N=9 \dots 16$ are recorded in Table \ref{tab:high_dim_sampling}.
 
-| Scale ($N$) | Trajectory Paths ($M$) | Classes ($|\Omega|$) | $H_{\text{process}}$ (bits) | $H_{\text{macro}}$ (bits) | $\Delta H$ (bits) | $P(\text{Connected})$ | $P(\text{Regular})$ | Reachability |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 5 | 1,620 | 4 | 10.6618 | 1.6416 | 9.0201 | $9.2593 \times 10^{-1}$ | $0.0000$ | 11.76% (4 / 34) |
-| 6 | 133,797,600 | 29 | 26.9955 | 4.0145 | 22.9809 | $6.3799 \times 10^{-1}$ | $3.7669 \times 10^{-4}$ | 18.59% (29 / 156) |
-| 7 | $9.4548 \times 10^{14}$ | 102 | 49.7480 | 5.5155 | 44.2326 | $3.5861 \times 10^{-1}$ | $0.0000$ | 9.77% (102 / 1,044) |
-| 8 | $8.9476 \times 10^{23}$ | 355 | 79.5658 | 6.6960 | 72.8698 | $1.7731 \times 10^{-1}$ | $4.5259 \times 10^{-7}$ | 2.88% (355 / 12,346) |
+\begin{table}[ht]
+\small
+\centering
+\caption{Multi-Scale Multiway Trajectory Evaluation ($k = 3$, $N = 5 \dots 8$, Exact C++20 Enumeration). $M$ is the number of distinct labeled chronological derivation pathways; $|\Omega|$ is the number of distinct unlabeled physical graph isomorphism classes reached; Reachability is the dynamically accessible fraction of all possible unlabeled graphs on $N$ vertices ($|\Omega| / |\mathcal{G}_N|$, OEIS A000088).}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccccccc}
+\hline
+Scale ($N$) & Trajectory Paths ($M$) & Classes ($|\Omega|$) & $H_{\text{process}}$ (bits) & $H_{\text{macro}}$ (bits) & $\Delta H$ (bits) & $P(\text{Connected})$ & $P(\text{Regular})$ & Reachability \\ \hline
+5 & 1,620 & 4 & 10.6618 & 1.6416 & 9.0201 & $9.2593 \times 10^{-1}$ & $0.0000$ & 11.76\% (4 / 34) \\
+6 & 133,797,600 & 29 & 26.9955 & 4.0145 & 22.9809 & $6.3799 \times 10^{-1}$ & $3.7669 \times 10^{-4}$ & 18.59\% (29 / 156) \\
+7 & $9.4548 \times 10^{14}$ & 102 & 49.7480 & 5.5155 & 44.2326 & $3.5861 \times 10^{-1}$ & $0.0000$ & 9.77\% (102 / 1,044) \\
+8 & $8.9476 \times 10^{23}$ & 355 & 79.5658 & 6.6960 & 72.8698 & $1.7731 \times 10^{-1}$ & $4.5259 \times 10^{-7}$ & 2.88\% (355 / 12,346) \\ \hline
+\end{tabular}%
+}
+\label{tab:matrix2}
+\end{table}
 
+\begin{table}[ht]
+\small
+\centering
+\caption{High-Dimensional Percolation and Topology Collapse Matrix ($k = 3$, $N = 9 \dots 16$, Monte Carlo $100,000$ runs per scale, C++20 Bitset Engine).}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccccc}
+\hline
+Scale ($N$) & Target Degree ($k$) & Trajectories ($M_{\text{sample}}$) & Mean Path Length & $P(\text{Connected})$ & $P(\text{Regular})$ & Mean Degree Variance \\ \hline
+9 & 3 & 100,000 & 25.80 & $6.7822 \times 10^{-1}$ & $0.0000$ & 0.6442 \\
+10 & 3 & 100,000 & 33.81 & $6.1690 \times 10^{-1}$ & $1.5000 \times 10^{-4}$ & 0.6671 \\
+11 & 3 & 100,000 & 42.79 & $5.6408 \times 10^{-1}$ & $0.0000$ & 0.6834 \\
+12 & 3 & 100,000 & 52.78 & $5.1542 \times 10^{-1}$ & $0.0000$ & 0.6960 \\
+14 & 3 & 100,000 & 75.74 & $4.2914 \times 10^{-1}$ & $0.0000$ & 0.7174 \\
+16 & 3 & 100,000 & 102.70 & $3.5920 \times 10^{-1}$ & $0.0000$ & 0.7328 \\ \hline
+\end{tabular}%
+}
+\label{tab:high_dim_sampling}
+\end{table}
 
-**Table 2b: Multiway Branching Under Wolfram Local Hypergraph Substitution Rules ($K_3, K_4$ Substrates)**
-
-| Rule Type | Substrate | Step ($t$) | Input States | Multiway Branches ($b_t$) | Child Macrostates |
-|:---|:---:|:---:|:---:|:---:|:---:|
-| **Wolfram 2-in 4-out** (Expansion: $\Delta v = +1$) | $K_3$ | 1 | 1 | 3 | 1 |
-| | | 2 | 1 | 15 | 3 |
-| | | 3 | 3 | 114 | 11 |
-| **Wolfram 2-in 4-out** (Expansion: $\Delta v = +1$) | $K_4$ | 1 | 1 | 12 | 1 |
-| | | 2 | 1 | 156 | 5 |
-| **Wolfram 2-in 1-out** (Pruning: $\Delta e = -1$) | $K_4$ | 1 | 1 | 12 | 1 |
-| | | 2 | 1 | 60 | 3 |
-| | | 3 | 3 | 72 | 2 |
-
+\begin{table}[ht]
+\small
+\centering
+\caption{Multiway Branching Under Wolfram Local Hypergraph Substitution Rules ($K_3, K_4$ Substrates)}
+\begin{tabular}{cccccc}
+\hline
+\textbf{Rule Type} & \textbf{Substrate} & \textbf{Step ($t$)} & \textbf{Input States} & \textbf{Multiway Branches ($b_t$)} & \textbf{Child Macrostates} \\ \hline
+Wolfram 2-in 4-out & $K_3$ & 1 & 1 & 3 & 1 \\
+(Expansion: $\Delta v = +1$) & & 2 & 1 & 15 & 3 \\
+& & 3 & 3 & 114 & 11 \\ \hline
+Wolfram 2-in 4-out & $K_4$ & 1 & 1 & 12 & 1 \\
+(Expansion: $\Delta v = +1$) & & 2 & 1 & 156 & 5 \\ \hline
+Wolfram 2-in 1-out & $K_4$ & 1 & 1 & 12 & 1 \\
+(Pruning: $\Delta e = -1$) & & 2 & 1 & 60 & 3 \\
+& & 3 & 3 & 72 & 2 \\ \hline
+\end{tabular}
+\label{tab:wolfram_rules_branching}
+\end{table}
 
 #### Topological Invariants and Regularity Collapse
 
@@ -495,27 +494,32 @@ The simulation results across all computed scales are summarized in Table 2.
 * **Regularity Collapse:** Where regular configurations are permitted ($N = 6, 8$), $P(\text{Regular})$ collapses from $3.7669 \times 10^{-4}$ at $N=6$ to $4.5259 \times 10^{-7}$ at $N=8$.
 * **Global Connectivity Collapse:** $P(\text{Connected})$ falls monotonically from 92.59% at $N=5$ to 17.73% at $N=8$.
 
-The scaling of process entropy $H_{\text{process}}$, macrostate entropy $H_{\text{macro}}$, and the Landauer gap $\Delta H$ is illustrated in Figure 3.
+The scaling of process entropy $H_{\text{process}}$, macrostate entropy $H_{\text{macro}}$, and the Landauer gap $\Delta H$ is illustrated in Figure \ref{fig:entropy_scaling}.
 
-![Scaling of process entropy, macrostate entropy, and the Landauer entropy gap as a function of vertex scale $N$.](./figures/entropy-scaling.png)
+![Scaling of process entropy, macrostate entropy, and the Landauer entropy gap as a function of vertex scale $N$.\label{fig:entropy_scaling}](figures/entropy-scaling.png){width=80%}
 
 #### Macrostate Distribution and Island Topologies
 Sorting the terminal registry by path weight reveals that path volume concentrates on **island topologies**—graphs consisting of a small connected core and multiple isolated vertices ($\deg(v) = 0$):
 
-**Table 3: Dominant Terminal Macrostate Topologies ($N = 8, k = 3$)**
+\begin{table}[ht]
+\small
+\centering
+\caption{Dominant Terminal Macrostate Topologies ($N = 8, k = 3$)}
+\begin{tabular}{cccl}
+\hline
+Rank & Representation & Degree Sequence & Topological Structure \\ \hline
+1 & 4.41\% & `[3, 3, 3, 2, 1, 0, 0, 0]` & 5-node core + 3 isolated vertices \\
+2 & 4.04\% & `[3, 3, 3, 2, 1, 1, 1, 0]` & 7-node core + 1 isolated vertex \\
+3 & 3.67\% & `[3, 3, 2, 2, 1, 1, 0, 0]` & 6-node core + 2 isolated vertices \\
+4 & 3.19\% & `[3, 3, 3, 2, 2, 1, 0, 0]` & 6-node core + 2 isolated vertices \\
+5 & 2.98\% & `[3, 3, 2, 2, 2, 1, 1, 0]` & 7-node core + 1 isolated vertex \\ \hline
+\end{tabular}
+\label{tab:dominant_topologies}
+\end{table}
 
-| Rank | Representation | Degree Sequence | Topological Structure |
-|:---:|:---:|:---|:---|
-| 1 | 4.41% | `[3, 3, 3, 2, 1, 0, 0, 0]` | 5-node core + 3 isolated vertices |
-| 2 | 4.04% | `[3, 3, 3, 2, 1, 1, 1, 0]` | 7-node core + 1 isolated vertex |
-| 3 | 3.67% | `[3, 3, 2, 2, 1, 1, 0, 0]` | 6-node core + 2 isolated vertices |
-| 4 | 3.19% | `[3, 3, 3, 2, 2, 1, 0, 0]` | 6-node core + 2 isolated vertices |
-| 5 | 2.98% | `[3, 3, 2, 2, 2, 1, 1, 0]` | 7-node core + 1 isolated vertex |
+The path-frequency distribution across all dominant terminal macrostates is plotted in Figure \ref{fig:terminal_state_dist}.
 
-
-The path-frequency distribution across all dominant terminal macrostates is plotted in Figure 4.
-
-![Path-frequency distribution of the top 10 dominant terminal macrostates at $N=8, k=3$.](./figures/terminal-state-distribution.png)
+![Path-frequency distribution of the top 10 dominant terminal macrostates at $N=8, k=3$.\label{fig:terminal_state_dist}](figures/terminal-state-distribution.png){width=80%}
 
 ---
 
@@ -533,29 +537,43 @@ cannot be simultaneously satisfied in a closed pre-geometric ontology.
 
 ### 5.6 Computational Scaling Barriers, Cluster Infrastructure, and Cosmological Horizon Limits ($N > 8$)
 
-To contextualize the computational scaling and assess whether deeper scales can be simulated by expanding infrastructure, we evaluate the exact combinatorial complexity requirements across ascending vertex scales ($N = 8 \dots 1000$).
+To contextualize the computational scaling across both exact full-state dynamic programming and high-throughput percolation sampling, we evaluate the exact combinatorial complexity requirements across ascending vertex scales ($N = 8 \dots 1000$).
 
-**Table 4: Combinatorial Phase-Space Scaling and Computational Infrastructure Requirements ($k = 3$)**
+\begin{table}[ht]
+\small
+\centering
+\caption{Combinatorial Phase-Space Scaling Across Vertex Regimes ($k = 3$). $M_{\text{base}} = E_0! / E_f!$ is the analytical falling factorial baseline (Section 5.3); $|\mathcal{G}_N|$ is the total unlabelled graph space (OEIS A000088); $N!$ is the canonical permutation cost per state.}
+\begin{tabular}{ccccc}
+\hline
+\textbf{Scale ($N$)} & \textbf{Edges ($E_0$)} & \textbf{Unlabelled Classes ($|\mathcal{G}_N|$)} & \textbf{Baseline Trajectories ($M_{\text{base}}$)} & \textbf{Canonical Cost ($N!$)} \\ \hline
+8 & 28 & 12,346 & $6.37 \times 10^{20}$ & 40,320 \\
+10 & 45 & $1.20 \times 10^7$ & $9.14 \times 10^{43}$ & $3.63 \times 10^6$ \\
+12 & 66 & $1.65 \times 10^{11}$ & $8.44 \times 10^{76}$ & $4.79 \times 10^8$ \\
+16 & 120 & $\sim 1.2 \times 10^{23}$ & $1.09 \times 10^{175}$ & $2.09 \times 10^{13}$ \\
+20 & 190 & $\sim 3.6 \times 10^{41}$ & $2.45 \times 10^{320}$ & $2.43 \times 10^{18}$ \\
+50 & 1,225 & $\sim 10^{300}$ & $\sim 10^{3400}$ & $3.04 \times 10^{64}$ \\
+100 & 4,950 & $\sim 10^{1332}$ & $\sim 10^{16100}$ & $9.33 \times 10^{157}$ \\
+1,000 & 499,500 & $\sim 10^{150000}$ & $\sim 10^{2713000}$ & $\sim 10^{2568}$ \\ \hline
+\end{tabular}
+\label{tab:scaling_limits}
+\end{table}
 
-| Scale ($N$) | Edges ($E_0$) | Unlabelled Classes ($|\mathcal{G}_N|$) | Baseline Trajectories ($M_{\text{base}}$) | Canonical Cost ($N!$) | Infrastructure & Feasibility |
-|:---:|:---:|:---:|:---:|:---:|:---|
-| 8 | 28 | 12,346 | $6.37 \times 10^{20}$ | 40,320 | Workstation (x86-64, 8-core, 64 GB RAM, 3.82 h, exact) |
-| 10 | 45 | $1.20 \times 10^7$ | $9.14 \times 10^{43}$ | $3.63 \times 10^6$ | Multi-node HPC Cluster (128-core, C++/MPI + Bliss, $\sim$days) |
-| 12 | 66 | $1.65 \times 10^{11}$ | $8.44 \times 10^{76}$ | $4.79 \times 10^8$ | Distributed Supercomputer ($\ge 1.3$ TB RAM, $\sim$months) |
-| 16 | 120 | $\sim 1.2 \times 10^{23}$ | $1.09 \times 10^{175}$ | $2.09 \times 10^{13}$ | Exceeds total planetary digital storage ($\sim 10^{21}$ bytes) |
-| 20 | 190 | $\sim 3.6 \times 10^{41}$ | $2.45 \times 10^{320}$ | $2.43 \times 10^{18}$ | Intractable across all earthly supercomputing clusters |
-| 50 | 1,225 | $\sim 10^{300}$ | $\sim 10^{3400}$ | $3.04 \times 10^{64}$ | Exceeds universe information capacity |
-| 100 | 4,950 | $\sim 10^{1332}$ | $\sim 10^{16100}$ | $9.33 \times 10^{157}$ | $\gg 10^{80}$ (total particles in observable universe) |
-| 1,000 | 499,500 | $\sim 10^{150000}$ | $\sim 10^{2713000}$ | $\sim 10^{2568}$ | Absolute thermodynamic impossibility |
+#### Exact Dynamic Programming vs. Parallel Monte Carlo Regimes
+In analyzing pre-geometric state spaces, two distinct computational regimes must be delineated:
 
-#### The HPC Cluster Frontier ($N = 10 \dots 12$)
-At $N=8$, our layer-by-layer dynamic programming algorithm verified $M \approx 8.95 \times 10^{23}$ paths across 28 edge layers in $1.38 \times 10^4$ seconds on a standard commodity workstation (8-core x86-64, 64 GB RAM, single-threaded CPython). Extending this exact evaluation to $N=10$ encounters an unlabelled graph space of $1.20 \times 10^7$ isomorphism classes (OEIS A000088) with $10! = 3.63 \times 10^6$ permutations per state. On a single-core workstation baseline, a pure Python implementation would require an estimated 12–31 days of continuous execution; however, migrating to a compiled C/C++ engine utilizing the canonical graph labeling library `Bliss` or `Nauty` and distributed MPI parallelization across a 128-core HPC cluster (e.g., dual-socket AMD EPYC nodes with $\ge 512$ GB memory) could reduce the wall-clock runtime to several days.
+1. **Exact Layer-by-Layer Dynamic Programming ($N \le 8$ Workstation, $N = 10 \dots 12$ HPC):**
+   At $N=8$, full state space enumeration across 28 edge layers tracks $M = 8.95 \times 10^{23}$ paths collapsing into 355 terminal isomorphism classes. While a single-threaded CPython reference prototype required $1.38 \times 10^4$ seconds ($\approx 3.82$ hours), our compiled C++20 bitset engine (`cpp/causal_invariance_engine.cpp`) executed this exact enumeration in **51.29 seconds**—a **$268\times$ performance acceleration** achieved via hardware `std::popcount`, bitset incidence representations, and precomputed $N!$ permutation tables.
+   
+   For exact full-state dynamic programming at $N=10$, the state space reaches $1.20 \times 10^7$ unlabelled graph classes with $10! = 3.63 \times 10^6$ permutations per state, requiring a multi-node HPC cluster. At $N=12$, the state space expands to 164.8 billion isomorphism classes ($M_{\text{base}} \approx 8.44 \times 10^{76}$), requiring at least 1.3 Terabytes of distributed RAM across an institutional supercomputing partition.
 
-At $N=12$, however, the state space expands to 164.8 billion isomorphism classes ($M_{\text{baseline}} \approx 8.44 \times 10^{76}$). Maintaining the dynamic programming layer tables in memory requires at least 1.3 Terabytes of distributed RAM across an institutional supercomputing partition, requiring months of continuous compute allocation.
+2. **Parallel Monte Carlo Percolation Sampling ($N = 9 \dots 16$):**
+   To probe deep dimensional reduction beyond the exact memory barrier of dynamic programming tables, we executed the parallel Monte Carlo percolation sampler within our C++20 engine. By executing random path descents directly on $O(1)$ stack-allocated 64-bit and 128-bit bitsets without storing global layer tables, the engine achieved a sustained sampling throughput exceeding **$3.1 \times 10^6$ trajectories/second** across 12 cores.
+   
+   As documented in Table \ref{tab:high_dim_sampling}, our C++20 benchmark runs evaluated $100,000$ independent trajectories per scale from $N=9$ to $N=16$ ($600,000$ total sampled trajectories), empirically confirming the theoretical predictions of subcritical percolation (Section 5.2): $P(\text{Connected})$ falls monotonically from $67.82\%$ at $N=9$ to $35.92\%$ at $N=16$, the regular manifold probability remains strictly suppressed ($P(\text{Regular}) \le 1.5 \times 10^{-4}$ at $N=10$, and $0.0000$ at all $N \ge 11$), and the mean vertex degree variance widens secularly to $\sigma_d^2 = 0.7328$.
 
-#### The Cosmological Physical Barrier ($N \ge 16$)
-Beyond $N=12$, the exact multiway trajectory evaluation crosses absolute physical boundaries:
-1. **Planetary Storage Limit ($N \ge 16$):** At $N=16$, the unlabelled graph state space exceeds $10^{23}$ classes, surpassing the total aggregate digital storage of human civilization ($\sim 10^{21}$ bytes).
+#### The Cosmological Physical Barrier ($N \ge 16$ Full Enumeration)
+Beyond $N=12$, exact layer-by-layer multiway trajectory enumeration crosses absolute physical boundaries:
+1. **Planetary Storage Limit ($N \ge 16$):** At $N=16$, the unlabelled graph state space exceeds $10^{23}$ classes, surpassing the total aggregate digital storage capacity of human civilization ($\sim 10^{21}$ bytes).
 2. **Cosmic Entropy Limit ($N \ge 100$):** At cosmological scales ($N=100$), the number of distinct graph macrostates ($\sim 10^{1332}$) and trajectory paths ($M \sim 10^{16100}$) surpasses the total number of subatomic particles in the observable universe ($10^{80}$) by over 1,200 orders of magnitude.
 
 This establishes that the multiway state space explosion is not an artifact of software engineering, but a fundamental manifestation of **computational irreducibility**. The physical universe itself lacks the entropy budget, memory, and degrees of freedom required to "smooth out" or pre-compute an unguided dense substrate $K_N$. Without explicit local dynamical conservation laws, pre-geometric dimensional reduction remains trapped within this combinatorially impenetrable phase space.
@@ -689,7 +707,7 @@ $$
 $$
 Because vertices, edges, and topological degrees are created and destroyed at uncoordinated spatial locations, generic rewriting rules possess no non-trivial vector or tensor collision invariants $\psi_\alpha \in \{\mathbf{v}, |\mathbf{v}|^2, T_{\mu\nu}\}$ satisfying $\langle \psi_\alpha, \mathcal{C}_{\text{graph}}[f] \rangle = 0$. 
 
-Consequently, the adjoint null space on $\ell^2(\mathcal{M}_{\text{local}})$ is strictly 1-dimensional, containing only the trivial scalar probability invariant: $\operatorname{ker}(\mathcal{L}_{\text{graph}}^\dagger) = \operatorname{span}\{\mathbf{1}\}$. Projecting the kinetic transport equation $\mathcal{D}^{(0)} f^{(0)}$ onto $\operatorname{ker}(\mathcal{L}_{\text{graph}}^\dagger)$ yields only the scalar continuity equation $\partial_t \rho = 0$, with zero closed momentum or curvature flux equations ($\nabla_\mu T^{\mu\nu} = 0$). The moment hierarchy cannot be closed at any finite order $\mathcal{O}(\epsilon^k)$, preventing the emergence of the Einstein field equations ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$) or any closed-form tensor hydrodynamic partial differential equation.
+Consequently, the adjoint null space on $\ell^2(\mathcal{M}_{\text{local}})$ is strictly 1-dimensional, containing only the trivial scalar probability invariant: $\operatorname{ker}(\mathcal{L}_{\text{graph}}^\dagger) = \operatorname{span}\{\mathbf{1}\}$. In our Lean 4 formal verification (`formal-proofs/CausalInvariance.lean`, Section 3), we formally machine-check the general adjoint kernel 1-dimensionality theorem (`general_adjoint_kernel_is_one_dimensional`): on any weakly connected state space under transition relation $R$, the space of conserved observables is strictly 1-dimensional (consisting only of constants), precluding the existence of non-trivial collision invariants. Projecting the kinetic transport equation $\mathcal{D}^{(0)} f^{(0)}$ onto $\operatorname{ker}(\mathcal{L}_{\text{graph}}^\dagger)$ yields only the scalar continuity equation $\partial_t \rho = 0$, with zero closed momentum or curvature flux equations ($\nabla_\mu T^{\mu\nu} = 0$). The moment hierarchy cannot be closed at any finite order $\mathcal{O}(\epsilon^k)$, preventing the emergence of the Einstein field equations ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$) or any closed-form tensor hydrodynamic partial differential equation.
 
 3. **Phase-Space Incompatibility and Lack of Local Equilibrium:**
 A true distribution function $f(\mathbf{x}, \mathbf{p}, t)$ represents a normalized probability density on phase space ($\int f d\mathbf{x} d\mathbf{p} = 1$). The volume growth $C(t)$ is a monotonic geometric metric measure on the causal poset, not a normalized phase-space density. Furthermore, the Chapman-Enskog expansion expands around a maximum-entropy local Maxwellian $f^{(0)}$. Discrete hypergraph rewriting models possess no thermodynamic equilibrium state, temperature, or pressure field from which to perturb.
@@ -736,9 +754,9 @@ Without a tunable action parameter $\kappa_4^c$ to cancel $S_{\text{config}}$ or
 
 ### 6.2 Topological Defects as Matter vs. Vacuum Instability
 
-In Gorard's framework, elementary particles are identified with localized nonplanar graph defects (subdivisions of Kuratowski minors $K_5$ or $K_{3,3}$, as shown in Figure ).
+In Gorard's framework, elementary particles are identified with localized nonplanar graph defects (subdivisions of Kuratowski minors $K_5$ or $K_{3,3}$, as shown in Figure \ref{fig:gorard_fig14}).
 
-![Nonplanar graph defects representing localized particle states, replicated from Ref. [4].](./figures/gorard-figure-14.png)
+![Nonplanar graph defects representing localized particle states, replicated from Ref. [4].\label{fig:gorard_fig14}](figures/gorard-figure-14.png){width=65%}
 
 However, our path-weighted terminal distribution demonstrates that nonplanar defects and isolated vertices are not rare, localized excitations propagating on a smooth background. Instead, the dynamical probability measure concentrates on nonplanar anomalies and disconnected topologies as a consequence of unguided path-merging. Matter does not emerge as an isolated perturbation; the background spatial geometry is modified by the accumulated entropy of history coarse-graining.
 
@@ -785,7 +803,6 @@ Asymptotic confluence is an insufficient mechanism for establishing discrete gen
 [10] T. Jacobson, "Thermodynamics of Spacetime: The Einstein Equation of State," *Phys. Rev. Lett.*, 75(7) (1995) 1260–1263.
 
 [11] T. Jacobson, "Entanglement Equilibrium and the Einstein Equation," *Phys. Rev. D*, 93(12) (2016) 124033.
-
 [12] L. Lovász, *Large Networks and Graph Limits*, American Mathematical Society, Colloquium Publications, Vol. 60, Providence, RI, 2012.
 
 [13] S. Janson, T. Łuczak, and A. Rucinski, *Random Graphs*, John Wiley & Sons, New York, 2000.
@@ -794,389 +811,15 @@ Asymptotic confluence is an insufficient mechanism for establishing discrete gen
 
 ---
 
-## Appendix A. Formal Verification in Lean 4
-
-The following Lean 4 specification provides the formalization of Lemma 1 (Theorems 1.1 and 1.2) and the non-injectivity of confluence merging (Theorems 3 and 4), verified using explicit causal DAG structures and order-preserving DAG isomorphisms:
-
-```lean
-/-!
-  # Formal Proof of Lemma 1 & Non-Injectivity
-  # Logical Independence of Confluence and Causal Invariance with Causal DAG Isomorphisms
-  # Formalized in Lean 4.
--/
-
--- Reflexive Transitive Closure of an Abstract Rewriting Relation
-inductive RTC {α : Type} (R : α → α → Prop) : α → α → Prop where
-  | refl (x : α) : RTC R x x
-  | step (x y z : α) : R x y → RTC R y z → RTC R x z
-
--- Predicate: Global Confluence (Church-Rosser Property)
-def IsConfluent {α : Type} (R : α → α → Prop) : Prop :=
-  ∀ (u y z : α), RTC R u y → RTC R u z → ∃ (w : α), RTC R y w ∧ RTC R z w
-
--- Predicate: Normal Form (State with no outgoing rewrite transitions)
-def IsNormalForm {α : Type} (R : α → α → Prop) (u : α) : Prop :=
-  ∀ (y : α), ¬ R u y
-
--- Inductive Derivation Trace representing concrete chronological execution paths
-inductive Trace {α : Type} (R : α → α → Prop) : α → α → Type where
-  | nil (x : α) : Trace R x x
-  | cons (x y z : α) : R x y → Trace R y z → Trace R x z
-
--- Length of a derivation trace
-def traceLength {α : Type} {R : α → α → Prop} {x z : α} : Trace R x z → Nat
-  | Trace.nil _ => 0
-  | Trace.cons _ _ _ _ rest => 1 + traceLength rest
-
--- Predicate: Strong Normalization (Every state terminates at a normal form in finite steps)
-def IsStronglyNormalizing {α : Type} (R : α → α → Prop) : Prop :=
-  ∀ (s : α), ∃ (t : α) (_tr : Trace R s t), IsNormalForm R t
-
--- ============================================================================
--- Formal Causal Event Dependency DAGs & Isomorphism
--- ============================================================================
-
-def CausalRelation (E : Type) := E → E → Prop
-
-def IsAsymmetric (E : Type) (R : CausalRelation E) : Prop :=
-  ∀ u v : E, R u v → ¬ R v u
-
-def IsTransitive (E : Type) (R : CausalRelation E) : Prop :=
-  ∀ u v w : E, R u v → R v w → R u w
-
-structure CausalDAG (E : Type) where
-  dep : CausalRelation E
-  asym : IsAsymmetric E dep
-  trans : IsTransitive E dep
-
-structure CausalDAGIsomorphism (E1 E2 : Type) (g1 : CausalDAG E1) (g2 : CausalDAG E2) where
-  toFun : E1 → E2
-  invFun : E2 → E1
-  left_inv : ∀ x, invFun (toFun x) = x
-  right_inv : ∀ y, toFun (invFun y) = y
-  preserve_order : ∀ x y, g1.dep x y ↔ g2.dep (toFun x) (toFun y)
-
-def AreIsomorphicDAGs (E1 E2 : Type) (g1 : CausalDAG E1) (g2 : CausalDAG E2) : Prop :=
-  Nonempty (CausalDAGIsomorphism E1 E2 g1 g2)
-
--- ============================================================================
--- Counterexample System M1 (Causal Invariant DAGs, Non-Confluent)
--- ============================================================================
-
-inductive StateM1 : Type where
-  | a : StateM1 | b : StateM1 | c : StateM1 | d : StateM1 | e : StateM1
-  deriving DecidableEq, Repr
-
-inductive RelM1 : StateM1 → StateM1 → Prop where
-  | ab : RelM1 StateM1.a StateM1.b
-  | ac : RelM1 StateM1.a StateM1.c
-  | bd : RelM1 StateM1.b StateM1.d
-  | ce : RelM1 StateM1.c StateM1.e
-
-theorem normal_form_d_M1 : IsNormalForm RelM1 StateM1.d := by intro y hR; cases hR
-theorem normal_form_e_M1 : IsNormalForm RelM1 StateM1.e := by intro y hR; cases hR
-
-theorem sn_M1 : IsStronglyNormalizing RelM1 := by
-  intro s
-  cases s with
-  | a => refine ⟨StateM1.d, Trace.cons StateM1.a StateM1.b StateM1.d RelM1.ab
-      (Trace.cons StateM1.b StateM1.d StateM1.d RelM1.bd (Trace.nil StateM1.d)), normal_form_d_M1⟩
-  | b => refine ⟨StateM1.d, Trace.cons StateM1.b StateM1.d StateM1.d RelM1.bd (Trace.nil StateM1.d), normal_form_d_M1⟩
-  | c => refine ⟨StateM1.e, Trace.cons StateM1.c StateM1.e StateM1.e RelM1.ce (Trace.nil StateM1.e), normal_form_e_M1⟩
-  | d => refine ⟨StateM1.d, Trace.nil StateM1.d, normal_form_d_M1⟩
-  | e => refine ⟨StateM1.e, Trace.nil StateM1.e, normal_form_e_M1⟩
-
-theorem not_confluent_M1 : ¬ IsConfluent RelM1 := by
-  intro hConf
-  have hab : RTC RelM1 StateM1.a StateM1.d :=
-    RTC.step StateM1.a StateM1.b StateM1.d RelM1.ab
-      (RTC.step StateM1.b StateM1.d StateM1.d RelM1.bd (RTC.refl StateM1.d))
-  have hac : RTC RelM1 StateM1.a StateM1.e :=
-    RTC.step StateM1.a StateM1.c StateM1.e RelM1.ac
-      (RTC.step StateM1.c StateM1.e StateM1.e RelM1.ce (RTC.refl StateM1.e))
-  have ⟨w, hw1, hw2⟩ := hConf StateM1.a StateM1.d StateM1.e hab hac
-  have hwd : w = StateM1.d := by cases hw1 with | refl => rfl | step _ _ _ hR _ => cases hR
-  have hwe : w = StateM1.e := by cases hw2 with | refl => rfl | step _ _ _ hR _ => cases hR
-  rw [hwd] at hwe; nomatch hwe
-
-inductive EventM1_1 : Type where | e1 : EventM1_1 | e2 : EventM1_1 deriving DecidableEq, Repr
-inductive EventM1_2 : Type where | e1' : EventM1_2 | e2' : EventM1_2 deriving DecidableEq, Repr
-inductive DepM1_1 : EventM1_1 → EventM1_1 → Prop where | dep : DepM1_1 EventM1_1.e1 EventM1_1.e2
-inductive DepM1_2 : EventM1_2 → EventM1_2 → Prop where | dep : DepM1_2 EventM1_2.e1' EventM1_2.e2'
-
-def dagM1_1 : CausalDAG EventM1_1 where
-  dep := DepM1_1
-  asym := by intro u v h; cases h; intro hcontra; cases hcontra
-  trans := by intro u v w h1 h2; cases h1; cases h2
-
-def dagM1_2 : CausalDAG EventM1_2 where
-  dep := DepM1_2
-  asym := by intro u v h; cases h; intro hcontra; cases hcontra
-  trans := by intro u v w h1 h2; cases h1; cases h2
-
-theorem M1_causal_graphs_isomorphic : AreIsomorphicDAGs EventM1_1 EventM1_2 dagM1_1 dagM1_2 := by
-  refine ⟨{
-    toFun := fun | EventM1_1.e1 => EventM1_2.e1' | EventM1_1.e2 => EventM1_2.e2'
-    invFun := fun | EventM1_2.e1' => EventM1_1.e1 | EventM1_2.e2' => EventM1_1.e2
-    left_inv := by intro x; cases x <;> rfl
-    right_inv := by intro y; cases y <;> rfl
-    preserve_order := by
-      intro x y; constructor
-      · intro h; cases h; exact DepM1_2.dep
-      · intro h; cases x <;> cases y <;> cases h <;> exact DepM1_1.dep
-  }⟩
-
--- ============================================================================
--- Counterexample System M2 (Confluent, Non-Isomorphic Causal DAGs)
--- ============================================================================
-
-inductive StateM2 : Type where
-  | a : StateM2 | b : StateM2 | c : StateM2 | x : StateM2 | d : StateM2
-  deriving DecidableEq, Repr
-
-inductive RelM2 : StateM2 → StateM2 → Prop where
-  | ab : RelM2 StateM2.a StateM2.b
-  | ac : RelM2 StateM2.a StateM2.c
-  | bd : RelM2 StateM2.b StateM2.d
-  | cx : RelM2 StateM2.c StateM2.x
-  | xd : RelM2 StateM2.x StateM2.d
-
-theorem normal_form_d_M2 : IsNormalForm RelM2 StateM2.d := by intro y hR; cases hR
-
-theorem sn_M2 : IsStronglyNormalizing RelM2 := by
-  intro s
-  cases s with
-  | a => refine ⟨StateM2.d, Trace.cons StateM2.a StateM2.b StateM2.d RelM2.ab
-      (Trace.cons StateM2.b StateM2.d StateM2.d RelM2.bd (Trace.nil StateM2.d)), normal_form_d_M2⟩
-  | b => refine ⟨StateM2.d, Trace.cons StateM2.b StateM2.d StateM2.d RelM2.bd (Trace.nil StateM2.d), normal_form_d_M2⟩
-  | c => refine ⟨StateM2.d, Trace.cons StateM2.c StateM2.x StateM2.d RelM2.cx
-      (Trace.cons StateM2.x StateM2.d StateM2.d RelM2.xd (Trace.nil StateM2.d)), normal_form_d_M2⟩
-  | x => refine ⟨StateM2.d, Trace.cons StateM2.x StateM2.d StateM2.d RelM2.xd (Trace.nil StateM2.d), normal_form_d_M2⟩
-  | d => refine ⟨StateM2.d, Trace.nil StateM2.d, normal_form_d_M2⟩
-
-theorem to_d_from_a : RTC RelM2 StateM2.a StateM2.d :=
-  RTC.step StateM2.a StateM2.b StateM2.d RelM2.ab (RTC.step StateM2.b StateM2.d StateM2.d RelM2.bd (RTC.refl StateM2.d))
-theorem to_d_from_b : RTC RelM2 StateM2.b StateM2.d := RTC.step StateM2.b StateM2.d StateM2.d RelM2.bd (RTC.refl StateM2.d)
-theorem to_d_from_c : RTC RelM2 StateM2.c StateM2.d :=
-  RTC.step StateM2.c StateM2.x StateM2.d RelM2.cx (RTC.step StateM2.x StateM2.d StateM2.d RelM2.xd (RTC.refl StateM2.d))
-theorem to_d_from_x : RTC RelM2 StateM2.x StateM2.d := RTC.step StateM2.x StateM2.d StateM2.d RelM2.xd (RTC.refl StateM2.d)
-theorem to_d_from_d : RTC RelM2 StateM2.d StateM2.d := RTC.refl StateM2.d
-
-theorem confluent_M2 : IsConfluent RelM2 := by
-  intro u y z _huy _huz
-  refine ⟨StateM2.d, ?_, ?_⟩
-  · cases y with | a => exact to_d_from_a | b => exact to_d_from_b | c => exact to_d_from_c | x => exact to_d_from_x | d => exact to_d_from_d
-  · cases z with | a => exact to_d_from_a | b => exact to_d_from_b | c => exact to_d_from_c | x => exact to_d_from_x | d => exact to_d_from_d
-
-inductive EventM2_1 : Type where | e1 : EventM2_1 | e2 : EventM2_1 deriving DecidableEq, Repr
-inductive EventM2_2 : Type where | e1' : EventM2_2 | e2' : EventM2_2 | e3' : EventM2_2 deriving DecidableEq, Repr
-inductive DepM2_1 : EventM2_1 → EventM2_1 → Prop where | dep : DepM2_1 EventM2_1.e1 EventM2_1.e2
-inductive DepM2_2 : EventM2_2 → EventM2_2 → Prop where
-  | dep12 : DepM2_2 EventM2_2.e1' EventM2_2.e2'
-  | dep23 : DepM2_2 EventM2_2.e2' EventM2_2.e3'
-  | dep13 : DepM2_2 EventM2_2.e1' EventM2_2.e3'
-
-def dagM2_1 : CausalDAG EventM2_1 where
-  dep := DepM2_1
-  asym := by intro u v h; cases h; intro hcontra; cases hcontra
-  trans := by intro u v w h1 h2; cases h1; cases h2
-
-def dagM2_2 : CausalDAG EventM2_2 where
-  dep := DepM2_2
-  asym := by intro u v h; cases h <;> intro hcontra <;> cases hcontra
-  trans := by
-    intro u v w h1 h2
-    cases h1 with
-    | dep12 => cases h2 with | dep23 => exact DepM2_2.dep13
-    | dep23 => cases h2
-    | dep13 => cases h2
-
-theorem M2_causal_graphs_not_isomorphic : ¬ AreIsomorphicDAGs EventM2_1 EventM2_2 dagM2_1 dagM2_2 := by
-  intro ⟨iso⟩
-  have h1 : iso.invFun EventM2_2.e1' = EventM2_1.e1 ∨ iso.invFun EventM2_2.e1' = EventM2_1.e2 := by
-    cases iso.invFun EventM2_2.e1' with | e1 => exact Or.inl rfl | e2 => exact Or.inr rfl
-  have h2 : iso.invFun EventM2_2.e2' = EventM2_1.e1 ∨ iso.invFun EventM2_2.e2' = EventM2_1.e2 := by
-    cases iso.invFun EventM2_2.e2' with | e1 => exact Or.inl rfl | e2 => exact Or.inr rfl
-  have h3 : iso.invFun EventM2_2.e3' = EventM2_1.e1 ∨ iso.invFun EventM2_2.e3' = EventM2_1.e2 := by
-    cases iso.invFun EventM2_2.e3' with | e1 => exact Or.inl rfl | e2 => exact Or.inr rfl
-  rcases h1 with (h1 | h1) <;> rcases h2 with (h2 | h2) <;> rcases h3 with (h3 | h3)
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e2' := by rw [h1, h2]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e2') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e2' := by rw [h1, h2]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e2') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e3' := by rw [h1, h3]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e3') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e2' = iso.invFun EventM2_2.e3' := by rw [h2, h3]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e2') = iso.toFun (iso.invFun EventM2_2.e3') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e2' = iso.invFun EventM2_2.e3' := by rw [h2, h3]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e2') = iso.toFun (iso.invFun EventM2_2.e3') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e3' := by rw [h1, h3]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e3') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e2' := by rw [h1, h2]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e2') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-  · have heq : iso.invFun EventM2_2.e1' = iso.invFun EventM2_2.e2' := by rw [h1, h2]
-    have h_inj : iso.toFun (iso.invFun EventM2_2.e1') = iso.toFun (iso.invFun EventM2_2.e2') := by rw [heq]
-    rw [iso.right_inv, iso.right_inv] at h_inj; nomatch h_inj
-
--- Trace-Based Non-Injectivity & Information Erasure Proof
-def trace1_M2 : Trace RelM2 StateM2.a StateM2.d :=
-  Trace.cons StateM2.a StateM2.b StateM2.d RelM2.ab
-    (Trace.cons StateM2.b StateM2.d StateM2.d RelM2.bd (Trace.nil StateM2.d))
-
-def trace2_M2 : Trace RelM2 StateM2.a StateM2.d :=
-  Trace.cons StateM2.a StateM2.c StateM2.d RelM2.ac
-    (Trace.cons StateM2.c StateM2.x StateM2.d RelM2.cx
-      (Trace.cons StateM2.x StateM2.d StateM2.d RelM2.xd (Trace.nil StateM2.d)))
-
-theorem distinct_traces_coincide_at_terminal :
-  trace1_M2 ≠ trace2_M2 ∧ traceLength trace1_M2 = 2 ∧ traceLength trace2_M2 = 3 := by
-  refine ⟨?_, rfl, rfl⟩; intro h; nomatch h
-
-theorem causal_invariance_does_not_imply_confluence :
-  ∃ (α : Type) (R : α → α → Prop),
-    IsStronglyNormalizing R ∧ ¬ IsConfluent R ∧
-    AreIsomorphicDAGs EventM1_1 EventM1_2 dagM1_1 dagM1_2 :=
-  ⟨StateM1, RelM1, sn_M1, not_confluent_M1, M1_causal_graphs_isomorphic⟩
-
-theorem confluence_does_not_imply_causal_invariance :
-  ∃ (α : Type) (R : α → α → Prop),
-    IsStronglyNormalizing R ∧ IsConfluent R ∧
-    ¬ AreIsomorphicDAGs EventM2_1 EventM2_2 dagM2_1 dagM2_2 :=
-  ⟨StateM2, RelM2, sn_M2, confluent_M2, M2_causal_graphs_not_isomorphic⟩
-```
-
----
-
-## Appendix B. Standalone Python Reference Simulation Engine
-
-The following Python script implements the multi-mode multiway induction engine: (1) unconstrained combinatorial degree pruning lower bounds, (2) fast Monte Carlo trajectory sampling for $N \ge 9$, and (3) explicit Wolfram 2-in 4-out, 2-in 1-out contraction, and 2-in 2-out topology swap rules:
-
-```python
-"""
-Pre-Geometric Multiway Hypergraph Simulation Suite
-Evaluates state space volume, Shannon process entropy, macrostate entropy dispersion,
-and explicit hypergraph substitution rules (expansion, contraction, topology-swap).
-"""
-
-import collections, itertools, math, time, json, pickle, random
-from typing import Tuple, List, Dict, Any, FrozenSet
-
-CanonicalState = Tuple[Tuple[int, int], ...]
-HypergraphState = FrozenSet[Tuple[int, ...]]
-
-class PreGeometricMultiwayAuditor:
-    def __init__(self):
-        self._canonical_cache: Dict[Tuple[Tuple[int, int], ...], CanonicalState] = {}
-
-    def clear_cache(self):
-        self._canonical_cache.clear()
-
-    def _generate_canonical_kn(self, n: int) -> CanonicalState:
-        if n < 2: raise ValueError(f"N must be >= 2, got {n}")
-        return tuple(sorted((i, j) for i in range(n) for j in range(i + 1, n)))
-
-    def _get_vertex_degrees(self, state: CanonicalState, n: int) -> List[int]:
-        degs = [0] * n
-        for u, v in state: degs[u] += 1; degs[v] += 1
-        return degs
-
-    def _get_canonical_form(self, n: int, edges: List[Tuple[int, int]]) -> CanonicalState:
-        lookup_key = tuple(sorted(edges))
-        if lookup_key in self._canonical_cache: return self._canonical_cache[lookup_key]
-        canonical_min = None
-        for p in itertools.permutations(range(n)):
-            remapped = tuple(sorted((min(p[u], p[v]), max(p[u], p[v])) for u, v in edges))
-            if canonical_min is None or remapped < canonical_min:
-                canonical_min = remapped
-        self._canonical_cache[lookup_key] = canonical_min
-        return canonical_min
-
-    def evaluate_scale(self, n: int, k: int, silent: bool = True) -> Dict[str, Any]:
-        initial_state = self._generate_canonical_kn(n)
-        current_layer: Dict[CanonicalState, int] = {initial_state: 1}
-        terminal_registry: Dict[CanonicalState, int] = collections.defaultdict(int)
-
-        while current_layer:
-            next_layer: Dict[CanonicalState, int] = collections.defaultdict(int)
-            for state, count in current_layer.items():
-                degs = self._get_vertex_degrees(state, n)
-                prunable = [e for e in state if degs[e[0]] > k or degs[e[1]] > k]
-                if not prunable:
-                    terminal_registry[state] += count
-                else:
-                    for edge in prunable:
-                        child = self._get_canonical_form(n, [e for e in state if e != edge])
-                        next_layer[child] += count
-            current_layer = next_layer
-
-        total_paths = sum(terminal_registry.values())
-        h_process = math.log2(total_paths) if total_paths > 0 else 0.0
-        h_macro = -sum((c / total_paths) * math.log2(c / total_paths)
-                       for c in terminal_registry.values() if c > 0)
-        return {
-            "total_paths": total_paths,
-            "classes": len(terminal_registry),
-            "h_process": h_process,
-            "h_macro": h_macro,
-            "landauer_gap": h_process - h_macro
-        }
-
-    def sample_trajectory_statistics(self, n: int, k: int, num_samples: int = 1000, seed: int = 42) -> Dict[str, Any]:
-        rng = random.Random(seed)
-        initial = list(self._generate_canonical_kn(n))
-        lengths, connected_cnt = [], 0
-        for _ in range(num_samples):
-            curr, steps = list(initial), 0
-            while True:
-                degs = self._get_vertex_degrees(tuple(curr), n)
-                prunable = [e for e in curr if degs[e[0]] > k or degs[e[1]] > k]
-                if not prunable: break
-                curr.remove(rng.choice(prunable))
-                steps += 1
-            lengths.append(steps)
-        return {"n": n, "k": k, "samples": num_samples, "mean_length": sum(lengths) / num_samples}
-
-class HypergraphRewriteAuditor:
-    """Auditor for explicit Wolfram hypergraph substitution rules."""
-    def find_2in_matches(self, edges: HypergraphState) -> List[Tuple[Tuple[int, ...], Tuple[int, ...]]]:
-        matches, edge_list = [], sorted(list(edges))
-        for i in range(len(edge_list)):
-            for j in range(i + 1, len(edge_list)):
-                if len(set(edge_list[i]) & set(edge_list[j])) == 1:
-                    matches.append((edge_list[i], edge_list[j]))
-        return matches
-
-    def apply_2in_4out_rule(self, edges: HypergraphState, match: Tuple[Any, Any], new_v: int) -> HypergraphState:
-        e1, e2 = match
-        x = list(set(e1) & set(e2))[0]
-        y = list(set(e1) - {x})[0]
-        z = list(set(e2) - {x})[0]
-        new_edges = {(min(x, new_v), max(x, new_v)), (min(y, new_v), max(y, new_v)),
-                     (min(z, new_v), max(z, new_v)), (min(y, z), max(y, z))}
-        return frozenset((set(edges) - {e1, e2}) | new_edges)
-
-    def apply_2in_1out_rule(self, edges: HypergraphState, match: Tuple[Any, Any]) -> HypergraphState:
-        e1, e2 = match
-        x = list(set(e1) & set(e2))[0]
-        y, z = list(set(e1) - {x})[0], list(set(e2) - {x})[0]
-        return frozenset((set(edges) - {e1, e2}) | {(min(y, z), max(y, z))})
-```
-
-
----
-
-## Appendix C. Data, Proofs, and Test Suite Availability
-
-The complete replication suite, machine-checked theorem proofs, and test automation are openly accessible in the repository:
-
-* **Formally Verified Proofs (Lean 4):** `formal-proofs/CausalInvariance.lean`. Verified with the Lean 4 toolchain (`leanprover/lean4:v4.33.1`, or via `lake env lean` / `lake build` for structured Lake packages).
-* **Dual-Mode Simulation Engine (Python 3.8+):** `simulation.py`
-* **Pytest Unit, Mock & Combinatorics Test Suite:** `tests/test_simulation.py`
-* **Empirical Multi-Scale Execution Logs:** `simulation_output.txt`
+## Supplementary Computational Material
+
+The complete computational architecture, machine-checked formal proofs, and simulation suites accompanying this work are documented in full in `COMPUTATIONAL-SUPPLEMENT.md` and packaged in the open-source replication archive `causal-invariance-replication.zip`:
+
+- **Machine-Checked Formal Proofs (Lean 4):** `formal-proofs/CausalInvariance.lean`  
+  Constructive formalization of the ARS core, causal DAG posets, trace fiber non-injectivity, cycle irreflexivity violation, 1-dimensional adjoint invariant kernels, and the decoupling master theorems ($0$ custom axioms, $0$ `sorry` gaps).
+- **High-Performance Multiway Simulation Engine (C++20):** `cpp/causal_invariance_engine.cpp`  
+  Hardware-accelerated bitset operations (`std::popcount`, `std::countr_zero`), exact 128-bit unsigned integer path accumulation (`unsigned __int128`), and multithreaded Monte Carlo percolation sampling exceeding $3.1 \times 10^6$ trajectories/second.
+- **Reference Simulation & Combinatorial Auditor (Python 3):** `causal_invariance_auditor.py`  
+  Automorphism canonicalization caching, multiway state space induction, explicit Wolfram hypergraph replacement rules (2-in 4-out expansion, 2-in 1-out contraction, 2-in 2-out swap), and KMS quantum relative entropy calculations.
+- **Automated Verification & Pytest Test Suite:** `tests/test_causal_invariance_auditor.py`  
+  Comprehensive 30-test automated validation harness checking analytical combinatorics ground truths, Fiedler spectral gap collapse, Lovász graph homomorphism bounds, and Lean 4 kernel verification.
