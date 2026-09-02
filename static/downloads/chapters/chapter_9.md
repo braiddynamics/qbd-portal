@@ -286,6 +286,33 @@ $$
 
 The anomalies cancel exactly without the need for additional fermions.
 
+**IV. Hypercharge Generator Normalization and Unified Weinberg Angle**
+The embedding morphism $SU(3)_C \times SU(2)_L \times U(1)_Y \subset SU(5)$ determines the hypercharge generator $Y$ as the unique traceless diagonal matrix acting across the 5-strand basis:
+
+$$
+Y = \operatorname{diag}\left(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)
+$$
+
+The standard Grand Unified Lie algebra normalization requires $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$. Evaluating the trace of the hypercharge generator over the 5-strand Penta-Ribbon gives:
+
+$$
+\operatorname{Tr}(Y^2) = 3 \left(-\frac{1}{3}\right)^2 + 2 \left(\frac{1}{2}\right)^2 = \frac{3}{9} + \frac{2}{4} = \frac{1}{3} + \frac{1}{2} = \frac{5}{6}
+$$
+
+The normalized $SU(5)$ hypercharge generator is $T_{24} = c Y$, where:
+
+$$
+\operatorname{Tr}(T_{24}^2) = c^2 \operatorname{Tr}(Y^2) = c^2 \left(\frac{5}{6}\right) = \frac{1}{2} \implies c^2 = \frac{3}{5} \implies c = \sqrt{\frac{3}{5}}
+$$
+
+The physical hypercharge coupling $g'$ is related to the canonical unified coupling $g_1$ by $g' = \sqrt{3/5} g_1$. At the Grand Unification scale $M_{\text{GUT}} \approx 2 \times 10^{16}\text{ GeV}$, where all 24 gauge generators of the Penta-Ribbon are unified under the single coupling $g_5 = g_1 = g_2 = g_3$, the grand-unified electroweak mixing angle evaluates to:
+
+$$
+\sin^2 \theta_W(M_{\text{GUT}}) = \frac{g'^2}{g^2 + g'^2} = \frac{\frac{3}{5} g_5^2}{g_5^2 + \frac{3}{5} g_5^2} = \frac{3/5}{8/5} = \frac{3}{8} = 0.375
+$$
+
+This elevates the isolated doublet rewrite baseline $\sin^2\theta_W^{(0)} = 0.25$ (**Topological Weinberg Angle** <Ref id="8.4.5" label="§8.4.5" />) to the fully embedded 5-strand Grand Unified boundary condition. Under standard 1-loop Renormalization Group running down to the electroweak scale $M_Z = 91.1876\text{ GeV}$, $\sin^2 \theta_W$ evolves logarithmically from $3/8$ to the physical value $\sin^2 \theta_W(M_Z) \approx 0.2312$.
+
 **Conclusion:**
 Since all groups with $r < 4$ are excluded (the **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />), and all other groups with $r=4$ fail the chirality condition (the **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />), and $SU(5)$ satisfies both embedding and anomaly constraints, $SU(5)$ is the unique minimal Grand Unified Theory group.
 
@@ -1431,7 +1458,7 @@ The writhe is additively conserved ($w_5 = w_3 + w_2$) due to the traceless gene
 1.  **Link Term:** The 6 cross-sector links are annihilated. $\Delta L = L_5 - 0 > 0$.
 2.  **Writhe Term:** Since $(w_3 + w_2)^2 > w_3^2 + w_2^2$ for aligned charges, the quadratic penalty decreases.
 3.  **Total:** $\Delta C_{total} = C_{total}(\beta_5) - C_{total}(\beta_f) \propto 6 \text{ links} + \Delta(w^2) > 0$.
-Alternative fragmentations (e.g., $5 \to 1+1+1+1+1$) are forbidden as they yield unstable states (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />).
+Alternative fragmentations involving single strands (e.g., $5 \to 4+1$ or $5 \to 1+1+1+1+1$) are strictly forbidden because isolated single ribbons are dynamically unstable and eliminated by the vacuum deletion flux (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />). In contrast, the $5 \to 3 + 2$ channel branches into two stable multi-strand sectors ($\beta_3$ and $\beta_2$), mediated by the off-diagonal leptoquark generators (**Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />).
 Since mass $m \propto C_{total}$, the unified state is energetically metastable, favoring decay to the Standard Model configuration.
 
 Q.E.D.
@@ -1443,7 +1470,7 @@ Q.E.D.
 
 The **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" /> reframes symmetry breaking not as the rolling of a Higgs field down a potential, but as a "fragmentation tunneling" event in the graph. The unified $SU(5)$ braid is highly complex, involving links between all 5 ribbons. This is a high-tension state. The fragmented state ($SU(3) \times SU(2)$) involves links only within the color triplet and within the weak doublet, with no links *between* them.
 
-As proved in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, the fragmented state has lower topological complexity ($C_{total}$) and thus lower mass/energy. Therefore, the early universe "relaxed" from the high-tension, fully braided $SU(5)$ state to the lower-tension, separated state we see today. Symmetry breaking is simply the system finding a more efficient way to knot its ribbons, snapping the costly links between quarks and leptons to save energy. The "Higgs" in this picture is just the collective density of the vacuum responding to this relaxation.
+As proved in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, the fragmented state has lower topological complexity ($C_{total}$) and thus lower mass/energy. Therefore, the early universe "relaxed" from the high-tension, fully braided $SU(5)$ state to the lower-tension, separated state we see today. Symmetry breaking is simply the system finding a more efficient way to knot its ribbons, snapping the costly links between quarks and leptons to save energy. Furthermore, this fragmentation is topologically selective: because single ribbons ($n=1$) cannot exist as stable asymptotic states (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />), channels involving single-strand ejection (such as $5 \to 4 + 1$ or relic decay $4 \to 3 + 1$) are dynamically prohibited, whereas multi-strand branching into stable subgroups ($5 \to 3 + 2$) is energetically and kinematically favored. The "Higgs" in this picture is just the collective density of the vacuum responding to this relaxation.
 
 ---
 

@@ -3,16 +3,41 @@ id: vacuum-phase
 title: "Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry"
 sidebar_label: "Vacuum Phase & QSD"
 slug: /vacuum-phase
-description: "A constrained stochastic rewrite process on timestamped DAGs exhibiting an absorbing-state phase transition under strict causal protection."
+description: "A constrained stochastic rewrite process on timestamped DAGs exhibiting an absorbing-state phase transition."
 ---
+
+<nav aria-label="Breadcrumbs" style={{
+  display: 'flex',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  gap: '0.45rem',
+  fontSize: '0.85rem',
+  marginBottom: '1.25rem',
+  color: 'var(--ifm-color-emphasis-700)'
+}}>
+  <a href="/" style={{ color: 'var(--ifm-color-emphasis-700)', textDecoration: 'none' }}>Home</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <a href="/papers" style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>Research Papers</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <span style={{ color: 'var(--ifm-color-emphasis-900)', fontWeight: 500 }}>Vacuum Phase &amp; Causal Geometry</span>
+</nav>
+
+:::info[**Archival Paper & Open Access Record**]
+**Title:** Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry  
+**Author:** **R. Fisher**, *Principal Investigator* ([ORCID: 0009-0006-2441-3282](https://orcid.org/0009-0006-2441-3282))  
+**Affiliation:** Braid Dynamics Group  
+**Published / Release:** August 24, 2026 · **Status:** Preprint / Research Article (v1.0.0) · **License:** [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)  
+**Classification:** Statistical Mechanics · Discrete Quantum Gravity · Directed Percolation  
+**Downloads & Assets:** [Publication PDF](pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf) (806 KB) · [Markdown Source](pathname:///papers/vacuum-phase/downloads/vacuum-phase.md) (140 KB) · [Technical Supplement (Online)](/papers/vacuum-phase/supplement) · [Replication Bundle](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (94 KB ZIP)
+:::
 
 # Introduction: Foundational Principles
 
 Constructing spacetime geometry, causal order, and physical conservation laws directly from combinatorial connectivity is a central objective of discrete, background-independent physics. Foundational models, including causal set theory [1, 2], causal dynamical triangulations [3], quantum graphity [4], and discrete graph-rewriting frameworks [5, 6], demonstrate that macroscopic geometric properties can emerge from discrete relational networks, but a fundamental question remains: how do localized rewrite operations generate and sustain stable macroscopic phases?
 
-We evaluate how graph evolution proceeds through stochastic updates, where local path-closing additions compete with tension-driven deletions, and determine the conditions under which this non-equilibrium process avoids collapse into its absorbing ground state. Here we analyze the nucleation of geometric structures, the mitigation of boundary dissipation on finite graph fragments, and the stabilization of an active quasi-stationary phase that converges to smooth causal spacetime in the thermodynamic limit. The investigation proceeds through five structural stages:
+We evaluate how graph evolution proceeds through stochastic updates, where local path-closing additions compete with tension-driven deletions, and determine the conditions under which this non-equilibrium process avoids collapse into its absorbing ground state. Here we analyze the nucleation of geometric structures, the mitigation of boundary dissipation on finite graph fragments, and the stabilization of an active quasi-stationary phase that provides the discrete substrate for macroscopic spacetime in the thermodynamic limit. The investigation proceeds through five structural stages:
 
-![](figures/framework_architecture.png){ width=100% }
+![](figures/framework_architecture.png)
 
 # 1. Ontological Substrate
 
@@ -48,7 +73,7 @@ A **2-Cycle** is a cycle of length exactly $k=2$, consisting of a pair of distin
 **Definition 1.1.8** (Closed 3-Cycles and Geometric Quanta).
 A **3-Cycle** ($\partial \Delta_2$) is a cycle of length exactly $k=3$, consisting of an ordered triplet of distinct vertices $(A, B, C)$ such that $(A, B), (B, C), (C, A) \in E$. The 3-cycle represents the minimal closed boundary enclosing an elementary topological area, functioning as the fundamental discrete quantum of spatial geometry.
 
-![Fundamental Graph-Theoretic Motifs and Cycle Hierarchy. (a) Open 2-path $(v \to w \to u)$; (b) Closed 2-cycle (forbidden by Axiom 1); (c) Closed 3-cycle ($\partial\Delta_2$, elementary geometric quantum).](figures/graph_motifs.png){ width=85% }
+![Fundamental Graph-Theoretic Motifs and Cycle Hierarchy. (a) Open 2-path $(v \to w \to u)$; (b) Closed 2-cycle (forbidden by Axiom 1); (c) Closed 3-cycle ($\partial\Delta_2$, elementary geometric quantum).](figures/graph_motifs.png)
 
 **Definition 1.1.9** (Directed Acyclic Graphs and Causal Posets).
 A **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing no directed cycles of any length $k \ge 1$. The topological reachability relation in a DAG induces a strict partial order on the event set $V$, ensuring that causal influence flows irreversibly from ancestral causes to descendant effects.
@@ -58,7 +83,7 @@ A **Bipartite Graph** is a directed graph $G = (V, E)$ whose vertex set $V$ admi
 $$E \subseteq (V_{\mathrm{even}} \times V_{\mathrm{odd}}) \cup (V_{\mathrm{odd}} \times V_{\mathrm{even}}).$$
 Bipartiteness forbids odd-length cycles ($N_{2k+1} = 0$), establishing the pristine ground state from which spatial geometry emerges upon symmetry breaking (Figure 2).
 
-![Bipartite Parity Stratification of the Rooted Bethe Tree Vacuum. Directed edges strictly bridge alternating parity depth shells ($V_{\mathrm{even}} \to V_{\mathrm{odd}}$ and $V_{\mathrm{odd}} \to V_{\mathrm{even}}$), identically precluding odd-length cycles ($N_3 = 0, N_5 = 0$) and maintaining zero spatial area in the unperturbed vacuum state.](figures/bipartite_bethe_tree.png){ width=72% }
+![Bipartite Parity Stratification of the Rooted Bethe Tree Vacuum. Directed edges strictly bridge alternating parity depth shells ($V_{\mathrm{even}} \to V_{\mathrm{odd}}$ and $V_{\mathrm{odd}} \to V_{\mathrm{even}}$), identically precluding odd-length cycles ($N_3 = 0, N_5 = 0$) and maintaining zero spatial area in the unperturbed vacuum state.](figures/bipartite_bethe_tree.png)
 
 **Definition 1.1.11** (Causal Graph Substrate $G = (V, E, H)$ and Dual-Time Architecture).
 The universal configuration space $\Omega$ comprises states $G = (V, E, H)$, where $V$ is a finite event set, $E \subseteq V \times V$ is an asymmetric causal relation, and $H: E \to \mathbb{N}_0$ is an immutable creation timestamp mapping.
@@ -437,7 +462,7 @@ Table 1: *Cycle Decomposition and Topological Digestion Scaling across Defect Le
 | **$11$** | $11$ | $3$ | $14$ |
 | **$12$** | $12$ | $3$ | $15$ |
 
-The deterministic scaling in Table 1 confirms that chord additions scale linearly ($Ops_{\mathrm{add}} = k$) while entropic deletions stabilize at $Ops_{\mathrm{del}} \le 3$ for $k \ge 7$, proving that arbitrary macroscopic defects are digested in linear operational time $\mathcal{O}(k)$ (verified via standalone Python engine `run_reduction_protocol`, Supplement Appendix C, Section C.1).
+The deterministic scaling in Table 1 confirms that chord additions scale linearly ($Ops_{\mathrm{add}} = k$) while entropic deletions stabilize at $Ops_{\mathrm{del}} \le 3$ for $k \ge 7$, proving that arbitrary macroscopic defects are digested in linear operational time $\mathcal{O}(k)$ (verified via `run_reduction_protocol`, Supplement Appendix D.3).
 
 **Theorem 2.2.9** (Locality Preservation and Singularity Exclusion via PUC).
 Enforcing the Principle of Unique Causality (Clause B) guarantees that edge additions cannot generate 2-cycle shortcuts or multi-simplex pinch points ('3-page book' singularities), preserving discrete Hausdorff 2-manifold embeddability.
@@ -708,7 +733,7 @@ with uniform initial timestamp degeneracy $H_0(e) \equiv 0$ across all edges $e 
 
 *Proof.* Conjunction of Theorem 3.1.6, Lemma 3.2.1, Lemma 3.2.2, and the quantitative supremacy established in Table 3 and Table 4. Initial timestamp degeneracy $H_0 \equiv 0$ reflects the ground-state spatial leaf condition at $t=0$, ensuring no timelike causal flow circulates prior to ignition. $\square$
 
-## 3.3 Extensive Leaf Boundary and Scale Invariance
+## 3.3 Finite Bethe Geometry and Maximal Parallelism
 
 **Proposition 3.3.1** (Extensive Scale-Invariant Leaf Boundary of Binary Bethe Fragments).
 Let $G_0 = (V, E)$ be any finite regular Bethe fragment of size $|V| = N \ge 3$ generated by the outward branching construction. Then the number of leaf boundary vertices $L = |\{v \in V \mid d_{\mathrm{out}}(v) = 0\}|$ satisfies the exact combinatorial relation:
@@ -732,6 +757,20 @@ $$L = (N - L) + 2 \implies 2L = N + 2 \implies L = \frac{N + 2}{2}.$$
 **IV. Extensive Asymptotics:** Dividing by total size $N$ yields the asymptotic boundary fraction:
 $$\frac{L}{N} = \frac{1}{2} + \frac{1}{N} \xrightarrow{N \to \infty} \frac{1}{2} = 50\%.$$
 The leaf boundary remains extensive at all scales $N$, functioning as an absorbing perimeter for causal wavefronts. $\square$
+
+**Theorem 3.3.2** (Maximal Parallelism and Automorphism Preservation).
+Let $G_0 = (V, E)$ be the regular Bethe vacuum substrate, and let $\mathcal{S}(G_0)$ denote the complete set of PUC-compliant candidate 2-path interaction sites (and, in active evolving states, 3-cycle deletion sites). For an update operator $\mathcal{U}: G_0 \to G_1$ applying the local rewrite rule to a proposed subset $S \subseteq \mathcal{S}(G_0)$ with transition rate $P_{\mathrm{acc}}(s)$:
+
+* **Sufficiency (Automorphism Covariance):** If the proposal set is complete ($S = \mathcal{S}(G_0)$) and acceptance probabilities $P_{\mathrm{acc}}(s)$ depend exclusively on $\mathrm{Aut}(G_0)$-invariant local graph invariants (such as local in/out-degrees and cycle counts), the transition probability measure $\mathbb{P}(G_1 \mid G_0)$ is strictly $\mathrm{Aut}(G_0)$-covariant, and a deterministic rewrite on $S$ satisfies $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$.
+* **Necessity (Symmetry Breaking of Sub-Parallel Updates):** If an automorphism orbit $\mathcal{O} \subseteq \mathcal{S}(G_0)$ under $\mathrm{Aut}(G_0)$ is split by the proposal set (such that one site $s_1 \in \mathcal{O}$ is updated while another $s_2 \in \mathcal{O}$ is omitted or delayed in a serial queue), the automorphism mapping $s_1 \mapsto s_2$ is broken in $\mathrm{Aut}(G_1)$.
+
+*Proof.* We evaluate the action of $\mathrm{Aut}(G_0)$ on interaction sites:
+
+**I. Group Action on Candidate Sites:** Any automorphism $\varphi \in \mathrm{Aut}(G_0)$ is an adjacency-preserving vertex bijection. Because candidate sites $s = (v, w, u)$ are defined strictly by local adjacency and PUC path conditions, $\varphi$ acts equivariantly on candidate sites, partitioning $\mathcal{S}(G_0)$ into disjoint symmetry orbits $\mathcal{S}(G_0) = \bigsqcup_k \mathcal{O}_k$.
+
+**II. Invariant Proposal and Transition Law:** When the proposal set contains the full site set $S = \mathcal{S}(G_0)$ and the local stress functional $s_{\mathrm{add}}(v \to w \to u) = d_{\mathrm{out}}(v) + d_{\mathrm{in}}(u) - 2$ depends only on local degrees, every site in an orbit $\mathcal{O}_k$ shares identical transition probabilities $P_{\mathrm{acc}}(s)$. The union of deterministic rewrites over an $\mathrm{Aut}$-invariant site set commutes with vertex permutations, ensuring $\varphi(E_1) = E_1$ and thus $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$ (Lean 4 certified: `orbit_complete_addition_preserves_automorphism`, Supplement Appendix A, Part 5). In the stochastic regime with independent Bernoulli sampling, individual realization graphs break symmetry dynamically, but the proposal generator and underlying transition probability measure $\mathbb{P}(G_1 \mid G_0)$ remain strictly $\mathrm{Aut}(G_0)$-covariant.
+
+**III. Orbit Splitting under Serial or Partial Scheduling:** Suppose $S \subset \mathcal{S}(G_0)$ splits an orbit $\mathcal{O}$, containing $s_1 = (v_1, w_1, u_1)$ with $\varphi(s_1) = s_2 = (v_2, w_2, u_2) \notin S$. Updating $s_1$ adds the chord $(u_1, v_1)$ to $E_1$ while $(u_2, v_2) \notin E_1$. Consequently, $\varphi(E_1) \neq E_1$, proving that $\varphi \notin \mathrm{Aut}(G_1)$ (Lean 4 certified: `orbit_splitting_breaks_automorphism`, Supplement Appendix A, Part 5). Processing candidate sites serially or in partial queues introduces an unphysical order-dependent gauge artifact that permanently scars the vacuum with broken symmetries. $\square$
 
 ## 3.4 Ignition of Geometrogenesis is Inevitable
 
@@ -778,11 +817,11 @@ instantiating the elementary 2-simplex $\sigma = \partial \Delta_2$ in $G_{\math
 **Theorem 3.4.4** (Inevitable First-Tick Parallel Burst Ignition).
 The creation of the first 3-cycle defect breaks localized parity constraints across adjacent tree branches, triggering a deterministic first-tick parallel burst of overlapping 3-cycles with scale-invariant density $\rho(t=1) \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$, driving the irreversible non-equilibrium phase transition from the pre-geometric vacuum into the active Quasi-Stationary Distribution.
 
-*Proof.* Conjunction of Lemmas 3.4.1–3.4.3 and the parallel scheduler kinetics. $\square$
+*Proof.* Conjunction of Lemmas 3.4.1–3.4.3, Theorem 3.3.2 (which requires proposing all compliant 2-path sites concurrently across the entire lattice to preserve automorphism covariance), and the parallel scheduler kinetics. $\square$
 
-## 3.5 Fault-Tolerance (Stabilizer QECC Isomorphism)
+## 3.5 Kinematic Constraints as Occupancy Projectors
 
-To address the foundational question of how a discrete, localized rewrite system maintains global causal consistency without an omniscient global clock, the consistency enforcement architecture maps isomorphically to a **Stabilizer Quantum Error-Correcting Code (QECC)** defined on a finite Hilbert space.
+Allowed graphs embed as computational-basis states of the directed-edge Hilbert space $\mathcal{H}=(\mathbb{C}^2)^{\otimes N(N-1)}$, cut out by commuting occupancy projectors that enforce Axiom 1 and spatial locality. Axiom 3 is enforced by creation timestamps and the acyclicity check $\mathrm{AEC}$, not by an occupancy projector. Protection of encoded matter as a braid stabilizer code is not used in this manuscript.
 
 ### 3.5.1 Hilbert Space Configuration Embedding
 
@@ -795,7 +834,7 @@ $$|G\rangle = \bigotimes_{u \neq v} |A_{uv}\rangle_{uv}, \qquad A_{uv} \in \{0, 
 
 Distinct graph topologies map to orthogonal state vectors ($\langle G_1 | G_2 \rangle = \delta_{G_1, G_2}$), establishing a faithful isometric embedding $\Omega_{\mathrm{graph}} \hookrightarrow \mathcal{H}$.
 
-### 3.5.2 Axiomatic Constraints as Commuting Stabilizer $Z$-Projectors
+### 3.5.2 Axiomatic Constraints as Commuting Occupancy Projectors
 
 The inviolable physical axioms correspond to Hermitian projection operators acting on $\mathcal{H}$:
 
@@ -803,35 +842,35 @@ The inviolable physical axioms correspond to Hermitian projection operators acti
   $$\Pi_{\mathrm{cycle}}(u, v) = I - \frac{1}{4}(I - Z_{uv})(I - Z_{vu})$$
   satisfies $\Pi_{\mathrm{cycle}}|11\rangle_{uv,vu} = 0$ and acts as the identity on $\{|00\rangle, |01\rangle, |10\rangle\}$, annihilating reciprocal edge violations.
 
-* **Strict Locality Projector:** For every pair $(u, v)$ with undirected metric distance $\bar{d}(u, v) > 2$:
+* **Strict Locality Projector:** For every pair $(u, v)$ whose undirected metric distance in the *current* graph satisfies $\bar{d}(u, v) > 2$:
   $$\Pi_{\mathrm{local}}(u, v) = \frac{1}{2}(I + Z_{uv})$$
-  annihilates non-local edge instantiations ($\Pi_{\mathrm{local}}|1\rangle_{uv} = 0$).
+  annihilates non-local edge instantiations ($\Pi_{\mathrm{local}}|1\rangle_{uv} = 0$). Because $\bar{d}$ is computed on the instantaneous edge set, the collection of active locality projectors is configuration-dependent: $\Pi_{\mathrm{local}}$ is a dynamic kinematic constraint, not a static, time-independent operator set.
 
-* **Acyclic Transitive Ordering Projector:** For every ordered triad $(u, v, w)$, the closure of unfoliated cycles is projected by:
-  $$\Pi_{\mathrm{order}}(u, v, w) = I - \frac{1}{8}(I - Z_{uv})(I - Z_{vw})(I - Z_{wu}).$$
+Because both projectors are constructed from Pauli-$Z$ operators, they are diagonal in the computational basis and commute:
+$$[\Pi_{\mathrm{cycle}}, \Pi_{\mathrm{local}}] = 0.$$
+This commutativity is the elementary fact that diagonal $Z$-tensors commute; it is not evidence of a quantum error-correcting code.
 
-Because all constraint projectors $\Pi_i$ are constructed from Pauli-$Z$ operators, they are diagonal in the computational basis and strictly commute:
-$$[\Pi_i, \Pi_j] = 0 \quad \forall i, j.$$
+The **kinematically allowed occupancy set** $\mathcal{C} \subset \mathcal{H}$ is the simultaneous $+1$ eigenspace of the hard occupancy projectors:
+$$\mathcal{C} = \left\{ |\psi\rangle \in \mathcal{H} \;\middle|\; \forall \Pi \in \{\Pi_{\mathrm{cycle}}, \Pi_{\mathrm{local}}\}, \; \Pi|\psi\rangle = |\psi\rangle \right\}.$$
+The set $\mathcal{C}$ enumerates classically allowed graphs. It is not a quantum error-correcting codespace. Acyclicity of effective influence (Axiom 3) is enforced by the timestamp recurrence and $\mathrm{AEC}$, which act on $G_{\mathrm{event}}$ rather than on occupancy.
 
-The **Physical Codespace** $\mathcal{C} \subset \mathcal{H}$ is defined as the simultaneous $+1$ eigenspace of all hard constraint projectors:
-$$\mathcal{C} = \left\{ |\psi\rangle \in \mathcal{H} \;\middle|\; \forall \Pi \in \{\Pi_{\mathrm{cycle}}, \Pi_{\mathrm{local}}, \Pi_{\mathrm{order}}\}, \; \Pi|\psi\rangle = |\psi\rangle \right\}.$$
-
-### 3.5.3 Pauli $Z/X$ Duality: Observation vs. Dynamic Action
+### 3.5.3 Occupancy Observation vs. Dynamic Action
 
 The algebraic structure reveals a fundamental duality between kinematic invariance and dynamic evolution:
 
-* **Pauli-$Z$ Operators ($Z_{uv}$):** Act diagonally ($Z|x\rangle = (-1)^x |x\rangle$), representing non-destructive syndrome measurements that observe graph invariants (cycle parities, degrees, local curvature) without altering graph connectivity.
+* **Pauli-$Z$ Operators ($Z_{uv}$):** Act diagonally ($Z|x\rangle = (-1)^x |x\rangle$), representing occupancy readouts of graph invariants (cycle parities, degrees, local curvature) without altering graph connectivity.
 
 * **Pauli-$X$ Operators ($X_{uv}$):** Act off-diagonally ($X|x\rangle = |x \oplus 1\rangle$), representing the elementary physical operations of edge creation and edge deletion.
 
-The microscopic rewrite rule $\mathcal{R}$ corresponds to controlled logical Pauli-$X$ operations conditioned on local $+1$ stabilizer syndrome evaluations.
+The rewrite $\mathcal{R}$ applies physical occupancy bit-flips $X_{uv}$, accepted only if the post-state remains in $\mathcal{C}$ and passes PUC and AEC.
 
 ### 3.5.4 Triad Syndrome Classification and Topological Energy Splitting
 
-On any ordered vertex triad $\{1, 2, 3\}$, the local geometry is classified by three stabilizer check operators:
+On any ordered vertex triad $\{1, 2, 3\}$, the local geometry is classified by three triad occupancy checks
 $$S_1 = Z_{12}Z_{23}, \qquad S_2 = Z_{23}Z_{31}, \qquad S_3 = Z_{31}Z_{12}.$$
+These operators label constructor sites. They are not stabilizer generators of a quantum code and they do not define $\mathcal{C}$.
 
-The joint measurement yields a syndrome vector $\boldsymbol{s} = (\lambda_1, \lambda_2, \lambda_3) \in \{+1, -1\}^3$:
+The joint measurement yields a syndrome vector $\sigma = (\lambda_1, \lambda_2, \lambda_3) \in \{+1, -1\}^3$, evaluated on candidate 2-paths:
 
 | Configuration | Qubit State $|q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Physical State |
 | :--- | :--- | :---: | :---: | :---: | :--- |
@@ -844,20 +883,20 @@ The joint measurement yields a syndrome vector $\boldsymbol{s} = (\lambda_1, \la
 | **Precursor C** | $|101\rangle$ | $-1$ | $-1$ | $+1$ | Compliant 2-Path $3 \to 1 \to 2$ |
 | **Geometric Quantum** | $|111\rangle$ | $+1$ | $+1$ | $+1$ | Closed 3-Cycle $\partial \Delta_2$ |
 
-The $(+1, +1, +1)$ syndrome degeneracy between the Vacuum $|000\rangle$ and the Geometric Quantum $|111\rangle$ is lifted by the topological volume operator $V = Z_{12}Z_{23}Z_{31}$, yielding eigenvalue $\lambda_V = +1$ for the vacuum and $\lambda_V = -1$ for the elementary 2-simplex.
+The $(+1, +1, +1)$ syndrome degeneracy between the Vacuum $|000\rangle$ and the Geometric Quantum $|111\rangle$ is a consequence of even overlap: completing a 3-cycle flips all three occupancy bits, hence an even number of factors in each $S_i$. The topological volume operator $V = Z_{12}Z_{23}Z_{31}$ (odd support) lifts the degeneracy, yielding eigenvalue $\lambda_V = +1$ for the vacuum and $\lambda_V = -1$ for the elementary 2-simplex.
 
-### 3.5.5 All-Order Global Causal Codespace Protection
+### 3.5.5 Constraint Invariance under Accepted Rewrites
 
-**Theorem 3.5.1** (Stabilizer Codespace Invariance under Foliated Rewrites).
-Let the initial state $|G_0\rangle \in \mathcal{C}$ reside in the physical codespace. Under the rewrite operator $\mathcal{R}$ with timestamp foliation $H_{\mathrm{new}} = 1 + \max_{(x,u)\in E} H(x,u)$ and localized acyclicity check $\mathrm{AEC}$, every accepted transition $|G(t)\rangle \to |G(t+1)\rangle$ remains strictly within the codespace $\mathcal{C}$.
+**Theorem 3.5.1** (Kinematic invariance of the allowed set under accepted rewrites).
+Let the initial state $|G_0\rangle \in \mathcal{C}$ reside in the kinematically allowed occupancy set. Under the rewrite operator $\mathcal{R}$ with timestamp foliation $H_{\mathrm{new}} = 1 + \max_{(x, u)\in E} H(x, u)$ and localized acyclicity check $\mathrm{AEC}$, every accepted transition $|G(t)\rangle \to |G(t+1)\rangle$ remains strictly within $\mathcal{C}$.
 
-*Proof.* We evaluate the error syndrome transitions under dynamic $X$-operations:
+*Proof.* We evaluate occupancy constraints and timestamp filters separately:
 
-**I. Syndrome Detection and Projective Filtering:** Candidate edge additions $X_{uv}$ are evaluated against the commuting $Z$-projectors. Proposing an edge mutation that would instantiate a 2-cycle or violate metric locality yields a syndrome transition to the $-1$ error eigenspace, which is annihilated by the projector $\Pi_{\mathcal{C}}$.
+**I. Occupancy Rejection:** Candidate edge additions $X_{uv}$ are evaluated against $\Pi_{\mathrm{cycle}}$ and $\Pi_{\mathrm{local}}$. A mutation that would instantiate a 2-cycle or a chord at current undirected distance $\bar{d}(u, v) > 2$ leaves $\mathcal{C}$ and is rejected by the constructor.
 
-**II. Temporal Foliation and Height Monotonicity:** For causal loop avoidance, the height increment $H_{\mathrm{new}} = 1 + \max H_{\mathrm{in}}$ guarantees that new edges are strictly outward-pointing in the causal foliation, ensuring that closed spatial cycles $\partial \Delta_2$ do not project closed timelike curves into $G_{\mathrm{event}}$.
+**II. Temporal Foliation and Height Monotonicity:** For causal loop avoidance, the height increment $H_{\mathrm{new}} = 1 + \max H_{\mathrm{in}}$ guarantees that new edges are strictly outward-pointing in the causal foliation, ensuring that closed spatial cycles $\partial \Delta_2$ do not project closed timelike curves into $G_{\mathrm{event}}$. This filter implements Axiom 3; it is not an occupancy projector.
 
-**III. Invariant Codespace Evolution:** Consequently, $\Pi_{\mathcal{C}}|G(t)\rangle = |G(t)\rangle$ holds for all $t \in \mathbb{N}_0$, establishing fault-tolerant global causal consistency across extended rewrite histories. $\square$
+**III. Invariance of the Allowed Set:** Consequently, $\Pi_{\mathcal{C}}|G(t)\rangle = |G(t)\rangle$ holds for all $t \in \mathbb{N}_0$ along accepted trajectories. $\square$
 
 # 4. Dynamics
 
@@ -876,17 +915,20 @@ The **Internal Causal Category** $\mathbf{Caus}_t$ encapsulates the instantaneou
 * **Identity:** For each $u \in V(G_t)$, the identity morphism is the trivial path of length zero $\mathrm{id}_u = (u, \emptyset, u)$, satisfying $\pi \circ \mathrm{id}_u = \pi = \mathrm{id}_v \circ \pi$ for all $\pi \in \mathrm{Hom}(u, v)$.
 
 **Definition 4.1.2** (Global Historical Category $\mathbf{Hist}$).
-The **Global Historical Category** $\mathbf{Hist}$ models the irreversible succession of global graph configurations across logical time:
+The **Global Historical Category** $\mathbf{Hist}$ models the irreversible accumulation of causal relational history across logical time:
 
-* **Objects:** $\mathrm{Ob}(\mathbf{Hist}) = \{G_t\}_{t \in \mathbb{N}_0}$, the sequence of causal graphs.
-* **Morphisms:** History-preserving embeddings $f: G_t \hookrightarrow G_{t+k}$ that are injective on vertices and preserve existing edge relations and creation timestamps: $H_{t+k}(f(e)) = H_t(e)$ for all $e \in E(G_t)$.
-* **Composition:** Standard set-theoretic function composition $(g \circ f)(x) = g(f(x))$.
-* **Identity:** The identity map $\mathrm{id}_{G_t}: G_t \to G_t$ on vertex set $V(G_t)$.
+* **Objects:** $\mathrm{Ob}(\mathbf{Hist}) = \{\mathcal{H}_t\}_{t \in \mathbb{N}_0}$, the sequence of cumulative trajectory graphs $\mathcal{H}_t = \bigcup_{i=0}^t G_i = \left( V_t, \; \bigcup_{i=0}^t E(G_i), \; H \right)$, where the edge set records every directed link created up to tick $t$, with creation timestamps $H(e)$ fixed at the moment of insertion.
+* **Morphisms:** History-preserving canonical inclusions $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+k}$ that are injective on vertices and preserve all historical edge relations and creation timestamps: $H_{t+k}(\iota(e)) = H_t(e)$ for all $e \in E(\mathcal{H}_t)$.
+* **Composition:** Standard set-theoretic inclusion and function composition $(g \circ f)(x) = g(f(x))$.
+* **Identity:** The identity inclusion $\mathrm{id}_{\mathcal{H}_t}: \mathcal{H}_t \to \mathcal{H}_t$ on vertex set $V(\mathcal{H}_t)$.
 
-**Lemma 4.1.3** (Orthogonality of Kinematic and Historical State: The Indelible Scar of Deletion).
-The instantaneous spatial state $G_t$ and the cumulative historical category $\mathbf{Hist}$ are orthogonal. Let the global historical event poset be defined as the colimit $G_{\mathrm{event}} = \varinjlim_{t} \mathbf{Hist}$.
-Deleting an edge $e \in E(G_t)$ in the kinematic state ($G_{t+1} = G_t \setminus \{e\}$) removes $e$ from the active routing topology but does not erase $e$ from the historical category $\mathbf{Hist}$.
-Every historical addition leaves an indelible structural scar in the causal poset $G_{\mathrm{event}}$, ensuring that dynamic deletions preserve the historical record and the monotonicity of entropy (Lean 4 certified: `scar_edges_immune_to_deletion`, Appendix A, Part 6).
+The instantaneous spatial state $G_t = G_{\mathrm{space}}(t)$ (Definition 2.3.1) is an active, time-dependent routing subgraph of $\mathcal{H}_t$; $G_t$ itself is not an object of $\mathbf{Hist}$. The infinite colimit $\mathcal{H}_\infty = \bigcup_{t=0}^\infty G_t$ represents the cumulative created-edge shadow of the 4D causal event poset $G_{\mathrm{event}} = (\mathcal{E}, \prec)$ defined in Definition 2.3.1.
+
+**Lemma 4.1.3** (Orthogonality of Kinematic and Historical State: The Indelible Record of Deletion).
+The instantaneous spatial state $G_t = G_{\mathrm{space}}(t)$ and the cumulative historical category $\mathbf{Hist}$ are orthogonal.
+The deletion operator $\mathfrak{T}_{\mathrm{del}}$ (and the Section 4.6 deletion purge) acts exclusively on the instantaneous kinematic graph $G_t$, removing an accepted deletion edge $e \in E(G_t)$ such that $e \notin E(G_{t+1})$.
+Because $e \in E(G_t) \subseteq E(\mathcal{H}_{t+1})$, kinematic deletion cannot erase $e$ from the cumulative historical trajectory $\mathcal{H}_{t+1}$.
+The canonical historical morphism $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ remains strictly well-defined, ensuring that historical additions leave an indelible structural record in the causal history and that dynamic deletions preserve the monotonicity of relational event accumulation (Lean 4 certified: `deletion_preserves_cumulative_history` and `cumulative_history_transitive_monotonicity`, Supplement Appendix A, Part 6.5).
 
 ## 4.2 Validity of Categorical Syntax & Topological Injectivity
 
@@ -895,19 +937,19 @@ The structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ satisfy all category axioms
 
 * **Path Associativity:** For any directed paths $p \in \mathrm{Hom}(u, v)$, $q \in \mathrm{Hom}(v, w)$, and $r \in \mathrm{Hom}(w, z)$, sequence concatenation is strictly associative: $(r \circ q) \circ p = r \circ (q \circ p)$.
 * **Timestamp Monotonicity:** For every non-trivial morphism $\pi \in \mathrm{Hom}(u, v)$ ($\ell \ge 1$), the sequence of edge timestamps is strictly monotonically increasing: $H(e_1) < H(e_2) < \dots < H(e_k)$ (Lean 4 certified: `edge_path_monotonicity_transitive`, Appendix A, Part 7).
-* **Topological Injectivity:** Every morphism $f \in \mathrm{Hom}_{\mathbf{Hist}}(G, G')$ is strictly injective on connected components.
+* **Topological Injectivity:** Every morphism $f \in \mathrm{Hom}_{\mathbf{Hist}}(\mathcal{H}, \mathcal{H}')$ is strictly injective on connected components.
 * **Partial Order Preservation:** The reachability relation induced by $\mathrm{Hom}_{\mathbf{Caus}_t}(u, v) \neq \emptyset$ forms a strict partial order $(V, \le)$ on $V(G_t)$ for every $t \in \mathbb{N}_0$.
 
 *Proof.* We verify the categorical axioms, topological injectivity, and poset consistency:
 
 **I. Composition Associativity & Identity in $\mathbf{Caus}_t$:** Morphism composition in $\mathbf{Caus}_t$ is defined by edge sequence concatenation. Sequence concatenation in Set Theory is associative: $(S_r \cdot S_q) \cdot S_p = S_r \cdot (S_q \cdot S_p)$. For any path $\pi \in \mathrm{Hom}(u, v)$, prepending or appending the zero-length trivial path $\mathrm{id}_u = (u, \emptyset, u)$ leaves the sequence unchanged: $S_{\pi} \cdot \emptyset = S_{\pi} = \emptyset \cdot S_{\pi}$.
 
-**II. Category Axioms for $\mathbf{Hist}$:** Morphisms in $\mathbf{Hist}$ are functions on vertex sets satisfying edge inclusion and timestamp preservation $H'(f(e)) = H(e)$. Function composition is inherently associative: $(h \circ g) \circ f = h \circ (g \circ f)$. The identity map $\mathrm{id}_G(v) = v$ preserves all edges and timestamps ($H(\mathrm{id}_G(e)) = H(e)$), serving as the two-sided neutral identity.
+**II. Category Axioms for $\mathbf{Hist}$:** Morphisms in $\mathbf{Hist}$ are canonical inclusions on cumulative trajectory graphs $\mathcal{H}_t$ satisfying edge inclusion $E(\mathcal{H}_t) \subseteq E(\mathcal{H}_{t+k})$ and timestamp preservation $H'(f(e)) = H(e)$. Inclusion composition is inherently associative: $(h \circ g) \circ f = h \circ (g \circ f)$. The identity map $\mathrm{id}_{\mathcal{H}}(v) = v$ preserves all edges and timestamps ($H(\mathrm{id}_{\mathcal{H}}(e)) = H(e)$), serving as the two-sided neutral identity.
 
-**III. Topological Injectivity:** Let $f: G \to G'$ be a structure-preserving morphism in $\mathbf{Hist}$. Assume for contradiction that $f$ is non-injective on a connected pair, i.e., $\exists u \neq v$ connected by a directed path $\pi = (u = x_0, x_1, \dots, x_k = v)$ such that $f(u) = f(v) = w$:
+**III. Topological Injectivity:** Let $f: \mathcal{H} \to \mathcal{H}'$ be a structure-preserving morphism in $\mathbf{Hist}$. Assume for contradiction that $f$ is non-injective on a connected pair, i.e., $\exists u \neq v$ connected by a directed path $\pi = (u = x_0, x_1, \dots, x_k = v)$ in $\mathcal{H}$ such that $f(u) = f(v) = w$:
 
-1. If $\ell(\pi) = 1$ (a single edge $(u, v) \in E(G)$), the image $f(\pi) = (w, w) \in E(G')$ forms a self-loop, directly violating Axiom 1 (Irreflexivity, Lean 4 certified: `asymmetry_implies_irreflexivity`, Appendix A, Part 1).
-2. If $\ell(\pi) \ge 2$, the image $f(\pi)$ forms a closed directed cycle in $G'$. Timestamp preservation requires $H'(f(e_i)) = H(e_i)$ to strictly increase along the path: $H'(f(e_1)) < H'(f(e_2)) < \dots < H'(f(e_k))$. Strict increase along a closed loop requires $t_{\mathrm{start}} < t_{\mathrm{end}}$, while vertex identification $f(u) = f(v)$ requires $t_{\mathrm{start}} = t_{\mathrm{end}}$, producing the strict contradiction:
+1. If $\ell(\pi) = 1$ (a single edge $(u, v) \in E(\mathcal{H})$), the image $f(\pi) = (w, w) \in E(\mathcal{H}')$ forms a self-loop, directly violating Axiom 1 (Irreflexivity, Lean 4 certified: `asymmetry_implies_irreflexivity`, Appendix A, Part 1).
+2. If $\ell(\pi) \ge 2$, the image $f(\pi)$ forms a closed directed cycle in $\mathcal{H}'$. Timestamp preservation requires $H'(f(e_i)) = H(e_i)$ to strictly increase along the path: $H'(f(e_1)) < H'(f(e_2)) < \dots < H'(f(e_k))$. Strict increase along a closed loop requires $t_{\mathrm{start}} < t_{\mathrm{end}}$, while vertex identification $f(u) = f(v)$ requires $t_{\mathrm{start}} = t_{\mathrm{end}}$, producing the strict contradiction:
 $$t < t.$$
 
 Thus, no valid morphism in $\mathbf{Hist}$ can identify distinct connected vertices (Lean 4 certified: `edge_monotone_no_causal_cycle`, Appendix A, Part 7).
@@ -921,9 +963,9 @@ To evaluate candidate rewrite sites without invoking an extrinsic, non-local obs
 **Definition 4.3.1** (Category of Annotated Causal Graphs $\mathbf{AnnCG}$).
 The Category of **Annotated Causal Graphs $\mathbf{AnnCG}$** is defined by:
 
-* **Objects:** Ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a causal graph and $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$ is a Triad Syndrome Map assigning a diagnostic triplet to each candidate site.
-* **Morphisms:** Pairs $h = (f, k): (G, \sigma) \to (G', \sigma')$, where $f: G \hookrightarrow G'$ is a historical embedding in $\mathbf{Hist}$ and $k: \sigma \to \sigma'$ is a compatible diagnostic update map.
-* **Composition:** Component-wise composition $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$ with identity $\mathrm{id}_{(G, \sigma)} = (\mathrm{id}_G, \mathrm{id}_\sigma)$.
+* **Objects:** Ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a causal graph and $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$ is the triad occupancy-check syndrome of Section 3.5.4, evaluated on candidate 2-paths via the checks $S_1, S_2, S_3$.
+* **Morphisms:** Pairs $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$, where $f: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ is the historical inclusion in $\mathbf{Hist}$ between the associated cumulative trajectories, and $k: \sigma \to \sigma'$ is a compatible diagnostic update map.
+* **Composition:** Component-wise composition $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$ with identity $\mathrm{id}_{(G, \sigma)} = (\mathrm{id}_{\mathcal{H}}, \mathrm{id}_\sigma)$.
 
 **Definition 4.3.2** (Awareness Store Endofunctor $R_T$).
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ formalizes local self-observation via the Uustalu-Vene Costate/Store Comonad architecture [11]:
@@ -947,23 +989,26 @@ The triple $(R_T, \epsilon, \delta)$ satisfies the formal **Comonad Axioms** on 
 2. **Right Identity:** $R_T(\epsilon_X) \circ \delta_X = \mathrm{id}_{R_T(X)}$ (extracting inner context after duplication preserves the state; Lean 4 certified: `right_identity`, Appendix A, Part 3).
 3. **Comonadic Associativity:** $\delta_{R_T(X)} \circ \delta_X = R_T(\delta_X) \circ \delta_X$ (hierarchical meta-checks commute depth-wise; Lean 4 certified: `comonad_associativity`, Appendix A, Part 3).
 
-**Theorem 4.3.5** (Algebraic Rigidity & Zero Gauge Freedom of the Annotation Map).
-Let $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$ be a morphism in $\mathbf{AnnCG}$ corresponding to a physical rewrite with topological symmetric difference $\Delta E = E_{t+1} \oplus E_t$.
-Then the diagnostic update map $k: \sigma \to \sigma'$ is uniquely and deterministically fixed by the Pauli anti-commutation relations:
-$$k(\sigma) = \sigma \oplus \boldsymbol{u}_{\Delta E},$$
-where $\boldsymbol{u}_{\Delta E}$ is the binary incidence vector whose $i$-th component is $1$ if $|\Delta E \cap \mathrm{supp}(K_i)|$ is odd, and $0$ if even.
+**Theorem 4.3.5** (Deterministic Affine Update & Uniqueness of Triad Occupancy Labels).
+Let $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$ be a morphism in $\mathbf{AnnCG}$ corresponding to a physical rewrite on an arbitrary $N$-vertex graph $G = (V, E)$ with global topological symmetric difference $\Delta E = E_{t+1} \oplus E_t$.
+At every candidate 2-path site $p = (v, w, u) \in V^3$, the local triad occupancy-check syndrome $\sigma(p) \in \{+1, -1\}^3$ (identified with $\mathbb{F}_2^3$ via $+1 \leftrightarrow 0, -1 \leftrightarrow 1$) is evaluated via $S_1 = Z_{vw}Z_{wu}$, $S_2 = Z_{wu}Z_{uv}$, and $S_3 = Z_{uv}Z_{vw}$.
+Across the entire global graph, all local syndromes strictly reside in the even-parity occupancy sector $\mathcal{V}_{\mathrm{even}} = \{s \in \mathbb{F}_2^3 \mid s_1 \oplus s_2 \oplus s_3 = 0\}$ (Lean 4 certified: `all_global_triad_syndromes_are_even_parity`, Appendix A, Part 3).
+If the local diagnostic update $k$ is an affine occupancy translation tracking incidence displacement $\boldsymbol{u}_{\Delta E}(p) \in \mathcal{V}_{\mathrm{even}}$ (satisfying base anchoring $k(0) = \boldsymbol{u}_{\Delta E}(p)$ and translation equivariance $k(s_1 \oplus s_2) = k(s_1) \oplus s_2$), then $k$ is uniquely forced to equal
+$$k(\sigma)(p) = \sigma(p) \oplus \boldsymbol{u}_{\Delta E}(p),$$
+where $\boldsymbol{u}_{\Delta E}(p) \in \mathcal{V}_{\mathrm{even}}$ is the local incidence shift vector (Lean 4 certified: `global_incidence_displacement_is_even_parity`, `global_even_parity_sector_closed_under_shift`, `affine_shift_uniquely_determined`, and `affine_morphism_unique`, Appendix A, Part 3).
+Furthermore, if $(G, \sigma)$ begins faithful to physical ground truth ($\sigma = \sigma_G(E)$), the dynamically updated label field $k(\sigma)$ identically equals the re-evaluated syndrome on $E \oplus \Delta E$ (Lean 4 certified: `dynamic_update_preserves_consistency`, Appendix A, Part 3).
 
-*Proof.* We evaluate the algebraic constraints imposed by the stabilizer check algebra:
+*Proof.* We evaluate the global algebraic kinematics:
 
-**I. Pauli Anti-Commutation Constraint:** Every edge addition or deletion $e \in \Delta E$ corresponds to a Pauli-$X_e$ bit-flip on the edge qubit. The local syndrome $\sigma$ measures the eigenvalue vector of the local $Z$-stabilizer checks $K_i$. Since $\{X_e, K_i\} = 0$ if and only if $e \in \mathrm{supp}(K_i)$, applying the rewrite $\Delta E$ inverts the measurement eigenvalue of $K_i$ if and only if $\Delta E$ intersects $\mathrm{supp}(K_i)$ an odd number of times.
+**I. Global Homomorphism & Parity Invariance:** Every global edge modification $\Delta E$ acts as a boolean symmetric difference on $V \times V \to \mathbb{F}_2$. For every site $p = (v, w, u)$, the local syndrome transforms homomorphically as an exact XOR translation $\sigma_G(E \oplus \Delta E, p) = \sigma_G(E, p) \oplus \boldsymbol{u}_{\Delta E}(p)$ (Lean 4 certified: `global_triad_syndrome_homomorphism`, Appendix A, Part 3). Completing a 3-cycle is $|000\rangle \to |111\rangle$ and has even overlap with each $S_i$, so the $ZZ$ syndrome is unchanged; the volume operator $V = Z_{vw}Z_{wu}Z_{uv}$ (odd support) records the new geometric quantum.
 
-**II. Deterministic Syndrome Shift:** The updated syndrome is algebraically bound by the incidence vector XOR addition: $\sigma' = \sigma \oplus \boldsymbol{u}_{\Delta E}$.
+**II. Spatial Localization & Non-Interference:** If a global rewrite $\Delta E$ has support disjoint from the 3 directed edges of site $p = (v, w, u)$, the local incidence shift is identically zero $\boldsymbol{u}_{\Delta E}(p) = \mathbf{0}$, leaving the syndrome at site $p$ strictly invariant: $\sigma_G(E \oplus \Delta E, p) = \sigma_G(E, p)$ (Lean 4 certified: `global_disjoint_support_invariance`, Appendix A, Part 3).
 
-**III. Morphism Uniqueness (Zero Gauge Freedom):** Because morphisms in $\mathbf{AnnCG}$ must preserve the diagnostic structure under physical graph transformations, $k$ possesses zero gauge freedom: any two valid annotation maps $k_1, k_2$ satisfying the incidence shift are identically equal:
-$$k_1 = k_2$$
-(Lean 4 certified: `comonad_morphism_unique`, Appendix A, Part 3).
+**III. Uniqueness of Affine Occupancy Translations:** Any awareness update morphism $k$ tracking displacement $\boldsymbol{u}_{\Delta E}$ satisfying base anchoring $k(0) = \boldsymbol{u}_{\Delta E}$ and translation equivariance $k(s_1 \oplus s_2) = k(s_1) \oplus s_2$ is uniquely forced to equal $k(s) = s \oplus \boldsymbol{u}_{\Delta E}$ across all states, proving that any two candidate morphisms $k_1, k_2$ are identically equal (Lean 4 certified: `affine_shift_uniquely_determined` and `affine_morphism_unique`, Appendix A, Part 3).
 
-**IV. Involution and Homomorphism:** Applying the same topological rewrite twice returns the syndrome to its original state: $T_u(T_u(\sigma)) = \sigma$ (Lean 4 certified: `comonad_shift_involution`, Appendix A, Part 3). Sequential physical updates compose homomorphically: $T_{u_2}(T_{u_1}(\sigma)) = T_{u_1 \oplus u_2}(\sigma)$ (Lean 4 certified: `comonad_shift_composition_homomorphism`, Appendix A, Part 3). This algebraic rigidity guarantees that the Awareness Layer faithfully tracks the physical Pauli frame without diagnostic hallucinations. $\square$
+**IV. Dynamic Consistency Invariance:** Applying $k(\sigma)(p) = \sigma(p) \oplus \boldsymbol{u}_{\Delta E}(p)$ to a faithful initial state $\sigma = \sigma_G(E)$ yields $\sigma'(p) = \sigma_G(E, p) \oplus \boldsymbol{u}_{\Delta E}(p) = \sigma_G(E \oplus \Delta E, p)$, identically maintaining consistency with ground-truth physics across time evolution (Lean 4 certified: `dynamic_update_preserves_consistency`, Appendix A, Part 3).
+
+**V. Involution and Homomorphism:** Applying the same topological rewrite twice returns the syndrome to its original state: $T_u(T_u(\sigma)) = \sigma$ (Lean 4 certified: `comonad_shift_involution`, Appendix A, Part 3). Sequential physical updates compose homomorphically: $T_{u_2}(T_{u_1}(\sigma)) = T_{u_1 \oplus u_2}(\sigma)$ (Lean 4 certified: `comonad_shift_composition_homomorphism`, Appendix A, Part 3). The stored triad labels therefore update deterministically with $\Delta E$ and have no independent diagnostic degrees of freedom. $\square$
 
 ## 4.4 Thermodynamic & Information-Theoretic Foundations
 
@@ -1016,7 +1061,7 @@ At the isolated single-cycle base state ($s_{\mathrm{del}} = 2$), the deletion p
 
 The microscopic rewrite grammar, parallel execution scheduler $\mathcal{U}$, and resulting dynamical phase trajectories are summarized in Figure 1.
 
-![Microscopic graph rewrite system, elementary moves, execution scheduler, and bifurcating dynamical fates. (a) Regular bipartite Bethe substrate ($k=3$) with alternating depth-parity node coloring (dark for even depths, open for odd depths) and an initial parity-breaking defect edge linking inner same-parity nodes. (b) Elementary rewrite moves: path-closing addition on directed 2-paths and tension-dependent deletion on 3-cycle edges under causal PUC and AEC constraints. (c) Maximally parallel discrete tick $\mathcal{U}$ executing candidate proposals, independent Bernoulli selections, idempotent addition merge, and deletion purge (Lemma 4.6.1). (d) Dynamical trajectories of 3-cycle population $N_3(t)$, illustrating the bifurcation between rapid decay to the frozen absorbing vacuum ($N_3=0$) and first-tick burst escape into a persistent Quasi-Stationary Distribution (QSD, $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$).](figure_framework_schematic.png)
+![Microscopic graph rewrite system, elementary moves, execution scheduler, and bifurcating dynamical fates. (a) Regular bipartite Bethe substrate ($k=3$) with alternating depth-parity node coloring (dark for even depths, open for odd depths) and an initial parity-breaking defect edge linking inner same-parity nodes. (b) Elementary rewrite moves: path-closing addition on directed 2-paths and tension-dependent deletion on 3-cycle edges under causal PUC and AEC constraints. (c) Maximally parallel discrete tick $\mathcal{U}$ executing candidate proposals, independent Bernoulli selections, idempotent addition merge, and deletion purge (Lemma 4.6.1). (d) Dynamical trajectories of 3-cycle population $N_3(t)$, illustrating the bifurcation between rapid decay to the frozen absorbing vacuum ($N_3=0$) and first-tick burst escape into a persistent Quasi-Stationary Distribution (QSD, $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ at $N = 10^4$).](figure_framework_schematic.png)
 
 A single global logical tick $U_t \xrightarrow{\mathcal{U}} U_{t+1}$ executes a four-step parallel pipeline:
 
@@ -1026,7 +1071,50 @@ A single global logical tick $U_t \xrightarrow{\mathcal{U}} U_{t+1}$ executes a 
 * **Deletion Purge:** Remove accepted deletion edges $E_{\mathrm{del}} = \{e_d \mid Y_d = 1\}$ from the edge set.
 
 **Lemma 4.6.1** (Deterministic, Race-Free Parallel Execution).
-The four-step parallel execution scheduler $\mathcal{U}$ is deterministic and race-free: for any fixed random seed sequence $\boldsymbol{\xi}_t = (X_{\mathcal{A}}, Y_{\mathcal{D}})$, the updated state $G_{t+1} = \mathcal{U}(G_t, \boldsymbol{\xi}_t)$ is uniquely determined and independent of thread execution order.
+The four-step parallel execution scheduler $\mathcal{U}$ is deterministic and race-free: for any fixed random seed sequence $\boldsymbol{\xi}_t = (X_{\mathcal{A}}, Y_{\mathcal{D}})$, the updated state $G_{t+1} = \mathcal{U}(G_t, \boldsymbol{\xi}_t)$ is uniquely determined and independent of thread execution order. Proposing the complete candidate site sets $\mathcal{A}_t$ and $\mathcal{D}_t$ across the entire lattice at each tick is fundamentally required by Theorem 3.3.2 to preserve $\mathrm{Aut}(G_t)$-covariance across symmetry orbits, rather than merely serving as an implementation convenience. Note that the deterministic, race-free merge property (confluence under arbitrary thread scheduling given a fixed pseudo-random seed) is distinct from the symmetry-orbit completeness of Theorem 3.3.2.
+
+**Lemma 4.6.2** (Factorized Kinematic Transition Measure).
+Let $\mathcal{A}_t$ and $\mathcal{D}_t$ be the complete candidate addition and deletion site sets of graph $G_t = (V, E_t)$ proposed under Section 4.5.1. For any realizable successor graph $G_{t+1}$ formed by accepting additions $A \subseteq \mathcal{A}_t$ and deletions $D \subseteq \mathcal{D}_t$, the single-tick transition probability $\mathbb{P}(G_t \to G_{t+1})$ factorizes as an exact classical Markov kernel over independent local Bernoulli trials:
+$$\mathbb{P}(G_t \to G_{t+1}) = \prod_{a \in A} P_{\mathrm{acc}}(s_a) \prod_{a' \in \mathcal{A}_t \setminus A} (1 - P_{\mathrm{acc}}(s_{a'})) \prod_{d \in D} Q_{\mathrm{del}}(s_d) \prod_{d' \in \mathcal{D}_t \setminus D} (1 - Q_{\mathrm{del}}(s_{d'})),$$
+where $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu_0 s}$ and $Q_{\mathrm{del}}(s) = \min\left(1, \frac{1}{2}(1 + \lambda_0 s)\,\mathrm{e}^{-\mu_0 s}\right)$ are the constitutive kernels of Theorem 4.5.5.
+The addition sector contributes an exact exponential factor $\prod_{a \in A} P_{\mathrm{acc}}(s_a) = \exp\left(-\Delta \mathcal{S}_{\mathrm{add}}\right)$ with kinematic action $\Delta \mathcal{S}_{\mathrm{add}} = \mu_0 \sum_{a \in A} s_a$.
+This transition measure defines a strictly classical, positive-definite stochastic Markov kernel; it does not represent unitary quantum evolution or a Born-rule state reduction.
+
+*Proof.* We evaluate the four-step scheduler pipeline:
+
+**I. Independent Site Sampling:** In Step 2 of the parallel scheduler $\mathcal{U}$, random variables $X_a \sim \mathrm{Bernoulli}(P_{\mathrm{acc}}(s_a))$ for all $a \in \mathcal{A}_t$ and $Y_d \sim \mathrm{Bernoulli}(Q_{\mathrm{del}}(s_d))$ for all $d \in \mathcal{D}_t$ are sampled independently. The joint probability of realization $(X_{\mathcal{A}}, Y_{\mathcal{D}})$ is the exact product of marginal probabilities.
+
+**II. Addition Sector Factorization:** Substituting $P_{\mathrm{acc}}(s_a) = \mathrm{e}^{-\mu_0 s_a}$ yields $\prod_{a \in A} P_{\mathrm{acc}}(s_a) = \exp\left(-\mu_0 \sum_{a \in A} s_a\right) = \exp(-\Delta \mathcal{S}_{\mathrm{add}})$. The deletion kernel $Q_{\mathrm{del}}(s_d)$ accounts for catalytic defect relaxation and remains bounded in $[0, 1]$ by Theorem 4.5.5.
+
+**III. Classical Nature of the Kernel:** The resulting transition probability $\mathbb{P}(G_t \to G_{t+1}) \in [0, 1]$ is a non-negative measure on the space of graph transitions. Because it operates on discrete combinatorial states without complex phase holonomies or state vector superpositions, it represents a classical Markov transition measure rather than a quantum amplitude. $\square$
+
+**Lemma 4.6.3** (Thermodynamic Arrow of the Logical Tick).
+The global discrete evolution operator $\mathcal{U}: G_t \to G_{t+1}$ is formally non-invertible, establishing an intrinsic macroscopic arrow of time with non-negative Shannon entropy production per tick:
+$$\Delta S_{\mathrm{tick}} \ge 0,$$
+with strict positivity $\Delta S_{\mathrm{tick}} > 0$ whenever at least one candidate site possesses a non-degenerate transition probability $P \in (0, 1)$.
+
+*Proof.* We evaluate the information-theoretic irreversibility of the update:
+
+**I. Many-to-One Bernoulli Collapse:** During Step 2, drawing realization $(X_{\mathcal{A}}, Y_{\mathcal{D}})$ from the product Bernoulli measure collapses the full space of $2^{|\mathcal{A}_t| + |\mathcal{D}_t|}$ potential successor branches into a single realized update $(A, D)$. Because unchosen alternative trajectories are irreversibly discarded, the mapping $\mathcal{U}$ is many-to-one, producing Shannon entropy $\Delta S_{\mathrm{sample}} = -\sum_i p_i \ln p_i > 0$.
+
+**II. Idempotent Merging and Deletion Purge:** In Steps 3 and 4, multiple candidate 2-paths may propose identical chords (resolved by idempotent set union $E \cup \{e\} \cup \{e\} = E \cup \{e\}$), while deletion excises edges from $E(G_t)$. Given only $G_{t+1}$, the pre-update state $G_t$ cannot be uniquely reconstructed without external auxiliary data.
+
+**III. Monotonic Historical Accumulation:** By Definition 4.1.2 and Lemma 4.1.3, every accepted addition is permanently embedded in the cumulative historical category $\mathbf{Hist}$ via inclusion $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$. Because cumulative history expands monotonically ($\mathcal{H}_t \subseteq \mathcal{H}_{t+1}$) and edge creation timestamps are strictly increasing along causal paths (Theorem 4.2.1), no physical backwards transformation can erase historical relational events. $\square$
+
+**Lemma 4.6.4** (Foster–Lyapunov Anti-Densification Boundedness and Absorbing Vacuum Stasis).
+Let $\rho(G) = N_3(G)/N$ denote the intensive cycle density. Under the microscopic transition measure of Lemma 4.6.2:
+
+* **Absorbing Stasis of the Unpumped Vacuum:** In the unpumped regime ($\Lambda_{\mathrm{micro}} \equiv 0$), the defect-free vacuum $G_0$ with $\rho(G_0) = 0$ is a strictly absorbing configuration ($\mathbb{P}(G_0 \to G_0) = 1$). The unpumped Markov chain is reducible, and no non-trivial, globally attracting stationary measure $\pi^*$ supported on active graphs exists.
+* **Foster–Lyapunov Anti-Densification Bound:** For the Lyapunov functional $V(G) = \rho(G)$, the expected single-tick drift $\Delta V(G) = \mathbb{E}[\rho(G_{t+1}) - \rho(G_t) \mid G_t = G]$ satisfies $\Delta V(G) \le -\epsilon < 0$ for all $\rho(G) > \rho_{\mathrm{crit}}$, where $\rho_{\mathrm{crit}}$ is a finite threshold density. This negative drift mathematically precludes ultraviolet densification (the runaway small-world catastrophe) and guarantees that topological activity is bounded from above.
+* **Continuum Bridge:** The active steady-state attractor $\rho^* \approx 0.037$ is not an invariant distribution of the unpumped discrete chain, but represents a non-equilibrium steady state of the continuous-time driven master equation ($\Lambda > 0$) derived in Section 5.2.
+
+*Proof.* We evaluate the drift and absorbing boundary conditions:
+
+**I. Absorbing Boundary and Reducibility:** On the pristine Bethe tree $G_0$ (and any cycle-free scarred configuration $G_{\mathrm{scar}}$), absence of closed 3-cycles ($N_3 = 0$) and addition quiescence under $\Lambda_{\mathrm{micro}} \equiv 0$ render the proposal sets empty ($\mathcal{A} = \emptyset, \mathcal{D} = \emptyset$). By Theorem 6.1 (Supplement Appendix A), $\mathcal{U}(G) = G$ identically for any such configuration. Because active states can reach cycle-free configurations via sequential cycle deletions but cannot spontaneously transition out of them, the unpumped Markov chain is reducible and is absorbed into the cycle-free, addition-quiescent class; no invariant probability measure supported on active graphs exists.
+
+**II. Negative Drift at High Density:** When $\rho(G) > \rho_{\mathrm{crit}}$, high vertex degrees increase local addition stress $s_{\mathrm{add}}$, exponentially suppressing addition acceptance $P_{\mathrm{acc}} = \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}$. Simultaneously, catalytic deletion $Q_{\mathrm{del}}$ scales with cycle count $N_3$, causing the expected deletion rate to strictly exceed the addition rate: $\mathbb{E}[|E_{\mathrm{del}}|] > \mathbb{E}[|E_{\mathrm{add}}|]$. Thus, $\Delta V(G) \le -\epsilon < 0$, establishing that the state space is dynamically bounded against runaway densification.
+
+**III. Non-Equilibrium Metastability:** Above the nucleation barrier $\rho_c \approx 0.130$, the unpumped active regime constitutes a metastable Quasi-Stationary Distribution (QSD) with finite lifetime before quenching into absorption (Section 5.3). True non-zero steady-state stationarity is realized exclusively under continuous-time macroscopic driving ($\Lambda_{\mathrm{drive}} > 0$, Section 5.2). $\square$
 
 # 5. Non-Equilibrium Statistical Mechanics and Equilibrium
 
@@ -1034,7 +1122,7 @@ The statistical mechanics of the substrate are governed by non-equilibrium phase
 
 ## 5.1 Thermodynamic Framework
 
-The microscopic state is specified by the graph configuration $G \in \Omega$. The fundamental non-equilibrium order parameter is the intensive 3-cycle density:
+The microscopic state is specified by the graph configuration $G \in \Omega$, evolving under the stochastic Markov transition measure of Lemma 4.6.2. The fundamental non-equilibrium order parameter is the intensive 3-cycle density:
 $$\rho(t) = \frac{N_3(G_t)}{N},$$
 where $N_3(G_t)$ is the total count of directed 3-cycles (elementary 2-simplices) and $N = |V|$ is the lattice volume. The defect-free vacuum $G_0$ with $\rho = 0$ is a strictly absorbing configuration: because $\Lambda_{\mathrm{micro}} \equiv 0$, any realization reaching $\rho = 0$ is permanently trapped in frozen stasis.
 
@@ -1098,7 +1186,7 @@ where $\Lambda = 2^{-6} = 0.015625$ is the intrinsic vacuum drive derived from t
 
 ## 5.3 Computational Verification and Multi-Scale Scaling
 
-To resolve the finite-volume behavior, extensive ensemble simulations were conducted across four orders of magnitude in system size ($N = 10, 100, 1,000, 10,000$):
+To resolve the finite-volume behavior, extensive ensemble simulations were conducted across four orders of magnitude in system size ($N = 10, 100, 1,000, 10,000$) using the high-performance multi-threaded C++20 simulation engine (Supplementary Material, Appendix B):
 
 * **Mesoscopic Zero-Inflation ($N = 100$):** On small lattices, leaf boundary truncation ($L/N \approx 50\%$, Proposition 3.3.1) exerts strong finite-size quenching. In an ensemble of 100 independent realizations running for $T = 100$ ticks, 73% extinguish rapidly into the absorbing vacuum ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, median $\rho = 0$). Surviving paths populate an active Quasi-Stationary Distribution with mean density $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$.
 * **Suppression of Boundary Quenching at Large Volume ($N = 10,000$):** Expanding the volume to $N = 10,000$ increases the internal path capacity and suppresses boundary loss, raising survival to $p_{\mathrm{surv}} = 0.990 \pm 0.010$. The active core expands to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 123.6$ cycles ($\rho \approx 1.2\%$), while the non-equilibrium lifetime scales power-law with system volume:
@@ -1108,7 +1196,7 @@ To resolve the finite-volume behavior, extensive ensemble simulations were condu
 
 ### 5.3.1 Parameter Sweep Ensemble Records
 
-A systematic 132-cell parameter sweep ($4 \times 11 \times 3$ grid across $T \in [0.1, 1.0]$, $\lambda \in [0.5, 3.0]$, and $\mu \in [0.01, 0.20]$) confirms the analytical phase boundaries:
+Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.399, 1.72, 0.69)$ from the benchmark dataset (`p_surv_N100_design.csv`) along with parameter sweep variations confirm the analytical phase boundaries:
 
 Table 4: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100\text{ ticks}$, 100 Realizations per Cell).*
 
@@ -1116,25 +1204,24 @@ Table 4: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | $0.10$ | $1.72$ | $0.05$ | $0.000$ | $0.00$ | -- | $4.2 \pm 0.8$ | Frozen / Immediate Extinction |
 | $0.69$ | $0.50$ | $0.05$ | $0.050 \pm 0.022$ | $0.34 \pm 0.12$ | $0.068 \pm 0.014$ | $18.4 \pm 3.1$ | Sub-critical / Boundary Quenched |
-| $\mathbf{0.69}$ | $\mathbf{1.72}$ | $\mathbf{0.05}$ | $\mathbf{0.270 \pm 0.044}$ | $\mathbf{2.48 \pm 0.44}$ | $\mathbf{0.092 \pm 0.012}$ | $\mathbf{67.8 \pm 8.4}$ | **Canonical Active QSD Viability** |
+| $\mathbf{0.69}$ | $\mathbf{1.72}$ | $\mathbf{0.40}$ | $\mathbf{0.270 \pm 0.044}$ | $\mathbf{2.48 \pm 0.44}$ | $\mathbf{0.092 \pm 0.012}$ | $\mathbf{67.8 \pm 8.4}$ | **Design-Point Unpumped QSD ($\Lambda_{\mathrm{micro}}=0$)** |
 | $0.69$ | $2.50$ | $0.05$ | $0.610 \pm 0.049$ | $7.82 \pm 0.89$ | $0.128 \pm 0.015$ | $88.2 \pm 6.2$ | Super-critical Active Phase |
-| $0.69$ | $1.72$ | $0.15$ | $0.020 \pm 0.014$ | $0.11 \pm 0.08$ | $0.055 \pm 0.020$ | $12.1 \pm 2.4$ | High Friction Extinction ($\mu > \mu_c$) |
+| $0.69$ | $1.72$ | $0.15$ | $0.020 \pm 0.014$ | $0.11 \pm 0.08$ | $0.055 \pm 0.020$ | $12.1 \pm 2.4$ | High Friction Attenuation |
 | $1.00$ | $1.72$ | $0.05$ | $0.440 \pm 0.050$ | $4.12 \pm 0.61$ | $0.094 \pm 0.014$ | $74.5 \pm 7.1$ | Thermalized Active QSD |
+
+*Note:* The highlighted row denotes the canonical design point $(\mu_0, \lambda_0, T_c)$ established in Table 1; non-canonical rows at $\mu = 0.05$ and $\mu = 0.15$ represent low-friction exploratory contrasts and are not the source of the design-point survival fraction $p_{\mathrm{surv}} = 0.270$.
 
 ## 5.4 Equilibrium Analysis and Phase Boundaries
 
-The parameter space exhibits two distinct boundaries in the geometric friction coordinate $\mu$:
+The physical behavior of the active phase resolves into three distinct regimes across the mean-field and microscopic formulations:
 
-* **Extinction Boundary ($\mu > \mu_c \approx 0.137$):** When friction exceeds the cubic bifurcation threshold, deletion dominates addition at all densities, eliminating the active fixed point $\rho^*$ and forcing all realizations into immediate extinction.
-* **Friction Stalling Boundary ($\mu < \mu_{\mathrm{stall}}$):** When friction is too low, unpruned cycle crowding generates massive geometric back-reaction, saturating the local degree capacity and stalling further wavefront propagation.
-
-The canonical operating coordinates $(\mu_0, \lambda_0, T_c) = (1/\sqrt{2\pi}, e-1, \ln 2)$ sit precisely within the open active viability channel, ensuring balanced growth without explosive percolation or premature quenching.
+1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.137$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.399$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
+2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the mean-field cubic extinction prediction, the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ sustain an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ (Table 4). Survival is enabled by local spatial clustering, non-mean-field cycle correlations, and finite-$N$ fluctuations that are absent in homogeneous continuum approximations.
+3. **Driven Continuum Master Equation ($\Lambda = 2^{-6}$):** Under continuous microscopic creation injection, the driven non-equilibrium master equation admits a strictly stable steady-state attractor $\rho^* \approx 0.0370$ with negative restoring flux $J \approx -0.333 < 0$ at the exact canonical coordinates $(\mu_0, \lambda_0)$. This active attractor is driven by non-equilibrium flux and does not represent an invariant measure of the unpumped discrete Markov chain.
 
 ## 5.5 Geometric Stabilization (Topological Stability)
 
-When localized ignition is injected via a point-source instanton defect, the active Quasi-Stationary core remains tightly confined in topological coordinate space:
-$$\langle N_3 \rangle_{\mathrm{soliton}} \approx \text{const} \approx 124\text{ cycles},$$
-acting as an emergent localized topological soliton embedded within an extensive pre-geometric Bethe tree.
+When localized ignition is injected via a point-source instanton defect, the active Quasi-Stationary core remains tightly confined in topological coordinate space, concentrating $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.19 \pm 1.19\text{ cycles}$ at $N = 100$ (observed range $[2, 22]$, Table 6) and scaling sub-extensively to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124\text{ cycles}$ ($\rho \approx 1.2\%$) at $N = 10,000$, acting as an emergent localized topological soliton embedded within an extensive pre-geometric Bethe tree.
 
 When realizations extinguish into the absorbing state, the system executes a graceful, non-divergent exit into a **scarred absorbing vacuum DAG** $G_{\mathrm{scar}}$:
 
@@ -1174,11 +1261,11 @@ The analytical and computational results presented in this work establish:
 
 ### Physical Scope and Limitations
 
-Discrete causal graph rewriting, absorbing-state phase transitions, and continuum geometric observables occupy distinct physical tiers. While downstream companion works investigate global algebraic causal protection, quantum stabilizer codespaces, and braided particle states, the present manuscript restricts its analytical and numerical scope strictly to the classical, pre-geometric statistical mechanics of the substrate: the combinatorial move grammar, absorbing boundary dynamics, and finite-$N$ non-equilibrium steady states. All-order causal protection across extended rewrite histories, continuum geometric reconstruction, and topological braid classification remain topics of companion works.
+Discrete causal graph rewriting, absorbing-state phase transitions, and continuum geometric observables occupy distinct physical tiers. The occupancy projectors of Section 3.5 are a classical constraint embedding of Axioms 1 and 2, not a quantum error-correcting code. Causal acyclicity of $G_{\mathrm{event}}$ is enforced in this manuscript by the timestamp recurrence and $\mathrm{AEC}$. Downstream companion works investigate braid stabilizer codespaces (logical qubits, vertex $X$-checks, code distance, and thermodynamic recovery) and braided particle states. The present manuscript restricts its analytical and numerical scope strictly to the classical, pre-geometric statistical mechanics of the substrate: the combinatorial move grammar, absorbing boundary dynamics, and finite-$N$ non-equilibrium steady states. Continuum geometric reconstruction and topological braid classification remain topics of companion works.
 
 # Data and Code Availability
 
-The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 multi-scale simulation engine, and the standalone Python reference implementation are embedded directly in Appendices A, B, and C. Replication repositories, parameter sweep ensemble records, and interactive portal resources are hosted at <https://braiddynamics.com/> and permanently archived on Zenodo (<https://zenodo.org/records/21423007>) and GitHub (<https://github.com/braiddynamics/qbd-portal>).
+The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 multi-scale simulation engine, and the standalone Python reference implementation are published in full in the companion Supplementary Material (see Supplementary Material below). Replication repositories, parameter sweep ensemble records, and interactive portal resources are hosted at <https://braiddynamics.com/> and permanently archived on Zenodo (<https://zenodo.org/records/21423007>) and GitHub (<https://github.com/braiddynamics/qbd-portal>).
 
 ---
 
@@ -1210,7 +1297,8 @@ The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 m
 
 # Supplementary Material
 
-The complete machine-checked Lean 4 formal verification proofs (34 verified theorems), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion open-source Markdown supplement:
+The complete machine-checked Lean 4 formal verification proofs (48 active numbered verified theorems across 61 declarations), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion technical supplement:
 
-* **Supplementary Markdown:** *Supplementary Material: Formal Lean 4 Specifications and High-Performance Simulation Engines* ([`vacuum-phase-supplement.md`](file:///c:/braid-dynamics/qbd-portal/papers/vacuum-phase/downloads/vacuum-phase-supplement.md)).
-* **Replication Archive:** Open-source code, data tables, and build scripts ([`vacuum-phase-replication.zip`](file:///c:/braid-dynamics/qbd-portal/papers/vacuum-phase/downloads/vacuum-phase-replication.zip)).
+* **Online Technical Supplement:** [*Formal Lean 4 Specifications and High-Performance Simulation Engines*](/papers/vacuum-phase/supplement) (Appendices A–C online).
+* **Supplementary Markdown Source:** [*vacuum-phase-supplement.md*](pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md) (112 KB download).
+* **Replication Archive:** Open-source code, data tables, and build scripts ([`vacuum-phase-replication.zip`](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip)).

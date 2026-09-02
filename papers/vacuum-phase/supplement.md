@@ -1,10 +1,35 @@
 ---
-title: "Supplementary Material: Formal Lean 4 Specifications and Simulation Engines"
-subtitle: "Constrained Stochastic Rewrite System on Timestamped DAGs"
-author: "Braid Dynamics Research Collective"
-date: "February 2025"
+id: vacuum-phase-supplement
+title: "Supplementary Material: Formal Lean 4 Specifications and High-Performance Simulation Engines"
+sidebar_label: "Computational & Formal Supplement"
+slug: /vacuum-phase/supplement
+description: "Complete machine-checked Lean 4 formal kernel proofs (48 active theorems), high-performance C++20 simulation engine, and Python 3 reference engine accompanying the Vacuum Phase paper."
 ---
 
+<nav aria-label="Breadcrumbs" style={{
+  display: 'flex',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  gap: '0.45rem',
+  fontSize: '0.85rem',
+  marginBottom: '1.25rem',
+  color: 'var(--ifm-color-emphasis-700)'
+}}>
+  <a href="/" style={{ color: 'var(--ifm-color-emphasis-700)', textDecoration: 'none' }}>Home</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <a href="/papers" style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>Research Papers</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <a href="/papers/vacuum-phase" style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>Vacuum Phase</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <span style={{ color: 'var(--ifm-color-emphasis-900)', fontWeight: 500 }}>Technical Supplement (Appendices A–C)</span>
+</nav>
+
+:::info[**Companion Technical Supplement**]
+**Paper:** *Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry*  
+**Authors:** **R. Fisher**, *Principal Investigator* ([ORCID: 0009-0006-2441-3282](https://orcid.org/0009-0006-2441-3282))  
+**Contents:** **Appendix A** (Verified Lean 4 Formal Kernel Specifications, 48 active theorems) · **Appendix B** (High-Performance C++20 Multi-Scale Simulation Engine) · **Appendix C** (Python 3 Reference Engine & Verification Suite)  
+**Downloads:** [Download Supplement Markdown](pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md) (112 KB) · [Full Replication Bundle (ZIP)](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (94 KB) · [Lean 4 Kernel File](pathname:///papers/vacuum-phase/code/VacuumPhase.lean)  
+:::
 
 # Appendix A. Verified Lean 4 Formal Kernel Specifications
 

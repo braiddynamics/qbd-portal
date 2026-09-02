@@ -3,10 +3,7 @@ import numpy as np
 def expected_drift(rho, M_add=10, M_del=10, mu=0.5, lambda_cat=1.0):
     """Calculate expected one-step density change (drift) ΔV(ρ)."""
     p_add = np.exp(-mu * rho)
-    p_del = 0.5 * (1.0 + lambda_cat * rho)
-    
-    # Clip deletion probability to 1.0 max for physical compliance
-    p_del = min(1.0, p_del)
+    p_del = min(1.0, 0.5 * (1.0 + lambda_cat * rho) * np.exp(-mu * rho))
     
     exp_additions = M_add * p_add
     exp_deletions = M_del * p_del

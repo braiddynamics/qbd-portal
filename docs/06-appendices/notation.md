@@ -166,11 +166,11 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{R}^\flat$ | Probabilistic Rewrite (Monadic extension) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{M}$ | Measurement Projection Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{S}$ | Sampling Collapse Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{A}$ | Awareness Diagnostic Mapping | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{P}_{\mathrm{prop}}$ | Stochastic Proposal Kernel | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{M}$ | Addition Merge Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{D}$ | Deletion Excision Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathbb{P}(G \to G')$ | Transition Probability | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
-| $\rho$ | Probability measure over the state space | [§4.6.4.1](/monograph/rules/dynamics/4.6/#4.6.4.1) |
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |

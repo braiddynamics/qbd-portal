@@ -7,14 +7,14 @@ Scenario 1: 2 Additions, 0 Deletions
   Exact Match:                     True
 --------------------------------------------------
 Scenario 2: 0 Additions, 2 Deletions
-  Transition Probability P(G->G'): 1.10350240
-  Kinematic Action Delta S:        -0.09848912
-  Boltzmann Weight exp(-Delta S):  1.10350240
+  Transition Probability P(G->G'): 0.86233757
+  Kinematic Action Delta S:        0.14810847
+  Boltzmann Weight exp(-Delta S):  0.86233757
   Exact Match:                     True
 --------------------------------------------------
 Scenario 3: 2 Additions, 2 Deletions
-  Transition Probability P(G->G'): 0.61415252
-  Kinematic Action Delta S:        0.48751198
-  Boltzmann Weight exp(-Delta S):  0.61415252
+  Transition Probability P(G->G'): 0.54470442
+  Kinematic Action Delta S:        0.60751198
+  Boltzmann Weight exp(-Delta S):  0.54470442
   Exact Match:                     True
 --------------------------------------------------

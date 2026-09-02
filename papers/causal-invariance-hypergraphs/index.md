@@ -1,23 +1,35 @@
 ---
-layout: default
+id: causal-invariance-hypergraphs
 title: "Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models"
-author: "Braid Dynamics Research Report"
-date: "2026-08-31"
+sidebar_label: "Causal Invariance & Landauer Limits"
+slug: /causal-invariance-hypergraphs
 description: "An evaluation of the Wolfram-Gorard discrete spacetime framework, examining the logical independence of confluence and causal invariance, open-system thermodynamic irreversibility, and constraints on classical hydrodynamic tensor closures."
 ---
 
----
-title: "Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models"
-author: 'R. Fisher \orcidlink{0009-0006-2441-3282}^[Braid Dynamics Group]'
-date: "July 27, 2026"
-documentclass: article
-fontsize: 11pt
-geometry: margin=1in
-abstract: |
-  Discrete pre-geometric hypergraph rewriting models rely on asymptotic confluence, often termed causal invariance, to recover continuous general covariance. However, enforcing coordinate invariance over finite observational timescales introduces fundamental thermodynamic and combinatorial obstructions. Because physical observers operate within localized causal horizons, alternative update sequences branch into physically distinct, non-isomorphic topologies rather than gauge-equivalent descriptions of a single manifold.
+<nav aria-label="Breadcrumbs" style={{
+  display: 'flex',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  gap: '0.45rem',
+  fontSize: '0.85rem',
+  marginBottom: '1.25rem',
+  color: 'var(--ifm-color-emphasis-700)'
+}}>
+  <a href="/" style={{ color: 'var(--ifm-color-emphasis-700)', textDecoration: 'none' }}>Home</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <a href="/papers" style={{ color: '#2563eb', fontWeight: 600, textDecoration: 'none' }}>Research Papers</a>
+  <span style={{ opacity: 0.4 }}>/</span>
+  <span style={{ color: 'var(--ifm-color-emphasis-900)', fontWeight: 500 }}>Causal Invariance &amp; Landauer Limits</span>
+</nav>
 
-  Reconciling these divergent histories requires an irreversible, many-to-one coarse-graining map. Under Jacobson's entanglement equilibrium framework, the resulting informational entropy production excites the vacuum modular Hamiltonian, precluding an unperturbed flat classical vacuum ($T_{\mu\nu} = 0$). Furthermore, analyzing pre-geometric dimensional reduction from complete substrates via the Lovász Graph Homomorphism Theorem demonstrates that unguided local rules suffer super-quadratic phase-space explosion and collapse into disconnected island topologies via subcritical percolation. Machine-checked formal proofs in Lean 4 establish the logical independence of confluence and causal invariance, while kinetic analysis confirms that generic graph rewriting operators lack the tensor collision invariants required for Chapman-Enskog hydrodynamic closure. These results establish that stable continuum spacetime cannot emerge from unguided asymptotic confluence without explicit microscopic conservation laws.
----
+:::info[**Research Article & Archival Record**]
+**Title:** Information-Theoretic Constraints on Finite-Time Causal Invariance and Pre-Geometric Dimensional Reduction in Discrete Hypergraph Models  
+**Author:** **R. Fisher**, *Principal Investigator* ([ORCID: 0009-0006-2441-3282](https://orcid.org/0009-0006-2441-3282))  
+**Affiliation:** Braid Dynamics Group  
+**Published / Release:** July 27, 2026 · **Status:** Preprint / Research Article (v1.0.0) · **License:** [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)  
+**Classification:** Discrete Physics · Quantum Information · General Relativity  
+**Downloads & Assets:** [Publication PDF](pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.pdf) (870 KB) · [Markdown Source](pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-hypergraphs.md) (95 KB) · [Computational Supplement](/papers/causal-invariance-hypergraphs/COMPUTATIONAL-SUPPLEMENT) · [Replication Bundle](pathname:///papers/causal-invariance-hypergraphs/downloads/causal-invariance-replication.zip)  
+:::
 
 ## 1. Introduction
 
@@ -25,9 +37,9 @@ The emergence of continuous Lorentzian spacetime from a discrete pre-geometric s
 
 Within this framework, **causal invariance** is proposed as the microscopic origin of general covariance [4]. The central hypothesis asserts that when independent local update paths generate isomorphic directed acyclic graphs (DAGs) of causal event dependencies, alternative rewrite schedules act as discrete gauge transformations, playing a role analogous to the lapse and shift functions in the Arnowitt-Deser-Misner (ADM) $3+1$ foliation of general relativity [4, 5].
 
-![Structural Comparison: Continuous General Relativity vs. Discrete Multiway Rewriting. (A) General relativity enforces diffeomorphism gauge invariance over a single, unique spacetime manifold $(M, g_{\mu\nu})$, where alternative foliation slices $\Sigma_t, \Sigma'_t$ describe the identical physical geometry without information loss ($\Delta H = 0$). (B) Discrete hypergraph models branch asynchronously into structurally distinct, non-isomorphic physical topologies ($G_1 \not\cong G_2$), where state equivalence requires an irreversible many-to-one quotient producing macroscopic entropy ($\Delta H > 0$).\label{fig:gr_vs_multiway}](figures/gr-vs-multiway-comparison.png){width=95%}
+![Structural Comparison: Continuous General Relativity vs. Discrete Multiway Rewriting. (A) General relativity enforces diffeomorphism gauge invariance over a single, unique spacetime manifold $(M, g_{\mu\nu})$, where alternative foliation slices $\Sigma_t, \Sigma'_t$ describe the identical physical geometry without information loss ($\Delta H = 0$). (B) Discrete hypergraph models branch asynchronously into structurally distinct, non-isomorphic physical topologies ($G_1 \not\cong G_2$), where state equivalence requires an irreversible many-to-one quotient producing macroscopic entropy ($\Delta H > 0$).](figures/gr-vs-multiway-comparison.png)
 
-As illustrated in Figure \ref{fig:gr_vs_multiway}, this correspondence contains a fundamental structural asymmetry:
+As illustrated in Figure 1, this correspondence contains a fundamental structural asymmetry:
 
 - **Continuous General Relativity:** Gauge freedom describes coordinate transformations over a *single spacetime geometry* on a fixed manifold; foliation shifts ($\Sigma_t \to \Sigma'_t$) produce zero entropy ($\Delta H = 0$).
 - **Discrete Multiway Systems:** Asynchronous updates generate *non-isomorphic spatial topologies* ($G_1 \not\cong G_2$), requiring an irreversible quotient map ($\pi \colon G_i \to [G]$) that produces macroscopic entropy ($\Delta H > 0$).
@@ -36,9 +48,9 @@ Furthermore, while classical general relativity requires local covariance to hol
 
 > *“The paths that one must follow in order to obtain convergence may be arbitrarily long, so although causal invariance necessitates that the causal graphs generated by following every path through the multiway system must eventually become isomorphic, those causal graphs are not guaranteed to be isomorphic after any finite number of update steps. As such, causal invariance is best interpreted as a limiting statement about the global structure of the multiway system.”*
 
-For an observer operating within a finite observational domain, intermediate states cannot be treated as gauge choices. Because alternative rewrite schedules yield non-isomorphic topologies over finite intervals (Figure \ref{fig:gorard_fig8}), path reconciliation imposes physical, thermodynamic, and combinatorial constraints on continuum emergence.
+For an observer operating within a finite observational domain, intermediate states cannot be treated as gauge choices. Because alternative rewrite schedules yield non-isomorphic topologies over finite intervals (Figure 2), path reconciliation imposes physical, thermodynamic, and combinatorial constraints on continuum emergence.
 
-![Non-causal-invariant foliations yielding non-isomorphic spatial geometries, replicated from Ref. [4].\label{fig:gorard_fig8}](figures/gorard-figure-8.png){width=65%}
+![Non-causal-invariant foliations yielding non-isomorphic spatial geometries, replicated from Ref. [4].](figures/gorard-figure-8.png)
 
 ### 1.1 Formal Definitions of Finite-Time Invariance and Observer Algebras
 
@@ -182,9 +194,9 @@ To execute a discrete replacement rule on a hypergraph, any asynchronous computa
 
 However, this erasure is exact only at the infinite asymptotic horizon ($t \to \infty$). On any finite physical timescale, the sequential updater leaves permanent structural asymmetries in the underlying network:
 
-This desynchronization mechanism is illustrated schematically in Figure \ref{fig:vacuum_scars}.
+This desynchronization mechanism is illustrated schematically in Figure 3.
 
-![Asymmetric update scheduling generating uncompensated graph distance deficits and metric vacuum scars over finite timescales.\label{fig:vacuum_scars}](figures/scheduler-vacuum-scars.png){width=85%}
+![Asymmetric update scheduling generating uncompensated graph distance deficits and metric vacuum scars over finite timescales.](figures/scheduler-vacuum-scars.png)
 
 In general relativity, a region of space that is evacuated of matter returns to a unique vacuum solution (e.g., Minkowski or Schwarzschild, depending on global boundary conditions and conserved charges, governed by Birkhoff's theorem). In discrete hypergraphs, regions undergoing intense local computation accumulate intermediate edge rewrites. Lacking a global clock to normalize graph growth, the evacuated region retains persistent topological deficits, violating diffeomorphism invariance and the equivalence principle over finite timescales. Unlike Lattice Gauge Theory or Causal Dynamical Triangulations (CDT)—where continuum Lorentz symmetry is recovered in the infrared via a path-integral action $e^{-S}$ tuned to a second-order critical point—asynchronous graph rewriting possesses no Hamiltonian action, partition function, or restoring potential. Consequently, local scheduler desynchronizations are secularly cumulative rather than mean-zero Gaussian fluctuations.
 
@@ -429,64 +441,46 @@ The C++20 engine verified all $M = 8.9476 \times 10^{23}$ paths at $N=8$ in **51
 
 To extend our empirical verification beyond the memory ceiling of full dynamic programming tables, the C++20 engine executed high-dimensional parallel Monte Carlo percolation sampling across 600,000 independent trajectories for $N = 9 \dots 16$ at a sustained throughput exceeding **$3.1 \times 10^6$ trajectories/second**.
 
-While Table \ref{tab:matrix2} provides the exact numerical baseline for monotonic edge contraction, Theorem 5.2 proves that any generic hypergraph substitution rule $H_1 \to H_2$ preserves the same asymptotic branching lower bound $\Theta(N^{v_1})$ and super-quadratic trajectory volume $\Theta(N^2 \log N)$ via Lovász homomorphism densities. The numerical simulation serves as the minimal, exactly solvable instance of this universal phase-space proliferation.
+While Table 1 provides the exact numerical baseline for monotonic edge contraction, Theorem 5.2 proves that any generic hypergraph substitution rule $H_1 \to H_2$ preserves the same asymptotic branching lower bound $\Theta(N^{v_1})$ and super-quadratic trajectory volume $\Theta(N^2 \log N)$ via Lovász homomorphism densities. The numerical simulation serves as the minimal, exactly solvable instance of this universal phase-space proliferation.
 
-The exact enumeration results across $N=5 \dots 8$ are summarized in Table \ref{tab:matrix2}, and the high-dimensional sampling data across $N=9 \dots 16$ are recorded in Table \ref{tab:high_dim_sampling}.
+The exact enumeration results across $N=5 \dots 8$ are summarized in Table 1, and the high-dimensional sampling data across $N=9 \dots 16$ are recorded in Table 2.
 
-\begin{table}[ht]
-\small
-\centering
-\caption{Multi-Scale Multiway Trajectory Evaluation ($k = 3$, $N = 5 \dots 8$, Exact C++20 Enumeration). $M$ is the number of distinct labeled chronological derivation pathways; $|\Omega|$ is the number of distinct unlabeled physical graph isomorphism classes reached; Reachability is the dynamically accessible fraction of all possible unlabeled graphs on $N$ vertices ($|\Omega| / |\mathcal{G}_N|$, OEIS A000088).}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{ccccccccc}
-\hline
-Scale ($N$) & Trajectory Paths ($M$) & Classes ($|\Omega|$) & $H_{\text{process}}$ (bits) & $H_{\text{macro}}$ (bits) & $\Delta H$ (bits) & $P(\text{Connected})$ & $P(\text{Regular})$ & Reachability \\ \hline
-5 & 1,620 & 4 & 10.6618 & 1.6416 & 9.0201 & $9.2593 \times 10^{-1}$ & $0.0000$ & 11.76\% (4 / 34) \\
-6 & 133,797,600 & 29 & 26.9955 & 4.0145 & 22.9809 & $6.3799 \times 10^{-1}$ & $3.7669 \times 10^{-4}$ & 18.59\% (29 / 156) \\
-7 & $9.4548 \times 10^{14}$ & 102 & 49.7480 & 5.5155 & 44.2326 & $3.5861 \times 10^{-1}$ & $0.0000$ & 9.77\% (102 / 1,044) \\
-8 & $8.9476 \times 10^{23}$ & 355 & 79.5658 & 6.6960 & 72.8698 & $1.7731 \times 10^{-1}$ & $4.5259 \times 10^{-7}$ & 2.88\% (355 / 12,346) \\ \hline
-\end{tabular}%
-}
-\label{tab:matrix2}
-\end{table}
+**Table 1: Multi-Scale Multiway Trajectory Evaluation ($k = 3$, $N = 5 \dots 8$, Exact C++20 Enumeration).** $M$ is the number of distinct labeled chronological derivation pathways; $|\Omega|$ is the number of distinct unlabeled physical graph isomorphism classes reached; Reachability is the dynamically accessible fraction of all possible unlabeled graphs on $N$ vertices ($|\Omega| / |\mathcal{G}_N|$, OEIS A000088).
 
-\begin{table}[ht]
-\small
-\centering
-\caption{High-Dimensional Percolation and Topology Collapse Matrix ($k = 3$, $N = 9 \dots 16$, Monte Carlo $100,000$ runs per scale, C++20 Bitset Engine).}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{ccccccc}
-\hline
-Scale ($N$) & Target Degree ($k$) & Trajectories ($M_{\text{sample}}$) & Mean Path Length & $P(\text{Connected})$ & $P(\text{Regular})$ & Mean Degree Variance \\ \hline
-9 & 3 & 100,000 & 25.80 & $6.7822 \times 10^{-1}$ & $0.0000$ & 0.6442 \\
-10 & 3 & 100,000 & 33.81 & $6.1690 \times 10^{-1}$ & $1.5000 \times 10^{-4}$ & 0.6671 \\
-11 & 3 & 100,000 & 42.79 & $5.6408 \times 10^{-1}$ & $0.0000$ & 0.6834 \\
-12 & 3 & 100,000 & 52.78 & $5.1542 \times 10^{-1}$ & $0.0000$ & 0.6960 \\
-14 & 3 & 100,000 & 75.74 & $4.2914 \times 10^{-1}$ & $0.0000$ & 0.7174 \\
-16 & 3 & 100,000 & 102.70 & $3.5920 \times 10^{-1}$ & $0.0000$ & 0.7328 \\ \hline
-\end{tabular}%
-}
-\label{tab:high_dim_sampling}
-\end{table}
+| Scale ($N$) | Trajectory Paths ($M$) | Classes ($|\Omega|$) | $H_{\text{process}}$ (bits) | $H_{\text{macro}}$ (bits) | $\Delta H$ (bits) | $P(\text{Connected})$ | $P(\text{Regular})$ | Reachability |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 5 | 1,620 | 4 | 10.6618 | 1.6416 | 9.0201 | $9.2593 \times 10^{-1}$ | $0.0000$ | 11.76% (4 / 34) |
+| 6 | 133,797,600 | 29 | 26.9955 | 4.0145 | 22.9809 | $6.3799 \times 10^{-1}$ | $3.7669 \times 10^{-4}$ | 18.59% (29 / 156) |
+| 7 | $9.4548 \times 10^{14}$ | 102 | 49.7480 | 5.5155 | 44.2326 | $3.5861 \times 10^{-1}$ | $0.0000$ | 9.77% (102 / 1,044) |
+| 8 | $8.9476 \times 10^{23}$ | 355 | 79.5658 | 6.6960 | 72.8698 | $1.7731 \times 10^{-1}$ | $4.5259 \times 10^{-7}$ | 2.88% (355 / 12,346) |
 
-\begin{table}[ht]
-\small
-\centering
-\caption{Multiway Branching Under Wolfram Local Hypergraph Substitution Rules ($K_3, K_4$ Substrates)}
-\begin{tabular}{cccccc}
-\hline
-\textbf{Rule Type} & \textbf{Substrate} & \textbf{Step ($t$)} & \textbf{Input States} & \textbf{Multiway Branches ($b_t$)} & \textbf{Child Macrostates} \\ \hline
-Wolfram 2-in 4-out & $K_3$ & 1 & 1 & 3 & 1 \\
-(Expansion: $\Delta v = +1$) & & 2 & 1 & 15 & 3 \\
-& & 3 & 3 & 114 & 11 \\ \hline
-Wolfram 2-in 4-out & $K_4$ & 1 & 1 & 12 & 1 \\
-(Expansion: $\Delta v = +1$) & & 2 & 1 & 156 & 5 \\ \hline
-Wolfram 2-in 1-out & $K_4$ & 1 & 1 & 12 & 1 \\
-(Pruning: $\Delta e = -1$) & & 2 & 1 & 60 & 3 \\
-& & 3 & 3 & 72 & 2 \\ \hline
-\end{tabular}
-\label{tab:wolfram_rules_branching}
-\end{table}
+---
+
+**Table 2: High-Dimensional Percolation and Topology Collapse Matrix ($k = 3$, $N = 9 \dots 16$, Monte Carlo $100,000$ runs per scale, C++20 Bitset Engine).**
+
+| Scale ($N$) | Target Degree ($k$) | Trajectories ($M_{\text{sample}}$) | Mean Path Length | $P(\text{Connected})$ | $P(\text{Regular})$ | Mean Degree Variance |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 9 | 3 | 100,000 | 25.80 | $6.7822 \times 10^{-1}$ | $0.0000$ | 0.6442 |
+| 10 | 3 | 100,000 | 33.81 | $6.1690 \times 10^{-1}$ | $1.5000 \times 10^{-4}$ | 0.6671 |
+| 11 | 3 | 100,000 | 42.79 | $5.6408 \times 10^{-1}$ | $0.0000$ | 0.6834 |
+| 12 | 3 | 100,000 | 52.78 | $5.1542 \times 10^{-1}$ | $0.0000$ | 0.6960 |
+| 14 | 3 | 100,000 | 75.74 | $4.2914 \times 10^{-1}$ | $0.0000$ | 0.7174 |
+| 16 | 3 | 100,000 | 102.70 | $3.5920 \times 10^{-1}$ | $0.0000$ | 0.7328 |
+
+---
+
+**Table 3: Multiway Branching Under Wolfram Local Hypergraph Substitution Rules ($K_3, K_4$ Substrates)**
+
+| Rule Type | Substrate | Step ($t$) | Input States | Multiway Branches ($b_t$) | Child Macrostates |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Wolfram 2-in 4-out (Expansion: $\Delta v = +1$) | $K_3$ | 1 | 1 | 3 | 1 |
+| | | 2 | 1 | 15 | 3 |
+| | | 3 | 3 | 114 | 11 |
+| Wolfram 2-in 4-out (Expansion: $\Delta v = +1$) | $K_4$ | 1 | 1 | 12 | 1 |
+| | | 2 | 1 | 156 | 5 |
+| Wolfram 2-in 1-out (Pruning: $\Delta e = -1$) | $K_4$ | 1 | 1 | 12 | 1 |
+| | | 2 | 1 | 60 | 3 |
+| | | 3 | 3 | 72 | 2 |
 
 #### Topological Invariants and Regularity Collapse
 
@@ -494,32 +488,26 @@ Wolfram 2-in 1-out & $K_4$ & 1 & 1 & 12 & 1 \\
 * **Regularity Collapse:** Where regular configurations are permitted ($N = 6, 8$), $P(\text{Regular})$ collapses from $3.7669 \times 10^{-4}$ at $N=6$ to $4.5259 \times 10^{-7}$ at $N=8$.
 * **Global Connectivity Collapse:** $P(\text{Connected})$ falls monotonically from 92.59% at $N=5$ to 17.73% at $N=8$.
 
-The scaling of process entropy $H_{\text{process}}$, macrostate entropy $H_{\text{macro}}$, and the Landauer gap $\Delta H$ is illustrated in Figure \ref{fig:entropy_scaling}.
+The scaling of process entropy $H_{\text{process}}$, macrostate entropy $H_{\text{macro}}$, and the Landauer gap $\Delta H$ is illustrated in Figure 4.
 
-![Scaling of process entropy, macrostate entropy, and the Landauer entropy gap as a function of vertex scale $N$.\label{fig:entropy_scaling}](figures/entropy-scaling.png){width=80%}
+![Scaling of process entropy, macrostate entropy, and the Landauer entropy gap as a function of vertex scale $N$.](figures/entropy-scaling.png)
 
 #### Macrostate Distribution and Island Topologies
 Sorting the terminal registry by path weight reveals that path volume concentrates on **island topologies**—graphs consisting of a small connected core and multiple isolated vertices ($\deg(v) = 0$):
 
-\begin{table}[ht]
-\small
-\centering
-\caption{Dominant Terminal Macrostate Topologies ($N = 8, k = 3$)}
-\begin{tabular}{cccl}
-\hline
-Rank & Representation & Degree Sequence & Topological Structure \\ \hline
-1 & 4.41\% & `[3, 3, 3, 2, 1, 0, 0, 0]` & 5-node core + 3 isolated vertices \\
-2 & 4.04\% & `[3, 3, 3, 2, 1, 1, 1, 0]` & 7-node core + 1 isolated vertex \\
-3 & 3.67\% & `[3, 3, 2, 2, 1, 1, 0, 0]` & 6-node core + 2 isolated vertices \\
-4 & 3.19\% & `[3, 3, 3, 2, 2, 1, 0, 0]` & 6-node core + 2 isolated vertices \\
-5 & 2.98\% & `[3, 3, 2, 2, 2, 1, 1, 0]` & 7-node core + 1 isolated vertex \\ \hline
-\end{tabular}
-\label{tab:dominant_topologies}
-\end{table}
+**Table 4: Dominant Terminal Macrostate Topologies ($N = 8, k = 3$)**
 
-The path-frequency distribution across all dominant terminal macrostates is plotted in Figure \ref{fig:terminal_state_dist}.
+| Rank | Representation | Degree Sequence | Topological Structure |
+| :---: | :---: | :---: | :--- |
+| 1 | 4.41% | `[3, 3, 3, 2, 1, 0, 0, 0]` | 5-node core + 3 isolated vertices |
+| 2 | 4.04% | `[3, 3, 3, 2, 1, 1, 1, 0]` | 7-node core + 1 isolated vertex |
+| 3 | 3.67% | `[3, 3, 2, 2, 1, 1, 0, 0]` | 6-node core + 2 isolated vertices |
+| 4 | 3.19% | `[3, 3, 3, 2, 2, 1, 0, 0]` | 6-node core + 2 isolated vertices |
+| 5 | 2.98% | `[3, 3, 2, 2, 2, 1, 1, 0]` | 7-node core + 1 isolated vertex |
 
-![Path-frequency distribution of the top 10 dominant terminal macrostates at $N=8, k=3$.\label{fig:terminal_state_dist}](figures/terminal-state-distribution.png){width=80%}
+The path-frequency distribution across all dominant terminal macrostates is plotted in Figure 5.
+
+![Path-frequency distribution of the top 10 dominant terminal macrostates at $N=8, k=3$.](figures/terminal-state-distribution.png)
 
 ---
 
@@ -539,24 +527,18 @@ cannot be simultaneously satisfied in a closed pre-geometric ontology.
 
 To contextualize the computational scaling across both exact full-state dynamic programming and high-throughput percolation sampling, we evaluate the exact combinatorial complexity requirements across ascending vertex scales ($N = 8 \dots 1000$).
 
-\begin{table}[ht]
-\small
-\centering
-\caption{Combinatorial Phase-Space Scaling Across Vertex Regimes ($k = 3$). $M_{\text{base}} = E_0! / E_f!$ is the analytical falling factorial baseline (Section 5.3); $|\mathcal{G}_N|$ is the total unlabelled graph space (OEIS A000088); $N!$ is the canonical permutation cost per state.}
-\begin{tabular}{ccccc}
-\hline
-\textbf{Scale ($N$)} & \textbf{Edges ($E_0$)} & \textbf{Unlabelled Classes ($|\mathcal{G}_N|$)} & \textbf{Baseline Trajectories ($M_{\text{base}}$)} & \textbf{Canonical Cost ($N!$)} \\ \hline
-8 & 28 & 12,346 & $6.37 \times 10^{20}$ & 40,320 \\
-10 & 45 & $1.20 \times 10^7$ & $9.14 \times 10^{43}$ & $3.63 \times 10^6$ \\
-12 & 66 & $1.65 \times 10^{11}$ & $8.44 \times 10^{76}$ & $4.79 \times 10^8$ \\
-16 & 120 & $\sim 1.2 \times 10^{23}$ & $1.09 \times 10^{175}$ & $2.09 \times 10^{13}$ \\
-20 & 190 & $\sim 3.6 \times 10^{41}$ & $2.45 \times 10^{320}$ & $2.43 \times 10^{18}$ \\
-50 & 1,225 & $\sim 10^{300}$ & $\sim 10^{3400}$ & $3.04 \times 10^{64}$ \\
-100 & 4,950 & $\sim 10^{1332}$ & $\sim 10^{16100}$ & $9.33 \times 10^{157}$ \\
-1,000 & 499,500 & $\sim 10^{150000}$ & $\sim 10^{2713000}$ & $\sim 10^{2568}$ \\ \hline
-\end{tabular}
-\label{tab:scaling_limits}
-\end{table}
+**Table 5: Combinatorial Phase-Space Scaling Across Vertex Regimes ($k = 3$).** $M_{\text{base}} = E_0! / E_f!$ is the analytical falling factorial baseline (Section 5.3); $|\mathcal{G}_N|$ is the total unlabelled graph space (OEIS A000088); $N!$ is the canonical permutation cost per state.
+
+| Scale ($N$) | Edges ($E_0$) | Unlabelled Classes ($|\mathcal{G}_N|$) | Baseline Trajectories ($M_{\text{base}}$) | Canonical Cost ($N!$) |
+| :---: | :---: | :---: | :---: | :---: |
+| 8 | 28 | 12,346 | $6.37 \times 10^{20}$ | 40,320 |
+| 10 | 45 | $1.20 \times 10^7$ | $9.14 \times 10^{43}$ | $3.63 \times 10^6$ |
+| 12 | 66 | $1.65 \times 10^{11}$ | $8.44 \times 10^{76}$ | $4.79 \times 10^8$ |
+| 16 | 120 | $\sim 1.2 \times 10^{23}$ | $1.09 \times 10^{175}$ | $2.09 \times 10^{13}$ |
+| 20 | 190 | $\sim 3.6 \times 10^{41}$ | $2.45 \times 10^{320}$ | $2.43 \times 10^{18}$ |
+| 50 | 1,225 | $\sim 10^{300}$ | $\sim 10^{3400}$ | $3.04 \times 10^{64}$ |
+| 100 | 4,950 | $\sim 10^{1332}$ | $\sim 10^{16100}$ | $9.33 \times 10^{157}$ |
+| 1,000 | 499,500 | $\sim 10^{150000}$ | $\sim 10^{2713000}$ | $\sim 10^{2568}$ |
 
 #### Exact Dynamic Programming vs. Parallel Monte Carlo Regimes
 In analyzing pre-geometric state spaces, two distinct computational regimes must be delineated:
@@ -569,7 +551,7 @@ In analyzing pre-geometric state spaces, two distinct computational regimes must
 2. **Parallel Monte Carlo Percolation Sampling ($N = 9 \dots 16$):**
    To probe deep dimensional reduction beyond the exact memory barrier of dynamic programming tables, we executed the parallel Monte Carlo percolation sampler within our C++20 engine. By executing random path descents directly on $O(1)$ stack-allocated 64-bit and 128-bit bitsets without storing global layer tables, the engine achieved a sustained sampling throughput exceeding **$3.1 \times 10^6$ trajectories/second** across 12 cores.
    
-   As documented in Table \ref{tab:high_dim_sampling}, our C++20 benchmark runs evaluated $100,000$ independent trajectories per scale from $N=9$ to $N=16$ ($600,000$ total sampled trajectories), empirically confirming the theoretical predictions of subcritical percolation (Section 5.2): $P(\text{Connected})$ falls monotonically from $67.82\%$ at $N=9$ to $35.92\%$ at $N=16$, the regular manifold probability remains strictly suppressed ($P(\text{Regular}) \le 1.5 \times 10^{-4}$ at $N=10$, and $0.0000$ at all $N \ge 11$), and the mean vertex degree variance widens secularly to $\sigma_d^2 = 0.7328$.
+   As documented in Table 2, our C++20 benchmark runs evaluated $100,000$ independent trajectories per scale from $N=9$ to $N=16$ ($600,000$ total sampled trajectories), empirically confirming the theoretical predictions of subcritical percolation (Section 5.2): $P(\text{Connected})$ falls monotonically from $67.82\%$ at $N=9$ to $35.92\%$ at $N=16$, the regular manifold probability remains strictly suppressed ($P(\text{Regular}) \le 1.5 \times 10^{-4}$ at $N=10$, and $0.0000$ at all $N \ge 11$), and the mean vertex degree variance widens secularly to $\sigma_d^2 = 0.7328$.
 
 #### The Cosmological Physical Barrier ($N \ge 16$ Full Enumeration)
 Beyond $N=12$, exact layer-by-layer multiway trajectory enumeration crosses absolute physical boundaries:
@@ -754,9 +736,9 @@ Without a tunable action parameter $\kappa_4^c$ to cancel $S_{\text{config}}$ or
 
 ### 6.2 Topological Defects as Matter vs. Vacuum Instability
 
-In Gorard's framework, elementary particles are identified with localized nonplanar graph defects (subdivisions of Kuratowski minors $K_5$ or $K_{3,3}$, as shown in Figure \ref{fig:gorard_fig14}).
+In Gorard's framework, elementary particles are identified with localized nonplanar graph defects (subdivisions of Kuratowski minors $K_5$ or $K_{3,3}$, as shown in Figure 6).
 
-![Nonplanar graph defects representing localized particle states, replicated from Ref. [4].\label{fig:gorard_fig14}](figures/gorard-figure-14.png){width=65%}
+![Nonplanar graph defects representing localized particle states, replicated from Ref. [4].](figures/gorard-figure-14.png)
 
 However, our path-weighted terminal distribution demonstrates that nonplanar defects and isolated vertices are not rare, localized excitations propagating on a smooth background. Instead, the dynamical probability measure concentrates on nonplanar anomalies and disconnected topologies as a consequence of unguided path-merging. Matter does not emerge as an isolated perturbation; the background spatial geometry is modified by the accumulated entropy of history coarse-graining.
 

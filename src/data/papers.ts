@@ -49,9 +49,9 @@ export const papers: PaperRecord[] = [
   {
     id: 'vacuum-phase',
     slug: '/papers/vacuum-phase',
-    type: 'working-paper',
-    typeLabel: 'WIP Draft',
-    version: 'v1.0.0 (WIP)',
+    type: 'preprint',
+    typeLabel: 'Preprint / Research Article',
+    version: 'v1.0.0',
     date: 'August 24, 2026',
     dateISO: '2026-08-24',
     isOpenAccess: true,
@@ -62,28 +62,43 @@ export const papers: PaperRecord[] = [
     orcid: '0009-0006-2441-3282',
     category: 'Statistical Mechanics & Discrete Gravity',
     subMeta: 'Category: Statistical Mechanics & Discrete Gravity',
-    abstract: 'We present a computational framework based on a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. The unperturbed vacuum is uniquely deduced as a regular Bethe fragment possessing bipartite pre-geometric symmetry, where a localized parity-breaking instanton triggers an initial parallel burst that nucleates geometry. By establishing a stabilizer codespace over causal diamonds, we construct a fault-tolerant structure where physical updates correspond to logical operations. Dynamic evolution on timestamped directed acyclic graphs is driven by a comonadic self-observation and stochastic rewrite constructor operating under information-theoretic principles. Rapid single-cycle decay and boundary leaf dissipation establish an analytical nucleation barrier, while multi-scale simulations from N = 10 to 10,000 demonstrate that boundary quenching diminishes with volume to sustain a stable quasi-stationary active phase. Finally, we prove the geometric well-posedness and convergence of the discrete graph sequence to a smooth, globally hyperbolic four-dimensional Lorentzian manifold under the Lorentzian Gromov-Hausdorff-Prokhorov metric, establishing that macroscopic spacetime and physical conservation laws emerge naturally from the thermodynamic limits of information processing.',
+    abstract: 'We present a computational framework based on a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. The unperturbed vacuum is uniquely deduced as a regular Bethe fragment possessing bipartite pre-geometric symmetry, where a localized parity-breaking instanton triggers an initial parallel burst that nucleates geometry. Axiomatic constraints are represented as commuting occupancy projectors on directed-edge configurations, so accepted rewrites remain inside the kinematically allowed set. Dynamic evolution on timestamped directed acyclic graphs is driven by a comonadic self-observation and stochastic rewrite constructor operating under information-theoretic principles. Rapid single-cycle decay and boundary leaf dissipation establish an analytical nucleation barrier, while multi-scale simulations from N = 10 to 10,000 demonstrate that boundary quenching diminishes with volume to sustain a stable quasi-stationary active phase. Together, these results establish the discrete non-equilibrium statistical mechanics of the causal vacuum, providing the foundational substrate and scaling hypotheses required for continuum geometric reconstruction.',
     verifiedBadges: [
-      'WIP Draft',
-      '34 Machine-Checked Lean 4 Theorems (0 Axioms)',
-      '25 Dedicated Pytest Checks (8 Modules)'
+      'Preprint / Research Article',
+      '48 Active Lean 4 Theorems (61 Declarations, 0 Axioms)',
+      '25 Dedicated Pytest Checks (8 Modules)',
+      'Full Non-Equilibrium Phase Diagram & Replication Bundle'
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/vacuum-phase', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '774 KB' },
-      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '112 KB' }
+      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '806 KB' },
+      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '140 KB' },
+      { label: 'Supplement (Online)', href: '/papers/vacuum-phase/supplement', icon: '📑' },
+      { label: 'Supplement (MD)', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md', isDownload: true, icon: '📋', size: '112 KB' }
     ],
     companionAssets: [
+      {
+        id: 'vacuum-phase-supplement-asset',
+        name: 'Technical & Computational Supplement (Appendices A–C)',
+        type: 'proof',
+        typeLabel: 'Technical Supplement',
+        description: 'Complete formal Lean 4 kernel specifications (Appendix A, 48 active verified theorems), C++20 multi-scale simulation engine (Appendix B), and standalone Python reference implementation (Appendix C).',
+        href: '/papers/vacuum-phase/supplement',
+        icon: '📑',
+        badge: 'Online & Downloadable',
+        size: '112 KB'
+      },
       {
         id: 'vacuum-phase-lean',
         name: 'VacuumPhase.lean (Lean 4 Core Kernel)',
         type: 'proof',
         typeLabel: 'Formal Verification Kernel',
-        description: 'Complete 34-theorem machine-checked formal proof suite in Lean 4 Core with zero unproven axioms (0 sorry).',
+        description: 'Complete 48-theorem machine-checked formal proof suite in Lean 4 Core across 61 declarations with zero unproven axioms (0 sorry).',
         href: 'pathname:///papers/vacuum-phase/code/VacuumPhase.lean',
         isDownload: true,
         icon: '📐',
-        badge: '0 Axioms / Lean 4.33.1+'
+        badge: '48 Theorems / Lean 4.33.1+',
+        size: '46 KB'
       },
       {
         id: 'vacuum-phase-replication-zip',
@@ -94,8 +109,8 @@ export const papers: PaperRecord[] = [
         href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip',
         isDownload: true,
         icon: '📦',
-        badge: '92 KB ZIP',
-        size: '92 KB'
+        badge: '110 KB ZIP',
+        size: '110 KB'
       },
       {
         id: 'vacuum-phase-dataset',

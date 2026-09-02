@@ -2,14 +2,14 @@ import numpy as np
 
 def compute_transition_probability(add_stresses, del_stresses, mu, lambda_cat):
     """Compute the product of local transition probabilities."""
-    p_add = np.prod([np.exp(-mu * s) for s in add_stresses])
-    p_del = np.prod([0.5 * (1.0 + lambda_cat * s) for s in del_stresses])
+    p_add = np.prod([np.exp(-mu * s) for s in add_stresses]) if add_stresses else 1.0
+    p_del = np.prod([min(1.0, 0.5 * (1.0 + lambda_cat * s) * np.exp(-mu * s)) for s in del_stresses]) if del_stresses else 1.0
     return p_add * p_del
 
 def compute_kinematic_action(add_stresses, del_stresses, mu, lambda_cat):
     """Compute the discrete variation in kinematic action."""
-    action_add = np.sum([mu * s for s in add_stresses])
-    action_del = np.sum([-np.log(0.5 * (1.0 + lambda_cat * s)) for s in del_stresses])
+    action_add = np.sum([mu * s for s in add_stresses]) if add_stresses else 0.0
+    action_del = np.sum([-np.log(min(1.0, 0.5 * (1.0 + lambda_cat * s) * np.exp(-mu * s))) for s in del_stresses]) if del_stresses else 0.0
     return action_add + action_del
 
 print("Euclidean Action Integration Verification")

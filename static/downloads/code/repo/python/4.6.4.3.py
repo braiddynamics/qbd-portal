@@ -15,26 +15,18 @@ np.random.seed(42)
 entropy_production = []
 
 for _ in range(n_trials):
-    # Provisional distribution: ~50% valid path A, ~25% valid path B, ~25% invalid path C
-    # Small Gaussian noise simulates realistic branching fluctuations
+    # Provisional distribution over 3 candidate outcomes
     noise = np.random.normal(0, 0.005, 2)
     p_A = max(0.0, 0.50 + noise[0])
     p_B = max(0.0, 0.25 + noise[1])
     p_C = max(0.0, 1.0 - p_A - p_B)     # Ensure non-negative and sum = 1
-    
+
     provisional = np.array([p_A, p_B, p_C])
     S_provisional = shannon_entropy(provisional)
-    
-    # Projection: discard invalid path C, renormalize valid paths
-    valid_mass = p_A + p_B
-    if valid_mass > 0:
-        projected = np.array([p_A / valid_mass, p_B / valid_mass, 0.0])
-    else:
-        projected = np.array([1.0, 0.0, 0.0])  # Degenerate fallback
-    
-    # Sampling: collapse to single outcome → entropy = 0
+
+    # Selection: collapse to single outcome → entropy = 0
     S_final = 0.0
-    
+
     # Entropy production = information lost to the environment
     delta_S = S_provisional - S_final
     entropy_production.append(delta_S)

@@ -417,7 +417,7 @@ The kinematic admissibility of any transformation $G \to G'$ involving the addit
 
 Geometric Constructibility operates as a local structural filter over pre-geometric transformations. By restricting loop closures exclusively to **3-cycles**, the positive clause prevents arbitrary high-dimensional shortcuts across the causal graph. This topological restriction forces elementary spatial area to assemble from indivisible triangular tiles, establishing the foundational discrete lattice required for an emergent **2D** simplicial manifold.
 
-Simultaneously, the negative clause enforces the Principle of Unique Causality by barring redundant return paths of length **2** or less. This negative constraint preserves informational parsimony across local neighborhoods, preventing causal regions from collapsing into hyper-dense or trivial cliques. Together, these complementary rules stabilize the vacuum state, bounding local connectivity and ensuring that spatial distance and locality arise as well-defined properties of the underlying graph substrate.
+Simultaneously, the negative clause enforces the Principle of Unique Causality by barring redundant return paths of length **2** or less. This negative constraint preserves informational parsimony across local neighborhoods, preventing causal regions from collapsing into hyper-dense shortcut clusters. Together, these complementary rules stabilize the vacuum state, bounding local connectivity and ensuring that spatial distance and locality arise as well-defined properties of the underlying graph substrate.
 
 ---
 
@@ -1124,7 +1124,7 @@ Q.E.D.
 :::info[**Thermodynamic Regulation of Graph Density via Cycle Dissolution**]
 :::
 
-Reduction via deletion describes the physical mechanism by which edge removal systematically decreases local cycle density across the network. In the absence of an active pruning operation, the unconstrained generative drive of edge addition would relentlessly increase relational connectivity. This structural runaway would quickly collapse the causal graph into a hyper-dense, highly connected clique that completely lacks spatial locality and meaningful metric distance.
+Reduction via deletion describes the physical mechanism by which edge removal systematically decreases local cycle density across the network. In the absence of an active pruning operation, the unconstrained generative drive of edge addition would relentlessly increase relational connectivity. This structural runaway would quickly collapse the causal graph into a hyper-dense, all-to-all connected network that completely lacks spatial locality and meaningful metric distance.
 
 Edge deletion operates as the thermodynamic cooling agent of the pre-geometric vacuum, selectively dissolving redundant relational connections to regulate graph dimensionality. By counteracting generative expansion, deletion preserves sparse connectivity patterns and maintains low-dimensional manifold structures near critical point equilibria. This essential balancing mechanism ensures that the emergent spacetime fabric retains well-defined spatial locality, finite informational capacity, and stable physical coordinates across all macroscopic scales.
 
@@ -2270,7 +2270,9 @@ Q.E.D.
 
 The structural decoupling between spatial triangulation and causal history resolves a fundamental tension in discrete quantum gravity. In Quantum Braid Dynamics, space is constructed from oriented **3-cycles** that tile the graph into simplicial 2-complexes, endowing the substrate with metric area and discrete curvature. However, because edge creation events are assigned discrete, monotonically advancing timestamps $H(e) \in \mathbb{N}_0$, spatial closed loops remain purely relational boundaries that do not circulate causal influence through historical time.
 
-If spatial loops were permitted to circulate influence across non-increasing timestamps, the causal substrate would degenerate into closed timelike curves, destroying the well-founded partial order of history. Enforcing strict chronological monotonicity ensures that the emergent spacetime satisfies discrete global hyperbolicity. While local constructibility rules (Axioms 1 and 2) govern the formation of spatial simplices, the global transitivity of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> protects the timeline against large-scale acausal reconvergence, securing a consistent Lorentzian background for matter and gauge interactions.
+At the cosmological origin ($t=0$), the pre-geometric Bethe tree represents an instantaneous spatial leaf where all constituent edges share the ground-state timestamp $H=0$ (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />). This timestamp degeneracy ensures that tree 2-paths are not strictly monotone under historical accumulation ($0 \not< 0$). Consequently, the Acyclic Pre-Check `pre_check_aec` permits the deterministic first-tick parallel burst to nucleate spatial 3-cycles across unperturbed branches (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />) without creating causal closed loops.
+
+If spatial loops were permitted to circulate influence across monotonically increasing historical timestamps, the causal substrate would degenerate into closed timelike curves, destroying the well-founded partial order of history. Enforcing strict chronological monotonicity on causal paths ensures that the emergent spacetime satisfies discrete global hyperbolicity. While local constructibility rules (Axioms 1 and 2) govern the formation of spatial simplices, the global transitivity of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> protects the timeline against large-scale acausal reconvergence, securing a consistent Lorentzian background for matter and gauge interactions.
 
 ---
 
@@ -2388,6 +2390,8 @@ The condition of **Asymmetry** ($\neg(v \le u)$ if $u \le v$) extends this prohi
 :::
 
 The operationalization of Axiom 3 within the Universal Constructor establishes a formal bridge between the abstract definition of Acyclic Effective Causality and its computational realization on the discrete substrate. The reference specification (`pre_check_aec_reference`) translates the four statutory constraints of the axiom directly into sequential verification logic: establishing the local horizon cutoff $L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3$, instantiating a tentative edge $(u, v)$ with creation coordinate $H_{\text{new}}$, testing all mediated reverse paths ($v \to \dots \to u$) for strict timestamp monotonicity via `is_path_monotone`, and executing a state rollback in a protected block. This reference procedure defines the exact semantic criteria required to prevent closed timelike curves.
+
+Crucially, `is_path_monotone` requires strictly increasing creation timestamps along intermediate transitions ($H(p_i, p_{i+1}) < H(p_{i+1}, p_{i+2})$). Edges belonging to a common spatial leaf (such as the initial pre-geometric Bethe tree $G_0$, where all edges share $H=0$ per **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />) fail strict monotonicity ($0 \not< 0$). The verification engine correctly discriminates between simultaneous spatial simplices (which are permitted to close in $G_{\text{space}}$) and chronologically advancing causal channels (which are strictly censored against closed loops).
 
 To execute this specification within Planck-scale update cycles without combinatorial path enumeration overhead, the Universal Constructor deploys a forward monotonic Breadth-First Search (`pre_check_aec`). Rather than exploring all topological simple paths post-hoc, the operational engine advances a causal wavefront from vertex $v$, pruning non-increasing timestamp transitions ($H(e) \le H_{\text{prev}}$) dynamically at each edge traversal. Memoizing visited states as vertex-timestamp tuples $(w, H)$ restricts the search to physically active causal channels in polynomial time $\mathcal{O}(|V| + |E| \cdot \Delta H)$, ensuring exact decision equivalence with the reference specification while guaranteeing thermodynamic stability.
 
@@ -3007,7 +3011,7 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 Bollobas presents a classic and detailed monograph on the theory of random graphs, focusing on the probabilistic methods used to study the properties of graphs generated by random processes. He covers connectivity, path lengths, chromatic numbers, and the threshold functions that govern the appearance of specific subgraphs.
 
 **Relevance to QBD:**
-This reference is integral to the random graph audits conducted in Chapter 5. To prove that the vacuum graph remains sparse and does not collapse into a densely connected clique, we must analyze the threshold behavior of its local connections. Bollobas's probabilistic bounds provide the disciplined apparatus required to analyze the stability of the vacuum against runaway graph growth.
+This reference is integral to the random graph audits conducted in Chapter 5. To prove that the vacuum graph remains sparse and does not undergo runaway densification, we must analyze the threshold behavior of its local connections. Bollobas's probabilistic bounds provide the disciplined apparatus required to analyze the stability of the vacuum against runaway graph growth.
 
 ---
 
