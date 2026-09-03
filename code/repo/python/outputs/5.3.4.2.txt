@@ -1,0 +1,13 @@
+Constitutive Analytical Priors Verification
+=================================================================
+Parameter          | Exact Formulation        | Numerical Value
+-----------------------------------------------------------------
+T_c (Crit Temp)    | ln(2)                    | 0.693147       
+mu_0 (Friction)    | 1 / sqrt(2*pi)           | 0.398942       
+lambda_0 (Catalysis) | e - 1                    | 1.718282       
+eps_geo (Energy)   | ln(2) / 3                | 0.231049       
+Lambda (Drive)     | 2^(-6)                   | 0.015625       
+rho_c (Barrier)    | 1 / (24 - 6*e)           | 0.130034       
+mu_crit (Bifurcation) | (9 - 3*lambda)^2 / 108   | 0.136900       
+=================================================================
+All constitutive priors confirmed within Region of Physical Viability.

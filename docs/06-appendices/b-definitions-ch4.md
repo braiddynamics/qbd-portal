@@ -2941,3 +2941,102 @@ Q.E.D.
 Section 4.6.6 formalizes the properties of the QBD proof regarding emergent dynamics.
 
 ---
+
+### 4.6.7 Type-Theoretic Validation via Lean 4 Core {#4.6.7}
+
+:::note[**Lean 4 Encoding of Move Disjointness and Addition Confluence**]
+:::
+
+Type-theoretic certification of the move disjointness and concurrent addition confluence established in **Emergent Dynamics** <Ref id="4.6.6" label="§4.6.6" /> proceeds via the following verification strategy:
+
+1.  **Move Grammar Encoding:** Edge subsets are represented as predicates over directed vertex pairs `Edge V → Prop`. An addition proposal set $A_{\mathrm{edges}}$ satisfies `IsLegalAdditionSet E A_edges` if every proposed edge is absent from the existing topology $E$. A deletion set $D$ satisfies `IsLegalDeletionSet E D` if every candidate deletion belongs to $E$.
+2.  **Move Disjointness and Race-Free Invariance:** The Lean theorem `dynamic_move_disjointness` formally proves that $A_{\mathrm{edges}} \cap D = \emptyset$, ruling out conflicting update requests on identical edges. Theorem `dynamic_race_free_invariance` proves that newly added edges are guaranteed to survive deletions occurring within the identical tick.
+3.  **Step 3 Confluence Algebra:** The operator `merge_edge` accumulates additions into the intermediate graph. Theorems `parallel_addition_commutes` and `parallel_addition_idempotent` prove that concurrent additions commute in arbitrary order and fold duplicate proposals idempotently, ensuring deterministic state progression.
+
+```lean
+def Edge (V : Type) := V × V
+
+def GraphEdges (V : Type) := Edge V → Prop
+
+def IsLegalAdditionSet {V : Type} (E A_edges : Edge V → Prop) : Prop :=
+  ∀ e, A_edges e → ¬ (E e)
+
+def IsLegalDeletionSet {V : Type} (E D : Edge V → Prop) : Prop :=
+  ∀ e, D e → E e
+
+/--
+THEOREM 1: Dynamic Move Disjointness
+Proves that the set of accepted additions and accepted deletions generated
+within the same parallel tick are strictly disjoint: A_edges ∩ D = ∅.
+-/
+theorem dynamic_move_disjointness {V : Type}
+    (E A_edges D : Edge V → Prop)
+    (hA : IsLegalAdditionSet E A_edges)
+    (hD : IsLegalDeletionSet E D) :
+    ∀ e, ¬ (A_edges e ∧ D e) := by
+  intro e ⟨heA, heD⟩
+  have h_not_in_E : ¬ (E e) := hA e heA
+  have h_in_E : E e := hD e heD
+  exact h_not_in_E h_in_E
+
+/--
+THEOREM 2: Deterministic Race-Free Invariance
+Proves that in the four-step parallel scheduler, every newly added edge
+strictly survives deletion within the same tick.
+-/
+theorem dynamic_race_free_invariance {V : Type}
+    (E A_edges D : Edge V → Prop)
+    (hA : IsLegalAdditionSet E A_edges)
+    (hD : IsLegalDeletionSet E D) :
+    ∀ e, A_edges e → ((E e ∨ A_edges e) ∧ ¬ (D e)) := by
+  intro e heA
+  constructor
+  · exact Or.inr heA
+  · intro heD
+    have h_disjoint := dynamic_move_disjointness E A_edges D hA hD e
+    exact h_disjoint ⟨heA, heD⟩
+
+def merge_edge {V : Type} (E : GraphEdges V) (e : Edge V) : GraphEdges V :=
+  fun x => E x ∨ x = e
+
+/--
+THEOREM 3: Parallel Edge Merging Commutes
+Proves that concurrent edge additions can be accumulated in arbitrary sequence
+without altering the resulting intermediate topology G'.
+-/
+theorem parallel_addition_commutes {V : Type} 
+    (E : GraphEdges V) (e1 e2 : Edge V) :
+    merge_edge (merge_edge E e1) e2 = merge_edge (merge_edge E e2) e1 := by
+  funext x; dsimp [merge_edge]; apply propext
+  constructor
+  · intro h; rcases h with (hE | he1) | he2
+    · exact Or.inl (Or.inl hE)
+    · exact Or.inr he1
+    · exact Or.inl (Or.inr he2)
+  · intro h; rcases h with (hE | he2) | he1
+    · exact Or.inl (Or.inl hE)
+    · exact Or.inr he2
+    · exact Or.inl (Or.inr he1)
+
+/--
+THEOREM 4: Parallel Edge Merging is Idempotent
+Proves that duplicate proposals targeting the same edge fold idempotently.
+-/
+theorem parallel_addition_idempotent {V : Type} 
+    (E : GraphEdges V) (e : Edge V) :
+    merge_edge (merge_edge E e) e = merge_edge E e := by
+  funext x; dsimp [merge_edge]; apply propext
+  constructor
+  · intro h; rcases h with (hE | he1) | he2
+    · exact Or.inl hE
+    · exact Or.inr he1
+    · exact Or.inr he2
+  · intro h; rcases h with hE | he
+    · exact Or.inl (Or.inl hE)
+    · exact Or.inr he
+```
+
+**In Plain English:**  
+Section 4.6.7 formalizes the properties of the QBD validation regarding type-theoretic validation via lean 4 core.
+
+---

@@ -33,8 +33,8 @@ Independent academic manuscripts, formal critiques, and computational replicatio
 The comprehensive theoretical physics treatise *Quantum Braid Dynamics: A Computational Process*:
 
 - [Monograph Web Reader](https://braiddynamics.com/monograph): Full book table of contents and online chapters.
-- [Complete Monograph (Markdown, ~1.15M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.md)
-- [Complete Monograph (Structured JSON, ~1.26M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.json)
+- [Complete Monograph (Markdown, ~1.45M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.md)
+- [Complete Monograph (Structured JSON, ~1.59M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.json)
 - [Individual Chapter Pattern (Markdown)](https://braiddynamics.com/downloads/chapters/chapter_N.md): Replace `N` with chapter number (1 to 25).
 - [Individual Chapter Pattern (JSON)](https://braiddynamics.com/downloads/chapters/chapter_N.json): Replace `N` with chapter number (1 to 25).
 
@@ -48,7 +48,7 @@ The comprehensive theoretical physics treatise *Quantum Braid Dynamics: A Comput
 ---
 
 ## 3. Mathematical Validation & Code
-- [Lean 4 Monograph Proofs Directory](https://braiddynamics.com/downloads/code/repo/lean/): Six machine-checked theorem files.
+- [Lean 4 Monograph Proofs Directory](https://braiddynamics.com/downloads/code/repo/lean/): Ten machine-checked theorem files.
 - [Python Simulation Model](https://braiddynamics.com/downloads/code/model/): NumPy & NetworkX implementation of QBD graph dynamics.
 - [Terminology Glossary (JSON)](https://braiddynamics.com/data/definitions.json): Definitions for all mathematical and physical terms.
 

@@ -1,0 +1,17 @@
+Finite-Fragment Boundary Dissipation and Leaf Shielding
+======================================================================
+Constitutive Bulk Deletion Rate: lambda_0 / 2 = 0.859141
+----------------------------------------------------------------------
+Depth  | Nodes (N)  | Leaves   | Leaf Fraction   | Effective d(G) 
+----------------------------------------------------------------------
+2      | 10         | 6        | 0.6000          | 0.343656       
+3      | 22         | 12       | 0.5455          | 0.390519       
+4      | 46         | 24       | 0.5217          | 0.410893       
+5      | 94         | 48       | 0.5106          | 0.420431       
+6      | 190        | 96       | 0.5053          | 0.425049       
+7      | 382        | 192      | 0.5026          | 0.427321       
+======================================================================
+Nominal Simulation Scale (Depth 5, N = 94):
+  Leaf Fraction    = 0.5106 (~50.0%)
+  Effective d(G)   = 0.420431 (~lambda_0 / 4 = 0.429570)
+Verification Successful: Leaf shielding suppresses boundary dissipation by ~50%.

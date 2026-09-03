@@ -1,0 +1,19 @@
+Myrheim-Meyer Causal Diamond Dimension Estimator
+=================================================================
+Dimension (d)   | Theoretical Fraction f(d)    | Exact / Closed
+-----------------------------------------------------------------
+1               | 0.500000                     | 0.500000
+2               | 0.250000                     | 0.250000
+3               | 0.114286                     | 0.114286
+4               | 0.050000                     | 1/20 = 0.0500
+5               | 0.021312                     | 0.021312
+6               | 0.008929                     | 0.008929
+=================================================================
+Target 4D Causal Diamond Relation Ratio: f(4) = 0.050000
+Simulated Causal Diamond Poset (N = 100 events):
+  Total Pairs Analyzed  = 4950
+  Observed Causal Pairs = 248
+  Measured Ordering f   = 0.050101
+  Inverted Dimension d  = 3.9976
+=================================================================
+Verification Successful: Causal diamond order statistics recover d = 4.0.

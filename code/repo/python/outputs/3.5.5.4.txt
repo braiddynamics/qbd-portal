@@ -1,0 +1,15 @@
+Triad Quantum Occupancy and Projector Evaluation
+================================================================================
+State      | Classification     | S1   S2   S3   | V    | Pi_order | Description
+--------------------------------------------------------------------------------
+|000>      | Vacuum             |  1    1    1  |  1   |        1 | Pre-geometric Void
+|100>      | Tension A          | -1    1   -1  | -1   |        1 | Single Edge 1 -> 2
+|010>      | Tension B          | -1   -1    1  | -1   |        1 | Single Edge 2 -> 3
+|001>      | Tension C          |  1   -1   -1  | -1   |        1 | Single Edge 3 -> 1
+|110>      | Precursor A        |  1   -1   -1  |  1   |        1 | Compliant 2-Path 1 -> 2 -> 3
+|011>      | Precursor B        | -1    1   -1  |  1   |        1 | Compliant 2-Path 2 -> 3 -> 1
+|101>      | Precursor C        | -1   -1    1  |  1   |        1 | Compliant 2-Path 3 -> 1 -> 2
+|111>      | Geometric Quantum  |  1    1    1  | -1   |        0 | Closed 3-Cycle
+================================================================================
+Verification Successful: Pi_order strictly discriminates closed cycles.
+Volume Operator V lifts the (+1, +1, +1) degeneracy between |000> and |111>.
