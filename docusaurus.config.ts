@@ -46,7 +46,12 @@ function papersAssetsPlugin() {
     async postBuild({ outDir }: { outDir: string }) {
       const srcDir = path.join(__dirname, 'papers');
       const destDir = path.join(outDir, 'papers');
-      const paperDirs = ['vacuum-phase', 'causal-invariance-hypergraphs', 'maximal-entropy-random-walk'];
+      const paperDirs = [
+        'vacuum-phase',
+        'causal-invariance-hypergraphs',
+        'maximal-entropy-random-walk',
+        'comments/js-riverfield',
+      ];
       const assetSubdirs = ['downloads', 'simulations', 'code', 'data', 'figures'];
       for (const p of paperDirs) {
         for (const a of assetSubdirs) {
