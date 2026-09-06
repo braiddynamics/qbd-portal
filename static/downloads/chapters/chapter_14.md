@@ -1449,7 +1449,7 @@ Understanding microcausality at spacelike separations requires translating conti
 
 If two graph vertices $A$ and $B$ are spacelike separated ($A \nprec B$ and $B \nprec A$), no directed update chain connects them within the current logical time step. Local graph rewrite operations $\hat{\phi}(A)$ and $\hat{\phi}(B)$ act on disjoint sets of graph edges, operating on independent factors of the global Hilbert space $\mathcal{H}_A \otimes \mathcal{H}_B$. Operators supported on disjoint tensor factors commute strictly, ensuring $[\hat{\phi}(A), \hat{\phi}(B)] = 0$.
 
-This algebraic independence demonstrates that microcausality is not an ad-hoc constraint imposed on field operators, but a natural reflection of asynchronous computational execution. Spacelike separated nodes execute local update steps independently without cross-talk or instant signaling. Locality is established as the physical assertion that relational graph dynamics contain no global variables, enforcing strict microcausality across all spacelike intervals.
+This algebraic independence demonstrates that microcausality is not an ad-hoc constraint imposed on field operators, but a natural reflection of asynchronous computational execution. Spacelike separated nodes execute local update steps independently without cross-talk or instant signaling. Game semantics models combining contextuality and discrete causality (<Cite id="A.1" label="(Abramsky et al., 2024)" />) prove that non-local quantum correlations and strict causal order coexist without contradiction. Locality is established as the physical assertion that relational graph dynamics contain no global variables, enforcing strict microcausality across all spacelike intervals.
 
 ---
 
@@ -2135,3 +2135,18 @@ Having established the local dynamics of space and time on the stage, we must no
 | $S_{EE}$ | Entanglement entropy | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
 | $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
 | $G$ | Emergent gravitational constant | [§14.4.3](/monograph/stage/time/14.4/#14.4.3) |
+
+\newpage
+# References
+
+### 1. **Abramsky, S., Barbosa, R. S., & Searle, A. (2024).** {#A.1}
+**"Combining contextuality and causality: a game semantics approach"**
+- *Philosophical Transactions of the Royal Society A*, 382(2268), 20230002
+    * **Link:** [https://royalsocietypublishing.org/doi/10.1098/rsta.2023.0002](https://royalsocietypublishing.org/doi/10.1098/rsta.2023.0002)
+
+
+**Overview:**
+Abramsky, Barbosa, and Searle develop a unified structure that combines quantum contextuality and discrete causality using game semantics. They show how these semantic structures capture the non-local correlation limits of quantum systems while preserving the strict causal ordering of events, establishing a precise logic for relativistic quantum networks.
+
+**Relevance to QBD:**
+This semantic structure is vital for the causal quantum models formulated in Chapter 14. To show that the non-local correlations of our topological qubits do not violate discrete causality, we analyze them using Abramsky's game semantics. Abramsky's results supply the bounds needed to confirm that QBD is both contextual and causally consistent.

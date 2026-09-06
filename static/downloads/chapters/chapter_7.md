@@ -51,7 +51,7 @@ The **Spin Operator**, denoted $L_S$, is defined strictly as the global stabiliz
 :::info[**Characterization of Intrinsic Angular Momentum as Rung Parity**]
 :::
 
-The Spin Operator $L_S$ provides a mechanism for extracting the intrinsic angular momentum of a ribbon directly from its discrete geometry. In continuous spacetime, spin arises from representations of the Lorentz group; in the causal graph, it emerges from the parity of "rung excitations." This topological view of spin is consistent with the framework of <Cite id="A.8" label="(Baader & Nipkow, 1998)" /> on term rewriting, where properties are derived from the reduction rules of the system rather than assumed as primitives. Here, the "term" is the ribbon configuration, and the "reduction" is the measurement of its twist parity.
+The Spin Operator $L_S$ provides a mechanism for extracting the intrinsic angular momentum of a ribbon directly from its discrete geometry. In continuous spacetime, spin arises from representations of the Lorentz group; in the causal graph, it emerges from the parity of "rung excitations." This topological view of spin is consistent with the framework of <Cite id="A.9" label="(Baader & Nipkow, 1998)" /> on term rewriting, where properties are derived from the reduction rules of the system rather than assumed as primitives. Here, the "term" is the ribbon configuration, and the "reduction" is the measurement of its twist parity.
 
 Consider the ribbon as a ladder structure. In the ground state (untwisted), the rungs align without topological distortion. A twist introduces a disturbance that manifests as an excitation on the rungs. Specifically, the presence of a directed edge where vacuum quiescence would otherwise exist, or a flip in orientation relative to the frame. The operator $L_S$ acts as a parity checker for these excitations. It measures not the continuous angle of rotation but the discrete number of half-twists modulo 2.
 
@@ -603,7 +603,7 @@ Q.E.D.
 :::info[**Exclusion of Continuous Occupancy by Discrete Saturation**]
 :::
 
-The Binary State Principle asserts a fundamental discreteness: existence does not permit a continuum. An edge in the causal graph either connects two events, or it does not. No "partial connection" or "weighted influence" exists at the fundamental level. This strict binary encoding is a direct consequence of the graph-theoretic nature of the substrate, paralleling the foundational logic of <Cite id="A.20" label="(Diestel, 2017)" />, where edges are crisp set-theoretic relations.
+The Binary State Principle asserts a fundamental discreteness: existence does not permit a continuum. An edge in the causal graph either connects two events, or it does not. No "partial connection" or "weighted influence" exists at the fundamental level. This strict binary encoding is a direct consequence of the graph-theoretic nature of the substrate, paralleling the foundational logic of <Cite id="A.22" label="(Diestel, 2017)" />, where edges are crisp set-theoretic relations.
 
 This binary nature restricts the information capacity of any local region. A pair of vertices $(u, v)$ can support exactly two states: connected ($|1\rangle$) or disconnected ($|0\rangle$). This constitutes the physical realization of a qubit. By enforcing strict binary encoding, the theory prohibits the "stacking" of multiple particles on the same link. A state with "two edges" connecting $u$ and $v$ in the same direction does not exist in the configuration space. This saturation of local degrees of freedom serves as the precursor to the Pauli Exclusion Principle. Once a quantum state (an edge) is occupied, placing another particle there becomes physically impossible without altering the topology (creating a cycle), which the system forbids. The vacuum functions as a digital computer, not an analog one.
 
@@ -1134,7 +1134,7 @@ Q.E.D.
 :::info[**Origin of Integral Values through Symmetric Ribbon Permutation**]
 :::
 
-The derivation of lepton charge solutions establishes a direct link between the permutation symmetry of the braid and the quantization of electric charge. For a state to transform as a color singlet, the three constituent ribbons must exhibit identical geometric configurations. This symmetry constraint forces the writhe vector to take the form $(k, k, k)$, resulting in a total writhe $W = 3k$. This aligns with the representation theory of $SU(3)$ as explored in <Cite id="A.56" label="(Sachs, 1962)" />, where singlet states are invariant under all group operations, implying a structural symmetry in the underlying graph.
+The derivation of lepton charge solutions establishes a direct link between the permutation symmetry of the braid and the quantization of electric charge. For a state to transform as a color singlet, the three constituent ribbons must exhibit identical geometric configurations. This symmetry constraint forces the writhe vector to take the form $(k, k, k)$, resulting in a total writhe $W = 3k$. This aligns with the representation theory of $SU(3)$ as explored in <Cite id="A.61" label="(Sachs, 1962)" />, where singlet states are invariant under all group operations, implying a structural symmetry in the underlying graph.
 
 When the charge operator $Q = W/3$ acts on this symmetric state, the factor of 3 in the numerator cancels the normalization factor in the denominator, strictly yielding an integer charge $Q = k$. This geometric divisibility explains why leptons, the singlets of the theory, carry integer charges ($0, -1$), while quarks, the asymmetric triplets, carry fractional charges. The integrity of the electron's charge is a necessary consequence of its perfect internal symmetry.
 
@@ -1342,7 +1342,7 @@ Q.E.D.
 :::info[**Requirement of Rational Charges for Consistency with Standard Model Anomalies**]
 :::
 
-The derivation of the normalization constant $k=1/3$ resolves the origin of fractional charges. As shown in **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />, this constant is a requirement for the internal consistency of the theory. The "Anomaly Cancellation" condition constitutes a mathematical requirement for the Standard Model to function without breaking down at high energies. Specifically, the sum of charges in a generation must balance out such that the sum of the cubes of the charges equals zero. This constraint is well-known in quantum field theory, but here it emerges from the topological necessity of the tripartite braid structure, linking the discrete geometry directly to the algebraic consistency of gauge theory as described by <Cite id="A.41" label="(Maldacena, 1998)" /> in the context of large-N limits and dualities.
+The derivation of the normalization constant $k=1/3$ resolves the origin of fractional charges. As shown in **Charge Normalization** <Ref id="7.3.7" label="§7.3.7" />, this constant is a requirement for the internal consistency of the theory. The "Anomaly Cancellation" condition constitutes a mathematical requirement for the Standard Model to function without breaking down at high energies. Specifically, the sum of charges in a generation must balance out such that the sum of the cubes of the charges equals zero. This constraint is well-known in quantum field theory, but here it emerges from the topological necessity of the tripartite braid structure, linking the discrete geometry directly to the algebraic consistency of gauge theory as described by <Cite id="A.45" label="(Maldacena, 1998)" /> in the context of large-N limits and dualities.
 
 Setting the normalization to any value other than $1/3$ (e.g., $1/2$ or $1$) destroys this delicate balance. The topological model *forces* quarks to possess fractional charges because they represent "one-third" of a lepton structure in terms of symmetry. A lepton acts as a symmetric braid where all three ribbons twist together ($3 \times 1/3 = 1$). A quark acts as an asymmetric braid where the ribbons twist independently ($1 \times 1/3$). The fractions serve as the fingerprints of the tripartite braid structure.
 
@@ -1556,7 +1556,7 @@ Q.E.D.
 :::info[**Decoupling of Particle Mass from Vacuum Thermal Fluctuations**]
 :::
 
-Fundamental particles maintain stable rest masses despite the thermodynamic nature of the vacuum. As demonstrated in **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" />, the entropy $S$ vanishes for a protected topological state. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.65" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
+Fundamental particles maintain stable rest masses despite the thermodynamic nature of the vacuum. As demonstrated in **Thermodynamic Equivalence** <Ref id="7.4.3.1" label="§7.4.3.1" />, the entropy $S$ vanishes for a protected topological state. This implies the particle effectively exists at absolute zero temperature, even if the surrounding vacuum is "hot" with fluctuations. This result resonates with the findings of <Cite id="A.70" label="(Verlinde, 2011)" /> on entropic gravity, where the emergence of inertia and mass is linked to the information content on holographic screens. Here, the "screen" is the topological boundary of the braid itself, which locks in a fixed information content (zero entropy) for the particle state.
 
 Because the particle constitutes a single, rigid logical state (a code word), it lacks internal microstates that thermal noise could excite without breaking the particle entirely. The free energy $F = U - TS$ reduces to $F = U$. The mass is purely determined by the internal structural energy (the number of 3-cycles). This isolation shields the properties of matter from the chaotic environment of the quantum foam. An electron possesses the same mass whether in a cryostat or the center of a star because its topology protects its internal "machinery" from thermal degradation.
 
@@ -1970,7 +1970,7 @@ To understand how these persistent defects interact, we must move from static pr
 \newpage
 # References
 
-### 8. **Baader, F., & Nipkow, T. (1998).** {#A.8}
+### 9. **Baader, F., & Nipkow, T. (1998).** {#A.9}
 **"Term Rewriting and All That"**
     * **Link:** [http://dx.doi.org/10.1017/CBO9781139172752](http://dx.doi.org/10.1017/CBO9781139172752)
 
@@ -1983,7 +1983,7 @@ QBD operates as a discrete dynamical system driven by graph rewriting. In Chapte
 
 ---
 
-### 20. **Diestel, R. (2017).** {#A.20}
+### 22. **Diestel, R. (2017).** {#A.22}
 **"Graph Theory (5th ed.)"**
 - *Springer*
     * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
@@ -1997,7 +1997,7 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
-### 41. **Maldacena, J. M. (1998).** {#A.41}
+### 45. **Maldacena, J. M. (1998).** {#A.45}
 **"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
@@ -2010,7 +2010,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 
 ---
 
-### 56. **Sachs, H. (1962).** {#A.56}
+### 61. **Sachs, H. (1962).** {#A.61}
 **"Über selbstkomplementäre Graphen"**
 - *Publicationes Mathematicae Debrecen*, 9, 270-288
     * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
@@ -2024,7 +2024,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 
 ---
 
-### 65. **Verlinde, E. (2011).** {#A.65}
+### 70. **Verlinde, E. (2011).** {#A.70}
 **"On the Origin of Gravity and the Laws of Newton"**
     * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
 

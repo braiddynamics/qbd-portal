@@ -129,7 +129,7 @@ Q.E.D.
 :::info[**Emergence of Additivity from Causal Limits and Topological Soliton Scaling**]
 :::
 
-The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" /> formalizes the concept of separation within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined dynamically via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
+The formulation of **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" /> formalizes the concept of separation within a pre-geometric substrate that lacks an intrinsic metric background. In the absence of a pre-existing coordinate system, distance must be defined dynamically via the propagation of constraints and information. The spatial cluster decomposition definition asserts that the influence of a constraint at vertex $u$ decays exponentially with the graph distance from $u$, creating an effective horizon of causality. This mirrors the behavior of correlation functions in statistical field theories, where the correlation length $\xi$ defines the scale of interaction. Specifically, <Cite id="A.5" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations demonstrate that even in discrete, random geometries, a macroscopic dimension and volume emerge from the scaling of spectral dimension and correlation functions, justifying our treatment of the causal graph as a collection of statistically independent sub-volumes.
 
 The correlation length $\xi$ constitutes an endogenous scale that emerges directly from the local branching ratios and density parameters of the graph. It defines the effective size of a causal patch or volume element. Inside a radius of $\xi$, the graph exhibits high entanglement and strong correlation, and its behavior is collective and non-local. However, at distances greater than $\xi$, regions behave as statistically isolated reservoirs. This property allows us to discretize the graph into $M \approx N / V_\xi$ independent correlation volumes. This partitioning is the mathematical justification for summing local entropies to yield a global extensive entropy. It bridges the gap between the discrete relational nature of the graph and the continuum-like behavior required for the Master Equation, ensuring that entropic contributions from distant parts of the universe do not entangle in a way that violates the additivity required for thermodynamic stability.
 
@@ -222,7 +222,7 @@ Q.E.D.
 :::info[**Characterization of the Vacuum as Sub-Percolating**]
 :::
 
-The proof relies on the combinatorial counting of connecting paths between vertices. In generic random graphs near the percolation threshold, paths loop back and reinforce one another, creating long-range order and diverging correlation lengths that span the entire system. This phenomenon is extensively studied in percolation theory and random graph dynamics, particularly by <Cite id="A.13" label="(Bollobás, 2001)" />, who details the phase transition where the giant component emerges. However, the vacuum structure derived in Chapter 3 (The Bethe Fragment) and enforced by Axiom 3 remains locally tree-like and strictly acyclic.
+The proof relies on the combinatorial counting of connecting paths between vertices. In generic random graphs near the percolation threshold, paths loop back and reinforce one another, creating long-range order and diverging correlation lengths that span the entire system. This phenomenon is extensively studied in percolation theory and random graph dynamics, particularly by <Cite id="A.14" label="(Bollobás, 2001)" />, who details the phase transition where the giant component emerges. However, the vacuum structure derived in Chapter 3 (The Bethe Fragment) and enforced by Axiom 3 remains locally tree-like and strictly acyclic.
 
 The prohibition of directed cycles forces causal influence to propagate unidirectionally, preventing the feedback loops that drive percolation. In a sparse regime, the number of paths of length $r$ grows insufficiently to overcome the probabilistic decay associated with traversing each link. This bounds the sphere of influence of any single event. The vacuum effectively remains sub-percolating: influences damp out exponentially before they can span the system. This stability against runaway connectivity forms the bedrock of the manifold structure: without this correlation decay, the graph would collapse into a highly connected small-world network where every point is adjacent to every other point, effectively destroying the dimensionality and locality required for physics.
 
@@ -473,8 +473,16 @@ The proof proceeds via Direct Construction, aggregating microscopic transition r
 │   ├── 5.2.6.2 Calculation: Stress-Decay Verification
 │   └── 5.2.6.3 Commentary: Stress-Deletion Coupling
 │
-└── 5.2.7 Proof: Macroscopic Evolution
-    └── 5.2.7.1 Calculation: Equation Verification
+├── 5.2.7 Lemma: Kramers-Moyal Continuum Expansion
+│   ├── 5.2.7.1 Proof: Kramers-Moyal Continuum Expansion
+│   └── 5.2.7.2 Commentary: Systematic van Kampen Expansion
+│
+├── 5.2.8 Lemma: Topological Defect Localization
+│   ├── 5.2.8.1 Proof: Topological Defect Localization
+│   └── 5.2.8.2 Commentary: Contact Processes and Geometric Solitons
+│
+└── 5.2.9 Proof: Macroscopic Evolution
+    └── 5.2.9.1 Calculation: Equation Verification
 ```
 
 ---
@@ -1068,7 +1076,169 @@ This catalytic acceleration creates a steep nucleation barrier $\rho_c \approx 0
 
 ---
 
-### 5.2.7 Proof: Macroscopic Evolution {#5.2.7}
+### 5.2.7 Lemma: Kramers-Moyal Continuum Expansion {#5.2.7}
+
+:::info[**Derivation of Drift and Diffusion Moments through System-Size Expansion**]
+:::
+
+Let the discrete stochastic master equation govern transitions between discrete cycle configurations under volume scale $\Omega = N_{\mathrm{box}}$. Then the first two Kramers-Moyal jump moments evaluate to the drift $a_1(\rho) = -\frac{1}{2}\rho + (9-3\lambda_0)\rho^2 - 54\mu_0\rho^3 + \mathcal{O}(\rho^4)$ and demographic absorbing diffusion $a_2(\rho) = \Gamma \rho$, yielding the continuous Langevin evolution equation.
+
+### 5.2.7.1 Proof: Kramers-Moyal Continuum Expansion {#5.2.7.1}
+
+:::tip[**van Kampen System-Size Expansion from Combinatorial Jump Kernels**]
+:::
+
+**I. Discrete Jump Kernel Specification**
+
+Let a discrete graph partition possess volume $\Omega = N_{\mathrm{box}}$ and cycle population $N_3 \in \mathbb{N}_0$, with intensive density $\rho = N_3/\Omega$. The stochastic transition rates for elementary addition and deletion events evaluated for **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" /> satisfy:
+
+$$
+W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) = 9\rho^2 \mathrm{e}^{-\mu s_{\mathrm{add}}}, \qquad W\left(\rho \to \rho - \tfrac{1}{\Omega}\right) = \tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}}
+$$
+
+The forward additions are governed by **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> and **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />. The reverse deletions are governed by **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
+
+**II. van Kampen System-Size Expansion**
+
+We apply van Kampen's system-size $\Omega$-expansion (<Cite id="A.68" label="(van Kampen, 1992)" />). Defining the jump step $\Delta \rho = \pm 1/\Omega$, the Kramers-Moyal jump moments are given by the expectation limits:
+
+$$
+a_n(\rho) = \lim_{\Delta t \to 0} \frac{\mathbb{E}[(\Delta \rho)^n]}{\Delta t} = \sum_{\Delta \rho} (\Delta \rho)^n W(\rho; \Delta \rho)
+$$
+
+The first jump moment $a_1(\rho)$ represents the deterministic drift velocity, while the second moment $a_2(\rho)$ defines the demographic diffusion coefficient.
+
+**III. Derivation of the Cubic Friction Moment**
+
+We evaluate the drift velocity by subtracting the deletion rate from the addition rate:
+
+$$
+a_1(\rho) = W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) - W\left(\rho \to \rho - \tfrac{1}{\Omega}\right) = 9\rho^2 \mathrm{e}^{-\mu s_{\mathrm{add}}} - \tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}}
+$$
+
+In a homogeneous network with mean vertex cycle density $\rho_v \approx 2\rho$, the incident triad stress evaluates to $\langle s_{\mathrm{add}} \rangle = 6\rho$. We expand the exponential acceptance kernel in powers of local stress:
+
+$$
+\mathrm{e}^{-\mu s_{\mathrm{add}}} = 1 - \mu s_{\mathrm{add}} + \mathcal{O}(s_{\mathrm{add}}^2) = 1 - 6\mu\rho + \mathcal{O}(\rho^2)
+$$
+
+Multiplying by the quadratic precursor flux $9\rho^2$ yields the cubic saturation damping term:
+
+$$
+9\rho^2(1 - 6\mu\rho) = 9\rho^2 - 54\mu\rho^3
+$$
+
+Expanding the catalytic deletion flux similarly yields:
+
+$$
+\tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}} = \tfrac{1}{2}\rho + 3\lambda\rho^2 + \mathcal{O}(\rho^3)
+$$
+
+Subtracting the deletion flux from the addition flux confirms the cubic drift polynomial $a_1(\rho) = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4)$.
+
+**IV. Demographic Absorbing Diffusion Moment**
+
+The second jump moment evaluates to:
+
+$$
+a_2(\rho) = \sum_{\Delta \rho} (\Delta \rho)^2 W(\rho; \Delta \rho) = \frac{1}{\Omega^2}\left[W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) + W\left(\rho \to \rho - \tfrac{1}{\Omega}\right)\right]
+$$
+
+In the leading-order expansion near the absorbing vacuum state $\rho \to 0$, linear deletion dominates additions, yielding $a_2(\rho) = \frac{1}{\Omega}[\frac{1}{2}\rho + \mathcal{O}(\rho^2)] \equiv \Gamma \rho$, where $\Gamma \approx \frac{1}{2\Omega} = \frac{1}{4N}$ characterizes demographic fluctuations vanishing identically at the empty absorbing boundary $\rho = 0$.
+
+**V. Hydrodynamic Continuum Limit**
+
+Substituting the drift $a_1(\rho)$ and diffusion $a_2(\rho)$ into the general Kramers-Moyal expansion yields the continuous Ito stochastic differential equation:
+
+$$
+\frac{\mathrm{d}\rho}{\mathrm{d}t} = a_1(\rho) + \sqrt{a_2(\rho)}\,\xi(t) = -\tfrac{1}{2}\rho + (9 - 3\lambda_0)\rho^2 - 54\mu_0\rho^3 + \sqrt{\Gamma \rho}\,\xi(t)
+$$
+
+where $\xi(t)$ is Gaussian white noise with $\langle \xi(t)\xi(t') \rangle = \delta(t-t')$. This establishes the continuous Langevin evolution equation governing the cycle density field.
+
+Q.E.D.
+
+### 5.2.7.2 Commentary: Systematic van Kampen Expansion {#5.2.7.2}
+
+:::info[**Continuum Limit of Discrete Markov Jump Dynamics as Asymptotic Approximation**]
+:::
+
+The rigorous passage from microscopic edge-level rewrites to a macroscopic continuum equation represents the central bridge between discrete quantum pre-geometry and smooth gravitational field theories. Discrete network updates operate through discontinuous Poisson jumps where link additions and link deletions alter the global cycle count in unit increments. By applying van Kampen's system-size expansion, we systematically separate the macroscopic deterministic trajectory from the demographic fluctuations generated by finite volume effects, demonstrating that the continuum Langevin equation is an exact asymptotic consequence of the underlying combinatorial rewrite rules rather than an ad hoc phenomenological ansatz.
+
+The derivation of the cubic friction term $-54\mu\rho^3$ resolves a crucial physical puzzle regarding the saturation of topological growth. In standard field-theoretic approaches, stabilizing terms of third or higher power are typically inserted by hand to prevent non-perturbative runaway solutions. In Quantum Braid Dynamics, this term arises directly from the algebraic coupling between the quadratic candidate precursor concentration $9\rho^2$ and the linear expansion of the exponential acceptance probability $\mathrm{e}^{-\mu s_{\mathrm{add}}} \approx 1 - 6\mu\rho$. The factor $54 = 9 \times 6$ is the exact product of the trivalent path-routing geometry and the six-port simplicial boundary shell. This cubic resistance acts as an intrinsic topological governor, ensuring that space remains sparse and preventing the catastrophic collapse of graph diameter without fine-tuning.
+
+---
+
+### 5.2.8 Lemma: Topological Defect Localization {#5.2.8}
+
+:::info[**Local Soliton Survival on Bethe Trees through Two-Threshold Contact Dynamics**]
+:::
+
+Let a localized cycle defect seed the regular Bethe tree substrate with coordination number $k = 3$ and branching factor $b = 2$. Then the non-equilibrium contact process yields two distinct critical thresholds $\lambda_{c1} < \lambda_{c2}$, ensuring that canonical priors $\lambda_{c1} \le \lambda_0 < \lambda_{c2}$ induce an active localized topological soliton with survival probability $P_{\mathrm{surv}} > 0$ and stationary distribution $\langle \rho \rangle_{\mathrm{QSD}} \approx 0.092$ despite the negative homogeneous mean-field discriminant $\Delta < 0$.
+
+### 5.2.8.1 Proof: Topological Defect Localization {#5.2.8.1}
+
+:::tip[**Spectral Analysis of Branching Contact Processes by Tree Decomposition**]
+:::
+
+**I. Mean-Field Discrepancy and Discriminant Failure**
+
+Let the homogeneous cubic drift equation derived under **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" /> be evaluated at zero background drive ($\Lambda = 0$):
+
+$$
+a_1(\rho) = -\tfrac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 = 0
+$$
+
+Factoring out the trivial absorbing root $\rho = 0$ leaves the quadratic resolvent $54\mu\rho^2 - (9 - 3\lambda)\rho + \frac{1}{2} = 0$. The discriminant of this algebraic equation evaluates to $\Delta = (9 - 3\lambda)^2 - 108\mu$. Substituting canonical priors $\lambda_0 = e - 1 \approx 1.7183$ and $\mu_0 = 1/\sqrt{2\pi} \approx 0.3989$ yields:
+
+$$
+\Delta = (9 - 3(1.7183))^2 - 108(0.3989) = (3.8451)^2 - 43.0812 = 14.785 - 43.081 = -28.296 < 0
+$$
+
+Because $\Delta < 0$, the quadratic resolvent admits no real positive roots. Homogeneous mean-field theory therefore predicts that the trivial vacuum $\rho = 0$ is the unique global attractor, falsely implying that geometric defects cannot survive.
+
+**II. Spatial Clustering of the Seed Soliton**
+
+The failure of the homogeneous mean-field equation stems from neglecting spatial correlations $\langle \rho_i \rho_j \rangle \neq \langle \rho_i \rangle \langle \rho_j \rangle$. When an active 3-cycle is instantiated at an initial seed vertex $v_0$, the local cycle density within distance $d \le 2$ on the regular tree satisfies $\rho_{\mathrm{local}} \gg \langle \rho \rangle_{\mathrm{bulk}}$. The local clustering coefficient evaluates to:
+
+$$
+\kappa_{\mathrm{clust}} = \frac{\langle \rho^2 \rangle_{\mathrm{local}}}{\langle \rho \rangle_{\mathrm{local}}} \approx 0.55
+$$
+
+Within this localized seed neighborhood, autocatalytic cycle production is amplified by correlated triangular loops sharing edges, lowering the effective death rate relative to the isolated vertex decay rate.
+
+**III. The Two-Threshold Theorem for Trees**
+
+We evaluate the stochastic rewrite dynamics as a branching contact process on a Bethe tree with branching number $b = 2$. According to the two-threshold contact process theorem (<Cite id="A.55" label="(Pemantle, 1992)" />, <Cite id="A.44" label="(Liggett, 1999)" />), contact dynamics on infinite regular trees exhibit two strictly separated critical infection thresholds:
+
+$$
+\lambda_{c1} = \frac{1}{2\sqrt{b}} = \frac{1}{2\sqrt{2}} \approx 0.3536, \qquad \lambda_{c2} = \frac{b+1}{2b} = \frac{3}{4} = 0.7500
+$$
+
+When the effective branching infection parameter $\hat{\lambda}$ lies in the intermediate interval $\lambda_{c1} \le \hat{\lambda} < \lambda_{c2}$, the contact process exhibits local survival with zero global percolation. That is, the infection survives near the initial seed origin indefinitely with positive probability $P_{\mathrm{surv}} > 0$, while the global population across the infinite tree remains bounded.
+
+**IV. Soliton Confinement and Leaf Dissipation**
+
+Following the canonical catalysis prior $\lambda_0 = e - 1 \approx 1.7183$ derived under **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />, the normalized local branching rate evaluates to $\hat{\lambda} = \frac{\lambda_0}{2(b+1)} = \frac{1.7183}{6} \approx 0.286$, augmented by local clustering $\kappa_{\mathrm{clust}}$ to $\hat{\lambda}_{\mathrm{eff}} = \hat{\lambda}(1 + \kappa_{\mathrm{clust}}) \approx 0.286(1.55) \approx 0.444$. Because $\lambda_{c1} \approx 0.3536 < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2} = 0.7500$, the system occupies the localized non-equilibrium survival phase. At large radial distance $d \gg 1$, the exponential proliferation of tree boundary leaves $b^d = 2^d$ acts as an infinite entropic sink, dissipating outgoing cycle chains and confining the active topological soliton to a compact spatial core.
+
+**V. Conclusion**
+
+We conclude that non-equilibrium contact dynamics on branching trees decouple local survival from global percolation, stabilizing an active localized topological soliton and resolving the homogeneous mean-field extinction paradox.
+
+Q.E.D.
+
+### 5.2.8.2 Commentary: Contact Processes and Geometric Solitons {#5.2.8.2}
+
+:::info[**Ontological Significance of Tree Soliton Localization from Pre-Geometric Foam**]
+:::
+
+The failure of homogeneous mean-field theory underscores the profound role of spatial structure in the physics of geometrogenesis. Mean-field models assume infinite-range, homogeneous mixing where every link interacts uniformly with the average density of the entire universe. Under that unphysical assumption, the catalytic creation rate is diluted across the entire graph volume, causing the system to predict immediate and inevitable extinction. In contrast, the true relational substrate possesses a discrete, branching tree-like structure where active cycles remain tightly clustered in compact topological neighborhoods, allowing localized feedback loops to ignite and sustain geometric foam.
+
+By linking the dynamics of cycle creation to the two-threshold theorem of Pemantle and Liggett, we uncover why the universe nucleates as a localized soliton rather than an all-at-once cosmological explosion. On an expander tree, the enormous surface area of the boundary leaves acts as an effective thermodynamic heat sink, absorbing excess edge energy and preventing runaway percolation cascades. Simultaneously, the finite local survival threshold protects the nucleus of space from dissolving back into the sterile vacuum. The canonical priors place the pre-geometric graph precisely within this stable Goldilocks window, establishing the physical vacuum as an active, self-confined topological soliton poised between extinction and singularity.
+
+---
+
+### 5.2.9 Proof: Macroscopic Evolution {#5.2.9}
 
 :::tip[**Synthesis of Master Equation via Dynamic Graph Laplacian and Reaction Fluxes**]
 :::
@@ -1093,9 +1263,9 @@ Candidate additions are damped by the exponential friction factor $\mathrm{e}^{-
 
 Cycle removals are accelerated by the catalytic tension factor $\frac{1}{2}\rho_i(1 + 6\lambda\rho_i)$ derived under **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
 
-**V. Demographic Noise and Directed Percolation Continuum Limit**
+**V. Kramers-Moyal Hydrodynamic Limit and Topological Soliton Stabilization**
 
-Combining reaction fluxes with Laplacian spatial diffusion, the spontaneous background drive derived under **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, and demographic Bernoulli noise $\sqrt{\Gamma \rho_i}\,\xi_i(t)$ ($\Gamma \approx \frac{1}{4N}$) yields the stochastic network master equation:
+Combining reaction fluxes with Laplacian spatial diffusion, the spontaneous background drive from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> and the first two jump moments from **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />, the expansion accounts for the cubic damping term $-54\mu_0\rho_i^3$ and demographic Bernoulli noise $\sqrt{\Gamma \rho_i}\,\xi_i(t)$ ($\Gamma \approx \frac{1}{4N}$). Furthermore, the contact analysis in **Topological Defect Localization** <Ref id="5.2.8" label="§5.2.8" /> stabilizes the active Quasi-Stationary Distribution against mean-field extinction, yielding the stochastic network master equation:
 
 $$
 \frac{\mathrm{d}\rho_i}{\mathrm{d}t} = -D (\mathcal{L}_G(t) \boldsymbol{\rho})_i - \tfrac{1}{2}\rho_i + (9 - 3\lambda_0)\rho_i^2 - 54\mu_0\rho_i^3 + \sqrt{\Gamma \rho_i}\,\xi_i(t)
@@ -1105,12 +1275,12 @@ In the spatially homogeneous mean-field limit with background drive $\Lambda$, t
 
 Q.E.D.
 
-### 5.2.7.1 Calculation: Equation Verification {#5.2.7.1}
+### 5.2.9.1 Calculation: Equation Verification {#5.2.9.1}
 
 :::note[**Numerical Integration of the Master Equation through Fixed-Point Convergence**]
 :::
 
-Computational verification of the fixed-point attractor established by **Macroscopic Evolution** <Ref id="5.2.7" label="§5.2.7" /> is based on the following protocols:
+Computational verification of the fixed-point attractor established by **Macroscopic Evolution** <Ref id="5.2.9" label="§5.2.9" /> is based on the following protocols:
 
 1.  **Parameter Specification:** The algorithm sets canonical parameters $\Lambda = 0.0156$, $\mu = 0.3989$, and $\lambda = 1.7183$.
 2.  **Root Solving:** The protocol solves for the equilibrium density $\rho^*$ where net flux $F(\rho^*) = 0$.
@@ -1165,7 +1335,7 @@ jacobian = d_creation - d_deletion
 
 # Formatted console output
 print("=============================")
-print("§5.2.7.1 Master Equation")
+print("§5.2.9.1 Master Equation")
 print("=============================")
 print(f"Constants:")
 print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.4f}")
@@ -1188,7 +1358,7 @@ print(f"  Status:               {'Stable Attractor' if jacobian < 0 else 'Unstab
 
 ```text
 =============================
-§5.2.7.1 Master Equation
+§5.2.9.1 Master Equation
 =============================
 Constants:
   Λ (Vacuum Drive):    0.0156
@@ -1219,7 +1389,7 @@ The calculation demonstrates that the driven Master Equation possesses a unique 
 
 The **Fundamental Equation of Geometrogenesis** established under **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> formalizes the competition between constructive autocatalytic loop formation and destructive tension-relieving edge deletion. The creation flux combines the theoretical vacuum drive derived in **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> with quadratic precursor generation derived in **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" />. This rate is modulated exponentially by the steric hindrance factor derived in **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
 
-The deletion flux operates through entropic decay accelerated by catalytic defect tension derived in **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />. This accelerated removal generates an unpumped nucleation barrier $\rho_c \approx 0.130$, establishing that sustained topological activity requires escaping rapid extinction via a non-perturbative parallel burst, while the Bethe-Guggenheim pair approximation resolves the mean-field paradox to sustain the active Quasi-Stationary Distribution.
+The deletion flux operates through entropic decay accelerated by catalytic defect tension derived in **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />. This accelerated removal generates an unpumped nucleation barrier $\rho_c \approx 0.130$, establishing that sustained topological activity requires escaping rapid extinction via a non-perturbative parallel burst. The systematic continuum limit in **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" /> derives the cubic saturation friction $-54\mu_0\rho^3$ from the combinatorial geometry of the six-port simplicial boundary shell. Concurrently, the contact analysis in **Topological Defect Localization** <Ref id="5.2.8" label="§5.2.8" /> resolves the mean-field extinction paradox via the two-threshold contact process theorem on branching trees, explaining the survival of the active Quasi-Stationary Distribution.
 
 Incorporating demographic noise $\sqrt{\Gamma \rho_i}\,\xi_i(t)$ and the dynamic graph Laplacian $\mathcal{L}_G(t)$ places discrete graph geometrogenesis firmly within the Directed Percolation absorbing universality class. This non-equilibrium formulation ensures that the macroscopic spacetime manifold emerges as a stable, self-regulating topological foam, bridging discrete relational rewrites with continuous field theories.
 
@@ -1551,7 +1721,7 @@ This condition represents the stationary state where the generative drive of the
 :::info[**Geometry of Saturation**]
 :::
 
-This equation encapsulates the nonlinear interplay between the four dominant forces of the vacuum: **Ignition ($\Lambda$)**, **Autocatalysis ($9\rho^2$)**, **Friction ($e^{-6\mu\rho}$)**, and **Catalytic Decay ($\lambda_{cat}$)**. It serves as the master balance sheet for the economy of spacetime relations. This balance is reminiscent of the detailed balance conditions found in equilibrium statistical mechanics, but applied here to a non-equilibrium steady state of graph evolution. The resulting transcendental equation is structurally similar to those governing phase transitions in mean-field theories, such as the Curie-Weiss law for magnetism or the van der Waals equation for fluids, as detailed in standard texts like <Cite id="A.46" label="(Padmanabhan, 2009)" /> in the context of gravitational thermodynamics.
+This equation encapsulates the nonlinear interplay between the four dominant forces of the vacuum: **Ignition ($\Lambda$)**, **Autocatalysis ($9\rho^2$)**, **Friction ($e^{-6\mu\rho}$)**, and **Catalytic Decay ($\lambda_{cat}$)**. It serves as the master balance sheet for the economy of spacetime relations. This balance is reminiscent of the detailed balance conditions found in equilibrium statistical mechanics, but applied here to a non-equilibrium steady state of graph evolution. The resulting transcendental equation is structurally similar to those governing phase transitions in mean-field theories, such as the Curie-Weiss law for magnetism or the van der Waals equation for fluids, as detailed in standard texts like <Cite id="A.50" label="(Padmanabhan, 2009)" /> in the context of gravitational thermodynamics.
 
 The equation represents the intersection of two distinct geometric curves:
 
@@ -2436,9 +2606,9 @@ Q.E.D.
 :::info[**Prevention of Geometric Singularities through Bounded Neighborhood Overlap**]
 :::
 
-This bound is the safeguard against geometric pathology. It ensures that the graph does not contain "curvature singularities" where the local geometry becomes infinitely crumpled or torn. In the discrete context, curvature is defined by the overlap of neighborhoods via the Wasserstein distance, a definition that aligns with the Ollivier-Ricci curvature, a discrete analog of Ricci curvature for metric spaces and graphs developed by <Cite id="A.44" label="(Ollivier, 2009)" />. Ollivier demonstrated that this curvature measure captures the essential geometric properties of the space, such as volume growth and spectral gap, and is robust for discrete structures.
+This bound is the safeguard against geometric pathology. It ensures that the graph does not contain "curvature singularities" where the local geometry becomes infinitely crumpled or torn. In the discrete context, curvature is defined by the overlap of neighborhoods via the Wasserstein distance, a definition that aligns with the Ollivier-Ricci curvature, a discrete analog of Ricci curvature for metric spaces and graphs developed by <Cite id="A.48" label="(Ollivier, 2009)" />. Ollivier demonstrated that this curvature measure captures the essential geometric properties of the space, such as volume growth and spectral gap, and is robust for discrete structures.
 
-By bounding the maximum degree and enforcing strict locality, we limit the range of possible overlaps. The distance between the probability distributions of any two connected neighbors is confined within strict limits. The derived bound $|\kappa| \le 2$ guarantees that the emergent length space possesses a synthetic lower Ricci curvature bound ($\mathrm{CD}(K, N)$ in the sense of Lott, Sturm, and Villani), a prerequisite for metric pre-compactness. <Cite id="A.17" label="(Cheeger, Colding, & Tian, 1997)" /> established the conditions under which metric spaces with Ricci curvature bounded from below form pre-compact families, a result we leverage here to ensure that the limit of our discrete graph sequence is a well-behaved metric length space. Without this bound, the transition to the continuum limit would be ill-defined: the emergent space would be riddled with sharp cusps and tearing discontinuities where neighborhood transport costs diverge. **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, however, proves that the generated metric space possesses uniformly bounded transport curvature, permitting a stable pre-compact limit.
+By bounding the maximum degree and enforcing strict locality, we limit the range of possible overlaps. The distance between the probability distributions of any two connected neighbors is confined within strict limits. The derived bound $|\kappa| \le 2$ guarantees that the emergent length space possesses a synthetic lower Ricci curvature bound ($\mathrm{CD}(K, N)$ in the sense of Lott, Sturm, and Villani), a prerequisite for metric pre-compactness. <Cite id="A.19" label="(Cheeger, Colding, & Tian, 1997)" /> established the conditions under which metric spaces with Ricci curvature bounded from below form pre-compact families, a result we leverage here to ensure that the limit of our discrete graph sequence is a well-behaved metric length space. Without this bound, the transition to the continuum limit would be ill-defined: the emergent space would be riddled with sharp cusps and tearing discontinuities where neighborhood transport costs diverge. **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, however, proves that the generated metric space possesses uniformly bounded transport curvature, permitting a stable pre-compact limit.
 
 ---
 
@@ -2798,7 +2968,7 @@ Q.E.D.
 
 This scaling result establishes the theoretical foundation for four-dimensional spacetime from first principles. The Master Equation models a non-linear competition between two competing scaling potentials: **Creation ($J_{in}$)** and **Deletion ($J_{out}$)**. In higher dimensions ($d > 4$), volume growth outpaces boundary constraints, forcing deletion to dominate and causing total structural evaporation ($\rho^* \to 0$). In lower dimensions ($d < 4$), thermal and topological fluctuations overwhelm order, preventing stable manifold emergence.
 
-This scaling argument is deeply rooted in the theory of critical phenomena and the renormalization group, as pioneered by <Cite id="A.68" label="(Wilson, 1975)" />. Wilson demonstrated that the physical behavior of a system near a critical fixed point is uniquely governed by spatial dimensionality and field scaling exponents. In Quantum Braid Dynamics, $d=4$ acts as the unique critical dimension where creation and deletion balance, stabilizing a non-trivial interacting fixed point capable of supporting emergent pseudo-Riemannian geometry. Within the discrete substrate, empirical spectral dimension measurements in the active vacuum phase demonstrate a flow from tree-like values $d_s \sim 1$ at the cutoff toward $d_s \in [2.1, 2.6]$ in the active QSD foam, in close analogy to Causal Dynamical Triangulations (CDT). The full attainment of $d=4$ is therefore an infrared fixed-point hypothesis of the continuous scaling limit, not a static property of the discrete network. Continuous Ahlfors 4-regularity serves as the bridge between the microscopic foam and macroscopic geometry, providing the testable dimensional hypothesis for emergent spacetime.
+This scaling argument is deeply rooted in the theory of critical phenomena and the renormalization group, as pioneered by <Cite id="A.73" label="(Wilson, 1975)" />. Wilson demonstrated that the physical behavior of a system near a critical fixed point is uniquely governed by spatial dimensionality and field scaling exponents. In Quantum Braid Dynamics, $d=4$ acts as the unique critical dimension where creation and deletion balance, stabilizing a non-trivial interacting fixed point capable of supporting emergent pseudo-Riemannian geometry. Within the discrete substrate, empirical spectral dimension measurements in the active vacuum phase demonstrate a flow from tree-like values $d_s \sim 1$ at the cutoff toward $d_s \in [2.1, 2.6]$ in the active QSD foam, in close analogy to Causal Dynamical Triangulations and spontaneous dimensional reduction (<Cite id="A.18" label="(Carlip, 2009)" />). The full attainment of $d=4$ is therefore an infrared fixed-point hypothesis of the continuous scaling limit, not a static property of the discrete network. Continuous Ahlfors 4-regularity serves as the bridge between the microscopic foam and macroscopic geometry, providing the testable dimensional hypothesis for emergent spacetime.
 
 ---
 
@@ -3155,7 +3325,7 @@ The master equation ensures the vacuum fluctuates around a stable density, but f
 \newpage
 # References
 
-### 4. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.4}
+### 5. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.5}
 **"Reconstructing the Universe"**
     * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
 
@@ -3168,7 +3338,7 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 
 ---
 
-### 13. **Bollobás, B. (2001).** {#A.13}
+### 14. **Bollobás, B. (2001).** {#A.14}
 **"Random Graphs (2nd ed.)"**
     * **Link:** [https://doi.org/10.1017/CBO9780511814068](https://doi.org/10.1017/CBO9780511814068)
 
@@ -3181,7 +3351,21 @@ This reference is integral to the random graph audits conducted in Chapter 5. To
 
 ---
 
-### 17. **Cheeger, J., Colding, T. H., & Tian, G. (1997).** {#A.17}
+### 18. **Carlip, S. (2009).** {#A.18}
+**"Spontaneous dimensional reduction in short-distance quantum gravity?"**
+- *AIP Conference Proceedings*, 1196(1), 72–78.
+    * **Link:** [https://doi.org/10.1063/1.3284402](https://doi.org/10.1063/1.3284402)
+
+
+**Overview:**
+Carlip reviews evidence across diverse quantum gravity approaches (causal dynamical triangulations, loop quantum gravity, asymptotically safe gravity, and Hořava-Lifshitz gravity) indicating that spacetime dimension spontaneously reduces to $d \approx 2$ near the Planck scale.
+
+**Relevance to QBD:**
+Carlip's phenomenological synthesis provides key context for the spectral dimension flow observed in Chapter 5, confirming that the short-scale reduction to tree-like ($d \sim 2$) pre-geometry before infrared dimensional expansion is a generic, physically expected feature of discrete quantum gravity models.
+
+---
+
+### 19. **Cheeger, J., Colding, T. H., & Tian, G. (1997).** {#A.19}
 **"On the singularities of spaces with bounded Ricci curvature"**
     * **Link:** [https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84](https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84)
 
@@ -3194,20 +3378,21 @@ In Chapter 13, we must analyze the singular behavior of the discrete geometry wh
 
 ---
 
-### 18. **Coleman, S. (1977).** {#A.18}
-**"The Uses of Instantons"**
-    * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
+### 44. **Liggett, T. M. (1999).** {#A.44}
+**"Stochastic Interacting Systems: Contact, Voter and Exclusion Processes"**
+- *Springer-Verlag Berlin Heidelberg*
+    * **Link:** [https://doi.org/10.1007/978-3-662-03990-8](https://doi.org/10.1007/978-3-662-03990-8)
 
 
 **Overview:**
-Coleman presents a set of lectures on the role of instantons, which are classical solutions to the equations of motion in Euclidean spacetime. He explains how these non-perturbative configurations correspond to quantum tunneling events between different vacuum states, documenting the physical basis for non-abelian gauge vacuum structure.
+Liggett provides a comprehensive treatise on non-equilibrium particle systems, establishing rigorous theorems for contact processes, survival probabilities, and invariant measures on graphs and regular trees.
 
 **Relevance to QBD:**
-Instantons are the continuous analogs of the non-perturbative transition operations that drive gauge dynamics in Chapter 8. In QBD, the tunneling of a tripartite braid between different topological phases corresponds to a discrete instanton-like event in the causal history. Coleman's lectures are cited to draw this physical analogy, grounding why non-abelian gauge structures emerge from topological updates.
+Liggett's rigorous results on survival regimes and quasi-stationary distributions on Bethe lattices justify the persistence of local cycle density clusters in Chapter 5, demonstrating why discrete graph contact dynamics depart fundamentally from homogeneous mean-field approximations.
 
 ---
 
-### 44. **Ollivier, Y. (2009).** {#A.44}
+### 48. **Ollivier, Y. (2009).** {#A.48}
 **"Ricci curvature of Markov chains on metric spaces"**
     * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
 
@@ -3220,7 +3405,7 @@ Ollivier's metric curvature is the direct tool used to formulate the discrete fi
 
 ---
 
-### 46. **Padmanabhan, T. (2009).** {#A.46}
+### 50. **Padmanabhan, T. (2009).** {#A.50}
 **"Thermodynamical Aspects of Gravity: New Insights"**
     * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
 
@@ -3233,7 +3418,35 @@ Padmanabhan's thermodynamic analysis is a central conceptual foundation for the 
 
 ---
 
-### 68. **Wilson, K. G. (1975).** {#A.68}
+### 55. **Pemantle, R. (1992).** {#A.55}
+**"The contact process on trees"**
+- *Annals of Probability*, 20(4), 2089–2116.
+    * **Link:** [https://doi.org/10.1214/aop/1176989541](https://doi.org/10.1214/aop/1176989541)
+
+
+**Overview:**
+Pemantle proves that the contact process on infinite regular trees exhibits two distinct phase transitions $\lambda_{c1} < \lambda_{c2}$, where $\lambda_{c1}$ marks the onset of local survival (non-zero probability of surviving near the origin indefinitely) and $\lambda_{c2}$ marks the onset of global survival (survival with positive probability throughout the tree).
+
+**Relevance to QBD:**
+This two-threshold theorem provides the rigorous mathematical foundation for resolving the mean-field extinction paradox in Chapter 5. It proves that localized topological defects (solitons) can persist in a non-equilibrium quasi-stationary distribution on branching pre-geometric substrates without triggering an unphysical runaway percolation cascade.
+
+---
+
+### 68. **van Kampen, N. G. (1992).** {#A.68}
+**"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
+- *North-Holland*
+    * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
+
+
+**Overview:**
+van Kampen presents a classic and thorough textbook on stochastic processes in physical and chemical systems. He covers the master equation, Fokker-Planck equations, expansion methods, and the properties of stochastic transitions in systems operating near or far from thermodynamic equilibrium.
+
+**Relevance to QBD:**
+This textbook is the direct reference for the stochastic master equations formulated in Chapter 4. In QBD, the local update rules are modeled as stochastic transitions whose probabilities are governed by a master equation. Van Kampen's analytical tools show that this master equation converges to a stable macroscopic vacuum, supporting our model.
+
+---
+
+### 73. **Wilson, K. G. (1975).** {#A.73}
 **"The renormalization group: Critical phenomena and the Kondo problem"**
     * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
 

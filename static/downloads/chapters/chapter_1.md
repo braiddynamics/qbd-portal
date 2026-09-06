@@ -1020,7 +1020,7 @@ Within this defined system, a formal proof is a finite sequence of WFFs where ea
   * a pre-stated assumption; or
   * derived from preceding statements in the sequence by applying a rule of inference.
 
-The final statement in the sequence is called a theorem. This definition is critical because it structurally separates axioms from theorems. Axioms are, by definition, the statements that begin a deductive chain; they cannot, therefore, be the conclusion of one <Cite id="A.22" label="(Enderton, 2001)" />. The very structure of a formal system thus makes the concept of "proving an axiom" an internal contradiction.
+The final statement in the sequence is called a theorem. This definition is critical because it structurally separates axioms from theorems. Axioms are, by definition, the statements that begin a deductive chain; they cannot, therefore, be the conclusion of one <Cite id="A.25" label="(Enderton, 2001)" />. The very structure of a formal system thus makes the concept of "proving an axiom" an internal contradiction.
 
 A proof is a sequence $S_1, S_2, \dots, S_n$, where $S_n$ constitutes the terminal derived proposition. Each $S_i$ must be an axiom or follow from previous sentences via an inference rule. If an axiom $A$ were to be proven, it would have to be the final sentence in such a sequence. But that sequence must start from other axioms. If it does, then $A$ is not an axiom but a theorem derived from those other axioms. If the proof of $A$ requires $A$ itself as a premise, the reasoning is circular and thus not a valid proof. Consequently, within any non-circular, deductive system, axioms are definitionally unprovable.
 
@@ -1057,7 +1057,7 @@ The unprovability of axioms, while definitionally true, was elevated from a stru
 
 **Gödel's Incompleteness Theorems**
 
-In 1931, Gödel published his two incompleteness theorems, which irrevocably altered the philosophy of mathematics. <Cite id="A.29" label="(Gödel, 1931)" />
+In 1931, Gödel published his two incompleteness theorems, which irrevocably altered the philosophy of mathematics. <Cite id="A.31" label="(Gödel, 1931)" />
 
   * **The First Incompleteness Theorem** states that for any consistent, effectively axiomatized formal system $F$ that is powerful enough to express the basic arithmetic of natural numbers, there will always be statements in the language of $F$ that are true but cannot be proven within $F$. Gödel's proof was constructive: he showed how to create such a statement, often called the Gödel sentence $\mathcal{G}$, which can be informally interpreted as, "This statement is not provable in system $F$. If $F$ is consistent, then $\mathcal{G}$ must be true, yet unprovable within $F$."
 
@@ -1189,7 +1189,7 @@ The model of coherentist justification for foundational postulates is not confin
 
 **Introduction to Relational Quantum Mechanics (RQM)**
 
-Proposed by Rovelli in 1996, RQM is an interpretation of quantum mechanics that challenges the notion of an absolute, observer-independent quantum state <Cite id="A.53" label="(Rovelli, 1996)" />. The core tenet of RQM is that the properties of a physical system are relational; they are only meaningful with respect to another physical system (the "observer"). As Rovelli states, "different observers can give different accounts of the same set of events."
+Proposed by Rovelli in 1996, RQM is an interpretation of quantum mechanics that challenges the notion of an absolute, observer-independent quantum state <Cite id="A.59" label="(Rovelli, 1996)" />. The core tenet of RQM is that the properties of a physical system are relational; they are only meaningful with respect to another physical system (the "observer"). As Rovelli states, "different observers can give different accounts of the same set of events."
 
 Crucially, an "observer" in this context is not necessarily a conscious being but can be any physical system that interacts with another. A particle's spin, for example, does not have an absolute value but only a value relative to the measuring apparatus that interacts with it.
 
@@ -1237,7 +1237,7 @@ Ultimately, foundational axioms are not the bedrock of truth in the sense of bei
 
 The starting points of physical theory are justified by the concrete physics they generate. This framework allows for their acceptance without the impossible requirement of absolute, antecedent proof. By abandoning the search for a static or self-evident truth, the model commits to constructing logical self-consistency through a **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" />. The illusion of a proven foundation is thus traded for the utility of a computable one. This clears the ground for a constructive physics that operates without requiring an infinite chain of prior causes, representing a strategic alignment with the nature of formal systems. A map must be drawn before it can be read.
 
-This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches that any such foundation is arbitrary unless it justifies itself through operation. Rather than digging for a foundation that sits passively beneath the universe, the goal is to identify the operating system that keeps the universe running. The truth of the axioms lies not in their divine origin but in their structural stability. The physical universe is asserted to be isomorphic to a formal system because it is a deduction being executed, establishing the **Epistemological Foundations** <Ref id="1.1" label="§1.1" />. This justification is rooted in the **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.42" label="(Marker, 2002)" />. Therefore, the constraints placed upon the theory, such as finiteness and consistency, are ontological requirements for existence itself.
+This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches that any such foundation is arbitrary unless it justifies itself through operation. Rather than digging for a foundation that sits passively beneath the universe, the goal is to identify the operating system that keeps the universe running. The truth of the axioms lies not in their divine origin but in their structural stability. The physical universe is asserted to be isomorphic to a formal system because it is a deduction being executed, establishing the **Epistemological Foundations** <Ref id="1.1" label="§1.1" />. This justification is rooted in the **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.46" label="(Marker, 2002)" />. Therefore, the constraints placed upon the theory, such as finiteness and consistency, are ontological requirements for existence itself.
 
 Furthermore, this finiteness imposes a strict boundary on the physical structure because it cannot support infinite histories or undefined origins. If the logic requires a starting point to be computable, we must conclude that the universe itself must be constructed from discrete, well-defined relations. We cannot hide behind the concept of continuous space or infinite regress. These are computationally undefined operations that would prevent the system from ever initializing. To build a computable universe, we must first define the primitive relational shapes and structures that can be realized within a **Directed Acyclic Graph** <Ref id="1.2.1" label="§1.2.1" />. This epistemological constraint forces our hand regarding the nature of space. We are thus compelled to define the graph-theoretic primitives that will serve as our geometric vocabulary, leading us directly to the definition of graph shapes.
 
@@ -1265,7 +1265,7 @@ A **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing n
 :::info[**Epistemological Significance of Acyclic Connectivity in Spacetime Construction**]
 :::
 
-A directed acyclic graph represents a universe endowed with an absolute causal asymmetry, where it is topologically impossible for any event to act as its own historical cause or for causal influence to circulate in closed loops <Cite id="A.20" label="(Diestel, 2017)" />. By forbidding closed directed paths, the graph topology guarantees the existence of a strict partial order on the set of events. This poset structure establishes the non-negotiable temporal progression of the network, ensuring that influence flows irreversibly from ancestral causes to descendant effects without relying on a pre-existing background time parameter.
+A directed acyclic graph represents a universe endowed with an absolute causal asymmetry, where it is topologically impossible for any event to act as its own historical cause or for causal influence to circulate in closed loops <Cite id="A.22" label="(Diestel, 2017)" />. By forbidding closed directed paths, the graph topology guarantees the existence of a strict partial order on the set of events. This poset structure establishes the non-negotiable temporal progression of the network, ensuring that influence flows irreversibly from ancestral causes to descendant effects without relying on a pre-existing background time parameter.
 
 Unlike continuum spacetimes where causal structures are imposed via metric signatures on smooth manifolds, the acyclic graph establishes causal order purely through discrete topological connectivity. Every path through the graph defines a valid historical sequence, whereas the absence of directed cycles eliminates retroactive influence and grandfather-type paradoxes at the foundational level. The resulting poset provides the structural skeleton upon which emergent physical duration and relational coordinates are subsequently constructed.
 
@@ -1372,7 +1372,7 @@ A **2-Path** is a simple Directed Path of length exactly $2$. Formally, it is de
 :::info[**Precondition for Local Geometry and Edge Rewrite Rules**]
 :::
 
-The open 2-path $(v, w, u)$ constitutes the minimal unit of transitive mediation <Cite id="A.15" label="(Bondy & Murty, 2008)" /> necessary for the local rewrite rules to identify candidate sites for geometric accretion. In this configuration, the intermediate vertex $w$ acts as a common causal bridge connecting $v$ to $u$. By recognizing this shared mediator, the dynamical update rules possess the local information required to evaluate whether a direct link should form between $v$ and $u$, transforming indirect correlation into a direct relational bond.
+The open 2-path $(v, w, u)$ constitutes the minimal unit of transitive mediation <Cite id="A.16" label="(Bondy & Murty, 2008)" /> necessary for the local rewrite rules to identify candidate sites for geometric accretion. In this configuration, the intermediate vertex $w$ acts as a common causal bridge connecting $v$ to $u$. By recognizing this shared mediator, the dynamical update rules possess the local information required to evaluate whether a direct link should form between $v$ and $u$, transforming indirect correlation into a direct relational bond.
 
 This process of transitive mediation provides the mechanism through which pre-geometric topology generates emergent spatial locality. Rather than assuming that $v$ and $u$ inhabit a pre-existing metric space where distance is known, the system uses the 2-path as a purely topological indicator of proximity. When local rewrite rules act upon open 2-paths, they close relational gaps, establishing the foundational triangles that synthesize spatial volume and area from raw causal connectivity.
 
@@ -1457,7 +1457,7 @@ OPEN 2-PATH (Pre-Geometric)       CLOSED 3-CYCLE (Geometric Quantum)
 :::info[**Emergence of Geometric Area from Topological Closure**]
 :::
 
-The closed 3-cycle constitutes the minimal topological motif capable of enclosing an elementary spatial area, functioning as the fundamental Geometric Quantum of the theory. In close conceptual analogy to the triangular 2-simplices that form the building blocks of spatial geometry in Causal Dynamical Triangulations <Cite id="A.4" label="(Ambjørn et al., 2005)" />, the 3-cycle provides the discrete quantum of area. While an open 2-path represents unclosed transitive flow without spatial extent, the formation of a 3-cycle establishes a localized topological boundary, converting pure relational connectivity into an irreducible spatial unit.
+The closed 3-cycle constitutes the minimal topological motif capable of enclosing an elementary spatial area, functioning as the fundamental Geometric Quantum of the theory. In close conceptual analogy to the triangular 2-simplices that form the building blocks of spatial geometry in Causal Dynamical Triangulations <Cite id="A.5" label="(Ambjørn et al., 2005)" />, the 3-cycle provides the discrete quantum of area. While an open 2-path represents unclosed transitive flow without spatial extent, the formation of a 3-cycle establishes a localized topological boundary, converting pure relational connectivity into an irreducible spatial unit.
 
 Within the spatial state graph, these 3-cycles act as the elementary tiles that assemble emergent spatial hypersurfaces. By joining along shared edges, 3-cycles construct a discrete quantum mesh capable of supporting spatial curvature, flux retention, and topological features. This transformation from open causal flow to closed 3-cycle loops marks the precise transition where pre-geometric relational algebra gives rise to the physical geometry of space.
 
@@ -1508,7 +1508,7 @@ This distinction between $t_{phys}$ and $t_L$ constitutes an indispensable struc
 4. Constructive definability, which mandates that all entities and processes arise from finite specifications;
 5. The phenomenon of evolution, wherein states succeed one another and generate observable change.
 
-Any attempt to merge or conflate these two temporal parameters into a single hybrid coordinate would reintroduce the severe conceptual paradoxes afflicting prior formulations, most notably the timeless stasis of the Wheeler-DeWitt constraint <Cite id="A.5" label="(Anderson, 2012)" /> and the collapse of causal order.
+Any attempt to merge or conflate these two temporal parameters into a single hybrid coordinate would reintroduce the severe conceptual paradoxes afflicting prior formulations, most notably the timeless stasis of the Wheeler-DeWitt constraint <Cite id="A.6" label="(Anderson, 2012)" /> and the collapse of causal order.
 
 ---
 
@@ -1567,7 +1567,7 @@ $t_L$ does not qualify as a physical observable, in the sense that no measuremen
 :::info[**Algorithmic Origins of Physical Law derived from Computational Universes**]
 :::
 
-The operational nature of the Global Sequencer attains its most concrete and mechanistically detailed realization within the domain of discrete computational physics, particularly through the frameworks established by the Wolfram Physics Project <Cite id="A.71" label="(Wolfram, 2002)" />; <Cite id="A.72" label="(Wolfram, 2020)" /> and Gerard 't Hooft’s Cellular Automaton Interpretation (CAI) of Quantum Mechanics. These frameworks furnish the essential conceptual and mathematical machinery required to effect a profound transition in the conceptualization of time: from a passive geometric coordinate subordinated to the metric tensor, to an active algorithmic process that orchestrates the discrete unfolding of relational structures.
+The operational nature of the Global Sequencer attains its most concrete and mechanistically detailed realization within the domain of discrete computational physics, particularly through the frameworks established by the Wolfram Physics Project <Cite id="A.76" label="(Wolfram, 2002)" />; <Cite id="A.77" label="(Wolfram, 2020)" /> and Gerard 't Hooft’s Cellular Automaton Interpretation (CAI) of Quantum Mechanics. These frameworks furnish the essential conceptual and mathematical machinery required to effect a profound transition in the conceptualization of time: from a passive geometric coordinate subordinated to the metric tensor, to an active algorithmic process that orchestrates the discrete unfolding of relational structures.
 
 Within the Wolfram model, the instantaneous state of the universe deviates fundamentally from the paradigm of a continuous differentiable manifold; instead, it materializes as a spatial hypergraph (a vast, dynamically evolving network comprising abstract relations among a multitude of nodes, where edges encode the primitive causal or adjacency connections). In this representational scheme, the "laws of physics" transcend the rigidity of static partial differential equations imposed on continuous fields; they instead embody a set of dynamic Rewriting Rules, which prescribe transformations on local substructures of the hypergraph. The evolution of the universe proceeds precisely as the algorithmic process of exhaustively scanning the hypergraph for occurrences of predefined target sub-patterns (for instance, a pairwise relation denoted as $\{A, B\}$ conjoined with $\{B, C\}$) and systematically replacing each such occurrence with a prescribed updated pattern, such as $\{A, C\}$ augmented by $\{A, B\}$. This rewriting operation, when applied in parallel across all eligible sites, generates the progression of states.
 
@@ -1584,7 +1584,7 @@ Although computational models delineate the precise mechanism underlying the Glo
 
 In the canonical formulation of standard General Relativity, the cosmological constant $\Lambda$ enters the action as an immutable, fixed parameter woven into the fabric of the Einstein field equations, dictating the global curvature scale without dynamical variability. Unimodular Gravity fundamentally alters this paradigm by promoting $\Lambda$ to the status of a dynamical variable (more precisely, by interpreting it as the canonical momentum conjugate to an independent spacetime volume variable, often denoted as the total integrated 4-volume). This promotion establishes a canonical conjugate pair, $[\hat{\Lambda}, \hat{\mathcal{T}}] = i\hbar$, wherein the commutator encodes the quantum uncertainty inherent to non-commuting observables. Here, the Unimodular Time variable $\mathcal{T}$ assumes the role of the "position-like" coordinate, while $\Lambda$ functions as its "momentum-like" counterpart; given that $\Lambda$ governs the vacuum energy density permeating empty spacetime, its conjugate $\mathcal{T}$ correspondingly tracks the cumulative accumulation of 4-volume across the expanse of the cosmos, thereby furnishing a global, objective metric for the universe's elapsed "run-time" that transcends local gauge choices.
 
-This canonical structure achieves the restoration of unitarity to the formalism of quantum cosmology, which otherwise succumbs to the atemporal constraints of general covariance. In the conventional approach to quantum gravity, $\hat{H}$ imposes a primary constraint demanding $\hat{H}\Psi = 0$ on the physical state space, thereby projecting the dynamics onto a subspace where time evolution vanishes identically and yielding the infamous frozen 'Block Universe,' in which all configurations coexist in a static, changeless totality devoid of intrinsic becoming <Cite id="A.54" label="(Rovelli & Smolin, 1990)" />. By contrast, the incorporation of the dynamical time variable $\mathcal{T}$ within Unimodular Gravity perturbs the underlying constraint algebra, elevating the temporal progression to a first-class dynamical principle. The resultant equation of motion assumes the canonical form of a genuine Schrödinger equation parametrized by $\mathcal{T}$:
+This canonical structure achieves the restoration of unitarity to the formalism of quantum cosmology, which otherwise succumbs to the atemporal constraints of general covariance. In the conventional approach to quantum gravity, $\hat{H}$ imposes a primary constraint demanding $\hat{H}\Psi = 0$ on the physical state space, thereby projecting the dynamics onto a subspace where time evolution vanishes identically and yielding the infamous frozen 'Block Universe,' in which all configurations coexist in a static, changeless totality devoid of intrinsic becoming <Cite id="A.58" label="(Rovelli & Smolin, 1990)" />. By contrast, the incorporation of the dynamical time variable $\mathcal{T}$ within Unimodular Gravity perturbs the underlying constraint algebra, elevating the temporal progression to a first-class dynamical principle. The resultant equation of motion assumes the canonical form of a genuine Schrödinger equation parametrized by $\mathcal{T}$:
 
 $$
 i \hbar \frac{\partial \Psi}{\partial \mathcal{T}} = \hat{H} \Psi
@@ -1620,7 +1620,7 @@ $t_L$ obviates all three defects in a unified stroke, restoring a robust ontolog
   * Uniqueness inheres in the Sequencer by design; no multiplicity of alternatives exists, as it constitutes the singular, canonical iterator governing the universal state sequence.
   * The update process effected by the Sequencer qualifies as an objective physical transition, wherein uncomputed potential configurations crystallize into definite, actualized states through the deterministic application of $\mathcal{U}$, thereby instantiating genuine novelty and diachronic identity.
 
-Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.48" label="(Page & Wootters, 1983)" />; <Cite id="A.25" label="(Gambini, García-Pintos, & Pullin, 2023)" />.
+Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.51" label="(Page & Wootters, 1983)" />; <Cite id="A.28" label="(Gambini, García-Pintos, & Pullin, 2023)" />.
 
 ---
 
@@ -2104,7 +2104,7 @@ The logical impossibility inherent to an infinite past finds a precise physical 
 
 This gravitational collapse arises directly from the interplay of two inexorable physical limits, each amplifying the other's effects toward catastrophic divergence. The simultaneous convergence of thermodynamic and quantum uncertainty constraints creates an insurmountable physical barrier, preventing any physical system from executing an infinite sequence of operations:
 
-1.  **Landauer’s Principle:** Every irreversible logical operation, such as bit erasure or conditional branching in the Sequencer’s update rules, incurs a minimal thermodynamic cost of $E \ge k_B T \ln 2$ in dissipated heat <Cite id="A.39" label="(Landauer, 1991)" />; <Cite id="A.12" label="(Bennett, 1982)" />, where $T$ denotes the ambient temperature of the computational substrate. For an infinite sequence of steps, assuming a constant (or even diminishing) energy per operation $\epsilon > 0$, the cumulative energy expenditure integrates to $E_{total} = \sum_{k=-\infty}^{0} \epsilon_k \to \infty$, demanding an unbounded reservoir that no finite universe can supply without violating the first law of thermodynamics. This thermodynamic limit maps directly to the pre-geometric substrate: "energy" corresponds structurally to the algebraic operation count (computational cost) required to modify the relational network, while "temperature" represents the dimensionless scaling parameter of the graph's partition function. A logically irreversible edge deletion (**Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />) thus redistributes structural degrees of freedom, generating local entropic topological noise (the discrete analogue of heat) that would, in an infinite regress, accumulate without bound and prevent the nucleation of a stable pre-geometric spatial structure.
+1.  **Landauer’s Principle:** Every irreversible logical operation, such as bit erasure or conditional branching in the Sequencer’s update rules, incurs a minimal thermodynamic cost of $E \ge k_B T \ln 2$ in dissipated heat <Cite id="A.42" label="(Landauer, 1991)" />; <Cite id="A.13" label="(Bennett, 1982)" />, where $T$ denotes the ambient temperature of the computational substrate. For an infinite sequence of steps, assuming a constant (or even diminishing) energy per operation $\epsilon > 0$, the cumulative energy expenditure integrates to $E_{total} = \sum_{k=-\infty}^{0} \epsilon_k \to \infty$, demanding an unbounded reservoir that no finite universe can supply without violating the first law of thermodynamics. This thermodynamic limit maps directly to the pre-geometric substrate: "energy" corresponds structurally to the algebraic operation count (computational cost) required to modify the relational network, while "temperature" represents the dimensionless scaling parameter of the graph's partition function. A logically irreversible edge deletion (**Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />) thus redistributes structural degrees of freedom, generating local entropic topological noise (the discrete analogue of heat) that would, in an infinite regress, accumulate without bound and prevent the nucleation of a stable pre-geometric spatial structure.
 2.  **Heisenberg Uncertainty:** To confine the infinite sequence within a finite elapsed coordinate time (or to "reach" the present from an eternal regress), the temporal allocation per step must contract to $\Delta t_k \to 0$ as $k \to -\infty$. The time-energy uncertainty relation $\Delta E \Delta t \ge \hbar / 2$ then mandates that energy fluctuations scale inversely: $\Delta E_k \ge \hbar / (2 \Delta t_k) \to \infty$. These fluctuations, manifesting as virtual particle-antiparticle pairs or vacuum polarization in quantum field theory, engender unbounded energy densities within the localized computing region.
 
 Within the framework of **General Relativity**, localized energy concentrations serve as the gravitational source term in the Einstein field equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}/c^4$; the accumulation of infinite total energy (or infinite density from quantum fluctuations) thus warps spacetime with ever-increasing curvature. The Schwarzschild radius $R_s = 2 G M / c^2$, where $M$ quantifies the enclosed mass-energy, swells without bound as $M \to \infty$. Inevitably, $R_s$ surpasses the physical extent of the computational domain (say, the horizon of the observable universe or the causal patch of the Sequencer), triggering the formation of an event horizon. Beyond this threshold, the system implodes into a black hole singularity, where geodesics terminate and information retrieval becomes impossible.
@@ -2292,7 +2292,7 @@ $$
 :::info[**Sparsity and Irreducibility of Causal Edge Connections**]
 :::
 
-Irreducibility means that no intermediate events intervene in the relation; if such mediation existed, the direct edge would decompose into a path of multiple edges, preserving the transitive closure without loss of expressivity. The directed nature enforces asymmetry, aligning with the irreversible arrow of time, and the subset relation $E \subseteq V \times V$ permits sparsity <Cite id="A.14" label="(Bombelli et al., 1987)" />; <Cite id="A.59" label="(Sorkin, 2005)" />, reflecting the vacuum's low density where most potential pairs remain unrealized until relational necessity demands them.
+Irreducibility means that no intermediate events intervene in the relation; if such mediation existed, the direct edge would decompose into a path of multiple edges, preserving the transitive closure without loss of expressivity. The directed nature enforces asymmetry, aligning with the irreversible arrow of time, and the subset relation $E \subseteq V \times V$ permits sparsity <Cite id="A.15" label="(Bombelli et al., 1987)" />; <Cite id="A.64" label="(Sorkin, 2005)" />, reflecting the vacuum's low density where most potential pairs remain unrealized until relational necessity demands them.
 
 This unmediated edge structure highlights a key distinction between QBD and traditional Causal Set Theory (CST). While CST models spacetime as a continuum Poisson-sprinkled poset under complete transitive closure, QBD maintains explicit, unmediated primitive edges that track discrete update events. Within this 4D graph, physical distance is not an extrinsic coordinate metric, but a relational cost function defined by the minimal path length or rewrite cost required to transfer influence across the network. Geodesic distance thus measures the operational cost of causal propagation, providing a natural bridge between discrete graph topology and emergent metric geometry.
 
@@ -2553,7 +2553,7 @@ Q.E.D.
 :::info[**Clock Synchronization and Topological Arrow of Time**]
 :::
 
-Strict timestamp monotonicity establishes a direct topological mapping to Lamport logical clocks <Cite id="A.38" label="(Lamport, 1978)" /> in distributed asynchronous systems. By embedding chronological ordering directly into the relational topology of edge creation events rather than assigning mutable clock registers to static vertices, the history mapping $H: E \to \mathbb{N}_0$ guarantees that physical influence propagates strictly along a well-founded causal poset. Each update step queries the maximum incoming timestamp of its antecedent vertex and increments the assigned value by unity, ensuring that no event can exert unmediated causal influence across negative or zero proper duration. The local ratio of proper timestamp advancement to global logical time $\Delta H(e) / \Delta t_L$ defines the discrete lapse function $N(x)$ (**Lapse Function** <Ref id="14.1.1" label="§14.1.1" />), governing emergent gravitational time dilation.
+Strict timestamp monotonicity establishes a direct topological mapping to Lamport logical clocks <Cite id="A.41" label="(Lamport, 1978)" /> in distributed asynchronous systems. By embedding chronological ordering directly into the relational topology of edge creation events rather than assigning mutable clock registers to static vertices, the history mapping $H: E \to \mathbb{N}_0$ guarantees that physical influence propagates strictly along a well-founded causal poset. Each update step queries the maximum incoming timestamp of its antecedent vertex and increments the assigned value by unity, ensuring that no event can exert unmediated causal influence across negative or zero proper duration. The local ratio of proper timestamp advancement to global logical time $\Delta H(e) / \Delta t_L$ defines the discrete lapse function $N(x)$ (**Lapse Function** <Ref id="14.1.1" label="§14.1.1" />), governing emergent gravitational time dilation.
 
 In the continuum limit, physical distance and proper time elapsed emerge as operational cost functions evaluated over causal path integrals. By computing geodesic weights along these monotonically ordered links, the **4D** causal graph generates the metric geometry of **4D** Lorentzian spacetime without presupposing an extrinsic background metric tensor. The strict transitivity $H(e_1) < H(e_k)$ guarantees that the emergent manifold satisfies discrete global hyperbolicity, precluding closed timelike curves and securing a mathematically rigorous foundation for thermodynamic irreversibility and quantum state propagation across the relational substrate.
 
@@ -2643,7 +2643,7 @@ $$
 
 A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" /> is active.
  
- Within this space, transformations must not invoke infinite resources, permit retroactive revisions to timestamps, or violate the irreflexive causal primitive defined by **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The preservation of acyclicity ensures that the target graph $G'$ admits no directed cycles, enforcing **Acyclic Effective Causality**. Monotonicity of $H$ requires that new timestamps exceed predecessors, which aligns with **Monotonicity of History**, and finite growth bounds $|V'| \leq |V| + k$ preventing unbounded structural blooms. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from the discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.49" label="(Abramsky, 2023)" />.
+ Within this space, transformations must not invoke infinite resources, permit retroactive revisions to timestamps, or violate the irreflexive causal primitive defined by **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The preservation of acyclicity ensures that the target graph $G'$ admits no directed cycles, enforcing **Acyclic Effective Causality**. Monotonicity of $H$ requires that new timestamps exceed predecessors, which aligns with **Monotonicity of History**, and finite growth bounds $|V'| \leq |V| + k$ preventing unbounded structural blooms. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from the discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.53" label="(Abramsky, 2023)" />.
  
  This stratification upholds **Coherentist Justification**. Ontology affords the task space, while axioms constrain its potential to the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />. Finally, the dynamics impose the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />. The vacuum's relationality thus emerges as the agent of becoming: persistent yet enabling the full cycle of construction that begets the universe from nullity. This independence ensures modularity: alterations to dynamical parameters (e.g., temperature scaling) perturb selection without reshaping kinematic possibility, facilitating isolation of ontology from mechanism and permitting the theory's scalability across regimes.
 
@@ -3017,7 +3017,7 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 \newpage
 # References
 
-### 4. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.4}
+### 5. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.5}
 **"Reconstructing the Universe"**
     * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
 
@@ -3030,7 +3030,7 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 
 ---
 
-### 5. **Anderson, E. (2012).** {#A.5}
+### 6. **Anderson, E. (2012).** {#A.6}
 **"The Problem of Time in Quantum Gravity"**
     * **Link:** [https://arxiv.org/abs/1009.2157](https://arxiv.org/abs/1009.2157)
 
@@ -3043,7 +3043,7 @@ The problem of time is resolved in QBD by the dual-time architecture developed i
 
 ---
 
-### 12. **Bennett, C. H. (1982).** {#A.12}
+### 13. **Bennett, C. H. (1982).** {#A.13}
 **"The thermodynamics of computation: a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
 
@@ -3056,7 +3056,7 @@ Bennett's insights are foundational for the dynamical rewrite rules formulated i
 
 ---
 
-### 14. **Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987).** {#A.14}
+### 15. **Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987).** {#A.15}
 **"Space-time as a causal set"**
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521)
 
@@ -3069,7 +3069,7 @@ This classic paper is the conceptual precursor to the Causal Graph substrate def
 
 ---
 
-### 15. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.15}
+### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
 **"Graph Theory"**
     * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
 
@@ -3082,7 +3082,7 @@ This textbook serves as the standard reference for all graph-theoretic operation
 
 ---
 
-### 20. **Diestel, R. (2017).** {#A.20}
+### 22. **Diestel, R. (2017).** {#A.22}
 **"Graph Theory (5th ed.)"**
 - *Springer*
     * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
@@ -3096,7 +3096,7 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
-### 22. **Enderton, H. B. (2001).** {#A.22}
+### 25. **Enderton, H. B. (2001).** {#A.25}
 **"A Mathematical Introduction to Logic (2nd ed.)"**
     * **Link:** [https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic](https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic)
 
@@ -3109,7 +3109,7 @@ This logic reference is necessary for the epistemological foundations laid in Ch
 
 ---
 
-### 25. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.25}
+### 28. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.28}
 **"The Page-Wootters mechanism in canonical quantum gravity"**
     * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
 
@@ -3122,7 +3122,7 @@ The Page-Wootters mechanism is the conceptual precursor to the relational time f
 
 ---
 
-### 29. **Gödel, K. (1931).** {#A.29}
+### 31. **Gödel, K. (1931).** {#A.31}
 **"On Formally Undecidable Propositions of Principia Mathematica and Related Systems"**
     * **Link:** [https://homepages.uc.edu/~martinj/History_of_Logic/Godel/Godel%20%E2%80%93%20On%20Formally%20Undecidable%20Propositions%20of%20Principia%20Mathematica%201931.pdf](https://homepages.uc.edu/~martinj/History_of_Logic/Godel/Godel%20%E2%80%93%20On%20Formally%20Undecidable%20Propositions%20of%20Principia%20Mathematica%201931.pdf)
 
@@ -3135,7 +3135,7 @@ Godel's incompleteness theorems provide the logical motivation for the epistemol
 
 ---
 
-### 38. **Lamport, L. (1978).** {#A.38}
+### 41. **Lamport, L. (1978).** {#A.41}
 **"Time, clocks, and the ordering of events in a distributed system"**
     * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
@@ -3148,7 +3148,7 @@ Lamport's logical clock formalism is the starting point for the dual-time archit
 
 ---
 
-### 39. **Landauer, R. (1991).** {#A.39}
+### 42. **Landauer, R. (1991).** {#A.42}
 **"Information is Physical"**
     * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
 
@@ -3161,7 +3161,7 @@ This physical principle is foundational for the dynamical rewrite engine formula
 
 ---
 
-### 42. **Marker, D. (2002).** {#A.42}
+### 46. **Marker, D. (2002).** {#A.46}
 **"Model Theory: An Introduction"**
     * **Link:** [https://link.springer.com/book/10.1007/b98860](https://link.springer.com/book/10.1007/b98860)
 
@@ -3174,7 +3174,7 @@ This reference is necessary for the logical and model-theoretic analyses conduct
 
 ---
 
-### 48. **Page, D. N., & Wootters, W. K. (1983).** {#A.48}
+### 51. **Page, D. N., & Wootters, W. K. (1983).** {#A.51}
 **"Evolution without evolution: Dynamics described by stationary observables"**
     * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885)
 
@@ -3187,7 +3187,7 @@ This relational time approach is the core architecture used to solve the problem
 
 ---
 
-### 49. **Palmigiano, A., & Sadrzadeh, M. (Eds.). (2023).** {#A.49}
+### 53. **Palmigiano, A., & Sadrzadeh, M. (Eds.). (2023).** {#A.53}
 **"Samson Abramsky on Logic and Structure in Computer Science and Beyond"**
     * **Link:** [https://link.springer.com/book/10.1007/978-3-031-24117-8](https://link.springer.com/book/10.1007/978-3-031-24117-8)
 
@@ -3200,20 +3200,7 @@ This volume is the direct reference for the categorical quantum mechanics models
 
 ---
 
-### 53. **Rovelli, C. (1996).** {#A.53}
-**"Relational Quantum Mechanics"**
-    * **Link:** [https://arxiv.org/abs/quant-ph/9609002](https://arxiv.org/abs/quant-ph/9609002)
-
-
-**Overview:**
-Rovelli introduces Relational Quantum Mechanics (RQM), postulating that quantum states do not represent absolute properties of physical systems but rather relational information between systems. He argues that physical systems are completely defined by the relations they establish with other systems, eliminating the need for an absolute observer.
-
-**Relevance to QBD:**
-RQM is the central epistemological foundation for the update dynamics formulated in Chapter 4. In QBD, the state of the causal graph is entirely relational, where vertices possess states only relative to neighboring connections. Rovelli's relational model provides the physical motivation for this approach, showing that quantum measurement is a fundamental relational update event on the graph.
-
----
-
-### 54. **Rovelli, C., & Smolin, L. (1990).** {#A.54}
+### 58. **Rovelli, C., & Smolin, L. (1990).** {#A.58}
 **"Loop space representation of quantum general relativity"**
     * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
 
@@ -3226,7 +3213,20 @@ This loop space representation is the foremost conceptual template for the spati
 
 ---
 
-### 59. **Sorkin, R. D. (2005).** {#A.59}
+### 59. **Rovelli, C. (1996).** {#A.59}
+**"Relational Quantum Mechanics"**
+    * **Link:** [https://arxiv.org/abs/quant-ph/9609002](https://arxiv.org/abs/quant-ph/9609002)
+
+
+**Overview:**
+Rovelli introduces Relational Quantum Mechanics (RQM), postulating that quantum states do not represent absolute properties of physical systems but rather relational information between systems. He argues that physical systems are completely defined by the relations they establish with other systems, eliminating the need for an absolute observer.
+
+**Relevance to QBD:**
+RQM is the central epistemological foundation for the update dynamics formulated in Chapter 4. In QBD, the state of the causal graph is entirely relational, where vertices possess states only relative to neighboring connections. Rovelli's relational model provides the physical motivation for this approach, showing that quantum measurement is a fundamental relational update event on the graph.
+
+---
+
+### 64. **Sorkin, R. D. (2005).** {#A.64}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
@@ -3240,7 +3240,7 @@ Sorkin's causal set model is a core physical pillar for the discrete causal subs
 
 ---
 
-### 71. **Wolfram, S. (2002).** {#A.71}
+### 76. **Wolfram, S. (2002).** {#A.76}
 **"A New Kind of Science"**
     * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
 
@@ -3253,7 +3253,7 @@ Wolfram's computational paradigm is a key conceptual precursor to the graph rewr
 
 ---
 
-### 72. **Wolfram, S. (2020).** {#A.72}
+### 77. **Wolfram, S. (2020).** {#A.77}
 **"A Project to Find the Fundamental Theory of Physics"**
     * **Link:** [https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/](https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/)
 

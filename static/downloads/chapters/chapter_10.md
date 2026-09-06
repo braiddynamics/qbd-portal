@@ -480,7 +480,7 @@ The **Braid Code Stabilizer Group**, denoted $\mathcal{S}$, is defined as the ab
 :::info[**Definition of Topological Integrity Rules**]
 :::
 
-The **Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" /> introduces the "Stabilizer Group" for the braid code. In quantum error correction, stabilizers are operators that check for errors without destroying the quantum state. Here, these operators are not arbitrary matrices; they are geometric checks on the graph. This framework directly applies the stabilizer formalism pioneered by <Cite id="A.28" label="(Gottesman, 1997)" />, which generalizes the idea of parity checks to the quantum domain. Just as Gottesman's stabilizers define a codespace as the +1 eigenspace of a group of Pauli operators, the geometric stabilizers define the physical vacuum as the subspace satisfying all topological consistency conditions.
+The **Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" /> introduces the "Stabilizer Group" for the braid code. In quantum error correction, stabilizers are operators that check for errors without destroying the quantum state. Here, these operators are not arbitrary matrices; they are geometric checks on the graph. This framework directly applies the stabilizer formalism pioneered by <Cite id="A.32" label="(Gottesman, 1997)" />, which generalizes the idea of parity checks to the quantum domain. Just as Gottesman's stabilizers define a codespace as the +1 eigenspace of a group of Pauli operators, the geometric stabilizers define the physical vacuum as the subspace satisfying all topological consistency conditions.
 
 * **Geometric Checks:** These verify that every 3-cycle is closed. A broken cycle signals a "bit-flip" error.
 * **Ribbon Integrity:** These ensure the ribbons are not frayed or cut.
@@ -3238,21 +3238,7 @@ The conclusion is absolute: reality is an algorithm. The particles, forces, and 
 \newpage
 # References
 
-### 1. **Acharya, R., et al. (2024).** {#A.1}
-**"Bridging classical and quantum: Group-theoretic approach to quantum circuit simulation"**
-- *Physical Review Letters*, 132(15), 150602
-    * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602)
-
-
-**Overview:**
-Acharya and collaborators develop a unified algebraic formalism that maps quantum circuit states and gates to representation-theoretic structures in finite group theory. By leveraging group-theoretic structures, they show that specific classes of quantum circuits, such as stabilizer circuits and their near-stabilizer extensions, can be mapped onto classical group actions. This work pins down exact boundary conditions for when quantum resources yield computational advantages over classical simulations.
-
-**Relevance to QBD:**
-Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing how topological excitations acting as qubits under the stabilizer formalism correspond to discrete representations of the braid group. This reference validates that the discrete stabilizers and gates formed by braid permutations translate directly to classical and quantum group-theoretic actions on the causal graph. Drawing on this result, we can show why the discrete update rule naturally constructs a universal quantum computer without the need for continuous fields.
-
----
-
-### 28. **Gottesman, D. (1997).** {#A.28}
+### 32. **Gottesman, D. (1997).** {#A.32}
 **"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
 
@@ -3262,29 +3248,3 @@ Gottesman introduces the stabilizer formalism, a powerful algebraic structure th
 
 **Relevance to QBD:**
 The stabilizer formalism is the leading tool used to protect the topological graph structures in QBD. In Chapter 10, we utilize Gottesman's formalism to define stabilizer operators on the vertices and edges of our tripartite braid configurations. This ensures that the logical information remains protected from local vacuum fluctuations, demonstrating that topological qubits are stable.
-
----
-
-### 69. **Witten, E. (1989).** {#A.69}
-**"Quantum Field Theory and the Jones Polynomial"**
-    * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
-
-
-**Overview:**
-Witten constructs topological quantum field theory (TQFT) by showing that the Jones polynomial of a knot can be calculated as the partition function of a Chern-Simons gauge theory. This work bridges the gap between low-dimensional topology and quantum field theory, proving that topological invariants correspond to observable physical amplitudes.
-
-**Relevance to QBD:**
-This seminal TQFT construction is the direct algebraic precursor to the particle braid formulations developed in Chapter 6. In QBD, the stable particle states are represented by braids whose physical amplitudes are governed by Chern-Simons topological invariants. Witten's results connect low-dimensional topology to our emergent quantum particles.
-
----
-
-### 73. **Zurek, W. H. (2003).** {#A.73}
-**"Decoherence, Einselection, and the Quantum Origins of the Classical"**
-    * **Link:** [https://arxiv.org/abs/quant-ph/0105127](https://arxiv.org/abs/quant-ph/0105127)
-
-
-**Overview:**
-Zurek reviews the quantum decoherence program, explaining how interactions between a quantum system and its environment select a preferred set of stable classical states, a process known as einselection. He proves that decoherence naturally explains how classical objectivity emerges from the underlying quantum superposition states.
-
-**Relevance to QBD:**
-Decoherence and einselection are the key physical mechanisms used to explain the emergence of classical causal history in Chapter 4. In QBD, the environment of the causal graph decoheres relational quantum states into stable, objective classical edges. Zurek's analysis provides the physical motivation for this emergence, bridging the quantum substrate and classical space.

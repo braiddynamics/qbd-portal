@@ -84,7 +84,7 @@ A localized subgraph $\xi \subset G$ exhibits **Local Reducibility** if there ex
 :::info[**Structural Instability of Trivial Knots driven by Vacuum Fluctuations**]
 :::
 
-The formal definition of local reducibility establishes a direct correspondence between topological triviality and thermodynamic instability. In the context of the Causal Graph, a structure lacking a fundamental topological lock, such as a non-trivial knot invariant, presents no barrier to the vacuum's inherent drive toward simplification. This vulnerability is akin to the decay of unstable states in quantum systems, where the absence of a selection rule (conservation law) permits rapid transition to a lower energy configuration. The ambient thermal noise, manifested as the stochastic application of the rewrite rule $\mathcal{R}$, continuously explores the local phase space of the graph, similar to the thermal agitation modeled in <Cite id="A.63" label="(van Kampen, 1992)" /> for chemical reactions.
+The formal definition of local reducibility establishes a direct correspondence between topological triviality and thermodynamic instability. In the context of the Causal Graph, a structure lacking a fundamental topological lock, such as a non-trivial knot invariant, presents no barrier to the vacuum's inherent drive toward simplification. This vulnerability is akin to the decay of unstable states in quantum systems, where the absence of a selection rule (conservation law) permits rapid transition to a lower energy configuration. The ambient thermal noise, manifested as the stochastic application of the rewrite rule $\mathcal{R}$, continuously explores the local phase space of the graph, similar to the thermal agitation modeled in <Cite id="A.68" label="(van Kampen, 1992)" /> for chemical reactions.
 
 If a subgraph admits a sequence of local operations that reduces its complexity without requiring a coordinated global rearrangement, the system inevitably traverses this path due to the overwhelming statistical weight of the vacuum state. One may conceptualize this vulnerability through the mechanics of a "slip-knot." While a slip-knot may momentarily appear complex and localized, it lacks the essential entanglement required to resist deformation. A series of uncoordinated local perturbations, analogous to the random fluctuations of the rewrite rule, suffices to unravel the structure completely. The condition of reducibility implies that the transformation from the excited state to the vacuum state proceeds monotonically downward in the complexity landscape. No energy barrier or "activation energy" exists to halt the dissolution. Consequently, any topological fluctuation that fails to achieve a prime, irreducible configuration functions merely as a transient resonance; the vacuum "digests" these trivial excitations, returning the local geometry to the sparse equilibrium of the background. Persistence, therefore, demands an architecture that local operations cannot dismantle.
 
@@ -951,9 +951,9 @@ Q.E.D.
 :::info[**Preservation of Global Structure due to Scale Separation**]
 :::
 
-The **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> identifies the critical architectural feature that permits matter to exist within a hostile vacuum. The "immune system" of the vacuum, the deletion operator, operates strictly locally. It perceives geometry only within a small causal horizon $R$, encompassing roughly the immediate neighbors of a vertex. A Prime Knot, however, constitutes a **Global Structure**. Its "knottedness" resides not in any single vertex or edge, but in the collective, non-local relationship of the entire loop. This reliance on non-local topological invariants to ensure stability aligns with the foundational work of <Cite id="A.69" label="(Witten, 1989)" /> on topological quantum field theory (TQFT), where observables like the Jones polynomial capture global properties of knots that are invariant under local deformations.
+The **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> identifies the critical architectural feature that permits matter to exist within a hostile vacuum. The "immune system" of the vacuum, the deletion operator, operates strictly locally. It perceives geometry only within a small causal horizon $R$, encompassing roughly the immediate neighbors of a vertex. A Prime Knot, however, constitutes a **Global Structure**. Its "knottedness" resides not in any single vertex or edge, but in the collective, non-local relationship of the entire loop. This reliance on non-local topological invariants to ensure stability aligns with the foundational work of <Cite id="A.74" label="(Witten, 1989)" /> on topological quantum field theory (TQFT), where observables like the Jones polynomial capture global properties of knots that are invariant under local deformations.
 
-To untie a knot, one must perform one of two operations: pass a strand physically *through* another, or unravel the loop by pulling the slack around the entire circumference. The first operation encounters the **Singularity of Connectivity**. In a discrete graph, "passing through" requires the temporary merger of two distinct causal threads into a single vertex, creating a super-node with unphysical degree and curvature; this state represents an infinite energy barrier. The second operation, unravelling, requires coordinating a sequence of moves around the entire loop, a process of order $O(N)$. Since the local operator possesses a computational horizon of only $O(\log N)$, it cannot coordinate the global sequence required to release the knot. The particle persists because the vacuum lacks the "vision" to untie it; the knot survives in the blind spot of the deletion mechanism, protected by the global invariant nature of the Jones polynomial as described by <Cite id="A.35" label="(Jones, 1985)" />.
+To untie a knot, one must perform one of two operations: pass a strand physically *through* another, or unravel the loop by pulling the slack around the entire circumference. The first operation encounters the **Singularity of Connectivity**. In a discrete graph, "passing through" requires the temporary merger of two distinct causal threads into a single vertex, creating a super-node with unphysical degree and curvature; this state represents an infinite energy barrier. The second operation, unravelling, requires coordinating a sequence of moves around the entire loop, a process of order $O(N)$. Since the local operator possesses a computational horizon of only $O(\log N)$, it cannot coordinate the global sequence required to release the knot. The particle persists because the vacuum lacks the "vision" to untie it; the knot survives in the blind spot of the deletion mechanism, protected by the global invariant nature of the Jones polynomial as described by <Cite id="A.38" label="(Jones, 1985)" />.
 
 ---
 
@@ -1292,7 +1292,7 @@ Q.E.D.
 
 A single ribbon possesses the capacity for writhe, manifesting as a twist along its axis. One might interrogate why this twisted structure fails to constitute a stable particle on its own. The **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" /> resolves the question by demonstrating that a single twist remains "soft" to the vacuum's editing processes. A Type II Reidemeister move allows the local conversion of a twist into a loop, which the system then identifies as a redundant "bubble" and deletes.
 
-Physically, this signifies that a single twisted ribbon contains a decay channel accessible to the local rewrite rule. The relaxation process does not require a global transformation or the traversal of a high-energy barrier; instead, the graph's update mechanism can decompose the twist into a sequence of local redundancies and remove them iteratively. Therefore, while writhe serves as a component of mass and charge, a structure relying *solely* on the self-twist of a single strand cannot persist. True stability demands the mutual entanglement of multiple strands, where the presence of one strand physically blocks the "untying" trajectory of its neighbor, creating a collective state that resists local simplification. This geometric necessity for entanglement to produce stability mirrors the concept of <Cite id="A.37" label="(Kitaev, 2003)" /> regarding anyonic systems, where topological protection against local errors (or decay) requires a non-trivial braiding of quasiparticles that cannot be undone by local operations.
+Physically, this signifies that a single twisted ribbon contains a decay channel accessible to the local rewrite rule. The relaxation process does not require a global transformation or the traversal of a high-energy barrier; instead, the graph's update mechanism can decompose the twist into a sequence of local redundancies and remove them iteratively. Therefore, while writhe serves as a component of mass and charge, a structure relying *solely* on the self-twist of a single strand cannot persist. True stability demands the mutual entanglement of multiple strands, where the presence of one strand physically blocks the "untying" trajectory of its neighbor, creating a collective state that resists local simplification. This geometric necessity for entanglement to produce stability mirrors the concept of <Cite id="A.40" label="(Kitaev, 2003)" /> regarding anyonic systems, where topological protection against local errors (or decay) requires a non-trivial braiding of quasiparticles that cannot be undone by local operations.
 
 ### 6.2.4.3 Diagram: Decay of Single Ribbon {#6.2.4.3}
 
@@ -1425,7 +1425,7 @@ Q.E.D.
 :::info[**Incompatibility of Two-Strand Braids with Non-Abelian Gauge Symmetry**]
 :::
 
-The **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> elucidates the fundamental reason for the absence of binary quarks. A system comprising two braided ribbons forms a stable link, resisting local deletion and thus satisfying the first criterion of existence. However, its interaction structure proves fundamentally insufficient for the physics of the strong force. The braid group $B_2$ is Abelian; its generators commute, meaning that the order of operations does not alter the outcome. This algebraic limitation mirrors the group-theoretic constraints identified by <Cite id="A.1" label="(Acharya et al., 2024)" /> in the context of quantum circuit simulation, where the separation between classical simulability and quantum universality is dictated by the non-abelian character of the underlying gate group.
+The **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" /> elucidates the fundamental reason for the absence of binary quarks. A system comprising two braided ribbons forms a stable link, resisting local deletion and thus satisfying the first criterion of existence. However, its interaction structure proves fundamentally insufficient for the physics of the strong force. The braid group $B_2$ is Abelian; its generators commute, meaning that the order of operations does not alter the outcome. This algebraic limitation mirrors the group-theoretic constraints identified by <Cite id="A.2" label="(Acharya et al., 2024)" /> in the context of quantum circuit simulation, where the separation between classical simulability and quantum universality is dictated by the non-abelian character of the underlying gate group.
 
 In physical terms, an Abelian gauge group generates forces that lack self-interaction. Photons, governed by the Abelian $U(1)$ group, do not interact with other photons. Gluons, however, must interact with themselves to produce the confinement characteristic of Quantum Chromodynamics (QCD). This self-interaction demands a non-Abelian gauge group like $SU(3)$, where the generators do not commute. A two-strand braid generates algebras isomorphic to $U(1)$ or $SU(2)$, which suffice for electromagnetism or the weak force but fail to provide the non-linear binding mechanism required to hold a nucleus together. Thus, while topologically valid, two-ribbon braids cannot serve as the fundamental constituents of hadronic matter. The universe necessitates the algebraic complexity of $n=3$ to construct a proton.
 
@@ -2653,7 +2653,7 @@ While we now understand the structural layout of these persistent defects, their
 \newpage
 # References
 
-### 1. **Acharya, R., et al. (2024).** {#A.1}
+### 2. **Acharya, R., et al. (2024).** {#A.2}
 **"Bridging classical and quantum: Group-theoretic approach to quantum circuit simulation"**
 - *Physical Review Letters*, 132(15), 150602
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.150602)
@@ -2667,7 +2667,7 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 
 ---
 
-### 35. **Jones, V. F. R. (1985).** {#A.35}
+### 38. **Jones, V. F. R. (1985).** {#A.38}
 **"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
 
@@ -2680,7 +2680,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 
 ---
 
-### 37. **Kitaev, A. Y. (2003).** {#A.37}
+### 40. **Kitaev, A. Y. (2003).** {#A.40}
 **"Fault-tolerant quantum computation by anyons"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
 
@@ -2693,7 +2693,7 @@ Kitaev's toric code is the foremost conceptual model for the stabilizer-protecte
 
 ---
 
-### 63. **van Kampen, N. G. (1992).** {#A.63}
+### 68. **van Kampen, N. G. (1992).** {#A.68}
 **"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
 - *North-Holland*
     * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
@@ -2707,7 +2707,7 @@ This textbook is the direct reference for the stochastic master equations formul
 
 ---
 
-### 69. **Witten, E. (1989).** {#A.69}
+### 74. **Witten, E. (1989).** {#A.74}
 **"Quantum Field Theory and the Jones Polynomial"**
     * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
 

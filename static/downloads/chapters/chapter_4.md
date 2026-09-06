@@ -53,7 +53,7 @@ The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the m
 :::info[**Modeling of Instantaneous Causal Pathways as Potential Influence Channels**]
 :::
 
-To understand the internal structure of a single moment in time, we must first rigorize the concept of "reachability" within a discrete snapshot. The category $\mathbf{Caus}_t$ serves as the formal apparatus for this task, transforming the raw graph data into an algebraic structure governed by composition. This formalization leverages the standard framework of path categories described by <Cite id="A.7" label="(Awodey, 2010)" />, allowing us to treat causal reachability as a composable morphism that obeys rigorous associative laws. Each object in this category corresponds to a vertex in the graph $G_t$, which physically represents a discrete event or a relational nexus within the vacuum fabric.
+To understand the internal structure of a single moment in time, we must first rigorize the concept of "reachability" within a discrete snapshot. The category $\mathbf{Caus}_t$ serves as the formal apparatus for this task, transforming the raw graph data into an algebraic structure governed by composition. This formalization leverages the standard framework of path categories described by <Cite id="A.8" label="(Awodey, 2010)" />, allowing us to treat causal reachability as a composable morphism that obeys rigorous associative laws. Each object in this category corresponds to a vertex in the graph $G_t$, which physically represents a discrete event or a relational nexus within the vacuum fabric.
 
 The morphisms of this category are the directed paths. A morphism $f: u \to v$ does not merely assert that $u$ and $v$ are connected, it represents a specific **causal lineage** or trajectory of influence. This includes the trivial path of length $\ell = 0$ (the identity morphism $\text{id}_u$), which physically encodes the persistence of an event's self-identity or its causal potential before interaction. The composition operation $g \circ f$ corresponds to the transitivity of causality, if $u$ influences $v$ via path $f$, and $v$ influences $w$ via path $g$, then $u$ necessarily exerts a mediated influence on $w$. This algebraic closure ensures that causal influence is not just a local phenomenon between neighbors, but a global property that propagates through the network.
 
@@ -992,7 +992,7 @@ The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is define
 :::info[**Operational Semantics of the Awareness Functor**]
 :::
 
-The endofunctor $R_T$ formalizes the physical act of self-observation within the relational framework. By mapping the state $(G, \sigma)$ to $(G, (\sigma, \sigma_G))$, the operator preserves the historical diagnostic record $\sigma$ representing the stored context while simultaneously adjoining the immediate observational reality $\sigma_G$ representing the present observed state. This architecture directly mirrors the Costate Comonad, also known as the Store Comonad, formalized by <Cite id="A.61" label="(Uustalu & Vene, 2008)" /> in context-dependent computation. In this computational model, a current focus position is paired with a surrounding navigational context, creating a system capable of reading and inspecting its own local state without altering its underlying identity.
+The endofunctor $R_T$ formalizes the physical act of self-observation within the relational framework. By mapping the state $(G, \sigma)$ to $(G, (\sigma, \sigma_G))$, the operator preserves the historical diagnostic record $\sigma$ representing the stored context while simultaneously adjoining the immediate observational reality $\sigma_G$ representing the present observed state. This architecture directly mirrors the Costate Comonad, also known as the Store Comonad, formalized by <Cite id="A.66" label="(Uustalu & Vene, 2008)" /> in context-dependent computation. In this computational model, a current focus position is paired with a surrounding navigational context, creating a system capable of reading and inspecting its own local state without altering its underlying identity.
 
 This nested informational structure allows the relational graph to retain both its memory (the prior annotation layer) and its perception (the freshly computed calculation), enabling explicit differential comparison between expected and actual configurations. The functorial lifting of morphisms ensures that any structural transformations applied to the state act upon the stored context while preserving the integrity of freshly observed data. This separation is critical for physical fault tolerance: it establishes a well-defined reference frame where stored expectations are compared against computed actualities to detect anomalies, topological defects, or temporal shifts across the network. If the system were to overwrite $\sigma$ directly with $\sigma_G$, the historical context required to evaluate deviations or temporal evolution would be lost.
 
@@ -3607,7 +3607,7 @@ This runtime transforms the static tree into a living, breathing process. Howeve
 \newpage
 # References
 
-### 7. **Awodey, S. (2010).** {#A.7}
+### 8. **Awodey, S. (2010).** {#A.8}
 **"Category Theory (2nd ed.)"**
     * **Link:** [https://global.oup.com/academic/product/category-theory-9780199237180](https://global.oup.com/academic/product/category-theory-9780199237180)
 
@@ -3620,47 +3620,7 @@ Category theory is the formal language used to define the computational syntax o
 
 ---
 
-### 27. **Gillespie, D. T. (1977).** {#A.27}
-**"Exact stochastic simulation of coupled chemical reactions"**
-- *The Journal of Physical Chemistry*, 81(25), 2340-2361
-    * **Link:** [https://pubs.acs.org/doi/10.1021/j100540a008](https://pubs.acs.org/doi/10.1021/j100540a008)
-
-
-**Overview:**
-Gillespie develops the Stochastic Simulation Algorithm (SSA), a precise numerical method used to simulate the time evolution of coupled chemical reactions in a well-mixed volume. By integrating the reaction probabilities stochastically, the algorithm provides exact realizations of the master equation, capturing the discrete fluctuations that are ignored by deterministic rate equations.
-
-**Relevance to QBD:**
-The Gillespie algorithm is the numerical foundation for the stochastic update simulations conducted in Chapter 4. We model the application of the rewrite rules as a set of coupled stochastic reactions where the graph vertices behave as reactants. Gillespie's method anchors the exact stochastic simulation used to validate that the graph evolves toward a stable macroscopic vacuum.
-
----
-
-### 39. **Landauer, R. (1991).** {#A.39}
-**"Information is Physical"**
-    * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
-
-
-**Overview:**
-Landauer argues that information cannot exist independently of a physical representation, meaning that processing and storing information are governed by physical laws. He reviews Landauer's principle, which dictates that any logically irreversible operation, such as the erasure of a bit, must dissipate a minimum amount of heat into the environment. This work established a deep physical connection between information theory, computation, and thermodynamics.
-
-**Relevance to QBD:**
-This physical principle is foundational for the dynamical rewrite engine formulated in Chapter 4. In QBD, the deletion of edges during the update cycles constitutes a logically irreversible erasure of topological information. Landauer's principle establishes the physical necessity of localized heat dissipation during these deletions, confirming that the energetic cost of quantum gravity updates is fundamentally linked to information thermodynamics.
-
----
-
-### 46. **Padmanabhan, T. (2009).** {#A.46}
-**"Thermodynamical Aspects of Gravity: New Insights"**
-    * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
-
-
-**Overview:**
-Padmanabhan reviews the thermodynamic description of gravity, presenting extensive evidence that gravity is not a fundamental interaction but rather an emergent thermodynamic phenomenon. He demonstrates that the field equations can be written as a local thermodynamic identity on causal horizons, linking geometry directly to entropy.
-
-**Relevance to QBD:**
-Padmanabhan's thermodynamic analysis is a central conceptual foundation for the emergent gravity proofs in Chapter 13. In QBD, spatial curvature emerges from the thermodynamic equilibrium of the vacuum graph. His review provides the physical motivation for treating general relativity as a macroscopic equation of state, linking discrete updates to thermodynamic entropy.
-
----
-
-### 61. **Uustalu, T., & Vene, V. (2008).** {#A.61}
+### 66. **Uustalu, T., & Vene, V. (2008).** {#A.66}
 **"Comonadic notions of computation"**
     * **Link:** [https://www.sciencedirect.com/science/article/pii/S1571066108003435](https://www.sciencedirect.com/science/article/pii/S1571066108003435)
 
@@ -3670,17 +3630,3 @@ Uustalu and Vene formulate a comonadic approach to describe context-dependent co
 
 **Relevance to QBD:**
 This comonadic structure is the direct tool used to formalize the local update rules in Chapter 2. Because our rewrite rules rely on the surrounding context of neighboring vertices and edges, they are modeled comonadically. This construction provides the category-theoretic foundations required to define these context-dependent updates, ensuring algebraic consistency.
-
----
-
-### 63. **van Kampen, N. G. (1992).** {#A.63}
-**"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
-- *North-Holland*
-    * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
-
-
-**Overview:**
-van Kampen presents a classic and thorough textbook on stochastic processes in physical and chemical systems. He covers the master equation, Fokker-Planck equations, expansion methods, and the properties of stochastic transitions in systems operating near or far from thermodynamic equilibrium.
-
-**Relevance to QBD:**
-This textbook is the direct reference for the stochastic master equations formulated in Chapter 4. In QBD, the local update rules are modeled as stochastic transitions whose probabilities are governed by a master equation. Van Kampen's analytical tools show that this master equation converges to a stable macroscopic vacuum, supporting our model.

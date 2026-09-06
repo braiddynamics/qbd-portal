@@ -56,11 +56,11 @@ The existence of an edge $e = (u, v)$ constitutes the physical encoding of the p
 :::info[**Derivation of Temporal Directionality from the Topological Rejection of Inertia and Simultaneity**]
 :::
 
-The selection of a strictly directed and irreflexive primitive constitutes the foundational requirement for modeling a universe of **becoming** (dynamic evolution) rather than a universe of **being** (static existence). This distinction aligns directly with the Causal Set program initiated by <Cite id="A.14" label="(Bombelli et al., 1987)" />, which posits that the causal order is the primary structure of spacetime, antecedent to metric geometry. However, while Causal Set Theory often assumes the partial order as a given, QBD constructs it mechanically from the edge primitive. In classical crystallography or standard network theory, an undirected edge $\{u, v\}$ signifies a mutual and persistent bond, a state of structural equilibrium where the relationship exists simultaneously for both nodes. However, a theory of fundamental causality requires a mechanism to drive the system strictly out of equilibrium. If the fundamental relations were symmetric, the system would settle into a static lattice. By enforcing directionality, we compel the system to compute its own future.
+The selection of a strictly directed and irreflexive primitive constitutes the foundational requirement for modeling a universe of **becoming** (dynamic evolution) rather than a universe of **being** (static existence). This distinction aligns directly with the Causal Set program initiated by <Cite id="A.15" label="(Bombelli et al., 1987)" />, which posits that the causal order is the primary structure of spacetime, antecedent to metric geometry. However, while Causal Set Theory often assumes the partial order as a given, QBD constructs it mechanically from the edge primitive. In classical crystallography or standard network theory, an undirected edge $\{u, v\}$ signifies a mutual and persistent bond, a state of structural equilibrium where the relationship exists simultaneously for both nodes. However, a theory of fundamental causality requires a mechanism to drive the system strictly out of equilibrium. If the fundamental relations were symmetric, the system would settle into a static lattice. By enforcing directionality, we compel the system to compute its own future.
 
 **The Rejection of Inertia (Irreflexivity)** serves as the topological enforcement of fundamental change. A reflexive link $u \to u$ represents a "closed loop of zero length," a pathological process wherein the output of an event instantaneously feeds back into its own input without traversing any distance in the causal graph. Such a structure models a state of pure inertia or solipsism, decoupling the event from the rest of the relational web. In a universe governed by information transfer, a state that only communicates with itself is thermodynamically indistinguishable from a state that does not exist. By axiomatically forbidding $u \to u$, the theory mandates that existence requires interaction with the external. An event cannot sustain itself through internal recurrence: it must derive its existence from a distinct antecedent and contribute its influence to a distinct consequent. This constraint effectively "hard-codes" the flow of time into the topology: the system must move to persist.
 
-**The Rejection of Simultaneity (Asymmetry)** serves as the microscopic seed of the macroscopic arrow of time. If the substrate permitted symmetric relations (where $u \to v$ and $v \to u$ coexist), the distinction between "cause" and "effect" would vanish within that local neighborhood. This would collapse the temporal separation between $u$ and $v$ into a single simultaneous cluster, effectively reducing the causal graph to a rigid and undirected lattice akin to a spatial crystal. The imposition of strict asymmetry creates a local potential gradient. It ensures that every elementary interaction acts as a "ratchet," permitting influence to propagate in only one direction. This atomic directionality, resonating with <Cite id="A.59" label="(Sorkin, 2005)" />'s definition of discrete gravity, prevents the system from stagnating in reversible loops and provides the necessary thrust for the emergence of a global and irreversible causal order.
+**The Rejection of Simultaneity (Asymmetry)** serves as the microscopic seed of the macroscopic arrow of time. If the substrate permitted symmetric relations (where $u \to v$ and $v \to u$ coexist), the distinction between "cause" and "effect" would vanish within that local neighborhood. This would collapse the temporal separation between $u$ and $v$ into a single simultaneous cluster, effectively reducing the causal graph to a rigid and undirected lattice akin to a spatial crystal. The imposition of strict asymmetry creates a local potential gradient. It ensures that every elementary interaction acts as a "ratchet," permitting influence to propagate in only one direction. This atomic directionality, resonating with <Cite id="A.64" label="(Sorkin, 2005)" />'s definition of discrete gravity, prevents the system from stagnating in reversible loops and provides the necessary thrust for the emergence of a global and irreversible causal order.
 
 ---
 
@@ -513,7 +513,7 @@ Q.E.D.
 :::info[**Identification of the 3-Cycle as the First Stable Closure permitting Feedback without Simultaneity**]
 :::
 
-The integer $3$ represents the fundamental topological limit for causal closure. It constitutes the first structure capable of closing a causal loop without violating the logical constraints of time and causality. This mirrors the findings of <Cite id="A.4" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations (CDT), where spacetime is constructed from simplicial building blocks (triangles in 2D, tetrahedra in 3D) that respect a strict causal foliation. In both QBD and CDT, the triangle is not just a shape but the atom of geometry, the minimal unit required to define an "interior" and thus generate manifold-like properties from discrete data.
+The integer $3$ represents the fundamental topological limit for causal closure. It constitutes the first structure capable of closing a causal loop without violating the logical constraints of time and causality. This mirrors the findings of <Cite id="A.5" label="(Ambjørn, Jurkiewicz, & Loll, 2005)" /> in Causal Dynamical Triangulations (CDT), where spacetime is constructed from simplicial building blocks (triangles in 2D, tetrahedra in 3D) that respect a strict causal foliation. In both QBD and CDT, the triangle is not just a shape but the atom of geometry, the minimal unit required to define an "interior" and thus generate manifold-like properties from discrete data.
 
 Structures of length $1$ and $2$ imply logical contradictions within a directed causal framework. As established, the self-loop (length $1$) implies self-creation: a violation of the causal demand for antecedence. The feedback loop (length $2$) implies simultaneity: if $A$ causes $B$ and $B$ causes $A$, the temporal interval between them vanishes, collapsing them into a single event. The $3$-cycle, however, permits feedback (a return to the origin) while preserving local directionality. In the sequence $A \to B \to C \to A$, event $A$ precedes $B$, $B$ precedes $C$, and $C$ precedes $A$. Locally, every link maintains a strict forward orientation in logical time. The paradox of the loop is distributed across three events, creating a structure possessing an "interior" or area rather than a singularity. The triangle functions as the unique topological solution to the problem of creating a closed structure (a persistent object) from directed arrows of influence. Importantly, this spatial directed 3-cycle ($A \to B \to C \to A$) is a structural motif within the Spatial State Graph $G_t$ representing spatial adjacency and area. Because the timeline of global physical updates is governed by a strict Causal Poset of Events, the spatial loop does not constitute a chronological loop of events (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />). Consequently, spatial triangles form while the history remains a strict Directed Acyclic Graph (DAG) under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
@@ -967,7 +967,7 @@ Q.E.D.
 :::info[**Convergence of Alternative Path Branches in the Macro-Timeline**]
 :::
 
-Confluence properties guarantee that spatially independent rewrite paths eventually converge, ensuring that the macroscopic timeline remains unique regardless of the local update schedule. In a distributed pre-geometric substrate, updates execute concurrently across disparate regions. Local confluence ensures that the final topological configuration depends exclusively on the set of applied rules rather than the arbitrary sequential ordering of intermediate operations.
+Confluence properties guarantee that spatially independent rewrite paths eventually converge, ensuring that the macroscopic timeline remains unique regardless of the local update schedule. In a distributed pre-geometric substrate, updates execute concurrently across disparate regions, mirroring the Church-Rosser and critical-pair confluence theorems of algebraic graph transformation (<Cite id="A.24" label="(Ehrig et al., 2006)" />). Local confluence ensures that the final topological configuration depends exclusively on the set of applied rules rather than the arbitrary sequential ordering of intermediate operations.
 
 In the absence of confluence, disparate sequences of local graph rewrites would branch into incompatible parallel geometries, destroying macroscopic coherence. By guaranteeing that local path choices reconcile into a unified global state, the confluent constructor prevents history splitting at the Planck scale. This mathematical property secures the uniqueness of classical spacetime histories, providing the structural foundation for determinism and macroscopic timeline stability.
 
@@ -2507,13 +2507,17 @@ The proof proceeds via Contradiction, assuming that global causal violations can
 │   ├── 2.7.4.1 Proof: Local PUC Approximation
 │   └── 2.7.4.2 Commentary: Cost of Certainty
 │
-├── 2.7.5 Lemma: Independence of Axiom 3
-│   ├── 2.7.5.1 Proof: Independence of Axiom 3
-│   └── 2.7.5.2 Commentary: Tripartite Foundation
+├── 2.7.5 Lemma: Exact Poset Invariance
+│   ├── 2.7.5.1 Proof: Exact Poset Invariance
+│   └── 2.7.5.2 Commentary: Two-Tier Causal Hierarchy
 │
-├── 2.7.6 Proof: Thermodynamic Enforcement
+├── 2.7.6 Lemma: Independence of Axiom 3
+│   ├── 2.7.6.1 Proof: Independence of Axiom 3
+│   └── 2.7.6.2 Commentary: Tripartite Foundation
 │
-└── 2.7.7 Validation: Lean 4 Core
+├── 2.7.7 Proof: Thermodynamic Enforcement
+│
+└── 2.7.8 Validation: Lean 4 Core
 ```
 
 ---
@@ -2736,16 +2740,85 @@ This mirrors the statistical laws of thermodynamics perfectly. It is *theoretica
 
 ---
 
-### 2.7.5 Lemma: Independence of Axiom 3 {#2.7.5}
+### 2.7.5 Lemma: Exact Poset Invariance {#2.7.5}
 
-:::info[**Logical Independence of the Global Acyclicity Requirement via Independence of Axiom 3**]
+:::info[**Strict Acyclicity of the Causal History Poset through Timestamp Monotonicity**]
+:::
+
+Let the Universal Constructor assign creation timestamps according to the recurrence $H(e_{\mathrm{new}}) = 1 + \max_{(x, u) \in E_c} H(x, u)$ for every newly instantiated edge. Then the historical causal poset $G_{\mathrm{event}} = (V, \prec)$ is strictly a Directed Acyclic Graph to all orders with zero closed timelike curves, establishing exact causal invariance independently of the operational spatial horizon cutoff.
+
+### 2.7.5.1 Proof: Exact Poset Invariance {#2.7.5.1}
+
+:::tip[**Well-Founded Induction from Strict Timestamp Monotonicity**]
+:::
+
+**I. Poset Construction and Timestamp Recurrence**
+
+Let $G_{\mathrm{event}} = (V, E_c)$ denote the historical event poset of the universe, where vertices represent rewrite events and directed edges represent causal dependencies evaluated for **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />. Each causal edge $e = (u, v) \in E_c$ is assigned a discrete creation timestamp $H(e) \in \mathbb{N}_0$ governed by **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> and **Strict Timestamps** <Ref id="2.6.3" label="§2.6.3" />:
+
+$$
+H(e_{\mathrm{new}}) = 1 + \max_{(x, u) \in E_c} H(x, u)
+$$
+
+where the maximum evaluates to $0$ if $u$ has no incoming causal edges.
+
+**II. Path Monotonicity Induction**
+
+Consider a directed path $\pi = (v_0, v_1, \dots, v_m)$ of length $m \ge 1$ in $G_{\mathrm{event}}$, with edges $e_k = (v_{k-1}, v_k)$ for $k \in \{1, \dots, m\}$. For the base step $m=1$, the timestamp $H(e_1) \in \mathbb{N}_0$ is well-defined. For any step $k \ge 2$, the edge $e_{k-1} = (v_{k-2}, v_{k-1})$ is an incoming edge to vertex $v_{k-1}$. By definition of the constructor recurrence:
+
+$$
+H(e_k) = 1 + \max_{(x, v_{k-1}) \in E_c} H(x, v_{k-1}) \ge 1 + H(e_{k-1}) > H(e_{k-1})
+$$
+
+Applying induction on path length, the strict inequality $H(e_1) < H(e_2) < \dots < H(e_m)$ holds for all directed causal paths.
+
+**III. Annihilation of Closed Causal Loops**
+
+Suppose there exists a closed directed causal loop $C = (v_0, v_1, \dots, v_m, v_0)$ in $G_{\mathrm{event}}$ of length $m+1 \ge 2$, with closure edge $e_{\mathrm{close}} = (v_m, v_0)$. Applying the path monotonicity established in Step II yields:
+
+$$
+H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_m, v_0)
+$$
+
+Applying the constructor recurrence to the initial edge $e_1 = (v_0, v_1)$ with incoming parent edge $e_{\mathrm{close}} = (v_m, v_0)$ incident on $v_0$ forces:
+
+$$
+H(v_0, v_1) \ge 1 + H(v_m, v_0) > H(v_m, v_0)
+$$
+
+Combining these inequalities yields $H(v_m, v_0) < H(v_0, v_1) < H(v_m, v_0)$, which requires $H(v_m, v_0) < H(v_m, v_0)$. This inequality is strictly false for all natural numbers $n \in \mathbb{N}_0$, establishing a contradiction.
+
+**IV. Separation of Poset Invariance from Spatial Sifting**
+
+The constructor architecture enforces an absolute separation between the historical event poset $G_{\mathrm{event}}$ and the spatial connectivity graph $G_{\mathrm{space}}$. The historical causal poset $G_{\mathrm{event}}$ constitutes a strict Directed Acyclic Graph (DAG) to all orders with exact probability $P_{\mathrm{CTC}} = 0$ (certified in Lean 4: `edge_monotone_no_causal_cycle`). The local monotonic Breadth-First Search (`pre_check_aec`) with horizon cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ operates exclusively as a polynomial-time computational filter on $G_{\mathrm{space}}$ to prevent non-local spatial chord additions, with error bounded by $P_{\mathrm{err}} \le \mathcal{O}(N^{-k})$ per **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />. Consequently, even if an undetected spatial edge were instantiated beyond $L_{\mathrm{cut}}$, it cannot induce a closed timelike curve in physical spacetime.
+
+**V. Conclusion**
+
+We conclude that timestamp monotonicity unconditionally excludes closed directed causal loops across the historical event network, establishing the exact DAG structure of physical spacetime.
+
+Q.E.D.
+
+### 2.7.5.2 Commentary: Two-Tier Causal Hierarchy {#2.7.5.2}
+
+:::info[**Architectural Decoupling of Physical Acyclicity from Computational Search Optimization**]
+:::
+
+The mathematical distinction between the historical event poset and the operational spatial graph resolves the apparent conflict between exact causal acyclicity and finite-horizon heuristic checks. Physical spacetime in Quantum Braid Dynamics is represented by the event poset $G_{\mathrm{event}}$, where each vertex records an immutable computational rewrite. Because the constructor assigns timestamps by strictly incrementing the maximum timestamp of all causal parents, time possesses an absolute relational orientation. Closed timelike curves are not merely thermodynamically improbable; they are algebraically impossible on the natural numbers, ensuring that physical history remains an unalterable directed acyclic graph to all orders.
+
+The localized Breadth-First Search pre-check with logarithmic cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ operates strictly as an optimization on the spatial manifold $G_{\mathrm{space}}$ to prevent non-local spatial chords. When the local sieve encounters a finite-horizon evasion with polynomial error $P_{\mathrm{err}} \le \mathcal{O}(N^{-k})$, the failure is purely geometric rather than chronological. An unintercepted chord introduces a long-range spatial shortcut in $G_{\mathrm{space}}$, but it cannot travel backward in relational time because Tier 1 timestamp monotonicity unconditionally forbids retro-causal influence. This two-tier hierarchy guarantees that the computational efficiency of local horizon checks does not compromise the fundamental causal consistency of physical reality.
+
+---
+
+### 2.7.6 Lemma: Independence of Axiom 3 {#2.7.6}
+
+:::info[**Logical Independence of the Global Acyclicity Requirement through Independence of Axiom 3**]
 :::
 
 Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The Directed Causal Link** and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. The timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> constitutes a valid graph under $\Sigma$ while violating Axiom 3, showing that Axiom 3 is logically independent.
 
-### 2.7.5.1 Proof: Independence of Axiom 3 {#2.7.5.1}
+### 2.7.6.1 Proof: Independence of Axiom 3 {#2.7.6.1}
 
-:::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]
+:::tip[**Verification of Independence from the Timestamped 4-Cycle Countermodel**]
 :::
 
 **I. Model Construction**
@@ -2779,12 +2852,12 @@ A model exists that satisfies Axioms 1 and 2 but violates Axiom 3. We conclude t
 
 Q.E.D.
 
-### 2.7.5.2 Commentary: Tripartite Foundation {#2.7.5.2}
+### 2.7.6.2 Commentary: Tripartite Foundation {#2.7.6.2}
 
-:::info[**Establishment of the Three Pillars via the Separation of Direction, Structure, and Consistency**]
+:::info[**Establishment of the Three Pillars through the Separation of Direction, Structure, and Consistency**]
 :::
 
-**Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" /> serves as the capstone of the axiomatic chapter, confirming that the theory requires a "Tripartite" foundation where no single pillar is redundant. We may view these axioms as the three legs of a stool upon which physical reality rests.
+**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> serves as the capstone of the axiomatic chapter, confirming that the theory requires a "Tripartite" foundation where no single pillar is redundant. We may view these axioms as the three legs of a stool upon which physical reality rests.
 
 1.  **Axiom $1$** gives the universe **Direction** (Time). It ensures that arrows point somewhere, meaning there is a distinction between forward and backward.
 2.  **Axiom $2$** gives the universe **Structure** (Space). It provides the constructive logic for building geometry out of those directed links.
@@ -2794,14 +2867,14 @@ It is possible (as our independence proofs demonstrate) to have a universe with 
 
 ---
 
-### 2.7.6 Proof: Thermodynamic Enforcement {#2.7.6}
+### 2.7.7 Proof: Thermodynamic Enforcement {#2.7.7}
 
 :::tip[**Derivation of Thermodynamic Enforcement via Synchronization Energy Divergence**]
 :::
 
 **I. Hypothesis of Post-Hoc Correction**
 
-Suppose a dynamical system permits the formation of a global symmetric influence loop (a causal paradox) $C = (v_0, v_1, \dots, v_{L-1}, v_0)$ of length $L \ge 4$ at logical time $t$, and attempts to restore causal consistency post-hoc by identifying and deleting an edge at time $t+1$.
+While creation timestamp monotonicity eliminates historical causal loops in the event poset $G_{\mathrm{event}}$ per **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, suppose an unconstrained dynamical system permits the formation of a global symmetric influence loop (a causal paradox) $C = (v_0, v_1, \dots, v_{L-1}, v_0)$ of length $L \ge 4$ at logical time $t$, and attempts to restore causal consistency post-hoc by identifying and deleting an edge at time $t+1$.
 
 **II. Information Distribution across Spacelike Horizons**
 
@@ -2849,21 +2922,21 @@ The requirement $E_{\text{sync}} \to \infty$ contradicts the finite information 
 
 **VI. Conclusion**
 
-Post-hoc correction is physically prohibited in the thermodynamic limit. Causal consistency must be enforced preemptively at the local edge-instantiation step via the localized pre-check, which implements the **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> to guarantee global causal acyclicity with probability approaching unity. This requirement is logically independent of local constructibility (**Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" />).
+Post-hoc correction is physically prohibited in the thermodynamic limit. Causal consistency must be enforced preemptively at the local edge-instantiation step via the localized pre-check, which implements the **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> to guarantee global causal acyclicity with probability approaching unity. This requirement is logically independent of local constructibility (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />).
 
 Q.E.D.
 
 ---
 
-### 2.7.7 Type-Theoretic Validation via Lean 4 Core {#2.7.7}
+### 2.7.8 Type-Theoretic Validation via Lean 4 Core {#2.7.8}
 
-:::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure via Biconditional Decomposition**]
+:::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure through Biconditional Decomposition**]
 :::
 
 Type-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry (the three properties now united under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />) proceeds via the following verification strategy:
 
 1.  **Encoding:** The definitions `IsAsymmetric`, `IsIrreflexive`, and `IsAntisymmetric` encode the three relational predicates. `IsAsymmetric` is the formal expression of Axiom 3's Global Asymmetry requirement: if $u$ influences $v$, then $v$ cannot influence $u$.
-2.  **Theorem Statements:** The first theorem (`asymmetry_implies_irreflexivity`) certifies that asymmetry strictly subsumes irreflexivity by self-application; the second (`asymmetry_equiv`) certifies the full biconditional, proving that asymmetry is the exact algebraic conjunction of the two weaker conditions.
+2.  **Theorem Statements:** The first theorem (`asymmetry_implies_irreflexivity`) certifies that asymmetry strictly subsumes irreflexivity by self-application; the second (`asymmetry_equiv`) certifies the full biconditional, proving that asymmetry is the exact algebraic conjunction of the two weaker conditions. Furthermore, strict poset acyclicity under edge timestamp monotonicity is formally certified by `edge_monotone_no_causal_cycle`.
 3.  **Proof Closure:** Both proofs are closed by `intro` and `exact` tactics; the biconditional uses `constructor` to split into two directions, with `False.elim` eliminating the mutual-edge contradiction in the antisymmetry branch and `rw` substituting the equality witness in the reverse direction.
 
 ```lean
@@ -2919,7 +2992,9 @@ theorem asymmetry_equiv {V : Type} (R : CausalRelation₂ V) :
 ```
 
 **Verification Summary:**
-The definitions extend the vocabulary established in the **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.2.5" label="§2.2.5" /> to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v -> not R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions. The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" /> is also algebraically minimal.
+The definitions extend the vocabulary established in the **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.2.5" label="§2.2.5" /> to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v -> not R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions.
+
+The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal. In tandem with `edge_monotone_no_causal_cycle` establishing **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, the causal ordering of physical history is completely secured.
 
 ---
 
@@ -2928,11 +3003,11 @@ The definitions extend the vocabulary established in the **Type-Theoretic Valida
 :::note[**Axiom 3: Global Consistency and Enforcement**]
 :::
 
-The algebraic capstone of Chapter 2 is achieved through the equivalence theorem certified in Lean 4: global asymmetry is the exact logical conjunction of local irreflexivity and antisymmetry ($\text{IsAsymmetric} \iff \text{IsIrreflexive} \land \text{IsAntisymmetric}$). Asymmetry subsumes irreflexivity through self-application while eliminating mutual edges via contradiction, proving that the three foundational axioms are physically independent yet algebraically minimal under **Independence of Axiom 3** <Ref id="2.7.5" label="§2.7.5" />. This mathematical closure guarantees that the causal graph operates under a unified relational discipline with no redundant clauses and no unpoliced logical loopholes.
+The algebraic capstone of Chapter 2 is achieved through the equivalence theorem certified in Lean 4: global asymmetry is the exact logical conjunction of local irreflexivity and antisymmetry ($\text{IsAsymmetric} \iff \text{IsIrreflexive} \land \text{IsAntisymmetric}$). Asymmetry subsumes irreflexivity through self-application while eliminating mutual edges via contradiction, proving that the three foundational axioms are physically independent yet algebraically minimal under **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />. This mathematical closure guarantees that the causal graph operates under a unified relational discipline with no redundant clauses and no unpoliced logical loopholes.
 
-This algebraic discipline underpins the physical boundary condition termed the Thermodynamic Wall in **Thermodynamic Enforcement** <Ref id="2.7.6" label="§2.7.6" />. In the thermodynamic limit ($N \to \infty$), post-hoc excision of non-local causal cycles requires infinite information propagation velocity and infinite synchronization energy, which violates the finite information bounds of the discrete substrate. Consequently, global acyclicity cannot rely on retrospective repair; it must be enforced preventatively via the **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />, which scales search horizons logarithmically ($R \sim \ln N$) and exponentially suppresses cycle diameter growth.
+This algebraic discipline underpins the physical boundary condition termed the Thermodynamic Wall in **Thermodynamic Enforcement** <Ref id="2.7.7" label="§2.7.7" />. In the thermodynamic limit ($N \to \infty$), post-hoc excision of non-local causal cycles requires infinite information propagation velocity and infinite synchronization energy, which violates the finite information bounds of the discrete substrate. Consequently, global acyclicity cannot rely on retrospective repair; it is anchored in the two-tier causal hierarchy of **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, where timestamp monotonicity unconditionally guarantees that the historical event network $G_{\mathrm{event}}$ is a DAG to all orders, while the localized pre-check under **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> acts as a polynomial-time spatial filter suppressing non-local shortcuts on $G_{\mathrm{space}}$.
 
-By embedding global causal consistency into local probabilistic update filters, the pre-geometric framework guarantees an unbroken arrow of time through the statistical weight of the underlying graph geometry. This resolves the foundational tension between local action and global order, establishing that the vacuum's stability is a dynamically maintained equilibrium protected by finite correlation lengths. Having secured the three fundamental axioms of causality and geometry in Chapter 2, we turn to the formal synthesis before establishing the state space, symmetries, and quantum error-correcting codes of the subsequent chapter.
+By embedding global causal consistency into local probabilistic update filters and immutable event timestamps, the pre-geometric framework guarantees an unbroken arrow of time through the statistical weight and algebraic structure of the underlying graph. This resolves the foundational tension between local action and global order, establishing that the vacuum's stability is a dynamically maintained equilibrium protected by finite correlation lengths. Having secured the three fundamental axioms of causality and geometry in Chapter 2, we turn to the formal synthesis before establishing the state space, symmetries, and quantum error-correcting codes of the subsequent chapter.
 
 ---
 
@@ -2989,7 +3064,7 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 \newpage
 # References
 
-### 4. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.4}
+### 5. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.5}
 **"Reconstructing the Universe"**
     * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
 
@@ -3002,20 +3077,20 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 
 ---
 
-### 13. **Bollobás, B. (2001).** {#A.13}
-**"Random Graphs (2nd ed.)"**
-    * **Link:** [https://doi.org/10.1017/CBO9780511814068](https://doi.org/10.1017/CBO9780511814068)
+### 13. **Bennett, C. H. (1982).** {#A.13}
+**"The thermodynamics of computation: a review"**
+    * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
 
 
 **Overview:**
-Bollobas presents a classic and detailed monograph on the theory of random graphs, focusing on the probabilistic methods used to study the properties of graphs generated by random processes. He covers connectivity, path lengths, chromatic numbers, and the threshold functions that govern the appearance of specific subgraphs.
+Bennett reviews the thermodynamics of computation, focusing on the relation between logical reversibility and physical dissipation. He clarifies Landauer's principle, proving that while logical operations themselves do not necessarily require energy dissipation, the erasure of information or the resetting of memory registers is always accompanied by a physical entropy increase.
 
 **Relevance to QBD:**
-This reference is integral to the random graph audits conducted in Chapter 5. To prove that the vacuum graph remains sparse and does not undergo runaway densification, we must analyze the threshold behavior of its local connections. Bollobas's probabilistic bounds provide the disciplined apparatus required to analyze the stability of the vacuum against runaway graph growth.
+Bennett's insights are foundational for the dynamical rewrite rules formulated in Chapter 4. The update engine behaves as a computational constructor that deletes and instantiates edges. The physical cost of these updates is governed by Bennett's thermodynamic limits, ensuring that information erasure at the graph level generates localized heat. This couples the computational activity of the universe directly to thermodynamic energy.
 
 ---
 
-### 14. **Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987).** {#A.14}
+### 15. **Bombelli, L., Lee, J., Meyer, D., & Sorkin, R. D. (1987).** {#A.15}
 **"Space-time as a causal set"**
     * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.59.521)
 
@@ -3028,20 +3103,47 @@ This classic paper is the conceptual precursor to the Causal Graph substrate def
 
 ---
 
-### 23. **Erdős, P., & Rényi, A. (1960).** {#A.23}
-**"On the evolution of random graphs"**
-    * **Link:** [https://users.renyi.hu/~p_erdos/1960-10.pdf](https://users.renyi.hu/~p_erdos/1960-10.pdf)
+### 23. **Dowker, F. (2005).** {#A.23}
+**"Causal sets and the deep structure of spacetime"**
+    * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
 
 
 **Overview:**
-Erdos and Renyi present the foundational paper on the evolution of random graphs, introducing the classical probabilistic model where edges are added stochastically. They prove the existence of sharp phase transitions, specifically the sudden appearance of a unique giant component as the average vertex degree exceeds one.
+Dowker provides a conceptual and physical overview of the causal set approach to quantum gravity. She argues that spacetime is fundamentally discrete and that the continuum is merely an approximation. The author demonstrates that discrete causal sets successfully preserve Lorentz invariance, solving a major historical challenge faced by discrete models.
 
 **Relevance to QBD:**
-This seminal work is the foundation for the geometrogenesis proofs in Chapter 11. We model the emergence of physical space as a phase transition in a random causal network. Erdos and Renyi's results supply the basis for this phase transition, showing that the vacuum graph stochastically transitions from a disjointed state to a unified, highly connected spacetime manifold.
+Dowker's work is a key conceptual pillar for the discrete causal substrate defined in Chapter 1. We adopt her insight that discrete causal ordering is sufficient to construct macroscopic geometry. In Chapter 14, we prove that QBD preserves Lorentz covariance in the continuum limit, invoking Dowker to show why our discrete causal steps naturally satisfy relativistic constraints.
 
 ---
 
-### 59. **Sorkin, R. D. (2005).** {#A.59}
+### 24. **Ehrig, H., Ehrig, K., Prange, U., & Taentzer, G. (2006).** {#A.24}
+**"Fundamentals of Algebraic Graph Transformation"**
+- *Monographs in Theoretical Computer Science. An EATCS Series, Springer*
+    * **Link:** [https://doi.org/10.1007/3-540-31188-2](https://doi.org/10.1007/3-540-31188-2)
+
+
+**Overview:**
+Ehrig et al. formulate the foundational theory of algebraic graph transformation using category theory (adhesive and quasi-adhesive categories, double-pushout approach). They prove critical pair confluence and local Church-Rosser theorems for graph rewriting systems.
+
+**Relevance to QBD:**
+The double-pushout framework and graph confluence theorems are used in Chapter 2 to establish the confluence, causality, and causal consistency of local rewrite rules operating on the relational substrate.
+
+---
+
+### 63. **Singer, A., & Wu, H.-T. (2013).** {#A.63}
+**"Vector diffusion maps and the connection graph Laplacian"**
+    * **Link:** [https://arxiv.org/abs/1102.0075](https://arxiv.org/abs/1102.0075)
+
+
+**Overview:**
+Singer and Wu introduce vector diffusion maps (VDM), a geometric approach that generalizes Laplacian eigenmaps to vector bundles on manifolds. They define the connection graph Laplacian, proving that its spectral properties recover both the underlying manifold's geometry and the gauge connection of the vector bundle, establishing a powerful tool for analyzing curved datasets.
+
+**Relevance to QBD:**
+This connection graph Laplacian is the direct tool used to analyze the emergent gauge fields in Chapter 12. To show that our discrete graph connectivity yields continuous gauge fields, we must construct a vector bundle over the graph. Singer and Wu's spectral convergence proofs show how the eigenvectors of the connection Laplacian recover both physical coordinates and gauge connections.
+
+---
+
+### 64. **Sorkin, R. D. (2005).** {#A.64}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
@@ -3052,17 +3154,3 @@ Sorkin presents a comprehensive review of the causal set approach to quantum gra
 
 **Relevance to QBD:**
 Sorkin's causal set model is a core physical pillar for the discrete causal substrate defined in Chapter 1. We adopt his insight that causality is fundamental and volume is discrete. However, we expand his poset setting by adding relational graph connectivity, which is necessary to support quantum states. Sorkin's work underpins the physical basis for our discrete spacetime model.
-
----
-
-### 63. **van Kampen, N. G. (1992).** {#A.63}
-**"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
-- *North-Holland*
-    * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
-
-
-**Overview:**
-van Kampen presents a classic and thorough textbook on stochastic processes in physical and chemical systems. He covers the master equation, Fokker-Planck equations, expansion methods, and the properties of stochastic transitions in systems operating near or far from thermodynamic equilibrium.
-
-**Relevance to QBD:**
-This textbook is the direct reference for the stochastic master equations formulated in Chapter 4. In QBD, the local update rules are modeled as stochastic transitions whose probabilities are governed by a master equation. Van Kampen's analytical tools show that this master equation converges to a stable macroscopic vacuum, supporting our model.

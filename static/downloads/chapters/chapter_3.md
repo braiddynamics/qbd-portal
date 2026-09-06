@@ -659,7 +659,7 @@ Q.E.D.
 
 Why is the vacuum a tree? The answer lies in the **Principle of Unique Causality**. In a directed graph, adding edges increases complexity. If we have a path $A \to B \to C$ and we add a direct "shortcut" $A \to C$, we have created a "Transitive Redundancy." Information can now flow from $A$ to $C$ via two routes: the mediated path and the direct edge. This creates ambiguity regarding the causal history of $C$: does it owe its state to the processing at $B$ or the direct injection from $A$?
 
-Therefore, the **Tree** is the topological structure that maximizes connectivity while minimizing redundancy. It lies exactly on the "edge of chaos": one fewer edge, and it falls apart (disconnects), while one more edge closes a loop or creates a parallel path (redundancy). This aligns with the Causal Set program described by <Cite id="A.59" label="(Sorkin, 2005)" />, which posits that the discrete causal order is the primary structure of spacetime. By enforcing **Tree Sparsity**, we satisfy Sorkin’s requirement for a transitive order while imposing a stricter condition of historical uniqueness. The tree structure ensures absolute historical clarity: every node has exactly one parent (except the root). There is exactly one path from the Big Kindling to any specific event in spacetime. This maximizes the "computational efficiency" of the universe, as no energy or bandwidth is wasted on redundant signals.
+Therefore, the **Tree** is the topological structure that maximizes connectivity while minimizing redundancy. It lies exactly on the "edge of chaos": one fewer edge, and it falls apart (disconnects), while one more edge closes a loop or creates a parallel path (redundancy). This aligns with the Causal Set program described by <Cite id="A.64" label="(Sorkin, 2005)" />, which posits that the discrete causal order is the primary structure of spacetime. By enforcing **Tree Sparsity**, we satisfy Sorkin’s requirement for a transitive order while imposing a stricter condition of historical uniqueness. The tree structure ensures absolute historical clarity: every node has exactly one parent (except the root). There is exactly one path from the Big Kindling to any specific event in spacetime. This maximizes the "computational efficiency" of the universe, as no energy or bandwidth is wasted on redundant signals.
 
 ---
 
@@ -871,7 +871,7 @@ Every internal vertex $v \in V_{\mathrm{int}} \setminus \{r\}$ satisfies total c
 :::info[**Epistemological Significance of Bethe Regularity in Vacuum Initialization via Relational Uniformity**]
 :::
 
-The selection of the Regular Bethe Fragment as the vacuum state $G_0$ resolves the initial condition problem by establishing a pre-geometric substrate of maximal relational indistinguishability. By enforcing a uniform coordination number $k_{deg}$ across all internal vertices, the structure remains completely uniform away from the finite boundary layer, thereby maximizing global automorphism symmetry and relational uniformity <Cite id="A.70" label="(Woess, 2000)" />. This uniform architecture ensures that the vacuum strictly avoids localized anomalies or preferred regions that would otherwise violate background independence.
+The selection of the Regular Bethe Fragment as the vacuum state $G_0$ resolves the initial condition problem by establishing a pre-geometric substrate of maximal relational indistinguishability. By enforcing a uniform coordination number $k_{deg}$ across all internal vertices, the structure remains completely uniform away from the finite boundary layer, thereby maximizing global automorphism symmetry and relational uniformity <Cite id="A.75" label="(Woess, 2000)" />. This uniform architecture ensures that the vacuum strictly avoids localized anomalies or preferred regions that would otherwise violate background independence.
 
 Furthermore, we maximize the geometric potential of this pre-geometric state by providing the highest possible density of compliant 2-path rewrite sites per vertex. By balancing this maximal branching density with the demand for structural indistinguishability among internal vertices, the Regular Bethe Fragment serves as the unique, optimal substrate permitted by the axioms for the subsequent dynamical evolution of geometry and physics.
 
@@ -2209,7 +2209,7 @@ Assumption A2 (Universality of Eligibility) enforces the Generalized Copernican 
 
 Assumption A3 (Deterministic Acceptance) implements strict determinism at the level of the selection mechanism itself. While the outcome of the universe may be probabilistic due to thermodynamic weighting, the procedure for accepting a valid candidate must be purely a function of the state. No additional randomness or hidden variables may influence acceptance beyond the explicit state configuration and the thermodynamic selection criteria.
 
-Assumption A4 (Joint-Update Equivariance) guarantees that the physical outcome of simultaneous local modifications remains consistent under symmetry transformations. This requirement is critical to avoid the updating artifacts identified by <Cite id="A.71" label="(Wolfram, 2002)" /> in his analysis of cellular automata and network systems. Wolfram demonstrated that sequential or partial updates inevitably introduce arbitrary, history-dependent asymmetries, whereas maximally parallel updates preserve the underlying rule invariance. By enforcing joint-update equivariance, we ensure the scheduler does not imprint a spurious preferred frame onto the vacuum, maintaining the discrete precursor to General Covariance.
+Assumption A4 (Joint-Update Equivariance) guarantees that the physical outcome of simultaneous local modifications remains consistent under symmetry transformations. This requirement is critical to avoid the updating artifacts identified by <Cite id="A.76" label="(Wolfram, 2002)" /> in his analysis of cellular automata and network systems. Wolfram demonstrated that sequential or partial updates inevitably introduce arbitrary, history-dependent asymmetries, whereas maximally parallel updates preserve the underlying rule invariance. By enforcing joint-update equivariance, we ensure the scheduler does not imprint a spurious preferred frame onto the vacuum, maintaining the discrete precursor to General Covariance.
 
 ---
 
@@ -2765,7 +2765,7 @@ Q.E.D.
 
 In many classical physical systems, phase transitions (such as the freezing of water) require the cooperative behavior of a macroscopic number of particles to overcome thermal agitation, forming a "critical droplet" of finite size. In this graph-theoretic framework, however, the critical droplet size is exactly **one edge**. The vacuum is topologically "brittle." It relies on a global property (bipartiteness) that can be destroyed by a single local defect. The addition of a single edge $e = (x, y)$ connecting vertices of identical parity destroys the global $2$-coloring of the entire component.
 
-Once that edge exists, it serves as a permanent and indelible mark on the universe's history. It acts precisely like the instanton described by <Cite id="A.18" label="(Coleman, 1977)" /> in the context of false vacuum decay. Coleman showed that the decay of a metastable state occurs via the nucleation of a bubble of "true vacuum": here, the single symmetry-breaking edge creates a "bubble" of geometry (a compliant site) within the non-geometric tree. This single point of impurity acts as the seed around which the new phase (geometry) will rapidly and inescapably crystallize. The transition from the pre-geometric void to the geometric manifold is therefore not a gradual accumulation, but a sudden symmetry-breaking event triggered by the smallest possible fluctuation allowed by the kinematics.
+Once that edge exists, it serves as a permanent and indelible mark on the universe's history. It acts precisely like the instanton described by <Cite id="A.20" label="(Coleman, 1977)" /> in the context of false vacuum decay. Coleman showed that the decay of a metastable state occurs via the nucleation of a bubble of "true vacuum": here, the single symmetry-breaking edge creates a "bubble" of geometry (a compliant site) within the non-geometric tree. This single point of impurity acts as the seed around which the new phase (geometry) will rapidly and inescapably crystallize. The transition from the pre-geometric void to the geometric manifold is therefore not a gradual accumulation, but a sudden symmetry-breaking event triggered by the smallest possible fluctuation allowed by the kinematics.
 
 Crucially, because the pre-geometric Bethe tree represents an instantaneous spatial leaf at $t=0$, its edges share the ground-state timestamp $H=0$. This timestamp degeneracy ensures that the pre-geometric tree acts as a purely relational spatial substrate. When the seed edge $e_{\text{tunnel}}$ is injected with timestamp $H=1$, it introduces the universe's first dynamic tick without creating closed timelike curves, satisfying the causal requirements of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
@@ -3251,7 +3251,7 @@ The **Generalized Stabilizer Formulation** formalizes the consistency enforcemen
 :::info[**Structural Mapping between Physical Axioms and Code Stabilizers through Isomorphism**]
 :::
 
-The consistency enforcement mechanism of Quantum Braid Dynamics establishes a formal equivalence with stabilizer quantum error correction. This is not a mere analogy: it is a structural isomorphism. The mapping aligns every physical component of the theory with a corresponding structure in the stabilizer formalism introduced by <Cite id="A.28" label="(Gottesman, 1997)" />, revealing that the laws of physics act as error-correcting codes protecting the coherence of spacetime. The table below illustrates this precise one-to-one identification:
+The consistency enforcement mechanism of Quantum Braid Dynamics establishes a formal equivalence with stabilizer quantum error correction. This is not a mere analogy: it is a structural isomorphism. The mapping aligns every physical component of the theory with a corresponding structure in the stabilizer formalism introduced by <Cite id="A.32" label="(Gottesman, 1997)" />, revealing that the laws of physics act as error-correcting codes protecting the coherence of spacetime. The table below illustrates this precise one-to-one identification:
 
 | QBD Physical Concept | QECC Implementation |
 | :--- | :--- |
@@ -3261,7 +3261,7 @@ The consistency enforcement mechanism of Quantum Braid Dynamics establishes a fo
 | Rewrite Rule Actions | Errors (deviations from the ground state) |
 | Consistency Checks | Syndrome Measurements (error detection) |
 
-This mapping demonstrates that the relational graph structure undergoes faithful encoding into a qubit-based configuration space. The physical axioms translate directly into commuting stabilizer operators ($Z$-checks), ensuring that the classical evolution process achieves fault tolerance against local errors. Furthermore, this structure parallels the "HaPPY" code constructed by <Cite id="A.50" label="(Pastawski et al., 2015)" />, where bulk geometry emerges from the entanglement structure of a tensor network. In QBD, the "bulk" is the valid causal graph, and the "boundary" conditions are the axiomatic constraints that define the codespace. Just as a quantum computer protects information by measuring parities, the universe protects its causal structure by continuously measuring local topological invariants.
+This mapping demonstrates that the relational graph structure undergoes faithful encoding into a qubit-based configuration space. The physical axioms translate directly into commuting stabilizer operators ($Z$-checks), ensuring that the classical evolution process achieves fault tolerance against local errors. Furthermore, this structure parallels the "HaPPY" code constructed by <Cite id="A.54" label="(Pastawski et al., 2015)" />, where bulk geometry emerges from the entanglement structure of a tensor network. In QBD, the "bulk" is the valid causal graph, and the "boundary" conditions are the axiomatic constraints that define the codespace. Just as a quantum computer protects information by measuring parities, the universe protects its causal structure by continuously measuring local topological invariants.
 
 ---
 
@@ -3748,7 +3748,7 @@ The tables confirm that each single-qubit error generates a unique syndrome sign
 :::info[**Interpretation of Syndrome Tuples as Topological Configurations within the Thermodynamic Context**]
 :::
 
-The syndrome tuples produced by the triplet check operators provide a complete and physically meaningful classification of local topological configurations. This classification directly determines the thermodynamic and dynamical response of the system at every site. The framework builds upon the extension of the stabilizer formalism to operator algebras developed by <Cite id="A.19" label="(Dauphinais, Kribs, & Vasmer, 2024)" />, which permits a rigorous mapping of syndrome sectors to distinct topological states. Within Quantum Braid Dynamics, these syndromes distinguish stable configurations from unstable defects, where the latter serve as the active drivers of structural evolution.
+The syndrome tuples produced by the triplet check operators provide a complete and physically meaningful classification of local topological configurations. This classification directly determines the thermodynamic and dynamical response of the system at every site. The framework builds upon the extension of the stabilizer formalism to operator algebras developed by <Cite id="A.21" label="(Dauphinais, Kribs, & Vasmer, 2024)" />, which permits a rigorous mapping of syndrome sectors to distinct topological states. Within Quantum Braid Dynamics, these syndromes distinguish stable configurations from unstable defects, where the latter serve as the active drivers of structural evolution.
 
 The trivial syndrome $(+1, +1, +1)$ characterizes the degenerate class that encompasses both the **Vacuum State** ($|000\rangle$, empty triplet) and the **Geometric State** ($|111\rangle$, closed 3-cycle). The Vacuum State constitutes the absolute ground configuration: a region devoid of edges, exhibiting zero local curvature and zero information density. Thermodynamically, this state is inert, possessing no internal potential to initiate rewrites and remaining transparent to the update engine absent external tunneling fluctuations. The Geometric State, while topologically closed and carrying the minimal quantum of spatial area, shares the trivial syndrome but incurs an energy penalty $\epsilon_{geo}$ relative to the Vacuum, derived from the non-zero expectation of the number operator $\hat{N}$. Alternatively, the Volume Operator $V = Z_{12}Z_{23}Z_{31}$ distinguishes the Geometric State ($\lambda_V = -1$) from the Vacuum ($\lambda_V = +1$). Thermodynamically, the Geometric State is preserved as a robust, history-storing knot in the causal fabric, resistant to spontaneous decay.
 
@@ -4242,7 +4242,7 @@ This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and prim
 \newpage
 # References
 
-### 18. **Coleman, S. (1977).** {#A.18}
+### 20. **Coleman, S. (1977).** {#A.20}
 **"The Uses of Instantons"**
     * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
 
@@ -4255,7 +4255,7 @@ Instantons are the continuous analogs of the non-perturbative transition operati
 
 ---
 
-### 19. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.19}
+### 21. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.21}
 **"Stabilizer Formalism for Operator Algebra Quantum Error Correction"**
     * **Link:** [https://quantum-journal.org/papers/q-2024-02-21-1261/pdf](https://quantum-journal.org/papers/q-2024-02-21-1261/pdf)
 
@@ -4268,7 +4268,7 @@ This algebraic apparatus is indispensable for formalizing topological protection
 
 ---
 
-### 28. **Gottesman, D. (1997).** {#A.28}
+### 32. **Gottesman, D. (1997).** {#A.32}
 **"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
 
@@ -4281,7 +4281,7 @@ The stabilizer formalism is the leading tool used to protect the topological gra
 
 ---
 
-### 50. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.50}
+### 54. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.54}
 **"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
     * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
 
@@ -4294,7 +4294,7 @@ The HaPPY code is the direct template for the holographic screen mechanisms deve
 
 ---
 
-### 59. **Sorkin, R. D. (2005).** {#A.59}
+### 64. **Sorkin, R. D. (2005).** {#A.64}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
@@ -4308,7 +4308,7 @@ Sorkin's causal set model is a core physical pillar for the discrete causal subs
 
 ---
 
-### 70. **Woess, W. (2000).** {#A.70}
+### 75. **Woess, W. (2000).** {#A.75}
 **"Random Walks on Infinite Graphs and Groups"**
     * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
 
@@ -4321,7 +4321,7 @@ This reference is necessary for the discrete diffusion analyses conducted in Cha
 
 ---
 
-### 71. **Wolfram, S. (2002).** {#A.71}
+### 76. **Wolfram, S. (2002).** {#A.76}
 **"A New Kind of Science"**
     * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
 
