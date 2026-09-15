@@ -35,13 +35,12 @@ from model.utils import find_all_3_cycles
 
 def evolve_custom(G, config, protected_edges: Set[Tuple[int, int]] | None, steps: int):
     """Evolve with optional experimental protection: never delete protected edges."""
-    T = config["T_VACUUM"]
     mu = config["MU"]
     lam = config["LAMBDA"]
     for step in range(steps):
         all_cycles, stress_map = build_stress_map(G)
-        proposals_add = _calculate_add_proposals(G, T, mu, stress_map)
-        proposals_del = _calculate_del_proposals(G, T, mu, lam, all_cycles, stress_map)
+        proposals_add = _calculate_add_proposals(G, mu, stress_map)
+        proposals_del = _calculate_del_proposals(G, mu, lam, all_cycles, stress_map)
         if protected_edges:
             proposals_del = {e for e in proposals_del if e not in protected_edges}
         if not proposals_add and not proposals_del:

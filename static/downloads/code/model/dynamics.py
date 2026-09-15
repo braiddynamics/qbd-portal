@@ -13,23 +13,31 @@ from model.observables import get_n3_count
 
 # --- PRIVATE HELPER FUNCTIONS (The "Physics" Logic of R) ---
 
-def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float,
-                             stress_map: Dict[int, int] # Pass in the cache
-                             ) -> Set[Tuple[Tuple[int, int], int]]:
+def _calculate_add_proposals(G: nx.DiGraph, *args, **kwargs) -> Set[Tuple[Tuple[int, int], int]]:
     """
     Calculates all stochastic 3-cycle creation proposals for this tick.
 
-    
     This function is N-agnostic and α-agnostic, implementing the "micro-rule".
+    Supports both (G, T, mu, stress_map) and (G, mu, stress_map) signatures.
     It computes P_acc_thermo = 1 *exactly*.
     """
+    if len(args) == 3:
+        T, mu, stress_map = args
+    elif len(args) == 2:
+        T = kwargs.get("T", math.log(2.0))
+        mu, stress_map = args
+    else:
+        T = kwargs.get("T", math.log(2.0))
+        mu = kwargs.get("mu", args[0] if len(args) > 0 else 0.3989)
+        stress_map = kwargs.get("stress_map", args[1] if len(args) > 1 else {})
+
     proposals_add: Set[Tuple[Tuple[int, int], int]] = set()
-    
+
     # Pre-calculate the exact, constant thermodynamic values
     # These are universal constants of the micro-rule.
     DELTA_S_ADD = math.log(2.0)
     DELTA_F_ADD = -T * DELTA_S_ADD  # ΔF = -(ln2)^2
-    
+
     # P_thermo = min(1.0, exp(-ΔF_add / T))
     # P_thermo = min(1.0, exp( (T*ln2) / T ))
     # P_thermo = min(1.0, exp(ln2)) = min(1.0, 2.0) = 1.0
@@ -61,7 +69,7 @@ def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float,
                 # --- Calculate Acceptance Probability ---
                 # f(σ) is the computational friction from PUC/AEC
                 f_friction = math.exp(-mu * stress_count)
-                
+
                 # P_acc = f(σ) * P_acc_thermo
                 # P_acc_thermo is *exactly* 1.
                 P_acc = f_friction * P_THERMO_ADD
@@ -71,21 +79,31 @@ def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float,
                     
     return proposals_add
 
-def _calculate_del_proposals(G: nx.DiGraph, T: float, mu: float, lam: float,
-                             all_cycles: List[list],    # Pass in all cycles
-                             stress_map: Dict[int, int] # Pass in the cache
-                             ) -> Set[Tuple[int, int]]:
+def _calculate_del_proposals(G: nx.DiGraph, *args, **kwargs) -> Set[Tuple[int, int]]:
     """
     Calculates all stochastic 3-cycle deletion proposals for this tick.
     This function is N-agnostic and α-agnostic, implementing the "micro-rule".
+    Supports both (G, T, mu, lam, all_cycles, stress_map) and (G, mu, lam, all_cycles, stress_map).
     It computes Q_del_thermo = 1/2 *exactly*.
     """
+    if len(args) == 5:
+        T, mu, lam, all_cycles, stress_map = args
+    elif len(args) == 4:
+        T = kwargs.get("T", math.log(2.0))
+        mu, lam, all_cycles, stress_map = args
+    else:
+        T = kwargs.get("T", math.log(2.0))
+        mu = kwargs.get("mu", args[0] if len(args) > 0 else 0.3989)
+        lam = kwargs.get("lam", args[1] if len(args) > 1 else 1.7183)
+        all_cycles = kwargs.get("all_cycles", args[2] if len(args) > 2 else [])
+        stress_map = kwargs.get("stress_map", args[3] if len(args) > 3 else {})
+
     proposals_del = set()
 
     # Pre-calculate the constant thermodynamic values
     DELTA_S_DEL = -math.log(2.0)
     DELTA_F_DEL = -T * DELTA_S_DEL  # ΔF = +(ln2)^2
-    
+
     # Q_thermo = min(1.0, exp(-ΔF_del / T))
     # Q_thermo = min(1.0, exp( -(T*ln2) / T ))
     # Q_thermo = min(1.0, exp(-ln2)) = min(1.0, 0.5) = 0.5
@@ -139,16 +157,25 @@ def build_stress_map(G: nx.DiGraph) -> Tuple[List[list], Dict[int, int]]:
     return all_cycles, stress_map
 
 
-def compute_add_rates(G: nx.DiGraph, T: float, mu: float,
-                      stress_map: Dict[int, int]
-                      ) -> Dict[Tuple[int, int], float]:
+def compute_add_rates(G: nx.DiGraph, *args, **kwargs) -> Dict[Tuple[int, int], float]:
     """
     Deterministic add-acceptance probabilities for compliant 2-paths.
 
     Mirrors the micro-rule in _calculate_add_proposals but returns
     P_acc for each candidate edge (u, v) instead of Bernoulli samples.
+    Supports both (G, T, mu, stress_map) and (G, mu, stress_map).
     N-agnostic and α-agnostic. Does not mutate G.
     """
+    if len(args) == 3:
+        T, mu, stress_map = args
+    elif len(args) == 2:
+        T = kwargs.get("T", math.log(2.0))
+        mu, stress_map = args
+    else:
+        T = kwargs.get("T", math.log(2.0))
+        mu = kwargs.get("mu", args[0] if len(args) > 0 else 0.3989)
+        stress_map = kwargs.get("stress_map", args[1] if len(args) > 1 else {})
+
     rates: Dict[Tuple[int, int], float] = {}
     P_THERMO_ADD = 1.0
 
@@ -177,18 +204,28 @@ def compute_add_rates(G: nx.DiGraph, T: float, mu: float,
     return rates
 
 
-def compute_del_rates(G: nx.DiGraph, T: float, mu: float, lam: float,
-                      all_cycles: List[list],
-                      stress_map: Dict[int, int]
-                      ) -> Dict[Tuple[int, int], float]:
+def compute_del_rates(G: nx.DiGraph, *args, **kwargs) -> Dict[Tuple[int, int], float]:
     """
     Deterministic deletion probabilities attributed to edges in 3-cycles.
 
     Mirrors the micro-rule in _calculate_del_proposals. When a cycle is
     selected for deletion, one of its three edges is chosen uniformly;
     the per-edge rate therefore receives Q_del / 3 from each parent cycle.
+    Supports both (G, T, mu, lam, all_cycles, stress_map) and (G, mu, lam, all_cycles, stress_map).
     Does not mutate G.
     """
+    if len(args) == 5:
+        T, mu, lam, all_cycles, stress_map = args
+    elif len(args) == 4:
+        T = kwargs.get("T", math.log(2.0))
+        mu, lam, all_cycles, stress_map = args
+    else:
+        T = kwargs.get("T", math.log(2.0))
+        mu = kwargs.get("mu", args[0] if len(args) > 0 else 0.3989)
+        lam = kwargs.get("lam", args[1] if len(args) > 1 else 1.7183)
+        all_cycles = kwargs.get("all_cycles", args[2] if len(args) > 2 else [])
+        stress_map = kwargs.get("stress_map", args[3] if len(args) > 3 else {})
+
     rates: Dict[Tuple[int, int], float] = {}
     Q_THERMO_DEL = 0.5
 
@@ -225,7 +262,7 @@ def compute_proposal_rates(G: nx.DiGraph, config: dict
     Public entry point for stress-energy tensor construction. Leaves the
     stochastic evolve path untouched.
     """
-    T = config["T_VACUUM"]
+    T = config.get("T_VACUUM", config.get("BETA_C", math.log(2.0)))
     mu = config["MU"]
     lam = config["LAMBDA"]
     all_cycles, stress_map = build_stress_map(G)
@@ -252,7 +289,7 @@ def evolve_graph_to_equilibrium(G: nx.DiGraph, config: dict):
         return G, 0
 
     # Load foundational constants for the local micro-rules
-    T = config["T_VACUUM"]  # T = ln(2)
+    T = config.get("T_VACUUM", config.get("BETA_C", math.log(2.0)))
     mu = config["MU"]
     lam = config["LAMBDA"]
     max_steps = config["SIMULATION_STEPS"]
@@ -280,13 +317,16 @@ def evolve_graph_to_equilibrium(G: nx.DiGraph, config: dict):
         proposals_add = _calculate_add_proposals(G, T, mu, stress_map)
         proposals_del = _calculate_del_proposals(G, T, mu, lam, all_cycles, stress_map)
 
-        # --- EQUILIBRIUM CHECK ---
+        # --- EQUILIBRIUM CHECK (Physical Stasis: Delta t_phys = 0) ---
         if not proposals_add and not proposals_del:
-            return G, step + 1  # System is stable
+            return G, step + 1  # System reached homeostatic equilibrium
 
-        # --- COLLAPSE ---
+        # --- COLLAPSE (Step 3 Merge Filter / Corollary 2.2) ---
+        # Eliminate reciprocal collision pairs (u, v) and (v, u), and self-loops
+        add_edges_set = {edge for edge, _ in proposals_add}
         edges_to_add = [(edge[0], edge[1], {'H': h_val}) 
-                          for edge, h_val in proposals_add]
+                        for edge, h_val in proposals_add
+                        if (edge[1], edge[0]) not in add_edges_set and edge[0] != edge[1]]
         G.add_edges_from(edges_to_add)
         
         # Ensure we only remove edges that still exist

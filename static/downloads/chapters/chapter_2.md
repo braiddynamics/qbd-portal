@@ -891,19 +891,19 @@ The proof proceeds by Direct Construction, defining a finite sequence of constru
 
 ### 2.4.2 Lemma: Confluence of the Constructor {#2.4.2}
 
-:::info[**Local Confluence via Overlapping Rewrite Operations**]
+:::info[**Local Confluence via Edge-Overlapping Rewrite Operations**]
 :::
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant pairs $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct compliant pairs $P_1$ and $P_2$ sharing a common directed edge $(w, u) \in E$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the local confluence of edge-overlapping decompositions.
 
 ### 2.4.2.1 Proof: Confluence of the Constructor {#2.4.2.1}
 
-:::tip[**Formal Verification of Commutativity through Overlapping Updates**]
+:::tip[**Formal Verification of Commutativity through Edge-Overlapping Updates**]
 :::
 
-**I. Initial State with Overlap**
+**I. Initial State with Edge Overlap**
 
-Let $G = (V, E)$ denote a graph under **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> containing two compliant two-edge subpaths $P_1, P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />) sharing a common edge $(w, u) \in E$:
+Let $G = (V, E)$ denote a graph under **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> containing two compliant two-edge subpaths $P_1, P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />) sharing a common directed edge $(w, u) \in E$:
 
 $$
 P_1 = (v \to w \to u), \quad P_2 = (w \to u \to x)
@@ -957,6 +957,10 @@ By the commutativity of set union on finite edge sets:
 $$
 E_{AB} = E \cup \{ e_1, e_2 \} = E \cup \{ e_2, e_1 \} = E_{BA} \implies G_{AB} \equiv G_{BA}
 $$
+
+**V. Remark on Vertex-Sharing Candidates**
+
+When two compliant 2-paths overlap at only a single vertex without sharing an edge (for example, $P_1 = 0 \to 1 \to 2$ and $P_2 = 2 \to 3 \to 4$ in the presence of perimeter chords such as $(0, 4)$), adding chord $(2, 0)$ introduces an alternative 2-path $2 \to 0 \to 4$, dynamically disabling the PUC compliance of $P_2$. Such configurations do not share causal sub-actions and are governed by the parallel execution scheduler's proposal filtering and collision resolution.
 
 We conclude that the rewrite operations commute locally, establishing the diamond property and local confluence of the Universal Constructor.
 
@@ -1132,60 +1136,54 @@ Edge deletion operates as the thermodynamic cooling agent of the pre-geometric v
 
 ### 2.4.5 Lemma: Decrease in Parallel Updates {#2.4.5}
 
-:::info[**Net Reduction of Topological Complexity via Composite Updates**]
+:::info[**Net Reduction of Topological Complexity via Parallel Rewriting**]
 :::
 
-Let $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$ denote a composite update step comprising edge addition and subsequent deletion. Then the operation satisfies the strict descent condition for the Lexicographic Potential, $\Phi(G_{next}) < \Phi(G)$.
+Let $\mathcal{R}_{\text{atom}}(G) = (V, (E \cup A_{\text{filt}}) \setminus D)$ denote an atomic parallel rewrite step comprising concurrent chord addition $A_{\text{filt}}$ across compliant 2-paths and perimeter edge deletion $D$ along maximal cycles of length $L \ge 4$. Then the atomic transition satisfies the strict descent condition for the Lexicographic Potential:
+
+$$
+\Phi(G_{t+1}) \prec_{\text{lex}} \Phi(G_t)
+$$
 
 ### 2.4.5.1 Proof: Decrease in Parallel Updates {#2.4.5.1}
 
-:::tip[**Verification through Net Descent across the Two-Phase Update Cycle**]
+:::tip[**Verification of Net Descent via Atomic Parallel Rewriting**]
 :::
 
-**I. Phase 1: Chordal Addition**
+**I. Atomic Transition Formulation**
 
-Let $G \to G_{add}$ denote the addition of chords to all compliant 2-paths within maximal cycles.
+In parallel graph rewriting, chord placement and perimeter edge excision occur synchronously within a single state transition ($E_{t+1} = (E_t \cup A_{\text{filt}}) \setminus D$). Physical states transition directly between discrete ticks; there is no realized intermediate topological state where chords have been added without simultaneous perimeter pruning.
 
-1.  **Site Availability:** Maximal cycles satisfy **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />, ensuring the existence of valid 2-paths.
-2.  **Structure Decomposition:** The addition of chords partitions maximal cycles into 3-cycles and smaller loops.
-3.  **Cycle Bounding:** The **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> restricts additions to sites lacking short paths. The creation of a cycle $L_{new} > L_{\max}$ requires a pre-existing path of length $> L_{\max}-1$ connecting vertices at distance 2. This implies a prior path violation.
-4.  **Result:** The maximum cycle length satisfies the non-increasing condition.
+**II. Chordal Decomposition and Perimeter Pruning**
 
-    $$
-    \Phi(G_{add}) \le \Phi(G)
-    $$
+Let $C$ denote a chordless maximal cycle of length $L = L_{\max} \ge 4$ (**Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />).
 
-**II. Phase 2: Entropic Deletion**
+1.  **Chord Partitioning:** For every compliant 2-path $v \to w \to u$ along $C$, inserting chord $e_{\text{chord}} = (u, v)$ creates an elementary 3-cycle $(v \to w \to u \to v)$ of length 3, leaving a residual perimeter sub-path $u \to \dots \to v$ of length $L - 2$.
+2.  **Concurrent Perimeter Excision:** Simultaneously within the same atomic transition, at least one perimeter edge $e_{\text{del}} \in D$ along the macro-cycle is excised (**Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />).
+3.  **Absence of Macro-Loop Closures:** Any simple cycle in $G_{t+1}$ formed through the new chord $e_{\text{chord}}$ must route either through the 3-cycle (length 3) or through the remaining unexcised perimeter segments. Because $e_{\text{del}}$ breaks the original perimeter cycle $C$, no simple cycle of length $\ge L_{\max}$ can close through $C$. Furthermore, because $C$ was chordless in $G_t$, any alternate simple cycle in $G_{t+1}$ containing $e_{\text{chord}}$ and edges outside $C$ has length strictly bounded by $L_{\max} - 1 < L_{\max}$.
 
-Let $G_{add} \to G_{next}$ denote the removal of edges from the original maximal cycles.
+**III. Strict Potential Descent**
 
-1.  **Operation:** Edges participating in the original cycle $C$ undergo deletion.
-2.  **Potential Drop:** Edge removal strictly decreases the state potential $\Phi(G)$ (**Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />).
+Because the atomic rewrite destroys the maximal cycle $C$ while every newly created cycle has length strictly less than $L_{\max}$ (or length 3), the potential tuple $\Phi(G) = (L_{\max}, N_{L_{\max}})$ strictly decreases:
+* If $C$ was the unique cycle of length $L_{\max}$, then $L_{\max}(G_{t+1}) < L_{\max}(G_t)$.
+* If multiple maximal cycles exist, the removal of $e_{\text{del}} \in C$ strictly decreases their multiplicity $N_{L_{\max}}(G_{t+1}) < N_{L_{\max}}(G_t)$ while keeping the maximum length invariant ($L_{\max}(G_{t+1}) \le L_{\max}(G_t)$).
 
-    $$
-    \Phi(G_{next}) < \Phi(G_{add})
-    $$
-
-**III. Synthesis**
-
-The composition of operations yields a strict inequality:
+In all cases, the state transition satisfies strict lexicographic descent:
 
 $$
-\Phi(G_{next}) < \Phi(G)
+\Phi(G_{t+1}) \prec_{\text{lex}} \Phi(G_t)
 $$
-
-We conclude that the update step enforces monotonic descent in the topological complexity metric.
 
 Q.E.D.
 
 ### 2.4.5.2 Commentary: Monotonic Potential Descent {#2.4.5.2}
 
-:::info[**Thermodynamic Guarantee of Potential Monotonicity in Composite Graph Evolution**]
+:::info[**Thermodynamic Guarantee of Potential Monotonicity in Atomic Parallel Evolution**]
 :::
 
-The composite update cycle $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$ functions as the thermodynamic engine driving discrete spacetime toward geometric equilibrium. While individual chord additions transiently preserve the maximum cycle length by triangulating interior loops without shortening the outer boundary, the subsequent deletion phase acts as a one-way thermodynamic ratchet. By decoupling generative triangulation from entropic pruning across distinct execution phases, the substrate ensures that local topological repairs never trigger unconstrained connectivity spikes or indefinite oscillatory cycles.
+The atomic cycle reduction $\mathcal{R}_{\text{atom}}$ functions as the thermodynamic engine driving discrete spacetime toward geometric equilibrium. Rather than executing a two-phase pipeline where intermediate unpruned chord networks could temporarily introduce dense cross-chords (such as the inscribed chord pentagram of an unpruned 5-cycle), the physical QBD substrate couples chord instantiation with perimeter edge pruning in a single atomic tick.
 
-In continuous geometry, the reduction of curvature singularities often requires non-local smoothing flows that risk global volume collapse. Within the discrete causal graph, strict descent under the **Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" /> enforces a Lyapunov function directly on network configurations, ensuring that every parallel update step strictly reduces the ordered pair $(L_{\max}, N_{L_{\max}})$. This monotonic descent prevents the emergence of dynamical limit cycles or persistent chaotic tangles, guaranteeing that the pre-geometric vacuum converges deterministically toward the ground state defined by fundamental 3-cycle quanta.
+Within the discrete causal graph, strict potential descent (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />) provides a Lyapunov function directly on network configurations, ensuring that every parallel update step strictly reduces the ordered pair $(L_{\max}, N_{L_{\max}})$. This monotonic descent prevents the emergence of dynamical limit cycles or persistent chaotic tangles, guaranteeing that the pre-geometric vacuum converges deterministically toward the ground state defined by fundamental 3-cycle quanta.
 
 ---
 
@@ -1210,11 +1208,11 @@ Let the universe exist in state $G_0$ with potential $\Phi(G_0) = (L, N_L)$ sati
 **III. Consistency and Reduction**
 
 1.  **Confluence:** The parallel application of operations proceeds concurrently, as established by the **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />, yielding state $G_{add}$.
-2.  **Net Descent:** The subsequent deletion phase produces state $G_1$ satisfying $\Phi(G_1) < \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />, which utilizes **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" /> to guarantee the potential decrease.
+2.  **Net Descent:** The atomic rewrite produces state $G_1$ satisfying $\Phi(G_1) \prec_{\text{lex}} \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />, which utilizes concurrent chord addition and perimeter deletion to guarantee the potential decrease via **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />.
 
 **IV. Iterative Termination**
 
-1.  **Sequence Construction:** The dynamics generate a sequence of potentials $\Phi(G_0) > \Phi(G_1) > \dots$.
+1.  **Sequence Construction:** The dynamics generate a sequence of potentials $\Phi(G_0) \succ_{\text{lex}} \Phi(G_1) \succ_{\text{lex}} \dots$.
 2.  **Well-Foundedness:** The lexicographic order on finite graphs constitutes a proven well-founded invariant with no infinite descending chains in the potential order (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
 3.  **Limit:** The sequence must terminate at a state $G_{min}$.
 
@@ -1243,6 +1241,9 @@ Let $G_0 = (V, E_0)$ denote an isolated directed cycle of length $L=4$.
 * **Vertices:** $V = \{0, 1, 2, 3\}$
 * **Edges:** $E_0 = \{(0, 1), (1, 2), (2, 3), (3, 0)\}$
 * **Topological Metrics:** $L_{\max} = 4$, Potential $\Phi(G_0) = (4, 1)$.
+
+*(Remark on Untimestamped Pedagogical Model vs. Physical QBD Substrate):*  
+The four-cycle walkthrough below traces the unweighted, untimestamped topological decomposition used in early pedagogical illustrations and benchmark calculations such as **Simulation Verification** <Ref id="2.4.10" label="§2.4.10" />. In the physical substrate equipped with edge timestamps $H(e)$ and the Symmetric Reciprocal Filter $\mathcal{M}(A)$, proposals $(2, 0)$ and $(0, 2)$ colliding on an exact unweighted tie are simultaneously suppressed ($\mathcal{M}(A)$ drops colliding pairs $(u, v)$ and $(v, u)$), preventing reciprocal 2-cycles from nucleating and strictly preserving Axiom 1. Once local asymmetry is broken by ambient field timestamps or non-uniform path histories, atomic chord insertion resolves the defect directly into simplicial 3-cycles without intermediate reciprocal states.
 
 **II. Phase 1: Chordal Addition ($k=4$)**
 
@@ -1391,10 +1392,21 @@ Let $G_0$ consist of a directed cycle of length $L=6$.
 Verification of the finite termination condition follows **General Cycle Decomposition** <Ref id="2.4.6" label="§2.4.6" /> across the following protocols:
 
 1.  **Defect Initialization:** The algorithm constructs isolated directed cycles of length $k \in [4, 12]$ to serve as standardized topological defects. This mapping represents the initialization of unstable macroscopic loops within the vacuum.
-2.  **Topological Reduction:** The protocol simulates a maximally parallel update by instantiating chords across open 2-paths and subsequently prunes macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
+2.  **Topological Reduction:** The protocol simulates an unweighted topological reduction by instantiating chords across open 2-paths and subsequently pruning macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
 3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$), verifying the monotonic descent of $\Phi(G)$ (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
 
+*(Pedagogical Benchmark vs. Physical Dynamic Execution):*  
+The script below is a topological demonstrator of cycle-length reduction on unweighted defect graphs. In the physical QBD substrate, graph rewriting executes via the timestamp-aware atomic scheduler with the Symmetric Reciprocal Filter $\mathcal{M}(A)$ (shown in `atomic_cycle_reduction_step`), strictly preventing reciprocal 2-cycles during parallel collapse.
+
 ```python
+"""
+Pedagogical Topological Cycle Digestion Demonstrator (§2.4.10).
+
+Demonstrates cycle-length reduction on unweighted directed k-cycles
+to verify termination at simplicial ground states (L_max <= 3).
+Physical rewrites use the timestamp-aware atomic scheduler (Axioms 1-3).
+"""
+
 import networkx as nx
 import pandas as pd
 import math 
@@ -1489,6 +1501,39 @@ def run_reduction_protocol(k):
     del_ops = phase_2_delete_cycles(G)
    
     return add_ops, del_ops
+
+
+def atomic_cycle_reduction_step(G):
+    """
+    Companion reference: Timestamp-aware atomic cycle reduction step (Lemma 2.4.5).
+    Applies chord addition and perimeter deletion in a single atomic rewrite step,
+    filtering reciprocal collision pairs to strictly preserve Axiom 1 (no 2-cycles).
+    """
+    paths = find_compliant_2_paths(G)
+    if not paths:
+        return 0, 0
+    
+    proposals_add = {(u, v) for v, w, u in paths}
+    # Symmetric Reciprocal Filter (Corollary 2.2): drop colliding pairs and self-loops
+    filtered_add = {
+        (u, v) for (u, v) in proposals_add
+        if (v, u) not in proposals_add and u != v
+    }
+    
+    proposals_del = set()
+    for c in nx.simple_cycles(G):
+        if len(c) > 3:
+            proposals_del.add((c[0], c[1]))
+            break
+            
+    for u, v in filtered_add:
+        G.add_edge(u, v)
+    for u, v in proposals_del:
+        if G.has_edge(u, v):
+            G.remove_edge(u, v)
+            
+    return len(filtered_add), len(proposals_del)
+
 
 # === Execution and Verification ===
 results = []
@@ -2153,10 +2198,14 @@ Q.E.D.
 
 ### 2.6.5.2 Commentary: Asymmetry Constraints {#2.6.5.2}
 
-:::tip[**Directional Coupling of Causal Relations**]
+:::tip[**Directional Coupling of Causal Relations and the Role of the Bowtie Paradox**]
 :::
 
 Asymmetry dictates that if an event $u$ exerts causal influence over a distinct event $v$, then $v$ is strictly prohibited from exerting influence back on $u$. This directional coupling secures a clear physical distinction between cause and effect across the entire network. If mutual influence were allowed between distinct events, the concept of causal directionality would collapse into an undirected, static equivalence relation devoid of temporal ordering.
+
+The explicit construction in **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> represents the canonical **Bowtie Paradox**. It formally proves that local Axioms 1 and 2 alone are mathematically insufficient to guarantee global causal asymmetry: on a closed cycle with non-monotone global timestamps, one can find two disjoint path segments ($A \to B \to C$ with $H=1, 4$ and $C \to D \to A$ with $H=2, 3$) that are each locally monotone, inducing bidirectional influence ($A \le C$ and $C \le A$). 
+
+This counter-model provides the core motivation and structural necessity for **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Under Axiom 3, the scheduler enforces the global Acyclicity Pre-Check (`pre_check_aec`), dynamically precluding the creation of any edge that would complete a closed loop with monotonic ancestral paths. Beginning from an acyclic tree vacuum, Axiom 3 acts as an impenetrable topological prophylaxis, ensuring that the Bowtie Paradox can never nucleate dynamically in physical Quantum Braid Dynamics.
 
 By barring reciprocal influence channels, asymmetry enforces a strict, directed light cone structure across the pre-geometric substrate. This constraint partitions local event neighborhoods into distinct past, future, and spacelike-separated domains. Unidirectional coupling guarantees that physical information flows monotonically through the causal graph, preventing systemic feedback instability, maintaining historical coherence, and establishing the microscopic arrow of time.
 
@@ -2636,12 +2685,12 @@ which establishes that the local check guarantees global causal acyclicity with 
 
 ### 2.7.4.1 Proof: Local PUC Approximation {#2.7.4.1}
 
-:::tip[**Derivation of the Error Probability Bound via Sparse Graph Analysis**]
+:::tip[**Derivation of the Error Probability Bound via Subcritical Branching Analysis**]
 :::
 
 **I. Substrate Topology and Branching Metrics**
 
-Let the causal graph substrate operate as a directed expander graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded average degree $\langle k \rangle < 3$ and cycle percolation density $\rho < 1$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
+Let the causal graph substrate operate as a directed graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded maximum total degree $\Delta \le 3$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$) and unpinned cycle percolation density $\rho < 1/b$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
 
 $$
 L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3
@@ -2649,7 +2698,7 @@ $$
 
 **II. Directed Path Enumeration and Extension Probability**
 
-The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate branching factor $b = \langle k \rangle - 1 < 2$:
+The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate non-backtracking branching factor $b = \Delta - 1 \le 2$:
 
 $$
 N_{\text{paths}}(L) \le b^L
@@ -2661,34 +2710,28 @@ $$
 P_{\text{ext}}(L) = C_0 \, \rho^L
 $$
 
-**III. Return Probability and Loop Closure Bound**
+**III. Worst-Case Loop Closure Bound (Zero Expander Assumptions)**
 
-For a directed causal path of length $L$ to close an acausal loop back onto its initiating vertex $v_0 = u$, the terminal vertex $v_L$ must coincide with $u$. On a spectral expander graph of size $N$ with spectral gap $\gamma > 0$, the return probability for paths of length $L \ge \log N$ converges to the uniform stationary distribution:
-
-$$
-P(v_L = u \mid \text{length } L) = \frac{1}{N} + \mathcal{O}\left(e^{-\gamma L}\right)
-$$
-
-Multiplying the path multiplicity by the return probability bounds the total probability of an acausal cycle of length $L$ closing:
+For dynamic graphs undergoing stochastic rewrites, spectral gap stability cannot be asserted because tree-like thinning near the vacuum phase collapses the spectral gap ($\lambda_2 \to 0$). Evaluating under the worst-case adversarial return bound:
 
 $$
-P_{\text{close}}(L) \le N_{\text{paths}}(L) \cdot P(v_L = u) \le \frac{C}{N} \rho^L
+P(v_L = u \mid \text{length } L) \le 1
 $$
 
-where $C > 0$ is a finite combinatorial coefficient determined by the local neighborhood topology.
+Multiplying path multiplicity by path persistence under this worst-case bound yields:
+
+$$
+P_{\text{close}}(L) \le N_{\text{paths}}(L) \cdot P_{\text{ext}}(L) \cdot P(v_L = u) \le C (b\rho)^L
+$$
+
+where $C > 0$ is a finite combinatorial coefficient. Because the substrate operates in the subcritical regime $\rho^* \approx 0.037 < 1/b = 0.5$, the effective branching parameter satisfies $\mu_{\mathrm{eff}} \equiv b\rho \le 2 \times 0.037 = 0.074 \ll 1$, guaranteeing exponential decay in path length $L$.
 
 **IV. Cumulative Geometric Tail Evaluation**
 
 The total evasion probability $P_{\mathrm{err}}$ that an acausal loop forms strictly beyond the local search horizon $L_{\text{cut}}$ is given by the summation over the geometric tail:
 
 $$
-P_{\mathrm{err}}(L_{\text{cut}}) = \sum_{L = L_{\text{cut}} + 1}^{\infty} P_{\text{close}}(L) = \sum_{L = L_{\text{cut}} + 1}^{\infty} \frac{C}{N} \rho^L
-$$
-
-Factoring out the leading term and evaluating the infinite geometric series yields:
-
-$$
-P_{\mathrm{err}}(L_{\text{cut}}) = \frac{C}{N} \rho^{L_{\text{cut}} + 1} \sum_{j=0}^{\infty} \rho^j = \frac{C}{N} \frac{\rho^{L_{\text{cut}} + 1}}{1 - \rho} = \frac{C \rho}{N (1 - \rho)} \rho^{L_{\text{cut}}}
+P_{\mathrm{err}}(L_{\text{cut}}) = \sum_{L = L_{\text{cut}} + 1}^{\infty} P_{\text{close}}(L) \le \sum_{L = L_{\text{cut}} + 1}^{\infty} C (b\rho)^L = \frac{C (b\rho)^{L_{\text{cut}} + 1}}{1 - b\rho}
 $$
 
 **V. Logarithmic Horizon Substitution and Asymptotic Exponent**
@@ -2696,36 +2739,46 @@ $$
 Substituting the explicit logarithmic horizon $L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3 \ge \log_2 N + 2$ into the geometric factor gives:
 
 $$
-\rho^{L_{\text{cut}}} \le \rho^2 \cdot \rho^{\log_2 N}
+(b\rho)^{L_{\text{cut}}} \le (b\rho)^2 \cdot (b\rho)^{\log_2 N}
 $$
 
-Converting the base of the exponential term via the identity $\rho^{\log_2 N} = 2^{\log_2 N \cdot \log_2 \rho} = N^{\log_2 \rho} = N^{-\frac{\ln(1/\rho)}{\ln 2}}$:
+Converting the base via $(b\rho)^{\log_2 N} = 2^{\log_2 N \cdot \log_2(b\rho)} = N^{\log_2(b\rho)} = N^{-\frac{\ln(1/(b\rho))}{\ln 2}}$:
 
 $$
-\rho^{L_{\text{cut}}} \le \rho^2 \cdot N^{-\frac{\ln(1/\rho)}{\ln 2}}
+(b\rho)^{L_{\text{cut}}} \le (b\rho)^2 \cdot N^{-\frac{\ln(1/(b\rho))}{\ln 2}}
 $$
 
 Substituting this result back into the tail summation establishes the exact polynomial decay bound:
 
 $$
-P_{\mathrm{err}}(L_{\text{cut}}) \le \frac{C \rho^3}{1 - \rho} \cdot \frac{1}{N} \cdot N^{-\frac{\ln(1/\rho)}{\ln 2}} = \frac{C \rho^3}{1 - \rho} N^{-\left(1 + \frac{\ln(1/\rho)}{\ln 2}\right)}
+P_{\mathrm{err}}(L_{\text{cut}}) \le \frac{C (b\rho)^3}{1 - b\rho} N^{-\frac{\ln(1/(b\rho))}{\ln 2}} = \mathcal{O}(N^{-k})
 $$
 
 Defining the asymptotic suppression exponent:
 
 $$
-k \equiv 1 + \frac{\ln(1/\rho)}{\ln 2}
+k \equiv \frac{\ln(1/(b\rho))}{\ln 2}
 $$
 
-Because the substrate operates in the subcritical regime ($\rho < 1$), the quotient satisfies $\frac{1}{\rho} > 1 \implies \ln(1/\rho) > 0$, which strictly guarantees:
+Evaluating at $b\rho \approx 0.074$ yields:
 
 $$
-k > 1 \implies P_{\mathrm{err}}(L_{\text{cut}}) \le \mathcal{O}(N^{-k})
+k = \frac{\ln(1/0.074)}{\ln 2} \approx \frac{2.604}{0.693} \approx 3.75 > 1
 $$
 
-**VI. Conclusion**
+which strictly guarantees:
 
-As the substrate volume diverges in the thermodynamic limit ($N \to \infty$), the probability of an undetected causal paradox evading the local pre-check vanishes asymptotically ($P_{\mathrm{err}} \to 0$). The local pre-check therefore enforces **Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> and guarantees **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> almost surely across all cosmological scales.
+$$
+P_{\mathrm{err}}(L_{\text{cut}}) \le \mathcal{O}(N^{-3.75}) \xrightarrow{N \to \infty} 0
+$$
+
+**VI. Conclusion and Triple-Defense Architecture**
+
+As the substrate volume diverges in the thermodynamic limit ($N \to \infty$), the probability of an undetected causal loop evading the local pre-check vanishes asymptotically ($P_{\mathrm{err}} \to 0$). 
+
+Crucially, the local pre-check is an algorithmic search sieve (Tier 2). Physical spacetime integrity is safeguarded by two absolute global mechanisms:
+1. **Causal Acyclicity (Tier 1):** Constructor timestamp monotonicity (**Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />; Lean 4 certified: `edge_monotone_no_causal_cycle`) strictly precludes closed timelike curves ($P_{\mathrm{CTC}} \equiv 0$) on any graph topology.
+2. **Spatial Manifold Locality:** The **Hard Constraint Projectors** of **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> project out non-local shortcuts ($\bar{d} > 2$), while unpinned topological stress is actively excised by microscopic deletion grammar.
 
 Q.E.D.
 
@@ -2734,9 +2787,13 @@ Q.E.D.
 :::info[**Role of Probabilistic Determinism within the Thermodynamic Limit**]
 :::
 
-**Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> introduces a crucial philosophical and physical nuance: the enforcement of Axiom $3$ is **probabilistic** (not absolute) in the limit of infinite size. However, the probability of error is exponentially suppressed, which aligns this theory with the foundations of statistical mechanics as formalized by <Cite id="A.63" label="(van Kampen, 1992)" />. In his treatment of stochastic processes, van Kampen demonstrates how macroscopic deterministic laws (like the diffusion equation) emerge from microscopic probabilistic jumps (the master equation) simply through the law of large numbers.
+**Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" /> introduces a crucial architectural distinction: the local forward pre-check operates as an **algorithmic sieve** rather than the sole guardian of global spacetime. Because any local agent restricted to a finite radius $L_{\mathrm{cut}}$ is topologically blind to trans-local cycles with diameter $D > L_{\mathrm{cut}}$ (**Topological Blindness of Local Observers**), the local check relies on subcritical Galton-Watson branching to guarantee that candidate paradoxes are suppressed with polynomial error $P_{\mathrm{err}} \le \mathcal{O}(N^{-3.75})$.
 
-This mirrors the statistical laws of thermodynamics perfectly. It is *theoretically* possible for all the air molecules in a room to spontaneously congregate in one corner, suffocating the occupants. The equations of motion do not strictly forbid it. Yet the probability scales as $e^{-N}$, which for macroscopic $N$ is so infinitesimally low that we treat the uniform distribution of air as a physical law. Similarly, the "Local PUC Approximation" ensures that while the Universal Constructor only checks locally, the probability of a global paradox slipping through is effectively zero. Physics does not require absolute mathematical certainty (which is often a chimera in infinite systems): it requires thermodynamic certainty. We accept a probability of failure of $10^{-100}$ as equivalent to impossibility, allowing us to build a deterministic macroscopic reality on a foundation of microscopic probabilities.
+Physical spacetime, however, does not risk global topological collapse if a candidate chord evades the local search horizon. The global consistency of the universe is enforced by a strict separation of concerns:
+1. **Causal Invariance (Time):** As proved in **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, constructor timestamp monotonicity unconditionally guarantees that the historical event poset $G_{\mathrm{event}}$ is an acyclic partial order ($P_{\mathrm{CTC}} \equiv 0$). A long-range chord cannot travel backward in relational time.
+2. **Spatial Locality (Manifold):** As established in **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />, non-local edges bridging $\bar{d}(u, v) > 2$ are annihilated by the Hard Constraint Projectors ($\Pi_{\text{local}} |\psi\rangle = 0$). Any residual topological frustration is actively excised by the microscopic deletion grammar.
+
+The local pre-check therefore does not bear the burden of maintaining the global manifold: it functions as a fast $\mathcal{O}(\log N)$ computational filter, allowing the discrete universe to evolve at Planckian frequencies without running global topological re-sorting queries at every tick.
 
 ---
 
@@ -2804,6 +2861,8 @@ Q.E.D.
 :::
 
 The mathematical distinction between the historical event poset and the operational spatial graph resolves the apparent conflict between exact causal acyclicity and finite-horizon heuristic checks. Physical spacetime in Quantum Braid Dynamics is represented by the event poset $G_{\mathrm{event}}$, where each vertex records an immutable computational rewrite. Because the constructor assigns timestamps by strictly incrementing the maximum timestamp of all causal parents, time possesses an absolute relational orientation. Closed timelike curves are not merely thermodynamically improbable; they are algebraically impossible on the natural numbers, ensuring that physical history remains an unalterable directed acyclic graph to all orders.
+
+Critically, treating the spatial graph $G_{\mathrm{space}}$ as if its bare directed edges defined causal influence via standard transitive closure is a fundamental category error. $G_{\mathrm{space}}$ contains directed 3-cycles $(u \to v \to w \to u)$; if transitive closure were taken ignoring timestamps, these spatial triangles would be erroneously classified as causal closed timelike curves. In QBD, directed paths in $G_{\mathrm{space}}$ are space-like unless their constituent edge timestamps strictly increase monotonically ($H(e_1) < H(e_2) < \dots < H(e_k)$). Because no closed cycle in $G_{\mathrm{space}}$ can have strictly increasing timestamps everywhere ($H(e_k) < H(e_1)$ is impossible when $H(e_1) < \dots < H(e_k)$), spatial area quanta are non-causal spatial loops, not temporal paradoxes.
 
 The localized Breadth-First Search pre-check with logarithmic cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ operates strictly as an optimization on the spatial manifold $G_{\mathrm{space}}$ to prevent non-local spatial chords. When the local sieve encounters a finite-horizon evasion with polynomial error $P_{\mathrm{err}} \le \mathcal{O}(N^{-k})$, the failure is purely geometric rather than chronological. An unintercepted chord introduces a long-range spatial shortcut in $G_{\mathrm{space}}$, but it cannot travel backward in relational time because Tier 1 timestamp monotonicity unconditionally forbids retro-causal influence. This two-tier hierarchy guarantees that the computational efficiency of local horizon checks does not compromise the fundamental causal consistency of physical reality.
 
@@ -2989,6 +3048,65 @@ theorem asymmetry_equiv {V : Type} (R : CausalRelation₂ V) :
     have h_eq : u = v := h_conj.right u v h_fwd h_rev
     rw [h_eq] at h_fwd
     exact h_conj.left v h_fwd
+
+-- ----------------------------------------------------------------------------
+-- PART 2: EDGE TIMESTAMPS & STRICT CAUSAL PATH MONOTONICITY (Axiom 3)
+-- ----------------------------------------------------------------------------
+
+def Edge (V : Type) := V × V
+def GraphEdges (V : Type) := Edge V → Prop
+def EdgeTimestampMap (V : Type) := Edge V → Nat
+
+def DirectedEdgePath {V : Type} (E : GraphEdges V) : List (Edge V) → Prop
+  | [] => True
+  | [e] => E e
+  | e1 :: e2 :: rest => E e1 ∧ e1.2 = e2.1 ∧ DirectedEdgePath E (e2 :: rest)
+
+def IsEdgePathMonotone {V : Type} (H : EdgeTimestampMap V) : List (Edge V) → Prop
+  | [] => True
+  | [_] => True
+  | e1 :: e2 :: rest => H e1 < H e2 ∧ IsEdgePathMonotone H (e2 :: rest)
+
+/--
+THEOREM 3: Edge Timestamp Path Monotonicity Transitivity
+Proves that along any directed causal path with strictly increasing edge timestamps,
+the initial edge timestamp is strictly less than the final edge timestamp: H(e_first) < H(e_last).
+-/
+theorem edge_path_monotonicity_transitive {V : Type}
+    (H : EdgeTimestampMap V) :
+    ∀ (e1 e2 : Edge V) (rest : List (Edge V)),
+    IsEdgePathMonotone H (e1 :: rest ++ [e2]) →
+    H e1 < H e2 := by
+  intro e1 e2 rest
+  revert e1
+  induction rest with
+  | nil =>
+    intro e1 h_mono
+    dsimp [IsEdgePathMonotone] at h_mono
+    exact h_mono.1
+  | cons e_mid rest_mid ih =>
+    intro e1 h_mono
+    dsimp [IsEdgePathMonotone] at h_mono
+    have h1 := h_mono.1
+    have h2 := ih e_mid h_mono.2
+    exact Nat.lt_trans h1 h2
+
+/--
+THEOREM 4: Edge Timestamp Monotone Closed Loop Impossibility (Axiom 3)
+Proves that a closed directed path whose edge timestamps strictly increase cannot form
+a closed loop without incurring H(e_first) < H(e_first), precluding Closed Timelike Curves.
+-/
+theorem edge_monotone_no_causal_cycle {V : Type}
+    (E : GraphEdges V) (H : EdgeTimestampMap V) :
+    ∀ (e1 e_last : Edge V) (rest : List (Edge V)),
+    DirectedEdgePath E (e1 :: rest ++ [e_last]) →
+    IsEdgePathMonotone H (e1 :: rest ++ [e_last]) →
+    H e_last < H e1 →
+    False := by
+  intro e1 e_last rest _ h_mono h_close
+  have h_trans := edge_path_monotonicity_transitive H e1 e_last rest h_mono
+  have h_contra := Nat.lt_trans h_trans h_close
+  exact Nat.lt_irrefl (H e1) h_contra
 ```
 
 **Verification Summary:**

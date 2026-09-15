@@ -1,7 +1,33 @@
-Local Entropy Gain from Relational Loop Closure
-====================================================
-Pre-closure multiplicity product:  1 x 0 = 0  -> S = 0.000000
-Post-closure multiplicity product: 2 x 1 = 2  -> S = 0.693147
-dS:                                0.693147
-Theoretical ln(2):                 0.693147
-Exact match:                       True
+==============================================================================
+Section 4.4.3.3 Information-Theoretic Foundations & Temperature Cancellation
+==============================================================================
+Protocol 1: Jaynes Maximum Entropy on Boolean Edge Space
+  Unbiased Bernoulli Prior:         P(edge=0) = 0.5, P(edge=1) = 0.5
+  Shannon Information Entropy:       1.000000 bits
+  Information Entropy in nats:       0.693147 nats
+  Base-Conversion Modulus beta_c:    ln(2) = 0.693147
+  Exact Identity:                   H_nats == ln(2): True
+------------------------------------------------------------------------------
+Protocol 2: Temperature Independence of Acceptance Probabilities (Delta U = 0)
+T (arbitrary)   | beta = 1/T      | P_add           | P_del          
+-----------------------------------------------------------------
+1.0000e-04      | 1.0000e+04      | 1.000000        | 0.500000       
+1.0000e-02      | 1.0000e+02      | 1.000000        | 0.500000       
+1.0000e-01      | 1.0000e+01      | 1.000000        | 0.500000       
+6.9315e-01      | 1.4427e+00      | 1.000000        | 0.500000       
+1.0000e+00      | 1.0000e+00      | 1.000000        | 0.500000       
+1.0000e+01      | 1.0000e-01      | 1.000000        | 0.500000       
+1.0000e+02      | 1.0000e-02      | 1.000000        | 0.500000       
+1.0000e+04      | 1.0000e-04      | 1.000000        | 0.500000       
+-----------------------------------------------------------------
+  P_add == 1.0 across all T: True
+  P_del == 0.5 across all T: True
+  Verdict: Temperature T cancels identically for all T > 0; probability is fundamental.
+------------------------------------------------------------------------------
+Protocol 3: Local Entropy Gain from Relational Loop Closure
+  Pre-closure Entropy S_pre:        0.000000
+  Post-closure Entropy S_post:      0.693147
+  Measured delta S:                 0.693147 nats
+  Theoretical ln(2):                0.693147 nats
+  Exact Match:                      True
+==============================================================================

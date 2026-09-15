@@ -108,3 +108,57 @@ def test_pre_check_aec_no_path():
     # Proposing (1, 2) with H=2.
     # There is no path from 2 back to 1, so it's safe.
     assert pre_check_aec(G, u=1, v=2, H_new=2) == True
+
+
+def test_is_permissible_edge_sharing_compliant_paths():
+    """
+    Lemma 2.4.2: Two compliant 2-paths sharing an edge (1, 2).
+    P1 = 0 -> 1 -> 2, P2 = 1 -> 2 -> 3.
+    Both satisfy PUC independently in G.
+    """
+    G = nx.DiGraph([(0, 1), (1, 2), (2, 3)])
+    # P1: start=0, mid=1, end=2 -> is_permissible(G, u=2, v=0, w=1)
+    assert is_permissible(G, u=2, v=0, w=1) is True
+    # P2: start=1, mid=2, end=3 -> is_permissible(G, u=3, v=1, w=2)
+    assert is_permissible(G, u=3, v=1, w=2) is True
+
+
+def test_is_permissible_vertex_sharing_mutual_interference():
+    """
+    Vertex-sharing counterexample (Astra's witness):
+    Vertices 0, 1, 2, 3, 4 with edges (0, 1), (1, 2), (2, 3), (3, 4) and (0, 4).
+    P1 = 0 -> 1 -> 2 and P2 = 2 -> 3 -> 4 share only vertex 2 (no shared edge).
+    Before chord insertion, both are compliant.
+    Adding chord (2, 0) introduces alternate 2-path 2 -> 0 -> 4, disabling P2.
+    """
+    G = nx.DiGraph([(0, 1), (1, 2), (2, 3), (3, 4), (0, 4)])
+    # Initially both satisfy PUC
+    assert is_permissible(G, u=2, v=0, w=1) is True
+    assert is_permissible(G, u=4, v=2, w=3) is True
+
+    # If P1 is rewritten by inserting chord (2, 0)
+    G.add_edge(2, 0)
+    # P2 now has an alternate 2-path: 2 -> 0 -> 4 (x=0 != 3 and (0, 4) exists)
+    # Thus P2 is disabled by the chord of P1!
+    assert is_permissible(G, u=4, v=2, w=3) is False
+
+
+def test_pre_check_aec_bowtie_paradox():
+    """
+    Commentary 2.6.5.2 & §2.6.5: The canonical Bowtie Paradox configuration.
+    Directed 4-cycle with timestamps: (0, 1, H=1), (1, 2, H=2), (2, 3, H=2), (3, 0, H=3).
+    Path 0 -> 1 -> 2 is monotone (H: 1 < 2).
+    Path 2 -> 3 -> 0 is monotone (H: 2 < 3).
+    Proposing (2, 0) with H_new = 3 would complete a strictly monotone causal 3-cycle
+    0 -> 1 -> 2 -> 0 with timestamps 1 < 2 < 3.
+    AEC pre-check correctly identifies this acausal cycle and returns False.
+    """
+    G = nx.DiGraph()
+    G.add_edges_from([
+        (0, 1, {'H': 1}),
+        (1, 2, {'H': 2}),
+        (2, 3, {'H': 2}),
+        (3, 0, {'H': 3}),
+    ])
+    # Attempting to add (2, 0) with H_new=3
+    assert pre_check_aec(G, u=2, v=0, H_new=3) is False

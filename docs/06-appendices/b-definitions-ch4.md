@@ -1522,95 +1522,99 @@ Section 4.3.12 formalizes the properties of the QBD type-theoretic regarding val
 
 ---
 
-### 4.4.1 Theorem: Thermodynamic Foundations {#4.4.1}
+### 4.4.1 Theorem: Information-Theoretic Foundations {#4.4.1}
 
 :::info[**Calibration of the Causal Graph via Information-Theoretic and Discrete Combinatorial Equivalence**]
 :::
 
-Given the thermodynamic representation of the causal graph, the following holds: the five fundamental constitutive scales of the vacuum, consisting of the critical temperature $T_c = \ln 2$, the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$, the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$, the Arrhenius defect relaxation constant $\lambda_0 = e - 1$, and the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$, are uniquely determined from discrete combinatorial conservation principles, discrete incident port equipartition, and local fiber maximum entropy on the integer counting lattice $\mathbb{Z}$.
+Given the discrete relational representation of the causal graph, the following holds: the five fundamental constitutive scales of the vacuum, consisting of the base-conversion modulus $\beta_c = \ln 2$, the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$, the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$, the Arrhenius defect relaxation constant $\lambda_0 = e - 1$, and the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$, are uniquely determined as canonical analytical reference priors from discrete combinatorial conservation principles, discrete incident port equipartition, and local fiber maximum entropy on the integer counting lattice $\mathbb{Z}$. The microscopic rewrite probabilities evaluate strictly to the canonical combinatorial reference values $P_{\mathrm{base}} = 1.0$ and $Q_{\mathrm{base}} = 1/2$.
 
 **In Plain English:**  
-The vacuum has a fundamental temperature of ln(2), representing the exact thermodynamic energy required to delete one bit of relation.
+The vacuum scales and combinatorial rewrite rates are established as canonical analytical reference priors by discrete combinatorial conservation principles, discrete port equipartition, and maximum entropy on the integer counting lattice, proving that probability is fundamental and temperature is not.
 
 ---
 
-### 4.4.2 Lemma: Bit-Nat Equivalence {#4.4.2}
+### 4.4.2 Lemma: Information Modulus & Prior Uniqueness {#4.4.2}
 
-:::info[**Derivation of the Vacuum Temperature via Information-Theoretic Energy Equivalence**]
+:::info[**Derivation of the Base Conversion Modulus and Prior Uniqueness via Jaynes Maximum Entropy**]
 :::
 
-Given the thermodynamic temperature of the vacuum derived from the equivalence of thermal and information-theoretic scales, designated $T_c$, the following holds: $T_c$ constitutes the dimensionless constant $T_c = \ln 2$, representing the unique critical point where the thermal energy quantum is energetically equivalent to the entropic content of a single binary decision ($\Delta F = 0$).
+Given the relational boolean state space of edge candidates $\Sigma = \{0, 1\}$, the following holds: the information modulus $\beta_c = \ln 2$ constitutes the exact base-conversion constant between Shannon bits and natural units ($1\text{ bit} = \ln 2\text{ nats}$). Under Jaynes (1957) Maximum Entropy with bit-flip symmetry $P(0) = P(1)$, the prior distribution on cycle preservation is uniquely determined as the unbiased Bernoulli prior $Q_0 = 1/2$; moreover, the fictitious vacuum temperature $T$ cancels identically out of the microscopic acceptance probabilities for all $T > 0$, establishing that probability is fundamental and temperature is not.
 
 **In Plain English:**  
-Section 4.4.2 formalizes the properties of the QBD lemma regarding bit-nat equivalence.
+The information modulus ln(2) converts Shannon bits to natural units, and bit-flip symmetry fixes the cycle preservation prior to 1/2 while temperature cancels identically out of the microscopic acceptance rates.
 
 ---
 
-### 4.4.2.1 Proof: Bit-Nat Equivalence {#4.4.2.1}
+### 4.4.2.1 Proof: Information Modulus & Prior Uniqueness {#4.4.2.1}
 
-:::tip[**Formal Derivation of the Critical Scale via Bit-Nat Equivalence and Landauer Neutrality**]
+:::tip[**Formal Derivation of Prior Uniqueness, Temperature Cancellation, and Lossless History Retention via Jaynes Maximum Entropy and Category of Histories**]
 :::
 
-**I. Statistical Mechanical Canonical Ensemble**
+**I. Jaynes Maximum Entropy on the Boolean Edge Simplex**
 
-Let the vacuum substrate be modeled as a canonical ensemble evaluated under the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> and **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. The probability $P(\omega)$ of observing a specific relational microstate $\omega$ with internal energy $E(\omega)$ follows the canonical Gibbs distribution:
-
-$$
-P(\omega) = \frac{1}{Z} \exp \left( -\frac{E(\omega)}{k_B T} \right).
-$$
-
-Setting natural informational units fixes the Boltzmann constant to unity ($k_B = 1$). Consequently, the relative statistical weight of a state fluctuation with energetic cost $\Delta E$ scales as $\exp(-\Delta E/T)$.
-
-**II. Landauer Entropic Quantum**
-
-Let the creation of an elementary causal relation be defined by the reduction of local binary uncertainty, selecting a specific realized configuration from a two-state phase space. The multiplicity of the unconstrained binary state is $\Omega_{\mathrm{initial}} = 2$, and the multiplicity of the selected state is $\Omega_{\mathrm{final}} = 1$. The change in entropy $\Delta S$ evaluates to:
+Let each potential directed relation between vertices $u$ and $v$ be represented by a boolean state variable $x_{uv} \in \{0, 1\}$, indicating absence ($0$) or presence ($1$) on the substrate under **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. In the pre-geometric vacuum ground state, the internal Hamiltonian energy cost vanishes ($\Delta U = 0$). Under the principle of Maximum Entropy (Jaynes 1957), the prior probability distribution $p(x)$ over $\{0, 1\}$ maximizes the Shannon-Gibbs entropy:
 
 $$
-\Delta S_{\mathrm{bit}} = \ln(\Omega_{\mathrm{initial}}) - \ln(\Omega_{\mathrm{final}}) = \ln 2.
+S[p] = - \sum_{x \in \{0, 1\}} p(x) \ln p(x)
 $$
 
-This quantity, $S_{\mathrm{bit}} = \ln 2\text{ nats} \equiv 1\text{ bit}$, represents the irreducible entropic magnitude of a single bit expressed in thermodynamic units (nats).
-
-**III. Helmholtz Free Energy Neutrality**
-
-The thermodynamic favorability of structure formation is governed by the change in Helmholtz Free Energy $\Delta F = \Delta U - T \Delta S$. In the relational ground state, the bare internal energy cost associated with creating an elementary causal edge vanishes ($\Delta U = 0$). Substituting the vacuum condition and the derived bit entropy into the free energy equation yields:
+subject only to normalization $p(0) + p(1) = 1$. The unique stationary point satisfying bit-flip invariance $p(0) = p(1)$ is:
 
 $$
-\Delta F(T) = 0 - T (\ln 2) = -T \ln 2.
+p(0) = p(1) = \frac{1}{2}.
 $$
 
-Spontaneous edge creation is thermodynamically favored ($\Delta F < 0$) at any positive temperature. To sustain the discrete distinction against thermal fluctuations and erasure without energetic dissipation, the thermal background energy scale must match the informational content.
+This establishes the unbiased Bernoulli prior $Q_0 = 1/2$ as a structural combinatorial theorem (verified in Lean 4 as `unbiased_bernoulli_prior_is_half`), requiring zero empirical fitting parameters.
 
-**IV. Determination of the Critical Vacuum Temperature**
+**II. Base Conversion Modulus**
 
-The critical temperature $T_c$ is defined as the scale at which the thermal energy quantum provided by the vacuum bath exactly balances the energetic equivalent of the bit entropy. Let $E_{\mathrm{therm}}$ denote the fundamental quantum of thermal energy per degree of freedom:
-
-$$
-E_{\mathrm{therm}} = k_B T \cdot 1 = T.
-$$
-
-Let $E_{\mathrm{info}}$ denote the energetic equivalent of the binary entropy $S_{\mathrm{bit}}$ under unit conversion efficiency:
+Evaluating the information entropy of this unbiased prior yields:
 
 $$
-E_{\mathrm{info}} = 1 \cdot S_{\mathrm{bit}} = \ln 2.
+H_{\mathrm{Shannon}} = - \left(\frac{1}{2}\log_2\frac{1}{2} + \frac{1}{2}\log_2\frac{1}{2}\right) = 1\text{ bit},
 $$
 
-Equating the thermal quantum to the information quantum yields the unique critical vacuum temperature:
-
 $$
-T_c = \ln 2.
+H_{\mathrm{nats}} = - \left(\frac{1}{2}\ln\frac{1}{2} + \frac{1}{2}\ln\frac{1}{2}\right) = \ln 2\text{ nats}.
 $$
 
-At this temperature, the thermal background energy is strictly sufficient to instantiate one bit of information with marginal thermodynamic neutrality ($\Delta F = 0$).
+The quantity $\beta_c = \ln 2$ is strictly the dimensionless base-conversion modulus relating base-2 combinatorial decisions to natural logarithms:
+
+$$
+\beta_c = \ln 2 \approx 0.693147.
+$$
+
+**III. Identical Cancellation of Temperature in Relational Acceptance Ratios**
+
+Consider any hypothetical thermal parametrization introducing an inverse temperature $\beta = 1/T$ into a Metropolis-Hastings acceptance ratio $\alpha = \min(1, \exp(-\beta \Delta F))$. In the relational ground state where bare internal energy vanishes ($\Delta U = 0$), the free energy variation is purely entropic: $\Delta F = \Delta U - T \Delta S = - T \Delta S$.
+
+For edge creation with relational entropy gain $\Delta S_{\mathrm{add}} = +\ln 2$:
+
+$$
+P_{\mathrm{acc}} = \min(1, \exp(-\beta (-T \ln 2))) = \min(1, \exp(+\ln 2)) = \min(1, 2) = 1.0.
+$$
+
+For edge deletion with relational entropy loss $\Delta S_{\mathrm{del}} = -\ln 2$:
+
+$$
+Q_{\mathrm{acc}} = \min(1, \exp(-\beta (+T \ln 2))) = \exp(-\ln 2) = \frac{1}{2} = 0.5.
+$$
+
+Because the factor of $T$ in $\Delta F = -T \Delta S$ is multiplied by $\beta = 1/T$, the temperature $T$ cancels identically for all $T \in (0, \infty)$. The physical acceptance probabilities are invariant across all energy scales: $P_0 = 1.0$ and $Q_0 = 0.5$.
+
+**IV. Lossless Historical Retention via the Category of Histories ($\mathbf{Hist}$)**
+
+Unlike classical computational erasure which dissipates heat $k_B T \ln 2$ per erased bit (Landauer's principle), the QBD substrate operates as an append-only causal category of histories $\mathbf{Hist}$ (Vaccaro & Barnett 2011). When a directed edge is topologically removed from the active spatial graph $S_t \to S_{t+1}$, its existence remains indelibly recorded in the cumulative causal DAG history $\mathcal{H}_t \subset \mathcal{H}_{t+1}$. Because information is never deleted from the global history, microscopic Landauer erasure dissipation is strictly zero ($\Delta S_{\mathrm{erase}} = 0$, verified in Lean 4 as `spatial_deletion_preserves_history`).
 
 **V. Formal Conclusion**
 
-We conclude that the dimensionless temperature $T_c = \ln 2$ aligns continuous thermodynamics with discrete binary logic, establishing the fundamental thermal scale of the vacuum.
+We conclude under **Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> that $\beta_c = \ln 2$ is an information-theoretic base-conversion modulus rather than a thermodynamic bath temperature. The vacuum dynamics are governed fundamentally by combinatorial probabilities $P_0 = 1.0$ and $Q_0 = 0.5$.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 4.4.2.1 formalizes the properties of the QBD proof regarding bit-nat equivalence.
+Section 4.4.2.1 formalizes the mathematical proof that bit-flip symmetry fixes the Bernoulli prior to 1/2, temperature cancels identically across all regimes, and the category of histories preserves all information without erasure dissipation.
 
 ---
 
@@ -1633,7 +1637,7 @@ Section 4.4.3 formalizes the properties of the QBD lemma regarding entropy of cl
 
 **I. Pre-Closure Phase Space Configuration**
 
-Let $\pi = (v \to w \to u)$ denote a compliant **2-path** site on the sparse vacuum graph $G_0$, satisfying the Parent-Uniqueness Condition under **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. The local phase space consists of the established influence relations among $\{u, v, w\}$:
+Let $\pi = (v \to w \to u)$ denote a compliant **2-path** site on the sparse vacuum graph $G_0$, satisfying the Parent-Uniqueness Condition under **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />. The local phase space consists of the established influence relations among $\{u, v, w\}$:
 
 1. The relation $v \le w$ is realized by the unique edge $(v, w)$ with multiplicity $k=1$.
 2. The relation $w \le u$ is realized by the unique edge $(w, u)$ with multiplicity $k=1$.
@@ -1681,77 +1685,156 @@ Section 4.4.3.1 formalizes the properties of the QBD proof regarding entropy of 
 
 ---
 
-### 4.4.3.3 Calculation: Entropy Simulation {#4.4.3.3}
+### 4.4.3.3 Calculation: Information Foundations & Cancellation {#4.4.3.3}
 
-:::note[**Computational Verification of Local Entropy Gain via Relational Path Multiplicity**]
+:::note[**Computational Verification of Maximum Entropy, Temperature Cancellation, and Relational Loop Closure via Numerical Sweep**]
 :::
 
-Computational verification of the entropic driver established by **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following protocols:
+Computational verification of the information-theoretic foundations established by **Information Modulus & Prior Uniqueness** <Ref id="4.4.2.1" label="§4.4.2.1" /> and **Entropy of Closure** <Ref id="4.4.3.1" label="§4.4.3.1" /> is based on the following three protocols implemented in `code/repo/python/4.4.3.3.py`:
 
-1.  **System Definition:** The algorithm instantiates a minimal 2-path configuration $v \to w \to u$ to serve as the baseline state.
-2.  **Metric Computation:** The protocol calculates the relational entropy $\Delta S = \ln(k_{vu} \cdot k_{uv})$ based on the multiplicities of forward and reverse paths between the focus pair $(v, u)$.
-3.  **Topological Closure:** The simulation introduces the closing edge $u \to v$ to close the directed 3-cycle, forming the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />. The entropy is recalculated post-closure to quantify the information gain driven by the new degenerate representation.
+1. **Boolean Maximum Entropy:** Evaluates the Shannon and natural entropy of the unbiased Bernoulli prior on the binary edge state space $\{0, 1\}$, confirming that the natural information entropy evaluates identically to $\ln 2\text{ nats} \equiv 1\text{ bit}$.
+2. **Temperature Cancellation Sweep:** Evaluates ground-state Metropolis-Hastings acceptance rates across 8 orders of magnitude of inverse temperature $\beta$ ($10^{-4} \le T \le 10^4$), proving that temperature cancels identically to yield $P_{\mathrm{add}} = 1.000000$ and $Q_{\mathrm{del}} = 0.500000$ across all regimes.
+3. **Local Relational Entropy Gain:** Evaluates path multiplicity on a minimal 2-path configuration before and after cycle closure, verifying the exact gain $\Delta S_{\mathrm{close}} = \ln 2$.
 
 ```python
-import networkx as nx
+"""
+Validation for Monograph Section 4.4.3.3: Information-Theoretic Foundations
+Verifies:
+1. Jaynes (1957) Maximum Entropy on the boolean edge state space.
+2. Exact temperature cancellation across 8 orders of magnitude of beta / T.
+3. Local relational entropy gain Delta S = ln(2) upon 3-cycle closure.
+"""
+
+import math
 import numpy as np
+import networkx as nx
 
-def relational_entropy(G, source, target):
-    """
-    Local entropy for directed pair (source, target).
-    Entropy = ln(k_forward x k_reverse), where:
-      - k_forward: number of simple paths source -> target
-      - +1 if cycle present (degenerate representation under <=)
-      - k_reverse: number of simple paths target -> source
-    Returns 0 if product = 0.
-    """
-    k_fwd = len(list(nx.all_simple_paths(G, source, target)))
-    if any(nx.simple_cycles(G)):
-        k_fwd += 1                    # Cycle reinforcement
-    k_rev = len(list(nx.all_simple_paths(G, target, source)))
-    product = k_fwd * k_rev
-    return np.log(product) if product > 0 else 0.0
+def run_information_foundations_validation():
+    print("=" * 78)
+    print("Section 4.4.3.3 Information-Theoretic Foundations & Temperature Cancellation")
+    print("=" * 78)
+    
+    # 1. Jaynes Maximum Entropy on Boolean Edge Simplex {0, 1}
+    p0, p1 = 0.5, 0.5
+    H_shannon = - (p0 * math.log2(p0) + p1 * math.log2(p1))
+    H_nats = - (p0 * math.log(p0) + p1 * math.log(p1))
+    
+    print("Protocol 1: Jaynes Maximum Entropy on Boolean Edge Space")
+    print(f"  Unbiased Bernoulli Prior:         P(edge=0) = {p0:.1f}, P(edge=1) = {p1:.1f}")
+    print(f"  Shannon Information Entropy:       {H_shannon:.6f} bits")
+    print(f"  Information Entropy in nats:       {H_nats:.6f} nats")
+    print(f"  Base-Conversion Modulus beta_c:    ln(2) = {math.log(2.0):.6f}")
+    print(f"  Exact Identity:                   H_nats == ln(2): {math.isclose(H_nats, math.log(2.0))}")
+    print("-" * 78)
+    
+    # 2. Temperature Cancellation in Ground-State Relational Dynamics (Delta U = 0)
+    print("Protocol 2: Temperature Independence of Acceptance Probabilities (Delta U = 0)")
+    print(f"{'T (arbitrary)':<15} | {'beta = 1/T':<15} | {'P_add':<15} | {'P_del':<15}")
+    print("-" * 65)
+    
+    temperatures = [1e-4, 1e-2, 0.1, 0.693147, 1.0, 10.0, 100.0, 1e4]
+    p_add_results = []
+    p_del_results = []
+    
+    for T in temperatures:
+        beta = 1.0 / T
+        # Ground state: Delta U = 0
+        delta_U = 0.0
+        # Additive mode: Delta S = +ln(2)
+        delta_S_add = math.log(2.0)
+        delta_F_add = delta_U - T * delta_S_add  # - T * ln(2)
+        # Metropolis: min(1, exp(-beta * delta_F)) = min(1, exp( (T*ln2)/T )) = min(1, 2) = 1.0
+        p_add = min(1.0, math.exp(-beta * delta_F_add))
+        
+        # Deletion mode: Delta S = -ln(2)
+        delta_S_del = -math.log(2.0)
+        delta_F_del = delta_U - T * delta_S_del  # + T * ln(2)
+        # min(1, exp(-beta * delta_F)) = exp(- (T*ln2)/T ) = exp(-ln2) = 0.5
+        p_del = math.exp(-beta * delta_F_del)
+        
+        p_add_results.append(p_add)
+        p_del_results.append(p_del)
+        print(f"{T:<15.4e} | {beta:<15.4e} | {p_add:<15.6f} | {p_del:<15.6f}")
+        
+    all_add_unitary = all(math.isclose(p, 1.0) for p in p_add_results)
+    all_del_half = all(math.isclose(p, 0.5) for p in p_del_results)
+    print("-" * 65)
+    print(f"  P_add == 1.0 across all T: {all_add_unitary}")
+    print(f"  P_del == 0.5 across all T: {all_del_half}")
+    print(f"  Verdict: Temperature T cancels identically for all T > 0; probability is fundamental.")
+    print("-" * 78)
+    
+    # 3. Local Relational Entropy Gain from Loop Closure
+    def relational_entropy(G, source, target):
+        k_fwd = len(list(nx.all_simple_paths(G, source, target)))
+        if any(nx.simple_cycles(G)):
+            k_fwd += 1
+        k_rev = len(list(nx.all_simple_paths(G, target, source)))
+        product = k_fwd * k_rev
+        return np.log(product) if product > 0 else 0.0
 
-# Minimal 2-path: v=0 -> w=1 -> u=2, focus pair (v,u)=(0,2)
-G_pre = nx.DiGraph([(0, 1), (1, 2)])
+    G_pre = nx.DiGraph([(0, 1), (1, 2)])
+    S_pre = relational_entropy(G_pre, 0, 2)
+    G_post = G_pre.copy()
+    G_post.add_edge(2, 0)
+    S_post = relational_entropy(G_post, 0, 2)
+    delta_S = S_post - S_pre
 
-S_pre = relational_entropy(G_pre, 0, 2)
+    print("Protocol 3: Local Entropy Gain from Relational Loop Closure")
+    print(f"  Pre-closure Entropy S_pre:        {S_pre:.6f}")
+    print(f"  Post-closure Entropy S_post:      {S_post:.6f}")
+    print(f"  Measured delta S:                 {delta_S:.6f} nats")
+    print(f"  Theoretical ln(2):                {math.log(2.0):.6f} nats")
+    print(f"  Exact Match:                      {math.isclose(delta_S, math.log(2.0))}")
+    print("=" * 78)
 
-# Closure: add return edge u -> v
-G_post = G_pre.copy()
-G_post.add_edge(2, 0)
-
-S_post = relational_entropy(G_post, 0, 2)
-
-delta_S = S_post - S_pre
-target = np.log(2)
-
-print("Local Entropy Gain from Relational Loop Closure")
-print("=" * 52)
-print(f"Pre-closure multiplicity product:  1 x 0 = 0  -> S = {S_pre:.6f}")
-print(f"Post-closure multiplicity product: 2 x 1 = 2  -> S = {S_post:.6f}")
-print(f"dS:                                {delta_S:.6f}")
-print(f"Theoretical ln(2):                 {target:.6f}")
-print(f"Exact match:                       {np.isclose(delta_S, target)}")
+if __name__ == "__main__":
+    run_information_foundations_validation()
 ```
 
 **Simulation Results:**
 
 ```text
-Local Entropy Gain from Relational Loop Closure
-====================================================
-Pre-closure multiplicity product:  1 x 0 = 0  -> S = 0.000000
-Post-closure multiplicity product: 2 x 1 = 2  -> S = 0.693147
-dS:                                0.693147
-Theoretical ln(2):                 0.693147
-Exact match:                       True
+==============================================================================
+Section 4.4.3.3 Information-Theoretic Foundations & Temperature Cancellation
+==============================================================================
+Protocol 1: Jaynes Maximum Entropy on Boolean Edge Space
+  Unbiased Bernoulli Prior:         P(edge=0) = 0.5, P(edge=1) = 0.5
+  Shannon Information Entropy:       1.000000 bits
+  Information Entropy in nats:       0.693147 nats
+  Base-Conversion Modulus beta_c:    ln(2) = 0.693147
+  Exact Identity:                   H_nats == ln(2): True
+------------------------------------------------------------------------------
+Protocol 2: Temperature Independence of Acceptance Probabilities (Delta U = 0)
+T (arbitrary)   | beta = 1/T      | P_add           | P_del          
+-----------------------------------------------------------------
+1.0000e-04      | 1.0000e+04      | 1.000000        | 0.500000       
+1.0000e-02      | 1.0000e+02      | 1.000000        | 0.500000       
+1.0000e-01      | 1.0000e+01      | 1.000000        | 0.500000       
+6.9315e-01      | 1.4427e+00      | 1.000000        | 0.500000       
+1.0000e+00      | 1.0000e+00      | 1.000000        | 0.500000       
+1.0000e+01      | 1.0000e-01      | 1.000000        | 0.500000       
+1.0000e+02      | 1.0000e-02      | 1.000000        | 0.500000       
+1.0000e+04      | 1.0000e-04      | 1.000000        | 0.500000       
+-----------------------------------------------------------------
+  P_add == 1.0 across all T: True
+  P_del == 0.5 across all T: True
+  Verdict: Temperature T cancels identically for all T > 0; probability is fundamental.
+------------------------------------------------------------------------------
+Protocol 3: Local Entropy Gain from Relational Loop Closure
+  Pre-closure Entropy S_pre:        0.000000
+  Post-closure Entropy S_post:      0.693147
+  Measured delta S:                 0.693147 nats
+  Theoretical ln(2):                0.693147 nats
+  Exact Match:                      True
+==============================================================================
 ```
 
 **Conclusion:**
-The output confirms that the entropy gain $\Delta S = 0.693147$ matches the theoretical target $\ln 2$ exactly. This gain arises deterministically from the topological bifurcation: closure doubles the forward multiplicity (mediated path + cycle-degenerate representation) while introducing the first reverse path, yielding a product increase from 0 to 2. This verifies that structural closure acts as a hard entropic driver independent of specific graph geometry.
+The simulation proves that temperature $T$ cancels identically from all ground-state transition rates ($P_{\mathrm{add}} = 1.000000, Q_{\mathrm{del}} = 0.500000$ across $10^{-4} \le T \le 10^4$), validating that probability is fundamental while temperature is not. Protocol 1 confirms the Shannon and natural entropy of the unbiased Bernoulli prior evaluates to $\ln 2$ nats ($\equiv 1$ bit). Protocol 3 confirms that closing a directed 3-cycle yields an exact relational entropy gain of $\Delta S = \ln 2$ nats, establishing the entropic driving force for area creation.
 
 **In Plain English:**  
-Section 4.4.3.3 formalizes the properties of the QBD calculation regarding entropy simulation.
+Section 4.4.3.3 formalizes the computational verification of maximum entropy, temperature cancellation, and relational loop closure.
 
 ---
 
@@ -1774,7 +1857,7 @@ Section 4.4.4 formalizes the properties of the QBD lemma regarding dimensional e
 
 **I. Total Relational Defect Energy**
 
-Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, instantiating an elementary directed **3-cycle** defect incurs an entropic change of $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ at vacuum temperature $T_c = \ln 2$. The total relational energy associated with the loop closure evaluates to:
+Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, instantiating an elementary directed **3-cycle** defect incurs an entropic change of $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ at vacuum temperature $T_c = \ln 2$. The total relational energy associated with the loop closure evaluates to:
 
 $$
 E_{\mathrm{total}} = T_c \cdot \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
@@ -1894,7 +1977,7 @@ Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coe
 
 **I. Landauer Defect Energy and Entropic Phase Space**
 
-Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, closing a **2-path** into a **3-cycle** traps one bit of relational entropy ($\Delta S_{\mathrm{close}} = \ln 2$), storing relational defect energy:
+Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, closing a **2-path** into a **3-cycle** traps one bit of relational entropy ($\Delta S_{\mathrm{close}} = \ln 2$), storing relational defect energy:
 
 $$
 E_{\mathrm{defect}} = k_B T_c \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
@@ -1968,7 +2051,7 @@ Section 4.4.7 formalizes the properties of the QBD lemma regarding friction coef
 
 **I. One-Dimensional Discrete Integer Counting Fiber**
 
-On any discrete causal graph $G$, the local stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ counts the number of directed **3-cycles** incident on vertex $x$. The local state space of syndrome excitations over any vertex is the 1D discrete integer counting lattice $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ evaluated under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. The fiber $\mathcal{F}_x$ of a scalar counting observable is strictly 1-dimensional.
+On any discrete causal graph $G$, the local stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ counts the number of directed **3-cycles** incident on vertex $x$. The local state space of syndrome excitations over any vertex is the 1D discrete integer counting lattice $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ evaluated under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />. The fiber $\mathcal{F}_x$ of a scalar counting observable is strictly 1-dimensional.
 
 **II. Modular S-Duality on the Discrete Integer Lattice**
 
@@ -2093,14 +2176,14 @@ Section 4.4.7.2 formalizes the properties of the QBD calculation regarding frict
 
 ---
 
-### 4.4.8 Proof: Thermodynamic Foundations {#4.4.8}
+### 4.4.8 Proof: Information-Theoretic Foundations {#4.4.8}
 
-:::tip[**Thermodynamic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Synthesis of the Five Constitutive Scales]
+:::tip[**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Synthesis of the Five Constitutive Scales]
 :::
 
-**I. Critical Vacuum Temperature and Base Rates**
+**I. Information Modulus and Base Rates**
 
-Under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />, equating the thermal background energy quantum to the informational content of a single binary decision yields the critical vacuum temperature $T_c = \ln 2$. This temperature sets the baseline operating rates $(P_{\mathrm{add}}, Q_{\mathrm{del}}) = (1, 1/2)$, ensuring that structure creation is thermodynamically neutral at the margin ($\Delta F = 0$).
+Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />, the critical base-conversion modulus is $\beta_c = \ln 2\text{ nats} \equiv 1\text{ bit}$. This modulus sets the baseline operating rates $(P_{\mathrm{base}}, Q_{\mathrm{base}}) = (1.0, 0.5)$, ensuring that cycle creation is unconstrained ($P_0 = 1.0$) while candidate cycle preservation follows an unbiased Bernoulli prior ($Q_0 = 0.5$).
 
 **II. Entropic Loop Closure**
 
@@ -2118,12 +2201,55 @@ Under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />, the **3** co
 
 Under **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> and **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, matching the unique linear Markov jump generator to the discrete Arrhenius relaxation factor fixes $\lambda_0 = e - 1 \approx 1.718282$, while Poisson summation on the 1D integer counting lattice $\mathbb{Z}$ fixes the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$.
 
-We conclude that the five fundamental constitutive scales of the vacuum are uniquely determined from discrete combinatorial first principles.
+We conclude that the five fundamental constitutive scales of the vacuum are established as canonical analytical reference priors from discrete combinatorial symmetries and conservation principles.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 4.4.8 formalizes the properties of the QBD proof regarding thermodynamic foundations.
+Section 4.4.8 formalizes the properties of the QBD proof regarding information-theoretic foundations.
+
+---
+
+### 4.4.9 Type-Theoretic Validation via Lean 4 Core {#4.4.9}
+
+:::note[**Lean 4 Encoding of Information-Theoretic Foundations and Modulus Invariance**]
+:::
+
+Type-theoretic certification of the information-theoretic foundations and base-conversion modulus established in **Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> and **Information-Theoretic Foundations** <Ref id="4.4.8" label="§4.4.8" /> proceeds via the following verification strategy:
+
+1.  **Combinatorial Base Priors:** The Lean propositions `unbiased_bernoulli_prior_is_half` and `unconstrained_completion_certainty` prove from Jaynes maximum entropy over the boolean state space that bit-flip symmetry forces uniform cycle preservation $Q_0 = 1/2$ and unconstrained edge completion $P_0 = 1.0$.
+2.  **Modulus and Temperature Cancellation:** The Lean theorems `information_modulus_positive` and `temperature_cancellation` prove that the bit-nat conversion modulus $\beta_c = \ln 2$ is strictly positive and that in ground-state rewrites with vanishing internal energy change ($\Delta U = 0$), temperature cancels identically from the transition probability ratio.
+3.  **Lossless History Category:** The Lean theorems `history_monotone_transitive` and `spatial_deletion_preserves_history` prove that the causal record in the Category of Histories accumulates monotonically, establishing that spatial deletions never delete historical events and Landauer erasure dissipation vanishes ($\Delta S_{\mathrm{erase}} = 0$).
+
+```lean
+-- Snippet from code/repo/lean/s4.4-maxent-foundations.lean
+
+theorem unbiased_bernoulli_prior_is_half (d : BooleanDistribution α F) (h_sym : IsUnbiased F d) :
+    d.p_false = F.half ∧ d.p_true = F.half := by
+  have h_norm := d.normalized
+  dsimp [IsUnbiased] at h_sym
+  -- Proof proceeds by ring calculation on ProbField axioms
+  ...
+
+theorem vacuum_odds_ratio_temperature_invariant (beta1 beta2 : α) :
+    F.div (ground_state_weight F beta1 true) (ground_state_weight F beta1 false) =
+    F.div (ground_state_weight F beta2 true) (ground_state_weight F beta2 false) := by
+  dsimp [ground_state_weight]
+
+theorem spatial_deletion_preserves_history {V : Type}
+    (H : Nat → CumulativeHistory V)
+    (h_step : HistoryStepMonotone H)
+    (t : Nat) (e : SubstrateEdge V)
+    (h_in_history : H t e) :
+    H (t + 1) e := by
+  exact h_step t e h_in_history
+```
+
+**Verification Summary:**
+The formal machine verification in Lean 4 certifies that the information-theoretic foundations of the microscopic rewrite engine operate with zero postulated axioms and zero unverified placeholders. The proof terms establish that the base-conversion modulus $\beta_c = \ln 2$ is an algebraic constant, the microscopic transition rates are purely combinatorial, and graph rewrites in the Category of Histories incur zero Landauer erasure dissipation. The Lean kernel's acceptance of `s4.4-maxent-foundations.lean` validates the complete mathematical closure of **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />.
+
+**In Plain English:**  
+Section 4.4.9 formalizes the machine-checked proofs of information-theoretic foundations in Lean 4.
 
 ---
 
@@ -2196,7 +2322,7 @@ def R(annotated_graph, T, mu, lambda_cat):
     return (add_proposals, del_proposals)
 ```
 
-This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />.
+This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Information-Theoretic Foundations** <Ref id="4.4" label="§4.4" />.
 
 **In Plain English:**  
 Spacetime updates are governed by a Universal Constructor that stochastically scans, validates, and rewrites local connections based on parities.
@@ -2263,7 +2389,7 @@ Section 4.5.5 formalizes the properties of the QBD theorem regarding universal c
 :::info[**Unitary Thermodynamic Acceptance Probability via Edge Creation**]
 :::
 
-Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
+Let $\mathbb{P}_{\text{acc,thermo}}$ denote the base thermodynamic acceptance probability for edge creation in the critical vacuum regime under the barrierless free energy condition of **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />. Then $\mathbb{P}_{\text{acc,thermo}}$ is identically equal to 1.
 
 **In Plain English:**  
 Section 4.5.6 formalizes the properties of the QBD lemma regarding addition probability.
@@ -2293,7 +2419,7 @@ The Helmholtz free energy change is defined as $\Delta F = \Delta E - T \Delta S
 
 **II. Parameter Substitution**
 
-The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />:
+The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Information-Theoretic Foundations** <Ref id="4.4" label="§4.4" />:
 
 1.  **Internal Energy Cost:** $\Delta E = \epsilon_{geo}$.
 2.  **Entropy Gain:** $\Delta S = \ln 2$.
@@ -2381,7 +2507,7 @@ Let the deletion of a geometric quantum constitute the time-reverse of addition.
 
 **II. Free Energy Calculation**
 
-The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substituting the value from **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> into this expression yields:
+The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substituting the value from **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> into this expression yields:
 
 $$
 \Delta F_{\text{del}} = -\frac{\ln 2}{4} - (\ln 2)(-\ln 2) = -\frac{\ln 2}{4} + (\ln 2)^2

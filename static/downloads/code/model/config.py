@@ -16,12 +16,14 @@ DEFAULT_CONFIG = {
     # ALPHA is an *emergent macroscopic* constant.
     "ALPHA": 0.173,
 
-    # (T_VACUUM): The foundational temperature of the vacuum (in MeV).
-    # It anchors the thermal scale to the fundamental
-    # entropy scale (ΔS = ln(2) for one bit of geometric info.
-    # This specific value is what yields the deletion
-    # probability Q_del = 1/2, ensuring a stable, dynamic vacuum.
-    "T_VACUUM": math.log(2),  # ~0.693 MeV
+    # (BETA_C / T_VACUUM): The foundational bit-to-nat base conversion modulus (ln 2).
+    # It establishes the exact equivalence between binary information (bits)
+    # and statistical entropy (nats): Delta S = ln(2) for one bit.
+    # In the discrete relational ground state (Delta U = 0), free energy neutrality
+    # Delta F / T = -Delta S = -ln 2 holds identically, ensuring that temperature
+    # cancels out of acceptance ratios (P_base = 1.0, Q_base = 0.5).
+    "BETA_C": math.log(2),    # ln(2) ≈ 0.693147 (dimensionless bit-nat modulus)
+    "T_VACUUM": math.log(2),  # Canonical thermodynamic scale equivalent to BETA_C
 
     # --- GEOMETRIC PARAMETERS (Dimensionless) ---
 

@@ -511,7 +511,7 @@ Section 2.4.1 formalizes the properties of the QBD theorem regarding general cyc
 
 ### 2.4.2 Lemma: Confluence of the Constructor {#2.4.2}
 
-:::info[**Local Confluence via Overlapping Rewrite Operations**]
+:::info[**Local Confluence via Edge-Overlapping Rewrite Operations**]
 :::
 
 Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant pairs $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
@@ -749,10 +749,14 @@ Section 2.4.4.1 formalizes the properties of the QBD proof regarding reduction v
 
 ### 2.4.5 Lemma: Decrease in Parallel Updates {#2.4.5}
 
-:::info[**Net Reduction of Topological Complexity via Composite Updates**]
+:::info[**Net Reduction of Topological Complexity via Parallel Rewriting**]
 :::
 
-Let $\mathcal{S}_{step} = \mathcal{O}_{del} \circ \mathcal{O}_{add}$ denote a composite update step comprising edge addition and subsequent deletion. Then the operation satisfies the strict descent condition for the Lexicographic Potential, $\Phi(G_{next}) < \Phi(G)$.
+Let $\mathcal{R}_{\text{atom}}(G) = (V, (E \cup A_{\text{filt}}) \setminus D)$ denote an atomic parallel rewrite step comprising concurrent chord addition $A_{\text{filt}}$ across compliant 2-paths and perimeter edge deletion $D$ along maximal cycles of length $L \ge 4$. Then the atomic transition satisfies the strict descent condition for the Lexicographic Potential:
+
+$$
+\Phi(G_{t+1}) \prec_{\text{lex}} \Phi(G_t)
+$$
 
 **In Plain English:**  
 Section 2.4.5 formalizes the properties of the QBD lemma regarding decrease in parallel updates.
@@ -761,42 +765,32 @@ Section 2.4.5 formalizes the properties of the QBD lemma regarding decrease in p
 
 ### 2.4.5.1 Proof: Decrease in Parallel Updates {#2.4.5.1}
 
-:::tip[**Verification through Net Descent across the Two-Phase Update Cycle**]
+:::tip[**Verification of Net Descent via Atomic Parallel Rewriting**]
 :::
 
-**I. Phase 1: Chordal Addition**
+**I. Atomic Transition Formulation**
 
-Let $G \to G_{add}$ denote the addition of chords to all compliant 2-paths within maximal cycles.
+In parallel graph rewriting, chord placement and perimeter edge excision occur synchronously within a single state transition ($E_{t+1} = (E_t \cup A_{\text{filt}}) \setminus D$). Physical states transition directly between discrete ticks; there is no realized intermediate topological state where chords have been added without simultaneous perimeter pruning.
 
-1.  **Site Availability:** Maximal cycles satisfy **Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />, ensuring the existence of valid 2-paths.
-2.  **Structure Decomposition:** The addition of chords partitions maximal cycles into 3-cycles and smaller loops.
-3.  **Cycle Bounding:** The **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> restricts additions to sites lacking short paths. The creation of a cycle $L_{new} > L_{\max}$ requires a pre-existing path of length $> L_{\max}-1$ connecting vertices at distance 2. This implies a prior path violation.
-4.  **Result:** The maximum cycle length satisfies the non-increasing condition.
+**II. Chordal Decomposition and Perimeter Pruning**
 
-    $$
-    \Phi(G_{add}) \le \Phi(G)
-    $$
+Let $C$ denote a chordless maximal cycle of length $L = L_{\max} \ge 4$ (**Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />).
 
-**II. Phase 2: Entropic Deletion**
+1.  **Chord Partitioning:** For every compliant 2-path $v \to w \to u$ along $C$, inserting chord $e_{\text{chord}} = (u, v)$ creates an elementary 3-cycle $(v \to w \to u \to v)$ of length 3, leaving a residual perimeter sub-path $u \to \dots \to v$ of length $L - 2$.
+2.  **Concurrent Perimeter Excision:** Simultaneously within the same atomic transition, at least one perimeter edge $e_{\text{del}} \in D$ along the macro-cycle is excised (**Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />).
+3.  **Absence of Macro-Loop Closures:** Any simple cycle in $G_{t+1}$ formed through the new chord $e_{\text{chord}}$ must route either through the 3-cycle (length 3) or through the remaining unexcised perimeter segments. Because $e_{\text{del}}$ breaks the original perimeter cycle $C$, no simple cycle of length $\ge L_{\max}$ can close through $C$. Furthermore, because $C$ was chordless in $G_t$, any alternate simple cycle in $G_{t+1}$ containing $e_{\text{chord}}$ and edges outside $C$ has length strictly bounded by $L_{\max} - 1 < L_{\max}$.
 
-Let $G_{add} \to G_{next}$ denote the removal of edges from the original maximal cycles.
+**III. Strict Potential Descent**
 
-1.  **Operation:** Edges participating in the original cycle $C$ undergo deletion.
-2.  **Potential Drop:** Edge removal strictly decreases the state potential $\Phi(G)$ (**Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />).
+Because the atomic rewrite destroys the maximal cycle $C$ while every newly created cycle has length strictly less than $L_{\max}$ (or length 3), the potential tuple $\Phi(G) = (L_{\max}, N_{L_{\max}})$ strictly decreases:
+* If $C$ was the unique cycle of length $L_{\max}$, then $L_{\max}(G_{t+1}) < L_{\max}(G_t)$.
+* If multiple maximal cycles exist, the removal of $e_{\text{del}} \in C$ strictly decreases their multiplicity $N_{L_{\max}}(G_{t+1}) < N_{L_{\max}}(G_t)$ while keeping the maximum length invariant ($L_{\max}(G_{t+1}) \le L_{\max}(G_t)$).
 
-    $$
-    \Phi(G_{next}) < \Phi(G_{add})
-    $$
-
-**III. Synthesis**
-
-The composition of operations yields a strict inequality:
+In all cases, the state transition satisfies strict lexicographic descent:
 
 $$
-\Phi(G_{next}) < \Phi(G)
+\Phi(G_{t+1}) \prec_{\text{lex}} \Phi(G_t)
 $$
-
-We conclude that the update step enforces monotonic descent in the topological complexity metric.
 
 Q.E.D.
 
@@ -1742,12 +1736,12 @@ Section 2.7.4 formalizes the properties of the QBD lemma regarding local puc app
 
 ### 2.7.4.1 Proof: Local PUC Approximation {#2.7.4.1}
 
-:::tip[**Derivation of the Error Probability Bound via Sparse Graph Analysis**]
+:::tip[**Derivation of the Error Probability Bound via Subcritical Branching Analysis**]
 :::
 
 **I. Substrate Topology and Branching Metrics**
 
-Let the causal graph substrate operate as a directed expander graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded average degree $\langle k \rangle < 3$ and cycle percolation density $\rho < 1$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
+Let the causal graph substrate operate as a directed graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded maximum out-degree $\Delta_{\mathrm{out}} \le 3$ (branching factor $b = \Delta_{\mathrm{out}} - 1 \le 2$) and unpinned cycle percolation density $\rho < 1/b$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
 
 $$
 L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3
@@ -1755,7 +1749,7 @@ $$
 
 **II. Directed Path Enumeration and Extension Probability**
 
-The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate branching factor $b = \langle k \rangle - 1 < 2$:
+The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate branching factor $b = \Delta_{\mathrm{out}} - 1 \le 2$:
 
 $$
 N_{\text{paths}}(L) \le b^L
@@ -1767,34 +1761,28 @@ $$
 P_{\text{ext}}(L) = C_0 \, \rho^L
 $$
 
-**III. Return Probability and Loop Closure Bound**
+**III. Worst-Case Loop Closure Bound (Zero Expander Assumptions)**
 
-For a directed causal path of length $L$ to close an acausal loop back onto its initiating vertex $v_0 = u$, the terminal vertex $v_L$ must coincide with $u$. On a spectral expander graph of size $N$ with spectral gap $\gamma > 0$, the return probability for paths of length $L \ge \log N$ converges to the uniform stationary distribution:
-
-$$
-P(v_L = u \mid \text{length } L) = \frac{1}{N} + \mathcal{O}\left(e^{-\gamma L}\right)
-$$
-
-Multiplying the path multiplicity by the return probability bounds the total probability of an acausal cycle of length $L$ closing:
+For dynamic graphs undergoing stochastic rewrites, spectral gap stability cannot be asserted because tree-like thinning near the vacuum phase collapses the spectral gap ($\lambda_2 \to 0$). Evaluating under the worst-case adversarial return bound:
 
 $$
-P_{\text{close}}(L) \le N_{\text{paths}}(L) \cdot P(v_L = u) \le \frac{C}{N} \rho^L
+P(v_L = u \mid \text{length } L) \le 1
 $$
 
-where $C > 0$ is a finite combinatorial coefficient determined by the local neighborhood topology.
+Multiplying path multiplicity by path persistence under this worst-case bound yields:
+
+$$
+P_{\text{close}}(L) \le N_{\text{paths}}(L) \cdot P_{\text{ext}}(L) \cdot P(v_L = u) \le C (b\rho)^L
+$$
+
+where $C > 0$ is a finite combinatorial coefficient. Because the substrate operates in the subcritical regime $\rho^* \approx 0.037 < 1/b = 0.5$, the effective branching parameter satisfies $\mu_{\mathrm{eff}} \equiv b\rho \le 2 \times 0.037 = 0.074 \ll 1$, guaranteeing exponential decay in path length $L$.
 
 **IV. Cumulative Geometric Tail Evaluation**
 
 The total evasion probability $P_{\mathrm{err}}$ that an acausal loop forms strictly beyond the local search horizon $L_{\text{cut}}$ is given by the summation over the geometric tail:
 
 $$
-P_{\mathrm{err}}(L_{\text{cut}}) = \sum_{L = L_{\text{cut}} + 1}^{\infty} P_{\text{close}}(L) = \sum_{L = L_{\text{cut}} + 1}^{\infty} \frac{C}{N} \rho^L
-$$
-
-Factoring out the leading term and evaluating the infinite geometric series yields:
-
-$$
-P_{\mathrm{err}}(L_{\text{cut}}) = \frac{C}{N} \rho^{L_{\text{cut}} + 1} \sum_{j=0}^{\infty} \rho^j = \frac{C}{N} \frac{\rho^{L_{\text{cut}} + 1}}{1 - \rho} = \frac{C \rho}{N (1 - \rho)} \rho^{L_{\text{cut}}}
+P_{\mathrm{err}}(L_{\text{cut}}) = \sum_{L = L_{\text{cut}} + 1}^{\infty} P_{\text{close}}(L) \le \sum_{L = L_{\text{cut}} + 1}^{\infty} C (b\rho)^L = \frac{C (b\rho)^{L_{\text{cut}} + 1}}{1 - b\rho}
 $$
 
 **V. Logarithmic Horizon Substitution and Asymptotic Exponent**
@@ -1802,36 +1790,46 @@ $$
 Substituting the explicit logarithmic horizon $L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3 \ge \log_2 N + 2$ into the geometric factor gives:
 
 $$
-\rho^{L_{\text{cut}}} \le \rho^2 \cdot \rho^{\log_2 N}
+(b\rho)^{L_{\text{cut}}} \le (b\rho)^2 \cdot (b\rho)^{\log_2 N}
 $$
 
-Converting the base of the exponential term via the identity $\rho^{\log_2 N} = 2^{\log_2 N \cdot \log_2 \rho} = N^{\log_2 \rho} = N^{-\frac{\ln(1/\rho)}{\ln 2}}$:
+Converting the base via $(b\rho)^{\log_2 N} = 2^{\log_2 N \cdot \log_2(b\rho)} = N^{\log_2(b\rho)} = N^{-\frac{\ln(1/(b\rho))}{\ln 2}}$:
 
 $$
-\rho^{L_{\text{cut}}} \le \rho^2 \cdot N^{-\frac{\ln(1/\rho)}{\ln 2}}
+(b\rho)^{L_{\text{cut}}} \le (b\rho)^2 \cdot N^{-\frac{\ln(1/(b\rho))}{\ln 2}}
 $$
 
 Substituting this result back into the tail summation establishes the exact polynomial decay bound:
 
 $$
-P_{\mathrm{err}}(L_{\text{cut}}) \le \frac{C \rho^3}{1 - \rho} \cdot \frac{1}{N} \cdot N^{-\frac{\ln(1/\rho)}{\ln 2}} = \frac{C \rho^3}{1 - \rho} N^{-\left(1 + \frac{\ln(1/\rho)}{\ln 2}\right)}
+P_{\mathrm{err}}(L_{\text{cut}}) \le \frac{C (b\rho)^3}{1 - b\rho} N^{-\frac{\ln(1/(b\rho))}{\ln 2}} = \mathcal{O}(N^{-k})
 $$
 
 Defining the asymptotic suppression exponent:
 
 $$
-k \equiv 1 + \frac{\ln(1/\rho)}{\ln 2}
+k \equiv \frac{\ln(1/(b\rho))}{\ln 2}
 $$
 
-Because the substrate operates in the subcritical regime ($\rho < 1$), the quotient satisfies $\frac{1}{\rho} > 1 \implies \ln(1/\rho) > 0$, which strictly guarantees:
+Evaluating at $b\rho \approx 0.074$ yields:
 
 $$
-k > 1 \implies P_{\mathrm{err}}(L_{\text{cut}}) \le \mathcal{O}(N^{-k})
+k = \frac{\ln(1/0.074)}{\ln 2} \approx \frac{2.604}{0.693} \approx 3.75 > 1
 $$
 
-**VI. Conclusion**
+which strictly guarantees:
 
-As the substrate volume diverges in the thermodynamic limit ($N \to \infty$), the probability of an undetected causal paradox evading the local pre-check vanishes asymptotically ($P_{\mathrm{err}} \to 0$). The local pre-check therefore enforces **Thermodynamic Enforcement** <Ref id="2.7.2" label="§2.7.2" /> and guarantees **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> almost surely across all cosmological scales.
+$$
+P_{\mathrm{err}}(L_{\text{cut}}) \le \mathcal{O}(N^{-3.75}) \xrightarrow{N \to \infty} 0
+$$
+
+**VI. Conclusion and Triple-Defense Architecture**
+
+As the substrate volume diverges in the thermodynamic limit ($N \to \infty$), the probability of an undetected causal loop evading the local pre-check vanishes asymptotically ($P_{\mathrm{err}} \to 0$). 
+
+Crucially, the local pre-check is an algorithmic search sieve (Tier 2). Physical spacetime integrity is safeguarded by two absolute global mechanisms:
+1. **Causal Acyclicity (Tier 1):** Constructor timestamp monotonicity (**Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />; Lean 4 certified: `edge_monotone_no_causal_cycle`) strictly precludes closed timelike curves ($P_{\mathrm{CTC}} \equiv 0$) on any graph topology.
+2. **Spatial Manifold Locality:** The **Hard Constraint Projectors** of **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> project out non-local shortcuts ($\bar{d} > 2$), while unpinned topological stress is actively excised by microscopic deletion grammar.
 
 Q.E.D.
 

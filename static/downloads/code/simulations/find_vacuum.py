@@ -126,7 +126,7 @@ def run_sweep():
     all_results = []
     print("="*80)
     print(f"QBD Vacuum Parameter Sweep (Sweep 1: Find RPV)")
-    print(f"Anchored Constants: ALPHA={DEFAULT_CONFIG['ALPHA']:.2f} MeV, T_VACUUM={DEFAULT_CONFIG['T_VACUUM']:.3f} MeV")
+    print(f"Anchored Constants: ALPHA={DEFAULT_CONFIG['ALPHA']:.2f} MeV, BETA_C={DEFAULT_CONFIG['BETA_C']:.4f}")
     print(f"Nodes: ~{args.nodes}, Runs/point: {args.runs}, Steps: {args.steps}")
     print(f"Cores: {args.cores}, Timeout: {args.timeout}s")
     print(f"Sweeping Mu range: {np.round(mu_values, 3)}")
@@ -211,7 +211,7 @@ def run_sweep():
         writer.writerow(["# QBD Vacuum Parameter Sweep Results"])
         writer.writerow([f"# Timestamp: {timestamp}"])
         writer.writerow([f"# Anchored ALPHA: {DEFAULT_CONFIG['ALPHA']:.2f} MeV"])
-        writer.writerow([f"# Anchored T_VACUUM: {DEFAULT_CONFIG['T_VACUUM']:.3f} MeV"])
+        writer.writerow([f"# Anchored BETA_C: {DEFAULT_CONFIG['BETA_C']:.4f}"])
         writer.writerow([f"# Nodes (approx): {args.nodes}"])
         writer.writerow([f"# Runs per point: {args.runs}"])
         writer.writerow([f"# Max Steps: {args.steps}"])

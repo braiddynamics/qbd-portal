@@ -9,7 +9,7 @@ import { papers } from '../data/papers';
 
 const SITE_INFO = {
   name: 'Quantum Braid Dynamics (QBD)',
-  tagline: 'A background-independent, parameter-free formulation of quantum gravity',
+  tagline: 'A background-independent, discrete topological formulation of quantum gravity',
   url: 'https://braiddynamics.com',
   github: 'https://github.com/braiddynamics/qbd-portal',
   contact: 'https://x.com/BraidDynamics',
@@ -141,10 +141,12 @@ const LEAN_PROOFS = [
   { name: 's3.3-maximal-parallelism.lean',    url: '/downloads/code/repo/lean/s3.3-maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
   { name: 's3.5-stabilizer-isomorphism.lean', url: '/downloads/code/repo/lean/s3.5-stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
   { name: 's4.3-awareness-comonad.lean',      url: '/downloads/code/repo/lean/s4.3-awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
+  { name: 's4.4-maxent-foundations.lean',     url: '/downloads/code/repo/lean/s4.4-maxent-foundations.lean',     desc: 'Proof of boolean MaxEnt prior uniqueness, temperature cancellation, and Hist lossless retention.' },
   { name: 's4.6-scheduler-confluence.lean',   url: '/downloads/code/repo/lean/s4.6-scheduler-confluence.lean',   desc: 'Proof of parallel scheduler confluence, move disjointness, and idempotent additions.' },
   { name: 's5.4-vacuum-stability.lean',       url: '/downloads/code/repo/lean/s5.4-vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
   { name: 's5.5-scar-permanence.lean',        url: '/downloads/code/repo/lean/s5.5-scar-permanence.lean',        desc: 'Proof of topological scar deletion immunity, inductive multi-tick permanence, and absorbing state stationarity.' },
   { name: 's6.1-task-reidemeister.lean',      url: '/downloads/code/repo/lean/s6.1-task-reidemeister.lean',      desc: 'Formalization of Reidemeister-like strand transformations on tripartite braids.' },
+  { name: 's13.2-field-equations.lean',       url: '/downloads/code/repo/lean/s13.2-field-equations.lean',       desc: 'Proof of Gorard 1D adjoint kernel obstruction, detailed balance zero divergence, and non-dissipative orbital stationarity.' },
 ];
 
 const MODEL_CODE = [
@@ -211,7 +213,7 @@ const KEY_CONCEPTS = [
     def: 'The Standard Model gauge groups U(1), SU(2), SU(3) arise in QBD as automorphism classes of the local braid group. Phase invariance of the writhe under global shifts → U(1)/electromagnetism. Strand permutation symmetry → SU(3)/color. Chirality mixing → SU(2)/weak force.' },
   { layer: 'Matter',
     term: 'Chiral Invariant (χ)',
-    def: 'A topological quantum number computed from the timestamp ordering of a braid\'s constituent edges: χ = sgn(H(e1) − H(e2)). Value −1 = left-handed, +1 = right-handed. This is QBD\'s derivation of parity violation from first principles.' },
+    def: 'A topological quantum number computed from the timestamp ordering of a braid\'s constituent edges: χ = sgn(H(e1) − H(e2)). Value −1 = left-handed, +1 = right-handed. This is QBD\'s derivation of parity violation from causal timestamp asymmetry.' },
 
   // ── Geometry ───────────────────────────────────────────────────────────────
   { layer: 'Geometry',
@@ -222,7 +224,7 @@ const KEY_CONCEPTS = [
     def: 'QBD\'s holographic theorem: the bulk causal structure of any finite region is isomorphic to a topological code on its boundary. This formalises the holographic principle and identifies the AdS/CFT correspondence as a special case of boundary-to-bulk isomorphism.' },
   { layer: 'Geometry',
     term: 'ER = EPR (Topological Wormholes)',
-    def: 'Entangled braid pairs are connected by shared causal strands — microscopic topological wormholes. QBD proves the ER = EPR conjecture from first principles: quantum entanglement and geometric connectivity are the same topological phenomenon at different scales.' },
+    def: 'Entangled braid pairs are connected by shared causal strands — microscopic topological wormholes. QBD establishes the ER = EPR conjecture as a structural theorem: quantum entanglement and geometric connectivity are the same topological phenomenon at different scales.' },
 
   // ── Quantum Error Correction ───────────────────────────────────────────────
   { layer: 'QECC',

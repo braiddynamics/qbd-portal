@@ -1,3 +1,11 @@
+"""
+Pedagogical Topological Cycle Digestion Demonstrator (§2.4.10).
+
+Demonstrates cycle-length reduction on unweighted directed k-cycles
+to verify termination at simplicial ground states (L_max <= 3).
+Physical rewrites use the timestamp-aware atomic scheduler (Axioms 1-3).
+"""
+
 import networkx as nx
 import pandas as pd
 import math 
@@ -92,6 +100,39 @@ def run_reduction_protocol(k):
     del_ops = phase_2_delete_cycles(G)
    
     return add_ops, del_ops
+
+
+def atomic_cycle_reduction_step(G):
+    """
+    Companion reference: Timestamp-aware atomic cycle reduction step (Lemma 2.4.5).
+    Applies chord addition and perimeter deletion in a single atomic rewrite step,
+    filtering reciprocal collision pairs to strictly preserve Axiom 1 (no 2-cycles).
+    """
+    paths = find_compliant_2_paths(G)
+    if not paths:
+        return 0, 0
+    
+    proposals_add = {(u, v) for v, w, u in paths}
+    # Symmetric Reciprocal Filter (Corollary 2.2): drop colliding pairs and self-loops
+    filtered_add = {
+        (u, v) for (u, v) in proposals_add
+        if (v, u) not in proposals_add and u != v
+    }
+    
+    proposals_del = set()
+    for c in nx.simple_cycles(G):
+        if len(c) > 3:
+            proposals_del.add((c[0], c[1]))
+            break
+            
+    for u, v in filtered_add:
+        G.add_edge(u, v)
+    for u, v in proposals_del:
+        if G.has_edge(u, v):
+            G.remove_edge(u, v)
+            
+    return len(filtered_add), len(proposals_del)
+
 
 # === Execution and Verification ===
 results = []

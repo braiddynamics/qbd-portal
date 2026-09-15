@@ -101,18 +101,16 @@ def inject_energic_event(G: nx.DiGraph, levels: list) -> nx.DiGraph:
     return G
 # Config
 config = {
-    "T_VACUUM": math.log(2),
+    "BETA_C": math.log(2),
     "MU": 0.40,
     "LAMBDA": 1.7,
     "NUM_NODES_APPROX": 5,
     "SIMULATION_STEPS": 200,
 }
 # Dynamics helpers
-def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float, stress_map: Dict[int, int]) -> Set[Tuple[Tuple[int, int], int]]:
+def _calculate_add_proposals(G: nx.DiGraph, mu: float, stress_map: Dict[int, int]) -> Set[Tuple[Tuple[int, int], int]]:
     proposals_add: Set[Tuple[Tuple[int, int], int]] = set()
-    DELTA_S_ADD = math.log(2.0)
-    DELTA_F_ADD = -T * DELTA_S_ADD
-    P_THERMO_ADD = 1.0
+    P_BASE_ADD = 1.0
     for v in G.nodes():
         for w in list(G.successors(v)):
             for u in list(G.successors(w)):
@@ -131,15 +129,13 @@ def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float, stress_map: Dic
                 for node in base_neighborhood:
                     stress_count += stress_map.get(node, 0)
                 f_friction = math.exp(-mu * stress_count)
-                P_acc = f_friction * P_THERMO_ADD
+                P_acc = f_friction * P_BASE_ADD
                 if random.random() < P_acc:
                     proposals_add.add(((u, v), H_new))
     return proposals_add
-def _calculate_del_proposals(G: nx.DiGraph, T: float, mu: float, lam: float, all_cycles: List[list], stress_map: Dict[int, int]) -> Set[Tuple[int, int]]:
+def _calculate_del_proposals(G: nx.DiGraph, mu: float, lam: float, all_cycles: List[list], stress_map: Dict[int, int]) -> Set[Tuple[int, int]]:
     proposals_del = set()
-    DELTA_S_DEL = -math.log(2.0)
-    DELTA_F_DEL = -T * DELTA_S_DEL
-    Q_THERMO_DEL = 0.5
+    Q_BASE_DEL = 0.5
     for cycle_edges in all_cycles:
         base_nodes = {vv for e in cycle_edges for vv in e}
         stress_count = 0
@@ -148,7 +144,7 @@ def _calculate_del_proposals(G: nx.DiGraph, T: float, mu: float, lam: float, all
         local_stress = max(0, stress_count - 1)
         f_friction = math.exp(-mu * local_stress)
         f_catalysis_del = (1.0 + lam * local_stress)
-        Q_del_raw = f_friction * f_catalysis_del * Q_THERMO_DEL
+        Q_del_raw = f_friction * f_catalysis_del * Q_BASE_DEL
         Q_del = min(1.0, Q_del_raw)
         if random.random() < Q_del:
             edge = random.choice(list(cycle_edges))
@@ -156,7 +152,6 @@ def _calculate_del_proposals(G: nx.DiGraph, T: float, mu: float, lam: float, all
     return proposals_del
 # Modified evolve
 def modified_evolve(G: nx.DiGraph, config: dict, add_counter: defaultdict, del_counter: defaultdict):
-    T = config["T_VACUUM"]
     mu = config["MU"]
     lam = config["LAMBDA"]
     max_steps = config["SIMULATION_STEPS"]
@@ -167,8 +162,8 @@ def modified_evolve(G: nx.DiGraph, config: dict, add_counter: defaultdict, del_c
             cycle_nodes = {vv for e in cycle_edges for vv in e}
             for node in cycle_nodes:
                 stress_map[node] = stress_map.get(node, 0) + 1
-        proposals_add = _calculate_add_proposals(G, T, mu, stress_map)
-        proposals_del = _calculate_del_proposals(G, T, mu, lam, all_cycles, stress_map)
+        proposals_add = _calculate_add_proposals(G, mu, stress_map)
+        proposals_del = _calculate_del_proposals(G, mu, lam, all_cycles, stress_map)
         # Count
         for (u,v), h in proposals_add:
             add_counter[(u,v)] += 1
@@ -203,8 +198,8 @@ def _fmt_row(row):
 print('T_ab matrix (rows: from a, cols: to b):')
 T_r = np.round(T, 4)
 print("[" + "\n ".join(_fmt_row(row) for row in T_r) + "]")
-print('\nOutgoing sums ∑_b T_ab:', _fmt_row(np.round(out_sums, 4)))
-print('Incoming sums ∑_b T_ba:', _fmt_row(np.round(in_sums, 4)))
+print('\nOutgoing sums sum_b T_ab:', _fmt_row(np.round(out_sums, 4)))
+print('Incoming sums sum_b T_ba:', _fmt_row(np.round(in_sums, 4)))
 print('Total flux sums:', _fmt_row(np.round(total_sums, 4)))
 print('Max |out|:', float(np.max(np.abs(out_sums))))
 print('Max |in|:', float(np.max(np.abs(in_sums))))

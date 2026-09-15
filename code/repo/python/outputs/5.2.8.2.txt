@@ -1,0 +1,17 @@
+Homogeneous Discriminant (Delta): -28.3006
+Tree Branching Factor (b):       2
+Thresholds:
+  Critical Lower lambda_c1:       0.3536
+  Critical Upper lambda_c2:       0.7500
+  Bare Branching hat_lambda:      0.2864
+  Local Clustering kappa_clust:   0.5500
+  Effective Branching lambda_eff: 0.4439
+Ensemble Simulation (N = 100, T = 30, Trials = 100):
+  Survival Fraction p_surv:       1.0000
+  Active Cycles at Depth d = 0:   858
+  Active Cycles at Depth d = 1:   1961
+  Active Cycles at Depth d = 2:   1335
+  Active Cycles at Depth d = 3:   3514
+  Active Cycles at Depth d = 4:   800
+  Active Cycles at Depth d = 5:   0
+  Active Cycles at Depth d = 6:   0

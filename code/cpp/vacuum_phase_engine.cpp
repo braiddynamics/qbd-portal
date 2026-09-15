@@ -301,10 +301,6 @@ bool execute_parallel_tick(DiGraph& G, double mu, double lam, int L_cut, Travers
         }
     }
 
-    if (A.empty() && D.empty()) {
-        return false; // Homeostatic stall
-    }
-
     std::set<std::pair<int, int>> a_edge_set;
     for (const auto& item : A) a_edge_set.insert(item.first);
 
@@ -322,18 +318,29 @@ bool execute_parallel_tick(DiGraph& G, double mu, double lam, int L_cut, Travers
         }
     }
 
+    // Homeostatic Equilibrium Check (Physical Stasis: Delta t_phys == 0)
+    if (A.empty() && D.empty()) {
+        return false; // Net flux is zero; halts logical execution at homeostatic equilibrium
+    }
+
     return true;
 }
 
-std::pair<int, int> evolve_graph_to_equilibrium(DiGraph& G, double mu, double lam, int max_steps, TraversalScratchpad& scratch, std::mt19937_64& rng) {
+std::pair<int, int> evolve_graph_to_equilibrium(DiGraph& G, double mu, double lam, int max_steps, TraversalScratchpad& scratch, std::mt19937_64& rng, int quiet_ticks_threshold = 1) {
     int L_cut = std::max(1, static_cast<int>(std::floor(std::log2(G.n))) + 3);
     std::uniform_real_distribution<double> dist(0.0, 1.0);
 
+    int quiet_count = 0;
     for (int step = 0; step < max_steps; ++step) {
         bool active = execute_parallel_tick(G, mu, lam, L_cut, scratch, rng, dist);
         if (!active) {
-            auto final_cycles = find_all_3_cycles(G);
-            return {static_cast<int>(final_cycles.size()), step + 1};
+            quiet_count++;
+            if (quiet_count >= quiet_ticks_threshold) {
+                auto final_cycles = find_all_3_cycles(G);
+                return {static_cast<int>(final_cycles.size()), step + 1};
+            }
+        } else {
+            quiet_count = 0;
         }
     }
     auto final_cycles = find_all_3_cycles(G);
@@ -457,7 +464,7 @@ EnsembleStats compute_ensemble_stats(int N, const std::vector<TrajectoryResult>&
 // ============================================================================
 // MULTITHREADED ENSEMBLE RUNNER
 // ============================================================================
-std::vector<TrajectoryResult> run_ensemble(int N, int runs, int max_steps, double mu, double lam, uint64_t base_seed, int num_threads) {
+std::vector<TrajectoryResult> run_ensemble(int N, int runs, int max_steps, double mu, double lam, uint64_t base_seed, int num_threads, int quiet_ticks = 1) {
     if (num_threads <= 0) num_threads = std::max(1u, std::thread::hardware_concurrency());
 
     std::vector<TrajectoryResult> all_results(runs);
@@ -481,7 +488,7 @@ std::vector<TrajectoryResult> run_ensemble(int N, int runs, int max_steps, doubl
                 DiGraph G = generate_bethe_fragment(N);
                 inject_seed_defect(G);
 
-                auto [n3_final, steps] = evolve_graph_to_equilibrium(G, mu, lam, max_steps, scratch, rng);
+                auto [n3_final, steps] = evolve_graph_to_equilibrium(G, mu, lam, max_steps, scratch, rng, quiet_ticks);
                 double rho3 = static_cast<double>(n3_final) / N;
                 bool survived = (n3_final > 0);
 
@@ -523,6 +530,7 @@ void print_help(const char* prog_name) {
               << "  -l, --lambda [float]    Defect release parameter lambda (default: 1.718281828)\n"
               << "      --seed [int]        Base RNG seed (default: 0)\n"
               << "  -t, --threads [int]     Number of worker threads (default: hardware concurrency)\n"
+              << "  -k, --quiet-ticks [int] Consecutive quiet ticks to declare homeostatic stasis (default: 1)\n"
               << "  -o, --csv [file]        Output CSV file to save per-trajectory records\n"
               << "      --smoke-test        Execute quick N=10 smoke test (100 runs)\n"
               << "  -h, --help              Display this help message\n";
@@ -536,6 +544,7 @@ int main(int argc, char* argv[]) {
     double lam = DEFAULT_LAMBDA_0;
     uint64_t seed = 0;
     int num_threads = std::max(1u, std::thread::hardware_concurrency());
+    int quiet_ticks = 1;
     std::string csv_path = "";
 
     for (int i = 1; i < argc; ++i) {
@@ -558,6 +567,8 @@ int main(int argc, char* argv[]) {
             if (i + 1 < argc) seed = std::stoull(argv[++i]);
         } else if (arg == "-t" || arg == "--threads") {
             if (i + 1 < argc) num_threads = std::stoi(argv[++i]);
+        } else if (arg == "-k" || arg == "--quiet-ticks") {
+            if (i + 1 < argc) quiet_ticks = std::stoi(argv[++i]);
         } else if (arg == "-o" || arg == "--csv") {
             if (i + 1 < argc) csv_path = argv[++i];
         } else if (arg == "--smoke-test") {
@@ -577,6 +588,7 @@ int main(int argc, char* argv[]) {
               << "  Max Steps (T):         " << max_steps << "\n"
               << "  Friction mu:           " << std::fixed << std::setprecision(6) << mu << "\n"
               << "  Relaxation lambda:     " << std::fixed << std::setprecision(6) << lam << "\n"
+              << "  Quiet Ticks (K):       " << quiet_ticks << "\n"
               << "  Base Seed:             " << seed << "\n"
               << "  Worker Threads:        " << num_threads << "\n";
     if (!csv_path.empty()) {
@@ -586,7 +598,7 @@ int main(int argc, char* argv[]) {
     std::cout << "Executing Monte Carlo ensemble simulation...\n";
 
     auto start_time = std::chrono::high_resolution_clock::now();
-    auto results = run_ensemble(N, runs, max_steps, mu, lam, seed, num_threads);
+    auto results = run_ensemble(N, runs, max_steps, mu, lam, seed, num_threads, quiet_ticks);
     auto end_time = std::chrono::high_resolution_clock::now();
 
     double elapsed_ms = std::chrono::duration<double, std::milli>(end_time - start_time).count();
@@ -615,7 +627,7 @@ int main(int argc, char* argv[]) {
               << stats.mean_n3_qsd << " (Median: " << stats.median_n3_qsd << ")\n";
     std::cout << std::left << std::setw(32) << "  Active QSD Mean <rho>_QSD:" << std::fixed << std::setprecision(4)
               << stats.mean_rho3_qsd << " (Median: " << stats.median_rho3_qsd << ")\n";
-    std::cout << std::left << std::setw(32) << "  Mean Steps to Homeostasis:" << std::fixed << std::setprecision(2)
+    std::cout << std::left << std::setw(32) << "  Mean Trajectory Duration:" << std::fixed << std::setprecision(2)
               << stats.avg_steps << " ticks\n";
     std::cout << "================================================================================\n";
 

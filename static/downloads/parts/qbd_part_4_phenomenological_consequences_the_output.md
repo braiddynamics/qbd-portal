@@ -25,7 +25,7 @@ Reconciling quantum mechanics with general relativity requires explaining how a 
 
 Treating the initial cosmic state as a continuum point singularity fails because infinite energy densities destroy quantum predictability and break microcausality. Classical general relativity provides no mechanism to prevent singular collapse, while scalar inflaton models cannot explain the microscopic origin of the inflaton potential $V(\phi)$ or how inflation terminates into thermal radiation. A framework that lacks a discrete pre-geometric vacuum definition cannot derive the initial topological phase transition that establishes causal ordering, leaving primordial ignition as an unprovable metaphysical assumption.
 
-We resolve this foundational cosmological paradox by formalizing the Pre-Geometric Vacuum as a maximally symmetric 3-regular graph with zero initial metric dimension. We prove that homeostatic edge updates governed by the Universal Sequencer master equation trigger a spontaneous topological instability, nucleating 3-cycles and driving rapid graph growth. By establishing that this topological phase transition generates the initial exponential expansion of causal edges, we derive primordial ignition from graph-theoretic first principles, replacing the Big Bang singularity with a smooth, finite topological activation of spacetime.
+We resolve this foundational cosmological paradox by formalizing the Pre-Geometric Vacuum as a maximally symmetric 3-regular graph with zero initial metric dimension. We prove that homeostatic edge updates governed by the Universal Sequencer master equation trigger a spontaneous topological instability, nucleating 3-cycles and driving rapid graph growth. By establishing that this topological phase transition generates the initial exponential expansion of causal edges, we derive primordial ignition directly from pre-geometric graph dynamics, replacing the Big Bang singularity with a smooth, finite topological activation of spacetime.
 
 ---
 
@@ -4227,7 +4227,7 @@ As cosmic inflation decelerates into homeostatic equilibrium, the primordial uni
 
 Relying on classical Big Bang nucleosynthesis (BBN) and continuum QFT reheating models creates severe theoretical paradoxes, leaving fundamental cosmological parameters unexplained. Standard inflationary models introduce phenomenological reheating by coupling an inflaton field to matter via arbitrary decay widths, leaving the reheating temperature $T_{\text{rh}}$ as an unconstrained free parameter. Furthermore, standard BBN treats current quark masses, the neutron-proton mass differential $\Delta m_{np}$, and the baryon-to-photon ratio $\eta$ as empirical input constants, failing to explain why matter dominates over antimatter or why primordial Helium-4 freezes out at $Y_p \approx 0.25$.
 
-We resolve this cosmological phase transition by establishing the pre-geometric graph dynamics of cosmic reheating and nucleosynthesis. We prove that kinetic graph update relaxation converts expansion energy into localized topological braid defects, determining the reheating temperature $T_{\text{rh}} \sim 10^{15}\text{ GeV}$ from first principles without free parameters. We demonstrate that timestamp monotonicity along causal graph edges imparts an intrinsic chiral asymmetry to Majorana neutrino braid decays, generating the baryon asymmetry $\eta \sim 10^{-10}$. Finally, we derive hadronic mass splitting and weak freeze-out rates directly from braid knot geometry, establishing primordial Helium-4 abundance $Y_p \approx 0.25$ as a structural theorem of quantum braid thermodynamics.
+We resolve this cosmological phase transition by establishing the pre-geometric graph dynamics of cosmic reheating and nucleosynthesis. We prove that kinetic graph update relaxation converts expansion energy into localized topological braid defects, determining the reheating temperature $T_{\text{rh}} \sim 10^{15}\text{ GeV}$ from graph updating kinetics and steric friction relaxation. We demonstrate that timestamp monotonicity along causal graph edges imparts an intrinsic chiral asymmetry to Majorana neutrino braid decays, generating the baryon asymmetry $\eta \sim 10^{-10}$. Finally, we derive hadronic mass splitting and weak freeze-out rates directly from braid knot geometry, establishing primordial Helium-4 abundance $Y_p \approx 0.25$ as a structural theorem of quantum braid thermodynamics.
 
 :::tip[Preconditions and Goals]
 * Derive the cosmic reheating temperature $T_{\text{rh}} \approx 1.2 \times 10^{15}\text{ GeV}$ from graph kinetic update relaxation under steric friction.
@@ -4245,7 +4245,7 @@ Transitioning from exponential inflation to the hot Big Bang epoch presents the 
 
 Treating cosmic reheating through phenomenological scalar field decays fails because continuum QFT provides no microscopic origin for inflaton coupling constants or decay widths $\Gamma_\phi$. Classical reheating models introduce arbitrary coupling parameters to match observed cosmic temperatures, leaving the reheating temperature $T_{\text{rh}}$ completely unconstrained by fundamental physics. A framework that lacks a discrete graph relaxation mechanism cannot explain how kinetic update energy is partitioned between spatial expansion and matter creation, leaving the ignition of the hot Big Bang plasma as an ad hoc assumption.
 
-We resolve this thermalization problem by establishing the Kinetic Update Relaxation Theorem for cosmic reheating. We demonstrate that as hypergraph expansion decelerates near the homeostatic density attractor $\rho^* \approx 0.037$, steric friction between updating boundary nodes transforms kinetic graph updates into localized topological braid defects. By evaluating the thermalization kinetics of this graph updating relaxation, we determine the primordial reheating temperature $T_{\text{rh}} \approx 1.2 \times 10^{15}\text{ GeV}$ directly from first principles without introducing free parameters or scalar decay widths.
+We resolve this thermalization problem by establishing the Kinetic Update Relaxation Theorem for cosmic reheating. We demonstrate that as hypergraph expansion decelerates near the homeostatic density attractor $\rho^* \approx 0.037$, steric friction between updating boundary nodes transforms kinetic graph updates into localized topological braid defects. By evaluating the thermalization kinetics of this graph updating relaxation, we determine the primordial reheating temperature $T_{\text{rh}} \approx 1.2 \times 10^{15}\text{ GeV}$ directly from graph updating kinetics and steric friction relaxation without postulating ad hoc scalar decay widths.
 
 ---
 
@@ -4742,7 +4742,7 @@ Exponential complexity suppression isolates the minimally twisted charge-neutral
 
 ## 19.2 Baryogenesis {#19.2}
 
-Reheating the vacuum into a hot thermal plasma creates the primordial particle background, but explaining the observed universe requires resolving the Baryon Asymmetry Paradox. In standard particle physics, matter and antimatter are created in equal abundance, predicting that complete annihilation during cosmic cooling would leave a universe filled exclusively with radiation. In Quantum Braid Dynamics, the matter-antimatter asymmetry cannot be explained by ad hoc initial conditions; it must emerge from fundamental topological graph dynamics. The central challenge is to derive the observed baryon-to-photon ratio $\eta \sim 10^{-10}$ from graph-theoretic first principles.
+Reheating the vacuum into a hot thermal plasma creates the primordial particle background, but explaining the observed universe requires resolving the Baryon Asymmetry Paradox. In standard particle physics, matter and antimatter are created in equal abundance, predicting that complete annihilation during cosmic cooling would leave a universe filled exclusively with radiation. In Quantum Braid Dynamics, the matter-antimatter asymmetry cannot be explained by ad hoc initial conditions; it must emerge from fundamental topological graph dynamics. The central challenge is to derive the observed baryon-to-photon ratio $\eta \sim 10^{-10}$ from discrete graph topology and causal timestamp asymmetry.
 
 Postulating CP-violating parameters in GUT or electroweak Lagrangians fails to explain the microscopic origin of matter-antimatter asymmetry, as Standard Model CP violation in the CKM matrix is many orders of magnitude too small to account for the observed baryon abundance. Classical baryogenesis models introduce unverified heavy scalar fields or ad hoc right-handed neutrino couplings, leaving Sakharov's non-equilibrium conditions as unproven phenomenological assumptions. A framework that lacks a pre-geometric arrow of time cannot explain why particle and antiparticle decay rates split, leaving the dominance of matter as an unresolved puzzle.
 
@@ -5235,7 +5235,7 @@ Generating a baryonic surplus through topological leptogenesis establishes the m
 
 Attributing hadronic mass splitting to empirical up-down quark current masses and electromagnetic self-energies in standard QCD fails to explain the fundamental physical origin of quark masses. In the Standard Model, quark masses are input parameters determined by arbitrary Higgs Yukawa couplings, offering no theoretical reason why $m_d > m_u$. A framework that lacks a discrete topological description of color and isospin cannot derive why the neutron is heavier than the proton from first principles, leaving the stability of hydrogen and the existence of stable atoms as fine-tuned empirical coincidences.
 
-We resolve the origin of hadronic mass differentials by deriving Topological Mass Splitting from constituent quark braid geometries. We prove that composite hadrons consist of linked topological braid strands whose torsional writhe energy determines their rest mass. By demonstrating that parallel up-quark twists enjoy constructive edge sharing along graph boundaries while down-quark twists occupy orthogonal spatial planes, we derive the exact neutron-proton mass difference $\Delta m_{np} = 1.293\text{ MeV}$ from first principles, establishing the structural stability of atomic matter from graph topology.
+We resolve the origin of hadronic mass differentials by deriving Topological Mass Splitting from constituent quark braid geometries. We prove that composite hadrons consist of linked topological braid strands whose torsional writhe energy determines their rest mass. By demonstrating that parallel up-quark twists enjoy constructive edge sharing along graph boundaries while down-quark twists occupy orthogonal spatial planes, we derive the exact neutron-proton mass difference $\Delta m_{np} = 1.293\text{ MeV}$ directly from constituent braid geometry, establishing the structural stability of atomic matter from graph topology.
 
 ---
 
@@ -5580,7 +5580,7 @@ This topological mass differential $\Delta m \approx 1.293\text{ MeV}$ plays a c
 
 ## 19.4 Primordial Nucleosynthesis {#19.4}
 
-Establishing hadronic mass splitting and weak interaction freeze-out kinetics provides the microscopic foundation for nuclear physics, but validating early universe cosmology requires predicting the primordial abundances of light elements. In standard Big Bang Nucleosynthesis (BBN), the synthesized mass fraction of Helium-4 ($Y_p \approx 0.25$) serves as the primary empirical test of early universe thermal history. In Quantum Braid Dynamics, light element synthesis must not rely on empirical cross-section fits or fitted freeze-out temperatures; it must emerge directly from pre-geometric graph dynamics. The primary challenge is to derive $Y_p$ from first principles.
+Establishing hadronic mass splitting and weak interaction freeze-out kinetics provides the microscopic foundation for nuclear physics, but validating early universe cosmology requires predicting the primordial abundances of light elements. In standard Big Bang Nucleosynthesis (BBN), the synthesized mass fraction of Helium-4 ($Y_p \approx 0.25$) serves as the primary empirical test of early universe thermal history. In Quantum Braid Dynamics, light element synthesis must not rely on empirical cross-section fits or fitted freeze-out temperatures; it must emerge directly from pre-geometric graph dynamics. The primary challenge is to derive $Y_p$ from pre-geometric graph dynamics.
 
 Parameterizing primordial element production through empirical nuclear reaction networks and fitted baryon-to-photon ratios fails to explain why weak interaction rates freeze out at a specific temperature $T_{\text{freeze}} \sim 0.8\text{ MeV}$. Standard BBN models treat weak decoupling as a phenomenological balance between expansion rate $H(T)$ and Fermi interaction rates $\Gamma_w(T)$, offering no microscopic derivation of the fundamental weak coupling constant or neutron lifetime. A model that lacks a discrete graph updating foundation cannot link early nuclear synthesis to pre-geometric thermodynamics, leaving $Y_p$ as a tuned output.
 
@@ -6465,7 +6465,7 @@ status: pass
 
 The explicit evaluation of $c_{weak}$ anchors early-universe weak interconversion rates directly in 3-ribbon braid electroweak current matrix elements. Eliminating empirical normalization factors guarantees that the weak decoupling scale $T_f \approx 0.8135\text{ MeV}$ is uniquely fixed by discrete graph quantum numbers. This quantitative alignment eliminates free parameters from Big Bang nucleosynthesis, providing a rigorous microscopic basis for weak freeze-out dynamics. Consequently, the equilibrium interaction rates reflect intrinsic topological symmetries rather than arbitrary cosmological curve fitting.
 
-By deriving $c_{weak} \approx 1.258$ from first principles, the model proves that weak interaction rates during primordial nucleosynthesis are governed by non-abelian braid current overlaps rather than arbitrary fit parameters. This solidifies the theoretical bridge between 3-ribbon nucleon topology and cosmological thermal freeze-out kinetics, ensuring complete mathematical consistency across low-energy nuclear kinetics and high-energy pre-geometric spacetime.
+By deriving $c_{weak} \approx 1.258$ from braid current overlaps, the model proves that weak interaction rates during primordial nucleosynthesis are governed by non-abelian braid current overlaps rather than arbitrary fit parameters. This solidifies the theoretical bridge between 3-ribbon nucleon topology and cosmological thermal freeze-out kinetics, ensuring complete mathematical consistency across low-energy nuclear kinetics and high-energy pre-geometric spacetime.
 
 ---
 
@@ -8237,10 +8237,10 @@ Let the temperature anisotropy field $\Theta(\hat{n})$ on the celestial sphere b
 
 **II. The Logic Chain**
 
-1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_\mathcal{R}(k) = A_s (k/k_0)^{n_s - 1}$:
+1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_{\mathcal{R}}(k) = A_s (k/k_0)^{n_s - 1}$:
 
 $$
-C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_\mathcal{R}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
+C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_{\mathcal{R}}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
 $$
 
 2. **Spherical Bessel Peak Projection:** In the geometric limit, the spherical Bessel function $j_\ell(k D_M)$ peaks sharply at $k \approx \ell / D_M$ **Angular Acoustic Metric Projection** <Ref id="20.2.4" label="§20.2.4" />. Substituting $k = \ell / D_M$ converts the spatial acoustic phase $k r_s(z_*)$ into the angular multipole phase:
@@ -9029,7 +9029,7 @@ The preceding analysis establishes the complete physical mechanism of linear cos
 
 As established by the Mészáros growth ODE formulation **Mészáros Perturbation Growth** <Ref id="20.3.3" label="§20.3.3" />, dark matter structures grow logarithmically during radiation domination, establishing pre-existing potential wells across four decades of spatial scale. When recombination eliminates radiation drag **Baryonic Jeans Mass Collapse** <Ref id="20.3.4" label="§20.3.4" />, neutral baryonic gas falls directly into these potential basins **Baryon Gravitational Infall Catch-Up** <Ref id="20.3.5" label="§20.3.5" />, locking the two matter components into a unified clustering field.
 
-We conclude that these derivations unify the microscopic topological sector of QBD with macroscopic cosmological clustering. The resulting matter transfer function $T(k)$ provides an exact, parameter-free foundation for all non-linear structure formation in the cosmic web.
+We conclude that these derivations unify the microscopic topological sector of QBD with macroscopic cosmological clustering. The resulting matter transfer function $T(k)$ provides a predictive geometric foundation for all non-linear structure formation in the cosmic web.
 
 ---
 
@@ -10295,7 +10295,7 @@ The ultimate empirical validation of any cosmological framework lies in its abil
 
 Continuous phenomenological models fit the matter power spectrum by tuning a dozen cosmological parameters, treating the transfer function as an empirical fitting formula and relying on ad hoc bias parameters to match galaxy clustering surveys. However, classical continuum approaches fail to explain the deeper connection between the sound horizon measured in the Cosmic Microwave Background at $z \approx 1100$ and the galaxy clustering BAO peak measured in late-time galaxy catalogs at $z \approx 0.5$. Without a discrete graph foundation, continuum cosmology cannot derive the matter transfer function from first-principles microscopic scattering cross-sections.
 
-Quantum Braid Dynamics resolves the matter power spectrum challenge by proving the Matter Power Spectrum Evolution Theorem. We synthesize the primordial curvature power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n_s - 1}$ with the exact Eisenstein-Hu transfer function $T(k)$, incorporating the acoustic sound horizon $r_s(z_d) \approx 151.09\text{ Mpc}$ ($101.72 h^{-1}\text{ Mpc}$) into the two-point correlation function $\xi(r)$. We compute the spatial correlation function via 3D Fourier transform, proving that the acoustic standard ruler peak matches modern SDSS, BOSS, and DESI measurements with sub-percent precision, and demonstrate how neutral hydrogen absorption in the Lyman-alpha forest probes linear power down to megaparsec scales.
+Quantum Braid Dynamics resolves the matter power spectrum challenge by proving the Matter Power Spectrum Evolution Theorem. We synthesize the primordial curvature power spectrum $\mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}$ with the exact Eisenstein-Hu transfer function $T(k)$, incorporating the acoustic sound horizon $r_s(z_d) \approx 151.09\text{ Mpc}$ ($101.72 h^{-1}\text{ Mpc}$) into the two-point correlation function $\xi(r)$. We compute the spatial correlation function via 3D Fourier transform, proving that the acoustic standard ruler peak matches modern SDSS, BOSS, and DESI measurements with sub-percent precision, and demonstrate how neutral hydrogen absorption in the Lyman-alpha forest probes linear power down to megaparsec scales.
 
 ---
 
@@ -10795,7 +10795,7 @@ The demonstration of the Matter Power Spectrum Evolution synthesized here unites
 
 **II. The Synthesis Logic**
 
-Combining the primordial power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
+Combining the primordial power spectrum $\mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
 - The Harrison-Zeldovich linear scaling $P(k) \propto k^{n_s}$ on super-equality scales ($k < k_{\text{eq}} \approx 0.0167 h\text{ Mpc}^{-1}$).
 - The peak at $k_{\text{eq}}$ corresponding to the matter-radiation equality horizon.
 - The Mészáros-suppressed tail $P(k) \propto k^{n_s - 4}\ln^2(k)$ on sub-horizon scales ($k > k_{\text{eq}}$).
@@ -11875,7 +11875,7 @@ def run_vacuum_pressure_eos():
 
     output_lines = [
         "-" * 78,
-        "§21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance",
+        "Section 21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance",
         "-" * 78,
         f"Attractor Fixed Point rho*: {rho_star:.4f}",
         f"Creation Current J+: {creation_flux:.6f} cycles/tick/node",
@@ -11902,7 +11902,7 @@ if __name__ == "__main__":
 
 ```text title="code/repo/python/outputs/21.2.5.2.txt"
 ------------------------------------------------------------------------------
-§21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance
+Section 21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance
 ------------------------------------------------------------------------------
 Attractor Fixed Point rho*: 0.0370
 Creation Current J+: 0.025577 cycles/tick/node

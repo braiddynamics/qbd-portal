@@ -662,7 +662,7 @@
   "9.7": {
     "id": "9.7",
     "title": "Formal Synthesis",
-    "summary": "The derivation unifies the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra from first principles, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
+    "summary": "The derivation unifies the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra directly from braid commutation generators, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
   },
   "10.9": {
     "id": "10.9",
@@ -712,7 +712,7 @@
   "17.5": {
     "id": "17.5",
     "title": "Formal Synthesis",
-    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> from first principles. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />."
+    "summary": "The continuum limit of propagating braid configurations is derived by establishing that the physical string is the hydrodynamic limit of underlying topological defects rather than an ad hoc postulate. The updates of a causal tube generate the Nambu-Goto action $S_{NG}$ under the **Action Equivalence (Nambu-Goto)** <Ref id=\"17.1.2\" label=\"§17.1.2\" /> directly from graph cobordism minimization. Furthermore, modular invariance and scale symmetries recover the critical dimensions $D_L=26$ and $D_R=10$ via the **Chiral Split (Bosonic Left / Super Right)** <Ref id=\"17.3.1\" label=\"§17.3.1\" />."
   },
   "18.6": {
     "id": "18.6",

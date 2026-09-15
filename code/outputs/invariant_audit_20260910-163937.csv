@@ -1,0 +1,9 @@
+two_cycle_ok,hard_ok,unsupported_chords,missing_H,n3,n_nodes,n_edges,issues,ok_critical,seed,steps
+True,False,72,0,3,40,84,,True,42,34
+True,False,67,0,0,40,71,,True,43,28
+True,False,67,0,0,40,73,,True,44,28
+True,False,85,0,0,40,87,,True,45,59
+True,False,53,0,0,40,65,,True,46,36
+True,False,69,0,0,40,74,,True,47,25
+True,False,66,0,0,40,73,,True,48,40
+True,False,63,0,0,40,68,,True,49,35

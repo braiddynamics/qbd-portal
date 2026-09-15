@@ -54,8 +54,6 @@ def evolve_with_samples(G, config, sample_every: int) -> List[Dict]:
     Mirror evolve_graph_to_equilibrium but sample T periodically.
     Physics identical to library evolve (same private proposal functions).
     """
-    import math
-    Tvac = config["T_VACUUM"]
     mu = config["MU"]
     lam = config["LAMBDA"]
     max_steps = config["SIMULATION_STEPS"]
@@ -64,8 +62,8 @@ def evolve_with_samples(G, config, sample_every: int) -> List[Dict]:
 
     for step in range(max_steps):
         all_cycles, stress_map = build_stress_map(G)
-        proposals_add = _calculate_add_proposals(G, Tvac, mu, stress_map)
-        proposals_del = _calculate_del_proposals(G, Tvac, mu, lam, all_cycles, stress_map)
+        proposals_add = _calculate_add_proposals(G, mu, stress_map)
+        proposals_del = _calculate_del_proposals(G, mu, lam, all_cycles, stress_map)
         if not proposals_add and not proposals_del:
             rows.append({"step": step + 1, **snapshot_T(G, config), "halted": 1})
             break

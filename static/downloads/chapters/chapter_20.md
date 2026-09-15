@@ -1570,10 +1570,10 @@ Let the temperature anisotropy field $\Theta(\hat{n})$ on the celestial sphere b
 
 **II. The Logic Chain**
 
-1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_\mathcal{R}(k) = A_s (k/k_0)^{n_s - 1}$:
+1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_{\mathcal{R}}(k) = A_s (k/k_0)^{n_s - 1}$:
 
 $$
-C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_\mathcal{R}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
+C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_{\mathcal{R}}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
 $$
 
 2. **Spherical Bessel Peak Projection:** In the geometric limit, the spherical Bessel function $j_\ell(k D_M)$ peaks sharply at $k \approx \ell / D_M$ **Angular Acoustic Metric Projection** <Ref id="20.2.4" label="§20.2.4" />. Substituting $k = \ell / D_M$ converts the spatial acoustic phase $k r_s(z_*)$ into the angular multipole phase:
@@ -2362,7 +2362,7 @@ The preceding analysis establishes the complete physical mechanism of linear cos
 
 As established by the Mészáros growth ODE formulation **Mészáros Perturbation Growth** <Ref id="20.3.3" label="§20.3.3" />, dark matter structures grow logarithmically during radiation domination, establishing pre-existing potential wells across four decades of spatial scale. When recombination eliminates radiation drag **Baryonic Jeans Mass Collapse** <Ref id="20.3.4" label="§20.3.4" />, neutral baryonic gas falls directly into these potential basins **Baryon Gravitational Infall Catch-Up** <Ref id="20.3.5" label="§20.3.5" />, locking the two matter components into a unified clustering field.
 
-We conclude that these derivations unify the microscopic topological sector of QBD with macroscopic cosmological clustering. The resulting matter transfer function $T(k)$ provides an exact, parameter-free foundation for all non-linear structure formation in the cosmic web.
+We conclude that these derivations unify the microscopic topological sector of QBD with macroscopic cosmological clustering. The resulting matter transfer function $T(k)$ provides a predictive geometric foundation for all non-linear structure formation in the cosmic web.
 
 ---
 
@@ -3628,7 +3628,7 @@ The ultimate empirical validation of any cosmological framework lies in its abil
 
 Continuous phenomenological models fit the matter power spectrum by tuning a dozen cosmological parameters, treating the transfer function as an empirical fitting formula and relying on ad hoc bias parameters to match galaxy clustering surveys. However, classical continuum approaches fail to explain the deeper connection between the sound horizon measured in the Cosmic Microwave Background at $z \approx 1100$ and the galaxy clustering BAO peak measured in late-time galaxy catalogs at $z \approx 0.5$. Without a discrete graph foundation, continuum cosmology cannot derive the matter transfer function from first-principles microscopic scattering cross-sections.
 
-Quantum Braid Dynamics resolves the matter power spectrum challenge by proving the Matter Power Spectrum Evolution Theorem. We synthesize the primordial curvature power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n_s - 1}$ with the exact Eisenstein-Hu transfer function $T(k)$, incorporating the acoustic sound horizon $r_s(z_d) \approx 151.09\text{ Mpc}$ ($101.72 h^{-1}\text{ Mpc}$) into the two-point correlation function $\xi(r)$. We compute the spatial correlation function via 3D Fourier transform, proving that the acoustic standard ruler peak matches modern SDSS, BOSS, and DESI measurements with sub-percent precision, and demonstrate how neutral hydrogen absorption in the Lyman-alpha forest probes linear power down to megaparsec scales.
+Quantum Braid Dynamics resolves the matter power spectrum challenge by proving the Matter Power Spectrum Evolution Theorem. We synthesize the primordial curvature power spectrum $\mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}$ with the exact Eisenstein-Hu transfer function $T(k)$, incorporating the acoustic sound horizon $r_s(z_d) \approx 151.09\text{ Mpc}$ ($101.72 h^{-1}\text{ Mpc}$) into the two-point correlation function $\xi(r)$. We compute the spatial correlation function via 3D Fourier transform, proving that the acoustic standard ruler peak matches modern SDSS, BOSS, and DESI measurements with sub-percent precision, and demonstrate how neutral hydrogen absorption in the Lyman-alpha forest probes linear power down to megaparsec scales.
 
 ---
 
@@ -4128,7 +4128,7 @@ The demonstration of the Matter Power Spectrum Evolution synthesized here unites
 
 **II. The Synthesis Logic**
 
-Combining the primordial power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
+Combining the primordial power spectrum $\mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
 - The Harrison-Zeldovich linear scaling $P(k) \propto k^{n_s}$ on super-equality scales ($k < k_{\text{eq}} \approx 0.0167 h\text{ Mpc}^{-1}$).
 - The peak at $k_{\text{eq}}$ corresponding to the matter-radiation equality horizon.
 - The Mészáros-suppressed tail $P(k) \propto k^{n_s - 4}\ln^2(k)$ on sub-horizon scales ($k > k_{\text{eq}}$).

@@ -3,9 +3,9 @@ ENTROPIC SUPPRESSION OF EXOTIC BRAIDS
 Boltzmann Weights vs. Ribbon Count (n)
 ======================================================================
 
-Vacuum temperature T = ln 2 ≈ 0.693147
-Cost per ribbon ΔC = 1 nat
-Suppression per ribbon ≈ 0.236290
+Information modulus beta_c = ln 2 ~ 0.693147
+Cost per ribbon Delta C = 1 nat
+Suppression per ribbon ~ 0.236290
 
 Results (normalized to n=3):
  Ribbon count (n) Relative probability Suppression factor

@@ -72,7 +72,7 @@ def run_vacuum_pressure_eos():
 
     output_lines = [
         "-" * 78,
-        "§21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance",
+        "Section 21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance",
         "-" * 78,
         f"Attractor Fixed Point rho*: {rho_star:.4f}",
         f"Creation Current J+: {creation_flux:.6f} cycles/tick/node",

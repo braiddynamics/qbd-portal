@@ -25,7 +25,7 @@ def basic_config():
     cfg = DEFAULT_CONFIG.copy()
     cfg["MU"] = 0.0
     cfg["LAMBDA"] = 0.0
-    cfg["T_VACUUM"] = math.log(2)
+    cfg["BETA_C"] = math.log(2)
     return cfg
 
 

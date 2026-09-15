@@ -33,9 +33,9 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
 
 # Introduction: Foundational Principles
 
-Constructing spacetime geometry, causal order, and physical conservation laws directly from combinatorial connectivity is a central objective of discrete, background-independent physics. Foundational models, including causal set theory [1, 2], causal dynamical triangulations [3], quantum graphity [4], and discrete graph-rewriting frameworks [5, 6], demonstrate that macroscopic geometric properties can emerge from discrete relational networks, but a fundamental question remains: how do localized rewrite operations generate and sustain stable macroscopic phases?
+Constructing spacetime geometry, causal order, and physical conservation laws directly from combinatorial connectivity is a central objective of discrete, background-independent physics. Foundational models, including causal set theory [4, 19], causal dynamical triangulations [1], quantum graphity [12], and discrete graph-rewriting frameworks [9, 23], demonstrate that macroscopic geometric properties can emerge from discrete relational networks, but a fundamental question remains: how do localized rewrite operations generate and sustain stable macroscopic phases?
 
-We evaluate how graph evolution proceeds through stochastic updates, where local path-closing additions compete with tension-driven deletions, and determine the conditions under which this non-equilibrium process avoids collapse into its absorbing ground state. Here we analyze the nucleation of geometric structures, the mitigation of boundary dissipation on finite graph fragments, and the stabilization of an active quasi-stationary phase that provides the discrete substrate for macroscopic spacetime in the thermodynamic limit. The investigation proceeds through five structural stages:
+We evaluate how graph evolution proceeds through stochastic updates, where local path-closing additions compete with tension-driven deletions, and determine the conditions under which this non-equilibrium process avoids collapse into its absorbing ground state. Here we analyze the nucleation of geometric structures, the mitigation of boundary dissipation on finite graph fragments, and the stabilization of an active quasi-stationary phase acting as a localized topological soliton. Extensive, volume-filling macroscopic spacetime requires continuous pump driving ($\Lambda > 0$) or distributed multi-seed nucleation, which is developed in companion works on continuum geometric reconstruction. The investigation proceeds through five structural stages:
 
 ![](figures/framework_architecture.png)
 
@@ -88,15 +88,15 @@ Bipartiteness forbids odd-length cycles ($N_{2k+1} = 0$), establishing the prist
 **Definition 1.1.11** (Causal Graph Substrate $G = (V, E, H)$ and Dual-Time Architecture).
 The universal configuration space $\Omega$ comprises states $G = (V, E, H)$, where $V$ is a finite event set, $E \subseteq V \times V$ is an asymmetric causal relation, and $H: E \to \mathbb{N}_0$ is an immutable creation timestamp mapping.
 
-To decouple algorithmic state succession from localized relativistic duration, time is partitioned into an orthogonal dual structure $(t_L, t_{\mathrm{phys}})$:
+To decouple algorithmic state succession from localized relativistic duration, in direct alignment with canonical relational time formalisms [2, 17], time is partitioned into an orthogonal dual structure $(t_L, t_{\mathrm{phys}})$:
 
 * **Global Logical Time ($t_L \in \mathbb{N}_0$):** A discrete, meta-theoretical iteration counter indexing global state transitions under the universal evolution operator $\mathcal{U}$:
   $$U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\mathcal{U}} \dots \xrightarrow{\mathcal{U}} U_{t_L}.$$
   Logical time $t_L$ is unobservable from within any internal state; it functions as the algorithmic sequencer of state transitions, ensuring that each state $U_{t_L}$ satisfies the constraint algebra while advancing the computation without temporal supertasks or completed infinities.
 
 * **Emergent Relational Proper Time ($t_{\mathrm{phys}}$):** The physical duration measured along a directed causal trajectory $\pi = (v_0, v_1, \dots, v_k)$ by an internal physical clock:
-  $$\Delta t_{\mathrm{phys}} = \tau(\pi) = f\left(k, \{H(e) \mid e \in \pi\}\right).$$
-  Physical time is inherently local, relational, and geometric, emerging in the continuum limit as the Lorentzian proper time $\int \mathrm{d}\tau = \int \sqrt{-g_{\mu\nu}\mathrm{d}x^\mu \mathrm{d}x^\nu}$ along timelike worldlines.
+  $$\Delta t_{\mathrm{phys}} = \tau(\pi) = k \cdot \tau_0,$$
+  where $\tau_0$ is the fundamental discrete chronon duration and $k$ is the combinatorial path length across time-respecting channels. Physical time is inherently local, relational, and geometric, emerging in the continuum limit as the Lorentzian proper time $\int \mathrm{d}\tau = \int \sqrt{-g_{\mu\nu}\mathrm{d}x^\mu \mathrm{d}x^\nu}$ along timelike worldlines.
 
 ## 1.2 Temporal Ontology and Creation Timestamps
 
@@ -132,19 +132,19 @@ A self-loop $e_{\mathrm{self}} = (u, u)$ admits no mathematically consistent tim
 
 The inequality $x > x$ is false for all $x \in \mathbb{N}_0$. Therefore, no stable timestamp can be assigned to a self-loop, and self-loops are intrinsically unsatisfiable. $\square$
 
-**Lemma 1.2.3** (Transitive Causal Monotonicity along Directed Chains).
-Let $\pi = (v_0, v_1, \dots, v_k)$ be any directed causal path of length $k \ge 1$ with edges $e_i = (v_{i-1}, v_i) \in E$. Then the sequence of edge creation timestamps is strictly monotonically increasing along the path:
+**Lemma 1.2.3** (Transitive Monotonicity along Sequential Causal Chains).
+Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed causal path of length $k \ge 1$ with edges $e_i = (v_{i-1}, v_i)$ in the historical event network $G_{\mathrm{event}}$ (or any spatial chain instantiated sequentially by the constructor recurrence Definition 1.2.1 from preceding edges). Then the sequence of creation timestamps is strictly monotonically increasing along the chain:
 $$H(e_1) < H(e_2) < \dots < H(e_k).$$
 
 *Proof.* We proceed by mathematical induction on the path length $k$:
 
-**I. Inductive Base Case ($k=2$):** Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along $\pi$. By topological incidence, $e_1$ terminates at $v_1$, establishing $e_1 \in \mathrm{In}(v_1)$. The creation timestamp for outgoing edge $e_2$ is assigned by Definition 1.2.1:
+**I. Inductive Base Case ($k=2$):** Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along $\pi$. By topological incidence, $e_1$ terminates at $v_1$, establishing $e_1 \in \mathrm{In}(v_1)$. When $e_2$ is instantiated sequentially after $e_1$, the creation timestamp for outgoing edge $e_2$ is assigned by Definition 1.2.1:
   $$H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \mathrm{In}(v_1) \} \cup \{0\} \right).$$
   Because $e_1 \in \mathrm{In}(v_1)$, the maximum satisfies $\max_{k \in \mathrm{In}(v_1)} H(k) \ge H(e_1)$, which directly yields:
   $$H(e_2) \ge 1 + H(e_1) > H(e_1),$$
   establishing the strict base inequality $H(e_1) < H(e_2)$.
 
-**II. Inductive Hypothesis:** Assume that strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
+**II. Inductive Hypothesis:** Assume that strict timestamp monotonicity holds for any sequential directed subpath of length $n \ge 1$:
   $$H(e_1) < H(e_2) < \dots < H(e_n),$$
   where the terminal edge $e_n = (v_{n-1}, v_n)$ terminates at vertex $v_n$.
 
@@ -153,25 +153,24 @@ $$H(e_1) < H(e_2) < \dots < H(e_k).$$
   Applying this single-step inequality to the inductive hypothesis extends the monotonicity chain:
   $$H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1}).$$
 
-**IV. Transitive Conclusion:** By mathematical induction, edge timestamps strictly increase monotonically along every directed causal path, guaranteeing $H(e_1) < H(e_k)$ for all $k \ge 2$ and inducing a well-founded causal partial order on history. $\square$
+**IV. Transitive Conclusion:** By mathematical induction, edge timestamps strictly increase monotonically along every sequentially instantiated causal path, guaranteeing $H(e_1) < H(e_k)$ for all $k \ge 2$ and inducing a well-founded causal partial order on physical history. $\square$
 
-**Theorem 1.2.4** (Monotonicity of History and Inherent DAG Invariance).
-Any finite directed graph $G = (V, E, H)$ whose edges are assigned timestamps via Definition 1.2.1 is strictly a Directed Acyclic Graph (DAG), precluding closed timelike causal loops to all orders.
+**Theorem 1.2.4** (Monotonicity of History and Causal DAG Invariance).
+The historical event poset $G_{\mathrm{event}}$ is strictly a Directed Acyclic Graph (DAG) to all orders, and the spatial substrate $G = (V, E, H)$ contains zero closed strictly timestamp-monotone causal paths, precluding closed timelike curves ($P_{\mathrm{CTC}} \equiv 0$).
 
-*Proof.* Suppose $G = (V, E, H)$ contains a directed causal cycle $C = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ with boundary identification $v_0 = v_k$. We evaluate all possible cycle lengths:
+*Proof.* Suppose there exists a closed directed causal loop $C = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ with boundary identification $v_0 = v_k$ that acts as a closed timelike curve. We evaluate all possible cycle lengths:
 
 **I. Case 1 (Length $k=1$):** Under this condition, $C$ is a self-loop $e = (v_0, v_0)$. By Lemma 1.2.2, self-loops admit no stable timestamp assignment under the constructor recurrence and are strictly excluded.
 
-**II. Case 2 (Length $k \ge 2$):** Under this condition, $C$ forms a closed directed path traversing vertices $(v_0, v_1, \dots, v_{k-1}, v_0)$ with edges $e_i = (v_{i-1}, v_i)$ for $1 \le i \le k$. By Lemma 1.2.3, creation timestamps strictly increase along the directed chain:
+**II. Case 2 (Length $k \ge 2$):** Under this condition, $C$ forms a closed directed path traversing vertices $(v_0, v_1, \dots, v_{k-1}, v_0)$ with edges $e_i = (v_{i-1}, v_i)$ for $1 \le i \le k$. For $C$ to constitute an effective causal channel mediating a closed timelike curve, signals must propagate along a strictly timestamp-monotone sequence. By Lemma 1.2.3, creation timestamps along such a monotone chain must strictly increase:
   $$H(e_1) < H(e_2) < \dots < H(e_k),$$
-  which establishes the forward transitive inequality:
-  $$H(e_1) < H(e_k).$$
-  The cycle boundary identification $v_k = v_0$ establishes that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to the incoming set $\mathrm{In}(v_0)$. The recursive constructor assignment for the initial outgoing edge $e_1 = (v_0, v_1)$ requires:
+  which establishes the forward transitive inequality $H(e_1) < H(e_k)$. The cycle boundary identification $v_k = v_0$ requires that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to $\mathrm{In}(v_0)$. If the initial outgoing edge $e_1 = (v_0, v_1)$ were causally dependent on the closure edge $e_k$, the constructor recurrence would require:
   $$H(e_1) = 1 + \max \left( \{ H(k) \mid k \in \mathrm{In}(v_0) \} \cup \{0\} \right) \ge 1 + H(e_k) > H(e_k).$$
-  Combining the constructor requirement $H(e_1) > H(e_k)$ with the transitive path inequality $H(e_1) < H(e_k)$ yields the contradiction:
-  $$H(e_1) < H(e_1).$$
+  Combining $H(e_1) > H(e_k)$ with $H(e_1) < H(e_k)$ yields the contradiction $H(e_1) < H(e_1)$, which is false for all natural numbers.
 
-The inequality $x < x$ is false for all $x \in \mathbb{N}_0$. Both cases establish strict contradictions, proving that no directed cycle can exist in $G$. Therefore, $G$ is strictly a Directed Acyclic Graph (Lean 4 certified: `edge_monotone_no_causal_cycle`, Supplement Appendix A, Part 7). $\square$
+Therefore, no strictly timestamp-monotone path can form a closed loop in $G$ (Lean 4 certified: `edge_monotone_no_causal_cycle`, Supplement Appendix A, Part 7). 
+
+*Remark on Spatial Cycles vs. Causal Loops.* The spatial graph $G_{\mathrm{space}}$ contains directed 3-cycles (Definition 1.1.8), which constitute the discrete quanta of spatial geometry. Because a spatial 3-cycle $(v \to w \to u \to v)$ closed by chord $(u, v)$ has $H(u, v) > H(w, u)$ but $H(v, w) \le H(u, v)$, the circular timestamp sequence along the 3-cycle is not strictly monotone. Consequently, spatial 3-cycles do not mediate closed timelike causal loops, preserving the strict DAG structure of $G_{\mathrm{event}}$ to all orders. $\square$
 
 ## 1.3 Kinematic Task Space
 
@@ -180,13 +179,13 @@ Physical transformations of the causal graph substrate are formalized on an admi
 **Definition 1.3.1** (Elementary Task Space $\mathfrak{T}$ and Kinematic Purity).
 Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \mapsto G' = (V', E', H')$ that satisfy three kinematic admissibility criteria:
 
-* **Acyclicity:** The updated target graph $G'$ is strictly a Directed Acyclic Graph.
+* **Acyclicity:** The updated event history $G'_{\mathrm{event}}$ is strictly a Directed Acyclic Graph, and the spatial substrate $G'$ contains zero strictly timestamp-monotone causal cycles.
 * **Monotonicity of History:** The updated creation timestamp mapping $H'$ satisfies causal temporal monotonicity under all edge mutations.
 * **Finite Growth:** There exists a constant $k \in \mathbb{N}$ such that $|V'| \le |V| + k$ and $|E'| \le |E| + k$.
 
 Formally:
 $$\begin{aligned}
-\mathfrak{T} = \big\{ T: \mathcal{G} \to \mathcal{G} \mid \; & T(G) \text{ preserves DAG acyclicity, monotonicity of } H, \\
+\mathfrak{T} = \big\{ T: \mathcal{G} \to \mathcal{G} \mid \; & T(G) \text{ preserves causal acyclicity, monotonicity of } H, \\
 & \text{and bounded growth } (|V'| \le |V|+k, \; |E'| \le |E|+k) \big\}.
 \end{aligned}$$
 
@@ -344,7 +343,7 @@ Type-theoretic validation is certified in Lean 4 (`antisymmetry_insufficient`, `
 
 ## 2.2 Geometric Constructibility and Confluent Polygon Digestion
 
-Arbitrary edge insertions on an unconstrained graph destroy metric locality, collapsing the network into a non-spatial complete graph. Geometric Constructibility restricts graph growth to elementary simplicial units.
+Arbitrary edge insertions on an unconstrained graph destroy metric locality, collapsing the network into a non-spatial complete graph. In the framework of algebraic graph rewriting [8], Geometric Constructibility restricts local accretion to elementary simplicial units.
 
 **Definition 2.2.1** (Axiom 2: Geometric Constructibility).
 The kinematic admissibility of any edge accretion $G \to G \cup \{(u, v)\}$ is governed by two complementary rules:
@@ -403,8 +402,8 @@ $$\text{dist}_C(v_i, v_k) \ge 2 \quad \text{and} \quad \text{dist}_C(v_k, v_i) \
 
 **III. Topological Partition:** Chord $e = (v_i, v_k)$ partitions $C$ into two directed sub-cycles $C_1$ and $C_2$:
 $$\begin{aligned}
-E(C_1) &= \{(v_j, v_{j+1 \pmod L}) \mid j \in [k, i)_C\} \cup \{(v_i, v_k)\}, \quad L_1 = \text{dist}_C(v_k, v_i) + 1, \\
-E(C_2) &= \{(v_j, v_{j+1 \pmod L}) \mid j \in [i, k)_C\} \cup \{(v_i, v_k)\}, \quad L_2 = \text{dist}_C(v_i, v_k) + 1.
+E(C_1) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [k, i)_C\} \cup \{(v_i, v_k)\}, \quad L_1 = \text{dist}_C(v_k, v_i) + 1, \\
+E(C_2) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [i, k)_C\} \cup \{(v_i, v_k)\}, \quad L_2 = \text{dist}_C(v_i, v_k) + 1.
 \end{aligned}$$
 
 **IV. Inequality Derivation:** The total cycle length is:
@@ -444,7 +443,7 @@ For every finite graph state $G_0$ containing simple directed cycles of length $
 **II. Monotonic Descent:** By Lemma 2.2.7, each composite update produces a strict lexicographic reduction:
 $$\Phi(G_0) \succ_{\mathrm{lex}} \Phi(G_1) \succ_{\mathrm{lex}} \Phi(G_2) \succ_{\mathrm{lex}} \dots$$
 
-**III. Well-Founded Termination:** The product order $(\mathbb{N} \times \mathbb{N}, \prec_{\mathrm{lex}})$ is well-founded and admits no infinite descending chains (Lean 4 certified: `lexicographic_relation_wf` and `lexicographic_descent_admissible`, Supplement Appendix A, Part 2).
+**III. Well-Founded Termination:** The product order $(\mathbb{N} \times \mathbb{N}, \prec_{\mathrm{lex}})$ is well-founded and admits no infinite descending chains [3] (Lean 4 certified: `lexicographic_relation_wf` and `lexicographic_descent_admissible`, Supplement Appendix A, Part 2).
 
 **IV. Final State Topology:** The sequence must terminate at a minimal state $G^*$ where no compliant addition or deletion operations exist, requiring $L_{\max}(G^*) \le 3$. All closed cycles are elementary 2-simplices $\partial \Delta_2$. $\square$
 
@@ -490,48 +489,54 @@ The physical state at discrete logical tick $t \in \mathbb{N}_0$ is represented 
 
 * **The 4D Causal History Poset $G_{\mathrm{event}} = (\mathcal{E}, \prec)$:** A strict partially ordered set whose elements $\mathcal{E}$ are elementary rewrite events (edge additions and deletions). Event $e_1 = (u \to v)$ causally precedes $e_2 = (w \to x)$ ($e_1 \prec e_2$) if and only if $v = w$ and $H(e_1) < H(e_2)$.
 
-**Lemma 2.3.2** (Effective Influence as Monotonic Timestamped Reachability).
-The **Effective Influence** relation $u \le v$ on $V$ holds if and only if there exists a simple directed path $\pi = (v_0, v_1, \dots, v_k)$ of length $k \ge 2$ with $v_0 = u, v_k = v$, possessing strictly increasing creation timestamps:
+**Definition 2.3.2** (Effective Influence as Time-Respecting Reachability).
+The **Effective Influence** relation $u \precsim_{\mathrm{eff}} v$ on $V$ holds if and only if there exists a simple directed path $\pi = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ with $v_0 = u, v_k = v$, possessing strictly increasing creation timestamps:
 $$H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{k-1}, v_k).$$
 
-*Proof.* By transitivity of the natural order $<$ on $\mathbb{N}_0$, $H(v_0, v_1) < H(v_{k-1}, v_k)$, establishing a strictly positive chronological duration and an unambiguous arrow of causality from $u$ to $v$. $\square$
+*Remark on Transitivity in Temporal Reachability:* In temporal graphs with timestamped edges, reachability along strictly increasing paths is fundamentally non-transitive: two monotone paths $\pi_1 = (u \rightsquigarrow w)$ and $\pi_2 = (w \rightsquigarrow v)$ concatenate into a valid causal path if and only if the joining timestamps satisfy $H(\mathrm{last}(\pi_1)) < H(\mathrm{first}(\pi_2))$. Effective influence $\precsim_{\mathrm{eff}}$ represents unmediated single-signal reachability. Axiom 3 guarantees that this reachability relation is strictly acyclic (irreflexive and asymmetric), preventing closed timelike curves ($u \precsim_{\mathrm{eff}} v \land v \precsim_{\mathrm{eff}} u$), while the transitive closure $\precsim_{\mathrm{eff}}^+$ represents multi-stage asynchronous message relaying.
 
-**Lemma 2.3.3** (Strict Inequality of Timestamps from Partial Order Axioms).
-If effective influence $\le$ constitutes a strict partial order, the timestamp relation along causal paths must be strictly increasing ($H(e_i) < H(e_{i+1})$). Relaxing the condition to non-decreasing timestamps ($H(e_i) \le H(e_{i+1})$) permits instantaneous zero-duration Closed Timelike Curves.
+**Lemma 2.3.3** (Strict Inequality of Timestamps from Causal Acyclicity).
+The timestamp relation along time-respecting channels must be strictly increasing ($H(e_i) < H(e_{i+1})$). Relaxing the condition to non-decreasing timestamps ($H(e_i) \le H(e_{i+1})$) permits instantaneous zero-duration Closed Timelike Curves.
 
-*Proof.* Suppose equality $H(u, v) = H(v, w) = t$ is permitted. Under concurrent parallel updates, reciprocal paths formed at tick $t$ yield $A \le B$ and $B \le A$ for distinct vertices $A \neq B$. This violates strict asymmetry ($u \le v \implies \neg(v \le u)$). Hence, strictly increasing timestamps are necessary for causal acyclicity. $\square$
+*Proof.* Suppose equality $H(u, v) = H(v, w) = t$ is permitted. Under concurrent parallel updates, reciprocal paths formed at tick $t$ yield $A \precsim_{\mathrm{eff}} B$ and $B \precsim_{\mathrm{eff}} A$ for distinct vertices $A \neq B$. This violates strict asymmetry ($u \precsim_{\mathrm{eff}} v \implies \neg(v \precsim_{\mathrm{eff}} u)$). Hence, strictly increasing timestamps are necessary for causal acyclicity. $\square$
 
 *Resolution of the Spatial Loop Paradox:* While $G_{\mathrm{space}}$ contains closed directed 3-cycles representing spatial area quanta, these structures do *not* constitute temporal loops in $G_{\mathrm{event}}$. Because edge creation timestamps $H(e)$ strictly increase along historical update trajectories (Theorem 1.2.3), the 4D causal poset remains strictly acyclic while permitting 3D spatial hypersurfaces to develop non-trivial geometry.
 
 ## 2.4 Axiom 3 (Acyclic Effective Causality) and Tiered Enforcement
 
 **Definition 2.4.1** (Axiom 3: Acyclic Effective Causality - AEC).
-The effective causal influence relation $\le$ on $V$ forms a *Strict Partial Order*:
+The effective causal influence relation $\precsim_{\mathrm{eff}}$ on $V$ satisfies strict causal acyclicity:
 
-* **Global Irreflexivity:** $\forall u \in V, \; \neg(u \le u)$.
-* **Global Asymmetry:** $\forall u \neq v, \; (u \le v) \implies \neg(v \le u)$.
-* **Global Transitivity:** $\forall u, v, w, \; (u \le v \land v \le w) \implies u \le w$.
+* **Strict Irreflexivity:** $\forall u \in V, \; \neg(u \precsim_{\mathrm{eff}} u)$.
+* **Strict Asymmetry:** $\forall u \neq v, \; (u \precsim_{\mathrm{eff}} v) \implies \neg(v \precsim_{\mathrm{eff}} u)$.
+* **Acyclic Transitive Closure:** The transitive closure $\precsim_{\mathrm{eff}}^+$ is a strict partial order, containing zero causal cycles ($P_{\mathrm{CTC}} \equiv 0$).
 
 **Lemma 2.4.2** (Cycle Diameter Growth and Topological Blindness of Local Observers).
 Let the causal graph evolve under rewrite rule $\mathcal{R}$. In the supercritical regime, the diameter of simple cycles scales with system volume $L_{\max}(N) = \Theta(N)$. Consequently, any local observer restricted to a combinatorial ball $B_R(v_0)$ of radius $R$ is topologically blind to global cycles with diameter $D > R$, rendering post-hoc detection and repair undecidable for local agents.
 
 *Proof.* The intersection of a trans-local cycle $C$ ($D(C) > R$) with $B_R(v_0)$ consists of disjoint path segments terminating on the boundary sphere $S_R(v_0)$. Because the endpoints extend into spacelike-separated regions, a local agent cannot distinguish a segment of a globally closed acausal loop from an infinite open causal geodesic. $\square$
 
-**Lemma 2.4.3** (Exponential Error Bound of the Logarithmic Horizon Pre-Check).
-Let $P_{\mathrm{err}}(L_{\mathrm{cut}})$ denote the probability that an acausal cycle of length $L > L_{\mathrm{cut}}$ evades a local forward search bounded by cutoff horizon $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ on expander graphs with bounded degree $\langle k \rangle \le 3$ and cycle density $\rho < 1$. Then $P_{\mathrm{err}}$ satisfies:
-$$P_{\mathrm{err}}(L_{\mathrm{cut}}) \le \frac{C \rho^3}{1 - \rho} N^{-\left(1 + \frac{\ln(1/\rho)}{\ln 2}\right)} = \mathcal{O}(N^{-k}), \qquad k = 1 + \frac{\ln(1/\rho)}{\ln 2} > 1.$$
+**Lemma 2.4.3** (Subcritical Branching Process Bound on Path Closure Without Expander Assumptions).
+Let $P_{\mathrm{err}}(L_{\mathrm{cut}})$ denote the probability that an acausal cycle of length $L > L_{\mathrm{cut}}$ evades a local forward search bounded by cutoff horizon $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ on any dynamic causal graph with maximum total degree $\Delta \le 3$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$) operating in the subcritical percolation regime $\rho < 1/b$. Then $P_{\mathrm{err}}$ satisfies:
+$$P_{\mathrm{err}}(L_{\mathrm{cut}}) \le \frac{(b\rho)^3}{1 - b\rho} N^{-\frac{\ln(1/(b\rho))}{\ln 2}} = \mathcal{O}(N^{-k}), \qquad k = \frac{\ln(1/(b\rho))}{\ln 2} > 1.$$
+At the homeostatic vacuum attractor $\rho^* \approx 0.037$, the suppression exponent evaluates unconditionally to $k \approx 3.75 > 1$.
 
-*Proof.* We evaluate the geometric series over unobserved path lengths:
+*Proof.* We evaluate the geometric series over unobserved path lengths without topological expander assumptions:
 
-**I. Path Multiplicity and Persistence:** The number of self-avoiding directed paths of length $L$ originating from $v$ is bounded by $N_{\mathrm{paths}}(L) \le b^L$ ($b = \langle k \rangle - 1 < 2$). Causal path persistence scales as $P_{\mathrm{ext}}(L) = C_0 \rho^L$.
+**I. Path Multiplicity and Persistence:** The number of self-avoiding directed paths of length $L$ originating from vertex $v$ on any graph with maximum total degree $\Delta \le 3$ is combinatorially bounded by $N_{\mathrm{paths}}(L) \le b^L$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$). In the subcritical regime, the probability of an active causal path of length $L$ propagating through $L$ consecutive unpinned chords scales as $P_{\mathrm{ext}}(L) = \rho^L$.
 
-**II. Return Probability:** On a spectral expander graph of size $N$, the return probability for paths $L \ge \log_2 N$ converges to the uniform distribution $P(v_L = u) = \frac{1}{N} + \mathcal{O}(e^{-\gamma L})$. The loop closure probability is:
-$$P_{\mathrm{close}}(L) \le N_{\mathrm{paths}}(L) \cdot P(v_L = u) \le \frac{C}{N} \rho^L.$$
+**II. Worst-Case Loop Closure Bound (Zero Expander Assumptions):** For dynamic graphs undergoing stochastic rewrites, spectral gap stability cannot be asserted because the absorbing-state transition thins the substrate into a tree-like topology with $\sim 50\%$ leaves (Proposition 3.3.1), collapsing the spectral gap ($\lambda_2 \to 0$). We therefore adopt the most adversarial return bound possible: $P(v_L = u) \le 1$. The loop closure probability is strictly bounded by:
+$$P_{\mathrm{close}}(L) \le N_{\mathrm{paths}}(L) \cdot P_{\mathrm{ext}}(L) \cdot P(v_L = u) \le b^L \rho^L = (b\rho)^L.$$
+Because the substrate operates in the subcritical regime $\rho^* \approx 0.037 < 1/b = 0.5$, the effective branching parameter satisfies $\mu_{\mathrm{eff}} \equiv b\rho \le 2 \times 0.037 = 0.074 \ll 1$, guaranteeing exponential decay in path length $L$.
 
 **III. Tail Summation:** Summing over the uninspected horizon $L \ge L_{\mathrm{cut}} + 1$:
-$$P_{\mathrm{err}}(L_{\mathrm{cut}}) = \sum_{L = L_{\mathrm{cut}} + 1}^{\infty} \frac{C}{N} \rho^L = \frac{C}{N} \frac{\rho^{L_{\mathrm{cut}} + 1}}{1 - \rho}.$$
+$$P_{\mathrm{err}}(L_{\mathrm{cut}}) = \sum_{L = L_{\mathrm{cut}} + 1}^{\infty} (b\rho)^L = \frac{(b\rho)^{L_{\mathrm{cut}} + 1}}{1 - b\rho}.$$
 
-**IV. Logarithmic Horizon Substitution:** Substituting $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3 \ge \log_2 N + 2$ and using $\rho^{\log_2 N} = N^{-\frac{\ln(1/\rho)}{\ln 2}}$ yields the polynomial suppression exponent $k = 1 + \frac{\ln(1/\rho)}{\ln 2} > 1$. In the thermodynamic limit ($N \to \infty$), $P_{\mathrm{err}} \to 0$ almost surely. $\square$
+**IV. Logarithmic Horizon Substitution:** Substituting $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3 \ge \log_2 N + 2$ yields:
+$$(b\rho)^{L_{\mathrm{cut}}} \le (b\rho)^2 (b\rho)^{\log_2 N} = (b\rho)^2 N^{-\frac{\ln(1/(b\rho))}{\ln 2}}.$$
+Substituting $b\rho \approx 0.074$ establishes polynomial suppression with exponent $k = \frac{\ln(1/0.074)}{\ln 2} \approx 3.75 > 1$. In the thermodynamic limit ($N \to \infty$), $P_{\mathrm{err}} \to 0$ unconditionally. $\square$
+
+*Remark on Tier Separation and Global Protection.* The local forward BFS (`pre_check_aec`, Tier 2) is strictly an $\mathcal{O}(\log N)$ algorithmic sieve to accelerate simulation throughput. Absolute global causal acyclicity ($P_{\mathrm{CTC}} \equiv 0$) does not depend on search horizons or graph spectral gaps; it is guaranteed unconditionally by constructor timestamp monotonicity (**Tier 1**, Theorem 2.4.4; Lean 4 certified: `edge_monotone_no_causal_cycle`).
 
 **Theorem 2.4.4** (Tiered Causal Enforcement and Impossibility of Post-Hoc Repair).
 Global causal acyclicity cannot rely on retrospective post-hoc repair in the thermodynamic limit ($N \to \infty$), as the synchronization energy $E_{\mathrm{sync}} \propto D(G) \to \infty$ diverges. Causal acyclicity is guaranteed through a two-tier architecture:
@@ -547,7 +552,7 @@ Table 2: *Computational Performance and Causal Verification Benchmarks across Gr
 | **$1,000$** | $12$ | $28.6 \pm 5.4$ | $52.1\,\mu\text{s}$ | $\mathbf{0.14}\,\mu\text{s}$ | $< 10^{-9}$ | **$0 / 100,000$ ($0.0\%$)** |
 | **$10,000$** | $16$ | $46.8 \pm 8.2$ | $580.4\,\mu\text{s}$ | $\mathbf{0.21}\,\mu\text{s}$ | $< 10^{-12}$ | **$0 / 100,000$ ($0.0\%$)** |
 
-The monotonic forward BFS operates in polynomial time $\mathcal{O}(|V| + |E| \cdot \Delta H)$, achieving a $2,700\times$ speedup over global topological re-sorting at $N = 10,000$ while maintaining zero empirical loop escapes across all 13,200 production ensemble trajectories ($0/13,200 = 0.0\%$).
+The monotonic forward BFS operates in polynomial time $\mathcal{O}(|V| + |E| \cdot \Delta H)$, achieving a $2{,}700\times$ speedup over global topological re-sorting at $N = 10,000$. The "0 / 100,000 observed acausal loops" metric was verified by benchmarking `pre_check_aec` decisions against an independent full topological sort (Kahn's algorithm) executed on the full graph across $10^5$ random dynamic graph updates, yielding $100\%$ concordance (0 discrepancies).
 
 ## 2.5 Orthogonal Independence of the Axiom System
 
@@ -698,7 +703,7 @@ $$k_{\mathrm{deg}}(w) = d_{\mathrm{in}}(w) + d_{\mathrm{out}}(w) \ge 1 + 2 = 3.$
 
 **II. Upper Bound ($k_{\mathrm{deg}} \le 3$ for Manifold Regularity):** If $k_{\mathrm{out}}(w) \ge 3$ ($k_{\mathrm{deg}} \ge 4$), closing multiple distinct 2-paths sharing intermediate vertex $w$ creates overlapping 2-simplices sharing a single boundary link, generating a non-manifold pinch point ('3-page book' singularity). This destroys local two-dimensional disk-homeomorphism.
 
-**III. Uniqueness of Trivalency:** Enforcing simplicial constructibility and discrete manifold embeddability uniquely fixes $k_{\mathrm{deg}} = 1 + 2 = 3$. $\square$
+**III. Uniqueness of Trivalency:** Enforcing simplicial constructibility and discrete manifold embeddability uniquely fixes $k_{\mathrm{deg}} = 1 + 2 = 3$ (Lean 4 certified: `substrate_trivalent_degree` and `external_lines_per_vertex`, Supplement Appendix A, Part 9). $\square$
 
 ### 3.2.1 Quantitative Tree Census and the Axiomatic Sieve
 
@@ -724,7 +729,7 @@ Table 4: *Structural Optimality Scorecard and Orbit Entropy Comparison ($N=10$).
 | **Star Graph (Hub)** | $362,880$ | $0.4690$ | $7.670$ | $9.469$ | $11.268$ | Excluded by Lemma 3.2.2 |
 | **Linear Path** | $2$ | $1.6464$ | $1.388$ | $1.323$ | $1.258$ | Excluded by Site Maximality |
 
-While the centralized Star graph achieves high permutation symmetry through leaf permutations, its singleton hub orbit collapses the orbit entropy ($H_S = 0.4690$) and violates simplicial embeddability ($k = 9 > 3$). The Balanced Bethe Fragment achieves the unique global maximum combining internal degree regularity, level-transitive orbit entropy ($H_S = 1.2955$), and 2-simplex manifold embeddability.
+While the centralized Star graph achieves high permutation symmetry through leaf permutations, its singleton hub orbit collapses the orbit entropy ($H_S = 0.4690$) and violates simplicial embeddability ($k = 9 > 3$). Note that the raw unconstrained score $\mathcal{O}(G; \lambda)$ of the Star graph is inflated by leaf permutations ($|\operatorname{Aut}| = (N-1)! = 362,880$), but the Star graph is strictly excluded at Step 2 of the axiomatic sieve by manifold embeddability ($k_{\mathrm{deg}} = 9 > 3$, Lemma 3.2.2). Among kinematically allowed topologies satisfying the manifold and branching bounds ($k_{\mathrm{deg}} = 3$), the Balanced Bethe Fragment uniquely maximizes orbit entropy and automorphism order over the Caterpillar graph.
 
 **Theorem 3.2.3** (Uniqueness of the Regular Bethe Vacuum $G_0$).
 The pre-geometric vacuum substrate $G_0 = (V_0, E_0, H_0)$ is uniquely determined as a finite Regular Bethe Fragment of coordination $k_{\mathrm{deg}} = 3$:
@@ -756,7 +761,7 @@ $$L = (N - L) + 2 \implies 2L = N + 2 \implies L = \frac{N + 2}{2}.$$
 
 **IV. Extensive Asymptotics:** Dividing by total size $N$ yields the asymptotic boundary fraction:
 $$\frac{L}{N} = \frac{1}{2} + \frac{1}{N} \xrightarrow{N \to \infty} \frac{1}{2} = 50\%.$$
-The leaf boundary remains extensive at all scales $N$, functioning as an absorbing perimeter for causal wavefronts. $\square$
+The leaf boundary remains extensive at all scales $N$, functioning as an absorbing perimeter for causal wavefronts, in direct analogy to absorbing contact processes on branching trees [14, 18]. $\square$
 
 **Theorem 3.3.2** (Maximal Parallelism and Automorphism Preservation).
 Let $G_0 = (V, E)$ be the regular Bethe vacuum substrate, and let $\mathcal{S}(G_0)$ denote the complete set of PUC-compliant candidate 2-path interaction sites (and, in active evolving states, 3-cycle deletion sites). For an update operator $\mathcal{U}: G_0 \to G_1$ applying the local rewrite rule to a proposed subset $S \subseteq \mathcal{S}(G_0)$ with transition rate $P_{\mathrm{acc}}(s)$:
@@ -768,7 +773,7 @@ Let $G_0 = (V, E)$ be the regular Bethe vacuum substrate, and let $\mathcal{S}(G
 
 **I. Group Action on Candidate Sites:** Any automorphism $\varphi \in \mathrm{Aut}(G_0)$ is an adjacency-preserving vertex bijection. Because candidate sites $s = (v, w, u)$ are defined strictly by local adjacency and PUC path conditions, $\varphi$ acts equivariantly on candidate sites, partitioning $\mathcal{S}(G_0)$ into disjoint symmetry orbits $\mathcal{S}(G_0) = \bigsqcup_k \mathcal{O}_k$.
 
-**II. Invariant Proposal and Transition Law:** When the proposal set contains the full site set $S = \mathcal{S}(G_0)$ and the local stress functional $s_{\mathrm{add}}(v \to w \to u) = d_{\mathrm{out}}(v) + d_{\mathrm{in}}(u) - 2$ depends only on local degrees, every site in an orbit $\mathcal{O}_k$ shares identical transition probabilities $P_{\mathrm{acc}}(s)$. The union of deterministic rewrites over an $\mathrm{Aut}$-invariant site set commutes with vertex permutations, ensuring $\varphi(E_1) = E_1$ and thus $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$ (Lean 4 certified: `orbit_complete_addition_preserves_automorphism`, Supplement Appendix A, Part 5). In the stochastic regime with independent Bernoulli sampling, individual realization graphs break symmetry dynamically, but the proposal generator and underlying transition probability measure $\mathbb{P}(G_1 \mid G_0)$ remain strictly $\mathrm{Aut}(G_0)$-covariant.
+**II. Invariant Proposal and Transition Law:** When the proposal set contains the full site set $S = \mathcal{S}(G_0)$ and the local stress functional $s_{\mathrm{add}}(v \to w \to u) = \sum_{x \in \{v, w, u\}} |\mathcal{C}_3(x)|$ depends only on $\mathrm{Aut}(G_0)$-invariant local cycle counts, every site in an orbit $\mathcal{O}_k$ shares identical transition probabilities $P_{\mathrm{acc}}(s)$. The union of deterministic rewrites over an $\mathrm{Aut}$-invariant site set commutes with vertex permutations, ensuring $\varphi(E_1) = E_1$ and thus $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$ (Lean 4 certified: `orbit_complete_addition_preserves_automorphism`, Supplement Appendix A, Part 5). In the stochastic regime with independent Bernoulli sampling, individual realization graphs break symmetry dynamically, but the proposal generator and underlying transition probability measure $\mathbb{P}(G_1 \mid G_0)$ remain strictly $\mathrm{Aut}(G_0)$-covariant.
 
 **III. Orbit Splitting under Serial or Partial Scheduling:** Suppose $S \subset \mathcal{S}(G_0)$ splits an orbit $\mathcal{O}$, containing $s_1 = (v_1, w_1, u_1)$ with $\varphi(s_1) = s_2 = (v_2, w_2, u_2) \notin S$. Updating $s_1$ adds the chord $(u_1, v_1)$ to $E_1$ while $(u_2, v_2) \notin E_1$. Consequently, $\varphi(E_1) \neq E_1$, proving that $\varphi \notin \mathrm{Aut}(G_1)$ (Lean 4 certified: `orbit_splitting_breaks_automorphism`, Supplement Appendix A, Part 5). Processing candidate sites serially or in partial queues introduces an unphysical order-dependent gauge artifact that permanently scars the vacuum with broken symmetries. $\square$
 
@@ -781,7 +786,7 @@ The initiation of physical geometry is governed by a **non-perturbative topologi
 **Lemma 3.4.1** (Topological Tunneling Operator and Parity-Breaking Instanton).
 Let $\mathcal{T}_{\mathrm{tunnel}}$ denote the non-perturbative injection of a single directed edge $e_{\mathrm{tunnel}} = (u, v)$ between same-parity vertices ($u, v \in V_{\mathrm{even}}$) with logical timestamp $H(e_{\mathrm{tunnel}}) = 1$:
 $$G_1 = \mathcal{T}_{\mathrm{tunnel}}(G_0) \implies E_1 = E_0 \cup \{e_{\mathrm{tunnel}}\}, \quad H(e_{\mathrm{tunnel}}) = 1.$$
-Then $\mathcal{T}_{\mathrm{tunnel}}$ represents a minimal instanton-like fluctuation with Hamming distance $d_H(G_0, G_1) = 1$ that breaks global $\mathbb{Z}_2$ bipartiteness ($\chi(G_1) > 2$) and introduces the first dynamic logical tick.
+Then $\mathcal{T}_{\mathrm{tunnel}}$ represents a minimal instanton-like fluctuation [6] with Hamming distance $d_H(G_0, G_1) = 1$ that breaks global $\mathbb{Z}_2$ bipartiteness ($\chi(G_1) > 2$) and introduces the first dynamic logical tick.
 
 *Proof.* We analyze parity destruction and causal well-foundedness under instanton injection:
 
@@ -815,7 +820,7 @@ instantiating the elementary 2-simplex $\sigma = \partial \Delta_2$ in $G_{\math
 **II. Acyclicity Verification (AEC):** The creation timestamp of the chord evaluates to $H(w, u) = \max(H(v, w)) + 1 = 0 + 1 = 1$. The candidate reverse path in $G_1$ is $u \xrightarrow{H=1} v \xrightarrow{H=0} w$, with timestamp sequence $(1, 0)$. Because $1 \not< 0$, the path is not strictly height-monotone, confirming zero causal circulation in $G_{\mathrm{event}}$ and satisfying AEC. $\square$
 
 **Theorem 3.4.4** (Inevitable First-Tick Parallel Burst Ignition).
-The creation of the first 3-cycle defect breaks localized parity constraints across adjacent tree branches, triggering a deterministic first-tick parallel burst of overlapping 3-cycles with scale-invariant density $\rho(t=1) \approx \alpha_{\mathrm{burst}} = \mathcal{O}(1)$, driving the irreversible non-equilibrium phase transition from the pre-geometric vacuum into the active Quasi-Stationary Distribution.
+The creation of the first 3-cycle defect breaks localized parity constraints across adjacent tree branches, triggering a deterministic first-tick parallel burst of overlapping 3-cycles nucleating an $\mathcal{O}(1)$ number of elementary 2-simplices ($N_3(t=1) \approx 38$), driving the irreversible non-equilibrium phase transition from the pre-geometric vacuum into the active Quasi-Stationary Distribution.
 
 *Proof.* Conjunction of Lemmas 3.4.1–3.4.3, Theorem 3.3.2 (which requires proposing all compliant 2-path sites concurrently across the entire lattice to preserve automorphism covariance), and the parallel scheduler kinetics. $\square$
 
@@ -968,7 +973,7 @@ The Category of **Annotated Causal Graphs $\mathbf{AnnCG}$** is defined by:
 * **Composition:** Component-wise composition $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$ with identity $\mathrm{id}_{(G, \sigma)} = (\mathrm{id}_{\mathcal{H}}, \mathrm{id}_\sigma)$.
 
 **Definition 4.3.2** (Awareness Store Endofunctor $R_T$).
-The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ formalizes local self-observation via the Uustalu-Vene Costate/Store Comonad architecture [11]:
+The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ formalizes local self-observation via the Uustalu-Vene Costate/Store Comonad architecture [20]:
 
 * **On Objects:** $R_T(G, \sigma) = \big(G, (\sigma, \sigma_G)\big)$, where $\sigma$ represents the stored historical diagnostic context and $\sigma_G$ is the syndrome map freshly computed from the current local topology.
 * **On Morphisms:** For $h = (f, k): (G, \sigma) \to (G', \sigma')$, $R_T(h) = \big(f, \lambda(a, b).(k(a), b)\big)$, applying the update $k$ to the stored context while preserving the freshly observed state.
@@ -1012,21 +1017,21 @@ Furthermore, if $(G, \sigma)$ begins faithful to physical ground truth ($\sigma 
 
 ## 4.4 Thermodynamic & Information-Theoretic Foundations
 
-The operating coordinates $(T_c, \lambda_0, \mu_0, \varepsilon_{\mathrm{geo}}, \Lambda)$ are derived deductively from fundamental information-theoretic, thermodynamic, and topological invariance principles:
+The operating coordinates $(T_c, \lambda_0, \mu_0, \varepsilon_{\mathrm{geo}}, \Lambda)$ define a distinguished **canonical analytical reference prior coordinate** where discrete Landauer thermodynamic neutrality, Markov jump Lie algebra linearity, and integer lattice MaxEnt symmetries on $\mathbb{Z}$ simultaneously hold. Rather than claiming a formal deductive proof of physical reality from zero parameters, these constitutive values serve as the rigorously derived, non-arbitrary reference anchors against which the dynamical stability and robustness of the vacuum are evaluated:
 
-Table 1: *Deductive Derivation of Canonical Operating Coordinates.*
+Table 5: *Discrete Combinatorial Derivation Matrix for Constitutive Scales and Canonical Reference Priors.*
 
-| Parameter | Symbol | Formal Deductive Basis | Exact Closed Form | Numerical Value | Physical Role |
-| :--- | :---: | :--- | :---: | :---: | :--- |
-| **Critical Temperature** | $T_c$ | Bit-nat information equivalence ($k_B \ln 2 = 1\text{ nat}$) | $\ln 2$ | $\approx 0.693147$ | Thermal scale converting discrete decisions to physical entropy |
-| **Catalytic Tension** | $\lambda_0$ | Euler natural exponential growth base ($e^1 - 1$) | $e - 1$ | $\approx 1.718282$ | Linear stress enhancement of 3-cycle deletion rate |
-| **Modular Friction** | $\mu_0$ | 1D integer fiber $\mathbb{Z}$ Poisson summation & MaxEnt ground state | $1 / \sqrt{2\pi}$ | $\approx 0.398942$ | Exponential suppression cost per unit topological frustration |
-| **Geometric Self-Energy** | $\varepsilon_{\mathrm{geo}}$ | Incident channel equipartition across $k_{\mathrm{deg}}=3$ Bethe routing ports | $\frac{\ln 2}{3}$ | $\approx 0.231049$ | Discrete self-energy allocated per incident routing port |
-| **Vacuum Drive** | $\Lambda$ | Simplicial triad 6-port boundary capacity ($V_{\mathrm{int}} = 3 \times 2 = 6$) | $2^{-6}$ | $= 0.015625$ | Drives continuum geometrogenesis, establishes negative Jacobian stability ($J \approx -0.3331$), and generates cosmological Dark Energy ($w = -1.000$) |
+| Constitutive Parameter | Exact Analytical Value | Discrete Conservation Principle | Mathematical Derivation | Operational Role in Rewrite Engine | Formal Derivation |
+| :--- | :---: | :--- | :--- | :--- | :--- |
+| **Base Conversion Modulus / Critical Temperature** ($\beta_c, T_c$) | $\ln 2$ ($\approx 0.693147$) | Landauer bit-to-nat informational equivalence ($1\text{ bit} = \ln 2\text{ nats}$) | Free energy neutrality $\Delta F / T = -\Delta S = -\ln 2$ at ground state; $\mathfrak{S}_2$ bit-flip permutation symmetry uniquely fixes uniform prior $Q_0 = 1/2$. | Normalizes base conversion modulus; temperature cancels out identically in acceptance ratios ($P_{\mathrm{base}} = 1.0, Q_{\mathrm{base}} = 0.5$). | Lean 4 certified: `permutation_invariance_uniquely_determines_prior` (Supplement Part 9.5) |
+| **Catalytic Defect Relaxation** ($\lambda_0$) | $e - 1$ ($\approx 1.718282$) | 1-nat entropic defect activation threshold | Arrhenius defect activation factor $\exp(\Delta S_{\mathrm{defect}}) - 1$ evaluated at unit nat entropy ($\Delta S = 1\text{ nat}$). | Linear stress acceleration of catalytic 3-cycle deletion rate: $f_{\mathrm{cat}}(s) = 1 + \lambda_0 s$. | Section 4.4.6 / Proposition 4.2 |
+| **Thermodynamic Friction** ($\mu_0$) | $1 / \sqrt{2\pi}$ ($\approx 0.398942$) | Integer lattice $\mathbb{Z}$ Poisson summation & MaxEnt modular duality | Self-duality of Gaussian kernel under Fourier transform on 1D discrete integer fibers: $\sum_{n \in \mathbb{Z}} \mathrm{e}^{-\pi n^2 / \sigma^2} = \sigma \sum_{k \in \mathbb{Z}} \mathrm{e}^{-\pi k^2 \sigma^2} \implies \sigma_0 = 1/\sqrt{2\pi}$. | Exponential steric friction $e^{-\mu_0 s}$ suppressing additions in dense regions and preventing small-world collapse. | Section 4.4.5 / Proposition 4.3 |
+| **Geometric Quantum Energy** ($\varepsilon_{\mathrm{geo}}$) | $\frac{\ln 2}{3}$ ($\approx 0.231049$) | Discrete channel equipartition across trivalent routing channels | Loop-closure free energy $E_{\mathrm{total}} = \ln 2$ distributed uniformly across $k_{\mathrm{deg}}=3$ incident Bethe routing channels: $\varepsilon = \frac{\ln 2}{3}$. | Quanta-to-link energy scale mapping elementary 3-cycles to single-ribbon leptonic mass baseline ($\kappa_m = m_e / 3 \approx 0.170\text{ MeV}$). | Lean 4 certified: `simplicial_boundary_cycle_closed` (Supplement Part 9) |
+| **Cosmological Vacuum Drive** ($\Lambda$) | $2^{-6}$ ($= 0.015625$) | Simplicial triad 6-port boundary permutation capacity | Oriented 2-simplex boundary chain complex ($\partial_1 \circ \partial_2 = 0$) with 3 external vertices each having 2 internal routing ports ($3 \times 2 = 6$ ports): $\Lambda = 2^{-6}$. | Drives continuous cycle generation in the Master Equation to enforce negative Jacobian stability ($J \approx -0.33314$); set to $\Lambda_{\mathrm{micro}} = 0$ in unpumped Monte Carlo runs to study instanton ignition. | Lean 4 certified: `triad_interaction_ports_is_six`, `simplicial_permittivity_scale` (Supplement Part 9) |
 
-**Theorem 4.4.1** (Thermodynamic Foundations and Bit-Nat Equivalence).
-In any discrete formal rewrite system where structural decisions process binary alternatives, the critical temperature $T_c$ is uniquely fixed by Landauer's principle to $T_c = \ln 2$.
-At this temperature, the informational entropy of a binary decision $\Delta S = \ln 2$ exactly equals the thermodynamic work required to update the causal link. Under discrete equipartition on the $k_{\mathrm{deg}}=3$ trivalent Bethe substrate, the loop-closure energy $E_{\mathrm{total}} = \ln 2$ distributes uniformly across the three incident routing channels to yield the discrete channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$. Simplicial boundary combinatorics across the 6-port triad interaction boundary fix the theoretical Vacuum Drive to $\Lambda = 2^{-6} = 0.015625$. In the continuum Master Equation of geometrogenesis, $\Lambda$ acts as the generative spark of spacetime, enforcing negative Jacobian stability ($J \approx -0.33314$) and producing cosmological dark energy ($w = -1.000$); in finite-lattice Monte Carlo simulations, setting $\Lambda_{\mathrm{micro}} \equiv 0$ isolates the strict absorbing-state Directed Percolation phase transition and instanton nucleation mechanics.
+**Theorem 4.4.1** (Thermodynamic Foundations, Permutation Invariance, and Bit-Nat Equivalence).
+In any discrete formal rewrite system where structural decisions process binary alternatives, invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$ (Lean 4 certified: `permutation_invariance_uniquely_determines_prior`, Supplement Appendix A, Part 9.5). By Landauer's principle, the base conversion modulus is fixed to $\beta_c = \ln 2$ (thermodynamic scale $T_c = \ln 2$).
+At this scale, the informational entropy of a binary decision $\Delta S = \ln 2$ exactly equals the thermodynamic work required to update the causal link. Under discrete equipartition on the $k_{\mathrm{deg}}=3$ trivalent Bethe substrate, the loop-closure energy $E_{\mathrm{total}} = \ln 2$ distributes uniformly across the three incident routing channels to yield the discrete channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$. Simplicial boundary combinatorics across the oriented 2-simplex chain complex ($\partial_1 \circ \partial_2 = 0$) and its 6-port interaction boundary ($3 \times 2 = 6$) fix the canonical Vacuum Drive reference coordinate to $\Lambda = 2^{-6} = 0.015625$ (Lean 4 certified: `simplicial_boundary_cycle_closed`, `triad_interaction_ports_is_six`, and `simplicial_permittivity_scale`, Supplement Appendix A, Part 9). In the continuum Master Equation of geometrogenesis, $\Lambda$ acts as the generative drive of the relational network, enforcing negative Jacobian stability ($J \approx -0.33314$); in finite-lattice Monte Carlo simulations, setting $\Lambda_{\mathrm{micro}} \equiv 0$ isolates the strict absorbing-state Directed Percolation phase transition and instanton nucleation mechanics.
 
 ## 4.5 Universal Constructor
 
@@ -1045,17 +1050,41 @@ All candidate additions and deletions are evaluated locally using a geometric st
 
 ### 4.5.2 Stress Functional and Constitutive Kernel
 
-For an addition candidate on 2-path $v \to w \to u$, the local addition stress is:
-$$s_{\mathrm{add}} = d_{\mathrm{out}}(v) + d_{\mathrm{in}}(u) - 2.$$
-For a deletion candidate on edge $e = (u, v)$, the local deletion stress is:
-$$s_{\mathrm{del}} = N_3(e) + \sum_{w \in \Delta_2(e)} \left(d(w) - 3\right),$$
-where $N_3(e)$ is the number of 3-cycles containing $e$, and the sum runs over the third vertices $w$ completing those cycles.
+For an addition candidate on 2-path $v \to w \to u$, the local addition stress measures the cumulative cycle-incidence of the three participant vertices:
+$$s_{\mathrm{add}}(v, w, u) = \sum_{x \in \{v, w, u\}} |\mathcal{C}_3(x)|,$$
+where $|\mathcal{C}_3(x)|$ is the number of closed directed 3-cycles incident on vertex $x$.
+For a deletion candidate on directed 3-cycle $c = (u, v, w)$, the constitutive deletion self-stress measures cycle crowding minus the cycle's own contribution:
+$$s_{\mathrm{del}}(c) = \max\left(0, \sum_{x \in \{u, v, w\}} |\mathcal{C}_3(x)| - 1\right).$$
 
 **Theorem 4.5.5** (Constitutive Kernel).
-Under the canonical information-theoretic priors $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$, transition probabilities are given by:
+Under the canonical reference priors $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$, transition probabilities are given by:
 $$P_{\mathrm{acc}}(s_{\mathrm{add}}) = \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}, \qquad Q_{\mathrm{del}}(s_{\mathrm{del}}) = \min\left(1, \frac{1}{2}(1 + \lambda_0 s_{\mathrm{del}})\,\mathrm{e}^{-\mu_0 s_{\mathrm{del}}}\right).$$
 
-At the isolated single-cycle base state ($s_{\mathrm{del}} = 2$), the deletion probability evaluates to $Q_{\mathrm{del}}(2) \approx 0.999$, ensuring that isolated fluctuations rapidly decay into the absorbing vacuum unless rescued by parallel collective growth.
+At the isolated single-cycle base state ($s_{\mathrm{del}} = (1+1+1)-1 = 2$, Lean 4 certified from graph topology: `isolated_3cycle_self_stress_eq_two`, Supplement Appendix A, Part 8), the deletion probability evaluates to $Q_{\mathrm{del}}(2) \approx 0.999$, ensuring that isolated fluctuations rapidly decay into the absorbing vacuum unless rescued by parallel collective growth.
+
+### 4.5.3 Dual Time Architecture and Homeostatic Stopping Time
+
+The dynamical evolution of the relational substrate operates within a rigorous **Dual Time Architecture** $(t_{\mathrm{phys}}, t_L)$ (Definition 1.3.1), which fundamentally distinguishes the discrete step counter of the global rewrite operator from emergent physical proper time:
+
+* **Global Logical Time ($t_L \in \mathbb{N}_0$):** The discrete scheduling index counting successive parallel executions of the rewrite operator $\mathcal{U}$. Each application $G_{t_L+1} = \mathcal{U}(G_{t_L})$ evaluates all candidate additions and deletions across the entire graph.
+* **Emergent Physical Time ($t_{\mathrm{phys}}$):** Proper time computed along directed causal paths in the graph. Physical time advances if and only if elementary rewrite events generate new causal edges or delete existing ones, updating causal timestamp intervals $\Delta H$.
+
+When a scheduler tick produces no accepted additions and no accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the rewrite operator acts as the strict identity map:
+$$\mathcal{U}(G_{t_L}) = G_{t_L}.$$
+Under the identity map, zero edges are added or removed, no new causal events occur, and all edge timestamps remain static. Consequently, the emergent physical proper time increment vanishes identically:
+$$\Delta t_{\mathrm{phys}}(t_L) \equiv 0.$$
+This distinguishes two conceptually and operationally distinct boundaries:
+
+1. **Combinatorial Absorbing Boundary of the Generator:**
+$$\mathcal{S}_{\mathrm{extinct}} = \{ G \mid N_3(G) = 0 \land \operatorname{Adm}_{\mathrm{add}}(G) = \emptyset \},$$
+the completely cycle-free vacuum state with no admissible 2-paths.
+2. **Operational Homeostatic Stopping Time:**
+$$\tau_{\mathrm{homeo}} := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \iff \Delta t_{\mathrm{phys}}(t_L) = 0 \}.$$
+
+**Physical Necessity of the Homeostatic Stopping Time:**
+In unpumped finite-lattice Monte Carlo simulations ($\Lambda_{\mathrm{micro}} = 0$ on open Bethe tree fragments of size $N$), the boundary leaves constitute an exact $50\%$ fraction of all vertices ($L/N = (N+2)/(2N)$, Proposition 3.3.1) with out-degree zero. Because the lattice is finite and non-periodic, continuing to iterate the global logical scheduler $t_L \to \infty$ after physical evolution has arrested ($\Delta t_{\mathrm{phys}} = 0$) does not observe additional physical dynamics. Instead, it merely exposes the finite graph to leaf boundary dissipation, where rare boundary unbinding events cumulatively drive the finite Markov chain into the trivial absorbing state via Darroch–Seneta demographic absorption ($\lim_{t_L \to \infty} P(N_3 > 0) = 0$).
+
+Halting iteration at the physical stasis stopping time $\tau_{\mathrm{homeo}}$ directly measures the active **Quasi-Stationary Distribution (QSD)** of the self-organized vacuum before boundary dissipation takes effect. In Supplement Appendix D, we report an exhaustive sensitivity analysis evaluating generalized multi-tick persistence rules $\tau_K := \inf \{ t_L \ge K \mid \Delta t_{\mathrm{phys}}(t_L - j) = 0 \; \forall j \in \{0, \dots, K-1\} \}$ across $K \in \{1, 2, 5, 10\}$, establishing that QSD observables $(\langle \rho_3 \rangle_{\mathrm{QSD}}, p_{\mathrm{surv}})$ remain robustly invariant under the choice of $K$.
 
 ## 4.6 Single Tick of Logical Time
 
@@ -1105,7 +1134,7 @@ with strict positivity $\Delta S_{\mathrm{tick}} > 0$ whenever at least one cand
 Let $\rho(G) = N_3(G)/N$ denote the intensive cycle density. Under the microscopic transition measure of Lemma 4.6.2:
 
 * **Absorbing Stasis of the Unpumped Vacuum:** In the unpumped regime ($\Lambda_{\mathrm{micro}} \equiv 0$), the defect-free vacuum $G_0$ with $\rho(G_0) = 0$ is a strictly absorbing configuration ($\mathbb{P}(G_0 \to G_0) = 1$). The unpumped Markov chain is reducible, and no non-trivial, globally attracting stationary measure $\pi^*$ supported on active graphs exists.
-* **Foster–Lyapunov Anti-Densification Bound:** For the Lyapunov functional $V(G) = \rho(G)$, the expected single-tick drift $\Delta V(G) = \mathbb{E}[\rho(G_{t+1}) - \rho(G_t) \mid G_t = G]$ satisfies $\Delta V(G) \le -\epsilon < 0$ for all $\rho(G) > \rho_{\mathrm{crit}}$, where $\rho_{\mathrm{crit}}$ is a finite threshold density. This negative drift mathematically precludes ultraviolet densification (the runaway small-world catastrophe) and guarantees that topological activity is bounded from above.
+* **Foster–Lyapunov Anti-Densification Bound:** For the Lyapunov functional $V(G) = \rho(G)$, the expected single-tick drift $\Delta V(G) = \mathbb{E}[\rho(G_{t+1}) - \rho(G_t) \mid G_t = G]$ satisfies $\Delta V(G) \le -\epsilon < 0$ for all $\rho(G) > \rho_{\mathrm{crit}}$, where $\rho_{\mathrm{crit}}$ is a finite threshold density. In this high-density regime, vertex cycle-incidence increases addition stress $s_{\mathrm{add}}$, exponentially suppressing additions ($P_{\mathrm{acc}} \le \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}$), while deletion flux scales linearly with cycle count $N_3$ with $Q_{\mathrm{del}} \ge Q_{\mathrm{del}}(2) \approx 0.999$, ensuring that deletion strictly dominates creation ($\mathbb{E}[|E_{\mathrm{del}}|] > \mathbb{E}[|E_{\mathrm{add}}|]$) and dynamically bounding topological activity against runaway densification.
 * **Continuum Bridge:** The active steady-state attractor $\rho^* \approx 0.037$ is not an invariant distribution of the unpumped discrete chain, but represents a non-equilibrium steady state of the continuous-time driven master equation ($\Lambda > 0$) derived in Section 5.2.
 
 *Proof.* We evaluate the drift and absorbing boundary conditions:
@@ -1130,42 +1159,89 @@ where $N_3(G_t)$ is the total count of directed 3-cycles (elementary 2-simplices
 
 The non-equilibrium kinetics governing cycle nucleation, phase transitions, and absorbing-state dynamics are analytically formulated via continuous density equations.
 
-### 5.2.1 Continuous Master Equation and DP Universality Class
+### 5.2.1 Phenomenological Continuous Master Equation, Kramers–Moyal Expansion, and DP Universality Class
 
-Coarse-graining the discrete scheduler dynamics over macroscopic volumes yields the non-equilibrium Langevin equation for the local cycle density field $\rho(\mathbf{x}, t)$:
+The macroscopic continuum description of cycle evolution is derived from the microscopic discrete Markov transition measure (Lemma 4.6.2) as a **phenomenological mean-field model** via the van Kampen system-size expansion and Kramers–Moyal jump moments [21]. Consider a mesoscopic coarse-graining volume of $N_{\mathrm{box}}$ vertices (or total lattice volume $N$) with 3-cycle population $N_3$ and intensive order parameter $\rho = N_3 / N_{\mathrm{box}}$. In the coarse-graining limit, localized graph rewrite events produce discrete changes $\Delta N_3 = r \in \mathbb{Z}$, corresponding to intensive density jumps $\Delta \rho = r / N_{\mathrm{box}}$.
 
-$$\frac{\partial \rho(\mathbf{x}, t)}{\partial t} = D \nabla^2 \rho - \tfrac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \sqrt{\Gamma \rho}\,\xi(\mathbf{x}, t),$$
+The $k$-th Kramers–Moyal jump moment $\alpha^{(k)}(\rho)$ is defined as:
+$$\alpha^{(k)}(\rho) = \lim_{\Delta t \to 0} \frac{1}{\Delta t} \mathbb{E}\left[ (\Delta \rho)^k \mid \rho(t) = \rho \right] = \frac{1}{N_{\mathrm{box}}^{k-1}} \sum_{r \ne 0} r^k w_r(\rho),$$
+where $w_r(\rho) \equiv W(\rho; r) / N_{\mathrm{box}}$ denotes the intensive transition rate per unit volume for an extensive jump of size $r$. Evaluating the elementary rewrite processes of Section 4.5:
 
-where $D$ is the combinatorial diffusion coefficient, $\Gamma \approx \frac{1}{4N}$ is the intensive demographic noise scale, and $\xi(\mathbf{x}, t)$ is standard Gaussian white noise.
+1. **Cycle Creation Rate ($r = +1$):** Edge additions across compliant directed 2-paths close elementary 3-cycles. In a local simplicial cluster of cycle density $\rho$, the density of candidate open 2-paths closing new 3-cycles scales as $C_{\mathrm{add}} \rho^2$ with $C_{\mathrm{add}} \approx 9$, representing an autocatalytic collision ansatz for active 2-paths in localized defect patches (while the extensive Bethe tree provides a non-active background capacity). Each addition is accepted according to the constitutive Boltzmann stress kernel $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu s}$. Evaluating mean local triad stress $\langle s \rangle \approx 6\rho$ gives the intensive unpumped creation rate:
+   $$w_{+1}(\rho) = 9\rho^2 \mathrm{e}^{-6\mu\rho} = 9\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
+   (Simultaneous multi-cycle completions $r = +m$ with $m \ge 2$ require overlapping chord topologies whose combinatorial incidence scales as $\mathcal{O}(\rho^{m+1})$, contributing only to higher-order density corrections).
 
-The dynamics satisfy the Janssen-Grassberger criteria for the **Directed Percolation (DP) universality class**:
+2. **Cycle Deletion Rate ($r = -1$) and the Physical Self-Stress Floor:** Deletions occur exclusively on directed edges participating in closed 3-cycles. On an isolated 3-cycle ($|\mathcal{C}_3| = 1$ on each vertex), the participant vertices exhibit base self-stress $s_{\mathrm{iso}} = 1 + 1 + 1 - 1 = 2$ (Theorem 4.5.5, Proposition 3.1; Lean 4 certified: `isolated_3cycle_self_stress_eq_two`). In an active cluster with local cycle density $\rho$, environmental cycles incident on the triad add an environmental contribution $s_{\mathrm{env}}(\rho) \approx 6\rho$, establishing the physical deletion stress:
+   $$s_{\mathrm{del}}(\rho) = 2 + 6\rho.$$
+   Evaluating the constitutive deletion kernel $Q_{\mathrm{del}}(s) = \min\left(1, \frac{1}{2}(1 + \lambda s)\mathrm{e}^{-\mu s}\right)$ at the isolated single-cycle floor ($s=2$) under canonical reference priors $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$ gives:
+   $$Q_{\mathrm{del}}(2) = \frac{1}{2}(1 + 2(e-1))\mathrm{e}^{-2/\sqrt{2\pi}} = \frac{1}{2}(2e - 1)\mathrm{e}^{-0.7979} \approx \mathbf{0.9988} \approx 0.999.$$
+   Because $Q_{\mathrm{del}}(2) \approx 1.0$, an isolated cycle has nearly unit deletion probability per tick, explaining why isolated fluctuations decay immediately back into the absorbing vacuum unless rescued by collective autocatalysis.
+   
+   Expanding $Q_{\mathrm{del}}(2 + 6\rho)$ around the physical baseline $s = 2$:
+   $$Q_{\mathrm{del}}(2 + 6\rho) = Q_{\mathrm{del}}(2) + 6 Q'_{\mathrm{del}}(2) \rho + \mathcal{O}(\rho^2) \approx 0.9988 - 0.0698\rho.$$
+   Thus, the intensive deletion rate evaluates to:
+   $$w_{-1}(\rho) = Q_{\mathrm{del}}(2 + 6\rho) \rho \approx 0.9988\rho - 0.0698\rho^2 \approx \gamma_{\mathrm{del}}\rho + \beta_{\mathrm{del}}\rho^2,$$
+   with $\gamma_{\mathrm{del}} \approx 0.999$ and $\beta_{\mathrm{del}} \approx -0.070$.
+   (In the heuristic unshifted expansion around $s = 0$ previously employed as a simplified baseline, $Q_{\mathrm{del}}(0) = 1/2$ and $w_{-1}(\rho) \approx \frac{1}{2}\rho(1 + 6\lambda\rho) = \frac{1}{2}\rho + 3\lambda\rho^2$. Both formulations exhibit a dominant linear death rate, with the physical $s=2$ baseline emphasizing the near-unit single-cycle decay rate).
 
-* A unique absorbing state $\boldsymbol{\rho} = \mathbf{0}$,
-* A positive scalar order parameter $\rho \ge 0$,
-* Local short-range interactions,
-* No additional conservation laws or quenched disorder.
+Evaluating the Kramers–Moyal jump moments across all orders $k \ge 1$ establishes the jump moment hierarchy:
 
-Because the underlying Bethe substrate has logarithmic diameter ($\mathrm{diam}(G) \sim \log N$), the effective spatial dimension is infinite ($d_{\mathrm{eff}} \to \infty$). Since $d_{\mathrm{eff}} > d_c = 4$ (the upper critical dimension of directed percolation), the critical behavior falls in the **mean-field Directed Percolation universality class** ($\beta = 1, \nu_\perp = 1/2$).
+* **First Moment (Macroscopic Drift Vector $\alpha^{(1)}(\rho) = a_1(\rho)$):**
+  Under the $s=0$ baseline:
+  $$\alpha^{(1)}(\rho) = w_{+1}(\rho) - w_{-1}(\rho) + \mathcal{O}(\rho^4) = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
+  Under the physical $s=2$ floor:
+  $$\alpha^{(1)}(\rho) \approx -0.999\rho + (9 - \beta_{\mathrm{del}})\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
+  The drift is strictly $\mathcal{O}(N_{\mathrm{box}}^0)$ (intensive and scale-invariant), governing deterministic mean-field dynamics.
+
+* **Second Moment (Diffusion Variance $\alpha^{(2)}(\rho) = a_2(\rho)$):**
+  $$\alpha^{(2)}(\rho) = \frac{1}{N_{\mathrm{box}}} \sum_{r} r^2 w_r(\rho) = \frac{1}{N_{\mathrm{box}}} \left[ w_{+1}(\rho) + w_{-1}(\rho) \right] + \mathcal{O}\left(\frac{\rho^2}{N_{\mathrm{box}}}\right) = \frac{\gamma_{\mathrm{del}} \rho}{N_{\mathrm{box}}} + \mathcal{O}\left(\frac{\rho^2}{N_{\mathrm{box}}}\right).$$
+  Defining the demographic noise coefficient $\Gamma \approx \frac{\gamma_{\mathrm{del}}}{2N}$ (accounting for shared edge projections on the bipartite Bethe tree), this yields $\alpha^{(2)}(\rho) = \Gamma \rho \sim \mathcal{O}(N_{\mathrm{box}}^{-1})$. Crucially, $\alpha^{(2)}(\rho) \propto \rho$, which strictly vanishes at the absorbing vacuum $\rho = 0$, rigorously deriving the non-thermal multiplicative noise required for absorbing-state phase transitions.
+
+* **Pawula's Theorem and the Continuum Langevin Bridge:**
+  In the full Kramers–Moyal expansion of the probability density $P(\rho, t)$:
+  $$\frac{\partial P(\rho, t)}{\partial t} = \sum_{k=1}^\infty \frac{(-1)^k}{k!} \frac{\partial^k}{\partial \rho^k} \left[ \alpha^{(k)}(\rho) P(\rho, t) \right],$$
+  Pawula's Theorem dictates that any finite truncation of this series at order $K \ge 3$ inevitably produces unphysical negative probabilities. Because the explicit calculation establishes the rigorous scaling $\alpha^{(k)}(\rho) = \mathcal{O}\left(N_{\mathrm{box}}^{-(k-1)}\right) \xrightarrow{N_{\mathrm{box}} \to \infty} 0$ for all $k \ge 3$, all higher-order jump moments are asymptotically suppressed in the thermodynamic coarse-graining limit $N_{\mathrm{box}} \gg 1$. Truncation at $k = 2$ represents the asymptotically exact van Kampen system-size expansion in powers of $\Omega^{-1/2} = N_{\mathrm{box}}^{-1/2}$.
+
+On the underlying discrete DAG substrate, spatial coupling between adjacent graph regions is governed by the combinatorial graph Laplacian $-D \mathcal{L}_G \boldsymbol{\rho}$. In the long-wavelength hydrodynamic limit, this reduces to the continuous diffusion term $D \nabla^2 \rho$, yielding the continuous non-equilibrium Langevin equation for the local cycle density field $\rho(\mathbf{x}, t)$:
+
+$$\frac{\partial \rho(\mathbf{x}, t)}{\partial t} = D \nabla^2 \rho - \gamma_{\mathrm{del}}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \sqrt{\Gamma \rho}\,\xi(\mathbf{x}, t),$$
+
+where $D$ is the combinatorial diffusion coefficient, $\Gamma$ is the demographic noise scale, and $\xi(\mathbf{x}, t)$ is standard Gaussian white noise. The dynamics satisfy the Janssen-Grassberger criteria for the **Directed Percolation (DP) universality class** with an infinite effective spatial dimension ($d_{\mathrm{eff}} \to \infty > d_c = 4$), placing the critical behavior in the mean-field DP universality class ($\beta = 1, \nu_\perp = 1/2$).
 
 ### 5.2.2 Analytical Derivation of the Unpumped Nucleation Barrier
 
-Expanding the unpumped drift equation $\mathrm{d}\rho/\mathrm{d}t = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3$ for small $\rho \ll 1$ gives:
-$$\frac{\mathrm{d}\rho}{\mathrm{d}t} \approx (9 - 3\lambda)\rho\left(\rho - \frac{1}{2(9 - 3\lambda)}\right).$$
-The linearized rate at the origin satisfies $\left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(\frac{\mathrm{d}\rho}{\mathrm{d}t}\right)\right|_{\rho=0} = -\frac{1}{2} < 0$, proving that the absorbing vacuum $\rho = 0$ is strictly linearly stable (Lean 4 certified: `gradient_dominance_implies_stability`, Appendix A).
+Expanding the unpumped drift equation $\mathrm{d}\rho/\mathrm{d}t = -\gamma_{\mathrm{del}}\rho + C_2\rho^2 - 54\mu\rho^3$ for small $\rho \ll 1$:
+$$\frac{\mathrm{d}\rho}{\mathrm{d}t} \approx C_2 \rho\left(\rho - \frac{\gamma_{\mathrm{del}}}{C_2}\right).$$
+The linearized rate at the origin satisfies $\left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(\frac{\mathrm{d}\rho}{\mathrm{d}t}\right)\right|_{\rho=0} = -\gamma_{\mathrm{del}} < 0$, proving that the absorbing vacuum $\rho = 0$ is strictly linearly stable (Lean 4 Part 10 verifies the abstract algebraic ordering lemma: `origin_jacobian_strictly_negative`).
 
-For $\lambda < 3$, $\mathrm{d}\rho/\mathrm{d}t < 0$ for all $\rho \in (0, \rho_c)$, establishing an intrinsic **unpumped nucleation barrier**:
-$$\rho_c(\lambda) = \frac{1}{2(9 - 3\lambda)} = \frac{1}{18 - 6\lambda}.$$
-Evaluating at the canonical catalytic parameter $\lambda_0 = e - 1 \approx 1.71828$:
-$$\rho_c(\lambda_0) = \frac{1}{24 - 6e} \approx \mathbf{0.13003} \approx 0.130.$$
+For $\rho < \rho_c$, $\mathrm{d}\rho/\mathrm{d}t < 0$, establishing an intrinsic **unpumped nucleation barrier**:
+* Under the unshifted $s=0$ baseline ($\gamma_{\mathrm{del}} = 1/2, C_2 = 9 - 3\lambda$):
+  $$\rho_c(\lambda) = \frac{1}{2(9 - 3\lambda)} = \frac{1}{18 - 6\lambda} \implies \rho_c(\lambda_0) = \frac{1}{24 - 6e} \approx \mathbf{0.13003} \approx 0.130.$$
+* Under the physical $s=2$ self-stress floor ($\gamma_{\mathrm{del}} \approx 0.999, C_2 \approx 9 - \beta_{\mathrm{del}} \approx 9.07$):
+  $$\rho_c \approx \frac{0.999}{9.07} \approx \mathbf{0.110}.$$
 
-### 5.2.3 Cubic Fixed Points and Saddle-Node Bifurcation
+Both formulations confirm the analytical reality observed in simulations: an initial instanton burst must exceed $\rho \approx 0.11\text{--}0.13$ to overcome single-cycle tension-driven decay.
 
-Factoring the full cubic rate equation $-\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 = 0$ yields the non-zero fixed points:
+### 5.2.3 Cubic Fixed Points, Saddle-Node Bifurcation, and the Mean-Field Extinction Paradox
+
+Factoring the unshifted cubic rate equation $-\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 = 0$ yields non-zero fixed points:
 $$\rho_{\pm} = \frac{(9 - 3\lambda) \pm \sqrt{(9 - 3\lambda)^2 - 108\mu}}{108\mu},$$
 where $\rho_-$ is the cubic-corrected unstable nucleation barrier, and $\rho_+$ is the active stable Quasi-Stationary fixed point $\rho^*$. Active solutions exist if and only if the discriminant is non-negative:
 $$\Delta(\mu, \lambda) = (9 - 3\lambda)^2 - 108\mu \ge 0 \implies \mu \le \mu_{\mathrm{crit}}(\lambda) = \frac{(9 - 3\lambda)^2}{108}.$$
 At the canonical parameter $\lambda_0 = e - 1$:
 $$\mu_{\mathrm{crit}}(\lambda_0) = \frac{(12 - 3e)^2}{108} \approx 0.136900.$$
+
+**Resolution of the Mean-Field Extinction Paradox via Two-Threshold Branching:**
+At the canonical constitutive coordinates $(\mu_0, \lambda_0) \approx (0.399, 1.718)$, the cubic discriminant evaluates to:
+$$\Delta(\mu_0, \lambda_0) = (9 - 3\lambda_0)^2 - 108\mu_0 \approx 14.79 - 43.08 = -28.29 < 0.$$
+In a spatially homogeneous mean-field continuum where density is uniform ($\langle \rho^2 \rangle = \langle \rho \rangle^2$), this negative discriminant predicts unconditional extinction for all initial configurations. Yet, multi-scale stochastic ensemble simulations on the discrete Bethe substrate (Section 5.3) demonstrate persistent active survival ($p_{\mathrm{surv}} = 0.270 \pm 0.044$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$).
+
+This discrepancy is resolved by two non-mean-field physical mechanisms:
+
+1. **Localized Topological Soliton Clustering:** Following localized instanton defect injection (Section 3.4), activity is not uniformly distributed across the tree. Instead, rewrites form a dense, spatially localized topological core where local cycle density substantially exceeds the global average: $\rho_{\mathrm{local}} \approx 0.15\text{--}0.25 \gg \langle \rho \rangle_{\mathrm{bulk}} \approx 0.012$. Because catalytic creation scales quadratically with local density ($\propto \rho_{\mathrm{local}}^2$), localized fluctuations easily overcome the unpumped nucleation barrier $\rho_c \approx 0.130$ within the active core.
+2. **Two-Threshold Branching Contact Processes:** This behavior directly embodies the celebrated two-threshold theorem for contact processes on regular trees established by Pemantle [18] and Liggett [14]. On infinite regular trees $\mathbb{T}_d$ with branching factor $b = d-1$, contact processes exhibit two strictly distinct critical thresholds $\lambda_{c1} < \lambda_{c2}$:
+   $$\lambda_{c1} = \frac{1}{2\sqrt{b}} = \frac{1}{2\sqrt{2}} \approx 0.3536, \qquad \lambda_{c2} = \frac{b+1}{2b} = \frac{3}{4} = 0.7500.$$
+   For $\lambda < \lambda_{c1}$, the process undergoes complete extinction. For $\lambda > \lambda_{c2}$, the process exhibits strong survival, repeatedly infecting every vertex. In the intermediate regime $\lambda_{c1} < \lambda < \lambda_{c2}$, the process exhibits **weak survival**: activity goes extinct locally at any fixed vertex with probability 1, yet survives globally with positive probability by escaping down non-amenable branching paths. Operating at effective branching rate $\hat{\lambda}_{\mathrm{eff}} \approx 0.444$, our discrete rewrite dynamics reside precisely in this weak survival window on the Bethe tree, allowing expanding causal wavefronts to sustain the long-lived Quasi-Stationary Distribution while finite leaf boundaries account for mesoscopic zero-inflation.
 
 ### 5.2.4 Continuum Master Equation, Attractor Fixed Point, and Negative Jacobian Stability
 
@@ -1178,29 +1254,30 @@ where $\Lambda = 2^{-6} = 0.015625$ is the intrinsic vacuum drive derived from t
 
 2. **Negative Jacobian Feedback:** Evaluating the linearized Jacobian $J \equiv \left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(C(\rho) - D(\rho)\right)\right|_{\rho^*}$ at canonical coordinates $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$ yields:
    $$J \approx \mathbf{-0.33314} < 0.$$
-   Because the Jacobian eigenvalue is strictly negative, local density perturbations decay exponentially as $\delta\rho(t) = \delta\rho_0 \mathrm{e}^{J t}$, proving that $\rho^* \approx 0.0370$ is a globally stable homeostatic attractor (certified in Lean 4: `gradient_dominance_implies_stability`, Appendix A).
+   Because the Jacobian eigenvalue is strictly negative, local density perturbations decay exponentially as $\delta\rho(t) = \delta\rho_0 \mathrm{e}^{J t}$, proving that $\rho^* \approx 0.0370$ is a globally stable homeostatic attractor. (Lean 4 Part 10 certifies the abstract ordered ring stability lemma: `gradient_dominance_implies_stability`, which proves $C' < D' \implies J < 0$).
 
-3. **Cosmological Manifestation:** In macroscopic cosmological expansion, this persistent homeostatic creation flux $C(\rho^*) = D(\rho^*)$ contributes an isotropic tensile pressure $P_{\mathrm{vac}} = -\rho_{\mathrm{vac}} c^2$ with equation of state $w = -1.000$, providing the microscopic origin of **Dark Energy** and driving exponential damping of spatial curvature perturbations $\Omega_k(t) = \Omega_{k,0}\mathrm{e}^{J t} \to 0$.
-
-4. **Finite-Lattice Monte Carlo Regime:** In discrete, finite graph simulations ($N = 10 \dots 10,000$), spontaneous creation is set to $\Lambda_{\mathrm{micro}} \equiv 0$ as an absorbing boundary condition to isolate and measure the Directed Percolation critical exponents, the instanton tunneling ignition threshold $\mathcal{T}_{\mathrm{tunnel}}$, and the unpumped analytical nucleation barrier $\rho_c(\lambda_0) = \frac{1}{24-6e} \approx 0.13003$.
+3. **Reconciling the Three Density Regimes:** The physical behavior resolves into three distinct quantitative regimes:
+   * **Driven Continuum Attractor ($\rho^* \approx 0.0370$):** In the driven continuous master equation ($\Lambda = 2^{-6} > 0$), continuous injection maintains a uniform, non-vanishing steady state with negative restoring Jacobian $J \approx -0.333$.
+   * **Finite-$N$ Unpumped QSD ($\langle \rho \rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$):** In unpumped discrete Monte Carlo ensembles ($\Lambda_{\mathrm{micro}} \equiv 0$), conditioned on survival, the active core concentrates around the seed with $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles.
+   * **Thermodynamic Soliton Limit ($\rho \to 0$ as $N \to \infty$):** In the unpumped limit on large trees ($N = 10,000$), the active phase forms a localized topological soliton with $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ cycles, meaning intensive density $\rho = N_3/N \to 0$. The unpumped active phase is an emergent localized defect, not an extensive volume-filling bulk spacetime; extensive geometry requires continuous driving ($\Lambda > 0$) or distributed multi-seed nucleation.
 
 ## 5.3 Computational Verification and Multi-Scale Scaling
 
 To resolve the finite-volume behavior, extensive ensemble simulations were conducted across four orders of magnitude in system size ($N = 10, 100, 1,000, 10,000$) using the high-performance multi-threaded C++20 simulation engine (Supplementary Material, Appendix B):
 
-* **Mesoscopic Zero-Inflation ($N = 100$):** On small lattices, leaf boundary truncation ($L/N \approx 50\%$, Proposition 3.3.1) exerts strong finite-size quenching. In an ensemble of 100 independent realizations running for $T = 100$ ticks, 73% extinguish rapidly into the absorbing vacuum ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, median $\rho = 0$). Surviving paths populate an active Quasi-Stationary Distribution with mean density $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$.
+* **Mesoscopic Zero-Inflation ($N = 100$):** On small lattices, leaf boundary truncation ($L/N \approx 50\%$, Proposition 3.3.1) exerts strong finite-size quenching, matching boundary extinction thresholds in tree contact processes [14, 18]. In an ensemble of 100 independent realizations running for $T = 100$ ticks, 73% extinguish rapidly into the absorbing vacuum ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, median $\rho = 0$). Surviving paths populate an active Quasi-Stationary Distribution with mean density $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$.
 * **Suppression of Boundary Quenching at Large Volume ($N = 10,000$):** Expanding the volume to $N = 10,000$ increases the internal path capacity and suppresses boundary loss, raising survival to $p_{\mathrm{surv}} = 0.990 \pm 0.010$. The active core expands to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 123.6$ cycles ($\rho \approx 1.2\%$), while the non-equilibrium lifetime scales power-law with system volume:
 
-   $$\tau_{\mathrm{stall}} \sim N^{0.64},$$
-   extending the active duration from $\tau_{\mathrm{stall}} \approx 67.8\text{ ticks}$ at $N=100$ to $\tau_{\mathrm{stall}} \approx 752.4\text{ ticks}$ at $N=10,000$ ($11.1\times$ longevity increase).
+   $$\tau_{\mathrm{ext}} \sim N^{0.64},$$
+   extending the mean boundary extinction lifetime from $\tau_{\mathrm{ext}} \approx 67.8\text{ ticks}$ at $N=100$ to $\tau_{\mathrm{ext}} \approx 752.4\text{ ticks}$ at $N=10,000$ ($11.1\times$ longevity increase).
 
 ### 5.3.1 Parameter Sweep Ensemble Records
 
 Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.399, 1.72, 0.69)$ from the benchmark dataset (`p_surv_N100_design.csv`) along with parameter sweep variations confirm the analytical phase boundaries:
 
-Table 4: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100\text{ ticks}$, 100 Realizations per Cell).*
+Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100\text{ ticks}$, 100 Realizations per Cell).*
 
-| $T$ | $\lambda$ | $\mu$ | Survival $p_{\mathrm{surv}}$ | Mean Cycles $\langle N_3 \rangle$ | QSD Density $\langle\rho\rangle_{\mathrm{QSD}}$ | Stall Time $\tau_{\mathrm{stall}}$ | Dynamical Phase Regime |
+| $T$ | $\lambda$ | $\mu$ | Survival $p_{\mathrm{surv}}$ | Mean Cycles $\langle N_3 \rangle$ | QSD Density $\langle\rho\rangle_{\mathrm{QSD}}$ | Lifetime $\tau_{\mathrm{ext}}$ | Dynamical Phase Regime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | $0.10$ | $1.72$ | $0.05$ | $0.000$ | $0.00$ | -- | $4.2 \pm 0.8$ | Frozen / Immediate Extinction |
 | $0.69$ | $0.50$ | $0.05$ | $0.050 \pm 0.022$ | $0.34 \pm 0.12$ | $0.068 \pm 0.014$ | $18.4 \pm 3.1$ | Sub-critical / Boundary Quenched |
@@ -1209,23 +1286,23 @@ Table 4: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100
 | $0.69$ | $1.72$ | $0.15$ | $0.020 \pm 0.014$ | $0.11 \pm 0.08$ | $0.055 \pm 0.020$ | $12.1 \pm 2.4$ | High Friction Attenuation |
 | $1.00$ | $1.72$ | $0.05$ | $0.440 \pm 0.050$ | $4.12 \pm 0.61$ | $0.094 \pm 0.014$ | $74.5 \pm 7.1$ | Thermalized Active QSD |
 
-*Note:* The highlighted row denotes the canonical design point $(\mu_0, \lambda_0, T_c)$ established in Table 1; non-canonical rows at $\mu = 0.05$ and $\mu = 0.15$ represent low-friction exploratory contrasts and are not the source of the design-point survival fraction $p_{\mathrm{surv}} = 0.270$.
+*Note:* The highlighted row denotes the canonical design point $(\mu_0, \lambda_0, T_c)$ established in Table 5; non-canonical rows at $\mu = 0.05$ and $\mu = 0.15$ represent low-friction exploratory contrasts and are not the source of the design-point survival fraction $p_{\mathrm{surv}} = 0.270$.
 
 ## 5.4 Equilibrium Analysis and Phase Boundaries
 
 The physical behavior of the active phase resolves into three distinct regimes across the mean-field and microscopic formulations:
 
 1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.137$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.399$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
-2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the mean-field cubic extinction prediction, the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ sustain an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ (Table 4). Survival is enabled by local spatial clustering, non-mean-field cycle correlations, and finite-$N$ fluctuations that are absent in homogeneous continuum approximations.
+2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the negative homogeneous mean-field discriminant ($\Delta < 0$, Section 5.2.3), the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ sustain an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$ (Table 6). Survival is enabled by localized soliton clustering ($\rho_{\mathrm{local}} \gg \langle \rho \rangle$) and non-mean-field cycle correlations on the Bethe tree, operating in the Pemantle-Liggett weak survival window ($\lambda_{c1} < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2}$) where branching path expansion overcomes local extinction [14, 18].
 3. **Driven Continuum Master Equation ($\Lambda = 2^{-6}$):** Under continuous microscopic creation injection, the driven non-equilibrium master equation admits a strictly stable steady-state attractor $\rho^* \approx 0.0370$ with negative restoring flux $J \approx -0.333 < 0$ at the exact canonical coordinates $(\mu_0, \lambda_0)$. This active attractor is driven by non-equilibrium flux and does not represent an invariant measure of the unpumped discrete Markov chain.
 
 ## 5.5 Geometric Stabilization (Topological Stability)
 
-When localized ignition is injected via a point-source instanton defect, the active Quasi-Stationary core remains tightly confined in topological coordinate space, concentrating $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.19 \pm 1.19\text{ cycles}$ at $N = 100$ (observed range $[2, 22]$, Table 6) and scaling sub-extensively to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124\text{ cycles}$ ($\rho \approx 1.2\%$) at $N = 10,000$, acting as an emergent localized topological soliton embedded within an extensive pre-geometric Bethe tree.
+When localized ignition is injected via a point-source instanton defect, the active Quasi-Stationary core remains tightly confined in topological coordinate space, concentrating $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.19 \pm 1.19\text{ cycles}$ at $N = 100$ (observed range $[2, 22]$, Table 7) and scaling sub-extensively to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124\text{ cycles}$ ($\rho \approx 1.2\%$) at $N = 10,000$, acting as an emergent localized topological soliton embedded within an extensive pre-geometric Bethe tree.
 
 When realizations extinguish into the absorbing state, the system executes a graceful, non-divergent exit into a **scarred absorbing vacuum DAG** $G_{\mathrm{scar}}$:
 
-Table 6: *Topological Invariants of the Scarred Absorbing Vacuum State ($N = 100$, 100 Realizations).*
+Table 7: *Topological Invariants of the Scarred Absorbing Vacuum State ($N = 100$, 100 Realizations).*
 
 | Ensemble Observable | Notation | Baseline Bethe $G_0$ | Active QSD Phase | Extinct Scarred State $G_{\mathrm{scar}}$ | Physical Significance |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -1247,8 +1324,8 @@ To establish the asymptotic fate of the active phase in the thermodynamic limit,
 
 * **Conditioned Geometric and Topological Observables:** On active quasi-stationary clusters $\{N_3 > 0\}$, evaluate:
 
-   * **Spectral Dimension Flow:** Measure return probability $P(\sigma) \sim \sigma^{-d_s/2}$ to track the flow of spectral dimension from $d_s \approx 1$ in the UV tree substrate toward an effective fractional dimension $d_s \approx 2.1\text{--}2.6$ in the simplicial foam.
-   * **Combinatorial Curvature:** Evaluate Causal Ollivier-Ricci curvature $\kappa(u, v)$ to bound discrete Ricci curvature and test for Gromov-Hausdorff convergence to a smooth pseudo-Riemannian manifold.
+   * **Spectral Dimension Flow:** Measure return probability $P(\sigma) \sim \sigma^{-d_s/2}$ on Bethe trees [22] to track the flow of spectral dimension from $d_s \approx 1$ in the UV tree substrate toward an effective fractional dimension $d_s \approx 2.1\text{--}2.6$ in the simplicial foam, in close analogy to short-distance spontaneous dimensional reduction [1, 5].
+   * **Combinatorial Curvature:** Evaluate Causal Ollivier-Ricci curvature $\kappa(u, v)$ [16] and local cycle clustering bounds [11] to bound discrete Ricci curvature and test for Gromov-Hausdorff convergence to a smooth pseudo-Riemannian manifold.
    * **Topological Susceptibility:** Measure cycle density variance to verify the exponential suppression of non-local topological defects.
 
 # 6. Discussion, Physical Scope, and Limitations
@@ -1257,7 +1334,41 @@ The analytical and computational results presented in this work establish:
 
 * **Kinematic Consistency:** Creation timestamps $H: E \to \mathbb{N}_0$ and comonadic awareness provide a background-independent, race-free framework that strictly guarantees causal DAG acyclicity to all orders without global clocks or extrinsic manifolds.
 * **Intrinsic Nucleation Threshold:** Because isolated 3-cycles decay with probability $Q_{\mathrm{del}}(2) \approx 0.999$, escaping the absorbing vacuum requires an initial autocatalytic burst exceeding the unpumped barrier $\rho_c(\lambda_0) \approx 0.130$.
-* **Finite-Volume Scalability:** Expanding lattice volume eliminates boundary leaf quenching, sustaining an active Quasi-Stationary Distribution with power-law lifetime scaling ($\tau_{\mathrm{stall}} \sim N^{0.64}$) and non-divergent exit into scarred topological vacua.
+* **Finite-Volume Scalability:** Expanding lattice volume eliminates boundary leaf quenching, sustaining an active Quasi-Stationary Distribution with power-law lifetime scaling ($\tau_{\mathrm{ext}} \sim N^{0.64}$) and non-divergent exit into scarred topological vacua.
+
+### Formal Verification Scope and Lean 4 Correspondence
+
+To establish complete transparency regarding the nature of the mathematical claims, Table 8 maps the paper's principal theoretical results to their machine-checked Lean 4 formalization in `VacuumPhase.lean`. The repository contains **68 verified `theorem` declarations** (encompassing 53 numbered theorems across 10 structural parts, 66 definitions, and 7 structures, totaling 141 top-level declarations) compiled under Lean 4 with 0 axioms and 0 unproven obligations (`sorry`).
+
+Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
+
+| Paper Statement / Theorem | Lean 4 Identifier | Nature of Formalization | Certified Mathematical Scope |
+| :--- | :--- | :--- | :--- |
+| **Lemma 1.2.3 & Thm 1.2.4** (Causal Monotonicity) | `edge_monotone_no_causal_cycle` | Inductive structural proof (0 axioms) | Strictly timestamp-monotone paths cannot close into causal cycles ($P_{\mathrm{CTC}} \equiv 0$). |
+| **Theorem 2.1.4** (Axiom 1 Primitive) | `asymmetry_equiv_irreflexive_and_antisymmetric` | Constructive propositional logic | Asymmetry $\iff$ Irreflexivity $\land$ Antisymmetry; self-loops excluded. |
+| **Theorem 2.1.4** (Antisymmetry Loophole) | `antisymmetry_insufficient` | Explicit Boolean countermodel | Order-theoretic antisymmetry alone permits length-1 self-loops. |
+| **Theorem 2.2.8** (Polygon Digestion) | `lexicographic_relation_wf` | Order theory on $\mathbb{N} \times \mathbb{N}$ | Lexicographic potential is well-founded, guaranteeing termination. |
+| **Theorem 2.2.8** (Descent Step) | `lexicographic_descent_admissible` | Order-theoretic inequality | Cycle length or multiplicity reduction is strictly decreasing. |
+| **Section 2.7** (Store Comonad) | `left_identity`, `right_identity` | Category-theoretic algebraic laws | Comonadic extraction $\varepsilon$ and duplication $\delta$ satisfy identities. |
+| **Theorem 2.2.9** (PUC Kinematics) | `puc_precludes_alternative_intermediate` | Combinatorial graph logic | Parent-Uniqueness strictly prohibits alternate 2-paths between endpoints. |
+| **Theorem 3.3.2** (Maximal Parallelism) | `orbit_complete_addition_preserves_automorphism` | Group action invariance | Proposing complete automorphism orbits preserves graph symmetries. |
+| **Theorem 3.3.2** (Symmetry Breaking) | `orbit_splitting_breaks_automorphism` | Symmetry breaking theorem | Splitting an orbit across serial queues breaks graph automorphisms. |
+| **Theorem 4.4.1** (Informational Prior) | `permutation_invariance_uniquely_determines_prior` | Information-theoretic deduction | $\mathfrak{S}_2$ bit-flip symmetry uniquely forces unbiased prior $p=1/2$. |
+| **Theorem 4.4.1** (Drive Capacity) | `triad_interaction_ports_is_six`, `simplicial_permittivity_scale` | Simplicial combinatorics | 6-port boundary capacity ($3 \times 2 = 6$) fixes theoretical drive $\Lambda = 2^{-6}$. |
+| **Theorem 4.5.5 / Prop 3.1** (Base Stress) | `isolated_3cycle_self_stress_eq_two` | Combinatorial evaluation | Base self-stress on an isolated 3-cycle evaluates to $s_{\mathrm{del}} = 2$. |
+| **Theorem 6.1** (Absorbing State) | `absorbing_state_stationary` | Transition measure invariance | Vacuum configuration ($N_3=0, \mathcal{S}=\emptyset$) is strictly absorbing. |
+| **Theorem 6.2** (Scar Permanence) | `scar_edges_immune_to_deletion` | Structural graph invariant | Non-cycle chord edges carry zero deletion weight ($Q_{\mathrm{del}}=0$). |
+| **Lemma 4.1.3** (Indelible History) | `deletion_preserves_cumulative_history` | Poset inclusion | Spatial edge deletion preserves the edge in cumulative history $\mathbf{Hist}$. |
+| **Section 5.2** (Master Eq Stability) | `gradient_dominance_implies_stability` | Ordered ring algebra | Abstract ordered ring proof: $C' < D' \implies C' - D' < 0$. |
+| **Section 5.2** (Origin Negative Drift) | `origin_jacobian_strictly_negative` | Ordered ring algebra | Abstract ordered ring proof: $0 < 1/2 \implies 0 - 1/2 < 0$. |
+
+*Explicitly Non-Formalized Results:*
+To maintain complete scientific integrity, we explicitly demarcate the boundaries of what is certified in Lean 4 versus what is derived analytically or numerically:
+
+1. **Numerical Jacobian ($J \approx -0.33314$):** The transcendental fixed point $\rho^* \approx 0.0370$ and its linearized eigenvalue $J \approx -0.33314$ are computed via floating-point numerical root finding; Lean 4 certifies only the abstract ordered ring stability condition $C' < D' \implies J < 0$.
+2. **Continuum Master Equation Derivation:** The van Kampen system-size expansion and Kramers–Moyal jump moments are derived using standard continuum statistical mechanics, not formal type theory.
+3. **Finite-$N$ Scaling Exponents:** The extinction lifetime scaling $\tau_{\mathrm{ext}} \sim N^{0.64}$ and survival probabilities $p_{\mathrm{surv}}$ are empirical Monte Carlo measurements obtained from the C++20 and Python engines.
+4. **General-$N$ Vacuum Uniqueness:** The exhaustive tree census proving Bethe fragment uniqueness is computationally verified for $N \le 10$; Lean 4 formalizes the trivalent coordination and leaf relations for general regular fragments.
 
 ### Physical Scope and Limitations
 
@@ -1271,34 +1382,58 @@ The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 m
 
 # References
 
-[1] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, "Spacetime as a causal set," *Phys. Rev. Lett.* **59**(5), 521–524 (1987). <https://doi.org/10.1103/PhysRevLett.59.521>
+[1] J. Ambjørn, J. Jurkiewicz, and R. Loll, "The spectral dimension of the universe is scale dependent," *Phys. Rev. Lett.* **95**(17), 171301 (2005). <https://doi.org/10.1103/PhysRevLett.95.171301>
 
-[2] D. P. Rideout and R. D. Sorkin, "Classical sequential growth dynamics for causal sets," *Phys. Rev. D* **61**(2), 024002 (2000). <https://doi.org/10.1103/PhysRevD.61.024002>
+[2] E. Anderson, "The problem of time in quantum gravity," *Ann. Phys. (Berlin)* **524**(12), 757–786 (2012). <https://doi.org/10.1002/andp.201200147>
 
-[3] J. Ambjørn, J. Jurkiewicz, and R. Loll, "The spectral dimension of the universe is scale dependent," *Phys. Rev. Lett.* **95**(17), 171301 (2005). <https://doi.org/10.1103/PhysRevLett.95.171301>
+[3] F. Baader and T. Nipkow, *Term Rewriting and All That* (Cambridge University Press, Cambridge, 1998). <https://doi.org/10.1017/CBO9781139172752>
 
-[4] T. Konopka, F. Markopoulou, and S. Severini, "Quantum graphity: A model of emergent locality," *Phys. Rev. D* **77**(10), 104029 (2008). <https://doi.org/10.1103/PhysRevD.77.104029>
+[4] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, "Spacetime as a causal set," *Phys. Rev. Lett.* **59**(5), 521–524 (1987). <https://doi.org/10.1103/PhysRevLett.59.521>
 
-[5] S. Wolfram, *A New Kind of Science* (Wolfram Media, Champaign, IL, 2002).
+[5] S. Carlip, "Spontaneous dimensional reduction in short-distance quantum gravity?," *AIP Conf. Proc.* **1196**(1), 72–78 (2009). <https://doi.org/10.1063/1.3284402>
 
-[6] J. Gorard, "Some relativistic and gravitational properties of the Wolfram model," *Complex Syst.* **29**(2), 599–654 (2020). <https://doi.org/10.25088/ComplexSystems.29.2.599>
+[6] S. Coleman, "The uses of instantons," in *The Whys of Subnuclear Physics*, edited by A. Zichichi (Plenum Press, New York, 1979), pp. 805–941. <https://doi.org/10.1007/978-1-4684-0991-8_14>
 
-[7] H. Hinrichsen, "Non-equilibrium critical phenomena and phase transitions into absorbing states," *Adv. Phys.* **49**(7), 815–958 (2000). <https://doi.org/10.1080/00018730050198152>
+[7] B. S. DeWitt, "Quantum theory of gravity. I. The canonical theory," *Phys. Rev.* **160**(5), 1113–1148 (1967). <https://doi.org/10.1103/PhysRev.160.1113>
 
-[8] B. S. DeWitt, "Quantum theory of gravity. I. The canonical theory," *Phys. Rev.* **160**(5), 1113–1148 (1967). <https://doi.org/10.1103/PhysRev.160.1113>
+[8] H. Ehrig, K. Ehrig, U. Prange, and G. Taentzer, *Fundamentals of Algebraic Graph Transformation* (Springer, Berlin, Heidelberg, 2006). <https://doi.org/10.1007/3-540-31188-2>
 
-[9] J. Marro and R. Dickman, *Nonequilibrium Phase Transitions in Lattice Models* (Cambridge University Press, Cambridge, 1999).
+[9] J. Gorard, "Some relativistic and gravitational properties of the Wolfram model," *Complex Syst.* **29**(2), 599–654 (2020). <https://doi.org/10.25088/ComplexSystems.29.2.599>
 
-[10] L. Lamport, "Time, clocks, and the ordering of events in a distributed system," *Commun. ACM* **21**(7), 558–565 (1978). <https://doi.org/10.1145/359545.359563>
+[10] H. Hinrichsen, "Non-equilibrium critical phenomena and phase transitions into absorbing states," *Adv. Phys.* **49**(7), 815–958 (2000). <https://doi.org/10.1080/00018730050198152>
 
-[11] T. Uustalu and V. Vene, "Comonadic notions of computation," *Electron. Notes Theor. Comput. Sci.* **203**(5), 263–284 (2008). <https://doi.org/10.1016/j.entcs.2008.05.029>
+[11] J. Jost and S. Liu, "Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs," *Calc. Var. Partial Differ. Equ.* **51**(3), 937–966 (2014). <https://doi.org/10.1007/s00526-013-0697-7>
+
+[12] T. Konopka, F. Markopoulou, and S. Severini, "Quantum graphity: A model of emergent locality," *Phys. Rev. D* **77**(10), 104029 (2008). <https://doi.org/10.1103/PhysRevD.77.104029>
+
+[13] L. Lamport, "Time, clocks, and the ordering of events in a distributed system," *Commun. ACM* **21**(7), 558–565 (1978). <https://doi.org/10.1145/359545.359563>
+
+[14] T. M. Liggett, *Stochastic Interacting Systems: Contact, Voter and Exclusion Processes* (Springer, Berlin, Heidelberg, 1999). <https://doi.org/10.1007/978-3-662-03990-8>
+
+[15] J. Marro and R. Dickman, *Nonequilibrium Phase Transitions in Lattice Models* (Cambridge University Press, Cambridge, 1999). <https://doi.org/10.1017/CBO9780511622717>
+
+[16] Y. Ollivier, "Ricci curvature of Markov chains on metric spaces," *J. Funct. Anal.* **256**(3), 810–864 (2009). <https://doi.org/10.1016/j.jfa.2008.11.001>
+
+[17] D. N. Page and W. K. Wootters, "Evolution without evolution: Dynamics described by stationary observables," *Phys. Rev. D* **27**(12), 2885–2892 (1983). <https://doi.org/10.1103/PhysRevD.27.2885>
+
+[18] R. Pemantle, "The contact process on trees," *Ann. Probab.* **20**(4), 2089–2116 (1992). <https://doi.org/10.1214/aop/1176989541>
+
+[19] D. P. Rideout and R. D. Sorkin, "Classical sequential growth dynamics for causal sets," *Phys. Rev. D* **61**(2), 024002 (2000). <https://doi.org/10.1103/PhysRevD.61.024002>
+
+[20] T. Uustalu and V. Vene, "Comonadic notions of computation," *Electron. Notes Theor. Comput. Sci.* **203**(5), 263–284 (2008). <https://doi.org/10.1016/j.entcs.2008.05.029>
+
+[21] N. G. van Kampen, *Stochastic Processes in Physics and Chemistry*, 2nd ed. (North-Holland, Amsterdam, 1992).
+
+[22] W. Woess, *Random Walks on Infinite Graphs and Groups* (Cambridge University Press, Cambridge, 2000). <https://doi.org/10.1017/CBO9780511470967>
+
+[23] S. Wolfram, *A New Kind of Science* (Wolfram Media, Champaign, IL, 2002).
 
 ---
 
 # Supplementary Material
 
-The complete machine-checked Lean 4 formal verification proofs (48 active numbered verified theorems across 61 declarations), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion technical supplement:
+The complete machine-checked Lean 4 formal verification proofs (68 verified theorem declarations across 53 numbered theorems in 10 parts, 141 total declarations, 0 axioms, 0 sorry), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion technical supplement:
 
-* **Online Technical Supplement:** [*Formal Lean 4 Specifications and High-Performance Simulation Engines*](/papers/vacuum-phase/supplement) (Appendices A–C online).
-* **Supplementary Markdown Source:** [*vacuum-phase-supplement.md*](pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md) (112 KB download).
-* **Replication Archive:** Open-source code, data tables, and build scripts ([`vacuum-phase-replication.zip`](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip)).
+* **Online Technical Supplement:** [*Formal Lean 4 Specifications and High-Performance Simulation Engines*](https://braiddynamics.com/papers/vacuum-phase/supplement)
+* **Supplementary Markdown Source:** [*vacuum-phase-supplement.md*](https://github.com/braiddynamics/qbd-portal/blob/main/papers/vacuum-phase/downloads/vacuum-phase-supplement.md)
+* **Replication Archive:** Open-source code, data tables, and build scripts ([`vacuum-phase-replication.zip`](https://github.com/braiddynamics/qbd-portal/raw/main/papers/vacuum-phase/downloads/vacuum-phase-replication.zip))

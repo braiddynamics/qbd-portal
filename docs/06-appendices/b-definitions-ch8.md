@@ -1484,7 +1484,7 @@ $$
 E_{nat} = T_{vac} \Delta S_{bit}
 $$
 
-With the vacuum temperature $T_{vac} = \ln 2$ **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
+With the vacuum temperature $T_{vac} = \ln 2$ **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
 
 **II. Dimensional Normalization**
 The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
@@ -2089,7 +2089,7 @@ Section 8.6.6.1 formalizes the properties of the QBD proof regarding sensitivity
 :::
 
 **I. Ignition and VEV**
-The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$ under **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
+The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$ under **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />.
 
 **II. Goldstone Breaking**
 Broken $SU(2) \times U(1)$ roots produce three Goldstone modes $T^{1,2}$ and $T^3 - \tan \theta_W Y$. These manifest as zero-modes in the stabilizer subgroup $\text{Stab}(\rho_3^*)$ preserving 3-cycle density. Counting rewrite-invariant orbits under the comonad $R_T$ (**Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />) results in $\dim(\text{Stab}_{\text{broken}}) = 3$. These modes are absorbed into $W^\pm$ and $Z$ longitudinal components, with error propagation satisfying the bounds derived in **Sensitivity and Error Propagation** <Ref id="8.6.6" label="§8.6.6" />.

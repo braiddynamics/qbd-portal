@@ -31,9 +31,9 @@ def measure_local_geometric_stress(G: nx.DiGraph, node_set: Set[int]) -> int:
         if not cycle_nodes.isdisjoint(node_set): stress_count += 1
     return stress_count
 
-def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float, stress_map: Dict[int, int]) -> Set[Tuple[Tuple[int, int], int]]:
+def _calculate_add_proposals(G: nx.DiGraph, mu: float, stress_map: Dict[int, int]) -> Set[Tuple[Tuple[int, int], int]]:
     proposals_add = set()
-    P_THERMO_ADD = 1.0 # Exact from T=ln2
+    P_BASE_ADD = 1.0 # Jaynes MaxEnt on boolean edge space
     for v in G.nodes():
         for w in G.successors(v):
             for u in G.successors(w):
@@ -46,6 +46,6 @@ def _calculate_add_proposals(G: nx.DiGraph, T: float, mu: float, stress_map: Dic
                 base_neighborhood = {v, w, u}
                 stress_count = sum(stress_map.get(node, 0) for node in base_neighborhood)
                 f_friction = math.exp(-mu * stress_count)
-                P_acc = f_friction * P_THERMO_ADD
+                P_acc = f_friction * P_BASE_ADD
                 if random.random() < P_acc: proposals_add.add(((u, v), H_new))
     return proposals_add

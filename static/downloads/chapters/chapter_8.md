@@ -1860,7 +1860,7 @@ $$
 E_{nat} = T_{vac} \Delta S_{bit}
 $$
 
-With the vacuum temperature $T_{vac} = \ln 2$ **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
+With the vacuum temperature $T_{vac} = \ln 2$ **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
 
 **II. Dimensional Normalization**
 The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
@@ -2358,7 +2358,7 @@ Q.E.D.
 :::info[**Validation of Boson Masses through Vacuum Density Scaling**]
 :::
 
-The **Boson Mass Prediction** <Ref id="8.6.3" label="§8.6.3" /> validates the entire chain of logic by comparing the predicted W and Z boson masses to experiment. The derivation uses *no free parameters* tuned to these masses; it uses only the vacuum density $\rho^*$ (derived from friction) and the geometric constants ($\alpha_{topo}, M$). This parameter-free prediction is the hallmark of a constrained geometric theory, distinct from the effective field theory approach where masses are renormalized inputs. The agreement suggests that the vacuum density operates as a fundamental constant of nature, akin to the role of the cosmological constant in the thermodynamic derivation of Einstein's equations by <Cite id="A.36" label="(Jacobson, 1995)" />, setting the scale for all inertial phenomena.
+The **Boson Mass Prediction** <Ref id="8.6.3" label="§8.6.3" /> validates the entire chain of logic by comparing the predicted W and Z boson masses to experiment. The derivation uses *no free parameters* tuned to these masses; it uses only the vacuum density $\rho^*$ (derived from friction) and the geometric constants ($\alpha_{topo}, M$). This constrained geometric prediction is the hallmark of a topological theory, distinct from the effective field theory approach where masses are renormalized inputs. The agreement suggests that the vacuum density operates as a fundamental constant of nature, akin to the role of the cosmological constant in the thermodynamic derivation of Einstein's equations by <Cite id="A.36" label="(Jacobson, 1995)" />, setting the scale for all inertial phenomena.
 
 The result, agreement within $\approx 1.7\%$, is a triumph. It suggests that the masses of the weak bosons are not random numbers but are set by the geometric saturation of the vacuum. The Z boson is heavier than the W precisely because of the Weinberg angle factor, which we also derived topologically. The error bars correspond to the natural statistical fluctuations of the vacuum density in our simulations, implying that the "constants" of nature may have a tiny, intrinsic jitter due to the discrete nature of spacetime.
 
@@ -2559,7 +2559,7 @@ The covariance between the coupling $g$ and the VEV $v$ (both depend on $\rho^*$
 :::
 
 **I. Ignition and VEV**
-The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$ under **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Bit-Nat Equivalence** <Ref id="4.4.2" label="§4.4.2" />.
+The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$ under **Dimensionful VEV Scaling** <Ref id="8.6.4" label="§8.6.4" />. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />.
 
 **II. Goldstone Breaking**
 Broken $SU(2) \times U(1)$ roots produce three Goldstone modes $T^{1,2}$ and $T^3 - \tan \theta_W Y$. These manifest as zero-modes in the stabilizer subgroup $\text{Stab}(\rho_3^*)$ preserving 3-cycle density. Counting rewrite-invariant orbits under the comonad $R_T$ (**Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />) results in $\dim(\text{Stab}_{\text{broken}}) = 3$. These modes are absorbed into $W^\pm$ and $Z$ longitudinal components, with error propagation satisfying the bounds derived in **Sensitivity and Error Propagation** <Ref id="8.6.6" label="§8.6.6" />.

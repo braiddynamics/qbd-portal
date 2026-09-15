@@ -251,10 +251,10 @@ export default function Home() {
                       ) : (
                         <>
                           <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.2rem', textAlign: 'justify' }}>
-                            Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity that models the cosmos without free parameters. Using only discrete events and causal links, QBD bridges gaps between the Wolfram Physics Project, Causal Set Theory, and Causal Dynamical Triangulations.
+                            Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity anchored to discrete combinatorial symmetries and conservation principles. Using only discrete events and causal links, QBD bridges gaps between the Wolfram Physics Project, Causal Set Theory, and Causal Dynamical Triangulations.
                           </p>
                           <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
-                            By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from first principles. This form was chosen for auditability, ensuring ideas become pure logic that can be parsed, while producing a physical theory that is unambiguous and well defined, whose meaning is fully determined by its internal logic.
+                            By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from discrete graph-theoretic foundations. This form was chosen for auditability, ensuring ideas become pure logic that can be parsed, while producing a physical theory that is unambiguous and well defined, whose meaning is fully determined by its internal logic.
                           </p>
                         </>
                       )}

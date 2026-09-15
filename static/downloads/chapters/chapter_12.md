@@ -666,12 +666,14 @@ where:
 
 ### 12.2.1.1 Commentary: From Scalars to Tensors {#12.2.1.1}
 
-:::info[**Physical Interpretation of the Averaging Procedure**]
+:::info[**Physical Interpretation of the Averaging Procedure and the 1D Adjoint Kernel Obstruction**]
 :::
 
 How do we turn a number (scalar) into a shape (tensor)? In the discrete graph, gravity and flux are just numbers on edges. But in General Relativity, they are geometric objects that tell spacetime how to curve in different directions.
 
-The Tensorial Averaging Map performs this alchemy by exploiting **Directional Statistics**. Imagine the edge scalar $\mathcal{S}_e$ as the "intensity" of a signal traveling along the edge. The term $(\hat{n}_e)_i (\hat{n}_e)_j$ acts as a geometric filter: it measures how much of that edge lies along the $i$-th and $j$-th coordinate axes. By summing these contributions over a mesoscopic ball containing billions of edges pointing in all directions, we reconstruct the *ellipsoid* that best describes the local intensity distribution. This ellipsoid is the tensor. If the edge scalars are isotropic (equal in all directions), the ellipsoid is a sphere, and we recover a tensor proportional to the metric $g_{ij}$. If they are biased, we recover the stress-energy tensor's anisotropic components.
+A foundational mathematical obstacle (formalized by Jonathan Gorard 2020 and proved in Lean 4 as `general_adjoint_kernel_is_one_dimensional`) is that on any weakly connected discrete graph rewriting system, the adjoint generator's collision invariant subspace is strictly one-dimensional: $\operatorname{ker}(\mathcal{L}^\dagger) = \operatorname{span}\{\mathbf{1}\}$. Discrete graph rewrite transitions admit no non-trivial vector or tensor collision invariants. Consequently, any attempt to close a hydrodynamic tensor hierarchy at the discrete level fails. The continuum tensors $G_{\mu\nu}$ and $T_{\mu\nu}$ cannot exist at the graph edge scale; they emerge exclusively via coarse-grained mesoscopic spatial averaging $\mathcal{A}_R$ over geodesic balls.
+
+The Tensorial Averaging Map performs this transition by exploiting **Directional Statistics**. Imagine the edge scalar $\mathcal{S}_e$ as the "intensity" of a signal traveling along the edge. The term $(\hat{n}_e)_i (\hat{n}_e)_j$ acts as a geometric filter: it measures how much of that edge lies along the $i$-th and $j$-th coordinate axes. By summing these contributions over a mesoscopic ball containing billions of edges pointing in all directions, we reconstruct the *ellipsoid* that best describes the local intensity distribution. This ellipsoid is the tensor. If the edge scalars are isotropic (equal in all directions), the ellipsoid is a sphere, and we recover a tensor proportional to the metric $g_{ij}$. If they are biased, we recover the stress-energy tensor's anisotropic components.
 
 ### 12.2.1.2 Diagram: Coarse Graining {#12.2.1.2}
 
@@ -1585,3 +1587,17 @@ Gilbarg and Trudinger present a definitive and thorough treatment of classical e
 
 **Relevance to QBD:**
 This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+
+---
+
+### 79. **Gorard, J. (2020).** {#A.79}
+**"Some Relativistic and Gravitational Properties of the Wolfram Model"**
+- *Complex Systems*, 29(2), 599-654
+    * **Link:** [https://doi.org/10.25088/ComplexSystems.29.2.599](https://doi.org/10.25088/ComplexSystems.29.2.599)
+
+
+**Overview:**
+Gorard analyzes the mathematical properties of multiway causal graphs and rewrite systems, establishing connections between causal invariance, discrete differential geometry, and the Einstein field equations. In particular, he investigates the convergence of discrete causal graphs to continuous pseudo-Riemannian spacetimes and explores the spectral properties of graph rewrite generators.
+
+**Relevance to QBD:**
+Gorard's analysis establishes the critical adjoint kernel theorem formalized in Chapter 12 and Chapter 13: on weakly connected discrete state spaces, the kernel of the adjoint generator is strictly 1-dimensional ($\ker(\mathcal{L}^\dagger) = \operatorname{span}\{\mathbf{1}\}$). This rules out non-trivial tensor collision invariants at the discrete level and explains why naive discrete moment expansions cannot close a tensor hydrodynamic hierarchy. In QBD, this obstruction is resolved by deriving the field equations via the scalar variational action on the category of histories and modular entanglement equilibrium.

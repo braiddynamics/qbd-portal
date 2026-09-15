@@ -1461,10 +1461,10 @@ Let the temperature anisotropy field $\Theta(\hat{n})$ on the celestial sphere b
 
 **II. The Logic Chain**
 
-1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_\mathcal{R}(k) = A_s (k/k_0)^{n_s - 1}$:
+1. **Multipole Integral Representation:** The angular power spectrum $C_\ell$ is given by the line-of-sight integral over primordial curvature perturbations $\mathcal{P}_{\mathcal{R}}(k) = A_s (k/k_0)^{n_s - 1}$:
 
 $$
-C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_\mathcal{R}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
+C_\ell = 4\pi \int_0^\infty \frac{\mathrm{d}k}{k} \mathcal{P}_{\mathcal{R}}(k) \left| [\Theta_0 + \Psi](k, \eta_*) j_\ell(k D_M) + \frac{v_b(k, \eta_*)}{c} j_\ell'(k D_M) \right|^2 \mathcal{D}^2(k)
 $$
 
 2. **Spherical Bessel Peak Projection:** In the geometric limit, the spherical Bessel function $j_\ell(k D_M)$ peaks sharply at $k \approx \ell / D_M$ **Angular Acoustic Metric Projection** <Ref id="20.2.4" label="§20.2.4" />. Substituting $k = \ell / D_M$ converts the spatial acoustic phase $k r_s(z_*)$ into the angular multipole phase:
@@ -3813,7 +3813,7 @@ The demonstration of the Matter Power Spectrum Evolution synthesized here unites
 
 **II. The Synthesis Logic**
 
-Combining the primordial power spectrum $\mathcal{P}_\mathcal{R}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
+Combining the primordial power spectrum $\mathcal{P}_{\mathcal{R}}(k) \propto k^{n_s - 1}$ with the composite transfer function $T(k)$ and linear growth factor $D(z)$ establishes the universal matter power spectrum across four decades in scale ($k \in [10^{-4}, 10^1] h\text{ Mpc}^{-1}$). The power spectrum exhibits:
 - The Harrison-Zeldovich linear scaling $P(k) \propto k^{n_s}$ on super-equality scales ($k < k_{\text{eq}} \approx 0.0167 h\text{ Mpc}^{-1}$).
 - The peak at $k_{\text{eq}}$ corresponding to the matter-radiation equality horizon.
 - The Mészáros-suppressed tail $P(k) \propto k^{n_s - 4}\ln^2(k)$ on sub-horizon scales ($k > k_{\text{eq}}$).
