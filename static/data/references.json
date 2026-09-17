@@ -192,10 +192,10 @@
     "relevance": "QBism provides the epistemological backing for how quantum measurement is modeled in Chapter 4. In QBD, the update operator represents an active observation event that resolves relational quantum possibilities into concrete causal history. Citing Fuchs justifies why we treat these measurement events not as external perturbations, but as the fundamental relational update cycles of the universe."
   },
   "A.25": {
-    "author": "Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).",
-    "title": "The Page-Wootters mechanism in canonical quantum gravity",
-    "publication": "Classical and Quantum Gravity, 40(12), 125008",
-    "url": "https://arxiv.org/abs/0809.4235",
+    "author": "Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).",
+    "title": "Conditional probabilities with Dirac observables and the problem of time in quantum gravity",
+    "publication": "Physical Review D, 79(4), 041501(R)",
+    "url": "https://doi.org/10.1103/PhysRevD.79.041501",
     "overview": "Gambini and his co-authors present a rigorous application of the Page-Wootters mechanism to canonical quantum gravity. They show that relational time can be successfully constructed within a fully stationary quantum state of the universe by computing conditional probabilities between the states of a physical clock and a target system.",
     "relevance": "The Page-Wootters mechanism is the conceptual precursor to the relational time formulation developed in Chapter 14. In QBD, the universe is described by a global stationary state where physical time emerges from the entanglement between the clock graph and the system graph. Citing this paper establishes the relational validity of this clock mechanism, proving that time emerges naturally without a background coordinate system."
   },

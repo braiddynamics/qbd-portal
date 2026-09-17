@@ -2721,6 +2721,19 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 
 ---
 
+### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
+**"Graph Theory"**
+    * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
+
+
+**Overview:**
+Bondy and Murty present a modern, graduate-level textbook on graph theory. They cover connectivity, matchings, independent sets, graph colorings, and topological graph theory. Their work provides a thorough and comprehensive collection of tools used to analyze discrete relational networks.
+
+**Relevance to QBD:**
+This textbook serves as the standard reference for all graph-theoretic operations conducted across the monograph. Whether analyzing the path length between vertices in Chapter 11 or evaluating the cycle structure of braids in Chapter 6, the theorems and notations of Bondy and Murty ensure that our discrete derivations are mathematically sound.
+
+---
+
 ### 38. **Jones, V. F. R. (1985).** {#A.38}
 **"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
@@ -2744,6 +2757,20 @@ Kitaev introduces the toric code, a revolutionary quantum error-correcting code 
 
 **Relevance to QBD:**
 Kitaev's toric code is the foremost conceptual model for the stabilizer-protected graph structures developed in Chapter 10. We leverage his insights to prove that our tripartite braid configurations are stable under local rewrite noise. Kitaev's treatment establishes the topological quantum computing structure used to model our particles as stable qubits in the causal graph.
+
+---
+
+### 61. **Sachs, H. (1962).** {#A.61}
+**"Über selbstkomplementäre Graphen"**
+- *Publicationes Mathematicae Debrecen*, 9, 270-288
+    * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
+
+
+**Overview:**
+Sachs presents the foundational work on self-complementary graphs, which are graphs that are isomorphic to their own complement. He derives key algebraic properties and structural constraints that govern the distribution of edges in these graphs, establishing precise bounds on their cycle structure.
+
+**Relevance to QBD:**
+This reference is necessary for the tripartite braid audits conducted in Chapter 6. We model the stable particle braids using self-complementary topological configurations. Sachs's structural constraints confirm that these self-complementary configurations are protected from untying by local graph updates, supporting the stability of fermions.
 
 ---
 

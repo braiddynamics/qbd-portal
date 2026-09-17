@@ -2081,6 +2081,46 @@ Having derived the local, microscopic field equations, we must now recover the f
 \newpage
 # References
 
+### 7. **Ashtekar, A. (1986).** {#A.7}
+**"New Variables for Classical and Quantum Gravity"**
+    * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244)
+
+
+**Overview:**
+Ashtekar introduces a new set of canonical variables for general relativity, mapping the theory's phase space to that of a Yang-Mills gauge theory. This reformulation simplifies the constraints of classical gravity and lays the foundation for Loop Quantum Gravity by expressing the spatial geometry in terms of loops and connections.
+
+**Relevance to QBD:**
+Ashtekar variables provide the direct inspiration for how spatial geometry can be encoded in connection-like loops within a discrete graph. In Chapter 13, the discrete field equations are formulated by defining connection variables along the edges of the causal graph. Ashtekar's treatment of canonical gravity traces the historical and algebraic link between continuous general relativity and our discrete, loop-based gauge formulations.
+
+---
+
+### 19. **Cheeger, J., Colding, T. H., & Tian, G. (1997).** {#A.19}
+**"On the singularities of spaces with bounded Ricci curvature"**
+    * **Link:** [https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84](https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84)
+
+
+**Overview:**
+Cheeger, Colding, and Tian analyze the structure of singularities in limit spaces of Riemannian manifolds with bounded Ricci curvature. They prove that these limit spaces, though singular, possess tightly constrained geometric properties, specifically regarding their tangent cones and the Hausdorff dimension of their singular sets.
+
+**Relevance to QBD:**
+In Chapter 13, we must analyze the singular behavior of the discrete geometry when local graph densities fluctuate. Cheeger's analysis of singular limit spaces is used to prove that the emergent discrete spacetime remains stable and does not develop uncontrollable geometric singularities, ensuring that physical observables remain finite and well-defined even at the smallest scales.
+
+---
+
+### 29. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.29}
+**"Elliptic Partial Differential Equations of Second Order"**
+- *Springer*
+    * **Link:** [https://link.springer.com/book/10.1007/978-3-642-61798-0](https://link.springer.com/book/10.1007/978-3-642-61798-0)
+
+
+**Overview:**
+Gilbarg and Trudinger present a definitive and thorough treatment of classical elliptic partial differential equations. They cover maximum principles, Sobolev spaces, Schauder estimates, and existence theorems, supplying the standard analytical tools used to analyze smooth geometric operators.
+
+**Relevance to QBD:**
+This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+
+---
+
 ### 36. **Jacobson, T. (1995).** {#A.36}
 **"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
@@ -2091,6 +2131,71 @@ Jacobson derives the Einstein field equations of general relativity directly fro
 
 **Relevance to QBD:**
 Jacobson's emergent gravity derivation is a key physical pillar for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are shown to emerge from the thermodynamic equilibrium of the vacuum graph. Jacobson's results underpin our interpretation of gravity as a macroscopic equation of state, confirming that the curvature of spacetime arises from localized information entropy.
+
+---
+
+### 39. **Jost, J., & Liu, S. (2016).** {#A.39}
+**"Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs"**
+    * **Link:** [https://arxiv.org/abs/1103.4037](https://arxiv.org/abs/1103.4037)
+
+
+**Overview:**
+Jost and Liu analyze Ollivier's definition of Ricci curvature on discrete graphs, proving that it correlates with the graph's local clustering coefficient. They derive key curvature-dimension inequalities that govern how diffusion processes behave on curved discrete networks, establishing a rigorous connection to continuous differential geometry.
+
+**Relevance to QBD:**
+This discrete curvature analysis is pivotal for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are formulated by defining Ollivier-Ricci curvature along the edges of the causal graph. Jost and his co-authors' calculus provides the tools to calculate this curvature, confirming that the graph's connectivity relates directly to physical spacetime curvature.
+
+---
+
+### 48. **Ollivier, Y. (2009).** {#A.48}
+**"Ricci curvature of Markov chains on metric spaces"**
+    * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
+
+
+**Overview:**
+Ollivier develops a robust approach to define Ricci curvature on arbitrary metric spaces using transport distances between probability measures. He shows that this definition, known as Ollivier-Ricci curvature, captures the geometric properties of continuous Riemannian manifolds while remaining fully applicable to discrete networks.
+
+**Relevance to QBD:**
+Ollivier's metric curvature is the direct tool used to formulate the discrete field equations in Chapter 13. By calculating the transport distance between localized random walks on our causal graph, we define the Ollivier-Ricci curvature along each edge. Ollivier's calculus provides the formal apparatus used to prove that this discrete curvature converges to classical Ricci curvature.
+
+---
+
+### 49. **Otto, F., Mansuroglu, R., Schuch, N., Gühne, O., & Sahlmann, H. (2025).** {#A.49}
+**"Hyperinvariant Spin Network States: An AdS/CFT Model from First Principles"**
+    * **Link:** [https://arxiv.org/abs/2510.06602](https://arxiv.org/abs/2510.06602)
+
+
+**Overview:**
+Otto and his co-authors present a first-principles derivation of hyperinvariant spin network states in discrete gravity, establishing an AdS/CFT model that operates on hyperbolic geometries. They prove that these spin networks exhibit robust entanglement properties that match the holographic predictions of continuous gravity.
+
+**Relevance to QBD:**
+This work provides decisive validation for the spin-network formulations developed in Chapter 13. QBD models the causal graph as a network of spin-like connections where spatial geometry is reconstructed via edge entanglement. The algebraic connection between our discrete graph states and the holographic spin networks of loop quantum gravity is traced through this paper.
+
+---
+
+### 50. **Padmanabhan, T. (2009).** {#A.50}
+**"Thermodynamical Aspects of Gravity: New Insights"**
+    * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
+
+
+**Overview:**
+Padmanabhan reviews the thermodynamic description of gravity, presenting extensive evidence that gravity is not a fundamental interaction but rather an emergent thermodynamic phenomenon. He demonstrates that the field equations can be written as a local thermodynamic identity on causal horizons, linking geometry directly to entropy.
+
+**Relevance to QBD:**
+Padmanabhan's thermodynamic analysis is a central conceptual foundation for the emergent gravity proofs in Chapter 13. In QBD, spatial curvature emerges from the thermodynamic equilibrium of the vacuum graph. His review provides the physical motivation for treating general relativity as a macroscopic equation of state, linking discrete updates to thermodynamic entropy.
+
+---
+
+### 58. **Rovelli, C., & Smolin, L. (1990).** {#A.58}
+**"Loop space representation of quantum general relativity"**
+    * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
+
+
+**Overview:**
+Rovelli and Smolin construct the loop space representation of quantum general relativity, formulating gravity in terms of loops and connections. They prove that the spatial geometry is quantized in terms of discrete spin network states, establishing a non-perturbative structure for what would become Loop Quantum Gravity.
+
+**Relevance to QBD:**
+This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 13. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
 
 ---
 

@@ -2638,6 +2638,19 @@ This reference is integral to the random graph audits conducted in Chapter 5. To
 
 ---
 
+### 20. **Coleman, S. (1977).** {#A.20}
+**"The Uses of Instantons"**
+    * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
+
+
+**Overview:**
+Coleman presents a set of lectures on the role of instantons, which are classical solutions to the equations of motion in Euclidean spacetime. He explains how these non-perturbative configurations correspond to quantum tunneling events between different vacuum states, documenting the physical basis for non-abelian gauge vacuum structure.
+
+**Relevance to QBD:**
+Instantons are the continuous analogs of the non-perturbative transition operations that drive gauge dynamics in Chapter 8. In QBD, the tunneling of a tripartite braid between different topological phases corresponds to a discrete instanton-like event in the causal history. Coleman's lectures are cited to draw this physical analogy, grounding why non-abelian gauge structures emerge from topological updates.
+
+---
+
 ### 36. **Jacobson, T. (1995).** {#A.36}
 **"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
@@ -2713,6 +2726,19 @@ Maldacena introduces the Anti-de Sitter / Conformal Field Theory (AdS/CFT) corre
 
 **Relevance to QBD:**
 This seminal duality provides the central conceptual paradigm for the holographic screens developed in Chapter 16. In QBD, the interior causal graph represents the gravitational bulk, which is mapped to a discrete boundary screen through code mappings. Maldacena's correspondence grounds the theoretical precedent for our discrete holographic mapping, demonstrating that our graph-theoretic bulk arises from a boundary code.
+
+---
+
+### 57. **Rodrigues, F. L. S., & Lutz, E. (2025).** {#A.57}
+**"Far-from-equilibrium thermodynamics of non-Abelian thermal states"**
+    * **Link:** [https://arxiv.org/abs/2510.04788](https://arxiv.org/abs/2510.04788)
+
+
+**Overview:**
+Rodrigues and Lutz develop a thermodynamic treatment of non-Abelian thermal states in systems operating far from equilibrium. They derive key fluctuation relations and entropy production bounds that govern how non-Abelian gauge configurations thermalize and dissipate energy under non-equilibrium conditions.
+
+**Relevance to QBD:**
+This non-equilibrium thermodynamic analysis is indispensable for the non-Abelian gauge models developed in Chapter 8. In QBD, the tripartite braids operate as non-Abelian states that undergo far-from-equilibrium updates during the transition cycles. The thermodynamic bounds derived here are used to analyze the stability of these non-Abelian states against runaway vacuum dissipation.
 
 ---
 

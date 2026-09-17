@@ -1788,3 +1788,108 @@ Chapter 16 establishes the Holographic Duality as a mathematical isomorphism con
 The integration of tensor networks and holographic RG flow confirms that spacetime geometry is an emergent quantum informational structure.
 
 Consequently, holographic duality unifies quantum entanglement entropy with classical Einstein curvature across all scales of the network, providing the foundational framework for [Chapter 17](/monograph/stage/worldsheets/17.1/#17.1).
+
+\newpage
+# References
+
+### 11. **Bekenstein, J. D. (1981).** {#A.11}
+**"A universal upper bound on the entropy-to-energy ratio for bounded systems"**
+    * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287)
+
+
+**Overview:**
+Bekenstein derives the universal upper bound on the entropy-to-energy ratio for any thermodynamic system of localized energy confined within a sphere of effective radius. By analyzing the thermodynamic limits of black hole absorption, this work proves that the information capacity of a physical system is strictly bounded by its spatial boundary and energy content, confirming information as a foundational constraint on relativistic thermodynamics.
+
+**Relevance to QBD:**
+The Bekenstein Bound serves as a central physical selection rule in QBD, represented by the Bekenstein Bound Lemma in Chapter 16. It motivates why the vacuum rewrite rule suppresses high-density graph fluctuations that exceed the information density limit through the quadratic deletion flux. The bound is structurally enforced because a region of graph space cannot support more independent cycles than its vertex horizon allows, formalizing the emergence of holographic screen mechanisms.
+
+---
+
+### 34. **Harlow, D. (2016).** {#A.34}
+**"Jerusalem Lectures on Black Holes and Quantum Information"**
+    * **Link:** [https://arxiv.org/abs/1409.1231](https://arxiv.org/abs/1409.1231)
+
+
+**Overview:**
+Harlow presents a comprehensive set of lectures on the role of quantum information theory in black hole physics, focusing on the black hole information paradox and the holographic principle. He demonstrates that AdS/CFT bulk reconstruction can be modeled as a quantum error-correcting code with systematic rigor.
+
+**Relevance to QBD:**
+Harlow's lectures provide the chief inspiration for the holographic bulk/boundary correspondence proved in Chapter 16. In QBD, the interior geometry of the causal graph behaves as a protected logical bulk that is mapped to a boundary screen. Harlow's quantum informational treatment corroborates this code model, showing that spacetime geometry is a holographic error-correcting code.
+
+---
+
+### 45. **Maldacena, J. M. (1998).** {#A.45}
+**"The Large N Limit of Superconformal Field Theories and Supergravity"**
+    * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
+
+
+**Overview:**
+Maldacena introduces the Anti-de Sitter / Conformal Field Theory (AdS/CFT) correspondence, proposing a duality between a gravity theory in the bulk of a spacetime and a gauge theory on its boundary. This holographic duality proves that continuous gravitational degrees of freedom can be completely mapped to lower-dimensional, non-gravitational quantum field theories.
+
+**Relevance to QBD:**
+This seminal duality provides the central conceptual paradigm for the holographic screens developed in Chapter 16. In QBD, the interior causal graph represents the gravitational bulk, which is mapped to a discrete boundary screen through code mappings. Maldacena's correspondence grounds the theoretical precedent for our discrete holographic mapping, demonstrating that our graph-theoretic bulk arises from a boundary code.
+
+---
+
+### 52. **Page, D. N. (1993).** {#A.52}
+**"Information in Black Hole Radiation"**
+    * **Link:** [https://arxiv.org/abs/hep-th/9306083](https://arxiv.org/abs/hep-th/9306083)
+
+
+**Overview:**
+Page analyzes the entanglement entropy of a quantum system undergoing unitary evaporation, deriving what is now known as the Page curve. He proves that if the evaporation process is unitary, the entanglement entropy of the radiation must first rise and then return to zero, establishing a key benchmark for resolving the information paradox.
+
+**Relevance to QBD:**
+The Page curve is a key physical benchmark used to verify the unitarity of the rewrite engine in Chapter 16. In QBD, the evaporation of topological graph defects is modeled as a unitary process on the causal network. Page's analysis provides the model used to confirm that our discrete update rules successfully preserve quantum information, preventing information loss.
+
+---
+
+### 54. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.54}
+**"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
+    * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
+
+
+**Overview:**
+Pastawski and his co-authors introduce the HaPPY code, a toy model for AdS/CFT bulk reconstruction constructed using pentagon tensor networks. They prove that the bulk geometry is robustly mapped to the boundary through a holographic quantum error-correcting code, providing a concrete realization of bulk protection from boundary errors.
+
+**Relevance to QBD:**
+The HaPPY code is the direct template for the holographic screen mechanisms developed in Chapter 16. In QBD, we model the interior of the causal graph as a logical bulk protected by boundary stabilizers. The HaPPY tensor-network structure maps bulk coordinates to boundary screens, showing that space is a holographic error-correcting code.
+
+---
+
+### 56. **Penington, G. (2019).** {#A.56}
+**"Entanglement Wedge Reconstruction and the Information Paradox"**
+    * **Link:** [https://arxiv.org/abs/1905.08255](https://arxiv.org/abs/1905.08255)
+
+
+**Overview:**
+Penington proves that the entanglement entropy of Hawking radiation follows the Page curve by incorporating quantum extremal surfaces into the calculation. He demonstrates that the holographic entanglement wedge of the black hole interior shifts dynamically, showing that bulk information is reconstructed from boundary radiation.
+
+**Relevance to QBD:**
+This holographic reconstruction is central to the black hole simulation audits conducted in Chapter 16. In QBD, the evaporation of localized graph singularities is analyzed using discrete quantum extremal surfaces. Penington's holographic apparatus shows that the interior bulk graph is unitarily reconstructed from boundary screen updates, preserving information.
+
+---
+
+### 60. **Ryu, S., & Takayanagi, T. (2006).** {#A.60}
+**"Holographic Derivation of Entanglement Entropy from AdS/CFT"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0603001](https://arxiv.org/abs/hep-th/0603001)
+
+
+**Overview:**
+Ryu and Takayanagi propose a holographic formula to calculate the entanglement entropy of a boundary conformal field theory CFT using the area of a minimal surface in the dual AdS bulk spacetime. This formula, known as the Ryu-Takayanagi RT formula, establishes a direct geometric link between spatial area and quantum entanglement.
+
+**Relevance to QBD:**
+The Ryu-Takayanagi formula is the direct tool used to calculate bulk geometry from boundary entanglement in Chapter 16. In QBD, the spatial area of emergent regions is shown to match the boundary entanglement entropy calculated along minimal cuts of the graph. This reference validates the geometric entanglement area proofs.
+
+---
+
+### 71. **Wang, W. (2024).** {#A.71}
+**"Building holographic code from the boundary"**
+    * **Link:** [https://arxiv.org/abs/2407.10271](https://arxiv.org/abs/2407.10271)
+
+
+**Overview:**
+Wang constructs a holographic error-correcting code directly from boundary representations, analyzing how bulk geometric structures are encoded in boundary entanglement states. He proves that the bulk/boundary mapping is robust under boundary perturbations, establishing a systematic template for reconstruction in quantum gravity.
+
+**Relevance to QBD:**
+This boundary code construction provides vital validation for the holographic screen mechanisms developed in Chapter 16. In QBD, the bulk causal graph is mapped to a discrete boundary screen through code mappings. Wang's construction anchors the algebraic structure used to prove that bulk coordinates are unitarily reconstructed from boundary updates, confirming bulk stability.

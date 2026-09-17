@@ -1680,7 +1680,7 @@ $t_L$ obviates all three defects in a unified stroke, restoring a robust ontolog
   * Uniqueness inheres in the Sequencer by design; no multiplicity of alternatives exists, as it constitutes the singular, canonical iterator governing the universal state sequence.
   * The update process effected by the Sequencer qualifies as an objective physical transition, wherein uncomputed potential configurations crystallize into definite, actualized states through the deterministic application of $\mathcal{U}$, thereby instantiating genuine novelty and diachronic identity.
 
-Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.51" label="(Page & Wootters, 1983)" />; <Cite id="A.28" label="(Gambini, García-Pintos, & Pullin, 2023)" />.
+Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.51" label="(Page & Wootters, 1983)" />; <Cite id="A.28" label="(Gambini, Porto, Torterolo, & Pullin, 2009)" />.
 
 ---
 
@@ -8934,7 +8934,7 @@ The proof proceeds via Direct Construction, establishing a deterministic causal 
 :::info[**Irreversible Breaking of Vacuum Bipartiteness via Single-Edge Fluctuation**]
 :::
 
-Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.18).
+Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.20).
 
 ### 3.4.2.1 Proof: Topological Tunneling {#3.4.2.1}
 
@@ -9515,7 +9515,7 @@ This mapping demonstrates that the relational graph structure undergoes faithful
 :::info[**Isomorphism between Quantum Braid Dynamics and Stabilizer Quantum Error Correction established by Operator Mapping**]
 :::
 
-There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.50)
+There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.54)
 
 ### 3.5.2.1 Commentary: Argument Outline {#3.5.2.1}
 
@@ -10574,7 +10574,7 @@ The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the m
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
-4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
+4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.8)
 
 ### 4.1.1.1 Commentary: Physical Interpretation of $\mathbf{Caus}_t$ {#4.1.1.1}
 
@@ -11513,7 +11513,7 @@ The morphisms in $\mathbf{AnnCG}$ enforce a dual preservation condition: a valid
 
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
 1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> extraction.
-2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
+2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.66)
 
 ### 4.3.2.1 Commentary: Mechanism of Self-Observation {#4.3.2.1}
 
@@ -13186,7 +13186,7 @@ We solve this operational challenge by defining the Universal Constructor $\math
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
-The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.27)
+The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.30)
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):
@@ -58741,9 +58741,10 @@ QBism provides the epistemological backing for how quantum measurement is modele
 
 ---
 
-### 28. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.28}
-**"The Page-Wootters mechanism in canonical quantum gravity"**
-    * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
+### 28. **Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).** {#A.28}
+**"Conditional probabilities with Dirac observables and the problem of time in quantum gravity"**
+- *Physical Review D*, 79(4), 041501(R)
+    * **Link:** [https://doi.org/10.1103/PhysRevD.79.041501](https://doi.org/10.1103/PhysRevD.79.041501) (arXiv: [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235))
 
 
 **Overview:**

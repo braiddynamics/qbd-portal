@@ -3238,6 +3238,32 @@ The conclusion is absolute: reality is an algorithm. The particles, forces, and 
 \newpage
 # References
 
+### 4. **Aleksandrowicz, G., et al. (2019).** {#A.4}
+**"Qiskit: An Open-source Framework for Quantum Computing"**
+    * **Link:** [https://zenodo.org/record/2562111](https://zenodo.org/record/2562111)
+
+
+**Overview:**
+Aleksandrowicz and the Qiskit team describe the architecture and implementation of Qiskit, an open-source software suite designed for writing, compiling, and running quantum circuits. The platform provides the software layers required to translate high-level quantum algorithms into the precise physical controls needed to execute circuits on real quantum hardware or classical simulators.
+
+**Relevance to QBD:**
+QBD leverages the stabilizer code model to protect topological graph structures from vacuum noise. In Chapter 10, Qiskit is utilized to simulate and verify the fault-tolerant operations of the tripartite braid qubits. This reference anchors the software standard used to model the stabilizer generators and logical gates, bridging the gap between high-level topological code theory and numerical circuit validation.
+
+---
+
+### 21. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.21}
+**"Stabilizer Formalism for Operator Algebra Quantum Error Correction"**
+    * **Link:** [https://quantum-journal.org/papers/q-2024-02-21-1261/pdf](https://quantum-journal.org/papers/q-2024-02-21-1261/pdf)
+
+
+**Overview:**
+Dauphinais, Kribs, and Vasmer generalize the stabilizer formalism from finite-dimensional quantum systems to infinite-dimensional operator algebras. They develop a careful algebraic treatment that permits stabilizer codes to be defined on operator algebras, proving that the standard error correction conditions are preserved under this algebraic generalization.
+
+**Relevance to QBD:**
+This algebraic apparatus is indispensable for formalizing topological protection in QBD. In Chapter 10, the tripartite braid quantum states are shown to reside within a stable, topologically protected codespace. This work provides the backing required to define stabilizer operators on the infinite-dimensional algebra of our emergent graph, ensuring that the quantum information remains protected from local graph perturbations.
+
+---
+
 ### 32. **Gottesman, D. (1997).** {#A.32}
 **"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
@@ -3248,3 +3274,42 @@ Gottesman introduces the stabilizer formalism, a powerful algebraic structure th
 
 **Relevance to QBD:**
 The stabilizer formalism is the leading tool used to protect the topological graph structures in QBD. In Chapter 10, we utilize Gottesman's formalism to define stabilizer operators on the vertices and edges of our tripartite braid configurations. This ensures that the logical information remains protected from local vacuum fluctuations, demonstrating that topological qubits are stable.
+
+---
+
+### 40. **Kitaev, A. Y. (2003).** {#A.40}
+**"Fault-tolerant quantum computation by anyons"**
+    * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
+
+
+**Overview:**
+Kitaev introduces the toric code, a revolutionary quantum error-correcting code defined on a two-dimensional lattice. He demonstrates that storing quantum information in the global topological properties of the lattice protects it from local environment noise, proving that fault-tolerant quantum computation can be achieved using topological anyons.
+
+**Relevance to QBD:**
+Kitaev's toric code is the foremost conceptual model for the stabilizer-protected graph structures developed in Chapter 10. We leverage his insights to prove that our tripartite braid configurations are stable under local rewrite noise. Kitaev's treatment establishes the topological quantum computing structure used to model our particles as stable qubits in the causal graph.
+
+---
+
+### 47. **Mousa, M., Jamadagni, A., et al. (2025).** {#A.47}
+**"Pauli Stabilizer Models for Gapped Boundaries of Twisted Quantum Doubles and Applications to Composite Dimensional Codes"**
+    * **Link:** [https://arxiv.org/abs/2508.19245](https://arxiv.org/abs/2508.19245)
+
+
+**Overview:**
+Mousa and his collaborators construct Pauli stabilizer models to describe the gapped boundaries of twisted quantum double models. They show how these boundary stabilizers can be utilized to construct composite dimensional error-correcting codes, providing robust protection against local noise in topologically ordered systems.
+
+**Relevance to QBD:**
+This recent stabilizer model is vital for the boundary protection theories developed in Chapter 10. In QBD, the tripartite braid configurations must remain stable near the boundaries of the causal graph. Mousa's algebraic machinery supports the construction of stable boundary stabilizers on the graph, confirming that our topological qubits remain protected even in the presence of edge boundaries.
+
+---
+
+### 65. **Steinberg, M. et al. (2025).** {#A.65}
+**"Universal Fault-Tolerant Logic with Heterogeneous Holographic Codes"**
+    * **Link:** [https://arxiv.org/abs/2504.10386](https://arxiv.org/abs/2504.10386)
+
+
+**Overview:**
+Steinberg and his collaborators construct heterogeneous holographic codes, a class of tensor network error-correcting codes that support universal fault-tolerant logical gates. They prove that these codes provide robust bulk topological protection while maintaining universal logical operations, solving a major bottleneck in holographic quantum error correction.
+
+**Relevance to QBD:**
+This holographic code model is indispensable for the logical gate simulations conducted in Chapter 10. In QBD, the tripartite braid configurations behave as bulk topological qubits that must support fault-tolerant logical operations under local graph updates. Steinberg's construction provides the theoretical setting used to model these operations as holographic gates, demonstrating that our particles are universal qubits.

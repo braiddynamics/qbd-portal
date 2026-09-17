@@ -13952,6 +13952,164 @@ This reference is indispensable for the continuum limit derivations of QBD. In C
 
 ---
 
+### 5. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.5}
+**"Reconstructing the Universe"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
+
+
+**Overview:**
+Ambjorn, Jurkiewicz, and Loll demonstrate that a non-trivial four-dimensional classical spacetime can emerge from a non-perturbative path integral of causal triangulations. This approach, known as Causal Dynamical Triangulations (CDT), shows that imposing a strict distinction between space-like and time-like steps solves the historical problem of spatial collapse and ensures causality in the continuum limit.
+
+**Relevance to QBD:**
+This seminal work in discrete quantum gravity provides vital conceptual backing for the geometrogenesis proofs in QBD. In Chapter 11, we leverage Loll's insights to show how discrete causal structures avoid cosmological dimensional collapse. CDT's results set a precedent for how discrete, causally ordered structures can successfully yield continuous, high-dimensional geometries when the continuum limit is taken.
+
+---
+
+### 6. **Anderson, E. (2012).** {#A.6}
+**"The Problem of Time in Quantum Gravity"**
+    * **Link:** [https://arxiv.org/abs/1009.2157](https://arxiv.org/abs/1009.2157)
+
+
+**Overview:**
+Anderson provides a thorough review of the problem of time in canonical quantum gravity, a conceptual crisis arising because general relativity is a reparametrization-invariant theory with no preferred background clock. He explores various proposed solutions, including relational time, the Page-Wootters mechanism, and semiclassical approximations.
+
+**Relevance to QBD:**
+The problem of time is resolved in QBD by the dual-time architecture developed in Chapter 14. By separating logical time, which counts rewrite steps, from emergent physical time, which corresponds to the length of causal paths, we bypass the need for a background clock. Anderson's review situates this resolution within the broader literature and contrasts our discrete causal ordering against the difficulties encountered by continuous canonical formulations.
+
+---
+
+### 7. **Ashtekar, A. (1986).** {#A.7}
+**"New Variables for Classical and Quantum Gravity"**
+    * **Link:** [https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.57.2244)
+
+
+**Overview:**
+Ashtekar introduces a new set of canonical variables for general relativity, mapping the theory's phase space to that of a Yang-Mills gauge theory. This reformulation simplifies the constraints of classical gravity and lays the foundation for Loop Quantum Gravity by expressing the spatial geometry in terms of loops and connections.
+
+**Relevance to QBD:**
+Ashtekar variables provide the direct inspiration for how spatial geometry can be encoded in connection-like loops within a discrete graph. In Chapter 13, the discrete field equations are formulated by defining connection variables along the edges of the causal graph. Ashtekar's treatment of canonical gravity traces the historical and algebraic link between continuous general relativity and our discrete, loop-based gauge formulations.
+
+---
+
+### 11. **Bekenstein, J. D. (1981).** {#A.11}
+**"A universal upper bound on the entropy-to-energy ratio for bounded systems"**
+    * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.23.287)
+
+
+**Overview:**
+Bekenstein derives the universal upper bound on the entropy-to-energy ratio for any thermodynamic system of localized energy confined within a sphere of effective radius. By analyzing the thermodynamic limits of black hole absorption, this work proves that the information capacity of a physical system is strictly bounded by its spatial boundary and energy content, confirming information as a foundational constraint on relativistic thermodynamics.
+
+**Relevance to QBD:**
+The Bekenstein Bound serves as a central physical selection rule in QBD, represented by the Bekenstein Bound Lemma in Chapter 16. It motivates why the vacuum rewrite rule suppresses high-density graph fluctuations that exceed the information density limit through the quadratic deletion flux. The bound is structurally enforced because a region of graph space cannot support more independent cycles than its vertex horizon allows, formalizing the emergence of holographic screen mechanisms.
+
+---
+
+### 12. **Belkin, M., & Niyogi, P. (2003).** {#A.12}
+**"Laplacian Eigenmaps for Dimensionality Reduction and Data Representation"**
+    * **Link:** [https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf](https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf)
+
+
+**Overview:**
+Belkin and Niyogi introduce Laplacian Eigenmaps, a geometric toolset that utilizes the Laplace-Beltrami operator to map high-dimensional data points to a low-dimensional manifold while preserving local proximity. They prove that the eigenvectors of the graph Laplacian provide optimal embeddings that preserve the underlying manifold's geometry.
+
+**Relevance to QBD:**
+This approach is the foundation for the dimensional reconstruction proofs in Chapter 12. To show that a discrete graph converges to a smooth spacetime manifold, we must construct an embedding. Belkin and Niyogi's work provides the justification for using the graph Laplacian's eigenvectors to recover the metric tensor and coordinate charts, demonstrating that low-dimensional spacetime emerges naturally from discrete networks.
+
+---
+
+### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
+**"Graph Theory"**
+    * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
+
+
+**Overview:**
+Bondy and Murty present a modern, graduate-level textbook on graph theory. They cover connectivity, matchings, independent sets, graph colorings, and topological graph theory. Their work provides a thorough and comprehensive collection of tools used to analyze discrete relational networks.
+
+**Relevance to QBD:**
+This textbook serves as the standard reference for all graph-theoretic operations conducted across the monograph. Whether analyzing the path length between vertices in Chapter 11 or evaluating the cycle structure of braids in Chapter 6, the theorems and notations of Bondy and Murty ensure that our discrete derivations are mathematically sound.
+
+---
+
+### 17. **Calder, J., & García Trillos, N. (2022).** {#A.17}
+**"Improved spectral convergence rates for graph Laplacians on ε-graphs and k-NN graphs"**
+    * **Link:** [https://arxiv.org/abs/1910.13476](https://arxiv.org/abs/1910.13476)
+
+
+**Overview:**
+Calder and Garcia Trillos derive improved spectral convergence rates for graph Laplacians converging to continuous Laplace-Beltrami operators on data-generated manifolds. They utilize optimal transport theory and variational analysis to prove that the eigenvectors and eigenvalues of the discrete graph match their continuous counterparts with sharp convergence bounds.
+
+**Relevance to QBD:**
+This variational analysis is decisive for the continuum limit of the discrete field equations in Chapter 12. To show that the discrete Einstein-Hilbert action on our graph converges to the continuous action, we must bound the error of the graph Laplacian. Calder's convergence bounds are used to confirm that the discrete curvature converges systematically to the continuous Ricci scalar, establishing a bridge to classical general relativity.
+
+---
+
+### 19. **Cheeger, J., Colding, T. H., & Tian, G. (1997).** {#A.19}
+**"On the singularities of spaces with bounded Ricci curvature"**
+    * **Link:** [https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84](https://www.semanticscholar.org/paper/On-the-singularities-of-spaces-with-bounded-Ricci-Cheeger-Colding/9b384c019d715a63e6a34b2296412c3e4c4ded84)
+
+
+**Overview:**
+Cheeger, Colding, and Tian analyze the structure of singularities in limit spaces of Riemannian manifolds with bounded Ricci curvature. They prove that these limit spaces, though singular, possess tightly constrained geometric properties, specifically regarding their tangent cones and the Hausdorff dimension of their singular sets.
+
+**Relevance to QBD:**
+In Chapter 13, we must analyze the singular behavior of the discrete geometry when local graph densities fluctuate. Cheeger's analysis of singular limit spaces is used to prove that the emergent discrete spacetime remains stable and does not develop uncontrollable geometric singularities, ensuring that physical observables remain finite and well-defined even at the smallest scales.
+
+---
+
+### 22. **Diestel, R. (2017).** {#A.22}
+**"Graph Theory (5th ed.)"**
+- *Springer*
+    * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
+
+
+**Overview:**
+Diestel presents a detailed and standard textbook on graph theory. The author covers infinite graphs, graph limits, topological aspects of graphs, and the structural properties that emerge in large-scale networks. The book serves as the leading reference for advanced graph-theoretic structures.
+
+**Relevance to QBD:**
+This textbook is the foundation for the graph-theoretic proofs across the monograph. In Chapter 11, we utilize Diestel's theorems on infinite graphs to formulate the infinite-volume limit of our causal network. The connection to these results confirms that the discrete graph structures remain mathematically consistent and well-defined even when the number of vertices approaches infinity, paving the way for the continuous spacetime manifold.
+
+---
+
+### 23. **Dowker, F. (2005).** {#A.23}
+**"Causal sets and the deep structure of spacetime"**
+    * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
+
+
+**Overview:**
+Dowker provides a conceptual and physical overview of the causal set approach to quantum gravity. She argues that spacetime is fundamentally discrete and that the continuum is merely an approximation. The author demonstrates that discrete causal sets successfully preserve Lorentz invariance, solving a major historical challenge faced by discrete models.
+
+**Relevance to QBD:**
+Dowker's work is a key conceptual pillar for the discrete causal substrate defined in Chapter 1. We adopt her insight that discrete causal ordering is sufficient to construct macroscopic geometry. In Chapter 14, we prove that QBD preserves Lorentz covariance in the continuum limit, invoking Dowker to show why our discrete causal steps naturally satisfy relativistic constraints.
+
+---
+
+### 26. **Erdős, P., & Rényi, A. (1960).** {#A.26}
+**"On the evolution of random graphs"**
+    * **Link:** [https://users.renyi.hu/~p_erdos/1960-10.pdf](https://users.renyi.hu/~p_erdos/1960-10.pdf)
+
+
+**Overview:**
+Erdos and Renyi present the foundational paper on the evolution of random graphs, introducing the classical probabilistic model where edges are added stochastically. They prove the existence of sharp phase transitions, specifically the sudden appearance of a unique giant component as the average vertex degree exceeds one.
+
+**Relevance to QBD:**
+This seminal work is the foundation for the geometrogenesis proofs in Chapter 11. We model the emergence of physical space as a phase transition in a random causal network. Erdos and Renyi's results supply the basis for this phase transition, showing that the vacuum graph stochastically transitions from a disjointed state to a unified, highly connected spacetime manifold.
+
+---
+
+### 28. **Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).** {#A.28}
+**"Conditional probabilities with Dirac observables and the problem of time in quantum gravity"**
+- *Physical Review D*, 79(4), 041501(R)
+    * **Link:** [https://doi.org/10.1103/PhysRevD.79.041501](https://doi.org/10.1103/PhysRevD.79.041501) (arXiv: [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235))
+
+
+**Overview:**
+Gambini and his co-authors present a careful application of the Page-Wootters mechanism to canonical quantum gravity. They show that relational time can be successfully constructed within a fully stationary quantum state of the universe by computing conditional probabilities between the states of a physical clock and a target system.
+
+**Relevance to QBD:**
+The Page-Wootters mechanism is the conceptual precursor to the relational time formulation developed in Chapter 14. In QBD, the universe is described by a global stationary state where physical time emerges from the entanglement between the clock graph and the system graph. The relational validity of this clock mechanism is confirmed here, demonstrating that time emerges naturally without a background coordinate system.
+
+---
+
 ### 29. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.29}
 **"Elliptic Partial Differential Equations of Second Order"**
 - *Springer*
@@ -13963,6 +14121,45 @@ Gilbarg and Trudinger present a definitive and thorough treatment of classical e
 
 **Relevance to QBD:**
 This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+
+---
+
+### 33. **Gukov, S., Takayanagi, T., & Toumbas, N. (2004).** {#A.33}
+**"Flux backgrounds in 2D string theory"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0312208](https://arxiv.org/abs/hep-th/0312208)
+
+
+**Overview:**
+Gukov, Takayanagi, and Toumbas analyze the properties of two-dimensional string theory in the presence of background fluxes. They focus on how these backgrounds affect the compactification geometry, demonstrating that non-trivial topological configurations generate stable, localized energy density within the compactified space.
+
+**Relevance to QBD:**
+This string-theoretic analysis provides the conceptual backing for the compactification models developed in Chapter 17. In QBD, the compactification of the causal graph along a toroidal boundary is shown to yield localized topological invariants. Gukov's results supply the physical precedent for how background fluxes stabilize these compactified geometries, ensuring the stability of emergent physical coordinates.
+
+---
+
+### 34. **Harlow, D. (2016).** {#A.34}
+**"Jerusalem Lectures on Black Holes and Quantum Information"**
+    * **Link:** [https://arxiv.org/abs/1409.1231](https://arxiv.org/abs/1409.1231)
+
+
+**Overview:**
+Harlow presents a comprehensive set of lectures on the role of quantum information theory in black hole physics, focusing on the black hole information paradox and the holographic principle. He demonstrates that AdS/CFT bulk reconstruction can be modeled as a quantum error-correcting code with systematic rigor.
+
+**Relevance to QBD:**
+Harlow's lectures provide the chief inspiration for the holographic bulk/boundary correspondence proved in Chapter 16. In QBD, the interior geometry of the causal graph behaves as a protected logical bulk that is mapped to a boundary screen. Harlow's quantum informational treatment corroborates this code model, showing that spacetime geometry is a holographic error-correcting code.
+
+---
+
+### 35. **Hawking, S. W., & Ellis, G. F. R. (1973).** {#A.35}
+**"The Large Scale Structure of Space-Time"**
+    * **Link:** [https://doi.org/10.1017/CBO9780511524646](https://doi.org/10.1017/CBO9780511524646)
+
+
+**Overview:**
+Hawking and Ellis present the definitive monograph on the large-scale global structure of spacetime in general relativity. They develop the apparatus of differential geometry and global analysis to prove the classic singularity theorems, demonstrating that singularities are inevitable occurrences in classical general relativity.
+
+**Relevance to QBD:**
+This seminal textbook is the direct reference for the classical Lorentzian geometry targeted in Chapter 11. To prove that the discrete causal graph converges to a physical spacetime, we must compare the discrete shortest-path metric to the continuous Lorentzian metric. Hawking and Ellis's treatment ensures that our definitions of causal order and light-cone structure align with established general relativity.
 
 ---
 
@@ -13979,6 +14176,188 @@ Jacobson's emergent gravity derivation is a key physical pillar for the geometro
 
 ---
 
+### 39. **Jost, J., & Liu, S. (2016).** {#A.39}
+**"Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs"**
+    * **Link:** [https://arxiv.org/abs/1103.4037](https://arxiv.org/abs/1103.4037)
+
+
+**Overview:**
+Jost and Liu analyze Ollivier's definition of Ricci curvature on discrete graphs, proving that it correlates with the graph's local clustering coefficient. They derive key curvature-dimension inequalities that govern how diffusion processes behave on curved discrete networks, establishing a rigorous connection to continuous differential geometry.
+
+**Relevance to QBD:**
+This discrete curvature analysis is pivotal for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are formulated by defining Ollivier-Ricci curvature along the edges of the causal graph. Jost and his co-authors' calculus provides the tools to calculate this curvature, confirming that the graph's connectivity relates directly to physical spacetime curvature.
+
+---
+
+### 41. **Lamport, L. (1978).** {#A.41}
+**"Time, clocks, and the ordering of events in a distributed system"**
+    * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
+
+
+**Overview:**
+Lamport introduces the seminal concept of logical clocks to establish a partial ordering of events in distributed systems without relying on synchronized physical clocks. By defining a relational happened-before relation based on message passing and event sequencing, he shows how independent nodes can construct a consistent global ordering of events. This paper laid the groundwork for modern distributed systems by demonstrating that logical ordering is more fundamental than physical time.
+
+**Relevance to QBD:**
+Lamport's logical clock formalism is the starting point for the dual-time architecture developed in Chapter 14. In QBD, the local update events are partially ordered on the causal graph, representing the discrete happened-before relations. We leverage Lamport's logical clocks to construct a globally consistent historical timeline from these distributed updates, showing that emergent physical time arises naturally from discrete relational ordering.
+
+---
+
+### 45. **Maldacena, J. M. (1998).** {#A.45}
+**"The Large N Limit of Superconformal Field Theories and Supergravity"**
+    * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
+
+
+**Overview:**
+Maldacena introduces the Anti-de Sitter / Conformal Field Theory (AdS/CFT) correspondence, proposing a duality between a gravity theory in the bulk of a spacetime and a gauge theory on its boundary. This holographic duality proves that continuous gravitational degrees of freedom can be completely mapped to lower-dimensional, non-gravitational quantum field theories.
+
+**Relevance to QBD:**
+This seminal duality provides the central conceptual paradigm for the holographic screens developed in Chapter 16. In QBD, the interior causal graph represents the gravitational bulk, which is mapped to a discrete boundary screen through code mappings. Maldacena's correspondence grounds the theoretical precedent for our discrete holographic mapping, demonstrating that our graph-theoretic bulk arises from a boundary code.
+
+---
+
+### 48. **Ollivier, Y. (2009).** {#A.48}
+**"Ricci curvature of Markov chains on metric spaces"**
+    * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
+
+
+**Overview:**
+Ollivier develops a robust approach to define Ricci curvature on arbitrary metric spaces using transport distances between probability measures. He shows that this definition, known as Ollivier-Ricci curvature, captures the geometric properties of continuous Riemannian manifolds while remaining fully applicable to discrete networks.
+
+**Relevance to QBD:**
+Ollivier's metric curvature is the direct tool used to formulate the discrete field equations in Chapter 13. By calculating the transport distance between localized random walks on our causal graph, we define the Ollivier-Ricci curvature along each edge. Ollivier's calculus provides the formal apparatus used to prove that this discrete curvature converges to classical Ricci curvature.
+
+---
+
+### 49. **Otto, F., Mansuroglu, R., Schuch, N., Gühne, O., & Sahlmann, H. (2025).** {#A.49}
+**"Hyperinvariant Spin Network States: An AdS/CFT Model from First Principles"**
+    * **Link:** [https://arxiv.org/abs/2510.06602](https://arxiv.org/abs/2510.06602)
+
+
+**Overview:**
+Otto and his co-authors present a first-principles derivation of hyperinvariant spin network states in discrete gravity, establishing an AdS/CFT model that operates on hyperbolic geometries. They prove that these spin networks exhibit robust entanglement properties that match the holographic predictions of continuous gravity.
+
+**Relevance to QBD:**
+This work provides decisive validation for the spin-network formulations developed in Chapter 13. QBD models the causal graph as a network of spin-like connections where spatial geometry is reconstructed via edge entanglement. The algebraic connection between our discrete graph states and the holographic spin networks of loop quantum gravity is traced through this paper.
+
+---
+
+### 50. **Padmanabhan, T. (2009).** {#A.50}
+**"Thermodynamical Aspects of Gravity: New Insights"**
+    * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
+
+
+**Overview:**
+Padmanabhan reviews the thermodynamic description of gravity, presenting extensive evidence that gravity is not a fundamental interaction but rather an emergent thermodynamic phenomenon. He demonstrates that the field equations can be written as a local thermodynamic identity on causal horizons, linking geometry directly to entropy.
+
+**Relevance to QBD:**
+Padmanabhan's thermodynamic analysis is a central conceptual foundation for the emergent gravity proofs in Chapter 13. In QBD, spatial curvature emerges from the thermodynamic equilibrium of the vacuum graph. His review provides the physical motivation for treating general relativity as a macroscopic equation of state, linking discrete updates to thermodynamic entropy.
+
+---
+
+### 51. **Page, D. N., & Wootters, W. K. (1983).** {#A.51}
+**"Evolution without evolution: Dynamics described by stationary observables"**
+    * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885)
+
+
+**Overview:**
+Page and Wootters formulate a relational interpretation of quantum mechanics where time arises from the entanglement between a subsystem acting as a clock and the rest of the universe. In this formulation, the global state of the universe is completely stationary, and dynamical evolution emerges relational when conditioning on the clock's state.
+
+**Relevance to QBD:**
+This relational time approach is the core architecture used to solve the problem of time in Chapter 14. In QBD, the global quantum state on the causal graph is stationary, and dynamical physical time emerges relationally from the entanglement between the clock and the substrate. Page and Wootters's construction grounds the relational validity of our dual-time mechanism.
+
+---
+
+### 52. **Page, D. N. (1993).** {#A.52}
+**"Information in Black Hole Radiation"**
+    * **Link:** [https://arxiv.org/abs/hep-th/9306083](https://arxiv.org/abs/hep-th/9306083)
+
+
+**Overview:**
+Page analyzes the entanglement entropy of a quantum system undergoing unitary evaporation, deriving what is now known as the Page curve. He proves that if the evaporation process is unitary, the entanglement entropy of the radiation must first rise and then return to zero, establishing a key benchmark for resolving the information paradox.
+
+**Relevance to QBD:**
+The Page curve is a key physical benchmark used to verify the unitarity of the rewrite engine in Chapter 16. In QBD, the evaporation of topological graph defects is modeled as a unitary process on the causal network. Page's analysis provides the model used to confirm that our discrete update rules successfully preserve quantum information, preventing information loss.
+
+---
+
+### 54. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.54}
+**"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
+    * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
+
+
+**Overview:**
+Pastawski and his co-authors introduce the HaPPY code, a toy model for AdS/CFT bulk reconstruction constructed using pentagon tensor networks. They prove that the bulk geometry is robustly mapped to the boundary through a holographic quantum error-correcting code, providing a concrete realization of bulk protection from boundary errors.
+
+**Relevance to QBD:**
+The HaPPY code is the direct template for the holographic screen mechanisms developed in Chapter 16. In QBD, we model the interior of the causal graph as a logical bulk protected by boundary stabilizers. The HaPPY tensor-network structure maps bulk coordinates to boundary screens, showing that space is a holographic error-correcting code.
+
+---
+
+### 56. **Penington, G. (2019).** {#A.56}
+**"Entanglement Wedge Reconstruction and the Information Paradox"**
+    * **Link:** [https://arxiv.org/abs/1905.08255](https://arxiv.org/abs/1905.08255)
+
+
+**Overview:**
+Penington proves that the entanglement entropy of Hawking radiation follows the Page curve by incorporating quantum extremal surfaces into the calculation. He demonstrates that the holographic entanglement wedge of the black hole interior shifts dynamically, showing that bulk information is reconstructed from boundary radiation.
+
+**Relevance to QBD:**
+This holographic reconstruction is central to the black hole simulation audits conducted in Chapter 16. In QBD, the evaporation of localized graph singularities is analyzed using discrete quantum extremal surfaces. Penington's holographic apparatus shows that the interior bulk graph is unitarily reconstructed from boundary screen updates, preserving information.
+
+---
+
+### 58. **Rovelli, C., & Smolin, L. (1990).** {#A.58}
+**"Loop space representation of quantum general relativity"**
+    * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
+
+
+**Overview:**
+Rovelli and Smolin construct the loop space representation of quantum general relativity, formulating gravity in terms of loops and connections. They prove that the spatial geometry is quantized in terms of discrete spin network states, establishing a non-perturbative structure for what would become Loop Quantum Gravity.
+
+**Relevance to QBD:**
+This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 13. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
+
+---
+
+### 60. **Ryu, S., & Takayanagi, T. (2006).** {#A.60}
+**"Holographic Derivation of Entanglement Entropy from AdS/CFT"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0603001](https://arxiv.org/abs/hep-th/0603001)
+
+
+**Overview:**
+Ryu and Takayanagi propose a holographic formula to calculate the entanglement entropy of a boundary conformal field theory CFT using the area of a minimal surface in the dual AdS bulk spacetime. This formula, known as the Ryu-Takayanagi RT formula, establishes a direct geometric link between spatial area and quantum entanglement.
+
+**Relevance to QBD:**
+The Ryu-Takayanagi formula is the direct tool used to calculate bulk geometry from boundary entanglement in Chapter 16. In QBD, the spatial area of emergent regions is shown to match the boundary entanglement entropy calculated along minimal cuts of the graph. This reference validates the geometric entanglement area proofs.
+
+---
+
+### 63. **Singer, A., & Wu, H.-T. (2013).** {#A.63}
+**"Vector diffusion maps and the connection graph Laplacian"**
+    * **Link:** [https://arxiv.org/abs/1102.0075](https://arxiv.org/abs/1102.0075)
+
+
+**Overview:**
+Singer and Wu introduce vector diffusion maps (VDM), a geometric approach that generalizes Laplacian eigenmaps to vector bundles on manifolds. They define the connection graph Laplacian, proving that its spectral properties recover both the underlying manifold's geometry and the gauge connection of the vector bundle, establishing a powerful tool for analyzing curved datasets.
+
+**Relevance to QBD:**
+This connection graph Laplacian is the direct tool used to analyze the emergent gauge fields in Chapter 12. To show that our discrete graph connectivity yields continuous gauge fields, we must construct a vector bundle over the graph. Singer and Wu's spectral convergence proofs show how the eigenvectors of the connection Laplacian recover both physical coordinates and gauge connections.
+
+---
+
+### 69. **van Luxburg, U., Belkin, M., & Bousquet, O. (2008).** {#A.69}
+**"Consistency of spectral clustering"**
+    * **Link:** [http://misha.belkin-wang.org/papers/CLEM_08.pdf](http://misha.belkin-wang.org/papers/CLEM_08.pdf)
+
+
+**Overview:**
+van Luxburg, Belkin, and Bousquet prove the consistency of spectral clustering, demonstrating that the eigenvectors of the graph Laplacian converge systematically to the eigenfunctions of the continuous Laplace-Beltrami operator as the graph size approaches infinity. They establish explicit convergence bounds for different graph normalization schemes.
+
+**Relevance to QBD:**
+This convergence proof is a main cornerstone for the dimensional reconstruction proofs in Chapter 12. To show that a discrete causal network converges to a continuous manifold, we rely on spectral clustering consistency. This paper provides the bounds needed to verify that the discrete eigenvectors recover continuous coordinates in the infinite-volume limit.
+
+---
+
 ### 70. **Verlinde, E. (2011).** {#A.70}
 **"On the Origin of Gravity and the Laws of Newton"**
     * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
@@ -13989,6 +14368,45 @@ Verlinde proposes that gravity is not a fundamental interaction but rather an en
 
 **Relevance to QBD:**
 Verlinde's entropic gravity is a central conceptual foundation for the discrete field equations formulated in Chapter 13. In QBD, the spatial curvature of the causal graph is shown to emerge from the entropic forces generated by local graph update fluxes. Verlinde's treatment supports our interpretation of gravity as an entropic force, showing that geometry is an emergent information phenomenon.
+
+---
+
+### 71. **Wang, W. (2024).** {#A.71}
+**"Building holographic code from the boundary"**
+    * **Link:** [https://arxiv.org/abs/2407.10271](https://arxiv.org/abs/2407.10271)
+
+
+**Overview:**
+Wang constructs a holographic error-correcting code directly from boundary representations, analyzing how bulk geometric structures are encoded in boundary entanglement states. He proves that the bulk/boundary mapping is robust under boundary perturbations, establishing a systematic template for reconstruction in quantum gravity.
+
+**Relevance to QBD:**
+This boundary code construction provides vital validation for the holographic screen mechanisms developed in Chapter 16. In QBD, the bulk causal graph is mapped to a discrete boundary screen through code mappings. Wang's construction anchors the algebraic structure used to prove that bulk coordinates are unitarily reconstructed from boundary updates, confirming bulk stability.
+
+---
+
+### 73. **Wilson, K. G. (1975).** {#A.73}
+**"The renormalization group: Critical phenomena and the Kondo problem"**
+    * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
+
+
+**Overview:**
+Wilson presents the definitive formulation of the renormalization group, describing how the effective physical parameters of a quantum field theory shift as the system is viewed at different length scales. This work provides the tools required to analyze critical phase transitions and calculate continuous limits in quantum field theories.
+
+**Relevance to QBD:**
+The renormalization group is the main tool used to calculate the continuum limit of the discrete field equations in Chapter 12. By grouping local graph updates into larger coarse-grained blocks, we show that the discrete Laplacian converges to a continuous operator. Wilson's scaling theory underpins this convergence.
+
+---
+
+### 75. **Woess, W. (2000).** {#A.75}
+**"Random Walks on Infinite Graphs and Groups"**
+    * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
+
+
+**Overview:**
+Woess presents a comprehensive and exacting study of random walks on infinite graphs, focusing on how the graph's algebraic and geometric structure governs diffusion processes. He covers transient and recurrent walks, spectral radii, and boundary behavior, establishing the standard tools for discrete diffusion.
+
+**Relevance to QBD:**
+This reference is necessary for the discrete diffusion analyses conducted in Chapter 11. To prove that the causal graph converges to a continuous manifold, we analyze how localized random walks diffuse across the network. Woess's bounds confirm that this diffusion is stable and recovers the metric of continuous spacetime.
 
 ---
 

@@ -357,9 +357,10 @@ QBism provides the epistemological backing for how quantum measurement is modele
 
 ---
 
-### 28. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.28}
-**"The Page-Wootters mechanism in canonical quantum gravity"**
-    * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
+### 28. **Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).** {#A.28}
+**"Conditional probabilities with Dirac observables and the problem of time in quantum gravity"**
+- *Physical Review D*, 79(4), 041501(R)
+    * **Link:** [https://doi.org/10.1103/PhysRevD.79.041501](https://doi.org/10.1103/PhysRevD.79.041501) (arXiv: [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235))
 
 
 **Overview:**

@@ -2152,3 +2152,17 @@ The broader implication is that the universe requires no background spacetime or
 | $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
 | $A_\mu$ | Emergent heterotic gauge field | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
 | $\Phi$ | Dilaton field | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
+
+\newpage
+# References
+
+### 33. **Gukov, S., Takayanagi, T., & Toumbas, N. (2004).** {#A.33}
+**"Flux backgrounds in 2D string theory"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0312208](https://arxiv.org/abs/hep-th/0312208)
+
+
+**Overview:**
+Gukov, Takayanagi, and Toumbas analyze the properties of two-dimensional string theory in the presence of background fluxes. They focus on how these backgrounds affect the compactification geometry, demonstrating that non-trivial topological configurations generate stable, localized energy density within the compactified space.
+
+**Relevance to QBD:**
+This string-theoretic analysis provides the conceptual backing for the compactification models developed in Chapter 17. In QBD, the compactification of the causal graph along a toroidal boundary is shown to yield localized topological invariants. Gukov's results supply the physical precedent for how background fluxes stabilize these compactified geometries, ensuring the stability of emergent physical coordinates.

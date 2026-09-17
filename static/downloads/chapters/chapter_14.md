@@ -2193,6 +2193,46 @@ This semantic structure is vital for the causal quantum models formulated in Cha
 
 ---
 
+### 6. **Anderson, E. (2012).** {#A.6}
+**"The Problem of Time in Quantum Gravity"**
+    * **Link:** [https://arxiv.org/abs/1009.2157](https://arxiv.org/abs/1009.2157)
+
+
+**Overview:**
+Anderson provides a thorough review of the problem of time in canonical quantum gravity, a conceptual crisis arising because general relativity is a reparametrization-invariant theory with no preferred background clock. He explores various proposed solutions, including relational time, the Page-Wootters mechanism, and semiclassical approximations.
+
+**Relevance to QBD:**
+The problem of time is resolved in QBD by the dual-time architecture developed in Chapter 14. By separating logical time, which counts rewrite steps, from emergent physical time, which corresponds to the length of causal paths, we bypass the need for a background clock. Anderson's review situates this resolution within the broader literature and contrasts our discrete causal ordering against the difficulties encountered by continuous canonical formulations.
+
+---
+
+### 23. **Dowker, F. (2005).** {#A.23}
+**"Causal sets and the deep structure of spacetime"**
+    * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
+
+
+**Overview:**
+Dowker provides a conceptual and physical overview of the causal set approach to quantum gravity. She argues that spacetime is fundamentally discrete and that the continuum is merely an approximation. The author demonstrates that discrete causal sets successfully preserve Lorentz invariance, solving a major historical challenge faced by discrete models.
+
+**Relevance to QBD:**
+Dowker's work is a key conceptual pillar for the discrete causal substrate defined in Chapter 1. We adopt her insight that discrete causal ordering is sufficient to construct macroscopic geometry. In Chapter 14, we prove that QBD preserves Lorentz covariance in the continuum limit, invoking Dowker to show why our discrete causal steps naturally satisfy relativistic constraints.
+
+---
+
+### 28. **Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).** {#A.28}
+**"Conditional probabilities with Dirac observables and the problem of time in quantum gravity"**
+- *Physical Review D*, 79(4), 041501(R)
+    * **Link:** [https://doi.org/10.1103/PhysRevD.79.041501](https://doi.org/10.1103/PhysRevD.79.041501) (arXiv: [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235))
+
+
+**Overview:**
+Gambini and his co-authors present a careful application of the Page-Wootters mechanism to canonical quantum gravity. They show that relational time can be successfully constructed within a fully stationary quantum state of the universe by computing conditional probabilities between the states of a physical clock and a target system.
+
+**Relevance to QBD:**
+The Page-Wootters mechanism is the conceptual precursor to the relational time formulation developed in Chapter 14. In QBD, the universe is described by a global stationary state where physical time emerges from the entanglement between the clock graph and the system graph. The relational validity of this clock mechanism is confirmed here, demonstrating that time emerges naturally without a background coordinate system.
+
+---
+
 ### 36. **Jacobson, T. (1995).** {#A.36}
 **"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
@@ -2203,6 +2243,32 @@ Jacobson derives the Einstein field equations of general relativity directly fro
 
 **Relevance to QBD:**
 Jacobson's emergent gravity derivation is a key physical pillar for the geometrogenesis proofs in Chapter 13. In QBD, the discrete field equations are shown to emerge from the thermodynamic equilibrium of the vacuum graph. Jacobson's results underpin our interpretation of gravity as a macroscopic equation of state, confirming that the curvature of spacetime arises from localized information entropy.
+
+---
+
+### 41. **Lamport, L. (1978).** {#A.41}
+**"Time, clocks, and the ordering of events in a distributed system"**
+    * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
+
+
+**Overview:**
+Lamport introduces the seminal concept of logical clocks to establish a partial ordering of events in distributed systems without relying on synchronized physical clocks. By defining a relational happened-before relation based on message passing and event sequencing, he shows how independent nodes can construct a consistent global ordering of events. This paper laid the groundwork for modern distributed systems by demonstrating that logical ordering is more fundamental than physical time.
+
+**Relevance to QBD:**
+Lamport's logical clock formalism is the starting point for the dual-time architecture developed in Chapter 14. In QBD, the local update events are partially ordered on the causal graph, representing the discrete happened-before relations. We leverage Lamport's logical clocks to construct a globally consistent historical timeline from these distributed updates, showing that emergent physical time arises naturally from discrete relational ordering.
+
+---
+
+### 51. **Page, D. N., & Wootters, W. K. (1983).** {#A.51}
+**"Evolution without evolution: Dynamics described by stationary observables"**
+    * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885)
+
+
+**Overview:**
+Page and Wootters formulate a relational interpretation of quantum mechanics where time arises from the entanglement between a subsystem acting as a clock and the rest of the universe. In this formulation, the global state of the universe is completely stationary, and dynamical evolution emerges relational when conditioning on the clock's state.
+
+**Relevance to QBD:**
+This relational time approach is the core architecture used to solve the problem of time in Chapter 14. In QBD, the global quantum state on the causal graph is stationary, and dynamical physical time emerges relationally from the entanglement between the clock and the substrate. Page and Wootters's construction grounds the relational validity of our dual-time mechanism.
 
 ---
 

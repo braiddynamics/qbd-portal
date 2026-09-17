@@ -46,7 +46,7 @@ The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the m
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
-4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
+4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.8)
 
 ### 4.1.1.1 Commentary: Physical Interpretation of $\mathbf{Caus}_t$ {#4.1.1.1}
 
@@ -985,7 +985,7 @@ The morphisms in $\mathbf{AnnCG}$ enforce a dual preservation condition: a valid
 
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
 1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> extraction.
-2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
+2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.66)
 
 ### 4.3.2.1 Commentary: Mechanism of Self-Observation {#4.3.2.1}
 
@@ -2658,7 +2658,7 @@ We solve this operational challenge by defining the Universal Constructor $\math
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
-The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.27)
+The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.30)
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):
@@ -3751,6 +3751,72 @@ Category theory is the formal language used to define the computational syntax o
 
 ---
 
+### 13. **Bennett, C. H. (1982).** {#A.13}
+**"The thermodynamics of computation: a review"**
+    * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
+
+
+**Overview:**
+Bennett reviews the thermodynamics of computation, focusing on the relation between logical reversibility and physical dissipation. He clarifies Landauer's principle, proving that while logical operations themselves do not necessarily require energy dissipation, the erasure of information or the resetting of memory registers is always accompanied by a physical entropy increase.
+
+**Relevance to QBD:**
+Bennett's insights are foundational for the dynamical rewrite rules formulated in Chapter 4. The update engine behaves as a computational constructor that deletes and instantiates edges. The physical cost of these updates is governed by Bennett's thermodynamic limits, ensuring that information erasure at the graph level generates localized heat. This couples the computational activity of the universe directly to thermodynamic energy.
+
+---
+
+### 27. **Fuchs, C. A. (2010).** {#A.27}
+**"QBism, The Perimeter of Quantum Bayesianism"**
+    * **Link:** [https://arxiv.org/abs/1003.5209](https://arxiv.org/abs/1003.5209)
+
+
+**Overview:**
+Fuchs introduces QBism, an interpretation of quantum mechanics that combines quantum information theory with personalist Bayesian probability. The author argues that quantum states do not represent objective physical entities, but rather the personal probabilities and expectations of observers who interact with the physical world.
+
+**Relevance to QBD:**
+QBism provides the epistemological backing for how quantum measurement is modeled in Chapter 4. In QBD, the update operator represents an active observation event that resolves relational quantum possibilities into concrete causal history. Fuchs's perspective warrants our treatment of these measurement events not as external perturbations, but as the fundamental relational update cycles of the universe.
+
+---
+
+### 30. **Gillespie, D. T. (1977).** {#A.30}
+**"Exact stochastic simulation of coupled chemical reactions"**
+- *The Journal of Physical Chemistry*, 81(25), 2340-2361
+    * **Link:** [https://pubs.acs.org/doi/10.1021/j100540a008](https://pubs.acs.org/doi/10.1021/j100540a008)
+
+
+**Overview:**
+Gillespie develops the Stochastic Simulation Algorithm (SSA), a precise numerical method used to simulate the time evolution of coupled chemical reactions in a well-mixed volume. By integrating the reaction probabilities stochastically, the algorithm provides exact realizations of the master equation, capturing the discrete fluctuations that are ignored by deterministic rate equations.
+
+**Relevance to QBD:**
+The Gillespie algorithm is the numerical foundation for the stochastic update simulations conducted in Chapter 4. We model the application of the rewrite rules as a set of coupled stochastic reactions where the graph vertices behave as reactants. Gillespie's method anchors the exact stochastic simulation used to validate that the graph evolves toward a stable macroscopic vacuum.
+
+---
+
+### 42. **Landauer, R. (1991).** {#A.42}
+**"Information is Physical"**
+    * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
+
+
+**Overview:**
+Landauer argues that information cannot exist independently of a physical representation, meaning that processing and storing information are governed by physical laws. He reviews Landauer's principle, which dictates that any logically irreversible operation, such as the erasure of a bit, must dissipate a minimum amount of heat into the environment. This work established a deep physical connection between information theory, computation, and thermodynamics.
+
+**Relevance to QBD:**
+This physical principle is foundational for the dynamical rewrite engine formulated in Chapter 4. In QBD, the deletion of edges during the update cycles constitutes a logically irreversible erasure of topological information. Landauer's principle establishes the physical necessity of localized heat dissipation during these deletions, confirming that the energetic cost of quantum gravity updates is fundamentally linked to information thermodynamics.
+
+---
+
+### 59. **Rovelli, C. (1996).** {#A.59}
+**"Relational Quantum Mechanics"**
+    * **Link:** [https://arxiv.org/abs/quant-ph/9609002](https://arxiv.org/abs/quant-ph/9609002)
+
+
+**Overview:**
+Rovelli introduces Relational Quantum Mechanics (RQM), postulating that quantum states do not represent absolute properties of physical systems but rather relational information between systems. He argues that physical systems are completely defined by the relations they establish with other systems, eliminating the need for an absolute observer.
+
+**Relevance to QBD:**
+RQM is the central epistemological foundation for the update dynamics formulated in Chapter 4. In QBD, the state of the causal graph is entirely relational, where vertices possess states only relative to neighboring connections. Rovelli's relational model provides the physical motivation for this approach, showing that quantum measurement is a fundamental relational update event on the graph.
+
+---
+
 ### 66. **Uustalu, T., & Vene, V. (2008).** {#A.66}
 **"Comonadic notions of computation"**
     * **Link:** [https://www.sciencedirect.com/science/article/pii/S1571066108003435](https://www.sciencedirect.com/science/article/pii/S1571066108003435)
@@ -3761,6 +3827,33 @@ Uustalu and Vene formulate a comonadic approach to describe context-dependent co
 
 **Relevance to QBD:**
 This comonadic structure is the direct tool used to formalize the local update rules in Chapter 2. Because our rewrite rules rely on the surrounding context of neighboring vertices and edges, they are modeled comonadically. This construction provides the category-theoretic foundations required to define these context-dependent updates, ensuring algebraic consistency.
+
+---
+
+### 68. **van Kampen, N. G. (1992).** {#A.68}
+**"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
+- *North-Holland*
+    * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
+
+
+**Overview:**
+van Kampen presents a classic and thorough textbook on stochastic processes in physical and chemical systems. He covers the master equation, Fokker-Planck equations, expansion methods, and the properties of stochastic transitions in systems operating near or far from thermodynamic equilibrium.
+
+**Relevance to QBD:**
+This textbook is the direct reference for the stochastic master equations formulated in Chapter 4. In QBD, the local update rules are modeled as stochastic transitions whose probabilities are governed by a master equation. Van Kampen's analytical tools show that this master equation converges to a stable macroscopic vacuum, supporting our model.
+
+---
+
+### 78. **Zurek, W. H. (2003).** {#A.78}
+**"Decoherence, Einselection, and the Quantum Origins of the Classical"**
+    * **Link:** [https://arxiv.org/abs/quant-ph/0105127](https://arxiv.org/abs/quant-ph/0105127)
+
+
+**Overview:**
+Zurek reviews the quantum decoherence program, explaining how interactions between a quantum system and its environment select a preferred set of stable classical states, a process known as einselection. He proves that decoherence naturally explains how classical objectivity emerges from the underlying quantum superposition states.
+
+**Relevance to QBD:**
+Decoherence and einselection are the key physical mechanisms used to explain the emergence of classical causal history in Chapter 4. In QBD, the environment of the causal graph decoheres relational quantum states into stable, objective classical edges. Zurek's analysis provides the physical motivation for this emergence, bridging the quantum substrate and classical space.
 
 ---
 

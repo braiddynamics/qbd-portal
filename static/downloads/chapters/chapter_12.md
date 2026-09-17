@@ -1576,6 +1576,32 @@ This reference is indispensable for the continuum limit derivations of QBD. In C
 
 ---
 
+### 12. **Belkin, M., & Niyogi, P. (2003).** {#A.12}
+**"Laplacian Eigenmaps for Dimensionality Reduction and Data Representation"**
+    * **Link:** [https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf](https://www2.imm.dtu.dk/projects/manifold/Papers/Laplacian.pdf)
+
+
+**Overview:**
+Belkin and Niyogi introduce Laplacian Eigenmaps, a geometric toolset that utilizes the Laplace-Beltrami operator to map high-dimensional data points to a low-dimensional manifold while preserving local proximity. They prove that the eigenvectors of the graph Laplacian provide optimal embeddings that preserve the underlying manifold's geometry.
+
+**Relevance to QBD:**
+This approach is the foundation for the dimensional reconstruction proofs in Chapter 12. To show that a discrete graph converges to a smooth spacetime manifold, we must construct an embedding. Belkin and Niyogi's work provides the justification for using the graph Laplacian's eigenvectors to recover the metric tensor and coordinate charts, demonstrating that low-dimensional spacetime emerges naturally from discrete networks.
+
+---
+
+### 17. **Calder, J., & García Trillos, N. (2022).** {#A.17}
+**"Improved spectral convergence rates for graph Laplacians on ε-graphs and k-NN graphs"**
+    * **Link:** [https://arxiv.org/abs/1910.13476](https://arxiv.org/abs/1910.13476)
+
+
+**Overview:**
+Calder and Garcia Trillos derive improved spectral convergence rates for graph Laplacians converging to continuous Laplace-Beltrami operators on data-generated manifolds. They utilize optimal transport theory and variational analysis to prove that the eigenvectors and eigenvalues of the discrete graph match their continuous counterparts with sharp convergence bounds.
+
+**Relevance to QBD:**
+This variational analysis is decisive for the continuum limit of the discrete field equations in Chapter 12. To show that the discrete Einstein-Hilbert action on our graph converges to the continuous action, we must bound the error of the graph Laplacian. Calder's convergence bounds are used to confirm that the discrete curvature converges systematically to the continuous Ricci scalar, establishing a bridge to classical general relativity.
+
+---
+
 ### 29. **Gilbarg, D., & Trudinger, N. S. (2001).** {#A.29}
 **"Elliptic Partial Differential Equations of Second Order"**
 - *Springer*
@@ -1587,6 +1613,45 @@ Gilbarg and Trudinger present a definitive and thorough treatment of classical e
 
 **Relevance to QBD:**
 This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+
+---
+
+### 63. **Singer, A., & Wu, H.-T. (2013).** {#A.63}
+**"Vector diffusion maps and the connection graph Laplacian"**
+    * **Link:** [https://arxiv.org/abs/1102.0075](https://arxiv.org/abs/1102.0075)
+
+
+**Overview:**
+Singer and Wu introduce vector diffusion maps (VDM), a geometric approach that generalizes Laplacian eigenmaps to vector bundles on manifolds. They define the connection graph Laplacian, proving that its spectral properties recover both the underlying manifold's geometry and the gauge connection of the vector bundle, establishing a powerful tool for analyzing curved datasets.
+
+**Relevance to QBD:**
+This connection graph Laplacian is the direct tool used to analyze the emergent gauge fields in Chapter 12. To show that our discrete graph connectivity yields continuous gauge fields, we must construct a vector bundle over the graph. Singer and Wu's spectral convergence proofs show how the eigenvectors of the connection Laplacian recover both physical coordinates and gauge connections.
+
+---
+
+### 69. **van Luxburg, U., Belkin, M., & Bousquet, O. (2008).** {#A.69}
+**"Consistency of spectral clustering"**
+    * **Link:** [http://misha.belkin-wang.org/papers/CLEM_08.pdf](http://misha.belkin-wang.org/papers/CLEM_08.pdf)
+
+
+**Overview:**
+van Luxburg, Belkin, and Bousquet prove the consistency of spectral clustering, demonstrating that the eigenvectors of the graph Laplacian converge systematically to the eigenfunctions of the continuous Laplace-Beltrami operator as the graph size approaches infinity. They establish explicit convergence bounds for different graph normalization schemes.
+
+**Relevance to QBD:**
+This convergence proof is a main cornerstone for the dimensional reconstruction proofs in Chapter 12. To show that a discrete causal network converges to a continuous manifold, we rely on spectral clustering consistency. This paper provides the bounds needed to verify that the discrete eigenvectors recover continuous coordinates in the infinite-volume limit.
+
+---
+
+### 73. **Wilson, K. G. (1975).** {#A.73}
+**"The renormalization group: Critical phenomena and the Kondo problem"**
+    * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
+
+
+**Overview:**
+Wilson presents the definitive formulation of the renormalization group, describing how the effective physical parameters of a quantum field theory shift as the system is viewed at different length scales. This work provides the tools required to analyze critical phase transitions and calculate continuous limits in quantum field theories.
+
+**Relevance to QBD:**
+The renormalization group is the main tool used to calculate the continuum limit of the discrete field equations in Chapter 12. By grouping local graph updates into larger coarse-grained blocks, we show that the discrete Laplacian converges to a continuous operator. Wilson's scaling theory underpins this convergence.
 
 ---
 

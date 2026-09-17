@@ -3195,6 +3195,19 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 
 ---
 
+### 9. **Baader, F., & Nipkow, T. (1998).** {#A.9}
+**"Term Rewriting and All That"**
+    * **Link:** [http://dx.doi.org/10.1017/CBO9781139172752](http://dx.doi.org/10.1017/CBO9781139172752)
+
+
+**Overview:**
+Baader and Nipkow present a comprehensive guide to the theory of term rewriting systems. They cover abstract reduction systems, confluence, termination, and unification. Their work documents the core logical principles that govern how symbolic expressions can be systematically modified under a set of deterministic rewrite rules.
+
+**Relevance to QBD:**
+QBD operates as a discrete dynamical system driven by graph rewriting. In Chapter 2, we prove that the update rule is confluent and terminating within the causal horizon, ensuring that physical history is unique and well-defined. Appealing to Baader and Nipkow supplies the logical tools required for this confluence proof, showing that our local rewrite rules behave as a consistent term rewriting system.
+
+---
+
 ### 13. **Bennett, C. H. (1982).** {#A.13}
 **"The thermodynamics of computation: a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
@@ -3272,3 +3285,29 @@ Sorkin presents a comprehensive review of the causal set approach to quantum gra
 
 **Relevance to QBD:**
 Sorkin's causal set model is a core physical pillar for the discrete causal substrate defined in Chapter 1. We adopt his insight that causality is fundamental and volume is discrete. However, we expand his poset setting by adding relational graph connectivity, which is necessary to support quantum states. Sorkin's work underpins the physical basis for our discrete spacetime model.
+
+---
+
+### 66. **Uustalu, T., & Vene, V. (2008).** {#A.66}
+**"Comonadic notions of computation"**
+    * **Link:** [https://www.sciencedirect.com/science/article/pii/S1571066108003435](https://www.sciencedirect.com/science/article/pii/S1571066108003435)
+
+
+**Overview:**
+Uustalu and Vene formulate a comonadic approach to describe context-dependent computations in computer science. They demonstrate that while monads are effective at modeling computations that produce effects, comonads are the natural category-theoretic tool to model computations that rely on surrounding context or historical execution states.
+
+**Relevance to QBD:**
+This comonadic structure is the direct tool used to formalize the local update rules in Chapter 2. Because our rewrite rules rely on the surrounding context of neighboring vertices and edges, they are modeled comonadically. This construction provides the category-theoretic foundations required to define these context-dependent updates, ensuring algebraic consistency.
+
+---
+
+### 76. **Wolfram, S. (2002).** {#A.76}
+**"A New Kind of Science"**
+    * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
+
+
+**Overview:**
+Wolfram presents an extensive study of cellular automata and other simple computational systems, arguing that complex structures in nature can emerge from simple, deterministic update rules. He proposes that the universe itself operates as a discrete cellular automaton, suggesting that computational rules are more fundamental than continuous physical equations.
+
+**Relevance to QBD:**
+Wolfram's computational paradigm is a key conceptual precursor to the graph rewrite dynamics developed in Chapter 2. We adopt his core insight that discrete, localized update rules can generate complex, emergent physical structures. Citing this book frames our work within the history of discrete physical models, highlighting our use of network-based rewriting.

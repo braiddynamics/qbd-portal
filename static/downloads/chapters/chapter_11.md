@@ -2156,3 +2156,83 @@ We now possess a fully defined geometric spacetime that arises directly from dis
 | $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3](/monograph/stage/discrete/11.3/#11.3.3) |
 | $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
 | $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
+
+\newpage
+# References
+
+### 5. **Ambjørn, J., Jurkiewicz, J., & Loll, R. (2005).** {#A.5}
+**"Reconstructing the Universe"**
+    * **Link:** [https://arxiv.org/abs/hep-th/0505154](https://arxiv.org/abs/hep-th/0505154)
+
+
+**Overview:**
+Ambjorn, Jurkiewicz, and Loll demonstrate that a non-trivial four-dimensional classical spacetime can emerge from a non-perturbative path integral of causal triangulations. This approach, known as Causal Dynamical Triangulations (CDT), shows that imposing a strict distinction between space-like and time-like steps solves the historical problem of spatial collapse and ensures causality in the continuum limit.
+
+**Relevance to QBD:**
+This seminal work in discrete quantum gravity provides vital conceptual backing for the geometrogenesis proofs in QBD. In Chapter 11, we leverage Loll's insights to show how discrete causal structures avoid cosmological dimensional collapse. CDT's results set a precedent for how discrete, causally ordered structures can successfully yield continuous, high-dimensional geometries when the continuum limit is taken.
+
+---
+
+### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
+**"Graph Theory"**
+    * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
+
+
+**Overview:**
+Bondy and Murty present a modern, graduate-level textbook on graph theory. They cover connectivity, matchings, independent sets, graph colorings, and topological graph theory. Their work provides a thorough and comprehensive collection of tools used to analyze discrete relational networks.
+
+**Relevance to QBD:**
+This textbook serves as the standard reference for all graph-theoretic operations conducted across the monograph. Whether analyzing the path length between vertices in Chapter 11 or evaluating the cycle structure of braids in Chapter 6, the theorems and notations of Bondy and Murty ensure that our discrete derivations are mathematically sound.
+
+---
+
+### 22. **Diestel, R. (2017).** {#A.22}
+**"Graph Theory (5th ed.)"**
+- *Springer*
+    * **Link:** [https://diestel-graph-theory.com/](https://diestel-graph-theory.com/)
+
+
+**Overview:**
+Diestel presents a detailed and standard textbook on graph theory. The author covers infinite graphs, graph limits, topological aspects of graphs, and the structural properties that emerge in large-scale networks. The book serves as the leading reference for advanced graph-theoretic structures.
+
+**Relevance to QBD:**
+This textbook is the foundation for the graph-theoretic proofs across the monograph. In Chapter 11, we utilize Diestel's theorems on infinite graphs to formulate the infinite-volume limit of our causal network. The connection to these results confirms that the discrete graph structures remain mathematically consistent and well-defined even when the number of vertices approaches infinity, paving the way for the continuous spacetime manifold.
+
+---
+
+### 26. **Erdős, P., & Rényi, A. (1960).** {#A.26}
+**"On the evolution of random graphs"**
+    * **Link:** [https://users.renyi.hu/~p_erdos/1960-10.pdf](https://users.renyi.hu/~p_erdos/1960-10.pdf)
+
+
+**Overview:**
+Erdos and Renyi present the foundational paper on the evolution of random graphs, introducing the classical probabilistic model where edges are added stochastically. They prove the existence of sharp phase transitions, specifically the sudden appearance of a unique giant component as the average vertex degree exceeds one.
+
+**Relevance to QBD:**
+This seminal work is the foundation for the geometrogenesis proofs in Chapter 11. We model the emergence of physical space as a phase transition in a random causal network. Erdos and Renyi's results supply the basis for this phase transition, showing that the vacuum graph stochastically transitions from a disjointed state to a unified, highly connected spacetime manifold.
+
+---
+
+### 35. **Hawking, S. W., & Ellis, G. F. R. (1973).** {#A.35}
+**"The Large Scale Structure of Space-Time"**
+    * **Link:** [https://doi.org/10.1017/CBO9780511524646](https://doi.org/10.1017/CBO9780511524646)
+
+
+**Overview:**
+Hawking and Ellis present the definitive monograph on the large-scale global structure of spacetime in general relativity. They develop the apparatus of differential geometry and global analysis to prove the classic singularity theorems, demonstrating that singularities are inevitable occurrences in classical general relativity.
+
+**Relevance to QBD:**
+This seminal textbook is the direct reference for the classical Lorentzian geometry targeted in Chapter 11. To prove that the discrete causal graph converges to a physical spacetime, we must compare the discrete shortest-path metric to the continuous Lorentzian metric. Hawking and Ellis's treatment ensures that our definitions of causal order and light-cone structure align with established general relativity.
+
+---
+
+### 75. **Woess, W. (2000).** {#A.75}
+**"Random Walks on Infinite Graphs and Groups"**
+    * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
+
+
+**Overview:**
+Woess presents a comprehensive and exacting study of random walks on infinite graphs, focusing on how the graph's algebraic and geometric structure governs diffusion processes. He covers transient and recurrent walks, spectral radii, and boundary behavior, establishing the standard tools for discrete diffusion.
+
+**Relevance to QBD:**
+This reference is necessary for the discrete diffusion analyses conducted in Chapter 11. To prove that the causal graph converges to a continuous manifold, we analyze how localized random walks diffuse across the network. Woess's bounds confirm that this diffusion is stable and recovers the metric of continuous spacetime.

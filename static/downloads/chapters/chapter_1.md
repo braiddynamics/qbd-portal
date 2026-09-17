@@ -1620,7 +1620,7 @@ $t_L$ obviates all three defects in a unified stroke, restoring a robust ontolog
   * Uniqueness inheres in the Sequencer by design; no multiplicity of alternatives exists, as it constitutes the singular, canonical iterator governing the universal state sequence.
   * The update process effected by the Sequencer qualifies as an objective physical transition, wherein uncomputed potential configurations crystallize into definite, actualized states through the deterministic application of $\mathcal{U}$, thereby instantiating genuine novelty and diachronic identity.
 
-Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.51" label="(Page & Wootters, 1983)" />; <Cite id="A.28" label="(Gambini, García-Pintos, & Pullin, 2023)" />.
+Internal observers, operating within the emergent physical time $t_{phys}$, reconstruct the Page-Wootters conditional probabilities as an effective, approximate description valid in the regime of weak entanglement and coarse-grained measurements; however, the foundational ontology embeds authentic evolution, wherein each tick of $t_L$ marks an irrevocable advance from one ontically distinct reality to the next <Cite id="A.51" label="(Page & Wootters, 1983)" />; <Cite id="A.28" label="(Gambini, Porto, Torterolo, & Pullin, 2009)" />.
 
 ---
 
@@ -3043,6 +3043,19 @@ The problem of time is resolved in QBD by the dual-time architecture developed i
 
 ---
 
+### 8. **Awodey, S. (2010).** {#A.8}
+**"Category Theory (2nd ed.)"**
+    * **Link:** [https://global.oup.com/academic/product/category-theory-9780199237180](https://global.oup.com/academic/product/category-theory-9780199237180)
+
+
+**Overview:**
+Awodey provides a systematic and accessible introduction to category theory, focusing on the structures and relations that unify different branches of mathematics. He covers functors, natural transformations, limits, colimits, and monads, emphasizing the structural perspective over set-theoretic foundations.
+
+**Relevance to QBD:**
+Category theory is the formal language used to define the computational syntax of QBD in Chapter 1. By representing the substrate as a category where vertices are objects and edges are morphisms, we formalize the rewrite rules as functors. Awodey's text is the core reference for these category-theoretic structures, ensuring that the algebraic foundations of our model are carefully defined.
+
+---
+
 ### 13. **Bennett, C. H. (1982).** {#A.13}
 **"The thermodynamics of computation: a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
@@ -3096,6 +3109,19 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
+### 23. **Dowker, F. (2005).** {#A.23}
+**"Causal sets and the deep structure of spacetime"**
+    * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
+
+
+**Overview:**
+Dowker provides a conceptual and physical overview of the causal set approach to quantum gravity. She argues that spacetime is fundamentally discrete and that the continuum is merely an approximation. The author demonstrates that discrete causal sets successfully preserve Lorentz invariance, solving a major historical challenge faced by discrete models.
+
+**Relevance to QBD:**
+Dowker's work is a key conceptual pillar for the discrete causal substrate defined in Chapter 1. We adopt her insight that discrete causal ordering is sufficient to construct macroscopic geometry. In Chapter 14, we prove that QBD preserves Lorentz covariance in the continuum limit, invoking Dowker to show why our discrete causal steps naturally satisfy relativistic constraints.
+
+---
+
 ### 25. **Enderton, H. B. (2001).** {#A.25}
 **"A Mathematical Introduction to Logic (2nd ed.)"**
     * **Link:** [https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic](https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic)
@@ -3109,9 +3135,10 @@ This logic reference is necessary for the epistemological foundations laid in Ch
 
 ---
 
-### 28. **Gambini, R., García-Pintos, L. P., & Pullin, J. (2023).** {#A.28}
-**"The Page-Wootters mechanism in canonical quantum gravity"**
-    * **Link:** [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235) *(Note: Original link preserved as verified by user; exact 2023 match not located in current search, may be preprint variant or title nuance)*
+### 28. **Gambini, R., Porto, R. A., Torterolo, S., & Pullin, J. (2009).** {#A.28}
+**"Conditional probabilities with Dirac observables and the problem of time in quantum gravity"**
+- *Physical Review D*, 79(4), 041501(R)
+    * **Link:** [https://doi.org/10.1103/PhysRevD.79.041501](https://doi.org/10.1103/PhysRevD.79.041501) (arXiv: [https://arxiv.org/abs/0809.4235](https://arxiv.org/abs/0809.4235))
 
 
 **Overview:**
@@ -3158,6 +3185,18 @@ Landauer argues that information cannot exist independently of a physical repres
 
 **Relevance to QBD:**
 This physical principle is foundational for the dynamical rewrite engine formulated in Chapter 4. In QBD, the deletion of edges during the update cycles constitutes a logically irreversible erasure of topological information. Landauer's principle establishes the physical necessity of localized heat dissipation during these deletions, confirming that the energetic cost of quantum gravity updates is fundamentally linked to information thermodynamics.
+
+---
+
+### 43. **Leibniz-Clarke Correspondence (1715-1716).** {#A.43}
+* **Link:** [https://personal.lse.ac.uk/robert49/teaching/ph103/pdf/Ariew_1715LeibnizClarkeCorrespondence.pdf](https://personal.lse.ac.uk/robert49/teaching/ph103/pdf/Ariew_1715LeibnizClarkeCorrespondence.pdf)
+
+
+**Overview:**
+The Leibniz-Clarke correspondence records a classic philosophical debate on the nature of space and time. Leibniz advocates for a relational view, arguing that space and time are systems of relations between coexisting objects. Clarke, defending Newton's view, argues that space and time are absolute, infinite containers within which physical objects are placed.
+
+**Relevance to QBD:**
+This historical debate provides the conceptual framing for the relational substrate defined in Chapter 1. QBD rejects Newtonian absolute space in favor of a relational structure where space and time emerge solely from the connectivity of the causal graph. This correspondence frames our alignment with Leibniz's relational view, demonstrating that our graph-theoretic model is a realization of his relational philosophy.
 
 ---
 
@@ -3226,6 +3265,19 @@ RQM is the central epistemological foundation for the update dynamics formulated
 
 ---
 
+### 62. **Sati, H., & Schreiber, U. (2025).** {#A.62}
+**"The quantum monadology"**
+    * **Link:** [https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf](https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf)
+
+
+**Overview:**
+Sati and Schreiber formulate the quantum monadology, a categorical language that interprets quantum states and observers within a relational, category-theoretic context. Drawing inspiration from Leibnizian philosophy, they model the universe as a network of quantum monads that observe each other relationally. This categorical formalism establishes a precise language for describing how global quantum states can emerge from local, relational observations.
+
+**Relevance to QBD:**
+This categorical formulation is indispensable for the relational model defined in Chapter 1. We adopt Sati and Schreiber's quantum monadology to formalize the interactions between local graph vertices as relational observations. Sati and Schreiber's category-theoretic tools show that global spacetime arises naturally from these localized, relational updates on the causal graph.
+
+---
+
 ### 64. **Sorkin, R. D. (2005).** {#A.64}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
@@ -3237,6 +3289,19 @@ Sorkin presents a comprehensive review of the causal set approach to quantum gra
 
 **Relevance to QBD:**
 Sorkin's causal set model is a core physical pillar for the discrete causal substrate defined in Chapter 1. We adopt his insight that causality is fundamental and volume is discrete. However, we expand his poset setting by adding relational graph connectivity, which is necessary to support quantum states. Sorkin's work underpins the physical basis for our discrete spacetime model.
+
+---
+
+### 72. **Wheeler, J. A. (1990).** {#A.72}
+**"Information, physics, quantum: The search for links"**
+    * **Link:** [https://philpapers.org/archive/WHEIPQ.pdf](https://philpapers.org/archive/WHEIPQ.pdf)
+
+
+**Overview:**
+Wheeler introduces the classic concept of 'it from bit', postulating that every physical entity, such as space, time, or particles, derives its existence from binary information exchanges. He argues that the physical world is fundamentally informational, meaning that physical laws are the logical rules governing how observers acquire and process bits.
+
+**Relevance to QBD:**
+Wheeler's informational paradigm is the philosophical foundation for the entire QBD monograph. We adopt his 'it from bit' perspective by modeling the universe as a discrete network of relational information updates on a causal graph. This reference grounds our fundamental premise that physical space, time, and matter emerge solely from discrete, relational bits.
 
 ---
 
