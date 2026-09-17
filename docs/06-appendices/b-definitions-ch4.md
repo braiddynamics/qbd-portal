@@ -16,7 +16,7 @@ The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the m
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
-4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.7)
+4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.8)
 
 **In Plain English:**  
 Section 4.1.1 formalizes the properties of the QBD definition regarding internal causal category.
@@ -789,7 +789,7 @@ Section 4.3.1 formalizes the properties of the QBD definition regarding annotate
 
 The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
 1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> extraction.
-2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.61)
+2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.66)
 
 **In Plain English:**  
 Section 4.3.2 formalizes the properties of the QBD definition regarding awareness endofunctor ($r_t$).
@@ -2258,7 +2258,7 @@ Section 4.4.9 formalizes the machine-checked proofs of information-theoretic fou
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
-The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.27)
+The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.30)
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):

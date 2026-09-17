@@ -2237,7 +2237,7 @@ Section 3.4.1 formalizes the properties of the QBD theorem regarding inevitable 
 :::info[**Irreversible Breaking of Vacuum Bipartiteness via Single-Edge Fluctuation**]
 :::
 
-Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.18).
+Let a Tunneling Event be defined as the addition of a single edge $e = (u, v)$ such that both endpoints reside in the same parity partition set ($\pi(u) = \pi(v)$). Then this operation reduces the Hamming distance between the bipartite edge set $E_0$ and a graph containing an odd cycle to exactly 1, constituting the minimal topological fluctuation required to violate bipartiteness [(Coleman, 1977)](/monograph/appendices/a-references#A.20).
 
 **In Plain English:**  
 Section 3.4.2 formalizes the properties of the QBD lemma regarding topological tunneling.
@@ -2764,7 +2764,7 @@ The laws of physics operate as a topological quantum error-correcting code, util
 :::info[**Isomorphism between Quantum Braid Dynamics and Stabilizer Quantum Error Correction established by Operator Mapping**]
 :::
 
-There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.50)
+There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.54)
 
 **In Plain English:**  
 Section 3.5.2 formalizes the properties of the QBD theorem regarding stabilizer isomorphism.
