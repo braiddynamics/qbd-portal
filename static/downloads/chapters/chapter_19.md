@@ -2,7 +2,7 @@
 
 **Abstract**
 
-wip
+Chapter 19 derives the thermalization, baryogenesis, and primordial element formation of the early universe from the topological kinetics of Quantum Braid Dynamics. As the primordial de Sitter expansion phase decelerates, kinetic graph update energy is released as topological thermal heat during reheating. The matter-antimatter asymmetry of the cosmos is derived directly from the chirality bias of trivalent braid swap transitions during geometrogenesis, resolving the mystery of baryogenesis without ad hoc CP-violating parameters. Tripartite braid generations produce exact hadron mass splittings from topological complexity differences. Finally, primordial light element abundances (Hydrogen, Deuterium, Helium-3, Helium-4, and Lithium-7) are calculated from discrete graph fusion kinetics, matching observational astrophysical constraints strictly from first principles.
 
 ---
 

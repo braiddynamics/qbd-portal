@@ -1,0 +1,23 @@
+------------------------------------------------------------------------
+§24.4.7.1 Wilson Loop Area Law and String Breaking
+------------------------------------------------------------------------
+Extracted String Tension sigma: 2.1370 (strictly > 0)
+Perimeter Falloff Coefficient mu: 0.4120
+Critical String-Breaking Distance R_c: 1.222 fm
+Saturation Potential V_inf: 1.100 GeV
+------------------------------------------------------------------------
+|   R (fm) |   V(R) (GeV) | Regime    |
+|----------|--------------|-----------|
+|      0.2 |         0.18 | confining |
+|      0.4 |         0.36 | confining |
+|      0.6 |         0.54 | confining |
+|      0.8 |         0.72 | confining |
+|      1   |         0.9  | confining |
+|      1.2 |         1.08 | confining |
+|      1.4 |         1.1  | screened  |
+|      1.6 |         1.1  | screened  |
+|      1.8 |         1.1  | screened  |
+|      2   |         1.1  | screened  |
+------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------

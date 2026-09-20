@@ -269,26 +269,38 @@ export const part4Chapters: ChapterData[] = [
     part: "Part IV: Phenomenological Consequences (The Output)",
     title: "Singularities & Condensates",
     taxonomy: "Extremes",
-    status: "Draft WIP",
+    status: "Theoretical Model",
     leanProofs: 0,
     pythonSims: 0,
     executiveEvaluation: "Gravitational singularities are resolved as maximum-density graph condensates, where topological quantization bounds prevent infinite compression.",
     breakdowns: [
       {
-        title: "22.1 Black Hole Interior",
-        content: "Resolves the black hole interior, proving that gravitational singularities are avoided by a strict quantum topological density cutoff."
+        title: "22.1 Saturated Core States",
+        content: "Proves that steric exponential damping of graph rewrite rates enforces a critical density fixed point, eliminating infinite-density gravitational singularities."
       },
       {
-        title: "22.2 Event Horizon & Evaporation",
-        content: "Models event horizon dynamics and Hawking evaporation as a comonadic stabilizer-state leakage process."
+        title: "22.2 Desynchronization Horizons",
+        content: "Derives the Bekenstein-Hawking area-entropy equivalence from boundary-crossing causal links and holographic plaquette cycle projection."
       },
       {
-        title: "22.3 Superconductivity",
-        content: "Models the black hole interior as a superconductive graph condensate of maximum logical connectivity."
+        title: "22.3 Unitary Evaporation",
+        content: "Demonstrates unitary black hole evaporation via discrete path-sum instantons and Ryu-Takayanagi island min-cut transition, recovering a pure state."
       },
       {
-        title: "22.4 Formal Synthesis",
-        content: "Synthesizes singularity avoidance, horizon evaporation, and macroscopic condensates into the closing ledger of Part IV."
+        title: "22.4 Relativistic Degenerate Matter",
+        content: "Calculates the relativistic TOV collapse threshold and discrete hydrostatic equilibrium from tripartite ribbon repulsion."
+      },
+      {
+        title: "22.5 Macroscopic Braid Condensates",
+        content: "Formulates fault-tolerant zero-resistance transport in macroscopic braid condensates through comonadic error-filtering projections."
+      },
+      {
+        title: "22.6 Topological Meissner Effect",
+        content: "Derives London constitutive equations, exponential magnetic screening, and homological fluxoid quantization on discrete graph ribbons."
+      },
+      {
+        title: "22.7 Formal Synthesis",
+        content: "Synthesizes singularity resolution, unitary horizon evaporation, degenerate matter thresholds, and macroscopic superconductivity into a unified symbol ledger."
       }
     ],
     specialists: [
@@ -306,7 +318,7 @@ export const part4Chapters: ChapterData[] = [
       }
     ],
     analogy: "A highway junction at rush hour. Rather than space collapsing into an infinite, impossible point of density, the connections reach a maximum limit where traffic stops, preventing infinities.",
-    link: "/wip?chapter=22",
+    link: "/monograph/output/extremes/22.1",
     style: "B",
     definitions: [
       {

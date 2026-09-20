@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------
+§23.3.7.1 Interferometric Phase Jitter Spectral Density
+------------------------------------------------------------------------------
+Interferometer Arm Length L: 40.0 m
+Cavity Transit Time tau_cav: 1.3343e-07 s
+Stabilizer Correlation Frequency f_corr: 1.193 MHz
+Bare Holographic White Noise S_0: 5.3912e-44 Hz^-1
+Audio Band Strain Noise sqrt(S_h) at 1 kHz: 1.947e-25 Hz^-1/2 (Suppressed)
+High-Frequency Strain Noise sqrt(S_h) at 1 MHz: 1.492e-22 Hz^-1/2 (Benchmark)
+Fermilab Holometer Null Bound: ~ 1.0e-22 Hz^-1/2 (Consistent: pass)
+------------------------------------------------------------------------------
+|   Frequency_Hz |   omega_tau |   Filter_Factor |   S_h_Hz_inv |   sqrt_S_h | Regime                            |
+|----------------|-------------|-----------------|--------------|------------|-----------------------------------|
+|         10     |  8.3834e-06 |      7.0281e-11 |    3.789e-54 |  1.947e-27 | Quadratic Filtered (f << f_corr)  |
+|        100     |  8.3834e-05 |      7.0281e-09 |    3.789e-52 |  1.947e-26 | Quadratic Filtered (f << f_corr)  |
+|       1000     |  0.00083834 |      7.0281e-07 |    3.789e-50 |  1.947e-25 | Quadratic Filtered (f << f_corr)  |
+|      10000     |  0.0083834  |      7.0276e-05 |    3.789e-48 |  1.946e-24 | Quadratic Filtered (f << f_corr)  |
+|     100000     |  0.083834   |      0.0069791  |    3.763e-46 |  1.94e-23  | Quadratic Filtered (f << f_corr)  |
+|     500000     |  0.41917    |      0.14944    |    8.057e-45 |  8.976e-23 | Transition Zone (f ~ f_corr)      |
+|          1e+06 |  0.83834    |      0.41274    |    2.225e-44 |  1.492e-22 | Transition Zone (f ~ f_corr)      |
+|          2e+06 |  1.6767     |      0.73762    |    3.977e-44 |  1.994e-22 | Transition Zone (f ~ f_corr)      |
+|          5e+06 |  4.1917     |      0.94615    |    5.101e-44 |  2.259e-22 | Holographic Plateau (f >> f_corr) |
+|          1e+07 |  8.3834     |      0.98597    |    5.316e-44 |  2.306e-22 | Holographic Plateau (f >> f_corr) |
+|          5e+07 | 41.917      |      0.99943    |    5.388e-44 |  2.321e-22 | Holographic Plateau (f >> f_corr) |
+|          1e+08 | 83.834      |      0.99986    |    5.39e-44  |  2.322e-22 | Holographic Plateau (f >> f_corr) |
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

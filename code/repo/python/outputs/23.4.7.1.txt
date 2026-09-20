@@ -1,0 +1,22 @@
+------------------------------------------------------------------------------
+§23.4.7.1 Gravitational Desynchronization Decoherence Rate
+------------------------------------------------------------------------------
+Gravitational Constant G: 6.6743e-11 m^3/(kg s^2)
+Reduced Planck Constant hbar: 1.0546e-34 J s
+Electron Decoherence Timescale: 1.9e+16 yr (Fully Coherent: pass)
+Optomechanical Sphere (10^-14 kg) Decoherence: 1.58 ms (pass)
+Gravitational Desynchronization Boundary: Sharp transition at M ~ 10^-14 kg
+------------------------------------------------------------------------------
+| System                    |   Mass_kg |   Radius_m |   E_Delta_J |   Gamma_s_inv | Decoherence_Time   | Regime                          |
+|---------------------------|-----------|------------|-------------|---------------|--------------------|---------------------------------|
+| Electron (Compton spread) |  9.11e-31 |   3.86e-13 |   1.721e-58 |     1.632e-24 | 1.9e+16 yr         | Stable Quantum (Microscopic)    |
+| Proton (charge radius)    |  1.67e-27 |   8.4e-16  |   2.667e-49 |     2.529e-15 | 1.3e+07 yr         | Stable Quantum (Microscopic)    |
+| C60 Fullerene             |  1.2e-24  |   5e-10    |   2.282e-49 |     2.164e-15 | 1.5e+07 yr         | Stable Quantum (Microscopic)    |
+| Tobacco Mosaic Virus      |  6.64e-20 |   1e-08    |   3.237e-41 |     3.069e-07 | 3.26e+06 s         | Mesoscopic Coherent             |
+| Silica Nanosphere (100nm) |  1e-17    |   5e-08    |   1.268e-37 |     0.001202  | 8.32e+02 s         | Mesoscopic Coherent             |
+| Optomechanical Sphere     |  1e-14    |   1e-07    |   6.674e-32 |   632.9       | 1.58 ms            | Optomechanical Accessible       |
+| Micro-Bead (10 um)        |  1e-11    |   5e-06    |   9.344e-28 |     8.86e+06  | 1.13e-07 s         | Instantaneous Classical (Macro) |
+| Macroscopic Mass (1 mg)   |  1e-06    |   0.0005   |   9.344e-20 |     8.86e+14  | 1.13e-15 s         | Instantaneous Classical (Macro) |
+------------------------------------------------------------------------------
+status: pass
+------------------------------------------------------------------------------

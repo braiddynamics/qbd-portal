@@ -1,6 +1,7 @@
-﻿label: "25: Synthesis"
+label: "25: Synthesis"
 collapsible: true
 collapsed: true
 link:
   type: generated-index
-  title: "Chapter 25: Cosmological Natural Selection (Synthesis)"
+  title: "Chapter 25: Architectural Synthesis (Synthesis)"
+  slug: /category/25-synthesis

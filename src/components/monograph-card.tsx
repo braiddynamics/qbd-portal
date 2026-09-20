@@ -18,7 +18,7 @@ interface MonographCardProps {
 }
 
 interface ChapterInfo {
-    num: number;
+    num: number | string;
     shortName: string;
     title: string;
     description: string;
@@ -51,11 +51,34 @@ const part3Chapters: ChapterInfo[] = [
     { num: 17, shortName: "Worldsheets", title: "Chapter 17: String Limit (Worldsheets)", description: "Recovers standard string theory worldsheets as the 2D continuum limit of dense causal set braids.", linkUrl: "/monograph/stage/worldsheets/17.1" }
 ];
 
+const part4Chapters: ChapterInfo[] = [
+    { num: 18, shortName: "Inflation", title: "Chapter 18: Big Kindling (Inflation)", description: "Establishes exponential spatial expansion and scale-invariant fluctuations from autocatalytic ribbon network branching.", linkUrl: "/monograph/output/inflation/18.1" },
+    { num: 19, shortName: "Nucleosynthesis", title: "Chapter 19: Hot Universe (Nucleosynthesis)", description: "Models primordial nuclear freeze-out and cosmological light element abundances from discrete trivalent fusion kinetics.", linkUrl: "/monograph/output/nucleosynthesis/19.1" },
+    { num: 20, shortName: "Web", title: "Chapter 20: Structured Universe (Cosmic Web)", description: "Derives cosmic filamentation, void formation, and baryonic acoustic oscillation harmonics on expanding graph topologies.", linkUrl: "/monograph/output/web/20.1" },
+    { num: 21, shortName: "Relics", title: "Chapter 21: Dark Sector (Relics)", description: "Identifies cold dark matter candidates and cosmic coincidences as uncharged topological ribbon knot invariants.", linkUrl: "/monograph/output/relics/21.1" },
+    { num: 22, shortName: "Extremes", title: "Chapter 22: Singularities & Condensates (Extremes)", description: "Resolves black hole singularities into saturated graph condensates with unitary horizon evaporation and topological superconductivity.", linkUrl: "/monograph/output/extremes/22.1" }
+];
+
+const part5Chapters: ChapterInfo[] = [
+    { num: 23, shortName: "Universality", title: "Chapter 23: Operational Verification (Universality)", description: "Formulates laboratory test protocols across Rydberg simulators, quantum processor benchmarks, and optomechanical bounds.", linkUrl: "/monograph/conclusion/universality/23.1" },
+    { num: 24, shortName: "Derivations", title: "Chapter 24: Non-Perturbative Foundations & The Mass Gap (Derivations)", description: "Non-perturbative derivation of the Yang-Mills mass gap, dimensional transmutation, and tripartite color confinement.", linkUrl: "/monograph/conclusion/derivations/24.1" },
+    { num: 25, shortName: "Synthesis", title: "Chapter 25: Architectural Synthesis (Synthesis)", description: "Architectural synthesis of the cosmos as a closed, self-correcting causal network with comonadic measurement and conformal renewal.", linkUrl: "/monograph/conclusion/synthesis/25.1" }
+];
+
+const part6Chapters: ChapterInfo[] = [
+    { num: "A", shortName: "References", title: "Appendix A: External References Cited", description: "Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.", linkUrl: "/monograph/appendices/a-references" },
+    { num: "B", shortName: "Simulations", title: "Appendix B: Python Simulation Models", description: "Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.", linkUrl: "/monograph/appendices/b-sim-models" },
+    { num: "C", shortName: "Notation", title: "Appendix C: Notation & Symbol Table", description: "Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.", linkUrl: "/monograph/appendices/notation" }
+];
+
 const getChaptersForPart = (partNum: string | number): ChapterInfo[] => {
     const p = String(partNum);
     if (p === "1") return part1Chapters;
     if (p === "2") return part2Chapters;
     if (p === "3") return part3Chapters;
+    if (p === "4") return part4Chapters;
+    if (p === "5") return part5Chapters;
+    if (p === "6") return part6Chapters;
     return [];
 };
 
@@ -65,7 +88,7 @@ export default function MonographCard({ section }: MonographCardProps) {
     
     // Unified sticky state tracking for hovering/tapping
     const [isCardHovered, setIsCardHovered] = useState(false);
-    const [activeChapterNum, setActiveChapterNum] = useState<number | null>(null);
+    const [activeChapterNum, setActiveChapterNum] = useState<number | string | null>(null);
     
     const activeChapter = activeChapterNum !== null 
         ? chapters.find(ch => ch.num === activeChapterNum) 
@@ -76,9 +99,14 @@ export default function MonographCard({ section }: MonographCardProps) {
     const displayLink = activeChapter ? activeChapter.linkUrl : section.linkUrl;
     
     // Action button text updates based on active chapter
+    const isAppendix = String(section.part) === "6";
     const buttonText = activeChapter 
-        ? `Read Chapter ${activeChapter.num} →` 
-        : `Read Part ${section.part} →`;
+        ? (isAppendix 
+            ? `Read Appendix ${activeChapter.num} →` 
+            : `Read Chapter ${activeChapter.num} →`)
+        : (isAppendix 
+            ? `Explore Appendices →` 
+            : `Read Part ${section.part} →`);
 
     const cardContent = (
         <div className="qbd-interactive-card-content section-grid-2col" style={{ height: '100%' }}>

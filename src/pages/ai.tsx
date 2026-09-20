@@ -14,7 +14,7 @@ const SITE_INFO = {
   github: 'https://github.com/braiddynamics/qbd-portal',
   contact: 'https://x.com/BraidDynamics',
   license: 'https://braiddynamics.com/legal',
-  lastUpdated: '2026-08-24',
+  lastUpdated: '2026-09-19',
 };
 
 const DESCRIPTION = `Quantum Braid Dynamics (QBD) is an independent theoretical physics research project
@@ -31,6 +31,11 @@ const QUICK_START = [
     label: 'Downloads index (JSON) - START HERE',
     url: 'https://braiddynamics.com/data/ai-downloads-info.json',
     note: 'Machine-readable catalogue of every available download with byte sizes and token counts. Includes both the 25-chapter monograph and standalone research papers.',
+  },
+  {
+    label: 'LLM Context Index (llms.txt)',
+    url: 'https://braiddynamics.com/llms.txt',
+    note: 'Standardized LLM context file summarizing the theoretical architecture, download links, and evaluation guidelines.',
   },
   {
     label: 'Research Papers & Preprints Archive',
@@ -54,12 +59,22 @@ const QUICK_START = [
   },
 ];
 
-const PARTS = [
+interface Part {
+  number: number;
+  title: string;
+  chapters: string;
+  tokens: string;
+  md: string;
+  summary: string;
+  draft?: boolean;
+}
+
+const PARTS: Part[] = [
   {
     number: 1,
     title: 'The Foundational Principles (The Rules)',
     chapters: '1-5',
-    tokens: '~471K',
+    tokens: '~513K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md',
     summary: 'Substrate ontology, axioms, object model (causal network architecture), dynamics (update rules), and geometrogenesis (equilibrium spacetime emergence).',
   },
@@ -67,7 +82,7 @@ const PARTS = [
     number: 2,
     title: 'Topological Nature of Matter (The Players)',
     chapters: '6-10',
-    tokens: '~336K',
+    tokens: '~338K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md',
     summary: 'Tripartite braid fermions, quantum numbers from topology, gauge symmetries as braid automorphisms, particle generations and decay, quantum universality as computation.',
   },
@@ -75,7 +90,7 @@ const PARTS = [
     number: 3,
     title: 'Emergent Reality (The Stage)',
     chapters: '11-17',
-    tokens: '~338K',
+    tokens: '~364K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_3_emergent_reality_the_stage.md',
     summary: 'Discrete differential geometry, discrete Einstein field equations, continuum limit convergence, Lorentzian time, geometry of entanglement (ER=EPR), isomorphism/holography principle, string limit.',
   },
@@ -83,55 +98,60 @@ const PARTS = [
     number: 4,
     title: 'Phenomenological Consequences (The Output)',
     chapters: '18-22',
-    tokens: '~284K',
+    tokens: '~365K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md',
-    summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics (Chapters 18–21 published; Chapter 22 active draft).',
+    summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics, singularities & saturated core condensates.',
   },
   {
     number: 5,
     title: 'Applications and Synthesis (Conclusion)',
     chapters: '23-25',
-    tokens: '~10K',
+    tokens: '~148K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.md',
-    summary: 'Multiverse thermodynamics, mathematical universe derivations, cosmological natural selection.',
-    draft: true,
+    summary: 'Operational verification protocols, non-perturbative foundations and the Yang-Mills mass gap, and architectural synthesis of the self-observing causal cosmos.',
   },
   {
     number: 6,
     title: 'Appendices',
-    chapters: 'A-E',
-    tokens: '~49K',
+    chapters: 'A-C',
+    tokens: '~57K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_6_appendices.md',
-    summary: 'Notation reference, definitions glossary, bibliography, Lean 4 proof listings, Python model source.',
+    summary: 'External references cited, Python simulation models, and comprehensive notation & symbol table.',
   },
 ];
 
 const CHAPTERS = [
-  { n: 1,  title: 'Substrate (Ontology)',                        tokens: '~138K', md: '/downloads/chapters/chapter_1.md' },
-  { n: 2,  title: 'Constraints (Axioms)',                        tokens: '~72K',  md: '/downloads/chapters/chapter_2.md' },
-  { n: 3,  title: 'Object Model (Architecture)',                 tokens: '~102K', md: '/downloads/chapters/chapter_3.md' },
-  { n: 4,  title: 'Operations (Dynamics)',                       tokens: '~90K',  md: '/downloads/chapters/chapter_4.md' },
-  { n: 5,  title: 'Geometrogenesis (Equilibrium)',               tokens: '~74K',  md: '/downloads/chapters/chapter_5.md' },
-  { n: 6,  title: 'Tripartite Braid (Fermions)',                 tokens: '~61K',  md: '/downloads/chapters/chapter_6.md' },
-  { n: 7,  title: 'Quantum Numbers (Topology)',                  tokens: '~47K',  md: '/downloads/chapters/chapter_7.md' },
-  { n: 8,  title: 'Gauge Symmetries (Braids)',                   tokens: '~80K',  md: '/downloads/chapters/chapter_8.md' },
-  { n: 9,  title: 'Generations and Decay (Unification)',         tokens: '~68K',  md: '/downloads/chapters/chapter_9.md' },
-  { n: 10, title: 'Quantum Universality (Computation)',          tokens: '~85K',  md: '/downloads/chapters/chapter_10.md' },
-  { n: 11, title: 'Differential Geometry (Discrete)',            tokens: '~51K',  md: '/downloads/chapters/chapter_11.md' },
-  { n: 12, title: 'Discrete Field Equations (Einstein)',         tokens: '~42K',  md: '/downloads/chapters/chapter_12.md' },
-  { n: 13, title: 'Continuum Limit (Convergence)',               tokens: '~41K',  md: '/downloads/chapters/chapter_13.md' },
-  { n: 14, title: 'Lorentzian Reality (Time)',                   tokens: '~58K',  md: '/downloads/chapters/chapter_14.md' },
-  { n: 15, title: 'Geometry of Entanglement (ER = EPR)',         tokens: '~49K',  md: '/downloads/chapters/chapter_15.md' },
-  { n: 16, title: 'Isomorphism Principle (Holography)',          tokens: '~46K',  md: '/downloads/chapters/chapter_16.md' },
-  { n: 17, title: 'String Limit (Worldsheets)',                  tokens: '~53K',  md: '/downloads/chapters/chapter_17.md' },
-  { n: 18, title: 'Big Kindling (Inflation)',                    tokens: '~82K',  md: '/downloads/chapters/chapter_18.md' },
-  { n: 19, title: 'Hot Universe (Nucleosynthesis)',              tokens: '~54K',  md: '/downloads/chapters/chapter_19.md' },
-  { n: 20, title: 'Structured Universe (Cosmic Web)',            tokens: '~96K',  md: '/downloads/chapters/chapter_20.md' },
-  { n: 21, title: 'Dark Sector (Relics)',                        tokens: '~51K',  md: '/downloads/chapters/chapter_21.md' },
-  { n: 22, title: 'Singularities & Condensates (Extremes)',      tokens: '~4K',   md: '/downloads/chapters/chapter_22.md', draft: true },
-  { n: 23, title: 'Holographic World (Universality)',            tokens: '~3K',   md: '/downloads/chapters/chapter_23.md', draft: true },
-  { n: 24, title: 'Mathematical Universe (Derivations)',         tokens: '~4K',   md: '/downloads/chapters/chapter_24.md', draft: true },
-  { n: 25, title: 'Cosmological Natural Selection (Synthesis)',  tokens: '~2K',   md: '/downloads/chapters/chapter_25.md', draft: true },
+  { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~140K', md: '/downloads/chapters/chapter_1.md' },
+  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~80K',  md: '/downloads/chapters/chapter_2.md' },
+  { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~103K', md: '/downloads/chapters/chapter_3.md' },
+  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~109K', md: '/downloads/chapters/chapter_4.md' },
+  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~89K',  md: '/downloads/chapters/chapter_5.md' },
+  { n: 6,  title: 'Tripartite Braid (Fermions)',                                 tokens: '~62K',  md: '/downloads/chapters/chapter_6.md' },
+  { n: 7,  title: 'Quantum Numbers (Topology)',                                  tokens: '~47K',  md: '/downloads/chapters/chapter_7.md' },
+  { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~80K',  md: '/downloads/chapters/chapter_8.md' },
+  { n: 9,  title: 'Generations and Decay (Unification)',                         tokens: '~68K',  md: '/downloads/chapters/chapter_9.md' },
+  { n: 10, title: 'Quantum Universality (Computation)',                          tokens: '~85K',  md: '/downloads/chapters/chapter_10.md' },
+  { n: 11, title: 'Differential Geometry (Discrete)',                            tokens: '~53K',  md: '/downloads/chapters/chapter_11.md' },
+  { n: 12, title: 'Continuum Limit (Convergence)',                               tokens: '~45K',  md: '/downloads/chapters/chapter_12.md' },
+  { n: 13, title: 'Discrete Field Equations (Einstein)',                         tokens: '~55K',  md: '/downloads/chapters/chapter_13.md' },
+  { n: 14, title: 'Lorentzian Reality (Time)',                                   tokens: '~65K',  md: '/downloads/chapters/chapter_14.md' },
+  { n: 15, title: 'Geometry of Entanglement (ER = EPR)',                         tokens: '~49K',  md: '/downloads/chapters/chapter_15.md' },
+  { n: 16, title: 'Isomorphism Principle (Holography)',                          tokens: '~49K',  md: '/downloads/chapters/chapter_16.md' },
+  { n: 17, title: 'String Limit (Worldsheets)',                                  tokens: '~54K',  md: '/downloads/chapters/chapter_17.md' },
+  { n: 18, title: 'Big Kindling (Inflation)',                                    tokens: '~82K',  md: '/downloads/chapters/chapter_18.md' },
+  { n: 19, title: 'Hot Universe (Nucleosynthesis)',                              tokens: '~55K',  md: '/downloads/chapters/chapter_19.md' },
+  { n: 20, title: 'Structured Universe (Cosmic Web)',                            tokens: '~96K',  md: '/downloads/chapters/chapter_20.md' },
+  { n: 21, title: 'Dark Sector (Relics)',                                        tokens: '~52K',  md: '/downloads/chapters/chapter_21.md' },
+  { n: 22, title: 'Singularities & Condensates (Extremes)',                      tokens: '~82K',  md: '/downloads/chapters/chapter_22.md' },
+  { n: 23, title: 'Operational Verification (Universality)',                     tokens: '~58K',  md: '/downloads/chapters/chapter_23.md' },
+  { n: 24, title: 'Non-Perturbative Foundations & The Mass Gap (Derivations)',   tokens: '~68K',  md: '/downloads/chapters/chapter_24.md' },
+  { n: 25, title: 'Architectural Synthesis (Synthesis)',                         tokens: '~24K',  md: '/downloads/chapters/chapter_25.md' },
+];
+
+const APPENDICES = [
+  { id: 'A', title: 'Appendix A: External References Cited', tokens: '~15K', url: '/monograph/appendices/a-references', desc: 'Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.' },
+  { id: 'B', title: 'Appendix B: Python Simulation Models',  tokens: '~20K', url: '/monograph/appendices/b-sim-models', desc: 'Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.' },
+  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~19K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
 ];
 
 const LEAN_PROOFS = [
@@ -233,6 +253,42 @@ const KEY_CONCEPTS = [
   { layer: 'QECC',
     term: 'Syndrome (σ)',
     def: 'A detectable topological defect in the causal graph — a local region where the stabilizer conditions are violated. Syndromes propagate, annihilate, or braid. Syndrome worldlines in spacetime are the trajectories of particles; pair creation/annihilation is syndrome birth/death.' },
+
+  // ── Phenomenology ──────────────────────────────────────────────────────────
+  { layer: 'Phenomenology',
+    term: 'Autocatalytic Ribbon Branching',
+    def: 'The cosmological inflationary mechanism in QBD: ribbon networks undergo exponential bifurcation driven by local rewrite kinetics, producing scale-invariant perturbations without requiring an ad hoc inflaton scalar field.' },
+  { layer: 'Phenomenology',
+    term: 'Trivalent Nuclear Freeze-Out',
+    def: 'Primordial nucleosynthesis modeled as discrete fusion kinetics on trivalent braid nodes. Light element abundances (H, He-4, D, Li-7) freeze out when the graph expansion rate exceeds the local topological rewrite rate.' },
+  { layer: 'Phenomenology',
+    term: 'Cosmic Web Filamentation',
+    def: 'Macroscopic structure formation driven by the degree distribution of expanding causal sets, naturally reproducing filamentary walls and void hierarchies observed in large-scale galaxy surveys.' },
+  { layer: 'Phenomenology',
+    term: 'Topological Knot Relics (Cold Dark Matter)',
+    def: 'Stable, electrically uncharged topological ribbon knot invariants formed during early geometrogenesis that interact exclusively via emergent gravitational curvature, serving as natural cold dark matter candidates.' },
+  { layer: 'Phenomenology',
+    term: 'Saturated Core Condensate',
+    def: 'Resolution of black hole singularities: gravitational collapse terminates when causal edge density reaches the maximal kinematic packing threshold, forming a high-density, unitary core condensate devoid of geometric divergence.' },
+
+  // ── Non-Perturbative Foundations ───────────────────────────────────────────
+  { layer: 'Foundations',
+    term: 'Poset Renormalization & Dimensional Transmutation',
+    def: 'Discrete block-decimation on causal posets proving that trivalent braid nodes generate antiscreening color-magnetic charge with negative Callan-Symanzik beta function, dynamically transmuting dimensionless coupling into the physical mass gap.' },
+  { layer: 'Foundations',
+    term: 'Ribbon Bisection & String Breaking',
+    def: 'Dynamic color confinement mechanism where string elongation beyond the critical separation threshold triggers local ribbon bisection (R_snap), nucleating a quark-antiquark pair and saturating the potential.' },
+  { layer: 'Foundations',
+    term: 'Osterwalder-Schrader Poset Reconstruction',
+    def: 'Rigorous theorem proving that discrete transfer matrix reflection positivity on Euclideanized causal networks analytically continues to satisfy the full relativistic Wightman axioms in 4D Minkowski spacetime.' },
+
+  // ── Architectural Synthesis ────────────────────────────────────────────────
+  { layer: 'Synthesis',
+    term: 'Cycle-Basis Homology Duality',
+    def: 'Discrete realization of T-duality: momentum modes and ribbon winding numbers exchange symmetrically under inversion of the root-mean-square cycle perimeter, bounding cosmic contraction away from zero radius.' },
+  { layer: 'Synthesis',
+    term: 'Conformal Horizon Renewal',
+    def: 'Late-time cosmological entropy resolution: Quantum Extremal Surfaces absorb accumulated radiation entanglement into the invariant vacuum codespace, resetting gravitational Weyl curvature for subsequent cosmic cycles.' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -374,7 +430,7 @@ export default function AiPage() {
 
         <pre style={{ ...s.pre, borderLeft: '4px solid var(--ifm-color-warning)', background: 'var(--ifm-color-warning-contrast-background)' }}>{`IMPORTANT — HOW TO REVIEW THIS WORK ACCURATELY:
 
-The monograph is ~1.19M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
+The monograph is ~1.68M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
 Large context windows (1M–2M) are available and useful for cross-referencing and maintaining coherence,
 but context size is NOT the limiting factor for accurate analysis.
 
@@ -531,8 +587,7 @@ Machine-readable download catalogue:
           <code>https://braiddynamics.com/downloads/chapters/chapter_N.md</code> (Markdown),{' '}
           <code>chapter_N.json</code> (JSON), and{' '}
           <code>chapter_N.pdf</code> (PDF).{' '}
-          Chapters marked <span style={s.badge}>DRAFT</span> are active works-in-progress with
-          limited content.
+          All 25 chapters are published, verified, and integrated into the global catalog.
         </p>
         <table style={s.table}>
           <thead>
@@ -548,22 +603,48 @@ Machine-readable download catalogue:
               <tr key={c.n}>
                 <td style={s.td}>{c.n}</td>
                 <td style={s.td}>
-                  {c.draft ? (
-                    <span style={{ color: 'var(--ifm-color-emphasis-600)' }}>
-                      Chapter {c.n}: {c.title} (Draft)
-                    </span>
-                  ) : (
-                    <a href={`https://braiddynamics.com${c.md}`} style={s.a}>
-                      Chapter {c.n}: {c.title}
-                    </a>
-                  )}
+                  <a href={`https://braiddynamics.com${c.md}`} style={s.a}>
+                    Chapter {c.n}: {c.title}
+                  </a>
                 </td>
-                <td style={s.td}>{c.draft ? ' - ' : c.tokens}</td>
+                <td style={s.td}>{c.tokens}</td>
                 <td style={s.td}>
-                  {c.draft
-                    ? <span style={s.badge}>DRAFT</span>
-                    : <span style={{ color: 'var(--ifm-color-success)' }}>published</span>
-                  }
+                  <span style={{ color: 'var(--ifm-color-success)' }}>published</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        {/* ── Monograph Appendices ── */}
+        <h2 style={s.h2}>MONOGRAPH STRUCTURE — APPENDICES</h2>
+        <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
+          Part 6 comprises three formal appendices providing external citations, numerical simulation engines, and global mathematical notation ledgers.
+        </p>
+        <table style={s.table}>
+          <thead>
+            <tr>
+              <th style={s.th}>App.</th>
+              <th style={s.th}>Title &amp; Scope</th>
+              <th style={s.th}>Est. Tokens</th>
+              <th style={s.th}>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {APPENDICES.map((a) => (
+              <tr key={a.id}>
+                <td style={s.td}>{a.id}</td>
+                <td style={{ ...s.td, maxWidth: '320px' }}>
+                  <a href={`https://braiddynamics.com${a.url}`} style={{ ...s.a, fontWeight: 700 }}>
+                    {a.title}
+                  </a>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.2rem' }}>
+                    {a.desc}
+                  </div>
+                </td>
+                <td style={s.td}>{a.tokens}</td>
+                <td style={s.td}>
+                  <span style={{ color: 'var(--ifm-color-success)' }}>published</span>
                 </td>
               </tr>
             ))}
@@ -573,7 +654,7 @@ Machine-readable download catalogue:
         {/* ── Key Concepts ── */}
         <h2 style={s.h2}>KEY CONCEPTS GLOSSARY (MONOGRAPH)</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-          20 essential terms drawn from published monograph chapters, grouped by conceptual layer.
+          30 essential terms drawn from the published monograph, grouped by conceptual layer.
         </p>
         <table style={s.table}>
           <thead>
@@ -625,7 +706,7 @@ Machine-readable download catalogue:
         </table>
 
         <p style={{ fontSize: '0.85rem' }}>
-          Complete definitions for all ~300 terms used in the monograph:{' '}
+          Complete definitions for all 1,453 terms used in the monograph:{' '}
           <a href="https://braiddynamics.com/data/definitions.json" style={s.a}>
             https://braiddynamics.com/data/definitions.json
           </a>
@@ -634,7 +715,7 @@ Machine-readable download catalogue:
         {/* ── Formal Proofs ── */}
         <h2 style={s.h2}>MONOGRAPH FORMAL LEAN 4 PROOFS</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-          Six core theorems are formally verified in Lean 4 and embedded in the monograph.
+          Twelve core theorem suites are formally verified in Lean 4 and embedded in the monograph.
           Each file is self-contained and can be checked with{' '}
           <code>lake build</code> in a standard Lean 4 + Mathlib environment.
         </p>
@@ -685,8 +766,8 @@ Machine-readable download catalogue:
 
         {/* ── Context window guidance ── */}
         <h2 style={s.h2}>CONTEXT WINDOW GUIDANCE</h2>
-        <pre style={s.pre}>{`Total monograph:  ~1.19M tokens  (full book Markdown)
-                  ~1.22M tokens  (full book JSON, includes structure overhead)
+        <pre style={s.pre}>{`Total monograph:  ~1.66M tokens  (full book Markdown)
+                  ~1.83M tokens  (full book JSON, includes structure overhead)
 
 Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   The bottleneck is reasoning depth, not context size. Reviewing one chapter
@@ -698,10 +779,10 @@ Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   of critical analysis.
 
 Chapter sizes (for planning):
-  Smallest chapter:  ~2K tokens  (Ch. 25)
-  Largest chapter:   ~76K tokens (Ch. 3)
-  Typical chapter:   ~45–65K tokens
-  All 25 chapters:   ~1.19M tokens total
+  Smallest chapter:  ~20K tokens (Ch. 25)
+  Largest chapter:   ~140K tokens (Ch. 1)
+  Typical chapter:   ~45–85K tokens
+  All 25 chapters:   ~1.66M tokens total
 
 File format guidance:
   Markdown  → best for prose reading and analysis (no overhead)
@@ -732,7 +813,7 @@ X/Twitter: https://x.com/BraidDynamics
 License:   https://braiddynamics.com/legal
 Status:    Active independent research
 
-To cite the Monograph: See the full bibliography in Appendix E of the monograph or at
+To cite the Monograph: See the full bibliography in Appendix A of the monograph or at
                        https://braiddynamics.com/data/references.json
 To cite Research Papers: See individual BibTeX records at https://braiddynamics.com/papers`}</pre>
 

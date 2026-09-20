@@ -172,8 +172,6 @@ export default function DownloadPage() {
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                 {downloadsInfo.chapters.map((ch, idx) => {
-                  // Quick progress mapping for visual flavor (22-25 are WIP, 1-21 are complete)
-                  const isWIP = ch.chapter_number > 21;
                   return (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
                       <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
@@ -182,19 +180,6 @@ export default function DownloadPage() {
                             <span style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--ifm-color-emphasis-500)' }}>
                               Chapter {ch.chapter_number}
                             </span>
-                            {isWIP && (
-                              <span style={{ 
-                                fontSize: '0.7rem', 
-                                fontWeight: 'bold', 
-                                color: 'var(--ifm-color-warning)', 
-                                backgroundColor: 'rgba(245, 158, 11, 0.1)',
-                                padding: '0.1rem 0.4rem',
-                                borderRadius: '4px',
-                                border: '1px solid rgba(245, 158, 11, 0.2)'
-                              }}>
-                                Draft WIP
-                              </span>
-                            )}
                           </div>
                           <h4 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 1rem 0', lineHeight: '1.3' }}>
                             {ch.name.replace(/Chapter \d+:\s*/, '')}

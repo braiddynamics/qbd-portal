@@ -1084,8 +1084,10 @@ import pandas as pd
 
 def calculate_hadron_mass_splitting():
     # Pre-geometric topological complexity parameters (§19.3.1 - §19.3.5)
-    # Proton (uud): isolated complexity C_isolated = 2 + 2 + 1 = 5, parallel sharing N_shared = 4 -> C_uud = 1
-    # Neutron (udd): isolated complexity C_isolated = 2 + 1 + 1 = 4, orthogonal sharing N_shared = 0 -> C_udd = 4
+    # Proton (uud): isolated complexity C_isolated = 2 + 2 + 1 = 5,
+    # parallel sharing N_shared = 4 -> C_uud = 1
+    # Neutron (udd): isolated complexity C_isolated = 2 + 1 + 1 = 4,
+    # orthogonal sharing N_shared = 0 -> C_udd = 4
     c_uud = 1
     c_udd = 4
     delta_C = c_udd - c_uud  # Complexity gap = 3

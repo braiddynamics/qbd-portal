@@ -46,12 +46,12 @@ sidebar_position: 0
 * [Chapter 19: Hot Universe (Nucleosynthesis)](/monograph/category/19-nucleosynthesis)
 * [Chapter 20: Structured Universe (Cosmic Web)](/monograph/category/20-web)
 * [Chapter 21: Dark Sector (Relics)](/monograph/category/21-relics)
-* [Chapter 22: Singularities & Condensates (Extremes)](/wip?chapter=22)
+* [Chapter 22: Singularities & Condensates (Extremes)](/monograph/category/22-extremes)
 
 ### 5. Applications and Synthesis (Conclusion)
-* [Chapter 23: Holographic World (Universality)](/wip?chapter=23)
-* [Chapter 24: Mathematical Universe (Derivations)](/wip?chapter=24)
-* [Chapter 25: Cosmological Natural Selection (Synthesis)](/wip?chapter=25)
+* [Chapter 23: Operational Verification (Universality)](/monograph/category/23-universality)
+* [Chapter 24: Non-Perturbative Foundations & The Mass Gap (Derivations)](/monograph/category/24-derivations)
+* [Chapter 25: Architectural Synthesis (Synthesis)](/monograph/category/25-synthesis)
 
 ### Appendices
 * [A. External References Cited](/monograph/appendices/a-references)

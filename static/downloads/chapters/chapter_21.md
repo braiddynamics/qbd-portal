@@ -2,7 +2,7 @@
 
 **Abstract**
 
-wip
+Chapter 21 derives the nature and phenomenological consequences of the dark sector within Quantum Braid Dynamics. Non-braided topological vacancies ("ash") left behind during the geometrogenesis phase transition possess non-vanishing energy-momentum equivalents while remaining completely uncoupled from electromagnetic and strong gauge interactions, naturally accounting for cold dark matter. Vacancy defect pressure across cosmic voids provides the pre-geometric origin of dark energy, matching observed cosmological constant acceleration without fine-tuned quantum field vacuum energies. High-energy dispersion modifications arising from discrete causal lattice constraints resolve the Greisen-Zatsepin-Kuzmin (GZK) ultra-high-energy cosmic ray cutoff anomaly. Finally, the cosmological coincidence problem is resolved by linking dark matter and dark energy densities directly to graph expansion age constraints.
 
 ---
 

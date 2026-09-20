@@ -514,7 +514,7 @@ Section 2.4.1 formalizes the properties of the QBD theorem regarding general cyc
 :::info[**Local Confluence via Edge-Overlapping Rewrite Operations**]
 :::
 
-Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct, overlapping compliant pairs $P_1$ and $P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the global consistency of the decomposition.
+Let $\mathcal{R}$ denote the rewrite rule governing edge addition applied to a state $G$ containing two distinct compliant pairs $P_1$ and $P_2$ sharing a common directed edge $(w, u) \in E$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />). Then the application of $\mathcal{R}$ to $P_1$ maintains the compliance of $P_2$, and the resulting state is invariant with respect to the temporal order of application ($G_{1,2} \equiv G_{2,1}$), establishing the local confluence of edge-overlapping decompositions.
 
 **In Plain English:**  
 Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of the constructor.
@@ -523,12 +523,12 @@ Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of
 
 ### 2.4.2.1 Proof: Confluence of the Constructor {#2.4.2.1}
 
-:::tip[**Formal Verification of Commutativity through Overlapping Updates**]
+:::tip[**Formal Verification of Commutativity through Edge-Overlapping Updates**]
 :::
 
-**I. Initial State with Overlap**
+**I. Initial State with Edge Overlap**
 
-Let $G = (V, E)$ denote a graph under **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> containing two compliant two-edge subpaths $P_1, P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />) sharing a common edge $(w, u) \in E$:
+Let $G = (V, E)$ denote a graph under **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> containing two compliant two-edge subpaths $P_1, P_2$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />) sharing a common directed edge $(w, u) \in E$:
 
 $$
 P_1 = (v \to w \to u), \quad P_2 = (w \to u \to x)
@@ -582,6 +582,10 @@ By the commutativity of set union on finite edge sets:
 $$
 E_{AB} = E \cup \{ e_1, e_2 \} = E \cup \{ e_2, e_1 \} = E_{BA} \implies G_{AB} \equiv G_{BA}
 $$
+
+**V. Remark on Vertex-Sharing Candidates**
+
+When two compliant 2-paths overlap at only a single vertex without sharing an edge (for example, $P_1 = 0 \to 1 \to 2$ and $P_2 = 2 \to 3 \to 4$ in the presence of perimeter chords such as $(0, 4)$), adding chord $(2, 0)$ introduces an alternative 2-path $2 \to 0 \to 4$, dynamically disabling the PUC compliance of $P_2$. Such configurations do not share causal sub-actions and are governed by the parallel execution scheduler's proposal filtering and collision resolution.
 
 We conclude that the rewrite operations commute locally, establishing the diamond property and local confluence of the Universal Constructor.
 
@@ -820,11 +824,11 @@ Let the universe exist in state $G_0$ with potential $\Phi(G_0) = (L, N_L)$ sati
 **III. Consistency and Reduction**
 
 1.  **Confluence:** The parallel application of operations proceeds concurrently, as established by the **Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />, yielding state $G_{add}$.
-2.  **Net Descent:** The subsequent deletion phase produces state $G_1$ satisfying $\Phi(G_1) < \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />, which utilizes **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" /> to guarantee the potential decrease.
+2.  **Net Descent:** The atomic rewrite produces state $G_1$ satisfying $\Phi(G_1) \prec_{\text{lex}} \Phi(G_0)$ as established by **Decrease in Parallel Updates** <Ref id="2.4.5" label="§2.4.5" />, which utilizes concurrent chord addition and perimeter deletion to guarantee the potential decrease via **Reduction via Deletion** <Ref id="2.4.4" label="§2.4.4" />.
 
 **IV. Iterative Termination**
 
-1.  **Sequence Construction:** The dynamics generate a sequence of potentials $\Phi(G_0) > \Phi(G_1) > \dots$.
+1.  **Sequence Construction:** The dynamics generate a sequence of potentials $\Phi(G_0) \succ_{\text{lex}} \Phi(G_1) \succ_{\text{lex}} \dots$.
 2.  **Well-Foundedness:** The lexicographic order on finite graphs constitutes a proven well-founded invariant with no infinite descending chains in the potential order (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
 3.  **Limit:** The sequence must terminate at a state $G_{min}$.
 
@@ -853,10 +857,21 @@ Section 2.4.6 formalizes the properties of the QBD proof regarding general cycle
 Verification of the finite termination condition follows **General Cycle Decomposition** <Ref id="2.4.6" label="§2.4.6" /> across the following protocols:
 
 1.  **Defect Initialization:** The algorithm constructs isolated directed cycles of length $k \in [4, 12]$ to serve as standardized topological defects. This mapping represents the initialization of unstable macroscopic loops within the vacuum.
-2.  **Topological Reduction:** The protocol simulates a maximally parallel update by instantiating chords across open 2-paths and subsequently prunes macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
+2.  **Topological Reduction:** The protocol simulates an unweighted topological reduction by instantiating chords across open 2-paths and subsequently pruning macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
 3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$), verifying the monotonic descent of $\Phi(G)$ (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
 
+*(Pedagogical Benchmark vs. Physical Dynamic Execution):*  
+The script below is a topological demonstrator of cycle-length reduction on unweighted defect graphs. In the physical QBD substrate, graph rewriting executes via the timestamp-aware atomic scheduler with the Symmetric Reciprocal Filter $\mathcal{M}(A)$ (shown in `atomic_cycle_reduction_step`), strictly preventing reciprocal 2-cycles during parallel collapse.
+
 ```python
+"""
+Pedagogical Topological Cycle Digestion Demonstrator (§2.4.10).
+
+Demonstrates cycle-length reduction on unweighted directed k-cycles
+to verify termination at simplicial ground states (L_max <= 3).
+Physical rewrites use the timestamp-aware atomic scheduler (Axioms 1-3).
+"""
+
 import networkx as nx
 import pandas as pd
 import math 
@@ -951,6 +966,39 @@ def run_reduction_protocol(k):
     del_ops = phase_2_delete_cycles(G)
    
     return add_ops, del_ops
+
+
+def atomic_cycle_reduction_step(G):
+    """
+    Companion reference: Timestamp-aware atomic cycle reduction step (Lemma 2.4.5).
+    Applies chord addition and perimeter deletion in a single atomic rewrite step,
+    filtering reciprocal collision pairs to strictly preserve Axiom 1 (no 2-cycles).
+    """
+    paths = find_compliant_2_paths(G)
+    if not paths:
+        return 0, 0
+    
+    proposals_add = {(u, v) for v, w, u in paths}
+    # Symmetric Reciprocal Filter (Corollary 2.2): drop colliding pairs and self-loops
+    filtered_add = {
+        (u, v) for (u, v) in proposals_add
+        if (v, u) not in proposals_add and u != v
+    }
+    
+    proposals_del = set()
+    for c in nx.simple_cycles(G):
+        if len(c) > 3:
+            proposals_del.add((c[0], c[1]))
+            break
+            
+    for u, v in filtered_add:
+        G.add_edge(u, v)
+    for u, v in proposals_del:
+        if G.has_edge(u, v):
+            G.remove_edge(u, v)
+            
+    return len(filtered_add), len(proposals_del)
+
 
 # === Execution and Verification ===
 results = []
@@ -1741,7 +1789,7 @@ Section 2.7.4 formalizes the properties of the QBD lemma regarding local puc app
 
 **I. Substrate Topology and Branching Metrics**
 
-Let the causal graph substrate operate as a directed graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded maximum out-degree $\Delta_{\mathrm{out}} \le 3$ (branching factor $b = \Delta_{\mathrm{out}} - 1 \le 2$) and unpinned cycle percolation density $\rho < 1/b$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
+Let the causal graph substrate operate as a directed graph $G = (V, E)$ of volume $|V| = N$, characterized by a bounded maximum total degree $\Delta \le 3$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$) and unpinned cycle percolation density $\rho < 1/b$ (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The localized pre-check executes to depth:
 
 $$
 L_{\text{cut}} = \lfloor \log_2 N \rfloor + 3
@@ -1749,7 +1797,7 @@ $$
 
 **II. Directed Path Enumeration and Extension Probability**
 
-The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate branching factor $b = \Delta_{\mathrm{out}} - 1 \le 2$:
+The number of self-avoiding directed paths of length $L$ originating from a vertex $v_0$ is bounded by the substrate non-backtracking branching factor $b = \Delta - 1 \le 2$:
 
 $$
 N_{\text{paths}}(L) \le b^L
@@ -1908,7 +1956,7 @@ Section 2.7.5.1 formalizes the properties of the QBD proof regarding exact poset
 
 ### 2.7.6 Lemma: Independence of Axiom 3 {#2.7.6}
 
-:::info[**Logical Independence of the Global Acyclicity Requirement via Independence of Axiom 3**]
+:::info[**Logical Independence of the Global Acyclicity Requirement through Independence of Axiom 3**]
 :::
 
 Let $\Sigma = \{Ax1, Ax2\}$ denote the set of local axioms consisting of **The Directed Causal Link** and **Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />. The timestamped 4-cycle defined by **Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" /> constitutes a valid graph under $\Sigma$ while violating Axiom 3, showing that Axiom 3 is logically independent.
@@ -1920,7 +1968,7 @@ Section 2.7.6 formalizes the properties of the QBD lemma regarding independence 
 
 ### 2.7.6.1 Proof: Independence of Axiom 3 {#2.7.6.1}
 
-:::tip[**Verification of Independence via the Timestamped 4-Cycle Countermodel**]
+:::tip[**Verification of Independence from the Timestamped 4-Cycle Countermodel**]
 :::
 
 **I. Model Construction**
@@ -2084,10 +2132,71 @@ theorem asymmetry_equiv {V : Type} (R : CausalRelation₂ V) :
     have h_eq : u = v := h_conj.right u v h_fwd h_rev
     rw [h_eq] at h_fwd
     exact h_conj.left v h_fwd
+
+-- ----------------------------------------------------------------------------
+-- PART 2: EDGE TIMESTAMPS & STRICT CAUSAL PATH MONOTONICITY (Axiom 3)
+-- ----------------------------------------------------------------------------
+
+def Edge (V : Type) := V × V
+def GraphEdges (V : Type) := Edge V → Prop
+def EdgeTimestampMap (V : Type) := Edge V → Nat
+
+def DirectedEdgePath {V : Type} (E : GraphEdges V) : List (Edge V) → Prop
+  | [] => True
+  | [e] => E e
+  | e1 :: e2 :: rest => E e1 ∧ e1.2 = e2.1 ∧ DirectedEdgePath E (e2 :: rest)
+
+def IsEdgePathMonotone {V : Type} (H : EdgeTimestampMap V) : List (Edge V) → Prop
+  | [] => True
+  | [_] => True
+  | e1 :: e2 :: rest => H e1 < H e2 ∧ IsEdgePathMonotone H (e2 :: rest)
+
+/--
+THEOREM 3: Edge Timestamp Path Monotonicity Transitivity
+Proves that along any directed causal path with strictly increasing edge timestamps,
+the initial edge timestamp is strictly less than the final edge timestamp: H(e_first) < H(e_last).
+-/
+theorem edge_path_monotonicity_transitive {V : Type}
+    (H : EdgeTimestampMap V) :
+    ∀ (e1 e2 : Edge V) (rest : List (Edge V)),
+    IsEdgePathMonotone H (e1 :: rest ++ [e2]) →
+    H e1 < H e2 := by
+  intro e1 e2 rest
+  revert e1
+  induction rest with
+  | nil =>
+    intro e1 h_mono
+    dsimp [IsEdgePathMonotone] at h_mono
+    exact h_mono.1
+  | cons e_mid rest_mid ih =>
+    intro e1 h_mono
+    dsimp [IsEdgePathMonotone] at h_mono
+    have h1 := h_mono.1
+    have h2 := ih e_mid h_mono.2
+    exact Nat.lt_trans h1 h2
+
+/--
+THEOREM 4: Edge Timestamp Monotone Closed Loop Impossibility (Axiom 3)
+Proves that a closed directed path whose edge timestamps strictly increase cannot form
+a closed loop without incurring H(e_first) < H(e_first), precluding Closed Timelike Curves.
+-/
+theorem edge_monotone_no_causal_cycle {V : Type}
+    (E : GraphEdges V) (H : EdgeTimestampMap V) :
+    ∀ (e1 e_last : Edge V) (rest : List (Edge V)),
+    DirectedEdgePath E (e1 :: rest ++ [e_last]) →
+    IsEdgePathMonotone H (e1 :: rest ++ [e_last]) →
+    H e_last < H e1 →
+    False := by
+  intro e1 e_last rest _ h_mono h_close
+  have h_trans := edge_path_monotonicity_transitive H e1 e_last rest h_mono
+  have h_contra := Nat.lt_trans h_trans h_close
+  exact Nat.lt_irrefl (H e1) h_contra
 ```
 
 **Verification Summary:**
-The definitions extend the vocabulary established in the **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.2.5" label="§2.2.5" /> to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v -> not R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions. The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal. In tandem with `edge_monotone_no_causal_cycle` establishing **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, the causal ordering of physical history is completely secured.
+The definitions extend the vocabulary established in the **Type-Theoretic Validation via Lean 4 Core** <Ref id="2.2.5" label="§2.2.5" /> to include `IsAsymmetric`, the direct Lean encoding of the Global Asymmetry clause of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. The first theorem self-applies `h_asym` at the identical vertex pair `(v, v)`: because asymmetry asserts `R v v -> not R v v`, any self-loop hypothesis `h_loop : R v v` immediately produces its own negation, and `exact` discharges the goal. The second theorem splits via `constructor` into two directions.
+
+The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal. In tandem with `edge_monotone_no_causal_cycle` establishing **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, the causal ordering of physical history is completely secured.
 
 **In Plain English:**  
 Section 2.7.8 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.

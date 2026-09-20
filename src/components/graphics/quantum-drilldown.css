@@ -1,0 +1,348 @@
+/* Quantum Drilldown Console (Cryostat -> Chip -> Codespace) */
+
+.quantum-drilldown-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(0, 245, 255, 0.03);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header bar */
+.quantum-drilldown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.4rem;
+  background: rgba(22, 27, 34, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .quantum-drilldown-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+}
+
+.quantum-drilldown-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.quantum-drilldown-badge {
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.quantum-drilldown-badge.cryostat {
+  background: rgba(0, 245, 255, 0.12);
+  color: #00f5ff;
+  border: 1px solid rgba(0, 245, 255, 0.35);
+}
+
+.quantum-drilldown-badge.chip {
+  background: rgba(245, 158, 11, 0.12);
+  color: #ffb01f;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.quantum-drilldown-badge.codespace {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.quantum-drilldown-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* Tier Segmented Switcher (Mobile-first Touch Pills) */
+.quantum-tier-switcher {
+  display: flex;
+  gap: 0.3rem;
+  background: rgba(10, 14, 22, 0.95);
+  padding: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .quantum-tier-switcher {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.quantum-tier-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .quantum-tier-btn {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.72rem;
+  }
+}
+
+.quantum-tier-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.quantum-tier-btn.active.cryostat {
+  background: rgba(0, 245, 255, 0.18);
+  color: #00f5ff;
+  border: 1px solid rgba(0, 245, 255, 0.4);
+}
+
+.quantum-tier-btn.active.chip {
+  background: rgba(245, 158, 11, 0.18);
+  color: #ffb01f;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.quantum-tier-btn.active.codespace {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+/* Interactive Viewport Area */
+.quantum-drilldown-body {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 420px;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 860px) {
+  .quantum-drilldown-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quantum-viewport-stage {
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at center, rgba(13, 20, 36, 0.6) 0%, rgba(8, 12, 20, 0.9) 100%);
+}
+
+@media (max-width: 860px) {
+  .quantum-viewport-stage {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    height: 330px;
+    padding: 1rem;
+  }
+}
+
+.quantum-svg-viewport {
+  width: 100%;
+  height: 100%;
+  max-width: 380px;
+  max-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Narrative & Telemetry Panel (Right or Bottom) */
+.quantum-drilldown-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+@media (max-width: 860px) {
+  .quantum-drilldown-info {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+.quantum-info-header {
+  margin-bottom: 0.8rem;
+}
+
+.quantum-info-subtitle {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #ffb01f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.quantum-info-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+  .quantum-info-title {
+    font-size: 1.35rem;
+  }
+}
+
+.quantum-info-desc {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin-bottom: 1.2rem;
+}
+
+/* Telemetry Grid */
+.quantum-drilldown-telemetry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .quantum-drilldown-telemetry {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
+.drilldown-telemetry-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.drilldown-telemetry-label {
+  font-family: monospace;
+  font-size: 0.62rem;
+  color: #8b949e;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drilldown-telemetry-value {
+  font-family: monospace;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #00f5ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drilldown-telemetry-value.amber { color: #ffb01f; }
+.drilldown-telemetry-value.green { color: #10b981; }
+.drilldown-telemetry-value.red { color: #ef4444; }
+
+/* Interactive Controls for Tier 3 */
+.quantum-interactive-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.quantum-action-btn {
+  background: rgba(0, 245, 255, 0.12);
+  border: 1px solid rgba(0, 245, 255, 0.35);
+  color: #00f5ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.65rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: monospace;
+  width: 100%;
+  text-align: center;
+}
+
+.quantum-action-btn:hover:not(:disabled) {
+  background: rgba(0, 245, 255, 0.25);
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.quantum-action-btn.healing {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10b981;
+  color: #10b981;
+  animation: pulseGreen 0.8s infinite alternate;
+}
+
+.quantum-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes pulseGreen {
+  from { box-shadow: 0 0 4px rgba(16, 185, 129, 0.2); }
+  to { box-shadow: 0 0 18px rgba(16, 185, 129, 0.6); }
+}
+
+.quantum-action-hint {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #8b949e;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import HeroNetworkCanvas from '../components/graphics/hero-network-canvas';
@@ -13,6 +13,7 @@ import {
   ReadoutGraphic,
   QuantumCoreGraphic
 } from '../components/graphics/quantum-graphics';
+import QuantumDrilldown from '../components/graphics/quantum-drilldown';
 import '../css/quantum.css';
 
 const CYAN = '#00f5ff';
@@ -73,11 +74,23 @@ const QubitDetailModal: React.FC<QubitModalProps> = ({
   );
 };
 
+const GATE_TABS = [
+  { id: 0, label: 'Basis States', stage: 'Stage 1' },
+  { id: 1, label: 'Pauli-X (NOT)', stage: 'Gate' },
+  { id: 2, label: 'Pauli-Z (Phase)', stage: 'Gate' },
+  { id: 3, label: 'Hadamard', stage: 'Gate' },
+  { id: 4, label: 'Controlled-Z', stage: 'Gate' },
+  { id: 5, label: 'Topological T', stage: 'Gate' },
+  { id: 6, label: 'QND Readout', stage: 'Stage 3' },
+  { id: 7, label: 'Stabilizer Lattice', stage: 'Stage 4' },
+];
+
 export default function QuantumConsole(): React.JSX.Element {
   const [activeModal, setActiveModal] = useState<null | string>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+
+  const prevSlide = () => setActiveSlideIndex(idx => Math.max(0, idx - 1));
+  const nextSlide = () => setActiveSlideIndex(idx => Math.min(GATE_TABS.length - 1, idx + 1));
 
   // Stage 4: Interactive Stabilizer Lattice state
   const [errors, setErrors] = useState({
@@ -123,41 +136,6 @@ export default function QuantumConsole(): React.JSX.Element {
 
   const hasErrors = Object.values(errors).some(v => v);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const container = containerRef.current;
-      if (!container) return;
-      
-      const rect = container.getBoundingClientRect();
-      const containerHeight = rect.height;
-      const windowHeight = window.innerHeight;
-      
-      const startScroll = rect.top;
-      const totalScrollable = containerHeight - windowHeight;
-      
-      let progress = 0;
-      if (startScroll < 0) {
-        progress = Math.min(Math.max(-startScroll / totalScrollable, 0), 1);
-      }
-      
-      const totalSlides = 8;
-      const maxTranslate = ((totalSlides - 1) / totalSlides) * 100;
-      setScrollProgress(progress * maxTranslate);
-      
-      const activeIndex = Math.min(Math.max(Math.round(progress * (totalSlides - 1)), 0), totalSlides - 1);
-      setActiveSlideIndex(activeIndex);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
-
   return (
     <Layout
       title="Quantum Gate & Mapping Console"
@@ -176,103 +154,104 @@ export default function QuantumConsole(): React.JSX.Element {
           <div className="quantum-blob quantum-blob-green" />
         </div>
 
-        {/* Slide 1: Welcome Slide */}
-        <section className="quantum-viewport-slide">
-          <div className="quantum-welcome-slide">
-            <div className="quantum-welcome-left">
-              <div className="quantum-welcome-tag">
-                <span className="quantum-pulse-dot" />
-                SYSTEM STATUS: ACTIVE
-              </div>
-              <h1 className="quantum-welcome-title">Quantum Computing & Gates</h1>
-              <p className="quantum-welcome-subtitle">
-                Tracing quantum calculations down Standard Model ribbon braids and pre-geometric topological manifolds.
-              </p>
-
-              {/* HUD Telemetry Panel */}
-              <div className="quantum-welcome-telemetry">
-                <div className="telemetry-item">
-                  <span className="telemetry-label">OPERATING TEMP</span>
-                  <span className="telemetry-value cyan-text">0.010 K</span>
-                </div>
-                <div className="telemetry-item">
-                  <span className="telemetry-label">COHERENCE TIME</span>
-                  <span className="telemetry-value amber-text">142.8 μs</span>
-                </div>
-                <div className="telemetry-item">
-                  <span className="telemetry-label">GATE FIDELITY</span>
-                  <span className="telemetry-value green-text">99.982%</span>
-                </div>
-              </div>
-
-              <div className="quantum-welcome-indicator">
-                <span>SCROLL TO START TIMELINE</span>
-                <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <polyline points="19 12 12 19 5 12" />
-                </svg>
-              </div>
+        {/* Slide 1: Welcome Slide & Drilldown Console */}
+        <section className="quantum-hero-drilldown-section" style={{ padding: '3.5rem 1.5rem 2rem 1.5rem', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <div className="quantum-welcome-tag" style={{ margin: '0 auto 1.2rem auto' }}>
+              <span className="quantum-pulse-dot" />
+              PHYSICAL HARDWARE TO TOPOLOGICAL VACUUM
             </div>
-            <div className="quantum-welcome-right">
-              <QuantumCoreGraphic />
+            <h1 className="quantum-welcome-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.2' }}>
+              Quantum Computing &amp; Pre-Geometric Codespaces
+            </h1>
+            <p className="quantum-welcome-subtitle" style={{ maxWidth: '820px', margin: '0 auto', fontSize: '1.05rem', color: '#c9d1d9' }}>
+              Bridging modern superconducting quantum processors with the self-healing stabilizer codespace of Quantum Braid Dynamics. Explore the three physical layers below.
+            </p>
+          </div>
+
+          {/* 3-Tier Drilldown Console: Cryostat -> Chip -> Codespace */}
+          <QuantumDrilldown />
+
+          <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '1.5rem' }}>
+            <div className="quantum-welcome-indicator" style={{ justifyContent: 'center' }}>
+              <span>EXPLORE THE INTERACTIVE GATE &amp; STABILIZER WORKBENCH BELOW</span>
+              <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '18px', height: '18px' }}>
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
             </div>
           </div>
         </section>
 
-        {/* Stage 3: The Horizontal Scroll Gate Suite */}
-        <div className="gates-scrolly-container" ref={containerRef}>
-          <div className="gates-sticky-window">
-            <div 
-              className="gates-horizontal-track" 
-              style={{ transform: `translate3d(-${scrollProgress}%, 0, 0)` }}
-            >
-              {/* Slide 2: The Qubit Basis Space */}
-              <section className={`quantum-viewport-slide gate-slide split-slide basis-slide ${activeSlideIndex === 0 ? 'active-slide' : ''}`}>
-                <div className="quantum-slide-header-panel">
-                  <span className="quantum-slide-stage-tag">STAGE 1: BASIS REPRESENTATION</span>
-                  <h2 className="quantum-slide-title">The Topological Qubit Space</h2>
-                  <p className="quantum-slide-subtitle">
-                    Click on either state card to explore its mathematical invariants, representations, and gauge coupling properties.
-                  </p>
-                </div>
+        {/* Stage 2 & Beyond: Interactive Gate & Stabilizer Workbench */}
+        <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem 5rem 1.5rem', position: 'relative', zIndex: 2 }}>
+          <div className="quantum-workbench-container">
+            {/* Stepper Tabs Bar */}
+            <div className="quantum-gate-stepper">
+              {GATE_TABS.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`quantum-gate-tab ${activeSlideIndex === tab.id ? 'active' : ''}`}
+                  onClick={() => setActiveSlideIndex(tab.id)}
+                  type="button"
+                >
+                  <span className="gate-tab-num">{tab.id + 1}</span>
+                  <span>{tab.label}</span>
+                </button>
+              ))}
+            </div>
 
-                <div className="qubit-cards-container">
-                  {/* Logical Zero Card */}
-                  <div className="qubit-card cyan-glow" onClick={() => setActiveModal('zero')}>
-                    <div className="qubit-card-corners" />
-                    <div className="qubit-card-header">
-                      <span className="qubit-card-logical-val">|0<sub>L</sub>⟩</span>
-                      <span className="qubit-card-label">GROUND STATE</span>
-                    </div>
-                    <div className="qubit-card-graphic-container">
-                      <QubitZeroGraphic />
-                    </div>
-                    <div className="qubit-card-footer">
-                      <div className="qubit-card-title">Symmetric Braid</div>
-                      <div className="qubit-card-invariants">Writhe: (-1, -1, -1)</div>
-                    </div>
+            {/* Active Stage Card */}
+            <div className="quantum-active-stage-card">
+              {/* Slide 0: The Qubit Basis Space */}
+              {activeSlideIndex === 0 && (
+                <div>
+                  <div className="quantum-slide-header-panel">
+                    <span className="quantum-slide-stage-tag">STAGE 1: BASIS REPRESENTATION</span>
+                    <h2 className="quantum-slide-title">The Topological Qubit Space</h2>
+                    <p className="quantum-slide-subtitle">
+                      Click on either state card to explore its mathematical invariants, representations, and gauge coupling properties.
+                    </p>
                   </div>
 
-                  {/* Logical One Card */}
-                  <div className="qubit-card amber-glow" onClick={() => setActiveModal('one')}>
-                    <div className="qubit-card-corners" />
-                    <div className="qubit-card-header">
-                      <span className="qubit-card-logical-val">|1<sub>L</sub>⟩</span>
-                      <span className="qubit-card-label">EXCITED STATE</span>
+                  <div className="qubit-cards-container">
+                    {/* Logical Zero Card */}
+                    <div className="qubit-card cyan-glow" onClick={() => setActiveModal('zero')}>
+                      <div className="qubit-card-corners" />
+                      <div className="qubit-card-header">
+                        <span className="qubit-card-logical-val">|0<sub>L</sub>⟩</span>
+                        <span className="qubit-card-label">GROUND STATE</span>
+                      </div>
+                      <div className="qubit-card-graphic-container">
+                        <QubitZeroGraphic />
+                      </div>
+                      <div className="qubit-card-footer">
+                        <div className="qubit-card-title">Symmetric Braid</div>
+                        <div className="qubit-card-invariants">Writhe: (-1, -1, -1)</div>
+                      </div>
                     </div>
-                    <div className="qubit-card-graphic-container">
-                      <QubitOneGraphic />
-                    </div>
-                    <div className="qubit-card-footer">
-                      <div className="qubit-card-title">Asymmetric Braid</div>
-                      <div className="qubit-card-invariants">Writhe: (-2, -1, 0)</div>
+
+                    {/* Logical One Card */}
+                    <div className="qubit-card amber-glow" onClick={() => setActiveModal('one')}>
+                      <div className="qubit-card-corners" />
+                      <div className="qubit-card-header">
+                        <span className="qubit-card-logical-val">|1<sub>L</sub>⟩</span>
+                        <span className="qubit-card-label">EXCITED STATE</span>
+                      </div>
+                      <div className="qubit-card-graphic-container">
+                        <QubitOneGraphic />
+                      </div>
+                      <div className="qubit-card-footer">
+                        <div className="qubit-card-title">Asymmetric Braid</div>
+                        <div className="qubit-card-invariants">Writhe: (-2, -1, 0)</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </section>
+              )}
 
               {/* Gate 1: X-Gate */}
-              <section className={`quantum-viewport-slide gate-slide cyan-border ${activeSlideIndex === 1 ? 'active-slide' : ''}`} onClick={() => setActiveModal('gate_x')}>
+              {activeSlideIndex === 1 && (
                 <div className="gate-slide-layout">
                   <div className="gate-slide-left">
                     <XGateGraphic />
@@ -293,14 +272,16 @@ export default function QuantumConsole(): React.JSX.Element {
                         The total writhe sum is strictly conserved at <strong>W = -3</strong>, preserving the electron charge 
                         observable <strong>Q = -1</strong> across the logical computation.
                       </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & CHAPTER DETAILS</div>
                     </div>
+                    <button className="gate-click-btn" onClick={() => setActiveModal('gate_x')} type="button">
+                      VIEW PROOFS &amp; MATHEMATICAL SPECIFICATION &rarr;
+                    </button>
                   </div>
                 </div>
-              </section>
+              )}
 
               {/* Gate 2: Z-Gate */}
-              <section className={`quantum-viewport-slide gate-slide red-border ${activeSlideIndex === 2 ? 'active-slide' : ''}`} onClick={() => setActiveModal('gate_z')}>
+              {activeSlideIndex === 2 && (
                 <div className="gate-slide-layout">
                   <div className="gate-slide-left">
                     <ZGateGraphic />
@@ -321,14 +302,16 @@ export default function QuantumConsole(): React.JSX.Element {
                         couples actively to the connection, accumulating an Aharonov-Bohm phase holonomy of 
                         exactly <strong>e^iπ = -1</strong>.
                       </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & CHAPTER DETAILS</div>
                     </div>
+                    <button className="gate-click-btn" onClick={() => setActiveModal('gate_z')} type="button">
+                      VIEW PROOFS &amp; MATHEMATICAL SPECIFICATION &rarr;
+                    </button>
                   </div>
                 </div>
-              </section>
+              )}
 
               {/* Gate 3: Hadamard Gate */}
-              <section className={`quantum-viewport-slide gate-slide cyan-border ${activeSlideIndex === 3 ? 'active-slide' : ''}`} onClick={() => setActiveModal('gate_h')}>
+              {activeSlideIndex === 3 && (
                 <div className="gate-slide-layout">
                   <div className="gate-slide-left">
                     <HadamardGraphic />
@@ -348,14 +331,16 @@ export default function QuantumConsole(): React.JSX.Element {
                         energies, this randomizes the state. A subsequent diabatic quench freezes the system 
                         into a coherent, minimum-entropy superposition <strong>|+⟩ = (|0_L⟩ + |1_L⟩) / √2</strong>.
                       </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & CHAPTER DETAILS</div>
                     </div>
+                    <button className="gate-click-btn" onClick={() => setActiveModal('gate_h')} type="button">
+                      VIEW PROOFS &amp; MATHEMATICAL SPECIFICATION &rarr;
+                    </button>
                   </div>
                 </div>
-              </section>
+              )}
 
               {/* Gate 4: Controlled-Z Gate */}
-              <section className={`quantum-viewport-slide gate-slide amber-border ${activeSlideIndex === 4 ? 'active-slide' : ''}`} onClick={() => setActiveModal('gate_cz')}>
+              {activeSlideIndex === 4 && (
                 <div className="gate-slide-layout">
                   <div className="gate-slide-left">
                     <CZGateGraphic />
@@ -375,14 +360,16 @@ export default function QuantumConsole(): React.JSX.Element {
                         catalytically lowers the friction barrier <strong>f(σ)</strong> at the target, allowing the Z-gate 
                         phase imprint rewrite to execute. If the control is <strong>|0_L⟩</strong>, the friction remains high and the gate is inhibited, realizing the Controlled-Z conditional unitary.
                       </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & CHAPTER DETAILS</div>
                     </div>
+                    <button className="gate-click-btn" onClick={() => setActiveModal('gate_cz')} type="button">
+                      VIEW PROOFS &amp; MATHEMATICAL SPECIFICATION &rarr;
+                    </button>
                   </div>
                 </div>
-              </section>
+              )}
 
               {/* Gate 5: T-Gate */}
-              <section className={`quantum-viewport-slide gate-slide amber-border ${activeSlideIndex === 5 ? 'active-slide' : ''}`} onClick={() => setActiveModal('gate_t')}>
+              {activeSlideIndex === 5 && (
                 <div className="gate-slide-layout">
                   <div className="gate-slide-left">
                     <TGateGraphic />
@@ -402,159 +389,201 @@ export default function QuantumConsole(): React.JSX.Element {
                         Ribbon Category, naturally yielding a conformal spin phase of exactly <strong>e^iπ/4</strong> 
                         on the charged excited state without requiring magic state distillation.
                       </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & CHAPTER DETAILS</div>
                     </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Slide 3: Readout & Measurement */}
-              <section className={`quantum-viewport-slide gate-slide split-slide read-slide ${activeSlideIndex === 6 ? 'active-slide' : ''}`} onClick={() => setActiveModal('readout')}>
-                <div className="quantum-slide-header-panel">
-                  <span className="quantum-slide-stage-tag">STAGE 3: STATE READOUT & MEASUREMENT</span>
-                  <h2 className="quantum-slide-title">Quantum Non-Demolition Readout</h2>
-                  <p className="quantum-slide-subtitle">
-                    Measuring a topological qubit requires extracting its invariants without destroying its coherent braid state. 
-                  </p>
-                </div>
-
-                <div className="gate-slide-layout">
-                  <div className="gate-slide-left">
-                    <ReadoutGraphic />
-                  </div>
-                  <div className="gate-slide-right">
-                    <p className="gate-slide-desc">
-                      Extracting logical configurations is realized through QND sensors that couple to the boundary values of the graph.
-                    </p>
-                    <div className="gate-expert-summary">
-                      <div className="gate-expert-title">EXPERT BREAKDOWN (CHAPTER 10.1.6)</div>
-                      <p>
-                        Measurement operators project the quantum state onto the writhe and color bases. The 
-                        <strong>Writhe Sensor</strong> measures the geometric winding number of the ribbons, returning the 
-                        valence charge, while the <strong>Color Sensor</strong> extracts the boundary holonomy under 
-                        the SU(3) gauge field to identify color charge asymmetry without collapsing the ribbon structure.
-                      </p>
-                      <div className="gate-click-hint">CLICK ANYWHERE ON SLIDE FOR PROOFS & DETAILS</div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* Slide 4: Stabilizer Grid & Fault Tolerance */}
-              <section className={`quantum-viewport-slide gate-slide split-slide stabilizer-slide ${activeSlideIndex === 7 ? 'active-slide' : ''}`}>
-                <div className="quantum-slide-header-panel">
-                  <span className="quantum-slide-stage-tag">STAGE 4: TOPOLOGICAL PROTECTION & FAULT TOLERANCE</span>
-                  <h2 className="quantum-slide-title">Self-Healing Stabilizer Lattice</h2>
-                  <p className="quantum-slide-subtitle">
-                    <strong>Interactive Simulation:</strong> Click anywhere on the grid cells/vertices below to inject local errors, then trigger the vacuum's thermodynamic healing cycle.
-                  </p>
-                </div>
-
-                <div className="gate-slide-layout">
-                  <div className="gate-slide-left stabilizer-grid-container">
-                    {/* Interactive Stabilizer Grid SVG */}
-                    <svg viewBox="0 0 120 120" style={{ width: '100%', height: '100%', maxWidth: '350px' }}>
-                      {/* Plaquette P1 (Top-Left, Cyan) */}
-                      <rect 
-                        x="10" y="10" width="48" height="48" 
-                        fill={errors.p1 ? "rgba(239, 68, 68, 0.25)" : "rgba(0, 245, 255, 0.04)"} 
-                        stroke={errors.p1 ? RED : CYAN} 
-                        strokeWidth="1.2" 
-                        onClick={() => toggleError('p1')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s' }}
-                      />
-                      
-                      {/* Plaquette P2 (Top-Right, Amber) */}
-                      <rect 
-                        x="62" y="10" width="48" height="48" 
-                        fill={errors.p2 ? "rgba(239, 68, 68, 0.25)" : "rgba(245, 158, 11, 0.04)"} 
-                        stroke={errors.p2 ? RED : AMBER} 
-                        strokeWidth="1.2" 
-                        onClick={() => toggleError('p2')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s' }}
-                      />
-
-                      {/* Plaquette P3 (Bottom-Left, Amber) */}
-                      <rect 
-                        x="10" y="62" width="48" height="48" 
-                        fill={errors.p3 ? "rgba(239, 68, 68, 0.25)" : "rgba(245, 158, 11, 0.04)"} 
-                        stroke={errors.p3 ? RED : AMBER} 
-                        strokeWidth="1.2" 
-                        onClick={() => toggleError('p3')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s' }}
-                      />
-
-                      {/* Plaquette P4 (Bottom-Right, Cyan) */}
-                      <rect 
-                        x="62" y="62" width="48" height="48" 
-                        fill={errors.p4 ? "rgba(239, 68, 68, 0.25)" : "rgba(0, 245, 255, 0.04)"} 
-                        stroke={errors.p4 ? RED : CYAN} 
-                        strokeWidth="1.2" 
-                        onClick={() => toggleError('p4')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s' }}
-                      />
-
-                      {/* Plaquette labels */}
-                      <text x="34" y="36" fill={errors.p1 ? RED : CYAN} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Bp</text>
-                      <text x="86" y="36" fill={errors.p2 ? RED : AMBER} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Av</text>
-                      <text x="34" y="88" fill={errors.p3 ? RED : AMBER} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Av</text>
-                      <text x="86" y="88" fill={errors.p4 ? RED : CYAN} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Bp</text>
-
-                      {/* Lattice line dividers */}
-                      <line x1="10" y1="60" x2="110" y2="60" stroke="rgba(255,255,255,0.15)" strokeWidth="1" pointerEvents="none" />
-                      <line x1="60" y1="10" x2="60" y2="110" stroke="rgba(255,255,255,0.15)" strokeWidth="1" pointerEvents="none" />
-
-                      {/* Vertex V1 (Central Node) */}
-                      <circle 
-                        cx="60" cy="60" r="5" 
-                        fill={errors.v1 ? RED : "#ffffff"} 
-                        stroke={errors.v1 ? RED : "rgba(255,255,255,0.3)"} 
-                        strokeWidth="1.5" 
-                        onClick={() => toggleError('v1')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s', filter: errors.v1 ? 'drop-shadow(0 0 5px #ef4444)' : 'none' }}
-                      />
-
-                      {/* Vertex V2 (Top Node) */}
-                      <circle 
-                        cx="60" cy="10" r="5" 
-                        fill={errors.v2 ? RED : "#ffffff"} 
-                        stroke={errors.v2 ? RED : "rgba(255,255,255,0.3)"} 
-                        strokeWidth="1.5" 
-                        onClick={() => toggleError('v2')}
-                        style={{ cursor: 'pointer', transition: 'all 0.3s', filter: errors.v2 ? 'drop-shadow(0 0 5px #ef4444)' : 'none' }}
-                      />
-                    </svg>
-                  </div>
-                  
-                  <div className="gate-slide-right">
-                    <p className="gate-slide-desc">
-                      Topological protection is enforced by commuting stabilizer operators. 
-                      Any local disturbance creates defects corrected by the vacuum.
-                    </p>
-                    <div className="gate-expert-summary">
-                      <div className="gate-expert-title">EXPERT BREAKDOWN (CHAPTER 3.5 & 10.2)</div>
-                      <p>
-                        Commuting plaquette operators <strong>Bp</strong> and vertex operators <strong>Av</strong> form the stabilizer group. 
-                        Faults project non-trivial syndromic values. The vacuum's thermodynamic drive 
-                        (governed by <strong>λ_cat = e - 1</strong>) creates a stress-minimizing pressure that accelerates 
-                        the deletion of these defects, restoring code consistency.
-                      </p>
-                    </div>
-
-                    {/* Interactive trigger button */}
-                    <button 
-                      className={`quantum-healing-btn ${hasErrors ? 'active' : ''} ${isHealing ? 'healing' : ''}`}
-                      onClick={triggerSelfHealing}
-                      disabled={!hasErrors || isHealing}
-                    >
-                      {isHealing ? 'THERMODYNAMIC HEALING ACTIVE...' : hasErrors ? 'TRIGGER THERMODYNAMIC HEALING' : 'GRID IS SECURE (CLICK GRID TO INJECT FAULTS)'}
+                    <button className="gate-click-btn" onClick={() => setActiveModal('gate_t')} type="button">
+                      VIEW PROOFS &amp; MATHEMATICAL SPECIFICATION &rarr;
                     </button>
                   </div>
                 </div>
-              </section>
+              )}
+
+              {/* Slide 6: Readout & Measurement */}
+              {activeSlideIndex === 6 && (
+                <div>
+                  <div className="quantum-slide-header-panel">
+                    <span className="quantum-slide-stage-tag">STAGE 3: STATE READOUT &amp; MEASUREMENT</span>
+                    <h2 className="quantum-slide-title">Quantum Non-Demolition Readout</h2>
+                    <p className="quantum-slide-subtitle">
+                      Measuring a topological qubit requires extracting its invariants without destroying its coherent braid state. 
+                    </p>
+                  </div>
+
+                  <div className="gate-slide-layout">
+                    <div className="gate-slide-left">
+                      <ReadoutGraphic />
+                    </div>
+                    <div className="gate-slide-right">
+                      <p className="gate-slide-desc">
+                        Extracting logical configurations is realized through QND sensors that couple to the boundary values of the graph.
+                      </p>
+                      <div className="gate-expert-summary">
+                        <div className="gate-expert-title">EXPERT BREAKDOWN (CHAPTER 10.1.6)</div>
+                        <p>
+                          Measurement operators project the quantum state onto the writhe and color bases. The 
+                          <strong>Writhe Sensor</strong> measures the geometric winding number of the ribbons, returning the 
+                          valence charge, while the <strong>Color Sensor</strong> extracts the boundary holonomy under 
+                          the SU(3) gauge field to identify color charge asymmetry without collapsing the ribbon structure.
+                        </p>
+                      </div>
+                      <button className="gate-click-btn" onClick={() => setActiveModal('readout')} type="button">
+                        VIEW PROOFS &amp; MEASUREMENT OPERATORS &rarr;
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Slide 7: Stabilizer Grid & Fault Tolerance */}
+              {activeSlideIndex === 7 && (
+                <div>
+                  <div className="quantum-slide-header-panel">
+                    <span className="quantum-slide-stage-tag">STAGE 4: TOPOLOGICAL PROTECTION &amp; FAULT TOLERANCE</span>
+                    <h2 className="quantum-slide-title">Self-Healing Stabilizer Lattice</h2>
+                    <p className="quantum-slide-subtitle">
+                      <strong>Interactive Simulation:</strong> Click anywhere on the grid cells/vertices below to inject local errors, then trigger the vacuum's thermodynamic healing cycle.
+                    </p>
+                  </div>
+
+                  <div className="gate-slide-layout">
+                    <div className="gate-slide-left stabilizer-grid-container">
+                      {/* Interactive Stabilizer Grid SVG */}
+                      <svg viewBox="0 0 120 120" style={{ width: '100%', height: '100%', maxWidth: '350px' }}>
+                        {/* Plaquette P1 (Top-Left, Cyan) */}
+                        <rect 
+                          x="10" y="10" width="48" height="48" 
+                          fill={errors.p1 ? "rgba(239, 68, 68, 0.25)" : "rgba(0, 245, 255, 0.04)"} 
+                          stroke={errors.p1 ? RED : CYAN} 
+                          strokeWidth="1.2" 
+                          onClick={() => toggleError('p1')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                        />
+                        
+                        {/* Plaquette P2 (Top-Right, Amber) */}
+                        <rect 
+                          x="62" y="10" width="48" height="48" 
+                          fill={errors.p2 ? "rgba(239, 68, 68, 0.25)" : "rgba(245, 158, 11, 0.04)"} 
+                          stroke={errors.p2 ? RED : AMBER} 
+                          strokeWidth="1.2" 
+                          onClick={() => toggleError('p2')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                        />
+
+                        {/* Plaquette P3 (Bottom-Left, Amber) */}
+                        <rect 
+                          x="10" y="62" width="48" height="48" 
+                          fill={errors.p3 ? "rgba(239, 68, 68, 0.25)" : "rgba(245, 158, 11, 0.04)"} 
+                          stroke={errors.p3 ? RED : AMBER} 
+                          strokeWidth="1.2" 
+                          onClick={() => toggleError('p3')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                        />
+
+                        {/* Plaquette P4 (Bottom-Right, Cyan) */}
+                        <rect 
+                          x="62" y="62" width="48" height="48" 
+                          fill={errors.p4 ? "rgba(239, 68, 68, 0.25)" : "rgba(0, 245, 255, 0.04)"} 
+                          stroke={errors.p4 ? RED : CYAN} 
+                          strokeWidth="1.2" 
+                          onClick={() => toggleError('p4')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s' }}
+                        />
+
+                        {/* Plaquette labels */}
+                        <text x="34" y="36" fill={errors.p1 ? RED : CYAN} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Bp</text>
+                        <text x="86" y="36" fill={errors.p2 ? RED : AMBER} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Av</text>
+                        <text x="34" y="88" fill={errors.p3 ? RED : AMBER} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Av</text>
+                        <text x="86" y="88" fill={errors.p4 ? RED : CYAN} fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle" pointerEvents="none">Bp</text>
+
+                        {/* Lattice line dividers */}
+                        <line x1="10" y1="60" x2="110" y2="60" stroke="rgba(255,255,255,0.15)" strokeWidth="1" pointerEvents="none" />
+                        <line x1="60" y1="10" x2="60" y2="110" stroke="rgba(255,255,255,0.15)" strokeWidth="1" pointerEvents="none" />
+
+                        {/* Vertex V1 (Central Node) */}
+                        <circle 
+                          cx="60" cy="60" r="5" 
+                          fill={errors.v1 ? RED : "#ffffff"} 
+                          stroke={errors.v1 ? RED : "rgba(255,255,255,0.3)"} 
+                          strokeWidth="1.5" 
+                          onClick={() => toggleError('v1')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s', filter: errors.v1 ? 'drop-shadow(0 0 5px #ef4444)' : 'none' }}
+                        />
+
+                        {/* Vertex V2 (Top Node) */}
+                        <circle 
+                          cx="60" cy="10" r="5" 
+                          fill={errors.v2 ? RED : "#ffffff"} 
+                          stroke={errors.v2 ? RED : "rgba(255,255,255,0.3)"} 
+                          strokeWidth="1.5" 
+                          onClick={() => toggleError('v2')}
+                          style={{ cursor: 'pointer', transition: 'all 0.3s', filter: errors.v2 ? 'drop-shadow(0 0 5px #ef4444)' : 'none' }}
+                        />
+                      </svg>
+                    </div>
+                    
+                    <div className="gate-slide-right">
+                      <p className="gate-slide-desc">
+                        Topological protection is enforced by commuting stabilizer operators. 
+                        Any local disturbance creates defects corrected by the vacuum.
+                      </p>
+                      <div className="gate-expert-summary">
+                        <div className="gate-expert-title">EXPERT BREAKDOWN (CHAPTER 3.5 &amp; 10.2)</div>
+                        <p>
+                          Commuting plaquette operators <strong>Bp</strong> and vertex operators <strong>Av</strong> form the stabilizer group. 
+                          Faults project non-trivial syndromic values. The vacuum's thermodynamic drive 
+                          (governed by <strong>λ<sub>cat</sub> = e - 1</strong>) creates a stress-minimizing pressure that accelerates 
+                          the deletion of these defects, restoring code consistency.
+                        </p>
+                      </div>
+
+                      {/* Interactive trigger button */}
+                      <button 
+                        className={`quantum-healing-btn ${hasErrors ? 'active' : ''} ${isHealing ? 'healing' : ''}`}
+                        onClick={triggerSelfHealing}
+                        disabled={!hasErrors || isHealing}
+                        type="button"
+                      >
+                        {isHealing ? 'THERMODYNAMIC HEALING ACTIVE...' : hasErrors ? 'TRIGGER THERMODYNAMIC HEALING' : 'GRID IS SECURE (CLICK GRID TO INJECT FAULTS)'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Workbench Navigation Footer */}
+            <div className="quantum-workbench-footer">
+              <button
+                className="quantum-nav-step-btn"
+                onClick={prevSlide}
+                disabled={activeSlideIndex === 0}
+                type="button"
+              >
+                &larr; Previous Stage
+              </button>
+
+              <div className="quantum-step-indicator-dots">
+                {GATE_TABS.map((tab) => (
+                  <button
+                    key={tab.id}
+                    className={`step-dot ${activeSlideIndex === tab.id ? 'active' : ''}`}
+                    onClick={() => setActiveSlideIndex(tab.id)}
+                    title={tab.label}
+                    type="button"
+                  />
+                ))}
+              </div>
+
+              <button
+                className="quantum-nav-step-btn"
+                onClick={nextSlide}
+                disabled={activeSlideIndex === GATE_TABS.length - 1}
+                type="button"
+              >
+                Next Stage &rarr;
+              </button>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Qubit Modals (Basis) */}
         <QubitDetailModal

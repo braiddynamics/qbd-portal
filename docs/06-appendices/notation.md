@@ -153,18 +153,20 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
 | $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
 | $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
-| $T$ | Vacuum Temperature ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
-| $\Delta S$ | Entropy of Closure ($\ln 2$) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
-| $d$ | Effective Macroscopic Dimensionality ($d=4$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
-| $\epsilon_{geo}$ | Geometric Self-Energy ($\approx 0.173$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\mu$ | Friction Coefficient ($\approx 0.399$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
+| $T_c, \beta_c$ | Vacuum Temperature / Base Conversion Modulus ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
+| $\Delta S_{\mathrm{close}}$ | Entropy of Closure ($\ln 2$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
+| $\varepsilon_{\mathrm{geo}}$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
+| $\Lambda_{\mathrm{theory}}$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
+| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
+| $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.3989$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
+| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
 | $\chi(\boldsymbol{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
-| $\text{nbhd}(e)$ | Local neighborhood of edge $e$ | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
-| $\mathcal{U}$ | Universal Evolution Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $P_{\mathrm{acc}}$ | Addition Proposal Probability | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
+| $P_{\mathrm{del}}$ | Deletion Proposal Probability | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
+| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
+| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
+| $\mathcal{U}$ | Universal Evolution Operator ($\mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{A}$ | Awareness Diagnostic Mapping | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\mathcal{P}_{\mathrm{prop}}$ | Stochastic Proposal Kernel | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
@@ -510,3 +512,52 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\xi_{\text{GL}}$ | Ginzburg-Landau coherence length in macroscopic braid condensate | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
 | $\lambda_{\text{London}}$ | London magnetic penetration depth in superconducting braid media | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
 | $\mathbf{A}_{\text{eff}}$ | Effective electromagnetic vector potential in superconducting graph | [§22.6.1](/monograph/output/extremes/22.6/#22.6.1) |
+| $\hat{H}_{\text{Ryd}}$ | Driven-dissipative Rydberg blockade Hamiltonian | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $R_b$ | Rydberg blockade exclusion radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $R_{\text{fac}}$ | Rydberg facilitation resonance radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
+| $\beta_{\text{DP}}$ | Directed percolation critical order parameter exponent | [§23.1.4](/monograph/conclusion/universality/23.1/#23.1.4) |
+| $S_v, S_p$ | Trivalent stabilizer vertex divergence and plaquette flux checks | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $\hat{U}_{\text{synd}}$ | Transpiled trivalent stabilizer syndrome extraction operator | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $\Delta t_{\text{circ}}$ | Minimal syndrome extraction circuit depth ($4\tau_{\text{gate}}$) | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $p_{\text{th}}$ | Pre-geometric multi-qubit fault-tolerance threshold ($\approx 0.104$) | [§23.2.2](/monograph/conclusion/universality/23.2/#23.2.2) |
+| $\epsilon_L$ | Logical qubit error rate per syndrome extraction cycle | [§23.2.2](/monograph/conclusion/universality/23.2/#23.2.2) |
+| $\hat{\Phi}(L, t)$ | Discrete metric optical phase shift operator | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
+| $S_h(f)$ | Holographic strain cross-power spectral density | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
+| $\Diamond_x$ | Spacetime causal diamond of cavity optical path | [§23.3.3](/monograph/conclusion/universality/23.3/#23.3.3) |
+| $\lvert \Psi_{\text{bif}} \rangle$ | Geodesically bifurcated center-of-mass spatial superposition | [§23.4.1](/monograph/conclusion/universality/23.4/#23.4.1) |
+| $\mathcal{F}_{\text{graph}}$ | Inner product overlap of disjointly deformed graph states | [§23.4.1](/monograph/conclusion/universality/23.4/#23.4.1) |
+| $\Gamma_{\text{dec}}$ | Discrete lapse desynchronization decoherence rate | [§23.4.2](/monograph/conclusion/universality/23.4/#23.4.2) |
+| $E_\Delta$ | Relational gravitational self-energy difference | [§23.4.3](/monograph/conclusion/universality/23.4/#23.4.3) |
+| $\mathcal{H}_{\text{phys}}$ | Gauge-invariant physical state space of ribbon networks | [§24.1.1](/monograph/conclusion/derivations/24.1/#24.1.1) |
+| $\mathcal{P}_{\text{gauge}}$ | Global compact Lie group averaging projector | [§24.1.3](/monograph/conclusion/derivations/24.1/#24.1.3) |
+| $\lvert \Omega \rangle$ | Non-degenerate gauge-invariant vacuum state | [§24.1.5](/monograph/conclusion/derivations/24.1/#24.1.5) |
+| $\Delta_{\text{YM}}$ | Non-perturbative Yang-Mills topological mass gap | [§24.2.1](/monograph/conclusion/derivations/24.2/#24.2.1) |
+| $C(K)$ | Knot minimal crossing number invariant | [§24.2.2](/monograph/conclusion/derivations/24.2/#24.2.2) |
+| $\kappa$ | Dimensionless ribbon elastic deformation modulus | [§24.2.3](/monograph/conclusion/derivations/24.2/#24.2.3) |
+| $\Lambda_{\text{YM}}$ | Dynamically transmuted non-perturbative hadronic scale | [§24.3.1](/monograph/conclusion/derivations/24.3/#24.3.1) |
+| $\mathcal{D}_b$ | Real-space causal poset block-decimation operator | [§24.3.2](/monograph/conclusion/derivations/24.3/#24.3.2) |
+| $\beta_0$ | One-loop non-Abelian Callan-Symanzik beta function coefficient | [§24.3.4](/monograph/conclusion/derivations/24.3/#24.3.4) |
+| $\mathcal{W}(R, T)$ | Rectangular non-Abelian Wilson loop operator | [§24.4.1](/monograph/conclusion/derivations/24.4/#24.4.1) |
+| $\sigma$ | Linear quark confinement string tension | [§24.4.1](/monograph/conclusion/derivations/24.4/#24.4.1) |
+| $\hat{R}_{\text{snap}}$ | Dynamical ribbon bisection string-breaking rewrite operator | [§24.4.5](/monograph/conclusion/derivations/24.4/#24.4.5) |
+| $R_c$ | Meson pair crossover saturation distance ($\approx 1.2\text{ fm}$) | [§24.4.6](/monograph/conclusion/derivations/24.4/#24.4.6) |
+| $\Theta$ | Causal poset wedge reflection time-involution operator | [§24.5.3](/monograph/conclusion/derivations/24.5/#24.5.3) |
+| $\hat{T}$ | Discrete causal poset transfer matrix operator | [§24.5.4](/monograph/conclusion/derivations/24.5/#24.5.4) |
+| $R_{\text{gap}}$ | Dimensionless gap-to-string tension scaling ratio ($3\sqrt{\kappa}$) | [§24.6.1](/monograph/conclusion/derivations/24.6/#24.6.1) |
+| $\mathcal{G}$ | Universal relational causal graph substrate | [§25.1.1](/monograph/conclusion/synthesis/25.1/#25.1.1) |
+| $\operatorname{Aut}(\mathcal{G})$ | Automorphism group of the relational causal network | [§25.1.2](/monograph/conclusion/synthesis/25.1/#25.1.2) |
+| $\hat{P}_{\mathcal{S}}$ | Comonadic stabilizer projection operator | [§25.1.3](/monograph/conclusion/synthesis/25.1/#25.1.3) |
+| $\mathcal{H}_{\text{univ}}$ | Universal state space of the causal network | [§25.1.3](/monograph/conclusion/synthesis/25.1/#25.1.3) |
+| $\Delta S_{\text{rel}}$ | Relational entropy generated by discrete lapse desynchronization | [§25.1.4](/monograph/conclusion/synthesis/25.1/#25.1.4) |
+| $b_1(\mathcal{G})$ | First Betti number of causal graph cycle homology | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $\hat{\mathcal{I}}$ | Global cycle-inversion duality operator | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $R_{\min}$ | Minimum spatial scale under cycle-basis inversion ($\approx \ell_0$) | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $\Sigma_{\text{QES}}$ | Cosmological quantum extremal surface | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $S_{\text{vac}}$ | Ground-state vacuum code entropy per erased link ($=\ln 2$) | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $C_{\mu\nu\rho\sigma}$ | Conformal Weyl curvature tensor | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $T^\mu_\mu$ | Trace of the energy-momentum tensor in conformal epoch | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
+| $\mathcal{R}$ | Space of microscopic local graph rewrite rules | [§25.2.1](/monograph/conclusion/synthesis/25.2/#25.2.1) |
+| $p_{\text{eff}}$ | Effective error rate per graph rewrite step | [§25.2.2](/monograph/conclusion/synthesis/25.2/#25.2.2) |
+| $\mathcal{O}$ | Embedded localized braided observer subsystem | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |
+| $\hat{\mathcal{W}}_{\text{loop}}$ | Self-observing participatory cosmic closure operator | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |

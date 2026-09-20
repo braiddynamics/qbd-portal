@@ -27,7 +27,7 @@ export const monographSections = [
     part: "5",
     title: "5. Conclusion",
     subtitle: "Applications and Synthesis",
-    linkUrl: "/wip?part=5",
+    linkUrl: "/monograph/conclusion/universality/23.1",
   },
   {
     part: "6",

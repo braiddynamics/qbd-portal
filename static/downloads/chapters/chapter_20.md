@@ -2,7 +2,7 @@
 
 **Abstract**
 
-wip
+Chapter 20 formalizes the emergence of large-scale cosmological structure, the cosmic web, and cosmic void networks from the discrete causal event lattice of Quantum Braid Dynamics. Starting from the high-temperature primordial plasma of decoupled graph event clusters, the theory simulates acoustic density oscillations driven by cyclic stress-erasure of the lattice, recovering acoustic peaks matching observed Baryon Acoustic Oscillations (BAO). Non-braided vacancy clusters serve as topological dark matter scaffolding, governing linear matter growth and baryonic infall. Anisotropic caustic collapse generates cosmic filament sheets and nodes, while unpinned 3-cycle creation currents expand voids into flat vacuum attractors. The non-linear matter power spectrum is evolved and verified against SDSS BAO standard rulers and Lyman-alpha forest absorption constraints.
 
 ---
 

@@ -1274,7 +1274,7 @@ Section 18.3.2.1 formalizes the properties of the QBD proof regarding frictionle
 :::info[**Self-Similar Vertex Growth via the Expanding Tree Substrate**]
 :::
 
-Let $N(t)$ be the total vertex count of the expanding graph substrate.
+Let $N(t)$ be the total vertex count of the expanding graph substrate. Then the vertex growth rate matches the cycle creation rate, which maintains the intensive cycle density $\rho(t) \approx \rho_0$ at a constant value and stabilizes the per-capita growth rate to a constant $r$.
 
 **In Plain English:**  
 Section 18.3.3 formalizes the properties of the QBD lemma regarding self-similar bipartite expansion.
