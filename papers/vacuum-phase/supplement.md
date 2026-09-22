@@ -28,7 +28,7 @@ description: "Complete machine-checked Lean 4 formal kernel proofs (56 active nu
 **Paper:** *Constrained Stochastic Rewrite System on Timestamped DAGs: Vacuum Architecture, Absorbing-State Dynamics, and the Emergence of Causal Geometry*  
 **Authors:** **R. Fisher**, *Principal Investigator* ([ORCID: 0009-0006-2441-3282](https://orcid.org/0009-0006-2441-3282))  
 **Contents:** **Appendix A** (Verified Lean 4 Formal Kernel Specifications, 56 active numbered verified theorems (120 theorem declarations, 0 unproven obligations, 0 axioms, 0 sorry)) · **Appendix B** (High-Performance C++20 Multi-Scale Simulation Engine) · **Appendix C** (Python 3 Reference Engine & Verification Suite) · **Appendix D** (Combinatorial Censuses, Orbit Entropy, Triad Occupancy & Numerical Verifications)  
-**Downloads:** [Download Supplement Markdown](pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md) (112 KB) · [Full Replication Bundle (ZIP)](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (94 KB) · [Lean 4 Kernel File](pathname:///papers/vacuum-phase/code/VacuumPhase.lean)  
+**Downloads:** [Download Supplement Markdown](pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md) (140 KB) · [Full Replication Bundle (ZIP)](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (49 KB ZIP) · [Lean 4 Kernel File](pathname:///papers/vacuum-phase/code/VacuumPhase.lean) (52 KB)  
 :::
 
 

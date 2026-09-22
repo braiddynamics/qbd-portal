@@ -71,10 +71,10 @@ export const papers: PaperRecord[] = [
     ],
     primaryLinks: [
       { label: 'Read Online', href: '/papers/vacuum-phase', icon: '📖' },
-      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '806 KB' },
-      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '140 KB' },
+      { label: 'PDF', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf', isDownload: true, icon: '📄', size: '852 KB' },
+      { label: 'Markdown', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase.md', isDownload: true, icon: '📝', size: '167 KB' },
       { label: 'Supplement (Online)', href: '/papers/vacuum-phase/supplement', icon: '📑' },
-      { label: 'Supplement (MD)', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md', isDownload: true, icon: '📋', size: '112 KB' }
+      { label: 'Supplement (MD)', href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-supplement.md', isDownload: true, icon: '📋', size: '140 KB' }
     ],
     companionAssets: [
       {
@@ -86,7 +86,7 @@ export const papers: PaperRecord[] = [
         href: '/papers/vacuum-phase/supplement',
         icon: '📑',
         badge: 'Online & Downloadable',
-        size: '112 KB'
+        size: '140 KB'
       },
       {
         id: 'vacuum-phase-lean',
@@ -98,7 +98,7 @@ export const papers: PaperRecord[] = [
         isDownload: true,
         icon: '📐',
         badge: '48 Theorems / Lean 4.33.1+',
-        size: '46 KB'
+        size: '52 KB'
       },
       {
         id: 'vacuum-phase-replication-zip',
@@ -109,8 +109,8 @@ export const papers: PaperRecord[] = [
         href: 'pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip',
         isDownload: true,
         icon: '📦',
-        badge: '110 KB ZIP',
-        size: '110 KB'
+        badge: '49 KB ZIP',
+        size: '49 KB'
       },
       {
         id: 'vacuum-phase-dataset',

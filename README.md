@@ -59,16 +59,43 @@ qbd-portal/
 │   │   └── test.py           # Verification script for local execution
 │   ├── tests/                # pyTest unit tests and code verification
 ├── docs/                     # Markdown source files for the Monograph
-├── validation/               # Editorial blueprints, chapter schemas, and linters
-│   ├── blueprints/           # Formatting and style rules
+├── papers/                   # Published portal routes, figures, code, and downloadable assets
+├── papers-drafts/            # Working drafts, journal validation suite, and Pandoc/XeLaTeX PDF pipeline
+│   ├── cases/                # Standalone papers, comments, and research preprints
+│   ├── pdf-pipeline/         # XeLaTeX PDF compilation engine & journal style presets
+│   └── validation/           # Papers Validation Suite (journal compliance & web compatibility linters)
+├── validation/               # Monograph Validation Suite (editorial blueprints, schemas, linters)
+│   ├── blueprints/           # Monograph formatting and style rules
 │   ├── schemas/              # Chapter structures and nomenclature
-│   └── linters/              # Python validation scripts and logs
+│   └── linters/              # Monograph linters and audit logs
 ├── scratch/                  # Temporary compilers, physics simulation probes, and utility scripts
 ├── src/                      # React components for the Docusaurus frontend
 ├── static/                   # Images, diagrams, and LaTeX assets
 ├── docusaurus.config.ts      # Site configuration and KaTeX macros
 └── package.json              # Node.js dependencies
 ```
+
+## Dual Validation Architecture: Monograph vs. Papers
+
+The repository maintains two independent validation suites, reflecting the structural differences between the 25-chapter book monograph and standalone peer-reviewed research papers:
+
+### 1. Monograph Validation Suite (`validation/linters/`)
+* **Scope:** Scans the 25 monograph chapters and appendices in `docs/`.
+* **Focus:** Strict chapter coordinate hierarchies, formal Lean 4 verification blocks, mathematical typography, definition registries, symbol consistency, and editorial blueprints.
+* **Runner:**
+  ```powershell
+  python validation/linters/run_validation_suite.py --chapter <N>
+  # or full monograph:
+  python validation/linters/run_validation_suite.py
+  ```
+
+### 2. Papers Validation Suite (`papers-drafts/validation/`)
+* **Scope:** Scans standalone research manuscripts and preprints in `papers-drafts/cases/`.
+* **Focus:** Journal-specific profile standards (`complex-systems`, `prl`, `cqg`, `informal`), word count constraints, PDF page budget and layout boundaries, cross-reference targets, display math fence isolation (preventing KaTeX parse failures), and MDX v3 web compatibility (preventing JSX autolink crashes).
+* **Runner:**
+  ```powershell
+  python papers-drafts/validation/run_validation_suite.py -i papers-drafts/cases/vacuum-phase/vacuum-phase.md -s complex-systems
+  ```
 
 ## Library Validation & Simulations Coverage
 

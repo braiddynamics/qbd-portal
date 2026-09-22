@@ -28,7 +28,7 @@ description: "A constrained stochastic rewrite process on timestamped DAGs exhib
 **Affiliation:** Braid Dynamics Group  
 **Published / Release:** August 24, 2026 · **Status:** Preprint / Research Article (v1.0.0) · **License:** [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)  
 **Classification:** Statistical Mechanics · Discrete Quantum Gravity · Directed Percolation  
-**Downloads & Assets:** [Publication PDF](pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf) (806 KB) · [Markdown Source](pathname:///papers/vacuum-phase/downloads/vacuum-phase.md) (140 KB) · [Technical Supplement (Online)](/papers/vacuum-phase/supplement) · [Replication Bundle](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (94 KB ZIP)
+**Downloads & Assets:** [Publication PDF](pathname:///papers/vacuum-phase/downloads/vacuum-phase.pdf) (852 KB) · [Markdown Source](pathname:///papers/vacuum-phase/downloads/vacuum-phase.md) (167 KB) · [Technical Supplement (Online)](/papers/vacuum-phase/supplement) · [Replication Bundle](pathname:///papers/vacuum-phase/downloads/vacuum-phase-replication.zip) (49 KB ZIP)
 :::
 
 # Introduction: Foundational Principles
@@ -184,10 +184,13 @@ Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The 
 * **Finite Growth:** There exists a constant $k \in \mathbb{N}$ such that $|V'| \le |V| + k$ and $|E'| \le |E| + k$.
 
 Formally:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \mathfrak{T} = \big\{ T: \mathcal{G} \to \mathcal{G} \mid \; & T(G) \text{ preserves causal acyclicity, monotonicity of } H, \\
 & \text{and bounded growth } (|V'| \le |V|+k, \; |E'| \le |E|+k) \big\}.
-\end{aligned}$$
+\end{aligned}
+$$
 
 *Kinematic Exhaustiveness:* The task space $\mathfrak{T}$ enumerates all kinematically accessible configurations of relational flux, establishing the complete combinatorial domain upon which dynamical rewrite rules operate.
 
@@ -277,10 +280,13 @@ A self-loop $e_{\mathrm{loop}} = (u, u)$ constitutes a directed cycle of length 
 *Proof.* We verify the cycle definition on the singleton edge transition:
 
 **I. The Generalized Cycle Definition:** A directed cycle of length $k$ is an ordered vertex sequence $C_k = (v_0, v_1, \dots, v_k)$ satisfying:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \text{Connectivity:} & \quad \forall i \in \{0, \dots, k-1\}, \; (v_i, v_{i+1}) \in E, \\
 \text{Closure:} & \quad v_0 = v_k.
-\end{aligned}$$
+\end{aligned}
+$$
 
 **II. Sequence Mapping:** Let $e_{\mathrm{loop}} = (u, u) \in E$ denote a candidate self-loop incident to vertex $u$. Define the two-element sequence $S = (v_0, v_1)$ with $v_0 = u$ and $v_1 = u$.
 
@@ -312,10 +318,13 @@ trapping the vertex in infinite static recursion without advancing logical time.
 
 **Theorem 2.1.4** (Insufficiency of Standard Antisymmetry and Relational Completeness).
 The conventional algebraic condition of antisymmetry ($\forall u, v \in V, \; (u, v) \in E \land (v, u) \in E \implies u = v$) is strictly weaker than Axiom 1 and fails to preclude unphysical $k=1$ closed timelike curves. Strict asymmetry is logically equivalent to the conjunction of strict irreflexivity and antisymmetry:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \big(\forall u, v, \; (u, v) \in E \implies (v, u) \notin E\big) \iff & \big(\forall u, \; (u, u) \notin E\big) \\
 & \land \big(\forall u, v, \; (u, v) \in E \land (v, u) \in E \implies u = v\big).
-\end{aligned}$$
+\end{aligned}
+$$
 
 *Proof.* We prove the insufficiency of standard antisymmetry and establish the algebraic biconditional:
 
@@ -401,10 +410,13 @@ Let $C = (v_0, v_1, \dots, v_{L-1}, v_0)$ be a simple directed cycle of maximal 
 $$\text{dist}_C(v_i, v_k) \ge 2 \quad \text{and} \quad \text{dist}_C(v_k, v_i) \ge 2.$$
 
 **III. Topological Partition:** Chord $e = (v_i, v_k)$ partitions $C$ into two directed sub-cycles $C_1$ and $C_2$:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 E(C_1) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [k, i)_C\} \cup \{(v_i, v_k)\}, \quad L_1 = \text{dist}_C(v_k, v_i) + 1, \\
 E(C_2) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [i, k)_C\} \cup \{(v_i, v_k)\}, \quad L_2 = \text{dist}_C(v_i, v_k) + 1.
-\end{aligned}$$
+\end{aligned}
+$$
 
 **IV. Inequality Derivation:** The total cycle length is:
 $$L = \text{dist}_C(v_k, v_i) + \text{dist}_C(v_i, v_k) = (L_1 - 1) + (L_2 - 1) = L_1 + L_2 - 2.$$
@@ -1376,55 +1388,55 @@ Discrete causal graph rewriting, absorbing-state phase transitions, and continuu
 
 # Data and Code Availability
 
-The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 multi-scale simulation engine, and the standalone Python reference implementation are published in full in the companion Supplementary Material (see Supplementary Material below). Replication repositories, parameter sweep ensemble records, and interactive portal resources are hosted at <https://braiddynamics.com/> and permanently archived on Zenodo (<https://zenodo.org/records/21423007>) and GitHub (<https://github.com/braiddynamics/qbd-portal>).
+The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 multi-scale simulation engine, and the standalone Python reference implementation are published in full in the companion Supplementary Material (see Supplementary Material below). Replication repositories, parameter sweep ensemble records, and interactive portal resources are hosted at [braiddynamics.com](https://braiddynamics.com/) and permanently archived on Zenodo ([records/21423007](https://zenodo.org/records/21423007)) and GitHub ([braiddynamics/qbd-portal](https://github.com/braiddynamics/qbd-portal)).
 
 ---
 
 # References
 
-[1] J. Ambjørn, J. Jurkiewicz, and R. Loll, "The spectral dimension of the universe is scale dependent," *Phys. Rev. Lett.* **95**(17), 171301 (2005). <https://doi.org/10.1103/PhysRevLett.95.171301>
+[1] J. Ambjørn, J. Jurkiewicz, and R. Loll, "The spectral dimension of the universe is scale dependent," *Phys. Rev. Lett.* **95**(17), 171301 (2005). [https://doi.org/10.1103/PhysRevLett.95.171301](https://doi.org/10.1103/PhysRevLett.95.171301)
 
-[2] E. Anderson, "The problem of time in quantum gravity," *Ann. Phys. (Berlin)* **524**(12), 757–786 (2012). <https://doi.org/10.1002/andp.201200147>
+[2] E. Anderson, "The problem of time in quantum gravity," *Ann. Phys. (Berlin)* **524**(12), 757–786 (2012). [https://doi.org/10.1002/andp.201200147](https://doi.org/10.1002/andp.201200147)
 
-[3] F. Baader and T. Nipkow, *Term Rewriting and All That* (Cambridge University Press, Cambridge, 1998). <https://doi.org/10.1017/CBO9781139172752>
+[3] F. Baader and T. Nipkow, *Term Rewriting and All That* (Cambridge University Press, Cambridge, 1998). [https://doi.org/10.1017/CBO9781139172752](https://doi.org/10.1017/CBO9781139172752)
 
-[4] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, "Spacetime as a causal set," *Phys. Rev. Lett.* **59**(5), 521–524 (1987). <https://doi.org/10.1103/PhysRevLett.59.521>
+[4] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, "Spacetime as a causal set," *Phys. Rev. Lett.* **59**(5), 521–524 (1987). [https://doi.org/10.1103/PhysRevLett.59.521](https://doi.org/10.1103/PhysRevLett.59.521)
 
-[5] S. Carlip, "Spontaneous dimensional reduction in short-distance quantum gravity?," *AIP Conf. Proc.* **1196**(1), 72–78 (2009). <https://doi.org/10.1063/1.3284402>
+[5] S. Carlip, "Spontaneous dimensional reduction in short-distance quantum gravity?," *AIP Conf. Proc.* **1196**(1), 72–78 (2009). [https://doi.org/10.1063/1.3284402](https://doi.org/10.1063/1.3284402)
 
-[6] S. Coleman, "The uses of instantons," in *The Whys of Subnuclear Physics*, edited by A. Zichichi (Plenum Press, New York, 1979), pp. 805–941. <https://doi.org/10.1007/978-1-4684-0991-8_14>
+[6] S. Coleman, "The uses of instantons," in *The Whys of Subnuclear Physics*, edited by A. Zichichi (Plenum Press, New York, 1979), pp. 805–941. [https://doi.org/10.1007/978-1-4684-0991-8_14](https://doi.org/10.1007/978-1-4684-0991-8_14)
 
-[7] B. S. DeWitt, "Quantum theory of gravity. I. The canonical theory," *Phys. Rev.* **160**(5), 1113–1148 (1967). <https://doi.org/10.1103/PhysRev.160.1113>
+[7] B. S. DeWitt, "Quantum theory of gravity. I. The canonical theory," *Phys. Rev.* **160**(5), 1113–1148 (1967). [https://doi.org/10.1103/PhysRev.160.1113](https://doi.org/10.1103/PhysRev.160.1113)
 
-[8] H. Ehrig, K. Ehrig, U. Prange, and G. Taentzer, *Fundamentals of Algebraic Graph Transformation* (Springer, Berlin, Heidelberg, 2006). <https://doi.org/10.1007/3-540-31188-2>
+[8] H. Ehrig, K. Ehrig, U. Prange, and G. Taentzer, *Fundamentals of Algebraic Graph Transformation* (Springer, Berlin, Heidelberg, 2006). [https://doi.org/10.1007/3-540-31188-2](https://doi.org/10.1007/3-540-31188-2)
 
-[9] J. Gorard, "Some relativistic and gravitational properties of the Wolfram model," *Complex Syst.* **29**(2), 599–654 (2020). <https://doi.org/10.25088/ComplexSystems.29.2.599>
+[9] J. Gorard, "Some relativistic and gravitational properties of the Wolfram model," *Complex Syst.* **29**(2), 599–654 (2020). [https://doi.org/10.25088/ComplexSystems.29.2.599](https://doi.org/10.25088/ComplexSystems.29.2.599)
 
-[10] H. Hinrichsen, "Non-equilibrium critical phenomena and phase transitions into absorbing states," *Adv. Phys.* **49**(7), 815–958 (2000). <https://doi.org/10.1080/00018730050198152>
+[10] H. Hinrichsen, "Non-equilibrium critical phenomena and phase transitions into absorbing states," *Adv. Phys.* **49**(7), 815–958 (2000). [https://doi.org/10.1080/00018730050198152](https://doi.org/10.1080/00018730050198152)
 
-[11] J. Jost and S. Liu, "Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs," *Calc. Var. Partial Differ. Equ.* **51**(3), 937–966 (2014). <https://doi.org/10.1007/s00526-013-0697-7>
+[11] J. Jost and S. Liu, "Ollivier's Ricci curvature, local clustering and curvature-dimension inequalities on graphs," *Calc. Var. Partial Differ. Equ.* **51**(3), 937–966 (2014). [https://doi.org/10.1007/s00526-013-0697-7](https://doi.org/10.1007/s00526-013-0697-7)
 
-[12] T. Konopka, F. Markopoulou, and S. Severini, "Quantum graphity: A model of emergent locality," *Phys. Rev. D* **77**(10), 104029 (2008). <https://doi.org/10.1103/PhysRevD.77.104029>
+[12] T. Konopka, F. Markopoulou, and S. Severini, "Quantum graphity: A model of emergent locality," *Phys. Rev. D* **77**(10), 104029 (2008). [https://doi.org/10.1103/PhysRevD.77.104029](https://doi.org/10.1103/PhysRevD.77.104029)
 
-[13] L. Lamport, "Time, clocks, and the ordering of events in a distributed system," *Commun. ACM* **21**(7), 558–565 (1978). <https://doi.org/10.1145/359545.359563>
+[13] L. Lamport, "Time, clocks, and the ordering of events in a distributed system," *Commun. ACM* **21**(7), 558–565 (1978). [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
-[14] T. M. Liggett, *Stochastic Interacting Systems: Contact, Voter and Exclusion Processes* (Springer, Berlin, Heidelberg, 1999). <https://doi.org/10.1007/978-3-662-03990-8>
+[14] T. M. Liggett, *Stochastic Interacting Systems: Contact, Voter and Exclusion Processes* (Springer, Berlin, Heidelberg, 1999). [https://doi.org/10.1007/978-3-662-03990-8](https://doi.org/10.1007/978-3-662-03990-8)
 
-[15] J. Marro and R. Dickman, *Nonequilibrium Phase Transitions in Lattice Models* (Cambridge University Press, Cambridge, 1999). <https://doi.org/10.1017/CBO9780511622717>
+[15] J. Marro and R. Dickman, *Nonequilibrium Phase Transitions in Lattice Models* (Cambridge University Press, Cambridge, 1999). [https://doi.org/10.1017/CBO9780511622717](https://doi.org/10.1017/CBO9780511622717)
 
-[16] Y. Ollivier, "Ricci curvature of Markov chains on metric spaces," *J. Funct. Anal.* **256**(3), 810–864 (2009). <https://doi.org/10.1016/j.jfa.2008.11.001>
+[16] Y. Ollivier, "Ricci curvature of Markov chains on metric spaces," *J. Funct. Anal.* **256**(3), 810–864 (2009). [https://doi.org/10.1016/j.jfa.2008.11.001](https://doi.org/10.1016/j.jfa.2008.11.001)
 
-[17] D. N. Page and W. K. Wootters, "Evolution without evolution: Dynamics described by stationary observables," *Phys. Rev. D* **27**(12), 2885–2892 (1983). <https://doi.org/10.1103/PhysRevD.27.2885>
+[17] D. N. Page and W. K. Wootters, "Evolution without evolution: Dynamics described by stationary observables," *Phys. Rev. D* **27**(12), 2885–2892 (1983). [https://doi.org/10.1103/PhysRevD.27.2885](https://doi.org/10.1103/PhysRevD.27.2885)
 
-[18] R. Pemantle, "The contact process on trees," *Ann. Probab.* **20**(4), 2089–2116 (1992). <https://doi.org/10.1214/aop/1176989541>
+[18] R. Pemantle, "The contact process on trees," *Ann. Probab.* **20**(4), 2089–2116 (1992). [https://doi.org/10.1214/aop/1176989541](https://doi.org/10.1214/aop/1176989541)
 
-[19] D. P. Rideout and R. D. Sorkin, "Classical sequential growth dynamics for causal sets," *Phys. Rev. D* **61**(2), 024002 (2000). <https://doi.org/10.1103/PhysRevD.61.024002>
+[19] D. P. Rideout and R. D. Sorkin, "Classical sequential growth dynamics for causal sets," *Phys. Rev. D* **61**(2), 024002 (2000). [https://doi.org/10.1103/PhysRevD.61.024002](https://doi.org/10.1103/PhysRevD.61.024002)
 
-[20] T. Uustalu and V. Vene, "Comonadic notions of computation," *Electron. Notes Theor. Comput. Sci.* **203**(5), 263–284 (2008). <https://doi.org/10.1016/j.entcs.2008.05.029>
+[20] T. Uustalu and V. Vene, "Comonadic notions of computation," *Electron. Notes Theor. Comput. Sci.* **203**(5), 263–284 (2008). [https://doi.org/10.1016/j.entcs.2008.05.029](https://doi.org/10.1016/j.entcs.2008.05.029)
 
 [21] N. G. van Kampen, *Stochastic Processes in Physics and Chemistry*, 2nd ed. (North-Holland, Amsterdam, 1992).
 
-[22] W. Woess, *Random Walks on Infinite Graphs and Groups* (Cambridge University Press, Cambridge, 2000). <https://doi.org/10.1017/CBO9780511470967>
+[22] W. Woess, *Random Walks on Infinite Graphs and Groups* (Cambridge University Press, Cambridge, 2000). [https://doi.org/10.1017/CBO9780511470967](https://doi.org/10.1017/CBO9780511470967)
 
 [23] S. Wolfram, *A New Kind of Science* (Wolfram Media, Champaign, IL, 2002).
 

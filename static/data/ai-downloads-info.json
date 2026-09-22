@@ -1939,13 +1939,13 @@
       "dataset_csv_url": "https://braiddynamics.com/papers/vacuum-phase/data/p_surv_N10000_cpp_production.csv",
       "formal_theorems_count": 48,
       "unproven_axioms": 0,
-      "estimated_tokens_md": 42000,
-      "estimated_tokens_supplement": 35000,
-      "file_size_pdf_bytes": 825203,
-      "file_size_markdown_bytes": 140248,
-      "file_size_supplement_bytes": 111664,
-      "file_size_replication_zip_bytes": 112356,
-      "file_size_lean4_bytes": 46461
+      "estimated_tokens_md": 63000,
+      "estimated_tokens_supplement": 51000,
+      "file_size_pdf_bytes": 872264,
+      "file_size_markdown_bytes": 170840,
+      "file_size_supplement_bytes": 143017,
+      "file_size_replication_zip_bytes": 49504,
+      "file_size_lean4_bytes": 53196
     },
     {
       "id": "causal-invariance-hypergraphs",
