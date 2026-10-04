@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 4784715,
-      "estimated_tokens": 1737023,
+      "file_size_bytes": 4788969,
+      "estimated_tokens": 1738594,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 5174278,
-      "estimated_tokens": 1906240,
+      "file_size_bytes": 5178581,
+      "estimated_tokens": 1907832,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 4043298,
-      "estimated_tokens": 1737023,
+      "file_size_bytes": 4044351,
+      "estimated_tokens": 1738594,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -50,16 +50,16 @@
       "name": "Part 2: Topological Nature of Matter (The Players)",
       "filename": "qbd_part_2_topological_nature_of_matter_the_players.md",
       "url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md",
-      "file_size_bytes": 932048,
-      "estimated_tokens": 338335,
+      "file_size_bytes": 932727,
+      "estimated_tokens": 338586,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 2: Topological Nature of Matter (The Players).",
       "json_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.json",
-      "json_file_size_bytes": 960559,
-      "json_estimated_tokens": 353880,
+      "json_file_size_bytes": 961244,
+      "json_estimated_tokens": 354133,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1206323,
-      "pdf_estimated_tokens": 338335
+      "pdf_file_size_bytes": 1207285,
+      "pdf_estimated_tokens": 338586
     },
     {
       "part_number": 3,
@@ -82,16 +82,16 @@
       "name": "Part 4: Phenomenological Consequences (The Output)",
       "filename": "qbd_part_4_phenomenological_consequences_the_output.md",
       "url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md",
-      "file_size_bytes": 1006349,
-      "estimated_tokens": 365141,
+      "file_size_bytes": 1009924,
+      "estimated_tokens": 366461,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 4: Phenomenological Consequences (The Output).",
       "json_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.json",
-      "json_file_size_bytes": 1028053,
-      "json_estimated_tokens": 379274,
+      "json_file_size_bytes": 1031671,
+      "json_estimated_tokens": 380613,
       "pdf_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.pdf",
-      "pdf_file_size_bytes": 1316185,
-      "pdf_estimated_tokens": 365141
+      "pdf_file_size_bytes": 1321602,
+      "pdf_estimated_tokens": 366461
     },
     {
       "part_number": 5,
@@ -212,16 +212,16 @@
       "name": "Chapter 6: Tripartite Braid (Fermions)",
       "filename": "chapter_6.md",
       "url": "/downloads/chapters/chapter_6.md",
-      "file_size_bytes": 171765,
-      "estimated_tokens": 62104,
+      "file_size_bytes": 172444,
+      "estimated_tokens": 62355,
       "type": "markdown",
       "description": "Markdown source for Chapter 6.",
       "json_url": "/downloads/chapters/chapter_6.json",
-      "json_file_size_bytes": 173516,
-      "json_estimated_tokens": 63787,
+      "json_file_size_bytes": 174201,
+      "json_estimated_tokens": 64041,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 300171,
-      "pdf_estimated_tokens": 62104
+      "pdf_file_size_bytes": 301129,
+      "pdf_estimated_tokens": 62355
     },
     {
       "chapter_number": 7,
@@ -452,16 +452,16 @@
       "name": "Chapter 21: Dark Sector (Relics)",
       "filename": "chapter_21.md",
       "url": "/downloads/chapters/chapter_21.md",
-      "file_size_bytes": 142625,
-      "estimated_tokens": 51753,
+      "file_size_bytes": 146200,
+      "estimated_tokens": 53073,
       "type": "markdown",
       "description": "Markdown source for Chapter 21.",
       "json_url": "/downloads/chapters/chapter_21.json",
-      "json_file_size_bytes": 145189,
-      "json_estimated_tokens": 53534,
+      "json_file_size_bytes": 148807,
+      "json_estimated_tokens": 54874,
       "pdf_url": "/downloads/chapters/chapter_21.pdf",
-      "pdf_file_size_bytes": 247394,
-      "pdf_estimated_tokens": 51753
+      "pdf_file_size_bytes": 252010,
+      "pdf_estimated_tokens": 53073
     },
     {
       "chapter_number": 22,
@@ -1403,8 +1403,8 @@
       {
         "name": "21.1.6.2.py",
         "url": "/downloads/code/repo/python/21.1.6.2.py",
-        "file_size_bytes": 3657,
-        "estimated_tokens": 1352,
+        "file_size_bytes": 3748,
+        "estimated_tokens": 1385,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 21.1.6.2."
       },
@@ -1419,8 +1419,8 @@
       {
         "name": "21.3.5.2.py",
         "url": "/downloads/code/repo/python/21.3.5.2.py",
-        "file_size_bytes": 3663,
-        "estimated_tokens": 1354,
+        "file_size_bytes": 3708,
+        "estimated_tokens": 1370,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 21.3.5.2."
       },
@@ -1916,7 +1916,7 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 279091,
+      "file_size_bytes": 279183,
       "description": "Download the complete simulations repository bundle containing all 84 numerical derivation scripts in a single ZIP archive."
     }
   },

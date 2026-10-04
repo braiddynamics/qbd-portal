@@ -38,12 +38,12 @@ def propagate_B4_relic(E0_eV, dist_Mpc):
     return max(0.0, E0_eV - loss_rate_eV_per_Mpc * dist_Mpc)
 
 def run_gzk_propagation():
-    # 1. Initial Injection Parameters (§21.3.2.1)
+    # 1. Initial Injection Parameters: Top-Down Topological Defect Decay (§21.3.2.1)
     E0_eV = 1.5e20         # 150 EeV injection energy
     m_B4_GeV = 5.0265      # B4 defect mass [GeV]
     gamma_B4 = (E0_eV * 1.0e-9) / m_B4_GeV
 
-    # 2. Atmospheric Nitrogen Interaction Kinematics (§21.3.6.1)
+    # 2. Secondary Baryonic Atmospheric Interaction Kinematics (§21.3.6.1)
     # Center-of-mass energy sqrt(s) = sqrt(2 * m_target * E0) for Nitrogen (m_N ~ 14 GeV)
     m_target_eV = 1.4e10
     s_eV2 = 2.0 * m_target_eV * E0_eV

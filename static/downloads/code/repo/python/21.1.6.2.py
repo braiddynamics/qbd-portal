@@ -16,7 +16,7 @@ def run_relic_abundance_scaling():
 
     # Ground-state crossing complexities from Topological Mass Functional (§7.4.2 & §21.1.4.1)
     # B3 Baryonic ground state (proton): C_eff[p] = m_p / kappa_H = 2.98662 composite units
-    # B4 Defect: beta_4 = (sigma_1 sigma_2 sigma_3 sigma_1 sigma_2 sigma_3)^2 with C[beta_4] = 16
+    # B4 Defect: beta_4 = (sigma_1 sigma_2^-1 sigma_3 sigma_2^-1)^4 with C[beta_4] = 16, w = 0
     c_eff_p = m_p / kappa_H
     c_b4 = 16.0
     m_B4 = c_b4 * kappa_H               # 16 * 0.314159265 GeV = 5.02655 GeV
@@ -46,6 +46,7 @@ def run_relic_abundance_scaling():
         N = G.number_of_nodes()
 
         # Monte Carlo trials for B3 vs B4 defect crystallization
+        # Quench equipartition: 4 strands per 2-vertex cluster yield equal weights (P = 0.25)
         trials = 100
         n3_list = []
         n4_list = []

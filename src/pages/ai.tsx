@@ -98,7 +98,7 @@ const PARTS: Part[] = [
     number: 4,
     title: 'Phenomenological Consequences (The Output)',
     chapters: '18-22',
-    tokens: '~365K',
+    tokens: '~366K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md',
     summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics, singularities & saturated core condensates.',
   },
@@ -141,7 +141,7 @@ const CHAPTERS = [
   { n: 18, title: 'Big Kindling (Inflation)',                                    tokens: '~82K',  md: '/downloads/chapters/chapter_18.md' },
   { n: 19, title: 'Hot Universe (Nucleosynthesis)',                              tokens: '~55K',  md: '/downloads/chapters/chapter_19.md' },
   { n: 20, title: 'Structured Universe (Cosmic Web)',                            tokens: '~96K',  md: '/downloads/chapters/chapter_20.md' },
-  { n: 21, title: 'Dark Sector (Relics)',                                        tokens: '~52K',  md: '/downloads/chapters/chapter_21.md' },
+  { n: 21, title: 'Dark Sector (Relics)',                                        tokens: '~53K',  md: '/downloads/chapters/chapter_21.md' },
   { n: 22, title: 'Singularities & Condensates (Extremes)',                      tokens: '~82K',  md: '/downloads/chapters/chapter_22.md' },
   { n: 23, title: 'Operational Verification (Universality)',                     tokens: '~58K',  md: '/downloads/chapters/chapter_23.md' },
   { n: 24, title: 'Non-Perturbative Foundations & The Mass Gap (Derivations)',   tokens: '~68K',  md: '/downloads/chapters/chapter_24.md' },
@@ -430,7 +430,7 @@ export default function AiPage() {
 
         <pre style={{ ...s.pre, borderLeft: '4px solid var(--ifm-color-warning)', background: 'var(--ifm-color-warning-contrast-background)' }}>{`IMPORTANT — HOW TO REVIEW THIS WORK ACCURATELY:
 
-The monograph is ~1.68M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
+The monograph is ~1.74M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
 Large context windows (1M–2M) are available and useful for cross-referencing and maintaining coherence,
 but context size is NOT the limiting factor for accurate analysis.
 
@@ -706,7 +706,7 @@ Machine-readable download catalogue:
         </table>
 
         <p style={{ fontSize: '0.85rem' }}>
-          Complete definitions for all 1,453 terms used in the monograph:{' '}
+          Complete definitions for all 1,485 terms used in the monograph:{' '}
           <a href="https://braiddynamics.com/data/definitions.json" style={s.a}>
             https://braiddynamics.com/data/definitions.json
           </a>
@@ -766,8 +766,8 @@ Machine-readable download catalogue:
 
         {/* ── Context window guidance ── */}
         <h2 style={s.h2}>CONTEXT WINDOW GUIDANCE</h2>
-        <pre style={s.pre}>{`Total monograph:  ~1.66M tokens  (full book Markdown)
-                  ~1.83M tokens  (full book JSON, includes structure overhead)
+        <pre style={s.pre}>{`Total monograph:  ~1.74M tokens  (full book Markdown)
+                  ~1.91M tokens  (full book JSON, includes structure overhead)
 
 Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   The bottleneck is reasoning depth, not context size. Reviewing one chapter
@@ -782,7 +782,7 @@ Chapter sizes (for planning):
   Smallest chapter:  ~20K tokens (Ch. 25)
   Largest chapter:   ~140K tokens (Ch. 1)
   Typical chapter:   ~45–85K tokens
-  All 25 chapters:   ~1.66M tokens total
+  All 25 chapters:   ~1.74M tokens total
 
 File format guidance:
   Markdown  → best for prose reading and analysis (no overhead)

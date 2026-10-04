@@ -1298,22 +1298,22 @@ It generates the Lie algebra $\mathfrak{su}(4)$.
     In $n=4$, a single generation in the fundamental $\mathbf{4}$ has non-zero anomaly. Cancellation would require ad-hoc addition of mirror fermions, violating parsimony.
 
 3.  **Complexity Cost:**
-    The Minimal Crossing Number $C_{min}(n)$ for a prime braid on $n$ strands scales super-linearly.
-    For $n=4$, the minimal prime knot is the figure-8 knot ($4_1$) or similar, with $C_{min} \ge 4$.
-    Formation probability scales as $P(\beta) \propto e^{-\mu C[\beta]}$.
+    The Minimal Crossing Number $C_{min}(n)$ for an irreducible prime braid on $n$ strands scales super-linearly.
+    While the figure-8 knot ($4_1$) has 4 crossings, its braid index is $b=3$, rendering it reducible on 4 strands with a disconnected spectator strand. Irreducible closed braids on 4 strands require braid index $b=4$, which in the knot census begins at crossing number $C_{min} \ge 8$ (e.g., $8_5, 8_7, 8_9$). Furthermore, under the Braid Parity Theorem, writhe-neutral closures ($w=0$) close to multi-component links requiring $C \ge 16$.
+    Formation probability in the thermal equilibrium vacuum scales as $P(\beta) \propto e^{-\mu C[\beta]}$.
     Ratio of formation rates:
 
     $$
     \frac{P(n=4)}{P(n=3)} = \frac{e^{-\mu C_4}}{e^{-\mu C_3}} = e^{-\mu(C_4 - C_3)}
     $$
 
-    Assuming $C_4 \ge 4$ and $C_3 = 3$:
+    Assuming $C_4 \ge 8$ and $C_3 = 3$:
 
     $$
-    \text{Ratio} \le e^{-0.4(1)} \approx 0.67
+    \text{Ratio} \le e^{-0.4(5)} \approx 0.135
     $$
 
-    The $n=4$ state is exponentially suppressed relative to $n=3$.
+    The irreducible $n=4$ state is exponentially suppressed relative to $n=3$ in the equilibrium vacuum.
 
 **II. Case $n=5$ Analysis (Grand Unification)**
 
