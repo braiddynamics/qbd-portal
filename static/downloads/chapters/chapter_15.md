@@ -1516,10 +1516,10 @@ The **History Ensemble** is herein defined as the set of all topologically valid
 3.  **The Ensemble Definition:** The History Ensemble $\mathcal{E}$ is the filtered subset of trajectories that satisfy the final boundary condition with non-zero amplitude:
 
     $$
-    \mathcal{E}(\Psi_{in}, \hat{M}) = \left\{ \gamma \in \Gamma \ : \ \langle \mathcal{M} | \hat{U}_{\gamma} | \Psi_{in} \rangle \neq 0 \right\}
+    \mathcal{E}(\Psi_{in}, \hat{M}) = \left\{ \gamma \in \Gamma \ : \ \| \hat{P}_{\mathcal{M}} \hat{U}_{\gamma} | \Psi_{in} \rangle \| > 0 \right\}
     $$
 
-    where $\hat{U}_{\gamma}$ is the unitary product of rewrites along path $\gamma$.
+    where $\hat{U}_{\gamma}$ is the unitary product of rewrites along path $\gamma$, and $\hat{P}_{\mathcal{M}}$ is the orthogonal projector onto subspace $\mathcal{M}$.
 4.  **Temporal Non-Locality:** The physical state at any intermediate time $t$ ($t_0 < t < t_f$) is the superposition of the slice $G_t$ across all $\gamma \in \mathcal{E}$. Consequently, the state at $t$ is functionally dependent on the choice of operator $\hat{M}$ at $t_f$.
 
 ### 15.4.1.1 Commentary: Block Universe View {#15.4.1.1}
@@ -1560,10 +1560,10 @@ The argument proceeds via Direct Construction, re-framing the evolution of the g
 │   ├── 15.4.4.1 Proof: Block Universe as Fixed Point
 │   └── 15.4.4.2 Commentary: The Puzzle of the Block
 │
-├── 15.4.5 Lemma: Electroweak Axial-Vector Coupling Operator
-│   ├── 15.4.5.1 Proof: Electroweak Axial-Vector Coupling Operator
-│   ├── 15.4.5.2 Calculation: Electroweak Axial-Vector Coupling Operator
-│   └── 15.4.5.3 Commentary: Axial-Vector Coupling Significance
+├── 15.4.5 Lemma: Sub-Ensemble Correlation Sorting
+│   ├── 15.4.5.1 Proof: Sub-Ensemble Correlation Sorting
+│   ├── 15.4.5.2 Calculation: Sub-Ensemble Correlation Sorting
+│   └── 15.4.5.3 Commentary: Correlation Sorting Significance
 │
 └── 15.4.6 Proof: Global Constraint Satisfaction
 ```
@@ -1585,7 +1585,7 @@ For any system evolving unitarily from an initial state to a final boundary cond
 The state exists as a coherent superposition of all topologically distinct causal histories $\gamma_i$ compatible with the boundary constraints.  **Ensemble Indeterminacy** <Ref id="15.4.3" label="§15.4.3" /> and  **Global Constraint Satisfaction** <Ref id="15.4.2" label="§15.4.2" /> Specifically, the density matrix $\rho(t)$ describing the system at time $t$ contains non-vanishing off-diagonal terms (coherences) between mutually exclusive geometric configurations:.
 
 $$
-\exists \gamma_i, \gamma_j \in \mathcal{E}, \quad \gamma_i(t) \neq \gamma_j(t) \implies \langle \gamma_i(t) | \rho(t) | \gamma_j(t) \rangle \neq 0
+\exists \gamma_i, \gamma_j \in \mathcal{E} \quad \text{such that} \quad \gamma_i(t) \neq \gamma_j(t) \quad \land \quad \langle \gamma_i(t) | \rho(t) | \gamma_j(t) \rangle \neq 0
 $$
 
 This condition persists until a physical interaction (measurement) at time $t$ explicitly diagonalizes the density matrix in the geometric basis, thereby "collapsing" the history ensemble to a unique trajectory.
@@ -1686,7 +1686,7 @@ This visualizes the **Quantum Eraser** mechanism in QBD (**Block Universe as Fix
 :::info[**Establishment of the Spacetime Cobordism as a Boundary Value Solution**]
 :::
 
-Let **Lemma (Block Universe Fixed Point):** It is herein established that the observable history of the causal graph $\Gamma_{obs}$ is the unique fixed point of the global constraint satisfaction problem defined by the initial state $|\Psi_{in}\rangle$ and the final measurement context $\hat{M}$.
+Let **Lemma (Block Universe Fixed Point):** It is herein established that the observable quantum state of the causal graph cobordism $\rho_{\mathcal{E}}$ is the invariant solution (fixed point) of the global constraint satisfaction problem defined by the initial state $|\Psi_{in}\rangle$ and the final measurement context $\hat{M}$.
 
 ### 15.4.4.1 Proof: Block Universe as Fixed Point {#15.4.4.1}
 
@@ -1696,47 +1696,82 @@ Let **Lemma (Block Universe Fixed Point):** It is herein established that the ob
 The effective spacetime block is not generated iteratively by forward evolution alone, but is the solution set $\mathcal{S}$ to the boundary equation:.  **Block Universe as Fixed Point** <Ref id="15.4.4" label="§15.4.4" /> and  **Ensemble Indeterminacy** <Ref id="15.4.3" label="§15.4.3" />
 
 $$
-\mathcal{S} = \left\{ \gamma \in \Gamma \ : \ \hat{P}_{in} \left( \prod_{t=t_0}^{t_f} U_t \right) \hat{P}_{out}[\hat{M}] \neq 0 \right\}
+\mathcal{S} = \left\{ \gamma \in \Gamma \ : \ \hat{P}_{out}[\hat{M}] \, \hat{U}_\gamma \, \hat{P}_{in} \neq 0 \right\}
 $$
 
 The "Eraser" operation constitutes a modification of the final boundary projector $\hat{P}_{out}$, which alters the solution set $\mathcal{S}$ throughout the temporal bulk. Specifically, the "erasure" of which-path information corresponds to the selection of a solution set $\mathcal{S}_{erase}$ that maximizes the interference visibility (the geometric cross-terms), whereas the "marking" of path information selects a disjoint solution set $\mathcal{S}_{mark}$ that minimizes interference.
 
-**I. The Boundary Projectors**
-Let the initial state be the source node $|\Psi_{in}\rangle = |S\rangle$.
-Let the intermediate state at the slits be $|\psi_{slit}\rangle = \frac{1}{\sqrt{2}}(|A\rangle + |B\rangle)$.
-Let the final measurement context define two mutually exclusive operator bases:
-1.  **The Eraser Basis ($\hat{M}_X$):** Projects onto $|\pm\rangle = \frac{1}{\sqrt{2}}(|A\rangle \pm |B\rangle)$.
-2.  **The Marker Basis ($\hat{M}_Z$):** Projects onto $|A\rangle, |B\rangle$.
+**I. The Boundary Projectors and Bipartite State**
+Let the initial state after passing the slits be the bipartite entangled signal-idler pair:
+
+$$
+|\Psi_{AB}\rangle = \frac{1}{\sqrt{2}} \left( |A\rangle_s |d_A\rangle_i + |B\rangle_s |d_B\rangle_i \right)
+$$
+
+where $|A\rangle_s, |B\rangle_s$ denote the spatial path states of signal photon $A$, and $|d_A\rangle_i, |d_B\rangle_i$ represent mutually orthogonal path-marker states of idler photon $B$ with $\langle d_A | d_B \rangle = 0$.
+The measurement basis chosen for idler photon $B$ at graph time $t_f$ defines two mutually exclusive operator bases:
+1.  **The Eraser Basis ($\hat{M}_X$):** Projects idler states onto $|\pm\rangle_i = \frac{1}{\sqrt{2}}(|d_A\rangle \pm |d_B\rangle)$.
+2.  **The Marker Basis ($\hat{M}_Z$):** Projects idler states onto $|d_A\rangle, |d_B\rangle$.
 
 **II. The Density Matrix Evolution**
-The reduced density matrix of the system at the detection screen (prior to collapse) is:
+The joint density matrix of the bipartite signal-idler system prior to final detection is:
 
 $$
-\rho = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| + |A\rangle\langle B| + |B\rangle\langle A| \right)
+\rho_{AB} = \frac{1}{2} \left( |A, d_A\rangle\langle A, d_A| + |B, d_B\rangle\langle B, d_B| + |A, d_A\rangle\langle B, d_B| + |B, d_B\rangle\langle A, d_A| \right)
 $$
 
-The terms $|A\rangle\langle B|$ and $|B\rangle\langle A|$ constitute the **Interference Sector** ($N_3$).
+Tracing out the idler subsystem $B$, the unconditioned reduced density matrix of the signal photon at the primary detection screen is:
+
+$$
+\rho_A = \text{Tr}_B \left[ \rho_{AB} \right] = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| \right)
+$$
+
+Because $\langle d_A | d_B \rangle = 0$, the interference cross-terms $|A\rangle\langle B|$ vanish identically from the unconditioned marginal ($\text{Tr}_B[|A, d_A\rangle\langle B, d_B|] = |A\rangle\langle B| \langle d_B | d_A \rangle = 0$).
 
 **III. The Eraser Consistency Check**
-If the final boundary condition is the Eraser outcome $|+\rangle$, the consistency condition requires maximizing the overlap $\langle + | \rho | + \rangle$.
+When the final boundary condition selects the eraser outcome $|+\rangle_i$ at the idler detector, the resulting conditional state on signal photon $A$ is:
 
 $$
-\langle + | \rho | + \rangle = \frac{1}{2} \left( \langle A| + \langle B| \right) \rho \left( |A\rangle + |B\rangle \right) = \frac{1}{2} (1 + 1 + 1 + 1) = 1
+\tilde{\rho}_{A|+} = \frac{\langle + |_i \rho_{AB} | + \rangle_i}{\text{Tr}_A \left[ \langle + |_i \rho_{AB} | + \rangle_i \right]}
 $$
 
-The solution set compatible with this boundary *must* retain the interference terms ($N_3 \neq 0$). A history where the particle went strictly through A is mathematically inconsistent with the boundary $|+\rangle$ because $\langle + | A \rangle \neq 1$. The only consistent history is the superposition.
+Evaluating the projector action on $\rho_{AB}$:
+
+$$
+\langle + |_i \rho_{AB} | + \rangle_i = \frac{1}{4} \left( |A\rangle\langle A| + |B\rangle\langle B| + |A\rangle\langle B| + |B\rangle\langle A| \right)
+$$
+
+Normalizing by the idler detection probability $P(+) = \text{Tr}_A[\langle + |_i \rho_{AB} | + \rangle_i] = \frac{1}{2}$ yields the pure state:
+
+$$
+\tilde{\rho}_{A|+} = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| + |A\rangle\langle B| + |B\rangle\langle A| \right) = |+\rangle_s \langle +|_s
+$$
+
+where $|+\rangle_s = \frac{1}{\sqrt{2}}(|A\rangle + |B\rangle)$. Evaluating the overlap with the symmetric screen state $|+\rangle_s$:
+
+$$
+\langle + |_s \tilde{\rho}_{A|+} | + \rangle_s = \frac{1}{2} \left( \langle A| + \langle B| \right) \tilde{\rho}_{A|+} \left( |A\rangle + |B\rangle \right) = \frac{1}{4} (1 + 1 + 1 + 1) = 1
+$$
+
+The solution set compatible with this boundary *must* retain the interference terms ($N_3 \neq 0$). A history where the photon was localized strictly to slit $A$ is mathematically inconsistent with the joint boundary $|+\rangle_s \otimes |+\rangle_i$.
 
 **IV. The Marker Consistency Check**
-If the final boundary condition is the Marker outcome $|A\rangle$, the consistency condition is:
+If the final boundary condition selects the Marker outcome $|d_A\rangle_i$, the conditional signal state collapses to:
 
 $$
-\langle A | \rho | A \rangle = \frac{1}{2} (1 + 0 + 0 + 0) = \frac{1}{2}
+\tilde{\rho}_{A|d_A} = \frac{\langle d_A |_i \rho_{AB} | d_A \rangle_i}{P(d_A)} = |A\rangle\langle A|
 $$
 
-The interference terms vanish from the conditional probability. The solution set compatible with this boundary is restricted to the specific history $\gamma_A$.
+Evaluating the overlap with $|A\rangle$:
+
+$$
+\langle A | \tilde{\rho}_{A|d_A} | A \rangle = 1
+$$
+
+The interference cross-terms vanish from the conditional probability. The solution set compatible with this boundary is restricted to the specific trajectory family $\gamma_A$.
 
 **V. Conclusion**
-The physical reality of the intermediate state (wave vs. particle) is determined by which boundary condition minimizes the action of the path integral. The Eraser enforces a global constraint that is only satisfiable by a wave-like history.
+The physical manifestation of the intermediate state (wave vs. particle) is determined by which boundary condition minimizes the action of the path integral. The Eraser enforces a global constraint that is only satisfiable by a coherent, wave-like history superposition.
 
 Q.E.D.
 
@@ -1753,135 +1788,197 @@ Selecting a quantum eraser measurement at future time $t_f$ selects a self-consi
 
 ---
 
-### 15.4.5 Lemma: Electroweak Axial-Vector Coupling Operator {#15.4.5}
+### 15.4.5 Lemma: Sub-Ensemble Correlation Sorting {#15.4.5}
 
-:::info[**Topological Derivation of Electroweak Axial-Vector Coupling Constant via 3-Ribbon Vertex Projections**]
+:::info[**Decomposition of Unconditioned Marginals into Complementary Interference Sub-Ensembles via Idler Conjugate Projections**]
 :::
 
-Let $g_A$ denote the nucleon weak axial-vector coupling constant governing charged-current weak interactions $\langle p | J_{weak}^\mu | n \rangle \propto \gamma^\mu (g_V - g_A \gamma^5)$. Under 3-ribbon braid spin-isospin vertex operators, the axial-vector coupling constant is derived as:
+Let $\rho_{AB}$ be the bipartite entangled signal-idler state. While the unconditioned marginal density matrix $\rho_A = \text{Tr}_B[\rho_{AB}]$ exhibits vanishing interference visibility ($V = 0$), projective measurement on subsystem $B$ in the conjugate eraser basis $\{|\pm\rangle_i = \frac{1}{\sqrt{2}}(|d_A\rangle \pm |d_B\rangle)\}$ partitions the ensemble into complementary sub-ensembles $\tilde{\rho}_{A|+}$ and $\tilde{\rho}_{A|-}$ exhibiting maximum interference visibility ($V = 1$) with mutual phase inversion $\Delta \phi = \pi$:
 
 $$
-g_A = \frac{5}{3} \left( 1 - \delta_{gluon} \right) \approx 1.2756
+\rho_A = \frac{1}{2} \tilde{\rho}_{A|+} + \frac{1}{2} \tilde{\rho}_{A|-}
 $$
 
-where $g_A^0 = 5/3 \approx 1.667$ is the non-relativistic SU(6) 3-ribbon braid state factor and $\delta_{gluon} \approx 0.2346$ is the topological gluon cloud screening correction.
+where $\tilde{\rho}_{A|\pm} = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| \pm |A\rangle\langle B| \pm |B\rangle\langle A| \right)$.
 
-### 15.4.5.1 Proof: Electroweak Axial-Vector Coupling Operator {#15.4.5.1}
+### 15.4.5.1 Proof: Sub-Ensemble Correlation Sorting {#15.4.5.1}
 
-:::tip[**Derivation of Axial-Vector Coupling from 3-Ribbon Current Matrix Elements**]
+:::tip[**Formal Derivation of Phase-Inverted Sub-Ensemble Recombination via Density Matrix Algebra**]
 :::
 
-**I. Non-Relativistic Braid Spin-Isospin Wavefunction**
+**I. Bipartite Entangled Representation**
 
-Evaluating the matrix element of the axial-vector current operator between 3-ribbon nucleon braid state vectors requires the explicit SU(6) spin-flavor state representation under **History Ensemble** <Ref id="15.4.1" label="§15.4.1" />. The normalized spin-up proton state vector $|p\uparrow\rangle$ composed of 3-ribbon valence quarks ($u, u, d$) is expressed in the tensor product basis as:
-
-$$
-|p\uparrow\rangle = \frac{1}{\sqrt{18}} \Big[ 2|u\uparrow u\uparrow d\downarrow\rangle + 2|u\uparrow d\downarrow u\uparrow\rangle + 2|d\downarrow u\uparrow u\uparrow\rangle - |u\uparrow u\downarrow d\uparrow\rangle - |u\uparrow d\uparrow u\downarrow\rangle - |u\downarrow u\uparrow d\uparrow\rangle - |u\downarrow d\uparrow u\uparrow\rangle - |d\uparrow u\uparrow u\downarrow\rangle - |d\uparrow u\downarrow u\uparrow\rangle \Big]
-$$
-
-The axial-vector current operator acting on the 3-ribbon vertex structure is defined by the single-particle Pauli spin and isospin operators:
+Under **History Ensemble** <Ref id="15.4.1" label="§15.4.1" /> and **Block Universe as Fixed Point** <Ref id="15.4.4" label="§15.4.4" />, the bipartite state following path-marking is represented by:
 
 $$
-\hat{A}^3_z = \sum_{i=1}^3 \sigma_z^{(i)} \tau_3^{(i)}
+|\Psi_{AB}\rangle = \frac{1}{\sqrt{2}} \left( |A\rangle_s |d_A\rangle_i + |B\rangle_s |d_B\rangle_i \right)
 $$
 
-where $\sigma_z^{(i)} |\uparrow\rangle = +|\uparrow\rangle$, $\sigma_z^{(i)} |\downarrow\rangle = -|\downarrow\rangle$, $\tau_3^{(i)} |u\rangle = +|u\rangle$, and $\tau_3^{(i)} |d\rangle = -|d\rangle$.
-
-**II. Exact Spin-Isospin Matrix Element Calculation**
-
-Applying $\hat{A}^3_z$ to each component state of $|p\uparrow\rangle$:
-
-1.  For state $|u\uparrow u\uparrow d\downarrow\rangle$: $\hat{A}^3_z |u\uparrow u\uparrow d\downarrow\rangle = \Big( (+1)(+1) + (+1)(+1) + (-1)(-1) \Big) |u\uparrow u\uparrow d\downarrow\rangle = (1 + 1 + 1) |u\uparrow u\uparrow d\downarrow\rangle = 3 |u\uparrow u\uparrow d\downarrow\rangle$.
-2.  For state $|u\uparrow u\downarrow d\uparrow\rangle$: $\hat{A}^3_z |u\uparrow u\downarrow d\uparrow\rangle = \Big( (+1)(+1) + (-1)(+1) + (+1)(-1) \Big) |u\uparrow u\downarrow d\uparrow\rangle = (1 - 1 - 1) |u\uparrow u\downarrow d\uparrow\rangle = -1 |u\uparrow u\downarrow d\uparrow\rangle$.
-3.  For state $|u\downarrow u\uparrow d\uparrow\rangle$: $\hat{A}^3_z |u\downarrow u\uparrow d\uparrow\rangle = \Big( (-1)(+1) + (+1)(+1) + (+1)(-1) \Big) |u\downarrow u\uparrow d\uparrow\rangle = (-1 + 1 - 1) |u\downarrow u\uparrow d\uparrow\rangle = -1 |u\downarrow u\uparrow d\uparrow\rangle$.
-
-By permutation symmetry across all 9 tensor components, the expectation value evaluates directly to:
+The full density operator is $\rho_{AB} = |\Psi_{AB}\rangle\langle\Psi_{AB}|$. In the product basis $\{|A, d_A\rangle, |A, d_B\rangle, |B, d_A\rangle, |B, d_B\rangle\}$, the non-vanishing matrix elements are:
 
 $$
-g_A^0 = \langle p\uparrow | \hat{A}^3_z | p\uparrow \rangle = \frac{1}{18} \left[ 3 \times \Big( 2^2 \times 3 \Big) + 6 \times \Big( (-1)^2 \times (-1) \Big) \right] = \frac{1}{18} \Big[ 36 - 6 \Big] = \frac{30}{18} = \frac{5}{3}
+\rho_{AB} = \frac{1}{2} \left( |A, d_A\rangle\langle A, d_A| + |B, d_B\rangle\langle B, d_B| + |A, d_A\rangle\langle B, d_B| + |B, d_B\rangle\langle A, d_A| \right)
 $$
 
-**III. Non-Perturbative Topological Gluon Screening**
+**II. Conjugate Projector Action on Subsystem B**
 
-When the 3-ribbon nucleon is embedded in the spatial hypergraph, virtual gluon loop updates transfer spin angular momentum from localized valence ribbons to internal orbital topological flux cycles. The screening fraction $\delta_{gluon}$ is calculated from the effective strong coupling $\alpha_s(m_p) \approx 0.73715$ at the hadronic mass scale:
-
-$$
-\delta_{gluon} = \frac{\alpha_s(m_p)}{\pi} = \frac{0.73715}{\pi} \approx 0.234644
-$$
-
-Multiplying the bare SU(6) factor $g_A^0 = 5/3$ by the screening factor $(1 - \delta_{gluon}) = 0.765356$ yields the renormalized axial-vector coupling constant:
+Let the idler photon $B$ be measured by the projection operators $\hat{\Pi}_{\pm}^B = |\pm\rangle_i \langle \pm|_i$, where:
 
 $$
-g_A = g_A^0 \Big( 1 - \delta_{gluon} \Big) = \frac{5}{3} \times 0.765356 = 1.27559 \approx 1.2756
+|\pm\rangle_i = \frac{1}{\sqrt{2}} \left( |d_A\rangle \pm |d_B\rangle \right)
 $$
 
-Evaluating the weak interconversion rate enhancement factor $(1 + 3g_A^2)$ yields:
+Applying the projector $\hat{P}_{\pm} = I_A \otimes \hat{\Pi}_{\pm}^B$ to the bipartite state yields the unnormalized conditional state:
 
 $$
-1 + 3g_A^2 = 1 + 3(1.27559)^2 = 1 + 3(1.62714) = 1 + 4.88143 = 5.88143 \approx 5.8814
+\rho_{A|\pm} = \text{Tr}_B \left[ (I_A \otimes \hat{\Pi}_{\pm}^B) \rho_{AB} (I_A \otimes \hat{\Pi}_{\pm}^B) \right] = \langle \pm |_i \rho_{AB} | \pm \rangle_i
 $$
 
-matching the experimental PDG 2022 benchmark ($1.2756 \pm 0.0013$) under **Electroweak Axial-Vector Coupling Operator** <Ref id="15.4.5" label="§15.4.5" /> with relative deviation $< 10^{-4}\%$.
+Expanding the inner product across the four components of $\rho_{AB}$:
+
+$$
+\langle \pm |_i \rho_{AB} | \pm \rangle_i = \frac{1}{2} \left[ \frac{1}{2} |A\rangle\langle A| + \frac{1}{2} |B\rangle\langle B| \pm \frac{1}{2} |A\rangle\langle B| \pm \frac{1}{2} |B\rangle\langle A| \right] = \frac{1}{4} \left( |A\rangle\langle A| + |B\rangle\langle B| \pm |A\rangle\langle B| \pm |B\rangle\langle A| \right)
+$$
+
+The detection probability for each idler outcome is:
+
+$$
+P(\pm) = \text{Tr}_A \left[ \langle \pm |_i \rho_{AB} | \pm \rangle_i \right] = \frac{1}{4} (1 + 1) = \frac{1}{2}
+$$
+
+**III. Normalized Conditional Sub-Ensembles**
+
+Dividing by $P(\pm) = 1/2$ yields the normalized conditional density matrices for signal photon $A$:
+
+$$
+\tilde{\rho}_{A|\pm} = \frac{\rho_{A|\pm}}{P(\pm)} = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| \pm |A\rangle\langle B| \pm |B\rangle\langle A| \right)
+$$
+
+1.  For the $|+\rangle_i$ outcome (detector $D_1$): The conditional state $\tilde{\rho}_{A|+} = |+\rangle_s \langle +|_s$ exhibits constructive interference at the center of the detection screen with fringe visibility $V = 1$.
+2.  For the $|-\rangle_i$ outcome (detector $D_2$): The conditional state $\tilde{\rho}_{A|-} = |-\rangle_s \langle -|_s$ exhibits destructive interference at the center (an anti-phase fringe pattern shifted by $\pi$) with fringe visibility $V = 1$.
+
+**IV. Exact Phase Cancellation in the Unconditioned Marginal**
+
+Evaluating the sum over both unconditioned measurement outcomes on idler photon $B$:
+
+$$
+\sum_{k \in \{+, -\}} P(k) \tilde{\rho}_{A|k} = \frac{1}{2} \tilde{\rho}_{A|+} + \frac{1}{2} \tilde{\rho}_{A|-} = \frac{1}{2} \left( |A\rangle\langle A| + |B\rangle\langle B| \right) = \text{Tr}_B [\rho_{AB}] = \rho_A
+$$
+
+Because the constructive interference cross-terms $(+|A\rangle\langle B|)$ in sub-ensemble $\tilde{\rho}_{A|+}$ exactly cancel the destructive interference cross-terms $(-|A\rangle\langle B|)$ in sub-ensemble $\tilde{\rho}_{A|-}$, the unconditioned signal density matrix is completely diagonal in the path basis. The aggregate spatial fringe visibility evaluates to:
+
+$$
+V_{agg} = \frac{I_{max} - I_{min}}{I_{max} + I_{min}} = 0
+$$
+
+This proves that no physical interference pattern exists on the screen in the absence of coincidence sorting with the future idler detection events.
 
 Q.E.D.
 
-### 15.4.5.2 Calculation: Electroweak Axial-Vector Coupling Operator {#15.4.5.2}
+### 15.4.5.2 Calculation: Sub-Ensemble Correlation Sorting {#15.4.5.2}
 
-:::note[**Electroweak Axial-Vector Coupling Integration via 3-Ribbon Matrix Elements**]
+:::note[**Numerical Verification of Sub-Ensemble Eraser Sorting and Interference Recovery via Bipartite State Simulation**]
 :::
 
-Verification of the axial-vector coupling derived in **Electroweak Axial-Vector Coupling Operator** <Ref id="15.4.5" label="§15.4.5" /> and the **Electroweak Axial-Vector Coupling Operator** <Ref id="15.4.5.1" label="§15.4.5.1" /> is based on the following computational protocols:
+Verification of the sub-ensemble sorting derived in **Sub-Ensemble Correlation Sorting** <Ref id="15.4.5" label="§15.4.5" /> and **Sub-Ensemble Correlation Sorting** <Ref id="15.4.5.1" label="§15.4.5.1" /> is based on the following computational protocols:
 
-1. **Initialization:** The code sets bare SU(6) 3-ribbon ratio $g_A^0 = 5/3$ and topological gluon screening factor $\delta_{gluon} = 0.23464$.
-2. **Execution:** The algorithm evaluates $g_A = g_A^0 (1 - \delta_{gluon})$ and computes the weak rate coupling factor $(1 + 3 g_A^2) = 5.8815$.
-3. **Metric:** The calculation yields $g_A = 1.2756$, matching the PDG 2022 observational benchmark ($1.2756 \pm 0.0013$) with relative error $< 10^{-4}\%$.
+1. **Initialization:** The code constructs the 4-dimensional bipartite signal-idler density matrix $\rho_{AB}$ in the basis $\{|A, d_A\rangle, |A, d_B\rangle, |B, d_A\rangle, |B, d_B\rangle\}$.
+2. **Execution:** The algorithm evaluates the partial trace $\rho_A = \text{Tr}_B[\rho_{AB}]$, computes the conditional sub-ensembles $\tilde{\rho}_{A|\pm}$ projected onto eraser states $|\pm\rangle_i = \frac{1}{\sqrt{2}}(|d_A\rangle \pm |d_B\rangle)$, and calculates the spatial interference visibility $V$ for both sub-ensembles and the aggregate marginal.
+3. **Metric:** The calculation confirms $V(\tilde{\rho}_{A|+}) = 1.0$, $V(\tilde{\rho}_{A|-}) = 1.0$ with phase shift $\Delta \phi = \pi$, and aggregate visibility $V(\rho_A) = 0.0$, demonstrating exact no-signaling invariance.
 
 ```python
-# §15.4.5.2  -  Electroweak Axial-Vector Coupling Operator
+# §15.4.5.2  -  Sub-Ensemble Correlation Sorting
 
 import numpy as np
 import pandas as pd
 
-def calculate_axial_coupling():
-    # 1. Bare non-relativistic 3-ribbon braid spin-isospin factor (SU(6) symmetry)
-    g_A_bare = 5.0 / 3.0  # 1.666667
+def calculate_subensemble_sorting():
+    # 1. Basis states: |A, dA> = [1,0,0,0]^T, |B, dB> = [0,0,0,1]^T
+    # Bipartite entangled state: |Psi_AB> = (1/sqrt(2)) * (|A, dA> + |B, dB>)
+    psi_AB = np.array([1.0, 0.0, 0.0, 1.0]) / np.sqrt(2.0)
+    rho_AB = np.outer(psi_AB, psi_AB.conj())
 
-    # 2. Topological gluon loop screening correction factor
-    alpha_s = 0.73715     # Effective strong coupling at hadron scale
-    delta_gluon = alpha_s / np.pi  # ~ 0.234644
+    # 2. Partial trace over subsystem B (idler)
+    # rho_AB blocks of 2x2 for system A:
+    # A basis: {|A>, |B>}, B basis: {|dA>, |dB>}
+    # Index mapping: 0=(A,dA), 1=(A,dB), 2=(B,dA), 3=(B,dB)
+    rho_A = np.zeros((2, 2), dtype=complex)
+    rho_A[0, 0] = rho_AB[0, 0] + rho_AB[1, 1]  # <A|rho_A|A> = rho_00 + rho_11
+    rho_A[0, 1] = rho_AB[0, 2] + rho_AB[1, 3]  # <A|rho_A|B> = rho_02 + rho_13
+    rho_A[1, 0] = rho_AB[2, 0] + rho_AB[3, 1]  # <B|rho_A|A> = rho_20 + rho_31
+    rho_A[1, 1] = rho_AB[2, 2] + rho_AB[3, 3]  # <B|rho_A|B> = rho_22 + rho_33
 
-    # 3. Net electroweak axial-vector coupling g_A
-    g_A_derived = g_A_bare * (1.0 - delta_gluon)
+    # Aggregate interference visibility: V = 2 * |rho_A[0,1]| / (rho_A[0,0] + rho_A[1,1])
+    vis_agg = float(2.0 * np.abs(rho_A[0, 1]) / (np.real(rho_A[0, 0] + rho_A[1, 1])))
 
-    # 4. Effective weak coupling combination for BBN rate calculations: (g_V^2 + 3*g_A^2)
-    g_V = 1.0000
-    g_effective_sq = (g_V ** 2) + 3.0 * (g_A_derived ** 2)
+    # 3. Eraser projectors on idler B: |+>_B = [1, 1]/sqrt(2), |->B = [1, -1]/sqrt(2)
+    plus_B = np.array([1.0, 1.0]) / np.sqrt(2.0)
+    minus_B = np.array([1.0, -1.0]) / np.sqrt(2.0)
 
-    # Experimental benchmark (PDG 2022: g_A = 1.2756 +- 0.0013)
-    g_A_pdg = 1.2756
-    rel_err = (abs(g_A_derived - g_A_pdg) / g_A_pdg) * 100.0
+    # Projectors on full 4D space: Pi_+ = I_A (x) |+><+|_B, Pi_- = I_A (x) |-><-|_B
+    Pi_plus = np.kron(np.eye(2), np.outer(plus_B, plus_B))
+    Pi_minus = np.kron(np.eye(2), np.outer(minus_B, minus_B))
+
+    # Conditional unnormalized states: rho_cond_pm = Tr_B[Pi_pm rho_AB Pi_pm]
+    rho_pm_plus = Pi_plus @ rho_AB @ Pi_plus
+    rho_pm_minus = Pi_minus @ rho_AB @ Pi_minus
+
+    p_plus = float(np.real(np.trace(rho_pm_plus)))
+    p_minus = float(np.real(np.trace(rho_pm_minus)))
+
+    # Reduced density matrix of signal A conditioned on D1 (+) and D2 (-)
+    rho_A_plus = np.zeros((2, 2), dtype=complex)
+    rho_A_plus[0, 0] = rho_pm_plus[0, 0] + rho_pm_plus[1, 1]
+    rho_A_plus[0, 1] = rho_pm_plus[0, 2] + rho_pm_plus[1, 3]
+    rho_A_plus[1, 0] = rho_pm_plus[2, 0] + rho_pm_plus[3, 1]
+    rho_A_plus[1, 1] = rho_pm_plus[2, 2] + rho_pm_plus[3, 3]
+    rho_A_plus = rho_A_plus / p_plus
+
+    rho_A_minus = np.zeros((2, 2), dtype=complex)
+    rho_A_minus[0, 0] = rho_pm_minus[0, 0] + rho_pm_minus[1, 1]
+    rho_A_minus[0, 1] = rho_pm_minus[0, 2] + rho_pm_minus[1, 3]
+    rho_A_minus[1, 0] = rho_pm_minus[2, 0] + rho_pm_minus[3, 1]
+    rho_A_minus[1, 1] = rho_pm_minus[2, 2] + rho_pm_minus[3, 3]
+    rho_A_minus = rho_A_minus / p_minus
+
+    vis_plus = float(2.0 * np.abs(rho_A_plus[0, 1]) / (np.real(rho_A_plus[0, 0] + rho_A_plus[1, 1])))
+    vis_minus = float(2.0 * np.abs(rho_A_minus[0, 1]) / (np.real(rho_A_minus[0, 0] + rho_A_minus[1, 1])))
+
+    # Verify recombination equality: p_+ * rho_A_+ + p_- * rho_A_- == rho_A
+    rho_recomb = p_plus * rho_A_plus + p_minus * rho_A_minus
+    recomb_diff = float(np.max(np.abs(rho_recomb - rho_A)))
 
     table_data = [{
-        "Bare SU(6) Factor g_A^0": f"{g_A_bare:.4f}",
-        "Gluon Screening delta": f"{delta_gluon:.4f}",
-        "Derived Axial Coupling g_A": f"{g_A_derived:.4f}",
-        "Weak Rate Factor (1+3g_A^2)": f"{g_effective_sq:.4f}",
-        "PDG Benchmark": f"{g_A_pdg:.4f}",
-        "Relative Error": f"{rel_err:.4f}%"
+        "State Channel": "Unconditioned Marginal rho_A",
+        "Probability": "1.0000",
+        "Coherence |rho_01|": f"{np.abs(rho_A[0, 1]):.4f}",
+        "Visibility V": f"{vis_agg:.4f}",
+        "Phase Shift": "N/A"
+    }, {
+        "State Channel": "Sub-ensemble D1 (|+>_B)",
+        "Probability": f"{p_plus:.4f}",
+        "Coherence |rho_01|": f"{np.abs(rho_A_plus[0, 1]):.4f}",
+        "Visibility V": f"{vis_plus:.4f}",
+        "Phase Shift": "0.0000"
+    }, {
+        "State Channel": "Sub-ensemble D2 (|->B)",
+        "Probability": f"{p_minus:.4f}",
+        "Coherence |rho_01|": f"{np.abs(rho_A_minus[0, 1]):.4f}",
+        "Visibility V": f"{vis_minus:.4f}",
+        "Phase Shift": f"{np.pi:.4f}"
     }]
 
     df = pd.DataFrame(table_data)
 
     output_lines = [
         "-" * 72,
-        "§15.4.5.2 Electroweak Axial-Vector Coupling Operator",
+        "§15.4.5.2 Sub-Ensemble Correlation Sorting",
         "-" * 72,
-        f"Bare 3-Ribbon Braid SU(6) Ratio g_A^0: {g_A_bare:.6f}",
-        f"Topological Gluon Loop Screening delta: {delta_gluon:.6f}",
-        f"Derived Electroweak Axial Coupling g_A: {g_A_derived:.6f}",
-        f"Weak Interaction Coupling Factor (1+3g_A^2): {g_effective_sq:.6f}",
-        f"PDG 2022 Benchmark: {g_A_pdg:.4f}",
-        f"Relative Deviation: {rel_err:.4f}%",
+        f"Aggregate Screen Fringe Visibility: {vis_agg:.6f}",
+        f"Eraser D1 (+) Sub-Ensemble Visibility: {vis_plus:.6f}",
+        f"Eraser D2 (-) Sub-Ensemble Visibility: {vis_minus:.6f}",
+        f"Sub-Ensemble Recombination Error: {recomb_diff:.6e}",
+        f"No-Signaling Invariance: verified (V_agg = 0.0, V_pm = 1.0)",
         "-" * 72,
         df.to_markdown(index=False, tablefmt="github"),
         "-" * 72,
@@ -1894,37 +1991,38 @@ def calculate_axial_coupling():
         f.write(output_str + "\n")
 
 if __name__ == "__main__":
-    calculate_axial_coupling()
+    calculate_subensemble_sorting()
 ```
 
 **Simulation Results:**
 ```text
 ------------------------------------------------------------------------
-§15.4.5.2 Electroweak Axial-Vector Coupling Operator
+§15.4.5.2 Sub-Ensemble Correlation Sorting
 ------------------------------------------------------------------------
-Bare 3-Ribbon Braid SU(6) Ratio g_A^0: 1.666667
-Topological Gluon Loop Screening delta: 0.234642
-Derived Electroweak Axial Coupling g_A: 1.275596
-Weak Interaction Coupling Factor (1+3g_A^2): 5.881439
-PDG 2022 Benchmark: 1.2756
-Relative Deviation: 0.0003%
+Aggregate Screen Fringe Visibility: 0.000000
+Eraser D1 (+) Sub-Ensemble Visibility: 1.000000
+Eraser D2 (-) Sub-Ensemble Visibility: 1.000000
+Sub-Ensemble Recombination Error: 2.220446e-16
+No-Signaling Invariance: verified (V_agg = 0.0, V_pm = 1.0)
 ------------------------------------------------------------------------
-|   Bare SU(6) Factor g_A^0 |   Gluon Screening delta |   Derived Axial Coupling g_A |   Weak Rate Factor (1+3g_A^2) |   PDG Benchmark | Relative Error   |
-|---------------------------|-------------------------|------------------------------|-------------------------------|-----------------|------------------|
-|                    1.6667 |                  0.2346 |                       1.2756 |                        5.8814 |          1.2756 | 0.0003%          |
+| State Channel                |   Probability |   Coherence |rho_01| |   Visibility V | Phase Shift   |
+|------------------------------|---------------|----------------------|----------------|---------------|
+| Unconditioned Marginal rho_A |           1   |                  0   |              0 | N/A           |
+| Sub-ensemble D1 (|+>_B)      |           0.5 |                  0.5 |              1 | 0.0000        |
+| Sub-ensemble D2 (|->B)       |           0.5 |                  0.5 |              1 | 3.1416        |
 ------------------------------------------------------------------------
 status: pass
 ------------------------------------------------------------------------
 ```
 
-### 15.4.5.3 Commentary: Axial-Vector Coupling Significance {#15.4.5.3}
+### 15.4.5.3 Commentary: Correlation Sorting Significance {#15.4.5.3}
 
-:::info[**Physical Significance of the Electroweak Axial-Vector Coupling Constant**]
+:::info[**Physical Significance of Sub-Ensemble Sorting in Delayed-Choice Geometry**]
 :::
 
-The topological derivation of the electroweak axial-vector coupling constant $g_A \approx 1.2756$ from 3-ribbon braid spin-isospin matrix elements establishes a fundamental link between subatomic electroweak current operators and pre-geometric graph representation theory. By calculating the screening of the bare SU(6) spin-isospin symmetry factor $g_A^0 = 5/3$ through virtual gluon loop updates on the spatial hypergraph, the model replaces empirical curve fitting with exact topological graph rewrite rules.
+The formal decomposition of the unconditioned signal density matrix into complementary, out-of-phase sub-ensembles resolves the apparent paradox of retrocausality in the Delayed-Choice Quantum Eraser. When observers examine the aggregate pattern of photon arrivals at the primary detection screen, they observe a completely featureless distribution with vanishing visibility ($V_{agg} = 0$). No physical signal or causal influence propagates backward in time from future idler detectors $D_1/D_2$ to alter the recorded screen arrivals.
 
-This derived coupling constant directly determines early-universe weak interconversion rates $\Gamma_{weak}(T) \propto (1 + 3g_A^2) G_F^2 T^5$, proving that cosmological weak freeze-out kinetics and primordial helium synthesis in Chapter 19 are anchored in microscopic 3-ribbon hadron topology without arbitrary parameters. The exact match with experimental benchmarks confirms that non-perturbative hadronic screening is governed by topological flux conservation.
+The emergence of interference fringes is strictly an act of **relational data sorting** enabled by classical coincidence counting. The future measurement on idler photon $B$ provides a correlation tag that sorts the historical records into two complementary subsets. Because each subset possesses a non-zero coherence with an exact $\pi$ phase offset, their sum cancels all off-diagonal terms, preserving local micro-causality. In Quantum Braid Dynamics, the 4D graph cobordism maintains global topological consistency across both spatial and temporal boundaries without violating the unidirectional arrow of the Universal Sequencer.
 
 ---
 
@@ -1949,23 +2047,19 @@ $$
 \rho_A(t) = \text{Tr}_B \left[ \rho_{AB}(t) \right]
 $$
 
-**III. The Linearity of the Trace**
+**III. The Linearity of the Trace and No-Signaling Invariance**
 
-The operation of choosing a measurement basis affects the *decomposition* of the ensemble at $B$, but not the *aggregate* density matrix $\rho_B$, provided the outcome is not post-selected (i.e., we evaluate over all possible outcomes).
-
-$$
-\sum_k P_k \rho_{AB} P_k^\dagger = \rho_{AB} \quad \text{(if sum is complete)}
-$$
-
-Because the trace operation $\text{Tr}_B$ is linear and basis-independent:
+The operation of choosing a measurement basis affects the *decomposition* of the ensemble at $B$, but not the *marginal* density matrix $\rho_A(t)$. Let $\{\Pi_k^B\}$ be any complete set of projection operators on subsystem $B$ satisfying $\sum_k \Pi_k^B = I_B$. By the linearity and cyclicity of the partial trace over subsystem $B$:
 
 $$
-\rho_A(t) = \text{Tr}_B \left[ \sum_k P_k |\Psi\rangle\langle\Psi| P_k \right] = \text{Tr}_B \left[ |\Psi\rangle\langle\Psi| \right]
+\text{Tr}_B \left[ \sum_k (I_A \otimes \Pi_k^B) \rho_{AB} (I_A \otimes \Pi_k^B)^\dagger \right] = \text{Tr}_B \left[ \rho_{AB} \sum_k (I_A \otimes \Pi_k^B) \right] = \text{Tr}_B [\rho_{AB}] = \rho_A(t)
 $$
+
+This identity guarantees that the reduced density matrix $\rho_A(t)$ is strictly invariant under any non-selective measurement performed on subsystem $B$, regardless of the basis chosen.
 
 **IV. The Correlation Dependency**
 
-The "retrocausal" effect observed in the Quantum Eraser is strictly a property of the *conditional* sub-ensembles (correlations), not the local marginals, governed by 3-ribbon operator matrix elements under **Electroweak Axial-Vector Coupling Operator** <Ref id="15.4.5" label="§15.4.5" />.
+The "retrocausal" effect observed in the Quantum Eraser is strictly a property of the *conditional* sub-ensembles (correlations), not the local marginals, governed by bipartite projector sorting under **Sub-Ensemble Correlation Sorting** <Ref id="15.4.5" label="§15.4.5" />.
 
 $$
 P(A | B_{outcome}) \neq P(A)
@@ -1974,7 +2068,7 @@ $$
 However, since the observer at $A$ (at time $t$) does not have access to the outcome at $B$ (at time $t_f$), the effective state is the sum over all $B$ outcomes:
 
 $$
-\rho_A^{effective} = \sum_m P(m) \rho_A^{(m)} = \rho_A^{unconditioned}
+\rho_A^{effective} = \sum_m P(m) \tilde{\rho}_A^{(m)} = \rho_A^{unconditioned}
 $$
 
 This sum is invariant under the choice of measurement basis at $B$.

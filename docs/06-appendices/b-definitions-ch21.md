@@ -400,7 +400,7 @@ def run_relic_abundance_scaling():
         N = G.number_of_nodes()
 
         # Monte Carlo trials for B3 vs B4 defect crystallization
-        # Quench equipartition: 4 external strands per 2-vertex cluster yield equal partition weights (P = 4/16 = 0.25)
+        # Quench equipartition: 4 strands per 2-vertex cluster yield equal weights (P = 0.25)
         trials = 100
         n3_list = []
         n4_list = []

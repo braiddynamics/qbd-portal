@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 4788969,
-      "estimated_tokens": 1738594,
+      "file_size_bytes": 4794249,
+      "estimated_tokens": 1740515,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 5178581,
-      "estimated_tokens": 1907832,
+      "file_size_bytes": 5184051,
+      "estimated_tokens": 1909858,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 4044351,
-      "estimated_tokens": 1738594,
+      "file_size_bytes": 4052993,
+      "estimated_tokens": 1740515,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -42,7 +42,7 @@
       "json_file_size_bytes": 1452081,
       "json_estimated_tokens": 533922,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1740312,
+      "pdf_file_size_bytes": 1740366,
       "pdf_estimated_tokens": 512662
     },
     {
@@ -58,7 +58,7 @@
       "json_file_size_bytes": 961244,
       "json_estimated_tokens": 354133,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1207285,
+      "pdf_file_size_bytes": 1207243,
       "pdf_estimated_tokens": 338586
     },
     {
@@ -66,16 +66,16 @@
       "name": "Part 3: Emergent Reality (The Stage)",
       "filename": "qbd_part_3_emergent_reality_the_stage.md",
       "url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.md",
-      "file_size_bytes": 1001686,
-      "estimated_tokens": 364264,
+      "file_size_bytes": 1006966,
+      "estimated_tokens": 366184,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 3: Emergent Reality (The Stage).",
       "json_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.json",
-      "json_file_size_bytes": 1031848,
-      "json_estimated_tokens": 380774,
+      "json_file_size_bytes": 1037318,
+      "json_estimated_tokens": 382800,
       "pdf_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.pdf",
-      "pdf_file_size_bytes": 1310534,
-      "pdf_estimated_tokens": 364264
+      "pdf_file_size_bytes": 1319526,
+      "pdf_estimated_tokens": 366184
     },
     {
       "part_number": 4,
@@ -90,7 +90,7 @@
       "json_file_size_bytes": 1031671,
       "json_estimated_tokens": 380613,
       "pdf_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.pdf",
-      "pdf_file_size_bytes": 1321602,
+      "pdf_file_size_bytes": 1321591,
       "pdf_estimated_tokens": 366461
     },
     {
@@ -106,7 +106,7 @@
       "json_file_size_bytes": 418859,
       "json_estimated_tokens": 154379,
       "pdf_url": "/downloads/parts/qbd_part_5_applications_and_synthesis_conclusion.pdf",
-      "pdf_file_size_bytes": 600529,
+      "pdf_file_size_bytes": 600606,
       "pdf_estimated_tokens": 148326
     },
     {
@@ -122,7 +122,7 @@
       "json_file_size_bytes": 155873,
       "json_estimated_tokens": 57517,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 258325,
+      "pdf_file_size_bytes": 258402,
       "pdf_estimated_tokens": 56517
     }
   ],
@@ -140,7 +140,7 @@
       "json_file_size_bytes": 387147,
       "json_estimated_tokens": 142242,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 511830,
+      "pdf_file_size_bytes": 511896,
       "pdf_estimated_tokens": 140390
     },
     {
@@ -156,7 +156,7 @@
       "json_file_size_bytes": 222556,
       "json_estimated_tokens": 81590,
       "pdf_url": "/downloads/chapters/chapter_2.pdf",
-      "pdf_file_size_bytes": 345968,
+      "pdf_file_size_bytes": 346042,
       "pdf_estimated_tokens": 79646
     },
     {
@@ -172,7 +172,7 @@
       "json_file_size_bytes": 286865,
       "json_estimated_tokens": 105297,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 433612,
+      "pdf_file_size_bytes": 433664,
       "pdf_estimated_tokens": 102534
     },
     {
@@ -188,7 +188,7 @@
       "json_file_size_bytes": 303904,
       "json_estimated_tokens": 111979,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 452567,
+      "pdf_file_size_bytes": 452632,
       "pdf_estimated_tokens": 108965
     },
     {
@@ -204,7 +204,7 @@
       "json_file_size_bytes": 248091,
       "json_estimated_tokens": 91513,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 400542,
+      "pdf_file_size_bytes": 400612,
       "pdf_estimated_tokens": 88777
     },
     {
@@ -220,7 +220,7 @@
       "json_file_size_bytes": 174201,
       "json_estimated_tokens": 64041,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 301129,
+      "pdf_file_size_bytes": 301104,
       "pdf_estimated_tokens": 62355
     },
     {
@@ -236,7 +236,7 @@
       "json_file_size_bytes": 131935,
       "json_estimated_tokens": 48672,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 246808,
+      "pdf_file_size_bytes": 246890,
       "pdf_estimated_tokens": 47344
     },
     {
@@ -252,7 +252,7 @@
       "json_file_size_bytes": 222816,
       "json_estimated_tokens": 82070,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 364008,
+      "pdf_file_size_bytes": 364073,
       "pdf_estimated_tokens": 80014
     },
     {
@@ -268,7 +268,7 @@
       "json_file_size_bytes": 189716,
       "json_estimated_tokens": 69922,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 318972,
+      "pdf_file_size_bytes": 319037,
       "pdf_estimated_tokens": 68114
     },
     {
@@ -284,7 +284,7 @@
       "json_file_size_bytes": 237362,
       "json_estimated_tokens": 87499,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 368229,
+      "pdf_file_size_bytes": 368288,
       "pdf_estimated_tokens": 85423
     },
     {
@@ -300,7 +300,7 @@
       "json_file_size_bytes": 147566,
       "json_estimated_tokens": 54470,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 268272,
+      "pdf_file_size_bytes": 268346,
       "pdf_estimated_tokens": 52994
     },
     {
@@ -316,7 +316,7 @@
       "json_file_size_bytes": 124039,
       "json_estimated_tokens": 45791,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 252363,
+      "pdf_file_size_bytes": 252411,
       "pdf_estimated_tokens": 44552
     },
     {
@@ -332,7 +332,7 @@
       "json_file_size_bytes": 152764,
       "json_estimated_tokens": 56322,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 271993,
+      "pdf_file_size_bytes": 272057,
       "pdf_estimated_tokens": 54891
     },
     {
@@ -348,7 +348,7 @@
       "json_file_size_bytes": 180200,
       "json_estimated_tokens": 66506,
       "pdf_url": "/downloads/chapters/chapter_14.pdf",
-      "pdf_file_size_bytes": 312884,
+      "pdf_file_size_bytes": 312944,
       "pdf_estimated_tokens": 64810
     },
     {
@@ -356,16 +356,16 @@
       "name": "Chapter 15: Geometry of Entanglement (ER = EPR)",
       "filename": "chapter_15.md",
       "url": "/downloads/chapters/chapter_15.md",
-      "file_size_bytes": 134807,
-      "estimated_tokens": 49018,
+      "file_size_bytes": 140087,
+      "estimated_tokens": 50939,
       "type": "markdown",
       "description": "Markdown source for Chapter 15.",
       "json_url": "/downloads/chapters/chapter_15.json",
-      "json_file_size_bytes": 136737,
-      "json_estimated_tokens": 50482,
+      "json_file_size_bytes": 142207,
+      "json_estimated_tokens": 52508,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 254278,
-      "pdf_estimated_tokens": 49018
+      "pdf_file_size_bytes": 259775,
+      "pdf_estimated_tokens": 50939
     },
     {
       "chapter_number": 16,
@@ -380,7 +380,7 @@
       "json_file_size_bytes": 135926,
       "json_estimated_tokens": 50141,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 248068,
+      "pdf_file_size_bytes": 248141,
       "pdf_estimated_tokens": 48764
     },
     {
@@ -396,7 +396,7 @@
       "json_file_size_bytes": 149575,
       "json_estimated_tokens": 55197,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 276887,
+      "pdf_file_size_bytes": 276942,
       "pdf_estimated_tokens": 53743
     },
     {
@@ -412,7 +412,7 @@
       "json_file_size_bytes": 230596,
       "json_estimated_tokens": 85075,
       "pdf_url": "/downloads/chapters/chapter_18.pdf",
-      "pdf_file_size_bytes": 362519,
+      "pdf_file_size_bytes": 362562,
       "pdf_estimated_tokens": 82314
     },
     {
@@ -428,7 +428,7 @@
       "json_file_size_bytes": 153511,
       "json_estimated_tokens": 56635,
       "pdf_url": "/downloads/chapters/chapter_19.pdf",
-      "pdf_file_size_bytes": 271164,
+      "pdf_file_size_bytes": 271239,
       "pdf_estimated_tokens": 54831
     },
     {
@@ -444,7 +444,7 @@
       "json_file_size_bytes": 268744,
       "json_estimated_tokens": 99179,
       "pdf_url": "/downloads/chapters/chapter_20.pdf",
-      "pdf_file_size_bytes": 430296,
+      "pdf_file_size_bytes": 430354,
       "pdf_estimated_tokens": 96035
     },
     {
@@ -460,7 +460,7 @@
       "json_file_size_bytes": 148807,
       "json_estimated_tokens": 54874,
       "pdf_url": "/downloads/chapters/chapter_21.pdf",
-      "pdf_file_size_bytes": 252010,
+      "pdf_file_size_bytes": 251987,
       "pdf_estimated_tokens": 53073
     },
     {
@@ -476,7 +476,7 @@
       "json_file_size_bytes": 228817,
       "json_estimated_tokens": 84410,
       "pdf_url": "/downloads/chapters/chapter_22.pdf",
-      "pdf_file_size_bytes": 372711,
+      "pdf_file_size_bytes": 372779,
       "pdf_estimated_tokens": 81815
     },
     {
@@ -492,7 +492,7 @@
       "json_file_size_bytes": 161728,
       "json_estimated_tokens": 59677,
       "pdf_url": "/downloads/chapters/chapter_23.pdf",
-      "pdf_file_size_bytes": 286362,
+      "pdf_file_size_bytes": 286438,
       "pdf_estimated_tokens": 57759
     },
     {
@@ -508,7 +508,7 @@
       "json_file_size_bytes": 190237,
       "json_estimated_tokens": 70164,
       "pdf_url": "/downloads/chapters/chapter_24.pdf",
-      "pdf_file_size_bytes": 325512,
+      "pdf_file_size_bytes": 325569,
       "pdf_estimated_tokens": 67662
     },
     {
@@ -524,7 +524,7 @@
       "json_file_size_bytes": 65686,
       "json_estimated_tokens": 24093,
       "pdf_url": "/downloads/chapters/chapter_25.pdf",
-      "pdf_file_size_bytes": 153738,
+      "pdf_file_size_bytes": 153799,
       "pdf_estimated_tokens": 23723
     }
   ],
@@ -1043,8 +1043,8 @@
       {
         "name": "15.4.5.2.py",
         "url": "/downloads/code/repo/python/15.4.5.2.py",
-        "file_size_bytes": 2110,
-        "estimated_tokens": 780,
+        "file_size_bytes": 4546,
+        "estimated_tokens": 1682,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 15.4.5.2."
       },
@@ -1916,7 +1916,7 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 279183,
+      "file_size_bytes": 279825,
       "description": "Download the complete simulations repository bundle containing all 84 numerical derivation scripts in a single ZIP archive."
     }
   },
