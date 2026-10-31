@@ -101,7 +101,16 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
 
   future: {
-    faster: true,
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      mdxCrossCompilerCache: true,
+      rspackPersistentCache: false,
+      ssgWorkerThreads: true,
+    },
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
     },

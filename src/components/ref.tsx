@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import katex from 'katex';
-import definitionsData from '../data/definitions.json';
+import definitionsIndexData from '../data/definitions-index.json';
 import './ref.css';
 
 interface RefProps {
@@ -9,20 +9,47 @@ interface RefProps {
   label: string;
 }
 
-interface Definition {
+interface DefinitionIndex {
   id: string;
   type: string;
   title: string;
-  statement: string;
-  plainEnglish: string;
   file: string;
 }
 
-const definitions: Record<string, Definition> = definitionsData as any;
+interface Definition extends DefinitionIndex {
+  statement?: string;
+  plainEnglish?: string;
+}
+
+const definitionsIndex: Record<string, DefinitionIndex> = definitionsIndexData as any;
+
+let fullDefinitionsCache: Record<string, Definition> | null = null;
+let fetchPromise: Promise<Record<string, Definition>> | null = null;
+
+function loadFullDefinitions(): Promise<Record<string, Definition>> {
+  if (typeof window === 'undefined') {
+    return Promise.resolve({});
+  }
+  if (fullDefinitionsCache) return Promise.resolve(fullDefinitionsCache);
+  if (!fetchPromise) {
+    fetchPromise = fetch('/data/definitions.json')
+      .then(res => res.json())
+      .then(data => {
+        fullDefinitionsCache = data;
+        return data;
+      })
+      .catch(() => ({}));
+  }
+  return fetchPromise;
+}
 
 // Helper to format link destination based on parsed relative file path
 // E.g. "01-rules/01-ontology/1.2.md" -> "/monograph/rules/ontology/1.2"
-const getChapterUrl = (file: string, anchor: string) => {
+const getChapterUrl = (file: string | undefined, anchor: string) => {
+  if (!file) {
+    const chNum = anchor.split('.')[0] || '1';
+    return `/monograph/appendices/b-definitions-ch${chNum}#${anchor}`;
+  }
   const withoutExt = file.replace(/\.mdx?$/, '');
   // Clean up folder leading digits (e.g. "01-rules" -> "rules")
   const cleanPath = withoutExt
@@ -60,7 +87,7 @@ const parseMarkdown = (text: string) => {
       const match = part.match(/<Ref\s+id="([^"]+)"\s+label="([^"]+)"\s*(?:\/>|>.*?<\/Ref>)/);
       if (match) {
         const [_, refId, refLabel] = match;
-        const targetDef = definitions[refId];
+        const targetDef = definitionsIndex[refId];
         const chNum = refId.split('.')[0] || '1';
         const destination = targetDef ? getChapterUrl(targetDef.file, refId) : `/monograph/appendices/b-definitions-ch${chNum}#${refId}`;
         return (
@@ -120,23 +147,24 @@ export default function Ref({ id, label }: RefProps) {
   const [coords, setCoords] = useState({ top: 0, left: 0 });
   const [placement, setPlacement] = useState<'top' | 'bottom'>('top');
   const [isPositioned, setIsPositioned] = useState(false);
+  const [fullData, setFullData] = useState<Definition | null>(() => fullDefinitionsCache ? fullDefinitionsCache[id] || null : null);
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const refData = definitions[id];
+  const indexData = definitionsIndex[id];
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (!refData) {
+  if (!indexData) {
     return <span className="ref-broken">[Broken Reference: §{id}]</span>;
   }
 
   // Deduce if a formal proof exists (e.g. 1.3.6.1 is the proof for 1.3.6)
   const proofId = `${id}.1`;
-  const hasProof = definitions[proofId] !== undefined;
+  const hasProof = definitionsIndex[proofId] !== undefined;
 
   // Clean up MDX/HTML tags in parsed markdown statement for tooltips
   const cleanStatement = (text: string) => {
@@ -148,6 +176,11 @@ export default function Ref({ id, label }: RefProps) {
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (!fullData) {
+      loadFullDefinitions().then(defs => {
+        if (defs[id]) setFullData(defs[id]);
+      });
+    }
     timeoutRef.current = setTimeout(() => {
       setIsOpen(true);
     }, 150); // 150ms debounced hover trigger
@@ -239,7 +272,7 @@ export default function Ref({ id, label }: RefProps) {
   const triggerElement = (
     <a
       ref={triggerRef}
-      href={getChapterUrl(refData.file, id)}
+      href={getChapterUrl(indexData.file, id)}
       className="ref-badge"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -251,6 +284,12 @@ export default function Ref({ id, label }: RefProps) {
   if (!isMounted) {
     return triggerElement;
   }
+
+  const activeData: Definition = fullData || {
+    ...indexData,
+    statement: '',
+    plainEnglish: 'Loading definition...',
+  };
 
   const tooltipElement = isOpen ? (
     <div
@@ -268,22 +307,22 @@ export default function Ref({ id, label }: RefProps) {
     >
       <div className="ref-tooltip-content">
         <div className="ref-tooltip-header">
-          <span className="ref-category">{refData.type} {refData.id}</span>
-          <span className="ref-title">{refData.title}</span>
+          <span className="ref-category">{activeData.type} {activeData.id}</span>
+          <span className="ref-title">{activeData.title}</span>
         </div>
         
         <div className="ref-tooltip-body">
           <div className="ref-section">
             <span className="ref-section-title">FORMAL STATEMENT</span>
             <div className="ref-section-text ref-math-block">
-              {renderLaTeX(cleanStatement(refData.statement))}
+              {activeData.statement ? renderLaTeX(cleanStatement(activeData.statement)) : <em>Loading formal statement...</em>}
             </div>
           </div>
           
           <div className="ref-section">
             <span className="ref-section-title">IN PLAIN ENGLISH</span>
             <div className="ref-section-text ref-plain-text">
-              {renderLaTeX(refData.plainEnglish)}
+              {activeData.plainEnglish ? renderLaTeX(activeData.plainEnglish) : <em>Loading plain English description...</em>}
             </div>
           </div>
         </div>
@@ -291,14 +330,14 @@ export default function Ref({ id, label }: RefProps) {
         <div className="ref-tooltip-footer">
           {hasProof ? (
             <a 
-              href={getChapterUrl(refData.file, proofId)} 
+              href={getChapterUrl(indexData.file, proofId)} 
               className="ref-footer-btn ref-btn-primary"
             >
               View Formal Proof
             </a>
           ) : (
             <a 
-              href={getChapterUrl(refData.file, id)} 
+              href={getChapterUrl(indexData.file, id)} 
               className="ref-footer-btn ref-btn-primary"
             >
               Go to Monograph Section
