@@ -2781,7 +2781,7 @@ The laws of physics operate as a topological quantum error-correcting code, util
 :::info[**Isomorphism between Quantum Braid Dynamics and Stabilizer Quantum Error Correction established by Operator Mapping**]
 :::
 
-There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.54)
+There exists a bijection $\Phi: \Omega_{valid} \to \mathcal{C}$ mapping the set of valid causal graphs to the code subspace defined by the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Under this isomorphism, the dynamical evolution of the graph corresponds to logical Pauli-$X$ operations on the code, and consistency checks correspond to non-destructive syndrome extraction (formalized by the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />). [(Pastawski, Yoshida, Harlow, & Preskill, 2015)](/monograph/appendices/a-references#A.59)
 
 **In Plain English:**  
 Section 3.5.2 formalizes the properties of the QBD theorem regarding stabilizer isomorphism.
