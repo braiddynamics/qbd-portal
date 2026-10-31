@@ -4316,7 +4316,7 @@ This algebraic apparatus is indispensable for formalizing topological protection
 
 ---
 
-### 32. **Gottesman, D. (1997).** {#A.32}
+### 33. **Gottesman, D. (1997).** {#A.33}
 **"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
 
@@ -4329,7 +4329,7 @@ The stabilizer formalism is the leading tool used to protect the topological gra
 
 ---
 
-### 54. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.54}
+### 59. **Pastawski, F., Yoshida, B., Harlow, D., & Preskill, J. (2015).** {#A.59}
 **"Holographic quantum error-correcting codes: Toy models for the bulk/boundary correspondence"**
     * **Link:** [https://arxiv.org/abs/1503.06237](https://arxiv.org/abs/1503.06237)
 
@@ -4342,7 +4342,7 @@ The HaPPY code is the direct template for the holographic screen mechanisms deve
 
 ---
 
-### 64. **Sorkin, R. D. (2005).** {#A.64}
+### 70. **Sorkin, R. D. (2005).** {#A.70}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
@@ -4356,7 +4356,7 @@ Sorkin's causal set model is a core physical pillar for the discrete causal subs
 
 ---
 
-### 75. **Woess, W. (2000).** {#A.75}
+### 82. **Woess, W. (2000).** {#A.82}
 **"Random Walks on Infinite Graphs and Groups"**
     * **Link:** [http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf](http://math.bme.hu/~gabor/oktatas/SztoM/Woess.RWonInfinGrGp.pdf)
 
@@ -4369,7 +4369,7 @@ This reference is necessary for the discrete diffusion analyses conducted in Cha
 
 ---
 
-### 76. **Wolfram, S. (2002).** {#A.76}
+### 83. **Wolfram, S. (2002).** {#A.83}
 **"A New Kind of Science"**
     * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
 

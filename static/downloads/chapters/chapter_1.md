@@ -3043,19 +3043,6 @@ The problem of time is resolved in QBD by the dual-time architecture developed i
 
 ---
 
-### 8. **Awodey, S. (2010).** {#A.8}
-**"Category Theory (2nd ed.)"**
-    * **Link:** [https://global.oup.com/academic/product/category-theory-9780199237180](https://global.oup.com/academic/product/category-theory-9780199237180)
-
-
-**Overview:**
-Awodey provides a systematic and accessible introduction to category theory, focusing on the structures and relations that unify different branches of mathematics. He covers functors, natural transformations, limits, colimits, and monads, emphasizing the structural perspective over set-theoretic foundations.
-
-**Relevance to QBD:**
-Category theory is the formal language used to define the computational syntax of QBD in Chapter 1. By representing the substrate as a category where vertices are objects and edges are morphisms, we formalize the rewrite rules as functors. Awodey's text is the core reference for these category-theoretic structures, ensuring that the algebraic foundations of our model are carefully defined.
-
----
-
 ### 13. **Bennett, C. H. (1982).** {#A.13}
 **"The thermodynamics of computation: a review"**
     * **Link:** [https://link.springer.com/article/10.1007/BF02084158](https://link.springer.com/article/10.1007/BF02084158)
@@ -3109,19 +3096,6 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
-### 23. **Dowker, F. (2005).** {#A.23}
-**"Causal sets and the deep structure of spacetime"**
-    * **Link:** [https://arxiv.org/abs/gr-qc/0508109](https://arxiv.org/abs/gr-qc/0508109)
-
-
-**Overview:**
-Dowker provides a conceptual and physical overview of the causal set approach to quantum gravity. She argues that spacetime is fundamentally discrete and that the continuum is merely an approximation. The author demonstrates that discrete causal sets successfully preserve Lorentz invariance, solving a major historical challenge faced by discrete models.
-
-**Relevance to QBD:**
-Dowker's work is a key conceptual pillar for the discrete causal substrate defined in Chapter 1. We adopt her insight that discrete causal ordering is sufficient to construct macroscopic geometry. In Chapter 14, we prove that QBD preserves Lorentz covariance in the continuum limit, invoking Dowker to show why our discrete causal steps naturally satisfy relativistic constraints.
-
----
-
 ### 25. **Enderton, H. B. (2001).** {#A.25}
 **"A Mathematical Introduction to Logic (2nd ed.)"**
     * **Link:** [https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic](https://www.sciencedirect.com/book/9780122384523/a-mathematical-introduction-to-logic)
@@ -3162,7 +3136,7 @@ Godel's incompleteness theorems provide the logical motivation for the epistemol
 
 ---
 
-### 41. **Lamport, L. (1978).** {#A.41}
+### 46. **Lamport, L. (1978).** {#A.46}
 **"Time, clocks, and the ordering of events in a distributed system"**
     * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
@@ -3175,7 +3149,7 @@ Lamport's logical clock formalism is the starting point for the dual-time archit
 
 ---
 
-### 42. **Landauer, R. (1991).** {#A.42}
+### 47. **Landauer, R. (1991).** {#A.47}
 **"Information is Physical"**
     * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
 
@@ -3188,19 +3162,7 @@ This physical principle is foundational for the dynamical rewrite engine formula
 
 ---
 
-### 43. **Leibniz-Clarke Correspondence (1715-1716).** {#A.43}
-* **Link:** [https://personal.lse.ac.uk/robert49/teaching/ph103/pdf/Ariew_1715LeibnizClarkeCorrespondence.pdf](https://personal.lse.ac.uk/robert49/teaching/ph103/pdf/Ariew_1715LeibnizClarkeCorrespondence.pdf)
-
-
-**Overview:**
-The Leibniz-Clarke correspondence records a classic philosophical debate on the nature of space and time. Leibniz advocates for a relational view, arguing that space and time are systems of relations between coexisting objects. Clarke, defending Newton's view, argues that space and time are absolute, infinite containers within which physical objects are placed.
-
-**Relevance to QBD:**
-This historical debate provides the conceptual framing for the relational substrate defined in Chapter 1. QBD rejects Newtonian absolute space in favor of a relational structure where space and time emerge solely from the connectivity of the causal graph. This correspondence frames our alignment with Leibniz's relational view, demonstrating that our graph-theoretic model is a realization of his relational philosophy.
-
----
-
-### 46. **Marker, D. (2002).** {#A.46}
+### 51. **Marker, D. (2002).** {#A.51}
 **"Model Theory: An Introduction"**
     * **Link:** [https://link.springer.com/book/10.1007/b98860](https://link.springer.com/book/10.1007/b98860)
 
@@ -3213,7 +3175,7 @@ This reference is necessary for the logical and model-theoretic analyses conduct
 
 ---
 
-### 51. **Page, D. N., & Wootters, W. K. (1983).** {#A.51}
+### 57. **Page, D. N., & Wootters, W. K. (1983).** {#A.57}
 **"Evolution without evolution: Dynamics described by stationary observables"**
     * **Link:** [https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.27.2885)
 
@@ -3226,7 +3188,7 @@ This relational time approach is the core architecture used to solve the problem
 
 ---
 
-### 53. **Palmigiano, A., & Sadrzadeh, M. (Eds.). (2023).** {#A.53}
+### 58. **Palmigiano, A., & Sadrzadeh, M. (Eds.). (2023).** {#A.58}
 **"Samson Abramsky on Logic and Structure in Computer Science and Beyond"**
     * **Link:** [https://link.springer.com/book/10.1007/978-3-031-24117-8](https://link.springer.com/book/10.1007/978-3-031-24117-8)
 
@@ -3239,20 +3201,7 @@ This volume is the direct reference for the categorical quantum mechanics models
 
 ---
 
-### 58. **Rovelli, C., & Smolin, L. (1990).** {#A.58}
-**"Loop space representation of quantum general relativity"**
-    * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
-
-
-**Overview:**
-Rovelli and Smolin construct the loop space representation of quantum general relativity, formulating gravity in terms of loops and connections. They prove that the spatial geometry is quantized in terms of discrete spin network states, establishing a non-perturbative structure for what would become Loop Quantum Gravity.
-
-**Relevance to QBD:**
-This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 13. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
-
----
-
-### 59. **Rovelli, C. (1996).** {#A.59}
+### 63. **Rovelli, C. (1996).** {#A.63}
 **"Relational Quantum Mechanics"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9609002](https://arxiv.org/abs/quant-ph/9609002)
 
@@ -3265,20 +3214,20 @@ RQM is the central epistemological foundation for the update dynamics formulated
 
 ---
 
-### 62. **Sati, H., & Schreiber, U. (2025).** {#A.62}
-**"The quantum monadology"**
-    * **Link:** [https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf](https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf)
+### 64. **Rovelli, C., & Smolin, L. (1990).** {#A.64}
+**"Loop space representation of quantum general relativity"**
+    * **Link:** [https://doi.org/10.1016/0550-3213(90)90019-A](https://doi.org/10.1016/0550-3213(90)90019-A)
 
 
 **Overview:**
-Sati and Schreiber formulate the quantum monadology, a categorical language that interprets quantum states and observers within a relational, category-theoretic context. Drawing inspiration from Leibnizian philosophy, they model the universe as a network of quantum monads that observe each other relationally. This categorical formalism establishes a precise language for describing how global quantum states can emerge from local, relational observations.
+Rovelli and Smolin construct the loop space representation of quantum general relativity, formulating gravity in terms of loops and connections. They prove that the spatial geometry is quantized in terms of discrete spin network states, establishing a non-perturbative structure for what would become Loop Quantum Gravity.
 
 **Relevance to QBD:**
-This categorical formulation is indispensable for the relational model defined in Chapter 1. We adopt Sati and Schreiber's quantum monadology to formalize the interactions between local graph vertices as relational observations. Sati and Schreiber's category-theoretic tools show that global spacetime arises naturally from these localized, relational updates on the causal graph.
+This loop space representation is the foremost conceptual template for the spatial coordinates formulated in Chapter 13. In QBD, spatial geometry is encoded in connection-like loops along the edges of the causal graph. This classic work traces the algebraic connection between our discrete, edge-based connections and the spin networks of loop quantum gravity.
 
 ---
 
-### 64. **Sorkin, R. D. (2005).** {#A.64}
+### 70. **Sorkin, R. D. (2005).** {#A.70}
 **"Causal sets: Discrete gravity"**
 - *In Lectures on Quantum Gravity (pp. 305-327). Springer*
     * **Link:** [https://arxiv.org/abs/gr-qc/0309009](https://arxiv.org/abs/gr-qc/0309009)
@@ -3292,20 +3241,7 @@ Sorkin's causal set model is a core physical pillar for the discrete causal subs
 
 ---
 
-### 72. **Wheeler, J. A. (1990).** {#A.72}
-**"Information, physics, quantum: The search for links"**
-    * **Link:** [https://philpapers.org/archive/WHEIPQ.pdf](https://philpapers.org/archive/WHEIPQ.pdf)
-
-
-**Overview:**
-Wheeler introduces the classic concept of 'it from bit', postulating that every physical entity, such as space, time, or particles, derives its existence from binary information exchanges. He argues that the physical world is fundamentally informational, meaning that physical laws are the logical rules governing how observers acquire and process bits.
-
-**Relevance to QBD:**
-Wheeler's informational paradigm is the philosophical foundation for the entire QBD monograph. We adopt his 'it from bit' perspective by modeling the universe as a discrete network of relational information updates on a causal graph. This reference grounds our fundamental premise that physical space, time, and matter emerge solely from discrete, relational bits.
-
----
-
-### 76. **Wolfram, S. (2002).** {#A.76}
+### 83. **Wolfram, S. (2002).** {#A.83}
 **"A New Kind of Science"**
     * **Link:** [https://www.wolframscience.com/nks/](https://www.wolframscience.com/nks/)
 
@@ -3318,7 +3254,7 @@ Wolfram's computational paradigm is a key conceptual precursor to the graph rewr
 
 ---
 
-### 77. **Wolfram, S. (2020).** {#A.77}
+### 84. **Wolfram, S. (2020).** {#A.84}
 **"A Project to Find the Fundamental Theory of Physics"**
     * **Link:** [https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/](https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/)
 

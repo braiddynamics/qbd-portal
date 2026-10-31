@@ -74,7 +74,7 @@ const PARTS: Part[] = [
     number: 1,
     title: 'The Foundational Principles (The Rules)',
     chapters: '1-5',
-    tokens: '~513K',
+    tokens: '~508K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md',
     summary: 'Substrate ontology, axioms, object model (causal network architecture), dynamics (update rules), and geometrogenesis (equilibrium spacetime emergence).',
   },
@@ -82,7 +82,7 @@ const PARTS: Part[] = [
     number: 2,
     title: 'Topological Nature of Matter (The Players)',
     chapters: '6-10',
-    tokens: '~338K',
+    tokens: '~336K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md',
     summary: 'Tripartite braid fermions, quantum numbers from topology, gauge symmetries as braid automorphisms, particle generations and decay, quantum universality as computation.',
   },
@@ -90,7 +90,7 @@ const PARTS: Part[] = [
     number: 3,
     title: 'Emergent Reality (The Stage)',
     chapters: '11-17',
-    tokens: '~364K',
+    tokens: '~351K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_3_emergent_reality_the_stage.md',
     summary: 'Discrete differential geometry, discrete Einstein field equations, continuum limit convergence, Lorentzian time, geometry of entanglement (ER=EPR), isomorphism/holography principle, string limit.',
   },
@@ -121,23 +121,23 @@ const PARTS: Part[] = [
 ];
 
 const CHAPTERS = [
-  { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~140K', md: '/downloads/chapters/chapter_1.md' },
-  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~80K',  md: '/downloads/chapters/chapter_2.md' },
+  { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~138K', md: '/downloads/chapters/chapter_1.md' },
+  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~78K',  md: '/downloads/chapters/chapter_2.md' },
   { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~103K', md: '/downloads/chapters/chapter_3.md' },
-  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~109K', md: '/downloads/chapters/chapter_4.md' },
-  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~89K',  md: '/downloads/chapters/chapter_5.md' },
+  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~105K', md: '/downloads/chapters/chapter_4.md' },
+  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~87K',  md: '/downloads/chapters/chapter_5.md' },
   { n: 6,  title: 'Tripartite Braid (Fermions)',                                 tokens: '~62K',  md: '/downloads/chapters/chapter_6.md' },
   { n: 7,  title: 'Quantum Numbers (Topology)',                                  tokens: '~47K',  md: '/downloads/chapters/chapter_7.md' },
-  { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~80K',  md: '/downloads/chapters/chapter_8.md' },
+  { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~79K',  md: '/downloads/chapters/chapter_8.md' },
   { n: 9,  title: 'Generations and Decay (Unification)',                         tokens: '~68K',  md: '/downloads/chapters/chapter_9.md' },
-  { n: 10, title: 'Quantum Universality (Computation)',                          tokens: '~85K',  md: '/downloads/chapters/chapter_10.md' },
-  { n: 11, title: 'Differential Geometry (Discrete)',                            tokens: '~53K',  md: '/downloads/chapters/chapter_11.md' },
-  { n: 12, title: 'Continuum Limit (Convergence)',                               tokens: '~45K',  md: '/downloads/chapters/chapter_12.md' },
-  { n: 13, title: 'Discrete Field Equations (Einstein)',                         tokens: '~55K',  md: '/downloads/chapters/chapter_13.md' },
-  { n: 14, title: 'Lorentzian Reality (Time)',                                   tokens: '~65K',  md: '/downloads/chapters/chapter_14.md' },
-  { n: 15, title: 'Geometry of Entanglement (ER = EPR)',                         tokens: '~49K',  md: '/downloads/chapters/chapter_15.md' },
-  { n: 16, title: 'Isomorphism Principle (Holography)',                          tokens: '~49K',  md: '/downloads/chapters/chapter_16.md' },
-  { n: 17, title: 'String Limit (Worldsheets)',                                  tokens: '~54K',  md: '/downloads/chapters/chapter_17.md' },
+  { n: 10, title: 'Quantum Universality (Computation)',                          tokens: '~83K',  md: '/downloads/chapters/chapter_10.md' },
+  { n: 11, title: 'Differential Geometry (Discrete)',                            tokens: '~51K',  md: '/downloads/chapters/chapter_11.md' },
+  { n: 12, title: 'Continuum Limit (Convergence)',                               tokens: '~42K',  md: '/downloads/chapters/chapter_12.md' },
+  { n: 13, title: 'Discrete Field Equations (Einstein)',                         tokens: '~50K',  md: '/downloads/chapters/chapter_13.md' },
+  { n: 14, title: 'Lorentzian Reality (Time)',                                   tokens: '~60K',  md: '/downloads/chapters/chapter_14.md' },
+  { n: 15, title: 'Geometry of Entanglement (ER = EPR)',                         tokens: '~51K',  md: '/downloads/chapters/chapter_15.md' },
+  { n: 16, title: 'Isomorphism Principle (Holography)',                          tokens: '~46K',  md: '/downloads/chapters/chapter_16.md' },
+  { n: 17, title: 'String Limit (Worldsheets)',                                  tokens: '~53K',  md: '/downloads/chapters/chapter_17.md' },
   { n: 18, title: 'Big Kindling (Inflation)',                                    tokens: '~82K',  md: '/downloads/chapters/chapter_18.md' },
   { n: 19, title: 'Hot Universe (Nucleosynthesis)',                              tokens: '~55K',  md: '/downloads/chapters/chapter_19.md' },
   { n: 20, title: 'Structured Universe (Cosmic Web)',                            tokens: '~96K',  md: '/downloads/chapters/chapter_20.md' },
@@ -149,9 +149,9 @@ const CHAPTERS = [
 ];
 
 const APPENDICES = [
-  { id: 'A', title: 'Appendix A: External References Cited', tokens: '~15K', url: '/monograph/appendices/a-references', desc: 'Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.' },
-  { id: 'B', title: 'Appendix B: Python Simulation Models',  tokens: '~20K', url: '/monograph/appendices/b-sim-models', desc: 'Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.' },
-  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~19K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
+  { id: 'A', title: 'Appendix A: External References Cited', tokens: '~34K', url: '/monograph/appendices/a-references', desc: 'Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.' },
+  { id: 'B', title: 'Appendix B: Python Simulation Models',  tokens: '~1K', url: '/monograph/appendices/b-sim-models', desc: 'Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.' },
+  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~24K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
 ];
 
 const LEAN_PROOFS = [
@@ -767,7 +767,7 @@ Machine-readable download catalogue:
         {/* ── Context window guidance ── */}
         <h2 style={s.h2}>CONTEXT WINDOW GUIDANCE</h2>
         <pre style={s.pre}>{`Total monograph:  ~1.74M tokens  (full book Markdown)
-                  ~1.91M tokens  (full book JSON, includes structure overhead)
+                  ~1.88M tokens  (full book JSON, includes structure overhead)
 
 Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   The bottleneck is reasoning depth, not context size. Reviewing one chapter
@@ -779,8 +779,8 @@ Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   of critical analysis.
 
 Chapter sizes (for planning):
-  Smallest chapter:  ~20K tokens (Ch. 25)
-  Largest chapter:   ~140K tokens (Ch. 1)
+  Smallest chapter:  ~24K tokens (Ch. 25)
+  Largest chapter:   ~138K tokens (Ch. 1)
   Typical chapter:   ~45–85K tokens
   All 25 chapters:   ~1.74M tokens total
 

@@ -509,7 +509,7 @@ export default function DownloadPage() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--ifm-color-emphasis-600)', fontSize: '1rem', marginBottom: '2rem', maxWidth: '800px' }}>
-                  An extensive database of 84 compact numerical simulation scripts. Each module corresponds to a specific theorem, equation, or derivation section from the monograph, allowing step-by-step mathematical audits.
+                  An extensive database of {downloadsInfo.codebase?.repo?.length || 138} compact numerical simulation scripts. Each module corresponds to a specific theorem, equation, or derivation section from the monograph, allowing step-by-step mathematical audits.
                 </p>
 
                 {/* Featured ZIP Download Card & GitHub Row */}

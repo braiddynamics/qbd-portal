@@ -1,4 +1,4 @@
-# Chapter 5: Geometrogensis (Equilibrium)
+# Chapter 5: Geometrogenesis (Equilibrium)
 
 **Abstract**
 
@@ -3803,20 +3803,6 @@ This seminal work in discrete quantum gravity provides vital conceptual backing 
 
 ---
 
-### 10. **Barbour, A. D., Holst, L., & Janson, S. (1992).** {#A.10}
-**"Poisson Approximation"**
-- *Oxford University Press*
-    * **Link:** [https://global.oup.com/academic/product/poisson-approximation-9780198522355](https://global.oup.com/academic/product/poisson-approximation-9780198522355)
-
-
-**Overview:**
-Barbour, Holst, and Janson present a detailed study of the Poisson approximation, utilizing Stein's method to derive explicit error bounds for the approximation of independent or weakly dependent random variables. Their work delivers exact tools for analyzing the statistical properties of rare events in complex systems.
-
-**Relevance to QBD:**
-In Chapter 5, we analyze the statistical distribution of minimal cycles in the vacuum graph. Because these cycles are rare, their distribution is modeled using the Poisson approximation. The precise error bounds developed by Barbour and his co-authors are used to prove that the vacuum converges to a sparse, stable state, grounding the claim that the background spacetime remains flat and stable.
-
----
-
 ### 14. **Bollobás, B. (2001).** {#A.14}
 **"Random Graphs (2nd ed.)"**
     * **Link:** [https://doi.org/10.1017/CBO9780511814068](https://doi.org/10.1017/CBO9780511814068)
@@ -3857,20 +3843,7 @@ In Chapter 13, we must analyze the singular behavior of the discrete geometry wh
 
 ---
 
-### 37. **Janson, S. (1987).** {#A.37}
-**"Poisson approximation for large cycles in random graphs"**
-    * **Link:** [http://stat.wharton.upenn.edu/~steele/Courses/531/531Resoureces/Janson1987PoissonProcess.pdf](http://stat.wharton.upenn.edu/~steele/Courses/531/531Resoureces/Janson1987PoissonProcess.pdf)
-
-
-**Overview:**
-Janson develops a careful probabilistic treatment to study the distribution of large cycles in random graphs. He utilizes Poisson approximation methods and correlation inequality techniques to prove that the count of disjoint cycles converges to a Poisson process in the sparse limit, establishing precise limits on local correlation.
-
-**Relevance to QBD:**
-This probabilistic toolset is indispensable for the vacuum stability proofs in Chapter 5. We must show that the local cycles in our vacuum graph do not cluster or trigger a runaway collapse. Janson's bounds confirm that the local cycle density remains stable, supporting the claim that the vacuum background spacetime remains flat.
-
----
-
-### 44. **Liggett, T. M. (1999).** {#A.44}
+### 49. **Liggett, T. M. (1999).** {#A.49}
 **"Stochastic Interacting Systems: Contact, Voter and Exclusion Processes"**
 - *Springer-Verlag Berlin Heidelberg*
     * **Link:** [https://doi.org/10.1007/978-3-662-03990-8](https://doi.org/10.1007/978-3-662-03990-8)
@@ -3884,7 +3857,7 @@ Liggett's rigorous results on survival regimes and quasi-stationary distribution
 
 ---
 
-### 48. **Ollivier, Y. (2009).** {#A.48}
+### 53. **Ollivier, Y. (2009).** {#A.53}
 **"Ricci curvature of Markov chains on metric spaces"**
     * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
 
@@ -3897,7 +3870,7 @@ Ollivier's metric curvature is the direct tool used to formulate the discrete fi
 
 ---
 
-### 50. **Padmanabhan, T. (2009).** {#A.50}
+### 55. **Padmanabhan, T. (2009).** {#A.55}
 **"Thermodynamical Aspects of Gravity: New Insights"**
     * **Link:** [https://arxiv.org/abs/0911.5004](https://arxiv.org/abs/0911.5004)
 
@@ -3910,7 +3883,7 @@ Padmanabhan's thermodynamic analysis is a central conceptual foundation for the 
 
 ---
 
-### 55. **Pemantle, R. (1992).** {#A.55}
+### 60. **Pemantle, R. (1992).** {#A.60}
 **"The contact process on trees"**
 - *Annals of Probability*, 20(4), 2089–2116.
     * **Link:** [https://doi.org/10.1214/aop/1176989541](https://doi.org/10.1214/aop/1176989541)
@@ -3924,21 +3897,7 @@ This two-threshold theorem provides the rigorous mathematical foundation for res
 
 ---
 
-### 67. **van der Hoorn, P., & Stegehuis, C. (2020).** {#A.67}
-**"Mean-field bounds for the k-core in random graphs"**
-- *Electronic Journal of Probability*, 25
-    * **Link:** [https://arxiv.org/abs/2008.01209](https://arxiv.org/abs/2008.01209)
-
-
-**Overview:**
-van der Hoorn and Stegehuis derive mean-field bounds for the size and structure of the k-core in random graphs, analyzing how these dense subgraphs emerge under random edge configurations. They prove that the k-core exhibits sharp threshold behavior, establishing precise bounds on graph connectivity and local dense clusters.
-
-**Relevance to QBD:**
-This probabilistic analysis is necessary for the vacuum stability audits conducted in Chapter 5. To prove that the vacuum graph does not collapse into densely connected local clusters, we must bound the density of its k-cores. Van der Hoorn's bounds show that the k-cores of our vacuum graph remain sparse, ensuring the stability of flat spacetime.
-
----
-
-### 68. **van Kampen, N. G. (1992).** {#A.68}
+### 75. **van Kampen, N. G. (1992).** {#A.75}
 **"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
 - *North-Holland*
     * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
@@ -3952,7 +3911,7 @@ This textbook is the direct reference for the stochastic master equations formul
 
 ---
 
-### 73. **Wilson, K. G. (1975).** {#A.73}
+### 80. **Wilson, K. G. (1975).** {#A.80}
 **"The renormalization group: Critical phenomena and the Kondo problem"**
     * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
 
@@ -3962,17 +3921,3 @@ Wilson presents the definitive formulation of the renormalization group, describ
 
 **Relevance to QBD:**
 The renormalization group is the main tool used to calculate the continuum limit of the discrete field equations in Chapter 12. By grouping local graph updates into larger coarse-grained blocks, we show that the discrete Laplacian converges to a continuous operator. Wilson's scaling theory underpins this convergence.
-
----
-
-### 82. **Jaynes, E. T. (1957).** {#A.82}
-**"Information Theory and Statistical Mechanics"**
-- *Physical Review*, 106(4), 620-630
-    * **Link:** [https://doi.org/10.1103/PhysRev.106.620](https://doi.org/10.1103/PhysRev.106.620)
-
-
-**Overview:**
-Jaynes formulates statistical mechanics as a form of statistical inference based on Shannon's information theory. He demonstrates that thermodynamic entropy is an informational measure of missing microscopic information, and that the Boltzmann-Gibbs canonical distribution maximizes information entropy subject to expectation constraints without requiring mechanical ergodic hypotheses.
-
-**Relevance to QBD:**
-Jaynes's Maximum Entropy Principle provides the foundational justification for the microscopic update engine in Chapter 4 and Chapter 5. In QBD, probability is fundamental while temperature is not: the microscopic boolean edge space $\{0, 1\}$ is governed by Jaynes MaxEnt subject to topological cycle constraints. The critical parameter $\beta_c = \ln 2$ is established strictly as an informational base conversion modulus ($1\,\text{bit} = \ln 2\,\text{nats}$) rather than an inverse thermodynamic temperature, eliminating fictitious vacuum heat baths.

@@ -2694,7 +2694,7 @@ Instantons are the continuous analogs of the non-perturbative transition operati
 
 ---
 
-### 45. **Maldacena, J. M. (1998).** {#A.45}
+### 50. **Maldacena, J. M. (1998).** {#A.50}
 **"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
@@ -2707,7 +2707,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 
 ---
 
-### 61. **Sachs, H. (1962).** {#A.61}
+### 66. **Sachs, H. (1962).** {#A.66}
 **"Über selbstkomplementäre Graphen"**
 - *Publicationes Mathematicae Debrecen*, 9, 270-288
     * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
@@ -2721,7 +2721,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 
 ---
 
-### 62. **Sati, H., & Schreiber, U. (2025).** {#A.62}
+### 68. **Sati, H., & Schreiber, U. (2025).** {#A.68}
 **"The quantum monadology"**
     * **Link:** [https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf](https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf)
 
@@ -2734,7 +2734,7 @@ This categorical formulation is indispensable for the relational model defined i
 
 ---
 
-### 74. **Witten, E. (1989).** {#A.74}
+### 81. **Witten, E. (1989).** {#A.81}
 **"Quantum Field Theory and the Jones Polynomial"**
     * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
 

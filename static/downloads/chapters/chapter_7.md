@@ -1997,7 +1997,7 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
-### 45. **Maldacena, J. M. (1998).** {#A.45}
+### 50. **Maldacena, J. M. (1998).** {#A.50}
 **"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
@@ -2010,7 +2010,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 
 ---
 
-### 61. **Sachs, H. (1962).** {#A.61}
+### 66. **Sachs, H. (1962).** {#A.66}
 **"Über selbstkomplementäre Graphen"**
 - *Publicationes Mathematicae Debrecen*, 9, 270-288
     * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
@@ -2024,7 +2024,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 
 ---
 
-### 70. **Verlinde, E. (2011).** {#A.70}
+### 77. **Verlinde, E. (2011).** {#A.77}
 **"On the Origin of Gravity and the Laws of Newton"**
     * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
 

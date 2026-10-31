@@ -13200,19 +13200,6 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 
 ---
 
-### 4. **Aleksandrowicz, G., et al. (2019).** {#A.4}
-**"Qiskit: An Open-source Framework for Quantum Computing"**
-    * **Link:** [https://zenodo.org/record/2562111](https://zenodo.org/record/2562111)
-
-
-**Overview:**
-Aleksandrowicz and the Qiskit team describe the architecture and implementation of Qiskit, an open-source software suite designed for writing, compiling, and running quantum circuits. The platform provides the software layers required to translate high-level quantum algorithms into the precise physical controls needed to execute circuits on real quantum hardware or classical simulators.
-
-**Relevance to QBD:**
-QBD leverages the stabilizer code model to protect topological graph structures from vacuum noise. In Chapter 10, Qiskit is utilized to simulate and verify the fault-tolerant operations of the tripartite braid qubits. This reference anchors the software standard used to model the stabilizer generators and logical gates, bridging the gap between high-level topological code theory and numerical circuit validation.
-
----
-
 ### 9. **Baader, F., & Nipkow, T. (1998).** {#A.9}
 **"Term Rewriting and All That"**
     * **Link:** [http://dx.doi.org/10.1017/CBO9781139172752](http://dx.doi.org/10.1017/CBO9781139172752)
@@ -13239,19 +13226,6 @@ This reference is integral to the random graph audits conducted in Chapter 5. To
 
 ---
 
-### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
-**"Graph Theory"**
-    * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
-
-
-**Overview:**
-Bondy and Murty present a modern, graduate-level textbook on graph theory. They cover connectivity, matchings, independent sets, graph colorings, and topological graph theory. Their work provides a thorough and comprehensive collection of tools used to analyze discrete relational networks.
-
-**Relevance to QBD:**
-This textbook serves as the standard reference for all graph-theoretic operations conducted across the monograph. Whether analyzing the path length between vertices in Chapter 11 or evaluating the cycle structure of braids in Chapter 6, the theorems and notations of Bondy and Murty ensure that our discrete derivations are mathematically sound.
-
----
-
 ### 20. **Coleman, S. (1977).** {#A.20}
 **"The Uses of Instantons"**
     * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
@@ -13262,19 +13236,6 @@ Coleman presents a set of lectures on the role of instantons, which are classica
 
 **Relevance to QBD:**
 Instantons are the continuous analogs of the non-perturbative transition operations that drive gauge dynamics in Chapter 8. In QBD, the tunneling of a tripartite braid between different topological phases corresponds to a discrete instanton-like event in the causal history. Coleman's lectures are cited to draw this physical analogy, grounding why non-abelian gauge structures emerge from topological updates.
-
----
-
-### 21. **Dauphinais, G., Kribs, D. W., & Vasmer, M. (2024).** {#A.21}
-**"Stabilizer Formalism for Operator Algebra Quantum Error Correction"**
-    * **Link:** [https://quantum-journal.org/papers/q-2024-02-21-1261/pdf](https://quantum-journal.org/papers/q-2024-02-21-1261/pdf)
-
-
-**Overview:**
-Dauphinais, Kribs, and Vasmer generalize the stabilizer formalism from finite-dimensional quantum systems to infinite-dimensional operator algebras. They develop a careful algebraic treatment that permits stabilizer codes to be defined on operator algebras, proving that the standard error correction conditions are preserved under this algebraic generalization.
-
-**Relevance to QBD:**
-This algebraic apparatus is indispensable for formalizing topological protection in QBD. In Chapter 10, the tripartite braid quantum states are shown to reside within a stable, topologically protected codespace. This work provides the backing required to define stabilizer operators on the infinite-dimensional algebra of our emergent graph, ensuring that the quantum information remains protected from local graph perturbations.
 
 ---
 
@@ -13292,7 +13253,7 @@ This textbook is the foundation for the graph-theoretic proofs across the monogr
 
 ---
 
-### 32. **Gottesman, D. (1997).** {#A.32}
+### 33. **Gottesman, D. (1997).** {#A.33}
 **"Stabilizer Codes and Quantum Error Correction"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9705052](https://arxiv.org/abs/quant-ph/9705052)
 
@@ -13305,7 +13266,7 @@ The stabilizer formalism is the leading tool used to protect the topological gra
 
 ---
 
-### 36. **Jacobson, T. (1995).** {#A.36}
+### 38. **Jacobson, T. (1995).** {#A.38}
 **"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
 
@@ -13318,7 +13279,7 @@ Jacobson's emergent gravity derivation is a key physical pillar for the geometro
 
 ---
 
-### 38. **Jones, V. F. R. (1985).** {#A.38}
+### 42. **Jones, V. F. R. (1985).** {#A.42}
 **"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
 
@@ -13331,7 +13292,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 
 ---
 
-### 40. **Kitaev, A. Y. (2003).** {#A.40}
+### 44. **Kitaev, A. Y. (2003).** {#A.44}
 **"Fault-tolerant quantum computation by anyons"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
 
@@ -13344,7 +13305,7 @@ Kitaev's toric code is the foremost conceptual model for the stabilizer-protecte
 
 ---
 
-### 41. **Lamport, L. (1978).** {#A.41}
+### 46. **Lamport, L. (1978).** {#A.46}
 **"Time, clocks, and the ordering of events in a distributed system"**
     * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
@@ -13357,7 +13318,7 @@ Lamport's logical clock formalism is the starting point for the dual-time archit
 
 ---
 
-### 42. **Landauer, R. (1991).** {#A.42}
+### 47. **Landauer, R. (1991).** {#A.47}
 **"Information is Physical"**
     * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
 
@@ -13370,7 +13331,7 @@ This physical principle is foundational for the dynamical rewrite engine formula
 
 ---
 
-### 45. **Maldacena, J. M. (1998).** {#A.45}
+### 50. **Maldacena, J. M. (1998).** {#A.50}
 **"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
@@ -13383,33 +13344,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 
 ---
 
-### 47. **Mousa, M., Jamadagni, A., et al. (2025).** {#A.47}
-**"Pauli Stabilizer Models for Gapped Boundaries of Twisted Quantum Doubles and Applications to Composite Dimensional Codes"**
-    * **Link:** [https://arxiv.org/abs/2508.19245](https://arxiv.org/abs/2508.19245)
-
-
-**Overview:**
-Mousa and his collaborators construct Pauli stabilizer models to describe the gapped boundaries of twisted quantum double models. They show how these boundary stabilizers can be utilized to construct composite dimensional error-correcting codes, providing robust protection against local noise in topologically ordered systems.
-
-**Relevance to QBD:**
-This recent stabilizer model is vital for the boundary protection theories developed in Chapter 10. In QBD, the tripartite braid configurations must remain stable near the boundaries of the causal graph. Mousa's algebraic machinery supports the construction of stable boundary stabilizers on the graph, confirming that our topological qubits remain protected even in the presence of edge boundaries.
-
----
-
-### 57. **Rodrigues, F. L. S., & Lutz, E. (2025).** {#A.57}
-**"Far-from-equilibrium thermodynamics of non-Abelian thermal states"**
-    * **Link:** [https://arxiv.org/abs/2510.04788](https://arxiv.org/abs/2510.04788)
-
-
-**Overview:**
-Rodrigues and Lutz develop a thermodynamic treatment of non-Abelian thermal states in systems operating far from equilibrium. They derive key fluctuation relations and entropy production bounds that govern how non-Abelian gauge configurations thermalize and dissipate energy under non-equilibrium conditions.
-
-**Relevance to QBD:**
-This non-equilibrium thermodynamic analysis is indispensable for the non-Abelian gauge models developed in Chapter 8. In QBD, the tripartite braids operate as non-Abelian states that undergo far-from-equilibrium updates during the transition cycles. The thermodynamic bounds derived here are used to analyze the stability of these non-Abelian states against runaway vacuum dissipation.
-
----
-
-### 61. **Sachs, H. (1962).** {#A.61}
+### 66. **Sachs, H. (1962).** {#A.66}
 **"Über selbstkomplementäre Graphen"**
 - *Publicationes Mathematicae Debrecen*, 9, 270-288
     * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
@@ -13423,7 +13358,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 
 ---
 
-### 62. **Sati, H., & Schreiber, U. (2025).** {#A.62}
+### 68. **Sati, H., & Schreiber, U. (2025).** {#A.68}
 **"The quantum monadology"**
     * **Link:** [https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf](https://ncatlab.org/schreiber/files/QuantumMonadology-250718.pdf)
 
@@ -13436,20 +13371,7 @@ This categorical formulation is indispensable for the relational model defined i
 
 ---
 
-### 65. **Steinberg, M. et al. (2025).** {#A.65}
-**"Universal Fault-Tolerant Logic with Heterogeneous Holographic Codes"**
-    * **Link:** [https://arxiv.org/abs/2504.10386](https://arxiv.org/abs/2504.10386)
-
-
-**Overview:**
-Steinberg and his collaborators construct heterogeneous holographic codes, a class of tensor network error-correcting codes that support universal fault-tolerant logical gates. They prove that these codes provide robust bulk topological protection while maintaining universal logical operations, solving a major bottleneck in holographic quantum error correction.
-
-**Relevance to QBD:**
-This holographic code model is indispensable for the logical gate simulations conducted in Chapter 10. In QBD, the tripartite braid configurations behave as bulk topological qubits that must support fault-tolerant logical operations under local graph updates. Steinberg's construction provides the theoretical setting used to model these operations as holographic gates, demonstrating that our particles are universal qubits.
-
----
-
-### 68. **van Kampen, N. G. (1992).** {#A.68}
+### 75. **van Kampen, N. G. (1992).** {#A.75}
 **"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
 - *North-Holland*
     * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
@@ -13463,7 +13385,7 @@ This textbook is the direct reference for the stochastic master equations formul
 
 ---
 
-### 70. **Verlinde, E. (2011).** {#A.70}
+### 77. **Verlinde, E. (2011).** {#A.77}
 **"On the Origin of Gravity and the Laws of Newton"**
     * **Link:** [https://arxiv.org/abs/1001.0785](https://arxiv.org/abs/1001.0785)
 
@@ -13476,7 +13398,7 @@ Verlinde's entropic gravity is a central conceptual foundation for the discrete 
 
 ---
 
-### 73. **Wilson, K. G. (1975).** {#A.73}
+### 80. **Wilson, K. G. (1975).** {#A.80}
 **"The renormalization group: Critical phenomena and the Kondo problem"**
     * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
 
@@ -13489,7 +13411,7 @@ The renormalization group is the main tool used to calculate the continuum limit
 
 ---
 
-### 74. **Witten, E. (1989).** {#A.74}
+### 81. **Witten, E. (1989).** {#A.81}
 **"Quantum Field Theory and the Jones Polynomial"**
     * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
 

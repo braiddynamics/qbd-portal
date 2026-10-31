@@ -2638,20 +2638,7 @@ This reference is integral to the random graph audits conducted in Chapter 5. To
 
 ---
 
-### 20. **Coleman, S. (1977).** {#A.20}
-**"The Uses of Instantons"**
-    * **Link:** [http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf](http://www.physics.mcgill.ca/~jcline/742/Coleman-Instantons.pdf)
-
-
-**Overview:**
-Coleman presents a set of lectures on the role of instantons, which are classical solutions to the equations of motion in Euclidean spacetime. He explains how these non-perturbative configurations correspond to quantum tunneling events between different vacuum states, documenting the physical basis for non-abelian gauge vacuum structure.
-
-**Relevance to QBD:**
-Instantons are the continuous analogs of the non-perturbative transition operations that drive gauge dynamics in Chapter 8. In QBD, the tunneling of a tripartite braid between different topological phases corresponds to a discrete instanton-like event in the causal history. Coleman's lectures are cited to draw this physical analogy, grounding why non-abelian gauge structures emerge from topological updates.
-
----
-
-### 36. **Jacobson, T. (1995).** {#A.36}
+### 38. **Jacobson, T. (1995).** {#A.38}
 **"Thermodynamics of Spacetime: The Einstein Equation of State"**
     * **Link:** [https://arxiv.org/abs/gr-qc/9504004](https://arxiv.org/abs/gr-qc/9504004)
 
@@ -2664,7 +2651,7 @@ Jacobson's emergent gravity derivation is a key physical pillar for the geometro
 
 ---
 
-### 38. **Jones, V. F. R. (1985).** {#A.38}
+### 42. **Jones, V. F. R. (1985).** {#A.42}
 **"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
 
@@ -2677,7 +2664,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 
 ---
 
-### 40. **Kitaev, A. Y. (2003).** {#A.40}
+### 44. **Kitaev, A. Y. (2003).** {#A.44}
 **"Fault-tolerant quantum computation by anyons"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
 
@@ -2690,7 +2677,7 @@ Kitaev's toric code is the foremost conceptual model for the stabilizer-protecte
 
 ---
 
-### 41. **Lamport, L. (1978).** {#A.41}
+### 46. **Lamport, L. (1978).** {#A.46}
 **"Time, clocks, and the ordering of events in a distributed system"**
     * **Link:** [https://doi.org/10.1145/359545.359563](https://doi.org/10.1145/359545.359563)
 
@@ -2703,7 +2690,7 @@ Lamport's logical clock formalism is the starting point for the dual-time archit
 
 ---
 
-### 42. **Landauer, R. (1991).** {#A.42}
+### 47. **Landauer, R. (1991).** {#A.47}
 **"Information is Physical"**
     * **Link:** [https://doi.org/10.1063/1.881299](https://doi.org/10.1063/1.881299)
 
@@ -2716,7 +2703,7 @@ This physical principle is foundational for the dynamical rewrite engine formula
 
 ---
 
-### 45. **Maldacena, J. M. (1998).** {#A.45}
+### 50. **Maldacena, J. M. (1998).** {#A.50}
 **"The Large N Limit of Superconformal Field Theories and Supergravity"**
     * **Link:** [https://arxiv.org/abs/hep-th/9711200](https://arxiv.org/abs/hep-th/9711200)
 
@@ -2729,20 +2716,7 @@ This seminal duality provides the central conceptual paradigm for the holographi
 
 ---
 
-### 57. **Rodrigues, F. L. S., & Lutz, E. (2025).** {#A.57}
-**"Far-from-equilibrium thermodynamics of non-Abelian thermal states"**
-    * **Link:** [https://arxiv.org/abs/2510.04788](https://arxiv.org/abs/2510.04788)
-
-
-**Overview:**
-Rodrigues and Lutz develop a thermodynamic treatment of non-Abelian thermal states in systems operating far from equilibrium. They derive key fluctuation relations and entropy production bounds that govern how non-Abelian gauge configurations thermalize and dissipate energy under non-equilibrium conditions.
-
-**Relevance to QBD:**
-This non-equilibrium thermodynamic analysis is indispensable for the non-Abelian gauge models developed in Chapter 8. In QBD, the tripartite braids operate as non-Abelian states that undergo far-from-equilibrium updates during the transition cycles. The thermodynamic bounds derived here are used to analyze the stability of these non-Abelian states against runaway vacuum dissipation.
-
----
-
-### 73. **Wilson, K. G. (1975).** {#A.73}
+### 80. **Wilson, K. G. (1975).** {#A.80}
 **"The renormalization group: Critical phenomena and the Kondo problem"**
     * **Link:** [https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.47.773)
 

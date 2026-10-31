@@ -2721,20 +2721,7 @@ Within Quantum Braid Dynamics, this algebraic mapping is pivotal for formalizing
 
 ---
 
-### 16. **Bondy, J. A., & Murty, U. S. R. (2008).** {#A.16}
-**"Graph Theory"**
-    * **Link:** [https://link.springer.com/book/9781846289699](https://link.springer.com/book/9781846289699)
-
-
-**Overview:**
-Bondy and Murty present a modern, graduate-level textbook on graph theory. They cover connectivity, matchings, independent sets, graph colorings, and topological graph theory. Their work provides a thorough and comprehensive collection of tools used to analyze discrete relational networks.
-
-**Relevance to QBD:**
-This textbook serves as the standard reference for all graph-theoretic operations conducted across the monograph. Whether analyzing the path length between vertices in Chapter 11 or evaluating the cycle structure of braids in Chapter 6, the theorems and notations of Bondy and Murty ensure that our discrete derivations are mathematically sound.
-
----
-
-### 38. **Jones, V. F. R. (1985).** {#A.38}
+### 42. **Jones, V. F. R. (1985).** {#A.42}
 **"A polynomial invariant for knots via a von Neumann algebra"**
     * **Link:** [https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/](https://www.ams.org/bull/1985-12-01/S0273-0979-1985-15304-2/)
 
@@ -2747,7 +2734,7 @@ The Jones polynomial is the direct topological invariant used to protect the par
 
 ---
 
-### 40. **Kitaev, A. Y. (2003).** {#A.40}
+### 44. **Kitaev, A. Y. (2003).** {#A.44}
 **"Fault-tolerant quantum computation by anyons"**
     * **Link:** [https://arxiv.org/abs/quant-ph/9707021](https://arxiv.org/abs/quant-ph/9707021)
 
@@ -2760,21 +2747,7 @@ Kitaev's toric code is the foremost conceptual model for the stabilizer-protecte
 
 ---
 
-### 61. **Sachs, H. (1962).** {#A.61}
-**"Über selbstkomplementäre Graphen"**
-- *Publicationes Mathematicae Debrecen*, 9, 270-288
-    * **Link:** [https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf](https://scispace.com/pdf/uber-selbstkomplementare-graphen-2cpuwz9n.pdf)
-
-
-**Overview:**
-Sachs presents the foundational work on self-complementary graphs, which are graphs that are isomorphic to their own complement. He derives key algebraic properties and structural constraints that govern the distribution of edges in these graphs, establishing precise bounds on their cycle structure.
-
-**Relevance to QBD:**
-This reference is necessary for the tripartite braid audits conducted in Chapter 6. We model the stable particle braids using self-complementary topological configurations. Sachs's structural constraints confirm that these self-complementary configurations are protected from untying by local graph updates, supporting the stability of fermions.
-
----
-
-### 68. **van Kampen, N. G. (1992).** {#A.68}
+### 75. **van Kampen, N. G. (1992).** {#A.75}
 **"Stochastic Processes in Physics and Chemistry (2nd ed.)"**
 - *North-Holland*
     * **Link:** [https://books.google.com/books?id=N6II-6HlPxEC](https://books.google.com/books?id=N6II-6HlPxEC)
@@ -2788,7 +2761,7 @@ This textbook is the direct reference for the stochastic master equations formul
 
 ---
 
-### 74. **Witten, E. (1989).** {#A.74}
+### 81. **Witten, E. (1989).** {#A.81}
 **"Quantum Field Theory and the Jones Polynomial"**
     * **Link:** [https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-121/issue-3/Quantum-field-theory-and-the-Jones-polynomial/cmp/1104178138.full)
 
