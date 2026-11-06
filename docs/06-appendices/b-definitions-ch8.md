@@ -151,21 +151,318 @@ Section 8.1.4.1 formalizes the properties of the QBD proof regarding yang-baxter
 :::tip[**Construction of Lie Algebra Generator via Explicit Identities**]
 :::
 
-**I. Physical Domain**
+**I. Common Eigenvectors Within One Continuous Group**
 
-The unitary process and its invariant sector are specified inputs. A strongly continuous one-parameter group supplies the hypotheses for the generator statement. Discrete rewrite compositions have the specified braid-group interpretation (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />).
+Let $U:\mathbb R\to U(d)$ be strongly continuous, with
 
-**II. Generator and Discrete Logarithm**
+$$
+U(0)=I,\qquad U(s+t)=U(s)U(t),\qquad U(t)^\dagger U(t)=I.
+$$
 
-The finite-dimensional spectral form gives $U(t)=\exp(i tH)$ with Hermitian $H$. A fixed discrete unitary permits eigenphase branches differing by integer multiples of $2\pi$; a prescribed branch removes that ambiguity.
+The admitted discrete rewrites act on the same finite sector (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). For this fixed continuous group,
 
-**III. Rewrite Relations**
+$$
+U(s)U(t)=U(s+t)=U(t+s)=U(t)U(s),\qquad
+U(t)U(t)^\dagger=U(t)^\dagger U(t)=I.
+$$
 
-**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" /> and **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" /> constrain compositions, without establishing faithful finite matrix representation or physical availability of a new generator.
+For $d=1$, $U(t)$ is a scalar. Assume simultaneous unitary diagonalization holds for commuting unitary families in every dimension less than $d$. If all $U(t)$ are scalar, any orthonormal basis diagonalizes the family. Otherwise choose a nonscalar $U(t_*)$, with spectral decomposition
 
-**IV. Conclusion**
+$$
+\begin{gathered}
+U(t_*)=\sum_{r=1}^m\lambda_rP_r,\qquad m\ge2,\qquad
+P_r^\dagger=P_r,\quad P_rP_s=\delta_{rs}P_r,\quad\sum_rP_r=I,\\
+P_r=\prod_{s\ne r}\frac{U(t_*)-\lambda_sI}{\lambda_r-\lambda_s},\qquad
+1\le d_r=\operatorname{rank}P_r<d,\quad\sum_rd_r=d.
+\end{gathered}
+$$
 
-The generator is defined for the admitted unitary group. Generation of a particular compact algebra from specified matrix inputs is established separately in the adjacent-generator section.
+For every $t$,
+
+$$
+\begin{aligned}
+U(t)P_r
+&=U(t)\prod_{s\ne r}\frac{U(t_*)-\lambda_sI}{\lambda_r-\lambda_s}\\
+&=\prod_{s\ne r}\frac{U(t_*)-\lambda_sI}{\lambda_r-\lambda_s}U(t)=P_rU(t),\\
+U(t)(\operatorname{im}P_r)&\subseteq\operatorname{im}P_r,\\
+(P_rU(t)P_r)^\dagger(P_rU(t)P_r)
+&=P_rU(t)^\dagger P_rU(t)P_r=P_r.
+\end{aligned}
+$$
+
+The restricted commuting families have dimensions $d_r<d$. By the induction hypothesis,
+
+$$
+U(t)|_{\operatorname{im}P_r}=V_r\operatorname{diag}(\chi_{r,1}(t),\ldots,\chi_{r,d_r}(t))V_r^\dagger.
+$$
+
+Define $V=\bigoplus_rV_r$. Then
+
+$$
+V^\dagger V=\bigoplus_r(V_r^\dagger V_r)=\bigoplus_r I_{d_r}=I_d,
+$$
+
+and
+
+$$
+U(t)=V\operatorname{diag}(\chi_1(t),\ldots,\chi_d(t))V^\dagger,
+\qquad |\chi_j(t)|=1,\quad
+\chi_j(s+t)=\chi_j(s)\chi_j(t),\quad\chi_j(0)=1.
+$$
+
+The scalar group equations follow entrywise from
+
+$$
+\begin{aligned}
+\operatorname{diag}(\chi_j(s+t))
+&=V^\dagger U(s+t)V=V^\dagger U(s)U(t)V\\
+&=(V^\dagger U(s)V)(V^\dagger U(t)V)
+=\operatorname{diag}(\chi_j(s))\operatorname{diag}(\chi_j(t)),\\
+\operatorname{diag}(\chi_j(0))&=V^\dagger I V=I_d.
+\end{aligned}
+$$
+
+**II. Continuous Scalar Characters**
+
+Fix $j$. Since $\chi_j(0)=1$, continuity gives $\delta>0$ such that
+
+$$
+|t|<\delta\ \Longrightarrow\ |\chi_j(t)-1|<\tfrac12
+\ \Longrightarrow\ \operatorname{Re}\chi_j(t)>\tfrac12.
+$$
+
+For $|t|<\delta$, define the continuous real function
+
+$$
+\theta(t)=\arctan\!\left(\frac{\operatorname{Im}\chi_j(t)}{\operatorname{Re}\chi_j(t)}\right).
+$$
+
+Because $|\chi_j(t)|^2=(\operatorname{Re}\chi_j(t))^2+(\operatorname{Im}\chi_j(t))^2=1$ and the real part is positive,
+
+$$
+\begin{aligned}
+\cos\theta(t)&=\frac{\operatorname{Re}\chi_j(t)}{|\chi_j(t)|}=\operatorname{Re}\chi_j(t),\\
+\sin\theta(t)&=\frac{\operatorname{Im}\chi_j(t)}{|\chi_j(t)|}=\operatorname{Im}\chi_j(t),\\
+e^{i\theta(t)}&=\operatorname{Re}\chi_j(t)+i\operatorname{Im}\chi_j(t)=\chi_j(t),\\
+\theta(0)&=\arctan0=0,\\
+\cos\theta(t)>\tfrac12,\quad\theta(t)\in(-\pi/2,\pi/2)
+&\ \Longrightarrow\ |\theta(t)|<\arccos(1/2)=\pi/3.
+\end{aligned}
+$$
+
+For $|s|,|t|,|s+t|<\delta$,
+
+$$
+\begin{aligned}
+e^{i(\theta(s+t)-\theta(s)-\theta(t))}
+&=\frac{\chi_j(s+t)}{\chi_j(s)\chi_j(t)}=1,\\
+\theta(s+t)-\theta(s)-\theta(t)&\in2\pi\mathbb Z,\\
+|\theta(s+t)-\theta(s)-\theta(t)|
+&\le|\theta(s+t)|+|\theta(s)|+|\theta(t)|<\pi,\\
+\theta(s+t)&=\theta(s)+\theta(t),\qquad\theta(-t)=-\theta(t).
+\end{aligned}
+$$
+
+Choose $0<t_0<\delta$. For $n\ge1$, put $u=t_0/n$. Summing the local additive increments gives
+
+$$
+\begin{aligned}
+\theta(t_0)
+&=\sum_{\ell=1}^n\bigl(\theta(\ell u)-\theta((\ell-1)u)\bigr)
+=\sum_{\ell=1}^n\theta(u)=n\theta(t_0/n),\\
+\theta(t_0/n)&=\theta(t_0)/n,\\
+\theta(mt_0/n)
+&=\sum_{\ell=1}^m\bigl(\theta(\ell t_0/n)-\theta((\ell-1)t_0/n)\bigr)\\
+&=\sum_{\ell=1}^m\theta(t_0/n)
+=m\theta(t_0/n)=(m/n)\theta(t_0)
+\quad(m\ge0,\ mt_0/n<\delta),\\
+\theta(mt_0/n)
+&=-\theta((-m)t_0/n)
+=-((-m)/n)\theta(t_0)=(m/n)\theta(t_0)
+\quad(m<0,\ |mt_0/n|<\delta).
+\end{aligned}
+$$
+
+For $|t|<\delta$, define
+
+$$
+q_\ell=2^{-\ell}\left\lfloor2^\ell\frac{t}{t_0}\right\rfloor\in\mathbb Q.
+$$
+
+The floor inequalities give
+
+$$
+\begin{aligned}
+\left\lfloor2^\ell\frac{t}{t_0}\right\rfloor
+&\le2^\ell\frac{t}{t_0}
+<\left\lfloor2^\ell\frac{t}{t_0}\right\rfloor+1,\\
+q_\ell&\le t/t_0<q_\ell+2^{-\ell},\\
+0&\le t-q_\ell t_0<t_0\,2^{-\ell}\longrightarrow0.
+\end{aligned}
+$$
+
+For all sufficiently large $\ell$, $t_0\,2^{-\ell}<\delta-|t|$, so
+
+$$
+|q_\ell t_0|\le|t|+|q_\ell t_0-t|<|t|+\delta-|t|=\delta.
+$$
+
+Hence
+
+$$
+\theta(t)=\lim_{\ell\to\infty}\theta(q_\ell t_0)
+=\lim_{\ell\to\infty}q_\ell\theta(t_0)
+=\frac{\theta(t_0)}{t_0}t=\lambda_jt,
+\qquad\lambda_j\in\mathbb R.
+$$
+
+For arbitrary $t\in\mathbb R$, choose $N\ge1$ with $|t/N|<\delta$. The group law now gives
+
+$$
+\chi_j(t)=\prod_{r=1}^N\chi_j(t/N)
+=\prod_{r=1}^Ne^{i\lambda_jt/N}
+=e^{i\lambda_jt}.
+$$
+
+**III. Construction and Uniqueness of the Generator**
+
+Define $H=V\operatorname{diag}(\lambda_1,\ldots,\lambda_d)V^\dagger$. Then
+
+$$
+\begin{aligned}
+H^\dagger&=V\operatorname{diag}(\overline{\lambda_1},\ldots,\overline{\lambda_d})V^\dagger=H,\\
+H^0&=I=V I V^\dagger,\\
+H^m=V\Lambda^mV^\dagger
+&\ \Longrightarrow\ H^{m+1}
+=V\Lambda^mV^\dagger V\Lambda V^\dagger
+=V\Lambda^{m+1}V^\dagger,\qquad
+\Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_d),\\
+e^{itH}
+&=\sum_{m=0}^\infty\frac{(it)^m}{m!}H^m\\
+&=V\operatorname{diag}\!\left(\sum_{m=0}^\infty\frac{(it\lambda_1)^m}{m!},\ldots,
+\sum_{m=0}^\infty\frac{(it\lambda_d)^m}{m!}\right)V^\dagger\\
+&=V\operatorname{diag}(e^{i\lambda_1t},\ldots,e^{i\lambda_dt})V^\dagger=U(t).
+\end{aligned}
+$$
+
+The derivative at zero follows from
+
+$$
+\begin{aligned}
+\left\|\frac{e^{itH}-I}{t}-iH\right\|
+&\le\sum_{m=2}^\infty\frac{|t|^{m-1}\|H\|^m}{m!}\\
+&\le\frac{|t|\|H\|^2}{2}\sum_{r=0}^\infty\frac{|t|^r\|H\|^r}{r!}
+=\frac{|t|\|H\|^2}{2}e^{|t|\|H\|}\longrightarrow0.
+\end{aligned}
+$$
+
+If $e^{itH'}=U(t)$ for all $t$, the same estimate for $H'$ gives
+
+$$
+iH=\lim_{t\to0}\frac{U(t)-I}{t}=iH',\qquad H=H'.
+$$
+
+**IV. Logarithms of a Single Update**
+
+Let $R=\sum_r e^{i\vartheta_r}P_r$ be one unitary update, with distinct eigenvalues and $\vartheta_r\in(-\pi,\pi]$. For integers $m_r$,
+
+$$
+\begin{aligned}
+H_{\boldsymbol m}&=\sum_r(\vartheta_r+2\pi m_r)P_r,
+&H_{\boldsymbol m}^\dagger&=H_{\boldsymbol m},\\
+e^{iH_{\boldsymbol m}}
+&=\sum_re^{i(\vartheta_r+2\pi m_r)}P_r
+=\sum_re^{i\vartheta_r}P_r=R.
+\end{aligned}
+$$
+
+For a Hermitian $K$ with $e^{iK}=R$,
+
+$$
+[K,R]=\sum_{m=0}^\infty\frac{i^m}{m!}(KK^m-K^mK)=0,
+\qquad KP_r=P_rK.
+$$
+
+On an eigenvector of $K|_{\operatorname{im}P_r}$ with eigenvalue $\kappa$,
+
+$$
+e^{i\kappa}=e^{i\vartheta_r}\ \Longrightarrow\ \kappa-\vartheta_r\in2\pi\mathbb Z.
+$$
+
+If also $\kappa\in(-\pi,\pi]$, then $-2\pi<\kappa-\vartheta_r<2\pi$, so
+
+$$
+\kappa=\vartheta_r,\qquad K|_{\operatorname{im}P_r}=\vartheta_r I,
+\qquad K=\sum_r\vartheta_rP_r=H_{\boldsymbol0}.
+$$
+
+**V. Generated Real Lie Algebra**
+
+For the admitted generators $H_a$, let
+
+$$
+L_0=\operatorname{span}_{\mathbb R}\{iH_a\},\qquad
+L_{m+1}=L_m+\operatorname{span}_{\mathbb R}\{[A,B]:A,B\in L_m\},\qquad
+L=\bigcup_{m=0}^\infty L_m.
+$$
+
+Since $L_m\subseteq L_{m+1}$, for $A\in L_p$, $B\in L_q$ and $k=\max(p,q)$,
+
+$$
+aA+bB\in L_k\subseteq L,\qquad [A,B]\in L_{k+1}\subseteq L\quad(a,b\in\mathbb R).
+$$
+
+The associative products give
+
+$$
+\begin{aligned}
+[aA+bB,C]
+&=(aA+bB)C-C(aA+bB)\\
+&=a(AC-CA)+b(BC-CB)=a[A,C]+b[B,C],\\
+[A,aB+bC]
+&=A(aB+bC)-(aB+bC)A\\
+&=a(AB-BA)+b(AC-CA)=a[A,B]+b[A,C],\\
+[A,B]+[B,A]&=AB-BA+BA-AB=0.
+\end{aligned}
+$$
+
+Also,
+
+$$
+\begin{aligned}
+[A,[B,C]]+[B,[C,A]]+[C,[A,B]]
+&=A B C-A C B-B C A+C B A\\
+&\quad+B C A-B A C-C A B+A C B\\
+&\quad+C A B-C B A-A B C+B A C=0.
+\end{aligned}
+$$
+
+For any real Lie subalgebra $M$ containing the $iH_a$,
+
+$$
+L_0\subseteq M,\qquad
+L_m\subseteq M\ \Longrightarrow\ L_{m+1}\subseteq M+[M,M]\subseteq M,
+\qquad L\subseteq M.
+$$
+
+The discrete relations impose (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />)
+
+$$
+R_iR_j=R_jR_i\ \Longrightarrow\ e^{iH_i}e^{iH_j}=e^{iH_j}e^{iH_i}\quad(|i-j|>1),
+$$
+
+and (**Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />)
+
+$$
+R_iR_{i+1}R_i=R_{i+1}R_iR_{i+1}
+\ \Longrightarrow\
+e^{iH_i}e^{iH_{i+1}}e^{iH_i}=e^{iH_{i+1}}e^{iH_i}e^{iH_{i+1}}.
+$$
+
+$$
+\boxed{U(t)=e^{itH},\quad H^\dagger=H,\quad H\text{ unique for the specified }U(t),\qquad
+L=\operatorname{Lie}_{\mathbb R}\{iH_a\}.}
+$$
 
 Q.E.D.
 
@@ -221,29 +518,78 @@ Section 8.2.3 formalizes the properties of the QBD lemma regarding quadrature ge
 :::tip[**Construction of Quadrature Generation via Explicit Identities**]
 :::
 
-**I. Matrix Units**
+**I. Matrix Units and Initial Operators**
 
-Matrix units satisfy $E_{ab}E_{cd}=\delta_{bc}E_{ad}$. The two initial directions act only on coordinates $k,k+1$.
-
-The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />) (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
-
-**II. Direct Commutator**
-
-Multiplication gives the identity
+Let $a=k$, $b=k+1$, $a\ne b$, and $E_{uv}=|u\rangle\langle v|$ (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />). Define
 
 $$
-[X_k,Z_k]=-2(E_{k,k+1}-E_{k+1,k}).
+\begin{gathered}
+X=E_{ab}+E_{ba},\qquad Z=E_{aa}-E_{bb},\\
+A=iX,\qquad C=iZ,\qquad F=E_{ab}-E_{ba},\qquad Y=-iF,\\
+L=\operatorname{Lie}_{\mathbb R}\{A,C\}.
+\end{gathered}
 $$
 
-Since $i^2=-1$, the commutator of the skew-Hermitian generators has the opposite sign.
+For all $u,v,x,y$,
 
-**III. Real Rescaling**
+$$
+E_{uv}E_{xy}
+=|u\rangle\langle v|x\rangle\langle y|
+=\langle v|x\rangle|u\rangle\langle y|
+=\delta_{vx}E_{uy}.
+$$
 
-The generated real Lie subalgebra contains $\tfrac12[iX_k,iZ_k]=F_{k,k+1}$. No complex scalar closure is used.
+**II. All Terms of the Two Products**
 
-**IV. Conclusion**
+$$
+\begin{aligned}
+XZ
+&=(E_{ab}+E_{ba})(E_{aa}-E_{bb})\\
+&=E_{ab}E_{aa}-E_{ab}E_{bb}+E_{ba}E_{aa}-E_{ba}E_{bb}\\
+&=\delta_{ba}E_{aa}-\delta_{bb}E_{ab}
++\delta_{aa}E_{ba}-\delta_{ab}E_{bb}\\
+&=0\,E_{aa}-1\,E_{ab}+1\,E_{ba}-0\,E_{bb}\\
+&=-E_{ab}+E_{ba}=-F,
+\end{aligned}
+$$
 
-The adjacent quadrature direction belongs to the same generated real Lie algebra.
+$$
+\begin{aligned}
+ZX
+&=(E_{aa}-E_{bb})(E_{ab}+E_{ba})\\
+&=E_{aa}E_{ab}+E_{aa}E_{ba}-E_{bb}E_{ab}-E_{bb}E_{ba}\\
+&=\delta_{aa}E_{ab}+\delta_{ab}E_{aa}
+-\delta_{ba}E_{bb}-\delta_{bb}E_{ba}\\
+&=1\,E_{ab}+0\,E_{aa}-0\,E_{bb}-1\,E_{ba}\\
+&=E_{ab}-E_{ba}=F.
+\end{aligned}
+$$
+
+**III. Bracket and Real Rescaling**
+
+$$
+\begin{aligned}
+[A,C]
+&=(iX)(iZ)-(iZ)(iX)\\
+&=i^2XZ-i^2ZX=-XZ+ZX\\
+&=-(-E_{ab}+E_{ba})+(E_{ab}-E_{ba})\\
+&=2E_{ab}-2E_{ba}=2F,\\
+\tfrac12[A,C]&=F,\qquad iY=i(-iF)=F.
+\end{aligned}
+$$
+
+$$
+A,C\in L\ \Longrightarrow\ [A,C]\in L
+\ \Longrightarrow\ \tfrac12[A,C]\in L.
+$$
+
+**IV. Derived Adjacent Direction**
+
+The required identity and membership are (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />)
+
+$$
+\boxed{[iX_k,iZ_k]=2F_{k,k+1}=2iY_{k,k+1},\qquad F_{k,k+1}\in L.}
+$$
 
 Q.E.D.
 
@@ -269,27 +615,101 @@ Section 8.2.4 formalizes the properties of the QBD lemma regarding off-diagonal 
 :::tip[**Construction of Off-Diagonal Propagation via Explicit Identities**]
 :::
 
-**I. Initial Adjacency**
+**I. Adjacent Membership**
 
-The adjacent $S_{k,k+1}$ are the exchange generators. The adjacent $F_{k,k+1}$ follow from **Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />.
-
-The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />).
-
-**II. Propagation Identities**
-
-For $p<q<r$, matrix-unit multiplication gives
+Let $L$ be a real Lie subalgebra with
 
 $$
-[F_{pq},F_{qr}]=F_{pr},\qquad [F_{pq},S_{qr}]=S_{pr}.
+F_{j,j+1},S_{j,j+1}\in L\quad(1\le j<n),\qquad
+F_{uv}=E_{uv}-E_{vu},\quad S_{uv}=i(E_{uv}+E_{vu})
 $$
 
-**III. Induction on Separation**
+(**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />). For the enlarged initial family,
 
-The separation-one directions are available. For a separation greater than one, choose $q=r-1$. The identities extend the directions already obtained on the shorter interval by one adjacent edge.
+$$
+S_{j,j+1}=A_j\in L,\qquad
+F_{j,j+1}=\tfrac12[A_j,C_j]\in L
+$$
 
-**IV. Conclusion**
+(**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
 
-Induction supplies both off-diagonal directions for every unordered coordinate pair.
+**II. Four Products Through an Intermediate Coordinate**
+
+Let $p<q<r$. Then $\delta_{pq}=\delta_{pr}=\delta_{qr}=0$, and
+
+$$
+\begin{aligned}
+F_{pq}F_{qr}
+&=E_{pq}E_{qr}-E_{pq}E_{rq}-E_{qp}E_{qr}+E_{qp}E_{rq}\\
+&=\delta_{qq}E_{pr}-\delta_{qr}E_{pq}-\delta_{pq}E_{qr}+\delta_{pr}E_{qq}\\
+&=E_{pr}-0-0+0=E_{pr},\\[2pt]
+F_{qr}F_{pq}
+&=E_{qr}E_{pq}-E_{qr}E_{qp}-E_{rq}E_{pq}+E_{rq}E_{qp}\\
+&=\delta_{rp}E_{qq}-\delta_{rq}E_{qp}-\delta_{qp}E_{rq}+\delta_{qq}E_{rp}\\
+&=0-0-0+E_{rp}=E_{rp}.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+F_{pq}S_{qr}
+&=i(E_{pq}E_{qr}+E_{pq}E_{rq}-E_{qp}E_{qr}-E_{qp}E_{rq})\\
+&=i(\delta_{qq}E_{pr}+\delta_{qr}E_{pq}-\delta_{pq}E_{qr}-\delta_{pr}E_{qq})\\
+&=i(E_{pr}+0-0-0)=iE_{pr},\\[2pt]
+S_{qr}F_{pq}
+&=i(E_{qr}E_{pq}-E_{qr}E_{qp}+E_{rq}E_{pq}-E_{rq}E_{qp})\\
+&=i(\delta_{rp}E_{qq}-\delta_{rq}E_{qp}+\delta_{qp}E_{rq}-\delta_{qq}E_{rp})\\
+&=i(0-0+0-E_{rp})=-iE_{rp}.
+\end{aligned}
+$$
+
+Subtracting the evaluated products gives
+
+$$
+\begin{aligned}
+[F_{pq},F_{qr}]&=E_{pr}-E_{rp}=F_{pr},\\
+[F_{pq},S_{qr}]&=iE_{pr}-(-iE_{rp})=i(E_{pr}+E_{rp})=S_{pr}.
+\end{aligned}
+$$
+
+**III. Separation Induction**
+
+Define
+
+$$
+\mathcal P(d):\quad
+\forall\,1\le p<r\le n,\quad r-p\le d
+\ \Longrightarrow\ F_{pr},S_{pr}\in L.
+$$
+
+The adjacent membership in Section I gives $\mathcal P(1)$. Suppose $\mathcal P(d-1)$ holds, where $2\le d\le n-1$, and fix $r-p=d$. For $q=r-1$,
+
+$$
+q-p=d-1,\qquad r-q=1,\qquad
+F_{pq}\in L,\quad F_{qr},S_{qr}\in L.
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+F_{pr}&=[F_{pq},F_{qr}]\in[L,L]\subseteq L,\\
+S_{pr}&=[F_{pq},S_{qr}]\in[L,L]\subseteq L.
+\end{aligned}
+$$
+
+Together with $\mathcal P(d-1)$, this establishes $\mathcal P(d)$. Thus
+
+$$
+\mathcal P(1)\ \Longrightarrow\ \mathcal P(2)
+\ \Longrightarrow\ \cdots\ \Longrightarrow\ \mathcal P(n-1).
+$$
+
+**IV. All Coordinate Pairs**
+
+$$
+\boxed{F_{pr},S_{pr}\in L\qquad(1\le p<r\le n).}
+$$
 
 Q.E.D.
 
@@ -315,23 +735,87 @@ Section 8.2.5 formalizes the properties of the QBD lemma regarding basis indepen
 :::tip[**Construction of Basis Independence via Explicit Identities**]
 :::
 
-**I. Real Relation**
+**I. Real Coefficient Equation**
 
-Assume a real linear combination of these matrices is zero. Denote the coefficients of $F_{pq},S_{pq},H_p$ by $a_{pq},b_{pq},c_p$.
+Define $H_p=i(E_{pp}-E_{nn})$, $1\le p<n$, with the off-diagonal matrices fixed above (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />). Let
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />) (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />).
+$$
+T=\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})
++\sum_{p=1}^{n-1}c_pH_p=0,
+\qquad a_{pq},b_{pq},c_p\in\mathbb R
+$$
 
-**II. Off-Diagonal Coordinates**
+(**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />).
 
-The upper entry $(p,q)$ is $a_{pq}+ib_{pq}$. Its real and imaginary parts vanish separately, so $a_{pq}=b_{pq}=0$ for every pair.
+**II. Every Upper Coordinate**
 
-**III. Diagonal Coordinates**
+For $u<v$,
 
-For $p<n$, the remaining $(p,p)$ entry is $ic_p$. Hence every $c_p$ vanishes.
+$$
+\begin{aligned}
+T_{uv}
+&=\sum_{p<q}\!\left[
+a_{pq}(\delta_{up}\delta_{vq}-\delta_{uq}\delta_{vp})
++ib_{pq}(\delta_{up}\delta_{vq}+\delta_{uq}\delta_{vp})\right]\\
+&\quad+i\sum_{p<n}c_p(\delta_{up}\delta_{vp}-\delta_{un}\delta_{vn}).
+\end{aligned}
+$$
 
-**IV. Conclusion**
+The index restrictions give
 
-Every coefficient is zero, proving real-linear independence.
+$$
+\delta_{uq}\delta_{vp}\ne0
+\ \Longrightarrow\ u=q,\ v=p
+\ \Longrightarrow\ u=q>p=v,
+$$
+
+contradicting $u<v$. Likewise, $\delta_{up}\delta_{vp}\ne0$ implies $u=p=v$, and $\delta_{un}\delta_{vn}\ne0$ implies $u=n=v$. Therefore
+
+$$
+u<v,\ p<q\ \Longrightarrow\
+\delta_{uq}\delta_{vp}=0,\qquad
+u\ne v\ \Longrightarrow\ \delta_{up}\delta_{vp}=\delta_{un}\delta_{vn}=0.
+$$
+
+Consequently
+
+$$
+\begin{aligned}
+0=T_{uv}
+&=\sum_{p<q}(a_{pq}+ib_{pq})\delta_{up}\delta_{vq}
+=a_{uv}+ib_{uv},\\
+a_{uv}&=\operatorname{Re}0=0,\qquad
+b_{uv}=\operatorname{Im}0=0.
+\end{aligned}
+$$
+
+**III. Every Independent Diagonal Coordinate**
+
+With all $a_{pq}=b_{pq}=0$, for $1\le u<n$,
+
+$$
+\begin{aligned}
+0=T_{uu}
+&=i\sum_{p<n}c_p(\delta_{up}\delta_{up}-\delta_{un}\delta_{un})\\
+&=i\sum_{p<n}c_p\delta_{up}=ic_u,\\
+c_u&=(-i)(ic_u)=(-i)0=0.
+\end{aligned}
+$$
+
+The final diagonal equation is then
+
+$$
+T_{nn}=-i\sum_{p<n}c_p=-i\sum_{p<n}0=0.
+$$
+
+**IV. Independence**
+
+$$
+T=0\ \Longrightarrow\
+(a_{pq},b_{pq},c_p)=(0,0,0)\text{ for all indices},
+\qquad
+\#\{F_{pq},S_{pq},H_p\}=2\binom n2+n-1=n^2-1.
+$$
 
 Q.E.D.
 
@@ -357,23 +841,92 @@ Section 8.2.6 formalizes the properties of the QBD lemma regarding basis complet
 :::tip[**Construction of Basis Completeness via Explicit Identities**]
 :::
 
-**I. Upper Entries**
+**I. Target Conditions and Coefficients**
 
-Let $M^\dagger=-M$ and $\operatorname{Tr}M=0$. Set $a_{pq}=\operatorname{Re}M_{pq}$ and $b_{pq}=\operatorname{Im}M_{pq}$ for $p<q$.
+Let $M\in M_n(\mathbb C)$ satisfy $M^\dagger=-M$ and $\operatorname{Tr}M=0$. Define
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />) (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />).
+$$
+a_{pq}=\operatorname{Re}M_{pq},\quad
+b_{pq}=\operatorname{Im}M_{pq}\quad(p<q),\qquad
+c_p=\operatorname{Im}M_{pp}\quad(p<n)
+$$
 
-**II. Off-Diagonal Reconstruction**
+(**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />). The adjoint equations give
 
-The combination $\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})$ agrees with all upper entries. Skew-Hermiticity forces the lower entries to be the negative conjugates, so they also agree.
+$$
+\overline{M_{qp}}=-M_{pq},\qquad
+M_{qp}=-\overline{M_{pq}},\qquad
+\overline{M_{pp}}=-M_{pp}\ \Longrightarrow\ \operatorname{Re}M_{pp}=0.
+$$
 
-**III. Diagonal Reconstruction**
+Define the proposed reconstruction (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />) by
 
-Each diagonal entry is purely imaginary. Set $c_p=\operatorname{Im}M_{pp}$ for $p<n$. Trace zero forces the last diagonal entry to be $-i\sum_{p<n}c_p$, exactly the last entry of $\sum_{p<n}c_pH_p$.
+$$
+R=\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})+\sum_{p<n}c_pH_p.
+$$
 
-**IV. Conclusion**
+**II. Upper and Lower Entries**
 
-The two combinations reconstruct every entry of $M$, proving spanning.
+For $u<v$, evaluating the matrix-unit entries gives
+
+$$
+\begin{aligned}
+R_{uv}
+&=a_{uv}+ib_{uv}
+=\operatorname{Re}M_{uv}+i\operatorname{Im}M_{uv}=M_{uv},\\
+R_{vu}
+&=-a_{uv}+ib_{uv}
+=-\overline{a_{uv}+ib_{uv}}
+=-\overline{M_{uv}}=M_{vu}.
+\end{aligned}
+$$
+
+**III. All Diagonal Entries**
+
+For $u<n$,
+
+$$
+R_{uu}=ic_u=i\operatorname{Im}M_{uu}=M_{uu}.
+$$
+
+For the remaining coordinate,
+
+$$
+\begin{aligned}
+0=\operatorname{Tr}M
+&=\sum_{u<n}M_{uu}+M_{nn}
+=i\sum_{u<n}c_u+M_{nn},\\
+M_{nn}&=-i\sum_{u<n}c_u=R_{nn}.
+\end{aligned}
+$$
+
+Therefore $(R-M)_{uv}=0$ for $u<v$, for $u>v$, and for $u=v$, giving $R=M$.
+
+**IV. Equality of the Real Span and Target**
+
+For every comparison direction,
+
+$$
+\begin{aligned}
+F_{pq}^\dagger&=E_{qp}-E_{pq}=-F_{pq},
+&\operatorname{Tr}F_{pq}&=0,\\
+S_{pq}^\dagger&=-i(E_{qp}+E_{pq})=-S_{pq},
+&\operatorname{Tr}S_{pq}&=0,\\
+H_p^\dagger&=-i(E_{pp}-E_{nn})=-H_p,
+&\operatorname{Tr}H_p&=i(1-1)=0.
+\end{aligned}
+$$
+
+Thus
+
+$$
+\begin{gathered}
+\operatorname{span}_{\mathbb R}\{F_{pq},S_{pq},H_p\}\subseteq\mathfrak{su}(n),\\
+M=R\in\operatorname{span}_{\mathbb R}\{F_{pq},S_{pq},H_p\}
+\quad(M\in\mathfrak{su}(n)),\\
+\boxed{\operatorname{span}_{\mathbb R}\{F_{pq},S_{pq},H_p\}=\mathfrak{su}(n).}
+\end{gathered}
+$$
 
 Q.E.D.
 
@@ -399,21 +952,71 @@ Section 8.2.7 formalizes the properties of the QBD lemma regarding bounded commu
 :::tip[**Construction of Bounded Commutator Depth via Explicit Identities**]
 :::
 
-**I. Depth Convention**
+**I. Expression Depth**
 
-Assign depth zero to every $iX_k$ and $iZ_k$. Assign a bracket depth $1+\max(d_1,d_2)$ and do not increase depth under real linear combination.
+Define
 
-**II. Adjacent Quadratures**
+$$
+\begin{gathered}
+\delta(A_k)=\delta(C_k)=0,\qquad
+\delta([U,V])=1+\max\{\delta(U),\delta(V)\},\\
+\delta\!\left(\sum_jt_jU_j\right)\le\max_j\delta(U_j)
+\qquad(t_j\in\mathbb R).
+\end{gathered}
+$$
 
-The adjacent $F$ directions have depth one by **Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />.
+The adjacent expressions give (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />)
 
-**III. Interval Bound**
+$$
+\delta(S_{k,k+1})=\delta(A_k)=0,\qquad
+\delta(F_{k,k+1})\le\delta\!\left(\tfrac12[A_k,C_k]\right)=1.
+$$
 
-Extending an interval of separation $d-1$ by an adjacent direction gives separation $d$ at depth at most $d$, using **Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />. The longest interval has separation $n-1$.
+**II. Separation Induction**
 
-**IV. Diagonal Bound**
+Suppose $\delta(F_{p,q-1}),\delta(S_{p,q-1})\le q-p-1$ for $q-p=d\ge2$. The propagation expressions are (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />)
 
-The identity $[F_{pn},S_{pn}]=2H_p$ gives each comparison diagonal at depth at most $n$. Together with the spanning construction this proves the stated finite bound.
+$$
+\begin{aligned}
+\delta(F_{pq})
+&\le\delta([F_{p,q-1},F_{q-1,q}])\\
+&\le1+\max\{d-1,1\}=d,\\
+\delta(S_{pq})
+&\le\delta([F_{p,q-1},S_{q-1,q}])\\
+&\le1+\max\{d-1,0\}=d.
+\end{aligned}
+$$
+
+Together with the adjacent case,
+
+$$
+\delta(F_{pq}),\delta(S_{pq})\le q-p\le n-1
+\qquad(1\le p<q\le n).
+$$
+
+**III. Diagonal Expressions**
+
+For $p<n$,
+
+$$
+\begin{aligned}
+\sum_{k=p}^{n-1}C_k
+&=i\sum_{k=p}^{n-1}(E_{kk}-E_{k+1,k+1})\\
+&=i\left(\sum_{k=p}^{n-1}E_{kk}-\sum_{j=p+1}^{n}E_{jj}\right)\\
+&=i\left(E_{pp}+\sum_{j=p+1}^{n-1}E_{jj}
+-\sum_{j=p+1}^{n-1}E_{jj}-E_{nn}\right)\\
+&=i(E_{pp}-E_{nn})=H_p,\\
+\delta(H_p)&\le\max_{p\le k<n}\delta(C_k)=0.
+\end{aligned}
+$$
+
+**IV. Spanning-Family Bound**
+
+Using the reconstructed spanning family (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />),
+
+$$
+\boxed{\max\{\delta(F_{pq}),\delta(S_{pq}),\delta(H_p)\}\le n-1\le n.}
+$$
 
 Q.E.D.
 
@@ -439,27 +1042,142 @@ Section 8.2.8 formalizes the properties of the QBD lemma regarding swap-only clo
 :::tip[**Twisted Orthogonal Subalgebra via Diagonal Unitary Conjugation**]
 :::
 
-**I. Diagonal Conjugation**
+**I. Entrywise Conjugation**
 
-Set $D=\operatorname{diag}(1,i,\ldots,i^{n-1})$. Then $D^\dagger D=I$ and direct entry evaluation yields
+Let $d_j=i^{j-1}$, $D=\operatorname{diag}(d_1,\ldots,d_n)$ and
+$L_X=\operatorname{Lie}_{\mathbb R}\{iX_k\}$ (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />). Then
 
 $$
-D^\dagger(iX_k)D=-F_{k,k+1}.
+D^\dagger D=DD^\dagger=\operatorname{diag}(|d_1|^2,\ldots,|d_n|^2)=I.
 $$
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />) (**Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" />).
+For $T(M)=D^\dagger M D$,
 
-**II. Upper Containment**
+$$
+\begin{aligned}
+T(M)_{uv}
+&=\sum_{a,b}(D^\dagger)_{ua}M_{ab}D_{bv}\\
+&=\sum_{a,b}\overline{d_u}\delta_{ua}M_{ab}d_v\delta_{bv}
+=\overline{d_u}M_{uv}d_v.
+\end{aligned}
+$$
 
-Real skew-symmetric matrices are closed under real combinations and commutators. The conjugated generated algebra is therefore contained in $\mathfrak{so}(n)$.
+Since $d_{k+1}=id_k$,
 
-**III. Reverse Containment**
+$$
+\begin{aligned}
+T(iX_k)_{k,k+1}&=\overline{d_k}\,i\,(id_k)=-|d_k|^2=-1,\\
+T(iX_k)_{k+1,k}&=\overline{id_k}\,i\,d_k=(-i)\overline{d_k}\,i\,d_k=1,\\
+T(iX_k)_{uv}&=0\quad\bigl((u,v)\notin\{(k,k+1),(k+1,k)\}\bigr),\\
+T(iX_k)&=-E_{k,k+1}+E_{k+1,k}=-F_{k,k+1}.
+\end{aligned}
+$$
 
-The identity $[F_{pq},F_{qr}]=F_{pr}$ produces every real skew-symmetric matrix unit from adjacent ones. These $\binom n2$ matrices are independent and span $\mathfrak{so}(n)$.
+**II. Lie Isomorphism and First Containment**
 
-**IV. Original Diagonal**
+For real $a,b$ and matrices $M,N$,
 
-Diagonal conjugation leaves diagonal entries unchanged. The conjugated algebra has zero diagonal, so the original closure does also. The dimension is exactly $\binom n2$ rather than $n^2-1$.
+$$
+\begin{aligned}
+T(aM+bN)&=aT(M)+bT(N),\\
+T(M)T(N)&=D^\dagger M DD^\dagger N D=D^\dagger MN D=T(MN),\\
+T([M,N])&=T(M)T(N)-T(N)T(M)=[T(M),T(N)],\\
+T^{-1}(K)&=D K D^\dagger.
+\end{aligned}
+$$
+
+Define $\mathfrak s=\{K\in M_n(\mathbb R):K^T=-K\}$. For $K,J\in\mathfrak s$,
+
+$$
+\begin{aligned}
+(aK+bJ)^T&=aK^T+bJ^T=-(aK+bJ),\\
+[K,J]^T&=J^TK^T-K^TJ^T=(-J)(-K)-(-K)(-J)\\
+&=JK-KJ=-[K,J],\\
+\overline{[K,J]}&=[K,J].
+\end{aligned}
+$$
+
+Define $J=\operatorname{Lie}_{\mathbb R}\{-F_{k,k+1}\}$. For $M,N\in L_X$ and real $a,b$,
+
+$$
+aT(M)+bT(N)=T(aM+bN)\in T(L_X),\qquad
+[T(M),T(N)]=T([M,N])\in T(L_X).
+$$
+
+Thus $T(L_X)$ is a real Lie algebra containing $-F_{k,k+1}=T(iX_k)$, and $J\subseteq T(L_X)$. Conversely, for $K_1,K_2\in J$,
+
+$$
+\begin{aligned}
+T^{-1}(aK_1+bK_2)&=aT^{-1}(K_1)+bT^{-1}(K_2),\\
+T^{-1}([K_1,K_2])
+&=D(K_1K_2-K_2K_1)D^\dagger\\
+&=(DK_1D^\dagger)(DK_2D^\dagger)-(DK_2D^\dagger)(DK_1D^\dagger)\\
+&=[T^{-1}(K_1),T^{-1}(K_2)],\\
+T^{-1}(-F_{k,k+1})&=iX_k.
+\end{aligned}
+$$
+
+Therefore $L_X\subseteq T^{-1}(J)$ and $T(L_X)\subseteq J$. Since $\mathfrak s$ is a real Lie algebra containing every $-F_{k,k+1}$,
+
+$$
+J\subseteq T(L_X)\subseteq J\subseteq\mathfrak s,
+\qquad T(L_X)=J\subseteq\mathfrak s.
+$$
+
+**III. Reverse Containment and Independent Coordinates**
+
+Real rescaling gives $F_{k,k+1}\in T(L_X)$. For $q-p=d\ge2$,
+
+$$
+F_{p,q-1}\in T(L_X),\quad F_{q-1,q}\in T(L_X)
+\ \Longrightarrow\ F_{pq}=[F_{p,q-1},F_{q-1,q}]\in T(L_X)
+$$
+
+(**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />). Induction from $d=1$ gives every $F_{pq}$. If $K\in\mathfrak s$,
+
+$$
+K_{pp}=-K_{pp}\ \Longrightarrow\ K_{pp}=0,\qquad K_{qp}=-K_{pq}.
+$$
+
+For $R=\sum_{p<q}K_{pq}F_{pq}$,
+
+$$
+R_{uv}=\begin{cases}K_{uv},&u<v,\\-K_{vu}=K_{uv},&u>v,\\0=K_{uu},&u=v,\end{cases}
+\qquad R=K\in T(L_X).
+$$
+
+Hence $\mathfrak s\subseteq T(L_X)$. Also,
+
+$$
+\sum_{p<q}a_{pq}F_{pq}=0
+\ \Longrightarrow\ \left(\sum_{p<q}a_{pq}F_{pq}\right)_{uv}=a_{uv}=0\quad(u<v).
+$$
+
+Therefore
+
+$$
+T(L_X)=\mathfrak s=\mathfrak{so}(n),\qquad
+\dim_{\mathbb R}L_X=\#\{(p,q):p<q\}=\sum_{p=1}^{n-1}(n-p)=\frac{n(n-1)}2.
+$$
+
+**IV. Original Diagonal and Properness**
+
+For $M\in L_X$,
+
+$$
+0=T(M)_{jj}=\overline{d_j}M_{jj}d_j=|d_j|^2M_{jj}=M_{jj}.
+$$
+
+But
+
+$$
+(iZ_1)_{11}=i\ne0,\qquad iZ_1\in\mathfrak{su}(n),\qquad
+(n^2-1)-\frac{n(n-1)}2=\frac{(n-1)(n+2)}2>0.
+$$
+
+$$
+\boxed{L_X=D\mathfrak{so}(n)D^\dagger\subsetneq\mathfrak{su}(n),\qquad M_{jj}=0\ (M\in L_X).}
+$$
 
 Q.E.D.
 
@@ -473,7 +1191,7 @@ Section 8.2.8.1 formalizes the properties of the QBD proof regarding swap-only c
 :::note[**Verification of Exchange-Only Dimensions via Exact Arithmetic**]
 :::
 
-Verification of the relations established in the **Swap-Only Closure** <Ref id="8.2.8.1" label="§8.2.8.1" /> is based on the following protocols: The stated coordinate domain and hypotheses fix the context of this derivation (**Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" />).
+Verification of the relations established in the **Swap-Only Closure** <Ref id="8.2.8.1" label="§8.2.8.1" /> is based on the following protocols: The input contains the exchange directions alone (**Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" />).
 
 1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
 2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
@@ -562,21 +1280,111 @@ Section 8.2.8.2 formalizes the properties of the QBD calculation regarding excha
 :::tip[**Construction of Adjacent Generator Closure via Explicit Identities**]
 :::
 
-**I. Initial and Derived Directions**
+**I. A Lie Subalgebra Containing the Seed**
 
-The stated result supplies adjacent skew-symmetric directions from the stated exchange and diagonal seed (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />). The stated result supplies all off-diagonal pairs (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />).
+Define $L=\operatorname{Lie}_{\mathbb R}\{A_k,C_k:1\le k<n\}$ and $\mathfrak u_0=\{M:M^\dagger=-M,\ \operatorname{Tr}M=0\}$. For each $k$,
 
-**II. Independent Target Basis**
+$$
+\begin{aligned}
+A_k^\dagger&=-i(E_{k+1,k}+E_{k,k+1})=-A_k,&\operatorname{Tr}A_k&=0,\\
+C_k^\dagger&=-i(E_{kk}-E_{k+1,k+1})=-C_k,&\operatorname{Tr}C_k&=i-i=0.
+\end{aligned}
+$$
 
-The stated result establishes independent real coefficients (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />). The stated result reconstructs the entire target algebra (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />). Each $H_p$ is also obtained from $\tfrac12[F_{pn},S_{pn}]$.
+For $M,N\in\mathfrak u_0$ and $a,b\in\mathbb R$,
 
-**III. Containment and Dimension**
+$$
+\begin{aligned}
+(aM+bN)^\dagger&=aM^\dagger+bN^\dagger=-(aM+bN),\\
+\operatorname{Tr}(aM+bN)&=a\operatorname{Tr}M+b\operatorname{Tr}N=0,\\
+[M,N]^\dagger&=N^\dagger M^\dagger-M^\dagger N^\dagger\\
+&=(-N)(-M)-(-M)(-N)=NM-MN=-[M,N],\\
+\operatorname{Tr}[M,N]
+&=\sum_{u=1}^n\sum_{v=1}^nM_{uv}N_{vu}-\sum_{u=1}^n\sum_{v=1}^nN_{uv}M_{vu}\\
+&=\sum_{u,v}M_{uv}N_{vu}-\sum_{v,u}N_{vu}M_{uv}=0.
+\end{aligned}
+$$
 
-Every seed is traceless and skew-Hermitian, and both properties are preserved by real combinations and commutators. The generated algebra is contained in the target and contains its full basis. Hence equality holds with real dimension $n(n-1)+(n-1)=n^2-1$.
+Thus $L\subseteq\mathfrak u_0=\mathfrak{su}(n)$.
 
-**IV. Depth and Seed Scope**
+**II. Every Basis Direction in the Generated Algebra**
 
-The stated result gives a finite constructive bound (**Bounded Commutator Depth** <Ref id="8.2.7" label="§8.2.7" />). **Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" /> separately establishes why the exchange-only seed cannot replace the enlarged family. The stated enlarged seed therefore generates the entire target algebra.
+The adjacent expressions are (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />)
+
+$$
+S_{k,k+1}=A_k\in L,\qquad F_{k,k+1}=\tfrac12[A_k,C_k]\in L.
+$$
+
+For $q-p\ge2$, the derived products give (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />)
+
+$$
+F_{pq}=[F_{p,q-1},F_{q-1,q}]\in L,\qquad
+S_{pq}=[F_{p,q-1},S_{q-1,q}]\in L.
+$$
+
+For each $p<n$,
+
+$$
+\begin{aligned}
+H_p=\sum_{k=p}^{n-1}C_k
+&=i\left(\sum_{k=p}^{n-1}E_{kk}-\sum_{j=p+1}^{n}E_{jj}\right)\\
+&=i\left(E_{pp}+\sum_{j=p+1}^{n-1}E_{jj}
+-\sum_{j=p+1}^{n-1}E_{jj}-E_{nn}\right)\\
+&=i(E_{pp}-E_{nn})\in L.
+\end{aligned}
+$$
+
+**III. Target Reconstruction and Reverse Containment**
+
+Let $M\in\mathfrak{su}(n)$ and set
+
+$$
+R=\sum_{p<q}\bigl(\operatorname{Re}M_{pq}F_{pq}+\operatorname{Im}M_{pq}S_{pq}\bigr)
++\sum_{p<n}\operatorname{Im}M_{pp}H_p\in L.
+$$
+
+The entry evaluations are (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />)
+
+$$
+R_{uv}=\begin{cases}
+\operatorname{Re}M_{uv}+i\operatorname{Im}M_{uv}=M_{uv},&u<v,\\
+-\operatorname{Re}M_{vu}+i\operatorname{Im}M_{vu}=-\overline{M_{vu}}=M_{uv},&u>v,\\
+i\operatorname{Im}M_{uu}=M_{uu},&u=v<n,\\
+-i\sum_{p<n}\operatorname{Im}M_{pp}=-\sum_{p<n}M_{pp}=M_{nn},&u=v=n.
+\end{cases}
+$$
+
+Therefore $M=R\in L$, giving $\mathfrak{su}(n)\subseteq L$.
+
+**IV. Dimension, Depth and Exchange-Only Subalgebra**
+
+The coefficient equations give (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />)
+
+$$
+\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})+\sum_{p<n}c_pH_p=0
+\ \Longrightarrow\ a_{pq}=b_{pq}=c_p=0.
+$$
+
+Consequently
+
+$$
+\dim_{\mathbb R}L
+=\underbrace{\binom n2}_{F}+\underbrace{\binom n2}_{S}+\underbrace{n-1}_{H}
+=n(n-1)+n-1=n^2-1,
+\qquad \delta(F_{pq}),\delta(S_{pq}),\delta(H_p)\le n
+$$
+
+(**Bounded Commutator Depth** <Ref id="8.2.7" label="§8.2.7" />). The exchange-only comparison is (**Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" />)
+
+$$
+\operatorname{Lie}_{\mathbb R}\{A_k\}=D\mathfrak{so}(n)D^\dagger,
+\qquad \frac{n(n-1)}2<n^2-1.
+$$
+
+$$
+\boxed{\operatorname{Lie}_{\mathbb R}\{A_k,C_k\}=\mathfrak{su}(n),\qquad
+\dim_{\mathbb R}\mathfrak{su}(n)=n^2-1.}
+$$
 
 Q.E.D.
 
@@ -590,7 +1398,7 @@ Section 8.2.9 formalizes the properties of the QBD proof regarding adjacent gene
 :::note[**Verification of Exact Closure for n = 2, 3, 5 via Exact Arithmetic**]
 :::
 
-Verification of the relations established in the **Adjacent Generator Closure** <Ref id="8.2.9" label="§8.2.9" /> is based on the following protocols: The stated coordinate domain and hypotheses fix the context of this derivation (**Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />).
+Verification of the relations established in the **Adjacent Generator Closure** <Ref id="8.2.9" label="§8.2.9" /> is based on the following protocols: The target uses both exchange and diagonal initial directions (**Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />).
 
 1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
 2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
@@ -715,23 +1523,62 @@ Section 8.3.3 formalizes the properties of the QBD lemma regarding basis verific
 :::tip[**Construction of Basis Verification via Explicit Identities**]
 :::
 
-**I. Exchange Entries**
+**I. Initial Matrices**
 
-The upper entries $(1,2)$ and $(2,3)$ independently determine the coefficients of $X_1$ and $X_2$ in any real relation.
+The prescribed seed is (**Tripartite Basis** <Ref id="8.3.1" label="§8.3.1" />)
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Tripartite Basis** <Ref id="8.3.1" label="§8.3.1" />) (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />).
+$$
+X_1=\begin{pmatrix}0&1&0\\1&0&0\\0&0&0\end{pmatrix},\quad
+X_2=\begin{pmatrix}0&0&0\\0&0&1\\0&1&0\end{pmatrix},\quad
+Z_1=\begin{pmatrix}1&0&0\\0&-1&0\\0&0&0\end{pmatrix},\quad
+Z_2=\begin{pmatrix}0&0&0\\0&1&0\\0&0&-1\end{pmatrix}.
+$$
 
-**II. Diagonal Entries**
+Let $a_1,a_2,c_1,c_2\in\mathbb R$ and $T=a_1X_1+a_2X_2+c_1Z_1+c_2Z_2$ (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />).
 
-After these coefficients vanish, the $(1,1)$ and $(3,3)$ entries force the coefficients of $Z_1$ and $Z_2$ to vanish.
+**II. Every Nonzero Position of the Relation**
 
-**III. Target Containment**
+$$
+\begin{aligned}
+T
+&=\begin{pmatrix}0&a_1&0\\a_1&0&0\\0&0&0\end{pmatrix}
++\begin{pmatrix}0&0&0\\0&0&a_2\\0&a_2&0\end{pmatrix}
++\begin{pmatrix}c_1&0&0\\0&-c_1&0\\0&0&0\end{pmatrix}
++\begin{pmatrix}0&0&0\\0&c_2&0\\0&0&-c_2\end{pmatrix}\\
+&=\begin{pmatrix}c_1&a_1&0\\a_1&-c_1+c_2&a_2\\0&a_2&-c_2\end{pmatrix}.
+\end{aligned}
+$$
 
-Each seed is Hermitian and traceless, so multiplication by $i$ places it in the compact real target algebra.
+Thus
 
-**IV. Conclusion**
+$$
+T=0\ \Longrightarrow\
+\begin{cases}
+T_{12}=a_1=0,\\T_{23}=a_2=0,\\T_{11}=c_1=0,\\T_{33}=-c_2=0,
+\end{cases}
+\qquad T_{22}=-0+0=0.
+$$
 
-The specified four directions are independent initial inputs; completeness of their closure is established separately.
+**III. Adjoint and Trace Evaluations**
+
+$$
+\begin{gathered}
+X_1^\dagger=X_1,\quad X_2^\dagger=X_2,\quad Z_1^\dagger=Z_1,\quad Z_2^\dagger=Z_2,\\
+\operatorname{Tr}X_1=\operatorname{Tr}X_2=0+0+0=0,\\
+\operatorname{Tr}Z_1=1-1+0=0,\qquad \operatorname{Tr}Z_2=0+1-1=0,\\
+(iX_k)^\dagger=-iX_k,\quad (iZ_k)^\dagger=-iZ_k,\quad
+\operatorname{Tr}(iX_k)=\operatorname{Tr}(iZ_k)=0.
+\end{gathered}
+$$
+
+If $iT=0$, then $(-i)(iT)=T=0$, so the same coefficient equations apply to the skew-Hermitian seed.
+
+**IV. Independence**
+
+$$
+\boxed{\dim_{\mathbb R}\operatorname{span}\{X_1,X_2,Z_1,Z_2\}
+=\dim_{\mathbb R}\operatorname{span}\{iX_1,iX_2,iZ_1,iZ_2\}=4.}
+$$
 
 Q.E.D.
 
@@ -757,21 +1604,83 @@ Section 8.3.4 formalizes the properties of the QBD lemma regarding commutator ge
 :::tip[**Construction of Commutator Generation via Explicit Identities**]
 :::
 
-**I. Initial Inputs**
+**I. Seed and Real Lie Closure**
 
-The stated result fixes the four independent seed matrices (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />).
+Let $A_1=iX_1$, $A_2=iX_2$, $C_1=iZ_1$, $C_2=iZ_2$ and $L=\operatorname{Lie}_{\mathbb R}\{A_1,A_2,C_1,C_2\}$ (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />). Then
 
-**II. Adjacent Directions**
+$$
+S_{12}=A_1\in L,\qquad S_{23}=A_2\in L.
+$$
 
-The stated result supplies the adjacent skew-symmetric directions from each exchange and its diagonal imbalance (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
+**II. Adjacent Products and Brackets**
 
-**III. Third Pair**
+$$
+\begin{aligned}
+A_1C_1
+&=\begin{pmatrix}0&i&0\\i&0&0\\0&0&0\end{pmatrix}
+\begin{pmatrix}i&0&0\\0&-i&0\\0&0&0\end{pmatrix}
+=\begin{pmatrix}0&i(-i)&0\\i^2&0&0\\0&0&0\end{pmatrix}
+=\begin{pmatrix}0&1&0\\-1&0&0\\0&0&0\end{pmatrix}=F_{12},\\
+C_1A_1
+&=\begin{pmatrix}i&0&0\\0&-i&0\\0&0&0\end{pmatrix}
+\begin{pmatrix}0&i&0\\i&0&0\\0&0&0\end{pmatrix}
+=\begin{pmatrix}0&i^2&0\\(-i)i&0&0\\0&0&0\end{pmatrix}
+=-F_{12},\\
+A_2C_2
+&=\begin{pmatrix}0&0&0\\0&0&i\\0&i&0\end{pmatrix}
+\begin{pmatrix}0&0&0\\0&i&0\\0&0&-i\end{pmatrix}
+=\begin{pmatrix}0&0&0\\0&0&i(-i)\\0&i^2&0\end{pmatrix}=F_{23},\\
+C_2A_2
+&=\begin{pmatrix}0&0&0\\0&i&0\\0&0&-i\end{pmatrix}
+\begin{pmatrix}0&0&0\\0&0&i\\0&i&0\end{pmatrix}
+=\begin{pmatrix}0&0&0\\0&0&i^2\\0&(-i)i&0\end{pmatrix}=-F_{23}.
+\end{aligned}
+$$
 
-The stated result supplies both directions between coordinates one and three (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />).
+Therefore (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />)
 
-**IV. Conclusion**
+$$
+F_{12}=\tfrac12(A_1C_1-C_1A_1)=\tfrac12[A_1,C_1]\in L,\qquad
+F_{23}=\tfrac12[A_2,C_2]\in L.
+$$
 
-All six off-diagonal real directions belong to the generated algebra. No new phase direction is introduced without its initial diagonal input.
+**III. Products on the Third Pair**
+
+$$
+\begin{aligned}
+F_{12}F_{23}
+&=(E_{12}-E_{21})(E_{23}-E_{32})
+=E_{13}-0-0+0=E_{13},\\
+F_{23}F_{12}
+&=(E_{23}-E_{32})(E_{12}-E_{21})
+=0-0-0+E_{31}=E_{31},\\
+F_{12}A_2
+&=(E_{12}-E_{21})i(E_{23}+E_{32})
+=i(E_{13}+0-0-0)=iE_{13},\\
+A_2F_{12}
+&=i(E_{23}+E_{32})(E_{12}-E_{21})
+=i(0-0+0-E_{31})=-iE_{31}.
+\end{aligned}
+$$
+
+It follows that (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />)
+
+$$
+\begin{aligned}
+F_{13}
+&=E_{13}-E_{31}=[F_{12},F_{23}]
+=\tfrac14[[A_1,C_1],[A_2,C_2]]\in L,\\
+S_{13}
+&=iE_{13}+iE_{31}=[F_{12},A_2]
+=\tfrac12[[A_1,C_1],A_2]\in L.
+\end{aligned}
+$$
+
+**IV. Six Off-Diagonal Directions**
+
+$$
+\boxed{\{F_{12},S_{12},F_{13},S_{13},F_{23},S_{23}\}\subseteq L.}
+$$
 
 Q.E.D.
 
@@ -797,21 +1706,91 @@ Section 8.3.5 formalizes the properties of the QBD lemma regarding algebraic clo
 :::tip[**Construction of Algebraic Closure via Explicit Identities**]
 :::
 
-**I. Represented Directions**
+**I. Generated Linear Combination**
 
-The stated result supplies all off-diagonal pairs, while the initial diagonal differences span the two-dimensional Cartan sector (**Commutator Generation** <Ref id="8.3.4" label="§8.3.4" />).
+The six generated off-diagonal matrices lie in $L$ (**Commutator Generation** <Ref id="8.3.4" label="§8.3.4" />). Define $z_{pq}=a_{pq}+ib_{pq}$ and
 
-**II. Independence**
+$$
+\begin{aligned}
+R&=\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})+\alpha C_1+\beta C_2\\
+&=\begin{pmatrix}
+i\alpha&z_{12}&z_{13}\\
+-\overline{z_{12}}&i(-\alpha+\beta)&z_{23}\\
+-\overline{z_{13}}&-\overline{z_{23}}&-i\beta
+\end{pmatrix}\in L,
+\qquad a_{pq},b_{pq},\alpha,\beta\in\mathbb R.
+\end{aligned}
+$$
 
-The stated result gives eight independent real directions at three coordinates (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />).
+**II. Independence of the Eight Coefficients**
 
-**III. Completeness**
+The upper-coordinate equations are (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />)
 
-The stated result reconstructs the target algebra (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />). **Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" /> therefore applies directly to this seed.
+$$
+R=0\ \Longrightarrow\
+z_{12}=z_{13}=z_{23}=0
+\ \Longrightarrow\ a_{12}=b_{12}=a_{13}=b_{13}=a_{23}=b_{23}=0.
+$$
 
-**IV. Conclusion**
+The remaining equations are
 
-The closure has real dimension eight and equals $\mathfrak{su}(3)$. Exchanges alone would instead have dimension three.
+$$
+R_{11}=i\alpha=0\ \Longrightarrow\alpha=0,\qquad
+R_{33}=-i\beta=0\ \Longrightarrow\beta=0,
+\qquad R_{22}=i(-0+0)=0.
+$$
+
+**III. Reconstructing All Nine Matrix Entries**
+
+Let $M\in\mathfrak{su}(3)$. Then
+
+$$
+M=\begin{pmatrix}
+ix&M_{12}&M_{13}\\
+-\overline{M_{12}}&iy&M_{23}\\
+-\overline{M_{13}}&-\overline{M_{23}}&iz
+\end{pmatrix},\qquad x,y,z\in\mathbb R,\quad x+y+z=0.
+$$
+
+Set
+
+$$
+a_{pq}=\operatorname{Re}M_{pq},\quad b_{pq}=\operatorname{Im}M_{pq},\quad
+\alpha=x,\quad\beta=x+y=-z.
+$$
+
+Substitution into $R$ gives (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />)
+
+$$
+\begin{aligned}
+R
+&=\begin{pmatrix}
+ix&M_{12}&M_{13}\\
+-\overline{M_{12}}&i(-x+x+y)&M_{23}\\
+-\overline{M_{13}}&-\overline{M_{23}}&-i(x+y)
+\end{pmatrix}\\
+&=\begin{pmatrix}
+ix&M_{12}&M_{13}\\
+-\overline{M_{12}}&iy&M_{23}\\
+-\overline{M_{13}}&-\overline{M_{23}}&iz
+\end{pmatrix}=M.
+\end{aligned}
+$$
+
+Thus $\mathfrak{su}(3)\subseteq L$. Conversely each seed is traceless and skew-Hermitian; for $U,V$ with those properties,
+
+$$
+[U,V]^\dagger=(-V)(-U)-(-U)(-V)=-[U,V],\qquad
+\operatorname{Tr}[U,V]=\sum_{p,q}U_{pq}V_{qp}-\sum_{q,p}V_{qp}U_{pq}=0.
+$$
+
+Real combinations retain both properties, so $L\subseteq\mathfrak{su}(3)$.
+
+**IV. Algebra and Dimension**
+
+$$
+\boxed{L=\mathfrak{su}(3),\qquad\dim_{\mathbb R}L=\underbrace{3+3}_{\text{off-diagonal}}+\underbrace{2}_{\text{diagonal}}=8.}
+$$
 
 Q.E.D.
 
@@ -825,7 +1804,7 @@ Section 8.3.5.1 formalizes the properties of the QBD proof regarding algebraic c
 :::note[**Verification of Exact Four-Generator SU(3) Closure via Exact Arithmetic**]
 :::
 
-Verification of the relations established in the **Algebraic Closure** <Ref id="8.3.5.1" label="§8.3.5.1" /> is based on the following protocols: The stated coordinate domain and hypotheses fix the context of this derivation (**Algebraic Closure** <Ref id="8.3.5" label="§8.3.5" />).
+Verification of the relations established in the **Algebraic Closure** <Ref id="8.3.5.1" label="§8.3.5.1" /> is based on the following protocols: The input is the specified four-direction tripartite seed (**Tripartite Basis** <Ref id="8.3.1" label="§8.3.1" />).
 
 1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
 2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
@@ -1046,21 +2025,89 @@ Section 8.3.6.2 formalizes the properties of the QBD calculation regarding flux 
 :::tip[**Construction of Color Symmetry Emergence via Explicit Identities**]
 :::
 
-**I. Initial Representation**
+**I. Admitted Restricted Seed**
 
-The stated result identifies the stated tripartite seed under the physical control assumptions (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />).
+Let $W_3^\dagger W_3=I_3$, $\pi_3(A)=W_3^\dagger A W_3$, and assume
 
-**II. Generation and Closure**
+$$
+\widehat A_kW_3=W_3A_k,\qquad\widehat C_kW_3=W_3C_k,\qquad k=1,2.
+$$
 
-The stated result supplies the missing off-diagonal directions (**Commutator Generation** <Ref id="8.3.4" label="§8.3.4" />). The stated result identifies the entire eight-dimensional target (**Algebraic Closure** <Ref id="8.3.5" label="§8.3.5" />).
+The four restricted seed matrices are the verified independent directions (**Basis Verification** <Ref id="8.3.3" label="§8.3.3" />). For invariant-sector actions,
 
-**III. Physical Interpretation**
+$$
+\begin{aligned}
+\pi_3(AB)
+&=W_3^\dagger A(W_3\pi_3(B))
+=W_3^\dagger W_3\pi_3(A)\pi_3(B)=\pi_3(A)\pi_3(B),\\
+\pi_3([A,B])&=[\pi_3(A),\pi_3(B)].
+\end{aligned}
+$$
 
-The stated result describes the separate confinement construction in its stated domain; it is not a premise that creates the missing matrix directions (**Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" />).
+**II. Generated Directions and Reconstruction**
 
-**IV. Conclusion**
+The restricted brackets give (**Commutator Generation** <Ref id="8.3.4" label="§8.3.4" />)
 
-The admitted controls have the stated represented $\mathfrak{su}(3)$ algebra. The exact finite calculation certifies matrix closure rather than a stochastic probability of physical realization.
+$$
+\begin{gathered}
+F_{12}=\tfrac12[A_1,C_1],\quad F_{23}=\tfrac12[A_2,C_2],\quad
+F_{13}=\tfrac14[[A_1,C_1],[A_2,C_2]],\\
+S_{12}=A_1,\quad S_{23}=A_2,\quad S_{13}=\tfrac12[[A_1,C_1],A_2].
+\end{gathered}
+$$
+
+For any target $M$ with diagonal $i(x,y,z)$ and $x+y+z=0$,
+
+$$
+\begin{aligned}
+M
+&=\sum_{p<q}\bigl(\operatorname{Re}M_{pq}F_{pq}+\operatorname{Im}M_{pq}S_{pq}\bigr)
++xC_1+(x+y)C_2,\\
+xC_1+(x+y)C_2
+&=i\operatorname{diag}(x,-x+x+y,-x-y)=i\operatorname{diag}(x,y,z).
+\end{aligned}
+$$
+
+For a zero real combination $R=\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})+\alpha C_1+\beta C_2$,
+
+$$
+\begin{aligned}
+&(\operatorname{Re}R_{12},\operatorname{Im}R_{12},
+\operatorname{Re}R_{13},\operatorname{Im}R_{13},
+\operatorname{Re}R_{23},\operatorname{Im}R_{23},-iR_{11},iR_{33})\\
+&\qquad=(a_{12},b_{12},a_{13},b_{13},a_{23},b_{23},\alpha,\beta)
+=(0,0,0,0,0,0,0,0).
+\end{aligned}
+$$
+
+Therefore (**Algebraic Closure** <Ref id="8.3.5" label="§8.3.5" />)
+
+$$
+\pi_3(\operatorname{Lie}_{\mathbb R}\{\widehat A_1,\widehat A_2,\widehat C_1,\widehat C_2\})
+=\operatorname{span}_{\mathbb R}\{F_{12},S_{12},F_{13},S_{13},F_{23},S_{23},C_1,C_2\}
+=\mathfrak{su}(3).
+$$
+
+**III. Separate Flux-Tube Energy Evaluation**
+
+Under the stated flux-tube hypotheses $L=M\ell_0$, $H_{\mathrm{flux}}=\sum_{j=1}^M H_j$ and $\langle\Psi,H_j\Psi\rangle=\epsilon_0$ (**Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" />),
+
+$$
+\begin{aligned}
+\langle\Psi,H_{\mathrm{flux}}\Psi\rangle
+&=\left\langle\Psi,\left(\sum_{j=1}^M H_j\right)\Psi\right\rangle
+=\sum_{j=1}^M\langle\Psi,H_j\Psi\rangle\\
+&=\sum_{j=1}^M\epsilon_0=M\epsilon_0
+=\frac{L}{\ell_0}\epsilon_0
+=\left(\frac{\epsilon_0}{\ell_0}\right)L=\sigma L.
+\end{aligned}
+$$
+
+**IV. Represented Color Algebra**
+
+$$
+\boxed{\pi_3(\mathfrak g)=\mathfrak{su}(3),\qquad\dim_{\mathbb R}\pi_3(\mathfrak g)=8.}
+$$
 
 Q.E.D.
 
@@ -1164,21 +2211,104 @@ Section 8.4.4 formalizes the properties of the QBD lemma regarding weak algebra 
 :::tip[**Construction of Weak Algebra Emergence via Explicit Identities**]
 :::
 
-**I. Specified Doublet**
+**I. Doublet Matrices**
 
-The physical interpretation assumes an invariant doublet and admitted Hamiltonians with the stated represented exchange and diagonal actions. A parity or measurement observable alone does not establish the latter control.
+Let the admitted restricted Hermitian matrices be
 
-**II. Third Direction**
+$$
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\quad
+Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\qquad
+A_x=iX,\ A_y=iY,\ A_z=iZ.
+$$
 
-The stated result gives $[i\sigma_x,i\sigma_z]=2i\sigma_y$ with the stated matrix convention (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
+Define $L=\operatorname{Lie}_{\mathbb R}\{A_x,A_z\}$.
 
-**III. Closure**
+**II. Six Products and the Bracket Table**
 
-**Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" /> at $n=2$ gives the full compact real algebra with dimension $2^2-1=3$.
+$$
+\begin{aligned}
+XZ&=\begin{pmatrix}0&-1\\1&0\end{pmatrix}=-iY,
+&ZX&=\begin{pmatrix}0&1\\-1&0\end{pmatrix}=iY,\\
+ZY&=\begin{pmatrix}0&-i\\-i&0\end{pmatrix}=-iX,
+&YZ&=\begin{pmatrix}0&i\\i&0\end{pmatrix}=iX,\\
+YX&=\begin{pmatrix}-i&0\\0&i\end{pmatrix}=-iZ,
+&XY&=\begin{pmatrix}i&0\\0&-i\end{pmatrix}=iZ.
+\end{aligned}
+$$
 
-**IV. Conclusion**
+Consequently (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />)
 
-The stated admitted doublet controls generate the represented weak algebra. This matrix application is separate from the chapter’s chirality and physical doublet-identification arguments.
+$$
+\begin{aligned}
+[A_x,A_z]&=-XZ+ZX=-(-iY)+iY=2iY=2A_y,\\
+[A_z,A_y]&=-ZY+YZ=-(-iX)+iX=2iX=2A_x,\\
+[A_y,A_x]&=-YX+XY=-(-iZ)+iZ=2iZ=2A_z.
+\end{aligned}
+$$
+
+Antisymmetry and $[A_j,A_j]=0$ give the full table
+
+$$
+\begin{array}{c|c c c}
+[\cdot,\cdot]&A_x&A_y&A_z\\\hline
+A_x&0&-2A_z&2A_y\\
+A_y&2A_z&0&-2A_x\\
+A_z&-2A_y&2A_x&0
+\end{array}
+$$
+
+Define $V=\operatorname{span}_{\mathbb R}\{A_x,A_y,A_z\}$. For $U=\sum_j u_jA_j$ and $T=\sum_jt_jA_j$ with real coefficients, the table evaluates the full bracket to
+
+$$
+\begin{aligned}
+[U,T]
+&=\sum_{j,k}u_jt_k[A_j,A_k]\\
+&=2(u_zt_y-u_yt_z)A_x
++2(u_xt_z-u_zt_x)A_y
++2(u_yt_x-u_xt_y)A_z\in V.
+\end{aligned}
+$$
+
+Thus $V$ is a real Lie algebra containing $A_x,A_z$, giving $L\subseteq V$. Conversely,
+
+$$
+A_x,A_z\in L,\qquad A_y=\tfrac12[A_x,A_z]\in L
+\ \Longrightarrow\ V\subseteq L.
+$$
+
+Therefore $L=V$.
+
+**III. Unique Coefficient Reconstruction**
+
+For $M\in\mathfrak{su}(2)$,
+
+$$
+\overline{M_{11}}=-M_{11},\quad M_{22}=-M_{11},\quad M_{21}=-\overline{M_{12}}.
+$$
+
+Writing $M_{11}=ia$ and $M_{12}=x+iy$, with $a,x,y\in\mathbb R$, gives
+
+$$
+\begin{aligned}
+M
+&=\begin{pmatrix}ia&x+iy\\-x+iy&-ia\end{pmatrix}\\
+&=a\begin{pmatrix}i&0\\0&-i\end{pmatrix}
++x\begin{pmatrix}0&1\\-1&0\end{pmatrix}
++y\begin{pmatrix}0&i\\i&0\end{pmatrix}
+=aA_z+xA_y+yA_x.
+\end{aligned}
+$$
+
+If this combination is zero, its $(1,1)$ entry gives $a=0$, and its $(1,2)$ real and imaginary parts give $x=y=0$.
+
+**IV. Doublet Closure**
+
+Each displayed $A_j$ has $A_j^\dagger=-A_j$ and $\operatorname{Tr}A_j=0$. Therefore (**Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />)
+
+$$
+\boxed{L=\mathfrak{su}(2),\qquad\dim_{\mathbb R}L=3.}
+$$
 
 Q.E.D.
 

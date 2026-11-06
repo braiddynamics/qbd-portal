@@ -760,23 +760,64 @@ Section 7.3.6 formalizes the properties of the QBD lemma regarding permutation-f
 :::tip[**Construction of Permutation-Fixed Writhe via Explicit Identities**]
 :::
 
-**I. Configuration Action**
+**I. Coordinate Permutation Matrices**
 
-The permutation group acts by $(P\boldsymbol w)_i=w_{P^{-1}(i)}$. The assertion concerns an individual configuration, not a superposition invariant under the induced quantum action.
+Let $\boldsymbol w=(w_1,w_2,w_3)^T\in\mathbb Z^3$ and $(P_\sigma\boldsymbol w)_i=w_{\sigma^{-1}(i)}$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). Its charge coordinate is (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />)
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />) (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
+$$
+Q(\boldsymbol w)=\frac{w_1+w_2+w_3}{3}.
+$$
 
-**II. Transpositions**
+The two transposition matrices are
 
-Invariance under the transpositions exchanging coordinates one and two, and one and three, gives $w_1=w_2=w_3$.
+$$
+P_{12}=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix},\qquad
+P_{23}=\begin{pmatrix}1&0&0\\0&0&1\\0&1&0\end{pmatrix}.
+$$
 
-**III. Converse**
+**II. Necessity of Equal Coordinates**
 
-Every permutation fixes a constant vector $(k,k,k)$, because each coordinate has the same value.
+Assume $P_\sigma\boldsymbol w=\boldsymbol w$ for every $\sigma\in S_3$. Then
 
-**IV. Conclusion**
+$$
+\begin{aligned}
+P_{12}\boldsymbol w
+&=\begin{pmatrix}0w_1+1w_2+0w_3\\1w_1+0w_2+0w_3\\0w_1+0w_2+1w_3\end{pmatrix}
+=\begin{pmatrix}w_2\\w_1\\w_3\end{pmatrix}
+=\begin{pmatrix}w_1\\w_2\\w_3\end{pmatrix},\\
+P_{23}\boldsymbol w
+&=\begin{pmatrix}1w_1+0w_2+0w_3\\0w_1+0w_2+1w_3\\0w_1+1w_2+0w_3\end{pmatrix}
+=\begin{pmatrix}w_1\\w_3\\w_2\end{pmatrix}
+=\begin{pmatrix}w_1\\w_2\\w_3\end{pmatrix}.
+\end{aligned}
+$$
 
-The constant integer vectors are exactly the pointwise permutation-fixed configurations.
+Therefore $w_2=w_1$, $w_3=w_2$, and
+
+$$
+\boldsymbol w=\begin{pmatrix}w_1\\w_1\\w_1\end{pmatrix}
+=k\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad k=w_1\in\mathbb Z.
+$$
+
+**III. Sufficiency for an Arbitrary Permutation**
+
+Let $\boldsymbol w=k\boldsymbol1$. For every $\sigma\in S_3$ and $i=1,2,3$,
+
+$$
+\begin{aligned}
+(P_\sigma\boldsymbol w)_i
+&=\sum_{j=1}^3(P_\sigma)_{ij}w_j
+=\sum_{j=1}^3\delta_{j,\sigma^{-1}(i)}k\\
+&=k\sum_{j=1}^3\delta_{j,\sigma^{-1}(i)}=k=w_i.
+\end{aligned}
+$$
+
+**IV. Fixed-Label Set**
+
+$$
+\boxed{\{\boldsymbol w\in\mathbb Z^3:P_\sigma\boldsymbol w=\boldsymbol w\ \forall\sigma\in S_3\}
+=\{(k,k,k):k\in\mathbb Z\}.}
+$$
 
 Q.E.D.
 
@@ -790,7 +831,7 @@ Section 7.3.6.1 formalizes the properties of the QBD proof regarding permutation
 :::note[**Lean 4 Encoding of Permutation-Fixed Writhe via Explicit Coordinate Proofs**]
 :::
 
-Type-theoretic validation of the relation established in the **Permutation-Fixed Writhe** <Ref id="7.3.6.1" label="§7.3.6.1" /> proceeds via the following verification strategy: The stated coordinate domain and hypotheses fix the context of this derivation (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />).
+Type-theoretic validation of the relation established in the **Permutation-Fixed Writhe** <Ref id="7.3.6.1" label="§7.3.6.1" /> proceeds via the following verification strategy: The formal target concerns individual fixed integer labels (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />).
 
 1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
 2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
@@ -1039,23 +1080,56 @@ Section 7.3.7 formalizes the properties of the QBD lemma regarding fixed-charge 
 :::tip[**Construction of Fixed-Charge Uniqueness via Explicit Identities**]
 :::
 
-**I. Fixed Form**
+**I. Charge and Fixed-Label Conditions**
 
-The stated result gives $\boldsymbol w=(a,a,a)$ for an integer $a$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />).
+Fix $k\in\mathbb Z$ and define
 
-The stated coordinate domain and hypotheses fix the context of this derivation (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />).
+$$
+\mathcal S_k=\{\boldsymbol w\in\mathbb Z^3:P_\sigma\boldsymbol w=\boldsymbol w\ \forall\sigma\in S_3, Q(\boldsymbol w)=k\}.
+$$
 
-**II. Charge Evaluation**
+The coordinate form of a fixed label is (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />)
 
-The definition gives $Q(\boldsymbol w)=(3a)/3=a$. Fixing $Q=k$ therefore forces $a=k$.
+$$
+\boldsymbol w\in\mathcal S_k\ \Longrightarrow\ \boldsymbol w=(a,a,a),\qquad a\in\mathbb Z.
+$$
 
-**III. Existence**
+**II. Solving the Charge Equation**
 
-The vector $(k,k,k)$ is fixed and has charge $k$, so the forced label is an actual solution.
+The charge equation is (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />)
 
-**IV. Conclusion**
+$$
+\begin{aligned}
+\boldsymbol w\in\mathcal S_k
+&\ \Longrightarrow\ k=Q(a,a,a)
+=\frac{a+a+a}{3}=\frac{3a}{3}=a\\
+&\ \Longrightarrow\ \boldsymbol w=(k,k,k).
+\end{aligned}
+$$
 
-Existence and uniqueness hold at each fixed integer charge, without a complexity minimization.
+Thus $\mathcal S_k\subseteq\{(k,k,k)\}$.
+
+**III. Existence and Uniqueness**
+
+For $\boldsymbol u=(k,k,k)$,
+
+$$
+(P_\sigma\boldsymbol u)_i=u_{\sigma^{-1}(i)}=k=u_i,\qquad
+Q(\boldsymbol u)=\frac{k+k+k}{3}=k.
+$$
+
+Hence $\boldsymbol u\in\mathcal S_k$, giving $\{(k,k,k)\}\subseteq\mathcal S_k$. If $\boldsymbol v,\boldsymbol w\in\mathcal S_k$, Section II gives
+
+$$
+\boldsymbol v=(k,k,k)=\boldsymbol w.
+$$
+
+**IV. Singleton and the Selected Charge**
+
+$$
+\boxed{\mathcal S_k=\{(k,k,k)\},\qquad |\mathcal S_k|=1,\qquad
+\mathcal S_{-1}=\{(-1,-1,-1)\}.}
+$$
 
 Q.E.D.
 
@@ -1069,7 +1143,7 @@ Section 7.3.7.1 formalizes the properties of the QBD proof regarding fixed-charg
 :::note[**Lean 4 Encoding of Fixed-Charge Uniqueness via Explicit Coordinate Proofs**]
 :::
 
-Type-theoretic validation of the relation established in the **Fixed-Charge Uniqueness** <Ref id="7.3.7.1" label="§7.3.7.1" /> proceeds via the following verification strategy: The stated coordinate domain and hypotheses fix the context of this derivation (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
+Type-theoretic validation of the relation established in the **Fixed-Charge Uniqueness** <Ref id="7.3.7.1" label="§7.3.7.1" /> proceeds via the following verification strategy: The formal target retains the fixed integer charge as an explicit parameter (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
 
 1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
 2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
@@ -1319,21 +1393,62 @@ Section 7.3.8 formalizes the properties of the QBD lemma regarding low-complexit
 :::tip[**Construction of Low-Complexity Lepton Spectrum via Explicit Identities**]
 :::
 
-**I. Symmetric Labels**
+**I. Reduction to the Constant Integer Label**
 
-The stated result gives $\boldsymbol w=(k,k,k)$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). The complexity and charge are $C=3|k|$ and $Q=k$.
+Let $P_\sigma\boldsymbol w=\boldsymbol w$ for every permutation. Then $\boldsymbol w=(k,k,k)$, $k\in\mathbb Z$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />), and
 
-**II. Explicit Selection**
+$$
+\begin{aligned}
+C(\boldsymbol w)&=|w_1|+|w_2|+|w_3|=|k|+|k|+|k|=3|k|,\\
+Q(\boldsymbol w)&=(w_1+w_2+w_3)/3=(k+k+k)/3=k.
+\end{aligned}
+$$
 
-The stated cutoff gives $3|k|\le3$, so the integer $k$ is one of $-1,0,1$.
+The fixed-charge solution set is a singleton (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
 
-**III. Converse Enumeration**
+**II. Necessity of the Three Integers**
 
-Each of those integers has complexity at most three, and the corresponding constant label satisfies the symmetry restriction.
+$$
+C(\boldsymbol w)\le3
+\ \Longleftrightarrow\ 3|k|\le3
+\ \Longleftrightarrow\ |k|\le1
+\ \Longleftrightarrow\ -1\le k\le1.
+$$
 
-**IV. Conclusion**
+For all other integers,
 
-The stated result identifies one fixed label at each selected charge (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />). The cutoff, rather than symmetry alone, supplies the restriction to these three charges.
+$$
+\begin{array}{c|c|c}
+\text{integer range}&|k|&C(k,k,k)\\\hline
+k\ge2&|k|=k\ge2&3|k|\ge6>3\\
+k\le-2&|k|=-k\ge2&3|k|\ge6>3
+\end{array}
+$$
+
+Therefore $k\in\{-1,0,1\}$.
+
+**III. Converse Evaluations**
+
+$$
+\begin{array}{c|c|c|c}
+k&\boldsymbol w&C(\boldsymbol w)&Q(\boldsymbol w)\\\hline
+-1&(-1,-1,-1)&|-1|+|-1|+|-1|=3&(-1-1-1)/3=-1\\
+0&(0,0,0)&|0|+|0|+|0|=0&(0+0+0)/3=0\\
+1&(1,1,1)&|1|+|1|+|1|=3&(1+1+1)/3=1
+\end{array}
+$$
+
+For each row, $(P_\sigma\boldsymbol w)_i=k=w_i$ for every permutation and coordinate, and $C(\boldsymbol w)\le3$.
+
+**IV. Restricted Configuration Set and Charge Image**
+
+$$
+\boxed{\begin{aligned}
+\{\boldsymbol w:P_\sigma\boldsymbol w=\boldsymbol w\ \forall\sigma,\ C(\boldsymbol w)\le3\}
+&=\{(-1,-1,-1),(0,0,0),(1,1,1)\},\\
+Q\bigl(\{(-1,-1,-1),(0,0,0),(1,1,1)\}\bigr)&=\{-1,0,1\}.
+\end{aligned}}
+$$
 
 Q.E.D.
 
@@ -1347,7 +1462,7 @@ Section 7.3.8.1 formalizes the properties of the QBD proof regarding low-complex
 :::note[**Lean 4 Encoding of Low-Complexity Lepton Spectrum via Explicit Coordinate Proofs**]
 :::
 
-Type-theoretic validation of the relation established in the **Low-Complexity Lepton Spectrum** <Ref id="7.3.8.1" label="§7.3.8.1" /> proceeds via the following verification strategy: The stated coordinate domain and hypotheses fix the context of this derivation (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
+Type-theoretic validation of the relation established in the **Low-Complexity Lepton Spectrum** <Ref id="7.3.8.1" label="§7.3.8.1" /> proceeds via the following verification strategy: The complexity cutoff remains an explicit hypothesis of the formal target (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
 
 1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
 2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
@@ -1754,21 +1869,80 @@ Section 7.3.10.1 formalizes the properties of the QBD proof regarding charge nor
 :::tip[**Construction of Emergence of Electric Charge via Explicit Identities**]
 :::
 
-**I. Charge and Conservation**
+**I. Writhe Preservation and the Charge Difference**
 
-The stated result describes the gauge interpretation in its stated domain (**Gauge Symmetry** <Ref id="7.3.4" label="§7.3.4" />). The stated result preserves the integer sum, and hence normalized charge, for the specified physical evolutions (**Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />).
+Let $W_{\mathrm{tot}}(\boldsymbol w)=w_1+w_2+w_3$ and $Q=W_{\mathrm{tot}}/3$. Under the stated writhe-preserving evolution (**Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />),
 
-**II. Fixed Configuration Sector**
+$$
+\begin{aligned}
+W_{\mathrm{tot}}(\boldsymbol w')&=W_{\mathrm{tot}}(\boldsymbol w),\\
+Q(\boldsymbol w')-Q(\boldsymbol w)
+&=\frac{w'_1+w'_2+w'_3}{3}-\frac{w_1+w_2+w_3}{3}\\
+&=\frac{W_{\mathrm{tot}}(\boldsymbol w')-W_{\mathrm{tot}}(\boldsymbol w)}3=0.
+\end{aligned}
+$$
 
-The stated result characterizes the constant labels (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). The stated result identifies one such label per integer charge (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
+For a rewrite $R|\boldsymbol w\rangle=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}|\boldsymbol w'\rangle$ with $R_{\boldsymbol w'\boldsymbol w}=0$ when the total writhes differ, the gauge action (**Gauge Symmetry** <Ref id="7.3.4" label="§7.3.4" />) gives
 
-**III. Selected Physical Labels**
+$$
+\begin{aligned}
+e^{i\theta Q}R|\boldsymbol w\rangle
+&=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}e^{i\theta Q(\boldsymbol w')}|\boldsymbol w'\rangle\\
+&=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}e^{i\theta Q(\boldsymbol w)}|\boldsymbol w'\rangle
+=Re^{i\theta Q}|\boldsymbol w\rangle.
+\end{aligned}
+$$
 
-The stated result gives the selected symmetric charges under its explicit cutoff (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />). The stated result supplies the selected asymmetric labels under its physical selection assumptions (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />).
+**II. Fixed Labels and the Integer Charge**
 
-**IV. Normalization and Scope**
+The transposition equations give (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />)
 
-The stated result fixes the common normalization in the stated framework (**Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />). The charge assignments and conservation follow on the selected domains; the entire integer lattice is not asserted to be a list of stable elementary particles.
+$$
+P_{12}\boldsymbol w=\boldsymbol w\ \Longrightarrow\ w_1=w_2,
+\qquad P_{23}\boldsymbol w=\boldsymbol w\ \Longrightarrow\ w_2=w_3,
+\qquad\boldsymbol w=(k,k,k).
+$$
+
+Therefore
+
+$$
+Q(k,k,k)=\frac{3k}{3}=k,\qquad
+\{\boldsymbol w:P_\sigma\boldsymbol w=\boldsymbol w\ \forall\sigma,\ Q(\boldsymbol w)=k\}
+=\{(k,k,k)\}
+$$
+
+(**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
+
+**III. The Selected Charges**
+
+In the fixed-label cutoff sector (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />),
+
+$$
+C(k,k,k)=3|k|\le3
+\ \Longleftrightarrow\ k\in\{-1,0,1\}
+\ \Longrightarrow\ Q\in\{-1,0,1\}.
+$$
+
+For the separately selected asymmetric configurations (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />),
+
+$$
+\begin{aligned}
+Q(-1,0,0)&=(-1+0+0)/3=-1/3,\\
+Q(1,1,0)&=(1+1+0)/3=2/3,\\
+Q(P_\sigma\boldsymbol w)
+&=\frac13\sum_{i=1}^3w_{\sigma^{-1}(i)}
+=\frac13\sum_{j=1}^3w_j=Q(\boldsymbol w).
+\end{aligned}
+$$
+
+**IV. Normalized Result**
+
+With the stated normalization (**Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />),
+
+$$
+\boxed{Q=\tfrac13W_{\mathrm{tot}},\qquad \Delta W_{\mathrm{tot}}=0\ \Longrightarrow\ \Delta Q=0,\qquad
+Q_{\mathrm{selected}}\in\{-1,0,1,-1/3,2/3\}.}
+$$
 
 Q.E.D.
 
