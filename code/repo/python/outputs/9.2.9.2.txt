@@ -1,0 +1,2 @@
+signed checks | signed code eigenvalue | diagonal commutation
+35 | +1 | all raw edge words

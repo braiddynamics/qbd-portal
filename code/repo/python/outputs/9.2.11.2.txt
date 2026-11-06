@@ -1,0 +1,2 @@
+n | exchange directions | diagonal directions | real closure dimension
+5 | 4 | 4 | 24

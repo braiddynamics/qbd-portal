@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Appendix B: Python Simulations"
 sidebar_label: "B: Python Simulations"
 ---

@@ -155,7 +155,7 @@ Section 2.2.3.1 formalizes the properties of the QBD proof regarding thermodynam
 
 ### 2.2.4 Proof: Insufficiency of Antisymmetry {#2.2.4}
 
-:::tip[**Insufficiency via Antisymmetry** <Ref id="2.2.1" label="§2.2.1" />]
+:::tip[**Verification of Antisymmetry Insufficiency via Self-Loop Admissibility**]
 :::
 
 **I. The Mathematical Condition**

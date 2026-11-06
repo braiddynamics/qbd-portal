@@ -17,6 +17,8 @@ The **Logical Basis** of the topological qubit, denoted $\mathcal{B}_L = \{|0_L\
 2.  **Logical One ($|1_L\rangle$):** The excited state is identified strictly with the asymmetric electron braid configuration $\beta_{e*}$, characterized by the redistributed writhe vector $\boldsymbol{w} = (-2, -1, 0)$. This state transforms as a non-trivial multiplet (triplet $\mathbf{3}$ or octet $\mathbf{8}$) under the permutation group $S_3$, rendering it topologically coupled to the color gauge field.
 3.  **Invariant Constraint:** Both states are subject to the global topological conservation law $w_{\text{total}} = \sum_{i=1}^3 w_i = -3$, thereby ensuring that the electric charge observable $Q = \frac{1}{3}w_{\text{total}}$ remains invariant at $Q=-1$ across the entire logical subspace.
 
+The fixed-label uniqueness result applies to the symmetric charge sector **Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />. The asymmetric logical excitation remains an allowed computational candidate at the same charge; its coherent control and transient color interpretation retain their stated physical assumptions.
+
 **In Plain English:**  
 Section 10.1.1 formalizes the properties of the QBD definition regarding logical basis.
 
@@ -1094,7 +1096,7 @@ Section 10.4.4 formalizes the properties of the QBD lemma regarding charge conse
 :::
 
 **I. Charge Operator Definition**
-The electric charge operator $\hat{Q}$ is proportional to the total writhe operator $\hat{W}$, with the coupling constant $k=1/3$ derived from the **Conservation of Total Writhe** <Ref id="7.3.4" label="§7.3.4" />.
+The electric charge operator $\hat{Q}$ is proportional to the total writhe operator $\hat{W}$, with the coupling constant $k=1/3$ derived from the **Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />.
 
 $$
 \hat{Q} = \frac{1}{3} \hat{W} = \frac{1}{3} \sum_{i} \hat{w}_i
@@ -1199,7 +1201,7 @@ Section 10.5.2 formalizes the properties of the QBD lemma regarding singlet tran
 :::
 
 **I. State Representation**
-The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$ under **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and **Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
+The logical zero state $|0_L\rangle$ is defined by the symmetric writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$ under **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and **Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />. As proven in the **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, this state is invariant under the permutation group $S_3$, implying it transforms as the singlet representation $\mathbf{1}$ under the color group $SU(3)$.
 
 **II. Interaction Hamiltonian**
 The interaction with the probe field $A_\mu^a$ is governed by the current coupling:
@@ -1880,7 +1882,7 @@ Section 10.8.6 formalizes the properties of the QBD lemma regarding duality stru
 :::
 
 **I. Dual Object**
-For a braid $\beta$ defined by writhe sequence $\{w_i\}$, the dual $\beta^*$ is defined by $\{-w_i\}$ with reversed orientation (**Emergence of Electric Charge** <Ref id="7.3.2" label="§7.3.2" />).
+For a braid $\beta$ defined by writhe sequence $\{w_i\}$, the dual $\beta^*$ is defined by $\{-w_i\}$ with reversed orientation (**Emergence of Electric Charge** <Ref id="7.3.3" label="§7.3.3" />).
 
 **II. Evaluation and Coevaluation**
 * **Coevaluation ($i_X: I \to X \otimes X^*$):** Pair creation from vacuum. $\mathcal{R}_{create}$ generates balanced writhe $\Delta w = 0$ **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />.

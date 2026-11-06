@@ -66,7 +66,7 @@ export const part2Chapters: ChapterData[] = [
     title: "Quantum Numbers",
     taxonomy: "Topology",
     status: "Theoretical Model",
-    leanProofs: 0,
+    leanProofs: 3,
     pythonSims: 1,
     executiveEvaluation: "Maps physical quantum properties (such as electric charge, spin, and color charge) directly to conserved topological braid invariants.",
     breakdowns: [
@@ -80,7 +80,7 @@ export const part2Chapters: ChapterData[] = [
       },
       {
         title: "7.3 Quantized Electric Charge",
-        content: "Identifies electric charge as the net writhe polynomial of the tripartite braid, explaining why quark charges are quantized in thirds."
+        content: "Defines charge as one third of total signed integer writhe, with separate parity diagnostics and fixed-label sector results."
       },
       {
         title: "7.4 Topological Mass Functional",
@@ -126,7 +126,7 @@ export const part2Chapters: ChapterData[] = [
     taxonomy: "Braids",
     status: "Theoretical Model",
     leanProofs: 0,
-    pythonSims: 5,
+    pythonSims: 7,
     executiveEvaluation: "Gauge symmetries (such as $SU(3) \\times SU(2) \\times U(1)$) emerge naturally from coordinate-free local coordinate transitions of the braid network.",
     breakdowns: [
       {
@@ -134,23 +134,27 @@ export const part2Chapters: ChapterData[] = [
         content: "Formulates the generator principle, deriving gauge fields directly from the local coordinate swaps of the ribbon braids."
       },
       {
-        title: "8.2 Strong Interaction",
-        content: "Derives the strong interaction from SU(3) permutation symmetries of tripartite braid strand swaps."
+        title: "8.2 Adjacent Generator Closure",
+        content: "Proves real Lie closure for adjacent exchange and diagonal controls, and distinguishes the smaller exchange-only algebra."
       },
       {
-        title: "8.3 Chiral Weak Interaction",
+        title: "8.3 Strong Interaction",
+        content: "Specializes the exchange-and-diagonal matrix theorem to su(3), subject to the physical sector and control hypotheses."
+      },
+      {
+        title: "8.4 Chiral Weak Interaction",
         content: "Constructs the weak interaction as a chiral swap transition acting selectively on specific braid generations."
       },
       {
-        title: "8.4 Electroweak Mixing",
+        title: "8.5 Electroweak Mixing",
         content: "Explains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios."
       },
       {
-        title: "8.5 Emergent Gauge Coupling",
+        title: "8.6 Emergent Gauge Coupling",
         content: "Derives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients."
       },
       {
-        title: "8.6 Mass Generation",
+        title: "8.7 Mass Generation",
         content: "Models the mass generation mechanism, deriving particle masses from localized vacuum rewrite backreactions."
       }
     ],
@@ -198,8 +202,8 @@ export const part2Chapters: ChapterData[] = [
     title: "Generations and Decay",
     taxonomy: "Unification",
     status: "Theoretical Model",
-    leanProofs: 0,
-    pythonSims: 4,
+    leanProofs: 1,
+    pythonSims: 7,
     executiveEvaluation: "Derives the three generations of matter and explains decay paths as discrete rewrite operations under strict conservation laws.",
     breakdowns: [
       {
@@ -208,7 +212,7 @@ export const part2Chapters: ChapterData[] = [
       },
       {
         title: "9.2 Penta-Ribbon Braid",
-        content: "Constructs the penta-ribbon braid model, unifying leptons and quarks into a single topological object."
+        content: "Checks candidate encodings and proves conditional 24-dimensional su(5) closure, with an independent Lean certificate for the 10/24 distinction."
       },
       {
         title: "9.3 Origin of Generations",

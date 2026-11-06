@@ -911,8 +911,8 @@ Section 19.2.5 formalizes the properties of the QBD proof regarding sakharov com
 
     where $C_{isolated}[\beta]$ is the sum of isolated quark crossing complexities, $N_{shared}$ is the shared boundary cycle count, and $\Delta m_{EM}$ is the electrostatic Coulomb self-energy.
 *   **Writhe Invariants:**
-    *   Up Quark ($u$): Writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$, total crossing writhe $W_{twist}(u) = +2$, electric charge $Q_u = +2/3$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
-    *   Down Quark ($d$): Writhe vector $\boldsymbol{w}_d = (0, 0, -1)$, total crossing writhe $W_{twist}(d) = -1$, electric charge $Q_d = -1/3$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
+    *   Up Quark ($u$): Writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$, total crossing writhe $W_{twist}(u) = +2$, electric charge $Q_u = +2/3$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
+    *   Down Quark ($d$): Writhe vector $\boldsymbol{w}_d = (0, 0, -1)$, total crossing writhe $W_{twist}(d) = -1$, electric charge $Q_d = -1/3$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
 *   **Geometric Isospin Sharing:** When two constituent quark strands possess parallel twist vectors in a composite knot, they share structural boundary cycles in the graph under local rewrite rule $\mathcal{R}_{merge}$, reducing their combined complexity cost. Antiparallel or orthogonal twists cannot share boundary edges ($N_{shared} = 0$), maintaining their full independent self-energy.
 
 **In Plain English:**  

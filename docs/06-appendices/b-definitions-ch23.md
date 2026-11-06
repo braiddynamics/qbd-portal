@@ -509,7 +509,7 @@ $$
 
 where each layer $l \in \{1, 2, 3, 4\}$ executes a disjoint set of two-qubit Controlled-NOT ($\text{CNOT}$) gates between physical data qubits and ancilla qubits, separated by coherent physical atom shuttling relocations $\mathcal{M}^{(l)}$.
 
-1.  **Logical Qubit Encoding:** The logical codespace $\mathcal{H}_{\text{code}} = \{ |\psi\rangle \mid S_v |\psi\rangle = |\psi\rangle, S_p |\psi\rangle = |\psi\rangle \}$ stores the topological braid invariants corresponding to the electron ground state derived in the **Topological Qubit** <Ref id="10.1.1" label="§10.1.1" />.
+1.  **Logical Qubit Encoding:** The logical codespace $\mathcal{H}_{\text{code}} = \{ |\psi\rangle \mid S_v |\psi\rangle = |\psi\rangle, S_p |\psi\rangle = |\psi\rangle \}$ stores the topological braid invariants corresponding to the electron ground state derived in the **Logical Basis** <Ref id="10.1.1" label="§10.1.1" />.
 2.  **Transpilation Circuit Depth:** The total execution latency is strictly bounded by four sequential clock cycles $\Delta t_{\text{circ}} = 4\tau_{\text{gate}}$, matching the fundamental latency $\Delta t_{\text{corr}} = 4\tau_0$ established in the **Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />.
 
 **In Plain English:**  
@@ -548,7 +548,7 @@ Section 23.2.3 formalizes the properties of the QBD lemma regarding trivalent ed
 
 **I. Stabilizer Support Overlap and Edge Contention**
 
-In accordance with **Trivalent Stabilizer Transpilation** <Ref id="23.2.1" label="§23.2.1" />, let $v$ be a vertex with incident edges $\{e_1, e_2, e_3\}$ and let $p_1, p_2, p_3$ be the three plaquettes sharing vertex $v$. Under the topological fermion construction of the **Topological Qubit** <Ref id="10.1.1" label="§10.1.1" />, the vertex operator $S_v = \hat{Z}_{e_1} \hat{Z}_{e_2} \hat{Z}_{e_3}$ shares exactly one edge with each incident plaquette operator $S_{p_k} = \prod_{e \in \partial p_k} \hat{X}_e$.
+In accordance with **Trivalent Stabilizer Transpilation** <Ref id="23.2.1" label="§23.2.1" />, let $v$ be a vertex with incident edges $\{e_1, e_2, e_3\}$ and let $p_1, p_2, p_3$ be the three plaquettes sharing vertex $v$. Under the topological fermion construction of the **Logical Basis** <Ref id="10.1.1" label="§10.1.1" />, the vertex operator $S_v = \hat{Z}_{e_1} \hat{Z}_{e_2} \hat{Z}_{e_3}$ shares exactly one edge with each incident plaquette operator $S_{p_k} = \prod_{e \in \partial p_k} \hat{X}_e$.
 
 Each physical data qubit on edge $e$ must interact with both incident vertex ancillae and both adjacent plaquette ancillae. A physical qubit can participate in at most one entangling gate per time step. Therefore, the minimum number of gate layers $L$ required to entangle a data qubit with its four surrounding syndrome ancillae satisfies:
 
@@ -678,7 +678,7 @@ $$
 d_{\text{eff}} = d_0 = 2k + 1
 $$
 
-matching the topological protection derived in the **Topological Qubit** <Ref id="10.1.1" label="§10.1.1" />.
+matching the topological protection derived in the **Logical Basis** <Ref id="10.1.1" label="§10.1.1" />.
 
 **IV. Conclusion**
 

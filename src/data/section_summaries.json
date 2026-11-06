@@ -192,7 +192,7 @@
   "7.3": {
     "id": "7.3",
     "title": "Quantized Electric Charge",
-    "summary": "Identifies electric charge as the net writhe polynomial of the tripartite braid, explaining why quark charges are quantized in thirds."
+    "summary": "Defines charge as one third of total signed integer writhe, with separate parity diagnostics and fixed-label sector results."
   },
   "7.4": {
     "id": "7.4",
@@ -206,26 +206,31 @@
   },
   "8.2": {
     "id": "8.2",
-    "title": "Strong Interaction",
-    "summary": "Derives the strong interaction from SU(3) permutation symmetries of tripartite braid strand swaps."
+    "title": "Adjacent Generator Closure",
+    "summary": "Proves real Lie closure for adjacent exchange and diagonal controls, and distinguishes the smaller exchange-only algebra."
   },
   "8.3": {
     "id": "8.3",
-    "title": "Chiral Weak Interaction",
-    "summary": "Constructs the weak interaction as a chiral swap transition acting selectively on specific braid generations."
+    "title": "Strong Interaction",
+    "summary": "Specializes the exchange-and-diagonal matrix theorem to su(3), subject to the physical sector and control hypotheses."
   },
   "8.4": {
     "id": "8.4",
-    "title": "Electroweak Mixing",
-    "summary": "Explains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios."
+    "title": "Chiral Weak Interaction",
+    "summary": "Constructs the weak interaction as a chiral swap transition acting selectively on specific braid generations."
   },
   "8.5": {
     "id": "8.5",
-    "title": "Emergent Gauge Coupling",
-    "summary": "Derives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients."
+    "title": "Electroweak Mixing",
+    "summary": "Explains electroweak mixing and Weinberg angle values strictly from topological ribbon crossing ratios."
   },
   "8.6": {
     "id": "8.6",
+    "title": "Emergent Gauge Coupling",
+    "summary": "Derives emergent gauge coupling constants, showing they are governed by pure integer-based graph adjacency coefficients."
+  },
+  "8.7": {
+    "id": "8.7",
     "title": "Mass Generation",
     "summary": "Models the mass generation mechanism, deriving particle masses from localized vacuum rewrite backreactions."
   },
@@ -237,7 +242,7 @@
   "9.2": {
     "id": "9.2",
     "title": "Penta-Ribbon Braid",
-    "summary": "Constructs the penta-ribbon braid model, unifying leptons and quarks into a single topological object."
+    "summary": "Checks candidate encodings and proves conditional 24-dimensional su(5) closure, with an independent Lean certificate for the 10/24 distinction."
   },
   "9.3": {
     "id": "9.3",
@@ -674,8 +679,8 @@
     "title": "Formal Synthesis",
     "summary": "The derivation decodes the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model."
   },
-  "8.7": {
-    "id": "8.7",
+  "8.8": {
+    "id": "8.8",
     "title": "Formal Synthesis",
     "summary": "The derivation establishes the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. Identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras bridges the gap between discrete graph rewrites and continuous gauge fields, yielding the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios."
   },

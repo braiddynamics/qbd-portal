@@ -2787,7 +2787,7 @@ def R(annotated_graph, T, mu, lambda_cat):
     return (add_proposals, del_proposals)
 ```
 
-This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Information-Theoretic Foundations** <Ref id="4.4" label="§4.4" />.
+This implementation adheres to the Micro/Macro separation principle, operating exclusively on local variables with universal constants derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />.
 
 **In Plain English:**  
 Spacetime updates are governed by a Universal Constructor that stochastically scans, validates, and rewrites local connections based on parities.
@@ -2884,7 +2884,7 @@ The Helmholtz free energy change is defined as $\Delta F = \Delta E - T \Delta S
 
 **II. Parameter Substitution**
 
-The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Information-Theoretic Foundations** <Ref id="4.4" label="§4.4" />:
+The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />:
 
 1.  **Internal Energy Cost:** $\Delta E = \epsilon_{geo}$.
 2.  **Entropy Gain:** $\Delta S = \ln 2$.
@@ -2937,7 +2937,7 @@ $$
 The condition $\mathbb{P}_{\text{thermo}} = \min(1, 1.433) = 1$ holds identically across all physical regimes.
 
 :::note[**Scale Duality: Microscopic Substrate vs. Macroscopic Spacetime**]
-The channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ reflects discrete equipartition over the $k_{\mathrm{deg}} = 3$ incident routing ports of the microscopic trivalent Bethe substrate under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />. On the emergent macroscopic 4D spacetime manifold, equipartition of 1 bit over $d_c = 4$ dimensions yields the macroscopic topological fine-structure scale $\alpha_{\mathrm{topo}} = \frac{\ln 2}{4} \approx 0.1732$ under **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" /> and **Entropic Dimensionality** <Ref id="8.5.5" label="§8.5.5" />. Crucially, substitution of either scale yields the identical result: $\Delta F = \alpha_{\mathrm{topo}} - (\ln 2)^2 \approx -0.3072 < 0 \implies \mathbb{P}_{\text{thermo}} = \min(1, 1.551) = 1$. Both micro and macro regimes unconditionally drive forward geometric creation.
+The channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ reflects discrete equipartition over the $k_{\mathrm{deg}} = 3$ incident routing ports of the microscopic trivalent Bethe substrate under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />. On the emergent macroscopic 4D spacetime manifold, equipartition of 1 bit over $d_c = 4$ dimensions yields the macroscopic topological fine-structure scale $\alpha_{\mathrm{topo}} = \frac{\ln 2}{4} \approx 0.1732$ under **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" /> and **Entropic Dimensionality** <Ref id="8.6.5" label="§8.6.5" />. Crucially, substitution of either scale yields the identical result: $\Delta F = \alpha_{\mathrm{topo}} - (\ln 2)^2 \approx -0.3072 < 0 \implies \mathbb{P}_{\text{thermo}} = \min(1, 1.551) = 1$. Both micro and macro regimes unconditionally drive forward geometric creation.
 :::
 
 **VI. Conclusion**

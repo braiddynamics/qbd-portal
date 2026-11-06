@@ -1,7 +1,7 @@
 import math
 
 def verify_gauge_coupling_consistency():
-    print("--- §8.5.7.1 Gauge Coupling (g) Consistency ---")
+    print("--- §8.6.7.1 Gauge Coupling (g) Consistency ---")
     
     # 1. Fundamental Constants (Derived in Ch 4, 5, 8)
     
@@ -11,7 +11,7 @@ def verify_gauge_coupling_consistency():
     ALPHA_TOPO = math.log(2) / 4 
     
     # Local State Space Multiplier (M)
-    # Source: combinatorial weighting lemma (§8.5.6) (Lemma: su2_local_dof_counting)
+    # Source: combinatorial weighting lemma (§8.6.6) (Lemma: su2_local_dof_counting)
     # Derivation: 3 (Cycle Orientations) * 2 (Doublet States) + 1 (Spin Stabilizer)
     M_SU2 = 7 
     
@@ -58,7 +58,7 @@ def verify_gauge_coupling_consistency():
     print(f"{'Multiplier (M)':<25} | {M_SU2}          | {'SU(2) DoF'}")
     print(f"{'Equilibrium Density (rho)':<25} | {RHO_MEAN:.4f}     | {'+/- 0.0050'}")
     print("-" * 65)
-    print(f"{'Predicted g (Mean)':<25} | {g_predicted_mean:.4f}     | {'Source: Thm 8.5.1'}")
+    print(f"{'Predicted g (Mean)':<25} | {g_predicted_mean:.4f}     | {'Source: Thm 8.6.1'}")
     print(f"{'Experimental g (PDG)':<25} | {G_EXP_PDG:.4f}     | {'Benchmark'}")
     print(f"{'Relative Error':<25} | {rel_error:.2f}%      | {'< 2% Target'}")
     print("-" * 65)

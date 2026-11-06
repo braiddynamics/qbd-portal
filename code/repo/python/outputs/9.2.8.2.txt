@@ -1,0 +1,3 @@
+encoding | adjacent imbalances | off-code action
+occupation | 4 | 0
+rung | 4 | 0

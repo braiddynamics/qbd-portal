@@ -243,11 +243,11 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
 | $Q$ | Electric Charge Operator | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
 | $w(\beta)$ | Total Writhe of braid $\beta$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
-| $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
-| $C(\boldsymbol{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.5.1](/monograph/players/topology/7.3/#7.3.5.1) |
-| $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
-| $k$ | Charge normalization constant ($1/3$) | [§7.3.7](/monograph/players/topology/7.3/#7.3.7) |
-| $Y$ | Hypercharge | [§7.3.7.2](/monograph/players/topology/7.3/#7.3.7.2) |
+| $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.8.1](/monograph/players/topology/7.3/#7.3.8.1) |
+| $C(\boldsymbol{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.8.1](/monograph/players/topology/7.3/#7.3.8.1) |
+| $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.9.1](/monograph/players/topology/7.3/#7.3.9.1) |
+| $k$ | Charge normalization constant ($1/3$) | [§7.3.10](/monograph/players/topology/7.3/#7.3.10) |
+| $Y$ | Hypercharge | [§7.3.10.2](/monograph/players/topology/7.3/#7.3.10.2) |
 | $m$ | Topological Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
 | $N_3$ | Count of 3-cycles (Geometric Quanta) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
 | $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/topology/7.4/#7.4.2) |
@@ -255,26 +255,28 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
 | $\epsilon_{geo}$ | Geometric Self-Energy | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
 | $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/topology/7.4/#7.4.5) |
-| $\mathcal{R}$ | Unitary Rewrite Operator ($e^{i\hat{H}}$) | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $\hat{H}_i$ | Hamiltonian Generator for rewrite $\mathcal{R}_i$ | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $f_{ijk}$ | Structure Constants of the Lie algebra | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
+| $U(t)$ | Admitted one-parameter unitary evolution | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
+| $H$ | Hermitian generator of the admitted unitary group | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
 | $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
 | $J^\mu$ | Weak Current | [§8.1.2.1](/monograph/players/braids/8.1/#8.1.2.1) |
-| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
-| $G_{ab}$ | Gram Matrix element | [§8.2.5.1](/monograph/players/braids/8.2/#8.2.5.1) |
-| $\gamma^5$ | Chirality Operator | [§8.2.7](/monograph/players/braids/8.2/#8.2.7) |
-| $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $\theta_W$ | Electroweak mixing angle (Weinberg angle) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
-| $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
-| $\sin^2\theta_W^{(0)}$ | Isolated doublet rewrite baseline ($=0.25$) | [§8.4.5](/monograph/players/braids/8.4/#8.4.5) |
-| $g$ | SU(2) Gauge Coupling Constant | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
-| $\alpha_{\text{topo}}$ | Topological Energy Scale ($\ln 2 / 4$) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
-| $M$ | Vertex Multiplicity Factor ($M=7$) | [§8.5.6](/monograph/players/braids/8.5/#8.5.6) |
-| $v$ | Higgs Vacuum Expectation Value (VEV) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
-| $y_f$ | Yukawa Coupling for fermion $f$ | [§8.6.5](/monograph/players/braids/8.6/#8.6.5) |
-| $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | [§8.6.5](/monograph/players/braids/8.6/#8.6.5) |
-| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.7](/monograph/players/braids/8.7/#8.7) |
+| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
+| $\gamma^5$ | Chirality Operator | [§8.3.6](/monograph/players/braids/8.3/#8.3.6) |
+| $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
+| $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
+| $\theta_W$ | Electroweak mixing angle (Weinberg angle) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
+| $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
+| $\sin^2\theta_W^{(0)}$ | Isolated doublet rewrite baseline ($=0.25$) | [§8.5.5](/monograph/players/braids/8.5/#8.5.5) |
+| $g$ | SU(2) Gauge Coupling Constant | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
+| $\alpha_{\text{topo}}$ | Topological Energy Scale ($\ln 2 / 4$) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
+| $M$ | Vertex Multiplicity Factor ($M=7$) | [§8.6.6](/monograph/players/braids/8.6/#8.6.6) |
+| $v$ | Higgs Vacuum Expectation Value (VEV) | [§8.7.1](/monograph/players/braids/8.7/#8.7.1) |
+| $y_f$ | Yukawa Coupling for fermion $f$ | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
+| $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
+| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.8](/monograph/players/braids/8.8/#8.8) |
+| $P_i(\boldsymbol w)$ | Integer-label ribbon parity diagnostic | [§7.3.2](/monograph/players/topology/7.3/#7.3.2) |
+| $X_k,Z_k,F_{pq},S_{pq}$ | Adjacent matrix generators and off-diagonal directions | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
+| $W,P_5$ | Candidate graph encoding and selected-sector projector | [§9.2.2](/monograph/players/unification/9.2/#9.2.2) |
+| $\widehat X_k,\widehat Z_k$ | Admitted encoded exchange and imbalance controls | [§9.2.3](/monograph/players/unification/9.2/#9.2.3) |
 | $G_{GUT}$ | Candidate Grand Unified Theory group | [§9.1.2](/monograph/players/unification/9.1/#9.1.2) |
 | $r(G)$ | Rank of a Lie algebra | [§9.1.2.1](/monograph/players/unification/9.1/#9.1.2.1) |
 | $\sin^2\theta_W(M_{\text{GUT}})$ | Grand Unified $SU(5)$ boundary value ($=3/8 = 0.375$) | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
