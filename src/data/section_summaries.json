@@ -132,7 +132,12 @@
   "4.6": {
     "id": "4.6",
     "title": "Single Tick of Logical Time",
-    "summary": "Tracks a single tick of logical time, proving that the parallel update sequence preserves causality and reversibility."
+    "summary": "Defines the frozen-snapshot tick and derives conditional triangle drift, exact quiescence, and finite-horizon height bounds."
+  },
+  "4.7": {
+    "id": "4.7",
+    "title": "Finite-Kernel Quasi-Stationarity",
+    "summary": "Derives the conditional active law, geometric exit time, and spectral convergence for a specified finite killed kernel."
   },
   "5.1": {
     "id": "5.1",
@@ -157,7 +162,7 @@
   "5.5": {
     "id": "5.5",
     "title": "Geometric Stabilization (Topological Stability)",
-    "summary": "Establishes the topological stability of the crystallized vacuum, showing that local fluctuations are suppressed by steric constraints."
+    "summary": "Separates finite increment estimates, ensemble tail hypotheses, and conditional measured compactness from the Lorentzian reconstruction problem."
   },
   "6.1": {
     "id": "6.1",
@@ -659,8 +664,8 @@
     "title": "Formal Synthesis",
     "summary": "The pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges by necessity: it is the sole topology capable of providing a cycle-free, unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the heartbeat of the system, ensuring that time propagates as a uniform wavefront that respects the fundamental symmetries of space."
   },
-  "4.7": {
-    "id": "4.7",
+  "4.8": {
+    "id": "4.8",
     "title": "Formal Synthesis",
     "summary": "Life breathes into the static frame, assembling the complete runtime for the relational engine. The **Internal Causal Category** and **Historical Category** provide a rigorous syntax for evolution, ensuring that every update is a valid morphism that preserves causal structure. By equipping the graph with \"Awareness\" via the store comonad, the system gains the capacity to self-diagnose topological defects and guide its own growth without the need for an external observer."
   },

@@ -45,32 +45,23 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.3.3.2](/monograph/rules/ontology/1.3/#1.3.3.2) |
 | $\mathcal{T}$ | Unimodular Time variable | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
 | $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $U_0$ | The unique initial state | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
+| $M$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
 | $S(U)$ | Information content/Entropy of state $U$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
 | $b$ | Finite Branching factor | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $s_t$ | Surface area (active degrees of freedom) | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $A_t$ | Number of binary addition trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
 | $T$ | Temporal Domain (Set of integers) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $\mathcal E_t$ | Cumulative set of creation occurrences through tick $t$ | [§1.3.6](/monograph/rules/ontology/1.3/#1.3.6) |
 | $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\sigma^2$ | Variance of entropy production | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
 | $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\prec$ | Strict causal precedence | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
 | $\epsilon(op)$ | Energy cost per operation | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
-| $E_{total}$ | Total energy dissipated | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
-| $k_B$ | Boltzmann constant | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
+| $\tau_0$ | Minimum step duration in the conditional sequential bound | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
 | $T$ | Temperature (Context: Thermodynamics) | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $\hbar$ | Reduced Planck constant | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
 | $c$ | Speed of light | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
 | $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $R_s$ | Schwarzschild Radius | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.3.9.1](/monograph/rules/ontology/1.3/#1.3.9.1) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.3.10.1](/monograph/rules/ontology/1.3/#1.3.10.1) |
 | $G$ | A specific Causal Graph $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
 | $v, u, w$ | Individual vertices | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
@@ -104,14 +95,12 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
 | $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\le$ | Effective Influence Relation (Strict Partial Order) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $R$ | Mediated influence by a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
-| $N$ | Total number of vertices in the graph | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $D_G(C)$ | Ambient graph diameter of the perimeter's vertices | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
 | $R$ | Radius of local computational patch | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $t_{crit}$ | Critical time where cycle diameter exceeds horizon | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $\rho$ | Edge density of the graph | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
 | $D$ | Graph Diameter | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
 | $E_{sync}$ | Energy required for global synchronization | [§2.8](/monograph/rules/axioms/2.8/#2.8) |
 | $\Delta F$ | Change in Free Energy | [§3.1](/monograph/rules/architecture/3.1/#3.1) |
@@ -133,7 +122,6 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.3](/monograph/rules/architecture/3.3/#3.3.3) |
 | $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](/monograph/rules/architecture/3.4/#3.4.2) |
 | $\mathcal{T}_{\text{tunnel}}$ | Tunneling Operator | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $d_H$ | Hamming Distance | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
 | $\chi(G)$ | Chromatic Number | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
 | $\epsilon_{geo}$ | Geometric Self-Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
 | $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
@@ -143,7 +131,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $K_{uv}$ | Individual edge occupancy readout | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.3.2](/monograph/rules/architecture/3.5/#3.5.3.2) |
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
@@ -176,8 +164,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $I(R_A; R_B)$ | Mutual Information between disjoint regions | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $\xi$ | Correlation Length (Entropic decay scale) | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
+| $\operatorname{TC}(P)$ | Total correlation of the block law | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
 | $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
 | $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2](/monograph/rules/equilibrium/5.2/#5.2) |
 | $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
@@ -191,15 +178,13 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{C}_{\text{viab}}$ | Viability Channel (stable topological evolution trajectory) | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
 | $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
 | $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |
-| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.4.1](/monograph/rules/equilibrium/5.4/#5.4.4.1) |
+| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
 | $\bar{d}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
 | $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
 | $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
-| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.4.1](/monograph/rules/equilibrium/5.5/#5.5.4.1) |
-| $C_{cov}, \gamma$ | Covariance amplitude and decay rate | [§5.5.5](/monograph/rules/equilibrium/5.5/#5.5.5) |
-| $C_k$ | Count of simple cycles of length $k$ | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
-| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
+| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
+| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
+| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
 | $R$ | Causal Horizon (Radius of local operator) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |

@@ -295,7 +295,11 @@ export const part1Chapters: ChapterData[] = [
       },
       {
         title: "4.6 Single Tick of Logical Time",
-        content: "Tracks a single tick of logical time, proving that the parallel update sequence preserves causality and reversibility."
+        content: "Defines the frozen-snapshot tick and derives conditional triangle drift, exact quiescence, and finite-horizon height bounds."
+      },
+      {
+        title: "4.7 Finite-Kernel Quasi-Stationarity",
+        content: "Derives the conditional active law, geometric exit time, and spectral convergence for a specified finite killed kernel."
       }
     ],
     specialists: [
@@ -305,7 +309,7 @@ export const part1Chapters: ChapterData[] = [
       },
       {
         area: "For Dynamicists",
-        text: "A single logical tick executes parallel, local awareness updates, preserving microscopic reversibility."
+        text: "The tick kernel maps frozen local outcomes to a timestamped successor, with recorded rollback available for individual active-field edits."
       },
       {
         area: "For Computer Scientists",
@@ -358,7 +362,7 @@ export const part1Chapters: ChapterData[] = [
       },
       {
         title: "5.5 Geometric Stabilization (Topological Stability)",
-        content: "Establishes the topological stability of the crystallized vacuum, showing that local fluctuations are suppressed by steric constraints."
+        content: "Separates finite increment estimates, ensemble tail hypotheses, and conditional measured compactness from the Lorentzian reconstruction problem."
       }
     ],
     specialists: [

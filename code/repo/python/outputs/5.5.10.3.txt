@@ -1,0 +1,8 @@
+d=1: calibrated statistic 0.500000
+d=2: calibrated statistic 0.250000
+d=3: calibrated statistic 0.114286
+d=4: calibrated statistic 0.050000
+d=5: calibrated statistic 0.021312
+d=6: calibrated statistic 0.008929
+Exact calibration 1/20: estimated dimension 4.0000
+Synthetic statistic 0.0501: estimated dimension 3.9976

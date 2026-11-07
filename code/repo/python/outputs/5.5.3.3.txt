@@ -1,15 +1,6 @@
-Degree Distribution and Scar Immunity Verification
-=================================================================
-Substrate Scale: N = 100 vertices
------------------------------------------------------------------
-State Phase          | Mean Edges <|E|>   | Mean Degree <k>
------------------------------------------------------------------
-Baseline Bethe Tree  | 99.0               | 1.9800         
-Active QSD Phase     | 108.2              | 2.1640         
-Absorbing Scarred DAG | 100.2              | 2.0040         
-=================================================================
-Maximum Observed Degree : D_obs = 6
-Theoretical Degree Bound: D_max <= 8
-Scar Edge Deletion Immunity Verified: True
-=================================================================
-Verification Successful: Degree bounds and scar permanence confirmed.
+Threshold 1: 101/125 <= 117/125
+Threshold 2: 43/125 <= 81/125
+Threshold 3: 6/125 <= 27/125
+initial: mean degree 1.9800
+sampled active: mean degree 2.1640
+sampled final: mean degree 2.0040

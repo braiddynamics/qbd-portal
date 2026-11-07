@@ -20,7 +20,7 @@ $$
 
 where the components satisfy the following structural constraints:
 1.  **Stochastic Kernel:** The term $P_{uv} = A_{uv} / \deg(u)$ constitutes the row-stochastic transition matrix of the unbiased random walk on $G_t$, encoding the local connectivity structure.
-2.  **Dimensional Calibration:** The parameter $d=4$ corresponds to the emergent Hausdorff dimension fixed by the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
+2.  **Dimensional Calibration:** The parameter $d=4$ corresponds to the emergent Hausdorff dimension fixed by the **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
 3.  **Metric Scaling:** The coefficient $\ell_0^{-2}$ assigns the operator the physical dimensions of curvature ($[\text{Length}]^{-2}$), ensuring the spectral convergence $\lim_{t\to\infty} \sigma(\tilde{\mathcal{L}}_t) = \sigma(-\Delta_g)$ to the Laplace-Beltrami operator of the limit manifold $(M,g)$.
 
 **In Plain English:**  
@@ -258,7 +258,7 @@ with $d=4$. This asymptotic behavior is enforced not merely by dimensional scali
 The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). we conclude that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
 
 **II. Volume Doubling (Ahlfors Regularity)**
-The **Ahlfors 4-Regularity** condition **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> imposes polynomial volume growth $V(x,r) \sim r^4$. This implies the Volume Doubling property with a scale-invariant constant $C_D = 2^4 = 16$:
+The **Conditional Ball Growth** condition **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" /> imposes polynomial volume growth $V(x,r) \sim r^4$. This implies the Volume Doubling property with a scale-invariant constant $C_D = 2^4 = 16$:
 
 $$
 V(x, 2r) \leq C_D V(x, r) \quad \forall r > \ell_0.
@@ -510,7 +510,7 @@ $$
 This establishes the precise asymptotic connection between discrete optimal transport curvature and the continuum Ricci curvature tensor.
 
 **IV. Action Sum Integral Convergence**
-We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and $d=4$ from **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />):
+We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and $d=4$ from **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />):
 
 $$
 \mathcal{S}[G] = \sum_{e \in E} K(e) \xrightarrow{\ell_0 \to 0} \frac{1}{2(d+2) \ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x.
@@ -595,7 +595,7 @@ Section 12.2.1 formalizes the properties of the QBD definition regarding tensori
 :::info[**Convergence of Constructed Tensor Fields to Smooth Symmetric Tensors driven by the Weak Convergence of Local Averaging Maps**]
 :::
 
-Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Ahlfors 4-Regularity** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
+Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Conditional Ball Growth** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
 
 **In Plain English:**  
 Gravity is not a fundamental force but rather an entropic force arising from information changes on holographic screens, yielding the Einstein Field Equations.
@@ -1093,7 +1093,7 @@ $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\boldsymbol{e}] \neq 0.
 $$
 
-The vector field $D^\mu$ is the **Causal Drift**. Grounded in the volume scaling of **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, it defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
+The vector field $D^\mu$ is the **Causal Drift**. Grounded in the volume scaling of **Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />, it defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
 
 **I. Directed Edge Projection**
 Let $\phi: G_t \to M$ be the spectral embedding. For a causal edge $e=(u,v)$, the logical depth satisfies $L(v) \geq L(u) + 1$. The tangent vector is defined as the limit of the secant:

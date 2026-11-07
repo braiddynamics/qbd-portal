@@ -1,0 +1,6 @@
+Cross-branch acceptance p: 0.450280498
+Seed cycle deletion q: 0.998849047
+Realization probability mass: 1.000000000
+At least one surviving descendant: 0.465473361
+Expected surviving cross-branch descendants: 0.600719499
+Analytic/enumerated difference: 5.551e-17

@@ -28,13 +28,23 @@ Section 4.1.1 formalizes the properties of the QBD definition regarding internal
 :::tip[**Structure as Cumulative Trajectories utilizing History-Preserving Embeddings**]
 :::
 
-The **Historical Category**, denoted $\mathbf{Hist}$, is defined as the meta-theoretical structure governing the irreversible progression of the universe across the domain of Logical Time.
-1.  **Objects:** The objects are Cumulative Causal Trajectories $\mathcal{H}_t = \bigcup_{i=0}^t G_i = \left( V_t, \; \bigcup_{i=0}^t E(G_i), \; H \right)$, where $G_i$ represents the instantaneous Kinematic State at logical time $i$. The trajectory $\mathcal{H}_t$ constitutes the permanent, indelible mathematical record of all relational events that have occurred up to time $t$, with creation timestamps $H(e)$ fixed at the moment of edge insertion. The instantaneous spatial state $G_t$ is an active, time-dependent routing subgraph of $\mathcal{H}_t$; $G_t$ itself is not an object of $\mathbf{Hist}$.
-2.  **Morphisms:** A morphism $f: \mathcal{H}_t \to \mathcal{H}_{t+k}$ constitutes a **History-Respecting Embedding**, defined as the canonical inclusion map $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+k}$ satisfying two invariant conditions:
-    * **Edge Preservation:** For all $e = (u, v) \in E(\mathcal{H}_t)$, the edge exists in $E(\mathcal{H}_{t+k})$ (guaranteed by cumulative union $E(\mathcal{H}_{t+k}) = E(\mathcal{H}_t) \cup \bigcup_{j=1}^k E(G_{t+j})$).
-    * **Timestamp Preservation:** For all $e \in E(\mathcal{H}_t)$, the timestamp values satisfy strict equality $H_{t+k}(\iota(e)) = H_t(e)$.
-3.  **Composition:** The composition of morphisms is defined as standard function composition $(g \circ f)(x) = g(f(x))$.
-4.  **Identity:** The identity morphism $\text{id}_{\mathcal{H}_t}$ is the identity inclusion on the trajectory $\mathcal{H}_t$, satisfying $H(\text{id}_{\mathcal{H}_t}(e)) = H(e)$.
+Let the **Historical Category** $\mathbf{Hist}$ have objects given by cumulative creation-record sets $\mathcal E_t$ and morphisms given by their canonical inclusions. A record is $\omega=(u,v,b,h)$ with source, target, scheduler birth tick and causal height (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). Write
+
+$$
+\mathcal E_{t+1}=\mathcal E_t\cup A^{\mathrm{occ}}_{t+1},\qquad
+b(\omega)=\omega_3,\quad h(\omega)=\omega_4.
+$$
+
+The initial records have $b=h=0$. New records have birth tick $t+1$ and height assigned from the pre-tick snapshot. For any fixed pair and birth tick the scheduler creates at most one record. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies which past creation is currently active. The cumulative spatial support is the projection
+
+$$
+\overline E_t=\{(u,v):\exists b,h,\ (u,v,b,h)\in\mathcal E_t\},\qquad
+\overline G_t=(V,\overline E_t).
+$$
+
+The unlabeled support $\overline G_t$ is the cumulative spatial shadow of the creation history. It is not itself the occurrence dependency poset, and it does not identify different births of the same pair. A first-birth label on $\overline E_t$, if used, is not the current active height. Deletion records and the full state trajectory are additional data when required; the creation record alone is not defined to reconstruct every intermediate state.
+
+An inclusion $\iota_{t,s}:\mathcal E_t\hookrightarrow\mathcal E_s$, $t\le s$, has $\iota_{t,s}(\omega)=\omega$. Identities and composition are ordinary inclusion identities and composition, preserving all four coordinates exactly.
 
 **In Plain English:**  
 Section 4.1.2 formalizes the properties of the QBD definition regarding historical category.
@@ -46,7 +56,7 @@ Section 4.1.2 formalizes the properties of the QBD definition regarding historic
 :::info[**Preservation of Historical Causal Poset via Active Kinematic Edge Excision**]
 :::
 
-Let the active kinematic state $G_t$ be decoupled from the cumulative causal trajectory $\mathcal{H}_t = \bigcup_{i=0}^t G_i$, such that topological edge deletion $\mathfrak{T}_{del}$ excises edges strictly from $G_t$ ($E_{t+1} \subset E_t$). Then the transition induces a canonical inclusion morphism $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ in the Historical Category $\mathbf{Hist}$ that is well-defined, strictly injective, and preserves timestamp equality $H_{\mathcal{H}_{t+1}}(\iota(e)) = H_{\mathcal{H}_t}(e)$ for all $e \in E(\mathcal{H}_t)$. Consequently, topological pruning of active spatial adjacencies is mathematically orthogonal to the monotonic irreversibility of historical causation.
+Let the active spatial state use the occurrence map $\alpha_t:E_t\to\mathcal E_t$ and let creation records accumulate by union (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). Then the historical record is preserved by active edge deletion, including every prior creation record and its birth tick and height, while the cumulative spatial support remains monotonically inclusive.
 
 **In Plain English:**  
 Section 4.1.3 formalizes the properties of the QBD theorem regarding orthogonality of kinematic and historical state.
@@ -58,13 +68,7 @@ Section 4.1.3 formalizes the properties of the QBD theorem regarding orthogonali
 :::info[**Preservation of Excised Kinematic Edges via Cumulative Trajectories**]
 :::
 
-Let the active kinematic state transition $G_t \to G_{t+1}$ involve an arbitrary sequence of graph rewrite operations, including topological edge deletion $\mathfrak{T}_{del}$ such that $E(G_{t+1}) \not\supseteq E(G_t)$. The cumulative causal trajectory $\mathcal{H}_t$, defined as the recursive union $\mathcal{H}_t = \bigcup_{i=0}^t G_i$, satisfies strict set inclusion:
-
-$$
-\mathcal{H}_t \subseteq \mathcal{H}_{t+1}
-$$
-
-Every edge $e \in E(G_t)$ excised from the active manifold $G_{t+1}$ remains a permanent element of $E(\mathcal{H}_{t+1})$.
+Let $\mathcal E_{t+1}=\mathcal E_t\cup A^{\mathrm{occ}}_{t+1}$ and let active deletions remove pairs only from $E_t$. Then the historical inclusion is well-defined: $\mathcal E_t\subseteq\mathcal E_{t+1}$ and $\overline E_t\subseteq\overline E_{t+1}$, and an excised active occurrence remains in the creation history (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
 
 **In Plain English:**  
 Section 4.1.4 formalizes the properties of the QBD lemma regarding trajectory monotonicity under edge excision.
@@ -76,44 +80,26 @@ Section 4.1.4 formalizes the properties of the QBD lemma regarding trajectory mo
 :::tip[**Verification of Trajectory Inclusion via Set-Theoretic Monotonicity**]
 :::
 
-**I. State Space Setup**
-The active kinematic graph at logical time $t$ is defined as the relational tuple $G_t = (V_t, E_t, H_t)$, where $V_t$ denotes the active vertex set, $E_t \subseteq V_t \times V_t$ represents the active edge set, and $H_t: E_t \to \mathbb{N}$ assigns the local logical creation timestamp. The cumulative causal trajectory is defined as:
+**I. Record Inclusion**
+
+The proof uses the specified objects and conventions (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
+
+For $\omega\in\mathcal E_t$, the union identity gives
 
 $$
-\mathcal{H}_t = \left( \bigcup_{i=0}^t V_i, \, \bigcup_{i=0}^t E_i, \, \bigcup_{i=0}^t H_i \right)
+\omega\in\mathcal E_t\Longrightarrow
+\omega\in\mathcal E_t\cup A^{\mathrm{occ}}_{t+1}=\mathcal E_{t+1}.
 $$
 
-Because creation timestamps are assigned immutably at the instant of edge genesis and never modified by subsequent constructor steps, the mappings $H_i$ and $H_j$ agree identically on the intersection of their domains ($H_i(e) = H_j(e)$ for all $e \in E_i \cap E_j$), ensuring that the functional union $\bigcup_{i=0}^t H_i$ is single-valued and well-defined. The state space of active execution is governed by the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />, distinguishing the instantaneous configuration from the historical record.
+Hence $\mathcal E_t\subseteq\mathcal E_{t+1}$.
 
-**II. Topological Edge Excision**
-Let an elementary rewrite step execute an edge deletion $\mathfrak{T}_{del}$ at logical time $t$, selecting an active edge $e^* = (u, v) \in E_t$ and updating the kinematic edge set to:
+**II. Projection to Spatial Support**
 
-$$
-E_{t+1} = (E_t \setminus \{e^*\}) \cup E_{\text{new}}
-$$
+If $(u,v)\in\overline E_t$, some $b,h$ satisfy $(u,v,b,h)\in\mathcal E_t$. Record inclusion puts the same record in $\mathcal E_{t+1}$, so $(u,v)\in\overline E_{t+1}$. Therefore $\overline E_t\subseteq\overline E_{t+1}$.
 
-where $E_{\text{new}}$ denotes edges created in the same transition. While $e^* \notin E_{t+1}$, the cumulative edge set of $\mathcal{H}_{t+1}$ is given by:
+**III. Active Excision**
 
-$$
-E(\mathcal{H}_{t+1}) = \left( \bigcup_{i=0}^t E_i \right) \cup E_{t+1} = E(\mathcal{H}_t) \cup E_{t+1}
-$$
-
-The transition preserves reachability channels analyzed in the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />.
-
-**III. Set Inclusion and Persistence**
-Because $e^* \in E_t \subseteq E(\mathcal{H}_t)$, evaluating the subset relations yields:
-
-$$
-e^* \in E(\mathcal{H}_t) \subseteq E(\mathcal{H}_t) \cup E_{t+1} = E(\mathcal{H}_{t+1})
-$$
-
-Set union is monotonic with respect to inclusion. For all subsets $A$ and $B$, $A \subseteq A \cup B$ holds unconditionally. Evaluating $A = E(\mathcal{H}_t)$ and $B = E_{t+1}$ yields:
-
-$$
-E(\mathcal{H}_t) \subseteq E(\mathcal{H}_{t+1})
-$$
-
-The identical argument applies to the vertex sets $V(\mathcal{H}_t) \subseteq V(\mathcal{H}_{t+1})$. Consequently, $\mathcal{H}_t \subseteq \mathcal{H}_{t+1}$ holds regardless of the cardinality or topological composition of excised edges.
+If $e\in E_t$ is deleted, its active occurrence $\alpha_t(e)$ belongs to $\mathcal E_t$ and therefore to $\mathcal E_{t+1}$. Removal of $e$ from the active set changes neither union membership nor the stored record. This proves deletion indelibility (**Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />).
 
 Q.E.D.
 
@@ -127,7 +113,7 @@ Section 4.1.4.1 formalizes the properties of the QBD proof regarding trajectory 
 :::info[**Invariance of Historical Edge Timestamps via Canonical Inclusion**]
 :::
 
-Let $e \in E(\mathcal{H}_t)$ be an arbitrary edge in the cumulative causal trajectory, and let $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ denote the canonical inclusion map. Under topological edge deletion $\mathfrak{T}_{del}$ executed on $G_t$, the assigned timestamp function satisfies strict equality $H_{\mathcal{H}_{t+1}}(\iota(e)) = H_{\mathcal{H}_t}(e)$, establishing that $\iota$ is a well-defined history-respecting canonical inclusion in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />.
+Let $\iota_{t,s}:\mathcal E_t\hookrightarrow\mathcal E_s$ be a canonical historical inclusion (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). Then $b(\iota_{t,s}(\omega))=b(\omega)$ and $h(\iota_{t,s}(\omega))=h(\omega)$ for every $\omega\in\mathcal E_t$.
 
 **In Plain English:**  
 Section 4.1.5 formalizes the properties of the QBD lemma regarding timestamp preservation under kinematic excision.
@@ -139,20 +125,30 @@ Section 4.1.5 formalizes the properties of the QBD lemma regarding timestamp pre
 :::tip[**Verification of Timestamp Monotonicity via Embedding Transitions**]
 :::
 
-**I. Timestamp Assignment on Trajectories**
-The historical timestamp function $H_{\mathcal{H}_t}: E(\mathcal{H}_t) \to \mathbb{N}$ records the logical time of creation for each edge $e \in E(\mathcal{H}_t)$. For an edge $e$ created at step $t_0 \le t$, its historical timestamp is assigned as $H_{\mathcal{H}_t}(e) = t_0$, respecting the discrete progression of the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />.
+**I. Coordinate Form of the Inclusion**
 
-**II. Invariance under Excision**
-Let edge $e^* \in E_t$ be excised during the transition $t \to t+1$, such that $e^* \notin E_{t+1}$. The Universal Constructor acts exclusively on the active kinematic graph $G_t$ and generates updates solely for active elements. The excision operation $\mathfrak{T}_{del}$ removes $e^*$ from active routing table $E_{t+1}$ without generating a new relational event or modifying historical records. In trajectory space $\mathcal{H}_{t+1} = \mathcal{H}_t \cup G_{t+1}$, the timestamp function restricted to historical edges evaluates to:
+The proof uses the specified objects and conventions (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
+
+Let $\omega=(u,v,b,h)\in\mathcal E_t$. The canonical inclusion changes its containing set, not its value:
 
 $$
-H_{\mathcal{H}_{t+1}}(e^*) = H_{\mathcal{H}_t}(e^*) = t_0
+\iota_{t,s}(u,v,b,h)=(u,v,b,h).
 $$
 
-Under the canonical inclusion map $\iota(x) = x$, the relation $H_{\mathcal{H}_{t+1}}(\iota(e^*)) = H_{\mathcal{H}_t}(e^*)$ holds with strict equality as required by the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />.
+**II. Birth and Height Projections**
 
-**III. Invariance across the Trajectory Domain**
-Because edge timestamps in trajectory space $\mathcal{H}_t$ encode immutable historical genesis coordinates rather than fluctuating kinematic flags, newly created edges in $E_{t+1} \setminus E_t$ receive fresh timestamps $H(e_{\text{new}}) = t+1$, while all pre-existing edges $e \in E(\mathcal{H}_t)$ retain their exact genesis timestamps under $\iota$. Thus, for every edge $e \in E(\mathcal{H}_t)$, strict equality $H_{\mathcal{H}_{t+1}}(\iota(e)) = H_{\mathcal{H}_t}(e)$ holds across the entire domain of $\mathcal{H}_t$. The canonical inclusion map $\iota$ preserves edge existence and timestamp invariance, fulfilling the defining axioms of a morphism in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />.
+Applying the third and fourth projections separately gives
+
+$$
+\begin{aligned}
+b(\iota_{t,s}(\omega))&=b(u,v,b,h)=b=b(\omega),\\
+h(\iota_{t,s}(\omega))&=h(u,v,b,h)=h=h(\omega).
+\end{aligned}
+$$
+
+**III. Distinct Re-Creations**
+
+For records $(u,v,b_1,h_1)$ and $(u,v,b_2,h_2)$ with $b_1\ne b_2$, equality of records would imply equality of their third projections, contradicting $b_1\ne b_2$. Thus the two births remain distinct even when $h_1=h_2$. Each record retains its own projections (**Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />).
 
 Q.E.D.
 
@@ -166,7 +162,7 @@ Section 4.1.5.1 formalizes the properties of the QBD proof regarding timestamp p
 :::info[**Orthogonality of Causal Reachability via Poset Invariance**]
 :::
 
-Let the internal causal reachability category $\mathbf{Caus}_t$ be evaluated exclusively over the active kinematic graph $G_t$, while the causal poset order $\le_{\text{causal}}$ is evaluated globally over the Historical Category $\mathbf{Hist}$. Consequently, the dissolution of directed paths or 3-cycles in $G_t$ under active edge deletion $\mathfrak{T}_{del}$ relieves local catalytic stress in $\mathbf{Caus}_t$ without altering the invariant partial order of events established in $\mathbf{Hist}$.
+Let active-path morphisms use $G_t$, cumulative support use $\overline G_t$, and occurrence chronology use the dependency closure $D^+$ (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />). Then the historical dependency relation is unchanged by active deletion: active paths can disappear while creation records and their previously recorded dependencies remain.
 
 **In Plain English:**  
 Section 4.1.6 formalizes the properties of the QBD lemma regarding categorical domain decoupling.
@@ -178,20 +174,21 @@ Section 4.1.6 formalizes the properties of the QBD lemma regarding categorical d
 :::tip[**Verification of Categorical Domain Decoupling via Slicing**]
 :::
 
-**I. Domain Specification of $\mathbf{Caus}_t$**
-We evaluate the morphism sets of the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />. By definition, for any pair of objects $u, v \in V(G_t)$, the morphism set $\text{Hom}_{\mathbf{Caus}_t}(u, v)$ consists of directed paths entirely contained within the active edge set $E(G_t)$. When an edge $e^* = (u, w)$ is deleted by $\mathfrak{T}_{del}$, every path sequence in $G_t$ traversing $e^*$ between any object pair $(x, y)$ ceases to belong to $\text{Hom}_{\mathbf{Caus}_{t+1}}(x, y)$. Thus, $\mathbf{Caus}_t$ dynamically reflects the instantaneous topological state space, severing reachability channels and dissolving cycles across the active manifold.
+**I. Active Path Membership**
 
-**II. Domain Specification of $\mathbf{Hist}$**
-We evaluate the global poset structure in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. The causal partial order between two events $x$ and $y$ is defined by reachability in the cumulative causal DAG:
+For a deletion-only change $E'=E\setminus F$, any path using an edge of $F$ is absent from the new active path set. Every path using only $E'$ was already a path in $E$, giving
 
 $$
-x \le_{\text{causal}} y \iff \exists \text{ directed path from } x \text{ to } y \text{ in } \mathcal{H}_t
+\mathcal P_{E'}(u,v)\subseteq\mathcal P_E(u,v).
 $$
 
-By **Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />, $\mathcal{H}_t \subseteq \mathcal{H}_{t+1}$. Therefore, if a directed path between $x$ and $y$ exists in $\mathcal{H}_t$, that directed path exists in $\mathcal{H}_{t+1}$.
+**II. Retained Historical Objects**
 
-**III. Orthogonality of Topological and Causal Domains**
-The removal of edge $e^*$ from $E(G_t)$ modifies the instantaneous morphism set $\text{Hom}_{\mathbf{Caus}_{t+1}}(x, y) \subset \text{Hom}_{\mathbf{Caus}_t}(x, y)$ for all pairs $(x, y)$ whose paths traversed $e^*$, dissolving geometric cycles and relieving catalytic congestion. However, because $e^* \in E(\mathcal{H}_{t+1})$ per **Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />, the historical relation $x \le_{\text{causal}} y$ remains invariant. The kinematic domain and historical causal domain are therefore mathematically decoupled.
+The same operation does not remove elements of $\mathcal E_t$ (**Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />). The coordinate values of each retained record remain equal (**Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />). The recorded predecessor relation $D$ is fixed at creation, so excision from the active graph changes no historical pair $(\omega,\eta)\in D$.
+
+**III. Closure Invariance Under Deletion Alone**
+
+A witness for $\omega D^+\eta$ consists of retained records and recorded dependency pairs. Neither is removed. Conversely, deletion alone introduces no new records or dependency pairs. Thus the set of such witnesses is unchanged, and the occurrence order is unchanged. This is the claimed domain decoupling (**Categorical Domain Decoupling** <Ref id="4.1.6" label="§4.1.6" />).
 
 Q.E.D.
 
@@ -205,23 +202,23 @@ Section 4.1.6.1 formalizes the properties of the QBD proof regarding categorical
 :::tip[**Synthesis of Monotonicity via Timestamp Invariance and Domain Decoupling**]
 :::
 
-**I. State Space Decomposition**
-The decoupling of the active graph $G_t$ from the cumulative trajectory $\mathcal{H}_t$ is evaluated across the dual state space. The Universal Constructor $\mathcal{R}$ acts strictly upon the Kinematic State $G_t$, governed by the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. When an edge $e$ is excised ($E_{t+1} \subset E_t$) to satisfy the Elementary Task Space constraint, zero runtime overhead is incurred on active memory. By **Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />, the cumulative trajectory grows monotonically through recursive union:
+**I. Record and Support Monotonicity**
+
+Record union gives $\mathcal E_t\subseteq\mathcal E_{t+1}$, and projection gives $\overline E_t\subseteq\overline E_{t+1}$ (**Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />). A deleted active pair still has a retained creation occurrence.
+
+**II. Preserved Labels**
+
+For every retained record, canonical inclusion is the identity on its four coordinates. Hence
 
 $$
-\mathcal{H}_{t+1} = \mathcal{H}_t \cup G_{t+1} \implies \mathcal{H}_t \subseteq \mathcal{H}_{t+1}
+b(\iota(\omega))=b(\omega),\qquad h(\iota(\omega))=h(\omega)
 $$
 
-Every excised edge remains permanently embedded in the historical trajectory space.
+(**Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />).
 
-**II. Morphism Validity under Topological Excision**
-We evaluate the embedding mapping $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ against the defining axioms of the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Evaluated strictly against the kinematic state $G_t$, the transition $G_t \to G_{t+1}$ fails edge preservation due to excision. However, time evolution is formalized as a morphism in $\mathbf{Hist}$ mapping $\mathcal{H}_t \to \mathcal{H}_{t+1}$. By **Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />, the canonical inclusion map is strictly injective, and the timestamp equality $H_{\mathcal{H}_{t+1}}(\iota(e)) = H_{\mathcal{H}_t}(e)$ holds for all edges in $\mathcal{H}_t$. The embedding $\iota$ is therefore a strictly valid, well-defined morphism in $\mathbf{Hist}$.
+**III. Separate Path Domains**
 
-**III. Categorical Domain Decoupling**
-The algebraic separation of the instantaneous reachability category and the cumulative historical category follows by evaluating the domain boundaries. By **Categorical Domain Decoupling** <Ref id="4.1.6" label="§4.1.6" />, $\mathbf{Caus}_t$ is restricted to active edges in $G_t$, while the causal poset $\le_{\text{causal}}$ is governed by directed paths in $\mathcal{H}_t$. The deletion of an active spatial edge dissolves geometric 3-cycles in the "Now", relieving local catalytic stress without inducing retrograde modifications or erasing antecedent causal paths in $\mathbf{Hist}$.
-
-**IV. Synthesis and Conclusion**
-Combining the monotonicity of trajectory containment, the validity of timestamp-preserving inclusion morphisms, and the domain decoupling of spatial and historical categories, evaluating the synthesis of the multi proof chain establishes that the topological pruning of the spatial manifold is mathematically orthogonal to the preservation of the causal poset. The computational substrate discards active spatial adjacencies to regulate geometric density, while the categorical structure $\mathbf{Hist}$ guarantees the indelible, monotonic preservation of the universe's causal history.
+Active deletion can remove spatial paths while leaving both the historical records and their recorded dependencies intact (**Categorical Domain Decoupling** <Ref id="4.1.6" label="§4.1.6" />). These are exactly the record-preservation and support-inclusion conclusions (**Orthogonality of Kinematic and Historical State** <Ref id="4.1.3" label="§4.1.3" />).
 
 Q.E.D.
 
@@ -235,11 +232,11 @@ Section 4.1.7 formalizes the properties of the QBD proof regarding orthogonality
 :::note[**Lean 4 Encoding of Cumulative Trajectories and Deletion Indelibility**]
 :::
 
-Type-theoretic certification of the trajectory monotonicity, canonical inclusion morphisms, and deletion indelibility established in **Orthogonality of Kinematic and Historical State** <Ref id="4.1.7" label="§4.1.7" /> proceeds via the following verification strategy:
+Type-theoretic certification of the support and creation-record preservation established in (**Orthogonality of Kinematic and Historical State** <Ref id="4.1.7" label="§4.1.7" />) and (**Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5.1" label="§4.1.5.1" />) proceeds via the following verification strategy:
 
-1.  **Category Hist Inclusion Morphisms:** Objects in $\mathbf{Hist}$ are represented as graph edge predicates `GraphEdges V := Edge V -> Prop`. Canonical embeddings are formalized via `HistoricalInclusion H1 H2 := forall e, H1 e -> H2 e`. Theorems `historical_inclusion_id` and `historical_inclusion_trans` prove that historical inclusions satisfy categorical identity neutrality and transitive morphism composition.
-2.  **Cumulative History Monotonicity:** Constructor evolution step updates are formalized as inductive extensions $H_{t+1}(e) \leftrightarrow H_t(e) \lor A_t(e)$. Theorem `cumulative_history_step_monotonicity` proves one-step inclusion $H_t \subseteq H_{t+1}$, and theorem `cumulative_history_transitive_monotonicity` inductively establishes multi-step monotonicity $H_{t_1} \subseteq H_{t_2}$ for arbitrary time intervals $t_1 \le t_2$.
-3.  **Kinematic Subgraph and Deletion Indelibility:** Active spatial states are governed by dynamic scheduler updates $E_{t+1}(e) \leftrightarrow (E_t(e) \lor A_t(e)) \land \neg D_t(e)$. Theorem `spatial_subgraph_of_cumulative_history` proves that active spatial edges form an exact inductive subgraph of cumulative history $E_t \subseteq H_t$. Theorem `deletion_preserves_cumulative_history` verifies that kinematic edge excision $\neg E_{t+1}(e)$ leaves the historical trajectory record indelible: $H_{t+1}(e)$ remains true.
+1.  **Cumulative Support:** Edge predicates and historical inclusion encode the monotone cumulative spatial support and deletion indelibility.
+2.  **Occurrence Coordinates:** Creation records carry the spatial pair, birth tick and immutable causal height, with separate projection to cumulative spatial support.
+3.  **Preservation:** The proof terms certify record inclusion, support projection, both temporal-coordinate equalities, distinct births and the elementary next-tick height bound.
 
 ```lean
 def Edge (V : Type) := V × V
@@ -351,10 +348,65 @@ theorem deletion_preserves_cumulative_history {V : Type}
   · rw [h_hist t e]
     have h_in_H := spatial_subgraph_of_cumulative_history E_seq H_seq A_seq D_seq h_init h_hist h_dyn t e he_active
     exact Or.inl h_in_H
+
+namespace QBD.CreationHistory
+
+-- A creation occurrence stores both temporal coordinates explicitly.
+structure Occurrence (V : Type) where
+  source : V
+  target : V
+  born : Nat
+  height : Nat
+
+-- Histories contain creation records, not only spatial endpoint pairs.
+abbrev History (V : Type) := Occurrence V → Prop
+
+-- A canonical inclusion fixes each record value.
+def Included {V : Type} (A B : History V) : Prop := ∀ w, A w → B w
+
+-- The cumulative spatial support forgets both temporal coordinates.
+def support {V : Type} (A : History V) (e : V × V) : Prop :=
+  ∃ w, A w ∧ w.source = e.1 ∧ w.target = e.2
+
+/-- Appending creation records preserves every old record. -/
+theorem append_includes {V : Type} (A New : History V) :
+    Included A (fun w => A w ∨ New w) := by
+  intro w hw
+  exact Or.inl hw
+
+/-- Record inclusion induces inclusion of projected spatial supports. -/
+theorem support_inclusion {V : Type} (A B : History V) (h : Included A B)
+    (e : V × V) : support A e → support B e := by
+  intro ⟨w, hw, hs, ht⟩
+  exact ⟨w, h w hw, hs, ht⟩
+
+/-- Canonical inclusion preserves scheduler birth tick. -/
+theorem birth_preserved {V : Type} (w : Occurrence V) : (id w).born = w.born := by rfl
+
+/-- Canonical inclusion preserves immutable causal height. -/
+theorem height_preserved {V : Type} (w : Occurrence V) : (id w).height = w.height := by rfl
+
+/-- Different scheduler births identify different creation occurrences. -/
+theorem different_birth_distinct {V : Type} (w z : Occurrence V)
+    (h : w.born ≠ z.born) : w ≠ z := by
+  intro heq
+  exact h (congrArg Occurrence.born heq)
+
+/-- The recurrence increment respects the next scheduler tick bound. -/
+theorem next_height_bound (parentMax tick : Nat) (h : parentMax ≤ tick) :
+    parentMax + 1 ≤ tick + 1 := by
+  exact Nat.succ_le_succ h
+
+end QBD.CreationHistory
+
+#print axioms QBD.CreationHistory.support_inclusion
+#print axioms QBD.CreationHistory.different_birth_distinct
+
 ```
 
 **Verification Summary:**
-The formalization models cumulative causal trajectories and the categorical syntax of historical evolution over arbitrary vertex types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorems `historical_inclusion_id` and `historical_inclusion_trans` certify that history inclusions satisfy category identity and associativity laws. Furthermore, theorems `cumulative_history_step_monotonicity` and `cumulative_history_transitive_monotonicity` validate that cumulative history expands monotonically across arbitrary discrete intervals, while `spatial_subgraph_of_cumulative_history` proves that the active kinematic graph is strictly contained within historical trajectory space. Finally, theorem `deletion_preserves_cumulative_history` confirms that kinematic edge deletion leaves the historical causal record indelible. The Lean kernel's acceptance of these machine-checked proofs validates the structural decoupling of spatial pruning from causal history and certifies the structural assertion in **Orthogonality of Kinematic and Historical State** <Ref id="4.1.7" label="§4.1.7" />.
+
+The support-level theorems certify monotone inclusion and persistence of excised spatial pairs. The creation-record declarations additionally distinguish scheduler birth from causal height and retain both under canonical inclusion. The support projection theorem links the two representations without identifying their data. The height increment theorem is conditional on a bound for the source maximum, whose correspondence to the snapshot recurrence is given analytically. Lean kernel acceptance certifies these stated preservation identities for the corresponding proof; the module contains no admitted proofs or additional axioms.
 
 **In Plain English:**  
 Section 4.1.8 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -390,48 +442,55 @@ Section 4.2.2 formalizes the properties of the QBD lemma regarding identity for 
 :::tip[**Verification of Neutrality under Composition for Trivial Paths**]
 :::
 
-**I. Morphism Definition**
+**I. Anchored Edge Lists**
 
-Let the set of morphisms $\text{Hom}(u, v)$ in $\mathbf{Caus}_t$, representing the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />, consist of all finite directed edge sequences connecting vertex $u$ to vertex $v$, evaluated for the **Identity for $\mathbf{Caus}_t$** <Ref id="4.2.2" label="§4.2.2" /> constraint:
-For any object $u \in V$, define the identity morphism $\text{id}_u$ as the empty edge sequence anchored at $u$:
-
-$$
-\text{id}_u = (u, \emptyset, u)
-$$
-
-The length of this sequence is $\ell(\text{id}_u) = 0$.
-
-**II. Composition Operation**
-
-Define composition $\circ$ as sequence concatenation. Let $p \in \text{Hom}(u, v)$ be defined by the sequence $S_p = (e_1, \dots, e_k)$. Let $q \in \text{Hom}(v, w)$ be defined by the sequence $S_q = (e'_1, \dots, e'_m)$.
+In the path category, a morphism $p:u\to v$ is represented by its endpoints and finite edge list
 
 $$
-q \circ p = (e_1, \dots, e_k, e'_1, \dots, e'_m)
+p=(u,(e_1,\ldots,e_k),v),\qquad k\ge0
 $$
 
-**III. Left Neutrality Verification**
-
-Consider the composition $\text{id}_v \circ p$. The sequence of the identity is empty, $S_{\text{id}_v} = \emptyset$. Concatenation yields:
+(**Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />). Its identity at $x$ is the anchored empty list
 
 $$
-S_{\text{id}_v \circ p} = S_p \cdot \emptyset = S_p
+1_x=(x,(),x),\qquad\ell(1_x)=0.
 $$
 
-The resulting sequence is identical to $p$ in content, order, and endpoints. It follows that $\text{id}_v \circ p = p$.
+If $k=0$, the path is trivial and $u=v$; its anchor still specifies its object.
 
-**IV. Right Neutrality Verification**
+**II. Identity After a Path**
 
-Consider the composition $p \circ \text{id}_u$.
+The composite $1_v\circ p$ is defined, because the target of $p$ is the source of $1_v$. Its endpoints are $(u,v)$ and its length is $k+0=k$. At each position $1\le j\le k$ its edge is
 
 $$
-S_{p \circ \text{id}_u} = \emptyset \cdot S_p = S_p
+(S_p\mathbin{+\!+}())_j=(S_p)_j=e_j,
 $$
 
-The resulting sequence is identical to $p$. It follows that $p \circ \text{id}_u = p$.
+where $+\!+$ denotes concatenation. There are no positions contributed by the empty list. Thus
 
-**V. Conclusion**
+$$
+1_v\circ p=(u,(e_1,\ldots,e_k),v)=p.
+$$
 
-The trivial path $\text{id}_u$ satisfies the two-sided identity laws required for a category. We conclude that this property holds universally for all objects $u \in V$.
+**III. Identity Before a Path**
+
+The composite $p\circ1_u$ is defined for the same endpoint reason. It has length $0+k=k$, and for every $1\le j\le k$,
+
+$$
+(()\mathbin{+\!+}S_p)_j=(S_p)_{j-0}=e_j.
+$$
+
+The endpoints remain $(u,v)$, so
+
+$$
+p\circ1_u=(u,(e_1,\ldots,e_k),v)=p.
+$$
+
+When $k=0$, both products are the same anchored empty list, so the two calculations also include the trivial-path case. The required identity laws are therefore (**Identity for $\mathbf{Caus}_t$** <Ref id="4.2.2" label="§4.2.2" />)
+
+$$
+\boxed{1_v\circ p=p=p\circ1_u.}
+$$
 
 Q.E.D.
 
@@ -463,54 +522,47 @@ Section 4.2.3 formalizes the properties of the QBD lemma regarding associativity
 :::tip[**Verification of Associativity under Composition for Path Concatenation**]
 :::
 
-**I. Morphism Definition**
+**I. Composable Typed Lists**
 
-Let $p: u \to v$, $q: v \to w$, and $r: w \to x$ be composable morphisms defined in the **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />, evaluated for **Associativity for $\mathbf{Caus}_t$** <Ref id="4.2.3" label="§4.2.3" />:
-Let $p: u \to v$, $q: v \to w$, and $r: w \to x$ be composable morphisms defined by the edge sequences $S_p = (e^p_1, \dots, e^p_k)$, $S_q = (e^q_1, \dots, e^q_m)$, and $S_r = (e^r_1, \dots, e^r_n)$.
+Let $p:u\to v$, $q:v\to w$ and $r:w\to x$ have edge lists $P,Q,R$ of lengths $k,m,n$ (**Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />). Every adjacent edge in each list has matching endpoints. The two joining vertices are $v$ and $w$, so both ways of concatenating these lists are valid directed paths from $u$ to $x$.
 
-**II. Left Association**
+**II. First Grouping**
 
-Let $L$ denote the composite morphism $(r \circ q) \circ p$.
-
-1.  **Inner Step:** Let $y = r \circ q$.
-
-    $$
-    S_y = S_q \cdot S_r = (e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
-    $$
-
-2.  **Outer Step:** The equality $L = y \circ p$ holds.
-
-    $$
-    S_L = S_p \cdot S_y = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
-    $$
-
-**III. Right Association**
-
-Let $R$ denote the composite morphism $r \circ (q \circ p)$.
-
-1.  **Inner Step:** Let $z = q \circ p$.
-
-    $$
-    S_z = S_p \cdot S_q = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m)
-    $$
-
-2.  **Outer Step:** The equality $R = r \circ z$ holds.
-
-    $$
-    S_R = S_z \cdot S_r = (e^p_1, \dots, e^p_k, e^q_1, \dots, e^q_m, e^r_1, \dots, e^r_n)
-    $$
-
-**IV. Equality Verification**
-
-The resultant sequences satisfy $S_L = S_R$. The sequences are identical. Morphism equality in $\mathbf{Caus}_t$ is defined by sequence equality. Therefore:
+Composing $r$ after $q$ yields the list $Q+\!+R$. Composing the result after $p$ yields
 
 $$
-(r \circ q) \circ p = r \circ (q \circ p)
+S_{(r\circ q)\circ p}=P+\!+(Q+\!+R),\qquad
+\ell((r\circ q)\circ p)=k+(m+n).
 $$
 
-**V. Conclusion**
+Its $j$-th edge is
 
-We conclude that $(r \circ q) \circ p = r \circ (q \circ p)$ for all composable morphisms $p, q, r$.
+$$
+\begin{cases}
+P_j,&1\le j\le k,\\
+Q_{j-k},&k<j\le k+m,\\
+R_{j-k-m},&k+m<j\le k+m+n.
+\end{cases}
+$$
+
+**III. Second Grouping**
+
+Composing $q$ after $p$ yields $P+\!+Q$. Composing $r$ after this result gives
+
+$$
+S_{r\circ(q\circ p)}=(P+\!+Q)+\!+R,\qquad
+\ell(r\circ(q\circ p))=(k+m)+n.
+$$
+
+For $j\le k+m$, the edge lies in $P+\!+Q$: it is $P_j$ when $j\le k$, and $Q_{j-k}$ otherwise. For $j>k+m$, it is $R_{j-(k+m)}=R_{j-k-m}$. Thus the second list has exactly the same three cases as the first.
+
+**IV. Equality of Morphisms**
+
+Natural-number addition gives $k+(m+n)=(k+m)+n$. The lists have the same length and the same edge at every position, and both have source $u$ and target $x$. They therefore represent equal morphisms. An empty list makes its corresponding interval of positions empty, so the calculation includes zero lengths. Hence (**Associativity for $\mathbf{Caus}_t$** <Ref id="4.2.3" label="§4.2.3" />)
+
+$$
+\boxed{(r\circ q)\circ p=r\circ(q\circ p).}
+$$
 
 Q.E.D.
 
@@ -524,7 +576,7 @@ Section 4.2.3.1 formalizes the properties of the QBD proof regarding associativi
 :::info[**Preservation via Timestamp Monotonicity**]
 :::
 
-Let $f: \mathcal{H}_t \to \mathcal{H}_{t+1}$ and $g: \mathcal{H}_{t+1} \to \mathcal{H}_{t+2}$ be History-Respecting Embeddings in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Then for any edge $e \in E(\mathcal{H}_t)$, the identity $H_{\mathcal{H}_{t+1}}(f(e)) = H_{\mathcal{H}_t}(e)$ holds identically; moreover, for every non-trivial directed causal path $\pi = (e_1, \dots, e_k)$ in $\mathbf{Caus}_t$, the edge timestamps are strictly monotonically increasing: $H(e_1) < H(e_2) < \dots < H(e_k)$, and the composition $g \circ f$ is a valid morphism in $\mathbf{Hist}$.
+Let $f:\mathcal E_t\hookrightarrow\mathcal E_s$ and $g:\mathcal E_s\hookrightarrow\mathcal E_q$ be canonical historical inclusions. Then their composite preserves the birth tick and causal height of every source occurrence (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
 
 **In Plain English:**  
 Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp monotonicity.
@@ -536,52 +588,24 @@ Section 4.2.4 formalizes the properties of the QBD lemma regarding timestamp mon
 :::tip[**Verification of Temporal Order Preservation through Morphism Composition**]
 :::
 
-**I. Timestamp Preservation on Historical Inclusions**
+**I. Individual Preservation**
 
-Let $f: \mathcal{H}_t \to \mathcal{H}_{t+1}$ denote a canonical inclusion morphism, evaluated for **Timestamp Monotonicity** <Ref id="4.2.4" label="§4.2.4" /> in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Under this embedding structure, edge creation timestamps are fixed at the moment of insertion and remain permanently indelible:
+For every $\omega\in\mathcal E_t$, $b(f(\omega))=b(\omega)$ and $h(f(\omega))=h(\omega)$. For every $\eta\in\mathcal E_s$, the corresponding identities hold for $g$ (**Timestamp Preservation under Kinematic Excision** <Ref id="4.1.5" label="§4.1.5" />).
 
-$$
-\forall e=(u, v) \in E(\mathcal{H}_t), \quad H_{\mathcal{H}_{t+1}}(f(e)) = H_{\mathcal{H}_t}(e)
-$$
+**II. Composite Evaluation**
 
-This equality trivially implies the weak inequality $H_{\mathcal{H}_t}(e) \le H_{\mathcal{H}_{t+1}}(f(e))$.
-
-**II. Identity Preservation**
-
-Let $\text{id}_{\mathcal{H}_t}: \mathcal{H}_t \to \mathcal{H}_t$ denote the identity inclusion. For any edge $e=(u, v)$, the equality holds identically:
+Substituting $\eta=f(\omega)$ gives
 
 $$
-H_{\mathcal{H}_t}(\text{id}(e)) = H_{\mathcal{H}_t}(e)
+\begin{aligned}
+b((g\circ f)(\omega))&=b(g(f(\omega)))=b(f(\omega))=b(\omega),\\
+h((g\circ f)(\omega))&=h(g(f(\omega)))=h(f(\omega))=h(\omega).
+\end{aligned}
 $$
 
-**III. Composition Closure**
+**III. Conclusion**
 
-Let $f: \mathcal{H}_t \to \mathcal{H}_{t+1}$ and $g: \mathcal{H}_{t+1} \to \mathcal{H}_{t+2}$ be valid history morphisms satisfying:
-
-1.  $\forall e \in E(\mathcal{H}_t), H_{\mathcal{H}_{t+1}}(f(e)) = H_{\mathcal{H}_t}(e)$.
-2.  $\forall e' \in E(\mathcal{H}_{t+1}), H_{\mathcal{H}_{t+2}}(g(e')) = H_{\mathcal{H}_{t+1}}(e')$.
-
-Let $h = g \circ f$ denote the composite map. For an arbitrary edge $e \in E(\mathcal{H}_t)$:
-
-1.  The map $f$ sends $e$ to $e' = f(e)$, with $H_{\mathcal{H}_{t+1}}(e') = H_{\mathcal{H}_t}(e)$.
-2.  The map $g$ sends $e'$ to $e'' = g(e')$, with $H_{\mathcal{H}_{t+2}}(e'') = H_{\mathcal{H}_{t+1}}(e')$.
-3.  Substitution yields:
-
-    $$
-    H_{\mathcal{H}_{t+2}}((g \circ f)(e)) = H_{\mathcal{H}_t}(e)
-    $$
-
-**IV. Path Monotonicity in the Internal Causal Category**
-
-For any directed path $\pi = (e_1, \dots, e_k)$ in $\mathbf{Caus}_t$, the constructor assigns each newly added edge targeting vertex $u$ a timestamp $H_{\mathrm{new}} = 1 + \max_{(x, u) \in E} H(x, u)$, which strictly dominates all incoming parent edges ($H(e_{\mathrm{parent}}) < H_{\mathrm{new}}$). By transitivity of $<$ along the directed path, edge timestamps strictly increase:
-
-$$
-H(e_1) < H(e_2) < \dots < H(e_k)
-$$
-
-**V. Conclusion**
-
-The composite inclusion preserves timestamp identity, and directed causal paths satisfy strict timestamp monotonicity. We conclude that history-preserving embeddings are closed under composition.
+Both coordinate equalities hold for every source occurrence, so the composite preserves the historical labels (**Timestamp Monotonicity** <Ref id="4.2.4" label="§4.2.4" />).
 
 Q.E.D.
 
@@ -595,7 +619,7 @@ Section 4.2.4.1 formalizes the properties of the QBD proof regarding timestamp m
 :::info[**Neutrality of Identity Functions in the Historical Category**]
 :::
 
-For any graph object $G \in \text{Obj}(\mathbf{Hist})$, let $\text{id}_G$ be the identity function on the vertex set $V(G)$. Then $\text{id}_G$ constitutes a morphism in $\mathbf{Hist}$, and for any morphism $f: G \to G'$, the relations $f \circ \text{id}_G = f$ and $\text{id}_{G'} \circ f = f$ hold.
+For any historical object $\mathcal E$, let $1_{\mathcal E}(\omega)=\omega$ on its creation records. Then $1_{\mathcal E}$ is a canonical historical inclusion, and $f\circ1_{\mathcal E}=f=1_{\mathcal F}\circ f$ for every inclusion $f:\mathcal E\hookrightarrow\mathcal F$ (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
 
 **In Plain English:**  
 Section 4.2.5 formalizes the properties of the QBD lemma regarding identity for $\mathbf{hist}$.
@@ -607,47 +631,37 @@ Section 4.2.5 formalizes the properties of the QBD lemma regarding identity for 
 :::tip[**Verification of Structure Preservation and Neutrality for Identity Functions**]
 :::
 
-**I. Identity Definition**
+**I. Identity Inclusion**
 
-Let $G$ be an object in $\mathbf{Hist}$, evaluated for the **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" /> properties. Let $\text{id}_G$ denote the set-theoretic identity function on the vertex set $V(G)$:
-
-$$
-\text{id}_G(v) = v \quad \forall v \in V(G)
-$$
-
-**II. Morphism Verification**
-
-For any edge $e = (u, v) \in E(G)$, the image is $(\text{id}_G(u), \text{id}_G(v)) = (u, v)$, which exists in $E(G)$. The timestamp constraint holds by the reflexivity of the order $\le$:
+The historical object is a set of immutable creation records (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). Reflexivity of subset inclusion gives $\mathcal E\subseteq\mathcal E$. Its canonical map sends each record to itself:
 
 $$
-H(e) \le H(\text{id}_G(u), \text{id}_G(v)) = H(e)
+1_{\mathcal E}(\omega)=\omega,\qquad
+b(1_{\mathcal E}(\omega))=b(\omega),\qquad
+h(1_{\mathcal E}(\omega))=h(\omega).
 $$
 
-It follows that $\text{id}_G$ satisfies the conditions of a morphism in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />.
+The source and target coordinates are unchanged as well.
 
-**III. Left Neutrality**
+**II. Precomposition**
 
-Let $f: G \to G'$ be a morphism. Let $L$ denote the composition $f \circ \text{id}_G$. For all $v \in V(G)$:
-
-$$
-L(v) = f(\text{id}_G(v)) = f(v)
-$$
-
-The equality $L = f$ holds.
-
-**IV. Right Neutrality**
-
-Let $R$ denote the composition $\text{id}_{G'} \circ f$. For all $v \in V(G)$:
+For $f:\mathcal E\hookrightarrow\mathcal F$ and every $\omega\in\mathcal E$,
 
 $$
-R(v) = \text{id}_{G'}(f(v)) = f(v)
+(f\circ1_{\mathcal E})(\omega)=f(1_{\mathcal E}(\omega))=f(\omega).
 $$
 
-The equality $R = f$ holds.
+Pointwise equality gives $f\circ1_{\mathcal E}=f$.
 
-**V. Conclusion**
+**III. Postcomposition**
 
-The identity function satisfies the structural constraints and neutrality axioms for category theory. We conclude that $\text{id}_G$ constitutes a valid morphism in $\mathbf{Hist}$.
+Likewise, because $f(\omega)\in\mathcal F$,
+
+$$
+(1_{\mathcal F}\circ f)(\omega)=1_{\mathcal F}(f(\omega))=f(\omega).
+$$
+
+Therefore $\boxed{1_{\mathcal F}\circ f=f=f\circ1_{\mathcal E}.}$ These are the required identity laws (**Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />).
 
 Q.E.D.
 
@@ -673,33 +687,32 @@ Section 4.2.6 formalizes the properties of the QBD lemma regarding associativity
 :::tip[**Verification of Associativity under Composition for Function Composition**]
 :::
 
-**I. Composition Definition**
+**I. Closure of Inclusions**
 
-Composition in $\mathbf{Hist}$, evaluated for **Associativity for $\mathbf{Hist}$** <Ref id="4.2.6" label="§4.2.6" />, is defined as standard function composition on the underlying vertex sets. For morphisms $f$ and $g$ and vertex $x$:
+Let $f:\mathcal E\hookrightarrow\mathcal F$ and $g:\mathcal F\hookrightarrow\mathcal G$ be canonical record inclusions (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). For $\omega\in\mathcal E$, the two memberships give $\omega\in\mathcal F$ and then $\omega\in\mathcal G$. Thus $\mathcal E\subseteq\mathcal G$ and $(g\circ f)(\omega)=\omega$. Every record coordinate is preserved.
+
+**II. Threefold Evaluation**
+
+For a third inclusion $h:\mathcal G\hookrightarrow\mathcal J$, compute on every source record:
 
 $$
-(g \circ f)(x) = g(f(x))
+\begin{aligned}
+((h\circ g)\circ f)(\omega)&=(h\circ g)(f(\omega))=h(g(f(\omega))),\\
+(h\circ(g\circ f))(\omega)&=h((g\circ f)(\omega))=h(g(f(\omega))).
+\end{aligned}
 $$
 
-**II. Associativity Check**
+Both maps have source $\mathcal E$ and target $\mathcal J$.
 
-For an element $x \in V(A)$:
+**III. Morphism Equality**
 
-1.  **Left Association:** The expression evaluates to:
+The displayed values agree for every source record. Extensionality gives
 
-    $$
-    ((h \circ g) \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x)))
-    $$
+$$
+\boxed{(h\circ g)\circ f=h\circ(g\circ f).}
+$$
 
-2.  **Right Association:** The expression evaluates to:
-
-    $$
-    (h \circ (g \circ f))(x) = h((g \circ f)(x)) = h(g(f(x)))
-    $$
-
-**III. Validity**
-
-Function composition is inherently associative in Set Theory. Combined with the **Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />, this establishes associativity for all composable morphisms. We conclude that the associativity property holds for $\mathbf{Hist}$.
+This is the associative law (**Associativity for $\mathbf{Hist}$** <Ref id="4.2.6" label="§4.2.6" />). The identity maps are the canonical self-inclusions (**Identity for $\mathbf{Hist}$** <Ref id="4.2.5" label="§4.2.5" />).
 
 Q.E.D.
 
@@ -725,63 +738,51 @@ Section 4.2.7 formalizes the properties of the QBD lemma regarding topological i
 :::tip[**Instability of Non-Injective Morphisms via Induced Reflexivity**]
 :::
 
-**I. Premise**
+**I. The Specified Morphism Class**
 
-Let $f: G \to G'$ be a structure-preserving graph homomorphism. Assume $f$ is non-injective on a connected component:
-
-$$
-\exists u, v \in V(G), u \neq v : f(u) = f(v)
-$$
-
-Assume a simple directed path $\pi$ exists from $u$ to $v$ in $G$.
-
-**II. Topological Collapse**
-
-The morphism $f$ maps the path $\pi = (x_0, \dots, x_k)$ to a sequence in $G'$. Since $f(x_0) = f(x_k)$, the image constitutes a closed walk $C'$:
+Let $f:\mathcal H_t\to\mathcal H_{t+1}$ be valid in the historical category. Its definition makes it a canonical inclusion on the underlying vertices and edges (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />):
 
 $$
-C' = (y_0, \dots, y_k) \quad \text{where} \quad y_0 = y_k
+f_V:V(\mathcal H_t)\hookrightarrow V(\mathcal H_{t+1}),\qquad
+f_V(x)=x,\qquad f_E(e)=e.
 $$
 
+These functions have the smaller historical record as domain and the larger record as codomain.
 
-**III. Axiomatic Violation (Acyclicity)**
+**II. Injectivity on All Vertices**
 
-The target graph $G'$ is a valid causal graph satisfying **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-
-1.  **Case A (Length 1):** If $\pi$ is a single edge $(u, v)$, then $f(\pi)$ is a Self-Loop $(w, w)$.
-
-$$
-E(G') \ni (w, w)
-$$
-
-This configuration violates the **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> (Lean 4 certified: `asymmetry_implies_irreflexivity`, Supplement Appendix A, Part 1).
-2.  **Case B (Length $\ge 2$):** If $\pi$ is a path, $f(\pi)$ forms a closed directed cycle of length $k \ge 2$.
+For $u,v\in V(\mathcal H_t)$,
 
 $$
-C' \subset G'
+f_V(u)=f_V(v)\ \Longrightarrow\ u=v,
 $$
 
-This configuration violates **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-
-**IV. Timestamp Contradiction**
-
-Under path monotonicity in $\mathbf{Caus}_t$, the edge timestamps strictly increase along the directed path:
+by substituting the two inclusion values. Conversely $u=v$ implies equality of their images. Thus the equality test is preserved in both directions:
 
 $$
-H(e_1) < H(e_2) < \dots < H(e_k)
+f_V(u)=f_V(v)\quad\Longleftrightarrow\quad u=v.
 $$
 
-Strict increase along a closed loop requires $t_{\mathrm{start}} < t_{\mathrm{end}}$, while vertex identification $f(u) = f(v)$ requires $t_{\mathrm{start}} = t_{\mathrm{end}}$, producing the strict contradiction:
+In particular, restriction to a connected component remains injective. The same calculation on edge identifiers gives $f_E(e)=f_E(e')\Rightarrow e=e'$.
+
+**III. Adjacent-Vertex Collapse Under a Graph Map**
+
+The stated self-loop obstruction can also be evaluated independently. For an adjacency-preserving map $g$ and edge $(u,v)\in E$, its image edge is
 
 $$
-t < t
+g_E(u,v)=(g_V(u),g_V(v)).
 $$
 
-This contradiction formally precludes closed causal loops and closed timelike curves (Lean 4 certified: `edge_monotone_no_causal_cycle` and `edge_path_monotonicity_transitive`, Supplement Appendix A, Part 7).
+If $g_V(u)=g_V(v)=w$, edge preservation forces $(w,w)$ to be an edge of the target. A target satisfying the causal primitive requires $(w,w)\notin E'$ (**Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />), a contradiction. Therefore such a map cannot identify the endpoints of an edge into an irreflexive target.
 
-**V. Conclusion**
+**IV. Historical Conclusion**
 
-No valid morphism in $\mathbf{Hist}$ maps distinct connected vertices to the same target. We conclude that injectivity on connected components is necessary for validity in $\mathbf{Hist}$.
+For the specified historical morphisms, the stronger global injectivity already follows from the canonical-inclusion formula of Section I. Its connected-vertex consequence is exactly the claim (**Topological Injectivity** <Ref id="4.2.7" label="§4.2.7" />):
+
+$$
+\boxed{f_V(u)=f_V(v)\Rightarrow u=v,\qquad
+(u,v)\in E\Rightarrow f_V(u)\ne f_V(v).}
+$$
 
 Q.E.D.
 
@@ -795,7 +796,7 @@ Section 4.2.7.1 formalizes the properties of the QBD proof regarding topological
 :::info[**Categorical encoding of the effective influence relation via Effective Influence Encoding**]
 :::
 
-Let the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ constitute a constrained subset of morphisms within $\mathbf{Caus}_t$. Then for vertices $u, v$, the relation $u \le v$ holds if and only if there exists a morphism $p \in \text{Hom}(u, v)$ such that the path length satisfies $\ell(p) \ge 2$ and the sequence of edge timestamps is strictly increasing.
+Let a nonidentity active path morphism be eligible precisely when its vertex sequence is simple, its length is at least two, and its consecutive edge heights strictly increase. Then an eligible morphism from $u$ to $v$ exists if and only if $u\,R\,v$ for mediated Effective Influence (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
 
 **In Plain English:**  
 Section 4.2.8 formalizes the properties of the QBD lemma regarding effective influence encoding.
@@ -807,31 +808,33 @@ Section 4.2.8 formalizes the properties of the QBD lemma regarding effective inf
 :::tip[**Verification through Encoding Correspondence**]
 :::
 
-Let $\le$ denote the relation, analyzed for **Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />. The condition $u \le v$ requires the existence of a causal trajectory satisfying three constraints:
+**I. The Eligible Morphism Set**
 
-1.  **Simplicity:** The trajectory contains no repeated vertices.
-2.  **Mediation:** The path length is $\ge 2$.
-3.  **Monotonicity:** The timestamps are strictly increasing.
+The proof uses the specified objects and conventions (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
 
-**II. Morphism Space Identification**
-
-Let $\text{Hom}(u, v)$ denote the set of directed paths from $u$ to $v$ in $\mathbf{Caus}_t$. Define the axiom-compliant subset $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$:
+Let $\operatorname{Hom}^{\mathrm{eff}}(u,v)$ be the subset of active path morphisms whose vertex sequence $p=(v_0,\ldots,v_k)$ satisfies
 
 $$
-\mathcal{M}_{eff} = \{ p \in \text{Mor} \mid \text{is\_simple}(p) \land \ell(p) \ge 2 \land \text{is\_monotone}(p) \}
+v_0=u,\quad v_k=v,\quad k\ge2,\quad
+v_i\ne v_j\ (i<j),\quad
+H(v_{i-1},v_i)<H(v_i,v_{i+1})\ (1\le i<k).
 $$
 
-**III. Bijective Encoding**
+**II. Forward Implication**
 
-The physical relation corresponds exactly to the non-emptiness of the filtered Hom-set:
+If $p\in\operatorname{Hom}^{\mathrm{eff}}(u,v)$, the same sequence supplies the simple-path, mediation and height witnesses in the definition of $u\,R\,v$. Thus nonemptiness implies influence.
 
-$$
-u \le v \iff \text{Hom}(u, v) \cap \mathcal{M}_{eff} \neq \emptyset
-$$
+**III. Reverse Implication**
+
+If $u\,R\,v$, its witnessing simple directed path is an active path morphism. Its length and height tests are the defining membership conditions above. Hence the witness belongs to $\operatorname{Hom}^{\mathrm{eff}}(u,v)$.
 
 **IV. Conclusion**
 
-The category $\mathbf{Caus}_t$ constitutes the structural superset for the physical influence relation. We conclude that the axioms characterizing **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> filter the categorical morphism space, thereby defining physical causality.
+$$
+\operatorname{Hom}^{\mathrm{eff}}(u,v)\ne\varnothing\Longleftrightarrow u\,R\,v
+$$
+
+(**Effective Influence Encoding** <Ref id="4.2.8" label="§4.2.8" />).
 
 Q.E.D.
 
@@ -845,9 +848,7 @@ Section 4.2.8.1 formalizes the properties of the QBD proof regarding effective i
 :::info[**Strict Partial Order Structure of Effective Influence through the Internal Causal Category**]
 :::
 
-Let $\mathcal{M}_{eff} \subset \text{Mor}(\mathbf{Caus}_t)$ denote the subset of morphisms satisfying length $\ell \ge 2$ and strictly increasing timestamps. Then the following holds:
-*   **Irreflexivity:** no morphism with $\ell \ge 2$ and strictly increasing timestamps maps $u$ to $u$ without violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />;
-*   **Transitivity:** the composition of morphisms in $\mathcal{M}_{eff}$ preserves timestamp ordering and length constraints.
+Let $R$ be the filtered influence relation and assume its nonempty transitive closure $R^+$ is irreflexive (**Axiom 3 Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />). Then $R^+$ is a strict partial order on the spatial vertices.
 
 **In Plain English:**  
 Section 4.2.9 formalizes the properties of the QBD lemma regarding partial order property.
@@ -859,37 +860,25 @@ Section 4.2.9 formalizes the properties of the QBD lemma regarding partial order
 :::tip[**Cycle-Exclusion Verification of Strict Partial Order through Partial Order Property**]
 :::
 
-**I. Irreflexivity ($u \not\le u$)**
+**I. Closure Witnesses**
 
-Assume $u \le u$. This implies the existence of a morphism $p: u \to u \in \mathcal{M}_{eff}$. By definition, the length satisfies $\ell(p) \ge 2$. A path of length $\ge 2$ from $u$ to $u$ forms a directed cycle. **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> excludes all cycles. Therefore, $\mathcal{M}_{eff}$ contains no loops.
+The proof uses the specified objects and conventions (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
+
+A witness for $uR^+v$ is a finite $R$-chain of positive length. If $uR^+v$ and $vR^+w$, concatenate the two witness chains at their common endpoint. Its number of steps is the sum of two positive integers, hence positive. Every step still belongs to $R$, so $uR^+w$.
+
+**II. Irreflexivity**
+
+The stated causal axiom supplies $\neg(uR^+u)$ for every $u$. This is an explicit hypothesis on the closure, not a conclusion from arbitrary spatial-path concatenation.
+
+**III. Asymmetry**
+
+If both $uR^+v$ and $vR^+u$, the concatenation from Section I gives $uR^+u$, contradicting Section II. Therefore
 
 $$
-u \not\le u
+uR^+v\Longrightarrow\neg(vR^+u).
 $$
 
-**II. Asymmetry ($u \le v \implies v \not\le u$)**
-
-Assume $u \le v$ and $v \le u$. There exist $p \in \text{Hom}(u, v) \cap \mathcal{M}_{eff}$ and $q \in \text{Hom}(v, u) \cap \mathcal{M}_{eff}$. The composition $C = q \circ p$ defines a cycle $u \to v \to u$. Timestamp monotonicity implies:
-
-$$
-\tau_{\text{start}}(p) < \tau_{\text{end}}(p) \le \tau_{\text{start}}(q) < \tau_{\text{end}}(q)
-$$
-
-Since $\text{end}(q) = \text{start}(p)$, this yields the contradiction $\tau_{\text{start}}(p) < \tau_{\text{start}}(p)$.
-
-**III. Transitivity ($u \le v \land v \le w \implies u \le w$)**
-
-Assume $u \le v$ via $p$ and $v \le w$ via $q$. The composite path $\pi = q \circ p$ exists in $\mathbf{Caus}_t$.
-
-1.  **Length:** The length satisfies $\ell(\pi) = \ell(p) + \ell(q) \ge 2 + 2 = 4$.
-2.  **Monotonicity:** The global history function $H$ implies consistency at vertex $v$. The existence of valid paths yields $H(p) < H(q)$. Thus, $\pi$ satisfies monotonicity.
-3.  **Simplicity:** If $\pi$ self-intersects, it contains a cycle, which violates **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />. Since the graph is a DAG, $\pi$ must be simple.
-
-Therefore, $\pi \in \mathcal{M}_{eff} \implies u \le w$.
-
-**IV. Conclusion**
-
-The relation $\le$ encoded by the subset $\mathcal{M}_{eff}$ satisfies Irreflexivity, Asymmetry, and Transitivity. We conclude that it constitutes a strict partial order.
+Transitivity and irreflexivity establish the strict partial order (**Partial Order Property** <Ref id="4.2.9" label="§4.2.9" />).
 
 Q.E.D.
 
@@ -1136,11 +1125,19 @@ Section 4.2.12 formalizes the properties of the QBD type-theoretic regarding val
 :::tip[**Structure of Causal Graphs Augmented by Diagnostic Syndrome Maps**]
 :::
 
-The Category of **Annotated Causal Graphs (AnnCG)**, denoted $\mathbf{AnnCG}$, is defined by the following structural components:
-1.  **Objects:** The objects are ordered pairs $(G_t, \sigma)$, where $G_t = (V_t, E_t, H_t)$ is the instantaneous **Kinematic State**, and $\sigma$ is a **Syndrome Map** $\sigma: \mathcal{T}(G_t) \to \{+1, -1\}^3$. This map assigns a diagnostic syndrome tuple to every triplet subgraph $\mathcal{T}(G_t)$, consistent with **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />.
-2.  **Morphisms:** A morphism $h: (G, \sigma) \to (G', \sigma')$ constitutes an ordered pair $(f, k)$, where $f: G \to G'$ is a History-Respecting Embedding in the **Historical Category** <Ref id="4.1.2" label="§4.1.2" />, and $k: \sigma \to \sigma'$ is a compatible map on the annotation space such that the diagnostic structure is preserved under the graph transformation.
-3.  **Composition:** The composition of morphisms is defined component-wise as $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$.
-4.  **Identity:** The identity morphism for an object $(G, \sigma)$ is defined as the pair $(\text{id}_G, \text{id}_\sigma)$.
+Let $V$ be the fixed spatial vertex universe, let $\mathcal V_{\mathrm{even}}=\{s\in\mathbb F_2^3:s_1+s_2+s_3=0\}$ and put $S=\{b:V^3\to\mathcal V_{\mathrm{even}}\}$. The category of **Annotated Causal Graphs (AnnCG)** has objects $(X,A)$, where $X$ includes an active graph $G_X$ and its creation history, and $A$ is an annotation fiber closed under finite products with $S$; an annotated state is $(X,a)$ with $a\in A$.
+
+The base transitions $f:X\to Y$ are finite composable histories of the specified rewrites, with the associated inclusions of retained creation records (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). The identity is the empty transition history and composition is concatenation. An AnnCG morphism is $(f,k):(X,A)\to(Y,B)$ with $k:A\to B$. Composition is $(g,l)\circ(f,k)=(g\circ f,l\circ k)$ and identity is $(\mathrm{id}_X,\mathrm{id}_A)$.
+
+Every ordered triple, including an inactive candidate, has the pair-check observation $s_X=\sigma_{G_X}\in S$ (**Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />). If $E_X$ and $E_Y$ are the adjacency fields, define
+
+$$
+\Delta E_f=E_X\oplus E_Y,\qquad
+u_f=\sigma_{\Delta E_f}=s_X\oplus s_Y,\qquad
+\tau_f(b)=b\oplus u_f.
+$$
+
+The ambient category permits arbitrary annotation maps. Physical faithful-label updates form the specified subclass whose maps track the incidence displacement (**Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />).
 
 **In Plain English:**  
 Section 4.3.1 formalizes the properties of the QBD definition regarding annotated causal graphs (anncg).
@@ -1152,9 +1149,14 @@ Section 4.3.1 formalizes the properties of the QBD definition regarding annotate
 :::tip[**Endofunctor $R_T$ Adjoining Fresh Syndromes to Graph States via Awareness Endofunctor ($R_T$)**]
 :::
 
-The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ is defined by the following operations:
-1.  **On Objects:** For an object $(G, \sigma)$, the functor assigns the image $R_T(G, \sigma) = (G, (\sigma, \sigma_G))$. Here, $\sigma$ represents the existing annotation carried by the object, and $\sigma_G$ is the Syndrome Map freshly computed from the current topology of $G$ via **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> extraction.
-2.  **On Morphisms:** For a morphism $h: (G, \sigma) \to (G, \sigma')$ defined by the annotation map $k: \sigma \to \sigma'$, the functor assigns the lifted morphism $R_T(h): (G, (\sigma, \sigma_G)) \to (G, (\sigma', \sigma_G))$. The action of $R_T(h)$ on the annotation tuple is defined by the map $\lambda(a, b).(k(a), b)$, applying the original transformation $k$ to the first component while acting as the identity on the second component. [**(Uustalu & Vene, 2008)**](/monograph/appendices/a-references#A.72)
+Let the **Awareness Endofunctor** $R_T$ act on the product annotation fibers by
+
+$$
+R_T(X,A)=(X,A\times S),\qquad
+R_T(f,k)(a,b)=(k(a),\tau_f(b)).
+$$
+
+The freshly observed state associated with $(X,a)$ is $(X,(a,s_X))$. The second component is transported across graph-changing transitions; at a fixed snapshot its displacement is zero and it remains unchanged (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
 **In Plain English:**  
 Section 4.3.2 formalizes the properties of the QBD definition regarding awareness endofunctor ($r_t$).
@@ -1166,9 +1168,13 @@ Section 4.3.2 formalizes the properties of the QBD definition regarding awarenes
 :::tip[**Natural Transformation Retrieving Prior Annotations via Context Extraction (Counit $\epsilon$)**]
 :::
 
-The **Counit** $\epsilon: R_T \to \text{Id}_{\mathbf{AnnCG}}$ is defined as a natural transformation by the following component-wise mapping:
-1.  **On Components:** For every object $(G, \sigma)$ in $\mathbf{AnnCG}$, the component morphism $\epsilon_{(G,\sigma)}: R_T(G, \sigma) \to (G, \sigma)$ is defined by the projection map $\epsilon_{(G,\sigma)}: (G, (\sigma, \sigma_G)) \mapsto (G, \sigma)$.
-2.  **Annotation Function:** The operation on the annotation tuple is defined by the lambda expression $\lambda(a, b).a$, selecting the first element of the tuple and discarding the second.
+Let the **Context Extraction** counit $\epsilon:R_T\to\mathrm{Id}$ have component at $(X,A)$ equal to the identity base transition and the projection
+
+$$
+\epsilon_{(X,A)}:A\times S\to A,\qquad \epsilon(a,b)=a.
+$$
+
+This map is defined on the full product fiber, including historical annotations that are not currently faithful (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
 **In Plain English:**  
 Section 4.3.3 formalizes the properties of the QBD definition regarding context extraction (counit $\epsilon$).
@@ -1180,9 +1186,14 @@ Section 4.3.3 formalizes the properties of the QBD definition regarding context 
 :::tip[**Natural Transformation Duplicating Diagnostic Data via Meta-Check (Comultiplication $\delta$)**]
 :::
 
-The **Comultiplication** $\delta: R_T \to R_T^2$ is defined as a natural transformation by the following component-wise mapping:
-1.  **On Components:** For every object $(G, \sigma)$, the component morphism $\delta_{(G,\sigma)}: R_T(G, \sigma) \to R_T(R_T(G, \sigma))$ is defined by the map $\delta_{(G,\sigma)}: (G, (\sigma, \sigma_G)) \mapsto (G, ((\sigma, \sigma_G), \sigma_G))$.
-2.  **Annotation Function:** The operation on the annotation tuple is defined by the lambda expression $\lambda(a, b).((a, b), b)$, duplicating the second element of the tuple to create a new layer of nesting.
+Let the **Meta-Check** comultiplication $\delta:R_T\to R_T^2$ have identity base transition and annotation component
+
+$$
+\delta_{(X,A)}:A\times S\to(A\times S)\times S,\qquad
+\delta(a,b)=((a,b),b).
+$$
+
+Both copies are transported by the same base displacement when a graph-changing morphism acts (**Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />).
 
 **In Plain English:**  
 Section 4.3.4 formalizes the properties of the QBD definition regarding meta-check (comultiplication $\delta$).
@@ -1194,7 +1205,7 @@ Section 4.3.4 formalizes the properties of the QBD definition regarding meta-che
 :::info[**Verification of the comonadic axioms (identity and coassociativity) via the self-observation triplet**]
 :::
 
-Given the triplet $(R_T, \epsilon, \delta)$ defined on the category $\mathbf{AnnCG}$, the following holds: this triplet is verified definitionally via reflexivity to satisfy the axioms of a **Comonad**. In particular, the endofunctor $R_T$, the counit natural transformation $\epsilon$, and the comultiplication natural transformation $\delta$ collectively fulfill the laws of Left Identity, Right Identity, and Associativity.
+Given AnnCG with fixed syndrome domain and the product lift $R_T(f,k)(a,b)=(k(a),\tau_f(b))$, the following holds: $(R_T,\epsilon,\delta)$ is a comonad, with a functorial lift, natural counit and comultiplication, two counit identities and coassociativity (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
 **In Plain English:**  
 Section 4.3.5 formalizes the properties of the QBD theorem regarding awareness comonad.
@@ -1206,7 +1217,7 @@ Section 4.3.5 formalizes the properties of the QBD theorem regarding awareness c
 :::info[**Preservation of Identity and Composition by the Awareness Endofunctor**]
 :::
 
-Let $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ denote the mapping acting on objects and morphisms within the category of annotated causal graphs. Then $R_T$ constitutes a well-defined endofunctor that preserves the identity morphism for every object and respects the associative composition of morphisms across the category.
+Let the diagnostic transports satisfy $\tau_{\mathrm{id}}=\mathrm{id}$ and $\tau_{g\circ f}=\tau_g\circ\tau_f$ as induced by adjacency displacement. Then $R_T$ preserves identity morphisms and composition (**Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />).
 
 **In Plain English:**  
 Section 4.3.6 formalizes the properties of the QBD lemma regarding functoriality of awareness.
@@ -1218,82 +1229,43 @@ Section 4.3.6 formalizes the properties of the QBD lemma regarding functoriality
 :::tip[**Formal Verification of Functorial Properties through Explicit Inductive Steps**]
 :::
 
-**I. Setup and Definitions**
+**I. Cancellation of Endpoint Fields**
 
-Let $f: X \to Y$ denote a morphism in $\mathbf{AnnCG}$, evaluated for **Functoriality of Awareness** <Ref id="4.3.6" label="§4.3.6" /> under the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />. The mapping $R_T$ lifts the object $X$ to $(G, (\sigma, \sigma_G))$, where $\sigma_G$ represents the local syndrome, and transforms the annotation map $k$ via the lambda expression:
+The proof uses the specified objects and conventions (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
-$$
-R_T(k) = \lambda(u, v).(k(u), v)
-$$
-
-**II. Identity Preservation ($R_T(\text{id}_X) = \text{id}_{R_T(X)}$)**
-
-**Base Case (Depth 0):**
-The identity morphism $\text{id}_X$ utilizes the annotation map $k_{\text{id}}(u) = u$. The lifted map $R_T(k_{\text{id}})$ acts on a tuple $(a, b)$ in the annotation space $\mathcal{A}_{R_T(X)}$:
+For $f:X\to Y$ and $g:Y\to Z$, binary addition gives
 
 $$
-R_T(k_{\text{id}})(a, b) = (k_{\text{id}}(a), b) = (a, b)
+u_f\oplus u_g=(s_X\oplus s_Y)\oplus(s_Y\oplus s_Z)
+=s_X\oplus(s_Y\oplus s_Y)\oplus s_Z=s_X\oplus s_Z=u_{g\circ f}.
 $$
 
-This result constitutes the identity map on the product space $\mathcal{A} \times \mathcal{S}$.
-
-**Inductive Step (Nested Annotations):**
-The comonad structure requires the functor to operate consistently on recursively nested annotations.
-* **Hypothesis:** Assume $R_T(k_{\text{id}})$ acts as the identity on a nested annotation structure $S_n$ of depth $n$.
-* **Step:** A structure of depth $n+1$ is defined as $S_{n+1} = (S_n, c)$, where $c$ represents the auxiliary data at the current level.
-
-The lifted identity map acts on the first component:
+Also $u_{\mathrm{id}_X}=s_X\oplus s_X=0$. For every $b\in S$,
 
 $$
-R_T(k_{\text{id}})(S_n, c) = (k_{\text{id}}(S_n), c)
+\tau_{\mathrm{id}}(b)=b\oplus0=b,\qquad
+\tau_g(\tau_f(b))=(b\oplus u_f)\oplus u_g=b\oplus u_{g\circ f}.
 $$
 
-The inductive hypothesis $k_{\text{id}}(S_n) = S_n$ simplifies the expression:
+**II. Identity Lift**
+
+The lifted identity sends $(a,b)$ to $(\mathrm{id}(a),\tau_{\mathrm{id}}(b))=(a,b)$. Its base transition is the identity, hence it is the identity morphism on the product object.
+
+**III. Composite Lift**
+
+For annotation maps $k:A\to B$ and $l:B\to C$,
 
 $$
-(k_{\text{id}}(S_n), c) = (S_n, c)
+\begin{aligned}
+R_T(g,l)(R_T(f,k)(a,b))
+&=R_T(g,l)(k(a),\tau_f(b))\\
+&=(l(k(a)),\tau_g(\tau_f(b)))\\
+&=((l\circ k)(a),\tau_{g\circ f}(b))\\
+&=R_T(g\circ f,l\circ k)(a,b).
+\end{aligned}
 $$
 
-Thus, $R_T(\text{id}_X) = \text{id}_{R_T(X)}$ holds for all nesting depths.
-
-**III. Composition Preservation ($R_T(g \circ h) = R_T(g) \circ R_T(h)$)**
-
-Let h: X \to Y denote a morphism utilizing annotation map $k_h$, and let $g: Y \to Z$ denote a morphism utilizing annotation map $k_g$. The composite map corresponds to $k_{comp} = k_g \circ k_h$.
-
-**LHS Derivation ($R_T(g \circ h)$):**
-The functor lifts the composite map directly.
-
-$$
-R_T(k_{comp}) = \lambda(u, v).(k_{comp}(u), v) = \lambda(u, v).(k_g(k_h(u)), v)
-$$
-
-Application to an arbitrary tuple $(a, b)$ yields:
-
-$$
-R_T(g \circ h)(a, b) = (k_g(k_h(a)), b)
-$$
-
-**RHS Derivation ($R_T(g) \circ R_T(h)$):**
-The derivation traces the sequential application of the lifted maps.
-* **Step 1:** Application of $R_T(h)$ to $(a, b)$ yields $(k_h(a), b)$. Let the intermediate result be $(a', b)$ where $a' = k_h(a)$.
-* **Step 2:** Application of $R_T(g)$ to $(a', b)$ yields:
-
-$$
-R_T(g)(a', b) = (k_g(a'), b) = (k_g(k_h(a)), b)
-$$
-
-**Equality Verification:**
-Comparison of the results confirms identity:
-
-$$
-(k_g(k_h(a)), b) \equiv (k_g(k_h(a)), b)
-$$
-
-The functor distributes over composition exactly.
-
-**IV. Conclusion**
-
-The mapping $R_T$ satisfies the categorical axioms for a functor. We conclude that $R_T$ is a valid endofunctor.
+Equality holds for every element of the source fiber and the base transitions agree. This proves functoriality (**Functoriality of Awareness** <Ref id="4.3.6" label="§4.3.6" />).
 
 Q.E.D.
 
@@ -1307,7 +1279,7 @@ Section 4.3.6.1 formalizes the properties of the QBD proof regarding functoriali
 :::info[**Commutativity of Context Extraction through Meta-Check with State Morphisms**]
 :::
 
-Let $\epsilon = \{\epsilon_X\}_{X \in \mathbf{AnnCG}}$ and $\delta = \{\delta_X\}_{X \in \mathbf{AnnCG}}$ denote the families of morphisms defining context extraction and meta-check duplication. Then $\epsilon$ and $\delta$ constitute valid natural transformations within the category.
+Let $R_T$ be the graph-changing product lift on AnnCG. Then the projection $\epsilon(a,b)=a$ and duplication $\delta(a,b)=((a,b),b)$ are natural transformations (**Context Extraction (Counit $\epsilon$)** <Ref id="4.3.3" label="§4.3.3" />).
 
 **In Plain English:**  
 Section 4.3.7 formalizes the properties of the QBD lemma regarding naturality of transformations.
@@ -1319,88 +1291,42 @@ Section 4.3.7 formalizes the properties of the QBD lemma regarding naturality of
 :::tip[**Verification of Naturality Conditions for $\epsilon$ through $\delta$**]
 :::
 
-**I. Setup and Definitions**
+**I. Counit Square**
 
-Let $f: X \to Y$ denote an arbitrary morphism defined by the annotation map $k: \mathcal{A}_X \to \mathcal{A}_Y$, evaluated for the **Naturality of Transformations** <Ref id="4.3.7" label="§4.3.7" /> under the **Context Extraction (Counit $\epsilon$)** <Ref id="4.3.3" label="§4.3.3" /> constraint:
+The proof uses the specified objects and conventions (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
-**II. Verification for $\epsilon$**
-
-The naturality condition requires the commutation $\epsilon_Y \circ R_T(f) = f \circ \epsilon_X$. The action applies to an element $(a, b) \in \mathcal{A}_{R_T(X)}$.
-
-**Path A ($f \circ \epsilon_X$):**
-* **Apply Counit:** The counit $\epsilon_X$ projects the tuple to its first component.
-
-    $$
-    \epsilon_X(a, b) = a
-    $$
-
-* **Apply Morphism:** The morphism $f$ maps the result.
-
-    $$
-    k(a)
-    $$
-
-* **Result A:** $k(a)$.
-
-**Path B ($\epsilon_Y \circ R_T(f)$):**
-* **Apply Lifted Morphism:** The lifted morphism $R_T(f)$ maps the first component of the tuple.
-
-    $$
-    R_T(f)(a, b) = (k(a), b)
-    $$
-
-* **Apply Counit:** The counit $\epsilon_Y$ projects the result.
-
-    $$
-    \epsilon_Y(k(a), b) = k(a)
-    $$
-
-* **Result B:** $k(a)$.
-
-The results are identical. The diagram commutes.
-
-**III. Verification for $\delta$**
-
-The naturality condition requires the commutation $\delta_Y \circ R_T(f) = R_T^2(f) \circ \delta_X$, where $R_T^2(f) = R_T(R_T(f))$.
-
-**Path A ($\delta_Y \circ R_T(f)$):**
-* **Apply Lifted Morphism:** The lifted morphism $R_T(f)$ transforms the input.
-
-    $$
-    (a, b) \to (k(a), b)
-    $$
-
-* **Apply Comultiplication:** The comultiplication $\delta_Y$ duplicates the context of the result.
-
-    $$
-    (k(a), b) \to ((k(a), b), b)
-    $$
-
-* **Result A:** $((k(a), b), b)$.
-
-**Path B ($R_T^2(f) \circ \delta_X$):**
-* **Apply Comultiplication:** The comultiplication $\delta_X$ duplicates the context of the input.
+For $h=(f,k)$ and $(a,b)\in A\times S$,
 
 $$
-(a, b) \to ((a, b), b)
+\epsilon_Y(R_T(h)(a,b))=\epsilon_Y(k(a),\tau_f(b))=k(a)
+=k(\epsilon_X(a,b)).
 $$
 
-* **Apply Doubly Lifted Morphism:** The doubly lifted morphism $R_T^2(f)$ lifts the map $R_T(f)$.
-The map $R_T(f)$ acts as $\phi(u, v) = (k(u), v)$.
-Let Input $T = ((a, b), b)$. The first component is $u=(a, b)$. The second is $v=b$.
-The operator $R_T(\phi)$ applies $\phi$ to the first component while preserving the outer context.
+Both composites have base transition $f$, so their annotation equality proves the counit square.
+
+**II. Second Lift**
+
+The annotation part of $R_T(h)$ is $\widetilde k(a,b)=(k(a),\tau_f(b))$. Applying the product lift to it gives
 
 $$
-R_T(\phi)(u, v) = (\phi(u), v) = (\phi(a, b), b) = ((k(a), b), b)
+R_T^2(h)((a,b),c)=((k(a),\tau_f(b)),\tau_f(c)).
 $$
 
-* **Result B:** $((k(a), b), b)$.
+In particular both observation slots, not just the inner one, are transported.
 
-The results are identical. The diagram commutes.
+**III. Comultiplication Square**
 
-**IV. Conclusion**
+Direct substitution on the two sides yields
 
-Both $\epsilon$ and $\delta$ satisfy the commutative square requirements. We conclude that they constitute valid natural transformations.
+$$
+\begin{aligned}
+\delta_Y(R_T(h)(a,b))&=((k(a),\tau_f(b)),\tau_f(b)),\\
+R_T^2(h)(\delta_X(a,b))&=R_T^2(h)((a,b),b)
+=((k(a),\tau_f(b)),\tau_f(b)).
+\end{aligned}
+$$
+
+The base transitions again agree. Thus both naturality squares commute (**Naturality of Transformations** <Ref id="4.3.7" label="§4.3.7" />).
 
 Q.E.D.
 
@@ -1414,10 +1340,7 @@ Section 4.3.7.1 formalizes the properties of the QBD proof regarding naturality 
 :::info[**Compliance of the Awareness Triplet with the Laws of Identity via Associativity**]
 :::
 
-Let $(R_T, \epsilon, \delta)$ denote the awareness triplet defined on the category $\mathbf{AnnCG}$. Then the following axiomatic identities are satisfied:
-*   **Left Identity:** $\epsilon \circ \delta = \text{id}$;
-*   **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$;
-*   **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$.
+Let $R_T$, $\epsilon$ and $\delta$ be the natural product constructions above. Then they satisfy both counit laws and coassociativity (**Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />).
 
 **In Plain English:**  
 Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfaction.
@@ -1429,59 +1352,39 @@ Section 4.3.8 formalizes the properties of the QBD lemma regarding axiom satisfa
 :::tip[**Tuple Tracing via Comonad Axioms**]
 :::
 
-**I. Setup and Definitions**
+**I. Outer Counit**
 
-Define the component operations acting on an object with annotation $(a, b)$ as $\epsilon(x, y) = x$, $\delta(x, y) = ((x, y), y)$, and $R_T(f)(x, y) = (f(x), y)$, evaluated for the comonad **Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" /> under the **Meta-Check (Comultiplication $\delta$)** <Ref id="4.3.4" label="§4.3.4" /> mapping:
+The proof uses the specified objects and conventions (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
 
-**II. Left Identity**
+For $(a,b)\in A\times S$,
 
-The verification targets the equality $\epsilon_{R_T(X)} \circ \delta_X = \text{id}_{R_T(X)}$.
+$$
+\epsilon_{R_T X}(\delta_X(a,b))=\epsilon_{R_T X}((a,b),b)=(a,b).
+$$
 
-1.  **Input:** $(a, b)$.
-2.  **Apply $\delta_X$:** The operation maps $(a, b)$ to the nested tuple $((a, b), b)$.
-3.  **Apply $\epsilon_{R_T(X)}$:** The counit projects onto the first component of the input. The first component is the tuple $(a, b)$.
+**II. Lifted Inner Counit**
 
-    $$
-    ((a, b), b) \xrightarrow{\epsilon} (a, b)
-    $$
+The base transition of $\epsilon_X$ is identity, so its displacement vanishes. Consequently
 
-4.  **Result:** The output $(a, b)$ is identical to the input.
+$$
+R_T(\epsilon_X)(\delta_X(a,b))
+=R_T(\epsilon_X)((a,b),b)
+=(\epsilon_X(a,b),b)=(a,b).
+$$
 
-**III. Right Identity**
+**III. Coassociativity**
 
-The verification targets the equality $R_T(\epsilon_X) \circ \delta_X = \text{id}_{R_T(X)}$.
+The two annotation composites are
 
-1.  **Input:** $(a, b)$.
-2.  **Apply $\delta_X$:** The operation maps $(a, b)$ to $((a, b), b)$.
-3.  **Apply $R_T(\epsilon_X)$:** This lifted counit applies $\epsilon_X$ to the first component of the nested tuple. Let $U = ((a, b), b)$. The first component is $u = (a, b)$ and the second is $v = b$. The map acts as $(u, v) \to (\epsilon_X(u), v)$. Substitution of $\epsilon_X(a, b) = a$ yields $(a, b)$.
-4.  **Result:** The output $(a, b)$ is identical to the input.
+$$
+\begin{aligned}
+\delta_{R_T X}(\delta_X(a,b))&=\delta_{R_T X}((a,b),b)=(((a,b),b),b),\\
+R_T(\delta_X)(\delta_X(a,b))&=R_T(\delta_X)((a,b),b)
+=(\delta_X(a,b),b)=(((a,b),b),b).
+\end{aligned}
+$$
 
-**IV. Associativity**
-
-The verification targets the equality $\delta \circ \delta = R_T(\delta) \circ \delta$.
-
-**LHS Derivation ($\delta_{R_T(X)} \circ \delta_X$):**
-* **Step 1:** Application of $\delta_X$ to $(a, b)$ yields $((a, b), b)$.
-* **Step 2:** Application of $\delta_{R_T(X)}$ duplicates the outer context. Let Input $Y = ((a, b), b)$. The operation maps $Y \to (Y, \text{context}(Y))$. The context of $Y$ is the second component, $b$.
-
-    $$
-    ((a, b), b) \to (((a, b), b), b)
-    $$
-
-**RHS Derivation ($R_T(\delta_X) \circ \delta_X$):**
-* **Step 1:** Application of $\delta_X$ to $(a, b)$ yields $((a, b), b)$.
-* **Step 2:** Application of $R_T(\delta_X)$ lifts the duplication map to the inner component. The map acts on $((a, b), b)$ by applying $\delta_X$ to the first element $(a, b)$ and preserving the second element $b$. Since $\delta_X(a, b) = ((a, b), b)$, the result combines this transformed inner part with the preserved outer $b$:
-
-    $$
-    (((a, b), b), b)
-    $$
-
-**Comparison:**
-The LHS yields $(((a, b), b), b)$ and the RHS yields $(((a, b), b), b)$. The equality holds.
-
-**V. Conclusion**
-
-We conclude that the structure $(R_T, \epsilon, \delta)$ satisfies all Comonad axioms.
+Each base transition is identity. The equalities establish all three laws (**Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" />).
 
 Q.E.D.
 
@@ -1507,43 +1410,117 @@ Section 4.3.9 formalizes the properties of the QBD lemma regarding algebraic rig
 :::tip[**Derivation of the Annotation Map from Topological Symmetric Difference**]
 :::
 
-**I. Physical Update and Pauli Operator Mapping**
+**I. Occupancy and Binary Check Coordinates**
 
-Let the graph embedding $f: G_t \to G_{t+1}$ describe a physical update, evaluated for the **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />. Every edge $e \in \Delta E$ corresponds to a physical Pauli-$X_e$ operation in the underlying Hilbert space formalism established for the stabilizer group under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Both edge addition ($0 \to 1$) and edge deletion ($1 \to 0$) act as bit-flips on the edge-qubit subspace.
-
-**II. The Anti-Commutator Constraint & Even-Parity Invariance**
-
-The syndrome map $\sigma$ outputs the eigenvalue vector of the local $Z$-type geometric check operators $K_i$. The algebra of Pauli matrices dictates that $X_e$ anti-commutes with $K_i$ if and only if the edge $e$ is in the support of $K_i$:
+Fix the local triad $p=(v,w,u)$ and label its slots $e_1=(v,w)$, $e_2=(w,u)$, $e_3=(u,v)$. Write $x_j=\mathbf1_E(e_j)\in\mathbb F_2$. The three check operators specified in the statement are (**Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />)
 
 $$
-\{X_e, K_i\} = 0 \iff e \in \text{supp}(K_i)
+K_1=Z_{e_1}Z_{e_2},\qquad K_2=Z_{e_2}Z_{e_3},\qquad
+K_3=Z_{e_3}Z_{e_1}.
 $$
 
-The application of a rewrite $\Delta E$ alters the eigenvalue of $K_i$ via a phase flip if and only if the intersection of $\Delta E$ and $\text{supp}(K_i)$ is odd. Across the entire global graph, every local triad syndrome satisfies $S_1 \oplus S_2 \oplus S_3 = 0$, identically constraining all local diagnostic labels to the even-parity sector $\mathcal{V}_{\mathrm{even}} \subset \mathbb{F}_2^3$ (Lean 4 certified: `all_global_triad_syndromes_are_even_parity`, Supplement Appendix A, Part 3).
-
-**III. Affine Translation Uniqueness**
-
-Let $\boldsymbol{u}_{\Delta E}$ be the binary incidence vector where the $i$-th component is 1 if $|\Delta E \cap \text{supp}(K_i)|$ is odd, and 0 if even. Any candidate morphism $k$ tracking displacement $\boldsymbol{u}_{\Delta E}$ that satisfies base anchoring $k(0) = \boldsymbol{u}_{\Delta E}$ and translation equivariance $k(s_1 \oplus s_2) = k(s_1) \oplus s_2$ evaluates at $s = 0 \oplus s$ to:
+On an occupancy ket, the single-edge action is $Z_e|x_e\rangle=(-1)^{x_e}|x_e\rangle$ (**Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />). Thus the binary syndrome and its eigenvalue encoding are
 
 $$
-k(s) = k(0 \oplus s) = k(0) \oplus s = s \oplus \boldsymbol{u}_{\Delta E}
+\begin{gathered}
+s_1=x_1+x_2,\quad s_2=x_2+x_3,\quad s_3=x_3+x_1
+\quad\text{in }\mathbb F_2,\\
+\lambda_j=(-1)^{s_j},\qquad
+s=B x,\qquad B=\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
+\end{gathered}
 $$
 
-This uniquely forces $k = \mathrm{shift\_op}(\boldsymbol{u}_{\Delta E})$ across the entire syndrome domain without exception. Consequently, any two candidate update morphisms $k_1, k_2$ satisfying these affine translation axioms are identically equal ($k_1 = k_2$), leaving zero gauge freedom in the awareness layer (Lean 4 certified: `affine_shift_uniquely_determined` and `affine_morphism_unique`, Supplement Appendix A, Part 3).
-
-**IV. Dynamic Consistency Invariance**
-
-If $(G, \sigma)$ begins faithful to physical ground truth ($\sigma = \sigma_G(E)$), applying $k(\sigma)(p) = \sigma(p) \oplus \boldsymbol{u}_{\Delta E}(p)$ identically yields the re-evaluated syndrome on $E \oplus \Delta E$:
+Adding the components gives
 
 $$
-\sigma'(p) = \sigma_G(E, p) \oplus \boldsymbol{u}_{\Delta E}(p) = \sigma_G(E \oplus \Delta E, p)
+s_1+s_2+s_3
+=(x_1+x_2)+(x_2+x_3)+(x_3+x_1)
+=2x_1+2x_2+2x_3=0.
 $$
 
-This ensures that the stored diagnostic field maintains exact consistency with physical ground truth across all update iterations (Lean 4 certified: `dynamic_update_preserves_consistency`, Supplement Appendix A, Part 3).
+Hence $s\in\mathcal V_{even}$ at every triad.
 
-**V. Conclusion**
+**II. Exact Displacement Under Symmetric Difference**
 
-Because the category $\mathbf{AnnCG}$ demands that $k$ must preserve the diagnostic structure under the transformation $f$, the map $k$ cannot be chosen arbitrarily. It is uniquely defined as $k(\sigma) = \sigma \oplus \boldsymbol{u}_{\Delta E}$. The categorical morphism $k$ is therefore perfectly rigid, acting as a faithful, deterministic tracker of the Pauli frame.
+Let $E'=E\triangle\Delta E$ and $d_j=\mathbf1_{\Delta E}(e_j)$. Membership in a symmetric difference gives $x'_j=x_j+d_j$ in $\mathbb F_2$. Consequently
+
+$$
+\begin{aligned}
+s'_1&=(x_1+d_1)+(x_2+d_2)=s_1+(d_1+d_2),\\
+s'_2&=(x_2+d_2)+(x_3+d_3)=s_2+(d_2+d_3),\\
+s'_3&=(x_3+d_3)+(x_1+d_1)=s_3+(d_3+d_1).
+\end{aligned}
+$$
+
+Define $u=Bd$. Then $s'=s+u$, and
+
+$$
+u_1+u_2+u_3=2d_1+2d_2+2d_3=0,
+$$
+
+so $u\in\mathcal V_{even}$. This calculation is local to an arbitrary triad and therefore applies simultaneously to every triad of the graph.
+
+**III. Pauli Sign Calculation**
+
+Let $X(\Delta E)=\prod_{e\in\Delta E}X_e$ on the edge tensor factors. On one factor, $Z_eX_e=-X_eZ_e$; factors on distinct slots commute. For the displayed triad checks, moving all $X$ factors through the check gives
+
+$$
+\begin{aligned}
+K_1X(\Delta E)&=(-1)^{d_1+d_2}X(\Delta E)K_1,\\
+K_2X(\Delta E)&=(-1)^{d_2+d_3}X(\Delta E)K_2,\\
+K_3X(\Delta E)&=(-1)^{d_3+d_1}X(\Delta E)K_3.
+\end{aligned}
+$$
+
+Thus if $K_j|\psi\rangle=(-1)^{s_j}|\psi\rangle$,
+
+$$
+K_jX(\Delta E)|\psi\rangle
+=(-1)^{u_j}X(\Delta E)K_j|\psi\rangle
+=(-1)^{s_j+u_j}X(\Delta E)|\psi\rangle.
+$$
+
+The operator calculation agrees with the direct occupancy calculation.
+
+**IV. Necessity and Sufficiency of the Translation**
+
+Suppose $k:\mathcal V_{even}\to\mathcal V_{even}$ satisfies
+
+$$
+k(0)=u,\qquad k(a+b)=k(a)+b\quad(a,b\in\mathcal V_{even}).
+$$
+
+Substitution $a=0$, $b=s$ yields
+
+$$
+k(s)=k(0+s)=k(0)+s=u+s=s+u.
+$$
+
+Conversely, define $T_u(s)=s+u$. Since $s$ and $u$ are even, $T_u(s)$ is even. Its anchoring and equivariance are
+
+$$
+T_u(0)=u,\qquad T_u(a+b)=a+b+u=(a+u)+b=T_u(a)+b.
+$$
+
+Therefore this translation exists and is the unique map with the two stated properties. For any two such maps $k_1,k_2$, every $s$ satisfies $k_1(s)=s+u=k_2(s)$, proving equality of functions.
+
+**V. Iterated Consistency**
+
+If the stored initial field is $s^{(0)}=Bx^{(0)}$, and the update at step $j$ has displacement $d^{(j)}$, then
+
+$$
+\begin{aligned}
+x^{(j+1)}&=x^{(j)}+d^{(j)},\\
+s^{(j+1)}&=s^{(j)}+Bd^{(j)}
+=Bx^{(j)}+Bd^{(j)}=B(x^{(j)}+d^{(j)})=Bx^{(j+1)}.
+\end{aligned}
+$$
+
+The displayed implication is the induction step, so consistency holds at every finite iteration. Replacing binary addition by $\oplus$ gives the required update:
+
+$$
+\boxed{k(s)(p)=s(p)\oplus\boldsymbol u_{\Delta E}(p).}
+$$
 
 Q.E.D.
 
@@ -1646,7 +1623,7 @@ Section 4.3.9.3 formalizes the properties of the QBD type-theoretic regarding va
 :::info[**Comonadic Tracking via Stabilizer Parity Shifts**]
 :::
 
-Let $\boldsymbol{s}$ denote the stabilizer syndrome vector and let $U$ denote a sequence of edge rewrites representing Pauli-$X$ operations. Then the updated syndrome vector $\boldsymbol{s}' = \boldsymbol{s} \oplus \boldsymbol{u}$ satisfies the comonadic naturality relations under the awareness endofunctor $R_T$.
+Let $E_Y=E_X\oplus\Delta E$ and let a faithful diagnostic field be $b=s_X$. Then incidence transport gives $\tau_f(b)=s_Y$ and the lifted observation state is $(k(a),s_Y)$ (**Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />).
 
 **In Plain English:**  
 Section 4.3.10 formalizes the properties of the QBD lemma regarding comonadic pauli frame tracking.
@@ -1658,35 +1635,42 @@ Section 4.3.10 formalizes the properties of the QBD lemma regarding comonadic pa
 :::tip[**Formal Proof of Comonadic Pauli Frame Tracking via Stabilizer Commutation**]
 :::
 
-Let $G_t$ denote the causal graph. The stabilizer group $S(G_t)$, satisfying **Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" /> and tracked via **Comonadic Pauli Frame Tracking** <Ref id="4.3.10" label="§4.3.10" />, is generated by operators $S_i$:
+**I. Binary Pair Checks**
 
-**II. Parity Shift Derivation**
-
-Let $U = \prod_{e} X_e$ denote the rewrite operator. Since $U$ consists of Pauli-$X$ operators, it anti-commutes with any stabilizer generator $S_i$ that shares an odd number of edges:
+At a site with occupancy bits $x_1,x_2,x_3$, the pair-check bit vector is
 
 $$
-S_i U = (-1)^{u_i} U S_i
+B(x)=(x_1\oplus x_2,\ x_2\oplus x_3,\ x_3\oplus x_1).
 $$
 
-where $u_i \in \{0, 1\}$ represents the parity shift of the stabilizer. The measured syndrome elements $s_i$ are the eigenvalues of $S_i$. The shifts are tracked comonadically by updating the syndrome index:
+For a displacement $d$, coordinate expansion gives
 
 $$
-\boldsymbol{s}' = \boldsymbol{s} \oplus \boldsymbol{u}
+B(x\oplus d)_1=(x_1\oplus d_1)\oplus(x_2\oplus d_2)
+=(x_1\oplus x_2)\oplus(d_1\oplus d_2),
 $$
 
-**III. Projector Formulation**
+and the same calculation on coordinates two and three proves $B(x\oplus d)=B(x)\oplus B(d)$ (**Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />).
 
-Under the awareness endofunctor $R_T$, the state is adjoined with $\boldsymbol{s}'$ instead of the static syndrome $\boldsymbol{s}$. Checking the measurements against the updated syndrome $\boldsymbol{s}_{\text{measured}} \oplus \boldsymbol{s}'$ ensures that the projector:
+**II. Global Observation Difference**
+
+The coordinate identity holds at every ordered triple in $V^3$, so
 
 $$
-\mathcal{P} = \prod_i \frac{I + (-1)^{s_i'} S_i}{2}
+s_Y=s_X\oplus\sigma_{\Delta E},\qquad
+u_f=\sigma_{\Delta E}=s_X\oplus s_Y.
 $$
 
-only projects out external errors rather than the intentional geometric updates.
+**III. Faithful Context Transport**
 
-**IV. Conclusion**
+For $b=s_X$,
 
-We conclude that comonadic syndrome updating tracks the Pauli frame shift, preserving codespace integrity during active geometric rewrites.
+$$
+\tau_f(b)=s_X\oplus(s_X\oplus s_Y)
+=(s_X\oplus s_X)\oplus s_Y=0\oplus s_Y=s_Y.
+$$
+
+Therefore $R_T(f,k)(a,s_X)=(k(a),s_Y)$, the freshly observed target state (**Comonadic Pauli Frame Tracking** <Ref id="4.3.10" label="§4.3.10" />).
 
 Q.E.D.
 
@@ -1700,26 +1684,17 @@ Section 4.3.10.1 formalizes the properties of the QBD proof regarding comonadic 
 :::tip[**Formal Derivation of the Self-Diagnostic Comonad Structure via Functorial Mapping**]
 :::
 
-**I. Setup and Assumptions**
+**I. Well-Defined Product Lift**
 
-Let the triplet $D = (R_T, \epsilon, \delta)$ acting on the category of Annotated Graphs $\mathbf{AnnCG}$ be defined as a candidate structure for a Comonad, formalizing self-reference.
+The fixed diagnostic domain is independent of candidate activity. Endpoint displacements compose by cancellation, so identities and composition lift correctly (**Functoriality of Awareness** <Ref id="4.3.6" label="§4.3.6" />).
 
-**II. The Logic Chain**
+**II. Natural Transformations and Laws**
 
-1.  **Functoriality of Awareness** <Ref id="4.3.6" label="§4.3.6" />: It is proven that the mapping $R_T$, which adjoins the local syndrome $\sigma_G$ to the state, preserves both identity morphisms and composition, qualifying as a valid **Endofunctor**.
-2.  **Naturality of Transformations** <Ref id="4.3.7" label="§4.3.7" />: It is proven that Context Extraction ($\epsilon$) and Meta-Check duplication ($\delta$) commute with all state transformations $f: G \to G'$, qualifying them as **Natural Transformations**.
-3.  **Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" />: Explicit tuple tracing confirms the triplet satisfies the defining laws:
-    * **Left Identity:** $\epsilon \circ \delta = \text{id}$ (Checking the check then discarding it returns the original).
-    * **Right Identity:** $R_T(\epsilon) \circ \delta = \text{id}$ (Checking the check then discarding the inner context returns the original).
-    * **Associativity:** $\delta \circ \delta = R_T(\delta) \circ \delta$ (The order of recursive checking does not alter the nested structure).
+Projection and duplication commute with the transported lift (**Naturality of Transformations** <Ref id="4.3.7" label="§4.3.7" />). Their two counit identities and coassociativity hold on every product annotation fiber (**Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" />). These are the comonad requirements (**Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />).
 
-**III. Assembly**
+**III. Physical Diagnostic Subclass**
 
-The structure satisfies the complete algebraic definition of a Comonad. The operations of self-diagnosis, context retrieval, and recursive verification form a closed and consistent algebraic system. The algebraic validity of the category morphisms is guaranteed by the deterministic mapping established in **Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />. Moreover, the coherence of the protected codespace under active updates is guaranteed by **Comonadic Pauli Frame Tracking** <Ref id="4.3.10" label="§4.3.10" />.
-
-**IV. Formal Conclusion**
-
-We conclude that the Awareness Comonad constitutes a proven comonadic invariant, formalizing the capacity for fault-tolerant self-diagnosis within the causal graph.
+The affine anchoring and translation hypotheses uniquely specify the physical diagnostic shift (**Algebraic Rigidity of the Annotation Map** <Ref id="4.3.9" label="§4.3.9" />). Its global displacement transports a faithful observation into the new faithful observation (**Comonadic Pauli Frame Tracking** <Ref id="4.3.10" label="§4.3.10" />). This subclass is compatible with the natural product lift established above.
 
 Q.E.D.
 
@@ -1733,127 +1708,64 @@ Section 4.3.11 formalizes the properties of the QBD proof regarding awareness co
 :::note[**Computational Verification of Comonad Axioms via Structural Equality Checks**]
 :::
 
-Computational verification of the categorical consistency established by **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" /> is based on the following protocols:
+Computational verification of the transported observation identities established in (**Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />) and (**Comonadic Pauli Frame Tracking** <Ref id="4.3.10.1" label="§4.3.10.1" />) is based on the following protocols:
 
-1.  **State Definition:** The algorithm defines an `AnnotatedGraph` representation that couples a causal graph structure (via NetworkX) with a nested coordinate mapping, implementing the store comonad structure as defined in the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" />.
-2.  **Morphism Implementation:** The protocol implements the core comonadic operations:
-    * **Awareness Functor ($R_T$):** Adjoins a computed syndrome to the annotation.
-    * **Counit ($\epsilon$):** Extracts the stored context (discards the syndrome).
-    * **Comultiplication ($\delta$):** Duplicates the current observation for meta-checks.
-3.  **Axiom Testing:** The simulation applies these morphisms to a test graph to verify the three fundamental comonad laws (Left Identity, Right Identity, Associativity) via strict structural equality checks.
+1.  **Global Occupancy Enumeration:** All directed three-vertex adjacency patterns supply observations at every ordered triple.
+2.  **Displacement Comparison:** Every adjacency pair is checked against the global observation symmetric-difference identity.
+3.  **Context Transport:** Binary endpoint cases check transport composition and both copies of the comultiplication context.
 
 ```python
-import networkx as nx
+from itertools import product
 
-# Dummy syndrome computation: returns a constant value for verification purposes
-def compute_syndrome(_):
-    return 1
+vertices = range(3)
+edges = [(u,v) for u in vertices for v in vertices if u!=v]
+sites = list(product(vertices,repeat=3))
+graphs = [{e:bit for e,bit in zip(edges,bits)} for bits in product((0,1),repeat=len(edges))]
 
-class AnnotatedGraph:
-    """Represents a causal graph with nested tuple annotation (store comonad structure)."""
-    def __init__(self, graph, annotation):
-        self.graph = graph
-        # Ensure annotation is always a tuple to support consistent nesting
-        self.annotation = annotation if isinstance(annotation, tuple) else (annotation,)
-    
-    def __repr__(self):
-        return f"AnnotatedGraph with annotation: {self.annotation}"
-    
-    def __eq__(self, other):
-        if not isinstance(other, AnnotatedGraph):
-            return False
-        return (nx.is_isomorphic(self.graph, other.graph) and
-                self.annotation == other.annotation)
+def observe(E,p):
+    v,w,u = p
+    x,y,z = E.get((v,w),0), E.get((w,u),0), E.get((u,v),0)
+    return (x^y,y^z,z^x)
 
-# Apply a morphism to the annotation part only
-def apply_morphism(f_ann, ann_graph):
-    new_ann = f_ann(ann_graph.annotation)
-    return AnnotatedGraph(ann_graph.graph, new_ann)
+checks = 0
+for E in graphs:
+    for F in graphs:
+        difference = {e:E[e]^F[e] for e in edges}
+        for p in sites:
+            a,b,d = observe(E,p),observe(F,p),observe(difference,p)
+            assert d==tuple(x^y for x,y in zip(a,b))
+            assert sum(a)%2==0
+            assert tuple(x^(x^y) for x,y in zip(a,b))==b
+            checks += 1
 
-# Awareness functor R_T: adjoins freshly computed syndrome
-def R_T(ann_graph):
-    syndrome = compute_syndrome(ann_graph.graph)
-    return AnnotatedGraph(ann_graph.graph, (ann_graph.annotation, syndrome))
-
-# Lifted morphism for R_T
-def R_T_lift(f_ann):
-    def lifted(pair):
-        old, new = pair
-        return (f_ann(old), new)
-    return lifted
-
-# Counit ε: extracts the stored context
-def ε(pair):
-    old, _ = pair
-    return old
-
-# Comultiplication δ: duplicates the current observation for meta-check
-def δ(pair):
-    old, new = pair
-    return ((old, new), new)
-
-# Test graph (simple chain for demonstration)
-G = nx.DiGraph([('v1', 'v2'), ('v2', 'v3')])
-
-# Initial state X with stored annotation 'old'
-X = AnnotatedGraph(G, 'old')
-Y = R_T(X)  # Apply awareness: Y = R_T(X)
-
-print("Store Comonad Axiom Verification")
-print("=" * 50)
-
-# Axiom 1: Left Identity - ε ∘ δ = id
-δ_Y = apply_morphism(δ, Y)
-lhs1 = apply_morphism(ε, δ_Y)
-print("Axiom 1: Left Identity (ε ∘ δ = id)")
-print(f"   Holds: {lhs1 == Y}")
-print(f"   Result after ε ∘ δ: {lhs1}")
-print(f"   Expected (id(Y)):     {Y}\n")
-
-# Axiom 2: Right Identity - R_T(ε) ∘ δ = id
-lifted_ε = R_T_lift(ε)
-lhs2 = apply_morphism(lifted_ε, δ_Y)
-print("Axiom 2: Right Identity (R_T(ε) ∘ δ = id)")
-print(f"   Holds: {lhs2 == Y}")
-print(f"   Result after R_T(ε) ∘ δ: {lhs2}")
-print(f"   Expected (id(Y)):         {Y}\n")
-
-# Axiom 3: Associativity - δ ∘ δ = R_T(δ) ∘ δ
-lhs3 = apply_morphism(δ, δ_Y)
-lifted_δ = R_T_lift(δ)
-rhs3 = apply_morphism(lifted_δ, δ_Y)
-print("Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)")
-print(f"   Holds: {lhs3 == rhs3}")
-print(f"   LHS (δ ∘ δ):           {lhs3}")
-print(f"   RHS (R_T(δ) ∘ δ):      {rhs3}")
+for b,sE,sF,sG in product((0,1),repeat=4):
+    assert (b^(sE^sF))^(sF^sG)==b^(sE^sG)
+for a,b,u in product((0,1),repeat=3):
+    k = lambda x:x^1
+    lift = lambda pair:(k(pair[0]),pair[1]^u)
+    duplicate = lambda pair:(pair,pair[1])
+    lhs = duplicate(lift((a,b)))
+    rhs = ((k(a),b^u),b^u)
+    assert lhs==rhs
+print('Adjacency patterns:',len(graphs))
+print('Global site-pair observation checks:',checks)
+print('Binary transport composition cases: 16')
+print('Transported duplicate-context cases: 8')
+print('Mismatches: 0')
 ```
 
 **Simulation Results:**
 
 ```text
-Store Comonad Axiom Verification
-==================================================
-Axiom 1: Left Identity (ε ∘ δ = id)
-   Holds: True
-   Result after ε ∘ δ: AnnotatedGraph with annotation: (('old',), 1)
-   Expected (id(Y)):     AnnotatedGraph with annotation: (('old',), 1)
-
-Axiom 2: Right Identity (R_T(ε) ∘ δ = id)
-   Holds: True
-   Result after R_T(ε) ∘ δ: AnnotatedGraph with annotation: (('old',), 1)
-   Expected (id(Y)):         AnnotatedGraph with annotation: (('old',), 1)
-
-Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)
-   Holds: True
-   LHS (δ ∘ δ):           AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
-   RHS (R_T(δ) ∘ δ):      AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
+Adjacency patterns: 64
+Global site-pair observation checks: 110592
+Binary transport composition cases: 16
+Transported duplicate-context cases: 8
+Mismatches: 0
 ```
 
 **Conclusion:**
-
-The comonad axioms hold with mathematical certainty under type theory, with Docusaurus-aligned execution confirmed.
-**Left Identity** ($\epsilon \circ \delta = id$) holds, returning the original annotated structure.; **Right Identity** ($R_T(\epsilon) \circ \delta = id$) holds, confirming that lifting the counit preserves the context.; **Associativity** ($\delta \circ \delta = R_T(\delta) \circ \delta$) holds, producing identical nested structures for both orderings.
-These results validate the structural correctness of the Store Comonad model, confirming that the awareness mechanism is mathematically consistent and suitable for rigorous recursive application in the causal graph.
+The enumeration covers 64 adjacency patterns and 110592 ordered-site comparisons. Every observation difference, even-parity test and faithful transport identity agrees exactly. All 16 binary composition cases and eight duplicated-context cases also agree. These finite checks validate the displayed component identities alongside the independent Lean proofs.
 
 **In Plain English:**  
 Section 4.3.11.1 formalizes the properties of the QBD calculation regarding simulation verification.
@@ -1865,61 +1777,131 @@ Section 4.3.11.1 formalizes the properties of the QBD calculation regarding simu
 :::note[**Lean 4 Encoding of Comonadic Laws via Definitional Equality**]
 :::
 
-Type-theoretic certification of the comonad axioms established in the **Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" /> and their **Axiom Satisfaction** <Ref id="4.3.8" label="§4.3.8" /> proceeds via the following verification strategy:
+Type-theoretic certification of the graph-changing product construction established in (**Awareness Comonad** <Ref id="4.3.11" label="§4.3.11" />) proceeds via the following verification strategy:
 
-1.  **Encoding:** The structure `GraphState G A` encodes an annotated causal graph as a dependent product of a graph carrier `G` and an annotation context `A`; `ε` (counit) and `δ` (comultiplication) encode the two structural maps, while `lift_history` encodes the action of `ε` lifted to the diagnostic stack.
-2.  **Theorem Statements:** Three theorems certify the three comonad axioms: Left Identity (`ε (δ Y) = Y`), Right Identity (`lift_history ε (δ Y) = Y`), and Comonadic Associativity (`δ (δ Y) = lift_history δ (δ Y)`), corresponding to the two unit laws and the coassociativity law respectively.
-3.  **Proof Closure:** All three theorems are closed by `rfl`, confirming that the comonad identities hold by definitional equality at the level of the Lean kernel's reduction rules, without requiring any rewrite or case analysis.
+1.  **Global Encoding:** Directed Boolean adjacency and diagnostic fields on all ordered triples specify graph observations and their symmetric differences (**Annotated Causal Graphs (AnnCG)** <Ref id="4.3.1" label="§4.3.1" />).
+2.  **Transport and Naturality:** The proof terms certify observation displacement, endpoint transport composition, both naturality squares and faithful observation transport.
+3.  **Comonad Laws:** Projection and duplication satisfy the two counit identities and coassociativity with identity base transport.
 
 ```lean
--- GraphState binds an abstract graph type with a generic nested annotation context
-structure GraphState (G A : Type) where
-  graph : G
-  annotation : A
-  deriving DecidableEq, Repr
+namespace QBD.Awareness
 
--- Counit (ε): Context Extraction - Projects out the historical annotation layer
-def ε {G A S : Type} (state : GraphState G (A × S)) : GraphState G A :=
-  ⟨state.graph, state.annotation.1⟩
+-- Fixed directed adjacency coordinates and global diagnostic fields.
+abbrev Graph (V : Type) := (V × V) → Bool
+abbrev Field (V : Type) := (V × V × V) → Fin 3 → Bool
 
--- Comultiplication (δ): Meta-Check - Duplicates the current observation layer for verification
-def δ {G A S : Type} (state : GraphState G (A × S)) : GraphState G ((A × S) × S) :=
-  ⟨state.graph, (state.annotation, state.annotation.2)⟩
+-- Pointwise addition in the binary diagnostic field.
+def add {V : Type} (a b : Field V) : Field V :=
+  fun p i => xor (a p i) (b p i)
 
--- Lifted operation applying an annotation map to the history sector of a state tuple
-def lift_history {G A B S : Type} (f : GraphState G A → GraphState G B) (state : GraphState G (A × S)) : GraphState G (B × S) :=
-  ⟨state.graph, ((f ⟨state.graph, state.annotation.1⟩).annotation, state.annotation.2)⟩
+-- Pair-product check bits at every ordered triple, including inactive sites.
+def observe {V : Type} (E : Graph V) : Field V :=
+  fun p i => match i.val with
+    | 0 => xor (E (p.1, p.2.1)) (E (p.2.1, p.2.2))
+    | 1 => xor (E (p.2.1, p.2.2)) (E (p.2.2, p.1))
+    | _ => xor (E (p.2.2, p.1)) (E (p.1, p.2.1))
 
-/--
-THEOREM 1: Left Identity
-Formally proves that duplicating an observation context for a meta-check 
-and immediately extracting the history yields the original state invariant.
--/
-theorem left_identity {G A S : Type} (Y : GraphState G (A × S)) :
-    ε (δ Y) = Y := by
-  rfl
+-- The edge symmetric difference connecting two graph snapshots.
+def edgeDifference {V : Type} (E F : Graph V) : Graph V :=
+  fun e => xor (E e) (F e)
 
-/--
-THEOREM 2: Right Identity
-Formally proves that duplicating an observation context and discarding 
-the inner history layer returns the original observation profile cleanly.
--/
-theorem right_identity {G A S : Type} (Y : GraphState G (A × S)) :
-    lift_history ε (δ Y) = Y := by
-  rfl
+/-- The local incidence displacement equals the difference of observations. -/
+theorem observation_difference {V : Type} (E F : Graph V) :
+    observe (edgeDifference E F) = add (observe E) (observe F) := by
+  funext p i
+  rcases p with ⟨v, w, u⟩
+  rcases i with ⟨i, hi⟩
+  match i with
+  | 0 => dsimp [observe, edgeDifference, add]; cases E (v,w) <;> cases E (w,u) <;> cases F (v,w) <;> cases F (w,u) <;> rfl
+  | 1 => dsimp [observe, edgeDifference, add]; cases E (w,u) <;> cases E (u,v) <;> cases F (w,u) <;> cases F (u,v) <;> rfl
+  | 2 => dsimp [observe, edgeDifference, add]; cases E (u,v) <;> cases E (v,w) <;> cases F (u,v) <;> cases F (v,w) <;> rfl
+  | n+3 => omega
 
-/--
-THEOREM 3: Comonadic Associativity
-Formally proves that the hierarchy of self-diagnosis is completely stable: 
-building the stack of meta-checks from the bottom up or top down yields identical structures.
--/
-theorem comonad_associativity {G A S : Type} (Y : GraphState G (A × S)) :
-    δ (δ Y) = lift_history δ (δ Y) := by
-  rfl
+-- A graph transition transports every diagnostic field by its incidence shift.
+def transport {V : Type} (E F : Graph V) (b : Field V) : Field V :=
+  add b (add (observe E) (observe F))
+
+/-- Identity graph transport fixes all field values. -/
+theorem transport_identity {V : Type} (E : Graph V) (b : Field V) :
+    transport E E b = b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> rfl
+
+/-- Consecutive transports equal the endpoint transport. -/
+theorem transport_composition {V : Type} (E F G : Graph V) (b : Field V) :
+    transport F G (transport E F b) = transport E G b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> cases observe F p i <;> cases observe G p i <;> rfl
+
+/-- Transport takes a faithful observation to the new faithful observation. -/
+theorem transport_observation {V : Type} (E F : Graph V) :
+    transport E F (observe E) = observe F := by
+  funext p i
+  dsimp [transport, add]
+  cases observe E p i <;> cases observe F p i <;> rfl
+
+-- Fiber maps on product annotations over the fixed vertex universe.
+def lift {V A B : Type} (E F : Graph V) (k : A → B)
+    (x : A × Field V) : B × Field V :=
+  (k x.1, transport E F x.2)
+
+-- Counit projection and comultiplication duplication.
+def extract {A S : Type} (x : A × S) : A := x.1
+def duplicate {A S : Type} (x : A × S) : (A × S) × S := (x, x.2)
+
+/-- Identity annotation maps lift to identity product maps. -/
+theorem lift_identity {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E id x = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, id_eq, transport_identity]
+
+/-- The graph-changing product lift preserves composition. -/
+theorem lift_composition {V A B C : Type} (E F G : Graph V)
+    (k : A → B) (l : B → C) (x : A × Field V) :
+    lift F G l (lift E F k x) = lift E G (l ∘ k) x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, Function.comp_apply, transport_composition]
+
+/-- Counit naturality includes changing graph snapshots. -/
+theorem extract_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    extract (lift E F k x) = k (extract x) := by rfl
+
+/-- Comultiplication naturality transports both copied context fields. -/
+theorem duplicate_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    duplicate (lift E F k x) =
+      lift E F (lift E F k) (duplicate x) := by rfl
+
+/-- First counit law. -/
+theorem counit_left {A S : Type} (x : A × S) : extract (duplicate x) = x := by rfl
+
+/-- Second counit law, using identity base transport. -/
+theorem counit_right {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E extract (duplicate x) = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, extract, duplicate, transport_identity]
+
+/-- Coassociativity duplicates the same observation field twice. -/
+theorem coassociative {V A : Type} (E : Graph V) (x : A × Field V) :
+    duplicate (duplicate x) = lift E E duplicate (duplicate x) := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, duplicate, transport_identity]
+
+end QBD.Awareness
+
+#print axioms QBD.Awareness.observation_difference
+#print axioms QBD.Awareness.lift_composition
+#print axioms QBD.Awareness.duplicate_natural
+#print axioms QBD.Awareness.coassociative
+
 ```
 
 **Verification Summary:**
-`GraphState G A` is a `structure` with fields `graph : G` and `annotation : A`, encoding the pair of a raw causal graph and its attached diagnostic context. When `A = A' * S`, the annotation decomposes into a history layer `A'` and a syndrome layer `S`. The counit `e` projects out `annotation.1`, stripping the syndrome and returning the clean history; `d` duplicates the annotation as `(annotation, annotation.2)`, recording the current full context alongside the syndrome layer to prepare for meta-level verification. `lift_history f` applies a map `f` to the history sector while leaving the syndrome unchanged. All three comonad laws reduce to structural equalities on `GraphState` field projections: `e (d Y)` evaluates to the structure `(Y.graph, Y.annotation.1)`, which is definitionally equal to `Y` when `Y.annotation = (Y.annotation.1, Y.annotation.2)`; the remaining two laws reduce analogously. The Lean kernel's acceptance of all three `rfl` closures certifies that the awareness mechanism is a provably valid comonad, providing the formal machine certificate that the graph's self-diagnostic structure is algebraically well-formed and free from coherence defects.
+
+The global observation map evaluates each pair-product check at every ordered triple. Boolean case analysis certifies the incidence identity and endpoint cancellation; the resulting transport identities close the composition and comonad goals. The graph-changing naturality proof transports both copied observation fields. Compilation under Lean 4.35.0 contains no admitted proofs or additional axioms; the axiom reports list only the standard extensionality and quotient principles where used. Lean kernel acceptance certifies these explicit component identities for the corresponding proof, rather than a physical derivation of the diagnostic controls.
 
 **In Plain English:**  
 Section 4.3.12 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -1931,7 +1913,7 @@ Section 4.3.12 formalizes the properties of the QBD type-theoretic regarding val
 :::info[**Calibration of the Causal Graph via Information-Theoretic and Discrete Combinatorial Equivalence**]
 :::
 
-Given the discrete relational representation of the causal graph, the following holds: the five fundamental constitutive scales of the vacuum, consisting of the base-conversion modulus $\beta_c = \ln 2$, the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$, the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$, the Arrhenius defect relaxation constant $\lambda_0 = e - 1$, and the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$, are uniquely determined as canonical analytical reference priors from discrete combinatorial conservation principles, discrete incident port equipartition, and local fiber maximum entropy on the integer counting lattice $\mathbb{Z}$. The microscopic rewrite probabilities evaluate strictly to the canonical combinatorial reference values $P_{\mathrm{base}} = 1.0$ and $Q_{\mathrm{base}} = 1/2$.
+Given an unbiased binary prior, a stipulated dimensionless total loop energy $E_0=\ln2$ equally allocated to three channels, six independent fair routing decisions, affine catalytic interpolation with $f(0)=1$, $f(1)=e$, and the continuum Gaussian reference convention, the following holds: the corresponding reference coordinates are $Q_0=1/2$, $\varepsilon_0=\ln2/3$, $\Lambda_0=2^{-6}$, $\lambda_0=e-1$ and $\mu_0=1/\sqrt{2\pi}$. These values are conditional constitutive coordinates; the exact signed-lattice Gaussian normalization includes its theta correction.
 
 **In Plain English:**  
 The vacuum has a fundamental temperature of ln(2), representing the exact thermodynamic energy required to delete one bit of relation.
@@ -1955,65 +1937,94 @@ Section 4.4.2 formalizes the properties of the QBD lemma regarding information m
 :::tip[**Formal Derivation of Prior Uniqueness, Temperature Cancellation, and Lossless History Retention via Jaynes Maximum Entropy and Category of Histories**]
 :::
 
-**I. Jaynes Maximum Entropy on the Boolean Edge Simplex**
+**I. Binary Entropy and Its Interior Maximum**
 
-Let each potential directed relation between vertices $u$ and $v$ be represented by a boolean state variable $x_{uv} \in \{0, 1\}$, indicating absence ($0$) or presence ($1$) on the substrate under **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. In the pre-geometric vacuum ground state, the internal Hamiltonian energy cost vanishes ($\Delta U = 0$). Under the principle of Maximum Entropy (Jaynes 1957), the prior probability distribution $p(x)$ over $\{0, 1\}$ maximizes the Shannon-Gibbs entropy:
-
-$$
-S[p] = - \sum_{x \in \{0, 1\}} p(x) \ln p(x)
-$$
-
-subject only to normalization $p(0) + p(1) = 1$. The unique stationary point satisfying bit-flip invariance $p(0) = p(1)$ is:
+Write $p(1)=p$ and $p(0)=1-p$, with $0\le p\le1$ for the Boolean edge state (**Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />). In natural logarithm units,
 
 $$
-p(0) = p(1) = \frac{1}{2}.
+h(p)=-p\ln p-(1-p)\ln(1-p),
 $$
 
-This establishes the unbiased Bernoulli prior $Q_0 = 1/2$ as a structural combinatorial theorem (verified in Lean 4 as `unbiased_bernoulli_prior_is_half`), requiring zero empirical fitting parameters.
-
-**II. Base Conversion Modulus**
-
-Evaluating the information entropy of this unbiased prior yields:
+with $0\ln0=0$ by continuity. For $0<p<1$,
 
 $$
-H_{\mathrm{Shannon}} = - \left(\frac{1}{2}\log_2\frac{1}{2} + \frac{1}{2}\log_2\frac{1}{2}\right) = 1\text{ bit},
+\begin{aligned}
+h'(p)&=-(\ln p+1)+(\ln(1-p)+1)
+=\ln\frac{1-p}{p},\\
+h''(p)&=-\frac1{1-p}-\frac1p=-\frac1{p(1-p)}<0.
+\end{aligned}
 $$
 
-$$
-H_{\mathrm{nats}} = - \left(\frac{1}{2}\ln\frac{1}{2} + \frac{1}{2}\ln\frac{1}{2}\right) = \ln 2\text{ nats}.
-$$
-
-The quantity $\beta_c = \ln 2$ is strictly the dimensionless base-conversion modulus relating base-2 combinatorial decisions to natural logarithms:
+The stationary equation is
 
 $$
-\beta_c = \ln 2 \approx 0.693147.
+h'(p)=0\ \Longleftrightarrow\ \frac{1-p}{p}=1
+\ \Longleftrightarrow\ 1-p=p\ \Longleftrightarrow\ p=\tfrac12.
 $$
 
-**III. Identical Cancellation of Temperature in Relational Acceptance Ratios**
-
-Consider any hypothetical thermal parametrization introducing an inverse temperature $\beta = 1/T$ into a Metropolis-Hastings acceptance ratio $\alpha = \min(1, \exp(-\beta \Delta F))$. In the relational ground state where bare internal energy vanishes ($\Delta U = 0$), the free energy variation is purely entropic: $\Delta F = \Delta U - T \Delta S = - T \Delta S$.
-
-For edge creation with relational entropy gain $\Delta S_{\mathrm{add}} = +\ln 2$:
+Strict concavity makes this the only interior maximum. The endpoints have $h(0)=h(1)=0$, whereas
 
 $$
-P_{\mathrm{acc}} = \min(1, \exp(-\beta (-T \ln 2))) = \min(1, \exp(+\ln 2)) = \min(1, 2) = 1.0.
+h(1/2)=-\tfrac12\ln(1/2)-\tfrac12\ln(1/2)=\ln2>0.
 $$
 
-For edge deletion with relational entropy loss $\Delta S_{\mathrm{del}} = -\ln 2$:
+Thus it is also the unique global maximum. The imposed bit-flip symmetry independently gives the same value from $p=1-p$ and normalization.
+
+**II. Exact Conversion Between Bits and Nats**
+
+For any finite probability distribution $(p_j)$, $\log_2p_j=\ln p_j/\ln2$ gives
 
 $$
-Q_{\mathrm{acc}} = \min(1, \exp(-\beta (+T \ln 2))) = \exp(-\ln 2) = \frac{1}{2} = 0.5.
+\begin{aligned}
+H_{bits}&=-\sum_jp_j\log_2p_j
+=\frac1{\ln2}\left(-\sum_jp_j\ln p_j\right),\\
+H_{nats}&=(\ln2)H_{bits}.
+\end{aligned}
 $$
 
-Because the factor of $T$ in $\Delta F = -T \Delta S$ is multiplied by $\beta = 1/T$, the temperature $T$ cancels identically for all $T \in (0, \infty)$. The physical acceptance probabilities are invariant across all energy scales: $P_0 = 1.0$ and $Q_0 = 0.5$.
+For the unbiased binary distribution,
 
-**IV. Lossless Historical Retention via the Category of Histories ($\mathbf{Hist}$)**
+$$
+H_{bits}=-\tfrac12(-1)-\tfrac12(-1)=1,\qquad
+H_{nats}=\ln2.
+$$
 
-Unlike classical computational erasure which dissipates heat $k_B T \ln 2$ per erased bit (Landauer's principle), the QBD substrate operates as an append-only causal category of histories $\mathbf{Hist}$ (Vaccaro & Barnett 2011). When a directed edge is topologically removed from the active spatial graph $S_t \to S_{t+1}$, its existence remains indelibly recorded in the cumulative causal DAG history $\mathcal{H}_t \subset \mathcal{H}_{t+1}$. Because information is never deleted from the global history, microscopic Landauer erasure dissipation is strictly zero ($\Delta S_{\mathrm{erase}} = 0$, verified in Lean 4 as `spatial_deletion_preserves_history`).
+Hence $\beta_c=\ln2$ is a base-conversion modulus, not an energy scale by this calculation alone (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
 
-**V. Formal Conclusion**
+**III. Purely Entropic Acceptance Parametrization**
 
-We conclude under **Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> that $\beta_c = \ln 2$ is an information-theoretic base-conversion modulus rather than a thermodynamic bath temperature. The vacuum dynamics are governed fundamentally by combinatorial probabilities $P_0 = 1.0$ and $Q_0 = 0.5$.
+Use the declared baseline $\Delta U=0$ and the auxiliary parametrization
+
+$$
+T>0,\qquad\beta=1/T,\qquad
+\Delta F=\Delta U-T\Delta S=-T\Delta S,
+\qquad a=\min\{1,e^{-\beta\Delta F}\}
+$$
+
+of the information-theoretic baseline (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />). Substitution before choosing either sign of $\Delta S$ gives
+
+$$
+-\beta\Delta F=-\frac1T(-T\Delta S)=\Delta S,
+\qquad a=\min\{1,e^{\Delta S}\}.
+$$
+
+For an added bit and a removed bit respectively,
+
+$$
+\begin{aligned}
+\Delta S_{add}=\ln2&\Rightarrow P_0=\min\{1,e^{\ln2}\}
+=\min\{1,2\}=1,\\
+\Delta S_{del}=-\ln2&\Rightarrow Q_0=\min\{1,e^{-\ln2}\}
+=\min\{1,\tfrac12\}=\tfrac12.
+\end{aligned}
+$$
+
+The cancellation used only $T>0$. Thus for any two auxiliary choices $T_1,T_2>0$, both baseline acceptance values are identical. Kinetic factors whose stated parameters are independent of this auxiliary $T$ retain this invariance when multiplied by the baseline values.
+
+$$
+\boxed{\beta_c=\ln2,\qquad p(0)=p(1)=\tfrac12,\qquad
+P_0=1,\quad Q_0=\tfrac12\quad(T>0,\ \Delta U=0).}
+$$
 
 Q.E.D.
 
@@ -2039,48 +2050,64 @@ Section 4.4.3 formalizes the properties of the QBD lemma regarding entropy of cl
 :::tip[**Derivation of Loop Closure Entropy via Causal Path Multiplicity and Topological Bifurcation**]
 :::
 
-**I. Pre-Closure Phase Space Configuration**
+**I. Local Simple-Path Ensemble**
 
-Let $\pi = (v \to w \to u)$ denote a compliant **2-path** site on the sparse vacuum graph $G_0$, satisfying the Parent-Uniqueness Condition under **2-Path** <Ref id="1.2.5" label="§1.2.5" /> and **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />. The local phase space consists of the established influence relations among $\{u, v, w\}$:
-
-1. The relation $v \le w$ is realized by the unique edge $(v, w)$ with multiplicity $k=1$.
-2. The relation $w \le u$ is realized by the unique edge $(w, u)$ with multiplicity $k=1$.
-3. The relation $v \le u$ is realized by the unique path $(v, w, u)$ with multiplicity $k=1$.
-
-The total pre-closure phase volume evaluates to:
+Restrict the count to the three distinct vertices $a,b,c$ of the admitted local closure. The open induced triad has edges $(a,b),(b,c)$, and the closed triad adds $(c,a)$ (**2-Path** <Ref id="1.2.5" label="§1.2.5" />), (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />). Let
 
 $$
-\Omega_{\mathrm{open}} = 1 \cdot 1 \cdot 1 = 1.
+\mathcal P_{loc}(G)=\{p:p\text{ is a simple directed path in the triad, with distinct endpoints}\},
+\qquad\Omega_{loc}(G)=|\mathcal P_{loc}(G)|.
 $$
 
-The baseline pre-closure entropy is $S_{\mathrm{open}} = \ln(\Omega_{\mathrm{open}}) = \ln(1) = 0$.
+This is the path-count ensemble convention for relational entropy (**Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />), applied to the local induced subgraph. A simple path on three vertices has at most two edges, because it cannot repeat a vertex.
 
-**II. Post-Closure Phase Space Bifurcation**
+**II. Complete Open-Triad Count**
 
-The insertion of the directed chord edge $e_{\mathrm{new}} = (u, v)$ by the rewrite rule completes the directed **3-cycle** $C = v \to w \to u \to v$. The local influence structure admits a topological bifurcation:
-
-1. The direct relation $u \le v$ is established via $e_{\mathrm{new}}$ with multiplicity $k_{uv} = 1$.
-2. The cycle creates a non-trivial fundamental group ($\pi_1(G) \neq 0$). A physical distinction exists between the direct influence $u \le v$ and the pre-existing mediated influence $v \le u$.
-
-The cycle introduces a binary topological distinction, doubling the number of distinct relational microstates:
+The two length-one paths are $(a,b)$ and $(b,c)$. The only length-two path is $(a,b,c)$: $a$ has only $b$ as a successor, $b$ has only $c$, and $c$ has none. Consequently
 
 $$
-\Omega_{\mathrm{closed}} = 2 \cdot \Omega_{\mathrm{open}} = 2.
+\mathcal P_{open}=\{(a,b),(b,c),(a,b,c)\},\qquad
+\Omega_{open}=2+1=3.
 $$
 
-**III. Evaluation of Relational Entropy Increase**
+There are no longer simple paths and no zero-length paths with distinct endpoints.
 
-The change in local relational entropy is the log-ratio of the phase space volumes:
+**III. Complete Closed-Triad Count**
+
+After inserting $(c,a)$, every vertex has exactly one outgoing neighbor. There are three length-one paths and three length-two paths:
 
 $$
-\Delta S_{\mathrm{close}} = \ln \left( \frac{\Omega_{\mathrm{closed}}}{\Omega_{\mathrm{open}}} \right) = \ln 2\text{ nats} \equiv 1\text{ bit}.
+\begin{aligned}
+\mathcal P_{closed}=\{&(a,b),(b,c),(c,a),\\
+&(a,b,c),(b,c,a),(c,a,b)\}.
+\end{aligned}
 $$
 
-Under Metropolis-Hastings acceptance at critical temperature $T_c = \ln 2$, this entropic increase yields the baseline addition rate $P_{\mathrm{add}} = \min(1, \mathrm{e}^{\Delta S_{\mathrm{close}}}) = 1.0$.
+Starting at any of the three vertices determines its length-one and length-two path uniquely. A third edge would return to the starting vertex and violate simplicity. The list is therefore exhaustive and has six distinct elements:
 
-**IV. Formal Conclusion**
+$$
+\Omega_{closed}=3+3=6,\qquad
+\frac{\Omega_{closed}}{\Omega_{open}}=\frac63=2.
+$$
 
-We conclude that the closure of a directed **3-cycle** releases exactly $\Delta S_{\mathrm{close}} = \ln 2$ nats of local relational entropy into the network.
+**IV. Entropy Difference**
+
+In natural logarithm units, the two local relational entropies and their difference are
+
+$$
+\begin{aligned}
+S_{open}&=\ln3,\qquad S_{closed}=\ln6,\\
+\Delta S_{close}
+&=\ln6-\ln3=\ln(6/3)=\ln2.
+\end{aligned}
+$$
+
+Both ensemble cardinalities are positive, so the logarithms and their difference are defined. This supplies the claimed local doubling (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />):
+
+$$
+\boxed{\Omega_{closed}/\Omega_{open}=2,\qquad
+\Delta S_{close}=\ln2\ \text{nats}.}
+$$
 
 Q.E.D.
 
@@ -2246,7 +2273,7 @@ Section 4.4.3.3 formalizes the properties of the QBD calculation regarding infor
 :::info[**Discrete Port Equipartition of Loop-Closure Self-Energy via Coordination Degree**]
 :::
 
-Let the total relational energy required to instantiate an elementary **3-cycle** defect be $E_{\mathrm{total}} = T_c \cdot \Delta S_{\mathrm{close}} = \ln 2$. Then on the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> with coordination degree $k_{\mathrm{deg}} = 3$, discrete equipartition allocates this energy uniformly across all **3** incident topological routing ports, yielding a discrete channel self-energy of $\varepsilon_{\mathrm{geo}} = \frac{E_{\mathrm{total}}}{k_{\mathrm{deg}}} = \frac{\ln 2}{3} \approx 0.231049$.
+Let the dimensionless total loop energy be stipulated as $E_0=\ln2$, and impose equal allocation among three routing channels. Then each channel has energy $\varepsilon_0=E_0/3=\ln2/3$ (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
 
 **In Plain English:**  
 Section 4.4.4 formalizes the properties of the QBD lemma regarding dimensional equipartition.
@@ -2258,39 +2285,30 @@ Section 4.4.4 formalizes the properties of the QBD lemma regarding dimensional e
 :::tip[**Derivation of Discrete Port Self-Energy via Incident Coordination Channel Equipartition**]
 :::
 
-**I. Total Relational Defect Energy**
+**I. Equal-Allocation Premise**
 
-Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, instantiating an elementary directed **3-cycle** defect incurs an entropic change of $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ at vacuum temperature $T_c = \ln 2$. The total relational energy associated with the loop closure evaluates to:
+The proof uses the specified objects and conventions (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
-$$
-E_{\mathrm{total}} = T_c \cdot \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
-$$
-
-**II. Discrete Substrate Coordination**
-
-On the pre-geometric substrate $G_0$, internal vertices follow the regular trivalent coordination structure established in **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />. Each internal vertex possesses $d_{\mathrm{in}}(v) = 1$ incoming parent edge and $d_{\mathrm{out}}(v) = 2$ outgoing child edges. The total number of incident routing channels per internal vertex evaluates to:
+Write the three channel energies as $\varepsilon_1,\varepsilon_2,\varepsilon_3$. The specified allocation law is
 
 $$
-k_{\mathrm{deg}} = d_{\mathrm{in}}(v) + d_{\mathrm{out}}(v) = 1 + 2 = 3.
+\varepsilon_1=\varepsilon_2=\varepsilon_3=\varepsilon_0,
+\qquad \varepsilon_1+\varepsilon_2+\varepsilon_3=E_0.
 $$
 
-This trivalent coordination degree is invariant across all internal vertices of the substrate.
+**II. Energy Conservation**
 
-**III. Discrete Microcanonical Equipartition Principle**
+Substitution gives $3\varepsilon_0=E_0$, hence $\varepsilon_0=E_0/3$.
 
-In the absence of preferred spatial directions, background independence requires the total loop-closure energy $E_{\mathrm{total}}$ to partition uniformly among all available incident routing ports. Each topological routing channel constitutes an independent degree of freedom for causal propagation under **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />.
+**III. Reference Energy Unit**
 
-**IV. Evaluation of Channel Self-Energy**
-
-Allocating the total energy $E_{\mathrm{total}} = \ln 2$ equally across the $k_{\mathrm{deg}} = 3$ incident topological routing ports yields the discrete channel self-energy:
+In the stated energy unit $E_0=\ln2$, so
 
 $$
-\varepsilon_{\mathrm{geo}} = \frac{E_{\mathrm{total}}}{k_{\mathrm{deg}}} = \frac{\ln 2}{3} \approx 0.231049.
+\boxed{\varepsilon_0=\frac{\ln2}{3}.}
 $$
 
-**V. Formal Conclusion**
-
-We conclude that $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ constitutes the unique discrete self-energy allocated to each incident topological routing channel on the trivalent vacuum substrate.
+This is the conditional channel scale (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />).
 
 Q.E.D.
 
@@ -2304,7 +2322,7 @@ Section 4.4.4.1 formalizes the properties of the QBD proof regarding dimensional
 :::info[**Simplicial Interaction Boundary Permittivity via Triad Port Configuration Combinatorics**]
 :::
 
-Let an elementary **3-cycle** defect comprise **3** trivalent vertices on the $k_{\mathrm{deg}} = 3$ substrate. Then each vertex contributes $k_{\mathrm{deg}} - 1 = 2$ external routing channels, establishing a simplicial interaction boundary of $V_{\mathrm{int}} = 3 \times 2 = 6$ binary routing ports, and the unconditioned concurrent alignment probability is uniquely $\Lambda_{\mathrm{theory}} = (1/2)^6 = 2^{-6} = \frac{1}{64} = 0.015625$.
+Let each of a triad's three vertices carry two stipulated routing-decision variables, and let the six binary variables be independent and fair. Then one specified joint alignment has probability $\Lambda_0=2^{-6}=1/64$ (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
 **In Plain English:**  
 Section 4.4.5 formalizes the properties of the QBD lemma regarding geometric self-energy.
@@ -2316,43 +2334,25 @@ Section 4.4.5 formalizes the properties of the QBD lemma regarding geometric sel
 :::tip[**Derivation of Simplicial Permittivity via Interaction Boundary Combinatorics**]
 :::
 
-**I. Simplicial Defect Boundary Geometry**
+**I. Decision Index Set**
 
-Let an elementary directed **3-cycle** $C = \{(u, v), (v, w), (w, u)\}$ be embedded in the regular Bethe substrate under **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" /> with coordination degree $k_{\mathrm{deg}} = 3$. The defect occupies exactly $|V(C)| = 3$ vertices.
+The proof uses the specified objects and conventions (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
-**II. Interaction Boundary Port Enumeration**
+Let $I=\{1,2,3\}\times\{1,2\}$ index the binary decisions. Its cardinality is $|I|=3\cdot2=6$. A complete decision state is an element of $\{0,1\}^{I}$, whose cardinality is $2^{|I|}=64$.
 
-At each constituent vertex $x \in V(C)$, exactly **2** incident edges are consumed by internal cycle connectivity (one incoming cycle edge and one outgoing cycle edge). Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the remaining incident capacity forms the external interaction boundary:
+**II. Joint Probability**
 
-$$
-\text{Ports per vertex} = k_{\mathrm{deg}} - 1 = 3 - 1 = 2.
-$$
-
-Summing across all **3** constituent vertices, the total simplicial interaction volume evaluates to:
+For a specified assignment $b=(b_i)_{i\in I}$, fairness gives $\Pr(B_i=b_i)=1/2$. Independence gives
 
 $$
-V_{\mathrm{int}} = |V(C)| \times (k_{\mathrm{deg}} - 1) = 3 \times 2 = 6\text{ binary routing ports}.
+\Pr(\forall i\in I,\ B_i=b_i)
+=\prod_{i\in I}\Pr(B_i=b_i)
+=\prod_{i\in I}\frac12=\left(\frac12\right)^6.
 $$
 
-**III. Binary Configuration Permutations**
+**III. Normalization**
 
-Each external routing port independently admits a binary routing decision under symmetric baseline probability $p = 1/2$. For $V_{\mathrm{int}} = 6$ independent ports, the total configuration state space has volume:
-
-$$
-\Omega_{\mathrm{boundary}} = 2^{V_{\mathrm{int}}} = 2^6 = 64.
-$$
-
-**IV. Evaluation of Simplicial Permittivity**
-
-The unconditioned probability of concurrent structural alignment across the entire simplicial interaction boundary evaluates to:
-
-$$
-\Lambda_{\mathrm{theory}} = \left(\frac{1}{2}\right)^{V_{\mathrm{int}}} = 2^{-6} = \frac{1}{64} = 0.015625.
-$$
-
-**V. Operational Engine Status**
-
-In the unpumped microscopic rewrite engine, spontaneous background edge generation is disabled ($\Lambda_{\mathrm{micro}} \equiv 0$) under **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> to isolate pure absorbing-state dynamics. The quantity $\Lambda_{\mathrm{theory}} = 2^{-6}$ serves as the exact theoretical upper bound utilized in auxiliary driven continuum comparisons.
+The 64 assignments are disjoint and exhaustive. Their equal masses sum to $64\cdot2^{-6}=1$. Therefore the chosen alignment has the asserted probability (**Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />).
 
 Q.E.D.
 
@@ -2366,7 +2366,7 @@ Section 4.4.5.1 formalizes the properties of the QBD proof regarding geometric s
 :::info[**Unique Linear Markov Jump Generator via Arrhenius Defect Relaxation and Move Additivity**]
 :::
 
-Let an elementary **3-cycle** defect possess Landauer creation energy $E_{\mathrm{defect}} = T_c \cdot \Delta S_{\mathrm{close}} = \ln 2$ at vacuum temperature $T_c = \ln 2$. Then in the microscopic deletion kernel $Q_{\mathrm{del}}(s) = \frac{1}{2}(1 + \lambda s)\mathrm{e}^{-\mu s}$, the linear catalytic reaction velocity $(1 + \lambda s)$ is the unique infinitesimal Markov jump generator preserving move additivity and scheduler non-interference, and matching this generator at fundamental unit self-stress $s = 1$ to the discrete Arrhenius defect relaxation factor $\Omega_{\mathrm{released}}/\Omega_{\mathrm{bound}} = e^1$ uniquely determines $\lambda_0 = e - 1 \approx 1.718282$.
+Let the catalytic factor be restricted to the affine family $f(s)=1+\lambda s$ and impose the unit-nat reference value $f(1)=e$. Then $\lambda=e-1$ is the unique coefficient in that family (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
 **In Plain English:**  
 Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coefficient.
@@ -2378,55 +2378,19 @@ Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coe
 :::tip[**Derivation of the Catalytic Relaxation Constant via Arrhenius Rates and Markov Generator Linearity**]
 :::
 
-**I. Landauer Defect Energy and Entropic Phase Space**
+**I. Interpolation Conditions**
 
-Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, closing a **2-path** into a **3-cycle** traps one bit of relational entropy ($\Delta S_{\mathrm{close}} = \ln 2$), storing relational defect energy:
+The proof uses the specified objects and conventions (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
-$$
-E_{\mathrm{defect}} = k_B T_c \Delta S_{\mathrm{close}} = (\ln 2) \cdot 1 = \ln 2\text{ energy units}.
-$$
+An affine law $f(s)=a+bs$ satisfying $f(0)=1$ has $a=1$. The second condition is $f(1)=a+b=e$.
 
-**II. Discrete Arrhenius Defect Relaxation**
+**II. Coefficient Solution**
 
-Under Eyring-Arrhenius transition state theory for discrete Markov jumps on graphs, the activation rate for a transition that liberates trapped defect energy $E_{\mathrm{defect}}$ at bath temperature $T_c$ scales as $\exp(E_{\mathrm{defect}} / k_B T_c)$. Evaluating at Landauer vacuum parameters yields:
+Substituting $a=1$ gives $1+b=e$, so $b=e-1$. Thus $f(s)=1+(e-1)s$.
 
-$$
-\frac{E_{\mathrm{defect}}}{k_B T_c} = \frac{\ln 2}{\ln 2} \equiv 1.
-$$
+**III. Uniqueness in the Chosen Family**
 
-The discrete Arrhenius defect relaxation factor evaluates to:
-
-$$
-\frac{\Omega_{\mathrm{released}}}{\Omega_{\mathrm{bound}}} = \exp\left(\frac{E_{\mathrm{defect}}}{k_B T_c}\right) = \mathrm{e}^{\ln 2 / \ln 2} = \mathrm{e}^1 = e \approx 2.718282.
-$$
-
-**III. Markov Jump Lie Algebra Linearity and Scheduler Non-Interference**
-
-In a discrete execution tick $\Delta t = 1$, the infinitesimal transition rate operator $\mathcal{W}$ governing independent single-edge excisions must be strictly additive across independent cycle deletion channels sharing a vertex under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />:
-
-$$
-\mathcal{W}(s) = \mathcal{W}_0 + s \Delta \mathcal{W} = \mathcal{W}_0(1 + \lambda s).
-$$
-
-An exponential rate $\mathcal{W}(s) \propto \mathrm{e}^{\lambda s}$ represents the integrated finite-time group action $\mathrm{e}^{t\mathcal{W}}$ for compound multi-edge simultaneous collapses. Assigning an exponential rate inside a single discrete execution tick would violate single-move locality and move disjointness by assigning non-zero probability to simultaneous multi-cycle collapses. The linear velocity $(1 + \lambda s)$ is the unique single-move generator of the Markov transition Lie algebra preserving scheduler non-interference.
-
-**IV. Evaluation of the Canonical Catalysis Constant**
-
-Matching the linear generator at fundamental unit self-stress $s = 1$ to the discrete single-defect Arrhenius relaxation factor requires:
-
-$$
-1 + \lambda_0(1) = e \implies \lambda_0 = e - 1 \approx 1.718282.
-$$
-
-**V. Isolated Cycle Self-Stress and Deletion Probability**
-
-On an isolated **3-cycle**, each of the **3** vertices has $\mathrm{stress\_map}(x) = 1$. Subtracting the base self-contribution leaves isolated self-stress $s_{\mathrm{del}} = (1+1+1) - 1 = 2$. At $s_{\mathrm{del}} = 2$, the deletion probability evaluates to:
-
-$$
-Q_{\mathrm{del}}(2) = \tfrac{1}{2}(1 + 2(e-1))\mathrm{e}^{-2/\sqrt{2\pi}} \approx 0.99885.
-$$
-
-This establishes the single-cycle death probability governing the absorbing-state boundary.
+If $g(s)=c+ds$ satisfies the same two conditions, $c=g(0)=1$ and $c+d=g(1)=e$, hence $d=e-1$. Therefore $f=g$ for every $s$, and the affine coefficient is unique (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
 Q.E.D.
 
@@ -2440,7 +2404,7 @@ Section 4.4.6.1 formalizes the properties of the QBD proof regarding catalysis c
 :::info[**Discrete Fiber Maximum Entropy Ground-State Normalization via Modular S-Duality on Z**]
 :::
 
-Let the vertex stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ map each vertex $x \in V(G)$ to a scalar integer counting state on the discrete fiber $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ with elementary single-triad quantum $\Delta s_{\mathrm{elem}} = 1$. Then under Poisson summation on the integer counting lattice $\mathbb{Z}$, the discrete partition function $Z_{\mathbb{Z}}(\beta)$ possesses a unique modular self-dual fixed point at $\beta = 1$ with unit quadratic dispersion $\sigma^2 = 1$, and evaluating the discrete Maximum Entropy ground-state projection probability on the local fiber yields the exact friction constant $\mu_0 = P_{\mathbb{Z}}(s=0) = \frac{1}{\sqrt{2\pi}} \approx 0.398942$.
+Let the signed-lattice reference distribution be $p(n)=Z^{-1}e^{-n^2/2}$ on $\mathbb Z$, and let $\mu_0=1/\sqrt{2\pi}$ be the stipulated continuum Gaussian reference. Then $p(0)=\mu_0/\vartheta_3(0,e^{-2\pi^2})<\mu_0$, with relative difference bounded by $2q/(1-q^3)$ for $q=e^{-2\pi^2}$ (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
 **In Plain English:**  
 Section 4.4.7 formalizes the properties of the QBD lemma regarding friction coefficient.
@@ -2452,53 +2416,50 @@ Section 4.4.7 formalizes the properties of the QBD lemma regarding friction coef
 :::tip[**Derivation of the Modular S-Duality Friction Constant via Integer Lattice Poisson Summation and Fiber MaxEnt**]
 :::
 
-**I. One-Dimensional Discrete Integer Counting Fiber**
+**I. Exact Signed-Lattice Normalization**
 
-On any discrete causal graph $G$, the local stress observable $s(x) = \sum_{C \in \mathcal{C}_3} \mathbf{1}_{x \in V(C)}$ counts the number of directed **3-cycles** incident on vertex $x$. The local state space of syndrome excitations over any vertex is the 1D discrete integer counting lattice $\mathcal{F}_x = \mathbb{N}_0 \subset \mathbb{Z}$ evaluated under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />. The fiber $\mathcal{F}_x$ of a scalar counting observable is strictly 1-dimensional.
+The proof uses the specified objects and conventions (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
-**II. Modular S-Duality on the Discrete Integer Lattice**
-
-Under Poisson summation on the 1D integer counting lattice $\mathbb{Z}$, the discrete partition function with parameter $\beta$ defines the Jacobi theta function:
+For the stated Gaussian convention, Poisson summation gives
 
 $$
-Z_{\mathbb{Z}}(\beta) = \sum_{n \in \mathbb{Z}} \mathrm{e}^{-\pi n^2 / \beta^2} = \beta \sum_{k \in \mathbb{Z}} \mathrm{e}^{-\pi k^2 \beta^2} = \beta Z_{\mathbb{Z}}(1/\beta).
+\begin{aligned}
+Z=\sum_{n\in\mathbb Z}e^{-n^2/2}
+&=\sqrt{2\pi}\sum_{k\in\mathbb Z}e^{-2\pi^2k^2}\\
+&=\sqrt{2\pi}\left(1+2\sum_{k=1}^{\infty}q^{k^2}\right),
+\qquad q=e^{-2\pi^2}.
+\end{aligned}
 $$
 
-The integer lattice $\mathbb{Z}$ and its reciprocal dual $\mathbb{Z}^*$ are isomorphic under the modular transformation $S: \beta \mapsto 1/\beta$ if and only if $\beta = 1$. At this modular self-dual fixed point $\beta = 1$, standard Gaussian normalization fixes the discrete excitation variance to $\sigma^2 = 1$ in dimensionless counting units ($[s]=1$). Any choice $\sigma^2 \neq 1$ breaks the modular S-duality of the integer counting lattice.
-
-**III. Jaynesian Maximum Entropy on the Local Fiber**
-
-Under Jaynes' Principle of Maximum Entropy on $\mathbb{Z}$, given an integer counting variable $n \in \mathbb{Z}$ with unperturbed expectation $\langle n \rangle_0 = 0$ and unit modular self-dual variance $\langle n^2 \rangle_0 = \sigma^2 = 1$, the discrete Gaussian distribution:
+The bracket is $\vartheta_3(0,q)$. Put $\delta=2\sum_{k\ge1}q^{k^2}>0$. Then
 
 $$
-P_{\mathbb{Z}}(n) = \frac{1}{Z_{\mathbb{Z}}} \mathrm{e}^{-n^2 / 2}, \qquad Z_{\mathbb{Z}} = \sum_{n \in \mathbb{Z}} \mathrm{e}^{-n^2 / 2} = \vartheta_3\left(0, \mathrm{e}^{-1/2}\right),
+p(0)=Z^{-1}=\frac{\mu_0}{1+\delta}<\mu_0.
 $$
 
-is the unique probability distribution that maximizes Shannon-von Neumann entropy without assuming unmeasured higher-order moments.
+**II. Positive Tail Bound**
 
-**IV. Exact Evaluation via Poisson Summation**
-
-Applying the Poisson Summation Formula to the discrete Gaussian sum on the integer lattice $\mathbb{Z}$ establishes the partition sum, consistent with the single-defect energy scale in **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />:
+For every integer $k\ge1$, $(k-1)(k-2)\ge0$ implies $k^2\ge1+3(k-1)$. Since $0<q<1$,
 
 $$
-\sum_{n \in \mathbb{Z}} \mathrm{e}^{-n^2 / 2} = \sqrt{2\pi} \sum_{k \in \mathbb{Z}} \mathrm{e}^{-2\pi^2 k^2} = \sqrt{2\pi} \left(1 + 2\mathrm{e}^{-2\pi^2} + 2\mathrm{e}^{-8\pi^2} + \dots\right).
+2q\le\delta
+\le2\sum_{k=1}^{\infty}q^{1+3(k-1)}
+=2q\sum_{j=0}^{\infty}(q^3)^j
+=\frac{2q}{1-q^3}.
 $$
 
-Because $2\mathrm{e}^{-2\pi^2} \approx 5.37 \times 10^{-9}$, the discrete integer partition function evaluates to:
+**III. Relative Error**
+
+Direct subtraction gives
 
 $$
-Z_{\mathbb{Z}} = \sqrt{2\pi} \cdot \left(1 + 5.37 \times 10^{-9}\right) \approx \sqrt{2\pi}.
+0<\frac{\mu_0-p(0)}{\mu_0}
+=1-\frac1{1+\delta}
+=\frac{\delta}{1+\delta}
+\le\delta\le\frac{2q}{1-q^3}.
 $$
 
-**V. Discrete Vacuum Ground-State Projector**
-
-The exact discrete probability of the zero-stress unperturbed vacuum state ($n = 0$) on the local fiber evaluates to:
-
-$$
-P_{\mathbb{Z}}(s = 0) = \frac{\mathrm{e}^0}{Z_{\mathbb{Z}}} = \frac{1}{\sqrt{2\pi}} = \mu_0 \approx 0.398942.
-$$
-
-Setting the exponential damping coefficient $\mu$ in $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu s}$ to this discrete vacuum projector yields a single-triad damping factor of $\mathrm{e}^{-\mu_0 \cdot 1} = \mathrm{e}^{-1/\sqrt{2\pi}} \approx 0.6711$, suppressing diameter collapse while preserving the spatial sparsity of the network.
+The normalization and controlled approximation are the asserted relations (**Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />).
 
 Q.E.D.
 
@@ -2512,67 +2473,47 @@ Section 4.4.7.1 formalizes the properties of the QBD proof regarding friction co
 :::note[**Computational Check of Gaussian Normalization via Tail Damping**]
 :::
 
-Computational verification of the stress-dependent damping factor established by **Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" /> under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" /> is based on the following protocols:
+Computational verification of the normalization identity (**Friction Coefficient** <Ref id="4.4.7.1" label="§4.4.7.1" />) under the stated constitutive convention (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />) uses the following protocols:
 
-1.  **Normalization:** The algorithm calculates the friction coefficient $\mu = 1/\sqrt{2\pi\sigma^2}$ derived from the peak density of the standard Gaussian distribution ($N(0,1)$), satisfying the bound in **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />.
-2.  **Stress Sweep:** The protocol applies the damping factor $f(s) = e^{-\mu s}$ across a discrete range of stress levels $s \in [0, 5]$.
-3.  **Verification:** The simulation compares the calculated damping curve against the theoretical tail suppression of the normal distribution to verify the suppression of high-stress updates.
+1. **Independent Sums:** The signed-lattice and Poisson-transformed partition sums are computed with 80 decimal digits.
+2. **Normalization Comparison:** The discrete peak is compared with the continuum reference without subtracting nearly equal machine-precision values.
+3. **Error Bound:** The relative correction is tested against the analytic positive theta-tail bound with strict inequalities.
 
 ```python
-import numpy as np
+from decimal import Decimal as D, getcontext
 
-# Standard Gaussian (mean=0, variance=1)
-sigma = 1.0
-
-# Friction coefficient μ = peak density of N(0,1)
-mu = 1 / np.sqrt(2 * np.pi * sigma**2)
-
-print("Friction Coefficient from Gaussian Normalization")
-print("=" * 52)
-print(f"Calculated μ:      {mu:.6f}")
-print(f"Approximate value: 0.398942")
-print(f"Exact 1/√(2π):     {1/np.sqrt(2*np.pi):.6f}\n")
-
-# Damping factor f(s) = exp(−μ s) for selected stress levels
-stress_levels = [0, 1, 2, 3, 4, 5]
-print("Damping Factors for Increasing Local Stress")
-print("-" * 44)
-for s in stress_levels:
-    damping = np.exp(-mu * s)
-    reduction = (1 - damping) * 100
-    print(f"Stress s = {s:>2}:  Damping = {damping:.4f}  "
-          f"(Rate reduced by {reduction:5.1f}%)")
-
-# Direct validation of peak PDF
-pdf_peak = (1 / np.sqrt(2 * np.pi * sigma**2)) * np.exp(0)
-print(f"\nGaussian PDF peak at s=0: {pdf_peak:.6f}")
-print(f"Match with μ:             {np.isclose(mu, pdf_peak)}")
+getcontext().prec = 80
+pi = D('3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628')
+mu = 1/(2*pi).sqrt()
+q = (-2*pi*pi).exp()
+direct = sum((-D(n*n)/2).exp() for n in range(-30,31))
+delta = 2*sum(q**(n*n) for n in range(1,8))
+poisson = (2*pi).sqrt()*(1+delta)
+peak = 1/direct
+relative = delta/(1+delta)
+bound = 2*q/(1-q**3)
+assert abs(direct-poisson) < D('1e-75')
+assert abs((mu-peak)/mu-relative) < D('1e-75')
+assert 0 < relative < bound
+for label,value in [('Direct lattice partition',direct),('Poisson partition',poisson),('Continuum reference',mu),('Exact lattice peak',peak),('Relative correction',relative),('Theta-tail upper bound',bound)]:
+    print(f'{label}: {value:.21g}')
+print('Strict correction bound holds at 80-digit precision.')
 ```
 
 **Simulation Results:**
 
 ```text
-Friction Coefficient from Gaussian Normalization
-====================================================
-Calculated μ:      0.398942
-Approximate value: 0.398942
-Exact 1/√(2π):     0.398942
-
-Damping Factors for Increasing Local Stress
---------------------------------------------
-Stress s =  0:  Damping = 1.0000  (Rate reduced by   0.0%)
-Stress s =  1:  Damping = 0.6710  (Rate reduced by  32.9%)
-Stress s =  2:  Damping = 0.4503  (Rate reduced by  55.0%)
-Stress s =  3:  Damping = 0.3022  (Rate reduced by  69.8%)
-Stress s =  4:  Damping = 0.2028  (Rate reduced by  79.7%)
-Stress s =  5:  Damping = 0.1361  (Rate reduced by  86.4%)
-
-Gaussian PDF peak at s=0: 0.398942
-Match with μ:             True
+Direct lattice partition: 2.50662828804290554483
+Poisson partition: 2.50662828804290554483
+Continuum reference: 0.398942280401432677940
+Exact lattice peak: 0.398942278266861705582
+Relative correction: 5.35057595351981617492e-9
+Theta-tail upper bound: 5.35057598214847936248e-9
+Strict correction bound holds at 80-digit precision.
 ```
 
 **Conclusion:**
-The simulation confirms the non-linear suppression of topological updates. A stress level of $s=1$ reduces the update rate by approximately $32.9\%$, while a high stress level of $s=5$ suppresses the rate by $86.4\%$. This validates the mechanism of **Friction**: highly excited regions ($s \gg 0$) effectively freeze, halting changes in the high-energy tail while permitting evolution in the low-stress vacuum.
+The two partition sums agree at the checked precision. The strictly positive relative correction is smaller than the analytic theta-tail bound. High precision resolves that strict comparison; it validates the normalization and controlled approximation without treating the discrete peak as exactly equal to the continuum reference.
 
 **In Plain English:**  
 Section 4.4.7.2 formalizes the properties of the QBD calculation regarding friction damping.
@@ -2584,27 +2525,17 @@ Section 4.4.7.2 formalizes the properties of the QBD calculation regarding frict
 :::tip[**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> via Synthesis of the Five Constitutive Scales]
 :::
 
-**I. Information Modulus and Combinatorial Base Rates**
+**I. Binary Reference Law**
 
-Under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />, Jaynes Maximum Entropy on the boolean edge space $\{0, 1\}$ uniquely fixes the unbiased Bernoulli prior on candidate cycles to $Q_{\mathrm{base}} = 1/2$. Temperature $T$ cancels identically from all ground-state transition ratios ($\Delta U = 0$), establishing the canonical combinatorial operational rates $(P_{\mathrm{base}}, Q_{\mathrm{base}}) = (1.0, 0.5)$. The dimensionless modulus $\beta_c = \ln 2$ is strictly a base-conversion modulus between bits and nats.
+Bit-flip invariance and normalization give the unbiased Bernoulli law and the bit-to-nat conversion (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />). The local simple-path convention gives a factor two for the isolated closure triad (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />).
 
-**II. Entropic Loop Closure**
+**II. Conditional Channel Coordinates**
 
-Under **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />, completing a directed **3-cycle** doubles the local causal path volume ($\Omega_{\mathrm{closed}} / \Omega_{\mathrm{open}} = 2$), releasing $\Delta S_{\mathrm{close}} = \ln 2\text{ nats} \equiv 1\text{ bit}$ of relational entropy and establishing the entropic driving force for spatial area accumulation.
+The stipulated total energy and equal three-channel allocation give $\varepsilon_0=\ln2/3$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />). Six independent fair decisions give $\Lambda_0=2^{-6}$ (**Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />). Affine interpolation between the two specified catalytic values gives $\lambda_0=e-1$ (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
-**III. Discrete Incident Port Equipartition**
+**III. Gaussian Convention**
 
-Under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />, the total loop-closure entropy $\Delta S = \ln 2$ distributes uniformly across the $k_{\mathrm{deg}} = 3$ incident routing ports of the trivalent Bethe substrate, fixing the discrete channel self-energy to $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$.
-
-**IV. Simplicial Interaction Boundary Permittivity**
-
-Under **Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />, the **3** constituent vertices of a triad defect expose $V_{\mathrm{int}} = 3 \times 2 = 6$ binary routing ports to the exterior substrate, determining the theoretical unconditioned alignment probability $\Lambda_{\mathrm{theory}} = 2^{-6} = 1/64 = 0.015625$.
-
-**V. Dynamical Relaxation and Steric Friction**
-
-Under **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> and **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, matching the unique linear Markov jump generator to the discrete Arrhenius relaxation factor fixes $\lambda_0 = e - 1 \approx 1.718282$, while Poisson summation on the 1D integer counting lattice $\mathbb{Z}$ fixes the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$.
-
-We conclude that the five fundamental constitutive scales of the vacuum are established as canonical analytical reference priors from discrete combinatorial symmetries and conservation principles.
+The selected continuum reference is $\mu_0=1/\sqrt{2\pi}$, whereas exact signed-lattice normalization is $\mu_0/\vartheta_3(0,e^{-2\pi^2})$. The positive theta-tail bound controls their difference (**Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />). These conditional coordinates are the asserted reference values (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
 
 Q.E.D.
 
@@ -2621,7 +2552,7 @@ Section 4.4.8 formalizes the properties of the QBD proof regarding information-t
 Type-theoretic certification of the information-theoretic foundations and base-conversion modulus established in **Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" /> and **Information-Theoretic Foundations** <Ref id="4.4.8" label="§4.4.8" /> proceeds via the following verification strategy:
 
 1.  **Combinatorial Base Priors:** The Lean proposition `permutation_invariance_uniquely_determines_prior` proves that automorphism invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$ without free parameters.
-2.  **6-Port Interaction Boundary:** The Lean theorems `triad_interaction_ports_is_six` and `simplicial_permittivity_scale` prove that across the three vertices of an embedded 2-simplex, the boundary interaction interface comprises exactly $3 \times 2 = 6$ routing ports, fixing the theoretical vacuum drive $\Lambda_{\mathrm{theory}} = 2^{-6} = 0.015625$.
+2.  **Specified Decision Count:** The Lean theorems `triad_interaction_ports_is_six` and `simplicial_permittivity_scale` evaluate $3 \times 2 = 6$ and $2^6=64$ under the defined two-decision-per-vertex convention. Independence, fairness and the attempt clock are separate premises of the probability and rate interpretation.
 3.  **Simplicial Boundary Integrability:** The Lean theorem `simplicial_boundary_cycle_closed` proves that the boundary of the 2-simplex is a closed cycle in simplicial homology ($\partial_1 \circ \partial_2 = 0$), verifying that the elementary geometric quantum possesses vanishing boundary flow.
 
 ```lean
@@ -2711,7 +2642,8 @@ theorem simplicial_permittivity_scale :
 ```
 
 **Verification Summary:**
-The formal machine verification in Lean 4 certifies that the information-theoretic foundations of the microscopic rewrite engine operate with zero postulated axioms and zero unverified placeholders. The proof term `permutation_invariance_uniquely_determines_prior` establishes that invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$, grounding the Landauer critical temperature $T_c = \ln 2$. Furthermore, theorems `triad_interaction_ports_is_six` and `simplicial_permittivity_scale` prove that the 6-port simplicial interaction boundary fixes the theoretical vacuum drive $\Lambda_{\mathrm{theory}} = 2^{-6} = 0.015625$. The Lean kernel's acceptance of these proofs validates the complete mathematical closure of **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />.
+
+The Lean block proves the bit-flip prior identity under its explicit algebraic field assumptions and evaluates the declared decision counts. Its decision-channel definition stipulates two variables per vertex; the arithmetic does not derive that convention from external edge incidence. The resulting 64 assignments have equal mass only when the independent fair law is supplied. Interpreting their probability as a continuum drive also needs the reference attempt clock. The block contains no admitted proof or custom axiom declaration, but its structures carry explicit premises. Lean kernel acceptance certifies the conditional prior identity (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
 
 **In Plain English:**  
 Section 4.4.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -2866,83 +2798,77 @@ Section 4.5.6 formalizes the properties of the QBD lemma regarding addition prob
 :::tip[**Derivation of Barrierless Addition from Free Energy Minimization**]
 :::
 
-**I. Probability Decomposition**
+**I. Thermodynamic Factor and Barrierless Condition**
 
-Let $\mathbb{P}_{\text{acc}}$ denote the acceptance probability for a graph update, decomposing into a kinetic response factor and a thermodynamic factor:
-
-$$
-\mathbb{P}_{\text{acc}} = \chi(\sigma) \cdot \mathbb{P}_{\text{thermo}}
-$$
-
-The thermodynamic term follows the Metropolis-Hastings criterion:
+Let $T>0$ and let the thermodynamic acceptance factor be
 
 $$
-\mathbb{P}_{\text{thermo}} = \min \left( 1, \exp \left( -\frac{\Delta F}{T} \right) \right)
+P_{thermo}=\min\{1,e^{-\Delta F/T}\},\qquad
+\Delta F=\Delta E-T\Delta S
 $$
 
-The Helmholtz free energy change is defined as $\Delta F = \Delta E - T \Delta S$.
-
-**II. Parameter Substitution**
-
-The creation of a geometric quantum (3-cycle) entails the following parameters derived in **Thermodynamic Foundations** <Ref id="4.4" label="§4.4" />:
-
-1.  **Internal Energy Cost:** $\Delta E = \epsilon_{geo}$.
-2.  **Entropy Gain:** $\Delta S = \ln 2$.
-3.  **Critical Temperature:** $T_c = \ln 2$.
-
-**III. The Vacuum Limit**
-
-In the sparse vacuum limit $N \to \infty$, the internal energy density vanishes relative to the entropic contribution:
+in the supplied kernel (**Addition Mode** <Ref id="4.5.3" label="§4.5.3" />). For the bit-creation baseline, $\Delta S=\ln2$ (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />). Therefore
 
 $$
-\lim_{N \to \infty} \frac{\epsilon_{geo}}{N} = 0 \implies \Delta E \approx 0
+-\frac{\Delta F}{T}=\ln2-\frac{\Delta E}{T},\qquad
+P_{thermo}=\min\{1,2e^{-\Delta E/T}\}.
 $$
 
-The free energy change evaluates to:
+**II. Exact Saturation Range**
+
+The barrierless condition is $\Delta F\le0$. Since $T>0$, it is equivalent to
 
 $$
-\Delta F \approx 0 - T_c (\ln 2) = -(\ln 2)^2
+\Delta E-T\ln2\le0
+\ \Longleftrightarrow\ \frac{\Delta E}{T}\le\ln2.
 $$
 
-The inequality $(\ln 2)^2 > 0$ implies $\Delta F < 0$.
-
-**IV. Probability Evaluation**
-
-We substitute $\Delta F$ into the exponential factor:
+In that range,
 
 $$
-\exp \left( -\frac{-(\ln 2)^2}{\ln 2} \right) = \exp(\ln 2) = 2
+\ln2-\frac{\Delta E}{T}\ge0
+\ \Longrightarrow\ e^{-\Delta F/T}\ge1
+\ \Longrightarrow\ P_{thermo}=1.
 $$
 
-The acceptance probability evaluates to:
+In particular, the declared $\Delta E=0$ baseline gives $e^{-\Delta F/T}=e^{\ln2}=2$ and hence $P_{thermo}=1$ exactly, without a large-volume limit.
+
+**III. The Stated Channel-Energy Examples**
+
+For the supplied microscopic channel value $\varepsilon_{geo}=\ln2/3$ and $T_c=\ln2$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />),
 
 $$
-\mathbb{P}_{\text{thermo}} = \min(1, 2) = 1
+\frac{\varepsilon_{geo}}{T_c}=\frac13.
 $$
 
-**V. Finite-Size Robustness & Scale Duality**
-
-Consider the discrete channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$ of **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />. The free energy change is:
+The logarithm satisfies
 
 $$
-\Delta F = \frac{\ln 2}{3} - (\ln 2)^2 = (\ln 2)\left(\frac{1}{3} - \ln 2\right) \approx -0.2493 < 0
+\ln2=\int_1^2\frac{\mathrm dx}{x}
+>\int_1^2\frac12\,\mathrm dx=\frac12>\frac13.
 $$
 
-The exponential factor satisfies:
+Therefore $\Delta F/T_c=1/3-\ln2<0$ and
 
 $$
-\exp \left( -\frac{\Delta F}{T_c} \right) = \exp\left(\ln 2 - \frac{1}{3}\right) = 2 \mathrm{e}^{-1/3} \approx 1.433 > 1
+P_{thermo}=\min\{1,e^{\ln2-1/3}\}=1.
 $$
 
-The condition $\mathbb{P}_{\text{thermo}} = \min(1, 1.433) = 1$ holds identically across all physical regimes.
+For the separately stated quarter-unit example, the corresponding ratio is $1/4<1/2<\ln2$, giving the same saturation. Both conclusions are conditional on their supplied energy normalizations.
 
-:::note[**Scale Duality: Microscopic Substrate vs. Macroscopic Spacetime**]
-The channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ reflects discrete equipartition over the $k_{\mathrm{deg}} = 3$ incident routing ports of the microscopic trivalent Bethe substrate under **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />. On the emergent macroscopic 4D spacetime manifold, equipartition of 1 bit over $d_c = 4$ dimensions yields the macroscopic topological fine-structure scale $\alpha_{\mathrm{topo}} = \frac{\ln 2}{4} \approx 0.1732$ under **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" /> and **Entropic Dimensionality** <Ref id="8.6.5" label="§8.6.5" />. Crucially, substitution of either scale yields the identical result: $\Delta F = \alpha_{\mathrm{topo}} - (\ln 2)^2 \approx -0.3072 < 0 \implies \mathbb{P}_{\text{thermo}} = \min(1, 1.551) = 1$. Both micro and macro regimes unconditionally drive forward geometric creation.
-:::
+**IV. Scope of the Factor**
 
-**VI. Conclusion**
+Writing the full admissible-proposal acceptance as $P_{acc}=\chi(\sigma)P_{thermo}$ gives, within the barrierless range,
 
-The update engine operates at maximal efficiency for additive processes. We conclude that a thermodynamic arrow favors the spontaneous nucleation of geometry.
+$$
+P_{acc}=\chi(\sigma)\cdot1=\chi(\sigma).
+$$
+
+The exact claim about the thermodynamic factor is consequently (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />)
+
+$$
+\boxed{\Delta F\le0,\quad T>0\ \Longrightarrow\ P_{thermo}=1.}
+$$
 
 Q.E.D.
 
@@ -2968,55 +2894,65 @@ Section 4.5.7 formalizes the properties of the QBD lemma regarding deletion prob
 :::tip[**Limit Evaluation via Entropic Dominance**]
 :::
 
-**I. Setup and Assumptions**
+**I. Entropic Baseline**
 
-Let the deletion of a geometric quantum constitute the time-reverse of addition. The thermodynamic parameters are defined as follows:
-1.  **Energy Change:** The release of binding energy satisfies $\Delta E = -\varepsilon_{\mathrm{geo}}$ per **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />.
-2.  **Entropy Change:** The erasure of topological information satisfies $\Delta S = -\ln 2$ per the **Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />.
-
-**II. Free Energy Calculation**
-
-The change in Helmholtz free energy is defined as $\Delta F_{\text{del}} = \Delta E - T_c \Delta S$. Substituting $\Delta E = -\varepsilon_{\mathrm{geo}} = -\frac{\ln 2}{3}$ from **Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" /> and $\Delta S = -\ln 2$ yields:
+The base deletion convention uses $T>0$, $\Delta E=0$ and the loss of one bit, $\Delta S=-\ln2$ (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />), with the bit-loss input supplied by the closure-entropy model (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />). The thermodynamic rule gives
 
 $$
-\Delta F_{\text{del}} = -\frac{\ln 2}{3} - (\ln 2)(-\ln 2) = -\frac{\ln 2}{3} + (\ln 2)^2
+\begin{aligned}
+\Delta F_{base}&=0-T(-\ln2)=T\ln2,\\
+-\Delta F_{base}/T&=-\ln2,\\
+Q_{base}&=\min\{1,e^{-\ln2}\}
+=\min\{1,\tfrac12\}=\tfrac12.
+\end{aligned}
 $$
 
-Numerical evaluation yields:
+**II. Separation from a Nonzero Released Energy**
+
+For a released internal energy $\varepsilon\ge0$, the energy change is instead $\Delta E=-\varepsilon$. Keeping the same entropy change gives
 
 $$
-\Delta F_{\text{del}} \approx -0.231049 + 0.480453 = +0.249404 > 0
+\begin{aligned}
+\Delta F(\varepsilon)&=-\varepsilon+T\ln2,\\
+-\Delta F(\varepsilon)/T&=\frac\varepsilon T-\ln2,\\
+Q(\varepsilon)&=\min\{1,\tfrac12e^{\varepsilon/T}\}.
+\end{aligned}
 $$
 
-The positive free energy variation confirms that unassisted simplicial dissolution is thermodynamically disfavored.
-
-**III. Probability Evaluation**
-
-The thermodynamic acceptance probability evaluates to:
+The cases are therefore
 
 $$
-\mathbb{P}_{\text{del}} = \exp \left( -\frac{\Delta F_{\text{del}}}{T_c} \right) = \exp \left( \frac{\varepsilon_{\mathrm{geo}}}{T_c} - \ln 2 \right) = e^{-\ln 2} \cdot \mathrm{e}^{\varepsilon_{\mathrm{geo}}/T_c} = \frac{1}{2} \exp\left(\frac{1}{3}\right) \approx 0.6978
+Q(\varepsilon)=\begin{cases}
+\tfrac12,&\varepsilon=0,\\
+\tfrac12 e^{\varepsilon/T}\in(\tfrac12,1),&0<\varepsilon<T\ln2,\\
+1,&\varepsilon\ge T\ln2.
+\end{cases}
 $$
 
-**IV. The Vacuum Limit**
+The supplied channel-energy example $\varepsilon=\ln2/3$ at $T_c=\ln2$ has ratio $\varepsilon/T_c=1/3$, so it gives $Q=\tfrac12e^{1/3}\approx0.6978$. This is the nonzero-energy correction, rather than the base factor.
 
-In the strict large-$N$ limit, the internal energy density vanishes relative to the entropic term. The free energy change converges to:
+**III. Limit and Baseline Identity**
 
-$$
-\Delta F_{\text{del}} \to T_c (\ln 2) = (\ln 2)^2
-$$
-
-The probability converges to the entropic factor:
+If a family of energy normalizations satisfies $\varepsilon/T\to0$, continuity of the exponential gives
 
 $$
-\lim_{\varepsilon_{\mathrm{geo}} \to 0} \mathbb{P}_{\text{del}} = \exp(-\ln 2) = \frac{1}{2}
+\lim_{\varepsilon/T\to0}Q(\varepsilon)
+=\min\{1,\tfrac12e^0\}=\tfrac12.
 $$
 
-This limit follows from the Boltzmann factor for one-bit erasure $\exp(-\Delta S) = 1/2$ (**Entropy of Closure** <Ref id="4.4.3" label="§4.4.3" />). Note that evaluating deletion at the macroscopic continuum scale ($\alpha_{\mathrm{topo}} = \frac{\ln 2}{4}$) gives $\mathbb{P}_{\text{del}} = \frac{1}{2} \mathrm{e}^{1/4} \approx 0.6420$, which likewise converges identically to the canonical unbiased prior $Q_{\mathrm{base}} = 0.5$ as $N \to \infty$.
+The base value itself requires no limiting argument. Together with the base addition value, it satisfies
 
-**V. Conclusion**
+$$
+P_{base}=1,\qquad Q_{base}=\tfrac12,\qquad
+\frac{Q_{base}}{P_{base}}=\frac12.
+$$
 
-The detailed balance at criticality dictates that the reverse rate is exactly half the forward rate (1 vs 0.5) in the entropic limit. This ratio compensates for the combinatorial doubling of phase space volume upon cycle closure.
+Thus the specified thermodynamic deletion baseline is exactly (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />)
+
+$$
+\boxed{Q_{\mathrm{del},\mathrm{thermo}}^{base}=\tfrac12\qquad
+(T>0,\ \Delta E=0,\ \Delta S=-\ln2).}
+$$
 
 Q.E.D.
 
@@ -3110,17 +3046,14 @@ Section 4.5.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Composition of Awareness, Proposal, Addition Merge, and Deletion Excision as the Logical Tick**]
 :::
 
-The **Evolution Operator**, denoted $\mathcal{U}$, is defined as a stochastic endomorphism acting upon the state space of valid causal graphs. Let $\Sigma_{\text{valid}}$ be the set of all graphs conforming to the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" /> and $\mathcal{P}(\Sigma_{\text{valid}})$ be the space of probability measures over this set. The operator $\mathcal{U}: \mathcal{P}(\Sigma_{\text{valid}}) \to \mathcal{P}(\Sigma_{\text{valid}})$ is constructed as the sequential composition of four distinct operational stages executing within each discrete tick $t \mapsto t+1$:
+Let the **Evolution Operator** be the Markov kernel induced by a deterministic four-stage realization map $\mathcal U(G,\xi)$ on the complete active graph state, including its current heights. All proposals and their probabilities are evaluated against the same pre-tick snapshot.
 
-$$
-\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}
-$$
+1. **Awareness:** Enumerate legal addition sites $\mathcal A(G)$, directed triangles $\mathcal C_3(G)$, and vertex cycle incidences $s_G(v)$. The addition stress is the sum over its three vertices; a triangle's deletion stress is $\max(0,\sum_{v\in c}s_G(v)-1)$.
+2. **Independent selection:** For each addition site choose $X_a\in\{0,1\}$ with probability $p_a=e^{-\mu s_a}$. For each triangle choose $J_c\in\{\bot\}\cup E(c)$ with probabilities $\Pr(J_c=\bot)=1-q_c$ and $\Pr(J_c=e)=q_c/3$, where $q_c=\min(1,\tfrac12(1+\lambda s_c)e^{-\mu s_c})$.
+3. **Symmetric merge:** Let $B=\{e_a:X_a=1\}$ and retain $B_{\mathrm{filt}}=\{(u,v)\in B:u\ne v,\ (v,u)\notin B\}$. Insert these edges with source-side heights from the pre-tick snapshot and record their birth occurrences.
+4. **Deletion purge:** Let $D=\{J_c:J_c\ne\bot\}$. Remove $D$ from the intermediate active edge set. Multiple selections of the same edge merge by set union; they do not create repeated deletions or erase historical records.
 
-The component maps are formally defined as follows:
-1.  **Awareness Mapping ($\mathcal{A}$):** The diagnostic analysis map evaluating the complete set of directed **3-cycles** $\mathcal{C}_3(G_t)$ and establishing the local vertex stress field $\mathrm{stress\_map}(x) = |\{C \in \mathcal{C}_3(G_t) \mid x \in V(C)\}|$ across $V(G_t)$.
-2.  **Stochastic Proposal ($\mathcal{P}_{\mathrm{prop}}$):** The parallel stochastic proposal kernel executing independent Bernoulli trials for candidate edge additions $A$ on compliant **2-paths** ($P_{\mathrm{acc}}(s_{\mathrm{add}}) = \mathrm{e}^{-\mu s_{\mathrm{add}}}$) and candidate edge deletions $D$ on active **3-cycles** ($Q_{\mathrm{del}}(s_{\mathrm{del}}) = \min(1, \frac{1}{2}(1+\lambda s_{\mathrm{del}})\mathrm{e}^{-\mu s_{\mathrm{del}}}$), where $s_{\mathrm{del}} = \sum_{x \in V(C)} \mathrm{stress\_map}(x) - 1$.
-3.  **Addition Merge ($\mathcal{M}$):** The symmetric reciprocal filter and idempotent addition merge constructing the intermediate graph $G' = (V, E(G_t) \cup A_{\mathrm{filt}}, H_t \cup H_{\mathrm{new}})$, where $A_{\mathrm{filt}} = \{((u,v), H_{\mathrm{new}}) \in A \mid (v,u) \notin A_{\mathrm{edges}} \land u \neq v\}$.
-4.  **Excision Deletion ($\mathcal{D}$):** The deterministic edge excision operator executing accepted removals strictly on the intermediate graph, yielding the finalized successor state $G_{t+1} = (V, E(G') \setminus (D \cap E(G')), H'|_{E(G_{t+1})})$.
+The complete realization is $\xi=(X_{\mathcal A},J_{\mathcal C})$. The graph kernel is the pushforward of its normalized product measure (**Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />). The raw reciprocal filter rejects both accepted directions, rather than choosing an order-dependent winner.
 
 **In Plain English:**  
 Section 4.6.1 formalizes the properties of the QBD definition regarding evolution operator.
@@ -3132,7 +3065,7 @@ Section 4.6.1 formalizes the properties of the QBD definition regarding evolutio
 :::info[**Emergence of Classical Transition Probabilities and Entropic Arrow from the Evolution Operator**]
 :::
 
-Let $\mathcal{U}$ denote the Evolution Operator acting on probability measures over causal graphs under the four-step execution cycle. Then the transition probabilities of $\mathcal{U}$ are governed by classical product-rule Markov transition weights convolving to a Euclidean action functional, and the non-invertible four-step sampling cycle induces a non-negative entropy production $\Delta S_{\mathrm{tick}} \ge 0$ that establishes a macroscopic thermodynamic arrow of time.
+Let a finite-horizon graph process use the four-stage realization map and its product sampling law (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Then its transition kernel is the pushforward of that law, its full-trajectory Shannon entropy is nondecreasing, and KL divergence contracts when two state distributions evolve under the same kernel.
 
 **In Plain English:**  
 Section 4.6.2 formalizes the properties of the QBD theorem regarding emergent dynamics.
@@ -3144,13 +3077,7 @@ Section 4.6.2 formalizes the properties of the QBD theorem regarding emergent dy
 :::info[**Emergence of Path Integral Weighting from Markovian Transition Probabilities**]
 :::
 
-Let $\mathbb{P}(G \to G')$ denote the transition probability governing the evolution from an initial state $G$ to a specific successor $G'$ under the Evolution Operator $\mathcal{U}$. Because the local topological footprints of the vacuum limit are disjoint, the global transition probability factorizes into the product of local acceptance probabilities, convolving strictly to an exponential decay function:
-
-$$
-\mathbb{P}(G \to G') \propto \exp\left(-\Delta \mathcal{S}_{\text{kinematic}}\right)
-$$
-
-where $\Delta \mathcal{S}_{\text{kinematic}}$ is the discrete kinematic action, mapping the stochastic graph dynamics precisely to the positive-definite weighting of a Euclidean path integral (distinct from a unitary quantum amplitude; see the commentary below).
+Let $\xi$ comprise the independent addition and cycle-deletion outcomes (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Then $K(G,G')=\sum_{\xi:\mathcal U(G,\xi)=G'}\Pr(\xi\mid G)$ is normalized, and every positive realization probability has the additive negative-log action $-\log\Pr(\xi\mid G)$.
 
 **In Plain English:**  
 Section 4.6.3 formalizes the properties of the QBD lemma regarding euclidean transition measure.
@@ -3162,47 +3089,60 @@ Section 4.6.3 formalizes the properties of the QBD lemma regarding euclidean tra
 :::tip[**Derivation of the Exponential Action Functional from Local Probabilities**]
 :::
 
-**I. Event Independence and Product Rule**
+**I. Local Outcome Normalization**
 
-Let the transition $G \to G'$ involve a set of independent local updates $U = A \cup D$, partitioned into additions $A$ and deletions $D$ under the **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" />. In the sparse vacuum regime, the topological footprints are disjoint, allowing the joint probability to factorize:
+The proof uses the specified objects and conventions (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
 
-$$
-\mathbb{P}(G \to G') = \prod_{u \in A} P_{\text{acc}}(u) \cdot \prod_{v \in D} P_{\text{del}}(v)
-$$
-
-**II. Substitution of Thermodynamic Modulators**
-
-From the Universal Constructor definitions of **Addition Mode** <Ref id="4.5.3" label="§4.5.3"/> and **Deletion Mode** <Ref id="4.5.4" label="§4.5.4"/>, the local probabilities are modulated by friction $\mu$ and local stress $\sigma$:
-1. **Additions:** $P_{\text{acc}}(u) = \exp(-\mu \cdot \text{stress}_u)$
-2. **Deletions:** $Q_{\text{del}}(v) = \min\left(1, \frac{1}{2}(1 + \lambda_{\text{cat}} \cdot \text{stress}_v)\exp(-\mu \cdot \text{stress}_v)\right)$
-
-We evaluate the deletion probability in exponential form by defining the effective entropic cost $E_{del}(v) = -\ln Q_{\text{del}}(v) \ge 0$, yielding $Q_{\text{del}}(v) = \exp(-E_{del}(v))$.
-
-**III. Exponential Convolution**
-
-Substituting the exponential forms into the product rule converts the multiplication of probabilities into the addition of exponents:
+For each addition, $\Pr(X_a=1)=p_a$ and $\Pr(X_a=0)=1-p_a$, with sum one. Each triangle has three distinct edges and
 
 $$
-\mathbb{P}(G \to G') \propto \left( \prod_{u \in A} e^{-\mu \cdot \text{stress}_u} \right) \left( \prod_{v \in D} e^{-E_{del}(v)} \right) = \exp\left( - \sum_{u \in A} \mu \cdot \text{stress}_u - \sum_{v \in D} E_{del}(v) \right)
+\Pr(J_c=\bot)+\sum_{e\in E(c)}\Pr(J_c=e)
+=(1-q_c)+3(q_c/3)=1.
 $$
 
-**IV. The Kinematic Action**
+**II. Product Realization Measure**
 
-We evaluate the argument of the exponential as the discrete variation in kinematic action:
-
-$$
-\Delta \mathcal{S}_{\text{kinematic}} = \sum_{u \in A} \mu \cdot \text{stress}_u + \sum_{v \in D} E_{del}(v)
-$$
-
-This yields the transition measure:
+For a specified realization, let $A=\{a:X_a=1\}$ and $C_D=\{c:J_c\ne\bot\}$. Independence gives
 
 $$
-\mathbb{P}(G \to G') \propto \exp(-\Delta \mathcal{S}_{\text{kinematic}})
+\Pr(\xi\mid G)=
+\prod_{a\in A}p_a\prod_{a\notin A}(1-p_a)
+\prod_{c\in C_D}\frac{q_c}{3}\prod_{c\notin C_D}(1-q_c).
 $$
 
-**V. Conclusion**
+The indices run through the fixed candidate sets of the input snapshot. Distributivity of the finite sums yields
 
-The stochastic multiplication of independent classical probabilities rigorously evaluates to the exponential of an additive global action. This functional form is mathematically identical to the Boltzmann weight of a Euclidean path integral formulation.
+$$
+\sum_\xi\Pr(\xi\mid G)
+=\prod_a[p_a+(1-p_a)]\prod_c[(1-q_c)+3q_c/3]=1.
+$$
+
+**III. Pushforward and Collision Preimages**
+
+The deterministic map assigns each realization exactly one successor. The preimage sets $F_{G'}=\{\xi:\mathcal U(G,\xi)=G'\}$ are disjoint and cover the realization space. Hence
+
+$$
+\sum_{G'}K(G,G')
+=\sum_{G'}\sum_{\xi\in F_{G'}}\Pr(\xi\mid G)
+=\sum_\xi\Pr(\xi\mid G)=1.
+$$
+
+Shared deletion edges and reciprocal filtering can make $|F_{G'}|>1$; the summation therefore cannot generally be replaced by one product.
+
+**IV. Realization Action**
+
+For a positive-probability realization, logarithmic additivity gives
+
+$$
+\begin{aligned}
+\mathcal S(\xi\mid G)
+&=-\log\Pr(\xi\mid G)\\
+&=-\sum_{a\in A}\log p_a-\sum_{a\notin A}\log(1-p_a)\\
+&\quad-\sum_{c\in C_D}\log(q_c/3)-\sum_{c\notin C_D}\log(1-q_c).
+\end{aligned}
+$$
+
+Thus $\Pr(\xi\mid G)=e^{-\mathcal S(\xi\mid G)}$ and $K(G,G')=\sum_{\xi\in F_{G'}}e^{-\mathcal S(\xi\mid G)}$. The accepted-addition contribution alone is $-\sum_{a\in A}\log p_a=\mu\sum_{a\in A}s_a$ (**Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />).
 
 Q.E.D.
 
@@ -3216,87 +3156,69 @@ Section 4.6.3.1 formalizes the properties of the QBD proof regarding euclidean t
 :::note[**Computational Verification of the Exponential Action Scaling Relation through Euclidean Action Integration**]
 :::
 
-Computational verification of the action equivalence established by **Euclidean Transition Measure** <Ref id="4.6.3.1" label="§4.6.3.1" /> is based on the following protocols:
+Computational verification of the complete realization law established in (**Euclidean Transition Measure** <Ref id="4.6.3.1" label="§4.6.3.1" />) and the fixed-snapshot selection rule (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />) is based on the following protocols:
 
-1.  **Stress Scenario Definition:** The algorithm defines various update sets comprising multiple additions and deletions under non-zero local stress.
-2.  **Probability vs Action Calculation:** The protocol computes the product of local transition probabilities and compares them to the exponential of the cumulative kinematic action $\Delta \mathcal{S}$.
-3.  **Numerical Convergence Verification:** The script asserts the identity $P = \exp(-\Delta \mathcal{S})$ to machine precision across all scenarios.
+1. **Exact Outcome Weights:** Rational probabilities enumerate accepted and rejected addition outcomes and four outcomes per triangle.
+2. **Pushforward Aggregation:** Deterministic reciprocal filtering and deletion merging aggregate every realization by its successor edge set.
+3. **Normalization and Collision Checks:** The audit compares exact total mass, isolated-edge probability and shared-edge deletion preimages.
 
 ```python
-import numpy as np
+from fractions import Fraction as F
+from itertools import product
 
-def compute_transition_probability(add_stresses, del_stresses, mu, lambda_cat):
-    """Compute the product of local transition probabilities."""
-    p_add = np.prod([np.exp(-mu * s) for s in add_stresses]) if add_stresses else 1.0
-    p_del = np.prod([min(1.0, 0.5 * (1.0 + lambda_cat * s) * np.exp(-mu * s)) for s in del_stresses]) if del_stresses else 1.0
-    return p_add * p_del
+def graph_kernel(edges, additions, triangles):
+    # Rate parameters are supplied to audit the finite sampling law.
+    factors = []
+    for edge, p in additions:
+        factors.append([(None, 1-p), (edge, p)])
+    for cycle, q in triangles:
+        factors.append([(None, 1-q)] + [(edge, q/3) for edge in cycle])
+    law = {}
+    count = {}
+    for outcome in product(*factors):
+        weight = F(1)
+        for _, probability in outcome:
+            weight *= probability
+        if weight == 0:
+            continue
+        accepted = {edge for edge, _ in outcome[:len(additions)] if edge is not None}
+        filtered = {edge for edge in accepted if edge[::-1] not in accepted and edge[0] != edge[1]}
+        deleted = {edge for edge, _ in outcome[len(additions):] if edge is not None}
+        successor = frozenset((set(edges) | filtered) - deleted)
+        law[successor] = law.get(successor, F(0)) + weight
+        count[successor] = count.get(successor, 0) + 1
+    assert sum(law.values()) == 1
+    return law, count
 
-def compute_kinematic_action(add_stresses, del_stresses, mu, lambda_cat):
-    """Compute the discrete variation in kinematic action."""
-    action_add = np.sum([mu * s for s in add_stresses]) if add_stresses else 0.0
-    action_del = np.sum([-np.log(min(1.0, 0.5 * (1.0 + lambda_cat * s) * np.exp(-mu * s))) for s in del_stresses]) if del_stresses else 0.0
-    return action_add + action_del
+triangle = ((0,1),(1,2),(2,0))
+law, _ = graph_kernel(triangle, [], [(triangle,F(3,5))])
+specific = frozenset(set(triangle)-{(0,1)})
+assert law[specific] == F(1,5)
+print('Isolated triangle: total mass = 1; specified-edge deletion =', law[specific])
 
-print("Euclidean Action Integration Verification")
-print("=" * 50)
+other = ((0,1),(1,3),(3,0))
+edges = set(triangle) | set(other)
+law, preimages = graph_kernel(edges, [], [(triangle,F(3,5)),(other,F(1,2))])
+shared = frozenset(edges-{(0,1)})
+assert preimages[shared] == 3
+print('Shared triangles: total mass = 1; shared-edge-only preimages =', preimages[shared])
 
-# Parameter configuration
-mu = 0.15
-lambda_cat = 1.718  # e - 1
-
-# Test scenarios with different additions, deletions, and local stress profiles
-scenarios = [
-    # Scenario 1: Pure additions (low stress)
-    {"adds": [0.1, 0.2], "dels": []},
-    # Scenario 2: Pure deletions (moderate stress)
-    {"adds": [], "dels": [0.5, 0.8]},
-    # Scenario 3: Mixed updates (varying stress)
-    {"adds": [0.3, 0.4], "dels": [0.2, 0.6]}
-]
-
-for i, sc in enumerate(scenarios, 1):
-    adds = sc["adds"]
-    dels = sc["dels"]
-    
-    prob = compute_transition_probability(adds, dels, mu, lambda_cat)
-    action = compute_kinematic_action(adds, dels, mu, lambda_cat)
-    exp_action = np.exp(-action)
-    
-    print(f"Scenario {i}: {len(adds)} Additions, {len(dels)} Deletions")
-    print(f"  Transition Probability P(G->G'): {prob:.8f}")
-    print(f"  Kinematic Action Delta S:        {action:.8f}")
-    print(f"  Boltzmann Weight exp(-Delta S):  {exp_action:.8f}")
-    print(f"  Exact Match:                     {np.isclose(prob, exp_action)}")
-    print("-" * 50)
+# Abstract reciprocal merge fixture: this checks merging, not proposal admission.
+law, preimages = graph_kernel([], [((0,1),F(1,3)),((1,0),F(2,5))], [])
+assert preimages[frozenset()] == 2
+print('Reciprocal merge fixture: total mass = 1; unchanged-state preimages =', preimages[frozenset()])
 ```
 
 **Simulation Results:**
 
 ```text
-Euclidean Action Integration Verification
-==================================================
-Scenario 1: 2 Additions, 0 Deletions
-  Transition Probability P(G->G'): 0.95599748
-  Kinematic Action Delta S:        0.04500000
-  Boltzmann Weight exp(-Delta S):  0.95599748
-  Exact Match:                     True
---------------------------------------------------
-Scenario 2: 0 Additions, 2 Deletions
-  Transition Probability P(G->G'): 0.86233757
-  Kinematic Action Delta S:        0.14810847
-  Boltzmann Weight exp(-Delta S):  0.86233757
-  Exact Match:                     True
---------------------------------------------------
-Scenario 3: 2 Additions, 2 Deletions
-  Transition Probability P(G->G'): 0.54470442
-  Kinematic Action Delta S:        0.60751198
-  Boltzmann Weight exp(-Delta S):  0.54470442
-  Exact Match:                     True
---------------------------------------------------
+Isolated triangle: total mass = 1; specified-edge deletion = 1/5
+Shared triangles: total mass = 1; shared-edge-only preimages = 3
+Reciprocal merge fixture: total mass = 1; unchanged-state preimages = 2
 ```
 
 **Conclusion:**
-The simulation confirms that the convolved product of transition probabilities is identical to $\exp(-\Delta \mathcal{S})$ to machine precision with strictly positive-definite probabilities $P \in [0, 1]$. This verifies the transition probability model **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />, demonstrating that discrete stochastic updates map directly to the positive-definite weight of a Euclidean path integral.
+All three exact finite laws have total probability one. The isolated triangle gives probability one fifth for a specified deletion edge, including the uniform choice factor. Shared-edge and reciprocal fixtures expose three and two realization preimages respectively. These values validate the normalization and pushforward identities; proposal admission is outside the abstract reciprocal fixture.
 
 **In Plain English:**  
 Section 4.6.3.2 formalizes the properties of the QBD calculation regarding euclidean action integration.
@@ -3308,7 +3230,7 @@ Section 4.6.3.2 formalizes the properties of the QBD calculation regarding eucli
 :::info[**Irreversibility from entropy production in the evolution operator**]
 :::
 
-Let $\mathcal{U}$ denote the Evolution Operator. Then $\mathcal{U}$ is formally non-invertible, and the entropy production over a single logical tick is non-negative ($\Delta S_{\mathrm{tick}} \ge 0$), with strict positivity $\Delta S_{\mathrm{tick}} > 0$ whenever at least one candidate site possesses a non-degenerate transition probability $P \in (0, 1)$.
+Let $G_0,\ldots,G_{t+1}$ be a Markov trajectory with finite entropies and kernel $K$, and let $p,q$ be two distributions on the finite-horizon state class propagated by that same kernel. Then $H(G_0,\ldots,G_{t+1})-H(G_0,\ldots,G_t)=H(G_{t+1}\mid G_t)\ge0$ and $D_{\mathrm{KL}}(pK\parallel qK)\le D_{\mathrm{KL}}(p\parallel q)$ (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
 
 **In Plain English:**  
 Section 4.6.4 formalizes the properties of the QBD lemma regarding thermodynamic arrow.
@@ -3320,29 +3242,53 @@ Section 4.6.4 formalizes the properties of the QBD lemma regarding thermodynamic
 :::tip[**Decomposition into Non-invertible Components via Thermodynamic Arrow**]
 :::
 
-**I. Non-Invertible Operator Composition**
+**I. Chain Rule on Full Trajectories**
 
-Let $\mathcal{U}$ denote the global update operator under **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. Irreversibility follows from the many-to-one character of stochastic Bernoulli selection, idempotent addition merge, and intermediate deletion purge.
+The proof uses the specified objects and conventions (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
 
-**II. Proposal Selection and Discarded Branches**
-
-During Step 2 of the scheduler, drawing realization $(X_{\mathcal{A}}, Y_{\mathcal{D}})$ from the product Bernoulli measure collapses the full space of $2^{|\mathcal{A}_t| + |\mathcal{D}_t|}$ candidate update branches into a single realized update $(A, D)$. Because unchosen alternative trajectories are irreversibly discarded, the mapping is many-to-one, generating positive Shannon entropy:
+For fixed vertex count and horizon $T$, every active edge is absent or has a height in $\{0,\ldots,T\}$, giving at most $(T+2)^{N(N-1)}$ labeled configurations. The distributions below are on this finite class. Write $\Gamma_t=(G_0,\ldots,G_t)$. For each trajectory and successor of positive probability,
 
 $$
-\Delta S_{\text{sample}} = -\sum p_i \ln p_i > 0.
+\Pr(\Gamma_t,g')=\Pr(\Gamma_t)K(G_t,g'),\qquad
+\log\Pr(\Gamma_t,g')=\log\Pr(\Gamma_t)+\log K(G_t,g').
 $$
 
-**III. Idempotent Merge and Deletion Purge**
+Multiply by the joint probability, sum, and use $\sum_{g'}K(G_t,g')=1$. The result is
 
-In Steps 3 and 4, multiple candidate 2-paths may propose identical chords (resolved by idempotent set union $E \cup \{e\} \cup \{e\} = E \cup \{e\}$), while deletion excises edges from $E(G_t)$. Given only $G_{t+1}$, the pre-update state $G_t$ cannot be uniquely reconstructed without external auxiliary data.
+$$
+H(\Gamma_{t+1})=H(\Gamma_t)
+-\sum_g p_t(g)\sum_{g'}K(g,g')\log K(g,g').
+$$
 
-**IV. Historical Indelibility and Asymmetry**
+The final sum with its minus sign is $H(G_{t+1}\mid G_t)$. Every summand $-K\log K$ is nonnegative for $0\le K\le1$, using $0\log0=0$. It is positive exactly when a positive-mass current state has a nondegenerate successor distribution.
 
-Every accepted addition is embedded in the cumulative historical category $\mathbf{Hist}$ via inclusion $\mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$, while deletions act strictly on active routing $G_t$ without erasing cumulative history per **Orthogonality of Kinematic and Historical State** <Ref id="4.1.3" label="§4.1.3" />. The information-theoretic irreversibility of discarding unselected alternatives and the monotonic accumulation of relational history establish a strictly forward-directed physical arrow of time.
+**II. Log-Sum Inequality**
 
-**V. Conclusion**
+For nonnegative finite families $a_i,b_i$ with positive sums $A,B$, put $\alpha_i=a_i/A$ and $\beta_i=b_i/B$. If some $a_i>0=b_i$, the divergence is infinite and the inequality is immediate. Otherwise, $-\log z\ge1-z$ gives
 
-The total transition $G \to G'$ is mathematically non-invertible. We conclude that the Universal Constructor exhibits an explicit arrow of time.
+$$
+\begin{aligned}
+\sum_i a_i\log\frac{a_i}{b_i}-A\log\frac AB
+&=A\sum_{i:\alpha_i>0}\alpha_i\log\frac{\alpha_i}{\beta_i}\\
+&\ge A\sum_{i:\alpha_i>0}(\alpha_i-\beta_i)\\
+&=A\left(1-\sum_{i:\alpha_i>0}\beta_i\right)\ge0.
+\end{aligned}
+$$
+
+**III. Common-Kernel Contraction**
+
+At each output $y$, apply the inequality to $a_x=p(x)K(x,y)$ and $b_x=q(x)K(x,y)$. Summing over $y$ gives
+
+$$
+\begin{aligned}
+D_{\mathrm{KL}}(pK\parallel qK)
+&\le\sum_{x,y}p(x)K(x,y)\log\frac{p(x)K(x,y)}{q(x)K(x,y)}\\
+&=\sum_xp(x)\log\frac{p(x)}{q(x)}\sum_yK(x,y)\\
+&=D_{\mathrm{KL}}(p\parallel q).
+\end{aligned}
+$$
+
+Zero-probability terms have their usual limiting values. If the input divergence is infinite, contraction is understood as an extended-value inequality. This proves both asserted information laws (**Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />).
 
 Q.E.D.
 
@@ -3356,237 +3302,420 @@ Section 4.6.4.1 formalizes the properties of the QBD proof regarding thermodynam
 :::note[**Computational Verification of Shannon Entropy Loss via Stochastic Selection**]
 :::
 
-Computational verification of the information loss inherent in discrete stochastic selection established in **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" /> and the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> is based on the following protocols:
+Computational verification of the trajectory and common-kernel information inequalities established in (**Thermodynamic Arrow** <Ref id="4.6.4.1" label="§4.6.4.1" />) uses the normalized Markov law (**Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />) through the following protocols:
 
-1.  **Stochastic Initialization:** The algorithm generates a provisional probability distribution with Gaussian noise to simulate realistic branching fluctuations across candidate choices.
-2.  **Selection Collapse:** The protocol collapses the distribution to a single realized outcome.
-3.  **Entropy Measurement:** The metric tracks the Shannon entropy production $\Delta S = S_{provisional} - S_{final}$ across $10,000$ Monte Carlo trials to illustrate the directionality of time.
+1. **Distribution Construction:** A binary stochastic kernel propagates two strictly positive input distributions.
+2. **Entropy Accounting:** The audit evaluates initial entropy, final entropy and the conditional contribution to joint trajectory entropy separately.
+3. **Relative Entropy Comparison:** The propagated divergence is compared with the input divergence, while an explicit concentration example tests decreasing snapshot entropy.
 
 ```python
-import numpy as np
+import math
 
-def shannon_entropy(p):
-    """Shannon entropy in bits, safely handling zero probabilities."""
-    p = np.asarray(p)
-    p = p[p > 0]                        # Remove zero entries to avoid log(0)
-    if len(p) == 0:
-        return 0.0
-    return -np.sum(p * np.log2(p))
+def entropy(p):
+    return -sum(x*math.log(x) for x in p if x > 0)
 
-# Number of Monte Carlo trials for statistical precision
-n_trials = 10_000
-np.random.seed(42)
+def push(p, K):
+    return [sum(p[i]*K[i][j] for i in range(len(p))) for j in range(len(K[0]))]
 
-entropy_production = []
+def kl(p,q):
+    return sum(a*math.log(a/b) for a,b in zip(p,q) if a>0)
 
-for _ in range(n_trials):
-    # Provisional distribution over 3 candidate outcomes
-    noise = np.random.normal(0, 0.005, 2)
-    p_A = max(0.0, 0.50 + noise[0])
-    p_B = max(0.0, 0.25 + noise[1])
-    p_C = max(0.0, 1.0 - p_A - p_B)     # Ensure non-negative and sum = 1
-
-    provisional = np.array([p_A, p_B, p_C])
-    S_provisional = shannon_entropy(provisional)
-
-    # Selection: collapse to single outcome → entropy = 0
-    S_final = 0.0
-
-    # Entropy production = information lost to the environment
-    delta_S = S_provisional - S_final
-    entropy_production.append(delta_S)
-
-avg_delta = np.mean(entropy_production)
-std_delta = np.std(entropy_production)
-
-print("Irreversibility via Entropy Production in 𝒰")
-print("=" * 48)
-print(f"Monte Carlo trials:         {n_trials:,}")
-print(f"Average ΔS per tick:        {avg_delta:.5f} bits")
-print(f"Standard deviation:         {std_delta:.5f} bits")
-print(f"Minimum observed ΔS:        {min(entropy_production):.5f} bits")
-print(f"Strictly positive ΔS:       {avg_delta > 0}")
+K = [[0.9,0.1],[0.9,0.1]]
+p = [0.5,0.5]
+q = [0.8,0.2]
+after = push(p,K)
+conditional = sum(p[i]*entropy(K[i]) for i in range(2))
+joint = entropy([p[i]*K[i][j] for i in range(2) for j in range(2)])
+assert abs(joint-entropy(p)-conditional)<1e-12
+assert entropy(after)<entropy(p)
+assert joint>=entropy(p)
+assert kl(push(p,K),push(q,K))<=kl(p,q)+1e-12
+print(f'Snapshot entropy change: {entropy(after)-entropy(p):.9f} nats')
+print(f'Full trajectory entropy increment: {joint-entropy(p):.9f} nats')
+print(f'Conditional entropy: {conditional:.9f} nats')
+print(f'KL input / output: {kl(p,q):.9f} / {kl(push(p,K),push(q,K)):.9f}')
 ```
 
 **Simulation Results:**
 
 ```text
-Irreversibility via Entropy Production in 𝒰
-================================================
-Monte Carlo trials:         10,000
-Average ΔS per tick:        1.49973 bits
-Standard deviation:         0.00507 bits
-Minimum observed ΔS:        1.48072 bits
-Strictly positive ΔS:       True
+Snapshot entropy change: -0.368064207 nats
+Full trajectory entropy increment: 0.325082973 nats
+Conditional entropy: 0.325082973 nats
+KL input / output: 0.223143551 / -0.000000000
 ```
 
 **Conclusion:**
-The toy Monte Carlo simulation illustrates the information loss inherent in stochastically collapsing a 3-outcome distribution into a single realized state, yielding a strictly positive average Shannon entropy of $\Delta S \approx 1.50$ bits. This demonstrates the directional nature of discrete stochastic state reduction.
+The concentration example decreases snapshot entropy by approximately 0.368 nats while increasing full trajectory entropy by approximately 0.325 nats. The latter equals the conditional entropy to numerical precision. KL divergence contracts from approximately 0.223 nats to zero. These values validate the separated information identities rather than an inequality for snapshot entropy production.
 
 **In Plain English:**  
 Section 4.6.4.3 formalizes the properties of the QBD calculation regarding irreversibility check.
 
 ---
 
-### 4.6.5 Lemma: Foster-Lyapunov Anti-Densification Bound {#4.6.5}
+### 4.6.5 Lemma: Conditional Triangle Drift {#4.6.5}
 
-:::info[**Verification of Anti-Densification Drift and Continuum Stability via Foster-Lyapunov Criteria**]
+:::info[**Foster-Lyapunov Anti-Densification Bound via Conditional Single-Tick Triangle Drift**]
 :::
 
-Let the stochastic Evolution Operator $\mathcal{U}$ act on the space of valid causal graphs $\Sigma_{\text{valid}}$, with Lyapunov functional defined by the intensive cycle density $V(G) = \rho(G) = N_3(G)/N$. Under thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$ and catalytic defect relaxation $\lambda_0 = e - 1$, the expected single-tick drift satisfies $\Delta V(G) \le -\epsilon < 0$ for all states with $\rho(G) > \rho_{\text{crit}}$, bounding topological activity against ultraviolet runaway, while in the unpumped regime ($\Lambda_{\text{micro}} \equiv 0$) cycle-free states form an absorbing class whose continuum non-zero attractor $\rho^* \approx 0.037$ is realized under continuous driving ($\Lambda_{\text{drive}} > 0$).
+Let $G$ be a fixed-vertex snapshot with old-triangle deletion probabilities $q_c$ and eligible chord selection probabilities $p_a$, where $\nu_a$ counts triangles containing $a$ in the full candidate supergraph. The one-tick triangle drift is at most $\sum_a p_a\nu_a-\sum_c q_c$ and is strictly negative when this difference is negative.
 
 **In Plain English:**  
-Section 4.6.5 formalizes the properties of the QBD lemma regarding foster-lyapunov anti-densification bound.
+Section 4.6.5 formalizes the properties of the QBD lemma regarding conditional triangle drift.
 
 ---
 
-### 4.6.5.1 Proof: Foster-Lyapunov Anti-Densification Bound {#4.6.5.1}
+### 4.6.5.1 Proof: Conditional Triangle Drift {#4.6.5.1}
 
-:::tip[**Demonstration of Anti-Densification Drift and Absorbing Stasis via Foster-Lyapunov Drift Criteria**]
+:::tip[**Foster-Lyapunov Anti-Densification Bound via Triangle-Set Decomposition and Candidate Supergraph Counting**]
 :::
 
-**I. Absorbing Boundary and Reducibility**
+**I. New and Lost Triangles**
 
-Under the unpumped Universal Constructor ($\Lambda_{\text{micro}} \equiv 0$), the defect-free Bethe vacuum $G_0$ and cycle-free scarred configurations $G_{\mathrm{scar}}$ contain zero closed 3-cycles ($N_3 = 0$) and zero compliant 2-paths capable of closing 3-cycles. Therefore, proposal sets vanish identically ($\mathcal{A} = \emptyset, \mathcal{D} = \emptyset$), establishing $\mathbb{P}(G \to G) = 1$. Because active states can reach cycle-free configurations via sequential cycle deletions but cannot spontaneously transition out of them, the unpumped Markov chain is reducible and is absorbed into the cycle-free, addition-quiescent class; no invariant probability measure supported on active graphs exists.
+The tick uses frozen candidate selection and old-triangle excision (**Conditional Triangle Drift** <Ref id="4.6.5" label="§4.6.5" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
 
-**II. Foster-Lyapunov Drift Functional**
-
-Preventing the state space from undergoing an ultraviolet catastrophe (infinite densification into a small-world network) requires establishing an upper bound on graph expansion. Define the Lyapunov potential function as the structural 3-cycle density $V(G) = \rho(G)$, and evaluate the expected one-step drift $\Delta V(G) = \mathbb{E}[V(G_{t+1}) - V(G_t) \mid G_t = G]$ under the constitutive transition kernels of **Addition Mode** <Ref id="4.5.3" label="§4.5.3" /> and **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" />:
-1.  **Outward Drift (Addition):** Bounded by the generative drive, but exponentially suppressed by steric friction $P_{\text{acc}} = \exp(-\mu_0 \cdot \text{stress}_{\text{add}})$.
-2.  **Inward Drift (Deletion):** Bounded by catalytic defect relaxation $Q_{\text{del}} = \min\left(1, \frac{1}{2}(1 + \lambda_0 \cdot \text{stress}_{\text{del}})\exp(-\mu_0 \cdot \text{stress}_{\text{del}})\right)$.
-
-**III. Deterministic Merge Confluence and Move Disjointness**
-
-In the four-step scheduler $\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$, candidate addition edges $A_{\mathrm{edges}}$ are chosen from non-edges ($A_{\mathrm{edges}} \cap E(G_t) = \emptyset$), while candidate deletion edges $D$ are subsets of pre-existing edges ($D \subseteq E(G_t)$). Therefore, the move sets are strictly disjoint ($A_{\mathrm{edges}} \cap D = \emptyset$). By formal verification in Lean 4 (`dynamic_move_disjointness`, `dynamic_race_free_invariance`, `parallel_addition_commutes`, and `parallel_addition_idempotent`), parallel multi-site updates commute and merge deterministically into $G_{t+1}$, preserving race-free execution across all vertices.
-
-**IV. Strict Negative Drift Outside Compact Density Bound**
-
-Because catalytic deletion scales with cycle count while addition probability decays exponentially with vertex degree and local stress, there exists a critical threshold density $\rho_{\mathrm{crit}}$ such that for all states $G$ where $V(G) > \rho_{\mathrm{crit}}$, the expected change in density is strictly negative:
+Let $A$ be the retained batch and $D$ the excisions. The final edge set is $(E\cup A)\setminus D$. If $\mathcal C_3(G)$ and $\mathcal C_3(F)$ are the old and final triangle sets, respectively, then
 
 $$
-\Delta V(G) \le -\epsilon \quad \text{for some } \epsilon > 0.
+N_3(F)-N_3(G)=
+|\mathcal C_3(F)\setminus\mathcal C_3(G)|-
+|\mathcal C_3(G)\setminus\mathcal C_3(F)|.
 $$
 
-This negative drift establishes that the configuration space is dynamically bounded from above, pulling high-density fluctuations back into the physical operating regime ($\rho \ll 1$).
+**II. Upper Bound on New Triangles**
 
-**V. Metastability and the Continuous Driven Invariant Measure**
+Every new triangle contains a retained edge, and the full candidate supergraph contains every retained batch. Thus the number of new triangles is at most $\sum_{a\in A}\nu_a$. An edge is retained only if selected, giving
 
-By Foster-Lyapunov drift criteria, the state space is non-explosive and bounded. For the unpumped chain, active configurations above the nucleation barrier $\rho_c \approx 0.130$ form a long-lived Quasi-Stationary Distribution (QSD) with finite lifetime before quenching into absorption per **Computational Verification** <Ref id="5.3" label="§5.3" />. When driven by a continuous microscopic injection rate ($\Lambda_{\mathrm{drive}} > 0$), the discrete tick coarse-grains into the continuous-time **Master Equation** <Ref id="5.2" label="§5.2" />, admitting a stable non-equilibrium steady-state attractor $\rho^* \approx 0.037$.
+$$
+\mathbb E\bigl[|\mathcal C_3(F)\setminus\mathcal C_3(G)|\mid G\bigr]
+\le \sum_a \nu_a\Pr(a\in A\mid G)\le\sum_a\nu_a p_a .
+$$
+
+**III. Lower Bound on Lost Triangles**
+
+An old triangle is absent whenever its own deletion trial succeeds, because an old edge removed in the tick is absent from the final graph. Hence
+
+$$
+\mathbb E\bigl[|\mathcal C_3(G)\setminus\mathcal C_3(F)|\mid G\bigr]
+=\sum_c\Pr(c\notin\mathcal C_3(F)\mid G)\ge\sum_c q_c.
+$$
+
+The difference gives the claimed drift bound. For fixed $N>0$, division by $N$ bounds the drift in triangle density.
+
+**IV. Degree and Stress Envelope**
+
+If the old undirected degree is at most $\Delta$, each new neighbor is at old distance two. At most $\Delta(\Delta-1)$ new neighbors can be attached to any vertex. Exclusion of reciprocal pairs yields a merged total degree at most $\Delta^2$. If there are at most $M$ candidates, each with stress at least $s_*$ and triangle count at most $\nu_*$, and each old deletion probability is at least $q_*$, then the site sum is bounded above by $M\nu_*e^{-\mu s_*}-Cq_*$. The stated stress, degree and cycle-count premises suffice for negative drift when this upper bound is negative.
+
+**V. Exact Drift in the Degree-Three Fixture**
+
+Use the old triangle $a\to b\to c\to a$ of heights $0,0,1$ and the tail $c\to d$ of height zero. The three two-paths internal to the old triangle already have their return edges. The remaining two-path $b\to c\to d$ gives the sole candidate $d\to b$ at height one. Its reverse path has heights $(0,0)$, and $b,c$ each lie in the old triangle, so the addition stress is two. The old triangle has deletion stress two, giving the respective probabilities (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />) (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />)
+
+$$
+p=e^{-2\mu_0},\qquad q=\min\{1,\tfrac12(1+2\lambda_0)e^{-2\mu_0}\}.
+$$
+
+The old triangle is lost with probability $q$. The new triangle survives when its candidate is selected and edge $(b,c)$ is kept, which has probability $p(1-q/3)$ by independence and the uniform deletion choice. The exact triangle drift is therefore
+
+$$
+\mathbb E[\Delta N_3\mid G]=p(1-q/3)-q\le p-q<0
+$$
+
+at the canonical parameters, since $\tfrac12(1+2\lambda_0)>1$ and $p<1$.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 4.6.5.1 formalizes the properties of the QBD proof regarding foster-lyapunov anti-densification bound.
+Section 4.6.5.1 formalizes the properties of the QBD proof regarding conditional triangle drift.
 
 ---
 
-### 4.6.5.2 Calculation: Foster-Lyapunov Drift Verification {#4.6.5.2}
+### 4.6.5.2 Calculation: Degree-Three Drift Calculation {#4.6.5.2}
 
-:::note[**Computational Verification of the Negative Drift Condition through Stability**]
+:::note[**Foster-Lyapunov Drift Verification via Exact Event Enumeration of the Degree-Three Drift Fixture**]
 :::
 
-Computational verification of the stability condition established by **Foster-Lyapunov Anti-Densification Bound** <Ref id="4.6.5" label="§4.6.5" /> and modulated by **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" /> is based on the following protocols:
+Verification of the degree-three triangle drift fixture (**Conditional Triangle Drift** <Ref id="4.6.5.1" label="§4.6.5.1" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />) is based on the following protocols:
 
-1.  **Drift Operator Evaluation:** The algorithm calculates the expected change in graph density $\Delta V(\rho) = \mathbb{E}[\rho_{t+1} - \rho_t \mid \rho_t = \rho]$.
-2.  **Schematic Drift Illustration:** The script evaluates expected additions (suppressed exponentially by friction $\mu = 0.5$) and deletions (enhanced catalytically by stress) across a range of densities to illustrate the restoring drift. Parameters $(\mu, \lambda, M_{\mathrm{add}}, M_{\mathrm{del}}) = (0.5, 1.0, 10, 10)$ are schematic values chosen for demonstration rather than the canonical $(\mu_0, \lambda_0)$ constants.
-3.  **Critical Threshold Identification:** The verification identifies the threshold density $\rho_{\mathrm{crit}}$ above which $\Delta V(\rho) \le -\epsilon$ holds, verifying that the density is bounded from above.
+1.  **Fixture:** Use the directed triangle with one outgoing tail and its single closing proposal.
+2.  **Outcome Law:** Evaluate the canonical addition and old-triangle deletion probabilities.
+3.  **Drift:** Sum the changes over the two addition outcomes and four deletion outcomes.
 
 ```python
-import numpy as np
+from itertools import product
+from math import e, exp, isclose, pi, sqrt
 
-def expected_drift(rho, M_add=10, M_del=10, mu=0.5, lambda_cat=1.0):
-    """Calculate expected one-step density change (drift) ΔV(ρ)."""
-    p_add = np.exp(-mu * rho)
-    p_del = min(1.0, 0.5 * (1.0 + lambda_cat * rho) * np.exp(-mu * rho))
-    
-    exp_additions = M_add * p_add
-    exp_deletions = M_del * p_del
-    
-    return exp_additions - exp_deletions
 
-print("Foster-Lyapunov Drift Verification")
-print("=" * 50)
+mu, lam = 1 / sqrt(2 * pi), e - 1
+p = exp(-2 * mu)
+q = min(1, (1 + 2 * lam) * exp(-2 * mu) / 2)
+old_triangle = {("a", "b"), ("b", "c"), ("c", "a")}
+new_triangle = {("b", "c"), ("c", "d"), ("d", "b")}
+old = old_triangle | {("c", "d")}
+delete_choices = [(None, 1 - q)] + [(edge, q / 3) for edge in sorted(old_triangle)]
+drift = 0.0
+for (add, add_weight), (edge, del_weight) in product(
+    [(False, 1 - p), (True, p)], delete_choices
+):
+    final = (old | ({("d", "b")} if add else set())) - {edge}
+    change = int(old_triangle <= final) + int(new_triangle <= final) - 1
+    drift += add_weight * del_weight * change
 
-# Evaluate expected drift across a range of densities
-densities = np.linspace(0.0, 3.0, 7)
-rho_crit = None
-
-for rho in densities:
-    drift = expected_drift(rho)
-    status = "Negative Drift (Restoring Force)" if drift < 0 else "Positive Drift (Expansion)"
-    print(f"Density rho = {rho:.1f} | Expected Drift: {drift:+.4f} | {status}")
-    
-    if drift < 0 and rho_crit is None:
-        rho_crit = rho
-
-print("=" * 50)
-print(f"Critical Density Threshold (rho_crit): ~{rho_crit:.1f}")
-print("Foster-Lyapunov negative drift condition satisfied.")
+assert isclose(drift, p * (1 - q / 3) - q)
+assert drift <= p - q < 0
+print(f"Enumerated one-tick triangle drift: {drift:.8f}")
+print(f"Site-summed upper bound: {p - q:.8f}")
 ```
 
 **Simulation Results:**
 
 ```text
-Foster-Lyapunov Drift Verification
-==================================================
-Density rho = 0.0 | Expected Drift: +5.0000 | Positive Drift (Expansion)
-Density rho = 0.5 | Expected Drift: +1.9470 | Positive Drift (Expansion)
-Density rho = 1.0 | Expected Drift: +0.0000 | Positive Drift (Expansion)
-Density rho = 1.5 | Expected Drift: -1.1809 | Negative Drift (Restoring Force)
-Density rho = 2.0 | Expected Drift: -1.8394 | Negative Drift (Restoring Force)
-Density rho = 2.5 | Expected Drift: -2.1488 | Negative Drift (Restoring Force)
-Density rho = 3.0 | Expected Drift: -2.2313 | Negative Drift (Restoring Force)
-==================================================
-Critical Density Threshold (rho_crit): ~1.5
-Foster-Lyapunov negative drift condition satisfied.
+Enumerated one-tick triangle drift: -0.69848930
+Site-summed upper bound: -0.54856855
 ```
 
 **Conclusion:**
-The schematic simulation illustrates that expected drift becomes strictly negative ($\Delta V < 0$) once graph density exceeds $\rho = 1.5$. This demonstrates the qualitative Foster-Lyapunov drift mechanism that bounds graph density from above against runaway densification.
 
-**In Plain English:**  
-Section 4.6.5.2 formalizes the properties of the QBD calculation regarding foster-lyapunov drift verification.
+The enumerated drift is negative and lies below the site-summed bound. The fixture confirms the analytic one-tick value and inequality on this snapshot.
+
+**In Plain English:**
+
+Section 4.6.5.2 formalizes the properties of the QBD calculation regarding degree-three drift calculation.
 
 ---
 
-### 4.6.6 Proof: Emergent Dynamics {#4.6.6}
+### 4.6.6 Lemma: Exact Unpumped Quiescence {#4.6.6}
+
+:::info[**Exact Unpumped Quiescence via Fixed Points of the Finite Unpumped Snapshot Kernel**]
+:::
+
+Let $G$ be a finite active snapshot for the canonical unpumped tick. Then $K(G,G)=1$ exactly when there are no old triangles and every eligible addition candidate has an eligible reciprocal partner.
+
+**In Plain English:**
+
+Section 4.6.6 formalizes the properties of the QBD lemma regarding exact unpumped quiescence.
+
+---
+
+### 4.6.6.1 Proof: Exact Unpumped Quiescence {#4.6.6.1}
+
+:::tip[**Exact Unpumped Quiescence via Positive Deletion Trials and Reciprocal Filtering**]
+:::
+
+**I. Domain and Objects**
+
+The unpumped kernel uses reciprocal filtering followed by deletion (**Exact Unpumped Quiescence** <Ref id="4.6.6" label="§4.6.6" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
+
+**II. An Old Triangle Prevents Quiescence**
+
+An old triangle has finite stress and positive trigger probability at the canonical parameters. If its trial succeeds, one old edge is deleted. Additions use absent pairs of the old snapshot, so that edge cannot be reinserted during the same tick. This event has positive probability and changes the active state.
+
+**III. Triangle-Free Snapshots**
+
+With no old triangle, deletion trials are absent and every eligible addition has zero old stress. Its selection probability is $e^0=1$. The deterministic reciprocal filter removes both directions for each pair of reciprocal candidates. All unpaired candidates survive. The active snapshot stays fixed exactly when their set is empty.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.6.6.1 formalizes the properties of the QBD proof regarding exact unpumped quiescence.
+
+---
+
+### 4.6.6.2 Calculation: Reciprocal-Aware Quiescence Fixtures {#4.6.6.2}
+
+:::note[**Reciprocal-Aware Quiescence Fixtures via Finite Quiescence Checks on Three Timestamped Snapshots**]
+:::
+
+Verification of quiescence on the three explicit inputs (**Exact Unpumped Quiescence** <Ref id="4.6.6.1" label="§4.6.6.1" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />) is based on the following protocols:
+
+1.  **Fixtures:** Construct a four-cycle, a single two-path, and an old triangle.
+2.  **Admission:** Check candidate uniqueness and the bounded increasing reverse path.
+3.  **Kernel:** Evaluate reciprocal cancellation in the triangle-free fixtures and test the triangle deletion event.
+
+```python
+from math import e, exp, log2, pi, sqrt
+
+import networkx as nx
+
+
+def candidates(graph):
+    result = set()
+    cutoff = int(log2(len(graph))) + 3
+    for v in graph:
+        for w in graph[v]:
+            for u in graph[w]:
+                if len({v, w, u}) < 3 or graph.has_edge(v, u) or graph.has_edge(u, v):
+                    continue
+                if any(z != w and graph.has_edge(z, u) for z in graph[v]):
+                    continue
+                height = 1 + max(data["height"] for _, _, data in graph.in_edges(u, data=True))
+                blocked = False
+                for path in nx.all_simple_paths(graph, v, u, cutoff=cutoff):
+                    heights = [graph[a][b]["height"] for a, b in zip(path, path[1:])]
+                    if (len(heights) >= 2 and heights[-1] < height
+                            and all(a < b for a, b in zip(heights, heights[1:]))):
+                        blocked = True
+                        break
+                if not blocked:
+                    result.add((u, v))
+    return result
+
+
+for name, edges, count, expected in [
+    ("four-cycle", [(0, 1, 0), (1, 2, 0), (2, 3, 0), (3, 0, 0)], 4, True),
+    ("two-path", [(0, 1, 0), (1, 2, 0)], 1, False),
+    ("triangle", [(0, 1, 0), (1, 2, 0), (2, 0, 1)], 0, False),
+]:
+    graph = nx.DiGraph()
+    graph.add_weighted_edges_from(edges, weight="height")
+    eligible = candidates(graph)
+    assert len(eligible) == count
+    retained = {(u, v) for u, v in eligible if (v, u) not in eligible}
+    triangles = [cycle for cycle in nx.simple_cycles(graph) if len(cycle) == 3]
+    positive_deletion = bool(triangles)
+    if positive_deletion:
+        q = min(1, (1 + 2 * (e - 1)) * exp(-2 / sqrt(2 * pi)) / 2)
+        assert q > 0
+    quiescent = not positive_deletion and not retained
+    assert quiescent == expected
+    print(f"{name}: {len(eligible)} eligible, quiescent={quiescent}")
+```
+
+**Simulation Results:**
+
+```text
+four-cycle: 4 eligible, quiescent=True
+two-path: 1 eligible, quiescent=False
+triangle: 0 eligible, quiescent=False
+```
+
+**Conclusion:**
+
+The four-cycle is quiescent, the path has a surviving addition, and the triangle has a positive deletion event. These outputs confirm the quiescence classification for all three fixtures.
+
+**In Plain English:**
+
+Section 4.6.6.2 formalizes the properties of the QBD calculation regarding reciprocal-aware quiescence fixtures.
+
+---
+
+### 4.6.7 Lemma: Finite-Horizon Height Bound {#4.6.7}
+
+:::info[**Finite Active State Space through a Fixed Horizon**]
+:::
+
+Let the vertex set be finite and fixed, and the active heights be nonnegative integers. After $t$ unpumped ticks their maximum is bounded by $H_{\max}(0)+t$, with the maximum of an empty graph taken as zero, so the reachable active snapshots through any fixed horizon form a finite set.
+
+**In Plain English:**
+
+Section 4.6.7 formalizes the properties of the QBD lemma regarding finite-horizon height bound.
+
+---
+
+### 4.6.7.1 Proof: Finite-Horizon Height Bound {#4.6.7.1}
+
+:::tip[**Finite-Horizon Height Bound via Induction on the Maximum Active Height**]
+:::
+
+**I. Domain and Objects**
+
+An admitted addition uses its incoming source maximum (**Finite-Horizon Height Bound** <Ref id="4.6.7" label="§4.6.7" />) (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
+
+**II. Single-Tick Maximum**
+
+Each retained chord has height one plus an incoming source maximum in the frozen snapshot, at most $H_{\max}(t)+1$. A retained old edge keeps its height and deletion cannot increase the maximum. Thus $H_{\max}(t+1)\le H_{\max}(t)+1$.
+
+**III. Finite Horizon**
+
+Induction gives $H_{\max}(t)\le H_{\max}(0)+t$. With $P$ possible directed pairs and horizon $T$, each pair is absent or has one of $H_{\max}(0)+T+1$ heights. There are at most
+
+$$
+\bigl(H_{\max}(0)+T+2\bigr)^P
+$$
+
+active snapshots in that horizon.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.6.7.1 formalizes the properties of the QBD proof regarding finite-horizon height bound.
+
+---
+
+### 4.6.8 Lemma: Common-Height Shift Equivariance {#4.6.8}
+
+:::info[**Common-Height Shift Equivariance via Common-Shift Quotient of the Active Unpumped Kernel**]
+:::
+
+Let two unpumped snapshots agree in adjacency and differ by a common integer shift on active heights, with both assignments nonnegative. Their transition probabilities agree on shift classes, and the quotient is finite on any invariant class with fixed vertices and a uniform finite height span.
+
+**In Plain English:**
+
+Section 4.6.8 formalizes the properties of the QBD lemma regarding common-height shift equivariance.
+
+---
+
+### 4.6.8.1 Proof: Common-Height Shift Equivariance {#4.6.8.1}
+
+:::tip[**Coupling by Shared Tick Outcomes**]
+:::
+
+**I. Shift of the Candidate Height**
+
+Candidate rates are evaluated from the common active snapshot (**Common-Height Shift Equivariance** <Ref id="4.6.8" label="§4.6.8" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
+
+For a legal return chord the source has an old incoming support edge. A common shift $c$ therefore sends its assigned height $1+\max H_{\mathrm{in}}$ to $1+\max H_{\mathrm{in}}+c$. PUC and all triangle stresses depend on adjacency. Strict height comparisons and the terminal comparison with the candidate height are invariant under the same shift.
+
+**II. Coupled Outputs**
+
+Both inputs have identical eligible candidates and identical trial probabilities. Use the same outcome list. Reciprocal filtering and deletion select the same edges. Old active heights and newly assigned heights differ by $c$ on every surviving edge, proving equality of the output class under the coupling.
+
+**III. Finiteness under a Span Bound**
+
+In each nonempty class subtract the minimum active height. If the span is bounded by $B$, every remaining height lies in $\{0,\ldots,B\}$. There are finitely many adjacencies and finitely many assignments per adjacency, together with the empty snapshot.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.6.8.1 formalizes the properties of the QBD proof regarding common-height shift equivariance.
+
+---
+
+### 4.6.9 Proof: Emergent Dynamics {#4.6.9}
 
 :::tip[**Synthesis of Transition Probabilities via Entropy Production in the Evolution Cycle**]
 :::
 
-**I. Four-Step Composite Operator Structure**
+**I. Classical Transition Law**
 
-Let the Evolution Operator $\mathcal{U} = \mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$ compose the diagnostic awareness, parallel stochastic proposal, symmetric addition merge, and intermediate deletion stages under **Evolution Operator ($\mathcal{U}$)** <Ref id="4.6.1" label="§4.6.1" />. The transition probability for any discrete step $G_t \to G_{t+1}$ is convolved from local microscopic rewrite events.
+The independent finite outcome law is normalized, and its deterministic pushforward gives the normalized graph kernel (**Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />). Positive realization weights have the additive negative-log action displayed there.
 
-**II. Action-Probability Scaling**
+**II. Information Monotonicity**
 
-Under the disjoint topological footprints of the vacuum limit, the joint transition probability factorizes across independent update sites. The resulting transition weights scale exponentially with the discrete kinematic action $\Delta \mathcal{S}_{\text{kinematic}}$ as established in **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" />.
+The trajectory chain rule gives a nonnegative conditional-entropy increment, while the log-sum inequality gives common-kernel KL contraction (**Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />). These are the stated information-theoretic conclusions (**Emergent Dynamics** <Ref id="4.6.2" label="§4.6.2" />).
 
-**III. Entropic Asymmetry and Irreversibility**
+**III. Scope of the Dynamical Bound**
 
-Each application of the stochastic selection step within $\mathcal{U}$ discards unchosen candidate branches. This many-to-one reduction produces a non-negative entropy change $\Delta S_{\mathrm{tick}} \ge 0$ as established in **Thermodynamic Arrow** <Ref id="4.6.4" label="§4.6.4" />.
+The finite-horizon bound supplies a finite state domain (**Finite-Horizon Height Bound** <Ref id="4.6.7" label="§4.6.7" />). Common shifts preserve the unpumped transition on height classes (**Common-Height Shift Equivariance** <Ref id="4.6.8" label="§4.6.8" />).
 
-**IV. Anti-Densification Stability and Continuum Bridge**
-
-Under thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$ and catalytic defect relaxation $\lambda_0 = e - 1$, the Markov transition kernel satisfies the Foster-Lyapunov drift condition outside a compact density bound as established in **Foster-Lyapunov Anti-Densification Bound** <Ref id="4.6.5" label="§4.6.5" />, preventing ultraviolet runaway. Coarse-graining the discrete scheduler dynamics yields the continuous-time **Master Equation** <Ref id="5.2" label="§5.2" /> with stable non-equilibrium attractor $\rho^* \approx 0.037$.
-
-**V. Synthesis and Formal Conclusion**
-
-Combining the convolved Euclidean transition weights with the non-negative entropy production of the four-step execution cycle and the anti-densification stability of the Lyapunov bound, we conclude that the Evolution Operator $\mathcal{U}$ generates a macroscopically directed, causality-preserving sequence of states bridging directly to continuum non-equilibrium mechanics.
+Quiescent states are identified by reciprocal filtering and deletion trials (**Exact Unpumped Quiescence** <Ref id="4.6.6" label="§4.6.6" />). The site-summed condition is a separate bound on the triangle drift (**Conditional Triangle Drift** <Ref id="4.6.5" label="§4.6.5" />). It is not used to prove normalization or either information identity. Thus those identities hold independently of an additional recurrence or sparse-density estimate.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 4.6.6 formalizes the properties of the QBD proof regarding emergent dynamics.
+**In Plain English:**
+
+Section 4.6.9 formalizes the properties of the QBD proof regarding emergent dynamics.
 
 ---
 
-### 4.6.7 Type-Theoretic Validation via Lean 4 Core {#4.6.7}
+### 4.6.10 Type-Theoretic Validation via Lean 4 Core {#4.6.10}
 
 :::note[**Lean 4 Encoding of Move Disjointness and Addition Confluence**]
 :::
 
-Type-theoretic certification of the move disjointness and concurrent addition confluence established in **Emergent Dynamics** <Ref id="4.6.6" label="§4.6.6" /> proceeds via the following verification strategy:
+Type-theoretic certification of the frozen-proposal set operations used in **Emergent Dynamics** <Ref id="4.6.9" label="§4.6.9" /> and specified by **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> proceeds via the following verification strategy:
 
 1.  **Move Grammar Encoding:** Edge subsets are represented as predicates over directed vertex pairs `Edge V -> Prop`. An addition proposal set $A_{\mathrm{edges}}$ satisfies `IsLegalAdditionSet E A_edges` if every proposed edge is absent from the existing topology $E$. A deletion set $D$ satisfies `IsLegalDeletionSet E D` if every candidate deletion belongs to $E$.
 2.  **Move Disjointness and Race-Free Invariance:** The Lean theorem `dynamic_move_disjointness` formally proves that $A_{\mathrm{edges}} \cap D = \emptyset$, ruling out conflicting update requests on identical edges. Theorem `dynamic_race_free_invariance` proves that newly added edges are guaranteed to survive deletions occurring within the identical tick.
@@ -3672,9 +3801,188 @@ theorem parallel_addition_idempotent {V : Type}
 ```
 
 **Verification Summary:**
-The formalization models the parallel move scheduler over arbitrary vertex types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `dynamic_move_disjointness` certifies that accepted additions and accepted deletions generated within identical parallel ticks are strictly disjoint, while `dynamic_race_free_invariance` validates that newly created edges cannot be concurrently destroyed. Furthermore, theorems `parallel_addition_commutes` and `parallel_addition_idempotent` confirm that concurrent additions commute in arbitrary sequence and fold duplicate proposals idempotently. The Lean type-checker's acceptance of these machine-checked proofs validates the deterministic confluence and structural consistency of the discrete parallel scheduler under **Emergent Dynamics** <Ref id="4.6.6" label="§4.6.6" />.
+The formalization models the parallel move scheduler over arbitrary vertex types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `dynamic_move_disjointness` certifies that accepted additions and accepted deletions generated within identical parallel ticks are strictly disjoint, while `dynamic_race_free_invariance` validates that newly created edges cannot be concurrently destroyed. Furthermore, theorems `parallel_addition_commutes` and `parallel_addition_idempotent` confirm that concurrent additions commute in arbitrary sequence and fold duplicate proposals idempotently. The Lean type-checker's acceptance of these machine-checked proofs validates the deterministic confluence and structural consistency of the discrete parallel scheduler under **Emergent Dynamics** <Ref id="4.6.9" label="§4.6.9" />.
 
-**In Plain English:**  
-Section 4.6.7 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
+**In Plain English:**
+
+Section 4.6.10 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
+
+---
+
+### 4.7.1 Theorem: Finite-Kernel Quasi-Stationarity {#4.7.1}
+
+:::info[**Finite-Kernel Quasi-Stationarity via Conditional Survival and Convergence on a Finite Active Class**]
+:::
+
+Let $Q$ be the finite substochastic active-to-active matrix of a killed transition, irreducible with Perron root $\lambda\in(0,1)$. Its unique quasi-stationary probability $\nu$ has mean exit time $(1-\lambda)^{-1}$ when used as the initial law, and if $Q$ is primitive the conditioned law converges to $\nu$ exponentially.
+
+**In Plain English:**
+
+Section 4.7.1 formalizes the properties of the QBD theorem regarding finite-kernel quasi-stationarity.
+
+---
+
+### 4.7.2 Lemma: Perron Characterization of the QSD {#4.7.2}
+
+:::info[**Perron Characterization of the QSD via Uniqueness of a Conditioned Stationary Probability**]
+:::
+
+Let $Q$ be a finite irreducible substochastic matrix with Perron root $\lambda>0$. A distribution $\nu$ is quasi-stationary for killing on exit exactly when it is the normalized left Perron eigenvector of $Q$.
+
+**In Plain English:**
+
+Section 4.7.2 formalizes the properties of the QBD lemma regarding perron characterization of the qsd.
+
+---
+
+### 4.7.2.1 Proof: Perron Characterization of the QSD {#4.7.2.1}
+
+:::tip[**Perron Characterization of the QSD via Normalization and the Positive Right Eigenvector**]
+:::
+
+**I. Domain and Objects**
+
+The killed matrix is substochastic on the finite active class (**Perron Characterization of the QSD** <Ref id="4.7.2" label="§4.7.2" />) (**Finite-Kernel Quasi-Stationarity** <Ref id="4.7.1" label="§4.7.1" />).
+
+**II. Construction**
+
+Perron-Frobenius gives positive vectors $\ell,r$ with $\ell Q=\lambda\ell$ and $Qr=\lambda r$. Set $\nu=\ell/(\ell\mathbf1)$. Then
+
+$$
+\nu Q\mathbf1=\lambda,\qquad \frac{\nu Q}{\nu Q\mathbf1}=\nu .
+$$
+
+**III. Uniqueness**
+
+For any quasi-stationary probability $\pi$, put $a=\pi Q\mathbf1>0$, so $\pi Q=a\pi$. Multiplying by $r$ gives
+
+$$
+a\,\pi r=\pi Qr=\lambda\,\pi r .
+$$
+
+Since $r>0$ and $\pi$ has mass one, $\pi r>0$ and $a=\lambda$. The left Perron eigenspace is one-dimensional, so normalization gives $\pi=\nu$.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.7.2.1 formalizes the properties of the QBD proof regarding perron characterization of the qsd.
+
+---
+
+### 4.7.3 Lemma: Geometric Lifetime from the QSD {#4.7.3}
+
+:::info[**Geometric Lifetime from the QSD via Exit-Time Tail under a Quasi-Stationary Initial Law**]
+:::
+
+Let $\nu Q=\lambda\nu$ with $\nu\mathbf1=1$ and $0<\lambda<1$. The first exit time $\tau$ from the active set is geometric under $\nu$, with $\Pr_\nu(\tau>t)=\lambda^t$ for $t\ge0$ and $\mathbb E_\nu[\tau]=(1-\lambda)^{-1}$.
+
+**In Plain English:**
+
+Section 4.7.3 formalizes the properties of the QBD lemma regarding geometric lifetime from the qsd.
+
+---
+
+### 4.7.3.1 Proof: Geometric Lifetime from the QSD {#4.7.3.1}
+
+:::tip[**Survival via Powers of the Killed Matrix**]
+:::
+
+**I. Domain and Objects**
+
+The initial law is the normalized left Perron vector (**Geometric Lifetime from the QSD** <Ref id="4.7.3" label="§4.7.3" />) (**Perron Characterization of the QSD** <Ref id="4.7.2" label="§4.7.2" />).
+
+**II. Survival Mass**
+
+The active unnormalized law after $t$ steps is $\nu Q^t$. Induction on the eigenvector identity gives $\nu Q^t=\lambda^t\nu$, hence $\Pr_\nu(\tau>t)=\nu Q^t\mathbf1=\lambda^t$.
+
+**III. Mean Lifetime**
+
+For positive integer exit time, $\tau=\sum_{t\ge0}\mathbf1_{\{\tau>t\}}$. Taking expectations of the nonnegative sum yields
+
+$$
+\mathbb E_\nu[\tau]=\sum_{t=0}^{\infty}\lambda^t=\frac1{1-\lambda}.
+$$
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.7.3.1 formalizes the properties of the QBD proof regarding geometric lifetime from the qsd.
+
+---
+
+### 4.7.4 Lemma: Conditional Spectral Convergence {#4.7.4}
+
+:::info[**Conditional Spectral Convergence via Exponential Conditional Convergence for a Primitive Killed Matrix**]
+:::
+
+Let $Q$ be primitive and finite with Perron root $\lambda>0$. For each initial law $\pi$ on the active set and every $\eta\in(0,1)$ larger than the ratio of the subdominant spectral radius to $\lambda$, the conditioned law satisfies $\|\pi Q^t/(\pi Q^t\mathbf1)-\nu\|_{\mathrm{TV}}\le C_\eta(\pi)\eta^t$.
+
+**In Plain English:**
+
+Section 4.7.4 formalizes the properties of the QBD lemma regarding conditional spectral convergence.
+
+---
+
+### 4.7.4.1 Proof: Conditional Spectral Convergence {#4.7.4.1}
+
+:::tip[**Conditional Spectral Convergence via Spectral Projection and Control of the Conditioning Denominator**]
+:::
+
+**I. Domain and Objects**
+
+The positive Perron eigenvectors determine the limiting law (**Conditional Spectral Convergence** <Ref id="4.7.4" label="§4.7.4" />) (**Perron Characterization of the QSD** <Ref id="4.7.2" label="§4.7.2" />).
+
+**II. Perron Projection and Remainder**
+
+Normalize the positive right eigenvector by $\nu r=1$. The Perron projection is $r\nu$. The remaining Jordan blocks of $Q/\lambda$ have eigenvalues of modulus smaller than $\eta$. A block of size $m$ with eigenvalue $z$ contributes entries bounded by sums of $\binom{t}{j}|z|^{t-j}$ for $0\le j<m$. For $z\ne0$, dividing by $\eta^t$ bounds each term uniformly since $|z|/\eta<1$. For $z=0$, the block vanishes at $t\ge m$. Thus
+
+$$
+\pi Q^t/\lambda^t=(\pi r)\nu+e_t,\qquad
+\|e_t\|_1\le A_\eta(\pi)\eta^t .
+$$
+
+**III. Normalization**
+
+Write $b=\pi r>0$. Since $|e_t\mathbf1|\le\|e_t\|_1$, for sufficiently large $t$ the denominator $b+e_t\mathbf1$ is at least $b/2$. Subtracting $\nu$ gives
+
+$$
+\frac{\pi Q^t}{\pi Q^t\mathbf1}-\nu
+=\frac{e_t-(e_t\mathbf1)\nu}{b+e_t\mathbf1}.
+$$
+
+The numerator has $\ell^1$ norm at most $2\|e_t\|_1$. Total variation is half that norm after division, so the error is at most $2A_\eta(\pi)\eta^t/b$. Every active state has a positive outgoing active transition under the stated hypotheses. The survival denominators are therefore positive at the finitely many earlier times, which are covered by increasing the constant.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.7.4.1 formalizes the properties of the QBD proof regarding conditional spectral convergence.
+
+---
+
+### 4.7.5 Proof: Finite-Kernel Quasi-Stationarity {#4.7.5}
+
+:::tip[**Finite-Kernel Quasi-Stationarity via Assembly of the Conditioned Kernel Identities**]
+:::
+
+**I. Domain and Objects**
+
+The stated theorem assumes irreducibility and a Perron root in the open unit interval (**Finite-Kernel Quasi-Stationarity** <Ref id="4.7.1" label="§4.7.1" />) (**Finite-Horizon Height Bound** <Ref id="4.6.7" label="§4.6.7" />).
+
+**II. Conditioned Stationarity**
+
+Irreducibility gives a unique normalized positive left eigenvector, and the conditioned update fixes it (**Perron Characterization of the QSD** <Ref id="4.7.2" label="§4.7.2" />).
+
+**III. Exit Time and Convergence**
+
+The left eigenvector gives survival mass $\lambda^t$ and its sum gives the mean lifetime (**Geometric Lifetime from the QSD** <Ref id="4.7.3" label="§4.7.3" />). If the matrix is primitive, its subdominant spectral radius is strictly below $\lambda$. A ratio $\eta$ strictly between the normalized radius and one therefore gives exponential convergence (**Conditional Spectral Convergence** <Ref id="4.7.4" label="§4.7.4" />).
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 4.7.5 formalizes the properties of the QBD proof regarding finite-kernel quasi-stationarity.
 
 ---

@@ -1,0 +1,2 @@
+merge target diagonals: ['v', 'w']
+final target diagonals: []

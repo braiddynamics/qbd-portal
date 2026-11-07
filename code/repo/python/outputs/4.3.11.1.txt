@@ -1,16 +1,5 @@
-Store Comonad Axiom Verification
-==================================================
-Axiom 1: Left Identity (ε ∘ δ = id)
-   Holds: True
-   Result after ε ∘ δ: AnnotatedGraph with annotation: (('old',), 1)
-   Expected (id(Y)):     AnnotatedGraph with annotation: (('old',), 1)
-
-Axiom 2: Right Identity (R_T(ε) ∘ δ = id)
-   Holds: True
-   Result after R_T(ε) ∘ δ: AnnotatedGraph with annotation: (('old',), 1)
-   Expected (id(Y)):         AnnotatedGraph with annotation: (('old',), 1)
-
-Axiom 3: Associativity (δ ∘ δ = R_T(δ) ∘ δ)
-   Holds: True
-   LHS (δ ∘ δ):           AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
-   RHS (R_T(δ) ∘ δ):      AnnotatedGraph with annotation: (((('old',), 1), 1), 1)
+Adjacency patterns: 64
+Global site-pair observation checks: 110592
+Binary transport composition cases: 16
+Transported duplicate-context cases: 8
+Mismatches: 0

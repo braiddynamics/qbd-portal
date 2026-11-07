@@ -36,24 +36,84 @@ Section 9.1.2 formalizes the properties of the QBD lemma regarding rank conditio
 :::tip[**Formal Derivation from Rank Inequality**]
 :::
 
-**I. Rank Definition**
-The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$).  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" /> and  **Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
+**I. Four Commuting Standard Model Directions**
 
-**II. Standard Model Rank**
-The Standard Model gauge group $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$ possesses the following rank structure:
-1.  **Color:** $SU(3)_C$ has rank $r=2$ (two diagonal generators, e.g., $T_3, T_8$).
-2.  **Weak Isospin:** $SU(2)_L$ has rank $r=1$ (one diagonal generator, $T_3$).
-3.  **Hypercharge:** $U(1)_Y$ is abelian with rank $r=1$ (one generator, $Y$).
-
-**III. Embedding Inequality**
-The embedding condition $G_{SM} \subset G_{GUT}$ implies an injection of Lie algebras $\mathfrak{g}_{SM} \hookrightarrow \mathfrak{g}_{GUT}$. Specifically, the Cartan subalgebra $\mathfrak{h}_{SM}$ must be a subalgebra of $\mathfrak{h}_{GUT}$.
-Since the generators of $G_{SM}$ act on distinct quantum numbers (color, isospin, hypercharge), they are mutually commuting and linearly independent in the root space. Thus, the dimension of the commuting subalgebra in $G_{GUT}$ must be at least the sum of the ranks.
+At Lie-algebra level, let
 
 $$
-r(G_{GUT}) \geq r(SU(3)) + r(SU(2)) + r(U(1)) = 2 + 1 + 1 = 4
+\mathfrak g_{SM}=\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak u(1).
 $$
 
-Any simple Lie group with rank strictly less than 4 fails to contain the necessary conserved charges of the Standard Model.
+In the respective summands define
+
+$$
+\begin{gathered}
+C_1=i\operatorname{diag}(1,-1,0),\qquad
+C_2=i\operatorname{diag}(0,1,-1),\\
+L=i\operatorname{diag}(1,-1),\qquad Y=i,\\
+h_1=(C_1,0,0),\quad h_2=(C_2,0,0),\quad
+h_3=(0,L,0),\quad h_4=(0,0,Y).
+\end{gathered}
+$$
+
+These are skew-Hermitian directions in the compact gauge algebras of the embedding problem (**Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" />). Diagonal matrices commute, and the bracket in a direct sum is componentwise, so
+
+$$
+[h_j,h_k]=0\qquad(1\le j,k\le4).
+$$
+
+**II. Independence of the Four Directions**
+
+For real coefficients, the equation $\sum_{j=1}^4a_jh_j=0$ has components
+
+$$
+\begin{aligned}
+a_1C_1+a_2C_2
+ &=i\operatorname{diag}(a_1,-a_1+a_2,-a_2)=0,\\
+a_3L&=i\operatorname{diag}(a_3,-a_3)=0,\\
+a_4Y&=ia_4=0.
+\end{aligned}
+$$
+
+The first diagonal entry gives $a_1=0$, the third gives $a_2=0$, and the remaining components give $a_3=a_4=0$. Their real span $\mathfrak t_{SM}$ is therefore four-dimensional. Exponentiating its diagonal coordinates gives a compact torus, with two independent angles in $SU(3)$, one in $SU(2)$ and one in $U(1)$:
+
+$$
+\begin{aligned}
+\exp(a_1C_1+a_2C_2)
+ &=\operatorname{diag}(e^{ia_1},e^{i(-a_1+a_2)},e^{-ia_2}),\\
+\exp(a_3L)&=\operatorname{diag}(e^{ia_3},e^{-ia_3}),\qquad
+\exp(a_4Y)=e^{ia_4}.
+\end{aligned}
+$$
+
+**III. Transport Through an Embedding**
+
+Let $\phi:G_{SM}\hookrightarrow G_{GUT}$ be the stated embedding of compact gauge groups, with injective derivative $\mathrm d\phi$. If
+
+$$
+\sum_{j=1}^4a_j\mathrm d\phi(h_j)=0,
+$$
+
+then linearity and injectivity give
+
+$$
+\mathrm d\phi\left(\sum_j a_jh_j\right)=0
+\ \Longrightarrow\ \sum_ja_jh_j=0
+\ \Longrightarrow\ a_1=a_2=a_3=a_4=0.
+$$
+
+Also,
+
+$$
+[\mathrm d\phi(h_j),\mathrm d\phi(h_k)]
+=\mathrm d\phi([h_j,h_k])=\mathrm d\phi(0)=0.
+$$
+
+The image $\phi(T_{SM})$ is a four-dimensional torus. A maximal torus of the compact target containing it consequently has dimension at least four. The rank bound is (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />),
+
+$$
+\boxed{\operatorname{rank}G_{GUT}\ge\dim\phi(T_{SM})=2+1+1=4.}
+$$
 
 Q.E.D.
 
@@ -79,29 +139,50 @@ Section 9.1.3 formalizes the properties of the QBD lemma regarding lower rank ex
 :::tip[**Verification of Failure Modes via Low-Rank Algebras**]
 :::
 
-The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />
+**I. Embedding Requirement**
 
-**I. Rank 1 ($A_1$)**
-* **Candidate:** $SU(2)$.
-* **Failure:** The rank $r=1$ violates the lower bound $r \ge 4$. Furthermore, the fundamental representation $\mathbf{2}$ is pseudoreal, preventing the definition of complex chiral representations required for the fermion spectrum.
+Let $G$ be a compact simple candidate with rank $r<4$. Suppose, for contradiction, that a Standard Model gauge embedding exists. Its derivative would inject the four-dimensional commuting torus algebra into the target (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />). Thus its image would satisfy
 
-**II. Rank 2 ($A_2, C_2/B_2, G_2$)**
-* **Candidates:** $SU(3)$, $Sp(4) \cong SO(5)$, $G_2$.
-* **Failure:** The rank $r=2$ violates the lower bound $r \ge 4$.
-    * $SU(3)$ cannot embed $SU(3) \times SU(2)$ ($2 < 3$).
-    * $Sp(4)$ and $G_2$ possess only real or pseudoreal representations, making them unsuitable for chiral gauge theories.
+$$
+\dim\mathrm d\phi(\mathfrak t_{SM})=\dim\mathfrak t_{SM}=4.
+$$
 
-**III. Rank 3 ($A_3, B_3, C_3$)**
-* **Candidate 1: $SU(4)$ ($A_3$).**
-    * **Rank:** $r=3$. This fails the condition $r \ge 4$. While $SU(4)$ contains $SU(3) \times U(1)$ (Pati-Salam color-lepton unification), it lacks the diagonal generator for the weak isospin $SU(2)_L$.
-* **Candidate 2: $SO(7)$ ($B_3$).**
-    * **Representation:** The spinor representation has dimension $2^3 = 8$. Decompositions under subgroups fail to yield 15 fermions.
-    * **Anomaly:** The anomaly coefficient $A(8) \neq 0$ implies a lack of cancellation without mirror fermions.
-* **Candidate 3: $Sp(6)$ ($C_3$).**
-    * **Representation:** Fundamental $\mathbf{6}$. No combination yields the required multiplets.
-    * **Rank:** $r=3$ violates the lower bound.
+**II. Rank Bound in the Target**
 
-**Conclusion:** The set of viable candidates is empty for $r < 4$.
+The image torus is contained in a maximal torus $T_G$. Inclusion of real tangent spaces implies
+
+$$
+\mathrm d\phi(\mathfrak t_{SM})\subseteq\operatorname{Lie}(T_G)
+\ \Longrightarrow\ 4\le\dim\operatorname{Lie}(T_G)
+=\operatorname{rank}G=r.
+$$
+
+Combining the inequalities gives
+
+$$
+4\le r<4,
+$$
+
+a contradiction. This applies to every $r<4$, without any representation-specific assumption (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />).
+
+**III. Low-Rank Cases and Empty Candidate Set**
+
+For the positive integer ranks of a nontrivial compact simple candidate, the possibilities are
+
+$$
+\begin{array}{c|c|c}
+r&\dim\operatorname{Lie}(T_G)&\text{required inequality}\\\hline
+1&1&4\le1\quad\text{false}\\
+2&2&4\le2\quad\text{false}\\
+3&3&4\le3\quad\text{false}
+\end{array}
+$$
+
+Consequently,
+
+$$
+\boxed{\{G:\operatorname{rank}G<4,\quad G_{SM}\hookrightarrow G\}=\varnothing.}
+$$
 
 Q.E.D.
 
@@ -4181,72 +4262,139 @@ Section 9.6.4 formalizes the properties of the QBD lemma regarding seesaw dynami
 :::tip[**Diagonalization of the Mass Matrix Yielding Light via Heavy Eigenstates**]
 :::
 
-The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.  **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> and  **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />
+**I. Real Symmetric Mass Matrix**
 
-**I. Mass Matrix Construction**
-The system is described in the basis $(\nu_L, N_R)$ by the mass matrix $M$:
-
-$$
-M = \begin{pmatrix} M_L & m_D \\ m_D & M_R \end{pmatrix}
-$$
-
-* **$M_L$ (Majorana Mass of $\nu_L$):** As proven in the **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />, the folded braid topology of $\nu_L$ has zero intrinsic writhe and minimal complexity. Thus, the intrinsic mass vanishes: $M_L = 0$.
-* **$M_R$ (Majorana Mass of $N_R$):** The heavy neutrino $N_R$ corresponds to the maximal complexity state allowed by vacuum friction. Its mass is determined by the critical complexity $N_{3,\max}$: $M_R = m_{N_R} \gg m_D$.
-* **$m_D$ (Dirac Mass):** The off-diagonal term represents the interaction transforming $\nu_L$ into $N_R$, mediated by the Higgs mechanism (or topological rewrite $\mathcal{R}_{seesaw}$). Its scale is the electroweak VEV: $m_D \approx v_{EW}$.
-
-Substituting these values:
+In the assumed two-state mass model, write $d=m_D\in\mathbb R$ and $M=M_R>0$, with $M_L=0$ (**Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />). The light label refers to the folded-state candidate (**Folded Topology** <Ref id="9.6.1" label="§9.6.1" />). The heavy label and the mass entries are inputs to the two-state model. The matrix and its characteristic polynomial are
 
 $$
-M = \begin{pmatrix} 0 & m_D \\ m_D & M_R \end{pmatrix}
+\begin{aligned}
+\mathsf M&=\begin{pmatrix}0&d\\d&M\end{pmatrix},\\
+\det(\mathsf M-\lambda I)
+&=\det\begin{pmatrix}-\lambda&d\\d&M-\lambda\end{pmatrix}\\
+&=(-\lambda)(M-\lambda)-d^2
+=\lambda^2-M\lambda-d^2.
+\end{aligned}
 $$
 
-**II. Diagonalization**
-The eigenvalues $\lambda$ satisfy the characteristic equation $\det(M - \lambda I) = 0$:
+Completing the square gives
 
 $$
-\det \begin{pmatrix} -\lambda & m_D \\ m_D & M_R - \lambda \end{pmatrix} = \lambda^2 - M_R \lambda - m_D^2 = 0
+\left(\lambda-\frac M2\right)^2
+=\frac{M^2+4d^2}{4},\qquad
+\Delta=\sqrt{M^2+4d^2},\qquad
+\lambda_\pm=\frac{M\pm\Delta}{2}.
 $$
 
-Solving the quadratic equation yields:
+For $d\ne0$, $\Delta>M$, hence $\lambda_-<0<\lambda_+$. For $d=0$, the eigenvalues are $0,M$.
+
+**II. Explicit Orthogonal Diagonalization**
+
+Choose $\theta\in(-\pi/4,\pi/4)$ by $2\theta=\arctan(2d/M)$, and write $c=\cos\theta$, $s=\sin\theta$. Then
 
 $$
-\lambda_{\pm} = \frac{M_R \pm \sqrt{M_R^2 + 4m_D^2}}{2}
+\cos(2\theta)=\frac M\Delta,\qquad
+\sin(2\theta)=\frac{2d}\Delta,\qquad
+R=\begin{pmatrix}c&s\\-s&c\end{pmatrix},\quad R^TR=I.
 $$
 
-**III. Seesaw Approximation**
-Given the hierarchy $M_R \gg m_D$, the Taylor expansion is evaluated to higher order to capture the precise corrections:
+Both matrix products are
 
 $$
-\sqrt{M_R^2 + 4m_D^2} = M_R \sqrt{1 + \frac{4m_D^2}{M_R^2}} \approx M_R \left(1 + \frac{2m_D^2}{M_R^2} - \frac{2m_D^4}{M_R^4} + \mathcal{O}\left(\frac{m_D^6}{M_R^6}\right)\right)
+\begin{aligned}
+\mathsf M R
+&=\begin{pmatrix}-ds&dc\\dc-Ms&ds+Mc\end{pmatrix},\\
+R^T\mathsf M R
+&=\begin{pmatrix}
+Ms^2-2d s c&d(c^2-s^2)-M s c\\
+d(c^2-s^2)-M s c&Mc^2+2d s c
+\end{pmatrix}.
+\end{aligned}
 $$
 
-Substituting this back into the eigenvalue expression yields the higher-order eigenvalues:
-1.  **Heavy Eigenstate ($N_R$):**
-
-    $$
-    \lambda_+ \approx M_R + \frac{m_D^2}{M_R} - \frac{m_D^4}{M_R^3}
-    $$
-
-2.  **Light Eigenstate ($\nu_L$):**
-
-    $$
-    \lambda_- \approx -\frac{m_D^2}{M_R} \left( 1 - \frac{m_D^2}{M_R^2} \right)
-    $$
-
-**IV. Physical Parameters**
-The physical mass is the absolute value of the light eigenvalue, incorporating the second-order correction:
+The off-diagonal entry vanishes because
 
 $$
-m_{\nu} = |\lambda_-| \approx \frac{m_D^2}{M_R} \left( 1 - \frac{m_D^2}{M_R^2} \right)
+d\cos(2\theta)-\frac M2\sin(2\theta)
+=\frac{dM}\Delta-\frac{Md}\Delta=0.
 $$
 
-The mixing angle $\theta$ is diagonalized exactly. Using the rotation matrix that diagonalizes $M$, we expand the mixing angle in powers of $m_D / M_R$:
+The first diagonal entry is
 
 $$
-\theta \approx \frac{m_D}{M_R} - \frac{m_D^3}{2 M_R^3} + \mathcal{O}\left(\frac{m_D^5}{M_R^5}\right)
+\begin{aligned}
+Ms^2-2d s c
+&=\frac M2(1-\cos(2\theta))-d\sin(2\theta)\\
+&=\frac M2-\frac{M^2}{2\Delta}-\frac{2d^2}\Delta
+=\frac{M-\Delta}{2}=\lambda_-.
+\end{aligned}
 $$
 
-This derivation confirms the Type I Seesaw mechanism arises naturally from the topological disparity, predicting small admixtures consistent with oscillation hierarchies.
+The second is
+
+$$
+Mc^2+2d s c
+=\frac M2+\frac{M^2+4d^2}{2\Delta}
+=\frac{M+\Delta}{2}=\lambda_+.
+$$
+
+Thus $R^T\mathsf M R=\operatorname{diag}(\lambda_-,\lambda_+)$, with normalized eigenvectors $(c,-s)^T$ and $(s,c)^T$.
+
+**III. Exact Light-Mass Formula and Error Bound**
+
+Taking the nonnegative physical mass of the light mode,
+
+$$
+\begin{aligned}
+m_\nu=|\lambda_-|
+&=\frac{\Delta-M}{2}
+=\frac{(\Delta-M)(\Delta+M)}{2(\Delta+M)}\\
+&=\frac{\Delta^2-M^2}{2(\Delta+M)}
+=\frac{2d^2}{\Delta+M}.
+\end{aligned}
+$$
+
+Since $\Delta+M\ge2M$,
+
+$$
+0\le m_\nu\le\frac{d^2}{M}.
+$$
+
+The difference from the leading seesaw expression is
+
+$$
+\begin{aligned}
+\frac{d^2}{M}-m_\nu
+&=\frac{d^2(\Delta-M)}{M(\Delta+M)}
+=\frac{4d^4}{M(\Delta+M)^2}
+\le\frac{d^4}{M^3}.
+\end{aligned}
+$$
+
+Hence $m_\nu=d^2/M+O(d^4/M^3)$ as $d/M\to0$. Also $\lambda_+=M+m_\nu$ exactly.
+
+**IV. Expansion of the Mixing Angle**
+
+For $|2d/M|<1$, integration of the geometric series gives
+
+$$
+\begin{aligned}
+\arctan x
+&=\int_0^x\frac{\mathrm dt}{1+t^2}
+=\int_0^x\sum_{j=0}^{\infty}(-1)^jt^{2j}\,\mathrm dt\\
+&=x-\frac{x^3}{3}+\frac{x^5}{5}+O(x^7),\\
+\theta=\tfrac12\arctan(2d/M)
+&=\frac dM-\frac43\frac{d^3}{M^3}
+ +\frac{16}{5}\frac{d^5}{M^5}+O(d^7/M^7).
+\end{aligned}
+$$
+
+Within the supplied mass matrix, the suppressed eigenvalue and mixing therefore satisfy
+
+$$
+\boxed{m_\nu=\frac{2m_D^2}{M_R+\sqrt{M_R^2+4m_D^2}},\qquad
+0\le\frac{m_D^2}{M_R}-m_\nu\le\frac{m_D^4}{M_R^3},\qquad
+\theta=\tfrac12\arctan(2m_D/M_R).}
+$$
 
 Q.E.D.
 
@@ -4272,34 +4420,63 @@ Section 9.6.5 formalizes the properties of the QBD lemma regarding complexity de
 :::tip[**Derivation of Stress Scaling through Fixed Particle Volumes**]
 :::
 
-**I. Volume Constraint**
-A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />. For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
+**I. Assumed Density Law**
+
+Let $N=N_3>0$ denote the resource count and let the asserted linear density law be $\rho_{local}=c_\rho N$, with a fixed coefficient $c_\rho>0$ (**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). In the fixed-volume version of the model,
 
 $$
-V_{braid} \sim \text{const}
+N_{sites}=c_sN,\qquad V_{braid}=V_0>0,\qquad
+\rho_{local}=\frac{N_{sites}}{V_{braid}}
+=\frac{c_sN}{V_0}=c_\rho N,\qquad c_\rho=\frac{c_s}{V_0}.
 $$
 
-**II. Local Density Scaling**
-The number of active sites (edges/vertices) in the braid scales linearly with the topological complexity $N_3$ (number of 3-cycles).
+The density increase for an integer resource increment $h$ is
 
 $$
-N_{sites} \propto N_3
+\rho_{local}(N+h)-\rho_{local}(N)
+=c_\rho(N+h)-c_\rho N=c_\rho h.
 $$
 
-The local density of topological features $\rho_{local}$ is defined as the number of sites per unit volume:
+**II. Stress Relative to the Vacuum**
+
+With the stated linear response to excess density, let $c_\sigma>0$ and
 
 $$
-\rho_{local} = \frac{N_{sites}}{V_{braid}} \propto \frac{N_3}{V_0} \propto N_3
+\sigma(N)=c_\sigma(\rho_{local}(N)-\rho_3^*)
 $$
 
-**III. Stress Accumulation**
-The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ **Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />.
+(**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />). Substitution yields
 
 $$
-\sigma \propto \rho_{local} - \rho_3^* \propto N_3
+\begin{aligned}
+\sigma(N)&=c_\sigma(c_\rho N-\rho_3^*)
+=c_\sigma c_\rho N-c_\sigma\rho_3^*,\\
+\sigma(N+h)-\sigma(N)
+&=c_\sigma c_\rho h,\\
+\frac{\sigma(N)}{N}
+&=c_\sigma c_\rho-\frac{c_\sigma\rho_3^*}{N}
+\longrightarrow c_\sigma c_\rho.
+\end{aligned}
 $$
 
-As the complexity $N_3$ increases, the local density rises linearly, leading to a linear increase in the topological stress exerted by the vacuum pressure against the braid structure. This stress creates the friction that opposes further growth.
+Thus the exact stress is affine in $N$, and its large-$N$ leading term is linear.
+
+**III. Explicit High-Density Bounds**
+
+If $N\ge2\rho_3^*/c_\rho$, then
+
+$$
+0\le\rho_3^*\le\frac{c_\rho N}{2},\qquad
+\frac{c_\rho N}{2}\le c_\rho N-\rho_3^*\le c_\rho N.
+$$
+
+Multiplication by $c_\sigma>0$ gives
+
+$$
+\boxed{\frac{c_\sigma c_\rho}{2}N\le\sigma(N)
+\le c_\sigma c_\rho N\qquad
+\left(N\ge\frac{2\rho_3^*}{c_\rho}\right).}
+$$
 
 Q.E.D.
 
@@ -4325,43 +4502,75 @@ Section 9.6.6 formalizes the properties of the QBD lemma regarding friction supp
 :::tip[**Demonstration via Instability Onset at Critical Complexity**]
 :::
 
-**I. Maintenance Dynamics**
-The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it.
-* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
+**I. Maintenance and Deletion Rates**
 
-    $$
-    R_{create} \propto N_3 \cdot P_{acc} \propto N_3 e^{-\mu N_3}
-    $$
-
-    (Substituting $\sigma \propto N_3$ from the **Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />).
-* **Deletion Rate ($R_{delete}$):** Proportional to the number of active sites susceptible to decay or unraveling, catalyzed by excess density.
-
-    $$
-    R_{delete} \propto N_3 \cdot \mathcal{Q}_{del} \sim N_3
-    $$
-
-**II. The Halt Condition**
-Growth and stability are possible only as long as the maintenance rate exceeds or balances the deletion rate. The system becomes unstable when:
+Write the rate model used in the argument with its positive coefficients exposed:
 
 $$
-R_{create} < R_{delete}
+R_+(N)=aN e^{-\mu\sigma(N)},\qquad
+R_-(N)=dN,\qquad a,d,\mu>0,\qquad N>0.
 $$
 
-$$
-N_3 e^{-\mu N_3} < \alpha N_3
-$$
-
-where $\alpha$ is a proportionality constant related to the base deletion probability ($\sim 0.5$).
-
-**III. Instability Onset**
-At high $N_3$, the exponential suppression $e^{-\mu N_3}$ dominates.
-There exists a critical complexity $N_{3,crit}$ beyond which the acceptance probability for maintenance moves becomes effectively zero relative to the deletion rate.
+The exponential acceptance factor is the specified friction response (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />). The density-response model gives
 
 $$
-N_3 > N_{3,\text{crit}} \implies \text{Collapse}
+\sigma(N)=c_\sigma c_\rho N-c_\sigma\rho_3^*,\qquad
+c_\sigma,c_\rho>0
 $$
 
-This imposes a hard upper bound on the complexity (and thus mass) of any stable topological particle.
+(**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). Define
+
+$$
+A=a e^{\mu c_\sigma\rho_3^*}>0,\qquad
+\beta=\mu c_\sigma c_\rho>0.
+$$
+
+Then $R_+(N)=A N e^{-\beta N}$.
+
+**II. Exact Rate Comparison**
+
+For $N>0$,
+
+$$
+\begin{aligned}
+R_+(N)<R_-(N)
+&\ \Longleftrightarrow\ A N e^{-\beta N}<dN\\
+&\ \Longleftrightarrow\ e^{-\beta N}<d/A\\
+&\ \Longleftrightarrow\ -\beta N<\ln(d/A)\\
+&\ \Longleftrightarrow\ N>\frac{\ln(A/d)}{\beta}.
+\end{aligned}
+$$
+
+If $A>d$, equality occurs at the positive threshold $N_{crit}=\ln(A/d)/\beta$. If $A\le d$, then for every $N>0$,
+
+$$
+\frac{R_+(N)}{R_-(N)}=\frac Ad e^{-\beta N}<1,
+$$
+
+so the maintenance deficit already holds throughout the positive interval.
+
+**III. Existence of a Finite Upper Interval**
+
+Let
+
+$$
+N_* =\max\left\{0,\frac{\ln(A/d)}{\beta}\right\}.
+$$
+
+Every integer $N\ge\lfloor N_*\rfloor+1$ satisfies $N>N_*$ and hence $R_+(N)<R_-(N)$. More quantitatively, for any $0<\varepsilon<1$,
+
+$$
+N>\frac{\ln(A/(d\varepsilon))}{\beta}
+\ \Longrightarrow\
+\frac{R_+(N)}{R_-(N)}<\varepsilon.
+$$
+
+Thus, in this rate model,
+
+$$
+\boxed{\lim_{N\to\infty}\frac{R_+(N)}{R_-(N)}=0,\qquad
+N>N_*\ \Longrightarrow\ R_+(N)<R_-(N).}
+$$
 
 Q.E.D.
 
@@ -4459,7 +4668,7 @@ $$
 
 **II. Dimensional Scaling**
 The mass scale is anchored to the Planck mass $M_{Pl}$ but suppressed by the exponential friction factor over the effective dimension $d=4$.
-The suppression factor derives from the instanton action in the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />:
+The suppression factor derives from the instanton action in the **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />:
 
 $$
 M_R \sim M_{Pl} \cdot e^{-c/\mu}

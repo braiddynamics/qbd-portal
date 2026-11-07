@@ -9,16 +9,10 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 
 ### 5.1.1 Theorem: Extensive Entropy {#5.1.1}
 
-:::info[**Linear Scaling of the Configuration Space by Vertex Count**]
+:::info[**Extensive Entropy via Conditional Extensive Entropy for a Block Representation**]
 :::
 
-Let $\Omega_N$ denote the cardinality of the set of all axiomatically compliant causal graphs on $N$ vertices. The system exhibits **Extensive Entropy**, defined by the asymptotic scaling law of the total entropy $S(N) \equiv \ln \Omega_N$:
-
-$$
-S(N) = c \cdot N + o(N)
-$$
-
-where the coefficient $c > 0$ is the **Specific Entropy per Event** determined by local constraint density, and $o(N)$ represents sub-extensive corrections that vanish in the thermodynamic limit $\lim_{N \to \infty} S(N)/N = c$.
+Let $P_N$ be the uniform law on $\Omega_N$ finite configurations, encoded bijectively by a block tuple, and assume the sum of the block marginal entropies is $cN+o(N)$ and their total correlation is $o(N)$. Then $\log\Omega_N=cN+o(N)$.
 
 **In Plain English:**  
 Section 5.1.1 formalizes the properties of the QBD theorem regarding extensive entropy.
@@ -27,16 +21,10 @@ Section 5.1.1 formalizes the properties of the QBD theorem regarding extensive e
 
 ### 5.1.2 Lemma: Spatial Cluster Decomposition {#5.1.2}
 
-:::info[**Exponential Decay of Mutual Information through Disjoint Subregions**]
+:::info[**Spatial Cluster Decomposition via Distributional Factorization under a Total-Correlation Bound**]
 :::
 
-Let $R_A$ and $R_B$ be disjoint subregions of a causal graph $G_t$ at the homeostatic fixed point, and let $d(R_A, R_B)$ denote the geodesic graph distance between them. The subregions satisfy **Quasi-Independence** if the Mutual Information $I(R_A; R_B)$ between their configuration states is bounded by the exponential decay envelope:
-
-$$
-I(R_A; R_B) \leq K \cdot \exp\left(-\frac{d(R_A, R_B)}{\xi}\right)
-$$
-
-where $\xi$ is the finite correlation length derived by **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> and $K$ is a normalization constant, ensuring that the joint configuration space factorizes asymptotically as $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$ in the limit $d(R_A, R_B) \gg \xi$.
+Let $P$ be a finite joint block law with marginals $P_i$ and product law $P_\otimes=\bigotimes_iP_i$. Then $\|P-P_\otimes\|_{\mathrm{TV}}\le\sqrt{\operatorname{TC}(P)/2}$, where total correlation is the relative entropy to $P_\otimes$ in natural units.
 
 **In Plain English:**  
 Section 5.1.2 formalizes the properties of the QBD lemma regarding spatial cluster decomposition.
@@ -45,40 +33,35 @@ Section 5.1.2 formalizes the properties of the QBD lemma regarding spatial clust
 
 ### 5.1.2.1 Proof: Spatial Cluster Decomposition {#5.1.2.1}
 
-:::tip[**Derivation of Quasi-Independence from Correlation Decay**]
+:::tip[**Spatial Cluster Decomposition via Product Relative Entropy and Pinsker's Inequality**]
 :::
 
-**I. Mutual Information Bound**
+**I. Domain and Objects**
 
-Let $R_A$ and $R_B$ be disjoint subregions of the causal graph separated by a geodesic distance $d = d(R_A, R_B)$, evaluated for **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />. The mutual information $I(R_A; R_B)$ between their configuration states is bounded by the sum of pairwise connected correlation functions between vertices in $R_A$ and $R_B$:
+The finite configuration representation supplies the joint block law (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />) (**Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" />).
 
-$$
-I(R_A; R_B) \le \frac{1}{2} \sum_{u \in R_A} \sum_{v \in R_B} \langle O_u O_v \rangle_c^2
-$$
+**II. Support and Relative Entropy**
 
-**II. Exponential Decay Insertion**
-
-The pairwise connected correlation functions are bounded under **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />. Substituting the exponential envelope $\langle O_u O_v \rangle_c \le C \exp\left(-\frac{d(u, v)}{\xi}\right)$ into the double sum yields:
+If $P(x)>0$, then $P_i(x_i)\ge P(x)>0$ for each $i$. Expanding the logarithm gives
 
 $$
-I(R_A; R_B) \le \frac{1}{2} C^2 \sum_{u \in R_A} \sum_{v \in R_B} \exp\left(-\frac{2 d(u, v)}{\xi}\right)
+\begin{aligned}
+D(P\|P_\otimes)
+&=\sum_x P(x)\left(\log P(x)-\sum_i\log P_i(x_i)\right)\\
+&=-H(P)-\sum_i\sum_{x_i}P_i(x_i)\log P_i(x_i)\\
+&=\sum_i H(P_i)-H(P)=\operatorname{TC}(P).
+\end{aligned}
 $$
 
-**III. Geodesic Distance Minimization**
+**III. Distributional Bound**
 
-Under the triangle inequality, the geodesic distance satisfies $d(u, v) \ge d(R_A, R_B) = d$. The double sum is bounded by the product of the subregion volumes scaled by the minimum distance decay:
+Pinsker's inequality in natural units gives
 
 $$
-I(R_A; R_B) \le \frac{1}{2} C^2 |R_A| |R_B| \exp\left(-\frac{2d}{\xi}\right)
+2\|P-P_\otimes\|_{\mathrm{TV}}^2\le D(P\|P_\otimes).
 $$
 
-**IV. Quasi-Stationary Factorization**
-
-Let $K = \frac{1}{2} C^2 |R_A| |R_B|$. The mutual information is bounded by $K \exp\left(-\frac{2d}{\xi}\right) \le K \exp\left(-\frac{d}{\xi}\right)$. In the conditioned active Quasi-Stationary Distribution where mean **3-cycle** density stabilizes at $\langle \rho \rangle_{\mathrm{QSD}} \approx 0.092$ and median density is $\rho_{\mathrm{med,QSD}} = 0.080$, this exponential bound guarantees that non-adjacent clusters decouple.
-
-**V. Synthesis and Asymptotic Independence**
-
-In the asymptotic limit $d(R_A, R_B) \gg \xi$, the mutual information vanishes strictly ($I(R_A; R_B) \to 0$). The joint configuration space factorizes into independent local factors $\Omega(R_A \cup R_B) \approx \Omega(R_A) \cdot \Omega(R_B)$, establishing spatial cluster decomposition.
+Taking nonnegative square roots gives the claimed estimate.
 
 Q.E.D.
 
@@ -89,10 +72,10 @@ Section 5.1.2.1 formalizes the properties of the QBD proof regarding spatial clu
 
 ### 5.1.3 Lemma: Correlation Decay {#5.1.3}
 
-:::info[**Decay via Geometric Covariance**]
+:::info[**Conditional Decay from a Summable Walk Representation**]
 :::
 
-Assume a causal graph $G$ satisfies the conditions of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> under acyclic effective causality. Under this configuration, the propagation probability $P(u \leftrightarrow v)$ of a causal constraint between two vertices $u$ and $v$ separated by an undirected distance $r$ satisfies the asymptotic exponential decay relation $P(u \leftrightarrow v) \sim (d_{\max} \rho)^r$, and within the **Sparse Phase** where the edge density satisfies $\rho < 1/d_{\max}$, the correlation length $\xi = -1 / \ln(d_{\max} \rho)$ is finite and the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$ as established by **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+Let a two-point quantity at distance $r\ge1$ be bounded by a sum of nonnegative path weights, with at most $D(D-1)^{L-1}$ contributing length-$L$ paths and weight at most $Ap^L$ per path. If $D\ge2$ and $(D-1)p<1$, the quantity is bounded above by $ADp((D-1)p)^{r-1}/(1-(D-1)p)$.
 
 **In Plain English:**  
 Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation decay.
@@ -101,74 +84,28 @@ Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation d
 
 ### 5.1.3.1 Proof: Correlation Decay {#5.1.3.1}
 
-:::tip[**Formal Derivation of Correlation Decay via Geometric Series Convergence**]
+:::tip[**Correlation Decay via Geometric Summation of Conditional Path Weights**]
 :::
 
-**I. Path-Sum Setup**
+**I. Domain and Objects**
 
-Let $\langle O_u O_v \rangle_c$ denote the connected correlation function between local operators at vertices $u$ and $v$, defined as proportional to the weighted sum over all self-avoiding directed paths $\pi$ connecting them:
+The path count separates first-step choices from later non-backtracking choices (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />) (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />).
 
-$$
-\langle O_u O_v \rangle_c = K \sum_{\pi: u \to v} w(\pi)
-$$
+**II. First Edge and Subsequent Choices**
 
-where $K$ is a finite normalization constant. In the high-temperature vacuum phase, evaluated for **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, the weight $w(\pi)$ of each path decays exponentially with its length $\ell(\pi)$ due to the disorder average as a function of the edge density parameter $\rho$:
+A non-backtracking path has at most $D$ choices for its first edge and $D-1$ for each later edge. Every path joining the specified vertices has length at least $r$.
 
-$$
-w(\pi) = \rho^{\ell(\pi)}
-$$
+**III. Tail Summation**
 
-**II. Branching Analysis**
-
-From the uniqueness of the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> as the vacuum state, the graph $G_0$ exhibits a locally tree-like topology with a finite branching factor $b$ bounded by the maximum vertex degree $d_{\max}$. For a distance $d = \text{dist}(u, v)$, the number of simple paths $N(L)$ of length $L \ge d$ satisfies the scaling relation $N(L) \sim b^{L-d}$, where the path must traverse the $d$ specific radial steps, with transverse fluctuations limited by the tree topology. The total correlation function aggregates contributions from all path lengths $L \ge d$, implying the approximation:
+With $q=(D-1)p$, the weighted tail is bounded by
 
 $$
-\langle O_u O_v \rangle_c \approx K \sum_{L=d}^{\infty} b^{L-d} \rho^L
+\sum_{L=r}^\infty D(D-1)^{L-1}Ap^L
+=A D p\sum_{L=r}^\infty q^{L-1}
+=\frac{A D p\,q^{r-1}}{1-q}.
 $$
 
-**III. Geometric Series Bound**
-
-Substituting the bound $b \le d_{\max}$ and factoring the term $\rho^d$ from the summation yields:
-
-$$
-\langle O_u O_v \rangle_c \le K \rho^d \sum_{k=0}^{\infty} (d_{\max} \rho)^k
-$$
-
-The sub-percolation constraint $d_{\max}\rho < 1$ implies convergence of the geometric series to the finite constant $A = (1 - d_{\max}\rho)^{-1}$, which establishes the relation:
-
-$$
-\langle O_u O_v \rangle_c \le K A \rho^d \le K A (d_{\max}\rho)^d = K A \exp(d \ln(d_{\max}\rho))
-$$
-
-**IV. Correlation Length and Spatial Envelope**
-
-Define the correlation length $\xi$ as the negative inverse logarithm of the product of the maximum degree and the edge density parameter:
-
-$$
-\xi = -\frac{1}{\ln(d_{\max}\rho)}
-$$
-
-Substitution of this definition into the exponential expression yields the spatial decay envelope:
-
-$$
-\langle O_u O_v \rangle_c \le K A \exp\left(-\frac{d}{\xi}\right)
-$$
-
-The mutual information $I(u; v)$ between the local states is bounded above by the square of the connected correlation function (for Gaussian fluctuations):
-
-$$
-I(u; v) \le \frac{1}{2} \langle O_u O_v \rangle_c^2
-$$
-
-This establishes the exponential decay relation:
-
-$$
-I(u; v) \le \frac{1}{2} K^2 A^2 \exp\left(-\frac{2d}{\xi}\right)
-$$
-
-**V. Conclusion**
-
-The exponential decay of the connected correlation function establishes that the mutual information $I(R_i; R_j)$ satisfies the limit $I(R_i; R_j) \to 0$ for spatial regions separated by distances greater than $\xi$.
+When $p=0$, all positive-length weights vanish.
 
 Q.E.D.
 
@@ -177,156 +114,135 @@ Section 5.1.3.1 formalizes the properties of the QBD proof regarding correlation
 
 ---
 
-### 5.1.4 Proof: Extensive Entropy {#5.1.4}
+### 5.1.4 Lemma: Gaussian Mutual Information {#5.1.4}
 
-:::tip[**Formal Derivation via Partitioning and Limits**]
+:::info[**Gaussian Mutual Information via Mutual Information under a Gaussian Block Law**]
 :::
 
-**I. Volume Decomposition**
+Let $(X,Y)$ have a nondegenerate joint Gaussian law with covariance blocks $A,B$ and cross-covariance $C$. For $M=A^{-1/2}CB^{-1/2}$ with singular values $s_j<1$, the mutual information is $-\frac12\sum_j\log(1-s_j^2)$ and is at most $\|M\|_{\mathrm F}^2/(2(1-s_*^2))$ when all $s_j\le s_*<1$.
 
-Partition the graph $G_N$ into a set of $M$ sub-volumes $\{V_1, V_2, \dots, V_M\}$ satisfying **Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />. The characteristic size of each volume is set by the correlation length $\xi$ derived via **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />:
+**In Plain English:**
 
-$$
-|V_k| \approx V_\xi \sim \xi^3, \qquad M = \frac{N}{V_\xi}
-$$
-
-**II. Partition Function Factorization**
-
-Let $\Omega_{total}$ be the cardinality of the global configuration space. Due to the exponential decay of correlations ($\mathrm{e}^{-d/\xi}$), the mutual information between non-adjacent volumes vanishes:
-
-$$
-I(V_i; V_j) \approx 0 \quad \text{for} \quad \text{dist}(V_i, V_j) \gg \xi
-$$
-
-The global phase space volume approximates the product of local volumes:
-
-$$
-\Omega_{total} \approx \prod_{k=1}^{M} \Omega(V_k)
-$$
-
-**III. Logarithmic Additivity**
-
-The total entropy is the logarithm of the phase space volume:
-
-$$
-S_{total} = \ln \Omega_{total} \approx \ln \left( \prod_{k=1}^{M} \Omega(V_k) \right) = \sum_{k=1}^{M} \ln \Omega(V_k)
-$$
-
-**IV. Local Finiteness and Degree Bounds**
-
-Each sub-volume $V_k$ contains a finite number of vertices. Local degree bounds strictly constrain the number of possible subgraphs. For a volume of size $v$, the local entropy $S_{local} = \ln \Omega(V_k)$ is finite:
-
-$$
-\Omega(V_k) \le 2^{|V_k|^2}
-$$
-
-**V. Homogeneity Limit and Specific Entropy**
-
-In the equilibrium vacuum, the system is statistically homogeneous across correlation volumes: $S(V_k) = S_{local}$ for all $k$. Substituting into the sum:
-
-$$
-S_{total} \approx \sum_{k=1}^{M} S_{local} = M \cdot S_{local} = \left( \frac{N}{V_\xi} \right) S_{local} = c \cdot N
-$$
-
-where $c = S_{local}/V_\xi$ is the specific entropy per event. Boundary interactions scale sub-extensively ($\sim N^{2/3}$), vanishing relative to the bulk term in the thermodynamic limit ($N \to \infty$).
-
-Q.E.D.
-
-**In Plain English:**  
-Section 5.1.4 formalizes the properties of the QBD proof regarding extensive entropy.
+Section 5.1.4 formalizes the properties of the QBD lemma regarding gaussian mutual information.
 
 ---
 
-### 5.1.4.1 Calculation: Boundary Correction {#5.1.4.1}
+### 5.1.4.1 Proof: Gaussian Mutual Information {#5.1.4.1}
 
-:::note[**Computational Verification through Subextensive Boundary Terms using Lattice Simulation**]
+:::tip[**Gaussian Mutual Information via Schur Complement and a Logarithmic Bound**]
 :::
 
-Computational verification of the subextensive boundary term and verification of the independence assumption established by **Extensive Entropy** <Ref id="5.1.4" label="§5.1.4" /> is based on the following protocols:
+**I. Domain and Objects**
 
-1.  **Lattice Construction:** The algorithm generates a toroidal grid graph of size $N$ and partitions it into $\sqrt{N}$ blocks to mimic correlation volumes, satisfying the partition defined in the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />.
-2.  **Edge Counting:** The protocol iterates through all edges in the graph, identifying the block coordinates of each node. Edges connecting nodes in different blocks are flagged as boundary edges.
-3.  **Scaling Analysis:** The metric computes the fraction of boundary edges relative to the total edge count across a range of system sizes $N \in [100, 10000]$ to verify the vanishing surface-to-volume ratio.
+Joint-versus-marginal information is evaluated here for two Gaussian blocks (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />).
+
+**II. Covariance Determinant**
+
+The joint covariance has determinant $\det A\det(B-C^\top A^{-1}C)$ by block elimination. Factoring $B^{1/2}$ gives
+
+$$
+\det\Sigma=\det A\,\det B\,\det(I-M^\top M).
+$$
+
+Positive definiteness gives $I-M^\top M>0$.
+
+**III. Information and the Singular Values**
+
+Subtracting the Gaussian differential entropies cancels the dimension-dependent constants, so
+
+$$
+I(X;Y)=\tfrac12\log\frac{\det A\det B}{\det\Sigma}
+=-\tfrac12\sum_j\log(1-s_j^2).
+$$
+
+For $0\le z\le s_*^2$, $-\log(1-z)=\int_0^z(1-u)^{-1}du\le z/(1-s_*^2)$. Summing with $z=s_j^2$ gives the stated Frobenius bound.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 5.1.4.1 formalizes the properties of the QBD proof regarding gaussian mutual information.
+
+---
+
+### 5.1.5 Proof: Extensive Entropy {#5.1.5}
+
+:::tip[**Extensive Entropy via Entropy Decomposition on the Encoded Configuration Space**]
+:::
+
+**I. Joint Entropy**
+
+Uniformity on the configurations gives $H(P_N)=\log\Omega_N$. A bijective block representation preserves that entropy. For the block law,
+
+$$
+H(P_N)=\sum_i H(P_{N,i})-\operatorname{TC}(P_N)
+$$
+
+by the relative entropy identity (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />).
+
+**II. Subextensive Correction**
+
+Write $\sum_i H(P_{N,i})=cN+a_N$ and $\operatorname{TC}(P_N)=b_N$ with $a_N/N\to0$ and $b_N/N\to0$. Then
+
+$$
+\frac{\log\Omega_N}{N}-c=\frac{a_N-b_N}{N}\longrightarrow0.
+$$
+
+**III. Scope of the Auxiliary Estimates**
+
+The walk sum is an upper bound under path domination (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />). Gaussian pairs obey the determinant estimate in their own domain (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />). The extensive entropy calculation uses the total correlation of the full block law as its explicit premise.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 5.1.5 formalizes the properties of the QBD proof regarding extensive entropy.
+
+---
+
+### 5.1.5.1 Calculation: Boundary Correction {#5.1.5.1}
+
+:::note[**Boundary Correction via Block Entropy for an Explicit Shared-Bit Model**]
+:::
+
+Verification of entropy accounting in the shared-bit model (**Extensive Entropy** <Ref id="5.1.5" label="§5.1.5" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />) is based on the following protocols:
+
+1.  **Law:** Use independent private bits in each block and one common bit shared by all blocks.
+2.  **Entropy:** Count the joint and marginal support sizes and compute their entropies in bits.
+3.  **Scaling:** Check the exact total correlation and its ratio to the total number of block positions.
 
 ```python
-import networkx as nx
-import numpy as np
-import pandas as pd
+from fractions import Fraction
 
-def boundary_fraction(N: int):
-    """Compute fraction of edges crossing block boundaries in a 2D toroidal lattice."""
-    side = int(np.sqrt(N))
-    if side * side != N:
-        raise ValueError("N must be a perfect square for a square toroidal grid.")
 
-    # Create toroidal 2D grid graph
-    G = nx.grid_2d_graph(side, side, periodic=True)
-    # Relabel nodes to linear indices 0..N-1
-    mapping = {(i, j): i * side + j for i in range(side) for j in range(side)}
-    G = nx.relabel_nodes(G, mapping)
-
-    total_edges = G.number_of_edges()
-
-    # Block size ≈ side // 4 (mimics correlation volume)
-    block_side = max(2, side // 4)
-    blocks_per_side = side // block_side
-
-    boundary_edges = 0
-
-    # Iterate over all edges and count those crossing block boundaries
-    for u, v in G.edges():
-        # Block coordinates of u and v
-        block_u = (u // side // block_side, (u % side) // block_side)
-        block_v = (v // side // block_side, (v % side) // block_side)
-
-        if block_u != block_v:
-            boundary_edges += 1
-
-    # Each edge counted once (undirected graph)
-    fraction = boundary_edges / total_edges if total_edges > 0 else 0.0
-
-    # Relative correction term (as in original)
-    rel_correction = np.sqrt(N) * np.log(total_edges + 1) / (N * np.log(2) + 1e-10)
-
-    return {
-        'N': N,
-        'Boundary Edge Fraction': fraction,
-        'Relative Correction': rel_correction
-    }
-
-# Perfect-square lattice sizes
-sizes = [100, 400, 900, 1600, 2500, 3600, 4900, 6400, 8100, 10000]
-results = [boundary_fraction(N) for N in sizes]
-
-df = pd.DataFrame(results)
-
-print("=" * 54)
-print(df.round(4).to_markdown(index=False, tablefmt="github"))
+for blocks in (2, 4, 8, 16):
+    private_bits = blocks
+    positions = blocks * (private_bits + 1)
+    joint_support = 2 ** (blocks * private_bits + 1)
+    marginal_support = 2 ** (private_bits + 1)
+    joint_entropy = joint_support.bit_length() - 1
+    summed_entropy = blocks * (marginal_support.bit_length() - 1)
+    correction = summed_entropy - joint_entropy
+    assert correction == blocks - 1
+    print(f"{blocks:2d} blocks: correction={correction:2d}, correction/size={Fraction(correction, positions)}")
 ```
 
 **Simulation Results:**
 
 ```text
-======================================================
-|     N |   Boundary Edge Fraction |   Relative Correction |
-|-------|--------------------------|-----------------------|
-|   100 |                   0.5    |                0.7651 |
-|   400 |                   0.2    |                0.4823 |
-|   900 |                   0.1667 |                0.3605 |
-|  1600 |                   0.1    |                0.2911 |
-|  2500 |                   0.1    |                0.2458 |
-|  3600 |                   0.0667 |                0.2136 |
-|  4900 |                   0.0714 |                0.1894 |
-|  6400 |                   0.05   |                0.1705 |
-|  8100 |                   0.0556 |                0.1554 |
-| 10000 |                   0.04   |                0.1429 |
+ 2 blocks: correction= 1, correction/size=1/6
+ 4 blocks: correction= 3, correction/size=3/20
+ 8 blocks: correction= 7, correction/size=7/72
+16 blocks: correction=15, correction/size=15/272
 ```
 
 **Conclusion:**
-The computational results confirm that the fraction of boundary edges drops from $0.50$ at $N=100$ to $0.04$ at $N=10,000$. This validates that for large systems, the vast majority of interactions are internal to the quasi-independent volumes. The vanishing boundary term justifies the additive approximation $S \approx \sum S_{local}$, confirming that the extensive bulk term dominates regardless of emergent dimension.
 
-**In Plain English:**  
-Section 5.1.4.1 formalizes the properties of the QBD calculation regarding boundary correction.
+The explicit shared-bit law confirms the total-correlation decomposition and shows the diminishing correction per block position.
+
+**In Plain English:**
+
+Section 5.1.5.1 formalizes the properties of the QBD calculation regarding boundary correction.
 
 ---
 
@@ -335,14 +251,15 @@ Section 5.1.4.1 formalizes the properties of the QBD calculation regarding bound
 :::tip[**Decomposition of the Net Topological Current into Creation via Deletion**]
 :::
 
-The time evolution of the system is governed by the **Net Topological Current**, denoted $J_{net}$, acting on the population of Geometric Quanta $N_3(t)$. The current decomposes into two opposing **Thermodynamic Fluxes**:
+Let **Thermodynamic Fluxes** specify a homogeneous mean-field closure for the intensive density $\rho=N_3/N$. The baseline driven balance used here is
 
 $$
-\frac{dN_3}{dt} = J_{in} - J_{out}
+\dot\rho=C(\rho)-D_0(\rho),\qquad
+C(\rho)=(\Lambda+9\rho^2)e^{-6\mu\rho},\qquad
+D_0(\rho)=\tfrac12\rho(1+6\lambda\rho).
 $$
 
-1.  **Creation Flux ($J_{in}$):** The rate of nucleation for new **3-cycles** via the closure of compliant **2-path** precursors. This is driven by both the intrinsic **Vacuum Pressure** ($\Lambda$) and the **Geometric Autocatalysis** of the graph.
-2.  **Deletion Flux ($J_{out}$):** The rate of dissolution for existing **3-cycles** into the vacuum. This process acts as the entropic restoring force, modulated by the **Catalytic Stress** of the local environment.
+The precursor product, candidate-conditioned deterministic stress $6\rho$, drive $\Lambda$ and omission of deletion damping in $D_0$ are explicit constitutive closures. The microscopic kernel instead retains damping and the actual candidate/triangle counts (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Its unsaturated zero-offset scalar approximation is $D(\rho)=D_0(\rho)e^{-6\mu\rho}$, which is distinct from $D_0$. A physical self-stress floor of two defines another expansion point. None of these closures is identified with an exact expectation over arbitrary graph states.
 
 **In Plain English:**  
 Section 5.2.1 formalizes the properties of the QBD definition regarding thermodynamic fluxes.
@@ -354,19 +271,7 @@ Section 5.2.1 formalizes the properties of the QBD definition regarding thermody
 :::info[**Establishment of the Fundamental Equation of Geometrogenesis via Macroscopic Evolution**]
 :::
 
-Let the time evolution of the local cycle density field $\rho_i(t) = s_i(t)/3$ across vertices $i \in V(G)$ be governed by the network master equation with dynamic combinatorial graph Laplacian $\mathcal{L}_G(t) = \mathbf{D}_{\mathrm{deg}}(t) - \mathbf{A}(t)$ and demographic absorbing noise:
-
-$$
-\frac{\mathrm{d}\rho_i}{\mathrm{d}t} = -D (\mathcal{L}_G(t) \boldsymbol{\rho})_i - \tfrac{1}{2}\rho_i + (9 - 3\lambda_0)\rho_i^2 - 54\mu_0\rho_i^3 + \sqrt{\Gamma \rho_i}\,\xi_i(t)
-$$
-
-where $\Gamma \approx \frac{1}{4N}$ is the demographic noise amplitude, mapping the discrete substrate to the Directed Percolation (DP) absorbing universality class, whose homogeneous mean-field limit reduces to the **Fundamental Equation of Geometrogenesis**:
-
-$$
-\frac{\mathrm{d}\rho}{\mathrm{d}t} = (\Lambda + 9\rho^2) \mathrm{e}^{-6\mu\rho} - \tfrac{1}{2}\rho (1 + 6\lambda\rho)
-$$
-
-where $\Lambda$ is the baseline vacuum drive, $9\rho^2$ is the autocatalytic precursor density, $\mathrm{e}^{-6\mu\rho}$ is the steric friction factor, and $\frac{1}{2}\rho(1 + 6\lambda\rho)$ is the catalytic decay rate.
+Given the specified homogeneous precursor, deterministic-stress and baseline deletion closures (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />), the following holds: the net intensive drift is $F(\rho)=(\Lambda+9\rho^2)e^{-6\mu\rho}-\tfrac12\rho(1+6\lambda\rho)$. A density-dependent jump model with prescribed extensive rates has the corresponding jump-moment scaling; microscopic convergence and physical phase identification require additional hypotheses.
 
 **In Plain English:**  
 Section 5.2.2 formalizes the properties of the QBD theorem regarding macroscopic evolution.
@@ -378,11 +283,7 @@ Section 5.2.2 formalizes the properties of the QBD theorem regarding macroscopic
 :::info[**Probability of Spontaneous Closure via the Vacuum**]
 :::
 
-Assume the vacuum state constitutes a directed tree with zero geometric density $\rho = 0$, binary branching factor $b = 2$, and interaction volume $V_{\text{int}} = 6$. Then the vacuum permittivity $\Lambda$ satisfies the relation:
-
-$$
-\Lambda \approx 2^{-V_{\text{int}}} = 2^{-6} = \frac{1}{64} \approx 0.0156
-$$
+Let each auxiliary continuum injection attempt use six independent fair binary decisions and succeed for one specified assignment. If attempts occur at intensive rate $\nu$, the prescribed source is $\Lambda=\nu 2^{-6}$; with the reference clock $\nu=1$, this source is $\Lambda_0=1/64$ (**Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />).
 
 **In Plain English:**  
 Section 5.2.3 formalizes the properties of the QBD lemma regarding vacuum permittivity ($\lambda$).
@@ -394,41 +295,31 @@ Section 5.2.3 formalizes the properties of the QBD lemma regarding vacuum permit
 :::tip[**Combinatorial Counting via Tree Enumeration**]
 :::
 
-**I. Setup and Coordination Structure**
+**I. Probability Space**
 
-Let $G_0$ denote the initial vacuum state, satisfying **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> and evaluated for **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />, structured as a directed Regular Bethe Fragment with coordination number $k = 3$. Every internal vertex $v$ possesses exactly **1** incoming edge and **2** outgoing edges.
-
-**II. Combinatorial Derivation**
-
-Let a compliant **2-path** denote a directed path sequence $u \to v \to w$ satisfying $(u, w) \notin E$. For every internal vertex $v$, a directed path exists from the parent vertex $u$ to each child vertex $w_1, w_2$. The tree topology yields the local product relation:
+Use the six-decision probability space (**Geometric Self-Energy** <Ref id="4.4.5" label="§4.4.5" />). For a specified assignment $b\in\{0,1\}^6$, independence and fairness give
 
 $$
-N_{\text{paths}}(v) = k_{\text{in}}(v) \times k_{\text{out}}(v) = 1 \times 2 = 2
+p_b=\Pr(B_1=b_1,\ldots,B_6=b_6)
+=\prod_{j=1}^6\frac12=\frac1{64}.
 $$
 
-The acyclicity constraint implies that the closing edge $(u, w)$ is not an element of $E$. This establishes that every internal vertex hosts exactly **2** compliant paths.
+**II. Rate Normalization**
 
-**III. Density Accumulation**
-
-For a directed tree with binary branching and $N$ total vertices, the number of internal vertices scales asymptotically as $N/2$. This configuration yields the total number of compliant paths:
+For an auxiliary Poisson attempt process with mean $\nu\,\mathrm{d}t$ in an interval of length $\mathrm{d}t$, independent marking gives
 
 $$
-N_{\text{total}} \approx 2 \cdot \left(\frac{N}{2}\right) = N
+\mathbb E[N_{\mathrm{success}}(\mathrm{d}t)]
+=\mathbb E[\mathbb E(N_{\mathrm{success}}(\mathrm{d}t)\mid N_{\mathrm{attempt}})]
+=p_b\mathbb E[N_{\mathrm{attempt}}(\mathrm{d}t)]
+=\frac{\nu}{64}\,\mathrm{d}t.
 $$
 
-The selection of a specific path for closure depends on the information depth of the interaction.
+Consequently $\Lambda=\lim_{\mathrm{d}t\downarrow0}\mathbb E[N_{\mathrm{success}}(\mathrm{d}t)]/\mathrm{d}t=\nu/64$ in this auxiliary source model.
 
-**IV. Binary Boundary Probability**
+**III. Reference Clock**
 
-The interaction volume $V_{\text{int}} = 6$ for a **3-cycle** consists of **6** binary routing ports ($3 \times 2 = 6$). In a binary logical space, the probability of a random fluctuation traversing this volume to validate a closure evaluates to $2^{-V_{\text{int}}}$. This relationship establishes the theoretical vacuum permittivity:
-
-$$
-\Lambda = 2^{-6} \approx 0.0156
-$$
-
-**V. Synthesis and Contextual Role**
-
-In the microscopic simulation engine, spontaneous creation is set to $\Lambda_{\mathrm{micro}} \equiv 0$ to isolate pure absorbing-state phase transitions. The scale $\Lambda = 2^{-6}$ is utilized exclusively in the auxiliary driven continuum comparison.
+Setting $\nu=1$ yields $\boxed{\Lambda_0=2^{-6}=1/64.}$ This is the prescribed continuum source (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />). The unpumped microscopic scheduler has no such independent injection process and uses $\Lambda_{\mathrm{micro}}=0$.
 
 Q.E.D.
 
@@ -442,13 +333,7 @@ Section 5.2.3.1 formalizes the properties of the QBD proof regarding vacuum perm
 :::info[**Quadratic Scaling of Precursor Concentration**]
 :::
 
-Let $\rho = N_3/N$ denote the normalized density of **3-cycles** on a causal graph $G$ with $N$ vertices. Under homogeneous mixing, the density of compliant **2-path** precursors eligible for loop closure scales quadratically with the cycle density:
-
-$$
-J_{\mathrm{auto}}(\rho) = 9\rho^2
-$$
-
-and on discrete networks with local spatial clustering $\kappa_{\mathrm{clust}} \approx 0.55$, the effective local autocatalytic flux is enhanced to $J_{\mathrm{auto,pair}}(\rho) = 9(1 + \kappa_{\mathrm{clust}})\rho^2 \approx 13.95\rho^2$.
+Let the precursor closure use independent nonnegative channel variables $A,B$ with finite means $\mathbb E[A]=\mathbb E[B]=3\rho$ and identify its intensive precursor contribution with $\mathbb E[AB]$. Then this closure is $J_{\mathrm{auto}}=9\rho^2$ (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
 **In Plain English:**  
 Section 5.2.4 formalizes the properties of the QBD lemma regarding geometric autocatalysis ($j_{auto}$).
@@ -460,43 +345,28 @@ Section 5.2.4 formalizes the properties of the QBD lemma regarding geometric aut
 :::tip[**Combinatorial Counting of Intersecting Cycle Paths**]
 :::
 
-**I. Vertex Cycle Incidence**
+**I. Product Distribution**
 
-Let $G$ be a graph of $N$ vertices containing $N_3$ directed **3-cycles**, evaluated for **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> above the baseline drive of **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />. The global density is $\rho = N_3/N$. Each **3-cycle** contains **3** vertices. The mean cycle incidence per vertex evaluates to:
+The proof uses the specified objects and conventions (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
-$$
-\langle s(v) \rangle = \frac{3 N_3}{N} = 3\rho
-$$
+Write $a_i,b_j$ for the possible channel values and $p_i,q_j$ for their probabilities. Independence gives $\Pr(A=a_i,B=b_j)=p_iq_j$.
 
-**II. Candidate 2-Path Generation**
+**II. Expectation Factorization**
 
-A candidate **2-path** $(u \to v \to w)$ requires an incoming edge $(u, v)$ and an outgoing edge $(v, w)$ incident on an intermediate vertex $v$. When **3-cycles** intersect at vertex $v$, the cycle-induced incoming and outgoing degrees scale with the local incidence:
+For finite or nonnegative countable supports, rearrangement of nonnegative sums gives
 
 $$
-k_{\mathrm{in}}^{\mathrm{cycle}}(v) \approx \langle s(v) \rangle = 3\rho, \qquad k_{\mathrm{out}}^{\mathrm{cycle}}(v) \approx \langle s(v) \rangle = 3\rho
+\begin{aligned}
+\mathbb E[AB]
+&=\sum_{i,j}a_ib_jp_iq_j
+=\left(\sum_i a_ip_i\right)\left(\sum_j b_jq_j\right)\\
+&=\mathbb E[A]\mathbb E[B]=(3\rho)(3\rho)=9\rho^2.
+\end{aligned}
 $$
 
-**III. Precursor Density Calculation**
+**III. Conditional Flux**
 
-The total number of directed **2-paths** traversing vertex $v$ is the product of its incoming and outgoing degrees:
-
-$$
-N_{\text{2-path}}(v) = k_{\mathrm{in}}^{\mathrm{cycle}}(v) \cdot k_{\mathrm{out}}^{\mathrm{cycle}}(v) \approx (3\rho) \times (3\rho) = 9\rho^2
-$$
-
-Summing across all $N$ vertices yields the total precursor count $N_{\text{precursor}} \approx 9\rho^2 N$. Dividing by $N$ gives the intensive autocatalytic flux $J_{\mathrm{auto}}(\rho) = 9\rho^2$.
-
-**IV. Bethe-Guggenheim Pair Approximation**
-
-On discrete graphs with local clustering, candidate **2-paths** sharing an intermediate vertex exhibit spatial correlation. The conditional probability of finding an active adjacent path is $p(+|+) = \rho(1 + \kappa_{\mathrm{clust}})$, where $\kappa_{\mathrm{clust}} \approx 0.55$. The effective local precursor density becomes:
-
-$$
-J_{\mathrm{auto,pair}}(\rho) = 9(1 + \kappa_{\mathrm{clust}})\rho^2 \approx 13.95\rho^2
-$$
-
-**V. Conclusion**
-
-The rate of geometric precursor generation scales quadratically as $9\rho^2$ in the well-mixed limit, and is elevated to $9(1+\kappa_{\mathrm{clust}})\rho^2$ by local graph clustering.
+The prescribed identification $J_{\mathrm{auto}}=\mathbb E[AB]$ gives the claimed closure (**Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" />).
 
 Q.E.D.
 
@@ -631,13 +501,7 @@ Section 5.2.4.2 formalizes the properties of the QBD calculation regarding precu
 :::info[**Exponential Damping via Local Topological Stress**]
 :::
 
-Let $\mu$ denote the thermodynamic friction coefficient and let $\rho$ denote the **3-cycle** density. The probability $P_{\mathrm{acc}}$ that a proposed edge addition is accepted in a neighborhood with mean cycle density $\rho$ is exponentially suppressed:
-
-$$
-P_{\mathrm{acc}}(\rho) = \mathrm{e}^{-6\mu\rho}
-$$
-
-where the factor **6** represents the simplicial interaction shell across the **3** constituent vertices of the candidate triad.
+Let the deterministic candidate-stress closure be $s_{\mathrm{cl}}(\rho)=6\rho$ and let $P(s)=e^{-\mu s}$. Then its closed acceptance factor is $P_{\mathrm{cl}}(\rho)=e^{-6\mu\rho}$ (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
 **In Plain English:**  
 Section 5.2.5 formalizes the properties of the QBD lemma regarding frictional suppression ($p_{acc}$).
@@ -649,43 +513,24 @@ Section 5.2.5 formalizes the properties of the QBD lemma regarding frictional su
 :::tip[**Summation of Vertex Incident Stress Shells**]
 :::
 
-**I. Microscopic Acceptance Kernel**
+**I. Specified Scalar Stress**
 
-Let an edge addition proposal target a candidate **2-path** $(u \to v \to w)$, evaluated for **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> governed by the **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />. Under the microscopic rewrite kernel, acceptance probability is governed by the total stress:
+The model supplies $s_{\mathrm{cl}}=6\rho$ as a candidate-conditioned constitutive approximation. The acceptance law at deterministic stress is $P(s)=\exp(-\mu s)$ (**Addition Mode** <Ref id="4.5.3" label="§4.5.3" />).
 
-$$
-P_{\mathrm{acc}}(s_{\mathrm{add}}) = \mathrm{e}^{-\mu s_{\mathrm{add}}}
-$$
+**II. Substitution**
 
-where $s_{\mathrm{add}} = s(u) + s(v) + s(w)$ is the sum of cycle counts across the constituent vertices.
-
-**II. Interaction Boundary Derivation**
-
-On a regular substrate with trivalent coordination ($k_{\mathrm{deg}}=3$, $k_{\mathrm{in}}=1, k_{\mathrm{out}}=2$), an elementary **3-cycle** occupies **3** vertices. Each vertex uses **2** internal cycle edges, leaving $k_{\mathrm{deg}} - 1 = 2$ non-cyclic external routing ports. The total interaction boundary across all **3** vertices is:
+Substituting the specified stress gives
 
 $$
-V_{\mathrm{int}} = 3 \times 2 = 6\text{ binary routing channels}
+P_{\mathrm{cl}}(\rho)=P(s_{\mathrm{cl}}(\rho))
+=\exp(-\mu(6\rho))=\exp(-6\mu\rho).
 $$
 
-**III. Stress Expectation in Homogeneous Foam**
+For $\rho\ge0$ and $\mu\ge0$, the exponent is nonpositive, so $0<P_{\mathrm{cl}}\le1$.
 
-In a homogeneous network with mean vertex cycle density $\rho_v \approx 2\rho$, the expected stress across the **3** candidate vertices evaluates to:
+**III. Scope of Equality**
 
-$$
-s_{\mathrm{add}} = \sum_{x \in \{u, v, w\}} s(x) \approx 3 \times (2\rho) = 6\rho
-$$
-
-**IV. Exponential Substitution**
-
-Substituting $s_{\mathrm{add}} = 6\rho$ into the microscopic acceptance kernel yields the macroscopic damping factor:
-
-$$
-P_{\mathrm{acc}}(\rho) = \mathrm{e}^{-\mu(6\rho)} = \mathrm{e}^{-6\mu\rho}
-$$
-
-**V. Conclusion**
-
-The probability of accepting edge additions decays exponentially with density as $\mathrm{e}^{-6\mu\rho}$, acting as a natural steric brake on network densification.
+This equality evaluates the deterministic closed model (**Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />). It assumes the specified stress rather than replacing a random exponential moment by an exact mean identity.
 
 Q.E.D.
 
@@ -805,13 +650,7 @@ Section 5.2.5.2 formalizes the properties of the QBD calculation regarding frict
 :::info[**Linear and Quadratic Stress-Accelerated Deletion Flux**]
 :::
 
-Let $\rho = N_3/N$ denote the **3-cycle** density and let $\lambda$ denote the catalysis coefficient. The macroscopic deletion flux decomposes into spontaneous entropic relaxation and catalytic defect acceleration:
-
-$$
-J_{\mathrm{out}}(\rho) = \tfrac{1}{2}\rho(1 + 6\lambda\rho) = \tfrac{1}{2}\rho + 3\lambda\rho^2
-$$
-
-inducing an unpumped critical nucleation barrier $\rho_c(\lambda_0) = \frac{1}{24 - 6e} \approx 0.130034$ and saddle-node threshold $\mu_{\mathrm{crit}}(\lambda_0) = \frac{(9-3\lambda_0)^2}{108} \approx 0.136900$.
+Let the zero-offset unsaturated scalar deletion approximation be $D(\rho)=\tfrac12\rho(1+6\lambda\rho)e^{-6\mu\rho}$. Then $D(\rho)=\tfrac12\rho+3(\lambda-\mu)\rho^2+(9\mu^2-18\lambda\mu)\rho^3+O(\rho^4)$ near zero; the separately specified baseline closure is $D_0(\rho)=\tfrac12\rho+3\lambda\rho^2$ (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
 **In Plain English:**  
 Section 5.2.6 formalizes the properties of the QBD lemma regarding entropic & catalytic decay ($j_{out}$).
@@ -823,55 +662,40 @@ Section 5.2.6 formalizes the properties of the QBD lemma regarding entropic & ca
 :::tip[**Aggregation of Microscopic Deletion Rates across Cycle Ensembles**]
 :::
 
-**I. Microscopic Deletion Kernel**
+**I. Unsaturated Neighborhood**
 
-Let an active **3-cycle** $C \in \mathcal{C}_3(G)$ undergo deletion proposals, evaluated for **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" /> with acceleration governed by the **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />. The deletion probability is:
+The proof uses the specified objects and conventions (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
-$$
-Q_{\mathrm{del}}(s_{\mathrm{del}}) = \tfrac{1}{2}(1 + \lambda s_{\mathrm{del}})\mathrm{e}^{-\mu s_{\mathrm{del}}}
-$$
+At the zero-offset reference, the unclipped deletion factor is one half at $\rho=0$. Continuity gives a neighborhood of zero where it is less than one, so the clipping operation does not change the displayed scalar expression there.
 
-where $s_{\mathrm{del}} = \sum_{x \in V(C)} s(x) - 1$ is the local cycle crowding stress.
+**II. Exponential Expansion**
 
-**II. Linearization in the Dilute Limit**
-
-For moderate densities, the exponential factor $\mathrm{e}^{-\mu s_{\mathrm{del}}} \approx 1 - \mu s_{\mathrm{del}} + \mathcal{O}(s^2)$ contributes higher-order corrections. The leading-order deletion rate per cycle evaluates to:
+Taylor expansion gives
 
 $$
-Q_{\mathrm{del}} \approx \tfrac{1}{2}(1 + \lambda s_{\mathrm{del}})
+e^{-6\mu\rho}=1-6\mu\rho+18\mu^2\rho^2+O(\rho^3).
 $$
 
-**III. Macroscopic Flux Aggregation**
-
-In a homogeneous foam, the average vertex stress is $\langle s(x) \rangle = 3\rho$. The average self-stress across a triad's **3** vertices evaluates to $s_{\mathrm{del}} \approx 3 \times (2\rho) = 6\rho$. Multiplying by the population density $\rho$ yields the total deletion flux:
+Multiplication by the affine catalytic factor yields
 
 $$
-J_{\mathrm{out}}(\rho) = \rho \cdot \tfrac{1}{2}(1 + 6\lambda\rho) = \tfrac{1}{2}\rho + 3\lambda\rho^2
+\begin{aligned}
+(1+6\lambda\rho)e^{-6\mu\rho}
+&=1+(6\lambda-6\mu)\rho
++(18\mu^2-36\lambda\mu)\rho^2+O(\rho^3).
+\end{aligned}
 $$
 
-**IV. Derivation of the Nucleation Barrier**
+**III. Flux Coefficients**
 
-Subtracting $J_{\mathrm{out}}(\rho)$ from the unperturbed creation flux $9\rho^2$ yields the unpumped drift:
-
-$$
-\frac{\mathrm{d}\rho}{\mathrm{d}t} \approx -\tfrac{1}{2}\rho + (9 - 3\lambda)\rho^2 = (9 - 3\lambda)\rho\left(\rho - \frac{1}{2(9 - 3\lambda)}\right)
-$$
-
-For $\rho < \rho_c$, drift is strictly negative ($\mathrm{d}\rho/\mathrm{d}t < 0$), defining the critical nucleation threshold:
+Multiplying every term by $\rho/2$ gives
 
 $$
-\rho_c(\lambda) = \frac{1}{2(9 - 3\lambda)} = \frac{1}{18 - 6\lambda}
+D(\rho)=\tfrac12\rho+3(\lambda-\mu)\rho^2
++(9\mu^2-18\lambda\mu)\rho^3+O(\rho^4).
 $$
 
-Evaluating at $\lambda_0 = e - 1 \approx 1.718282$ yields $\rho_c(\lambda_0) = \frac{1}{24 - 6e} \approx 0.130034$.
-
-**V. Saddle-Node Bifurcation Threshold**
-
-Expanding through cubic order $\frac{\mathrm{d}\rho}{\mathrm{d}t} = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 = 0$ yields the discriminant $\Delta = (9 - 3\lambda)^2 - 108\mu$. Real active roots exist if and only if $\Delta \ge 0$, establishing the saddle-node threshold:
-
-$$
-\mu_{\mathrm{crit}}(\lambda) = \frac{(9 - 3\lambda)^2}{108} \implies \mu_{\mathrm{crit}}(\lambda_0) = \frac{(12 - 3e)^2}{108} \approx 0.136900
-$$
+If deletion damping is omitted as a separate baseline choice, direct multiplication instead gives $D_0(\rho)=\rho/2+3\lambda\rho^2$. Their quadratic coefficients differ by $-3\mu$, which is not a fourth-order remainder (**Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />).
 
 Q.E.D.
 
@@ -885,88 +709,44 @@ Section 5.2.6.1 formalizes the properties of the QBD proof regarding entropic & 
 :::note[**Computational Verification of Catalytic Stress Deletion through Local Stress**]
 :::
 
-Computational verification of the catalytic deletion flux established by **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6.1" label="§5.2.6.1" /> is based on the following protocols:
+Computational verification of the damped deletion expansion established in (**Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6.1" label="§5.2.6.1" />) uses the distinct baseline closure (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />) through the following protocols:
 
-1.  **Deconstruction Monitoring:** The algorithm initializes configurations with active **3-cycles** and monitors deletion event frequencies.
-2.  **Rate Linearization:** The protocol measures deletion frequency as a function of vertex stress to isolate the linear base rate and catalytic slope.
-3.  **Linear Regression:** The metric fits deletion frequencies to $Q = Q_0 + \alpha \cdot s$ to confirm linear catalytic acceleration.
+1. **Coefficient Construction:** The retained linear, quadratic and cubic coefficients include every damping contribution.
+2. **Small-Density Evaluation:** The exact unsaturated scalar flux is compared with its cubic expansion at successively halved densities.
+3. **Baseline Separation:** The audit records the quadratic coefficient of the separate undamped baseline for comparison.
 
 ```python
-import networkx as nx
-import numpy as np
-import random
-from scipy.optimize import curve_fit
+import math
 
-# Set seeds for reproducibility
-random.seed(42)
-np.random.seed(42)
-
-def measure_deletion_flux(N, max_density_cycles=100):
-    densities = []
-    flux_rates = [] 
-    
-    # Simulation Rule: P_delete = P_base * (1 + lambda * local_density)
-    lambda_sim = 0.5  # Catalytic coefficient (example value)
-    
-    for cycles in range(10, max_density_cycles, 5):
-        # Create Graph
-        G = nx.Graph()
-        G.add_nodes_from(range(N))
-        for _ in range(cycles):
-            triad = random.sample(range(N), 3)
-            nx.add_cycle(G, triad)
-            
-        rho = cycles / N
-        
-        # Measure Deletion Flux
-        deleted_count = 0
-        edges = list(G.edges())
-        if not edges:
-            continue
-        
-        for u, v in edges:
-            # Local Stress Metric (Average Degree in Neighborhood)
-            k_local = (G.degree[u] + G.degree[v]) / 4.0 
-            p_base = 0.05
-            p_stress = p_base * (lambda_sim * k_local)
-            
-            if random.random() < (p_base + p_stress):
-                deleted_count += 1
-        
-        # Normalized Flux = Deleted / Total Edges
-        normalized_flux = deleted_count / len(edges) 
-        
-        densities.append(rho)
-        flux_rates.append(normalized_flux)
-        
-    return densities, flux_rates
-
-# Simulation parameters
-N = 500
-densities, normalized_rates = measure_deletion_flux(N, max_density_cycles=500)
-
-# Fit to linear model: Rate = A + B * rho
-def linear_fit(x, a, b):
-    return a + b * x
-
-popt, pcov = curve_fit(linear_fit, densities, normalized_rates)
-intercept, slope = popt
-std_err_intercept, std_err_slope = np.sqrt(np.diag(pcov))
-
-# Formatted console output (point estimates; std err available via pcov)
-print(f"Base Rate (Intercept): {intercept:.4f}")
-print(f"Catalytic Coeff (Slope): {slope:.4f}")
+mu = 1/math.sqrt(2*math.pi)
+lam = math.e-1
+a1 = 0.5
+a2 = 3*(lam-mu)
+a3 = 9*mu*mu-18*lam*mu
+print(f'Damped quadratic coefficient: {a2:.9f}')
+print(f'Baseline quadratic coefficient: {3*lam:.9f}')
+print('rho       exact flux       cubic flux       abs error / rho^4')
+for rho in (0.02,0.01,0.005):
+    exact = 0.5*rho*(1+6*lam*rho)*math.exp(-6*mu*rho)
+    cubic = a1*rho+a2*rho*rho+a3*rho**3
+    scaled = abs(exact-cubic)/rho**4
+    assert scaled < 20
+    print(f'{rho:.5f}   {exact:.10f}   {cubic:.10f}   {scaled:.6f}')
 ```
 
 **Simulation Results:**
 
 ```text
-Base Rate (Intercept): 0.0643
-Catalytic Coeff (Slope): 0.0904
+Damped quadratic coefficient: 3.958018644
+Baseline quadratic coefficient: 5.154845485
+rho       exact flux       cubic flux       abs error / rho^4
+0.02000   0.0114981001   0.0114959553   13.405345
+0.01000   0.0053850305   0.0053848953   13.514339
+0.00500   0.0025975956   0.0025975872   13.569332
 ```
 
 **Conclusion:**
-The computational evaluation confirms that deletion probability increases monotonically with local stress, providing the necessary restoring force to stabilize graph density as predicted in **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
+The cubic approximation has a bounded fourth-order scaled remainder over the sampled small-density interval. Its quadratic coefficient includes the negative friction contribution and differs from the undamped baseline coefficient. These numerical comparisons validate the displayed local Taylor expansion and preserve the distinction between the two scalar closures.
 
 **In Plain English:**  
 Section 5.2.6.2 formalizes the properties of the QBD calculation regarding stress-decay verification.
@@ -978,7 +758,7 @@ Section 5.2.6.2 formalizes the properties of the QBD calculation regarding stres
 :::info[**Derivation of Drift and Diffusion Moments through System-Size Expansion**]
 :::
 
-Let the discrete stochastic master equation govern transitions between discrete cycle configurations under volume scale $\Omega = N_{\mathrm{box}}$. Then the first two Kramers-Moyal jump moments evaluate to the drift $a_1(\rho) = -\frac{1}{2}\rho + (9-3\lambda_0)\rho^2 - 54\mu_0\rho^3 + \mathcal{O}(\rho^4)$ and demographic absorbing diffusion $a_2(\rho) = \Gamma \rho$, yielding the continuous Langevin evolution equation.
+Let an auxiliary continuous-time density jump model have jumps $r/\Omega$ and extensive rates $W_{\Omega,r}(\rho)=\Omega w_r(\rho)$ on a fixed stated time unit, with finite jump moments. Then $a_k(\rho)=\Omega^{1-k}\sum_r r^k w_r(\rho)$, so bounded reduced moments give $a_k=O(\Omega^{1-k})$ (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
 **In Plain English:**  
 Section 5.2.7 formalizes the properties of the QBD lemma regarding kramers-moyal continuum expansion.
@@ -990,89 +770,36 @@ Section 5.2.7 formalizes the properties of the QBD lemma regarding kramers-moyal
 :::tip[**van Kampen System-Size Expansion from Combinatorial Jump Kernels**]
 :::
 
-**I. Discrete Jump Kernel Specification**
+**I. Rate and Jump Convention**
 
-Let a discrete graph partition possess volume $\Omega = N_{\mathrm{box}}$ and cycle population $N_3 \in \mathbb{N}_0$, with intensive density $\rho = N_3/\Omega$. The stochastic transition rates for elementary addition and deletion events evaluated for **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" /> satisfy:
+The proof uses the specified objects and conventions (**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />).
 
-$$
-W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) = 9\rho^2 \mathrm{e}^{-\mu s_{\mathrm{add}}}, \qquad W\left(\rho \to \rho - \tfrac{1}{\Omega}\right) = \tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}}
-$$
+In a small time interval $h$, the chance of jump $r$ is $W_{\Omega,r}(\rho)h+o(h)$ and the density increment on that event is $r/\Omega$. The no-jump event contributes zero to every positive-order jump moment.
 
-The forward additions are governed by **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" /> and **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />. The reverse deletions are governed by **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
+**II. Conditional Moment**
 
-**II. van Kampen System-Size Expansion**
-
-We apply van Kampen's system-size $\Omega$-expansion (<Cite id="A.75" label="(van Kampen, 1992)" />). Defining the jump step $\Delta \rho = \pm 1/\Omega$, the Kramers-Moyal jump moments are given by the expectation limits:
+With the stated finite-moment hypotheses,
 
 $$
-a_n(\rho) = \lim_{\Delta t \to 0} \frac{\mathbb{E}[(\Delta \rho)^n]}{\Delta t} = \sum_{\Delta \rho} (\Delta \rho)^n W(\rho; \Delta \rho)
+\begin{aligned}
+a_k(\rho)
+&=\lim_{h\downarrow0}\frac1h\mathbb E[(\Delta\rho)^k\mid\rho]\\
+&=\sum_r\left(\frac r\Omega\right)^k W_{\Omega,r}(\rho)
+=\Omega^{-k}\sum_r r^k\Omega w_r(\rho)\\
+&=\Omega^{1-k}\sum_r r^kw_r(\rho).
+\end{aligned}
 $$
 
-The first jump moment $a_1(\rho)$ represents the deterministic drift velocity, while the second moment $a_2(\rho)$ defines the demographic diffusion coefficient.
+**III. First Two Moments**
 
-**III. Derivation of the Cubic Friction Moment**
-
-We evaluate the drift velocity by subtracting the deletion rate from the addition rate:
+For a prescribed one-cycle birth/death approximation with only $r=\pm1$,
 
 $$
-a_1(\rho) = W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) - W\left(\rho \to \rho - \tfrac{1}{\Omega}\right) = 9\rho^2 \mathrm{e}^{-\mu s_{\mathrm{add}}} - \tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}}
+a_1=w_+-w_-,\qquad
+a_2=\Omega^{-1}(w_++w_-).
 $$
 
-In a homogeneous network with mean vertex cycle density $\rho_v \approx 2\rho$, the incident triad stress evaluates to $\langle s_{\mathrm{add}} \rangle = 6\rho$. We expand the exponential acceptance kernel in powers of local stress:
-
-$$
-\mathrm{e}^{-\mu s_{\mathrm{add}}} = 1 - \mu s_{\mathrm{add}} + \mathcal{O}(s_{\mathrm{add}}^2) = 1 - 6\mu\rho + \mathcal{O}(\rho^2)
-$$
-
-Multiplying by the quadratic precursor flux $9\rho^2$ yields the cubic saturation damping term:
-
-$$
-9\rho^2(1 - 6\mu\rho) = 9\rho^2 - 54\mu\rho^3
-$$
-
-Expanding the catalytic deletion flux similarly yields:
-
-$$
-\tfrac{1}{2}\rho(1 + 6\lambda\rho)\mathrm{e}^{-\mu s_{\mathrm{del}}} = \tfrac{1}{2}\rho + 3\lambda\rho^2 + \mathcal{O}(\rho^3)
-$$
-
-Subtracting the deletion flux from the addition flux confirms the cubic drift polynomial $a_1(\rho) = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4)$.
-
-**IV. Demographic Absorbing Diffusion Moment**
-
-The second jump moment evaluates to:
-
-$$
-a_2(\rho) = \sum_{\Delta \rho} (\Delta \rho)^2 W(\rho; \Delta \rho) = \frac{1}{\Omega^2}\left[W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) + W\left(\rho \to \rho - \tfrac{1}{\Omega}\right)\right]
-$$
-
-In the leading-order expansion near the absorbing vacuum state $\rho \to 0$, linear deletion dominates additions, yielding $a_2(\rho) = \frac{1}{\Omega}[\frac{1}{2}\rho + \mathcal{O}(\rho^2)] \equiv \Gamma \rho$, where $\Gamma \approx \frac{1}{2\Omega} = \frac{1}{4N}$ characterizes demographic fluctuations vanishing identically at the empty absorbing boundary $\rho = 0$.
-
-**V. Higher-Order Jump Moments and Pawula Truncation**
-
-For general jump orders $k \ge 3$, the Kramers-Moyal jump moments evaluate to:
-
-$$
-a_k(\rho) = \sum_{\Delta \rho} (\Delta \rho)^k W(\rho; \Delta \rho) = \frac{1}{\Omega^k}\left[W\left(\rho \to \rho + \tfrac{1}{\Omega}\right) + (-1)^k W\left(\rho \to \rho - \tfrac{1}{\Omega}\right)\right]
-$$
-
-Because extensive transition rates scale proportionally with volume $W \sim \Omega \cdot w(\rho)$, each jump moment scales strictly as:
-
-$$
-a_k(\rho) \sim \mathcal{O}\left(\Omega^{-(k-1)}\right)
-$$
-
-Specifically, the third jump moment (skewness flux) scales as $a_3(\rho) \sim \mathcal{O}(\Omega^{-2}) \to 0$, and the fourth jump moment (kurtosis flux) scales as $a_4(\rho) \sim \mathcal{O}(\Omega^{-3}) \to 0$. According to Pawula's Theorem (Pawula, 1967), any non-trivial truncation of the Kramers-Moyal expansion beyond second order must include an infinite tower of non-zero terms to preserve non-negative probability densities. In the thermodynamic system-size limit $\Omega \to \infty$, all moments $k \ge 3$ vanish strictly faster than diffusion $a_2 \sim \Omega^{-1}$, proving that truncation at $k = 2$ is asymptotically exact.
-
-**VI. Hydrodynamic Continuum Limit**
-
-Substituting the drift $a_1(\rho)$ and diffusion $a_2(\rho)$ into the general Kramers-Moyal expansion yields the continuous Ito stochastic differential equation:
-
-$$
-\frac{\mathrm{d}\rho}{\mathrm{d}t} = a_1(\rho) + \sqrt{a_2(\rho)}\,\xi(t) = -\tfrac{1}{2}\rho + (9 - 3\lambda_0)\rho^2 - 54\mu_0\rho^3 + \sqrt{\Gamma \rho}\,\xi(t)
-$$
-
-where $\xi(t)$ is Gaussian white noise with $\langle \xi(t)\xi(t') \rangle = \delta(t-t')$. This establishes the continuous Langevin evolution equation governing the cycle density field.
+If $|\sum_r r^kw_r|\le M_k$ uniformly on the parameter/state region, then $|a_k|\le M_k\Omega^{1-k}$. This is the asserted scaling (**Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />).
 
 Q.E.D.
 
@@ -1302,84 +1029,56 @@ Section 5.2.7.2 formalizes the properties of the QBD calculation regarding jump 
 
 ---
 
-### 5.2.8 Lemma: Topological Defect Localization {#5.2.8}
+### 5.2.8 Lemma: Initial-Depth Chord Bound {#5.2.8}
 
-:::info[**Local Soliton Survival on Bethe Trees through Two-Threshold Contact Dynamics**]
+:::info[**Topological Defect Localization via Depth Change of a Tree-Supported Return Chord**]
 :::
 
-Let a localized cycle defect seed the regular Bethe tree substrate with coordination number $k = 3$ and branching factor $b = 2$. Then the non-equilibrium contact process yields two distinct critical thresholds $\lambda_{c1} < \lambda_{c2}$, ensuring that canonical priors $\lambda_{c1} \le \lambda_0 < \lambda_{c2}$ induce an active localized topological soliton with survival probability $P_{\mathrm{surv}} > 0$ and stationary distribution $\langle \rho \rangle_{\mathrm{QSD}} \approx 0.092$ despite the negative homogeneous mean-field discriminant $\Delta < 0$.
+Let $d$ be the original root depth on an outward tree. A return chord closing an original two-path $v\to w\to u$ moves from depth $d(u)$ to $d(u)-2$.
 
 **In Plain English:**  
-Section 5.2.8 formalizes the properties of the QBD lemma regarding topological defect localization.
+Section 5.2.8 formalizes the properties of the QBD lemma regarding initial-depth return bound.
 
 ---
 
-### 5.2.8.1 Proof: Topological Defect Localization {#5.2.8.1}
+### 5.2.8.1 Proof: Initial-Depth Chord Bound {#5.2.8.1}
 
-:::tip[**Spectral Analysis of Branching Contact Processes by Tree Decomposition**]
+:::tip[**Topological Defect Localization via Depth Differences along a Two-Path**]
 :::
 
-**I. Mean-Field Discrepancy and Discriminant Failure**
+**I. Domain and Objects**
 
-Let the homogeneous cubic drift equation derived under **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" /> be evaluated at zero background drive ($\Lambda = 0$):
+Depth is measured in the original outward tree (**Initial-Depth Chord Bound** <Ref id="5.2.8" label="§5.2.8" />) (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
 
-$$
-a_1(\rho) = -\tfrac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 = 0
-$$
+**II. Original Tree Depth**
 
-Factoring out the trivial absorbing root $\rho = 0$ leaves the quadratic resolvent $54\mu\rho^2 - (9 - 3\lambda)\rho + \frac{1}{2} = 0$. The discriminant of this algebraic equation evaluates to $\Delta = (9 - 3\lambda)^2 - 108\mu$. Substituting canonical priors $\lambda_0 = e - 1 \approx 1.7183$ and $\mu_0 = 1/\sqrt{2\pi} \approx 0.3989$ yields:
+For the two original outward edges, $d(w)=d(v)+1$ and $d(u)=d(w)+1$. Adding the two increments gives
 
 $$
-\Delta = (9 - 3(1.7183))^2 - 108(0.3989) = (3.8451)^2 - 43.0812 = 14.785 - 43.081 = -28.296 < 0
+d(u)-d(v)=(d(u)-d(w))+(d(w)-d(v))=2.
 $$
 
-Because $\Delta < 0$, the quadratic resolvent admits no real positive roots. Homogeneous mean-field theory therefore predicts that the trivial vacuum $\rho = 0$ is the unique global attractor, falsely implying that geometric defects cannot survive.
+**III. Return Direction**
 
-**II. Spatial Clustering of the Seed Soliton**
-
-The failure of the homogeneous mean-field equation stems from neglecting spatial correlations $\langle \rho_i \rho_j \rangle \neq \langle \rho_i \rangle \langle \rho_j \rangle$. When an active 3-cycle is instantiated at an initial seed vertex $v_0$, the local cycle density within distance $d \le 2$ on the regular tree satisfies $\rho_{\mathrm{local}} \gg \langle \rho \rangle_{\mathrm{bulk}}$. The local clustering coefficient evaluates to:
-
-$$
-\kappa_{\mathrm{clust}} = \frac{\langle \rho^2 \rangle_{\mathrm{local}}}{\langle \rho \rangle_{\mathrm{local}}} \approx 0.55
-$$
-
-Within this localized seed neighborhood, autocatalytic cycle production is amplified by correlated triangular loops sharing edges, lowering the effective death rate relative to the isolated vertex decay rate.
-
-**III. The Two-Threshold Theorem for Trees**
-
-We evaluate the stochastic rewrite dynamics as a branching contact process on a Bethe tree with branching number $b = 2$. According to the two-threshold contact process theorem (<Cite id="A.60" label="(Pemantle, 1992)" />, <Cite id="A.49" label="(Liggett, 1999)" />), contact dynamics on infinite regular trees exhibit two strictly separated critical infection thresholds:
-
-$$
-\lambda_{c1} = \frac{1}{2\sqrt{b}} = \frac{1}{2\sqrt{2}} \approx 0.3536, \qquad \lambda_{c2} = \frac{b+1}{2b} = \frac{3}{4} = 0.7500
-$$
-
-When the effective branching infection parameter $\hat{\lambda}$ lies in the intermediate interval $\lambda_{c1} \le \hat{\lambda} < \lambda_{c2}$, the contact process exhibits local survival with zero global percolation. That is, the infection survives near the initial seed origin indefinitely with positive probability $P_{\mathrm{surv}} > 0$, while the global population across the infinite tree remains bounded.
-
-**IV. Soliton Confinement and Leaf Dissipation**
-
-Following the canonical catalysis prior $\lambda_0 = e - 1 \approx 1.7183$ derived under **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />, the normalized local branching rate evaluates to $\hat{\lambda} = \frac{\lambda_0}{2(b+1)} = \frac{1.7183}{6} \approx 0.286$, augmented by local clustering $\kappa_{\mathrm{clust}}$ to $\hat{\lambda}_{\mathrm{eff}} = \hat{\lambda}(1 + \kappa_{\mathrm{clust}}) \approx 0.286(1.55) \approx 0.444$. Because $\lambda_{c1} \approx 0.3536 < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2} = 0.7500$, the system occupies the localized non-equilibrium survival phase. At large radial distance $d \gg 1$, the exponential proliferation of tree boundary leaves $b^d = 2^d$ acts as an infinite entropic sink, dissipating outgoing cycle chains and confining the active topological soliton to a compact spatial core.
-
-**V. Conclusion**
-
-We conclude that non-equilibrium contact dynamics on branching trees decouple local survival from global percolation, stabilizing an active localized topological soliton and resolving the homogeneous mean-field extinction paradox.
+The return edge is $(u,v)$. Its depth increment is $d(v)-d(u)=-2$.
 
 Q.E.D.
 
 **In Plain English:**  
-Section 5.2.8.1 formalizes the properties of the QBD proof regarding topological defect localization.
+Section 5.2.8.1 formalizes the properties of the QBD proof regarding initial-depth return bound.
 
 ---
 
-### 5.2.8.2 Calculation: Two-Threshold Contact Verification {#5.2.8.2}
+### 5.2.8.2 Calculation: Finite Seeded Depth Profile {#5.2.8.2}
 
-:::note[**Computational Verification of Pemantle-Liggett Thresholds and Radial Soliton Confinement via Bethe Fragment Simulation**]
+:::note[**Local Depth Change via Outward Two-Path Enumeration**]
 :::
 
-Computational verification of the branching contact process and radial defect confinement established by **Topological Defect Localization** <Ref id="5.2.8.1" label="§5.2.8.1" /> is based on the following protocols:
+Verification of the original depth decrement and finite sampled profile (**Initial-Depth Chord Bound** <Ref id="5.2.8.1" label="§5.2.8.1" />) (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />) is based on the following protocols:
 
-1.  **Branching Threshold Evaluation:** The algorithm evaluates the homogeneous cubic discriminant $\Delta = (9 - 3\lambda_0)^2 - 108\mu_0$ and the Pemantle-Liggett branching thresholds $\lambda_{c1} = 1/(2\sqrt{b})$ and $\lambda_{c2} = (b+1)/(2b)$ for binary Bethe trees ($b = 2$).
-2.  **Lattice Seeding and Ensemble Evolution:** Bethe fragments of size $N = 100$ initialized with an instanton defect at root depth $d = 0$ evolve under the four-step Universal Constructor over 30 ticks across 100 independent realizations.
-3.  **Radial Profile Extraction:** The metric records final active 3-cycles stratified by radial tree depth $d \in \{0, 1, \dots, 6\}$ to verify localized core confinement and boundary leaf dissipation.
+1.  **Initial Depth:** Check the chord depth change for every original outward two-path.
+2.  **Finite Runs:** Sample the existing seeded tick fixture up to 30 steps or its first triangle-free observation.
+3.  **Profiles:** Report the sampled terminal triangle counts by their minimum original depth.
 
 ```python
 import sys
@@ -1460,13 +1159,13 @@ def execute_scheduler_tick(G, mu, lam):
     """
     G_next = G.copy()
     cycles = find_all_3_cycles(G)
-    
+
     stress_map = {n: 0 for n in G.nodes()}
     for u, v, w in cycles:
         stress_map[u] += 1
         stress_map[v] += 1
         stress_map[w] += 1
-        
+
     candidate_additions = []
     for u in G.nodes():
         for w in G.successors(u):
@@ -1475,7 +1174,7 @@ def execute_scheduler_tick(G, mu, lam):
                     s_add = stress_map[u] + stress_map[w] + stress_map[v]
                     p_acc = np.exp(-mu * s_add)
                     candidate_additions.append((v, u, p_acc))
-                    
+
     candidate_deletions = []
     for cycle in cycles:
         cycle_nodes = list(cycle)
@@ -1486,123 +1185,76 @@ def execute_scheduler_tick(G, mu, lam):
         if edges:
             chosen = random.choice(edges)
             candidate_deletions.append((chosen[0], chosen[1], q_del))
-            
+
     accepted_adds = [chord for chord in candidate_additions if random.random() < chord[2]]
     accepted_dels = [edge for edge in candidate_deletions if random.random() < edge[2]]
-    
+
     for v, u, _ in accepted_adds:
         preds = list(G_next.predecessors(v))
         max_h = max([G_next.edges[p, v].get('H', 0) for p in preds] + [0])
         G_next.add_edge(v, u, H=max_h + 1)
-        
+
     for u, v, _ in accepted_dels:
         if G_next.has_edge(u, v):
             G_next.remove_edge(u, v)
-            
+
     return G_next
 
-def verify_two_threshold_contact(N=100, trials=100, max_ticks=30):
-    mu_0 = 1.0 / np.sqrt(2 * np.pi)  # ≈ 0.3989
-    lambda_0 = np.e - 1             # ≈ 1.7183
-    b = 2  # Branching factor
-    
-    # 1. Analytical Discriminant Failure
-    delta_homo = ((9.0 - 3.0 * lambda_0) ** 2) - 108.0 * mu_0
-    
-    # 2. Pemantle-Liggett Critical Thresholds for Trees
-    lambda_c1 = 1.0 / (2.0 * math.sqrt(b))  # ≈ 0.3536
-    lambda_c2 = (b + 1.0) / (2.0 * b)       # = 0.7500
-    hat_lambda = lambda_0 / (2.0 * (b + 1.0)) # ≈ 0.2864
-    kappa_clust = 0.5500                     # Theoretical clustering coefficient
-    hat_lambda_eff = hat_lambda * (1.0 + kappa_clust) # ≈ 0.4439
-    
-    # 3. Multi-Trajectory Soliton Confinement Simulation
-    surviving_runs = 0
-    radial_profile = {d: 0 for d in range(7)}
-    
+
+def finite_depth_profile(vertices=100, trials=100, max_ticks=30):
+    mu = 1 / np.sqrt(2 * np.pi)
+    lam = np.e - 1
+    baseline, _ = generate_bethe_fragment(N=vertices)
+    depth = nx.get_node_attributes(baseline, "depth")
+    changes = [depth[v] - depth[u] for v in baseline for w in baseline[v] for u in baseline[w]]
+    assert changes and all(change == -2 for change in changes)
+    print(f"Original outward two-path returns checked: {len(changes)}")
+
+    survival = 0
+    profile = {d: 0 for d in range(7)}
     for _ in range(trials):
-        G, levels = generate_bethe_fragment(N=N)
-        G = inject_seed_defect(G, levels)
-        
+        graph, levels = generate_bethe_fragment(N=vertices)
+        graph = inject_seed_defect(graph, levels)
         for _ in range(max_ticks):
-            c = find_all_3_cycles(G)
-            if not c:
+            if not find_all_3_cycles(graph):
                 break
-            G = execute_scheduler_tick(G, mu=mu_0, lam=lambda_0)
-            
-        final_cycles = find_all_3_cycles(G)
-        if final_cycles:
-            surviving_runs += 1
-            for u, v, w in final_cycles:
-                min_depth = min(G.nodes[u].get('depth', 0),
-                                G.nodes[v].get('depth', 0),
-                                G.nodes[w].get('depth', 0))
-                if min_depth in radial_profile:
-                    radial_profile[min_depth] += 1
-                    
-    p_surv = surviving_runs / float(trials)
-    
-    return {
-        "mu_0": mu_0,
-        "lambda_0": lambda_0,
-        "delta_homo": delta_homo,
-        "b": b,
-        "lambda_c1": lambda_c1,
-        "lambda_c2": lambda_c2,
-        "hat_lambda": hat_lambda,
-        "kappa_clust": kappa_clust,
-        "hat_lambda_eff": hat_lambda_eff,
-        "N": N,
-        "max_ticks": max_ticks,
-        "trials": trials,
-        "p_surv": p_surv,
-        "radial_profile": radial_profile
-    }
+            graph = execute_scheduler_tick(graph, mu=mu, lam=lam)
+        cycles = find_all_3_cycles(graph)
+        survival += bool(cycles)
+        for cycle in cycles:
+            d = min(graph.nodes[v]["depth"] for v in cycle)
+            if d in profile:
+                profile[d] += 1
+
+    print(f"Active fraction at the sampled stopping rule: {survival / trials:.4f}")
+    for depth, count in profile.items():
+        print(f"Depth {depth}: {count} final sampled triangles")
+
 
 if __name__ == "__main__":
-    res = verify_two_threshold_contact(N=100, trials=100, max_ticks=30)
-    
-    print(f"Homogeneous Discriminant (Delta): {res['delta_homo']:.4f}")
-    print(f"Tree Branching Factor (b):       {res['b']}")
-    print(f"Thresholds:")
-    print(f"  Critical Lower lambda_c1:       {res['lambda_c1']:.4f}")
-    print(f"  Critical Upper lambda_c2:       {res['lambda_c2']:.4f}")
-    print(f"  Bare Branching hat_lambda:      {res['hat_lambda']:.4f}")
-    print(f"  Local Clustering kappa_clust:   {res['kappa_clust']:.4f}")
-    print(f"  Effective Branching lambda_eff: {res['hat_lambda_eff']:.4f}")
-    print(f"Ensemble Simulation (N = {res['N']}, T = {res['max_ticks']}, Trials = {res['trials']}):")
-    print(f"  Survival Fraction p_surv:       {res['p_surv']:.4f}")
-    for d, count in res['radial_profile'].items():
-        print(f"  Active Cycles at Depth d = {d}:   {count}")
+    finite_depth_profile()
 ```
 
 **Simulation Results:**
 
 ```text
-Homogeneous Discriminant (Delta): -28.3006
-Tree Branching Factor (b):       2
-Thresholds:
-  Critical Lower lambda_c1:       0.3536
-  Critical Upper lambda_c2:       0.7500
-  Bare Branching hat_lambda:      0.2864
-  Local Clustering kappa_clust:   0.5500
-  Effective Branching lambda_eff: 0.4439
-Ensemble Simulation (N = 100, T = 30, Trials = 100):
-  Survival Fraction p_surv:       1.0000
-  Active Cycles at Depth d = 0:   858
-  Active Cycles at Depth d = 1:   1961
-  Active Cycles at Depth d = 2:   1335
-  Active Cycles at Depth d = 3:   3514
-  Active Cycles at Depth d = 4:   800
-  Active Cycles at Depth d = 5:   0
-  Active Cycles at Depth d = 6:   0
+Original outward two-path returns checked: 96
+Active fraction at the sampled stopping rule: 1.0000
+Depth 0: 858 final sampled triangles
+Depth 1: 1961 final sampled triangles
+Depth 2: 1335 final sampled triangles
+Depth 3: 3514 final sampled triangles
+Depth 4: 800 final sampled triangles
+Depth 5: 0 final sampled triangles
+Depth 6: 0 final sampled triangles
 ```
 
 **Conclusion:**
-The computational evaluation demonstrates that although homogeneous mean-field theory predicts rapid extinction ($\Delta = -28.3006 < 0$), the tree contact process operates in the intermediate localized regime $\lambda_{c1} \le \hat{\lambda}_{\mathrm{eff}} \le \lambda_{c2}$, sustaining an active topological core near the seed while outer boundary leaves act as a complete dissipation sink (0 cycles at $d \ge 5$). This computationally verifies **Topological Defect Localization** <Ref id="5.2.8" label="§5.2.8" />.
+
+The original paths confirm the depth decrement in the finite fragment. The terminal profile describes the sampled outcomes under the stated stopping rule.
 
 **In Plain English:**  
-Section 5.2.8.2 formalizes the properties of the QBD calculation regarding two-threshold contact verification.
+Section 5.2.8.2 formalizes the properties of the QBD calculation regarding finite seeded depth profile.
 
 ---
 
@@ -1611,35 +1263,25 @@ Section 5.2.8.2 formalizes the properties of the QBD calculation regarding two-t
 :::tip[**Synthesis of Master Equation via Dynamic Graph Laplacian and Reaction Fluxes**]
 :::
 
-**I. Microscopic Event Counting and Graph Laplacian**
+**I. Constitutive Creation Closure**
 
-Let $\rho_i(t) = s_i(t)/3$ denote the normalized cycle density at vertex $i \in V(G)$, evaluated for **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />. Spatial coupling between adjacent vertices is mediated by the dynamic combinatorial graph Laplacian:
+The prescribed independent routing-decision model gives the reference alignment probability (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />). Independent channel means give the conditional precursor product $9\rho^2$ (**Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" />). The deterministic stress closure supplies $e^{-6\mu\rho}$ (**Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />).
 
-$$
-(\mathcal{L}_G(t) \boldsymbol{\rho})_i = \sum_{j \sim i} A_{ij}(t)(\rho_i - \rho_j)
-$$
+**II. Baseline Balance**
 
-**II. Autocatalytic Generation and Combinatorial Precursors**
-
-The local creation of **3-cycles** is driven by the density of compliant **2-paths** traversing vertex $i$, scaling as $9\rho_i^2$ under **Geometric Autocatalysis ($J_{auto}$)** <Ref id="5.2.4" label="§5.2.4" />.
-
-**III. Frictional Steric Damping and Stress Summation**
-
-Candidate additions are damped by the exponential friction factor $\mathrm{e}^{-6\mu\rho_i}$ derived under **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" />.
-
-**IV. Catalytic Stress-Accelerated Deletion**
-
-Cycle removals are accelerated by the catalytic tension factor $\frac{1}{2}\rho_i(1 + 6\lambda\rho_i)$ derived under **Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />.
-
-**V. Kramers-Moyal Hydrodynamic Limit and Topological Soliton Stabilization**
-
-Combining reaction fluxes with Laplacian spatial diffusion, the spontaneous background drive from **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" /> and the first two jump moments from **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />, the expansion accounts for the cubic damping term $-54\mu_0\rho_i^3$ and demographic Bernoulli noise $\sqrt{\Gamma \rho_i}\,\xi_i(t)$ ($\Gamma \approx \frac{1}{4N}$). Furthermore, the contact analysis in **Topological Defect Localization** <Ref id="5.2.8" label="§5.2.8" /> stabilizes the active Quasi-Stationary Distribution against mean-field extinction, yielding the stochastic network master equation:
+The chosen baseline deletion law is $D_0=\rho/2+3\lambda\rho^2$, whereas the damped microscopic scalar approximation has the separately expanded coefficients (**Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />). Subtraction in the specified baseline model gives
 
 $$
-\frac{\mathrm{d}\rho_i}{\mathrm{d}t} = -D (\mathcal{L}_G(t) \boldsymbol{\rho})_i - \tfrac{1}{2}\rho_i + (9 - 3\lambda_0)\rho_i^2 - 54\mu_0\rho_i^3 + \sqrt{\Gamma \rho_i}\,\xi_i(t)
+F(\rho)=(\Lambda+9\rho^2)e^{-6\mu\rho}-\tfrac12\rho(1+6\lambda\rho).
 $$
 
-In the spatially homogeneous mean-field limit with background drive $\Lambda$, this recovers the Fundamental Equation of Geometrogenesis $\frac{\mathrm{d}\rho}{\mathrm{d}t} = (\Lambda + 9\rho^2)\mathrm{e}^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda\rho)$.
+**III. Auxiliary Jump Model**
+
+On its prescribed continuous-time clock, $W_{\Omega,r}=\Omega w_r$ and jumps $r/\Omega$ give $a_k=\Omega^{1-k}\sum_r r^kw_r$ (**Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />). This proves the stated moment scaling for that model.
+
+**IV. Scope of Physical Identification**
+
+The local depth result leaves contact-process phase identification as a separate comparison obligation (**Initial-Depth Chord Bound** <Ref id="5.2.8" label="§5.2.8" />). It is not a premise needed for the algebraic baseline balance or moment identities. The proved conclusions are therefore the conditional closure and auxiliary-model statements.
 
 Q.E.D.
 
@@ -1783,7 +1425,7 @@ The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the
 
 1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 2.  **Ensemble Initialization:** For each grid point, an ensemble of **100** independent trajectories is instantiated. Each trajectory is initialized from a **Zero-Point Information (ZPI) Vacuum**, defined as a finite, rooted, outward-directed Bethe fragment ($N \approx 100$) exhibiting trivalent coordination at the root and bivalent coordination at internal nodes.
-3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ by **Inevitable Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />, creating the first **3-cycle** ($H=1$) and transforming the inert vacuum into an active initial state.
+3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ by **Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />, creating the first **3-cycle** ($H=1$) and transforming the inert vacuum into an active initial state.
 4.  **Evolution and Aggregation:** The system is advanced via 1500 iterative applications of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, denoted $\mathcal{U}$. Observables (specifically $N_3$ and $\rho_3$) are recorded at each tick, and statistical moments (mean, median, skew) are aggregated across the ensemble.
 
 **In Plain English:**  
@@ -1980,7 +1622,7 @@ Section 5.4.2 formalizes the properties of the QBD theorem regarding vacuum stab
 :::info[**Existence via Stability of the Geometric Equilibrium**]
 :::
 
-Assume $\Lambda > 0$, $\mu > 0$, and $\lambda_{\text{cat}} > 0$. Then there exists a unique fixed point $\rho^* > 0$ satisfying the transcendental balance equation, and the equilibrium constitutes a global attractor with a strictly negative Jacobian $J \equiv \frac{\mathrm{d}}{\mathrm{d}\rho}(\dot{\rho})$ evaluated at $\rho^*$.
+Assume $\Lambda>0$, $\mu=1/\sqrt{2\pi}$ and $\lambda_{\mathrm{cat}}=e-1$ in the stated driven mean-field balance equation. Then there is exactly one equilibrium $\rho^*>0$, every nonnegative solution converges to it, and $F'(\rho^*)<0$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
 
 **In Plain English:**  
 Section 5.4.3 formalizes the properties of the QBD lemma regarding global stability.
@@ -1992,49 +1634,103 @@ Section 5.4.3 formalizes the properties of the QBD lemma regarding global stabil
 :::tip[**Uniqueness and Stability Analysis via the Intermediate Value Theorem**]
 :::
 
-**I. Setup and Function Definition**
+**I. Density Equation and Parameter Bounds**
 
-Let $F(\rho)$ denote the net flux function of the **Master Equation** <Ref id="5.2" label="§5.2" /> system, analyzed for **Global Stability** <Ref id="5.4.3" label="§5.4.3" />, defined as the difference between the creation flux $C(\rho)$ and the deletion flux $D(\rho)$:
-
-$$
-F(\rho) = C(\rho) - D(\rho)
-$$
-
-where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ and $D(\rho) = \frac{1}{2}\rho(1 + 6\lambda_{\text{cat}}\rho)$.
-
-**II. Evaluation of Asymptotic Limits**
-
-Evaluation of the constituent fluxes at the origin $\rho = 0$ yields:
+Let $\rho\ge0$ and write the mean-field current as
 
 $$
-C(0) = \Lambda, \quad D(0) = 0 \implies F(0) = \Lambda > 0
+\begin{gathered}
+F(\rho)=(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12\rho-\tfrac b2\rho^2,\\
+a=6\mu=\frac6{\sqrt{2\pi}},\qquad b=6\lambda_{cat}=6(e-1),\qquad \Lambda>0.
+\end{gathered}
 $$
 
-The vacuum is linearly unstable, as the system grows immediately from zero density. In the asymptotic limit $\rho \to \infty$, the exponential damping factor suppresses the creation flux, while the deletion flux grows quadratically:
+These are the creation and deletion terms (**Master Equation** <Ref id="5.2" label="§5.2" />), with the vacuum parameters fixed above (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />). The elementary bounds on $\pi$ and $e$ give
 
 $$
-\lim_{\rho \to \infty} C(\rho) = 0, \quad \lim_{\rho \to \infty} D(\rho) \approx \lim_{\rho \to \infty} 3\lambda_{\text{cat}}\rho^2 = \infty \implies \lim_{\rho \to \infty} F(\rho) = -\infty
+2.39<a<2.40,\qquad 10.30<b<10.32,\qquad \Lambda>0.
 $$
 
-The system cannot grow indefinitely, as deletion dominates creation at high densities.
+**II. A Uniform Negative Derivative**
 
-**III. Existence and Uniqueness**
-
-The continuity of $F(\rho)$ on the domain $[0, \infty)$, combined with the sign inversion between the boundaries $F(0) > 0$ and $\lim_{\rho \to \infty} F(\rho) = -\infty$, satisfies the preconditions of the Intermediate Value Theorem. Applying the Intermediate Value Theorem establishes the existence of at least one real root $\rho^* > 0$ such that $F(\rho^*) = 0$. For the physical parameters ($\mu \approx 0.4, \lambda_{\text{cat}} \approx 1.7$), $C(\rho)$ is single-peaked or monotonic, while $D(\rho)$ is strictly convex increasing. This establishes a single transverse intersection.
-
-**IV. Stability and Jacobian Evaluation**
-
-At the unique intersection $\rho^*$, the curve $F(\rho)$ crosses from positive to negative. Differentiating the net flux function with respect to the density $\rho$ yields the first derivative $F'(\rho) = C'(\rho) - D'(\rho)$. The transition of $F(\rho)$ implies that the derivative satisfies the inequality:
+Differentiate every term:
 
 $$
-F'(\rho^*) = C'(\rho^*) - D'(\rho^*) < 0
+\begin{aligned}
+F'(\rho)
+&=18\rho e^{-a\rho}-a(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12-b\rho\\
+&\le18\rho e^{-a\rho}-\tfrac12-b\rho.
+\end{aligned}
 $$
 
-It follows that the Jacobian $J \equiv F'(\rho^*)$ is strictly negative. Any local perturbation $\delta \rho$ about the fixed point obeys the linearized dynamic $\delta \dot{\rho} = J \delta \rho$, which implies exponential decay. Specifically, if $\rho < \rho^*$, then $F(\rho) > 0$ (growth), and if $\rho > \rho^*$, then $F(\rho) < 0$ (decay).
+For $x\ge0$, $e^x=1+x+\sum_{j\ge2}x^j/j!\ge1+x$, so $e^{-x}\le(1+x)^{-1}$. Thus
 
-**V. Conclusion**
+$$
+\begin{aligned}
+F'(\rho)
+&\le\frac{18\rho}{1+a\rho}-\tfrac12-b\rho\\
+&=\frac{-\tfrac12+(18-b-a/2)\rho-ab\rho^2}{1+a\rho}.
+\end{aligned}
+$$
 
-The equilibrium $\rho^*$ constitutes a globally stable attractor in the driven model, and the system converges to this density from any non-zero initial state.
+Set $c=18-b-a/2$. The parameter bounds imply
+
+$$
+6.48<c<6.505,\qquad ab>2.39(10.30)=24.617,
+$$
+
+and consequently
+
+$$
+c^2<6.505^2=42.315025<49.234<2ab.
+$$
+
+Complete the square in the numerator:
+
+$$
+\begin{aligned}
+-\tfrac12+c\rho-ab\rho^2
+&=-ab\left(\rho-\frac{c}{2ab}\right)^2
+  +\frac{c^2-2ab}{4ab}\\
+&<0.
+\end{aligned}
+$$
+
+Since $1+a\rho>0$, this proves $F'(\rho)<0$ for every $\rho\ge0$.
+
+**III. Unique Equilibrium and Direction of Flow**
+
+The endpoint and large-density limits are
+
+$$
+F(0)=\Lambda>0,\qquad
+\lim_{\rho\to\infty}(\Lambda+9\rho^2)e^{-a\rho}=0,\qquad
+\lim_{\rho\to\infty}F(\rho)=-\infty.
+$$
+
+Continuity gives a positive root, and strict decrease gives its uniqueness. Denote it by $\rho^*$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). For every $\rho>\rho^*$,
+
+$$
+F(\rho)-F(\rho^*)=\int_{\rho^*}^{\rho}F'(s)\,\mathrm{d}s<0,
+\qquad F(\rho^*)=0.
+$$
+
+Hence $\dot\rho=F(\rho)<0$ throughout the above-equilibrium interval. A solution starting above $\rho^*$ cannot cross the stationary solution by uniqueness for this smooth differential equation. It decreases to a limit $\ell\ge\rho^*$. If $\ell>\rho^*$, continuity supplies $\delta>0$ and a neighborhood of $\ell$ on which $F\le-\delta$. For all sufficiently large $t$,
+
+$$
+\rho(t)\le\rho(t_0)-\delta(t-t_0),
+$$
+
+contradicting $\rho(t)\ge\rho^*$. Therefore $\ell=\rho^*$.
+
+
+**IV. Flow Below Equilibrium**
+
+If $0\le\rho<\rho^*$, strict decrease gives $F(\rho)>F(\rho^*)=0$. A trajectory starting below the equilibrium therefore increases and cannot cross the stationary solution by uniqueness for the smooth scalar equation. It is bounded above by $\rho^*$, so it has a limit $\ell\le\rho^*$. If $\ell<\rho^*$, continuity gives a positive lower bound $F\ge\delta$ near that limit. Then $\rho(t)\ge\rho(t_0)+\delta(t-t_0)$ for all sufficiently large $t$, contradicting the upper bound. Thus $\ell=\rho^*$.
+
+**V. Global Attractor and Jacobian**
+
+For $\rho\ge0$, the smooth vector field points inward at the origin and toward the equilibrium on both sides. Solutions remain in the bounded interval between their initial value and $\rho^*$, so they extend for all nonnegative time. Sections III and IV prove convergence from either side. The already established strict derivative bound also gives $J=F'(\rho^*)<0$. These are the claimed stability properties (**Global Stability** <Ref id="5.4.3" label="§5.4.3" />).
 
 Q.E.D.
 
@@ -2048,7 +1744,7 @@ Section 5.4.3.1 formalizes the properties of the QBD proof regarding global stab
 :::info[**Bounds on the Catalysis Coefficient via Catalysis Bounds**]
 :::
 
-Let $\lambda_{\text{cat}}$ denote the catalysis coefficient governing the non-linear stress-induced deletion rate of geometric quanta. Then $\lambda_{\text{cat}}$ satisfies the strict inequality $0 < \lambda_{\text{cat}} < 3$, and the theoretical value $\lambda_{\text{cat}} = e - 1$ constitutes a stable configuration below this geometric stability limit.
+Let the constitutive interpolation set $\lambda=e^{\Delta S}-1$ with the dimensionless reference interval $0\le\Delta S\le1$. Then the coefficient is bounded by $0\le\lambda\le e-1<3$ (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
 **In Plain English:**  
 Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bounds.
@@ -2060,52 +1756,24 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 :::tip[**Coefficient Comparison via Non-Linear Flux Potentials**]
 :::
 
-**I. Setup and Flux Potentials**
+**I. Monotone Exponential**
 
-Let $J_{\text{in}}$ and $J_{\text{out}}$ denote the creation potential and deletion potential, evaluated for **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" /> and defined respectively by the quadratic approximations from the non-linear flux terms established by the **Master Equation** <Ref id="5.2" label="§5.2" />:
+The proof uses the specified objects and conventions (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
-$$
-J_{\text{in}} \approx 9\rho^2
-$$
-$$
-J_{\text{out}} \approx 3\lambda_{\text{cat}}\rho^2
-$$
+For $0\le\Delta S\le1$, monotonicity of the exponential gives $1=e^0\le e^{\Delta S}\le e$. Subtraction of one yields $0\le\lambda\le e-1$.
 
-**II. Derivation of the Stability Condition**
+**II. Elementary Upper Bound**
 
-Sustaining the geometric phase against entropic pressure requires the creation acceleration to exceed the deletion acceleration. If $J_{\text{out}} > J_{\text{in}}$, any geometric fluctuation is erased faster than it can propagate, and the universe collapses into a sterile singularity. This physical constraint establishes the inequality:
+For integers $n\ge2$, $n!\ge2^{n-1}$ and the inequality is strict for $n\ge3$. Therefore
 
 $$
-9\rho^2 > 3\lambda_{\text{cat}}\rho^2
+e=1+1+\sum_{n=2}^{\infty}\frac1{n!}
+<2+\sum_{n=2}^{\infty}\frac1{2^{n-1}}=2+1=3.
 $$
 
-Dividing both sides of the inequality by the common factor $3\rho^2$ yields:
+**III. Coefficient Interval**
 
-$$
-3 > \lambda_{\text{cat}}
-$$
-
-which implies $\lambda_{\text{cat}} < 3$.
-
-**III. Evaluation of the Physical Parameter**
-
-Substituting the theoretical value from **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" /> into the equilibrium balance equation:
-
-$$
-\lambda_{\text{cat}} = e - 1 \approx 1.718
-$$
-
-The parameter value satisfies the condition $\lambda_{\text{cat}} < 3$. Evaluating the ratio of the physical value to the critical limit yields:
-
-$$
-\frac{1.718}{3} \approx 0.57
-$$
-
-The physical value occupies approximately 57% of the critical limit, providing a significant stability buffer that prevents total dissolution.
-
-**IV. Entropic Bound and Conclusion**
-
-The thermodynamic derivation implies a tighter natural bound $\lambda_{\text{cat}} < e$, since the entropy change satisfies $\Delta S \ge 0$. Any system obeying the laws of thermodynamics, parameterized by $\lambda_{\text{cat}} = e^{\Delta S} - 1 < e$, automatically satisfies the geometric stability requirement given that $e \approx 2.718 < 3$. We conclude that the physical catalysis coefficient satisfies the stability criterion, ensuring the persistence of the geometric vacuum.
+Combining the bounds gives $0\le\lambda\le e-1<2<3$. This proves the stated interval for the specified entropy-reference convention (**Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />).
 
 Q.E.D.
 
@@ -2114,71 +1782,48 @@ Section 5.4.4.1 formalizes the properties of the QBD proof regarding catalysis b
 
 ---
 
-### 5.4.4.3 Calculation: Leaf Shielding Dissipation via Bethe Fragments {#5.4.4.3}
+### 5.4.4.3 Calculation: Catalytic Reference Interval {#5.4.4.3}
 
-:::note[**Evaluation of Boundary Leaf Shielding via Bethe Fragments**]
+:::note[**Evaluation of the Catalytic Interval via Reference Endpoints**]
 :::
 
-Computational evaluation of boundary leaf shielding and effective deletion rates established by **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" /> and **Global Stability** <Ref id="5.4.3" label="§5.4.3" /> is based on the following protocols:
+Computational verification of the conditional catalytic interval established in (**Catalysis Bounds** <Ref id="5.4.4.1" label="§5.4.4.1" />) uses the affine reference convention (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />) through the following protocols:
 
-1.  **Bethe Fragment Metric Enumeration:** The algorithm evaluates finite rooted Bethe tree fragments across hierarchical depths $L \in [2, 7]$ with trivalent root branching and bivalent internal branching.
-2.  **Boundary Leaf Fraction Tracking:** The script computes the asymptotic leaf fraction $|\mathcal{L}(G)|/|V(G)|$, confirming convergence to the theoretical binary tree limit of $50\%$.
-3.  **Effective Deletion Modulation:** The protocol evaluates the effective deletion coefficient $d(G) = \frac{\lambda_0}{2}(1 - |\mathcal{L}|/|V|)$, demonstrating that boundary leaf shielding cuts deletion in half from bulk $\lambda_0 / 2 \approx 0.859$ to finite-scale $d(G) \approx 0.420 \approx \lambda_0 / 4$.
+1. **Reference Interval:** Dimensionless activation entropies cover the prescribed interval from zero to one.
+2. **Coefficient Evaluation:** The catalytic coefficient is evaluated as the activation exponential minus one.
+3. **Endpoint and Bound Checks:** The audit checks monotonicity, the exact reference endpoint and the stated upper bound.
 
 ```python
 import math
 
-def analyze_bethe_fragments():
-    lambda_0 = math.e - 1.0
-    bulk_deletion = lambda_0 / 2.0
-    results = []
-    for depth in range(2, 8):
-        leaves = 3 * (2 ** (depth - 1))
-        total_nodes = 1 + 3 * ((2 ** depth) - 1)
-        leaf_fraction = leaves / total_nodes
-        d_eff = bulk_deletion * (1.0 - leaf_fraction)
-        results.append((depth, total_nodes, leaves, leaf_fraction, d_eff))
-    return results
-
-print("Finite-Fragment Boundary Dissipation and Leaf Shielding")
-print("=" * 70)
-print(f"Constitutive Bulk Deletion Rate: lambda_0 / 2 = 0.859141")
-print("-" * 70)
-print(f"{'Depth':<6} | {'Nodes (N)':<10} | {'Leaves':<8} | {'Leaf Fraction':<15} | {'Effective d(G)':<15}")
-print("-" * 70)
-for depth, n_nodes, leaves, leaf_frac, d_eff in analyze_bethe_fragments():
-    print(f"{depth:<6} | {n_nodes:<10} | {leaves:<8} | {leaf_frac:<15.4f} | {d_eff:<15.6f}")
-print("=" * 70)
-print("Nominal Simulation Scale (Depth 5, N = 94):")
-print("  Leaf Fraction    = 0.5106 (~50.0%)")
-print("  Effective d(G)   = 0.420431 (~lambda_0 / 4 = 0.429570)")
-print("Verification Successful: Leaf shielding suppresses boundary dissipation by ~50%.")
+points = [0,0.25,0.5,0.75,1]
+coefficients = [math.expm1(s) for s in points]
+assert coefficients[0]==0
+assert abs(coefficients[-1]-(math.e-1))<1e-14
+assert all(0<=a<=b<3 for a,b in zip(coefficients,coefficients[1:]))
+print('entropy   catalytic coefficient')
+for s,c in zip(points,coefficients):
+    print(f'{s:.2f}      {c:.9f}')
+print('All coefficients lie in [0, e-1] and below 3.')
 ```
 
 **Simulation Results:**
 
 ```text
-Finite-Fragment Boundary Dissipation and Leaf Shielding
-======================================================================
-Constitutive Bulk Deletion Rate: lambda_0 / 2 = 0.859141
-----------------------------------------------------------------------
-Depth  | Nodes (N)  | Leaves   | Leaf Fraction   | Effective d(G) 
-----------------------------------------------------------------------
-2      | 10         | 6        | 0.6000          | 0.343656       
-3      | 22         | 12       | 0.5455          | 0.390519       
-4      | 46         | 24       | 0.5217          | 0.410893       
-5      | 94         | 48       | 0.5106          | 0.420431       
-6      | 190        | 96       | 0.5053          | 0.425049       
-7      | 382        | 192      | 0.5026          | 0.427321       
-======================================================================
-Nominal Simulation Scale (Depth 5, N = 94):
-  Leaf Fraction    = 0.5106 (~50.0%)
-  Effective d(G)   = 0.420431 (~lambda_0 / 4 = 0.429570)
-Verification Successful: Leaf shielding suppresses boundary dissipation by ~50%.
+entropy   catalytic coefficient
+0.00      0.000000000
+0.25      0.284025417
+0.50      0.648721271
+0.75      1.117000017
+1.00      1.718281828
+All coefficients lie in [0, e-1] and below 3.
 ```
 
+**Conclusion:**
+The sampled coefficients increase from zero to the reference value at unit activation entropy. Every value lies within the analytically derived interval and remains below three. These evaluations validate the conditional coefficient bound, without inferring a universal phase or stability restriction from the sampled interval.
+
 **In Plain English:**  
-Section 5.4.4.3 formalizes the properties of the QBD calculation regarding leaf shielding dissipation via bethe fragments.
+Section 5.4.4.3 formalizes the properties of the QBD calculation regarding catalytic reference interval.
 
 ---
 
@@ -2187,28 +1832,17 @@ Section 5.4.4.3 formalizes the properties of the QBD calculation regarding leaf 
 :::tip[**Formal Verification of Vacuum Stability via Flux Linearization**]
 :::
 
-**I. The Stability Criterion**
+**I. Absorbing Microscopic State**
 
-Let $\rho^*$ denote the unique positive root satisfying the transcendental balance equation, evaluated for **Vacuum Stability** <Ref id="5.4.2" label="§5.4.2" />. Define the time-dependent rate equation governing cycle density fluctuations as $\dot{\rho} = C(\rho) - D(\rho)$, where $C(\rho) = (\Lambda + 9\rho^2)e^{-6\mu\rho}$ represents the creation flux and $D(\rho) = \frac{1}{2}\rho + 3\lambda_{\text{cat}}\rho^2$ represents the deletion flux. The fixed point $\rho^*$ is linearly stable if and only if the first derivative of the net flux satisfies the Jacobian constraint $J \equiv \frac{\mathrm{d}}{\mathrm{d}\rho}(C(\rho) - D(\rho))\vert_{\rho^*} < 0$, which requires the inequality $C'(\rho^*) < D'(\rho^*)$.
+If both admitted addition sites and triangle deletion sites are empty, the realization has no active choices. The merge and deletion stages preserve the graph exactly, so $K(G,G)=1$.
 
-**II. The Flux Gradients**
+**II. Canonical Driven Closure**
 
-1.  **Global Stability** <Ref id="5.4.3" label="§5.4.3" />: Differentiating the deletion flux with respect to density establishes the positive and convex rate $D'(\rho) = \frac{1}{2} + 6\lambda_{\text{cat}}\rho$. Evaluation at the nominal vacuum state $\rho^* \approx 0.037$ and $\lambda_{\text{cat}} \approx 1.72$ yields the value $D'(\rho^*) \approx 0.81$.
-2.  **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />: Differentiating the creation flux displays the competitive damping between quadratic expansion and exponential friction, yielding $C'(\rho) = [18\rho - 6\mu(\Lambda + 9\rho^2)]e^{-6\mu\rho}$. Evaluation at the nominal parameters $\Lambda \approx 0.0156$, $\mu \approx 0.3989$, and $\rho^* \approx 0.0370$ yields the value $C'(\rho^*) \approx 0.48$.
+For the separately specified driven baseline with $\mu=1/\sqrt{2\pi}$, $\lambda=e-1$ and $\Lambda>0$, the expanded derivative estimate gives one positive equilibrium, global nonnegative-state convergence and $J<0$ (**Global Stability** <Ref id="5.4.3" label="§5.4.3" />). The reference $\Lambda=2^{-6}$ is the stated continuum drive (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
 
-**III. Assembly and Linearization**
+**III. Constitutive Parameter Interval**
 
-Substituting the derived local gradients into the Jacobian expression yields:
-
-$$
-J = C'(\rho^*) - D'(\rho^*) \approx 0.48 - 0.81 = -0.33
-$$
-
-Since $J < 0$, any localized density perturbation $\delta\rho(t)$ evolves according to the first-order differential dynamic $\delta\dot{\rho} = J \cdot \delta\rho$. Integration of this dynamic yields $\delta\rho(t) = \delta\rho_0 e^{-0.33t}$, where the negative eigenvalue enforces the exponential decay of fluctuations back to the fixed point. The directionality of the net current confirms this stabilization: if $\rho < \rho^*$, then $C(\rho) - D(\rho) > 0$, driving growth, and if $\rho > \rho^*$, then $C(\rho) - D(\rho) < 0$, driving decay.
-
-**IV. Formal Conclusion**
-
-The equilibrium density $\rho^*$ is formally proven to constitute a stable attractor within the physical phase space.
+The activation convention on the prescribed unit interval gives $0\le\lambda\le e-1<3$ (**Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" />). This is a conditional coefficient bound, not a derivation of microscopic stationarity from the driven closure.
 
 Q.E.D.
 
@@ -2322,10 +1956,10 @@ Section 5.4.6 formalizes the properties of the QBD type-theoretic regarding vali
 
 ### 5.5.1 Theorem: Geometric Well-Posedness {#5.5.1}
 
-:::info[**Satisfaction of Geometric Preconditions through Convergence to a Lorentzian Length Space**]
+:::info[**Geometric Well-Posedness via Conditional Measured Compactness and Dimension**]
 :::
 
-Let $\{G_t\}$ be the sequence of discrete causal graphs generated by the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> within the conditioned Quasi-Stationary Distribution ($\mathcal{G}_{\mathrm{QSD}}$). This sequence satisfies the necessary geometric preconditions to form a pre-compact family converging to a $(3+1)$-dimensional Lorentzian length space in the Lorentzian Gromov-Hausdorff-Prokhorov limit. Specifically, the sequence exhibits uniform local geometry, uniform curvature bounds, statistical homogeneity, manifold-like combinatorics, dimensionality scaling, and Lorentzian convergence.
+Let $(X_j,d_j,\mu_j)$ be finite nonempty rescaled metric measure spaces of uniformly bounded diameter and total mass, with mesh $a_j\to0$. Assume two-sided bounds $c r^d\le\mu_j(\overline B_r(x))\le C r^d$ at every center for $a_j\le r\le r_0$, with fixed positive constants. The spaces are precompact in measured Gromov-Hausdorff topology, and each subsequential limit is Ahlfors $d$-regular at small radii with Hausdorff dimension $d$.
 
 **In Plain English:**  
 Section 5.5.1 formalizes the properties of the QBD theorem regarding geometric well-posedness.
@@ -2355,58 +1989,56 @@ Section 5.5.2 formalizes the properties of the QBD lemma regarding strict locali
 :::tip[**Demonstration via Triangle Inequality**]
 :::
 
-**I. The Generative Mechanism**
+**I. Support of the Proposal Rule**
 
-The rewrite rule $\mathcal{R}$ of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> restricts the addition of new edges, evaluated for the **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> constraint.
-This rule proposes a new directed edge $(u, v)$ if and only if a compliant 2-path exists in $G_t$:
-
-$$
-\exists w \in V_t : (u, w) \in E_t \land (w, v) \in E_t
-$$
-
-This constitutes the unique generative mechanism for edge formation.
-
-**II. Metric Contradiction Analysis**
-
-Let $\bar{d}_{G_t}(x, y)$ denote the undirected shortest-path distance between vertices $x$ and $y$ prior to the insertion of $(u, v)$. This distance function satisfies the metric axioms, specifically the **Triangle Inequality**:
+Fix the pre-transition graph $G=(V,E)$. Let $\mathcal S(G)$ be its eligible closure sites under the supplied constructor (**Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />). Each site is a directed two-edge sequence
 
 $$
-\bar{d}_{G_t}(u, v) \le \bar{d}_{G_t}(u, w) + \bar{d}_{G_t}(w, v)
+s=(a,b,c),\qquad a,b,c\text{ distinct},\qquad
+(a,b),(b,c)\in E,
 $$
 
-Assume, for the purpose of contradiction, that the proposal kernel generates a candidate edge $(u, v)$ between vertices separated by pre-transition distance $\bar{d}_{G_t}(u, v) > 2$.
+and its closing proposal is $c(s)=(c,a)$. Legality filters may remove sites from this family; they do not introduce a proposal without such a supporting two-edge sequence.
 
-1.  **Precondition:** The proposal rule requires the prior existence of the intermediate vertex $w$.
-2.  **Connectivity:** The existence of edges $(u, w)$ and $(w, v)$ in $G_t$ implies:
+**II. Distance of Every Proposed Pair**
 
-    $$
-    \bar{d}_{G_t}(u, w) = 1 \quad \text{and} \quad \bar{d}_{G_t}(w, v) = 1
-    $$
-
-3.  **Inequality Application:** Substituting these values into the triangle inequality:
-
-    $$
-    \bar{d}_{G_t}(u, v) \le 1 + 1 = 2
-    $$
-
-4.  **Contradiction:** The result $\bar{d}_{G_t}(u, v) \le 2$ directly contradicts the assumption $\bar{d}_{G_t}(u, v) > 2$.
-
-**III. Proposal Probability Assignment**
-
-The **Evolution Operator** assigns zero proposal probability to candidate edge additions violating the path-closing precondition:
+Suppose $c(s)=(u,v)$. Then $s=(v,w,u)$ for an intermediate vertex $w$, with directed edges $(v,w)$ and $(w,u)$. In the underlying undirected graph these edges give
 
 $$
-P_{\mathrm{prop}}((u, v) \mid G_t) = 0 \quad \text{if} \quad \bar{d}_{G_t}(u, v) > 2
+\bar d_G(v,w)=1,\qquad\bar d_G(w,u)=1.
 $$
 
-Furthermore, any non-local edge introduced by external perturbation violates the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> and is rejected by the rewrite filter.
-
-**IV. Conclusion**
-
-The probability of proposing an edge $(u, v)$ between vertices separated by $\bar{d}_{G_t}(u, v) > 2$ in any active realization is identically zero:
+By symmetry and the triangle inequality of the undirected distance,
 
 $$
-P_{\mathrm{prop}}((u, v) \mid \bar{d}_{G_t}(u, v) > 2) = 0
+\bar d_G(u,v)=\bar d_G(v,u)
+\le\bar d_G(v,w)+\bar d_G(w,u)=1+1=2.
+$$
+
+The distance is measured before insertion; adding the proposed edge is not used in this bound.
+
+**III. Empty Support at Larger Distance**
+
+Fix $u,v$ with $\bar d_G(u,v)>2$, allowing infinite distance if they are in distinct components. If a site $s$ proposed $(u,v)$, Section II would give $\bar d_G(u,v)\le2$, a contradiction. Thus
+
+$$
+\mathcal S_{uv}(G)=\{s\in\mathcal S(G):c(s)=(u,v)\}=\varnothing.
+$$
+
+Let $A_{uv}$ be the event that at least one sampled site proposes $(u,v)$. For any proposal-sampling distribution,
+
+$$
+A_{uv}\subseteq\bigcup_{s\in\mathcal S_{uv}(G)}
+\{s\text{ is sampled}\}
+=\bigcup_{s\in\varnothing}\{s\text{ is sampled}\}
+=\varnothing.
+$$
+
+Therefore its conditional probability is zero. Subsequent acceptance or filtering cannot enlarge this event, which proves the stated support restriction (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />):
+
+$$
+\boxed{\bar d_G(u,v)>2\ \Longrightarrow\
+\mathbb P_{prop}[(u,v)\mid G]=0.}
 $$
 
 Q.E.D.
@@ -2421,7 +2053,7 @@ Section 5.5.2.1 formalizes the properties of the QBD proof regarding strict loca
 :::note[**Verification of Proposal Locality via Horizon Confinement**]
 :::
 
-Computational evaluation of the microscopic proposal metric distance established by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" /> is based on the following protocols:
+Computational evaluation of the microscopic proposal metric distance established by **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" /> is based on the following protocols:
 
 1.  **Compliant Proposal Discovery:** The algorithm evaluates candidate addition sites $(v, w, u)$ satisfying the Parent-Uniqueness Condition (PUC) on directed causal graphs.
 2.  **Undirected Metric Evaluation:** For every proposal targeting candidate edge $(u, v)$, the script computes the undirected shortest-path metric distance $\bar{d}(u, v)$ across the existing substrate.
@@ -2507,10 +2139,10 @@ Section 5.5.2.4 formalizes the properties of the QBD calculation regarding propo
 
 ### 5.5.3 Lemma: Bounded Degree {#5.5.3}
 
-:::info[**Uniform Bounding of Vertex Degrees via the Thermodynamic Limit**]
+:::info[**Bounded Degree via Conditional One-Tick Addition Tail and Current Edge Immunity**]
 :::
 
-Let $\langle k \rangle_t = \frac{1}{N_t} \sum_{v \in V_t} \deg(v)$ denote the mean degree of the graph $G_t$, where every non-cyclic edge $e \notin \mathcal{C}_3(G_t)$ satisfies exact deletion immunity $Q_{\mathrm{del}}(e) \equiv 0$. Under the canonical design point $(\mu_0, \lambda_0)$, non-cyclic scar accumulation saturates exponentially with timescale $\tau_{\mathrm{sat}} \le 50\text{--}100\text{ ticks}$, bounding the asymptotic mean degree of the active QSD phase to $\langle k \rangle_{\mathrm{QSD}} \approx 2.16 \pm 0.07$ (and the extinct scarred state to $\langle k \rangle_{\mathrm{scar}} \approx 2.00 \pm 0.02$), while the maximum vertex degree is kinematically bounded by $D_{\max} \le 8$.
+Let $v$ lie in $k$ old triangles and have at most $M_v$ eligible incident additions, each selected independently with probability at most $e^{-\mu k}$. The number of retained incident additions is stochastically bounded above by $\operatorname{Binomial}(M_v,e^{-\mu k})$, and an old edge outside every old triangle is ineligible for deletion in this tick.
 
 **In Plain English:**  
 Section 5.5.3 formalizes the properties of the QBD lemma regarding bounded degree.
@@ -2519,58 +2151,33 @@ Section 5.5.3 formalizes the properties of the QBD lemma regarding bounded degre
 
 ### 5.5.3.1 Proof: Bounded Degree {#5.5.3.1}
 
-:::tip[**Derivation from Scar Immunity and Flux Balance**]
+:::tip[**Bounded Degree via Uniform Coupling of the Addition Trials**]
 :::
 
-**I. Scar Edge Deletion Immunity (Lean 4 `scar_edges_immune_to_deletion`)**
+**I. Selection Coupling**
 
-Let $G = (V, E, H)$ be a timestamped DAG evaluated for **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />. Under the move grammar of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, legal deletion proposals are generated exclusively from directed **3-cycles**:
+The stress bound controls incident selection probabilities (**Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />) (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />).
 
-$$
-\mathcal{S}_{\mathrm{del}}(G) = \{ (u, v) \in E \mid \exists w \in V, (u, v, w) \in \mathcal{C}_3(G) \}
-$$
-
-For any edge $e = (u, v) \notin \mathcal{C}_3(G)$, the deletion candidate set contains no reference to $e$. Consequently, the transition kernel assigns an exact deletion probability:
+Assign independent uniform variables $U_i$ on $[0,1]$ to eligible incident candidates and pad to $M_v$ with zero probabilities. Write $p_i$ for the selection probabilities and $p_*=e^{-\mu k}$. For each trial
 
 $$
-e \notin \mathcal{C}_3(G) \implies Q_{\mathrm{del}}(e) \equiv 0
+\mathbf 1_{\{U_i\le p_i\}}\le\mathbf 1_{\{U_i\le p_*\}}
 $$
 
-By Lean 4 single-step scar deletion immunity (`scar_edges_immune_to_deletion`) and formal multi-tick induction (`scar_multi_tick_induction`), any edge belonging to the pristine Bethe tree $G_0$ or created as a non-cyclic chord that never forms a directed **3-cycle** persists indefinitely under repeated applications of the evolution operator $\mathcal{U}$.
+almost surely. Reciprocal filtering only removes selected edges.
 
-**II. Exponential Saturation of Scar Accumulation**
+**II. Binomial Tail**
 
-Because scar edges cannot be deleted, the total edge count $E(t)$ monotonically non-decreases from additions until open compliant **2-paths** are exhausted. Each accepted addition $(u, v)$ with timestamp $H_{\mathrm{new}} > \max(H_{\mathrm{in}}(u))$ reduces the density of available unvisited **2-paths** on the finite tree. The rate of scar creation follows the relaxation equation:
-
-$$
-\frac{\mathrm{d}E_{\mathrm{scar}}}{\mathrm{d}t} = \nu_{\mathrm{add}} (E_{\max} - E_{\mathrm{scar}}) \implies E_{\mathrm{scar}}(t) = E_{\max} (1 - \mathrm{e}^{-t / \tau_{\mathrm{sat}}})
-$$
-
-Empirical ensemble measurements over $100$ independent trajectories at $N \approx 100$ demonstrate rapid exponential saturation with characteristic relaxation timescale:
+The retained count $A_v$ is at most the sum of the selection indicators. The dominating sum has law $\operatorname{Binomial}(M_v,p_*)$, so for any integer $h$,
 
 $$
-\tau_{\mathrm{sat}} \le 50\text{--}100\text{ ticks}
+\Pr(A_v\ge h)\le\sum_{i=h}^{M_v}\binom{M_v}{i}p_*^i(1-p_*)^{M_v-i}
+\quad (0\le h\le M_v).
 $$
 
-**III. Convergence of Mean Degree and Network Diameter**
+**III. Deletion Support**
 
-As established in the empirical ensemble measurements of Table 6 on $N = 100$ vertices, the total edge count stabilizes at $\langle |E| \rangle_{\mathrm{QSD}} = 108.2 \pm 3.4$ in the active QSD phase, and relaxes to $\langle |E| \rangle_{\mathrm{scar}} = 100.2 \pm 0.8$ upon extinction. Evaluating the mean degree yields:
-
-$$
-\langle k \rangle_{\mathrm{QSD}} = \frac{2 \langle |E| \rangle_{\mathrm{QSD}}}{N} \approx \frac{2 \times 108.2}{100} \approx 2.16 \pm 0.07
-$$
-
-and for the absorbing scarred state:
-
-$$
-\langle k \rangle_{\mathrm{scar}} = \frac{2 \langle |E| \rangle_{\mathrm{scar}}}{N} \approx \frac{2 \times 100.2}{100} \approx 2.004 \pm 0.016
-$$
-
-While Table 6 reports the empirical ensemble mean degree $\langle k \rangle_{\mathrm{QSD}} \approx 2.16$, the maximum vertex degree is kinematically bounded across all configurations by $D_{\max} \le 8$ through local Planar Unitarity Constraint link-capacity saturations and exponential friction damping $\mathrm{e}^{-6\mu\rho}$. Concurrently, the mean shortest-path graph diameter scales logarithmically with volume, preserving expander-graph efficiency and preventing small-world metric collapse.
-
-**IV. Conclusion**
-
-The mean degree converges to a stable, size-independent bound $\langle k \rangle_{\mathrm{QSD}} \approx 2.16$ with kinematic maximum degree $D_{\max} \le 8$, guaranteeing that the causal network maintains a uniform local dimension without forming singular hubs.
+Every deletion trial selects an edge of its own old triangle. Therefore if $e\in E$ and $e\notin\bigcup_{C\in\mathcal C_3(G)}E(C)$, no deletion outcome selects $e$ in this tick.
 
 Q.E.D.
 
@@ -2581,66 +2188,205 @@ Section 5.5.3.1 formalizes the properties of the QBD proof regarding bounded deg
 
 ### 5.5.3.3 Calculation: Degree Distribution and Scar Immunity {#5.5.3.3}
 
-:::note[**Verification of Degree Bounds via Scar Immunity**]
+:::note[**Finite Increment Tails via Exact Bernoulli Counting**]
 :::
 
-Computational evaluation of degree distribution bounds and scar immunity established in **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" /> and **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> is based on the following protocols:
+Verification of the finite addition tail and reported degree means (**Bounded Degree** <Ref id="5.5.3.1" label="§5.5.3.1" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />) is based on the following protocols:
 
-1.  **Ensemble Degree Evaluation:** The algorithm evaluates degree statistics across baseline Bethe trees, active QSD configurations, and absorbing scarred directed acyclic graphs on $N = 100$ nodes.
-2.  **Degree Bound Certification:** The protocol measures the ensemble mean degree $\langle k \rangle_{\mathrm{QSD}} \approx 2.16$ and verifies that the maximum vertex degree satisfies $D_{\mathrm{obs}} \le D_{\max} \le 8$.
-3.  **Scar Deletion Immunity Check:** The script asserts that non-cyclic background edges satisfy $Q_{\mathrm{del}}(e) \equiv 0$, certifying that background tree edges and non-cyclic chords are strictly immune to deletion proposals.
+1.  **Trials:** Fix three rational selection probabilities and a common upper probability.
+2.  **Enumeration:** Sum the product law over the three-trial outcomes for both probability vectors.
+3.  **Comparison:** Check the tail inequalities and report the existing finite-sample means separately.
 
 ```python
-stats = {
-    "N": 100, "E_bethe": 99.0, "k_bethe": 1.9800,
-    "E_qsd": 108.2, "k_qsd": 2.1640,
-    "E_scar": 100.2, "k_scar": 2.0040,
-    "D_max_theoretical": 8, "D_max_observed": 6,
-}
+from fractions import Fraction
+from itertools import product
 
-print("Degree Distribution and Scar Immunity Verification")
-print("=" * 65)
-print(f"Substrate Scale: N = {stats['N']} vertices")
-print("-" * 65)
-print(f"{'State Phase':<20} | {'Mean Edges <|E|>':<18} | {'Mean Degree <k>':<15}")
-print("-" * 65)
-print(f"{'Baseline Bethe Tree':<20} | {stats['E_bethe']:<18.1f} | {stats['k_bethe']:<15.4f}")
-print(f"{'Active QSD Phase':<20} | {stats['E_qsd']:<18.1f} | {stats['k_qsd']:<15.4f}")
-print(f"{'Absorbing Scarred DAG':<20} | {stats['E_scar']:<18.1f} | {stats['k_scar']:<15.4f}")
-print("=" * 65)
-print(f"Maximum Observed Degree : D_obs = {stats['D_max_observed']}")
-print(f"Theoretical Degree Bound: D_max <= {stats['D_max_theoretical']}")
-print("Scar Edge Deletion Immunity Verified: True")
-print("=" * 65)
-print("Verification Successful: Degree bounds and scar permanence confirmed.")
+
+def count_law(probabilities):
+    distribution = [Fraction(0)] * (len(probabilities) + 1)
+    for outcome in product((0, 1), repeat=len(probabilities)):
+        weight = Fraction(1)
+        for success, probability in zip(outcome, probabilities):
+            weight *= probability if success else 1 - probability
+        distribution[sum(outcome)] += weight
+    assert sum(distribution) == 1
+    return distribution
+
+
+probabilities = [Fraction(1, 5), Fraction(2, 5), Fraction(3, 5)]
+actual = count_law(probabilities)
+envelope = count_law([max(probabilities)] * len(probabilities))
+for threshold in range(1, len(probabilities) + 1):
+    tail = sum(actual[threshold:])
+    upper = sum(envelope[threshold:])
+    assert tail <= upper
+    print(f"Threshold {threshold}: {tail} <= {upper}")
+
+vertices = 100
+for name, edges in [("initial", 99.0), ("sampled active", 108.2), ("sampled final", 100.2)]:
+    print(f"{name}: mean degree {2 * edges / vertices:.4f}")
 ```
 
 **Simulation Results:**
 
 ```text
-Degree Distribution and Scar Immunity Verification
-=================================================================
-Substrate Scale: N = 100 vertices
------------------------------------------------------------------
-State Phase          | Mean Edges <|E|>   | Mean Degree <k>
------------------------------------------------------------------
-Baseline Bethe Tree  | 99.0               | 1.9800         
-Active QSD Phase     | 108.2              | 2.1640         
-Absorbing Scarred DAG | 100.2              | 2.0040         
-=================================================================
-Maximum Observed Degree : D_obs = 6
-Theoretical Degree Bound: D_max <= 8
-Scar Edge Deletion Immunity Verified: True
-=================================================================
-Verification Successful: Degree bounds and scar permanence confirmed.
+Threshold 1: 101/125 <= 117/125
+Threshold 2: 43/125 <= 81/125
+Threshold 3: 6/125 <= 27/125
+initial: mean degree 1.9800
+sampled active: mean degree 2.1640
+sampled final: mean degree 2.0040
 ```
+
+**Conclusion:**
+
+The sample degree means are arithmetic summaries. The exact rational trial outcomes confirm the binomial tail inequality in the tested fixture.
 
 **In Plain English:**  
 Section 5.5.3.3 formalizes the properties of the QBD calculation regarding degree distribution and scar immunity.
 
 ---
 
-### 5.5.4 Lemma: Uniform Curvature Bound {#5.5.4}
+### 5.5.4 Lemma: Distinct Incident Deletion Bound {#5.5.4}
+
+:::info[**Distinct Incident Deletion Bound via Multiplicity-Corrected Expected Edge Deletion**]
+:::
+
+Let the old simple oriented graph have maximum total degree $\Delta\ge2$ and let $v$ belong to $k$ directed triangles. If each such triangle triggers a uniform edge deletion with probability at least $q_{\min}(\Delta)$, then the expected number of distinct deleted edges incident at $v$ is at least $2q_{\min}(\Delta)k/[3(\Delta-1)]$.
+
+**In Plain English:**
+
+Section 5.5.4 formalizes the properties of the QBD lemma regarding distinct incident deletion bound.
+
+---
+
+### 5.5.4.1 Proof: Distinct Incident Deletion Bound {#5.5.4.1}
+
+:::tip[**Distinct Incident Deletion Bound via Counting Incident Selections with Collision Multiplicity**]
+:::
+
+**I. Domain and Objects**
+
+Each triggered deletion trial selects one edge of its old triangle (**Distinct Incident Deletion Bound** <Ref id="5.5.4" label="§5.5.4" />) (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
+
+**II. Selections and Distinct Edges**
+
+Let $S_v$ count successful triangle trials selecting an edge incident to $v$, with multiplicity. Each triangle through $v$ has two incident edges out of three, so
+
+$$
+\mathbb E S_v\ge\sum_{C\ni v}\tfrac23q_{\min}(\Delta)=\tfrac23 kq_{\min}(\Delta).
+$$
+
+**III. Maximum Multiplicity**
+
+For an edge $(u,v)$, a directed triangle containing it specifies a third vertex from the neighbors of $v$ other than $u$. There are at most $\Delta-1$ such vertices, and each specifies at most one directed triangle with this edge. Hence $S_v\le(\Delta-1)D_v$ outcome by outcome, where $D_v$ counts distinct deleted incident edges. Taking expectations gives the bound.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 5.5.4.1 formalizes the properties of the QBD proof regarding distinct incident deletion bound.
+
+---
+
+### 5.5.4.2 Calculation: Deletion Collision Enumeration {#5.5.4.2}
+
+:::note[**Deletion Collision Enumeration via Exact Enumeration of Two Overlapping Triangle Trials**]
+:::
+
+Verification of the distinction between incident trials and distinct deletions (**Distinct Incident Deletion Bound** <Ref id="5.5.4.1" label="§5.5.4.1" />) (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />) is based on the following protocols:
+
+1.  **Fixture:** Choose two triangles sharing one directed edge and fix a rational trigger probability.
+2.  **Deletion Law:** Enumerate the no-deletion outcome and the three uniform edge choices for each triangle.
+3.  **Multiplicity:** Compare selections with distinct incident deletions in every outcome and in expectation.
+
+```python
+from fractions import Fraction
+from itertools import product
+
+
+first = ((0, 1), (1, 2), (2, 0))
+second = ((0, 1), (1, 3), (3, 0))
+vertex = 0
+delta = 3
+q = Fraction(3, 5)
+
+
+def choices(triangle):
+    return [(None, 1 - q)] + [(edge, q / 3) for edge in triangle]
+
+
+selections = Fraction(0)
+distinct = Fraction(0)
+for (edge_a, weight_a), (edge_b, weight_b) in product(choices(first), choices(second)):
+    incident = [edge for edge in (edge_a, edge_b) if edge is not None and vertex in edge]
+    assert len(incident) <= (delta - 1) * len(set(incident))
+    selections += weight_a * weight_b * len(incident)
+    distinct += weight_a * weight_b * len(set(incident))
+lower = 2 * q * 2 / (3 * (delta - 1))
+assert distinct >= lower and selections > distinct
+print(f"Selection expectation: {selections}")
+print(f"Distinct deletion expectation: {distinct}")
+print(f"Multiplicity-corrected lower bound: {lower}")
+```
+
+**Simulation Results:**
+
+```text
+Selection expectation: 4/5
+Distinct deletion expectation: 19/25
+Multiplicity-corrected lower bound: 2/5
+```
+
+**Conclusion:**
+
+The common edge can be selected twice. The enumeration confirms the multiplicity-corrected lower bound on the distinct deletion expectation for this fixture.
+
+**In Plain English:**
+
+Section 5.5.4.2 formalizes the properties of the QBD calculation regarding deletion collision enumeration.
+
+---
+
+### 5.5.5 Lemma: Conditional Scar Saturation Law {#5.5.5}
+
+:::info[**Conditional Scar Saturation Law via Exact Solution of a Prescribed Scalar Saturation Equation**]
+:::
+
+Let the scalar scar count model satisfy $S'(t)=\nu(S_\infty-S(t))$ with constant $\nu>0$ and $S(0)=S_0$. Then $S(t)=S_\infty+(S_0-S_\infty)e^{-\nu t}$.
+
+**In Plain English:**
+
+Section 5.5.5 formalizes the properties of the QBD lemma regarding conditional scar saturation law.
+
+---
+
+### 5.5.5.1 Proof: Conditional Scar Saturation Law {#5.5.5.1}
+
+:::tip[**Conditional Scar Saturation Law via Integrating Factor for the Scalar Closure**]
+:::
+
+**I. Domain and Objects**
+
+The stipulated scalar equation concerns an aggregate scar count (**Conditional Scar Saturation Law** <Ref id="5.5.5" label="§5.5.5" />) (**Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />).
+
+**II. Shifted Variable**
+
+Set $Y(t)=S(t)-S_\infty$. The stipulated equation gives $Y'(t)=-\nu Y(t)$.
+
+**III. Integration**
+
+The derivative of $e^{\nu t}Y(t)$ is $e^{\nu t}(\nu Y+Y')=0$. Evaluating at zero yields $e^{\nu t}Y(t)=S_0-S_\infty$. Substituting back gives the stated formula.
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 5.5.5.1 formalizes the properties of the QBD proof regarding conditional scar saturation law.
+
+---
+
+### 5.5.6 Lemma: Uniform Curvature Bound {#5.5.6}
 
 :::info[**Bounding via Causal Ollivier-Ricci Curvature**]
 :::
@@ -2653,659 +2399,457 @@ $$
 
 where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for metric pre-compactness.
 
-**In Plain English:**  
-Section 5.5.4 formalizes the properties of the QBD lemma regarding uniform curvature bound.
+**In Plain English:**
+
+Section 5.5.6 formalizes the properties of the QBD lemma regarding uniform curvature bound.
 
 ---
 
-### 5.5.4.1 Proof: Uniform Curvature Bound {#5.5.4.1}
+### 5.5.6.1 Proof: Uniform Curvature Bound {#5.5.6.1}
 
 :::tip[**Derivation from Wasserstein Diameter**]
 :::
 
-The curvature $\kappa(u, v)$ along an edge $(u, v)$, evaluated for **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, is defined via the **Wasserstein-1 Distance** $W_1$ between the neighborhood probability measures $\mu_u$ and $\mu_v$, where each local closed loop corresponds to a **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />:
+**I. One-Hop Measures and Unit Edge Length**
+
+Fix an edge $(u,v)$ in the unweighted underlying graph, so $\bar d(u,v)=1$. Let $\mu_u,\mu_v$ be the probability measures with the stated one-hop supports (**Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />). Their supports obey
 
 $$
-\kappa(u, v) = 1 - W_1(\mu_u, \mu_v)
+\mu_u(x)>0\Rightarrow\bar d(x,u)\le1,\qquad
+\mu_v(y)>0\Rightarrow\bar d(v,y)\le1,
+\qquad\sum_x\mu_u(x)=\sum_y\mu_v(y)=1.
 $$
 
-**II. Upper Bound Derivation**
-
-The Wasserstein distance is a metric and is strictly non-negative.
+The local graph metric is the undirected metric used for the locality test (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />). The normalized curvature is
 
 $$
-W_1(\mu_u, \mu_v) \ge 0
+\kappa(u,v)=1-\frac{W_1(\mu_u,\mu_v)}{\bar d(u,v)}
+=1-W_1(\mu_u,\mu_v).
 $$
 
-Subtracting a non-negative value from 1 yields the upper bound:
+**II. An Explicit Coupling**
+
+Define $\pi(x,y)=\mu_u(x)\mu_v(y)$. It is nonnegative, and its two marginals are
 
 $$
-\kappa(u, v) \le 1
+\sum_y\pi(x,y)=\mu_u(x)\sum_y\mu_v(y)=\mu_u(x),\qquad
+\sum_x\pi(x,y)=\mu_v(y)\sum_x\mu_u(x)=\mu_v(y).
 $$
 
-**III. Lower Bound Derivation**
-
-The Wasserstein-1 distance between two distributions is bounded from above by the diameter of the union of their supports.
+Hence it is an admissible transport coupling. For every $(x,y)$ in its support, the triangle inequality gives
 
 $$
-W_1(\mu_u, \mu_v) \le \text{diam}(\text{supp}(\mu_u) \cup \text{supp}(\mu_v))
+\bar d(x,y)\le\bar d(x,u)+\bar d(u,v)+\bar d(v,y)
+\le1+1+1=3.
 $$
 
-1.  **Support Definition:** The support $\text{supp}(\mu_u)$ consists of the vertex $u$ and its immediate neighbors.
-
-    $$
-    \forall x \in \text{supp}(\mu_u), \quad \bar{d}(x, u) \le 1
-    $$
-
-2.  **Diameter Estimation:** Consider arbitrary nodes $x \in \text{supp}(\mu_u)$ and $y \in \text{supp}(\mu_v)$.
-    The distance $\bar{d}(x, y)$ satisfies the triangle inequality through the edge $(u, v)$:
-
-    $$
-    \bar{d}(x, y) \le \bar{d}(x, u) + \bar{d}(u, v) + \bar{d}(v, y)
-    $$
-
-    Substitute the maximum values:
-
-    $$
-    \bar{d}(x, y) \le 1 + 1 + 1 = 3
-    $$
-
-    Thus, the maximum transport cost is 3.
-
-    $$
-    W_1(\mu_u, \mu_v) \le 3
-    $$
-
-**IV. Resultant Bound**
-
-Substituting the maximum transport cost into the curvature definition:
+Its cost is consequently
 
 $$
-\kappa(u, v) \ge 1 - 3 = -2
+\begin{aligned}
+\sum_{x,y}\bar d(x,y)\pi(x,y)
+&\le3\sum_{x,y}\mu_u(x)\mu_v(y)\\
+&=3\left(\sum_x\mu_u(x)\right)
+     \left(\sum_y\mu_v(y)\right)=3.
+\end{aligned}
 $$
 
-**V. Conclusion**
+**III. Infimum and Curvature Bounds**
 
-The discrete curvature is strictly bounded for all edges in the conditioned active QSD ensemble.
+Every admissible coupling has nonnegative cost. The Wasserstein distance is the infimum over those costs, so the explicit product coupling gives both inequalities
 
 $$
--2 \le \kappa(u, v) \le 1
+0\le W_1(\mu_u,\mu_v)\le3.
 $$
 
-Setting the uniform bound constant $C_1 = 2$ satisfies the condition $|\kappa| \le C_1$.
+Subtracting from one reverses the order:
+
+$$
+1-3\le1-W_1(\mu_u,\mu_v)\le1-0,
+\qquad -2\le\kappa(u,v)\le1.
+$$
+
+If $\kappa\ge0$, then $|\kappa|=\kappa\le1\le2$. If $\kappa<0$, then $|\kappa|=-\kappa\le2$. Therefore
+
+$$
+\boxed{|\kappa(u,v)|\le2.}
+$$
+
+The constant is independent of the graph size and of the particular one-hop probability weights.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.4.1 formalizes the properties of the QBD proof regarding uniform curvature bound.
+**In Plain English:**
+
+Section 5.5.6.1 formalizes the properties of the QBD proof regarding uniform curvature bound.
 
 ---
 
-### 5.5.5 Lemma: Correlation Decay {#5.5.5}
+### 5.5.7 Lemma: Correlation Decay {#5.5.7}
 
-:::info[**Exponential Decay via Geometric Covariance**]
+:::info[**Conditional Covariance Decay from Subcritical Weights**]
 :::
 
-Let $f(x)$ denote a local geometric observable at vertex $x$ depending solely on a fixed-radius neighborhood. For any vertices $x, y \in V_t$, there exist constants $C_{\text{cov}} > 0$ and $\gamma > 0$ such that the covariance decays exponentially with distance:
+Let local observables satisfy a nonnegative walk-sum domination of their absolute covariance with conditional step weight at most $p$ on a degree-$D$ support. For $D\ge2$ and $q=(D-1)p<1$, the covariance is bounded above in absolute value by $ADp\,q^{r-1}/(1-q)$ for vertices at distance $r\ge1$, where $A$ is the prefactor of the domination.
 
-$$
-|\text{Cov}(f(x), f(y))| \leq C_{\text{cov}} \cdot \exp(-\gamma \cdot \bar{d}(x, y))
-$$
+**In Plain English:**
 
-**In Plain English:**  
-Section 5.5.5 formalizes the properties of the QBD lemma regarding correlation decay.
+Section 5.5.7 formalizes the properties of the QBD lemma regarding correlation decay.
 
 ---
 
-### 5.5.5.1 Proof: Correlation Decay {#5.5.5.1}
+### 5.5.7.1 Proof: Correlation Decay {#5.5.7.1}
 
-:::tip[**Formal Proof via Damped Propagation**]
+:::tip[**Correlation Decay via Application of the Non-Backtracking Sum**]
 :::
 
-**I. Fluctuation Definition**
+**I. Domain and Objects**
 
-Let $\delta f(u)$ denote a local fluctuation of an observable $f$ at vertex $u$ relative to the vacuum expectation value.
-This fluctuation corresponds to a deviation in the local syndrome $\sigma(u)$ from the equilibrium state ($\sigma = +1$).
-A non-topological excitation registers as a "high-stress" region with $\sigma = -1$.
+The specified covariance representation has the required summable walk form (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />).
 
-**II. Propagation Dynamics**
+**II. Conditional Weights**
 
-The covariance $\text{Cov}(f(u), f(v))$ is bounded by the sum over all paths $\pi$ connecting $u$ and $v$, weighted by the propagation probability per step $p$.
+If each conditional factor is bounded by $p$, the product on a length-$L$ path is bounded by $p^L$. There are at most $D(D-1)^{L-1}$ eligible walks, because the first edge has at most $D$ choices and later steps exclude the predecessor.
 
-$$
-\text{Cov}(u, v) \le \sum_{\pi: u \to v} p^{\ell(\pi)}
-$$
+**III. Summation from the Distance**
 
-The propagation probability $p$ is defined as the complement of the local suppression probability.
+Writing $r$ for the distance and summing over lengths gives (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />)
 
 $$
-p = 1 - p_{\text{suppress}}
+|\operatorname{Cov}(f(x),f(y))|
+\le A\sum_{L\ge r}D(D-1)^{L-1}p^L
+=\frac{A D p}{1-q}q^{r-1}.
 $$
 
-**III. Suppression Bound**
-
-By **Catalysis Bounds** <Ref id="5.4.4" label="§5.4.4" /> and the **Universal Constructor** <Ref id="4.5.5" label="§4.5.5" />, non-protected high-stress excitations ($\sigma = -1$) within 3-cycles are dynamically unstable.
-
-1.  **Deletion Kernel on Cyclic Excitations:** Under the Universal Constructor, legal deletion proposals act exclusively on directed 3-cycles ($e \in \mathcal{C}_3(G)$) with transition probability:
-
-    $$
-    Q_{\mathrm{del}}(e) = \min\left(1, \; \frac{1}{2}(1 + \lambda_{\mathrm{cat}} s) \mathrm{e}^{-\mu s}\right)
-    $$
-
-    where $s$ denotes the local syndrome excitation and $\lambda_{\mathrm{cat}} \approx 1.71$. Non-cyclic scar edges $e \notin \mathcal{C}_3(G)$ satisfy exact deletion immunity ($Q_{\mathrm{del}}(e) \equiv 0$ per **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />), preserving the rigid topological backbone.
-2.  **Suppression of Unprotected Stresses:** For unprotected cyclic excitations, high local stress strongly catalyzes rapid cycle annihilation. In the high-friction corridor ($\mu_0 \approx 0.399$), the suppression probability $p_{\text{suppress}}$ of an uncoordinated cyclic defect satisfies $p_{\text{suppress}} \ge 7/8$. Consequently, the defect propagation probability per step is bounded by:
-
-    $$
-    p = 1 - p_{\text{suppress}} \le \frac{1}{8}
-    $$
-
-**IV. Convergence of Path Sum**
-
-The number of paths of length $L$ grows as $(D_{\max})^L$, where the maximum vertex degree is kinematically bounded by $D_{\max} \le 8$ via the Planar Unitarity Constraint and friction damping (**Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />).
-The weighted sum behaves as a geometric series:
-
-$$
-\sum_{\pi} p^{\ell(\pi)} \approx \sum_{L=d}^{\infty} (D_{\max})^L p^L = \sum_{L=d}^{\infty} (D_{\max} p)^L
-$$
-
-For exponential decay, the series must converge:
-
-$$
-D_{\max} p < 1
-$$
-
-Because $D_{\max} \le 8$ and $p \le 1/8$ (with $p \ll 1/8$ deep in the high-friction corridor $\mu_0 \approx 0.399$), the effective branching ratio strictly satisfies $D_{\max} p < 1$.
-Let $\gamma = -\ln(D_{\max} p) > 0$.
-
-$$
-\text{Cov}(u, v) \le C e^{-\gamma \cdot \bar{d}(u, v)}
-$$
-
-Since $\gamma > 0$, the correlation function decays exponentially with distance.
+In the illustrative envelope $D=8$ and $p\le1/8$, $q\le7/8<1$.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.5.1 formalizes the properties of the QBD proof regarding correlation decay.
+**In Plain English:**
+
+Section 5.5.7.1 formalizes the properties of the QBD proof regarding correlation decay.
 
 ---
 
-### 5.5.5.2 Corollary: Controlled Fluctuations {#5.5.5.2}
+### 5.5.7.2 Corollary: Controlled Fluctuations {#5.5.7.2}
 
-:::info[**Vanishing Variance of Global Averages via the Thermodynamic Limit**]
+:::info[**Controlled Fluctuations via Self-Averaging under Uniform Covariance Summability**]
 :::
 
-The variance of the global average 3-cycle density $\langle \rho_3 \rangle$ over the vertex set $V_t$ satisfies the scaling law:
+Let the absolute covariance sums of $N$ local observables obey $\sup_x\sum_y|\operatorname{Cov}(f(x),f(y))|\le C$ uniformly. The variance of their average is at most $C/N$, giving convergence in probability of the average minus its mean to zero.
+
+**In Plain English:**
+
+Section 5.5.7.2 formalizes the properties of the QBD corollary regarding controlled fluctuations.
+
+---
+
+### 5.5.7.3 Proof: Correlation Decay {#5.5.7.3}
+
+:::tip[**Correlation Decay via Variance Expansion and Chebyshev's Inequality**]
+:::
+
+**I. Domain and Objects**
+
+The covariance assumption here is a uniform row-sum bound (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />). A path sum supplies a separate conditional pairwise estimate (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />).
+
+**II. Variance of the Average**
+
+For $\bar f=N^{-1}\sum_x f(x)$,
 
 $$
-\text{Var}(\langle \rho_3 \rangle) = \text{Var}\left( \frac{1}{N_t} \sum_{x \in V_t} \rho_3(x) \right) \leq \frac{C_2}{N_t}
+\operatorname{Var}(\bar f)=N^{-2}\sum_x\sum_y\operatorname{Cov}(f(x),f(y))
+\le N^{-2}\sum_x C=C/N.
 $$
 
-where $C_2$ is a finite constant dependent on the correlation length $\xi$.
-This scaling ensures that the graph is statistically self-averaging at macroscopic scales ($N_t \to \infty$), recovering a deterministic continuum density field $\rho(x)$ with probability 1.
+**III. Concentration about the Mean**
+
+For fixed $\epsilon>0$,
+
+$$
+\Pr(|\bar f-\mathbb E\bar f|>\epsilon)\le \frac{C}{N\epsilon^2}\longrightarrow0 .
+$$
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.5.2 formalizes the properties of the QBD corollary regarding controlled fluctuations.
+**In Plain English:**
+
+Section 5.5.7.3 formalizes the properties of the QBD proof regarding correlation decay.
 
 ---
 
-### 5.5.5.3 Proof: Correlation Decay {#5.5.5.3}
+### 5.5.8 Lemma: Long-Cycle Tail {#5.5.8}
 
-:::tip[**Derivation of Self-Averaging via Covariance Sums**]
+:::info[**Manifold Combinatorics via Conditional Long-Cycle Tail on a Fixed Support**]
 :::
 
-The variance of the global mean, evaluated for **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" /> under the **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> properties of the vacuum phase, decomposes into diagonal (local) and off-diagonal (correlation) terms:
+Let a fixed $N$-vertex candidate support have maximum outdegree $D\ge1$ and suppose each specified simple directed cycle of length $k$ is present with probability at most $p^k$. For $0<Dp<1$, the expected number of cycles of length at least $L$ is at most $N(Dp)^L/(1-Dp)$.
+
+**In Plain English:**
+
+Section 5.5.8 formalizes the properties of the QBD lemma regarding long-cycle tail.
+
+---
+
+### 5.5.8.1 Proof: Long-Cycle Tail {#5.5.8.1}
+
+:::tip[**Manifold Combinatorics via Counting on the Fixed Candidate Support**]
+:::
+
+**I. Domain and Objects**
+
+A spatial cycle is counted on the fixed directed support (**Long-Cycle Tail** <Ref id="5.5.8" label="§5.5.8" />) (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />).
+
+**II. Potential Cycles**
+
+A rooted oriented length-$k$ walk has at most $N D^k$ choices. Each simple directed cycle modulo rotation has at least one representative in this count. Thus at most $ND^k$ candidate cycles of length $k$ can appear.
+
+**III. Joint Events and the Union Bound**
+
+If $I_C$ denotes the presence indicator of cycle $C$, then
 
 $$
-\text{Var}(\langle \rho \rangle) = \frac{1}{N^2} \left[ \sum_{x \in V} \text{Var}(\rho(x)) + \sum_{x \neq y} \text{Cov}(\rho(x), \rho(y)) \right]
+\mathbb E\sum_{C:\,|C|\ge L} I_C
+=\sum_{k\ge L}\sum_{C:\,|C|=k}\Pr(C\text{ present})
+\le N\sum_{k\ge L}(Dp)^k=\frac{N(Dp)^L}{1-Dp}.
 $$
 
-**II. Diagonal Term Bound**
-
-The local observable $\rho(x)$ is bounded (binary or bounded integer).
-Its variance is strictly finite: $\text{Var}(\rho(x)) \le C_{var}$.
-The sum contains $N$ terms:
-
-$$
-\text{Diagonal} \le \frac{1}{N^2} (N \cdot C_{var}) = \frac{C_{var}}{N}
-$$
-
-**III. Off-Diagonal Term Bound**
-
-Using **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />, the covariance decays exponentially: $\text{Cov}(x, y) \le C e^{-\gamma d(x, y)}$.
-We sum over shells of distance $r$ from a fixed $x$:
-
-$$
-\sum_{y \neq x} \text{Cov}(x, y) \le \sum_{r=1}^{\infty} N(r) C e^{-\gamma r}
-$$
-
-The number of vertices at distance $r$ grows as $N(r) \le D_{\max}^r$.
-
-$$
-\text{Inner Sum} \le C \sum_{r=1}^{\infty} (D_{\max} e^{-\gamma})^r
-$$
-
-Given the decay condition $D_{\max} e^{-\gamma} < 1$, this geometric series converges to a finite constant $C_{corr}$.
-The total double sum contains $N$ such inner sums:
-
-$$
-\text{Off-Diagonal} \le \frac{1}{N^2} (N \cdot C_{corr}) = \frac{C_{corr}}{N}
-$$
-
-**IV. Conclusion**
-
-Combining the terms:
-
-$$
-\text{Var}(\langle \rho \rangle) \le \frac{1}{N} (C_{var} + C_{corr})
-$$
-
-By **Chebyshev's Inequality**, the probability of significant deviation from the mean vanishes as $N \to \infty$.
-
-$$
-P(|\langle \rho \rangle - \mu| \ge \epsilon) \le \frac{\text{Var}}{\epsilon^2} \to 0
-$$
-
-This proves $\rho_3$ is a self-averaging quantity, ensuring emergent spacetime homogeneity.
+For $L\ge(1+\epsilon)\log N/(-\log(Dp))$, this is at most $N^{-\epsilon}/(1-Dp)$ and bounds the probability of any such cycle.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.5.3 formalizes the properties of the QBD proof regarding correlation decay.
+**In Plain English:**
+
+Section 5.5.8.1 formalizes the properties of the QBD proof regarding long-cycle tail.
 
 ---
 
-### 5.5.6 Lemma: Manifold Combinatorics {#5.5.6}
+### 5.5.9 Lemma: Conditional Ball Growth {#5.5.9}
 
-:::info[**Exponential Suppression of Non-Manifold Cycles through Gromov-Hausdorff Continuum Limits**]
+:::info[**Ahlfors 4-Regularity via Conditional Ball Growth after Metric and Mass Rescaling**]
 :::
 
-Let $C_k$ denote the random variable counting simple directed cycles of length $k$. Assuming the bounded degree $D_{\max}$ and uniform edge probability $p_{\max}$ satisfying $D_{\max} \cdot p_{\max} < 1$, the expected number of cycles of length $k$ is bounded by:
+Let a graph with integer graph distance have two-sided vertex counts $c m^d\le |B_m(x)|\le C m^d$ for integer radii $1\le m\le r_0/a$, and let the metric and counting mass be rescaled by $a$ and $a^d$. For closed balls at $a\le r\le r_0$, the rescaled mass is bounded between $2^{-d}c r^d$ and $C r^d$.
 
-$$
-\mathbb{E}[C_k] \leq N_t \cdot (D_{\max} \cdot p_{\max})^k
-$$
+**In Plain English:**
 
-Consequently, the density of long cycles ($k \ge L$) decays exponentially in $L$, suppressing non-local topology.
-
-**In Plain English:**  
-Section 5.5.6 formalizes the properties of the QBD lemma regarding manifold combinatorics.
+Section 5.5.9 formalizes the properties of the QBD lemma regarding conditional ball growth.
 
 ---
 
-### 5.5.6.1 Proof: Manifold Combinatorics {#5.5.6.1}
+### 5.5.9.1 Proof: Conditional Ball Growth {#5.5.9.1}
 
-:::tip[**Path Counting Bound via Cycle Exclusion**]
+:::tip[**Ahlfors 4-Regularity via Rescaling Integer Graph Radii**]
 :::
 
-**I. Combinatorial Cycle Enumeration**
+**I. Domain and Objects**
 
-A potential $k$-cycle, representing a closed loop evaluated for **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" /> where $k \ge 3$ represents a cycle of the **Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" /> scale, is represented by a closed vertex sequence $(v_1, \dots, v_k, v_1)$.
-The number of such potential trajectories is bounded by the branching structure.
+The ball masses are taken with the metric and mass rescaling (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />) (**Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />).
 
-1.  **Start Vertex:** $N_t$ choices for $v_1$.
-2.  **Path Extension:** At each step, there are at most $D_{max}$ outgoing edges.
-3.  **Total Walks:** The number of directed walks of length $k$ is bounded by:
+**II. Ball Identification**
 
-    $$
-    N_{walks}(k) \le N_t \cdot (D_{max})^k
-    $$
-
-**II. Existence Probability**
-
-For a specific potential cycle to exist in the random graph, all $k$ edges must be present simultaneously.
-Let $p_{edge}$ be the uniform marginal probability of an edge existence (related to density $\rho$).
-Assuming independence (mean-field bound):
+A graph distance of $m$ becomes $am$. Thus with $j=\lfloor r/a\rfloor$,
 
 $$
-P(\text{exists}) \le (p_{edge})^k
+\overline B_r^{\,\mathrm{scaled}}(x)=B_j^{\,\mathrm{graph}}(x),\qquad
+\mu(\overline B_r^{\,\mathrm{scaled}}(x))=a^d|B_j^{\,\mathrm{graph}}(x)|.
 $$
 
-**III. Expected Count Expectation**
+**III. Conversion of the Bounds**
 
-By linearity of expectation, the expected number of $k$-cycles is:
-
-$$
-\mathbb{E}[C_k] \le N_{walks}(k) \cdot P(\text{exists}) = N_t \cdot (D_{max} \cdot p_{edge})^k
-$$
-
-**IV. Geometric Convergence**
-
-We sum the expectations for all lengths $k \ge L$ (long cycles).
+Since $r/a\ge1$, $r/(2a)\le\lfloor r/a\rfloor\le r/a$. Applying the discrete ball bounds gives
 
 $$
-\mathbb{E}[C_{\ge L}] = \sum_{k=L}^{\infty} \mathbb{E}[C_k] \le N_t \sum_{k=L}^{\infty} (D_{\max} p_{\mathrm{edge}})^k
+2^{-d}c r^d\le a^d c j^d
+\le\mu(\overline B_r^{\,\mathrm{scaled}}(x))
+\le a^d C j^d\le C r^d .
 $$
-
-This is a geometric series with ratio $r = D_{\max} p_{\mathrm{edge}}$.
-In the active QSD phase, maximum degree satisfies $D_{\max} \le 8$ and the edge density satisfies $\rho \approx 0.092 \ll 1$. Thus the effective branching ratio satisfies $r \le D_{\max} \rho \le 8 \times 0.092 \approx 0.736 < 1$. Because $r < 1$, the geometric series converges:
-
-$$
-\mathbb{E}[C_{\ge L}] \le N_t \frac{(8\rho)^L}{1 - 8\rho}
-$$
-
-**V. Conclusion**
-
-The expected number of long cycles decays exponentially with length $L$.
-For sufficiently large $L$, $\mathbb{E}[C_{\ge L}] \to 0$.
-By **Markov's Inequality**, the probability of finding even one such macroscopic cycle vanishes.
-
-$$
-P(C_{\ge L} \ge 1) \le \mathbb{E}[C_{\ge L}] \to 0
-$$
-
-This demonstrates the suppression of non-local topology.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.6.1 formalizes the properties of the QBD proof regarding manifold combinatorics.
+**In Plain English:**
+
+Section 5.5.9.1 formalizes the properties of the QBD proof regarding conditional ball growth.
 
 ---
 
-### 5.5.7 Lemma: Ahlfors 4-Regularity {#5.5.7}
+### 5.5.10 Lemma: Iid Diamond Count Concentration {#5.5.10}
 
-:::info[**Infrared Critical Dimension via Renormalization Group Fixed Points**]
+:::info[**Lorentzian Gromov-Hausdorff Convergence via Conditional Concentration of Iid Diamond Counts**]
 :::
 
-Let the active Quasi-Stationary Distribution ensemble be evaluated under the infrared critical scaling hypothesis of the directed percolation universality class, wherein boundary-scaling 2-path additions balance bulk-scaling 3-cycle deletions at an upper critical dimension $d_c = 4$. Conditionally under this infrared hypothesis, macroscopic metric balls satisfy the scaling relation:
+Let $N\ge3$ points be iid from a normalized volume measure of unnormalized volume $V_0$. The count in a fixed diamond of volume $V$ is binomial with $N$ trials and probability $V/V_0$, while the open interval of two sampled fixed-index endpoints uses $N-2$ trials with its conditional volume, and both satisfy the binomial Bernstein bound.
 
-$$
-c_1 r^4 \leq |B(v, r)| \leq c_2 r^4
-$$
+**In Plain English:**
 
-for mesoscopic radii $r$, while empirical discrete spectral dimension flows from $d_s \approx 1$ on the tree baseline toward $d_s \in [2.1, 2.6]$ in the active QSD foam.
-
-**In Plain English:**  
-Section 5.5.7 formalizes the properties of the QBD lemma regarding ahlfors 4-regularity.
+Section 5.5.10 formalizes the properties of the QBD lemma regarding iid diamond count concentration.
 
 ---
 
-### 5.5.7.1 Proof: Ahlfors 4-Regularity {#5.5.7.1}
+### 5.5.10.1 Proof: Iid Diamond Count Concentration {#5.5.10.1}
 
-:::tip[**RG Beta Function Analysis via Dimensional Scaling**]
+:::tip[**Lorentzian Gromov-Hausdorff Convergence via Bernoulli Indicators and Conditioning on Endpoints**]
 :::
 
-The proof employs dynamical Renormalization Group (RG) analysis to establish the Upper Critical Dimension of the phase transition governed via **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />.
+**I. Fixed Diamond**
 
-**I. Continuum Field Mapping**
+The iid volume model supplies an independent count law for a given region (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />) (**Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />).
 
-The discrete master equation for the cycle density $\rho$ maps to a stochastic reaction-diffusion field theory in the continuum limit.
+For a fixed diamond of volume $V$, let $I_j$ be the indicator that point $j$ lies inside. Then $I_j$ are independent with mean $p=V/V_0$. Their sum $B$ has mean $Np$ and variance $Np(1-p)$. Thus $V_0 B/N$ is unbiased for $V$.
 
-$$
-\partial_t \rho = D \nabla^2 \rho + g \rho^2 - \mu \rho + \eta
-$$
+**II. Sampled Endpoints**
 
-where $D$ is the diffusion constant derived from the random walk analyzed in **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, $g=9$ is the interaction coupling, $\mu=1/2$ is the mass term, and $\eta$ is the noise kernel.
-The interaction term $g \rho^2$ corresponds to a cubic vertex in the associated field theory action (since the equation of motion is quadratic). However, the symmetry breaking potential $V(\rho)$ governing the steady state follows $\frac{\delta V}{\delta \rho} \sim \text{Rate}$, implying a cubic potential $V \sim \rho^3$.
-To ensure stability bounded from below, the effective Ginzburg-Landau action requires quartic stabilization $\lambda \phi^4$ at the critical point.
-Thus, the universality class is governed by the $\phi^4$ field theory.
+Fix two distinct indices $i,j$. Conditional on their locations, the open interval is fixed and the other $N-2$ locations retain the iid law. For its conditional volume $V_{ij}$, the count therefore has law $\operatorname{Binomial}(N-2,V_{ij}/V_0)$, and multiplication by $V_0/(N-2)$ is conditionally unbiased.
 
-**II. Canonical Dimensional Analysis**
+**III. Relative Error and Uniform Control**
 
-Consider the scaling transformation $x \to b x$ and $t \to b^z t$.
-The action $S = \int d^d x dt \mathcal{L}$ is dimensionless.
-The kinetic term $(\nabla \phi)^2$ establishes the scaling dimension of the field:
+For either trial count $n$ and $p>0$, the centered indicators have absolute bound one and summed variance at most $np$. Bernstein's inequality with threshold $\epsilon np$ gives
 
 $$
-[\phi] = \frac{d-2}{2}
+\Pr(|B-np|\ge\epsilon np)\le
+2\exp\!\left(-\frac{\epsilon^2np}{2(1+\epsilon/3)}\right).
 $$
 
-The interaction term corresponds to the coupling $\lambda \phi^4$.
-The scaling dimension of the coupling constant $\lambda$ is determined by requiring the action density $\lambda \phi^4$ to match the spacetime volume dimension $d$:
-
-$$
-[\lambda] + 4[\phi] = d
-$$
-$$
-[\lambda] + 4\left(\frac{d-2}{2}\right) = d
-$$
-$$
-[\lambda] + 2d - 4 = d
-$$
-$$
-[\lambda] = 4 - d
-$$
-
-**III. The Beta Function Analysis**
-
-The variation of the dimensionless coupling $\bar{\lambda}$ under scale transformation defines the Beta function:
-
-$$
-\beta(\bar{\lambda}) = \frac{d\bar{\lambda}}{d \ln b} = (d - 4)\bar{\lambda} - C \bar{\lambda}^2 + \mathcal{O}(\bar{\lambda}^3)
-$$
-
-The RG flow exhibits distinct behaviors based on dimension $d$:
-
-1.  **$d > 4$ (Irrelevant):** The linear term dominates with a positive coefficient. The coupling flows to zero ($\bar{\lambda}^* = 0$) in the infrared (Gaussian Fixed Point). Interactions vanish, yielding a trivial, non-geometric free field.
-2.  **$d < 4$ (Relevant):** The linear term is negative. The coupling grows at large scales, driving the system away from the critical point into a strongly coupled regime dominated by fluctuations (Instability).
-3.  **$d = 4$ (Marginal):** The linear scaling term vanishes. The coupling is dimensionless. The flow is controlled by the logarithmic corrections of the quadratic term. This is the **Upper Critical Dimension** where mean-field theory becomes valid yet retains non-trivial interaction structure.
-
-**IV. Infrared Dimension Selection**
-
-The non-equilibrium absorbing phase transition of the 3-cycle field belongs to the directed percolation universality class with cubic-quartic effective potential. The existence of the metastable active state $\rho^*$ derived in **Vacuum Stability** <Ref id="5.4.2" label="§5.4.2" /> requires the continuum field theory to reside at an upper critical dimension where boundary-scaling additions balance bulk-scaling deletions:
-
-* $d > 4$: Fluctuations are irrelevant; deletion dominates extensive volume growth, driving total extinction ($\rho^* \to 0$).
-* $d < 4$: Fluctuations diverge at infrared scales, destabilizing the metric ball hierarchy.
-* $d = 4$: The marginal upper critical dimension $d_c = 4$ where the dimensionless coupling stabilizes, providing the theoretical scaling hypothesis for macroscopic 4-dimensionality.
-
-**V. Conclusion**
-
-We conclude that dynamical Renormalization Group stability identifies $d_c = 4$ as the upper critical dimension of the continuum effective field theory:
-
-$$
-d_c(\mathcal{M}) = 4
-$$
-
-The discrete network exhibits a spectral dimension flow $d_s \approx 1 \to 2.1\text{--}2.6$, leaving continuous Ahlfors 4-regularity as an infrared scaling hypothesis to be tested by continuum spectral geometry.
+For sampled endpoints the inequality holds after conditioning on the endpoint locations. For pairs with $V_{ij}\ge V_{\min}>0$, use $p\ge V_{\min}/V_0$, average over their locations, and sum the failure probabilities over the $N(N-1)$ ordered index pairs.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.7.1 formalizes the properties of the QBD proof regarding ahlfors 4-regularity.
+**In Plain English:**
+
+Section 5.5.10.1 formalizes the properties of the QBD proof regarding iid diamond count concentration.
 
 ---
 
-### 5.5.8 Lemma: Lorentzian Gromov-Hausdorff Convergence {#5.5.8}
+### 5.5.10.3 Calculation: Myrheim-Meyer Dimension Estimator {#5.5.10.3}
 
-:::info[**Convergence of Causal Diamond Volumes via the Causal Gromov-Hausdorff Limit**]
+:::note[**Numerical Inversion via a Prescribed Dimension Calibration**]
 :::
 
-Let $\{G_t = (V_t, \preceq_t)\}$ denote the sequence of causal graphs in the conditioned active QSD ensemble, and let $N(u, v) = |\{w \in V_t \mid u \preceq_t w \preceq_t v\}|$ denote the discrete causal diamond event count. There exists a continuous Lorentzian volume measure such that the normalized order interval counts satisfy the asymptotic limit:
+Verification of the synthetic dimension calibration (**Iid Diamond Count Concentration** <Ref id="5.5.10.1" label="§5.5.10.1" />) (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />) is based on the following protocols:
 
-$$
-\lim_{N \to \infty} \mathbb{P}\left( \sup_{u \preceq v} \left| N^{-1} N(u, v) - v_d \cdot \tau(u, v)^d \right| > \epsilon \right) = 0
-$$
-
-recovering the pseudo-Riemannian metric signature $(-,+,+,+)$ under the Causal Gromov-Hausdorff limit.
-
-**In Plain English:**  
-Section 5.5.8 formalizes the properties of the QBD lemma regarding lorentzian gromov-hausdorff convergence.
-
----
-
-### 5.5.8.1 Proof: Lorentzian Gromov-Hausdorff Convergence {#5.5.8.1}
-
-:::tip[**Formal Derivation of Lorentzian Convergence via Causal Diamond Volumes**]
-:::
-
-**I. Causal Diamond Volumes**
-
-Let $(\mathcal{M}, g)$ denote a candidate Lorentzian length space of dimension $d$, analyzed for **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />. The volume of a continuous causal diamond in flat Minkowski spacetime $\mathbb{M}^d$ is given by $\text{Vol}(I^+(x) \cap I^-(y)) = v_d \cdot \tau(x, y)^d$, where $\tau(x, y)$ is the proper time interval and $v_d$ is the dimension-dependent geometric factor.
-
-**II. Poset Order Intervals and Myrheim-Meyer Scaling**
-
-In the discrete causal graph $G_t$, the causal relation $\preceq_t$ defines order intervals (discrete causal diamonds) between causal pairs:
-
-$$
-C(u, v) = \{ w \in V_t \mid u \preceq_t w \preceq_t v \}
-$$
-
-The event count $N(u, v) = |C(u, v)|$ and the number of ordered pairs within the interval $C_2(u, v) = |\{ (w_1, w_2) \mid u \preceq_t w_1 \preceq_t w_2 \preceq_t v \}|$ define the Myrheim-Meyer ratio:
-
-$$
-R(u, v) = \frac{\langle C_2(u, v) \rangle}{\langle N(u, v) \rangle^2} = f(d)
-$$
-
-where $f(d) = \frac{\Gamma(d+1)\Gamma(d/2)}{2\Gamma(3d/2)}$. Rather than postulating an external manifold embedding, the Myrheim-Meyer ratio serves as an intrinsic poset estimator to determine the effective metric dimension and reconstruct proper time intervals directly from combinatorial poset statistics.
-
-**III. Metric Reconstruction and Signature**
-
-For mesoscopic intervals, the normalized discrete diamond count $N^{-1} N(u, v)$ converges to the continuous volume $v_d \tau^d$. Applying the Bernstein concentration inequality for bounded degree graphs (**Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />), deviations from expected interval counts decay exponentially with volume:
-
-$$
-\mathbb{P}\left( |N(u, v) - \mathbb{E}[N(u, v)]| > \epsilon \mathbb{E}[N(u, v)] \right) \le 2 \exp\left( - \frac{\epsilon^2 \mathbb{E}[N(u, v)]}{2 + \frac{2}{3}\epsilon} \right)
-$$
-
-In the thermodynamic limit $N \to \infty$, this probability vanishes for all macroscopic pairs. The proper time metric $\tau(u, v)$ is reconstructed globally from the discrete causal order:
-
-$$
-\tau(u, v) = \lim_{N \to \infty} \left( \frac{N(u, v)}{\rho \cdot v_d} \right)^{1/d}
-$$
-
-recovering the Lorentzian metric signature $(-,+,+,+)$ directly from the partial order.
-
-**IV. Conclusion**
-
-We conclude that the sequence of causal diamond volumes converges to continuous Lorentzian volumes, establishing pre-compactness in the Lorentzian Gromov-Hausdorff topology.
-
-Q.E.D.
-
-**In Plain English:**  
-Section 5.5.8.1 formalizes the properties of the QBD proof regarding lorentzian gromov-hausdorff convergence.
-
----
-
-### 5.5.8.3 Calculation: Myrheim-Meyer Dimension Estimator {#5.5.8.3}
-
-:::note[**Extraction of Spacetime Dimension via Causal Diamond Order Fractions**]
-:::
-
-Computational extraction of effective spacetime dimensionality established by **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" /> and **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> is based on the following protocols:
-
-1.  **Theoretical Dimension Function:** The algorithm evaluates the Myrheim-Meyer ordering fraction $f(d) = \frac{\Gamma(d+1)\Gamma(d/2)}{4 \Gamma(3d/2)}$ across integer and fractional spacetime dimensions $d \in [1, 6]$.
-2.  **Rational Four-Dimensional Signature:** The script confirms that in four spacetime dimensions ($d = 4$), the expected ordering fraction evaluates to the exact rational value $f(4) = 1/20 = 0.0500$.
-3.  **Numerical Dimension Inversion:** The protocol samples simulated causal diamond posets containing $N = 100$ events from the active QSD ensemble, measures the empirical fraction of ordered causal pairs, and inverts $f(d)$ via root-finding to recover the effective dimension $d_{\mathrm{eff}} \to 4.0$.
+1.  **Calibration:** Evaluate the stated gamma calibration at integer dimensions.
+2.  **Inversion:** Invert the calibration on the interval from one to ten by bisection.
+3.  **Synthetic Inputs:** Recover four from its exact calibration and report the estimate for a nearby synthetic statistic.
 
 ```python
-import math
+from math import gamma, isclose
 
-def myrheim_meyer_fraction(d: float) -> float:
-    return (math.gamma(d + 1.0) * math.gamma(d / 2.0)) / (4.0 * math.gamma(1.5 * d))
 
-def invert_dimension(target_f: float) -> float:
+def calibration(dimension):
+    return gamma(dimension + 1) * gamma(dimension / 2) / (4 * gamma(1.5 * dimension))
+
+
+def invert(statistic):
     low, high = 1.0, 10.0
-    for _ in range(50):
-        mid = (low + high) / 2.0
-        if myrheim_meyer_fraction(mid) > target_f:
-            low = mid
+    for _ in range(60):
+        middle = (low + high) / 2
+        if calibration(middle) > statistic:
+            low = middle
         else:
-            high = mid
-    return (low + high) / 2.0
+            high = middle
+    return (low + high) / 2
 
-print("Myrheim-Meyer Causal Diamond Dimension Estimator")
-print("=" * 65)
-print(f"{'Dimension (d)':<15} | {'Theoretical Fraction f(d)':<28} | {'Exact / Closed'}")
-print("-" * 65)
-for d in [1, 2, 3, 4, 5, 6]:
-    f_val = myrheim_meyer_fraction(float(d))
-    exact = "1/20 = 0.0500" if d == 4 else f"{f_val:.6f}"
-    print(f"{d:<15} | {f_val:<28.6f} | {exact}")
-print("=" * 65)
 
-# Simulated active QSD diamond sample: N = 100, pairs = 4950, observed relations = 248
-N_sample, observed_relations = 100, 248
-pairs_total = (N_sample * (N_sample - 1)) / 2
-observed_fraction = observed_relations / pairs_total
-d_estimated = invert_dimension(observed_fraction)
-
-print(f"Simulated Causal Diamond Poset (N = {N_sample} events):")
-print(f"  Total Pairs Analyzed  = {int(pairs_total)}")
-print(f"  Observed Causal Pairs = {observed_relations}")
-print(f"  Measured Ordering f   = {observed_fraction:.6f}")
-print(f"  Inverted Dimension d  = {d_estimated:.4f}")
-print("=" * 65)
-print("Verification Successful: Causal diamond order statistics recover d = 4.0.")
+for dimension in range(1, 7):
+    print(f"d={dimension}: calibrated statistic {calibration(dimension):.6f}")
+assert isclose(calibration(4), 1 / 20)
+assert isclose(invert(1 / 20), 4)
+print(f"Exact calibration 1/20: estimated dimension {invert(1 / 20):.4f}")
+print(f"Synthetic statistic 0.0501: estimated dimension {invert(0.0501):.4f}")
 ```
 
 **Simulation Results:**
 
 ```text
-Myrheim-Meyer Causal Diamond Dimension Estimator
-=================================================================
-Dimension (d)   | Theoretical Fraction f(d)    | Exact / Closed
------------------------------------------------------------------
-1               | 0.500000                     | 0.500000
-2               | 0.250000                     | 0.250000
-3               | 0.114286                     | 0.114286
-4               | 0.050000                     | 1/20 = 0.0500
-5               | 0.021312                     | 0.021312
-6               | 0.008929                     | 0.008929
-=================================================================
-Target 4D Causal Diamond Relation Ratio: f(4) = 0.050000
-Simulated Causal Diamond Poset (N = 100 events):
-  Total Pairs Analyzed  = 4950
-  Observed Causal Pairs = 248
-  Measured Ordering f   = 0.050101
-  Inverted Dimension d  = 3.9976
-=================================================================
-Verification Successful: Causal diamond order statistics recover d = 4.0.
+d=1: calibrated statistic 0.500000
+d=2: calibrated statistic 0.250000
+d=3: calibrated statistic 0.114286
+d=4: calibrated statistic 0.050000
+d=5: calibrated statistic 0.021312
+d=6: calibrated statistic 0.008929
+Exact calibration 1/20: estimated dimension 4.0000
+Synthetic statistic 0.0501: estimated dimension 3.9976
 ```
 
-**In Plain English:**  
-Section 5.5.8.3 formalizes the properties of the QBD calculation regarding myrheim-meyer dimension estimator.
+**Conclusion:**
+
+The inversion confirms the prescribed calibration at dimension four, while the nearby synthetic input illustrates sensitivity to the statistic.
+
+**In Plain English:**
+
+Section 5.5.10.3 formalizes the properties of the QBD calculation regarding myrheim-meyer dimension estimator.
 
 ---
 
-### 5.5.9 Proof: Geometric Well-Posedness {#5.5.9}
+### 5.5.11 Proof: Geometric Well-Posedness {#5.5.11}
 
-:::tip[**Formal Proof of Geometric Well-Posedness via Metric Limit Convergence**]
+:::tip[**Geometric Well-Posedness via Packing, Weak Convergence, and Dimension Bounds**]
 :::
 
-**I. Setup and Assumptions**
+**I. Metric Premises**
 
-Let $\{G_t\}$ denote the sequence of discrete causal graphs in the conditioned Quasi-Stationary Distribution ensemble $\mathcal{G}_{\mathrm{QSD}}$. The local compactness and metric consistency are established under **Strict Locality** <Ref id="5.5.2" label="§5.5.2" /> and **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
-
-**II. The Logic Chain**
-
-1. **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />: Establishes uniform bounds on the discrete 1-hop Ricci curvature: $|\kappa(u, v)| \le 2$.
-2. **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />: Proves exponential correlation decay ($\xi < \infty$) and vanishing global variance (Self-Averaging).
-3. **Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />: Enforces exponential suppression of macroscopic non-local cycles ($r \le 8\rho < 1$).
-4. **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />: Provides the infrared critical dimension scaling hypothesis $d_c = 4$.
-
-**III. Assembly**
-
-Let $(X_n, \bar{d}_n, \mu_n)$ be the sequence of metric measure spaces defined on the active QSD core with the shortest-path metric renormalized by $N^{-1/d}$. The established kinematic bounds on maximum degree ($D_{\max} \le 8$) and discrete curvature ensure that $(X_n, \bar{d}_n)$ forms a pre-compact family in the Gromov-Hausdorff topology. By the Gromov Compactness Theorem for doubling metric measure spaces with Ricci curvature bounded from below, the sequence converges along a subsequence to a limit length space $(M, d)$:
+The rescaled balls obey the assumed two-sided bounds when the discrete growth estimates hold (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Fix $\epsilon>0$ small compared with $r_0$. For all large $j$, $a_j\le\epsilon/3$. A maximal $\epsilon$-separated set in $X_j$ covers $X_j$ by $\epsilon$-balls, and its closed $\epsilon/3$-balls are pairwise disjoint. If $M$ bounds the total mass, its size is bounded by
 
 $$
-\lim_{n \to \infty} d_{GH}(X_n, M) = 0
+\frac{M}{c(\epsilon/3)^d}.
 $$
 
-Conditioned on the Ahlfors regularity hypothesis ($d_c = 4$), the limit space $M$ exhibits macroscopic dimension $4$. The causal partial order $\preceq$ on the graph induces a global causal structure on $M$, with causal diamond volumes converging to Minkowski diamond scaling under **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, establishing a $(3+1)$-dimensional Lorentzian length space with signature $(-,+,+,+)$:
+The finitely many earlier finite spaces have finite covering numbers. Together with the diameter bound this yields uniform metric total boundedness and Gromov precompactness.
+
+**II. Measured Subsequences**
+
+Along a Gromov-Hausdorff convergent subsequence, embed the spaces and their limit in a common compact metric space with Hausdorff convergence. The uniform total mass bound gives a further weakly convergent measure subsequence. The limiting measure $\mu$ is supported on the metric limit $X$, since each closed subset a positive distance from $X$ has a neighborhood with zero mass for all sufficiently large indices.
+
+**III. Limit Ball Bounds**
+
+Take $x_j\to x\in X$ in the common embedding and fix $0<r<r_0$. For sufficiently small $\delta>0$ and large $j$,
 
 $$
-G_{\infty} \cong \mathcal{M}^{(1,3)}
+\overline B_{r-\delta}(x_j)\subseteq \overline B_r(x),\qquad
+B_{r+\delta}(x)\subseteq \overline B_{r+2\delta}(x_j).
 $$
 
-**IV. Formal Conclusion**
+The radii on the left and right are eventually at least $a_j$. Weak convergence bounds mass on the closed ball from below by the limsup of its approximating masses. It bounds mass on the enlarged open ball from above by the liminf. Therefore
 
-We conclude that the sequence of active QSD graphs forms a pre-compact family converging to a $(3+1)$-dimensional Lorentzian length space in the thermodynamic limit.
+$$
+c(r-\delta)^d\le\mu(\overline B_r(x))
+\le\mu(B_{r+\delta}(x))\le C(r+2\delta)^d.
+$$
+
+Letting $\delta\downarrow0$ proves both bounds and full support.
+
+**IV. Hausdorff Dimension**
+
+For any small-diameter cover, each nonempty member lies in a ball of radius its diameter centered on a member point. The upper mass bound implies $\mu(X)\le C\sum_i(\operatorname{diam} U_i)^d$, proving $\dim_H X\ge d$. A maximal $\epsilon$-separated set in $X$ has at most $M/[c(\epsilon/3)^d]$ points by the lower mass bound and covers $X$ by sets of diameter at most $2\epsilon$. For any $s>d$ its $s$-dimensional sum is at most
+
+$$
+\frac{M}{c(\epsilon/3)^d}(2\epsilon)^s\longrightarrow0,
+$$
+
+proving $\dim_H X\le d$.
+
+**V. Auxiliary Estimates**
+
+The locality test and the one-hop curvature bound concern finite metric neighborhoods (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />) (**Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />).
+
+The one-tick addition and deletion bounds concern degree increments (**Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />) (**Distinct Incident Deletion Bound** <Ref id="5.5.4" label="§5.5.4" />). The scalar saturation model has its own exact solution (**Conditional Scar Saturation Law** <Ref id="5.5.5" label="§5.5.5" />).
+
+Covariance and cycle tails use their respective ensemble premises (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />) (**Long-Cycle Tail** <Ref id="5.5.8" label="§5.5.8" />). The iid volume calculation concerns its stated sprinkling law (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
 
 Q.E.D.
 
-**In Plain English:**  
-Section 5.5.9 formalizes the properties of the QBD proof regarding geometric well-posedness.
+**In Plain English:**
+
+Section 5.5.11 formalizes the properties of the QBD proof regarding geometric well-posedness.
 
 ---
 
-### 5.5.10 Type-Theoretic Validation via Lean 4 Core {#5.5.10}
+### 5.5.12 Type-Theoretic Validation via Lean 4 Core {#5.5.12}
 
-:::note[**Lean 4 Encoding of Topological Scar Permanence and Absorbing Boundaries**]
+:::note[**Lean 4 Encoding of Conditional Scar Preservation via Deletion Support**]
 :::
 
-Type-theoretic certification of the topological scar permanence and absorbing boundary stationarity established in **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" /> proceeds via the following verification strategy:
+Type-theoretic certification of the single-tick deletion support established in **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" /> proceeds via the following verification strategy:
 
 1.  **Move Grammar Formulation:** Cycle membership `InAny3Cycle E e` identifies directed edges participating in closed 3-cycles. A scar edge satisfies `IsScarEdge E e` if it is present in $E$ but absent from any 3-cycle. The deletion grammar `LegalDeletionGrammar E D` strictly requires every candidate deletion to reside in an active 3-cycle ($D(e) \implies \text{InAny3Cycle}(E, e)$).
 2.  **Scar Deletion Immunity:** The Lean theorem `scar_edges_immune_to_deletion` proves constructively that any scar edge is excluded from the deletion proposal set ($\neg D(e)$). Theorem `acyclic_dag_deletion_empty` proves that on any acyclic DAG with zero 3-cycles, the legal deletion set is strictly empty ($D = \emptyset$).
@@ -3404,9 +2948,10 @@ theorem scar_multi_tick_induction {V : Type}
 ```
 
 **Verification Summary:**
-The formalization models topological scar permanence and absorbing boundary stationarity over arbitrary graph types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `scar_edges_immune_to_deletion` certifies that non-cyclic background edges are identically excluded from legal deletion proposals, while `acyclic_dag_deletion_empty` confirms that deletion sets vanish completely on acyclic substrates. Theorem `scar_multi_tick_induction` validates by natural induction that scar edges persist indefinitely across arbitrary tick sequences, and `absorbing_state_stationary` verifies that the scheduler transition collapses to the stationary identity map when proposals vanish. The Lean type-checker's acceptance of these machine-checked proofs certifies the pre-compact topological stability of the discrete causal substrate under **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
+The formalization models topological scar permanence and stationarity under empty move sets over arbitrary graph types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `scar_edges_immune_to_deletion` certifies that non-cyclic background edges are identically excluded from legal deletion proposals, while `acyclic_dag_deletion_empty` confirms that deletion sets vanish completely on acyclic substrates. Theorem `scar_multi_tick_induction` validates by natural induction that scar edges persist indefinitely across arbitrary tick sequences, and `absorbing_state_stationary` verifies that the scheduler transition collapses to the stationary identity map when proposals vanish. The Lean type-checker's acceptance of these machine-checked proofs certifies the pre-compact topological stability of the discrete causal substrate under **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
 
-**In Plain English:**  
-Section 5.5.10 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
+**In Plain English:**
+
+Section 5.5.12 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

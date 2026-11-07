@@ -211,161 +211,87 @@ Physical time is relationally defined as proper time computed along causal paths
 :::tip[**Global Sequencer ($t_L$) as the Fundamental Iterator of State Evolution**]
 :::
 
-Let $\mathcal{U}$ denote the Universal Evolution Operator. The **Global Logical Time**, denoted $t_L \in \mathbb{N}_0$, is the discrete, non-negative integer parameter indexing the sequence of global states of the universe under the repeated action of $\mathcal{U}$:
+Let $U_0$ be the specified input of a forward trajectory of the Universal Evolution Operator $\mathcal U$. **Global Logical Time** $t_L\in\mathbb N_0$ indexes that trajectory by labeling the input zero and incrementing the index by one for every update.
 
 $$
-U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\mathcal{U}} \dots \xrightarrow{\mathcal{U}} U_{t_L}
+U_0 \xrightarrow{\mathcal U} U_1 \xrightarrow{\mathcal U} U_2
+\xrightarrow{\mathcal U}\cdots\xrightarrow{\mathcal U}U_{t_L}.
 $$
 
-where each application of $\mathcal{U}$ maps state $U_{t_L}$ to $U_{t_L+1}$, establishing a strict total order on the history of the universe.
+The indices have their usual strict total order, including when distinct ticks have the same active configuration.
 
-**In Plain English:**  
-Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
+**In Plain English:**
+
+Logical time labels the specified initial snapshot zero and counts subsequent updates. The ordered indices distinguish observations even when adjacency repeats.
 
 ---
 
 ### 1.3.4 Theorem: Temporal Finitude {#1.3.4}
 
-:::info[**Necessity of a Finite Temporal Origin demanded by the Logical Exclusion of Infinite Regress**]
+:::info[**Temporal Finitude via Finite Capacity of Distinguishable Histories**]
 :::
 
-The following holds: the domain of Global Logical Time $t_L$ is strictly lower-bounded. There exists a unique initial state, designated $U_0$, which possesses no causal predecessor. The domain of $t_L$ is isomorphic to the set of non-negative integers $\mathbb{N}_0$, establishing a definite moment of genesis for the computational process.
+Let the histories distinguished at observation admit an injective encoding into $M<\infty$ possible present states. Their cardinality is at most $M$, and the comb with distinct retained terminal alternatives and the full continuing binary prefix tree give, respectively,
+
+$$
+K\le M-1,\qquad K\le\lfloor\log_2 M\rfloor.
+$$
+
+These are tick bounds when $K$ bounds the number of past ticks.
 
 **In Plain English:**  
-The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
+A finite state space bounds the number of histories that can be recovered from it. A time bound additionally depends on how the histories branch.
 
 ---
 
 ### 1.3.5 Lemma: Finite Information Substrate {#1.3.5}
 
-:::info[**Finiteness via Quadratic Boundedness of the Information Substrate**]
+:::info[**Finite Information Substrate via Entropy of Finite Update Choices**]
 :::
 
-Let $t_L$ denote a finite logical time. Then the information content $S(U_{t_L})$ is strictly finite, and the growth of this content is bounded by a quadratic function of logical time, $S(U_{t_L}) \le \mathcal{O}(t_L^2)$.
+Let $A_t$ and $C_t$ count binary addition trials and old triangles with at most four deletion outcomes each in a frozen snapshot. The conditional realization entropy is at most $A_t+2C_t$ bits, and under fixed initialization, uniform degree, one trial per candidate edge and at most linear vertex growth, both the accumulated conditional choice entropy and induced graph trajectory entropy are $O(T^2)$ through $T$ ticks.
 
 **In Plain English:**  
-The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
+The number of choices in a frozen tick bounds its conditional Shannon entropy. With bounded degree and at most linear vertex growth, the cumulative bound is quadratic in the tick count.
 
 ---
 
 ### 1.3.5.1 Proof: Finite Information Substrate {#1.3.5.1}
 
-:::tip[**Derivation of the Quadratic Entropy Bound via Inductive Branching**]
+:::tip[**Finite Information Substrate via Support Counting and the Entropy Chain Rule**]
 :::
 
-**I. Setup and Assumptions**
+**I. Single-Tick Support**
 
-Let $\Omega_{t}$ denote the set of admissible physical states at logical time $t$, as governed by the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> coordinate. Let $S(U_{t}) = \log_2 |\Omega_{t}|$ quantify the information content of the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" /> state.
+The frozen tick supplies the choice list and deterministic successor (**Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
 
-The physical postulates impose the following growth constraints:
-
-1. **Finite Local Branching ($b$):** The **Finite Nature Hypothesis** limits the update capacity of the substrate. The number of physically distinct successor states for any state $U$ is bounded by the local branching factor $b$ raised to the number of active sites.
+Let $\Xi_t$ denote the realization and fix the input snapshot $G_t=g$. Its choices occupy at most $2^{A_t(g)}4^{C_t(g)}$ outcomes. The entropy of a law on $n$ outcomes is at most $\log_2 n$. Thus
 
 $$
-\forall U \in \Omega, \quad | \{ U' \mid U \xrightarrow{\mathcal{U}} U' \} | \le b^{s_t}
+H(\Xi_t\mid G_t=g)\le\log_2(2^{A_t(g)}4^{C_t(g)})=A_t(g)+2C_t(g).
 $$
 
-2. **Causal Horizon Scaling ($\delta_{\text{holo}}$):** The number of active degrees of freedom is restricted to the cardinality of the growth front, defined as the set of maximal elements within the poset. In a causally expanding discrete graph, this boundary cardinality $s_t$ is bounded by a linear function of the poset height:
+**II. Counting with a Degree Bound**
+
+Let $N_t\le a+bt$ and let $\Delta$ bound the total degree. The number of directed two-paths through a vertex is at most $\Delta^2$. Each candidate and each triangle have a supporting two-path, with distinct candidates and distinct triangles separately giving distinct paths. Hence
 
 $$
-s_{t} \le \delta_{\text{holo}} \cdot t \quad \text{where } \delta_{\text{holo}} > 0
+A_t\le N_t\Delta^2,\qquad C_t\le N_t\Delta^2,\qquad A_t+2C_t\le3\Delta^2(a+bt).
 $$
 
-**II. Derivation**
+**III. Accumulated Entropy**
 
-The cardinality of the state space at step $t+1$ is bounded by the product of the previous cardinality and the successor count defined by the branching factor and active sites.
-
-$$
-|\Omega_{t+1}| \le |\Omega_t| \cdot b^{s_t}
-$$
-
-We apply a logarithmic transformation to convert this product into a summation for the entropy calculation:
+For fixed $G_0$, a realization prefix determines its final snapshot, and the full realization list determines the graph trajectory. Applying the support bound after fixing each prefix gives
 
 $$
-\log_2 |\Omega_{t+1}| \le \log_2 |\Omega_t| + \log_2(b^{s_t})
+\begin{aligned}
+H(G_1,\ldots,G_T)
+&\le H(\Xi_0,\ldots,\Xi_{T-1})\\
+&=\sum_{t=0}^{T-1}H(\Xi_t\mid\Xi_0,\ldots,\Xi_{t-1})\\
+&\le3\Delta^2\sum_{t=0}^{T-1}(a+bt)
+=3\Delta^2\bigl(aT+bT(T-1)/2\bigr).
+\end{aligned}
 $$
-
-Simplifying the expression yields the relational entropy formula:
-
-$$
-S(U_{t+1}) \le S(U_t) + s_t \log_2 b
-$$
-
-Let $\Delta S_t = S(U_{t+1}) - S(U_t)$ define the incremental entropy change. We substitute the **Holographic Surface Scaling** constraint to yield the explicit upper bound:
-
-$$
-\Delta S_t \le (\delta_{\text{holo}} t) \log_2 b
-$$
-
-**III. Accumulation**
-
-The total entropy at time $T$ constitutes the sum of the initial entropy and all incremental changes.
-
-$$
-S(U_T) = S(U_0) + \sum_{t=0}^{T-1} \Delta S_t
-$$
-
-The unique primordial vacuum at $t=0$ establishes the **Base Case**:
-
-$$
-|\Omega_0| = 1 \implies S(U_0) = 0
-$$
-
-We substitute the derived bound for $\Delta S_t$ into the cumulative sum:
-
-$$
-S(U_T) \le 0 + \sum_{t=0}^{T-1} (\delta_{\text{holo}} t \log_2 b)
-$$
-
-Factoring out the time-independent constants by defining $C = \delta_{\text{holo}} \log_2 b$ isolates the arithmetic series:
-
-$$
-S(U_T) \le C \sum_{t=0}^{T-1} t
-$$
-
-**IV. Resolution and Conclusion**
-
-We evaluate the arithmetic series via the standard summation formula with $n = T-1$:
-
-$$
-\sum_{t=0}^{T-1} t = \frac{(T-1)((T-1)+1)}{2}
-$$
-
-Simplifying the terms sequentially yields the explicit polynomial components:
-
-$$
-\sum_{t=0}^{T-1} t = \frac{(T-1)T}{2}
-$$
-
-$$
-\sum_{t=0}^{T-1} t = \frac{T^2 - T}{2}
-$$
-
-We substitute this result back into the entropy inequality:
-
-$$
-S(U_T) \le C \cdot \left( \frac{T^2 - T}{2} \right)
-$$
-
-Expanding the expression restores the explicit physical constants:
-
-$$
-S(U_T) \le \frac{\delta_{\text{holo}} \log_2 b}{2} (T^2 - T)
-$$
-
-For $T > 1$, the quadratic term strictly dominates the linear term, establishing the inequality $T^2 - T < T^2$. This dominance relation yields the strict upper bound:
-
-$$
-S(U_T) < \frac{\delta_{\text{holo}} \log_2 b}{2} T^2
-$$
-
-We conclude that the information content growth is bounded by a quadratic function of logical time:
-
-$$
-S(U_{t_L}) \le \mathcal{O}(t_L^2)
-$$
-
-This scaling holds universally for any locally finite, causally expanding graph.
 
 Q.E.D.
 
@@ -376,10 +302,10 @@ Section 1.3.5.1 formalizes the properties of the QBD proof regarding finite info
 
 ### 1.3.6 Lemma: Backward Accumulation {#1.3.6}
 
-:::info[**Exclusion of Unbounded Past Direction due to Backward Accumulation**]
+:::info[**Backward Accumulation via Occurrence Accumulation and Conditional Entropy**]
 :::
 
-Assume the domain of the global logical time parameter $T$ extends to the infinite past. Therefore, this unbounded configuration is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
+Let $\mathcal E_t$ be the cumulative occurrence set through tick $t$, initially finite. Across $K$ ticks each with a new record its cardinality increases by at least $K$, and if the trajectory's finite conditional entropy at each counted tick is at least $\epsilon>0$, its joint trajectory entropy increases by at least $\epsilon K$ bits.
 
 **In Plain English:**  
 Section 1.3.6 formalizes the properties of the QBD lemma regarding backward accumulation.
@@ -388,98 +314,33 @@ Section 1.3.6 formalizes the properties of the QBD lemma regarding backward accu
 
 ### 1.3.6.1 Proof: Backward Accumulation {#1.3.6.1}
 
-:::tip[**Derivation of Contradiction via Entropy and Capacity Divergence**]
+:::tip[**Backward Accumulation via Disjoint Increments and Conditional Entropy**]
 :::
 
-**I. Setup and Assumptions**
+**I. Domain and Objects**
 
-Let the temporal domain be unbounded in the past direction, denoted $T = \mathbb{Z}_{\le 0}$. Let the history of the universe be the infinite sequence of states $\mathcal{H} = \{ \dots, U_{-n}, \dots, U_{-1}, U_0 \}$.
+Creation occurrences are retained in the historical record (**Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />) (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />).
 
-**II. Case A: Irreversible Dynamics**
+**II. Occurrence Counting**
 
-Let $\mathcal{U}$ be a dissipative operator satisfying the Second Law of Thermodynamics. Let $\Delta S_k = S(U_{k+1}) - S(U_k)$ denote the entropy production at step $k$.
-
-1. **Thermodynamic Positivity:**
-   For non-equilibrium evolution involving coarse-graining or erasure, the expected entropy production is strictly positive:
-
-   $$
-   \mathbb{E}[\Delta S_k] = \mu > 0
-   $$
-
-   The fluctuations are bounded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />:
-
-   $$
-   \text{Var}(\Delta S_k) = \sigma^2 < \infty
-   $$
-
-2. **Cumulative Summation:**
-   The total entropy at the present $t=0$ is the accumulation of all prior productions. Let $S_n$ denote the sum over the past $n$ steps:
-
-   $$
-   S_n = \sum_{k=-n}^{-1} \Delta S_k
-   $$
-
-3. **Probabilistic Divergence:**
-   Chebyshev's Inequality bounds the deviation of the time-averaged entropy production from the mean $\mu$:
-
-   $$
-   \mathbb{P}\left( \left| \frac{S_n}{n} - \mu \right| > \epsilon \right) \le \frac{\sigma^2}{n \epsilon^2}
-   $$
-
-   The limit $n \to \infty$ drives the probability of deviation to zero:
-
-   $$
-   \lim_{n \to \infty} \mathbb{P}\left( \left| \frac{S_n}{n} - \mu \right| > \epsilon \right) = 0
-   $$
-
-   This implies almost sure convergence of the sum to the linear growth trend:
-
-   $$
-   S(U_0) \approx \lim_{n \to \infty} n\mu = \infty
-   $$
-
-4. **Contradiction:**
-   The divergence $S(U_0) \to \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
-
-**III. Case B: Reversible Dynamics**
-
-Let $\mathcal{U}$ be a strictly unitary (bijective) operator.
+Put $B_t=\mathcal E_{t+1}\setminus\mathcal E_t$. For $s<t$, $B_s\subseteq\mathcal E_t$ and $B_t\cap\mathcal E_t=\varnothing$. Thus for an interval $[a,b]$,
 
 $$
-U_{t+1} = \mathcal{U}(U_t) \iff U_t = \mathcal{U}^{-1}(U_{t+1})
+\mathcal E_b=\mathcal E_a\sqcup\bigsqcup_{t=a}^{b-1}B_t,\qquad
+|\mathcal E_b|-|\mathcal E_a|=\sum_{t=a}^{b-1}|B_t|\ge K.
 $$
 
-1. **Injectivity of History:**
-   The requirement of a non-cyclic history implies injectivity of the mapping from time to state:
+**III. Entropy Summation**
 
-   $$
-   \forall t_a, t_b \in T, \quad t_a \neq t_b \implies U_{t_a} \neq U_{t_b}
-   $$
+For trajectory variables $X_a,\ldots,X_b$ and the specified set $J$ of $K$ ticks, nonnegativity of conditional entropy gives
 
-2. **Information Preservation:**
-   In a deterministic reversible system, unitarity requires that the present state $U_0$ encode the unique trajectory of the past. Let $\Delta I_k$ denote the unique information bit distinguishing state $U_{-k}$ from any other state in the sequence:
-
-   **1 bit** is the minimal bound.
-
-3. **Capacity Aggregation:**
-   The total information capacity required for $U_0$ to distinguish an infinite set of unique predecessors is the sum of these contributions:
-
-   $$
-   I(U_0) \ge \sum_{k=1}^{\infty} \Delta I_{-k}
-   $$
-
-   Evaluating the sum yields:
-
-   $$
-   I(U_0) \ge \sum_{k=1}^{\infty} 1 = \infty
-   $$
-
-4. **Contradiction:**
-   An infinite information capacity $I(U_0) = \infty$ is excluded by the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />.
-
-**IV. Conclusion**
-
-Both dynamical regimes necessitate an infinite information content in the present state $U_0$ given an infinite past. We conclude that the temporal domain is bounded by a finite origin.
+$$
+\begin{aligned}
+H(X_a,\ldots,X_b)-H(X_a)
+&=\sum_{t=a}^{b-1}H(X_{t+1}\mid X_a,\ldots,X_t)\\
+&\ge \sum_{t\in J}H(X_{t+1}\mid X_a,\ldots,X_t)\ge \epsilon K.
+\end{aligned}
+$$
 
 Q.E.D.
 
@@ -490,10 +351,10 @@ Section 1.3.6.1 formalizes the properties of the QBD proof regarding backward ac
 
 ### 1.3.7 Lemma: Finite State Recurrence {#1.3.7}
 
-:::info[**Incompatibility of Infinite Past Duration due to Strictly Finite Configuration Spaces**]
+:::info[**Finite State Recurrence via Recurrence of Directed Adjacency**]
 :::
 
-Given a universal configuration space $\Omega$ characterized by a strictly finite cardinality $|\Omega| = N < \infty$, let the historical trajectory be indexed by an unbounded sequence of non-positive temporal increments. Therefore, a state recurrence forming a closed causal loop arises, violating **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
+Let $V$ be a fixed finite vertex set of size $N$ and $E_t$ the loop-free directed adjacency. Among $2^{N(N-1)}+1$ observations there are two with equal adjacency, and their cumulative occurrence sets differ if a record is added between the two snapshots.
 
 **In Plain English:**  
 Section 1.3.7 formalizes the properties of the QBD lemma regarding finite state recurrence.
@@ -502,170 +363,67 @@ Section 1.3.7 formalizes the properties of the QBD lemma regarding finite state 
 
 ### 1.3.7.1 Proof: Finite State Recurrence {#1.3.7.1}
 
-:::tip[**Combinatorial Contradiction via the Dirichlet Pigeonhole Principle and Mathematical Induction**]
+:::tip[**Finite State Recurrence via Pigeonhole Counting on the Adjacency Projection**]
 :::
 
-**I. Boundary Conditions and State Space Setup**
+**I. Domain and Objects**
 
-Let $\Omega$ denote the universal configuration space of admissible states, whose finite cardinality is established in the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />. Assume the cardinality of this state space is strictly finite:
+The active snapshot has a directed adjacency field (**Finite State Recurrence** <Ref id="1.3.7" label="§1.3.7" />) (**Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />).
 
-$$
-|\Omega| = N < \infty
-$$
+**II. Finite Projection**
 
-Let the global logical timeline be hypothesized as unbounded in the past direction, generating an infinite sequence of states $\mathcal{T}$ indexed by non-positive logical time integers in the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> poset:
+The directed pair domain $P=\{(u,v)\in V^2:u\ne v\}$ has size $N(N-1)$. Each $E_t\subseteq P$, so the adjacency map takes at most $2^{N(N-1)}$ values. For $2^{N(N-1)}+1$ observation ticks this gives $E_s=E_t$ for some $s<t$.
 
-$$
-\mathcal{T = (\dots, U_{-2}, U_{-1}, U_0)}
-$$
+**III. Historical Records**
 
-**II. Cardinality and Subsequence Mapping**
-
-Consider a finite subsequence $\mathcal{T}_{\text{sub}}$ extracted from the historical trajectory $\mathcal{T}$ containing exactly $N + 1$ elements:
+If occurrence $\omega$ is recorded between the snapshots, then
 
 $$
-\mathcal{T}_{\text{sub}} = (U_{-N}, \dots, U_0)
+\omega\notin\mathcal E_s,\qquad \omega\in\mathcal E_t,\qquad
+\mathcal E_s\subsetneq\mathcal E_t .
 $$
-
-Let $T = \{-N, \dots, 0\}$ denote the finite set of temporal indices enumerating this subsequence, establishing the cardinality constraint:
-
-$$
-|T| = N + 1
-$$
-
-Define the mapping $f: T \to \Omega$ by the state assignment evaluation:
-
-$$
-f(t) = U_t
-$$
-
-**III. Inductive Cycle Construction**
-
-Comparing the domain cardinality $|T| = N + 1$ with the codomain cardinality $|\Omega| = N$ implies that the mapping $f$ cannot be injective. The Dirichlet Pigeonhole Principle establishes the existence of at least two distinct temporal indices $t_a, t_b \in T$ satisfying the strict ordering $t_a < t_b$ such that the associated states are identical:
-
-$$
-U_{t_a} = U_{t_b}
-$$
-
-Let $\mathcal{U}$ denote the deterministic evolution operator mapping each state snapshot to its unique successor, satisfying $U_{t+1} = \mathcal{U}(U_t)$. The topological identity of $U_{t_a}$ and $U_{t_b}$ yields the structural identity of their respective immediate consequences:
-
-$$
-\mathcal{U}(U_{t_a}) = \mathcal{U}(U_{t_b}) \implies U_{t_a+1} = U_{t_b+1}
-$$
-
-Mathematical induction establishes this state identity for all subsequent increments $k \in \mathbb{N}_0$, yielding the general recurrence translation:
-
-$$
-U_{t_a+k} = U_{t_b+k}
-$$
-
-The deterministic trajectory is thereby bound to enter a periodic closed cycle $C$ of length $P = t_b - t_a$:
-
-$$
-C = (U_{t_a}, U_{t_a+1}, \dots, U_{t_b-1})
-$$
-
-The return relation at the boundary maps the terminal cycle element directly back to the initial locus:
-
-$$
-U_{t_b-1} \to U_{t_b} \equiv U_{t_a}
-$$
-
-This recurrence establishes the following closed causal structure:
-
-$$
-U_{t_a} \to U_{t_a+1} \to \dots \to U_{t_b-1} \to U_{t_a}
-$$
-
-**IV. Formal Conclusion**
-
-The formation of the periodic cycle $C$ establishes that state $U_{t_a}$ constitutes a causal ancestor of itself ($U_{t_a} \prec U_{t_a}$), establishing a transitive relation within the causal network. This localized self-influence is incompatible with the global property of irreflexivity mandated by the strict partial order of the timeline. We conclude that an infinite past trajectory within a strictly finite configuration space is incompatible with the structural requirements of **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
 
 Q.E.D.
 
-**In Plain English:**  
+**In Plain English:**
+
 Section 1.3.7.1 formalizes the properties of the QBD proof regarding finite state recurrence.
 
 ---
 
 ### 1.3.8 Lemma: Supertask Impossibility {#1.3.8}
 
-:::info[**Impossibility of Infinite Operation Sequences from Logical and Physical Non-Termination**]
+:::info[**Supertask Impossibility via Bound on Sequential Execution in Finite Duration**]
 :::
 
-Given an infinite sequence of discrete computational steps required to generate a present state $U_0$, the execution of this sequence constitutes a **Supertask**. Therefore, the completion of this **Supertask** is physically excluded within the dynamical constraints of the theory, as the realization of $\aleph_0$ operations within a finite proper time interval implies a completed infinity, which is impermissible in a constructive ontology **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />.
+Let sequential steps have nonoverlapping physical durations of at least $\tau_0>0$. The number of complete steps in a physical interval of length $T_{\mathrm{phys}}$ is bounded by $\lfloor T_{\mathrm{phys}}/\tau_0\rfloor$.
 
-**In Plain English:**  
+**In Plain English:**
+
 Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
 
 ---
 
 ### 1.3.8.1 Proof: Supertask Impossibility {#1.3.8.1}
 
-:::tip[**Order-Theoretic Non-Well-Foundedness through Thermodynamic Entropy Divergence Proof**]
+:::tip[**Supertask Impossibility via Summation of Minimum Step Durations**]
 :::
 
-**I. Initial Conditions and History Definition**
+**I. Domain and Objects**
 
-Let $\mathcal{H}$ denote the ordered set of computational operations $\mathcal{U}_i$ required to generate the present state $U_0$ from a precedent state. Under the hypothesis of an infinite past, the index set of the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> is the negative integers, violating the well-foundedness required for physical causation outlined in **Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />:
+Logical steps are the sequentially indexed updates (**Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />) (**Global Logical Time** <Ref id="1.3.3" label="§1.3.3" />).
 
-$$
-\mathcal{H} = \{ \dots, \mathcal{U}_{-3}, \mathcal{U}_{-2}, \mathcal{U}_{-1} \}
-$$
+**II. Disjoint Step Intervals**
 
-This set possesses the order type $\omega^*$ (the order of the negative integers), which is characterized by having a last element $\mathcal{U}_{-1}$ but no first element.
-
-**II. The Supertask Constraint**
-
-For the state $U_0$ to be physically realized (to exist as the output of a computation), the entire sequence of operations in $\mathcal{H}$ must have been executed to completion. This implies the performance of a **Supertask**, defined as an infinite number of discrete steps completed within the timeline prior to $t=0$.
-
-**III. Computational Non-Initialization Analysis**
-
-Let $M = (S, \Sigma, \delta, s_0)$ denote a state machine modeling the physical universe, where $s_0$ is the initial state. A valid computational history mapping an execution trace must be isomorphic to a well-ordered set, establishing the requirement that every non-empty subset of events contains a $\le$-minimal element. Define a well-founded history as a configuration where every non-empty subset $X \subseteq \mathcal{H}$ contains a $\le$-minimal element $m$ such that $\nexists x \in X : x < m$. The infinite sequence $\mathcal{H}$ possesses the non-well-founded order type $\omega^*$ (the order of the negative integers), which lacks a minimal element because the subset $\mathcal{H}$ itself possesses no minimal element. For any computation to proceed, the machine must be initialized in state $s_0$ at some time $t_{start}$. In the sequence $\mathcal{H}$, for any hypothesized starting time $t_k$, there exists a prior operation $\mathcal{U}_{t_k-1}$ that was required to generate the input for $\mathcal{U}_{t_k}$:
+For $m$ complete steps with physical intervals $[a_i,b_i]$, sequentiality gives $b_i\le a_{i+1}$. Thus
 
 $$
-\forall k \in \mathbb{Z}, \quad \exists (k-1) \in \mathbb{Z} \quad \text{such that} \quad k-1 < k
+m\tau_0\le\sum_{i=1}^m(b_i-a_i)\le T_{\mathrm{phys}} .
 $$
 
-There is no time $t$ at which the machine $M$ could have been initialized. The initialization domain satisfies the intersection boundary:
+**III. Integer Bound**
 
-$$
-\text{Domain}(\mathcal{H}) \cap \{ t_{start} \} = \emptyset
-$$
-
-The absence of a valid initial state implies that a computation with no initial state is mathematically undefined.
-
-**IV. Resource and Energy Divergence Analysis**
-
-Let $\epsilon(op)$ denote the energy cost of a single logical operation. By Landauer's Principle and the Margolus-Levitin theorem, any state transition takes a non-zero amount of energy and time:
-
-$$
-\epsilon(op) \ge \epsilon_{min} > 0
-$$
-
-The total energy $E_{total}$ dissipated to reach state $U_0$ is the sum over the infinite history:
-
-$$
-E_{total} = \sum_{k \in \mathcal{H}} \epsilon(\mathcal{U}_k)
-$$
-
-We substitute the lower bound constraint into the summation to evaluate the total energy divergence:
-
-$$
-E_{total} \ge \sum_{k=1}^{\infty} \epsilon_{min} = \lim_{n \to \infty} (n \cdot \epsilon_{min}) = \infty
-$$
-
-An infinite energy dissipation implies that the universe must have exhausted all free energy (reached thermodynamic equilibrium) infinitely long ago. This unbounded dissipation implies that the accumulated entropy diverges to infinity ($S \to \infty$), satisfying the divergence expression:
-
-$$
-S(U_0) = \infty \quad \not\le \quad \mathcal{O}(t_L^2) < \infty
-$$
-
-However, the information content of any valid state step is bounded by the quadratic scaling function $S(U_t) \le \mathcal{O}(t^2)$ due to the holographic property of the substrate, as established by **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />. The divergence $S(U_0) = \infty$ establishes a contradiction with this extensive information bound, contradicting the existence of the low-entropy, ordered state $U_0$ observed at the present.
-
-**V. Formal Conclusion**
-
-We conclude that the joint requirements of structural well-foundedness and holographic information capacity limits exclude the completion of an unbounded historical sequence, establishing that the temporal domain possesses a finite origin.
+Dividing by $\tau_0$ and taking the integer floor gives $m\le\lfloor T_{\mathrm{phys}}/\tau_0\rfloor$. An infinite execution inside the interval would contain a finite subset exceeding that bound.
 
 Q.E.D.
 
@@ -674,36 +432,89 @@ Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask i
 
 ---
 
-### 1.3.9 Proof: Temporal Finitude {#1.3.9}
+### 1.3.9 Lemma: Finite Capacity of History Encodings {#1.3.9}
 
-:::tip[**Temporal Finitude** due to Entropy Limits <Ref id="1.3.4" label="§1.3.4" />]
+:::info[**Finite Capacity of History Encodings via Injective Encoding of Occurrence Histories**]
 :::
 
-**I. The Infinite Hypothesis**
- Let it be assumed, for the explicit purpose of demonstrating a contradiction, that the domain of Global Logical Time $t_L$ is unbounded in the past direction. This assumption implies that the set of temporal indices is isomorphic to the non-positive integers ($T_L \cong \mathbb{Z}_{\le 0}$), thereby asserting the existence of an infinite sequence of distinct antecedent states $\{\dots, U_{-2}, U_{-1}, U_0\}$.
- 
- **II. Information and Thermodynamic Constraints**
- The validity of this hypothesis is interrogated against the established information-theoretic lemmas of the theory:
- 
- 1.  **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />: The system enforces a strict holographic bound on the information content of any state within the sequence. It is established that $S(U_t)$ must remain finite for all finite $t$. The assumption of an infinite past requires the current state to encode a history of infinite depth, which necessitates an information capacity that exceeds this finite bound.
- 2.  **Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />: Under the condition of irreversible dynamics, an infinite past necessitates an unbounded accumulation of entropy production ($\Sigma \Delta S \to \infty$). This accumulation would result in a present state $U_0$ characterized by maximal entropy (Thermodynamic Equilibrium or Heat Death), a condition that stands in direct contradiction to the observed low-entropy configuration of the physical universe.
- 
- **III. Recurrence and Computability Constraints**
- The hypothesis is further constrained by topological and computational limits:
- 
- 1.  **Finite State Recurrence** <Ref id="1.3.7" label="§1.3.7" />: Under the condition of reversible dynamics within a state space of finite cardinality, an infinite temporal duration necessitates the occurrence of Poincaré recurrence ($U_t = U_{t+k}$). Such recurrence establishes closed causal loops, which constitute a direct violation of the **Acyclicity** axiom governing the causal graph.
- 2.  **Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />: The logical traversal of an infinite sequence of operations to arrive at the present state $U_0$ constitutes a Supertask. The completion of such a task is computationally undefined, as it lacks a valid initialization condition, rendering the existence of $U_0$ logically impossible under constructive dynamical rules.
- 
- **IV. Convergence**
- The assumption of an unbounded past generates inescapable contradictions under both thermodynamic and computational constraints. Whether the dynamics are reversible or irreversible, the hypothesis fails to yield a consistent physical model.
- 
- **V. Formal Conclusion**
- Consequently, the temporal domain cannot be unbounded. There must exist a unique initial state $U_0$ such that for all integers $t < 0$, the state $U_t$ is undefined. The domain of Global Logical Time is isomorphic to the set of non-negative integers $\mathbb{N}_0$, thereby establishing a definite and absolute moment of genesis.
+Let $f:\mathcal H\to S$ inject a family of distinguishable histories into a finite set of $M$ states, so $|\mathcal H|\le M$. For a comb with its $K$ terminating alternatives and final continuing history included in $\mathcal H$, and for a binary continuing-prefix tree with all depth-$K$ histories included in $\mathcal H$, the respective bounds are
+
+$$
+K+1\le M,\qquad 2^K\le M.
+$$
+
+**In Plain English:**
+
+Section 1.3.9 formalizes the properties of the QBD lemma regarding finite capacity of history encodings.
+
+---
+
+### 1.3.9.1 Proof: Finite Capacity of History Encodings {#1.3.9.1}
+
+:::tip[**Finite Capacity of History Encodings via Pigeonhole Counting and Prefix Induction**]
+:::
+
+**I. Encoding**
+
+The histories counted here are distinct records of occurrences (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />) (**Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />).
+
+The image is a subset of the state set, so $|\mathcal H|=|f(\mathcal H)|\le |S|=M$.
+
+**II. Comb**
+
+Two alternatives that terminate at different branch points differ at the earlier point, where one continues and the other terminates. The final continuing history also differs from every terminated alternative at its branch point. Hence $K+1\le|\mathcal H|\le M$.
+
+**III. Full Continuing Branches**
+
+Let $n_j$ count depth-$j$ continuing prefixes. There is one root. Each prefix contributes at least two children with distinct parent histories, so
+
+$$
+n_0=1,\qquad n_{j+1}\ge2n_j,\qquad n_j\ge2^j\quad (0\le j\le K)
+$$
+
+by induction. Thus $2^K\le n_K\le|\mathcal H|\le M$.
 
 Q.E.D.
 
-**In Plain English:**  
-Section 1.3.9 formalizes the properties of the QBD proof regarding temporal finitude.
+**In Plain English:**
+
+Section 1.3.9.1 formalizes the properties of the QBD proof regarding finite capacity of history encodings.
+
+---
+
+### 1.3.10 Proof: Temporal Finitude {#1.3.10}
+
+:::tip[**Temporal Finitude via Assembly of Conditional History Bounds**]
+:::
+
+**I. Identification of the Count**
+
+A finite choice list has bounded conditional entropy (**Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />). A new creation grows the occurrence set (**Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />). A repeated adjacency can occur at distinct snapshots (**Finite State Recurrence** <Ref id="1.3.7" label="§1.3.7" />). The encoding premise applies to the specified histories.
+
+**II. Branch Depth**
+
+The two counting cases give (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />)
+
+$$
+K+1\le M\ \Longrightarrow\ K\le M-1,\qquad
+2^K\le M\ \Longrightarrow\ K\le\lfloor\log_2 M\rfloor .
+$$
+
+If unbounded candidate past length forces unbounded $K$, the uniform bound on $K$ excludes unbounded candidate past length.
+
+**III. Physical Execution**
+
+For an execution of $L$ complete sequential steps in a finite physical interval the separate duration premise gives (**Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />)
+
+$$
+L\tau_0\le T_{\mathrm{phys}}.
+$$
+
+Q.E.D.
+
+**In Plain English:**
+
+Section 1.3.10 formalizes the properties of the QBD proof regarding temporal finitude.
 
 ---
 
@@ -712,12 +523,9 @@ Section 1.3.9 formalizes the properties of the QBD proof regarding temporal fini
 :::tip[**Mathematical Characterization of the Relational Configuration Space as a Formal Architecture**]
 :::
 
-Let $\Omega$ denote the universal configuration space of all valid states of the **Causal Graph Substrate**. A specific causal graph configuration is a triplet $G = (V, E, H)$ where:
-1.  **Event Set**: $V$ is a finite set of vertices representing abstract events.
-2.  **Causal Link Set**: $E \subseteq V \times V$ is a binary relation represented as a set of directed edges.
-3.  **Timestamp Mapping**: $H: E \to \mathbb{N}$ is a mapping assigning a creation timestamp to each edge.
+Let the **Causal Graph Substrate** at logical tick $t$ be the active spatial configuration $G_t=(V,E_t,H_t)$, where $V$ is a fixed finite vertex set, $E_t\subseteq V\times V$ is irreflexive and asymmetric, and $H_t:E_t\to\mathbb N_0$ records immutable causal heights of the active edge occurrences. Directed spatial cycles are permitted; the chronological order belongs to the distinct creation-event structure.
 
-The graph $G$ must be a finite directed acyclic graph.
+A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The cumulative creation record $\mathcal E_t$ retains past occurrences after active deletion (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
 
 **In Plain English:**  
 Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
@@ -757,7 +565,14 @@ Causal Relation defines the edge set E of directed links representing irreducibl
 :::tip[**Formal Characterization of the Historical Edge Timestamp Mapping as a Formal Architecture**]
 :::
 
-Let $H: E \to \mathbb{N}$ be a mapping that assigns to each edge $e \in E$ a **Creation Timestamp** $H(e) = t_L$, where $t_L$ is the global logical time of its creation. The mapping $H$ assigns a unique, immutable integer index to each edge upon its formation, establishing a discrete proper time step for relational connections.
+Let the **Creation Timestamp** $H_t(e)$ denote the causal height of the active occurrence of $e$, distinct from its scheduler birth tick $b(e)$. For a new edge $e=(u,v)$ inserted during the transition from tick $t$ to tick $t+1$, its height is
+
+$$
+h_{\mathrm{new}}(u,v)=1+\max\bigl(\{H_t(x,u):(x,u)\in E_t\}\cup\{0\}\bigr),
+\qquad \omega=(u,v,t+1,h_{\mathrm{new}}(u,v)).
+$$
+
+Existing occurrences retain their assigned heights. The initial substrate has $H_0(e)=0$. A deleted pair recreated later receives a new occurrence identifier even if its newly computed height equals an earlier height. The birth tick and height are both immutable coordinates of an occurrence; neither is a replacement for the other.
 
 **In Plain English:**  
 Creation Timestamp defines the mapping H assigning to each edge a discrete, immutable creation index tracking its chronological order of genesis.
@@ -769,13 +584,7 @@ Creation Timestamp defines the mapping H assigning to each edge a discrete, immu
 :::info[**Strict Monotonicity via Well-Foundedness of Causal Timestamp Sequences**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any newly created edge $e = (u, v)$, the timestamp assignment satisfies the local recurrence relation:
-
-$$
-H(e) = 1 + \max\left( \lbrace H(e') \mid e' = (w, u) \in E \rbrace \cup \lbrace0\rbrace \right)
-$$
-
-where the maximum is taken over all edges $e'$ incoming to the source vertex $u$. The timestamp function $H$ induces a well-founded partial order on $E$ and enforces that $G$ is a directed acyclic graph, preserving the forward arrow of logical time.
+Let creation heights satisfy the source-side recurrence and let $\omega\mathrel D\eta$ mean that the edge occurrence $\omega$ is an incoming edge of the source of $\eta$ in the snapshot used to create $\eta$. Then $D^+$ is an irreflexive transitive relation on creation occurrences and every $D$-chain has strictly increasing heights; active spatial walks need not have increasing heights (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
 
 **In Plain English:**  
 The Monotonicity of History Theorem states that the creation timestamp assignment mapping H induces a well-founded partial order, enforcing that the causal graph is a directed acyclic graph.
@@ -799,55 +608,63 @@ The Irreflexivity of Timestamps Lemma proves that no self-loop can satisfy the r
 :::tip[**Formal Stability Analysis via Self-Loop Timestamps**]
 :::
 
-**I. Pre-computation of the Source History**
+**I. Fixed-Point Equation for a Self-Loop**
 
-Let the proposed self-loop $e_{self} = (u, u)$ be defined on the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. Its calculated **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" /> is governed by the recurrence relation defined in the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />. Let the constructor function query the pre-existing history of vertex $u$.  Let $T_{max}$ represent the maximum timestamp among all pre-existing incoming edges:
-
-$$
-T_{max} = \max \left( \{ H(e') \mid e' \in \text{In}(u)_{\text{pre}} \} \cup \{0\} \right)
-$$
-
-The calculated timestamp for the proposed self-loop $e_{self} = (u, u)$ is:
+Let $e_*=(u,u)$ and suppose a stable timestamp $h=H(e_*)\in\mathbb N_0$ satisfies the stated recurrence (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />). Put
 
 $$
-H(e_{self}) = T_{max} + 1
+A=\{H(e'):e'\in\operatorname{In}(u)\}\cup\{0\},\qquad
+m=\max A,\qquad h=1+m
 $$
 
-**II. State Update and Post-Creation Evaluation**
-
-Let the edge $e_{self}$ be added to the edge set, updating the set of incoming edges:
+with the timestamp rule fixed above (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). The self-loop is incoming to $u$, because its target is $u$:
 
 $$
-\text{In}(u)_{\text{post}} = \text{In}(u)_{\text{pre}} \cup \{ e_{self} \}
+e_*=(u,u)\in\operatorname{In}(u)\quad\Longrightarrow\quad h\in A.
 $$
 
-For the timestamp assignment to remain stable, the recursive rule must satisfy the inequality:
+**II. Maximum Bound and Contradiction**
+
+Membership in $A$ gives $h\le m$. Substituting $m=h-1$ from the recurrence gives
 
 $$
-H(e_{self}) > \max_{k \in \text{In}(u)_{\text{post}}} H(k)
+h\le m=h-1\quad\Longrightarrow\quad 0\le-1,
 $$
 
-**III. Contradiction Derivation**
-
-Since $e_{self} \in \text{In}(u)_{\text{post}}$, the maximum of the updated set includes $H(e_{self})$:
+which is false. Equivalently,
 
 $$
-\max_{k \in \text{In}(u)_{\text{post}}} H(k) = \max(T_{max}, H(e_{self}))
+h=1+m\ge1+h\quad\Longrightarrow\quad h-h\ge1\quad\Longrightarrow\quad0\ge1.
 $$
 
-By construction, $H(e_{self}) = T_{max} + 1$, yielding:
+The contradiction applies to every candidate finite value $h$.
+
+**III. Pre-Insertion Value and Re-Evaluation**
+
+Let $m_0$ be the maximum on the incoming edges before insertion. A provisional assignment $h_0=m_0+1$ gives the new incoming maximum
 
 $$
-\max_{k \in \text{In}(u)_{\text{post}}} H(k) = H(e_{self})
+m_1=\max\{m_0,h_0\}=h_0,
 $$
 
-Substituting this value back into the stability inequality results in:
+because $h_0>m_0$. Re-evaluation of the same recurrence then requires
 
 $$
-H(e_{self}) > H(e_{self})
+h_1=1+m_1=h_0+1\ne h_0.
 $$
 
-The inequality $x > x$ is false for all real numbers.  Therefore, no stable timestamp can be assigned to a self-loop, and the configuration is rejected by the constructor.
+More generally, if $h_j=m_0+j+1$, then
+
+$$
+\max\{m_0,h_j\}=h_j,\qquad h_{j+1}=1+h_j=m_0+(j+1)+1.
+$$
+
+Thus no finite provisional value is a fixed point:
+
+$$
+\boxed{e_*\in\operatorname{In}(u)\ \Longrightarrow\
+\nexists h\in\mathbb N_0:\ h=1+\max\bigl(\{H(e'):e'\in\operatorname{In}(u),\ e'\ne e_*\}\cup\{0,h\}\bigr).}
+$$
 
 Q.E.D.
 
@@ -861,11 +678,7 @@ Section 1.4.6.1 formalizes the properties of the QBD proof regarding irreflexivi
 :::info[**Monotonic Timestamp Progression along Directed Causal Chains by Inductive Path Extension**]
 :::
 
-Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed path in a causal graph $G$, where $e_i = (v_{i-1}, v_i) \in E$ for each $i \in \{1, \dots, k\}$. Then the sequence of edge timestamps $H(e_i)$ is strictly monotonically increasing:
-
-$$
-H(e_1) < H(e_2) < \dots < H(e_k).
-$$
+Let $e_1,\ldots,e_k$ be a sequentially instantiated causal chain whose occurrence of $e_i$ remains incoming to the source when $e_{i+1}$ is created, for each $i<k$. Then $H(e_1)<\cdots<H(e_k)$, and for $k\ge2$ the endpoint bound is $H(e_k)\ge H(e_1)+k-1$ (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
 
 **In Plain English:**  
 The Transitive Causal Monotonicity Lemma proves that timestamps along any causal path are strictly monotonically increasing, establishing a well-founded topological progression.
@@ -877,60 +690,44 @@ The Transitive Causal Monotonicity Lemma proves that timestamps along any causal
 :::tip[**Inductive Demonstration via Strict Timestamp Increase**]
 :::
 
-**I. Inductive Base Case**
- 
-Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along the path $\pi$. By incidence definition, the edge $e_1$ terminates at vertex $v_1$, establishing the membership $e_1 \in \text{In}(v_1)$.
- 
-The creation timestamp $H(e_2)$ of the outgoing edge $e_2$ is assigned by the recursive relation governing edge creation (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />), satisfying the historical ordering (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />):
- 
+**I. Predecessor Membership at Creation**
+
+Let $\omega_i$ be the occurrence of $e_i$ and put $h_i=h(\omega_i)$. The sequential-chain hypothesis means that, when $e_{i+1}$ is created from a snapshot $G_{t_i}$, its source is the target of $e_i$ and $e_i$ is still present there. Consequently
+
 $$
-H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \cup \{0\} \right)
+h_i\in\{H_{t_i}(x,s(e_{i+1})):(x,s(e_{i+1}))\in E_{t_i}\}.
 $$
- 
-The incidence condition $e_1 \in \text{In}(v_1)$ yields the bound on the maximum incoming timestamp:
- 
+
+**II. Consecutive Inequality**
+
+The source-side recurrence (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />) therefore gives
+
 $$
-\max \left( \{ H(k) \mid k \in \text{In}(v_1) \} \right) \ge H(e_1)
+\begin{aligned}
+h_{i+1}
+&=1+\max\bigl(\{H_{t_i}(x,s(e_{i+1}))\}\cup\{0\}\bigr)\\
+&\ge1+h_i>h_i.
+\end{aligned}
 $$
- 
-Evaluating the inequality yields:
- 
+
+Here the set in the maximum ranges over the incoming edges of that source in the creation snapshot. Both the membership and the maximum refer to that same snapshot.
+
+**III. Induction on the Chain**
+
+For $j=1$, $h_j=h_1=h_1+j-1$. If $h_j\ge h_1+j-1$, then
+
 $$
-H(e_2) \ge 1 + H(e_1) > H(e_1)
+h_{j+1}\ge h_j+1\ge h_1+j=h_1+(j+1)-1.
 $$
- 
-establishing the base inequality $H(e_1) < H(e_2)$.
- 
-**II. Inductive Hypothesis**
- 
-Assume that strict timestamp monotonicity holds for any directed subpath of length $n \ge 1$:
- 
+
+Induction proves $h_j\ge h_1+j-1$ for all $j\le k$. The consecutive strict inequalities concatenate by transitivity of the natural-number order. This establishes the sequential-chain claim (**Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />).
+
+**IV. Conclusion**
+
 $$
-H(e_1) < H(e_2) < \dots < H(e_n)
+\boxed{h_1<\cdots<h_k,\qquad h_k\ge h_1+k-1.}
 $$
- 
-where the terminal edge $e_n$ in this subpath terminates at vertex $v_n$.
- 
-**III. Inductive Step**
- 
-Consider the adjacent outgoing edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. The incoming incidence $e_n \in \text{In}(v_n)$ yields the recursive assignment inequality for $H(e_{n+1})$:
- 
-$$
-H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n)
-$$
- 
-Applying this single-step inequality to the inductive hypothesis yields the strict monotonicity condition:
- 
-$$
-H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1})
-$$
- 
-establishing the extended monotonicity chain to path length $n+1$.
- 
-**IV. Transitive Conclusion**
- 
-We conclude that edge timestamps strictly increase monotonically along every directed causal path ($H(e_1) < H(e_2) < \dots < H(e_k)$), which establishes that $H(e_1) < H(e_k)$ for all $k \ge 2$ and induces a well-founded causal partial order on history.
- 
+
 Q.E.D.
 
 **In Plain English:**  
@@ -943,34 +740,36 @@ Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive 
 :::tip[**Synthesis of Irreflexivity via Transitivity to Establish Global Acyclicity**]
 :::
 
-**I. Assumption of a Causal Cycle**
+**I. Direct Event Dependencies**
 
-Let $G = (V, E, H)$ be a causal graph, and assume $G$ contains a directed cycle $C = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ where $v_0 = v_k$.
-
-**II. Evaluation of Cycle Categories**
-
-1.  **Length $k=1$**: Under this condition, the cycle is a self-loop $e = (v_0, v_0)$. The recursive assignment admits no stable timestamp for a self-loop (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />), establishing a contradiction.
-2.  **Length $k \ge 2$**: Under this condition, the cycle forms a directed path from $v_0$ to $v_k$. The sequence of edge timestamps is strictly monotonically increasing (**Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />), satisfying:
+Let $\omega D\eta$ be a dependency with the stipulated creation-snapshot meaning (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />). The preceding incoming occurrence belongs to the creation snapshot of $\eta$. The source-side maximum therefore gives
 
 $$
-H(e_1) < H(e_2) < \dots < H(e_k)
+\omega D\eta\ \Longrightarrow\ h(\eta)\ge h(\omega)+1.
 $$
 
-which establishes the inequality $H(e_1) < H(e_k)$. The boundary identification $v_0 = v_k$ establishes that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to the incoming set $\text{In}(v_0)$. The recursive creation timestamp assignment for the initial outgoing edge $e_1 = (v_0, v_1)$ yields:
+Stable self-loop assignment also has the independent obstruction $h\ge h+1$ (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />). Physical self-loops are excluded directly by the irreflexive edge constraint.
+
+**II. Finite Dependency Paths**
+
+A witness for $\omega D^+\eta$ is a chain $\omega=\omega_0D\omega_1D\cdots D\omega_m=\eta$ with $m\ge1$. The sequential inequality (**Transitive Causal Monotonicity** <Ref id="1.4.7" label="§1.4.7" />) gives
 
 $$
-H(e_1) = 1 + \max \left( \{ H(k) \mid k \in \text{In}(v_0) \} \cup \{0\} \right) \ge 1 + H(e_k) > H(e_k)
+h(\eta)\ge h(\omega)+m>h(\omega).
 $$
 
-Combining the inequality $H(e_1) > H(e_k)$ with the transitive inequality $H(e_1) < H(e_k)$ yields the contradiction:
+**III. Irreflexivity and Transitivity**
+
+If $\omega D^+\omega$, the endpoint inequality becomes $h(\omega)>h(\omega)$, a contradiction. If $\omega D^+\eta$ and $\eta D^+\zeta$, concatenation of the two finite dependency chains is a nonempty dependency chain from $\omega$ to $\zeta$. Thus
 
 $$
-H(e_1) < H(e_1)
+\neg(\omega D^+\omega),\qquad
+(\omega D^+\eta\land\eta D^+\zeta)\Longrightarrow\omega D^+\zeta.
 $$
 
-**III. Conclusion**
+**IV. Well-Founded Height Descent**
 
-Both cases establish a contradiction. Therefore, the assumption of a causal cycle is false, and the causal graph $G = (V, E, H)$ is a directed acyclic graph.
+A reversed dependency chain $\omega_{j+1}D^+\omega_j$ satisfies $h(\omega_{j+1})\le h(\omega_j)-1$. Induction gives $h(\omega_j)+j\le h(\omega_0)$. Taking $j=h(\omega_0)+1$ contradicts nonnegativity. Therefore no infinite descending dependency chain exists, and $D^+$ is a well-founded strict partial order on creation occurrences.
 
 Q.E.D.
 
@@ -984,16 +783,9 @@ Section 1.4.8 formalizes the properties of the QBD proof regarding monotonicity 
 :::tip[**Mathematical Characterization of the Admissible Transformation Space as a Formal Architecture**]
 :::
 
-Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \to G'$ where $G' = (V', E', H')$ such that:
-1.  **Acyclicity**: $G'$ is a directed acyclic graph.
-2.  **Monotonicity of History**: The local sequence of timestamps $H'$ satisfies temporal monotonicity under any edge modification.
-3.  **Finite Growth**: There exists a constant $k \in \mathbb{N}$ such that $|V'| \leq |V| + k$ and $|E'| \leq |E| + k$.
+Let the **Elementary Task Space** $\mathfrak T(G)$ consist of guarded additions and deletions on a fixed spatial vertex set $V$. An addition changes one absent directed pair to present, preserves irreflexivity and asymmetry, assigns the source-side causal height, and satisfies the applicable candidate-relative PUC and causal-admission predicates; a deletion removes one present edge without erasing its historical occurrence (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). The uniqueness predicate is candidate-relative (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
 
-Formally:
-
-$$
-\mathfrak{T} = \lbrace T: \mathcal{G} \to \mathcal{G} \mid T(G) \text{ preserves acyclicity, monotonicity of } H, \text{ and finite growth} \rbrace.
-$$
+Each primitive preserves $V$, changes at most one active edge, and leaves all surviving occurrence heights unchanged. Spatial triangle creation is permitted. The event dependency order, rather than all active spatial adjacency, is the chronological structure. A fixed-snapshot parallel merge and a sequential re-evaluation of guards are different task schedules.
 
 **In Plain English:**  
 Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.
@@ -1005,22 +797,15 @@ Elementary Task Space defines the set of all structurally possible graph transfo
 :::tip[**Formal Specification of the Primitive Edge Insertion Operator via Edge Addition Task**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any pair of vertices $u, v \in V$ such that $u \neq v$ and $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{add}(u, v)$ is the mapping:
+Let the **Edge Addition Task** $\mathfrak T_{add}(u,v)$ act on $G_t=(V,E_t,H_t)$ for an absent pair $(u,v)$ with $u\ne v$ and $(v,u)\notin E_t$. Its admitted candidate includes the required geometric and causal guard evidence. The updated components are
 
 $$
-\mathfrak{T}_{add}(u, v): G \mapsto G' = (V', E', H')
+V'=V,\qquad E'=E_t\cup\{(u,v)\},\qquad
+H'|_{E_t}=H_t,\qquad
+H'(u,v)=1+\max\bigl(\{H_t(x,u):(x,u)\in E_t\}\cup\{0\}\bigr).
 $$
 
-where the target components are defined by:
-1.  **Vertex Set**: $V' = V$.
-2.  **Edge Set**: $E' = E \cup \{(u, v)\}$.
-3.  **Timestamp Assignment**: $H'(e) = H(e)$ for all $e \in E$, and $H'(u, v) = t_L$, where $t_L$ is the emergent timestamp satisfying:
-
-$$
-t_L > \max \left( \{ H(x, y) \in E \mid y = u \lor y = v \} \cup \{ 0 \} \right).
-$$
-
-The operation is defined if and only if $G'$ is a directed acyclic graph.
+The transition from tick $t$ records the new occurrence $(u,v,t+1,H'(u,v))$. For a return chord across $v\to w\to u$, PUC is evaluated relative to that candidate (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). Passing PUC is one guard, not an assertion that every other guard holds. The target spatial graph can contain the newly closed triangle.
 
 **In Plain English:**  
 Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.
@@ -1050,13 +835,13 @@ Edge Deletion Task defines the primitive operator that removes an active directe
 
 ### 1.5.4 Theorem: Vacuum Repertoire {#1.5.4}
 
-:::info[**Sufficiency via Completeness of Primitive Edge Operators**]
+:::info[**Vacuum Repertoire via Finite Composition and Recorded Rollback of Edge Tasks**]
 :::
 
-Let $\mathfrak{T}_{vac} = \{ \mathfrak{T}_{add}(u, v), \mathfrak{T}_{del}(u, v) \mid u, v \in V \}$ denote the set of primitive tasks. The fundamental mutability of any causal graph $G = (V, E, H)$ is exhaustively generated by the set of primitive tasks $\mathfrak{T}_{vac}$. These operations are mutually inverse, conserve state distinguishability, and dynamically govern the active vertex set $V$ purely through relational incidence.
+Let $\mathfrak T$ be the space of tasks witnessed by finite admissible sequences of guarded edge additions and deletions on a fixed vertex set $V$. Each task is a finite composition of the primitives, with active incidence determined by the edge set and rollback of each active update specified by the edited pair and its previous height.
 
 **In Plain English:**  
-The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
+A finite admissible task is composed of primitive edge updates. A record of the edited pair and height enables rollback on the active snapshot.
 
 ---
 
@@ -1077,32 +862,74 @@ The Relational Vertex Emergence Lemma states that vertices cannot be directly cr
 :::tip[**Verification of Vertex Subordination through Primitive Operations**]
 :::
 
-**I. Definition of the Vertex Modification Operator**
+**I. Primitive State Components**
 
-Let $T \in \mathfrak{T}_{vac}$ be a primitive task. By **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> and **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />, the mapping $T: G \mapsto G'$ satisfies:
-
-$$
-V' = V
-$$
-
-for both $\mathfrak{T}_{add}(u, v)$ and $\mathfrak{T}_{del}(u, v)$.
-
-**II. Relation to the Active Vertex Set**
-
-Let the active vertex set $V_{act} \subseteq V$ be defined as the set of all vertices with non-zero degree:
+Let $G=(V,E,H)$ and $e=(u,v)$ with $u\ne v$. The two primitive definitions give
 
 $$
-V_{act}(G) = \{ v \in V \mid \deg(v) > 0 \}
+\begin{array}{c|c|c}
+\text{primitive}&V'&E'\\\hline
+\mathfrak T_{add}(u,v)&V&E\cup\{e\}\\
+\mathfrak T_{del}(u,v)&V&E\setminus\{e\}
+\end{array}
 $$
 
-where $\deg(v) = \deg_{in}(v) + \deg_{out}(v)$.
+(**Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" />), (**Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />). Hence $V'=V$ in both cases.
 
-1.  **Addition case**: Let $T = \mathfrak{T}_{add}(u, v)$.  The edge set becomes $E' = E \cup \{(u, v)\}$.  The degrees of $u$ and $v$ increase by 1, while other degrees remain constant.  Thus, if $u, v \notin V_{act}(G)$, they transition to $V_{act}(G')$.  No vertex is added to $V$.
-2.  **Deletion case**: Let $T = \mathfrak{T}_{del}(u, v)$.  The edge set becomes $E' = E \setminus \{(u, v)\}$.  The degrees of $u$ and $v$ decrease by 1.  If their degree becomes 0, they cease to be in $V_{act}(G')$.  No vertex is removed from $V$.
+**II. Incidence Change Under Addition**
 
-**III. Conclusion**
+Define $d_G(x)=d_{in,G}(x)+d_{\mathrm{out},G}(x)$ and $V_{act}(G)=\{x:d_G(x)>0\}$. For a legal addition, $e\notin E$, so
 
-Since $V' = V$ under all primitive operators, the vertex set $V$ itself is invariant under $\mathfrak{T}_{vac}$.  All changes in active vertex status are strictly determined by edge incidence.
+$$
+\begin{aligned}
+d_{\mathrm{out},G'}(x)&=d_{\mathrm{out},G}(x)+\mathbf1_{\{u\}}(x),\\
+d_{in,G'}(x)&=d_{in,G}(x)+\mathbf1_{\{v\}}(x),\\
+d_{G'}(x)&=d_G(x)+\mathbf1_{\{u\}}(x)+\mathbf1_{\{v\}}(x).
+\end{aligned}
+$$
+
+Every previously positive degree remains positive. Each endpoint gains one, and every other degree is unchanged. Therefore
+
+$$
+V_{act}(G')=V_{act}(G)\cup\{u,v\}.
+$$
+
+The formula allows either endpoint already to be active; set union adds no duplicate element.
+
+**III. Incidence Change Under Deletion**
+
+For a legal deletion, $e\in E$, so both endpoints have degree at least one. The corresponding equations are
+
+$$
+\begin{aligned}
+d_{\mathrm{out},G'}(x)&=d_{\mathrm{out},G}(x)-\mathbf1_{\{u\}}(x),\\
+d_{in,G'}(x)&=d_{in,G}(x)-\mathbf1_{\{v\}}(x),\\
+d_{G'}(x)&=d_G(x)-\mathbf1_{\{u\}}(x)-\mathbf1_{\{v\}}(x).
+\end{aligned}
+$$
+
+Since $u\ne v$, each endpoint loses exactly one. An endpoint leaves the active set exactly when its old total degree was one:
+
+$$
+V_{act}(G')=V_{act}(G)\setminus
+\{x\in\{u,v\}:d_G(x)=1\}.
+$$
+
+**IV. Finite Primitive Sequences**
+
+For $G_{j+1}=T_j(G_j)$ with $T_j\in\mathfrak T_{vac}$, the base equality is $V(G_0)=V$. The single-step identity gives
+
+$$
+V(G_j)=V\quad\Longrightarrow\quad
+V(G_{j+1})=V(G_j)=V.
+$$
+
+Induction establishes $V(G_m)=V$ for every finite $m$. The active set is recalculated from the displayed incidence equations at each step, which proves the stated subordination (**Relational Vertex Emergence** <Ref id="1.5.5" label="§1.5.5" />).
+
+$$
+\boxed{V(G_m)=V(G_0),\qquad
+V_{act}(G_j)=\{x\in V:d_{G_j}(x)>0\}.}
+$$
 
 Q.E.D.
 
@@ -1113,48 +940,46 @@ Section 1.5.5.1 formalizes the properties of the QBD proof regarding relational 
 
 ### 1.5.6 Lemma: Reversibility of Primitives {#1.5.6}
 
-:::info[**Kinematic Reversibility via Edge Operations**]
+:::info[**Reversibility of Primitives via Partial Inverses on Active Adjacency and Heights**]
 :::
 
-For all primitive tasks $T \in \mathfrak{T}_{vac}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{vac}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
+Let a snapshot have adjacency $E(x)\in\{0,1\}$ and height $H(x)\in\mathbb N$ at every directed pair $x$, with height zero when absent. Both fields are restored by adding an absent pair and then deleting it, or by deleting an active pair and then restoring it at its saved height.
 
 **In Plain English:**  
-The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.
+Deleting a newly added edge restores an absent pair. A deleted active pair can be restored at its saved height.
 
 ---
 
 ### 1.5.6.1 Proof: Reversibility of Primitives {#1.5.6.1}
 
-:::tip[**Verification of the Inverse Relations of Primitive Operators through Reversibility of Primitives**]
+:::tip[**Reversibility of Primitives via Pointwise Inversion of Edge Updates**]
 :::
 
-**I. Evaluation of the Edge Addition Inverse**
+**I. Single-Pair Updates**
 
-Let $G = (V, E, H)$ be a causal graph, and let $T = \mathfrak{T}_{add}(u, v)$ be the **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> defined on $G$.  The resulting graph is $G' = (V, E \cup \{(u, v)\}, H')$, where $H'$ assigns $t_L$ to the new edge.
+The height field belongs to the active edge snapshot (**Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />) (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
 
-We apply the primitive task $T^{-1} = \mathfrak{T}_{del}(u, v)$ (the **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />) to $G'$:
+Write $A_{e,h}$ for setting $(E(e),H(e))=(1,h)$ and $D_e$ for setting $(E(e),H(e))=(0,0)$. Both operations preserve $(E(x),H(x))$ for every $x\ne e$.
 
-1.  **Vertex Set**: $V'' = V' = V$.
-2.  **Edge Set**: $E'' = E' \setminus \{(u, v)\} = (E \cup \{(u, v)\}) \setminus \{(u, v)\} = E$.
-3.  **Timestamp Assignment**: $H''$ is the restriction of $H'$ to $E''$.  Since $E'' = E$, and $H'$ preserves $H$ on all edges in $E$, it follows that $H''(e) = H(e)$ for all $e \in E$.
+**II. Rollback of Addition**
 
-Thus, $T^{-1}(T(G)) = G$.
+At an absent $e$, the forward and backward updates are
 
-**II. Evaluation of the Edge Deletion Inverse**
+$$
+(0,0)\xrightarrow{A_{e,h}}(1,h)\xrightarrow{D_e}(0,0).
+$$
 
-Let $G = (V, E, H)$ be a causal graph containing the edge $(u, v)$, and let $T = \mathfrak{T}_{del}(u, v)$ be defined on $G$.  The resulting graph is $G' = (V, E \setminus \{(u, v)\}, H')$.
+At all other pairs both operations preserve both fields. Hence $D_e(A_{e,h}(G))=G$ on the active snapshot.
 
-We apply the primitive task $T^{-1} = \mathfrak{T}_{add}(u, v)$ with the historical timestamp $t_L = H(u, v)$:
+**III. Rollback of Deletion**
 
-1.  **Vertex Set**: $V'' = V' = V$.
-2.  **Edge Set**: $E'' = E' \cup \{(u, v)\} = (E \setminus \{(u, v)\}) \cup \{(u, v)\} = E$.
-3.  **Timestamp Assignment**: $H''$ assigns $H(u, v)$ to the restored edge.  Since the rest of the timestamps are unchanged, $H'' = H$.
+At an active $e$, save $h=H_G(e)$. The two updates at $e$ are
 
-Thus, $T^{-1}(T(G)) = G$.
+$$
+(1,h)\xrightarrow{D_e}(0,0)\xrightarrow{A_{e,h}}(1,h).
+$$
 
-**III. Conclusion**
-
-Both operations possess unique inverses within the primitive set, demonstrating that state distinguishability is conserved across transitions.
+Again the other pairs are unchanged, so $A_{e,h}(D_e(G))=G$ on the active snapshot.
 
 Q.E.D.
 
@@ -1165,51 +990,103 @@ Section 1.5.6.1 formalizes the properties of the QBD proof regarding reversibili
 
 ### 1.5.7 Proof: Vacuum Repertoire {#1.5.7}
 
-:::tip[**Completeness of the Primitive Operators via Vacuum Repertoire**]
+:::tip[**Vacuum Repertoire via Composition of Pointwise Rollbacks**]
 :::
 
-**I. Characterization of the Target Space**
+**I. Domain and Objects**
 
-Let $T: G \mapsto G'$ be any valid transformation in the Elementary Task Space $\mathfrak{T}$, where $G = (V, E, H)$ and $G' = (V', E', H')$.  By definition, the change in the edge set is finite, and the vertex set undergoes no independent modifications.
+A task in the space specifies an admissible trajectory of active snapshots (**Vacuum Repertoire** <Ref id="1.5.4" label="§1.5.4" />) (**Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />).
 
-**II. Decomposition into Primitive Operations**
+**II. Finite Task Composition**
 
-Let the symmetric difference of the edge sets be:
+An admissible task has a witness sequence $G_0\xrightarrow{T_1}G_1\to\cdots\xrightarrow{T_m}G_m$, with each $T_j$ a guarded primitive in its input snapshot. Thus $G_m=(T_m\circ\cdots\circ T_1)(G_0)$. Each step preserves $V$, and at index $j$ the active vertex set is $\{v\in V:\deg_{G_j}(v)>0\}$ (**Relational Vertex Emergence** <Ref id="1.5.5" label="§1.5.5" />).
 
-$$
-\Delta E = E' \triangle E = (E' \setminus E) \cup (E \setminus E')
-$$
+**III. Recorded Rollback**
 
-Since both $E$ and $E'$ are finite, the cardinality $|\Delta E| = m$ is finite.  The elements of $\Delta E$ are ordered as a sequence of single-edge operations:
-
-1.  For each edge $e_i \in E \setminus E'$: Apply the primitive task $\mathfrak{T}_{del}(e_i)$.
-2.  For each edge $e_j \in E' \setminus E$: Apply the primitive task $\mathfrak{T}_{add}(e_j)$ with its assigned timestamp.
-
-Let the sequence of operations be $T_1, T_2, \dots, T_m$.  Each intermediate graph $G_i$ preserves acyclicity by the definition of the path trajectory in the Task Space.
-
-**III. Synthesis of Vertex Consistency**
-
-By **Relational Vertex Emergence** <Ref id="1.5.5" label="§1.5.5" />, the vertex set is invariant under each primitive operation ($V_{i+1} = V_i$).  Thus:
+Let $R_j$ be the restoration determined by the record for step $j$. The pointwise identities give $R_j(G_j)=G_{j-1}$ (**Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />). Substitution from the last index to the first gives
 
 $$
-V' = V_m = V_{m-1} = \dots = V_0 = V
+(R_1\circ\cdots\circ R_m)(G_m)=
+(R_1\circ\cdots\circ R_{m-1})(G_{m-1})=\cdots=G_0 .
 $$
-
-which matches the requirement that all vertex transformations are subordinate to edge mutations.
-
-**IV. Uniqueness and Reversibility**
-
-By **Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />, each step $T_i$ possesses a unique inverse task $T_i^{-1}$.  Therefore, the entire sequence $T_m \circ \dots \circ T_1$ is invertible, preserving state distinguishability:
-
-$$
-(T_m \circ \dots \circ T_1)^{-1} = T_1^{-1} \circ \dots \circ T_m^{-1}
-$$
-
-This demonstrates that any admissible transformation in $\mathfrak{T}$ can be decomposed into, and is generated by, a finite sequence of primitive tasks from $\mathfrak{T}_{vac}$.
 
 Q.E.D.
 
-**In Plain English:**  
+**In Plain English:**
+
 Section 1.5.7 formalizes the properties of the QBD proof regarding vacuum repertoire.
+
+---
+
+### 1.5.8 Type-Theoretic Validation via Lean 4 Core {#1.5.8}
+
+:::note[**Lean 4 Encoding of Recorded Edge Rollback via Pointwise Equality**]
+:::
+
+Type-theoretic certification of the active-field rollback identities (**Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />) and their pointwise derivation (**Reversibility of Primitives** <Ref id="1.5.6.1" label="§1.5.6.1" />) proceeds via the following verification strategy.
+
+1.  **Encoding:** A timestamped graph stores a Boolean adjacency and a natural height at each directed pair.
+2.  **Theorem Statements:** The two compositions preserve both fields at every pair in their stated domains.
+3.  **Proof Closure:** The proof splits on equality with the edited pair and rewrites the corresponding conditionals.
+
+```lean
+structure TimestampedGraph (V : Type) [DecidableEq V] where
+  E : V × V → Bool
+  H : V × V → Nat
+
+def T_add {V : Type} [DecidableEq V] (e : V × V) (h_rec : Nat) (G : TimestampedGraph V) :
+    TimestampedGraph V :=
+  { E := fun x => if x = e then true else G.E x
+    H := fun x => if x = e then h_rec else G.H x }
+
+def T_del {V : Type} [DecidableEq V] (e : V × V) (G : TimestampedGraph V) :
+    TimestampedGraph V × Nat :=
+  ( { E := fun x => if x = e then false else G.E x
+      H := fun x => if x = e then 0 else G.H x },
+    G.H e )
+
+theorem del_then_recorded_add_pointwise {V : Type} [DecidableEq V]
+    (G : TimestampedGraph V) (e x : V × V) (h_act : G.E e = true) :
+    (T_add e (T_del e G).2 (T_del e G).1).E x = G.E x ∧
+    (T_add e (T_del e G).2 (T_del e G).1).H x = G.H x := by
+  dsimp [T_add, T_del]
+  by_cases hx : x = e
+  · subst hx
+    constructor
+    · rw [ite_eq_left rfl]
+      exact h_act.symm
+    · rw [ite_eq_left rfl]
+  · constructor
+    · rw [ite_eq_right hx, ite_eq_right hx]
+    · rw [ite_eq_right hx, ite_eq_right hx]
+
+theorem add_then_del_pointwise {V : Type} [DecidableEq V]
+    (G : TimestampedGraph V) (e x : V × V) (h_rec : Nat)
+    (h_abs : G.E e = false) (h_zero : G.H e = 0) :
+    (T_del e (T_add e h_rec G)).1.E x = G.E x ∧
+    (T_del e (T_add e h_rec G)).1.H x = G.H x := by
+  dsimp [T_add, T_del]
+  by_cases hx : x = e
+  · subst hx
+    constructor
+    · rw [ite_eq_left rfl]
+      exact h_abs.symm
+    · rw [ite_eq_left rfl]
+      exact h_zero.symm
+  · constructor
+    · rw [ite_eq_right hx, ite_eq_right hx]
+    · rw [ite_eq_right hx, ite_eq_right hx]
+
+#print axioms del_then_recorded_add_pointwise
+#print axioms add_then_del_pointwise
+```
+
+**Verification Summary:**
+
+The two closed terms certify the active-field identities. Deletion rollback reads the saved height, and addition rollback uses the absent-pair zero-height premise. The Lean kernel accepts both pointwise results.
+
+**In Plain English:**
+
+Section 1.5.8 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

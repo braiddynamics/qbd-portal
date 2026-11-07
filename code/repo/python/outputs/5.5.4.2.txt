@@ -1,0 +1,3 @@
+Selection expectation: 4/5
+Distinct deletion expectation: 19/25
+Multiplicity-corrected lower bound: 2/5

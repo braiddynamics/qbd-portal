@@ -131,7 +131,7 @@ The proof follows the form for $B_3$ (three-strand rule), holding for any triple
 2.  **Polynomial Gradient:** The final isotopic equivalence is quantified by the unchanged **Alexander-Conway Polynomial Gradient**, which tracks the linking invariants under discrete graph transformations, confirming no topological information is created or destroyed by the choice of path.
 
 **II. PUC Compliance and Fidelity**
-1.  **Local Geometry:** The local triplet operation spans a subgraph of diameter $\le 3$. This lies strictly within the **Quasi-Local Radius** $R \sim \log N$ **Local PUC Approximation** <Ref id="2.7.4" label="§2.7.4" />.
+1.  **Local Geometry:** The local triplet operation spans a subgraph of diameter $\le 3$. This lies strictly within the **Quasi-Local Radius** $R \sim \log N$ **Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />.
 2.  **Fidelity Bounds:** The pre-check operator detects violations with a failure probability bounded by $e^{-R} < 10^{-4}$ for $R = \log_{\text{diam}} N \sim 10$. This ensures the Reidemeister III move does not inadvertently create non-local knots.
 
 **III. Causal Preservation**
@@ -2160,32 +2160,68 @@ Section 8.4.3 formalizes the properties of the QBD lemma regarding chiral stabil
 :::tip[**Demonstration of Sign Preservation via Causal Functoriality**]
 :::
 
-**I. Invariant Definition via Timestamps**
-The timestamp map $H_t: E \to \mathbb{N}$ assigns strictly increasing values along directed paths, enforcing causal precedence. For a flavor-changing process $\mathcal{R}_W$, the active 2-path involves edges $e_1, e_2$ such that $v_{in} \xrightarrow{e_1} v_{mid} \xrightarrow{e_2} v_{out}$. By **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />, strict ordering holds: $H_t(e_1) < H_t(e_2)$.
-The chiral sign is defined as $\chi = \operatorname{sgn}(H_t(e_1) - H_t(e_2))$.
-Since $H_t$ is strictly monotonic, $\Delta H = H_t(e_1) - H_t(e_2)$ is always negative for the forward path.
+**I. Ordered Path and Chiral Sign**
+
+Let the retained flavor-changing path be
 
 $$
-\chi(\mathcal{R}_W) = -1
+v_0\xrightarrow{e_1}v_1\xrightarrow{e_2}v_2,\qquad
+H(e_1)<H(e_2)
 $$
 
-This defines the Left-Handed Chirality intrinsic to the forward causal evolution.
+with the timestamp ordering required by the causal structure (**Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />). Define
 
-**II. Stability Under Local Transformations**
-Consider a local transformation $T: G \to G'$ (e.g., a planar isotopy or a disjoint rewrite).
-1.  **Functoriality:** The evolution defines a functor in the **History Category** $\mathbf{Hist}$ **categorical ties to prior foundations** defined in **Historical Category** <Ref id="4.1.2" label="§4.1.2" />. Morphisms $f: G \to G'$ map edges $e$ to $f(e)$ while preserving the partial order: $e_a \le e_b \implies f(e_a) \le f(e_b)$.
-2.  **Order Preservation:** Consequently, $H_t'(f(e_1)) < H_t'(f(e_2))$. The magnitude of the timestamp difference scales uniformly as $\Delta H' = \alpha \Delta H$ with $\alpha > 0$, but the sign is invariant.
+$$
+d=H(e_2)-H(e_1)>0,\qquad
+\Delta H=H(e_1)-H(e_2)=-d,\qquad
+\chi=\operatorname{sgn}(\Delta H)=-1.
+$$
 
-    $$
-    \operatorname{sgn}(H_t'(f(e_1)) - H_t'(f(e_2))) = \operatorname{sgn}(\alpha \Delta H) = -1
-    $$
+**II. Order-Preserving Image**
 
-3.  **Topological Locking:** Under Reidemeister moves, the framing of the ribbon aligns with the causal orientation. The moves preserve the oriented path lengths relative to the causal foliation, keeping the sign fixed as a framed link invariant. The **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$ ensures that the minimal mediated path remains the geodesic.
+Consider a transformation $f$ carrying this path to a retained directed two-edge path in the history construction (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />). By the order-preservation hypothesis of the statement,
 
-**III. Uniqueness of the 2-Path Motif**
-The uniqueness of the edge pair $(e_1, e_2)$ is guaranteed by the **Principle of Unique Causality (PUC)**. Any alternative pair $(e_1', e_2')$ connecting the same endpoints would constitute a redundant causal pathway.
-If an alternative existed with reversed timestamps (implying $\chi=+1$), it would form a closed causal loop or a violation of strict monotonicity.
-Therefore, the sign $\chi = -1$ is a unique topological invariant of the valid flavor-changing rewrite.
+$$
+f(e_1)\prec f(e_2),\qquad
+H'(f(e_1))<H'(f(e_2)).
+$$
+
+Set $d'=H'(f(e_2))-H'(f(e_1))>0$. Then
+
+$$
+\begin{aligned}
+\Delta H'
+&=H'(f(e_1))-H'(f(e_2))=-d',\\
+\alpha&=d'/d>0,\\
+\Delta H'&=\alpha\Delta H,\\
+\chi'&=\frac{\Delta H'}{|\Delta H'|}
+=\frac{-d'}{d'}=-1=\chi.
+\end{aligned}
+$$
+
+Here $\alpha$ is the ratio for this pair of differences; no uniform affine rescaling of all timestamps is required.
+
+**III. Composition and Exclusion of a Sign Change**
+
+For a finite sequence of transformations preserving the tracked strict order, let $d_j>0$ be its successive timestamp gaps. At every stage,
+
+$$
+\Delta H_j=-d_j<0,\qquad \chi_j=-1.
+$$
+
+The base stage has $\chi_0=-1$. Order preservation takes $d_j>0$ to $d_{j+1}>0$, so induction gives $\chi_m=\chi_0$ for every finite $m$. A putative inversion requires
+
+$$
+\chi_m=+1\ \Longrightarrow\ \Delta H_m>0
+\ \Longrightarrow\ H_m(e_{1,m})>H_m(e_{2,m}),
+$$
+
+contradicting the retained forward path's strict timestamp order. Therefore
+
+$$
+\boxed{\operatorname{sgn}\bigl(H'(f(e_1))-H'(f(e_2))\bigr)
+=\operatorname{sgn}\bigl(H(e_1)-H(e_2)\bigr)=-1.}
+$$
 
 Q.E.D.
 
@@ -2463,7 +2499,7 @@ This results in $|\Pi_{R}(u, v)| > 1$.
 
 **IV. Quantification**
 The expected number of residual paths scales as the out-degree $\langle k \rangle$ in the causal tree.
-The violation probability is governed by the correlation length $\xi \sim 1/\rho_e$ **Correlation Decay** <Ref id="5.5.5" label="§5.5.5" />:
+The violation probability is governed by the correlation length $\xi \sim 1/\rho_e$ **Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />:
 
 $$
 P(\text{violation}) = 1 - e^{-\xi^2 \rho_e} \approx 0.2
@@ -2511,7 +2547,7 @@ This inversion creates a redundant alternative path, violating $|\Pi(u,v)|=1$ **
 The violation triggers a syndrome $\sigma = -1$ in the local stabilizer $S_{uv}$.
 The **Correction Map** $C$ projects this state out with probability $\approx 1$.
 The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" /> and **Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />.
-For global inversions, the **O(N) Barrier** from **Thermodynamic Enforcement** renders the flip infeasible within a single tick.
+For global inversions, the **O(N) Barrier** from **Distributed Rollback Cost** renders the flip infeasible within a single tick.
 
 **IV. SU(2)_L Closure and Current Form**
 The generators $\hat{H}_{x,y,z} \propto \sigma_{x,y,z}$ act exclusively within the left-handed subspace, yielding the current form defined by **Topological Parity Violation** <Ref id="8.4.6" label="§8.4.6" />.
@@ -2949,7 +2985,7 @@ $$
 With the vacuum temperature $T_{vac} = \ln 2$ **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
 
 **II. Dimensional Normalization**
-The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />.
+The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />.
 The energy of a vertex must be normalized by the surface area scaling of the curvature bound.
 The mean curvature $K$ in the sparse graph limit distributes the energy over the $d_c$ dimensions.
 
@@ -3379,7 +3415,7 @@ Section 8.7.4 formalizes the properties of the QBD lemma regarding dimensionful 
 Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay**. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence**.
 
 **I. Geometric Regularity**
-The volume $V_\xi$ satisfies **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> (volume scaling $c_1 r^4 \leq |B(r)| \leq c_2 r^4$), with curvature bounds $|K(u,v)| \leq 2$ (**Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />). Central limit theorem damping over independent subregions yields a stable intensive variance $\mathrm{Var}(\rho_3\*) \sim 1/N_\xi$, where $N_\xi = \frac{V_\xi}{\mathrm{vol}(\gamma)} \sim \rho_3^{*-3}$.
+The volume $V_\xi$ satisfies **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" /> (volume scaling $c_1 r^4 \leq |B(r)| \leq c_2 r^4$), with curvature bounds $|K(u,v)| \leq 2$ (**Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />). Central limit theorem damping over independent subregions yields a stable intensive variance $\mathrm{Var}(\rho_3\*) \sim 1/N_\xi$, where $N_\xi = \frac{V_\xi}{\mathrm{vol}(\gamma)} \sim \rho_3^{*-3}$.
 
 **II. VEV Derivation**
 The effective VEV constitutes $v = \sqrt{2 \kappa_m \rho_3^* N_\xi}$. Because $N_\xi$ depends only on the local correlation length and the equilibrium density $\rho_3^* \approx 0.029$ **Viability Channel** <Ref id="5.3.4" label="§5.3.4" />, the resulting VEV is strictly intensive. Calibrating the fundamental topological anchor $\kappa_m$ against the aggregate count $N_\xi$ in the 4-dimensional correlation volume yields the observed macroscopic energy scale of $246$ GeV.
@@ -3411,19 +3447,69 @@ Section 8.7.5 formalizes the properties of the QBD lemma regarding topological y
 :::tip[**Derivation of the Yukawa Formula from Braid Complexity and Vacuum Supply**]
 :::
 
-The coupling $y_f$ constitutes a dimensionless efficiency factor derived from the balance of braid quanta demand against vacuum supply.
+**I. Complexity and Conversion Scale**
 
-**I. Particle Demand and Shared Quanta**
-The braid $\beta$ demands $N_{3,\text{net}}$ quanta for stability **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, defined by $N_{3,\text{net}} = \sum N_{3,\text{iso}} - k_{\text{share}} |L_{\parallel}| \geq 1$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />). This payload preserves the prime isotopy class under rewrites. Shared parallels in isospin doublets reduce effective demand via twist cost cancellation, yielding degenerate light masses. The integer $\geq 1$ follows from the minimal trefoil $N_3=3$ for generation 1, reduced to net $1$ after sharing $k_{\text{share}}=1$ in a Bethe degree-3 lattice (**Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />).
+Let $N_{net}=N_{3,\text{net}}(\beta)$ be the assigned net resource count. The mass model gives
 
-**II. Vacuum Supply**
-The condensate $\rho_3^*$ supplies quanta at a characteristic rate $N_{\text{scale}} = \frac{v}{\kappa_m}$, representing available quanta per braid volume $V_\beta \sim N_{3,\text{net}} \ell_0^3$. Dimensionally, $v$ sets the electroweak scale, yielding $N_{\text{scale}} \approx 1.445 \times 10^6$ cycles/GeV at $\rho_3^* \approx 0.029$. The supply flux $J_{\text{supply}} = \frac{\rho_3^* \langle k \rangle}{t_{\text{tick}}}$ ensures demand-matching in equilibrium.
+$$
+N_{net}=\sum_iN_{3,\mathrm{iso}}(R_i)-k_{share}|L|_{\parallel},\qquad
+m_f=\kappa_mN_{net},\qquad \kappa_m>0
+$$
 
-**III. Coupling and Recurrence**
-The Yukawa coupling $y_f = \frac{N_{\text{net}}}{N_{\text{scale}}}$ ensures $m_f = y_f v = \kappa_m N_{\text{net}}$. The mass hierarchy follows from generational complexity: generation 1 ($N_{\text{net}}=1$), generation 2 ($N_{\text{net}}=4$), and generation 3 ($N_{\text{net}} \sim 10^6$ for top quark). Specifically, the top quark complexity $N_t \approx 10^6$ arises from writhe $w \sim 400$, giving a quadratic boost $w^2 \sim 1.6 \times 10^5$ **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />. Torsional additions per generation follow the recurrence $N_{k+1} = N_k + 4k$ from bridge counts in Reidemeister moves.
+(**Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" />). Let $v>0$ be the supplied vacuum scale (**Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" />).
 
-**IV. Massless and CKM Limits**
-As $\rho_3^* \to 0$, $N_{\text{scale}} \to 0$ and $m_f \to 0$ (Higgsless limit). A nucleation threshold $\rho_{\text{crit}} \sim \frac{N_{\text{net}}}{V_\beta}$ derived from $P_{\text{nuc}} \sim \exp(-\frac{N_{\text{net}}}{\rho_3^* V_\beta})$ ensures fermions remain massless in the unbroken phase. The flavor matrix diagonalizes via topological primes, with CKM suppression $P_{\text{off}} = \exp(-\frac{\Delta N_{\text{share}}}{T})$ for $T = \ln 2$, yielding mixing angles $|V_{ub}| \sim e^{-1} \approx 0.37$ (reduced to $\sim 10^{-3}$ through chained parallel leakage).
+**II. Supply Ratio and Units**
+
+Define the dimensionless supply count and coupling by
+
+$$
+N_{scale}=\frac v{\kappa_m},\qquad
+y_f=\frac{N_{net}}{N_{scale}}
+$$
+
+(**Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" />). Since $v$ and $\kappa_m$ are expressed in the same mass units,
+
+$$
+[N_{scale}]=\frac{\text{mass}}{\text{mass}}=1,\qquad
+[N_{net}]=1,\qquad[y_f]=1.
+$$
+
+Substituting the supply definition gives
+
+$$
+y_f=\frac{N_{net}}{v/\kappa_m}
+=\frac{\kappa_mN_{net}}v=\frac{m_f}v.
+$$
+
+**III. Mass Identity and Relative Hierarchy**
+
+Multiplying by the positive scale $v$,
+
+$$
+\begin{aligned}
+y_fv&=\left(\frac{\kappa_mN_{net}}v\right)v
+=\kappa_mN_{net}=m_f,\\
+N_{net}=0&\ \Longrightarrow\ y_f=0,\quad m_f=0,\\
+N_{net}>0&\ \Longrightarrow\ y_f>0,\quad m_f>0.
+\end{aligned}
+$$
+
+For two assigned positive resource counts at the same scales,
+
+$$
+\frac{m_f}{m_h}
+=\frac{\kappa_mN_{\mathrm{net},f}}{\kappa_mN_{\mathrm{net},h}}
+=\frac{N_{\mathrm{net},f}}{N_{\mathrm{net},h}}
+=\frac{N_{\mathrm{net},f}/N_{scale}}{N_{\mathrm{net},h}/N_{scale}}
+=\frac{y_f}{y_h}.
+$$
+
+Thus
+
+$$
+\boxed{y_f=\frac{N_{3,\mathrm{net}}(\beta)}{N_{scale}},\qquad
+N_{scale}=\frac v{\kappa_m}\ \Longrightarrow\ m_f=y_fv.}
+$$
 
 Q.E.D.
 

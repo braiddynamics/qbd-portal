@@ -1001,7 +1001,7 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).

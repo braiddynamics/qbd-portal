@@ -1,0 +1,4 @@
+ 2 blocks: correction= 1, correction/size=1/6
+ 4 blocks: correction= 3, correction/size=3/20
+ 8 blocks: correction= 7, correction/size=7/72
+16 blocks: correction=15, correction/size=15/272

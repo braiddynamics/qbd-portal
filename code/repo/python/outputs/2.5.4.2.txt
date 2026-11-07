@@ -1,0 +1,3 @@
+Proposal 1: (True, False, True, True)
+Proposal 2: (False, True, True, True)
+Proposal 3: (True, True, False, False)

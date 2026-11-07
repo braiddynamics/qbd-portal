@@ -1,28 +1,18 @@
-import numpy as np
+from decimal import Decimal as D, getcontext
 
-# Standard Gaussian (mean=0, variance=1)
-sigma = 1.0
-
-# Friction coefficient μ = peak density of N(0,1)
-mu = 1 / np.sqrt(2 * np.pi * sigma**2)
-
-print("Friction Coefficient from Gaussian Normalization")
-print("=" * 52)
-print(f"Calculated μ:      {mu:.6f}")
-print(f"Approximate value: 0.398942")
-print(f"Exact 1/√(2π):     {1/np.sqrt(2*np.pi):.6f}\n")
-
-# Damping factor f(s) = exp(−μ s) for selected stress levels
-stress_levels = [0, 1, 2, 3, 4, 5]
-print("Damping Factors for Increasing Local Stress")
-print("-" * 44)
-for s in stress_levels:
-    damping = np.exp(-mu * s)
-    reduction = (1 - damping) * 100
-    print(f"Stress s = {s:>2}:  Damping = {damping:.4f}  "
-          f"(Rate reduced by {reduction:5.1f}%)")
-
-# Direct validation of peak PDF
-pdf_peak = (1 / np.sqrt(2 * np.pi * sigma**2)) * np.exp(0)
-print(f"\nGaussian PDF peak at s=0: {pdf_peak:.6f}")
-print(f"Match with μ:             {np.isclose(mu, pdf_peak)}")
+getcontext().prec = 80
+pi = D('3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628')
+mu = 1/(2*pi).sqrt()
+q = (-2*pi*pi).exp()
+direct = sum((-D(n*n)/2).exp() for n in range(-30,31))
+delta = 2*sum(q**(n*n) for n in range(1,8))
+poisson = (2*pi).sqrt()*(1+delta)
+peak = 1/direct
+relative = delta/(1+delta)
+bound = 2*q/(1-q**3)
+assert abs(direct-poisson) < D('1e-75')
+assert abs((mu-peak)/mu-relative) < D('1e-75')
+assert 0 < relative < bound
+for label,value in [('Direct lattice partition',direct),('Poisson partition',poisson),('Continuum reference',mu),('Exact lattice peak',peak),('Relative correction',relative),('Theta-tail upper bound',bound)]:
+    print(f'{label}: {value:.21g}')
+print('Strict correction bound holds at 80-digit precision.')

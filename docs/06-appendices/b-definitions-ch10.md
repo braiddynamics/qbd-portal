@@ -98,34 +98,94 @@ Section 10.1.4 formalizes the properties of the QBD lemma regarding topological 
 :::tip[**Differentiation via Permutation Invariants**]
 :::
 
-**I. Permutation Operator Action**
-Define the ribbon permutation operator $\hat{P}_{ij}$ which swaps ribbons $i$ and $j$.  **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" /> and  **Topological Stability** <Ref id="10.1.3" label="§10.1.3" />
-For the ground state $|0_L\rangle$ with $\boldsymbol{w}_0 = (-1, -1, -1)$:
+**I. Configuration Basis and Writhe Labels**
+
+Let $\Omega$ index the orthonormal graph configuration basis, so
 
 $$
-\hat{P}_{ij} |0_L\rangle = |0_L\rangle \quad \forall i,j
+\mathcal H=\ell^2(\Omega),\qquad
+\langle G|G'\rangle=\delta_{G,G'}
 $$
 
-The state transforms as the trivial representation (scalar) of $S_3$.
-
-**II. Symmetry Breaking in Excited State**
-For the excited state $|1_L\rangle$ with $\boldsymbol{w}_1 = (-2, -1, 0)$:
+(**Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />). For a graph configuration with three labeled ribbons, write its integer label as $\boldsymbol w(G)$. The two selected logical configurations have labels
 
 $$
-\hat{P}_{13} |1_L\rangle \neq |1_L\rangle
+\boldsymbol w_0=(-1,-1,-1),\qquad
+\boldsymbol w_1=(-2,-1,0)
 $$
 
-The permutation yields a distinct configuration (e.g., $(0, -1, -2)$).
-The state $|1_L\rangle$ belongs to a higher-dimensional representation (doublet or representation of broken symmetry).
-
-**III. Orthogonality and Schur's Lemma**
-Since $|0_L\rangle$ and $|1_L\rangle$ transform under different irreducible representations of the symmetry group $S_3$ (and the embedding $SU(3)$), they are strictly orthogonal. The inner product vanishes by character integration:
+(**Logical Basis** <Ref id="10.1.1" label="§10.1.1" />). Define
 
 $$
-\langle 0_L | 1_L \rangle = \frac{1}{|S_3|} \sum_{g \in S_3} \chi_{\text{triv}}(g)^*\chi_{\mathbf{2}}(g) = \frac{1}{6} (1 \cdot 2 + 3 \cdot 0 + 2 \cdot (-1)) = 0
+\Omega_j=\{G\in\Omega:\boldsymbol w(G)=\boldsymbol w_j\},\qquad
+\mathcal H_j=\overline{\operatorname{span}}\{|G\rangle:G\in\Omega_j\}.
 $$
 
-where $\chi_{\text{triv}}(g) = 1$ is the trivial representation character, and $\chi_{\mathbf{2}}$ is the character of the two-dimensional irreducible representation (with values 2 for identity, 0 for 2-cycles, and -1 for 3-cycles). Furthermore, no continuous deformation of the braid (isotopy) can transform $\boldsymbol{w}_0$ to $\boldsymbol{w}_1$ without passing through a singular configuration where strands intersect (a rewrite event), ensuring they are topologically distinct.
+**II. Disjoint Label Sets**
+
+If $G\in\Omega_0\cap\Omega_1$, its first writhe coordinate would satisfy
+
+$$
+w_1(G)=-1\quad\text{and}\quad w_1(G)=-2,
+$$
+
+which is impossible. Hence $\Omega_0\cap\Omega_1=\varnothing$. The conclusion also holds if labels are compared up to ribbon permutations: the multiset $\{-1,-1,-1\}$ is distinct from $\{-2,-1,0\}$.
+
+For vectors of finite support,
+
+$$
+|\psi_0\rangle=\sum_{G\in\Omega_0}a_G|G\rangle,\qquad
+|\psi_1\rangle=\sum_{G'\in\Omega_1}b_{G'}|G'\rangle,
+$$
+
+and therefore
+
+$$
+\begin{aligned}
+\langle\psi_0|\psi_1\rangle
+&=\sum_{G\in\Omega_0}\sum_{G'\in\Omega_1}
+ \overline{a_G}b_{G'}\langle G|G'\rangle\\
+&=\sum_{G\in\Omega_0}\sum_{G'\in\Omega_1}
+ \overline{a_G}b_{G'}\delta_{G,G'}=0.
+\end{aligned}
+$$
+
+Every delta is zero because the two indexing sets are disjoint.
+
+**III. Orthogonal Subspaces and Their Projectors**
+
+Let $P_j$ be the diagonal projector defined on each graph ket by
+
+$$
+P_j|G\rangle=\mathbf1_{\Omega_j}(G)|G\rangle.
+$$
+
+Then
+
+$$
+\begin{aligned}
+P_j^2|G\rangle&=\mathbf1_{\Omega_j}(G)^2|G\rangle=P_j|G\rangle,\\
+P_0P_1|G\rangle
+&=\mathbf1_{\Omega_0}(G)\mathbf1_{\Omega_1}(G)|G\rangle=0,\\
+\langle G|P_j|G'\rangle
+&=\mathbf1_{\Omega_j}(G')\delta_{G,G'}
+=\langle G|P_j^\dagger|G'\rangle.
+\end{aligned}
+$$
+
+These bounded projectors extend to $\ell^2(\Omega)$. For arbitrary vectors in their images,
+
+$$
+\langle\psi_0|\psi_1\rangle
+=\langle\psi_0|P_0^\dagger P_1|\psi_1\rangle=0.
+$$
+
+Thus the stated distinct configuration sectors (**Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />) satisfy
+
+$$
+\boxed{\mathcal H_0\perp\mathcal H_1,\qquad
+\langle0_L|1_L\rangle=0.}
+$$
 
 Q.E.D.
 
@@ -309,47 +369,77 @@ Section 10.2.3 formalizes the properties of the QBD lemma regarding geometric co
 :::tip[**Demonstration of Commutativity via Disjoint and Even-Overlap Supports**]
 :::
 
-**I. Self-Commutation ($Z$-$Z$ Type)**
-The geometric stabilizers are defined as products of Pauli-$Z$ operators on the edges of a closed 3-cycle $\gamma$:  **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" /> and  **Braid Code Consistency** <Ref id="10.2.2" label="§10.2.2" />
+**I. Pauli Products on Edge Factors**
+
+For finite edge sets $A,B$, define
 
 $$
-S_{\text{geom}}^{(\gamma)} = \prod_{e \in \gamma} Z_e
+Z(A)=\prod_{e\in A}Z_e,\qquad X(B)=\prod_{e\in B}X_e,\qquad
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
 $$
 
-For any two cycles $\gamma_a$ and $\gamma_b$:
-1.  **Disjoint Supports:** If $\gamma_a \cap \gamma_b = \emptyset$, the operators share no qubits. $[S_a, S_b] = 0$.
-2.  **Overlapping Supports:** If $\gamma_a$ and $\gamma_b$ share edges $E_{shared} = \{e_1, \dots\}$, the operators share $Z_e$ terms. Since $[Z_i, Z_j] = 0$ for all $i,j$, the product of Z-operators strictly commutes.
+These act on the tensor factors of the stabilizer construction (**Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" />). On a single factor,
 
 $$
-[S_{\text{geom}}^{(\gamma_a)}, S_{\text{geom}}^{(\gamma_b)}] = 0
+ZX=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+XZ=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad ZX=-XZ.
 $$
 
-**II. Cross-Commutation ($Z$-$X$ Type)**
-Let $S_{\text{vert}}^{(v)} = \prod_{e \in \text{star}(v)} X_e$ be the vertex stabilizer acting on all edges incident to vertex $v$.
-The commutator with a geometric stabilizer $S_{\text{geom}}^{(\gamma)}$ depends on the overlap between the cycle edges and the vertex star edges.
-1.  **Case $v \notin \gamma$:** The intersection is empty. Commutator is zero.
-2.  **Case $v \in \gamma$:** In a valid graph embedding, a cycle $\gamma$ enters vertex $v$ via one edge $e_{in}$ and leaves via another edge $e_{out}$. Thus, the cycle shares exactly **two** edges with the star of $v$.
-
-    $$
-    |\text{supp}(S_{\text{geom}}^{(\gamma)}) \cap \text{supp}(S_{\text{vert}}^{(v)})| = 2
-    $$
-
-3.  **Parity Argument:** The Pauli operators $X_e$ and $Z_e$ anticommute ($\{X_e, Z_e\} = 0$). The total phase picked up by commuting the operators is $(-1)^k$, where $k$ is the number of shared edges.
-
-    $$
-    S_{\text{geom}} S_{\text{vert}} = (-1)^2 S_{\text{vert}} S_{\text{geom}} = S_{\text{vert}} S_{\text{geom}}
-    $$
-
-    The even overlap ($k=2$) ensures global commutativity.
-
-**III. Even Overlap Verification**
-Let $v$ be a vertex on the closed 3-cycle $\gamma$. Since $\gamma$ is a closed loop, it must enter $v$ through exactly one edge and exit through exactly one edge, ensuring that the intersection $\gamma \cap \text{star}(v)$ consists of exactly 2 edges. If $v$ is not on $\gamma$, the intersection is empty. In all cases, the cardinality of the intersection is even:
+On distinct factors, $Z_eX_f=X_fZ_e$ for $e\ne f$. Commuting each factor in $X(B)$ through $Z(A)$ gives one minus sign for each edge in the intersection:
 
 $$
-|\gamma \cap \text{star}(v)| \equiv 0 \pmod 2
+Z(A)X(B)
+=\left(\prod_{e\in A\cap B}(-1)\right)X(B)Z(A)
+=(-1)^{|A\cap B|}X(B)Z(A).
 $$
 
-Since the commutator phase factor between the Z-operators of $S_{\text{geom}}^{(\gamma)}$ and the X-operators of $S_{\text{vert}}^{(v)}$ is $(-1)^{|\gamma \cap \text{star}(v)|}$, the even overlap guarantees that the commutator is $+1$, establishing that the operators commute.
+**II. Two Geometric Checks**
+
+For any $A,B$, factors on the intersection cancel because $Z_e^2=I_e$, and all remaining factors commute. With $A\triangle B=(A\setminus B)\cup(B\setminus A)$,
+
+$$
+\begin{aligned}
+Z(A)Z(B)
+&=\left(\prod_{e\in A\cap B}Z_e^2\right)
+  \left(\prod_{e\in A\triangle B}Z_e\right)
+=Z(A\triangle B),\\
+Z(B)Z(A)&=Z(B\triangle A)=Z(A\triangle B),\\
+[Z(A),Z(B)]&=0.
+\end{aligned}
+$$
+
+In particular this holds for two triangular cycles $\gamma,\gamma'$.
+
+**III. Cycle-Star Intersection**
+
+Let $\gamma=(v_0,v_1,v_2,v_0)$ be a simple triangular cycle, and let $B=\operatorname{star}(v)$. Its edge-set intersection is
+
+$$
+\gamma\cap\operatorname{star}(v)=
+\begin{cases}
+\varnothing,&v\notin\{v_0,v_1,v_2\},\\
+\{e_{j-1},e_j\},&v=v_j,
+\end{cases}
+$$
+
+where the edge indices are read modulo three. The two listed edges are distinct because the cycle is simple. Thus the intersection size is zero or two, and
+
+$$
+\begin{aligned}
+S_{geom}^{(\gamma)}S_{vert}^{(v)}
+&=(-1)^{|\gamma\cap\operatorname{star}(v)|}
+  S_{vert}^{(v)}S_{geom}^{(\gamma)}\\
+&=S_{vert}^{(v)}S_{geom}^{(\gamma)}.
+\end{aligned}
+$$
+
+This proves the required pairwise relations (**Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" />):
+
+$$
+\boxed{[S_{geom}^{(\gamma)},S_{geom}^{(\gamma')}]=0,\qquad
+[S_{geom}^{(\gamma)},S_{vert}^{(v)}]=0.}
+$$
 
 Q.E.D.
 
@@ -415,25 +505,68 @@ Section 10.2.5 formalizes the properties of the QBD lemma regarding ribbon integ
 :::tip[**Demonstration of Commutativity via Modular Segment Structure**]
 :::
 
-**I. Ribbon Operator Definition**
-Ribbon stabilizers enforce correlations along the linear segments of the braid.  **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" /> and  **Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" /> They are typically defined as plaquette operators $S_{\text{ribbon}}^{(k,i)} = Z_{r_i} Z_{e_{top}} Z_{r_{i+1}} Z_{e_{bot}}$ involving two rung edges and two strand edges.
+**I. Plaquette Support**
 
-**II. Self-Commutation ($Z$-$Z$)**
-As with geometric stabilizers, ribbon stabilizers consist purely of $Z$ operators.
-Since $[Z_i, Z_j] = 0$, all ribbon stabilizers commute mutually, regardless of overlap.
+Let a ribbon segment have the four distinct boundary edges
 
 $$
-[S_{\text{ribbon}}^{(k)}, S_{\text{ribbon}}^{(l)}] = 0
+p=\{r_i,t_i,r_{i+1},b_i\},\qquad
+R_p=Z_{r_i}Z_{t_i}Z_{r_{i+1}}Z_{b_i}=Z(p)
 $$
 
-**III. Cross-Commutation ($Z$-$X$)**
-The commutation is verified with Vertex stabilizers ($X$-type).
-A ribbon segment creates a closed loop (a plaquette) bounded by vertices.
-* The boundary of a ribbon segment passes through 4 vertices.
-* For any vertex $v$ involved in the segment, the segment operator acts on exactly **two** edges incident to $v$ (one incoming strand/rung, one outgoing strand/rung).
-* The overlap cardinality is 2.
-* Commutator phase: $(-1)^2 = +1$.
-Thus, ribbon integrity checks commute with vertex constraints.
+as in the stabilizer construction (**Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" />). Its boundary vertices may be labeled $a,b,c,d$, with edges $ab,bc,cd,da$ in the underlying undirected support.
+
+**II. Commutation with All Diagonal Checks**
+
+For a geometric cycle $\gamma$ or a second ribbon plaquette $q$, the all-$Z$ product rule gives
+
+$$
+\begin{aligned}
+R_pZ(\gamma)&=Z(p\triangle\gamma)
+=Z(\gamma\triangle p)=Z(\gamma)R_p,\\
+R_pR_q&=Z(p\triangle q)
+=Z(q\triangle p)=R_qR_p.
+\end{aligned}
+$$
+
+The cancellation rule is valid for arbitrary overlaps because every repeated factor contributes $Z_e^2=I_e$ (**Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" />).
+
+**III. Commutation with Vertex Checks**
+
+The intersections with a vertex star are explicitly
+
+$$
+\begin{array}{c|c|c}
+v&p\cap\operatorname{star}(v)&|p\cap\operatorname{star}(v)|\\\hline
+a&\{ab,da\}&2\\b&\{ab,bc\}&2\\
+c&\{bc,cd\}&2\\d&\{cd,da\}&2\\
+v\notin\{a,b,c,d\}&\varnothing&0
+\end{array}
+$$
+
+Consequently,
+
+$$
+R_pS_{vert}^{(v)}
+=(-1)^{|p\cap\operatorname{star}(v)|}S_{vert}^{(v)}R_p
+=S_{vert}^{(v)}R_p.
+$$
+
+**IV. Extension to the Generated Group**
+
+Let $g_1,\ldots,g_m$ be any stabilizer generators. If $R_pg_j=g_jR_p$ for each $j$, repeated substitution gives
+
+$$
+R_p(g_1g_2\cdots g_m)
+=g_1R_p(g_2\cdots g_m)
+=\cdots=(g_1g_2\cdots g_m)R_p.
+$$
+
+Every group element is such a finite product, since each Pauli check is its own inverse. Therefore
+
+$$
+\boxed{[R_p,S]=0\qquad\text{for every }S\in\mathcal S.}
+$$
 
 Q.E.D.
 
@@ -505,25 +638,48 @@ Section 10.2.7 formalizes the properties of the QBD lemma regarding vertex commu
 :::tip[**Demonstration of Commutativity via Even Self-Overlaps and Balanced Anticommutations**]
 :::
 
-**I. Operator Definition**
-Vertex stabilizers are of Pauli-$X$ type:  **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" /> and  **Fraying Detection** <Ref id="10.2.6" label="§10.2.6" />
+**I. Vertex-Star Products**
+
+For each vertex $v$, let $A_v=\operatorname{star}(v)$ and
 
 $$
-S_v^X = \prod_{e \in \text{star}(v)} X_e
+S_v=X(A_v)=\prod_{e\in A_v}X_e
 $$
 
-**II. Commutation Logic**
-Consider two vertex stabilizers $S_u^X$ and $S_v^X$.
-1.  **Disjoint ($u, v$ not neighbors):** The edge sets are disjoint. Commutator is trivially zero.
-2.  **Adjacent ($u, v$ connected by $e_{uv}$):**
-    * The sets share exactly one edge: $e_{uv}$.
-    * The operators acting on this shared edge are both $X_{e_{uv}}$.
-    * Since $[X, X] = 0$, the operators on the shared edge commute.
-    * Operators on non-shared edges act on disjoint subspaces and commute.
-    * Therefore, the full products commute: $[S_u^X, S_v^X] = 0$.
+(**Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" />). On the same factor $X_e^2=I_e$, and on distinct factors
 
-**III. Group Consistency**
-Since $S^X$ operators commute with each other (same Pauli type) and with $S^Z$ operators (even overlap, as proven in 10.2.3.1), the full set of generators $\{S_{\text{geom}}, S_{\text{ribbon}}, S_{\text{vert}}\}$ forms an Abelian group.
+$$
+X_eX_f=(X\otimes I)(I\otimes X)
+=X\otimes X=(I\otimes X)(X\otimes I)=X_fX_e.
+$$
+
+**II. Arbitrary Overlap**
+
+For vertices $u,v$, put $A=A_u$, $B=A_v$. Commutativity of all $X$ factors permits collection of the common edges:
+
+$$
+\begin{aligned}
+S_uS_v
+&=\left(\prod_{e\in A\setminus B}X_e\right)
+  \left(\prod_{e\in A\cap B}X_e^2\right)
+  \left(\prod_{e\in B\setminus A}X_e\right)\\
+&=\prod_{e\in A\triangle B}X_e=X(A\triangle B),\\
+S_vS_u&=X(B\triangle A)=X(A\triangle B).
+\end{aligned}
+$$
+
+For disjoint stars this is the product on their union. For adjacent vertices with a unique shared edge $e$, the shared pair is $X_eX_e=I_e$. The formula also includes $u=v$, where $A\triangle A=\varnothing$ and $S_v^2=I$.
+
+**III. Pairwise Commutation**
+
+Subtracting the two products gives
+
+$$
+\boxed{[S_u,S_v]=X(A\triangle B)-X(A\triangle B)=0
+\qquad\text{for all }u,v.}
+$$
+
+Together with the cycle-star and plaquette-star relations (**Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" />), (**Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" />), this supplies pairwise commutation of the three declared check families.
 
 Q.E.D.
 
@@ -549,19 +705,61 @@ Section 10.2.8 formalizes the properties of the QBD lemma regarding phase error 
 :::tip[**Verification of Syndrome Patterns via Z-Type Edge Errors**]
 :::
 
-**I. Error Mapping**
-Consider a phase error $E = Z_e$ on the edge $e$ connecting vertices $u$ and $v$.  **Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" /> and  **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />
-The relevant checks are the vertex stabilizers $S_u^X$ and $S_v^X$, which contain $X_e$.
+**I. Single-Edge Error and Reference Syndrome**
 
-**II. Syndrome Calculation**
-* **Stabilizer $S_u^X$:** Contains $X_e$. $\{Z_e, X_e\} = 0$. Syndrome flips ($\sigma_u = -1$).
-* **Stabilizer $S_v^X$:** Contains $X_e$. $\{Z_e, X_e\} = 0$. Syndrome flips ($\sigma_v = -1$).
-* **Other Vertices:** Do not contain $X_e$. Syndromes unchanged.
+Fix an edge $e=\{u,v\}$ in the simple support graph, with distinct endpoints. Let $|\psi\rangle$ satisfy the vertex checks
 
-**III. Localization**
-The error signature is a pair of flipped vertices $\{u, v\}$.
-In a simple graph, a pair of vertices is connected by at most one edge. Thus, the identification of the flipped pair $\{u, v\}$ uniquely maps to the error on edge $e_{uv}$.
-This provides detection for phase errors ($Z$), complementary to the bit-flip ($X$) detection provided by geometric/ribbon stabilizers ($Z$-type checks).
+$$
+S_x|\psi\rangle=|\psi\rangle,\qquad
+S_x=\prod_{f\in\operatorname{star}(x)}X_f
+$$
+
+(**Stabilizer Group** <Ref id="10.2.1" label="§10.2.1" />). The phase-error state is $|\psi_e\rangle=Z_e|\psi\rangle$. Since $Z_e^\dagger Z_e=I$, it has the same norm as $|\psi\rangle$.
+
+**II. Syndrome at Every Vertex**
+
+At $x=u$, separate the $X_e$ factor:
+
+$$
+\begin{aligned}
+S_uZ_e
+&=X_e\left(\prod_{f\in\operatorname{star}(u)\setminus\{e\}}X_f\right)Z_e\\
+&=X_eZ_e\prod_{f\in\operatorname{star}(u)\setminus\{e\}}X_f
+=-Z_eS_u,\\
+S_u|\psi_e\rangle&=-Z_eS_u|\psi\rangle=-|\psi_e\rangle.
+\end{aligned}
+$$
+
+The same calculation at $v$ yields $S_v|\psi_e\rangle=-|\psi_e\rangle$. If $x\notin\{u,v\}$, then $e\notin\operatorname{star}(x)$; every $X_f$ has $f\ne e$, so
+
+$$
+S_x|\psi_e\rangle=Z_eS_x|\psi\rangle=|\psi_e\rangle.
+$$
+
+Thus the complete vertex syndrome is
+
+$$
+\sigma_x(e)=(-1)^{\mathbf1_{\{u,v\}}(x)},\qquad
+\{x:\sigma_x(e)=-1\}=\{u,v\}
+$$
+
+(**Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />).
+
+**III. Injectivity in the Stated Error Class**
+
+Suppose two single-edge phase errors on $e$ and $f$ have the same vertex syndrome. Their negative-syndrome sets are equal:
+
+$$
+\sigma_x(e)=\sigma_x(f)\ \forall x
+\ \Longrightarrow\ \partial e=\partial f.
+$$
+
+In a simple support graph there is at most one edge with a given unordered pair of endpoints. Therefore $e=f$, and the map $e\mapsto(\sigma_x(e))_x$ is injective among single-edge $Z$ errors. In particular,
+
+$$
+\boxed{Z_e|\psi\rangle\ \longmapsto\
+\{\text{flipped vertex checks}\}=\partial e=\{u,v\}.}
+$$
 
 Q.E.D.
 
@@ -1046,30 +1244,61 @@ Section 10.4.3 formalizes the properties of the QBD lemma regarding writhe conse
 :::tip[**Formal Summation via Topological Invariants**]
 :::
 
-**I. Initial Configuration ($|0_L\rangle$)**
-The ground state is defined by the writhe vector $\boldsymbol{w}_0 = (-1, -1, -1)$.  **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" /> and  **Logical X Gate** <Ref id="10.4.2" label="§10.4.2" />
-The total writhe $W_0$ is the scalar sum of the components:
+**I. Elementary Redistribution**
+
+Let $\boldsymbol w=(w_1,\ldots,w_n)\in\mathbb Z^n$ and let a shuffle transfer an integer $a$ from coordinate $j$ to coordinate $i$, with $i\ne j$. Its label action is
 
 $$
-W_0 = \sum_{i=1}^{3} w_{0,i} = (-1) + (-1) + (-1) = -3
+\boldsymbol w'=\boldsymbol w+a\boldsymbol e_i-a\boldsymbol e_j,\qquad
+w_r'=w_r+a\delta_{ri}-a\delta_{rj}
 $$
 
-**II. Final Configuration ($|1_L\rangle$)**
-The excited state is defined by the writhe vector $\boldsymbol{w}_1 = (-2, -1, 0)$.
-The total writhe $W_1$ is the scalar sum:
+(**Writhe Shuffling** <Ref id="10.4.1" label="§10.4.1" />). Define $W(\boldsymbol w)=\sum_{r=1}^n w_r$.
+
+**II. Sum Before and After a Shuffle**
+
+Both affected coordinates and every unaffected one contribute explicitly:
 
 $$
-W_1 = \sum_{i=1}^{3} w_{1,i} = (-2) + (-1) + (0) = -3
+\begin{aligned}
+W(\boldsymbol w')
+&=\sum_{r=1}^n(w_r+a\delta_{ri}-a\delta_{rj})\\
+&=\sum_{r=1}^nw_r+a\sum_{r=1}^n\delta_{ri}
+ -a\sum_{r=1}^n\delta_{rj}\\
+&=W(\boldsymbol w)+a-a=W(\boldsymbol w).
+\end{aligned}
 $$
 
-**III. Invariance**
-The change in total writhe $\Delta W$ vanishes:
+For a sequence $\boldsymbol w^{(0)},\ldots,\boldsymbol w^{(m)}$ of such transfers, the base equality is $W(\boldsymbol w^{(0)})=W(\boldsymbol w^{(0)})$. The single-transfer identity gives
 
 $$
-\Delta W = W_1 - W_0 = (-3) - (-3) = 0
+W(\boldsymbol w^{(r+1)})=W(\boldsymbol w^{(r)})
+=W(\boldsymbol w^{(0)}).
 $$
 
-The operation $\mathcal{R}_X$ preserves the global knot invariant $W$ while altering the local knot components.
+Induction therefore establishes conservation for every finite shuffle sequence.
+
+**III. Selected Logical Transition**
+
+For the specified logical labels (**Logical X Gate** <Ref id="10.4.2" label="§10.4.2" />), the coordinate difference is
+
+$$
+\begin{aligned}
+\boldsymbol w_1-\boldsymbol w_0
+&=(-2,-1,0)-(-1,-1,-1)=(-1,0,1)
+=-\boldsymbol e_1+\boldsymbol e_3,\\
+W_0&=-1-1-1=-3,\\
+W_1&=-2-1+0=-3,\\
+\Delta W&=(-3)-(-3)=0.
+\end{aligned}
+$$
+
+The reverse transfer has the negative coordinate increment and also preserves the sum. Hence
+
+$$
+\boxed{W(\boldsymbol w')=W(\boldsymbol w),\qquad
+W_0=W_1=-3.}
+$$
 
 Q.E.D.
 
@@ -1095,24 +1324,65 @@ Section 10.4.4 formalizes the properties of the QBD lemma regarding charge conse
 :::tip[**Formal Derivation via the Topological Charge Operator**]
 :::
 
-**I. Charge Operator Definition**
-The electric charge operator $\hat{Q}$ is proportional to the total writhe operator $\hat{W}$, with the coupling constant $k=1/3$ derived from the **Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />.
+**I. Integer-Writhe Charge**
+
+The charge definition and total writhe are
 
 $$
-\hat{Q} = \frac{1}{3} \hat{W} = \frac{1}{3} \sum_{i} \hat{w}_i
+Q(\boldsymbol w)=\frac13W(\boldsymbol w),\qquad
+W(\boldsymbol w)=\sum_iw_i
 $$
 
-**II. Charge Variation**
-The variation in charge $\Delta Q$ during the transition $\mathcal{R}_X$ is determined by the variation in total writhe $\Delta W$.
-From the **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />, $\Delta W = 0$.
+(**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />). An allowed shuffle has $W(\boldsymbol w')=W(\boldsymbol w)$ by the coordinate-sum calculation (**Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />).
+
+**II. Charge Difference**
+
+Substitution gives
 
 $$
-\Delta Q = \frac{1}{3} \Delta W = \frac{1}{3}(0) = 0
+\begin{aligned}
+Q(\boldsymbol w')-Q(\boldsymbol w)
+&=\frac13\sum_iw_i'-\frac13\sum_iw_i\\
+&=\frac13\left(\sum_iw_i'-\sum_iw_i\right)
+=\frac13(W'-W)=0.
+\end{aligned}
 $$
 
-**III. Conservation Compliance**
-Since $\Delta Q = 0$, the transformation $|0_L\rangle \to |1_L\rangle$ does not violate the global conservation of electric charge.
-The process is axiomatically permitted under the Principle of Unique Causality (PUC) and acyclicity constraints, provided the redistribution is mediated by a valid gauge interaction (e.g., $SU(3)$ gluon exchange).
+For the selected logical labels,
+
+$$
+Q_0=\frac{-1-1-1}{3}=-1,\qquad
+Q_1=\frac{-2-1+0}{3}=-1.
+$$
+
+**III. Linear Operator Form**
+
+On writhe basis states define $\hat Q|\boldsymbol w\rangle=Q(\boldsymbol w)|\boldsymbol w\rangle$. Let $U$ be a shuffle operator whose matrix elements vanish unless the sums agree:
+
+$$
+U|\boldsymbol w\rangle
+=\sum_{\boldsymbol w':W(\boldsymbol w')=W(\boldsymbol w)}
+ u_{\boldsymbol w',\boldsymbol w}|\boldsymbol w'\rangle.
+$$
+
+On finite linear combinations in the common domain,
+
+$$
+\begin{aligned}
+\hat Q U|\boldsymbol w\rangle
+&=\sum_{\boldsymbol w'}u_{\boldsymbol w',\boldsymbol w}
+ Q(\boldsymbol w')|\boldsymbol w'\rangle\\
+&=Q(\boldsymbol w)\sum_{\boldsymbol w'}u_{\boldsymbol w',\boldsymbol w}
+ |\boldsymbol w'\rangle
+=U\hat Q|\boldsymbol w\rangle.
+\end{aligned}
+$$
+
+Thus the shuffle preserves charge, including on coherent linear combinations in each fixed-charge sector:
+
+$$
+\boxed{\Delta Q=0,\qquad[\hat Q,U]=0.}
+$$
 
 Q.E.D.
 
@@ -2107,30 +2377,204 @@ Section 10.9.2 formalizes the properties of the QBD lemma regarding clifford gen
 :::tip[**Algebraic Verification through Gate Composition**]
 :::
 
-**I. The Phase Gate ($S$)**
-The $S$ gate is defined as $\text{diag}(1, i)$.  **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" /> and  **Group Closure** <Ref id="10.9.1" label="§10.9.1" /> Since $T = \text{diag}(1, e^{i\pi/4})$ and $T^2 = \text{diag}(1, e^{i\pi/2}) = \text{diag}(1, i)$, the physical implementation is the repeated application of the T-process:
+**I. Declared Primitive Actions**
+
+Use the stated logical actions of the physical primitives as inputs. The first action is $\mathcal R_H\mapsto H$ (**Hadamard Gate** <Ref id="10.6.1" label="§10.6.1" />). The phase action is $\mathcal R_T\mapsto T$ (**T-Gate** <Ref id="10.8.2" label="§10.8.2" />). The two-qubit action is $\mathcal R_{CZ}\mapsto CZ$ (**Controlled-Z Gate** <Ref id="10.7.1" label="§10.7.1" />). In the ordered one- and two-qubit bases, the matrices are
 
 $$
-S_{phys} = \mathcal{R}_T \circ \mathcal{R}_T
+H=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+T=\begin{pmatrix}1&0\\0&e^{i\pi/4}\end{pmatrix},\qquad
+CZ=\begin{pmatrix}I_2&0\\0&Z\end{pmatrix},\qquad
+Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
 $$
 
-This operation doubles the geometric phase from $\pi/4$ to $\pi/2$.
+The tensor order is control first, target second.
 
-**II. The Controlled-NOT ($CNOT$)**
-The CNOT gate transforms $|c, t\rangle \to |c, c \oplus t\rangle$. It satisfies the identity $CNOT = (I \otimes H) \cdot CZ \cdot (I \otimes H)$.
-In QBD rewrites:
+**II. Phase and Controlled-NOT Matrices**
+
+Direct multiplication gives
 
 $$
-\mathcal{R}_{CNOT} = (I \otimes \mathcal{R}_H) \circ \mathcal{R}_{CZ} \circ (I \otimes \mathcal{R}_H)
+T^2
+=\begin{pmatrix}1\cdot1&0\\0&e^{i\pi/4}e^{i\pi/4}\end{pmatrix}
+=\begin{pmatrix}1&0\\0&i\end{pmatrix}=S.
 $$
 
-* Step 1: Apply $\mathcal{R}_H$ to target. Target enters superposition.
-* Step 2: Apply $\mathcal{R}_{CZ}$. Phase flip on $|11\rangle$ term.
-* Step 3: Apply $\mathcal{R}_H$ to target. Interference converts phase flip to bit flip conditional on control.
-The sequence generates the standard CNOT unitary exactly.
+The two target products needed for the controlled operation are
 
-**III. Clifford Closure**
-The set $\{H, S, CNOT\}$ generates the Pauli group and the entire Clifford group $\mathcal{C}_n$. Since all components are realizable by $\mathcal{G}_{phys}$, the physical system generates $\mathcal{C}_n$.
+$$
+\begin{aligned}
+H^2&=\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+                   \begin{pmatrix}1&1\\1&-1\end{pmatrix}
+=\frac12\begin{pmatrix}2&0\\0&2\end{pmatrix}=I,\\
+H Z H&=\frac12\begin{pmatrix}1&-1\\1&1\end{pmatrix}
+                   \begin{pmatrix}1&1\\1&-1\end{pmatrix}
+=\frac12\begin{pmatrix}0&2\\2&0\end{pmatrix}=X.
+\end{aligned}
+$$
+
+Consequently,
+
+$$
+\begin{aligned}
+(I\otimes H)CZ(I\otimes H)
+&=\begin{pmatrix}H&0\\0&H\end{pmatrix}
+  \begin{pmatrix}I&0\\0&Z\end{pmatrix}
+  \begin{pmatrix}H&0\\0&H\end{pmatrix}\\
+&=\begin{pmatrix}H^2&0\\0&H Z H\end{pmatrix}
+=\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}
+=\operatorname{CNOT}.
+\end{aligned}
+$$
+
+It follows on all four basis vectors that $CNOT|a,b\rangle=|a,b\mathbin\oplus a\rangle$.
+
+**III. Pauli Conjugation**
+
+Let $Y=iXZ=\begin{pmatrix}0&-i\\i&0\end{pmatrix}$. Besides $H Z H=X$ calculated above,
+
+$$
+\begin{aligned}
+H X H&=\frac12\begin{pmatrix}1&1\\-1&1\end{pmatrix}
+                  \begin{pmatrix}1&1\\1&-1\end{pmatrix}=Z,\\
+H Y H&=\frac12\begin{pmatrix}i&-i\\-i&-i\end{pmatrix}
+                  \begin{pmatrix}1&1\\1&-1\end{pmatrix}=-Y,\\
+S X S^\dagger&=\begin{pmatrix}0&1\\i&0\end{pmatrix}
+                  \begin{pmatrix}1&0\\0&-i\end{pmatrix}=Y,\\
+S Y S^\dagger&=\begin{pmatrix}0&-i\\-1&0\end{pmatrix}
+                  \begin{pmatrix}1&0\\0&-i\end{pmatrix}=-X,\\
+S Z S^\dagger&=\begin{pmatrix}1&0\\0&-i\end{pmatrix}
+                  \begin{pmatrix}1&0\\0&-i\end{pmatrix}=Z.
+\end{aligned}
+$$
+
+Write $C=CNOT=C^\dagger$. Applying the conjugated operators to $|a,b\rangle$, for $a,b\in\{0,1\}$, gives
+
+$$
+\begin{aligned}
+C X_1 C|a,b\rangle
+&=C|a\oplus1,b\oplus a\rangle
+=|a\oplus1,b\oplus1\rangle=X_1X_2|a,b\rangle,\\
+C X_2 C|a,b\rangle
+&=C|a,b\oplus a\oplus1\rangle
+=|a,b\oplus1\rangle=X_2|a,b\rangle,\\
+C Z_1 C|a,b\rangle
+&=(-1)^a C|a,b\oplus a\rangle
+=(-1)^a|a,b\rangle=Z_1|a,b\rangle,\\
+C Z_2 C|a,b\rangle
+&=(-1)^{b\oplus a} C|a,b\oplus a\rangle
+=(-1)^{a+b}|a,b\rangle=Z_1Z_2|a,b\rangle.
+\end{aligned}
+$$
+
+Since conjugation preserves products and the $X_j,Z_j$ generate the Pauli group, these identities show that $H,S,CNOT$ normalize that group.
+
+**IV. Reduction of an Arbitrary Clifford Action**
+
+Let $U$ normalize the $n$-qubit Pauli group. Its Hermitian Pauli images
+
+$$
+P=UZ_1U^\dagger,\qquad Q=UX_1U^\dagger
+$$
+
+satisfy $P^2=Q^2=I$ and $PQ=-QP$. The support of $P$ is nonempty: $P=\pm I$ would imply $Z_1=U^\dagger(\pm I)U=\pm I$, a contradiction. The local reductions supplied by Section III are
+
+$$
+H X H=Z,\qquad
+(H S)Y(H S)^\dagger=H(-X)H=-Z,\qquad
+I Z I=Z.
+$$
+
+Applying the corresponding gate on each nonidentity factor takes $P$ to $\pm\prod_{j\in A}Z_j$ for a nonempty support $A$.
+
+Move one element of $A$ to position one if necessary. The required swap is a generated gate, since
+
+$$
+\begin{aligned}
+(a,b)&\xmapsto{\operatorname{CNOT}_{1\to2}}(a,b\oplus a)
+\xmapsto{\operatorname{CNOT}_{2\to1}}(b,b\oplus a)
+\xmapsto{\operatorname{CNOT}_{1\to2}}(b,a).
+\end{aligned}
+$$
+
+For every $j\in A\setminus\{1\}$, conjugation by $CNOT_{j\to1}$ cancels the extra $Z_j$ factor:
+
+$$
+Z_1Z_j\ \longmapsto\ (Z_jZ_1)Z_j=Z_1.
+$$
+
+If the result is $-Z_1$, conjugation by $X_1=H_1S_1^2H_1$ changes it to $Z_1$. This constructs a generated circuit $V$ for which $W=VU$ fixes $Z_1$ by conjugation.
+
+For $Q'=WX_1W^\dagger$,
+
+$$
+\begin{aligned}
+Q'Z_1
+&=(W X_1 W^\dagger)(W Z_1 W^\dagger)
+=W X_1 Z_1 W^\dagger\\
+&=-W Z_1 X_1 W^\dagger=-Z_1Q'.
+\end{aligned}
+$$
+
+Thus its first Pauli factor is $X_1$ or $Y_1$. A power of $S_1$, which fixes $Z_1$, makes this factor $X_1$ up to sign. Local gates on the remaining qubits make every other nonidentity factor $X_j$. Then $CNOT_{1\to j}$ removes such a factor because
+
+$$
+X_1X_j\ \longmapsto\ (X_1X_j)X_j=X_1,
+$$
+
+while keeping $Z_1$ fixed. A remaining negative sign is removed by conjugation with $Z_1=S_1^2$. Hence a further generated circuit converts $W$ to a unitary $W'$ satisfying
+
+$$
+W'Z_1W'^\dagger=Z_1,\qquad W'X_1W'^\dagger=X_1.
+$$
+
+To solve these two conditions, write $W'=\begin{pmatrix}A&B\\C&D\end{pmatrix}$ in the first-qubit decomposition. Commutation with $Z_1$ gives
+
+$$
+\begin{pmatrix}A&-B\\C&-D\end{pmatrix}
+=\begin{pmatrix}A&B\\-C&-D\end{pmatrix}
+\ \Longrightarrow\ B=C=0.
+$$
+
+Commutation with $X_1$ then gives
+
+$$
+\begin{pmatrix}0&A\\D&0\end{pmatrix}
+=\begin{pmatrix}0&D\\A&0\end{pmatrix}
+\ \Longrightarrow\ A=D.
+$$
+
+Therefore $W'=I_2\otimes A$, with $A^\dagger A=I$ from $W'^\dagger W'=I$. For every remaining qubit $j$, the conjugates are
+
+$$
+\begin{aligned}
+W'(I_2\otimes X_j)W'^\dagger&=I_2\otimes(A X_j A^\dagger),\\
+W'(I_2\otimes Z_j)W'^\dagger&=I_2\otimes(A Z_j A^\dagger).
+\end{aligned}
+$$
+
+They are Pauli operators since $W'$ is a product of Clifford operators. Their first factor is the identity, so $A X_j A^\dagger$ and $A Z_j A^\dagger$ are Pauli operators on the remaining factors. Thus $A$ is an $(n-1)$-qubit Clifford.
+
+For $n=1$, the same block calculation leaves $A=e^{i\phi}$, a scalar. For the induction step, suppose all $(n-1)$-qubit Clifford actions have generated circuits. Let $K$ denote the additional generated circuit taking $W$ to $W'$. Then
+
+$$
+K V U=I_2\otimes A
+\quad\Longrightarrow\quad
+U=V^{-1}K^{-1}(I_2\otimes A).
+$$
+
+The induction hypothesis supplies the circuit for $A$; $V$ and $K$ were constructed above. Hence all $n$-qubit Clifford actions are generated, up to a common global phase.
+
+**V. Primitive Rewrite Compositions**
+
+Replacing each primitive matrix by its stated logical rewrite action yields the exact compositions (**Clifford Generation** <Ref id="10.9.2" label="§10.9.2" />):
+
+$$
+\boxed{S=T^2,\qquad
+\operatorname{CNOT}=(I\otimes H)CZ(I\otimes H).}
+$$
+
+Every inverse used in the reduction is also a finite word: $H^{-1}=H$, $S^{-1}=S^3$, $CNOT^{-1}=CNOT$. Consequently the reduction gives a synthesis in the declared primitive set for every Clifford action modulo global phase.
 
 Q.E.D.
 

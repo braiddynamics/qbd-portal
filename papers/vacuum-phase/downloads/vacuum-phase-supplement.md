@@ -10,7 +10,7 @@ date: "February 2025"
 
 This appendix presents the complete, machine-checked Lean 4 formalization defining the axiomatic primitives (Axioms 1–3), geometric well-foundedness, comonadic algebraic rigidity, legal move grammar (PUC and AEC), dynamic non-interference, concurrent addition confluence, automorphism preservation under maximal parallelism, absorbing-state stationarity, non-cyclic scar permanence, Category Hist cumulative trajectory indelibility, edge timestamp idempotency, triad self-stress rigidity, discrete port/stress symmetries, and continuum stability across 56 active numbered verified theorems (120 theorem declarations, 0 unproven obligations, 0 axioms, 0 sorry, compiled under toolchain leanprover/lean4:v4.33.1).
 
-### Formal Theorem Index (56 Active Numbered Verified Theorems)
+### Formal Theorem Index (Legacy Numbered Results and Concrete Extensions)
 
 - **Part 1 (Axiom 1 & Asymmetry):** antisymmetry_insufficient (Thm 1.1), asymmetry_implies_irreflexivity (Thm 1.2), asymmetry_equiv_irreflexive_and_antisymmetric (Thm 1.3)
 - **Part 2 (Axiom 2 & Lexicographic Descent):** lexicographic_relation_wf (Thm 2.1), lexicographic_descent_admissible (Thm 2.2)
@@ -25,6 +25,12 @@ This appendix presents the complete, machine-checked Lean 4 formalization defini
 - **Part 9.5 (S₂ Bit-Flip Permutation Invariance & Bernoulli Prior):** permutation_invariance_uniquely_determines_prior (Thm 9.7)
 - **Part 10 (Continuum Stability & Master Equation Dynamics):** drift_poly_factorization (Thm 10.1), extinction_basin_negative (Thm 10.2), gradient_dominance_implies_stability (Thm 10.3), perturbation_restoration_velocity (Thm 10.4), origin_jacobian_strictly_negative (Thm 10.5)
 
+### Scope of the Concrete Extensions
+
+The appended `QBD.Awareness` namespace defines observations on a fixed global triple domain, endpoint-displacement transport, graph-changing product lifts, naturality and the counit/coassociativity laws. `QBD.CreationHistory` distinguishes occurrence birth ticks from causal heights and proves record inclusion, immutable coordinates and distinctness of repeated births. These concrete additions do not certify every physical claim in the manuscript. In particular, legacy path results remain conditional on their path/order hypotheses; a recurrence height does not make arbitrary spatial paths monotone.
+
+The kernel contains no `sorry` or custom axiom declarations. Some extensional proofs use Lean's standard logical axioms, including `propext` and `Quot.sound`; absence of custom axioms is not absence of every logical dependency. The namespace-local `#print axioms` commands expose representative dependencies.
+
 ### Compilation & Kernel Check
 ```bash
 lake build VacuumPhase
@@ -36,7 +42,9 @@ lake build VacuumPhase
 -- Certified Axiomatic Foundations (Section 2), Comonad Rigidity (Section 2.7), 
 -- Legal Move Grammar (PUC & AEC), Dynamic Non-Interference, Step 3 Confluence,
 -- Absorbing Scar Permanence, Category Hist Indelibility, Edge Timestamps, Triad Rigidity, & Discrete Symmetries
--- Total Verified Theorems: 56 Active Numbered Lean 4 Theorems (120 theorem declarations, 0 unproven obligations, 0 axioms, 0 sorry)
+-- Kernel inventory: 84 theorem declarations; no sorry or custom axiom declarations.
+-- Legacy conditional theorems retain their explicit hypotheses; the appended namespaces
+-- certify graph-changing diagnostic transport and immutable occurrence records.
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
@@ -1377,6 +1385,176 @@ theorem origin_jacobian_strictly_negative
     CD.lt (origin_jacobian CD half_val) CD.zero := by
   dsimp [origin_jacobian]
   exact CD.sub_neg_of_lt CD.zero half_val h_half_pos
+
+
+
+-- Concrete graph-changing diagnostic transport and immutable occurrence records.
+namespace QBD.Awareness
+
+-- Fixed directed adjacency coordinates and global diagnostic fields.
+abbrev Graph (V : Type) := (V × V) → Bool
+abbrev Field (V : Type) := (V × V × V) → Fin 3 → Bool
+
+-- Pointwise addition in the binary diagnostic field.
+def add {V : Type} (a b : Field V) : Field V :=
+  fun p i => xor (a p i) (b p i)
+
+-- Pair-product check bits at every ordered triple, including inactive sites.
+def observe {V : Type} (E : Graph V) : Field V :=
+  fun p i => match i.val with
+    | 0 => xor (E (p.1, p.2.1)) (E (p.2.1, p.2.2))
+    | 1 => xor (E (p.2.1, p.2.2)) (E (p.2.2, p.1))
+    | _ => xor (E (p.2.2, p.1)) (E (p.1, p.2.1))
+
+-- The edge symmetric difference connecting two graph snapshots.
+def edgeDifference {V : Type} (E F : Graph V) : Graph V :=
+  fun e => xor (E e) (F e)
+
+/-- The local incidence displacement equals the difference of observations. -/
+theorem observation_difference {V : Type} (E F : Graph V) :
+    observe (edgeDifference E F) = add (observe E) (observe F) := by
+  funext p i
+  rcases p with ⟨v, w, u⟩
+  rcases i with ⟨i, hi⟩
+  match i with
+  | 0 => dsimp [observe, edgeDifference, add]; cases E (v,w) <;> cases E (w,u) <;> cases F (v,w) <;> cases F (w,u) <;> rfl
+  | 1 => dsimp [observe, edgeDifference, add]; cases E (w,u) <;> cases E (u,v) <;> cases F (w,u) <;> cases F (u,v) <;> rfl
+  | 2 => dsimp [observe, edgeDifference, add]; cases E (u,v) <;> cases E (v,w) <;> cases F (u,v) <;> cases F (v,w) <;> rfl
+  | n+3 => omega
+
+-- A graph transition transports every diagnostic field by its incidence shift.
+def transport {V : Type} (E F : Graph V) (b : Field V) : Field V :=
+  add b (add (observe E) (observe F))
+
+/-- Identity graph transport fixes all field values. -/
+theorem transport_identity {V : Type} (E : Graph V) (b : Field V) :
+    transport E E b = b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> rfl
+
+/-- Consecutive transports equal the endpoint transport. -/
+theorem transport_composition {V : Type} (E F G : Graph V) (b : Field V) :
+    transport F G (transport E F b) = transport E G b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> cases observe F p i <;> cases observe G p i <;> rfl
+
+/-- Transport takes a faithful observation to the new faithful observation. -/
+theorem transport_observation {V : Type} (E F : Graph V) :
+    transport E F (observe E) = observe F := by
+  funext p i
+  dsimp [transport, add]
+  cases observe E p i <;> cases observe F p i <;> rfl
+
+-- Fiber maps on product annotations over the fixed vertex universe.
+def lift {V A B : Type} (E F : Graph V) (k : A → B)
+    (x : A × Field V) : B × Field V :=
+  (k x.1, transport E F x.2)
+
+-- Counit projection and comultiplication duplication.
+def extract {A S : Type} (x : A × S) : A := x.1
+def duplicate {A S : Type} (x : A × S) : (A × S) × S := (x, x.2)
+
+/-- Identity annotation maps lift to identity product maps. -/
+theorem lift_identity {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E id x = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, id_eq, transport_identity]
+
+/-- The graph-changing product lift preserves composition. -/
+theorem lift_composition {V A B C : Type} (E F G : Graph V)
+    (k : A → B) (l : B → C) (x : A × Field V) :
+    lift F G l (lift E F k x) = lift E G (l ∘ k) x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, Function.comp_apply, transport_composition]
+
+/-- Counit naturality includes changing graph snapshots. -/
+theorem extract_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    extract (lift E F k x) = k (extract x) := by rfl
+
+/-- Comultiplication naturality transports both copied context fields. -/
+theorem duplicate_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    duplicate (lift E F k x) =
+      lift E F (lift E F k) (duplicate x) := by rfl
+
+/-- First counit law. -/
+theorem counit_left {A S : Type} (x : A × S) : extract (duplicate x) = x := by rfl
+
+/-- Second counit law, using identity base transport. -/
+theorem counit_right {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E extract (duplicate x) = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, extract, duplicate, transport_identity]
+
+/-- Coassociativity duplicates the same observation field twice. -/
+theorem coassociative {V A : Type} (E : Graph V) (x : A × Field V) :
+    duplicate (duplicate x) = lift E E duplicate (duplicate x) := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, duplicate, transport_identity]
+
+end QBD.Awareness
+
+#print axioms QBD.Awareness.observation_difference
+#print axioms QBD.Awareness.lift_composition
+#print axioms QBD.Awareness.duplicate_natural
+#print axioms QBD.Awareness.coassociative
+
+
+namespace QBD.CreationHistory
+
+-- A creation occurrence stores both temporal coordinates explicitly.
+structure Occurrence (V : Type) where
+  source : V
+  target : V
+  born : Nat
+  height : Nat
+
+-- Histories contain creation records, not only spatial endpoint pairs.
+abbrev History (V : Type) := Occurrence V → Prop
+
+-- A canonical inclusion fixes each record value.
+def Included {V : Type} (A B : History V) : Prop := ∀ w, A w → B w
+
+-- The cumulative spatial support forgets both temporal coordinates.
+def support {V : Type} (A : History V) (e : V × V) : Prop :=
+  ∃ w, A w ∧ w.source = e.1 ∧ w.target = e.2
+
+/-- Appending creation records preserves every old record. -/
+theorem append_includes {V : Type} (A New : History V) :
+    Included A (fun w => A w ∨ New w) := by
+  intro w hw
+  exact Or.inl hw
+
+/-- Record inclusion induces inclusion of projected spatial supports. -/
+theorem support_inclusion {V : Type} (A B : History V) (h : Included A B)
+    (e : V × V) : support A e → support B e := by
+  intro ⟨w, hw, hs, ht⟩
+  exact ⟨w, h w hw, hs, ht⟩
+
+/-- Canonical inclusion preserves scheduler birth tick. -/
+theorem birth_preserved {V : Type} (w : Occurrence V) : (id w).born = w.born := by rfl
+
+/-- Canonical inclusion preserves immutable causal height. -/
+theorem height_preserved {V : Type} (w : Occurrence V) : (id w).height = w.height := by rfl
+
+/-- Different scheduler births identify different creation occurrences. -/
+theorem different_birth_distinct {V : Type} (w z : Occurrence V)
+    (h : w.born ≠ z.born) : w ≠ z := by
+  intro heq
+  exact h (congrArg Occurrence.born heq)
+
+/-- The recurrence increment respects the next scheduler tick bound. -/
+theorem next_height_bound (parentMax tick : Nat) (h : parentMax ≤ tick) :
+    parentMax + 1 ≤ tick + 1 := by
+  exact Nat.succ_le_succ h
+
+end QBD.CreationHistory
+
+#print axioms QBD.CreationHistory.support_inclusion
+#print axioms QBD.CreationHistory.different_birth_distinct
 ```
 
 # Appendix B. High-Performance C++20 Multi-Scale Simulation Engine
@@ -1694,7 +1872,6 @@ bool execute_parallel_tick(DiGraph& G, double mu, double lam, int L_cut, Travers
         }
     }
 
-
     std::set<std::pair<int, int>> a_edge_set;
     for (const auto& item : A) a_edge_set.insert(item.first);
 
@@ -2005,7 +2182,7 @@ int main(int argc, char* argv[]) {
               << stats.mean_n3_qsd << " (Median: " << stats.median_n3_qsd << ")\n";
     std::cout << std::left << std::setw(32) << "  Active QSD Mean <rho>_QSD:" << std::fixed << std::setprecision(4)
               << stats.mean_rho3_qsd << " (Median: " << stats.median_rho3_qsd << ")\n";
-    std::cout << std::left << std::setw(32) << "  Mean Steps to Homeostasis:" << std::fixed << std::setprecision(2)
+    std::cout << std::left << std::setw(32) << "  Mean Trajectory Duration:" << std::fixed << std::setprecision(2)
               << stats.avg_steps << " ticks\n";
     std::cout << "================================================================================\n";
 
@@ -2929,6 +3106,9 @@ for G in s3:
 
 ## D.3 Isolated $k$-Cycle Digestion (Theorem 2.2.8 / Table 1)
 
+This is the isolated-cycle kinematic benchmark, not the physical triangle-deletion scheduler. It stops when no cycle longer than three remains. Its unguarded four-cycle output includes two-cycles and violates asymmetry. The bound of at most three times the initial cycle length counts edge mutations, not cycle-search runtime; termination does not establish confluence.
+
+
 Chord-addition then perimeter deletion on an isolated directed $k$-cycle. Chord additions scale as $Ops_{\mathrm{add}}=k$; deletions satisfy $Ops_{\mathrm{del}}\le 3$ for $k\ge 7$; every run terminates at $L_{\max}\le 3$.
 
 ```python
@@ -3036,7 +3216,7 @@ print("even-overlap 000->111: ZZ unchanged; V flips +1 -> -1")
 
 ## D.5 Kramers–Moyal Jump Moment Scaling and Pawula Truncation Verification (Section 5.2.1)
 
-Empirically measures the Kramers–Moyal jump moment cumulants $\kappa_1, \kappa_2, \kappa_3, \kappa_4$ across varying network volumes $\Omega \in \{50, 100, 200, 400\}$. Verifies that higher-order jump moments scale as $\alpha^{(k)}(\rho) \sim \mathcal{O}(\Omega^{-(k-1)})$, vanishing for $k \ge 3$ in the macroscopic continuum limit $\Omega \to \infty$. This rigorously confirms Pawula's theorem truncation at order 2, guaranteeing the validity of the continuous Langevin/Fokker–Planck description without computational truncation artifacts.
+This exploratory finite-volume diagnostic measures the Kramers–Moyal jump moment estimates $\kappa_1, \kappa_2, \kappa_3, \kappa_4$ across varying network volumes $\Omega \in \{50, 100, 200, 400\}$. Verifies that higher-order jump moments scale as $\alpha^{(k)}(\rho) \sim \mathcal{O}(\Omega^{-(k-1)})$, vanishing for $k \ge 3$ in the macroscopic continuum limit $\Omega \to \infty$. These finite fits do not prove a continuum limit or justify a finite higher-order Kramers-Moyal truncation. The exact auxiliary jump-rate normalization and moment identity are derived analytically in Section 5.2.1; identifying that process with the parallel graph scheduler remains a separate obligation.
 
 ```python
 #!/usr/bin/env python3
@@ -3500,3 +3680,1082 @@ if __name__ == "__main__":
         print(f"  Active Cycles at Depth d = {d}:   {count}")
 ```
 
+## D.7 Homeostatic Stasis and $K$-Persistence Sensitivity Analysis
+
+### D.7.1 Operational Dual Time Formulation and Persistence Stopping Time $\tau_K$
+
+Under the **Dual Time Architecture** $(t_{\mathrm{phys}}, t_L)$ (Definition 1.3.1 and Section 4.5.3), Global Logical Time $t_L \in \mathbb{N}_0$ indexes discrete parallel evaluations of the rewrite operator $\mathcal{U}$, while Emergent Physical Time $t_{\mathrm{phys}}$ measures proper time along causal paths, advancing if and only if accepted rewrite events alter the causal link structure:
+$$\Delta t_{\mathrm{phys}}(t_L) > 0 \iff |\mathcal{A}_{t_L}| + |\mathcal{D}_{t_L}| > 0.$$
+When a scheduler tick produces zero accepted additions and zero accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the operator acts as identity $\mathcal{U}(G_{t_L}) = G_{t_L}$, yielding $\Delta t_{\mathrm{phys}}(t_L) \equiv 0$ (physical stasis).
+
+To rigorously address referee inquiries regarding single-tick termination vs. multi-tick persistence, we define the generalized $K$-persistence homeostatic stopping time:
+$$\tau_K := \inf \{ t_L \ge K \mid \Delta t_{\mathrm{phys}}(t_L - j) = 0 \quad \forall j \in \{0, \dots, K-1\} \}.$$
+Under $\tau_K$, the simulation terminates only after $K$ consecutive logical ticks elapse with zero physical proper time progress ($\Delta t_{\mathrm{phys}} = 0$). Setting $K=1$ corresponds to the canonical homeostatic stasis protocol $\tau_{\mathrm{homeo}} \equiv \tau_1$.
+
+### D.7.2 Empirical Sensitivity Sweep across Persistence Thresholds $K \in \{1, 2, 5, 10\}$
+
+We executed an ensemble sensitivity sweep on $N = 100$ Bethe tree fragments ($M = 100$ independent trajectories per cell, canonical reference priors $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$, $\lambda_0 = e - 1 \approx 1.718282$, unpumped $\Lambda_{\mathrm{micro}} = 0$) across $K \in \{1, 2, 5, 10\}$ using the C++20 engine (`vacuum_phase_engine -k [K]`):
+
+Table D.1: *Sensitivity of Ensemble Observables to Persistence Threshold $K$ on $N=100$ Bethe Fragments.*
+
+| Persistence $K$ | Survival Fraction $p_{\mathrm{surv}}$ | Mean Cycles $\langle N_3 \rangle$ | Conditioned QSD $\langle N_3 \rangle_{\mathrm{QSD}}$ | Conditioned Density $\langle \rho \rangle_{\mathrm{QSD}}$ | Mean Duration (ticks) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **$K = 1$ ($\tau_{\mathrm{homeo}}$)** | $\mathbf{0.2700 \pm 0.0444}$ | $2.17 \pm 0.48$ | $\mathbf{8.04 \pm 0.89}$ | $\mathbf{0.0804 \pm 0.0089}$ | $66.02$ |
+| $K = 2$ | $0.0600 \pm 0.0237$ | $0.70 \pm 0.34$ | $11.67 \pm 1.42$ | $0.1167 \pm 0.0142$ | $71.03$ |
+| $K = 5$ | $0.0200 \pm 0.0140$ | $0.22 \pm 0.16$ | $11.00 \pm 1.85$ | $0.1100 \pm 0.0185$ | $74.79$ |
+| $K = 10$ | $0.0100 \pm 0.0099$ | $0.15 \pm 0.15$ | $15.00 \pm 2.10$ | $0.1500 \pm 0.0210$ | $80.19$ |
+
+### D.7.3 Interpretation of the Finite Persistence Sweep
+
+The table gives finite-sample conditioned density and survival estimates at four stopping rules. The terminal sample depends on the stopping protocol, especially when few trajectories remain active. A quiescent active snapshot under the canonical unpumped kernel has no old triangles and no unpaired eligible chord after reciprocal filtering. A realized tick with no changes can also occur at a state that has a positive probability of changing later.
+
+On a specified finite irreducible killed class, the normalized left Perron vector gives the quasi-stationary law. If its Perron root lies in $(0,1)$, the survival tail from this law is $\lambda^t$ and the mean exit time is $(1-\lambda)^{-1}$. Primitivity gives a separate conditioned convergence statement. The reported initial leaf fraction is a finite-tree count, while dynamical boundary dissipation and the identification of a killed class for the timestamped rule require further estimates.
+
+## D.8 Agreed-Repair Validation Calculations
+
+Each script below is standalone and checks the corresponding analytic identity; no script imports the monograph engine or another repository file. These checks are validations, not replacements for the manuscript derivations.
+
+### Local seeded descendant probability
+
+Monograph calculation 3.4.7.1.
+
+```python
+import math
+from itertools import product
+
+mu = 1/math.sqrt(2*math.pi)
+lam = math.e-1
+p = math.exp(-2*mu)
+q = min(1.0,0.5*(1+2*lam)*math.exp(-2*mu))
+event = 0.0
+expected = 0.0
+mass = 0.0
+for a,b in product((0,1),repeat=2):
+    additions = (p if a else 1-p)*(p if b else 1-p)
+    # -1 = no deletion; 0 = seed return edge; 1,2 = other seed edges.
+    for selected,probability in [(-1,1-q),(0,q/3),(1,q/3),(2,q/3)]:
+        weight = additions*probability
+        survivors = (a+b) if selected != 0 else 0
+        mass += weight
+        expected += weight*survivors
+        event += weight*(survivors>0)
+analytic = (1-(1-p)**2)*(1-q/3)
+assert abs(mass-1)<1e-12
+assert abs(event-analytic)<1e-12
+assert abs(expected-2*p*(1-q/3))<1e-12
+print(f'Cross-branch acceptance p: {p:.9f}')
+print(f'Seed cycle deletion q: {q:.9f}')
+print(f'Realization probability mass: {mass:.9f}')
+print(f'At least one surviving descendant: {event:.9f}')
+print(f'Expected surviving cross-branch descendants: {expected:.9f}')
+print(f'Analytic/enumerated difference: {abs(event-analytic):.3e}')
+```
+
+Recorded output:
+
+```text
+Cross-branch acceptance p: 0.450280498
+Seed cycle deletion q: 0.998849047
+Realization probability mass: 1.000000000
+At least one surviving descendant: 0.465473361
+Expected surviving cross-branch descendants: 0.600719499
+Analytic/enumerated difference: 5.551e-17
+```
+
+### Global diagnostic transport
+
+Monograph calculation 4.3.11.1.
+
+```python
+from itertools import product
+
+vertices = range(3)
+edges = [(u,v) for u in vertices for v in vertices if u!=v]
+sites = list(product(vertices,repeat=3))
+graphs = [{e:bit for e,bit in zip(edges,bits)} for bits in product((0,1),repeat=len(edges))]
+
+def observe(E,p):
+    v,w,u = p
+    x,y,z = E.get((v,w),0), E.get((w,u),0), E.get((u,v),0)
+    return (x^y,y^z,z^x)
+
+checks = 0
+for E in graphs:
+    for F in graphs:
+        difference = {e:E[e]^F[e] for e in edges}
+        for p in sites:
+            a,b,d = observe(E,p),observe(F,p),observe(difference,p)
+            assert d==tuple(x^y for x,y in zip(a,b))
+            assert sum(a)%2==0
+            assert tuple(x^(x^y) for x,y in zip(a,b))==b
+            checks += 1
+
+for b,sE,sF,sG in product((0,1),repeat=4):
+    assert (b^(sE^sF))^(sF^sG)==b^(sE^sG)
+for a,b,u in product((0,1),repeat=3):
+    k = lambda x:x^1
+    lift = lambda pair:(k(pair[0]),pair[1]^u)
+    duplicate = lambda pair:(pair,pair[1])
+    lhs = duplicate(lift((a,b)))
+    rhs = ((k(a),b^u),b^u)
+    assert lhs==rhs
+print('Adjacency patterns:',len(graphs))
+print('Global site-pair observation checks:',checks)
+print('Binary transport composition cases: 16')
+print('Transported duplicate-context cases: 8')
+print('Mismatches: 0')
+```
+
+Recorded output:
+
+```text
+Adjacency patterns: 64
+Global site-pair observation checks: 110592
+Binary transport composition cases: 16
+Transported duplicate-context cases: 8
+Mismatches: 0
+```
+
+### Discrete Gaussian normalization
+
+Monograph calculation 4.4.7.2.
+
+```python
+from decimal import Decimal as D, getcontext
+
+getcontext().prec = 80
+pi = D('3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628')
+mu = 1/(2*pi).sqrt()
+q = (-2*pi*pi).exp()
+direct = sum((-D(n*n)/2).exp() for n in range(-30,31))
+delta = 2*sum(q**(n*n) for n in range(1,8))
+poisson = (2*pi).sqrt()*(1+delta)
+peak = 1/direct
+relative = delta/(1+delta)
+bound = 2*q/(1-q**3)
+assert abs(direct-poisson) < D('1e-75')
+assert abs((mu-peak)/mu-relative) < D('1e-75')
+assert 0 < relative < bound
+for label,value in [('Direct lattice partition',direct),('Poisson partition',poisson),('Continuum reference',mu),('Exact lattice peak',peak),('Relative correction',relative),('Theta-tail upper bound',bound)]:
+    print(f'{label}: {value:.21g}')
+print('Strict correction bound holds at 80-digit precision.')
+```
+
+Recorded output:
+
+```text
+Direct lattice partition: 2.50662828804290554483
+Poisson partition: 2.50662828804290554483
+Continuum reference: 0.398942280401432677940
+Exact lattice peak: 0.398942278266861705582
+Relative correction: 5.35057595351981617492e-9
+Theta-tail upper bound: 5.35057598214847936248e-9
+Strict correction bound holds at 80-digit precision.
+```
+
+### Complete realization kernel
+
+Monograph calculation 4.6.3.2.
+
+```python
+from fractions import Fraction as F
+from itertools import product
+
+def graph_kernel(edges, additions, triangles):
+    # Rate parameters are supplied to audit the finite sampling law.
+    factors = []
+    for edge, p in additions:
+        factors.append([(None, 1-p), (edge, p)])
+    for cycle, q in triangles:
+        factors.append([(None, 1-q)] + [(edge, q/3) for edge in cycle])
+    law = {}
+    count = {}
+    for outcome in product(*factors):
+        weight = F(1)
+        for _, probability in outcome:
+            weight *= probability
+        if weight == 0:
+            continue
+        accepted = {edge for edge, _ in outcome[:len(additions)] if edge is not None}
+        filtered = {edge for edge in accepted if edge[::-1] not in accepted and edge[0] != edge[1]}
+        deleted = {edge for edge, _ in outcome[len(additions):] if edge is not None}
+        successor = frozenset((set(edges) | filtered) - deleted)
+        law[successor] = law.get(successor, F(0)) + weight
+        count[successor] = count.get(successor, 0) + 1
+    assert sum(law.values()) == 1
+    return law, count
+
+triangle = ((0,1),(1,2),(2,0))
+law, _ = graph_kernel(triangle, [], [(triangle,F(3,5))])
+specific = frozenset(set(triangle)-{(0,1)})
+assert law[specific] == F(1,5)
+print('Isolated triangle: total mass = 1; specified-edge deletion =', law[specific])
+
+other = ((0,1),(1,3),(3,0))
+edges = set(triangle) | set(other)
+law, preimages = graph_kernel(edges, [], [(triangle,F(3,5)),(other,F(1,2))])
+shared = frozenset(edges-{(0,1)})
+assert preimages[shared] == 3
+print('Shared triangles: total mass = 1; shared-edge-only preimages =', preimages[shared])
+
+# Abstract reciprocal merge fixture: this checks merging, not proposal admission.
+law, preimages = graph_kernel([], [((0,1),F(1,3)),((1,0),F(2,5))], [])
+assert preimages[frozenset()] == 2
+print('Reciprocal merge fixture: total mass = 1; unchanged-state preimages =', preimages[frozenset()])
+```
+
+Recorded output:
+
+```text
+Isolated triangle: total mass = 1; specified-edge deletion = 1/5
+Shared triangles: total mass = 1; shared-edge-only preimages = 3
+Reciprocal merge fixture: total mass = 1; unchanged-state preimages = 2
+```
+
+### Trajectory entropy and KL contraction
+
+Monograph calculation 4.6.4.3.
+
+```python
+import math
+
+def entropy(p):
+    return -sum(x*math.log(x) for x in p if x > 0)
+
+def push(p, K):
+    return [sum(p[i]*K[i][j] for i in range(len(p))) for j in range(len(K[0]))]
+
+def kl(p,q):
+    return sum(a*math.log(a/b) for a,b in zip(p,q) if a>0)
+
+K = [[0.9,0.1],[0.9,0.1]]
+p = [0.5,0.5]
+q = [0.8,0.2]
+after = push(p,K)
+conditional = sum(p[i]*entropy(K[i]) for i in range(2))
+joint = entropy([p[i]*K[i][j] for i in range(2) for j in range(2)])
+assert abs(joint-entropy(p)-conditional)<1e-12
+assert entropy(after)<entropy(p)
+assert joint>=entropy(p)
+assert kl(push(p,K),push(q,K))<=kl(p,q)+1e-12
+print(f'Snapshot entropy change: {entropy(after)-entropy(p):.9f} nats')
+print(f'Full trajectory entropy increment: {joint-entropy(p):.9f} nats')
+print(f'Conditional entropy: {conditional:.9f} nats')
+print(f'KL input / output: {kl(p,q):.9f} / {kl(push(p,K),push(q,K)):.9f}')
+```
+
+Recorded output:
+
+```text
+Snapshot entropy change: -0.368064207 nats
+Full trajectory entropy increment: 0.325082973 nats
+Conditional entropy: 0.325082973 nats
+KL input / output: 0.223143551 / -0.000000000
+```
+
+### Damped deletion expansion
+
+Monograph calculation 5.2.6.2.
+
+```python
+import math
+
+mu = 1/math.sqrt(2*math.pi)
+lam = math.e-1
+a1 = 0.5
+a2 = 3*(lam-mu)
+a3 = 9*mu*mu-18*lam*mu
+print(f'Damped quadratic coefficient: {a2:.9f}')
+print(f'Baseline quadratic coefficient: {3*lam:.9f}')
+print('rho       exact flux       cubic flux       abs error / rho^4')
+for rho in (0.02,0.01,0.005):
+    exact = 0.5*rho*(1+6*lam*rho)*math.exp(-6*mu*rho)
+    cubic = a1*rho+a2*rho*rho+a3*rho**3
+    scaled = abs(exact-cubic)/rho**4
+    assert scaled < 20
+    print(f'{rho:.5f}   {exact:.10f}   {cubic:.10f}   {scaled:.6f}')
+```
+
+Recorded output:
+
+```text
+Damped quadratic coefficient: 3.958018644
+Baseline quadratic coefficient: 5.154845485
+rho       exact flux       cubic flux       abs error / rho^4
+0.02000   0.0114981001   0.0114959553   13.405345
+0.01000   0.0053850305   0.0053848953   13.514339
+0.00500   0.0025975956   0.0025975872   13.569332
+```
+
+### Conditional catalytic interval
+
+Monograph calculation 5.4.4.3.
+
+```python
+import math
+
+points = [0,0.25,0.5,0.75,1]
+coefficients = [math.expm1(s) for s in points]
+assert coefficients[0]==0
+assert abs(coefficients[-1]-(math.e-1))<1e-14
+assert all(0<=a<=b<3 for a,b in zip(coefficients,coefficients[1:]))
+print('entropy   catalytic coefficient')
+for s,c in zip(points,coefficients):
+    print(f'{s:.2f}      {c:.9f}')
+print('All coefficients lie in [0, e-1] and below 3.')
+```
+
+Recorded output:
+
+```text
+entropy   catalytic coefficient
+0.00      0.000000000
+0.25      0.284025417
+0.50      0.648721271
+0.75      1.117000017
+1.00      1.718281828
+All coefficients lie in [0, e-1] and below 3.
+```
+
+
+## D.9 Finite Tests for the Scoped Part 1 Results
+
+### Raw proposal predicates
+
+Monograph calculation 2.5.4.2.
+
+```python
+import networkx as nx
+
+
+def relations(graph):
+    relation = nx.DiGraph()
+    relation.add_nodes_from(graph)
+    for a in graph:
+        for b in graph:
+            if a == b:
+                continue
+            if any(len(path) >= 3 and increasing(graph, path)
+                   for path in nx.all_simple_paths(graph, a, b)):
+                relation.add_edge(a, b)
+    return relation
+
+
+def increasing(graph, path):
+    heights = [graph[a][b]["height"] for a, b in zip(path, path[1:])]
+    return all(left < right for left, right in zip(heights, heights[1:]))
+
+
+def evaluate(edges, v, w, u):
+    graph = nx.DiGraph()
+    graph.add_weighted_edges_from(edges, weight="height")
+    height = 1 + max(data["height"] for _, _, data in graph.in_edges(u, data=True))
+    middle = {z for z in graph[v] if z not in {v, u} and graph.has_edge(z, u)}
+    geometric = (len({v, w, u}) == 3 and middle == {w}
+                 and not graph.has_edge(v, u) and not graph.has_edge(u, v))
+    reverse_ok = not any(
+        len(path) >= 3 and increasing(graph, path)
+        and graph[path[-2]][u]["height"] < height
+        for path in nx.all_simple_paths(graph, v, u, cutoff=5)
+    )
+    graph.add_edge(u, v, height=height)
+    directed = all(a != b and not graph.has_edge(b, a) for a, b in graph.edges)
+    return directed, geometric, reverse_ok, nx.is_directed_acyclic_graph(relations(graph))
+
+
+fixtures = [
+    ([(0, 1, 0), (1, 2, 0), (2, 3, 0)], 0, 1, 3),
+    ([(0, 1, 0), (1, 2, 0), (3, 3, 0)], 0, 1, 2),
+    ([("A", "Z", 1), ("Z", "D", 2), ("D", "C", 3),
+      ("C", "Z", 4), ("Z", "B", 5)], "A", "Z", "B"),
+]
+expected = [(True, False, True, True), (False, True, True, True),
+            (True, True, False, False)]
+for index, (fixture, target) in enumerate(zip(fixtures, expected), 1):
+    actual = evaluate(*fixture)
+    assert actual == target
+    print(f"Proposal {index}: {actual}")
+```
+
+Recorded output:
+
+```text
+Proposal 1: (True, False, True, True)
+Proposal 2: (False, True, True, True)
+Proposal 3: (True, True, False, False)
+```
+
+### Target diagonals before and after deletion
+
+Monograph calculation 2.7.8.2.
+
+```python
+import networkx as nx
+
+
+def mediated_relation(graph):
+    relation = nx.DiGraph()
+    relation.add_nodes_from(graph)
+    for start in graph:
+        for end in graph:
+            if start == end:
+                continue
+            for path in nx.all_simple_paths(graph, start, end):
+                heights = [graph[a][b]["height"] for a, b in zip(path, path[1:])]
+                if len(heights) >= 2 and all(a < b for a, b in zip(heights, heights[1:])):
+                    relation.add_edge(start, end)
+                    break
+    return relation
+
+
+def timestamped(edges):
+    graph = nx.DiGraph()
+    graph.add_weighted_edges_from(edges, weight="height")
+    return graph
+
+
+old = timestamped([("v", "w", 0), ("w", "u", 0), ("u", "x", 0),
+                   ("v", "z", 0), ("z", "x", 1)])
+chords = [("u", "v", 1), ("x", "w", 2)]
+assert nx.is_directed_acyclic_graph(mediated_relation(old))
+for _, target, height in chords:
+    assert all(height >= data["height"] for _, _, data in old.out_edges(target, data=True))
+merged = old.copy()
+merged.add_weighted_edges_from(chords, weight="height")
+final = merged.copy()
+final.remove_edge("z", "x")
+for name, graph, expected in [("merge", merged, ["v", "w"]), ("final", final, [])]:
+    closure = nx.transitive_closure(mediated_relation(graph))
+    diagonal = [target for target in ("v", "w") if closure.has_edge(target, target)]
+    assert diagonal == expected
+    assert nx.is_directed_acyclic_graph(mediated_relation(graph)) == (not diagonal)
+    print(f"{name} target diagonals: {diagonal}")
+```
+
+Recorded output:
+
+```text
+merge target diagonals: ['v', 'w']
+final target diagonals: []
+```
+
+### Graded inputs and the six-cycle
+
+Monograph calculation 2.7.9.2.
+
+```python
+import networkx as nx
+
+
+def mediated_relation(graph):
+    relation = nx.DiGraph()
+    relation.add_nodes_from(graph)
+    for start in graph:
+        for end in graph:
+            if start == end:
+                continue
+            for path in nx.all_simple_paths(graph, start, end):
+                heights = [graph[a][b]["height"] for a, b in zip(path, path[1:])]
+                if len(heights) >= 2 and all(a < b for a, b in zip(heights, heights[1:])):
+                    relation.add_edge(start, end)
+                    break
+    return relation
+
+
+def timestamped(edges):
+    graph = nx.DiGraph()
+    graph.add_weighted_edges_from(edges, weight="height")
+    return graph
+
+
+from itertools import combinations
+
+
+old = timestamped([(0, 1, 0), (0, 2, 0), (1, 3, 0), (1, 4, 0),
+                   (2, 5, 0), (2, 6, 0), (3, 7, 0)])
+depth = nx.single_source_shortest_path_length(old, 0)
+chords = [(u, v, 1) for v in old for w in old[v] for u in old[w]]
+count = 0
+for size in range(len(chords) + 1):
+    for batch in combinations(chords, size):
+        graph = old.copy()
+        graph.add_weighted_edges_from(batch, weight="height")
+        relation = mediated_relation(graph)
+        assert all(depth[b] == depth[a] - 1 for a, b in relation.edges)
+        assert nx.is_directed_acyclic_graph(relation)
+        count += 1
+print(f"Outward-tree batches checked: {count}")
+
+cycle = timestamped((i, (i + 1) % 6, 0) for i in range(6))
+cycle.add_weighted_edges_from((((i + 2) % 6, i, 1) for i in range(6)), weight="height")
+relation = mediated_relation(cycle)
+assert set(relation.edges) == {(i, (i - 1) % 6) for i in range(6)}
+assert not nx.is_directed_acyclic_graph(relation)
+print(f"Six-cycle mediated pairs: {sorted(relation.edges)}")
+```
+
+Recorded output:
+
+```text
+Outward-tree batches checked: 32
+Six-cycle mediated pairs: [(0, 5), (1, 0), (2, 1), (3, 2), (4, 3), (5, 4)]
+```
+
+### Interacting triangle incidence
+
+Monograph calculation 3.2.15.2.
+
+```python
+from collections import Counter
+from itertools import permutations
+
+
+def triangles(edges):
+    vertices = sorted({vertex for edge in edges for vertex in edge})
+    return {
+        ((a, b), (b, c), (c, a))
+        for a, b, c in permutations(vertices, 3)
+        if a == min(a, b, c) and {(a, b), (b, c), (c, a)} <= edges
+    }
+
+
+old = {(0, 1), (0, 3), (0, 4), (1, 3), (1, 4), (1, 5),
+       (2, 0), (2, 1), (2, 3), (4, 3), (5, 4)}
+batch = {(3, 5), (5, 0), (5, 2)}
+merged = triangles(old | batch)
+supporting = {face for face in merged if len(set(face) & batch) <= 1}
+support_counts = Counter(edge for face in supporting for edge in face)
+full_counts = Counter(edge for face in merged for edge in face)
+assert max(support_counts.values()) <= 2
+assert full_counts[(3, 5)] == 3
+assert any(len(set(face) & batch) >= 2 for face in merged)
+print(f"Edge (3, 5): {support_counts[(3, 5)]} supporting, {full_counts[(3, 5)]} full")
+```
+
+Recorded output:
+
+```text
+Edge (3, 5): 1 supporting, 3 full
+```
+
+### Exact one-tick seed-sector survival
+
+Monograph calculation 3.4.6.2.
+
+```python
+from fractions import Fraction
+from itertools import product
+
+
+p = Fraction(2, 5)
+q = Fraction(3, 4)
+seed = {"seed_leg_a", "seed_leg_b", "chord"}
+first = {"branch_a", "addition_a", "chord"}
+second = {"branch_b", "addition_b", "chord"}
+deletions = [(None, 1 - q)] + [(edge, q / 3) for edge in sorted(seed)]
+total = Fraction(0)
+survival = Fraction(0)
+for accept_first, accept_second in product((False, True), repeat=2):
+    additions = (p if accept_first else 1 - p) * (p if accept_second else 1 - p)
+    edges = seed | {"branch_a", "branch_b"}
+    if accept_first:
+        edges.add("addition_a")
+    if accept_second:
+        edges.add("addition_b")
+    for edge, weight in deletions:
+        final = edges - {edge}
+        total += additions * weight
+        if any(face <= final for face in (seed, first, second)):
+            survival += additions * weight
+assert total == 1
+assert survival == 1 - q + 2 * q / 3 * (2 * p - p * p)
+print(f"Exact seed-sector survival: {survival}")
+```
+
+Recorded output:
+
+```text
+Exact seed-sector survival: 57/100
+```
+
+### Degree-three triangle drift
+
+Monograph calculation 4.6.5.2.
+
+```python
+from itertools import product
+from math import e, exp, isclose, pi, sqrt
+
+
+mu, lam = 1 / sqrt(2 * pi), e - 1
+p = exp(-2 * mu)
+q = min(1, (1 + 2 * lam) * exp(-2 * mu) / 2)
+old_triangle = {("a", "b"), ("b", "c"), ("c", "a")}
+new_triangle = {("b", "c"), ("c", "d"), ("d", "b")}
+old = old_triangle | {("c", "d")}
+delete_choices = [(None, 1 - q)] + [(edge, q / 3) for edge in sorted(old_triangle)]
+drift = 0.0
+for (add, add_weight), (edge, del_weight) in product(
+    [(False, 1 - p), (True, p)], delete_choices
+):
+    final = (old | ({("d", "b")} if add else set())) - {edge}
+    change = int(old_triangle <= final) + int(new_triangle <= final) - 1
+    drift += add_weight * del_weight * change
+
+assert isclose(drift, p * (1 - q / 3) - q)
+assert drift <= p - q < 0
+print(f"Enumerated one-tick triangle drift: {drift:.8f}")
+print(f"Site-summed upper bound: {p - q:.8f}")
+```
+
+Recorded output:
+
+```text
+Enumerated one-tick triangle drift: -0.69848930
+Site-summed upper bound: -0.54856855
+```
+
+### Reciprocal-aware quiescence
+
+Monograph calculation 4.6.6.2.
+
+```python
+from math import e, exp, log2, pi, sqrt
+
+import networkx as nx
+
+
+def candidates(graph):
+    result = set()
+    cutoff = int(log2(len(graph))) + 3
+    for v in graph:
+        for w in graph[v]:
+            for u in graph[w]:
+                if len({v, w, u}) < 3 or graph.has_edge(v, u) or graph.has_edge(u, v):
+                    continue
+                if any(z != w and graph.has_edge(z, u) for z in graph[v]):
+                    continue
+                height = 1 + max(data["height"] for _, _, data in graph.in_edges(u, data=True))
+                blocked = False
+                for path in nx.all_simple_paths(graph, v, u, cutoff=cutoff):
+                    heights = [graph[a][b]["height"] for a, b in zip(path, path[1:])]
+                    if (len(heights) >= 2 and heights[-1] < height
+                            and all(a < b for a, b in zip(heights, heights[1:]))):
+                        blocked = True
+                        break
+                if not blocked:
+                    result.add((u, v))
+    return result
+
+
+for name, edges, count, expected in [
+    ("four-cycle", [(0, 1, 0), (1, 2, 0), (2, 3, 0), (3, 0, 0)], 4, True),
+    ("two-path", [(0, 1, 0), (1, 2, 0)], 1, False),
+    ("triangle", [(0, 1, 0), (1, 2, 0), (2, 0, 1)], 0, False),
+]:
+    graph = nx.DiGraph()
+    graph.add_weighted_edges_from(edges, weight="height")
+    eligible = candidates(graph)
+    assert len(eligible) == count
+    retained = {(u, v) for u, v in eligible if (v, u) not in eligible}
+    triangles = [cycle for cycle in nx.simple_cycles(graph) if len(cycle) == 3]
+    positive_deletion = bool(triangles)
+    if positive_deletion:
+        q = min(1, (1 + 2 * (e - 1)) * exp(-2 / sqrt(2 * pi)) / 2)
+        assert q > 0
+    quiescent = not positive_deletion and not retained
+    assert quiescent == expected
+    print(f"{name}: {len(eligible)} eligible, quiescent={quiescent}")
+```
+
+Recorded output:
+
+```text
+four-cycle: 4 eligible, quiescent=True
+two-path: 1 eligible, quiescent=False
+triangle: 0 eligible, quiescent=False
+```
+
+### Distinct incident deletions
+
+Monograph calculation 5.5.4.2.
+
+```python
+from fractions import Fraction
+from itertools import product
+
+
+first = ((0, 1), (1, 2), (2, 0))
+second = ((0, 1), (1, 3), (3, 0))
+vertex = 0
+delta = 3
+q = Fraction(3, 5)
+
+
+def choices(triangle):
+    return [(None, 1 - q)] + [(edge, q / 3) for edge in triangle]
+
+
+selections = Fraction(0)
+distinct = Fraction(0)
+for (edge_a, weight_a), (edge_b, weight_b) in product(choices(first), choices(second)):
+    incident = [edge for edge in (edge_a, edge_b) if edge is not None and vertex in edge]
+    assert len(incident) <= (delta - 1) * len(set(incident))
+    selections += weight_a * weight_b * len(incident)
+    distinct += weight_a * weight_b * len(set(incident))
+lower = 2 * q * 2 / (3 * (delta - 1))
+assert distinct >= lower and selections > distinct
+print(f"Selection expectation: {selections}")
+print(f"Distinct deletion expectation: {distinct}")
+print(f"Multiplicity-corrected lower bound: {lower}")
+```
+
+Recorded output:
+
+```text
+Selection expectation: 4/5
+Distinct deletion expectation: 19/25
+Multiplicity-corrected lower bound: 2/5
+```
+
+### Strict priority and relabeling
+
+Monograph calculation 3.3.5.4.
+
+```python
+import networkx as nx
+
+
+def select(graph, priorities):
+    return {a for a in graph if all(priorities[a] > priorities[b] for b in graph[a])}
+
+
+conflicts = nx.Graph([(0, 1), (1, 2)])
+weights = {0: 2, 1: 1, 2: 3}
+selected = select(conflicts, weights)
+assert selected == {0, 2}
+assert all(not {a, b} <= selected for a, b in conflicts.edges)
+labels = {0: "right", 1: "middle", 2: "left"}
+relabeled = nx.relabel_nodes(conflicts, labels)
+relabeled_weights = {labels[a]: weight for a, weight in weights.items()}
+assert select(relabeled, relabeled_weights) == {labels[a] for a in selected}
+
+tie = nx.Graph([(0, 1)])
+selected_tie = select(tie, {0: 1, 1: 1})
+assert selected_tie == set()
+assert all(select(tie, {0: 1, 1: 1}) <= {a} for a in tie)
+print(f"Independent selection: {sorted(selected)}")
+print(f"Relabeled selection: {sorted(select(relabeled, relabeled_weights))}")
+print(f"Equal-priority pair: {len(selected_tie)} retained")
+```
+
+Recorded output:
+
+```text
+Independent selection: [0, 2]
+Relabeled selection: ['left', 'right']
+Equal-priority pair: 0 retained
+```
+
+### Total correlation in a shared-bit model
+
+Monograph calculation 5.1.5.1.
+
+```python
+from fractions import Fraction
+
+
+for blocks in (2, 4, 8, 16):
+    private_bits = blocks
+    positions = blocks * (private_bits + 1)
+    joint_support = 2 ** (blocks * private_bits + 1)
+    marginal_support = 2 ** (private_bits + 1)
+    joint_entropy = joint_support.bit_length() - 1
+    summed_entropy = blocks * (marginal_support.bit_length() - 1)
+    correction = summed_entropy - joint_entropy
+    assert correction == blocks - 1
+    print(f"{blocks:2d} blocks: correction={correction:2d}, correction/size={Fraction(correction, positions)}")
+```
+
+Recorded output:
+
+```text
+2 blocks: correction= 1, correction/size=1/6
+ 4 blocks: correction= 3, correction/size=3/20
+ 8 blocks: correction= 7, correction/size=7/72
+16 blocks: correction=15, correction/size=15/272
+```
+
+### Original-depth returns and the sampled profile
+
+Monograph calculation 5.2.8.2.
+
+```python
+import sys
+import math
+import random
+import numpy as np
+import networkx as nx
+
+# Ensure UTF-8 output across standard environments
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
+# Deterministic initialization
+random.seed(42)
+np.random.seed(42)
+
+def generate_bethe_fragment(N):
+    """
+    Generates a regular rooted Bethe tree DAG of size N.
+    Root has out-degree 3; subsequent internal nodes have in-degree 1, out-degree 2.
+    """
+    if N < 3:
+        raise ValueError("N must be at least 3")
+    G = nx.DiGraph()
+    root = 0
+    G.add_node(root, depth=0)
+    levels = [[root]]
+    node_id = 1
+
+    while G.number_of_nodes() < N:
+        next_level = []
+        if not levels[-1]:
+            break
+        current_depth = len(levels)
+        for parent in levels[-1]:
+            children = 3 if parent == root else 2
+            for _ in range(children):
+                if G.number_of_nodes() >= N:
+                    break
+                G.add_node(node_id, depth=current_depth)
+                G.add_edge(parent, node_id, H=0)
+                next_level.append(node_id)
+                node_id += 1
+        if not next_level:
+            break
+        levels.append(next_level)
+
+    return G, levels
+
+def inject_seed_defect(G, levels):
+    """Injects a single symmetry-breaking 3-cycle defect at the root (H=1)."""
+    if len(levels) >= 3 and levels[2]:
+        root = levels[0][0]
+        v = levels[1][0]
+        w = levels[2][0]
+        if not G.has_edge(w, root):
+            G.add_edge(w, root, H=1)
+    return G
+
+def find_all_3_cycles(G):
+    """Identifies all directed 3-cycles in G."""
+    cycles = set()
+    for u in G.nodes():
+        for v in G.successors(u):
+            for w in G.successors(v):
+                if G.has_edge(w, u):
+                    canonical = tuple(sorted([u, v, w]))
+                    cycles.add(canonical)
+    return list(cycles)
+
+def execute_scheduler_tick(G, mu, lam):
+    """
+    Executes one discrete tick under scheduler operator U.
+    Step 1: Awareness | Step 2: Proposals | Step 3: Merge | Step 4: Deletion
+    """
+    G_next = G.copy()
+    cycles = find_all_3_cycles(G)
+
+    stress_map = {n: 0 for n in G.nodes()}
+    for u, v, w in cycles:
+        stress_map[u] += 1
+        stress_map[v] += 1
+        stress_map[w] += 1
+
+    candidate_additions = []
+    for u in G.nodes():
+        for w in G.successors(u):
+            for v in G.successors(w):
+                if u != v and not G.has_edge(v, u) and not G.has_edge(u, v):
+                    s_add = stress_map[u] + stress_map[w] + stress_map[v]
+                    p_acc = np.exp(-mu * s_add)
+                    candidate_additions.append((v, u, p_acc))
+
+    candidate_deletions = []
+    for cycle in cycles:
+        cycle_nodes = list(cycle)
+        s_del = max(0, sum(stress_map[x] for x in cycle_nodes) - 1)
+        q_del = min(1.0, 0.5 * (1.0 + lam * s_del) * np.exp(-mu * s_del))
+        u, v, w = cycle
+        edges = [(u, v), (v, w), (w, u)] if G.has_edge(u, v) and G.has_edge(v, w) and G.has_edge(w, u) else []
+        if edges:
+            chosen = random.choice(edges)
+            candidate_deletions.append((chosen[0], chosen[1], q_del))
+
+    accepted_adds = [chord for chord in candidate_additions if random.random() < chord[2]]
+    accepted_dels = [edge for edge in candidate_deletions if random.random() < edge[2]]
+
+    for v, u, _ in accepted_adds:
+        preds = list(G_next.predecessors(v))
+        max_h = max([G_next.edges[p, v].get('H', 0) for p in preds] + [0])
+        G_next.add_edge(v, u, H=max_h + 1)
+
+    for u, v, _ in accepted_dels:
+        if G_next.has_edge(u, v):
+            G_next.remove_edge(u, v)
+
+    return G_next
+
+
+def finite_depth_profile(vertices=100, trials=100, max_ticks=30):
+    mu = 1 / np.sqrt(2 * np.pi)
+    lam = np.e - 1
+    baseline, _ = generate_bethe_fragment(N=vertices)
+    depth = nx.get_node_attributes(baseline, "depth")
+    changes = [depth[v] - depth[u] for v in baseline for w in baseline[v] for u in baseline[w]]
+    assert changes and all(change == -2 for change in changes)
+    print(f"Original outward two-path returns checked: {len(changes)}")
+
+    survival = 0
+    profile = {d: 0 for d in range(7)}
+    for _ in range(trials):
+        graph, levels = generate_bethe_fragment(N=vertices)
+        graph = inject_seed_defect(graph, levels)
+        for _ in range(max_ticks):
+            if not find_all_3_cycles(graph):
+                break
+            graph = execute_scheduler_tick(graph, mu=mu, lam=lam)
+        cycles = find_all_3_cycles(graph)
+        survival += bool(cycles)
+        for cycle in cycles:
+            d = min(graph.nodes[v]["depth"] for v in cycle)
+            if d in profile:
+                profile[d] += 1
+
+    print(f"Active fraction at the sampled stopping rule: {survival / trials:.4f}")
+    for depth, count in profile.items():
+        print(f"Depth {depth}: {count} final sampled triangles")
+
+
+if __name__ == "__main__":
+    finite_depth_profile()
+```
+
+Recorded output:
+
+```text
+Original outward two-path returns checked: 96
+Active fraction at the sampled stopping rule: 1.0000
+Depth 0: 858 final sampled triangles
+Depth 1: 1961 final sampled triangles
+Depth 2: 1335 final sampled triangles
+Depth 3: 3514 final sampled triangles
+Depth 4: 800 final sampled triangles
+Depth 5: 0 final sampled triangles
+Depth 6: 0 final sampled triangles
+```
+
+### One-tick addition tail and finite degree summaries
+
+Monograph calculation 5.5.3.3.
+
+```python
+from fractions import Fraction
+from itertools import product
+
+
+def count_law(probabilities):
+    distribution = [Fraction(0)] * (len(probabilities) + 1)
+    for outcome in product((0, 1), repeat=len(probabilities)):
+        weight = Fraction(1)
+        for success, probability in zip(outcome, probabilities):
+            weight *= probability if success else 1 - probability
+        distribution[sum(outcome)] += weight
+    assert sum(distribution) == 1
+    return distribution
+
+
+probabilities = [Fraction(1, 5), Fraction(2, 5), Fraction(3, 5)]
+actual = count_law(probabilities)
+envelope = count_law([max(probabilities)] * len(probabilities))
+for threshold in range(1, len(probabilities) + 1):
+    tail = sum(actual[threshold:])
+    upper = sum(envelope[threshold:])
+    assert tail <= upper
+    print(f"Threshold {threshold}: {tail} <= {upper}")
+
+vertices = 100
+for name, edges in [("initial", 99.0), ("sampled active", 108.2), ("sampled final", 100.2)]:
+    print(f"{name}: mean degree {2 * edges / vertices:.4f}")
+```
+
+Recorded output:
+
+```text
+Threshold 1: 101/125 <= 117/125
+Threshold 2: 43/125 <= 81/125
+Threshold 3: 6/125 <= 27/125
+initial: mean degree 1.9800
+sampled active: mean degree 2.1640
+sampled final: mean degree 2.0040
+```
+
+### Recorded edge rollback
+
+The two pointwise results certify the active-field identities in the stated domains.
+
+```lean
+structure TimestampedGraph (V : Type) [DecidableEq V] where
+  E : V × V → Bool
+  H : V × V → Nat
+
+def T_add {V : Type} [DecidableEq V] (e : V × V) (h_rec : Nat) (G : TimestampedGraph V) :
+    TimestampedGraph V :=
+  { E := fun x => if x = e then true else G.E x
+    H := fun x => if x = e then h_rec else G.H x }
+
+def T_del {V : Type} [DecidableEq V] (e : V × V) (G : TimestampedGraph V) :
+    TimestampedGraph V × Nat :=
+  ( { E := fun x => if x = e then false else G.E x
+      H := fun x => if x = e then 0 else G.H x },
+    G.H e )
+
+theorem del_then_recorded_add_pointwise {V : Type} [DecidableEq V]
+    (G : TimestampedGraph V) (e x : V × V) (h_act : G.E e = true) :
+    (T_add e (T_del e G).2 (T_del e G).1).E x = G.E x ∧
+    (T_add e (T_del e G).2 (T_del e G).1).H x = G.H x := by
+  dsimp [T_add, T_del]
+  by_cases hx : x = e
+  · subst hx
+    constructor
+    · rw [ite_eq_left rfl]
+      exact h_act.symm
+    · rw [ite_eq_left rfl]
+  · constructor
+    · rw [ite_eq_right hx, ite_eq_right hx]
+    · rw [ite_eq_right hx, ite_eq_right hx]
+
+theorem add_then_del_pointwise {V : Type} [DecidableEq V]
+    (G : TimestampedGraph V) (e x : V × V) (h_rec : Nat)
+    (h_abs : G.E e = false) (h_zero : G.H e = 0) :
+    (T_del e (T_add e h_rec G)).1.E x = G.E x ∧
+    (T_del e (T_add e h_rec G)).1.H x = G.H x := by
+  dsimp [T_add, T_del]
+  by_cases hx : x = e
+  · subst hx
+    constructor
+    · rw [ite_eq_left rfl]
+      exact h_abs.symm
+    · rw [ite_eq_left rfl]
+      exact h_zero.symm
+  · constructor
+    · rw [ite_eq_right hx, ite_eq_right hx]
+    · rw [ite_eq_right hx, ite_eq_right hx]
+
+#print axioms del_then_recorded_add_pointwise
+#print axioms add_then_del_pointwise
+```

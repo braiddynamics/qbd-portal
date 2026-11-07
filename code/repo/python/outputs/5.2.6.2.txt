@@ -1,2 +1,6 @@
-Base Rate (Intercept): 0.0643
-Catalytic Coeff (Slope): 0.0904
+Damped quadratic coefficient: 3.958018644
+Baseline quadratic coefficient: 5.154845485
+rho       exact flux       cubic flux       abs error / rho^4
+0.02000   0.0114981001   0.0114959553   13.405345
+0.01000   0.0053850305   0.0053848953   13.514339
+0.00500   0.0025975956   0.0025975872   13.569332

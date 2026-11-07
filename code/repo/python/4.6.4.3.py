@@ -1,43 +1,25 @@
-import numpy as np
+import math
 
-def shannon_entropy(p):
-    """Shannon entropy in bits, safely handling zero probabilities."""
-    p = np.asarray(p)
-    p = p[p > 0]                        # Remove zero entries to avoid log(0)
-    if len(p) == 0:
-        return 0.0
-    return -np.sum(p * np.log2(p))
+def entropy(p):
+    return -sum(x*math.log(x) for x in p if x > 0)
 
-# Number of Monte Carlo trials for statistical precision
-n_trials = 10_000
-np.random.seed(42)
+def push(p, K):
+    return [sum(p[i]*K[i][j] for i in range(len(p))) for j in range(len(K[0]))]
 
-entropy_production = []
+def kl(p,q):
+    return sum(a*math.log(a/b) for a,b in zip(p,q) if a>0)
 
-for _ in range(n_trials):
-    # Provisional distribution over 3 candidate outcomes
-    noise = np.random.normal(0, 0.005, 2)
-    p_A = max(0.0, 0.50 + noise[0])
-    p_B = max(0.0, 0.25 + noise[1])
-    p_C = max(0.0, 1.0 - p_A - p_B)     # Ensure non-negative and sum = 1
-
-    provisional = np.array([p_A, p_B, p_C])
-    S_provisional = shannon_entropy(provisional)
-
-    # Selection: collapse to single outcome → entropy = 0
-    S_final = 0.0
-
-    # Entropy production = information lost to the environment
-    delta_S = S_provisional - S_final
-    entropy_production.append(delta_S)
-
-avg_delta = np.mean(entropy_production)
-std_delta = np.std(entropy_production)
-
-print("Irreversibility via Entropy Production in 𝒰")
-print("=" * 48)
-print(f"Monte Carlo trials:         {n_trials:,}")
-print(f"Average ΔS per tick:        {avg_delta:.5f} bits")
-print(f"Standard deviation:         {std_delta:.5f} bits")
-print(f"Minimum observed ΔS:        {min(entropy_production):.5f} bits")
-print(f"Strictly positive ΔS:       {avg_delta > 0}")
+K = [[0.9,0.1],[0.9,0.1]]
+p = [0.5,0.5]
+q = [0.8,0.2]
+after = push(p,K)
+conditional = sum(p[i]*entropy(K[i]) for i in range(2))
+joint = entropy([p[i]*K[i][j] for i in range(2) for j in range(2)])
+assert abs(joint-entropy(p)-conditional)<1e-12
+assert entropy(after)<entropy(p)
+assert joint>=entropy(p)
+assert kl(push(p,K),push(q,K))<=kl(p,q)+1e-12
+print(f'Snapshot entropy change: {entropy(after)-entropy(p):.9f} nats')
+print(f'Full trajectory entropy increment: {joint-entropy(p):.9f} nats')
+print(f'Conditional entropy: {conditional:.9f} nats')
+print(f'KL input / output: {kl(p,q):.9f} / {kl(push(p,K),push(q,K)):.9f}')

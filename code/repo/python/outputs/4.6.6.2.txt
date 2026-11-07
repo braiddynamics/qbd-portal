@@ -1,0 +1,3 @@
+four-cycle: 4 eligible, quiescent=True
+two-path: 1 eligible, quiescent=False
+triangle: 0 eligible, quiescent=False

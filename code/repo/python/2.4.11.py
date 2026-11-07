@@ -1,5 +1,5 @@
 """
-Pedagogical Topological Cycle Digestion Demonstrator (§2.4.10).
+Pedagogical Topological Cycle Digestion Demonstrator (§2.4.11).
 
 Demonstrates cycle-length reduction on unweighted directed k-cycles
 to verify termination at simplicial ground states (L_max <= 3).

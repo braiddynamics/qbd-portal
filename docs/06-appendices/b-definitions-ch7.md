@@ -340,52 +340,80 @@ Section 7.2.2 formalizes the properties of the QBD lemma regarding binary state 
 :::tip[**Verification of the Single-Bit Capacity of Causal Edges through Binary State Principle**]
 :::
 
-**I. Set-Theoretic Definition**
+**I. Membership Coordinates**
 
-**Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> defines the edge set $E$ strictly as a subset of the Cartesian product of the vertex set $V$.
-
-$$
-E \subseteq V \times V
-$$
-
-For any ordered pair of vertices $(u, v)$, the membership function $\chi_E(u, v)$ maps to the boolean set $\{0, 1\}$.
+Fix distinct vertices $u,v$ and the potential directed edge $e=(u,v)$. The graph datum is a set $E\subseteq V\times V$ (**Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). Define
 
 $$
-\chi_E(u, v) = \begin{cases} 1 & \text{if } (u, v) \in E \\ 0 & \text{if } (u, v) \notin E \end{cases}
+n_e=\chi_E(e)=\begin{cases}0,&e\notin E,\\1,&e\in E.\end{cases}
+\qquad n_e^2=n_e.
 $$
 
-The underlying set theory precludes multiplicity; an element cannot be a member of a set more than once.
-
-**II. Hilbert Space Isomorphism**
-
-The configuration space $\mathcal{H}$ is constructed via the mapping $\mathcal{M}: \Omega_{graph} \to (\mathbb{C}^2)^{\otimes K}$ **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />.
-This mapping assigns a specific qubit subsystem $q_{uv}$ to the potential edge $(u, v)$.
-The basis states of $q_{uv}$ are defined by the eigenvalues of the number operator $\hat{n}_{uv} = |1\rangle\langle 1|_{uv}$.
+Set union and difference act on this coordinate by
 
 $$
-\hat{n}_{uv} |0\rangle = 0, \quad \hat{n}_{uv} |1\rangle = 1
+\begin{array}{c|c c}
+n_e&\chi_{E\cup\{e\}}(e)&\chi_{E\setminus\{e\}}(e)\\\hline
+0&1&0\\1&1&0
+\end{array}
 $$
 
-The spectrum of $\hat{n}_{uv}$ is strictly $\{0, 1\}$.
-No state $|n\rangle$ with eigenvalue $n \ge 2$ exists within the fundamental Hilbert space.
+In particular, $E\cup\{e,e\}=E\cup\{e\}$: a repeated insertion does not create a third value of $n_e$.
 
-**III. Information Bound**
+**II. Number Operator and Its Spectrum**
 
-The **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" /> bounds the information density of the graph.
-Encoding a higher occupancy number $n$ requires expanding the local Hilbert space dimension to $d \ge n+1$.
-Such an expansion requires additional degrees of freedom not present in the elementary $V \times V$ topology.
-Furthermore, the **Universal Evolution Operator** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> acts via Pauli-$X$ bit-flips, which preserve the binary dimension.
+On the edge factor $\mathcal H_e=\mathbb C^2$ of the graph configuration space (**Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />),
 
 $$
-X |0\rangle = |1\rangle, \quad X |1\rangle = |0\rangle
+|0\rangle=\begin{pmatrix}1\\0\end{pmatrix},\qquad
+|1\rangle=\begin{pmatrix}0\\1\end{pmatrix},\qquad
+\hat n_e=|1\rangle\langle1|=\begin{pmatrix}0&0\\0&1\end{pmatrix}.
 $$
 
-No operator in the algebraic set $\{\mathcal{R}_i\}$ maps to a higher-dimensional ladder operator $a^\dagger$ capable of generating $|2\rangle$.
+For $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$,
 
-**IV. Conclusion**
+$$
+\hat n_e|\psi\rangle=\beta|1\rangle,\qquad
+\hat n_e^2|\psi\rangle=\beta|1\rangle=\hat n_e|\psi\rangle.
+$$
 
-The occupation number of any causal link is restricted to $n \in \{0, 1\}$.
-Fermionic statistics emerge from this fundamental saturation of the bitwise capacity.
+If $\hat n_e|\psi\rangle=\lambda|\psi\rangle$ with $|\psi\rangle\ne0$, then
+
+$$
+0=(\hat n_e^2-\hat n_e)|\psi\rangle
+ =\lambda(\lambda-1)|\psi\rangle
+\ \Longrightarrow\ \lambda\in\{0,1\}.
+$$
+
+Both values occur on the displayed basis vectors. For a normalized vector,
+
+$$
+P(n_e=0)=|\alpha|^2,\quad P(n_e=1)=|\beta|^2,\quad
+\langle\hat n_e\rangle=|\beta|^2\in[0,1].
+$$
+
+**III. Rewrite Action Inside the Same Factor**
+
+The bit flip and the number projector obey
+
+$$
+\begin{aligned}
+X_e&=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad X_e^2=I_e,\\
+X_e\hat n_eX_e
+&=\begin{pmatrix}0&1\\1&0\end{pmatrix}
+  \begin{pmatrix}0&0\\0&1\end{pmatrix}
+  \begin{pmatrix}0&1\\1&0\end{pmatrix}
+ =\begin{pmatrix}1&0\\0&0\end{pmatrix}=I_e-\hat n_e,\\
+X_e(\alpha|0\rangle+\beta|1\rangle)&=\beta|0\rangle+\alpha|1\rangle\in\mathcal H_e.
+\end{aligned}
+$$
+
+Every product of such edge operators acts on the same tensor product of two-dimensional factors. Restricting its action by legality projectors selects a subspace; it adds no local occupation eigenvalue. Thus
+
+$$
+\boxed{\operatorname{spec}(\hat n_e)=\{0,1\},\qquad
+\dim_{\mathbb C}\mathcal H_e=2.}
+$$
 
 Q.E.D.
 
@@ -1994,60 +2022,66 @@ Section 7.4.3 formalizes the properties of the QBD lemma regarding thermodynamic
 :::tip[**Verification of Zero Entropy via Unique Logical Microstates**]
 :::
 
-**I. Thermodynamic Decomposition**
+**I. Fixed Structural State and Zero-Entropy Input**
 
-The Helmholtz Free Energy $F$ decomposes into internal energy $U$ and entropic heat $TS$.
-
-$$
-F(\beta) = U(\beta) - T_{vac} S(\beta)
-$$
-
-The proof evaluates these terms for a stable particle braid state $|\beta\rangle$ residing within the Causal Graph.
-
-**II. Internal Energy Definition ($U$)**
-
-The internal energy encodes the total topological complexity $C_{\text{total}}$ of the braid configuration.
-From the **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />, mass corresponds directly to the count of **Geometric Quanta** (3-cycles) $N_3$ required to embed the topology.
-Each quantum contributes a self-energy $\epsilon_{geo} = \frac{\ln 2}{4} E_P$, derived from the equipartition of information over the degrees of freedom in the 4D manifold.
+Fix a braid $\beta$ and its structural quantum count $N_3(\beta)$. The energy assigned to that fixed configuration is
 
 $$
-U(\beta) = N_3(\beta) \cdot \epsilon_{geo}
+U(\beta)=\epsilon_{geo}N_3(\beta),\qquad
+\epsilon_{geo}=\frac{\ln2}{4}E_P
 $$
 
-This term remains strictly positive for any non-trivial knot ($N_3 \ge 1$), establishing the rest mass.
-
-**III. Entropy Computation ($S$)**
-
-The entropy follows the Boltzmann formula $S = k_B \ln \Omega$.
-1.  **Microstate Enumeration:** A stable particle corresponds to a **Prime Braid** protected by the **QECC Codespace** $\mathcal{C}$ **Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />.
-2.  **Degeneracy Analysis:** The **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> enforces a rigid graph structure for the minimal embedding of a prime knot. Any local deviation constitutes a high-energy excitation (logical error) that triggers the **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />.
-3.  **Result:** The ground state degeneracy is exactly unity. The system does not fluctuate between equivalent microstates because the graph geometry is fixed by the minimality constraint.
-
-    $$
-    \Omega(\beta) = 1
-    $$
-
-4.  **Entropic Nullification:**
-
-    $$
-    S(\beta) = k_B \ln(1) = 0
-    $$
-
-    Consequently, the entropic term vanishes identically, regardless of the vacuum temperature $T_{vac} = \ln 2$.
-
-    $$
-    T_{vac} S(\beta) = (\ln 2) \cdot 0 = 0
-    $$
-
-**IV. Conclusion**
-
-The free energy of a stable particle braid equates precisely to its topological internal energy.
+in the stated mass-energy model (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />). The zero-entropy condition used here is the nondegenerate-state premise
 
 $$
-F(\beta) = U(\beta) = m c^2
+\Omega(\beta)=1
 $$
 
-The particle exists as a pure logical state, effectively isolated from the thermal bath of the vacuum geometry due to the topological protection gap.
+(**Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />).
+
+**II. Entropy and Helmholtz Potential**
+
+For this ensemble,
+
+$$
+\begin{aligned}
+S(\beta)&=k_B\ln\Omega(\beta)=k_B\ln1=0,\\
+T S(\beta)&=T\cdot0=0,\\
+F(\beta;T)&=U(\beta)-T S(\beta)\\
+&=\epsilon_{geo}N_3(\beta)-0
+ =\epsilon_{geo}N_3(\beta)=U(\beta).
+\end{aligned}
+$$
+
+An equivalent calculation from the single-state partition sum gives
+
+$$
+Z_\beta(T)=e^{-U(\beta)/(k_BT)},\qquad
+-k_BT\ln Z_\beta(T)
+=-k_BT\left(-\frac{U(\beta)}{k_BT}\right)=U(\beta)
+\quad(T>0).
+$$
+
+**III. Temperature Dependence for the Fixed Configuration**
+
+Holding $N_3(\beta)$ and the conversion scale $\epsilon_{geo}$ fixed,
+
+$$
+\begin{aligned}
+F(\beta;T_2)-F(\beta;T_1)
+&=\epsilon_{geo}N_3(\beta)-\epsilon_{geo}N_3(\beta)=0,\\
+\left.\frac{\partial F}{\partial T}\right|_{\beta,\epsilon_{geo}}
+&=0,\qquad
+m(\beta)=\frac{F(\beta;T)}{c^2}
+=\frac{\epsilon_{geo}N_3(\beta)}{c^2}.
+\end{aligned}
+$$
+
+Therefore, under the zero-entropy input and fixed structural energy,
+
+$$
+\boxed{F(\beta;T)=U(\beta)=m(\beta)c^2.}
+$$
 
 Q.E.D.
 
@@ -2073,52 +2107,76 @@ Section 7.4.4 formalizes the properties of the QBD lemma regarding base mass lin
 :::tip[**Linear Induction of Mass Scaling from Crossing Number**]
 :::
 
-**I. Inertial Definition**
+**I. Additive Crossing Resources**
 
-The mass $m$ is defined as the informational inertia of the defect, proportional to the number of active geometric bits $N_3$ **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />.
-
-$$
-m = \kappa \cdot N_3
-$$
-
-where $\kappa$ is the conversion factor determined by the fundamental energy scale of the vacuum.
-
-**II. Complexity Decomposition**
-
-The total number of geometric quanta $N_3$ partitions into contributions from discrete crossings and torsional strain, as established in the **Topological Mass** <Ref id="6.3.3" label="§6.3.3" />.
+Let $M=C[\beta]\in\mathbb N$ count the minimal crossings in the additive model, and let $k_c\in\mathbb N$ be the fixed quantum count per independent crossing (**Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />). Let $N_{cross}(M)$ denote the crossing contribution, with
 
 $$
-N_3(\beta) = N_{cross} + N_{torsion}
+N_{cross}(0)=0,\qquad
+N_{cross}(M+1)-N_{cross}(M)=k_c.
 $$
 
-**III. Linear Term (Crossings)**
-
-By the **Linear Scaling of Crossings** <Ref id="6.3.4.1" label="§6.3.4.1" />, the formation of each minimal crossing in a prime braid requires the instantiation of a specific subgraph (the causal bridge) containing $k_c$ 3-cycles.
-For the minimal basis ($k_c=1$):
+The base case gives $N_{cross}(0)=k_c\cdot0$. If $N_{cross}(M)=k_cM$, then
 
 $$
-N_{cross} \propto C[\beta]
+N_{cross}(M+1)=N_{cross}(M)+k_c
+=k_cM+k_c=k_c(M+1).
 $$
 
-This establishes the linear dependence of mass on the topological crossing number for low-writhe states.
-
-**IV. Quadratic Term (Torsion)**
-
-By the **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />, the addition of twist $w$ accumulates strain non-linearly due to the path-finding constraint around the braid core. The circumference of the core scales with $w$, forcing the bridge path length $L$ to scale as $L \propto w$.
+Thus $N_{cross}(M)=k_cM$ for every nonnegative integer $M$. Equivalently, summing the increments gives
 
 $$
-N_{torsion} \propto \int L dw \propto w^2
+N_{cross}(M)=N_{cross}(0)+\sum_{j=0}^{M-1}
+  \bigl(N_{cross}(j+1)-N_{cross}(j)\bigr)
+=\sum_{j=0}^{M-1}k_c=k_cM.
 $$
 
-This term dominates for high-writhe states (generations 2 and 3).
+**II. Conversion to the Base Mass**
 
-**V. Anchoring and Consistency**
+The mass definition assigns $\kappa_m$ units of mass per geometric quantum (**Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />). Applying it to the crossing contribution gives
 
-The proportionality constant is calibrated using the electron ground state ($e^-$).
-* Configuration: Singlet with $w=(-1, -1, -1)$.
-* Complexity: $N_{3,e} = 3$ (one crossing unit per ribbon).
-* Relation: $m_e = \kappa \cdot 3$.
-This implies $\kappa = m_e / 3 \approx 0.170$ MeV, anchoring the mass scale for the entire fermion spectrum.
+$$
+\begin{aligned}
+m_{base}(M)&=\kappa_mN_{cross}(M)=\kappa_m k_cM,\\
+m_{base}(M+1)-m_{base}(M)
+&=\kappa_m k_c(M+1)-\kappa_m k_cM=\kappa_m k_c.
+\end{aligned}
+$$
+
+For the minimal choice $k_c=1$,
+
+$$
+\{m_{base}(M):M\in\mathbb N\}
+=\{0,\kappa_m,2\kappa_m,3\kappa_m,\ldots\}.
+$$
+
+**III. Additivity and Separate Contributions**
+
+For two disjoint collections of independent crossing supports,
+
+$$
+\begin{aligned}
+m_{base}(M_1+M_2)
+&=\kappa_m k_c(M_1+M_2)\\
+&=\kappa_m k_cM_1+\kappa_m k_cM_2
+=m_{base}(M_1)+m_{base}(M_2).
+\end{aligned}
+$$
+
+Writing the prescribed full count as $N_3=N_{cross}+N_{torsion}$ gives
+
+$$
+m=\kappa_mN_3
+=\underbrace{\kappa_m k_c C[\beta]}_{m_{base}}
+ +\kappa_mN_{torsion}.
+$$
+
+The base contribution is therefore
+
+$$
+\boxed{m_{base}=\kappa_m k_c C[\beta],\qquad
+m_{base}\in\kappa_m\mathbb N\quad(k_c\in\mathbb N).}
+$$
 
 Q.E.D.
 

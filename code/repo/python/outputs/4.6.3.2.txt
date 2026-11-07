@@ -1,20 +1,3 @@
-Euclidean Action Integration Verification
-==================================================
-Scenario 1: 2 Additions, 0 Deletions
-  Transition Probability P(G->G'): 0.95599748
-  Kinematic Action Delta S:        0.04500000
-  Boltzmann Weight exp(-Delta S):  0.95599748
-  Exact Match:                     True
---------------------------------------------------
-Scenario 2: 0 Additions, 2 Deletions
-  Transition Probability P(G->G'): 0.86233757
-  Kinematic Action Delta S:        0.14810847
-  Boltzmann Weight exp(-Delta S):  0.86233757
-  Exact Match:                     True
---------------------------------------------------
-Scenario 3: 2 Additions, 2 Deletions
-  Transition Probability P(G->G'): 0.54470442
-  Kinematic Action Delta S:        0.60751198
-  Boltzmann Weight exp(-Delta S):  0.54470442
-  Exact Match:                     True
---------------------------------------------------
+Isolated triangle: total mass = 1; specified-edge deletion = 1/5
+Shared triangles: total mass = 1; shared-edge-only preimages = 3
+Reciprocal merge fixture: total mass = 1; unchanged-state preimages = 2

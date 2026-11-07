@@ -5,7 +5,7 @@ date: "August 24, 2026"
 fontsize: 10pt
 geometry: "top=1in,bottom=1in,left=1in,right=1in"
 abstract: |
-  We present a computational framework based on a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. The unperturbed vacuum is identified within a combinatorial sieve as a regular Bethe fragment possessing bipartite pre-geometric symmetry, where a localized parity-breaking instanton triggers an initial parallel burst that nucleates geometry. Axiomatic constraints are represented as commuting occupancy projectors on directed-edge configurations, so accepted rewrites remain inside the kinematically allowed set. Dynamic evolution on timestamped directed acyclic graphs is driven by a comonadic self-observation and stochastic rewrite constructor operating under information-theoretic principles. Rapid single-cycle decay and boundary leaf dissipation establish an analytical nucleation barrier, while multi-scale simulations from $N = 10$ to $10,000$ demonstrate that boundary quenching diminishes with volume to sustain a stable, localized topological soliton (an active Quasi-Stationary Distribution) with power-law lifetime scaling ($\tau_{\mathrm{ext}} \sim N^{0.64}$). Together, these results establish the discrete non-equilibrium statistical mechanics of the causal vacuum on branching graphs, providing the foundational substrate and scaling hypotheses required for continuum geometric reconstruction.
+  We present a computational framework based on a discrete causal substrate governed by a dual logical-physical time architecture, irreflexivity, and acyclicity. Under explicit initial-state premises, a finite combinatorial comparison selects a regular Bethe fragment possessing bipartite pre-geometric symmetry, where a specified parity-breaking seed admits local descendant nucleation with positive probability. Axiomatic constraints are represented as commuting occupancy projectors on directed-edge configurations, so accepted rewrites remain inside the kinematically allowed set. Spatial evolution uses immutable causal heights, acyclic event dependencies, transported diagnostic observations, and a normalized stochastic graph transition kernel. Local estimates separate conditional negative triangle drift from exact unpumped quiescence. Multi-scale simulations from $N=10$ to $10,000$ report finite-volume conditioned activity and a fitted lifetime scaling. The finite killed-kernel and measured compactness results specify hypotheses for connecting those observations to a quasi-stationary law and a geometric limit.
 ---
 
 # Introduction: Foundational Principles
@@ -14,7 +14,7 @@ Constructing spacetime geometry, causal order, and physical conservation laws di
 
 We evaluate how graph evolution proceeds through stochastic updates, where local path-closing additions compete with tension-driven deletions, and determine the conditions under which this non-equilibrium process avoids collapse into its absorbing ground state. Here we analyze the nucleation of geometric structures, the mitigation of boundary dissipation on finite graph fragments, and the stabilization of an active quasi-stationary phase acting as a localized topological soliton. Extensive, volume-filling macroscopic spacetime requires continuous pump driving ($\Lambda > 0$) or distributed multi-seed nucleation, which is developed in companion works on continuum geometric reconstruction. The investigation proceeds through five structural stages:
 
-![](figures/framework_architecture.png){ width=100% }
+![](figures/framework_architecture.png)
 
 # 1. Ontological Substrate
 
@@ -50,7 +50,7 @@ A **2-Cycle** is a cycle of length exactly $k=2$, consisting of a pair of distin
 **Definition 1.1.8** (Closed 3-Cycles and Geometric Quanta).
 A **3-Cycle** ($\partial \Delta_2$) is a cycle of length exactly $k=3$, consisting of an ordered triplet of distinct vertices $(A, B, C)$ such that $(A, B), (B, C), (C, A) \in E$. The 3-cycle represents the minimal closed boundary enclosing an elementary topological area, functioning as the fundamental discrete quantum of spatial geometry.
 
-![Fundamental Graph-Theoretic Motifs and Cycle Hierarchy. (a) Open 2-path $(v \to w \to u)$; (b) Closed 2-cycle (forbidden by Axiom 1); (c) Closed 3-cycle ($\partial\Delta_2$, elementary geometric quantum).](figures/graph_motifs.png){ width=85% }
+![Fundamental Graph-Theoretic Motifs and Cycle Hierarchy. (a) Open 2-path $(v \to w \to u)$; (b) Closed 2-cycle (forbidden by Axiom 1); (c) Closed 3-cycle ($\partial\Delta_2$, elementary geometric quantum).](figures/graph_motifs.png)
 
 **Definition 1.1.9** (Directed Acyclic Graphs and Causal Posets).
 A **Directed Acyclic Graph (DAG)** is a directed graph $G = (V, E)$ containing no directed cycles of any length $k \ge 1$. The topological reachability relation in a DAG induces a strict partial order on the event set $V$, ensuring that causal influence flows irreversibly from ancestral causes to descendant effects.
@@ -60,30 +60,30 @@ A **Bipartite Graph** is a directed graph $G = (V, E)$ whose vertex set $V$ admi
 $$E \subseteq (V_{\mathrm{even}} \times V_{\mathrm{odd}}) \cup (V_{\mathrm{odd}} \times V_{\mathrm{even}}).$$
 Bipartiteness forbids odd-length cycles ($N_{2k+1} = 0$), establishing the pristine ground state from which spatial geometry emerges upon symmetry breaking (Figure 2).
 
-![Bipartite Parity Stratification of the Rooted Bethe Tree Vacuum. Directed edges strictly bridge alternating parity depth shells ($V_{\mathrm{even}} \to V_{\mathrm{odd}}$ and $V_{\mathrm{odd}} \to V_{\mathrm{even}}$), identically precluding odd-length cycles ($N_3 = 0, N_5 = 0$) and maintaining zero spatial area in the unperturbed vacuum state.](figures/bipartite_bethe_tree.png){ width=72% }
+![Bipartite Parity Stratification of the Rooted Bethe Tree Vacuum. Directed edges strictly bridge alternating parity depth shells ($V_{\mathrm{even}} \to V_{\mathrm{odd}}$ and $V_{\mathrm{odd}} \to V_{\mathrm{even}}$), identically precluding odd-length cycles ($N_3 = 0, N_5 = 0$) and maintaining zero spatial area in the unperturbed vacuum state.](figures/bipartite_bethe_tree.png)
 
-**Definition 1.1.11** (Causal Graph Substrate $G = (V, E, H)$ and Dual-Time Architecture).
-The universal configuration space $\Omega$ comprises states $G = (V, E, H)$, where $V$ is a finite event set, $E \subseteq V \times V$ is an asymmetric causal relation, and $H: E \to \mathbb{N}_0$ is an immutable creation timestamp mapping.
+**Definition 1.1.11** (Active Spatial State and Occurrence Coordinates).
 
-To decouple algorithmic state succession from localized relativistic duration, in direct alignment with canonical relational time formalisms [2, 17], time is partitioned into an orthogonal dual structure $(t_L, t_{\mathrm{phys}})$:
+Let the **Causal Graph Substrate** at logical tick $t$ be the active spatial configuration $G_t=(V,E_t,H_t)$, where $V$ is a fixed finite vertex set, $E_t\subseteq V\times V$ is irreflexive and asymmetric, and $H_t:E_t\to\mathbb N_0$ records immutable causal heights of the active edge occurrences. Directed spatial cycles are permitted; the chronological order belongs to the distinct creation-event structure.
 
-* **Global Logical Time ($t_L \in \mathbb{N}_0$):** A discrete, meta-theoretical iteration counter indexing global state transitions under the universal evolution operator $\mathcal{U}$:
-  $$U_0 \xrightarrow{\mathcal{U}} U_1 \xrightarrow{\mathcal{U}} U_2 \xrightarrow{\mathcal{U}} \dots \xrightarrow{\mathcal{U}} U_{t_L}.$$
-  Logical time $t_L$ is unobservable from within any internal state; it functions as the algorithmic sequencer of state transitions, ensuring that each state $U_{t_L}$ satisfies the constraint algebra while advancing the computation without temporal supertasks or completed infinities.
+A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The cumulative creation record $\mathcal E_t$ retains past occurrences after active deletion (Definition 4.1.2).
 
-* **Emergent Relational Proper Time ($t_{\mathrm{phys}}$):** The physical duration measured along a directed causal trajectory $\pi = (v_0, v_1, \dots, v_k)$ by an internal physical clock:
-  $$\Delta t_{\mathrm{phys}} = \tau(\pi) = k \cdot \tau_0,$$
-  where $\tau_0$ is the fundamental discrete chronon duration and $k$ is the combinatorial path length across time-respecting channels. Physical time is inherently local, relational, and geometric, emerging in the continuum limit as the Lorentzian proper time $\int \mathrm{d}\tau = \int \sqrt{-g_{\mu\nu}\mathrm{d}x^\mu \mathrm{d}x^\nu}$ along timelike worldlines.
+The scheduler index is $t_L\in\mathbb N_0$; emergent proper time is a separately specified relational observable along an observer history. These quantities are not identified with the recurrence height.
 
 ## 1.2 Temporal Ontology and Creation Timestamps
 
 Temporal precedence is embedded directly into the edge topology through an immutable **Creation Timestamp** mapping $H: E \to \mathbb{N}_0$.
 
-**Definition 1.2.1** (Creation Timestamp Mapping and Constructor Recurrence).
-Let $G = (V, E, H)$ be a causal graph. For every directed edge $e = (u, v) \in E$, $H(e) \in \mathbb{N}_0$ records the logical tick at which the link was created. When a new directed edge $e_{\mathrm{new}} = (u, v)$ is accreted at global tick $t_L$, its timestamp is uniquely assigned by the constructor recurrence:
-$$H(e_{\mathrm{new}}) = 1 + \max\left( \{ H(e') \mid e' = (w, u) \in E \} \cup \{0\} \right) \le t_L.$$
+**Definition 1.2.1** (Scheduler Birth Tick and Immutable Causal Height).
 
-The constructor recurrence guarantees that causal influence advances strictly forward along relational connections.
+Let the **Creation Timestamp** $H_t(e)$ denote the causal height of the active occurrence of $e$, distinct from its scheduler birth tick $b(e)$. For a new edge $e=(u,v)$ inserted during the transition from tick $t$ to tick $t+1$, its height is
+
+$$
+h_{\mathrm{new}}(u,v)=1+\max\bigl(\{H_t(x,u):(x,u)\in E_t\}\cup\{0\}\bigr),
+\qquad \omega=(u,v,t+1,h_{\mathrm{new}}(u,v)).
+$$
+
+Existing occurrences retain their assigned heights. The initial substrate has $H_0(e)=0$. A deleted pair recreated later receives a new occurrence identifier even if its newly computed height equals an earlier height. The birth tick and height are both immutable coordinates of an occurrence; neither is a replacement for the other.
 
 **Lemma 1.2.2** (Irreflexivity of Timestamps).
 A self-loop $e_{\mathrm{self}} = (u, u)$ admits no mathematically consistent timestamp assignment under the constructor recurrence and is strictly excluded.
@@ -110,76 +110,113 @@ A self-loop $e_{\mathrm{self}} = (u, u)$ admits no mathematically consistent tim
 The inequality $x > x$ is false for all $x \in \mathbb{N}_0$. Therefore, no stable timestamp can be assigned to a self-loop, and self-loops are intrinsically unsatisfiable. $\square$
 
 **Lemma 1.2.3** (Transitive Monotonicity along Sequential Causal Chains).
-Let $\pi = (v_0, v_1, \dots, v_k)$ be a directed causal path of length $k \ge 1$ with edges $e_i = (v_{i-1}, v_i)$ in the historical event network $G_{\mathrm{event}}$ (or any spatial chain instantiated sequentially by the constructor recurrence Definition 1.2.1 from preceding edges). Then the sequence of creation timestamps is strictly monotonically increasing along the chain:
-$$H(e_1) < H(e_2) < \dots < H(e_k).$$
 
-*Proof.* We proceed by mathematical induction on the path length $k$:
+Let $e_1,\ldots,e_k$ be a sequentially instantiated causal chain whose occurrence of $e_i$ remains incoming to the source when $e_{i+1}$ is created, for each $i<k$. Then $H(e_1)<\cdots<H(e_k)$, and for $k\ge2$ the endpoint bound is $H(e_k)\ge H(e_1)+k-1$ (Definition 1.2.1).
 
-**I. Inductive Base Case ($k=2$):** Let $e_1 = (v_0, v_1)$ and $e_2 = (v_1, v_2)$ be adjacent directed edges along $\pi$. By topological incidence, $e_1$ terminates at $v_1$, establishing $e_1 \in \mathrm{In}(v_1)$. When $e_2$ is instantiated sequentially after $e_1$, the creation timestamp for outgoing edge $e_2$ is assigned by Definition 1.2.1:
-  $$H(e_2) = 1 + \max \left( \{ H(k) \mid k \in \mathrm{In}(v_1) \} \cup \{0\} \right).$$
-  Because $e_1 \in \mathrm{In}(v_1)$, the maximum satisfies $\max_{k \in \mathrm{In}(v_1)} H(k) \ge H(e_1)$, which directly yields:
-  $$H(e_2) \ge 1 + H(e_1) > H(e_1),$$
-  establishing the strict base inequality $H(e_1) < H(e_2)$.
+*Proof.*
 
-**II. Inductive Hypothesis:** Assume that strict timestamp monotonicity holds for any sequential directed subpath of length $n \ge 1$:
-  $$H(e_1) < H(e_2) < \dots < H(e_n),$$
-  where the terminal edge $e_n = (v_{n-1}, v_n)$ terminates at vertex $v_n$.
+**I. Predecessor Membership at Creation**
 
-**III. Inductive Step:** Consider the adjacent outgoing edge $e_{n+1} = (v_n, v_{n+1})$ originating at $v_n$. By incidence, $e_n \in \mathrm{In}(v_n)$. The recursive constructor assignment for $H(e_{n+1})$ satisfies:
-  $$H(e_{n+1}) = 1 + \max \left( \{ H(k) \mid k \in \mathrm{In}(v_n) \} \cup \{0\} \right) \ge 1 + H(e_n) > H(e_n).$$
-  Applying this single-step inequality to the inductive hypothesis extends the monotonicity chain:
-  $$H(e_1) < H(e_2) < \dots < H(e_n) < H(e_{n+1}).$$
+Let $\omega_i$ be the occurrence of $e_i$ and put $h_i=h(\omega_i)$. The sequential-chain hypothesis means that, when $e_{i+1}$ is created from a snapshot $G_{t_i}$, its source is the target of $e_i$ and $e_i$ is still present there. Consequently
 
-**IV. Transitive Conclusion:** By mathematical induction, edge timestamps strictly increase monotonically along every sequentially instantiated causal path, guaranteeing $H(e_1) < H(e_k)$ for all $k \ge 2$ and inducing a well-founded causal partial order on physical history. $\square$
+$$
+h_i\in\{H_{t_i}(x,s(e_{i+1})):(x,s(e_{i+1}))\in E_{t_i}\}.
+$$
 
-**Theorem 1.2.4** (Monotonicity of History and Causal DAG Invariance).
-The historical event poset $G_{\mathrm{event}}$ is strictly a Directed Acyclic Graph (DAG) to all orders, and the spatial substrate $G = (V, E, H)$ contains zero closed strictly timestamp-monotone causal paths, precluding closed timelike curves ($P_{\mathrm{CTC}} \equiv 0$).
+**II. Consecutive Inequality**
 
-*Proof.* Suppose there exists a closed directed causal loop $C = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ with boundary identification $v_0 = v_k$ that acts as a closed timelike curve. We evaluate all possible cycle lengths:
+The source-side recurrence (Definition 1.2.1) therefore gives
 
-**I. Case 1 (Length $k=1$):** Under this condition, $C$ is a self-loop $e = (v_0, v_0)$. By Lemma 1.2.2, self-loops admit no stable timestamp assignment under the constructor recurrence and are strictly excluded.
+$$
+\begin{aligned}
+h_{i+1}
+&=1+\max\bigl(\{H_{t_i}(x,s(e_{i+1}))\}\cup\{0\}\bigr)\\
+&\ge1+h_i>h_i.
+\end{aligned}
+$$
 
-**II. Case 2 (Length $k \ge 2$):** Under this condition, $C$ forms a closed directed path traversing vertices $(v_0, v_1, \dots, v_{k-1}, v_0)$ with edges $e_i = (v_{i-1}, v_i)$ for $1 \le i \le k$. For $C$ to constitute an effective causal channel mediating a closed timelike curve, signals must propagate along a strictly timestamp-monotone sequence. By Lemma 1.2.3, creation timestamps along such a monotone chain must strictly increase:
-  $$H(e_1) < H(e_2) < \dots < H(e_k),$$
-  which establishes the forward transitive inequality $H(e_1) < H(e_k)$. The cycle boundary identification $v_k = v_0$ requires that the terminal edge $e_k = (v_{k-1}, v_0)$ belongs to $\mathrm{In}(v_0)$. If the initial outgoing edge $e_1 = (v_0, v_1)$ were causally dependent on the closure edge $e_k$, the constructor recurrence would require:
-  $$H(e_1) = 1 + \max \left( \{ H(k) \mid k \in \mathrm{In}(v_0) \} \cup \{0\} \right) \ge 1 + H(e_k) > H(e_k).$$
-  Combining $H(e_1) > H(e_k)$ with $H(e_1) < H(e_k)$ yields the contradiction $H(e_1) < H(e_1)$, which is false for all natural numbers.
+Here the set in the maximum ranges over the incoming edges of that source in the creation snapshot. Both the membership and the maximum refer to that same snapshot.
 
-Therefore, no strictly timestamp-monotone path can form a closed loop in $G$ (Lean 4 certified: `edge_monotone_no_causal_cycle`, Supplement Appendix A, Part 7). 
+**III. Induction on the Chain**
 
-*Remark on Spatial Cycles vs. Causal Loops.* The spatial graph $G_{\mathrm{space}}$ contains directed 3-cycles (Definition 1.1.8), which constitute the discrete quanta of spatial geometry. Because a spatial 3-cycle $(v \to w \to u \to v)$ closed by chord $(u, v)$ has $H(u, v) > H(w, u)$ but $H(v, w) \le H(u, v)$, the circular timestamp sequence along the 3-cycle is not strictly monotone. Consequently, spatial 3-cycles do not mediate closed timelike causal loops, preserving the strict DAG structure of $G_{\mathrm{event}}$ to all orders. $\square$
+For $j=1$, $h_j=h_1=h_1+j-1$. If $h_j\ge h_1+j-1$, then
+
+$$
+h_{j+1}\ge h_j+1\ge h_1+j=h_1+(j+1)-1.
+$$
+
+Induction proves $h_j\ge h_1+j-1$ for all $j\le k$. The consecutive strict inequalities concatenate by transitivity of the natural-number order. This establishes the sequential-chain claim (Lemma 1.2.3).
+
+**IV. Conclusion**
+
+$$
+\boxed{h_1<\cdots<h_k,\qquad h_k\ge h_1+k-1.}
+$$
+
+Q.E.D.
+
+**Theorem 1.2.4** (Chronological Dependency Order).
+
+Let creation heights satisfy the source-side recurrence and let $\omega\mathrel D\eta$ mean that the edge occurrence $\omega$ is an incoming edge of the source of $\eta$ in the snapshot used to create $\eta$. Then $D^+$ is an irreflexive transitive relation on creation occurrences and every $D$-chain has strictly increasing heights; active spatial walks need not have increasing heights (Definition 1.2.1).
+
+*Proof.*
+
+**I. Direct Event Dependencies**
+
+Let $\omega D\eta$ be a dependency with the stipulated creation-snapshot meaning (Theorem 1.2.4). The preceding incoming occurrence belongs to the creation snapshot of $\eta$. The source-side maximum therefore gives
+
+$$
+\omega D\eta\ \Longrightarrow\ h(\eta)\ge h(\omega)+1.
+$$
+
+Stable self-loop assignment also has the independent obstruction $h\ge h+1$ (Lemma 1.2.2). Physical self-loops are excluded directly by the irreflexive edge constraint.
+
+**II. Finite Dependency Paths**
+
+A witness for $\omega D^+\eta$ is a chain $\omega=\omega_0D\omega_1D\cdots D\omega_m=\eta$ with $m\ge1$. The sequential inequality (Lemma 1.2.3) gives
+
+$$
+h(\eta)\ge h(\omega)+m>h(\omega).
+$$
+
+**III. Irreflexivity and Transitivity**
+
+If $\omega D^+\omega$, the endpoint inequality becomes $h(\omega)>h(\omega)$, a contradiction. If $\omega D^+\eta$ and $\eta D^+\zeta$, concatenation of the two finite dependency chains is a nonempty dependency chain from $\omega$ to $\zeta$. Thus
+
+$$
+\neg(\omega D^+\omega),\qquad
+(\omega D^+\eta\land\eta D^+\zeta)\Longrightarrow\omega D^+\zeta.
+$$
+
+**IV. Well-Founded Height Descent**
+
+A reversed dependency chain $\omega_{j+1}D^+\omega_j$ satisfies $h(\omega_{j+1})\le h(\omega_j)-1$. Induction gives $h(\omega_j)+j\le h(\omega_0)$. Taking $j=h(\omega_0)+1$ contradicts nonnegativity. Therefore no infinite descending dependency chain exists, and $D^+$ is a well-founded strict partial order on creation occurrences.
+
+Q.E.D.
+
+**Finite distinguishable history.** Logical time enumerates updates. Suppose a present state ranges over $M$ values and the specified family of occurrence histories is recoverable from those values. Injectivity bounds the history count by $M$. In a comb, the $K$ distinct terminated alternatives and the continuing history give $K+1\le M$. With at least two continuing children at each shorter prefix, the depth counts obey $n_0=1$ and $n_{j+1}\ge2n_j$, so $2^K\le n_K\le M$. These bounds constrain the tick count when unbounded tick depth entails unbounded branching in the encoded family. Repeated adjacency can coexist with distinct creation records, and a deterministic new record can carry zero conditional Shannon entropy.
 
 ## 1.3 Kinematic Task Space
 
 Physical transformations of the causal graph substrate are formalized on an admissible **Task Space** $\mathfrak{T}$ that preserves causal order and topological coherence across state transitions.
 
-**Definition 1.3.1** (Elementary Task Space $\mathfrak{T}$ and Kinematic Purity).
-Let $\mathcal{G}$ denote the universe of all causal graphs $G = (V, E, H)$. The **Elementary Task Space** $\mathfrak{T}$ is the set of all graph transformations $T: G \mapsto G' = (V', E', H')$ that satisfy three kinematic admissibility criteria:
+**Definition 1.3.1** (Elementary Task Space and Kinematic Purity).
 
-* **Acyclicity:** The updated event history $G'_{\mathrm{event}}$ is strictly a Directed Acyclic Graph, and the spatial substrate $G'$ contains zero strictly timestamp-monotone causal cycles.
-* **Monotonicity of History:** The updated creation timestamp mapping $H'$ satisfies causal temporal monotonicity under all edge mutations.
-* **Finite Growth:** There exists a constant $k \in \mathbb{N}$ such that $|V'| \le |V| + k$ and $|E'| \le |E| + k$.
+Let the **Elementary Task Space** $\mathfrak T(G)$ consist of guarded additions and deletions on a fixed spatial vertex set $V$. An addition changes one absent directed pair to present, preserves irreflexivity and asymmetry, assigns the source-side causal height, and satisfies the applicable candidate-relative PUC and causal-admission predicates; a deletion removes one present edge without erasing its historical occurrence (Definition 1.2.1). The uniqueness predicate is candidate-relative (Lemma 2.2.3).
 
-Formally:
+Each primitive preserves $V$, changes at most one active edge, and leaves all surviving occurrence heights unchanged. Spatial triangle creation is permitted. The event dependency order, rather than all active spatial adjacency, is the chronological structure. A fixed-snapshot parallel merge and a sequential re-evaluation of guards are different task schedules.
+
+**Definition 1.3.2** (Guarded Edge Addition).
+
+Let the **Edge Addition Task** $\mathfrak T_{add}(u,v)$ act on $G_t=(V,E_t,H_t)$ for an absent pair $(u,v)$ with $u\ne v$ and $(v,u)\notin E_t$. Its admitted candidate includes the required geometric and causal guard evidence. The updated components are
 
 $$
-\begin{aligned}
-\mathfrak{T} = \big\{ T: \mathcal{G} \to \mathcal{G} \mid \; & T(G) \text{ preserves causal acyclicity, monotonicity of } H, \\
-& \text{and bounded growth } (|V'| \le |V|+k, \; |E'| \le |E|+k) \big\}.
-\end{aligned}
+V'=V,\qquad E'=E_t\cup\{(u,v)\},\qquad
+H'|_{E_t}=H_t,\qquad
+H'(u,v)=1+\max\bigl(\{H_t(x,u):(x,u)\in E_t\}\cup\{0\}\bigr).
 $$
 
-*Kinematic Exhaustiveness:* The task space $\mathfrak{T}$ enumerates all kinematically accessible configurations of relational flux, establishing the complete combinatorial domain upon which dynamical rewrite rules operate.
-
-**Definition 1.3.2** (Edge Addition Task $\mathfrak{T}_{\mathrm{add}}$).
-For any pair of distinct vertices $u, v \in V$ such that $(u, v) \notin E$, the **Edge Addition Task** $\mathfrak{T}_{\mathrm{add}}(u, v): G \mapsto G' = (V', E', H')$ is defined by:
-
-* **Vertex Set:** $V' = V$.
-* **Edge Set:** $E' = E \cup \{(u, v)\}$.
-* **Timestamp Assignment:** $H'(e) = H(e)$ for all $e \in E$, and $H'(u, v) = t_L$, where $t_L$ is the emergent timestamp satisfying:
-  $$t_L > \max \left( \{ H(x, y) \in E \mid y = u \lor y = v \} \cup \{ 0 \} \right).$$
-
-The operation is defined if and only if $G'$ preserves DAG acyclicity. Edge addition acts as the primitive creation operator, expanding the local relational horizon and kindling geometric area by closing open 2-paths into directed 3-cycles.
+The transition from tick $t$ records the new occurrence $(u,v,t+1,H'(u,v))$. For a return chord across $v\to w\to u$, PUC is evaluated relative to that candidate (Lemma 2.2.3). Passing PUC is one guard, not an assertion that every other guard holds. The target spatial graph can contain the newly closed triangle.
 
 **Definition 1.3.3** (Edge Deletion Task $\mathfrak{T}_{\mathrm{del}}$).
 For any active directed edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{\mathrm{del}}(u, v): G \mapsto G' = (V', E', H')$ is defined by:
@@ -201,39 +238,64 @@ Let $G = (V, E, H)$ be a causal graph, and let $V_{\mathrm{act}} = \{ v \in V \m
 
 Because $V' = V$ identically under all primitive operators, the vertex set serves as an invariant container. All physical instantiation and termination of event loci are governed strictly by relational edge incidence, establishing a purely relational ontology where spatial structure is constituted entirely by active connections. $\square$
 
-**Lemma 1.3.5** (Reversibility of Primitives and Catalytic Duality).
-For every primitive task $T \in \mathfrak{T}_{\mathrm{vac}} = \{ \mathfrak{T}_{\mathrm{add}}(u, v), \mathfrak{T}_{\mathrm{del}}(u, v) \mid u, v \in V \}$ acting on a causal graph $G$, there exists a unique inverse primitive task $T^{-1} \in \mathfrak{T}_{\mathrm{vac}}$ such that $T^{-1}(T(G)) = G$, conserving state distinguishability.
+**Lemma 1.3.5** (Recorded Rollback of Active Edge Fields).
 
-*Proof.* We verify the exact algebraic inverses for both primitive operations:
+Let a snapshot have adjacency $E(x)\in\{0,1\}$ and height $H(x)\in\mathbb N$ at every directed pair $x$, with height zero when absent. Both fields are restored by adding an absent pair and then deleting it, or by deleting an active pair and then restoring it at its saved height.
 
-**I. Addition Inverse:** Let $T = \mathfrak{T}_{\mathrm{add}}(u, v)$ act on $G = (V, E, H)$, producing $G' = (V, E \cup \{(u, v)\}, H')$. Applying $T^{-1} = \mathfrak{T}_{\mathrm{del}}(u, v)$ yields:
-  $$V'' = V' = V, \qquad E'' = E' \setminus \{(u, v)\} = (E \cup \{(u, v)\}) \setminus \{(u, v)\} = E.$$
-  Since $H'' = H'|_{E} = H$, we obtain $T^{-1}(T(G)) = G$.
+*Proof.*
 
-**II. Deletion Inverse:** Let $T = \mathfrak{T}_{\mathrm{del}}(u, v)$ act on $G$ containing $(u, v)$, producing $G' = (V, E \setminus \{(u, v)\}, H')$. Applying $T^{-1} = \mathfrak{T}_{\mathrm{add}}(u, v)$ with historical timestamp $t_L = H(u, v)$ yields:
-  $$V'' = V, \qquad E'' = (E \setminus \{(u, v)\}) \cup \{(u, v)\} = E, \qquad H'' = H.$$
-  Hence, $T^{-1}(T(G)) = G$.
+**I. Single-Pair Updates**
 
-Both operations admit unique algebraic inverses within $\mathfrak{T}_{\mathrm{vac}}$, proving that kinematic mutability conserves state distinguishability without information loss. $\square$
+The height field belongs to the active edge snapshot.
 
-**Theorem 1.3.6** (Vacuum Repertoire and Transformation Completeness).
-The set of primitive tasks $\mathfrak{T}_{\mathrm{vac}} = \{ \mathfrak{T}_{\mathrm{add}}(u, v), \mathfrak{T}_{\mathrm{del}}(u, v) \mid u, v \in V \}$ is functionally complete: any admissible transformation $T: G \mapsto G'$ in the Elementary Task Space $\mathfrak{T}$ decomposes into a finite sequence of primitive additions and deletions.
+Write $A_{e,h}$ for setting $(E(e),H(e))=(1,h)$ and $D_e$ for setting $(E(e),H(e))=(0,0)$. Both operations preserve $(E(x),H(x))$ for every $x\ne e$.
 
-*Proof.* We proceed by constructive decomposition:
+**II. Rollback of Addition**
 
-**I. Symmetric Edge Difference:** Let $G = (V, E, H)$ and $G' = (V', E', H')$ be valid states in $\mathfrak{T}$. Define the symmetric difference of their edge sets:
-  $$\Delta E = E \triangle E' = (E \setminus E') \cup (E' \setminus E).$$
-  Because $G$ and $G'$ are finite graphs, $m = |\Delta E| < \infty$ is a finite integer.
+At an absent $e$, the forward and backward updates are
 
-**II. Sequential Primitive Factorization:** Order the elements of $\Delta E$ into a sequential execution schedule $(T_1, T_2, \dots, T_m)$:
+$$
+(0,0)\xrightarrow{A_{e,h}}(1,h)\xrightarrow{D_e}(0,0).
+$$
 
-1. For each edge $e_i \in E \setminus E'$, apply the primitive deletion task $\mathfrak{T}_{\mathrm{del}}(e_i)$.
-2. For each edge $e_j \in E' \setminus E$, apply the primitive addition task $\mathfrak{T}_{\mathrm{add}}(e_j)$ with its target timestamp $H'(e_j)$.
+At all other pairs both operations preserve both fields. Hence $D_e(A_{e,h}(G))=G$ on the active snapshot.
 
-**III. Preservation of Invariants:** By Lemma 1.3.4, the vertex set satisfies $V_m = V_{m-1} = \dots = V_0 = V = V'$. By Lemma 1.3.5, each intermediate step $T_i$ is invertible, guaranteeing that the composite sequence is invertible:
-  $$(T_m \circ \dots \circ T_2 \circ T_1)^{-1} = T_1^{-1} \circ T_2^{-1} \circ \dots \circ T_m^{-1}.$$
+**III. Rollback of Deletion**
 
-Thus, any kinematically admissible graph mutation is exhaustively generated by a finite composition of primitive tasks from $\mathfrak{T}_{\mathrm{vac}}$. $\square$
+At an active $e$, save $h=H_G(e)$. The two updates at $e$ are
+
+$$
+(1,h)\xrightarrow{D_e}(0,0)\xrightarrow{A_{e,h}}(1,h).
+$$
+
+Again the other pairs are unchanged, so $A_{e,h}(D_e(G))=G$ on the active snapshot.
+
+Q.E.D.
+
+**Theorem 1.3.6** (Vacuum Repertoire and Recorded Task Composition).
+
+Let $\mathfrak T$ be the space of tasks witnessed by finite admissible sequences of guarded edge additions and deletions on a fixed vertex set $V$. Each task is a finite composition of the primitives, with active incidence determined by the edge set and rollback of each active update specified by the edited pair and its previous height.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+A task in the space specifies an admissible trajectory of active snapshots.
+
+**II. Finite Task Composition**
+
+An admissible task has a witness sequence $G_0\xrightarrow{T_1}G_1\to\cdots\xrightarrow{T_m}G_m$, with each $T_j$ a guarded primitive in its input snapshot. Thus $G_m=(T_m\circ\cdots\circ T_1)(G_0)$. Each step preserves $V$, and at index $j$ the active vertex set is $\{v\in V:\deg_{G_j}(v)>0\}$.
+
+**III. Recorded Rollback**
+
+Let $R_j$ be the restoration determined by the record for step $j$. The pointwise identities give $R_j(G_j)=G_{j-1}$. Substitution from the last index to the first gives
+
+$$
+(R_1\circ\cdots\circ R_m)(G_m)=
+(R_1\circ\cdots\circ R_{m-1})(G_{m-1})=\cdots=G_0 .
+$$
+
+Q.E.D.
 
 # 2. Axiomatic Foundation
 
@@ -275,68 +337,50 @@ $$
 
 **IV. Conclusion:** The self-loop $e_{\mathrm{loop}}$ satisfies all defining criteria of a directed cycle $C_1$. Because physical causal histories admit no directed cycles of any length, $e_{\mathrm{loop}}$ is intrinsically pathological and excluded from the kinematic substrate. $\square$
 
-**Lemma 2.1.3** (Thermodynamic Nullity and Information Stasis of Self-Loops).
-Let $\Omega(G)$ denote the cardinality of the ensemble of simple directed paths connecting distinct vertices in $G$. Then the path ensemble remains invariant under the addition of a self-loop ($\Omega(G') = \Omega(G)$), and the associated Boltzmann entropic contribution $\Delta S$ is identically zero.
+**Lemma 2.1.3** (Self-Loop Nullity for Simple-Path Counting).
 
-*Proof.* We compute the phase space variation under self-loop insertion:
+Let $\Omega(G)$ count a family of simple directed paths specified by their vertex and edge sequences. This family is unchanged by adding a self-loop, so its logarithmic path entropy is unchanged on the domain $\Omega(G)>0$.
 
-**I. Definition of Configuration Space:** Let $\Omega(G) = |\{ \pi_{uv} \mid u \neq v, \; \pi \text{ is simple} \}|$ denote the volume of simple directed paths between distinct vertex pairs. A simple path contains no repeated vertices:
-$$\pi = (v_0, v_1, \dots, v_k) \quad \text{with} \quad v_i \neq v_j \; \forall i \neq j.$$
+*Proof.*
 
-**II. Invariance under Self-Loop Insertion:** Let $\mathcal{T}_{\mathrm{self}}$ add the self-loop $e = (x, x)$ to $G$, producing $G'$. Any directed path $\pi'$ traversing $e$ necessarily contains the adjacent repetition $(x, x)$, violating vertex distinctness. Consequently, no simple path traverses the self-loop:
-$$\pi' \notin \Omega(G') \implies \Omega(G') = \Omega(G).$$
+**I. Domain and Objects**
 
-**III. Calculation of Entropy Change:** Under the Boltzmann entropy formulation, the information variation associated with self-loop insertion evaluates to:
-$$\Delta S = k_B \ln\left( \frac{\Omega(G')}{\Omega(G)} \right) = k_B \ln(1) = 0.$$
+A path in the family has pairwise distinct vertices.
 
-**IV. Depth Contradiction:** The self-loop generates zero distinguishable relational information ($\Delta S = 0$). Furthermore, evaluating the logical depth recurrence $d(v) \ge d(u) + 1$ on the self-loop edge $(u, u) \in E$ forces:
-$$d(u) \ge d(u) + 1 \implies d(u) > d(u),$$
-trapping the vertex in infinite static recursion without advancing logical time. $\square$
+**II. Inclusion in Both Directions**
 
-**Theorem 2.1.4** (Insufficiency of Standard Antisymmetry and Relational Completeness).
-The conventional algebraic condition of antisymmetry ($\forall u, v \in V, \; (u, v) \in E \land (v, u) \in E \implies u = v$) is strictly weaker than Axiom 1 and fails to preclude unphysical $k=1$ closed timelike curves. Strict asymmetry is logically equivalent to the conjunction of strict irreflexivity and antisymmetry:
+Put $G'=G\cup\{(u,u)\}$. Any simple path in $G$ uses edges of $G'$. Conversely, if a path in $G'$ used $(u,u)$, consecutive positions would have the same vertex $u$, contradicting pairwise distinctness. Thus its edges lie in $G$.
+
+**III. Entropy Difference**
+
+The families coincide, giving $\Omega(G')=\Omega(G)$. For positive count,
 
 $$
-\begin{aligned}
-\big(\forall u, v, \; (u, v) \in E \implies (v, u) \notin E\big) \iff & \big(\forall u, \; (u, u) \notin E\big) \\
-& \land \big(\forall u, v, \; (u, v) \in E \land (v, u) \in E \implies u = v\big).
-\end{aligned}
+k_B\log\Omega(G')-k_B\log\Omega(G)
+=k_B\log\frac{\Omega(G')}{\Omega(G)}
+=k_B\log 1=0 .
 $$
 
-*Proof.* We prove the insufficiency of standard antisymmetry and establish the algebraic biconditional:
-
-**I. Vacuous Satisfaction under Antisymmetry:** Standard antisymmetry operates as a conditional implication. Evaluating a reflexive self-loop $(u, u) \in E$ with $v = u$ yields:
-$$(u, u) \in E \land (u, u) \in E \implies u = u.$$
-Because both the antecedent and consequent evaluate to $\mathrm{True}$, the implication evaluates to $\mathrm{True} \implies \mathrm{True} \equiv \mathrm{True}$. Standard antisymmetry is therefore satisfied vacuously by self-loops, creating a loophole that permits length-1 closed timelike curves.
-
-**II. Constraint Failure:** By Lemma 2.1.2, a self-loop is a directed cycle $C_1$. By Lemma 2.1.3, it carries identically zero entropic weight ($\Delta S = 0$). Antisymmetry alone fails to enforce causal well-foundedness or thermodynamic irreversibility.
-
-**III. Forward Implication ($\implies$):** Assume the relation $E$ satisfies strict asymmetry: $\forall u, v, \; (u, v) \in E \implies (v, u) \notin E$.
-
-* **Derivation of Irreflexivity:** Setting $v = u$, if $(u, u) \in E$, asymmetry mandates $(u, u) \notin E$, producing the contradiction:
-  $$(u, u) \in E \land (u, u) \notin E \implies \mathrm{False}.$$
-  Therefore, strict irreflexivity holds: $\forall u \in V, \; (u, u) \notin E$.
-
-* **Derivation of Antisymmetry:** For distinct vertices $u \neq v$, if $(u, v) \in E$, asymmetry forces $(v, u) \notin E$. Consequently, the premise $(u, v) \in E \land (v, u) \in E$ is identically false, satisfying the antisymmetry implication vacuously.
-
-**IV. Reverse Implication ($\impliedby$):** Assume the relation $E$ satisfies strict irreflexivity ($\forall u, \; (u, u) \notin E$) and standard antisymmetry ($\forall u, v, \; (u, v) \in E \land (v, u) \in E \implies u = v$). Let $(u, v) \in E$.
-
-* **Distinctness of Endpoints:** If $u = v$, the edge $(u, u) \in E$ directly contradicts strict irreflexivity. Thus, all active edges satisfy $u \neq v$.
-
-* **Exclusion of Reciprocity:** If the reverse edge $(v, u) \in E$ were active, standard antisymmetry would require $u = v$, contradicting $u \neq v$. Therefore, $(v, u) \notin E$, establishing strict asymmetry.
-
-Type-theoretic validation is certified in Lean 4 (`antisymmetry_insufficient`, `asymmetry_implies_irreflexivity`, and `asymmetry_equiv_irreflexive_and_antisymmetric`, Supplement Appendix A, Part 1). $\square$
+Q.E.D.
 
 ## 2.2 Geometric Constructibility and Confluent Polygon Digestion
 
 Arbitrary edge insertions on an unconstrained graph destroy metric locality, collapsing the network into a non-spatial complete graph. In the framework of algebraic graph rewriting [8], Geometric Constructibility restricts local accretion to elementary simplicial units.
 
-**Definition 2.2.1** (Axiom 2: Geometric Constructibility).
-The kinematic admissibility of any edge accretion $G \to G \cup \{(u, v)\}$ is governed by two complementary rules:
+**Definition 2.2.1** (Candidate-Relative Geometric Constructibility).
 
-* **Clause A (Positive Simplicial Construction):** The formation of closed cycles is restricted exclusively to elementary **Geometric Quanta**, defined as directed 3-cycles $\partial \Delta_2 = \{(u, v), (v, w), (w, u)\}$. Accretion must close a compliant directed 2-path $v \to w \to u$ by inserting the return chord $(u, v)$.
-* **Clause B (Negative Path Uniqueness - PUC):** The chord $(u, v)$ across candidate 2-path $v \to w \to u$ is permissible if and only if there exists no pre-existing simple directed path from $v$ to $u$ of length $\ell \le 2$:
-$$\mathrm{PUC}(G; u, v, w) \iff (v, u) \notin E \land \big(\forall x \in V, \; (v, x) \in E \land (x, u) \in E \implies x = w\big).$$
+Let **Geometric Constructibility** constrain candidate edge additions by two distinct requirements.
+
+1. **Elementary closure:** A geometric addition is a return chord $(u,v)$ across a simple directed two-path $v\to w\to u$, creating the elementary directed triangle $v\to w\to u\to v$.
+2. **Candidate-relative uniqueness:** The candidate passes PUC precisely when there is no direct edge $(v,u)$ and no other intermediate vertex $x\ne w$ with $v\to x\to u$.
+
+$$
+\operatorname{PUC}(G;v,w,u)\ \Longleftrightarrow\
+(v,u)\notin E\ \land\
+\forall x\ne w,\ \neg\bigl((v,x)\in E\land(x,u)\in E\bigr).
+$$
+
+The candidate path itself is not an alternative path. Absence of the proposed chord, irreflexivity, asymmetry, and the causal-admission check remain additional requirements. This is a rule on proposals and their elementary closure, not a theorem that every larger simple cycle in a spatial graph is absent.
 
 **Lemma 2.2.2** (Geometric Quantum as the Minimal Stable Causal Closure).
 The directed 3-cycle $\gamma = \partial \Delta_2 = \{(u, v), (v, w), (w, u)\}$ is the unique minimal closed cycle compatible with Axiom 1, establishing the indivisible quantum of emergent spatial area.
@@ -349,92 +393,210 @@ The directed 3-cycle $\gamma = \partial \Delta_2 = \{(u, v), (v, w), (w, u)\}$ i
 
 Hence, $L_{\min} = 3$ is the unique minimal causal cycle length, serving as the elementary quantum of geometric area. $\square$
 
-**Lemma 2.2.3** (Principle of Unique Causality and Causal Parsimony).
-Let $\Pi_{\ell \le 2}(v, u)$ denote the set of simple directed paths from $v$ to $u$ of length $\ell \le 2$. The operation $\mathfrak{T}_{\mathrm{add}}(u, v)$ across 2-path $v \to w \to u$ is admissible if and only if $|\Pi_{\ell \le 2}(v, u)| = 1$ (consisting solely of $v \to w \to u$), and is excluded otherwise.
+**Lemma 2.2.3** (Principle of Unique Causality).
 
-*Proof.* We analyze the informational parsimony of the local neighborhood:
+Let $v\to w\to u$ be a simple directed two-path and let $\Pi_{\ell\le2}(v,u)$ contain all simple directed paths of length one or two from $v$ to $u$. Then the candidate passes PUC if and only if $|\Pi_{\ell\le2}(v,u)|=1$, with the sole path $v\to w\to u$ (Definition 2.2.1).
 
-**I. Initial State:** Let $G$ contain the mediated 2-path $P_1 = (v \to w \to u)$. Path $P_1$ encodes the causal precedence relation $v \prec u$ mediated through intermediate event $w$.
+*Proof.*
 
-**II. Proposed Operation:** Accretion of chord $e = (u, v)$ forms the direct path $P_2 = (v \to u)$ in reverse, while closing the directed 3-cycle $(v \to w \to u \to v)$.
+**I. Complete Short-Path Classification**
 
-**III. Information Analysis:** If a secondary path $P_3 = (v \to x \to u)$ ($x \neq w$) or a direct edge $(v, u)$ already exists, the causal channel $v \prec u$ is already multiply encoded. Adding $(u, v)$ would simultaneously close multiple 3-cycles sharing chord $(u, v)$, violating 2-manifold disk-homeomorphism.
+The construction uses candidate-relative geometric admission (Definition 2.2.1).
 
-**IV. Conclusion:** Enforcing $|\Pi_{\le 2}(v, u)| = 1$ prevents local causal redundancy and preserves simplicial manifold embedding. $\square$
-
-**Lemma 2.2.4** (Local Confluence of the Constructor / Diamond Property).
-Let $\mathcal{R}$ denote the rewrite rule governing chord addition. Let $G$ contain two distinct compliant 2-paths $P_1 = (v \to w \to u)$ and $P_2 = (w \to u \to x)$ sharing edge $(w, u) \in E$. Then applying $\mathcal{R}$ to $P_1$ preserves the compliance of $P_2$, and the resulting state is independent of application order ($G_{1,2} \equiv G_{2,1}$).
-
-*Proof.* Let $e_1 = (u, v) = \mathcal{R}(P_1)$ and $e_2 = (x, w) = \mathcal{R}(P_2)$.
-
-**I. Branch A Derivation:** Applying $\mathcal{R}(P_1)$ instantiates $E_A = E \cup \{ e_1 \} = E \cup \{ (u, v) \}$.
-*Preservation of $P_2$:* Edges $(w, u)$ and $(u, x)$ persist in $E_A$. Disrupting $P_2$'s uniqueness requires $(u, v)$ to form an alternative path $w \to \dots \to x$ of length $\le 2$. Since $(u, v)$ originates at $u$ and terminates at $v$, this requires a direct link $(v, x)$ or $v = x$. The condition $v = x$ implies $P_1 \cup P_2$ forms a 3-cycle in $G$, violating the premise that $P_1, P_2$ are open compliant paths. Thus, $P_2$ remains compliant in $G_A$, and subsequent addition of $e_2$ yields $E_{AB} = E \cup \{ (u, v), (x, w) \}$.
-
-**II. Branch B Derivation:** Applying $\mathcal{R}(P_2)$ instantiates $E_B = E \cup \{ e_2 \} = E \cup \{ (x, w) \}$. By exact dual symmetry, $P_1$ remains compliant in $E_B$, and subsequent addition of $e_1$ yields $E_{BA} = E \cup \{ (x, w), (u, v) \}$.
-
-**III. Convergence:** Because set union on finite sets is commutative:
-$$E_{AB} = E \cup \{ e_1, e_2 \} = E \cup \{ e_2, e_1 \} = E_{BA} \implies G_{1,2} \equiv G_{2,1}.$$
-The rewrite operations commute locally, establishing the diamond property (Lean 4 certified: `parallel_addition_commutes`, Supplement Appendix A, Part 5). $\square$
-
-**Lemma 2.2.5** (Chordlessness of Maximal Simple Cycles).
-Let $C = (v_0, v_1, \dots, v_{L-1}, v_0)$ be a simple directed cycle of maximal length $L = L_{\max}(G) \ge 4$ in $G$. Then $C$ is strictly chordless: no edge exists between non-adjacent vertices in $C$.
-
-*Proof.* We proceed by contradiction:
-
-**I. The Maximality Hypothesis:** Let $C = (V_C, E_C)$ have perimeter $L = L_{\max}(G) \ge 4$.
-
-**II. The Chord Assumption:** Suppose $C$ possesses an internal chord $e = (v_i, v_k) \in E \setminus E_C$. Non-adjacency along the perimeter requires:
-$$\text{dist}_C(v_i, v_k) \ge 2 \quad \text{and} \quad \text{dist}_C(v_k, v_i) \ge 2.$$
-
-**III. Topological Partition:** Chord $e = (v_i, v_k)$ partitions $C$ into two directed sub-cycles $C_1$ and $C_2$:
+For distinct $v,u$, every simple path of length at most two has exactly one of the forms
 
 $$
-\begin{aligned}
-E(C_1) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [k, i)_C\} \cup \{(v_i, v_k)\}, \quad L_1 = \text{dist}_C(v_k, v_i) + 1, \\
-E(C_2) &= \{(v_j, v_{(j+1) \bmod L}) \mid j \in [i, k)_C\} \cup \{(v_i, v_k)\}, \quad L_2 = \text{dist}_C(v_i, v_k) + 1.
-\end{aligned}
+(v,u),\qquad(v,x,u)\quad(x\notin\{v,u\}).
 $$
 
-**IV. Inequality Derivation:** The total cycle length is:
-$$L = \text{dist}_C(v_k, v_i) + \text{dist}_C(v_i, v_k) = (L_1 - 1) + (L_2 - 1) = L_1 + L_2 - 2.$$
-Applying $\text{dist}_C \ge 2$ gives:
-$$L_1 = L - \text{dist}_C(v_i, v_k) + 1 \le L - 2 + 1 = L - 1 < L_{\max},$$
-$$L_2 = L - \text{dist}_C(v_k, v_i) + 1 \le L - 2 + 1 = L - 1 < L_{\max}.$$
-Thus, $\max(L_1, L_2) \le L - 1 < L_{\max}$.
+The first exists exactly when $(v,u)\in E$. The second exists exactly when $(v,x),(x,u)\in E$. Different intermediate vertices give different vertex sequences.
 
-**V. Contradiction:** Chord $e$ decomposes $C$ into strictly smaller cycles, contradicting the premise that $C$ is an irreducible cycle of maximal length $L_{\max}$. Hence, all maximal simple cycles are chordless. $\square$
+**II. Cardinality Decomposition**
 
-**Lemma 2.2.6** (Lexicographic Potential Reduction via Deletion).
-Let $\Phi(G) = (L_{\max}(G), N_{L_{\max}}(G)) \in \mathbb{N} \times \mathbb{N}$ evaluate graph complexity under the standard lexicographic order $\prec_{\mathrm{lex}}$. Deleting an edge $e$ from a maximal cycle $C$ of length $L_{\max} \ge 4$ strictly reduces the potential: $\Phi(G \setminus \{e\}) \prec_{\mathrm{lex}} \Phi(G)$.
+Put $M(v,u)=\{x\notin\{v,u\}:(v,x),(x,u)\in E\}$. The two path classes are disjoint, so
 
-*Proof.* Let $G' = (V, E \setminus \{e\})$. Since $E' \subset E$, no new cycles are created ($\mathcal{C}(G') \subseteq \mathcal{C}(G) \setminus \{C\}$). We evaluate the two cases:
+$$
+|\Pi_{\ell\le2}(v,u)|=\mathbf1_{(v,u)\in E}+|M(v,u)|.
+$$
 
-* **Case A (Multiplicity Reduction):** If other cycles of length $L_{\max}$ exist in $G'$, the maximum length is unchanged ($L'_{\max} = L_{\max}$), but the multiplicity decrements:
-  $$N'_{L_{\max}} = N_{L_{\max}} - 1 < N_{L_{\max}}.$$
+The candidate supplies $w\in M(v,u)$ and hence $|M(v,u)|\ge1$.
 
-* **Case B (Length Reduction):** If $C$ was the unique cycle of maximal length ($N_{L_{\max}} = 1$), removing $e$ destroys all cycles of length $L_{\max}$, strictly decreasing the maximum cycle length:
-  $$L'_{\max} < L_{\max}.$$
+**III. Both Implications**
 
-In both cases, $(L'_{\max}, N'_{L_{\max}}) \prec_{\mathrm{lex}} (L_{\max}, N_{L_{\max}})$, establishing strict lexicographic descent. $\square$
+If PUC holds (Lemma 2.2.3), its first clause gives $\mathbf1_{(v,u)\in E}=0$ and its uniqueness clause gives $M(v,u)\subseteq\{w\}$. Together with $w\in M(v,u)$,
 
-**Lemma 2.2.7** (Net Complexity Decrease under Composite Parallel Updates).
-Let $\mathcal{S}_{\mathrm{step}} = \mathcal{O}_{\mathrm{del}} \circ \mathcal{O}_{\mathrm{add}}$ denote a composite update step comprising chordal addition followed by entropic deletion of perimeter edges from unreduced cycles. Then $\Phi(G_{\mathrm{next}}) \prec_{\mathrm{lex}} \Phi(G)$.
+$$
+M(v,u)=\{w\},\qquad |\Pi_{\ell\le2}(v,u)|=0+1=1.
+$$
 
-*Proof.* In Phase 1 ($\mathcal{O}_{\mathrm{add}}$), chords inserted across compliant 2-paths in chordless maximal cycles partition them into 3-cycles and sub-loops without creating cycles of length $> L_{\max}$, ensuring $\Phi(G_{\mathrm{add}}) \preceq_{\mathrm{lex}} \Phi(G)$. In Phase 2 ($\mathcal{O}_{\mathrm{del}}$), deleting perimeter edges from unreduced macro-cycles strictly reduces the potential by Lemma 2.2.6: $\Phi(G_{\mathrm{next}}) \prec_{\mathrm{lex}} \Phi(G_{\mathrm{add}})$. Composition yields $\Phi(G_{\mathrm{next}}) \prec_{\mathrm{lex}} \Phi(G)$. $\square$
+Conversely, if the path count is one, the already present candidate accounts for that one element. A direct edge would supply a second path, and an intermediate vertex $x\ne w$ would supply another distinct two-edge path. Both are excluded. Thus both PUC clauses hold.
 
-**Theorem 2.2.8** (Confluent Polygon Digestion into Elementary 2-Simplices).
-For every finite graph state $G_0$ containing simple directed cycles of length $L_{\max} \ge 4$, iterative application of the composite constructor $\mathcal{S}_{\mathrm{step}} = \mathcal{O}_{\mathrm{del}} \circ \mathcal{O}_{\mathrm{add}}$ deterministically transforms $G_0$ into a simplicial ground state $G^*$ where all closed cycles have length $L \le 3$, terminating in $\mathcal{O}(L_{\max})$ operational steps.
+**IV. Conclusion**
 
-*Proof.* We establish finite termination via well-founded induction:
+$$
+\boxed{\operatorname{PUC}(G;v,w,u)\Longleftrightarrow
+\Pi_{\ell\le2}(v,u)=\{(v,w,u)\}.}
+$$
 
-**I. Operational Accessibility:** By Lemma 2.2.5, every maximal cycle $L \ge 4$ is chordless, ensuring compliant 2-paths exist ($|\mathcal{O}_{\mathrm{add}}| \ge 1$).
+Q.E.D.
 
-**II. Monotonic Descent:** By Lemma 2.2.7, each composite update produces a strict lexicographic reduction:
-$$\Phi(G_0) \succ_{\mathrm{lex}} \Phi(G_1) \succ_{\mathrm{lex}} \Phi(G_2) \succ_{\mathrm{lex}} \dots$$
+**Lemma 2.2.4** (Frozen-Proposal Merge Order Invariance).
 
-**III. Well-Founded Termination:** The product order $(\mathbb{N} \times \mathbb{N}, \prec_{\mathrm{lex}})$ is well-founded and admits no infinite descending chains [3] (Lean 4 certified: `lexicographic_relation_wf` and `lexicographic_descent_admissible`, Supplement Appendix A, Part 2).
+Let legal proposals and their new heights be fixed from one input snapshot. Then merging the resulting directed edge-height pairs is independent of their accumulation order, with any reciprocal rejection evaluated on the same complete proposal set.
 
-**IV. Final State Topology:** The sequence must terminate at a minimal state $G^*$ where no compliant addition or deletion operations exist, requiring $L_{\max}(G^*) \le 3$. All closed cycles are elementary 2-simplices $\partial \Delta_2$. $\square$
+*Proof.*
+
+**I. Frozen Proposal Data**
+
+Let $B_1,B_2$ be finite sets of proposed directed edges with snapshot-assigned heights. Equal directed targets have the same source and the same snapshot incoming maximum, so their assigned heights agree (Definition 1.2.1). Thus their union is a well-defined edge-height relation.
+
+**II. Set Union Evaluation**
+
+For every pair $e$,
+
+$$
+e\in(E\cup B_1)\cup B_2
+\Longleftrightarrow e\in E\lor e\in B_1\lor e\in B_2
+\Longleftrightarrow e\in(E\cup B_2)\cup B_1.
+$$
+
+The existing heights are unchanged and the new heights agree by Section I, giving equality of the annotated merged graphs.
+
+**III. Complete-Set Reciprocal Filter**
+
+The retained set $B_{\mathrm{filt}}=\{(u,v)\in B:u\ne v,(v,u)\notin B\}$ depends only on $B=B_1\cup B_2$, which is equal under both accumulation orders. Therefore applying that same complete-set filter yields equal outputs (Lemma 2.2.4).
+
+Q.E.D.
+
+**Lemma 2.2.5** (Isolated-Cycle Initial Candidates).
+
+Let the input be exactly the isolated directed cycle $C_k$ with edges $i\to i+1\pmod k$, $k\ge4$. Then this initial maximal cycle is chordless and each of its $k$ perimeter two-paths passes candidate-relative PUC (Lemma 2.2.3).
+
+*Proof.*
+
+**I. Initial Edge Set**
+
+The proof uses the specified objects and conventions (Definition 2.2.1).
+
+The vertex set is $\mathbb Z/k\mathbb Z$ and $E_0=\{(i,i+1):i\in\mathbb Z/k\mathbb Z\}$. Each vertex has exactly one outgoing neighbor. A nonadjacent pair therefore has no edge in the induced cycle graph.
+
+**II. Short Paths**
+
+For the path $i\to i+1\to i+2$, distinctness follows from $k\ge4$. Its endpoints have no direct edge, because $i+2\not\equiv i+1\pmod k$. Any intermediate $x$ with $i\to x\to i+2$ must satisfy $x=i+1$, since this is the only outgoing neighbor of $i$.
+
+**III. PUC and Candidate Count**
+
+Thus the candidate is the unique path of length at most two between its endpoints. The return chord $(i+2,i)$ is absent initially, and each $i$ gives a distinct proposed chord. There are exactly $k$ such candidates (Lemma 2.2.5).
+
+Q.E.D.
+
+**Lemma 2.2.6** (Cycle-Potential Reduction by Maximal-Cycle Deletion).
+
+Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the state valuation $\Phi(G)$ (Section 2.3). Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
+
+*Proof.*
+
+**I. Cycle Families Before Deletion**
+
+Let $G=(V,E)$ have maximal simple-cycle length $L$ and $n_L$ cycles of that length (Section 2.3). Fix one maximal cycle $C$ and $e\in E(C)$. For each length $k$, define
+
+$$
+\mathcal C_k(G)=\{D\subseteq G:D\text{ is a simple directed cycle of length }k\},\qquad
+\mathcal D_k(e)=\{D\in\mathcal C_k(G):e\in E(D)\}.
+$$
+
+In particular $C\in\mathcal D_L(e)$, so $|\mathcal D_L(e)|\ge1$.
+
+**II. Exact Cycle-Set Identity**
+
+Deletion gives $G'=(V,E\setminus\{e\})$ (Section 1.5). If $D\in\mathcal C_k(G')$, all its edges lie in $E\setminus\{e\}$, so $D\in\mathcal C_k(G)$ and $e\notin E(D)$. Conversely, if $D\in\mathcal C_k(G)$ and $e\notin E(D)$, all its edges remain in $G'$, so $D\in\mathcal C_k(G')$. Thus
+
+$$
+\mathcal C_k(G')=\mathcal C_k(G)\setminus\mathcal D_k(e)
+\quad\Longrightarrow\quad
+|\mathcal C_k(G')|=|\mathcal C_k(G)|-|\mathcal D_k(e)|.
+$$
+
+No cycle of length greater than $L$ can appear, since every remaining cycle already belonged to $G$.
+
+**III. The Two Potential Cases**
+
+At length $L$,
+
+$$
+0\le|\mathcal C_L(G')|
+=n_L-|\mathcal D_L(e)|\le n_L-1<n_L.
+$$
+
+If this number is positive, then $L'_{max}=L$ and
+
+$$
+\Phi(G')=(L,n_L-|\mathcal D_L(e)|)<_{lex}(L,n_L)=\Phi(G).
+$$
+
+If it is zero, no length-$L$ cycle survives, and none longer exists. Thus $L'_{max}<L$; use $L'_{max}=0$ if no cycles remain. The first coordinate then gives $\Phi(G')<_{lex}\Phi(G)$ regardless of the second coordinate.
+
+$$
+\boxed{e\in E(C),\quad |C|=L_{max}(G)
+\ \Longrightarrow\ \Phi(G-e)<_{lex}\Phi(G).}
+$$
+
+Q.E.D.
+
+**Lemma 2.2.7** (Isolated Reduction Mutation Bound).
+
+Let the isolated-cycle benchmark perform its single chord-addition phase followed by deletion-only pruning of cycles longer than three. Then it uses at most $k$ additions and $2\cdot k$ deletions, and its final cycle potential is smaller than that of its initial $C_k$ (Lemma 2.2.5).
+
+*Proof.*
+
+**I. Finite Edge Budget**
+
+The input has $k$ edges. The frozen perimeter list has $k$ distinct proposed chords, so the addition phase leaves at most $2\cdot k$ edges.
+
+**II. Deletion Termination**
+
+Each pruning step selects an existing edge of a cycle longer than three and removes it. If $m_j$ is the current edge count, then $m_{j+1}=m_j-1$. Induction gives $m_j=m_0-j$. Since $m_j\ge0$, there can be at most $m_0\le2k$ deletions. The loop can stop only when no cycle longer than three remains.
+
+**III. Final Potential**
+
+The initial longest cycle has length $k\ge4$. The final graph has $L_{\max}\le3<k$. Hence its lexicographic cycle potential is strictly smaller regardless of its remaining cycle multiplicity. The separate maximal-cycle edge-deletion lemma supplies strict lexicographic descent when that more specific deletion choice is used (Lemma 2.2.6). The implementation's arbitrary long-cycle choice is certified here by edge count instead.
+
+**IV. Mutation Bound**
+
+$$
+N_{\mathrm{add}}\le k,\qquad N_{\mathrm{delete}}\le2k,\qquad
+N_{\mathrm{add}}+N_{\mathrm{delete}}\le3k.
+$$
+
+These are the claimed mutation and final-potential bounds (Lemma 2.2.7).
+
+Q.E.D.
+
+**Theorem 2.2.8** (Isolated Kinematic Cycle Reduction).
+
+Let the kinematic reduction benchmark start from an isolated directed cycle $C_k$, $k\ge4$, insert the frozen perimeter two-path chords once, and then delete an edge from a cycle longer than three until none remains. Then it terminates with $L_{\max}\le3$ after at most $3\cdot k$ edge mutations; for $k\ge5$ the output is asymmetric, while the unguarded four-cycle benchmark need not be.
+
+*Proof.*
+
+**I. Initial Accessibility and Merge**
+
+The isolated input has the $k$ PUC-compliant perimeter paths (Lemma 2.2.5). Its frozen proposal union has the stated accumulation-order property (Lemma 2.2.4).
+
+**II. Pruning and Termination**
+
+The maximal-cycle deletion identity is valid independently of chordlessness (Lemma 2.2.6). For the actual benchmark's arbitrary long-cycle choices, the decreasing edge budget gives termination, the $3\cdot k$ mutation bound and final $L_{\max}\le3$ (Lemma 2.2.7).
+
+**III. Reciprocal-Chord Cases**
+
+Two proposed chords $(i+2,i)$ and $(j+2,j)$ are reciprocal exactly when $j=i+2$ and $i=j+2$ modulo $k$. These equations imply $k\mid4$, so among $k\ge4$ only $k=4$ admits such a pair. No proposed chord is reciprocal to a perimeter edge for $k\ge4$. Thus for $k\ge5$ no two-cycle is created; deletions cannot create one later.
+
+**IV. Scope of the Conclusion**
+
+For $k\ge5$, absence of loops and reciprocal pairs together with $L_{\max}\le3$ leaves only directed three-cycles if any cycles remain. For $k=4$, the asserted stopping condition alone is $L_{\max}\le3$ (Theorem 2.2.8).
+
+Q.E.D.
+
+The benchmark is a kinematic reduction procedure, not the physical triangle-only stochastic scheduler. For the unguarded four-cycle case, the measured output has cycle lengths 2, 2, 3, 3 and therefore fails edge asymmetry even though its longest cycle has length three. Symmetric rejection of reciprocal proposals and selecting one proposal per opposing pair are different modifications; neither retains the original four-addition count automatically. The linear bound counts edge mutations, not cycle-enumeration runtime. Termination does not establish confluence or uniqueness of the final graph.
 
 Table 1: *Cycle Decomposition and Topological Digestion Scaling across Defect Lengths $k \in [4, 12]$ (all configurations terminate at simplicial ground state $L_{\max} = 3$).*
 
@@ -469,120 +631,222 @@ Restricting additions strictly to unique 2-paths ensures that every new 2-simple
 
 A foundational conceptual distinction must be maintained between the instantaneous spatial network and the historical causal poset:
 
-**Definition 2.3.1** (Dual-Graph Architecture).
-The physical state at discrete logical tick $t \in \mathbb{N}_0$ is represented by two coupled graphs:
+**Definition 2.3.1** (Spatial Graphs, Occurrence Records and Event Dependencies).
 
-* **The 3D Spatial State Graph $G_{\mathrm{space}}(t) = (V, E, H)$:** A directed graph where $V$ is the set of $N = |V|$ pre-geometric vertices, $E \subseteq V \times V$ is the active edge set, and $H: E \to \mathbb{N}_0$ records creation timestamps. The intensive directed 3-cycle density:
-  $$\rho(G) = \frac{N_3(G)}{N}, \qquad N_3(G) = |\mathcal{C}_3(G)|,$$
-  serves as the primary geometric order parameter measuring spatial area.
+Let the **Causal Graph Substrate** at logical tick $t$ be the active spatial configuration $G_t=(V,E_t,H_t)$, where $V$ is a fixed finite vertex set, $E_t\subseteq V\times V$ is irreflexive and asymmetric, and $H_t:E_t\to\mathbb N_0$ records immutable causal heights of the active edge occurrences. Directed spatial cycles are permitted; the chronological order belongs to the distinct creation-event structure.
 
-* **The 4D Causal History Poset $G_{\mathrm{event}} = (\mathcal{E}, \prec)$:** A strict partially ordered set whose elements $\mathcal{E}$ are elementary rewrite events (edge additions and deletions). Event $e_1 = (u \to v)$ causally precedes $e_2 = (w \to x)$ ($e_1 \prec e_2$) if and only if $v = w$ and $H(e_1) < H(e_2)$.
+A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The cumulative creation record $\mathcal E_t$ retains past occurrences after active deletion (Definition 4.1.2).
 
-**Definition 2.3.2** (Effective Influence as Time-Respecting Reachability).
-The **Effective Influence** relation $u \precsim_{\mathrm{eff}} v$ on $V$ holds if and only if there exists a simple directed path $\pi = (v_0, v_1, \dots, v_k)$ of length $k \ge 1$ with $v_0 = u, v_k = v$, possessing strictly increasing creation timestamps:
-$$H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{k-1}, v_k).$$
+Let the **Historical Category** $\mathbf{Hist}$ have objects given by cumulative creation-record sets $\mathcal E_t$ and morphisms given by their canonical inclusions. A record is $\omega=(u,v,b,h)$ with source, target, scheduler birth tick and causal height (Definition 1.2.1). Write
 
-*Remark on Transitivity in Temporal Reachability:* In temporal graphs with timestamped edges, reachability along strictly increasing paths is fundamentally non-transitive: two monotone paths $\pi_1 = (u \rightsquigarrow w)$ and $\pi_2 = (w \rightsquigarrow v)$ concatenate into a valid causal path if and only if the joining timestamps satisfy $H(\mathrm{last}(\pi_1)) < H(\mathrm{first}(\pi_2))$. Effective influence $\precsim_{\mathrm{eff}}$ represents unmediated single-signal reachability. Axiom 3 guarantees that this reachability relation is strictly acyclic (irreflexive and asymmetric), preventing closed timelike curves ($u \precsim_{\mathrm{eff}} v \land v \precsim_{\mathrm{eff}} u$), while the transitive closure $\precsim_{\mathrm{eff}}^+$ represents multi-stage asynchronous message relaying.
+$$
+\mathcal E_{t+1}=\mathcal E_t\cup A^{\mathrm{occ}}_{t+1},\qquad
+b(\omega)=\omega_3,\quad h(\omega)=\omega_4.
+$$
 
-**Lemma 2.3.3** (Strict Inequality of Timestamps from Causal Acyclicity).
-The timestamp relation along time-respecting channels must be strictly increasing ($H(e_i) < H(e_{i+1})$). Relaxing the condition to non-decreasing timestamps ($H(e_i) \le H(e_{i+1})$) permits instantaneous zero-duration Closed Timelike Curves.
+The initial records have $b=h=0$. New records have birth tick $t+1$ and height assigned from the pre-tick snapshot. For any fixed pair and birth tick the scheduler creates at most one record. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies which past creation is currently active. The cumulative spatial support is the projection
 
-*Proof.* Suppose equality $H(u, v) = H(v, w) = t$ is permitted. Under concurrent parallel updates, reciprocal paths formed at tick $t$ yield $A \precsim_{\mathrm{eff}} B$ and $B \precsim_{\mathrm{eff}} A$ for distinct vertices $A \neq B$. This violates strict asymmetry ($u \precsim_{\mathrm{eff}} v \implies \neg(v \precsim_{\mathrm{eff}} u)$). Hence, strictly increasing timestamps are necessary for causal acyclicity. $\square$
+$$
+\overline E_t=\{(u,v):\exists b,h,\ (u,v,b,h)\in\mathcal E_t\},\qquad
+\overline G_t=(V,\overline E_t).
+$$
 
-*Resolution of the Spatial Loop Paradox:* While $G_{\mathrm{space}}$ contains closed directed 3-cycles representing spatial area quanta, these structures do *not* constitute temporal loops in $G_{\mathrm{event}}$. Because edge creation timestamps $H(e)$ strictly increase along historical update trajectories (Theorem 1.2.3), the 4D causal poset remains strictly acyclic while permitting 3D spatial hypersurfaces to develop non-trivial geometry.
+The unlabeled support $\overline G_t$ is the cumulative spatial shadow of the creation history. It is not itself the occurrence dependency poset, and it does not identify different births of the same pair. A first-birth label on $\overline E_t$, if used, is not the current active height. Deletion records and the full state trajectory are additional data when required; the creation record alone is not defined to reconstruct every intermediate state.
+
+An inclusion $\iota_{t,s}:\mathcal E_t\hookrightarrow\mathcal E_s$, $t\le s$, has $\iota_{t,s}(\omega)=\omega$. Identities and composition are ordinary inclusion identities and composition, preserving all four coordinates exactly.
+
+**Definition 2.3.2** (Mediated Time-Respecting Influence).
+
+Let $uRv$ mean that a simple directed spatial path of length at least two joins $u$ to $v$ with strictly increasing consecutive causal heights. The vertex sequence has pairwise distinct vertices. Its nonempty transitive closure $R^+$ is formed from finite chains of such mediated influence steps; individual chronological paths need not concatenate into a simple chronological path.
+
+**Lemma 2.3.3** (Strict and Weak Height Filtering).
+
+Let $R_{\le}$ use the same simple paths of length at least two as $R$, with nondecreasing heights in place of strictly increasing heights. Then $R\subseteq R_{\le}$, and the inclusion can be strict even when both relations have acyclic closure.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+Both tests use the same underlying spatial path family.
+
+**II. Inclusion**
+
+For every witness of $uRv$, each comparison $h_i<h_{i+1}$ implies $h_i\le h_{i+1}$, giving $uR_{\le}v$.
+
+**III. Equal-Height Witness**
+
+In $a\xrightarrow{0}b\xrightarrow{0}c$, the only simple directed path of length at least two has heights $(0,0)$. Hence
+
+$$
+R=\varnothing,\qquad R_{\le}=\{(a,c)\}.
+$$
+
+Each closure is irreflexive. Acyclicity of the weak relation therefore permits equal heights along a mediated path.
+
+Q.E.D.
+
+The spatial triangle relation and the chronological dependency relation have different domains. The former is computed on the active graph. The latter uses immutable creation occurrences and increases along recorded supporting dependencies.
 
 ## 2.4 Axiom 3 (Acyclic Effective Causality) and Tiered Enforcement
 
-**Definition 2.4.1** (Axiom 3: Acyclic Effective Causality - AEC).
-The effective causal influence relation $\precsim_{\mathrm{eff}}$ on $V$ satisfies strict causal acyclicity:
+**Definition 2.4.1** (Acyclic Closure of Mediated Influence).
 
-* **Strict Irreflexivity:** $\forall u \in V, \; \neg(u \precsim_{\mathrm{eff}} u)$.
-* **Strict Asymmetry:** $\forall u \neq v, \; (u \precsim_{\mathrm{eff}} v) \implies \neg(v \precsim_{\mathrm{eff}} u)$.
-* **Acyclic Transitive Closure:** The transitive closure $\precsim_{\mathrm{eff}}^+$ is a strict partial order, containing zero causal cycles ($P_{\mathrm{CTC}} \equiv 0$).
+Let $R$ be the **Effective Influence** relation of mediated simple spatial paths with strictly increasing causal heights. **Acyclic Effective Causality** requires its nonempty transitive closure $R^+$ to be irreflexive:
 
-**Lemma 2.4.2** (Cycle Diameter Growth and Topological Blindness of Local Observers).
-Let the causal graph evolve under rewrite rule $\mathcal{R}$. In the supercritical regime, the diameter of simple cycles scales with system volume $L_{\max}(N) = \Theta(N)$. Consequently, any local observer restricted to a combinatorial ball $B_R(v_0)$ of radius $R$ is topologically blind to global cycles with diameter $D > R$, rendering post-hoc detection and repair undecidable for local agents.
+$$
+\forall v\in V,\ \neg(vR^+v).
+$$
 
-*Proof.* The intersection of a trans-local cycle $C$ ($D(C) > R$) with $B_R(v_0)$ consists of disjoint path segments terminating on the boundary sphere $S_R(v_0)$. Because the endpoints extend into spacelike-separated regions, a local agent cannot distinguish a segment of a globally closed acausal loop from an infinite open causal geodesic. $\square$
+Concatenation of finite $R$-chains makes $R^+$ transitive. If $uR^+v$ and $vR^+u$, concatenation would give $uR^+u$, so $R^+$ is asymmetric as well. The strict partial order in this axiom is $R^+$; the original time-respecting simple-path relation need not be transitive. The occurrence dependency order is a separate chronological relation on creation records.
 
-**Lemma 2.4.3** (Subcritical Branching Process Bound on Path Closure Without Expander Assumptions).
-Let $P_{\mathrm{err}}(L_{\mathrm{cut}})$ denote the probability that an acausal cycle of length $L > L_{\mathrm{cut}}$ evades a local forward search bounded by cutoff horizon $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ on any dynamic causal graph with maximum total degree $\Delta \le 3$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$) operating in the subcritical percolation regime $\rho < 1/b$. Then $P_{\mathrm{err}}$ satisfies:
-$$P_{\mathrm{err}}(L_{\mathrm{cut}}) \le \frac{(b\rho)^3}{1 - b\rho} N^{-\frac{\ln(1/(b\rho))}{\ln 2}} = \mathcal{O}(N^{-k}), \qquad k = \frac{\ln(1/(b\rho))}{\ln 2} > 1.$$
-At the homeostatic vacuum attractor $\rho^* \approx 0.037$, the suppression exponent evaluates unconditionally to $k \approx 3.75 > 1$.
+The bounded constructor guard evaluates a single increasing reverse witness in the old graph. A walk formulation and a simple-path formulation are equivalent at the same horizon when the endpoints differ and the direct forward bypass is absent. Erasing the edges between repeated occurrences of a vertex retains a subsequence of strictly increasing heights and cannot increase the terminal height. Repetition of the erasure gives a simple path of at least two edges. The Lean edge-list formulation omits the operational cutoff.
 
-*Proof.* We evaluate the geometric series over unobserved path lengths without topological expander assumptions:
+**Sequential overlap.** Let the four endpoints $v,w,u,x$ be distinct with $(v,x)\notin E$, both paths $v\to w\to u$ and $w\to u\to x$ pass PUC and the bounded reverse-witness guard, and the chord heights dominate old outgoing heights at their respective targets. Then both candidate admissions are preserved in either sequential order and the final active timestamped graph is the same.
 
-**I. Path Multiplicity and Persistence:** The number of self-avoiding directed paths of length $L$ originating from vertex $v$ on any graph with maximum total degree $\Delta \le 3$ is combinatorially bounded by $N_{\mathrm{paths}}(L) \le b^L$ (trivalent substrate, non-backtracking branching factor $b = \Delta - 1 \le 2$). In the subcritical regime, the probability of an active causal path of length $L$ propagating through $L$ consecutive unpinned chords scales as $P_{\mathrm{ext}}(L) = \rho^L$.
+**I. Candidate Paths and Source Maxima**
 
-**II. Worst-Case Loop Closure Bound (Zero Expander Assumptions):** For dynamic graphs undergoing stochastic rewrites, spectral gap stability cannot be asserted because the absorbing-state transition thins the substrate into a tree-like topology with $\sim 50\%$ leaves (Proposition 3.3.1), collapsing the spectral gap ($\lambda_2 \to 0$). We therefore adopt the most adversarial return bound possible: $P(v_L = u) \le 1$. The loop closure probability is strictly bounded by:
-$$P_{\mathrm{close}}(L) \le N_{\mathrm{paths}}(L) \cdot P_{\mathrm{ext}}(L) \cdot P(v_L = u) \le b^L \rho^L = (b\rho)^L.$$
-Because the substrate operates in the subcritical regime $\rho^* \approx 0.037 < 1/b = 0.5$, the effective branching parameter satisfies $\mu_{\mathrm{eff}} \equiv b\rho \le 2 \times 0.037 = 0.074 \ll 1$, guaranteeing exponential decay in path length $L$.
+Each candidate is supported by its specified unique two-path.
 
-**III. Tail Summation:** Summing over the uninspected horizon $L \ge L_{\mathrm{cut}} + 1$:
-$$P_{\mathrm{err}}(L_{\mathrm{cut}}) = \sum_{L = L_{\mathrm{cut}} + 1}^{\infty} (b\rho)^L = \frac{(b\rho)^{L_{\mathrm{cut}} + 1}}{1 - b\rho}.$$
+After adding $e_1$, the next candidate $e_2$ has support $w\to u\to x$. Any new competing two-path would use $e_1$ as its first edge leaving $w$ or its last edge entering $x$. The ends of $e_1$ are $u,v$, so both are impossible. The edges $(w,x),(x,w)$ remain absent, and no incoming edge at $x$ changes. Thus PUC and $h_2=1+\max_{\operatorname{In}(x)}H$ are preserved.
 
-**IV. Logarithmic Horizon Substitution:** Substituting $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3 \ge \log_2 N + 2$ yields:
-$$(b\rho)^{L_{\mathrm{cut}}} \le (b\rho)^2 (b\rho)^{\log_2 N} = (b\rho)^2 N^{-\frac{\ln(1/(b\rho))}{\ln 2}}.$$
-Substituting $b\rho \approx 0.074$ establishes polynomial suppression with exponent $k = \frac{\ln(1/0.074)}{\ln 2} \approx 3.75 > 1$. In the thermodynamic limit ($N \to \infty$), $P_{\mathrm{err}} \to 0$ unconditionally. $\square$
+After adding $e_2$, a competing path for $e_1$ would require $e_2$ to leave $v$ or enter $u$. Its ends are $x,w$, so neither occurs. The edges $(v,u),(u,v)$ and the incoming heights at $u$ are unchanged, preserving PUC and $h_1$.
 
-*Remark on Tier Separation and Global Protection.* The local forward BFS (`pre_check_aec`, Tier 2) is strictly an $\mathcal{O}(\log N)$ algorithmic sieve to accelerate simulation throughput. Absolute global causal acyclicity ($P_{\mathrm{CTC}} \equiv 0$) does not depend on search horizons or graph spectral gaps; it is guaranteed unconditionally by constructor timestamp monotonicity (**Tier 1**, Theorem 2.4.4; Lean 4 certified: `edge_monotone_no_causal_cycle`).
+**II. Reverse Witnesses**
 
-**Theorem 2.4.4** (Tiered Causal Enforcement and Impossibility of Post-Hoc Repair).
-Global causal acyclicity cannot rely on retrospective post-hoc repair in the thermodynamic limit ($N \to \infty$), as the synchronization energy $E_{\mathrm{sync}} \propto D(G) \to \infty$ diverges. Causal acyclicity is guaranteed through a two-tier architecture:
+A strictly increasing witness from $w$ to $x$ using $e_1$ reaches $v$ at height $h_1$. Since $v\ne x$, its next edge must leave $v$ with height strictly greater than $h_1$, excluded by dominance. Thus any witness against $e_2$ was already present. In the other order, a witness from $v$ to $u$ using $e_2$ must leave $w$ on an edge of height strictly greater than $h_2$, also excluded. The common vertex set keeps the cutoff fixed.
 
-* **Tier 1 (Exact Invariant):** The constructor timestamp recurrence $H(e_{\mathrm{new}}) = 1 + \max_{(x, u)\in E} H(x, u)$ enforces strict edge-monotonicity, guaranteeing that the causal poset is a DAG (Lean 4 certified: `edge_monotone_no_causal_cycle`, Supplement Appendix A, Part 7).
-* **Tier 2 (Operational Sieve):** Discrete simulations deploy a forward monotonic Breadth-First Search (`pre_check_aec`, Supplement Appendix C, Section C.2 & C++ in Appendix B) with cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$, exploring active causal paths in $\mathcal{O}(|V| + |E| \cdot \Delta H)$ time.
+**III. Equality of Active Outputs**
 
-Table 2: *Computational Performance and Causal Verification Benchmarks across Graph Scales.*
+Both branches retain $E\cup\{e_1,e_2\}$ and assign $h_1,h_2$ to the same respective edges, leaving $H$ unchanged on $E$. The active outputs are equal.
 
-| Graph Size $N$ | Cutoff Horizon $L_{\mathrm{cut}}$ | Visited States / Move | Global Tarjan Search Latency | Local Monotonic BFS Latency | Theoretical Error Bound $P_{\mathrm{err}}$ | Observed Acausal Loops |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **$100$** | $9$ | $14.2 \pm 3.1$ | $4.8\,\mu\text{s}$ | $\mathbf{0.08}\,\mu\text{s}$ | $< 10^{-6}$ | **$0 / 100,000$ ($0.0\%$)** |
-| **$1,000$** | $12$ | $28.6 \pm 5.4$ | $52.1\,\mu\text{s}$ | $\mathbf{0.14}\,\mu\text{s}$ | $< 10^{-9}$ | **$0 / 100,000$ ($0.0\%$)** |
-| **$10,000$** | $16$ | $46.8 \pm 8.2$ | $580.4\,\mu\text{s}$ | $\mathbf{0.21}\,\mu\text{s}$ | $< 10^{-12}$ | **$0 / 100,000$ ($0.0\%$)** |
+Q.E.D.
 
-The monotonic forward BFS operates in polynomial time $\mathcal{O}(|V| + |E| \cdot \Delta H)$, achieving a $2{,}700\times$ speedup over global topological re-sorting at $N = 10,000$. The "0 / 100,000 observed acausal loops" metric was verified by benchmarking `pre_check_aec` decisions against an independent full topological sort (Kahn's algorithm) executed on the full graph across $10^5$ random dynamic graph updates, yielding $100\%$ concordance (0 discrepancies).
+**Full batch criterion.** Let old $R$ be acyclic, with every retained new chord's height dominating the old outgoing heights at its target. The final $R$ is acyclic exactly when its full closure has no target diagonal, with the pre-deletion test sufficient and the two-chord sequential diamond also acyclic when both targets are old $R$-sinks.
 
-## 2.5 Orthogonal Independence of the Axiom System
+**I. Terminal Localization**
 
-We establish that Axioms 1, 2, and 3 form an irreducible, non-redundant axiomatic foundation where each axiom is logically orthogonal to the others.
+The old and final relations are computed from simple increasing witnesses.
 
-**Theorem 2.5.1** (Mutual Logical Independence of Axioms 1, 2, and 3).
-The three constructive axioms are pairwise and mutually independent: no subset of axioms entails the remaining axiom.
+Any final mediated pair absent from the old $R$ has a witness using a new edge. After any new edge the next edge, if present, must have strictly greater height. Dominance excludes an old edge at that join. Thus all edges from the first new edge onward are new, and the witness ends at a batch target.
 
-*Proof.* We establish independence through three constructive orthogonal countermodels:
+**II. Diagonal Test**
 
-**I. Independence of Axiom 2 from Axiom 1 ($\text{Ax1} \nRightarrow \text{Ax2}$):** Let $G_A = (V, E)$ be a chordless directed 4-cycle with vertex set $V = \{A, B, C, D\}$ and edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$.
+A directed cycle of final mediated pairs must contain a pair absent from the old acyclic relation. By localization the cycle visits a batch target, so that target appears on the diagonal of the full final closure. Conversely any target diagonal is a nonempty closed relation walk. A deletion only removes witnesses, hence the pre-deletion test is sufficient.
 
-* **Axiom 1 Holds:** Every edge connects distinct vertices ($\forall v, \; (v, v) \notin E$), satisfying strict irreflexivity. No reciprocal edges exist ($(u, v) \in E \implies (v, u) \notin E$), satisfying strict asymmetry.
+**III. Two Old Sinks**
 
-* **Axiom 2 Fails:** Axiom 2 mandates that all closed cycles constitute elementary 3-cycle geometric quanta ($L_{\min} = 3$). The graph $G_A$ contains an irreducible 4-cycle ($L_{\min} = 4 > 3$), violating Geometric Constructibility.
+For the sequential overlap, take chords $(u,v)$ and $(x,w)$ across $v\to w\to u$ and $w\to u\to x$, neither chord can directly follow the other since $\{v,w\}$ and $\{u,x\}$ are disjoint. Thus a new witness uses only one new edge, at its end. The only possible new pair leaving $v$ would end at $w$, since $R$ is irreflexive. Such a witness must start with an old increasing path from $v$ to $x$, of length at least two because $(v,x)\notin E$. That would give $vRx$ in the old graph, contrary to the sink assumption. So $v$ remains a sink. Any new pair leaving $w$ must end at $v$. No cycle can visit either target.
 
-Thus, Axiom 1 does not entail Axiom 2.
+Q.E.D.
 
-**II. Independence of Axiom 1 from Axiom 2 ($\text{Ax2} \nRightarrow \text{Ax1}$):** Let $G_B = C_3 \cup \{(X, X)\}$ be the disjoint union of a valid 3-cycle $C_3 = \{(A, B), (B, C), (C, A)\}$ and an isolated reflexive self-loop $(X, X)$.
+**First tick on a graded substrate.** Let every old edge have height $h$ and raise a vertex grading by one, and let a batch of elementary return chords have height $h+1$. The mediated closure after the tick is acyclic.
 
-* **Axiom 2 Holds:** The cycle structure consists exclusively of the elementary 2-simplex geometric quantum $C_3$ with minimal cycle length $L_{\min} = 3$.
+**I. Height and Grading Changes**
 
-* **Axiom 1 Fails:** The reflexive edge $(X, X)$ violates strict irreflexivity.
+An elementary chord closes a directed two-path in the frozen graph.
 
-Thus, Axiom 2 does not entail Axiom 1.
+Every candidate chord $u\to v$ closes a two-path $v\to w\to u$ and has at least one old incoming edge at $u$. Its source maximum is $h$, so its height is $h+1$. For the grading $d$,
 
-**III. Independence of Axiom 3 from Axioms 1 and 2 ($\text{Ax1} \land \text{Ax2} \nRightarrow \text{Ax3}$, The Bowtie Paradox):** Let $G_C = (V, E, H)$ be a 4-vertex configuration with $V = \{A, B, C, D\}$, edge set $E = \{(A, B), (B, C), (C, D), (D, A)\}$, and creation timestamp mapping:
-$$H(A, B) = 1, \quad H(B, C) = 2, \quad H(C, D) = 3, \quad H(D, A) = 4.$$
+$$
+d(u)=d(w)+1=d(v)+2,\qquad d(v)-d(u)=-2.
+$$
 
-* **Axiom 1 Holds:** All active edges connect distinct vertices (irreflexive) and contain no reciprocal edge pairs (asymmetric).
+**II. Mediated Witness.** Every increasing witness of length at least two uses exactly the two heights $h<h+1$. Its first edge raises the grading by one and its second lowers it by two. Thus $aRb$ implies $d(b)=d(a)-1$ in the merged graph, and the same implication holds after deletions.
 
-* **Axiom 2 Holds:** The graph contains no 3-cycles ($N_3 = 0$), satisfying Clause A. All directed paths of length $\ell \le 2$ between vertex pairs are unique, satisfying Clause B ($\text{PUC} \equiv \mathrm{True}$).
+**III. Exclusion of Closure Diagonals**
 
-* **Axiom 3 Fails (Causal Paradox):**
-  * The forward path $\pi_1 = (A \xrightarrow{H=1} B \xrightarrow{H=2} C)$ has strictly increasing timestamps ($1 < 2$), establishing causal influence $A \le C$.
-  * The return path $\pi_2 = (C \xrightarrow{H=3} D \xrightarrow{H=4} A)$ has strictly increasing timestamps ($3 < 4$), establishing causal influence $C \le A$.
-  * By transitivity of effective influence:
-    $$(A \le C) \land (C \le A) \implies A \le A \quad \text{and} \quad (A \le C \land C \le A \text{ for } A \neq C),$$
-    which directly violates strict partial order irreflexivity $\neg(u \le u)$ and global asymmetry ($u \le v \implies \neg(v \le u)$).
+A chain of $m\ge1$ mediated pairs from $a$ to $b$ has $d(b)=d(a)-m$. It cannot return to $a$. Hence the final $R^+$ is irreflexive.
 
-Because $G_C$ strictly satisfies Axioms 1 and 2 while catastrophically violating Axiom 3, Axiom 3 cannot be deduced from local rules. Global causal consistency requires autonomous axiomatic enforcement. $\square$
+Q.E.D.
+
+For contrast, a uniform-height directed six-cycle retains all six height-one return chords. Its mediated pairs run from residue $i$ to $i-1$, so its closure has a diagonal. The cutoff estimate for a missed single reverse witness assumes a uniform bound $p<1/4$ on each successive timestamp comparison on a fixed degree-three support. Counting paths and sites gives the bound $18N(2p)^{L_{\mathrm{cut}}}/(1-2p)$ per tick. A repair cost bound separately assumes ambient communication span and irreversible erasure. If the repair requires at least $D$ hops and $b$ erased bits, with the stated additive costs, then $W\ge\epsilon_{\mathrm{hop}}D+b k_BT_c\log 2$.
+
+
+## 2.5 Independence of the Axiom Tests
+
+**Theorem 2.5.1** (Mutual Independence on the Specified Raw Graph Domain).
+
+The following table gives the four predicate values on a raw graph universe allowing loops and reciprocal pairs. The static diagnostic requires that all simple cycles of length at least two be triangles and that each simple two-path be unique among paths of length at most two. The constructive predicate starts from a base with no such cycles and the same two-path uniqueness, then accretes candidate-relative PUC chords at constructor heights without creating longer cycles.
+
+*Proof.*
+
+| Graph | Axiom 1 | Static geometry | Constructive accretion | Axiom 3 |
+| --- | --- | --- | --- | --- |
+| Uniform-height outward tree | True | True | True | True |
+| Uniform-height directed four-cycle | True | False | False | True |
+| Triangle and isolated loop | False | True | True | True |
+| Five-vertex butterfly | True | True | True | False |
+
+The outward tree is a permitted base and has empty mediated relation at uniform height.
+
+**I. Domain and Objects**
+
+Both geometric tests are evaluated on the raw graph universe.
+
+**II. Causal Predicates**
+
+With residues modulo four, $E_A=\{(i,i+1):0\le i<4\}$. No edge is a loop and no reverse edge is present. Any path of at least two edges has successive heights $0,0$, so $R(G_A)=\varnothing$ and $R(G_A)^+=\varnothing$.
+
+**III. Geometric Predicates**
+
+The perimeter is a simple directed cycle of length four. It violates the static cycle condition. A constructive base has no such cycle, and each constructive addition preserves its absence by the accretion rule. Induction over the addition count excludes $G_A$ from the constructive class.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The raw graph universe permits an isolated loop before the tests are applied.
+
+**II. Static and Constructive Geometry**
+
+Use edges $a\to b$, $b\to c$, $c\to a$ at heights $0,0,1$ and a loop $z\to z$. The triangle is the only simple cycle of length at least two. Each triangle vertex has one simple outgoing two-path with no competing path of length one or two. The isolated loop supplies no simple two-path. For the constructive witness start with $a\to b\to c$ and the isolated loop. Adding $(c,a)$ closes the unique supported triangle at height $1+H(b,c)=1$ and creates no longer cycle.
+
+**III. Causal Predicates**
+
+The loop violates irreflexivity. The triangle's two-edge height lists are $(0,0),(0,1),(1,0)$, so $R(G_B)=\{(b,a)\}$ and its closure has no diagonal.
+
+Q.E.D.
+
+**I. Static Conditions**
+
+The butterfly is tested under both raw geometric predicates.
+
+The six edges have distinct endpoints and no reciprocal partners. Any simple cycle is confined to one of the two triangles meeting at $Z$, since changing triangles and returning would repeat $Z$. For paths entering $Z$ from $A$ or $C$, their distinct two-step endpoints are $D$ and $B$. The remaining two-paths are $Z\to D\to C$, $Z\to B\to A$, $D\to C\to Z$, and $B\to A\to Z$. The listed endpoint pairs are distinct and lack direct bypass edges.
+
+**II. Accretion**
+
+Start with $A\to Z$, $Z\to D$, $D\to C$, $Z\to B$. This base is acyclic and its simple two-paths are unique without bypasses. The candidate $C\to Z$ closes $Z\to D\to C$ at height $1+3=4$. The candidate $B\to A$ then closes $A\to Z\to B$ at height $1+5=6$. Each has unique support, and each added cycle is its triangle, since a simple cycle cannot pass twice through $Z$.
+
+**III. Mediated Cycle**
+
+The simple paths
+
+$$
+A\xrightarrow{1}Z\xrightarrow{2}D,\qquad
+D\xrightarrow{3}C\xrightarrow{4}Z\xrightarrow{5}B\xrightarrow{6}A
+$$
+
+give $A R D$ and $D R A$. Therefore $(A,A)\in R^+$.
+
+Q.E.D.
+
+**Raw transition proposals.** The transition tests use the enlarged domain of specified raw proposals, including malformed supporting paths or pre-states with a loop.
+
+**I. Failure of Geometric Admission**
+
+Geometric admission evaluates the candidate-relative two-path test.
+
+On $0\xrightarrow{0}1\xrightarrow{0}2\xrightarrow{0}3$ propose $(3,0)$ at height one with specified middle vertex $1$. The edge $(1,3)$ is absent, so the support fails. The added edge produces no loop or reciprocal pair. The reverse path has equal old heights, and the output has $R=\{(2,0)\}$, so both causal tests pass.
+
+**II. Failure of Axiom 1**
+
+On $0\xrightarrow{0}1\xrightarrow{0}2$ with an isolated height-zero loop at $3$, propose $(2,0)$ at height one. The support is unique, the old reverse path has equal heights, and $R$ of the output is $\{(1,0)\}$. The isolated loop remains, so Axiom 1 fails.
+
+**III. Failure of the Causal Tests**
+
+Use $A\xrightarrow{1}Z\xrightarrow{2}D\xrightarrow{3}C\xrightarrow{4}Z\xrightarrow{5}B$ and propose $(B,A)$ at height six. The only simple two-path from $A$ to $B$ is $A\to Z\to B$ and $(A,B)$ is absent. The chord is neither a loop nor reciprocal. The reverse witness has $1<5<6$, so it fails the bounded test. In the output, $A\xrightarrow{1}Z\xrightarrow{2}D$ and $D\xrightarrow{3}C\xrightarrow{4}Z\xrightarrow{5}B\xrightarrow{6}A$ give $A R D R A$, violating the closure test.
+
+Q.E.D.
 
 # 3. Object Model (Architecture)
 
@@ -590,64 +854,140 @@ The pre-geometric substrate $G_0$ is uniquely deduced from the kinematic axioms 
 
 ## 3.1 Vacuum is a Finite Rooted Tree
 
-**Lemma 3.1.1** (Causal Well-Foundedness and Vertex Set Finitude).
-Let the pre-geometric ground state possess an effective causal influence relation $\le$ satisfying Axiom 3 (Acyclic Effective Causality). Then the vertex set $V_0$ is finite ($|V_0| < \infty$), and infinite descending causal chains are excluded.
+**Initial-state premises.** Let **Vacuum Topology** denote the following initial-state class, specified before geometric nucleation. A designated vertex $r$ has indegree zero; every vertex is reachable from $r$ by a directed path of length at most $D<\infty$; every vertex has at most $B<\infty$ children; and every non-root vertex has indegree at most one. These are independent initial-state premises, including causal unity, a finite horizon and non-reconvergence.
 
-*Proof.* We proceed by order-theoretic contradiction on causal well-foundedness:
+The logical depth $d(v)$ is the shortest root-path length. Once uniqueness of root paths is established, $d(v)$ is their unique length. The root has depth zero, and parity is $\pi(v)=d(v)\bmod2$. The parity sets are $V_{even}=\{v:d(v)\equiv0\pmod2\}$ and $V_{odd}=\{v:d(v)\equiv1\pmod2\}$. Tree sparsity means $|E_0|=|V_0|-1$. The initialized causal heights satisfy $H_0(e)=0$ (Definition 1.2.1). No deduction of non-reconvergence from the length-two PUC predicate is included in this definition.
 
-**I. Axiomatic Premises:** By Axiom 3, effective causal influence $\le$ constitutes a strict partial order on $V_0$. A strict partial order satisfies well-foundedness if and only if every non-empty subset $S \subseteq V_0$ contains a minimal element with respect to $\le$.
+**Lemma 3.1.1** (Conditional Finiteness of the Initial Vertex Set).
 
-**II. Infinite Descending Chain Construction:** Suppose the vertex set is infinite ($|V_0| = \infty$). This permits the construction of an infinite strictly descending causal chain:
-$$\dots \prec v_n \prec \dots \prec v_2 \prec v_1 \prec v_0.$$
-Such a chain admits no minimal element in the subset $S_{\mathrm{chain}} = \{v_n \mid n \in \mathbb{N}_0\}$, directly violating well-foundedness.
+Let every vertex be reachable from $r$ within depth $D$ and let every vertex have at most $B$ children, with $B,D$ finite (Section 3.1). Then $|V_0|\le\sum_{j=0}^{D}B^j<\infty$.
 
-**III. Conclusion:** To guarantee a well-defined causal origin and well-founded logical time progression, the initial vertex set and edge set must be strictly finite: $|V_0| < \infty$ and $|E_0| < \infty$. $\square$
+*Proof.*
 
-**Lemma 3.1.2** (Exclusion of Self-Loops, Reciprocity, and Cycles).
-The initial vacuum state $G_0$ contains no directed cycles of any length $L \ge 1$.
+**I. Root-Path Levels**
 
-*Proof.* We evaluate cycle lengths $L \in \mathbb{N}_{\ge 1}$ across the configuration space:
+The proof uses the specified objects and conventions (Section 3.1).
 
-**I. Length $L = 1$ (Self-Loops):** A reflexive edge $(v, v) \in E_0$ induces $v \le v$, directly violating strict irreflexivity $\forall u, \; (u, u) \notin E$ (Axiom 1).
+Let $L_j=\{v:d(v)=j\}$, where $d(v)$ is the shortest root-path length. Root reachability and the horizon give
 
-**II. Length $L = 2$ (Instantaneous Reciprocity):** A reciprocal edge pair $(u, v), (v, u) \in E_0$ induces $(u \le v) \land (v \le u)$, which under antisymmetry forces $u = v$, violating strict asymmetry $\forall u \neq v, \; (u, v) \in E \implies (v, u) \notin E$ (Axiom 1).
+$$
+V_0=\bigcup_{j=0}^{D}L_j,\qquad L_i\cap L_j=\varnothing\ (i\ne j),\qquad L_0=\{r\}.
+$$
 
-**III. Length $L \ge 3$ (Directed Cycles):** Assume $G_0$ contains a closed directed cycle $C = (v_0, v_1, \dots, v_{L-1}, v_0)$. By the monotonicity of creation timestamps (Lemma 1.2.3), timestamps strictly increase along any directed path:
-$$H(v_0, v_1) < H(v_1, v_2) < \dots < H(v_{L-1}, v_0).$$
-By transitivity of $<$, this establishes $H(v_0, v_1) < H(v_{L-1}, v_0)$. However, identifying $v_L = v_0$ requires $H(v_{L-1}, v_0) \in \mathrm{In}(v_0)$, forcing the outgoing timestamp to satisfy:
-$$H(v_0, v_1) \ge 1 + H(v_{L-1}, v_0) > H(v_{L-1}, v_0).$$
-Combining both inequalities yields the strict contradiction $H(v_0, v_1) < H(v_0, v_1)$.
+Every vertex of $L_{j+1}$ has a shortest root path whose preceding vertex belongs to $L_j$.
 
-**IV. Conclusion:** The initial ground state $G_0$ contains no directed cycles of any length, establishing that $G_0$ is strictly a Directed Acyclic Graph (DAG) with infinite undirected girth. $\square$
+**II. Level Bound**
+
+At most $B$ outgoing neighbors are available per vertex, so $|L_{j+1}|\le B|L_j|$. For $j=0$, $|L_0|=1=B^0$. If $|L_j|\le B^j$, then
+
+$$
+|L_{j+1}|\le B|L_j|\le B\,B^j=B^{j+1}.
+$$
+
+**III. Summation**
+
+The levels are disjoint and finite. Hence
+
+$$
+|V_0|=\sum_{j=0}^{D}|L_j|\le\sum_{j=0}^{D}B^j<\infty.
+$$
+
+For $B=1$ the bound is $D+1$; for $B>1$ it is $(B^{D+1}-1)/(B-1)$. If $B=0$, root reachability leaves only $r$ (Lemma 3.1.1).
+
+Q.E.D.
+
+**Lemma 3.1.2** (Acyclicity from Root Reachability and Non-Reconvergence).
+
+Let every vertex be reachable from an indegree-zero root and let every non-root vertex have indegree at most one (Section 3.1). Then $G_0$ contains no directed cycle.
+
+*Proof.*
+
+**I. A Hypothetical Cycle**
+
+The proof uses the specified objects and conventions (Section 3.1).
+
+Suppose a directed cycle exists. Removing repeated interior portions gives a simple directed cycle $C$. The root does not belong to $C$, since each cycle vertex has an incoming perimeter edge whereas $d_{\mathrm{in}}(r)=0$.
+
+**II. First Entry from the Root**
+
+Choose a root path ending on $C$ and let $z$ be its first cycle vertex. Its preceding vertex $y$ lies outside $C$. Let $x$ be the cycle predecessor of $z$. Then
+
+$$
+y\notin V(C),\qquad x\in V(C),\qquad y\ne x,\qquad
+(y,z),(x,z)\in E_0.
+$$
+
+**III. Contradiction**
+
+The two distinct incoming neighbors give $d_{\mathrm{in}}(z)\ge2$. Since $z\ne r$, non-reconvergence gives $d_{\mathrm{in}}(z)\le1$. Therefore
+
+$$
+2\le d_{\mathrm{in}}(z)\le1,
+$$
+
+a contradiction. No directed cycle exists (Lemma 3.1.2).
+
+Q.E.D.
 
 **Lemma 3.1.3** (Causal Unity and Weak Connectivity).
-The initial vacuum graph $G_0$ is weakly connected; disconnected configurations are excluded by relational maximum entropy.
 
-*Proof.* We evaluate the automorphism symmetry of multi-component configurations:
+Let every vertex of $G_0$ be reachable from the designated root (Section 3.1). Then the underlying undirected graph is connected.
 
-**I. Multi-Component Hypothesis:** Suppose $G_0$ comprises $m \ge 2$ disconnected weakly connected components $C_1, C_2, \dots, C_m$, such that no directed or undirected path connects distinct components.
+*Proof.*
 
-**II. Symmetry Inflation:** The global automorphism group of the disconnected union evaluates to:
-$$|\operatorname{Aut}(G_0)| = \left( \prod_{i=1}^m |\operatorname{Aut}(C_i)| \right) \cdot m!.$$
-The permutation factor $m!$ represents an unphysical symmetry inflation corresponding to mutually non-interacting causal universes.
+**I. Two Arbitrary Vertices**
 
-**III. Relational Unity:** Maximizing relational information and requiring universal causal reachability from a common origin excludes disconnected configurations, restricting the vacuum to a single weakly connected component ($m = 1$). $\square$
+The proof uses the specified objects and conventions (Section 3.1).
 
-**Lemma 3.1.4** (Principle of Unique Causality and Exact Tree Sparsity).
-The edge set cardinality of the weakly connected DAG $G_0$ satisfies exact tree sparsity: $|E_0| = |V_0| - 1$.
+Let $u,v\in V_0$. Root reachability gives directed paths $p:r\leadsto u$ and $q:r\leadsto v$.
 
-*Proof.* We evaluate edge density against path uniqueness constraints:
+**II. An Undirected Walk**
 
-**I. Graph-Theoretic Sparsity Bound:** In any weakly connected graph on $N = |V_0|$ vertices, the edge count satisfies $|E_0| \ge N - 1$. The equality $|E_0| = N - 1$ holds if and only if the underlying undirected graph is a tree.
+Forgetting orientation makes both paths undirected walks. Reversing $p$ and following $q$ yields
 
-**II. Undirected Cycle Pathology:** If $|E_0| > N - 1$, $G_0$ necessarily contains undirected cycles. In a directed DAG, an undirected cycle requires at least one of two configurations:
+$$
+u\leadsto r\leadsto v.
+$$
 
-* Multiple in-edges converging onto a single vertex ($d_{\mathrm{in}}(v) \ge 2$), creating converging causal histories.
-* Multiple alternative directed paths connecting a pair of vertices, creating redundant parallel causal channels.
+The joined walk has finite length $\ell(p)+\ell(q)$. If a vertex repeats, deletion of the segment between two occurrences preserves the endpoints and shortens the walk. Repetition removal terminates at an undirected path.
 
-**III. PUC Exclusion:** By Axiom 2 Clause B (Principle of Unique Causality), candidate rewrite sites require unique paths of length $\ell \le 2$. Any non-zero redundancy density $\rho_{\mathrm{red}} = (|E_0| - N + 1)/N > 0$ reduces the fraction of compliant interaction sites by $P_{\mathrm{fail}} \approx 1 - \mathrm{e}^{-\rho_{\mathrm{red}}}$.
+**III. Connectivity**
 
-**IV. Conclusion:** Maximizing the unconstrained constructive potential of the vacuum requires $\rho_{\mathrm{red}} = 0$, fixing the edge cardinality to exact tree sparsity: $|E_0| = N - 1$. $\square$
+Every pair $u,v$ is joined by an undirected path. Thus $G_0$ is weakly connected (Lemma 3.1.3).
+
+Q.E.D.
+
+**Lemma 3.1.4** (Exact Tree Sparsity from Unique Ancestry).
+
+Let $G_0$ be finite, root-reachable and non-reconvergent with indegree-zero root (Section 3.1). Then every non-root vertex has indegree one and $|E_0|=|V_0|-1$.
+
+*Proof.*
+
+**I. Lower and Upper Indegree Bounds**
+
+For $v\ne r$, a root path has positive length, so its final edge is incoming to $v$. Therefore $d_{\mathrm{in}}(v)\ge1$. Non-reconvergence supplies the opposite bound, giving
+
+$$
+1\le d_{\mathrm{in}}(v)\le1,\qquad d_{\mathrm{in}}(v)=1.
+$$
+
+**II. Partition of Edges by Target**
+
+Each directed edge has exactly one target. The incoming-edge sets are disjoint and cover $E_0$, so
+
+$$
+|E_0|=\sum_{v\in V_0}d_{\mathrm{in}}(v)
+=d_{\mathrm{in}}(r)+\sum_{v\ne r}1
+=0+(|V_0|-1).
+$$
+
+Finiteness is available from the finite-level bound (Lemma 3.1.1).
+
+**III. Tree Characterization**
+
+The underlying graph is connected (Lemma 3.1.3) and has $N-1$ edges on $N$ vertices. A connected graph has a spanning tree with $N-1$ edges. Its edge set is contained in the graph's edge set and has equal finite cardinality, so the two sets coincide. Thus the underlying graph is a tree, and root reachability fixes its outward orientation (Lemma 3.1.4).
+
+Q.E.D.
 
 **Lemma 3.1.5** (Depth-Parity Bipartition and Geometric Area Nullity).
 The logical depth function $d(v)$ on $G_0$ induces a canonical depth-parity 2-coloring $V = V_{\mathrm{even}} \sqcup V_{\mathrm{odd}}$ that strictly excludes odd cycles, ensuring that the unperturbed vacuum possesses identically zero spatial curvature and area ($N_3(G_0) = 0$).
@@ -664,35 +1004,99 @@ Every directed edge $(u, v) \in E_0$ connects vertices of opposite parity ($d(v)
 $$N_3(G_0) = |\mathcal{C}_3(G_0)| = 0.$$
 The pristine unperturbed vacuum carries identically zero spatial geometric area. $\square$
 
-**Theorem 3.1.6** (Uniqueness of the Rooted Directed Tree Topology).
-The unique topological configuration satisfying Lemmas 3.1.1–3.1.5 is a finite, directed rooted tree where all edges are directed away from a unique root $r \in V_0$ ($d_{\mathrm{in}}(r) = 0$, $d_{\mathrm{in}}(v) = 1$ for all $v \neq r$).
+**Theorem 3.1.6** (Conditional Rooted-Tree Structure).
 
-*Proof.* Direct deductive conjunction of Lemma 3.1.1 (finiteness $|V_0| < \infty$), Lemma 3.1.2 (DAG acyclicity), Lemma 3.1.3 (weak connectivity $m=1$), Lemma 3.1.4 (sparsity $|E_0| = N-1$), and Lemma 3.1.5 (depth-parity stratification). $\square$
+Let $G_0$ satisfy the finite-horizon, bounded-branching, root-reachability and non-reconvergence premises (Section 3.1). Then $G_0$ is a finite outward rooted tree, each non-root vertex has indegree one, and $|E_0|=|V_0|-1$; its depth parity gives a bipartition.
+
+*Proof.*
+
+**I. Finite Initial Domain**
+
+The initial-state premises give $|V_0|\le\sum_{j=0}^{D}B^j$ (Lemma 3.1.1). The edge relation is irreflexive and asymmetric (Section 3.1).
+
+Root reachability and non-reconvergence exclude directed cycles (Lemma 3.1.2). The depth function supplies the global acyclicity certificate (Section 3.1).
+
+**II. Connected Sparse Orientation**
+
+Root reachability gives weak connectivity (Lemma 3.1.3). The indegree sum gives $d_{\mathrm{in}}(r)=0$, $d_{\mathrm{in}}(v)=1$ for $v\ne r$, and $|E_0|=|V_0|-1$ (Lemma 3.1.4). A connected graph with this edge count is a tree, so its root-to-vertex paths are unique.
+
+**III. Parity and Conclusion**
+
+Each edge increases the unique root-path depth by one, so its endpoints have opposite parity (Lemma 3.1.5). The resulting bipartite graph contains no odd cycle (Section 3.1). Thus all the asserted initial tree and parity properties hold.
+
+Q.E.D.
 
 ## 3.2 Optimal Vacuum Structure (Bethe Regularity)
 
-**Lemma 3.2.1** (Degree Regularity via Relational Uniformity).
-Background independence and the maximization of relational entropy require uniform internal vertex branching: $d_{\mathrm{out}}(v) = \text{const}$ for all non-leaf vertices.
+**Lemma 3.2.1** (Explicit Internal Regularity Filter).
 
-*Proof.* We analyze internal automorphism orbits and positional entropy:
+Let the finite candidate class impose internal degree regularity by $\operatorname{Var}_{J}(d_{\mathrm{out}})=0$, where $J=V_{\mathrm{int}}\setminus\{r\}$ is nonempty. Then all vertices of $J$ have the same outgoing degree.
 
-**I. Relational Anisotropy in Irregular Trees:** Suppose the outgoing degree $d_{\mathrm{out}}(v)$ varies across internal non-leaf vertices. This variance partitions internal vertices into distinct degree classes, breaking the automorphism group $\operatorname{Aut}(G_0)$ into localized orbits.
+*Proof.*
 
-**II. Positional Indistinguishability:** Background independence requires that no spatial location possesses intrinsic structural priority prior to dynamical evolution. Maximizing the relational Shannon orbit entropy:
-$$H_S(G_0) = -\sum_{i} p_i \log_2 p_i, \qquad p_i = \frac{|\mathrm{Orbit}_i|}{N},$$
-under depth-transitivity mandates uniform branching degrees across all internal vertices. $\square$
+**I. Mean Internal Degree**
 
-**Lemma 3.2.2** (Simplicial Enclosure and Singularity Avoidance).
-To support elementary 2-simplex closure while precluding non-manifold pinch-point singularities, the internal coordination degree of $G_0$ is uniquely fixed to $k_{\mathrm{deg}} = 3$ ($k_{\mathrm{in}} = 1, k_{\mathrm{out}} = 2$).
+The proof uses the specified objects and conventions (Theorem 3.2.3).
 
-*Proof.* We evaluate the coordination number against simplicial manifold constraints:
+Let $M=|J|>0$, write $k_v=d_{\mathrm{out}}(v)$ and put $\bar k=M^{-1}\sum_{v\in J}k_v$. The imposed regularity condition is
 
-**I. Lower Bound ($k_{\mathrm{deg}} \ge 3$ for Simplicial Closure):** By Axiom 2 Clause A, spatial geometry forms via directed 3-cycles (2-simplices $\partial \Delta_2$). A 3-cycle requires closing an open directed 2-path $v \to w \to u$. For an intermediate vertex $w$ to receive incoming influence and branch into forward channels, it must satisfy $d_{\mathrm{in}}(w) \ge 1$ and $d_{\mathrm{out}}(w) \ge 2$, requiring:
-$$k_{\mathrm{deg}}(w) = d_{\mathrm{in}}(w) + d_{\mathrm{out}}(w) \ge 1 + 2 = 3.$$
+$$
+0=\operatorname{Var}(k)=\frac1M\sum_{v\in J}(k_v-\bar k)^2.
+$$
 
-**II. Upper Bound ($k_{\mathrm{deg}} \le 3$ for Manifold Regularity):** If $k_{\mathrm{out}}(w) \ge 3$ ($k_{\mathrm{deg}} \ge 4$), closing multiple distinct 2-paths sharing intermediate vertex $w$ creates overlapping 2-simplices sharing a single boundary link, generating a non-manifold pinch point ('3-page book' singularity). This destroys local two-dimensional disk-homeomorphism.
+**II. Nonnegative Summands**
 
-**III. Uniqueness of Trivalency:** Enforcing simplicial constructibility and discrete manifold embeddability uniquely fixes $k_{\mathrm{deg}} = 1 + 2 = 3$ (Lean 4 certified: `substrate_trivalent_degree` and `external_lines_per_vertex`, Supplement Appendix A, Part 9). $\square$
+Multiplication by $M>0$ gives $\sum_v(k_v-\bar k)^2=0$. If one term were positive, the sum of that term and the other nonnegative terms would be positive. Therefore every term is zero:
+
+$$
+(k_v-\bar k)^2=0\Longrightarrow k_v=\bar k.
+$$
+
+**III. Degree Equality**
+
+For any two internal vertices $v,w$, $k_v=\bar k=k_w$. Thus outgoing internal degree is constant on the stipulated class (Lemma 3.2.1).
+
+Q.E.D.
+
+**Lemma 3.2.2** (Local Fan Incidence and the Optional Full Face Check).
+
+Let $v\to w$ be a tree edge and let nonroot $w$ have $m$ children. Closing all $m$ two-paths through $w$ gives exactly $m$ faces in that fan at $(v,w)$, so $2\le m\le2$ under the stated lower branching and upper fan conditions implies initial degree three at $w$.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+The elementary closure of each supported two-path supplies one triangle.
+
+**II. Enumeration of the Fan**
+
+For each child $u$ of $w$, the edges $v\to w\to u$ and $u\to v$ form the face on $\{v,w,u\}$. Different children give distinct faces. Every face contributed by this single bridge construction has exactly one such child. Thus
+
+$$
+N_{\mathrm{fan}}(v,w)=d_{\mathrm{out}}(w)=m .
+$$
+
+**III. Degree under the Fan Premises**
+
+The two premises give $2\le m=N_{\mathrm{fan}}(v,w)\le2$. Consequently $m=2$. For nonroot $w$, $d_{\mathrm{in}}(w)=1$, so $d_{\mathrm{in}}(w)+d_{\mathrm{out}}(w)=1+2=3$.
+
+Q.E.D.
+
+Let the faces be all directed triangles of a graph obtained by merging a batch. The edge ceiling is equivalent to checking at most two triangles at every merged edge and is preserved by deletion, while applying the same check to the final graph is exact there.
+
+**I. Domain and Objects**
+
+Edge incidence is one necessary condition for a selected triangulated surface.
+
+**II. Merged Face Set**
+
+For a retained edge $e$, its face count is $\sum_{C\in\mathcal C_3(M)}\mathbf 1_{\{e\in C\}}$. This sum ranges over all triangles of $M$, including triangles with several new chords. The ceiling is precisely the simultaneous bound of two on these sums.
+
+**III. Deletion**
+
+For a final graph $F\subseteq M$ obtained by edge deletion, $\mathcal C_3(F)\subseteq\mathcal C_3(M)$. Thus each surviving edge has final face count at most its merged count. Computing the sum with $\mathcal C_3(F)$ gives the exact final condition.
+
+Q.E.D.
 
 ### 3.2.1 Quantitative Tree Census and the Axiomatic Sieve
 
@@ -703,9 +1107,9 @@ Table 3: *Axiomatic Sieve across the Complete Configuration Space of Non-Isomorp
 | Sieve Step | Axiomatic Filter | Mathematical Constraint | Survivors | Eliminated Candidates |
 | :--- | :--- | :--- | :---: | :--- |
 | **1. Configuration Space** | Unconstrained Tree Enumeration | Non-isomorphic free trees ($N=10$) | $106$ | -- |
-| **2. Simplicial Closure** | Lemma 3.2.2 (Manifold Regularity) | Maximum degree $k_{\mathrm{deg}} \le 3$ | $6$ | $100$ (High-degree stars and hubs) |
-| **3. Site Maximality** | Axiom 2 (2-Simplex Branching) | Maximum degree $k_{\mathrm{deg}} \ge 3$ | $5$ | $1$ (Unbranched linear chain) |
-| **4. Strict Regularity** | Lemma 3.2.1 (Relational Uniformity) | $\mathrm{Var}(\deg_{\mathrm{int}}) = 0$ | $2$ | $3$ (Irregular branched trees) |
+| **2. Simplicial Closure** | Lemma 3.2.2 (Manifold Regularity) | Maximum degree $k_{\mathrm{deg}} \le 3$ | $37$ | $69$ (High-degree stars and hubs) |
+| **3. Site Maximality** | Axiom 2 (2-Simplex Branching) | Maximum degree $k_{\mathrm{deg}} \ge 3$ | $36$ | $1$ (Unbranched linear chain) |
+| **4. Strict Regularity** | Lemma 3.2.1 (Relational Uniformity) | $\mathrm{Var}(\deg_{\mathrm{int}}) = 0$ | $2$ | $34$ (Irregular branched trees) |
 
 The two surviving configurations are the **Balanced Regular Bethe Fragment** and the **Caterpillar Graph** (linear internal core). Ranking candidates by the **Structural Optimality Score** $\mathcal{O}(G; \lambda) = \lambda \log_2 |\operatorname{Aut}(G)| + (1-\lambda) H_S(G)$ (where $H_S = -\sum p_i \log_2 p_i$ is the Shannon orbit entropy measuring positional indistinguishability) confirms quantitative supremacy across the parameter interval $\lambda \in [0.4, 0.6]$:
 
@@ -714,104 +1118,369 @@ Table 4: *Structural Optimality Scorecard and Orbit Entropy Comparison ($N=10$).
 | Candidate Topology | $|\operatorname{Aut}(G)|$ | Orbit Entropy $H_S$ | $\mathcal{O}(\lambda=0.4)$ | $\mathcal{O}(\lambda=0.5)$ | $\mathcal{O}(\lambda=0.6)$ | Classification |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | **Balanced Bethe Fragment** | $\mathbf{48}$ | $\mathbf{1.2955}$ | $\mathbf{3.011}$ | $\mathbf{3.440}$ | $\mathbf{3.869}$ | **Optimal Vacuum ($G_0$)** |
-| **Caterpillar (Linear Core)**| $8$ | $1.1568$ | $1.894$ | $2.078$ | $2.263$ | Suboptimal Branching |
+| **Caterpillar (Linear Core)**| $8$ | $1.9219$ | $2.353$ | $2.461$ | $2.569$ | Suboptimal Branching |
 | **Star Graph (Hub)** | $362,880$ | $0.4690$ | $7.670$ | $9.469$ | $11.268$ | Excluded by Lemma 3.2.2 |
 | **Linear Path** | $2$ | $1.6464$ | $1.388$ | $1.323$ | $1.258$ | Excluded by Site Maximality |
 
-While the centralized Star graph achieves high permutation symmetry through leaf permutations, its singleton hub orbit collapses the orbit entropy ($H_S = 0.4690$) and violates simplicial embeddability ($k = 9 > 3$). Note that the raw unconstrained score $\mathcal{O}(G; \lambda)$ of the Star graph is inflated by leaf permutations ($|\operatorname{Aut}| = (N-1)! = 362,880$), but the Star graph is strictly excluded at Step 2 of the axiomatic sieve by manifold embeddability ($k_{\mathrm{deg}} = 9 > 3$, Lemma 3.2.2). Among kinematically allowed topologies satisfying the manifold and branching bounds ($k_{\mathrm{deg}} = 3$), the Balanced Bethe Fragment uniquely maximizes orbit entropy and automorphism order over the Caterpillar graph.
+While the centralized Star graph achieves high permutation symmetry through leaf permutations, its singleton hub orbit collapses the orbit entropy ($H_S = 0.4690$) and violates simplicial embeddability ($k = 9 > 3$). Note that the raw unconstrained score $\mathcal{O}(G; \lambda)$ of the Star graph is inflated by leaf permutations ($|\operatorname{Aut}| = (N-1)! = 362,880$), but the Star graph is strictly excluded at Step 2 of the axiomatic sieve by manifold embeddability ($k_{\mathrm{deg}} = 9 > 3$, Lemma 3.2.2). Within the stated ten-vertex internally trivalent comparison class, the balanced fragment has larger automorphism order while the caterpillar has larger orbit-partition entropy. The balanced shape wins the weighted score on the specified interval. This finite comparison neither derives the hard degree filter nor proves a unique optimizer at every size.
 
-**Theorem 3.2.3** (Uniqueness of the Regular Bethe Vacuum $G_0$).
-The pre-geometric vacuum substrate $G_0 = (V_0, E_0, H_0)$ is uniquely determined as a finite Regular Bethe Fragment of coordination $k_{\mathrm{deg}} = 3$:
-$$\operatorname{in-deg}(u) = \begin{cases} 0 & u = r \\ 1 & u \neq r \end{cases}, \qquad \operatorname{out-deg}(u) = \begin{cases} 3 & u = r \\ 2 & u \in V_{\mathrm{int}} \setminus \{r\} \\ 0 & u \in \mathrm{Leaves} \end{cases}$$
-with uniform initial timestamp degeneracy $H_0(e) \equiv 0$ across all edges $e \in E_0$.
+**Theorem 3.2.3** (Finite Score Comparison and the Regular-Fragment Model).
 
-*Proof.* Conjunction of Theorem 3.1.6, Lemma 3.2.1, Lemma 3.2.2, and the quantitative supremacy established in Table 3 and Table 4. Initial timestamp degeneracy $H_0 \equiv 0$ reflects the ground-state spatial leaf condition at $t=0$, ensuring no timelike causal flow circulates prior to ignition. $\square$
+Let the finite comparison class consist of the ten-vertex undirected trees whose non-leaf vertices all have degree three. Then the balanced Bethe fragment is the unique isomorphism class maximizing $\mathcal O(G;\lambda)=\lambda\log_2|\operatorname{Aut}(G)|+(1-\lambda)H_S(G)$ throughout $\lambda\in[0.4,0.6]$; the regular-fragment family at other sizes is an explicit initial-state model choice (Theorem 3.2.3).
+
+Let $G_0 = (V_0, E_0, H_0)$ denote the **Regular Bethe Fragment** of uniform internal coordination number $k_{\mathrm{deg}} = 3$ and finite depth $d \in \mathbb{N}^+$. The vertex set $V_0$ is partitioned into disjoint generational levels $L_n$ for $0 \le n \le d$, where the root vertex $r$ defines level $L_0 = \{r\}$, and the set of leaves defines level $L_d$. The graph is characterized by the following degree constraints on its vertices $u \in V_0$:
+
+$$
+\operatorname{in-deg}(u) = \begin{cases} 0 & \text{if } u = r \\ 1 & \text{if } u \neq r \end{cases}, \qquad \operatorname{out-deg}(u) = \begin{cases} 3 & \text{if } u = r \\ 2 & \text{if } u \in V_{\mathrm{int}} \setminus \{r\} \\ 0 & \text{if } u \in L_d \end{cases}
+$$
+
+Every internal vertex $v \in V_{\mathrm{int}} \setminus \{r\}$ satisfies total coordination $k_{\mathrm{deg}}(v) = \operatorname{in-deg}(v) + \operatorname{out-deg}(v) = 1 + 2 = 3$. The edge set $E_0$ consists of directed links $(u, v)$ from parents to children satisfying these degree conditions, and the mapping $H_0: E_0 \to \mathbb{N}_0$ assigns initial logical timestamps $H_0(e) \equiv 0$ across all relations.
+
+*Proof.*
+
+**I. Exactly Two Candidate Shapes**
+
+Let $I$ and $L$ count internal vertices and leaves. The degree sum and total count give
+
+$$
+3I+L=2(10-1)=18,\qquad I+L=10,
+\qquad 2I=8,\quad I=4,\ L=6.
+$$
+
+The subgraph induced by the internal vertices is a tree: paths between internal vertices cannot have a leaf as an interior vertex. A tree on four vertices has degree sum six and maximum degree at most three. Its sorted degree sequence is either $(3,1,1,1)$ or $(2,2,1,1)$, giving respectively an internal star or an internal path. Adding enough leaves to make each internal total degree three fixes each full shape uniquely.
+
+**II. Automorphisms and Orbits**
+
+For the balanced shape, the central internal vertex is fixed, its three internal neighbors can be permuted freely, and each neighbor's two leaves can be swapped independently. Thus
+
+$$
+|\operatorname{Aut}(B)|=3!(2!)^3=48,
+\qquad (|O_i(B)|)=(1,3,6).
+$$
+
+For the caterpillar, the internal path can be reversed, each end internal vertex has two interchangeable leaves, and the two middle vertices each have one leaf. Hence
+
+$$
+|\operatorname{Aut}(C)|=2\cdot2\cdot2=8,
+\qquad (|O_i(C)|)=(2,2,2,4).
+$$
+
+**III. Exact Score Difference**
+
+Put $a=\log_2 3$. Direct substitution into the orbit entropy gives
+
+$$
+\begin{aligned}
+H_S(B)&=\log_2 10-\tfrac35-\tfrac9{10}a,\\
+H_S(C)&=\log_2 5-\tfrac25,\\
+H_S(B)-H_S(C)&=\tfrac45-\tfrac9{10}a,\\
+\log_2|\operatorname{Aut}(B)|-\log_2|\operatorname{Aut}(C)|&=1+a.
+\end{aligned}
+$$
+
+The defined weighting (Section 3.2) therefore gives
+
+$$
+\Delta\mathcal O(\lambda)
+=\tfrac45+\tfrac15\lambda+
+\left(\tfrac{19}{10}\lambda-\tfrac9{10}\right)a.
+$$
+
+Its derivative is $1/5+19a/10>0$. On the stated interval its minimum occurs at $\lambda=2/5$, where
+
+$$
+\Delta\mathcal O(2/5)=\tfrac{22}{25}-\tfrac7{50}a
+>\tfrac{22}{25}-\tfrac7{50}\cdot2=\tfrac35>0,
+$$
+
+using $a<2$ from $3<4$.
+
+**IV. Unique Finite Maximizer**
+
+The two candidate isomorphism classes exhaust the stated domain, and the score difference is positive throughout the interval. Thus the balanced shape is its unique maximizer (Section 3.2).
+
+Q.E.D.
 
 ## 3.3 Finite Bethe Geometry and Maximal Parallelism
 
-**Proposition 3.3.1** (Extensive Scale-Invariant Leaf Boundary of Binary Bethe Fragments).
-Let $G_0 = (V, E)$ be any finite regular Bethe fragment of size $|V| = N \ge 3$ generated by the outward branching construction. Then the number of leaf boundary vertices $L = |\{v \in V \mid d_{\mathrm{out}}(v) = 0\}|$ satisfies the exact combinatorial relation:
-$$L = \frac{N + 2}{2},$$
-and the boundary-to-bulk ratio is strictly extensive and scale-invariant:
-$$\lim_{N \to \infty} \frac{L}{N} = \frac{1}{2} = 50\%.$$
-Furthermore, because leaf vertices possess out-degree zero ($d_{\mathrm{out}} = 0$), they cannot serve as intermediate routing vertices ($w$) or initiation sources for forward directed 2-paths ($v \to w \to u$), rendering the entire leaf layer an absorbing causal boundary that halts outward wave propagation.
+**Proposition 3.3.1** (Initial Leaf Count of Trivalent Bethe Fragments).
 
-*Proof.* We proceed by exact degree-sum enumeration:
+Let a finite outward tree on $N$ vertices have a root of outdegree three and all other internal vertices of outdegree two. Its initial leaves have no outgoing routes and number $L=(N+2)/2$, so $L/N\to1/2$ along increasing fragments, with the initial spatial support given by the fixed vertex set and its maximum depth.
 
-**I. Vertex Partitioning:** Let $I$ denote the number of internal vertices (including the root $r$) and $L$ denote the number of leaf vertices, such that $N = I + L$.
+*Proof.*
 
-**II. Edge Summation via Out-Degrees:** In any directed tree on $N$ vertices, the total number of directed edges is $|E| = N - 1 = I + L - 1$. Summing out-degrees over all vertices gives:
-$$|E| = d_{\mathrm{out}}(r) + \sum_{v \in I \setminus \{r\}} d_{\mathrm{out}}(v) + \sum_{u \in \mathrm{Leaves}} d_{\mathrm{out}}(u) = 3 + 2(I - 1) + 0 = 2I + 1.$$
+**I. Domain and Objects**
 
-**III. Algebraic Reduction:** Equating both expressions for $|E|$:
-$$I + L - 1 = 2I + 1 \implies L = I + 2.$$
-Substituting $I = N - L$:
-$$L = (N - L) + 2 \implies 2L = N + 2 \implies L = \frac{N + 2}{2}.$$
+Every nonroot vertex of the outward fragment has one incoming edge.
 
-**IV. Extensive Asymptotics:** Dividing by total size $N$ yields the asymptotic boundary fraction:
-$$\frac{L}{N} = \frac{1}{2} + \frac{1}{N} \xrightarrow{N \to \infty} \frac{1}{2} = 50\%.$$
-The leaf boundary remains extensive at all scales $N$, functioning as an absorbing perimeter for causal wavefronts, in direct analogy to absorbing contact processes on branching trees [14, 18]. $\square$
+**II. Exact Count**
 
-**Theorem 3.3.2** (Maximal Parallelism and Automorphism Preservation).
-Let $G_0 = (V, E)$ be the regular Bethe vacuum substrate, and let $\mathcal{S}(G_0)$ denote the complete set of PUC-compliant candidate 2-path interaction sites (and, in active evolving states, 3-cycle deletion sites). For an update operator $\mathcal{U}: G_0 \to G_1$ applying the local rewrite rule to a proposed subset $S \subseteq \mathcal{S}(G_0)$ with transition rate $P_{\mathrm{acc}}(s)$:
+If $I=N-L$ counts internal vertices including the root, then
 
-* **Sufficiency (Automorphism Covariance):** If the proposal set is complete ($S = \mathcal{S}(G_0)$) and acceptance probabilities $P_{\mathrm{acc}}(s)$ depend exclusively on $\mathrm{Aut}(G_0)$-invariant local graph invariants (such as local in/out-degrees and cycle counts), the transition probability measure $\mathbb{P}(G_1 \mid G_0)$ is strictly $\mathrm{Aut}(G_0)$-covariant, and a deterministic rewrite on $S$ satisfies $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$.
-* **Necessity (Symmetry Breaking of Sub-Parallel Updates):** If an automorphism orbit $\mathcal{O} \subseteq \mathcal{S}(G_0)$ under $\mathrm{Aut}(G_0)$ is split by the proposal set (such that one site $s_1 \in \mathcal{O}$ is updated while another $s_2 \in \mathcal{O}$ is omitted or delayed in a serial queue), the automorphism mapping $s_1 \mapsto s_2$ is broken in $\mathrm{Aut}(G_1)$.
+$$
+N-1=\sum_v d_{\mathrm{out}}(v)=3+2(I-1)=2I+1.
+$$
 
-*Proof.* We evaluate the action of $\mathrm{Aut}(G_0)$ on interaction sites:
+Thus $I=(N-2)/2$ and $L=N-I=(N+2)/2$. Dividing by $N$ gives $L/N=1/2+1/N$.
 
-**I. Group Action on Candidate Sites:** Any automorphism $\varphi \in \mathrm{Aut}(G_0)$ is an adjacency-preserving vertex bijection. Because candidate sites $s = (v, w, u)$ are defined strictly by local adjacency and PUC path conditions, $\varphi$ acts equivariantly on candidate sites, partitioning $\mathcal{S}(G_0)$ into disjoint symmetry orbits $\mathcal{S}(G_0) = \bigsqcup_k \mathcal{O}_k$.
+**III. Initial Routing**
 
-**II. Invariant Proposal and Transition Law:** When the proposal set contains the full site set $S = \mathcal{S}(G_0)$ and the local stress functional $s_{\mathrm{add}}(v \to w \to u) = \sum_{x \in \{v, w, u\}} |\mathcal{C}_3(x)|$ depends only on $\mathrm{Aut}(G_0)$-invariant local cycle counts, every site in an orbit $\mathcal{O}_k$ shares identical transition probabilities $P_{\mathrm{acc}}(s)$. The union of deterministic rewrites over an $\mathrm{Aut}$-invariant site set commutes with vertex permutations, ensuring $\varphi(E_1) = E_1$ and thus $\mathrm{Aut}(G_1) \supseteq \mathrm{Aut}(G_0)$ (Lean 4 certified: `orbit_complete_addition_preserves_automorphism`, Supplement Appendix A, Part 5). In the stochastic regime with independent Bernoulli sampling, individual realization graphs break symmetry dynamically, but the proposal generator and underlying transition probability measure $\mathbb{P}(G_1 \mid G_0)$ remain strictly $\mathrm{Aut}(G_0)$-covariant.
+A two-path starting or continuing at a vertex needs an outgoing edge there. Every initial leaf has outdegree zero, so it can only occur as the terminal vertex of such an initial path. All vertices lie in the finite set $V_0$ and have initial depth at most the maximum depth of that tree.
 
-**III. Orbit Splitting under Serial or Partial Scheduling:** Suppose $S \subset \mathcal{S}(G_0)$ splits an orbit $\mathcal{O}$, containing $s_1 = (v_1, w_1, u_1)$ with $\varphi(s_1) = s_2 = (v_2, w_2, u_2) \notin S$. Updating $s_1$ adds the chord $(u_1, v_1)$ to $E_1$ while $(u_2, v_2) \notin E_1$. Consequently, $\varphi(E_1) \neq E_1$, proving that $\varphi \notin \mathrm{Aut}(G_1)$ (Lean 4 certified: `orbit_splitting_breaks_automorphism`, Supplement Appendix A, Part 5). Processing candidate sites serially or in partial queues introduces an unphysical order-dependent gauge artifact that permanently scars the vacuum with broken symmetries. $\square$
+Q.E.D.
 
-## 3.4 Ignition of Geometrogenesis is Inevitable
+**Theorem 3.3.2** (Orbit-Invariant Selection and Kernel Covariance).
+
+Let $\Gamma$ act on the candidates by automorphisms of the timestamped input, so selected sets are $\Gamma$-invariant exactly when they are unions of orbits. Equivariant merge and distinguishable effects make orbit splitting break successor invariance, and equivariant outcome laws and merge give a covariant kernel.
+
+*Proof.*
+
+**I. Orbits of the Selected Set**
+
+If $S$ is invariant and $a\in S$, every $\gamma a$ for $\gamma\in\Gamma$ belongs to $S$. Thus $S$ is a union of orbits. Each orbit is itself invariant, giving the converse. Under equivariant merge, $\gamma$ carries the output of $S$ to that of $\gamma S$. If an orbit is split, some $\gamma$ gives $\gamma S\ne S$, so distinguishable output effects give a changed output.
+
+**II. Conflict Selection**
+
+Candidate admission commutes with relabeling. Strict dominance gives a deterministic equivariant independent set. An equivariant law and merge preserve kernel covariance.
+
+**III. Complexity Scope**
+
+Work and span control parallel time under the stated premises. The conditional component-diameter estimate uses the separate path-occupancy premise.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The conflict graph is taken with its relabeling action on candidate sites.
+
+**II. Conflict Exclusion**
+
+If adjacent $a,b$ were both retained, the rule would require $w(a)>w(b)$ and $w(b)>w(a)$. Hence no two retained candidates are adjacent.
+
+**III. Equivariance**
+
+Let $\varphi$ relabel the graph, preserving $w'(\varphi(a))=w(a)$ and $N'(\varphi(a))=\varphi(N(a))$. Then
+
+$$
+\forall b\in N(a),\ w(a)>w(b)
+\quad\Longleftrightarrow\quad
+\forall c\in N'(\varphi(a)),\ w'(\varphi(a))>w'(c).
+$$
+
+Thus the selected set relabels by $\varphi$. The comparisons fix the selection uniquely.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The finite tick law is a pushforward of the realization law.
+
+**II. Outcome Correspondence**
+
+Write $p_G(\xi)$ for the outcome mass and $\mathcal U(G,\xi)$ for its deterministic update. Equivariance gives
+
+$$
+p_{\varphi G}(\varphi\xi)=p_G(\xi),\qquad
+\mathcal U(\varphi G,\varphi\xi)=\varphi\mathcal U(G,\xi).
+$$
+
+**III. Pushforward**
+
+The map $\xi\mapsto\varphi\xi$ bijects outcomes leading from $G$ to $F$ with outcomes leading from $\varphi G$ to $\varphi F$. Hence
+
+$$
+K(\varphi G,\varphi F)=\sum_{\xi:\,\mathcal U(G,\xi)=F}p_{\varphi G}(\varphi\xi)
+=\sum_{\xi:\,\mathcal U(G,\xi)=F}p_G(\xi)
+=K(G,F).
+$$
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The conditional prefix bound counts first and subsequent steps separately.
+
+**II. Work and Span**
+
+A full processor step completes $P$ operations, giving at most $W/P$ such steps. A nonfull greedy step completes every ready operation. Each longest remaining dependency chain has a ready first operation, so the remaining maximum chain length falls by at least one. There are at most $D$ nonfull steps.
+
+**III. Prefix Work**
+
+The first edge has at most three choices and each later edge at most two after excluding the predecessor. A length-$L$ candidate prefix is retained with probability at most $p^{L-1}$ under the conditional extension premise. Thus the expected number of retained prefixes is at most
+
+$$
+\sum_{L\ge1}3\cdot2^{L-1}p^{L-1}=\frac{3}{1-2p}.
+$$
+
+At most three next-edge tests per retained prefix bound the expected search work by a constant multiple of this sum.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The conflict relation specifies edges of the candidate conflict graph.
+
+**II. Radius Implication**
+
+For vertices $x,y$ at distance at least $m$ within the component,
+
+$$
+m\le d(x,y)\le d(x,a)+d(a,y).
+$$
+
+Thus one of the two distances from $a$ is at least $\lceil m/2\rceil$. Its shortest path contains an active simple prefix of length $r$.
+
+**III. Union Bound**
+
+At most $d$ first edges and $d-1$ subsequent choices give at most $d(d-1)^{r-1}$ such prefixes. Multiplying by the stipulated path probability bounds their union.
+
+Q.E.D.
+
+## 3.4 Seeded Local Geometrogenesis
 
 In the unperturbed Bethe vacuum $G_0$, strict depth-parity bipartiteness ($V = V_{\mathrm{even}} \sqcup V_{\mathrm{odd}}$) prevents the closure of odd-length cycles ($N_3(G_0) = 0$). Because standard rewrite rules $\mathcal{R}$ operate exclusively on compliant 2-paths and $\Lambda_{\mathrm{micro}} \equiv 0$, the pristine vacuum constitutes a static false-vacuum trapped in pre-geometric stasis.
 
 The initiation of physical geometry is governed by a **non-perturbative topological tunneling event** $\mathcal{T}_{\mathrm{tunnel}}$.
 
-**Lemma 3.4.1** (Topological Tunneling Operator and Parity-Breaking Instanton).
-Let $\mathcal{T}_{\mathrm{tunnel}}$ denote the non-perturbative injection of a single directed edge $e_{\mathrm{tunnel}} = (u, v)$ between same-parity vertices ($u, v \in V_{\mathrm{even}}$) with logical timestamp $H(e_{\mathrm{tunnel}}) = 1$:
-$$G_1 = \mathcal{T}_{\mathrm{tunnel}}(G_0) \implies E_1 = E_0 \cup \{e_{\mathrm{tunnel}}\}, \quad H(e_{\mathrm{tunnel}}) = 1.$$
-Then $\mathcal{T}_{\mathrm{tunnel}}$ represents a minimal instanton-like fluctuation [6] with Hamming distance $d_H(G_0, G_1) = 1$ that breaks global $\mathbb{Z}_2$ bipartiteness ($\chi(G_1) > 2$) and introduces the first dynamic logical tick.
+**Lemma 3.4.1** (Same-Parity Seed Chord).
 
-*Proof.* We analyze parity destruction and causal well-foundedness under instanton injection:
+Let two distinct vertices of a rooted tree share their initial depth parity. Inserting a directed edge between them changes one adjacency entry and creates an undirected odd cycle, with the specific return on $r\to a\to u$ giving a directed triangle and with the chord endpoints at undirected distance one while the chord is active.
 
-**I. Parity Symmetry Breaking:** In the vacuum $G_0$, all edges strictly connect opposite-parity partitions ($E_0 \subseteq (V_{\mathrm{even}} \times V_{\mathrm{odd}}) \cup (V_{\mathrm{odd}} \times V_{\mathrm{even}})$). Injecting edge $(u, v)$ with $u, v \in V_{\mathrm{even}}$ introduces an element into $V_{\mathrm{even}} \times V_{\mathrm{even}}$, destroying the 2-coloring and raising the chromatic number to $\chi(G_1) \ge 3$.
+*Proof.*
 
-**II. Minimal Hamming Distance:** The transition alters exactly one relational link:
-$$d_H(G_0, G_1) = |E_1 \triangle E_0| = |\{e_{\mathrm{tunnel}}\}| = 1.$$
+**I. Parity of the Tree Path**
 
-**III. Acyclicity Preservation:** Because background tree edges possess degenerate ground-state timestamps $H_0 \equiv 0$, tree paths carry non-increasing timestamp sequences $(0, 0, \dots, 0)$, which are not strictly height-monotone ($0 \not< 0$). Injecting $e_{\mathrm{tunnel}}$ with $H=1$ cannot close an acausal timelike loop in $G_{\mathrm{event}}$, satisfying Axiom 3. $\square$
+The initial rooted tree supplies the fixed depth labeling.
 
-**Lemma 3.4.2** (Nucleation of the First Compliant Rewrite Site).
-Let $e_{\mathrm{tunnel}} = (u, v)$ be a tunneling edge with $u, v \in V_{\mathrm{even}}$. For any outgoing tree edge $(v, w) \in E_0$, the path $\pi = u \to v \to w$ constitutes a compliant directed 2-path satisfying the Principle of Unique Causality (PUC).
+Every tree edge changes the depth parity $\pi_0$. Along the unique simple tree path of length $\ell$ between equal-parity vertices, this gives $\ell\equiv0\pmod2$. The endpoints are distinct, so $\ell\ge2$ and they were nonadjacent.
 
-*Proof.* We evaluate compliance of the concatenated 2-path:
+**II. Single-Edge Change**
 
-**I. Distinct Endpoints:** Because $v \in V_{\mathrm{even}}$ and $(v, w) \in E_0$, bipartite depth stratification mandates $w \in V_{\mathrm{odd}}$. Since $u \in V_{\mathrm{even}}$ and $w \in V_{\mathrm{odd}}$, their depth parities differ ($\pi(u) \neq \pi(w)$), guaranteeing that $u$ and $w$ are distinct vertices ($u \neq w$).
+The new edge differs from the tree in just its one directed adjacency entry. The old path and new undirected edge form a simple cycle of length $\ell+1$, which is odd.
 
-**II. Path Uniqueness (PUC):** In the unperturbed tree $G_0$, paths between vertex pairs are unique. Prior to tunneling, no edge connected $u$ to $w$. Adding $e_{\mathrm{tunnel}} = (u, v)$ creates exactly one simple directed 2-path $\pi = (u \to v \to w)$ from $u$ to $w$ of length $\ell \le 2$.
+**III. Seed Orientation and Distance**
 
-**III. Site Activation:** The path $\pi$ satisfies all clauses of Axiom 2, nucleating the first active constructor rewrite site: $\mathcal{S}_{\mathrm{add}}(G_1) \neq \emptyset$. $\square$
+For the indicated endpoints the old two-path is $r\to a\to u$. Adding $u\to r$ yields $r\to a\to u\to r$. For every later snapshot retaining $u\to r$, the edge gives an undirected path of length one. Since $u\ne r$, the undirected distance is exactly one. The fixed labeling gives $\pi_0(u)=\pi_0(r)$ throughout.
 
-**Lemma 3.4.3** (Instantiation of the First Geometric Quantum of Area).
-Applying the microscopic constructor $\mathcal{R}$ to the compliant 2-path $u \to v \to w$ generates the chord $(w, u)$ with timestamp $H_{\mathrm{new}} = \max(H_{\mathrm{in}}(w)) + 1 = 1$, creating the first directed 3-cycle $u \to v \to w \to u$ (minimal spatial 2-simplex $\sigma = \partial \Delta_2$).
+Q.E.D.
 
-*Proof.* We trace the chordal closure and verify causal compliance:
+**Lemma 3.4.2** (Cross-Branch Candidate Nucleation).
 
-**I. Simplicial Area Generation:** Applying the rewrite operator $\mathcal{R}$ to candidate path $u \to v \to w$ accretes the return chord $(w, u)$, updating the edge set to $E_2 = E_1 \cup \{(w, u)\}$. This forms the closed 3-cycle:
-$$C_3 = \{(u, v), (v, w), (w, u)\},$$
-instantiating the elementary 2-simplex $\sigma = \partial \Delta_2$ in $G_{\mathrm{space}}$.
+Let the seed and distinct branches satisfy the specified rooted-tree setup. Then $u\to r\to w_2$ and $u\to r\to w_3$ are addition candidates with absent target edges and passing PUC and monotone-path AEC checks (Theorem 3.4.4).
 
-**II. Acyclicity Verification (AEC):** The creation timestamp of the chord evaluates to $H(w, u) = \max(H(v, w)) + 1 = 0 + 1 = 1$. The candidate reverse path in $G_1$ is $u \xrightarrow{H=1} v \xrightarrow{H=0} w$, with timestamp sequence $(1, 0)$. Because $1 \not< 0$, the path is not strictly height-monotone, confirming zero causal circulation in $G_{\mathrm{event}}$ and satisfying AEC. $\square$
+*Proof.*
 
-**Theorem 3.4.4** (Inevitable First-Tick Parallel Burst Ignition).
-The creation of the first 3-cycle defect breaks localized parity constraints across adjacent tree branches, triggering a deterministic first-tick parallel burst of overlapping 3-cycles nucleating an $\mathcal{O}(1)$ number of elementary 2-simplices ($N_3(t=1) \approx 38$), driving the irreversible non-equilibrium phase transition from the pre-geometric vacuum into the active Quasi-Stationary Distribution.
+**I. New Paths and Absent Return Edges**
 
-*Proof.* Conjunction of Lemmas 3.4.1–3.4.3, Theorem 3.3.2 (which requires proposing all compliant 2-path sites concurrently across the entire lattice to preserve automorphism covariance), and the parallel scheduler kinetics. $\square$
+The seed gives $u\to r$ and the tree gives $r\to w_j$ for $j=2,3$. These vertices are distinct. Before the next update, neither $w_j\to u$ nor $u\to w_j$ belongs to the tree or the seed.
+
+**II. Candidate-Relative PUC**
+
+Any path from $u$ to another root branch must first use $u\to r$. No other outgoing tree route from $u$ returns upward to that branch. Hence a length-two path ending at $w_j$ must have intermediate vertex $r$, and there is no direct $u\to w_j$. Thus each candidate is the unique short path between its endpoints (Lemma 2.2.3).
+
+**III. Height Filter and Reciprocal Targets**
+
+The path heights are $(1,0)$, which fail $1<0$. The unique simple directed route from $u$ into the other branch is therefore not a monotone AEC witness. No tree two-path from $w_j$ back to $u$ proposes the reciprocal of $w_j\to u$. The two targets $w_2\to u$ and $w_3\to u$ are distinct and not reciprocal.
+
+**IV. Conclusion**
+
+Both candidates pass the specified snapshot guards (Lemma 3.4.2). The branch-one path $u\to r\to w_1$ has an already present return edge $w_1\to u$ and is not among these candidates.
+
+Q.E.D.
+
+**Lemma 3.4.3** (The Seed Already Forms a Geometric Triangle).
+
+Let the same seed $u\to r$ be inserted into the root-to-grandchild path $r\to w_1\to u$. Then the seeded graph already contains the directed triangle $r\to w_1\to u\to r$, before any descendant addition (Theorem 3.4.4).
+
+*Proof.*
+
+**I. Initial Edges**
+
+The tree contains $(r,w_1)$ and $(w_1,u)$, with distinct vertices. The seed adds $(u,r)$, absent in the outward tree.
+
+**II. Closed Boundary**
+
+The sequence $(r,w_1,u,r)$ has all three directed edges and no repeated interior vertex. Its length is three, so it is a directed geometric triangle (Lemma 2.2.2).
+
+**III. Event Order**
+
+The triangle exists in the immediate post-seed graph. A later candidate closure therefore creates a descendant quantum, not the first triangle of this construction (Lemma 3.4.3).
+
+Q.E.D.
+
+**Theorem 3.4.4** (Positive Local Descendant Probability).
+
+Let $p=e^{-2\mu}$ and $q=\min(1,\tfrac12(1+2\lambda)e^{-2\mu})$ in the seeded snapshot. Then the probability of at least one cross-branch descendant triangle surviving the next tick is $[1-(1-p)^2](1-q/3)$ under the independent selection and uniform seed-edge deletion law (Section 4.6).
+
+*Proof.*
+
+**I. Cycle Incidence**
+
+The seed triangle is the only triangle before the next tick (Lemma 3.4.3). Its vertices $u,r,w_1$ have incidence one; the other branch vertices $w_2,w_3$ have incidence zero. Each of the two cross-branch candidates (Lemma 3.4.2) therefore has
+
+$$
+s_{\mathrm{add}}=s(u)+s(r)+s(w_j)=1+1+0=2,
+\qquad p=e^{-2\mu}.
+$$
+
+**II. At Least One Accepted Addition**
+
+The two selection trials are independent, and their targets are distinct and survive the reciprocal filter. Thus
+
+$$
+\Pr(\text{at least one selected})=1-\Pr(X_2=0,X_3=0)=1-(1-p)^2.
+$$
+
+**III. Seed Return-Edge Survival**
+
+The single old triangle has deletion stress $1+1+1-1=2$. Its deletion trial succeeds with probability $q$, then chooses each edge with probability one third. Therefore
+
+$$
+\Pr(u\to r\text{ survives})=1-q/3.
+$$
+
+The other two edges in a descendant triangle are $r\to w_j$, which is not in the seed triangle, and the newly added $w_j\to u$, which is absent from all old deletion candidates. Neither can be deleted by this snapshot's deletion stage.
+
+**IV. Joint Event**
+
+The addition trials and cycle outcome are independent. A cross-branch descendant survives exactly when at least one of these additions is selected and the common seed return edge survives. Hence
+
+$$
+\boxed{\Pr(\text{surviving cross-branch descendant})
+=[1-(1-p)^2](1-q/3)>0.}
+$$
+
+This proves the stated local probability (Theorem 3.4.4).
+
+Q.E.D.
+
+**Lemma 3.4.5** (One-Tick Survival of the Named Seed Sector).
+
+Let a local seeded fixture have one old triangle and two possible descendants selected independently with probability $p$, with an independent old-triangle deletion trial of probability $q$ choosing one of its edges uniformly. The probability that at least one of the three named triangles survives is $(1-q)+(2q/3)(2p-p^2)$.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+The same local fixture supplies the addition and deletion probabilities.
+
+**II. Independent Addition Events**
+
+If the two descendants are attempted independently, the probability of at least one selection is
+
+$$
+1-(1-p)^2=2p-p^2.
+$$
+
+**III. Partition of the Deletion Outcomes**
+
+With probability $1-q$ there is no deletion and the old triangle survives. With probability $q/3$ the shared return chord is deleted and all three named triangles are absent. With probability $2q/3$ one old leg is deleted, so the old triangle is absent and each descendant survives exactly when it was selected. Summing the disjoint cases gives
+
+$$
+\Pr(\text{some named triangle survives})=(1-q)+\tfrac{2q}{3}(2p-p^2).
+$$
+
+Q.E.D.
 
 ## 3.5 Kinematic Constraints as Occupancy Projectors
 
@@ -888,7 +1557,7 @@ Let the initial state $|G_0\rangle \in \mathcal{C}$ reside in the kinematically 
 
 **I. Occupancy Rejection:** Candidate edge additions $X_{uv}$ are evaluated against $\Pi_{\mathrm{cycle}}$ and $\Pi_{\mathrm{local}}$. A mutation that would instantiate a 2-cycle or a chord at current undirected distance $\bar{d}(u, v) > 2$ leaves $\mathcal{C}$ and is rejected by the constructor.
 
-**II. Temporal Foliation and Height Monotonicity:** For causal loop avoidance, the height increment $H_{\mathrm{new}} = 1 + \max H_{\mathrm{in}}$ guarantees that new edges are strictly outward-pointing in the causal foliation, ensuring that closed spatial cycles $\partial \Delta_2$ do not project closed timelike curves into $G_{\mathrm{event}}$. This filter implements Axiom 3; it is not an occupancy projector.
+**II. Temporal Foliation and Height Monotonicity:** For causal loop avoidance, the height increment $H_{\mathrm{new}} = 1 + \max H_{\mathrm{in}}$ guarantees that new edges are strictly outward-pointing in the causal foliation, ensuring that closed spatial cycles $\partial \Delta_2$ do not project closed timelike curves into $G_{\mathrm{event}}$. The bounded filter tests one reverse witness per candidate. Full post-batch mediated acyclicity is a separate relation check.
 
 **III. Invariance of the Allowed Set:** Consequently, $\Pi_{\mathcal{C}}|G(t)\rangle = |G(t)\rangle$ holds for all $t \in \mathbb{N}_0$ along accepted trajectories. $\square$
 
@@ -908,80 +1577,464 @@ The **Internal Causal Category** $\mathbf{Caus}_t$ encapsulates the instantaneou
 * **Composition:** Path concatenation $\circ: \mathrm{Hom}(v, w) \times \mathrm{Hom}(u, v) \to \mathrm{Hom}(u, w)$ defined by sequence concatenation $S_q \cdot S_p = (e_1, \dots, e_k, e'_1, \dots, e'_m)$.
 * **Identity:** For each $u \in V(G_t)$, the identity morphism is the trivial path of length zero $\mathrm{id}_u = (u, \emptyset, u)$, satisfying $\pi \circ \mathrm{id}_u = \pi = \mathrm{id}_v \circ \pi$ for all $\pi \in \mathrm{Hom}(u, v)$.
 
-**Definition 4.1.2** (Global Historical Category $\mathbf{Hist}$).
-The **Global Historical Category** $\mathbf{Hist}$ models the irreversible accumulation of causal relational history across logical time:
+**Definition 4.1.2** (Creation-Record Historical Category).
 
-* **Objects:** $\mathrm{Ob}(\mathbf{Hist}) = \{\mathcal{H}_t\}_{t \in \mathbb{N}_0}$, the sequence of cumulative trajectory graphs $\mathcal{H}_t = \bigcup_{i=0}^t G_i = \left( V_t, \; \bigcup_{i=0}^t E(G_i), \; H \right)$, where the edge set records every directed link created up to tick $t$, with creation timestamps $H(e)$ fixed at the moment of insertion.
-* **Morphisms:** History-preserving canonical inclusions $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+k}$ that are injective on vertices and preserve all historical edge relations and creation timestamps: $H_{t+k}(\iota(e)) = H_t(e)$ for all $e \in E(\mathcal{H}_t)$.
-* **Composition:** Standard set-theoretic inclusion and function composition $(g \circ f)(x) = g(f(x))$.
-* **Identity:** The identity inclusion $\mathrm{id}_{\mathcal{H}_t}: \mathcal{H}_t \to \mathcal{H}_t$ on vertex set $V(\mathcal{H}_t)$.
+Let the **Historical Category** $\mathbf{Hist}$ have objects given by cumulative creation-record sets $\mathcal E_t$ and morphisms given by their canonical inclusions. A record is $\omega=(u,v,b,h)$ with source, target, scheduler birth tick and causal height (Definition 1.2.1). Write
 
-The instantaneous spatial state $G_t = G_{\mathrm{space}}(t)$ (Definition 2.3.1) is an active, time-dependent routing subgraph of $\mathcal{H}_t$; $G_t$ itself is not an object of $\mathbf{Hist}$. The infinite colimit $\mathcal{H}_\infty = \bigcup_{t=0}^\infty G_t$ represents the cumulative created-edge shadow of the 4D causal event poset $G_{\mathrm{event}} = (\mathcal{E}, \prec)$ defined in Definition 2.3.1.
+$$
+\mathcal E_{t+1}=\mathcal E_t\cup A^{\mathrm{occ}}_{t+1},\qquad
+b(\omega)=\omega_3,\quad h(\omega)=\omega_4.
+$$
 
-**Lemma 4.1.3** (Orthogonality of Kinematic and Historical State: The Indelible Record of Deletion).
-The instantaneous spatial state $G_t = G_{\mathrm{space}}(t)$ and the cumulative historical category $\mathbf{Hist}$ are orthogonal.
-The deletion operator $\mathfrak{T}_{\mathrm{del}}$ (and the Section 4.6 deletion purge) acts exclusively on the instantaneous kinematic graph $G_t$, removing an accepted deletion edge $e \in E(G_t)$ such that $e \notin E(G_{t+1})$.
-Because $e \in E(G_t) \subseteq E(\mathcal{H}_{t+1})$, kinematic deletion cannot erase $e$ from the cumulative historical trajectory $\mathcal{H}_{t+1}$.
-The canonical historical morphism $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ remains strictly well-defined, ensuring that historical additions leave an indelible structural record in the causal history and that dynamic deletions preserve the monotonicity of relational event accumulation (Lean 4 certified: `deletion_preserves_cumulative_history` and `cumulative_history_transitive_monotonicity`, Supplement Appendix A, Part 6.5).
+The initial records have $b=h=0$. New records have birth tick $t+1$ and height assigned from the pre-tick snapshot. For any fixed pair and birth tick the scheduler creates at most one record. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies which past creation is currently active. The cumulative spatial support is the projection
+
+$$
+\overline E_t=\{(u,v):\exists b,h,\ (u,v,b,h)\in\mathcal E_t\},\qquad
+\overline G_t=(V,\overline E_t).
+$$
+
+The unlabeled support $\overline G_t$ is the cumulative spatial shadow of the creation history. It is not itself the occurrence dependency poset, and it does not identify different births of the same pair. A first-birth label on $\overline E_t$, if used, is not the current active height. Deletion records and the full state trajectory are additional data when required; the creation record alone is not defined to reconstruct every intermediate state.
+
+An inclusion $\iota_{t,s}:\mathcal E_t\hookrightarrow\mathcal E_s$, $t\le s$, has $\iota_{t,s}(\omega)=\omega$. Identities and composition are ordinary inclusion identities and composition, preserving all four coordinates exactly.
+
+**Lemma 4.1.3** (Historical Preservation under Active Deletion).
+
+Let the active spatial state use the occurrence map $\alpha_t:E_t\to\mathcal E_t$ and let creation records accumulate by union (Definition 4.1.2). Then the historical record is preserved by active edge deletion, including every prior creation record and its birth tick and height, while the cumulative spatial support remains monotonically inclusive.
+
+*Proof.*
+
+**I. Record Inclusion**
+
+The proof uses the specified objects and conventions (Definition 4.1.2).
+
+For $\omega\in\mathcal E_t$, the union identity gives
+
+$$
+\omega\in\mathcal E_t\Longrightarrow
+\omega\in\mathcal E_t\cup A^{\mathrm{occ}}_{t+1}=\mathcal E_{t+1}.
+$$
+
+Hence $\mathcal E_t\subseteq\mathcal E_{t+1}$.
+
+**II. Projection to Spatial Support**
+
+If $(u,v)\in\overline E_t$, some $b,h$ satisfy $(u,v,b,h)\in\mathcal E_t$. Record inclusion puts the same record in $\mathcal E_{t+1}$, so $(u,v)\in\overline E_{t+1}$. Therefore $\overline E_t\subseteq\overline E_{t+1}$.
+
+**III. Active Excision**
+
+If $e\in E_t$ is deleted, its active occurrence $\alpha_t(e)$ belongs to $\mathcal E_t$ and therefore to $\mathcal E_{t+1}$. Removal of $e$ from the active set changes neither union membership nor the stored record. This proves deletion indelibility (Lemma 4.1.3).
+
+Q.E.D.
+
+**I. Coordinate Form of the Inclusion**
+
+The proof uses the specified objects and conventions (Definition 4.1.2).
+
+Let $\omega=(u,v,b,h)\in\mathcal E_t$. The canonical inclusion changes its containing set, not its value:
+
+$$
+\iota_{t,s}(u,v,b,h)=(u,v,b,h).
+$$
+
+**II. Birth and Height Projections**
+
+Applying the third and fourth projections separately gives
+
+$$
+\begin{aligned}
+b(\iota_{t,s}(\omega))&=b(u,v,b,h)=b=b(\omega),\\
+h(\iota_{t,s}(\omega))&=h(u,v,b,h)=h=h(\omega).
+\end{aligned}
+$$
+
+**III. Distinct Re-Creations**
+
+For records $(u,v,b_1,h_1)$ and $(u,v,b_2,h_2)$ with $b_1\ne b_2$, equality of records would imply equality of their third projections, contradicting $b_1\ne b_2$. Thus the two births remain distinct even when $h_1=h_2$. Each record retains its own projections (Lemma 4.1.3).
+
+Q.E.D.
+
+**I. Active Path Membership**
+
+For a deletion-only change $E'=E\setminus F$, any path using an edge of $F$ is absent from the new active path set. Every path using only $E'$ was already a path in $E$, giving
+
+$$
+\mathcal P_{E'}(u,v)\subseteq\mathcal P_E(u,v).
+$$
+
+**II. Retained Historical Objects**
+
+The same operation does not remove elements of $\mathcal E_t$ (Lemma 4.1.3). The coordinate values of each retained record remain equal (Lemma 4.1.3). The recorded predecessor relation $D$ is fixed at creation, so excision from the active graph changes no historical pair $(\omega,\eta)\in D$.
+
+**III. Closure Invariance Under Deletion Alone**
+
+A witness for $\omega D^+\eta$ consists of retained records and recorded dependency pairs. Neither is removed. Conversely, deletion alone introduces no new records or dependency pairs. Thus the set of such witnesses is unchanged, and the occurrence order is unchanged. This is the claimed domain decoupling (Lemma 4.1.3).
+
+Q.E.D.
 
 ## 4.2 Validity of Categorical Syntax & Topological Injectivity
 
-**Theorem 4.2.1** (Categorical Validity, Topological Injectivity, and Structure Preservation).
-The structures $\mathbf{Caus}_t$ and $\mathbf{Hist}$ satisfy all category axioms (identity neutrality, associativity) and preserve causal partial orders under constructor rewrites:
+**Theorem 4.2.1** (Categorical Laws, Historical Inclusion and Filtered Influence).
 
-* **Path Associativity:** For any directed paths $p \in \mathrm{Hom}(u, v)$, $q \in \mathrm{Hom}(v, w)$, and $r \in \mathrm{Hom}(w, z)$, sequence concatenation is strictly associative: $(r \circ q) \circ p = r \circ (q \circ p)$.
-* **Timestamp Monotonicity:** For every non-trivial morphism $\pi \in \mathrm{Hom}(u, v)$ ($\ell \ge 1$), the sequence of edge timestamps is strictly monotonically increasing: $H(e_1) < H(e_2) < \dots < H(e_k)$ (Lean 4 certified: `edge_path_monotonicity_transitive`, Appendix A, Part 7).
-* **Topological Injectivity:** Every morphism $f \in \mathrm{Hom}_{\mathbf{Hist}}(\mathcal{H}, \mathcal{H}')$ is strictly injective on connected components.
-* **Partial Order Preservation:** The reachability relation induced by $\mathrm{Hom}_{\mathbf{Caus}_t}(u, v) \neq \emptyset$ forms a strict partial order $(V, \le)$ on $V(G_t)$ for every $t \in \mathbb{N}_0$.
+Let active paths compose by concatenation, let historical morphisms be canonical creation-record inclusions, and assume the acyclicity axiom for the nonempty closure of mediated influence. Then the active path category and historical inclusion category satisfy their identity and associativity laws, historical inclusions preserve record coordinates, and the filtered relation's nonempty transitive closure is a strict partial order.
 
-*Proof.* We verify the categorical axioms, topological injectivity, and poset consistency:
+*Proof.*
 
-**I. Composition Associativity & Identity in $\mathbf{Caus}_t$:** Morphism composition in $\mathbf{Caus}_t$ is defined by edge sequence concatenation. Sequence concatenation in Set Theory is associative: $(S_r \cdot S_q) \cdot S_p = S_r \cdot (S_q \cdot S_p)$. For any path $\pi \in \mathrm{Hom}(u, v)$, prepending or appending the zero-length trivial path $\mathrm{id}_u = (u, \emptyset, u)$ leaves the sequence unchanged: $S_{\pi} \cdot \emptyset = S_{\pi} = \emptyset \cdot S_{\pi}$.
+**I. Active Path Category.** Write a path as its ordered edge list. For lists $p,q,r$, concatenation gives $(p\mathbin{+\!+}q)\mathbin{+\!+}r=p\mathbin{+\!+}(q\mathbin{+\!+}r)$ by induction on the length of $p$: the empty case is immediate, and the case $p=e::p'$ reduces to equality for $p'$ after the same initial edge $e$ is prefixed. The empty list is a two-sided identity. These are unrestricted active paths; simple, time-respecting paths form a filtered family, which need not be closed under composition.
 
-**II. Category Axioms for $\mathbf{Hist}$:** Morphisms in $\mathbf{Hist}$ are canonical inclusions on cumulative trajectory graphs $\mathcal{H}_t$ satisfying edge inclusion $E(\mathcal{H}_t) \subseteq E(\mathcal{H}_{t+k})$ and timestamp preservation $H'(f(e)) = H(e)$. Inclusion composition is inherently associative: $(h \circ g) \circ f = h \circ (g \circ f)$. The identity map $\mathrm{id}_{\mathcal{H}}(v) = v$ preserves all edges and timestamps ($H(\mathrm{id}_{\mathcal{H}}(e)) = H(e)$), serving as the two-sided neutral identity.
+**I. Identity Inclusion**
 
-**III. Topological Injectivity:** Let $f: \mathcal{H} \to \mathcal{H}'$ be a structure-preserving morphism in $\mathbf{Hist}$. Assume for contradiction that $f$ is non-injective on a connected pair, i.e., $\exists u \neq v$ connected by a directed path $\pi = (u = x_0, x_1, \dots, x_k = v)$ in $\mathcal{H}$ such that $f(u) = f(v) = w$:
+The historical object is a set of immutable creation records (Definition 4.1.2). Reflexivity of subset inclusion gives $\mathcal E\subseteq\mathcal E$. Its canonical map sends each record to itself:
 
-1. If $\ell(\pi) = 1$ (a single edge $(u, v) \in E(\mathcal{H})$), the image $f(\pi) = (w, w) \in E(\mathcal{H}')$ forms a self-loop, directly violating Axiom 1 (Irreflexivity, Lean 4 certified: `asymmetry_implies_irreflexivity`, Appendix A, Part 1).
-2. If $\ell(\pi) \ge 2$, the image $f(\pi)$ forms a closed directed cycle in $\mathcal{H}'$. Timestamp preservation requires $H'(f(e_i)) = H(e_i)$ to strictly increase along the path: $H'(f(e_1)) < H'(f(e_2)) < \dots < H'(f(e_k))$. Strict increase along a closed loop requires $t_{\mathrm{start}} < t_{\mathrm{end}}$, while vertex identification $f(u) = f(v)$ requires $t_{\mathrm{start}} = t_{\mathrm{end}}$, producing the strict contradiction:
-$$t < t.$$
+$$
+1_{\mathcal E}(\omega)=\omega,\qquad
+b(1_{\mathcal E}(\omega))=b(\omega),\qquad
+h(1_{\mathcal E}(\omega))=h(\omega).
+$$
 
-Thus, no valid morphism in $\mathbf{Hist}$ can identify distinct connected vertices (Lean 4 certified: `edge_monotone_no_causal_cycle`, Appendix A, Part 7).
+The source and target coordinates are unchanged as well.
 
-**IV. Partial Order Preservation:** Irreflexivity ($u \not\le u$) and timestamp-enforced acyclicity guarantee that $\mathrm{Hom}(u, v) \neq \emptyset \implies \mathrm{Hom}(v, u) = \emptyset$ for $u \neq v$. The reachability relation defines a strict partial order $(V, \le)$ on every causal slice. $\square$
+**II. Precomposition**
 
-## 4.3 Awareness Layer (Store Comonad & Algebraic Rigidity)
+For $f:\mathcal E\hookrightarrow\mathcal F$ and every $\omega\in\mathcal E$,
+
+$$
+(f\circ1_{\mathcal E})(\omega)=f(1_{\mathcal E}(\omega))=f(\omega).
+$$
+
+Pointwise equality gives $f\circ1_{\mathcal E}=f$.
+
+**III. Postcomposition**
+
+Likewise, because $f(\omega)\in\mathcal F$,
+
+$$
+(1_{\mathcal F}\circ f)(\omega)=1_{\mathcal F}(f(\omega))=f(\omega).
+$$
+
+Therefore $\boxed{1_{\mathcal F}\circ f=f=f\circ1_{\mathcal E}.}$ These are the required identity laws (Section 4.2).
+
+Q.E.D.
+
+**I. Closure of Inclusions**
+
+Let $f:\mathcal E\hookrightarrow\mathcal F$ and $g:\mathcal F\hookrightarrow\mathcal G$ be canonical record inclusions (Definition 4.1.2). For $\omega\in\mathcal E$, the two memberships give $\omega\in\mathcal F$ and then $\omega\in\mathcal G$. Thus $\mathcal E\subseteq\mathcal G$ and $(g\circ f)(\omega)=\omega$. Every record coordinate is preserved.
+
+**II. Threefold Evaluation**
+
+For a third inclusion $h:\mathcal G\hookrightarrow\mathcal J$, compute on every source record:
+
+$$
+\begin{aligned}
+((h\circ g)\circ f)(\omega)&=(h\circ g)(f(\omega))=h(g(f(\omega))),\\
+(h\circ(g\circ f))(\omega)&=h((g\circ f)(\omega))=h(g(f(\omega))).
+\end{aligned}
+$$
+
+Both maps have source $\mathcal E$ and target $\mathcal J$.
+
+**III. Morphism Equality**
+
+The displayed values agree for every source record. Extensionality gives
+
+$$
+\boxed{(h\circ g)\circ f=h\circ(g\circ f).}
+$$
+
+This is the associative law (Section 4.2). The identity maps are the canonical self-inclusions (Section 4.2).
+
+Q.E.D.
+
+**I. Individual Preservation**
+
+For every $\omega\in\mathcal E_t$, $b(f(\omega))=b(\omega)$ and $h(f(\omega))=h(\omega)$. For every $\eta\in\mathcal E_s$, the corresponding identities hold for $g$ (Lemma 4.1.3).
+
+**II. Composite Evaluation**
+
+Substituting $\eta=f(\omega)$ gives
+
+$$
+\begin{aligned}
+b((g\circ f)(\omega))&=b(g(f(\omega)))=b(f(\omega))=b(\omega),\\
+h((g\circ f)(\omega))&=h(g(f(\omega)))=h(f(\omega))=h(\omega).
+\end{aligned}
+$$
+
+**III. Conclusion**
+
+Both coordinate equalities hold for every source occurrence, so the composite preserves the historical labels (Section 4.2).
+
+Q.E.D.
+
+**I. The Specified Morphism Class**
+
+Let $f:\mathcal H_t\to\mathcal H_{t+1}$ be valid in the historical category. Its definition makes it a canonical inclusion on the underlying vertices and edges (Definition 4.1.2):
+
+$$
+f_V:V(\mathcal H_t)\hookrightarrow V(\mathcal H_{t+1}),\qquad
+f_V(x)=x,\qquad f_E(e)=e.
+$$
+
+These functions have the smaller historical record as domain and the larger record as codomain.
+
+**II. Injectivity on All Vertices**
+
+For $u,v\in V(\mathcal H_t)$,
+
+$$
+f_V(u)=f_V(v)\ \Longrightarrow\ u=v,
+$$
+
+by substituting the two inclusion values. Conversely $u=v$ implies equality of their images. Thus the equality test is preserved in both directions:
+
+$$
+f_V(u)=f_V(v)\quad\Longleftrightarrow\quad u=v.
+$$
+
+In particular, restriction to a connected component remains injective. The same calculation on edge identifiers gives $f_E(e)=f_E(e')\Rightarrow e=e'$.
+
+**III. Adjacent-Vertex Collapse Under a Graph Map**
+
+The stated self-loop obstruction can also be evaluated independently. For an adjacency-preserving map $g$ and edge $(u,v)\in E$, its image edge is
+
+$$
+g_E(u,v)=(g_V(u),g_V(v)).
+$$
+
+If $g_V(u)=g_V(v)=w$, edge preservation forces $(w,w)$ to be an edge of the target. A target satisfying the causal primitive requires $(w,w)\notin E'$ (Section 2.1), a contradiction. Therefore such a map cannot identify the endpoints of an edge into an irreflexive target.
+
+**IV. Historical Conclusion**
+
+For the specified historical morphisms, the stronger global injectivity already follows from the canonical-inclusion formula of Section I. Its connected-vertex consequence is exactly the claim (Section 4.2):
+
+$$
+\boxed{f_V(u)=f_V(v)\Rightarrow u=v,\qquad
+(u,v)\in E\Rightarrow f_V(u)\ne f_V(v).}
+$$
+
+Q.E.D.
+
+**I. The Eligible Morphism Set**
+
+The proof uses the specified objects and conventions (Definition 2.3.2).
+
+Let $\operatorname{Hom}^{\mathrm{eff}}(u,v)$ be the subset of active path morphisms whose vertex sequence $p=(v_0,\ldots,v_k)$ satisfies
+
+$$
+v_0=u,\quad v_k=v,\quad k\ge2,\quad
+v_i\ne v_j\ (i<j),\quad
+H(v_{i-1},v_i)<H(v_i,v_{i+1})\ (1\le i<k).
+$$
+
+**II. Forward Implication**
+
+If $p\in\operatorname{Hom}^{\mathrm{eff}}(u,v)$, the same sequence supplies the simple-path, mediation and height witnesses in the definition of $u\,R\,v$. Thus nonemptiness implies influence.
+
+**III. Reverse Implication**
+
+If $u\,R\,v$, its witnessing simple directed path is an active path morphism. Its length and height tests are the defining membership conditions above. Hence the witness belongs to $\operatorname{Hom}^{\mathrm{eff}}(u,v)$.
+
+**IV. Conclusion**
+
+$$
+\operatorname{Hom}^{\mathrm{eff}}(u,v)\ne\varnothing\Longleftrightarrow u\,R\,v
+$$
+
+(Section 4.2).
+
+Q.E.D.
+
+**I. Closure Witnesses**
+
+The proof uses the specified objects and conventions (Definition 2.3.2).
+
+A witness for $uR^+v$ is a finite $R$-chain of positive length. If $uR^+v$ and $vR^+w$, concatenate the two witness chains at their common endpoint. Its number of steps is the sum of two positive integers, hence positive. Every step still belongs to $R$, so $uR^+w$.
+
+**II. Irreflexivity**
+
+The stated causal axiom supplies $\neg(uR^+u)$ for every $u$. This is an explicit hypothesis on the closure, not a conclusion from arbitrary spatial-path concatenation.
+
+**III. Asymmetry**
+
+If both $uR^+v$ and $vR^+u$, the concatenation from Section I gives $uR^+u$, contradicting Section II. Therefore
+
+$$
+uR^+v\Longrightarrow\neg(vR^+u).
+$$
+
+Transitivity and irreflexivity establish the strict partial order (Section 4.2).
+
+Q.E.D.
+
+## 4.3 Awareness Layer (Transported Product Comonad & Conditional Rigidity)
 
 To evaluate candidate rewrite sites without invoking an extrinsic, non-local observer, the graph queries its local neighborhood via a comonadic self-observation functor.
 
-**Definition 4.3.1** (Category of Annotated Causal Graphs $\mathbf{AnnCG}$).
-The Category of **Annotated Causal Graphs $\mathbf{AnnCG}$** is defined by:
+**Definition 4.3.1** (Fixed-Domain Annotated Graph Category).
 
-* **Objects:** Ordered pairs $(G, \sigma)$, where $G = (V, E, H)$ is a causal graph and $\sigma: \mathcal{T}(G) \to \{+1, -1\}^3$ is the triad occupancy-check syndrome of Section 3.5.4, evaluated on candidate 2-paths via the checks $S_1, S_2, S_3$.
-* **Morphisms:** Pairs $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$, where $f: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$ is the historical inclusion in $\mathbf{Hist}$ between the associated cumulative trajectories, and $k: \sigma \to \sigma'$ is a compatible diagnostic update map.
-* **Composition:** Component-wise composition $(f', k') \circ (f, k) = (f' \circ f, k' \circ k)$ with identity $\mathrm{id}_{(G, \sigma)} = (\mathrm{id}_{\mathcal{H}}, \mathrm{id}_\sigma)$.
+Let $V$ be the fixed spatial vertex universe, let $\mathcal V_{\mathrm{even}}=\{s\in\mathbb F_2^3:s_1+s_2+s_3=0\}$ and put $S=\{b:V^3\to\mathcal V_{\mathrm{even}}\}$. The category of **Annotated Causal Graphs (AnnCG)** has objects $(X,A)$, where $X$ includes an active graph $G_X$ and its creation history, and $A$ is an annotation fiber closed under finite products with $S$; an annotated state is $(X,a)$ with $a\in A$.
 
-**Definition 4.3.2** (Awareness Store Endofunctor $R_T$).
-The **Awareness Endofunctor** $R_T: \mathbf{AnnCG} \to \mathbf{AnnCG}$ formalizes local self-observation via the Uustalu-Vene Costate/Store Comonad architecture [20]:
+The base transitions $f:X\to Y$ are finite composable histories of the specified rewrites, with the associated inclusions of retained creation records (Definition 4.1.2). The identity is the empty transition history and composition is concatenation. An AnnCG morphism is $(f,k):(X,A)\to(Y,B)$ with $k:A\to B$. Composition is $(g,l)\circ(f,k)=(g\circ f,l\circ k)$ and identity is $(\mathrm{id}_X,\mathrm{id}_A)$.
 
-* **On Objects:** $R_T(G, \sigma) = \big(G, (\sigma, \sigma_G)\big)$, where $\sigma$ represents the stored historical diagnostic context and $\sigma_G$ is the syndrome map freshly computed from the current local topology.
-* **On Morphisms:** For $h = (f, k): (G, \sigma) \to (G', \sigma')$, $R_T(h) = \big(f, \lambda(a, b).(k(a), b)\big)$, applying the update $k$ to the stored context while preserving the freshly observed state.
+Every ordered triple, including an inactive candidate, has the pair-check observation $s_X=\sigma_{G_X}\in S$ (Section 3.5.4). If $E_X$ and $E_Y$ are the adjacency fields, define
 
-**Definition 4.3.3** (Context Extraction Counit $\epsilon$ and Meta-Check Comultiplication $\delta$).
-The awareness layer is equipped with two natural transformations:
+$$
+\Delta E_f=E_X\oplus E_Y,\qquad
+u_f=\sigma_{\Delta E_f}=s_X\oplus s_Y,\qquad
+\tau_f(b)=b\oplus u_f.
+$$
 
-* **Counit $\epsilon: R_T \to \mathrm{Id}_{\mathbf{AnnCG}}$:** Extracts the prior diagnostic context:
-  $$\epsilon_{(G,\sigma)}: \big(G, (\sigma, \sigma_G)\big) \mapsto (G, \sigma), \qquad \epsilon = \lambda(a, b).a.$$
+The ambient category permits arbitrary annotation maps. Physical faithful-label updates form the specified subclass whose maps track the incidence displacement (Theorem 4.3.5).
 
-* **Comultiplication $\delta: R_T \to R_T^2$:** Performs higher-order recursive meta-verification ("checking the checker"):
-  $$\delta_{(G,\sigma)}: \big(G, (\sigma, \sigma_G)\big) \mapsto \big(G, ((\sigma, \sigma_G), \sigma_G)\big), \qquad \delta = \lambda(a, b).((a, b), b).$$
+**Definition 4.3.2** (Graph-Changing Product Awareness Lift).
 
-**Theorem 4.3.4** (The Awareness Store Comonad).
-The triple $(R_T, \epsilon, \delta)$ satisfies the formal **Comonad Axioms** on $\mathbf{AnnCG}$:
+Let the **Awareness Endofunctor** $R_T$ act on the product annotation fibers by
 
-1. **Left Identity:** $\epsilon_{R_T(X)} \circ \delta_X = \mathrm{id}_{R_T(X)}$ (extracting context from a meta-check returns the original awareness state; Lean 4 certified: `left_identity`, Appendix A, Part 3).
-2. **Right Identity:** $R_T(\epsilon_X) \circ \delta_X = \mathrm{id}_{R_T(X)}$ (extracting inner context after duplication preserves the state; Lean 4 certified: `right_identity`, Appendix A, Part 3).
-3. **Comonadic Associativity:** $\delta_{R_T(X)} \circ \delta_X = R_T(\delta_X) \circ \delta_X$ (hierarchical meta-checks commute depth-wise; Lean 4 certified: `comonad_associativity`, Appendix A, Part 3).
+$$
+R_T(X,A)=(X,A\times S),\qquad
+R_T(f,k)(a,b)=(k(a),\tau_f(b)).
+$$
+
+The freshly observed state associated with $(X,a)$ is $(X,(a,s_X))$. The second component is transported across graph-changing transitions; at a fixed snapshot its displacement is zero and it remains unchanged (Definition 4.3.1).
+
+**Definition 4.3.3** (Counit Projection and Context Duplication).
+
+Let the **Context Extraction** counit $\epsilon:R_T\to\mathrm{Id}$ have component at $(X,A)$ equal to the identity base transition and the projection
+
+$$
+\epsilon_{(X,A)}:A\times S\to A,\qquad \epsilon(a,b)=a.
+$$
+
+This map is defined on the full product fiber, including historical annotations that are not currently faithful (Definition 4.3.1).
+
+Let the **Meta-Check** comultiplication $\delta:R_T\to R_T^2$ have identity base transition and annotation component
+
+$$
+\delta_{(X,A)}:A\times S\to(A\times S)\times S,\qquad
+\delta(a,b)=((a,b),b).
+$$
+
+Both copies are transported by the same base displacement when a graph-changing morphism acts (Definition 4.3.2).
+
+**Theorem 4.3.4** (Transported Awareness Comonad).
+
+Given AnnCG with fixed syndrome domain and the product lift $R_T(f,k)(a,b)=(k(a),\tau_f(b))$, the following holds: $(R_T,\epsilon,\delta)$ is a comonad, with a functorial lift, natural counit and comultiplication, two counit identities and coassociativity (Definition 4.3.1).
+
+*Proof.*
+
+**I. Cancellation of Endpoint Fields**
+
+The proof uses the specified objects and conventions (Definition 4.3.1).
+
+For $f:X\to Y$ and $g:Y\to Z$, binary addition gives
+
+$$
+u_f\oplus u_g=(s_X\oplus s_Y)\oplus(s_Y\oplus s_Z)
+=s_X\oplus(s_Y\oplus s_Y)\oplus s_Z=s_X\oplus s_Z=u_{g\circ f}.
+$$
+
+Also $u_{\mathrm{id}_X}=s_X\oplus s_X=0$. For every $b\in S$,
+
+$$
+\tau_{\mathrm{id}}(b)=b\oplus0=b,\qquad
+\tau_g(\tau_f(b))=(b\oplus u_f)\oplus u_g=b\oplus u_{g\circ f}.
+$$
+
+**II. Identity Lift**
+
+The lifted identity sends $(a,b)$ to $(\mathrm{id}(a),\tau_{\mathrm{id}}(b))=(a,b)$. Its base transition is the identity, hence it is the identity morphism on the product object.
+
+**III. Composite Lift**
+
+For annotation maps $k:A\to B$ and $l:B\to C$,
+
+$$
+\begin{aligned}
+R_T(g,l)(R_T(f,k)(a,b))
+&=R_T(g,l)(k(a),\tau_f(b))\\
+&=(l(k(a)),\tau_g(\tau_f(b)))\\
+&=((l\circ k)(a),\tau_{g\circ f}(b))\\
+&=R_T(g\circ f,l\circ k)(a,b).
+\end{aligned}
+$$
+
+Equality holds for every element of the source fiber and the base transitions agree. This proves functoriality (Section 4.3).
+
+Q.E.D.
+
+**I. Counit Square**
+
+The proof uses the specified objects and conventions (Definition 4.3.1).
+
+For $h=(f,k)$ and $(a,b)\in A\times S$,
+
+$$
+\epsilon_Y(R_T(h)(a,b))=\epsilon_Y(k(a),\tau_f(b))=k(a)
+=k(\epsilon_X(a,b)).
+$$
+
+Both composites have base transition $f$, so their annotation equality proves the counit square.
+
+**II. Second Lift**
+
+The annotation part of $R_T(h)$ is $\widetilde k(a,b)=(k(a),\tau_f(b))$. Applying the product lift to it gives
+
+$$
+R_T^2(h)((a,b),c)=((k(a),\tau_f(b)),\tau_f(c)).
+$$
+
+In particular both observation slots, not just the inner one, are transported.
+
+**III. Comultiplication Square**
+
+Direct substitution on the two sides yields
+
+$$
+\begin{aligned}
+\delta_Y(R_T(h)(a,b))&=((k(a),\tau_f(b)),\tau_f(b)),\\
+R_T^2(h)(\delta_X(a,b))&=R_T^2(h)((a,b),b)
+=((k(a),\tau_f(b)),\tau_f(b)).
+\end{aligned}
+$$
+
+The base transitions again agree. Thus both naturality squares commute (Section 4.3).
+
+Q.E.D.
+
+**I. Outer Counit**
+
+The proof uses the specified objects and conventions (Definition 4.3.1).
+
+For $(a,b)\in A\times S$,
+
+$$
+\epsilon_{R_T X}(\delta_X(a,b))=\epsilon_{R_T X}((a,b),b)=(a,b).
+$$
+
+**II. Lifted Inner Counit**
+
+The base transition of $\epsilon_X$ is identity, so its displacement vanishes. Consequently
+
+$$
+R_T(\epsilon_X)(\delta_X(a,b))
+=R_T(\epsilon_X)((a,b),b)
+=(\epsilon_X(a,b),b)=(a,b).
+$$
+
+**III. Coassociativity**
+
+The two annotation composites are
+
+$$
+\begin{aligned}
+\delta_{R_T X}(\delta_X(a,b))&=\delta_{R_T X}((a,b),b)=(((a,b),b),b),\\
+R_T(\delta_X)(\delta_X(a,b))&=R_T(\delta_X)((a,b),b)
+=(\delta_X(a,b),b)=(((a,b),b),b).
+\end{aligned}
+$$
+
+Each base transition is identity. The equalities establish all three laws (Section 4.3).
+
+Q.E.D.
 
 **Theorem 4.3.5** (Deterministic Affine Update & Uniqueness of Triad Occupancy Labels).
 Let $h = (f, k): (G_t, \sigma) \to (G_{t+1}, \sigma')$ be a morphism in $\mathbf{AnnCG}$ corresponding to a physical rewrite on an arbitrary $N$-vertex graph $G = (V, E)$ with global topological symmetric difference $\Delta E = E_{t+1} \oplus E_t$.
@@ -1004,23 +2057,177 @@ Furthermore, if $(G, \sigma)$ begins faithful to physical ground truth ($\sigma 
 
 **V. Involution and Homomorphism:** Applying the same topological rewrite twice returns the syndrome to its original state: $T_u(T_u(\sigma)) = \sigma$ (Lean 4 certified: `comonad_shift_involution`, Appendix A, Part 3). Sequential physical updates compose homomorphically: $T_{u_2}(T_{u_1}(\sigma)) = T_{u_1 \oplus u_2}(\sigma)$ (Lean 4 certified: `comonad_shift_composition_homomorphism`, Appendix A, Part 3). The stored triad labels therefore update deterministically with $\Delta E$ and have no independent diagnostic degrees of freedom. $\square$
 
+**I. Binary Pair Checks**
+
+At a site with occupancy bits $x_1,x_2,x_3$, the pair-check bit vector is
+
+$$
+B(x)=(x_1\oplus x_2,\ x_2\oplus x_3,\ x_3\oplus x_1).
+$$
+
+For a displacement $d$, coordinate expansion gives
+
+$$
+B(x\oplus d)_1=(x_1\oplus d_1)\oplus(x_2\oplus d_2)
+=(x_1\oplus x_2)\oplus(d_1\oplus d_2),
+$$
+
+and the same calculation on coordinates two and three proves $B(x\oplus d)=B(x)\oplus B(d)$ (Theorem 4.3.5).
+
+**II. Global Observation Difference**
+
+The coordinate identity holds at every ordered triple in $V^3$, so
+
+$$
+s_Y=s_X\oplus\sigma_{\Delta E},\qquad
+u_f=\sigma_{\Delta E}=s_X\oplus s_Y.
+$$
+
+**III. Faithful Context Transport**
+
+For $b=s_X$,
+
+$$
+\tau_f(b)=s_X\oplus(s_X\oplus s_Y)
+=(s_X\oplus s_X)\oplus s_Y=0\oplus s_Y=s_Y.
+$$
+
+Therefore $R_T(f,k)(a,s_X)=(k(a),s_Y)$, the freshly observed target state (Section 4.3).
+
+Q.E.D.
+
 ## 4.4 Thermodynamic & Information-Theoretic Foundations
 
-The operating coordinates $(T_c, \lambda_0, \mu_0, \varepsilon_{\mathrm{geo}}, \Lambda)$ define a distinguished **canonical analytical reference prior coordinate** where discrete Landauer thermodynamic neutrality, Markov jump Lie algebra linearity, and integer lattice MaxEnt symmetries on $\mathbb{Z}$ simultaneously hold. Rather than claiming a formal deductive proof of physical reality from zero parameters, these constitutive values serve as the rigorously derived, non-arbitrary reference anchors against which the dynamical stability and robustness of the vacuum are evaluated:
+The canonical analytical reference coordinates are conditional constitutive choices. The unbiased binary prior follows from bit-flip symmetry; channel energies additionally use stipulated equal allocation, the source uses six independent fair decisions and a reference attempt clock, catalysis uses an affine family with a chosen endpoint, and friction uses the continuum Gaussian reference. The exact discrete Gaussian normalization retains the theta correction shown below. These assumptions define the reference model against which scalar stability and simulations are compared.
 
-Table 5: *Discrete Combinatorial Derivation Matrix for Constitutive Scales and Canonical Reference Priors.*
+Table 5: *Constitutive Assumptions, Conditional Coordinates and Their Mathematical Relations.*
 
-| Constitutive Parameter | Exact Analytical Value | Discrete Conservation Principle | Mathematical Derivation | Operational Role in Rewrite Engine | Formal Derivation |
+| Constitutive Parameter | Reference Value | Specified Premise | Mathematical Relation | Operational Role | Validation Scope |
 | :--- | :---: | :--- | :--- | :--- | :--- |
-| **Base Conversion Modulus / Critical Temperature** ($\beta_c, T_c$) | $\ln 2$ ($\approx 0.693147$) | Landauer bit-to-nat informational equivalence ($1\text{ bit} = \ln 2\text{ nats}$) | Free energy neutrality $\Delta F / T = -\Delta S = -\ln 2$ at ground state; $\mathfrak{S}_2$ bit-flip permutation symmetry uniquely fixes uniform prior $Q_0 = 1/2$. | Normalizes base conversion modulus; temperature cancels out identically in acceptance ratios ($P_{\mathrm{base}} = 1.0, Q_{\mathrm{base}} = 0.5$). | Lean 4 certified: `permutation_invariance_uniquely_determines_prior` (Supplement Part 9.5) |
-| **Catalytic Defect Relaxation** ($\lambda_0$) | $e - 1$ ($\approx 1.718282$) | 1-nat entropic defect activation threshold | Arrhenius defect activation factor $\exp(\Delta S_{\mathrm{defect}}) - 1$ evaluated at unit nat entropy ($\Delta S = 1\text{ nat}$). | Linear stress acceleration of catalytic 3-cycle deletion rate: $f_{\mathrm{cat}}(s) = 1 + \lambda_0 s$. | Section 4.4.6 / Proposition 4.2 |
-| **Thermodynamic Friction** ($\mu_0$) | $1 / \sqrt{2\pi}$ ($\approx 0.398942$) | Integer lattice $\mathbb{Z}$ Poisson summation & MaxEnt modular duality | Self-duality of Gaussian kernel under Fourier transform on 1D discrete integer fibers: $\sum_{n \in \mathbb{Z}} \mathrm{e}^{-\pi n^2 / \sigma^2} = \sigma \sum_{k \in \mathbb{Z}} \mathrm{e}^{-\pi k^2 \sigma^2} \implies \sigma_0 = 1/\sqrt{2\pi}$. | Exponential steric friction $e^{-\mu_0 s}$ suppressing additions in dense regions and preventing small-world collapse. | Section 4.4.5 / Proposition 4.3 |
-| **Geometric Quantum Energy** ($\varepsilon_{\mathrm{geo}}$) | $\frac{\ln 2}{3}$ ($\approx 0.231049$) | Discrete channel equipartition across trivalent routing channels | Loop-closure free energy $E_{\mathrm{total}} = \ln 2$ distributed uniformly across $k_{\mathrm{deg}}=3$ incident Bethe routing channels: $\varepsilon = \frac{\ln 2}{3}$. | Quanta-to-link energy scale mapping elementary 3-cycles to single-ribbon leptonic mass baseline ($\kappa_m = m_e / 3 \approx 0.170\text{ MeV}$). | Lean 4 certified: `simplicial_boundary_cycle_closed` (Supplement Part 9) |
-| **Cosmological Vacuum Drive** ($\Lambda$) | $2^{-6}$ ($= 0.015625$) | Simplicial triad 6-port boundary permutation capacity | Oriented 2-simplex boundary chain complex ($\partial_1 \circ \partial_2 = 0$) with 3 external vertices each having 2 internal routing ports ($3 \times 2 = 6$ ports): $\Lambda = 2^{-6}$. | Drives continuous cycle generation in the Master Equation to enforce negative Jacobian stability ($J \approx -0.33314$); set to $\Lambda_{\mathrm{micro}} = 0$ in unpumped Monte Carlo runs to study instanton ignition. | Lean 4 certified: `triad_interaction_ports_is_six`, `simplicial_permittivity_scale` (Supplement Part 9) |
+| Binary prior and information unit | $Q_0=1/2$, $\ln2$ | Normalization and bit-flip invariance | $p_0=p_1$, $p_0+p_1=1$ | Binary reference and bit-to-nat conversion | Lean conditional prior identity |
+| Catalytic coefficient | $\lambda_0=e-1$ | Affine factor with $f(0)=1$, $f(1)=e$ | $f(s)=1+(e-1)s$ | Selected stress response | Analytic affine uniqueness |
+| Friction reference | $\mu_0=1/\sqrt{2\pi}$ | Continuum Gaussian convention | $p_{\mathbb Z}(0)=\mu_0/\vartheta_3(0,e^{-2\pi^2})$ | Chosen damping coordinate | Exact Poisson identity and bounded theta correction |
+| Channel energy | $\varepsilon_0=\ln2/3$ | Total energy $\ln2$ and equal allocation | $3\varepsilon_0=\ln2$ | Dimensionless channel reference | Conditional allocation proof |
+| Auxiliary source | $\Lambda_0=1/64$ | Six independent fair decisions; unit attempt intensity | $\Lambda=\nu(1/2)^6$, $\nu=1$ | Driven continuum source; zero in unpumped runs | Counting and rate normalization |
 
-**Theorem 4.4.1** (Thermodynamic Foundations, Permutation Invariance, and Bit-Nat Equivalence).
-In any discrete formal rewrite system where structural decisions process binary alternatives, invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$ (Lean 4 certified: `permutation_invariance_uniquely_determines_prior`, Supplement Appendix A, Part 9.5). By Landauer's principle, the base conversion modulus is fixed to $\beta_c = \ln 2$ (thermodynamic scale $T_c = \ln 2$).
-At this scale, the informational entropy of a binary decision $\Delta S = \ln 2$ exactly equals the thermodynamic work required to update the causal link. Under discrete equipartition on the $k_{\mathrm{deg}}=3$ trivalent Bethe substrate, the loop-closure energy $E_{\mathrm{total}} = \ln 2$ distributes uniformly across the three incident routing channels to yield the discrete channel self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3} \approx 0.231049$. Simplicial boundary combinatorics across the oriented 2-simplex chain complex ($\partial_1 \circ \partial_2 = 0$) and its 6-port interaction boundary ($3 \times 2 = 6$) fix the canonical Vacuum Drive reference coordinate to $\Lambda = 2^{-6} = 0.015625$ (Lean 4 certified: `simplicial_boundary_cycle_closed`, `triad_interaction_ports_is_six`, and `simplicial_permittivity_scale`, Supplement Appendix A, Part 9). In the continuum Master Equation of geometrogenesis, $\Lambda$ acts as the generative drive of the relational network, enforcing negative Jacobian stability ($J \approx -0.33314$); in finite-lattice Monte Carlo simulations, setting $\Lambda_{\mathrm{micro}} \equiv 0$ isolates the strict absorbing-state Directed Percolation phase transition and instanton nucleation mechanics.
+
+**Theorem 4.4.1** (Conditional Constitutive Reference Coordinates).
+
+Given an unbiased binary prior, a stipulated dimensionless total loop energy $E_0=\ln2$ equally allocated to three channels, six independent fair routing decisions, affine catalytic interpolation with $f(0)=1$, $f(1)=e$, and the continuum Gaussian reference convention, the following holds: the corresponding reference coordinates are $Q_0=1/2$, $\varepsilon_0=\ln2/3$, $\Lambda_0=2^{-6}$, $\lambda_0=e-1$ and $\mu_0=1/\sqrt{2\pi}$. These values are conditional constitutive coordinates; the exact signed-lattice Gaussian normalization includes its theta correction.
+
+*Proof.*
+
+**I. Equal-Allocation Premise**
+
+The proof uses the specified objects and conventions (Theorem 4.4.1).
+
+Write the three channel energies as $\varepsilon_1,\varepsilon_2,\varepsilon_3$. The specified allocation law is
+
+$$
+\varepsilon_1=\varepsilon_2=\varepsilon_3=\varepsilon_0,
+\qquad \varepsilon_1+\varepsilon_2+\varepsilon_3=E_0.
+$$
+
+**II. Energy Conservation**
+
+Substitution gives $3\varepsilon_0=E_0$, hence $\varepsilon_0=E_0/3$.
+
+**III. Reference Energy Unit**
+
+In the stated energy unit $E_0=\ln2$, so
+
+$$
+\boxed{\varepsilon_0=\frac{\ln2}{3}.}
+$$
+
+This is the conditional channel scale (Section 4.4).
+
+Q.E.D.
+
+**I. Decision Index Set**
+
+The proof uses the specified objects and conventions (Theorem 4.4.1).
+
+Let $I=\{1,2,3\}\times\{1,2\}$ index the binary decisions. Its cardinality is $|I|=3\cdot2=6$. A complete decision state is an element of $\{0,1\}^{I}$, whose cardinality is $2^{|I|}=64$.
+
+**II. Joint Probability**
+
+For a specified assignment $b=(b_i)_{i\in I}$, fairness gives $\Pr(B_i=b_i)=1/2$. Independence gives
+
+$$
+\Pr(\forall i\in I,\ B_i=b_i)
+=\prod_{i\in I}\Pr(B_i=b_i)
+=\prod_{i\in I}\frac12=\left(\frac12\right)^6.
+$$
+
+**III. Normalization**
+
+The 64 assignments are disjoint and exhaustive. Their equal masses sum to $64\cdot2^{-6}=1$. Therefore the chosen alignment has the asserted probability (Section 4.4).
+
+Q.E.D.
+
+**I. Interpolation Conditions**
+
+The proof uses the specified objects and conventions (Theorem 4.4.1).
+
+An affine law $f(s)=a+bs$ satisfying $f(0)=1$ has $a=1$. The second condition is $f(1)=a+b=e$.
+
+**II. Coefficient Solution**
+
+Substituting $a=1$ gives $1+b=e$, so $b=e-1$. Thus $f(s)=1+(e-1)s$.
+
+**III. Uniqueness in the Chosen Family**
+
+If $g(s)=c+ds$ satisfies the same two conditions, $c=g(0)=1$ and $c+d=g(1)=e$, hence $d=e-1$. Therefore $f=g$ for every $s$, and the affine coefficient is unique (Section 4.4).
+
+Q.E.D.
+
+**I. Exact Signed-Lattice Normalization**
+
+The proof uses the specified objects and conventions (Theorem 4.4.1).
+
+For the stated Gaussian convention, Poisson summation gives
+
+$$
+\begin{aligned}
+Z=\sum_{n\in\mathbb Z}e^{-n^2/2}
+&=\sqrt{2\pi}\sum_{k\in\mathbb Z}e^{-2\pi^2k^2}\\
+&=\sqrt{2\pi}\left(1+2\sum_{k=1}^{\infty}q^{k^2}\right),
+\qquad q=e^{-2\pi^2}.
+\end{aligned}
+$$
+
+The bracket is $\vartheta_3(0,q)$. Put $\delta=2\sum_{k\ge1}q^{k^2}>0$. Then
+
+$$
+p(0)=Z^{-1}=\frac{\mu_0}{1+\delta}<\mu_0.
+$$
+
+**II. Positive Tail Bound**
+
+For every integer $k\ge1$, $(k-1)(k-2)\ge0$ implies $k^2\ge1+3(k-1)$. Since $0<q<1$,
+
+$$
+2q\le\delta
+\le2\sum_{k=1}^{\infty}q^{1+3(k-1)}
+=2q\sum_{j=0}^{\infty}(q^3)^j
+=\frac{2q}{1-q^3}.
+$$
+
+**III. Relative Error**
+
+Direct subtraction gives
+
+$$
+0<\frac{\mu_0-p(0)}{\mu_0}
+=1-\frac1{1+\delta}
+=\frac{\delta}{1+\delta}
+\le\delta\le\frac{2q}{1-q^3}.
+$$
+
+The normalization and controlled approximation are the asserted relations (Section 4.4).
+
+Q.E.D.
 
 ## 4.5 Universal Constructor
 
@@ -1062,18 +2269,15 @@ When a scheduler tick produces no accepted additions and no accepted deletions (
 $$\mathcal{U}(G_{t_L}) = G_{t_L}.$$
 Under the identity map, zero edges are added or removed, no new causal events occur, and all edge timestamps remain static. Consequently, the emergent physical proper time increment vanishes identically:
 $$\Delta t_{\mathrm{phys}}(t_L) \equiv 0.$$
-This distinguishes two conceptually and operationally distinct boundaries:
+A quiescent snapshot has $K(G,G)=1$. For the canonical unpumped tick, this means there are no old triangles and no unpaired eligible chord after reciprocal filtering. A realized tick with no retained moves only records that one outcome left the active fields unchanged.
 
-1. **Combinatorial Absorbing Boundary of the Generator:**
-$$\mathcal{S}_{\mathrm{extinct}} = \{ G \mid N_3(G) = 0 \land \operatorname{Adm}_{\mathrm{add}}(G) = \emptyset \},$$
-the completely cycle-free vacuum state with no admissible 2-paths.
-2. **Operational Homeostatic Stopping Time:**
-$$\tau_{\mathrm{homeo}} := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \iff \Delta t_{\mathrm{phys}}(t_L) = 0 \}.$$
+The single-tick simulation stopping rule is
 
-**Physical Necessity of the Homeostatic Stopping Time:**
-In unpumped finite-lattice Monte Carlo simulations ($\Lambda_{\mathrm{micro}} = 0$ on open Bethe tree fragments of size $N$), the boundary leaves constitute an exact $50\%$ fraction of all vertices ($L/N = (N+2)/(2N)$, Proposition 3.3.1) with out-degree zero. Because the lattice is finite and non-periodic, continuing to iterate the global logical scheduler $t_L \to \infty$ after physical evolution has arrested ($\Delta t_{\mathrm{phys}} = 0$) does not observe additional physical dynamics. Instead, it merely exposes the finite graph to leaf boundary dissipation, where rare boundary unbinding events cumulatively drive the finite Markov chain into the trivial absorbing state via Darroch–Seneta demographic absorption ($\lim_{t_L \to \infty} P(N_3 > 0) = 0$).
+$$
+\tau_{\mathrm{homeo}}=\inf\{t_L\ge1:\mathcal A_{t_L}^{\mathrm{ret}}=\varnothing,\ \mathcal D_{t_L}=\varnothing\}.
+$$
 
-Halting iteration at the physical stasis stopping time $\tau_{\mathrm{homeo}}$ directly measures the active **Quasi-Stationary Distribution (QSD)** of the self-organized vacuum before boundary dissipation takes effect. In Supplement Appendix D, we report an exhaustive sensitivity analysis evaluating generalized multi-tick persistence rules $\tau_K := \inf \{ t_L \ge K \mid \Delta t_{\mathrm{phys}}(t_L - j) = 0 \; \forall j \in \{0, \dots, K-1\} \}$ across $K \in \{1, 2, 5, 10\}$, establishing that QSD observables $(\langle \rho_3 \rangle_{\mathrm{QSD}}, p_{\mathrm{surv}})$ remain robustly invariant under the choice of $K$.
+Here the addition set is taken after reciprocal filtering. The supplement reports finite sensitivity results for stopping after $K$ consecutive inactive ticks, with $K\in\{1,2,5,10\}$. Those data describe the sampled terminal states under each protocol. The active-class communication, long-time quiescence probabilities and their relation to the stopping rule require separate estimates.
 
 ## 4.6 Single Tick of Logical Time
 
@@ -1081,135 +2285,645 @@ The microscopic rewrite grammar, parallel execution scheduler $\mathcal{U}$, and
 
 ![Microscopic graph rewrite system, elementary moves, execution scheduler, and bifurcating dynamical fates. (a) Regular bipartite Bethe substrate ($k=3$) with alternating depth-parity node coloring (dark for even depths, open for odd depths) and an initial parity-breaking defect edge linking inner same-parity nodes. (b) Elementary rewrite moves: path-closing addition on directed 2-paths and tension-dependent deletion on 3-cycle edges under causal PUC and AEC constraints. (c) Maximally parallel discrete tick $\mathcal{U}$ executing candidate proposals, independent Bernoulli selections, idempotent addition merge, and deletion purge (Lemma 4.6.1). (d) Dynamical trajectories of 3-cycle population $N_3(t)$, illustrating the bifurcation between rapid decay to the frozen absorbing vacuum ($N_3=0$) and first-tick burst escape into a persistent Quasi-Stationary Distribution (QSD, $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ at $N = 10^4$).](figure_framework_schematic.png)
 
-A single global logical tick $U_t \xrightarrow{\mathcal{U}} U_{t+1}$ executes a four-step parallel pipeline:
+Let the **Evolution Operator** be the Markov kernel induced by a deterministic four-stage realization map $\mathcal U(G,\xi)$ on the complete active graph state, including its current heights. All proposals and their probabilities are evaluated against the same pre-tick snapshot.
 
-* **Candidate Proposals:** Identify all compliant addition sites $\mathcal{A}_t$ satisfying PUC and AEC ($L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$), and all deletion sites $\mathcal{D}_t$ participating in 3-cycles.
-* **Bernoulli Selection:** For each addition site $a \in \mathcal{A}_t$, draw independent random variable $X_a \sim \mathrm{Bernoulli}(P_{\mathrm{acc}}(s_a))$. For each deletion site $d \in \mathcal{D}_t$, draw independent random variable $Y_d \sim \mathrm{Bernoulli}(Q_{\mathrm{del}}(s_d))$.
-* **Idempotent Addition Merge:** Insert accepted additions $E_{\mathrm{add}} = \{e_a \mid X_a = 1\}$ into the edge set with unique timestamps $H(e_{\mathrm{new}}) = 1 + \max_{(x, u)\in E} H(x, u)$. Because duplicate additions merge identically ($E \cup \{e\} \cup \{e\} = E \cup \{e\}$), addition conflicts are algebraically idempotent.
-* **Deletion Purge:** Remove accepted deletion edges $E_{\mathrm{del}} = \{e_d \mid Y_d = 1\}$ from the edge set.
+1. **Awareness:** Enumerate legal addition sites $\mathcal A(G)$, directed triangles $\mathcal C_3(G)$, and vertex cycle incidences $s_G(v)$. The addition stress is the sum over its three vertices; a triangle's deletion stress is $\max(0,\sum_{v\in c}s_G(v)-1)$.
+2. **Independent selection:** For each addition site choose $X_a\in\{0,1\}$ with probability $p_a=e^{-\mu s_a}$. For each triangle choose $J_c\in\{\bot\}\cup E(c)$ with probabilities $\Pr(J_c=\bot)=1-q_c$ and $\Pr(J_c=e)=q_c/3$, where $q_c=\min(1,\tfrac12(1+\lambda s_c)e^{-\mu s_c})$.
+3. **Symmetric merge:** Let $B=\{e_a:X_a=1\}$ and retain $B_{\mathrm{filt}}=\{(u,v)\in B:u\ne v,\ (v,u)\notin B\}$. Insert these edges with source-side heights from the pre-tick snapshot and record their birth occurrences.
+4. **Deletion purge:** Let $D=\{J_c:J_c\ne\bot\}$. Remove $D$ from the intermediate active edge set. Multiple selections of the same edge merge by set union; they do not create repeated deletions or erase historical records.
+
+The complete realization is $\xi=(X_{\mathcal A},J_{\mathcal C})$. The graph kernel is the pushforward of its normalized product measure (Lemma 4.6.2). The raw reciprocal filter rejects both accepted directions, rather than choosing an order-dependent winner.
 
 **Lemma 4.6.1** (Deterministic, Race-Free Parallel Execution).
 The four-step parallel execution scheduler $\mathcal{U}$ is deterministic and race-free: for any fixed random seed sequence $\boldsymbol{\xi}_t = (X_{\mathcal{A}}, Y_{\mathcal{D}})$, the updated state $G_{t+1} = \mathcal{U}(G_t, \boldsymbol{\xi}_t)$ is uniquely determined and independent of thread execution order. Proposing the complete candidate site sets $\mathcal{A}_t$ and $\mathcal{D}_t$ across the entire lattice at each tick is fundamentally required by Theorem 3.3.2 to preserve $\mathrm{Aut}(G_t)$-covariance across symmetry orbits, rather than merely serving as an implementation convenience. Note that the deterministic, race-free merge property (confluence under arbitrary thread scheduling given a fixed pseudo-random seed) is distinct from the symmetry-orbit completeness of Theorem 3.3.2.
 
-**Lemma 4.6.2** (Factorized Kinematic Transition Measure).
-Let $\mathcal{A}_t$ and $\mathcal{D}_t$ be the complete candidate addition and deletion site sets of graph $G_t = (V, E_t)$ proposed under Section 4.5.1. For any realizable successor graph $G_{t+1}$ formed by accepting additions $A \subseteq \mathcal{A}_t$ and deletions $D \subseteq \mathcal{D}_t$, the single-tick transition probability $\mathbb{P}(G_t \to G_{t+1})$ factorizes as an exact classical Markov kernel over independent local Bernoulli trials:
-$$\mathbb{P}(G_t \to G_{t+1}) = \prod_{a \in A} P_{\mathrm{acc}}(s_a) \prod_{a' \in \mathcal{A}_t \setminus A} (1 - P_{\mathrm{acc}}(s_{a'})) \prod_{d \in D} Q_{\mathrm{del}}(s_d) \prod_{d' \in \mathcal{D}_t \setminus D} (1 - Q_{\mathrm{del}}(s_{d'})),$$
-where $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu_0 s}$ and $Q_{\mathrm{del}}(s) = \min\left(1, \frac{1}{2}(1 + \lambda_0 s)\,\mathrm{e}^{-\mu_0 s}\right)$ are the constitutive kernels of Theorem 4.5.5.
-The addition sector contributes an exact exponential factor $\prod_{a \in A} P_{\mathrm{acc}}(s_a) = \exp\left(-\Delta \mathcal{S}_{\mathrm{add}}\right)$ with kinematic action $\Delta \mathcal{S}_{\mathrm{add}} = \mu_0 \sum_{a \in A} s_a$.
-This transition measure defines a strictly classical, positive-definite stochastic Markov kernel; it does not represent unitary quantum evolution or a Born-rule state reduction.
+**Lemma 4.6.2** (Complete Realization Measure and Graph Transition Kernel).
 
-*Proof.* We evaluate the four-step scheduler pipeline:
+Let $\xi$ comprise the independent addition and cycle-deletion outcomes (Section 4.6). Then $K(G,G')=\sum_{\xi:\mathcal U(G,\xi)=G'}\Pr(\xi\mid G)$ is normalized, and every positive realization probability has the additive negative-log action $-\log\Pr(\xi\mid G)$.
 
-**I. Independent Site Sampling:** In Step 2 of the parallel scheduler $\mathcal{U}$, random variables $X_a \sim \mathrm{Bernoulli}(P_{\mathrm{acc}}(s_a))$ for all $a \in \mathcal{A}_t$ and $Y_d \sim \mathrm{Bernoulli}(Q_{\mathrm{del}}(s_d))$ for all $d \in \mathcal{D}_t$ are sampled independently. The joint probability of realization $(X_{\mathcal{A}}, Y_{\mathcal{D}})$ is the exact product of marginal probabilities.
+*Proof.*
 
-**II. Addition Sector Factorization:** Substituting $P_{\mathrm{acc}}(s_a) = \mathrm{e}^{-\mu_0 s_a}$ yields $\prod_{a \in A} P_{\mathrm{acc}}(s_a) = \exp\left(-\mu_0 \sum_{a \in A} s_a\right) = \exp(-\Delta \mathcal{S}_{\mathrm{add}})$. The deletion kernel $Q_{\mathrm{del}}(s_d)$ accounts for catalytic defect relaxation and remains bounded in $[0, 1]$ by Theorem 4.5.5.
+**I. Local Outcome Normalization**
 
-**III. Classical Nature of the Kernel:** The resulting transition probability $\mathbb{P}(G_t \to G_{t+1}) \in [0, 1]$ is a non-negative measure on the space of graph transitions. Because it operates on discrete combinatorial states without complex phase holonomies or state vector superpositions, it represents a classical Markov transition measure rather than a quantum amplitude. $\square$
+The proof uses the specified objects and conventions (Section 4.6).
 
-**Lemma 4.6.3** (Thermodynamic Arrow of the Logical Tick).
-The global discrete evolution operator $\mathcal{U}: G_t \to G_{t+1}$ is formally non-invertible, establishing an intrinsic macroscopic arrow of time with non-negative Shannon entropy production per tick:
-$$\Delta S_{\mathrm{tick}} \ge 0,$$
-with strict positivity $\Delta S_{\mathrm{tick}} > 0$ whenever at least one candidate site possesses a non-degenerate transition probability $P \in (0, 1)$.
+For each addition, $\Pr(X_a=1)=p_a$ and $\Pr(X_a=0)=1-p_a$, with sum one. Each triangle has three distinct edges and
 
-*Proof.* We evaluate the information-theoretic irreversibility of the update:
+$$
+\Pr(J_c=\bot)+\sum_{e\in E(c)}\Pr(J_c=e)
+=(1-q_c)+3(q_c/3)=1.
+$$
 
-**I. Many-to-One Bernoulli Collapse:** During Step 2, drawing realization $(X_{\mathcal{A}}, Y_{\mathcal{D}})$ from the product Bernoulli measure collapses the full space of $2^{|\mathcal{A}_t| + |\mathcal{D}_t|}$ potential successor branches into a single realized update $(A, D)$. Because unchosen alternative trajectories are irreversibly discarded, the mapping $\mathcal{U}$ is many-to-one, producing Shannon entropy $\Delta S_{\mathrm{sample}} = -\sum_i p_i \ln p_i > 0$.
+**II. Product Realization Measure**
 
-**II. Idempotent Merging and Deletion Purge:** In Steps 3 and 4, multiple candidate 2-paths may propose identical chords (resolved by idempotent set union $E \cup \{e\} \cup \{e\} = E \cup \{e\}$), while deletion excises edges from $E(G_t)$. Given only $G_{t+1}$, the pre-update state $G_t$ cannot be uniquely reconstructed without external auxiliary data.
+For a specified realization, let $A=\{a:X_a=1\}$ and $C_D=\{c:J_c\ne\bot\}$. Independence gives
 
-**III. Monotonic Historical Accumulation:** By Definition 4.1.2 and Lemma 4.1.3, every accepted addition is permanently embedded in the cumulative historical category $\mathbf{Hist}$ via inclusion $\iota: \mathcal{H}_t \hookrightarrow \mathcal{H}_{t+1}$. Because cumulative history expands monotonically ($\mathcal{H}_t \subseteq \mathcal{H}_{t+1}$) and edge creation timestamps are strictly increasing along causal paths (Theorem 4.2.1), no physical backwards transformation can erase historical relational events. $\square$
+$$
+\Pr(\xi\mid G)=
+\prod_{a\in A}p_a\prod_{a\notin A}(1-p_a)
+\prod_{c\in C_D}\frac{q_c}{3}\prod_{c\notin C_D}(1-q_c).
+$$
 
-**Lemma 4.6.4** (Foster–Lyapunov Anti-Densification Boundedness and Absorbing Vacuum Stasis).
-Let $\rho(G) = N_3(G)/N$ denote the intensive cycle density. Under the microscopic transition measure of Lemma 4.6.2:
+The indices run through the fixed candidate sets of the input snapshot. Distributivity of the finite sums yields
 
-* **Absorbing Stasis of the Unpumped Vacuum:** In the unpumped regime ($\Lambda_{\mathrm{micro}} \equiv 0$), the defect-free vacuum $G_0$ with $\rho(G_0) = 0$ is a strictly absorbing configuration ($\mathbb{P}(G_0 \to G_0) = 1$). The unpumped Markov chain is reducible, and no non-trivial, globally attracting stationary measure $\pi^*$ supported on active graphs exists.
-* **Foster–Lyapunov Anti-Densification Bound:** For the Lyapunov functional $V(G) = \rho(G)$, the expected single-tick drift $\Delta V(G) = \mathbb{E}[\rho(G_{t+1}) - \rho(G_t) \mid G_t = G]$ satisfies $\Delta V(G) \le -\epsilon < 0$ for all $\rho(G) > \rho_{\mathrm{crit}}$, where $\rho_{\mathrm{crit}}$ is a finite threshold density. In this high-density regime, vertex cycle-incidence increases addition stress $s_{\mathrm{add}}$, exponentially suppressing additions ($P_{\mathrm{acc}} \le \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}$), while deletion flux scales linearly with cycle count $N_3$ with $Q_{\mathrm{del}} \ge Q_{\mathrm{del}}(2) \approx 0.999$, ensuring that deletion strictly dominates creation ($\mathbb{E}[|E_{\mathrm{del}}|] > \mathbb{E}[|E_{\mathrm{add}}|]$) and dynamically bounding topological activity against runaway densification.
-* **Continuum Bridge:** The active steady-state attractor $\rho^* \approx 0.037$ is not an invariant distribution of the unpumped discrete chain, but represents a non-equilibrium steady state of the continuous-time driven master equation ($\Lambda > 0$) derived in Section 5.2.
+$$
+\sum_\xi\Pr(\xi\mid G)
+=\prod_a[p_a+(1-p_a)]\prod_c[(1-q_c)+3q_c/3]=1.
+$$
 
-*Proof.* We evaluate the drift and absorbing boundary conditions:
+**III. Pushforward and Collision Preimages**
 
-**I. Absorbing Boundary and Reducibility:** On the pristine Bethe tree $G_0$ (and any cycle-free scarred configuration $G_{\mathrm{scar}}$), absence of closed 3-cycles ($N_3 = 0$) and addition quiescence under $\Lambda_{\mathrm{micro}} \equiv 0$ render the proposal sets empty ($\mathcal{A} = \emptyset, \mathcal{D} = \emptyset$). By Theorem 6.1 (Supplement Appendix A), $\mathcal{U}(G) = G$ identically for any such configuration. Because active states can reach cycle-free configurations via sequential cycle deletions but cannot spontaneously transition out of them, the unpumped Markov chain is reducible and is absorbed into the cycle-free, addition-quiescent class; no invariant probability measure supported on active graphs exists.
+The deterministic map assigns each realization exactly one successor. The preimage sets $F_{G'}=\{\xi:\mathcal U(G,\xi)=G'\}$ are disjoint and cover the realization space. Hence
 
-**II. Negative Drift at High Density:** When $\rho(G) > \rho_{\mathrm{crit}}$, high vertex degrees increase local addition stress $s_{\mathrm{add}}$, exponentially suppressing addition acceptance $P_{\mathrm{acc}} = \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}$. Simultaneously, catalytic deletion $Q_{\mathrm{del}}$ scales with cycle count $N_3$, causing the expected deletion rate to strictly exceed the addition rate: $\mathbb{E}[|E_{\mathrm{del}}|] > \mathbb{E}[|E_{\mathrm{add}}|]$. Thus, $\Delta V(G) \le -\epsilon < 0$, establishing that the state space is dynamically bounded against runaway densification.
+$$
+\sum_{G'}K(G,G')
+=\sum_{G'}\sum_{\xi\in F_{G'}}\Pr(\xi\mid G)
+=\sum_\xi\Pr(\xi\mid G)=1.
+$$
 
-**III. Non-Equilibrium Metastability:** Above the nucleation barrier $\rho_c \approx 0.130$, the unpumped active regime constitutes a metastable Quasi-Stationary Distribution (QSD) with finite lifetime before quenching into absorption (Section 5.3). True non-zero steady-state stationarity is realized exclusively under continuous-time macroscopic driving ($\Lambda_{\mathrm{drive}} > 0$, Section 5.2). $\square$
+Shared deletion edges and reciprocal filtering can make $|F_{G'}|>1$; the summation therefore cannot generally be replaced by one product.
+
+**IV. Realization Action**
+
+For a positive-probability realization, logarithmic additivity gives
+
+$$
+\begin{aligned}
+\mathcal S(\xi\mid G)
+&=-\log\Pr(\xi\mid G)\\
+&=-\sum_{a\in A}\log p_a-\sum_{a\notin A}\log(1-p_a)\\
+&\quad-\sum_{c\in C_D}\log(q_c/3)-\sum_{c\notin C_D}\log(1-q_c).
+\end{aligned}
+$$
+
+Thus $\Pr(\xi\mid G)=e^{-\mathcal S(\xi\mid G)}$ and $K(G,G')=\sum_{\xi\in F_{G'}}e^{-\mathcal S(\xi\mid G)}$. The accepted-addition contribution alone is $-\sum_{a\in A}\log p_a=\mu\sum_{a\in A}s_a$ (Lemma 4.6.2).
+
+Q.E.D.
+
+**Lemma 4.6.3** (Trajectory Entropy Growth and Common-Kernel KL Contraction).
+
+Let $G_0,\ldots,G_{t+1}$ be a Markov trajectory with finite entropies and kernel $K$, and let $p,q$ be two distributions on the finite-horizon state class propagated by that same kernel. Then $H(G_0,\ldots,G_{t+1})-H(G_0,\ldots,G_t)=H(G_{t+1}\mid G_t)\ge0$ and $D_{\mathrm{KL}}(pK\parallel qK)\le D_{\mathrm{KL}}(p\parallel q)$ (Section 4.6).
+
+*Proof.*
+
+**I. Chain Rule on Full Trajectories**
+
+The proof uses the specified objects and conventions (Section 4.6).
+
+For fixed vertex count and horizon $T$, every active edge is absent or has a height in $\{0,\ldots,T\}$, giving at most $(T+2)^{N(N-1)}$ labeled configurations. The distributions below are on this finite class. Write $\Gamma_t=(G_0,\ldots,G_t)$. For each trajectory and successor of positive probability,
+
+$$
+\Pr(\Gamma_t,g')=\Pr(\Gamma_t)K(G_t,g'),\qquad
+\log\Pr(\Gamma_t,g')=\log\Pr(\Gamma_t)+\log K(G_t,g').
+$$
+
+Multiply by the joint probability, sum, and use $\sum_{g'}K(G_t,g')=1$. The result is
+
+$$
+H(\Gamma_{t+1})=H(\Gamma_t)
+-\sum_g p_t(g)\sum_{g'}K(g,g')\log K(g,g').
+$$
+
+The final sum with its minus sign is $H(G_{t+1}\mid G_t)$. Every summand $-K\log K$ is nonnegative for $0\le K\le1$, using $0\log0=0$. It is positive exactly when a positive-mass current state has a nondegenerate successor distribution.
+
+**II. Log-Sum Inequality**
+
+For nonnegative finite families $a_i,b_i$ with positive sums $A,B$, put $\alpha_i=a_i/A$ and $\beta_i=b_i/B$. If some $a_i>0=b_i$, the divergence is infinite and the inequality is immediate. Otherwise, $-\log z\ge1-z$ gives
+
+$$
+\begin{aligned}
+\sum_i a_i\log\frac{a_i}{b_i}-A\log\frac AB
+&=A\sum_{i:\alpha_i>0}\alpha_i\log\frac{\alpha_i}{\beta_i}\\
+&\ge A\sum_{i:\alpha_i>0}(\alpha_i-\beta_i)\\
+&=A\left(1-\sum_{i:\alpha_i>0}\beta_i\right)\ge0.
+\end{aligned}
+$$
+
+**III. Common-Kernel Contraction**
+
+At each output $y$, apply the inequality to $a_x=p(x)K(x,y)$ and $b_x=q(x)K(x,y)$. Summing over $y$ gives
+
+$$
+\begin{aligned}
+D_{\mathrm{KL}}(pK\parallel qK)
+&\le\sum_{x,y}p(x)K(x,y)\log\frac{p(x)K(x,y)}{q(x)K(x,y)}\\
+&=\sum_xp(x)\log\frac{p(x)}{q(x)}\sum_yK(x,y)\\
+&=D_{\mathrm{KL}}(p\parallel q).
+\end{aligned}
+$$
+
+Zero-probability terms have their usual limiting values. If the input divergence is infinite, contraction is understood as an extended-value inequality. This proves both asserted information laws (Lemma 4.6.3).
+
+Q.E.D.
+
+Trajectory entropy measures uncertainty in a sequence of graph states rather than uncertainty in its final member alone. Appending the next state adds a nonnegative conditional entropy, while concentration toward an absorbing class can reduce the instantaneous snapshot entropy. The two statements are compatible. Common-kernel KL contraction likewise compares two propagated ensembles and can hold with equality. Its physical interpretation depends on what the comparison ensemble represents, not just on the existence of a stochastic update.
+
+The creation record and full trajectory have distinct information content unless a reconstruction map is supplied. A trajectory can encode rejected trials only through their visible effects, and different realizations can have the same successor graph. Discarding those random details does not by itself identify two predecessor graphs or establish thermodynamic dissipation. A physical entropy-production law needs its forward and reverse processes and its environment accounting. The proved path and relative-entropy identities provide exact information-theoretic statements while keeping that additional thermodynamic identification explicit.
+
+**Lemma 4.6.4** (Conditional Single-Tick Triangle Drift).
+
+Let $G$ be a fixed-vertex snapshot with old-triangle deletion probabilities $q_c$ and eligible chord selection probabilities $p_a$, where $\nu_a$ counts triangles containing $a$ in the full candidate supergraph. The one-tick triangle drift is at most $\sum_a p_a\nu_a-\sum_c q_c$ and is strictly negative when this difference is negative.
+
+*Proof.*
+
+**I. New and Lost Triangles**
+
+The tick uses frozen candidate selection and old-triangle excision.
+
+Let $A$ be the retained batch and $D$ the excisions. The final edge set is $(E\cup A)\setminus D$. If $\mathcal C_3(G)$ and $\mathcal C_3(F)$ are the old and final triangle sets, respectively, then
+
+$$
+N_3(F)-N_3(G)=
+|\mathcal C_3(F)\setminus\mathcal C_3(G)|-
+|\mathcal C_3(G)\setminus\mathcal C_3(F)|.
+$$
+
+**II. Upper Bound on New Triangles**
+
+Every new triangle contains a retained edge, and the full candidate supergraph contains every retained batch. Thus the number of new triangles is at most $\sum_{a\in A}\nu_a$. An edge is retained only if selected, giving
+
+$$
+\mathbb E\bigl[|\mathcal C_3(F)\setminus\mathcal C_3(G)|\mid G\bigr]
+\le \sum_a \nu_a\Pr(a\in A\mid G)\le\sum_a\nu_a p_a .
+$$
+
+**III. Lower Bound on Lost Triangles**
+
+An old triangle is absent whenever its own deletion trial succeeds, because an old edge removed in the tick is absent from the final graph. Hence
+
+$$
+\mathbb E\bigl[|\mathcal C_3(G)\setminus\mathcal C_3(F)|\mid G\bigr]
+=\sum_c\Pr(c\notin\mathcal C_3(F)\mid G)\ge\sum_c q_c.
+$$
+
+The difference gives the claimed drift bound. For fixed $N>0$, division by $N$ bounds the drift in triangle density.
+
+**IV. Degree and Stress Envelope**
+
+If the old undirected degree is at most $\Delta$, each new neighbor is at old distance two. At most $\Delta(\Delta-1)$ new neighbors can be attached to any vertex. Exclusion of reciprocal pairs yields a merged total degree at most $\Delta^2$. If there are at most $M$ candidates, each with stress at least $s_*$ and triangle count at most $\nu_*$, and each old deletion probability is at least $q_*$, then the site sum is bounded above by $M\nu_*e^{-\mu s_*}-Cq_*$. The stated stress, degree and cycle-count premises suffice for negative drift when this upper bound is negative.
+
+**V. Exact Drift in the Degree-Three Fixture**
+
+Use the old triangle $a\to b\to c\to a$ of heights $0,0,1$ and the tail $c\to d$ of height zero. The three two-paths internal to the old triangle already have their return edges. The remaining two-path $b\to c\to d$ gives the sole candidate $d\to b$ at height one. Its reverse path has heights $(0,0)$, and $b,c$ each lie in the old triangle, so the addition stress is two. The old triangle has deletion stress two, giving the respective probabilities
+
+$$
+p=e^{-2\mu_0},\qquad q=\min\{1,\tfrac12(1+2\lambda_0)e^{-2\mu_0}\}.
+$$
+
+The old triangle is lost with probability $q$. The new triangle survives when its candidate is selected and edge $(b,c)$ is kept, which has probability $p(1-q/3)$ by independence and the uniform deletion choice. The exact triangle drift is therefore
+
+$$
+\mathbb E[\Delta N_3\mid G]=p(1-q/3)-q\le p-q<0
+$$
+
+at the canonical parameters, since $\tfrac12(1+2\lambda_0)>1$ and $p<1$.
+
+Q.E.D.
+
+**Lemma 4.6.5** (Exact Unpumped Quiescence).
+
+Let $G$ be a finite active snapshot for the canonical unpumped tick. Then $K(G,G)=1$ exactly when there are no old triangles and every eligible addition candidate has an eligible reciprocal partner.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+The unpumped kernel uses reciprocal filtering followed by deletion.
+
+**II. An Old Triangle Prevents Quiescence**
+
+An old triangle has finite stress and positive trigger probability at the canonical parameters. If its trial succeeds, one old edge is deleted. Additions use absent pairs of the old snapshot, so that edge cannot be reinserted during the same tick. This event has positive probability and changes the active state.
+
+**III. Triangle-Free Snapshots**
+
+With no old triangle, deletion trials are absent and every eligible addition has zero old stress. Its selection probability is $e^0=1$. The deterministic reciprocal filter removes both directions for each pair of reciprocal candidates. All unpaired candidates survive. The active snapshot stays fixed exactly when their set is empty.
+
+Q.E.D.
+
+**Lemma 4.6.6** (Finite-Horizon Maximum Active Height).
+
+Let the vertex set be finite and fixed, and the active heights be nonnegative integers. After $t$ unpumped ticks their maximum is bounded by $H_{\max}(0)+t$, with the maximum of an empty graph taken as zero, so the reachable active snapshots through any fixed horizon form a finite set.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+An admitted addition uses its incoming source maximum.
+
+**II. Single-Tick Maximum**
+
+Each retained chord has height one plus an incoming source maximum in the frozen snapshot, at most $H_{\max}(t)+1$. A retained old edge keeps its height and deletion cannot increase the maximum. Thus $H_{\max}(t+1)\le H_{\max}(t)+1$.
+
+**III. Finite Horizon**
+
+Induction gives $H_{\max}(t)\le H_{\max}(0)+t$. With $P$ possible directed pairs and horizon $T$, each pair is absent or has one of $H_{\max}(0)+T+1$ heights. There are at most
+
+$$
+\bigl(H_{\max}(0)+T+2\bigr)^P
+$$
+
+active snapshots in that horizon.
+
+Q.E.D.
+
+**Lemma 4.6.7** (Common-Height Shift Equivariance).
+
+Let two unpumped snapshots agree in adjacency and differ by a common integer shift on active heights, with both assignments nonnegative. Their transition probabilities agree on shift classes, and the quotient is finite on any invariant class with fixed vertices and a uniform finite height span.
+
+*Proof.*
+
+**I. Shift of the Candidate Height**
+
+Candidate rates are evaluated from the common active snapshot.
+
+For a legal return chord the source has an old incoming support edge. A common shift $c$ therefore sends its assigned height $1+\max H_{\mathrm{in}}$ to $1+\max H_{\mathrm{in}}+c$. PUC and all triangle stresses depend on adjacency. Strict height comparisons and the terminal comparison with the candidate height are invariant under the same shift.
+
+**II. Coupled Outputs**
+
+Both inputs have identical eligible candidates and identical trial probabilities. Use the same outcome list. Reciprocal filtering and deletion select the same edges. Old active heights and newly assigned heights differ by $c$ on every surviving edge, proving equality of the output class under the coupling.
+
+**III. Finiteness under a Span Bound**
+
+In each nonempty class subtract the minimum active height. If the span is bounded by $B$, every remaining height lies in $\{0,\ldots,B\}$. There are finitely many adjacencies and finitely many assignments per adjacency, together with the empty snapshot.
+
+Q.E.D.
+
+## 4.7 Finite-Kernel Quasi-Stationarity
+
+**Theorem 4.7.1** (Conditional Quasi-Stationarity and Survival).
+
+Let $Q$ be the finite substochastic active-to-active matrix of a killed transition, irreducible with Perron root $\lambda\in(0,1)$. Its unique quasi-stationary probability $\nu$ has mean exit time $(1-\lambda)^{-1}$ when used as the initial law, and if $Q$ is primitive the conditioned law converges to $\nu$ exponentially.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+The killed matrix is substochastic on the finite active class.
+
+**II. Construction**
+
+Perron-Frobenius gives positive vectors $\ell,r$ with $\ell Q=\lambda\ell$ and $Qr=\lambda r$. Set $\nu=\ell/(\ell\mathbf1)$. Then
+
+$$
+\nu Q\mathbf1=\lambda,\qquad \frac{\nu Q}{\nu Q\mathbf1}=\nu .
+$$
+
+**III. Uniqueness**
+
+For any quasi-stationary probability $\pi$, put $a=\pi Q\mathbf1>0$, so $\pi Q=a\pi$. Multiplying by $r$ gives
+
+$$
+a\,\pi r=\pi Qr=\lambda\,\pi r .
+$$
+
+Since $r>0$ and $\pi$ has mass one, $\pi r>0$ and $a=\lambda$. The left Perron eigenspace is one-dimensional, so normalization gives $\pi=\nu$.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The initial law is the normalized left Perron vector.
+
+**II. Survival Mass**
+
+The active unnormalized law after $t$ steps is $\nu Q^t$. Induction on the eigenvector identity gives $\nu Q^t=\lambda^t\nu$, hence $\Pr_\nu(\tau>t)=\nu Q^t\mathbf1=\lambda^t$.
+
+**III. Mean Lifetime**
+
+For positive integer exit time, $\tau=\sum_{t\ge0}\mathbf1_{\{\tau>t\}}$. Taking expectations of the nonnegative sum yields
+
+$$
+\mathbb E_\nu[\tau]=\sum_{t=0}^{\infty}\lambda^t=\frac1{1-\lambda}.
+$$
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+The positive Perron eigenvectors determine the limiting law.
+
+**II. Perron Projection and Remainder**
+
+Normalize the positive right eigenvector by $\nu r=1$. The Perron projection is $r\nu$. The remaining Jordan blocks of $Q/\lambda$ have eigenvalues of modulus smaller than $\eta$. A block of size $m$ with eigenvalue $z$ contributes entries bounded by sums of $\binom{t}{j}|z|^{t-j}$ for $0\le j<m$. For $z\ne0$, dividing by $\eta^t$ bounds each term uniformly since $|z|/\eta<1$. For $z=0$, the block vanishes at $t\ge m$. Thus
+
+$$
+\pi Q^t/\lambda^t=(\pi r)\nu+e_t,\qquad
+\|e_t\|_1\le A_\eta(\pi)\eta^t .
+$$
+
+**III. Normalization**
+
+Write $b=\pi r>0$. Since $|e_t\mathbf1|\le\|e_t\|_1$, for sufficiently large $t$ the denominator $b+e_t\mathbf1$ is at least $b/2$. Subtracting $\nu$ gives
+
+$$
+\frac{\pi Q^t}{\pi Q^t\mathbf1}-\nu
+=\frac{e_t-(e_t\mathbf1)\nu}{b+e_t\mathbf1}.
+$$
+
+The numerator has $\ell^1$ norm at most $2\|e_t\|_1$. Total variation is half that norm after division, so the error is at most $2A_\eta(\pi)\eta^t/b$. Every active state has a positive outgoing active transition under the stated hypotheses. The survival denominators are therefore positive at the finitely many earlier times, which are covered by increasing the constant.
+
+Q.E.D.
+
+The finite killed class and the communication hypotheses must be justified for the physical dynamics. Common-height shifts alone leave the relative span unrestricted. The driven mean-field equilibrium describes a stipulated scalar closure.
 
 # 5. Non-Equilibrium Statistical Mechanics and Equilibrium
 
 The statistical mechanics of the substrate are governed by non-equilibrium phase transitions into absorbing states, where active topological fluctuations compete against boundary leaf quenching and tension-driven deletion.
 
+
 ## 5.1 Thermodynamic Framework
 
-The microscopic state is specified by the graph configuration $G \in \Omega$, evolving under the stochastic Markov transition measure of Lemma 4.6.2. The fundamental non-equilibrium order parameter is the intensive 3-cycle density:
-$$\rho(t) = \frac{N_3(G_t)}{N},$$
-where $N_3(G_t)$ is the total count of directed 3-cycles (elementary 2-simplices) and $N = |V|$ is the lattice volume. The defect-free vacuum $G_0$ with $\rho = 0$ is a strictly absorbing configuration: because $\Lambda_{\mathrm{micro}} \equiv 0$, any realization reaching $\rho = 0$ is permanently trapped in frozen stasis.
+The active state includes adjacency and its active heights. The one-tick intensive order parameter is $\rho(G)=N_3(G)/N$. The exact unpumped quiescence criterion also uses the surviving candidate set.
+
+**Theorem 5.1.1** (Conditional Extensive Block Entropy).
+
+Let $P_N$ be the uniform law on $\Omega_N$ finite configurations, encoded bijectively by a block tuple, and assume the sum of the block marginal entropies is $cN+o(N)$ and their total correlation is $o(N)$. Then $\log\Omega_N=cN+o(N)$.
+
+*Proof.*
+
+**I. Domain and Objects**
+
+The finite configuration representation supplies the joint block law.
+
+**II. Support and Relative Entropy**
+
+If $P(x)>0$, then $P_i(x_i)\ge P(x)>0$ for each $i$. Expanding the logarithm gives
+
+$$
+\begin{aligned}
+D(P\|P_\otimes)
+&=\sum_x P(x)\left(\log P(x)-\sum_i\log P_i(x_i)\right)\\
+&=-H(P)-\sum_i\sum_{x_i}P_i(x_i)\log P_i(x_i)\\
+&=\sum_i H(P_i)-H(P)=\operatorname{TC}(P).
+\end{aligned}
+$$
+
+**III. Distributional Bound**
+
+Pinsker's inequality in natural units gives
+
+$$
+2\|P-P_\otimes\|_{\mathrm{TV}}^2\le D(P\|P_\otimes).
+$$
+
+Taking nonnegative square roots gives the claimed estimate.
+
+Q.E.D.
+
+**I. Joint Entropy**
+
+Uniformity on the configurations gives $H(P_N)=\log\Omega_N$. A bijective block representation preserves that entropy. For the block law,
+
+$$
+H(P_N)=\sum_i H(P_{N,i})-\operatorname{TC}(P_N)
+$$
+
+by the relative entropy identity.
+
+**II. Subextensive Correction**
+
+Write $\sum_i H(P_{N,i})=cN+a_N$ and $\operatorname{TC}(P_N)=b_N$ with $a_N/N\to0$ and $b_N/N\to0$. Then
+
+$$
+\frac{\log\Omega_N}{N}-c=\frac{a_N-b_N}{N}\longrightarrow0.
+$$
+
+**III. Scope of the Auxiliary Estimates**
+
+The walk sum is an upper bound under path domination. Gaussian pairs obey the determinant estimate in their own domain. The extensive entropy calculation uses the total correlation of the full block law as its explicit premise.
+
+Q.E.D.
+
+Spatial correlation bounds require a summable walk representation. The Gaussian formula separately applies to a nondegenerate Gaussian block law.
+
+**I. Domain and Objects**
+
+The path count separates first-step choices from later non-backtracking choices.
+
+**II. First Edge and Subsequent Choices**
+
+A non-backtracking path has at most $D$ choices for its first edge and $D-1$ for each later edge. Every path joining the specified vertices has length at least $r$.
+
+**III. Tail Summation**
+
+With $q=(D-1)p$, the weighted tail is bounded by
+
+$$
+\sum_{L=r}^\infty D(D-1)^{L-1}Ap^L
+=A D p\sum_{L=r}^\infty q^{L-1}
+=\frac{A D p\,q^{r-1}}{1-q}.
+$$
+
+When $p=0$, all positive-length weights vanish.
+
+Q.E.D.
+
+**I. Domain and Objects**
+
+Joint-versus-marginal information is evaluated here for two Gaussian blocks.
+
+**II. Covariance Determinant**
+
+The joint covariance has determinant $\det A\det(B-C^\top A^{-1}C)$ by block elimination. Factoring $B^{1/2}$ gives
+
+$$
+\det\Sigma=\det A\,\det B\,\det(I-M^\top M).
+$$
+
+Positive definiteness gives $I-M^\top M>0$.
+
+**III. Information and the Singular Values**
+
+Subtracting the Gaussian differential entropies cancels the dimension-dependent constants, so
+
+$$
+I(X;Y)=\tfrac12\log\frac{\det A\det B}{\det\Sigma}
+=-\tfrac12\sum_j\log(1-s_j^2).
+$$
+
+For $0\le z\le s_*^2$, $-\log(1-z)=\int_0^z(1-u)^{-1}du\le z/(1-s_*^2)$. Summing with $z=s_j^2$ gives the stated Frobenius bound.
+
+Q.E.D.
 
 ## 5.2 Master Equation and Analytical Nucleation Barrier
 
 The non-equilibrium kinetics governing cycle nucleation, phase transitions, and absorbing-state dynamics are analytically formulated via continuous density equations.
 
-### 5.2.1 Phenomenological Continuous Master Equation, Kramers–Moyal Expansion, and DP Universality Class
+### 5.2.1 Conditional Scalar Closure and Auxiliary Jump Moments
 
-The macroscopic continuum description of cycle evolution is derived from the microscopic discrete Markov transition measure (Lemma 4.6.2) as a **phenomenological mean-field model** via the van Kampen system-size expansion and Kramers–Moyal jump moments [21]. Consider a mesoscopic coarse-graining volume of $N_{\mathrm{box}}$ vertices (or total lattice volume $N$) with 3-cycle population $N_3$ and intensive order parameter $\rho = N_3 / N_{\mathrm{box}}$. In the coarse-graining limit, localized graph rewrite events produce discrete changes $\Delta N_3 = r \in \mathbb{Z}$, corresponding to intensive density jumps $\Delta \rho = r / N_{\mathrm{box}}$.
+Let **Thermodynamic Fluxes** specify a homogeneous mean-field closure for the intensive density $\rho=N_3/N$. The baseline driven balance used here is
 
-The $k$-th Kramers–Moyal jump moment $\alpha^{(k)}(\rho)$ is defined as:
-$$\alpha^{(k)}(\rho) = \lim_{\Delta t \to 0} \frac{1}{\Delta t} \mathbb{E}\left[ (\Delta \rho)^k \mid \rho(t) = \rho \right] = \frac{1}{N_{\mathrm{box}}^{k-1}} \sum_{r \ne 0} r^k w_r(\rho),$$
-where $w_r(\rho) \equiv W(\rho; r) / N_{\mathrm{box}}$ denotes the intensive transition rate per unit volume for an extensive jump of size $r$. Evaluating the elementary rewrite processes of Section 4.5:
+$$
+\dot\rho=C(\rho)-D_0(\rho),\qquad
+C(\rho)=(\Lambda+9\rho^2)e^{-6\mu\rho},\qquad
+D_0(\rho)=\tfrac12\rho(1+6\lambda\rho).
+$$
 
-1. **Cycle Creation Rate ($r = +1$):** Edge additions across compliant directed 2-paths close elementary 3-cycles. In a local simplicial cluster of cycle density $\rho$, the density of candidate open 2-paths closing new 3-cycles scales as $C_{\mathrm{add}} \rho^2$ with $C_{\mathrm{add}} \approx 9$, representing an autocatalytic collision ansatz for active 2-paths in localized defect patches (while the extensive Bethe tree provides a non-active background capacity). Each addition is accepted according to the constitutive Boltzmann stress kernel $P_{\mathrm{acc}}(s) = \mathrm{e}^{-\mu s}$. Evaluating mean local triad stress $\langle s \rangle \approx 6\rho$ gives the intensive unpumped creation rate:
-   $$w_{+1}(\rho) = 9\rho^2 \mathrm{e}^{-6\mu\rho} = 9\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
-   (Simultaneous multi-cycle completions $r = +m$ with $m \ge 2$ require overlapping chord topologies whose combinatorial incidence scales as $\mathcal{O}(\rho^{m+1})$, contributing only to higher-order density corrections).
+The precursor product, candidate-conditioned deterministic stress $6\rho$, drive $\Lambda$ and omission of deletion damping in $D_0$ are explicit constitutive closures. The microscopic kernel instead retains damping and the actual candidate/triangle counts (Section 4.6). Its unsaturated zero-offset scalar approximation is $D(\rho)=D_0(\rho)e^{-6\mu\rho}$, which is distinct from $D_0$. A physical self-stress floor of two defines another expansion point. None of these closures is identified with an exact expectation over arbitrary graph states.
 
-2. **Cycle Deletion Rate ($r = -1$) and the Physical Self-Stress Floor:** Deletions occur exclusively on directed edges participating in closed 3-cycles. On an isolated 3-cycle ($|\mathcal{C}_3| = 1$ on each vertex), the participant vertices exhibit base self-stress $s_{\mathrm{iso}} = 1 + 1 + 1 - 1 = 2$ (Theorem 4.5.5, Proposition 3.1; Lean 4 certified: `isolated_3cycle_self_stress_eq_two`). In an active cluster with local cycle density $\rho$, environmental cycles incident on the triad add an environmental contribution $s_{\mathrm{env}}(\rho) \approx 6\rho$, establishing the physical deletion stress:
-   $$s_{\mathrm{del}}(\rho) = 2 + 6\rho.$$
-   Evaluating the constitutive deletion kernel $Q_{\mathrm{del}}(s) = \min\left(1, \frac{1}{2}(1 + \lambda s)\mathrm{e}^{-\mu s}\right)$ at the isolated single-cycle floor ($s=2$) under canonical reference priors $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$ gives:
-   $$Q_{\mathrm{del}}(2) = \frac{1}{2}(1 + 2(e-1))\mathrm{e}^{-2/\sqrt{2\pi}} = \frac{1}{2}(2e - 1)\mathrm{e}^{-0.7979} \approx \mathbf{0.9988} \approx 0.999.$$
-   Because $Q_{\mathrm{del}}(2) \approx 1.0$, an isolated cycle has nearly unit deletion probability per tick, explaining why isolated fluctuations decay immediately back into the absorbing vacuum unless rescued by collective autocatalysis.
-   
-   Expanding $Q_{\mathrm{del}}(2 + 6\rho)$ around the physical baseline $s = 2$:
-   $$Q_{\mathrm{del}}(2 + 6\rho) = Q_{\mathrm{del}}(2) + 6 Q'_{\mathrm{del}}(2) \rho + \mathcal{O}(\rho^2) \approx 0.9988 - 0.0698\rho.$$
-   Thus, the intensive deletion rate evaluates to:
-   $$w_{-1}(\rho) = Q_{\mathrm{del}}(2 + 6\rho) \rho \approx 0.9988\rho - 0.0698\rho^2 \approx \gamma_{\mathrm{del}}\rho + \beta_{\mathrm{del}}\rho^2,$$
-   with $\gamma_{\mathrm{del}} \approx 0.999$ and $\beta_{\mathrm{del}} \approx -0.070$.
-   (In the heuristic unshifted expansion around $s = 0$ previously employed as a simplified baseline, $Q_{\mathrm{del}}(0) = 1/2$ and $w_{-1}(\rho) \approx \frac{1}{2}\rho(1 + 6\lambda\rho) = \frac{1}{2}\rho + 3\lambda\rho^2$. Both formulations exhibit a dominant linear death rate, with the physical $s=2$ baseline emphasizing the near-unit single-cycle decay rate).
+**I. Probability Space**
 
-Evaluating the Kramers–Moyal jump moments across all orders $k \ge 1$ establishes the jump moment hierarchy:
+Use the six-decision probability space (Section 4.4). For a specified assignment $b\in\{0,1\}^6$, independence and fairness give
 
-* **First Moment (Macroscopic Drift Vector $\alpha^{(1)}(\rho) = a_1(\rho)$):**
-  Under the $s=0$ baseline:
-  $$\alpha^{(1)}(\rho) = w_{+1}(\rho) - w_{-1}(\rho) + \mathcal{O}(\rho^4) = -\frac{1}{2}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
-  Under the physical $s=2$ floor:
-  $$\alpha^{(1)}(\rho) \approx -0.999\rho + (9 - \beta_{\mathrm{del}})\rho^2 - 54\mu\rho^3 + \mathcal{O}(\rho^4).$$
-  The drift is strictly $\mathcal{O}(N_{\mathrm{box}}^0)$ (intensive and scale-invariant), governing deterministic mean-field dynamics.
+$$
+p_b=\Pr(B_1=b_1,\ldots,B_6=b_6)
+=\prod_{j=1}^6\frac12=\frac1{64}.
+$$
 
-* **Second Moment (Diffusion Variance $\alpha^{(2)}(\rho) = a_2(\rho)$):**
-  $$\alpha^{(2)}(\rho) = \frac{1}{N_{\mathrm{box}}} \sum_{r} r^2 w_r(\rho) = \frac{1}{N_{\mathrm{box}}} \left[ w_{+1}(\rho) + w_{-1}(\rho) \right] + \mathcal{O}\left(\frac{\rho^2}{N_{\mathrm{box}}}\right) = \frac{\gamma_{\mathrm{del}} \rho}{N_{\mathrm{box}}} + \mathcal{O}\left(\frac{\rho^2}{N_{\mathrm{box}}}\right).$$
-  Defining the demographic noise coefficient $\Gamma \approx \frac{\gamma_{\mathrm{del}}}{2N}$ (accounting for shared edge projections on the bipartite Bethe tree), this yields $\alpha^{(2)}(\rho) = \Gamma \rho \sim \mathcal{O}(N_{\mathrm{box}}^{-1})$. Crucially, $\alpha^{(2)}(\rho) \propto \rho$, which strictly vanishes at the absorbing vacuum $\rho = 0$, rigorously deriving the non-thermal multiplicative noise required for absorbing-state phase transitions.
+**II. Rate Normalization**
 
-* **Pawula's Theorem and the Continuum Langevin Bridge:**
-  In the full Kramers–Moyal expansion of the probability density $P(\rho, t)$:
-  $$\frac{\partial P(\rho, t)}{\partial t} = \sum_{k=1}^\infty \frac{(-1)^k}{k!} \frac{\partial^k}{\partial \rho^k} \left[ \alpha^{(k)}(\rho) P(\rho, t) \right],$$
-  Pawula's Theorem dictates that any finite truncation of this series at order $K \ge 3$ inevitably produces unphysical negative probabilities. Because the explicit calculation establishes the rigorous scaling $\alpha^{(k)}(\rho) = \mathcal{O}\left(N_{\mathrm{box}}^{-(k-1)}\right) \xrightarrow{N_{\mathrm{box}} \to \infty} 0$ for all $k \ge 3$, all higher-order jump moments are asymptotically suppressed in the thermodynamic coarse-graining limit $N_{\mathrm{box}} \gg 1$. Truncation at $k = 2$ represents the asymptotically exact van Kampen system-size expansion in powers of $\Omega^{-1/2} = N_{\mathrm{box}}^{-1/2}$.
+For an auxiliary Poisson attempt process with mean $\nu\,\mathrm{d}t$ in an interval of length $\mathrm{d}t$, independent marking gives
 
-On the underlying discrete DAG substrate, spatial coupling between adjacent graph regions is governed by the combinatorial graph Laplacian $-D \mathcal{L}_G \boldsymbol{\rho}$. In the long-wavelength hydrodynamic limit, this reduces to the continuous diffusion term $D \nabla^2 \rho$, yielding the continuous non-equilibrium Langevin equation for the local cycle density field $\rho(\mathbf{x}, t)$:
+$$
+\mathbb E[N_{\mathrm{success}}(\mathrm{d}t)]
+=\mathbb E[\mathbb E(N_{\mathrm{success}}(\mathrm{d}t)\mid N_{\mathrm{attempt}})]
+=p_b\mathbb E[N_{\mathrm{attempt}}(\mathrm{d}t)]
+=\frac{\nu}{64}\,\mathrm{d}t.
+$$
 
-$$\frac{\partial \rho(\mathbf{x}, t)}{\partial t} = D \nabla^2 \rho - \gamma_{\mathrm{del}}\rho + (9 - 3\lambda)\rho^2 - 54\mu\rho^3 + \sqrt{\Gamma \rho}\,\xi(\mathbf{x}, t),$$
+Consequently $\Lambda=\lim_{\mathrm{d}t\downarrow0}\mathbb E[N_{\mathrm{success}}(\mathrm{d}t)]/\mathrm{d}t=\nu/64$ in this auxiliary source model.
 
-where $D$ is the combinatorial diffusion coefficient, $\Gamma$ is the demographic noise scale, and $\xi(\mathbf{x}, t)$ is standard Gaussian white noise. The dynamics satisfy the Janssen-Grassberger criteria for the **Directed Percolation (DP) universality class** with an infinite effective spatial dimension ($d_{\mathrm{eff}} \to \infty > d_c = 4$), placing the critical behavior in the mean-field DP universality class ($\beta = 1, \nu_\perp = 1/2$).
+**III. Reference Clock**
+
+Setting $\nu=1$ yields $\boxed{\Lambda_0=2^{-6}=1/64.}$ This is the prescribed continuum source (Section 4.4). The unpumped microscopic scheduler has no such independent injection process and uses $\Lambda_{\mathrm{micro}}=0$.
+
+Q.E.D.
+
+**I. Product Distribution**
+
+The proof uses the specified objects and conventions (Section 5.2.1).
+
+Write $a_i,b_j$ for the possible channel values and $p_i,q_j$ for their probabilities. Independence gives $\Pr(A=a_i,B=b_j)=p_iq_j$.
+
+**II. Expectation Factorization**
+
+For finite or nonnegative countable supports, rearrangement of nonnegative sums gives
+
+$$
+\begin{aligned}
+\mathbb E[AB]
+&=\sum_{i,j}a_ib_jp_iq_j
+=\left(\sum_i a_ip_i\right)\left(\sum_j b_jq_j\right)\\
+&=\mathbb E[A]\mathbb E[B]=(3\rho)(3\rho)=9\rho^2.
+\end{aligned}
+$$
+
+**III. Conditional Flux**
+
+The prescribed identification $J_{\mathrm{auto}}=\mathbb E[AB]$ gives the claimed closure (Section 5.2).
+
+Q.E.D.
+
+**I. Specified Scalar Stress**
+
+The model supplies $s_{\mathrm{cl}}=6\rho$ as a candidate-conditioned constitutive approximation. The acceptance law at deterministic stress is $P(s)=\exp(-\mu s)$ (Theorem 4.5.5).
+
+**II. Substitution**
+
+Substituting the specified stress gives
+
+$$
+P_{\mathrm{cl}}(\rho)=P(s_{\mathrm{cl}}(\rho))
+=\exp(-\mu(6\rho))=\exp(-6\mu\rho).
+$$
+
+For $\rho\ge0$ and $\mu\ge0$, the exponent is nonpositive, so $0<P_{\mathrm{cl}}\le1$.
+
+**III. Scope of Equality**
+
+This equality evaluates the deterministic closed model (Section 5.2). It assumes the specified stress rather than replacing a random exponential moment by an exact mean identity.
+
+Q.E.D.
+
+**I. Unsaturated Neighborhood**
+
+The proof uses the specified objects and conventions (Section 5.2.1).
+
+At the zero-offset reference, the unclipped deletion factor is one half at $\rho=0$. Continuity gives a neighborhood of zero where it is less than one, so the clipping operation does not change the displayed scalar expression there.
+
+**II. Exponential Expansion**
+
+Taylor expansion gives
+
+$$
+e^{-6\mu\rho}=1-6\mu\rho+18\mu^2\rho^2+O(\rho^3).
+$$
+
+Multiplication by the affine catalytic factor yields
+
+$$
+\begin{aligned}
+(1+6\lambda\rho)e^{-6\mu\rho}
+&=1+(6\lambda-6\mu)\rho
++(18\mu^2-36\lambda\mu)\rho^2+O(\rho^3).
+\end{aligned}
+$$
+
+**III. Flux Coefficients**
+
+Multiplying every term by $\rho/2$ gives
+
+$$
+D(\rho)=\tfrac12\rho+3(\lambda-\mu)\rho^2
++(9\mu^2-18\lambda\mu)\rho^3+O(\rho^4).
+$$
+
+If deletion damping is omitted as a separate baseline choice, direct multiplication instead gives $D_0(\rho)=\rho/2+3\lambda\rho^2$. Their quadratic coefficients differ by $-3\mu$, which is not a fourth-order remainder (Section 5.2).
+
+Q.E.D.
+
+**I. Rate and Jump Convention**
+
+The proof uses the specified objects and conventions (Section 5.2.1).
+
+In a small time interval $h$, the chance of jump $r$ is $W_{\Omega,r}(\rho)h+o(h)$ and the density increment on that event is $r/\Omega$. The no-jump event contributes zero to every positive-order jump moment.
+
+**II. Conditional Moment**
+
+With the stated finite-moment hypotheses,
+
+$$
+\begin{aligned}
+a_k(\rho)
+&=\lim_{h\downarrow0}\frac1h\mathbb E[(\Delta\rho)^k\mid\rho]\\
+&=\sum_r\left(\frac r\Omega\right)^k W_{\Omega,r}(\rho)
+=\Omega^{-k}\sum_r r^k\Omega w_r(\rho)\\
+&=\Omega^{1-k}\sum_r r^kw_r(\rho).
+\end{aligned}
+$$
+
+**III. First Two Moments**
+
+For a prescribed one-cycle birth/death approximation with only $r=\pm1$,
+
+$$
+a_1=w_+-w_-,\qquad
+a_2=\Omega^{-1}(w_++w_-).
+$$
+
+If $|\sum_r r^kw_r|\le M_k$ uniformly on the parameter/state region, then $|a_k|\le M_k\Omega^{1-k}$. This is the asserted scaling (Section 5.2).
+
+Q.E.D.
+
+The system-size identity concerns the auxiliary continuous-time jump process whose jump sizes and rates are prescribed explicitly. Its first jump moment is the drift, its second moment determines the leading fluctuation scale, and higher moments carry the stated powers of inverse system size. Both the jump normalization and the rate clock enter these powers, so a change of clock must be accompanied by a change of rates.
+
+Identifying this auxiliary process with the parallel graph scheduler would require additional control of simultaneous changes, conditional moments and correlation errors. The moment calculation does not supply that convergence theorem. Likewise, a cubic term from expanding the chosen creation flux is an analytic property of that closure, rather than an independent proof of macroscopic sparseness. The exact identities remain valid for their specified process while the physical continuum limit remains a distinct obligation.
 
 ### 5.2.2 Analytical Derivation of the Unpumped Nucleation Barrier
 
 Expanding the unpumped drift equation $\mathrm{d}\rho/\mathrm{d}t = -\gamma_{\mathrm{del}}\rho + C_2\rho^2 - 54\mu\rho^3$ for small $\rho \ll 1$:
 $$\frac{\mathrm{d}\rho}{\mathrm{d}t} \approx C_2 \rho\left(\rho - \frac{\gamma_{\mathrm{del}}}{C_2}\right).$$
-The linearized rate at the origin satisfies $\left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(\frac{\mathrm{d}\rho}{\mathrm{d}t}\right)\right|_{\rho=0} = -\gamma_{\mathrm{del}} < 0$, proving that the absorbing vacuum $\rho = 0$ is strictly linearly stable (Lean 4 Part 10 verifies the abstract algebraic ordering lemma: `origin_jacobian_strictly_negative`).
+In this scalar closure the linearized rate at the origin satisfies $\left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(\frac{\mathrm{d}\rho}{\mathrm{d}t}\right)\right|_{\rho=0} = -\gamma_{\mathrm{del}} < 0$, giving linear stability of the scalar zero-density equilibrium (Lean 4 Part 10 verifies the abstract algebraic ordering lemma: `origin_jacobian_strictly_negative`).
 
-For $\rho < \rho_c$, $\mathrm{d}\rho/\mathrm{d}t < 0$, establishing an intrinsic **unpumped nucleation barrier**:
+For $\rho < \rho_c$, $\mathrm{d}\rho/\mathrm{d}t < 0$, giving the threshold in the respective scalar approximation.
+
 * Under the unshifted $s=0$ baseline ($\gamma_{\mathrm{del}} = 1/2, C_2 = 9 - 3\lambda$):
   $$\rho_c(\lambda) = \frac{1}{2(9 - 3\lambda)} = \frac{1}{18 - 6\lambda} \implies \rho_c(\lambda_0) = \frac{1}{24 - 6e} \approx \mathbf{0.13003} \approx 0.130.$$
+
 * Under the physical $s=2$ self-stress floor ($\gamma_{\mathrm{del}} \approx 0.999, C_2 \approx 9 - \beta_{\mathrm{del}} \approx 9.07$):
   $$\rho_c \approx \frac{0.999}{9.07} \approx \mathbf{0.110}.$$
 
-Both formulations confirm the analytical reality observed in simulations: an initial instanton burst must exceed $\rho \approx 0.11\text{--}0.13$ to overcome single-cycle tension-driven decay.
+Both scalar approximations give local thresholds near the origin. A corresponding threshold for the microscopic graph dynamics requires its own drift and basin estimates.
 
 ### 5.2.3 Cubic Fixed Points, Saddle-Node Bifurcation, and the Mean-Field Extinction Paradox
 
@@ -1236,7 +2950,7 @@ This discrepancy is resolved by two non-mean-field physical mechanisms:
 
 When the microscopic rewrite rules are aggregated into a continuous density field, the macroscopic evolution of 3-cycle density $\rho(t) = N_3/N$ is governed by the **Fundamental Equation of Geometrogenesis**:
 $$\frac{\mathrm{d}\rho}{\mathrm{d}t} = (\Lambda + 9\rho^2)\mathrm{e}^{-6\mu\rho} - \frac{1}{2}\rho(1 + 6\lambda\rho),$$
-where $\Lambda = 2^{-6} = 0.015625$ is the intrinsic vacuum drive derived from the 6-port triad boundary capacity.
+where $\Lambda = 2^{-6} = 0.015625$ is the auxiliary source under the six-decision and reference-clock assumptions.
 
 1. **Homeostatic Attractor Equilibrium:** Balancing creation flux $C(\rho) = (\Lambda + 9\rho^2)\mathrm{e}^{-6\mu\rho}$ against deletion flux $D(\rho) = \frac{1}{2}\rho(1 + 6\lambda\rho)$ establishes a unique transcendental root:
    $$\rho^* \approx \mathbf{0.0370}.$$
@@ -1279,6 +2993,112 @@ Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100
 
 ## 5.4 Equilibrium Analysis and Phase Boundaries
 
+**Canonical driven stability certificate.**
+
+Assume $\Lambda>0$, $\mu=1/\sqrt{2\pi}$ and $\lambda_{\mathrm{cat}}=e-1$ in the stated driven mean-field balance equation. Then there is exactly one equilibrium $\rho^*>0$, every nonnegative solution converges to it, and $F'(\rho^*)<0$ (Section 5.4).
+
+*Proof.*
+
+**I. Density Equation and Parameter Bounds**
+
+Let $\rho\ge0$ and write the mean-field current as
+
+$$
+\begin{gathered}
+F(\rho)=(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12\rho-\tfrac b2\rho^2,\\
+a=6\mu=\frac6{\sqrt{2\pi}},\qquad b=6\lambda_{cat}=6(e-1),\qquad \Lambda>0.
+\end{gathered}
+$$
+
+These are the creation and deletion terms (Section 5.2), with the vacuum parameters fixed above (Section 4.4). The elementary bounds on $\pi$ and $e$ give
+
+$$
+2.39<a<2.40,\qquad 10.30<b<10.32,\qquad \Lambda>0.
+$$
+
+**II. A Uniform Negative Derivative**
+
+Differentiate every term:
+
+$$
+\begin{aligned}
+F'(\rho)
+&=18\rho e^{-a\rho}-a(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12-b\rho\\
+&\le18\rho e^{-a\rho}-\tfrac12-b\rho.
+\end{aligned}
+$$
+
+For $x\ge0$, $e^x=1+x+\sum_{j\ge2}x^j/j!\ge1+x$, so $e^{-x}\le(1+x)^{-1}$. Thus
+
+$$
+\begin{aligned}
+F'(\rho)
+&\le\frac{18\rho}{1+a\rho}-\tfrac12-b\rho\\
+&=\frac{-\tfrac12+(18-b-a/2)\rho-ab\rho^2}{1+a\rho}.
+\end{aligned}
+$$
+
+Set $c=18-b-a/2$. The parameter bounds imply
+
+$$
+6.48<c<6.505,\qquad ab>2.39(10.30)=24.617,
+$$
+
+and consequently
+
+$$
+c^2<6.505^2=42.315025<49.234<2ab.
+$$
+
+Complete the square in the numerator:
+
+$$
+\begin{aligned}
+-\tfrac12+c\rho-ab\rho^2
+&=-ab\left(\rho-\frac{c}{2ab}\right)^2
+  +\frac{c^2-2ab}{4ab}\\
+&<0.
+\end{aligned}
+$$
+
+Since $1+a\rho>0$, this proves $F'(\rho)<0$ for every $\rho\ge0$.
+
+**III. Unique Equilibrium and Direction of Flow**
+
+The endpoint and large-density limits are
+
+$$
+F(0)=\Lambda>0,\qquad
+\lim_{\rho\to\infty}(\Lambda+9\rho^2)e^{-a\rho}=0,\qquad
+\lim_{\rho\to\infty}F(\rho)=-\infty.
+$$
+
+Continuity gives a positive root, and strict decrease gives its uniqueness. Denote it by $\rho^*$ (Section 5.4). For every $\rho>\rho^*$,
+
+$$
+F(\rho)-F(\rho^*)=\int_{\rho^*}^{\rho}F'(s)\,\mathrm{d}s<0,
+\qquad F(\rho^*)=0.
+$$
+
+Hence $\dot\rho=F(\rho)<0$ throughout the above-equilibrium interval. A solution starting above $\rho^*$ cannot cross the stationary solution by uniqueness for this smooth differential equation. It decreases to a limit $\ell\ge\rho^*$. If $\ell>\rho^*$, continuity supplies $\delta>0$ and a neighborhood of $\ell$ on which $F\le-\delta$. For all sufficiently large $t$,
+
+$$
+\rho(t)\le\rho(t_0)-\delta(t-t_0),
+$$
+
+contradicting $\rho(t)\ge\rho^*$. Therefore $\ell=\rho^*$.
+
+
+**IV. Flow Below Equilibrium**
+
+If $0\le\rho<\rho^*$, strict decrease gives $F(\rho)>F(\rho^*)=0$. A trajectory starting below the equilibrium therefore increases and cannot cross the stationary solution by uniqueness for the smooth scalar equation. It is bounded above by $\rho^*$, so it has a limit $\ell\le\rho^*$. If $\ell<\rho^*$, continuity gives a positive lower bound $F\ge\delta$ near that limit. Then $\rho(t)\ge\rho(t_0)+\delta(t-t_0)$ for all sufficiently large $t$, contradicting the upper bound. Thus $\ell=\rho^*$.
+
+**V. Global Attractor and Jacobian**
+
+For $\rho\ge0$, the smooth vector field points inward at the origin and toward the equilibrium on both sides. Solutions remain in the bounded interval between their initial value and $\rho^*$, so they extend for all nonnegative time. Sections III and IV prove convergence from either side. The already established strict derivative bound also gives $J=F'(\rho^*)<0$. These are the claimed stability properties (Section 5.4).
+
+Q.E.D.
+
 The physical behavior of the active phase resolves into three distinct regimes across the mean-field and microscopic formulations:
 
 1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.137$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.399$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
@@ -1295,12 +3115,239 @@ Table 7: *Topological Invariants of the Scarred Absorbing Vacuum State ($N = 100
 
 | Ensemble Observable | Notation | Baseline Bethe $G_0$ | Active QSD Phase | Extinct Scarred State $G_{\mathrm{scar}}$ | Physical Significance |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Directed 3-Cycles** | $N_3$ | $0$ | $9.19 \pm 1.19$ | $\mathbf{0}$ | Exact absorbing-state entrapment |
+| **Directed 3-Cycles** | $N_3$ | $0$ | $9.19 \pm 1.19$ | $\mathbf{0}$ | No directed triangles in the sampled final snapshot |
 | **Directed 2-Paths** | $N_{\mathrm{2-path}}$ | $126$ | $184.2 \pm 14.8$ | $\mathbf{128.4 \pm 2.1}$ | Residual causal routing channels |
 | **Total Edges** | $|E|$ | $99$ | $108.2 \pm 3.4$ | $\mathbf{100.2 \pm 0.8}$ | Frozen residual chord defects ($\Delta E \approx +1.2$) |
-| **Acyclicity Check** | AEC | Compliant | Compliant | **Compliant** | All-order causal acyclicity preserved |
+| **Acyclicity Check** | AEC | Compliant | Compliant | **Compliant** | Reported check on sampled configurations |
 
-Because extinct realizations retain $\Delta E \approx 1.2$ residual chord edges that permanently break the depth-parity bipartiteness of the tree, the scarred vacuum exhibits an altered graph spectrum, permanently storing the quantum memory of past geometric activity.
+The sampled final graphs retain about $1.2$ additional edges on average. A retained same-parity chord violates the fixed initial coloring while active. Its creation record and the graph's current coloring are separate observables.
+
+**Conditional geometric estimates.** The following estimates have separate premises on the local tick law, the ensemble support and the rescaled spaces.
+
+Let $v$ lie in $k$ old triangles and have at most $M_v$ eligible incident additions, each selected independently with probability at most $e^{-\mu k}$. The number of retained incident additions is stochastically bounded above by $\operatorname{Binomial}(M_v,e^{-\mu k})$, and an old edge outside every old triangle is ineligible for deletion in this tick.
+
+**I. Selection Coupling**
+
+The stress bound controls incident selection probabilities.
+
+Assign independent uniform variables $U_i$ on $[0,1]$ to eligible incident candidates and pad to $M_v$ with zero probabilities. Write $p_i$ for the selection probabilities and $p_*=e^{-\mu k}$. For each trial
+
+$$
+\mathbf 1_{\{U_i\le p_i\}}\le\mathbf 1_{\{U_i\le p_*\}}
+$$
+
+almost surely. Reciprocal filtering only removes selected edges.
+
+**II. Binomial Tail**
+
+The retained count $A_v$ is at most the sum of the selection indicators. The dominating sum has law $\operatorname{Binomial}(M_v,p_*)$, so for any integer $h$,
+
+$$
+\Pr(A_v\ge h)\le\sum_{i=h}^{M_v}\binom{M_v}{i}p_*^i(1-p_*)^{M_v-i}
+\quad (0\le h\le M_v).
+$$
+
+**III. Deletion Support**
+
+Every deletion trial selects an edge of its own old triangle. Therefore if $e\in E$ and $e\notin\bigcup_{C\in\mathcal C_3(G)}E(C)$, no deletion outcome selects $e$ in this tick.
+
+Q.E.D.
+
+Let the old simple oriented graph have maximum total degree $\Delta\ge2$ and let $v$ belong to $k$ directed triangles. If each such triangle triggers a uniform edge deletion with probability at least $q_{\min}(\Delta)$, then the expected number of distinct deleted edges incident at $v$ is at least $2q_{\min}(\Delta)k/[3(\Delta-1)]$.
+
+**I. Domain and Objects**
+
+Each triggered deletion trial selects one edge of its old triangle.
+
+**II. Selections and Distinct Edges**
+
+Let $S_v$ count successful triangle trials selecting an edge incident to $v$, with multiplicity. Each triangle through $v$ has two incident edges out of three, so
+
+$$
+\mathbb E S_v\ge\sum_{C\ni v}\tfrac23q_{\min}(\Delta)=\tfrac23 kq_{\min}(\Delta).
+$$
+
+**III. Maximum Multiplicity**
+
+For an edge $(u,v)$, a directed triangle containing it specifies a third vertex from the neighbors of $v$ other than $u$. There are at most $\Delta-1$ such vertices, and each specifies at most one directed triangle with this edge. Hence $S_v\le(\Delta-1)D_v$ outcome by outcome, where $D_v$ counts distinct deleted incident edges. Taking expectations gives the bound.
+
+Q.E.D.
+
+Let the scalar scar count model satisfy $S'(t)=\nu(S_\infty-S(t))$ with constant $\nu>0$ and $S(0)=S_0$. Then $S(t)=S_\infty+(S_0-S_\infty)e^{-\nu t}$.
+
+**I. Domain and Objects**
+
+The stipulated scalar equation concerns an aggregate scar count.
+
+**II. Shifted Variable**
+
+Set $Y(t)=S(t)-S_\infty$. The stipulated equation gives $Y'(t)=-\nu Y(t)$.
+
+**III. Integration**
+
+The derivative of $e^{\nu t}Y(t)$ is $e^{\nu t}(\nu Y+Y')=0$. Evaluating at zero yields $e^{\nu t}Y(t)=S_0-S_\infty$. Substituting back gives the stated formula.
+
+Q.E.D.
+
+Let local observables satisfy a nonnegative walk-sum domination of their absolute covariance with conditional step weight at most $p$ on a degree-$D$ support. For $D\ge2$ and $q=(D-1)p<1$, the covariance is bounded above in absolute value by $ADp\,q^{r-1}/(1-q)$ for vertices at distance $r\ge1$, where $A$ is the prefactor of the domination.
+
+**I. Domain and Objects**
+
+The specified covariance representation has the required summable walk form.
+
+**II. Conditional Weights**
+
+If each conditional factor is bounded by $p$, the product on a length-$L$ path is bounded by $p^L$. There are at most $D(D-1)^{L-1}$ eligible walks, because the first edge has at most $D$ choices and later steps exclude the predecessor.
+
+**III. Summation from the Distance**
+
+Writing $r$ for the distance and summing over lengths gives
+
+$$
+|\operatorname{Cov}(f(x),f(y))|
+\le A\sum_{L\ge r}D(D-1)^{L-1}p^L
+=\frac{A D p}{1-q}q^{r-1}.
+$$
+
+In the illustrative envelope $D=8$ and $p\le1/8$, $q\le7/8<1$.
+
+Q.E.D.
+
+Let a fixed $N$-vertex candidate support have maximum outdegree $D\ge1$ and suppose each specified simple directed cycle of length $k$ is present with probability at most $p^k$. For $0<Dp<1$, the expected number of cycles of length at least $L$ is at most $N(Dp)^L/(1-Dp)$.
+
+**I. Domain and Objects**
+
+A spatial cycle is counted on the fixed directed support.
+
+**II. Potential Cycles**
+
+A rooted oriented length-$k$ walk has at most $N D^k$ choices. Each simple directed cycle modulo rotation has at least one representative in this count. Thus at most $ND^k$ candidate cycles of length $k$ can appear.
+
+**III. Joint Events and the Union Bound**
+
+If $I_C$ denotes the presence indicator of cycle $C$, then
+
+$$
+\mathbb E\sum_{C:\,|C|\ge L} I_C
+=\sum_{k\ge L}\sum_{C:\,|C|=k}\Pr(C\text{ present})
+\le N\sum_{k\ge L}(Dp)^k=\frac{N(Dp)^L}{1-Dp}.
+$$
+
+For $L\ge(1+\epsilon)\log N/(-\log(Dp))$, this is at most $N^{-\epsilon}/(1-Dp)$ and bounds the probability of any such cycle.
+
+Q.E.D.
+
+Let a graph with integer graph distance have two-sided vertex counts $c m^d\le |B_m(x)|\le C m^d$ for integer radii $1\le m\le r_0/a$, and let the metric and counting mass be rescaled by $a$ and $a^d$. For closed balls at $a\le r\le r_0$, the rescaled mass is bounded between $2^{-d}c r^d$ and $C r^d$.
+
+**I. Domain and Objects**
+
+The ball masses are taken with the metric and mass rescaling.
+
+**II. Ball Identification**
+
+A graph distance of $m$ becomes $am$. Thus with $j=\lfloor r/a\rfloor$,
+
+$$
+\overline B_r^{\,\mathrm{scaled}}(x)=B_j^{\,\mathrm{graph}}(x),\qquad
+\mu(\overline B_r^{\,\mathrm{scaled}}(x))=a^d|B_j^{\,\mathrm{graph}}(x)|.
+$$
+
+**III. Conversion of the Bounds**
+
+Since $r/a\ge1$, $r/(2a)\le\lfloor r/a\rfloor\le r/a$. Applying the discrete ball bounds gives
+
+$$
+2^{-d}c r^d\le a^d c j^d
+\le\mu(\overline B_r^{\,\mathrm{scaled}}(x))
+\le a^d C j^d\le C r^d .
+$$
+
+Q.E.D.
+
+Let $N\ge3$ points be iid from a normalized volume measure of unnormalized volume $V_0$. The count in a fixed diamond of volume $V$ is binomial with $N$ trials and probability $V/V_0$, while the open interval of two sampled fixed-index endpoints uses $N-2$ trials with its conditional volume, and both satisfy the binomial Bernstein bound.
+
+**I. Fixed Diamond**
+
+The iid volume model supplies an independent count law for a given region.
+
+For a fixed diamond of volume $V$, let $I_j$ be the indicator that point $j$ lies inside. Then $I_j$ are independent with mean $p=V/V_0$. Their sum $B$ has mean $Np$ and variance $Np(1-p)$. Thus $V_0 B/N$ is unbiased for $V$.
+
+**II. Sampled Endpoints**
+
+Fix two distinct indices $i,j$. Conditional on their locations, the open interval is fixed and the other $N-2$ locations retain the iid law. For its conditional volume $V_{ij}$, the count therefore has law $\operatorname{Binomial}(N-2,V_{ij}/V_0)$, and multiplication by $V_0/(N-2)$ is conditionally unbiased.
+
+**III. Relative Error and Uniform Control**
+
+For either trial count $n$ and $p>0$, the centered indicators have absolute bound one and summed variance at most $np$. Bernstein's inequality with threshold $\epsilon np$ gives
+
+$$
+\Pr(|B-np|\ge\epsilon np)\le
+2\exp\!\left(-\frac{\epsilon^2np}{2(1+\epsilon/3)}\right).
+$$
+
+For sampled endpoints the inequality holds after conditioning on the endpoint locations. For pairs with $V_{ij}\ge V_{\min}>0$, use $p\ge V_{\min}/V_0$, average over their locations, and sum the failure probabilities over the $N(N-1)$ ordered index pairs.
+
+Q.E.D.
+
+**Theorem 5.5.1** (Conditional Measured Compactness and Dimension).
+
+Let $(X_j,d_j,\mu_j)$ be finite nonempty rescaled metric measure spaces of uniformly bounded diameter and total mass, with mesh $a_j\to0$. Assume two-sided bounds $c r^d\le\mu_j(\overline B_r(x))\le C r^d$ at every center for $a_j\le r\le r_0$, with fixed positive constants. The spaces are precompact in measured Gromov-Hausdorff topology, and each subsequential limit is Ahlfors $d$-regular at small radii with Hausdorff dimension $d$.
+
+*Proof.*
+
+**I. Metric Premises**
+
+The rescaled balls obey the assumed two-sided bounds when the discrete growth estimates hold. Fix $\epsilon>0$ small compared with $r_0$. For all large $j$, $a_j\le\epsilon/3$. A maximal $\epsilon$-separated set in $X_j$ covers $X_j$ by $\epsilon$-balls, and its closed $\epsilon/3$-balls are pairwise disjoint. If $M$ bounds the total mass, its size is bounded by
+
+$$
+\frac{M}{c(\epsilon/3)^d}.
+$$
+
+The finitely many earlier finite spaces have finite covering numbers. Together with the diameter bound this yields uniform metric total boundedness and Gromov precompactness.
+
+**II. Measured Subsequences**
+
+Along a Gromov-Hausdorff convergent subsequence, embed the spaces and their limit in a common compact metric space with Hausdorff convergence. The uniform total mass bound gives a further weakly convergent measure subsequence. The limiting measure $\mu$ is supported on the metric limit $X$, since each closed subset a positive distance from $X$ has a neighborhood with zero mass for all sufficiently large indices.
+
+**III. Limit Ball Bounds**
+
+Take $x_j\to x\in X$ in the common embedding and fix $0<r<r_0$. For sufficiently small $\delta>0$ and large $j$,
+
+$$
+\overline B_{r-\delta}(x_j)\subseteq \overline B_r(x),\qquad
+B_{r+\delta}(x)\subseteq \overline B_{r+2\delta}(x_j).
+$$
+
+The radii on the left and right are eventually at least $a_j$. Weak convergence bounds mass on the closed ball from below by the limsup of its approximating masses. It bounds mass on the enlarged open ball from above by the liminf. Therefore
+
+$$
+c(r-\delta)^d\le\mu(\overline B_r(x))
+\le\mu(B_{r+\delta}(x))\le C(r+2\delta)^d.
+$$
+
+Letting $\delta\downarrow0$ proves both bounds and full support.
+
+**IV. Hausdorff Dimension**
+
+For any small-diameter cover, each nonempty member lies in a ball of radius its diameter centered on a member point. The upper mass bound implies $\mu(X)\le C\sum_i(\operatorname{diam} U_i)^d$, proving $\dim_H X\ge d$. A maximal $\epsilon$-separated set in $X$ has at most $M/[c(\epsilon/3)^d]$ points by the lower mass bound and covers $X$ by sets of diameter at most $2\epsilon$. For any $s>d$ its $s$-dimensional sum is at most
+
+$$
+\frac{M}{c(\epsilon/3)^d}(2\epsilon)^s\longrightarrow0,
+$$
+
+proving $\dim_H X\le d$.
+
+**V. Auxiliary Estimates**
+
+The locality test and the one-hop curvature bound concern finite metric neighborhoods.
+
+The one-tick addition and deletion bounds concern degree increments. The scalar saturation model has its own exact solution.
+
+Covariance and cycle tails use their respective ensemble premises. The iid volume calculation concerns its stated sprinkling law.
+
+Q.E.D.
+
+Identifying the QBD conditioned ensemble with the growth assumptions and obtaining a causal Lorentzian limit remain reconstruction objectives. Contact-process survival is a structural comparison pending a coupling for the microscopic rule.
 
 ## 5.6 Infinite-Volume Thermodynamic Scaling Program
 
@@ -1321,7 +3368,7 @@ To establish the asymptotic fate of the active phase in the thermodynamic limit,
 
 The analytical and computational results presented in this work establish:
 
-* **Kinematic Consistency:** Creation timestamps $H: E \to \mathbb{N}_0$ and comonadic awareness provide a background-independent, race-free framework that strictly guarantees causal DAG acyclicity to all orders without global clocks or extrinsic manifolds.
+* **Kinematic Consistency:** Occurrence heights strictly order recorded predecessor dependencies. Spatial graphs can contain triangles; acyclicity of the mediated influence closure is the separate causal-admission requirement.
 * **Intrinsic Nucleation Threshold:** Because isolated 3-cycles decay with probability $Q_{\mathrm{del}}(2) \approx 0.999$, escaping the absorbing vacuum requires an initial autocatalytic burst exceeding the unpumped barrier $\rho_c(\lambda_0) \approx 0.130$.
 * **Finite-Volume Scalability:** Expanding lattice volume eliminates boundary leaf quenching, sustaining an active Quasi-Stationary Distribution with power-law lifetime scaling ($\tau_{\mathrm{ext}} \sim N^{0.64}$) and non-divergent exit into scarred topological vacua.
 
@@ -1341,7 +3388,7 @@ Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
 | **Section 2.7** (Store Comonad) | `left_identity`, `right_identity` | Category-theoretic algebraic laws | Comonadic extraction $\varepsilon$ and duplication $\delta$ satisfy identities. |
 | **Theorem 2.2.9** (PUC Kinematics) | `puc_precludes_alternative_intermediate` | Combinatorial graph logic | Parent-Uniqueness strictly prohibits alternate 2-paths between endpoints. |
 | **Theorem 3.3.2** (Maximal Parallelism) | `orbit_complete_addition_preserves_automorphism` | Group action invariance | Proposing complete automorphism orbits preserves graph symmetries. |
-| **Theorem 3.3.2** (Symmetry Breaking) | `orbit_splitting_breaks_automorphism` | Symmetry breaking theorem | Splitting an orbit across serial queues breaks graph automorphisms. |
+| **Theorem 3.3.2** (Symmetry Breaking) | `orbit_splitting_breaks_automorphism` | Symmetry breaking theorem | Splitting an orbit breaks a successor symmetry under the distinct-effect hypothesis. |
 | **Theorem 4.4.1** (Informational Prior) | `permutation_invariance_uniquely_determines_prior` | Information-theoretic deduction | $\mathfrak{S}_2$ bit-flip symmetry uniquely forces unbiased prior $p=1/2$. |
 | **Theorem 4.4.1** (Drive Capacity) | `triad_interaction_ports_is_six`, `simplicial_permittivity_scale` | Simplicial combinatorics | 6-port boundary capacity ($3 \times 2 = 6$) fixes theoretical drive $\Lambda = 2^{-6}$. |
 | **Theorem 4.5.5 / Prop 3.1** (Base Stress) | `isolated_3cycle_self_stress_eq_two` | Combinatorial evaluation | Base self-stress on an isolated 3-cycle evaluates to $s_{\mathrm{del}} = 2$. |
