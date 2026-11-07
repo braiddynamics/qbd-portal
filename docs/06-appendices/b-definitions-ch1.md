@@ -370,6 +370,29 @@ $$
 |\mathcal E_b|-|\mathcal E_a|=\sum_{t=a}^{b-1}|B_t|\ge K.
 $$
 
+In a fixed-vertex execution of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, let $A_t$ and $D_t$ count the retained additions and actual deletions on the transition from $t$ to $t+1$. Each addition contributes one fresh occurrence to $B_t$. The additions use absent pairs and the deletions remove old edges, so
+
+$$
+\begin{aligned}
+A&=\sum_{t=a}^{b-1}A_t=\sum_{t=a}^{b-1}|B_t|=|\mathcal E_b\setminus\mathcal E_a|,\\
+|E_b|-|E_a|
+&=\sum_{t=a}^{b-1}(|E_{t+1}|-|E_t|)
+=\sum_{t=a}^{b-1}(A_t-D_t)=A-D ,
+\end{aligned}
+$$
+
+where $D=\sum_{t=a}^{b-1}D_t$. The active tick count $M_{\mathrm{act}}$ counts a tick with both operations once. Since $\mathbf1_{\{A_t+D_t>0\}}\le A_t+D_t$, it obeys
+
+$$
+\begin{aligned}
+M_{\mathrm{act}}
+&=\sum_{t=a}^{b-1}\mathbf1_{\{A_t+D_t>0\}}
+\le A+D\\
+&=|E_a|+2A-|E_b|
+\le |E_a|+2|\mathcal E_b\setminus\mathcal E_a|.
+\end{aligned}
+$$
+
 **III. Entropy Summation**
 
 For trajectory variables $X_a,\ldots,X_b$ and the specified set $J$ of $K$ ticks, nonnegativity of conditional entropy gives
@@ -615,6 +638,16 @@ K+1\le M\ \Longrightarrow\ K\le M-1,\qquad
 $$
 
 If unbounded candidate past length forces unbounded $K$, the uniform bound on $K$ excludes unbounded candidate past length.
+
+The active-tick case uses the occurrence bound in **Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />. On a fixed $N$-vertex set with an asymmetric irreflexive adjacency, each unordered pair carries at most one edge. If the existing information premise bounds the number of recoverable creation records at observation by $B$, then every preceding finite interval ending at that observation satisfies
+
+$$
+M_{\mathrm{act}}
+\le |E_{\mathrm{start}}|+2|\mathcal E_{\mathrm{end}}\setminus\mathcal E_{\mathrm{start}}|
+\le \binom N2+2B .
+$$
+
+An unbounded sequence of past active ticks would contain a finite segment with more than $\binom N2+2B$ active ticks, contradicting the same bound on that segment.
 
 **III. Physical Execution**
 

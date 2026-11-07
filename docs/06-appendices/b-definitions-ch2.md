@@ -716,6 +716,28 @@ $$
 
 The vertex set is fixed, so $(V,E_{12},H_{12})=(V,E_{21},H_{21})$ (**Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />).
 
+**IV. Worked Example of Vertex Sharing**
+
+The two support paths are $(0,1,2)$ and $(2,3,4)$. They share vertex $2$. The old adjacency and the complete short-path families at their endpoint pairs are
+
+$$
+E_0=\{(0,1),(1,2),(2,3),(3,4),(0,4)\},\qquad
+\Pi_{\ell\le2}^{E_0}(0,2)=\{(0,1,2)\},\quad
+\Pi_{\ell\le2}^{E_0}(2,4)=\{(2,3,4)\}.
+$$
+
+Indeed, $0$ has successors $1,4$, of which only $1$ has an edge to $2$, and $2$ has only successor $3$, which has an edge to $4$. Neither endpoint pair has a direct edge. Thus each path passes the short-path uniqueness test (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
+
+If $(2,0)$ is inserted first, the successors of $2$ become $\{0,3\}$ and both have an edge to $4$. The updated count is
+
+$$
+\Pi_{\ell\le2}^{E_0\cup\{(2,0)\}}(2,4)
+=\{(2,0,4),(2,3,4)\},\qquad
+\left|\Pi_{\ell\le2}^{E_0\cup\{(2,0)\}}(2,4)\right|=2 .
+$$
+
+Thus reevaluating PUC at the second path rejects it. For a frozen batch consisting of these two proposals, the filter instead acts on $B=\{(2,0),(4,2)\}$. The reverse pairs $(0,2)$ and $(2,4)$ are both absent from $B$, so $F(B)=B$ and both accumulation orders produce $E_0\cup\{(2,0),(4,2)\}$ with the same snapshot-assigned heights.
+
 Q.E.D.
 
 **In Plain English:**  
