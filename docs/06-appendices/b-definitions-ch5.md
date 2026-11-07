@@ -42,7 +42,23 @@ The finite configuration representation supplies the joint block law (**Spatial 
 
 **II. Support and Relative Entropy**
 
-If $P(x)>0$, then $P_i(x_i)\ge P(x)>0$ for each $i$. Expanding the logarithm gives
+If $P(x)>0$, then $P_i(x_i)\ge P(x)>0$ for each $i$. On this support,
+
+$$
+\log\frac{P(x)}{P_\otimes(x)}
+=\log P(x)-\log\!\left(\prod_i P_i(x_i)\right)
+=\log P(x)-\sum_i\log P_i(x_i).
+$$
+
+The inner sum for the $i$th marginal can be grouped by its coordinate $z$:
+
+$$
+\sum_{x:P(x)>0}P(x)\log P_i(x_i)
+=\sum_{z:P_i(z)>0}\log P_i(z)\sum_{x:x_i=z}P(x)
+=\sum_{z:P_i(z)>0}P_i(z)\log P_i(z).
+$$
+
+Consequently
 
 $$
 \begin{aligned}
@@ -61,7 +77,14 @@ $$
 2\|P-P_\otimes\|_{\mathrm{TV}}^2\le D(P\|P_\otimes).
 $$
 
-Taking nonnegative square roots gives the claimed estimate.
+Both sides of the bound are nonnegative. In natural units the resulting estimate is
+
+$$
+\|P-P_\otimes\|_{\mathrm{TV}}
+\le\sqrt{\frac{D(P\|P_\otimes)}{2}}
+=\sqrt{\frac{\sum_i H(P_i)-H(P)}{2}}
+=\sqrt{\frac{\operatorname{TC}(P)}{2}}.
+$$
 
 Q.E.D.
 
@@ -158,7 +181,21 @@ Section 5.1.4 formalizes the properties of the QBD lemma regarding gaussian mutu
 
 **I. Elimination of the Cross-Covariance**
 
-Write $\Sigma=\left(\begin{smallmatrix}A&C\\C^\top&B\end{smallmatrix}\right)$ and $M=A^{-1/2}CB^{-1/2}$ (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />). Block multiplication gives
+Write $\Sigma=\left(\begin{smallmatrix}A&C\\C^\top&B\end{smallmatrix}\right)$ and $M=A^{-1/2}CB^{-1/2}$ (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />). Let $R=\left(\begin{smallmatrix}I&-A^{-1}C\\0&I\end{smallmatrix}\right)$. The right multiplication gives
+
+$$
+\Sigma R=
+\begin{pmatrix}
+A&-AA^{-1}C+C\\
+C^\top&-C^\top A^{-1}C+B
+\end{pmatrix}
+=
+\begin{pmatrix}
+A&0\\ C^\top&B-C^\top A^{-1}C
+\end{pmatrix}.
+$$
+
+The left multiplication by $R^\top$ cancels the lower-left entry as $-C^\top A^{-1}A+C^\top=0$, giving
 
 $$
 \begin{pmatrix}I&0\\-C^\top A^{-1}&I\end{pmatrix}
@@ -180,7 +217,15 @@ Thus $\det\Sigma=\det A\det B\det(I-M^\top M)$ and $I-M^\top M$ is positive defi
 
 **II. Subtraction of the Gaussian Entropies**
 
-For a Gaussian block $Z$ of dimension $d$, mean $\mu$ and covariance $K$, integrate its negative log density. The quadratic term contributes
+For a Gaussian block $Z$ of dimension $d$, mean $\mu$ and covariance $K$, its density $p_Z$ satisfies
+
+$$
+-\log p_Z(z)
+=\tfrac d2\log(2\pi)+\tfrac12\log\det K
++\tfrac12(z-\mu)^\top K^{-1}(z-\mu).
+$$
+
+The integral $-\int p_Z(z)\log p_Z(z)\,\mathrm dz$ has the first two terms unchanged since $\int p_Z(z)\,\mathrm dz=1$. Its quadratic expectation is
 
 $$
 \begin{aligned}
@@ -190,7 +235,14 @@ $$
 \end{aligned}
 $$
 
-Therefore $h(Z)=\frac d2\log(2\pi e)+\frac12\log\det K$. For marginal dimensions $d_X,d_Y$, this gives
+Consequently
+
+$$
+h(Z)=\tfrac d2\log(2\pi)+\tfrac12\log\det K+\tfrac d2
+=\tfrac d2\log(2\pi e)+\tfrac12\log\det K.
+$$
+
+For marginal dimensions $d_X,d_Y$, this gives
 
 $$
 \begin{aligned}
@@ -380,7 +432,13 @@ Consequently $\Lambda=\lim_{\mathrm{d}t\downarrow0}\mathbb E[N_{\mathrm{success}
 
 **III. Reference Clock**
 
-Setting $\nu=1$ yields $\boxed{\Lambda_0=2^{-6}=1/64.}$ This is the prescribed continuum source (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />). The unpumped microscopic scheduler has no such independent injection process and uses $\Lambda_{\mathrm{micro}}=0$.
+The reference clock has $\nu=1$. The six factors give $2^6=2\cdot2\cdot2\cdot2\cdot2\cdot2=64$. The success rate is
+
+$$
+\boxed{\Lambda_0=1\cdot(1/2)^6=2^{-6}=1/64}.
+$$
+
+This is the prescribed continuum source (**Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />). The unpumped microscopic scheduler has no such independent injection process and uses $\Lambda_{\mathrm{micro}}=0$.
 
 Q.E.D.
 
@@ -580,7 +638,7 @@ The model supplies $s_{\mathrm{cl}}=6\rho$ as a candidate-conditioned constituti
 
 **II. Substitution**
 
-Substituting the specified stress gives
+The argument of the acceptance function is the scalar $s_{\mathrm{cl}}(\rho)=6\rho$. The exponent is $-\mu\,s_{\mathrm{cl}}(\rho)=(-\mu)\cdot6\rho=-6\mu\rho$, hence
 
 $$
 P_{\mathrm{cl}}(\rho)=P(s_{\mathrm{cl}}(\rho))
@@ -737,7 +795,18 @@ $$
 e^{-6\mu\rho}=1-6\mu\rho+18\mu^2\rho^2+O(\rho^3).
 $$
 
-Multiplication by the affine catalytic factor yields
+Write the Taylor remainder as $R(\rho)=O(\rho^3)$. The affine product separates into
+
+$$
+\begin{aligned}
+(1+6\lambda\rho)e^{-6\mu\rho}
+&=1-6\mu\rho+18\mu^2\rho^2+R(\rho)\\
+&\quad+6\lambda\rho-36\lambda\mu\rho^2
++108\lambda\mu^2\rho^3+6\lambda\rho R(\rho).
+\end{aligned}
+$$
+
+The last two terms have orders $\rho^3$ and $O(\rho^4)$, respectively. Collecting the terms through degree two gives
 
 $$
 \begin{aligned}
@@ -749,14 +818,19 @@ $$
 
 **III. Flux Coefficients**
 
-Multiplying every term by $\rho/2$ gives
+The flux is the product of $\rho/2$ and the scalar factor just computed:
 
 $$
-D(\rho)=\tfrac12\rho+3(\lambda-\mu)\rho^2
+\begin{aligned}
+D(\rho)
+&=\tfrac\rho2\bigl[1+(6\lambda-6\mu)\rho
++(18\mu^2-36\lambda\mu)\rho^2+O(\rho^3)\bigr]\\
+&=\tfrac12\rho+3(\lambda-\mu)\rho^2
 +(9\mu^2-18\lambda\mu)\rho^3+O(\rho^4).
+\end{aligned}
 $$
 
-If deletion damping is omitted as a separate baseline choice, direct multiplication instead gives $D_0(\rho)=\rho/2+3\lambda\rho^2$. Their quadratic coefficients differ by $-3\mu$, which is not a fourth-order remainder (**Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />).
+If deletion damping is omitted as a separate baseline choice, direct multiplication instead gives $D_0(\rho)=\rho/2+3\lambda\rho^2$. The difference is $D(\rho)-D_0(\rho)=-3\mu\rho^2+(9\mu^2-18\lambda\mu)\rho^3+O(\rho^4)$. For $\mu\ne0$, the quotient by $\rho^2$ tends to $-3\mu$, so the difference is not a fourth-order remainder (**Entropic & Catalytic Decay ($J_{out}$)** <Ref id="5.2.6" label="§5.2.6" />).
 
 Q.E.D.
 
@@ -1113,11 +1187,14 @@ Depth is measured in the original outward tree (**Initial-Depth Chord Bound** <R
 
 **II. Original Tree Depth**
 
-For the two original outward edges, $d(w)=d(v)+1$ and $d(u)=d(w)+1$. Adding the two increments gives
+The unique root path to $w$ is the root path to $v$ followed by $(v,w)$. Appending $(w,u)$ gives the unique root path to $u$. Their lengths satisfy
 
 $$
-d(u)-d(v)=(d(u)-d(w))+(d(w)-d(v))=2.
+d(w)=d(v)+1,\qquad
+d(u)=d(w)+1=(d(v)+1)+1=d(v)+2.
 $$
+
+Equivalently, $d(u)-d(v)=(d(u)-d(w))+(d(w)-d(v))=1+1=2$.
 
 **III. Return Direction**
 
@@ -1714,15 +1791,17 @@ $$
 
 **II. A Uniform Negative Derivative**
 
-Differentiate every term:
+The two factors of the creation term have derivatives $(\Lambda+9\rho^2)'=18\rho$ and $(e^{-a\rho})'=-ae^{-a\rho}$. The deletion terms have derivatives $-1/2$ and $-(b/2)(2\rho)=-b\rho$. Thus the product rule gives
 
 $$
 \begin{aligned}
 F'(\rho)
-&=18\rho e^{-a\rho}-a(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12-b\rho\\
-&\le18\rho e^{-a\rho}-\tfrac12-b\rho.
+&=(18\rho)e^{-a\rho}+(\Lambda+9\rho^2)(-ae^{-a\rho})-\tfrac12-b\rho\\
+&\le18\rho e^{-a\rho}-\tfrac12-b\rho ,
 \end{aligned}
 $$
+
+where the dropped term is nonpositive because $a,\Lambda>0$.
 
 For $x\ge0$, $e^x=1+x+\sum_{j\ge2}x^j/j!\ge1+x$, so $e^{-x}\le(1+x)^{-1}$. Thus
 
@@ -1734,10 +1813,14 @@ F'(\rho)
 \end{aligned}
 $$
 
-Set $c=18-b-a/2$. The parameter bounds imply
+For $c=18-b-a/2$, increasing either $a$ or $b$ decreases $c$. The lower and upper bounds are
 
 $$
-6.48<c<6.505,\qquad ab>2.39(10.30)=24.617,
+\begin{aligned}
+c&>18-10.32-2.40/2=6.48,\\
+c&<18-10.30-2.39/2=6.505,\\
+ab&>2.39(10.30)=24.617 .
+\end{aligned}
 $$
 
 and consequently
@@ -1821,7 +1904,12 @@ Section 5.4.4 formalizes the properties of the QBD lemma regarding catalysis bou
 
 The proof uses the specified objects and conventions (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
-For $0\le\Delta S\le1$, monotonicity of the exponential gives $1=e^0\le e^{\Delta S}\le e$. Subtraction of one yields $0\le\lambda\le e-1$.
+In the entropy-reference convention the coefficient is $\lambda=e^{\Delta S}-1$. Monotonicity on $0\le\Delta S\le1$ gives
+
+$$
+1=e^0\le e^{\Delta S}\le e^1=e,\qquad
+0=1-1\le e^{\Delta S}-1=\lambda\le e-1.
+$$
 
 **II. Elementary Upper Bound**
 
@@ -2340,7 +2428,25 @@ $$
 
 **III. Maximum Multiplicity**
 
-For an edge $(u,v)$, a directed triangle containing it specifies a third vertex from the neighbors of $v$ other than $u$. There are at most $\Delta-1$ such vertices, and each specifies at most one directed triangle with this edge. Hence $S_v\le(\Delta-1)D_v$ outcome by outcome, where $D_v$ counts distinct deleted incident edges. Taking expectations gives the bound.
+For an edge $(u,v)$, a directed triangle containing it specifies a third vertex from the neighbors of $v$ other than $u$. There are at most $\Delta-1$ such vertices, and each specifies at most one directed triangle with this edge. For an outcome, let $I_{C,e}$ be one if the trial for triangle $C$ selected the edge $e$ and zero otherwise. For $e$ incident to $v$, let $I_e$ be one if any trial selected $e$. Only triangles containing $e$ can contribute to $\sum_{C\ni e} I_{C,e}$. Therefore
+
+$$
+\begin{aligned}
+S_v&=\sum_{e\text{ incident to }v}\sum_{C\ni e}I_{C,e}\\
+&\le\sum_{e\text{ incident to }v}(\Delta-1)I_e
+=(\Delta-1)D_v .
+\end{aligned}
+$$
+
+Monotonicity and linearity of expectation, together with Section II, give
+
+$$
+\tfrac23 kq_{\min}(\Delta)
+\le \mathbb E S_v
+\le(\Delta-1)\mathbb E D_v,
+\qquad
+\mathbb E D_v\ge\frac{2kq_{\min}(\Delta)}{3(\Delta-1)}.
+$$
 
 Q.E.D.
 
@@ -2437,7 +2543,27 @@ Set $Y(t)=S(t)-S_\infty$. The stipulated equation gives $Y'(t)=-\nu Y(t)$.
 
 **III. Integration**
 
-The derivative of $e^{\nu t}Y(t)$ is $e^{\nu t}(\nu Y+Y')=0$. Evaluating at zero yields $e^{\nu t}Y(t)=S_0-S_\infty$. Substituting back gives the stated formula.
+The integrating factor gives
+
+$$
+\frac{\mathrm d}{\mathrm dt}\bigl(e^{\nu t}Y(t)\bigr)
+=e^{\nu t}(\nu Y(t)+Y'(t))
+=e^{\nu t}(\nu Y(t)-\nu Y(t))=0.
+$$
+
+Integrating the zero derivative over $[0,t]$ gives
+
+$$
+0=\int_0^t\frac{\mathrm d}{\mathrm ds}\bigl(e^{\nu s}Y(s)\bigr)\,\mathrm ds
+=e^{\nu t}Y(t)-e^0Y(0).
+$$
+
+Since $Y(0)=S_0-S_\infty$, this is
+
+$$
+e^{\nu t}(S(t)-S_\infty)=S_0-S_\infty,\qquad
+S(t)=S_\infty+(S_0-S_\infty)e^{-\nu t}.
+$$
 
 Q.E.D.
 
@@ -2596,11 +2722,20 @@ $$
 
 **III. Evaluation of the Degree-Eight Envelope**
 
-For $D=8$ and $0\le p\le 1/8$, one has $Dp\le1$, $q=7p\le7/8$ and $1/(1-q)\le8$. In this envelope the bound becomes
+For $D=8$ and $0\le p\le 1/8$ the factors obey
+
+$$
+Dp=8p\le1,\qquad q=7p\le7/8,\qquad
+1-q\ge1/8\Longrightarrow (1-q)^{-1}\le8.
+$$
+
+Since $r\ge1$, the bound specializes to
 
 $$
 \left|\operatorname{Cov}(f(x),f(y))\right|
-\le 8A(7/8)^{r-1}.
+\le A(Dp)q^{r-1}(1-q)^{-1}
+\le A\cdot1\cdot(7/8)^{r-1}\cdot8
+=8A(7/8)^{r-1}.
 $$
 
 Q.E.D.
@@ -2749,7 +2884,15 @@ $$
 
 **III. Conversion of the Bounds**
 
-Since $r/a\ge1$, $r/(2a)\le\lfloor r/a\rfloor\le r/a$. Applying the discrete ball bounds gives
+Write $y=r/a\ge1$. For $1\le y<2$, $j=1\ge y/2$. For $y\ge2$, $j>y-1\ge y/2$. In both cases $j\le y$. Since $a>0$, this gives
+
+$$
+r/2\le aj\le r,\qquad
+a^d c j^d=c(aj)^d\ge c(r/2)^d,\qquad
+a^d C j^d=C(aj)^d\le C r^d .
+$$
+
+The discrete ball bounds at integer radius $j$ therefore give
 
 $$
 2^{-d}c r^d\le a^d c j^d
@@ -2795,14 +2938,47 @@ Fix two distinct indices $i,j$. Conditional on their locations, the open interva
 
 **III. Relative Error and Uniform Control**
 
-For either trial count $n$ and $p>0$, the centered indicators have absolute bound one and summed variance at most $np$. Bernstein's inequality with threshold $\epsilon np$ gives
+For either trial count $n$, let $X_j=I_j-p$, where $p>0$. Then $\mathbb E X_j=0$, $|X_j|\le1$ and $\mathbb E X_j^2=p(1-p)\le p$. For $k\ge2$, $|X_j|^k\le X_j^2$. Also $k!\ge2\cdot3^{k-2}$, since each factor after $2$ is at least $3$. For $0<s<3$ these bounds give, with either sign,
 
 $$
-\Pr(|B-np|\ge\epsilon np)\le
-2\exp\!\left(-\frac{\epsilon^2np}{2(1+\epsilon/3)}\right).
+\begin{aligned}
+\mathbb E e^{\pm sX_j}
+&=1+\sum_{k=2}^{\infty}\frac{(\pm s)^k}{k!}\mathbb E X_j^k\\
+&\le1+\frac{p s^2}{2}\sum_{k=0}^{\infty}(s/3)^k
+\le \exp\!\left(\frac{p s^2}{2(1-s/3)}\right).
+\end{aligned}
 $$
 
-For sampled endpoints the inequality holds after conditioning on the endpoint locations. For pairs with $V_{ij}\ge V_{\min}>0$, use $p\ge V_{\min}/V_0$, average over their locations, and sum the failure probabilities over the $N(N-1)$ ordered index pairs.
+Independence multiplies the $n$ bounds. For threshold $t>0$, Markov's inequality on either exponential gives
+
+$$
+\Pr\bigl(\pm(B-np)\ge t\bigr)
+\le\exp\!\left(-st+\frac{np\,s^2}{2(1-s/3)}\right).
+$$
+
+The choice $s=t/(np+t/3)$ lies in $(0,3)$ and gives $1-s/3=np/(np+t/3)$. Thus the exponent is
+
+$$
+-\frac{t^2}{np+t/3}+\frac{t^2}{2(np+t/3)}
+=-\frac{t^2}{2(np+t/3)} .
+$$
+
+Adding the two tail bounds and using $t=\epsilon np$ gives
+
+$$
+\Pr(|B-np|\ge\epsilon np)
+\le2\exp\!\left(-\frac{\epsilon^2np}{2(1+\epsilon/3)}\right).
+$$
+
+For sampled endpoints let $F_{ij}$ be relative-error failure and let $A_{ij}=\{V_{ij}\ge V_{\min}\}$, with $V_{\min}>0$. On $A_{ij}$ the conditional tail bound uses $p\ge V_{\min}/V_0$ and $n=N-2$. Averaging and summing over ordered pairs yields
+
+$$
+\begin{aligned}
+\Pr\!\left(\bigcup_{i\ne j}(F_{ij}\cap A_{ij})\right)
+&\le \sum_{i\ne j}\mathbb E\bigl[\mathbf1_{A_{ij}}\Pr(F_{ij}\mid\text{endpoints }i,j)\bigr]\\
+&\le 2N(N-1)\exp\!\left(-\frac{\epsilon^2 (N-2)V_{\min}/V_0}{2(1+\epsilon/3)}\right).
+\end{aligned}
+$$
 
 Q.E.D.
 

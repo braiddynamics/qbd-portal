@@ -338,11 +338,19 @@ contradicting asymmetry. Therefore every cycle compatible with these two conditi
 
 **III. Explicit Compatible Length-Three Model**
 
-Take three pairwise distinct vertices and no other edges:
+For three pairwise distinct vertices $u,v,w$, the length-three witness has the following vertex and edge sets.
 
 $$
 V_\gamma=\{u,v,w\},\qquad
 E_\gamma=\{(u,v),(v,w),(w,u)\}.
+$$
+
+Each outgoing set is a singleton, so the complete two-edge path family is
+
+$$
+\operatorname{Out}(u)=\{v\},\quad\operatorname{Out}(v)=\{w\},\quad
+\operatorname{Out}(w)=\{u\},\qquad
+\mathcal P_2=\{(u,v,w),(v,w,u),(w,u,v)\}.
 $$
 
 The endpoint inequalities $u\ne v$, $v\ne w$, $w\ne u$ exclude each possible self-loop. Reversing the three edges gives
@@ -422,7 +430,17 @@ $$
 M(v,u)=\{w\},\qquad |\Pi_{\ell\le2}(v,u)|=0+1=1.
 $$
 
-Conversely, if the path count is one, the already present candidate accounts for that one element. A direct edge would supply a second path, and an intermediate vertex $x\ne w$ would supply another distinct two-edge path. Both are excluded. Thus both PUC clauses hold.
+Conversely, suppose $|\Pi_{\ell\le2}(v,u)|=1$. The candidate gives $w\in M(v,u)$, so
+
+$$
+\begin{aligned}
+(v,u)\in E&\Longrightarrow |\Pi_{\ell\le2}(v,u)|=1+|M(v,u)|\ge2,\\
+x\in M(v,u)\setminus\{w\}&\Longrightarrow
+|\Pi_{\ell\le2}(v,u)|\ge |M(v,u)|\ge|\{w,x\}|=2.
+\end{aligned}
+$$
+
+Thus $(v,u)\notin E$ and $M(v,u)=\{w\}$. These are the two PUC clauses.
 
 **IV. Conclusion**
 
@@ -483,7 +501,17 @@ $$
 
 **III. All Four Transitivity Cases**
 
-Let $z=(e,f)$ and suppose $x<_{lex}y<_{lex}z$. Expanding the two disjunctions gives four cases:
+Let $z=(e,f)$ and suppose $x<_{lex}y<_{lex}z$. Distributivity gives
+
+$$
+\begin{aligned}
+&[(a<c)\lor(a=c\land b<d)]\land[(c<e)\lor(c=e\land d<f)]\\
+&\quad\Longleftrightarrow (a<c\land c<e)\lor(a<c\land c=e\land d<f)\\
+&\qquad{}\lor(a=c\land b<d\land c<e)\lor(a=c\land b<d\land c=e\land d<f).
+\end{aligned}
+$$
+
+The comparisons in each disjunct give the following consequences.
 
 $$
 \begin{array}{c|c|c}
@@ -654,7 +682,19 @@ e\in F(B_{12})
 \end{aligned}
 $$
 
-Here $F$ is the filter applied to the complete proposal set. In particular, if $B_1=\{(u,v)\}$ and $B_2=\{(v,u)\}$ with $u\ne v$, then $F(B_1)=B_1$ and $F(B_2)=B_2$, while $F(B_{12})=F(B_{21})=\varnothing$.
+For $u\ne v$, the reciprocal-pair example has $B_1=\{e\}$ and $B_2=\{e^{-1}\}$. Then
+
+$$
+\begin{aligned}
+e^{-1}\notin B_1&\Longrightarrow F(B_1)=\{e\},\\
+e\notin B_2&\Longrightarrow F(B_2)=\{e^{-1}\},\\
+B_{12}=B_{21}&=\{e,e^{-1}\},\\
+e^{-1}\in B_{12}&\Longrightarrow e\notin F(B_{12}),\\
+e\in B_{12}&\Longrightarrow e^{-1}\notin F(B_{12}).
+\end{aligned}
+$$
+
+Neither proposal survives the filter on the complete set, so $F(B_{12})=F(B_{21})=\varnothing$.
 
 **III. Equality of the Height Fields**
 
@@ -831,7 +871,14 @@ The input has $k$ edges. The frozen perimeter list has $k$ distinct proposed cho
 
 **II. Deletion Termination**
 
-Each pruning step selects an existing edge of a cycle longer than three and removes it. If $m_j$ is the current edge count, then $m_{j+1}=m_j-1$. Induction gives $m_j=m_0-j$. Since $m_j\ge0$, there can be at most $m_0\le2k$ deletions. The loop can stop only when no cycle longer than three remains.
+Each pruning step selects an existing edge of a cycle longer than three and removes it. If $m_j$ is the current edge count, then $m_{j+1}=m_j-1$. After $j$ removals the edge count is
+
+$$
+m_j=m_0+\sum_{\ell=0}^{j-1}(m_{\ell+1}-m_\ell)
+=m_0+\sum_{\ell=0}^{j-1}(-1)=m_0-j\ge0.
+$$
+
+Thus $j\le m_0\le2k$. A remaining cycle of length greater than three supplies an edge for one more deletion. At $j=m_0$ there are no edges, so the loop must stop by then with no cycle longer than three.
 
 **III. Final Potential**
 
@@ -1252,7 +1299,15 @@ Section 2.5.2 formalizes the properties of the QBD lemma regarding independence 
 
 **I. Directed-Link and Mediated Conditions**
 
-Take residues modulo four, $E_A=\{(i,i+1):i\in\mathbb Z/4\mathbb Z\}$, with every height zero. The loop and reciprocity tests reduce to
+The residue model has all heights zero and the edge sets
+
+$$
+E_A=\{(0,1),(1,2),(2,3),(3,0)\},\quad
+E_A^{-1}=\{(1,0),(2,1),(3,2),(0,3)\},\quad
+E_A\cap E_A^{-1}=\varnothing .
+$$
+
+The loop and reciprocity tests reduce to
 
 $$
 (i,i+1)=(i,i)\Longrightarrow 1\equiv0\pmod4,\qquad
@@ -1312,7 +1367,7 @@ Section 2.5.3 formalizes the properties of the QBD lemma regarding independence 
 
 **I. Complete Static Path Enumeration**
 
-Let $E=\{(a,b),(b,c),(c,a),(z,z)\}$ with heights $0,0,1,0$ in the listed order. The component on $\{a,b,c\}$ has one outgoing edge at each vertex, so its only simple directed cycle up to rotation is $(a,b,c,a)$. The isolated loop has length one and cannot be used in a simple two-path. The full two-path set and the direct edges at its endpoint pairs are
+Let $E=\{(a,b),(b,c),(c,a),(z,z)\}$ with heights $0,0,1,0$ in the listed order. The successor map is $a\mapsto b\mapsto c\mapsto a$ and $z\mapsto z$. For each of $a,b,c$ the first return is at step three, so their cycles differ only by rotation. The first edge from $z$ already repeats $z$, so it cannot start a simple two-path. The full two-path set and the direct edges at its endpoint pairs are
 
 $$
 \mathcal P_2(G_B)=\{(a,b,c),(b,c,a),(c,a,b)\},\qquad
@@ -1536,7 +1591,12 @@ $$
 \forall\,1\le i<k,\ h_i<h_{i+1}.
 $$
 
-In particular, taking $(i,j)=(0,k)$ gives $x_0\ne x_k$, so $R\cap\{(u,u):u\in V\}=\varnothing$.
+A diagonal pair would give a witness with $0<k$ and $x_0=x_k=u$. At the distinct indices $0,k$, simplicity requires $x_0\ne x_k$. Thus
+
+$$
+(u,u)\in R\Longrightarrow (x_0=x_k\land x_0\ne x_k),\qquad
+R\cap\{(u,u):u\in V\}=\varnothing .
+$$
 
 **II. Restriction to Two Subpaths**
 
@@ -1587,13 +1647,13 @@ For every witness of $uRv$, each comparison $h_i<h_{i+1}$ implies $h_i\le h_{i+1
 
 **III. Equal-Height Witness**
 
-In $a\xrightarrow{0}b\xrightarrow{0}c$, the only simple directed path of length at least two has heights $(0,0)$. Hence
+The graph $a\xrightarrow{0}b\xrightarrow{0}c$ has outgoing sets $\{b\},\{c\},\varnothing$ in that order. Its only two-edge path is $(a,b,c)$ and $c$ has no successor. The height pair $(0,0)$ fails $0<0$ and satisfies $0\le0$. Hence
 
 $$
 R=\varnothing,\qquad R_{\le}=\{(a,c)\}.
 $$
 
-Each closure is irreflexive. Acyclicity of the weak relation therefore permits equal heights along a mediated path.
+No pair in $R_{\le}$ starts at $c$, so $R_{\le}^2=\varnothing$ and $R_{\le}^+=\{(a,c)\}$. Also $R^+=\varnothing$. Both closures have empty diagonal. Acyclicity of the weak relation therefore permits equal heights along a mediated path.
 
 Q.E.D.
 
@@ -1743,7 +1803,7 @@ This contradicts irreflexivity. For $m=1$, the first edge already gives that con
 
 **III. A Spatial Triangle Does Not Supply the Missing Dependency**
 
-Take a spatial triangle with distinct supports
+The spatial witness is a triangle with distinct supports
 
 $$
 e_1=(u,v),\qquad e_2=(v,w),\qquad e_3=(w,u)
@@ -1756,7 +1816,16 @@ $$
 \qquad H(\varepsilon_1)=1,\ H(\varepsilon_2)=2,\ H(\varepsilon_3)=3.
 $$
 
-The spatial equality of the final endpoint of $e_3$ and the first endpoint of $e_1$ is an equality in $V$. It does not assert the event dependency $\varepsilon_3\prec\varepsilon_1$. Such a dependency would require $3<1$ in this example, or $\varepsilon_1\prec\varepsilon_1$ in the abstract order. Thus
+The spatial equality of the final endpoint of $e_3$ and the first endpoint of $e_1$ is an equality in $V$. It does not assert the event dependency $\varepsilon_3\prec\varepsilon_1$. In the concrete order the missing dependency would require $H(\varepsilon_3)<H(\varepsilon_1)$, or $3<1$. In the abstract order,
+
+$$
+\varepsilon_1\prec\varepsilon_2\prec\varepsilon_3
+\Longrightarrow \varepsilon_1\prec\varepsilon_3,\qquad
+(\varepsilon_1\prec\varepsilon_3)\land(\varepsilon_3\prec\varepsilon_1)
+\Longrightarrow\varepsilon_1\prec\varepsilon_1 .
+$$
+
+Both are contradictions. Thus
 
 $$
 \boxed{C_3\subseteq G_{space}\ \text{is compatible with}\
@@ -1882,7 +1951,23 @@ B_C(0,r)&=\{0,\ldots,r\}\cup\{r+4,\ldots,2r+3\}.
 \end{aligned}
 $$
 
-The removed edge has endpoints at distances $r+1$ and $r+2$. For $0\le j\le r$, the route $0,1,\ldots,j$ is still present in the undirected support of $P$. For $r+4\le j\le 2r+3$, the route $0,2r+3,\ldots,j$ is still present there. Their lengths are $j\le r$ and $m-j\le r$, respectively. Thus $B_C(0,r)\subseteq B_P(0,r)$. Every undirected route in $P$ also occurs in $C$, which yields the reverse inclusion. Since $e_{r+1}$ is outside the common ball, all induced edge directions and heights agree.
+The endpoints of the removed edge satisfy
+
+$$
+d_C(0,r+1)=\min(r+1,r+3)=r+1>r,\qquad
+d_C(0,r+2)=\min(r+2,r+2)=r+2>r.
+$$
+
+For $0\le j\le r$, the route $0,1,\ldots,j$ remains in $P$ and has length $j=d_C(0,j)$. For $r+4\le j\le 2r+3$, the route $0,2r+3,\ldots,j$ remains in $P$ and has length $m-j=d_C(0,j)$. Every route in $P$ also occurs in $C$. The distance comparisons are therefore
+
+$$
+\begin{aligned}
+j\in B_C(0,r)&\Longrightarrow d_C(0,j)\le d_P(0,j)\le d_C(0,j),\\
+j\notin B_C(0,r)&\Longrightarrow d_P(0,j)\ge d_C(0,j)>r .
+\end{aligned}
+$$
+
+Thus $B_P(0,r)=B_C(0,r)$. The deleted edge has neither endpoint in this ball, so the induced edges have the same directions and heights.
 
 **III. Opposite Closure Outcomes**
 
@@ -1938,11 +2023,23 @@ For a fixed length-$L$ path let $A_j$ be the event that its first $j$ comparison
 The first edge has at most three choices. Subsequent edges have at most two after excluding the predecessor. Thus for a fixed starting vertex at most $3\cdot2^{L-1}$ length-$L$ simple paths are possible. With $q=2p$ the site bound is
 
 $$
-\sum_{L=L_{\mathrm{cut}}+1}^{\infty}3\cdot 2^{L-1}p^{L-1}
-= \frac{3q^{L_{\mathrm{cut}}}}{1-q}.
+\begin{aligned}
+\sum_{L=L_{\mathrm{cut}}+1}^{\infty}3\cdot2^{L-1}p^{L-1}
+&=3\sum_{L=L_{\mathrm{cut}}+1}^{\infty}q^{L-1}\\
+&=3q^{L_{\mathrm{cut}}}\lim_{m\to\infty}\frac{1-q^{m+1}}{1-q}
+=\frac{3q^{L_{\mathrm{cut}}}}{1-q}.
+\end{aligned}
 $$
 
-There are at most $6\cdot N$ candidate two-paths. The union bound gives $18Nq^{L_{\mathrm{cut}}}/(1-q)$.
+Let $S$ be the candidate set and $M_s$ the miss event at site $s$. The candidate count and union bound give
+
+$$
+|S|\le\sum_{v\in V}3\cdot2=6N,\qquad
+\Pr\left(\bigcup_{s\in S}M_s\right)
+\le\sum_{s\in S}\Pr(M_s)
+\le 6N\frac{3q^{L_{\mathrm{cut}}}}{1-q}
+=\frac{18Nq^{L_{\mathrm{cut}}}}{1-q}.
+$$
 
 **III. Dependence on Horizon**
 
@@ -1953,7 +2050,13 @@ $$
 \le\frac{18q^2}{1-q}N^{1+\log_2 q}.
 $$
 
-The exponent is negative. Conditional bounds uniform over tick histories yield the same one-tick marginal bounds by averaging, and summing them bounds a miss by the chosen horizon.
+Since $q<1/2$, $1+\log_2 q<0$. Let $M_t$ be the event of a miss at tick $t$, let $\mathcal F_{t-1}$ be the history before it, and let $B_N$ be the displayed bound. Under the uniform conditional premise,
+
+$$
+\Pr(M_t)=\mathbb E[\Pr(M_t\mid\mathcal F_{t-1})]\le B_N,\qquad
+\Pr\!\left(\bigcup_{t=1}^{T}M_t\right)
+\le\sum_{t=1}^{T}\Pr(M_t)\le T B_N .
+$$
 
 Q.E.D.
 
@@ -2042,7 +2145,14 @@ Section 2.7.6 formalizes the properties of the QBD lemma regarding independence 
 
 **I. The Static Butterfly**
 
-Use the edge set $E=\{AZ,ZD,DC,CZ,ZB,BA\}$, where $UV$ denotes $(U,V)$ (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />). Each edge has distinct endpoints and the six reversed edges are absent. The sets $\{A,B\}$ and $\{C,D\}$ meet only through $Z$. A simple cycle crossing from one set to the other would have to visit $Z$ a second time before completing the cycle. The only cycles are therefore the two directed triangles.
+The butterfly has edge set $E=\{AZ,ZD,DC,CZ,ZB,BA\}$, where $UV$ denotes $(U,V)$ (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />). Each edge has distinct endpoints and the six reversed edges are absent. Deleting $Z$ leaves only $BA$ and $DC$, which contain no directed cycle. Every simple cycle therefore has a rotation beginning at $Z$. After either first edge, the other vertices each have a unique outgoing edge. The first returns are
+
+$$
+ZD\Longrightarrow (Z,D,C,Z),\qquad
+ZB\Longrightarrow (Z,B,A,Z).
+$$
+
+A longer cycle would repeat $Z$ before closing. Thus these two triangles exhaust the simple cycles up to rotation.
 
 The complete set of length-two paths is
 

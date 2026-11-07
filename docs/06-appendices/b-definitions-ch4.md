@@ -1339,12 +1339,16 @@ In particular both observation slots, not just the inner one, are transported.
 
 **III. Comultiplication Square**
 
-Direct substitution on the two sides yields
+The two compositions on the fiber have the following values.
 
 $$
 \begin{aligned}
-\delta_Y(R_T(h)(a,b))&=((k(a),\tau_f(b)),\tau_f(b)),\\
-R_T^2(h)(\delta_X(a,b))&=R_T^2(h)((a,b),b)
+\delta_Y(R_T(h)(a,b))
+&=\delta_Y(k(a),\tau_f(b))\\
+&=((k(a),\tau_f(b)),\tau_f(b)),\\
+R_T^2(h)(\delta_X(a,b))
+&=R_T^2(h)((a,b),b)\\
+&=(\widetilde k(a,b),\tau_f(b))
 =((k(a),\tau_f(b)),\tau_f(b)).
 \end{aligned}
 $$
@@ -1513,7 +1517,7 @@ $$
 k(0)=u,\qquad k(a+b)=k(a)+b\quad(a,b\in\mathcal V_{even}).
 $$
 
-Substitution $a=0$, $b=s$ yields
+For any $s\in\mathcal V_{even}$, the pair $(0,s)$ belongs to the domain of the equivariance identity. Anchoring at $k(0)=u$ gives
 
 $$
 k(s)=k(0+s)=k(0)+s=u+s=s+u.
@@ -2321,7 +2325,14 @@ $$
 
 **II. Energy Conservation**
 
-Substitution gives $3\varepsilon_0=E_0$, hence $\varepsilon_0=E_0/3$.
+The common channel value contributes once for each of the three terms, so
+
+$$
+E_0=\varepsilon_1+\varepsilon_2+\varepsilon_3
+=\varepsilon_0+\varepsilon_0+\varepsilon_0
+=3\varepsilon_0,\qquad
+\varepsilon_0=\frac{E_0}{3}.
+$$
 
 **III. Reference Energy Unit**
 
@@ -2403,7 +2414,7 @@ Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coe
 
 **I. Endpoint Conditions as a Linear System**
 
-In the stipulated affine family $f(s)=a+bs$, evaluate the two reference stresses (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />)
+In the stipulated affine family, the two reference values are $f(0)=a+b\cdot0=a$ and $f(1)=a+b\cdot1=a+b$. The reference conditions give the system (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />)
 
 $$
 \begin{pmatrix}f(0)\\ f(1)\end{pmatrix}
@@ -2416,7 +2427,7 @@ $$
 
 **II. Elimination and Verification**
 
-Subtract the first row from the second to obtain
+The row operation takes $(a,a+b)$ to $(a,(a+b)-a)=(a,b)$, and takes $(1,e)$ to $(1,e-1)$. Its matrix form is
 
 $$
 \begin{pmatrix}1&0\\-1&1\end{pmatrix}
@@ -2431,7 +2442,7 @@ The candidate $f(s)=1+(e-1)s$ gives $f(0)=1$ and $f(1)=1+e-1=e$.
 
 **III. Uniqueness**
 
-For two solutions $(a,b),(a',b')$, the differences satisfy $a-a'=0$ and $(a-a')+(b-b')=0$. Substitution gives $b-b'=0$, hence
+For two solutions $(a,b),(a',b')$, the differences satisfy $a-a'=0$ and $(a-a')+(b-b')=0$. Their second difference minus their first is $[(a-a')+(b-b')]-(a-a')=0-0$, so $b-b'=0$. Hence
 
 $$
 \boxed{f(s)=1+\lambda_0s,\qquad\lambda_0=e-1.}
@@ -2901,7 +2912,14 @@ $$
 P_{thermo}=\min\{1,e^{\ln2-1/3}\}=1.
 $$
 
-For the separately stated quarter-unit example, the corresponding ratio is $1/4<1/2<\ln2$, giving the same saturation. Both conclusions are conditional on their supplied energy normalizations.
+For the separately stated quarter-unit example, $\Delta E/T_c=1/4<1/2<\ln2$. Therefore
+
+$$
+-\Delta F/T_c=\ln2-\tfrac14>0,\qquad
+P_{thermo}=\min\{1,e^{\ln2-1/4}\}=1.
+$$
+
+Both conclusions are conditional on their supplied energy normalizations.
 
 **IV. Scope of the Factor**
 
@@ -2976,7 +2994,25 @@ Q(\varepsilon)=\begin{cases}
 \end{cases}
 $$
 
-The supplied channel-energy example $\varepsilon=\ln2/3$ at $T_c=\ln2$ has ratio $\varepsilon/T_c=1/3$, so it gives $Q=\tfrac12e^{1/3}\approx0.6978$. This is the nonzero-energy correction, rather than the base factor.
+For the supplied channel energy at $T_c=\ln2$, the ratio is $(\ln2/3)/\ln2=1/3<\ln2$. The unclipped value is therefore $Q=\tfrac12e^{1/3}$. The first five terms of the exponential series give
+
+$$
+\sum_{j=0}^4\frac{(1/3)^j}{j!}
+=1+\frac13+\frac1{18}+\frac1{162}+\frac1{1944}
+=\frac{2713}{1944}.
+$$
+
+The first omitted term is $1/29160$. Each following term is at most $1/18$ times the preceding term, so
+
+$$
+\frac{2713}{3888}
+<Q\le
+\frac{2713}{3888}+\frac{1}{2\cdot29160}\frac{1}{1-1/18}.
+$$
+
+These endpoints lie between $0.69775$ and $0.69785$, so $Q\approx0.6978$ to four decimal places.
+
+This is the nonzero-energy correction, rather than the base factor.
 
 **III. Limit and Baseline Identity**
 
@@ -3504,7 +3540,26 @@ If the old undirected degree is at most $\Delta$, each new neighbor is at old di
 
 **V. Exact Drift in the Degree-Three Fixture**
 
-Use the old triangle $a\to b\to c\to a$ of heights $0,0,1$ and the tail $c\to d$ of height zero. The three two-paths internal to the old triangle already have their return edges. The remaining two-path $b\to c\to d$ gives the sole candidate $d\to b$ at height one. Its reverse path has heights $(0,0)$, and $b,c$ each lie in the old triangle, so the addition stress is two. The old triangle has deletion stress two, giving the respective probabilities (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />) (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />)
+The old edge heights are $H(a,b)=H(b,c)=H(c,d)=0$ and $H(c,a)=1$. The complete two-path and return-edge lists are
+
+$$
+\begin{array}{c|c|c}
+\text{support} & \text{return edge} & \text{old membership}\\\hline
+(a,b,c)&(c,a)&\text{present}\\
+(b,c,a)&(a,b)&\text{present}\\
+(c,a,b)&(b,c)&\text{present}\\
+(b,c,d)&(d,b)&\text{absent}
+\end{array}
+$$
+
+The candidate $(d,b)$ has height $1+H(c,d)=1$. The simple reverse route $b\to c\to d$ has height pair $(0,0)$ and fails $0<0$. The route through $c\to a$ can only continue to $b$, repeating the start. Thus the reverse-witness test passes. The old triangle counts at $a,b,c,d$ are $1,1,1,0$, giving
+
+$$
+s_{\mathrm{add}}(d,b)=1+1+0=2,\qquad
+s_{\mathrm{del}}(a,b,c)=1+1+1-1=2 .
+$$
+
+The respective probabilities follow from (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />) (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />)
 
 $$
 p=e^{-2\mu_0},\qquad q=\min\{1,\tfrac12(1+2\lambda_0)e^{-2\mu_0}\}.
@@ -3746,7 +3801,14 @@ Each retained chord has height one plus an incoming source maximum in the frozen
 
 **III. Finite Horizon**
 
-Induction gives $H_{\max}(t)\le H_{\max}(0)+t$. With $P$ possible directed pairs and horizon $T$, each pair is absent or has one of $H_{\max}(0)+T+1$ heights. There are at most
+At $t=0$ the bound is equality. If $H_{\max}(t)\le H_{\max}(0)+t$, then
+
+$$
+H_{\max}(t+1)\le H_{\max}(t)+1
+\le H_{\max}(0)+t+1 .
+$$
+
+Hence the bound holds through the horizon $T$. For each of the $P$ directed pairs, the possibilities are one absent state and $H_{\max}(0)+T+1$ present heights, including zero. Taking the product over pairs bounds the number of snapshots by
 
 $$
 \bigl(H_{\max}(0)+T+2\bigr)^P
@@ -3998,13 +4060,13 @@ $$
 
 **III. Uniqueness**
 
-For any quasi-stationary probability $\pi$, put $a=\pi Q\mathbf1>0$, so $\pi Q=a\pi$. Multiplying by $r$ gives
+For any quasi-stationary probability $\pi$, put $a=\pi Q\mathbf1>0$, so $\pi Q=a\pi$. Associativity and $Qr=\lambda r$ give
 
 $$
-a\,\pi r=\pi Qr=\lambda\,\pi r .
+a(\pi r)=(a\pi)r=(\pi Q)r=\pi(Qr)=\pi(\lambda r)=\lambda(\pi r).
 $$
 
-Since $r>0$ and $\pi$ has mass one, $\pi r>0$ and $a=\lambda$. The left Perron eigenspace is one-dimensional, so normalization gives $\pi=\nu$.
+In components, $\pi r=\sum_i\pi_i r_i\ge(\min_i r_i)\sum_i\pi_i=\min_i r_i>0$. Dividing the displayed identity by this scalar gives $a=\lambda$. The left Perron eigenspace is one-dimensional, so normalization gives $\pi=\nu$.
 
 Q.E.D.
 
@@ -4038,15 +4100,27 @@ The initial law is the normalized left Perron vector (**Geometric Lifetime from 
 
 **II. Survival Mass**
 
-The active unnormalized law after $t$ steps is $\nu Q^t$. Induction on the eigenvector identity gives $\nu Q^t=\lambda^t\nu$, hence $\Pr_\nu(\tau>t)=\nu Q^t\mathbf1=\lambda^t$.
+The active unnormalized law after $t$ steps is $\nu Q^t$. At $t=0$, $\nu Q^0=\nu=\lambda^0\nu$. If $\nu Q^t=\lambda^t\nu$, then
+
+$$
+\nu Q^{t+1}=(\nu Q^t)Q=(\lambda^t\nu)Q
+=\lambda^t(\nu Q)=\lambda^{t+1}\nu .
+$$
+
+Thus the survival mass at every tick is $\Pr_\nu(\tau>t)=\nu Q^t\mathbf1=\lambda^t(\nu\mathbf1)=\lambda^t$.
 
 **III. Mean Lifetime**
 
-For positive integer exit time, $\tau=\sum_{t\ge0}\mathbf1_{\{\tau>t\}}$. Taking expectations of the nonnegative sum yields
+For integer $m\ge1$, $\min(\tau,m)=\sum_{t=0}^{m-1}\mathbf1_{\{\tau>t\}}$. The finite sum has expectation
 
 $$
-\mathbb E_\nu[\tau]=\sum_{t=0}^{\infty}\lambda^t=\frac1{1-\lambda}.
+\mathbb E_\nu[\min(\tau,m)]
+=\sum_{t=0}^{m-1}\Pr_\nu(\tau>t)
+=\sum_{t=0}^{m-1}\lambda^t
+=\frac{1-\lambda^m}{1-\lambda}.
 $$
+
+As $m\to\infty$, the left side tends to $\mathbb E_\nu[\tau]$ by monotone convergence, and $\lambda^m\to0$ because $0<\lambda<1$. Thus $\mathbb E_\nu[\tau]=1/(1-\lambda)$.
 
 Q.E.D.
 

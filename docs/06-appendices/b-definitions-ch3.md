@@ -227,7 +227,8 @@ This establishes the DAG classification from those inputs; the depth function is
 
 **II. Existence of a Finite Depth**
 
-Let $|V_0|=N<\infty$ be the stated finite initial graph (**Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />). A directed walk repeating a vertex contains a directed cycle: take the subwalk between two repeated occurrences with minimal positive separation. Its interior vertices are distinct, since an interior repetition would have a shorter separation. Thus acyclicity implies that every directed walk is simple and has at most $N-1$ edges.
+Let $|V_0|=N<\infty$ be the stated finite initial graph (**Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />). For a directed walk $(x_0,\ldots,x_m)$ with a repeated vertex, the finite set
+$J=\{(i,j):0\le i<j\le m,\ x_i=x_j\}$ is nonempty. A pair $(i,j)\in J$ of minimum $j-i$ gives a closed subwalk $(x_i,\ldots,x_j)$. If $x_r=x_s$ for $i\le r<s<j$, then $(r,s)\in J$ and $0<s-r<j-i$, contradicting minimality. Thus the subwalk has distinct vertices before the closing endpoint and is a directed cycle. Thus acyclicity implies that every directed walk is simple and has at most $N-1$ edges.
 
 For $v\in V_0$, the set of directed path lengths ending at $v$ is nonempty because it contains the trivial path, and it is a subset of $\{0,1,\ldots,N-1\}$. Define
 
@@ -606,7 +607,13 @@ c(v_0)=c(v_m)=c(v_0)+m\pmod2
 \quad\Longrightarrow\quad m=0\pmod2.
 $$
 
-An odd cycle has $m=2k+1$, which would require $0=1\pmod2$, a contradiction. In particular, the elementary triangle has length three and is excluded (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />). Thus
+For an odd cycle, the closed-walk congruence would give
+
+$$
+0\equiv m=2k+1\equiv1\pmod2,
+$$
+
+a contradiction. In particular, the elementary triangle has length three and is excluded (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />). Thus
 
 $$
 \boxed{\mathcal C_{2k+1}(G)=\varnothing\quad(k\ge0)
@@ -1223,7 +1230,7 @@ $$
 \qquad 2I=8,\quad I=4,\ L=6.
 $$
 
-The subgraph induced by the internal vertices is a tree: paths between internal vertices cannot have a leaf as an interior vertex. A tree on four vertices has degree sum six and maximum degree at most three. Its sorted degree sequence is either $(3,1,1,1)$ or $(2,2,1,1)$, giving respectively an internal star or an internal path. Adding enough leaves to make each internal total degree three fixes each full shape uniquely.
+The subgraph induced by the internal vertices is a tree: paths between internal vertices cannot have a leaf as an interior vertex. A tree on four vertices has degree sum six and maximum degree at most three. Its sorted degree sequence is either $(3,1,1,1)$ or $(2,2,1,1)$, giving respectively an internal star or an internal path. At an internal vertex of internal degree $d_i$, exactly $3-d_i$ leaves are attached. For the star the attachment counts are $(0,2,2,2)$, and for the path in path order they are $(2,1,1,2)$. Each list sums to six, and every leaf belongs to one such attachment. This determines the two full shapes up to isomorphism.
 
 **II. Automorphisms and Orbits**
 
@@ -1243,7 +1250,23 @@ $$
 
 **III. Exact Score Difference**
 
-Put $a=\log_2 3$. Direct substitution into the orbit entropy gives
+For a shape with orbit sizes $n_i$ and $\sum_i n_i=10$, the entropy is
+
+$$
+-\sum_i\frac{n_i}{10}\log_2\frac{n_i}{10}
+=\log_2 10-\frac1{10}\sum_i n_i\log_2 n_i .
+$$
+
+With $a=\log_2 3$, the two sums are
+
+$$
+\begin{aligned}
+\sum_i n_i(B)\log_2 n_i(B)&=1\cdot0+3a+6(1+a)=6+9a,\\
+\sum_i n_i(C)\log_2 n_i(C)&=3(2\cdot1)+4\cdot2=14 .
+\end{aligned}
+$$
+
+Together with $\log_2(48/8)=\log_2 6=1+a$, these give
 
 $$
 \begin{aligned}
@@ -1257,9 +1280,12 @@ $$
 The defined weighting (**Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />) therefore gives
 
 $$
+\begin{aligned}
 \Delta\mathcal O(\lambda)
-=\tfrac45+\tfrac15\lambda+
+&=\lambda(1+a)+(1-\lambda)(\tfrac45-\tfrac9{10}a)\\
+&=\tfrac45+\tfrac15\lambda+
 \left(\tfrac{19}{10}\lambda-\tfrac9{10}\right)a.
+\end{aligned}
 $$
 
 Its derivative is $1/5+19a/10>0$. On the stated interval its minimum occurs at $\lambda=2/5$, where
@@ -1958,13 +1984,16 @@ Every membership value is determined by the input $C,w$, including isolated cand
 
 **II. Independence**
 
-Suppose $\{a,b\}\in E_C$ and $a,b\in I(C,w)$. Substituting $b\in N(a)$ and $a\in N(b)$ into the two selection conditions gives
+Suppose $\{a,b\}\in E_C$ and $a,b\in I(C,w)$. The two memberships give
 
 $$
-w(a)>w(b)>w(a),
+\begin{aligned}
+a\in I(C,w),\ b\in N(a)&\Longrightarrow w(a)>w(b),\\
+b\in I(C,w),\ a\in N(b)&\Longrightarrow w(b)>w(a).
+\end{aligned}
 $$
 
-contradicting irreflexivity of strict order. Thus $\{a,b\}\in E_C$ implies $\{a,b\}\not\subseteq I(C,w)$.
+Transitivity would give $w(a)>w(a)$, contradicting irreflexivity of strict order. Thus $\{a,b\}\in E_C$ implies $\{a,b\}\not\subseteq I(C,w)$.
 
 **III. Relabeling Identity**
 
@@ -2122,7 +2151,7 @@ Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability o
 
 **I. Processor-Time Accounting**
 
-Consider the operation dependency DAG in the unit-operation model, with $W$ vertices, longest chain length $D$ and $P\ge1$ processors. Let $n_{\mathrm{full}}$ be the number of greedy steps using all $P$ processors. Since each such step executes $P$ distinct operations,
+The unit-operation model has a dependency DAG with $W$ vertices, longest chain length $D$, and $P\ge1$ processors. Let $n_{\mathrm{full}}$ be the number of greedy steps using all $P$ processors. Since each such step executes $P$ distinct operations,
 
 $$
 P n_{\mathrm{full}}\le W,\qquad
@@ -2138,7 +2167,13 @@ D_{t+1}\le D_t-1\quad\text{on nonfull steps},\qquad
 D_{t+1}\le D_t\quad\text{on all steps}.
 $$
 
-Summing the drops gives $n_{\mathrm{nonfull}}\le D$. The complete schedule takes at most $\lfloor W/P\rfloor+D$ steps.
+Let $T$ be the number of greedy steps. The initial chain length is $D_0=D$, and $D_T=0$ at completion. The drops give
+
+$$
+n_{\mathrm{nonfull}}\le \sum_{t=0}^{T-1}(D_t-D_{t+1})=D_0-D_T=D .
+$$
+
+Consequently $T=n_{\mathrm{full}}+n_{\mathrm{nonfull}}\le\lfloor W/P\rfloor+D$.
 
 **III. Extension Probabilities and Prefix Counts**
 
@@ -2168,7 +2203,14 @@ $$
 \le\frac3{1-2p}.
 $$
 
-There are at most three next-edge tests per retained prefix and at most three initial edge tests, giving expected tests at most $3+9/(1-2p)$, uniformly in the cutoff (**Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />).
+For the total number $J$ of edge tests, the initial tests contribute at most three and each retained prefix contributes at most three further tests. Therefore
+
+$$
+J\le3+3\sum_{L=1}^M N_L,\qquad
+\mathbb E J\le3+3\frac{3}{1-2p}=3+\frac{9}{1-2p}.
+$$
+
+The bound is uniform in the cutoff (**Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />).
 
 Q.E.D.
 
@@ -2564,7 +2606,19 @@ $$
 
 **III. Partition of the Deletion Outcomes**
 
-With probability $1-q$ there is no deletion and the old triangle survives. With probability $q/3$ the shared return chord is deleted and all three named triangles are absent. With probability $2q/3$ one old leg is deleted, so the old triangle is absent and each descendant survives exactly when it was selected. Summing the disjoint cases gives
+Write $Y$ for survival of at least one named triangle and $J$ for the deletion outcome. Each of the three seed edges is selected with probability $q(1/3)=q/3$. In the root-seed fixture these edges are $(u,r)$, $(r,w_1)$ and $(w_1,u)$. The independent selections in Section II give the following joint probabilities.
+
+$$
+\begin{array}{c|c|c|c}
+j&\Pr(J=j)&\text{survival factor}&\Pr(Y,\ J=j)\\\hline
+\text{no deletion}&1-q&1&1-q\\
+(u,r)&q/3&0&0\\
+(r,w_1)&q/3&2p-p^2&(q/3)(2p-p^2)\\
+(w_1,u)&q/3&2p-p^2&(q/3)(2p-p^2)
+\end{array}
+$$
+
+In the first row the old triangle survives. In the second, all three triangles lose the shared chord. In each remaining row the old triangle is destroyed, and either selected descendant suffices. The joint probabilities are the products shown in the table, also valid when an outcome has probability zero. Their sum is $(1-q)+0+(q/3)(2p-p^2)+(q/3)(2p-p^2)$, so
 
 $$
 \Pr(\text{some named triangle survives})=(1-q)+\tfrac{2q}{3}(2p-p^2).
@@ -3121,11 +3175,20 @@ t\oplus s_1&=(x_1\oplus x_2\oplus x_3)\oplus(x_1\oplus x_2)=x_3.
 \end{aligned}
 $$
 
-Thus two strings with the same pair checks and volume must have all three coordinates equal. Conversely, any even syndrome $(s_1,s_2,s_3)$ and any $t\in\mathbb F_2$ give an occupancy string by these equations; substitution recovers each $s_i$ since $s_1\oplus s_2\oplus s_3=0$.
+Thus two strings with the same pair checks and volume must have all three coordinates equal. Conversely, define $(x_1,x_2,x_3)=(t\oplus s_2,t\oplus s_3,t\oplus s_1)$ for the given even syndrome and volume. The forward checks recover all four bits:
+
+$$
+\begin{aligned}
+x_1\oplus x_2&=(t\oplus s_2)\oplus(t\oplus s_3)=s_2\oplus s_3=s_1,\\
+x_2\oplus x_3&=(t\oplus s_3)\oplus(t\oplus s_1)=s_3\oplus s_1=s_2,\\
+x_3\oplus x_1&=(t\oplus s_1)\oplus(t\oplus s_2)=s_1\oplus s_2=s_3,\\
+x_1\oplus x_2\oplus x_3&=t\oplus(s_1\oplus s_2\oplus s_3)=t .
+\end{aligned}
+$$
 
 **IV. Complete Classification**
 
-There are four even syndromes and two volume values, giving eight combined labels, one for each occupancy string (**Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />).
+The even syndromes are $(0,0,0),(0,1,1),(1,0,1),(1,1,0)$, since $s_3=s_1\oplus s_2$. For each syndrome the two possible volume bits give distinct occupancy strings by the inverse, for a total of $4\cdot2=8$ labels (**Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />).
 
 Q.E.D.
 
