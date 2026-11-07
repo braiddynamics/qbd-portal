@@ -3746,10 +3746,10 @@ Section 9.5.1 formalizes the properties of the QBD theorem regarding proton stab
 
 ### 9.5.2 Lemma: Tension Verification {#9.5.2}
 
-:::info[**Demonstration of the Failure of Perturbative Methods via Proton Stability**]
+:::info[**Proton Partial-Lifetime Tension via a Fixed EFT Benchmark**]
 :::
 
-Assume the perturbative decay rate prediction derived from Effective Field Theory, scaling as $\Gamma \propto M_X^{-4}$, is approximately $\tau \sim 10^{32}$ years. This prediction contradicts the experimental lower bound of $\tau > 10^{34}$ years, necessitating a non-perturbative suppression mechanism intrinsic to the ultraviolet completion of the theory.
+Let the nominal dimension-six EFT benchmark for $p\to e^+\pi^0$ use $M_X=10^{15}\,\text{GeV}$, $\alpha=1/42$, $m_p=0.938\,\text{GeV}$, and the normalized channel width $\Gamma_0=\alpha^2m_p^5/M_X^4$, with experimental lower limit $L=2.4\times10^{34}$ years. Then the benchmark partial lifetime is $\tau_0\simeq5.0665\times10^{31}$ years, and a rate factor $e^{-\Delta S}$ at these fixed inputs gives a partial lifetime above $L$ exactly when $\Delta S>\ln(L/\tau_0)\simeq6.16$.
 
 **In Plain English:**  
 Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verification.
@@ -3758,50 +3758,71 @@ Section 9.5.2 formalizes the properties of the QBD lemma regarding tension verif
 
 ### 9.5.2.1 Proof: Tension Verification {#9.5.2.1}
 
-:::tip[**Quantitative Derivation of the EFT Prediction vs. Experiment from Tension Verification**]
+:::tip[**Fixed-Input Lifetime Comparison via Width Scaling and Unit Conversion**]
 :::
 
-**I. Standard Model EFT Prediction**
-In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons.  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> and  **Proton Stability** <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
+**I. Normalized Width**
+
+Let $M_X$, $\alpha$, and $m_p$ be the benchmark inputs of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. For the dimension-six exchange operator, the coefficient scales as $g_{\text{GUT}}^2/M_X^2=4\pi\alpha/M_X^2$. In the normalization of **EFT Rate Calculation** <Ref id="9.5.2.2" label="§9.5.2.2" />, the channel width uses $\alpha^2/M_X^4$ times $m_p^5$, giving
 
 $$
-\mathcal{L}_{eff} \sim \frac{g_{GUT}^2}{M_X^2} (\bar{q} \gamma^\mu l)(\bar{q} \gamma_\mu q)
+\Gamma_0=\frac{\alpha^2m_p^5}{M_X^4},\qquad
+[\Gamma_0]=\frac{\text{GeV}^5}{\text{GeV}^4}=\text{GeV}.
 $$
 
-The decay rate $\Gamma_p$ scales as the square of the matrix element, integrated over phase space:
+At the stated inputs,
 
 $$
-\Gamma_p \propto |\mathcal{M}|^2 \propto \left( \frac{\alpha_{GUT}}{M_X^2} \right)^2 m_p^5
+\begin{aligned}
+0.938^2&=0.879844,\qquad
+0.938^5=(0.879844)^2(0.938)\simeq0.72612969,\\
+\Gamma_0
+&=\frac{(1/42)^2(0.938)^5}{(10^{15})^4}\,\text{GeV}
+\simeq\frac{0.72612969}{1764}\,10^{-60}\,\text{GeV}
+\simeq4.1164\times10^{-64}\,\text{GeV}.
+\end{aligned}
 $$
 
-where $\alpha_{GUT} = g_{GUT}^2 / 4\pi$.
-Substituting typical GUT values ($\alpha_{GUT} \approx 1/40$, $M_X \approx 10^{15} \text{ GeV}$, $m_p \approx 1 \text{ GeV}$):
+**II. Partial Lifetime and Shortfall**
+
+With $\hbar=6.582\times10^{-25}\,\text{GeV}\cdot\text{s}$ and $s_{\text{yr}}=3.156\times10^7\,\text{s}/\text{yr}$, the partial lifetime and the ratio to the experimental lower limit are
 
 $$
-\Gamma_p \approx \frac{(1/40)^2 \cdot 1^5}{(10^{15})^4} \sim 10^{-64} \text{ GeV}
+\begin{aligned}
+\tau_0
+&=\frac{\hbar}{\Gamma_0s_{\text{yr}}}
+=\frac{6.582\times10^{-25}}{3.156\times10^7}
+\frac{1764(10^{15})^4}{(0.938)^5}\,\text{yr}
+\simeq5.0665\times10^{31}\,\text{yr},\\
+\frac{L}{\tau_0}
+&\simeq\frac{2.4}{5.0665}\,10^3
+\simeq473.70 .
+\end{aligned}
 $$
 
-Converting to lifetime ($\tau_p = 1/\Gamma_p$):
+**III. Rate Suppression at Fixed Inputs**
+
+For a multiplicative width factor $0<f\le1$, the width is $\Gamma=f\Gamma_0$ and the partial lifetime is $\tau=\hbar/(f\Gamma_0s_{\text{yr}})=\tau_0/f$. Positivity of $L$ and $f$ yields
 
 $$
-\tau_p \sim 10^{64} \text{ GeV}^{-1} \approx 10^{32} \text{ years}
+\tau>L
+\quad\Longleftrightarrow\quad
+\tau_0>fL
+\ \Longleftrightarrow\
+f<\frac{\tau_0}{L}\simeq2.1110\times10^{-3}.
 $$
 
-**II. Experimental Constraint**
-The current experimental lower bound on the partial lifetime for the dominant channel $p \to e^+ \pi^0$ (from Super-Kamiokande) is:
+For a barrier represented by the rate factor $f=e^{-\Delta S}$,
 
 $$
-\tau_{exp} > 1.67 \times 10^{34} \text{ years}
+e^{-\Delta S}<\frac{\tau_0}{L}
+\ \Longleftrightarrow\
+-\Delta S<\ln\frac{\tau_0}{L}
+\ \Longleftrightarrow\
+\Delta S>\ln\frac L{\tau_0}
+\simeq\ln(4.7370)+2\ln 10
+\simeq6.1606.
 $$
-
-**III. Tension Analysis**
-The theoretical prediction $\tau_{theory} \sim 10^{32}$ years is approximately two orders of magnitude shorter than the experimental bound.
-
-$$
-\frac{\tau_{exp}}{\tau_{theory}} \sim 10^2
-$$
-
-This discrepancy indicates that the perturbative suppression factor $M_X^{-4}$ is insufficient. The standard EFT treatment fails to account for the full suppression, implying the existence of an additional, non-perturbative barrier.
 
 Q.E.D.
 
@@ -3815,7 +3836,7 @@ Section 9.5.2.1 formalizes the properties of the QBD proof regarding tension ver
 :::note[**Computational Verification of the EFT Decay Rate Tension through EFT Rate Calculation**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> is based on the pathway dynamics verified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> is based on the following protocols:
+Numerical verification of the nominal EFT lifetime and its sensitivity to the mediator inputs (**Tension Verification** <Ref id="9.5.2" label="§9.5.2" />) (**Proton Stability** <Ref id="9.5.1" label="§9.5.1" />) is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -3972,7 +3993,7 @@ log₁₀(τ_p)  Count Percentage
 ```
 
 **Conclusion:**
-The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to ensure proton stability, validating the necessity for the exponential topological barrier.
+The base calculation yields a partial lifetime of $5.07\times10^{31}$ years and a shortfall factor of approximately 474 at the nominal inputs. The parameter sweep gives a median of $4.98\times10^{33}$ years and 39.9% of the samples exceed the experimental threshold. These figures describe the stated mass grid and coupling draws.
 
 **In Plain English:**  
 Section 9.5.2.2 formalizes the properties of the QBD calculation regarding eft rate calculation.

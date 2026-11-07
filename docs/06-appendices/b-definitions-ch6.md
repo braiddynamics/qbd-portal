@@ -40,10 +40,10 @@ Section 6.1.2 formalizes the properties of the QBD theorem regarding particle ne
 
 ### 6.1.3 Lemma: Reducibility of Trivial Topologies {#6.1.3}
 
-:::info[**Reducibility of topologically trivial subgraphs via PUC-indexed elementary tasks**]
+:::info[**Complexity of Certified Reductions via Elementary Task Counts**]
 :::
 
-Let $\xi \subset G_t$ be a localized subgraph whose embedding is ambient isotopic to the unknot, characterized by the Jones polynomial $V_\xi(t) = 1$, and let $\mathfrak{T}(G)$ denote the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> restricted to $G$ as the dependent family of **Edge Addition Task** and **Edge Deletion Task** instances. Under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, there exists a finite sequence of legal tasks $\mathcal{S} = \{T_1, \dots, T_k\} \subset \mathfrak{T}(G)$ inhabiting the legality predicates $\mathrm{LegalAdd}(G;u,v)$ and $\mathrm{LegalDel}(G;u,v)$ (irreflexivity, edge presence or absence) that realizes a word of reducing Reidemeister generators mapping $\xi$ into a disjoint union of non-interacting 3-cycles $\coprod_j C_3^{(j)}$.
+Let $\xi\subset G_0$ have an embedding ambient isotopic to the unknot, and let $G_0,\ldots,G_m$ be a finite graph realization of a reduction word with a certified legal elementary task at each step, comprising $a$ additions and $d$ deletions. Then $|E(G_m)|-|E(G_0)|=a-d$, with zero edge-count change for a certified add-then-delete slide and a decrease of one for a certified single deletion.
 
 **In Plain English:**  
 Section 6.1.3 formalizes the properties of the QBD lemma regarding reducibility of trivial topologies.
@@ -52,90 +52,49 @@ Section 6.1.3 formalizes the properties of the QBD lemma regarding reducibility 
 
 ### 6.1.3.1 Proof: Reducibility of Trivial Topologies {#6.1.3.1}
 
-:::tip[**Construction of monotonic complexity-reducing trajectories via typed elementary tasks and Reidemeister realization**]
+:::tip[**Edge-Count Balance via Legality-Indexed Tasks and Telescoping**]
 :::
 
-**I. Setup, Complexity, and Indexed Task Space**
+**I. Certified Word and Intermediate Graphs**
 
-Let $\xi_0 \subset G$ denote a localized subgraph representing an excitation. The embedding of $\xi_0$ satisfies ambient isotopy to the unknot, characterized by the trivial Jones polynomial $V_{\xi_0}(t) = 1$. Alexander's Theorem supplies a finite Reidemeister word $\{M_1, \dots, M_k\}$ carrying the planar projection of $\xi_0$ to the standard unknotted circle $U$.
+Let $E_j=E(G_j)$ and let $T_j$ act on the fixed vertex set of $G_{j-1}$ to produce $G_j$, for $1\le j\le m$ (**Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />). The legality certificate for an addition includes an absent edge and the graph-side conditions for that task. The legality certificate for a deletion includes a present edge. These conditions are evaluated in the graph on which the task acts (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
 
-Local complexity is the edge cardinality
+**II. Edge Count for Each Task**
 
-$$
-C(\xi) := |E(\xi)|.
-$$
-
-For a fixed graph $G = (V,E,H)$, the elementary constructors are *indexed* by legality evidence rather than treated as free maps on arbitrary vertex pairs:
+For an addition of a certified edge $e_j\notin E_{j-1}$, the added singleton is disjoint from the old edge set. For a deletion of $e_j\in E_{j-1}$, the old set is the disjoint union of the retained set and the deleted singleton. Consequently
 
 $$
 \begin{aligned}
-\mathrm{LegalDel}(G;u,v) &\ :\Leftrightarrow\ (u,v)\in E,\\[0.4em]
-\mathrm{LegalAdd}(G;u,v) &\ :\Leftrightarrow\ u\neq v\ \wedge\ (u,v)\notin E\\
-&\qquad \wedge\ \neg\,\exists\,\text{alternate directed path of length }\le 2\text{ from }u\text{ to }v.
+T_j=\mathfrak T_{\text{add}}(e_j)
+&\ \Longrightarrow\ E_j=E_{j-1}\sqcup\{e_j\}
+\ \Longrightarrow\ |E_j|=|E_{j-1}|+1,\\
+T_j=\mathfrak T_{\text{del}}(e_j)
+&\ \Longrightarrow\ E_{j-1}=E_j\sqcup\{e_j\}
+\ \Longrightarrow\ |E_j|=|E_{j-1}|-1.
 \end{aligned}
 $$
 
-The second conjunct of $\mathrm{LegalAdd}$ is the PUC filter. The dependent task space is the disjoint union
+**III. Complexity Balance of the Sequence**
+
+Let $A_j$ be one when $T_j$ is an addition and zero otherwise, and let $D_j$ be one when it is a deletion and zero otherwise. Then $a=\sum_{j=1}^m A_j$ and $d=\sum_{j=1}^m D_j$. The intermediate cardinalities cancel in the sum,
 
 $$
-\mathfrak{T}(G)\ :=\ \bigl\{\mathfrak{T}_{del}(u,v)\ \big|\ \mathrm{LegalDel}(G;u,v)\bigr\}
-\ \cup\
-\bigl\{\mathfrak{T}_{add}(u,v)\ \big|\ \mathrm{LegalAdd}(G;u,v)\bigr\}.
+\begin{aligned}
+|E_m|-|E_0|
+&=(|E_1|-|E_0|)+(|E_2|-|E_1|)+\cdots+(|E_m|-|E_{m-1}|)\\
+&=\sum_{j=1}^m(A_j-D_j)
+=\sum_{j=1}^m A_j-\sum_{j=1}^m D_j
+=a-d.
+\end{aligned}
 $$
 
-An inhabitant of $\mathfrak{T}(G)$ is therefore already a certificate that the corresponding rewrite preserves the kinematic axioms of the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> under PUC. Stochastic acceptance weights of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> are not required for the kinematic reduction; they select among legal tasks without enlarging $\mathfrak{T}(G)$.
-
-**II. Task-Reidemeister Realization (Case Analysis)**
-
-Define the realization map $\Phi$ on legal tasks by cases on local diagram patterns. The map is a homomorphism from $\mathfrak{T}(G)$ into the monoid generated by *graph-representable* Reidemeister letters; it is one-sided on Type II because PUC forbids digon *creation*.
-
-1.  **Type I (restorative).** A Type I twist pattern is a directed 1-cycle $(u,u)$. The **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> forces $E\cap\{(u,u)\}=\emptyset$ on every valid state, so such a loop never inhabits the physical codespace. If a self-loop is presented as a formal defect, $\mathrm{LegalDel}(G;u,u)$ holds and
-
-    $$
-    \Phi\bigl(\mathfrak{T}_{del}(u,u)\bigr) = R_I^{-},
-    $$
-
-    with $C$ strictly decreased by one. Valid graphs already lie in the image of this restorative projection.
-
-2.  **Type II (reducing only).** A Type II bubble (digon) consists of two distinct directed $u$-$v$ paths $\pi_1,\pi_2$ with $\ell(\pi_i)\le 2$. PUC declares this configuration illegal: at least one edge $e$ of the shorter redundant channel satisfies $\mathrm{LegalDel}(G;e)$. Application of $\mathfrak{T}_{del}(e)$ yields
-
-    $$
-    \Phi\bigl(\mathfrak{T}_{del}(e)\bigr) = R_{II}^{-},\qquad C(G\setminus\{e\}) = C(G)-1.
-    $$
-
-    The inverse letter $R_{II}^{+}$ (digon *creation*) has no preimage in $\mathfrak{T}(G)$, because any candidate $\mathfrak{T}_{add}$ that would instantiate a second short $u$-$v$ path fails $\mathrm{LegalAdd}$. The realization homomorphism is therefore reducing-only on Type II, in exact agreement with unique causality.
-
-3.  **Type III (composite slide).** A Type III triangle slide on a tripod of strands is realized by a length-two word in $\mathfrak{T}(G)$: a **compliant 2-path** $v\to w\to u$ licenses $\mathrm{LegalAdd}(G;u,v)$ and $\mathfrak{T}_{add}(u,v)$ closes a 3-cycle face; a subsequent $\mathfrak{T}_{del}$ on a designated edge of the face implements the strand passage. Symbolically,
-
-    $$
-    \Phi\bigl(\mathfrak{T}_{del}\circ\mathfrak{T}_{add}\bigr) = R_{III}^{\pm},
-    $$
-
-    with net change $\Delta C \in \{-1,0,+1\}$ controlled by whether the slide is complexity-neutral or accompanies a reduction step. The composite remains inside $\mathfrak{T}$ at each prefix because each factor is legal on its intermediate graph.
-
-**III. Lifting a Reidemeister Word to a Legal Task Sequence**
-
-Because $V_{\xi_0}(t)=1$, the Reidemeister word of Alexander's Theorem may be chosen to consist of reducing Type I/II letters together with Type III slides that do not increase the minimal crossing number. Each letter that is graph-representable under the causal encoding lifts, by the cases of Section II, to a finite word in $\mathfrak{T}(\,\cdot\,)$. Concatenation produces a global sequence
+For an empty word, $E_m=E_0$ and $a=d=0$. For a certified slide, let $E'$ be the edge set after adding $e$ and $E''$ the edge set after deleting $f$. The deletion certificate is evaluated on $E'$. Thus
 
 $$
-\mathcal{S} = \{T_1,\dots,T_m\},\qquad T_j\in \mathfrak{T}(G_{j-1}),\quad G_j = T_j(G_{j-1}).
+|E''|-|E_0|=(|E''|-|E'|)+(|E'|-|E_0|)=-1+1=0.
 $$
 
-Every reducing Type I or Type II factor strictly decreases $C$. Type III factors rearrange connectivity without restoring deleted digons (PUC is preserved). The lexicographic pair $\bigl(C(\xi),\,N_{\mathrm{digon}}(\xi)\bigr)$ therefore admits no infinite descent under $\mathcal{S}$.
-
-**IV. Terminal State Analysis**
-
-The sequence terminates when the local horizon scan finds no Type I loop and no Type II digon. For an ambient isotopic unknot the unique stable residue under these reductions is a disjoint union of minimal geometric quanta (or the empty set):
-
-$$
-\xi_{\mathrm{final}} \cong \coprod_{j} C_3^{(j)}.
-$$
-
-Transitive causal links between components are severed. The terminal topology satisfies $L_{ij}=0$ and $w=0$.
-
-**V. Conclusion**
-
-Every subgraph isotopic to the unknot admits a finite sequence of *legality-indexed* elementary tasks realizing a reducing Reidemeister word. The dependent task space $\mathfrak{T}(G)$ excludes digon creation, so trivial excitations possess a strictly complexity-reducing kinematic trajectory under the local axioms. All topologically trivial excitations are therefore subject to spontaneous erasure by the vacuum selection rules once dynamical sampling explores $\mathfrak{T}(G)$.
+A certified single deletion gives $|E_1|-|E_0|=0-1=-1$. A word with $d>a$ therefore reduces edge complexity by $d-a$.
 
 Q.E.D.
 
@@ -149,7 +108,7 @@ Section 6.1.3.1 formalizes the properties of the QBD proof regarding reducibilit
 :::note[**Verification of Kinematic Reducibility via Legality-Indexed Task Sequences**]
 :::
 
-Verification of the Task-Reidemeister reduction trajectories established in **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" /> is based on the following protocols:
+Verification of the edge-count balance on representative graph patterns (**Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />) is based on the following protocols:
 
 1.  **Pattern Construction:** The algorithm instantiates five local graph fragments encoding Type II digons, double short paths, a Type III slide composite, a forbidden Type I self-loop addition, and an isolated directed 3-cycle.
 2.  **Legal Task Execution:** The protocol applies only tasks inhabiting $\mathrm{LegalDel}$ or $\mathrm{LegalAdd}$ (irreflexivity, edge presence or absence, and short-path uniqueness), recording each complexity change $C=|E|$.
@@ -443,7 +402,7 @@ ALL_ARMS_REDUCED: True
 ```
 
 **Conclusion:**
-All five arms satisfy their reduction predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as $\mathfrak{T}_{add}$ followed by $\mathfrak{T}_{del}$. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These numerical outcomes validate the kinematic reduction logic of **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />.
+All five arms satisfy their tested predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as one addition followed by one deletion, giving zero net edge-count change. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These are checks of the specified fixtures and trial law (**Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />).
 
 **In Plain English:**  
 Section 6.1.3.2 formalizes the properties of the QBD calculation regarding legal-task reduction of trivial patterns.
@@ -455,11 +414,11 @@ Section 6.1.3.2 formalizes the properties of the QBD calculation regarding legal
 :::note[**Lean 4 Encoding of Legality-Indexed Elementary Tasks via Dependent Task Space and Reidemeister Realization**]
 :::
 
-Type-theoretic certification of the dependent task constructors and the Task-Reidemeister realization established in the **Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" /> proceeds via the following verification strategy:
+Type-theoretic certification of the local task guards, braid identities, and deletion complexity (**Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />) (**Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />) proceeds via the following verification strategy:
 
 1.  **Algebraic Braid Group and Graph Fragment Encoding:** The inductive types `BraidGen` and `BraidEquiv` formalize the Artin braid group $B_3$ modulo Yang-Baxter/Reidemeister III relations, while `LegalDel` and `LegalAdd` encode dependent elementary task guards over finite graph fragments.
 2.  **Topological Realization and Invariance Theorems:** The realization map `reid_to_braid` lifts Reidemeister generators into braid words, with theorems `typeI_is_trivial_braid` and `typeIII_realizes_braid_relation` formally certifying braid group equivalence to the Artin exchange $\sigma_1\sigma_2\sigma_1 \sim \sigma_2\sigma_1\sigma_2$.
-3.  **Strict Complexity Descent and Task Legality:** Lean theorem `del_decreases_complexity` proves by list induction that legal deletions strictly decrease graph complexity $C(G) = |E(G)|$, certifying unknot pattern dissolution without cyclic regress.
+3.  **Strict Complexity Descent under Deletion:** List induction in `del_decreases_complexity` proves that deleting a present edge strictly decreases the encoded edge count.
 
 ```lean
 -- ============================================================================
@@ -617,7 +576,7 @@ theorem del_decreases_complexity
 ```
 
 **Verification Summary:**
-The formal machine verification in Lean 4 certifies the algebraic and topological consistency of the Task-Reidemeister realization with zero postulated axioms and zero unverified assumptions. The inductive equivalence relation `BraidEquiv` establishes the validity of the Artin braid relation in $B_3$, while `typeI_is_trivial_braid` and `typeIII_realizes_braid_relation` prove that graph-theoretic task rewrites faithfully preserve topological knot invariants. Together with `del_decreases_complexity`, the Lean kernel's acceptance of `s6.1-task-reidemeister.lean` validates that trivial excitations undergo monotonic complexity descent toward dissolution under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
+The Lean module checks the Type I and Type III braid-word identities in the declared equivalence relation and the strict decrease of the edge-list length for a certified deletion. Its addition guard checks distinct endpoints and edge freshness. A PUC-compliant lift of a diagram word requires graph-side certificates for each intermediate task. The validated local results supply inputs to such a construction.
 
 **In Plain English:**  
 Section 6.1.3.3 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -1050,55 +1009,75 @@ Section 6.2.3 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 6.2.3.1 Proof: Exclusion of Unbraided Clusters (n=0) {#6.2.3.1}
 
-:::tip[**Verification of Instability via the Fundamental Equation**]
+:::tip[**Mean-Field Relaxation via a Uniform Derivative Bound**]
 :::
 
-**I. High-Density Condition**
+**I. Unbraided Cluster and Scalar Current**
 
-Let $\xi$ denote a trivial cluster reduced by Type II moves to a compact volume $V_\xi$.
-This geometric concentration forces the local density significantly above the vacuum fixed point **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
-
-$$
-\rho_\xi \gg \rho^* \approx 0.037
-$$
-
-The analysis evaluates stability at the characteristic high-stress value $\rho_\xi \approx 0.50$.
-
-**II. Flux Imbalance Analysis**
-
-The evaluation of the competing terms within the Master Equation $\dot{\rho} = J_{in} - J_{out}$ utilizes the robust physical constants derived in Chapter 5 ($\Lambda \approx 0.016, \mu \approx 0.40, \lambda_{cat} \approx 1.72$)  **Vacuum Permittivity ($\Lambda$)** <Ref id="5.2.3" label="§5.2.3" />.
-
-1.  **Creation Flux ($J_{in}$):**
-    Growth is driven by the autocatalytic term but suppressed by the geometric friction term.
-
-    $$
-    J_{in} = (\Lambda + 9\rho^2)e^{-6\mu\rho} \approx (0.016 + 2.25)e^{-1.3} \approx 0.69
-    $$
-
-2.  **Deletion Flux ($J_{out}$):**
-    Decay is driven by the quadratic catalytic stress term proportional to the square of the density.
-
-    $$
-    J_{out} = \frac{1}{2}\rho + 3\lambda_{cat}\rho^2 \approx 0.25 + 3(1.72)(0.25) \approx 1.54
-    $$
-
-**III. The Negative Lyapunov Function**
-
-The comparison of the fluxes reveals a significant deficit in the topological current.
+Let $\xi$ be an unbraided cluster with writhe $w=0$ and linking invariant $L=0$. The unbraided model assigns topological activation cost $\Delta E_{\text{barrier}}(\xi)=0$. Let the initial density be $\rho_0>\rho^*$, where $\rho^*$ is the vacuum equilibrium. The homogeneous density evolution is the driven scalar closure (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />) (**Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />),
 
 $$
-J_{net} = 0.69 - 1.54 = -0.85
+\begin{aligned}
+\dot\rho&=F(\rho)=(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12\rho-\tfrac b2\rho^2,
+&F(\rho^*)&=0,\\
+a&=6/\sqrt{2\pi}, & b&=6(e-1),\\
+2.39&<a<2.40, &10.30&<b<10.32.
+\end{aligned}
 $$
 
-Since the time derivative $\dot{\rho}$ is strictly negative, the density $\rho(t)$ must decrease monotonically.
-Given that the topology is trivial ($V(t)=1$), no architectural barrier exists to arrest this decay.
-The process continues until the catalytic term $3\lambda_{cat}\rho^2$ becomes negligible, a condition satisfied only as $\rho \to \rho^*$.
+**II. Uniform Bound on the Net Current**
 
-**IV. Conclusion**
+The derivative bound is $F'(\rho)\le 18\rho/(1+a\rho)-1/2-b\rho$ (**Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />). Put $c=18-b-9a/20$. Since $\rho\ge0$,
 
-The unbraided cluster exhibits a strictly negative time derivative for all densities $\rho > \rho^*$.
-The configuration cannot sustain itself against the deletion response of the vacuum.
-Consequently, the state is dynamically unstable and evaporates to the equilibrium background.
+$$
+\begin{aligned}
+(1+a\rho)\bigl(F'(\rho)+\tfrac1{20}\bigr)
+&\le 18\rho-\bigl(\tfrac9{20}+b\rho\bigr)(1+a\rho)\\
+&=-\tfrac9{20}+c\rho-ab\rho^2\\
+&=-ab\left(\rho-\frac{c}{2ab}\right)^2+\frac{c^2-(9/5)ab}{4ab}.
+\end{aligned}
+$$
+
+The bounds give $0<c<18-10.30-(9/20)(2.39)=6.6245<6.625$ and $ab>2.39(10.30)=24.617$. Hence
+
+$$
+c^2<6.625^2=43.890625<44.3106=\tfrac95(24.617)<\tfrac95 ab.
+$$
+
+The numerator is negative, so $F'(\rho)\le-1/20$. For $\rho>\rho^*$ this yields
+
+$$
+F(\rho)=F(\rho^*)+\int_{\rho^*}^{\rho}F'(u)\,\mathrm du
+\le -\tfrac1{20}(\rho-\rho^*)<0.
+$$
+
+**III. Relaxation Above the Vacuum**
+
+On $\rho^*\le \rho\le\rho_0$, the derivative formula gives the finite lower bound
+
+$$
+\begin{aligned}
+F'(\rho)
+&=18\rho e^{-a\rho}-a(\Lambda+9\rho^2)e^{-a\rho}-\tfrac12-b\rho\\
+&\ge -a(\Lambda+9\rho_0^2)-\tfrac12-b\rho_0=-K.
+\end{aligned}
+$$
+
+With $z(t)=\rho(t)-\rho^*$, integration from $\rho^*$ to $\rho(t)$ gives $-Kz(t)\le\dot z(t)\le-z(t)/20$ while $z(t)>0$. Thus
+
+$$
+\frac{\mathrm d}{\mathrm dt}(e^{Kt}z(t))\ge0,\qquad
+\frac{\mathrm d}{\mathrm dt}(e^{t/20}z(t))\le0.
+$$
+
+Integrating from $0$ to $t$ yields
+
+$$
+(\rho_0-\rho^*)e^{-Kt}\le \rho(t)-\rho^*
+\le(\rho_0-\rho^*)e^{-t/20}.
+$$
+
+The lower bound excludes a finite first arrival at $\rho^*$. The solution stays in the compact interval $[\rho^*,\rho_0]$, so smoothness of $F$ gives continuation for every $t\ge0$. The upper bound tends to zero and the strict sign gives monotone decay to $\rho^*$.
 
 Q.E.D.
 
@@ -1663,81 +1642,55 @@ Section 6.3.5 formalizes the properties of the QBD lemma regarding quadratic sca
 
 ### 6.3.5.1 Proof: Quadratic Scaling of Torsion {#6.3.5.1}
 
-:::tip[**Formal Induction of Quadratic Scaling from Twist Accumulation**]
+:::tip[**Exact Torsional Cost via Telescoping the Marginal Path Penalty**]
 :::
 
-**I. Inductive Framework**
+**I. Half-Twist Count and Marginal Cost**
 
-Let $k$ represent the integer count of half-twists applied to a ribbon, corresponding to a total writhe $w = k/2$.
-Let $N_{strain}(k)$ denote the number of 3-cycle quanta required to maintain the causal connectivity of the twisted ribbon under **PUC**  **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> constraints.
-The hypothesis $N_{strain}(k) \propto k^2$ is tested via induction.
-
-**II. Base Case ($k=1$)**
-
-A single half-twist ($w=0.5$) forms via the minimal set of local rewrites required to permute the ribbon boundaries.
-This operation requires bridging the ribbon's width $d \approx 1$.
-The cost is defined as the minimal quantum:
+Let $k\ge1$ count half-twists and write $w=k/2$ for the writhe coordinate in this construction. Let $N(k)$ be the strain count with $N(1)=c>0$ (**Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />). In the pathfinding model, the new path length is proportional to the size of the obstruction from the preceding twists and the supporting quantum count is proportional to that length (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />). Write the modeled length at the $(j+1)$-th step as $\ell j$ and the number of supporting quanta per unit length as $\gamma$, where $\ell,\gamma>0$. Then
 
 $$
-N_{strain}(1) = c
+N(j+1)-N(j)=\gamma(\ell j)=\alpha j,\qquad
+\alpha=\gamma\ell,\qquad j\ge1.
 $$
 
-**III. Inductive Step ($k \to k+1$)**
+**II. Telescoping the Finite Sum**
 
-Assume the cost for $k$ twists scales as $N_{strain}(k) \approx c k^2$.
-The analysis considers the addition of the $(k+1)$-th twist.
-The new twist requires establishing a unique causal path that circumnavigates the existing structure.
-The **Principle of Unique Causality (PUC)** forbids the reuse of any edge participating in the previous $k$ twists.
-The existing twists create a topological obstruction, or "knot core," with an effective diameter proportional to the number of windings.
+The recurrence and the base value give
 
 $$
-D_{core} \propto k
+\begin{aligned}
+N(k)
+&=N(1)+\sum_{j=1}^{k-1}\bigl(N(j+1)-N(j)\bigr)
+=c+\alpha\sum_{j=1}^{k-1}j,\\
+2\sum_{j=1}^{k-1}j
+&=\sum_{j=1}^{k-1}\bigl(j+(k-j)\bigr)
+=\sum_{j=1}^{k-1}k=k(k-1).
+\end{aligned}
 $$
 
-To add the $(k+1)$-th twist without intersection or cloning, the new causal link must traverse a path of length $L_{new}$ proportional to the core circumference.
+For $k=1$ both sums are empty and the formula gives $N(1)=c$. Thus
 
 $$
-L_{new} \propto D_{core} \propto k
+N(k)=c+\frac{\alpha}{2}k(k-1)
+=\frac{\alpha}{2}k^2-\frac{\alpha}{2}k+c .
 $$
 
-The number of new 3-cycles required to support a path of length $L$ scales linearly with $L$.
+**III. Writhe Scaling**
+
+Substituting $k=2w$ and dividing by $w^2$ gives
 
 $$
-\Delta N = N_{strain}(k+1) - N_{strain}(k) = \alpha \cdot k
+\begin{aligned}
+N(2w)
+&=c+\frac{\alpha}{2}(2w)(2w-1)=2\alpha w^2-\alpha w+c,\\
+\frac{N(2w)}{w^2}
+&=2\alpha-\frac{\alpha}{w}+\frac{c}{w^2}
+\longrightarrow 2\alpha>0 .
+\end{aligned}
 $$
 
-**IV. Recurrence Solution**
-
-The recurrence relation $N_{k+1} = N_k + \alpha k$ yields the total complexity.
-Summing the arithmetic progression:
-
-$$
-N_{strain}(k) \approx \sum_{i=1}^{k} \alpha i = \alpha \frac{k(k+1)}{2} \approx \frac{\alpha}{2} k^2
-$$
-
-Substituting $w = k/2$:
-
-$$
-N_{strain}(w) \propto \frac{\alpha}{2} (2w)^2 = 2\alpha w^2
-$$
-
-$$
-N_{strain}(w) \propto w^2
-$$
-
-**V. Empirical Calibration**
-
-For a full twist ($k=2$), data from **Torsional Strain Simulation** <Ref id="6.3.5.2" label="§6.3.5.2" /> indicates that $N_{strain}(2) \approx 4 \times N_{strain}(1)$.
-This result confirms the quadratic scaling $2^2 = 4$.
-The pathfinding penalty enforces quadratic mass scaling for higher torsion states.
-
-**VI. Conclusion**
-
-The topological complexity, and thus the inertial mass, of a twisted ribbon scales with the square of its writhe.
-
-$$
-m \propto w^2
-$$
+For the strain energy with fixed cost $\varepsilon>0$ per supporting quantum, $E_T(w)=\varepsilon N(2w)$. It follows that $E_T(w)/w^2\to 2\varepsilon\alpha$ along the admissible half-integer writhe values.
 
 Q.E.D.
 

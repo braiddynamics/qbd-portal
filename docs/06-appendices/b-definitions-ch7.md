@@ -134,10 +134,10 @@ Section 7.1.3.1 formalizes the properties of the QBD proof regarding unitary twi
 
 ### 7.1.4 Lemma: Exchange-Rotation Equivalence {#7.1.4}
 
-:::info[**Isotopy via Particle Exchange to Self-Rotation using Reidemeister Moves**]
+:::info[**Exchange Phase via a Framed Spinor Representation Bridge**]
 :::
 
-Every physical braid exchange operation $\hat{P}_{12}$ is topologically isotopic to a $2\pi$ self-rotation of a single constituent ribbon, established by the existence of a finite, computable sequence of rewrite operations satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> that continuously deforms the exchange path into a self-twist path. Under this isotopy, the deformation sequence preserves the global linking invariants throughout the transformation and enforces the strict equality of the exchange phase $\phi_{exch}$ and the self-rotation phase $\phi_{spin}$ to extend the spin-statistics connection to the discrete causal graph substrate.
+Let $L_1,L_2$ be commuting self-adjoint involutions and let a unitary $U$ satisfy $UL_1U^\dagger=-L_2$ and $UL_2U^\dagger=-L_1$, with the physical exchange phase specified by a representation bridge that identifies the framed exchange with a $2\pi$ spinor rotation after comparing the output in the exchanged labeling. Then $U$ preserves $L_1L_2$ and maps the joint negative sector to the joint positive sector, while the specified spinor bridge yields exchange phase $-1$.
 
 **In Plain English:**  
 Section 7.1.4 formalizes the properties of the QBD lemma regarding exchange-rotation equivalence.
@@ -146,69 +146,68 @@ Section 7.1.4 formalizes the properties of the QBD lemma regarding exchange-rota
 
 ### 7.1.4.1 Proof: Exchange-Rotation Equivalence {#7.1.4.1}
 
-:::tip[**Construction of the Exchange Phase from Local Rewrite Operations**]
+:::tip[**Product Stabilizer and Spinor Phase via Conjugation and Exponentiation**]
 :::
 
-**I. Initial Configuration**
+**I. Stabilizers and Joint Projectors**
 
-Let the system state $|\psi_{12}\rangle$ correspond to two adjacent, half-twisted ribbons $\beta_1$ and $\beta_2$ positioned for exchange.
-The **Exchange Operator** $\hat{P}_{12}$ corresponds physically to the braid generator $\sigma_1$, swapping the ribbons such that $\beta_1$ passes over $\beta_2$.
-Graph-theoretically, this crossing is not a point singularity but a finite region of topological interaction supported by a local configuration of 3-cycles.
-
-**II. Decomposition into Elementary Rewrites**
-
-The global exchange decomposes into a finite sequence of local operations $\mathcal{S} = \{r_1, r_2, r_3, r_4\}$ constituting a **Reidemeister Type III** move (triangle slide). This sequence moves the crossing point across a third strand (or effective barrier) to effect the swap while maintaining **PUC** compliance.
-
-1.  **Step 1: 2-Path Identification ($r_1$)**
-    The system identifies a compliant 2-path $v \to w \to u$ involving the shared boundary of the ribbons.
-    By the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, this path must be unique; no alternative path of length $\le 2$ connects $v$ to $u$.
-    Action: $\mathcal{R}_{add}$ creates the chord $(u, v)$.
-    *Topological Effect:* Creates a temporary 3-cycle bridge between the ribbons.
-
-2.  **Step 2: Triangle Slide ($r_2, r_3$)**
-    The crossing point "slides" along the bridge.
-    This requires deleting an existing edge $e_{old}$ that has become redundant (part of a new 3-cycle) and adding a new edge $e_{new}$ to maintain connectivity.
-    *PUC Check:* The deletion of $e_{old}$ is permitted because $e_{new}$ provides an alternative path, but strictly *after* $e_{new}$ is established (or simultaneously in a parallel update).
-    *Effect:* The geometric incidence of $\beta_1$ relative to $\beta_2$ shifts spatially.
-
-3.  **Step 3: Crossing Resolution ($r_4$)**
-    The final operation removes the temporary bridge, locking the ribbons in their swapped positions.
-    Action: $\mathcal{R}_{del}$ removes the chord $(u, v)$ after the slide is complete.
-
-**III. Phase Induction Mechanism**
-
-Track the accumulation of geometric phase during this sequence.
-The operation $\hat{P}_{12}$ acts on the joint wavefunction.
-Unlike a simple permutation, the rewrite sequence exerts a torque on the internal framing of the ribbons due to **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />.
-Topologically, the path taken by ribbon 1 traces a helical trajectory of angle $\pi$ around ribbon 2.
-Relative to the local frame of the exchange vertex, this induces a twist.
+Let $L_j^\dagger=L_j$, $L_j^2=I$, and $L_1L_2=L_2L_1$. Write $P_j^\pm=(I\pm L_j)/2$ for the individual parity projectors (**Spin Operator** <Ref id="7.1.1" label="§7.1.1" />). For either sign,
 
 $$
-\Delta \text{Frame} = \oint_{\text{path}} \omega \cdot dl = \pi
+(P_j^\pm)^2=\tfrac14(I\pm 2L_j+L_j^2)
+=\tfrac12(I\pm L_j)=P_j^\pm,\qquad
+L_jP_j^\pm=\pm P_j^\pm .
 $$
 
-**IV. Operator Mapping**
+Thus $P_{--}=P_1^-P_2^-$ and $P_{++}=P_1^+P_2^+$ project onto the two indicated joint sectors.
 
-The local rewrite sequence $\mathcal{S}$ implements a unitary operator $\hat{U}_{exch}$.
-Because the sequence forces the ribbon frame to rotate by $\pi$ to maintain alignment with the causal arrows (monotone timestamps), the operator is isomorphic to the **Twist Operator** $\hat{\mathcal{T}}$ defined in the **Unitary Twist Anticommutation** <Ref id="7.1.3.1" label="§7.1.3.1" />.
+**II. Product Invariance and Sector Transport**
 
-$$
-\hat{U}_{exch} \cong \hat{\mathcal{T}}
-$$
-
-Applying the eigenvalue result from the eigenvalue inversion proof:
-For a half-twisted ribbon ($s=1/2$), the twist operator applies the phase factor $(-1)^{2s} = -1$.
-
-**V. Conclusion**
-
-The exchange operation $\hat{P}_{12}$ is topologically equivalent to applying a half-twist to the constituent ribbons.
-This equivalence forces the accumulation of the topological phase $\phi = \pi$.
+Under the stipulated conjugations $UL_1U^\dagger=-L_2$ and $UL_2U^\dagger=-L_1$,
 
 $$
-\hat{P}_{12} |\psi\rangle = e^{i\pi} |\psi\rangle = -|\psi\rangle
+\begin{aligned}
+U(L_1L_2)U^\dagger
+&=(UL_1U^\dagger)(UL_2U^\dagger)
+=(-L_2)(-L_1)=L_1L_2,\\
+UP_{--}U^\dagger
+&=\tfrac14(I-UL_1U^\dagger)(I-UL_2U^\dagger)\\
+&=\tfrac14(I+L_2)(I+L_1)=P_{++}.
+\end{aligned}
 $$
 
-The sequence of 3-4 local rewrites required to swap fermions necessitates a sign flip in the state vector.
+Both sectors have product eigenvalue $+1$. For $U_\theta=e^{i\theta}U$, one has $U_\theta L_j U_\theta^\dagger=e^{i\theta}e^{-i\theta}UL_jU^\dagger=UL_jU^\dagger$. The stabilizer conjugations are therefore independent of the phase $\theta$.
+
+**III. Spinor Rotation and Exchange Phase**
+
+For the physical exchange, assume the framed representation bridge in **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" />. Let $\mathcal H$ be the encoded two-particle sector, let $J$ be its isometric identification with a spinor description, and let $S_{12}$ be the label exchange from the incoming to the exchanged ordering. The bridge identifies the operator $S_{12}^{-1}\hat P_{12}$ on $\mathcal H$ with the spinor rotation in the chosen frame,
+
+$$
+S_{12}^{-1}\hat P_{12}=J^\dagger R_{\boldsymbol n}(2\pi)J,\qquad J^\dagger J=I_{\mathcal H}.
+$$
+
+For a unit vector $\boldsymbol n$ and Pauli matrices $\sigma_i$, the generator $\Sigma=\sum_{i=1}^{3}n_i\sigma_i$ obeys
+
+$$
+\Sigma^2=\sum_{i=1}^3n_i^2 I
++\sum_{i<j}n_in_j(\sigma_i\sigma_j+\sigma_j\sigma_i)=I .
+$$
+
+Expanding the exponential in even and odd powers therefore gives
+
+$$
+\begin{aligned}
+R_{\boldsymbol n}(2\pi)
+&=e^{-i\pi\Sigma}
+=\sum_{k\ge0}\frac{(-1)^k\pi^{2k}}{(2k)!}I
+-i\sum_{k\ge0}\frac{(-1)^k\pi^{2k+1}}{(2k+1)!}\Sigma\\
+&=\cos\pi\,I-i\sin\pi\,\Sigma=-I,\\
+S_{12}^{-1}\hat P_{12}
+&=J^\dagger(-I)J=-I_{\mathcal H}.
+\end{aligned}
+$$
+
+Thus $\hat P_{12}|\psi\rangle=-S_{12}|\psi\rangle$ for $|\psi\rangle\in\mathcal H$ under the stated bridge.
 
 Q.E.D.
 

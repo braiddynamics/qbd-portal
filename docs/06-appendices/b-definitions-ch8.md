@@ -2972,30 +2972,57 @@ Section 8.6.5 formalizes the properties of the QBD lemma regarding entropic dime
 
 ### 8.6.5.1 Proof: Entropic Dimensionality {#8.6.5.1}
 
-:::tip[**Derivation of the Bit-Nat Energy Scale Normalized by Dimensionality**]
+:::tip[**Dimensionless Normalization via Single Bit-to-Nat Conversion**]
 :::
 
-**I. Bit-Nat Equivalence**
-The fundamental energy scale of a topological bit flip is derived from the **Landauer Limit** extended to the causal graph.
+**I. Information in One Binary Decision**
+
+Let $\Delta S_{\text{bit}}$ be the entropy of one fair binary decision. In bits its value is
 
 $$
-E_{nat} = T_{vac} \Delta S_{bit}
+\Delta S_{\text{bit}}
+=-\tfrac12\log_2(\tfrac12)-\tfrac12\log_2(\tfrac12)
+=-\tfrac12(-1)-\tfrac12(-1)=1.
 $$
 
-With the vacuum temperature $T_{vac} = \ln 2$ **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" /> and the entropy change of a single rung bifurcation $\Delta S = 1 \text{ bit} = \ln 2$, the raw energy scale is $(\ln 2)^2$.
-
-**II. Dimensional Normalization**
-The causal graph embeds into a 4-dimensional manifold (Ahlfors regularity dimension $d_c = 4$) **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />.
-The energy of a vertex must be normalized by the surface area scaling of the curvature bound.
-The mean curvature $K$ in the sparse graph limit distributes the energy over the $d_c$ dimensions.
+The information modulus converts its numerical value from bits to nats (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />). The conversion is
 
 $$
-\alpha_{topo} = \frac{E_{nat}}{d_c} = \frac{\ln 2}{4} \approx 0.1732
+\Delta S_{\text{nat}}=(\ln 2)\Delta S_{\text{bit}}=(\ln 2)\cdot1=\ln 2.
 $$
 
-**III. Scale Invariance**
-This value $\alpha_{topo}$ serves as the dimensionless fine-structure constant for topological vertices. It is invariant under scale transformations because the volume factor $r^{d_c}$ in the denominator cancels the extensive growth of the bit count in the numerator at the critical point where $T=\ln 2$.
-This constant dominates the writhe-neutral flips ($\Delta E \approx 0$) **Addition Probability** <Ref id="4.5.6" label="§4.5.6" /> that mediate the weak interaction.
+**II. Normalization by the Specified Dimension**
+
+Let $d=4$ be the assumed dimension of the continuum realization (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). The model defines the dimensionless coefficient by $\alpha_{\text{topo}}=\Delta S_{\text{nat}}/d$. Thus
+
+$$
+\alpha_{\text{topo}}=\frac{(\ln 2)\Delta S_{\text{bit}}}{d}
+=\frac{(\ln 2)\cdot1}{4}=\frac{\ln 2}{4}.
+$$
+
+**III. Numerical Value**
+
+For $0\le x\le1/3$, the geometric series gives $(1-x^2)^{-1}=\sum_{j\ge0}x^{2j}$. Integrating gives
+
+$$
+\begin{aligned}
+\ln 2
+&=\ln\frac{1+1/3}{1-1/3}
+=\int_0^{1/3}\frac{2}{1-x^2}\,\mathrm dx
+=2\sum_{j=0}^{\infty}\frac{3^{-(2j+1)}}{2j+1},\\
+0&<\ln 2-2\sum_{j=0}^{5}\frac{3^{-(2j+1)}}{2j+1}
+\le\frac{2\cdot 3^{-13}}{13(1-1/9)}<1.1\times10^{-7}.
+\end{aligned}
+$$
+
+The partial sum is $15757912/22733865$, which lies between $0.69314707$ and $0.69314708$. Combining these inequalities with the tail bound gives
+
+$$
+0.69314707<\ln 2<0.69314719,\qquad
+0.1732867675<\frac{\ln2}{4}<0.1732867975.
+$$
+
+Thus $\alpha_{\text{topo}}$ rounds to $0.173287$ at six decimal places.
 
 Q.E.D.
 
