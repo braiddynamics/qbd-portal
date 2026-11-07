@@ -2974,14 +2974,63 @@ Let the annotated graph $(G, \sigma)$ evolve stochastically under the constructo
 
 The base thermodynamic probabilities are calibrated at the critical vacuum temperature. Edge additions occur barrierless with unitary probability $\mathbb{P}_{\text{acc,thermo}} = 1$ according to **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />. Edge deletions face an entropic barrier, yielding a half-unit probability $\mathbb{P}_{\text{del,thermo}} = 1/2$ according to **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
+Writing $p_{\mathrm{bare}}$ and $q_{\mathrm{bare}}$ for the two thermodynamic baselines, the zero addition barrier and one-bit deletion cost give
+
+$$
+\begin{aligned}
+p_{\mathrm{bare}}&=e^0=1,\\
+q_{\mathrm{bare}}&=e^{-\log 2}
+=\frac{1}{e^{\log 2}}
+=\frac12.
+\end{aligned}
+$$
+
 **III. Dynamic Modulation**
 
 The base probabilities are modulated by the Catalytic Tension Factor defined in **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Adding edges is damped exponentially by local stress, whereas deleting edges is catalyzed linearly by syndrome resolution.
 
+Let $s_a$ be the stress of an eligible addition and $s_c$ the stress of an old triangle deletion trial. Multiplying the baselines by the stress factors and clipping the deletion trial probability at one gives
+
+$$
+\begin{aligned}
+p_a&=p_{\mathrm{bare}}e^{-\mu s_a}
+=e^{-\mu s_a},\\
+\widetilde q_c&=q_{\mathrm{bare}}(1+\lambda s_c)e^{-\mu s_c}
+=\tfrac12(1+\lambda s_c)e^{-\mu s_c},\\
+q_c&=\min\{1,\widetilde q_c\}.
+\end{aligned}
+$$
+
+For nonnegative stress and parameters, $-\mu s_a\le0$ and $1+\lambda s_c\ge1$. Therefore
+
+$$
+0<p_a\le1,\qquad
+0\le\widetilde q_c,\qquad
+0\le q_c\le1.
+$$
+
+The addition outcome probabilities sum to $(1-p_a)+p_a=1$. Under the uniform edge choice in **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, the old triangle trial assigns probability $1-q_c$ to no trigger and probability $q_c/3$ to each edge choice. Explicitly,
+
+$$
+\begin{aligned}
+\Pr(\text{choose }e_j)&=\Pr(\text{trigger})\Pr(\text{choose }e_j\mid\text{trigger})
+=q_c\cdot\frac13=\frac{q_c}{3}, \qquad j\in\{1,2,3\},\\
+(1-q_c)+\sum_{j=1}^3\frac{q_c}{3}
+&=(1-q_c)+q_c=1.
+\end{aligned}
+$$
+
+At zero stress these factors recover the baselines,
+
+$$
+p_a\big|_{s_a=0}=1\cdot e^0=1,\qquad
+q_c\big|_{s_c=0}=\min\{1,\tfrac12(1+\lambda\cdot0)e^0\}=\tfrac12.
+$$
+
 **IV. Convergence to Criticality**
 
 The interplay between the unitary generative drive and the half-unit pruning force establishes a self-regulating feedback cycle. We conclude that the Universal Constructor stochastically evolves the causal graph while maintaining dynamic criticality.
- 
+
 Q.E.D.
 
 **In Plain English:**  
