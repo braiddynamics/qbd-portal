@@ -693,17 +693,29 @@ Section 3.2.3 formalizes the properties of the QBD lemma regarding exclusion of 
 :::tip[**Verification of Incompatibility via Constructibility Analysis**]
 :::
 
-**I. Finite Connected Domain**
+**I. Counting the Initial Edges**
 
-The finite-horizon bound gives finitely many vertices (**Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />). Root reachability gives weak connectivity (**Global Connectivity** <Ref id="3.1.8" label="§3.1.8" />).
+Let $r$ be the designated root and $N=|V_0|$. The horizon gives finiteness and every vertex is reachable from $r$ (**Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" />) (**Global Connectivity** <Ref id="3.1.8" label="§3.1.8" />). The root has indegree zero and every other vertex has indegree one (**Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" />). Counting each edge once at its head gives
 
-**II. Spanning Tree Equality**
+$$
+|E_0|=\sum_{v\in V_0}\deg^-(v)
+=\deg^-(r)+\sum_{v\ne r}\deg^-(v)
+=0+(N-1).
+$$
 
-The indegree constraints give $|E_0|=|V_0|-1$ (**Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" />). A spanning tree of the underlying graph already has this many edges, so no additional edge is available outside it.
+**II. Counting the Undirected Support**
 
-**III. Cycle Exclusion**
+Write $U_0=\{\{u,v\}:(u,v)\in E_0\}$ for the underlying simple undirected edge set. Forgetting directions in the root paths shows that $(V_0,U_0)$ is connected. Choose a spanning tree $T$ of this graph. Since $E_0\to U_0$ is surjective,
 
-A tree has no undirected cycle. Any directed cycle would also supply an undirected cycle. Thus both types are absent (**Exclusion of Cyclic Topologies** <Ref id="3.2.3" label="§3.2.3" />).
+$$
+N-1=|E(T)|\le|U_0|\le|E_0|=N-1.
+$$
+
+It follows that $U_0=E(T)$ and the finite surjection $E_0\to U_0$ is a bijection. In particular, no two reciprocal edges can occur.
+
+**III. Exclusion of Directed and Undirected Cycles**
+
+An undirected cycle is excluded by $U_0=E(T)$. A directed simple cycle of length at least three would give an undirected cycle on the same distinct vertices. A directed cycle of length two would require a reciprocal pair, excluded by bijectivity. The initial adjacency excludes self-loops. Thus there is no directed cycle either (**Exclusion of Cyclic Topologies** <Ref id="3.2.3" label="§3.2.3" />).
 
 Q.E.D.
 
@@ -1631,23 +1643,34 @@ Section 3.2.14 formalizes the properties of the QBD lemma regarding extensive le
 :::tip[**Extensive Leaf Boundary of Bethe Fragments via Summation of Outdegrees in the Initial Tree**]
 :::
 
-**I. Domain and Objects**
+**I. Edge and Outdegree Counts**
 
-Every nonroot vertex of the outward fragment has one incoming edge (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />) (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
-
-**II. Exact Count**
-
-If $I=N-L$ counts internal vertices including the root, then
+Let $V_0$ be the vertices of the finite outward tree, $N=|V_0|$, $I$ the number of internal vertices and $L$ the number of leaves. The root has indegree zero and every other vertex has indegree one (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />). Therefore
 
 $$
-N-1=\sum_v d_{\mathrm{out}}(v)=3+2(I-1)=2I+1.
+|E_0|=\sum_{v\in V_0}d_{\mathrm{in}}(v)=0+(N-1)\cdot1=N-1.
 $$
 
-Thus $I=(N-2)/2$ and $L=N-I=(N+2)/2$. Dividing by $N$ gives $L/N=1/2+1/N$.
+Counting the same edge set by its sources gives
 
-**III. Initial Routing**
+$$
+|E_0|=\sum_{v\in V_0}d_{\mathrm{out}}(v)=3+2(I-1)+0\cdot L=2I+1.
+$$
 
-A two-path starting or continuing at a vertex needs an outgoing edge there. Every initial leaf has outdegree zero, so it can only occur as the terminal vertex of such an initial path. All vertices lie in the finite set $V_0$ and have initial depth at most the maximum depth of that tree.
+**II. Solving for the Leaf Count**
+
+The two edge counts and $N=I+L$ imply
+
+$$
+N-1=2I+1,\qquad I=\frac{N-2}{2},\qquad
+L=N-\frac{N-2}{2}=\frac{N+2}{2}.
+$$
+
+In particular $\left|L/N-1/2\right|=1/N$. For any $\epsilon>0$, $N>1/\epsilon$ makes this error smaller than $\epsilon$.
+
+**III. Initial Routing and Support**
+
+For an initial leaf $u$, $O_{G_0}(u)=\varnothing$. If $u$ were the first or middle vertex of a two-path, that path would contain a directed edge $(u,x)\in E_0$, implying $x\in O_{G_0}(u)$, a contradiction. On the given finite tree, every initial depth belongs to $\{0,\ldots,\max_{v\in V_0}d(v)\}$, and the support is the fixed set $V_0$ (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />).
 
 Q.E.D.
 
@@ -1923,25 +1946,53 @@ Section 3.3.5 formalizes the properties of the QBD lemma regarding conflict reso
 :::tip[**Conflict Resolution via Pairwise Exclusion and Covariance of Strict Inequalities**]
 :::
 
-**I. Domain and Objects**
+**I. Selection on the Weighted Conflict Graph**
 
-The conflict graph is taken with its relabeling action on candidate sites (**Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />) (**Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />).
-
-**II. Conflict Exclusion**
-
-If adjacent $a,b$ were both retained, the rule would require $w(a)>w(b)$ and $w(b)>w(a)$. Hence no two retained candidates are adjacent.
-
-**III. Equivariance**
-
-Let $\varphi$ relabel the graph, preserving $w'(\varphi(a))=w(a)$ and $N'(\varphi(a))=\varphi(N(a))$. Then
+Let $C=(S,E_C)$ have candidate set $S$ and conflict neighborhoods $N(a)=\{b:\{a,b\}\in E_C\}$. The candidate relabeling transports this graph (**Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />). Define
 
 $$
-\forall b\in N(a),\ w(a)>w(b)
-\quad\Longleftrightarrow\quad
-\forall c\in N'(\varphi(a)),\ w'(\varphi(a))>w'(c).
+I(C,w)=\{a\in S:\forall b\in N(a),\ w(a)>w(b)\}.
 $$
 
-Thus the selected set relabels by $\varphi$. The comparisons fix the selection uniquely.
+Every membership value is determined by the input $C,w$, including isolated candidates, whose universal test is vacuous.
+
+**II. Independence**
+
+Suppose $\{a,b\}\in E_C$ and $a,b\in I(C,w)$. Substituting $b\in N(a)$ and $a\in N(b)$ into the two selection conditions gives
+
+$$
+w(a)>w(b)>w(a),
+$$
+
+contradicting irreflexivity of strict order. Thus $\{a,b\}\in E_C$ implies $\{a,b\}\not\subseteq I(C,w)$.
+
+**III. Relabeling Identity**
+
+For a bijection $\varphi$ of candidate labels, $N'(\varphi(a))=\{\varphi(b):b\in N(a)\}$ and $w'(\varphi(b))=w(b)$. Therefore
+
+$$
+\begin{aligned}
+\varphi(a)\in I(\varphi C,w')
+&\Longleftrightarrow \forall c\in N'(\varphi(a)),\ w'(\varphi(a))>w'(c)\\
+&\Longleftrightarrow \forall b\in N(a),\ w'(\varphi(a))>w'(\varphi(b))\\
+&\Longleftrightarrow \forall b\in N(a),\ w(a)>w(b)\\
+&\Longleftrightarrow a\in I(C,w).
+\end{aligned}
+$$
+
+This is $I(\varphi C,w')=\varphi I(C,w)$ (**Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />).
+
+**IV. Equal-Priority Conflict**
+
+For $S=\{a,b\}$, $E_C=\{\{a,b\}\}$ and $w(a)=w(b)=q$, the tests for both vertices reduce to $q>q$. Thus
+
+$$
+I(C,w)=\varnothing\subsetneq\{a\},
+\qquad
+I(C,w)=\varnothing\subsetneq\{b\}.
+$$
+
+Both singletons are independent, so the output can be nonmaximal.
 
 Q.E.D.
 
@@ -2069,23 +2120,55 @@ Section 3.3.7 formalizes the properties of the QBD lemma regarding scalability o
 :::tip[**Scalability of the Scheduler via Greedy Scheduling and a Prefix Geometric Series**]
 :::
 
-**I. Domain and Objects**
+**I. Processor-Time Accounting**
 
-The conditional prefix bound counts first and subsequent steps separately (**Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />) (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />).
-
-**II. Work and Span**
-
-A full processor step completes $P$ operations, giving at most $W/P$ such steps. A nonfull greedy step completes every ready operation. Each longest remaining dependency chain has a ready first operation, so the remaining maximum chain length falls by at least one. There are at most $D$ nonfull steps.
-
-**III. Prefix Work**
-
-The first edge has at most three choices and each later edge at most two after excluding the predecessor. A length-$L$ candidate prefix is retained with probability at most $p^{L-1}$ under the conditional extension premise. Thus the expected number of retained prefixes is at most
+Consider the operation dependency DAG in the unit-operation model, with $W$ vertices, longest chain length $D$ and $P\ge1$ processors. Let $n_{\mathrm{full}}$ be the number of greedy steps using all $P$ processors. Since each such step executes $P$ distinct operations,
 
 $$
-\sum_{L\ge1}3\cdot2^{L-1}p^{L-1}=\frac{3}{1-2p}.
+P n_{\mathrm{full}}\le W,\qquad
+n_{\mathrm{full}}\le\lfloor W/P\rfloor.
 $$
 
-At most three next-edge tests per retained prefix bound the expected search work by a constant multiple of this sum.
+**II. Span on Nonfull Steps**
+
+Let $D_t$ be the maximum length of a dependency chain among the operations remaining just before step $t$. The first vertex of a longest chain has no remaining predecessor, since a remaining predecessor could be prepended to give a longer chain. On a nonfull greedy step every ready operation is removed. If a chain of length $D_t$ survived that step, its first vertex would have been ready and removed. Therefore
+
+$$
+D_{t+1}\le D_t-1\quad\text{on nonfull steps},\qquad
+D_{t+1}\le D_t\quad\text{on all steps}.
+$$
+
+Summing the drops gives $n_{\mathrm{nonfull}}\le D$. The complete schedule takes at most $\lfloor W/P\rfloor+D$ steps.
+
+**III. Extension Probabilities and Prefix Counts**
+
+For a length-$L$ simple candidate path, let $A_j$ be the event that its first $j$ comparisons succeed, with $A_0$ certain. Since $A_j\subseteq A_{j-1}$, if $\Pr(A_{j-1})=0$ then $\Pr(A_j)=0$. Otherwise the conditional hypothesis gives (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />)
+
+$$
+\Pr(A_j)=\Pr(A_j\mid A_{j-1})\Pr(A_{j-1})
+\le p\Pr(A_{j-1})\le p^j.
+$$
+
+There are at most $3$ first edges and at most $2$ extensions per step after excluding the predecessor. If $N_L$ counts retained prefixes of length $L$, the sum of their indicators gives
+
+$$
+\mathbb E N_L
+=\sum_{\pi:\,|\pi|=L}\Pr(A_{L-1}(\pi))
+\le3\cdot2^{L-1}p^{L-1}.
+$$
+
+**IV. Summation over Lengths**
+
+For finite search cutoff $M$,
+
+$$
+\mathbb E\sum_{L=1}^M N_L
+\le3\sum_{j=0}^{M-1}(2p)^j
+=3\frac{1-(2p)^M}{1-2p}
+\le\frac3{1-2p}.
+$$
+
+There are at most three next-edge tests per retained prefix and at most three initial edge tests, giving expected tests at most $3+9/(1-2p)$, uniformly in the cutoff (**Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" />).
 
 Q.E.D.
 
@@ -2249,19 +2332,45 @@ Section 3.4.2 formalizes the properties of the QBD lemma regarding topological t
 :::tip[**Topological Tunneling via Path Parity and the Grandchild Return**]
 :::
 
-**I. Parity of the Tree Path**
+**I. Parity of the Unique Tree Path**
 
-The initial rooted tree supplies the fixed depth labeling (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />) (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
+Let $d$ be the fixed depth function and $\pi_0(x)=d(x)\bmod 2$ (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />). For distinct same-parity vertices $a,b$, let $(x_0,\ldots,x_\ell)$ be their unique undirected tree path. Each edge changes the depth by $1$ or $-1$, so
 
-Every tree edge changes the depth parity $\pi_0$. Along the unique simple tree path of length $\ell$ between equal-parity vertices, this gives $\ell\equiv0\pmod2$. The endpoints are distinct, so $\ell\ge2$ and they were nonadjacent.
+$$
+0\equiv d(b)-d(a)=\sum_{j=0}^{\ell-1}\bigl(d(x_{j+1})-d(x_j)\bigr)
+\equiv\sum_{j=0}^{\ell-1}1=\ell\pmod2.
+$$
 
-**II. Single-Edge Change**
+Since $a\ne b$, $\ell\ge1$, and evenness gives $\ell\ge2$. Thus there is no original adjacency between them in either direction.
 
-The new edge differs from the tree in just its one directed adjacency entry. The old path and new undirected edge form a simple cycle of length $\ell+1$, which is odd.
+**II. Adjacency Change and Odd Cycle**
 
-**III. Seed Orientation and Distance**
+Insert the directed edge $e=(a,b)$, and let $A,A'$ be the directed adjacency indicators before and after insertion. For any ordered pair $(x,y)$,
 
-For the indicated endpoints the old two-path is $r\to a\to u$. Adding $u\to r$ yields $r\to a\to u\to r$. For every later snapshot retaining $u\to r$, the edge gives an undirected path of length one. Since $u\ne r$, the undirected distance is exactly one. The fixed labeling gives $\pi_0(u)=\pi_0(r)$ throughout.
+$$
+A'(x,y)-A(x,y)=\mathbf1_{\{(x,y)=(a,b)\}},\qquad
+\sum_{x,y}|A'(x,y)-A(x,y)|=1.
+$$
+
+In the underlying undirected graph the perimeter $(x_0,x_1,\ldots,x_\ell,x_0)$ has the $\ell$ original edges and the new closing edge $\{a,b\}$. Its vertices before the return are distinct, and $\ell+1\equiv1\pmod2$. A two-coloring would change color at each of the $\ell+1$ steps and assign the opposite color to the starting vertex at return, a contradiction.
+
+**III. Oriented Seed and Its Endpoints**
+
+For the seed $u\to r$, the directed adjacency product in the new graph is
+
+$$
+A'(r,w_1)A'(w_1,u)A'(u,r)=1\cdot1\cdot1=1,\qquad
+(d(r),d(w_1),d(u))=(0,1,2).
+$$
+
+Thus $(r,w_1,u,r)$ is a directed triangle. In a later graph retaining $(u,r)$, the two distinct endpoints have undirected distance at least one and the retained edge bounds that distance above by one. Consequently
+
+$$
+d_{\mathrm{und}}(u,r)=1,\qquad
+\pi_0(u)=2\bmod2=0=\pi_0(r)
+$$
+
+for every such snapshot (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />).
 
 Q.E.D.
 
@@ -2287,21 +2396,35 @@ Section 3.4.3 formalizes the properties of the QBD lemma regarding nucleation of
 :::tip[**Verification of Compliant 2-Path Formation via Parity Violation Analysis**]
 :::
 
-**I. New Paths and Absent Return Edges**
+**I. Candidate Coordinates**
 
-The seed gives $u\to r$ and the tree gives $r\to w_j$ for $j=2,3$. These vertices are distinct. Before the next update, neither $w_j\to u$ nor $u\to w_j$ belongs to the tree or the seed.
+In the seeded graph the edges $u\to r$ and $r\to w_j$ exist for $j\in\{2,3\}$. The vertices $u,r,w_j$ are distinct. Let $O(x)$ denote the outgoing neighbors of $x$. The only incoming edge at each $w_j$ is $r\to w_j$, because the seed enters $r$. Hence
 
-**II. Candidate-Relative PUC**
+$$
+O(u)\cap\operatorname{In}(w_j)=O(u)\cap\{r\}=\{r\}.
+$$
 
-Any path from $u$ to another root branch must first use $u\to r$. No other outgoing tree route from $u$ returns upward to that branch. Hence a length-two path ending at $w_j$ must have intermediate vertex $r$, and there is no direct $u\to w_j$. Thus each candidate is the unique short path between its endpoints (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
+The tree edges out of $u$ go to its descendants in branch one, and its sole added edge is $u\to r$. Thus $w_j\notin O(u)$. Also $u\notin O(w_j)$ because the tree descendants of $w_j$ lie in branch $j$. These facts establish the candidate-relative uniqueness and absent-return conditions (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
 
-**III. Height Filter and Reciprocal Targets**
+**II. Height and Reciprocal Tests**
 
-The path heights are $(1,0)$, which fail $1<0$. The unique simple directed route from $u$ into the other branch is therefore not a monotone AEC witness. No tree two-path from $w_j$ back to $u$ proposes the reciprocal of $w_j\to u$. The two targets $w_2\to u$ and $w_3\to u$ are distinct and not reciprocal.
+A simple directed path from $u$ to $w_j$ must end with $r\to w_j$. Its preceding edge into $r$ can only be the seed $u\to r$. Because a simple path starting at $u$ cannot meet $u$ again, the full path must be $(u,r,w_j)$. Its consecutive heights are
 
-**IV. Conclusion**
+$$
+\bigl(H(u,r),H(r,w_j)\bigr)=(1,0),\qquad 1\not<0 .
+$$
 
-Both candidates pass the specified snapshot guards (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />). The branch-one path $u\to r\to w_1$ has an already present return edge $w_1\to u$ and is not among these candidates.
+It furnishes no increasing reverse witness for the candidate $(w_j,u)$. Every directed path starting at $w_j$ stays in branch $j$, since only branch one contains the source of the seed. Thus $w_j$ has no two-path to $u$, so no candidate chord $(u,w_j)$ can oppose the candidate $(w_j,u)$.
+
+**III. Enumeration at the Root**
+
+The set of two-paths starting with the seed is exactly
+
+$$
+\{(u,r,w_1),(u,r,w_2),(u,r,w_3)\}.
+$$
+
+The first has return edge $(w_1,u)\in E_0$ and is excluded. The other two give distinct directed targets $(w_2,u)$ and $(w_3,u)$, both passing the preceding tests (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />).
 
 Q.E.D.
 

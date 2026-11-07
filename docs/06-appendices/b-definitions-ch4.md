@@ -80,26 +80,49 @@ Section 4.1.4 formalizes the properties of the QBD lemma regarding trajectory mo
 :::tip[**Verification of Trajectory Inclusion via Set-Theoretic Monotonicity**]
 :::
 
-**I. Record Inclusion**
+**I. Monotonicity of the Occurrence Set**
 
-The proof uses the specified objects and conventions (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
-
-For $\omega\in\mathcal E_t$, the union identity gives
+Let $A^{\mathrm{occ}}_{t+1}$ be the occurrences created at tick $t+1$ (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />) (**Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />). Each $\omega\in\mathcal E_t$ satisfies
 
 $$
-\omega\in\mathcal E_t\Longrightarrow
-\omega\in\mathcal E_t\cup A^{\mathrm{occ}}_{t+1}=\mathcal E_{t+1}.
+\omega\in\mathcal E_t
+\;\Longrightarrow\;
+\omega\in\mathcal E_t\cup A^{\mathrm{occ}}_{t+1}
+=\mathcal E_{t+1}.
 $$
 
-Hence $\mathcal E_t\subseteq\mathcal E_{t+1}$.
+This proves $\mathcal E_t\subseteq\mathcal E_{t+1}$.
 
 **II. Projection to Spatial Support**
 
-If $(u,v)\in\overline E_t$, some $b,h$ satisfy $(u,v,b,h)\in\mathcal E_t$. Record inclusion puts the same record in $\mathcal E_{t+1}$, so $(u,v)\in\overline E_{t+1}$. Therefore $\overline E_t\subseteq\overline E_{t+1}$.
+With $\pi(u,v,b,h)=(u,v)$, the historical spatial support is the image $\overline E_t=\pi(\mathcal E_t)$. The image of the union is
 
-**III. Active Excision**
+$$
+\begin{aligned}
+\overline E_{t+1}
+&=\pi(\mathcal E_{t+1})
+=\pi(\mathcal E_t\cup A^{\mathrm{occ}}_{t+1})\\
+&=\pi(\mathcal E_t)\cup\pi(A^{\mathrm{occ}}_{t+1})
+=\overline E_t\cup\pi(A^{\mathrm{occ}}_{t+1}).
+\end{aligned}
+$$
 
-If $e\in E_t$ is deleted, its active occurrence $\alpha_t(e)$ belongs to $\mathcal E_t$ and therefore to $\mathcal E_{t+1}$. Removal of $e$ from the active set changes neither union membership nor the stored record. This proves deletion indelibility (**Trajectory Monotonicity under Edge Excision** <Ref id="4.1.4" label="§4.1.4" />).
+Therefore $\overline E_t\subseteq\overline E_{t+1}$.
+
+**III. Membership after Active Excision**
+
+Suppose $e\in E_t$ is excised at tick $t+1$. Its occurrence $\omega=\alpha_t(e)$ satisfies $\pi(\omega)=e$. When the edge is absent from the active output, the two membership statements are
+
+$$
+\begin{aligned}
+e&\notin E_{t+1},\\
+\alpha_t(e)&\in\mathcal E_t\subseteq\mathcal E_{t+1}
+\quad\Longrightarrow\quad
+e=\pi(\alpha_t(e))\in\overline E_{t+1}.
+\end{aligned}
+$$
+
+If the edge is also assigned a new occurrence at a later tick $s>t$, then $A_s^{\mathrm{occ}}$ carries a distinct creation tick and $\mathcal E_s$ contains both records by repeated occurrence-set inclusion.
 
 Q.E.D.
 
@@ -2378,19 +2401,43 @@ Section 4.4.6 formalizes the properties of the QBD lemma regarding catalysis coe
 :::tip[**Derivation of the Catalytic Relaxation Constant via Arrhenius Rates and Markov Generator Linearity**]
 :::
 
-**I. Interpolation Conditions**
+**I. Endpoint Conditions as a Linear System**
 
-The proof uses the specified objects and conventions (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />).
+In the stipulated affine family $f(s)=a+bs$, evaluate the two reference stresses (**Information-Theoretic Foundations** <Ref id="4.4.1" label="§4.4.1" />)
 
-An affine law $f(s)=a+bs$ satisfying $f(0)=1$ has $a=1$. The second condition is $f(1)=a+b=e$.
+$$
+\begin{pmatrix}f(0)\\ f(1)\end{pmatrix}
+=
+\begin{pmatrix}1&0\\1&1\end{pmatrix}
+\begin{pmatrix}a\\b\end{pmatrix}
+=
+\begin{pmatrix}1\\ e\end{pmatrix}.
+$$
 
-**II. Coefficient Solution**
+**II. Elimination and Verification**
 
-Substituting $a=1$ gives $1+b=e$, so $b=e-1$. Thus $f(s)=1+(e-1)s$.
+Subtract the first row from the second to obtain
 
-**III. Uniqueness in the Chosen Family**
+$$
+\begin{pmatrix}1&0\\-1&1\end{pmatrix}
+\begin{pmatrix}1\\ e\end{pmatrix}
+=
+\begin{pmatrix}1\\e-1\end{pmatrix}
+=
+\begin{pmatrix}a\\b\end{pmatrix}.
+$$
 
-If $g(s)=c+ds$ satisfies the same two conditions, $c=g(0)=1$ and $c+d=g(1)=e$, hence $d=e-1$. Therefore $f=g$ for every $s$, and the affine coefficient is unique (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
+The candidate $f(s)=1+(e-1)s$ gives $f(0)=1$ and $f(1)=1+e-1=e$.
+
+**III. Uniqueness**
+
+For two solutions $(a,b),(a',b')$, the differences satisfy $a-a'=0$ and $(a-a')+(b-b')=0$. Substitution gives $b-b'=0$, hence
+
+$$
+\boxed{f(s)=1+\lambda_0s,\qquad\lambda_0=e-1.}
+$$
+
+This coefficient is unique in the stipulated family (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />).
 
 Q.E.D.
 
@@ -3550,17 +3597,40 @@ Section 4.6.6 formalizes the properties of the QBD lemma regarding exact unpumpe
 :::tip[**Exact Unpumped Quiescence via Positive Deletion Trials and Reciprocal Filtering**]
 :::
 
-**I. Domain and Objects**
+**I. One-Tick Outcomes**
 
-The unpumped kernel uses reciprocal filtering followed by deletion (**Exact Unpumped Quiescence** <Ref id="4.6.6" label="§4.6.6" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
+In the canonical unpumped tick, every retained addition belongs to an absent ordered pair of $G$, and the deletion union contains only old edges selected by old triangles (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Write $\mathcal C$ for the old triangles and $A$ for the eligible additions. If $D$ is the deletion union and $A_{\mathrm{ret}}$ the retained additions, the final edge set is
 
-**II. An Old Triangle Prevents Quiescence**
+$$
+E'=(E\cup A_{\mathrm{ret}})\setminus D,\qquad
+A_{\mathrm{ret}}\cap E=\varnothing,\quad D\subseteq E.
+$$
 
-An old triangle has finite stress and positive trigger probability at the canonical parameters. If its trial succeeds, one old edge is deleted. Additions use absent pairs of the old snapshot, so that edge cannot be reinserted during the same tick. This event has positive probability and changes the active state.
+Thus $E'=E$ holds exactly when both $A_{\mathrm{ret}}$ and $D$ are empty, in which case all active heights are also unchanged.
 
-**III. Triangle-Free Snapshots**
+**II. Positive Deletion Event**
 
-With no old triangle, deletion trials are absent and every eligible addition has zero old stress. Its selection probability is $e^0=1$. The deterministic reciprocal filter removes both directions for each pair of reciprocal candidates. All unpaired candidates survive. The active snapshot stays fixed exactly when their set is empty.
+If $c\in\mathcal C$, its canonical trigger weight is
+
+$$
+q_c=\min\{1,\tfrac12(1+\lambda_0s_c)e^{-\mu_0s_c}\}>0,
+$$
+
+because the stress is finite and nonnegative and $\lambda_0,\mu_0>0$. If this trial triggers, one of its old edges belongs to $D$, regardless of the outcomes of other trials. Consequently
+
+$$
+K(G,G)=\Pr(E'=E\mid G)\le 1-q_c<1.
+$$
+
+**III. Triangle-Free Addition Outcomes**
+
+If $\mathcal C=\varnothing$, then $D=\varnothing$ and each candidate has zero stress. Its selection probability is $e^0=1$, so all of $A$ is selected with probability one. The retained set is then deterministic,
+
+$$
+A_{\mathrm{ret}}=\{(u,v)\in A:(v,u)\notin A\}.
+$$
+
+Thus the output equals the input exactly when this set is empty. Together with Section II this gives the stated equivalence (**Exact Unpumped Quiescence** <Ref id="4.6.6" label="§4.6.6" />).
 
 Q.E.D.
 
@@ -3710,19 +3780,44 @@ Section 4.6.8 formalizes the properties of the QBD lemma regarding common-height
 :::tip[**Coupling by Shared Tick Outcomes**]
 :::
 
-**I. Shift of the Candidate Height**
+**I. Translation of the Eligibility Tests**
 
-Candidate rates are evaluated from the common active snapshot (**Common-Height Shift Equivariance** <Ref id="4.6.8" label="§4.6.8" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
+Let $H'=H+c$ on the common active edge set $E$. For an eligible return chord $e=(u,v)$ the old incoming support at $u$ is nonempty (**Common-Height Shift Equivariance** <Ref id="4.6.8" label="§4.6.8" />) (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Writing $h_e$ and $h'_e$ for the two candidate heights gives
 
-For a legal return chord the source has an old incoming support edge. A common shift $c$ therefore sends its assigned height $1+\max H_{\mathrm{in}}$ to $1+\max H_{\mathrm{in}}+c$. PUC and all triangle stresses depend on adjacency. Strict height comparisons and the terminal comparison with the candidate height are invariant under the same shift.
+$$
+h'_e=1+\max_{(x,u)\in E}\bigl(H(x,u)+c\bigr)
+=1+\max_{(x,u)\in E}H(x,u)+c=h_e+c.
+$$
 
-**II. Coupled Outputs**
+For an old witness with edge list $e_1,\ldots,e_\ell$, the corresponding differences are
 
-Both inputs have identical eligible candidates and identical trial probabilities. Use the same outcome list. Reciprocal filtering and deletion select the same edges. Old active heights and newly assigned heights differ by $c$ on every surviving edge, proving equality of the output class under the coupling.
+$$
+H'(e_{j+1})-H'(e_j)=H(e_{j+1})-H(e_j),\qquad
+h'_e-H'(e_\ell)=h_e-H(e_\ell).
+$$
 
-**III. Finiteness under a Span Bound**
+Every strict comparison therefore has the same truth value. The two-path counts and triangle stresses are functions of $E$, so both inputs also have the same uniqueness tests and trial probabilities.
 
-In each nonempty class subtract the minimum active height. If the span is bounded by $B$, every remaining height lies in $\{0,\ldots,B\}$. There are finitely many adjacencies and finitely many assignments per adjacency, together with the empty snapshot.
+**II. Equality on Output Classes**
+
+Use the same vector $\omega$ of trial outcomes for the two inputs. It has the same law by equality of the snapshot-conditioned probabilities. The reciprocal filter and deletion rule applied to this vector produce the same set $E_\omega$ in both cases. For a surviving old edge the heights differ by $c$ by hypothesis. For a retained new edge they differ by $c$ by Section I. Thus the outputs $F(E,H;\omega)$ and $F(E,H';\omega)$ lie in the same shift class for every $\omega$. For any shift class $\mathcal C$, this gives
+
+$$
+\Pr(F(E,H;\omega)\in\mathcal C)
+=\mathbb E[\mathbf 1_{\mathcal C}(F(E,H;\omega))]
+=\mathbb E[\mathbf 1_{\mathcal C}(F(E,H';\omega))]
+=\Pr(F(E,H';\omega)\in\mathcal C).
+$$
+
+**III. Counting Representatives under a Span Bound**
+
+For nonempty $E$ with span at most $B$, subtract $\min_{e\in E}H(e)$ to get a representative whose active heights lie in $\{0,\ldots,B\}$. If $m$ is the number of possible directed edges on the fixed vertex set, the number of quotient states is at most
+
+$$
+1+\sum_{j=1}^{m}\binom mj(B+1)^j=(B+2)^m.
+$$
+
+The term one counts the empty adjacency. Hence the invariant quotient is finite.
 
 Q.E.D.
 

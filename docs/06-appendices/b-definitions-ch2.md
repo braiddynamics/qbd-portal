@@ -122,23 +122,48 @@ Section 2.2.3 formalizes the properties of the QBD lemma regarding thermodynamic
 :::tip[**Thermodynamic Nullity via Equality of the Path Families**]
 :::
 
-**I. Domain and Objects**
+**I. Path Families**
 
-A path in the family has pairwise distinct vertices (**Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />) (**Directed Path** <Ref id="1.2.3" label="§1.2.3" />).
-
-**II. Inclusion in Both Directions**
-
-Put $G'=G\cup\{(u,u)\}$. Any simple path in $G$ uses edges of $G'$. Conversely, if a path in $G'$ used $(u,u)$, consecutive positions would have the same vertex $u$, contradicting pairwise distinctness. Thus its edges lie in $G$.
-
-**III. Entropy Difference**
-
-The families coincide, giving $\Omega(G')=\Omega(G)$. For positive count,
+For $G=(V,E)$, define the counted family $\mathcal P(G)$ by the specified path-selection predicate and the conditions
 
 $$
-k_B\log\Omega(G')-k_B\log\Omega(G)
-=k_B\log\frac{\Omega(G')}{\Omega(G)}
-=k_B\log 1=0 .
+(x_i,x_{i+1})\in E\quad(0\le i<m),\qquad
+x_i\ne x_j\quad(0\le i<j\le m).
 $$
+
+These are conditions on a simple path (**Directed Path** <Ref id="1.2.3" label="§1.2.3" />). Let $E'=E\cup\{(u,u)\}$.
+
+**II. Inclusions**
+
+If $P=(x_0,\ldots,x_m)\in\mathcal P(G)$, then every edge of $P$ lies in $E\subseteq E'$. The vertex sequence and its selection predicate are unchanged, so $P\in\mathcal P(G')$. Conversely, for $P\in\mathcal P(G')$, an edge of $P$ in $E'\setminus E$ would satisfy
+
+$$
+(x_i,x_{i+1})=(u,u)\ \Longrightarrow\ x_i=x_{i+1}=u,
+$$
+
+contrary to pairwise distinctness. Hence every edge of $P$ lies in $E$, so $P\in\mathcal P(G)$. It follows that
+
+$$
+\mathcal P(G)\subseteq\mathcal P(G')\subseteq\mathcal P(G),
+\qquad
+\Omega(G')=|\mathcal P(G')|=|\mathcal P(G)|=\Omega(G).
+$$
+
+**III. Logarithmic Entropy on Its Domain**
+
+For $\Omega(G)>0$, both logarithms exist and the count equality gives
+
+$$
+\begin{aligned}
+S(G')-S(G)
+&=k_B\log\Omega(G')-k_B\log\Omega(G)\\
+&=k_B\log\frac{\Omega(G')}{\Omega(G)}
+=k_B\log\frac{\Omega(G)}{\Omega(G)}
+=k_B\log 1=0.
+\end{aligned}
+$$
+
+For $\Omega(G)=0$, the equal families are both empty (**Thermodynamic Nullity** <Ref id="2.2.3" label="§2.2.3" />).
 
 Q.E.D.
 
@@ -603,25 +628,53 @@ Section 2.4.2 formalizes the properties of the QBD lemma regarding confluence of
 :::tip[**Formal Verification of Commutativity through Edge-Overlapping Updates**]
 :::
 
-**I. Frozen Proposal Data**
+**I. Heights Computed Once**
 
-Let $B_1,B_2$ be finite sets of proposed directed edges with snapshot-assigned heights. Equal directed targets have the same source and the same snapshot incoming maximum, so their assigned heights agree (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). Thus their union is a well-defined edge-height relation.
-
-**II. Set Union Evaluation**
-
-For every pair $e$,
+Let $G=(V,E,H)$ be the input and $B_1,B_2$ the sets of proposed edges absent from $E$. If an edge $e=(u,v)$ belongs to both sets, both assign the same value (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />)
 
 $$
-e\in(E\cup B_1)\cup B_2
-\Longleftrightarrow e\in E\lor e\in B_1\lor e\in B_2
-\Longleftrightarrow e\in(E\cup B_2)\cup B_1.
+h_1(e)=1+\max\bigl(\{H(x,u):(x,u)\in E\}\cup\{0\}\bigr)=h_2(e).
 $$
 
-The existing heights are unchanged and the new heights agree by Section I, giving equality of the annotated merged graphs.
+Thus the two assignments define a common function $h$ on $B_1\cup B_2$.
 
-**III. Complete-Set Reciprocal Filter**
+**II. Directed-Pair Membership and Reciprocal Rejection**
 
-The retained set $B_{\mathrm{filt}}=\{(u,v)\in B:u\ne v,(v,u)\notin B\}$ depends only on $B=B_1\cup B_2$, which is equal under both accumulation orders. Therefore applying that same complete-set filter yields equal outputs (**Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />).
+For an ordered pair $e=(u,v)$ write $e^{-1}=(v,u)$. Accumulating the sets in the two orders gives
+
+$$
+\begin{aligned}
+e\in B_{12}&\Longleftrightarrow e\in B_1\lor e\in B_2,\\
+e\in B_{21}&\Longleftrightarrow e\in B_2\lor e\in B_1,\\
+e\in F(B_{12})
+&\Longleftrightarrow
+(u\ne v)\land(e\in B_1\lor e\in B_2)
+\land(e^{-1}\notin B_1)\land(e^{-1}\notin B_2)\\
+&\Longleftrightarrow e\in F(B_{21}).
+\end{aligned}
+$$
+
+Here $F$ is the filter applied to the complete proposal set. In particular, if $B_1=\{(u,v)\}$ and $B_2=\{(v,u)\}$ with $u\ne v$, then $F(B_1)=B_1$ and $F(B_2)=B_2$, while $F(B_{12})=F(B_{21})=\varnothing$.
+
+**III. Equality of the Height Fields**
+
+Let $E_{ij}=E\cup F(B_{ij})$. Pointwise equality of retained membership gives $E_{12}=E_{21}$. For $e$ in this common edge set,
+
+$$
+H_{12}(e)=
+\begin{cases}
+H(e),&e\in E,\\
+h(e),&e\in F(B_{12})
+\end{cases}
+=
+\begin{cases}
+H(e),&e\in E,\\
+h(e),&e\in F(B_{21})
+\end{cases}
+=H_{21}(e).
+$$
+
+The vertex set is fixed, so $(V,E_{12},H_{12})=(V,E_{21},H_{21})$ (**Confluence of the Constructor** <Ref id="2.4.2" label="§2.4.2" />).
 
 Q.E.D.
 
@@ -644,22 +697,38 @@ Section 2.4.3 formalizes the properties of the QBD lemma regarding chordlessness
 
 ### 2.4.3.1 Proof: Chordlessness of Maximal Cycles {#2.4.3.1}
 
-:::tip[**Derivation of Chordlessness via Contradiction of the Lexicographic Maximality Premise**]
+:::tip[**Isolated Perimeter Chordlessness via Outgoing Adjacency**]
 :::
 
-**I. Initial Edge Set**
+**I. Perimeter Adjacency**
 
-The proof uses the specified objects and conventions (**Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
+Let $V=\mathbb Z/k\mathbb Z$ with $k\ge4$ and $E_0=\{(i,i+1):i\in V\}$. The outgoing set of vertex $i$ is exactly $\{i+1\}$. Hence a directed edge joining nonconsecutive perimeter vertices would require its target to equal $i+1$, contrary to nonconsecutiveness.
 
-The vertex set is $\mathbb Z/k\mathbb Z$ and $E_0=\{(i,i+1):i\in\mathbb Z/k\mathbb Z\}$. Each vertex has exactly one outgoing neighbor. A nonadjacent pair therefore has no edge in the induced cycle graph.
+**II. Path Existence and Uniqueness**
 
-**II. Short Paths**
+For fixed $i$, the ordered path $(i,i+1,i+2)$ has two edges of $E_0$. The congruences $0\not\equiv1,2\pmod k$ and $1\not\equiv2\pmod k$ give pairwise distinctness. Also
 
-For the path $i\to i+1\to i+2$, distinctness follows from $k\ge4$. Its endpoints have no direct edge, because $i+2\not\equiv i+1\pmod k$. Any intermediate $x$ with $i\to x\to i+2$ must satisfy $x=i+1$, since this is the only outgoing neighbor of $i$.
+$$
+\begin{aligned}
+(i,i+2)\in E_0&\Longrightarrow i+2\equiv i+1\pmod k
+\Longrightarrow k\mid 1,\\
+(i+2,i)\in E_0&\Longrightarrow i\equiv i+3\pmod k
+\Longrightarrow k\mid 3,
+\end{aligned}
+$$
 
-**III. PUC and Candidate Count**
+both impossible for $k\ge4$. If $(i,x),(x,i+2)\in E_0$, the first condition gives $x=i+1$ and the second then gives $i+2=x+1$. Thus the unique path of length one or two from $i$ to $i+2$ is the displayed two-path (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
 
-Thus the candidate is the unique path of length at most two between its endpoints. The return chord $(i+2,i)$ is absent initially, and each $i$ gives a distinct proposed chord. There are exactly $k$ such candidates (**Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />).
+**III. Enumeration of Candidates**
+
+Every simple two-path beginning at $i$ must use $i+1$ and then $i+2$, since both outgoing sets are singletons. For the associated chord map,
+
+$$
+\Phi(i)=(i+2,i),\qquad
+\Phi(i)=\Phi(j)\Longrightarrow i=j
+$$
+
+by equality of target coordinates. Therefore the full frozen list contains exactly $|V|=k$ distinct candidate chords (**Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />).
 
 Q.E.D.
 
@@ -804,19 +873,49 @@ Section 2.4.6 formalizes the properties of the QBD lemma regarding sequential co
 
 **I. Candidate Paths and Source Maxima**
 
-Each candidate is supported by its specified unique two-path (**Sequential Constructor Diamond** <Ref id="2.4.6" label="§2.4.6" />) (**Axiom 2 Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
+Write $e_1=(u,v)$, $e_2=(x,w)$, and let $E_j=E\cup\{e_j\}$. A new two-path from $w$ to $x$ in $E_1$ must use $e_1$ either as $(w,y)$ or as $(y,x)$. The first alternative forces $w=u$ and the second $x=v$. Both contradict distinctness. Neither $(w,x)$ nor $(x,w)$ equals $e_1$. Thus the candidate $w\to u\to x$ and both endpoint exclusions are unchanged (**Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
 
-After adding $e_1$, the next candidate $e_2$ has support $w\to u\to x$. Any new competing two-path would use $e_1$ as its first edge leaving $w$ or its last edge entering $x$. The ends of $e_1$ are $u,v$, so both are impossible. The edges $(w,x),(x,w)$ remain absent, and no incoming edge at $x$ changes. Thus PUC and $h_2=1+\max_{\operatorname{In}(x)}H$ are preserved.
+For a new two-path from $v$ to $u$ in $E_2$, $e_2=(v,y)$ would force $v=x$ and $e_2=(y,u)$ would force $u=w$. Again neither is possible, and $e_2$ differs from both $(v,u)$ and $(u,v)$. The source maxima satisfy
 
-After adding $e_2$, a competing path for $e_1$ would require $e_2$ to leave $v$ or enter $u$. Its ends are $x,w$, so neither occurs. The edges $(v,u),(u,v)$ and the incoming heights at $u$ are unchanged, preserving PUC and $h_1$.
+$$
+\begin{aligned}
+\operatorname{In}_{E_1}(x)&=\operatorname{In}_E(x) && (v\ne x),\\
+\operatorname{In}_{E_2}(u)&=\operatorname{In}_E(u) && (w\ne u).
+\end{aligned}
+$$
 
-**II. Reverse Witnesses**
+The retained old heights on these incoming sets are the same, so the height assigned to $e_2$ after $e_1$ is $h_2$, and that assigned to $e_1$ after $e_2$ is $h_1$.
 
-A strictly increasing witness from $w$ to $x$ using $e_1$ reaches $v$ at height $h_1$. Since $v\ne x$, its next edge must leave $v$ with height strictly greater than $h_1$, excluded by dominance. Thus any witness against $e_2$ was already present. In the other order, a witness from $v$ to $u$ using $e_2$ must leave $w$ on an edge of height strictly greater than $h_2$, also excluded. The common vertex set keeps the cutoff fixed.
+**II. Exclusion of New Reverse Witnesses**
 
-**III. Equality of Active Outputs**
+If a reverse witness from $w$ to $x$ after inserting $e_1$ uses $e_1$, that edge enters $v\ne x$, so the witness has a next edge $(v,z)\in E$. Strict increase would require
 
-Both branches retain $E\cup\{e_1,e_2\}$ and assign $h_1,h_2$ to the same respective edges, leaving $H$ unchanged on $E$. The active outputs are equal.
+$$
+h_1<H(v,z)\le \max_{(v,y)\in E}H(v,y)\le h_1.
+$$
+
+Similarly a new reverse witness from $v$ to $u$ using $e_2$ must leave $w\ne u$ along $(w,z)\in E$, requiring
+
+$$
+h_2<H(w,z)\le\max_{(w,y)\in E}H(w,y)\le h_2.
+$$
+
+Both inequalities are impossible. All other witnesses use only old edges, whose heights and common vertex-count cutoff are unchanged.
+
+**III. Equality of the Two Outputs**
+
+In both orders the output edge set is $E\cup\{e_1,e_2\}$. At any output edge $y$, both height functions equal
+
+$$
+H_*(y)=
+\begin{cases}
+H(y),&y\in E,\\
+h_1,&y=e_1,\\
+h_2,&y=e_2.
+\end{cases}
+$$
+
+This proves equality as active timestamped graphs (**Sequential Constructor Diamond** <Ref id="2.4.6" label="§2.4.6" />).
 
 Q.E.D.
 
@@ -1151,17 +1250,39 @@ Section 2.5.2 formalizes the properties of the QBD lemma regarding independence 
 :::tip[**Independence Case A via Evaluation on a Uniform-Height Four-Cycle**]
 :::
 
-**I. Domain and Objects**
+**I. Directed-Link and Mediated Conditions**
 
-Both geometric tests are evaluated on the raw graph universe (**Independence Case A** <Ref id="2.5.2" label="§2.5.2" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
+Take residues modulo four, $E_A=\{(i,i+1):i\in\mathbb Z/4\mathbb Z\}$, with every height zero. The loop and reciprocity tests reduce to
 
-**II. Causal Predicates**
+$$
+(i,i+1)=(i,i)\Longrightarrow 1\equiv0\pmod4,\qquad
+(i+1,i)\in E_A\Longrightarrow 2\equiv0\pmod4,
+$$
 
-With residues modulo four, $E_A=\{(i,i+1):0\le i<4\}$. No edge is a loop and no reverse edge is present. Any path of at least two edges has successive heights $0,0$, so $R(G_A)=\varnothing$ and $R(G_A)^+=\varnothing$.
+both false. A spatial path of length at least two has first two heights $(0,0)$, failing $0<0$. Hence $R(G_A)=\varnothing$ and all its nonempty powers are empty.
 
-**III. Geometric Predicates**
+**II. Failure of the Static Predicate**
 
-The perimeter is a simple directed cycle of length four. It violates the static cycle condition. A constructive base has no such cycle, and each constructive addition preserves its absence by the accretion rule. Induction over the addition count excludes $G_A$ from the constructive class.
+The perimeter $(0,1,2,3,0)$ has all its directed edges in $E_A$ and its first four vertices are pairwise distinct. Thus
+
+$$
+(0,1,2,3,0)\in\mathcal C_4(G_A),
+\qquad
+\mathcal C_4(G_A)\ne\varnothing.
+$$
+
+The static predicate requires all simple cycles of length at least two to have length three (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
+
+**III. Failure of the Accretion Predicate**
+
+For a hypothetical constructive sequence $G^{(0)},\ldots,G^{(m)}=G_A$, the base has $\mathcal C_4(G^{(0)})=\varnothing$. At each accretion step a four-cycle would either consist wholly of old edges or contain the new chord. The former would lie in $\mathcal C_4(G^{(j)})$ and the latter is prohibited by the accretion rule. Therefore
+
+$$
+\mathcal C_4(G^{(j)})=\varnothing\Longrightarrow
+\mathcal C_4(G^{(j+1)})=\varnothing.
+$$
+
+Induction gives $\mathcal C_4(G_A)=\varnothing$, contradicting the exhibited perimeter (**Independence Case A** <Ref id="2.5.2" label="§2.5.2" />).
 
 Q.E.D.
 
@@ -1189,17 +1310,39 @@ Section 2.5.3 formalizes the properties of the QBD lemma regarding independence 
 :::tip[**Independence Case B via Evaluation on a Triangle and a Disjoint Loop**]
 :::
 
-**I. Domain and Objects**
+**I. Complete Static Path Enumeration**
 
-The raw graph universe permits an isolated loop before the tests are applied (**Independence Case B** <Ref id="2.5.3" label="§2.5.3" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
+Let $E=\{(a,b),(b,c),(c,a),(z,z)\}$ with heights $0,0,1,0$ in the listed order. The component on $\{a,b,c\}$ has one outgoing edge at each vertex, so its only simple directed cycle up to rotation is $(a,b,c,a)$. The isolated loop has length one and cannot be used in a simple two-path. The full two-path set and the direct edges at its endpoint pairs are
 
-**II. Static and Constructive Geometry**
+$$
+\mathcal P_2(G_B)=\{(a,b,c),(b,c,a),(c,a,b)\},\qquad
+\{(a,c),(b,a),(c,b)\}\cap E=\varnothing.
+$$
 
-Use edges $a\to b$, $b\to c$, $c\to a$ at heights $0,0,1$ and a loop $z\to z$. The triangle is the only simple cycle of length at least two. Each triangle vertex has one simple outgoing two-path with no competing path of length one or two. The isolated loop supplies no simple two-path. For the constructive witness start with $a\to b\to c$ and the isolated loop. Adding $(c,a)$ closes the unique supported triangle at height $1+H(b,c)=1$ and creates no longer cycle.
+Each ordered endpoint pair appears exactly once. This establishes both clauses of the static predicate (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
 
-**III. Causal Predicates**
+**II. Constructive Witness**
 
-The loop violates irreflexivity. The triangle's two-edge height lists are $(0,0),(0,1),(1,0)$, so $R(G_B)=\{(b,a)\}$ and its closure has no diagonal.
+Let $E_0=E\setminus\{(c,a)\}$. Its only simple two-path is $(a,b,c)$ and its only cycle is the isolated length-one loop. For the candidate $(c,a)$ the incoming height set at $c$ is $\{0\}$, and
+
+$$
+h_{\mathrm{new}}=1+\max\{0\}=1,\qquad
+E_0\cup\{(c,a)\}=E .
+$$
+
+The only simple cycle created by the chord is $(a,b,c,a)$, so this is a valid accretion sequence.
+
+**III. Directed-Link and Mediated Conditions**
+
+The edge $(z,z)\in E$ fails irreflexivity. There are no simple paths of length at least three. For the three two-paths the comparisons are
+
+$$
+(a,b,c):0<0\ \text{false},\qquad
+(b,c,a):0<1\ \text{true},\qquad
+(c,a,b):1<0\ \text{false}.
+$$
+
+Hence $R=\{(b,a)\}$ and $R^2=\varnothing$, since no mediated edge leaves $a$. The closure $R^+=R$ has no diagonal (**Independence Case B** <Ref id="2.5.3" label="§2.5.3" />).
 
 Q.E.D.
 
@@ -1384,17 +1527,31 @@ Section 2.6.2 formalizes the properties of the QBD lemma regarding effective inf
 :::tip[**Effective Influence via Decomposition of a Simple Increasing Witness**]
 :::
 
-**I. Domain and Objects**
+**I. Witness and Endpoint Conditions**
 
-Each edge in a spatial path supplies one active height (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />) (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
+For $P=(x_0,\ldots,x_k)$ with $k\ge2$, put $h_i=H(x_{i-1},x_i)$ for $1\le i\le k$ (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). The witness conditions are
 
-**II. Witness Conditions**
+$$
+\forall\,0\le i<j\le k,\ x_i\ne x_j,\qquad
+\forall\,1\le i<k,\ h_i<h_{i+1}.
+$$
 
-Write $P=(x_0,\ldots,x_k)$ with $k\ge2$, $x_0=u$, $x_k=v$ and $h_i=H(x_{i-1},x_i)$. Pairwise distinctness gives $x_0\ne x_k$, proving $u\ne v$ whenever $uRv$.
+In particular, taking $(i,j)=(0,k)$ gives $x_0\ne x_k$, so $R\cap\{(u,u):u\in V\}=\varnothing$.
 
-**III. Interior Split**
+**II. Restriction to Two Subpaths**
 
-For $1\le j<k$, both $(x_0,\ldots,x_j)$ and $(x_j,\ldots,x_k)$ inherit distinct vertices and increasing heights from the witness. At the join $h_j<h_{j+1}$. Conversely, two increasing subpaths sharing just their join concatenate to a simple increasing witness when the combined length is at least two and the same strict inequality holds at the join.
+For $1\le j<k$, set $P_-=(x_0,\ldots,x_j)$ and $P_+=(x_j,\ldots,x_k)$. Every edge of either path is an edge of $P$. Their height lists are $(h_1,\ldots,h_j)$ and $(h_{j+1},\ldots,h_k)$, respectively. For consecutive heights inside either list the comparisons are inherited from the displayed witness conditions, and at the shared vertex $x_j$ the comparison is $h_j<h_{j+1}$.
+
+**III. Concatenation under a Strict Join**
+
+Conversely, let $P_-,P_+$ be simple increasing paths of positive length with intersection of vertex sets exactly $\{x_j\}$ and with terminal and initial heights satisfying $h_j<h_{j+1}$. The concatenated vertex sequence uses the join once. A repeated vertex would have to repeat within one subpath, or belong to both outside the join, and each possibility contradicts a hypothesis. All height comparisons are
+
+$$
+h_1<\cdots<h_j,\qquad h_j<h_{j+1},\qquad
+h_{j+1}<\cdots<h_k .
+$$
+
+These give one increasing list of length at least two, so the concatenation witnesses $x_0Rx_k$ (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
 
 Q.E.D.
 
@@ -1700,17 +1857,49 @@ Section 2.7.3 formalizes the properties of the QBD lemma regarding finite-radius
 :::tip[**Cycle Diameter Growth via Opening a Directed Perimeter Outside the Observed Ball**]
 :::
 
-**I. Domain and Objects**
+**I. The Closed and Open Perimeters**
 
-A perimeter can carry increasing witnesses in both directions between two vertices (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />) (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />).
+Let $m=2r+4$ and $V=\{0,\ldots,m-1\}$. Use the cycle $C$ with edges $e_j=(j,j+1\bmod m)$ and the open graph $P=C\setminus\{e_{r+1}\}$ (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />) (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />). Assign edge heights by
 
-**II. Common Local View**
+$$
+H(e_j)=
+\begin{cases}
+j & 0\le j\le r+1,\\
+j-(r+2) & r+2\le j\le 2r+3 .
+\end{cases}
+$$
 
-Take the directed cycle on residues $0,\ldots,2r+3$ in that order, rooted at $0$. Delete edge $(r+1,r+2)$ to obtain a directed path on the same vertices. Neither endpoint of the deleted edge lies within undirected distance $r$ of $0$ on the cycle. Deletion cannot decrease distances, and the original shortest routes from $0$ to vertices within the ball avoid that edge. Both induced rooted balls therefore have the same vertices, directions and inherited heights.
+Use the restriction of $H$ on $P$.
 
-**III. Different Global Closures**
+**II. Equality of the Rooted Balls**
 
-Split the perimeter at $0$ and $r+2$. Assign increasing heights $0,\ldots,r+1$ along each of the two directed arcs. Both arcs have length $r+2\ge2$, giving $0R(r+2)R0$ in the cycle. On the open path, every directed path strictly advances along its linear vertex order. Every $R$ pair and every nonempty composite of such pairs strictly advances in that same order.
+In the undirected support of $C$, the two routes from $0$ to $j$ have lengths $j$ and $m-j$. Consequently,
+
+$$
+\begin{aligned}
+d_C(0,j)&=\min(j,m-j),\\
+B_C(0,r)&=\{0,\ldots,r\}\cup\{r+4,\ldots,2r+3\}.
+\end{aligned}
+$$
+
+The removed edge has endpoints at distances $r+1$ and $r+2$. For $0\le j\le r$, the route $0,1,\ldots,j$ is still present in the undirected support of $P$. For $r+4\le j\le 2r+3$, the route $0,2r+3,\ldots,j$ is still present there. Their lengths are $j\le r$ and $m-j\le r$, respectively. Thus $B_C(0,r)\subseteq B_P(0,r)$. Every undirected route in $P$ also occurs in $C$, which yields the reverse inclusion. Since $e_{r+1}$ is outside the common ball, all induced edge directions and heights agree.
+
+**III. Opposite Closure Outcomes**
+
+The two directed arcs in $C$ give
+
+$$
+0\xrightarrow{0}1\xrightarrow{1}\cdots\xrightarrow{r+1}r+2,\qquad
+r+2\xrightarrow{0}r+3\xrightarrow{1}\cdots\xrightarrow{r+1}0 .
+$$
+
+Each arc is a simple path of length $r+2$ and its heights increase strictly. Hence $(0,r+2),(r+2,0)\in R_C$ and $(0,0)\in R_C^+$. In $P$, let $\ell$ denote the index in the order $(r+2,\ldots,2r+3,0,\ldots,r+1)$. For every edge $(u,v)$ of $P$, $\ell(v)=\ell(u)+1$. A path of length $k$ therefore has $\ell(v)-\ell(u)=k$. Every $R_P$ witness has positive length, so a composition of $a$ such witnesses satisfies
+
+$$
+\ell(v_a)-\ell(v_0)=\sum_{i=1}^a\bigl(\ell(v_i)-\ell(v_{i-1})\bigr)>0 .
+$$
+
+This proves $(v,v)\notin R_P^+$ for all $v$.
 
 Q.E.D.
 
@@ -1851,17 +2040,39 @@ Section 2.7.6 formalizes the properties of the QBD lemma regarding independence 
 :::tip[**Independence of Axiom 3 via Butterfly Accretion and Composition of Simple Witnesses**]
 :::
 
-**I. Static Conditions**
+**I. The Static Butterfly**
 
-The butterfly is tested under both raw geometric predicates (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
+Use the edge set $E=\{AZ,ZD,DC,CZ,ZB,BA\}$, where $UV$ denotes $(U,V)$ (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />) (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />). Each edge has distinct endpoints and the six reversed edges are absent. The sets $\{A,B\}$ and $\{C,D\}$ meet only through $Z$. A simple cycle crossing from one set to the other would have to visit $Z$ a second time before completing the cycle. The only cycles are therefore the two directed triangles.
 
-The six edges have distinct endpoints and no reciprocal partners. Any simple cycle is confined to one of the two triangles meeting at $Z$, since changing triangles and returning would repeat $Z$. For paths entering $Z$ from $A$ or $C$, their distinct two-step endpoints are $D$ and $B$. The remaining two-paths are $Z\to D\to C$, $Z\to B\to A$, $D\to C\to Z$, and $B\to A\to Z$. The listed endpoint pairs are distinct and lack direct bypass edges.
+The complete set of length-two paths is
 
-**II. Accretion**
+$$
+\begin{array}{c|l}
+\text{middle vertex} & \text{paths}\\ \hline
+Z & A Z D,\ A Z B,\ C Z D,\ C Z B\\
+D & Z D C\\
+C & D C Z\\
+B & Z B A\\
+A & B A Z
+\end{array}
+$$
 
-Start with $A\to Z$, $Z\to D$, $D\to C$, $Z\to B$. This base is acyclic and its simple two-paths are unique without bypasses. The candidate $C\to Z$ closes $Z\to D\to C$ at height $1+3=4$. The candidate $B\to A$ then closes $A\to Z\to B$ at height $1+5=6$. Each has unique support, and each added cycle is its triangle, since a simple cycle cannot pass twice through $Z$.
+Thus their endpoint pairs form $S=\{AD,AB,CD,CB,ZC,DZ,ZA,BZ\}$. These eight pairs are distinct and $S\cap E=\varnothing$.
 
-**III. Mediated Cycle**
+**II. The Two Accretions**
+
+Start from $E_0=\{AZ,ZD,DC,ZB\}$, with heights $1,2,3,5$ respectively. Its two-paths are $AZD$, $AZB$ and $ZDC$, with distinct endpoints and absent bypasses. Its vertex order $(A,Z,D,C,B)$ advances along every edge, so the base is acyclic. The first return chord is $CZ$, supported by $ZDC$. The second is $BA$, supported by $AZB$. The two height checks are
+
+$$
+\begin{aligned}
+H(CZ)&=1+\max H_{\mathrm{in}}(C)=1+H(DC)=4,&2<3<4,\\
+H(BA)&=1+\max H_{\mathrm{in}}(B)=1+H(ZB)=6,&1<5<6.
+\end{aligned}
+$$
+
+By the complete two-path list, the support endpoint pairs $ZC$ and $AB$ have one witness each even in the final graph. Each update therefore has its displayed unique witness in its pre-addition graph. After each addition the edges are a subset of $E$, so the cycle analysis above excludes any longer simple cycle.
+
+**III. The Mediated Cycle**
 
 The simple paths
 
@@ -1870,7 +2081,7 @@ A\xrightarrow{1}Z\xrightarrow{2}D,\qquad
 D\xrightarrow{3}C\xrightarrow{4}Z\xrightarrow{5}B\xrightarrow{6}A
 $$
 
-give $A R D$ and $D R A$. Therefore $(A,A)\in R^+$.
+give $A R D$ and $D R A$. Their composition gives $(A,A)\in R^+$.
 
 Q.E.D.
 
@@ -1897,17 +2108,30 @@ Section 2.7.7 formalizes the properties of the QBD lemma regarding loop erasure 
 :::tip[**Loop Erasure of Reverse Witnesses via Erasure of Repeated-Vertex Segments**]
 :::
 
-**I. Domain and Objects**
+**I. Erasure Preserves an Edge Subsequence**
 
-The candidate has distinct endpoints and no direct forward bypass (**Loop Erasure of Reverse Witnesses** <Ref id="2.7.7" label="§2.7.7" />) (**Axiom 2 Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
+Let $(x_0,\ldots,x_k)$ be a witness walk from $v$ to $u$ with $k\le L$ and heights $h_1<\cdots<h_k<h$. If $x_i=x_j$ for $i<j$, erase the segment from position $i$ to $j$. The new walk and its height sequence are
 
-**II. A Single Erasure**
+$$
+(x_0,\ldots,x_i,x_{j+1},\ldots,x_k),\qquad
+(h_1,\ldots,h_i,h_{j+1},\ldots,h_k),
+$$
 
-For a walk $x_0,\ldots,x_k$, let $x_i=x_j$ with $i<j$. Remove exactly the $j-i$ edges from $x_i$ to $x_j$ along the walk, retaining the prefix through $x_i$ and the edges after $x_j$. The concatenation is a walk because $x_i=x_j$. The height list is a subsequence of the old strictly increasing list. Its last height is at most the old last height, and the length decreases by $j-i$.
+with the suffix empty if $j=k$. When $j<k$, the new join edge $(x_i,x_{j+1})$ is the original edge $(x_j,x_{j+1})$. When $j=k$, its new endpoint $x_i=x_k$ is still $u$. If both height pieces are nonempty then $h_i<h_{j+1}$ by strict increase in the original list. Thus the new list is increasing and its terminal entry remains below $h$.
 
-**III. Termination and the Lower Length Bound**
+**II. Finite Reduction**
 
-Repeat while any vertex occurs twice. The nonnegative length strictly decreases at each erasure. The resulting simple path retains $v,u$, so it has positive length, and absence of $(v,u)$ forces length at least two. Its length is at most $L$ and its terminal height is below $h$. Conversely, every such simple path is a walk.
+At one erasure the length changes from $k$ to $k-(j-i)\le k-1$. After $m$ erasures the lengths satisfy
+
+$$
+0\le k_m\le k_0-m\le L-m.
+$$
+
+The endpoints remain distinct, so $k_m\ge1$. The erasures must therefore terminate with no repeated vertex and with length at most $L$.
+
+**III. Mediation at the Final Length**
+
+The candidate has no direct forward bypass $(v,u)$ (**Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />). A final simple path of length one would be precisely that edge, which is absent. Hence the path has length at least two and obeys the original height cutoff. Conversely, any such simple path is a walk with the required properties. This proves equivalence at the same search horizon (**Loop Erasure of Reverse Witnesses** <Ref id="2.7.7" label="§2.7.7" />).
 
 Q.E.D.
 
@@ -1935,19 +2159,45 @@ Section 2.7.8 formalizes the properties of the QBD lemma regarding batch causal 
 :::tip[**Batch Causal Preservation under Dominance via Localization of New Influence Pairs at Batch Targets**]
 :::
 
-**I. Terminal Localization**
+**I. Localization by Height Dominance**
 
-The old and final relations are computed from simple increasing witnesses (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />) (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
+Let $B$ be the retained chord set, $T=\{v:(u,v)\in B\}$ its targets, and $E_f=(E\cup B)\setminus D$. Denote the old and final mediated relations by $R_0,R_f$ (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />). For $(a,b)\in R_f\setminus R_0$, choose a simple increasing witness $(x_0,\ldots,x_k)$. It uses at least one chord, because a witness made solely of retained old edges would also exist in the old graph. If its $j$-th edge $(x_{j-1},x_j)$ is new and the next edge is old, the two hypotheses give
 
-Any final mediated pair absent from the old $R$ has a witness using a new edge. After any new edge the next edge, if present, must have strictly greater height. Dominance excludes an old edge at that join. Thus all edges from the first new edge onward are new, and the witness ends at a batch target.
+$$
+H(x_{j-1},x_j)<H(x_j,x_{j+1})
+\le \max_{(x_j,y)\in E}H(x_j,y)
+\le H(x_{j-1},x_j),
+$$
 
-**II. Diagonal Test**
+a contradiction. Starting at its first new edge and applying the same argument at each successive position shows that its final edge is new. Hence
 
-A directed cycle of final mediated pairs must contain a pair absent from the old acyclic relation. By localization the cycle visits a batch target, so that target appears on the diagonal of the full final closure. Conversely any target diagonal is a nonempty closed relation walk. A deletion only removes witnesses, hence the pre-deletion test is sufficient.
+$$
+R_f\setminus R_0\subseteq V\times T.
+$$
 
-**III. Two Old Sinks**
+**II. Equivalence of Target Diagonals and Acyclicity**
 
-For chords $(u,v)$ and $(x,w)$ across $v\to w\to u$ and $w\to u\to x$ (**Sequential Constructor Diamond** <Ref id="2.4.6" label="§2.4.6" />), neither chord can directly follow the other since $\{v,w\}$ and $\{u,x\}$ are disjoint. Thus a new witness uses only one new edge, at its end. The only possible new pair leaving $v$ would end at $w$, since $R$ is irreflexive. Such a witness must start with an old increasing path from $v$ to $x$, of length at least two because $(v,x)\notin E$. That would give $vRx$ in the old graph, contrary to the sink assumption. So $v$ remains a sink. Any new pair leaving $w$ must end at $v$. No cycle can visit either target.
+If $R_f^+$ has a diagonal, there is a nonempty closed walk of $R_f$ pairs $(y_0,y_1),\ldots,(y_{m-1},y_m)$, with $y_m=y_0$. Since $R_0$ has acyclic closure, some pair $(y_{j-1},y_j)$ is outside $R_0$. By localization $y_j\in T$. Rotating the same list of pairs gives a nonempty return walk at $y_j$, so $(y_j,y_j)\in R_f^+$. Conversely a target diagonal is already a diagonal in the full closure. This proves
+
+$$
+R_f^+\cap\{(x,x):x\in V\}=\varnothing
+\quad\Longleftrightarrow\quad
+R_f^+\cap\{(x,x):x\in T\}=\varnothing .
+$$
+
+Let $R_m$ be the relation just after merge. Every final witness uses edges of the merged graph with identical heights, giving $R_f\subseteq R_m$ and therefore $R_f^+\subseteq R_m^+$. The pre-deletion target test implies the final one.
+
+**III. The Two Old Sinks**
+
+For the sequential diamond the added edges are $(u,v)$ and $(x,w)$ with four distinct endpoints (**Sequential Constructor Diamond** <Ref id="2.4.6" label="§2.4.6" />). They cannot occur consecutively, since their sources $\{u,x\}$ are disjoint from their targets $\{v,w\}$. By Section I every new witness therefore has exactly one new edge, at its end. If $v,w$ are sinks in $R_0$, localization and irreflexivity give
+
+$$
+R_f\cap(\{v\}\times V)\subseteq\{(v,w)\},
+\qquad
+R_f\cap(\{w\}\times V)\subseteq\{(w,v)\}.
+$$
+
+A witness of $(v,w)$ would end with $(x,w)$. Its prefix from $v$ to $x$ uses old edges and has at least two edges, since $(v,x)\notin E$. It would give $(v,x)\in R_0$, contradicting the sink condition. Thus $v$ remains a sink and any arrow from $w$ ends at $v$. Neither target admits a nonempty return walk. Section II gives acyclicity of the full relation.
 
 Q.E.D.
 

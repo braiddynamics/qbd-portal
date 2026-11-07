@@ -87,25 +87,49 @@ Section 5.1.3 formalizes the properties of the QBD lemma regarding correlation d
 :::tip[**Correlation Decay via Geometric Summation of Conditional Path Weights**]
 :::
 
-**I. Domain and Objects**
+**I. Counts by Path Length**
 
-The path count separates first-step choices from later non-backtracking choices (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />) (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />).
-
-**II. First Edge and Subsequent Choices**
-
-A non-backtracking path has at most $D$ choices for its first edge and $D-1$ for each later edge. Every path joining the specified vertices has length at least $r$.
-
-**III. Tail Summation**
-
-With $q=(D-1)p$, the weighted tail is bounded by
+Let $P_L(x,y)$ be the length-$L$ contributing non-backtracking paths from $x$ to $y$. A path of length $L$ cannot connect vertices at graph distance $r>L$. There are at most $D$ choices for the first edge and at most $D-1$ choices for each later edge because the immediate predecessor is excluded. Thus
 
 $$
-\sum_{L=r}^\infty D(D-1)^{L-1}Ap^L
-=A D p\sum_{L=r}^\infty q^{L-1}
-=\frac{A D p\,q^{r-1}}{1-q}.
+P_L(x,y)=\varnothing\quad(L<r),\qquad
+|P_L(x,y)|\le D(D-1)^{L-1}\quad(L\ge1).
 $$
 
-When $p=0$, all positive-length weights vanish.
+The first-edge factor is separated from the extension count as in the finite-cutoff estimate (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />).
+
+**II. Finite Partial Sum**
+
+Let $Z(x,y)$ be the nonnegative quantity dominated by the path weights $w(\pi)$. For $M\ge r$, $0\le w(\pi)\le A p^L$ for $\pi\in P_L(x,y)$ implies
+
+$$
+\begin{aligned}
+\sum_{L=r}^{M}\ \sum_{\pi\in P_L(x,y)}w(\pi)
+&\le\sum_{L=r}^{M}|P_L(x,y)|\,A p^L\\
+&\le A D p\sum_{L=r}^{M}[(D-1)p]^{L-1}\\
+&= A D p\,q^{r-1}\sum_{j=0}^{M-r}q^j,
+\qquad q=(D-1)p .
+\end{aligned}
+$$
+
+For $p=0$ all weights of positive-length paths vanish. For $0<q<1$, the last sum satisfies
+
+$$
+(1-q)\sum_{j=0}^{M-r}q^j
+=\sum_{j=0}^{M-r}q^j-\sum_{j=1}^{M-r+1}q^j
+=1-q^{M-r+1}.
+$$
+
+**III. Infinite Tail**
+
+As $M\to\infty$, the finite nonnegative sums converge monotonically to the full path sum, and $q^{M-r+1}\to0$. Therefore
+
+$$
+0\le Z(x,y)\le\sum_{L=r}^{\infty}\sum_{\pi\in P_L(x,y)}w(\pi)
+\le\frac{A D p\,q^{r-1}}{1-q}
+$$
+
+under the domination premise (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />).
 
 Q.E.D.
 
@@ -132,30 +156,67 @@ Section 5.1.4 formalizes the properties of the QBD lemma regarding gaussian mutu
 :::tip[**Gaussian Mutual Information via Schur Complement and a Logarithmic Bound**]
 :::
 
-**I. Domain and Objects**
+**I. Elimination of the Cross-Covariance**
 
-Joint-versus-marginal information is evaluated here for two Gaussian blocks (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />).
-
-**II. Covariance Determinant**
-
-The joint covariance has determinant $\det A\det(B-C^\top A^{-1}C)$ by block elimination. Factoring $B^{1/2}$ gives
+Write $\Sigma=\left(\begin{smallmatrix}A&C\\C^\top&B\end{smallmatrix}\right)$ and $M=A^{-1/2}CB^{-1/2}$ (**Gaussian Mutual Information** <Ref id="5.1.4" label="§5.1.4" />) (**Spatial Cluster Decomposition** <Ref id="5.1.2" label="§5.1.2" />). Block multiplication gives
 
 $$
-\det\Sigma=\det A\,\det B\,\det(I-M^\top M).
+\begin{pmatrix}I&0\\-C^\top A^{-1}&I\end{pmatrix}
+\begin{pmatrix}A&C\\C^\top&B\end{pmatrix}
+\begin{pmatrix}I&-A^{-1}C\\0&I\end{pmatrix}
+=
+\begin{pmatrix}A&0\\0&B-C^\top A^{-1}C\end{pmatrix}.
 $$
 
-Positive definiteness gives $I-M^\top M>0$.
-
-**III. Information and the Singular Values**
-
-Subtracting the Gaussian differential entropies cancels the dimension-dependent constants, so
+Both triangular factors have determinant one and are transposes of each other. Since $\Sigma$ is positive definite, the bottom diagonal block is positive definite. It factors as
 
 $$
-I(X;Y)=\tfrac12\log\frac{\det A\det B}{\det\Sigma}
-=-\tfrac12\sum_j\log(1-s_j^2).
+B-C^\top A^{-1}C
+=B^{1/2}\bigl(I-B^{-1/2}C^\top A^{-1}CB^{-1/2}\bigr)B^{1/2}
+=B^{1/2}(I-M^\top M)B^{1/2}.
 $$
 
-For $0\le z\le s_*^2$, $-\log(1-z)=\int_0^z(1-u)^{-1}du\le z/(1-s_*^2)$. Summing with $z=s_j^2$ gives the stated Frobenius bound.
+Thus $\det\Sigma=\det A\det B\det(I-M^\top M)$ and $I-M^\top M$ is positive definite. Its eigenvalues are $1-s_j^2$ with unit factors for any extra zero singular directions.
+
+**II. Subtraction of the Gaussian Entropies**
+
+For a Gaussian block $Z$ of dimension $d$, mean $\mu$ and covariance $K$, integrate its negative log density. The quadratic term contributes
+
+$$
+\begin{aligned}
+\mathbb E[(Z-\mu)^\top K^{-1}(Z-\mu)]
+&=\operatorname{tr}\!\left(K^{-1}\mathbb E[(Z-\mu)(Z-\mu)^\top]\right)\\
+&=\operatorname{tr}(K^{-1}K)=d.
+\end{aligned}
+$$
+
+Therefore $h(Z)=\frac d2\log(2\pi e)+\frac12\log\det K$. For marginal dimensions $d_X,d_Y$, this gives
+
+$$
+\begin{aligned}
+I(X;Y)&=h(X)+h(Y)-h(X,Y)\\
+&=\frac{d_X+d_Y-(d_X+d_Y)}2\log(2\pi e)
+  +\frac12\log\frac{\det A\det B}{\det\Sigma}\\
+&=-\frac12\log\det(I-M^\top M)
+=-\frac12\sum_j\log(1-s_j^2).
+\end{aligned}
+$$
+
+**III. The Frobenius Bound**
+
+For $0\le s_j^2\le s_*^2<1$,
+
+$$
+-\log(1-s_j^2)=\int_0^{s_j^2}\frac{du}{1-u}
+\le \int_0^{s_j^2}\frac{du}{1-s_*^2}
+=\frac{s_j^2}{1-s_*^2}.
+$$
+
+Summing and using $\sum_j s_j^2=\operatorname{tr}(M^\top M)$ yields
+
+$$
+\boxed{I(X;Y)\le \frac{\|M\|_{\mathrm F}^2}{2(1-s_*^2)}}.
+$$
 
 Q.E.D.
 
@@ -2503,25 +2564,44 @@ Section 5.5.7 formalizes the properties of the QBD lemma regarding correlation d
 :::tip[**Correlation Decay via Application of the Non-Backtracking Sum**]
 :::
 
-**I. Domain and Objects**
+**I. Pathwise Weights and Counts**
 
-The specified covariance representation has the required summable walk form (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />).
-
-**II. Conditional Weights**
-
-If each conditional factor is bounded by $p$, the product on a length-$L$ path is bounded by $p^L$. There are at most $D(D-1)^{L-1}$ eligible walks, because the first edge has at most $D$ choices and later steps exclude the predecessor.
-
-**III. Summation from the Distance**
-
-Writing $r$ for the distance and summing over lengths gives (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />)
+Write $\mathcal W_L(x,y)$ for the eligible non-backtracking walks of length $L$ and $w(\gamma)=\prod_{j=1}^L p_j(\gamma)$ for the weight of a walk (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />) (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />). For each $j$, $0\le p_j(\gamma)\le p$, so
 
 $$
-|\operatorname{Cov}(f(x),f(y))|
-\le A\sum_{L\ge r}D(D-1)^{L-1}p^L
-=\frac{A D p}{1-q}q^{r-1}.
+0\le w(\gamma)\le\prod_{j=1}^L p=p^L.
 $$
 
-In the illustrative envelope $D=8$ and $p\le1/8$, $q\le7/8<1$.
+The number of prefixes of length one is at most $D$. For every longer prefix, each extension excludes the previous vertex and contributes at most $D-1$ choices. Iterating gives $|\mathcal W_L(x,y)|\le D(D-1)^{L-1}$.
+
+**II. Summation from the First Possible Length**
+
+For $r=d(x,y)\ge1$, all terms with $L<r$ vanish. For $M\ge r$, the nonnegative partial sum satisfies
+
+$$
+\begin{aligned}
+A\sum_{L=r}^M\sum_{\gamma\in\mathcal W_L(x,y)}w(\gamma)
+&\le A D p\sum_{L=r}^M ((D-1)p)^{L-1}\\
+&= A D p\,q^{r-1}\sum_{j=0}^{M-r} q^j\\
+&= A D p\,q^{r-1}\frac{1-q^{M-r+1}}{1-q}.
+\end{aligned}
+$$
+
+Since $0\le q<1$, the right-hand side converges as $M\to\infty$. Taking the limit and applying the stipulated domination yields
+
+$$
+\boxed{\left|\operatorname{Cov}(f(x),f(y))\right|
+\le\frac{A D p\,q^{r-1}}{1-q}}.
+$$
+
+**III. Evaluation of the Degree-Eight Envelope**
+
+For $D=8$ and $0\le p\le 1/8$, one has $Dp\le1$, $q=7p\le7/8$ and $1/(1-q)\le8$. In this envelope the bound becomes
+
+$$
+\left|\operatorname{Cov}(f(x),f(y))\right|
+\le 8A(7/8)^{r-1}.
+$$
 
 Q.E.D.
 
@@ -2549,25 +2629,37 @@ Section 5.5.7.2 formalizes the properties of the QBD corollary regarding control
 :::tip[**Correlation Decay via Variance Expansion and Chebyshev's Inequality**]
 :::
 
-**I. Domain and Objects**
+**I. Centering the Finite Average**
 
-The covariance assumption here is a uniform row-sum bound (**Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />). A path sum supplies a separate conditional pairwise estimate (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />).
-
-**II. Variance of the Average**
-
-For $\bar f=N^{-1}\sum_x f(x)$,
+Let $X_x=f(x)-\mathbb E f(x)$ and suppose $\sum_y|\operatorname{Cov}(f(x),f(y))|\le C$ for each $x$ (**Controlled Fluctuations** <Ref id="5.5.7.2" label="§5.5.7.2" />) (**Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />). For $\bar f=N^{-1}\sum_x f(x)$,
 
 $$
-\operatorname{Var}(\bar f)=N^{-2}\sum_x\sum_y\operatorname{Cov}(f(x),f(y))
-\le N^{-2}\sum_x C=C/N.
+\bar f-\mathbb E\bar f=\frac1N\sum_x X_x,\qquad
+(\bar f-\mathbb E\bar f)^2=\frac1{N^2}\sum_x\sum_y X_x X_y .
 $$
 
-**III. Concentration about the Mean**
+**II. Variance Bound**
 
-For fixed $\epsilon>0$,
+The sums are finite and $\mathbb E[X_x X_y]=\operatorname{Cov}(f(x),f(y))$. Therefore
 
 $$
-\Pr(|\bar f-\mathbb E\bar f|>\epsilon)\le \frac{C}{N\epsilon^2}\longrightarrow0 .
+\begin{aligned}
+\operatorname{Var}(\bar f)
+&=\mathbb E[(\bar f-\mathbb E\bar f)^2]\\
+&=\frac1{N^2}\sum_x\sum_y\operatorname{Cov}(f(x),f(y))\\
+&\le\frac1{N^2}\sum_x\sum_y|\operatorname{Cov}(f(x),f(y))|
+\le \frac{NC}{N^2}=\frac C N.
+\end{aligned}
+$$
+
+**III. Probability Bound**
+
+For $\epsilon>0$, the indicator of the event $|\bar f-\mathbb E\bar f|>\epsilon$ is bounded by $(\bar f-\mathbb E\bar f)^2/\epsilon^2$ pointwise. Taking expectations gives
+
+$$
+\Pr(|\bar f-\mathbb E\bar f|>\epsilon)
+\le\frac{\operatorname{Var}(\bar f)}{\epsilon^2}
+\le\frac{C}{N\epsilon^2}\xrightarrow{N\to\infty}0.
 $$
 
 Q.E.D.
