@@ -672,7 +672,20 @@ $$
 \Delta W_{\mathrm{III}}=(s_{12}+s_{13}+s_{23})-(s_{12}+s_{13}+s_{23})=0 .
 $$
 
-For example, on three strands labeled $A,B,C$ from left to right with downward orientations, the two positive Artin words cross the pairs in the orders
+For example, on three strands labeled $A,B,C$ from left to right with downward orientations, read each positive Artin word from left to right. The two sequences of strand orders are
+
+$$
+\begin{aligned}
+(A,B,C) &\xrightarrow{\sigma_1} (B,A,C)
+        \xrightarrow{\sigma_2} (B,C,A)
+        \xrightarrow{\sigma_1} (C,B,A),\\
+(A,B,C) &\xrightarrow{\sigma_2} (A,C,B)
+        \xrightarrow{\sigma_1} (C,A,B)
+        \xrightarrow{\sigma_2} (C,B,A) .
+\end{aligned}
+$$
+
+The pairs interchanged at these steps are
 
 $$
 \begin{aligned}

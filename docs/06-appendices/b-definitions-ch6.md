@@ -1347,9 +1347,9 @@ $$
 
 If the assigned crossing costs are $C_5=5$ and $C_3=3$ and both use a common mass conversion $m_i=\eta C_i$ with $\eta>0$ from **Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />, the corresponding mass comparison is
 
-$
+$$
 \frac{m_5}{m_3}=\frac{\eta C_5}{\eta C_3}=\frac{5}{3}.
-$
+$$
 
 **III. Rank of the candidate control algebra**
 
@@ -1964,10 +1964,20 @@ $$
 
 **II. Chain of supports**
 
-Suppose $a\in S_1$, $b\in S_m$, and $S_j\cap S_{j+1}\ne\varnothing$ for each $j<m$. Choose $x_j\in S_j\cap S_{j+1}$, and set $x_0=a$, $x_m=b$. Then $x_{j-1},x_j\in S_j$ and
+Suppose $a\in S_1$, $b\in S_m$, and $S_j\cap S_{j+1}\ne\varnothing$ for each $j<m$. Let $x_j\in S_j\cap S_{j+1}$ for $1\le j<m$, with $x_0=a$ and $x_m=b$. Then $x_{j-1},x_j\in S_j$ for $1\le j\le m$. Define $D_j=d(x_0,x_j)$. The base case is $D_0=d(a,a)=0$. For $0\le j<m$, if $D_j\le 2jR$, the diameter bound on $S_{j+1}$ gives
 
 $$
-d(a,b)
+D_{j+1}
+=d(x_0,x_{j+1})
+\le d(x_0,x_j)+d(x_j,x_{j+1})
+\le 2jR+2R
+=2(j+1)R.
+$$
+
+Before using the diameter bound, the triangle inequality gives $D_j-D_{j-1}\le d(x_{j-1},x_j)$ for $1\le j\le m$. Summing yields
+
+$$
+d(a,b)=D_m-D_0=\sum_{j=1}^m(D_j-D_{j-1})
 \le\sum_{j=1}^{m}d(x_{j-1},x_j)
 \le\sum_{j=1}^{m}2R
 =2mR .

@@ -127,18 +127,23 @@ An operator representation can identify distinct braid words. For the converse o
 
 **III. Infinitesimal Commutators**
 
-On a finite-dimensional sector, suppose $U_i(t)=e^{-itT_i}$ and $U_j(s)=e^{-isT_j}$ satisfy $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$. The mixed derivatives at the origin are
+On a finite-dimensional sector, suppose $U_i(t)=e^{-itT_i}$ and $U_j(s)=e^{-isT_j}$ satisfy $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$. For fixed $s$, differentiation in $t$ at zero gives
 
 $$
 \begin{aligned}
-\left.\partial_t\partial_s(U_i(t)U_j(s))\right|_{0,0}
-&=(-iT_i)(-iT_j)=-T_iT_j,\\
-\left.\partial_t\partial_s(U_j(s)U_i(t))\right|_{0,0}
-&=(-iT_j)(-iT_i)=-T_jT_i.
+\left.\frac{\partial}{\partial t}\bigl(U_i(t)U_j(s)\bigr)\right|_{t=0}
+&=U_i'(0)U_j(s)=(-iT_i)U_j(s),\\
+\left.\frac{\partial}{\partial t}\bigl(U_j(s)U_i(t)\bigr)\right|_{t=0}
+&=U_j(s)U_i'(0)=U_j(s)(-iT_i).
 \end{aligned}
 $$
 
-Their equality yields $[T_i,T_j]=0$.
+The expressions are equal for every $s$. Their derivatives at $s=0$ give
+
+$$
+-T_iT_j=(-iT_i)U_j'(0)=U_j'(0)(-iT_i)=-T_jT_i,
+\qquad [T_i,T_j]=T_iT_j-T_jT_i=0 .
+$$
 
 Q.E.D.
 
@@ -4071,7 +4076,47 @@ The stable root with $F_\rho<0$ has negative sensitivity (**Global Stability** <
 
 **II. First-Order Variance**
 
-Let $\bar\rho>0$ and $\bar s<1$ be the linearization point. The relative perturbations from **Boson Mass Prediction** <Ref id="8.7.3" label="§8.7.3" /> are $\delta\rho/\bar\rho$ and $\delta\rho/\bar\rho+\delta s/[2(1-\bar s)]$. Expanding the squared centered linear combinations gives
+Let $\bar\rho>0$ and $\bar s<1$ be the linearization point, and let $C$ denote the fixed coefficient in $m_W=C\rho$ and $m_Z=C\rho(1-s)^{-1/2}$ (**Boson Mass Prediction** <Ref id="8.7.3" label="§8.7.3" />). The mass derivatives are
+
+$$
+\begin{aligned}
+\partial_\rho m_W&=C, & \partial_s m_W&=0,\\
+\partial_\rho m_Z&=C(1-s)^{-1/2}, &
+\partial_s m_Z&=C\rho\left(-\tfrac12\right)(1-s)^{-3/2}(-1)
+=\frac{C\rho}{2}(1-s)^{-3/2}.
+\end{aligned}
+$$
+
+Write $\delta\rho=\rho-\bar\rho$ and $\delta s=s-\bar s$. With $\delta^{(1)}m$ denoting a first-order mass perturbation, division by the respective masses at the linearization point gives
+
+$$
+\begin{aligned}
+\frac{\delta^{(1)}m_W}{\bar m_W}
+&=\frac{C\,\delta\rho}{C\bar\rho}
+=\frac{\delta\rho}{\bar\rho},\\
+\frac{\delta^{(1)}m_Z}{\bar m_Z}
+&=\frac{C(1-\bar s)^{-1/2}\delta\rho
+ +\tfrac12 C\bar\rho(1-\bar s)^{-3/2}\delta s}
+ {C\bar\rho(1-\bar s)^{-1/2}}
+=\frac{\delta\rho}{\bar\rho}+\frac{\delta s}{2(1-\bar s)} .
+\end{aligned}
+$$
+
+Define $X=\delta\rho-\mathbb E[\delta\rho]=\rho-\mathbb E[\rho]$ and $Y=\delta s-\mathbb E[\delta s]=s-\mathbb E[s]$. The squared centered relative perturbations are
+
+$$
+\begin{aligned}
+\left(\frac{\delta^{(1)}m_W-\mathbb E[\delta^{(1)}m_W]}{\bar m_W}\right)^2
+&=\frac{X^2}{\bar\rho^2},\\
+\left(\frac{\delta^{(1)}m_Z-\mathbb E[\delta^{(1)}m_Z]}{\bar m_Z}\right)^2
+&=\left(\frac{X}{\bar\rho}+\frac{Y}{2(1-\bar s)}\right)^2\\
+&=\frac{X^2}{\bar\rho^2}
+  +\frac{2XY}{2\bar\rho(1-\bar s)}
+  +\frac{Y^2}{4(1-\bar s)^2}.
+\end{aligned}
+$$
+
+Taking expectations uses $\mathbb E[X^2]=\operatorname{Var}(\rho)$, $\mathbb E[Y^2]=\operatorname{Var}(s)$ and $\mathbb E[XY]=\operatorname{Cov}(\rho,s)$. The first-order mass approximations therefore give
 
 $$
 \begin{aligned}

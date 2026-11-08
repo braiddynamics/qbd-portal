@@ -262,17 +262,72 @@ At $t=\pi/(2g)$ this is $-iX_L$. The conserved charge acts as $-I_L$ and therefo
 
 **III. Arbitrary rotations**
 
-The independent phase pulse supplies $R_z(\alpha)=e^{-i\alpha Z_L/2}$. Conjugating the exchange pulse uses $R_z(\pi/2)X_LR_z(-\pi/2)=Y_L$, giving $R_y(\beta)=e^{-i\beta Y_L/2}$. The product is
+The independent phase pulse supplies $R_z(\alpha)=e^{-i\alpha Z_L/2}$. Conjugating the exchange pulse uses $R_z(\pi/2)X_LR_z(-\pi/2)=Y_L$, giving $R_y(\beta)=e^{-i\beta Y_L/2}$. With $c=\cos(\beta/2)$ and $s=\sin(\beta/2)$, the right two factors multiply to
 
 $$
-R_z(\alpha)R_y(\beta)R_z(\gamma)=
-\begin{pmatrix}
-e^{-i(\alpha+\gamma)/2}\cos(\beta/2)&-e^{-i(\alpha-\gamma)/2}\sin(\beta/2)\\
-e^{i(\alpha-\gamma)/2}\sin(\beta/2)&e^{i(\alpha+\gamma)/2}\cos(\beta/2)
+\begin{aligned}
+R_y(\beta)R_z(\gamma)
+&=\begin{pmatrix}c&-s\\s&c\end{pmatrix}
+  \begin{pmatrix}e^{-i\gamma/2}&0\\0&e^{i\gamma/2}\end{pmatrix}\\
+&=\begin{pmatrix}
+c e^{-i\gamma/2}&-s e^{i\gamma/2}\\
+s e^{-i\gamma/2}&c e^{i\gamma/2}
 \end{pmatrix}.
+\end{aligned}
 $$
 
-Write an arbitrary $SU(2)$ matrix as $\bigl(\begin{smallmatrix}a&b\\-\overline b&\overline a\end{smallmatrix}\bigr)$ with $|a|^2+|b|^2=1$. Choose $\beta\in[0,\pi]$ with $\cos(\beta/2)=|a|$ and $\sin(\beta/2)=|b|$, then solve $\alpha+\gamma=-2\arg a$ and $\alpha-\gamma=-2\arg(-b)$. If an entry is zero, its phase equation can be assigned arbitrarily. Substitution gives the target matrix. Each factor preserves the code, so the entire product has zero leakage.
+Left multiplication by $R_z(\alpha)$ gives
+
+$$
+\begin{aligned}
+R_z(\alpha)R_y(\beta)R_z(\gamma)
+&=\begin{pmatrix}e^{-i\alpha/2}&0\\0&e^{i\alpha/2}\end{pmatrix}
+  \begin{pmatrix}c e^{-i\gamma/2}&-s e^{i\gamma/2}\\
+                  s e^{-i\gamma/2}&c e^{i\gamma/2}\end{pmatrix}\\
+&=\begin{pmatrix}
+c e^{-i(\alpha+\gamma)/2}&-s e^{-i(\alpha-\gamma)/2}\\
+s e^{i(\alpha-\gamma)/2}&c e^{i(\alpha+\gamma)/2}
+\end{pmatrix}.
+\end{aligned}
+$$
+
+An arbitrary $SU(2)$ matrix has the form $\bigl(\begin{smallmatrix}a&b\\-\overline b&\overline a\end{smallmatrix}\bigr)$ with $|a|^2+|b|^2=1$. For $\beta=2\arccos|a|\in[0,\pi]$, one has
+
+$$
+c=|a|,\qquad s=\sqrt{1-|a|^2}=|b|.
+$$
+
+Define $\varphi=\arg a$ when $a\ne0$ and $\varphi=0$ when $a=0$. Define $\psi=\arg(-b)$ when $b\ne0$ and $\psi=0$ when $b=0$. Then $a=|a|e^{i\varphi}$ and $b=-|b|e^{i\psi}$, including the zero-entry cases. The phase equations and their solution are
+
+$$
+\alpha+\gamma=-2\varphi,\qquad
+\alpha-\gamma=-2\psi,\qquad
+\alpha=-\varphi-\psi,\qquad
+\gamma=-\varphi+\psi.
+$$
+
+Consequently,
+
+$$
+R_z(\alpha)R_y(\beta)R_z(\gamma)
+=\begin{pmatrix}
+|a|e^{i\varphi}&-|b|e^{i\psi}\\
+|b|e^{-i\psi}&|a|e^{-i\varphi}
+\end{pmatrix}
+=\begin{pmatrix}a&b\\-\overline b&\overline a\end{pmatrix}.
+$$
+
+Let $U_1,U_2,U_3$ denote the admitted physical pulses for $R_z(\alpha),R_y(\beta),R_z(\gamma)$, respectively. Code preservation gives $U_jP=P U_jP$ for $j=1,2,3$. Hence
+
+$$
+\begin{aligned}
+U_1 U_2 U_3 P
+&=U_1 U_2 P U_3 P
+=U_1 P U_2 P U_3 P\\
+&=P U_1 P U_2 P U_3 P,\\
+(I-P)U_1 U_2 U_3 P&=0 .
+\end{aligned}
+$$
 
 Q.E.D.
 
@@ -1788,10 +1843,36 @@ The later connection matrices appear to the left. Since $\mathrm d(U^\dagger U)/
 
 **II. A commuting calibration example**
 
-In the fundamental color model, take $A(s)=a(s)\operatorname{diag}(1,-1,0)$ along the path. These matrices commute, so with $\Theta=\int_0^1 a(s)\,\mathrm ds$ the transporter is
+In the fundamental color model, let $D=\operatorname{diag}(1,-1,0)$ and $A(s)=a(s)D$ along the path. For all $u,v$, $A(u)A(v)=a(u)a(v)D^2=A(v)A(u)$. Define
 
 $$
-U(1)=\operatorname{diag}(e^{i\Theta},e^{-i\Theta},1),\qquad
+\Theta(s)=\int_0^s a(u)\,\mathrm du,\qquad
+V(s)=\operatorname{diag}(e^{i\Theta(s)},e^{-i\Theta(s)},1).
+$$
+
+Since $\Theta(0)=0$, one has $V(0)=I$. Its derivative is
+
+$$
+\begin{aligned}
+\frac{\mathrm d V}{\mathrm ds}
+&=\operatorname{diag}\bigl(i a(s)e^{i\Theta(s)},-i a(s)e^{-i\Theta(s)},0\bigr)\\
+&=i a(s)D\,\operatorname{diag}(e^{i\Theta(s)},e^{-i\Theta(s)},1)
+=i A(s)V(s).
+\end{aligned}
+$$
+
+Thus $V$ satisfies the same transport equation and initial condition as $U$. Their product has derivative and initial value
+
+$$
+\frac{\mathrm d}{\mathrm ds}(V^\dagger U)
+=-iV^\dagger A(s)U+iV^\dagger A(s)U=0,\qquad
+V^\dagger(0)U(0)=I .
+$$
+
+Since $V(s)$ is unitary, $V^\dagger(s)U(s)=I$ yields $U(s)=V(s)$. With $\Theta=\Theta(1)$,
+
+$$
+U(1)=\exp(i\Theta D)=\operatorname{diag}(e^{i\Theta},e^{-i\Theta},1),\qquad
 \det U(1)=e^{i\Theta}e^{-i\Theta}=1.
 $$
 
@@ -2510,7 +2591,32 @@ $$
 
 **III. Both hexagons**
 
-Use the strict word convention, with straight reassociations suppressed. In a positive shuffle of two blocks, each elementary crossing swaps an adjacent pair $AB$ to $BA$, with the left-block strand over the right-block strand. A step removes one pair still in its original order. Two distinct available steps have disjoint supports, since two occurrences of $AB$ cannot overlap in one position. Thus they commute and lead to a common state after both steps. Induction on the number of remaining pairs shows that all complete shuffles give the same braid: if the first choices differ, use the common two-step state and apply the induction hypothesis after either first choice.
+Use the strict word convention, with straight reassociations suppressed. In a positive shuffle of two blocks, each elementary crossing swaps an adjacent pair $AB$ to $BA$, with the left-block strand over the right-block strand. For a strand order $w$, let $N(w)$ count pairs consisting of an $A$-strand still to the left of a $B$-strand. If $N(w)>0$, a pair of this kind with the smallest position separation is adjacent. An intervening $A$-strand would be closer to the right member, and an intervening $B$-strand would be closer to the left member. An adjacent swap changes the relative order of exactly those two strands, so for a step $w\to w'$,
+
+$$
+N(w')=N(w)-1 .
+$$
+
+It follows that every partial shuffle can be completed in $N(w)$ further steps from $w$. The induction assertion is that all complete shuffles from a fixed $w$ represent the same braid morphism. If $N(w)=0$, all $B$-strands already precede all $A$-strands, and the only shuffle is the empty word.
+
+Suppose the assertion holds for all orders with fewer than $n$ remaining pairs, and let $N(w)=n>0$. If two shuffles start with the same crossing, their tails agree as braids by the induction hypothesis at $n-1$. If their first crossings occupy positions $i,i+1$ and $j,j+1$, respectively, they cannot overlap, since an overlapped position would have to be both an $A$-strand and a $B$-strand. Thus $|i-j|\ge2$. Let $w_i$ and $w_j$ be the orders after the respective first steps, and $w_{ij}$ the order after both. The two routes have the same target and satisfy the distant braid relation (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />)
+
+$$
+\begin{aligned}
+w&\xrightarrow{\sigma_i}w_i\xrightarrow{\sigma_j}w_{ij},\\
+w&\xrightarrow{\sigma_j}w_j\xrightarrow{\sigma_i}w_{ij},\\
+\sigma_j\circ\sigma_i&=\sigma_i\circ\sigma_j,\qquad N(w_{ij})=n-2.
+\end{aligned}
+$$
+
+Let $h$ be a complete shuffle from $w_{ij}$. By the induction hypothesis at $w_i$, the tail after $\sigma_i$ equals $h\circ\sigma_j$ as a braid. At $w_j$, the tail after $\sigma_j$ equals $h\circ\sigma_i$. The original shuffles therefore agree by
+
+$$
+h\circ\sigma_j\circ\sigma_i
+=h\circ(\sigma_j\circ\sigma_i)
+=h\circ(\sigma_i\circ\sigma_j)
+=h\circ\sigma_i\circ\sigma_j .
+$$
 
 In $c_{A,B\otimes C}$, each strand of $A$ crosses once over each strand of $B$ and $C$, and the order within $BC$ is preserved. Exchanging with $B$ and then with $C$ is another shuffle of the same blocks. Likewise, $c_{A\otimes B,C}$ shuffles $AB$ past $C$, which can be done by crossing $B$ over $C$ and then $A$ over $C$. The typed equations are
 
@@ -2743,7 +2849,37 @@ $$
 =Z_i Z_j .
 $$
 
-For any nonempty support choose a target $j$ in it and use each other site once as a control. Repeating the conjugation adds a $Z$ on each control and leaves previously added factors unchanged. Conjugating locally then replaces the $Z$ factors with any of $X,Y,Z$. The closure therefore contains $\exp(-itP)$ for every nonidentity Pauli string $P$ and every real $t$.
+Let $\{j,i_1,\ldots,i_m\}$ be a nonempty support with distinct sites, and set $C_r=\operatorname{CNOT}_{i_r\to j}$ for $1\le r\le m$. Define $V_0=I$ and $V_r=C_r\cdots C_1$. The base case is $V_0Z_jV_0^\dagger=Z_j$. For $0\le r<m$, suppose $V_rZ_jV_r^\dagger=(\prod_{k=1}^r Z_{i_k})Z_j$. Every $i_k$ with $k\le r$ is outside the support of $C_{r+1}$, so
+
+$$
+\begin{aligned}
+V_{r+1}Z_jV_{r+1}^\dagger
+&=C_{r+1}\left(\prod_{k=1}^r Z_{i_k}\right)Z_jC_{r+1}^\dagger\\
+&=\left(\prod_{k=1}^r Z_{i_k}\right)C_{r+1}Z_jC_{r+1}^\dagger\\
+&=\left(\prod_{k=1}^r Z_{i_k}\right)Z_{i_{r+1}}Z_j
+=\left(\prod_{k=1}^{r+1}Z_{i_k}\right)Z_j .
+\end{aligned}
+$$
+
+For a local change of Pauli factor, $HZH^\dagger=X$. With $S=T^2=\operatorname{diag}(1,i)$,
+
+$$
+S H Z H^\dagger S^\dagger
+=S X S^\dagger
+=\begin{pmatrix}1&0\\0&i\end{pmatrix}
+ \begin{pmatrix}0&1\\1&0\end{pmatrix}
+ \begin{pmatrix}1&0\\0&-i\end{pmatrix}
+=\begin{pmatrix}0&-i\\i&0\end{pmatrix}=Y.
+$$
+
+For any Pauli string $P$ on the chosen support, let $L$ be the product of the corresponding local changes $H,SH,I$ for the factors $X,Y,Z$, respectively. Then $L V_m Z_j V_m^\dagger L^\dagger=P$, and the gate group closure contains
+
+$$
+L V_m e^{-i t Z_j}V_m^\dagger L^\dagger=e^{-i t P},
+\qquad t\in\mathbb R.
+$$
+
+Scalar phases of the conjugating gates cancel in this identity.
 
 **III. Density on the register**
 
@@ -2751,14 +2887,28 @@ The $4^n$ Pauli strings are orthogonal for the trace pairing since $\operatornam
 
 **IV. Transfer to admitted rewrites**
 
-Let $W$ be the encoding isometry and suppose $R_gW=e^{i\phi_g}Wg$ for each generator $g$ of **Gate Set Universality** <Ref id="10.8.8" label="§10.8.8" />. For a word $g_m\cdots g_1$, repeated substitution gives
+Let $W$ be the encoding isometry and suppose $R_gW=e^{i\phi_g}Wg$ for each generator $g$ of **Gate Set Universality** <Ref id="10.8.8" label="§10.8.8" />. For a word $g_m\cdots g_1$, define $G_r=g_r\cdots g_1$, $\mathcal R_r=R_{g_r}\cdots R_{g_1}$ and $\Phi_r=\sum_{k=1}^r\phi_{g_k}$ for $1\le r\le m$. The empty word has $G_0=I$, $\mathcal R_0=I$ and $\Phi_0=0$, hence $\mathcal R_0 W=W=e^{i\Phi_0}WG_0$. For $0\le r<m$, assume $\mathcal R_r W=e^{i\Phi_r}WG_r$. Then
 
 $$
-R_{g_m}\cdots R_{g_1}W
-=e^{i(\phi_{g_1}+\cdots+\phi_{g_m})}Wg_m\cdots g_1 .
+\begin{aligned}
+\mathcal R_{r+1}W
+&=R_{g_{r+1}}\mathcal R_r W
+=e^{i\Phi_r}R_{g_{r+1}}W G_r\\
+&=e^{i\Phi_r}e^{i\phi_{g_{r+1}}}Wg_{r+1}G_r
+=e^{i\Phi_{r+1}}WG_{r+1}.
+\end{aligned}
 $$
 
-Each step preserves the image of $W$, so the complete circuit reproduces the dense logical gate set up to global phase.
+Thus $\mathcal R_m W=e^{i\Phi_m}WG_m$. In particular, for the code projector $P_W=WW^\dagger$,
+
+$$
+(I-P_W)\mathcal R_m W
+=e^{i\Phi_m}(I-WW^\dagger)WG_m
+=e^{i\Phi_m}(W-W)G_m
+=0 .
+$$
+
+The complete circuit reproduces the dense logical gate set up to global phase.
 
 Q.E.D.
 
