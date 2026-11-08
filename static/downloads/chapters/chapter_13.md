@@ -973,7 +973,7 @@ $$
 $$
 
 **V. Calibration**
-The exact equality is established by the geometric factor $\mathcal{C}$ derived from the volume of the unit ball in the emergent Hausdorff **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> (denoted $d_H = 4$):
+The exact equality is established by the geometric factor $\mathcal{C}$ derived from the volume of the unit ball in the assumed four-dimensional geometric regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />):
 
 $$
 \kappa = \mathcal{C} \frac{\ell_0^2}{\xi}.
@@ -1815,7 +1815,7 @@ $$
 \sum_{e \in E} N_e \delta K_e = \sum_{(x,y) \in E} \delta d_{xy} \left( \sum_{(a,b)} \frac{f_{xy}^{*(a,b)}}{d_{ab}} - K_{xy} \right).
 $$
 
-In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
+In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
 
 $$
 \sum_{e \in E} N_e \delta K_e = \mathcal{O}(\ell_0^2 \|\delta d\|_\infty) \xrightarrow{\ell_0 \to 0} 0.
@@ -1868,7 +1868,7 @@ $$
 Since the continuum Einstein tensor satisfies $\nabla^\mu G_{\mu\nu} \equiv 0$ by the differential Bianchi identity, the deterministic error is strictly bounded by $\|E_{\text{geom}}\|_{\infty} \le C_1 \ell_0^2$.
 
 **III. Bounding the Statistical Residual**
-The statistical noise $\eta_{ab}$ from discrete update fluctuations concentrates around zero. By applying McDiarmid's inequality for correlated cluster networks via **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> and **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />, the maximum divergence fluctuation over $N_t$ nodes scales as:
+The statistical noise $\eta_{ab}$ from discrete update fluctuations concentrates around zero. Under the required bounded-difference concentration hypothesis for the clustered update law and the stated metric scaling (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />) (**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />), the maximum divergence fluctuation over $N_t$ nodes scales as:
 
 $$
 \|E_{\text{stat}}\|_{\infty} \le C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}.

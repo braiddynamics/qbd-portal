@@ -5258,8 +5258,8 @@ We resolve the origin of hadronic mass differentials by deriving Topological Mas
 
     where $C_{isolated}[\beta]$ is the sum of isolated quark crossing complexities, $N_{shared}$ is the shared boundary cycle count, and $\Delta m_{EM}$ is the electrostatic Coulomb self-energy.
 *   **Writhe Invariants:**
-    *   Up Quark ($u$): Writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$, total crossing writhe $W_{twist}(u) = +2$, electric charge $Q_u = +2/3$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
-    *   Down Quark ($d$): Writhe vector $\boldsymbol{w}_d = (0, 0, -1)$, total crossing writhe $W_{twist}(d) = -1$, electric charge $Q_d = -1/3$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
+    *   Up Quark ($u$): Writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$, total crossing writhe $W_{twist}(u) = +2$, electric charge $Q_u = +2/3$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
+    *   Down Quark ($d$): Writhe vector $\boldsymbol{w}_d = (0, 0, -1)$, total crossing writhe $W_{twist}(d) = -1$, electric charge $Q_d = -1/3$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
 *   **Geometric Isospin Sharing:** When two constituent quark strands possess parallel twist vectors in a composite knot, they share structural boundary cycles in the graph under local rewrite rule $\mathcal{R}_{merge}$, reducing their combined complexity cost. Antiparallel or orthogonal twists cannot share boundary edges ($N_{shared} = 0$), maintaining their full independent self-energy.
 
 ### 19.3.1.1 Commentary: Topological Mass Splitting {#19.3.1.1}
@@ -5283,7 +5283,7 @@ Given the conditions of **Topological Mass Defect**, **Electromagnetic Correctio
 ---
 
 *   **Topological Mass Defect:** The complexity differential $\Delta C = C_{udd} - C_{uud} = 4 - 1 = 3$ generates a positive topological mass gap $\Delta m_{top} = \kappa_{top} \cdot \Delta C = +2.0530\text{ MeV}$, where $\kappa_{top} = 0.6843\text{ MeV}$ is the energy scale calibration constant (**Topological Mass Splitting** <Ref id="19.3.1" label="§19.3.1" />).
-*   **Electromagnetic Correction:** Up-quark charge concentration in the proton generates electrostatic Coulomb self-repulsion, subtracting $\Delta m_{EM} = -0.7600\text{ MeV}$ (**Lepton Charge Solutions** <Ref id="7.3.5" label="§7.3.5" />).
+*   **Electromagnetic Correction:** Up-quark charge concentration in the proton generates electrostatic Coulomb self-repulsion, subtracting $\Delta m_{EM} = -0.7600\text{ MeV}$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
 *   **Observed Mass Difference:** The combined mass differential:
 
     $$
@@ -10975,7 +10975,7 @@ $$
 \mathcal{R}_*: H_1(G \setminus K, \mathbb{Z}) \xrightarrow{\cong} H_1(G \setminus K, \mathbb{Z})
 $$
 
-Reducing the strand index from $n=4$ to $n=3$ via strand dissolution requires mapping the boundary cycle basis from $\mathbb{Z}^4$ to $\mathbb{Z}^3$. Under **Tripartite Basis** <Ref id="8.2.1" label="§8.2.1" />, this reduction requires a boundary cycle collapse:
+Reducing the strand index from $n=4$ to $n=3$ via strand dissolution requires mapping the boundary cycle basis from $\mathbb{Z}^4$ to $\mathbb{Z}^3$. Under **Tripartite Basis** <Ref id="8.3.1" label="§8.3.1" />, this reduction requires a boundary cycle collapse:
 
 $$
 \Delta H_1 = \text{rank}(H_1(G \setminus K)) - \text{rank}(H_1(G \setminus K')) = 4 - 3 = 1
@@ -11049,7 +11049,7 @@ $$
 \hat{T}^a |\psi_4\rangle = \hat{P}_3 \hat{T}^a \hat{P}_3 |\psi_4\rangle = \hat{P}_3 \hat{T}^a (0) = 0
 $$
 
-Under the **Gauge Invariance Criterion** <Ref id="9.2.2" label="§9.2.2" />, the expectation value is:
+Under the **Gauge Invariance Criterion** <Ref id="9.2.4" label="§9.2.4" />, the expectation value is:
 
 $$
 \langle \psi_4 | \hat{T}^a | \psi_4 \rangle = \langle \psi_4 | 0 \rangle = 0

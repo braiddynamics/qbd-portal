@@ -45,7 +45,7 @@ $$
 
 where the components satisfy the following structural constraints:
 1.  **Stochastic Kernel:** The term $P_{uv} = A_{uv} / \deg(u)$ constitutes the row-stochastic transition matrix of the unbiased random walk on $G_t$, encoding the local connectivity structure.
-2.  **Dimensional Calibration:** The parameter $d=4$ corresponds to the emergent Hausdorff dimension fixed by the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
+2.  **Dimensional Calibration:** The four-dimensional calibration assumes ball growth with exponent $d=4$ (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
 3.  **Metric Scaling:** The coefficient $\ell_0^{-2}$ assigns the operator the physical dimensions of curvature ($[\text{Length}]^{-2}$), ensuring the spectral convergence $\lim_{t\to\infty} \sigma(\tilde{\mathcal{L}}_t) = \sigma(-\Delta_g)$ to the Laplace-Beltrami operator of the limit manifold $(M,g)$.
 
 ### 12.1.1.1 Commentary: Calibrating Diffusion {#12.1.1.1}
@@ -310,10 +310,10 @@ with $d=4$. This asymptotic behavior is enforced not merely by dimensional scali
 The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). we conclude that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
 
 **II. Volume Doubling (Ahlfors Regularity)**
-The **Ahlfors 4-Regularity** condition **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> imposes polynomial volume growth $V(x,r) \sim r^4$. This implies the Volume Doubling property with a scale-invariant constant $C_D = 2^4 = 16$:
+Assume two-sided growth $c_1r^4\le V(x,r)\le c_2r^4$ at both radii in the calibrated regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Dividing the upper bound at the doubled radius by the lower bound at radius $r$ gives the volume doubling constant $C_D=16c_2/c_1$.
 
 $$
-V(x, 2r) \leq C_D V(x, r) \quad \forall r > \ell_0.
+V(x,2r)\le 16(c_2/c_1)V(x,r).
 $$
 
 This condition prevents the measure from collapsing or expanding exponentially, ensuring the underlying space is dimensionally stable.
@@ -561,7 +561,7 @@ $$
 This establishes the precise asymptotic connection between discrete optimal transport curvature and the continuum Ricci curvature tensor.
 
 **IV. Action Sum Integral Convergence**
-We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and $d=4$ from **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />):
+We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and the assumed $d=4$ ball-growth regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />)):
 
 $$
 \mathcal{S}[G] = \sum_{e \in E} K(e) \xrightarrow{\ell_0 \to 0} \frac{1}{2(d+2) \ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x.
@@ -708,7 +708,7 @@ The Tensorial Averaging Map performs this transition by exploiting **Directional
 :::info[**Convergence of Constructed Tensor Fields to Smooth Symmetric Tensors driven by the Weak Convergence of Local Averaging Maps**]
 :::
 
-Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Ahlfors 4-Regularity** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
+Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Conditional Ball Growth** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
 
 ### 12.2.2.1 Commentary: Argument Outline {#12.2.2.1}
 
@@ -1213,7 +1213,7 @@ This structure constitutes the **Causal Wedge**, strictly bounding the instantan
 :::info[**Physical Interpretation of the Cone Construction**]
 :::
 
-The **Emergent Light Cone** <Ref id="12.3.1" label="§12.3.1" /> defines the physical boundary of causality on the emergent manifold. As established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, event counting within causal diamonds converges to the spacetime volume $N(u,v) \to v_4 \tau^4$. This volume scaling anchors the aperture angle of the null boundary $\partial \mathcal{C}_x$, ensuring that the discrete causal relation converges to the continuous Lorentzian light cone structure.
+The **Emergent Light Cone** <Ref id="12.3.1" label="§12.3.1" /> defines the physical boundary of causality on the emergent manifold. The continuum comparison assumes a causal order and an interval-volume correspondence at small scales. Under an iid volume law, normalized interval counts estimate the prescribed diamond volumes (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />). In a Lorentzian reconstruction, the local volume scaling and order must be shown to match the proposed light cone.
 
 In the previous section, we treated edges as undirected struts to build a "stiffness" tensor, asking how the graph resists stretching. Here, we acknowledge that edges are arrows pointing from cause to effect. When we project these arrows into the tangent space, they do not fill the sphere uniformly. Instead, they cluster tightly around a specific axis defined by the progression of the graph's logical clock.
 
@@ -1270,7 +1270,7 @@ $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\boldsymbol{e}] \neq 0.
 $$
 
-The vector field $D^\mu$ is the **Causal Drift**. Grounded in the volume scaling of **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, it defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
+The vector field $D^\mu$ is the **Causal Drift**. Given the assumed continuum order and normalized-volume correspondence (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />), the proposed field defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
 
 **I. Directed Edge Projection**
 Let $\phi: G_t \to M$ be the spectral embedding. For a causal edge $e=(u,v)$, the logical depth satisfies $L(v) \geq L(u) + 1$. The tangent vector is defined as the limit of the secant:

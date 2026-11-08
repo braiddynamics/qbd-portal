@@ -108,7 +108,7 @@ Convergence of a sequence of measured metric spaces within the Gromov-Hausdorff-
 :::info[**Justification of the GHW Metric for Directed Causal Convergence via Measure Biasing**]
 :::
 
-The convergence of the discrete causal graph to a continuous Lorentzian spacetime is governed by a dual-limit architecture. Under this architecture, the spatial metric-measure spaces of individual spacelike slices converge under the Gromov-Hausdorff-Wasserstein (GHW) metric to establish the Riemannian geometry of space, whereas the temporal and causal structure of the bulk poset converges under the Causal Gromov-Hausdorff metric (as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />) to recover the pseudo-Riemannian signature and Lorentzian geometry of the spacetime bulk.
+The reconstruction program distinguishes two limits with different objects and different convergence requirements. A measure on each spatial slice supplies the spatial comparison, while a causal order and interval counts supply the bulk comparison. Spatial metric measure slices are studied under the metric compactness hypotheses (**Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />). The bulk causal order requires an additional convergence argument and volume correspondence (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
 
 The Gromov-Hausdorff-Wasserstein (GHW) metric establishes itself as the unique suitable choice for analyzing convergence of individual slices within the Quantum Braid Dynamics framework because it rigorously unifies the geometric and probabilistic aspects of the causal graph. The **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> quantifies the combined geometric similarity and measure-theoretic similarity between spaces, a dual sensitivity that is indispensable for QBD. While standard Gromov-Hausdorff convergence ensures that the discrete points of the graph geometrically fill out the shape of the manifold, it remains blind to the density and weighting of those points. By integrating the Wasserstein-1 distance (the "Earth Mover's Distance," which represents the minimal total cost required to relocate mass from one distribution to another) the GHW metric mandates that the distribution of causal probability mass must also converge.
 
@@ -147,7 +147,7 @@ This infinite distance would render the Wasserstein transport problem ill-posed.
 
 Crucially, this choice does not erase causality. As established in the subsequent sections, the "Lazy Causal Measure" reintroduces the arrow of time by weighting the transport problem asymmetrically. The undirected metric provides the "road network" (which allows two-way traffic for the sake of measuring distance), while the probability measure provides the "traffic flow" (which is strictly one-way). This separation of concerns allows us to utilize the robust machinery of Riemannian geometry (which assumes a symmetric metric) while modeling a Lorentzian spacetime (which possesses a directed causal structure). The undirected metric satisfies the triangle inequality and symmetry axioms required for the Wasserstein distance to function as a true metric on the space of probability distributions, providing a stable foundation for the derivation of the field equations.
 
-**Note on Uniformity:** The probability measure $\mu_t$ constructs itself as the uniform distribution over the vertex set $V_t$, assigning $\mu_t(x) = 1/|V_t|$ to each $x \in V_t$. This uniform construction justifies itself as the ensemble average at equilibrium: the statistical homogeneity of the graph, manifested through the exponential decay of correlations, combined with the Ahlfors regularity condition (which imposes uniform density bounds of the form $c_1 r^4 \le |B(r)| \le c_2 r^4$ on balls of radius $r$ as proven in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />), guarantees that the vertices distribute themselves evenly without forming clusters. This even distribution renders the uniform measure $\mu_t$ the canonical choice that reflects the **Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />.
+**Note on Uniformity:** The spatial reference law assigns equal mass to each vertex. This choice fixes the reference counting law without a uniformity conclusion about the dynamical ensemble. Two-sided ball growth is an additional premise controlling the mass of rescaled balls (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />).
 
 ### 11.1.2.2 Diagram: GHW Metric Components {#11.1.2.2}
 
@@ -185,7 +185,7 @@ THE GHW METRIC COMPONENTS
 :::note[**Causal Curvature**]
 :::
 
-The synthesis of the Gromov-Hausdorff-Wasserstein (GHW) convergence and the Causal Gromov-Hausdorff limit establishes a rigorous mathematical foundation for the continuum limit of Quantum Braid Dynamics. The spatial geometry of individual slices, bounded by strict locality and bounded degree, converges to Riemannian manifolds via the GHW metric, ensuring that the distribution of physical information matches the spatial volume measure. Concurrently, the bulk poset converges under the causal diamond metric, recovering the Lorentzian metric signature and proper time intervals as derived in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
+The spatial comparison uses metric measure convergence under its stated assumptions. The bulk comparison additionally needs convergence of causal order and identification of normalized interval volume. The iid estimate supplies a count result when its volume law is given (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
 
 This dual-limit framework guarantees that the discrete causal structure converges to a globally hyperbolic pseudo-Riemannian manifold, providing the necessary geometric background for the formulation of field equations. This is grounded in the **Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" /> and the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />. The structural consequences and smooth manifold reconstructions are further developed in Spectral Convergence and Smooth Manifold Limit.
 
@@ -323,7 +323,7 @@ The **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> of 
 * **$W_1 < 1$ (Positive Curvature):** As shown in high-connectivity configurations with shared neighbors $w$, a channel for zero-cost transport between $\mu_u$ and $\mu_v$ is established. The neighborhoods of $u$ and $v$ are "closer" than the nodes themselves, lowering $W_1$ and yielding $K > 0$ (spherical-like geometry).
 * **$W_1 > 1$ (Negative Curvature):** In tree-like or linear configurations with disjoint supports (e.g. mass at past neighbor $x$ having to travel to future neighbor $y$), mass must relocate over longer paths, yielding $W_1 > 1$ and non-positive $K \le 0$ (hyperbolic-like dispersion).
 
-As established in **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the uniform curvature bound $-2 \le K(u,v) \le 1$ ensures that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
+As established in **Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />, the uniform curvature bound $-2 \le K(u,v) \le 1$ ensures that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
 
 ### 11.2.2.2 Diagram: Transport Cost {#11.2.2.2}
 
@@ -878,7 +878,7 @@ Consider two adjacent vertices $u, v$ connected by a directed edge $(u, v)$. The
 The lazy causal measure $\mu_v$ allocates a strictly positive probability mass $\beta > 0$ to its past neighborhood $N^-(v)$.
 The lazy causal measure $\mu_u$ allocates a strictly positive probability mass $\beta > 0$ to its future neighborhood $N^+(u)$.
 Let $y \in N^+(u)$ be a future neighbor of $u$, and let $x \in N^-(v)$ be a past neighbor of $v$.
-A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. If the topology is tree-like (as in the sparse equilibrium limit **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />), the supports may be disjoint.
+A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. On a tree-like topology, the supports may be disjoint. Their support radii are measured in the underlying metric (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />).
 
 **III. Analysis of Acausal Transport Requirements**
 In the event that the optimal coupling $\pi$ assigns non-zero mass to a transition from a future-located vertex $y \in N^+(u)$ to a past-located vertex $x \in N^-(v)$, the cost function evaluates the directed distance $d_{\text{dir}}(y, x)$.
@@ -1328,7 +1328,7 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).
@@ -1865,7 +1865,7 @@ $$
 \frac{\beta}{n_{\text{max}} + 1} \le c \le 3(1 - K_{\text{min}}).
 $$
 
-Since $n_{\text{max}} < \infty$ by **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />, the constant $c > 0$ is strictly bounded away from zero.
+Under the stated uniform bound on $n_{\text{max}}$, the positive constant $c$ stays bounded away from zero.
 
 **IV. Conclusion**
 

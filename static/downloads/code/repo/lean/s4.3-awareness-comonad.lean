@@ -1,115 +1,112 @@
--- GraphState binds an abstract graph type with a generic nested annotation context
-structure GraphState (G A : Type) where
-  graph : G
-  annotation : A
-  deriving DecidableEq, Repr
+namespace QBD.Awareness
 
--- Counit (ε): Context Extraction - Projects out the historical annotation layer
-def ε {G A S : Type} (state : GraphState G (A × S)) : GraphState G A :=
-  ⟨state.graph, state.annotation.1⟩
+-- Fixed directed adjacency coordinates and global diagnostic fields.
+abbrev Graph (V : Type) := (V × V) → Bool
+abbrev Field (V : Type) := (V × V × V) → Fin 3 → Bool
 
--- Comultiplication (δ): Meta-Check - Duplicates the current observation layer for verification
-def δ {G A S : Type} (state : GraphState G (A × S)) : GraphState G ((A × S) × S) :=
-  ⟨state.graph, (state.annotation, state.annotation.2)⟩
+-- Pointwise addition in the binary diagnostic field.
+def add {V : Type} (a b : Field V) : Field V :=
+  fun p i => xor (a p i) (b p i)
 
--- Lifted operation applying an annotation map to the history sector of a state tuple
-def lift_history {G A B S : Type} (f : GraphState G A → GraphState G B) (state : GraphState G (A × S)) : GraphState G (B × S) :=
-  ⟨state.graph, ((f ⟨state.graph, state.annotation.1⟩).annotation, state.annotation.2)⟩
+-- Pair-product check bits at every ordered triple, including inactive sites.
+def observe {V : Type} (E : Graph V) : Field V :=
+  fun p i => match i.val with
+    | 0 => xor (E (p.1, p.2.1)) (E (p.2.1, p.2.2))
+    | 1 => xor (E (p.2.1, p.2.2)) (E (p.2.2, p.1))
+    | _ => xor (E (p.2.2, p.1)) (E (p.1, p.2.1))
 
-/--
-THEOREM 1: Left Identity
-Formally proves that duplicating an observation context for a meta-check 
-and immediately extracting the history yields the original state invariant.
--/
-theorem left_identity {G A S : Type} (Y : GraphState G (A × S)) :
-    ε (δ Y) = Y := by
-  rfl
+-- The edge symmetric difference connecting two graph snapshots.
+def edgeDifference {V : Type} (E F : Graph V) : Graph V :=
+  fun e => xor (E e) (F e)
 
-/--
-THEOREM 2: Right Identity
-Formally proves that duplicating an observation context and discarding 
-the inner history layer returns the original observation profile cleanly.
--/
-theorem right_identity {G A S : Type} (Y : GraphState G (A × S)) :
-    lift_history ε (δ Y) = Y := by
-  rfl
+/-- The local incidence displacement equals the difference of observations. -/
+theorem observation_difference {V : Type} (E F : Graph V) :
+    observe (edgeDifference E F) = add (observe E) (observe F) := by
+  funext p i
+  rcases p with ⟨v, w, u⟩
+  rcases i with ⟨i, hi⟩
+  match i with
+  | 0 => dsimp [observe, edgeDifference, add]; cases E (v,w) <;> cases E (w,u) <;> cases F (v,w) <;> cases F (w,u) <;> rfl
+  | 1 => dsimp [observe, edgeDifference, add]; cases E (w,u) <;> cases E (u,v) <;> cases F (w,u) <;> cases F (u,v) <;> rfl
+  | 2 => dsimp [observe, edgeDifference, add]; cases E (u,v) <;> cases E (v,w) <;> cases F (u,v) <;> cases F (v,w) <;> rfl
+  | n+3 => omega
 
-/--
-THEOREM 3: Comonadic Associativity
-Formally proves that the hierarchy of self-diagnosis is completely stable: 
-building the stack of meta-checks from the bottom up or top down yields identical structures.
--/
-theorem comonad_associativity {G A S : Type} (Y : GraphState G (A × S)) :
-    δ (δ Y) = lift_history δ (δ Y) := by
-  rfl
+-- A graph transition transports every diagnostic field by its incidence shift.
+def transport {V : Type} (E F : Graph V) (b : Field V) : Field V :=
+  add b (add (observe E) (observe F))
 
--- A generic representation of boolean vectors (syndromes and incidence vectors)
-def BitVector (n : Nat) := Fin n → Bool
+/-- Identity graph transport fixes all field values. -/
+theorem transport_identity {V : Type} (E : Graph V) (b : Field V) :
+    transport E E b = b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> rfl
 
-def zero_vec (n : Nat) : BitVector n := fun _ => false
+/-- Consecutive transports equal the endpoint transport. -/
+theorem transport_composition {V : Type} (E F G : Graph V) (b : Field V) :
+    transport F G (transport E F b) = transport E G b := by
+  funext p i
+  dsimp [transport, add]
+  cases b p i <;> cases observe E p i <;> cases observe F p i <;> cases observe G p i <;> rfl
 
--- Bitwise XOR for the BitVector type representing Pauli frame shifts
-def xor_vec {n : Nat} (a b : BitVector n) : BitVector n :=
-  fun i => xor (a i) (b i)
+/-- Transport takes a faithful observation to the new faithful observation. -/
+theorem transport_observation {V : Type} (E F : Graph V) :
+    transport E F (observe E) = observe F := by
+  funext p i
+  dsimp [transport, add]
+  cases observe E p i <;> cases observe F p i <;> rfl
 
-theorem xor_vec_self {n : Nat} (a : BitVector n) :
-    xor_vec a a = zero_vec n := by
-  funext i
-  dsimp [xor_vec, zero_vec]
-  cases (a i) <;> rfl
+-- Fiber maps on product annotations over the fixed vertex universe.
+def lift {V A B : Type} (E F : Graph V) (k : A → B)
+    (x : A × Field V) : B × Field V :=
+  (k x.1, transport E F x.2)
 
-theorem xor_vec_zero {n : Nat} (a : BitVector n) :
-    xor_vec a (zero_vec n) = a := by
-  funext i
-  dsimp [xor_vec, zero_vec]
-  cases (a i) <;> rfl
+-- Counit projection and comultiplication duplication.
+def extract {A S : Type} (x : A × S) : A := x.1
+def duplicate {A S : Type} (x : A × S) : (A × S) × S := (x, x.2)
 
-theorem xor_vec_assoc {n : Nat} (a b c : BitVector n) :
-    xor_vec (xor_vec a b) c = xor_vec a (xor_vec b c) := by
-  funext i
-  dsimp [xor_vec]
-  cases (a i) <;> cases (b i) <;> cases (c i) <;> rfl
+/-- Identity annotation maps lift to identity product maps. -/
+theorem lift_identity {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E id x = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, id_eq, transport_identity]
 
-theorem xor_vec_comm {n : Nat} (a b : BitVector n) :
-    xor_vec a b = xor_vec b a := by
-  funext i
-  dsimp [xor_vec]
-  cases (a i) <;> cases (b i) <;> rfl
+/-- The graph-changing product lift preserves composition. -/
+theorem lift_composition {V A B C : Type} (E F G : Graph V)
+    (k : A → B) (l : B → C) (x : A × Field V) :
+    lift F G l (lift E F k x) = lift E G (l ∘ k) x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, Function.comp_apply, transport_composition]
 
-def shift_op {n : Nat} (u : BitVector n) (sigma : BitVector n) : BitVector n :=
-  xor_vec sigma u
+/-- Counit naturality includes changing graph snapshots. -/
+theorem extract_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    extract (lift E F k x) = k (extract x) := by rfl
 
-/--
-THEOREM 4: Morphism Uniqueness (Zero Gauge Freedom)
-Formally proves that the categorical syndrome update morphism k is uniquely determined
-by the physical incidence vector u_ΔE, leaving zero gauge freedom in the awareness layer.
--/
-theorem comonad_morphism_unique {n : Nat}
-    (k1 k2 : BitVector n → BitVector n) (u : BitVector n)
-    (h1 : ∀ s, k1 s = shift_op u s)
-    (h2 : ∀ s, k2 s = shift_op u s) :
-    k1 = k2 := by
-  funext s
-  rw [h1 s, h2 s]
+/-- Comultiplication naturality transports both copied context fields. -/
+theorem duplicate_natural {V A B : Type} (E F : Graph V)
+    (k : A → B) (x : A × Field V) :
+    duplicate (lift E F k x) =
+      lift E F (lift E F k) (duplicate x) := by rfl
 
-/--
-THEOREM 5: Reversible Involution of the Syndrome Shift
-Proves that applying the same physical rewrite twice returns the syndrome
-to its original diagnostic configuration without information loss: T_u(T_u(σ)) = σ.
--/
-theorem comonad_shift_involution {n : Nat}
-    (u : BitVector n) (sigma : BitVector n) :
-    shift_op u (shift_op u sigma) = sigma := by
-  dsimp [shift_op]
-  rw [xor_vec_assoc, xor_vec_self, xor_vec_zero]
+/-- First counit law. -/
+theorem counit_left {A S : Type} (x : A × S) : extract (duplicate x) = x := by rfl
 
-/--
-THEOREM 6: Composition Homomorphism
-Proves that sequential updates u1 followed by u2 on the syndrome layer
-compose homomorphically with the boolean XOR addition of the incidence vectors.
--/
-theorem comonad_shift_composition_homomorphism {n : Nat}
-    (u1 u2 : BitVector n) (sigma : BitVector n) :
-    shift_op u2 (shift_op u1 sigma) = shift_op (xor_vec u1 u2) sigma := by
-  dsimp [shift_op]
-  rw [xor_vec_assoc]
+/-- Second counit law, using identity base transport. -/
+theorem counit_right {V A : Type} (E : Graph V) (x : A × Field V) :
+    lift E E extract (duplicate x) = x := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, extract, duplicate, transport_identity]
+
+/-- Coassociativity duplicates the same observation field twice. -/
+theorem coassociative {V A : Type} (E : Graph V) (x : A × Field V) :
+    duplicate (duplicate x) = lift E E duplicate (duplicate x) := by
+  rcases x with ⟨a,b⟩
+  simp only [lift, duplicate, transport_identity]
+
+end QBD.Awareness
+
+#print axioms QBD.Awareness.observation_difference
+#print axioms QBD.Awareness.lift_composition
+#print axioms QBD.Awareness.duplicate_natural
+#print axioms QBD.Awareness.coassociative

@@ -112,7 +112,7 @@ Convergence of a sequence of measured metric spaces within the Gromov-Hausdorff-
 :::info[**Justification of the GHW Metric for Directed Causal Convergence via Measure Biasing**]
 :::
 
-The convergence of the discrete causal graph to a continuous Lorentzian spacetime is governed by a dual-limit architecture. Under this architecture, the spatial metric-measure spaces of individual spacelike slices converge under the Gromov-Hausdorff-Wasserstein (GHW) metric to establish the Riemannian geometry of space, whereas the temporal and causal structure of the bulk poset converges under the Causal Gromov-Hausdorff metric (as established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />) to recover the pseudo-Riemannian signature and Lorentzian geometry of the spacetime bulk.
+The reconstruction program distinguishes two limits with different objects and different convergence requirements. A measure on each spatial slice supplies the spatial comparison, while a causal order and interval counts supply the bulk comparison. Spatial metric measure slices are studied under the metric compactness hypotheses (**Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />). The bulk causal order requires an additional convergence argument and volume correspondence (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
 
 The Gromov-Hausdorff-Wasserstein (GHW) metric establishes itself as the unique suitable choice for analyzing convergence of individual slices within the Quantum Braid Dynamics framework because it rigorously unifies the geometric and probabilistic aspects of the causal graph. The **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> quantifies the combined geometric similarity and measure-theoretic similarity between spaces, a dual sensitivity that is indispensable for QBD. While standard Gromov-Hausdorff convergence ensures that the discrete points of the graph geometrically fill out the shape of the manifold, it remains blind to the density and weighting of those points. By integrating the Wasserstein-1 distance (the "Earth Mover's Distance," which represents the minimal total cost required to relocate mass from one distribution to another) the GHW metric mandates that the distribution of causal probability mass must also converge.
 
@@ -151,7 +151,7 @@ This infinite distance would render the Wasserstein transport problem ill-posed.
 
 Crucially, this choice does not erase causality. As established in the subsequent sections, the "Lazy Causal Measure" reintroduces the arrow of time by weighting the transport problem asymmetrically. The undirected metric provides the "road network" (which allows two-way traffic for the sake of measuring distance), while the probability measure provides the "traffic flow" (which is strictly one-way). This separation of concerns allows us to utilize the robust machinery of Riemannian geometry (which assumes a symmetric metric) while modeling a Lorentzian spacetime (which possesses a directed causal structure). The undirected metric satisfies the triangle inequality and symmetry axioms required for the Wasserstein distance to function as a true metric on the space of probability distributions, providing a stable foundation for the derivation of the field equations.
 
-**Note on Uniformity:** The probability measure $\mu_t$ constructs itself as the uniform distribution over the vertex set $V_t$, assigning $\mu_t(x) = 1/|V_t|$ to each $x \in V_t$. This uniform construction justifies itself as the ensemble average at equilibrium: the statistical homogeneity of the graph, manifested through the exponential decay of correlations, combined with the Ahlfors regularity condition (which imposes uniform density bounds of the form $c_1 r^4 \le |B(r)| \le c_2 r^4$ on balls of radius $r$ as proven in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />), guarantees that the vertices distribute themselves evenly without forming clusters. This even distribution renders the uniform measure $\mu_t$ the canonical choice that reflects the **Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />.
+**Note on Uniformity:** The spatial reference law assigns equal mass to each vertex. This choice fixes the reference counting law without a uniformity conclusion about the dynamical ensemble. Two-sided ball growth is an additional premise controlling the mass of rescaled balls (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />).
 
 ### 11.1.2.2 Diagram: GHW Metric Components {#11.1.2.2}
 
@@ -189,7 +189,7 @@ THE GHW METRIC COMPONENTS
 :::note[**Causal Curvature**]
 :::
 
-The synthesis of the Gromov-Hausdorff-Wasserstein (GHW) convergence and the Causal Gromov-Hausdorff limit establishes a rigorous mathematical foundation for the continuum limit of Quantum Braid Dynamics. The spatial geometry of individual slices, bounded by strict locality and bounded degree, converges to Riemannian manifolds via the GHW metric, ensuring that the distribution of physical information matches the spatial volume measure. Concurrently, the bulk poset converges under the causal diamond metric, recovering the Lorentzian metric signature and proper time intervals as derived in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />.
+The spatial comparison uses metric measure convergence under its stated assumptions. The bulk comparison additionally needs convergence of causal order and identification of normalized interval volume. The iid estimate supplies a count result when its volume law is given (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
 
 This dual-limit framework guarantees that the discrete causal structure converges to a globally hyperbolic pseudo-Riemannian manifold, providing the necessary geometric background for the formulation of field equations. This is grounded in the **Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" /> and the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" />. The structural consequences and smooth manifold reconstructions are further developed in Spectral Convergence and Smooth Manifold Limit.
 
@@ -327,7 +327,7 @@ The **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> of 
 * **$W_1 < 1$ (Positive Curvature):** As shown in high-connectivity configurations with shared neighbors $w$, a channel for zero-cost transport between $\mu_u$ and $\mu_v$ is established. The neighborhoods of $u$ and $v$ are "closer" than the nodes themselves, lowering $W_1$ and yielding $K > 0$ (spherical-like geometry).
 * **$W_1 > 1$ (Negative Curvature):** In tree-like or linear configurations with disjoint supports (e.g. mass at past neighbor $x$ having to travel to future neighbor $y$), mass must relocate over longer paths, yielding $W_1 > 1$ and non-positive $K \le 0$ (hyperbolic-like dispersion).
 
-As established in **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the uniform curvature bound $-2 \le K(u,v) \le 1$ ensures that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
+As established in **Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />, the uniform curvature bound $-2 \le K(u,v) \le 1$ ensures that the transport distance $W_1$ remains bounded across all local configurations, protecting the discrete action from singularities. The emergence of positive curvature (gravity) is driven by the nucleation of 3-cycles, which creates these shared neighbors and lowers $W_1$ below 1.
 
 ### 11.2.2.2 Diagram: Transport Cost {#11.2.2.2}
 
@@ -882,7 +882,7 @@ Consider two adjacent vertices $u, v$ connected by a directed edge $(u, v)$. The
 The lazy causal measure $\mu_v$ allocates a strictly positive probability mass $\beta > 0$ to its past neighborhood $N^-(v)$.
 The lazy causal measure $\mu_u$ allocates a strictly positive probability mass $\beta > 0$ to its future neighborhood $N^+(u)$.
 Let $y \in N^+(u)$ be a future neighbor of $u$, and let $x \in N^-(v)$ be a past neighbor of $v$.
-A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. If the topology is tree-like (as in the sparse equilibrium limit **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />), the supports may be disjoint.
+A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. On a tree-like topology, the supports may be disjoint. Their support radii are measured in the underlying metric (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />).
 
 **III. Analysis of Acausal Transport Requirements**
 In the event that the optimal coupling $\pi$ assigns non-zero mass to a transition from a future-located vertex $y \in N^+(u)$ to a past-located vertex $x \in N^-(v)$, the cost function evaluates the directed distance $d_{\text{dir}}(y, x)$.
@@ -1332,7 +1332,7 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
 
 $$
 \frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).
@@ -1869,7 +1869,7 @@ $$
 \frac{\beta}{n_{\text{max}} + 1} \le c \le 3(1 - K_{\text{min}}).
 $$
 
-Since $n_{\text{max}} < \infty$ by **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />, the constant $c > 0$ is strictly bounded away from zero.
+Under the stated uniform bound on $n_{\text{max}}$, the positive constant $c$ stays bounded away from zero.
 
 **IV. Conclusion**
 
@@ -2202,7 +2202,7 @@ $$
 
 where the components satisfy the following structural constraints:
 1.  **Stochastic Kernel:** The term $P_{uv} = A_{uv} / \deg(u)$ constitutes the row-stochastic transition matrix of the unbiased random walk on $G_t$, encoding the local connectivity structure.
-2.  **Dimensional Calibration:** The parameter $d=4$ corresponds to the emergent Hausdorff dimension fixed by the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />. The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
+2.  **Dimensional Calibration:** The four-dimensional calibration assumes ball growth with exponent $d=4$ (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
 3.  **Metric Scaling:** The coefficient $\ell_0^{-2}$ assigns the operator the physical dimensions of curvature ($[\text{Length}]^{-2}$), ensuring the spectral convergence $\lim_{t\to\infty} \sigma(\tilde{\mathcal{L}}_t) = \sigma(-\Delta_g)$ to the Laplace-Beltrami operator of the limit manifold $(M,g)$.
 
 ### 12.1.1.1 Commentary: Calibrating Diffusion {#12.1.1.1}
@@ -2467,10 +2467,10 @@ with $d=4$. This asymptotic behavior is enforced not merely by dimensional scali
 The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). we conclude that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
 
 **II. Volume Doubling (Ahlfors Regularity)**
-The **Ahlfors 4-Regularity** condition **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> imposes polynomial volume growth $V(x,r) \sim r^4$. This implies the Volume Doubling property with a scale-invariant constant $C_D = 2^4 = 16$:
+Assume two-sided growth $c_1r^4\le V(x,r)\le c_2r^4$ at both radii in the calibrated regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Dividing the upper bound at the doubled radius by the lower bound at radius $r$ gives the volume doubling constant $C_D=16c_2/c_1$.
 
 $$
-V(x, 2r) \leq C_D V(x, r) \quad \forall r > \ell_0.
+V(x,2r)\le 16(c_2/c_1)V(x,r).
 $$
 
 This condition prevents the measure from collapsing or expanding exponentially, ensuring the underlying space is dimensionally stable.
@@ -2718,7 +2718,7 @@ $$
 This establishes the precise asymptotic connection between discrete optimal transport curvature and the continuum Ricci curvature tensor.
 
 **IV. Action Sum Integral Convergence**
-We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and $d=4$ from **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />):
+We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and the assumed $d=4$ ball-growth regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />)):
 
 $$
 \mathcal{S}[G] = \sum_{e \in E} K(e) \xrightarrow{\ell_0 \to 0} \frac{1}{2(d+2) \ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x.
@@ -2865,7 +2865,7 @@ The Tensorial Averaging Map performs this transition by exploiting **Directional
 :::info[**Convergence of Constructed Tensor Fields to Smooth Symmetric Tensors driven by the Weak Convergence of Local Averaging Maps**]
 :::
 
-Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Ahlfors 4-Regularity** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
+Let $\{G_t\}_{t \in \mathbb{N}}$ be a sequence of causal graphs satisfying the **Conditional Ball Growth** and **Directional Richness** conditions. Let $\mathcal{S}^{(t)}: E_t \to \mathbb{R}$ be a sequence of discrete edge scalar fields that are uniformly bounded, such that $\sup_{e \in E_t} |\mathcal{S}^{(t)}_e| \leq C$ for all $t$, and whose local variance over mesoscopic balls $B(x, R_t)$ vanishes in the limit $t \to \infty$.
 
 ### 12.2.2.1 Commentary: Argument Outline {#12.2.2.1}
 
@@ -3370,7 +3370,7 @@ This structure constitutes the **Causal Wedge**, strictly bounding the instantan
 :::info[**Physical Interpretation of the Cone Construction**]
 :::
 
-The **Emergent Light Cone** <Ref id="12.3.1" label="§12.3.1" /> defines the physical boundary of causality on the emergent manifold. As established in **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, event counting within causal diamonds converges to the spacetime volume $N(u,v) \to v_4 \tau^4$. This volume scaling anchors the aperture angle of the null boundary $\partial \mathcal{C}_x$, ensuring that the discrete causal relation converges to the continuous Lorentzian light cone structure.
+The **Emergent Light Cone** <Ref id="12.3.1" label="§12.3.1" /> defines the physical boundary of causality on the emergent manifold. The continuum comparison assumes a causal order and an interval-volume correspondence at small scales. Under an iid volume law, normalized interval counts estimate the prescribed diamond volumes (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />). In a Lorentzian reconstruction, the local volume scaling and order must be shown to match the proposed light cone.
 
 In the previous section, we treated edges as undirected struts to build a "stiffness" tensor, asking how the graph resists stretching. Here, we acknowledge that edges are arrows pointing from cause to effect. When we project these arrows into the tangent space, they do not fill the sphere uniformly. Instead, they cluster tightly around a specific axis defined by the progression of the graph's logical clock.
 
@@ -3427,7 +3427,7 @@ $$
 D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\boldsymbol{e}] \neq 0.
 $$
 
-The vector field $D^\mu$ is the **Causal Drift**. Grounded in the volume scaling of **Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />, it defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
+The vector field $D^\mu$ is the **Causal Drift**. Given the assumed continuum order and normalized-volume correspondence (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />), the proposed field defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
 
 **I. Directed Edge Projection**
 Let $\phi: G_t \to M$ be the spectral embedding. For a causal edge $e=(u,v)$, the logical depth satisfies $L(v) \geq L(u) + 1$. The tangent vector is defined as the limit of the secant:
@@ -4686,7 +4686,7 @@ $$
 $$
 
 **V. Calibration**
-The exact equality is established by the geometric factor $\mathcal{C}$ derived from the volume of the unit ball in the emergent Hausdorff **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> (denoted $d_H = 4$):
+The exact equality is established by the geometric factor $\mathcal{C}$ derived from the volume of the unit ball in the assumed four-dimensional geometric regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />):
 
 $$
 \kappa = \mathcal{C} \frac{\ell_0^2}{\xi}.
@@ -5528,7 +5528,7 @@ $$
 \sum_{e \in E} N_e \delta K_e = \sum_{(x,y) \in E} \delta d_{xy} \left( \sum_{(a,b)} \frac{f_{xy}^{*(a,b)}}{d_{ab}} - K_{xy} \right).
 $$
 
-In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.4" label="§5.5.4" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
+In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
 
 $$
 \sum_{e \in E} N_e \delta K_e = \mathcal{O}(\ell_0^2 \|\delta d\|_\infty) \xrightarrow{\ell_0 \to 0} 0.
@@ -5581,7 +5581,7 @@ $$
 Since the continuum Einstein tensor satisfies $\nabla^\mu G_{\mu\nu} \equiv 0$ by the differential Bianchi identity, the deterministic error is strictly bounded by $\|E_{\text{geom}}\|_{\infty} \le C_1 \ell_0^2$.
 
 **III. Bounding the Statistical Residual**
-The statistical noise $\eta_{ab}$ from discrete update fluctuations concentrates around zero. By applying McDiarmid's inequality for correlated cluster networks via **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" /> and **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />, the maximum divergence fluctuation over $N_t$ nodes scales as:
+The statistical noise $\eta_{ab}$ from discrete update fluctuations concentrates around zero. Under the required bounded-difference concentration hypothesis for the clustered update law and the stated metric scaling (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />) (**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />), the maximum divergence fluctuation over $N_t$ nodes scales as:
 
 $$
 \|E_{\text{stat}}\|_{\infty} \le C_2 \frac{(\log N_t)^2}{\sqrt{N_t}}.
@@ -5932,7 +5932,7 @@ The operator $\mathcal{A}_R$ acts as a low-pass filter, suppressing the ultravio
 Let the value at vertex $v$ be $f_v = \mu_v + \eta_v$, where $\mu_v$ is the geometric signal and $\eta_v$ is a random variable representing "shot noise" with $\mathbb{E}[\eta_v] = 0$ and $\text{Var}(\eta_v) = \sigma^2$.
 
 **II. The Mollified Variance**
-Consider the value of the field at point $x$ after applying the averaging operator over a ball $B(x, R)$. By **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />, the number of vertices in the ball scales as $n_R \propto R^d / \ell_0^d$.
+Consider the value of the field at point $x$ after applying the averaging operator over a ball $B(x, R)$. Under the stated two-sided growth premise (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />), the number of vertices is comparable to $n_R \propto R^d / \ell_0^d$.
 The variance of the sum is:
 
 $$
@@ -6480,7 +6480,7 @@ In the Lorentzian manifold $M$, the causal relation $x \le y$ is defined by the 
 As established in **Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />, the local tangent vectors of graph edges converge to the interior of the future light cone defined by the metric $g_{\mu\nu}$. Consequently, the boundary of the discrete set $\partial I^+(u)$ (the "fastest" paths) converges uniformly to the boundary of the continuum set $\partial J^+(x)$ (the null cone) generated by null geodesics.
 
 **IV. The Malament-Hawking Theorem**
-Since the causal structure (the set of all valid paths) is preserved in the limit, and the volume measure is fixed by the graph density via **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />, the Malament-Hawking Theorem implies that the metric tensor $g_{\mu\nu}$ is uniquely determined up to a constant conformal factor. Thus, the discrete connectivity of the graph rigorously dictates the conformal geometry of the emergent spacetime.
+Assuming the causal structure survives the limit and the limiting volume measure has been identified (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />), the Malament-Hawking Theorem implies that the metric tensor $g_{\mu\nu}$ is uniquely determined up to a constant conformal factor. Thus, the discrete connectivity of the graph rigorously dictates the conformal geometry of the emergent spacetime.
 
 Q.E.D.
 
@@ -7877,11 +7877,11 @@ The proof proceeds by sequential deduction through the complete five-stage deriv
 ### Phase I: Substrate Foundation & Microstate Equilibrium (Chapter 5)
 - **Equilibrium Fixed Point**: The microscopic phase-space volume fixes the equilibrium 3-cycle area density to $\rho_3^* \approx 0.037$ per Planck area unit $\ell_0^2$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
 - **Non-Perturbative RG Stability**: Dynamic Renormalization Group (RG) analysis proves that the equilibrium density $\rho_3^*$ is a stable attractor fixed point ($\beta(\bar{\lambda}^*) = 0$) protected against parameter drift (**Vacuum Stability** <Ref id="5.4.2" label="§5.4.2" />).
-- **Statistical Self-Averaging**: Exponential correlation decay ensures that global density fluctuations vanish as $\text{Var}(\langle \rho_3 \rangle) \le C_2 / N_t$, yielding a deterministic macrostate (**Controlled Fluctuations** <Ref id="5.5.5.2" label="§5.5.5.2" />).
-- **Non-Local Cycle Suppression**: Long non-manifold cycles are exponentially suppressed $\mathbb{E}[C_k] \le N_t (D_{\max} p_{\max})^k$, guaranteeing a manifold-like topology (**Manifold Combinatorics** <Ref id="5.5.6" label="§5.5.6" />).
-- **Upper Critical Dimension & Holography**: RG Beta function analysis establishes $D=4$ as the unique upper critical dimension balancing boundary creation and bulk deletion, fixing the Bekenstein-Hawking holographic prefactor $\eta = 1/4$ (**Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />).
-- **Causal Diamond Volume Scaling**: Discrete causal diamond volumes $N(u,v)$ converge under Causal Gromov-Hausdorff topology to continuous spacetime volume elements, recovering the Lorentzian metric signature $(-+++)$ directly from poset ordering (**Lorentzian Gromov-Hausdorff Convergence** <Ref id="5.5.8" label="§5.5.8" />).
-- **Dual Metric Pre-Compactness**: Spacelike slices $\Sigma^3$ converge under spatial Gromov-Hausdorff distance while the 4D causal graph ensemble satisfies pre-compactness preconditions (**Geometric Well-Posedness** <Ref id="5.5.9" label="§5.5.9" />).
+- **Statistical Self-Averaging**: Exponential correlation decay ensures that global density fluctuations vanish as $\text{Var}(\langle \rho_3 \rangle) \le C_2 / N_t$, yielding a deterministic macrostate (**Controlled Fluctuations** <Ref id="5.5.7.2" label="§5.5.7.2" />).
+- **Non-Local Cycle Suppression**: Long non-manifold cycles are exponentially suppressed $\mathbb{E}[C_k] \le N_t (D_{\max} p_{\max})^k$, guaranteeing a manifold-like topology (**Long-Cycle Tail** <Ref id="5.5.8" label="§5.5.8" />).
+- **Conditional Dimension**: Two-sided fourth-power ball growth gives dimension four for a measured limit under the compactness hypotheses (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />).
+- **Causal Diamond Volume Scaling**: The iid count law controls normalized volume estimates in a prescribed geometry. Establishing the corresponding law and a Lorentzian limit for QBD remains a reconstruction question (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />).
+- **Dual Metric Pre-Compactness**: Spacelike slices $\Sigma^3$ converge under spatial Gromov-Hausdorff distance while the 4D causal graph ensemble satisfies pre-compactness preconditions (**Geometric Well-Posedness** <Ref id="5.5.11" label="§5.5.11" />).
 
 ### Phase II: Discrete Kinematics & Curvature Monotonicity (Chapter 11)
 - **Transport Measure Formulation**: Intrinsic distance via transport between lazy measures (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />).

@@ -1,42 +1,24 @@
 import networkx as nx
-import math
 
-def get_automorphism_count(G):
-    """Calculates the size of the automorphism group."""
-    matcher = nx.isomorphism.GraphMatcher(G, G)
-    try:
-        return len(list(matcher.isomorphisms_iter()))
-    except:
-        return 0
 
-# 1. Setup: Balanced Bethe Fragment (N=7)
-# Structure: Root(0) -> Level1{1,2,3} -> Level2{4,5,6}
-# Symmetries: Permutation of branches {1,4}, {2,5}, {3,6} => S3 Group
-G0 = nx.Graph()
-G0.add_edges_from([(0,1), (0,2), (0,3), (1,4), (2,5), (3,6)])
+def select(graph, priorities):
+    return {a for a in graph if all(priorities[a] > priorities[b] for b in graph[a])}
 
-print(f"{'State':<20} | {'|Aut|':<10} | {'Symmetry Status'}")
-print("-" * 65)
 
-aut_0 = get_automorphism_count(G0)
-print(f"{'Initial Vacuum':<20} | {aut_0:<10} | Perfect Symmetry (S3)")
+conflicts = nx.Graph([(0, 1), (1, 2)])
+weights = {0: 2, 1: 1, 2: 3}
+selected = select(conflicts, weights)
+assert selected == {0, 2}
+assert all(not {a, b} <= selected for a, b in conflicts.edges)
+labels = {0: "right", 1: "middle", 2: "left"}
+relabeled = nx.relabel_nodes(conflicts, labels)
+relabeled_weights = {labels[a]: weight for a, weight in weights.items()}
+assert select(relabeled, relabeled_weights) == {labels[a] for a in selected}
 
-# 2. Define Compliant Sites (Chords between Level 1 siblings)
-# Potential edges: (1,2), (2,3), (1,3)
-sites = [(1,2), (2,3), (1,3)]
-
-# 3. Scenario A: Sequential Update (Random Choice)
-# Scheduler picks site (1,2) arbitrarily.
-G_seq = G0.copy()
-G_seq.add_edge(*sites[0])
-aut_seq = get_automorphism_count(G_seq)
-status_seq = "BROKEN" if aut_seq < aut_0 else "PRESERVED"
-print(f"{'Sequential Update':<20} | {aut_seq:<10} | {status_seq} (Distinguishes Branch 3)")
-
-# 4. Scenario B: Parallel Update (All Sites)
-# Scheduler executes all compliant updates simultaneously.
-G_par = G0.copy()
-G_par.add_edges_from(sites)
-aut_par = get_automorphism_count(G_par)
-status_par = "BROKEN" if aut_par < aut_0 else "PRESERVED"
-print(f"{'Parallel Update':<20} | {aut_par:<10} | {status_par} (Equivariant)")
+tie = nx.Graph([(0, 1)])
+selected_tie = select(tie, {0: 1, 1: 1})
+assert selected_tie == set()
+assert all(select(tie, {0: 1, 1: 1}) <= {a} for a in tie)
+print(f"Independent selection: {sorted(selected)}")
+print(f"Relabeled selection: {sorted(select(relabeled, relabeled_weights))}")
+print(f"Equal-priority pair: {len(selected_tie)} retained")

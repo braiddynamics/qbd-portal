@@ -83,24 +83,84 @@ Assume the rank of the Grand Unified Group, denoted $G_{GUT}$, is strictly bound
 :::tip[**Formal Derivation from Rank Inequality**]
 :::
 
-**I. Rank Definition**
-The rank of a Lie group $G$, denoted $r(G)$, corresponds to the dimension of its maximal torus (Cartan subalgebra $\mathfrak{h}$).  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" /> and  **Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" /> For a direct product group $G = \prod G_i$, the rank is the sum of the constituent ranks: $r(G) = \sum r(G_i)$.
+**I. Four Commuting Standard Model Directions**
 
-**II. Standard Model Rank**
-The Standard Model gauge group $G_{SM} = SU(3)_C \times SU(2)_L \times U(1)_Y$ possesses the following rank structure:
-1.  **Color:** $SU(3)_C$ has rank $r=2$ (two diagonal generators, e.g., $T_3, T_8$).
-2.  **Weak Isospin:** $SU(2)_L$ has rank $r=1$ (one diagonal generator, $T_3$).
-3.  **Hypercharge:** $U(1)_Y$ is abelian with rank $r=1$ (one generator, $Y$).
-
-**III. Embedding Inequality**
-The embedding condition $G_{SM} \subset G_{GUT}$ implies an injection of Lie algebras $\mathfrak{g}_{SM} \hookrightarrow \mathfrak{g}_{GUT}$. Specifically, the Cartan subalgebra $\mathfrak{h}_{SM}$ must be a subalgebra of $\mathfrak{h}_{GUT}$.
-Since the generators of $G_{SM}$ act on distinct quantum numbers (color, isospin, hypercharge), they are mutually commuting and linearly independent in the root space. Thus, the dimension of the commuting subalgebra in $G_{GUT}$ must be at least the sum of the ranks.
+At Lie-algebra level, let
 
 $$
-r(G_{GUT}) \geq r(SU(3)) + r(SU(2)) + r(U(1)) = 2 + 1 + 1 = 4
+\mathfrak g_{SM}=\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak u(1).
 $$
 
-Any simple Lie group with rank strictly less than 4 fails to contain the necessary conserved charges of the Standard Model.
+In the respective summands define
+
+$$
+\begin{gathered}
+C_1=i\operatorname{diag}(1,-1,0),\qquad
+C_2=i\operatorname{diag}(0,1,-1),\\
+L=i\operatorname{diag}(1,-1),\qquad Y=i,\\
+h_1=(C_1,0,0),\quad h_2=(C_2,0,0),\quad
+h_3=(0,L,0),\quad h_4=(0,0,Y).
+\end{gathered}
+$$
+
+These are skew-Hermitian directions in the compact gauge algebras of the embedding problem (**Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" />). Diagonal matrices commute, and the bracket in a direct sum is componentwise, so
+
+$$
+[h_j,h_k]=0\qquad(1\le j,k\le4).
+$$
+
+**II. Independence of the Four Directions**
+
+For real coefficients, the equation $\sum_{j=1}^4a_jh_j=0$ has components
+
+$$
+\begin{aligned}
+a_1C_1+a_2C_2
+ &=i\operatorname{diag}(a_1,-a_1+a_2,-a_2)=0,\\
+a_3L&=i\operatorname{diag}(a_3,-a_3)=0,\\
+a_4Y&=ia_4=0.
+\end{aligned}
+$$
+
+The first diagonal entry gives $a_1=0$, the third gives $a_2=0$, and the remaining components give $a_3=a_4=0$. Their real span $\mathfrak t_{SM}$ is therefore four-dimensional. Exponentiating its diagonal coordinates gives a compact torus, with two independent angles in $SU(3)$, one in $SU(2)$ and one in $U(1)$:
+
+$$
+\begin{aligned}
+\exp(a_1C_1+a_2C_2)
+ &=\operatorname{diag}(e^{ia_1},e^{i(-a_1+a_2)},e^{-ia_2}),\\
+\exp(a_3L)&=\operatorname{diag}(e^{ia_3},e^{-ia_3}),\qquad
+\exp(a_4Y)=e^{ia_4}.
+\end{aligned}
+$$
+
+**III. Transport Through an Embedding**
+
+Let $\phi:G_{SM}\hookrightarrow G_{GUT}$ be the stated embedding of compact gauge groups, with injective derivative $\mathrm d\phi$. If
+
+$$
+\sum_{j=1}^4a_j\mathrm d\phi(h_j)=0,
+$$
+
+then linearity and injectivity give
+
+$$
+\mathrm d\phi\left(\sum_j a_jh_j\right)=0
+\ \Longrightarrow\ \sum_ja_jh_j=0
+\ \Longrightarrow\ a_1=a_2=a_3=a_4=0.
+$$
+
+Also,
+
+$$
+[\mathrm d\phi(h_j),\mathrm d\phi(h_k)]
+=\mathrm d\phi([h_j,h_k])=\mathrm d\phi(0)=0.
+$$
+
+The image $\phi(T_{SM})$ is a four-dimensional torus. A maximal torus of the compact target containing it consequently has dimension at least four. The rank bound is (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />),
+
+$$
+\boxed{\operatorname{rank}G_{GUT}\ge\dim\phi(T_{SM})=2+1+1=4.}
+$$
 
 Q.E.D.
 
@@ -112,6 +172,8 @@ Q.E.D.
 As established in **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />, a hard, non-negotiable lower bound is placed on the complexity of the unifying gauge group. In Lie algebra theory, the "rank" of a group corresponds directly to the number of mutually commuting generators. In physics terms this translates to the number of quantum numbers that can be simultaneously conserved and measured. The Standard Model requires the conservation of four distinct charges: the two diagonal generators of color ($T_3, T_8$), the third component of weak isospin ($T_3$), and the hypercharge ($Y$). This implies that the "diagonal bandwidth" of the unification group must be at least 4.
 
 This constraint is not merely an algebraic technicality; it is a topological constraint on the connectivity of the underlying braid. If the group had a rank of 3 (like $SU(4)$), it would be geometrically impossible to distinguish a quark from a lepton while simultaneously maintaining color conservation; the "address space" of the particle would be too small to encode all necessary information. <Cite id="A.66" label="(Sachs, 1962)" /> systematically explored the properties of graph spectra related to Lie algebras, providing the mathematical groundwork for linking the discrete connectivity of graphs to the continuous symmetries of rank-constrained groups. His work illustrates that the dimensionality of the "hole structure" in the graph (the rank) dictates the complexity of the symmetries it can support. Consequently, the minimal simple group that satisfies this rank-4 condition is $SU(5)$. This provides a group-theoretical justification for the 5-ribbon braid model: fewer than 5 ribbons cannot generate enough diagonal operators to label the particles of the Standard Model.
+
+The rank comparison applies to the compact gauge-group embedding stated in the argument. A finite central quotient of the Standard Model product changes its global topology but not its Lie-algebra rank, so the same lower bound remains available at that level. Rank sufficiency is only a necessary condition: it does not identify a unique target group, produce a chiral matter representation or establish anomaly cancellation for any proposed physical spectrum.
 
 ---
 
@@ -127,29 +189,50 @@ For any simple Lie group with rank $r < 4$, the candidate is categorically exclu
 :::tip[**Verification of Failure Modes via Low-Rank Algebras**]
 :::
 
-The proof proceeds by exhaustive enumeration of the Cartan classification for ranks 1, 2, and 3.  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> and  **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />
+**I. Embedding Requirement**
 
-**I. Rank 1 ($A_1$)**
-* **Candidate:** $SU(2)$.
-* **Failure:** The rank $r=1$ violates the lower bound $r \ge 4$. Furthermore, the fundamental representation $\mathbf{2}$ is pseudoreal, preventing the definition of complex chiral representations required for the fermion spectrum.
+Let $G$ be a compact simple candidate with rank $r<4$. Suppose, for contradiction, that a Standard Model gauge embedding exists. Its derivative would inject the four-dimensional commuting torus algebra into the target (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />). Thus its image would satisfy
 
-**II. Rank 2 ($A_2, C_2/B_2, G_2$)**
-* **Candidates:** $SU(3)$, $Sp(4) \cong SO(5)$, $G_2$.
-* **Failure:** The rank $r=2$ violates the lower bound $r \ge 4$.
-    * $SU(3)$ cannot embed $SU(3) \times SU(2)$ ($2 < 3$).
-    * $Sp(4)$ and $G_2$ possess only real or pseudoreal representations, making them unsuitable for chiral gauge theories.
+$$
+\dim\mathrm d\phi(\mathfrak t_{SM})=\dim\mathfrak t_{SM}=4.
+$$
 
-**III. Rank 3 ($A_3, B_3, C_3$)**
-* **Candidate 1: $SU(4)$ ($A_3$).**
-    * **Rank:** $r=3$. This fails the condition $r \ge 4$. While $SU(4)$ contains $SU(3) \times U(1)$ (Pati-Salam color-lepton unification), it lacks the diagonal generator for the weak isospin $SU(2)_L$.
-* **Candidate 2: $SO(7)$ ($B_3$).**
-    * **Representation:** The spinor representation has dimension $2^3 = 8$. Decompositions under subgroups fail to yield 15 fermions.
-    * **Anomaly:** The anomaly coefficient $A(8) \neq 0$ implies a lack of cancellation without mirror fermions.
-* **Candidate 3: $Sp(6)$ ($C_3$).**
-    * **Representation:** Fundamental $\mathbf{6}$. No combination yields the required multiplets.
-    * **Rank:** $r=3$ violates the lower bound.
+**II. Rank Bound in the Target**
 
-**Conclusion:** The set of viable candidates is empty for $r < 4$.
+The image torus is contained in a maximal torus $T_G$. Inclusion of real tangent spaces implies
+
+$$
+\mathrm d\phi(\mathfrak t_{SM})\subseteq\operatorname{Lie}(T_G)
+\ \Longrightarrow\ 4\le\dim\operatorname{Lie}(T_G)
+=\operatorname{rank}G=r.
+$$
+
+Combining the inequalities gives
+
+$$
+4\le r<4,
+$$
+
+a contradiction. This applies to every $r<4$, without any representation-specific assumption (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />).
+
+**III. Low-Rank Cases and Empty Candidate Set**
+
+For the positive integer ranks of a nontrivial compact simple candidate, the possibilities are
+
+$$
+\begin{array}{c|c|c}
+r&\dim\operatorname{Lie}(T_G)&\text{required inequality}\\\hline
+1&1&4\le1\quad\text{false}\\
+2&2&4\le2\quad\text{false}\\
+3&3&4\le3\quad\text{false}
+\end{array}
+$$
+
+Consequently,
+
+$$
+\boxed{\{G:\operatorname{rank}G<4,\quad G_{SM}\hookrightarrow G\}=\varnothing.}
+$$
 
 Q.E.D.
 
@@ -164,157 +247,148 @@ The low-energy gauge group of the Standard Model, $G_{SM} = SU(3)_c \times SU(2)
 
 Consequently, any candidate Lie algebra with rank $r < 4$, such as $SU(2)$ ($r=1$), $SU(3)$ ($r=2$), or $SU(4)$, $Sp(6)$, and $SO(7)$ ($r=3$), is fundamentally incapable of accommodating the commuting charges of the Standard Model without discarding essential conservation laws. This rank floor establishes rank 4 as the strict mathematical minimum for unified field theories, dramatically narrowing the search space to simple groups capable of supporting four or more independent Cartan generators.
 
+Rank alone excludes all candidates below four, so no assertion about a particular spinor anomaly or a classification of all low-dimensional representations is needed for this exclusion. The argument does not exclude higher-rank unification groups, nor does it establish uniqueness among rank-four candidates. Those are separate representation-theoretic questions, with their own hypotheses about chirality, the allowed matter content and the meaning of minimality.
+
 ---
 
 ### 9.1.4 Lemma: Candidate Elimination {#9.1.4}
 
-:::info[**Disproof through Alternative Groups based on Chiral Representation Failures**]
+:::info[**Rank-Four Candidate Elimination via Complex Irreducibility**]
 :::
 
-Suppose every simple Lie group of rank $r=4$, excluding $SU(5)$, is rejected as a viable candidate for the Grand Unified Group. This rejection is established under **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> on the basis of representation reality, as symplectic, orthogonal, and exceptional algebras of rank 4 admit only real or pseudoreal representations.
+Assume the rank-four selection criterion requires a compact simple group with a complex irreducible representation inequivalent to its conjugate. Then $A_4$ is the only rank-four simple Lie type satisfying this criterion.
 
 ### 9.1.4.1 Proof: Candidate Elimination {#9.1.4.1}
 
-:::tip[**Demonstration of Spectrum Mismatch via Non-SU(5) Rank-4 Groups**]
+:::tip[**Self-Duality via the Longest Weyl Group Element**]
 :::
 
-The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.  **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" /> and  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />
+**I. Rank-Four Types and the Dual Weight**
 
-**I. Exclusion of $Sp(8)$ ($C_4$)**
-* **Structure:** Symplectic group of rank 4.
-* **Representations:** All representations of $Sp(2n)$ are real or pseudoreal.
-* **Chirality:** A theory based on $Sp(8)$ is necessarily vector-like. It cannot support chiral fermions (where $f_L$ transforms differently from $f_R$) without breaking the gauge symmetry explicitly or adding mirror fermions that do not decouple. This contradicts the observed chiral nature of the weak interaction.
+The rank constraint leaves $A_4,B_4,C_4,D_4,F_4$ (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />). For a compact group, a unitary representation has conjugate isomorphic to its dual. For the irreducible of highest weight $\lambda$, the lowest weight is $w_0\lambda$, with $w_0$ the longest Weyl group element. Negating the weights in the dual gives highest weight $-w_0\lambda$. Thus
 
-**II. Exclusion of $SO(9)$ ($B_4$)**
-* **Structure:** Orthogonal group in odd dimensions.
-* **Representations:** The spinor representation has dimension $2^4 = 16$.
-* **Chirality:** While the dimension 16 is suggestive (15 fermions + 1 right-handed neutrino), $SO(2n+1)$ groups possess only real (or pseudoreal) spinor representations. This leads to a Left-Right symmetric model that does not naturally produce the $V-A$ structure of the weak interaction without explicit symmetry breaking at the GUT scale to decouple the mirror sector. It is not minimal in the sense of the Standard Model chiral projection.
+$$
+w_0=-I\quad\Longrightarrow\quad -w_0\lambda=\lambda
+\quad\Longrightarrow\quad V_\lambda^*\cong V_\lambda.
+$$
 
-**III. Exclusion of $F_4$ (Exceptional)**
-* **Structure:** Exceptional group of rank 4.
-* **Representations:** The fundamental representation is $\mathbf{26}$.
-* **Vector Nature:** $F_4$ is a strictly real group; it has no complex representations. The anomaly coefficient $A(\mathbf{26}) = 0$ trivially because left and right sectors transform identically.
-* **Spectrum:** The decomposition $\mathbf{26} \to \mathbf{8} \oplus \mathbf{8} \oplus \dots$ under maximal subgroups does not align with the standard 15-fermion Weyl generation structure.
+**II. Reflections for the Four Alternatives**
 
-**Conclusion:** All rank-4 candidates except $A_4$ ($SU(5)$) are rejected due to the lack of complex representations necessary for chiral fermions.
+For $B_4,C_4,F_4$, the root systems in orthonormal coordinates contain roots parallel to each $e_i$. The associated reflections send $e_i$ to $-e_i$ and fix the other coordinates. Their product is $-I$. For $D_4$ the roots $e_i-e_j$ and $e_i+e_j$ yield reflections
+
+$$
+s_{e_i-e_j}(x_i,x_j)=(x_j,x_i),\qquad
+s_{e_i+e_j}(x_i,x_j)=(-x_j,-x_i).
+$$
+
+Their composition gives $(x_i,x_j)\mapsto(-x_i,-x_j)$. Taking the pairs $(1,2)$ and $(3,4)$ produces $-I$ in $W(D_4)$. In each of the four types this element sends every positive root to its negative and hence is $w_0$. All their irreducibles are self-conjugate. The vector representation of $\operatorname{Spin}(8)$ has dimension eight. In the exterior-algebra realization the even and odd parts on $\mathbb C^4$ give the half-spin dimensions
+
+$$
+\dim S^+=\binom40+\binom42+\binom44=1+6+1=8,\qquad
+\dim S^-=\binom41+\binom43=4+4=8.
+$$
+
+All three are self-conjugate by the same Weyl element calculation and therefore fail the complex-representation criterion (**Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />).
+
+**III. The $A_4$ Fundamental**
+
+For $SU(5)$ let $\zeta=e^{2\pi i/5}$. The central element $\zeta I$ acts on the fundamental by $\zeta$ and on its dual by $\zeta^{-1}$. An invertible intertwiner $T$ would satisfy $\zeta T=\zeta^{-1}T$, which would force $\zeta^2=1$. Since $\zeta$ has order five, the fundamental is inequivalent to its conjugate.
 
 Q.E.D.
 
 ### 9.1.4.2 Commentary: Candidate Elimination {#9.1.4.2}
 
-:::info[**Chirality as a Group Selection Constraint via Complex Representations**]
+:::info[**Complex Representations as a Rank-Four Selection Criterion**]
 :::
 
-Establishing rank 4 as the minimal algebraic bound narrows the candidate space of simple Lie groups to four primary families: the special unitary algebra $A_4 \cong SU(5)$, the symplectic algebra $C_4 \cong Sp(8)$, the odd-orthogonal algebra $B_4 \cong SO(9)$, and the exceptional algebra $F_4$. While all four candidate groups possess the requisite four Cartan generators, the requirement that the theory accommodate chiral fermions imposes a second, equally stringent selection criterion: the Lie algebra must admit complex representations.
+The selection rule concerns irreducible representations of compact groups. The rank-four list contains five simple Lie types. In the four eliminated cases the longest Weyl element acts by negation on the whole weight space, so dualization leaves every allowed highest weight unchanged. This covers both the real and pseudoreal possibilities, including the vector and spin representations in type $D_4$.
 
-In quantum gauge theories, a representation is complex if it is not equivalent to its complex conjugate. This algebraic distinction is physically vital because left-handed and right-handed fermions transform under different gauge representations within the weak interaction. Real or pseudoreal Lie algebras, such as $Sp(8)$, $SO(9)$, and $F_4$, force left-handed and right-handed sectors to transform identically, resulting in a strictly vector-like theory that cannot produce parity violation without introducing unobserved mirror fermions or explicit symmetry-breaking terms at high energy.
-
-The special unitary group $SU(5)$ stands out as the unique rank-4 simple Lie group that supports complex representations while naturally accommodating the 15 chiral Weyl fermions of a single Standard Model generation. By organizing matter into the anomaly-free reducible sum $\mathbf{\bar{5}} \oplus \mathbf{10}$, $SU(5)$ achieves chiral gauge invariance without auxiliary mirror states. Parity violation thus acts as a group-theoretic sieve, singling out $SU(5)$ as the unique minimal Grand Unified theory.
+For type $A_4$ the central action distinguishes the fundamental from its conjugate. That provides the required complex representation for the specified filter. Establishing a physical unification model further requires a matter assignment and a representation of microscopic dynamics. The filter isolates the rank-four candidate under that requirement (**Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />). [Highest weights and dual representations](https://ocw.mit.edu/courses/18-755-lie-groups-and-lie-algebras-ii-spring-2024/resources/lecture-notes/)
 
 ---
 
 ### 9.1.5 Proof: Minimal GUT Uniqueness {#9.1.5}
 
-:::tip[**Formal Verification of Representation Decomposition as Anomaly Cancellation**]
+:::tip[**Minimal Rank via Weyl Duality and Cubic Traces**]
 :::
 
-The proof synthesizes the embedding and representation analyses to establish $SU(5)$ as the unique solution and verifies its consistency with the Standard Model content.
+**I. Rank and the Block Embedding**
 
-**I. Rank and Embedding**
-$SU(5)$ has rank 4, satisfying the **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />. The embedding of $G_{SM}$ is realized by placing $SU(3)_C$ in the upper $3 \times 3$ block and $SU(2)_L$ in the lower $2 \times 2$ block of the $5 \times 5$ unitary matrices. The $U(1)_Y$ generator is identified with the traceless diagonal matrix commuting with both blocks:
+The Cartan subalgebra of the Standard Model Lie algebra has dimension $2+1+1=4$ (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />). An injective homomorphism sends it to a commuting subalgebra of the compact target Lie algebra, so the target rank is at least four (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />).
 
-$$
-Y = \sqrt{\frac{3}{5}} \operatorname{diag}\left(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)
-$$
-
-This generator is traceless ($\sum Y_{ii} = -1 + 1 = 0$) and orthogonal to the Cartan generators of $SU(3)$ and $SU(2)$.
-
-The normalization coefficient $C = \sqrt{3/5}$ is formally derived by demanding that the $U(1)_Y$ generator satisfies the same normalization condition as the non-abelian generators of $SU(5)$, namely $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$. Let $Y = C \operatorname{diag}(-1/3, -1/3, -1/3, 1/2, 1/2)$. Computing the trace of its square yields:
+The block map at rank four is
 
 $$
-\operatorname{Tr}(Y^2) = C^2 \left[ 3\left(-\frac{1}{3}\right)^2 + 2\left(\frac{1}{2}\right)^2 \right] = C^2 \left( \frac{1}{3} + \frac{1}{2} \right) = C^2 \frac{5}{6}
+(A,B,z)\longmapsto\operatorname{diag}(z^{-2}A,z^3B),
+\qquad
+\det(z^{-2}A)\det(z^3B)=z^{-6}z^6=1
 $$
 
-Setting this equal to $\frac{1}{2}$ to preserve the normalization of the Lie algebra generators:
+for $A\in SU(3)$, $B\in SU(2)$ and $z\in U(1)$. If the image is $I_5$, then $A=z^2 I_3$, $B=z^{-3}I_2$, and $z^6=1$. Conversely each such triple maps to the identity. For a block pair $(U,V)$ with $\det U\det V=1$, choose $z^6=(\det U)^{-1}$. Then $A=z^2U$ and $B=z^{-3}V$ both have determinant one and give the desired block pair. The image is $S(U(3)\times U(2))$ with kernel of order six. Its Lie algebra contains the required direct sum.
+
+**II. Rank-Four Candidate Elimination**
+
+The compact simple types of rank four are $A_4,B_4,C_4,D_4,F_4$. For an irreducible of highest weight $\lambda$ its dual has highest weight $-w_0\lambda$, with $w_0$ the longest Weyl element (**Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />). In $B_4,C_4,F_4$ the coordinate reflections multiply to $-I$. For $D_4=\mathfrak{so}(8)$, the reflections in $e_i-e_j$ and $e_i+e_j$ satisfy
 
 $$
-C^2 \frac{5}{6} = \frac{1}{2} \implies C^2 = \frac{3}{5} \implies C = \sqrt{\frac{3}{5}}
+(x_i,x_j)\xmapsto{s_{e_i-e_j}}(x_j,x_i)
+\xmapsto{s_{e_i+e_j}}(-x_i,-x_j).
 $$
 
-This establishes the canonical GUT normalization for the hypercharge generator, ensuring that the gauge coupling constants satisfy $g_1 = \sqrt{5/3} g'$ at the unification scale.
+The pairs $(1,2)$ and $(3,4)$ give $-I$, which sends every positive root to a negative root, so $w_0=-I$. Thus $-w_0\lambda=\lambda$ for all four alternatives. In particular the vector and both half-spin representations of $\operatorname{Spin}(8)$, each of dimension eight, are self-conjugate. For $A_4$, the central element $\zeta I_5$, $\zeta=e^{2\pi i/5}$, acts by $\zeta$ on the fundamental and by $\zeta^{-1}$ on the dual. These distinct central actions preclude an isomorphism.
 
-**II. Fermion Representation Decomposition**
-The 15 Weyl fermions of one generation fit exactly into the sum of the antifundamental ($\mathbf{\bar{5}}$) and the antisymmetric tensor ($\mathbf{10}$) representations, as constrained by **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />.
-1.  **$\mathbf{\bar{5}}$ Decomposition:**
-    The antifundamental representation transforms as $(\mathbf{1}, \mathbf{2}^*) \oplus (\mathbf{3}^*, \mathbf{1})$ under $SU(3) \times SU(2)$.
+**III. Fermion Branching**
 
-    $$
-    \mathbf{\bar{5}} \to (\mathbf{\bar{3}}, \mathbf{1})_{1/3} \oplus (\mathbf{1}, \mathbf{2})_{-1/2}
-    $$
-
-    Matches: Right-handed down quarks $d^c$ and Lepton doublet $L$.
-2.  **$\mathbf{10}$ Decomposition:**
-    The $\mathbf{10}$ is the antisymmetric part of $\mathbf{5} \times \mathbf{5}$.
-
-    $$
-    \mathbf{10} \to (\mathbf{3}, \mathbf{2})_{1/6} \oplus (\mathbf{\bar{3}}, \mathbf{1})_{-2/3} \oplus (\mathbf{1}, \mathbf{1})_{1}
-    $$
-
-    Matches: Quark doublet $Q$, Right-handed up quarks $u^c$, Right-handed electron $e^c$.
-    Sum of states: $5 + 10 = 15$. The mapping is bijective.
-
-**III. Anomaly Cancellation**
-The total anomaly of the gauge theory is the sum of the anomaly coefficients of the fermion representations, which isolates $SU(5)$ from candidates in **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />.
-For $SU(N)$:
-* $A(\mathbf{\bar{N}}) = -1$ (by definition relative to fundamental).
-* $A(\mathbf{\text{antisym}}) = N - 4$.
-For $N=5$:
+Set $Y=\operatorname{diag}(-1/3,-1/3,-1/3,1/2,1/2)$, so $\operatorname{Tr}Y=3(-1/3)+2(1/2)=0$. The dual negates these weights and conjugates the non-Abelian representations. In the exterior square, the two color weights sum to $-2/3$, the mixed weights to $1/6$, and the two weak weights to $1$. The determinant pairing gives $\wedge^2\mathbf{3}\cong\mathbf{\bar3}$ for $SU(3)$ and $\wedge^2\mathbf2\cong\mathbf1$ for $SU(2)$. Thus
 
 $$
-A(\mathbf{\bar{5}}) = -1
+\begin{aligned}
+\mathbf{\bar5}&\longmapsto(\mathbf{\bar3},\mathbf1)_{1/3}\oplus(\mathbf1,\mathbf2)_{-1/2},\\
+\mathbf{10}&\longmapsto(\mathbf{\bar3},\mathbf1)_{-2/3}\oplus(\mathbf3,\mathbf2)_{1/6}
+\oplus(\mathbf1,\mathbf1)_1.
+\end{aligned}
 $$
 
-$$
-A(\mathbf{10}) = 5 - 4 = +1
-$$
+These are the left-handed Weyl multiplets $d^c,L,u^c,Q,e^c$, with total dimension $3+2+3+6+1=15$.
 
-Total Anomaly:
+**IV. Perturbative Cubic Anomaly**
 
-$$
-\sum A = A(\mathbf{\bar{5}}) + A(\mathbf{10}) = -1 + 1 = 0
-$$
-
-The anomalies cancel exactly without the need for additional fermions.
-
-**IV. Hypercharge Generator Normalization and Unified Weinberg Angle**
-The embedding morphism $SU(3)_C \times SU(2)_L \times U(1)_Y \subset SU(5)$ determines the hypercharge generator $Y$ as the unique traceless diagonal matrix acting across the 5-strand basis:
+For a traceless Hermitian generator with fundamental eigenvalues $x_i$, the dual has eigenvalues $-x_i$, and the exterior square has eigenvalues $x_i+x_j$ for $i<j$. Therefore, in degree $n$,
 
 $$
-Y = \operatorname{diag}\left(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)
+\begin{aligned}
+\sum_{i<j}(x_i+x_j)^3
+&=(n-1)\sum_i x_i^3+3\sum_{i\ne j}x_i^2x_j\\
+&=(n-1)\sum_i x_i^3+3\sum_i x_i^2\left(-x_i\right)
+=(n-4)\sum_i x_i^3 .
+\end{aligned}
 $$
 
-The standard Grand Unified Lie algebra normalization requires $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$. Evaluating the trace of the hypercharge generator over the 5-strand Penta-Ribbon gives:
+At $n=5$, write $\mathcal A(X)=\operatorname{Tr}_{\bar 5}(X^3)+\operatorname{Tr}_{10}(X^3)$ for the combined representation, where $X$ denotes the represented Hermitian generator in each trace. The calculation gives $\mathcal A(X)=0$ for every $X$. For generators $X,Y_0,Z$, the coefficient of $abc$ in $\mathcal A(aX+bY_0+cZ)$ is
 
 $$
-\operatorname{Tr}(Y^2) = 3 \left(-\frac{1}{3}\right)^2 + 2 \left(\frac{1}{2}\right)^2 = \frac{3}{9} + \frac{2}{4} = \frac{1}{3} + \frac{1}{2} = \frac{5}{6}
+3\operatorname{Tr}_{\bar 5}\bigl(X(Y_0Z+ZY_0)\bigr)
++3\operatorname{Tr}_{10}\bigl(X(Y_0Z+ZY_0)\bigr)=0,
 $$
 
-The normalized $SU(5)$ hypercharge generator is $T_{24} = c Y$, where:
+Each of the two cyclic orders occurs three times, and the cubic polynomial vanishes identically. Dividing by three gives the vanishing symmetric cubic anomaly tensor.
+
+**V. Unified Normalization**
+
+The block traces of the $SU(3)$ and $SU(2)$ generators vanish, so both blocks are orthogonal to $Y$ in the trace pairing. Then
 
 $$
-\operatorname{Tr}(T_{24}^2) = c^2 \operatorname{Tr}(Y^2) = c^2 \left(\frac{5}{6}\right) = \frac{1}{2} \implies c^2 = \frac{3}{5} \implies c = \sqrt{\frac{3}{5}}
+\operatorname{Tr}(Y^2)=3/9+2/4=5/6,\qquad
+T_Y=\sqrt{3/5}\,Y,\qquad \operatorname{Tr}(T_Y^2)=1/2 .
 $$
 
-The physical hypercharge coupling $g'$ is related to the canonical unified coupling $g_1$ by $g' = \sqrt{3/5} g_1$. At the Grand Unification scale $M_{\text{GUT}} \approx 2 \times 10^{16}\text{ GeV}$, where all 24 gauge generators of the Penta-Ribbon are unified under the single coupling $g_5 = g_1 = g_2 = g_3$, the grand-unified electroweak mixing angle evaluates to:
+Matching $g_1T_Y=g'Y$ gives $(g')^2=(3/5)g_1^2$. At the common coupling boundary $g_1=g=g_U$,
 
 $$
-\sin^2 \theta_W(M_{\text{GUT}}) = \frac{g'^2}{g^2 + g'^2} = \frac{\frac{3}{5} g_5^2}{g_5^2 + \frac{3}{5} g_5^2} = \frac{3/5}{8/5} = \frac{3}{8} = 0.375
+\sin^2\theta_W=\frac{(3/5)g_U^2}{g_U^2+(3/5)g_U^2}=\frac38 .
 $$
 
-This elevates the isolated doublet rewrite baseline $\sin^2\theta_W^{(0)} = 0.25$ (**Topological Weinberg Angle** <Ref id="8.4.5" label="§8.4.5" />) to the fully embedded 5-strand Grand Unified boundary condition. Under standard 1-loop Renormalization Group running down to the electroweak scale $M_Z = 91.1876\text{ GeV}$, $\sin^2 \theta_W$ evolves logarithmically from $3/8$ to the physical value $\sin^2 \theta_W(M_Z) \approx 0.2312$.
-
-**Conclusion:**
-Since all groups with $r < 4$ are excluded (the **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />), and all other groups with $r=4$ fail the chirality condition (the **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />), and $SU(5)$ satisfies both embedding and anomaly constraints, $SU(5)$ is the unique minimal Grand Unified Theory group.
+This boundary calculation and the low-energy running benchmark use different premises (**Topological Weinberg Angle** <Ref id="8.5.5" label="§8.5.5" />). Among rank-minimal compact simple Lie types with the stipulated complex-representation criterion, the embedding and matter check therefore select $A_4$.
 
 Q.E.D.
 
@@ -417,7 +491,7 @@ If $SU(5)$ provides the algebraic language of unification, what is the physical 
 
 Relying on point-particle models forces theoretical physics to introduce separate quantum fields for each multiplet, cluttering the ontology with arbitrary distinct entities that happen to share interaction vertices. String theory offers a geometric unification but achieves it at the cost of introducing extra spatial dimensions and a "landscape" of $10^{500}$ possible vacua, effectively abandoning predictivity. A solution is sought in four dimensions that explains the specific multiplet structure, the antifundamental $\mathbf{\bar{5}}$ and the antisymmetric $\mathbf{10}$, as a necessary consequence of knot theory. Without a topological reason for these specific representations, the particle content of the universe remains a random selection drawn from an infinite menu of mathematical possibilities. A theory that cannot map the taxonomy of particles to the combinatorics of space itself fails to provide a satisfying unification.
 
-We introduce the **Penta-Ribbon Braid**, a five-strand composite structure whose local rewrite operations generate the $SU(5)$ algebra. We show that its "unlinked" ground state topologically corresponds to the $\mathbf{\bar{5}}$ multiplet (down quarks and leptons) while its "pairwise linked" excited state corresponds to the $\mathbf{10}$ multiplet (up quarks). This geometric duality derives the entire particle spectrum directly from the inevitable combinatorics of the braid.
+We introduce the **Penta-Ribbon Braid** and explicit candidate five-state encodings. Diagonal intertwining, preservation of the encoded sector and compatibility with the specified stabilizers are proved separately. Under the admitted-control hypothesis, four represented exchanges and four diagonal imbalances generate $\mathfrak{su}(5)$. The proposed multiplet interpretations retain additional physical representation assumptions, including the separate multi-particle equivariance problem.
 
 ---
 
@@ -426,14 +500,14 @@ We introduce the **Penta-Ribbon Braid**, a five-strand composite structure whose
 :::tip[**Structural Definition of the Five-Ribbon Braid as the Fundamental Object**]
 :::
 
-The **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\{R_1, R_2, R_3, R_4, R_5\}$, embedded within the four-dimensional causal graph $G_t$. The physical dynamics of this structure are governed exclusively by the set of four local rewrite rules $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, maintaining the global topological invariants of the Braid Group $B_5$ while encoding the 5-dimensional fundamental representation space of the unified gauge group.
+The **Penta-Ribbon Braid** is herein defined as the composite topological structure comprising exactly five interacting, framed world-tubes, denoted $\{R_1, R_2, R_3, R_4, R_5\}$, embedded within the four-dimensional causal graph $G_t$. The adjacent crossing structure is indexed by four local rewrite rules $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$, which correspond to the elementary crossing operations between adjacent ribbons. These operations are subject to the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, maintaining the global topological invariants of the Braid Group $B_5$ while the candidate five-state encoding and its physical control hypotheses are specified separately below.
 
 ### 9.2.1.1 Commentary: Penta-Ribbon Anatomy {#9.2.1.1}
 
 :::info[**Derivation of Matter Multiplets from Five-Strand Braid Topology**]
 :::
 
-The **Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" /> introduces the central topological protagonist of this chapter: the 5-strand braid. Rather than postulating quarks and leptons as separate entities, this model posits that a single composite object, a braid of five interacting world-tubes, is sufficient to encode all the fermions of a single generation. Each "strand" or ribbon in this cable corresponds to a specific component of the 5-dimensional fundamental vector space on which the $SU(5)$ group acts. The local rewrite rules $\{\mathcal{R}_1, \dots, \mathcal{R}_4\}$ act as the physical mechanisms that swap these ribbons, and these swaps physically generate the gauge forces we observe.
+The five-strand braid supplies the topological setting for the candidate represented sector (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />). The model proposes a common ribbon structure for the matter multiplets, but the five-coordinate representation and its physical interpretation require explicit encoding data. The four adjacency labels index neighboring exchange directions. The enlarged compact Lie algebra additionally requires the admitted diagonal imbalance controls; four symmetric exchanges alone have the smaller ten-dimensional closure.
 
 This approach resonates with the seminal work of <Cite id="A.81" label="(Witten, 1989)" />, who demonstrated how Chern-Simons theory on 3-manifolds (specifically the knot complement) generates the quantum invariants of knots. Witten effectively linked the topology of braids to the Hilbert spaces of quantum field theories. In QBD, this relationship is inverted: the "quantum field" is simply the local state of the graph, and the "knot invariants" (like crossing number and writhe) become the conserved quantum numbers of the particle (mass, charge, spin). By defining matter this way, the theory moves away from point particles to extended, relational structures. A "particle" is no longer a dimensionless dot; it is a specific, stable braiding pattern of this 5-strand cable. Through the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, this cable is prevented from tangling into acausal knots (closed timelike curves), preserving the logical consistency of the particle's history.
 
@@ -453,7 +527,7 @@ THE PENTA-RIBBON BRAID (SU(5) Topology)
           \   \   \     /   /
            \   \   \   /   /
             \   \   \ /   /
-             X   X   X   X    <-- Full Braiding (24 Generators)
+             X   X   X   X    <-- Four adjacency labels
             / \ / \ / \ / \       (Color & Weak Mixed)
            /   \   \   \   \
           |     |   |   |   |
@@ -468,392 +542,2920 @@ THE PENTA-RIBBON BRAID (SU(5) Topology)
             X    |                 X
            / \   |                / \
           (SU(3) Braid)          (SU(2) Braid)
+
+      Represented closure: exchanges + diagonal imbalances
+      Dimension 24 requires the admitted-control hypotheses.
 ```
 
 ---
 
-### 9.2.2 Theorem: Topological Unification {#9.2.2}
+### 9.2.2 Definition: Candidate Ribbon Encoding {#9.2.2}
 
-:::info[**Isomorphism between Penta-Ribbon Braid Dynamics via the Unified Lie Algebra**]
+:::tip[**Candidate Ribbon Encoding as the Mathematical Data of the Encoded System**]
 :::
 
-Let the Lie algebra generated by the aggregate of physical rewrite processes acting upon the penta-ribbon braid be strictly isomorphic to the Special Unitary algebra of degree 5, $\mathfrak{su}(5)$. This isomorphism is constructively established by the bijective mapping between the four fundamental adjacent swap operators of the braid $\{\sigma_1, \sigma_2, \sigma_3, \sigma_4\}$ and the simple roots of the $\mathfrak{su}(5)$ algebra. Under this mapping, the closure of the operator algebra under the commutator bracket generates the complete 24-dimensional adjoint representation required for the unified gauge bosons.
+A **Candidate Ribbon Encoding** is one of the following two specified five-state encodings into the orthonormal computational graph basis of $\mathcal H_G$. Analytic indices are $j,r=1,\ldots,5$; the calculation blocks use the equivalent zero-based labels. Graph routing, vertices and all non-active edge data are fixed by the selected scaffold.
 
-### 9.2.2.1 Commentary: Argument Outline {#9.2.2.1}
+In the **occupation encoding**, the 35 vertices are labeled $(r,t)$ with $r=1,\ldots,5$ and $t=0,\ldots,6$. The active bit $a_r$ records the edge $(r,6)\to(r,4)$; all other graph data are part of the fixed patch background. The five selected configurations have
 
-:::tip[**Structure of the Braid Unification Argument via Braid Relations, Unified Lie Algebra, and Multiplet Verification**]
+$$
+a^{(j)}_r=\delta_{rj}.
+$$
+
+The occupation operator is $\widehat N_r|G_a\rangle=a_r|G_a\rangle$ on that register. In the **signed-rung encoding**, the 130 vertices are labeled $(r,u)$ with $u=0,\ldots,25$. Each module has eight active bits $w_{rm}$, giving forty across the five modules; they record the eight ordered edge pairs
+
+$$
+(0,2),(0,3),(1,2),(1,3),(2,4),(2,5),(3,4),(3,5),\qquad m=0,\ldots,7,
+$$
+
+with $r$ fixed at the two endpoints of each edge. The eight reference bits $b_m$ are the little-endian bits of $\mathtt{0x99}$, repeated in every module; write $s_{rm}=(-1)^{b_m}$. The five selected configurations and occupation operators are
+
+$$
+w^{(j)}_{rm}=b_m\mathbin{\oplus}\delta_{rj},\qquad
+\widehat N_r=\frac18\sum_{m=0}^7\frac{I-s_{rm}Z_{rm}}2,
+\qquad Z_{rm}|G_w\rangle=(-1)^{w_{rm}}|G_w\rangle.
+$$
+
+Here $\oplus$ denotes addition modulo two, not addition of integer writhe. Thus one entire module is complemented relative to the fixed baseline. For either choice, denote its five selected graph kets by $|G_j\rangle$ and define
+
+$$
+W=\sum_{j=1}^5|G_j\rangle\langle j|,\qquad
+\mathcal H_5=\operatorname{im}W,\qquad P_5=WW^\dagger,
+\qquad \widehat Z_k=\widehat N_k-\widehat N_{k+1}\quad(1\le k<5).
+$$
+
+The word patterns are distinct, so orthogonality gives $W^\dagger W=I_5$. The candidate definition is restricted to these two data sets, not an arbitrary isometry with five chosen graph kets. It specifies finite encoded states and observables without identifying them as physical particles or admitting their Hamiltonian evolutions.
+
+### 9.2.2.1 Commentary: Finite Candidate Graph Families {#9.2.2.1}
+
+:::info[**Interpretation of Finite Candidate Graph Families in the Encoded Framework**]
 :::
 
-The proof proceeds via Direct Construction, constructing the special unitary group of degree five algebra and its fundamental representations from five-strand braid swaps.
+The candidate encoding distinguishes graph configurations before assigning matrix coordinates to their span. Orthogonality follows from their distinct computational edge words, and the isometry identifies those five kets with an ordered coordinate basis. The two audited constructions provide finite examples of this arrangement. The occupation patch gives a compact comparison register, while the signed-rung scaffold retains explicit routing and timestamp data for the selected ribbon configurations.
+
+A finite encoding is useful because its represented diagonal observables can be checked without assuming a particle interpretation. Distinct graph kets and an isometric coordinate map do not alone prove that a chosen microscopic dynamics preserves their span or that they form the physical fundamental representation. The following diagonal lemmas establish exact properties of the specified candidates. Physical admission of coherent exchange and imbalance controls remains a stated premise when the algebraic result is applied to an actual penta-ribbon sector.
+
+---
+
+### 9.2.3 Definition: Admitted Encoded Controls {#9.2.3}
+
+:::tip[**Admitted Encoded Controls as the Mathematical Data of the Encoded System**]
+:::
+
+The **Admitted Encoded Controls** hypothesis specifies a physical realization of an invariant five-state sector and coherent Hermitian exchange and module-imbalance generators $\widehat X_k,\widehat Z_k$, for $1\le k<5$. Their domains include the encoded sector and their represented actions satisfy
+
+$$
+\widehat X_kW=WX_k,\qquad \widehat Z_kW=WZ_k.
+$$
+
+The hypothesis includes physical access to the corresponding coherent evolutions with independently specified real control coefficients: the represented controlled Hamiltonian has the form
+
+$$
+W^\dagger\widehat H(u,v)W
+=\sum_{k=1}^4\bigl(u_kX_k+v_kZ_k\bigr),\qquad u_k,v_k\in\mathbb R,
+$$
+
+on the same invariant sector. For an infinite-dimensional ambient description, products used on this sector must be defined there; invariance ensures that successive factors remain within their stated domains. This is an explicit physical admission premise, not a consequence of real linear closure of abstract matrices. Defining or measuring a diagonal observable does not supply the premise. The candidate diagonal action is proved below, while physical sector identification and coherent exchange/control availability remain inputs.
+
+### 9.2.3.1 Commentary: Physical Admission Hypotheses {#9.2.3.1}
+
+:::info[**Interpretation of Physical Admission Hypotheses in the Encoded Framework**]
+:::
+
+The admission hypothesis states the physical information consumed by the representation argument. It specifies which coherent Hamiltonians are available and how they act on the selected sector. A diagonal graph observable may preserve every checked validity projector while still lacking an established physical interaction that implements its evolution. An exchange additionally changes graph occupation and therefore requires its own coherent invariant-sector realization. These are different control obligations and neither is supplied by a coordinate convention.
+
+The Chapter 8 architecture already treats exchanges and diagonal directions as the inputs to a compact matrix algebra. This hypothesis makes their five-state physical use explicit without importing an external ancilla or a continuum spin connection. Its conditional status does not weaken the matrix theorem, which is independently proved for its specified seed. It determines instead when that mathematical result describes the physical rewrite controls. The resulting correspondence can therefore be strengthened by future microscopic work without changing the already established finite closure calculation.
+
+---
+
+### 9.2.4 Theorem: Topological Unification {#9.2.4}
+
+:::info[**Penta-Ribbon Representation via Admitted Controls**]
+:::
+
+Assume the Admitted Encoded Controls hypothesis on the physical five-state sector. Then the represented real Lie algebra of the four adjacent exchanges and four diagonal module imbalances is equal to $\mathfrak{su}(5)$ and has real dimension 24. Four adjacency labels organize simple-root pairs, while physical multiplet interpretations retain their separately stated hypotheses.
+
+### 9.2.4.1 Commentary: Argument Outline {#9.2.4.1}
+
+:::tip[**Structure of the Topological Unification Argument via Declared Inputs and Supporting Lemmas**]
+:::
+
+The proof proceeds by construction, assembling the supporting results in their stated domains.
 
 ```text
-• 9.2.2 Theorem Topological Unification  [by construction]
+• 9.2.4 Theorem Topological Unification  [by construction]
 │
-├── 9.2.3 Lemma: Distant Commutativity
-│   ├── 9.2.3.1 Proof: Distant Commutativity
-│   └── 9.2.3.2 Commentary: Swap Independence
+├── 9.2.5 Lemma: Distant Commutativity
+│   ├── 9.2.5.1 Proof: Distant Commutativity
+│   └── 9.2.5.2 Commentary: Swap Independence
 │
-├── 9.2.4 Lemma: Yang-Baxter Relations
-│   ├── 9.2.4.1 Proof: Yang-Baxter Relations
-│   └── 9.2.4.2 Commentary: Crossing Logic
+├── 9.2.6 Lemma: Yang-Baxter Relations
+│   ├── 9.2.6.1 Proof: Yang-Baxter Relations
+│   └── 9.2.6.2 Commentary: Crossing Logic
 │
-├── 9.2.5 Lemma: Closed Lie Algebra
-│   ├── 9.2.5.1 Proof: Closed Lie Algebra
-│   ├── 9.2.5.2 Calculation: SU(5) Closure Simulation
-│   └── 9.2.5.3 Commentary: Closure of Unified Force
+├── 9.2.7 Lemma: Diagonal Encoded Action
+│   ├── 9.2.7.1 Proof: Diagonal Encoded Action
+│   ├── 9.2.7.2 Calculation: Diagonal Intertwining on Both Encodings
+│   └── 9.2.7.3 Commentary: Module Occupation Coordinates
 │
-├── 9.2.6 Lemma: Anti-Fundamental Multiplet
-│   ├── 9.2.6.1 Proof: Anti-Fundamental Multiplet
-│   ├── 9.2.6.2 Commentary: Anti-Matter Topology
-│   └── 9.2.6.3 Diagram: Unlinked Configuration
+├── 9.2.8 Lemma: Diagonal Sector Preservation
+│   ├── 9.2.8.1 Proof: Diagonal Sector Preservation
+│   ├── 9.2.8.2 Calculation: Zero Off-Code Action
+│   └── 9.2.8.3 Commentary: Exact Diagonal Invariance
 │
-├── 9.2.7 Lemma: Antisymmetric Multiplet
-│   ├── 9.2.7.1 Proof: Antisymmetric Multiplet
-│   └── 9.2.7.2 Commentary: Matter Topology
+├── 9.2.9 Lemma: Constraint Compatibility
+│   ├── 9.2.9.1 Proof: Constraint Compatibility
+│   ├── 9.2.9.2 Calculation: Signed Stabilizer Commutation
+│   └── 9.2.9.3 Commentary: Validity and Signed Checks
 │
-└── 9.2.8 Proof: Topological Unification
+├── 9.2.10 Lemma: Encoded Control Correspondence
+│   ├── 9.2.10.1 Proof: Encoded Control Correspondence
+│   ├── 9.2.10.2 Commentary: Conditional Physical Representation
+│   └── 9.2.10.3 Diagram: Encoding and Control Premises
+│
+├── 9.2.11 Lemma: Closed Lie Algebra
+│   ├── 9.2.11.1 Proof: Closed Lie Algebra
+│   ├── 9.2.11.2 Calculation: Exact SU(5) Closure
+│   ├── 9.2.11.3 Validation: Lean 4 and Mathlib
+│   └── 9.2.11.4 Commentary: Closure of Unified Force
+│
+├── 9.2.12 Lemma: Anti-Fundamental Multiplet
+│   ├── 9.2.12.1 Proof: Anti-Fundamental Multiplet
+│   ├── 9.2.12.2 Commentary: Anti-Matter Topology
+│   └── 9.2.12.3 Diagram: Unlinked Configuration
+│
+├── 9.2.13 Lemma: Antisymmetric Multiplet
+│   ├── 9.2.13.1 Proof: Antisymmetric Multiplet
+│   └── 9.2.13.2 Commentary: Matter Topology
+│
+└── 9.2.14 Proof: Topological Unification
 ```
 
 ---
 
-### 9.2.3 Lemma: Distant Commutativity {#9.2.3}
+### 9.2.5 Lemma: Distant Commutativity {#9.2.5}
 
-:::info[**Commutativity via Rewrite Operations on Disjoint Ribbon Pairs**]
+:::info[**Distant Commutativity via Disjoint Operator Supports**]
 :::
 
-Assume the physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the penta-ribbon braid satisfy the strict commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ if and only if $|i-j| \geq 2$. This commutation relation is physically enforced by the spatial disjointness of the interaction supports within the causal graph, ensuring that rewrite operations acting on non-adjacent ribbon pairs proceed independently within the causal order.
+Let $\sigma_i$ be the Artin generators of $B_{5}$, and let the distant represented rewrites act on independent tensor factors. Then distinct Artin generators commute exactly for $|i-j|\ge2$, their distant represented rewrites commute, and a commuting pair of one-parameter unitary groups on a finite-dimensional sector has commuting generators.
 
-### 9.2.3.1 Proof: Distant Commutativity {#9.2.3.1}
+### 9.2.5.1 Proof: Distant Commutativity {#9.2.5.1}
 
-:::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
+:::tip[**Artin Commutation via Strand Permutations and Differentiation**]
 :::
 
-The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical (**Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />) and the maximal parallel update (**Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />).
+**I. Artin Generators**
 
-**I. Spatial Decomposition**
-The rewrite process $\mathcal{R}_i$ operates on a local subgraph $G_i \subset G$ defined by the ribbons $i, i+1$ and their immediate neighbors.
-When $|i-j| \geq 2$, the ribbon pairs $(i, i+1)$ and $(j, j+1)$ are disjoint sets. The corresponding subgraphs $G_i$ and $G_j$ share no vertices or edges, satisfying $V(G_i) \cap V(G_j) = \emptyset$ and $E(G_i) \cap E(G_j) = \emptyset$.
-This spatial separation ensures independent causal histories; no edge in $G_i$ influences the timestamp $H(e)$ of any edge in $G_j$ within a single update tick.
-
-**II. PUC Compliance**
-For each process $\mathcal{R}_i$, the **Principle of Unique Causality (PUC)** requires a unique 2-path for closure.
-The spatial distance guarantees that no short path of length $\le 2$ connects $G_i$ and $G_j$. Thus, the set of potential precursors for $\mathcal{R}_i$ is unaffected by the action of $\mathcal{R}_j$.
-The combined operation $\mathcal{R}_{i \cup j} = \mathcal{R}_i \circ \mathcal{R}_j$ is a valid parallel update. The scheduler $\Phi$ executes both simultaneously without conflict, preserving global acyclicity.
-
-**III. Algebraic Tensor Structure**
-The operators act on distinct subsystems of the code space Hilbert space $\mathcal{H} = \mathcal{H}_i \otimes \mathcal{H}_j \otimes \mathcal{H}_{env}$.
-The commutator vanishes identically due to the tensor product structure:
+The Artin presentation gives $\sigma_i\sigma_j=\sigma_j\sigma_i$ for $|i-j|\ge2$ (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />). For adjacent indices, the strand permutation homomorphism sends $\sigma_i$ to $s_i=(i\ i+1)$. With composition from right to left,
 
 $$
-[\mathcal{R}_i, \mathcal{R}_j] = [\hat{O}_i \otimes I_j, I_i \otimes \hat{O}_j] = 0
+(s_i s_{i+1})(i)=i+1,\qquad
+(s_{i+1}s_i)(i)=i+2 .
 $$
 
-This implies $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$.
-Via the exponential map $\mathcal{R} = e^{-i H t}$, this commutativity extends to the generators: $[\hat{H}_i, \hat{H}_j] = 0$, satisfying the requirement for distant generators in the Lie algebra.
+Thus the adjacent words differ already in their strand permutations, so they differ in the braid group. For equal indices the commutator of an operator with itself is zero.
+
+**II. Operators on Independent Supports**
+
+For a distant pair, the assumed factorization gives $\mathcal R_i=A\otimes I$ and $\mathcal R_j=I\otimes B$ on the relevant factors (**Distant Commutativity** <Ref id="9.2.5" label="§9.2.5" />). The tensor multiplication rule gives
+
+$$
+\mathcal R_i\mathcal R_j=(AI)\otimes(IB)=A\otimes B,\qquad
+\mathcal R_j\mathcal R_i=(IA)\otimes(BI)=A\otimes B .
+$$
+
+An operator representation can identify distinct braid words. For the converse on represented rewrites, an action retaining the strand permutations suffices because the calculation on $i$ then distinguishes the adjacent products.
+
+**III. Infinitesimal Commutators**
+
+On a finite-dimensional sector, suppose $U_i(t)=e^{-itT_i}$ and $U_j(s)=e^{-isT_j}$ satisfy $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$. The mixed derivatives at the origin are
+
+$$
+\begin{aligned}
+\left.\partial_t\partial_s(U_i(t)U_j(s))\right|_{0,0}
+&=(-iT_i)(-iT_j)=-T_iT_j,\\
+\left.\partial_t\partial_s(U_j(s)U_i(t))\right|_{0,0}
+&=(-iT_j)(-iT_i)=-T_jT_i.
+\end{aligned}
+$$
+
+Their equality yields $[T_i,T_j]=0$.
 
 Q.E.D.
 
-### 9.2.3.2 Commentary: Swap Independence {#9.2.3.2}
+### 9.2.5.2 Commentary: Swap Independence {#9.2.5.2}
 
-:::info[**Decoupling of Force Sectors via Spatial Locality**]
+:::info[**Disjoint Braid Supports and the Operator Realization**]
 :::
 
-The **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> extends the principle of "Distant Commutativity" to the larger $B_5$ group. It asserts that an operation on ribbons 1 and 2 does not interfere with an operation on ribbons 4 and 5. This is the algebraic signature of locality.
+The distant Artin relation concerns crossings whose strand labels are disjoint. Its converse for distinct generators is a statement about the braid group, where endpoint permutations distinguish the two orders of adjacent crossings. In a representation, a converse uses information retained by the representation, such as the action on distinguishable strand labels.
 
-In a physical sense, this means that the different sectors of the unified force, the color force acting on quarks (ribbons 1-3) and the weak force acting on leptons (ribbons 4-5), can operate simultaneously and independently within the same multiplet, as long as they do not touch the same strand at the same time. This decoupling is crucial. It allows the unified theory to "break" into distinct forces at low energies, where the cross-talk between distant ribbons is suppressed. The algebra guarantees that the forces do not scramble each other's signals unless they explicitly collide on a shared ribbon.
+For physical rewrites, the tensor-factor calculation uses independence of the actual supports and their legality data. Separation of ribbon indices by itself supplies the strand-label test. The graph neighborhood and scheduler conditions supply the additional locality premise. Generator commutation concerns commuting continuous actions on the specified sector, while one pair of discrete update operators gives only a comparison of those updates. In the penta-ribbon construction, the first and fourth swaps are an example of the distant index pair.
 
 ---
 
-### 9.2.4 Lemma: Yang-Baxter Relations {#9.2.4}
+### 9.2.6 Lemma: Yang-Baxter Relations {#9.2.6}
 
-:::info[**Compliance of Penta-Ribbon Rewrite Sequences by Topological Isotopy**]
+:::info[**Extension of the braid relations via encoded spectator factors**]
 :::
 
-Suppose the sequence of adjacent rewrite operations acting on the penta-ribbon braid satisfies the **Yang-Baxter Equation**, formally expressed as $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$. This relation is physically enforced by the topological isotopy of the underlying graph transformations, which guarantees that the two distinct causal orderings of a three-strand permutation operation yield identical final connectivity states with respect to all global topological invariants.
+Let an invertible two-ribbon exchange $R$ on $K\otimes K$ satisfy the three-factor relation on $K^{\otimes3}$ and admit a coherent encoding of the resulting five-factor action. Then the four encoded adjacent exchanges satisfy the defining relations of $B_5$.
 
-### 9.2.4.1 Proof: Yang-Baxter Relations {#9.2.4.1}
+### 9.2.6.1 Proof: Yang-Baxter Relations {#9.2.6.1}
 
-:::tip[**Verification of Isotopic Equivalence via Adjacent Rewrite Sequences**]
+:::tip[**Derivation of the five-ribbon relations via tensor extension**]
 :::
 
-The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ for adjacent ribbons in the 5-strand braid group $B_5$.
+**I. Adjacent exchanges**
 
-**I. Topological Construction**
-The relation represents the "three-strand rule" (Reidemeister Type III move). For any triplet of adjacent ribbons $(i, i+1, i+2)$, the sequence represents a permutation of the strands.
-Both sequences $\Sigma_A = \mathcal{R}_i \circ \mathcal{R}_{i+1} \circ \mathcal{R}_i$ and $\Sigma_B = \mathcal{R}_{i+1} \circ \mathcal{R}_i \circ \mathcal{R}_{i+1}$ map the initial configuration $C_{init}$ to an identical final configuration $C_{final}$ up to ambient isotopy.
-The isotopy preserves all topological invariants, including the **Writhe** $w(\beta)$ and **Linking Matrix** $L_{ij}$ **Local Reducibility** <Ref id="6.1.1" label="§6.1.1" />.
+Use the local Yang-Baxter relation of **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" /> on the three active factors. In the five-factor model of **Yang-Baxter Relations** <Ref id="9.2.6" label="§9.2.6" />, set $S_i=I^{\otimes(i-1)}\otimes R\otimes I^{\otimes(4-i)}$ for $1\le i\le4$. For each $i=1,2,3$,
 
-**II. Causal Validity**
-The transformation respects the **Principle of Unique Causality**.
-In the graph representation, the "triangle slide" operation involves a sequence of edge additions and deletions.
-1.  **Deletion:** Removing an edge leaves a unique 2-path (no distant alternatives exist).
-2.  **Addition:** Adding the new crossing edge preserves acyclicity (timestamps $H(e)$ remain monotonic).
-The intermediate states in both $\Sigma_A$ and $\Sigma_B$ satisfy the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$, ensuring the move is a valid trajectory in the causal manifold.
+$$
+\begin{aligned}
+S_iS_{i+1}S_i
+&=I^{\otimes(i-1)}\otimes
+  \bigl((R\otimes I)(I\otimes R)(R\otimes I)\bigr)\otimes I^{\otimes(3-i)}\\
+&=I^{\otimes(i-1)}\otimes
+  \bigl((I\otimes R)(R\otimes I)(I\otimes R)\bigr)\otimes I^{\otimes(3-i)}
+=S_{i+1}S_iS_{i+1}.
+\end{aligned}
+$$
 
-**III. Invariant Preservation**
-The ambient isotopy preserves the link invariants of the braid closure. Specifically, the writhe $w(\beta)$ remains invariant under the Reidemeister Type III move, as the number of positive and negative crossings is conserved: $w(\Sigma_A) = w(\Sigma_B)$. Similarly, the linking matrix $L_{ij}$ mapping the pairwise crossings is identical, confirming that the physical states are topologically indistinguishable.
+For the corresponding positive braid words the three crossings are between the same strand pairs, in the orders $(i,i+1),(i,i+2),(i+1,i+2)$ and their reverse. Thus each of these pairs contributes $+1$ to its diagrammatic crossing sum on either side.
+
+**II. Distant exchanges**
+
+For $i<j-1$ the supports of $S_i$ and $S_j$ are distinct tensor factors. Using **Distant Commutativity** <Ref id="9.2.5" label="§9.2.5" />, direct multiplication gives
+
+$$
+S_iS_j
+=I^{\otimes(i-1)}\otimes R\otimes I^{\otimes(j-i-2)}
+ \otimes R\otimes I^{\otimes(4-j)}
+=S_jS_i .
+$$
+
+These are the pairs $(1,3),(1,4),(2,4)$. The inverses are obtained by replacing $R$ with $R^{-1}$.
+
+**III. Transport to the encoded sector**
+
+Let $U$ be the stipulated encoding with $\mathcal R_iU=US_i$ and with each $\mathcal R_i$ invertible on its image. For any word in these operators, repeated intertwining moves $U$ to the left of the entire word. In particular,
+
+$$
+\begin{aligned}
+(\mathcal R_i\mathcal R_{i+1}\mathcal R_i
+-\mathcal R_{i+1}\mathcal R_i\mathcal R_{i+1})U
+&=U(S_iS_{i+1}S_i-S_{i+1}S_iS_{i+1})=0,\\
+(\mathcal R_i\mathcal R_j-\mathcal R_j\mathcal R_i)U
+&=U(S_iS_j-S_jS_i)=0\qquad (|i-j|\ge2).
+\end{aligned}
+$$
+
+Hence the assignments $\sigma_i\mapsto\mathcal R_i|_{\operatorname{im} U}$ respect the defining relations of $B_5$.
 
 Q.E.D.
 
-### 9.2.4.2 Commentary: Crossing Logic {#9.2.4.2}
+### 9.2.6.2 Commentary: Crossing Logic {#9.2.6.2}
 
-:::info[**Invariance of Physical Outcomes under Interaction Sequence Permutations**]
+:::info[**Five-ribbon consistency via local exchange data**]
 :::
 
-The Yang-Baxter equation appears again here, this time enforcing consistency on the 5-strand braid. As demonstrated in **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />, the order in which adjacent crossings (e.g., strands 2, 3, and 4) are resolved does not change the physical outcome.
+The adjacent relation uses three active ribbon factors and leaves the other two unchanged. This is a statement about the five-ribbon braid action. The dimension of the tensor register is determined by the ribbon space $K$. Identifying a physical five-state matter sector inside a graph Hilbert space is a different representation question from extending the local three-factor relation.
 
-This topological invariance is vital for a Grand Unified Theory. It implies that the "micro-history" of how a proton was assembled from the GUT state doesn't matter; only the final topological configuration counts. Whether the color interaction happened before the weak interaction, or vice versa, the resulting particle is the same. This path-independence is what makes the fields behave like coherent quantum objects rather than chaotic, history-dependent messes. It confirms that the Penta-Ribbon model supports a consistent, unitary quantum field theory.
+The coherent intertwiner in **Yang-Baxter Relations** <Ref id="9.2.6" label="§9.2.6" /> requires the same encoded amplitudes on both words, including their relative phases. Equal writhe or equal final classical connectivity can check parts of that correspondence. Graph legality must still be certified on the intermediate states for the admitted words, and the relation applies only on the specified domain. An extension to additional states needs a corresponding common domain for their exchanges.
 
 ---
 
-### 9.2.5 Lemma: Closed Lie Algebra {#9.2.5}
+### 9.2.7 Lemma: Diagonal Encoded Action {#9.2.7}
 
-:::info[**Generation of the Full Basis from Fundamental Hamiltonians**]
+:::info[**Characterization of Diagonal Encoded Action via Explicit Hypotheses**]
 :::
 
-Given the four fundamental Hermitian Hamiltonians $\{\hat{H}_1, \hat{H}_2, \hat{H}_3, \hat{H}_4\}$, their recursive nested commutation generates the full 24-dimensional Lie algebra $\mathfrak{su}(5)$. This algebraic closure is characterized by the explicit generation of 20 off-diagonal operators and 4 diagonal Cartan subalgebra generators, confirming the absence of any further independent generators.
+For any Candidate Ribbon Encoding, the module occupation observables satisfy $\widehat N_r|G_j\rangle=\delta_{rj}|G_j\rangle$. The diagonal imbalance $\widehat Z_k=\widehat N_k-\widehat N_{k+1}$ therefore satisfies $\widehat Z_kW=WZ_k$.
 
-### 9.2.5.1 Proof: Closed Lie Algebra {#9.2.5.1}
+### 9.2.7.1 Proof: Diagonal Encoded Action {#9.2.7.1}
 
-:::tip[**Explicit Construction via Induction of the $\mathfrak{su}(5)$ Generators**]
+:::tip[**Construction of Diagonal Encoded Action via Explicit Identities**]
 :::
 
-The proof constructs the isomorphism between the physical rewrite algebra and $\mathfrak{su}(5)$ by identifying fundamental generators and inductively generating the complete basis.  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> and  **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />
+**I. Selected Words and Edge Eigenvalues**
 
-**I. Generator Identification**
-The four fundamental rewrite processes $\{\mathcal{R}_1, \mathcal{R}_2, \mathcal{R}_3, \mathcal{R}_4\}$ correspond to swaps of adjacent ribbons $(i, i+1)$.
-The Hermitian generators $\hat{H}_i$ are identified with the simplest traceless operators connecting basis states $|i\rangle$ and $|i+1\rangle$:
-* $\hat{H}_1 \propto \lambda^{(1,2)}$
-* $\hat{H}_2 \propto \lambda^{(2,3)}$
-* $\hat{H}_3 \propto \lambda^{(3,4)}$
-* $\hat{H}_4 \propto \lambda^{(4,5)}$
-Here, $\lambda^{(i,j)}$ are the $5 \times 5$ Gell-Mann matrices extended to $SU(5)$, with non-zero entries at $(i,j)$ and $(j,i)$. The normalization $\operatorname{Tr}(\hat{H}_i \hat{H}_j) = 2 \delta_{ij}$ fixes the proportionality constants.
-
-Verification that these generators satisfy the Cartan-Weyl commutation relations for $A_4 \cong \mathfrak{su}(5)$ is obtained directly. The Cartan matrix for $A_4$ is defined by:
+Let $r,j\in\{1,\ldots,5\}$ and $m\in\{0,\ldots,7\}$. The candidate words are (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />)
 
 $$
-A = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix}
+a_r^{(j)}=\delta_{rj},\qquad
+w_{rm}^{(j)}=b_m\oplus\delta_{rj},\qquad
+(b_0,\ldots,b_7)=(1,0,0,1,1,0,0,1).
 $$
 
-For any two adjacent generators $\hat{H}_i$ and $\hat{H}_j$ with $|i-j|=1$, their commutator forms the off-diagonal root operator $\hat{H}_{i,j}$, and their nested commutator satisfies the Serre relation:
+Define $s_{rm}=(-1)^{b_m}$, $T_{rm}=(I-s_{rm}Z_{rm})/2$ and
 
 $$
-[\hat{H}_i, [\hat{H}_i, \hat{H}_j]] = -A_{ij} \hat{H}_j = \hat{H}_j
+Z_{rm}|G_w\rangle=(-1)^{w_{rm}}|G_w\rangle,\qquad
+\widehat N_r=\tfrac18\sum_{m=0}^7T_{rm},\qquad
+\widehat Z_k=\widehat N_k-\widehat N_{k+1}
 $$
 
-For non-adjacent generators with $|i-j| \geq 2$, the disjoint supports ensure that they commute: $[\hat{H}_i, \hat{H}_j] = 0$. This isomorphic mapping confirms that the crossing relations match the root structure of the algebra.
+(**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />).
 
-**II. Inductive Basis Generation**
-The dimension of $\mathfrak{su}(5)$ is $5^2 - 1 = 24$.
-1.  **Base Case:** The 4 fundamental generators span the super-diagonal.
-2.  **Induction:** Commutators generate non-local connections.
-    * $[\hat{H}_i, \hat{H}_{i+1}]$ generates operators linking $(i, i+2)$ (e.g., $[\lambda^{(1,2)}, \lambda^{(2,3)}] \propto \lambda^{(1,3)}$).
-    * Further nesting $[\dots[\hat{H}_i, \hat{H}_{i+1}], \dots]$ extends the reach to $(i, i+k)$.
-3.  **Diagonal Generators:** Commutators of real and imaginary parts (from rung twists) $[\lambda_R^{(i,j)}, \lambda_I^{(i,j)}]$ generate the 4 diagonal Cartan elements.
+**II. Occupation Family**
 
-**III. Closure**
-The recursive commutation generates:
-* $\binom{5}{2} = 10$ Real off-diagonal generators.
-* $\binom{5}{2} = 10$ Imaginary off-diagonal generators.
-* $5-1 = 4$ Diagonal generators.
-Total $= 24$ linearly independent generators.
-The set closes under the Lie bracket, satisfying the Jacobi identity. Thus, the physical dynamics of the 5-ribbon braid generate the full $\mathfrak{su}(5)$ algebra.
+For the occupation word $a^{(j)}$,
+
+$$
+\begin{aligned}
+\widehat N_r|G_j\rangle
+&=a_r^{(j)}|G_j\rangle\\
+&=\begin{cases}|G_j\rangle,&r=j,\\0,&r\ne j,\end{cases}
+=\delta_{rj}|G_j\rangle.
+\end{aligned}
+$$
+
+Thus the five eigenvalue columns are
+
+$$
+\bigl(\widehat N_r|G_j\rangle\bigr)_{r,j=1}^5
+=\begin{pmatrix}
+|G_1\rangle&0&0&0&0\\
+0&|G_2\rangle&0&0&0\\
+0&0&|G_3\rangle&0&0\\
+0&0&0&|G_4\rangle&0\\
+0&0&0&0&|G_5\rangle
+\end{pmatrix}.
+$$
+
+**III. Signed-Rung Family**
+
+For any raw word $w$, define $t_{rm}(w)=\tfrac12(1-(-1)^{b_m+w_{rm}})$. Then
+
+$$
+\begin{aligned}
+T_{rm}|G_w\rangle
+&=\tfrac12\bigl(1-s_{rm}(-1)^{w_{rm}}\bigr)|G_w\rangle\\
+&=\tfrac12\bigl(1-(-1)^{b_m+w_{rm}}\bigr)|G_w\rangle
+=t_{rm}(w)|G_w\rangle\\
+&=\begin{cases}0,&w_{rm}=b_m,\\|G_w\rangle,&w_{rm}=1-b_m.\end{cases}
+\end{aligned}
+$$
+
+All eight positions evaluate as follows:
+
+$$
+\begin{array}{c|r r r r r r r r}
+m&0&1&2&3&4&5&6&7\\\hline
+b_m&1&0&0&1&1&0&0&1\\
+s_{rm}&-1&1&1&-1&-1&1&1&-1\\
+1-b_m&0&1&1&0&0&1&1&0\\
+t_{rm}(b)&0&0&0&0&0&0&0&0\\
+t_{rm}(1-b)&1&1&1&1&1&1&1&1
+\end{array}
+$$
+
+Substitution of $w_{rm}^{(j)}=b_m\oplus\delta_{rj}$ gives
+
+$$
+\begin{aligned}
+T_{rm}|G_j\rangle&=\delta_{rj}|G_j\rangle,\\
+\widehat N_r|G_j\rangle
+&=\tfrac18(\delta_{rj}+\delta_{rj}+\delta_{rj}+\delta_{rj}
++\delta_{rj}+\delta_{rj}+\delta_{rj}+\delta_{rj})|G_j\rangle\\
+&=\delta_{rj}|G_j\rangle.
+\end{aligned}
+$$
+
+**IV. Operator Intertwining**
+
+For either family, let $v=\sum_{j=1}^5v_j|j\rangle$ with $v_j\in\mathbb C$. Then
+
+$$
+\begin{aligned}
+\widehat Z_k W v
+&=(\widehat N_k-\widehat N_{k+1})\sum_jv_j|G_j\rangle\\
+&=\sum_jv_j\widehat N_k|G_j\rangle-\sum_jv_j\widehat N_{k+1}|G_j\rangle\\
+&=\sum_jv_j(\delta_{kj}-\delta_{k+1,j})|G_j\rangle,\\
+W Z_k v
+&=W(E_{kk}-E_{k+1,k+1})\sum_jv_j|j\rangle\\
+&=W\sum_jv_j(\delta_{kj}-\delta_{k+1,j})|j\rangle\\
+&=\sum_jv_j(\delta_{kj}-\delta_{k+1,j})|G_j\rangle.
+\end{aligned}
+$$
+
+$$
+\boxed{\widehat N_r|G_j\rangle=\delta_{rj}|G_j\rangle,\qquad
+\widehat Z_k W=W Z_k\quad(1\le k<5).}
+$$
 
 Q.E.D.
 
-### 9.2.5.2 Calculation: SU(5) Closure Simulation {#9.2.5.2}
+### 9.2.7.2 Calculation: Diagonal Intertwining on Both Encodings {#9.2.7.2}
 
-:::note[**Computational Verification of Basis Spanning via the 24-Dimensional Algebra**]
+:::note[**Verification of Diagonal Intertwining on Both Encodings via Exact Arithmetic**]
 :::
 
-Verification of the algebraic completeness established by **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" /> is based on the commutativity constraints verified in **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> is based on the following protocols:
+Verification of the relations established in the **Diagonal Encoded Action** <Ref id="9.2.7.1" label="§9.2.7.1" /> is based on the following protocols: The graph inputs are exactly the two defined candidate word families (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />).
 
-1.  **Generator Initialization:** The algorithm constructs the 8 fundamental generators corresponding to the real and imaginary components of the four adjacent ribbon swaps, normalized to $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$.
-2.  **Iterative Commutation:** The protocol computes nested commutators $[A, B]$ of existing elements, projecting the results onto the Hermitian traceless subspace and adding them to the basis if they increase the Singular Value Decomposition (SVD) rank.
-3.  **Diagnostic Validation:** The simulation tracks the dimensionality growth per iteration and calculates the Gram determinant and Killing form on a subsample to verify linear independence and semisimplicity.
+1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
+2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
+3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
 
 ```python
-import numpy as np
+from fractions import Fraction
+import networkx as nx
+from sympy import SparseMatrix, eye, zeros
 
-def E(n, i, j):
-    """Elementary matrix E_{ij} with 1 at (i,j), zeros elsewhere."""
-    mat = np.zeros((n, n), dtype=complex)
-    mat[i, j] = 1
-    return mat
 
-def verify_su5_closure_robustness(num_ensembles=500):
-    """
-    Robustness Verification of su(5) Algebra Closure
-    
-    Starts from 8 initial generators (4 adjacent pairs × real/imaginary).
-    Iteratively adds commutators if they increase linear span (SVD rank).
-    Confirms deterministic full closure (dim=24) across stochastic orders.
-    """
-    print("=" * 70)
-    print("COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE")
-    print("Robustness under Random Generator Discovery Order")
-    print("=" * 70)
+# Fixed candidate graph constructors. This checks diagonal action, not the
+# physical admission of a control or the probability of a preparation history.
+class RibbonPatch:
+    def background(self):
+        graph = nx.DiGraph()
+        graph.add_nodes_from(range(35))
+        graph.add_edges_from(((7*r+t, 7*r+t+1) for r in range(5)
+                              for t in range(6)), H=0)
+        graph.add_edges_from(((7*r, 7*(r+1)) for r in range(4)), H=0)
+        return graph
 
-    n = 5
-    elements = []
-    for i in range(n-1):
-        Eij = E(n, i, i+1)
-        Eji = E(n, i+1, i)
-        H_real = Eij + Eji
-        H_imag = -1j * (Eij - Eji)
-        elements.append(H_real)
-        elements.append(H_imag)
+    def graph(self, mask):
+        graph = self.background()
+        faces = [(r,t) for r in range(5) for t in range(4)]
+        faces += [(r,4) for r in range(5) if mask & (1 << r)]
+        for r,t in faces:
+            u,v = 7*r+t+2, 7*r+t
+            stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+            graph.add_edge(u,v,H=stamp)
+        return graph
 
-    print(f"Initial generators: {len(elements)} (4 adjacent pairs × 2)")
 
-    dimensions = []
-    for ens in range(1, num_ensembles + 1):
-        discovery_order = list(range(8))
-        np.random.shuffle(discovery_order)
+def sector_encoding():
+    return SparseMatrix(32, 5, {(1 << r,r): 1 for r in range(5)})
 
-        current_elements = elements[:]
-        current_flats = [el.flatten() for el in current_elements]
-        stacked = np.vstack(current_flats)
-        _, s, _ = np.linalg.svd(stacked)
-        dim = np.sum(s > 1e-8)
 
-        changed = True
-        while changed:
-            changed = False
-            new_elements = []
-            for a_idx in range(len(current_elements)):
-                for b_idx in range(a_idx + 1, len(current_elements)):
-                    A = current_elements[a_idx]
-                    B = current_elements[b_idx]
-                    comm = np.dot(A, B) - np.dot(B, A)
-                    if np.linalg.norm(comm) < 1e-10:
-                        continue
-                    comm_herm = 1j * comm
-                    if np.abs(np.trace(comm_herm)) > 1e-8:
-                        continue
-                    norm_sq = np.real(np.trace(comm_herm.conj().T @ comm_herm))
-                    if norm_sq > 1e-10:
-                        comm_norm = comm_herm * np.sqrt(2 / norm_sq)
-                        new_elements.append(comm_norm)
+def occupation(r):
+    return SparseMatrix(32,32,{(word,word): 1 for word in range(32) if word & (1 << r)})
 
-            for ne in new_elements:
-                flat_ne = ne.flatten()
-                temp_stacked = np.vstack([stacked, flat_ne])
-                _, s_temp, _ = np.linalg.svd(temp_stacked)
-                new_dim = np.sum(s_temp > 1e-8)
-                if new_dim > dim:
-                    dim = new_dim
-                    stacked = temp_stacked
-                    current_elements.append(ne)
-                    changed = True
 
-        dimensions.append(dim)
-        if ens <= 10 or ens % 100 == 0:
-            print(f"Ensemble {ens:3d} → Final dimension: {dim}")
+MODULE_SIZE = 26
+BASE_PATTERN = sum(0x99 << (8*r) for r in range(5))
 
-    avg_dim = np.mean(dimensions)
-    full_prob = np.mean(np.array(dimensions) == 24)
 
-    print("\n" + "-" * 70)
-    print(f"Ensembles simulated : {num_ensembles}")
-    print(f"Average final dim   : {avg_dim:.2f}")
-    print(f"Full closure prob   : {full_prob:.3f} ({full_prob*100:.1f}%)")
-    print("-" * 70)
+def encode_five_states(marked):
+    if marked not in range(5):
+        raise ValueError('Expected a ribbon in 0..4')
+    graph = nx.DiGraph()
+    graph.add_nodes_from(range(130))
+    paths = {0:(0,10,11), 1:(1,12,13),
+             2:(2,14,15,16,17,18,19), 3:(3,20,21,22,23,24,25)}
+    local = [(2,6),(6,7),(7,3),(6,0),(6,1),
+             (7,8),(8,4),(7,9),(9,5)]
+    local += [(a,b) for path in paths.values() for a,b in zip(path,path[1:])]
+    for r in range(5):
+        off = 26*r
+        graph.add_edges_from(((off+a,off+b) for a,b in local),H=0)
+        if r:
+            graph.add_edge(off-26+6,off+6,H=0)
+    def add(u,v):
+        stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+        graph.add_edge(u,v,H=stamp)
+    for r in range(5):
+        off = 26*r
+        for u,v in ((3,6),(7,2),(4,7),(5,7)):
+            add(off+u,off+v)
+        for port in (1,3):
+            path = paths[port]
+            for k in range(len(path)-1,1,-2):
+                add(off+path[k],off+path[k-2])
+        for inputs,outputs in (((0,1),(2,3)),((2,3),(4,5))):
+            targets = outputs[::-1] if r == marked else outputs
+            for u,v in zip(inputs,targets):
+                add(off+u,off+v)
+    return graph, ()
 
-    if full_prob == 1.0:
-        print("status: pass")
+def active_edges():
+    local = ((0, 2), (0, 3), (1, 2), (1, 3), (2, 4), (2, 5), (3, 4), (3, 5))
+    return tuple((MODULE_SIZE * r + a, MODULE_SIZE * r + b) for r in range(5) for a, b in local)
 
-if __name__ == "__main__":
-    verify_su5_closure_robustness(num_ensembles=500)
+def relative_rungs(graph):
+    raw = sum(1 << bit for bit, edge in enumerate(active_edges()) if graph.has_edge(*edge))
+    return raw ^ BASE_PATTERN
+
+def logical_patterns():
+    return tuple(0xFF << (8 * r) for r in range(5))
+
+def check_rows(enhanced=False):
+    rows = tuple((1 << (8 * r)) | (1 << (8 * r + k)) for r in range(5) for k in range(1, 8))
+    return rows + (sum(1 << (8 * r) for r in range(5)),) if enhanced else rows
+
+def raw_z(word, bit):
+    return (-1) ** ((word >> bit) & 1)
+
+def rung_occupation(word, module):
+    """(1/8) sum_m (1-s_rm Z_rm)/2 on a raw physical edge word."""
+    return sum((Fraction(1 - raw_z(BASE_PATTERN, bit) * raw_z(word, bit), 2)
+                for bit in range(8 * module, 8 * module + 8)), Fraction()) / 8
+
+def signed_check(word, row):
+    return (-1) ** ((BASE_PATTERN & row).bit_count() + (word & row).bit_count())
+
+def z_character_product(a, b):
+    """Z-string multiplication on arbitrary raw words: Z_a Z_b = Z_(a XOR b)."""
+    return a ^ b
+
+def audit_diagonal_encodings():
+    w = sector_encoding()
+    assert w.conjugate().T * w == eye(5)
+    patch = RibbonPatch()
+    assert patch.background().number_of_nodes() == 35
+    penta = []
+    for k in range(4):
+        h = occupation(k) - occupation(k + 1)
+        z = zeros(5)
+        z[k, k], z[k + 1, k + 1] = 1, -1
+        assert h == h.conjugate().T
+        assert h * w == w * z
+        assert (eye(32) - w * w.conjugate().T) * h * w == zeros(32, 5)
+        penta.append({"adjacent_pair": [k, k + 1], "intertwining": True,
+                      "off_code_action_zero": True})
+
+    rows = check_rows()
+    assert len(rows) == 35
+    records = []
+    raw_words = []
+    for j, relative in enumerate(logical_patterns()):
+        graph, _ = encode_five_states(j)
+        assert graph.number_of_nodes() == 130
+        assert relative_rungs(graph) == relative
+        word = sum(1 << bit for bit, edge in enumerate(active_edges())
+                   if graph.has_edge(*edge))
+        assert word == relative ^ BASE_PATTERN
+        raw_words.append(word)
+        eigenvalues = [rung_occupation(word, r) for r in range(5)]
+        assert eigenvalues == [int(r == j) for r in range(5)]
+        assert all(signed_check(word, row) == 1 for row in rows)
+        records.append({"state": j, "raw_edge_word": hex(word),
+                        "occupation_eigenvalues": list(map(int, eigenvalues)),
+                        "all_35_signed_checks_plus_one": True})
+
+    # Sparse ambient encoding: each graph ket is a distinct raw edge word.
+    # Diagonal action has no support outside these five rows. These identities
+    # represent equality of functions on the full 2**40 basis without allocating it.
+    assert len(set(raw_words)) == 5
+    for k in range(4):
+        actual = {word: rung_occupation(word, k) - rung_occupation(word, k + 1)
+                  for word in raw_words}
+        expected = {word: int(j == k) - int(j == k + 1)
+                    for j, word in enumerate(raw_words)}
+        assert actual == expected
+
+    # Each Nhat is a constant plus eight single-edge Z characters. Every signed
+    # check is one Z character with a fixed sign. XOR commutativity proves their
+    # commutation on ALL raw basis words, not just the selected five codewords.
+    for row in rows:
+        for bit in range(40):
+            assert z_character_product(row, 1 << bit) == z_character_product(1 << bit, row)
+
+    return {
+        "penta_vertices": 35, "penta_occupation_register_dimension": 32,
+        "penta_isometry": True, "penta_adjacent_imbalances": penta,
+        "rung_vertices": 130, "rung_raw_register_dimension": str(2**40),
+        "rung_states": records, "rung_intertwining_all_four_pairs": True,
+        "rung_off_code_action_zero_all_four_pairs": True,
+        "signed_stabilizer_count": len(rows),
+        "baseline_physical_check_signs": [(-1) ** ((BASE_PATTERN & row).bit_count()) for row in rows],
+        "all_diagonal_imbalances_commute_with_all_signed_checks": True,
+        "commutation_method": "Exact Z-character XOR algebra on all 40 raw bits",
+        "diagonal_validity_projector_commutation": "Any diagonal functions commute pointwise",
+        "physical_hamiltonian_availability_derived": False,
+    }
+
+
+
+certificate = audit_diagonal_encodings()
+print("encoding | vertices | selected states | exact diagonal action")
+print(f"occupation | {certificate['penta_vertices']} | 5 | yes")
+print(f"rung | {certificate['rung_vertices']} | {len(certificate['rung_states'])} | yes")
 ```
 
 **Simulation Results:**
-
 ```text
-======================================================================
-COMPUTATIONAL VERIFICATION: SU(5) ALGEBRA CLOSURE
-Robustness under Random Generator Discovery Order
-======================================================================
-Initial generators: 8 (4 adjacent pairs × 2)
-Ensemble   1 → Final dimension: 24
-Ensemble   2 → Final dimension: 24
-Ensemble   3 → Final dimension: 24
-Ensemble   4 → Final dimension: 24
-Ensemble   5 → Final dimension: 24
-Ensemble   6 → Final dimension: 24
-Ensemble   7 → Final dimension: 24
-Ensemble   8 → Final dimension: 24
-Ensemble   9 → Final dimension: 24
-Ensemble  10 → Final dimension: 24
-Ensemble 100 → Final dimension: 24
-Ensemble 200 → Final dimension: 24
-Ensemble 300 → Final dimension: 24
-Ensemble 400 → Final dimension: 24
-Ensemble 500 → Final dimension: 24
-
-----------------------------------------------------------------------
-Ensembles simulated : 500
-Average final dim   : 24.00
-Full closure prob   : 1.000 (100.0%)
-----------------------------------------------------------------------
-status: pass
+encoding | vertices | selected states | exact diagonal action
+occupation | 35 | 5 | yes
+rung | 130 | 5 | yes
 ```
 
 **Conclusion:**
-The simulation achieves a final basis dimension of 24 within 2 iterations (10 additions in the first pass, 6 in the second). The subsample Gram determinant ($2.56 \times 10^2$) is strictly positive, confirming full rank. The self-evaluated Killing form for the root generator is negative ($-12.00$), confirming the non-abelian, semisimple structure. These results verify that the fundamental swaps of a 5-strand braid generate the complete $\mathfrak{su}(5)$ Lie algebra.
+Both finite encodings have the five required occupation eigenvalue patterns. The recorded exact values validate the finite derivation in the proof.
 
-### 9.2.5.3 Commentary: Closure of Unified Force {#9.2.5.3}
+### 9.2.7.3 Commentary: Module Occupation Coordinates {#9.2.7.3}
 
-:::info[**Completeness of the Gauge Algebra via Braid Dynamics**]
+:::info[**Interpretation of Module Occupation Coordinates in the Encoded Framework**]
 :::
 
-The algebraic verification of the 24-dimensional closure confirms that the penta-ribbon braid naturally generates the full $\mathfrak{su}(5)$ gauge symmetry without ad hoc extensions. The simulation demonstrates that the recursive application of commutators, representing the physical interaction of non-adjacent ribbons via intermediate swaps, rapidly fills the entire Lie algebra space.
+Module occupation is a logical observable that distinguishes the five selected configurations. It is different from a stabilizer check that has one common eigenvalue throughout the selected sector. Baseline signs are essential in the rung construction because a physical edge bit need not vanish in the reference configuration. Subtracting the baseline through the signed parity factor makes the occupation eigenvalue measure the marked module rather than the absolute number of present edges.
 
-The termination at dimension 24, corresponding exactly to the number of gauge bosons in the Georgi-Glashow model (8 gluons, 3 weak bosons, 1 photon, and 12 leptoquarks), establishes that the topological constraints of the 5-strand braid are sufficient to unify the strong, weak, and electromagnetic forces. The robustness of this closure across random ensembles implies that the emergence of this specific symmetry group is a deterministic property of the braid topology, rather than a fine-tuned accident of the initial conditions. This result grounds the grand unification of forces in the fundamental geometry of the causal graph.
+The eigenvalue calculation supplies the represented diagonal matrix exactly on the selected span. It does not identify occupation with electric charge or establish an arbitrary graph-to-writhe correspondence. The same logical diagonal action can arise from different finite graph constructions, which is why both examples can be audited against one target matrix. Physical use of that matrix as an available Hamiltonian remains a separate control premise, while the coordinate correspondence itself is a completed finite result that does not require another encoding search.
 
 ---
 
-### 9.2.6 Lemma: Anti-Fundamental Multiplet {#9.2.6}
+### 9.2.8 Lemma: Diagonal Sector Preservation {#9.2.8}
 
-:::info[**Topological Realization of the Anti-Fundamental Representation as Unlinked Ribbons**]
+:::info[**Characterization of Diagonal Sector Preservation via Explicit Hypotheses**]
 :::
 
-Let the fermion multiplet transforming under the $\mathbf{\bar{5}}$ (anti-fundamental) representation be topologically isomorphic to the **Unlinked Braid Configuration** of the penta-ribbon. Under this isomorphism, the five basis states correspond to the five ribbons, localizing the three color degrees of freedom on ribbons 1-3 and the two weak degrees of freedom on ribbons 4-5.
+For any Candidate Ribbon Encoding, the diagonal imbalances satisfy $(I-P_5)\widehat Z_kW=0$. Their off-code action is zero, and their unitary evolutions preserve the selected sector whenever those Hamiltonians are admitted.
 
-### 9.2.6.1 Proof: Anti-Fundamental Multiplet {#9.2.6.1}
+### 9.2.8.1 Proof: Diagonal Sector Preservation {#9.2.8.1}
 
-:::tip[**Demonstration of Minimal Complexity via the $\mathbf{\bar{5}}$ Multiplet**]
+:::tip[**Construction of Diagonal Sector Preservation via Explicit Identities**]
 :::
 
-The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" /> and  **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />
+**I. Isometry and Orthogonal Projection**
 
-**I. Representation Decomposition**
-The $\mathbf{\bar{5}}$ decomposes under $SU(3) \times SU(2)$ as $(\mathbf{\bar{3}}, \mathbf{1}) \oplus (\mathbf{1}, \mathbf{2})$.
-* The color triplet $(\mathbf{\bar{3}}, \mathbf{1})$ corresponds to 3 parallel ribbons (down-type quark singlet).
-* The weak doublet $(\mathbf{1}, \mathbf{2})$ corresponds to 2 parallel ribbons (lepton doublet).
+Let $W=\sum_j|G_j\rangle\langle j|$ for either candidate (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />). Let $x_e^{(j)}\in\{0,1\}$ be the edge coordinates of $G_j$. The graph-ket inner product is
 
-**II. Topological Invariants**
-This configuration requires no inter-ribbon braiding between the color and weak sectors to preserve quantum numbers.
-* **Crossing Number:** $C[\beta] = 0$.
-* **Linking Matrix:** $L_{ij} = 0$ for all $i \neq j$.
-The Generalized Braid Energy Functional $E \propto C[\beta]$ is minimized.
-This aligns with the identification of $\mathbf{\bar{5}}$ as the "lightest" or simplest matter representation, necessitating only intrinsic writhe but no link complexity.
+$$
+\begin{aligned}
+|G_j\rangle&=\bigotimes_e|x_e^{(j)}\rangle,\\
+\langle G_i|G_j\rangle
+&=\prod_e\langle x_e^{(i)}|x_e^{(j)}\rangle
+=\prod_e\delta_{x_e^{(i)},x_e^{(j)}}.
+\end{aligned}
+$$
 
-**III. Minimal Braid Energy**
-The absence of crossings yields the absolute minimum for the Generalized Braid Energy Functional $E[\beta] = 0$ in the absence of external excitations. This zero-crossing state constitutes the stable topological ground state, explaining why first-generation leptons and down antiquarks possess the lowest masses in the unified spectrum.
+For $i\ne j$, the occupation edge $e_i$ gives
+
+$$
+x_{e_i}^{(i)}=a_i^{(i)}=1,\quad
+x_{e_i}^{(j)}=a_i^{(j)}=0,\quad
+\langle G_i|G_j\rangle=\delta_{1,0}\prod_{e\ne e_i}\delta_{x_e^{(i)},x_e^{(j)}}=0.
+$$
+
+For the rung family, $b_0=1$ and the edge $e_{i0}$ gives
+
+$$
+\begin{aligned}
+w_{i0}^{(i)}&=1\oplus1=0,\qquad w_{i0}^{(j)}=1\oplus0=1,\\
+\langle G_i|G_j\rangle
+&=\delta_{0,1}\prod_{e\ne e_{i0}}\delta_{x_e^{(i)},x_e^{(j)}}=0.
+\end{aligned}
+$$
+
+For $i=j$,
+
+$$
+\langle G_j|G_j\rangle
+=\prod_e\delta_{x_e^{(j)},x_e^{(j)}}=\prod_e1=1.
+$$
+
+Thus $\langle G_i|G_j\rangle=\delta_{ij}$.
+
+Consequently
+
+$$
+\begin{aligned}
+W^\dagger W
+&=\sum_{i,j}|i\rangle\langle G_i|G_j\rangle\langle j|
+=\sum_{i,j}\delta_{ij}|i\rangle\langle j|=I_5,\\
+P_5=WW^\dagger
+&=\sum_j|G_j\rangle\langle G_j|,\\
+P_5^2
+&=\sum_{i,j}|G_i\rangle\langle G_i|G_j\rangle\langle G_j|
+=\sum_j|G_j\rangle\langle G_j|=P_5,\\
+P_5^\dagger&=\sum_j(|G_j\rangle\langle G_j|)^\dagger=P_5,\\
+(I-P_5)W&=W-WW^\dagger W=W-WI_5=0.
+\end{aligned}
+$$
+
+**II. Vanishing Off-Code Blocks**
+
+The derived diagonal action is $\widehat Z_kW=WZ_k$ (**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />). Therefore
+
+$$
+\begin{aligned}
+(I-P_5)\widehat Z_kW
+&=(I-WW^\dagger)WZ_k\\
+&=WZ_k-W(W^\dagger W)Z_k\\
+&=WZ_k-WI_5Z_k=0,\\
+(I-P_5)\widehat Z_kP_5&=(I-P_5)\widehat Z_k W W^\dagger=0.
+\end{aligned}
+$$
+
+**III. Bounded Hermitian Extension and Powers**
+
+For every graph basis ket, let $\widehat Z_k|G\rangle=z_k(G)|G\rangle$. Each occupation eigenvalue is a bit or an average of eight bits, so
+
+$$
+0\le n_r(G)\le1,\qquad z_k(G)=n_k(G)-n_{k+1}(G)\in[-1,1].
+$$
+
+For $\psi=\sum_G\psi_G|G\rangle$ and $\phi=\sum_G\phi_G|G\rangle$,
+
+$$
+\begin{aligned}
+\|\widehat Z_k\psi\|^2
+&=\sum_G\overline{z_k(G)\psi_G}\,z_k(G)\psi_G\\
+&=\sum_G|z_k(G)|^2|\psi_G|^2\le\sum_G|\psi_G|^2=\|\psi\|^2,\\
+\langle\phi,\widehat Z_k\psi\rangle
+&=\sum_G\overline{\phi_G}z_k(G)\psi_G
+=\sum_G\overline{z_k(G)\phi_G}\psi_G
+=\langle\widehat Z_k\phi,\psi\rangle.
+\end{aligned}
+$$
+
+Thus $\|\widehat Z_k\|\le1$ and $\widehat Z_k^\dagger=\widehat Z_k$. Taking adjoints in Section II gives
+
+$$
+P_5\widehat Z_k(I-P_5)=0,\qquad
+[P_5,\widehat Z_k]
+=P_5\widehat Z_k(I-P_5)-(I-P_5)\widehat Z_kP_5=0.
+$$
+
+For the power induction,
+
+$$
+\begin{aligned}
+\widehat Z_k^0W&=W=WZ_k^0,\\
+\widehat Z_k^mW=WZ_k^m
+&\ \Longrightarrow\
+\widehat Z_k^{m+1}W
+=\widehat Z_k(\widehat Z_k^mW)
+=\widehat Z_k W Z_k^m
+=WZ_kZ_k^m=WZ_k^{m+1}.
+\end{aligned}
+$$
+
+**IV. Exponential and Leakage Identity**
+
+For $t\in\mathbb R$,
+
+$$
+\sum_{m=0}^\infty\left\|\frac{(it)^m}{m!}\widehat Z_k^mW\right\|
+\le\|W\|\sum_{m=0}^\infty\frac{|t|^m\|\widehat Z_k\|^m}{m!}
+\le e^{|t|}<\infty.
+$$
+
+Hence
+
+$$
+\begin{aligned}
+e^{it\widehat Z_k}W
+&=\lim_{N\to\infty}\sum_{m=0}^N\frac{(it)^m}{m!}\widehat Z_k^mW\\
+&=\lim_{N\to\infty}W\sum_{m=0}^N\frac{(it)^m}{m!}Z_k^m
+=We^{i t Z_k},\\
+(I-P_5)e^{it\widehat Z_k}W
+&=(I-P_5)We^{i t Z_k}=0.
+\end{aligned}
+$$
+
+$$
+\boxed{(I-P_5)\widehat Z_kW=0,\qquad
+e^{it\widehat Z_k}W=We^{i t Z_k},\qquad
+(I-P_5)e^{it\widehat Z_k}W=0.}
+$$
 
 Q.E.D.
 
-### 9.2.6.2 Commentary: Anti-Matter Topology {#9.2.6.2}
+### 9.2.8.2 Calculation: Zero Off-Code Action {#9.2.8.2}
 
-:::info[**Identification of the Anti-Fundamental Representation with the Unlinked State**]
+:::note[**Verification of Zero Off-Code Action via Exact Arithmetic**]
 :::
 
-As codified in **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />, a stunningly simple topological picture emerges for the $\mathbf{\bar{5}}$ representation, which contains the down-type antiquarks and the lepton doublet ($d^c, e, \nu$). In standard group theory, $\mathbf{\bar{5}}$ is just a vector of 5 complex numbers. In QBD, it is revealed to be a specific geometric configuration: the "unlinked" state where the five ribbons run parallel without twisting or braiding around each other.
+Verification of the relations established in the **Diagonal Sector Preservation** <Ref id="9.2.8.1" label="§9.2.8.1" /> is based on the following protocols: The zero-leakage calculation uses the same five selected words and isometry (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />).
 
-This interpretation mirrors the representation theory found in the large-$N$ limits discussed by <Cite id="A.50" label="(Maldacena, 1998)" />, where fundamental representations often map to "probe" branes or decoupled sectors that lack the complex self-interaction of the adjoint or antisymmetric tensors. Here, the "zero-complexity" ground state explains why these particles are the fundamental building blocks of matter. They are the "blank canvas" of the theory. Their quantum numbers (charges) come purely from the intrinsic twist of individual ribbons, not from the complex entanglement between them. This geometric simplicity aligns with their role as the lighter, more elementary components of the Standard Model spectrum compared to the heavier $\mathbf{10}$ multiplet (containing the top quark), which involves complex pairwise linking.
+1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
+2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
+3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
 
-### 9.2.6.3 Diagram: Unlinked Configuration {#9.2.6.3}
+```python
+from fractions import Fraction
+import networkx as nx
+from sympy import SparseMatrix, eye, zeros
+
+
+# Fixed candidate graph constructors. This checks diagonal action, not the
+# physical admission of a control or the probability of a preparation history.
+class RibbonPatch:
+    def background(self):
+        graph = nx.DiGraph()
+        graph.add_nodes_from(range(35))
+        graph.add_edges_from(((7*r+t, 7*r+t+1) for r in range(5)
+                              for t in range(6)), H=0)
+        graph.add_edges_from(((7*r, 7*(r+1)) for r in range(4)), H=0)
+        return graph
+
+    def graph(self, mask):
+        graph = self.background()
+        faces = [(r,t) for r in range(5) for t in range(4)]
+        faces += [(r,4) for r in range(5) if mask & (1 << r)]
+        for r,t in faces:
+            u,v = 7*r+t+2, 7*r+t
+            stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+            graph.add_edge(u,v,H=stamp)
+        return graph
+
+
+def sector_encoding():
+    return SparseMatrix(32, 5, {(1 << r,r): 1 for r in range(5)})
+
+
+def occupation(r):
+    return SparseMatrix(32,32,{(word,word): 1 for word in range(32) if word & (1 << r)})
+
+
+MODULE_SIZE = 26
+BASE_PATTERN = sum(0x99 << (8*r) for r in range(5))
+
+
+def encode_five_states(marked):
+    if marked not in range(5):
+        raise ValueError('Expected a ribbon in 0..4')
+    graph = nx.DiGraph()
+    graph.add_nodes_from(range(130))
+    paths = {0:(0,10,11), 1:(1,12,13),
+             2:(2,14,15,16,17,18,19), 3:(3,20,21,22,23,24,25)}
+    local = [(2,6),(6,7),(7,3),(6,0),(6,1),
+             (7,8),(8,4),(7,9),(9,5)]
+    local += [(a,b) for path in paths.values() for a,b in zip(path,path[1:])]
+    for r in range(5):
+        off = 26*r
+        graph.add_edges_from(((off+a,off+b) for a,b in local),H=0)
+        if r:
+            graph.add_edge(off-26+6,off+6,H=0)
+    def add(u,v):
+        stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+        graph.add_edge(u,v,H=stamp)
+    for r in range(5):
+        off = 26*r
+        for u,v in ((3,6),(7,2),(4,7),(5,7)):
+            add(off+u,off+v)
+        for port in (1,3):
+            path = paths[port]
+            for k in range(len(path)-1,1,-2):
+                add(off+path[k],off+path[k-2])
+        for inputs,outputs in (((0,1),(2,3)),((2,3),(4,5))):
+            targets = outputs[::-1] if r == marked else outputs
+            for u,v in zip(inputs,targets):
+                add(off+u,off+v)
+    return graph, ()
+
+def active_edges():
+    local = ((0, 2), (0, 3), (1, 2), (1, 3), (2, 4), (2, 5), (3, 4), (3, 5))
+    return tuple((MODULE_SIZE * r + a, MODULE_SIZE * r + b) for r in range(5) for a, b in local)
+
+def relative_rungs(graph):
+    raw = sum(1 << bit for bit, edge in enumerate(active_edges()) if graph.has_edge(*edge))
+    return raw ^ BASE_PATTERN
+
+def logical_patterns():
+    return tuple(0xFF << (8 * r) for r in range(5))
+
+def check_rows(enhanced=False):
+    rows = tuple((1 << (8 * r)) | (1 << (8 * r + k)) for r in range(5) for k in range(1, 8))
+    return rows + (sum(1 << (8 * r) for r in range(5)),) if enhanced else rows
+
+def raw_z(word, bit):
+    return (-1) ** ((word >> bit) & 1)
+
+def rung_occupation(word, module):
+    """(1/8) sum_m (1-s_rm Z_rm)/2 on a raw physical edge word."""
+    return sum((Fraction(1 - raw_z(BASE_PATTERN, bit) * raw_z(word, bit), 2)
+                for bit in range(8 * module, 8 * module + 8)), Fraction()) / 8
+
+def signed_check(word, row):
+    return (-1) ** ((BASE_PATTERN & row).bit_count() + (word & row).bit_count())
+
+def z_character_product(a, b):
+    """Z-string multiplication on arbitrary raw words: Z_a Z_b = Z_(a XOR b)."""
+    return a ^ b
+
+def audit_diagonal_encodings():
+    w = sector_encoding()
+    assert w.conjugate().T * w == eye(5)
+    patch = RibbonPatch()
+    assert patch.background().number_of_nodes() == 35
+    penta = []
+    for k in range(4):
+        h = occupation(k) - occupation(k + 1)
+        z = zeros(5)
+        z[k, k], z[k + 1, k + 1] = 1, -1
+        assert h == h.conjugate().T
+        assert h * w == w * z
+        assert (eye(32) - w * w.conjugate().T) * h * w == zeros(32, 5)
+        penta.append({"adjacent_pair": [k, k + 1], "intertwining": True,
+                      "off_code_action_zero": True})
+
+    rows = check_rows()
+    assert len(rows) == 35
+    records = []
+    raw_words = []
+    for j, relative in enumerate(logical_patterns()):
+        graph, _ = encode_five_states(j)
+        assert graph.number_of_nodes() == 130
+        assert relative_rungs(graph) == relative
+        word = sum(1 << bit for bit, edge in enumerate(active_edges())
+                   if graph.has_edge(*edge))
+        assert word == relative ^ BASE_PATTERN
+        raw_words.append(word)
+        eigenvalues = [rung_occupation(word, r) for r in range(5)]
+        assert eigenvalues == [int(r == j) for r in range(5)]
+        assert all(signed_check(word, row) == 1 for row in rows)
+        records.append({"state": j, "raw_edge_word": hex(word),
+                        "occupation_eigenvalues": list(map(int, eigenvalues)),
+                        "all_35_signed_checks_plus_one": True})
+
+    # Sparse ambient encoding: each graph ket is a distinct raw edge word.
+    # Diagonal action has no support outside these five rows. These identities
+    # represent equality of functions on the full 2**40 basis without allocating it.
+    assert len(set(raw_words)) == 5
+    for k in range(4):
+        actual = {word: rung_occupation(word, k) - rung_occupation(word, k + 1)
+                  for word in raw_words}
+        expected = {word: int(j == k) - int(j == k + 1)
+                    for j, word in enumerate(raw_words)}
+        assert actual == expected
+
+    # Each Nhat is a constant plus eight single-edge Z characters. Every signed
+    # check is one Z character with a fixed sign. XOR commutativity proves their
+    # commutation on ALL raw basis words, not just the selected five codewords.
+    for row in rows:
+        for bit in range(40):
+            assert z_character_product(row, 1 << bit) == z_character_product(1 << bit, row)
+
+    return {
+        "penta_vertices": 35, "penta_occupation_register_dimension": 32,
+        "penta_isometry": True, "penta_adjacent_imbalances": penta,
+        "rung_vertices": 130, "rung_raw_register_dimension": str(2**40),
+        "rung_states": records, "rung_intertwining_all_four_pairs": True,
+        "rung_off_code_action_zero_all_four_pairs": True,
+        "signed_stabilizer_count": len(rows),
+        "baseline_physical_check_signs": [(-1) ** ((BASE_PATTERN & row).bit_count()) for row in rows],
+        "all_diagonal_imbalances_commute_with_all_signed_checks": True,
+        "commutation_method": "Exact Z-character XOR algebra on all 40 raw bits",
+        "diagonal_validity_projector_commutation": "Any diagonal functions commute pointwise",
+        "physical_hamiltonian_availability_derived": False,
+    }
+
+
+
+certificate = audit_diagonal_encodings()
+print("encoding | adjacent imbalances | off-code action")
+assert all(row["off_code_action_zero"] for row in certificate["penta_adjacent_imbalances"])
+assert certificate["rung_off_code_action_zero_all_four_pairs"]
+print("occupation | 4 | 0")
+print("rung | 4 | 0")
+```
+
+**Simulation Results:**
+```text
+encoding | adjacent imbalances | off-code action
+occupation | 4 | 0
+rung | 4 | 0
+```
+
+**Conclusion:**
+All four adjacent imbalances have exactly zero off-code action in each encoding. The recorded exact values validate the finite derivation in the proof.
+
+### 9.2.8.3 Commentary: Exact Diagonal Invariance {#9.2.8.3}
+
+:::info[**Interpretation of Exact Diagonal Invariance in the Encoded Framework**]
+:::
+
+Diagonal invariance is stronger than a small leakage estimate for the selected operation. Each basis graph is already an eigenstate, so the evolution changes its phase without creating amplitude on a different graph word. A superposition of the five basis graphs therefore remains in their span. This conclusion is a property of the defined finite diagonal Hamiltonian and is not contingent on a stochastic history remaining near a two-state truncation.
+
+The result must remain separate from exchange invariance. An exchange changes occupation and may require intermediate configurations, guards or an effective control construction. Proving that a diagonal imbalance has zero leakage does not settle those off-diagonal requirements. Conversely, missing exchange control does not reopen the already settled diagonal calculation. This separation keeps the physical premise account finite: diagonal representation and preservation are exact, while physical admission and coherent exchange realization are stated at their actual justified scopes.
+
+---
+
+### 9.2.9 Lemma: Constraint Compatibility {#9.2.9}
+
+:::info[**Characterization of Constraint Compatibility via Explicit Hypotheses**]
+:::
+
+For any Candidate Ribbon Encoding, every specified diagonal graph-validity projector commutes with the diagonal imbalances. In the rung encoding the same operators commute with all 35 signed checks $s_{r0}s_{rm}Z_{r0}Z_{rm}$, whose common eigenvalue on the five selected words is $+1$.
+
+### 9.2.9.1 Proof: Constraint Compatibility {#9.2.9.1}
+
+:::tip[**Construction of Constraint Compatibility via Explicit Identities**]
+:::
+
+**I. The 35 Signed Checks**
+
+For the specified rung data (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />), define
+
+$$
+S_{rm}=s_{r0}s_{rm}Z_{r0}Z_{rm},\qquad
+r\in\{1,\ldots,5\},\quad m\in\{1,\ldots,7\}.
+$$
+
+Their number is $\sum_{r=1}^5\sum_{m=1}^7 1=5\cdot7=35$. On a selected word,
+
+$$
+\begin{aligned}
+S_{rm}|G_j\rangle
+&=(-1)^{b_0+b_m+w_{r0}^{(j)}+w_{rm}^{(j)}}|G_j\rangle,\\
+b_0+b_m+w_{r0}^{(j)}+w_{rm}^{(j)}
+&\equiv b_0+b_m+(b_0+\delta_{rj})+(b_m+\delta_{rj})\\
+&=2b_0+2b_m+2\delta_{rj}\equiv0\pmod2,\\
+S_{rm}|G_j\rangle&=|G_j\rangle.
+\end{aligned}
+$$
+
+For $\psi=\sum_jv_j|G_j\rangle$,
+
+$$
+S_{rm}\psi=\sum_jv_jS_{rm}|G_j\rangle=\sum_jv_j|G_j\rangle=\psi.
+$$
+
+**II. Z-Character Multiplication on All Raw Words**
+
+Let $A,B$ be subsets of the forty edge positions and define $Z_A=\prod_{a\in A}Z_a$. Then
+
+$$
+\begin{aligned}
+Z_AZ_B|G_w\rangle
+&=(-1)^{\sum_{a\in A}w_a+\sum_{b\in B}w_b}|G_w\rangle\\
+&=(-1)^{\sum_{c\in A\triangle B}w_c+2\sum_{c\in A\cap B}w_c}|G_w\rangle\\
+&=(-1)^{\sum_{c\in A\triangle B}w_c}|G_w\rangle
+=Z_{A\triangle B}|G_w\rangle,\\
+Z_BZ_A|G_w\rangle
+&=Z_{B\triangle A}|G_w\rangle
+=Z_{A\triangle B}|G_w\rangle.
+\end{aligned}
+$$
+
+Thus $[Z_A,Z_B]|G_w\rangle=0$ for every raw word $w$, giving $[Z_A,Z_B]=0$.
+
+**III. Commutation with Occupations and Imbalances**
+
+The occupation formula is (**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />)
+
+$$
+\widehat N_a=\frac1{16}\sum_{b=0}^7(I-s_{ab}Z_{ab}).
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+[S_{rm},\widehat N_a]
+&=\frac1{16}\sum_{b=0}^7\bigl([S_{rm},I]-s_{ab}[S_{rm},Z_{ab}]\bigr)\\
+&=\frac1{16}\sum_{b=0}^7(0-s_{ab}0)=0,\\
+[S_{rm},\widehat Z_k]
+&=[S_{rm},\widehat N_k]-[S_{rm},\widehat N_{k+1}]=0-0=0.
+\end{aligned}
+$$
+
+**IV. Diagonal Validity Projectors**
+
+Let $V|G\rangle=v(G)|G\rangle$ with $v(G)\in\{0,1\}$ and $\widehat Z_k|G\rangle=z_k(G)|G\rangle$. On every computational graph ket,
+
+$$
+\begin{aligned}
+V\widehat Z_k|G\rangle&=V\bigl(z_k(G)|G\rangle\bigr)=z_k(G)v(G)|G\rangle,\\
+\widehat Z_kV|G\rangle&=\widehat Z_k\bigl(v(G)|G\rangle\bigr)=v(G)z_k(G)|G\rangle,\\
+[V,\widehat Z_k]|G\rangle
+&=(z_k(G)v(G)-v(G)z_k(G))|G\rangle=0.
+\end{aligned}
+$$
+
+$$
+\boxed{S_{rm}W=W,\qquad [S_{rm},\widehat Z_k]=0,\qquad [V,\widehat Z_k]=0.}
+$$
+
+Q.E.D.
+
+### 9.2.9.2 Calculation: Signed Stabilizer Commutation {#9.2.9.2}
+
+:::note[**Verification of Signed Stabilizer Commutation via Exact Arithmetic**]
+:::
+
+Verification of the relations established in the **Constraint Compatibility** <Ref id="9.2.9.1" label="§9.2.9.1" /> is based on the following protocols: The reference signs and module words are fixed by the candidate data (**Candidate Ribbon Encoding** <Ref id="9.2.2" label="§9.2.2" />).
+
+1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
+2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
+3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
+
+```python
+from fractions import Fraction
+import networkx as nx
+from sympy import SparseMatrix, eye, zeros
+
+
+# Fixed candidate graph constructors. This checks diagonal action, not the
+# physical admission of a control or the probability of a preparation history.
+class RibbonPatch:
+    def background(self):
+        graph = nx.DiGraph()
+        graph.add_nodes_from(range(35))
+        graph.add_edges_from(((7*r+t, 7*r+t+1) for r in range(5)
+                              for t in range(6)), H=0)
+        graph.add_edges_from(((7*r, 7*(r+1)) for r in range(4)), H=0)
+        return graph
+
+    def graph(self, mask):
+        graph = self.background()
+        faces = [(r,t) for r in range(5) for t in range(4)]
+        faces += [(r,4) for r in range(5) if mask & (1 << r)]
+        for r,t in faces:
+            u,v = 7*r+t+2, 7*r+t
+            stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+            graph.add_edge(u,v,H=stamp)
+        return graph
+
+
+def sector_encoding():
+    return SparseMatrix(32, 5, {(1 << r,r): 1 for r in range(5)})
+
+
+def occupation(r):
+    return SparseMatrix(32,32,{(word,word): 1 for word in range(32) if word & (1 << r)})
+
+
+MODULE_SIZE = 26
+BASE_PATTERN = sum(0x99 << (8*r) for r in range(5))
+
+
+def encode_five_states(marked):
+    if marked not in range(5):
+        raise ValueError('Expected a ribbon in 0..4')
+    graph = nx.DiGraph()
+    graph.add_nodes_from(range(130))
+    paths = {0:(0,10,11), 1:(1,12,13),
+             2:(2,14,15,16,17,18,19), 3:(3,20,21,22,23,24,25)}
+    local = [(2,6),(6,7),(7,3),(6,0),(6,1),
+             (7,8),(8,4),(7,9),(9,5)]
+    local += [(a,b) for path in paths.values() for a,b in zip(path,path[1:])]
+    for r in range(5):
+        off = 26*r
+        graph.add_edges_from(((off+a,off+b) for a,b in local),H=0)
+        if r:
+            graph.add_edge(off-26+6,off+6,H=0)
+    def add(u,v):
+        stamp = 1 + max((d['H'] for _,_,d in graph.in_edges(u,data=True)), default=0)
+        graph.add_edge(u,v,H=stamp)
+    for r in range(5):
+        off = 26*r
+        for u,v in ((3,6),(7,2),(4,7),(5,7)):
+            add(off+u,off+v)
+        for port in (1,3):
+            path = paths[port]
+            for k in range(len(path)-1,1,-2):
+                add(off+path[k],off+path[k-2])
+        for inputs,outputs in (((0,1),(2,3)),((2,3),(4,5))):
+            targets = outputs[::-1] if r == marked else outputs
+            for u,v in zip(inputs,targets):
+                add(off+u,off+v)
+    return graph, ()
+
+def active_edges():
+    local = ((0, 2), (0, 3), (1, 2), (1, 3), (2, 4), (2, 5), (3, 4), (3, 5))
+    return tuple((MODULE_SIZE * r + a, MODULE_SIZE * r + b) for r in range(5) for a, b in local)
+
+def relative_rungs(graph):
+    raw = sum(1 << bit for bit, edge in enumerate(active_edges()) if graph.has_edge(*edge))
+    return raw ^ BASE_PATTERN
+
+def logical_patterns():
+    return tuple(0xFF << (8 * r) for r in range(5))
+
+def check_rows(enhanced=False):
+    rows = tuple((1 << (8 * r)) | (1 << (8 * r + k)) for r in range(5) for k in range(1, 8))
+    return rows + (sum(1 << (8 * r) for r in range(5)),) if enhanced else rows
+
+def raw_z(word, bit):
+    return (-1) ** ((word >> bit) & 1)
+
+def rung_occupation(word, module):
+    """(1/8) sum_m (1-s_rm Z_rm)/2 on a raw physical edge word."""
+    return sum((Fraction(1 - raw_z(BASE_PATTERN, bit) * raw_z(word, bit), 2)
+                for bit in range(8 * module, 8 * module + 8)), Fraction()) / 8
+
+def signed_check(word, row):
+    return (-1) ** ((BASE_PATTERN & row).bit_count() + (word & row).bit_count())
+
+def z_character_product(a, b):
+    """Z-string multiplication on arbitrary raw words: Z_a Z_b = Z_(a XOR b)."""
+    return a ^ b
+
+def audit_diagonal_encodings():
+    w = sector_encoding()
+    assert w.conjugate().T * w == eye(5)
+    patch = RibbonPatch()
+    assert patch.background().number_of_nodes() == 35
+    penta = []
+    for k in range(4):
+        h = occupation(k) - occupation(k + 1)
+        z = zeros(5)
+        z[k, k], z[k + 1, k + 1] = 1, -1
+        assert h == h.conjugate().T
+        assert h * w == w * z
+        assert (eye(32) - w * w.conjugate().T) * h * w == zeros(32, 5)
+        penta.append({"adjacent_pair": [k, k + 1], "intertwining": True,
+                      "off_code_action_zero": True})
+
+    rows = check_rows()
+    assert len(rows) == 35
+    records = []
+    raw_words = []
+    for j, relative in enumerate(logical_patterns()):
+        graph, _ = encode_five_states(j)
+        assert graph.number_of_nodes() == 130
+        assert relative_rungs(graph) == relative
+        word = sum(1 << bit for bit, edge in enumerate(active_edges())
+                   if graph.has_edge(*edge))
+        assert word == relative ^ BASE_PATTERN
+        raw_words.append(word)
+        eigenvalues = [rung_occupation(word, r) for r in range(5)]
+        assert eigenvalues == [int(r == j) for r in range(5)]
+        assert all(signed_check(word, row) == 1 for row in rows)
+        records.append({"state": j, "raw_edge_word": hex(word),
+                        "occupation_eigenvalues": list(map(int, eigenvalues)),
+                        "all_35_signed_checks_plus_one": True})
+
+    # Sparse ambient encoding: each graph ket is a distinct raw edge word.
+    # Diagonal action has no support outside these five rows. These identities
+    # represent equality of functions on the full 2**40 basis without allocating it.
+    assert len(set(raw_words)) == 5
+    for k in range(4):
+        actual = {word: rung_occupation(word, k) - rung_occupation(word, k + 1)
+                  for word in raw_words}
+        expected = {word: int(j == k) - int(j == k + 1)
+                    for j, word in enumerate(raw_words)}
+        assert actual == expected
+
+    # Each Nhat is a constant plus eight single-edge Z characters. Every signed
+    # check is one Z character with a fixed sign. XOR commutativity proves their
+    # commutation on ALL raw basis words, not just the selected five codewords.
+    for row in rows:
+        for bit in range(40):
+            assert z_character_product(row, 1 << bit) == z_character_product(1 << bit, row)
+
+    return {
+        "penta_vertices": 35, "penta_occupation_register_dimension": 32,
+        "penta_isometry": True, "penta_adjacent_imbalances": penta,
+        "rung_vertices": 130, "rung_raw_register_dimension": str(2**40),
+        "rung_states": records, "rung_intertwining_all_four_pairs": True,
+        "rung_off_code_action_zero_all_four_pairs": True,
+        "signed_stabilizer_count": len(rows),
+        "baseline_physical_check_signs": [(-1) ** ((BASE_PATTERN & row).bit_count()) for row in rows],
+        "all_diagonal_imbalances_commute_with_all_signed_checks": True,
+        "commutation_method": "Exact Z-character XOR algebra on all 40 raw bits",
+        "diagonal_validity_projector_commutation": "Any diagonal functions commute pointwise",
+        "physical_hamiltonian_availability_derived": False,
+    }
+
+
+
+certificate = audit_diagonal_encodings()
+print("signed checks | signed code eigenvalue | diagonal commutation")
+assert certificate["all_diagonal_imbalances_commute_with_all_signed_checks"]
+assert all(row["all_35_signed_checks_plus_one"] for row in certificate["rung_states"])
+print(f"{certificate['signed_stabilizer_count']} | +1 | all raw edge words")
+```
+
+**Simulation Results:**
+```text
+signed checks | signed code eigenvalue | diagonal commutation
+35 | +1 | all raw edge words
+```
+
+**Conclusion:**
+The 35 signed checks have the common code eigenvalue and commute with all defined diagonal imbalances. The recorded exact values validate the finite derivation in the proof.
+
+### 9.2.9.3 Commentary: Validity and Signed Checks {#9.2.9.3}
+
+:::info[**Interpretation of Validity and Signed Checks in the Encoded Framework**]
+:::
+
+Constraint compatibility records which established structural predicates survive the proposed diagonal action. The common signed-check eigenvalue prevents a convention error in which an unsigned physical product is incorrectly described as a positive stabilizer. Commutation itself does not depend on that sign, but identifying the selected code sector does. The argument applies to all raw edge words because it uses diagonal character multiplication rather than sampling only the five code configurations.
+
+A compatibility proof is not an unrestricted admission rule for new physical interactions. The absence of graph changes explains preservation of diagonal validity conditions and syndrome eigenspaces, but a specific dynamics may still supply only a subset of the compatible Hamiltonians. It also does not establish invariance under a separately defined continuous gauge action. Naming the checked constraint family and retaining the admission hypothesis prevents those stronger physical conclusions from being silently attached to a simple commutation identity.
+
+---
+
+### 9.2.10 Lemma: Encoded Control Correspondence {#9.2.10}
+
+:::info[**Characterization of Encoded Control Correspondence via Explicit Hypotheses**]
+:::
+
+Assume the Admitted Encoded Controls hypothesis. Then restriction to the invariant physical sector represents the admitted adjacent Hamiltonians by $X_k,Z_k$, and their represented commutator is $[iX_k,iZ_k]=2iY_k$.
+
+### 9.2.10.1 Proof: Encoded Control Correspondence {#9.2.10.1}
+
+:::tip[**Construction of Encoded Control Correspondence via Explicit Identities**]
+:::
+
+**I. Restricted Operators and Invariance**
+
+Let $W^\dagger W=I_5$, $P_5=WW^\dagger$, and define $\pi(A)=W^\dagger A W$ for operators whose domains contain $\mathcal H_5$ and whose actions preserve $\mathcal H_5$. The diagonal identities are (**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />)
+
+$$
+\widehat Z_kW=WZ_k,
+$$
+
+with invariant range (**Diagonal Sector Preservation** <Ref id="9.2.8" label="§9.2.8" />) and the specified check compatibility (**Constraint Compatibility** <Ref id="9.2.9" label="§9.2.9" />). For every such $A$,
+
+$$
+AW\in\mathcal H_5\ \Longrightarrow\ P_5AW=AW
+\ \Longrightarrow\ AW=WW^\dagger A W=W\pi(A).
+$$
+
+**II. Real Combinations, Products and Brackets**
+
+For $a,b\in\mathbb R$,
+
+$$
+\begin{aligned}
+\pi(aA+bB)&=W^\dagger(aA+bB)W=a\pi(A)+b\pi(B),\\
+A B W&=A(W\pi(B))=(AW)\pi(B)=W\pi(A)\pi(B),\\
+B A W&=B(W\pi(A))=(BW)\pi(A)=W\pi(B)\pi(A),\\
+\pi(AB)&=W^\dagger A B W=W^\dagger W\pi(A)\pi(B)=\pi(A)\pi(B),\\
+\pi([A,B])&=W^\dagger(AB-BA)W\\
+&=\pi(A)\pi(B)-\pi(B)\pi(A)=[\pi(A),\pi(B)].
+\end{aligned}
+$$
+
+**III. Adjacent Physical Bracket on the Encoded Sector**
+
+Let $\widehat A_k=i\widehat X_k$ and $\widehat C_k=i\widehat Z_k$. The admitted-control hypotheses give
+
+$$
+\widehat A_kW=W i X_k,
+\qquad\widehat C_kW=W i Z_k.
+$$
+
+Consequently
+
+$$
+\begin{aligned}
+[\widehat A_k,\widehat C_k]W
+&=\widehat A_k\widehat C_kW-\widehat C_k\widehat A_kW\\
+&=W i X_k i Z_k-W i Z_k i X_k\\
+&=-W X_kZ_k+W Z_kX_k\\
+&=-W(-F_{k,k+1})+W F_{k,k+1}\\
+&=2W F_{k,k+1}=2 W i Y_{k,k+1},\\
+\pi([\widehat A_k,\widehat C_k])
+&=2W^\dagger W F_{k,k+1}=2F_{k,k+1}.
+\end{aligned}
+$$
+
+The evaluated coordinate products use the adjacent identity (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
+
+**IV. Iterated Lie Expressions**
+
+For any two Lie expressions $P,Q$ in the admitted generators and real $a,b$,
+
+$$
+\begin{aligned}
+\pi(P(\widehat A,\widehat C))=P(iX,iZ),\quad
+\pi(Q(\widehat A,\widehat C))=Q(iX,iZ)
+&\ \Longrightarrow\\
+\pi(aP(\widehat A,\widehat C)+bQ(\widehat A,\widehat C))
+&=aP(iX,iZ)+bQ(iX,iZ),\\
+\pi([P(\widehat A,\widehat C),Q(\widehat A,\widehat C)])
+&=[P(iX,iZ),Q(iX,iZ)].
+\end{aligned}
+$$
+
+Starting with the generator identities in Section III, structural induction therefore gives
+
+$$
+\boxed{\pi(P(\widehat A,\widehat C))=P(iX,iZ)\quad\text{for every real Lie expression }P.}
+$$
+
+Q.E.D.
+
+### 9.2.10.2 Commentary: Conditional Physical Representation {#9.2.10.2}
+
+:::info[**Interpretation of Conditional Physical Representation in the Encoded Framework**]
+:::
+
+The correspondence separates three established diagonal properties from the physical control hypothesis. An encoding gives coordinate labels, the diagonal lemmas establish action and compatibility, and physical admission specifies the coherent operations whose algebra is being represented. The exchange action is not inferred from the diagonal calculation. This division permits the matrix theorem to be used without representing a finite graph certificate as a complete microscopic derivation of physical particle dynamics.
+
+The represented Lie bracket follows once both admitted operations preserve the same physical sector. The missing quadrature is then a consequence of the direct internal algebra rather than a transferred gate from another braid. This formulation fits the Chapter 8 architecture and identifies exactly which physical facts could strengthen the conditional statement. It leaves anomaly cancellation, continuum gauge dynamics and multi-particle equivariance outside the coordinate correspondence, since those require additional objects and cannot be supplied by a five-dimensional matrix identification.
+
+Restriction need not be faithful on the full ambient physical operator algebra. Two physical operators can act identically on the five-state sector while differing elsewhere; their difference is then in the restriction kernel. The equality proved here concerns the represented image on the code. Identifying the full ambient algebra with that image requires a separate faithfulness result, and none is inferred from the twenty-four coordinate directions.
+
+### 9.2.10.3 Diagram: Encoding and Control Premises {#9.2.10.3}
+
+:::note[**Structure of Encoding and Control Premises via Logical Dependencies**]
+:::
+
+```text
+Five candidate graph kets -- isometry W --> five coordinates
+             |
+             +--> diagonal encoded action
+             +--> zero diagonal leakage
+             +--> signed-check compatibility
+
+Physical admission of exchange and imbalance controls
+             |
+             v
+       represented X_k and Z_k
+             |
+             v
+       [iX_k,iZ_k] = 2iY_k
+             |
+             v
+       shared matrix closure theorem
+
+Admission is a hypothesis; the finite certificates do not derive it.
+```
+
+---
+
+### 9.2.11 Lemma: Closed Lie Algebra {#9.2.11}
+
+:::info[**Characterization of Closed Lie Algebra via Explicit Hypotheses**]
+:::
+
+Let $L$ be the real Lie algebra generated by the four $iX_k$ and four traceless diagonal directions $iZ_k$. Then $L$ is the entire traceless skew-Hermitian $5\times5$ algebra and has real dimension 24.
+
+### 9.2.11.1 Proof: Closed Lie Algebra {#9.2.11.1}
+
+:::tip[**Construction of Closed Lie Algebra via Explicit Identities**]
+:::
+
+**I. Initial Matrices and Adjacent Brackets**
+
+Define
+
+$$
+\begin{gathered}
+A_k=i(E_{k,k+1}+E_{k+1,k}),\quad
+C_k=i(E_{kk}-E_{k+1,k+1}),\quad k=1,2,3,4,\\
+L=\operatorname{Lie}_{\mathbb R}\{A_1,A_2,A_3,A_4,C_1,C_2,C_3,C_4\},\\
+B_k=[A_k,C_k]=2(E_{k,k+1}-E_{k+1,k})=2F_{k,k+1}\in L.
+\end{gathered}
+$$
+
+The last equality follows from the expanded adjacent products (**Quadrature Generation** <Ref id="8.2.3" label="§8.2.3" />).
+
+**II. Every Off-Diagonal Direction as an Initial-Generator Expression**
+
+The adjacent directions are
+
+$$
+\begin{array}{c|c|c}
+(p,q)&F_{pq}&S_{pq}\\\hline
+(1,2)&B_1/2&A_1\\
+(2,3)&B_2/2&A_2\\
+(3,4)&B_3/2&A_3\\
+(4,5)&B_4/2&A_4
+\end{array}
+$$
+
+For separation two, the propagation products (**Off-Diagonal Propagation** <Ref id="8.2.4" label="§8.2.4" />) give
+
+$$
+\begin{aligned}
+F_{13}&=[B_1/2,B_2/2]=[B_1,B_2]/4,&
+S_{13}&=[B_1/2,A_2]=[B_1,A_2]/2,\\
+F_{24}&=[B_2/2,B_3/2]=[B_2,B_3]/4,&
+S_{24}&=[B_2/2,A_3]=[B_2,A_3]/2,\\
+F_{35}&=[B_3/2,B_4/2]=[B_3,B_4]/4,&
+S_{35}&=[B_3/2,A_4]=[B_3,A_4]/2.
+\end{aligned}
+$$
+
+For separation three,
+
+$$
+\begin{aligned}
+F_{14}&=[F_{13},F_{34}]
+=[[B_1,B_2]/4,B_3/2]=[[B_1,B_2],B_3]/8,\\
+S_{14}&=[F_{13},S_{34}]
+=[[B_1,B_2]/4,A_3]=[[B_1,B_2],A_3]/4,\\
+F_{25}&=[F_{24},F_{45}]
+=[[B_2,B_3]/4,B_4/2]=[[B_2,B_3],B_4]/8,\\
+S_{25}&=[F_{24},S_{45}]
+=[[B_2,B_3]/4,A_4]=[[B_2,B_3],A_4]/4.
+\end{aligned}
+$$
+
+For separation four,
+
+$$
+\begin{aligned}
+F_{15}&=[F_{14},F_{45}]
+=[[[B_1,B_2],B_3]/8,B_4/2]
+=[[[B_1,B_2],B_3],B_4]/16,\\
+S_{15}&=[F_{14},S_{45}]
+=[[[B_1,B_2],B_3]/8,A_4]
+=[[[B_1,B_2],B_3],A_4]/8.
+\end{aligned}
+$$
+
+Thus $F_{pq},S_{pq}\in L$ for all ten upper pairs.
+
+**III. Diagonal Directions and Full Coordinate Matrix**
+
+The four diagonal expressions are
+
+$$
+\begin{aligned}
+H_1&=C_1+C_2+C_3+C_4=i\operatorname{diag}(1,0,0,0,-1),\\
+H_2&=C_2+C_3+C_4=i\operatorname{diag}(0,1,0,0,-1),\\
+H_3&=C_3+C_4=i\operatorname{diag}(0,0,1,0,-1),\\
+H_4&=C_4=i\operatorname{diag}(0,0,0,1,-1).
+\end{aligned}
+$$
+
+Let $z_{pq}=a_{pq}+ib_{pq}$ and $c_p\in\mathbb R$. The complete real linear combination evaluates to
+
+$$
+\begin{aligned}
+R&=\sum_{p<q}(a_{pq}F_{pq}+b_{pq}S_{pq})+\sum_{p=1}^4c_pH_p\\
+&=\begin{pmatrix}
+ic_1&z_{12}&z_{13}&z_{14}&z_{15}\\
+-\overline{z_{12}}&ic_2&z_{23}&z_{24}&z_{25}\\
+-\overline{z_{13}}&-\overline{z_{23}}&ic_3&z_{34}&z_{35}\\
+-\overline{z_{14}}&-\overline{z_{24}}&-\overline{z_{34}}&ic_4&z_{45}\\
+-\overline{z_{15}}&-\overline{z_{25}}&-\overline{z_{35}}&-\overline{z_{45}}&-i(c_1+c_2+c_3+c_4)
+\end{pmatrix}.
+\end{aligned}
+$$
+
+For $R=0$, the ten upper equations $z_{pq}=0$ give
+$a_{pq}=\operatorname{Re}z_{pq}=0$ and $b_{pq}=\operatorname{Im}z_{pq}=0$; the first four diagonal equations give $c_p=(-i)R_{pp}=0$. The 24 matrices are independent (**Basis Independence** <Ref id="8.2.5" label="§8.2.5" />).
+
+If $M^\dagger=-M$ and $\operatorname{Tr}M=0$, then
+
+$$
+M_{qp}=-\overline{M_{pq}},\quad
+M_{pp}=i\operatorname{Im}M_{pp},\quad
+M_{55}=-\sum_{p=1}^4M_{pp}.
+$$
+
+Substitution of $z_{pq}=M_{pq}$ and $c_p=\operatorname{Im}M_{pp}$ into the displayed matrix gives $R_{pq}=M_{pq}$ in all 25 positions. Hence $M=R\in L$ (**Basis Completeness** <Ref id="8.2.6" label="§8.2.6" />).
+
+**IV. Reverse Containment and Dimension**
+
+For the seeds and their real combinations,
+
+$$
+A_k^\dagger=-A_k,\quad C_k^\dagger=-C_k,\quad
+\operatorname{Tr}A_k=0,\quad\operatorname{Tr}C_k=i-i=0.
+$$
+
+For skew-Hermitian $U,V$,
+
+$$
+\begin{aligned}
+[U,V]^\dagger
+&=(-V)(-U)-(-U)(-V)=-[U,V],\\
+\operatorname{Tr}[U,V]
+&=\sum_{p,q}U_{pq}V_{qp}-\sum_{q,p}V_{qp}U_{pq}=0.
+\end{aligned}
+$$
+
+Therefore $L\subseteq\mathfrak{su}(5)$, while Section III gives $\mathfrak{su}(5)\subseteq L$. The independent family has
+
+$$
+\#F=4+3+2+1=10,\qquad \#S=4+3+2+1=10,\qquad \#H=4.
+$$
+
+$$
+\boxed{L=\mathfrak{su}(5),\qquad\dim_{\mathbb R}L=10+10+4=24.}
+$$
+
+Q.E.D.
+
+### 9.2.11.2 Calculation: Exact SU(5) Closure {#9.2.11.2}
+
+:::note[**Verification of Exact SU(5) Closure via Exact Arithmetic**]
+:::
+
+Verification of the relations established in the **Closed Lie Algebra** <Ref id="9.2.11.1" label="§9.2.11.1" /> is based on the following protocols: The input is the enlarged adjacent matrix family at five coordinates (**Adjacent Generator Family** <Ref id="8.2.1" label="§8.2.1" />).
+
+1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
+2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
+3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
+
+```python
+"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
+from sympy import I, Matrix, zeros
+
+
+def elementary(n, i, j):
+    a = zeros(n)
+    a[i, j] = 1
+    return a
+
+
+def adjacent_generators(n):
+    if n < 2:
+        raise ValueError("At least two coordinates are required")
+    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
+    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
+    return x, z
+
+
+def real_coordinates(matrix):
+    # All entries here are Gaussian rationals, so this is exact over Q.
+    return [component for value in matrix for component in value.as_real_imag()]
+
+
+def lie_basis(generators):
+    basis = []
+    echelon = {}
+
+    def insert(matrix):
+        vector = real_coordinates(matrix)
+        for pivot in sorted(echelon):
+            coefficient = vector[pivot]
+            if coefficient:
+                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
+        pivot = next((i for i, value in enumerate(vector) if value), None)
+        if pivot is None:
+            return
+        scale = vector[pivot]
+        echelon[pivot] = [value / scale for value in vector]
+        basis.append(matrix)
+
+    for generator in generators:
+        insert(generator)
+    cursor = 0
+    while cursor < len(basis):
+        for earlier in range(cursor):
+            a, b = basis[cursor], basis[earlier]
+            insert(a * b - b * a)
+        cursor += 1
+    return basis
+
+print("n | exchange directions | diagonal directions | real closure dimension")
+for n in (5,):
+    exchanges, diagonals = adjacent_generators(n)
+    generators = exchanges + diagonals
+    expected = n * n - 1
+    basis = lie_basis(generators)
+    assert len(basis) == expected
+    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
+    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+```
+
+**Simulation Results:**
+```text
+n | exchange directions | diagonal directions | real closure dimension
+5 | 4 | 4 | 24
+```
+
+**Conclusion:**
+The eight specified seed directions generate a real space of dimension 24. The recorded exact values validate the finite derivation in the proof.
+
+### 9.2.11.3 Type-Theoretic Validation via Lean 4 and Mathlib {#9.2.11.3}
+
+:::note[**Lean 4 Encoding of Closed Lie Algebra via Explicit Coordinate Proofs**]
+:::
+
+Type-theoretic validation of the relation established in the **Closed Lie Algebra** <Ref id="9.2.11.1" label="§9.2.11.1" /> proceeds via the following verification strategy: The formal conclusion concerns the matrix closure, not physical control admission (**Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />).
+
+1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
+2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
+3.  **Proof Closure:** The closed proof uses the mirrored dependency module and the displayed theorem to certify exactly the specified relation.
+
+```lean
+import Mathlib.Tactic
+import Mathlib.LinearAlgebra.Matrix.Notation
+import Mathlib.Algebra.Lie.Matrix
+import Mathlib.Algebra.Lie.Subalgebra
+import Mathlib.LinearAlgebra.Complex.Module
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.LinearAlgebra.Matrix.Trace
+
+attribute [local instance 100] LieRing.ofAssociativeRing
+
+noncomputable section
+set_option maxHeartbeats 4000000
+set_option maxRecDepth 4000
+
+namespace QBD.SU5Closure
+abbrev M := Matrix (Fin 5) (Fin 5) ℂ
+
+-- The compact real matrix Lie algebra, independently of its generators.
+def su : LieSubalgebra ℝ M where
+  carrier := {a | a.conjTranspose = -a ∧ a.trace = 0}
+  zero_mem' := by simp
+  add_mem' := by
+    intro a b ha hb
+    exact ⟨by simp [Matrix.conjTranspose_add, ha.1, hb.1, add_comm], by simp [Matrix.trace_add, ha.2, hb.2]⟩
+  smul_mem' := by
+    intro r a ha
+    exact ⟨by simp [Matrix.conjTranspose_smul, ha.1], by simp [Matrix.trace_smul, ha.2]⟩
+  lie_mem' := by
+    intro a b ha hb
+    constructor
+    · change (a * b - b * a).conjTranspose = -(a * b - b * a)
+      simp [Matrix.conjTranspose_sub, Matrix.conjTranspose_mul, ha.1, hb.1]
+    · change (a * b - b * a).trace = 0
+      rw [Matrix.trace_sub, Matrix.trace_mul_comm a b, sub_self]
+
+def realSkew : LieSubalgebra ℝ M where
+  carrier := {a | a.transpose = -a ∧ ∀ i j, (a i j).im = 0}
+  zero_mem' := by simp
+  add_mem' := by
+    intro a b ha hb
+    exact ⟨by simp [Matrix.transpose_add, ha.1, hb.1, add_comm], by simpa using fun i j => show ((a + b) i j).im = 0 by simp [ha.2, hb.2]⟩
+  smul_mem' := by
+    intro r a ha
+    exact ⟨by simp [Matrix.transpose_smul, ha.1], by simpa using fun i j => show ((r • a) i j).im = 0 by simp [ha.2]⟩
+  lie_mem' := by
+    intro a b ha hb
+    constructor
+    · change (a * b - b * a).transpose = -(a * b - b * a)
+      simp [Matrix.transpose_sub, Matrix.transpose_mul, ha.1, hb.1]
+    · intro i j
+      change ((a * b - b * a) i j).im = 0
+      simp [Matrix.mul_apply, Complex.mul_im, ha.2, hb.2]
+
+def phase (i : Fin 5) : ℂ := match i.val with
+  | 0 => 1
+  | 1 => Complex.I
+  | 2 => -1
+  | 3 => -Complex.I
+  | _ => 1
+
+def D : M := Matrix.diagonal phase
+
+theorem D_unitary : D * D.conjTranspose = 1 ∧ D.conjTranspose * D = 1 := by
+  constructor <;> ext i j <;> fin_cases i <;> fin_cases j <;>
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, D, phase, Matrix.mul_apply, Fin.sum_univ_succ, Matrix.diagonal_apply]
+
+def conjugate (a : M) : M := D.conjTranspose * a * D
+
+theorem conjugate_bracket (a b : M) :
+    conjugate ⁅a,b⁆ = ⁅conjugate a, conjugate b⁆ := by
+  change D.conjTranspose * (a*b-b*a) * D =
+    (D.conjTranspose*a*D)*(D.conjTranspose*b*D) -
+    (D.conjTranspose*b*D)*(D.conjTranspose*a*D)
+  simp only [Matrix.mul_sub, Matrix.sub_mul]
+  simp only [Matrix.mul_assoc, ← Matrix.mul_assoc D D.conjTranspose, D_unitary.1,
+    Matrix.one_mul]
+
+def twistedSo : LieSubalgebra ℝ M where
+  carrier := {a | conjugate a ∈ realSkew}
+  zero_mem' := by simp [conjugate]
+  add_mem' := by
+    intro a b ha hb
+    simpa [conjugate, Matrix.mul_add, Matrix.add_mul] using realSkew.add_mem ha hb
+  smul_mem' := by
+    intro r a ha
+    simpa [conjugate, Matrix.mul_smul, Matrix.smul_mul] using realSkew.smul_mem r ha
+  lie_mem' := by
+    intro a b ha hb
+    change conjugate ⁅a,b⁆ ∈ realSkew
+    rw [conjugate_bracket]
+    exact realSkew.lie_mem ha hb
+
+
+open scoped Matrix
+
+def E (i j : Fin 5) : M := Matrix.single i j 1
+
+@[simp] theorem E_apply (i j a b : Fin 5) :
+    E i j a b = if i.val = a.val ∧ j.val = b.val then 1 else 0 := by
+  simp only [E, Matrix.single_apply, Fin.ext_iff]
+
+def F (i j : Fin 5) : M := E i j - E j i
+
+def S (i j : Fin 5) : M := Complex.I • (E i j + E j i)
+
+def H (i : Fin 5) : M := Complex.I • (E i i - E 4 4)
+
+def A (k : Fin 4) : M := S k.castSucc k.succ
+
+def C (k : Fin 4) : M := Complex.I • (E k.castSucc k.castSucc - E k.succ k.succ)
+
+def four : LieSubalgebra ℝ M := LieSubalgebra.lieSpan ℝ M (Set.range A)
+
+def eight : LieSubalgebra ℝ M := LieSubalgebra.lieSpan ℝ M (Set.range A ∪ Set.range C)
+
+def basis24 : Fin 24 → M := fun t =>
+  match t.val with
+  | 0 => F 0 1
+  | 1 => F 0 2
+  | 2 => F 0 3
+  | 3 => F 0 4
+  | 4 => F 1 2
+  | 5 => F 1 3
+  | 6 => F 1 4
+  | 7 => F 2 3
+  | 8 => F 2 4
+  | 9 => F 3 4
+  | 10 => S 0 1
+  | 11 => S 0 2
+  | 12 => S 0 3
+  | 13 => S 0 4
+  | 14 => S 1 2
+  | 15 => S 1 3
+  | 16 => S 1 4
+  | 17 => S 2 3
+  | 18 => S 2 4
+  | 19 => S 3 4
+  | 20 => H 0
+  | 21 => H 1
+  | 22 => H 2
+  | _ => H 3
+
+def synth24 (v : Fin 24 → ℝ) : M := fun i j =>
+  match i.val, j.val with
+  | 0, 0 => (v 20 : ℂ) * Complex.I
+  | 0, 1 => (v 0 : ℂ) + (v 10 : ℂ) * Complex.I
+  | 0, 2 => (v 1 : ℂ) + (v 11 : ℂ) * Complex.I
+  | 0, 3 => (v 2 : ℂ) + (v 12 : ℂ) * Complex.I
+  | 0, 4 => (v 3 : ℂ) + (v 13 : ℂ) * Complex.I
+  | 1, 0 => -(v 0 : ℂ) + (v 10 : ℂ) * Complex.I
+  | 1, 1 => (v 21 : ℂ) * Complex.I
+  | 1, 2 => (v 4 : ℂ) + (v 14 : ℂ) * Complex.I
+  | 1, 3 => (v 5 : ℂ) + (v 15 : ℂ) * Complex.I
+  | 1, 4 => (v 6 : ℂ) + (v 16 : ℂ) * Complex.I
+  | 2, 0 => -(v 1 : ℂ) + (v 11 : ℂ) * Complex.I
+  | 2, 1 => -(v 4 : ℂ) + (v 14 : ℂ) * Complex.I
+  | 2, 2 => (v 22 : ℂ) * Complex.I
+  | 2, 3 => (v 7 : ℂ) + (v 17 : ℂ) * Complex.I
+  | 2, 4 => (v 8 : ℂ) + (v 18 : ℂ) * Complex.I
+  | 3, 0 => -(v 2 : ℂ) + (v 12 : ℂ) * Complex.I
+  | 3, 1 => -(v 5 : ℂ) + (v 15 : ℂ) * Complex.I
+  | 3, 2 => -(v 7 : ℂ) + (v 17 : ℂ) * Complex.I
+  | 3, 3 => (v 23 : ℂ) * Complex.I
+  | 3, 4 => (v 9 : ℂ) + (v 19 : ℂ) * Complex.I
+  | 4, 0 => -(v 3 : ℂ) + (v 13 : ℂ) * Complex.I
+  | 4, 1 => -(v 6 : ℂ) + (v 16 : ℂ) * Complex.I
+  | 4, 2 => -(v 8 : ℂ) + (v 18 : ℂ) * Complex.I
+  | 4, 3 => -(v 9 : ℂ) + (v 19 : ℂ) * Complex.I
+  | _, _ => -((v 20 : ℂ) + v 21 + v 22 + v 23) * Complex.I
+
+def coord24 (m : M) : Fin 24 → ℝ := fun t =>
+  match t.val with
+  | 0 => (m 0 1).re
+  | 1 => (m 0 2).re
+  | 2 => (m 0 3).re
+  | 3 => (m 0 4).re
+  | 4 => (m 1 2).re
+  | 5 => (m 1 3).re
+  | 6 => (m 1 4).re
+  | 7 => (m 2 3).re
+  | 8 => (m 2 4).re
+  | 9 => (m 3 4).re
+  | 10 => (m 0 1).im
+  | 11 => (m 0 2).im
+  | 12 => (m 0 3).im
+  | 13 => (m 0 4).im
+  | 14 => (m 1 2).im
+  | 15 => (m 1 3).im
+  | 16 => (m 1 4).im
+  | 17 => (m 2 3).im
+  | 18 => (m 2 4).im
+  | 19 => (m 3 4).im
+  | 20 => (m 0 0).im
+  | 21 => (m 1 1).im
+  | 22 => (m 2 2).im
+  | _ => (m 3 3).im
+
+theorem coord24_synth24 (v : Fin 24 → ℝ) : coord24 (synth24 v) = v := by
+  ext t
+  fin_cases t <;>
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, coord24, synth24, basis24, F, S, H, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;> rfl
+
+theorem synth24_reconstruct (m : M) (hm : m ∈ su) : synth24 (coord24 m) = m := by
+  have hre (i j : Fin 5) : (m j i).re = -(m i j).re := by
+    have h := congrArg Complex.re (congrFun (congrFun hm.1 i) j)
+    simpa using h
+  have him (i j : Fin 5) : (m j i).im = (m i j).im := by
+    have h := congrArg Complex.im (congrFun (congrFun hm.1 i) j)
+    simpa using neg_injective h
+  have ht : (m 0 0).im + ((m 1 1).im + ((m 2 2).im + ((m 3 3).im + (m 4 4).im))) = 0 := by
+    simpa [Matrix.trace, Matrix.diag, Fin.sum_univ_succ] using congrArg Complex.im hm.2
+  ext i j
+  fin_cases i <;> fin_cases j
+  · change synth24 (coord24 m) 0 0 = m 0 0
+    have hr := hre 0 0
+    have hi := him 0 0
+    have hd := hre 0 0
+    have he := hre 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 0 1 = m 0 1
+    have hr := hre 0 1
+    have hi := him 0 1
+    have hd := hre 0 0
+    have he := hre 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 0 2 = m 0 2
+    have hr := hre 0 2
+    have hi := him 0 2
+    have hd := hre 0 0
+    have he := hre 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 0 3 = m 0 3
+    have hr := hre 0 3
+    have hi := him 0 3
+    have hd := hre 0 0
+    have he := hre 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 0 4 = m 0 4
+    have hr := hre 0 4
+    have hi := him 0 4
+    have hd := hre 0 0
+    have he := hre 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 1 0 = m 1 0
+    have hr := hre 1 0
+    have hi := him 1 0
+    have hd := hre 1 1
+    have he := hre 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 1 1 = m 1 1
+    have hr := hre 1 1
+    have hi := him 1 1
+    have hd := hre 1 1
+    have he := hre 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 1 2 = m 1 2
+    have hr := hre 1 2
+    have hi := him 1 2
+    have hd := hre 1 1
+    have he := hre 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 1 3 = m 1 3
+    have hr := hre 1 3
+    have hi := him 1 3
+    have hd := hre 1 1
+    have he := hre 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 1 4 = m 1 4
+    have hr := hre 1 4
+    have hi := him 1 4
+    have hd := hre 1 1
+    have he := hre 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 2 0 = m 2 0
+    have hr := hre 2 0
+    have hi := him 2 0
+    have hd := hre 2 2
+    have he := hre 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 2 1 = m 2 1
+    have hr := hre 2 1
+    have hi := him 2 1
+    have hd := hre 2 2
+    have he := hre 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 2 2 = m 2 2
+    have hr := hre 2 2
+    have hi := him 2 2
+    have hd := hre 2 2
+    have he := hre 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 2 3 = m 2 3
+    have hr := hre 2 3
+    have hi := him 2 3
+    have hd := hre 2 2
+    have he := hre 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 2 4 = m 2 4
+    have hr := hre 2 4
+    have hi := him 2 4
+    have hd := hre 2 2
+    have he := hre 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 3 0 = m 3 0
+    have hr := hre 3 0
+    have hi := him 3 0
+    have hd := hre 3 3
+    have he := hre 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 3 1 = m 3 1
+    have hr := hre 3 1
+    have hi := him 3 1
+    have hd := hre 3 3
+    have he := hre 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 3 2 = m 3 2
+    have hr := hre 3 2
+    have hi := him 3 2
+    have hd := hre 3 3
+    have he := hre 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 3 3 = m 3 3
+    have hr := hre 3 3
+    have hi := him 3 3
+    have hd := hre 3 3
+    have he := hre 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 3 4 = m 3 4
+    have hr := hre 3 4
+    have hi := him 3 4
+    have hd := hre 3 3
+    have he := hre 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 4 0 = m 4 0
+    have hr := hre 4 0
+    have hi := him 4 0
+    have hd := hre 4 4
+    have he := hre 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 4 1 = m 4 1
+    have hr := hre 4 1
+    have hi := him 4 1
+    have hd := hre 4 4
+    have he := hre 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 4 2 = m 4 2
+    have hr := hre 4 2
+    have hi := him 4 2
+    have hd := hre 4 4
+    have he := hre 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 4 3 = m 4 3
+    have hr := hre 4 3
+    have hi := him 4 3
+    have hd := hre 4 4
+    have he := hre 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+  · change synth24 (coord24 m) 4 4 = m 4 4
+    have hr := hre 4 4
+    have hi := him 4 4
+    have hd := hre 4 4
+    have he := hre 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat] at hr hi hd he ht
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, coord24] <;>
+      linarith
+
+-- Membership of the generators and explicit bracket-generated basis elements.
+theorem A_mem_eight (k : Fin 4) : A k ∈ eight :=
+  LieSubalgebra.subset_lieSpan (Or.inl (Set.mem_range_self k))
+
+theorem C_mem_eight (k : Fin 4) : C k ∈ eight :=
+  LieSubalgebra.subset_lieSpan (Or.inr (Set.mem_range_self k))
+
+theorem S01_mem : S 0 1 ∈ eight := A_mem_eight 0
+
+theorem F01_mem : F 0 1 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅A 0, C 0⁆ = F 0 1 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem (A_mem_eight 0) (C_mem_eight 0))
+
+theorem S12_mem : S 1 2 ∈ eight := A_mem_eight 1
+
+theorem F12_mem : F 1 2 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅A 1, C 1⁆ = F 1 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem (A_mem_eight 1) (C_mem_eight 1))
+
+theorem S23_mem : S 2 3 ∈ eight := A_mem_eight 2
+
+theorem F23_mem : F 2 3 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅A 2, C 2⁆ = F 2 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem (A_mem_eight 2) (C_mem_eight 2))
+
+theorem S34_mem : S 3 4 ∈ eight := A_mem_eight 3
+
+theorem F34_mem : F 3 4 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅A 3, C 3⁆ = F 3 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem (A_mem_eight 3) (C_mem_eight 3))
+
+theorem F02_mem : F 0 2 ∈ eight := by
+  have h : ⁅F 0 1, F 1 2⁆ = F 0 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F01_mem F12_mem
+
+theorem S02_mem : S 0 2 ∈ eight := by
+  have h : ⁅F 0 1, S 1 2⁆ = S 0 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F01_mem S12_mem
+
+theorem F13_mem : F 1 3 ∈ eight := by
+  have h : ⁅F 1 2, F 2 3⁆ = F 1 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F12_mem F23_mem
+
+theorem S13_mem : S 1 3 ∈ eight := by
+  have h : ⁅F 1 2, S 2 3⁆ = S 1 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F12_mem S23_mem
+
+theorem F24_mem : F 2 4 ∈ eight := by
+  have h : ⁅F 2 3, F 3 4⁆ = F 2 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F23_mem F34_mem
+
+theorem S24_mem : S 2 4 ∈ eight := by
+  have h : ⁅F 2 3, S 3 4⁆ = S 2 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F23_mem S34_mem
+
+theorem F03_mem : F 0 3 ∈ eight := by
+  have h : ⁅F 0 2, F 2 3⁆ = F 0 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F02_mem F23_mem
+
+theorem S03_mem : S 0 3 ∈ eight := by
+  have h : ⁅F 0 2, S 2 3⁆ = S 0 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F02_mem S23_mem
+
+theorem F14_mem : F 1 4 ∈ eight := by
+  have h : ⁅F 1 3, F 3 4⁆ = F 1 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F13_mem F34_mem
+
+theorem S14_mem : S 1 4 ∈ eight := by
+  have h : ⁅F 1 3, S 3 4⁆ = S 1 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F13_mem S34_mem
+
+theorem F04_mem : F 0 4 ∈ eight := by
+  have h : ⁅F 0 3, F 3 4⁆ = F 0 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F03_mem F34_mem
+
+theorem S04_mem : S 0 4 ∈ eight := by
+  have h : ⁅F 0 3, S 3 4⁆ = S 0 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.lie_mem F03_mem S34_mem
+
+theorem H0_mem : H 0 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅F 0 4, S 0 4⁆ = H 0 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem F04_mem S04_mem)
+
+theorem H1_mem : H 1 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅F 1 4, S 1 4⁆ = H 1 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem F14_mem S14_mem)
+
+theorem H2_mem : H 2 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅F 2 4, S 2 4⁆ = H 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem F24_mem S24_mem)
+
+theorem H3_mem : H 3 ∈ eight := by
+  have h : (1/2 : ℝ) • ⁅F 3 4, S 3 4⁆ = H 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, A, C, F, S, H, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact eight.smul_mem _ (eight.lie_mem F34_mem S34_mem)
+
+theorem basis24_mem (t : Fin 24) : basis24 t ∈ eight := by
+  fin_cases t
+  · exact F01_mem
+  · exact F02_mem
+  · exact F03_mem
+  · exact F04_mem
+  · exact F12_mem
+  · exact F13_mem
+  · exact F14_mem
+  · exact F23_mem
+  · exact F24_mem
+  · exact F34_mem
+  · exact S01_mem
+  · exact S02_mem
+  · exact S03_mem
+  · exact S04_mem
+  · exact S12_mem
+  · exact S13_mem
+  · exact S14_mem
+  · exact S23_mem
+  · exact S24_mem
+  · exact S34_mem
+  · exact H0_mem
+  · exact H1_mem
+  · exact H2_mem
+  · exact H3_mem
+
+theorem synth24_mem (v : Fin 24 → ℝ) : synth24 v ∈ eight := by
+  have heq : (∑ t : Fin 24, v t • basis24 t) = synth24 v := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth24, basis24, F, S, H, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;> first
+      | rfl
+      | (change -v 20 + (-v 21 + (-v 22 + -v 23)) = -v 23 + (-v 22 + (-v 21 + -v 20)); ring)
+  rw [← heq]
+  exact eight.sum_mem fun t _ => eight.smul_mem _ (basis24_mem t)
+
+theorem eight_le_su : eight ≤ su := by
+  apply LieSubalgebra.lieSpan_le.mpr
+  intro m hm
+  rcases hm with ⟨k, rfl⟩ | ⟨k, rfl⟩
+  all_goals
+    constructor
+    · ext i j
+      fin_cases k <;> fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+        norm_num [Fin.succ, Fin.ofNat, A, C, S, E_apply]
+    · fin_cases k <;> apply Complex.ext <;>
+        norm_num [Fin.succ, Fin.ofNat, A, C, S, E_apply, Matrix.trace, Fin.sum_univ_succ]
+
+theorem eight_eq_su : eight = su := by
+  apply le_antisymm eight_le_su
+  intro m hm
+  rw [← synth24_reconstruct m hm]
+  exact synth24_mem _
+
+
+def eightCoordinates : eight ≃ₗ[ℝ] (Fin 24 → ℝ) where
+  toFun m := coord24 m.val
+  invFun v := ⟨synth24 v, synth24_mem v⟩
+  left_inv m := by
+    apply Subtype.ext
+    exact synth24_reconstruct m.val (eight_le_su m.property)
+  right_inv := coord24_synth24
+  map_add' a b := by
+    ext t
+    fin_cases t <;> simp [coord24]
+  map_smul' r a := by
+    ext t
+    fin_cases t <;> simp [coord24]
+
+theorem eight_dimension : Module.finrank ℝ eight = 24 := by
+  simpa using eightCoordinates.finrank_eq
+
+-- The ten path brackets of the original four symmetric generators.
+def B (i j : Fin 5) : M :=
+  Complex.I ^ (j.val-i.val) • E i j - (-Complex.I) ^ (j.val-i.val) • E j i
+
+def basis10 : Fin 10 → M := fun t =>
+  match t.val with
+  | 0 => B 0 1
+  | 1 => B 0 2
+  | 2 => B 0 3
+  | 3 => B 0 4
+  | 4 => B 1 2
+  | 5 => B 1 3
+  | 6 => B 1 4
+  | 7 => B 2 3
+  | 8 => B 2 4
+  | _ => B 3 4
+
+def synth10 (v : Fin 10 → ℝ) : M := fun i j =>
+  match i.val, j.val with
+  | 0, 0 => 0
+  | 0, 1 => (v 0 : ℂ) * (Complex.I)
+  | 0, 2 => (v 1 : ℂ) * (-1)
+  | 0, 3 => (v 2 : ℂ) * (-Complex.I)
+  | 0, 4 => (v 3 : ℂ) * (1)
+  | 1, 0 => (v 0 : ℂ) * (Complex.I)
+  | 1, 1 => 0
+  | 1, 2 => (v 4 : ℂ) * (Complex.I)
+  | 1, 3 => (v 5 : ℂ) * (-1)
+  | 1, 4 => (v 6 : ℂ) * (-Complex.I)
+  | 2, 0 => (v 1 : ℂ) * (1)
+  | 2, 1 => (v 4 : ℂ) * (Complex.I)
+  | 2, 2 => 0
+  | 2, 3 => (v 7 : ℂ) * (Complex.I)
+  | 2, 4 => (v 8 : ℂ) * (-1)
+  | 3, 0 => (v 2 : ℂ) * (-Complex.I)
+  | 3, 1 => (v 5 : ℂ) * (1)
+  | 3, 2 => (v 7 : ℂ) * (Complex.I)
+  | 3, 3 => 0
+  | 3, 4 => (v 9 : ℂ) * (Complex.I)
+  | 4, 0 => (v 3 : ℂ) * (-1)
+  | 4, 1 => (v 6 : ℂ) * (-Complex.I)
+  | 4, 2 => (v 8 : ℂ) * (1)
+  | 4, 3 => (v 9 : ℂ) * (Complex.I)
+  | _, _ => 0
+
+def coord10 (m : M) : Fin 10 → ℝ := fun t =>
+  match t.val with
+  | 0 => (m 0 1).im
+  | 1 => -(m 0 2).re
+  | 2 => -(m 0 3).im
+  | 3 => (m 0 4).re
+  | 4 => (m 1 2).im
+  | 5 => -(m 1 3).re
+  | 6 => -(m 1 4).im
+  | 7 => (m 2 3).im
+  | 8 => -(m 2 4).re
+  | _ => (m 3 4).im
+
+theorem coord10_synth10 (v : Fin 10 → ℝ) : coord10 (synth10 v) = v := by
+  ext t
+  fin_cases t <;>
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, coord10, synth10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;> rfl
+
+theorem four_le_twistedSo : four ≤ twistedSo := by
+  apply LieSubalgebra.lieSpan_le.mpr
+  rintro m ⟨k,rfl⟩
+  change (conjugate (A k)).transpose = -conjugate (A k) ∧
+    ∀ i j, (conjugate (A k) i j).im = 0
+  constructor
+  · ext i j; fin_cases k <;> fin_cases i <;> fin_cases j <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, A, S, E_apply, Matrix.mul_apply, Matrix.diagonal_apply,
+        Matrix.single_apply, Fin.sum_univ_succ]
+  · intro i j; fin_cases k <;> fin_cases i <;> fin_cases j <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, A, S, E_apply, Matrix.mul_apply, Matrix.diagonal_apply,
+        Matrix.single_apply, Fin.sum_univ_succ]
+
+theorem synth10_reconstruct (m : M) (hm : m ∈ twistedSo) : synth10 (coord10 m) = m := by
+  have hs (i j : Fin 5) : conjugate m j i = -conjugate m i j :=
+    congrFun (congrFun hm.1 i) j
+  have hz (i j : Fin 5) : (conjugate m i j).im = 0 := hm.2 i j
+  ext i j
+  fin_cases i <;> fin_cases j
+  · change synth10 (coord10 m) 0 0 = m 0 0
+    have hr := congrArg Complex.re (hs 0 0)
+    have hi := congrArg Complex.im (hs 0 0)
+    have hzi := hz 0 0
+    have hzj := hz 0 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 0 1 = m 0 1
+    have hr := congrArg Complex.re (hs 0 1)
+    have hi := congrArg Complex.im (hs 0 1)
+    have hzi := hz 0 1
+    have hzj := hz 1 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 0 2 = m 0 2
+    have hr := congrArg Complex.re (hs 0 2)
+    have hi := congrArg Complex.im (hs 0 2)
+    have hzi := hz 0 2
+    have hzj := hz 2 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 0 3 = m 0 3
+    have hr := congrArg Complex.re (hs 0 3)
+    have hi := congrArg Complex.im (hs 0 3)
+    have hzi := hz 0 3
+    have hzj := hz 3 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 0 4 = m 0 4
+    have hr := congrArg Complex.re (hs 0 4)
+    have hi := congrArg Complex.im (hs 0 4)
+    have hzi := hz 0 4
+    have hzj := hz 4 0
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 1 0 = m 1 0
+    have hr := congrArg Complex.re (hs 1 0)
+    have hi := congrArg Complex.im (hs 1 0)
+    have hzi := hz 1 0
+    have hzj := hz 0 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 1 1 = m 1 1
+    have hr := congrArg Complex.re (hs 1 1)
+    have hi := congrArg Complex.im (hs 1 1)
+    have hzi := hz 1 1
+    have hzj := hz 1 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 1 2 = m 1 2
+    have hr := congrArg Complex.re (hs 1 2)
+    have hi := congrArg Complex.im (hs 1 2)
+    have hzi := hz 1 2
+    have hzj := hz 2 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 1 3 = m 1 3
+    have hr := congrArg Complex.re (hs 1 3)
+    have hi := congrArg Complex.im (hs 1 3)
+    have hzi := hz 1 3
+    have hzj := hz 3 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 1 4 = m 1 4
+    have hr := congrArg Complex.re (hs 1 4)
+    have hi := congrArg Complex.im (hs 1 4)
+    have hzi := hz 1 4
+    have hzj := hz 4 1
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 2 0 = m 2 0
+    have hr := congrArg Complex.re (hs 2 0)
+    have hi := congrArg Complex.im (hs 2 0)
+    have hzi := hz 2 0
+    have hzj := hz 0 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 2 1 = m 2 1
+    have hr := congrArg Complex.re (hs 2 1)
+    have hi := congrArg Complex.im (hs 2 1)
+    have hzi := hz 2 1
+    have hzj := hz 1 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 2 2 = m 2 2
+    have hr := congrArg Complex.re (hs 2 2)
+    have hi := congrArg Complex.im (hs 2 2)
+    have hzi := hz 2 2
+    have hzj := hz 2 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 2 3 = m 2 3
+    have hr := congrArg Complex.re (hs 2 3)
+    have hi := congrArg Complex.im (hs 2 3)
+    have hzi := hz 2 3
+    have hzj := hz 3 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 2 4 = m 2 4
+    have hr := congrArg Complex.re (hs 2 4)
+    have hi := congrArg Complex.im (hs 2 4)
+    have hzi := hz 2 4
+    have hzj := hz 4 2
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 3 0 = m 3 0
+    have hr := congrArg Complex.re (hs 3 0)
+    have hi := congrArg Complex.im (hs 3 0)
+    have hzi := hz 3 0
+    have hzj := hz 0 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 3 1 = m 3 1
+    have hr := congrArg Complex.re (hs 3 1)
+    have hi := congrArg Complex.im (hs 3 1)
+    have hzi := hz 3 1
+    have hzj := hz 1 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 3 2 = m 3 2
+    have hr := congrArg Complex.re (hs 3 2)
+    have hi := congrArg Complex.im (hs 3 2)
+    have hzi := hz 3 2
+    have hzj := hz 2 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 3 3 = m 3 3
+    have hr := congrArg Complex.re (hs 3 3)
+    have hi := congrArg Complex.im (hs 3 3)
+    have hzi := hz 3 3
+    have hzj := hz 3 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 3 4 = m 3 4
+    have hr := congrArg Complex.re (hs 3 4)
+    have hi := congrArg Complex.im (hs 3 4)
+    have hzi := hz 3 4
+    have hzj := hz 4 3
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 4 0 = m 4 0
+    have hr := congrArg Complex.re (hs 4 0)
+    have hi := congrArg Complex.im (hs 4 0)
+    have hzi := hz 4 0
+    have hzj := hz 0 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 4 1 = m 4 1
+    have hr := congrArg Complex.re (hs 4 1)
+    have hi := congrArg Complex.im (hs 4 1)
+    have hzi := hz 4 1
+    have hzj := hz 1 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 4 2 = m 4 2
+    have hr := congrArg Complex.re (hs 4 2)
+    have hi := congrArg Complex.im (hs 4 2)
+    have hzi := hz 4 2
+    have hzj := hz 2 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 4 3 = m 4 3
+    have hr := congrArg Complex.re (hs 4 3)
+    have hi := congrArg Complex.im (hs 4 3)
+    have hzi := hz 4 3
+    have hzj := hz 3 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+  · change synth10 (coord10 m) 4 4 = m 4 4
+    have hr := congrArg Complex.re (hs 4 4)
+    have hi := congrArg Complex.im (hs 4 4)
+    have hzi := hz 4 4
+    have hzj := hz 4 4
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, conjugate, D, phase, Matrix.mul_apply, Matrix.diagonal_apply,
+      Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im] at hr hi hzi hzj
+    apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, coord10, basis10, B, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;>
+      linarith
+theorem B01_mem : B 0 1 ∈ four := by
+  have h : B 0 1 = A 0 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [h]
+  exact LieSubalgebra.subset_lieSpan (Set.mem_range_self 0)
+
+theorem B12_mem : B 1 2 ∈ four := by
+  have h : B 1 2 = A 1 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [h]
+  exact LieSubalgebra.subset_lieSpan (Set.mem_range_self 1)
+
+theorem B23_mem : B 2 3 ∈ four := by
+  have h : B 2 3 = A 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [h]
+  exact LieSubalgebra.subset_lieSpan (Set.mem_range_self 2)
+
+theorem B34_mem : B 3 4 ∈ four := by
+  have h : B 3 4 = A 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [h]
+  exact LieSubalgebra.subset_lieSpan (Set.mem_range_self 3)
+
+theorem B02_mem : B 0 2 ∈ four := by
+  have h : ⁅B 0 1, A 1⁆ = B 0 2 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B01_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 1))
+
+theorem B13_mem : B 1 3 ∈ four := by
+  have h : ⁅B 1 2, A 2⁆ = B 1 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B12_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 2))
+
+theorem B24_mem : B 2 4 ∈ four := by
+  have h : ⁅B 2 3, A 3⁆ = B 2 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B23_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 3))
+
+theorem B03_mem : B 0 3 ∈ four := by
+  have h : ⁅B 0 2, A 2⁆ = B 0 3 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B02_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 2))
+
+theorem B14_mem : B 1 4 ∈ four := by
+  have h : ⁅B 1 3, A 3⁆ = B 1 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B13_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 3))
+
+theorem B04_mem : B 0 4 ∈ four := by
+  have h : ⁅B 0 3, A 3⁆ = B 0 4 := by
+    ext i j; fin_cases i <;> fin_cases j <;> apply Complex.ext <;> norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, B, A, S, E_apply, LieRing.of_associative_ring_bracket, Matrix.mul_apply, Matrix.single_apply, Fin.sum_univ_succ]
+  rw [← h]
+  exact four.lie_mem B03_mem (LieSubalgebra.subset_lieSpan (Set.mem_range_self 3))
+
+theorem basis10_mem (t : Fin 10) : basis10 t ∈ four := by
+  fin_cases t
+  · exact B01_mem
+  · exact B02_mem
+  · exact B03_mem
+  · exact B04_mem
+  · exact B12_mem
+  · exact B13_mem
+  · exact B14_mem
+  · exact B23_mem
+  · exact B24_mem
+  · exact B34_mem
+
+theorem synth10_mem (v : Fin 10 → ℝ) : synth10 v ∈ four := by
+  have heq : (∑ t : Fin 10, v t • basis10 t) = synth10 v := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      apply Complex.ext <;>
+      norm_num [Fin.succ, pow_succ, Fin.ofNat, Complex.mul_re, Complex.mul_im, synth10, basis10, B, F, S, H, E_apply, Matrix.single_apply, Fin.sum_univ_succ] <;> first | rfl | ring
+  rw [← heq]
+  exact four.sum_mem fun t _ => four.smul_mem _ (basis10_mem t)
+
+theorem four_eq_twistedSo : four = twistedSo := by
+  apply le_antisymm four_le_twistedSo
+  intro m hm
+  rw [← synth10_reconstruct m hm]
+  exact synth10_mem _
+
+def fourCoordinates : four ≃ₗ[ℝ] (Fin 10 → ℝ) where
+  toFun m := coord10 m.val
+  invFun v := ⟨synth10 v, synth10_mem v⟩
+  left_inv m := by
+    apply Subtype.ext
+    exact synth10_reconstruct m.val (four_le_twistedSo m.property)
+  right_inv := coord10_synth10
+  map_add' a b := by
+    ext t
+    fin_cases t <;> simp [coord10, add_comm]
+  map_smul' r a := by
+    ext t
+    fin_cases t <;> simp [coord10, add_comm]
+
+theorem four_dimension : Module.finrank ℝ four = 10 := by
+  simpa using fourCoordinates.finrank_eq
+
+/-- Uniform conjugation, with no alternating sign. -/
+theorem conjugate_adjacent (k : Fin 4) :
+    conjugate (A k) = -F k.castSucc k.succ := by
+  ext i j
+  fin_cases k <;> fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, conjugate, D, phase, A, F, S, E_apply, Matrix.mul_apply,
+      Matrix.diagonal_apply, Fin.sum_univ_succ]
+
+/-- The missing quadrature is an actual real Lie bracket of admitted matrix directions. -/
+theorem adjacent_commutator (k : Fin 4) :
+    ⁅A k, C k⁆ = (2 : ℝ) • F k.castSucc k.succ := by
+  ext i j
+  fin_cases k <;> fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+    norm_num [Fin.succ, pow_succ, Fin.ofNat, A, C, F, S, E_apply, LieRing.of_associative_ring_bracket,
+      Matrix.mul_apply, Fin.sum_univ_succ, Complex.mul_re, Complex.mul_im]
+
+/-- Every element of the original closure has zero diagonal, in the original basis. -/
+theorem four_zero_diagonal (m : M) (hm : m ∈ four) (i : Fin 5) : m i i = 0 := by
+  have h := congrFun (congrFun (synth10_reconstruct m (four_le_twistedSo hm)) i) i
+  fin_cases i <;> simpa [synth10] using h.symm
+
+theorem original_dimension_24_false : Module.finrank ℝ four ≠ 24 := by
+  rw [four_dimension]
+  norm_num
+
+#print axioms adjacent_commutator
+#print axioms conjugate_adjacent
+#print axioms four_zero_diagonal
+#print axioms eight_eq_su
+#print axioms eight_dimension
+#print axioms four_eq_twistedSo
+#print axioms four_dimension
+
+end QBD.SU5Closure
+
+namespace QBD.Monograph.PentaClosure
+open QBD.SU5Closure
+
+-- Compare the original and enlarged real matrix Lie spans.
+/-- The original closure has dimension ten; the direct enlarged closure has dimension twenty-four. -/
+theorem closure_dimensions : Module.finrank ℝ four = 10 ∧ Module.finrank ℝ eight = 24 :=
+  ⟨four_dimension, eight_dimension⟩
+
+-- Identify the target independently of a dimension count.
+/-- The enlarged generated algebra is the traceless skew-Hermitian matrix algebra. -/
+theorem full_target : eight = su := eight_eq_su
+
+#print axioms closure_dimensions
+#print axioms full_target
+end QBD.Monograph.PentaClosure
+```
+
+**Verification Summary:**
+The self-contained block defines both target algebras independently, exhibits bracket-generated bases and constructs real coordinate equivalences of dimensions ten and twenty-four. It proves the full algebra equalities as well as the counts. The specialization concerns matrices, not physical Hamiltonian availability. The full block and this specialization are mirrored together in the Lean repository, and compilation is checked separately from structural validation. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
+
+### 9.2.11.4 Commentary: Closure of Unified Force {#9.2.11.4}
+
+:::info[**Interpretation of Closure of Unified Force in the Encoded Framework**]
+:::
+
+The closure result settles the finite algebraic question posed by the generator definitions. The enlarged seed has the full compact special unitary matrix algebra, and the original four exchanges have a distinct smaller closure. The proof does not rely on a numerical tolerance or on interpreting four adjacency labels as eight independent operators. The exact calculation and Lean certificate provide separate checks of the same explicitly specified finite matrix problem.
+
+The physical interpretation uses the encoded control correspondence and its admission premises. Once that correspondence holds on the physical sector, the represented closure supplies the algebra used in the unification construction. The number of algebra directions does not by itself establish a continuum gauge field, anomaly cancellation or the transformation law of a multi-particle state. Those conclusions involve additional representations and dynamical structures, which remain separate from the exact twenty-four-dimensional matrix classification completed here.
+
+---
+
+### 9.2.12 Lemma: Anti-Fundamental Multiplet {#9.2.12}
+
+:::info[**Anti-fundamental action via the dual of the encoded fundamental**]
+:::
+
+Let $V_5$ carry the fundamental action of $SU(5)$ and equip $V_5^*$ with its dual action. Then $V_5^*$ is the $\mathbf{\bar5}$, with Hermitian generators $-(T^a)^T$ and color and weak decomposition $(\mathbf{\bar3},\mathbf1)\oplus(\mathbf1,\mathbf2)$.
+
+### 9.2.12.1 Proof: Anti-Fundamental Multiplet {#9.2.12.1}
+
+:::tip[**Derivation of the anti-fundamental generators via dual pairing**]
+:::
+
+**I. Finite action**
+
+In the fundamental space of **Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />, let $v_i$ be a basis and let $v^i$ be its dual, with $v^i(v_j)=\delta^i_j$. For the action on linear functionals set $(g\cdot f)(v)=f(g^{-1}v)$. Then
+
+$$
+((gh)\cdot f)(v)=f(h^{-1}g^{-1}v)
+=(g\cdot(h\cdot f))(v).
+$$
+
+In dual column coordinates the action matrix is $(g^{-1})^T=\overline g$, since $g^\dagger=g^{-1}$.
+
+**II. Infinitesimal action**
+
+For $g(t)=e^{itT^a}$, the dual matrix is $e^{-it(T^a)^T}$. With $T_{\mathrm{dual}}^a=-(T^a)^T$ and $[T^a,T^b]=i\sum_c f^{abc}T^c$,
+
+$$
+\begin{aligned}
+[T_{\mathrm{dual}}^a,T_{\mathrm{dual}}^b]
+&=[(T^a)^T,(T^b)^T]=-[T^a,T^b]^T\\
+&=-i\sum_c f^{abc}(T^c)^T
+=i\sum_c f^{abc}T_{\mathrm{dual}}^c.
+\end{aligned}
+$$
+
+To see irreducibility, let $A\subset V_5^*$ be a nonzero proper invariant subspace. Its annihilator $A^0$ has dimension $5-\dim A$. For $v\in A^0$, $f(gv)=(g^{-1}\cdot f)(v)=0$ for every $f\in A$, so $gv\in A^0$. But $SU(5)$ takes any unit vector to any other. Given unit vectors $u,v$, extend each to an orthonormal basis and take the unitary $U_0$ mapping the first basis to the second. With $d=\det U_0$, postcompose with the unitary that multiplies the second target basis vector by $d^{-1}$ and fixes the rest. The resulting unitary still sends $u$ to $v$ and has determinant $d^{-1}d=1$. An invariant subspace containing a unit vector must therefore contain every unit vector. This excludes $A^0$ with $0<\dim A^0<5$ and proves irreducibility of the dual.
+
+**III. Block restriction**
+
+Use the split of **Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />. For $g=\operatorname{diag}(g_C,g_W)$ with $g_C\in SU(3)$ and $g_W\in SU(2)$, the action is $\operatorname{diag}(\overline{g_C},\overline{g_W})$. On the weak block, the antisymmetric matrix
+
+$$
+J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+g_W Jg_W^T=(\det g_W)J=J
+$$
+
+satisfies $g_WJ=J\overline{g_W}$, so the dual weak doublet is equivalent to the doublet. With the standard fundamental hypercharge assignment $Y=\operatorname{diag}(-1/3,-1/3,-1/3,1/2,1/2)$,
+
+$$
+Y_{\mathrm{dual}}=-Y^T=\operatorname{diag}(1/3,1/3,1/3,-1/2,-1/2).
+$$
+
+Thus the two blocks have the anti-down and lepton-doublet quantum numbers in that assignment.
+
+Q.E.D.
+
+### 9.2.12.2 Commentary: Anti-Matter Topology {#9.2.12.2}
+
+:::info[**Interpretation of unlinked candidate states via the dual representation**]
+:::
+
+The three color and two weak coordinates of **Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" /> reproduce the usual branching with the standard hypercharge assignment. The proof uses linear functionals on a fundamental space. To realize them by unlinked graph states, the proposed five states must carry the dual action under a specified graph-to-representation map. A spatial reversal would require its own intertwining check. [Georgi and Glashow's original SU(5) model](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.32.438)
+
+The candidate parallel unlinked diagram has no inter-ribbon crossings and zero pairwise linking numbers. Its crossing contribution to a nonnegative linear crossing cost is therefore zero. This cost comparison concerns the assigned diagram. The dual action, stability, and intrinsic writhe contributions to mass are separate inputs in the physical identification.
+
+### 9.2.12.3 Diagram: Unlinked Configuration {#9.2.12.3}
 
 :::note[**Visual Representation of the $\mathbf{\bar{5}}$ Multiplet as Parallel Ribbons**]
 :::
@@ -885,69 +3487,222 @@ This interpretation mirrors the representation theory found in the large-$N$ lim
 
 ---
 
-### 9.2.7 Lemma: Antisymmetric Multiplet {#9.2.7}
+### 9.2.13 Lemma: Antisymmetric Multiplet {#9.2.13}
 
-:::info[**Topological Realization of the Antisymmetric Representation via Pairwise Linking**]
+:::info[**Construction of the decuplet via the exterior square**]
 :::
 
-Suppose the fermion multiplet transforming under the $\mathbf{10}$ (antisymmetric tensor) representation be topologically isomorphic to the **Pairwise Linked Braid Configuration** of the penta-ribbon. Under this isomorphism, the configuration is defined by the existence of exactly one elementary crossing between every distinct pair of ribbons $(i,j)$ to realize the antisymmetric tensor product $\wedge^2 \mathbf{5}$.
+Let $V_5$ be the fundamental complex representation of $SU(5)$. Then the induced action $g(v\wedge w)=(gv)\wedge(gw)$ on $\wedge^2 V_5$ is irreducible and has dimension $10$.
 
-### 9.2.7.1 Proof: Antisymmetric Multiplet {#9.2.7.1}
+### 9.2.13.1 Proof: Antisymmetric Multiplet {#9.2.13.1}
 
-:::tip[**Demonstration of Stable Complexity via the $\mathbf{10}$ Multiplet**]
+:::tip[**Derivation of the decuplet via antisymmetry and weight connectivity**]
 :::
 
-The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.  **Antisymmetric Multiplet** <Ref id="9.2.7" label="§9.2.7" /> and  **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />
+**I. Antisymmetric basis**
 
-**I. Representation Topology**
-The $\mathbf{10}$ is isomorphic to $\wedge^2 \mathbf{5}$. This algebraic antisymmetry maps to a topological configuration of pairwise crossings.
-Each distinct pair of ribbons $(i, j)$ interacts via a single crossing or elementary link.
-The total number of pairs is $\binom{5}{2} = 10$.
+Choose an orthonormal fundamental basis as in **Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" /> and let $v_i\wedge v_j=(v_i\otimes v_j-v_j\otimes v_i)/\sqrt2$ for $i<j$. If $S$ flips the tensor factors, its $-1$ eigenspace consists of coefficients satisfying $c_{ji}=-c_{ij}$ and $c_{ii}=0$. Direct inner products give
 
-**II. Complexity and Stability**
-* **Crossing Number:** $C[\beta] = 10$ (one per pair).
-* **Stability:** The sparse network of links creates a local minimum in the complexity landscape. The energy is higher than the unlinked $\mathbf{\bar{5}}$ but lower than fully braided states.
-* **Chiral Projection:** The 10 crossings induce 10 specific 3-cycles, enforcing the chiral projections required by the Standard Model embedding $SU(3) \times SU(2) \times U(1)$.
+$$
+\langle v_i\wedge v_j,v_k\wedge v_l\rangle
+=\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}
+=\delta_{ik}\delta_{jl}\qquad(i<j,\ k<l).
+$$
 
-**III. Topological Stability**
-The configuration of exactly 10 pairwise crossings forms a complete graph $K_5$ of link relationships, which constitutes a rigid, self-locking topological structure. This self-locking property prevents the random collapse of the crossings back into the unlinked ground state, ensuring that the $\mathbf{10}$ multiplet represents a stable topological phase under local fluctuations.
+Thus these vectors form an orthonormal basis of the antisymmetric space, with dimension $\binom52=5\cdot4/2=10$.
+
+**II. Group and generator action**
+
+On a tensor $v\otimes w$, $S(g\otimes g)(v\otimes w)=gw\otimes gv=(g\otimes g)S(v\otimes w)$. Hence $g\otimes g$ preserves the antisymmetric eigenspace and acts there by
+
+$$
+(g\otimes g)(v\wedge w)
+=\frac{gv\otimes gw-gw\otimes gv}{\sqrt2}
+=gv\wedge gw .
+$$
+
+The restriction defines the representation of **Antisymmetric Multiplet** <Ref id="9.2.13" label="§9.2.13" /> because $(g\otimes g)(h\otimes h)=gh\otimes gh$. Differentiating $e^{itT}\otimes e^{itT}$ and dividing by $i$ gives
+
+$$
+T^{(2)}(v_i\wedge v_j)
+=(Tv_i)\wedge v_j+v_i\wedge(Tv_j)
+=\sum_k T_{ki}\,v_k\wedge v_j+\sum_k T_{kj}\,v_i\wedge v_k .
+$$
+
+**III. Separation of weight lines**
+
+Let $S_0$ be a nonzero invariant complex subspace. It is invariant under the differentiated action and its complex linear combinations. For the traceless diagonal $H=\operatorname{diag}(1,2,4,8,-15)$ the weights of $H^{(2)}$ are $3,5,9,6,10,12,-14,-13,-11,-7$, all distinct. Given one nonzero component at weight $\lambda$ in a vector of $S_0$, the operator
+
+$$
+\prod_{\nu\ne\lambda}\frac{H^{(2)}-\nu I}{\lambda-\nu}
+$$
+
+keeps that component and kills each other weight component. Thus $S_0$ contains an individual pair basis vector.
+
+**IV. Connection of the pair lines**
+
+For $a\ne b$, the matrix unit $E_{ab}$ is a complex linear combination of the symmetric and antisymmetric Hermitian controls in **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" />. It acts by
+
+$$
+E_{ab}^{(2)}(v_i\wedge v_j)
+=\delta_{bi}v_a\wedge v_j+\delta_{bj}v_i\wedge v_a .
+$$
+
+Thus replacing one index by any index outside the pair gives another basis line. Two pairs sharing an index are connected by one replacement. For disjoint pairs $\{i,j\}$ and $\{k,l\}$, the sequence $\{i,j\}\to\{k,j\}\to\{k,l\}$ uses two replacements. All pair basis vectors belong to $S_0$, so $\boxed{S_0=\wedge^2 V_5}$.
 
 Q.E.D.
 
-### 9.2.7.2 Commentary: Matter Topology {#9.2.7.2}
+### 9.2.13.2 Commentary: Matter Topology {#9.2.13.2}
 
-:::info[**Correlation of Antisymmetric Tensor Complexity with Particle Mass via Complete Ribbon Linkages**]
+:::info[**Interpretation of the pair labels via exterior-square equivariance**]
 :::
 
-The topological mapping of matter representations in Quantum Braid Dynamics reveals a fundamental geometric distinction between the two components of the $SU(5)$ fermion generation, $\mathbf{\bar{5}}$ and $\mathbf{10}$. While the fundamental vector representation $\mathbf{\bar{5}}$ (containing down-type anti-quarks and lepton doublets) corresponds to single-strand topological defects, the ten-dimensional antisymmetric tensor representation $\mathbf{10}$ (housing up-type quarks, anti-quarks, and the positron) constitutes a structure defined by pairwise topological linking across all five constituent ribbons.
+The exterior square supplies ten independent pair labels. In the proposed five-ribbon crossing diagram, placing one marked crossing between each unordered pair also gives ten marked crossings, the number of edges of $K_5$. This is a diagram count. Minimum crossing number, link invariants of the closure, and stability under graph rewrites require information beyond the pair list.
 
-Topologically, constructing the $\mathbf{10}$ representation requires establishing a mutual crossing between every distinct pair of ribbons in the penta-ribbon bundle. In network theory, establishing pairwise connections among five elements creates the complete graph $K_5$, comprising exactly ten edges. Within the causal graph framework, these ten pairwise crossings form a rigid, self-locking topological structure. This complete interlinking locks the braid components together, preventing trivial unraveling into unlinked ground states and establishing the $\mathbf{10}$ multiplet as a topologically protected phase under local graph fluctuations.
-
-This topological contrast directly explains the observed mass hierarchy between the two representation sectors of a generation. Because the antisymmetric tensor $\mathbf{10}$ contains ten pairwise links compared to the simpler structure of the $\mathbf{\bar{5}}$, it requires a significantly higher allocation of geometric quanta ($N_3$) to maintain its complex internal topology against vacuum decay. Particles belonging to the $\mathbf{10}$ representation, most dramatically illustrated by the top quark, exhibit greater informational inertia. The mass hierarchy is thus not an arbitrary parameter tuned by hand, but the geometric consequence of the higher topological complexity inherent to antisymmetric tensor representations.
+The physical bridge would identify the pair basis with admissible two-defect or linked graph states and intertwine their finite rotations with the action in **Antisymmetric Multiplet** <Ref id="9.2.13" label="§9.2.13" />. The algebraic equivariance proved here specifies what that bridge must preserve. It leaves the physical correspondence, including the behavior of the pair sector through fragmentation, to the separate representation construction. In particular, the candidate graph states must remain closed under the represented finite rotations.
 
 ---
 
-### 9.2.8 Proof: Topological Unification {#9.2.8}
+### 9.2.14 Proof: Topological Unification {#9.2.14}
 
-:::tip[**Formal Proof of Equivalence between Penta-Ribbon Braid Topology through Unified Algebra**]
+:::tip[**Construction of Topological Unification via Explicit Identities**]
 :::
 
-The proof synthesizes the algebraic isomorphism and topological realizations to demonstrate total unification.
+**I. Admitted Actions and Discrete Relations**
 
-**I. Algebraic Unification**
-The isomorphism $B_5 \cong \mathfrak{su}(5)$ (proven in **Closed Lie Algebra** <Ref id="9.2.5" label="§9.2.5" />) establishes that the rewrite dynamics of a 5-ribbon braid naturally generate the gauge symmetries of the Grand Unified Theory. The 24 generators correspond to the 24 gauge bosons of $SU(5)$ (8 gluons, 3 weak bosons, 1 photon, 12 leptoquarks), subject to the commutation constraints of **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> and the topological constraints of **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />.
+The braid group $B_5$ labels discrete words in exchanges on five strands. A represented diagram action can act on five tensor factors $K^{\otimes5}$, of dimension $(\dim K)^5$ when $K$ is finite-dimensional. The matrix closure instead acts on a five-state sector with encoding $W:\mathbb C^5\to\mathcal H_G$, $W^\dagger W=I_5$. Assume the admitted actions satisfy
 
-**II. Matter Unification**
-The topological realizations of the multiplets map the particle content to braid configurations:
-* $\mathbf{\bar{5}}$ maps to the unlinked (minimal) configuration, corresponding to the **Anti-Fundamental Multiplet** <Ref id="9.2.6" label="§9.2.6" />.
-* $\mathbf{10}$ maps to the pairwise-linked (antisymmetric) configuration, corresponding to the **Antisymmetric Multiplet** <Ref id="9.2.7" label="§9.2.7" />.
-Together, $\mathbf{\bar{5}} \oplus \mathbf{10}$ accounts for the entire fermion generation without redundancy.
+$$
+\widehat A_k=i\widehat X_k,\quad\widehat C_k=i\widehat Z_k,\quad
+\widehat A_kW=WA_k,\quad\widehat C_kW=WC_k,
+\quad k=1,2,3,4.
+$$
 
-**III. Unified Framework**
-The penta-ribbon braid unifies forces and matter:
-* **Forces:** Emergent from the rewrite operations (braiding dynamics).
-* **Matter:** Emergent from the stable knot invariants (braid statics).
-This topological framework reproduces the Georgi-Glashow model while providing a geometric origin for the multiplet structure and mass hierarchy. Conservation laws (Baryon, Lepton number) are preserved by the topological continuity of the ribbons prior to leptoquark-mediated transitions.
+The discrete rewrite relations are
+
+$$
+\mathcal R_i\mathcal R_j=\mathcal R_j\mathcal R_i\quad(|i-j|>1)
+$$
+
+(**Distant Commutativity** <Ref id="9.2.5" label="§9.2.5" />) and
+
+$$
+\mathcal R_i\mathcal R_{i+1}\mathcal R_i
+=\mathcal R_{i+1}\mathcal R_i\mathcal R_{i+1}
+$$
+
+(**Yang-Baxter Relations** <Ref id="9.2.6" label="§9.2.6" />).
+
+**II. Diagonal Restriction and Preservation**
+
+For the selected candidate words,
+
+$$
+\begin{aligned}
+\widehat N_r|G_j\rangle&=\delta_{rj}|G_j\rangle,\\
+\widehat Z_kW\sum_jv_j|j\rangle
+&=\sum_jv_j(\delta_{kj}-\delta_{k+1,j})|G_j\rangle
+=WZ_k\sum_jv_j|j\rangle
+\end{aligned}
+$$
+
+(**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />). It follows that
+
+$$
+(I-P_5)\widehat Z_kW=(I-WW^\dagger)WZ_k=WZ_k-WZ_k=0,
+\qquad e^{it\widehat Z_k}W=We^{i t Z_k}
+$$
+
+(**Diagonal Sector Preservation** <Ref id="9.2.8" label="§9.2.8" />). For the specified checks,
+
+$$
+S_{rm}W=W,\qquad
+[S_{rm},\widehat Z_k]=0,\qquad [V,\widehat Z_k]=0
+$$
+
+(**Constraint Compatibility** <Ref id="9.2.9" label="§9.2.9" />).
+
+**III. Equality of the Represented Image and Generated Matrix Algebra**
+
+Define $\pi(A)=W^\dagger A W$, $\mathfrak g=\operatorname{Lie}_{\mathbb R}\{\widehat A_k,\widehat C_k\}$ and $L=\operatorname{Lie}_{\mathbb R}\{A_k,C_k\}$. On the invariant sector,
+
+$$
+\begin{aligned}
+\pi(\widehat A_k)&=A_k,\qquad\pi(\widehat C_k)=C_k,\\
+\pi(aP+bQ)&=a\pi(P)+b\pi(Q),\qquad
+\pi([P,Q])=[\pi(P),\pi(Q)]
+\end{aligned}
+$$
+
+(**Encoded Control Correspondence** <Ref id="9.2.10" label="§9.2.10" />). For each Lie expression $P$,
+
+$$
+\begin{aligned}
+P(\widehat A,\widehat C)\in\mathfrak g
+&\ \Longrightarrow\ \pi(P(\widehat A,\widehat C))=P(A,C)\in L,\\
+\pi(\mathfrak g)&\subseteq L,\\
+P(A,C)\in L
+&\ \Longrightarrow\ P(A,C)=\pi(P(\widehat A,\widehat C))\in\pi(\mathfrak g),\\
+L&\subseteq\pi(\mathfrak g).
+\end{aligned}
+$$
+
+Using the 24 independent generated matrices (**Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />),
+
+$$
+\boxed{\pi(\mathfrak g)=L=\mathfrak{su}(5),\qquad
+\dim_{\mathbb R}\pi(\mathfrak g)=24.}
+$$
+
+The compression identifies the represented image. Any operator of $\mathfrak g$ in $\ker\pi$ acts trivially on the five-state sector, since $AW=W\pi(A)$ there.
+
+**IV. Dual Action**
+
+On $V_5^*$ the dual action is $(g\cdot f)(v)=f(g^{-1}v)$. In the dual basis its matrix is $(g^{-1})^T=\overline g$, by unitarity. Thus for $g(t)=e^{i t T^a}$ its generator is determined by
+
+$$
+(g(t)^{-1})^T=e^{-it(T^a)^T},\qquad T_{\bar 5}^a=-(T^a)^T .
+$$
+
+A physical reversal that assigns reversed ribbon states to the dual basis must intertwine the reversed action. Reversing the labels supplies candidate basis vectors, while the generator sign follows from the dual action above.
+
+For $g\in SU(5)$, the additional antifundamental identification is the intertwining premise
+
+$$
+T_{\overline5}\rho_{\mathrm{phys},5}(g)=\overline g\,T_{\overline5}
+$$
+
+(**Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />). **V. Exterior Action and Physical Pairing**
+
+Let $F(v\otimes w)=w\otimes v$. Then
+
+$$
+F(g\otimes g)(v\otimes w)=gw\otimes gv=(g\otimes g)F(v\otimes w),
+$$
+
+so $g\otimes g$ preserves the antisymmetric image of $(I-F)/2$. For the orthonormal antisymmetric basis $e_{ij}=(v_i\otimes v_j-v_j\otimes v_i)/\sqrt2$ with $i<j$, the action sends $v_i\wedge v_j$ to $(gv_i)\wedge(gv_j)$. Differentiation gives
+
+$$
+\left.\frac{1}{i}\frac{\mathrm d}{\mathrm dt}
+\big(e^{i t T^a}\otimes e^{i t T^a}\big)\right|_{t=0}
+=T^a\otimes I+I\otimes T^a ,
+$$
+
+restricted to the antisymmetric subspace. To transfer this result to physical pairwise-linked graph states, the additional identification is
+
+$$
+T_{10}\rho_{\mathrm{phys},10}(g)=(\wedge^2g)T_{10}
+$$
+
+(**Antisymmetric Multiplet** <Ref id="9.2.13" label="§9.2.13" />). Conditional on those identifications,
+
+$$
+\dim\overline{\mathbb C^5}=5,\qquad
+\dim\wedge^2\mathbb C^5
+=\#\{(p,q):1\le p<q\le5\}=4+3+2+1=10.
+$$
+
+The physical pair sector must be invariant and the proposed $T_{10}$ must intertwine its admitted finite action. Only then does the physical branching inherit the exterior representation and its contribution to the representation-level anomaly cancellation.
 
 Q.E.D.
 
@@ -958,11 +3713,13 @@ Q.E.D.
 :::note[**Penta-Ribbon Braid**]
 :::
 
-The Penta-Ribbon Braid is established as the topological progenitor of all matter and force. The analysis has demonstrated that the local rewrite operations of a 5-strand cable generate the full 24-dimensional algebra of $SU(5)$, identifying the gluons, weak bosons, and leptoquarks as specific braid permutations. Furthermore, the particles themselves emerge as stable knot configurations of this same cable: the $\mathbf{\bar{5}}$ multiplet corresponds to the unlinked parallel bundle, while the $\mathbf{10}$ multiplet corresponds to the pairwise-linked web. This is grounded in the **Topological Unification** <Ref id="9.2.2" label="§9.2.2" />. The structural consequences are further developed in the **Distant Commutativity** <Ref id="9.2.3" label="§9.2.3" /> and **Yang-Baxter Relations** <Ref id="9.2.4" label="§9.2.4" />.
+The penta-ribbon construction now separates a finite encoding from its physical interpretation. Exact diagonal intertwining identifies the represented imbalance (**Diagonal Encoded Action** <Ref id="9.2.7" label="§9.2.7" />). The preservation and stabilizer calculations check the stated candidate sectors, including the baseline-adjusted module constraints, without asserting that every compatible observable is an executable physical Hamiltonian.
 
-This isomorphism confirms that matter and forces are not separate ontological categories but different aspects of the same underlying geometry. A force is a dynamic rearrangement of the braid (a rewrite), while a particle is a static, persistent configuration of the braid (a knot). This unification resolves the distinction between the mover and the moved, framing the entire Standard Model as the inevitable topological exhaust of a single pentagonal object.
+Under the admitted exchange-and-diagonal control hypothesis, the represented real Lie algebra is the full 24-dimensional traceless skew-Hermitian algebra (**Topological Unification** <Ref id="9.2.4" label="§9.2.4" />). The independent Lean certificate also identifies the smaller ten-dimensional exchange-only closure (**Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />). The distinction specifies precisely which initial family supports the unification claim.
 
-The geometric realization of the multiplets explains the mass hierarchy as a consequence of topological complexity. The $\mathbf{10}$ representation is heavier than the $\mathbf{\bar{5}}$ because it is more knotted, requiring a greater number of geometric quanta to sustain its structure against the vacuum. This links the abstract representation theory of Lie groups directly to the physical inertia of particles, grounding the properties of matter in the tangible constraints of knot theory.
+The proposed antifundamental and antisymmetric multiplets involve further representation and particle-identification assumptions. Matrix closure on five states does not itself establish an equivariant action on a physical multi-particle Fock space, a mass spectrum, or an implementation of the admitted controls by microscopic rewrites. These remain separate physical and mathematical obligations, allowing the completed finite certificates to support subsequent development without absorbing those unresolved premises.
+
+The last multiplet equations are additional physical intertwining premises, not outputs of the matrix dimension calculation. Counting five coordinates and ten unordered pairs does not construct the physical maps appearing in those premises. The single-sector Lie-algebra result is complete under its declared admission assumptions; microscopic matter identification, composite equivariance and the multi-particle representation bridge remain the separate obligations recorded in the roadmap.
 
 ---
 
@@ -1013,104 +3770,123 @@ The proof proceeds via Direct Construction, demonstrating that generational fami
 
 ### 9.3.2 Lemma: Complexity Ordering {#9.3.2}
 
-:::info[**Strict Hierarchy via Generational Complexity**]
+:::info[**Generational ordering via positive increments in the assigned costs**]
 :::
 
-Let the topological complexity $C_n$ associated with the $n$-th fermion generation satisfy the strict monotonic inequality $C_n < C_{n+1}$. This ordering is mandated by the discrete quantization of the 3-cycle count $N_3$ required to construct the successively higher-order prime knot invariants that define the identity of each generation.
+Let successive selected generation labels have nondecreasing crossing and link costs, with at least one strictly increasing cost at each step and both weights positive. Then their weighted complexities are strictly ordered, as are masses proportional to those complexities, while equal-prefactor Boltzmann formation weights decrease in that order.
 
 ### 9.3.2.1 Proof: Complexity Ordering {#9.3.2.1}
 
-:::tip[**Quantification of Braid Complexity via Generation $n$**]
+:::tip[**Derivation of the complexity ordering via weighted differences**]
 :::
 
-**I. Complexity Metric**
-The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> and  **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />
+**I. Assigned costs**
+
+For the labels in **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />, let $X_n$ be the crossing cost and $L_n$ the link cost of the chosen generation-$n$ sector. In the model of **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />, set
 
 $$
-C[\beta] = \alpha N_{cross} + \gamma N_{link}
+C_n=\alpha X_n+\gamma L_n,\qquad \alpha>0,\quad\gamma>0.
 $$
 
-**II. Generation 1 (Ground State)**
-Generation 1 fermions (e.g., electron, up/down quarks) correspond to the simplest non-trivial braids.
-For the electron, the unlinked but twisted structure requires minimal complexity:
+Write $\Delta X_n=X_{n+1}-X_n$ and $\Delta L_n=L_{n+1}-L_n$. Then
 
 $$
-C_1 \propto \text{Intrinsic Twist Only}
+C_{n+1}-C_n
+=\alpha\Delta X_n+\gamma\Delta L_n>0
 $$
 
-This represents the global minimum of $V(C)$ for non-trivial charged states.
+since both increments are nonnegative and at least one is positive. A fixed intrinsic-twist cost shared by the labels cancels in the difference.
 
-**III. Generation 2 and 3 (Excited States)**
-Higher generations arise from adding topological features (links or additional twists) that cannot be removed by local deformations (Reidemeister moves).
-* **Gen 2 (Muon/Charm):** Requires at least one additional prime feature (e.g., a localized knot or link). $C_2 > C_1$.
-* **Gen 3 (Tau/Top):** Requires a second order feature or compound knotting. $C_3 > C_2$.
+**II. Worked crossing sequence**
 
-**IV. Strict Inequality**
-Since each generation adds a discrete topological invariant (crossing number or linking number increment), the complexity values are strictly ordered.
+For the trefoil, figure-eight and cinquefoil benchmark, use minimal crossing counts $3,4,5$ and a common link cost $L_0$. This gives
 
 $$
-C_3 > C_2 > C_1
+(C_1,C_2,C_3)=(3\alpha+\gamma L_0,\ 4\alpha+\gamma L_0,\ 5\alpha+\gamma L_0),
+\qquad C_2-C_1=C_3-C_2=\alpha>0 .
 $$
 
-This necessitates the mass hierarchy $m_3 > m_2 > m_1$ via the mass-complexity relation $m \propto C$.
+With the mass conversion $m_n=\kappa C_n$ at fixed $\kappa>0$, the mass gaps in this benchmark are $m_2-m_1=m_3-m_2=\kappa\alpha>0$.
+
+**III. Relative formation weights**
+
+If the three labels have equal multiplicity and probabilities proportional to $e^{-\eta C_n}$ with $\eta>0$, their common partition factor cancels. Thus
+
+$$
+\frac{P_{n+1}}{P_n}
+=\frac{e^{-\eta C_{n+1}}}{e^{-\eta C_n}}
+=e^{-\eta(C_{n+1}-C_n)}<1 .
+$$
+
+In the benchmark $P_2/P_1=P_3/P_2=e^{-\eta\alpha}$, so $\boxed{P_1>P_2>P_3}$ under this weight model.
 
 Q.E.D.
 
 ### 9.3.2.2 Commentary: Knot Counting {#9.3.2.2}
 
-:::info[**Discrete Quantization of Mass Levels via Topological Crossing Number**]
+:::info[**Interpretation of the ordering via the selected generation labels**]
 :::
 
-The discrete spectrum of fermion generations finds a intuitive geometric explanation within the knot-complexity formulation of Quantum Braid Dynamics. In standard particle physics, the existence of three distinct generations of leptons and quarks, such as the electron, muon, and tau, is an empirical fact incorporated through distinct mass parameters, leaving unanswered why intermediate mass states do not exist. Within QBD, however, a muon is not an intrinsically different particle, but a higher topological excitation of the fundamental electron braid.
+The argument in **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> starts with an assignment of the configurations used to compare generations. An intrinsic twist can provide the first label's baseline cost, and later features can contribute to the crossing or link terms. The three classical knots illustrate the arithmetic for an increasing crossing sequence. Identifying any of them with a physical generation requires a separate selection and encoding argument.
 
-The topological complexity metric $C$ quantifies this relationship by counting the minimal number of irreducible crossings and links required to tie a specific braid configuration. Generation 1 represents the minimal non-trivial knot structure capable of carrying the requisite quantum numbers. Generation 2 incorporates an additional topological loop, while Generation 3 incorporates further nested crossings. Because a discrete graph cannot accommodate fractional crossings or continuous geometric deformations, the allowable topological configurations form a strictly discrete, ordered sequence.
-
-This discreteness directly explains why particle masses exist in quantized tiers rather than a continuous spectrum. A physical particle cannot possess "half a crossing" or a fractional link. Just as energy levels in an atom are quantized by discrete orbital quantum numbers, fermion mass levels are quantized by discrete topological crossing numbers. The absence of a continuous mass spectrum between the electron and the muon is thus a natural consequence of the integer nature of graph topology.
+Minimum diagram crossing number and graph resource cost agree only in the appropriate construction class, as in **Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />. Likewise, a formation probability for an entire sector requires its state multiplicities and kinetic weights. The ordered mass and probability comparisons here use common conversion and weight factors so that the strict inequalities follow from the stated cost increments.
 
 ---
 
 ### 9.3.3 Lemma: Topological Protection {#9.3.3}
 
-:::info[**Stability via Higher Generations against Local Decay**]
+:::info[**Sector protection via invariance under closed-knot isotopy**]
 :::
 
-Assume the states corresponding to higher fermion generations are dynamically stable against all local $O(1)$ rewrite operations. This protection arises because the transition to a lower-complexity isotopy class requires a global change in the knot invariant (untying), which is explicitly forbidden by the Principle of Unique Causality.
+Let a prime knot sector admit a family of local rewrites realized as ambient isotopies of its closed embedding, and let a selected lower sector have smaller minimum crossing number. Then the lower sector is unreachable within that family, and if every admitted escaping path contains an intermediate with excess energy at least $E_{\mathrm{cross}}>0$, its peak barrier is at least $E_{\mathrm{cross}}$.
 
 ### 9.3.3.1 Proof: Topological Protection {#9.3.3.1}
 
-:::tip[**Demonstration of the Energy Barrier via Generational Decay**]
+:::tip[**Derivation of protection via isotopy and a conditional peak bound**]
 :::
 
-**I. Stability Condition**
-A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> and  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />
+**I. Minimum crossing number**
+
+For a closed knot $K$, let $c(K)=\min_{D\in[K]}c(D)$, where $D$ ranges over diagrams of its isotopy class and $c(D)$ counts visible crossings. If a task in the protected family of **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> sends $K$ to $K'$, then $[K']=[K]$ and
 
 $$
-\forall \mathcal{R}_i, \quad E[\mathcal{R}_i(\beta)] > E[\beta]
+c(K')=\min_{D\in[K']}c(D)=\min_{D\in[K]}c(D)=c(K).
 $$
 
-This defines a local minimum in the potential landscape $V(C)$.
+A Type II deletion can lower the visible crossing count by two. For such a diagram move $D\to D'$, $c(D')=c(D)-2$ while both diagrams still represent $K$, so $c(D')\ge c(K)$.
 
-**II. Primality Constraint**
-The braid configurations for fermions correspond to **Prime Knots**. A prime knot cannot be decomposed into simpler non-trivial knots.
-To reduce the complexity of a prime knot (e.g., to untie it), the strand must pass through itself.
-In the discrete causal graph, this "pass-through" corresponds to a global reconfiguration of the connectivity that violates the local **Principle of Unique Causality (PUC)** or requires a high-energy intermediate state (breaking the knot).
+**II. Words and prime decomposition**
 
-**III. The Barrier**
-The transition from Generation $n$ to $n-1$ requires changing the topological invariant (e.g., crossing number).
-The "height" of the barrier $\Delta E_{barrier}$ is proportional to the energy cost of the intermediate state required to perform the crossing change (the unlinking operation).
-Since this cost is positive and requires collective action (non-local relative to the graph size), the decay is suppressed.
-Thus, higher generations are topologically protected metastable states.
+For a word of protected tasks and successive knots $K_0,\ldots,K_m$,
+
+$$
+c(K_m)-c(K_0)=\sum_{j=1}^m(c(K_j)-c(K_{j-1}))=0.
+$$
+
+A target with $c(K_m)<c(K_0)$ is therefore outside that word's reach. In addition, primality means $K_0$ is nontrivial and $K_0\cong K_1\#K_2$ implies that at least one summand is an unknot. A split into two nontrivial summands therefore cannot be an isotopic description of $K_0$.
+
+**III. Barrier on an admitted escape**
+
+For an admitted topology-changing path $\xi_0,\ldots,\xi_m$, suppose some index $q$ satisfies $E(\xi_q)-E(\xi_0)\ge E_{\mathrm{cross}}$ (**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />). Hence
+
+$$
+\boxed{\Delta E_{\mathrm{peak}}
+=\max_{0\le j\le m}\bigl(E(\xi_j)-E(\xi_0)\bigr)
+\ge E(\xi_q)-E(\xi_0)\ge E_{\mathrm{cross}}.}
+$$
+
+The inequality applies to each escape in the specified family and therefore to the infimum over that family when it is nonempty.
 
 Q.E.D.
 
 ### 9.3.3.2 Commentary: Topological Persistence {#9.3.3.2}
 
-:::info[**Stabilization of Heavy Generations via Local Unwinding Prohibition**]
+:::info[**Interpretation of generational protection via the admitted rewrite family**]
 :::
 
-The **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> explains why the Muon and Tau are distinct particles rather than just fleeting resonances. In standard quantum mechanics, excited states usually decay almost instantly to the ground state via photon emission. However, higher fermion generations are not merely energetic excitations; they are distinct topological configurations.
+The exact obstruction in **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> follows from preservation of closed-knot type by each protected step. A change in the visible diagram need not change that type. Primality gives the separate connected-sum obstruction. Both conclusions concern the stated embeddings and rewrite family, so applying them to particle generations requires identifying the physical labels with the corresponding knot sectors.
 
-Imagine a rope tied in a complex knot (Generation 2). You cannot turn it into a simple loop (Generation 1) just by wiggling or stretching the rope (local $O(1)$ operations). To simplify the knot, you must pass the rope through itself. In the causal graph, this "passing through" is forbidden by the local rules of connectivity, requiring a non-local rewrite. This topological prohibition defines the potential energy landscape $V(C)$ as a function of topological complexity $C$, where Generation 1 acts as the global minimum ground state and Generations 2 and 3 form local metastable minima. Tunneling across these barriers enables decay to lower generations, with transition rates exponentially suppressed by the barrier height $\Delta C$. As complexity $C$ increases, the potential wells deepen under $O(N)$ topological protection, exhausting the stable configurations under primality constraints.
+An actual decay channel must leave the protected family. A microscopic estimate of its path and its energy would be needed to establish a positive barrier or to identify an emitted mediator. The effective estimate in **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> then applies with its own width and momentum assumptions. Neutral-current selection rules also require the action of the physical current on the generation sectors.
 
 ### 9.3.3.3 Diagram: Complexity Potential {#9.3.3.3}
 
@@ -1159,98 +3935,128 @@ Imagine a rope tied in a complex knot (Generation 2). You cannot turn it into a 
 
 ### 9.3.4 Lemma: Decay Tunneling {#9.3.4}
 
-:::info[**Mechanism of Generational Decay via Non-Local Tunneling**]
+:::info[**Barrier Suppression via a Stipulated Multistep Tunneling Path**]
 :::
 
-Suppose the decay of a higher-generation particle to a lower-generation state is mediated exclusively by a quantum tunneling process traversing the topological complexity barrier. The rate of this decay $\Gamma$ is exponentially suppressed by the height of the barrier according to the relation $\Gamma \propto e^{-2\kappa \Delta C}$, establishing the observed hierarchy of lifetimes.
+Suppose the direct crossing is locally inadmissible and a legal multistep transition admits a WKB barrier model with forbidden length $\ell\Delta C$ at constant momentum scale, where $\Delta C=C_{\text{peak}}-C_{\text{initial}}>0$. Then the modeled rate is proportional to $e^{-2\kappa\Delta C}$ for the corresponding positive action coefficient $\kappa$.
 
 ### 9.3.4.1 Proof: Decay Tunneling {#9.3.4.1}
 
-:::tip[**Calculation of Transition Probability via Instantons**]
+:::tip[**Rate Suppression via Local Admissibility and the Squared WKB Amplitude**]
 :::
 
-**I. Tunneling Amplitude**
-The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).  **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> and  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />
-The amplitude for this process is governed by the path integral over the barrier:
+**I. Local Move and Multistep Path**
+
+A direct crossing proposal that produces a second short path between the same ordered endpoints fails the uniqueness test (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). If the two routes are $\pi_1\ne\pi_2$ of length at most two, the short-path count is at least $|\{\pi_1,\pi_2\}|=2>1$. A stipulated multistep path $G_0,\ldots,G_m$ instead has a separate legal certificate at each prefix. Its barrier is measured relative to the initial state (**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />),
 
 $$
-A \propto e^{-S_{\text{action}}}
+C_{\text{peak}}=\max_{0\le j\le m} C(G_j),\qquad
+\Delta C=C_{\text{peak}}-C(G_0)>0 .
 $$
 
-The tunneling action is formally defined in terms of the WKB approximation. The Euclidean action for the transition through the potential barrier is given by:
+**II. Action and Rate in the Barrier Model**
+
+Let $V_b>E$ be the constant effective barrier, and $p_b=\sqrt{2m(V_b-E)}$ its momentum scale. The stated width is $x_f-x_i=\ell\Delta C$. The dimensionless WKB amplitude exponent is
 
 $$
-S_{\text{action}} = 2 \int_{x_i}^{x_f} \sqrt{2m(V(x) - E)} \, dx
+S=\frac1{\hbar}\int_{x_i}^{x_f}p_b\,\mathrm dx
+=\frac{p_b(x_f-x_i)}{\hbar}
+=\frac{p_b\ell}{\hbar}\Delta C=\kappa\Delta C .
 $$
 
-In the discrete graph representation, the configuration space path length $\int dx$ maps directly to the minimal graph edit distance (complexity change $\Delta C$), while the potential barrier height is proportional to the vacuum friction parameter $\mu$. Thus, the action for the topological transition scales with the complexity difference:
+**III. Rate from the Squared Amplitude**
+
+With the amplitude $A=A_0e^{-S}$ and a fixed rate prefactor proportional to $|A_0|^2$,
 
 $$
-S_{\text{action}} \propto \Delta C = C_n - C_{n-1}
+|A|^2=|A_0|^2e^{-2S}=|A_0|^2 e^{-2\kappa\Delta C},
+\qquad \Gamma=\Gamma_0 e^{-2\kappa\Delta C}.
 $$
-
-**II. Decay Rate**
-The decay rate $\Gamma$ is proportional to the squared amplitude:
-
-$$
-\Gamma_{n \to n-1} \propto |A|^2 \propto e^{-2 \kappa \Delta C}
-$$
-
-where $\kappa$ is a constant related to the vacuum friction.
-
-**III. Lifetime Hierarchy**
-Since $\Delta C > 0$, the rate is exponentially suppressed relative to the characteristic graph time scale.
-* Gen 3 (Top/Tau) has a larger $\Delta C$ gap to the ground state, but high mass makes the phase space large.
-* Gen 2 (Muon) has a moderate $\Delta C$.
-* Gen 1 is the ground state ($\Gamma \approx 0$).
-The exponential dependence on $\Delta C$ establishes the hierarchy of lifetimes (metastability) for the excited states.
 
 Q.E.D.
 
 ### 9.3.4.2 Commentary: Rare Decay {#9.3.4.2}
 
-:::info[**Exponential Suppression of Transition Rates by Topological Barrier Width**]
+:::info[**Local Crossing Restrictions and Multistep Barrier Width**]
 :::
 
-The **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> resolves the paradox of why higher-generation particles (like muons and taus) are stable enough to be detected but unstable enough to decay. If they are protected by topology, why do they decay at all? The answer lies in the stochastic nature of the vacuum. While local moves cannot "untie" the knot of a muon to turn it into an electron, the probabilistic nature of the vacuum, the "rewrite bath", allows for rare, non-local fluctuations that can bridge the topological gap.
+The local uniqueness test rejects a particular crossing when it creates a redundant short route. A legal multistep path has a different intermediate support at each step. Its certificates apply to those actual intermediate graphs. A proposed tunneling channel uses the largest complexity reached along such a path, relative to the starting state, as its barrier input.
 
-This provides a natural physical explanation for the vast differences in particle lifetimes. The decay rate depends exponentially on the "thickness" of the topological barrier ($\Delta C$), which is the difference in knot complexity between the generations. A small arithmetic increase in complexity leads to a drastic exponential reduction in lifetime. This is why the Muon (Gen 2) lives for a relatively long microsecond, while the Tau (Gen 3), with its higher complexity and larger mass offering more phase space for decay, has a lifetime orders of magnitude shorter. Decay is not a random disintegration; it is the specific, calculable probability of the braid successfully "tunneling" through its complexity barrier to reach a simpler state.
+The exponential factor gives a comparison at fixed effective momentum and rate prefactor (**Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />). A larger barrier then lowers the rate. Comparing actual lifetimes across generations also requires the available paths, transition amplitudes, and phase-space prefactors. The WKB calculation isolates the effect of the assumed barrier from those other inputs. In particular, the difference between the initial and final complexity cannot determine the maximum complexity along the path.
 
 ---
 
 ### 9.3.5 Proof: Generational Metastability {#9.3.5}
 
-:::tip[**Formal Derivation of the Three-Generation Limit from Friction Saturation**]
+:::tip[**Conditional Generational Ordering via Assigned Costs and Path Barriers**]
 :::
 
-This proof synthesizes the complexity ordering, topological protection, and tunneling mechanisms to demonstrate that exactly three generations are expected to be observable.
+**I. Assigned Generations and Formation**
 
-**I. Construction of the Hierarchy**
-From the **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />, the generations are ordered $C_1 < C_2 < C_3 < \dots$.
-
-**II. The Friction Threshold**
-The formation of higher complexity braids is opposed by the vacuum friction $\mu$, which acts as a barrier to local modifications under **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />. The probability of forming a braid of complexity $C$ during geometrogenesis scales as:
+Use the model assignment $\mathrm{I}\mapsto 3_1$, $\mathrm{II}\mapsto 4_1$, $\mathrm{III}\mapsto 5_1$ (trefoil, figure-eight, cinquefoil), with minimum crossing counts $3,4,5$. With a common link count $L_0$, positive cost weights $\alpha,\gamma$, and a common mass conversion $\kappa_m$, the prescribed costs of **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> give
 
 $$
-P(C) \propto e^{-\mu C}
+C_n=\alpha(n+2)+\gamma L_0,\quad
+C_{n+1}-C_n=\alpha,\quad
+m_{n+1}-m_n=\kappa_m\alpha>0
+\qquad (n=1,2\text{ for the differences}).
 $$
 
-As complexity $C$ increases, the probability of formation drops exponentially.
-
-**III. The Three-Generation Limit**
-For the physical value of friction $\mu \approx 0.40$ (derived in Chapter 5), the formation probability for $n > 3$ becomes negligible relative to the vacuum noise floor, with transition rates governed by **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />.
-Specifically, if the complexity step $\Delta C \approx \text{const}$, then:
+For equal formation prefactors and fixed friction $\mu>0$, the common normalization cancels:
 
 $$
-P(C_4) \approx P(C_1) e^{-3 \mu \Delta C}
+\frac{P_2}{P_1}=\frac{P_3}{P_2}=e^{-\mu\alpha},\qquad
+\frac{P_3}{P_1}=e^{-2\mu\alpha}.
 $$
 
-With $\mu \approx 0.4$, the suppression factor for a 4th generation is severe ($e^{-1.3} \approx 0.3$, compounded by the complexity scaling).
-Furthermore, the stability of the 4th generation minimum is compromised. As $C$ increases, the number of decay channels (lower complexity states) grows, lowering the effective barrier height.
-At $n=4$, the barrier becomes permeable (lifetime $\to 0$), meaning a 4th generation state would decay instantly during formation, failing to stabilize as a particle.
+**II. Isotopy and Admitted Escape Paths**
 
-**IV. Conclusion**
-The topological complexity functional supports an infinite series of knots, but the **Principle of Minimal Complexity** combined with **Vacuum Friction** truncates the physically realizable stable spectrum to the first three minima. Thus, the theory predicts exactly three generations of fermions.
+For isotopic closed embeddings $K\sim K'$, the sets of diagrams in their classes coincide. Therefore
+
+$$
+c(K')=\min_{D\in[K']}c(D)=\min_{D\in[K]}c(D)=c(K)
+$$
+
+(**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />). Along a protected word $K_0,\ldots,K_m$,
+
+$$
+c(K_m)-c(K_0)=\sum_{j=1}^m\big(c(K_j)-c(K_{j-1})\big)=0.
+$$
+
+In particular a state with minimum $5$ or $4$ cannot reach one with a smaller minimum through that family. An admitted topology-changing path $G_0,\ldots,G_m$ can have a separate peak cost. If a witness at index $q$ has $C(G_q)-C(G_0)\ge B>0$, then
+
+$$
+\Delta C=\max_{0\le j\le m}\big(C(G_j)-C(G_0)\big)
+\ge C(G_q)-C(G_0)\ge B .
+$$
+
+**III. Path Suppression**
+
+Under the constant-momentum WKB model of **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the forbidden length is $\ell\Delta C$ and the amplitude action is
+
+$$
+S=\hbar^{-1}\int_{x_i}^{x_i+\ell\Delta C}p_b\,\mathrm dx
+=\frac{p_b\ell}{\hbar}\Delta C=\kappa\Delta C.
+$$
+
+For the fixed attempt rate $\Gamma_0$, the model yields
+
+$$
+\Gamma=\Gamma_0|e^{-S}|^2=\Gamma_0e^{-2\kappa\Delta C}
+\le\Gamma_0e^{-2\kappa B}.
+$$
+
+This is a path rate. Comparing lifetimes requires the allowed paths and their prefactors for each generation.
+
+**IV. Conditional Detection Cutoff**
+
+If a fourth assigned candidate extends the same cost spacing and formation prefactor, then $P_4/P_1=e^{-3\mu\alpha}$. At $\mu=0.40$ and $\alpha=1$ this is $e^{-1.20}\simeq0.3010$, while $P_3/P_1=e^{-0.80}\simeq0.4493$. If detection requires $P_n/P_1\ge\epsilon$, and every further candidate has cost at least $C_4$ and the same prefactor, the exact condition in this benchmark for accepting the first three and rejecting the rest is
+
+$$
+e^{-3\mu\alpha}<\epsilon\le e^{-2\mu\alpha}.
+$$
+
+The cutoff uses the assigned higher costs, prefactors and detection threshold.
 
 Q.E.D.
 
@@ -1330,52 +4136,75 @@ The proof proceeds via Direct Construction, mapping off-diagonal grand unified g
 
 ### 9.4.3 Lemma: Interaction Vertex {#9.4.3}
 
-:::info[**Topological Structure of the Vertex Linking Color via Weak Sectors**]
+:::info[**Color-to-weak transfer via a matched off-diagonal vertex**]
 :::
 
-Suppose the leptoquark interaction vertex is defined as the specific topological locus within the penta-ribbon braid where the sub-braid of color ribbons and the sub-braid of weak ribbons spatially converge. This convergence permits the off-diagonal generator $\hat{\lambda}_{LQ}$ to execute a swap operation that transfers causal flux directly between the color and weak sectors.
+Let an admitted emission vertex on $V_C\oplus V_W$ be matched to an off-diagonal color-to-weak block and a mediator emission amplitude. Then the matrix element is the product of the specified sector and emission overlaps, and any nonzero channel of a total-writhe-preserving vertex satisfies $W_{\mathrm{in}}=W_{\mathrm{out}}$.
 
 ### 9.4.3.1 Proof: Interaction Vertex {#9.4.3.1}
 
-:::tip[**Demonstration via Subspace Projection at the Interaction Vertex**]
+:::tip[**Derivation of the vertex amplitude via block projection and charge balance**]
 :::
 
-**I. Generator Matrix Action**
-The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.  **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> and  **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />
-Let $|\psi_q\rangle = (c_1, c_2, c_3, 0, 0)^T$ denote a quark state in the color subspace.
-Let $|\psi_l\rangle = (0, 0, 0, w_1, w_2)^T$ denote a lepton state in the weak subspace.
-The general form of the off-diagonal generator in $\mathfrak{su}(5)$ is:
+**I. Sector transfer**
+
+Use the split $V_C=\mathbb C^3$, $V_W=\mathbb C^2$ of **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />. For $B:V_W\to V_C$, write
 
 $$
-\hat{\lambda}_{LQ} = \begin{pmatrix} 0_{3\times3} & B_{3\times2} \\ B_{2\times3}^\dagger & 0_{2\times2} \end{pmatrix}
+\lambda_{\mathrm{LQ}}=\begin{pmatrix}0&B\\ B^\dagger&0\end{pmatrix},
+\qquad
+\lambda_{\mathrm{LQ}}\binom{q}{0}=\binom{0}{B^\dagger q},
+\qquad
+\lambda_{\mathrm{LQ}}\binom{0}{\ell}=\binom{B\ell}{0}.
 $$
 
-where $B$ is a non-zero complex block. The application of this generator to a quark state yields a projection onto the weak sector:
+The diagonal blocks are zero, so $\operatorname{Tr}\lambda_{\mathrm{LQ}}=0$. The blocks are adjoints of each other, so $\lambda_{\mathrm{LQ}}^\dagger=\lambda_{\mathrm{LQ}}$. In particular $e^{it\lambda_{\mathrm{LQ}}}$ is unitary and its infinitesimal generator $i\lambda_{\mathrm{LQ}}$ is traceless anti-Hermitian.
+
+**II. Emission matrix element**
+
+For the matched emission in **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />, take the forward term $H_{\mathrm{emit}}=g(P_W\lambda_{\mathrm{LQ}}P_C)\otimes A$ from the initial mediator state $|0\rangle$, where $A$ acts on the mediator factor. Then
 
 $$
-\hat{\lambda}_{LQ} |\psi_q\rangle = \begin{pmatrix} 0 & B \\ B^\dagger & 0 \end{pmatrix} \begin{pmatrix} \psi_q \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ B^\dagger \psi_q \end{pmatrix} = |\psi_l'\rangle
+\begin{aligned}
+\langle\ell,X|H_{\mathrm{emit}}|q,0\rangle
+&=g\langle\ell|P_W\lambda_{\mathrm{LQ}}P_C|q\rangle
+       \langle X|A|0\rangle\\
+&=g\left(\sum_{a=1}^{3}\sum_{b=1}^{2}
+          \overline{\ell_b}\,\overline{B_{ab}}\,q_a\right)
+       \langle X|A|0\rangle .
+\end{aligned}
 $$
 
-This mapping preserves both the traceless condition ($\operatorname{Tr}(\hat{\lambda}) = 0$) and the Hermiticity of $\mathfrak{su}(5)$, thereby ensuring the unitary evolution $\mathcal{R}_{LQ} = e^{i \hat{\lambda}_{LQ}}$.
+This is the forward amplitude of the matched interaction $H_{\mathrm{emit}}+H_{\mathrm{emit}}^\dagger$ between the indicated sectors.
 
-**II. Geometric Convergence**
-Topologically, the vertex corresponds to the spacetime event where the three color ribbons and two weak ribbons converge.
-The off-diagonal block $B$ dictates the precise angular embedding of the crossing in the 4-dimensional causal graph.
-The convergence enforces the writhe conservation laws $\Delta Q = 0$ and $\Delta B = -1/3$ via the continuity of the directed edges at the node, explicitly realizing the proton decay channel $q + q \to \bar{q} + l$.
+**III. Oriented writhe balance**
 
-**III. Causal Conservation Laws**
-The transfer of causal flux through the interaction vertex preserves the net quantum numbers. Specifically, the total writhe of the 5-ribbon braid, corresponding to the electric charge $Q$, is conserved globally: $\sum Q_{init} = \sum Q_{final}$. The transition rate is thus constrained strictly by the requirement that the outgoing state matches the topological charges of the incoming state, preventing arbitrary decay channels.
+Give incoming and outgoing channels the signs $+1$ and $-1$, respectively, in the balance equation. Suppose the matched vertex commutes with the additive total writhe on the matter and mediator factors (**Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />). On total-writhe eigenstates $|i\rangle$ and $|f\rangle$,
+
+$$
+0=\langle f|[\widehat W_{\mathrm{tot}},H_{\mathrm{int}}]|i\rangle
+=(W_f-W_i)\langle f|H_{\mathrm{int}}|i\rangle .
+$$
+
+In a nonzero emission channel with vacuum mediator writhe zero, $W_q-W_\ell-W_X=0$. For the example $u+u\to\bar d+e^+$, the label charges of **Charge Normalization** <Ref id="7.3.10" label="§7.3.10" /> give
+
+$$
+Q_{\mathrm{in}}=\tfrac23+\tfrac23=\tfrac43,\qquad
+Q_{\mathrm{out}}=\tfrac13+1=\tfrac43.
+$$
+
+For that two-body channel the baryon numbers are $B_{\mathrm{in}}=2/3$ and $B_{\mathrm{out}}=-1/3$, so $\Delta B=-1$. The lepton numbers are $0$ and $-1$, giving $\Delta(B-L)=-1-(-1)=0$.
 
 Q.E.D.
 
 ### 9.4.3.2 Commentary: Transmutation Geometry {#9.4.3.2}
 
-:::info[**Topological Construction of the Quark-Lepton Mixing Vertex**]
+:::info[**Interpretation of particle transmutation via the effective vertex**]
 :::
 
-In **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />, the geometric blueprint for the leptoquark vertex is defined as the precise point where matter changes its fundamental nature. It describes a specific locus in the braid where the distinct "bundles" of ribbons, the color triplet and the weak doublet, converge and interact.
+The off-diagonal block in **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> specifies a transfer between the three color coordinates and the two weak coordinates. The tensor-product expression evaluates the amplitude once the emission action and coupling have been matched. To obtain it from a junction in the graph, the encoding must supply the represented block, the mediator output, and the legal rewrite realizing the junction.
 
-At this vertex, the off-diagonal generator $\hat{\lambda}_{LQ}$ acts like a switch track on a railway. It routes causal flux across the domain boundary from the color subspace lines ($R_1\text{--}R_3$ of $SU(3)_C$) onto the weak subspace lines ($R_4\text{--}R_5$ of $SU(2)_L$). Geometrically, three color ribbons merge with two weak ribbons at a central interaction node embodying the transient rewrite process $\mathcal{R}_{LQ}$. Off-diagonal mixing via block $B$ rotates incoming quark writhe into outgoing lepton configurations. This explicit topological construction ensures that the transformation respects the subtle conservation laws of the theory (such as $B-L$ conservation and electric charge) because the total number of strands and net writhe are conserved through the vertex, converting the abstract algebra of $SU(5)$ into a mechanical flow-chart for particle transmutation.
+Writhe conservation applies to the sum over the vertex channels. It includes the mediator, whose contribution can balance a change in the matter label. The worked two-body charges and baryon numbers describe an allowed balance for those assigned external labels. Showing that this scattering amplitude is present in the physical theory requires its two matched vertices and propagator, as well as the relevant physical state identifications.
 
 ### 9.4.3.3 Diagram: Leptoquark Vertex {#9.4.3.3}
 
@@ -1422,81 +4251,155 @@ At this vertex, the off-diagonal generator $\hat{\lambda}_{LQ}$ acts like a swit
 
 ### 9.4.4 Lemma: Fragmentation Tunneling {#9.4.4}
 
-:::info[**Mechanism of Symmetry Breaking via Complexity-Reducing Tunneling Events**]
+:::info[**Fragmentation cost and suppression via the assigned split and barrier**]
 :::
 
-Let the symmetry breaking transition $SU(5) \to SU(3) \times SU(2) \times U(1)$ be identified as a topological tunneling event proceeding from the unified $\mathbf{10}$ configuration to the fragmented Standard Model configuration. This transition is thermodynamically driven by the reduction in Total Topological Complexity $C_{total}$, specifically where the annihilation of the 6 cross-sector links lowers the potential energy of the braid state.
+Let a $3+2$ split remove the six registered cross-sector links at fixed additive writhe, with a positive resulting cost drop in the stated complexity model. If an admitted split path has a one-dimensional WKB barrier, then it is favored in the endpoint cost comparison and its leading transmission factor is $e^{-2S_{\mathrm{bar}}/\hbar}$ for the forbidden-region momentum integral $S_{\mathrm{bar}}$.
 
 ### 9.4.4.1 Proof: Fragmentation Tunneling {#9.4.4.1}
 
-:::tip[**Demonstration of Energetic Favorability via Symmetry Breaking Transitions**]
+:::tip[**Derivation of the endpoint and tunneling factors via pair counts and WKB action**]
 :::
 
-**I. Complexity Functional Definition**
-The topological complexity $C_{total}$ is defined as the weighted sum of crossings, writhe, and **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />:
+**I. Pair and link counts**
+
+Use the weighted model of **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, with $C_{\text{total}}(\beta)=C[\beta]+kw(\beta)^2+k'L(\beta)$ and $k,k'\ge0$. For the assigned penta-ribbon state $\beta_5$ and split $(\beta_3,\beta_2)$, the registered cross-sector link count is
 
 $$
-C_{total}(\beta) = C[\beta] + k \cdot w(\beta)^2 + k' \cdot L(\beta)
+L_{CW}=\binom52-\binom32-\binom22=10-3-1=6=3\cdot2 .
 $$
 
-where $C[\beta]$ is the crossing number and $L(\beta)$ counts the inter-component links.
+If the registered intra-sector links survive, $L_5=L_3+L_2+6$. Suppose also that the additive writhe balance gives $w_5=w_3+w_2$. The initial-minus-final cost is
 
-**II. Initial State Analysis ($\beta_5$)**
-The unified state corresponds to the $\mathbf{10}$ representation ($\wedge^2 \mathbf{5}$), necessitating interactions between all ribbon pairs.
-* **Crossing/Linking:** The number of pairs is $\binom{5}{2} = 10$. This includes the specific links between the color and weak sectors ($L_5$).
-* **Complexity:** $C_{total}(\beta_5) = C_5 + k \cdot w_5^2 + k' \cdot L_5$.
-    Here, $L_5 > 0$ represents the 6 essential links connecting the 3 color ribbons to the 2 weak ribbons.
+$$
+\begin{aligned}
+\Delta C_{\text{total}}
+&=(C_5-C_3-C_2)+k\bigl((w_3+w_2)^2-w_3^2-w_2^2\bigr)
+  +k'(L_5-L_3-L_2)\\
+&=(C_5-C_3-C_2)+2kw_3w_2+6k'.
+\end{aligned}
+$$
 
-**III. Final State Analysis ($\beta_3 + \beta_2$)**
-The fragmented state corresponds to the product group $SU(3) \times SU(2)$.
-* **Pairs:** Color-Color pairs ($\binom{3}{2}=3$) + Weak-Weak pairs ($\binom{2}{2}=1$). Total = 4.
-* **Decoupling:** The inter-sector links are severed, so $L_{CW} = 0$.
-* **Complexity:** $C_{total}(\beta_f) = (C_3 + k \cdot w_3^2) + (C_2 + k \cdot w_2^2)$.
+For example, $C_5\ge C_3+C_2$, $w_3w_2\ge0$, and $k'>0$ give $\Delta C_{\text{total}}\ge6k'>0$. If the two writhes have opposite signs, the quadratic term has the opposite sign.
 
-**IV. Differential and Inequality**
-The writhe is additively conserved ($w_5 = w_3 + w_2$) due to the traceless generators. However, the complexity reduces strictly:
-1.  **Link Term:** The 6 cross-sector links are annihilated. $\Delta L = L_5 - 0 > 0$.
-2.  **Writhe Term:** Since $(w_3 + w_2)^2 > w_3^2 + w_2^2$ for aligned charges, the quadratic penalty decreases.
-3.  **Total:** $\Delta C_{total} = C_{total}(\beta_5) - C_{total}(\beta_f) \propto 6 \text{ links} + \Delta(w^2) > 0$.
-Alternative fragmentations involving single strands (e.g., $5 \to 4+1$ or $5 \to 1+1+1+1+1$) are strictly forbidden because isolated single ribbons are dynamically unstable and eliminated by the vacuum deletion flux (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />). In contrast, the $5 \to 3 + 2$ channel branches into two stable multi-strand sectors ($\beta_3$ and $\beta_2$), mediated by the off-diagonal leptoquark generators (**Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />).
-Since mass $m \propto C_{total}$, the unified state is energetically metastable, favoring decay to the Standard Model configuration.
+**II. Forbidden-region action**
+
+For a separately admitted path with coordinate $x$, effective mass $m_{\mathrm{eff}}>0$, and energy $E$, assume $V(x)>E$ between the turning points $x_-,x_+$. Substitution of the decaying WKB form $\psi(x)=a(x)e^{-S(x)/\hbar}$ gives
+
+$$
+\psi''=e^{-S/\hbar}\left(a''-\frac{2a'S'+aS''}{\hbar}
++\frac{a(S')^2}{\hbar^2}\right).
+$$
+
+Consequently the stationary equation $-\hbar^2\psi''/(2m_{\mathrm{eff}})+V\psi=E\psi$ becomes
+
+$$
+-\frac{\hbar^2}{2m_{\mathrm{eff}}}a''
++\frac{\hbar}{2m_{\mathrm{eff}}}(2a'S'+aS'')
++\left(V-E-\frac{(S')^2}{2m_{\mathrm{eff}}}\right)a=0 .
+$$
+
+The leading order away from the turning points therefore gives
+
+$$
+-\frac{(S'(x))^2}{2m_{\mathrm{eff}}}+V(x)=E,\qquad
+S'(x)=\sqrt{2m_{\mathrm{eff}}(V(x)-E)} .
+$$
+
+Integrating the positive root,
+
+$$
+S_{\mathrm{bar}}=S(x_+)-S(x_-)
+=\int_{x_-}^{x_+}\sqrt{2m_{\mathrm{eff}}(V(x)-E)}\,\mathrm dx .
+$$
+
+**III. Transmission**
+
+With the WKB convention of **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the amplitude carries the factor $e^{-S_{\mathrm{bar}}/\hbar}$. The leading transmission factor is its squared modulus,
+
+$$
+\boxed{T_{\mathrm{WKB}}=\left|e^{-S_{\mathrm{bar}}/\hbar}\right|^2
+=e^{-2S_{\mathrm{bar}}/\hbar}.}
+$$
+
+For constant $V_b>E$ over a forbidden width $d$, $S_{\mathrm{bar}}=d\sqrt{2m_{\mathrm{eff}}(V_b-E)}$. An effective rate with attempt frequency $\nu$ and the same leading approximation is $\Gamma_{\mathrm{frag}}\simeq\nu T_{\mathrm{WKB}}$.
 
 Q.E.D.
 
 ### 9.4.4.2 Commentary: Symmetry Breaking {#9.4.4.2}
 
-:::info[**Thermodynamic Relaxation of the Unified State via Link Fragmentation**]
+:::info[**Interpretation of the split via endpoint costs and an effective escape path**]
 :::
 
-The **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" /> reframes symmetry breaking not as the rolling of a Higgs field down a potential, but as a "fragmentation tunneling" event in the graph. The unified $SU(5)$ braid is highly complex, involving links between all 5 ribbons. This is a high-tension state. The fragmented state ($SU(3) \times SU(2)$) involves links only within the color triplet and within the weak doublet, with no links *between* them.
+The pair count in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" /> concerns the specified $3+2$ graph model. It accounts for six cross-sector links and preserves whatever intra-sector links are present. The positive endpoint cost gap compares the two modeled configurations. The effective barrier calculation starts from an admitted path and requires its width, potential and effective mass. [Semiclassical tunneling derivation](https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/bf207c35150e1f5d93ef05d4664f406d_MIT8_06S18ch3.pdf)
 
-As proved in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, the fragmented state has lower topological complexity ($C_{total}$) and thus lower mass/energy. Therefore, the early universe "relaxed" from the high-tension, fully braided $SU(5)$ state to the lower-tension, separated state we see today. Symmetry breaking is simply the system finding a more efficient way to knot its ribbons, snapping the costly links between quarks and leptons to save energy. Furthermore, this fragmentation is topologically selective: because single ribbons ($n=1$) cannot exist as stable asymptotic states (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />), channels involving single-strand ejection (such as $5 \to 4 + 1$ or relic decay $4 \to 3 + 1$) are dynamically prohibited, whereas multi-strand branching into stable subgroups ($5 \to 3 + 2$) is energetically and kinematically favored. The "Higgs" in this picture is just the collective density of the vacuum responding to this relaxation.
+Identifying this split with dynamical symmetry breaking requires the action on the physical states through the transition. A comparison with other splits also requires their own legal histories and barrier costs. A single ribbon may admit a local relaxation in the sector of **Exclusion of Single-Ribbon** <Ref id="6.2.4" label="§6.2.4" />, which addresses its subsequent persistence. The existence of a transient one-ribbon product is a separate admission question.
 
 ---
 
 ### 9.4.5 Proof: Leptoquark Generators {#9.4.5}
 
-:::tip[**Formal Verification of Leptoquark Dynamics through the Unified Algebra**]
+:::tip[**Off-Block Decomposition and Conditional Fragmentation via Endpoint and Path Costs**]
 :::
 
-**I. Algebraic Identification**
-The 12 off-diagonal generators $\hat{\lambda}_{LQ}$ are isolated as the unique operators in the adjoint $\mathbf{24}$ that mix the subspaces $V_C$ and $V_W$ (spanning the $(\mathbf{3}, \mathbf{2}) \oplus (\mathbf{\bar{3}}, \mathbf{2})$ representations).
-These generators drive the transient rewrite processes $\mathcal{R}_{LQ} = e^{i \hat{\lambda}_{LQ}}$, realized as the X and Y bosons.
+**I. Complement of the Block Algebra**
 
-**II. Topological Action**
-The process $\mathcal{R}_{LQ}$ functions as the topological operator that creates/annihilates the 6 cross-sector links identified in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />.
-By rotating a color basis vector into a weak basis vector, the operation effectively transfers a ribbon between the $SU(3)$ cluster and the $SU(2)$ cluster, severing the unification knot.
-The unitarity of $\mathcal{R}_{LQ}$ preserves the causal graph's acyclicity during this transient state, preventing closed timelike curves.
+For $V=\mathbb C^3\oplus\mathbb C^2$, any traceless skew-Hermitian matrix has the unique block form
 
-**III. Tunneling Mechanism**
-The transition $\beta_5 \to \beta_3 + \beta_2$ is a tunneling event through the topological barrier at the **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> defined by the linking number $L_5$.
-The tunneling amplitude scales as $e^{-S}$, where the action $S \propto \Delta C_{barrier} \sim L_{CW} = 6$.
-While the transition is energetically favored ($\Delta C_{total} < 0$), the non-zero barrier $L_5$ provides the topological protection that ensures the longevity of the proton.
+$$
+X=\begin{pmatrix}A&B\\-B^\dagger&D\end{pmatrix},
+\qquad
+A^\dagger=-A,\quad D^\dagger=-D,\quad \operatorname{Tr}A+\operatorname{Tr}D=0.
+$$
 
-**IV. Dynamical Closure**
-The Hamiltonians $\hat{H}_{LQ}$ generate unitary evolutions satisfying the **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />.
-The Yang-Baxter relations preserve the braid group structure during the interaction.
-Thus, the leptoquarks are verified as the physical mediators of both symmetry breaking (vacuum tunneling) and proton decay (particle transitions).
+The block-diagonal subalgebra has $8+3+1=12$ real dimensions. The block projections $P_C,P_W$ give the complementary map $X\mapsto P_CXP_W+P_WXP_C$. For $1\le a\le3$ and $4\le b\le5$, its real basis consists of $E_{ab}-E_{ba}$ and $i(E_{ab}+E_{ba})$, with independent real and imaginary upper-block entries. There are $2\cdot3\cdot2=12$ such directions. Under conjugation by a block group element the upper block transforms as $B\mapsto U_C B U_W^\dagger$. In the complexification, the hypercharge commutators are
+
+$$
+[Y,E_{ab}]=(-1/3-1/2)E_{ab}=-\tfrac56E_{ab},\qquad
+[Y,E_{ba}]=+\tfrac56E_{ba}.
+$$
+
+This gives $(\mathbf3,\mathbf2)_{-5/6}\oplus(\mathbf{\bar3},\mathbf2)_{5/6}$, using the dual equivalence of the $SU(2)$ doublet.
+
+**II. Matched Vertex and Writhe**
+
+For an admitted emission Hamiltonian with forward term $H_{\mathrm{emit}}=g(P_W\lambda P_C)\otimes A_X$, the matrix element of **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> is
+
+$$
+\langle\ell,X|H_{\mathrm{emit}}|q,0\rangle
+=g\langle\ell|P_W\lambda P_C|q\rangle\langle X|A_X|0\rangle .
+$$
+
+If $[W_{\mathrm{tot}},H_{\mathrm{int}}]=0$, then
+$(W_f-W_i)\langle f|H_{\mathrm{int}}|i\rangle=0$. For nonzero emission from a vacuum mediator label this gives $W_q=W_\ell+W_X$. The matrix exponential describes a unitary on the represented sector. Using it for graph transitions requires admission and legality of the microscopic path.
+
+**III. Endpoint Drop and Transmission**
+
+In the assigned split of **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, the cross-sector link count is
+
+$$
+L_{CW}=\binom52-\binom32-\binom22=10-3-1=6.
+$$
+
+With $w_5=w_3+w_2$ and $L_5-L_3-L_2=6$, the initial-minus-final cost is
+
+$$
+\begin{aligned}
+\Delta C_{\mathrm{end}}
+&=C_5-C_3-C_2
++k\bigl((w_3+w_2)^2-w_3^2-w_2^2\bigr)+k'(L_5-L_3-L_2)\\
+&=C_5-C_3-C_2+2kw_3w_2+6k'.
+\end{aligned}
+$$
+
+In particular the writhe and link contribution is $2kw_3w_2+6k'$, with a possible crossing cost difference. For a separately certified path with $V(x)>E$ between turning points $x_-$ and $x_+$, the modeled amplitude and transmission are
+
+$$
+S_{\mathrm{bar}}=\int_{x_-}^{x_+}\sqrt{2m_{\mathrm{eff}}(V(x)-E)}\,\mathrm dx,\qquad
+T_{\mathrm{WKB}}=|e^{-S_{\mathrm{bar}}/\hbar}|^2=e^{-2S_{\mathrm{bar}}/\hbar}.
+$$
+
+The positive endpoint drop favors the split in the cost comparison. The transmission calculation uses the intermediate barrier, and a mediator mass for EFT matching is an independent input.
 
 Q.E.D.
 
@@ -1562,57 +4465,78 @@ The proof proceeds via Contradiction, assuming that the proton decays via standa
 
 ### 9.5.2 Lemma: Tension Verification {#9.5.2}
 
-:::info[**Demonstration of the Failure of Perturbative Methods via Proton Stability**]
+:::info[**Proton Partial-Lifetime Tension via a Fixed EFT Benchmark**]
 :::
 
-Assume the perturbative decay rate prediction derived from Effective Field Theory, scaling as $\Gamma \propto M_X^{-4}$, is approximately $\tau \sim 10^{32}$ years. This prediction contradicts the experimental lower bound of $\tau > 10^{34}$ years, necessitating a non-perturbative suppression mechanism intrinsic to the ultraviolet completion of the theory.
+Let the nominal dimension-six EFT benchmark for $p\to e^+\pi^0$ use $M_X=10^{15}\,\text{GeV}$, $\alpha=1/42$, $m_p=0.938\,\text{GeV}$, and the normalized channel width $\Gamma_0=\alpha^2m_p^5/M_X^4$, with experimental lower limit $L=2.4\times10^{34}$ years. Then the benchmark partial lifetime is $\tau_0\simeq5.0665\times10^{31}$ years, and a rate factor $e^{-\Delta S}$ at these fixed inputs gives a partial lifetime above $L$ exactly when $\Delta S>\ln(L/\tau_0)\simeq6.16$.
 
 ### 9.5.2.1 Proof: Tension Verification {#9.5.2.1}
 
-:::tip[**Quantitative Derivation of the EFT Prediction vs. Experiment from Tension Verification**]
+:::tip[**Fixed-Input Lifetime Comparison via Width Scaling and Unit Conversion**]
 :::
 
-**I. Standard Model EFT Prediction**
-In conventional GUTs (e.g., Minimal $SU(5)$), proton decay is mediated by the exchange of heavy $X$ and $Y$ gauge bosons.  **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> and  **Proton Stability** <Ref id="9.5.1" label="§9.5.1" /> The process is described by a dimension-6 operator in the effective Lagrangian:
+**I. Normalized Width**
+
+Let $M_X$, $\alpha$, and $m_p$ be the benchmark inputs of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. For the dimension-six exchange operator, the coefficient scales as $g_{\text{GUT}}^2/M_X^2=4\pi\alpha/M_X^2$. In the normalization of **EFT Rate Calculation** <Ref id="9.5.2.2" label="§9.5.2.2" />, the channel width uses $\alpha^2/M_X^4$ times $m_p^5$, giving
 
 $$
-\mathcal{L}_{eff} \sim \frac{g_{GUT}^2}{M_X^2} (\bar{q} \gamma^\mu l)(\bar{q} \gamma_\mu q)
+\Gamma_0=\frac{\alpha^2m_p^5}{M_X^4},\qquad
+[\Gamma_0]=\frac{\text{GeV}^5}{\text{GeV}^4}=\text{GeV}.
 $$
 
-The decay rate $\Gamma_p$ scales as the square of the matrix element, integrated over phase space:
+At the stated inputs,
 
 $$
-\Gamma_p \propto |\mathcal{M}|^2 \propto \left( \frac{\alpha_{GUT}}{M_X^2} \right)^2 m_p^5
+\begin{aligned}
+0.938^2&=0.879844,\qquad
+0.938^5=(0.879844)^2(0.938)\simeq0.72612969,\\
+\Gamma_0
+&=\frac{(1/42)^2(0.938)^5}{(10^{15})^4}\,\text{GeV}
+\simeq\frac{0.72612969}{1764}\,10^{-60}\,\text{GeV}
+\simeq4.1164\times10^{-64}\,\text{GeV}.
+\end{aligned}
 $$
 
-where $\alpha_{GUT} = g_{GUT}^2 / 4\pi$.
-Substituting typical GUT values ($\alpha_{GUT} \approx 1/40$, $M_X \approx 10^{15} \text{ GeV}$, $m_p \approx 1 \text{ GeV}$):
+**II. Partial Lifetime and Shortfall**
+
+With $\hbar=6.582\times10^{-25}\,\text{GeV}\cdot\text{s}$ and $s_{\text{yr}}=3.156\times10^7\,\text{s}/\text{yr}$, the partial lifetime and the ratio to the experimental lower limit are
 
 $$
-\Gamma_p \approx \frac{(1/40)^2 \cdot 1^5}{(10^{15})^4} \sim 10^{-64} \text{ GeV}
+\begin{aligned}
+\tau_0
+&=\frac{\hbar}{\Gamma_0s_{\text{yr}}}
+=\frac{6.582\times10^{-25}}{3.156\times10^7}
+\frac{1764(10^{15})^4}{(0.938)^5}\,\text{yr}
+\simeq5.0665\times10^{31}\,\text{yr},\\
+\frac{L}{\tau_0}
+&\simeq\frac{2.4}{5.0665}\,10^3
+\simeq473.70 .
+\end{aligned}
 $$
 
-Converting to lifetime ($\tau_p = 1/\Gamma_p$):
+**III. Rate Suppression at Fixed Inputs**
+
+For a multiplicative width factor $0<f\le1$, the width is $\Gamma=f\Gamma_0$ and the partial lifetime is $\tau=\hbar/(f\Gamma_0s_{\text{yr}})=\tau_0/f$. Positivity of $L$ and $f$ yields
 
 $$
-\tau_p \sim 10^{64} \text{ GeV}^{-1} \approx 10^{32} \text{ years}
+\tau>L
+\quad\Longleftrightarrow\quad
+\tau_0>fL
+\ \Longleftrightarrow\
+f<\frac{\tau_0}{L}\simeq2.1110\times10^{-3}.
 $$
 
-**II. Experimental Constraint**
-The current experimental lower bound on the partial lifetime for the dominant channel $p \to e^+ \pi^0$ (from Super-Kamiokande) is:
+For a barrier represented by the rate factor $f=e^{-\Delta S}$,
 
 $$
-\tau_{exp} > 1.67 \times 10^{34} \text{ years}
+e^{-\Delta S}<\frac{\tau_0}{L}
+\ \Longleftrightarrow\
+-\Delta S<\ln\frac{\tau_0}{L}
+\ \Longleftrightarrow\
+\Delta S>\ln\frac L{\tau_0}
+\simeq\ln(4.7370)+2\ln 10
+\simeq6.1606.
 $$
-
-**III. Tension Analysis**
-The theoretical prediction $\tau_{theory} \sim 10^{32}$ years is approximately two orders of magnitude shorter than the experimental bound.
-
-$$
-\frac{\tau_{exp}}{\tau_{theory}} \sim 10^2
-$$
-
-This discrepancy indicates that the perturbative suppression factor $M_X^{-4}$ is insufficient. The standard EFT treatment fails to account for the full suppression, implying the existence of an additional, non-perturbative barrier.
 
 Q.E.D.
 
@@ -1621,7 +4545,7 @@ Q.E.D.
 :::note[**Computational Verification of the EFT Decay Rate Tension through EFT Rate Calculation**]
 :::
 
-Quantification of the failure of perturbative procedures established by **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> is based on the pathway dynamics verified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> is based on the following protocols:
+Numerical verification of the nominal EFT lifetime and its sensitivity to the mediator inputs (**Tension Verification** <Ref id="9.5.2" label="§9.5.2" />) (**Proton Stability** <Ref id="9.5.1" label="§9.5.1" />) is based on the following protocols:
 
 1.  **Parameter Definition:** The algorithm sets the standard GUT parameters: coupling $\alpha_{GUT} \approx 1/42$, proton mass $m_p \approx 0.938$ GeV, and X-boson mass $M_X \approx 10^{15}$ GeV.
 2.  **Rate Computation:** The protocol calculates the decay rate $\Gamma_p \propto \alpha^2 m_p^5 / M_X^4$ and converts this to a lifetime $\tau_p$ in years.
@@ -1778,16 +4702,16 @@ log₁₀(τ_p)  Count Percentage
 ```
 
 **Conclusion:**
-The base calculation yields a proton lifetime of $5.07 \times 10^{31}$ years, which falls short of the experimental lower bound by a factor of approximately 473. The Monte Carlo analysis shows a median lifetime of $5.01 \times 10^{33}$ years, with only 39.4% of samples exceeding the experimental threshold. This statistical tension confirms that perturbative suppression via mass scale alone is insufficient to ensure proton stability, validating the necessity for the exponential topological barrier.
+The base calculation yields a partial lifetime of $5.07\times10^{31}$ years and a shortfall factor of approximately 474 at the nominal inputs. The parameter sweep gives a median of $4.98\times10^{33}$ years and 39.9% of the samples exceed the experimental threshold. These figures describe the stated mass grid and coupling draws.
 
 ### 9.5.2.3 Commentary: Standard Theory Failure {#9.5.2.3}
 
-:::info[**Insufficiency of Perturbative Suppression for Proton Longevity**]
+:::info[**Nominal Proton-Decay Tension and Mediator-Mass Dependence**]
 :::
 
-The **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> highlights a critical failure of standard GUTs: they predict protons should die too young. Standard calculations suggest a lifetime of $10^{31}$ years, but experiments demonstrate that protons live longer than $10^{34}$ years. This discrepancy of 3 orders of magnitude is a smoking gun.
+The experimental input is the Super-Kamiokande lower bound on the partial lifetime for the $p\to e^+\pi^0$ channel at 90% confidence. The comparison takes the mediator mass and coupling of the nominal benchmark as fixed. A topological knot barrier supplies the missing rate suppression in the barrier model when its action exceeds the threshold derived for that benchmark. [Super-Kamiokande measurement](https://arxiv.org/abs/2010.16098)
 
-It implies that the standard "perturbative" picture, where decay happens via simple particle exchange, is missing something huge. The **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> sets the stage for the topological solution by proving that standard math cannot save the proton. It screams that there is an extra suppression mechanism at work, something that makes the decay much harder than just "paying the mass cost" of the X boson. That mechanism is topological complexity: the proton is not just heavy to decay, it is *hard to untie*.
+At fixed $\alpha=1/42$ and fixed proton mass, the unsuppressed lifetime at another mediator mass is $\tau_0(M_X/10^{15}\,\text{GeV})^4$. Solving for the mass that gives lifetime $L$ yields $10^{15}(L/\tau_0)^{1/4}\,\text{GeV}\simeq4.6653\times10^{15}\,\text{GeV}$. The neighboring sweep extends above that mass and varies the coupling as well. Its 39.9% above the experimental limit describes those sampled parameter combinations. Any bound over a physical unification window requires a separate restriction on the allowed masses and couplings (**EFT Rate Calculation** <Ref id="9.5.2.2" label="§9.5.2.2" />).
 
 ---
 
@@ -1814,7 +4738,14 @@ where $\Delta C = C_{final} - C_{initial}$ is the change in topological complexi
 
 **II. Initial State Complexity ($p$)**
 The proton comprises three valence quarks ($uud$) in a color singlet state.
-* **Writhe:** $w_p = 2w_u + w_d = 2(2/3) + (-1/3) = +1$.
+* **Integer writhe and charge:** The up and down labels have integer writhes $W_u=2$ and $W_d=-1$ (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />). Their sum for the valence configuration and its electric charge are
+
+  $$
+  W_p=W_u+W_u+W_d=2+2-1=3,\qquad
+  Q_p=\frac{W_p}{3}=\frac{3}{3}=+1
+  $$
+
+  by **Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />.
 * **Complexity:** $C_p = \sum C_{quarks} + C_{binding}$. This is the baseline for all decays.
 
 **III. Final State Candidates**
@@ -1855,107 +4786,144 @@ This topological action minimization provides a clear, falsifiable prediction fo
 
 ### 9.5.4 Lemma: Action-Mass Proportionality {#9.5.4}
 
-:::info[**Derivation of the Topological Suppression Factor from Action-Mass Proportionality**]
+:::info[**Action scaling via a matched rewrite length and mass quantum**]
 :::
 
-Let the instanton action $S_{inst}$ governing the proton decay rate be linearly proportional to the mass of the mediating X-boson, satisfying the relation $S_{inst} \propto M_X$. This relationship converts the unification mass scale directly into an exponential suppression factor $\Gamma \propto e^{-\lambda M_X}$, providing the necessary correction to the polynomial suppression.
+Let a supplied decay model assign a dimensionless rate action $S_{inst}=\kappa L_{\min}$, with $L_{\min}=aN_{3,X}+b$ and mediator rest energy $M_X=\varepsilon N_{3,X}$ in natural units, for fixed $\kappa,a,\varepsilon>0$. Then the modeled rate factor is proportional to $e^{-\lambda M_X}$ with $\lambda=\kappa a/\varepsilon$.
 
 ### 9.5.4.1 Proof: Action-Mass Proportionality {#9.5.4.1}
 
-:::tip[**Geometric Derivation via Configuration Space Distance**]
+:::tip[**Derivation of exponential suppression via elimination of the complexity count**]
 :::
 
-**I. Tunneling Path Length**
-The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry.  **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> and  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
-The transition requires creating and annihilating the intermediate $X$ boson state $|G_X\rangle$.
-The "distance" in configuration space (number of rewrites) required to create the structure of $|G_X\rangle$ from the vacuum (or simple background) is denoted by $L_{min}$.
+**I. Matched rewrite length**
+
+For the decay pathway discussed in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" />, use the model of **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />. Its inputs are the path length $L_{\min}=aN_{3,X}+b$, dimensionless rate cost $\kappa$ per step, and rest energy $\varepsilon$ per quantum. Eliminating the count gives
 
 $$
-L_{min} \approx N_{3,X}
+N_{3,X}=\frac{M_X}{\varepsilon},\qquad
+S_{inst}=\kappa L_{\min}
+=\kappa\left(a\frac{M_X}{\varepsilon}+b\right)
+=\lambda M_X+\kappa b,\qquad
+\lambda=\frac{\kappa a}{\varepsilon}.
 $$
 
-where $N_{3,X}$ is the number of 3-cycle quanta defining the $X$ boson's topology.
-
-**II. Action Definition**
-The action $S$ for a topological instanton is proportional to the minimal path length in the rewrite graph (graph edit distance):
+For the modeled rate $\Gamma=\Gamma_{\mathrm{EFT}}e^{-S_{inst}}$,
 
 $$
-S_{inst} = \kappa \cdot L_{min} \approx \kappa \cdot N_{3,X}
+\frac{\Gamma}{\Gamma_{\mathrm{EFT}}}
+=e^{-(\lambda M_X+\kappa b)}
+=\boxed{e^{-\kappa b}e^{-\lambda M_X}} .
 $$
 
-where $\kappa$ is the effective action per rewrite step ($\approx \ln 2$).
+Here $[\lambda]=[\mathrm{energy}]^{-1}$, and for $b=0$ the action itself is linear in $M_X$ through the origin.
 
-**III. Mass-Complexity Relation**
-From the **Topological Mass Theorem**, the mass of a particle is linear in its topological complexity (quanta count):
+**II. Static-action comparison**
 
-$$
-M_X = \mu \cdot N_{3,X}
-$$
-
-where $\mu$ is the mass quantum.
-
-**IV. Synthesis**
-Substituting $N_{3,X} = M_X / \mu$ into the action equation:
+For a separate static Euclidean approximation over proper time $\tau_E$, let the baseline-subtracted matter energy be $M_Xc^2$ in ordinary units. Then
 
 $$
-S_{inst} \approx \kappa \cdot \frac{M_X}{\mu} = \left( \frac{\kappa}{\mu} \right) M_X
+\Delta S_E=\int_0^{\tau_E}\Delta E(t_E)\,\mathrm dt_E
+=\int_0^{\tau_E}M_Xc^2\,\mathrm dt_E
+=M_Xc^2\tau_E,\qquad
+\frac{\Delta S_E}{\hbar}=\frac{c^2\tau_E}{\hbar}M_X .
 $$
 
-Let $\lambda = \kappa / \mu$ be the scaling constant.
+This is a linear action law at fixed duration. If an exponent instead governs the amplitude as in **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the corresponding rate exponent is twice that amplitude exponent.
+
+**III. Comparison with the polynomial rate**
+
+Let $\Gamma_{\mathrm{EFT}}=A(M_X/E_0)^{-4}$ with fixed $E_0>0$, as in the fixed-input scaling of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. Then
 
 $$
-S_{inst} \propto M_X
+\Gamma=Ae^{-\kappa b}(M_X/E_0)^{-4}e^{-\lambda M_X},\qquad
+\ln\frac{\Gamma}{A}=-\kappa b-4\ln(M_X/E_0)-\lambda M_X .
 $$
 
-Consequently, the suppression factor is exponential in the GUT mass scale:
-
-$$
-\Gamma \propto e^{-S_{inst}} \propto e^{-\lambda M_X}
-$$
-
-This exponential suppression ($\sim e^{-M}$) is distinct from and stronger than the polynomial suppression ($\sim M^{-4}$) of the perturbative EFT.
+Since $\ln(M_X/E_0)/(M_X/E_0)\to0$, the last term is the leading term of this logarithm as $M_X/E_0\to\infty$.
 
 Q.E.D.
 
 ### 9.5.4.2 Commentary: Topological Shield {#9.5.4.2}
 
-:::info[**Exponential Suppression of Decay Rates via the Instanton Action Barrier**]
+:::info[**Interpretation of the suppression factor via an effective rate action**]
 :::
 
-This is the resolution to the proton stability puzzle. As proved in **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />, the proton is protected by a "Topological Shield." To decay, the proton's simple 3-ribbon braid must transform into the enormously complex X-boson braid ($N_3 \sim 10^{40}$). This barrier is analogous to the "sphaleron" barrier in the electroweak theory, where a topological transition is suppressed by the height of the energy landscape. <Cite id="A.20" label="(Coleman, 1977)" /> provides the formal machinery for calculating decay rates via instantons, which we adapt here to the discrete graph context: the "action" is the count of graph edits required to reach the transition state.
+The path-count model in **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> assumes a specified relation between rewrite length and mediator complexity. It also assumes a fixed action cost per step and a fixed conversion from complexity to rest energy. Those premises explain the mass-dependent exponential in the rate. Demonstrating that a virtual mediator in a proton decay amplitude requires this graph history would need a microscopic derivation of the transition.
 
-This transformation is not a simple jump; it is a tunneling event through a massive barrier of complexity. The "Instanton Action" $S_{inst}$, which determines the tunneling rate, is proportional to this complexity difference. Because the intermediate state is so topologically expensive to construct, the probability of the transition is crushed by a factor of $e^{-N_{X}}$. This suppression is far stronger than the polynomial suppression ($1/M_X^4$) of standard theory. The proton is stable because the universe essentially "cannot be bothered" to perform the computational gargantuan task of untying it.
+The static-action comparison illustrates another setting in which the action is proportional to the mass, because the baseline-subtracted energy is constant over a fixed duration. A general instanton can have a changing profile, different duration, and other action contributions. The rate convention should also be kept explicit when using an amplitude formula or comparing with the fixed-benchmark lifetime bound.
 
 ---
 
 ### 9.5.5 Proof: Proton Stability {#9.5.5}
 
-:::tip[**Formal Proof of Effective Proton Stability via Topological Barriers**]
+:::tip[**Partial-Lifetime Bound via a Matched Rate Action**]
 :::
 
-The proof synthesizes the failure of EFT, the identification of the minimal channel, and the exponential action-mass relation to establish the stability of the proton.
+**I. Nominal EFT Partial Lifetime**
 
-**I. Instanton Suppression**
-Combining the **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> (EFT inadequacy) and the **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> (Topological Action), the full decay rate is given by the product of the perturbative term and the non-perturbative topological factor:
-
-$$
-\Gamma_{total} = \Gamma_{pert} \cdot e^{-S_{inst}}
-$$
+Use the normalized dimension-six width of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> for $p\to e^+\pi^0$. At $M_0=10^{15}\,\mathrm{GeV}$, $\alpha_0=1/42$, and $m_p=0.938\,\mathrm{GeV}$,
 
 $$
-\Gamma_{total} \sim \left( \frac{\alpha^2 m_p^5}{M_X^4} \right) \cdot e^{-\lambda M_X}
+\begin{aligned}
+\Gamma_0&=\frac{\alpha_0^2m_p^5}{M_0^4}
+=\frac{(0.938)^5}{42^2(10^{15})^4}\,\mathrm{GeV}
+\simeq 4.1164\times10^{-64}\,\mathrm{GeV},\\
+\tau_0&=\frac{\hbar}{s_{\mathrm{yr}}\Gamma_0}
+\simeq\frac{6.582\times10^{-25}}{(3.156\times10^7)(4.1164\times10^{-64})}\,\mathrm{yr}
+\simeq5.0665\times10^{31}\,\mathrm{yr}.
+\end{aligned}
 $$
 
-**II. Quantitative Bound**
-With $M_X \sim 10^{15}$ GeV, the exponential term $e^{-\lambda M_X}$ provides an immense suppression factor. Even for a small scaling constant $\lambda$, the exponent is large.
-If the action is calibrated for the dominant decay channel identified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> such that the decay is barely observable (consistent with current limits $\sim 10^{34}$ years):
-The suppression required beyond the EFT prediction of $10^{32}$ years is a factor of $10^2$.
-However, the topological barrier $S_{inst}$ associated with a structure of complexity $N \sim 10^{15}$ (assuming linear complexity scaling with energy) would theoretically yield a suppression of $e^{-10^{15}}$, rendering the proton absolutely stable.
-Even assuming logarithmic complexity scaling ($S \sim \ln M_X$), the topological constraint enforces strict conservation laws that are only violated by rare tunneling events.
+For comparison use the $90\%$ confidence lower limit $L=2.4\times10^{34}\,\mathrm{yr}$ for this channel. [Super-Kamiokande proton-decay search](https://doi.org/10.1103/PhysRevD.102.112011)
 
-**III. Conclusion**
-The topological barrier transforms the "fast" algebraic decay of the standard model ($M^{-4}$) into a "slow" geometric tunneling process.
-This mechanism resolves the hierarchy problem of proton stability without requiring arbitrary fine-tuning of coupling constants. The proton is stable because the $p \to e^+$ transition requires a discrete, global change in topology that is statistically suppressed by the complexity of the unification vertex.
+**II. Modeled Action and Rate**
+
+Suppose the decay model supplies a legal pathway for this channel with $L_{\min}=aN_{3,X}+b$ and $M_X=\varepsilon N_{3,X}$, as in **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />. Then
+
+$$
+S_{\mathrm{inst}}=\kappa L_{\min}
+=\frac{\kappa a}{\varepsilon}M_X+\kappa b
+=\lambda M_X+\kappa b,\qquad \lambda=\kappa a/\varepsilon .
+$$
+
+Take $S_{\mathrm{inst}}\ge0$ as a dimensionless rate exponent. At fixed $m_p$ the modeled width and partial lifetime are
+
+$$
+\begin{aligned}
+\Gamma(M_X,\alpha)&=\Gamma_0
+\left(\frac{\alpha}{\alpha_0}\right)^2
+\left(\frac{M_0}{M_X}\right)^4e^{-S_{\mathrm{inst}}},\\
+\tau(M_X,\alpha)&=\tau_0
+\left(\frac{\alpha_0}{\alpha}\right)^2
+\left(\frac{M_X}{M_0}\right)^4e^{S_{\mathrm{inst}}}.
+\end{aligned}
+$$
+
+For any separately supplied competing channel $j$ with width $K_j e^{-S_j}$, its ratio to the selected channel $e^+\pi^0$ is $(K_j/K_{e\pi})e^{-(S_j-S_{e\pi})}$. The preference in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> can be used if the relevant pathways, action ordering and prefactors are supplied. Endpoint ordering alone does not fix those ratios.
+
+**III. Required Suppression and Its Domain**
+
+At the nominal point the comparison reduces to
+
+$$
+\begin{aligned}
+\tau>L
+&\iff e^{S_{\mathrm{inst}}}>\frac L{\tau_0}
+\simeq473.70\\
+&\iff S_{\mathrm{inst}}>\ln\!\frac L{\tau_0}
+\simeq6.1606 .
+\end{aligned}
+$$
+
+Thus $\lambda M_0+\kappa b>6.1606$ to the displayed precision is the action requirement at that point. At fixed $\alpha_0$, the unsuppressed equality threshold is
+
+$$
+M_{\mathrm{eq}}=M_0\left(\frac L{\tau_0}\right)^{1/4}
+\simeq4.6653\times10^{15}\,\mathrm{GeV}.
+$$
+
+For $M_X>M_{\mathrm{eq}}$ at the same coupling, the mass dependence alone puts this modeled partial lifetime above $L$. When both $\alpha$ and $M_X$ vary, the threshold is $M_{\mathrm{eq}}(\alpha)=M_{\mathrm{eq}}\sqrt{\alpha/\alpha_0}$.
 
 Q.E.D.
 
@@ -1966,11 +4934,11 @@ Q.E.D.
 :::note[**Proton Decay**]
 :::
 
-The proton is stable because it is topologically locked. The analysis has proven that the perturbative mechanism of standard GUTs fails to protect the proton, but the topological mechanism succeeds. The decay $p \to e^+ \pi^0$ requires a transition through the hyper-complex X-boson geometry. This incurs an instanton action penalty $S_{inst}$ proportional to the mass scale $M_X$. This exponential suppression pushes the proton lifetime well beyond $10^{34}$ years, reconciling the unification of forces with the existence of a stable material universe. This is grounded in the **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. The structural consequences are further developed in the **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> and **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />.
+The normalized EFT benchmark at $M_X=10^{15}\,\mathrm{GeV}$ and $\alpha=1/42$ gives a partial lifetime for $p\to e^+\pi^0$ of about $5.07\times10^{31}\,\mathrm{yr}$. The comparison with $2.4\times10^{34}\,\mathrm{yr}$ requires a rate suppression factor below about $1/474$ at that point (**Tension Verification** <Ref id="9.5.2" label="§9.5.2" />). [Super-Kamiokande proton-decay search](https://doi.org/10.1103/PhysRevD.102.112011)
 
-The proton lives because the vacuum cannot compute its deletion. The decay process requires a global reconfiguration of the knot that exceeds the causal horizon of the local rewrite rules. This "Architectural Stability" ensures that the baryon number is effectively conserved not by a fundamental symmetry, but by the computational complexity of violating it.
+With the same coupling, a mediator mass above about $4.67\times10^{15}\,\mathrm{GeV}$ gives an unsuppressed lifetime above the reference through the $M_X^4$ dependence. In the specified sweep, which also varies the coupling, 39.9% of the sampled pairs already exceed the reference (**EFT Rate Calculation** <Ref id="9.5.2.2" label="§9.5.2.2" />). That fraction describes the chosen grid and draws.
 
-This result transforms the proton from a ticking time bomb into a permanent feature of the cosmos. The stability of matter is secured by the same topological barriers that define the particle's identity. The universe is habitable because the laws of knot theory prevent the spontaneous disintegration of its building blocks, locking the energy of the Big Bang into stable, enduring structures.
+The proposed topological mechanism supplies a dimensionless rate action $S_{\mathrm{inst}}=\lambda M_X+\kappa b$ when the matched path and length law are available (**Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />). At the nominal point the modeled partial lifetime exceeds the reference if that action is above about $6.16$. A physical lifetime prediction requires independent matching of the pathway, coefficients and channel width. The comparison is specific to this partial lifetime.
 
 ---
 
@@ -2089,72 +5057,64 @@ The proof proceeds via Direct Construction, deriving sub-electron-volt neutrino 
 
 ### 9.6.3 Lemma: Neutrality Verification {#9.6.3}
 
-:::info[**Demonstration of the Uniqueness of the Folded Braid via Massive Neutral Leptons**]
+:::info[**Neutrality and modeled mass via writhe cancellation**]
 :::
 
-Suppose any standard (non-folded) braid configuration satisfying electric neutrality and color symmetry constraints possesses zero topological complexity ($C=0$), corresponding to a massless state. Consequently, the folded braid topology is the unique solution for a massive, neutral lepton.
+Let a standard tripartite label be permutation-fixed and electrically neutral, and let a folded candidate have opposite segment writhe and positive excess fold cost. Then the standard writhe label is $(0,0,0)$, while the folded label is neutral with a positive modeled mass contribution from the fold.
 
 ### 9.6.3.1 Proof: Neutrality Verification {#9.6.3.1}
 
-:::tip[**Formal Derivation of the Zero-Mass Constraint via Standard Symmetric Braids**]
+:::tip[**Derivation of neutral labels via fixed coordinates and segment balance**]
 :::
 
-**I. Constraints on Standard Braids**
-Consider a standard $n$-ribbon braid $\beta$ representing a candidate neutrino.
-1.  **Color Singlet:** Invariance under the permutation group $S_n$ requires identical writhe values and symmetric linking for all constituent ribbons to preserve symmetry.
+**I. Standard permutation-fixed label**
 
-    $$
-    \forall i, j \in \{1, \dots, n\}, \quad w_i = w_j = w_{\text{int}}, \quad L_{ij} = L
-    $$
-
-    Asymmetric configurations (e.g., $w = (+1, -1, 0)$) violate this invariance, inducing octet representations under $SU(3)$ permutations.
-2.  **Electric Neutrality:** The total electric charge $Q$ is proportional to the total writhe $W(\beta)$, with proportionality constant $k=1/3$ **Quark Charge Solutions** <Ref id="7.3.6" label="§7.3.6" />. Neutrality requires $Q=0$, implying:
-
-    $$
-    W(\beta) = \sum_{i=1}^{n} w_i = 0
-    $$
-
-    Quantization conditions require integer writhes ($w_i \in \mathbb{Z}$).
-
-**II. Solution Space Analysis**
-Substituting the symmetry constraint into the neutrality condition yields:
+Let $\boldsymbol w=(w_1,w_2,w_3)\in\mathbb Z^3$. The transpositions $(12)$ and $(23)$ fix $\boldsymbol w$ exactly when $w_1=w_2=w_3=w_0$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). By the **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />,
 
 $$
-W(\beta) = \sum_{i=1}^{n} w_{\text{int}} = n \cdot w_{\text{int}} = 0
+Q=\tfrac13(w_1+w_2+w_3)=\tfrac13(3w_0)=w_0 .
 $$
 
-Since the number of ribbons $n \geq 1$, the unique integer solution for the internal writhe is $w_{\text{int}} = 0$.
-Consequently, the configuration vector is the null vector $\boldsymbol{w} = (0, 0, \dots, 0)$.
+Thus $Q=0$ forces $\boldsymbol w=(0,0,0)$. In the selected unlinked reference configuration with no crossings or excess support cycles, the crossing, twist and link costs all vanish:
 
-**III. Mass Vanishing Theorem**
-A standard braid with zero writhe on all ribbons minimizes the Generalized Braid Energy Functional at the trivial topology.
-* **Crossing Number:** By the Minimal Generation the **Particle Necessity** <Ref id="6.1.2" label="§6.1.2" />, zero writhe implies a minimal crossing number $C[\beta] = 0$.
-* **Complexity:** The total topological complexity vanishes: $N_3(\beta) = 0$, $w_i=0$, $L_{ij}=0$.
-* **Mass:** By the Topological Mass the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, $m \propto N_3$. Thus, $m_{\beta} = 0$.
-Attempts to introduce mass via added crossings ($C[\beta] > 0$) while maintaining $w_i=0$ yield high-complexity excited states, failing the minimality criterion for the ground state neutrino. Therefore, standard braids describe only massless Weyl fermions or vacuum states.
+$$
+C_{\mathrm{ref}}=a\,0+b\sum_{i=1}^3 0^2+d\,0=0,\qquad
+m_{\mathrm{ref}}=\kappa_m C_{\mathrm{ref}}=0 .
+$$
 
-**IV. The Folded Solution**
-The folded braid $\beta_{fold}$ is defined as a composite of two opposing segments $\beta_+$ and $\beta_-$ connected at a vertex.
-* **Neutrality:** $W_{total} = w(\beta_+) + w(\beta_-)$. The condition $w(\beta_+) = -w(\beta_-) = \pm k \neq 0$ (with $k \in \mathbb{Z}$) satisfies $W_{total} = 0$ without requiring local triviality.
-* **Complexity:** The fold vertex introduces a geometric defect. The effective topological complexity is non-zero due to the strain energy at the turning point, arising from the vertex's 3-cycle tension under the Principle of Unique Causality (PUC):
+**II. Folded comparison**
 
-    $$
-    N_3^{\text{eff}} \approx N_{vertex} > 0
-    $$
+For the two segments of **Folded Topology** <Ref id="9.6.1" label="§9.6.1" />, take $W_+=k$ and $W_-=-k$, with $k\ne0$. For an additive writhe and a positive excess count $N_{\mathrm{fold}}$ assigned to the fold,
 
-* **Mass:** $m_{fold} \propto N_3^{\text{eff}} > 0$.
-The folded structure circumvents the triviality constraint, providing the unique minimal topology for a neutral, massive fermion consistent with stability, color singlet status, and vertex geometry predictions for **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />.
+$$
+Q_{\mathrm{fold}}=\tfrac13(W_++W_-)=\tfrac13(k-k)=0,\qquad
+\Delta m_{\mathrm{fold}}=\kappa_m N_{\mathrm{fold}}>0\quad(\kappa_m>0).
+$$
+
+If the torsional cost is also the sum of the separate segment squares, its unweighted value is $k^2+(-k)^2=2k^2>0$ even though the net writhe vanishes.
+
+**III. Gauge singlet criterion**
+
+For the assigned sterile representation, suppose the color and weak generators $T_C^a,T_W^b$ annihilate its state $|s\rangle$ and the hypercharge label is $Y=0$. The quadratic operators then satisfy
+
+$$
+C_2^{(3)}|s\rangle=\sum_a T_C^a T_C^a|s\rangle=0,\qquad
+C_2^{(2)}|s\rangle=\sum_b T_W^b T_W^b|s\rangle=0,\qquad
+e^{i\theta Y}|s\rangle=|s\rangle .
+$$
+
+For Hermitian generators the converse of the non-Abelian test follows from $\langle s|C_2|s\rangle=\sum_a\|T^a|s\rangle\|^2$. Vanishing of the quadratic form therefore implies each generator annihilates the state.
 
 Q.E.D.
 
 ### 9.6.3.2 Commentary: Folded Logic {#9.6.3.2}
 
-:::info[**Necessity of Folded Topology for Mass Generation in Neutral States**]
+:::info[**Interpretation of the folded candidate via local cost and global neutrality**]
 :::
 
-The **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" /> formalizes a "no-go" theorem for standard knot theory in the context of particle physics. A standard braid (like a rope with three strands) essentially adds up the properties of its strands. If you require the rope to be "colorless" (all strands identical) and "neutral" (total twist is zero), mathematics dictates that every single strand must have zero twist. A rope with zero twist and zero knots is just a straight line, it has no topological complexity and therefore, in this framework, zero mass.
+The zero writhe vector in **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" /> is a uniqueness statement about the integer labels. The zero mass applies to the selected unlinked reference after its other costs have been set to zero. A neutral diagram can carry additional crossings or support cycles, and permutation-fixed writhe labels alone do not classify those embeddings or their stability.
 
-This creates a paradox for the neutrino, which we know has mass. The "Folded Braid" solves this by acting like a closed loop that has been twisted and then folded back on itself. One half has positive twist, the other has negative twist. They cancel out globally (making the neutrino neutral), but locally the structure is twisted and tense. This tension, the energy required to keep the fold from snapping straight, is what manifests as the tiny mass of the neutrino. It is the only way to build a "something" out of "nothing" (neutrality) in a topological system.
+The folded comparison exhibits a way to combine neutral total writhe with positive modeled cost. The sterile quantum numbers require a separate gauge action on the physical state, including its weak and hypercharge assignments. These distinctions matter in **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />, where the heavy and light masses are inputs to a mixing calculation. Identifying a unique physical fold would require classifying the other neutral configurations with positive cost.
 
 ---
 
@@ -2170,72 +5130,139 @@ Suppose the physical neutrino mass spectrum is derived from the diagonalization 
 :::tip[**Diagonalization of the Mass Matrix Yielding Light via Heavy Eigenstates**]
 :::
 
-The physical neutrino masses emerge from the diagonalization of the 2x2 mass matrix describing the mixing between the light left-handed state $\nu_L$ and the heavy right-handed state $N_R$.  **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> and  **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />
+**I. Real Symmetric Mass Matrix**
 
-**I. Mass Matrix Construction**
-The system is described in the basis $(\nu_L, N_R)$ by the mass matrix $M$:
-
-$$
-M = \begin{pmatrix} M_L & m_D \\ m_D & M_R \end{pmatrix}
-$$
-
-* **$M_L$ (Majorana Mass of $\nu_L$):** As proven in the **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />, the folded braid topology of $\nu_L$ has zero intrinsic writhe and minimal complexity. Thus, the intrinsic mass vanishes: $M_L = 0$.
-* **$M_R$ (Majorana Mass of $N_R$):** The heavy neutrino $N_R$ corresponds to the maximal complexity state allowed by vacuum friction. Its mass is determined by the critical complexity $N_{3,\max}$: $M_R = m_{N_R} \gg m_D$.
-* **$m_D$ (Dirac Mass):** The off-diagonal term represents the interaction transforming $\nu_L$ into $N_R$, mediated by the Higgs mechanism (or topological rewrite $\mathcal{R}_{seesaw}$). Its scale is the electroweak VEV: $m_D \approx v_{EW}$.
-
-Substituting these values:
+In the assumed two-state mass model, write $d=m_D\in\mathbb R$ and $M=M_R>0$, with $M_L=0$ (**Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />). The light label refers to the folded-state candidate (**Folded Topology** <Ref id="9.6.1" label="§9.6.1" />). The heavy label and the mass entries are inputs to the two-state model. The matrix and its characteristic polynomial are
 
 $$
-M = \begin{pmatrix} 0 & m_D \\ m_D & M_R \end{pmatrix}
+\begin{aligned}
+\mathsf M&=\begin{pmatrix}0&d\\d&M\end{pmatrix},\\
+\det(\mathsf M-\lambda I)
+&=\det\begin{pmatrix}-\lambda&d\\d&M-\lambda\end{pmatrix}\\
+&=(-\lambda)(M-\lambda)-d^2
+=\lambda^2-M\lambda-d^2.
+\end{aligned}
 $$
 
-**II. Diagonalization**
-The eigenvalues $\lambda$ satisfy the characteristic equation $\det(M - \lambda I) = 0$:
+Completing the square gives
 
 $$
-\det \begin{pmatrix} -\lambda & m_D \\ m_D & M_R - \lambda \end{pmatrix} = \lambda^2 - M_R \lambda - m_D^2 = 0
+\left(\lambda-\frac M2\right)^2
+=\frac{M^2+4d^2}{4},\qquad
+\Delta=\sqrt{M^2+4d^2},\qquad
+\lambda_\pm=\frac{M\pm\Delta}{2}.
 $$
 
-Solving the quadratic equation yields:
+For $d\ne0$, $\Delta>M$, hence $\lambda_-<0<\lambda_+$. For $d=0$, the eigenvalues are $0,M$.
+
+**II. Explicit Orthogonal Diagonalization**
+
+Choose $\theta\in(-\pi/4,\pi/4)$ by $2\theta=\arctan(2d/M)$, and write $c=\cos\theta$, $s=\sin\theta$. Then
 
 $$
-\lambda_{\pm} = \frac{M_R \pm \sqrt{M_R^2 + 4m_D^2}}{2}
+\cos(2\theta)=\frac M\Delta,\qquad
+\sin(2\theta)=\frac{2d}\Delta,\qquad
+R=\begin{pmatrix}c&s\\-s&c\end{pmatrix},\quad R^TR=I.
 $$
 
-**III. Seesaw Approximation**
-Given the hierarchy $M_R \gg m_D$, the Taylor expansion is evaluated to higher order to capture the precise corrections:
+Both matrix products are
 
 $$
-\sqrt{M_R^2 + 4m_D^2} = M_R \sqrt{1 + \frac{4m_D^2}{M_R^2}} \approx M_R \left(1 + \frac{2m_D^2}{M_R^2} - \frac{2m_D^4}{M_R^4} + \mathcal{O}\left(\frac{m_D^6}{M_R^6}\right)\right)
+\begin{aligned}
+\mathsf M R
+&=\begin{pmatrix}-ds&dc\\dc-Ms&ds+Mc\end{pmatrix},\\
+R^T\mathsf M R
+&=\begin{pmatrix}
+Ms^2-2d s c&d(c^2-s^2)-M s c\\
+d(c^2-s^2)-M s c&Mc^2+2d s c
+\end{pmatrix}.
+\end{aligned}
 $$
 
-Substituting this back into the eigenvalue expression yields the higher-order eigenvalues:
-1.  **Heavy Eigenstate ($N_R$):**
-
-    $$
-    \lambda_+ \approx M_R + \frac{m_D^2}{M_R} - \frac{m_D^4}{M_R^3}
-    $$
-
-2.  **Light Eigenstate ($\nu_L$):**
-
-    $$
-    \lambda_- \approx -\frac{m_D^2}{M_R} \left( 1 - \frac{m_D^2}{M_R^2} \right)
-    $$
-
-**IV. Physical Parameters**
-The physical mass is the absolute value of the light eigenvalue, incorporating the second-order correction:
+The off-diagonal entry vanishes because
 
 $$
-m_{\nu} = |\lambda_-| \approx \frac{m_D^2}{M_R} \left( 1 - \frac{m_D^2}{M_R^2} \right)
+d\cos(2\theta)-\frac M2\sin(2\theta)
+=\frac{dM}\Delta-\frac{Md}\Delta=0.
 $$
 
-The mixing angle $\theta$ is diagonalized exactly. Using the rotation matrix that diagonalizes $M$, we expand the mixing angle in powers of $m_D / M_R$:
+The first diagonal entry is
 
 $$
-\theta \approx \frac{m_D}{M_R} - \frac{m_D^3}{2 M_R^3} + \mathcal{O}\left(\frac{m_D^5}{M_R^5}\right)
+\begin{aligned}
+Ms^2-2d s c
+&=\frac M2(1-\cos(2\theta))-d\sin(2\theta)\\
+&=\frac M2-\frac{M^2}{2\Delta}-\frac{2d^2}\Delta
+=\frac{M-\Delta}{2}=\lambda_-.
+\end{aligned}
 $$
 
-This derivation confirms the Type I Seesaw mechanism arises naturally from the topological disparity, predicting small admixtures consistent with oscillation hierarchies.
+The second is
+
+$$
+Mc^2+2d s c
+=\frac M2+\frac{M^2+4d^2}{2\Delta}
+=\frac{M+\Delta}{2}=\lambda_+.
+$$
+
+Thus $R^T\mathsf M R=\operatorname{diag}(\lambda_-,\lambda_+)$, with normalized eigenvectors $(c,-s)^T$ and $(s,c)^T$.
+
+**III. Exact Light-Mass Formula and Error Bound**
+
+Taking the nonnegative physical mass of the light mode,
+
+$$
+\begin{aligned}
+m_\nu=|\lambda_-|
+&=\frac{\Delta-M}{2}
+=\frac{(\Delta-M)(\Delta+M)}{2(\Delta+M)}\\
+&=\frac{\Delta^2-M^2}{2(\Delta+M)}
+=\frac{2d^2}{\Delta+M}.
+\end{aligned}
+$$
+
+Since $\Delta+M\ge2M$,
+
+$$
+0\le m_\nu\le\frac{d^2}{M}.
+$$
+
+The difference from the leading seesaw expression is
+
+$$
+\begin{aligned}
+\frac{d^2}{M}-m_\nu
+&=\frac{d^2(\Delta-M)}{M(\Delta+M)}
+=\frac{4d^4}{M(\Delta+M)^2}
+\le\frac{d^4}{M^3}.
+\end{aligned}
+$$
+
+Hence $m_\nu=d^2/M+O(d^4/M^3)$ as $d/M\to0$. Also $\lambda_+=M+m_\nu$ exactly.
+
+**IV. Expansion of the Mixing Angle**
+
+For $|2d/M|<1$, integration of the geometric series gives
+
+$$
+\begin{aligned}
+\arctan x
+&=\int_0^x\frac{\mathrm dt}{1+t^2}
+=\int_0^x\sum_{j=0}^{\infty}(-1)^jt^{2j}\,\mathrm dt\\
+&=x-\frac{x^3}{3}+\frac{x^5}{5}+O(x^7),\\
+\theta=\tfrac12\arctan(2d/M)
+&=\frac dM-\frac43\frac{d^3}{M^3}
+ +\frac{16}{5}\frac{d^5}{M^5}+O(d^7/M^7).
+\end{aligned}
+$$
+
+Within the supplied mass matrix, the suppressed eigenvalue and mixing therefore satisfy
+
+$$
+\boxed{m_\nu=\frac{2m_D^2}{M_R+\sqrt{M_R^2+4m_D^2}},\qquad
+0\le\frac{m_D^2}{M_R}-m_\nu\le\frac{m_D^4}{M_R^3},\qquad
+\theta=\tfrac12\arctan(2m_D/M_R).}
+$$
 
 Q.E.D.
 
@@ -2249,6 +5276,8 @@ The profound lightness of active neutrinos relative to all other fundamental fer
 The topological formulation identifies two distinct neutrino states within the network spectrum: a light, folded left-handed state $\nu_L$ carrying near-zero knot complexity, and a heavy, highly twisted right-handed partner $N_R$ possessing GUT-scale topological complexity. The Dirac mass term $m_D$ represents the topological interaction amplitude that flips one braid state into the other during graph rewrites. When the complete mass matrix of this coupled system is diagonalized, the enormous topological complexity of the heavy right-handed partner $M_R$ naturally suppresses the physical mass of the active neutrino according to $m_\nu \approx m_D^2 / M_R$.
 
 This geometric relationship establishes that active neutrinos are exceptionally light precisely because their right-handed partners are topologically dense and massive. By deriving the seesaw relation directly from the spectrum of allowable ribbon knots, the framework connects the smallest non-zero mass scales in the universe directly to the ultra-high energy scale of Grand Unification.
+
+The diagonalization establishes the seesaw suppression conditional on the supplied mass matrix, including its zero light diagonal entry and a heavy positive mass scale. It does not derive those entries from the folded graph state or identify the off-diagonal entry with an electroweak rewrite amplitude. The negative eigenvalue is converted to a nonnegative mass by the usual mass-phase convention; its sign does not represent a negative physical mass. The exact angle also fixes the cubic mixing correction without numerical fitting.
 
 ---
 
@@ -2264,34 +5293,63 @@ Assume the local edge density $\rho_{local}$ within the effective volume of a pa
 :::tip[**Derivation of Stress Scaling through Fixed Particle Volumes**]
 :::
 
-**I. Volume Constraint**
-A stable particle braid is a compact topological object. Its spatial extent is bounded by the logarithmic radius $R \sim \log N_3$ **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />. For the purposes of density scaling in the high-complexity limit, the effective volume $V_{braid}$ is treated as quasi-static or slowly growing compared to the number of quanta $N_3$.
+**I. Assumed Density Law**
+
+Let $N=N_3>0$ denote the resource count and let the asserted linear density law be $\rho_{local}=c_\rho N$, with a fixed coefficient $c_\rho>0$ (**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). In the fixed-volume version of the model,
 
 $$
-V_{braid} \sim \text{const}
+N_{sites}=c_sN,\qquad V_{braid}=V_0>0,\qquad
+\rho_{local}=\frac{N_{sites}}{V_{braid}}
+=\frac{c_sN}{V_0}=c_\rho N,\qquad c_\rho=\frac{c_s}{V_0}.
 $$
 
-**II. Local Density Scaling**
-The number of active sites (edges/vertices) in the braid scales linearly with the topological complexity $N_3$ (number of 3-cycles).
+The density increase for an integer resource increment $h$ is
 
 $$
-N_{sites} \propto N_3
+\rho_{local}(N+h)-\rho_{local}(N)
+=c_\rho(N+h)-c_\rho N=c_\rho h.
 $$
 
-The local density of topological features $\rho_{local}$ is defined as the number of sites per unit volume:
+**II. Stress Relative to the Vacuum**
+
+With the stated linear response to excess density, let $c_\sigma>0$ and
 
 $$
-\rho_{local} = \frac{N_{sites}}{V_{braid}} \propto \frac{N_3}{V_0} \propto N_3
+\sigma(N)=c_\sigma(\rho_{local}(N)-\rho_3^*)
 $$
 
-**III. Stress Accumulation**
-The topological stress $\sigma$ acting on the braid is proportional to the deviation of the local density from the vacuum equilibrium density $\rho_3^*$ **Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />.
+(**Thermodynamic Fluxes** <Ref id="5.2.1" label="§5.2.1" />). Substitution yields
 
 $$
-\sigma \propto \rho_{local} - \rho_3^* \propto N_3
+\begin{aligned}
+\sigma(N)&=c_\sigma(c_\rho N-\rho_3^*)
+=c_\sigma c_\rho N-c_\sigma\rho_3^*,\\
+\sigma(N+h)-\sigma(N)
+&=c_\sigma c_\rho h,\\
+\frac{\sigma(N)}{N}
+&=c_\sigma c_\rho-\frac{c_\sigma\rho_3^*}{N}
+\longrightarrow c_\sigma c_\rho.
+\end{aligned}
 $$
 
-As the complexity $N_3$ increases, the local density rises linearly, leading to a linear increase in the topological stress exerted by the vacuum pressure against the braid structure. This stress creates the friction that opposes further growth.
+Thus the exact stress is affine in $N$, and its large-$N$ leading term is linear.
+
+**III. Explicit High-Density Bounds**
+
+If $N\ge2\rho_3^*/c_\rho$, then
+
+$$
+0\le\rho_3^*\le\frac{c_\rho N}{2},\qquad
+\frac{c_\rho N}{2}\le c_\rho N-\rho_3^*\le c_\rho N.
+$$
+
+Multiplication by $c_\sigma>0$ gives
+
+$$
+\boxed{\frac{c_\sigma c_\rho}{2}N\le\sigma(N)
+\le c_\sigma c_\rho N\qquad
+\left(N\ge\frac{2\rho_3^*}{c_\rho}\right).}
+$$
 
 Q.E.D.
 
@@ -2305,6 +5363,8 @@ As a particle braid accumulates topological crossings, the concentration of grap
 Because the vacuum state minimizes entropic friction by favoring sparse, uniform graph regularity, regions of localized high density create structural pressure against further complexity growth. This linear density scaling $\rho \sim N_3$ establishes an intrinsic physical mechanism that resists arbitrary topological growth, demonstrating why particle masses cannot increase indefinitely within a finite causal horizon.
 
 Consequently, complexity density scaling operates as a fundamental physical constraint within Quantum Braid Dynamics. By establishing a direct proportionality between local topological complexity and edge concentration, the theory provides a rigorous geometric origin for structural friction, preventing localized graph collapse and ensuring the stability of low-energy matter states.
+
+The calculation uses the linear density law assumed in the statement. Its fixed-volume realization requires a resource-to-site conversion coefficient and an effective volume independent of the resource count. A logarithmically growing radius does not make that volume constant: if the volume grows as a power of the logarithm, the density includes that denominator. Establishing which volume law applies to a microscopic braid remains separate from the algebraic stress calculation under the stipulated law.
 
 ---
 
@@ -2320,43 +5380,75 @@ Let the stability of a topological particle be bounded by the syndrome-response 
 :::tip[**Demonstration via Instability Onset at Critical Complexity**]
 :::
 
-**I. Maintenance Dynamics**
-The stability of a braid structure depends on the balance between rewrite operations that maintain/create structure and those that delete it.
-* **Creation/Maintenance Rate ($R_{create}$):** Proportional to the number of active sites $N_3$ times the acceptance probability $P_{acc}$. The acceptance is governed by the friction function $f(\sigma) = e^{-\mu \sigma}$ **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />.
+**I. Maintenance and Deletion Rates**
 
-    $$
-    R_{create} \propto N_3 \cdot P_{acc} \propto N_3 e^{-\mu N_3}
-    $$
-
-    (Substituting $\sigma \propto N_3$ from the **Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />).
-* **Deletion Rate ($R_{delete}$):** Proportional to the number of active sites susceptible to decay or unraveling, catalyzed by excess density.
-
-    $$
-    R_{delete} \propto N_3 \cdot \mathcal{Q}_{del} \sim N_3
-    $$
-
-**II. The Halt Condition**
-Growth and stability are possible only as long as the maintenance rate exceeds or balances the deletion rate. The system becomes unstable when:
+Write the rate model used in the argument with its positive coefficients exposed:
 
 $$
-R_{create} < R_{delete}
+R_+(N)=aN e^{-\mu\sigma(N)},\qquad
+R_-(N)=dN,\qquad a,d,\mu>0,\qquad N>0.
 $$
 
-$$
-N_3 e^{-\mu N_3} < \alpha N_3
-$$
-
-where $\alpha$ is a proportionality constant related to the base deletion probability ($\sim 0.5$).
-
-**III. Instability Onset**
-At high $N_3$, the exponential suppression $e^{-\mu N_3}$ dominates.
-There exists a critical complexity $N_{3,crit}$ beyond which the acceptance probability for maintenance moves becomes effectively zero relative to the deletion rate.
+The exponential acceptance factor is the specified friction response (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />). The density-response model gives
 
 $$
-N_3 > N_{3,\text{crit}} \implies \text{Collapse}
+\sigma(N)=c_\sigma c_\rho N-c_\sigma\rho_3^*,\qquad
+c_\sigma,c_\rho>0
 $$
 
-This imposes a hard upper bound on the complexity (and thus mass) of any stable topological particle.
+(**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). Define
+
+$$
+A=a e^{\mu c_\sigma\rho_3^*}>0,\qquad
+\beta=\mu c_\sigma c_\rho>0.
+$$
+
+Then $R_+(N)=A N e^{-\beta N}$.
+
+**II. Exact Rate Comparison**
+
+For $N>0$,
+
+$$
+\begin{aligned}
+R_+(N)<R_-(N)
+&\ \Longleftrightarrow\ A N e^{-\beta N}<dN\\
+&\ \Longleftrightarrow\ e^{-\beta N}<d/A\\
+&\ \Longleftrightarrow\ -\beta N<\ln(d/A)\\
+&\ \Longleftrightarrow\ N>\frac{\ln(A/d)}{\beta}.
+\end{aligned}
+$$
+
+If $A>d$, equality occurs at the positive threshold $N_{crit}=\ln(A/d)/\beta$. If $A\le d$, then for every $N>0$,
+
+$$
+\frac{R_+(N)}{R_-(N)}=\frac Ad e^{-\beta N}<1,
+$$
+
+so the maintenance deficit already holds throughout the positive interval.
+
+**III. Existence of a Finite Upper Interval**
+
+Let
+
+$$
+N_* =\max\left\{0,\frac{\ln(A/d)}{\beta}\right\}.
+$$
+
+Every integer $N\ge\lfloor N_*\rfloor+1$ satisfies $N>N_*$ and hence $R_+(N)<R_-(N)$. More quantitatively, for any $0<\varepsilon<1$,
+
+$$
+N>\frac{\ln(A/(d\varepsilon))}{\beta}
+\ \Longrightarrow\
+\frac{R_+(N)}{R_-(N)}<\varepsilon.
+$$
+
+Thus, in this rate model,
+
+$$
+\boxed{\lim_{N\to\infty}\frac{R_+(N)}{R_-(N)}=0,\qquad
+N>N_*\ \Longrightarrow\ R_+(N)<R_-(N).}
+$$
 
 Q.E.D.
 
@@ -2371,222 +5463,285 @@ When local stress reaches a critical threshold, the friction-suppressed maintena
 
 This maintenance breakdown provides a precise physical definition for the maximum complexity threshold of elementary particles. Beyond this stability horizon, internal self-correction mechanisms stall completely against vacuum fluctuation noise, ensuring that organized matter states remain bounded in total mass and informational complexity.
 
+The threshold is a balance criterion for the positive rate functions used in the model. Exponential friction remains strictly positive at finite stress; the result is a maintenance deficit, rather than an exactly vanishing microscopic transition probability. Concluding irreversible collapse of an individual graph, an absorbing boundary or a numerical heavy-neutrino mass requires additional dynamics and a calibrated conversion from stress and resource counts. Those conclusions do not follow from the rate comparison alone.
+
 ---
 
 ### 9.6.7 Lemma: Critical Complexity Balance {#9.6.7}
 
-:::info[**Determination of Maximum Sustainable Complexity via Friction-Creation Balance**]
+:::info[**Upper Complexity Root via a Fixed Deletion Benchmark**]
 :::
 
-Suppose the maximum sustainable topological complexity $N_{3,\max}$ is determined by the equilibrium condition where the creation flux of geometric quanta balances the friction-suppressed maintenance flux. This balance satisfies the critical value $N_{3,\max} \approx 1/(2\mu)$, setting the physical mass scale of the heavy right-handed neutrino.
+Let the scalar balance benchmark be $x e^{-\mu x}=1/2$ for $x\ge0$ and $0<\mu<2/e$. Then its upper root is $N_{3,\max}=x_+=-\mu^{-1}W_{-1}(-\mu/2)$, lies above the turnover $1/\mu$, and is approximately $6.36$ at $\mu=0.40$.
 
 ### 9.6.7.1 Proof: Critical Complexity Balance {#9.6.7.1}
 
-:::tip[**Derivation of the Critical Complexity $N_{3,\max}$ from Critical Complexity Balance**]
+:::tip[**Branch Selection via Monotonicity and Lambert W Inversion**]
 :::
 
-**I. Balance Equation**
-The critical state occurs when the creation rate exactly balances the deletion rate under **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> and **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />
+**I. Turnover and Number of Roots**
+
+Let $g(x)=x e^{-\mu x}$ in the fixed-deletion benchmark (**Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />). The constant deletion threshold is the half-rate benchmark (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />). The derivative and endpoint values are
 
 $$
-R_{create} = R_{delete}
+g'(x)=e^{-\mu x}-\mu x e^{-\mu x}=e^{-\mu x}(1-\mu x),
+\quad g(0)=0,\quad \lim_{x\to\infty}g(x)=0 .
 $$
 
-Using the scaling forms derived in **9.6.6.1**:
+The derivative is positive below $1/\mu$ and negative above it. At the turnover $g(1/\mu)=1/(e\mu)>1/2$ because $\mu<2/e$. Continuity and strict monotonicity give one root on each side of $1/\mu$. On the decreasing branch, $x>x_+$ implies $g(x)<1/2$.
+
+**II. Exact Upper Root**
+
+With $y=-\mu x$, the balance equation is
 
 $$
-N_3 e^{-\mu N_3} = \frac{1}{2}
+x e^{-\mu x}=\tfrac12
+\quad\Longleftrightarrow\quad
+(-\mu x)e^{-\mu x}=-\tfrac\mu2
+\ \Longleftrightarrow\
+y e^y=-\tfrac\mu2.
 $$
 
-The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
-
-**II. Solution Analysis**
-Let $f(x) = x e^{-\mu x} - 0.5 = 0$, where $x = N_3$.
-The function $g(x) = x e^{-\mu x}$ has a maximum at $x = 1/\mu$.
-For $\mu \approx 0.40$ (vacuum friction coefficient):
-* Peak location: $x_{peak} = 1/0.4 = 2.5$.
-* Peak value: $2.5 e^{-1} \approx 0.92$.
-Since $0.92 > 0.5$, solutions exist. There are two roots; the lower root represents the vacuum nucleation threshold, while the upper root represents the maximum stable particle complexity.
-
-**III. Numerical Solution**
-Solving $x e^{-0.4 x} = 0.5$ for the upper root:
-* Try $x=6$: $6 e^{-2.4} \approx 6(0.09) = 0.54$.
-* Try $x=6.5$: $6.5 e^{-2.6} \approx 6.5(0.074) = 0.48$.
-Interpolating yields $x \approx 6.36$.
-Thus, the critical complexity is $N_{3,\max} \approx 6.36$ in dimensionless units normalized by the interaction scale.
-
-**IV. Asymptotic Scaling**
-In the limit of large effective $N$ (relating to the Planck scale hierarchy), the solution scales as:
+Since $-\mu/2\in(-1/e,0)$, the principal branch gives $-1<y<0$ and the lower root. The branch $W_{-1}$ gives $y<-1$ and hence the upper root
 
 $$
-N_{3,\max} \sim \frac{1}{\mu} \ln\left(\frac{1}{\text{threshold}}\right)
+x_+=-\frac1\mu W_{-1}(-\mu/2)>\frac1\mu .
 $$
 
-This confirms that the maximum complexity is inversely proportional to the friction coefficient $\mu$.
+**III. Numerical Bracket at the Reference Friction**
+
+At $\mu=0.40$, the turnover is $2.5$ and its value is $2.5/e\simeq0.9197$. On the decreasing branch,
+
+$$
+g(6.3566)=6.3566e^{-2.54264}\simeq0.500000412>\tfrac12,\qquad
+g(6.3567)=6.3567e^{-2.54268}\simeq0.499988278<\tfrac12 .
+$$
+
+The upper root belongs to $(6.3566,6.3567)$, so it rounds to $6.36$.
 
 Q.E.D.
 
 ### 9.6.7.2 Commentary: Balance Point {#9.6.7.2}
 
-:::info[**Determination of the Maximum Complexity Threshold via Flux Equality**]
+:::info[**Distinction between Maintenance Turnover and Rate Balance**]
 :::
 
-The exact threshold of particle stability occurs at the critical complexity $N_{3,\max}$, where the creation flux of geometric quanta precisely balances the friction-suppressed maintenance rate. Solving the non-linear balance equation $N_3 e^{-\mu N_3} = \alpha$ yields the upper stability root $N_{3,\max} \approx 1/(2\mu)$, anchored by the universal vacuum packing friction coefficient $\mu \approx 0.40$.
+The turnover identifies the maximum of the stipulated maintenance curve. The upper balance point comes later on its decreasing branch and compares that curve with a fixed deletion benchmark. Between those two points maintenance is already decreasing but remains above the specified deletion rate.
 
-This critical threshold is not merely a theoretical ceiling; it establishes the physical mass scale for the heaviest stable topological defects in the universe. By defining the maximum amount of topological complexity that a localized braid can sustain before undergoing unraveling, this balance point sets the exact energy scale for the heavy right-handed neutrino, anchoring the seesaw mechanism to fundamental vacuum constants.
-
-The explicit balance between geometric creation flux and friction-suppressed maintenance rates demonstrates how fundamental interaction constants emerge from discrete graph dynamics. This equilibrium establishes a fixed, scale-invariant anchor for heavy particle states without introducing arbitrary energy scales by hand.
+The linear-in-count deletion model in **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" /> has a different balance equation. Dividing its two rates by the common positive count gives a logarithmic threshold when one exists. The Lambert W root here concerns the fixed-rate comparison, and a physical mass interpretation requires a separate calibration from complexity to energy. For integer complexity in this benchmark, the maintenance rate is below the fixed deletion rate at every count strictly above the upper root.
 
 ---
 
 ### 9.6.8 Lemma: Planck Anchor {#9.6.8}
 
-:::info[**Scaling of the Heavy Neutrino Mass to the Grand Unified Scale via Planck Anchoring**]
+:::info[**Heavy-mass scaling via a specified Planck matching factor**]
 :::
 
-Suppose the mass of the heavy right-handed neutrino $M_R$ is anchored to the Planck mass $M_{Pl}$ via the exponential suppression factor derived from the critical complexity. The relation $M_R \sim M_{Pl} \cdot e^{-c/\mu}$ satisfies a predicted mass scale of approximately $10^{16}$ GeV, consistent with the requirements of the Grand Unified Theory seesaw mechanism.
+Let the heavy-neutrino model prescribe $M_R=A M_{\mathrm{Pl}}e^{-c_*/\mu}$ in natural units with dimensionless $A,c_*,\mu>0$. Then for the stated benchmark $c_*=2.76$, $\mu=0.40$ and $A=1$, the modeled heavy mass is approximately $1.23\times10^{16}\,\mathrm{GeV}$.
 
 ### 9.6.8.1 Proof: Planck Anchor {#9.6.8.1}
 
-:::tip[**Derivation of $M_R$ from Critical Complexity and Planck Units**]
+:::tip[**Derivation of the benchmark scale via Planck units and explicit matching**]
 :::
 
-**I. Mass-Complexity Relation**
-The mass of the heavy neutrino $M_R$ is proportional to its critical topological complexity $N_{3,\max}$ **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />.
+**I. Planck units**
+
+With $c_{\mathrm{light}}$ the speed of light, the conventional Planck time and energy satisfy
 
 $$
-M_R = \kappa_{scale} \cdot N_{3,\max}
+t_{\mathrm{Pl}}=\sqrt{\frac{\hbar G}{c_{\mathrm{light}}^5}},\qquad
+\omega_{\mathrm{Pl}}=\frac1{t_{\mathrm{Pl}}}
+=\sqrt{\frac{c_{\mathrm{light}}^5}{\hbar G}},\qquad
+E_{\mathrm{Pl}}=\hbar\omega_{\mathrm{Pl}}
+=\sqrt{\frac{\hbar c_{\mathrm{light}}^5}{G}}
+=M_{\mathrm{Pl}}c_{\mathrm{light}}^2.
 $$
 
-**II. Dimensional Scaling**
-The mass scale is anchored to the Planck mass $M_{Pl}$ but suppressed by the exponential friction factor over the effective dimension $d=4$.
-The suppression factor derives from the instanton action in the **Ahlfors 4-Regularity** <Ref id="5.5.7" label="§5.5.7" />:
+The equality between the graph tick and $t_{\mathrm{Pl}}$ would be an additional clock matching. For the benchmark in **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" />, express masses as rest energies in GeV.
+
+**II. Numerical mass match**
+
+Using $M_{\mathrm{Pl}}\simeq1.22\times10^{19}\,\mathrm{GeV}$, the exponent and factor are
 
 $$
-M_R \sim M_{Pl} \cdot e^{-c/\mu}
+\frac{c_*}{\mu}=\frac{2.76}{0.40}=6.90,\qquad
+e^{-6.90}\simeq1.00779\times10^{-3}.
 $$
 
-where $c \approx 2.76$ is a geometric constant derived from the 4-volume embedding.
-
-**III. Calculation**
-Given $M_{Pl} \approx 1.22 \times 10^{19}$ GeV and $\mu \approx 0.40$:
+Consequently,
 
 $$
-\text{Exponent } = \frac{2.76}{0.40} \approx 6.9
+M_R=A(1.22\times10^{19}\,\mathrm{GeV})(1.00779\times10^{-3})
+\simeq A(1.23\times10^{16}\,\mathrm{GeV}).
 $$
 
-$$
-M_R \approx 1.22 \times 10^{19} \text{ GeV} \cdot e^{-6.9}
-$$
+For a target $M_R=2.36\times10^{16}\,\mathrm{GeV}$ at the same exponent and Planck mass, the required coefficient is
 
 $$
-M_R \approx 1.22 \times 10^{19} \cdot (1.0 \times 10^{-3})
+A=\frac{2.36\times10^{16}}
+        {(1.22\times10^{19})e^{-6.90}}
+\simeq1.92 .
 $$
 
-Refined by the specific pre-factor from the **Critical Complexity Balance** <Ref id="9.6.7.1" label="§9.6.7.1" />:
+**III. Relation to the complexity threshold**
+
+If the independent relation $M_R=\kappa_{\mathrm{scale}}N_{3,\max}$ is also imposed, **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> supplies $N_{3,\max}=-\mu^{-1}W_{-1}(-\mu/2)$ in its benchmark. Compatibility requires
 
 $$
-M_R \approx 2.36 \times 10^{16} \text{ GeV}
+\kappa_{\mathrm{scale}}
+=\frac{A M_{\mathrm{Pl}}e^{-c_*/\mu}}{N_{3,\max}}
+\simeq A\frac{1.23\times10^{16}\,\mathrm{GeV}}{6.36}
+\simeq A(1.93\times10^{15}\,\mathrm{GeV})
 $$
 
-**IV. Consistency**
-This value aligns with the Grand Unified Theory scale ($10^{16}$ GeV). The derivation connects the Planck scale to the GUT scale purely via the vacuum friction parameter $\mu$, providing a geometric origin for the heavy neutrino mass scale required by the seesaw mechanism.
+per unit of complexity at $\mu=0.40$.
 
 Q.E.D.
 
 ### 9.6.8.2 Commentary: Planck Anchor {#9.6.8.2}
 
-:::info[**Scaling of the Critical Complexity via Planck Energy Anchoring**]
+:::info[**Interpretation of the heavy scale via independent matching inputs**]
 :::
 
-Converting dimensionless critical complexity counts into physical mass units requires anchoring the network scale to the Planck mass $M_{\text{Pl}} \approx 1.22 \times 10^{19}$ GeV. Treating the Planck scale as the fundamental unit of graph geometry, where one bit corresponds to one Planck area, allows the dimensionless threshold $N_{3,\max}$ to be mapped to a physical energy scale via instanton suppression.
+The conventional Planck energy sets the units of the matched heavy scale (**Planck Anchor** <Ref id="9.6.8" label="§9.6.8" />). The exponent and prefactor determine its dimensionless ratio to the Planck value. The numerical substitution shows the result at unit prefactor and the prefactor needed for the larger benchmark. It treats the exponent coefficient as supplied by the model. [NIST CODATA Planck energy values](https://physics.nist.gov/cgi-bin/cuu/Results?search_for=energy)
 
-Evaluating this dimensional conversion yields a predicted heavy neutrino mass of $M_R \approx 2.36 \times 10^{16}$ GeV, placing the heavy partner scale squarely at the Grand Unified scale. This agreement provides a compelling consistency check, linking microscopic vacuum friction directly to gravitational Planck units and electroweak seesaw parameters.
-
-This dimensional anchoring completes the theoretical synthesis between discrete network topology and high-energy physics. By mapping the maximum complexity root directly to Planck units, the framework links microscopic vacuum friction parameter $\mu$ to cosmological mass scales, demonstrating how fundamental energy hierarchies arise naturally from information-processing bounds.
+The scalar balance equation fixes a dimensionless root in its own benchmark. Combining that root with the mass formula requires an energy per unit of complexity, which the compatibility equation displays. The heavy scale can then be used in **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" /> for a given Dirac mixing scale. A microscopic derivation would have to determine the matching data and the graph clock independently.
 
 ---
 
 ### 9.6.9 Proof: Neutrino Mass Mechanism {#9.6.9}
 
-:::tip[**Formal Proof of the Emergent Neutrino Mass through Seesaw Hierarchy**]
+:::tip[**Conditional Seesaw Eigenvalue via Singlet Assignment and Scale Matching**]
 :::
 
-The proof synthesizes the topological structure, mass matrix diagonalization, and friction-limited scaling to deriving the neutrino mass.
+**I. Neutrality, Singlet Assignment, and Bare Mass**
 
-**I. Synthesis of Components**
-1.  **Light Mass Source:** From the **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />, the folded braid topology ensures the intrinsic mass of $\nu_L$ is zero ($M_L=0$).
-2.  **Seesaw Mechanism:** From the **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />, the mixing with a heavy partner yields $m_\nu \approx m_D^2 / M_R$.
-3.  **Heavy Mass Scale:** From the **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> (which relies on the critical scale of **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />), vacuum friction limits the heavy partner mass to $M_R \approx 2 \times 10^{16}$ GeV.
+For the folded label take segment writhes $W_+=k$ and $W_-=-k$. The electric charge vanishes because $Q=(k-k)/3=0$. The positive excess fold cost of **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" /> remains compatible with this cancellation. The bare light entry $M_L=0$ is a separate premise of the effective mass matrix.
 
-**II. Quantitative Verification**
-The small value of the light neutrino mass is determined by the local stress properties of **Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" /> and the stability bounds of **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />. Substituting the electroweak scale $m_D \approx v \approx 246$ GeV (assuming Yukawa coupling $Y \sim O(1)$) and the derived $M_R$:
+For the assigned sterile partner $|s\rangle$, assume a trivial color and weak action and hypercharge zero. The generators and quadratic Casimirs then act as
 
 $$
-m_\nu \approx \frac{(246)^2}{2.36 \times 10^{16}} \text{ GeV}
+\begin{aligned}
+T_C^a|s\rangle&=T_W^b|s\rangle=Y|s\rangle=0,\\
+C_2^{(3)}|s\rangle&=\sum_a T_C^a(T_C^a|s\rangle)=0,\\
+C_2^{(2)}|s\rangle&=\sum_b T_W^b(T_W^b|s\rangle)=0,\qquad
+e^{i\theta Y}|s\rangle=|s\rangle.
+\end{aligned}
 $$
 
+These identities use the stipulated sterile representation of the partner. The light neutral label may belong to a weak doublet.
+
+**II. Complexity and Planck Matching**
+
+At fixed volume the local density model assigns density proportional to complexity (**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). The maintenance weight includes the friction factor $e^{-\mu\sigma}$ at stress $\sigma$ (**Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />). In the separately prescribed balance $xe^{-\mu x}=1/2$, writing $u=-\mu x$ gives $ue^u=-\mu/2$. The upper root is $-\mu^{-1}W_{-1}(-\mu/2)\simeq6.36$ at $\mu=0.40$ (**Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />).
+
+For a dimensionful scale use **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> with $c_*=2.76$ and $M_{\mathrm{Pl}}=1.22\times10^{19}\,\mathrm{GeV}$. The unit-prefactor anchor and matched coefficient are
+
 $$
-m_\nu \approx \frac{6 \times 10^4}{2 \times 10^{16}} \approx 3 \times 10^{-12} \text{ GeV} = 0.003 \text{ eV}
+\begin{aligned}
+M_R(1)&=(1.22\times10^{19}\,\mathrm{GeV})e^{-2.76/0.40}
+\simeq1.2295\times10^{16}\,\mathrm{GeV},\\
+A&=\frac{2.36\times10^{16}\,\mathrm{GeV}}{M_R(1)}\simeq1.92,\qquad
+M_R(A)=A M_R(1).
+\end{aligned}
 $$
 
-This order-of-magnitude result is consistent with the squared mass differences observed in neutrino oscillation experiments ($\Delta m^2_{atm} \sim 0.05$ eV$^2$, implying $m \sim 0.05$ eV).
+An additional relation $M_R=\kappa_{\mathrm{scale}}N_{3,\max}$ would require $\kappa_{\mathrm{scale}}=M_R(A)/6.36$ at these benchmark inputs. The scalar root is dimensionless.
 
-**III. Conclusion**
-The small non-zero mass of the neutrino is a necessary consequence of the finite vacuum friction $\mu$, which generates the GUT-scale $M_R$, combined with the topological zero-mode of the folded braid. The hierarchy is resolved without fine-tuning, emerging directly from the causal graph dynamics.
+**III. Light Eigenvalue and Units**
+
+Set $m_D=yv$ at $v=246\,\mathrm{GeV}$ in the Yukawa convention of the benchmark. With the real symmetric matrix of **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />, its eigenvalue equation and nonnegative light mass are
+
+$$
+\det\begin{pmatrix}-\lambda&m_D\\m_D&M_R-\lambda\end{pmatrix}
+=\lambda^2-M_R\lambda-m_D^2=0,\qquad
+m_\nu=\frac{\sqrt{M_R^2+4m_D^2}-M_R}{2}
+=\frac{2m_D^2}{\sqrt{M_R^2+4m_D^2}+M_R}.
+$$
+
+Subtracting the exact mass from the leading expression gives
+
+$$
+0\le\frac{m_D^2}{M_R}-m_\nu
+=\frac{4m_D^4}{M_R(\sqrt{M_R^2+4m_D^2}+M_R)^2}
+\le \frac{m_D^4}{M_R^3}.
+$$
+
+At $M_R=2.36\times10^{16}\,\mathrm{GeV}$ and $0<y\le1$, the relative error with respect to the leading expression is at most $(246/(2.36\times10^{16}))^2<1.09\times10^{-28}$. With $1\,\mathrm{GeV}=10^9\,\mathrm{eV}$, the leading evaluations are
+
+$$
+\begin{aligned}
+m_\nu(y=0.5)&\simeq\frac{123^2}{2.36\times10^{16}}\,\mathrm{GeV}
+=6.4106\times10^{-4}\,\mathrm{eV},\\
+m_\nu(y=1)&\simeq\frac{246^2}{2.36\times10^{16}}\,\mathrm{GeV}
+=2.5642\times10^{-3}\,\mathrm{eV}.
+\end{aligned}
+$$
+
+**IV. Oscillation Comparison**
+
+The atmospheric benchmark is a difference of squared masses, $|\Delta m^2|\simeq2.4\times10^{-3}\,\mathrm{eV}^2$. [Super-Kamiokande atmospheric analysis](https://doi.org/10.1103/PhysRevD.109.072014)
+
+Its square root is $\sqrt{2.4\times10^{-3}}\,\mathrm{eV}\simeq0.0490\,\mathrm{eV}$. If a modeled mass $m_i$ is assigned to the lighter member of that pair, the other member must satisfy
+
+$$
+m_j^2-m_i^2=2.4\times10^{-3}\,\mathrm{eV}^2,\qquad
+m_j=\sqrt{m_i^2+2.4\times10^{-3}\,\mathrm{eV}^2}.
+$$
+
+For example the $y=1$ value would require $m_j\simeq0.0491\,\mathrm{eV}$. The two-state light-heavy matrix gives one light eigenvalue. Predicting the atmospheric splitting requires at least two light eigenvalues and the appropriate flavor mixing.
 
 Q.E.D.
 
 ### 9.6.9.1 Calculation: Neutrino Mass Prediction {#9.6.9.1}
 
-:::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
+:::note[**Verification of the Two-State Benchmark via Exact Eigenvalue and Unit Conversion**]
 :::
 
-Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+The calculation uses the exponential **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> and evaluates the two-state mass in **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />.
 
-1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
-2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
-3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in  **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" />.
+1.  **Scale Calibration:** Evaluate the unit-prefactor heavy mass and divide the prescribed $2.36\times10^{16}\,\mathrm{GeV}$ by it to obtain the matched prefactor.
+2.  **Light Mass:** Set $m_D=yv$ and use the rationalized light eigenvalue to avoid subtracting two nearly equal heavy-scale quantities. Report $(m_D/M_R)^2$ as the relative error bound for the leading approximation.
+3.  **Units Comparison:** Convert the light mass to eV. Report the atmospheric reference in $\mathrm{eV}^2$ and its square root separately in eV.
 
 ```python
-import numpy as np
-from decimal import Decimal, getcontext
+from decimal import Decimal, localcontext
 
-getcontext().prec = 20
 
 def verify_neutrino_seesaw():
-    """
-    Topological Seesaw Mechanism: Neutrino Mass Prediction
-    
-    Computes light neutrino masses from the seesaw formula m_ν ≈ m_D² / M_R
-    using derived vacuum parameters.
-    """
-    print("TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION")
-    print("Light Eigenvalue from Heavy Partner Suppression")
-    print("=" * 70)
+    """Compare the unit Planck anchor and calibrated two-state seesaw."""
+    with localcontext() as context:
+        context.prec = 60
+        v = Decimal("246")
+        mu = Decimal("0.40")
+        c_star = Decimal("2.76")
+        planck_mass = Decimal("1.22e19")
+        unit_mass = planck_mass * (-c_star / mu).exp()
+        target_mass = Decimal("2.36e16")
+        matched_prefactor = target_mass / unit_mass
+        gev_to_ev = Decimal("1e9")
+        atmospheric_split_ev2 = Decimal("2.4e-3")
 
-    v_ew_gev = Decimal('246.0')
-    M_R_gev = Decimal('20000000000000000')  # 2 × 10^{16} GeV
+        print("TWO-STATE SEESAW: HEAVY-SCALE AND UNITS CHECK")
+        print(f"Unit anchor: A=1, M_R={unit_mass:.6E} GeV")
+        print(f"Matched anchor: A={matched_prefactor:.6f}, M_R={target_mass:.6E} GeV")
+        print("Yukawa  m_D (GeV)  m_light (GeV)  m_light (eV)  Relative error bound")
+        for value in ("0.01", "0.10", "0.50", "1.00"):
+            yukawa = Decimal(value)
+            dirac_mass = yukawa * v
+            dirac_squared = dirac_mass ** 2
+            gap = (target_mass ** 2 + 4 * dirac_squared).sqrt()
+            light_gev = 2 * dirac_squared / (gap + target_mass)
+            light_ev = light_gev * gev_to_ev
+            relative_bound = (dirac_mass / target_mass) ** 2
+            print(
+                f"{yukawa:6.2f}  {dirac_mass:9.2f}  "
+                f"{light_gev:13.6E}  {light_ev:12.6E}  {relative_bound:.3E}"
+            )
 
-    yukawas = [Decimal('0.01'), Decimal('0.1'), Decimal('0.5')]
+        print(f"Atmospheric comparison: |delta m^2|={atmospheric_split_ev2:.3E} eV^2")
+        print(f"Square-root scale: {atmospheric_split_ev2.sqrt():.6E} eV")
 
-    print(f"Parameters")
-    print(f"  Electroweak VEV (v)     : {v_ew_gev} GeV")
-    print(f"  Heavy scale (M_R)       : 2 × 10^{{16}} GeV")
-    print("-" * 70)
-
-    print(f"{'Yukawa (y)':<12} {'m_D (GeV)':<14} {'m_D² (GeV²)':<16} {'m_ν (GeV)':<18} {'m_ν (eV)':<12}")
-    print("-" * 70)
-
-    for y in yukawas:
-        m_D = y * v_ew_gev
-        m_D2 = m_D ** 2
-        m_nu_gev = m_D2 / M_R_gev
-        m_nu_ev = m_nu_gev * Decimal('1e9')
-
-        print(f"{float(y):<12.2f} {float(m_D):<14.2f} {float(m_D2):<16.4f} {float(m_nu_gev):<18.4e} {float(m_nu_ev):<12.4e}")
-
-    print("-" * 70)
 
 if __name__ == "__main__":
     verify_neutrino_seesaw()
@@ -2595,23 +5750,20 @@ if __name__ == "__main__":
 **Simulation Results:**
 
 ```text
-TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION
-Light Eigenvalue from Heavy Partner Suppression
-======================================================================
-Parameters
-  Electroweak VEV (v)     : 246.0 GeV
-  Heavy scale (M_R)       : 2 × 10^{16} GeV
-----------------------------------------------------------------------
-Yukawa (y)   m_D (GeV)      m_D² (GeV²)      m_ν (GeV)          m_ν (eV)
-----------------------------------------------------------------------
-0.01         2.46           6.0516           3.0258e-16         3.0258e-07
-0.10         24.60          605.1600         3.0258e-14         3.0258e-05
-0.50         123.00         15129.0000       7.5645e-13         7.5645e-04
-----------------------------------------------------------------------
+TWO-STATE SEESAW: HEAVY-SCALE AND UNITS CHECK
+Unit anchor: A=1, M_R=1.229498E+16 GeV
+Matched anchor: A=1.919482, M_R=2.360000E+16 GeV
+Yukawa  m_D (GeV)  m_light (GeV)  m_light (eV)  Relative error bound
+  0.01       2.46   2.564237E-16   2.564237E-7  1.087E-32
+  0.10      24.60   2.564237E-14   2.564237E-5  1.087E-30
+  0.50     123.00   6.410593E-13   6.410593E-4  2.716E-29
+  1.00     246.00   2.564237E-12   2.564237E-3  1.087E-28
+Atmospheric comparison: |delta m^2|=2.400E-3 eV^2
+Square-root scale: 4.898979E-2 eV
 ```
 
 **Conclusion:**
-The calculation yields a Dirac mass term of $24.6$ GeV and a heavy mass term of $2 \times 10^{16}$ GeV. The resulting light neutrino mass is approximately $3.03 \times 10^{-14}$ GeV, or $3.03 \times 10^{-5}$ eV. This value is consistent with the lower bounds derived from atmospheric neutrino oscillations. The output confirms that the topological friction scale naturally generates the sub-eV neutrino mass without fine-tuning.
+The unit-prefactor anchor gives $1.2295\times10^{16}\,\mathrm{GeV}$. The prescribed heavy mass requires $A\simeq1.9195$ and gives light masses of $0.6411\,\mathrm{meV}$ at $y=0.50$ and $2.5642\,\mathrm{meV}$ at $y=1$. The atmospheric reference is a difference of squared masses. The program evaluates a single light eigenvalue for each separate Yukawa input, with separate benchmark rows for the different inputs.
 
 ---
 
@@ -2633,11 +5785,11 @@ This derivation completes the particle spectrum, explaining the one anomaly that
 :::note[**End of Chapter 9**]
 :::
 
-The derivation unifies the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra directly from braid commutation generators, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape.
+Among compact simple types of minimum rank satisfying the complex-representation criterion, the block embedding and branching select $A_4$. The assigned $\mathbf{\bar 5}\oplus\mathbf{10}$ representation cancels the perturbative cubic anomaly. On the admitted five-state register, four adjacent exchanges and four diagonal imbalances generate the 24-dimensional represented $\mathfrak{su}(5)$ algebra. The dual and exterior-square actions transfer to physical multiplets when the corresponding graph sectors admit the stated intertwiners.
 
-This implies that the Standard Model's structure is the low-energy remnant of a single, unified topology that fractured during a **Fragmentation Tunneling** event. This model explains proton stability as a tunneling problem through a massive topological barrier, and neutrino mass as a seesaw echo of the vacuum's maximum complexity limit. Yet, this introduces a deep conceptual friction: while the players have been unified, the graph has been treated as a purely mechanical system, leaving its underlying computational logic unaddressed.
+The assigned knot costs order three generation candidates under the common-weight model. A claim about the number of observable generations also needs a cutoff and bounds on further candidates. The twelve off-block directions identify the algebraic leptoquark sector. In the assigned split, six cross-sector links enter the endpoint cost difference, while the WKB transmission factor uses the barrier of a separately admitted path. At the nominal EFT benchmark the proton partial lifetime exceeds the reference when the supplied rate action exceeds about $6.16$ (**Proton Stability** <Ref id="9.5.5" label="§9.5.5" />).
 
-Having established the unified rules and actors, we must now ask how this network actually processes information. If the universe is a causal graph, it must operate as a computer. We turn next to **Chapter 10: Quantum Universality**, where we will explore the universal quantum computation of the network.
+The two-state neutrino model gives a suppressed light eigenvalue once the mass entries are specified. The exponential Planck matching sets the heavy entry in the benchmark, while an atmospheric oscillation comparison requires a difference between light squared masses. The chapter separates matrix representation, graph admission, and dynamical matching. **Chapter 10: Quantum Universality** applies the same distinction to logical states, coherent gates, and recovery (**Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" />).
 
 ---
 
@@ -2656,10 +5808,10 @@ Having established the unified rules and actors, we must now ask how this networ
 | $M_R$ | Heavy right-handed neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
 | $m_\nu$ | Light neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
 | $\beta_+, \beta_-$ | Braid and anti-braid segments (Folded) | [§9.6.1](/monograph/players/unification/9.6/#9.6.1) |
-| $N_{3,\max}$ | Maximum sustainable complexity (Criticality) | [§9.6.7](/monograph/players/unification/9.6/#9.6.7) |
+| $N_{3,\max}$ | Upper root of the dimensionless balance benchmark | [§9.6.7](/monograph/players/unification/9.6/#9.6.7) |
 | $M_{\text{Pl}}$ | Planck mass | [§9.6.8](/monograph/players/unification/9.6/#9.6.8) |
-| $S_{inst}$ | Instanton Action (Tunneling) | [§9.5.4](/monograph/players/unification/9.5/#9.5.4) |
-| $\tau_p$ | Proton lifetime | [§9.5.2](/monograph/players/unification/9.5/#9.5.2) |
+| $S_{inst}$ | Dimensionless instanton rate action | [§9.5.4](/monograph/players/unification/9.5/#9.5.4) |
+| $\tau_p$ | Partial lifetime for the stated proton decay channel | [§9.5.2](/monograph/players/unification/9.5/#9.5.2) |
 | $A(R)$ | Anomaly Coefficient | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
 | $\mathbf{\bar{5}}, \mathbf{10}$ | SU(5) Representations | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
 | $L_{CW}$ | Linking number between Color and Weak sectors | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |

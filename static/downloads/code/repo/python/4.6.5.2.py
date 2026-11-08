@@ -1,30 +1,23 @@
-import numpy as np
+from itertools import product
+from math import e, exp, isclose, pi, sqrt
 
-def expected_drift(rho, M_add=10, M_del=10, mu=0.5, lambda_cat=1.0):
-    """Calculate expected one-step density change (drift) ΔV(ρ)."""
-    p_add = np.exp(-mu * rho)
-    p_del = min(1.0, 0.5 * (1.0 + lambda_cat * rho) * np.exp(-mu * rho))
-    
-    exp_additions = M_add * p_add
-    exp_deletions = M_del * p_del
-    
-    return exp_additions - exp_deletions
 
-print("Foster-Lyapunov Drift Verification")
-print("=" * 50)
+mu, lam = 1 / sqrt(2 * pi), e - 1
+p = exp(-2 * mu)
+q = min(1, (1 + 2 * lam) * exp(-2 * mu) / 2)
+old_triangle = {("a", "b"), ("b", "c"), ("c", "a")}
+new_triangle = {("b", "c"), ("c", "d"), ("d", "b")}
+old = old_triangle | {("c", "d")}
+delete_choices = [(None, 1 - q)] + [(edge, q / 3) for edge in sorted(old_triangle)]
+drift = 0.0
+for (add, add_weight), (edge, del_weight) in product(
+    [(False, 1 - p), (True, p)], delete_choices
+):
+    final = (old | ({("d", "b")} if add else set())) - {edge}
+    change = int(old_triangle <= final) + int(new_triangle <= final) - 1
+    drift += add_weight * del_weight * change
 
-# Evaluate expected drift across a range of densities
-densities = np.linspace(0.0, 3.0, 7)
-rho_crit = None
-
-for rho in densities:
-    drift = expected_drift(rho)
-    status = "Negative Drift (Restoring Force)" if drift < 0 else "Positive Drift (Expansion)"
-    print(f"Density rho = {rho:.1f} | Expected Drift: {drift:+.4f} | {status}")
-    
-    if drift < 0 and rho_crit is None:
-        rho_crit = rho
-
-print("=" * 50)
-print(f"Critical Density Threshold (rho_crit): ~{rho_crit:.1f}")
-print("Foster-Lyapunov negative drift condition satisfied.")
+assert isclose(drift, p * (1 - q / 3) - q)
+assert drift <= p - q < 0
+print(f"Enumerated one-tick triangle drift: {drift:.8f}")
+print(f"Site-summed upper bound: {p - q:.8f}")

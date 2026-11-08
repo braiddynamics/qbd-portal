@@ -74,7 +74,7 @@ const PARTS: Part[] = [
     number: 1,
     title: 'The Foundational Principles (The Rules)',
     chapters: '1-5',
-    tokens: '~508K',
+    tokens: '~479K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md',
     summary: 'Substrate ontology, axioms, object model (causal network architecture), dynamics (update rules), and geometrogenesis (equilibrium spacetime emergence).',
   },
@@ -82,7 +82,7 @@ const PARTS: Part[] = [
     number: 2,
     title: 'Topological Nature of Matter (The Players)',
     chapters: '6-10',
-    tokens: '~336K',
+    tokens: '~396K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md',
     summary: 'Tripartite braid fermions, quantum numbers from topology, gauge symmetries as braid automorphisms, particle generations and decay, quantum universality as computation.',
   },
@@ -114,23 +114,23 @@ const PARTS: Part[] = [
     number: 6,
     title: 'Appendices',
     chapters: 'A-C',
-    tokens: '~57K',
+    tokens: '~56K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_6_appendices.md',
     summary: 'External references cited, Python simulation models, and comprehensive notation & symbol table.',
   },
 ];
 
 const CHAPTERS = [
-  { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~138K', md: '/downloads/chapters/chapter_1.md' },
-  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~78K',  md: '/downloads/chapters/chapter_2.md' },
-  { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~103K', md: '/downloads/chapters/chapter_3.md' },
-  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~105K', md: '/downloads/chapters/chapter_4.md' },
-  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~87K',  md: '/downloads/chapters/chapter_5.md' },
-  { n: 6,  title: 'Tripartite Braid (Fermions)',                                 tokens: '~62K',  md: '/downloads/chapters/chapter_6.md' },
-  { n: 7,  title: 'Quantum Numbers (Topology)',                                  tokens: '~47K',  md: '/downloads/chapters/chapter_7.md' },
-  { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~79K',  md: '/downloads/chapters/chapter_8.md' },
-  { n: 9,  title: 'Generations and Decay (Unification)',                         tokens: '~68K',  md: '/downloads/chapters/chapter_9.md' },
-  { n: 10, title: 'Quantum Universality (Computation)',                          tokens: '~83K',  md: '/downloads/chapters/chapter_10.md' },
+  { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~133K', md: '/downloads/chapters/chapter_1.md' },
+  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~79K',  md: '/downloads/chapters/chapter_2.md' },
+  { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~93K', md: '/downloads/chapters/chapter_3.md' },
+  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~103K', md: '/downloads/chapters/chapter_4.md' },
+  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~74K',  md: '/downloads/chapters/chapter_5.md' },
+  { n: 6,  title: 'Tripartite Braid (Fermions)',                                 tokens: '~57K',  md: '/downloads/chapters/chapter_6.md' },
+  { n: 7,  title: 'Quantum Numbers (Topology)',                                  tokens: '~57K',  md: '/downloads/chapters/chapter_7.md' },
+  { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~86K',  md: '/downloads/chapters/chapter_8.md' },
+  { n: 9,  title: 'Generations and Decay (Unification)',                         tokens: '~107K',  md: '/downloads/chapters/chapter_9.md' },
+  { n: 10, title: 'Quantum Universality (Computation)',                          tokens: '~93K',  md: '/downloads/chapters/chapter_10.md' },
   { n: 11, title: 'Differential Geometry (Discrete)',                            tokens: '~51K',  md: '/downloads/chapters/chapter_11.md' },
   { n: 12, title: 'Continuum Limit (Convergence)',                               tokens: '~42K',  md: '/downloads/chapters/chapter_12.md' },
   { n: 13, title: 'Discrete Field Equations (Einstein)',                         tokens: '~50K',  md: '/downloads/chapters/chapter_13.md' },
@@ -151,22 +151,28 @@ const CHAPTERS = [
 const APPENDICES = [
   { id: 'A', title: 'Appendix A: External References Cited', tokens: '~34K', url: '/monograph/appendices/a-references', desc: 'Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.' },
   { id: 'B', title: 'Appendix B: Python Simulation Models',  tokens: '~1K', url: '/monograph/appendices/b-sim-models', desc: 'Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.' },
-  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~24K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
+  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~23K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
 ];
 
 const LEAN_PROOFS = [
-  { name: 's2.2-causal-primitive.lean',       url: '/downloads/code/repo/lean/s2.2-causal-primitive.lean',       desc: 'Topological axioms for causal set spacetime primitives.' },
-  { name: 's2.4-geometric-decomposition.lean', url: '/downloads/code/repo/lean/s2.4-geometric-decomposition.lean', desc: 'Topological geometric decomposition formalization.' },
-  { name: 's2.7-asymmetry.lean',               url: '/downloads/code/repo/lean/s2.7-asymmetry.lean',               desc: 'Proof of causal asymmetry conservation under evolution.' },
-  { name: 's3.3-maximal-parallelism.lean',    url: '/downloads/code/repo/lean/s3.3-maximal-parallelism.lean',    desc: 'Maximal parallel updates under strict causal consistency.' },
-  { name: 's3.5-stabilizer-isomorphism.lean', url: '/downloads/code/repo/lean/s3.5-stabilizer-isomorphism.lean', desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
-  { name: 's4.3-awareness-comonad.lean',      url: '/downloads/code/repo/lean/s4.3-awareness-comonad.lean',      desc: 'Comonadic awareness structures under background independence.' },
-  { name: 's4.4-maxent-foundations.lean',     url: '/downloads/code/repo/lean/s4.4-maxent-foundations.lean',     desc: 'Proof of boolean MaxEnt prior uniqueness, temperature cancellation, and Hist lossless retention.' },
-  { name: 's4.6-scheduler-confluence.lean',   url: '/downloads/code/repo/lean/s4.6-scheduler-confluence.lean',   desc: 'Proof of parallel scheduler confluence, move disjointness, and idempotent additions.' },
-  { name: 's5.4-vacuum-stability.lean',       url: '/downloads/code/repo/lean/s5.4-vacuum-stability.lean',       desc: 'Verification of quantum vacuum stability boundary conditions.' },
-  { name: 's5.5-scar-permanence.lean',        url: '/downloads/code/repo/lean/s5.5-scar-permanence.lean',        desc: 'Proof of topological scar deletion immunity, inductive multi-tick permanence, and absorbing state stationarity.' },
-  { name: 's6.1-task-reidemeister.lean',      url: '/downloads/code/repo/lean/s6.1-task-reidemeister.lean',      desc: 'Formalization of Reidemeister-like strand transformations on tripartite braids.' },
-  { name: 's13.2-field-equations.lean',       url: '/downloads/code/repo/lean/s13.2-field-equations.lean',       desc: 'Proof of Gorard 1D adjoint kernel obstruction, detailed balance zero divergence, and non-dissipative orbital stationarity.' },
+  { name: 's1.5-recorded-edge-rollback.lean',       url: '/downloads/code/repo/lean/s1.5-recorded-edge-rollback.lean',       desc: 'Causal state rollback consistency and recorded edge retraction invariance under local undo operations.' },
+  { name: 's2.2-causal-primitive.lean',              url: '/downloads/code/repo/lean/s2.2-causal-primitive.lean',              desc: 'Topological axioms for causal set spacetime primitives.' },
+  { name: 's2.4-geometric-decomposition.lean',       url: '/downloads/code/repo/lean/s2.4-geometric-decomposition.lean',       desc: 'Topological geometric decomposition formalization.' },
+  { name: 's2.7-asymmetry.lean',                      url: '/downloads/code/repo/lean/s2.7-asymmetry.lean',                      desc: 'Proof of causal asymmetry conservation under evolution.' },
+  { name: 's3.3-maximal-parallelism.lean',           url: '/downloads/code/repo/lean/s3.3-maximal-parallelism.lean',           desc: 'Maximal parallel updates under strict causal consistency.' },
+  { name: 's3.5-stabilizer-isomorphism.lean',        url: '/downloads/code/repo/lean/s3.5-stabilizer-isomorphism.lean',        desc: 'Isomorphism of stabilizer quantum error-correcting codes.' },
+  { name: 's4.1-historical-occurrences.lean',         url: '/downloads/code/repo/lean/s4.1-historical-occurrences.lean',         desc: 'Causal order conservation across historical occurrence sets in the unpinned rewrite schedule.' },
+  { name: 's4.3-awareness-comonad.lean',             url: '/downloads/code/repo/lean/s4.3-awareness-comonad.lean',             desc: 'Comonadic awareness structures under background independence.' },
+  { name: 's4.4-maxent-foundations.lean',            url: '/downloads/code/repo/lean/s4.4-maxent-foundations.lean',            desc: 'Proof of boolean MaxEnt prior uniqueness, temperature cancellation, and Hist lossless retention.' },
+  { name: 's4.6-scheduler-confluence.lean',          url: '/downloads/code/repo/lean/s4.6-scheduler-confluence.lean',          desc: 'Proof of parallel scheduler confluence, move disjointness, and idempotent additions.' },
+  { name: 's5.4-vacuum-stability.lean',              url: '/downloads/code/repo/lean/s5.4-vacuum-stability.lean',              desc: 'Verification of quantum vacuum stability boundary conditions.' },
+  { name: 's5.5-scar-permanence.lean',               url: '/downloads/code/repo/lean/s5.5-scar-permanence.lean',               desc: 'Proof of topological scar deletion immunity, inductive multi-tick permanence, and absorbing state stationarity.' },
+  { name: 's6.1-task-reidemeister.lean',             url: '/downloads/code/repo/lean/s6.1-task-reidemeister.lean',             desc: 'Formalization of Reidemeister-like strand transformations on tripartite braids.' },
+  { name: 's7.3-fixed-charge-uniqueness.lean',        url: '/downloads/code/repo/lean/s7.3-fixed-charge-uniqueness.lean',        desc: 'Proof of integer electric charge quantization and uniqueness under fixed topological twist invariants.' },
+  { name: 's7.3-low-complexity-lepton-spectrum.lean', url: '/downloads/code/repo/lean/s7.3-low-complexity-lepton-spectrum.lean', desc: 'Minimal complexity bounds constraining the stable tripartite lepton mass spectrum.' },
+  { name: 's7.3-permutation-fixed-writhe.lean',       url: '/downloads/code/repo/lean/s7.3-permutation-fixed-writhe.lean',       desc: 'Verification that cyclic strand permutations preserve topological writhe and flavor state invariants.' },
+  { name: 's9.2-penta-ribbon-closure.lean',           url: '/downloads/code/repo/lean/s9.2-penta-ribbon-closure.lean',           desc: 'Proof of penta-ribbon topological boundary closure, anomaly cancellation, and GUT representation embedding.' },
+  { name: 's13.2-field-equations.lean',              url: '/downloads/code/repo/lean/s13.2-field-equations.lean',              desc: 'Proof of Gorard 1D adjoint kernel obstruction, detailed balance zero divergence, and non-dissipative orbital stationarity.' },
 ];
 
 const MODEL_CODE = [
@@ -430,7 +436,7 @@ export default function AiPage() {
 
         <pre style={{ ...s.pre, borderLeft: '4px solid var(--ifm-color-warning)', background: 'var(--ifm-color-warning-contrast-background)' }}>{`IMPORTANT — HOW TO REVIEW THIS WORK ACCURATELY:
 
-The monograph is ~1.74M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
+The monograph is ~1.77M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
 Large context windows (1M–2M) are available and useful for cross-referencing and maintaining coherence,
 but context size is NOT the limiting factor for accurate analysis.
 
@@ -706,7 +712,7 @@ Machine-readable download catalogue:
         </table>
 
         <p style={{ fontSize: '0.85rem' }}>
-          Complete definitions for all 1,485 terms used in the monograph:{' '}
+          Complete definitions for all 1,568 terms used in the monograph:{' '}
           <a href="https://braiddynamics.com/data/definitions.json" style={s.a}>
             https://braiddynamics.com/data/definitions.json
           </a>
@@ -715,7 +721,7 @@ Machine-readable download catalogue:
         {/* ── Formal Proofs ── */}
         <h2 style={s.h2}>MONOGRAPH FORMAL LEAN 4 PROOFS</h2>
         <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem' }}>
-          Twelve core theorem suites are formally verified in Lean 4 and embedded in the monograph.
+          Eighteen core theorem suites are formally verified in Lean 4 and embedded in the monograph.
           Each file is self-contained and can be checked with{' '}
           <code>lake build</code> in a standard Lean 4 + Mathlib environment.
         </p>
@@ -766,8 +772,8 @@ Machine-readable download catalogue:
 
         {/* ── Context window guidance ── */}
         <h2 style={s.h2}>CONTEXT WINDOW GUIDANCE</h2>
-        <pre style={s.pre}>{`Total monograph:  ~1.74M tokens  (full book Markdown)
-                  ~1.88M tokens  (full book JSON, includes structure overhead)
+        <pre style={s.pre}>{`Total monograph:  ~1.77M tokens  (full book Markdown)
+                  ~1.92M tokens  (full book JSON, includes structure overhead)
 
 Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   The bottleneck is reasoning depth, not context size. Reviewing one chapter
@@ -780,9 +786,9 @@ Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
 
 Chapter sizes (for planning):
   Smallest chapter:  ~24K tokens (Ch. 25)
-  Largest chapter:   ~138K tokens (Ch. 1)
+  Largest chapter:   ~133K tokens (Ch. 1)
   Typical chapter:   ~45–85K tokens
-  All 25 chapters:   ~1.74M tokens total
+  All 25 chapters:   ~1.77M tokens total
 
 File format guidance:
   Markdown  → best for prose reading and analysis (no overhead)
