@@ -402,7 +402,7 @@ ALL_ARMS_REDUCED: True
 ```
 
 **Conclusion:**
-All five arms satisfy their tested predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as one addition followed by one deletion, giving zero net edge-count change. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These are checks of the specified fixtures and trial law (**Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />).
+All five arms satisfy their tested predicates. Type II digon and double-path fragments strictly decrease $C$ under a single legal deletion. The Type III composite executes as one addition followed by one deletion, giving zero net edge-count change. Self-loop addition fails $\mathrm{LegalAdd}$. Across $200$ independent trials, the isolated directed 3-cycle reaches zero 3-cycle count with evaporated fraction $1.000$ under Bernoulli deletion probability $1/2$. These results check the specified fixtures and trial law (**Reducibility of Trivial Topologies** <Ref id="6.1.3.1" label="§6.1.3.1" />). The adjacent Lean module proves the stated local braid-word identities and the edge-count decrease for a certified present-edge deletion. A reduction of an arbitrary unknot diagram still needs a graph-side legality certificate for each task in the proposed lift.
 
 **In Plain English:**  
 Section 6.1.3.2 formalizes the properties of the QBD calculation regarding legal-task reduction of trivial patterns.
@@ -931,9 +931,9 @@ $$
 
 For the illustrative local-volume benchmark $b_1=12\rho$ and $\mu\rho=0.2$, the single-step version evaluates to
 
-$
+$$
 e^{-\mu b_1}=e^{-12\mu\rho}=e^{-12(0.2)}=e^{-2.4}\simeq0.09072 .
-$
+$$
 
 Q.E.D.
 
@@ -944,28 +944,51 @@ Section 6.1.5.1 formalizes the properties of the QBD proof regarding topological
 
 ### 6.1.6 Proof: Particle Necessity {#6.1.6}
 
-:::tip[**Formal Demonstration of the Persistence of Non-Trivial Excitations via Reductio Ad Absurdum**]
+:::tip[**Derivation of conditional persistence via certified reduction and invariant balance**]
 :::
 
-**I. Hypothesis and Initial Conditions**
+**I. Model premises**
 
-Let $\xi_{stable}$ be a persistent, localized excitation. Assume for contradiction that $\xi_{stable}$ is topologically trivial ($V_\xi(t) = 1$).
+Fix a class of localized excitations with density initially above a cutoff $\rho_->\rho^*$. Say an excitation persists above the cutoff if its density stays at or above $\rho_-$ at all later times in the stated evolution. For each topologically trivial candidate in this class, assume that a supplied diagram reduction has a certified graph-legal lift to isolated, unlinked Geometric Quanta and that this lift executes in finite time. Use the scalar density evolution of **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" /> after that execution.
 
-**II. Reducibility and Decomposition**
+**II. Certified reduction and density descent**
 
-Under the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />, the topological triviality of $\xi_{stable}$ implies the existence of a local rewrite sequence $\mathcal{S} \subseteq \mathcal{R}$ that decomposes the excitation into a set of disjoint, unlinked 3-cycles $\bigcup_j C_3^{(j)}$.
+Assume a topologically trivial candidate persists. Let $G_0,\ldots,G_m$ be the supplied lift, with $a$ additions and $d$ deletions. At each intermediate graph the corresponding legality certificate applies. By **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />, its exact edge balance is
 
-**III. Thermodynamic Response and Catalyzed Decay**
+$$
+|E(G_m)|-|E(G_0)|
+=\sum_{j=1}^m\bigl(|E(G_j)|-|E(G_{j-1})|\bigr)=a-d .
+$$
 
-Under the **Catalyzed Instability** <Ref id="6.1.4" label="§6.1.4" />, the resulting decomposed state exhibits a high local cycle density exceeding the vacuum equilibrium, $\rho > \rho^*$. The master equation then dictates a strictly negative net topological current ($d\rho/dt \ll 0$), driving the system toward collapse.
+The terminal isolated-cycle condition comes from the supplied lift. Let $t_0$ be the time it finishes and $\rho_0$ the terminal density. If $\rho_0<\rho_-$, persistence has already failed. Otherwise $\dot\rho=F(\rho)$ with $F$ continuous and strictly negative on $[\rho_-,\rho_0]$. Set $\delta=-\max_{r\in[\rho_-,\rho_0]} F(r)>0$. As long as the trajectory stays above the cutoff, it is decreasing and
 
-**IV. Obstruction and Topological Barrier**
+$$
+\rho(t)-\rho_0=\int_{t_0}^t F(\rho(s))\,\mathrm ds
+\le-\delta(t-t_0).
+$$
 
-Conversely, let $\xi_{knot}$ be an excitation characterized by a non-trivial invariant ($V_\xi(t) \neq 1$). Under the **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />, no reducing Reidemeister word for $\mathcal{I}\to 0$ lifts to a sequence in $\mathfrak{T}(G)$ supported inside the local horizon $R$, so the deletion mechanism cannot erase the excitation by legal elementary tasks alone.
+For $t>t_0+(\rho_0-\rho_-)/\delta$, the right side would force $\rho(t)<\rho_-$. This contradicts persistence. Therefore a candidate persisting in this class cannot be topologically trivial.
 
-**V. Synthesis and Conclusion**
+**III. Protected and escaping histories**
 
-The contradiction between the assumed persistence of $\xi_{stable}$ and its decay establishes that only non-trivial topologies possess the architectural protection to survive the deletion flux. Stability is therefore equivalent to non-trivial topology.
+Let a second candidate have a registered invariant $\mathcal I(\xi_0)\ne0$. For a word in the protected task family of **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />,
+
+$$
+\mathcal I(\xi_m)-\mathcal I(\xi_0)
+=\sum_{j=1}^m\bigl(\mathcal I(\xi_j)-\mathcal I(\xi_{j-1})\bigr)
+=\sum_{j=1}^m 0=0 .
+$$
+
+A zero-invariant target is excluded from that family. For a separately admitted escape with prescribed events $A_1,\ldots,A_m$, let $p_j=\Pr(A_j\mid A_1,\ldots,A_{j-1})\le e^{-\mu b_j}$ with $b_j\ge0$. A zero-probability prefix gives a zero path probability. Otherwise, if at least $k$ steps have $b_j\ge b_*>0$,
+
+$$
+\Pr(A_1\cap\cdots\cap A_m)
+=\prod_{j=1}^m p_j
+\le e^{-\mu\sum_{j=1}^m b_j}
+\le e^{-\mu k b_*}.
+$$
+
+The reductio gives a necessary condition for persistence in the modeled class. The invariant calculation gives exact protection against the specified task family, and the probability bound applies to the supplied escape path.
 
 Q.E.D.
 
@@ -1353,13 +1376,13 @@ Section 6.2.6.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 6.2.6.2 Calculation: Entropic Exclusion Simulation {#6.2.6.2}
 
-:::note[**Computational Verification of Entropic Suppression via High-Order Braids**]
+:::note[**Relative Boltzmann weights via an assigned ribbon cost**]
 :::
 
-Quantification of the formation probabilities for higher-order structures established by **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
+The illustrative weight comparison for higher ribbon counts in **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" /> is based on the following protocols:
 
 1.  **Thermodynamic Definition:** The algorithm sets the base-conversion modulus to the critical value $\beta_c = \ln 2$.
-2.  **Complexity Mapping:** The protocol assigns a linear energy cost $E_C \propto n$ to the minimal prime knot on $n$ strands relative to the equilibrium vacuum density derived via **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
+2.  **Complexity Mapping:** The protocol assigns an increment of one nat per additional ribbon, so the gap from the three-ribbon reference is $n-3$ in the assigned cost units.
 3.  **Probability Normalization:** The simulation calculates the relative Boltzmann weights for ribbon counts $n \in [3, 8]$ and normalizes these values against the $n=3$ ground state to determine the suppression factors.
 
 ```python
@@ -1424,7 +1447,7 @@ Results (normalized to n=3):
 ```
 
 **Conclusion:**
-The calculated relative abundances demonstrate an exponential decay in formation probability as the ribbon count increases. While the $n=3$ configuration represents the unitary baseline ($P=1.0$), the $n=4$ population is suppressed to approximately $23.6\%$ (a factor of 1 in 4.2). The suppression factor increases rapidly for higher orders, reaching 1 in 17.9 for $n=5$ and 1 in 1357 for $n=8$. This statistical distribution confirms that hyper-complex braids are thermodynamically rarefied relative to the tripartite ground state.
+For the assigned unit cost and $\beta_c=\ln 2$, the model computes the ratio $P_n/P_3=e^{-(n-3)/\beta_c}$. The three-ribbon row is the normalization reference. The ratios are approximately $0.236$ for $n=4$, $0.0558$ for $n=5$, and $0.000737$ for $n=8$, corresponding to the tabulated suppression factors. These numbers are a comparison at the supplied costs and equal weights per modeled label. Physical formation abundances would also depend on the costs and multiplicities of the admitted graph states (**Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6.1" label="§6.2.6.1" />).
 
 **In Plain English:**  
 Section 6.2.6.2 formalizes the properties of the QBD calculation regarding entropic exclusion simulation.
@@ -1433,33 +1456,47 @@ Section 6.2.6.2 formalizes the properties of the QBD calculation regarding entro
 
 ### 6.2.7 Proof: Tripartite Braid Theorem {#6.2.7}
 
-:::tip[**Formal Verification of the Uniqueness of the Tripartite Braid via Inductive Exclusion**]
+:::tip[**Derivation of tripartite minimality via scoped exclusions and formation weights**]
 :::
 
-**I. Initial Conditions and Inductive Framework**
+**I. Model premises**
 
-The proof employs formal induction on the ribbon count $n$. Configurations with $n < 3$ ribbons fail either topological stability or algebraic sufficiency, while configurations with $n > 3$ ribbons introduce superfluous complexity. This induction matches the **Axiom 2: Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" /> and **General Cycle Decomposition** <Ref id="2.4.1" label="§2.4.1" />.
+Compare a specified family of candidate ribbon sectors. Require persistence against the stated local relaxation and a non-Abelian color action for the low-ribbon candidates. Assume the unbraided sector is governed by the scalar deletion model, the single-ribbon candidates lie in the reducible framing sector, and the gauge action of a two-ribbon candidate is generated solely by the closure of its Artin braid image. Assume an admitted prime three-ribbon candidate with the independent controls needed for its color action. For the higher-ribbon comparison, use equal multiplicities and positive formation-cost gaps relative to this candidate.
 
-**II. Lower Bound Exclusion**
+**II. Exclusion below three ribbons**
 
-For the base cases $n < 3$, the configurations are excluded systematically:
-1. **Unbraided structures ($n=0$):** As shown in **Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" />, these exhibit topological triviality and instability under the deletion flux.
-2. **Single-ribbon structures ($n=1$):** As demonstrated in **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />, these suffer from reducibility via Type II moves, preventing stability.
-3. **Two-ribbon structures ($n=2$):** As confirmed in **Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />, these exhibit algebraic insufficiency because commuting generators generate an Abelian algebra incapable of supporting non-abelian gauge fields.
+For $n=0$, the uniform drift bound for the specified unbraided model gives $\dot\rho\le-(\rho-\rho^*)/20$ above equilibrium (**Exclusion of Unbraided Clusters (n=0)** <Ref id="6.2.3" label="§6.2.3" />). Thus
 
-**III. Upper Bound Exclusion**
+$$
+\frac{\mathrm d}{\mathrm dt}\bigl(e^{t/20}(\rho(t)-\rho^*)\bigr)\le0,\qquad
+0\le\rho(t)-\rho^*\le(\rho(0)-\rho^*)e^{-t/20}.
+$$
 
-For the base cases $n > 3$, the configurations are excluded due to complexity and rank mismatch:
-1. **Four-ribbon structures ($n=4$):** Under **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" />, the rank falls below that required to embed the Standard Model, and the fundamental representation exhibits non-zero cubic anomaly.
-2. **Five-ribbon structures ($n=5$):** Although $\mathfrak{su}(5)$ embeds the Standard Model, the ground state exceeds minimality, causing thermodynamic suppression in the equilibrium vacuum.
+For $n=1$, let $k_j$ count the remaining marked twists after step $j$. The admitted pair removal or boundary release decreases every positive count by at least one (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />). If the count stayed positive through step $k_0$, then $0<k_{k_0}\le k_0-k_0=0$. Hence the sector admits a finite reduction.
 
-**IV. Synthesis and Tripartite Minimality**
+For $n=2$, if $U$ is the represented Artin generator, every braid element acts as a power of $U$. Thus $U^pU^q=U^{p+q}=U^qU^p$. By continuity of multiplication the closure also commutes, and its Lie bracket vanishes (**Exclusion of Two-Ribbon (n=2)** <Ref id="6.2.5" label="§6.2.5" />). This excludes a non-Abelian color action in the braid-image-only model. Independently admitted exchange and diagonal controls are governed by **Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />.
 
-We apply the inductive step to establish that the $n=3$ tripartite braid is the unique minimal configuration satisfying stability and symmetry:
-1. **Stability and Algebra:** The non-abelian group $B_3$ generates the $\mathfrak{su}(3)$ algebra, with stability derived from primeness as detailed in the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />.
-2. **Anomaly Cancellation:** The cubic anomaly cancels vectorially, $A(3) + A(\bar{3}) = 0$, for Standard Model fermions under the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />.
+**III. Three ribbons and the higher-ribbon comparisons**
 
-We conclude that the tripartite braid uniquely minimizes non-abelian generation while supporting stable, anomaly-free representations.
+The stipulated three-ribbon candidate has two adjacent exchanges and two independent diagonal controls on its represented three-state sector. Their closure has dimension $3^2-1=8$ and is $\mathfrak{su}(3)$ in the model of **Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />. Together with the lower-count exclusions, this makes three the least ribbon count meeting the stated persistence and color requirements.
+
+For the proposed degree-four control sector, any commuting family of skew-Hermitian matrices is simultaneously diagonalizable. Tracelessness leaves three independent real diagonal directions in $\mathfrak{su}(4)$. In contrast, the direct sum of the two gauge factors and the Abelian factor has
+
+$$
+\operatorname{rank}(\mathfrak{su}(3)\oplus\mathfrak{su}(2)\oplus\mathfrak u(1))
+=(3-1)+(2-1)+1=4>3 .
+$$
+
+An injective Lie homomorphism would map these four independent commuting directions to four independent commuting directions in $\mathfrak{su}(4)$, which is impossible. This rank comparison concerns the full gauge algebra for the proposed degree-four sector.
+
+For $n>3$, with equal multiplicities and $\Delta E_n=E_n-E_3>0$ at $T>0$, the relative weights of **Exclusion of Higher Order Configurations (n > 3)** <Ref id="6.2.6" label="§6.2.6" /> are
+
+$$
+\frac{P_n}{P_3}=\frac{e^{-E_n/T}}{e^{-E_3/T}}
+=e^{-\Delta E_n/T}<1 .
+$$
+
+Thus higher counts in the comparison are disfavored by the assigned costs. The strict preference is a statement about these weights, which remain positive at finite $T$.
 
 Q.E.D.
 
@@ -1801,23 +1838,65 @@ Section 6.3.6.1 formalizes the properties of the QBD proof regarding entropy neg
 
 ### 6.3.7 Proof: Topological Mass {#6.3.7}
 
-:::tip[**Formal Synthesis of Crossing and Torsional Components via Energy Decomposition**]
+:::tip[**Derivation of the mass functional via cycle accounting and a restricted ensemble**]
 :::
 
-**I. Component Integration**
+**I. Model premises**
 
-From the **Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />, the number of Geometric Quanta required for the crossing structure is $N_3^{\text{crossings}} = k_c C[\beta]$.  
-From the **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />, the number required for the torsional structure is $N_3^{\text{torsion}} = k_t w(\beta)^2$.
+Use a crossing construction with an unbraided baseline and a final diagram realizing $C[\beta]$. A connected reduced alternating closure is one such minimal-diagram fixture (**Linear Scaling of Crossings** <Ref id="6.3.4" label="§6.3.4" />). Assume that each crossing step adds a fixed net $k_c$ quanta, that the torsional strain follows its stipulated half-twist recurrence, and that the two resource counts are added without double counting. For the thermodynamic comparison, restrict to a single normalized ground state in the code.
 
-**II. Total Energy Summation**
+**II. Crossing and torsional costs**
 
-The total complexity is the sum of these contributions: $N_3(\beta) = N_3^{\text{crossings}} + N_3^{\text{torsion}}$.  
-Thus, the mass functional satisfies $m \propto k_c C[\beta] + k_t w(\beta)^2$.
+If $N_{3,j}^{\mathrm{cross}}$ counts crossing quanta after $j$ steps, set $M=C[\beta]$ for the minimal final diagram. Then
 
-**III. Equilibrium Energy Equivalence**
+$$
+C_C=N_{3,M}^{\mathrm{cross}}-N_{3,0}^{\mathrm{cross}}
+=\sum_{j=1}^{M}(N_{3,j}^{\mathrm{cross}}-N_{3,j-1}^{\mathrm{cross}})
+=\sum_{j=1}^{M} k_c=k_c C[\beta].
+$$
 
-From the **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" />, the entropy vanishes within the protected codespace, yielding $F[\beta] = U[\beta]$.  
-This equivalence validates the direct proportionality of mass to internal energy, confirming the functional form.
+In the torsional construction of **Quadratic Scaling of Torsion** <Ref id="6.3.5" label="§6.3.5" />, let $k=2w\ge1$ count half-twists, let $N(1)=c_0$, and use $N(j+1)-N(j)=\alpha j$. Summing gives
+
+$$
+C_T=N(2w)
+=c_0+\alpha\sum_{j=1}^{2w-1}j
+=c_0+\frac{\alpha}{2}(2w)(2w-1)
+=2\alpha w^2-\alpha w+c_0 .
+$$
+
+Thus $k_t=2\alpha$ is the leading quadratic coefficient. The lower-order terms remain in the exact recurrence.
+
+**III. Restricted energy and mass conversion**
+
+For the normalized code state $|\beta\rangle$ with $H|\beta\rangle=E_0|\beta\rangle$, the restricted ensemble of **Entropy Negligibility** <Ref id="6.3.6" label="§6.3.6" /> has
+
+$$
+\varrho=|\beta\rangle\langle\beta|,\qquad
+U=\operatorname{Tr}(\varrho H)=E_0,\qquad
+S=k_B\ln 1=0,\qquad F=U-TS=E_0.
+$$
+
+Let $\varepsilon>0$ be the common energy cost per counted quantum and $E_{\mathrm{ref}}$ the reference energy. The model assigns $E_0-E_{\mathrm{ref}}=\varepsilon(C_C+C_T)$. Converting the excess rest energy to mass gives
+
+$$
+\boxed{m=\frac{\varepsilon}{c_{\mathrm{light}}^2}
+\bigl(k_c C[\beta]+2\alpha w^2-\alpha w+c_0\bigr).}
+$$
+
+The expression with just $k_c C[\beta]+k_t w^2$ uses the leading torsional term.
+
+**IV. Comparison with an enlarged ensemble**
+
+If the ensemble is enlarged by $g$ excited states with gaps $\Delta_j\ge\Delta>0$ above $E_0$, then at temperature $T>0$,
+
+$$
+Z=e^{-E_0/(k_BT)}\left(1+\sum_{j=1}^g e^{-\Delta_j/(k_BT)}\right),\qquad
+0\le E_0-F(T)
+=k_BT\ln\!\left(1+\sum_{j=1}^g e^{-\Delta_j/(k_BT)}\right)
+\le k_BT\,g e^{-\Delta/(k_BT)}.
+$$
+
+The last step uses $\ln(1+x)\le x$ for $x\ge0$.
 
 Q.E.D.
 
@@ -1925,12 +2004,12 @@ $$
 
 For a smooth deformation, put $f(s,t,h)=f_h(s,t)$ on $M=S^1\times S^1\times[0,1]$. The area form is closed, so Stokes' theorem gives
 
-$
+$$
 \int_{S^1\times S^1} f_1^*\omega-\int_{S^1\times S^1} f_0^*\omega
 =\int_{\partial M} f^*\omega
 =\int_M d(f^*\omega)
 =\int_M f^*(d\omega)=0 .
-$
+$$
 
 For a continuous disjoint deformation the same endpoint equality follows from homotopy invariance of degree. In both cases,
 
@@ -1947,12 +2026,12 @@ Section 6.4.3.1 formalizes the properties of the QBD proof regarding local horiz
 
 ### 6.4.3.2 Calculation: Horizon Simulation {#6.4.3.2}
 
-:::note[**Computational Verification of Operator Blindness via Entropic Drift**]
+:::note[**Finite-run comparison via a visibility cutoff and biased steps**]
 :::
 
-Validation of the operational limits established by **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" /> is based on the following protocols:
+The example illustrates a stochastic navigation rule with a fixed visibility cutoff, alongside the separate support bound in **Local Horizon** <Ref id="6.4.3.1" label="§6.4.3.1" />. It uses the following protocols:
 
-1.  **Space Definition:** The algorithm constructs a branching configuration graph with a branching factor $b=3$ to model the ratio of tangling moves to untying moves under the **Linear Barrier** <Ref id="6.4.1" label="§6.4.1" />.
+1.  **Space Definition:** The algorithm tracks a one-dimensional progress coordinate reflected at zero. Outside the visibility cutoff it advances with probability $1/3$ and attempts to retreat with probability $2/3$.
 2.  **Agent Logic:** The protocol defines two traversal agents: a Local Agent that selects moves stochastically based on a limited horizon radius $R$, and a Global Agent that selects the optimal path to the solution state.
 3.  **Stall Detection:** The metric tracks the progress of both agents toward the target distance $N=50$ over a fixed number of steps to detect entropic stalling.
 
@@ -2060,7 +2139,7 @@ Final Progress:             2/50
 ```
 
 **Conclusion:**
-The simulation results show that the Global Agent resolves the configuration in exactly 50 steps. In contrast, the Local Agent fails to reach the target within 20,000 steps, stalling at a progress distance of $2/50$. The random walk exhibits a statistical bias away from the solution due to the 2:1 ratio of incorrect to correct moves in the trivalent space. This entropic drift confirms that a myopic operator cannot traverse the linear solution path against the exponential growth of the configuration space.
+The directed comparison reaches the target in 50 steps. With the reported seed, the local walker ends at $2/50$ after 20,000 steps without reaching the exit. Outside visibility and away from the reflecting boundary, its mean step is $(1/3)(+1)+(2/3)(-1)=-1/3$. This finite-run example illustrates the assigned bias. The model still permits escape, since 45 consecutive advances from zero would bring the exit into view and the remaining five steps would be directed. A bound on escape through the modeled paths would require their probabilities and a separate path-count estimate (**Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />).
 
 **In Plain English:**  
 Section 6.4.3.2 formalizes the properties of the QBD calculation regarding horizon simulation.
@@ -2156,50 +2235,63 @@ Section 6.4.4.1 formalizes the properties of the QBD proof regarding global unwi
 
 ### 6.4.5 Proof: Architectural Stability {#6.4.5}
 
-:::tip[**Formal Synthesis of Particle Persistence determined by Topological Selection**]
+:::tip[**Derivation of stability bounds via protected sectors and escape-path counting**]
 :::
 
-**I. Variational Classification**
+**I. Model premises**
 
-Partition the set of all localized excitations $\Xi$ into two disjoint classes based on topological primality.
+Let $\Xi$ be the class of localized excitations under consideration and fix a starting excitation with a registered invariant distinguishing it from the target. Distinguish the invariant-preserving local tasks from any separately admitted escape tasks. For the escape model, assume that at most $K_N$ paths exhaust escape in one attempt at complexity $N$. Each has a required traversal length $L\ge\lambda N$, progress increments bounded by $a>0$, and conditional step probabilities at most $e^{-\epsilon}$, with $\lambda,\epsilon>0$.
 
-$$
-\Xi = \Xi_{reducible} \cup \Xi_{prime}
-$$
+**II. Protected topology and metric reach**
 
-**II. Case 1: Reducible (Non-Prime) Braids**
-
-Let $\xi \in \Xi_{reducible}$ (e.g., unbraided clusters, simple twists, composite knots).
-By the **Reducibility of Trivial Topologies** <Ref id="6.1.3" label="§6.1.3" />, there exists a local sequence $\mathcal{S}_{loc}$ of Type II/III moves that reduces the crossing number $C[\xi]$.
-The length of this sequence is bounded by the local horizon $|\mathcal{S}_{loc}| \le R$.
-The **Universal Constructor** $\mathcal{R}$ accesses this sequence via random exploration.
-The **Catalytic Tension** $\chi(\sigma)$ **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" /> amplifies the deletion probability for the reducible components.
-Result: $\xi$ decays to the vacuum state.
-
-**III. Case 2: Irreducible (Prime) Braids**
-
-Let $\xi \in \Xi_{prime}$ (e.g., the Tripartite Braid).
-By definition of primality, no local sequence $\mathcal{S}_{loc}$ exists that reduces $C[\xi]$ (Reidemeister minimality).
-Decay requires Global Unwinding.
-By the **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />, the cost of Global Unwinding is $O(N)$.
-By the **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />, the local operator $\mathcal{R}$ is blind to the global gradient required to guide this $O(N)$ process.
-The probability of accidental unwinding is $P \sim e^{-N}$.
-Result: $\xi$ persists on cosmological timescales.
-
-**IV. Physical Selection Rule**
-
-The vacuum acts as a topological filter.
+For two disjoint closed curves undergoing an admitted disjoint deformation, the Gauss map $f$ is defined throughout $M=S^1\times S^1\times[0,1]$. If $\omega$ is the sphere area form, the endpoint linking difference is
 
 $$
-\lim_{t \to \infty} P(\text{survive}) = \begin{cases} 0 & \text{if } \xi \in \Xi_{reducible} \\ 1 & \text{if } \xi \in \Xi_{prime} \end{cases}
+L_{ij}(1)-L_{ij}(0)
+=\frac1{4\pi}\int_{\partial M} f^*\omega
+=\frac1{4\pi}\int_M f^*(\mathrm d\omega)=0
 $$
 
-This mechanism selects **Prime Knots** as the sole stable constituents of matter.
+by the Stokes calculation of **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />. For another registered invariant preserved by each protected step, the same sector conclusion follows by summing its zero increments. A path with a different endpoint invariant must use a step outside the protected family.
 
-**V. Conclusion**
+Separately, let $S_j\subseteq B_R(v_j)$ be a chain of $m$ overlapping supports in one reference metric. Pick $x_j$ in successive intersections, with $x_0,x_m$ the chain endpoints. Then
 
-The stability of the proton and electron is not an intrinsic property of their fields but a necessary consequence of their topological irreducibility within a locally updating causal graph.
-Matter is the set of defects that the vacuum cannot compute how to delete.
+$$
+d(x_0,x_m)\le\sum_{j=1}^m d(x_{j-1},x_j)\le2mR .
+$$
+
+This is a bound on the reach of the support chain. The path progress condition below is a separate premise.
+
+**III. One path and the total probability**
+
+For any supplied escape path in **Global Unwinding Barrier** <Ref id="6.4.4" label="§6.4.4" />, write $s_0=0$, $s_m=L$, and $|s_j-s_{j-1}|\le a$. It follows that
+
+$$
+L=\sum_{j=1}^{m}(s_j-s_{j-1})
+\le\sum_{j=1}^{m}|s_j-s_{j-1}|\le ma,\qquad m\ge\lceil L/a\rceil.
+$$
+
+The conditional product bounds the probability of that path by $e^{-\epsilon m}\le e^{-\epsilon\lceil\lambda N/a\rceil}$. If the listed paths exhaust escape in the attempt, the union bound gives
+
+$$
+\boxed{\Pr(\text{escape in one attempt})
+\le \min\!\left(1,K_N e^{-\epsilon\lceil\lambda N/a\rceil}\right).}
+$$
+
+For $K_N\le K_0e^{sN}$ this is bounded above by $K_0e^{-(\epsilon\lambda/a-s)N}$. An exponential decrease follows when $s<\epsilon\lambda/a$. For $J$ attempts with the same bound conditional on survival to each attempt, the probability of escape by attempt $J$ is at most $J$ times the per-attempt bound.
+
+**IV. Effective rate comparison**
+
+In a separate incoherent WKB rate model, let the rate of path $j$ be $\Gamma_{0,j}e^{-2\kappa\Delta C_j}$, with $\Gamma_{0,j}\le\Gamma_*$ and $\Delta C_j\ge d_0N>0$ for $\kappa,d_0>0$ (**Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />). The factor two converts the amplitude exponent to the rate exponent. If those rates add over the $K_N$ modeled channels, then
+
+$$
+\Gamma_{\mathrm{tot}}
+=\sum_{j=1}^{K_N}\Gamma_{0,j}e^{-2\kappa\Delta C_j}
+\le K_N\Gamma_* e^{-2\kappa d_0N}
+\le K_0\Gamma_* e^{-(2\kappa d_0-s)N}.
+$$
+
+Thus the total rate bound decreases exponentially when $s<2\kappa d_0$. Exact sector protection and this finite-rate comparison have distinct premises.
 
 Q.E.D.
 

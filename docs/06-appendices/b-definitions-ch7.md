@@ -201,89 +201,66 @@ Section 7.1.4.1 formalizes the properties of the QBD proof regarding exchange-ro
 
 ### 7.1.5 Proof: Topological Statistics {#7.1.5}
 
-:::tip[**Formal Verification of the Minus-One Exchange Phase via Half-Twisted Braids**]
+:::tip[**Derivation of the represented exchange sign via parity and spinor rotation**]
 :::
 
-**I. System Definition**
+**I. Model premises**
 
-Let the system consist of two identical particles defined by tripartite braids $\beta_1, \beta_2$.
-Each braid contains a set of rung edges defining the **Spin Stabilizers** $L_{S1}, L_{S2}$ **Spin Operator** <Ref id="7.1.1" label="§7.1.1" />.
-The joint state resides in the code space $\mathcal{C}$ defined by the product of projectors:
+Let $L_1,L_2$ be commuting self-adjoint rung involutions, as in **Spin Operator** <Ref id="7.1.1" label="§7.1.1" />. Use the encoded rung-flip action of **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" /> for the rail diagnostic. For the physical two-particle exchange on the encoded sector $\mathcal H$, assume the framed spinor bridge of **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" /> with isometry $J$ and label exchange $S_{12}$.
 
-$$
-\Pi_{joint} = \frac{1}{4} (I + \lambda_1 L_{S1}) (I + \lambda_2 L_{S2})
-$$
+**II. Rail-label conjugation**
 
-where $\lambda_i \in \{+1, -1\}$ represents the spin parity of each particle.
-
-**II. The Exchange Operator Construction**
-
-The exchange $\hat{P}_{12}$ realizes physically as a sequence of Pauli-$X$ operations on the edges connecting the braids.
-Let the support of $\hat{P}_{12}$ be the set of edges flipped during the swap.
+For $\lambda_1,\lambda_2\in\{-1,1\}$ put
 
 $$
-\hat{P}_{12} = \prod_{e \in \text{path}} X_e
+P_{\lambda_1\lambda_2}
+=\tfrac14(I+\lambda_1L_1)(I+\lambda_2L_2).
 $$
 
-**III. Conjugation Analysis**
-
-Evaluate the action of the exchange on the joint projector by conjugating the stabilizer terms.
+For the flip-and-swap diagnostic $U$ with $UL_1U^\dagger=-L_2$ and $UL_2U^\dagger=-L_1$,
 
 $$
-\hat{P}_{12} \Pi_{joint} \hat{P}_{12}^\dagger = \frac{1}{4} \hat{P}_{12} (I + \lambda_1 L_{S1} + \lambda_2 L_{S2} + \lambda_1 \lambda_2 L_{S1} L_{S2}) \hat{P}_{12}^\dagger
+\begin{aligned}
+UP_{\lambda_1\lambda_2}U^\dagger
+&=\tfrac14(I-\lambda_1 L_2)(I-\lambda_2 L_1)
+=P_{-\lambda_2,-\lambda_1},\\
+UP_{--}U^\dagger&=P_{++},\\
+U(L_1L_2)U^\dagger&=(-L_2)(-L_1)=L_1L_2 .
+\end{aligned}
 $$
 
-Using the anticommutation relation derived in the **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" /> ($\hat{T} L_S \hat{T}^\dagger = -L_S$ for half-twisted topologies):
+Moreover $(e^{i\varphi}U)L_j(e^{i\varphi}U)^\dagger=UL_jU^\dagger$ for every $\varphi$. The product check is preserved and the joint parity sector changes, with the same conjugations for every scalar phase.
 
-**Case A: Bosonic Topology (Untwisted, $\lambda=+1$)**
-The exchange path intersects the rung set an even number of times ($m=2k$).
-The operators commute.
+**III. Framed physical exchange**
 
-$$
-\hat{P}_{12} L_{Si} \hat{P}_{12}^\dagger = +L_{Si}
-$$
-
-The projector remains invariant. Phase $\phi = +1$.
-
-**Case B: Fermionic Topology (Half-Twisted, $\lambda=-1$)**
-The exchange path intersects the rung set an odd number of times ($m=2k+1$).
-This odd intersection constitutes a geometric necessity of the skew geometry inherent to the half-twist ($w=1/2$).
-The exchange swaps the particles ($1 \leftrightarrow 2$) and inverts the sign of the operators due to the twist.
+The bridge for the physical operator is $S_{12}^{-1}\hat P_{12}=J^\dagger R_{\boldsymbol n}(2\pi)J$, with $J^\dagger J=I_{\mathcal H}$. Let $\Sigma=\boldsymbol n\cdot\boldsymbol\sigma$ for a unit vector $\boldsymbol n$. The Pauli identities give
 
 $$
-\hat{P}_{12} L_{S1} \hat{P}_{12}^\dagger = -L_{S2}
+\Sigma^2=\sum_i n_i^2 I
++\sum_{i<j}n_i n_j(\sigma_i\sigma_j+\sigma_j\sigma_i)=I .
 $$
 
-$$
-\hat{P}_{12} L_{S2} \hat{P}_{12}^\dagger = -L_{S1}
-$$
-
-Substituting into the interaction term $L_{S1} L_{S2}$:
+Separating the even and odd powers in the full spinor rotation yields
 
 $$
-\hat{P}_{12} (L_{S1} L_{S2}) \hat{P}_{12}^\dagger = (-L_{S2})(-L_{S1}) = +L_{S1} L_{S2}
+\begin{aligned}
+R_{\boldsymbol n}(2\pi)
+&=e^{-i\pi\Sigma}
+=I\sum_{k\ge0}\frac{(-1)^k\pi^{2k}}{(2k)!}
+-i\Sigma\sum_{k\ge0}\frac{(-1)^k\pi^{2k+1}}{(2k+1)!}\\
+&=I\cos\pi-i\Sigma\sin\pi=-I,\\
+S_{12}^{-1}\hat P_{12}
+&=J^\dagger(-I)J=-I_{\mathcal H}.
+\end{aligned}
 $$
 
-**IV. Phase Extraction**
-
-Consider the action on the state vector $|\Psi\rangle = \Pi_{joint} |\Omega\rangle$.
-For identical fermions, set $\lambda_1 = \lambda_2 = -1$.
-The state is defined by the stabilizer condition $L_{S1} = -1, L_{S2} = -1$.
-Applying the transformed projector terms to the state:
-The linear terms $\lambda L_S$ flip sign, but the particles swap, preserving the eigenvalues (since both are -1).
-The crucial phase arises from the global rotation of the frame.
-By the **Exchange-Rotation Equivalence** <Ref id="7.1.4" label="§7.1.4" />, the exchange $\hat{P}_{12}$ applies a relative $2\pi$ twist to the pair.
-In the spinor representation ($\lambda=-1$), a $2\pi$ rotation yields $-1$.
+Thus for every encoded input $|\psi\rangle$ in that sector,
 
 $$
-\hat{P}_{12} |\Psi(-1, -1)\rangle = - |\Psi(-1, -1)\rangle
+\boxed{\hat P_{12}|\psi\rangle=-S_{12}|\psi\rangle.}
 $$
 
-**V. Conclusion**
-
-The exchange of two topological defects with internal writhe $w=1/2$ generates a global phase factor of $-1$.
-This statistical behavior emerges directly from the non-commuting algebra of the edge operators ($X$) and the topological stabilizers ($Z$).
-Spin-statistics is a theorem of the braid code.
+Two admitted histories satisfying the same bridge in the same output labeling have this same action on $\mathcal H$.
 
 Q.E.D.
 
@@ -473,96 +450,64 @@ Section 7.2.3.1 formalizes the properties of the QBD proof regarding forbidden o
 
 ### 7.2.4 Proof: Pauli Exclusion Principle {#7.2.4}
 
-:::tip[**Formal Verification of State Annihilation by the Cycle Constraint Projector**]
+:::tip[**Derivation of the occupancy constraint via the forbidden component**]
 :::
 
-**I. State Vector Construction**
+**I. Model premises**
 
-Let $|\Psi\rangle$ be the global state vector of the causal graph.
-Let the component representing dual fermion occupancy at $\{u, v\}$ be defined as:
+Use the two-slot mode encoding of **Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" /> on distinct vertices $u,v$. The **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" /> allows at most one occupation unit in either slot. In this encoding, repeated occupation of the same mode therefore has both directed slots occupied.
 
-$$
-|\psi_{violation}\rangle = |1\rangle_{uv} \otimes |1\rangle_{vu} \otimes |\Phi_{env}\rangle
-$$
+**II. Local projector and the forbidden component**
 
-where $|\Phi_{env}\rangle$ represents the state of the remaining $K-2$ qubits.
-
-**II. Projector Definition**
-
-The **Hard Constraint Projector** $\Pi_{\text{cycle}}$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" /> enforces the asymmetry axiom on the Hilbert space.
-The local projector for the pair $\{u, v\}$ is defined explicitly as the complement of the symmetric state:
+Let $Q_{uv}=|11\rangle_{uv,vu}\langle11|\otimes I_{\mathrm{env}}$ and $P_{uv}=I-Q_{uv}$, the reciprocal-edge constraint of **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />. Write an arbitrary vector as
 
 $$
-P_{uv} = \mathbb{I} - |1\rangle_{uv}\langle1| \otimes |1\rangle_{vu}\langle1|
+|\Psi\rangle=\sum_{a,b\in\{0,1\}}|a,b\rangle_{uv,vu}\otimes|\Phi_{ab}\rangle .
 $$
 
-This operator leaves states $|00\rangle, |01\rangle, |10\rangle$ invariant and annihilates $|11\rangle$.
-
-**III. Annihilation Calculation**
-
-Apply the local projector to the violation state:
+Then $|\psi_{violation}\rangle=Q_{uv}|\Psi\rangle=|11\rangle\otimes|\Phi_{11}\rangle$, and
 
 $$
-P_{uv} |\psi_{violation}\rangle = (\mathbb{I} - |11\rangle\langle11|) (|11\rangle \otimes |\Phi_{env}\rangle)
+\begin{aligned}
+P_{uv}|\psi_{violation}\rangle
+&=\bigl(|11\rangle-|11\rangle\langle11|11\rangle\bigr)\otimes|\Phi_{11}\rangle=0,\\
+P_{uv}|\Psi\rangle
+&=\sum_{(a,b)\ne(1,1)}|a,b\rangle\otimes|\Phi_{ab}\rangle .
+\end{aligned}
 $$
 
-Distributing the operator:
+Thus the local constraint leaves each of the other three slot components unchanged.
+
+**III. Full physical projection**
+
+Let $\Pi_{\mathcal C}$ be the orthogonal projector onto the physical code, contained in the allowed subspace of $P_{uv}$. Then $P_{uv}\Pi_{\mathcal C}=\Pi_{\mathcal C}$ and, taking adjoints, $\Pi_{\mathcal C}P_{uv}=\Pi_{\mathcal C}$. Consequently
 
 $$
-= (\mathbb{I}|11\rangle - |11\rangle\langle11|11\rangle) \otimes |\Phi_{env}\rangle
+\Pi_{\mathcal C}Q_{uv}
+=\Pi_{\mathcal C}-\Pi_{\mathcal C}P_{uv}=0 .
 $$
 
-Using the orthonormality $\langle11|11\rangle = 1$:
+For a general input, define $|\psi_{\mathrm{phys}}\rangle=\Pi_{\mathcal C}|\Psi\rangle$ and $|\psi_{\mathrm{other}}\rangle=(P_{uv}-\Pi_{\mathcal C})|\Psi\rangle$. The orthogonal decomposition is
 
 $$
-= (|11\rangle - |11\rangle) \otimes |\Phi_{env}\rangle
+\begin{aligned}
+|\Psi\rangle&=|\psi_{\mathrm{phys}}\rangle+|\psi_{\mathrm{other}}\rangle+|\psi_{violation}\rangle,\\
+P_{uv}|\Psi\rangle&=|\psi_{\mathrm{phys}}\rangle+|\psi_{\mathrm{other}}\rangle,\\
+\Pi_{\mathcal C}|\Psi\rangle&=|\psi_{\mathrm{phys}}\rangle .
+\end{aligned}
 $$
 
-$$
-= 0 \otimes |\Phi_{env}\rangle
-$$
+When there are no other constraint violations, the middle component is zero and the decomposition has just the physical and reciprocal-edge components.
+
+**IV. Born weight of the attempted occupancy**
+
+For a normalized allowed input $|\Psi_{\mathrm{in}}\rangle$ and a proposed rewrite $\mathcal R$, extract the branch with both slots occupied as $Q_{uv}\mathcal R|\Psi_{\mathrm{in}}\rangle$. Its weight after the physical projection of **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> is
 
 $$
-= 0
+\boxed{\bigl\|\Pi_{\mathcal C}Q_{uv}\mathcal R|\Psi_{\mathrm{in}}\rangle\bigr\|^2=0 .}
 $$
 
-The state vector vanishes.
-
-**IV. Global Collapse**
-
-The global projector $\Pi_{\mathcal{C}}$ is the product of all local constraints.
-
-$$
-\Pi_{\mathcal{C}} = \prod_{\{x, y\}} P_{xy}
-$$
-
-Since the violation component is annihilated by $P_{uv}$, and the operators commute:
-
-$$
-\Pi_{\mathcal{C}} |\Psi\rangle = \left( \prod_{\{x, y\} \neq \{u, v\}} P_{xy} \right) P_{uv} |\Psi\rangle = 0
-$$
-
-The amplitude of the forbidden state is strictly zero in the physical Hilbert space $\mathcal{C}$.
-
-**V. Transition Probability**
-
-The probability of transitioning to the dual occupancy state is determined by the Born Rule applied to the projected evolution operator $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />.
-
-$$
-P(G \to G_{violation}) = || \Pi_{\mathcal{C}} \mathcal{R} |\Psi_{initial}\rangle ||^2
-$$
-
-If $\mathcal{R}$ attempts to create the edge $(v, u)$ while $(u, v)$ exists, the target state is $|\psi_{violation}\rangle$.
-
-$$
-P = || 0 ||^2 = 0
-$$
-
-The transition is physically impossible.
-
-**VI. Conclusion**
-
-By the **Binary State Principle** <Ref id="7.2.2" label="§7.2.2" /> and **Forbidden Occupancy** <Ref id="7.2.3" label="§7.2.3" />, the geometric constraints of the causal graph, enforced by the stabilizer code, create an absolute prohibition against identical fermion occupancy. Pauli Exclusion is derived as a theorem of the background topology.
+This excludes repeated occupation in the specified mode encoding.
 
 Q.E.D.
 
@@ -1904,83 +1849,76 @@ Section 7.3.10.1 formalizes the properties of the QBD proof regarding charge nor
 
 ### 7.3.11 Proof: Emergence of Electric Charge {#7.3.11}
 
-:::tip[**Construction of Emergence of Electric Charge via Explicit Identities**]
+:::tip[**Derivation of the selected charges via writhe conservation and normalization**]
 :::
 
-**I. Writhe Preservation and the Charge Difference**
+**I. Model premises and normalization**
 
-Let $W_{\mathrm{tot}}(\boldsymbol w)=w_1+w_2+w_3$ and $Q=W_{\mathrm{tot}}/3$. Under the stated writhe-preserving evolution (**Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />),
+Use the signed integer writhe basis of **Charge Operator** <Ref id="7.3.1" label="§7.3.1" /> with $W(\boldsymbol w)=w_1+w_2+w_3$ and $Q=kW$. Adopt the fixed-label lepton sector and the selected, unit-capped quark sectors. For the specified electron label,
+
+$$
+W(-1,-1,-1)=-3,\qquad
+-1=Q(-1,-1,-1)=-3k
+\quad\Longrightarrow\quad k=\tfrac13.
+$$
+
+This is the electron-unit matching of **Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />.
+
+**II. Conservation and the global phase**
+
+Use the certified Type II and III rewrite family of **Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />. A Type II insertion or deletion changes the signed sum by $\pm(s-s)=0$. A Type III move preserves the three participating pair signs, so its change is also zero. For a word of such moves,
+
+$$
+W_m-W_0=\sum_{j=1}^m(W_j-W_{j-1})=0,\qquad
+Q_m-Q_0=(W_m-W_0)/3=0 .
+$$
+
+For a represented rewrite $R$, only matrix elements with $W(\boldsymbol w')=W(\boldsymbol w)$ survive. Thus for the global action $G(\alpha)=e^{i\alpha\widehat W}$,
+
+$$
+\langle\boldsymbol w'|G(\alpha)RG(\alpha)^\dagger|\boldsymbol w\rangle
+=e^{i\alpha(W(\boldsymbol w')-W(\boldsymbol w))}R_{\boldsymbol w'\boldsymbol w}
+=R_{\boldsymbol w'\boldsymbol w}.
+$$
+
+Here $G(\alpha+2\pi)=G(\alpha)$ because $W$ is integral. In charge units $G(\alpha)=e^{3i\alpha Q}$, as in the global phase construction of **Gauge Symmetry** <Ref id="7.3.4" label="§7.3.4" />.
+
+**III. Fixed labels and selected permutation orbits**
+
+The transpositions $(12)$ and $(23)$ fix $\boldsymbol w$ exactly when $w_1=w_2=w_3=r$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). Then
+
+$$
+Q(r,r,r)=r,\qquad
+\{\boldsymbol w:\boldsymbol w\ \text{is permutation-fixed},\ Q(\boldsymbol w)=r\}
+=\{(r,r,r)\}.
+$$
+
+This is the uniqueness in **Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />. In the selected sector, $C(r,r,r)=3|r|\le3$, hence $Q\in\{-1,0,1\}$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
+
+For the selected labels of **Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />, let $\boldsymbol d_i=-\boldsymbol e_i$ and $\boldsymbol u_i=\boldsymbol 1-\boldsymbol e_i$, where $\boldsymbol e_i$ are coordinate unit vectors and $\boldsymbol 1=(1,1,1)$. Then
+
+$$
+P_\sigma\boldsymbol d_i=\boldsymbol d_{\sigma(i)},\qquad
+P_\sigma\boldsymbol u_i=\boldsymbol u_{\sigma(i)},\qquad
+Q(\boldsymbol d_i)=-\tfrac13,\qquad Q(\boldsymbol u_i)=\tfrac23 .
+$$
+
+Each orbit has three distinct labels. For each $f\in\{d,u\}$, identifying its orbit basis vector $|\boldsymbol f_i\rangle$ with the $i$th coordinate vector in $\mathbb C^3$ sends the label permutation to the coordinate permutation. The continuous color assignment uses a separate representation on this basis, with the appropriate conjugate action for antiparticles.
+
+**IV. Generation sums**
+
+For the stated left-handed generation, the writhe labels are $(0,-3,2,-1,-2,1,3)$ with multiplicities $(1,1,3,3,3,3,1)$, giving $15$ components. The linear and cubic sums are
 
 $$
 \begin{aligned}
-W_{\mathrm{tot}}(\boldsymbol w')&=W_{\mathrm{tot}}(\boldsymbol w),\\
-Q(\boldsymbol w')-Q(\boldsymbol w)
-&=\frac{w'_1+w'_2+w'_3}{3}-\frac{w_1+w_2+w_3}{3}\\
-&=\frac{W_{\mathrm{tot}}(\boldsymbol w')-W_{\mathrm{tot}}(\boldsymbol w)}3=0.
+\sum_f Q_f
+&=k\bigl[0-3+3(2-1-2+1)+3\bigr]=0,\\
+\sum_f Q_f^3
+&=k^3\bigl[0-27+3(8-1-8+1)+27\bigr]=0 .
 \end{aligned}
 $$
 
-For a rewrite $R|\boldsymbol w\rangle=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}|\boldsymbol w'\rangle$ with $R_{\boldsymbol w'\boldsymbol w}=0$ when the total writhes differ, the gauge action (**Gauge Symmetry** <Ref id="7.3.4" label="§7.3.4" />) gives
-
-$$
-\begin{aligned}
-e^{i\theta Q}R|\boldsymbol w\rangle
-&=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}e^{i\theta Q(\boldsymbol w')}|\boldsymbol w'\rangle\\
-&=\sum_{\boldsymbol w'}R_{\boldsymbol w'\boldsymbol w}e^{i\theta Q(\boldsymbol w)}|\boldsymbol w'\rangle
-=Re^{i\theta Q}|\boldsymbol w\rangle.
-\end{aligned}
-$$
-
-**II. Fixed Labels and the Integer Charge**
-
-The transposition equations give (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />)
-
-$$
-P_{12}\boldsymbol w=\boldsymbol w\ \Longrightarrow\ w_1=w_2,
-\qquad P_{23}\boldsymbol w=\boldsymbol w\ \Longrightarrow\ w_2=w_3,
-\qquad\boldsymbol w=(k,k,k).
-$$
-
-Therefore
-
-$$
-Q(k,k,k)=\frac{3k}{3}=k,\qquad
-\{\boldsymbol w:P_\sigma\boldsymbol w=\boldsymbol w\ \forall\sigma,\ Q(\boldsymbol w)=k\}
-=\{(k,k,k)\}
-$$
-
-(**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
-
-**III. The Selected Charges**
-
-In the fixed-label cutoff sector (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />),
-
-$$
-C(k,k,k)=3|k|\le3
-\ \Longleftrightarrow\ k\in\{-1,0,1\}
-\ \Longrightarrow\ Q\in\{-1,0,1\}.
-$$
-
-For the separately selected asymmetric configurations (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />),
-
-$$
-\begin{aligned}
-Q(-1,0,0)&=(-1+0+0)/3=-1/3,\\
-Q(1,1,0)&=(1+1+0)/3=2/3,\\
-Q(P_\sigma\boldsymbol w)
-&=\frac13\sum_{i=1}^3w_{\sigma^{-1}(i)}
-=\frac13\sum_{j=1}^3w_j=Q(\boldsymbol w).
-\end{aligned}
-$$
-
-**IV. Normalized Result**
-
-With the stated normalization (**Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />),
-
-$$
-\boxed{Q=\tfrac13W_{\mathrm{tot}},\qquad \Delta W_{\mathrm{tot}}=0\ \Longrightarrow\ \Delta Q=0,\qquad
-Q_{\mathrm{selected}}\in\{-1,0,1,-1/3,2/3\}.}
-$$
+Both brackets vanish for every common $k$. The electron condition fixes $k=1/3$, and these sums check the assigned generation at that normalization.
 
 Q.E.D.
 
@@ -2273,75 +2211,50 @@ Section 7.4.5.1 formalizes the properties of the QBD proof regarding integer geo
 
 ### 7.4.6 Proof: Topological Mass Functional {#7.4.6}
 
-:::tip[**Formal Derivation of Fermion Masses from the Topological Functional**]
+:::tip[**Derivation of zeroth-order mass equality via registered cycle sharing**]
 :::
 
-**I. The Topological Mass Functional**
+**I. Model premises**
 
-By the **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />, the Helmholtz free energy reduces to the structural energy of the graph, defining the mass functional $M(\beta)$ by combining the isolated complexity and the sharing reduction:
+Use the selected unit-twist labels and restrict the thermodynamic comparison to the fixed-state ensemble of **Thermodynamic Equivalence** <Ref id="7.4.3" label="§7.4.3" />, where $F=U$. Each isolated unit twist costs one quantum. Use a common baseline $m_0$ and conversion $\kappa>0$ from excess quanta to mass. For the parallel up configuration, assume one admitted common support quantum.
 
-$$
-M(\beta) = \kappa \left( \sum_{i=1}^3 |w_i| - k_{share} \cdot N_{parallel} \right)
-$$
+**II. Isolated and merged counts**
 
-with $\kappa \approx 0.170$ MeV and $k_{share} = 1$.
-
-**II. Case 1: The Down Quark ($d$)**
-
-* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_d = (-1, 0, 0)$.
-* **Isolated Term:**
-    Under the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, the isolated contribution is:
-
-    $$
-    \sum |w_i| = |-1| + |0| + |0| = 1
-    $$
-
-* **Sharing Term:**
-    No parallel non-zero writhes exist (signs are $-, 0, 0$). $N_{parallel} = 0$.
-
-    $$
-    \mathrm{Reduction} = 1 \cdot 0 = 0
-    $$
-
-* **Net Mass:**
-
-    $$
-    m_d = \kappa(1 - 0) = 1\kappa \approx 0.170 \text{ MeV}
-    $$
-
-**III. Case 2: The Up Quark ($u$)**
-
-* **Topology:** Triplet state with writhe vector $\boldsymbol{w}_u = (+1, +1, 0)$.
-* **Isolated Term:**
-
-    $$
-    \sum |w_i| = |1| + |1| + |0| = 2
-    $$
-
-* **Sharing Term:**
-    Under the **Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />, ribbons 1 and 2 are parallel ($+1, +1$), constituting exactly one parallel link between active strands:
-
-    $$
-    \mathrm{Reduction} = 1 \cdot 1 = 1
-    $$
-
-* **Net Mass:**
-
-    $$
-    m_u = \kappa(2 - 1) = 1\kappa \approx 0.170 \text{ MeV}
-    $$
-
-**IV. Analysis of Degeneracy**
-
-The calculation yields an exact zeroth-order mass degeneracy:
+With the unit cost in **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, for $\boldsymbol w_d=(-1,0,0)$, the isolated count is $|-1|+|0|+|0|=1$. There is one active support and no pair to share. For $\boldsymbol w_u=(1,1,0)$, the isolated count is $|1|+|1|+|0|=2$. The two active support sets $\Gamma_1,\Gamma_2$ are singletons naming the same quantum. Hence
 
 $$
-m_u = m_d
+|\Gamma_1\cup\Gamma_2|
+=|\Gamma_1|+|\Gamma_2|-|\Gamma_1\cap\Gamma_2|
+=1+1-1=1 .
 $$
 
-The topological cost of the extra twist in the Up quark ($+1\kappa$) is precisely cancelled by the geometric efficiency of the parallel sharing ($-1\kappa$).
-This identifies **Isospin Symmetry** as a geometric property of the braid group embedding in the causal graph.
-The observed physical mass splitting ($m_d > m_u$) is attributable to second-order **QED self-energy corrections** ($Q_d^2$ vs $Q_u^2$), which are not included in the topological rest mass.
+The saving is $k_{\mathrm{share}}=1$ for the admitted parallel pair (**Integer Geometric Efficiency** <Ref id="7.4.5" label="§7.4.5" />). The down configuration has saving zero.
+
+**III. Mass comparison**
+
+Using the common baseline, the two zeroth-order masses are
+
+$$
+\begin{aligned}
+m_d^{(0)}&=m_0+\kappa(1-0)=m_0+\kappa,\\
+m_u^{(0)}&=m_0+\kappa(2-1)=m_0+\kappa,\\
+m_u^{(0)}-m_d^{(0)}&=\boxed{0}.
+\end{aligned}
+$$
+
+For the zero-baseline benchmark with $\kappa=0.511\,\mathrm{MeV}/3$, the two excess masses are each approximately $0.170\,\mathrm{MeV}$.
+
+**IV. Check of a charge-squared correction**
+
+For a hypothetical positive common self-energy term $\delta m_f=AQ_f^2$ with $A>0$, the selected charges in **Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" /> give
+
+$$
+\delta m_d-\delta m_u
+=A\left[\left(-\tfrac13\right)^2-\left(\tfrac23\right)^2\right]
+=-\tfrac A3<0 .
+$$
+
+In this correction model the contribution has the opposite sign to a positive down-minus-up mass splitting.
 
 Q.E.D.
 
@@ -2352,17 +2265,17 @@ Section 7.4.6 formalizes the properties of the QBD proof regarding topological m
 
 ### 7.4.6.1 Calculation: Generational Mass Hierarchy Verification {#7.4.6.1}
 
-:::note[**Computational Verification of the Full Standard Model Mass Spectrum via Integer Topological Harmonics**]
+:::note[**Mass comparison via assigned integer writhe labels**]
 :::
 
-Quantification of the mass spectrum predicted by the **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" /> is extended to all three fermion generations. This verification is based on the following protocols:
+The example evaluates the quadratic cost ansatz on an assigned list of writhe labels for the three generations. Its first-generation unit-twist cases illustrate the zero-baseline model of **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" />. The comparison uses the following protocols:
 
-1.  **Parameter Definition:** The algorithm defines the fundamental mass scale $\kappa_m \approx 0.17033$ MeV (anchored strictly to the electron mass $m_e/3$) under **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" /> and enforces the unitary lattice sharing constraint $k_{share} = 1$.
-2.  **Topological Harmonics:** The protocol sweeps for the optimal integer writhe value $w$ that defines higher-generation particles as excited topological isomers of the first generation. 
+1.  **Parameter Definition:** The example sets the zero baseline and fixes the scale $\kappa_m=0.511/3\,\mathrm{MeV}$ from the input electron mass under **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />. It assigns the sharing rule used in the up-type ansatz.
+2.  **Topological Harmonics:** The program evaluates the prescribed integer writhe $w$ in each row using these three cost formulas:
     * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
     * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
     * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
-3.  **Spectrum Matching:** The simulation compares the resulting discrete Topological Rest Masses against the observed empirical masses of the Standard Model fermions, calculating the geometric delta.
+3.  **Spectrum Matching:** The program reports absolute percentage differences from the reference masses supplied in its table.
 
 ```python
 import pandas as pd
@@ -2459,8 +2372,9 @@ Electron    (-1, -1, -1)       3              0.5             0.5   0.00
 
 **Conclusion:**
 
-The simulation confirms the predictive accuracy of the quadratic scaling functional.
-Generational Gaps: The enormous mass gaps between generations (e.g., $0.5$ MeV to $172,000$ MeV) arise naturally from the $w^2$ pathfinding penalties of higher integer topological harmonics.; High-Mass Convergence: For higher-generation particles (Muon, Tau, Strange, Charm, Bottom, Top), the predicted topological mass matches the observed Standard Model masses to within $< 5\%$ precision purely from integer geometry, with the Tau and Top matching to within $0.2\%$.; Low-Mass Deviation: The large percentage delta in the first-generation quarks (Up, Down) is an expected feature of the model. At ultra-low topological rest mass ($0.17$ MeV), the kinematic binding energy of QCD (which governs the empirically measured current mass) overwhelms the bare geometric mass.
+The electron row agrees by construction because it sets the mass scale. For the assigned harmonics, the tabulated second- and third-generation differences range from $0.11\%$ to $5.21\%$. The two light-quark rows have the same modeled mass and much larger differences from their reference values. The table checks the assigned cost formulas and mass comparisons. Deriving the assigned writhes and matching the modeled mass to physical mass parameters are separate steps.
+
+The unit-twist proof gives a zeroth-order mass degeneracy. In the Standard Model, unequal up and down Yukawa couplings generate unequal quark masses after electroweak symmetry breaking. Low-energy running masses also require renormalization and matching. A running-mass analysis uses the $\overline{\mathrm{MS}}$ inputs at $2\,\mathrm{GeV}$ $m_d\simeq4.70\,\mathrm{MeV}$ and $m_u\simeq2.16\,\mathrm{MeV}$. The positive common charge-squared term checked in the proof would shift the up value more than the down value. That illustrative term is distinct from a scheme-dependent separation of strong and electromagnetic corrections to running masses. [Running quark mass analysis](https://journals.aps.org/prd/abstract/10.1103/fdcc-ycph)
 
 **In Plain English:**  
 Section 7.4.6.1 formalizes the properties of the QBD calculation regarding generational mass hierarchy verification.

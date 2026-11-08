@@ -344,27 +344,72 @@ Section 10.1.6.1 formalizes the properties of the QBD proof regarding basis meas
 
 ### 10.1.7 Proof: Qubit Optimality {#10.1.7}
 
-:::tip[**Formal Elimination via Alternative Particle Candidates**]
+:::tip[**Logical Qubit Criteria via Fixed Writhe, Coherent Controls, and Pointer Readout**]
 :::
 
-The proof demonstrates optimality by excluding all other particle classes derived in the theory.
+**I. Fixed Charge and Orthogonality**
 
-**I. Exclusion of Neutrinos**
-While neutrinos have lower complexity than electrons:
-1.  **Measurement Failure:** Neutrinos are electrically and color neutral. They do not satisfy the stability requirements of **Topological Stability** <Ref id="10.1.3" label="§10.1.3" /> for active feedback cycles, making controllable readout ($\hat{M}$) practically impossible.
-2.  **Indistinguishability:** Being Majorana-like **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />, the particle and antiparticle states are topologically identified or difficult to distinguish in a computational basis.
+The labels of **Logical Basis** <Ref id="10.1.1" label="§10.1.1" /> give
 
-**II. Exclusion of Quarks**
-While quarks possess color charge (good for measurability):
-1.  **Isolation Failure:** Quarks are subject to confinement. An isolated quark cannot exist, preventing them from realizing the ambient isotopy class disjointness of **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />.
-2.  **Entanglement Overhead:** The state of a quark is intrinsically entangled with the gluon field (flux tube). This prevents the definition of a localized, separable qubit state $|\psi\rangle_q$ required for the tensor product structure of a quantum computer.
+$$
+W(\boldsymbol w_0)=-1-1-1=-3,\qquad
+W(\boldsymbol w_1)=-2-1+0=-3,\qquad
+Q(\boldsymbol w_0)=Q(\boldsymbol w_1)=-1.
+$$
 
-**III. Exclusion of Heavy Leptons (Muon/Tau)**
-1.  **Complexity Overhead:** These particles are topologically identical to the electron but with higher complexity (more knots).
-2.  **Stability Failure:** As proven in **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, these states decay into electrons via tunneling. Their finite lifetime introduces intrinsic decoherence (amplitude damping errors) that violates the unitary transition requirements of **State Controllability** <Ref id="10.1.5" label="§10.1.5" />.
+In the orthonormal configuration basis of **Topological Distinctness** <Ref id="10.1.4" label="§10.1.4" />, write each logical state as a normalized sum over its label support $\Omega_b$. The first coordinate is $-1$ on $\Omega_0$ and $-2$ on $\Omega_1$, so
 
-**IV. Conclusion and Lemma Integration**
-The electron braid $\beta_e$ is the only candidate that satisfies all constraints, allowing projective readout via the Casimir eigenvalues of **Basis Measurability** <Ref id="10.1.6" label="§10.1.6" />. Therefore, the electron topological pair is the optimal physical qubit.
+$$
+\langle 0_L|1_L\rangle
+=\sum_{G\in\Omega_0}\sum_{G'\in\Omega_1}
+\overline{a_G}b_{G'}\delta_{G,G'}=0.
+$$
+
+Thus $P=|0_L\rangle\langle0_L|+|1_L\rangle\langle1_L|$ is an orthogonal projector, and $\widehat W P=-3P$.
+
+**II. Complexity and Spectral Separation**
+
+The fixed-charge linear cost satisfies
+
+$$
+\sum_i|w_i|\ge\left|\sum_iw_i\right|=3,\qquad
+\sum_i|w_{0,i}|=1+1+1=3,\qquad
+\sum_i|w_{1,i}|=2+1+0=3.
+$$
+
+Both assigned labels attain this minimum. For the invariant finite sector of **Topological Stability** <Ref id="10.1.3" label="§10.1.3" />, let $E_*$ be the largest logical energy. If each leakage eigenvalue $E_j$ satisfies $E_j-E_*\ge\Delta>0$, then for a normalized leakage vector $\sum_j c_j|E_j\rangle$,
+
+$$
+\sum_j |c_j|^2(E_j-E_*)\ge\Delta\sum_j|c_j|^2=\Delta.
+$$
+
+This bound uses the supplied gap and does not identify the minimizing pair uniquely among candidate devices.
+
+**III. Coherent Control**
+
+On the invariant code, take the admitted exchange and phase directions $X_L,Z_L$ of **State Controllability** <Ref id="10.1.5" label="§10.1.5" />. Write $R_j(a)=e^{-ia\sigma_j/2}$ with $\sigma_x=X_L$ and $\sigma_z=Z_L$. Since $R_z(\pi/2)X_LR_z(-\pi/2)=Y_L$, their products include
+
+$$
+R_z(a)R_y(b)R_z(c)
+=
+\begin{pmatrix}
+e^{-i(a+c)/2}\cos(b/2)&-e^{-i(a-c)/2}\sin(b/2)\\
+e^{i(a-c)/2}\sin(b/2)&e^{i(a+c)/2}\cos(b/2)
+\end{pmatrix}.
+$$
+
+For a target with first row $(u,v)$, take $b=2\arccos|u|$, $a+c=-2\arg u$ and $a-c=-2\arg(-v)$. A phase with zero coefficient can be arbitrary. The displayed matrix then equals the target in $SU(2)$. Since both Hamiltonians preserve the code, each exponential and their product preserve it.
+
+**IV. Calibrated Nondemolition Readout**
+
+Use the admitted Casimir $C$ with logical eigenvalues $0,\lambda_c$ and $\lambda_c>0$ (**Basis Measurability** <Ref id="10.1.6" label="§10.1.6" />). On the code, $P_1=PCP/\lambda_c$ and $P_0=P-P_1$. For the pointer in $|0\rangle_A$ and the pulse $H_{\mathrm{int}}=g\lambda_c P_1\otimes X_A$ with $gt\lambda_c=\pi/2$,
+
+$$
+(\alpha|0_L\rangle+\beta|1_L\rangle)|0\rangle_A
+\longmapsto \alpha|0_L\rangle|0\rangle_A-i\beta|1_L\rangle|1\rangle_A .
+$$
+
+Measuring the pointer gives probabilities $|\alpha|^2$ and $|\beta|^2$. Since $P_bP_a=\delta_{ab}P_a$, a second readout after outcome $a$ returns $a$ with probability one. The pulse preserves each basis eigenstate conditionally on the outcome. The gap, color representation, and admitted controls remain premises for these criteria.
 
 Q.E.D.
 
@@ -848,35 +893,60 @@ Section 10.2.8.1 formalizes the properties of the QBD proof regarding phase erro
 
 ### 10.2.9 Proof: Braid Code Consistency {#10.2.9}
 
-:::tip[**Verification of Abelian Group through Error Distinguishability**]
+:::tip[**Code Consistency via Signed Checks and Incidence Syndromes**]
 :::
 
-**I. Commutativity (Abelian Group)**
-Mutually commuting generators are established by combining several key relations. Specifically, the generators satisfy both **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" /> and **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" /> properties. When paired with **Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />, these ensure all generators in $\mathcal{S}$ commute with one another.
+**I. Commuting Signed Checks**
+
+Write $\widetilde S_\gamma=-Z(\gamma)$ for a valid geometric cycle, $\widetilde S_p=Z(p)$ for an intact plaquette, and $\widetilde S_v=X(\operatorname{star}(v))$ for a vertex check. For edge supports $A,B$,
 
 $$
-[S_i, S_j] = 0 \quad \forall S_i, S_j \in \mathcal{S}
+Z(A)X(B)=(-1)^{|A\cap B|}X(B)Z(A).
 $$
 
-Thus, $\mathcal{S}$ generates an Abelian subgroup of the Pauli group $\mathcal{P}_n$.
+A cycle or plaquette meets a vertex star in zero or two edges, giving commutation by **Geometric Commutation** <Ref id="10.2.3" label="§10.2.3" /> and **Ribbon Integrity Commutation** <Ref id="10.2.5" label="§10.2.5" />. All $X$ checks commute with one another (**Vertex Commutation** <Ref id="10.2.7" label="§10.2.7" />), and all $Z$ checks commute with one another. The scalar signs leave these relations unchanged.
 
-**II. Non-Triviality $(-\mathbb{1} \notin \mathcal{S})$**
-The stabilizers are products of local Pauli operators. No product of these local, non-overlapping or partially overlapping operators results in the global phase $-1$ on the vacuum state, provided the graph topology satisfies standard boundary conditions (e.g., open boundaries or even toroidal dimensions).
+**II. Nonempty Signed Sector**
 
-**III. Integration of Code Components**
-The consistency of the code is established by the independent properties of its stabilizers:
-* **Fraying:** The localized detection of rung defects is verified in **Fraying Detection** <Ref id="10.2.6" label="§10.2.6" />.
-Together, these properties ensure that the Braid Code constitutes a consistent stabilizer code.
+Let $H_Z,H_X$ be the binary check matrices and let $s_Z,s_X$ record the prescribed signs as bits. For a binary selection of rows $(a,b)$, group the $Z$ and $X$ operators in that order. The product is
 
-**IV. Error Distinguishability (Distance)**
-For any single-qubit error $E \in \{X, Z, Y\}$:
-* $X_e$ is detected by $S_{\text{geom}}$ or $S_{\text{ribbon}}$ (the **Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" />).
-* $Z_e$ is detected by $S_{\text{vert}}$ (the **Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />).
-* $Y_e = i X_e Z_e$ is detected by both sets (syndrome is the union of X and Z syndromes).
-Since every error produces a unique non-zero syndrome vector $\boldsymbol{\sigma} \neq \boldsymbol{0}$, the code has distance $d \ge 3$ (it can correct at least 1 error).
+$$
+(-1)^{a^Ts_Z+b^Ts_X}Z(H_Z^Ta)X(H_X^Tb).
+$$
 
-**V. Conclusion**
-The Braid Code satisfies the conditions of the Stabilizer Formalism. The code space $\mathcal{C} = \{ |\psi\rangle : S |\psi\rangle = |\psi\rangle \forall S \in \mathcal{S} \}$ is a protected subspace in which topological information can be stored and manipulated fault-tolerantly.
+This is scalar exactly when $H_Z^Ta=H_X^Tb=0$. The signed checks therefore generate a group excluding $-I$ exactly when $a^Ts_Z+b^Ts_X=0$ for every such dependency. Under this condition the group average
+
+$$
+P=\frac1{|\mathcal S|}\sum_{S\in\mathcal S}S,\qquad
+P^2=P,\qquad SP=P\ (S\in\mathcal S),\qquad
+\operatorname{Tr}P=\frac{2^n}{|\mathcal S|}>0
+$$
+
+is the projector onto the common positive sector. The idempotence follows because each group element appears $|\mathcal S|$ times in the double sum, and only the identity has nonzero trace. A nontrivial encoded qubit further requires $\operatorname{Tr}P\ge2$.
+
+**III. Single-Error Signatures**
+
+For the columns $z_e=H_Z\boldsymbol e_e$ and $x_e=H_X\boldsymbol e_e$, the relative binary syndromes are
+
+$$
+b(X_e)=(z_e,0),\qquad
+b(Z_e)=(0,x_e),\qquad
+b(Y_e)=(z_e,x_e).
+$$
+
+For bit flips, nonzero and pairwise distinct columns distinguish the errors and the identity (**Bit-Flip Localization** <Ref id="10.2.4" label="§10.2.4" />). For phase flips, distinct endpoints give the two incident star bits. A simple underlying graph with checks on both endpoints distinguishes edges through these bits (**Phase Error Detection** <Ref id="10.2.8" label="§10.2.8" />). If both matrices have nonzero and pairwise distinct columns then all the displayed single-edge signatures are distinct.
+
+**IV. Rung and Boundary Checks**
+
+In the plaquette restriction of **Fraying Detection** <Ref id="10.2.6" label="§10.2.6" />, an internal rung $r_i$ has $z_{r_i}=\boldsymbol e_{i-1}+\boldsymbol e_i$, hence the signs on its two adjacent plaquettes both flip to $-1$ from the intact sector. A rung incident on one checked boundary plaquette has a single syndrome bit, and an unchecked boundary edge has zero plaquette syndrome. Distinct internal rungs have different adjacent pairs. For two adjacent internal flips,
+
+$$
+z_{r_i}+z_{r_{i+1}}
+=(\boldsymbol e_{i-1}+\boldsymbol e_i)+(\boldsymbol e_i+\boldsymbol e_{i+1})
+=\boldsymbol e_{i-1}+\boldsymbol e_{i+1}.
+$$
+
+The shared check cancels. Equal columns on any two edges instead give a zero two-flip syndrome for that check family. Thus the adjacent pair of signs follows from local support, while global localization uses the full incidence test.
 
 Q.E.D.
 
@@ -1186,75 +1256,52 @@ Section 10.3.5.1 formalizes the properties of the QBD proof regarding thermodyna
 
 ### 10.3.5.3 Calculation: Code Distance Verification {#10.3.5.3}
 
-:::note[**Computational Verification of Code Distance via Error Simulation**]
+:::note[**Evaluation of Syndrome Collisions via a Single Geometric Check**]
 :::
 
-Validation of the error detection capabilities established by **Minimum Weight** <Ref id="10.3.4.1" label="§10.3.4.1" /> and **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> is based on the following protocols:
+The fixture uses the relative syndrome rule of **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" /> and illustrates why the low-weight criterion in **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" /> needs the full check family.
 
-1.  **State Initialization:** The algorithm prepares a valid code state $|\psi\rangle = |111\rangle$ which resides in the $-1$ eigenspace of the geometric stabilizer $ZZZ$.
-2.  **Error Application:** The protocol applies single-qubit errors (Weight-1 X/Z) and two-qubit errors (Weight-2 XX) to the state.
-3.  **Syndrome Measurement:** The simulation re-evaluates the stabilizer expectation values after error application. A flip in the syndrome sign (e.g., $-1 \to +1$) confirms detection.
+1.  **State Initialization:** Use $|111\rangle$ with baseline sign $-1$ for the unsigned geometric check $Z_0Z_1Z_2$.
+2.  **Error Application:** Apply each listed Pauli independently to that same initial state.
+3.  **Syndrome Comparison:** Compare each measured sign with the baseline to identify collisions and undetected errors.
 
 ```python
 import qutip as qt
-import numpy as np
 
-# Define Paulis
-I = qt.qeye(2)
-X = qt.sigmax()
-Z = qt.sigmaz()
 
-# Valid code state |111⟩, -1 eigen of S_geom = Z0 Z1 Z2
-psi = qt.tensor(qt.basis(2,1), qt.basis(2,1), qt.basis(2,1))
+identity = qt.qeye(2)
+x = qt.sigmax()
+z = qt.sigmaz()
+check = qt.tensor(z, z, z)
+state = qt.tensor(qt.basis(2, 1), qt.basis(2, 1), qt.basis(2, 1))
 
-S_geom = qt.tensor(Z, Z, Z)
+errors = {
+    "I": qt.tensor(identity, identity, identity),
+    "X0": qt.tensor(x, identity, identity),
+    "X1": qt.tensor(identity, x, identity),
+    "Z0": qt.tensor(z, identity, identity),
+    "X0 X1": qt.tensor(x, x, identity),
+}
 
-# Initial syndrome
-initial_synd = np.real(psi.dag() * S_geom * psi)
-print("Initial geometric syndrome: ", initial_synd)  # -1
-
-# X error on qubit 0
-X0 = qt.tensor(X, I, I)
-psi = X0 * psi  # |011⟩
-
-psi_err_x = X0 * psi
-psi_err_x = X0 * psi
-synd_x = np.real(psi_err_x.dag() * S_geom * psi_err_x)
-print("Syndrome after X0 error: ", synd_x)  # +1 (flipped)
-
-# Z error on qubit 0: commutes with S_geom, no flip here (detected by vertex, see text)
-Z0 = qt.tensor(Z, I, I)
-synd_z_geom = np.real((Z0 * psi).dag() * S_geom * (Z0 * psi))
-print("Syndrome after Z0 (geom): ", synd_z_geom)  # -1
-
-# Ribbon example S_ribbon2 = Z1 Z2, initial +1
-S_ribbon2 = qt.tensor(I, Z, Z)
-initial_r2 = np.real(psi.dag() * S_ribbon2 * psi)
-print("Initial ribbon2: ", initial_r2)
-
-# Weight-2 X0 X1 error: |001⟩
-psi_err2 = qt.tensor(X, X, I) * psi
-synd_r2 = np.real(psi_err2.dag() * S_ribbon2 * psi_err2)
-print("Syndrome after weight-2 X0 X1 for ribbon2: ", synd_r2)  # -1 (flipped)
-
-print("Z error flips vertex syndrome due to anticommutation factor -1.")
-print("Verification complete: Errors produce non-trivial syndromes, confirming fault tolerance and d=3.")
+print("One-check syndrome example (check = Z0 Z1 Z2)")
+for name, error in errors.items():
+    output = error * state
+    print(f"{name:5} check sign: {qt.expect(check, output):+.0f}")
 ```
 
 **Simulation Results:**
 
 ```text
-Initial geometric syndrome:  -1.0
-Syndrome after X0 error:  -1.0
-Syndrome after Z0 (geom):  1.0
-Initial ribbon2:  1.0
-Syndrome after weight-2 X0 X1 for ribbon2:  -1.0
-Z error flips vertex syndrome due to anticommutation factor -1.
-Verification complete: Errors produce non-trivial syndromes, confirming fault tolerance and d=3.
+One-check syndrome example (check = Z0 Z1 Z2)
+I     check sign: -1
+X0    check sign: +1
+X1    check sign: +1
+Z0    check sign: -1
+X0 X1 check sign: -1
 ```
 
 **Conclusion:**
-The results demonstrate robust error detection. The single-qubit X error flips the geometric syndrome from $-1.0$ to $+1.0$. The weight-2 XX error flips the ribbon syndrome from $+1.0$ to $-1.0$. The Z error affects the vertex syndrome as predicted. No low-weight error commutes with the full stabilizer set without altering the state, confirming that the code distance is at least $d=3$. This validates the fault-tolerance of the topological qubit against local noise.
+Both $X_0$ and $X_1$ flip the check to $+1$, so the check detects them but cannot distinguish them. The identity, $Z_0$, and $X_0X_1$ all give the baseline sign $-1$. This tests one check. The distance of a specified physical code depends on its full check family and the action of its low-weight zero-syndrome errors.
 
 **In Plain English:**  
 Section 10.3.5.3 formalizes the properties of the QBD calculation regarding code distance verification.
@@ -1334,17 +1381,50 @@ Section 10.3.6.1 formalizes the properties of the QBD proof regarding vertex foc
 
 ### 10.3.7 Proof: Topological Fault Tolerance {#10.3.7}
 
-:::tip[**Synthesis of Code Distance, Syndrome Resolution, via Thermodynamic Healing on the Fock Substrate**]
+:::tip[**Distance and Recovery via Binary Incidence and Syndrome Projectors**]
 :::
 
-**I. Error Detection and Protection**
-Any single-qubit error acting on the graph edge set is guaranteed to generate a non-trivial syndrome vector, as established by the anticommutation relations proven in **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" />. Furthermore, the minimum weight of any non-trivial logical operator is bounded by $d \ge 3$, as shown in **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" />, which ensures that no weight-1 or weight-2 error can alter the logical state.
+**I. Low-Weight Criterion**
 
-**II. Fock Space Dynamics**
-The dynamic updates of the graph size during the correction cycle are defined on the **Vertex Fock Space Formalization** <Ref id="10.3.6" label="§10.3.6" />, allowing superpositions of graph sizes during the transition. The state space supports changing topology without losing coherence.
+For a commuting signed CSS family and a Pauli $E=X(\boldsymbol x)Z(\boldsymbol z)$ up to phase, the relative syndrome of **Syndrome Flipping** <Ref id="10.3.3" label="§10.3.3" /> is $b(E)=(H_Z\boldsymbol x,H_X\boldsymbol z)$. If both matrices have nonzero and pairwise distinct columns, a vector of weight one maps to a nonzero column and a vector of weight two maps to the sum of distinct columns. For $\operatorname{wt}(E)\le2$, both $\boldsymbol x$ and $\boldsymbol z$ have weight at most two, so $b(E)=0$ implies $\boldsymbol x=\boldsymbol z=0$.
 
-**III. Thermodynamic Healing**
-The resulting high-stress defects trigger the catalytic update rules of the Universal Constructor, driving the system back to the codespace via the thermal relaxation cycle detailed in **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" />. Therefore, the logical codespace remains stable against local noise.
+More generally, for a code with projector $P$, the criterion in **Minimum Weight** <Ref id="10.3.4" label="§10.3.4" /> allows scalar zero-syndrome products. For single-edge errors or the identity $E,F$, a nonzero syndrome of $E^\dagger F$ gives $PE^\dagger FP=0$ by orthogonality. If it has zero syndrome, the criterion gives $PE^\dagger FP=c_{EF}P$. This is the exact correction condition for those errors and yields $d\ge3$ on a nontrivial code.
+
+**II. Explicit Distance-Three Benchmark**
+
+As a separate seven-edge CSS fixture, choose $H_X=H_Z=M$ with columns $\boldsymbol e_1,\boldsymbol e_2,\boldsymbol e_1+\boldsymbol e_2,\boldsymbol e_3,\boldsymbol e_1+\boldsymbol e_3,\boldsymbol e_2+\boldsymbol e_3,\boldsymbol e_1+\boldsymbol e_2+\boldsymbol e_3$. Thus
+
+$$
+M=\begin{pmatrix}
+1&0&1&0&1&0&1\\
+0&1&1&0&0&1&1\\
+0&0&0&1&1&1&1
+\end{pmatrix},\qquad
+MM^T=0\quad\text{over }\mathbb F_2.
+$$
+
+Each row has weight four and each pair shares two ones, proving the last equality. Columns $1,2,4$ exhibit rank three, so with all checks signed positive the independent checks give dimension $2^{7-6}=2$. For $u=(1,1,1,0,0,0,0)^T$, $Mu=\boldsymbol e_1+\boldsymbol e_2+(\boldsymbol e_1+\boldsymbol e_2)=0$. Both $X(u)=X_1X_2X_3$ and $Z(u)=Z_1Z_2Z_3$ preserve the code. Their restrictions anticommute because their overlap has size three:
+
+$$
+Z(u)X(u)=(-1)^3X(u)Z(u)=-X(u)Z(u).
+$$
+
+An invertible scalar action could not anticommute with the other invertible restriction. Thus $X(u)$ acts nontrivially on the code. Together with the column test, this gives $d=3$ for the fixture. A physical scaffold needs its own check matrices and witness. [Steane's seven-qubit code](https://arxiv.org/abs/quant-ph/9601029)
+
+**III. Recovery Round**
+
+Use the syndrome projectors $P_s$ and inverse representatives $R_s$ from **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" />. They satisfy $\sum_s(R_sP_s)^\dagger R_sP_s=\sum_s P_s=I$. For independent per-edge Pauli error probability $p$, the probability of errors on two or more edges is bounded by
+
+$$
+\Pr(\text{at least two errors})
+\le\sum_{i<j}\Pr(\text{errors on }i,j)=\binom n2p^2.
+$$
+
+If the recovery corrects the identity and all single-edge errors, those histories return the input. Hence for pure encoded input the recovered fidelity is at least $1-\binom n2p^2$.
+
+**IV. Labeled Graph-Size Changes**
+
+For a fixed legal insertion with isometry $J$ on its eligible sector, $J^\dagger J=P_{\mathrm{eligible}}$ and $JJ^\dagger=P_{\mathrm{image}}$ (**Vertex Fock Space Formalization** <Ref id="10.3.6" label="§10.3.6" />). In particular $J^\dagger J(\alpha|G\rangle+\beta|G'\rangle)=\alpha|G\rangle+\beta|G'\rangle$ for eligible inputs. A recovery using this insertion needs the indicated domain and removal match. These identities do not supply an autonomous physical decoder.
 
 Q.E.D.
 
@@ -1543,46 +1623,57 @@ Section 10.4.4.1 formalizes the properties of the QBD proof regarding charge con
 
 ### 10.4.5 Proof: Logical X Gate {#10.4.5}
 
-:::tip[**Formal Verification through Unitary Implementation**]
+:::tip[**Logical Exchange via Projected Transfers and Prefix Conservation**]
 :::
 
-The rewrite process $\mathcal{R}_X$ implements the Pauli-$\sigma_x$ operator on the logical subspace $\mathcal{H}_L = \text{span}\{|0_L\rangle, |1_L\rangle\}$.
+**I. Writhe Balance Along the Rewrite Word**
 
-**I. Action on Basis States**
-The operator $\mathcal{R}_X$ is defined as the physical process that drives the writhe transition $\boldsymbol{w} \to \boldsymbol{w}'$.
-1.  **Transition $|0_L\rangle \to |1_L\rangle$:**
-    Initial state: $\boldsymbol{w}_0 = (-1, -1, -1)$.
-    The process applies the writhe transfer $\hat{T}_{13}$ (transfer twist from ribbon 3 to 1).
-    Final state: $\boldsymbol{w}' = (-2, -1, 0) = \boldsymbol{w}_1$.
-
-    $$
-    \mathcal{R}_X |0_L\rangle = |1_L\rangle
-    $$
-
-2.  **Transition $|1_L\rangle \to |0_L\rangle$:**
-    Initial state: $\boldsymbol{w}_1 = (-2, -1, 0)$.
-    The inverse process $\mathcal{R}_X^\dagger$ applies the reverse transfer.
-    Final state: $\boldsymbol{w}' = (-1, -1, -1) = \boldsymbol{w}_0$.
-
-    $$
-    \mathcal{R}_X |1_L\rangle = |0_L\rangle
-    $$
-
-**II. Matrix Representation**
-In the logical basis $\{|0_L\rangle, |1_L\rangle\}$, the operator takes the form:
+In the transfer convention $\hat T_{ij}:\boldsymbol w\mapsto\boldsymbol w+\boldsymbol e_i-\boldsymbol e_j$, the forward and reverse transfers are
 
 $$
-\mathcal{R}_X \doteq \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \sigma_x
+(-1,-1,-1)\xrightarrow{\hat T_{31}}(-2,-1,0),
+\qquad
+(-2,-1,0)\xrightarrow{\hat T_{13}}(-1,-1,-1).
 $$
 
-**III. Unitarity and Invariance**
-The operation is reversible and preserves the norm of the topological state vector:
+For a prefix of a word of admitted elementary transfers as in **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />,
 
 $$
-\mathcal{R}_X^\dagger \mathcal{R}_X = I
+\boldsymbol w^{(k)}=\boldsymbol w^{(0)}+
+\sum_{r=1}^{k}a_r(\boldsymbol e_{i_r}-\boldsymbol e_{j_r}),\qquad
+W^{(k)}=-3+\sum_{r=1}^{k}a_r(1-1)=-3 .
 $$
 
-This physical transition is permitted because the total writhe is conserved, as proven in **Writhe Conservation** <Ref id="10.4.3" label="§10.4.3" />, and the electric charge is invariant, as shown in **Charge Conservation** <Ref id="10.4.4" label="§10.4.4" />. Thus, $\mathcal{R}_X$ constitutes a valid quantum logic gate.
+Therefore $Q^{(k)}=W^{(k)}/3=-1$ at each step (**Charge Conservation** <Ref id="10.4.4" label="§10.4.4" />). A coherent superposition of intermediate labels in this sector is also a $Q=-1$ eigenstate.
+
+**II. Projected Exchange and Pulse**
+
+For the logical projector $P$, the unprojected forward shift also sends $(-2,-1,0)$ to $(-3,-1,1)$, and the reverse shift sends $(-1,-1,-1)$ to $(0,-1,-2)$. Thus
+
+$$
+P\hat T_{31}P=|1_L\rangle\langle0_L|,\quad
+P\hat T_{13}P=|0_L\rangle\langle1_L|,\quad
+P(\hat T_{31}+\hat T_{13})P=X_L .
+$$
+
+With the admitted invariant control $H_X|_{\operatorname{im}P}=gX_L$ of **State Controllability** <Ref id="10.1.5" label="§10.1.5" />, $(I-P)H_XP=0$. Since $X_L^2=I_L$,
+
+$$
+e^{-i g t X_L}=\cos(gt)I_L-i\sin(gt)X_L,\qquad
+e^{-i\pi X_L/2}=-iX_L .
+$$
+
+It exchanges $\alpha|0_L\rangle+\beta|1_L\rangle$ with $-i(\beta|0_L\rangle+\alpha|1_L\rangle)$, preserving the norm and the code.
+
+**III. Color and Physical Support**
+
+If the encoded color observable is $C=\lambda_c|1_L\rangle\langle1_L|$ as in **Basis Measurability** <Ref id="10.1.6" label="§10.1.6" />, then
+
+$$
+[C,X_L]=\lambda_c\bigl(|1_L\rangle\langle0_L|-|0_L\rangle\langle1_L|\bigr).
+$$
+
+Thus an exact global color conservation law would need a matched model of the control and surrounding degrees of freedom. The prefix balance establishes electric charge conservation for the stated transfer word. Whether the matched control is transversal depends on its physical tensor factors and implementation.
 
 Q.E.D.
 
@@ -1726,31 +1817,50 @@ Section 10.5.3.1 formalizes the properties of the QBD proof regarding color phas
 
 ### 10.5.4 Proof: Logical Z Gate {#10.5.4}
 
-:::tip[**Formal Verification of Unitary Implementation via QND Measurement**]
+:::tip[**Logical Phase via Singlet Transparency and Calibrated Color Transport**]
 :::
 
-The combined process $\mathcal{R}_Z$, utilizing the state-dependent gauge interaction, implements the Pauli-$\sigma_z$ operator on the logical subspace.
+**I. Singlet Probe Response**
 
-**I. Action on Basis**
-Combining the results of the **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" /> and the **Color Phase** <Ref id="10.5.3" label="§10.5.3" />:
-1.  **Logical Zero:** $|0_L\rangle \xrightarrow{\mathcal{R}_Z} |0_L\rangle$ (Phase 0).
-2.  **Logical One:** $|1_L\rangle \xrightarrow{\mathcal{R}_Z} -|1_L\rangle$ (Phase $\pi$).
-
-**II. Matrix Representation**
-In the logical basis $\{|0_L\rangle, |1_L\rangle\}$, the operator takes the diagonal form:
+With the trivial color representation of **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />, differentiating $e^{-itT^a}|0_L\rangle=|0_L\rangle$ gives $T^a|0_L\rangle=0$. For $P_0=|0_L\rangle\langle0_L|$ and $H_{\mathrm{int}}(t)=\sum_a T^a\otimes A_a(t)$,
 
 $$
-\mathcal{R}_Z \doteq \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} = \sigma_z
+H_{\mathrm{int}}(t)(P_0\otimes I)=0,\qquad
+\frac{\mathrm d}{\mathrm dt}\bigl(U_{\mathrm{int}}^\dagger(t)(P_0\otimes I)\bigr)=0 .
 $$
 
-**III. Linearity and Phase Alignment**
-For an arbitrary superposition $|\psi\rangle = \alpha |0_L\rangle + \beta |1_L\rangle$:
+Since $U_{\mathrm{int}}(0)=I$, this gives $U_{\mathrm{int}}(t)(P_0\otimes I)=P_0\otimes I$ in the interaction picture.
+
+**II. Holonomy Calibration**
+
+Along a closed path $\gamma$ with the connection convention of **Color Phase** <Ref id="10.5.3" label="§10.5.3" />, solve $U'(s)=iA(s)U(s)$ with $U(0)=I$. Iterating the integral equation gives
 
 $$
-\mathcal{R}_Z |\psi\rangle = \alpha (\mathcal{R}_Z |0_L\rangle) + \beta (\mathcal{R}_Z |1_L\rangle) = \alpha |0_L\rangle - \beta |1_L\rangle
+U(1)=I+i\int_0^1 A(s)\,\mathrm ds
+-\int_0^1\!\mathrm ds\int_0^s\!\mathrm du\,A(s)A(u)+\cdots
+=\mathcal P\exp\left(i\oint_\gamma A\right).
 $$
 
-This phase flip is physically guaranteed because the ground state is transparent, as proven in **Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />, while the excited state accumulates a $\pi$ phase shift, as shown in **Color Phase** <Ref id="10.5.3" label="§10.5.3" />. Thus, the system implements a correct quantum Z-gate.
+For the commuting calibration $A(s)=a(s)\operatorname{diag}(1,-1,0)$ on the represented color sector, integrating $\Theta=\int_0^1 a(s)\,\mathrm ds$ yields
+
+$$
+U(1)=\operatorname{diag}(e^{i\Theta},e^{-i\Theta},1),\qquad
+U(1)\boldsymbol e_1=e^{i\Theta}\boldsymbol e_1 .
+$$
+
+At $\Theta=\pi$, a logical excited line matched to $\boldsymbol e_1$ acquires eigenvalue $-1$. Taking $\Theta=0$ in the same representation yields $+1$ on that line. The quadratic Casimir is unchanged between these two calibrations.
+
+**III. Coherent Gate on the Code**
+
+If the admitted transport returns the probe to the same auxiliary state on both branches, the singlet result and the calibrated eigenline give
+
+$$
+(\alpha|0_L\rangle+\beta|1_L\rangle)|\chi\rangle
+\longmapsto(\alpha|0_L\rangle-\beta|1_L\rangle)|\chi'\rangle,\qquad
+U_L=P_0-P_1=Z_L .
+$$
+
+For a recorded projective measurement, tracing out orthogonal records instead yields $\rho\mapsto P_0\rho P_0+P_1\rho P_1$ and sends $|0_L\rangle\langle1_L|$ to zero. The coherent gate sends that same matrix element to $-|0_L\rangle\langle1_L|$.
 
 Q.E.D.
 
@@ -1903,40 +2013,50 @@ Section 10.6.3.1 formalizes the properties of the QBD proof regarding topologica
 
 ### 10.6.4 Proof: Hadamard Gate {#10.6.4}
 
-:::tip[**Formal Verification of Superposition Generation via Master Equation**]
+:::tip[**Hadamard Construction via Coherent Driving and a Dephasing Budget**]
 :::
 
-The proof models the qubit as a two-level system evolving under the thermodynamic protocol, demonstrating the deterministic generation of the state $(|0_L\rangle + |1_L\rangle)/\sqrt{2}$.
+**I. Thermal Evolution**
 
-**I. The Master Equation**
-The evolution of the qubit density matrix $\rho(t)$ is governed by the Lindblad master equation with temperature-dependent rates:
-* **Population:** $\dot{\rho}_{11} = \Gamma_{01}(T)\rho_{00} - \Gamma_{10}(T)\rho_{11}$.
-* **Coherence:** $\dot{\rho}_{01} = -\gamma(T)\rho_{01}$.
-Detailed balance requires $\Gamma_{01}/\Gamma_{10} = e^{-\Delta E / T}$. From the **Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" />, $\Delta E = 0$, so $\Gamma_{01} = \Gamma_{10} = \Gamma(T)$.
-
-**II. Phase 1: Heating (Mixing)**
-The system starts in $|0_L\rangle$ ($\rho_{00}=1$).
-The temperature is raised to $T_{max} \gg T_{vac}$.
-* The transition rate $\Gamma(T_{max})$ becomes large.
-* The system relaxes to the thermal equilibrium state $\rho_{thermal}$.
-* Since $\Gamma_{01} = \Gamma_{10}$, the equilibrium populations are $\rho_{00} = \rho_{11} = 1/2$.
-* The high temperature ensures strong dephasing ($\gamma \to \infty$), so $\rho_{01} \to 0$.
-Result: $\rho_{thermal} = \text{diag}(1/2, 1/2)$ (Maximally mixed state).
-
-**III. Phase 2: Diabatic Quench (Coherence Generation)**
-The temperature is lowered rapidly ($T \to T_{vac}$) over a timescale $\tau_q$.
-* **Population Freezing:** The cooling is fast relative to the population relaxation rate ($\tau_q \ll 1/\Gamma$). The populations are "frozen" at $1/2$.
-* **Coherence Trapping:** As $T$ drops, the dephasing rate $\gamma(T)$ vanishes. The quench profile $T(t)$ is designed to effectively apply a unitary rotation during the freezing process, locking the phases relative to each other.
-* The final state retains the $1/2$ populations but regains coherence due to the deterministic dynamics of the quench path.
-
-**IV. Conclusion and Lemma Integration**
-The final density matrix is:
+In the two-state population model take $\Gamma_{01}/\Gamma_{10}=\exp(-\Delta E_{\mathrm{log}}/(k_BT))$. At the assigned degeneracy of **Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" />, $\Delta E_{\mathrm{log}}=0$ and the two rates coincide. With common possibly time-dependent rate $\Gamma(t)$ and coherence damping $\gamma(t)$, the undriven equations integrate to
 
 $$
-\rho_{final} = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} = |+\rangle \langle +|
+p_1(t)-\tfrac12=(p_1(0)-\tfrac12)e^{-2\int_0^t\Gamma(s)\,\mathrm ds},
+\qquad
+\rho_{01}(t)=\rho_{01}(0)e^{-\int_0^t\gamma(s)\,\mathrm ds}.
 $$
 
-where $|+\rangle = \frac{1}{\sqrt{2}}(|0_L\rangle + |1_L\rangle)$. This thermodynamic cycle implements the Hadamard gate by leveraging the temperature modulation established in **Temperature Control** <Ref id="10.6.2" label="§10.6.2" /> and the energy equivalence shown in **Topological Degeneracy** <Ref id="10.6.3" label="§10.6.3" />.
+Cooling can reduce the decay rates. A diagonal input remains diagonal, and an exact maximally mixed state also satisfies $U(I_L/2)U^\dagger=I_L/2$ for every unitary.
+
+**II. Admitted Coherent Pulse**
+
+Let $B=(X_L+Z_L)/\sqrt2$. From $X_LZ_L=-Z_LX_L$ and $X_L^2=Z_L^2=I_L$,
+
+$$
+B^2=\tfrac12(X_L^2+X_LZ_L+Z_LX_L+Z_L^2)=I_L .
+$$
+
+For an admitted code-preserving drive $H_{\mathrm d}=\hbar\Omega B/2$, the pulse at $t_g=\pi/\Omega$ gives
+
+$$
+e^{-it_gH_{\mathrm d}/\hbar}=\cos(\pi/2)I_L-i\sin(\pi/2)B=-iB,
+\quad
+B=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}.
+$$
+
+The columns give $B|0_L\rangle=|+\rangle$ and $B|1_L\rangle=|-\rangle$. In particular $B|0_L\rangle\langle0_L|B^\dagger$ has all four entries equal to $1/2$.
+
+**III. Conditional Thermal Budget**
+
+For the activated dephasing law of **Temperature Control** <Ref id="10.6.2" label="§10.6.2" />, let $\Delta>0$ be the activation barrier, separate from the logical splitting. With $\Gamma_{\mathrm{deph}}=\Gamma_0 e^{-\Delta/(k_BT)}$, the stipulated budget is
+
+$$
+\frac{t_g}{\tau_{\mathrm{deph}}}=t_g\Gamma_0e^{-\Delta/(k_BT)}\le10^{-4}
+\quad\Longleftrightarrow\quad
+\frac{\Delta}{k_BT}\ge\ln(10^4\Gamma_0t_g).
+$$
+
+When the logarithm is positive this gives $T\le \Delta/[k_B\ln(10^4\Gamma_0t_g)]$. When it is nonpositive every positive $T$ meets this budget in the model. For a driven Markovian dephasing model with jump $\sqrt{\Gamma_{\mathrm{deph}}/2}\,Z_L$, the dissipative term has trace norm at most $\Gamma_{\mathrm{deph}}$ on a density matrix because $\|Z_L\rho Z_L-\rho\|_1\le2$. Integrating in the ideal drive's interaction picture bounds the trace distance to ideal evolution by $\frac12\int_0^{t_g}\Gamma_{\mathrm{deph}}(t)\,\mathrm dt$. This bound uses the specified dephasing channel.
 
 Q.E.D.
 
@@ -1947,14 +2067,14 @@ Section 10.6.4 formalizes the properties of the QBD proof regarding hadamard gat
 
 ### 10.6.4.1 Calculation: Hadamard Quench Verification {#10.6.4.1}
 
-:::note[**Computational Verification of Superposition Trapping via Lindblad Dynamics**]
+:::note[**Evaluation of Driven Populations and Coherence via a Two-Level Model**]
 :::
 
-Verification of the thermodynamic mixing mechanism established in the **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" /> is based on the following protocols:
+The example uses the distinction between the active pulse and undriven relaxation in **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" />. It assigns constant dissipation rather than a temperature-dependent history of the form considered in **Temperature Control** <Ref id="10.6.2" label="§10.6.2" />.
 
-1.  **System Definition:** The algorithm defines a two-level qubit system initialized in the ground state $|0\rangle\langle 0|$.
-2.  **Dynamics Simulation:** The protocol evolves the density matrix under a coherent drive Hamiltonian $H = (\Omega/2)\sigma_y$ and a low dissipation rate $\Gamma$, simulating the heating and quench cycle.
-3.  **Coherence Measurement:** The metric extracts the final population distribution and the off-diagonal coherence elements $\rho_{01}$ to quantify the fidelity of the created superposition. This verifies the result established in  **Hadamard Gate** <Ref id="10.6.4" label="§10.6.4" />.
+1.  **State Initialization:** Start from the pure state $|0\rangle\langle0|$.
+2.  **Driven Evolution:** Integrate with $\hbar=1$, Hamiltonian $(\Omega/2)Y$, $\Omega=10$, and two fixed raising and lowering jump rates $\Gamma=0.1$ over $0\le t\le0.2$.
+3.  **Output Comparison:** Read the two populations and both components of the off-diagonal element.
 
 ```python
 import qutip as qt
@@ -1996,7 +2116,7 @@ Verification: High Ω low Γ for ~0.5 coherence.
 ```
 
 **Conclusion:**
-The simulation yields a final population distribution of approximately $0.30/0.70$ and a real off-diagonal coherence of $\approx 0.44$. This indicates the successful creation of a coherent superposition state, approximating the target Hadamard state $\rho \approx 0.5(|0\rangle+|1\rangle)(\langle 0|+\langle 1|)$. The nonzero off-diagonal term confirms that the thermodynamic process preserves phase information during the quench, validating the mechanism for generating quantum superpositions from thermal mixing.
+The final populations are about $0.296$ and $0.704$. The real coherence is about $0.441$ and the imaginary coherence is zero. The nonzero coherence occurs in the model with an explicit drive. For this input the overlap with $|+\rangle$ is $\langle+|\rho|+\rangle=1/2+\operatorname{Re}\rho_{01}\simeq0.941$. The output evaluates one driven state trajectory. Certifying a Hadamard channel requires its action on the full operator space.
 
 **In Plain English:**  
 Section 10.6.4.1 formalizes the properties of the QBD calculation regarding hadamard quench verification.
@@ -2149,44 +2269,51 @@ Section 10.7.3.1 formalizes the properties of the QBD proof regarding control dy
 
 ### 10.7.4 Proof: Controlled-Z Gate {#10.7.4}
 
-:::tip[**Formal Verification of C-Z Truth Table via Catalytic Dynamics**]
+:::tip[**Controlled Phase via Coherent Coupling and a Scoped Feedback Model**]
 :::
 
-The composite process $\mathcal{R}_{CZ}$ (Bridge + Conditional $\mathcal{R}_Z$ + Unbridge) implements the unitary operator $\text{diag}(1, 1, 1, -1)$.
+**I. Nondemolition Syndrome Transfer**
 
-**I. Truth Table Verification**
-An analysis of the action on the computational basis $|C, T\rangle$ yields:
-1.  **$|0, 0\rangle$:**
-    * $\sigma_C = +1$ (Low stress).
-    * Friction is high. $\mathcal{R}_Z$ on target fails.
-    * Target state $|0\rangle$ is unchanged. Phase $+1$.
-    * Result: $|0, 0\rangle$.
-2.  **$|0, 1\rangle$:**
-    * $\sigma_C = +1$ (Low stress).
-    * Friction is high. $\mathcal{R}_Z$ on target fails.
-    * Target state $|1\rangle$ is unchanged. Phase $+1$.
-    * Result: $|0, 1\rangle$.
-3.  **$|1, 0\rangle$:**
-    * $\sigma_C = -1$ (High stress).
-    * Friction is catalytic. $\mathcal{R}_Z$ on target executes.
-    * $\mathcal{R}_Z |0\rangle = |0\rangle$ (**Singlet Transparency** <Ref id="10.5.2" label="§10.5.2" />). Phase $+1$.
-    * Result: $|1, 0\rangle$.
-4.  **$|1, 1\rangle$:**
-    * $\sigma_C = -1$ (High stress).
-    * Friction is catalytic. $\mathcal{R}_Z$ on target executes.
-    * $\mathcal{R}_Z |1\rangle = -|1\rangle$ (**Color Phase** <Ref id="10.5.3" label="§10.5.3" />). Phase $-1$.
-    * Result: $-|1, 1\rangle$.
-
-**II. Matrix Representation**
-The resulting diagonal matrix corresponds exactly to the Controlled-Phase (C-Z) gate:
+In **Syndrome Coupling** <Ref id="10.7.2" label="§10.7.2" />, take commuting signed checks $S_i$ and separate pointers with $H_{\mathrm{couple}}=g\sum_i S_i\otimes Z_i$, using $\hbar=1$. For a simultaneous eigenstate with eigenvalues $s_i=\pm1$, the pointer outputs at $gt=\pi/4$ are $\bigotimes_i e^{-i\pi s_i Z_i/4}|+\rangle_i$. A pointer with opposite signs has overlap
 
 $$
-\mathcal{R}_{CZ} \doteq \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix}
+\langle+|e^{i\pi Z/2}|+\rangle=\cos(\pi/2)=0 .
 $$
 
-**III. Linearity and Entanglement**
-The catalytic mechanism is linear in the density matrix formulation.
-For a superposition state (e.g., $(|0\rangle + |1\rangle)_C \otimes |1\rangle_T$), the evolution generates the entangled state $|0,1\rangle - |1,1\rangle$, mediated by the bridge constructed in **Syndrome Coupling** <Ref id="10.7.2" label="§10.7.2" /> and the conditional friction shown in **Control Dynamics** <Ref id="10.7.3" label="§10.7.3" />. Thus, the process is a valid entangling gate.
+The scaffold state is unchanged within the given syndrome. The checks act by fixed signs on the valid codespace, so this coupling alone has the same pointer action on every logical branch.
+
+**II. Coherent Conditional Phase**
+
+Take the separately admitted interaction $JP_{11}$ with $P_{11}=|1_L1_L\rangle\langle1_L1_L|$ and the same final auxiliary state for every branch (**Control Dynamics** <Ref id="10.7.3" label="§10.7.3" />). Then
+
+$$
+e^{-i J t P_{11}}=I+(e^{-i J t}-1)P_{11},\qquad
+e^{-i\pi P_{11}}=\operatorname{diag}(1,1,1,-1).
+$$
+
+On $|+\rangle|+\rangle$ it gives $(|00\rangle+|01\rangle+|10\rangle-|11\rangle)/2$. Its coefficient matrix has determinant $-1/2$, hence rank two, proving entanglement. The result requires coherent branch action and removal of auxiliary records.
+
+**III. Readout and Noise**
+
+Write $\mathcal D[L]\rho=L\rho L^\dagger-\tfrac12\{L^\dagger L,\rho\}$. For a specified controller model use syndrome projectors $P_s$, readout jumps $\sqrt{\kappa_s}P_s$, and detectable Pauli events $E_a$ with constant rates $\gamma_a$. The effective equation between feedback rounds is
+
+$$
+\dot\rho=-i[JP_{11},\rho]
++\sum_s\kappa_s\mathcal D[P_s]\rho
++\sum_a\gamma_a(E_a\rho E_a^\dagger-\rho).
+$$
+
+Here the Hamiltonian denotes its codespace restriction and must have a specified extension on error sectors. The readout dissipator vanishes within any fixed syndrome block since $P_s\rho=\rho P_s$ equals either $\rho$ or zero there. An unobserved projector jump that distinguishes logical branches, such as $\sqrt{\gamma}\,P_{11}$, instead damps the $a,11$ coherence by $e^{-\gamma t/2}$ for $a\ne11$ in the model of **Control Dynamics** <Ref id="10.7.3" label="§10.7.3" />.
+
+**IV. Ideal Fast Feedback**
+
+Assume the cycle reliably resolves the syndrome and applies the inverse correction, and that one fault anywhere in the driven cycle remains correctable relative to ideal evolution. In a cycle of length $\tau_{\mathrm{cycle}}$, independent Poisson Pauli events with total rate $\gamma=\sum_a\gamma_a$ have mean $x=\gamma\tau_{\mathrm{cycle}}$. Failure is possible only for two or more events in this ideal controller model, so
+
+$$
+p_{\mathrm{fail}}\le1-(1+x)e^{-x}=\int_0^x u e^{-u}\,\mathrm du\le x^2/2 .
+$$
+
+For $m$ cycles the union bound gives $m(\gamma\tau_{\mathrm{cycle}})^2/2$. The small-cycle limit $\gamma\tau_{\mathrm{cycle}}\ll1$ gives the conditional quadratic suppression per round. The bound assumes the specified correctable events and reliable controller.
 
 Q.E.D.
 
@@ -2642,43 +2769,51 @@ Section 10.8.8.1 formalizes the properties of the QBD proof regarding gate set u
 
 ### 10.8.9 Proof: T-Gate {#10.8.9}
 
-:::tip[**Formal Verification of Phase via Self-Braiding**]
+:::tip[**Conditional T Phase via a Matched Framing Action and Dense Rotations**]
 :::
 
-The physical self-braiding process $\mathcal{R}_T$ implements the unitary $T = \text{diag}(1, e^{i\pi/4})$ by realizing a half-Dehn twist.
+**I. Diagram Operations and the Physical Bridge**
 
-**I. The Process $\mathcal{R}_T$**
-$\mathcal{R}_T$ is defined as a self-exchange operation where one ribbon of the braid is looped around the others, effectively rotating the framing by $\pi$ (a half-twist), which is mathematically represented as a morphism in the **Ribbon Category** <Ref id="10.8.3" label="§10.8.3" />.
+In the diagram model of **Ribbon Category** <Ref id="10.8.3" label="§10.8.3" />, stacking composes operations and horizontal juxtaposition gives the tensor product (**Monoidal Structure** <Ref id="10.8.4" label="§10.8.4" />).
 
-**II. TQFT Phase Derivation**
-In a Ribbon Category, the Dehn twist operator $\hat{D}$ acts on an irreducible representation $V_\lambda$ as a scalar:
+Block exchanges are supplied by **Braiding Structure** <Ref id="10.8.5" label="§10.8.5" />, and reversed oriented ends by **Duality Structure** <Ref id="10.8.6" label="§10.8.6" />. The natural twist $\theta$ of **Twist Structure** <Ref id="10.8.7" label="§10.8.7" /> is a full framing rotation. A physical half-twist needs a matched closed logical operation, including the boundary identification and a coherent representation of its square by the full twist on the code.
+
+**II. Relative Phase Calibration**
+
+Let $P_b=|b_L\rangle\langle b_L|$. Suppose a supplied realization preserves both lines and gives the full twist lifted eigenphases $\theta_0=\phi$ and $\theta_1=\phi+\pi/2$. For the selected square-root branch with half the lifted eigenphase on each line, the eigenvalue equations are
 
 $$
-\hat{D} | \lambda \rangle = e^{2\pi i h_\lambda} | \lambda \rangle
+D_L|b_L\rangle=e^{i\theta_b}|b_L\rangle,\qquad
+B_L|b_L\rangle=e^{i\theta_b/2}|b_L\rangle .
 $$
 
-where $h_\lambda$ is the conformal dimension.
-For a spin-1/2 ribbon in the fundamental representation, a full $2\pi$ twist induces $e^{i\pi/2} = i$. This phase derives from the ribbon Hopf algebra trace, multiplying the framing anomaly by the representation dimension.
-For a half-twist ($\hat{D}^{1/2}$), the phase is $e^{\pi i h_\lambda} = e^{i\pi/4}$, which corresponds to the spin phase factor from the **Twist Structure** <Ref id="10.8.7" label="§10.8.7" />.
+Thus $D_L=e^{i\phi}(P_0+iP_1)$ and $B_L=e^{i\phi/2}(P_0+e^{i\pi/4}P_1)$. Because $P_bP_c=\delta_{bc}P_b$,
 
-**III. State-Dependent Action**
-1.  **Singlet $|0_L\rangle$:** Defined by the writhe vector $(-1, -1, -1)$. The configuration is symmetric under $S_3$. The TQFT loop couples symmetrically to all three ribbons. The topological phases from the three identical paths destructively interfere or sum to $0 \pmod{2\pi}$, yielding a net phase of zero, which satisfies the tensor composition rules of the **Monoidal Structure** <Ref id="10.8.4" label="§10.8.4" />.
+$$
+B_L^2=e^{i\phi}(P_0+e^{i\pi/2}P_1)=D_L,\qquad
+e^{-i\phi/2}B_L(\alpha|0_L\rangle+\beta|1_L\rangle)
+=\alpha|0_L\rangle+e^{i\pi/4}\beta|1_L\rangle .
+$$
 
-    $$
-    \mathcal{R}_T |0_L\rangle = |0_L\rangle
-    $$
+The square condition allows an independent sign on each square-root eigenvalue, so the branch must be supplied by the physical matching. If the full twist phases are parametrized by $e^{2\pi i h_b}$, the matched relative full phase requires $h_1-h_0=1/4\bmod 1$. A relative weight of $1/8$ would give full phase $\pi/4$ and phase $\pi/8$ on the corresponding half branch. Permutation symmetry of a writhe label supplies neither a phase integral nor cancellation among loop amplitudes.
 
-2.  **Charged $|1_L\rangle$:** Defined by the writhe vector $(-2, -1, 0)$. The configuration is asymmetric. The TQFT loop couples non-trivially to the distinct writhe components. The phases do not cancel, accumulating the full geometric phase of the half Dehn twist, satisfying the exchange relations from the **Braiding Structure** <Ref id="10.8.5" label="§10.8.5" />.
+**III. Irrational Rotation from the Calibrated Gate**
 
-    $$
-    \mathcal{R}_T |1_L\rangle = e^{i\pi/4} |1_L\rangle
-    $$
+With the represented Hadamard $H$, use $HZH=X$. The phase-normalized $T=e^{i\pi/8}e^{-i\pi Z/8}$ gives the determinant-one product
 
-**IV. Conclusion and Categorical Consistency**
-The operation implements the matrix $\text{diag}(1, e^{i\pi/4})$ in the logical basis. This phase is robustly defined by the categorical structures of the QBD framework:
-* **Antiparticles:** Consistent loop operations are guaranteed by **Duality Structure** <Ref id="10.8.6" label="§10.8.6" />.
-* **Universality:** Completeness of the gate set is guaranteed by **Gate Set Universality** <Ref id="10.8.8" label="§10.8.8" />.
-Thus, the self-braiding process constitutes a valid, topologically protected T-gate.
+$$
+V=e^{-i\pi X/8}e^{-i\pi Z/8}
+=c^2I-i(c s X-s^2Y+c s Z),\qquad
+c=\cos(\pi/8),\quad s=\sin(\pi/8).
+$$
+
+Here $XZ=-iY$ and $2c^2=1+1/\sqrt2$. If the eigenangles $\pm\vartheta$ of $V$ satisfied $\vartheta/\pi\in\mathbb Q$, the eigenvalues would be roots of unity, and their sum $1+1/\sqrt2$ an algebraic integer. Its quadratic norm is
+
+$$
+(1+1/\sqrt2)(1-1/\sqrt2)=1/2,
+$$
+
+which cannot be the norm of an algebraic integer in $\mathbb Q(\sqrt2)$. Hence $\vartheta/\pi$ is irrational. The Bloch rotation angle is $2\vartheta$ up to orientation. This supplies the irrational rotation used in **Gate Set Universality** <Ref id="10.8.8" label="§10.8.8" /> after the physical phase match.
 
 Q.E.D.
 
@@ -2689,14 +2824,14 @@ Section 10.8.9 formalizes the properties of the QBD proof regarding t-gate.
 
 ### 10.8.9.1 Calculation: T-Gate Phase Verification {#10.8.9.1}
 
-:::note[**Computational Verification through State-Dependent Geometric Phase**]
+:::note[**Evaluation of Assigned Logical Phases via Matrix Overlaps**]
 :::
 
-Verification of the non-Clifford phase accumulation established in the **T-Gate** <Ref id="10.8.9" label="§10.8.9" /> is based on the following protocols:
+The calculation supplies the diagonal matrix from the calibrated model in **T-Gate** <Ref id="10.8.9" label="§10.8.9" /> as an input. The physical framing representation for **Twist Structure** <Ref id="10.8.7" label="§10.8.7" /> is a separate premise.
 
-1.  **Operator Definition:** The algorithm defines the T-gate unitary $T = \text{diag}(1, e^{i\pi/4})$ acting on the logical basis.
-2.  **State Evolution:** The protocol applies the operator to the basis states $|0_L\rangle$ and $|1_L\rangle$, as well as an equal superposition.
-3.  **Phase Extraction:** The metric computes the expectation value $\text{Re}(\langle \psi | T | \psi \rangle)$ to measure the phase rotation induced on each component. This verifies the result established in  **T-Gate** <Ref id="10.8.9" label="§10.8.9" />.
+1.  **Operator Definition:** Set $T=\operatorname{diag}(1,e^{i\pi/4})$.
+2.  **State Evolution:** Apply the supplied matrix to both basis states and to the equal superposition.
+3.  **Overlap Check:** Compute the real part of $\langle\psi|T|\psi\rangle$ for each input.
 
 ```python
 import qutip as qt
@@ -2739,7 +2874,7 @@ Verification: Phases match T-gate unitary, confirming state-dependent geometric 
 ```
 
 **Conclusion:**
-The simulation confirms the differential phase action. The symmetric state $|0_L\rangle$ acquires a phase of 0 (expectation 1.0), while the asymmetric state $|1_L\rangle$ acquires a phase of exactly $\pi/4$ (expectation $\cos(\pi/4) \approx 0.707$). The superposition state yields the mixed expectation value of $\approx 0.854$. These results validate that the geometric operation induces the specific $\pi/4$ rotation required for the T-gate, enabling universal quantum computation.
+For the assigned matrix the real overlaps are $1$, $\cos(\pi/4)\simeq0.7071$, and $(1+\cos(\pi/4))/2\simeq0.8536$. These real overlaps would be the same for the opposite phase. The program checks the assigned matrix and leaves the sign and physical realization of the geometric phase to the representation calibration.
 
 **In Plain English:**  
 Section 10.8.9.1 formalizes the properties of the QBD calculation regarding t-gate phase verification.
@@ -3045,24 +3180,62 @@ Section 10.9.3.1 formalizes the properties of the QBD proof regarding solovay-ki
 
 ### 10.9.4 Proof: Group Closure {#10.9.4}
 
-:::tip[**Formal Verification of Universality via Clifford and Density Synthesis**]
+:::tip[**Encoded Universality via Pauli-String Density and Gate Refinement**]
 :::
 
-The proof establishes that the physical gate set generates a dense and universal computational group.
+**I. Exact Logical Gates**
 
-**I. Clifford and Non-Clifford Algebra**
-The physical gate set contains the generators for Clifford operations as proven in **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" />, plus the non-Clifford $T$ gate.
+On an admitted invariant register take the logical $H,T,CZ$ up to scalar phases and allow single-site addressing and the specified pair couplings. The products of **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" /> give
 
-**II. Unitary Approximation**
-By the density properties established in **Solovay-Kitaev Density** <Ref id="10.9.3" label="§10.9.3" />, the inclusion of the non-Clifford primitive ensures that the group closure is dense in the special unitary group.
+$$
+T^2=\operatorname{diag}(1,i)=S,\qquad
+(I\otimes H)CZ(I\otimes H)
+=P_0\otimes I+P_1\otimes X=\operatorname{CNOT},
+$$
 
-**III. Physical Robustness**
-The realization of these gates preserves the fault-tolerant properties of the underlying hardware.
-* **Code Distance:** The fundamental qubit is a topological code with distance $d=3$ (protected against single-qubit errors), as proven in the **Topological Fault Tolerance** <Ref id="10.3.2" label="§10.3.2" />.
-* **Gate Fidelity:** Each primitive $\mathcal{R}$ is constructed from PUC-compliant rewrites. The system is continuously monitored by the awareness functor $T$ (the QECC), which maps local stress syndromes to corrective deletions.
-* **Transversality/Locality:** The gates operate either transversally (single qubit ops) or via local topological bridges (CZ), preventing uncontrolled error propagation across the lattice.
+where $P_a=|a\rangle\langle a|$ on the control. Together with $H$ these generate the logical Clifford group modulo overall phase. [Gottesman's stabilizer formalism](https://arxiv.org/abs/quant-ph/9705052)
 
-The QBD framework constitutes a Turing-complete quantum computational system. It provides a physically rigorous substrate, from the vacuum graph to the logic gate, capable of executing any quantum algorithm with arbitrary precision.
+**II. Density of the Admitted Gate Set**
+
+The product of normalized $T$ and its $H$ conjugate from **T-Gate** <Ref id="10.8.9" label="§10.8.9" /> has an irrational eigenangle. With $p=\cos(\pi/8)\sin(\pi/8)>0$ and $q=\sin^2(\pi/8)>0$, its rotation axis and the conjugate axis are $v=(p,-q,p)$ and $w=(p,q,p)$. Powers are dense in the circle about each axis. For the Pauli vector $\boldsymbol\sigma$,
+
+$$
+[-i v\cdot\boldsymbol\sigma,-i w\cdot\boldsymbol\sigma]
+=-2i(v\times w)\cdot\boldsymbol\sigma,\qquad
+v\times w=(-2pq,0,2pq).
+$$
+
+The two axes and the bracket therefore span $\mathfrak{su}(2)$. On multiple sites, conjugating $Z_j$ by $\operatorname{CNOT}_{i\to j}$ multiplies its action on $|a,b\rangle$ by the replacement $(-1)^b\mapsto(-1)^{a\oplus b}=(-1)^a(-1)^b$, giving $Z_iZ_j$. For support $J$ containing $j$, conjugation by the product of CNOTs with target $j$ and all controls in $J\setminus\{j\}$ gives
+
+$$
+Z_j\ \longmapsto\ \prod_{i\in J}Z_i.
+$$
+
+Conjugating locally changes each $Z$ into the desired Pauli direction. The closure thus contains the one-parameter groups of every nonidentity Pauli string. Their skew-Hermitian generators are $4^n-1$ independent traceless matrices by trace orthogonality, so the projective closure has full Lie algebra and is the full connected projective unitary group (**Gate Set Universality** <Ref id="10.8.8" label="§10.8.8" />).
+
+**III. Normalization and Inverses**
+
+Use the local determinant-one representatives $\widehat H=iH$, $\widehat T=e^{-i\pi/8}T$, and $\widehat{CZ}=e^{i\pi/4}CZ$, embedded at their addressed sites. Their powers $\widehat H^4=\widehat T^{16}=\widehat{CZ}^8=I$ provide inverses at constant cost. Let $K$ be their closure in $SU(2^n)$. Projective surjectivity gives $KZ_{\mathrm{cen}}=SU(2^n)$ for its finite scalar center $Z_{\mathrm{cen}}$. Thus $K$ has finitely many closed cosets and is open, so connectedness gives $K=SU(2^n)$. The physical gate words implement these representative actions up to scalar phase.
+
+**IV. Gate Length at Fixed Register Size**
+
+For this inverse-closed dense finite instruction set, **Solovay-Kitaev Density** <Ref id="10.9.3" label="§10.9.3" /> uses $\epsilon_{j+1}\le C\epsilon_j^{3/2}$ and $L_{j+1}\le5L_j$. With $\delta_0=C^2\epsilon_0<1$,
+
+$$
+\epsilon_j\le C^{-2}\delta_0^{(3/2)^j},\qquad L_j\le5^jL_0 .
+$$
+
+For $B=\ln(1/(C^2\epsilon))/\ln(1/\delta_0)>1$, the choice $j=\lceil\ln B/\ln(3/2)\rceil$ yields
+
+$$
+\epsilon_j\le\epsilon,\qquad
+L_j\le5L_0 B^{\ln5/\ln(3/2)}
+=O\bigl(\ln^{\,\ln5/\ln(3/2)}(1/\epsilon)\bigr),
+\qquad
+\frac{\ln5}{\ln(3/2)}\simeq3.97 .
+$$
+
+The approximation is for the admitted logical gates at fixed $n$. Physical fault tolerance additionally requires control and recovery guarantees for faults throughout a circuit. [Dawson and Nielsen](https://arxiv.org/abs/quant-ph/0505030)
 
 Q.E.D.
 

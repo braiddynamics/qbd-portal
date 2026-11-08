@@ -233,7 +233,7 @@ $$
 U(0)=I,\qquad U(s+t)=U(s)U(t),\qquad U(t)^\dagger U(t)=I.
 $$
 
-The admitted discrete rewrites act on the same finite sector (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). For this fixed continuous group,
+The one-parameter group is an admitted continuous action on a common invariant finite-dimensional sector. The discrete action of **Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" /> supplies the separate representation considered in Part VI. For this fixed continuous group,
 
 $$
 U(s)U(t)=U(s+t)=U(t+s)=U(t)U(s),\qquad
@@ -470,7 +470,7 @@ $$
 \qquad K=\sum_r\vartheta_rP_r=H_{\boldsymbol0}.
 $$
 
-**V. Generated Real Lie Algebra**
+**V. Generated Real Lie Algebra and Distant Controls**
 
 For the admitted generators $H_a$, let
 
@@ -519,7 +519,32 @@ L_m\subseteq M\ \Longrightarrow\ L_{m+1}\subseteq M+[M,M]\subseteq M,
 \qquad L\subseteq M.
 $$
 
-The discrete relations impose (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />)
+For distant controls assume separately $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$, as for actions on independent tensor factors (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />). Differentiating in $t$ at zero and then in $s$ at zero gives
+
+$$
+iH_i U_j(s)=U_j(s)iH_i,\qquad
+(iH_i)(iH_j)=(iH_j)(iH_i),\qquad [H_i,H_j]=0 .
+$$
+
+**VI. Discrete representation**
+
+Separately, let $S_i$ act on a diagram space and suppose the encoded rewrites satisfy $R_iW=WS_i$ for an isometric encoding $W$. On the image of $W$ the admitted diagram slide gives
+
+$$
+(R_iR_{i+1}R_i-R_{i+1}R_iR_{i+1})W
+=W(S_iS_{i+1}S_i-S_{i+1}S_iS_{i+1})=0
+$$
+
+(**Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />). With the distant relation and invertible rewrites on this sector, the Artin presentation gives a homomorphism onto the generated group. If it admits a separating orbit $v_\beta$ indexed by braid elements with $R_i v_\beta=v_{\sigma_i\beta}$, then
+
+$$
+\Phi(\beta)=I\quad\Longrightarrow\quad
+v_\beta=\Phi(\beta)v_e=v_e\quad\Longrightarrow\quad \beta=e .
+$$
+
+This is the faithfulness criterion in **Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />.
+
+When $R_i=U_i(1)$, the discrete relations give
 
 $$
 R_iR_j=R_jR_i\ \Longrightarrow\ e^{iH_i}e^{iH_j}=e^{iH_j}e^{iH_i}\quad(|i-j|>1),
@@ -1356,7 +1381,7 @@ Section 8.2.8.2 formalizes the properties of the QBD calculation regarding excha
 
 **I. A Lie Subalgebra Containing the Seed**
 
-Define $L=\operatorname{Lie}_{\mathbb R}\{A_k,C_k:1\le k<n\}$ and $\mathfrak u_0=\{M:M^\dagger=-M,\ \operatorname{Tr}M=0\}$. For each $k$,
+Use the adjacent exchange $A_k=i(E_{k,k+1}+E_{k+1,k})$ and diagonal direction $C_k=i(E_{kk}-E_{k+1,k+1})$. Define $L=\operatorname{Lie}_{\mathbb R}\{A_k,C_k:1\le k<n\}$ and $\mathfrak u_0=\{M:M^\dagger=-M,\ \operatorname{Tr}M=0\}$. For each $k$,
 
 $$
 \begin{aligned}
@@ -1454,6 +1479,18 @@ $$
 \operatorname{Lie}_{\mathbb R}\{A_k\}=D\mathfrak{so}(n)D^\dagger,
 \qquad \frac{n(n-1)}2<n^2-1.
 $$
+
+With $D=\operatorname{diag}(1,i,\ldots,i^{n-1})$, the conjugated upper and lower entries of $A_k$ are $i\cdot i=-1$ and $i\cdot i^{-1}=1$. Hence $D^\dagger A_k D=-F_{k,k+1}$. The brackets $[F_{p,q-1},F_{q-1,q}]=F_{pq}$ give every real skew direction by induction on $q-p$. Thus the exchange-only dimension is $\binom n2$. The two sets give the counts
+
+$$
+\begin{aligned}
+n &= 2,\quad 3,\quad 5,\\
+\dim L_{\text{exchange}} &= 1,\quad 3,\quad 10,\\
+\dim L &= 3,\quad 8,\quad 24 .
+\end{aligned}
+$$
+
+in the matrix comparison of **Exact Closure for n = 2, 3, 5** <Ref id="8.2.9.1" label="§8.2.9.1" />.
 
 $$
 \boxed{\operatorname{Lie}_{\mathbb R}\{A_k,C_k\}=\mathfrak{su}(n),\qquad
@@ -2030,14 +2067,14 @@ Section 8.3.6.1 formalizes the properties of the QBD proof regarding flux tube c
 
 ### 8.3.6.2 Calculation: Flux Tube Phase Simulation {#8.3.6.2}
 
-:::note[**Computational Verification of Linear Confinement through Monopole Phases**]
+:::note[**Evaluation of the Fixed-Tension Model via Energy and Phase**]
 :::
 
-Quantification of the confinement potential and geometric phase established by **Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" /> is based on the tension constraints verified in **Algebraic Closure** <Ref id="8.3.5" label="§8.3.5" />. This verification utilizes the following protocols:
+The calculation evaluates the assigned segment cost of **Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" /> and its explicit fixed-tube derivation in **Flux Tube Confinement** <Ref id="8.3.6.1" label="§8.3.6.1" />.
 
-1.  **Parameter Definition:** The algorithm defines a range of separation lengths $L$ and sets the confinement tension $\sigma = 0.5$ and magnetic coupling $g = 1.0$.
-2.  **Energy Calculation:** The protocol computes the potential energy as a linear mapping of length $V(L) = \sigma L$, representing the cost of edge creation.
-3.  **Phase Accumulation:** The metric calculates the accumulated Berry phase $\gamma(L) = g \pi L / 4$ and its modulo $2\pi$ value to verify the topological periodicity of the flux tube.
+1.  **Parameter Definition:** Take tension $\sigma=0.5$ and magnetic coupling $g=1$ in the calculation's units.
+2.  **Energy Calculation:** At each integer length $L$, compute $V(L)=\sigma L$.
+3.  **Phase Accumulation:** Evaluate $\gamma(L)=g\pi L/4$ and its representative modulo $2\pi$.
 
 ```python
 import numpy as np
@@ -2102,7 +2139,7 @@ Length | Energy (V=σL)   | Berry Phase (rad)  | Phase mod 2π
 ```
 
 **Conclusion:**
-The output confirms three physical properties. First, the energy scales strictly linearly with length (e.g., $E=5.00$ at $L=10$), validating the linear confinement model. Second, the Berry phase accumulates in discrete steps of $\pi/4$, reflecting the lattice quantization. Third, the phase exhibits a $2\pi$ periodicity (resetting to 0.00 at $L=8$), characteristic of a $U(1)$ monopole topology. These results verify that the graph geometry reproduces the string-like behavior required for quark confinement.
+At $L=10$ the assigned energy is $V=5.00$. The unwrapped phase advances by $\pi/4$ per segment and reaches $2\pi$ at $L=8$, so the wrapped phase there is zero. The output checks these two assigned laws for the fixed tube. A microscopic tension and an ensemble Wilson-loop area law require separate derivations.
 
 **In Plain English:**  
 Section 8.3.6.2 formalizes the properties of the QBD calculation regarding flux tube phase simulation.
@@ -2179,7 +2216,7 @@ $$
 
 **III. Separate Flux-Tube Energy Evaluation**
 
-Under the stated flux-tube hypotheses $L=M\ell_0$, $H_{\mathrm{flux}}=\sum_{j=1}^M H_j$ and $\langle\Psi,H_j\Psi\rangle=\epsilon_0$ (**Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" />),
+Under the prescribed flux-tube hypotheses $L=M\ell_0$, $H_{\mathrm{flux}}=\sum_{j=1}^M H_j$ and $\langle\Psi,H_j\Psi\rangle=\epsilon_0$ with each term measured relative to the reference state (**Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" />),
 
 $$
 \begin{aligned}
@@ -2192,7 +2229,19 @@ $$
 \end{aligned}
 $$
 
-**IV. Represented Color Algebra**
+**IV. Static potential from an area law**
+
+For a separate Wilson-loop model, suppose the ensemble average for a rectangle of separation $L$ and time $T$ is positive and has $\ln\langle W(L,T)\rangle=-\sigma_{\mathrm W}LT+o(T)$ as $T\to\infty$. The static-energy prescription then gives
+
+$$
+V_{\mathrm W}(L)=-\lim_{T\to\infty}\frac{\ln\langle W(L,T)\rangle}{T}
+=\lim_{T\to\infty}\left(\sigma_{\mathrm W}L-\frac{o(T)}T\right)
+=\sigma_{\mathrm W}L .
+$$
+
+The coefficient $\epsilon_0/\ell_0$ above is the cost per length of the prescribed tube. Its identification with a physical static tension requires that competing configurations preserve the linear lower bound, or an independently established ensemble area law. Neither the matrix closure nor the cost of that one configuration supplies the ensemble average.
+
+**V. Represented Color Algebra**
 
 $$
 \boxed{\pi_3(\mathfrak g)=\mathfrak{su}(3),\qquad\dim_{\mathbb R}\pi_3(\mathfrak g)=8.}
@@ -2641,44 +2690,68 @@ Section 8.4.7.1 formalizes the properties of the QBD proof regarding mirror puc 
 
 ### 8.4.8 Proof: Chiral Symmetry and Parity Violation {#8.4.8}
 
-:::tip[**Formal Derivation of the Complete Lie Algebra from Discrete Braid Generators**]
+:::tip[**Derivation of the admitted chiral current via projector and charge identities**]
 :::
 
-The proof integrates the component derivations of doublet algebra, chiral invariance, and parity violation to construct the full electroweak structure, verifying the V-A coupling form.
+**I. Model premises and doublet action**
 
-**I. Doublet Representation Embedding**
-The electroweak doublet $(\nu_e, e^-)_L$ is embedded in the tripartite braid as the subspace of writhe-neutral **Lepton Charge Solutions**.
-Basis: $|\nu_e\rangle$ ($w=0, \lambda=(1,1,1)$) and $|e^-\rangle$ ($w=-3, \lambda=(-1,-1,-1)$).
-These states are mixed by $\mathcal{R}_W$ via rung shuffles on the shared 3-cycle **Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" />.
-The operator $\mathcal{R}_W$ acts as $\sigma_x$, flipping between the states while conserving Total Charge $Q = w/3$ modulo the weak mixing angle.
-The writhe-neutral span is the kernel of the total writhe operator $\sum w_i$, projecting out charged excitations.
-
-**II. Chiral Invariant Enforcement**
-For every valid $\mathcal{R}_W$, the path edges $e_1, e_2$ satisfy $H_t(e_1) < H_t(e_2)$ by **Monotonicity of History**.
-This imposes the chiral sign $\chi = -1$ **Chiral Stability** <Ref id="8.4.3" label="§8.4.3" />.
-The acceptance weight for the rewrite is biased by $e^{\chi \mu \cdot \text{stress}}$ Catalytic Tension Factor.
-Since $\chi = -1$, the free energy barrier is reduced, favoring left-handed proposals.
-The exponential form derives from the Arrhenius factor $e^{\Delta S / T}$ with $\Delta S = \chi \ln 2$ for the syndrome bifurcation.
-
-**III. Parity Violation Mechanism**
-The mirror process requires $H_t(e_2) < H_t(e_1)$, contradicting global **Acyclicity**.
-This inversion creates a redundant alternative path, violating $|\Pi(u,v)|=1$ **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
-The violation triggers a syndrome $\sigma = -1$ in the local stabilizer $S_{uv}$.
-The **Correction Map** $C$ projects this state out with probability $\approx 1$.
-The projection is exact because the eigenvalue $\lambda = -1$ falls outside the physical code space under **Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" /> and **Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />.
-For global inversions, the **O(N) Barrier** from **Distributed Rollback Cost** renders the flip infeasible within a single tick.
-
-**IV. SU(2)_L Closure and Current Form**
-The generators $\hat{H}_{x,y,z} \propto \sigma_{x,y,z}$ act exclusively within the left-handed subspace, yielding the current form defined by **Topological Parity Violation** <Ref id="8.4.6" label="§8.4.6" />.
-This effectively projects the algebra onto the left-handed sector:
+Use the admitted coherent weak controls on the represented doublet (**Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" />). The matter basis is $|\nu\rangle,|e\rangle$ with total writhes $0,-3$ and charges $0,-1$. The flavor raising term $T_+=|\nu\rangle\langle e|$ satisfies
 
 $$
-\mathcal{A}_{weak} = P_L \cdot \mathfrak{su}(2) \cdot P_L, \quad \text{where } P_L = \frac{1 - \gamma_5}{2}
+[Q_{\mathrm m},T_+]=(0-(-1))T_+=T_+ .
 $$
 
-The resulting currents take the form $J^\mu_a = \bar{\psi} \gamma^\mu P_L \tau^a \psi$.
-This matches the phenomenological Lagrangian of the Weak Interaction.
-The **Ward Identity** $\partial_\mu J^\mu_a = 0$ is preserved by the rewrite invariance under gauge transformations generated by the closed algebra, as the comonad $R_T$ ensures syndrome-neutrality for adjoint actions.
+For an emission term $T_+\otimes A$ with $[Q_{\mathrm{med}},A]=-A$, the two contributions cancel:
+
+$$
+[Q_{\mathrm m}\otimes I+I\otimes Q_{\mathrm{med}},T_+\otimes A]
+=T_+\otimes A-T_+\otimes A=0 .
+$$
+
+Thus the modeled vertex conserves combined charge when the mediator carries the compensating charge.
+
+**II. Spatial handedness and graph admission**
+
+For an embedded oriented frame with columns $a,b,c$, spatial inversion at fixed time gives
+
+$$
+\det[-a,-b,-c]=-\det[a,b,c],\qquad t'_v-t'_u=t_v-t_u .
+$$
+
+Use the graph-to-Dirac assignment of the admitted chirality and the framed sign convention of **Chiral Stability** <Ref id="8.4.3" label="§8.4.3" />. Suppose the left vertex is admitted and every right-handed vertex candidate in this model has a directed precursor $u\to x\to v$ and a distinct short-path witness with the same ordered endpoints. The two paths contribute distinct terms, so
+
+$$
+|\Pi_{\le2}(u,v)|\ge1+1=2>1
+$$
+
+(**Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />). For a right-handed input entirely in that violating sector, the exact allowed-sector projector satisfies $P_{\mathrm{PUC}}(I-P_{\mathrm{PUC}})=P_{\mathrm{PUC}}-P_{\mathrm{PUC}}^2=0$, so $P_{\mathrm{PUC}}|\psi_R\rangle=0$. This conclusion uses the witness premise for the entire right-handed vertex sector. A finite search with conditional miss $e^{-R}$ and witness prevalence $p_{\mathrm{alt}}$ gives rejection $p_{\mathrm{alt}}(1-e^{-R})$ in the detection-only model (**Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" />).
+
+**III. Parity and the current**
+
+Use the Dirac identities of **Topological Parity Violation** <Ref id="8.4.6" label="§8.4.6" />. On spin indices $P_L=(I-\gamma^5)/2$ and $P_R=(I+\gamma^5)/2$, so
+
+$$
+\gamma^0 P_L\gamma^0
+=\tfrac12(I-\gamma^0\gamma^5\gamma^0)
+=\tfrac12(I+\gamma^5)=P_R .
+$$
+
+The internal generators $T^a$ act on the doublet factor and commute with $P_L$. Hence
+
+$$
+[P_LT^a,P_LT^b]=P_L^2[T^a,T^b]=P_L[T^a,T^b],\qquad
+2J_L^{\mu a}=\bar\psi\gamma^\mu T^a\psi-\bar\psi\gamma^\mu\gamma^5T^a\psi .
+$$
+
+Writing $x_P=(t,-\boldsymbol x)$ and $P^\mu{}_\nu=\operatorname{diag}(1,-1,-1,-1)$, the transformed current is
+
+$$
+\bar\psi(x_P)\gamma^0\gamma^\mu T^aP_L\gamma^0\psi(x_P)
+=P^\mu{}_\nu\bar\psi(x_P)\gamma^\nu T^aP_R\psi(x_P)
+=P^\mu{}_\nu J_R^{\nu a}(x_P).
+$$
+
+The admitted nonzero left vertex with no right partner is therefore parity asymmetric in the specified representation.
 
 Q.E.D.
 
@@ -2893,52 +2966,73 @@ Section 8.5.4.1 formalizes the properties of the QBD proof regarding topological
 
 ### 8.5.5 Proof: Topological Weinberg Angle {#8.5.5}
 
-:::tip[**Calculation via Coupling Definitions and Topological Ratios**]
+:::tip[**Derivation of the mixing parameter via matched couplings and scale conventions**]
 :::
 
-**I. Standard Definition & Isolated Doublet Baseline**
-Under the **Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" /> and the conditions of the **Topological Weinberg Angle** <Ref id="8.5.1" label="§8.5.1" />, the electroweak mixing angle $\theta_W$ is determined by the ratio of the gauge coupling constants:
+**I. Matched amplitudes**
+
+Use the channel assignments of **Topological Complexity Identification** <Ref id="8.5.4" label="§8.5.4" /> and write $p_3=C_3g^2$, $p_4=C_4g'^2$ at a common matching scale, with positive $C_3,C_4$ fixed by the matched amplitudes and any included final-state weights (**Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" />). Then
 
 $$
-\sin^2 \theta_W = \frac{g'^2}{g^2 + g'^2}
+r=\frac{g'^2}{g^2}=\frac{C_3}{C_4}\frac{p_4}{p_3},\qquad
+\sin^2\theta_W=\frac{r}{1+r}.
 $$
 
-where $g$ is the $SU(2)_L$ coupling and $g'$ is the $U(1)_Y$ hypercharge coupling.
+The raw probability ratio is the coupling ratio when $C_3=C_4$.
 
-**II. Substitution of Topological Rewrite Probabilities**
-For an isolated 2-strand electroweak doublet $\{R_4, R_5\}$, we substitute the microscopic transition rates derived in the **Topological Complexity Identification** <Ref id="8.5.4" label="§8.5.4" />:
-* $g^2 \propto p_3$ (3-cycle flavor-changing swap probability)
-* $g'^2 \propto p_4$ (4-cycle doublet phase rotation probability)
+**II. Branch baseline and calibrated comparison**
 
-Under the conditions of the **Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />, the bare combinatorial ratio on the 3-regular Bethe graph yields:
+For the prescribed branch history and acceptance law of **Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />,
 
 $$
-\left(\frac{g'^2}{g^2}\right)_{\text{isolated}} = \frac{p_4}{p_3} \approx \frac{1}{3}
+\frac{p_4}{p_3}
+=\frac{k^{-3}e^{-\mu\rho V_4}}{k^{-2}e^{-\mu\rho V_3}}
+=\frac1k e^{-\mu\rho(V_4-V_3)} .
 $$
 
-Substituting this ratio into the mixing angle functional defines the **isolated doublet geometric baseline**:
+At $k=3$ with equal matching factors and zero friction difference the isolated baseline is $\sin^2\theta_W^{(0)}=(1/3)/(1+1/3)=1/4$. For the benchmark $\mu=0.40$, $\rho=0.029$ and $V_4-V_3=2$,
 
 $$
-\sin^2 \theta_W^{(0)} = \frac{p_4}{p_3 + p_4} = \frac{1/3}{1 + 1/3} = \frac{1/3}{4/3} = \frac{1}{4} = 0.25
+p_4/p_3=e^{-0.0232}/3\simeq0.325689,\qquad
+s_{\mathrm{equal}}=\frac{0.325689}{1+0.325689}\simeq0.245675 .
 $$
 
-**III. Unified Penta-Ribbon Embedding and Grand Unification Boundary**
-When the 2-strand electroweak doublet is embedded alongside the 3-strand color sector $\{R_1, R_2, R_3\}$ into the 5-strand **Penta-Ribbon** ($B_5$) (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />), the hypercharge generator is extended to the global traceless $SU(5)$ generator $Y = \operatorname{diag}(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2})$ (**Minimal GUT Uniqueness** <Ref id="9.1.1" label="§9.1.1" />). 
-
-Trace normalization on $\mathbb{C}^5$ requires $\operatorname{Tr}(T^a T^b) = \frac{1}{2}\delta^{ab}$, yielding $\operatorname{Tr}(Y^2) = \frac{5}{6}$ and the canonical Dynkin normalization factor $c = \sqrt{3/5}$ ($g' = \sqrt{3/5} g_1$). At the grand unification scale $M_{\text{GUT}} \approx 2 \times 10^{16}\text{ GeV}$, where all 24 generators of the Penta-Ribbon share the single unified coupling $g_5 = g_1 = g_2 = g_3$, the grand-unified boundary condition evaluates to:
+To match the reference $s_{\mathrm{ref}}=0.2312$ at that same branch ratio, the factor required is
 
 $$
-\sin^2 \theta_W(M_{\text{GUT}}) = \frac{\frac{3}{5} g_5^2}{g_5^2 + \frac{3}{5} g_5^2} = \frac{3}{8} = 0.375
+\left(\frac{C_3}{C_4}\right)_{\mathrm{match}}
+=\frac{s_{\mathrm{ref}}/(1-s_{\mathrm{ref}})}{p_4/p_3}\simeq0.92336 .
 $$
 
-**IV. Renormalization Group Running to the Electroweak Scale**
-Under standard 1-loop Renormalization Group evolution from the grand unified boundary scale $M_{\text{GUT}}$ down to the low-energy electroweak scale $M_Z = 91.1876\text{ GeV}$:
+**III. Unified normalization**
+
+In the penta-ribbon fundamental representation (**Penta-Ribbon** <Ref id="9.2.1" label="§9.2.1" />), the assigned $Y=\operatorname{diag}(-1/3,-1/3,-1/3,1/2,1/2)$ gives
 
 $$
-\sin^2 \theta_W(M_Z) = \frac{3}{8} - \frac{\alpha(M_Z)}{8\pi} \left[ \frac{110}{3} \ln\left(\frac{M_{\text{GUT}}}{M_Z}\right) \right] \approx 0.2312
+\operatorname{Tr}(Y^2)=3/9+2/4=5/6,\qquad
+T_Y=\sqrt{3/5}\,Y,\qquad \operatorname{Tr}(T_Y^2)=1/2 .
 $$
 
-matching the empirical CODATA / PDG benchmark at the $Z$-pole ($\sin^2 \theta_W^{\text{exp}} = 0.23122 \pm 0.00004$) within observational precision.
+For the common unified coupling $g_U$, matching $g_1 T_Y=g'Y$ gives $g'=\sqrt{3/5}\,g_1$. Setting $g_1=g=g_U$ at the unified boundary therefore yields $(3/5)/(1+3/5)=3/8$.
+
+**IV. One-loop benchmark at fixed spectrum**
+
+As a separate comparison, take one-loop Standard Model coefficients $b_1=41/10$, $b_2=-19/6$ in unified hypercharge normalization and omit thresholds. Here $b_1=(3/5)b_Y$ for the [one-loop Standard Model coefficients](https://link.springer.com/article/10.1140/epjc/s10052-019-6878-1). Write $L=\ln(M_U/M_Z)$ and $\alpha_i=g_i^2/(4\pi)$. Integrating $\mathrm d(\alpha_i^{-1})/\mathrm d\ln\mu=-b_i/(2\pi)$ gives
+
+$$
+\alpha_i^{-1}(M_Z)=\alpha_U^{-1}+\frac{b_iL}{2\pi},\qquad
+\alpha^{-1}=\tfrac53\alpha_1^{-1}+\alpha_2^{-1},\qquad
+s=\alpha\alpha_2^{-1}.
+$$
+
+Eliminating $\alpha_U^{-1}$,
+
+$$
+s=\frac38-\frac{5(b_1-b_2)\alpha}{16\pi}L
+=\frac38-\frac{(109/3)\alpha}{16\pi}L .
+$$
+
+With $M_U=2\times10^{16}\,\mathrm{GeV}$, $M_Z=91.1876\,\mathrm{GeV}$ and $\alpha^{-1}=127.95$, this gives $s\simeq0.18845$. A low-energy match to $0.2312$ therefore requires other matching or running inputs beyond this benchmark.
 
 Q.E.D.
 
@@ -3311,14 +3405,14 @@ Section 8.6.6.1 formalizes the properties of the QBD proof regarding local state
 
 ### 8.6.6.2 Calculation: SU(2) DoF Verification {#8.6.6.2}
 
-:::note[**Computational Verification of the Multiplier $M=7$ via Channel Enumeration**]
+:::note[**Verification of the Assigned Multiplier via Channel Enumeration**]
 :::
 
-Enumeration of the local degrees of freedom established by **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" /> is based on the normalization protocols verified in **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" /> is based on the following protocols:
+The calculation lists the labels of **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" /> that enter the conditional channel sum in **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" />.
 
-1.  **Geometric Definition:** The algorithm defines the components of a single 3-cycle quantum, consisting of 3 directed edges.
-2.  **Channel Assignment:** The protocol assigns valid interaction types to the geometry: 2 flavor swap operations (flip/anti-flip) for each of the 3 edges, and 1 global spin stabilizer check.
-3.  **Summation:** The simulation aggregates these distinct channels to verify the total combinatorial multiplier $M$.
+1.  **Edge Labels:** List the three directed edge labels of the local 3-cycle in the enumeration.
+2.  **Channel Assignment:** Attach two flavor labels to each edge and add one row for a registered spin-stabilizer outcome.
+3.  **Summation:** Count the edge and flavor pairs, then include the additional row.
 
 ```python
 import pandas as pd
@@ -3417,7 +3511,7 @@ PASS: Combinatorial count matches the SU(2) multiplier (M=7).
 ```
 
 **Conclusion:**
-The enumeration explicitly lists the interaction channels: 6 active rewrite channels (3 edges $\times$ 2 operations) and 1 passive stabilizer check. The sum yields a total local degree of freedom count of 7. This matches the expected multiplier $M=7$ used in the coupling constant derivation, confirming that the value is derived from precise combinatorial counting of the available topological modes.
+The edge-only enumeration has three labels. The expanded list has six edge and flavor pairs and one extra row, giving seven labels. Using all seven in the coupling requires the distinct additive outcomes or orthogonal equal-weight contributions specified in the proof.
 
 **In Plain English:**  
 Section 8.6.6.2 formalizes the properties of the QBD calculation regarding su(2) dof verification.
@@ -3426,42 +3520,65 @@ Section 8.6.6.2 formalizes the properties of the QBD calculation regarding su(2)
 
 ### 8.6.7 Proof: Emergent Gauge Coupling {#8.6.7}
 
-:::tip[**Formal Synthesis of Factors into the Analytical Expression via $g$**]
+:::tip[**Weak-Coupling Calibration via Channel Weights and Haar Normalization**]
 :::
 
-**I. Component Assembly**
-The proof synthesizes the results of the preceding lemmas to derive the value of the weak coupling constant $g$.
-1.  **Identity:** The coupling satisfies $g = \sqrt{P(\mathcal{R}_W)}$ under the **Probabilistic Coupling Identity** <Ref id="8.6.2" label="§8.6.2" />, which is trace normalized under **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" />.
-2.  **Probability Definition:** The probability $P$ is the product of the geometric volume, the topological weight, and the active site density.
+**I. Coherent Rotation and Trace Convention**
 
-    $$
-    P(\mathcal{R}_W) = (\text{Volume}) \times (\text{Weight}) \times (\text{Density})
-    $$
-
-**II. Analytical Calculation**
-We substitute the values derived from **Geometric Normalization** <Ref id="8.6.4" label="§8.6.4" /> and **Entropic Dimensionality** <Ref id="8.6.5" label="§8.6.5" />:
+For the normalized two-state rotation of **Probabilistic Coupling Identity** <Ref id="8.6.2" label="§8.6.2" />, write $x=g_2t/2$. With the Pauli swap $\sigma^1$ and $(\sigma^1)^2=I$,
 
 $$
-g = \sqrt{4\pi \cdot \alpha_{topo} \cdot (7 \cdot \rho_3^*)}
+e^{-ix\sigma^1}=\cos x\,I-i\sin x\,\sigma^1,\qquad
+|\langle 1|e^{-ix\sigma^1}|0\rangle|^2=\sin^2 x.
 $$
 
-$$
-g = \sqrt{4\pi \cdot \frac{\ln 2}{4} \cdot 7 \cdot 0.029}
-$$
+For $x\ge 0$, $x-\sin x=\int_0^x(1-\cos u)\,\mathrm du\le x^3/6$ and $|x+\sin x|\le 2x$. By evenness this gives $0\le x^2-\sin^2 x\le x^4/3$ for real $x$. The generator convention of **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" /> fixes
 
 $$
-g = \sqrt{\pi \ln 2 \cdot 0.203}
+T^a=\frac{\sigma^a}{2},\qquad
+\operatorname{Tr}(T^aT^b)=\frac14\operatorname{Tr}(\sigma^a\sigma^b)
+=\frac12\delta^{ab}.
 $$
 
+**II. Haar Measure and Channel Sum**
+
+In the Hopf coordinates of **Geometric Normalization** <Ref id="8.6.4" label="§8.6.4" />, $0\le\eta\le\pi/2$ and both angular coordinates range over $[0,2\pi)$. Thus
+
 $$
-g = \sqrt{2.1775 \cdot 0.203} = \sqrt{0.442} \approx 0.664
+\operatorname{Vol}(SU(2))=(2\pi)^2\int_0^{\pi/2}\cos\eta\sin\eta\,\mathrm d\eta
+=4\pi^2\left[\frac{\sin^2\eta}{2}\right]_0^{\pi/2}=2\pi^2 .
 $$
 
-**III. Empirical Comparison**
-The derived value $g \approx 0.664$, which incorporates the local channels from **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" />, is compared to the experimental value of the weak coupling constant at the Z-mass scale, $g_{exp} \approx 0.653$.
-The discrepancy is $\frac{0.664 - 0.653}{0.653} \approx 1.7\%$.
-This deviation falls strictly within the $1\sigma$ variance of the triplet density $\sigma_{\rho_3^*} \approx 0.005$ derived from the stochastic master equation.
-This confirms that the weak coupling strength is not a free parameter but a geometric consequence of the vacuum's saturation density.
+The Haar probability measure divides this volume form by $2\pi^2$. In the separately specified coupling convention, $\alpha_2=g_2^2/(4\pi)$. Assume the matched contribution per channel is $w=\alpha_{\mathrm{topo}}\rho_3^*$ with the weight $\alpha_{\mathrm{topo}}=\ln(2)/4$ of **Entropic Dimensionality** <Ref id="8.6.5" label="§8.6.5" />. If channels are exclusive recorded outcomes, their weights sum. For orthogonal equal-weight contributions $A_j\psi$ the same sum follows from
+
+$$
+\left\|\sum_{j=1}^{M} A_j\psi\right\|^2
+=\sum_{j,\ell}\langle A_\ell\psi,A_j\psi\rangle
+=\sum_{j=1}^{M}\|A_j\psi\|^2=Mw .
+$$
+
+In **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" />, the edge-only label count is $M=3$. Two flavor labels per edge and one distinct recorded stabilizer outcome give $M=3\cdot 2+1=7$. The $M=7$ coupling calibration assumes that this additional outcome contributes the same matched weight and satisfies the stated additivity premise.
+
+**III. Fixed Benchmark and Density Dependence**
+
+With the matching rule $\alpha_2=Mw$, the coupling is
+
+$$
+\begin{aligned}
+g_2(M,\rho_3^*)&=\sqrt{4\pi\alpha_{\mathrm{topo}}M\rho_3^*}
+=\sqrt{\pi\ln(2)M\rho_3^*},\\
+g_2(3,0.029)&=\sqrt{0.087\pi\ln(2)}\simeq0.43525853,\\
+g_2(7,0.029)&=\sqrt{0.203\pi\ln(2)}\simeq0.66486839.
+\end{aligned}
+$$
+
+At $t=1$ and the latter coupling, $x<0.333$ gives a quadratic-rotation remainder bounded by $(0.333)^4/3<0.00410$. The fixed reference comparison gives $(0.66486839-0.6530)/0.6530\simeq1.82\%$. For the specified density endpoints $0.024$ and $0.034$, monotonicity yields
+
+$$
+\sqrt{7\pi\ln(2)\,(0.024)}\le g_2(7,\rho_3^*)\le
+\sqrt{7\pi\ln(2)\,(0.034)},\qquad
+[g_{\min},g_{\max}]\simeq[0.6048,0.7199].
+$$
 
 Q.E.D.
 
@@ -3472,14 +3589,14 @@ Section 8.6.7 formalizes the properties of the QBD proof regarding emergent gaug
 
 ### 8.6.7.1 Calculation: Numerical Consistency Check {#8.6.7.1}
 
-:::note[**Computational Verification of the Predicted Coupling against Experimental Data through Numerical Consistency Check**]
+:::note[**Evaluation of the Matched Coupling via Fixed Inputs**]
 :::
 
-Validation of the analytical coupling derivation established in the **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" /> is based on the following protocols:
+The calculation evaluates the matching formula of **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" /> with the expanded channel count from **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" />.
 
-1.  **Constant Initialization:** The algorithm initializes the fundamental constants: $\alpha_{topo} = \ln 2 / 4$, $M=7$, and the equilibrium vacuum density $\rho^* \approx 0.0290$ with a variance $\sigma \approx 0.0050$.
-2.  **Coupling Calculation:** The protocol computes the theoretical weak coupling constant using the relation $g = \sqrt{4\pi \alpha_{topo} M \rho^*}$.
-3.  **Benchmarking:** The calculated mean and its $1\sigma$ confidence bounds are compared against the experimental benchmark $g_{exp} \approx 0.6530$ to determine consistency and relative error. This verifies the result established in  **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" />.
+1.  **Constant Initialization:** Fix $\alpha_{\mathrm{topo}}=\ln(2)/4$ and $M=7$.
+2.  **Coupling Calculation:** Evaluate $g=\sqrt{4\pi\alpha_{\mathrm{topo}}M\rho_3^*}$ at $\rho_3^*=0.0290$ and at the endpoints $0.0290\pm0.0050$.
+3.  **Benchmarking:** Compare the central evaluation and the range of endpoint values with the fixed reference $g_{\rm ref}=0.6530$.
 
 ```python
 import math
@@ -3585,7 +3702,7 @@ PASS: Experimental value falls within the natural vacuum fluctuation range.
 ```
 
 **Conclusion:**
-The calculation yields a predicted mean coupling of $g \approx 0.6649$. This value deviates from the experimental benchmark ($0.6530$) by approximately 1.82%, which is within the defined 2% target accuracy. The calculated $1\sigma$ confidence interval $[0.6048, 0.7199]$ fully encompasses the experimental value. This confirms that the derived coupling constant is consistent with physical observations within the natural variance of the vacuum density.
+The central evaluation is $g\simeq0.6649$, about $1.82\%$ above the reference. The endpoint evaluations give $[0.6048,0.7199]$, which contains $0.6530$. This is the range obtained by varying only the prescribed density over the stated interval. The calculation assigns no confidence level to that range.
 
 **In Plain English:**  
 Section 8.6.7.1 formalizes the properties of the QBD calculation regarding numerical consistency check.
@@ -3843,14 +3960,14 @@ Section 8.7.5.1 formalizes the properties of the QBD proof regarding topological
 
 ### 8.7.5.2 Calculation: Yukawa Hierarchy Verification {#8.7.5.2}
 
-:::note[**Computational Verification of Fermion Mass Hierarchies via Monte Carlo**]
+:::note[**Evaluation of Assigned Mass Ratios via Shared Density Sampling**]
 :::
 
-Validation of the topological mass generation mechanism established by **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" /> is based on the scaling relations verified in **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" /> is based on the following protocols:
+The calculation uses **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" /> as the fixed-scale reference and applies its own density-dependent denominator for the sweep. The local reservoir matching in **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" /> specifies the separate conditions for a density-dependent VEV.
 
-1.  **Scale Calibration:** The algorithm calibrates the mass scale using the electron mass ($m_e \approx 0.511$ MeV for 3 cycles) to determine $\kappa_m$ and the vacuum scale $N_{scale}$.
-2.  **Complexity Assignment:** The protocol assigns net topological complexities $N_{net}$ to three generation representatives: Generation 1 ($N=1$), Generation 2 ($N=4$), and Generation 3 ($N=10^6$, reflecting quadratic torsion scaling).
-3.  **Monte Carlo Simulation:** The simulation performs 1000 runs, sampling the vacuum density $\rho^*$ from a normal distribution to compute the distribution of Yukawa couplings $y_f$ and resulting masses $m_f$.
+1.  **Scale Calibration:** Set $v_{\rm calib}=246.22\,\mathrm{GeV}$, $\kappa_m=0.0001703\,\mathrm{GeV}$ per quantum and $N_{\rm scale}=v_{\rm calib}/\kappa_m$.
+2.  **Complexity Assignment:** Use $N_{\rm net}=1,4,10^6$ for the three representative inputs.
+3.  **Monte Carlo Evaluation:** Generate 1,000 seeded density draws with location $0.029$ and standard deviation $0.005$. At each shared density evaluate $y=N_{\rm net}/(N_{\rm scale}\sqrt{\rho_3^*})$ and $m=yv_{\rm calib}$ for all three representatives.
 
 ```python
 import numpy as np
@@ -3900,7 +4017,7 @@ Gen3_τ/b/t           | 1000000  | 4.100022 | 1009.507 | 89.239
 ```
 
 **Conclusion:**
-The simulation confirms the vast hierarchy of fermion masses. Generation 1 yields a mass of $\sim 1$ MeV, consistent with light quarks. Generation 2 yields $\sim 4$ MeV (before QCD adjustments). Generation 3 yields $\sim 1009$ GeV, which scales to the observed Top quark mass ($\sim 173$ GeV) when accounting for specific torsion factors. The hierarchy ratio between Generation 3 and Generation 1 is approximately $10^6$. The data validates that the quadratic scaling of writhe complexity ($N \propto w^2$) combined with the vacuum supply ratio naturally generates the six-order-of-magnitude span observed in the fermion spectrum.
+The displayed masses summarize the specified inputs and density sweep. For each shared density draw, $m_2/m_1=4$ and $m_3/m_1=10^6$ because all three masses have the same density factor. The absolute values depend on the selected normalization. Connecting these representative complexities and the resulting masses to particular fermions requires an additional assignment.
 
 **In Plain English:**  
 Section 8.7.5.2 formalizes the properties of the QBD calculation regarding yukawa hierarchy verification.
@@ -3990,17 +4107,110 @@ Section 8.7.6.1 formalizes the properties of the QBD proof regarding sensitivity
 
 ### 8.7.7 Proof: Emergent Mass Generation {#8.7.7}
 
-:::tip[**Formal Proof of the Higgs Mechanism via Geometric Condensation**]
+:::tip[**Effective Mass Relations via Local Reservoir Matching**]
 :::
 
-**I. Ignition and VEV**
-The master equation **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" /> enables tunneling to $\rho_3^*$. The rate $P_{\mathrm{ign}} \sim N^2 \exp(-\frac{N}{\rho_3^* V_\beta})$ nucleates the condensate with $P_{\mathrm{ign}} = 1 - (1 - 1/2)^{N^2/2} \approx 1$ for large $N$. The $N^2$ scaling follows from bipartite same-parity pairs. The VEV $v = \sqrt{2 \kappa_m \rho_3^* \frac{V_\xi}{N}}$ acts as $\langle \phi \rangle = \frac{v}{\sqrt{2}}$ under **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" />. The potential $V(\phi) = \mu^2 |\phi|^2 + \lambda |\phi|^4$ emerges from $F = U - TS$, with $\mu^2 \propto -\rho_3^*$ from the master equation quadratic term and $\lambda \sim \mu^2 \rho_3^*$ from saturation, as established under **Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />.
+**I. Local Scale and Effective Minimum**
 
-**II. Goldstone Breaking**
-Broken $SU(2) \times U(1)$ roots produce three Goldstone modes $T^{1,2}$ and $T^3 - \tan \theta_W Y$. These manifest as zero-modes in the stabilizer subgroup $\text{Stab}(\rho_3^*)$ preserving 3-cycle density. Counting rewrite-invariant orbits under the comonad $R_T$ (**Awareness Comonad** <Ref id="4.3.5" label="§4.3.5" />) results in $\dim(\text{Stab}_{\text{broken}}) = 3$. These modes are absorbed into $W^\pm$ and $Z$ longitudinal components, with error propagation satisfying the bounds derived in **Sensitivity and Error Propagation** <Ref id="8.7.6" label="§8.7.6" />.
+Take the local reservoir relation of **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" /> with positive fixed scales and capacity. Then
 
-**III. Mass Terms and Lagrangian Synthesis**
-Boson masses $m_{W/Z}$ emerge from coupling **Boson Mass Prediction** <Ref id="8.7.3" label="§8.7.3" />, verified against 100 RPV samples (avg $m_W=81.7 \pm 1.5$, $\chi^2=1.12$, skew $\sim 1.87$). Fermion masses $y_f v$ arise from demand-supply equilibrium (**Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" />), with hierarchy $(N_t/N_u)^2 \sim 10^6$. Diagonalization via primes reproduces CKM hierarchy. The effective Lagrangian $\mathcal{L}_{\mathrm{EW}} = |D_\mu \phi|^2 - V(\phi) + \bar{\psi} i \gamma^\mu D_\mu \psi + y_f \bar{\psi} \phi \psi$ is derived from tick evolution $\mathcal{U}$ (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). The covariant derivative $D_\mu$ incorporates emergent gauge fields from cycle currents $J_\mu^a = \text{Tr}(\rho_3^* [T^a, \partial_\mu G_t])$, encoding gauge curvature $F^a_{\mu\nu} = \partial_\mu A^a_\nu - \partial_\nu A^a_\mu + g f_{abc} A^b_\mu A^c_\nu$. Gauge invariance is maintained in the code space via the comonad $R_T$, ensuring $R_T(\delta \mathcal{L}) = 0$ under infinitesimal Lie transformations.
+$$
+v^2=2\kappa_m E_*N_\xi\rho_3^*,\qquad
+[2\kappa_m E_*N_\xi\rho_3^*]=\mathrm{GeV}^2,\qquad
+E_*N_\xi=\frac{(246\,\mathrm{GeV})^2}{2(1.70\times10^{-4}\,\mathrm{GeV})(0.029)}
+\simeq6.14\times10^9\,\mathrm{GeV}.
+$$
+
+Writing the same calibration as $v^2=E_*^{\mathrm{Pl}}M_{\mathrm{Pl}}\rho_3^*$ fixes $E_*^{\mathrm{Pl}}M_{\mathrm{Pl}}=2\kappa_m E_*N_\xi\simeq 2.087\times10^6\,\mathrm{GeV}^2$.
+
+Assume an effective scalar doublet with potential $V(r)=-\mu_H^2r+\lambda_Hr^2$, $r=\phi^\dagger\phi$, and $\mu_H^2,\lambda_H>0$. Its minimum satisfies
+
+$$
+V(r)=\lambda_H\left(r-\frac{\mu_H^2}{2\lambda_H}\right)^2-\frac{\mu_H^4}{4\lambda_H},\qquad
+r_{\min}=\frac{\mu_H^2}{2\lambda_H}=\frac{v^2}{2},\qquad
+v^2=\frac{\mu_H^2}{\lambda_H}.
+$$
+
+**II. Charged and Neutral Eigenvalues**
+
+In the effective doublet model of **Boson Mass Prediction** <Ref id="8.7.3" label="§8.7.3" />, let $\phi_0=(0,v/\sqrt{2})^\mathsf{T}$ and $Y=\tfrac12 I$. Acting on $\phi_0$ with the gauge part of the covariant derivative gives
+
+$$
+\left(g\sum_{a=1}^{3}W_\mu^a\frac{\sigma^a}{2}+g'B_\mu Y\right)\phi_0
+=\frac{v}{2\sqrt{2}}\begin{pmatrix}
+g(W_\mu^1-iW_\mu^2)\\
+-gW_\mu^3+g'B_\mu
+\end{pmatrix}.
+$$
+
+The resulting quadratic term and neutral mass matrix are
+
+$$
+\begin{aligned}
+\mathcal L_{\text{mass}}
+&=\frac{v^2}{8}\left[g^2(W_\mu^1W^{1\mu}+W_\mu^2W^{2\mu})+
+(gW_\mu^3-g'B_\mu)(gW^{3\mu}-g'B^\mu)\right],\\
+M_{\text{neutral}}^2
+&=\frac{v^2}{4}\begin{pmatrix}g^2&-gg'\\-gg'&(g')^2\end{pmatrix}.
+\end{aligned}
+$$
+
+For $g,g'>0$ its determinant is zero and its trace is $v^2(g^2+(g')^2)/4$. Therefore
+
+$$
+m_W=\frac{gv}{2},\qquad
+m_Z=\frac{v\sqrt{g^2+(g')^2}}{2}=\frac{m_W}{\sqrt{1-s}},\qquad
+m_\gamma=0,\qquad
+s=\frac{(g')^2}{g^2+(g')^2}.
+$$
+
+The two real charged directions combine as $W_\mu^\pm=(W_\mu^1\mp iW_\mu^2)/\sqrt2$. The neutral null vector is proportional to $(g',g)^\mathsf{T}$. The unbroken generator is $Q=T^3+Y$, since $Q\phi_0=(-1/2+1/2)\phi_0=0$. The gauge action therefore has $4-1=3$ broken directions in this doublet model. For the assigned fermion masses in **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" />,
+
+$$
+N_{\text{scale}}=\frac{v}{\kappa_m},\qquad
+y_f=\frac{N_{\text{net},f}}{N_{\text{scale}}}
+=\frac{\kappa_m N_{\text{net},f}}{v},\qquad
+m_f=y_fv=\kappa_m N_{\text{net},f}.
+$$
+
+**III. Implicit Response and Averaging**
+
+At fixed $\Lambda,\lambda_{\text{cat}}$, differentiate the scalar closure (**Sensitivity and Error Propagation** <Ref id="8.7.6" label="§8.7.6" />)
+
+$$
+\begin{aligned}
+F(\rho,\mu)&=(\Lambda+9\rho^2)e^{-6\mu\rho}-\frac{\rho}{2}-3\lambda_{\text{cat}}\rho^2,\\
+F_\mu&=-6\rho(\Lambda+9\rho^2)e^{-6\mu\rho},\\
+F_\rho&=18\rho e^{-6\mu\rho}-6\mu(\Lambda+9\rho^2)e^{-6\mu\rho}-\frac12-6\lambda_{\text{cat}}\rho .
+\end{aligned}
+$$
+
+At a simple root, $0=\frac{\mathrm d}{\mathrm d\mu}F(\rho^*(\mu),\mu)=F_\rho\frac{\mathrm d\rho^*}{\mathrm d\mu}+F_\mu$ gives $\frac{\mathrm d\rho^*}{\mathrm d\mu}=-F_\mu/F_\rho$. At fixed matching coefficients take $g\propto\sqrt{\rho_3^*}$ (**Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" />). Together with the reservoir model,
+
+$$
+\frac{\delta v}{v}=\frac{\delta g}{g}=\frac12\frac{\delta\rho}{\bar\rho},\qquad
+\frac{\delta m_W}{m_W}=\frac{\delta g}{g}+\frac{\delta v}{v}=\frac{\delta\rho}{\bar\rho}
+$$
+
+to first order about $\bar\rho$. For $n$ independent patch densities with the same variance $\sigma_\rho^2$, their average $\bar R$ satisfies
+
+$$
+\operatorname{Var}(\bar R)=\frac{1}{n^2}\sum_{j=1}^n\sigma_\rho^2=\frac{\sigma_\rho^2}{n},\qquad
+\frac{\sigma_{\bar R}}{\bar\rho}
+=\frac{0.005}{0.029\sqrt{4\times10^5}}\simeq0.0273\%.
+$$
+
+This gives $0.0273\%$ for the relative first-order charged-mass spread and $0.0136\%$ each for $v$ and $g$. For the neutral mass, expand $\delta m_Z/m_Z=\delta\rho/\bar\rho+\delta s/[2(1-\bar s)]$ to obtain
+
+$$
+\frac{\operatorname{Var}(m_Z)}{m_Z(\bar\rho,\bar s)^2}
+\simeq
+\frac{\operatorname{Var}(\rho)}{\bar\rho^2}
++\frac{\operatorname{Var}(s)}{4(1-\bar s)^2}
++\frac{\operatorname{Cov}(\rho,s)}{\bar\rho(1-\bar s)} .
+$$
+
+Here the joint fluctuations must be taken at the same averaging scale. A negative covariance lowers the sum of the two marginal contributions. Its value requires a joint density and mixing model.
 
 Q.E.D.
 

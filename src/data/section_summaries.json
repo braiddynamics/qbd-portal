@@ -277,7 +277,7 @@
   "10.10": {
     "id": "10.10",
     "title": "Formal Synthesis",
-    "summary": "Formulates the mathematical models and pre-geometric causal posets of Quantum Braid Dynamics."
+    "summary": "The assigned orthogonal logical pair lies in the common sector $W=-3$, $Q=-1$. Its gap, coherent exchange and phase controls, and calibrated basis readout give distinct criteria for a physical encoding. For a specified finite CSS check family, the prescribed signs must be compatible with the check dependencies, and incidence columns determine the single-edge syndromes. A distance claim additionally needs the action of low-weight zero-syndrome errors on the code."
   },
   "10.2": {
     "id": "10.2",
@@ -677,22 +677,22 @@
   "6.5": {
     "id": "6.5",
     "title": "Formal Synthesis",
-    "summary": "The derivation establishes that fermionic excitations rise from the ground up as topologically protected tripartite braids. Under the pressure of the vacuum's constant rewrite activity, the tripartite braid emerges as the unique three-stranded configuration that is both entropically favored and capable of embedding the non-abelian algebraic symmetries of QCD."
+    "summary": "The persistence argument applies to localized candidates for which a topologically trivial state admits a certified reduction and the reduced state obeys the scalar relaxation law. A preserved invariant distinguishes a protected state from a target with a different invariant. Within the specified ribbon family, three is the least ribbon count meeting the stated persistence and non-Abelian color conditions when the tripartite candidate admits the required controls. Lower-rank exclusions, the ordering of formation weights, and physical admission enter as separate steps."
   },
   "7.5": {
     "id": "7.5",
     "title": "Formal Synthesis",
-    "summary": "The derivation decodes the geometric DNA of the fermion, deriving physical quantum numbers directly from the intrinsic topology of the tripartite braid. **Spin** arises from the parity of rung excitations, enforcing antisymmetric exchange statistics, **Exclusion** manifests as a causal imperative that annihilates dual occupancy to prevent paradoxical two-cycles, and **Electric Charge** scales as normalized writhe, yielding the exact integer and fractional values of the Standard Model."
+    "summary": "The exchange calculation gives the spinor phase $-1$ when the supplied representation identifies a framed exchange with the full spinor rotation and accounts for the permutation of output labels. The rung stabilizer tracks parity. The two-slot exclusion calculation gives zero projected weight for double occupation when the encoding represents that occupation by reciprocal edges. Applying these conclusions to physical fermions requires the corresponding exchange and mode encodings."
   },
   "8.8": {
     "id": "8.8",
     "title": "Formal Synthesis",
-    "summary": "The derivation establishes the gauge symmetries of the Standard Model from the topological dynamics of the causal graph. Identifying the unitary rewrite operations on the braid structure with the generators of Lie algebras bridges the gap between discrete graph rewrites and continuous gauge fields, yielding the Weinberg angle $\\sin^2 \\theta_W \\approx 0.231$ and the coupling constant $g \\approx 0.664$ directly from vacuum density and cycle ratios."
+    "summary": "A specified continuous one-parameter unitary action fixes its Hermitian generator on the finite invariant sector. Adjacent matrix exchanges alone generate a conjugate of $\\mathfrak{so}(n)$, while adjoining the independent diagonal imbalances generates $\\mathfrak{su}(n)$. In the tripartite model this gives eight color directions if the physical sector admits the specified controls. The assigned flux-tube cost is linear in length, and the ensemble derivation of a static potential assumes a separate Wilson-loop area law."
   },
   "9.7": {
     "id": "9.7",
     "title": "Formal Synthesis",
-    "summary": "The derivation unifies the fragmented forces of the Standard Model into a single topological progenitor, the **Penta-Ribbon**. Local rewrites of this five-strand braid generate the $SU(5)$ algebra directly from braid commutation generators, while its stable knot configurations naturally reproduce the three generations of quarks and leptons as discrete metastable wells in the complexity landscape."
+    "summary": "Among compact simple types of minimum rank satisfying the complex-representation criterion, the block embedding and branching select $A_4$. The assigned $\\mathbf{\\bar 5}\\oplus\\mathbf{10}$ representation cancels the perturbative cubic anomaly. On the admitted five-state register, four adjacent exchanges and four diagonal imbalances generate the 24-dimensional represented $\\mathfrak{su}(5)$ algebra. The dual and exterior-square actions transfer to physical multiplets when the corresponding graph sectors admit the stated intertwiners."
   },
   "10.9": {
     "id": "10.9",

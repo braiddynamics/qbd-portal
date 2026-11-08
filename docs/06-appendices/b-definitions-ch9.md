@@ -248,106 +248,86 @@ Section 9.1.4.1 formalizes the properties of the QBD proof regarding candidate e
 
 ### 9.1.5 Proof: Minimal GUT Uniqueness {#9.1.5}
 
-:::tip[**Formal Verification of Representation Decomposition as Anomaly Cancellation**]
+:::tip[**Minimal Rank via Weyl Duality and Cubic Traces**]
 :::
 
-The proof synthesizes the embedding and representation analyses to establish $SU(5)$ as the unique solution and verifies its consistency with the Standard Model content.
+**I. Rank and the Block Embedding**
 
-**I. Rank and Embedding**
-$SU(5)$ has rank 4, satisfying the **Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />. The embedding of $G_{SM}$ is realized by placing $SU(3)_C$ in the upper $3 \times 3$ block and $SU(2)_L$ in the lower $2 \times 2$ block of the $5 \times 5$ unitary matrices. The $U(1)_Y$ generator is identified with the traceless diagonal matrix commuting with both blocks:
+The Cartan subalgebra of the Standard Model Lie algebra has dimension $2+1+1=4$ (**Rank Conditions** <Ref id="9.1.2" label="§9.1.2" />). An injective homomorphism sends it to a commuting subalgebra of the compact target Lie algebra, so the target rank is at least four (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />).
 
-$$
-Y = \sqrt{\frac{3}{5}} \operatorname{diag}\left(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)
-$$
-
-This generator is traceless ($\sum Y_{ii} = -1 + 1 = 0$) and orthogonal to the Cartan generators of $SU(3)$ and $SU(2)$.
-
-The normalization coefficient $C = \sqrt{3/5}$ is formally derived by demanding that the $U(1)_Y$ generator satisfies the same normalization condition as the non-abelian generators of $SU(5)$, namely $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$. Let $Y = C \operatorname{diag}(-1/3, -1/3, -1/3, 1/2, 1/2)$. Computing the trace of its square yields:
+The block map at rank four is
 
 $$
-\operatorname{Tr}(Y^2) = C^2 \left[ 3\left(-\frac{1}{3}\right)^2 + 2\left(\frac{1}{2}\right)^2 \right] = C^2 \left( \frac{1}{3} + \frac{1}{2} \right) = C^2 \frac{5}{6}
+(A,B,z)\longmapsto\operatorname{diag}(z^{-2}A,z^3B),
+\qquad
+\det(z^{-2}A)\det(z^3B)=z^{-6}z^6=1
 $$
 
-Setting this equal to $\frac{1}{2}$ to preserve the normalization of the Lie algebra generators:
+for $A\in SU(3)$, $B\in SU(2)$ and $z\in U(1)$. If the image is $I_5$, then $A=z^2 I_3$, $B=z^{-3}I_2$, and $z^6=1$. Conversely each such triple maps to the identity. For a block pair $(U,V)$ with $\det U\det V=1$, choose $z^6=(\det U)^{-1}$. Then $A=z^2U$ and $B=z^{-3}V$ both have determinant one and give the desired block pair. The image is $S(U(3)\times U(2))$ with kernel of order six. Its Lie algebra contains the required direct sum.
+
+**II. Rank-Four Candidate Elimination**
+
+The compact simple types of rank four are $A_4,B_4,C_4,D_4,F_4$. For an irreducible of highest weight $\lambda$ its dual has highest weight $-w_0\lambda$, with $w_0$ the longest Weyl element (**Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />). In $B_4,C_4,F_4$ the coordinate reflections multiply to $-I$. For $D_4=\mathfrak{so}(8)$, the reflections in $e_i-e_j$ and $e_i+e_j$ satisfy
 
 $$
-C^2 \frac{5}{6} = \frac{1}{2} \implies C^2 = \frac{3}{5} \implies C = \sqrt{\frac{3}{5}}
+(x_i,x_j)\xmapsto{s_{e_i-e_j}}(x_j,x_i)
+\xmapsto{s_{e_i+e_j}}(-x_i,-x_j).
 $$
 
-This establishes the canonical GUT normalization for the hypercharge generator, ensuring that the gauge coupling constants satisfy $g_1 = \sqrt{5/3} g'$ at the unification scale.
+The pairs $(1,2)$ and $(3,4)$ give $-I$, which sends every positive root to a negative root, so $w_0=-I$. Thus $-w_0\lambda=\lambda$ for all four alternatives. In particular the vector and both half-spin representations of $\operatorname{Spin}(8)$, each of dimension eight, are self-conjugate. For $A_4$, the central element $\zeta I_5$, $\zeta=e^{2\pi i/5}$, acts by $\zeta$ on the fundamental and by $\zeta^{-1}$ on the dual. These distinct central actions preclude an isomorphism.
 
-**II. Fermion Representation Decomposition**
-The 15 Weyl fermions of one generation fit exactly into the sum of the antifundamental ($\mathbf{\bar{5}}$) and the antisymmetric tensor ($\mathbf{10}$) representations, as constrained by **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />.
-1.  **$\mathbf{\bar{5}}$ Decomposition:**
-    The antifundamental representation transforms as $(\mathbf{1}, \mathbf{2}^*) \oplus (\mathbf{3}^*, \mathbf{1})$ under $SU(3) \times SU(2)$.
+**III. Fermion Branching**
 
-    $$
-    \mathbf{\bar{5}} \to (\mathbf{\bar{3}}, \mathbf{1})_{1/3} \oplus (\mathbf{1}, \mathbf{2})_{-1/2}
-    $$
-
-    Matches: Right-handed down quarks $d^c$ and Lepton doublet $L$.
-2.  **$\mathbf{10}$ Decomposition:**
-    The $\mathbf{10}$ is the antisymmetric part of $\mathbf{5} \times \mathbf{5}$.
-
-    $$
-    \mathbf{10} \to (\mathbf{3}, \mathbf{2})_{1/6} \oplus (\mathbf{\bar{3}}, \mathbf{1})_{-2/3} \oplus (\mathbf{1}, \mathbf{1})_{1}
-    $$
-
-    Matches: Quark doublet $Q$, Right-handed up quarks $u^c$, Right-handed electron $e^c$.
-    Sum of states: $5 + 10 = 15$. The mapping is bijective.
-
-**III. Anomaly Cancellation**
-The total anomaly of the gauge theory is the sum of the anomaly coefficients of the fermion representations, which isolates $SU(5)$ from candidates in **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />.
-For $SU(N)$:
-* $A(\mathbf{\bar{N}}) = -1$ (by definition relative to fundamental).
-* $A(\mathbf{\text{antisym}}) = N - 4$.
-For $N=5$:
+Set $Y=\operatorname{diag}(-1/3,-1/3,-1/3,1/2,1/2)$, so $\operatorname{Tr}Y=3(-1/3)+2(1/2)=0$. The dual negates these weights and conjugates the non-Abelian representations. In the exterior square, the two color weights sum to $-2/3$, the mixed weights to $1/6$, and the two weak weights to $1$. The determinant pairing gives $\wedge^2\mathbf{3}\cong\mathbf{\bar3}$ for $SU(3)$ and $\wedge^2\mathbf2\cong\mathbf1$ for $SU(2)$. Thus
 
 $$
-A(\mathbf{\bar{5}}) = -1
+\begin{aligned}
+\mathbf{\bar5}&\longmapsto(\mathbf{\bar3},\mathbf1)_{1/3}\oplus(\mathbf1,\mathbf2)_{-1/2},\\
+\mathbf{10}&\longmapsto(\mathbf{\bar3},\mathbf1)_{-2/3}\oplus(\mathbf3,\mathbf2)_{1/6}
+\oplus(\mathbf1,\mathbf1)_1.
+\end{aligned}
 $$
 
-$$
-A(\mathbf{10}) = 5 - 4 = +1
-$$
+These are the left-handed Weyl multiplets $d^c,L,u^c,Q,e^c$, with total dimension $3+2+3+6+1=15$.
 
-Total Anomaly:
+**IV. Perturbative Cubic Anomaly**
 
-$$
-\sum A = A(\mathbf{\bar{5}}) + A(\mathbf{10}) = -1 + 1 = 0
-$$
-
-The anomalies cancel exactly without the need for additional fermions.
-
-**IV. Hypercharge Generator Normalization and Unified Weinberg Angle**
-The embedding morphism $SU(3)_C \times SU(2)_L \times U(1)_Y \subset SU(5)$ determines the hypercharge generator $Y$ as the unique traceless diagonal matrix acting across the 5-strand basis:
+For a traceless Hermitian generator with fundamental eigenvalues $x_i$, the dual has eigenvalues $-x_i$, and the exterior square has eigenvalues $x_i+x_j$ for $i<j$. Therefore, in degree $n$,
 
 $$
-Y = \operatorname{diag}\left(-\frac{1}{3}, -\frac{1}{3}, -\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)
+\begin{aligned}
+\sum_{i<j}(x_i+x_j)^3
+&=(n-1)\sum_i x_i^3+3\sum_{i\ne j}x_i^2x_j\\
+&=(n-1)\sum_i x_i^3+3\sum_i x_i^2\left(-x_i\right)
+=(n-4)\sum_i x_i^3 .
+\end{aligned}
 $$
 
-The standard Grand Unified Lie algebra normalization requires $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$. Evaluating the trace of the hypercharge generator over the 5-strand Penta-Ribbon gives:
+At $n=5$, write $\mathcal A(X)=\operatorname{Tr}_{\bar 5}(X^3)+\operatorname{Tr}_{10}(X^3)$ for the combined representation, where $X$ denotes the represented Hermitian generator in each trace. The calculation gives $\mathcal A(X)=0$ for every $X$. For generators $X,Y_0,Z$, the coefficient of $abc$ in $\mathcal A(aX+bY_0+cZ)$ is
 
 $$
-\operatorname{Tr}(Y^2) = 3 \left(-\frac{1}{3}\right)^2 + 2 \left(\frac{1}{2}\right)^2 = \frac{3}{9} + \frac{2}{4} = \frac{1}{3} + \frac{1}{2} = \frac{5}{6}
+3\operatorname{Tr}_{\bar 5}\bigl(X(Y_0Z+ZY_0)\bigr)
++3\operatorname{Tr}_{10}\bigl(X(Y_0Z+ZY_0)\bigr)=0,
 $$
 
-The normalized $SU(5)$ hypercharge generator is $T_{24} = c Y$, where:
+Each of the two cyclic orders occurs three times, and the cubic polynomial vanishes identically. Dividing by three gives the vanishing symmetric cubic anomaly tensor.
+
+**V. Unified Normalization**
+
+The block traces of the $SU(3)$ and $SU(2)$ generators vanish, so both blocks are orthogonal to $Y$ in the trace pairing. Then
 
 $$
-\operatorname{Tr}(T_{24}^2) = c^2 \operatorname{Tr}(Y^2) = c^2 \left(\frac{5}{6}\right) = \frac{1}{2} \implies c^2 = \frac{3}{5} \implies c = \sqrt{\frac{3}{5}}
+\operatorname{Tr}(Y^2)=3/9+2/4=5/6,\qquad
+T_Y=\sqrt{3/5}\,Y,\qquad \operatorname{Tr}(T_Y^2)=1/2 .
 $$
 
-The physical hypercharge coupling $g'$ is related to the canonical unified coupling $g_1$ by $g' = \sqrt{3/5} g_1$. At the Grand Unification scale $M_{\text{GUT}} \approx 2 \times 10^{16}\text{ GeV}$, where all 24 gauge generators of the Penta-Ribbon are unified under the single coupling $g_5 = g_1 = g_2 = g_3$, the grand-unified electroweak mixing angle evaluates to:
+Matching $g_1T_Y=g'Y$ gives $(g')^2=(3/5)g_1^2$. At the common coupling boundary $g_1=g=g_U$,
 
 $$
-\sin^2 \theta_W(M_{\text{GUT}}) = \frac{g'^2}{g^2 + g'^2} = \frac{\frac{3}{5} g_5^2}{g_5^2 + \frac{3}{5} g_5^2} = \frac{3/5}{8/5} = \frac{3}{8} = 0.375
+\sin^2\theta_W=\frac{(3/5)g_U^2}{g_U^2+(3/5)g_U^2}=\frac38 .
 $$
 
-This elevates the isolated doublet rewrite baseline $\sin^2\theta_W^{(0)} = 0.25$ (**Topological Weinberg Angle** <Ref id="8.5.5" label="§8.5.5" />) to the fully embedded 5-strand Grand Unified boundary condition. Under standard 1-loop Renormalization Group running down to the electroweak scale $M_Z = 91.1876\text{ GeV}$, $\sin^2 \theta_W$ evolves logarithmically from $3/8$ to the physical value $\sin^2 \theta_W(M_Z) \approx 0.2312$.
-
-**Conclusion:**
-Since all groups with $r < 4$ are excluded (the **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />), and all other groups with $r=4$ fail the chirality condition (the **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />), and $SU(5)$ satisfies both embedding and anomaly constraints, $SU(5)$ is the unique minimal Grand Unified Theory group.
+This boundary calculation and the low-energy running benchmark use different premises (**Topological Weinberg Angle** <Ref id="8.5.5" label="§8.5.5" />). Among rank-minimal compact simple Lie types with the stipulated complex-representation criterion, the embedding and matter check therefore select $A_4$.
 
 Q.E.D.
 
@@ -3365,7 +3345,7 @@ Section 9.2.13.1 formalizes the properties of the QBD proof regarding antisymmet
 
 **I. Admitted Actions and Discrete Relations**
 
-Let $W^\dagger W=I_5$ and assume the admitted actions satisfy
+The braid group $B_5$ labels discrete words in exchanges on five strands. A represented diagram action can act on five tensor factors $K^{\otimes5}$, of dimension $(\dim K)^5$ when $K$ is finite-dimensional. The matrix closure instead acts on a five-state sector with encoding $W:\mathbb C^5\to\mathcal H_G$, $W^\dagger W=I_5$. Assume the admitted actions satisfy
 
 $$
 \widehat A_k=i\widehat X_k,\quad\widehat C_k=i\widehat Z_k,\quad
@@ -3449,7 +3429,17 @@ $$
 \dim_{\mathbb R}\pi(\mathfrak g)=24.}
 $$
 
-**IV. Additional Multiplet Hypotheses**
+The compression identifies the represented image. Any operator of $\mathfrak g$ in $\ker\pi$ acts trivially on the five-state sector, since $AW=W\pi(A)$ there.
+
+**IV. Dual Action**
+
+On $V_5^*$ the dual action is $(g\cdot f)(v)=f(g^{-1}v)$. In the dual basis its matrix is $(g^{-1})^T=\overline g$, by unitarity. Thus for $g(t)=e^{i t T^a}$ its generator is determined by
+
+$$
+(g(t)^{-1})^T=e^{-it(T^a)^T},\qquad T_{\bar 5}^a=-(T^a)^T .
+$$
+
+A physical reversal that assigns reversed ribbon states to the dual basis must intertwine the reversed action. Reversing the labels supplies candidate basis vectors, while the generator sign follows from the dual action above.
 
 For $g\in SU(5)$, the additional antifundamental identification is the intertwining premise
 
@@ -3457,7 +3447,23 @@ $$
 T_{\overline5}\rho_{\mathrm{phys},5}(g)=\overline g\,T_{\overline5}
 $$
 
-(**Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />). The additional pairwise-linked identification is
+(**Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />). **V. Exterior Action and Physical Pairing**
+
+Let $F(v\otimes w)=w\otimes v$. Then
+
+$$
+F(g\otimes g)(v\otimes w)=gw\otimes gv=(g\otimes g)F(v\otimes w),
+$$
+
+so $g\otimes g$ preserves the antisymmetric image of $(I-F)/2$. For the orthonormal antisymmetric basis $e_{ij}=(v_i\otimes v_j-v_j\otimes v_i)/\sqrt2$ with $i<j$, the action sends $v_i\wedge v_j$ to $(gv_i)\wedge(gv_j)$. Differentiation gives
+
+$$
+\left.\frac{1}{i}\frac{\mathrm d}{\mathrm dt}
+\big(e^{i t T^a}\otimes e^{i t T^a}\big)\right|_{t=0}
+=T^a\otimes I+I\otimes T^a ,
+$$
+
+restricted to the antisymmetric subspace. To transfer this result to physical pairwise-linked graph states, the additional identification is
 
 $$
 T_{10}\rho_{\mathrm{phys},10}(g)=(\wedge^2g)T_{10}
@@ -3470,6 +3476,8 @@ $$
 \dim\wedge^2\mathbb C^5
 =\#\{(p,q):1\le p<q\le5\}=4+3+2+1=10.
 $$
+
+The physical pair sector must be invariant and the proposed $T_{10}$ must intertwine its admitted finite action. Only then does the physical branching inherit the exterior representation and its contribution to the representation-level anomaly cancellation.
 
 Q.E.D.
 
@@ -3664,37 +3672,75 @@ Section 9.3.4.1 formalizes the properties of the QBD proof regarding decay tunne
 
 ### 9.3.5 Proof: Generational Metastability {#9.3.5}
 
-:::tip[**Formal Derivation of the Three-Generation Limit from Friction Saturation**]
+:::tip[**Conditional Generational Ordering via Assigned Costs and Path Barriers**]
 :::
 
-This proof synthesizes the complexity ordering, topological protection, and tunneling mechanisms to demonstrate that exactly three generations are expected to be observable.
+**I. Assigned Generations and Formation**
 
-**I. Construction of the Hierarchy**
-From the **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />, the generations are ordered $C_1 < C_2 < C_3 < \dots$.
-
-**II. The Friction Threshold**
-The formation of higher complexity braids is opposed by the vacuum friction $\mu$, which acts as a barrier to local modifications under **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />. The probability of forming a braid of complexity $C$ during geometrogenesis scales as:
+Use the model assignment $\mathrm{I}\mapsto 3_1$, $\mathrm{II}\mapsto 4_1$, $\mathrm{III}\mapsto 5_1$ (trefoil, figure-eight, cinquefoil), with minimum crossing counts $3,4,5$. With a common link count $L_0$, positive cost weights $\alpha,\gamma$, and a common mass conversion $\kappa_m$, the prescribed costs of **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> give
 
 $$
-P(C) \propto e^{-\mu C}
+C_n=\alpha(n+2)+\gamma L_0,\quad
+C_{n+1}-C_n=\alpha,\quad
+m_{n+1}-m_n=\kappa_m\alpha>0
+\qquad (n=1,2\text{ for the differences}).
 $$
 
-As complexity $C$ increases, the probability of formation drops exponentially.
-
-**III. The Three-Generation Limit**
-For the physical value of friction $\mu \approx 0.40$ (derived in Chapter 5), the formation probability for $n > 3$ becomes negligible relative to the vacuum noise floor, with transition rates governed by **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />.
-Specifically, if the complexity step $\Delta C \approx \text{const}$, then:
+For equal formation prefactors and fixed friction $\mu>0$, the common normalization cancels:
 
 $$
-P(C_4) \approx P(C_1) e^{-3 \mu \Delta C}
+\frac{P_2}{P_1}=\frac{P_3}{P_2}=e^{-\mu\alpha},\qquad
+\frac{P_3}{P_1}=e^{-2\mu\alpha}.
 $$
 
-With $\mu \approx 0.4$, the suppression factor for a 4th generation is severe ($e^{-1.3} \approx 0.3$, compounded by the complexity scaling).
-Furthermore, the stability of the 4th generation minimum is compromised. As $C$ increases, the number of decay channels (lower complexity states) grows, lowering the effective barrier height.
-At $n=4$, the barrier becomes permeable (lifetime $\to 0$), meaning a 4th generation state would decay instantly during formation, failing to stabilize as a particle.
+**II. Isotopy and Admitted Escape Paths**
 
-**IV. Conclusion**
-The topological complexity functional supports an infinite series of knots, but the **Principle of Minimal Complexity** combined with **Vacuum Friction** truncates the physically realizable stable spectrum to the first three minima. Thus, the theory predicts exactly three generations of fermions.
+For isotopic closed embeddings $K\sim K'$, the sets of diagrams in their classes coincide. Therefore
+
+$$
+c(K')=\min_{D\in[K']}c(D)=\min_{D\in[K]}c(D)=c(K)
+$$
+
+(**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />). Along a protected word $K_0,\ldots,K_m$,
+
+$$
+c(K_m)-c(K_0)=\sum_{j=1}^m\big(c(K_j)-c(K_{j-1})\big)=0.
+$$
+
+In particular a state with minimum $5$ or $4$ cannot reach one with a smaller minimum through that family. An admitted topology-changing path $G_0,\ldots,G_m$ can have a separate peak cost. If a witness at index $q$ has $C(G_q)-C(G_0)\ge B>0$, then
+
+$$
+\Delta C=\max_{0\le j\le m}\big(C(G_j)-C(G_0)\big)
+\ge C(G_q)-C(G_0)\ge B .
+$$
+
+**III. Path Suppression**
+
+Under the constant-momentum WKB model of **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the forbidden length is $\ell\Delta C$ and the amplitude action is
+
+$$
+S=\hbar^{-1}\int_{x_i}^{x_i+\ell\Delta C}p_b\,\mathrm dx
+=\frac{p_b\ell}{\hbar}\Delta C=\kappa\Delta C.
+$$
+
+For the fixed attempt rate $\Gamma_0$, the model yields
+
+$$
+\Gamma=\Gamma_0|e^{-S}|^2=\Gamma_0e^{-2\kappa\Delta C}
+\le\Gamma_0e^{-2\kappa B}.
+$$
+
+This is a path rate. Comparing lifetimes requires the allowed paths and their prefactors for each generation.
+
+**IV. Conditional Detection Cutoff**
+
+If a fourth assigned candidate extends the same cost spacing and formation prefactor, then $P_4/P_1=e^{-3\mu\alpha}$. At $\mu=0.40$ and $\alpha=1$ this is $e^{-1.20}\simeq0.3010$, while $P_3/P_1=e^{-0.80}\simeq0.4493$. If detection requires $P_n/P_1\ge\epsilon$, and every further candidate has cost at least $C_4$ and the same prefactor, the exact condition in this benchmark for accepting the first three and rejecting the rest is
+
+$$
+e^{-3\mu\alpha}<\epsilon\le e^{-2\mu\alpha}.
+$$
+
+The cutoff uses the assigned higher costs, prefactors and detection threshold.
 
 Q.E.D.
 
@@ -3889,27 +3935,67 @@ Section 9.4.4.1 formalizes the properties of the QBD proof regarding fragmentati
 
 ### 9.4.5 Proof: Leptoquark Generators {#9.4.5}
 
-:::tip[**Formal Verification of Leptoquark Dynamics through the Unified Algebra**]
+:::tip[**Off-Block Decomposition and Conditional Fragmentation via Endpoint and Path Costs**]
 :::
 
-**I. Algebraic Identification**
-The 12 off-diagonal generators $\hat{\lambda}_{LQ}$ are isolated as the unique operators in the adjoint $\mathbf{24}$ that mix the subspaces $V_C$ and $V_W$ (spanning the $(\mathbf{3}, \mathbf{2}) \oplus (\mathbf{\bar{3}}, \mathbf{2})$ representations).
-These generators drive the transient rewrite processes $\mathcal{R}_{LQ} = e^{i \hat{\lambda}_{LQ}}$, realized as the X and Y bosons.
+**I. Complement of the Block Algebra**
 
-**II. Topological Action**
-The process $\mathcal{R}_{LQ}$ functions as the topological operator that creates/annihilates the 6 cross-sector links identified in **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />.
-By rotating a color basis vector into a weak basis vector, the operation effectively transfers a ribbon between the $SU(3)$ cluster and the $SU(2)$ cluster, severing the unification knot.
-The unitarity of $\mathcal{R}_{LQ}$ preserves the causal graph's acyclicity during this transient state, preventing closed timelike curves.
+For $V=\mathbb C^3\oplus\mathbb C^2$, any traceless skew-Hermitian matrix has the unique block form
 
-**III. Tunneling Mechanism**
-The transition $\beta_5 \to \beta_3 + \beta_2$ is a tunneling event through the topological barrier at the **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> defined by the linking number $L_5$.
-The tunneling amplitude scales as $e^{-S}$, where the action $S \propto \Delta C_{barrier} \sim L_{CW} = 6$.
-While the transition is energetically favored ($\Delta C_{total} < 0$), the non-zero barrier $L_5$ provides the topological protection that ensures the longevity of the proton.
+$$
+X=\begin{pmatrix}A&B\\-B^\dagger&D\end{pmatrix},
+\qquad
+A^\dagger=-A,\quad D^\dagger=-D,\quad \operatorname{Tr}A+\operatorname{Tr}D=0.
+$$
 
-**IV. Dynamical Closure**
-The Hamiltonians $\hat{H}_{LQ}$ generate unitary evolutions satisfying the **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />.
-The Yang-Baxter relations preserve the braid group structure during the interaction.
-Thus, the leptoquarks are verified as the physical mediators of both symmetry breaking (vacuum tunneling) and proton decay (particle transitions).
+The block-diagonal subalgebra has $8+3+1=12$ real dimensions. The block projections $P_C,P_W$ give the complementary map $X\mapsto P_CXP_W+P_WXP_C$. For $1\le a\le3$ and $4\le b\le5$, its real basis consists of $E_{ab}-E_{ba}$ and $i(E_{ab}+E_{ba})$, with independent real and imaginary upper-block entries. There are $2\cdot3\cdot2=12$ such directions. Under conjugation by a block group element the upper block transforms as $B\mapsto U_C B U_W^\dagger$. In the complexification, the hypercharge commutators are
+
+$$
+[Y,E_{ab}]=(-1/3-1/2)E_{ab}=-\tfrac56E_{ab},\qquad
+[Y,E_{ba}]=+\tfrac56E_{ba}.
+$$
+
+This gives $(\mathbf3,\mathbf2)_{-5/6}\oplus(\mathbf{\bar3},\mathbf2)_{5/6}$, using the dual equivalence of the $SU(2)$ doublet.
+
+**II. Matched Vertex and Writhe**
+
+For an admitted emission Hamiltonian with forward term $H_{\mathrm{emit}}=g(P_W\lambda P_C)\otimes A_X$, the matrix element of **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> is
+
+$$
+\langle\ell,X|H_{\mathrm{emit}}|q,0\rangle
+=g\langle\ell|P_W\lambda P_C|q\rangle\langle X|A_X|0\rangle .
+$$
+
+If $[W_{\mathrm{tot}},H_{\mathrm{int}}]=0$, then
+$(W_f-W_i)\langle f|H_{\mathrm{int}}|i\rangle=0$. For nonzero emission from a vacuum mediator label this gives $W_q=W_\ell+W_X$. The matrix exponential describes a unitary on the represented sector. Using it for graph transitions requires admission and legality of the microscopic path.
+
+**III. Endpoint Drop and Transmission**
+
+In the assigned split of **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, the cross-sector link count is
+
+$$
+L_{CW}=\binom52-\binom32-\binom22=10-3-1=6.
+$$
+
+With $w_5=w_3+w_2$ and $L_5-L_3-L_2=6$, the initial-minus-final cost is
+
+$$
+\begin{aligned}
+\Delta C_{\mathrm{end}}
+&=C_5-C_3-C_2
++k\bigl((w_3+w_2)^2-w_3^2-w_2^2\bigr)+k'(L_5-L_3-L_2)\\
+&=C_5-C_3-C_2+2kw_3w_2+6k'.
+\end{aligned}
+$$
+
+In particular the writhe and link contribution is $2kw_3w_2+6k'$, with a possible crossing cost difference. For a separately certified path with $V(x)>E$ between turning points $x_-$ and $x_+$, the modeled amplitude and transmission are
+
+$$
+S_{\mathrm{bar}}=\int_{x_-}^{x_+}\sqrt{2m_{\mathrm{eff}}(V(x)-E)}\,\mathrm dx,\qquad
+T_{\mathrm{WKB}}=|e^{-S_{\mathrm{bar}}/\hbar}|^2=e^{-2S_{\mathrm{bar}}/\hbar}.
+$$
+
+The positive endpoint drop favors the split in the cost comparison. The transmission calculation uses the intermediate barrier, and a mediator mass for EFT matching is an independent input.
 
 Q.E.D.
 
@@ -4324,32 +4410,73 @@ Section 9.5.4.1 formalizes the properties of the QBD proof regarding action-mass
 
 ### 9.5.5 Proof: Proton Stability {#9.5.5}
 
-:::tip[**Formal Proof of Effective Proton Stability via Topological Barriers**]
+:::tip[**Partial-Lifetime Bound via a Matched Rate Action**]
 :::
 
-The proof synthesizes the failure of EFT, the identification of the minimal channel, and the exponential action-mass relation to establish the stability of the proton.
+**I. Nominal EFT Partial Lifetime**
 
-**I. Instanton Suppression**
-Combining the **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> (EFT inadequacy) and the **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> (Topological Action), the full decay rate is given by the product of the perturbative term and the non-perturbative topological factor:
-
-$$
-\Gamma_{total} = \Gamma_{pert} \cdot e^{-S_{inst}}
-$$
+Use the normalized dimension-six width of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" /> for $p\to e^+\pi^0$. At $M_0=10^{15}\,\mathrm{GeV}$, $\alpha_0=1/42$, and $m_p=0.938\,\mathrm{GeV}$,
 
 $$
-\Gamma_{total} \sim \left( \frac{\alpha^2 m_p^5}{M_X^4} \right) \cdot e^{-\lambda M_X}
+\begin{aligned}
+\Gamma_0&=\frac{\alpha_0^2m_p^5}{M_0^4}
+=\frac{(0.938)^5}{42^2(10^{15})^4}\,\mathrm{GeV}
+\simeq 4.1164\times10^{-64}\,\mathrm{GeV},\\
+\tau_0&=\frac{\hbar}{s_{\mathrm{yr}}\Gamma_0}
+\simeq\frac{6.582\times10^{-25}}{(3.156\times10^7)(4.1164\times10^{-64})}\,\mathrm{yr}
+\simeq5.0665\times10^{31}\,\mathrm{yr}.
+\end{aligned}
 $$
 
-**II. Quantitative Bound**
-With $M_X \sim 10^{15}$ GeV, the exponential term $e^{-\lambda M_X}$ provides an immense suppression factor. Even for a small scaling constant $\lambda$, the exponent is large.
-If the action is calibrated for the dominant decay channel identified in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> such that the decay is barely observable (consistent with current limits $\sim 10^{34}$ years):
-The suppression required beyond the EFT prediction of $10^{32}$ years is a factor of $10^2$.
-However, the topological barrier $S_{inst}$ associated with a structure of complexity $N \sim 10^{15}$ (assuming linear complexity scaling with energy) would theoretically yield a suppression of $e^{-10^{15}}$, rendering the proton absolutely stable.
-Even assuming logarithmic complexity scaling ($S \sim \ln M_X$), the topological constraint enforces strict conservation laws that are only violated by rare tunneling events.
+For comparison use the $90\%$ confidence lower limit $L=2.4\times10^{34}\,\mathrm{yr}$ for this channel. [Super-Kamiokande proton-decay search](https://doi.org/10.1103/PhysRevD.102.112011)
 
-**III. Conclusion**
-The topological barrier transforms the "fast" algebraic decay of the standard model ($M^{-4}$) into a "slow" geometric tunneling process.
-This mechanism resolves the hierarchy problem of proton stability without requiring arbitrary fine-tuning of coupling constants. The proton is stable because the $p \to e^+$ transition requires a discrete, global change in topology that is statistically suppressed by the complexity of the unification vertex.
+**II. Modeled Action and Rate**
+
+Suppose the decay model supplies a legal pathway for this channel with $L_{\min}=aN_{3,X}+b$ and $M_X=\varepsilon N_{3,X}$, as in **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />. Then
+
+$$
+S_{\mathrm{inst}}=\kappa L_{\min}
+=\frac{\kappa a}{\varepsilon}M_X+\kappa b
+=\lambda M_X+\kappa b,\qquad \lambda=\kappa a/\varepsilon .
+$$
+
+Take $S_{\mathrm{inst}}\ge0$ as a dimensionless rate exponent. At fixed $m_p$ the modeled width and partial lifetime are
+
+$$
+\begin{aligned}
+\Gamma(M_X,\alpha)&=\Gamma_0
+\left(\frac{\alpha}{\alpha_0}\right)^2
+\left(\frac{M_0}{M_X}\right)^4e^{-S_{\mathrm{inst}}},\\
+\tau(M_X,\alpha)&=\tau_0
+\left(\frac{\alpha_0}{\alpha}\right)^2
+\left(\frac{M_X}{M_0}\right)^4e^{S_{\mathrm{inst}}}.
+\end{aligned}
+$$
+
+For any separately supplied competing channel $j$ with width $K_j e^{-S_j}$, its ratio to the selected channel $e^+\pi^0$ is $(K_j/K_{e\pi})e^{-(S_j-S_{e\pi})}$. The preference in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> can be used if the relevant pathways, action ordering and prefactors are supplied. Endpoint ordering alone does not fix those ratios.
+
+**III. Required Suppression and Its Domain**
+
+At the nominal point the comparison reduces to
+
+$$
+\begin{aligned}
+\tau>L
+&\iff e^{S_{\mathrm{inst}}}>\frac L{\tau_0}
+\simeq473.70\\
+&\iff S_{\mathrm{inst}}>\ln\!\frac L{\tau_0}
+\simeq6.1606 .
+\end{aligned}
+$$
+
+Thus $\lambda M_0+\kappa b>6.1606$ to the displayed precision is the action requirement at that point. At fixed $\alpha_0$, the unsuppressed equality threshold is
+
+$$
+M_{\mathrm{eq}}=M_0\left(\frac L{\tau_0}\right)^{1/4}
+\simeq4.6653\times10^{15}\,\mathrm{GeV}.
+$$
+
+For $M_X>M_{\mathrm{eq}}$ at the same coupling, the mass dependence alone puts this modeled partial lifetime above $L$. When both $\alpha$ and $M_X$ vary, the threshold is $M_{\mathrm{eq}}(\alpha)=M_{\mathrm{eq}}\sqrt{\alpha/\alpha_0}$.
 
 Q.E.D.
 
@@ -4923,31 +5050,85 @@ Section 9.6.8.1 formalizes the properties of the QBD proof regarding planck anch
 
 ### 9.6.9 Proof: Neutrino Mass Mechanism {#9.6.9}
 
-:::tip[**Formal Proof of the Emergent Neutrino Mass through Seesaw Hierarchy**]
+:::tip[**Conditional Seesaw Eigenvalue via Singlet Assignment and Scale Matching**]
 :::
 
-The proof synthesizes the topological structure, mass matrix diagonalization, and friction-limited scaling to deriving the neutrino mass.
+**I. Neutrality, Singlet Assignment, and Bare Mass**
 
-**I. Synthesis of Components**
-1.  **Light Mass Source:** From the **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" />, the folded braid topology ensures the intrinsic mass of $\nu_L$ is zero ($M_L=0$).
-2.  **Seesaw Mechanism:** From the **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />, the mixing with a heavy partner yields $m_\nu \approx m_D^2 / M_R$.
-3.  **Heavy Mass Scale:** From the **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> (which relies on the critical scale of **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />), vacuum friction limits the heavy partner mass to $M_R \approx 2 \times 10^{16}$ GeV.
+For the folded label take segment writhes $W_+=k$ and $W_-=-k$. The electric charge vanishes because $Q=(k-k)/3=0$. The positive excess fold cost of **Neutrality Verification** <Ref id="9.6.3" label="§9.6.3" /> remains compatible with this cancellation. The bare light entry $M_L=0$ is a separate premise of the effective mass matrix.
 
-**II. Quantitative Verification**
-The small value of the light neutrino mass is determined by the local stress properties of **Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" /> and the stability bounds of **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />. Substituting the electroweak scale $m_D \approx v \approx 246$ GeV (assuming Yukawa coupling $Y \sim O(1)$) and the derived $M_R$:
+For the assigned sterile partner $|s\rangle$, assume a trivial color and weak action and hypercharge zero. The generators and quadratic Casimirs then act as
 
 $$
-m_\nu \approx \frac{(246)^2}{2.36 \times 10^{16}} \text{ GeV}
+\begin{aligned}
+T_C^a|s\rangle&=T_W^b|s\rangle=Y|s\rangle=0,\\
+C_2^{(3)}|s\rangle&=\sum_a T_C^a(T_C^a|s\rangle)=0,\\
+C_2^{(2)}|s\rangle&=\sum_b T_W^b(T_W^b|s\rangle)=0,\qquad
+e^{i\theta Y}|s\rangle=|s\rangle.
+\end{aligned}
 $$
 
+These identities use the stipulated sterile representation of the partner. The light neutral label may belong to a weak doublet.
+
+**II. Complexity and Planck Matching**
+
+At fixed volume the local density model assigns density proportional to complexity (**Complexity Density Scaling** <Ref id="9.6.5" label="§9.6.5" />). The maintenance weight includes the friction factor $e^{-\mu\sigma}$ at stress $\sigma$ (**Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />). In the separately prescribed balance $xe^{-\mu x}=1/2$, writing $u=-\mu x$ gives $ue^u=-\mu/2$. The upper root is $-\mu^{-1}W_{-1}(-\mu/2)\simeq6.36$ at $\mu=0.40$ (**Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />).
+
+For a dimensionful scale use **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> with $c_*=2.76$ and $M_{\mathrm{Pl}}=1.22\times10^{19}\,\mathrm{GeV}$. The unit-prefactor anchor and matched coefficient are
+
 $$
-m_\nu \approx \frac{6 \times 10^4}{2 \times 10^{16}} \approx 3 \times 10^{-12} \text{ GeV} = 0.003 \text{ eV}
+\begin{aligned}
+M_R(1)&=(1.22\times10^{19}\,\mathrm{GeV})e^{-2.76/0.40}
+\simeq1.2295\times10^{16}\,\mathrm{GeV},\\
+A&=\frac{2.36\times10^{16}\,\mathrm{GeV}}{M_R(1)}\simeq1.92,\qquad
+M_R(A)=A M_R(1).
+\end{aligned}
 $$
 
-This order-of-magnitude result is consistent with the squared mass differences observed in neutrino oscillation experiments ($\Delta m^2_{atm} \sim 0.05$ eV$^2$, implying $m \sim 0.05$ eV).
+An additional relation $M_R=\kappa_{\mathrm{scale}}N_{3,\max}$ would require $\kappa_{\mathrm{scale}}=M_R(A)/6.36$ at these benchmark inputs. The scalar root is dimensionless.
 
-**III. Conclusion**
-The small non-zero mass of the neutrino is a necessary consequence of the finite vacuum friction $\mu$, which generates the GUT-scale $M_R$, combined with the topological zero-mode of the folded braid. The hierarchy is resolved without fine-tuning, emerging directly from the causal graph dynamics.
+**III. Light Eigenvalue and Units**
+
+Set $m_D=yv$ at $v=246\,\mathrm{GeV}$ in the Yukawa convention of the benchmark. With the real symmetric matrix of **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />, its eigenvalue equation and nonnegative light mass are
+
+$$
+\det\begin{pmatrix}-\lambda&m_D\\m_D&M_R-\lambda\end{pmatrix}
+=\lambda^2-M_R\lambda-m_D^2=0,\qquad
+m_\nu=\frac{\sqrt{M_R^2+4m_D^2}-M_R}{2}
+=\frac{2m_D^2}{\sqrt{M_R^2+4m_D^2}+M_R}.
+$$
+
+Subtracting the exact mass from the leading expression gives
+
+$$
+0\le\frac{m_D^2}{M_R}-m_\nu
+=\frac{4m_D^4}{M_R(\sqrt{M_R^2+4m_D^2}+M_R)^2}
+\le \frac{m_D^4}{M_R^3}.
+$$
+
+At $M_R=2.36\times10^{16}\,\mathrm{GeV}$ and $0<y\le1$, the relative error with respect to the leading expression is at most $(246/(2.36\times10^{16}))^2<1.09\times10^{-28}$. With $1\,\mathrm{GeV}=10^9\,\mathrm{eV}$, the leading evaluations are
+
+$$
+\begin{aligned}
+m_\nu(y=0.5)&\simeq\frac{123^2}{2.36\times10^{16}}\,\mathrm{GeV}
+=6.4106\times10^{-4}\,\mathrm{eV},\\
+m_\nu(y=1)&\simeq\frac{246^2}{2.36\times10^{16}}\,\mathrm{GeV}
+=2.5642\times10^{-3}\,\mathrm{eV}.
+\end{aligned}
+$$
+
+**IV. Oscillation Comparison**
+
+The atmospheric benchmark is a difference of squared masses, $|\Delta m^2|\simeq2.4\times10^{-3}\,\mathrm{eV}^2$. [Super-Kamiokande atmospheric analysis](https://doi.org/10.1103/PhysRevD.109.072014)
+
+Its square root is $\sqrt{2.4\times10^{-3}}\,\mathrm{eV}\simeq0.0490\,\mathrm{eV}$. If a modeled mass $m_i$ is assigned to the lighter member of that pair, the other member must satisfy
+
+$$
+m_j^2-m_i^2=2.4\times10^{-3}\,\mathrm{eV}^2,\qquad
+m_j=\sqrt{m_i^2+2.4\times10^{-3}\,\mathrm{eV}^2}.
+$$
+
+For example the $y=1$ value would require $m_j\simeq0.0491\,\mathrm{eV}$. The two-state light-heavy matrix gives one light eigenvalue. Predicting the atmospheric splitting requires at least two light eigenvalues and the appropriate flavor mixing.
 
 Q.E.D.
 
@@ -4958,54 +5139,53 @@ Section 9.6.9 formalizes the properties of the QBD proof regarding neutrino mass
 
 ### 9.6.9.1 Calculation: Neutrino Mass Prediction {#9.6.9.1}
 
-:::note[**Computational Verification of the Light Neutrino Mass from Derived Parameters**]
+:::note[**Verification of the Two-State Benchmark via Exact Eigenvalue and Unit Conversion**]
 :::
 
-Verification of the seesaw hierarchy established in the **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" /> is based on the following protocols:
+The calculation uses the exponential **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" /> and evaluates the two-state mass in **Seesaw Dynamics** <Ref id="9.6.4" label="§9.6.4" />.
 
-1.  **Scale Definition:** The algorithm defines the Dirac mass scale $m_D$ via the electroweak VEV ($v \approx 246$ GeV) and a Yukawa coupling $Y \sim 0.1$, and sets the heavy mass scale $M_R = 2 \times 10^{16}$ GeV based on the vacuum friction limit.
-2.  **Seesaw Application:** The protocol computes the light neutrino mass using the relation $m_\nu = m_D^2 / M_R$.
-3.  **Unit Conversion:** The result is converted from GeV to eV to facilitate comparison with squared mass differences from oscillation data. This verifies the result established in  **Neutrino Mass Mechanism** <Ref id="9.6.9" label="§9.6.9" />.
+1.  **Scale Calibration:** Evaluate the unit-prefactor heavy mass and divide the prescribed $2.36\times10^{16}\,\mathrm{GeV}$ by it to obtain the matched prefactor.
+2.  **Light Mass:** Set $m_D=yv$ and use the rationalized light eigenvalue to avoid subtracting two nearly equal heavy-scale quantities. Report $(m_D/M_R)^2$ as the relative error bound for the leading approximation.
+3.  **Units Comparison:** Convert the light mass to eV. Report the atmospheric reference in $\mathrm{eV}^2$ and its square root separately in eV.
 
 ```python
-import numpy as np
-from decimal import Decimal, getcontext
+from decimal import Decimal, localcontext
 
-getcontext().prec = 20
 
 def verify_neutrino_seesaw():
-    """
-    Topological Seesaw Mechanism: Neutrino Mass Prediction
-    
-    Computes light neutrino masses from the seesaw formula m_ν ≈ m_D² / M_R
-    using derived vacuum parameters.
-    """
-    print("TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION")
-    print("Light Eigenvalue from Heavy Partner Suppression")
-    print("=" * 70)
+    """Compare the unit Planck anchor and calibrated two-state seesaw."""
+    with localcontext() as context:
+        context.prec = 60
+        v = Decimal("246")
+        mu = Decimal("0.40")
+        c_star = Decimal("2.76")
+        planck_mass = Decimal("1.22e19")
+        unit_mass = planck_mass * (-c_star / mu).exp()
+        target_mass = Decimal("2.36e16")
+        matched_prefactor = target_mass / unit_mass
+        gev_to_ev = Decimal("1e9")
+        atmospheric_split_ev2 = Decimal("2.4e-3")
 
-    v_ew_gev = Decimal('246.0')
-    M_R_gev = Decimal('20000000000000000')  # 2 × 10^{16} GeV
+        print("TWO-STATE SEESAW: HEAVY-SCALE AND UNITS CHECK")
+        print(f"Unit anchor: A=1, M_R={unit_mass:.6E} GeV")
+        print(f"Matched anchor: A={matched_prefactor:.6f}, M_R={target_mass:.6E} GeV")
+        print("Yukawa  m_D (GeV)  m_light (GeV)  m_light (eV)  Relative error bound")
+        for value in ("0.01", "0.10", "0.50", "1.00"):
+            yukawa = Decimal(value)
+            dirac_mass = yukawa * v
+            dirac_squared = dirac_mass ** 2
+            gap = (target_mass ** 2 + 4 * dirac_squared).sqrt()
+            light_gev = 2 * dirac_squared / (gap + target_mass)
+            light_ev = light_gev * gev_to_ev
+            relative_bound = (dirac_mass / target_mass) ** 2
+            print(
+                f"{yukawa:6.2f}  {dirac_mass:9.2f}  "
+                f"{light_gev:13.6E}  {light_ev:12.6E}  {relative_bound:.3E}"
+            )
 
-    yukawas = [Decimal('0.01'), Decimal('0.1'), Decimal('0.5')]
+        print(f"Atmospheric comparison: |delta m^2|={atmospheric_split_ev2:.3E} eV^2")
+        print(f"Square-root scale: {atmospheric_split_ev2.sqrt():.6E} eV")
 
-    print(f"Parameters")
-    print(f"  Electroweak VEV (v)     : {v_ew_gev} GeV")
-    print(f"  Heavy scale (M_R)       : 2 × 10^{{16}} GeV")
-    print("-" * 70)
-
-    print(f"{'Yukawa (y)':<12} {'m_D (GeV)':<14} {'m_D² (GeV²)':<16} {'m_ν (GeV)':<18} {'m_ν (eV)':<12}")
-    print("-" * 70)
-
-    for y in yukawas:
-        m_D = y * v_ew_gev
-        m_D2 = m_D ** 2
-        m_nu_gev = m_D2 / M_R_gev
-        m_nu_ev = m_nu_gev * Decimal('1e9')
-
-        print(f"{float(y):<12.2f} {float(m_D):<14.2f} {float(m_D2):<16.4f} {float(m_nu_gev):<18.4e} {float(m_nu_ev):<12.4e}")
-
-    print("-" * 70)
 
 if __name__ == "__main__":
     verify_neutrino_seesaw()
@@ -5014,23 +5194,20 @@ if __name__ == "__main__":
 **Simulation Results:**
 
 ```text
-TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION
-Light Eigenvalue from Heavy Partner Suppression
-======================================================================
-Parameters
-  Electroweak VEV (v)     : 246.0 GeV
-  Heavy scale (M_R)       : 2 × 10^{16} GeV
-----------------------------------------------------------------------
-Yukawa (y)   m_D (GeV)      m_D² (GeV²)      m_ν (GeV)          m_ν (eV)
-----------------------------------------------------------------------
-0.01         2.46           6.0516           3.0258e-16         3.0258e-07
-0.10         24.60          605.1600         3.0258e-14         3.0258e-05
-0.50         123.00         15129.0000       7.5645e-13         7.5645e-04
-----------------------------------------------------------------------
+TWO-STATE SEESAW: HEAVY-SCALE AND UNITS CHECK
+Unit anchor: A=1, M_R=1.229498E+16 GeV
+Matched anchor: A=1.919482, M_R=2.360000E+16 GeV
+Yukawa  m_D (GeV)  m_light (GeV)  m_light (eV)  Relative error bound
+  0.01       2.46   2.564237E-16   2.564237E-7  1.087E-32
+  0.10      24.60   2.564237E-14   2.564237E-5  1.087E-30
+  0.50     123.00   6.410593E-13   6.410593E-4  2.716E-29
+  1.00     246.00   2.564237E-12   2.564237E-3  1.087E-28
+Atmospheric comparison: |delta m^2|=2.400E-3 eV^2
+Square-root scale: 4.898979E-2 eV
 ```
 
 **Conclusion:**
-The calculation yields a Dirac mass term of $24.6$ GeV and a heavy mass term of $2 \times 10^{16}$ GeV. The resulting light neutrino mass is approximately $3.03 \times 10^{-14}$ GeV, or $3.03 \times 10^{-5}$ eV. This value is consistent with the lower bounds derived from atmospheric neutrino oscillations. The output confirms that the topological friction scale naturally generates the sub-eV neutrino mass without fine-tuning.
+The unit-prefactor anchor gives $1.2295\times10^{16}\,\mathrm{GeV}$. The prescribed heavy mass requires $A\simeq1.9195$ and gives light masses of $0.6411\,\mathrm{meV}$ at $y=0.50$ and $2.5642\,\mathrm{meV}$ at $y=1$. The atmospheric reference is a difference of squared masses. The program evaluates a single light eigenvalue for each separate Yukawa input, with separate benchmark rows for the different inputs.
 
 **In Plain English:**  
 Section 9.6.9.1 formalizes the properties of the QBD calculation regarding neutrino mass prediction.

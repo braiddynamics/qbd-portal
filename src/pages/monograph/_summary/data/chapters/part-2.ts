@@ -279,7 +279,7 @@ export const part2Chapters: ChapterData[] = [
       },
       {
         title: "10.10 Formal Synthesis",
-        content: "Formulates the mathematical models and pre-geometric causal posets of Quantum Braid Dynamics."
+        content: "The assigned orthogonal logical pair lies in the common sector $W=-3$, $Q=-1$. Its gap, coherent exchange and phase controls, and calibrated basis readout give distinct criteria for a physical encoding. For a specified finite CSS check family, the prescribed signs must be compatible with the check dependencies, and incidence columns determine the single-edge syndromes. A distance claim additionally needs the action of low-weight zero-syndrome errors on the code."
       },
       {
         title: "10.2 Braid Code Consistency",

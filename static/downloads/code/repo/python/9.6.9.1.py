@@ -1,41 +1,40 @@
-import numpy as np
-from decimal import Decimal, getcontext
+from decimal import Decimal, localcontext
 
-getcontext().prec = 20
 
 def verify_neutrino_seesaw():
-    """
-    Topological Seesaw Mechanism: Neutrino Mass Prediction
-    
-    Computes light neutrino masses from the seesaw formula m_ν ≈ m_D² / M_R
-    using derived vacuum parameters.
-    """
-    print("TOPOLOGICAL SEESAW MECHANISM: NEUTRINO MASS PREDICTION")
-    print("Light Eigenvalue from Heavy Partner Suppression")
-    print("=" * 70)
+    """Compare the unit Planck anchor and calibrated two-state seesaw."""
+    with localcontext() as context:
+        context.prec = 60
+        v = Decimal("246")
+        mu = Decimal("0.40")
+        c_star = Decimal("2.76")
+        planck_mass = Decimal("1.22e19")
+        unit_mass = planck_mass * (-c_star / mu).exp()
+        target_mass = Decimal("2.36e16")
+        matched_prefactor = target_mass / unit_mass
+        gev_to_ev = Decimal("1e9")
+        atmospheric_split_ev2 = Decimal("2.4e-3")
 
-    v_ew_gev = Decimal('246.0')
-    M_R_gev = Decimal('20000000000000000')  # 2 × 10^{16} GeV
+        print("TWO-STATE SEESAW: HEAVY-SCALE AND UNITS CHECK")
+        print(f"Unit anchor: A=1, M_R={unit_mass:.6E} GeV")
+        print(f"Matched anchor: A={matched_prefactor:.6f}, M_R={target_mass:.6E} GeV")
+        print("Yukawa  m_D (GeV)  m_light (GeV)  m_light (eV)  Relative error bound")
+        for value in ("0.01", "0.10", "0.50", "1.00"):
+            yukawa = Decimal(value)
+            dirac_mass = yukawa * v
+            dirac_squared = dirac_mass ** 2
+            gap = (target_mass ** 2 + 4 * dirac_squared).sqrt()
+            light_gev = 2 * dirac_squared / (gap + target_mass)
+            light_ev = light_gev * gev_to_ev
+            relative_bound = (dirac_mass / target_mass) ** 2
+            print(
+                f"{yukawa:6.2f}  {dirac_mass:9.2f}  "
+                f"{light_gev:13.6E}  {light_ev:12.6E}  {relative_bound:.3E}"
+            )
 
-    yukawas = [Decimal('0.01'), Decimal('0.1'), Decimal('0.5')]
+        print(f"Atmospheric comparison: |delta m^2|={atmospheric_split_ev2:.3E} eV^2")
+        print(f"Square-root scale: {atmospheric_split_ev2.sqrt():.6E} eV")
 
-    print(f"Parameters")
-    print(f"  Electroweak VEV (v)     : {v_ew_gev} GeV")
-    print(f"  Heavy scale (M_R)       : 2 × 10^{{16}} GeV")
-    print("-" * 70)
-
-    print(f"{'Yukawa (y)':<12} {'m_D (GeV)':<14} {'m_D² (GeV²)':<16} {'m_ν (GeV)':<18} {'m_ν (eV)':<12}")
-    print("-" * 70)
-
-    for y in yukawas:
-        m_D = y * v_ew_gev
-        m_D2 = m_D ** 2
-        m_nu_gev = m_D2 / M_R_gev
-        m_nu_ev = m_nu_gev * Decimal('1e9')
-
-        print(f"{float(y):<12.2f} {float(m_D):<14.2f} {float(m_D2):<16.4f} {float(m_nu_gev):<18.4e} {float(m_nu_ev):<12.4e}")
-
-    print("-" * 70)
 
 if __name__ == "__main__":
     verify_neutrino_seesaw()
