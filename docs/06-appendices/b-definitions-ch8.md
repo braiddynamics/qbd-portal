@@ -21,10 +21,10 @@ Section 8.1.1 formalizes the properties of the QBD theorem regarding lie algebra
 
 ### 8.1.2 Lemma: Braid Group Isomorphism {#8.1.2}
 
-:::info[**Mapping via Physical Rewrite Algebras to Braid Group Relations**]
+:::info[**Representation of braid words via certified exchange relations**]
 :::
 
-For any $n$-ribbon braid configuration, the algebra of elementary physical rewrite processes $\{\mathcal{R}_i\}$ is strictly isomorphic to the Braid Group $B_n$. This isomorphism is established by the far commutativity relation $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$ for $|i-j| \geq 2$ and the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ for adjacent indices.
+Let the adjacent Artin generators $\sigma_i$ have invertible encoded rewrites $\mathcal R_i$ on a common sector that satisfy the far-commutativity and three-strand relations. Then their generated group is a quotient of $B_n$, and the map is an isomorphism if a braid-separating encoded orbit is supplied.
 
 **In Plain English:**  
 Section 8.1.2 formalizes the properties of the QBD lemma regarding braid group isomorphism.
@@ -33,30 +33,51 @@ Section 8.1.2 formalizes the properties of the QBD lemma regarding braid group i
 
 ### 8.1.2.1 Proof: Braid Group Isomorphism {#8.1.2.1}
 
-:::tip[**Formal Verification of Surjectivity, Injectivity, through Homomorphism for Rewrite Sequences**]
+:::tip[**Construction of the braid representation via the presentation and a separating orbit**]
 :::
 
-The proof explicitly constructs the isomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ by systematically verifying surjectivity, injectivity, and the homomorphism property within the category of annotated causal graphs $\mathbf{AnnCG}$, ensuring that the mapping respects the syndrome annotations and timestamp monotonicity defined in the axioms.
+**I. Free word evaluation**
 
-**I. Surjectivity Verification**
-The mapping covers the full algebraic structure of $B_n$ through inductive construction.
-1.  **Generator Realization:** The homomorphism $\Phi: B_n \to \langle \mathcal{R} \rangle$ is defined on the generators $\sigma_i$ by setting $\Phi(\sigma_i) = \mathcal{R}_i$. Every braid word $w = \sigma_{i_1}^{\epsilon_1} \dots \sigma_{i_k}^{\epsilon_k}$ is mapped to the composition of graph rewrites $\Phi(w) = \mathcal{R}_{i_1}^{\epsilon_1} \circ \dots \circ \mathcal{R}_{i_k}^{\epsilon_k}$ in the category of annotated causal graphs $\mathbf{AnnCG}$. The **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" /> implements each generator as a local swap of adjacent ribbons via rung flips, satisfying the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />.
-2.  **Inductive Extension:** The construction extends inductively on the word length $k$. Assuming all words of length $k$ map surjectively, a word of length $k+1$ is represented by $w_{k+1} = w_k \cdot \sigma_j$, which maps to $\Phi(w_k) \circ \mathcal{R}_j$, preserving the **Crossing Complexity** (denoted $C[\beta]$).
-3.  **Relation Preservation:** The mapping respects the defining relations of $B_n$. For $|i-j| \geq 2$, the disjoint support of the local subgraphs ensures $\Phi(\sigma_i \sigma_j) = \mathcal{R}_i \circ \mathcal{R}_j = \mathcal{R}_j \circ \mathcal{R}_i = \Phi(\sigma_j \sigma_i)$. For adjacent crossings, the isotopic equivalence of the paths ensures $\Phi(\sigma_i \sigma_{i+1} \sigma_i) = \mathcal{R}_i \circ \mathcal{R}_{i+1} \circ \mathcal{R}_i = \mathcal{R}_{i+1} \circ \mathcal{R}_i \circ \mathcal{R}_{i+1} = \Phi(\sigma_{i+1} \sigma_i \sigma_{i+1})$, satisfying the **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />.
+Let $F$ be the free group on $\sigma_1,\ldots,\sigma_{n-1}$. For a word $w=\sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$ with $\varepsilon_j\in\{-1,1\}$, set
 
-**II. Injectivity Verification**
-The kernel of the mapping is trivial, $\operatorname{Ker}(\Phi) = \{e\}$, proved by the preservation of topological invariants.
-1.  **Topological Invariance:** Let $w \in B_n$ be a reduced braid word. The Jones polynomial $V(t)$ acts as a topological invariant of the braid closure. Since the projected codespace $\mathcal{C}$ preserves the writhe and linking invariants under local reducibility (**Local Reducibility** <Ref id="6.1.1" label="§6.1.1" />), we obtain $\Pi_{\mathcal{C}} |G_w\rangle = \Pi_{\mathcal{C}} |G_{id}\rangle \implies V_w(t) = V_{id}(t) \implies w = e$ in the principal representation, showing that only the identity braid word maps to the trivial identity rewrite sequence.
-2.  **Syndrome Sensitivity:** The injectivity extends because any non-trivial element $\beta \neq 1$ induces a non-trivial syndrome tuple $\sigma_G \neq 0$ in the **Awareness Endofunctor ($R_T$)** <Ref id="4.3.2" label="§4.3.2" />. This deviation is explicitly detected by the **Z-check operators** in the **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />, ensuring that the mapping distinguishes all braid words by their encoded causal subgraphs.
+$$
+f(w)=\mathcal R_{i_1}^{\varepsilon_1}\cdots\mathcal R_{i_k}^{\varepsilon_k}.
+$$
 
-**III. Homomorphism Verification**
-The mapping preserves group multiplication: $\Phi(w_a \cdot w_b) = \Phi(w_a) \circ \Phi(w_b)$.
-1.  **Categorical Composition:** The composition is associative via the category $\mathbf{Caus}_t$ **Internal Causal Category** <Ref id="4.1.1" label="§4.1.1" />, where path morphisms concatenate end-to-end. The functor maps the **Effective Influence** relation $\le$ to braid isotopy, ensuring the algebraic product mirrors topological concatenation. $\phi(\mathcal{R}_i \mathcal{R}_j) = \sigma_i \sigma_j$ holds directly.
-2.  **Syndrome Additivity:** The functoriality is preserved because the syndrome map $\sigma_G$ commutes with the composition: $\sigma_G(\mathcal{R}_i \circ \mathcal{R}_j) = \sigma_G(\mathcal{R}_i) + \sigma_G(\mathcal{R}_j)$ in the additive group of annotations.
-3.  **Catalytic Resolution:** Local checks in the pre-validation Universal Constructor accumulate independently for disjoint supports. For overlapping supports, causal conflicts are resolved coherently via the **Catalytic Tension Factor** $\chi(\boldsymbol{\sigma}_e)$, maintaining the homomorphism under the annotated category structure.
+Because $\mathcal R_i\mathcal R_i^{-1}=\mathcal R_i^{-1}\mathcal R_i=I$, free cancellation leaves $f(w)$ unchanged. Concatenating words evaluates to $f(ww')=f(w)f(w')$, so $f$ is a homomorphism into the group generated by the encoded rewrites (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />).
 
-**Conclusion:**
-Having proven that the elementary physical rewrite processes satisfy both defining relations of the braid group $B_n$, the algebra of the physical dynamics is isomorphic to the algebra of $B_n$. This result foundations the constructive proof of $\mathfrak{su}(n)$, extending to the full representation theory via the quantum double construction on the code space $\mathcal{C}$.
+**II. Relators and image**
+
+When two admitted exchanges act on disjoint tensor factors, their two products both give
+
+$$
+(A\otimes I)(I\otimes B)=A\otimes B=(I\otimes B)(A\otimes I).
+$$
+
+Use the far-commutativity premise and the encoded adjacent relation of **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />. The corresponding relator evaluations are
+
+$$
+\begin{aligned}
+f(\sigma_i\sigma_j\sigma_i^{-1}\sigma_j^{-1})&=I \qquad (|i-j|\ge2),\\
+f\bigl(\sigma_i\sigma_{i+1}\sigma_i(\sigma_{i+1}\sigma_i\sigma_{i+1})^{-1}\bigr)&=I .
+\end{aligned}
+$$
+
+For any relator $r$ and free word $a$, $f(ar^{\pm1}a^{-1})=f(a)I f(a)^{-1}=I$. Their normal closure therefore lies in $\ker f$. The descended map $\Phi:B_n\to\langle\mathcal R_1,\ldots,\mathcal R_{n-1}\rangle$ sends $[w]\mapsto f(w)$, and every product of the encoded generators and their inverses is in its image. Thus
+
+$$
+\langle\mathcal R_1,\ldots,\mathcal R_{n-1}\rangle\cong B_n/\ker\Phi .
+$$
+
+**III. Separating orbit**
+
+Suppose there is a common encoded orbit with distinct representatives $v_\beta$ for $\beta\in B_n$ and $\mathcal R_i^{\pm1}v_\beta=v_{\sigma_i^{\pm1}\beta}$. Iteration on the word gives $\Phi(\beta)v_e=v_\beta$. If $\Phi(\beta)=I$, then
+
+$$
+v_\beta=\Phi(\beta)v_e=Iv_e=v_e\quad\Longrightarrow\quad\beta=e .
+$$
+
+For comparison, adjacent permutations satisfy the same defining relators but send $\sigma_i^2$ to the identity. The exponent sum on $B_n$ is well-defined because each defining relation equates words of the same exponent sum, and it sends $\sigma_i^2$ to $2\ne0$. This representation therefore has a nontrivial kernel even though it satisfies both relators.
 
 Q.E.D.
 
@@ -128,10 +149,10 @@ Section 8.1.3.1 formalizes the properties of the QBD proof regarding distant com
 
 ### 8.1.4 Lemma: Yang-Baxter Relations {#8.1.4}
 
-:::info[**Compliance of Physical Rewrite Sequences by Topological Isotopy**]
+:::info[**Equality of adjacent exchanges via coherent braid transport**]
 :::
 
-Assume the physical rewrite processes satisfy the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ due to the topological equivalence of their corresponding graph transformation sequences which result in ambiently isotopic final states. Under this equivalence, the transformation path of the over-crossing ribbon is homotopic to that of the second sequence while satisfying **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" /> at every intermediate step.
+Let $U$ encode a diagram sector with an admitted three-strand slide and intertwine its adjacent exchanges with $\mathcal R_{12}$ and $\mathcal R_{23}$, both preserving the image of $U$. Then the encoded operators satisfy $\mathcal R_{12}\mathcal R_{23}\mathcal R_{12}=\mathcal R_{23}\mathcal R_{12}\mathcal R_{23}$ on that image.
 
 **In Plain English:**  
 Section 8.1.4 formalizes the properties of the QBD lemma regarding yang-baxter relations.
@@ -140,24 +161,57 @@ Section 8.1.4 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ### 8.1.4.1 Proof: Yang-Baxter Relations {#8.1.4.1}
 
-:::tip[**Verification of Isotopic Equivalence via Adjacent Rewrite Sequences**]
+:::tip[**Derivation of the encoded Yang-Baxter relation via intertwining**]
 :::
 
-The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ by demonstrating that the distinct sequences result in ambiently isotopic causal graphs.
+**I. Diagram relation**
 
-**I. Topological Construction**
-The proof follows the form for $B_3$ (three-strand rule), holding for any triplet (e.g., $\sigma_3 \sigma_4 \sigma_3 = \sigma_4 \sigma_3 \sigma_4$).
-1.  **Isotopic Invariance:** The equivalence is confirmed by the invariance of the **Writhe** $w(\beta)$ under **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />. Each $\mathcal{R}$ step preserves the **Linking Numbers** $L_{ij}$ through **Syndrome-Neutral Flips**, where the global parity $\sigma = +1$ is maintained despite the local precursors having $\sigma = -1$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />.
-2.  **Polynomial Gradient:** The final isotopic equivalence is quantified by the unchanged **Alexander-Conway Polynomial Gradient**, which tracks the linking invariants under discrete graph transformations, confirming no topological information is created or destroyed by the choice of path.
+Let $S_1,S_2$ act by the adjacent braid generators on the diagram sector modulo the certified slide relation (**Type-Theoretic Validation via Lean 4 Core** <Ref id="6.1.3.3" label="§6.1.3.3" />). On a basis diagram $\beta$,
 
-**II. PUC Compliance and Fidelity**
-1.  **Local Geometry:** The local triplet operation spans a subgraph of diameter $\le 3$. This lies strictly within the **Quasi-Local Radius** $R \sim \log N$ **Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />.
-2.  **Fidelity Bounds:** The pre-check operator detects violations with a failure probability bounded by $e^{-R} < 10^{-4}$ for $R = \log_{\text{diam}} N \sim 10$. This ensures the Reidemeister III move does not inadvertently create non-local knots.
+$$
+S_1 S_2 S_1|\beta\rangle
+=|\sigma_1\sigma_2\sigma_1\beta\rangle
+=|\sigma_2\sigma_1\sigma_2\beta\rangle
+=S_2 S_1 S_2|\beta\rangle .
+$$
 
-**III. Causal Preservation**
-The sequence involves edge deletions and additions that explicitly maintain the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$.
-1.  **Path Monotonicity:** The intermediate states preserve geodesic path lengths and **Timestamp Monotonicity**.
-2.  **Uniqueness:** In the Reidemeister III construction, each delete/add operation is checked: the post-delete 2-path is unique (no alternatives from distant ribbons), and the addition preserves acyclicity (shifts do not create $\le 2$ redundancies).
+**II. Transport of the full word**
+
+Use $\mathcal R_{12}U=US_1$ and $\mathcal R_{23}U=US_2$ on the sector of **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" />. Then
+
+$$
+\begin{aligned}
+\mathcal R_{12}\mathcal R_{23}\mathcal R_{12}U
+&=\mathcal R_{12}\mathcal R_{23}US_1
+=\mathcal R_{12}US_2S_1
+=US_1S_2S_1\\
+&=US_2S_1S_2
+=\mathcal R_{23}US_1S_2
+=\mathcal R_{23}\mathcal R_{12}US_2\\
+&=\mathcal R_{23}\mathcal R_{12}\mathcal R_{23}U .
+\end{aligned}
+$$
+
+Both operators therefore agree on every vector of the form $U|\psi\rangle$.
+
+**III. Tensor-factor example**
+
+For the swap $S|a,b\rangle=|b,a\rangle$ on a two-factor basis, put $S_{12}=S\otimes I$ and $S_{23}=I\otimes S$. The two products act as
+
+$$
+\begin{aligned}
+|a,b,c\rangle
+&\xrightarrow{S_{12}}|b,a,c\rangle
+ \xrightarrow{S_{23}}|b,c,a\rangle
+ \xrightarrow{S_{12}}|c,b,a\rangle,\\
+|a,b,c\rangle
+&\xrightarrow{S_{23}}|a,c,b\rangle
+ \xrightarrow{S_{12}}|c,a,b\rangle
+ \xrightarrow{S_{23}}|c,b,a\rangle .
+\end{aligned}
+$$
+
+Equality on the basis extends linearly to the tensor-product space.
 
 Q.E.D.
 
@@ -1908,10 +1962,10 @@ Section 8.3.5.2 formalizes the properties of the QBD calculation regarding exact
 
 ### 8.3.6 Lemma: Flux Tube Confinement {#8.3.6}
 
-:::info[**Topological Origin of the Linear Potential from Monopole Flux**]
+:::info[**Linear tube energy via fixed segment costs**]
 :::
 
-For any separation of color-charged endpoints within a tripartite braid, a confining potential energy $V(L) \approx \sigma L$ and a geometric phase $\gamma(L) = n \pi/4$ are generated by the topological structure of the connecting ribbon segments. Under this separation, the linear potential energy identifies the ribbon segments as a flux tube with string tension $\sigma$, while the accumulated Berry phase indicates a magnetic monopole flux $U(1)$ topology consistent with dual superconductor models.
+Let a modeled flux tube consist of $M$ segments of length $\ell_0>0$, with uniform excess energy $\epsilon_0>0$ and phase increment $g\pi/4$ per segment. Then its potential is $V(L)=(\epsilon_0/\ell_0)L$ at $L=M\ell_0$, and its modeled transport phase is $Mg\pi/4$ modulo $2\pi$.
 
 **In Plain English:**  
 Section 8.3.6 formalizes the properties of the QBD lemma regarding flux tube confinement.
@@ -1920,37 +1974,52 @@ Section 8.3.6 formalizes the properties of the QBD lemma regarding flux tube con
 
 ### 8.3.6.1 Proof: Flux Tube Confinement {#8.3.6.1}
 
-:::tip[**Derivation of String Tension and Phase Accumulation from Graph Geometry**]
+:::tip[**Derivation of string tension and phase via additive segments**]
 :::
 
-**I. Linear Potential Construction**
-Consider a tripartite braid where active crossing regions are separated by distance $L$. By the **Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />, distance is the minimum edge count.
-Let the flux tube be modeled as a chain of 3-cycles $C_1, C_2, \dots, C_M$ along the separation path of length $L \approx M \ell_0$.
-The Hamiltonian of the flux tube state is:
+**I. Excess energy**
+
+Measure the tube length along the specified supporting path, with the graph distance convention in **Strict Locality** <Ref id="5.5.2" label="§5.5.2" />. For the fixed-cost model of **Flux Tube Confinement** <Ref id="8.3.6" label="§8.3.6" />, write $\hat H_{\mathrm{flux}}=\sum_{j=1}^M\hat H_j$, and suppose each expectation relative to the reference state differs by $\epsilon_0$. Then
 
 $$
-\hat{H}_{flux} = \sum_{j=1}^M \hat{H}_j
+\begin{aligned}
+V(L)&=\sum_{j=1}^M
+  \bigl(\langle\Psi_L|\hat H_j|\Psi_L\rangle
+  -\langle\Psi_0|\hat H_j|\Psi_0\rangle\bigr)
+=\sum_{j=1}^M\epsilon_0\\
+&=M\epsilon_0=\boxed{\frac{\epsilon_0}{\ell_0}L}.
+\end{aligned}
 $$
 
-Since the vacuum expectation value of each local Hamiltonian term is $\langle \Psi | \hat{H}_j | \Psi \rangle = \epsilon_0$, the total energy of the state is:
+If only the spacing bound $|L-M\ell_0|\le\ell_0$ holds, then $|V(L)-(\epsilon_0/\ell_0)L|\le\epsilon_0$.
+
+**II. Transport along the tube**
+
+With segment transports $U_j=\exp(ig\pi/4)$ in the stated phase model,
 
 $$
-E(L) = \sum_{j=1}^M \langle \hat{H}_j \rangle = M \epsilon_0 = \left(\frac{L}{\ell_0}\right) \epsilon_0 = \left(\frac{\epsilon_0}{\ell_0}\right) L = \sigma L
+U_M\cdots U_1
+=\prod_{j=1}^M e^{ig\pi/4}
+=e^{i\,M g\pi/4}.
 $$
 
-This linear dependence $V(L) \propto L$ with string tension $\sigma = \epsilon_0 / \ell_0$ confirms the confinement mechanism: infinite energy is required to isolate color charges, strictly enforcing the **Architectural Stability** <Ref id="6.4.2" label="§6.4.2" />.
-
-**II. Berry Phase Accumulation**
-As endpoints translate, the local frame undergoes parallel transport. In the **Code Space** $\mathcal{C}$, the phase operator $\hat{\phi}$ accumulates a geometric phase $\gamma$ proportional to the area swept by the string worldsheet.
+In lattice units $\ell_0=1$, the example with $\sigma=0.5$ and $g=1$ gives
 
 $$
-\gamma(L) = g \cdot \frac{\pi}{4} \cdot L
+V(8)=0.5\cdot8=4,\qquad
+\gamma(8)=8\frac{\pi}{4}=2\pi,\qquad e^{i\gamma(8)}=1 .
 $$
 
-The factor $\pi/4$ corresponds to the discrete rotation of the qubit frame (Pauli-X/Z basis change) per lattice unit.
+**III. Rectangular-loop comparison**
 
-**III. Monopole Topology**
-The periodicity $\gamma(L) \pmod{2\pi}$ indicates the underlying $U(1)$ topology of the flux tube. The accumulation of $\pi$ phase shifts converts electric flux into magnetic flux, consistent with the dual superconductor model.
+In a separate area-law model with positive rectangular Wilson loop expectation $w(L,T)$, suppose $w(L,T)=\exp(-\sigma LT+o(T))$ at fixed separation $L$. With the static energy convention $V_W(L)=-\lim_{T\to\infty}T^{-1}\ln w(L,T)$,
+
+$$
+-\frac{\ln w(L,T)}{T}=\sigma L-\frac{o(T)}{T}
+\ \longrightarrow\ V_W(L)=\sigma L .
+$$
+
+An upper bound $w(L,T)\le e^{-\sigma LT}$ alone gives $V_W(L)\ge\sigma L$ whenever the static energy limit exists.
 
 Q.E.D.
 
@@ -2433,10 +2502,10 @@ Section 8.4.5.1 formalizes the properties of the QBD proof regarding right-hande
 
 ### 8.4.6 Lemma: Topological Parity Violation {#8.4.6}
 
-:::info[**Mechanistic Origin of Asymmetry due to Causal Locking**]
+:::info[**Parity asymmetry via selection of a single chirality**]
 :::
 
-Assume the parity symmetry of the weak interaction is strictly violated by the topological constraints of the causal graph. This violation is enforced by the **Chiral Lock** mechanism, wherein the right-handed mirror configuration of a flavor-changing process is rendered physically impossible by the Principle of Unique Causality, restricting all valid weak currents to the left-handed chiral sector defined by the projector $P_L = \frac{1}{2}(1 - \gamma_5)$.
+Let the encoded Dirac fields carry spatial parity and suppose the admitted weak vertex acts through the left projector $P_L=(I-\gamma^5)/2$ with no matching right vertex. Then the parity-conjugated current is right-handed with projector $P_R$, and a nonzero left-only vertex violates parity.
 
 **In Plain English:**  
 Section 8.4.6 formalizes the properties of the QBD lemma regarding topological parity violation.
@@ -2445,33 +2514,55 @@ Section 8.4.6 formalizes the properties of the QBD lemma regarding topological p
 
 ### 8.4.6.1 Proof: Topological Parity Violation {#8.4.6.1}
 
-:::tip[**Demonstration of the Exclusion of Right-Handed Currents by Axiomatic Constraints**]
+:::tip[**Derivation of parity violation via conjugation of the chiral projector**]
 :::
 
-The proof synthesizes the chiral invariant and PUC violation to demonstrate that parity asymmetry is an inevitable mechanistic consequence of the causal graph structure.
+**I. Spatial orientation and time**
 
-**I. Chiral Bias from Causality**
-The chiral invariant $\chi$ **Chiral Stability** <Ref id="8.4.3" label="§8.4.3" /> embeds a left-handed preference via the timestamp ordering $H_t$.
-The strict monotonicity condition $H_t(e_{in}) < H_t(e_{out})$ aligns the braid overcrossing with the forward causal arrow.
-Explicitly, the overcrossing edge $e_{over}$ carries a higher timestamp $H_t(e_{over}) > H_t(e_{under})$.
-This enforces the left-handed twist via the sign convention in the half-twist operator $\hat{\mathcal{T}}$, which maps to the chiral projector $\frac{1-\gamma_5}{2}$ in the emergent Dirac algebra.
-
-**II. Mirror Exclusion via PUC**
-The right-handed mirror process requires inverting the timestamp order to $H_t(e_{out}) < H_t(e_{in})$.
-This inversion exposes pre-existing mediated paths as valid alternatives under the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$.
-The cardinality of the path set for the inverted case becomes $|\Pi(u,v)| > 1$ with high probability (proven in **8.4.5.1**).
-The existence of multiple paths violates the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />.
-Consequently, the local projector $\Pi_{local}$ defined under **Hard Constraint Validity** <Ref id="3.5.4.1" label="§3.5.4.1" /> assigns a zero eigenvalue (annihilation) to the right-handed transition amplitude.
-
-**III. Conclusion: V-A Structure**
-Weak currents are strictly left-handed because right-handed currents are axiomatically invalid state transitions.
-The asymmetry matches the observed $V-A$ structure:
+For an embedded ribbon, write the oriented frame determinant as $\chi=\det[\boldsymbol a,\boldsymbol b,\boldsymbol c]$, where the three columns are spatial vectors. For spatial parity $\boldsymbol x\mapsto-\boldsymbol x$ at fixed $t$,
 
 $$
-J^\mu \propto \bar{\psi} \gamma^\mu (1 - \gamma_5) \psi
+\chi'=\det[-\boldsymbol a,-\boldsymbol b,-\boldsymbol c]
+=(-1)^3\chi=-\chi,\qquad t'_v-t'_u=t_v-t_u .
 $$
 
-The coefficient is 1 for left-handed states (valid paths) and 0 for right-handed states (forbidden paths). This maximal violation follows from the binary nature of the chiral stabilizer $S_\chi$, which projects strictly to the $\chi=-1$ eigenspace without intermediate values.
+The handedness reverses while a positive timestamp difference stays positive (**Chiral Stability** <Ref id="8.4.3" label="§8.4.3" />).
+
+**II. Exchange of chiral sectors**
+
+Use the Dirac representation premise in **Topological Parity Violation** <Ref id="8.4.6" label="§8.4.6" /> with $(\gamma^5)^2=I$, $(\gamma^0)^2=I$ and $\gamma^0\gamma^5=-\gamma^5\gamma^0$. The complementary projectors obey
+
+$$
+\begin{aligned}
+P_LP_R&=\tfrac14(I-(\gamma^5)^2)=0,\qquad P_L+P_R=I,\\
+\gamma^0P_L\gamma^0
+&=\tfrac12\bigl(I-\gamma^0\gamma^5\gamma^0\bigr)
+=\tfrac12(I+\gamma^5)=P_R .
+\end{aligned}
+$$
+
+If $P_L\psi=\psi$, then $P_R\gamma^0\psi=\gamma^0P_L\psi=\gamma^0\psi$. Thus a nonzero state of the left sector maps to the right sector.
+
+**III. Current and its parity transform**
+
+Let $x_P=(t,-\boldsymbol x)$ and $P^\mu{}_\nu=\operatorname{diag}(1,-1,-1,-1)$. Under $\psi'(x)=\gamma^0\psi(x_P)$ and $\bar\psi'(x)=\bar\psi(x_P)\gamma^0$,
+
+$$
+\begin{aligned}
+J_L'{}^\mu(x)
+&=\bar\psi(x_P)\gamma^0\gamma^\mu P_L\gamma^0\psi(x_P)\\
+&=\bar\psi(x_P)(\gamma^0\gamma^\mu\gamma^0)(\gamma^0P_L\gamma^0)\psi(x_P)\\
+&=P^\mu{}_\nu\,\bar\psi(x_P)\gamma^\nu P_R\psi(x_P)
+=P^\mu{}_\nu J_R^\nu(x_P).
+\end{aligned}
+$$
+
+For the admitted current $J^\mu=J_L^\mu$ with no right vertex, the parity partner is missing from the modeled interaction. In the same normalization,
+
+$$
+2J_L^\mu=\bar\psi\gamma^\mu(I-\gamma^5)\psi
+=\bar\psi\gamma^\mu\psi-\bar\psi\gamma^\mu\gamma^5\psi .
+$$
 
 Q.E.D.
 
@@ -2482,10 +2573,10 @@ Section 8.4.6.1 formalizes the properties of the QBD proof regarding topological
 
 ### 8.4.7 Lemma: Mirror PUC Violation {#8.4.7}
 
-:::info[**Violation of the Principle of Unique Causality by Right-Handed Configurations**]
+:::info[**Rejection of a mirror proposal via a distinct short-path witness**]
 :::
 
-Given a right-handed flavor-changing process, the configuration constitutes a direct violation of the Principle of Unique Causality because the required timestamp inversion $H_t(e_{out}) < H_t(e_{in})$ contradicts the forward causal flow. This inversion generates a local backward path that runs parallel to existing forward routes, increasing path cardinality to $|\Pi(u,v)| > 1$ and triggering annihilation by the local projector $\Pi_{local}$.
+Let a specified mirror rewrite proposal have a directed two-path precursor and an alternative simple path of length at most two with the same ordered endpoints. Then that proposal is inadmissible under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, and an exact projector onto the allowed sector annihilates states supported entirely on such violations.
 
 **In Plain English:**  
 Section 8.4.7 formalizes the properties of the QBD lemma regarding mirror puc violation.
@@ -2494,45 +2585,52 @@ Section 8.4.7 formalizes the properties of the QBD lemma regarding mirror puc vi
 
 ### 8.4.7.1 Proof: Mirror PUC Violation {#8.4.7.1}
 
-:::tip[**Formal Demonstration of Redundant Path Formation through Mirror Processes**]
+:::tip[**Derivation of candidate rejection via a path count and exact projection**]
 :::
 
-**I. Path Uniqueness Condition**
-The **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> mandates that for any causal rewrite proposal $u \to v$, the set of existing paths of length $\le 2$ must be empty (for new edges) or a singleton (for modifications).
+**I. Witness count**
+
+Use the candidate-relative criterion of the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />. For ordered endpoints $u\ne v$ the number of simple paths of length one or two is
 
 $$
-\text{PUC Constraint: } |\Pi_{\le 2}(u, v)| \in \{0, 1\}
+|\Pi_{\ell\le2}(u,v)|
+=\mathbf 1_{\{(u,v)\in E\}}
++\sum_{x\in V\setminus\{u,v\}}\mathbf 1_{\{(u,x),(x,v)\in E\}} .
 $$
 
-**II. Left-Handed Validity**
-For the standard (left-handed) $\mathcal{R}_W$, the timestamp ordering $H_t(e_1) < H_t(e_2)$ ensures the new path is chronologically distinct from any background paths. The "earlier-over-later" geometry prevents the formation of shortcuts or closed loops.
+For the worked precursor $E\to C\to D$, a retained route $E\to B\to D$ with $B\ne C$ contributes a different summand. Therefore
 
 $$
-|\Pi_{L}(u, v)| = 1
+|\Pi_{\ell\le2}(E,D)|\ge1+1=2>1 .
 $$
 
-**III. Right-Handed Violation**
-The mirror (right-handed) process reverses the local order: $H_t(e_2) < H_t(e_1)$.
-However, the graph's global causality preserves the original background paths.
-This reversal creates a "backward" local path that runs parallel to existing forward mediated routes in the background graph.
-Specifically, if a path $E \to C \to D$ exists with $H_t(E) < H_t(C) < H_t(D)$, the inverted rewrite attempts to establish a link that effectively bypasses $C$ with a timestamp violating the established lightcone.
-This results in $|\Pi_{R}(u, v)| > 1$.
+The same inequality holds if the alternative is the direct edge $E\to D$. These witnesses reject the candidate in **Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />.
 
-**IV. Quantification**
-The expected number of residual paths scales as the out-degree $\langle k \rangle$ in the causal tree.
-The violation probability is governed by the correlation length $\xi \sim 1/\rho_e$ **Correlation Decay** <Ref id="5.5.7" label="§5.5.7" />:
+**II. Reflection of the full graph**
+
+If a reflection $f$ carries the whole directed graph isomorphically to $G^*$, its action on short paths is
 
 $$
-P(\text{violation}) = 1 - e^{-\xi^2 \rho_e} \approx 0.2
+(u,v)\mapsto(f(u),f(v)),\qquad
+(u,x,v)\mapsto(f(u),f(x),f(v)).
 $$
 
-Amplified by the BFS search fidelity ($1 - e^{-R}$), the rejection rate is:
+Applying $f^{-1}$ recovers each original path, so the path sets are in bijection and their cardinalities agree. The two-path obstruction in Part I applies to a mirror proposal in its specified background with a distinct alternate route.
+
+**III. Exact and finite rejection**
+
+Let $\Pi_{\mathrm{PUC}}$ be the exact allowed-sector projector. On a violating state $|\eta\rangle=(I-\Pi_{\mathrm{PUC}})|\eta\rangle$,
 
 $$
-P(\text{reject}) \approx 1 - (1 - P(\text{alt})) e^{-R} \approx 0.9992
+\Pi_{\mathrm{PUC}}|\eta\rangle
+=(\Pi_{\mathrm{PUC}}-\Pi_{\mathrm{PUC}}^2)|\eta\rangle=0 .
 $$
 
-This confirms the near-unity suppression of the right-handed process.
+In the finite detection model of **Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" />, a witness prevalence $p_{\mathrm{alt}}$ gives the overall rejection probability $p_{\mathrm{alt}}(1-e^{-R})$. For the illustrative inputs $p_{\mathrm{alt}}=0.2$ and $e^{-R}=0.001$,
+
+$$
+p_{\mathrm{alt}}(1-e^{-R})=0.2(1-0.001)=0.1998 .
+$$
 
 Q.E.D.
 
@@ -2659,10 +2757,10 @@ Section 8.5.2.1 formalizes the properties of the QBD proof regarding computation
 
 ### 8.5.3 Lemma: Coupling-Probability Correspondence {#8.5.3}
 
-:::info[**Equivalence of Gauge Couplings via Rewrite Amplitudes**]
+:::info[**Probability scaling via a matched effective vertex**]
 :::
 
-For any fundamental interaction $F$, the square of the gauge coupling constant $g_F^2$ is linearly proportional to the probability density $P(\mathcal{R}_F)$ of the associated topological rewrite class. This correspondence $g_F^2 \propto P(\mathcal{R}_F)$ is derived from the Born rule applied to the unitary evolution operator in the discrete time limit.
+Let a registered rewrite channel have a Born amplitude matched to $g_F A_F$ with fixed nonzero $A_F$, or be matched in a rate regime to an effective vertex with fixed final-state density. Then its probability is proportional to $|g_F|^2$ in the amplitude model and to leading order in the rate model, with the proportionality set by the matching.
 
 **In Plain English:**  
 Section 8.5.3 formalizes the properties of the QBD lemma regarding coupling-probability correspondence.
@@ -2671,32 +2769,54 @@ Section 8.5.3 formalizes the properties of the QBD lemma regarding coupling-prob
 
 ### 8.5.3.1 Proof: Coupling-Probability Correspondence {#8.5.3.1}
 
-:::tip[**Derivation from the Born Sampling of the Causal Graph**]
+:::tip[**Derivation of squared-coupling scaling via channel matching**]
 :::
 
-**I. Born Probability Definition**
-In the QBD framework, the evolution of the state vector $|\Psi\rangle$ is driven by the **Universal Update** $\mathcal{U}$ **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />. The probability of a specific transition $|G\rangle \to |G'\rangle$ mediated by a rewrite $\mathcal{R}_F$ is given by the Born rule on the amplitude $M$:  **Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" /> and  **Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />
+**I. Matched Born amplitude**
+
+For normalized graph states $|G\rangle,|G'\rangle$, let the encoded update of **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" /> supply a channel amplitude $M_F=\langle G'|R_F|G\rangle$. Under the specified matching $M_F=g_F A_F$ in **Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" />,
 
 $$
-P(\mathcal{R}_F) = |M(G \to G')|^2
+p_F=M_F^*M_F=(g_F^* A_F^*)(g_F A_F)=|g_F|^2 |A_F|^2 .
 $$
 
-**II. Effective Lagrangian Correspondence**
-In the effective field theory limit, the interaction strength in the Lagrangian $\mathcal{L}_{eff}$ is parameterized by the coupling $g_F$. The transition probability per unit time (interaction rate) is proportional to $|M_{QFT}|^2$.
-Standard QFT normalization relates the vertex factor to the coupling:
+In a set of orthogonal recorded final states with amplitudes $M_{F,b}=g_F A_{F,b}$, the same argument gives $p_F=|g_F|^2\sum_b|A_{F,b}|^2$.
+
+**II. Rate matching**
+
+For an effective Hamiltonian $H_{\mathrm{int}}=g_F V$, put $v_{fi}=\langle f|V|i\rangle$. In the weak-coupling continuum regime of the golden rule, assume a smooth final-state density $\nu(E_i)$ and a fixed on-shell matrix element. The leading rate is
 
 $$
-|M_{QFT}|^2 \propto g_F^2
+\Gamma_F=\frac{2\pi}{\hbar}\bigl|\langle f|H_{\mathrm{int}}|i\rangle\bigr|^2\nu(E_i)
+=\frac{2\pi}{\hbar}|g_F|^2|v_{fi}|^2\nu(E_i).
 $$
 
-**III. Integration over Discrete Time**
-The discrete time step $\Delta t_L = 1$ acts as a natural UV cutoff. Integrating the transition density over one tick equates the discrete probability to the field theoretic rate:
+If an effective observation window $\Delta t$ matches a rewrite tick and the channel rate is constant within the window, the model with an exponential waiting time gives
 
 $$
-P(\mathcal{R}_F) \approx \int_0^{\Delta t_L} |M_{QFT}|^2 dt \propto g_F^2 \cdot \Delta t_L
+p_F=1-e^{-\Gamma_F\Delta t}
+=\Gamma_F\Delta t-\tfrac12(\Gamma_F\Delta t)^2
++O((\Gamma_F\Delta t)^3).
 $$
 
-Since $\Delta t_L$ is unity and universal for all forces, the proportionality $g_F^2 \propto P(\mathcal{R}_F)$ holds exactly. The constant of proportionality absorbs the geometric loop factor $4\pi$ from the spherical integral over the adjoint representation directions.
+**III. Normalization comparison**
+
+For $\Gamma_F\Delta t\ll1$, substituting the rate yields
+
+$$
+p_F=
+\underbrace{\frac{2\pi\Delta t}{\hbar}|v_{fi}|^2\nu(E_i)}_{K_F}
+\,|g_F|^2+O(|g_F|^4).
+$$
+
+For two matched Born channels $a,b$ with positive probabilities, their squared coupling ratio is
+
+$$
+\frac{|g_b|^2}{|g_a|^2}
+=\frac{p_b}{p_a}\frac{|A_a|^2}{|A_b|^2}.
+$$
+
+It equals the probability ratio if $|A_a|^2=|A_b|^2$.
 
 Q.E.D.
 
@@ -2707,10 +2827,10 @@ Section 8.5.3.1 formalizes the properties of the QBD proof regarding coupling-pr
 
 ### 8.5.4 Lemma: Topological Complexity Identification {#8.5.4}
 
-:::info[**Mapping Gauge Groups to Minimal Graph Cycles via Topological Complexity Identification**]
+:::info[**Doublet action via assigned triangle and quadrilateral channels**]
 :::
 
-Suppose every fundamental interaction of the electroweak sector is mapped to a specific topological rewrite class based on the minimal complexity required to generate its respective symmetry group. In particular, the $SU(2)_L$ flavor-changing interaction is mapped to 3-cycle rewrites ($p_3$) representing adjacent ribbon swaps, while the $U(1)_Y$ phase-rotating interaction is mapped to 4-cycle rewrites ($p_4$) representing the minimal loop required to enclose and rotate the doublet.
+Let a doublet encoding assign its weak controls to the registered three-edge class of probability $p_3$ and its hypercharge phase to the four-edge class of probability $p_4$ (**Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />). Then the specified Pauli weak controls generate $\mathfrak{su}(2)$, the scalar hypercharge action commutes with them, and the channel probabilities are $p_3$ and $p_4$ under the assignment.
 
 **In Plain English:**  
 Section 8.5.4 formalizes the properties of the QBD lemma regarding topological complexity identification.
@@ -2719,25 +2839,50 @@ Section 8.5.4 formalizes the properties of the QBD lemma regarding topological c
 
 ### 8.5.4.1 Proof: Topological Complexity Identification {#8.5.4.1}
 
-:::tip[**Analysis of Minimal Vertex Requirements through Doublet Transformations**]
+:::tip[**Verification of the channel actions via doublet matrix units**]
 :::
 
-**I. The SU(2) Interaction ($p_3$)**
-The $SU(2)_L$ interaction is non-abelian and flavor-changing (e.g., $e^- \leftrightarrow \nu_e$).  **Topological Complexity Identification** <Ref id="8.5.4" label="§8.5.4" /> and  **Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" />
-1.  **Action:** It transforms one basis state of the doublet into the other.
-2.  **Minimal Topology:** As proven in the **Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" />, this transformation is generated by swapping adjacent ribbons in the tripartite braid.
-3.  **Graph Dual:** The minimal subgraph required to execute a swap between two ribbons is a **3-cycle bridge** (one vertex on each ribbon plus a pivot).
-4.  **Conclusion:** The generator of $SU(2)$ maps to the class of 3-cycle rewrites. $P(\mathcal{R}_{SU2}) = p_3$.
+**I. Weak controls**
 
-**II. The U(1) Interaction ($p_4$)**
-The $U(1)_Y$ interaction is abelian and phase-rotating.
-1.  **Action:** It applies a uniform phase factor $e^{i\theta Y}$ to the doublet without changing flavor (diagonal action).
-2.  **Symmetry Requirement:** To commute with the $SU(2)$ generators, the $U(1)$ process must act identically on both components of the doublet (or symmetrically on the whole structure).
-3.  **Topology:** A 3-cycle is insufficient as it is inherently directional/asymmetric (swapping $A \to B$). To act uniformly on the *pair* of ribbons constituting the doublet, the rewrite must "wrap" the structure. The **4-cycle** is the minimal loop that can enclose the 3-cycle bridge, enabling a non-local phase rotation (Berry phase) around the doublet core.
-4.  **Conclusion:** The generator of $U(1)$ maps to the class of 4-cycle rewrites. $P(\mathcal{R}_{U1}) = p_4$.
+Use the weak doublet of **Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" /> with basis $|1\rangle,|2\rangle$, matrix units $E_{ab}=|a\rangle\langle b|$, and $E_{ab}E_{cd}=\delta_{bc}E_{ad}$. Write $X=E_{12}+E_{21}$ and $Z=E_{11}-E_{22}$. Then
 
-**III. Consistency Check**
-The mapping is verified by checking that the commutator of any two 3-cycle generators generates a 3-cycle (closing the $SU(2)$ algebra), whereas the 4-cycle operator acts as a central element on the doublet, matching the hypercharge definition.
+$$
+X|1\rangle=|2\rangle,\qquad X|2\rangle=|1\rangle,\qquad
+XZ=-E_{12}+E_{21},\qquad ZX=E_{12}-E_{21}.
+$$
+
+Put $Y=-i(E_{12}-E_{21})$. The same products give
+
+$$
+[iX,iZ]=-XZ+ZX=2iY,\qquad
+[iY,iX]=2iZ,\qquad [iZ,iY]=2iX.
+$$
+
+Each traceless anti-Hermitian $2\times2$ matrix is $i(aX+bY+cZ)$ for real $a,b,c$. The independent $iX,iZ$ controls and their bracket therefore generate $\mathfrak{su}(2)$.
+
+**II. Hypercharge action**
+
+Let the hypercharge generator on this doublet be diagonal, $H_Y=y_1E_{11}+y_2E_{22}$. Then
+
+$$
+[H_Y,X]=(y_1-y_2)(E_{12}-E_{21}).
+$$
+
+Commutation with $X$ forces $y_1=y_2=y$, so $H_Y=yI_2$. Its transport acts by
+
+$$
+e^{i\theta H_Y}|a\rangle=e^{i\theta y}|a\rangle,\qquad
+[e^{i\theta H_Y},X]=[e^{i\theta H_Y},Z]=0.
+$$
+
+**III. Registered classes**
+
+In **Topological Complexity Identification** <Ref id="8.5.4" label="§8.5.4" />, the bridge with two ribbon vertices and a pivot is assigned to the three-edge class, and the enclosing transport to the four-edge class. For the branch and friction model in **Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />, this gives
+
+$$
+P(\mathcal R_{SU(2)})=p_3=k^{-2}e^{-\mu\rho V_3},\qquad
+P(\mathcal R_{U(1)})=p_4=k^{-3}e^{-\mu\rho V_4}.
+$$
 
 Q.E.D.
 
@@ -2816,10 +2961,10 @@ Section 8.6.1 formalizes the properties of the QBD theorem regarding emergent ga
 
 ### 8.6.2 Lemma: Probabilistic Coupling Identity {#8.6.2}
 
-:::info[**Equivalence of Coupling Squared via Rewrite Probability**]
+:::info[**Leading Born probability via a normalized weak exchange**]
 :::
 
-Assume that in the effective field theory limit of the causal graph dynamics, the square of the gauge coupling constant $g^2$ is equivalent to the probability amplitude $P(\mathcal{R})$ of the associated topological rewrite process. Under this identity, the equivalence is established by the Born Rule applied to the **Universal Evolution Operator**, which identifies the interaction vertex of the Lagrangian with the transition kernel of the discrete graph update.
+Let an admitted coherent weak rewrite on an encoded doublet be $R(t)=\exp(igtX/2)$ in units with $\hbar=1$, with $X$ the Pauli exchange. Then its flip probability is $\sin^2(gt/2)$, which satisfies $P_{\mathrm{flip}}=(gt/2)^2+O((gt)^4)$ in the weak-step regime.
 
 **In Plain English:**  
 Section 8.6.2 formalizes the properties of the QBD lemma regarding probabilistic coupling identity.
@@ -2828,56 +2973,51 @@ Section 8.6.2 formalizes the properties of the QBD lemma regarding probabilistic
 
 ### 8.6.2.1 Proof: Probabilistic Coupling Identity {#8.6.2.1}
 
-:::tip[**Derivation of $g^2 = |M|^2$ from the Born Rule and Effective Action**]
+:::tip[**Derivation of the weak-step coupling via an exact doublet exponential**]
 :::
 
-**I. QFT Vertex Definition**
-In the standard Quantum Field Theory formulation (e.g., Srednicki, *Quantum Field Theory*, Ch. 50), the vertex amplitude $M$ for a weak doublet interaction is proportional to the coupling constant $g$.
+**I. Normalized exchange**
+
+Let $X|i\rangle=|f\rangle$, $X|f\rangle=|i\rangle$, and $\langle f|i\rangle=0$ for the two encoded basis states. With $T=X/2$ in the convention of **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" />,
 
 $$
-M \propto \frac{g}{2} \tau^a
+X^2=I,\qquad \operatorname{Tr}(T^2)=\tfrac14\operatorname{Tr}(I_2)=\tfrac12,\qquad
+\langle f|gT|i\rangle=\tfrac g2 .
 $$
 
-where $\tau^a$ represents the Pauli matrices. The interaction probability density is proportional to the squared modulus:
+**II. Exact transition**
+
+In the coherent model of **Probabilistic Coupling Identity** <Ref id="8.6.2" label="§8.6.2" />, put $x=gt/2$. Separating even and odd powers gives
 
 $$
-|M|^2 \propto g^2
+\begin{aligned}
+e^{ixX}
+&=\sum_{k=0}^\infty\frac{(ix)^{2k}I}{(2k)!}
+  +\sum_{k=0}^\infty\frac{(ix)^{2k+1}X}{(2k+1)!}\\
+&=I\cos x+iX\sin x,\\
+\langle f|e^{ixX}|i\rangle&=i\sin x,\qquad
+P_{\mathrm{flip}}=\boxed{\sin^2 x}.
+\end{aligned}
 $$
 
-**II. QBD Generator Expansion**
-In Quantum Braid Dynamics, the $SU(2)$ generators arise from the commutators $[H_i, H_j]$ of Hermitian Hamiltonians $H_i$, identified with the off-diagonal traceless matrices $\lambda^{(i,i+1)}$ **Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />.
-The unitary rewrite operator $\mathcal{R}_W$ evolves as $e^{i H t}$. For a discrete logical time step $t \sim 1$ tick, the Taylor expansion yields:
+**III. Error and inversion**
+
+For real $x$, $|\sin x|\le |x|$, and Taylor's theorem gives $|\sin x-x|\le |x|^3/6$. Hence
 
 $$
-\mathcal{R}_W \approx 1 + i H t - \frac{1}{2}(H t)^2 + \mathcal{O}(t^3)
+0\le x^2-P_{\mathrm{flip}}
+=|x-\sin x|\,|x+\sin x|
+\le\frac{|x|^3}{6}(2|x|)=\frac{|x|^4}{3}.
 $$
 
-The transition matrix element between basis states $|i\rangle$ and $|f\rangle$ is dominated by the linear term:
+On the branch $|x|\le\pi/2$ and for $t>0$, inversion gives
 
 $$
-\langle f | \mathcal{R}_W | i \rangle \approx i t \langle f | H | i \rangle
+|g|=\frac{2}{t}\arcsin\sqrt{P_{\mathrm{flip}}}
+=\frac{2}{t}\left(\sqrt{P_{\mathrm{flip}}}+O(P_{\mathrm{flip}}^{3/2})\right).
 $$
 
-Given the normalization of the generators (proven in **8.6.3.1**), the matrix element scales as $1/\sqrt{2}$.
-
-$$
-|M_{QBD}| \sim \frac{g_{eff} t}{\sqrt{2}}
-$$
-
-**III. Transition Probability and Coupling Identification**
-The **Euclidean Transition Measure** <Ref id="4.6.3" label="§4.6.3" /> equates the rewrite probability $P(\mathcal{R}_W)$ to the squared amplitude:
-
-$$
-P(\mathcal{R}_W) = |M_{QBD}|^2 \approx \frac{g_{eff}^2 t^2}{2}
-$$
-
-Setting the logical time interval to unity ($t=1$) and normalizing to the standard QFT convention where the vertex prefactor integrates to $4\pi \alpha$ (absorbing the factor of 2 into the definition of $g$), the relation simplifies to:
-
-$$
-g = \sqrt{P(\mathcal{R}_W)}
-$$
-
-The mean-field limit ensures higher-order Baker-Campbell-Hausdorff terms vanish due to friction damping $\mu$, which suppresses nested commutators of depth $> O(1)$ by a factor $e^{-\mu d}$.
+This supplies the explicit proportionality for the matched weak channel of **Coupling-Probability Correspondence** <Ref id="8.5.3" label="§8.5.3" />.
 
 Q.E.D.
 
@@ -2888,10 +3028,10 @@ Section 8.6.2.1 formalizes the properties of the QBD proof regarding probabilist
 
 ### 8.6.3 Lemma: Trace Normalization {#8.6.3}
 
-:::info[**Normalization of Generator Traces by QECC Syndrome Overlap**]
+:::info[**Trace normalization via a fundamental matrix basis**]
 :::
 
-Assume the generators of the emergent Lie algebra satisfy the trace normalization condition $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$. Under this constraint, the normalization is enforced by the overlap of the edge qubit operators within the Quantum Error-Correcting Code subspace, where the qubit overlap $\langle X_u Z_v \rangle = 1/\sqrt{2}$ and the symmetry factor of the automorphism group combine to yield the standard Gell-Mann normalization constant.
+Let $\lambda^a$ be the Hermitian traceless matrix basis formed by the symmetric and antisymmetric matrix units and the normalized diagonal differences on $\mathbb C^n$. Then $\operatorname{Tr}(\lambda^a\lambda^b)=2\delta^{ab}$, and $T^a=\lambda^a/2$ satisfies the fundamental trace convention $\operatorname{Tr}(T^aT^b)=\delta^{ab}/2$.
 
 **In Plain English:**  
 Section 8.6.3 formalizes the properties of the QBD lemma regarding trace normalization.
@@ -2900,38 +3040,53 @@ Section 8.6.3 formalizes the properties of the QBD lemma regarding trace normali
 
 ### 8.6.3.1 Proof: Trace Normalization {#8.6.3.1}
 
-:::tip[**Verification of the Standard Trace Convention from Qubit Overlaps**]
+:::tip[**Derivation of the trace convention via matrix-unit products**]
 :::
 
-**I. Generator Trace Properties**
-The fundamental generators are defined as $\lambda^{(i,j)} = |i\rangle\langle j| + |j\rangle\langle i|$.
-The trace of a single generator vanishes: $\operatorname{Tr}(\lambda) = 0$.
-The trace of the product of two generators corresponds to the overlap of the qubit states:
+**I. Off-diagonal matrices**
+
+For $1\le i<j\le n$, use $X_{ij}=E_{ij}+E_{ji}$ and $Y_{ij}=-i(E_{ij}-E_{ji})$, as in the matrix construction of **Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />. The identities $E_{ij}E_{kl}=\delta_{jk}E_{il}$ and $\operatorname{Tr}(E_{il})=\delta_{il}$ give
 
 $$
-\operatorname{Tr}(\lambda^a \lambda^b) = \sum_{k} \langle k | \lambda^a \lambda^b | k \rangle
+X_{ij}^2=Y_{ij}^2=E_{ii}+E_{jj},\qquad
+X_{ij}Y_{ij}=i(E_{ii}-E_{jj}).
 $$
 
-**II. Qubit Overlap Derivation**
-The off-diagonal elements arise from the Pauli-$X$ action on the edge qubits $q_{uv}$ connecting ribbons. The Code Space $\mathcal{C}$ enforces the stabilizer constraint $\langle Z_e \rangle = 1$.
-The overlap term involves the expectation value of the rewrite action relative to the vacuum:
+Thus the squared traces are $2$ and the mixed trace is $0$. For distinct unordered pairs, a product can have nonzero trace only if a factor $E_{ij}$ is paired with $E_{ji}$, which requires the same unordered pair. Multiplying by a diagonal matrix preserves the off-diagonal support, so the diagonal-to-off-diagonal trace products also vanish.
+
+**II. Diagonal normalization**
+
+For $1\le k<n$ define
 
 $$
-\langle \psi | X_u Z_v | \psi \rangle = \frac{1}{\sqrt{2}}
+D_k=\sum_{j=1}^k E_{jj}-k E_{k+1,k+1},\qquad
+H_k=\sqrt{\frac{2}{k(k+1)}}D_k .
 $$
 
-This factor $1/\sqrt{2}$ represents the geometric mean of the Bit ($Z$-basis) and Nat ($X$-basis) **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />.
-
-**III. Entropy Normalization**
-The vacuum entropy $H_S(G)$ scales with the logarithm of the automorphism group size $\log |\operatorname{Aut}(G)|$ **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" />.
-For the bipartite $Z_2$ symmetry inherent in the Bethe lattice stub (ribbon pair), the automorphism count doubles, contributing a factor of $\sqrt{2}$ to the normalization.
-Combining the qubit overlap and the symmetry factor:
+Direct diagonal multiplication gives
 
 $$
-\text{Normalization} = \left( \frac{1}{\sqrt{2}} \right)^2 \times 2^2 \to 2
+\operatorname{Tr}(D_k)=k-k=0,\qquad
+\operatorname{Tr}(D_k^2)=k+k^2=k(k+1).
 $$
 
-Thus, the condition $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ is satisfied, matching the standard $SU(N)$ generator convention used in the Standard Model.
+For $k<l$, $D_l$ has entry $1$ at every index on the support of $D_k$, giving
+
+$$
+\operatorname{Tr}(D_kD_l)=\sum_{j=1}^k 1-k=0,\qquad
+\operatorname{Tr}(H_kH_l)=2\delta_{kl}.
+$$
+
+**III. Rescaled generators**
+
+All basis matrices are traceless and mutually orthogonal for the trace pairing. For the basis in **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" />, the results combine to give
+
+$$
+\boxed{\operatorname{Tr}(\lambda^a\lambda^b)=2\delta^{ab}},\qquad
+\operatorname{Tr}(T^aT^b)
+=\tfrac14\operatorname{Tr}(\lambda^a\lambda^b)
+=\tfrac12\delta^{ab}.
+$$
 
 Q.E.D.
 
@@ -2942,10 +3097,10 @@ Section 8.6.3.1 formalizes the properties of the QBD proof regarding trace norma
 
 ### 8.6.4 Lemma: Geometric Normalization {#8.6.4}
 
-:::info[**Derivation of the Spherical Prefactor from Symmetry**]
+:::info[**Geometric averaging via normalized Haar measure**]
 :::
 
-Given an interaction probability density, a geometric prefactor of $4\pi$ arises from the integration of the vertex amplitude over the internal symmetry space of the $SU(2)$ doublet, which is isomorphic to the 3-sphere $S^3$. Under this integration, the discrete sum over all possible rewrite orientations in the isotropic vacuum converges to this spherical surface area in the thermodynamic limit, provided that the Haar measure is normalized by the Killing form trace convention.
+Let $\mu$ be the probability Haar measure on $SU(2)$ realized as the unit $3$-sphere with its round volume form. Then $\mathrm d\mu=\mathrm d\mathrm{vol}_{S^3}/(2\pi^2)$ and the group average of an integrable vertex weight is invariant under translations and coordinate reparametrization.
 
 **In Plain English:**  
 Section 8.6.4 formalizes the properties of the QBD lemma regarding geometric normalization.
@@ -2954,28 +3109,57 @@ Section 8.6.4 formalizes the properties of the QBD lemma regarding geometric nor
 
 ### 8.6.4.1 Proof: Geometric Normalization {#8.6.4.1}
 
-:::tip[**Integration of the Vertex Amplitude over the Doublet Phase Space via Geometric Normalization**]
+:::tip[**Derivation of the normalized spherical average via explicit integration**]
 :::
 
-**I. Phase Space Integral**
-The effective vertex amplitude $|M|^2$ must be integrated over the available phase space of the $SU(2)$ doublet.  **Geometric Normalization** <Ref id="8.6.4" label="§8.6.4" /> and  **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" /> The doublet geometry corresponds to the 3-sphere $S^3$ (isomorphic to the group manifold $SU(2)$).
-The volume of the unit 3-sphere is $2\pi^2$. However, the vertex normalization in the effective Lagrangian utilizes the **Haar Measure** on the group adjoint representation.
+**I. Group coordinates and invariance**
 
-**II. Adjoint Trace Adjustment**
-The Killing form for $\mathfrak{su}(n)$ is defined as $K(X,Y) = \operatorname{Tr}(\operatorname{ad}_X \operatorname{ad}_Y)$.
-For the fundamental representation generators $T^a$, the standard normalization is $\operatorname{Tr}(T^a T^b) = \frac{1}{2} \delta^{ab}$.
-However, QBD uses the normalization $\operatorname{Tr}(\lambda^a \lambda^b) = 2 \delta^{ab}$ (proven in **8.6.3.1**), which is $4\times$ the fundamental convention.
-The integration over the group manifold, adjusted for this normalization difference and the trace of the squared adjoint ($\operatorname{Tr}(\operatorname{ad}^2) = 2n = 4$ for $SU(2)$), yields the geometric prefactor.
-
-**III. Resulting Factor**
-The integral of the vertex function over the angular variables yields the solid angle factor adjusted for the group dimension.
-Consistent with the QED analogue where the photon vertex integrates to $4\pi \alpha_{em}$, the non-Abelian vertex in the QBD normalization integrates to:
+Each $U\in SU(2)$ can be written as
 
 $$
-\int d\Omega_{group} |M|^2 = 4\pi \alpha_{topo}
+U(a,b)=
+\begin{pmatrix}a&b\\-\overline b&\overline a\end{pmatrix},
+\qquad |a|^2+|b|^2=1 .
 $$
 
-This $4\pi$ factor represents the full spherical symmetry of the interaction in the internal color/flavor space.
+The group multiplication maps in these coordinates are real linear for each fixed multiplier. For $V\in SU(2)$ the trace norm obeys
+
+$$
+\operatorname{Tr}((VU)^\dagger VU)=\operatorname{Tr}(U^\dagger U),
+\qquad
+\operatorname{Tr}((UV)^\dagger UV)=\operatorname{Tr}(U^\dagger U).
+$$
+
+On the ambient real matrix subspace $\operatorname{Tr}(U^\dagger U)=2(|a|^2+|b|^2)$, so both translations act orthogonally on the sphere and preserve its round volume.
+
+**II. Volume of the unit sphere**
+
+Write $a=e^{i\phi}\cos\eta$ and $b=e^{i\psi}\sin\eta$ with $0\le\eta\le\pi/2$ and $0\le\phi,\psi<2\pi$. The round metric in these coordinates is
+
+$$
+|\mathrm da|^2+|\mathrm db|^2
+=\mathrm d\eta^2+\cos^2\eta\,\mathrm d\phi^2+\sin^2\eta\,\mathrm d\psi^2 .
+$$
+
+Its volume integral is
+
+$$
+\int_{S^3}\mathrm d\mathrm{vol}_{S^3}
+=(2\pi)^2\int_0^{\pi/2}\cos\eta\sin\eta\,\mathrm d\eta
+=4\pi^2\left[\tfrac12\sin^2\eta\right]_0^{\pi/2}=2\pi^2 .
+$$
+
+**III. Normalized vertex average**
+
+For the measure of **Geometric Normalization** <Ref id="8.6.4" label="§8.6.4" />,
+
+$$
+\mathrm d\mu=\frac{\mathrm d\mathrm{vol}_{S^3}}{2\pi^2},\qquad
+\int_{SU(2)}\mathrm d\mu=1,\qquad
+\int_{SU(2)}F(VU)\,\mathrm d\mu(U)=\int_{SU(2)}F(U)\,\mathrm d\mu(U).
+$$
+
+The same change of variables for right multiplication gives invariance on the other side. Changing coordinates preserves the integral when the volume Jacobian is included. A constant vertex weight $F_0$ consequently has average $F_0$, independent of the generator convention of **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" /> when the operator defining the weight is held fixed.
 
 Q.E.D.
 
@@ -3059,10 +3243,10 @@ Section 8.6.5.1 formalizes the properties of the QBD proof regarding entropic di
 
 ### 8.6.6 Lemma: Local State Space Multiplier {#8.6.6}
 
-:::info[**Enumeration of Local Degrees via Freedom contributing to the Coupling**]
+:::info[**Enumeration of the multiplier via registered channel labels**]
 :::
 
-Suppose the probability of a rewrite event is scaled by a combinatorial multiplier $M=7$, representing the total count of distinct, valid interaction channels available on a single 3-cycle geometric quantum. Under this state space decomposition, the multiplier is determined by the sum of 3 spatial orientations, 2 internal doublet states, and 1 global spin stabilizer constraint channel.
+Let a modeled Geometric Quantum have three active-edge labels, two flavor-transition labels per edge, and one separately registered stabilizer channel. Then the label count is $M=7$, and if all seven are disjoint events of common weight $p$ their aggregate weight is $Mp$.
 
 **In Plain English:**  
 Section 8.6.6 formalizes the properties of the QBD lemma regarding local state space multiplier.
@@ -3071,33 +3255,52 @@ Section 8.6.6 formalizes the properties of the QBD lemma regarding local state s
 
 ### 8.6.6.1 Proof: Local State Space Multiplier {#8.6.6.1}
 
-:::tip[**Combinatorial Enumeration via Valid Interaction Channels on a 3-Cycle**]
+:::tip[**Derivation of the multiplicity via a disjoint label count**]
 :::
 
-**I. Channel Decomposition**
-To determine the multiplicity factor $M$ for the interaction probability, the number of distinct, valid rewrite channels on a fundamental 3-cycle must be counted.
-1.  **Orientations (3):** The directed 3-cycle $\gamma$ has 3 edges. Each edge can serve as the "active" rung for the half-twist operator $\hat{\mathcal{T}}$ **Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />. This yields 3 spatial channels.
-2.  **Doublet States (2):** The interaction acts on the $SU(2)$ doublet. The rewrite can initiate from either the Left-handed or Right-handed chirality state (prior to projection). This yields a factor of 2 for the internal state degrees of freedom.
-3.  **Spin Stabilizer (+1):** The global spin parity check $L_S = \prod Z_{e_i} = +1$ **Spin Operator** <Ref id="7.1.1" label="§7.1.1" /> adds a single constraint channel that must be satisfied, effectively contributing one unit of weight to the coherent sum in the path integral.
+**I. Product and extra label**
 
-**II. Total Multiplicity**
-Summing the independent channels:
+Let the three edge labels be $E_\gamma=\{e_1,e_2,e_3\}$, and the flavor-transition labels be $D=\{\mathrm{flip},\mathrm{anti\!-\!flip}\}$. The spin stabilizer in **Spin Operator** <Ref id="7.1.1" label="§7.1.1" /> motivates a distinct registered label $\star$ in the model of **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" />. Its tagged channel set is
 
 $$
-M = (3 \text{ edges} \times 2 \text{ states}) + 1 \text{ stabilizer} = 7
+\mathcal J=(E_\gamma\times D)\sqcup\{\star\},\qquad
+|\mathcal J|=\sum_{e\in E_\gamma}|D|+1=2+2+2+1=\boxed{7}.
 $$
 
-The count excludes overcounting because the Principle of Unique Causality (PUC) ensures that the support of each edge operation is disjoint in the local neighborhood.
+**II. Probability weight**
 
-**III. Error Analysis**
-The effective coupling is proportional to the square root of the active site density.
+For mutually exclusive recorded outcomes $A_j$, $j\in\mathcal J$, of common weight $p$,
 
 $$
-g \propto \sqrt{M \rho_3^*}
+\Pr\!\left(\bigcup_{j\in\mathcal J}A_j\right)
+=\sum_{j\in\mathcal J}\Pr(A_j)
+=\sum_{j\in\mathcal J}p=Mp .
 $$
 
-With $\rho_3^* \approx 0.029$ and $M=7$, the active density is $7 \times 0.029 \approx 0.203$.
-The relative error $\Delta g / g$ scales with half the relative error in the density $\Delta \rho / \rho \approx 0.005 / 0.029 \approx 17\%$. However, ensemble averaging reduces this scatter to $\approx 1.7\%$ **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" />, consistent with the precision of the derived coupling.
+The same sum holds for orthogonal output branches of squared norm $p$. If branches instead contribute amplitudes $a_j$ to a common output, their total weight contains cross terms:
+
+$$
+\left|\sum_{j\in\mathcal J}a_j\right|^2
+=\sum_{j\in\mathcal J}|a_j|^2+
+2\sum_{j<k}\operatorname{Re}(\overline a_j a_k).
+$$
+
+**III. Worked density and sensitivity**
+
+For the density factor in **Emergent Gauge Coupling** <Ref id="8.6.1" label="§8.6.1" />, the model inputs $M=7$ and $\rho_3^*=0.029$ give $M\rho_3^*=0.203$. If $g=A\sqrt{M\rho_3^*}$ with fixed $A>0$, then
+
+$$
+\frac{\mathrm dg}{g}=\tfrac12\frac{\mathrm d\rho_3^*}{\rho_3^*},
+\qquad
+\frac{0.005}{2(0.029)}\simeq0.0862 .
+$$
+
+The finite shifts at the stated inputs are
+
+$$
+\frac{g(0.024)}{g(0.029)}-1=\sqrt{\frac{24}{29}}-1\simeq-0.0903,\qquad
+\frac{g(0.034)}{g(0.029)}-1=\sqrt{\frac{34}{29}}-1\simeq0.0828 .
+$$
 
 Q.E.D.
 
@@ -3476,10 +3679,10 @@ Section 8.7.3.1 formalizes the properties of the QBD proof regarding boson mass 
 
 ### 8.7.4 Lemma: Dimensionful VEV Scaling {#8.7.4}
 
-:::info[**Scaling of the Vacuum Expectation Value by Local Correlation Density**]
+:::info[**Dimensionful scaling via fixed local capacity and an energy match**]
 :::
 
-For any configuration of the local vacuum, the Vacuum Expectation Value $v$ scales according to the relation $v = \sqrt{2 \kappa_m \rho_3^* N_\xi}$ to anchor the electroweak scale. Under this scaling, the condensate strength is constant regardless of the total cosmic volume $N$, ensuring a stable reservoir from which particles extract structural resources.
+Let the local reservoir model assign $v^2=2\kappa_m E_* \rho_3^* N_\xi$, with positive energy scales $\kappa_m,E_*$, dimensionless density $\rho_3^*$, and local capacity $N_\xi$ independent of the total graph volume at fixed local inputs. Then $v$ is an energy and is proportional to $\sqrt{\rho_3^*}$ at fixed capacity and anchors.
 
 **In Plain English:**  
 Section 8.7.4 formalizes the properties of the QBD lemma regarding dimensionful vev scaling.
@@ -3488,19 +3691,60 @@ Section 8.7.4 formalizes the properties of the QBD lemma regarding dimensionful 
 
 ### 8.7.4.1 Proof: Dimensionful VEV Scaling {#8.7.4.1}
 
-:::tip[**Derivation of the 246 GeV Scale from Local Density of States**]
+:::tip[**Derivation of local VEV scaling via dimensional matching and ball bounds**]
 :::
 
-Extensive entropy $S = c N$ **Extensive Entropy** <Ref id="5.1.1" label="§5.1.1" /> dictates that the collective condensate strength is an intensive property, independent of the global volume $N$. It satisfies $\langle \phi \rangle^2 \propto \rho_3^* N_\xi$, where $N_\xi$ is the number of available 3-cycles within the correlation volume $V_\xi$. The correlation length scales as $\xi^{-1} = \sqrt{\rho_3^*}$ from the decay $e^{-d/\xi}$ **Correlation Decay**. The dimensionful anchor $\kappa_m \approx 0.170$ MeV per 3-cycle **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> relates the braid free energy to quanta count via $F_{\mathrm{braid}} = \kappa_m N_3$ **Thermodynamic Equivalence**.
+**I. Units and fixed-capacity scaling**
 
-**I. Geometric Regularity**
-The volume $V_\xi$ satisfies **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" /> (volume scaling $c_1 r^4 \leq |B(r)| \leq c_2 r^4$), with curvature bounds $|K(u,v)| \leq 2$ (**Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />). Central limit theorem damping over independent subregions yields a stable intensive variance $\mathrm{Var}(\rho_3\*) \sim 1/N_\xi$, where $N_\xi = \frac{V_\xi}{\mathrm{vol}(\gamma)} \sim \rho_3^{*-3}$.
+In natural units, **Topological Mass Functional** <Ref id="7.4.2" label="§7.4.2" /> uses the energy per quantum $\kappa_m$. In the matching model of **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" />, $N_\xi$ is a dimensionless local capacity and $\rho_3^*$ its occupied fraction. With a second energy scale $E_*$,
 
-**II. VEV Derivation**
-The effective VEV constitutes $v = \sqrt{2 \kappa_m \rho_3^* N_\xi}$. Because $N_\xi$ depends only on the local correlation length and the equilibrium density $\rho_3^* \approx 0.029$ **Viability Channel** <Ref id="5.3.4" label="§5.3.4" />, the resulting VEV is strictly intensive. Calibrating the fundamental topological anchor $\kappa_m$ against the aggregate count $N_\xi$ in the 4-dimensional correlation volume yields the observed macroscopic energy scale of $246$ GeV.
+$$
+[\kappa_m E_*\rho_3^*N_\xi]
+=[\mathrm{energy}]^2,\qquad
+v=\sqrt{2\kappa_m E_*N_\xi}\sqrt{\rho_3^*}.
+$$
 
-**III. Metric Rigor**
-The Ahlfors-David regularity theorem guarantees that the causal metric, emergent from rewrite distances $d(u,v) = \inf \{\text{length}(\gamma) \mid \gamma \text{ path } u \to v\}$ **Strict Locality** <Ref id="5.5.2" label="§5.5.2" />, supports 4-dimensional volume growth. The Reifenberg theorem for local regularity implies **Geometric Well-Posedness** <Ref id="5.5.1" label="§5.5.1" />. The $\epsilon$-Hausdorff distance $\epsilon \sim \rho_3^*$ ensures the graph approximates $\mathbb{R}^4$ balls up to scale $\xi$. By relying on the intensive capacity $N_\xi$, the vacuum preserves the VEV as a cosmological constant, preventing mass evaporation as the global $N$ expands over time.
+For two densities at fixed $N_\xi,\kappa_m,E_*$,
+
+$$
+\frac{v(\rho_b)}{v(\rho_a)}=\sqrt{\frac{\rho_b}{\rho_a}},\qquad
+\frac{\mathrm d\ln v}{\mathrm d\ln\rho_3^*}=\tfrac12 .
+$$
+
+At fixed local inputs, changing the total graph size does not change any factor in this expression.
+
+**II. Capacity from a correlation ball**
+
+Under the two-sided bounds of **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />, suppose the capacity per unit ball volume is a constant $\nu>0$ in the specified radius range. Then
+
+$$
+c_-\xi^4\le V_\xi\le c_+\xi^4
+\quad\Longrightarrow\quad
+\nu c_-\xi^4\le N_\xi=\nu V_\xi\le\nu c_+\xi^4 .
+$$
+
+If the model additionally sets $\xi=b(\rho_3^*)^{-1/2}$ with fixed $b>0$, the same bounds give
+
+$$
+\nu c_- b^4(\rho_3^*)^{-2}\le N_\xi\le
+\nu c_+ b^4(\rho_3^*)^{-2},
+\qquad
+2\kappa_m E_* \nu c_- b^4(\rho_3^*)^{-1}
+\le v^2\le
+2\kappa_m E_* \nu c_+ b^4(\rho_3^*)^{-1}.
+$$
+
+This yields $v$ bounded above and below by fixed multiples of $(\rho_3^*)^{-1/2}$ in that joint model.
+
+**III. Numerical anchor**
+
+With $\kappa_m=0.170\,\mathrm{MeV}=1.70\times10^{-4}\,\mathrm{GeV}$ and $\rho_3^*=0.029$, matching $v_{\mathrm{ref}}=246\,\mathrm{GeV}$ fixes the product
+
+$$
+E_*N_\xi=\frac{v_{\mathrm{ref}}^2}{2\kappa_m\rho_3^*}
+=\frac{(246\,\mathrm{GeV})^2}{2(1.70\times10^{-4}\,\mathrm{GeV})(0.029)}
+\simeq6.14\times10^9\,\mathrm{GeV}.
+$$
 
 Q.E.D.
 

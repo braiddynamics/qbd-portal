@@ -593,10 +593,10 @@ Section 9.2.5.1 formalizes the properties of the QBD proof regarding distant com
 
 ### 9.2.6 Lemma: Yang-Baxter Relations {#9.2.6}
 
-:::info[**Compliance of Penta-Ribbon Rewrite Sequences by Topological Isotopy**]
+:::info[**Extension of the braid relations via encoded spectator factors**]
 :::
 
-Suppose the sequence of adjacent rewrite operations acting on the penta-ribbon braid satisfies the **Yang-Baxter Equation**, formally expressed as $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$. This relation is physically enforced by the topological isotopy of the underlying graph transformations, which guarantees that the two distinct causal orderings of a three-strand permutation operation yield identical final connectivity states with respect to all global topological invariants.
+Let an invertible two-ribbon exchange $R$ on $K\otimes K$ satisfy the three-factor relation on $K^{\otimes3}$ and admit a coherent encoding of the resulting five-factor action. Then the four encoded adjacent exchanges satisfy the defining relations of $B_5$.
 
 **In Plain English:**  
 Section 9.2.6 formalizes the properties of the QBD lemma regarding yang-baxter relations.
@@ -605,25 +605,54 @@ Section 9.2.6 formalizes the properties of the QBD lemma regarding yang-baxter r
 
 ### 9.2.6.1 Proof: Yang-Baxter Relations {#9.2.6.1}
 
-:::tip[**Verification of Isotopic Equivalence via Adjacent Rewrite Sequences**]
+:::tip[**Derivation of the five-ribbon relations via tensor extension**]
 :::
 
-The proof verifies the Yang-Baxter relation $\mathcal{R}_i \mathcal{R}_{i+1} \mathcal{R}_i = \mathcal{R}_{i+1} \mathcal{R}_i \mathcal{R}_{i+1}$ for adjacent ribbons in the 5-strand braid group $B_5$.
+**I. Adjacent exchanges**
 
-**I. Topological Construction**
-The relation represents the "three-strand rule" (Reidemeister Type III move). For any triplet of adjacent ribbons $(i, i+1, i+2)$, the sequence represents a permutation of the strands.
-Both sequences $\Sigma_A = \mathcal{R}_i \circ \mathcal{R}_{i+1} \circ \mathcal{R}_i$ and $\Sigma_B = \mathcal{R}_{i+1} \circ \mathcal{R}_i \circ \mathcal{R}_{i+1}$ map the initial configuration $C_{init}$ to an identical final configuration $C_{final}$ up to ambient isotopy.
-The isotopy preserves all topological invariants, including the **Writhe** $w(\beta)$ and **Linking Matrix** $L_{ij}$ **Local Reducibility** <Ref id="6.1.1" label="§6.1.1" />.
+Use the local Yang-Baxter relation of **Yang-Baxter Relations** <Ref id="8.1.4" label="§8.1.4" /> on the three active factors. In the five-factor model of **Yang-Baxter Relations** <Ref id="9.2.6" label="§9.2.6" />, set $S_i=I^{\otimes(i-1)}\otimes R\otimes I^{\otimes(4-i)}$ for $1\le i\le4$. For each $i=1,2,3$,
 
-**II. Causal Validity**
-The transformation respects the **Principle of Unique Causality**.
-In the graph representation, the "triangle slide" operation involves a sequence of edge additions and deletions.
-1.  **Deletion:** Removing an edge leaves a unique 2-path (no distant alternatives exist).
-2.  **Addition:** Adding the new crossing edge preserves acyclicity (timestamps $H(e)$ remain monotonic).
-The intermediate states in both $\Sigma_A$ and $\Sigma_B$ satisfy the **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> relation $\le$, ensuring the move is a valid trajectory in the causal manifold.
+$$
+\begin{aligned}
+S_iS_{i+1}S_i
+&=I^{\otimes(i-1)}\otimes
+  \bigl((R\otimes I)(I\otimes R)(R\otimes I)\bigr)\otimes I^{\otimes(3-i)}\\
+&=I^{\otimes(i-1)}\otimes
+  \bigl((I\otimes R)(R\otimes I)(I\otimes R)\bigr)\otimes I^{\otimes(3-i)}
+=S_{i+1}S_iS_{i+1}.
+\end{aligned}
+$$
 
-**III. Invariant Preservation**
-The ambient isotopy preserves the link invariants of the braid closure. Specifically, the writhe $w(\beta)$ remains invariant under the Reidemeister Type III move, as the number of positive and negative crossings is conserved: $w(\Sigma_A) = w(\Sigma_B)$. Similarly, the linking matrix $L_{ij}$ mapping the pairwise crossings is identical, confirming that the physical states are topologically indistinguishable.
+For the corresponding positive braid words the three crossings are between the same strand pairs, in the orders $(i,i+1),(i,i+2),(i+1,i+2)$ and their reverse. Thus each of these pairs contributes $+1$ to its diagrammatic crossing sum on either side.
+
+**II. Distant exchanges**
+
+For $i<j-1$ the supports of $S_i$ and $S_j$ are distinct tensor factors. Using **Distant Commutativity** <Ref id="9.2.5" label="§9.2.5" />, direct multiplication gives
+
+$$
+S_iS_j
+=I^{\otimes(i-1)}\otimes R\otimes I^{\otimes(j-i-2)}
+ \otimes R\otimes I^{\otimes(4-j)}
+=S_jS_i .
+$$
+
+These are the pairs $(1,3),(1,4),(2,4)$. The inverses are obtained by replacing $R$ with $R^{-1}$.
+
+**III. Transport to the encoded sector**
+
+Let $U$ be the stipulated encoding with $\mathcal R_iU=US_i$ and with each $\mathcal R_i$ invertible on its image. For any word in these operators, repeated intertwining moves $U$ to the left of the entire word. In particular,
+
+$$
+\begin{aligned}
+(\mathcal R_i\mathcal R_{i+1}\mathcal R_i
+-\mathcal R_{i+1}\mathcal R_i\mathcal R_{i+1})U
+&=U(S_iS_{i+1}S_i-S_{i+1}S_iS_{i+1})=0,\\
+(\mathcal R_i\mathcal R_j-\mathcal R_j\mathcal R_i)U
+&=U(S_iS_j-S_jS_i)=0\qquad (|i-j|\ge2).
+\end{aligned}
+$$
+
+Hence the assignments $\sigma_i\mapsto\mathcal R_i|_{\operatorname{im} U}$ respect the defining relations of $B_5$.
 
 Q.E.D.
 
@@ -3189,10 +3218,10 @@ Section 9.2.11.3 formalizes the properties of the QBD type-theoretic regarding v
 
 ### 9.2.12 Lemma: Anti-Fundamental Multiplet {#9.2.12}
 
-:::info[**Topological Realization of the Anti-Fundamental Representation as Unlinked Ribbons**]
+:::info[**Anti-fundamental action via the dual of the encoded fundamental**]
 :::
 
-Let the fermion multiplet transforming under the $\mathbf{\bar{5}}$ (anti-fundamental) representation be topologically isomorphic to the **Unlinked Braid Configuration** of the penta-ribbon. Under this isomorphism, the five basis states correspond to the five ribbons, localizing the three color degrees of freedom on ribbons 1-3 and the two weak degrees of freedom on ribbons 4-5.
+Let $V_5$ carry the fundamental action of $SU(5)$ and equip $V_5^*$ with its dual action. Then $V_5^*$ is the $\mathbf{\bar5}$, with Hermitian generators $-(T^a)^T$ and color and weak decomposition $(\mathbf{\bar3},\mathbf1)\oplus(\mathbf1,\mathbf2)$.
 
 **In Plain English:**  
 Section 9.2.12 formalizes the properties of the QBD lemma regarding anti-fundamental multiplet.
@@ -3201,25 +3230,51 @@ Section 9.2.12 formalizes the properties of the QBD lemma regarding anti-fundame
 
 ### 9.2.12.1 Proof: Anti-Fundamental Multiplet {#9.2.12.1}
 
-:::tip[**Demonstration of Minimal Complexity via the $\mathbf{\bar{5}}$ Multiplet**]
+:::tip[**Derivation of the anti-fundamental generators via dual pairing**]
 :::
 
-The topological structure of the $\mathbf{\bar{5}}$ multiplet corresponds to the minimal energy configuration of the penta-ribbon braid.  **Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" /> and  **Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />
+**I. Finite action**
 
-**I. Representation Decomposition**
-The $\mathbf{\bar{5}}$ decomposes under $SU(3) \times SU(2)$ as $(\mathbf{\bar{3}}, \mathbf{1}) \oplus (\mathbf{1}, \mathbf{2})$.
-* The color triplet $(\mathbf{\bar{3}}, \mathbf{1})$ corresponds to 3 parallel ribbons (down-type quark singlet).
-* The weak doublet $(\mathbf{1}, \mathbf{2})$ corresponds to 2 parallel ribbons (lepton doublet).
+In the fundamental space of **Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" />, let $v_i$ be a basis and let $v^i$ be its dual, with $v^i(v_j)=\delta^i_j$. For the action on linear functionals set $(g\cdot f)(v)=f(g^{-1}v)$. Then
 
-**II. Topological Invariants**
-This configuration requires no inter-ribbon braiding between the color and weak sectors to preserve quantum numbers.
-* **Crossing Number:** $C[\beta] = 0$.
-* **Linking Matrix:** $L_{ij} = 0$ for all $i \neq j$.
-The Generalized Braid Energy Functional $E \propto C[\beta]$ is minimized.
-This aligns with the identification of $\mathbf{\bar{5}}$ as the "lightest" or simplest matter representation, necessitating only intrinsic writhe but no link complexity.
+$$
+((gh)\cdot f)(v)=f(h^{-1}g^{-1}v)
+=(g\cdot(h\cdot f))(v).
+$$
 
-**III. Minimal Braid Energy**
-The absence of crossings yields the absolute minimum for the Generalized Braid Energy Functional $E[\beta] = 0$ in the absence of external excitations. This zero-crossing state constitutes the stable topological ground state, explaining why first-generation leptons and down antiquarks possess the lowest masses in the unified spectrum.
+In dual column coordinates the action matrix is $(g^{-1})^T=\overline g$, since $g^\dagger=g^{-1}$.
+
+**II. Infinitesimal action**
+
+For $g(t)=e^{itT^a}$, the dual matrix is $e^{-it(T^a)^T}$. With $T_{\mathrm{dual}}^a=-(T^a)^T$ and $[T^a,T^b]=i\sum_c f^{abc}T^c$,
+
+$$
+\begin{aligned}
+[T_{\mathrm{dual}}^a,T_{\mathrm{dual}}^b]
+&=[(T^a)^T,(T^b)^T]=-[T^a,T^b]^T\\
+&=-i\sum_c f^{abc}(T^c)^T
+=i\sum_c f^{abc}T_{\mathrm{dual}}^c.
+\end{aligned}
+$$
+
+To see irreducibility, let $A\subset V_5^*$ be a nonzero proper invariant subspace. Its annihilator $A^0$ has dimension $5-\dim A$. For $v\in A^0$, $f(gv)=(g^{-1}\cdot f)(v)=0$ for every $f\in A$, so $gv\in A^0$. But $SU(5)$ takes any unit vector to any other. Given unit vectors $u,v$, extend each to an orthonormal basis and take the unitary $U_0$ mapping the first basis to the second. With $d=\det U_0$, postcompose with the unitary that multiplies the second target basis vector by $d^{-1}$ and fixes the rest. The resulting unitary still sends $u$ to $v$ and has determinant $d^{-1}d=1$. An invariant subspace containing a unit vector must therefore contain every unit vector. This excludes $A^0$ with $0<\dim A^0<5$ and proves irreducibility of the dual.
+
+**III. Block restriction**
+
+Use the split of **Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />. For $g=\operatorname{diag}(g_C,g_W)$ with $g_C\in SU(3)$ and $g_W\in SU(2)$, the action is $\operatorname{diag}(\overline{g_C},\overline{g_W})$. On the weak block, the antisymmetric matrix
+
+$$
+J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+g_W Jg_W^T=(\det g_W)J=J
+$$
+
+satisfies $g_WJ=J\overline{g_W}$, so the dual weak doublet is equivalent to the doublet. With the standard fundamental hypercharge assignment $Y=\operatorname{diag}(-1/3,-1/3,-1/3,1/2,1/2)$,
+
+$$
+Y_{\mathrm{dual}}=-Y^T=\operatorname{diag}(1/3,1/3,1/3,-1/2,-1/2).
+$$
+
+Thus the two blocks have the anti-down and lepton-doublet quantum numbers in that assignment.
 
 Q.E.D.
 
@@ -3230,10 +3285,10 @@ Section 9.2.12.1 formalizes the properties of the QBD proof regarding anti-funda
 
 ### 9.2.13 Lemma: Antisymmetric Multiplet {#9.2.13}
 
-:::info[**Topological Realization of the Antisymmetric Representation via Pairwise Linking**]
+:::info[**Construction of the decuplet via the exterior square**]
 :::
 
-Suppose the fermion multiplet transforming under the $\mathbf{10}$ (antisymmetric tensor) representation be topologically isomorphic to the **Pairwise Linked Braid Configuration** of the penta-ribbon. Under this isomorphism, the configuration is defined by the existence of exactly one elementary crossing between every distinct pair of ribbons $(i,j)$ to realize the antisymmetric tensor product $\wedge^2 \mathbf{5}$.
+Let $V_5$ be the fundamental complex representation of $SU(5)$. Then the induced action $g(v\wedge w)=(gv)\wedge(gw)$ on $\wedge^2 V_5$ is irreducible and has dimension $10$.
 
 **In Plain English:**  
 Section 9.2.13 formalizes the properties of the QBD lemma regarding antisymmetric multiplet.
@@ -3242,23 +3297,59 @@ Section 9.2.13 formalizes the properties of the QBD lemma regarding antisymmetri
 
 ### 9.2.13.1 Proof: Antisymmetric Multiplet {#9.2.13.1}
 
-:::tip[**Demonstration of Stable Complexity via the $\mathbf{10}$ Multiplet**]
+:::tip[**Derivation of the decuplet via antisymmetry and weight connectivity**]
 :::
 
-The topological structure of the $\mathbf{10}$ multiplet corresponds to the antisymmetric tensor product of two fundamental representations.  **Antisymmetric Multiplet** <Ref id="9.2.13" label="§9.2.13" /> and  **Anti-Fundamental Multiplet** <Ref id="9.2.12" label="§9.2.12" />
+**I. Antisymmetric basis**
 
-**I. Representation Topology**
-The $\mathbf{10}$ is isomorphic to $\wedge^2 \mathbf{5}$. This algebraic antisymmetry maps to a topological configuration of pairwise crossings.
-Each distinct pair of ribbons $(i, j)$ interacts via a single crossing or elementary link.
-The total number of pairs is $\binom{5}{2} = 10$.
+Choose an orthonormal fundamental basis as in **Closed Lie Algebra** <Ref id="9.2.11" label="§9.2.11" /> and let $v_i\wedge v_j=(v_i\otimes v_j-v_j\otimes v_i)/\sqrt2$ for $i<j$. If $S$ flips the tensor factors, its $-1$ eigenspace consists of coefficients satisfying $c_{ji}=-c_{ij}$ and $c_{ii}=0$. Direct inner products give
 
-**II. Complexity and Stability**
-* **Crossing Number:** $C[\beta] = 10$ (one per pair).
-* **Stability:** The sparse network of links creates a local minimum in the complexity landscape. The energy is higher than the unlinked $\mathbf{\bar{5}}$ but lower than fully braided states.
-* **Chiral Projection:** The 10 crossings induce 10 specific 3-cycles, enforcing the chiral projections required by the Standard Model embedding $SU(3) \times SU(2) \times U(1)$.
+$$
+\langle v_i\wedge v_j,v_k\wedge v_l\rangle
+=\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}
+=\delta_{ik}\delta_{jl}\qquad(i<j,\ k<l).
+$$
 
-**III. Topological Stability**
-The configuration of exactly 10 pairwise crossings forms a complete graph $K_5$ of link relationships, which constitutes a rigid, self-locking topological structure. This self-locking property prevents the random collapse of the crossings back into the unlinked ground state, ensuring that the $\mathbf{10}$ multiplet represents a stable topological phase under local fluctuations.
+Thus these vectors form an orthonormal basis of the antisymmetric space, with dimension $\binom52=5\cdot4/2=10$.
+
+**II. Group and generator action**
+
+On a tensor $v\otimes w$, $S(g\otimes g)(v\otimes w)=gw\otimes gv=(g\otimes g)S(v\otimes w)$. Hence $g\otimes g$ preserves the antisymmetric eigenspace and acts there by
+
+$$
+(g\otimes g)(v\wedge w)
+=\frac{gv\otimes gw-gw\otimes gv}{\sqrt2}
+=gv\wedge gw .
+$$
+
+The restriction defines the representation of **Antisymmetric Multiplet** <Ref id="9.2.13" label="§9.2.13" /> because $(g\otimes g)(h\otimes h)=gh\otimes gh$. Differentiating $e^{itT}\otimes e^{itT}$ and dividing by $i$ gives
+
+$$
+T^{(2)}(v_i\wedge v_j)
+=(Tv_i)\wedge v_j+v_i\wedge(Tv_j)
+=\sum_k T_{ki}\,v_k\wedge v_j+\sum_k T_{kj}\,v_i\wedge v_k .
+$$
+
+**III. Separation of weight lines**
+
+Let $S_0$ be a nonzero invariant complex subspace. It is invariant under the differentiated action and its complex linear combinations. For the traceless diagonal $H=\operatorname{diag}(1,2,4,8,-15)$ the weights of $H^{(2)}$ are $3,5,9,6,10,12,-14,-13,-11,-7$, all distinct. Given one nonzero component at weight $\lambda$ in a vector of $S_0$, the operator
+
+$$
+\prod_{\nu\ne\lambda}\frac{H^{(2)}-\nu I}{\lambda-\nu}
+$$
+
+keeps that component and kills each other weight component. Thus $S_0$ contains an individual pair basis vector.
+
+**IV. Connection of the pair lines**
+
+For $a\ne b$, the matrix unit $E_{ab}$ is a complex linear combination of the symmetric and antisymmetric Hermitian controls in **Trace Normalization** <Ref id="8.6.3" label="§8.6.3" />. It acts by
+
+$$
+E_{ab}^{(2)}(v_i\wedge v_j)
+=\delta_{bi}v_a\wedge v_j+\delta_{bj}v_i\wedge v_a .
+$$
+
+Thus replacing one index by any index outside the pair gives another basis line. Two pairs sharing an index are connected by one replacement. For disjoint pairs $\{i,j\}$ and $\{k,l\}$, the sequence $\{i,j\}\to\{k,j\}\to\{k,l\}$ uses two replacements. All pair basis vectors belong to $S_0$, so $\boxed{S_0=\wedge^2 V_5}$.
 
 Q.E.D.
 
@@ -3401,10 +3492,10 @@ Section 9.3.1 formalizes the properties of the QBD theorem regarding generationa
 
 ### 9.3.2 Lemma: Complexity Ordering {#9.3.2}
 
-:::info[**Strict Hierarchy via Generational Complexity**]
+:::info[**Generational ordering via positive increments in the assigned costs**]
 :::
 
-Let the topological complexity $C_n$ associated with the $n$-th fermion generation satisfy the strict monotonic inequality $C_n < C_{n+1}$. This ordering is mandated by the discrete quantization of the 3-cycle count $N_3$ required to construct the successively higher-order prime knot invariants that define the identity of each generation.
+Let successive selected generation labels have nondecreasing crossing and link costs, with at least one strictly increasing cost at each step and both weights positive. Then their weighted complexities are strictly ordered, as are masses proportional to those complexities, while equal-prefactor Boltzmann formation weights decrease in that order.
 
 **In Plain English:**  
 Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity ordering.
@@ -3413,39 +3504,48 @@ Section 9.3.2 formalizes the properties of the QBD lemma regarding complexity or
 
 ### 9.3.2.1 Proof: Complexity Ordering {#9.3.2.1}
 
-:::tip[**Quantification of Braid Complexity via Generation $n$**]
+:::tip[**Derivation of the complexity ordering via weighted differences**]
 :::
 
-**I. Complexity Metric**
-The complexity $C[\beta]$ of a braid $\beta$ is defined as the minimal number of elementary crossings required to represent its isotopy class, weighted by the twist energy.  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" /> and  **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />
+**I. Assigned costs**
+
+For the labels in **Generational Metastability** <Ref id="9.3.1" label="§9.3.1" />, let $X_n$ be the crossing cost and $L_n$ the link cost of the chosen generation-$n$ sector. In the model of **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />, set
 
 $$
-C[\beta] = \alpha N_{cross} + \gamma N_{link}
+C_n=\alpha X_n+\gamma L_n,\qquad \alpha>0,\quad\gamma>0.
 $$
 
-**II. Generation 1 (Ground State)**
-Generation 1 fermions (e.g., electron, up/down quarks) correspond to the simplest non-trivial braids.
-For the electron, the unlinked but twisted structure requires minimal complexity:
+Write $\Delta X_n=X_{n+1}-X_n$ and $\Delta L_n=L_{n+1}-L_n$. Then
 
 $$
-C_1 \propto \text{Intrinsic Twist Only}
+C_{n+1}-C_n
+=\alpha\Delta X_n+\gamma\Delta L_n>0
 $$
 
-This represents the global minimum of $V(C)$ for non-trivial charged states.
+since both increments are nonnegative and at least one is positive. A fixed intrinsic-twist cost shared by the labels cancels in the difference.
 
-**III. Generation 2 and 3 (Excited States)**
-Higher generations arise from adding topological features (links or additional twists) that cannot be removed by local deformations (Reidemeister moves).
-* **Gen 2 (Muon/Charm):** Requires at least one additional prime feature (e.g., a localized knot or link). $C_2 > C_1$.
-* **Gen 3 (Tau/Top):** Requires a second order feature or compound knotting. $C_3 > C_2$.
+**II. Worked crossing sequence**
 
-**IV. Strict Inequality**
-Since each generation adds a discrete topological invariant (crossing number or linking number increment), the complexity values are strictly ordered.
+For the trefoil, figure-eight and cinquefoil benchmark, use minimal crossing counts $3,4,5$ and a common link cost $L_0$. This gives
 
 $$
-C_3 > C_2 > C_1
+(C_1,C_2,C_3)=(3\alpha+\gamma L_0,\ 4\alpha+\gamma L_0,\ 5\alpha+\gamma L_0),
+\qquad C_2-C_1=C_3-C_2=\alpha>0 .
 $$
 
-This necessitates the mass hierarchy $m_3 > m_2 > m_1$ via the mass-complexity relation $m \propto C$.
+With the mass conversion $m_n=\kappa C_n$ at fixed $\kappa>0$, the mass gaps in this benchmark are $m_2-m_1=m_3-m_2=\kappa\alpha>0$.
+
+**III. Relative formation weights**
+
+If the three labels have equal multiplicity and probabilities proportional to $e^{-\eta C_n}$ with $\eta>0$, their common partition factor cancels. Thus
+
+$$
+\frac{P_{n+1}}{P_n}
+=\frac{e^{-\eta C_{n+1}}}{e^{-\eta C_n}}
+=e^{-\eta(C_{n+1}-C_n)}<1 .
+$$
+
+In the benchmark $P_2/P_1=P_3/P_2=e^{-\eta\alpha}$, so $\boxed{P_1>P_2>P_3}$ under this weight model.
 
 Q.E.D.
 
@@ -3456,10 +3556,10 @@ Section 9.3.2.1 formalizes the properties of the QBD proof regarding complexity 
 
 ### 9.3.3 Lemma: Topological Protection {#9.3.3}
 
-:::info[**Stability via Higher Generations against Local Decay**]
+:::info[**Sector protection via invariance under closed-knot isotopy**]
 :::
 
-Assume the states corresponding to higher fermion generations are dynamically stable against all local $O(1)$ rewrite operations. This protection arises because the transition to a lower-complexity isotopy class requires a global change in the knot invariant (untying), which is explicitly forbidden by the Principle of Unique Causality.
+Let a prime knot sector admit a family of local rewrites realized as ambient isotopies of its closed embedding, and let a selected lower sector have smaller minimum crossing number. Then the lower sector is unreachable within that family, and if every admitted escaping path contains an intermediate with excess energy at least $E_{\mathrm{cross}}>0$, its peak barrier is at least $E_{\mathrm{cross}}$.
 
 **In Plain English:**  
 Section 9.3.3 formalizes the properties of the QBD lemma regarding topological protection.
@@ -3468,28 +3568,40 @@ Section 9.3.3 formalizes the properties of the QBD lemma regarding topological p
 
 ### 9.3.3.1 Proof: Topological Protection {#9.3.3.1}
 
-:::tip[**Demonstration of the Energy Barrier via Generational Decay**]
+:::tip[**Derivation of protection via isotopy and a conditional peak bound**]
 :::
 
-**I. Stability Condition**
-A state $\beta$ is stable if no sequence of local rewrites $\mathcal{R}$ can reduce its complexity $C[\beta]$ without strictly increasing the energy functional $E$ in intermediate steps.  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" /> and  **Complexity Ordering** <Ref id="9.3.2" label="§9.3.2" />
+**I. Minimum crossing number**
+
+For a closed knot $K$, let $c(K)=\min_{D\in[K]}c(D)$, where $D$ ranges over diagrams of its isotopy class and $c(D)$ counts visible crossings. If a task in the protected family of **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" /> sends $K$ to $K'$, then $[K']=[K]$ and
 
 $$
-\forall \mathcal{R}_i, \quad E[\mathcal{R}_i(\beta)] > E[\beta]
+c(K')=\min_{D\in[K']}c(D)=\min_{D\in[K]}c(D)=c(K).
 $$
 
-This defines a local minimum in the potential landscape $V(C)$.
+A Type II deletion can lower the visible crossing count by two. For such a diagram move $D\to D'$, $c(D')=c(D)-2$ while both diagrams still represent $K$, so $c(D')\ge c(K)$.
 
-**II. Primality Constraint**
-The braid configurations for fermions correspond to **Prime Knots**. A prime knot cannot be decomposed into simpler non-trivial knots.
-To reduce the complexity of a prime knot (e.g., to untie it), the strand must pass through itself.
-In the discrete causal graph, this "pass-through" corresponds to a global reconfiguration of the connectivity that violates the local **Principle of Unique Causality (PUC)** or requires a high-energy intermediate state (breaking the knot).
+**II. Words and prime decomposition**
 
-**III. The Barrier**
-The transition from Generation $n$ to $n-1$ requires changing the topological invariant (e.g., crossing number).
-The "height" of the barrier $\Delta E_{barrier}$ is proportional to the energy cost of the intermediate state required to perform the crossing change (the unlinking operation).
-Since this cost is positive and requires collective action (non-local relative to the graph size), the decay is suppressed.
-Thus, higher generations are topologically protected metastable states.
+For a word of protected tasks and successive knots $K_0,\ldots,K_m$,
+
+$$
+c(K_m)-c(K_0)=\sum_{j=1}^m(c(K_j)-c(K_{j-1}))=0.
+$$
+
+A target with $c(K_m)<c(K_0)$ is therefore outside that word's reach. In addition, primality means $K_0$ is nontrivial and $K_0\cong K_1\#K_2$ implies that at least one summand is an unknot. A split into two nontrivial summands therefore cannot be an isotopic description of $K_0$.
+
+**III. Barrier on an admitted escape**
+
+For an admitted topology-changing path $\xi_0,\ldots,\xi_m$, suppose some index $q$ satisfies $E(\xi_q)-E(\xi_0)\ge E_{\mathrm{cross}}$ (**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />). Hence
+
+$$
+\boxed{\Delta E_{\mathrm{peak}}
+=\max_{0\le j\le m}\bigl(E(\xi_j)-E(\xi_0)\bigr)
+\ge E(\xi_q)-E(\xi_0)\ge E_{\mathrm{cross}}.}
+$$
+
+The inequality applies to each escape in the specified family and therefore to the infimum over that family when it is nonempty.
 
 Q.E.D.
 
@@ -3617,10 +3729,10 @@ Section 9.4.2 formalizes the properties of the QBD theorem regarding leptoquark 
 
 ### 9.4.3 Lemma: Interaction Vertex {#9.4.3}
 
-:::info[**Topological Structure of the Vertex Linking Color via Weak Sectors**]
+:::info[**Color-to-weak transfer via a matched off-diagonal vertex**]
 :::
 
-Suppose the leptoquark interaction vertex is defined as the specific topological locus within the penta-ribbon braid where the sub-braid of color ribbons and the sub-braid of weak ribbons spatially converge. This convergence permits the off-diagonal generator $\hat{\lambda}_{LQ}$ to execute a swap operation that transfers causal flux directly between the color and weak sectors.
+Let an admitted emission vertex on $V_C\oplus V_W$ be matched to an off-diagonal color-to-weak block and a mediator emission amplitude. Then the matrix element is the product of the specified sector and emission overlaps, and any nonzero channel of a total-writhe-preserving vertex satisfies $W_{\mathrm{in}}=W_{\mathrm{out}}$.
 
 **In Plain English:**  
 Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction vertex.
@@ -3629,34 +3741,57 @@ Section 9.4.3 formalizes the properties of the QBD lemma regarding interaction v
 
 ### 9.4.3.1 Proof: Interaction Vertex {#9.4.3.1}
 
-:::tip[**Demonstration via Subspace Projection at the Interaction Vertex**]
+:::tip[**Derivation of the vertex amplitude via block projection and charge balance**]
 :::
 
-**I. Generator Matrix Action**
-The interaction is defined by the action of the leptoquark generator $\hat{\lambda}_{LQ}$ on the fundamental representation space $V_5 = V_C \oplus V_W$.  **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" /> and  **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />
-Let $|\psi_q\rangle = (c_1, c_2, c_3, 0, 0)^T$ denote a quark state in the color subspace.
-Let $|\psi_l\rangle = (0, 0, 0, w_1, w_2)^T$ denote a lepton state in the weak subspace.
-The general form of the off-diagonal generator in $\mathfrak{su}(5)$ is:
+**I. Sector transfer**
+
+Use the split $V_C=\mathbb C^3$, $V_W=\mathbb C^2$ of **Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />. For $B:V_W\to V_C$, write
 
 $$
-\hat{\lambda}_{LQ} = \begin{pmatrix} 0_{3\times3} & B_{3\times2} \\ B_{2\times3}^\dagger & 0_{2\times2} \end{pmatrix}
+\lambda_{\mathrm{LQ}}=\begin{pmatrix}0&B\\ B^\dagger&0\end{pmatrix},
+\qquad
+\lambda_{\mathrm{LQ}}\binom{q}{0}=\binom{0}{B^\dagger q},
+\qquad
+\lambda_{\mathrm{LQ}}\binom{0}{\ell}=\binom{B\ell}{0}.
 $$
 
-where $B$ is a non-zero complex block. The application of this generator to a quark state yields a projection onto the weak sector:
+The diagonal blocks are zero, so $\operatorname{Tr}\lambda_{\mathrm{LQ}}=0$. The blocks are adjoints of each other, so $\lambda_{\mathrm{LQ}}^\dagger=\lambda_{\mathrm{LQ}}$. In particular $e^{it\lambda_{\mathrm{LQ}}}$ is unitary and its infinitesimal generator $i\lambda_{\mathrm{LQ}}$ is traceless anti-Hermitian.
+
+**II. Emission matrix element**
+
+For the matched emission in **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />, take the forward term $H_{\mathrm{emit}}=g(P_W\lambda_{\mathrm{LQ}}P_C)\otimes A$ from the initial mediator state $|0\rangle$, where $A$ acts on the mediator factor. Then
 
 $$
-\hat{\lambda}_{LQ} |\psi_q\rangle = \begin{pmatrix} 0 & B \\ B^\dagger & 0 \end{pmatrix} \begin{pmatrix} \psi_q \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ B^\dagger \psi_q \end{pmatrix} = |\psi_l'\rangle
+\begin{aligned}
+\langle\ell,X|H_{\mathrm{emit}}|q,0\rangle
+&=g\langle\ell|P_W\lambda_{\mathrm{LQ}}P_C|q\rangle
+       \langle X|A|0\rangle\\
+&=g\left(\sum_{a=1}^{3}\sum_{b=1}^{2}
+          \overline{\ell_b}\,\overline{B_{ab}}\,q_a\right)
+       \langle X|A|0\rangle .
+\end{aligned}
 $$
 
-This mapping preserves both the traceless condition ($\operatorname{Tr}(\hat{\lambda}) = 0$) and the Hermiticity of $\mathfrak{su}(5)$, thereby ensuring the unitary evolution $\mathcal{R}_{LQ} = e^{i \hat{\lambda}_{LQ}}$.
+This is the forward amplitude of the matched interaction $H_{\mathrm{emit}}+H_{\mathrm{emit}}^\dagger$ between the indicated sectors.
 
-**II. Geometric Convergence**
-Topologically, the vertex corresponds to the spacetime event where the three color ribbons and two weak ribbons converge.
-The off-diagonal block $B$ dictates the precise angular embedding of the crossing in the 4-dimensional causal graph.
-The convergence enforces the writhe conservation laws $\Delta Q = 0$ and $\Delta B = -1/3$ via the continuity of the directed edges at the node, explicitly realizing the proton decay channel $q + q \to \bar{q} + l$.
+**III. Oriented writhe balance**
 
-**III. Causal Conservation Laws**
-The transfer of causal flux through the interaction vertex preserves the net quantum numbers. Specifically, the total writhe of the 5-ribbon braid, corresponding to the electric charge $Q$, is conserved globally: $\sum Q_{init} = \sum Q_{final}$. The transition rate is thus constrained strictly by the requirement that the outgoing state matches the topological charges of the incoming state, preventing arbitrary decay channels.
+Give incoming and outgoing channels the signs $+1$ and $-1$, respectively, in the balance equation. Suppose the matched vertex commutes with the additive total writhe on the matter and mediator factors (**Conservation of Total Writhe** <Ref id="7.3.5" label="§7.3.5" />). On total-writhe eigenstates $|i\rangle$ and $|f\rangle$,
+
+$$
+0=\langle f|[\widehat W_{\mathrm{tot}},H_{\mathrm{int}}]|i\rangle
+=(W_f-W_i)\langle f|H_{\mathrm{int}}|i\rangle .
+$$
+
+In a nonzero emission channel with vacuum mediator writhe zero, $W_q-W_\ell-W_X=0$. For the example $u+u\to\bar d+e^+$, the label charges of **Charge Normalization** <Ref id="7.3.10" label="§7.3.10" /> give
+
+$$
+Q_{\mathrm{in}}=\tfrac23+\tfrac23=\tfrac43,\qquad
+Q_{\mathrm{out}}=\tfrac13+1=\tfrac43.
+$$
+
+For that two-body channel the baryon numbers are $B_{\mathrm{in}}=2/3$ and $B_{\mathrm{out}}=-1/3$, so $\Delta B=-1$. The lepton numbers are $0$ and $-1$, giving $\Delta(B-L)=-1-(-1)=0$.
 
 Q.E.D.
 
@@ -3667,10 +3802,10 @@ Section 9.4.3.1 formalizes the properties of the QBD proof regarding interaction
 
 ### 9.4.4 Lemma: Fragmentation Tunneling {#9.4.4}
 
-:::info[**Mechanism of Symmetry Breaking via Complexity-Reducing Tunneling Events**]
+:::info[**Fragmentation cost and suppression via the assigned split and barrier**]
 :::
 
-Let the symmetry breaking transition $SU(5) \to SU(3) \times SU(2) \times U(1)$ be identified as a topological tunneling event proceeding from the unified $\mathbf{10}$ configuration to the fragmented Standard Model configuration. This transition is thermodynamically driven by the reduction in Total Topological Complexity $C_{total}$, specifically where the annihilation of the 6 cross-sector links lowers the potential energy of the braid state.
+Let a $3+2$ split remove the six registered cross-sector links at fixed additive writhe, with a positive resulting cost drop in the stated complexity model. If an admitted split path has a one-dimensional WKB barrier, then it is favored in the endpoint cost comparison and its leading transmission factor is $e^{-2S_{\mathrm{bar}}/\hbar}$ for the forbidden-region momentum integral $S_{\mathrm{bar}}$.
 
 **In Plain English:**  
 Section 9.4.4 formalizes the properties of the QBD lemma regarding fragmentation tunneling.
@@ -3679,37 +3814,71 @@ Section 9.4.4 formalizes the properties of the QBD lemma regarding fragmentation
 
 ### 9.4.4.1 Proof: Fragmentation Tunneling {#9.4.4.1}
 
-:::tip[**Demonstration of Energetic Favorability via Symmetry Breaking Transitions**]
+:::tip[**Derivation of the endpoint and tunneling factors via pair counts and WKB action**]
 :::
 
-**I. Complexity Functional Definition**
-The topological complexity $C_{total}$ is defined as the weighted sum of crossings, writhe, and **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />:
+**I. Pair and link counts**
+
+Use the weighted model of **Fragmentation Tunneling** <Ref id="9.4.4" label="§9.4.4" />, with $C_{\text{total}}(\beta)=C[\beta]+kw(\beta)^2+k'L(\beta)$ and $k,k'\ge0$. For the assigned penta-ribbon state $\beta_5$ and split $(\beta_3,\beta_2)$, the registered cross-sector link count is
 
 $$
-C_{total}(\beta) = C[\beta] + k \cdot w(\beta)^2 + k' \cdot L(\beta)
+L_{CW}=\binom52-\binom32-\binom22=10-3-1=6=3\cdot2 .
 $$
 
-where $C[\beta]$ is the crossing number and $L(\beta)$ counts the inter-component links.
+If the registered intra-sector links survive, $L_5=L_3+L_2+6$. Suppose also that the additive writhe balance gives $w_5=w_3+w_2$. The initial-minus-final cost is
 
-**II. Initial State Analysis ($\beta_5$)**
-The unified state corresponds to the $\mathbf{10}$ representation ($\wedge^2 \mathbf{5}$), necessitating interactions between all ribbon pairs.
-* **Crossing/Linking:** The number of pairs is $\binom{5}{2} = 10$. This includes the specific links between the color and weak sectors ($L_5$).
-* **Complexity:** $C_{total}(\beta_5) = C_5 + k \cdot w_5^2 + k' \cdot L_5$.
-    Here, $L_5 > 0$ represents the 6 essential links connecting the 3 color ribbons to the 2 weak ribbons.
+$$
+\begin{aligned}
+\Delta C_{\text{total}}
+&=(C_5-C_3-C_2)+k\bigl((w_3+w_2)^2-w_3^2-w_2^2\bigr)
+  +k'(L_5-L_3-L_2)\\
+&=(C_5-C_3-C_2)+2kw_3w_2+6k'.
+\end{aligned}
+$$
 
-**III. Final State Analysis ($\beta_3 + \beta_2$)**
-The fragmented state corresponds to the product group $SU(3) \times SU(2)$.
-* **Pairs:** Color-Color pairs ($\binom{3}{2}=3$) + Weak-Weak pairs ($\binom{2}{2}=1$). Total = 4.
-* **Decoupling:** The inter-sector links are severed, so $L_{CW} = 0$.
-* **Complexity:** $C_{total}(\beta_f) = (C_3 + k \cdot w_3^2) + (C_2 + k \cdot w_2^2)$.
+For example, $C_5\ge C_3+C_2$, $w_3w_2\ge0$, and $k'>0$ give $\Delta C_{\text{total}}\ge6k'>0$. If the two writhes have opposite signs, the quadratic term has the opposite sign.
 
-**IV. Differential and Inequality**
-The writhe is additively conserved ($w_5 = w_3 + w_2$) due to the traceless generators. However, the complexity reduces strictly:
-1.  **Link Term:** The 6 cross-sector links are annihilated. $\Delta L = L_5 - 0 > 0$.
-2.  **Writhe Term:** Since $(w_3 + w_2)^2 > w_3^2 + w_2^2$ for aligned charges, the quadratic penalty decreases.
-3.  **Total:** $\Delta C_{total} = C_{total}(\beta_5) - C_{total}(\beta_f) \propto 6 \text{ links} + \Delta(w^2) > 0$.
-Alternative fragmentations involving single strands (e.g., $5 \to 4+1$ or $5 \to 1+1+1+1+1$) are strictly forbidden because isolated single ribbons are dynamically unstable and eliminated by the vacuum deletion flux (**Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4" label="§6.2.4" />). In contrast, the $5 \to 3 + 2$ channel branches into two stable multi-strand sectors ($\beta_3$ and $\beta_2$), mediated by the off-diagonal leptoquark generators (**Leptoquark Generators** <Ref id="9.4.2" label="§9.4.2" />).
-Since mass $m \propto C_{total}$, the unified state is energetically metastable, favoring decay to the Standard Model configuration.
+**II. Forbidden-region action**
+
+For a separately admitted path with coordinate $x$, effective mass $m_{\mathrm{eff}}>0$, and energy $E$, assume $V(x)>E$ between the turning points $x_-,x_+$. Substitution of the decaying WKB form $\psi(x)=a(x)e^{-S(x)/\hbar}$ gives
+
+$$
+\psi''=e^{-S/\hbar}\left(a''-\frac{2a'S'+aS''}{\hbar}
++\frac{a(S')^2}{\hbar^2}\right).
+$$
+
+Consequently the stationary equation $-\hbar^2\psi''/(2m_{\mathrm{eff}})+V\psi=E\psi$ becomes
+
+$$
+-\frac{\hbar^2}{2m_{\mathrm{eff}}}a''
++\frac{\hbar}{2m_{\mathrm{eff}}}(2a'S'+aS'')
++\left(V-E-\frac{(S')^2}{2m_{\mathrm{eff}}}\right)a=0 .
+$$
+
+The leading order away from the turning points therefore gives
+
+$$
+-\frac{(S'(x))^2}{2m_{\mathrm{eff}}}+V(x)=E,\qquad
+S'(x)=\sqrt{2m_{\mathrm{eff}}(V(x)-E)} .
+$$
+
+Integrating the positive root,
+
+$$
+S_{\mathrm{bar}}=S(x_+)-S(x_-)
+=\int_{x_-}^{x_+}\sqrt{2m_{\mathrm{eff}}(V(x)-E)}\,\mathrm dx .
+$$
+
+**III. Transmission**
+
+With the WKB convention of **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the amplitude carries the factor $e^{-S_{\mathrm{bar}}/\hbar}$. The leading transmission factor is its squared modulus,
+
+$$
+\boxed{T_{\mathrm{WKB}}=\left|e^{-S_{\mathrm{bar}}/\hbar}\right|^2
+=e^{-2S_{\mathrm{bar}}/\hbar}.}
+$$
+
+For constant $V_b>E$ over a forbidden width $d$, $S_{\mathrm{bar}}=d\sqrt{2m_{\mathrm{eff}}(V_b-E)}$. An effective rate with attempt frequency $\nu$ and the same leading approximation is $\Gamma_{\mathrm{frag}}\simeq\nu T_{\mathrm{WKB}}$.
 
 Q.E.D.
 
@@ -4085,10 +4254,10 @@ Section 9.5.3.1 formalizes the properties of the QBD proof regarding minimal act
 
 ### 9.5.4 Lemma: Action-Mass Proportionality {#9.5.4}
 
-:::info[**Derivation of the Topological Suppression Factor from Action-Mass Proportionality**]
+:::info[**Action scaling via a matched rewrite length and mass quantum**]
 :::
 
-Let the instanton action $S_{inst}$ governing the proton decay rate be linearly proportional to the mass of the mediating X-boson, satisfying the relation $S_{inst} \propto M_X$. This relationship converts the unification mass scale directly into an exponential suppression factor $\Gamma \propto e^{-\lambda M_X}$, providing the necessary correction to the polynomial suppression.
+Let a supplied decay model assign a dimensionless rate action $S_{inst}=\kappa L_{\min}$, with $L_{\min}=aN_{3,X}+b$ and mediator rest energy $M_X=\varepsilon N_{3,X}$ in natural units, for fixed $\kappa,a,\varepsilon>0$. Then the modeled rate factor is proportional to $e^{-\lambda M_X}$ with $\lambda=\kappa a/\varepsilon$.
 
 **In Plain English:**  
 Section 9.5.4 formalizes the properties of the QBD lemma regarding action-mass proportionality.
@@ -4097,58 +4266,54 @@ Section 9.5.4 formalizes the properties of the QBD lemma regarding action-mass p
 
 ### 9.5.4.1 Proof: Action-Mass Proportionality {#9.5.4.1}
 
-:::tip[**Geometric Derivation via Configuration Space Distance**]
+:::tip[**Derivation of exponential suppression via elimination of the complexity count**]
 :::
 
-**I. Tunneling Path Length**
-The decay $p \to e^+ \pi^0$ requires a topology change mediated by the leptoquark geometry.  **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" /> and  **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" /> This transition connects the proton state $|G_p\rangle$ to the decay state $|G_f\rangle$.
-The transition requires creating and annihilating the intermediate $X$ boson state $|G_X\rangle$.
-The "distance" in configuration space (number of rewrites) required to create the structure of $|G_X\rangle$ from the vacuum (or simple background) is denoted by $L_{min}$.
+**I. Matched rewrite length**
+
+For the decay pathway discussed in **Minimal Action Pathway** <Ref id="9.5.3" label="§9.5.3" />, use the model of **Action-Mass Proportionality** <Ref id="9.5.4" label="§9.5.4" />. Its inputs are the path length $L_{\min}=aN_{3,X}+b$, dimensionless rate cost $\kappa$ per step, and rest energy $\varepsilon$ per quantum. Eliminating the count gives
 
 $$
-L_{min} \approx N_{3,X}
+N_{3,X}=\frac{M_X}{\varepsilon},\qquad
+S_{inst}=\kappa L_{\min}
+=\kappa\left(a\frac{M_X}{\varepsilon}+b\right)
+=\lambda M_X+\kappa b,\qquad
+\lambda=\frac{\kappa a}{\varepsilon}.
 $$
 
-where $N_{3,X}$ is the number of 3-cycle quanta defining the $X$ boson's topology.
-
-**II. Action Definition**
-The action $S$ for a topological instanton is proportional to the minimal path length in the rewrite graph (graph edit distance):
+For the modeled rate $\Gamma=\Gamma_{\mathrm{EFT}}e^{-S_{inst}}$,
 
 $$
-S_{inst} = \kappa \cdot L_{min} \approx \kappa \cdot N_{3,X}
+\frac{\Gamma}{\Gamma_{\mathrm{EFT}}}
+=e^{-(\lambda M_X+\kappa b)}
+=\boxed{e^{-\kappa b}e^{-\lambda M_X}} .
 $$
 
-where $\kappa$ is the effective action per rewrite step ($\approx \ln 2$).
+Here $[\lambda]=[\mathrm{energy}]^{-1}$, and for $b=0$ the action itself is linear in $M_X$ through the origin.
 
-**III. Mass-Complexity Relation**
-From the **Topological Mass Theorem**, the mass of a particle is linear in its topological complexity (quanta count):
+**II. Static-action comparison**
 
-$$
-M_X = \mu \cdot N_{3,X}
-$$
-
-where $\mu$ is the mass quantum.
-
-**IV. Synthesis**
-Substituting $N_{3,X} = M_X / \mu$ into the action equation:
+For a separate static Euclidean approximation over proper time $\tau_E$, let the baseline-subtracted matter energy be $M_Xc^2$ in ordinary units. Then
 
 $$
-S_{inst} \approx \kappa \cdot \frac{M_X}{\mu} = \left( \frac{\kappa}{\mu} \right) M_X
+\Delta S_E=\int_0^{\tau_E}\Delta E(t_E)\,\mathrm dt_E
+=\int_0^{\tau_E}M_Xc^2\,\mathrm dt_E
+=M_Xc^2\tau_E,\qquad
+\frac{\Delta S_E}{\hbar}=\frac{c^2\tau_E}{\hbar}M_X .
 $$
 
-Let $\lambda = \kappa / \mu$ be the scaling constant.
+This is a linear action law at fixed duration. If an exponent instead governs the amplitude as in **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" />, the corresponding rate exponent is twice that amplitude exponent.
+
+**III. Comparison with the polynomial rate**
+
+Let $\Gamma_{\mathrm{EFT}}=A(M_X/E_0)^{-4}$ with fixed $E_0>0$, as in the fixed-input scaling of **Tension Verification** <Ref id="9.5.2" label="§9.5.2" />. Then
 
 $$
-S_{inst} \propto M_X
+\Gamma=Ae^{-\kappa b}(M_X/E_0)^{-4}e^{-\lambda M_X},\qquad
+\ln\frac{\Gamma}{A}=-\kappa b-4\ln(M_X/E_0)-\lambda M_X .
 $$
 
-Consequently, the suppression factor is exponential in the GUT mass scale:
-
-$$
-\Gamma \propto e^{-S_{inst}} \propto e^{-\lambda M_X}
-$$
-
-This exponential suppression ($\sim e^{-M}$) is distinct from and stronger than the polynomial suppression ($\sim M^{-4}$) of the perturbative EFT.
+Since $\ln(M_X/E_0)/(M_X/E_0)\to0$, the last term is the leading term of this logarithm as $M_X/E_0\to\infty$.
 
 Q.E.D.
 
@@ -4222,10 +4387,10 @@ Section 9.6.2 formalizes the properties of the QBD theorem regarding neutrino ma
 
 ### 9.6.3 Lemma: Neutrality Verification {#9.6.3}
 
-:::info[**Demonstration of the Uniqueness of the Folded Braid via Massive Neutral Leptons**]
+:::info[**Neutrality and modeled mass via writhe cancellation**]
 :::
 
-Suppose any standard (non-folded) braid configuration satisfying electric neutrality and color symmetry constraints possesses zero topological complexity ($C=0$), corresponding to a massless state. Consequently, the folded braid topology is the unique solution for a massive, neutral lepton.
+Let a standard tripartite label be permutation-fixed and electrically neutral, and let a folded candidate have opposite segment writhe and positive excess fold cost. Then the standard writhe label is $(0,0,0)$, while the folded label is neutral with a positive modeled mass contribution from the fold.
 
 **In Plain English:**  
 Section 9.6.3 formalizes the properties of the QBD lemma regarding neutrality verification.
@@ -4234,54 +4399,46 @@ Section 9.6.3 formalizes the properties of the QBD lemma regarding neutrality ve
 
 ### 9.6.3.1 Proof: Neutrality Verification {#9.6.3.1}
 
-:::tip[**Formal Derivation of the Zero-Mass Constraint via Standard Symmetric Braids**]
+:::tip[**Derivation of neutral labels via fixed coordinates and segment balance**]
 :::
 
-**I. Constraints on Standard Braids**
-Consider a standard $n$-ribbon braid $\beta$ representing a candidate neutrino.
-1.  **Color Singlet:** Invariance under the permutation group $S_n$ requires identical writhe values and symmetric linking for all constituent ribbons to preserve symmetry.
+**I. Standard permutation-fixed label**
 
-    $$
-    \forall i, j \in \{1, \dots, n\}, \quad w_i = w_j = w_{\text{int}}, \quad L_{ij} = L
-    $$
-
-    Asymmetric configurations (e.g., $w = (+1, -1, 0)$) violate this invariance, inducing octet representations under $SU(3)$ permutations.
-2.  **Electric Neutrality:** The total electric charge $Q$ is proportional to the total writhe $W(\beta)$, with proportionality constant $k=1/3$ **Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />. Neutrality requires $Q=0$, implying:
-
-    $$
-    W(\beta) = \sum_{i=1}^{n} w_i = 0
-    $$
-
-    Quantization conditions require integer writhes ($w_i \in \mathbb{Z}$).
-
-**II. Solution Space Analysis**
-Substituting the symmetry constraint into the neutrality condition yields:
+Let $\boldsymbol w=(w_1,w_2,w_3)\in\mathbb Z^3$. The transpositions $(12)$ and $(23)$ fix $\boldsymbol w$ exactly when $w_1=w_2=w_3=w_0$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). By the **Charge Operator** <Ref id="7.3.1" label="§7.3.1" />,
 
 $$
-W(\beta) = \sum_{i=1}^{n} w_{\text{int}} = n \cdot w_{\text{int}} = 0
+Q=\tfrac13(w_1+w_2+w_3)=\tfrac13(3w_0)=w_0 .
 $$
 
-Since the number of ribbons $n \geq 1$, the unique integer solution for the internal writhe is $w_{\text{int}} = 0$.
-Consequently, the configuration vector is the null vector $\boldsymbol{w} = (0, 0, \dots, 0)$.
+Thus $Q=0$ forces $\boldsymbol w=(0,0,0)$. In the selected unlinked reference configuration with no crossings or excess support cycles, the crossing, twist and link costs all vanish:
 
-**III. Mass Vanishing Theorem**
-A standard braid with zero writhe on all ribbons minimizes the Generalized Braid Energy Functional at the trivial topology.
-* **Crossing Number:** By the Minimal Generation the **Particle Necessity** <Ref id="6.1.2" label="§6.1.2" />, zero writhe implies a minimal crossing number $C[\beta] = 0$.
-* **Complexity:** The total topological complexity vanishes: $N_3(\beta) = 0$, $w_i=0$, $L_{ij}=0$.
-* **Mass:** By the Topological Mass the **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />, $m \propto N_3$. Thus, $m_{\beta} = 0$.
-Attempts to introduce mass via added crossings ($C[\beta] > 0$) while maintaining $w_i=0$ yield high-complexity excited states, failing the minimality criterion for the ground state neutrino. Therefore, standard braids describe only massless Weyl fermions or vacuum states.
+$$
+C_{\mathrm{ref}}=a\,0+b\sum_{i=1}^3 0^2+d\,0=0,\qquad
+m_{\mathrm{ref}}=\kappa_m C_{\mathrm{ref}}=0 .
+$$
 
-**IV. The Folded Solution**
-The folded braid $\beta_{fold}$ is defined as a composite of two opposing segments $\beta_+$ and $\beta_-$ connected at a vertex.
-* **Neutrality:** $W_{total} = w(\beta_+) + w(\beta_-)$. The condition $w(\beta_+) = -w(\beta_-) = \pm k \neq 0$ (with $k \in \mathbb{Z}$) satisfies $W_{total} = 0$ without requiring local triviality.
-* **Complexity:** The fold vertex introduces a geometric defect. The effective topological complexity is non-zero due to the strain energy at the turning point, arising from the vertex's 3-cycle tension under the Principle of Unique Causality (PUC):
+**II. Folded comparison**
 
-    $$
-    N_3^{\text{eff}} \approx N_{vertex} > 0
-    $$
+For the two segments of **Folded Topology** <Ref id="9.6.1" label="§9.6.1" />, take $W_+=k$ and $W_-=-k$, with $k\ne0$. For an additive writhe and a positive excess count $N_{\mathrm{fold}}$ assigned to the fold,
 
-* **Mass:** $m_{fold} \propto N_3^{\text{eff}} > 0$.
-The folded structure circumvents the triviality constraint, providing the unique minimal topology for a neutral, massive fermion consistent with stability, color singlet status, and vertex geometry predictions for **Interaction Vertex** <Ref id="9.4.3" label="§9.4.3" />.
+$$
+Q_{\mathrm{fold}}=\tfrac13(W_++W_-)=\tfrac13(k-k)=0,\qquad
+\Delta m_{\mathrm{fold}}=\kappa_m N_{\mathrm{fold}}>0\quad(\kappa_m>0).
+$$
+
+If the torsional cost is also the sum of the separate segment squares, its unweighted value is $k^2+(-k)^2=2k^2>0$ even though the net writhe vanishes.
+
+**III. Gauge singlet criterion**
+
+For the assigned sterile representation, suppose the color and weak generators $T_C^a,T_W^b$ annihilate its state $|s\rangle$ and the hypercharge label is $Y=0$. The quadratic operators then satisfy
+
+$$
+C_2^{(3)}|s\rangle=\sum_a T_C^a T_C^a|s\rangle=0,\qquad
+C_2^{(2)}|s\rangle=\sum_b T_W^b T_W^b|s\rangle=0,\qquad
+e^{i\theta Y}|s\rangle=|s\rangle .
+$$
+
+For Hermitian generators the converse of the non-Abelian test follows from $\langle s|C_2|s\rangle=\sum_a\|T^a|s\rangle\|^2$. Vanishing of the quadratic form therefore implies each generator annihilates the state.
 
 Q.E.D.
 
@@ -4690,10 +4847,10 @@ Section 9.6.7.1 formalizes the properties of the QBD proof regarding critical co
 
 ### 9.6.8 Lemma: Planck Anchor {#9.6.8}
 
-:::info[**Scaling of the Heavy Neutrino Mass to the Grand Unified Scale via Planck Anchoring**]
+:::info[**Heavy-mass scaling via a specified Planck matching factor**]
 :::
 
-Suppose the mass of the heavy right-handed neutrino $M_R$ is anchored to the Planck mass $M_{Pl}$ via the exponential suppression factor derived from the critical complexity. The relation $M_R \sim M_{Pl} \cdot e^{-c/\mu}$ satisfies a predicted mass scale of approximately $10^{16}$ GeV, consistent with the requirements of the Grand Unified Theory seesaw mechanism.
+Let the heavy-neutrino model prescribe $M_R=A M_{\mathrm{Pl}}e^{-c_*/\mu}$ in natural units with dimensionless $A,c_*,\mu>0$. Then for the stated benchmark $c_*=2.76$, $\mu=0.40$ and $A=1$, the modeled heavy mass is approximately $1.23\times10^{16}\,\mathrm{GeV}$.
 
 **In Plain English:**  
 Section 9.6.8 formalizes the properties of the QBD lemma regarding planck anchor.
@@ -4702,49 +4859,60 @@ Section 9.6.8 formalizes the properties of the QBD lemma regarding planck anchor
 
 ### 9.6.8.1 Proof: Planck Anchor {#9.6.8.1}
 
-:::tip[**Derivation of $M_R$ from Critical Complexity and Planck Units**]
+:::tip[**Derivation of the benchmark scale via Planck units and explicit matching**]
 :::
 
-**I. Mass-Complexity Relation**
-The mass of the heavy neutrino $M_R$ is proportional to its critical topological complexity $N_{3,\max}$ **Base Mass Linear Scaling** <Ref id="7.4.4" label="§7.4.4" />.
+**I. Planck units**
+
+With $c_{\mathrm{light}}$ the speed of light, the conventional Planck time and energy satisfy
 
 $$
-M_R = \kappa_{scale} \cdot N_{3,\max}
+t_{\mathrm{Pl}}=\sqrt{\frac{\hbar G}{c_{\mathrm{light}}^5}},\qquad
+\omega_{\mathrm{Pl}}=\frac1{t_{\mathrm{Pl}}}
+=\sqrt{\frac{c_{\mathrm{light}}^5}{\hbar G}},\qquad
+E_{\mathrm{Pl}}=\hbar\omega_{\mathrm{Pl}}
+=\sqrt{\frac{\hbar c_{\mathrm{light}}^5}{G}}
+=M_{\mathrm{Pl}}c_{\mathrm{light}}^2.
 $$
 
-**II. Dimensional Scaling**
-The mass scale is anchored to the Planck mass $M_{Pl}$ but suppressed by the exponential friction factor over the effective dimension $d=4$.
-The suppression factor derives from the instanton action in the **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />:
+The equality between the graph tick and $t_{\mathrm{Pl}}$ would be an additional clock matching. For the benchmark in **Planck Anchor** <Ref id="9.6.8" label="§9.6.8" />, express masses as rest energies in GeV.
+
+**II. Numerical mass match**
+
+Using $M_{\mathrm{Pl}}\simeq1.22\times10^{19}\,\mathrm{GeV}$, the exponent and factor are
 
 $$
-M_R \sim M_{Pl} \cdot e^{-c/\mu}
+\frac{c_*}{\mu}=\frac{2.76}{0.40}=6.90,\qquad
+e^{-6.90}\simeq1.00779\times10^{-3}.
 $$
 
-where $c \approx 2.76$ is a geometric constant derived from the 4-volume embedding.
-
-**III. Calculation**
-Given $M_{Pl} \approx 1.22 \times 10^{19}$ GeV and $\mu \approx 0.40$:
+Consequently,
 
 $$
-\text{Exponent } = \frac{2.76}{0.40} \approx 6.9
+M_R=A(1.22\times10^{19}\,\mathrm{GeV})(1.00779\times10^{-3})
+\simeq A(1.23\times10^{16}\,\mathrm{GeV}).
 $$
 
-$$
-M_R \approx 1.22 \times 10^{19} \text{ GeV} \cdot e^{-6.9}
-$$
+For a target $M_R=2.36\times10^{16}\,\mathrm{GeV}$ at the same exponent and Planck mass, the required coefficient is
 
 $$
-M_R \approx 1.22 \times 10^{19} \cdot (1.0 \times 10^{-3})
+A=\frac{2.36\times10^{16}}
+        {(1.22\times10^{19})e^{-6.90}}
+\simeq1.92 .
 $$
 
-Refined by the specific pre-factor from the **Critical Complexity Balance** <Ref id="9.6.7.1" label="§9.6.7.1" />:
+**III. Relation to the complexity threshold**
+
+If the independent relation $M_R=\kappa_{\mathrm{scale}}N_{3,\max}$ is also imposed, **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> supplies $N_{3,\max}=-\mu^{-1}W_{-1}(-\mu/2)$ in its benchmark. Compatibility requires
 
 $$
-M_R \approx 2.36 \times 10^{16} \text{ GeV}
+\kappa_{\mathrm{scale}}
+=\frac{A M_{\mathrm{Pl}}e^{-c_*/\mu}}{N_{3,\max}}
+\simeq A\frac{1.23\times10^{16}\,\mathrm{GeV}}{6.36}
+\simeq A(1.93\times10^{15}\,\mathrm{GeV})
 $$
 
-**IV. Consistency**
-This value aligns with the Grand Unified Theory scale ($10^{16}$ GeV). The derivation connects the Planck scale to the GUT scale purely via the vacuum friction parameter $\mu$, providing a geometric origin for the heavy neutrino mass scale required by the seesaw mechanism.
+per unit of complexity at $\mu=0.40$.
 
 Q.E.D.
 

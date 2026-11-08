@@ -243,9 +243,9 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $U(t)$ | Admitted one-parameter unitary evolution | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
 | $H$ | Hermitian generator of the admitted unitary group | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
 | $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
-| $J^\mu$ | Weak Current | [§8.1.2.1](/monograph/players/braids/8.1/#8.1.2.1) |
+| $J^\mu$ | Weak Current | [§8.4.6.1](/monograph/players/braids/8.4/#8.4.6.1) |
 | $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $\gamma^5$ | Chirality Operator | [§8.3.6](/monograph/players/braids/8.3/#8.3.6) |
+| $\gamma^5$ | Chirality Operator | [§8.4.6.1](/monograph/players/braids/8.4/#8.4.6.1) |
 | $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
 | $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
 | $\theta_W$ | Electroweak mixing angle (Weinberg angle) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
@@ -293,13 +293,13 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $S_v^X$ | Vertex stabilizer (X-type flow check) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
 | $\mathcal{S}$ | The Stabilizer Group | [§10.2.2](/monograph/players/computation/10.2/#10.2.2) |
 | $\mathcal{C}_L$ | Logical Codespace (Protected subspace) | [§10.3.1](/monograph/players/computation/10.3/#10.3.1) |
-| $d$ | Code Distance ($d=3$) | [§10.3.4](/monograph/players/computation/10.3/#10.3.4) |
+| $d$ | Pauli code distance | [§10.3.4](/monograph/players/computation/10.3/#10.3.4) |
 | $\mathcal{R}_X$ | Logical X gate rewrite process (Writhe Shuffle) | [§10.4.1](/monograph/players/computation/10.4/#10.4.1) |
 | $\mathcal{R}_Z$ | Logical Z gate rewrite process (QND Measure) | [§10.5.1](/monograph/players/computation/10.5/#10.5.1) |
 | $\mathcal{R}_H$ | Hadamard gate rewrite process (Thermo-Quench) | [§10.6.1](/monograph/players/computation/10.6/#10.6.1) |
 | $T_{local}$ | Local temperature of a graph region | [§10.6.2.1](/monograph/players/computation/10.6/#10.6.2.1) |
 | $\mathcal{R}_{CZ}$ | Controlled-Z gate rewrite process (Catalytic) | [§10.7.1](/monograph/players/computation/10.7/#10.7.1) |
-| $\sigma_{eff}$ | Effective stress syndrome | [§10.7.2.1](/monograph/players/computation/10.7/#10.7.2.1) |
+| $\sigma_{eff}$ | Effective stress syndrome | [§10.7.2.2](/monograph/players/computation/10.7/#10.7.2.2) |
 | $\mathcal{R}_T$ | T-gate rewrite process (Self-Braiding) | [§10.8.1](/monograph/players/computation/10.8/#10.8.1) |
 | $\mathcal{C}_{QBD}$ | Ribbon Category of stable braids | [§10.8.3](/monograph/players/computation/10.8/#10.8.3) |
 | $\mathcal{G}_{phys}$ | Universal Physical Gate Set | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
