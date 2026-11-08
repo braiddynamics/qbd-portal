@@ -67,10 +67,10 @@ Section 8.1.2.1 formalizes the properties of the QBD proof regarding braid group
 
 ### 8.1.3 Lemma: Distant Commutativity {#8.1.3}
 
-:::info[**Verification through Operator Independence using Disjoint Spatial Supports**]
+:::info[**Distant Commutativity via Disjoint Operator Supports**]
 :::
 
-For any $n$-ribbon braid, the physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ satisfy the commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ if and only if the indices satisfy $|i-j| \geq 2$. This commutation is enforced by the spatial separation of their local subgraphs ($\bar{d} > 2$) and the factorization of the global Hilbert space $\mathcal{H}$ into distinct tensor factors, where the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" /> forbids any bridging edges between their disjoint neighborhoods.
+Let $\sigma_i$ be the Artin generators of $B_{n}$, and let the distant represented rewrites act on independent tensor factors. Then distinct Artin generators commute exactly for $|i-j|\ge2$, their distant represented rewrites commute, and a commuting pair of one-parameter unitary groups on a finite-dimensional sector has commuting generators.
 
 **In Plain English:**  
 Section 8.1.3 formalizes the properties of the QBD lemma regarding distant commutativity.
@@ -79,25 +79,45 @@ Section 8.1.3 formalizes the properties of the QBD lemma regarding distant commu
 
 ### 8.1.3.1 Proof: Distant Commutativity {#8.1.3.1}
 
-:::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
+:::tip[**Artin Commutation via Strand Permutations and Differentiation**]
 :::
 
-The proof explicitly demonstrates $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ by decomposing the operations into disjoint spatial supports and verifying the tensor product structure in the underlying Hilbert space.
+**I. Artin Generators**
 
-**I. Spatial Decomposition and Metric Bounds**
-The rewrite process $\mathcal{R}_i$ is a local operation affecting only the subgraph of ribbons $i, i+1$ and their immediate neighborhood.
-1.  **Metric Separation:** If $|i-j| \ge 2$, the pair $(i, i+1)$ is disjoint from $(j, j+1)$. The subgraphs are spatially separated by an **Undirected Metric Distance** $\bar{d}(u,v) > 2$ **Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />. This separation ensures no shared vertices or edges beyond the unstrained part, preventing overlapping **2-path motifs** that could couple the operations.
-2.  **PUC Enforcement:** The bound $\bar{d} > 2$ follows directly from the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which forbids direct edges between non-adjacent ribbons to prevent short-path redundancies. The proposed closures for each $\mathcal{R}$ are on unique 2-paths in their local neighborhoods (no alternatives $\le 2$), ensuring no overlap-induced redundancies exist across the separation.
+The Artin presentation gives $\sigma_i\sigma_j=\sigma_j\sigma_i$ for $|i-j|\ge2$ (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). For adjacent indices, the strand permutation homomorphism sends $\sigma_i$ to $s_i=(i\ i+1)$. With composition from right to left,
 
-**II. Parallel Execution Equivariance**
-The sequence $\mathcal{R}_i \circ \mathcal{R}_j$ is valid as a **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />; PUC holds independently for each.
-1.  **Scheduler Automorphism:** The parallelism is enforced by the **Scheduler** $\Phi$, which applies rewrites equivariantly under the automorphism group $\text{Aut}(G)$ **Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />. The relation $\Phi(\varphi(G)) = \varphi(\Phi(G))$ ensures that the parallel application treats equivalent disjoint sites identically.
-2.  **Entropy Preservation:** The scheduler preserves the **Orbit Entropy** $H_S(G)$ **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> by maximizing the Shannon entropy of orbit sizes, thereby avoiding order-dependent biases that could distinguish $\mathcal{R}_i \mathcal{R}_j$ from $\mathcal{R}_j \mathcal{R}_i$.
+$$
+(s_i s_{i+1})(i)=i+1,\qquad
+(s_{i+1}s_i)(i)=i+2 .
+$$
 
-**III. Algebraic Tensor Factorization**
-Since the operators act on distinct, non-interacting subsystems, they commute due to the tensor product structure of the QECC Hilbert space $\mathcal{H}$ **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />.
-1.  **Operator Product:** $[\mathcal{R}_i, \mathcal{R}_j] = [A \otimes I, I \otimes B] = 0$. The order of operations is irrelevant: $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$.
-2.  **Lie Algebra Extension:** This commutativity extends to the generated Hamiltonians via the exponential map. The relation $[e^{i H_i}, e^{i H_j}] = 0$ implies $[H_i, H_j] = 0$ for distant $i, j$, aligning with the **Cartan Subalgebra** structure in $\mathfrak{su}(n)$. The exponential map preserves commutators, and the QECC embedding ensures the tensor factorization $\mathcal{H} = \mathcal{H}_i \otimes \mathcal{H}_j$ is exact, with no entanglement across the separation distance $\bar{d} > 2$.
+Thus the adjacent words differ already in their strand permutations, so they differ in the braid group. For equal indices the commutator of an operator with itself is zero.
+
+**II. Operators on Independent Supports**
+
+For a distant pair, the assumed factorization gives $\mathcal R_i=A\otimes I$ and $\mathcal R_j=I\otimes B$ on the relevant factors (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />). The tensor multiplication rule gives
+
+$$
+\mathcal R_i\mathcal R_j=(AI)\otimes(IB)=A\otimes B,\qquad
+\mathcal R_j\mathcal R_i=(IA)\otimes(BI)=A\otimes B .
+$$
+
+An operator representation can identify distinct braid words. For the converse on represented rewrites, an action retaining the strand permutations suffices because the calculation on $i$ then distinguishes the adjacent products.
+
+**III. Infinitesimal Commutators**
+
+On a finite-dimensional sector, suppose $U_i(t)=e^{-itT_i}$ and $U_j(s)=e^{-isT_j}$ satisfy $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$. The mixed derivatives at the origin are
+
+$$
+\begin{aligned}
+\left.\partial_t\partial_s(U_i(t)U_j(s))\right|_{0,0}
+&=(-iT_i)(-iT_j)=-T_iT_j,\\
+\left.\partial_t\partial_s(U_j(s)U_i(t))\right|_{0,0}
+&=(-iT_j)(-iT_i)=-T_jT_i.
+\end{aligned}
+$$
+
+Their equality yields $[T_i,T_j]=0$.
 
 Q.E.D.
 
@@ -2355,10 +2375,10 @@ Section 8.4.4.1 formalizes the properties of the QBD proof regarding weak algebr
 
 ### 8.4.5 Lemma: Right-Handed Rejection {#8.4.5}
 
-:::info[**Calculation of Near-Unity Suppression via Mirror Processes**]
+:::info[**Right-Handed Rejection via Conditional Detection and Exact Projection**]
 :::
 
-Assume the probability of realizing a right-handed mirror process within the causal graph is suppressed to a value approaching zero due to timestamp inversion creating redundant local paths of length $\le 2$ that scale with edge density $\rho_e$. This suppression is enforced by local stabilizer checks within the quasi-local radius $R \sim \log N$ detecting redundancies with fidelity $1 - e^{-R}$, resulting in a projective collapse where the rejection rate satisfies $P(\text{reject}) \approx 1$.
+Let a modeled right-handed configuration have an alternative short path with probability $p_{\text{alt}}$, and let a check with miss probability $e^{-R}$ conditional on a defect reject only on detection. Then its rejection probability is $p_{\text{alt}}(1-e^{-R})$, and an exact codespace projector annihilates every state supported entirely on the violating sector.
 
 **In Plain English:**  
 Section 8.4.5 formalizes the properties of the QBD lemma regarding right-handed rejection.
@@ -2367,41 +2387,42 @@ Section 8.4.5 formalizes the properties of the QBD lemma regarding right-handed 
 
 ### 8.4.5.1 Proof: Right-Handed Rejection {#8.4.5.1}
 
-:::tip[**Derivation of Rejection Rates from Path Redundancy and Local Checks**]
+:::tip[**Rejection Probability via Conditional Detection and Sector Projection**]
 :::
 
-**I. Statistical Failure Probability**
-The probability of **PUC** failure for an inverted (right-handed) path scales with the expected number of alternative short paths in the sparse graph.  **Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" /> and  **Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" />
-Using a Poisson model for alternatives in an Erdos-Renyi graph with edge probability $\rho_e = \langle k \rangle / N \approx 0.029$:
-The probability of no alternative short path is $P(\text{unique}) = \exp(-\lambda)$, where $\lambda$ is the expected number of alternatives.
-For a local distance $\bar{d}=2$, amplified by the 3-path span in the braid support:
+**I. Defect and Detection Events**
+
+Let $A$ be the event that the proposed support has an alternative short path, and let $D$ be rejection by the finite check (**Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" />). In the specified check, $\Pr(D\mid A)=1-e^{-R}$ and $\Pr(D\mid A^{\mathsf c})=0$. Therefore
 
 $$
-\lambda \approx \langle k \rangle^2 \rho_3^* \approx 9 \times 0.029 \approx 0.26
+\begin{aligned}
+\Pr(D)
+&=\Pr(D\mid A)\Pr(A)+\Pr(D\mid A^{\mathsf c})\Pr(A^{\mathsf c})\\
+&=(1-e^{-R})p_{\text{alt}},\\
+\Pr(D^{\mathsf c}\cap A)&=e^{-R}p_{\text{alt}} .
+\end{aligned}
 $$
 
-This yields a mean-field rejection probability $P(\text{alt}) = 1 - e^{-0.26} \approx 0.23$.
+**II. Conditional Fidelity and the Sparse Example**
 
-**II. Local Detection Fidelity**
-The violation is detected by the local stabilizer checks within the **Quasi-Local Radius** $R \sim \log N$.
-The **BFS Search** scans for alternatives with a failure rate (false negative) scaling as $e^{-R}$.
-With $R = \log_{\text{diam}} N \approx \log_3 10^6 \approx 9.5$:
+At $R=(9/2)\ln 10$ the conditional miss probability is $10^{-9/2}=10^{-4}/\sqrt{10}\simeq0.0000316228$, giving conditional detection $0.9999683772$. If the number of alternatives is Poisson with mean $\lambda$, its zero-count probability is $e^{-\lambda}\lambda^0/0!=e^{-\lambda}$, so $\Pr(A)=1-e^{-\lambda}$. At $\lambda=0.26$ the unconditional rejection is
 
 $$
-\text{Fidelity} = 1 - e^{-R} \approx 1 - 10^{-4.5} \approx 0.99997
+(1-e^{-0.26})(1-10^{-9/2})
+\simeq(1-0.7710516)(0.9999684)
+\simeq0.22894 .
 $$
 
-**III. Combined Rejection Rate**
-The total rejection rate for the forbidden right-handed process combines the existence of alternatives with the detection fidelity.
-The probability that an alternative exists ($\ge 1$) scales as $P(\text{alt} \ge 1) = 1 - e^{-0.087} \approx 0.083$ (base), scaled to $\approx 0.2$ by the local triplet density.
+**III. Exact Codespace Projection**
+
+For the hard constraint (**Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />), write $\Pi_{\text{PUC}}$ for the orthogonal projector onto the allowed sector. If $|\psi_{\text{RH}}\rangle$ is supported entirely on its orthogonal complement, then $(I-\Pi_{\text{PUC}})|\psi_{\text{RH}}\rangle=|\psi_{\text{RH}}\rangle$, and
 
 $$
-P(\text{reject}) \approx 1 - (1 - P(\text{alt})) \times e^{-R}
+\Pi_{\text{PUC}}|\psi_{\text{RH}}\rangle
+=\Pi_{\text{PUC}}(I-\Pi_{\text{PUC}})|\psi_{\text{RH}}\rangle
+=(\Pi_{\text{PUC}}-\Pi_{\text{PUC}}^2)|\psi_{\text{RH}}\rangle
+=0 .
 $$
-
-Since $P(\text{alt})$ is significant ($\sim 0.2$) and detection is nearly perfect, the system rejects the process whenever an alternative exists.
-In the strict limit of the **Code Space** $\mathcal{C}$, the projector $\Pi_{PUC}$ annihilates any state with path redundancy.
-Thus, the effective rejection rate for the mirror process approaches unity ($1 - 10^{-3}$) in the physical regime.
 
 Q.E.D.
 
@@ -2582,10 +2603,10 @@ Section 8.5.1 formalizes the properties of the QBD theorem regarding topological
 
 ### 8.5.2 Lemma: Computational Friction Ratio {#8.5.2}
 
-:::info[**Quantification of the Inequality between Three-Cycle via Four-Cycle Rewrites**]
+:::info[**Closure Probability Ratio via a Prescribed Branching Model**]
 :::
 
-Assume the probability of a 4-cycle rewrite process is strictly less than that of a 3-cycle rewrite process ($p_4 < p_3$), enforced by the differential computational friction and the combinatorial rarity of 4-cycle precursors relative to 3-cycle precursors. Under this friction differential, the larger interaction volume of the 4-cycle vertex ($V_4 > V_3$) incurs a greater exponential suppression factor $e^{-\mu V}$ from the Acyclic Pre-Check.
+Let the closure model for an $\ell$-cycle require $\ell-1$ specified branch choices, each with conditional probability $1/k$ for $k>1$, followed by acceptance $f_\ell=e^{-\mu\rho V_\ell}$ with $\mu,\rho\ge0$ and $V_4>V_3$. Then the ratio is $p_4/p_3=k^{-1}e^{-\mu\rho(V_4-V_3)}<1$.
 
 **In Plain English:**  
 Section 8.5.2 formalizes the properties of the QBD lemma regarding computational friction ratio.
@@ -2594,35 +2615,40 @@ Section 8.5.2 formalizes the properties of the QBD lemma regarding computational
 
 ### 8.5.2.1 Proof: Computational Friction Ratio {#8.5.2.1}
 
-:::tip[**Derivation of the Probability Ratio from Combinatorial and Friction Factors**]
+:::tip[**Closure Ratio via Conditional Branch Products and Exponential Friction**]
 :::
 
-The probability $p_k$ of a $k$-cycle rewrite process is the product of the combinatorial precursor density and the acceptance probability $P_{acc} = f(\sigma)$.  **Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" /> and  **Topological Weinberg Angle** <Ref id="8.5.1" label="§8.5.1" />
-The inequality $p_4 < p_3$ is demonstrated by decomposing these factors in the sparse limit.
+**I. Matched Branches for Closure**
 
-**I. Combinatorial Rarity**
-A 4-cycle precursor is an open 3-path ($v \to w \to x \to u$). A 3-cycle precursor is an open 2-path ($v \to w \to u$).
-In a sparse random graph with mean degree $\langle k \rangle \approx 3$:
-* The density of 3-paths scales as $N \langle k \rangle^3$.
-* The density of 2-paths scales as $N \langle k \rangle^2$.
-The ratio scales as $1/\langle k \rangle \approx 1/3$, making 4-cycle precursors combinatorially rarer. The scaling is precise in the configuration model, where the expected path count normalizes by total sites $N$.
-
-**II. Higher Friction via Pre-Checks**
-A 4-cycle proposal is "riskier" and faces higher rejection rates from the pre-checks:
-1.  **PUC Failure:** A 3-path has more internal vertices ($w, x$), increasing the probability of an "accidental" alternative short-path violating uniqueness. This probability scales with the number of internal branches ($\sim \langle k \rangle^2$).
-2.  **AEC Failure:** A 3-path spans a larger graph region, increasing the likelihood that the closing edge creates a prohibited long-range, timestamp-monotone cycle. The failure rate scales as $e^{-\text{dist}/\xi}$, with dist $\approx 3$ vs. 2.
-
-**III. Net Probability Ratio**
-The friction function $f(\sigma) = \exp(-\mu \cdot V_{int} \cdot \rho)$ yields a damping factor for the extra vertex exposure of $f_4 / f_3 = e^{-2\mu\rho}$.
-At the equilibrium density $\rho^* \approx 0.029$ with friction $\mu \approx 0.40$ derived via **Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />, this factor evaluates to $e^{-0.0232} \approx 0.977$.
-Because this value is extremely close to unity, the friction differential at sparse equilibrium is negligible.
-Combining factors, the probability ratio is dominated almost entirely by the combinatorial rarity:
+Let $A_j$ be the event of taking the prescribed branch at step $j$ of the model (**Computational Friction Ratio** <Ref id="8.5.2" label="§8.5.2" />). A successful branch history has probability
 
 $$
-\frac{p_4}{p_3} \approx \frac{1}{\langle k \rangle} \times e^{-2\mu\rho} \approx \frac{1}{3} \times 1 = \frac{1}{3}
+\Pr\Bigl(\bigcap_{j=1}^{\ell-1}A_j\Bigr)
+=\Pr(A_1)\prod_{j=2}^{\ell-1}\Pr\Bigl(A_j\ \Big|\ \bigcap_{h=1}^{j-1}A_h\Bigr)
+=k^{-(\ell-1)}.
 $$
 
-This confirms $p_4 < p_3$, consistent with the geometric requirements.
+Hence the branch contributions are $k^{-2}$ and $k^{-3}$ for $\ell=3$ and $\ell=4$. In contrast, the ratio of the raw walk-count estimates $Nk^3$ and $Nk^2$ is $(Nk^3)/(Nk^2)=k$.
+
+**II. Conditional Acceptance**
+
+The model assigns the successful branch histories exponential acceptance factors (**Friction Coefficient** <Ref id="4.4.7" label="§4.4.7" />). Multiplication and cancellation give
+
+$$
+p_3=k^{-2}e^{-\mu\rho V_3},\quad
+p_4=k^{-3}e^{-\mu\rho V_4},\quad
+\frac{p_4}{p_3}=\frac{k^{-3}}{k^{-2}}e^{-\mu\rho(V_4-V_3)}
+\le \frac1k<1.
+$$
+
+**III. Benchmark Ratio**
+
+For the illustrative inputs $k=3$, $\mu=0.40$, $\rho=0.029$, and $V_4-V_3=2$,
+
+$$
+-\mu\rho(V_4-V_3)=-0.40(0.029)(2)=-0.0232,\qquad
+\frac{p_4}{p_3}=\frac{e^{-0.0232}}{3}\simeq\frac{0.977067}{3}\simeq0.3257 .
+$$
 
 Q.E.D.
 
@@ -3389,10 +3415,10 @@ Section 8.7.2 formalizes the properties of the QBD theorem regarding emergent ma
 
 ### 8.7.3 Lemma: Boson Mass Prediction {#8.7.3}
 
-:::info[**Derivation of W and Z Masses from Coupling and Vacuum Expectation Value**]
+:::info[**Boson Mass Sensitivity via Common Vacuum-Density Scaling**]
 :::
 
-Suppose the masses of the weak gauge bosons are derived strictly from the vacuum parameters as $m_W = \frac{g v}{2}$ and $m_Z = \frac{m_W}{\cos \theta_W}$. Under this derivation, the predicted masses $m_W \approx 81.7$ GeV and $m_Z \approx 93.2$ GeV agree with experimental values within the $1\sigma$ variance of the vacuum density fluctuations.
+Let $m_W=gv/2$ and $m_Z=m_W/\cos\theta_W$, with $g$ and $v$ proportional to $\sqrt{\rho}$ at fixed prefactors. Then $m_W$ is proportional to $\rho$, its fractional density sensitivity is one, and the fractional sensitivity of $m_Z$ includes the differential of the mixing factor.
 
 **In Plain English:**  
 Section 8.7.3 formalizes the properties of the QBD lemma regarding boson mass prediction.
@@ -3401,19 +3427,45 @@ Section 8.7.3 formalizes the properties of the QBD lemma regarding boson mass pr
 
 ### 8.7.3.1 Proof: Boson Mass Prediction {#8.7.3.1}
 
-:::tip[**Verification of Boson Masses via the Standard Model Relations and QBD Constants**]
+:::tip[**Boson Mass Propagation via the Product and Chain Rules**]
 :::
 
-The standard electroweak mass formulas follow from symmetry breaking: the $W$ boson acquires mass from charged current coupling to the vacuum expectation value (VEV), $m_W = \frac{g v}{2}$, where $g$ is the $SU(2)$ coupling and $v$ is the doublet VEV component. The $Z$ boson mass incorporates mixing: $m_Z = \frac{m_W}{\cos \theta_W}$, where $\cos \theta_W = \frac{g}{\sqrt{g^2 + g'^2}}$.
+**I. Shared Density Dependence**
 
-**I. Parameter Propagation and Covariance**
-The detailed error propagation follows $\Delta m_W = \frac{v}{2} \Delta g + \frac{g}{2} \Delta v$. Since $g \propto \sqrt{\rho_3^*}$ **Emergent Gauge Coupling** <Ref id="8.6.1" label="§8.6.1" /> and $v \propto \sqrt{\rho_3^*}$ **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" />, the relative sensitivities satisfy $\frac{\Delta g}{g} = \frac{1}{2} \frac{\Delta \rho}{\rho}$ and $\frac{\Delta v}{v} = \frac{1}{2} \frac{\Delta \rho}{\rho}$. This yields a total relative error of $\frac{1}{2} \frac{\Delta \rho}{\rho}$ for both, tightened by a covariance factor $\sqrt{1 - \mathrm{corr}^2}$ with $\mathrm{corr} \approx 0.95$ derived from the shared equilibrium solver. For the $Z$ boson, the relative error expansion $\frac{\Delta m_Z}{m_Z} \approx \frac{\Delta m_W}{m_W} + \frac{1}{2} \frac{\Delta (\sin^2 \theta_W)}{\cos^2 \theta_W}$ applies. Given $\frac{\Delta (\sin^2 \theta_W)}{\sin^2 \theta_W} \approx 2 \Delta \mu \approx 0.10$ from the derivative $\frac{\partial \sin^2}{\partial \mu} \approx -0.37$, the additional term bounds at $5.4\%$, while covariance tightens the net to $2.1\%$.
+At fixed coupling and volume prefactors, write $g=g_0\sqrt{\rho/\rho_0}$ and $v=v_0\sqrt{\rho/\rho_0}$ for $\rho,\rho_0>0$ (**Emergent Gauge Coupling** <Ref id="8.6.1" label="§8.6.1" />) (**Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" />). Then
 
-**II. Numerical Sweep and RPV Convergence**
-Numerical verification via the full QBD vacuum parameter sweep over 100 runs per point for $\mu \in [0.15, 0.65]$ and $\lambda_{\mathrm{cat}} \in [0.8, 4.1]$ yields a 32% viability rate after stall filtering. The Region of Physical Viability (RPV) center at $\mu = 0.40, \lambda_{\mathrm{cat}} = 1.70$ produces a mean $\rho_3^* = 0.0290$ with a per-point standard deviation $\sigma \approx 0.005$ from ensemble averaging. The mixing angle $\sin^2 \theta_W \approx 0.231$ emerges from the ratio $\frac{p_4}{p_3} \propto e^{-2\mu}$. The sweep confirms RPV averages of $\langle m_W \rangle = 81.7 \pm 1.5$ GeV (1.7%) and $\langle m_Z \rangle = 93.2 \pm 2.0$ GeV (2.1%), with $\chi^2/\text{dof} = 1.12$ against PDG values.
+$$
+\begin{aligned}
+m_W(\rho)&=\tfrac12g_0v_0\sqrt{\rho/\rho_0}\sqrt{\rho/\rho_0}
+=m_W(\rho_0)\rho/\rho_0,\\
+\frac{m_W(\rho)-m_W(\rho_0)}{m_W(\rho_0)}
+&=\frac{\rho-\rho_0}{\rho_0},\\
+\frac{\mathrm d m_W}{m_W}&=\frac{\mathrm dg}{g}+\frac{\mathrm dv}{v}
+=\frac12\frac{\mathrm d\rho}{\rho}+\frac12\frac{\mathrm d\rho}{\rho}
+=\frac{\mathrm d\rho}{\rho}.
+\end{aligned}
+$$
 
-**III. Landscape Viability**
-The 32% viability emerges from the master equation bifurcation where low-$\mu$ regimes stall at $\rho=0$ and high-$\lambda_{\mathrm{cat}}$ regimes violate causal acyclicity (**Region of Physical Viability** <Ref id="5.3.1" label="§5.3.1" />). The dynamical selection channels parameters into the Goldilocks zone $\mu \approx 0.40$. The skew of $1.87$ in the distribution reflects cycle creation bursts, modeled via rejection sampling to ensure the covariance matrix captures the joint parameter structure.
+**II. Neutral Mixing Contribution**
+
+Put $s=\sin^2\theta_W$ and take $\cos\theta_W=\sqrt{1-s}>0$. The neutral mass and its logarithmic differential are
+
+$$
+\begin{aligned}
+m_Z&=m_W(1-s)^{-1/2},\\
+\mathrm d\ln m_Z&=\mathrm d\ln m_W-\tfrac12\mathrm d\ln(1-s)
+=\frac{\mathrm d\rho}{\rho}+\frac{\mathrm ds}{2(1-s)} .
+\end{aligned}
+$$
+
+**III. Benchmark at Fixed Mixing**
+
+At fixed mixing, $\mathrm ds=0$ and both mass differentials have density coefficient one. For the illustrative inputs $m_W=81.7\,\text{GeV}$ and $s=0.231$,
+
+$$
+\cos\theta_W=\sqrt{1-0.231}=\sqrt{0.769}\simeq0.876926,\qquad
+m_Z=\frac{81.7}{\sqrt{0.769}}\,\text{GeV}\simeq93.1663\,\text{GeV}.
+$$
 
 Q.E.D.
 
@@ -3613,10 +3665,10 @@ Section 8.7.5.2 formalizes the properties of the QBD calculation regarding yukaw
 
 ### 8.7.6 Lemma: Sensitivity and Error Propagation {#8.7.6}
 
-:::info[**Analysis via Prediction Sensitivity to Vacuum Density Fluctuations**]
+:::info[**Mass Uncertainty via Implicit Sensitivity and Joint Variance**]
 :::
 
-Assume the predictive stability of the emergent mass spectrum against stochastic vacuum fluctuations is governed by the sensitivity derivatives and covariance structure of the equilibrium state. Under this propagation, the mass observable $m_W$ exhibits linear sensitivity to the equilibrium 3-cycle density, while the effective variance of $m_Z$ is structurally suppressed by the negative covariance $\text{Cov}(\rho_3^*, \sin^2 \theta_W) \approx -0.023$ arising from shared frictional dependencies.
+Let $\rho^*(\mu)$ be a simple positive root of the driven scalar current at fixed $\Lambda$ and $\lambda_{\text{cat}}$, and let $m_W=C\rho^*$ and $m_Z=C\rho^*/\sqrt{1-s}$ with $s=\sin^2\theta_W$ and fixed $C>0$. Then $\mathrm d\rho^*/\mathrm d\mu=-F_\mu/F_\rho$, and the first-order neutral mass variance includes the covariance of density and mixing in addition to their separate variances.
 
 **In Plain English:**  
 Section 8.7.6 formalizes the properties of the QBD lemma regarding sensitivity and error propagation.
@@ -3625,31 +3677,65 @@ Section 8.7.6 formalizes the properties of the QBD lemma regarding sensitivity a
 
 ### 8.7.6.1 Proof: Sensitivity and Error Propagation {#8.7.6.1}
 
-:::tip[**Analytical from Numerical derivation of Error Bounds on Predicted Masses**]
+:::tip[**Equilibrium and Mass Sensitivity via Implicit Differentiation and Covariance**]
 :::
 
-Implicit differentiation of the master equation $\frac{d\rho}{dt} = 9\rho^2 e^{-6\mu\rho} - \frac{1}{2}\rho = 0$ yields the equilibrium density sensitivity.  **Sensitivity and Error Propagation** <Ref id="8.7.6" label="§8.7.6" /> and  **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" />
+**I. Differentiation of the Driven Current**
 
-**I. Sensitivity to $\mu$**
-Implicit differentiation of $f(\rho_3^*, \mu) = 18 \rho_3^* e^{-6\mu \rho_3^*} - 1 = 0$ yields:
-
-$$
-\frac{\partial \rho_3^*}{\partial \mu} = \frac{6 (\rho_3^*)^2}{1 - 6\mu \rho_3^*}
-$$
-
-At the RPV center ($\mu \approx 0.40, \rho_3^* \approx 0.029$), $\frac{\partial \rho_3^*}{\partial \mu} \approx 0.00542$. Over the RPV width $\Delta \mu \approx 0.25$, this induces a variation $|\Delta \rho_3^*| \approx 0.001355$, amplified by coupling to $\sigma_{\rho_3^*} \approx 0.005$ **Phase Space Sweep** <Ref id="5.3.3" label="§5.3.3" />.
-
-**II. Variance Propagation**
-Mass scales as $m_W \propto \rho_3^*$. By the delta method:
+The scalar closure is (**Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />)
 
 $$
-\mathrm{Var}(m_W) = \left( \frac{\partial m_W}{\partial \rho_3^*} \right)^2 \mathrm{Var}(\rho_3^*) + 2 \frac{\partial m_W}{\partial \rho_3^*} \frac{\partial m_W}{\partial \theta_W} \mathrm{Cov}(\rho_3^*, \theta_W)
+F(\rho,\mu)=(\Lambda+9\rho^2)e^{-6\mu\rho}-\tfrac12\rho-3\lambda_{\text{cat}}\rho^2 .
 $$
 
-$\mathrm{Cov}(\rho_3^*, \sin^2 \theta_W) \approx -0.023$ arises from shared $\mu$-damping. Self-averaging over $N_\xi \approx 4 \times 10^5$ subregions reduces the raw $17.2\%$ error to $\sigma_{\text{eff}} \approx \frac{\sigma}{\sqrt{N_\xi}}$, tightening to $1.7\%$ after covariance adjustment factor $1 - \mathrm{corr}^2 \approx 0.31$. For $m_Z$, the additional term $\frac{1}{2} \frac{\Delta (\sin^2 \theta_W)}{\cos^2 \theta_W} \approx 5.4\%$ tightens to $2.1\%$ total covariance.
+At fixed $\Lambda$ and $\lambda_{\text{cat}}$,
 
-**III. Numerical Convergence**
-Numerical sweeps confirm viability for $0.01 < \rho_3^* < 0.1$. The RPV acts as a landscape minimum. Burstiness skew ($\approx 1.87$) in cycle creation requires Monte Carlo sampling to capture the full joint structure of the covariance matrix for mass propagation.
+$$
+\begin{aligned}
+F_\mu&=-6\rho(\Lambda+9\rho^2)e^{-6\mu\rho},\\
+F_\rho&=18\rho e^{-6\mu\rho}-6\mu(\Lambda+9\rho^2)e^{-6\mu\rho}
+-\tfrac12-6\lambda_{\text{cat}}\rho .
+\end{aligned}
+$$
+
+Since $F_\rho(\rho^*,\mu)\ne0$, the implicit function theorem and the derivative of $F(\rho^*(\mu),\mu)=0$ give
+
+$$
+F_\rho\frac{\mathrm d\rho^*}{\mathrm d\mu}+F_\mu=0,\qquad
+\frac{\mathrm d\rho^*}{\mathrm d\mu}
+=\frac{6\rho^*(\Lambda+9(\rho^*)^2)e^{-6\mu\rho^*}}{F_\rho}.
+$$
+
+The stable root with $F_\rho<0$ has negative sensitivity (**Global Stability** <Ref id="5.4.3" label="§5.4.3" />).
+
+**II. First-Order Variance**
+
+Let $\bar\rho>0$ and $\bar s<1$ be the linearization point. The relative perturbations from **Boson Mass Prediction** <Ref id="8.7.3" label="§8.7.3" /> are $\delta\rho/\bar\rho$ and $\delta\rho/\bar\rho+\delta s/[2(1-\bar s)]$. Expanding the squared centered linear combinations gives
+
+$$
+\begin{aligned}
+\frac{\operatorname{Var}(m_W)}{\bar m_W^2}
+&\simeq\frac{\operatorname{Var}(\rho)}{\bar\rho^2},\\
+\frac{\operatorname{Var}(m_Z)}{\bar m_Z^2}
+&\simeq\frac{\operatorname{Var}(\rho)}{\bar\rho^2}
++\frac{\operatorname{Var}(s)}{4(1-\bar s)^2}
++\frac{\operatorname{Cov}(\rho,s)}{\bar\rho(1-\bar s)}.
+\end{aligned}
+$$
+
+For $c=\cos\theta_W$, the neutral linearization is instead $\delta\rho/\bar\rho-\delta c/\bar c$. Its covariance term is $-2\operatorname{Cov}(\rho,c)/(\bar\rho\bar c)$, so negative covariance with $c$ increases this variance.
+
+**III. Independent Spatial Averaging**
+
+For $n$ independent equally distributed patch densities $\rho_j$ of variance $\sigma_{\text{patch}}^2$, the variance of their mean is
+
+$$
+\operatorname{Var}\!\left(n^{-1}\sum_{j=1}^n\rho_j\right)
+=n^{-2}\sum_{j=1}^n\operatorname{Var}(\rho_j)
+=\sigma_{\text{patch}}^2/n .
+$$
+
+Thus the density standard deviation of the mean is $\sigma_{\text{patch}}/\sqrt n$. This averaging calculation uses covariances across patches, while the neutral mass cross term uses covariance between observables.
 
 Q.E.D.
 

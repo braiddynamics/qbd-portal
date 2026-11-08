@@ -193,10 +193,10 @@ Section 9.1.3.1 formalizes the properties of the QBD proof regarding lower rank 
 
 ### 9.1.4 Lemma: Candidate Elimination {#9.1.4}
 
-:::info[**Disproof through Alternative Groups based on Chiral Representation Failures**]
+:::info[**Rank-Four Candidate Elimination via Complex Irreducibility**]
 :::
 
-Suppose every simple Lie group of rank $r=4$, excluding $SU(5)$, is rejected as a viable candidate for the Grand Unified Group. This rejection is established under **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" /> on the basis of representation reality, as symplectic, orthogonal, and exceptional algebras of rank 4 admit only real or pseudoreal representations.
+Assume the rank-four selection criterion requires a compact simple group with a complex irreducible representation inequivalent to its conjugate. Then $A_4$ is the only rank-four simple Lie type satisfying this criterion.
 
 **In Plain English:**  
 Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate elimination.
@@ -205,28 +205,39 @@ Section 9.1.4 formalizes the properties of the QBD lemma regarding candidate eli
 
 ### 9.1.4.1 Proof: Candidate Elimination {#9.1.4.1}
 
-:::tip[**Demonstration of Spectrum Mismatch via Non-SU(5) Rank-4 Groups**]
+:::tip[**Self-Duality via the Longest Weyl Group Element**]
 :::
 
-The proof examines the fundamental or spinor representations of the competing rank-4 algebras and demonstrates their incompatibility with the 15-fermion chiral generation.  **Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" /> and  **Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />
+**I. Rank-Four Types and the Dual Weight**
 
-**I. Exclusion of $Sp(8)$ ($C_4$)**
-* **Structure:** Symplectic group of rank 4.
-* **Representations:** All representations of $Sp(2n)$ are real or pseudoreal.
-* **Chirality:** A theory based on $Sp(8)$ is necessarily vector-like. It cannot support chiral fermions (where $f_L$ transforms differently from $f_R$) without breaking the gauge symmetry explicitly or adding mirror fermions that do not decouple. This contradicts the observed chiral nature of the weak interaction.
+The rank constraint leaves $A_4,B_4,C_4,D_4,F_4$ (**Lower Rank Exclusion** <Ref id="9.1.3" label="§9.1.3" />). For a compact group, a unitary representation has conjugate isomorphic to its dual. For the irreducible of highest weight $\lambda$, the lowest weight is $w_0\lambda$, with $w_0$ the longest Weyl group element. Negating the weights in the dual gives highest weight $-w_0\lambda$. Thus
 
-**II. Exclusion of $SO(9)$ ($B_4$)**
-* **Structure:** Orthogonal group in odd dimensions.
-* **Representations:** The spinor representation has dimension $2^4 = 16$.
-* **Chirality:** While the dimension 16 is suggestive (15 fermions + 1 right-handed neutrino), $SO(2n+1)$ groups possess only real (or pseudoreal) spinor representations. This leads to a Left-Right symmetric model that does not naturally produce the $V-A$ structure of the weak interaction without explicit symmetry breaking at the GUT scale to decouple the mirror sector. It is not minimal in the sense of the Standard Model chiral projection.
+$$
+w_0=-I\quad\Longrightarrow\quad -w_0\lambda=\lambda
+\quad\Longrightarrow\quad V_\lambda^*\cong V_\lambda.
+$$
 
-**III. Exclusion of $F_4$ (Exceptional)**
-* **Structure:** Exceptional group of rank 4.
-* **Representations:** The fundamental representation is $\mathbf{26}$.
-* **Vector Nature:** $F_4$ is a strictly real group; it has no complex representations. The anomaly coefficient $A(\mathbf{26}) = 0$ trivially because left and right sectors transform identically.
-* **Spectrum:** The decomposition $\mathbf{26} \to \mathbf{8} \oplus \mathbf{8} \oplus \dots$ under maximal subgroups does not align with the standard 15-fermion Weyl generation structure.
+**II. Reflections for the Four Alternatives**
 
-**Conclusion:** All rank-4 candidates except $A_4$ ($SU(5)$) are rejected due to the lack of complex representations necessary for chiral fermions.
+For $B_4,C_4,F_4$, the root systems in orthonormal coordinates contain roots parallel to each $e_i$. The associated reflections send $e_i$ to $-e_i$ and fix the other coordinates. Their product is $-I$. For $D_4$ the roots $e_i-e_j$ and $e_i+e_j$ yield reflections
+
+$$
+s_{e_i-e_j}(x_i,x_j)=(x_j,x_i),\qquad
+s_{e_i+e_j}(x_i,x_j)=(-x_j,-x_i).
+$$
+
+Their composition gives $(x_i,x_j)\mapsto(-x_i,-x_j)$. Taking the pairs $(1,2)$ and $(3,4)$ produces $-I$ in $W(D_4)$. In each of the four types this element sends every positive root to its negative and hence is $w_0$. All their irreducibles are self-conjugate. The vector representation of $\operatorname{Spin}(8)$ has dimension eight. In the exterior-algebra realization the even and odd parts on $\mathbb C^4$ give the half-spin dimensions
+
+$$
+\dim S^+=\binom40+\binom42+\binom44=1+6+1=8,\qquad
+\dim S^-=\binom41+\binom43=4+4=8.
+$$
+
+All three are self-conjugate by the same Weyl element calculation and therefore fail the complex-representation criterion (**Candidate Elimination** <Ref id="9.1.4" label="§9.1.4" />).
+
+**III. The $A_4$ Fundamental**
+
+For $SU(5)$ let $\zeta=e^{2\pi i/5}$. The central element $\zeta I$ acts on the fundamental by $\zeta$ and on its dual by $\zeta^{-1}$. An invertible intertwiner $T$ would satisfy $\zeta T=\zeta^{-1}T$, which would force $\zeta^2=1$. Since $\zeta$ has order five, the fundamental is inequivalent to its conjugate.
 
 Q.E.D.
 
@@ -521,10 +532,10 @@ Section 9.2.4 formalizes the properties of the QBD theorem regarding topological
 
 ### 9.2.5 Lemma: Distant Commutativity {#9.2.5}
 
-:::info[**Commutativity via Rewrite Operations on Disjoint Ribbon Pairs**]
+:::info[**Distant Commutativity via Disjoint Operator Supports**]
 :::
 
-Assume the physical rewrite processes $\mathcal{R}_i$ and $\mathcal{R}_j$ acting on the penta-ribbon braid satisfy the strict commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ if and only if $|i-j| \geq 2$. This commutation relation is physically enforced by the spatial disjointness of the interaction supports within the causal graph, ensuring that rewrite operations acting on non-adjacent ribbon pairs proceed independently within the causal order.
+Let $\sigma_i$ be the Artin generators of $B_{5}$, and let the distant represented rewrites act on independent tensor factors. Then distinct Artin generators commute exactly for $|i-j|\ge2$, their distant represented rewrites commute, and a commuting pair of one-parameter unitary groups on a finite-dimensional sector has commuting generators.
 
 **In Plain English:**  
 Section 9.2.5 formalizes the properties of the QBD lemma regarding distant commutativity.
@@ -533,31 +544,45 @@ Section 9.2.5 formalizes the properties of the QBD lemma regarding distant commu
 
 ### 9.2.5.1 Proof: Distant Commutativity {#9.2.5.1}
 
-:::tip[**Demonstration of Operator Commutativity via Disjoint Spatial Supports**]
+:::tip[**Artin Commutation via Strand Permutations and Differentiation**]
 :::
 
-The commutativity relation $[\mathcal{R}_i, \mathcal{R}_j] = 0$ for $|i-j| \ge 2$ follows directly from the locality of the physical (**Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />) and the maximal parallel update (**Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" />).
+**I. Artin Generators**
 
-**I. Spatial Decomposition**
-The rewrite process $\mathcal{R}_i$ operates on a local subgraph $G_i \subset G$ defined by the ribbons $i, i+1$ and their immediate neighbors.
-When $|i-j| \geq 2$, the ribbon pairs $(i, i+1)$ and $(j, j+1)$ are disjoint sets. The corresponding subgraphs $G_i$ and $G_j$ share no vertices or edges, satisfying $V(G_i) \cap V(G_j) = \emptyset$ and $E(G_i) \cap E(G_j) = \emptyset$.
-This spatial separation ensures independent causal histories; no edge in $G_i$ influences the timestamp $H(e)$ of any edge in $G_j$ within a single update tick.
-
-**II. PUC Compliance**
-For each process $\mathcal{R}_i$, the **Principle of Unique Causality (PUC)** requires a unique 2-path for closure.
-The spatial distance guarantees that no short path of length $\le 2$ connects $G_i$ and $G_j$. Thus, the set of potential precursors for $\mathcal{R}_i$ is unaffected by the action of $\mathcal{R}_j$.
-The combined operation $\mathcal{R}_{i \cup j} = \mathcal{R}_i \circ \mathcal{R}_j$ is a valid parallel update. The scheduler $\Phi$ executes both simultaneously without conflict, preserving global acyclicity.
-
-**III. Algebraic Tensor Structure**
-The operators act on distinct subsystems of the code space Hilbert space $\mathcal{H} = \mathcal{H}_i \otimes \mathcal{H}_j \otimes \mathcal{H}_{env}$.
-The commutator vanishes identically due to the tensor product structure:
+The Artin presentation gives $\sigma_i\sigma_j=\sigma_j\sigma_i$ for $|i-j|\ge2$ (**Distant Commutativity** <Ref id="8.1.3" label="§8.1.3" />). For adjacent indices, the strand permutation homomorphism sends $\sigma_i$ to $s_i=(i\ i+1)$. With composition from right to left,
 
 $$
-[\mathcal{R}_i, \mathcal{R}_j] = [\hat{O}_i \otimes I_j, I_i \otimes \hat{O}_j] = 0
+(s_i s_{i+1})(i)=i+1,\qquad
+(s_{i+1}s_i)(i)=i+2 .
 $$
 
-This implies $\mathcal{R}_i \mathcal{R}_j = \mathcal{R}_j \mathcal{R}_i$.
-Via the exponential map $\mathcal{R} = e^{-i H t}$, this commutativity extends to the generators: $[\hat{H}_i, \hat{H}_j] = 0$, satisfying the requirement for distant generators in the Lie algebra.
+Thus the adjacent words differ already in their strand permutations, so they differ in the braid group. For equal indices the commutator of an operator with itself is zero.
+
+**II. Operators on Independent Supports**
+
+For a distant pair, the assumed factorization gives $\mathcal R_i=A\otimes I$ and $\mathcal R_j=I\otimes B$ on the relevant factors (**Distant Commutativity** <Ref id="9.2.5" label="§9.2.5" />). The tensor multiplication rule gives
+
+$$
+\mathcal R_i\mathcal R_j=(AI)\otimes(IB)=A\otimes B,\qquad
+\mathcal R_j\mathcal R_i=(IA)\otimes(BI)=A\otimes B .
+$$
+
+An operator representation can identify distinct braid words. For the converse on represented rewrites, an action retaining the strand permutations suffices because the calculation on $i$ then distinguishes the adjacent products.
+
+**III. Infinitesimal Commutators**
+
+On a finite-dimensional sector, suppose $U_i(t)=e^{-itT_i}$ and $U_j(s)=e^{-isT_j}$ satisfy $U_i(t)U_j(s)=U_j(s)U_i(t)$ for all $s,t$. The mixed derivatives at the origin are
+
+$$
+\begin{aligned}
+\left.\partial_t\partial_s(U_i(t)U_j(s))\right|_{0,0}
+&=(-iT_i)(-iT_j)=-T_iT_j,\\
+\left.\partial_t\partial_s(U_j(s)U_i(t))\right|_{0,0}
+&=(-iT_j)(-iT_i)=-T_jT_i.
+\end{aligned}
+$$
+
+Their equality yields $[T_i,T_j]=0$.
 
 Q.E.D.
 
@@ -3475,10 +3500,10 @@ Section 9.3.3.1 formalizes the properties of the QBD proof regarding topological
 
 ### 9.3.4 Lemma: Decay Tunneling {#9.3.4}
 
-:::info[**Mechanism of Generational Decay via Non-Local Tunneling**]
+:::info[**Barrier Suppression via a Stipulated Multistep Tunneling Path**]
 :::
 
-Suppose the decay of a higher-generation particle to a lower-generation state is mediated exclusively by a quantum tunneling process traversing the topological complexity barrier. The rate of this decay $\Gamma$ is exponentially suppressed by the height of the barrier according to the relation $\Gamma \propto e^{-2\kappa \Delta C}$, establishing the observed hierarchy of lifetimes.
+Suppose the direct crossing is locally inadmissible and a legal multistep transition admits a WKB barrier model with forbidden length $\ell\Delta C$ at constant momentum scale, where $\Delta C=C_{\text{peak}}-C_{\text{initial}}>0$. Then the modeled rate is proportional to $e^{-2\kappa\Delta C}$ for the corresponding positive action coefficient $\kappa$.
 
 **In Plain English:**  
 Section 9.3.4 formalizes the properties of the QBD lemma regarding decay tunneling.
@@ -3487,44 +3512,36 @@ Section 9.3.4 formalizes the properties of the QBD lemma regarding decay tunneli
 
 ### 9.3.4.1 Proof: Decay Tunneling {#9.3.4.1}
 
-:::tip[**Calculation of Transition Probability via Instantons**]
+:::tip[**Rate Suppression via Local Admissibility and the Squared WKB Amplitude**]
 :::
 
-**I. Tunneling Amplitude**
-The transition from Gen $n$ to Gen $n-1$ is mediated by a flavor-changing rewrite process $\mathcal{R}_W$ (the "instanton" of the discrete theory).  **Decay Tunneling** <Ref id="9.3.4" label="§9.3.4" /> and  **Topological Protection** <Ref id="9.3.3" label="§9.3.3" />
-The amplitude for this process is governed by the path integral over the barrier:
+**I. Local Move and Multistep Path**
+
+A direct crossing proposal that produces a second short path between the same ordered endpoints fails the uniqueness test (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). If the two routes are $\pi_1\ne\pi_2$ of length at most two, the short-path count is at least $|\{\pi_1,\pi_2\}|=2>1$. A stipulated multistep path $G_0,\ldots,G_m$ instead has a separate legal certificate at each prefix. Its barrier is measured relative to the initial state (**Topological Protection** <Ref id="9.3.3" label="§9.3.3" />),
 
 $$
-A \propto e^{-S_{\text{action}}}
+C_{\text{peak}}=\max_{0\le j\le m} C(G_j),\qquad
+\Delta C=C_{\text{peak}}-C(G_0)>0 .
 $$
 
-The tunneling action is formally defined in terms of the WKB approximation. The Euclidean action for the transition through the potential barrier is given by:
+**II. Action and Rate in the Barrier Model**
+
+Let $V_b>E$ be the constant effective barrier, and $p_b=\sqrt{2m(V_b-E)}$ its momentum scale. The stated width is $x_f-x_i=\ell\Delta C$. The dimensionless WKB amplitude exponent is
 
 $$
-S_{\text{action}} = 2 \int_{x_i}^{x_f} \sqrt{2m(V(x) - E)} \, dx
+S=\frac1{\hbar}\int_{x_i}^{x_f}p_b\,\mathrm dx
+=\frac{p_b(x_f-x_i)}{\hbar}
+=\frac{p_b\ell}{\hbar}\Delta C=\kappa\Delta C .
 $$
 
-In the discrete graph representation, the configuration space path length $\int dx$ maps directly to the minimal graph edit distance (complexity change $\Delta C$), while the potential barrier height is proportional to the vacuum friction parameter $\mu$. Thus, the action for the topological transition scales with the complexity difference:
+**III. Rate from the Squared Amplitude**
+
+With the amplitude $A=A_0e^{-S}$ and a fixed rate prefactor proportional to $|A_0|^2$,
 
 $$
-S_{\text{action}} \propto \Delta C = C_n - C_{n-1}
+|A|^2=|A_0|^2e^{-2S}=|A_0|^2 e^{-2\kappa\Delta C},
+\qquad \Gamma=\Gamma_0 e^{-2\kappa\Delta C}.
 $$
-
-**II. Decay Rate**
-The decay rate $\Gamma$ is proportional to the squared amplitude:
-
-$$
-\Gamma_{n \to n-1} \propto |A|^2 \propto e^{-2 \kappa \Delta C}
-$$
-
-where $\kappa$ is a constant related to the vacuum friction.
-
-**III. Lifetime Hierarchy**
-Since $\Delta C > 0$, the rate is exponentially suppressed relative to the characteristic graph time scale.
-* Gen 3 (Top/Tau) has a larger $\Delta C$ gap to the ground state, but high mass makes the phase space large.
-* Gen 2 (Muon) has a moderate $\Delta C$.
-* Gen 1 is the ground state ($\Gamma \approx 0$).
-The exponential dependence on $\Delta C$ establishes the hierarchy of lifetimes (metastability) for the excited states.
 
 Q.E.D.
 
@@ -4028,7 +4045,14 @@ where $\Delta C = C_{final} - C_{initial}$ is the change in topological complexi
 
 **II. Initial State Complexity ($p$)**
 The proton comprises three valence quarks ($uud$) in a color singlet state.
-* **Writhe:** $w_p = 2w_u + w_d = 2(2/3) + (-1/3) = +1$.
+* **Integer writhe and charge:** The up and down labels have integer writhes $W_u=2$ and $W_d=-1$ (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />). Their sum for the valence configuration and its electric charge are
+
+  $$
+  W_p=W_u+W_u+W_d=2+2-1=3,\qquad
+  Q_p=\frac{W_p}{3}=\frac{3}{3}=+1
+  $$
+
+  by **Charge Normalization** <Ref id="7.3.10" label="§7.3.10" />.
 * **Complexity:** $C_p = \sum C_{quarks} + C_{binding}$. This is the baseline for all decays.
 
 **III. Final State Candidates**
@@ -4602,10 +4626,10 @@ Section 9.6.6.1 formalizes the properties of the QBD proof regarding friction su
 
 ### 9.6.7 Lemma: Critical Complexity Balance {#9.6.7}
 
-:::info[**Determination of Maximum Sustainable Complexity via Friction-Creation Balance**]
+:::info[**Upper Complexity Root via a Fixed Deletion Benchmark**]
 :::
 
-Suppose the maximum sustainable topological complexity $N_{3,\max}$ is determined by the equilibrium condition where the creation flux of geometric quanta balances the friction-suppressed maintenance flux. This balance satisfies the critical value $N_{3,\max} \approx 1/(2\mu)$, setting the physical mass scale of the heavy right-handed neutrino.
+Let the scalar balance benchmark be $x e^{-\mu x}=1/2$ for $x\ge0$ and $0<\mu<2/e$. Then its upper root is $N_{3,\max}=x_+=-\mu^{-1}W_{-1}(-\mu/2)$, lies above the turnover $1/\mu$, and is approximately $6.36$ at $\mu=0.40$.
 
 **In Plain English:**  
 Section 9.6.7 formalizes the properties of the QBD lemma regarding critical complexity balance.
@@ -4614,47 +4638,48 @@ Section 9.6.7 formalizes the properties of the QBD lemma regarding critical comp
 
 ### 9.6.7.1 Proof: Critical Complexity Balance {#9.6.7.1}
 
-:::tip[**Derivation of the Critical Complexity $N_{3,\max}$ from Critical Complexity Balance**]
+:::tip[**Branch Selection via Monotonicity and Lambert W Inversion**]
 :::
 
-**I. Balance Equation**
-The critical state occurs when the creation rate exactly balances the deletion rate under **Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" /> and **Friction Suppression Limit** <Ref id="9.6.6" label="§9.6.6" />
+**I. Turnover and Number of Roots**
+
+Let $g(x)=x e^{-\mu x}$ in the fixed-deletion benchmark (**Critical Complexity Balance** <Ref id="9.6.7" label="§9.6.7" />). The constant deletion threshold is the half-rate benchmark (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />). The derivative and endpoint values are
 
 $$
-R_{create} = R_{delete}
+g'(x)=e^{-\mu x}-\mu x e^{-\mu x}=e^{-\mu x}(1-\mu x),
+\quad g(0)=0,\quad \lim_{x\to\infty}g(x)=0 .
 $$
 
-Using the scaling forms derived in **9.6.6.1**:
+The derivative is positive below $1/\mu$ and negative above it. At the turnover $g(1/\mu)=1/(e\mu)>1/2$ because $\mu<2/e$. Continuity and strict monotonicity give one root on each side of $1/\mu$. On the decreasing branch, $x>x_+$ implies $g(x)<1/2$.
+
+**II. Exact Upper Root**
+
+With $y=-\mu x$, the balance equation is
 
 $$
-N_3 e^{-\mu N_3} = \frac{1}{2}
+x e^{-\mu x}=\tfrac12
+\quad\Longleftrightarrow\quad
+(-\mu x)e^{-\mu x}=-\tfrac\mu2
+\ \Longleftrightarrow\
+y e^y=-\tfrac\mu2.
 $$
 
-The factor $1/2$ arises from the specific deletion kernel $\mathcal{Q}_{del}$ **Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
-
-**II. Solution Analysis**
-Let $f(x) = x e^{-\mu x} - 0.5 = 0$, where $x = N_3$.
-The function $g(x) = x e^{-\mu x}$ has a maximum at $x = 1/\mu$.
-For $\mu \approx 0.40$ (vacuum friction coefficient):
-* Peak location: $x_{peak} = 1/0.4 = 2.5$.
-* Peak value: $2.5 e^{-1} \approx 0.92$.
-Since $0.92 > 0.5$, solutions exist. There are two roots; the lower root represents the vacuum nucleation threshold, while the upper root represents the maximum stable particle complexity.
-
-**III. Numerical Solution**
-Solving $x e^{-0.4 x} = 0.5$ for the upper root:
-* Try $x=6$: $6 e^{-2.4} \approx 6(0.09) = 0.54$.
-* Try $x=6.5$: $6.5 e^{-2.6} \approx 6.5(0.074) = 0.48$.
-Interpolating yields $x \approx 6.36$.
-Thus, the critical complexity is $N_{3,\max} \approx 6.36$ in dimensionless units normalized by the interaction scale.
-
-**IV. Asymptotic Scaling**
-In the limit of large effective $N$ (relating to the Planck scale hierarchy), the solution scales as:
+Since $-\mu/2\in(-1/e,0)$, the principal branch gives $-1<y<0$ and the lower root. The branch $W_{-1}$ gives $y<-1$ and hence the upper root
 
 $$
-N_{3,\max} \sim \frac{1}{\mu} \ln\left(\frac{1}{\text{threshold}}\right)
+x_+=-\frac1\mu W_{-1}(-\mu/2)>\frac1\mu .
 $$
 
-This confirms that the maximum complexity is inversely proportional to the friction coefficient $\mu$.
+**III. Numerical Bracket at the Reference Friction**
+
+At $\mu=0.40$, the turnover is $2.5$ and its value is $2.5/e\simeq0.9197$. On the decreasing branch,
+
+$$
+g(6.3566)=6.3566e^{-2.54264}\simeq0.500000412>\tfrac12,\qquad
+g(6.3567)=6.3567e^{-2.54268}\simeq0.499988278<\tfrac12 .
+$$
+
+The upper root belongs to $(6.3566,6.3567)$, so it rounds to $6.36$.
 
 Q.E.D.
 

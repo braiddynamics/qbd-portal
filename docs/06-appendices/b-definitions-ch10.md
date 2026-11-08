@@ -1120,10 +1120,10 @@ Section 10.3.5.3 formalizes the properties of the QBD calculation regarding code
 
 ### 10.3.6 Lemma: Vertex Fock Space Formalization {#10.3.6}
 
-:::info[**Mathematical Construction of Graph State Superpositions via Operator Algebras**]
+:::info[**Graph-Size Sectors via Labeled Insertion and Adjoint Removal**]
 :::
 
-Let $\mathcal{H}_N$ denote the Hilbert space of causal graphs with exactly $N$ vertices, and let the Vertex Fock Space $\mathcal{H}_{\text{Fock}}$ be the direct sum of these spaces. The creation operator $\hat{a}_v^\dagger$ adds a vertex with causal relations, while the annihilation operator $\hat{a}_v$ removes a vertex and its incident edges.
+Let $\mathcal H_{\text{Fock}}=\bigoplus_{N\ge0}\mathcal H_N$ be the Hilbert direct sum of fixed-size graph sectors, with graph labels retained for the vertex operators. Then a fixed legal insertion mode defines an isometry from its eligible subspace into the next sector, whose adjoint removes that mode on its image and vanishes on the orthogonal complement.
 
 **In Plain English:**  
 Vertex Fock Space represents the quantum state of the causal graph as a direct sum of Hilbert spaces of different sizes, allowing quantum superpositions of graph sizes.
@@ -1132,48 +1132,55 @@ Vertex Fock Space represents the quantum state of the causal graph as a direct s
 
 ### 10.3.6.1 Proof: Vertex Fock Space Formalization {#10.3.6.1}
 
-:::tip[**Construction of Varying Size Graph States via Excitations**]
+:::tip[**Mode-Resolved Graph Operators via Injective Basis Maps and Adjointness**]
 :::
 
-**I. Direct Sum Decomposition of State Space**
+**I. Orthogonal Size Sectors**
 
-The global state space is decomposed into orthogonal sectors of fixed vertex number.  **Vertex Fock Space Formalization** <Ref id="10.3.6" label="§10.3.6" /> and  **Thermodynamic Correction** <Ref id="10.3.5" label="§10.3.5" /> For each $N \in \mathbb{N}$, the basis of $\mathcal{H}_N$ is spanned by the set of isomorphism classes of directed acyclic graphs on $N$ vertices, denoted $\{|G^{(N)}_i\rangle\}$. Since these sectors are orthogonal by definition, the direct sum structure holds:
-
-$$
-\langle G^{(N)}_i | G^{(M)}_j \rangle = \delta_{NM} \delta_{ij}.
-$$
-
-This decomposition avoids the requirement of a continuous background metric or a thermodynamic limit, securing background independence.
-
-**II. Definition of Vertex Operator Algebras**
-
-The creation operator $\hat{a}_v^\dagger$ is defined pointwise for any graph state $|G^{(N)}\rangle$. Let $v \notin V(G^{(N)})$. The action of the operator is:
+Use orthonormal graph basis states, with labels retained for the insertion operation (**Vertex Fock Space Formalization** <Ref id="10.3.6" label="§10.3.6" />). Distinct sizes are orthogonal. For vectors with finitely many nonzero components,
 
 $$
-\hat{a}_v^\dagger(E_{\text{new}}) |G^{(N)}\rangle = |G^{(N)} \cup \{v\}, E(G^{(N)}) \cup E_{\text{new}}\rangle
+\left\|\sum_N|\psi_N\rangle\right\|^2
+=\sum_{N,M}\langle\psi_M|\psi_N\rangle
+=\sum_N\|\psi_N\|^2 .
 $$
 
-where $E_{\text{new}}$ specifies the directed edges connecting $v$ to $V(G^{(N)})$. The annihilation operator $\hat{a}_v$ is defined as the adjoint:
+The Hilbert completion consists of sequences with finite sum of squared norms. Indeed the squared distance between partial sums ending at $K$ and $J>K$ is $\sum_{N=K+1}^J\|\psi_N\|^2$, which tends to zero for square-summable sequences. A normalized state has total squared norm one.
+
+**II. Legal Insertion as an Isometry**
+
+Fix a mode $\eta=(v,E_{\text{new}})$ with a fresh vertex label and specified incident edges. Let $\mathcal H_{N,\eta}$ be the closed span of basis graphs on which insertion is legal. The operator is conditional on that domain, as with other legality-restricted operations (**Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />). On a basis graph $G$ in the domain set
 
 $$
-\hat{a}_v |G^{(N)}\rangle = \sum_{E_{\text{new}}} \langle G^{(N)} \cup \{v\}, E(G^{(N)}) \cup E_{\text{new}} | |G^{(N)}\rangle.
+I_\eta(G)=\bigl(V(G)\cup\{v\},E(G)\cup E_{\text{new}}\bigr),\qquad
+\hat a_\eta^\dagger|G\rangle=|I_\eta(G)\rangle .
 $$
 
-The commutation relation between these operators is evaluated to establish the algebraic consistency:
+Deleting the marked vertex $v$ and its incident edges from $I_\eta(G)$ returns $G$. Thus $I_\eta(G)=I_\eta(G')$ implies $G=G'$, so for basis elements
 
 $$
-[\hat{a}_u, \hat{a}_v^\dagger] = \delta_{uv} \mathbb{I}.
+\langle I_\eta(G')|I_\eta(G)\rangle=\delta_{G',G}.
 $$
 
-**III. Normalization and Inner Product Definition**
+For any finite linear combination, the norm of the image is therefore the square root of the same sum of squared coefficients. This defines an isometry by continuous extension.
 
-To verify the convergence of superpositions in $\mathcal{H}_{\text{Fock}}$, consider a general state $|\Psi\rangle = \sum_{N} c_N |\psi_N\rangle$ where $|\psi_N\rangle \in \mathcal{H}_N$. The inner product is computed:
+**III. Adjoint and Range Projection**
+
+Let $\hat a_\eta$ be the adjoint of the isometry. The basis matrix element is
 
 $$
-\langle \Psi | \Psi \rangle = \sum_{N, M} c_N^* c_M \langle \psi_N | \psi_M \rangle = \sum_{N} |c_N|^2.
+\langle G|\hat a_\eta|F\rangle
+=\langle I_\eta(G)|F\rangle=\delta_{I_\eta(G),F}.
 $$
 
-The condition $\sum_{N} |c_N|^2 < \infty$ ensures that $|\Psi\rangle$ is a normalized state in $\mathcal{H}_{\text{Fock}}$, supporting quantum superpositions of graph sizes, completing the proof.
+Consequently $\hat a_\eta|F\rangle$ is $|G\rangle$ when $F=I_\eta(G)$ and zero for all other basis graphs. The products satisfy
+
+$$
+\hat a_\eta\hat a_\eta^\dagger=I_{\mathcal H_{N,\eta}},\qquad
+\hat a_\eta^\dagger\hat a_\eta=P_{\operatorname{im}(\hat a_\eta^\dagger)} .
+$$
+
+If the mode is admissible throughout $\mathcal H_N$, the first identity is $I_{\mathcal H_N}$. Extending the map by zero on the ineligible subspace instead gives the eligible-space projector on the whole sector.
 
 Q.E.D.
 
@@ -2585,10 +2592,10 @@ Section 10.9.2.1 formalizes the properties of the QBD proof regarding clifford g
 
 ### 10.9.3 Lemma: Solovay-Kitaev Density {#10.9.3}
 
-:::info[**Verification of Dense Approximation through SU(2)**]
+:::info[**Polylogarithmic Gate Approximation via a Dense Instruction Set**]
 :::
 
-Let the set of physical gates generate a dense subset of $SU(2^n)$, which is required to support universal quantum approximation.
+Let a finite inverse-closed instruction set generate a dense subgroup of $SU(2^n)$ at fixed $n$. Then the Dawson-Nielsen Solovay-Kitaev construction approximates each target to operator-norm error $\epsilon$ using $O(\log^c(1/\epsilon))$ gates, where $c=\ln5/\ln(3/2)$.
 
 **In Plain English:**  
 Section 10.9.3 formalizes the properties of the QBD lemma regarding solovay-kitaev density.
@@ -2597,27 +2604,46 @@ Section 10.9.3 formalizes the properties of the QBD lemma regarding solovay-kita
 
 ### 10.9.3.1 Proof: Solovay-Kitaev Density {#10.9.3.1}
 
-:::tip[**Formal Convergence Analysis via Unitary Approximations**]
+:::tip[**Gate-Length Exponent via the Solovay-Kitaev Refinement Recurrence**]
 :::
 
-**I. Grid Construction**
-Let $\mathcal{G} = \{H, T\}$ be the generating set.  **Solovay-Kitaev Density** <Ref id="10.9.3" label="§10.9.3" /> and  **Clifford Generation** <Ref id="10.9.2" label="§10.9.2" /> The set of word sequences of length $L$, denoted $\mathcal{G}_L$, forms a grid of points on the $SU(2)$ manifold. Since the generators do not form a discrete finite subgroup, the closure of the group generated by $\mathcal{G}$ is dense in $SU(2)$.
+**I. Dense Instruction Set and Refinement**
 
-**II. Epsilon-Net Density**
-Let $\epsilon > 0$ be the target approximation error. An $\epsilon$-net is constructed by compiling sequences of gates. The Solovay-Kitaev theorem guarantees that for any target unitary $U \in SU(2)$ and any $\epsilon > 0$, there exists a sequence $S \in \mathcal{G}_L$ of length $L$ such that the operator norm satisfies:
+Let the finite gate set be inverse closed and dense in the stated sense (**Solovay-Kitaev Density** <Ref id="10.9.3" label="§10.9.3" />). This is the instruction-set hypothesis for the approximation argument, separate from the construction of Clifford operations (**Clifford Generation** <Ref id="10.9.2" label="§10.9.2" />). Compactness and density give a finite net at a fixed base error $\epsilon_0$. The balanced-commutator refinement has the error and length bounds $\epsilon_{j+1}\le C\epsilon_j^{3/2}$ and $L_{j+1}\le5L_j$ for some fixed $C>0$. The factor five counts the previous approximation and the four factors of the correction commutator. [Dawson and Nielsen](https://arxiv.org/abs/quant-ph/0505030)
 
-$$
-|| U - S || < \epsilon
-$$
+**II. Solving the Error and Length Bounds**
 
-**III. Convergence Rate Derivation**
-The sequence length $L$ scales polylogarithmically with the inverse error:
+Choose the base error with $0<\delta_0=C^2\epsilon_0<1$ and set $\delta_j=C^2\epsilon_j$. Then
 
 $$
-L = O\left(\log^{c}\left(\frac{1}{\epsilon}\right)\right)
+\delta_{j+1}\le C^3(\delta_j/C^2)^{3/2}=\delta_j^{3/2},
+\qquad
+\delta_j\le\delta_0^{(3/2)^j},\qquad L_j\le5^j L_0 .
 $$
 
-where the exponent is bounded by $c = \log(1.5)/\log(2) \approx 3.97$. This polylogarithmic scaling ensures that arbitrary unitaries can be approximated with high efficiency, completing the proof.
+The two bounds hold with equality at $j=0$. Given both bounds at $j$, the next step satisfies
+
+$$
+\delta_{j+1}\le\bigl(\delta_0^{(3/2)^j}\bigr)^{3/2}=\delta_0^{(3/2)^{j+1}},
+\qquad
+L_{j+1}\le5(5^jL_0)=5^{j+1}L_0.
+$$
+
+**III. Length at the Target Error**
+
+For target $\epsilon<\epsilon_0$, the bound $\epsilon_j\le C^{-2}\delta_0^{(3/2)^j}$ gives $\epsilon_j\le\epsilon$ whenever
+
+$$
+(3/2)^j\ln(1/\delta_0)\ge \ln(1/(C^2\epsilon)).
+$$
+
+Set $B=\ln(1/(C^2\epsilon))/\ln(1/\delta_0)>1$ and take $j=\lceil\ln B/\ln(3/2)\rceil$. Then
+
+$$
+5^j\le 5\exp\!\left(\frac{\ln5}{\ln(3/2)}\ln B\right)=5B^{\ln5/\ln(3/2)}.
+$$
+
+Since $B=O(\ln(1/\epsilon))$ as $\epsilon\downarrow0$, the length is $O(\ln^{c}(1/\epsilon))$ with $c=\ln5/\ln(3/2)\simeq1.609438/0.405465\simeq3.96936$.
 
 Q.E.D.
 
