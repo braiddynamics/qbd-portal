@@ -136,7 +136,17 @@ $$
 
 **III. Separate degree sums**
 
-By linearity, or integrability for a countable slot set,
+For the outgoing slots, the absolute sum satisfies
+
+$$
+\begin{aligned}
+\sum_b|X_{ab}(G')-X_{ab}(G)|
+&\le\sum_b\bigl(X_{ab}(G')+X_{ab}(G)\bigr)\\
+&=\deg^+(a;G')+\deg^+(a;G).
+\end{aligned}
+$$
+
+The right-hand side has finite expectation under stationarity and the degree-integrability hypothesis. The same bound for the incoming slots uses $\deg^-$ and $X_{ba}$. Thus Fubini applies to both countable sums of signed increments, and
 
 $$
 \begin{aligned}
@@ -1543,7 +1553,7 @@ Section 13.3.3.1 formalizes the properties of the QBD proof regarding action inv
 :::info[**Geometric Cancellation of Metric Variations through the Action Functional**]
 :::
 
-Given the variation of the discrete Einstein-Hilbert action $\mathcal{S}[G]$ with respect to the edge length parameters $d_{ab}$, the weighted summation of the curvature response is identically zero.
+Let a fixed graph have positive edge lengths and fixed lazy-law marginals. Then every curvature and the action are invariant under common positive rescaling, and for a refining family under other length deformations the normalized weighted response tends to zero whenever the comparison bound $|\sum_e N_{t,e}\delta K_e|\le C\ell_0^2\|\delta d\|_\infty$ holds and the variations are uniformly bounded.
 
 **In Plain English:**  
 Section 13.3.4 formalizes the properties of the QBD lemma regarding discrete schläfli identity.
@@ -1573,7 +1583,21 @@ $$
  +\frac{W_{ab}}{d(a,b)^2}\delta d(a,b).
 $$
 
-For a locally stable minimizing plan $\pi^*$ and fixed marginals, $\delta W_{ab}=\sum_{x,y}\pi^*(x,y)\delta d(x,y)$. Changes of shortest paths or transport optimizers require a corresponding sensitivity analysis.
+Let $d_\epsilon$ be the perturbed shortest-path metric with $d_0=d$, and suppose the same feasible plan $\pi^*$ minimizes the two objectives for all sufficiently small $\epsilon$. With fixed marginals the two objective values subtract as
+
+$$
+\begin{aligned}
+W_{ab}(d_\epsilon)-W_{ab}(d_0)
+&=\sum_{x,y}d_\epsilon(x,y)\pi^*(x,y)
+-\sum_{x,y}d_0(x,y)\pi^*(x,y)\\
+&=\sum_{x,y}\pi^*(x,y)\bigl(d_\epsilon(x,y)-d_0(x,y)\bigr),\\
+\delta W_{ab}
+&=\lim_{\epsilon\to0}\frac{W_{ab}(d_\epsilon)-W_{ab}(d_0)}{\epsilon}
+=\sum_{x,y}\pi^*(x,y)\delta d(x,y).
+\end{aligned}
+$$
+
+The derivative uses differentiable ground distances and a common optimal plan. The common-rescaling argument below uses the exact objective for all feasible plans.
 
 **III. Common rescaling**
 
@@ -1648,7 +1672,18 @@ R_{m_z}(z,z)
 \end{aligned}
 $$
 
-After multiplication by $z^\nu$ the constant and second-order terms are odd and cancel in antipodal pairs. The linear terms contract with the second and fourth moments (**Riemann Sum Approximation** <Ref id="12.2.4.1" label="§12.2.4.1" />):
+In the antipodal pair, $m_{-z}=\exp_x(-hz/2)$. The quadratic contraction in the direction has the same sign for $z$ and $-z$, while the first-order change in the midpoint has opposite sign. Subtracting the two Taylor expansions gives
+
+$$
+\begin{aligned}
+R_{m_z}(z,z)-R_{m_{-z}}(-z,-z)
+&=h(\nabla_kR_{ij})z^kz^iz^j+O(h^3),\\
+\mathsf R(m_z)-\mathsf R(m_{-z})
+&=h(\nabla_k\mathsf R)z^k+O(h^3).
+\end{aligned}
+$$
+
+Each equal-weight pair in the vector average contributes its scalar difference times $z^\nu$. The linear terms contract with the second and fourth moments (**Riemann Sum Approximation** <Ref id="12.2.4.1" label="§12.2.4.1" />):
 
 $$
 \begin{aligned}
@@ -1692,9 +1727,21 @@ $$
 \frac{d(d+2)}h\mathbb E_z\!\left[\left(r_h(z)-\frac2{d+2}s_h(z)\right)z\right].
 $$
 
-For an antipodal pair the numerator involves the difference of its two errors. An $O(h^3)$ bound for this odd moment gives an $O(h^2)$ contribution. On a different stencil the changes in the moment contractions must also be bounded. The geometric rate for graph data thus needs a comparison of the samples and stencil at the stated scale.
+Set $\eta_h(z)=r_h(z)-2s_h(z)/(d+2)$ and let $w_z=w_{-z}$ be the normalized reference weights. Reindexing the sum by $z\mapsto -z$ gives
 
-If this comparison gives $\|E_{\mathrm{geom}}\|_\infty\le C_1h^2$ for the resulting graph operator and its centered stochastic error satisfies the separate maximum bound $\|E_{\mathrm{stat}}\|_\infty\le C_2(\log N_t)^2/\sqrt{N_t}$, then
+$$
+\begin{aligned}
+\frac{d(d+2)}h\sum_z w_z\eta_h(z)z
+&=\frac{d(d+2)}{2h}\sum_z w_z\bigl[\eta_h(z)-\eta_h(-z)\bigr]z,\\
+\left\|\frac{d(d+2)}{2h}\sum_z w_z\bigl[\eta_h(z)-\eta_h(-z)\bigr]z\right\|
+&\le \frac{d(d+2)}{2h}C_{\text{odd}}h^3
+=\frac{d(d+2)}2 C_{\text{odd}}h^2 .
+\end{aligned}
+$$
+
+The bound uses the $O(h^3)$ weighted odd moment premise of the graph comparison. On a different stencil the changes in the moment contractions contribute the separate stencil defect.
+
+The smooth residual, the odd sampling term, and the stencil defect have supremum bounds $C_{\rm sm}h^2$, $d(d+2)C_{\text{odd}}h^2/2$, and $C_{\rm st}h^2$, respectively. Their sum is bounded by $C_1h^2$ with $C_1=C_{\rm sm}+d(d+2)C_{\text{odd}}/2+C_{\rm st}$. Adding the separate centered stochastic maximum bound gives
 
 $$
 \|E_{\mathrm{geom}}+E_{\mathrm{stat}}\|_\infty

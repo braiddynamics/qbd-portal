@@ -1013,6 +1013,14 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 **I. Decomposition of the Boundary Shell**
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
+For $r\ge1$ and $u\in\partial B_r(v)$, there is an undirected neighbor $w\in B_{r-1}(v)$ and $u\notin B_{r-1}(v)$. The distances are integer-valued, so
+
+$$
+r\le\bar d(v,u)\le\bar d(v,w)+\bar d(w,u)\le(r-1)+1=r.
+$$
+
+Thus $u\in S_r(v)$. Conversely, if $u\in S_r(v)$, a shortest path $v=x_0,\ldots,x_r=u$ has a penultimate vertex $x_{r-1}$ with $\bar d(v,x_{r-1})\le r-1$. Since $u$ lies outside $B_{r-1}(v)$ and is adjacent to $x_{r-1}$, it belongs to $\partial B_r(v)$. Hence $\partial B_r(v)=S_r(v)$ as vertex sets.
+
 **II. Volume Growth Scaling**
 Let $G_t$ be a sequence of graphs with mesh $\ell_t\to0$, and choose integer radii $r=r_t$ with $r_t\to\infty$ and $2r_t\ell_t\to0$. Work within the common growth window of $G_t$, with $r_t$ and $2r_t$ both admissible at the same center $v$. In addition to the two-sided count regime in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />, assume the uniform expansion
 
@@ -1216,7 +1224,16 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 
 **I. Residual marginals**
 
-Let $m_w=\min(\mu_u^{(1)}(w),\mu_v^{(1)}(w))$ and set $r=\mu_u^{(1)}-m_w\delta_w$, $s=\mu_v^{(1)}-m_w\delta_w$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). Both residuals are nonnegative. The coupling uses the same marginal convention (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />). The residual masses are
+Let $a_u=\mu_u^{(1)}(w)$, $a_v=\mu_v^{(1)}(w)$, and $m_w=\min(a_u,a_v)$, and set $r=\mu_u^{(1)}-m_w\delta_w$, $s=\mu_v^{(1)}-m_w\delta_w$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). For $x\ne w$, $r(x)=\mu_u^{(1)}(x)\ge0$ and $s(x)=\mu_v^{(1)}(x)\ge0$. At $w$,
+
+$$
+\begin{aligned}
+r(w)&=a_u-\min(a_u,a_v)=\max(a_u-a_v,0),\\
+s(w)&=a_v-\min(a_u,a_v)=\max(a_v-a_u,0).
+\end{aligned}
+$$
+
+The coupling uses the same marginal convention (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />). The residual masses are
 
 $$
 \sum_x r(x)=1-m_w=M,\qquad \sum_y s(y)=M .
@@ -1318,7 +1335,21 @@ $$
 s-a_u+\max(0,a_u-a_v)=s-\min(a_u,a_v)=s-m_w .
 $$
 
-All triangle distances between distinct vertices are one. Every feasible coupling incurs at least the forced leaf costs plus the total excess across the triangle. This is attained by retaining common masses, sending leaf excess to its attachment and leaf demand from its attachment, and routing the triangle excess directly to its deficits. The resulting paths decompose into shipments from original source vertices to original target vertices. Replacing any such path by a shortest path can only reduce cost, so the resulting coupling attains the lower bound.
+All triangle distances between distinct vertices are one. Every feasible coupling incurs at least the forced leaf costs plus the total excess across the triangle. After retaining common masses and settling the leaf attachments, the triangle shipments and their costs are
+
+$$
+\begin{array}{c|c|c}
+\text{case}&\text{shipments with mass}&\text{unit-distance cost}\\ \hline
+a_u\ge a_v&
+u\to v:\ s-a_u,\quad w\to v:\ a_u-a_v&
+(s-a_u)+(a_u-a_v)=s-a_v\\
+a_u<a_v&
+u\to v:\ s-a_v,\quad u\to w:\ a_v-a_u&
+(s-a_v)+(a_v-a_u)=s-a_u
+\end{array}
+$$
+
+In the first case the total delivered to $v$ is $s-a_v$, its entire deficit. In the second case the two shipments consume $s-a_u$, the entire surplus at $u$, and fill both deficits. Joining these shipments to the leaf transfers gives paths between original source and target vertices. Their length bounds the cost of the corresponding coupling from above, while the forced leaf costs and triangle excess give the same lower bound.
 
 **IV. Difference**
 

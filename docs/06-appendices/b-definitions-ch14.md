@@ -245,7 +245,14 @@ $$
    (\partial^\eta D_t)(\partial^{\gamma-\eta}F_t)\right).
 $$
 
-The zero-order bound is $\|F_t\|_\infty\le d_0^{-1}\|B_t\|_\infty$. Each higher-order term on the right uses lower-order derivatives of $F_t$, so induction bounds every fixed order uniformly at fixed $R$.
+Set $B_n=\max_{|\gamma|\le n}\sup_t\|\partial^\gamma B_t\|_\infty$ and $D_n=\max_{|\gamma|\le n}\sup_t\|\partial^\gamma D_t\|_\infty$. The zero-order bound holds with $M_0=d_0^{-1}B_0$. Suppose $\|\partial^\gamma F_t\|_\infty\le M_m$ uniformly for $|\gamma|\le m$. For $|\gamma|=m+1$, every term with $\eta\ne0$ has $|\gamma-\eta|\le m$. Since $\sum_{0<\eta\le\gamma}\binom{\gamma}{\eta}=2^{m+1}-1$,
+
+$$
+\|\partial^\gamma F_t\|_\infty
+\le d_0^{-1}\bigl[B_{m+1}+(2^{m+1}-1)D_{m+1}M_m\bigr].
+$$
+
+The maximum of this bound and $M_m$ gives $M_{m+1}$. All these constants are finite at fixed $R$.
 
 **II. Spectral tail**
 
@@ -499,7 +506,26 @@ In zero-shift coordinates, $\nabla T=-N^{-2}\partial_T$, so $e_0=N^{-1}\partial_
 
 **II. Spatial frame**
 
-The spatial metric $h$ on the local level set is positive definite (**Emergent Lorentzian Manifold** <Ref id="14.2.2" label="§14.2.2" />). Orthonormalizing a local basis for $h$ gives $e_i$ with
+The spatial metric $h$ on the local level set is positive definite (**Emergent Lorentzian Manifold** <Ref id="14.2.2" label="§14.2.2" />). From a smooth local spatial basis $b_1,b_2,b_3$, define the triad by
+
+$$
+\begin{aligned}
+u_1&=b_1,\qquad e_1=u_1/\sqrt{h(u_1,u_1)},\\
+u_2&=b_2-h(b_2,e_1)e_1,\qquad e_2=u_2/\sqrt{h(u_2,u_2)},\\
+u_3&=b_3-h(b_3,e_1)e_1-h(b_3,e_2)e_2,\qquad
+e_3=u_3/\sqrt{h(u_3,u_3)}.
+\end{aligned}
+$$
+
+Each $u_i$ is nonzero by linear independence, so the denominators are positive. For $j<i$,
+
+$$
+h(u_i,e_j)
+=h(b_i,e_j)-\sum_{k<i}h(b_i,e_k)h(e_k,e_j)
+=h(b_i,e_j)-h(b_i,e_j)=0 .
+$$
+
+Together with the normalization and $\mathrm dT(b_i)=0$, this gives
 
 $$
 g(e_i,e_j)=h(e_i,e_j)=\delta_{ij},\qquad
@@ -1562,7 +1588,30 @@ The match to the area coefficient $c^3/(4\hbar G)$ uses the calibration of **Sak
 
 **III. First variation of the entropy**
 
-Let $\rho(\epsilon)$ be a trace-one variation with $\rho(0)=\rho_0$ and derivative $\delta\rho$. In an eigenbasis of $\rho_0$, with eigenvalues $p_i>0$, the trace derivative of the spectral function $-p\ln p$ is $\sum_i(-\ln p_i-1)(\delta\rho)_{ii}$. Thus
+Let $\rho(\epsilon)$ be a trace-one variation with $\rho(0)=\rho_0$ and derivative $\delta\rho$. The scalar integral for $\ln p$, applied to the positive matrix by spectral decomposition, gives
+
+$$
+\begin{aligned}
+\ln\rho&=\int_0^\infty\left(\frac{I}{1+s}-(\rho+sI)^{-1}\right)\mathrm ds,\\
+\delta\ln\rho_0&=\int_0^\infty(\rho_0+sI)^{-1}\delta\rho\,(\rho_0+sI)^{-1}\,\mathrm ds .
+\end{aligned}
+$$
+
+The second identity follows by differentiating the inverse. The spectrum remains bounded below by some $m>0$ near $\epsilon=0$, so the inverse difference quotient in the integral is bounded by a constant times $(m+s)^{-2}$. In an eigenbasis of $\rho_0$ with eigenvalues $p_i>0$, the trace product rule gives
+
+$$
+\begin{aligned}
+\operatorname{Tr}(\delta\rho\,\ln\rho_0)
+&=\sum_i(\delta\rho)_{ii}\ln p_i,\\
+\operatorname{Tr}(\rho_0\,\delta\ln\rho_0)
+&=\sum_i p_i(\delta\rho)_{ii}\int_0^\infty\frac{\mathrm ds}{(p_i+s)^2}
+=\sum_i(\delta\rho)_{ii},\\
+\delta\operatorname{Tr}(\rho\ln\rho)
+&=\sum_i(\ln p_i+1)(\delta\rho)_{ii}.
+\end{aligned}
+$$
+
+Only diagonal entries contribute to the trace derivative. Thus
 
 $$
 \begin{aligned}
@@ -1707,13 +1756,33 @@ $$
 \begin{aligned}
 \log\frac{a(L)}{a(0)}
 &=-\int_0^L\int_0^\lambda R_{kk}(s)\,\mathrm ds\,\mathrm d\lambda+O(L^4)\\
+&=-\int_0^L R_{kk}(s)\left(\int_s^L\mathrm d\lambda\right)\mathrm ds+O(L^4)\\
 &=-\int_0^L(L-s)R_{kk}(s)\,\mathrm ds+O(L^4).
 \end{aligned}
 $$
 
 **III. Local area variation**
 
-For smooth $R_{kk}$, replacing $L-s$ by $s$ changes the integral by $O(L^3)$, since $\int_0^L(L-2s)\,\mathrm ds=0$ and $R_{kk}(s)-R_{kk}(0)=O(s)$. The logarithmic ratio is $O(L^2)$, so exponentiation changes the fractional variation by $O(L^4)$. Thus
+The two integrals above use the same triangular region $0\le s\le\lambda\le L$. For the replacement of $L-s$ by $s$, let $C_R$ bound $|R_{kk}'|$ on the segment. Then
+
+$$
+\begin{aligned}
+\int_0^L(L-2s)\,\mathrm ds&=0,\\
+\left|\int_0^L(L-2s)R_{kk}(s)\,\mathrm ds\right|
+&=\left|\int_0^L(L-2s)\bigl(R_{kk}(s)-R_{kk}(0)\bigr)\,\mathrm ds\right|\\
+&\le C_R L\int_0^L s\,\mathrm ds=\tfrac12 C_R L^3.
+\end{aligned}
+$$
+
+For $x=\log[a(L)/a(0)]=O(L^2)$, the exponential remainder satisfies
+
+$$
+\left|\exp(x)-1-x\right|
+=\left|x^2\int_0^1(1-t)\exp(tx)\,\mathrm dt\right|
+\le\tfrac12 x^2\exp(|x|)=O(L^4).
+$$
+
+Thus
 
 $$
 \frac{a(L)-a(0)}{a(0)}

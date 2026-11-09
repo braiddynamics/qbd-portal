@@ -654,14 +654,55 @@ In coordinates set $a^{ij}=\sqrt{\det g}\,g^{ij}$ and $b=\sqrt{\det g}$. The equ
 
 **II. Interior regularity**
 
-Choose relatively compact coordinate sets $U\Subset V$. The interior elliptic estimate for the smooth coefficients <Cite id="A.29" label="(Gilbarg & Trudinger, 2001)" /> gives the local gain
+Write $u=f_k$, $A=(a^{ij})$, and $F=\lambda_kbu$. Work with a real eigenfunction or apply the argument to its real and imaginary parts. Let $U\Subset W\Subset V$ be coordinate sets, with ellipticity lower bound $\alpha>0$ for $A$ on $V$. A cutoff $\zeta\in C_c^\infty(V)$ equals one on $W$. The form-domain assumption gives $u\in H^1(V)$ locally, so the weak equation with test $\zeta^2u$ gives
+
+$$
+\begin{aligned}
+\alpha\|\zeta\nabla u\|_2^2
+&\le\int_V F\zeta^2u
+-2\int_V\zeta u\,A\nabla u\cdot\nabla\zeta\\
+&\le \|F\|_{L^2(V)}\|u\|_{L^2(V)}
++\tfrac{\alpha}{2}\|\zeta\nabla u\|_2^2
++C\|u\|_{L^2(V)}^2.
+\end{aligned}
+$$
+
+Thus $\|\nabla u\|_{L^2(W)}\le C(\|F\|_{L^2(V)}+\|u\|_{L^2(V)})$. For a coordinate direction $j$ define $D_\epsilon v(x)=[v(x+\epsilon e_j)-v(x)]/\epsilon$. Let $\eta\in C_c^\infty(W)$ equal one on $U$, and take $\epsilon$ small enough that the shifted support stays in $W$. With $w=D_\epsilon u$, the weak test $-D_{-\epsilon}(\eta^2w)$ and difference-quotient summation by parts give
+
+$$
+\begin{aligned}
+\int D_\epsilon(A\nabla u)\cdot\nabla(\eta^2w)
+&=-\int F D_{-\epsilon}(\eta^2w),\\
+D_\epsilon(A\nabla u)
+&=A(x+\epsilon e_j)\nabla w+(D_\epsilon A)\nabla u,\\
+\nabla(\eta^2w)&=\eta^2\nabla w+2\eta w\nabla\eta .
+\end{aligned}
+$$
+
+The line-segment integral for a difference quotient gives $\|w\|_{L^2(\operatorname{supp}\eta)}\le\|\partial_j u\|_{L^2(W)}$ and $\|D_{-\epsilon}(\eta^2w)\|_2\le\|\partial_j(\eta^2w)\|_2$. Put $Z=\|\eta\nabla w\|_2$ and $B=\|F\|_{L^2(V)}+\|\nabla u\|_{L^2(W)}$. The principal term is at least $\alpha Z^2$. The cutoff term is bounded by $CZ\|w\|_{L^2(\operatorname{supp}\eta)}$, the coefficient-difference term by $C\|\nabla u\|_{L^2(W)}(Z+\|w\|_{L^2(\operatorname{supp}\eta)})$, and the right-hand side by $C\|F\|_{L^2(V)}(Z+\|w\|_{L^2(\operatorname{supp}\eta)})$. Hence
+
+$$
+\alpha Z^2\le C(BZ+B^2)\le \tfrac{\alpha}{2}Z^2+C'B^2 .
+$$
+
+The bound for $\nabla D_\epsilon u$ on $U$ is uniform in $\epsilon$. For each component $\partial_i u$ and each smooth test $\phi$ supported in $U$,
+
+$$
+\lim_{\epsilon\to0}\int_U D_\epsilon\partial_i u\,\phi
+=-\lim_{\epsilon\to0}\int_U \partial_i u\,D_{-\epsilon}\phi
+=-\int_U\partial_i u\,\partial_j\phi .
+$$
+
+A weak $L^2(U)$ limit of the uniformly bounded quotients therefore represents $\partial_j\partial_i u$. Summing the bounds over coordinate directions and using $F=\lambda_kbu$ yields $\|f_k\|_{H^2(U)}\le C(1+|\lambda_k|)\|f_k\|_{L^2(V)}$.
+
+At higher orders the interior elliptic estimate for smooth coefficients <Cite id="A.29" label="(Gilbarg & Trudinger, 2001)" /> gives the local gain
 
 $$
 \|f_k\|_{H^{m+2}(U)}
 \le C_{m,U,V}\left(\|\lambda_k b f_k\|_{H^m(V)}+\|f_k\|_{L^2(V)}\right).
 $$
 
-Multiplication by smooth $b$ is bounded on $H^m(V)$ on these sets. In particular, the Leibniz rule gives $\partial^\alpha(b f_k)=\sum_{\beta\le\alpha}\binom{\alpha}{\beta}(\partial^\beta b)(\partial^{\alpha-\beta} f_k)$ for $|\alpha|\le m$. The coefficient derivatives are bounded there. The initial right-hand side at $m=0$ is finite because $f_k\in L^2$. On nested sets the estimate then gives
+Multiplication by smooth $b$ is bounded on $H^m(V)$ on these sets. In particular, the Leibniz rule gives $\partial^\alpha(b f_k)=\sum_{\beta\le\alpha}\binom{\alpha}{\beta}(\partial^\beta b)(\partial^{\alpha-\beta} f_k)$ for $|\alpha|\le m$. Thus $\|\lambda_k b f_k\|_{H^m(V)}\le C_m|\lambda_k|\|f_k\|_{H^m(V)}$. For example, the base estimate gives $f_k\in H^2(W)$, so the estimate with $m=2$ on $U\Subset W$ gives $\|f_k\|_{H^4(U)}\le C(\|f_k\|_{L^2(W)}+|\lambda_k|\|f_k\|_{H^2(W)})<\infty$. Iteration on nested sets yields
 
 $$
 f_k\in L^2_{\mathrm{loc}}
@@ -1425,7 +1466,15 @@ $$
 \end{aligned}
 $$
 
-Thus the tested identity preserves the same coefficient $\kappa$. If $\nu$ is the metric volume and $G,T$ are continuous, the tensor identity holds pointwise: a component with nonzero value would have a fixed sign on a neighborhood and give a nonzero pairing with a test of that sign supported there. Identification with the physical Einstein and stress tensors requires the comparison to verify the fields and their normalizations.
+Thus the tested identity preserves the same coefficient $\kappa$. Suppose $\nu$ is the metric volume and $D=G-\kappa T$ is continuous. If $D_{ij}(x_0)\ne0$ in a smooth local frame $e_i$, there is a neighborhood $U$ and a sign $\epsilon\in\{-1,1\}$ with $\epsilon D_{ij}(x)\ge c>0$ on $U$. Let $\psi\in C_c^\infty(U)$ be nonnegative and nonzero. The contravariant test tensor $\phi=\epsilon\psi e_i\otimes e_j$, extended by zero, selects that component. Its tested pairing is
+
+$$
+0=\int_M D:\phi\,\mathrm d\nu
+=\int_U\epsilon D_{ij}(x)\psi(x)\,\mathrm d\nu(x)
+\ge c\int_U\psi(x)\,\mathrm d\nu(x)>0 .
+$$
+
+This contradiction gives $G=\kappa T$ pointwise. Identification with the physical Einstein and stress tensors requires the comparison to verify the fields and their normalizations.
 
 Q.E.D.
 
@@ -1549,7 +1598,15 @@ $$
 \ge\ell_0^{-1}c_0\ell_0=c_0.
 $$
 
-When the transverse law is invariant under the spatial rotations in the comparison frame, its finite first moment is fixed by every spatial rotation, so $\mathbb E[v_{\gamma,\perp}]=0$. For the limit it suffices that this mean tends to zero.
+Under spatial rotation invariance, the finite transverse mean $\boldsymbol m=\mathbb E[v_{\gamma,\perp}]$ satisfies $R\boldsymbol m=\mathbb E[Rv_{\gamma,\perp}]=\boldsymbol m$ for every $R\in SO(3)$. If $\boldsymbol m\ne0$, let $\boldsymbol a$ be a unit axis orthogonal to $\boldsymbol m$. The half-turn $R_\pi=2\boldsymbol a\boldsymbol a^{\mathsf T}-I$ has eigenvalues $1,-1,-1$ and determinant one. Hence
+
+$$
+\boldsymbol m=R_\pi\boldsymbol m
+=2\boldsymbol a(\boldsymbol a\cdot\boldsymbol m)-\boldsymbol m
+=-\boldsymbol m,
+$$
+
+which gives $\boldsymbol m=0$. For the limit it suffices that the mean tends to zero.
 
 **III. Limit drift**
 
