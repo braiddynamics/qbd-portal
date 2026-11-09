@@ -12,16 +12,14 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 :::tip[**Specification of the Discrete Laplacian Operator Scaled by the Inverse Square of Discreteness Length**]
 :::
 
-The **Consistently Weighted Laplacian**, denoted $\tilde{\mathcal{L}}_t$, is defined as the linear operator acting on the Hilbert space of scalar functions $\ell^2(V_t)$ on the causal graph $G_t$. It is constructed as the renormalization of the graph random walk Laplacian $L_{rw}$ by the dimension-dependent diffusion coefficient and the fundamental discreteness scale $\ell_0$:
+Let $A_{uv}=A_{vu}\ge0$ be the symmetrized spatial adjacency and $d_u=\sum_v A_{uv}$. At a vertex with $d_u>0$ set $P_{uv}=A_{uv}/d_u$. At an isolated vertex set $P_{uu}=1$ and $P_{uv}=0$ for $v\ne u$. The **Consistently Weighted Laplacian** is
 
 $$
-\tilde{\mathcal{L}}_t f(u) \equiv \frac{2(d+2)}{\ell_0^2} \left( f(u) - \sum_{v \in V_t} P_{uv} f(v) \right)
+\widetilde{\mathcal L}_t f(u)
+=\frac{2(d+2)}{\ell_0^2}\left(f(u)-\sum_vP_{uv}f(v)\right).
 $$
 
-where the components satisfy the following structural constraints:
-1.  **Stochastic Kernel:** The term $P_{uv} = A_{uv} / \deg(u)$ constitutes the row-stochastic transition matrix of the unbiased random walk on $G_t$, encoding the local connectivity structure.
-2.  **Dimensional Calibration:** The parameter $d=4$ corresponds to the emergent Hausdorff dimension fixed by the **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
-3.  **Metric Scaling:** The coefficient $\ell_0^{-2}$ assigns the operator the physical dimensions of curvature ($[\text{Length}]^{-2}$), ensuring the spectral convergence $\lim_{t\to\infty} \sigma(\tilde{\mathcal{L}}_t) = \sigma(-\Delta_g)$ to the Laplace-Beltrami operator of the limit manifold $(M,g)$.
+Here $d$ is the dimension used in the diffusion calibration. On a component of positive degree the inner product is weighted by $\pi_u=d_u/\sum_x d_x$. An isolated vertex is a separate one-dimensional component with zero Laplacian. The physical scaling factor has units of inverse length squared.
 
 **In Plain English:**  
 Section 12.1.1 formalizes the properties of the QBD definition regarding consistently weighted laplacian.
@@ -57,66 +55,138 @@ Section 12.1.3 formalizes the properties of the QBD lemma regarding spectral con
 :::tip[**Operator Decomposition via Perturbation Analysis**]
 :::
 
-As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$.  **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> and  **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" /> Specifically:
+**I. Reversibility and the energy form**
 
-* **Eigenvalues:** For each fixed mode $k$, the discrete eigenvalues converge with the rate:
-
-    $$
-    |\tilde{\lambda}_k^{(t)} - \lambda_k| = O\left(\ell_0 + N_t^{-1/2} + \frac{(\log N_t)^4}{N_t}\right)
-    $$
-
-* **Eigenfunctions:** In the $L^2(M, dV_g)$ norm (induced by the discrete measure convergence), the eigenfunctions converge as:
-
-    $$
-    \|\psi_k^{(t)} - f_k\|_{L^2} = O\left(\ell_0^{1/2} + N_t^{-1/2}\right)
-    $$
-
-The leading $\ell_0$ term reflects the geometric discretization error (bandwidth bias), the $N_t^{-1/2}$ term arises from finite-sample variance (Monte Carlo error), and the subdominant $(\log N_t)^4 / N_t$ term accounts for the residual entropic correlations in the vacuum fluctuations.
-
-The proof proceeds by decomposing the total error into a geometric bias component and a statistical variance component, then applying perturbation theory to the spectral data.
-
-**I. Operator Error Decomposition**
-For a smooth test function $f \in C^\infty(M)$ extended to the graph vertices, the action of the discrete operator deviates from the continuum limit as:
+On a positive-degree component the spatial walk satisfies
 
 $$
-\|\tilde{\mathcal{L}}_t f + \Delta_g f\|_{L^2} \leq \underbrace{\|\mathbb{E}[\tilde{\mathcal{L}}_t] f + \Delta_g f\|}_{\text{Bias (Geometric)}} + \underbrace{\|\tilde{\mathcal{L}}_t f - \mathbb{E}[\tilde{\mathcal{L}}_t] f\|}_{\text{Variance (Statistical)}}
+\pi_uP_{uv}=\frac{A_{uv}}{\sum_xd_x}
+=\frac{A_{vu}}{\sum_xd_x}=\pi_vP_{vu}
 $$
 
-**II. Geometric Bias (Belkin-Niyogi / Calder-GT)**
-The expectation $\mathbb{E}[\tilde{\mathcal{L}}_t]$ represents the operator averaged over the vertex distribution with bandwidth $\varepsilon \sim \ell_0$. Under the **Ahlfors Regularity** (uniform sampling) and **Bounded Curvature** ($|K| \leq 2$) conditions, the bias expands as a function of the local geometry:
+(**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />). Thus $\sum_u\pi_uP_{uv}=\pi_v$. For real functions $f,g$,
 
 $$
-\|\mathbb{E}[\tilde{\mathcal{L}}_t] f + \Delta_g f\|_\infty = O(\ell_0 \|\nabla^3 f\|_\infty + \ell_0^2)
+\begin{aligned}
+\frac12\sum_{u,v}\pi_uP_{uv}(f(u)-f(v))(g(u)-g(v))
+&=\sum_u\pi_u f(u)g(u)-\sum_{u,v}\pi_uP_{uv}f(u)g(v)\\
+&=\langle f,(I-P)g\rangle_\pi .
+\end{aligned}
 $$
 
-Integrating over the compact manifold yields the leading $O(\ell_0)$ operator-norm error.
+The form is symmetric and nonnegative on the diagonal. On a regular grid of degree $q$, $I-P=(D-A)/q$. The unnormalized grid benchmark therefore uses a different constant calibration (**Spectral Convergence Verification** <Ref id="12.1.3.2" label="§12.1.3.2" />).
 
-**III. Statistical Variance (Calder-García Trillos)**
-The fluctuation term concentrates around zero. While graph edges are not perfectly independent, the **Correlation Decay** lemma restricts dependence to neighborhoods of size $\xi = O(1)$. Applying concentration inequalities (McDiarmid’s inequality with logarithmic union bounds for correlation clusters) yields:
+**II. Pointwise error and bandwidth**
 
-$$
-\|\tilde{\mathcal{L}}_t f - \mathbb{E}[\tilde{\mathcal{L}}_t] f\|_\infty = O_p\!\left( \frac{(\log N_t)^2}{\sqrt{N_t \ell_0^4}} \right)
-$$
-
-Given the scaling $N_t \sim \ell_0^{-4}$ in 4 dimensions, the denominator simplifies to $\sqrt{N_t}$. The higher-moment contributions from the correlation tails add the subleading $(\log N_t)^4 / N_t$ term to the resolvent expansion.
-
-**IV. Eigenvalue Convergence (Kato Perturbation)**
-The operator norm bound $O(\ell_0 + N_t^{-1/2})$ implies strong resolvent convergence of $\tilde{\mathcal{L}}_t$ to $-\Delta_g$. By **Kato’s Theorem** for self-adjoint operators, isolated eigenvalues perturb continuously with the norm of the perturbation:
+With discrete and continuum functions compared in a common norm, the fixed-test-function error decomposes as
 
 $$
-|\tilde{\lambda}_k^{(t)} - \lambda_k| \leq O(\|\tilde{\mathcal{L}}_t + \Delta_g\|_{\text{op}})
+\|\widetilde{\mathcal L}_t f+\Delta_g f\|
+\le\|\mathbb E[\widetilde{\mathcal L}_t]f+\Delta_g f\|
+ +\|(\widetilde{\mathcal L}_t-\mathbb E[\widetilde{\mathcal L}_t])f\|.
 $$
 
-Thus, the eigenvalues inherit the combined geometric and statistical error rates.
-
-**V. Eigenfunction Convergence (Davis-Kahan)**
-The convergence of the eigenspaces is governed by the **Davis-Kahan $\sin \Theta$ Theorem**, which bounds the rotation of the subspace by the perturbation size divided by the spectral gap $\delta_k$:
+A pointwise estimate depends on the bandwidth of its own stencil. In particular, if the bandwidth in the fluctuation denominator is $\ell_0$ and $N_t\asymp\ell_0^{-4}$, then
 
 $$
-\Theta(\operatorname{span}\{\psi_k^{(t)}\}, \operatorname{span}\{f_k\}) \leq O\!\left( \frac{\|\tilde{\mathcal{L}}_t + \Delta_g\|_{\text{op}}}{\delta_k} \right)
+\sqrt{N_t\ell_0^4}\asymp\sqrt{\ell_0^{-4}\ell_0^4}=1 .
 $$
 
-Since $\delta_k > 0$ uniformly (due to the Cheeger inequality), the projection error scales linearly with the operator error. Accounting for the $L^2$-volume normalization yields the $O(\ell_0^{1/2} + N_t^{-1/2})$ rate for the individual eigenfunctions.
+The pointwise bound with this denominator gives no $N_t^{-1/2}$ decay.
+
+**III. Projection onto a mode**
+
+For a continuum eigenfunction $f_k$, a global mode projection can be written as $N_t^{-1}\sum_i Y_i$. Its variance is
+
+$$
+\operatorname{Var}\!\left(\frac{1}{N_t}\sum_iY_i\right)
+=\frac{1}{N_t^2}\sum_{i,j}\operatorname{Cov}(Y_i,Y_j).
+$$
+
+A bound of order $N_t$ on the covariance sum of the scaled terms would give variance of order $N_t^{-1}$. This is a separate condition on the mode projection. The covariance estimate concerns a single mode.
+
+**IV. Eigenvalues on a common Hilbert space**
+
+Let $A=-\Delta_g\ge 0$ be self-adjoint with compact resolvent on $H=L^2(M,\mathrm dV_g)$, and let $J_t$ be an isometric comparison map from $L^2(\pi)$ to $H$. Take $\widetilde{\mathcal L}_t$ to be the nonnegative, self-adjoint graph operator. The spectral comparison uses the following norm-resolvent hypothesis:
+
+$$
+R=(I+A)^{-1},\qquad
+R_t=J_t(I+\widetilde{\mathcal L}_t)^{-1}J_t^*,\qquad
+\varepsilon_t=\|R_t-R\|_{H\to H}\longrightarrow0 .
+$$
+
+Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde\lambda_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
+
+$$
+\langle u,Ru\rangle-\varepsilon_t
+\le \langle u,R_tu\rangle
+\le \langle u,Ru\rangle+\varepsilon_t .
+$$
+
+Taking the infimum over unit vectors in a $k$-dimensional subspace $L$ and then the supremum over $L$ gives, with indexing starting at $k=1$,
+
+$$
+r_k-\varepsilon_t
+\le \sup_{\dim L=k}\inf_{\substack{u\in L\\\|u\|=1}}\langle u,R_tu\rangle
+=r_{t,k}
+\le r_k+\varepsilon_t .
+$$
+
+For $\varepsilon_t<r_k/2$ the $k$th graph resolvent eigenvalue is positive and $r_{t,k}\ge r_k/2$. Hence
+
+$$
+\left|\widetilde\lambda_{t,k}-\lambda_k\right|
+=\left|\frac{1}{r_{t,k}}-\frac{1}{r_k}\right|
+=\frac{|r_{t,k}-r_k|}{r_{t,k}r_k}
+\le \frac{2\varepsilon_t}{r_k^2}.
+$$
+
+**V. Eigenfunctions and isolated eigenspaces**
+
+For an isolated simple eigenvalue $r=r_k$ of $R$, let $f_k$ be its unit eigenfunction, $P_k$ the orthogonal projection onto its span, and $\gamma=\operatorname{dist}(r,\sigma(R)\setminus\{r\})>0$. A unit embedded graph eigenfunction $u_t=J_t\psi_{t,k}$ satisfies
+
+$$
+(R-rI)u_t=(R-R_t)u_t+(r_{t,k}-r)u_t,\qquad
+\|(R-rI)u_t\|\le 2\varepsilon_t .
+$$
+
+Expansion in the orthonormal eigenbasis of $R$ gives the gap estimate
+
+$$
+\gamma^2\|(I-P_k)u_t\|^2
+=\gamma^2\sum_{j\ne k}|\langle f_j,u_t\rangle|^2
+\le \sum_{j\ne k}|r_j-r|^2|\langle f_j,u_t\rangle|^2
+=\|(R-rI)u_t\|^2 .
+$$
+
+Choose the phase of $\psi_{t,k}$ so that $\langle f_k,u_t\rangle$ is nonnegative. Since $J_t^*J_t=I$, the graph comparison with the pulled-back eigenfunction obeys
+
+$$
+\begin{aligned}
+\|\psi_{t,k}-J_t^* f_k\|_{L^2(\pi)}^2
+&\le \|u_t-f_k\|_H^2
+=2(1-|\langle f_k,u_t\rangle|)\\
+&\le 2(1-|\langle f_k,u_t\rangle|^2)
+=2\|(I-P_k)u_t\|^2
+\le \frac{8\varepsilon_t^2}{\gamma^2}.
+\end{aligned}
+$$
+
+For a repeated isolated eigenvalue $r$, let $P$ and $P_t$ project onto the spectral clusters inside the circle $\mathcal C=\{z:|z-r|=\gamma/2\}$. When $\varepsilon_t<\gamma/4$, on $\mathcal C$ the two resolvent norms satisfy $\|(zI-R)^{-1}\|\le 2/\gamma$ and $\|(zI-R_t)^{-1}\|\le 4/\gamma$. The second bound follows by factoring $zI-R_t=(zI-R)[I-(zI-R)^{-1}(R_t-R)]$ and bounding the inverse of the second factor by the geometric series. The contour projection formula and the resolvent identity give
+
+$$
+\begin{aligned}
+P_t-P
+&=\frac{1}{2\pi i}\oint_{\mathcal C}
+(zI-R_t)^{-1}(R_t-R)(zI-R)^{-1}\,\mathrm dz,\\
+\|P_t-P\|
+&\le \frac{\pi\gamma}{2\pi}\frac{4}{\gamma}
+\varepsilon_t\frac{2}{\gamma}
+=\frac{4\varepsilon_t}{\gamma}.
+\end{aligned}
+$$
+
+Thus each fixed eigenvalue converges, simple eigenfunctions converge after phase alignment, and repeated isolated eigenvalues give convergence of the associated eigenspaces under the common-space hypothesis.
 
 Q.E.D.
 
@@ -207,6 +277,8 @@ for k in [4, 6, 8, 10]:
     err = abs(lam - target) / target * 100
     print(f"{N:<8} | {ell0:<8.4f} | {lam:<10.4f} | {target:<10.4f} | {err:<10.2f}")
 ```
+
+The fixture uses the unnormalized grid stencil $D-A$ with its own calibration. On a regular grid of degree $q$, this stencil equals $q(I-P)$ for the reversible spatial walk.
 
 **Simulation Results:**
 
@@ -619,92 +691,43 @@ Section 12.2.3 formalizes the properties of the QBD lemma regarding directional 
 :::tip[**Establishment of Isotropic Mixing via Spectral Concentration and the Wasserstein Bound for Manifold-Valued Random Fields**]
 :::
 
-Let $E_{x,R}^{(t)} = \{e \in E_t : m_e \in B_t(x, R_t)\}$ be the set of edges localized within the ball.
+**I. Physical and graph radii**
 
-The empirical probability measure $\mu_{x,R}^{(t)}$ defined on the unit tangent sphere $S^{d-1} \subset T_x M$ by the spectral embedding of edge directions:.
-
-$$
-\mu_{x,R}^{(t)} = \frac{1}{|E_{x,R}^{(t)}|} \sum_{e \in E_{x,R}^{(t)}} \delta_{\hat{n}_e}
-$$
-
-converges weakly to the normalized Haar measure $\sigma$ on $S^{d-1}$ as $t \to \infty$. Specifically, for the Wasserstein-1 transport distance $W_1$, the convergence rate is:.
+Let $R_t$ denote physical radius and let $r_t=R_t/\ell_0$ denote radius in mesh units. In a mesoscopic limit the two conditions are
 
 $$
-W_1(\mu_{x,R}^{(t)}, \sigma) \leq C \left( R_t^{-d} + N_t^{-1} \log N_t \right)
+R_t\longrightarrow0,\qquad r_t\longrightarrow\infty .
 $$
 
-where $d=4$ is the emergent dimension. This convergence implies that for any Lipschitz continuous function $f: S^{d-1} \to \mathbb{R}$, the expectation satisfies:.
+When the physical ball is in a normal neighborhood of $x$, the radial geodesic from each edge midpoint to $x$ defines the parallel transport of its unit direction. Write the resulting vector as $n_e\in S_xM$. A holonomy error proportional to $\|\mathrm{sec}\|_\infty R_t^2$ tends to zero under this scale choice. An edge count in the ball is a count at radius $r_t$ in graph units (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />).
+
+**II. Empirical direction law**
+
+Use the nonempty edge set of size $m$ in the ball (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). Its direction law is
 
 $$
-\left| \int_{S^{d-1}} f(\xi) \, d\mu_{x,R}^{(t)}(\xi) - \int_{S^{d-1}} f(\xi) \, d\sigma(\xi) \right| \xrightarrow{t \to \infty} 0.
+\mu_{x,R_t}^{(t)}=\frac1m\sum_e\delta_{n_e},
+\qquad \mu_{x,R_t}^{(t)}(S_xM)=\frac1m\sum_e1=1.
 $$
 
-**I. Measure Theoretic Formulation**
-Let $(M, g)$ be the limit manifold. Fix a base point $x \in M$ and consider the mesoscopic ball $B(x, R)$ with radius satisfying $\ell_0 \ll R \ll \text{inj}(M)$, where $\text{inj}(M)$ is the injectivity radius. Let $S_x M \cong S^{d-1}$ be the unit tangent sphere at $x$.
-
-For each edge $e \in E_{x,R}^{(t)}$ with midpoint $m_e$, let $v_e \in T_{m_e}M$ be the tangent vector corresponding to the spectral embedding. Since $R < \text{inj}(M)$, there exists a unique minimizing geodesic $\gamma$ connecting $m_e$ to $x$ lying entirely within the normal neighborhood. we compute the random variable $X_e$ on $S_x M$ by parallel transport $P_\gamma$:
+For a fixed observable $f$ on the sphere, set $Y_e=f(n_e)$ and let $\sigma$ denote uniform sphere measure. The error separates into the mean bias and the centered average,
 
 $$
-X_e = P_{\gamma}^{m_e \to x}\left(\frac{v_e}{\|v_e\|}\right) \in S_x M.
+\frac1m\sum_eY_e-\int f\,\mathrm d\sigma
+=\left(\frac1m\sum_e\mathbb E[Y_e]-\int f\,\mathrm d\sigma\right)
++\frac1m\sum_e(Y_e-\mathbb E[Y_e]).
 $$
 
-The empirical measure is $\mu_N = \frac{1}{N} \sum_{e} \delta_{X_e}$ with $N = |E_{x,R}^{(t)}|$. The target measure $\sigma$ is the normalized Haar measure on $S_x M$.
+**III. Fixed-observable variance**
 
-**II. Sample Density (Ahlfors Scaling)**
-From the **Smooth Manifold Limit** <Ref id="12.1.6" label="§12.1.6" />, the graph volume growth matches the manifold dimension $d=4$. The sample size scales as the integral of the edge density $\rho_{edge}$:
-
-$$
-N(R) = \sum_{e \in B} 1 \asymp \int_{B(x,R)} \rho_{edge} \, dV_g \sim c_d R^d.
-$$
-
-In the limit $t \to \infty$, $R \to \infty$ (in graph units), ensuring $N \to \infty$.
-
-**III. Weak Dependence (Geometric Mixing)**
-The edge directions form a dependent random field. the **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />(Correlation Decay)** establishes that the directional covariance between edges $e, e'$ decays exponentially with geodesic distance:
+The variance of the centered term is
 
 $$
-|\text{Cov}(\langle X_e, u \rangle, \langle X_{e'}, v \rangle)| \leq C \exp\left(-\frac{d_g(e, e')}{\xi}\right) \quad \forall u,v \in T_x M.
+\mathbb E\!\left[\left(\frac1m\sum_e(Y_e-\mathbb E[Y_e])\right)^2\right]
+=\frac1{m^2}\sum_{e,e'}\operatorname{Cov}(Y_e,Y_{e'}).
 $$
 
-This satisfies the strong mixing condition ($\alpha$-mixing), implying that the effective sample size $N_{eff} \approx N / \tau_{int}$ scales linearly with $N$.
-
-**IV. Error Decomposition**
-we evaluate the convergence of the expectation $\mathbb{E}_{\mu_N}[f]$ for test functions $f \in C^2(S^{d-1})$. This class includes the quadratic forms $f(\xi) = \xi_i \xi_j$ required for tensor reconstruction. The total error $\mathcal{E} = |\mathbb{E}_{\mu_N}[f] - \mathbb{E}_{\sigma}[f]|$ decomposes into three physical components:
-
-$$
-\mathcal{E} \leq \mathcal{E}_{geom} + \mathcal{E}_{stat} + \mathcal{E}_{corr}
-$$
-
-1.  **Geometric Holonomy Bias ($\mathcal{E}_{geom}$):** Parallel transport over distance $r \in [0, R]$ in a curved manifold introduces a deviation proportional to the sectional curvature. Let $\|\text{sec}\|_\infty = \sup_{M} |\mathcal{K}|$ be the uniform bound on sectional curvature. The holonomy deviation over the ball scales as the area of the geodesic triangle:
-
-    $$
-    \mathcal{E}_{geom} \leq C \|\text{sec}\|_\infty R^2.
-    $$
-
-    Since $R$ is mesoscopic, this term is small relative to the manifold scale $L \sim 1/\sqrt{\|\text{sec}\|_\infty}$, i.e., $R/L \ll 1$.
-
-2.  **Statistical Fluctuation ($\mathcal{E}_{stat}$):** Treating the transported vectors as a weakly dependent random sample, the error is governed by the Central Limit Theorem for empirical processes. For bounded quadratic forms, the Donsker property holds:
-
-    $$
-    \mathcal{E}_{stat} \asymp \frac{\text{Var}(f)^{1/2}}{\sqrt{N_{eff}}} \sim \frac{1}{\sqrt{c_d R^d}} \sim O(R^{-d/2}).
-    $$
-
-    For $d=4$, this yields the dominant convergence rate of $O(R^{-2})$.
-
-3.  **Mixing Covariance Tail ($\mathcal{E}_{corr}$):** The residual correlations between distant edges contribute a bias term. Integrating the covariance tail over the domain volume:
-
-    $$
-    \mathcal{E}_{corr} \leq \frac{1}{N} \int_{B} \int_{B} e^{-d(y,z)/\xi} \, dy \, dz \leq O(N^{-1}).
-    $$
-
-**V. Convergence Rate**
-Summing the components for $d=4$, we obtain the final bound on the transport distance:
-
-$$
-\boxed{ W_1(\mu_{x,R}^{(t)}, \sigma) \leq \underbrace{C_1 R^{-2}}_{\text{Statistics}} + \underbrace{C_2 N^{-1}}_{\text{Mixing}} + \underbrace{C_3 \|\text{sec}\|_\infty R^2}_{\text{Curvature}} }
-$$
-
-Choosing the optimal intermediate scale $R \sim N^{1/8}$ minimizes the total error, ensuring that the empirical distribution converges to the Haar measure at the rate $O(N^{-1/4})$. This suffices to validate the tensorial averaging integral.
+If $\sum_{e'}|\operatorname{Cov}(Y_e,Y_{e'})|\le C$ uniformly in $e$ and $t$, the variance is at most $Cm/m^2=C/m$. If the first term in the error decomposition also tends to zero, the fixed-observable estimate converges in mean square to its uniform-sphere value. For the second moment the tests are the finitely many functions $f(n)=n_i n_j$. Uniform angular transport estimates require a separate comparison over all Lipschitz tests.
 
 Q.E.D.
 
@@ -718,7 +741,7 @@ Section 12.2.3.1 formalizes the properties of the QBD proof regarding directiona
 :::note[**Verification of Directional Measures Convergence via Monte Carlo Sampling**]
 :::
 
-Verification of the spatial isotropy convergence established by **Directional Measures** <Ref id="12.2.3.1" label="§12.2.3.1" /> and **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> is based on the following protocols:
+The calculation samples the uniform sphere law directly and measures the error of a fixed second moment (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). The protocols are as follows (**Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" />).
 
 1.  **Empirical Direction Sampling:** The algorithm generates Monte Carlo samples of unit vectors distributed uniformly on the 4D sphere to represent edge directions.
 2.  **Moment Computation:** The protocol calculates the empirical second moment of the coordinates across the generated vector ensemble.
@@ -795,44 +818,54 @@ Section 12.2.4 formalizes the properties of the QBD lemma regarding riemann sum 
 :::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
 :::
 
-The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$.  **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" /> and  **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> Specifically, as $N_t \to \infty$:.
+**I. Normalized weighted projection**
+
+For a ball with positive total weight set $p_e=w_e/\sum_{e'}w_{e'}$, $\sum_e p_e=1$, and let $M=\sum_e p_e n_e\otimes n_e$ (**Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" />). In an orthonormal frame the projection of the edge scalar is
 
 $$
-\lim_{t \to \infty} \left\| \widetilde{\mathcal{S}}_{ij}^{(t)}(x) - \frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}(x) \right\| \leq O(R^{-2} + N_t^{-1/2}).
+\widetilde{\mathcal S}=\sum_e p_e\mathcal S_e n_e\otimes n_e .
 $$
 
-The factor $1/d$ (where $d=4$) arises from the projection of the scalar magnitude onto the orthonormal basis of the tangent space via the spherical integral $\int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi) = \frac{1}{d} \delta_{ij}$. The convergence rate is dominated by the statistical variance of the directional sampling, $O(R^{-2})$, while the scalar concentration contributes a subleading term $O(N_t^{-1/2})$.
+**II. Uniform sphere moment**
 
-**I. Reduction to Spherical Integral**
-By the **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, the empirical measure $\mu_{x,R}^{(t)}$ approximates the Haar measure $\sigma$. For the tensorial projection $\xi_i \xi_j$, the discrete sum approximates the integral:
-
-$$
-\sum_{e \in B} w_e \mathcal{S}_e (\hat{n}_e)_i (\hat{n}_e)_j \approx \bar{\mathcal{S}}(x) \int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi).
-$$
-
-**II. Error Analysis (Monte Carlo Variance)**
-The edges in the ball $B(x,R)$ constitute a random sample of the tangent space with size $N_{ball} \sim R^d$. The approximation error $\mathcal{E}$ decomposes into:
-1.  **Directional Variance:** Since the edge directions are random variables (ergodically mixed) rather than a fixed quadrature grid, the convergence is governed by the Central Limit Theorem. The standard error of the mean scales as $1/\sqrt{N_{ball}} \sim R^{-d/2}$. For $d=4$, this yields the dominant term $O(R^{-2})$.
-2.  **Scalar Concentration:** The deviation of individual edge scalars from the local mean introduces a term proportional to $\sqrt{\text{Var}(\mathcal{S}) / N_{ball}}$. With $\text{Var}(\mathcal{S}) \sim O(N_t^{-1})$, this term vanishes rapidly as $O(N_t^{-1/2} R^{-2})$.
-   
-   *Optimal Scaling:* Choosing the mesoscopic radius $R \sim N_t^{1/8}$ minimizes the total error, yielding a local convergence rate of $O(N_t^{-1/4})$.
-
-**III. Symmetry Argument (Parity)**
-Consider the integral $I_{ij} = \int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi)$ for $i \neq j$.
-The domain $S^{d-1}$ and Haar measure are invariant under reflection $T_i: \xi_i \mapsto -\xi_i$. The integrand is odd ($-\xi_i \xi_j$), so $I_{ij} = -I_{ij} \implies I_{ij} = 0$.
-
-**IV. Diagonal Normalization (Trace)**
-Consider diagonal terms $I_{kk} = \int_{S^{d-1}} \xi_k^2 \, d\sigma$. By $SO(d)$ invariance, $I_{11} = \dots = I_{dd}$.
-Summing the trace:
+Let $I_{ij}=\int n_i n_j\,\mathrm d\sigma(n)$. For $i\ne j$, reflection in coordinate $i$ preserves $\sigma$ and negates the integrand, giving $I_{ij}=-I_{ij}=0$. Permutation symmetry makes the diagonal entries equal, and
 
 $$
-\sum_{k=1}^d I_{kk} = \int_{S^{d-1}} \|\xi\|^2 \, d\sigma = \int_{S^{d-1}} 1 \, d\sigma = 1.
+d I_{11}=\sum_i I_{ii}=\int\sum_i n_i^2\,\mathrm d\sigma(n)
+=\int 1\,\mathrm d\sigma(n)=1.
 $$
 
-Thus, $I_{kk} = 1/d$.
+Thus the uniform moment matrix is $I/d$.
 
-**V. Tensor Identification**
-Combining components yields $\frac{1}{d} \delta_{ij}$, identifying the limit tensor as $\frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}$ with the stated error bounds.
+**III. Error from directions and scalar variation**
+
+Subtracting the uniform moment times the local mean gives
+
+$$
+\widetilde{\mathcal S}-\bar{\mathcal S}\frac{I}{d}
+=\bar{\mathcal S}\left(M-\frac{I}{d}\right)
++\sum_e p_e(\mathcal S_e-\bar{\mathcal S})n_e\otimes n_e .
+$$
+
+Since $\|n_e\otimes n_e\|_F=\|n_e\|^2=1$, the second term is bounded by
+
+$$
+\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|
+\le\left(\sum_e p_e\right)^{1/2}
+    \left(\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|^2\right)^{1/2}.
+$$
+
+The full norm therefore satisfies
+
+$$
+\left\|\widetilde{\mathcal S}-\bar{\mathcal S} I/d\right\|_F
+\le|\bar{\mathcal S}|\,\|M-I/d\|_F
++\left(\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|^2\right)^{1/2}.
+$$
+
+**IV. Conditional isotropic limit**
+
+For bounded local means and $M\to I/d$, the first term tends to zero (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). The second tends to zero under the weighted local-variance premise. Returning from the orthonormal frame to coordinates gives the isotropic tensor $\bar{\mathcal S}g/d$.
 
 Q.E.D.
 

@@ -6,8 +6,8 @@ Case: Empty Past (u=0)
   Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
-Case: Empty Future (u=2)
-  Map: {2: 0.6667, 1: 0.3333}
+Case: Empty Future (u=0)
+  Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
 Case: Isolated Singularity (u=99)

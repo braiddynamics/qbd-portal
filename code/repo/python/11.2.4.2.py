@@ -51,13 +51,13 @@ print_case("Balanced Topology (u=1)", mu1, sum1)
 mu0, sum0 = lazy_mu(0, G_chain)
 print_case("Empty Past (u=0)", mu0, sum0)
 
-# 2. Reverse Chain: 0 <- 1 <- 2 (to simulate empty future at u=2)
+# 2. Reverse Chain: 0 <- 1 <- 2
 G_rev = nx.DiGraph()
 G_rev.add_edges_from([(1,0), (2,1)])
 
-# Case 3: Empty Future (u=2, has past but no future)
-mu2, sum2 = lazy_mu(2, G_rev)
-print_case("Empty Future (u=2)", mu2, sum2)
+# Case 3: Empty Future (u=0, has past but no future)
+mu_sink, sum_sink = lazy_mu(0, G_rev)
+print_case("Empty Future (u=0)", mu_sink, sum_sink)
 
 # 3. Isolated Node
 G_iso = nx.DiGraph()

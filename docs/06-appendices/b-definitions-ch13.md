@@ -12,25 +12,17 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 :::tip[**Specification of the Discrete Tensor quantifying the Net Probability Flux of Geometric Complexity via the Differential Balance of Thermodynamic Rates**]
 :::
 
-The **discrete stress-energy tensor** $T_{ab}$ defines itself for any directed edge $(a,b)$ within the causal graph $G_t = (V_t, E_t, H_t)$ as the differential probability flux governing the creation and annihilation of geometric 3-cycles. This tensor serves as the material source term for the discrete field equations and adopts the explicit form:
+Let $\mathcal D$ be the fixed set of potential ordered slots for the one-tick comparison. For $(a,b)\in\mathcal D$, let $X_{ab},X'_{ab}\in\{0,1\}$ be its occupation before and after the accepted updates. The **Discrete Stress-Energy Tensor** uses the mean accepted slot change.
 
 $$
-T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b).
+\begin{aligned}
+P_{\mathrm{add}}(a,b)&=\Pr(X_{ab}=0,\ X'_{ab}=1),\\
+P_{\mathrm{del}}(a,b)&=\Pr(X_{ab}=1,\ X'_{ab}=0),\\
+T_{ab}&=P_{\mathrm{add}}(a,b)-P_{\mathrm{del}}(a,b).
+\end{aligned}
 $$
 
-The addition probability $P_{\text{add}}(a,b)$ quantifies the transition amplitude for the universal constructor $\mathcal{R}$ to identify a compliant 2-path $P_2$ and effectuate the addition of the edge $(a,b)$. This term expands according to the **Catalytic Tension Factor** <Ref id="4.5.2" label="§4.5.2" />. Its dynamics are further governed by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />:
-
-$$
-P_{\text{add}}(a,b) = \mathbb{I}_{\text{PUC}}(a,b) \cdot \chi(\boldsymbol{\sigma}_{P_2}) \cdot \mathbb{P}_{\text{acc}}.
-$$
-
-The deletion probability $P_{\text{del}}(a,b)$ quantifies the transition amplitude for the constructor to identify the edge $(a,b)$ as a participant in an existing 3-cycle $\gamma$ and effectuate its removal. This term expands according to the decay dynamics governed by the Born rule **Addition Probability** <Ref id="4.5.6" label="§4.5.6" />:
-
-$$
-P_{\text{del}}(a,b) = \frac{1}{2} \cdot \mathbb{I}_{\gamma \ni (a,b)} \cdot \chi(\boldsymbol{\sigma}_{\gamma}) \cdot \mathbb{P}_{\text{acc}}.
-$$
-
-The tensor satisfies the antisymmetry condition $T_{ba} = -T_{ab}$, imposed by the strict timestamp ordering of the history function $H(e)$ **Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />, and remains strictly bounded within the interval $[-1, 1]$ by the normalization of the constituent probabilities.
+The candidate selection and deletion probabilities enter the complete tick law together with the merge and purge steps. The net slot probabilities are marginals of that law (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). Extend $T$ by zero on unused slots. The optional skew current is $J_{ab}=T_{ab}-T_{ba}$, with $J_{ba}=-J_{ab}$. The reverse-slot probability difference $T_{ba}$ has its own occupation indicators.
 
 **In Plain English:**  
 Section 13.1.1 formalizes the properties of the QBD definition regarding discrete stress-energy tensor.
@@ -54,13 +46,7 @@ Section 13.1.2 formalizes the properties of the QBD theorem regarding conservati
 :::info[**Requirement of Vanishing Net Flux Accumulation Derived from the Fixed Point Invariance of Vertex Degree**]
 :::
 
-For any vertex $a \in V_t$ at the homeostatic fixed point, the total probability flux of geometric updates traversing the vertex satisfies the global balance equation:
-
-$$
-\sum_{b \in N(a)} (T_{ab} + T_{ba}) = 0.
-$$
-
-This condition asserts that the sum of the net outgoing complexity flux ($T_{ab}$) and the net incoming complexity flux ($T_{ba}$) must vanish collectively to preserve the time-invariant expectation value of the local vertex degree $\mathbb{E}[\deg(a)]$.
+Let the one-tick graph law be invariant on a fixed set of potential directed slots, with integrable degree at vertex $a$. Then the outgoing and incoming mean accepted changes satisfy $\sum_b(T_{ab}+T_{ba})=0$ (**Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />).
 
 **In Plain English:**  
 Section 13.1.3 formalizes the properties of the QBD lemma regarding global stationarity.
@@ -72,51 +58,40 @@ Section 13.1.3 formalizes the properties of the QBD lemma regarding global stati
 :::tip[**Derivation of the Balance Equation via the Ergodic Stationarity of the Degree Observable**]
 :::
 
-**I. Definition of the Stationarity Condition**
-The homeostatic fixed point is defined by the invariance of the probability distribution $\pi(G)$ under the evolution operator $\mathcal{U}$. Consequently, for any local observable $\mathcal{O}(G)$, the ensemble average remains constant in time:
+**I. Occupation increments**
+
+For a directed slot, $X'_{ab}-X_{ab}$ is $1$ on addition, $-1$ on deletion and zero otherwise (**Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />). Hence
 
 $$
-\frac{\mathrm{d}}{\mathrm{d}t} \mathbb{E}_{\pi}[\mathcal{O}(G)] = 0.
+\mathbb E[X'_{ab}-X_{ab}]
+=\Pr(X_{ab}=0,X'_{ab}=1)-\Pr(X_{ab}=1,X'_{ab}=0)
+=T_{ab}.
 $$
 
-Let the observable be the vertex degree $\deg(a)$, defined as the total count of incident edges (both incoming and outgoing) connected to vertex $a$. The stationarity condition requires:
+**II. Degree accumulation**
+
+The out-degree and in-degree are $\deg^+(a)=\sum_b X_{ab}$ and $\deg^-(a)=\sum_b X_{ba}$. The expected change of their sum is
 
 $$
-\mathbb{E}[\deg(a)_{t+1}] - \mathbb{E}[\deg(a)_t] = \mathbb{E}[\Delta \deg(a)] = 0.
+\begin{aligned}
+\mathbb E[\Delta\deg(a)]
+&=\mathbb E\!\left[\sum_b(X'_{ab}-X_{ab})+\sum_b(X'_{ba}-X_{ba})\right]\\
+&=\sum_b T_{ab}+\sum_b T_{ba}.
+\end{aligned}
 $$
 
-**II. Decomposition of Degree Evolution**
-The change in degree $\Delta \deg(a)$ results from the discrete update events occurring at the time step $t$. An edge $(a,b)$ contributes $+1$ to the degree if added and $-1$ if deleted. Similarly, an edge $(b,a)$ contributes $+1$ if added and $-1$ if deleted. The expectation value sums these contributions over all potential neighbors $b \in N(a)$:
+The sums include newly occupied slots. For a countable slot set, integrability of the pre- and post-tick degree justifies the exchange with expectation, since the sum of the absolute changes is bounded by their sum.
+
+**III. Stationarity and signs**
+
+If the pre- and post-tick graph laws are both $\pi$, the two degree means agree (**Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />). Thus $\mathbb E[\Delta\deg(a)]=0$. Writing $F_{\mathrm{out}}=\sum_bT_{ab}$ and $F_{\mathrm{in}}=\sum_bT_{ba}$ gives
 
 $$
-\mathbb{E}[\Delta \deg(a)] = \sum_{b \in N(a)} \left( [P_{\text{add}}(a,b) - P_{\text{del}}(a,b)] + [P_{\text{add}}(b,a) - P_{\text{del}}(b,a)] \right).
+F_{\mathrm{out}}+F_{\mathrm{in}}=0,\qquad
+\sum_b J_{ab}=\sum_b(T_{ab}-T_{ba})=F_{\mathrm{out}}-F_{\mathrm{in}}.
 $$
 
-**III. Substitution of the Stress-Energy Tensor**
-The **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" /> formulation identifies the terms in the brackets:
-
-$$
-T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b)
-$$
-
-$$
-T_{ba} = P_{\text{add}}(b,a) - P_{\text{del}}(b,a).
-$$
-
-Substituting these tensor definitions into the expectation equation yields:
-
-$$
-\mathbb{E}[\Delta \deg(a)] = \sum_{b \in N(a)} (T_{ab} + T_{ba}).
-$$
-
-**IV. Conclusion**
-Equating the derived expression to the stationarity requirement $\mathbb{E}[\Delta \deg(a)] = 0$ establishes the **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />:
-
-$$
-\sum_{b \in N(a)} (T_{ab} + T_{ba}) = 0.
-$$
-
-This confirms that the total net flux through the vertex must equate to zero to prevent the systematic drift of the local topology away from the equilibrium density.
+The second identity uses the separate skew-current definition.
 
 Q.E.D.
 
@@ -130,7 +105,7 @@ Section 13.1.3.1 formalizes the properties of the QBD proof regarding global sta
 :::info[**Decomposition of the Global Flux Balance Equation into Independent Directional Conservation Laws via Maximum-Entropy**]
 :::
 
-If the global balance condition $\sum_{b} (T_{ab} + T_{ba}) = 0$ holds, then it decomposes into two independent constraints: the vanishing of the outgoing flux divergence $\sum_{b} T_{ab} = 0$ and the vanishing of the incoming flux divergence $\sum_{b} T_{ba} = 0$, which is well-defined.
+Let $\pi$ be an invariant law for the graph tick on fixed potential directed slots, with integrable incoming and outgoing degrees. Then $T_{ab}=0$ for each slot, and the incoming and outgoing sums vanish separately (**Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />).
 
 **In Plain English:**  
 Section 13.1.4 formalizes the properties of the QBD lemma regarding flux separation (detailed balance).
@@ -142,28 +117,35 @@ Section 13.1.4 formalizes the properties of the QBD lemma regarding flux separat
 :::tip[**Formal Demonstration of the Independence of Incoming and Outgoing Flux Constraints via the Analysis of Entropic Penalties**]
 :::
 
-**I. Formulation of the Constraint Space**
-From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />, the stationarity of the vertex degree imposes the linear constraint:
+**I. Invariant law**
+
+Let $P$ denote the tick kernel (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). If $G\sim\pi$ and $G'$ is sampled using $P(G,\cdot)$, then its law is $\pi P=\pi$.
+
+**II. A single directed slot**
+
+The slot observable uses the accepted occupation difference (**Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />). Its expectation is
 
 $$
-\sum_{b \in N(a)} T_{ab} + \sum_{b \in N(a)} T_{ba} = 0.
+\begin{aligned}
+T_{ab}
+&=\mathbb E_\pi[X_{ab}(G')]-\mathbb E_\pi[X_{ab}(G)]\\
+&=\int X_{ab}(g)\,\mathrm d(\pi P)(g)-\int X_{ab}(g)\,\mathrm d\pi(g)\\
+&=0.
+\end{aligned}
 $$
 
-Defining the outgoing divergence $F_{\text{out}}(a) = \sum T_{ab}$ and the incoming divergence $F_{\text{in}}(a) = \sum T_{ba}$, the condition reduces to $F_{\text{out}} + F_{\text{in}} = 0$. This algebraic relation admits a continuous family of solutions characterized by a circulation parameter $C$, such that $F_{\text{out}} = C$ and $F_{\text{in}} = -C$.
+**III. Separate degree sums**
 
-**II. Entropic Penalty of Non-Zero Circulation**
-A solution with $C \neq 0$ necessitates a persistent correlation between the input channels (incoming edges) and output channels (outgoing edges) of vertex $a$. Specifically, a net influx of geometric complexity from the past ($F_{\text{in}} < 0$) must be precisely synchronized with a net outflux to the future ($F_{\text{out}} > 0$) to maintain the local degree invariant.
-The number of graph microstates $\Omega_C$ supporting such a synchronized flow is constrained by the requirement that specific rewrite rules $\mathcal{R}$ match across the vertex boundary. If the neighborhood size is $k = |N(a)|$, the imposition of this correlation reduces the effective dimensionality of the accessible phase space.
-By the Boltzmann formula $S = k_B \ln \Omega$, the entropy of the state depends on the volume of accessible configurations. The unconstrained state ($C=0$), where inputs and outputs fluctuate independently around zero, maximizes the volume $\Omega_0$ because it imposes the fewest restrictions on the joint probability distribution of edge updates.
+By linearity, or integrability for a countable slot set,
 
 $$
-\Omega_{C \neq 0} \ll \Omega_0 \implies S(C \neq 0) < S(0).
+\begin{aligned}
+F_{\mathrm{out}}(a)&=\sum_bT_{ab}
+=\mathbb E_\pi[\deg^+(a;G')-\deg^+(a;G)]=0,\\
+F_{\mathrm{in}}(a)&=\sum_bT_{ba}
+=\mathbb E_\pi[\deg^-(a;G')-\deg^-(a;G)]=0 .
+\end{aligned}
 $$
-
-Therefore, the Principle of Maximum Entropy selects the solution $C=0$ as the unique thermodynamic equilibrium.
-
-**III. Statistical Homogeneity**
-Statistical homogeneity **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> reinforces this selection. A non-zero circulation $C$ establishes a preferred local directionality (a current vector) through the vertex. In the isotropic vacuum state, no preferred spatial vector exists to align this current. The only rotationally invariant solution for a vector field on a homogeneous discrete lattice is the zero vector. Thus, $F_{\text{out}}(a)$ and $F_{\text{in}}(a)$ must vanish independently.
 
 Q.E.D.
 
@@ -189,27 +171,93 @@ Section 13.1.5 formalizes the properties of the QBD lemma regarding discrete str
 :::tip[**Convergence via Discrete Probability Fluxes to Smooth Stress Tensor Fields**]
 :::
 
-**I. Tensor Projection under Coarse-Graining**
-Let $x \in M$ be a point in the limit manifold and $B_R(x)$ be a mesoscopic ball of radius $R \gg \ell_0$. Applying the tensorial averaging map $\mathcal{A}_R$ defined in **Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" /> to the discrete flow matrix $T_{ab}$, the continuous tensor field candidate is constructed as:
+**I. Directed representatives in the average**
+
+Let $E_R^{(t)}$ be the realized directed edges used for the projection in $B_R(x)$ (**Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" />). The directed-slot version of the finite average is
 
 $$
-\widetilde{T}_{\mu\nu}^{(t)}(x) = \frac{1}{V(B_R(x))} \sum_{a, b \in B_R(x)} T_{ab} (\hat{n}_{ab})_\mu (\hat{n}_{ab})_\nu \ell_0^d
+\widetilde T^{(t)}_{\mu\nu}(x)
+=\frac{\ell_0^d}{V(B_R(x))}
+\sum_{(a,b)\in E_R^{(t)}}T_{ab}(n_{ab})_\mu(n_{ab})_\nu .
 $$
 
-where $\hat{n}_{ab} \in T_x M$ is the unit direction vector of the edge $(a,b)$ projected into the tangent space.
-
-**II. Symmetry and Convergence**
-By the skew-symmetry continuation of the flow matrix $T_{ba} = -T_{ab}$ derived in **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />, the product of flux and directional outer-product vectors is symmetric under indices $\mu, \nu$. In the thermodynamic limit $t \to \infty$ ($\ell_0 \to 0$), statistical isotropy and **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> ensure that the sum converges weakly to a smooth symmetric tensor field $T_{\mu\nu} \in C^\infty(M)$.
-
-**III. Conservation Mapping**
-We compute the covariant divergence of the limit tensor field $\nabla^\mu T_{\mu\nu}(x)$. In local normal coordinates, the divergence integral evaluates the boundary net flux of the mesoscopic ball:
+Each outer product is symmetric in $\mu,\nu$. Each directed edge appears once. If a skew current were extended to both orientations with equal weights and $n_{ba}=-n_{ab}$, the two terms would instead satisfy
 
 $$
-\int_{B_R(x)} \nabla^\mu T_{\mu\nu} \, dV = \sum_{a \in B_R(x)} \sum_{b \in N(a)} (T_{ab} + T_{ba}) (\hat{n}_{ab})_\nu + \mathcal{O}(R/\ell_0).
+J_{ab}n_{ab}\otimes n_{ab}
++J_{ba}n_{ba}\otimes n_{ba}
+=(J_{ab}-J_{ab})n_{ab}\otimes n_{ab}=0 .
 $$
 
-**IV. Limit Identification**
-From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" /> and **Conservation of Complexity Flux** <Ref id="13.1.2" label="§13.1.2" />, the local vertex flux sum $\sum_{b \in N(a)} (T_{ab} + T_{ba})$ vanishes identically at every node $a \in V_t$ at homeostatic equilibrium. Consequently, the integral vanishes for all test volumes, proving that $\nabla^\mu T_{\mu\nu}(x) = 0$ pointwise across $M$.
+**II. Stationary value**
+
+Under the invariant graph law, the unconditional mean changes of every fixed directed slot are zero (**Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />). Consequently the projection of these means satisfies
+
+$$
+\widetilde T^{(t)}_{\mu\nu}(x)
+=\frac{\ell_0^d}{V(B_R(x))}
+  \sum_{(a,b)\in E_R^{(t)}}0\cdot(n_{ab})_\mu(n_{ab})_\nu
+=0 .
+$$
+
+**III. Discrete momentum balance**
+
+Consider a separate vector current $F_{ab}\in T_{x_a}M$ on the embedded links. Assume its reverse is $F_{ba}=-\mathcal P_{a\to b}F_{ab}$, where $\mathcal P$ is parallel transport along the link, and assume the vertex momentum balance $\sum_{b\sim a}F_{ab}=0$. Choose one orientation per link in $\mathcal E_t$. For a compactly supported smooth test one-form $\phi$ write $\phi_a=\phi(x_a)$. Regrouping the endpoint pairings gives
+
+$$
+\begin{aligned}
+\sum_{(a,b)\in\mathcal E_t}
+\left[\phi_b(\mathcal P_{a\to b}F_{ab})-\phi_a(F_{ab})\right]
+&=-\sum_{(a,b)\in\mathcal E_t}\left[\phi_b(F_{ba})+\phi_a(F_{ab})\right]\\
+&=-\sum_a \phi_a\!\left(\sum_{b\sim a}F_{ab}\right)=0 .
+\end{aligned}
+$$
+
+**IV. Midpoint approximation of the weak pairing**
+
+Parametrize each link by an affine geodesic segment $\gamma_{ab}$ on $[-\ell_{ab}/2,\ell_{ab}/2]$, with midpoint $m_{ab}=\gamma_{ab}(0)$, tangent $n_{ab}=\dot\gamma_{ab}(0)$, and $\ell_{ab}\le C\ell_0$. Use a positive reference norm and choose the parametrization so that the midpoint tangents have unit reference norm. Assume that along the segments meeting the test support the tangents and transports are uniformly bounded in this norm. Write $p_{ab}=\mathcal P_{a\to m_{ab}}F_{ab}$ and $h(s)=\phi_{\gamma_{ab}(s)}(\mathcal P_{a\to\gamma_{ab}(s)}F_{ab})$. Parallel transport and the affine geodesic equation give
+
+$$
+h'(0)=(\nabla_{n_{ab}}\phi)(p_{ab}),\qquad
+h'''(s)=
+(\nabla^3\phi)_{\gamma_{ab}(s)}
+\big(\dot\gamma_{ab}(s),\dot\gamma_{ab}(s),\dot\gamma_{ab}(s),
+       \mathcal P_{m_{ab}\to\gamma_{ab}(s)}p_{ab}\big).
+$$
+
+Smoothness on the test neighborhood and the uniform bounds give $\sup_s|h'''(s)|\le C_\phi\|p_{ab}\|$. Taylor expansion at the two endpoints, with $d=\ell_{ab}/2$, yields
+
+$$
+\begin{aligned}
+h(d)&=h(0)+d h'(0)+\tfrac{d^2}{2}h''(0)+r_+ ,\\
+h(-d)&=h(0)-d h'(0)+\tfrac{d^2}{2}h''(0)+r_- ,\\
+|h(d)-h(-d)-\ell_{ab}h'(0)|
+&=|r_+-r_-|
+\le \tfrac{2d^3}{6}\sup_s|h'''(s)|
+\le \tfrac{C_\phi}{24}\ell_{ab}^3\|p_{ab}\|.
+\end{aligned}
+$$
+
+Let $S_t=\sum_{(a,b)\in\mathcal E_t}\ell_{ab}(n_{ab}\otimes p_{ab})\delta_{m_{ab}}$ be the tensor-valued measure. Reversing a link changes the signs of both midpoint vectors, so the measure is orientation independent. With uniformly bounded local weighted current mass $\sum \ell_{ab}\|p_{ab}\|$ over segments meeting the test support, the endpoint identity gives
+
+$$
+|\langle S_t,\nabla\phi\rangle|
+\le \frac{C_\phi}{24}\sum \ell_{ab}^3\|p_{ab}\|
+\le \frac{C_\phi C^2}{24}\ell_0^2\sum \ell_{ab}\|p_{ab}\|
+=O_\phi(\ell_0^2).
+$$
+
+**V. Weak conservation of a continuum stress**
+
+Suppose $S_t$ converges weakly to $T^{\mu\nu}\mathrm dV_g$ for a smooth symmetric tensor $T$, with $\mathrm dV_g$ the metric volume density. Taking the limit for each test one-form and integrating by parts gives
+
+$$
+0=\lim_{t\to\infty}\langle S_t,\nabla\phi\rangle
+=\int_M T^{\mu\nu}\nabla_\mu\phi_\nu\,\mathrm dV_g
+=-\int_M(\nabla_\mu T^{\mu\nu})\phi_\nu\,\mathrm dV_g.
+$$
+
+Thus $\nabla_\mu T^{\mu\nu}=0$ under the momentum balance and weak convergence premises.
 
 Q.E.D.
 
@@ -228,7 +276,7 @@ This synthesis proof establishes local flux conservation by integrating structur
 **I. Integration of Stationarity and Separation**
 The proof integrates global stationarity and detailed balance relations.
 From **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />, the total net flux through a vertex vanishes: $\sum (T_{ab} + T_{ba}) = 0$.
-From **Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />, maximum entropy requires the outgoing flux $\sum T_{ab}$ and incoming flux $\sum T_{ba}$ to vanish independently.
+With an invariant graph law, the expectation of each fixed directed occupation is constant. Its accepted mean change vanishes, so the outgoing and incoming sums vanish separately (**Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />).
 Combining these results yields the discrete divergence-free condition:
 
 $$
@@ -236,16 +284,16 @@ $$
 $$
 
 **II. Divergence-Free Nature**
-In the continuum limit, the summation over the neighborhood $N(a)$ maps to the covariant divergence operator $\nabla^\mu$. The relation $\sum_b T_{ab} = 0$ is the discrete analogue of the continuity equation $\nabla^\mu T_{\mu\nu} = 0$, as established in **Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" />. This confirms that the discrete stress-energy tensor describes a conserved quantity (informational complexity) that flows through the graph without being created or destroyed at the vertices, except through the explicit source/sink terms defined in $T_{ab}$ itself (which sum to zero in the vacuum).
+At stationarity each slot's accepted mean change is zero. The projection of these means therefore gives the zero field, which has zero divergence (**Discrete Stress-Energy Continuum Limit** <Ref id="13.1.5" label="§13.1.5" />). A continuum comparison for a nonzero stress field requires a separate observable and a divergence estimate.
 
 **III. Vacuum Stress-Energy Tensor and Equation of State**
-The detailed balance condition establishes that while the net directional excitation flux vanishes ($\sum_b T_{ab} = 0$), the ground-state graph possesses a uniform vacuum energy density $\rho_{\text{vac}} = V(\phi_0)$ arising from the homeostatic potential. Under covariant coarse-graining, the cosmological vacuum stress-energy tensor takes the exact Lorentz-invariant isotropic form:
+For a separately represented isotropic vacuum with constant energy density $\rho_{\mathrm{vac}}=V(\phi_0)$, the vacuum tensor has the form
 
 $$
 T_{\mu\nu}^{\text{vac}} = -\rho_{\text{vac}} g_{\mu\nu} = -V(\phi_0) g_{\mu\nu},
 $$
 
-yielding an exact equation of state parameter $w = p_{\text{vac}} / \rho_{\text{vac}} = -1.000000$, with identically vanishing anisotropic shear stress $\Pi_{\mu\nu} = 0$. Deviations and localized matter excitations on the background carry conserved energy-momentum tensor $\Delta T_{\mu\nu} = T_{\mu\nu} - T_{\mu\nu}^{\text{vac}}$ satisfying $\nabla^\mu \Delta T_{\mu\nu} = 0$ and $\nabla^\mu T_{\mu\nu}^{\text{vac}} = 0$ via the metric-compatibility condition $\nabla^\mu g_{\mu\nu} = 0$.
+yielding an exact equation of state parameter $w = p_{\text{vac}} / \rho_{\text{vac}} = -1.000000$, with identically vanishing anisotropic shear stress $\Pi_{\mu\nu} = 0$. Metric compatibility and constant vacuum density give $\nabla^\mu T_{\mu\nu}^{\mathrm{vac}}=-\rho_{\mathrm{vac}}\nabla^\mu g_{\mu\nu}-g_{\mu\nu}\nabla^\mu\rho_{\mathrm{vac}}=0$. For any separately conserved total tensor, subtracting this vacuum tensor preserves conservation.
 
 Q.E.D.
 
@@ -263,7 +311,7 @@ Verification of the local stress-energy conservation laws established in **Conse
 
 1.  **Experimental Initialization:** The algorithm initializes a five-node Zero-Point Ignition vacuum as a minimal Bethe fragment to represent the seed of geometric growth.
 2.  **Dynamic Graph Evolution:** The protocol applies the universal rewrite rules and thermodynamic regulation suite under strict acyclic causal constraints to evolve the graph.
-3.  **Flux Divergence Evaluation:** The metric measures the incoming and outgoing net complexity flux at each vertex to confirm that the local divergence vanishes at thermodynamic homeostasis. This verifies the result established in **Conservation of Complexity Flux** <Ref id="13.1.6" label="§13.1.6" />.
+3.  **Directed Change Evaluation:** The fixture counts selected addition and deletion proposals by directed slot and reports their incoming and outgoing sums. The stationary identity concerns net accepted occupation changes (**Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />).
 
 ```python
 import numpy as np
@@ -495,7 +543,7 @@ Equil: Total edges at end: 4
 ```
 
 **Conclusion:**
-The simulation confirms the strict conservation of flux at equilibrium, with all directional sums vanishing within the expected noise floor. The outgoing flux sums $\sum_b T_{ab}$ exhibit a maximum absolute value of 0.005, and the incoming flux sums $\sum_b T_{ba}$ exhibit an identical maximum of 0.005, yielding a total flux divergence $\sum (T_{ab} + T_{ba})$ bounded by 0.01. These residuals are consistent with the statistical variance of the stochastic update process over 200 steps ($1/\sqrt{200} \approx 0.07$), demonstrating that no systematic accumulation or depletion occurs. The final edge count stabilizes at 4, and the transition matrix $T_{ab}$ shows sparse, balanced entries (e.g., $T_{0,1} = -0.005$, $T_{2,4} = 0.005$) without global circulation. This data validates the derivation of local conservation and detailed balance described in the proof.
+The finite run gives maximum absolute outgoing and incoming sums of $0.005$ each, with $\left|\sum_b(T_{ab}+T_{ba})\right|\le0.01$ by the triangle inequality. The final edge count is four. The entries $T_{0,1}=-0.005$ and $T_{2,4}=0.005$ are signed proposal-count averages for this run. Exact vanishing in the ensemble identity uses invariance of the graph law (**Flux Separation (Detailed Balance)** <Ref id="13.1.4" label="§13.1.4" />).
 
 **In Plain English:**  
 Section 13.1.6.1 formalizes the properties of the QBD calculation regarding flux conservation verification.
@@ -687,41 +735,38 @@ Section 13.2.5 formalizes the properties of the QBD lemma regarding gravitationa
 :::tip[**Formal Derivation of the Scaling Relation via Dimensional Analysis and Renormalization Group Constraints**]
 :::
 
-Specifically, the coupling strength is defined by the ratio of the squared fundamental discreteness scale $\ell_0^2$ to the vacuum correlation length $\xi$. This derivation anchors the gravitational interaction to the intrinsic granular structure of the causal graph substrate, eliminating $\kappa$ as a free parameter.
+**I. Discrete and physical couplings**
 
-**I. Convergence Requirement**
-The validity of the discrete field equation $\mathcal{G}_{ab} = \kappa T_{ab}$ in the continuum limit necessitates that the coarse-grained expectation values converge to the Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$. The **Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" /> defines the limit process over mesoscopic balls $B(x,R)$ satisfying the scale hierarchy $\ell_0 \ll R \ll \xi$. Conservation of the integrated action requires the discrete coupling $\kappa$ to scale such that the lattice regularization recovers the physical gravitational constant:
-
-$$
-\lim_{N \to \infty} \kappa \int_{B} T_{ab} \, dV_N = 8\pi G \int_{B} T_{\mu\nu} \, dV.
-$$
-
-**II. Dimensional Analysis**
-Within the information-theoretic substrate (where $c = \hbar = 1$), the physical dimension of the gravitational constant $G$ is $[\text{Length}]^2$. The topological mass $m$ **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> is defined as a dimensionless count of 3-cycles. Therefore, the coupling constant $\kappa$ must act as a geometric conversion factor with dimension $[\text{Length}]^2$, constructed exclusively from the intrinsic length scales of the graph vacuum to ensure renormalization group consistency **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
-
-**III. Identification of Scales**
-The homeostatic equilibrium state provides two distinct characteristic lengths:
-1.  **Microscopic Scale ($\ell_0$):** The fundamental discreteness length, defined as the effective geodesic distance of a single edge. In the sparse equilibrium regime, this scale relates to the inverse square root of the edge density $\rho^*$: $\ell_0 \sim (\rho^*)^{-1/2}$.
-2.  **Macroscopic Scale ($\xi$):** The correlation length of the vacuum fluctuations, governed by the exponential decay of the covariance function $\text{Cov}(x,y) \sim e^{-d(x,y)/\xi}$ **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />. This scale is determined by the thermodynamic friction coefficient $\mu$: $\xi \sim \mu^{-1/2}$.
-
-**IV. Derivation of the Ratio**
-The functional form of $\kappa(\ell_0, \xi)$ is constrained by the requirement that gravity acts as a weak, long-range effective interaction emerging from local statistics:
-* The source strength of a single quantum (3-cycle) scales with its geometric area: $\kappa \propto \ell_0^2$.
-* The collective intensity of the field is diluted by the entropic screening of fluctuations over the correlation volume. The effective coupling strength is inversely proportional to the screening length: $\kappa \propto \xi^{-1}$.
-Combining these scaling laws yields the unique dimensionally consistent form:
+In the discrete relation $\mathcal G_{ab}=\kappa_{\mathrm{disc}}T_{ab}$, the curvature scalar and the probability difference are dimensionless (**Discrete Einstein Tensor** <Ref id="13.2.1" label="§13.2.1" />). For physical curvature and stress units, introduce conversion factors $C_{\mathcal G}$ and $C_T$ (**EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />). If both limiting identifications are supplied, the same discrete relation becomes
 
 $$
-\kappa \propto \frac{\ell_0^2}{\xi}.
+C_{\mathcal G}\mathcal G_{ab}
+=\kappa_{\mathrm{disc}}\,\frac{C_{\mathcal G}}{C_T}(C_TT_{ab}),
+\qquad
+\kappa_{\mathrm{phys}}=\kappa_{\mathrm{disc}}\,\frac{C_{\mathcal G}}{C_T}.
 $$
 
-**V. Calibration**
-The exact equality is established by the geometric factor $\mathcal{C}$ derived from the volume of the unit ball in the emergent Hausdorff **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" /> (denoted $d_H = 4$):
+**II. Correlation-length conventions**
+
+Let $\xi_{\mathrm{phys}}$ be the physical correlation length and $\xi_{\mathrm{lat}}=\xi_{\mathrm{phys}}/\ell_0$ its dimensionless value in lattice units. Then
 
 $$
-\kappa = \mathcal{C} \frac{\ell_0^2}{\xi}.
+[\ell_0^2/\xi_{\mathrm{phys}}]=[\mathrm{length}],\qquad
+\frac{\ell_0^2}{\xi_{\mathrm{lat}}}=\frac{\ell_0^3}{\xi_{\mathrm{phys}}},
+\qquad
+[\ell_0^2/\xi_{\mathrm{lat}}]=[\mathrm{length}]^2.
 $$
 
-This relation fixes the gravitational coupling as a derived property of the vacuum's statistical geometry, rather than an independent free parameter.
+**III. Conditional scaling**
+
+In natural units the physical Einstein coupling has dimensions of length squared. A two-scale expression with this dimension has the form $\ell_0^2 F(\xi_{\mathrm{lat}})$ for a dimensionless function $F$. The proposed inverse-screening form corresponds to the choice
+
+$$
+F(\xi_{\mathrm{lat}})=\frac{\mathcal C}{\xi_{\mathrm{lat}}},
+\qquad \kappa_{\mathrm{phys}}=\mathcal C\frac{\ell_0^2}{\xi_{\mathrm{lat}}}.
+$$
+
+This choice has the required units. The screening law and its coefficient require physical calibration.
 
 Q.E.D.
 
@@ -1167,7 +1212,7 @@ Section 13.2.7.1 formalizes the properties of the QBD calculation regarding quan
 Type-theoretic certification of the discrete field equations and adjoint kernel 1-dimensionality established in **Emergent Field Equations** <Ref id="13.2.2" label="§13.2.2" /> and **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" /> proceeds via the following verification strategy:
 
 1.  **Adjoint Kernel 1-Dimensionality:** The Lean theorem `general_adjoint_kernel_is_one_dimensional` proves that on any weakly connected graph rewrite space, the space of conserved observables under the adjoint Laplacian is strictly 1-dimensional ($\operatorname{ker}(\mathcal{L}^\dagger) = \operatorname{span}\{\mathbf{1}\}$), resolving the Gorard tensor instability.
-2.  **Discrete Flux Divergence Conservation:** The Lean theorem `detailed_balance_implies_zero_divergence` and proposition `cycle_circulation_divergence_free` prove that microscopic detailed balance and elementary 3-cycle circulation fluxes enforce identically vanishing discrete divergence ($\operatorname{div}(T) = 0$) across vertex neighborhoods without relying on unproven axioms.
+2.  **Discrete Flux Divergence Conservation:** The Lean theorem `detailed_balance_implies_zero_divergence` sums zero incident values of a skew one-form. The proposition `cycle_circulation_divergence_free` checks an elementary skew circulation with nonzero individual values. The two finite identities use the skew current convention, with accepted slot changes distinguished separately (**Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />).
 3.  **Conservative Dynamics and Cyclic Invariance:** The Lean propositions `stationary_multi_tick_invariant` and `cyclic_orbit_zero_variation` prove that stationary homeostatic states undergo zero multi-tick dissipation under discrete time evolution and that closed orbital cycles exhibit identically vanishing action variation ($\delta \mathcal{S} \equiv 0$).
 
 ```lean
@@ -1457,11 +1502,23 @@ $$
 $$
 
 **III. Invariance of Transport and Curvature**
-The Wasserstein distance $W_1$ is defined by the infimum over couplings $\Pi(\mu_u, \mu_v)$. Since both the cost function (metric) and the marginals (measures) transform covariantly under $\pi$, the optimal transport cost is invariant:
+The Wasserstein distance $W_1$ is defined by the infimum over couplings $\Pi(\mu_u, \mu_v)$. Let $p$ be a coupling of the original marginals and define $p'(\pi(x),\pi(y))=p(x,y)$. Bijection of the labels gives
 
 $$
-W_1(\mu'_{\pi(u)}, \mu'_{\pi(v)}) = W_1(\mu_u, \mu_v).
+\begin{aligned}
+\sum_y p'(\pi(x),\pi(y))&=\sum_y p(x,y)=\mu_u(x)=\mu'_{\pi(u)}(\pi(x)),\\
+\sum_x p'(\pi(x),\pi(y))&=\sum_x p(x,y)=\mu_v(y)=\mu'_{\pi(v)}(\pi(y)).
+\end{aligned}
 $$
+
+The cost satisfies
+
+$$
+\sum_{x,y}\bar d'(\pi(x),\pi(y))p'(\pi(x),\pi(y))
+=\sum_{x,y}\bar d(x,y)p(x,y).
+$$
+
+Taking the infimum gives $W_1(\mu'_{\pi(u)},\mu'_{\pi(v)})\le W_1(\mu_u,\mu_v)$. Applying the same construction with $\pi^{-1}$ gives the reverse inequality.
 
 Consequently, the local curvature $K'(e') = K(e)$ is invariant for every edge.
 
@@ -1496,38 +1553,37 @@ Section 13.3.4 formalizes the properties of the QBD lemma regarding discrete sch
 :::tip[**Verification via the Envelope Theorem applied to the Wasserstein Dual Linear Program**]
 :::
 
-Specifically, for any infinitesimal deformation of the edge metric $\delta d_{ab}$ that preserves the triangle inequality structure, the weighted summation of the curvature response satisfies the identity:.
+**I. Weighted metric extension**
+
+Assign positive lengths to the edges of the fixed graph and let $d$ be the corresponding undirected shortest-path metric. Hold the lazy-law marginals fixed (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). For an edge $(a,b)$ define $W_{ab}=W_1(\mu_a,\mu_b)$ computed with $d$ and $K_{ab}=1-W_{ab}/d(a,b)$. The denominator is the ground distance between the endpoints (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />).
+
+**II. First variation**
+
+At a differentiable length variation,
 
 $$
-\sum_{(a,b) \in E} N_{ab} \delta K_{ab} = 0,
+\delta\!\left(\frac{W_{ab}}{d(a,b)}\right)
+=\frac{\delta W_{ab}}{d(a,b)}
+ -\frac{W_{ab}}{d(a,b)^2}\delta d(a,b),
+\qquad
+\delta K_{ab}
+=-\frac{\delta W_{ab}}{d(a,b)}
+ +\frac{W_{ab}}{d(a,b)^2}\delta d(a,b).
 $$
 
-where $N_{ab}$ represents the effective multiplicity or volume weight of the edge in the transport network. This identity ensures that the total action variation $\delta \mathcal{S}$ derives exclusively from topological transitions (edge creation/annihilation) rather than from the continuous deformation of the embedding metric, establishing the orthogonality of metric variation to the topological action principle.
-**I. Formulation of Curvature Variation**
-The local graph curvature is defined by the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />, where $K_{ab} = 1 - W_1(\mu_a, \mu_b) / d_{ab}$. Consider a variation in the metric lengths $\delta d_{xy}$ across the graph.
+For a locally stable minimizing plan $\pi^*$ and fixed marginals, $\delta W_{ab}=\sum_{x,y}\pi^*(x,y)\delta d(x,y)$. Changes of shortest paths or transport optimizers require a corresponding sensitivity analysis.
 
-**II. Transport Cost Variation (Envelope Theorem)**
-By the Kantorovich-Rubinstein duality theorem, the Wasserstein-1 distance $W_1$ maps transport costs to metric distance constraints **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />. By the **Envelope Theorem**, the exact derivative of $W_1$ with respect to the edge distance constraints $d_{xy}$ is given by the dual optimal flow $f_{xy}^{*(a,b)}$:
+**III. Common rescaling**
 
-$$
-\frac{\partial W_1(\mu_a, \mu_b)}{\partial d_{xy}} = f_{xy}^{*(a,b)}.
-$$
-
-**III. Orthogonality of Metric Variation**
-Summing over all edges in the graph, the total action variation with respect to metric deformations evaluates to:
+For $s>0$, rescaling all lengths by $s$ gives $d_s=sd$. Every feasible plan has its cost multiplied by $s$, so
 
 $$
-\sum_{e \in E} N_e \delta K_e = \sum_{(x,y) \in E} \delta d_{xy} \left( \sum_{(a,b)} \frac{f_{xy}^{*(a,b)}}{d_{ab}} - K_{xy} \right).
+W_{ab}(d_s)=\inf_\pi\sum_{x,y}s d(x,y)\pi(x,y)=sW_{ab}(d),
+\qquad
+K_{ab}(d_s)=1-\frac{sW_{ab}(d)}{sd(a,b)}=K_{ab}(d).
 $$
 
-In the thermodynamic equilibrium state governed by **Uniform Curvature Bound** <Ref id="5.5.6" label="§5.5.6" />, the background probability transport is symmetric and isotropic. The dual flow sum $\sum_{(a,b)} f_{xy}^{*(a,b)}$ balances the local metric edge length $d_{xy} K_{xy}$ up to quadratic discreteness corrections $\mathcal{O}(\ell_0^2)$. Thus, for any metric deformation $\delta d_{xy}$ preserving the triangle inequality:
-
-$$
-\sum_{e \in E} N_e \delta K_e = \mathcal{O}(\ell_0^2 \|\delta d\|_\infty) \xrightarrow{\ell_0 \to 0} 0.
-$$
-
-**IV. Conclusion**
-The total variation of the action with respect to metric deformations vanishes identically in the continuum limit, confirming **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" />.
+Thus each curvature variation along a common rescaling is zero. A cancellation for general weighted deformations requires a separate estimate for the sum of the first variations.
 
 Q.E.D.
 

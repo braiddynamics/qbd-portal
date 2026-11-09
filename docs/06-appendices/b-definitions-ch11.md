@@ -149,7 +149,7 @@ Section 11.2.3 formalizes the properties of the QBD theorem regarding causal geo
 :::info[**Verification of Probability Normalization through the Exhaustive Enumeration of Neighborhood Configurations**]
 :::
 
-For any finite directed graph $G=(V,E)$ and any vertex $u \in V$, the function $\mu_u: V \to [0,1]$ established by the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> constitutes a valid probability measure. Specifically, it satisfies the non-negativity condition $\mu_u(x) \ge 0$ for all $x$, and the normalization condition $\sum_{x \in V} \mu_u(x) = 1$, regardless of the topological configuration of the neighborhoods of $u$.
+Let $G=(V,E)$ be a finite causal graph satisfying irreflexivity and asymmetry (**Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). Then the lazy causal law $\mu_u$ is a probability measure at every $u\in V$ (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />).
 
 **In Plain English:**  
 Section 11.2.4 formalizes the properties of the QBD lemma regarding measure validity.
@@ -162,13 +162,13 @@ Section 11.2.4 formalizes the properties of the QBD lemma regarding measure vali
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> and  **Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />
+Irreflexivity gives $u\notin N^+(u)\cup N^-(u)$. Asymmetry gives $N^+(u)\cap N^-(u)=\varnothing$, since membership in both would require $u\to x$ and $x\to u$ (**Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). The three support sets are therefore pairwise disjoint.
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
 $$
 
-we apply the fixed parameter constraint $\alpha + 2\beta = 1$, where $\alpha, \beta > 0$. The proof proceeds by exhaustively summing the mass over these components for the four possible topological states of $u$.
+we apply the fixed parameter constraint $\alpha + 2\beta = 1$, where $\alpha, \beta > 0$ (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). The proof proceeds by exhaustively summing the mass over these components for the four possible topological states of $u$.
 
 **II. Case 1: Fully Connected Topology**
 Assume $N^+(u) \neq \emptyset$ and $N^-(u) \neq \emptyset$. The indicator functions $\mathbb{I}[\emptyset]$ evaluate to 0.
@@ -273,13 +273,13 @@ print_case("Balanced Topology (u=1)", mu1, sum1)
 mu0, sum0 = lazy_mu(0, G_chain)
 print_case("Empty Past (u=0)", mu0, sum0)
 
-# 2. Reverse Chain: 0 <- 1 <- 2 (to simulate empty future at u=2)
+# 2. Reverse Chain: 0 <- 1 <- 2
 G_rev = nx.DiGraph()
 G_rev.add_edges_from([(1,0), (2,1)])
 
-# Case 3: Empty Future (u=2, has past but no future)
-mu2, sum2 = lazy_mu(2, G_rev)
-print_case("Empty Future (u=2)", mu2, sum2)
+# Case 3: Empty Future (u=0, has past but no future)
+mu_sink, sum_sink = lazy_mu(0, G_rev)
+print_case("Empty Future (u=0)", mu_sink, sum_sink)
 
 # 3. Isolated Node
 G_iso = nx.DiGraph()
@@ -301,8 +301,8 @@ Case: Empty Past (u=0)
   Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
-Case: Empty Future (u=2)
-  Map: {2: 0.6667, 1: 0.3333}
+Case: Empty Future (u=0)
+  Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
 Case: Isolated Singularity (u=99)
@@ -323,7 +323,7 @@ Section 11.2.4.2 formalizes the properties of the QBD calculation regarding meas
 :::info[**Optimization of Informational Entropy via the Selection of the Tripartite Laziness Parameter**]
 :::
 
-For any vertex $u$ possessing balanced causal degrees $ d_+ = |N^+(u)| = d_- = |N^-(u)| = d \geq 1 $, the Shannon entropy $H(\mu_u) = -\sum_{x \in V} \mu_u(x) \log \mu_u(x)$ is maximized when the laziness parameter satisfies $\alpha = 1/3$.
+Let $u$ have disjoint, nonempty past and future neighborhoods of equal size, with sector masses $(\beta,\alpha,\beta)$ and $\alpha+2\beta=1$. Then the temporal sector entropy $-\alpha\log\alpha-2\beta\log\beta$ is uniquely maximized at $\alpha=\beta=1/3$.
 
 **In Plain English:**  
 Section 11.2.5 formalizes the properties of the QBD lemma regarding entropy maximization.
@@ -383,14 +383,16 @@ $$
 
 **V. Derivation of the First Order Condition**
 The location of the extremum requires the computation of the first derivative $\frac{\mathrm{d}h}{\mathrm{d}\alpha}$. Applying the product rule $\frac{\mathrm{d}}{\mathrm{d}x}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
-1.  **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
-2.  **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
+1. **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
+2. **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
 
-    $$
-    \frac{\mathrm{d}}{\mathrm{d}\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
-    $$
+    $$
+    \frac{\mathrm{d}}{\mathrm{d}\alpha}\bigl[-(1-\alpha)\log(1-\alpha)\bigr]
+    =\log(1-\alpha)-(1-\alpha)\frac{-1}{1-\alpha}
+    =\log(1-\alpha)+1.
+    $$
 
-3.  **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
+3. **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
 
 Combining these components yields:
 
@@ -429,7 +431,7 @@ $$
 For any $\alpha$ in the domain $(0,1)$, both terms $-\frac{1}{1-\alpha}$ and $-\frac{1}{\alpha}$ assume strictly negative values. Thus, $h''(\alpha) < 0$ universally across the domain. This strict concavity guarantees that the stationary point $\alpha = 1/3$ represents a unique global maximum.
 
 **VIII: Global Optimality Conclusion**
-Maximizing the uncertainty of the temporal locus necessitates the exact equipartition of probability mass among the Past, Present, and Future causal sectors. This establishes the parameters $\alpha = \beta = 1/3$ as the necessary condition for thermodynamic equilibrium in the unbiased geometry.
+Maximizing the uncertainty of the temporal locus necessitates the exact equipartition of probability mass among the Past, Present, and Future causal sectors. This establishes the unique maximizer of the specified three-sector entropy.
 
 Q.E.D.
 
@@ -445,7 +447,7 @@ Section 11.2.5.1 formalizes the properties of the QBD proof regarding entropy ma
 
 Verification of the entropic equilibrium parameters established by **Entropy Maximization** <Ref id="11.2.5.1" label="§11.2.5.1" /> is based on the following protocols:
 
-1.  **Entropy Computation:** The algorithm performs a bounded numerical optimization of the allocation entropy $h(\alpha)$ to locate the global maximum.
+1.  **Entropy Computation:** The algorithm optimizes the allocation entropy $h(\alpha)$. In the balanced fixture with one vertex per past and future sector, the sector entropy equals the vertex entropy. The sensitivity comparison varies the vertex-level multiplicities.
 2.  **Derivative Evaluation:** The protocol executes a derivative check at the critical laziness value $\alpha = 1/3$ to verify that the theoretical derivative is zero within machine precision tolerance.
 3.  **Sensitivity Analysis:** The metric tracks the shift of optimal laziness under structural sparsity to evaluate entropic pressure.
 
@@ -567,40 +569,37 @@ Section 11.2.6 formalizes the properties of the QBD lemma regarding metric neces
 :::tip[**Demonstration of Divergence in Directed Transport due to the Analysis of Acausal Backward Paths**]
 :::
 
-The analysis demonstrates that any metric structure strictly respecting the directed topology of an acyclic causal graph generates divergent or undefined Wasserstein transport costs for a non-negligible set of vertex pairs, thereby rendering the curvature $K$ uncomputable. The geometric framework therefore decouples the connectivity metric from the causal directionality, delegating the latter entirely to the asymmetry of the probability measures.
+**I. Directed ground cost**
 
-**I. Formulation of the Directed Transport Problem**
-Consider a directed graph $G = (V, E)$ satisfying the acyclicity condition implicit in the causal structure **acyclic effective causality** <Ref id="2.7.1" label="§2.7.1" />. Let $d_{\text{dir}}(x,y)$ denote the directed geodesic distance, defined as the infimum of the lengths of all directed paths from $x$ to $y$. If no directed path exists from $x$ to $y$, the distance diverges: $d_{\text{dir}}(x,y) = \infty$. The associated Wasserstein-1 transport cost between two measures $\mu_u$ and $\mu_v$ defines itself as:
+Let $d_{\rm dir}$ assign to an ordered pair the length of its shortest directed path, with value $\infty$ if there is no such path. A finite-cost coupling $\pi$ can have $\pi(x,y)>0$ only if $d_{\rm dir}(x,y)<\infty$ (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />).
+
+**II. Marginal obstruction on a directed fork**
+
+For the fork $u\to v,\ u\to z$, both $v$ and $z$ are terminal vertices. The future sector at $u$ places $\beta/2$ at $z$, whereas the law at $v$ is supported on $\{u,v\}$. Since $z$ reaches only itself,
 
 $$
-W_1^{\text{dir}}(\mu_u, \mu_v) = \inf_{\pi \in \Pi(\mu_u, \mu_v)} \sum_{x,y \in V} d_{\text{dir}}(x,y) \pi(x,y).
+\sum_y\pi(z,y)=\pi(z,z)=\mu_u(z)=\frac{\beta}{2}>0,
+\qquad
+0\le\pi(z,z)\le\sum_x\pi(x,z)=\mu_v(z)=0 .
 $$
 
-**II. Identification of the Singular Configuration**
-Consider two adjacent vertices $u, v$ connected by a directed edge $(u, v)$. The evaluation of the curvature $K(u,v)$ requires the computation of $W_1(\mu_u, \mu_v)$.
-The lazy causal measure $\mu_v$ allocates a strictly positive probability mass $\beta > 0$ to its past neighborhood $N^-(v)$.
-The lazy causal measure $\mu_u$ allocates a strictly positive probability mass $\beta > 0$ to its future neighborhood $N^+(u)$.
-Let $y \in N^+(u)$ be a future neighbor of $u$, and let $x \in N^-(v)$ be a past neighbor of $v$.
-A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. If the topology is tree-like (as in the sparse equilibrium limit **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />), the supports may be disjoint.
+Thus every coupling has infinite directed cost for this pair.
 
-**III. Analysis of Acausal Transport Requirements**
-In the event that the optimal coupling $\pi$ assigns non-zero mass to a transition from a future-located vertex $y \in N^+(u)$ to a past-located vertex $x \in N^-(v)$, the cost function evaluates the directed distance $d_{\text{dir}}(y, x)$.
-Given the edge orientation $u \to v$, the vertex $y$ resides in the causal future of $u$, while $x$ resides in the causal past of $v$. A directed path from $y$ to $x$ would imply a trajectory $y \rightsquigarrow u \to v \rightsquigarrow x$. However, by definition, $x \to v$ (past neighbor implies edge into $v$), and $u \to y$ (future neighbor implies edge out of $u$).
-A path $y \to x$ requires moving against the causal flow. In a Directed Acyclic Graph (DAG), no such return path exists.
-Consequently, $d_{\text{dir}}(y, x) = \infty$.
+**III. Undirected ground cost on an edge**
 
-**IV: Divergence of the Transport Integral**
-If the marginal distributions $\mu_u$ and $\mu_v$ necessitate any mass transfer between causally separated regions that lack a forward directed path, the transport integral diverges. Specifically, if the total mass in $N^+(u)$ exceeds the capacity of $N^+(v)$ to absorb it via forward paths, the surplus mass must flow to $u$, $v$, or $N^-(v)$.
-Transport from $N^+(u)$ to $N^-(v)$ incurs infinite cost.
-Transport from $N^+(u)$ to $u$ (backwards across the edge) incurs infinite cost.
-Thus, for a broad class of local configurations, $W_1^{\text{dir}}(\mu_u, \mu_v) = \infty$.
-This yields a curvature value $K = 1 - \infty = -\infty$, which constitutes a singularity rather than a geometric measurement.
+For any edge $(u,v)$, the law at either endpoint is supported within one hop of that endpoint (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). Hence for each $x$ in the source support and $y$ in the target support,
 
-**V. Violation of Metric Space Axioms**
-The directed distance $d_{\text{dir}}$ further fails the symmetry axiom of a metric space, $d(x,y) = d(y,x)$. While extended definitions of Optimal Transport (e.g., asymmetric transport) exist, they require finite costs. The presence of infinite costs in the "reverse" direction of time violates the condition for a bounded Lipschitz constant, preventing the convergence of the dual Kantorovich potentials. The geometry becomes ill-posed.
+$$
+\bar d(x,y)\le\bar d(x,u)+\bar d(u,v)+\bar d(v,y)\le1+1+1=3 .
+$$
 
-**VI: Conclusion**
-The undirected metric $\bar{d}$ resolves these singularities by assigning finite positive values to acausal links (e.g., $\bar{d}(y,x) < \infty$), effectively interpreting "distance" as "separation in the causal graph" rather than "causal reachability." The distinction between past and future is not lost but is instead encoded in the probability masses of $\mu_u$ and $\mu_v$ (the "tilt" of the measure) rather than the manifold metric itself. This separation ensures that $K(u,v)$ remains finite, bounded, and computable for all edges.
+The product coupling is feasible by normalization of the two laws. Its cost bounds the optimum:
+
+$$
+W_1(\mu_u,\mu_v)\le
+\sum_{x,y}\bar d(x,y)\mu_u(x)\mu_v(y)
+\le 3\left(\sum_x\mu_u(x)\right)\left(\sum_y\mu_v(y)\right)=3 .
+$$
 
 Q.E.D.
 
@@ -756,7 +755,7 @@ Section 11.2.7 formalizes the properties of the QBD lemma regarding compensation
 :::tip[**Verification of Directional Curvature Sensitivity by the Computation of Transport Costs on Asymmetric Measures**]
 :::
 
-The asymmetry inherent in the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> modulates the Wasserstein distance $W_1(\mu_u, \mu_v)$ such that the resulting curvature $K(u,v)$ accurately reflects the causal delay and information propagation along the directed edge $(u,v)$.
+The boundary fallback in the lazy law changes the masses used in the transport calculation (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). The chain example computes that change in the undirected ground metric.
 
 **I. Topological Instantiation**
 The proof analyzes a minimal directed chain configuration $G = (V, E)$ with $V = \{A, B, C\}$ and edges $E = \{(A,B), (B,C)\}$. The proof fixes the laziness parameters at the entropic optimum $\alpha = 1/3$ and $\beta = 1/3$ **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />. The undirected shortest-path metric $\bar{d}$ assigns the following values to the vertex pairs:
@@ -806,17 +805,24 @@ Comparing the marginals:
 * **At B:** Source has $1/3$, Target has $1/3$. Balanced.
 * **At C:** Source has $0$, Target has $1/3$. Excess demand $-1/3$.
 
-The optimal transport plan $\pi^*$ identifies the stationary components and the moving components:
+A feasible transport plan has the following components.
 1.  **Stationary Mass at A:** Transport $1/3$ from $\mu_A(A)$ to $\mu_B(A)$. Cost: $\bar{d}(A,A) \times 1/3 = 0$.
 2.  **Stationary Mass at B:** Transport $1/3$ from $\mu_A(B)$ to $\mu_B(B)$. Cost: $\bar{d}(B,B) \times 1/3 = 0$.
-3.  **Moving Mass:** The remaining $1/3$ at $\mu_A(A)$ must transport to the vacancy at $\mu_B(C)$. Cost: $\bar{d}(A,C) \times 1/3 = 2 \times 1/3 = 2/3$.
+3.  **Moving Mass:** The plan sends the remaining $1/3$ from $A$ to $C$. Cost: $\bar{d}(A,C) \times 1/3 = 2 \times 1/3 = 2/3$.
 
 **V. Evaluation of Curvature**
-The total Wasserstein distance sums the contributions:
+The displayed plan gives $W_1(\mu_A,\mu_B)\le 2/3$. Let $f(x)=\bar d(x,C)$. By the triangle inequality, $f(x)-f(y)\le\bar d(x,y)$. For any feasible coupling $\pi$,
 
 $$
-W_1(\mu_A, \mu_B) = 0 + 0 + 2/3 = 2/3.
+\begin{aligned}
+\sum_{x,y}\bar d(x,y)\pi(x,y)
+&\ge\sum_{x,y}(f(x)-f(y))\pi(x,y)\\
+&=\sum_x f(x)\mu_A(x)-\sum_y f(y)\mu_B(y)\\
+&=\tfrac13 f(A)-\tfrac13 f(C)=\tfrac23.
+\end{aligned}
 $$
+
+The two bounds give $W_1(\mu_A,\mu_B)=2/3$.
 
 The Causal Ollivier-Ricci curvature for the edge $(A,B)$ computes as:
 
@@ -825,7 +831,14 @@ K(A,B) = 1 - W_1(\mu_A, \mu_B) = 1 - 2/3 = 1/3.
 $$
 
 **VI: Conclusion**
-The non-zero cost $W_1 = 2/3$ arises entirely from the necessity of transporting mass from the "stuck" past of $A$ (due to the empty history) to the future of $B$. Even though the metric $\bar{d}$ is undirected, the probability measures encode the arrow of time: $\mu_A$ lags behind $\mu_B$. The geometry correctly identifies this lag as a positive distance, yielding a finite, positive curvature $K=1/3$ that signifies stable causal propagation.
+Let $G^{\rm rev}$ reverse every edge. Its two neighbor sectors interchange, preserving their equal weights and their fallback rule. Therefore $\mu_x^{\rm rev}=\mu_x$ and $\bar d^{\rm rev}=\bar d$. For a coupling $\pi$ of $\mu_A,\mu_B$, transposition gives a coupling of $\mu_B,\mu_A$ with cost
+
+$$
+\sum_{x,y}\bar d(x,y)\pi(y,x)=\sum_{x,y}\bar d(y,x)\pi(x,y)
+=\sum_{x,y}\bar d(x,y)\pi(x,y).
+$$
+
+The computed mass difference distinguishes the boundary vertex from the interior vertex. The ordered neighbor sectors retain their separate direction labels.
 
 Q.E.D.
 
@@ -839,7 +852,7 @@ Section 11.2.7.1 formalizes the properties of the QBD proof regarding compensati
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> is based on the constraints verified in **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the following protocols:
+The fixture checks boundary and interior masses in the lazy law (**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />). The transport uses the undirected ground cost (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />). The protocols are as follows.
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -965,7 +978,7 @@ Verification Pass:  True
 **Conclusion:**
 
 The simulation provides exact confirmation of the analytical proof.
-Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This validates that the asymmetry of the measures successfully enforces a directional transport cost, compensating for the undirected metric.
+Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This checks the effect of different boundary and interior masses on the symmetric ground transport cost.
 
 **In Plain English:**  
 Section 11.2.7.2 formalizes the properties of the QBD calculation regarding compensation verification.
@@ -1036,10 +1049,10 @@ The derivation (**Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.
 Under **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />, for every vertex $u \in V$, the object $\mu_u$ is guaranteed to constitute a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
 
 **II. Metric Finiteness and Stability**
-In **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />, the undirected shortest-path metric $\bar{d}$ is established as strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
+Directed shortest-path cost is infinite for the specified fork marginals. The undirected metric yields $W_1(\mu_u,\mu_v)\le3$ for every edge because the two laws are supported within one hop of its endpoints (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />).
 
 **III. Causal Fidelity and Orientation**
-As demonstrated in **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
+The chain example compares the mass law of a boundary vertex with that of an interior vertex (**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />). The two temporal sectors have equal weights at the sector-entropy optimum (**Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />). The aggregate law is invariant when these sectors are interchanged. The directed edge set and the ordered sector labels carry the orientation.
 
 **IV. Curvature Boundedness**
 Since $\bar{d}(x,y) \le \text{diam}(G)$ and $\mu_u, \mu_v$ are probability measures, the Wasserstein distance is bounded by $0 \le W_1 \le \text{diam}(G)$. Consequently, the curvature $K = 1 - W_1$ is strictly bounded within $[1 - \text{diam}(G), 1]$. In the sparse equilibrium regime where diameters of relevant neighborhoods are small, this bound tightens effectively to $[-1, 1]$.
@@ -1104,70 +1117,44 @@ Section 11.3.3 formalizes the properties of the QBD lemma regarding measure dilu
 :::tip[**Formal Derivation of Shared Mass Existence from Neighborhood Cardinalities**]
 :::
 
-Specifically, the probability mass allocated to the shared vertex $w$ in both the past-measure of $u$ ($\mu_u^{(1)}$) and the future-measure of $v$ ($\mu_v^{(1)}$) is strictly positive, satisfying:.
+**I. The two changing sectors**
+
+Write $A_u=N_0^-(u)$, $A_v=N_0^+(v)$ and $d_i=|A_i|$ for $i\in\{u,v\}$. After adjoining $v\to w$ and $w\to u$, the respective sets become $A_u\cup\{w\}$ and $A_v\cup\{w\}$. The future sector of $u$ and past sector of $v$ retain their old weights (**Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />).
+
+**II. Redistribution with the empty-sector rule**
+
+For either changing sector let $\nu_i$ be the uniform probability law on $A_i$ if $d_i>0$ and $\delta_i$ if $d_i=0$. The post-update sector law follows from equal allocation within that sector (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). It is
 
 $$
-\mu_u^{(1)}(w) > 0 \quad \text{and} \quad \mu_v^{(1)}(w) > 0.
+\nu_i^{(1)}=\frac{d_i}{d_i+1}\nu_i+\frac1{d_i+1}\delta_w.
 $$
 
-This positive allocation occurs via the dilution of probability mass from the pre-existing neighborhoods $N_0^-(u)$ and $N_0^+(v)$, reducing the weight on legacy vertices by factors of proportional to their neighborhood growth.
-
-The proof proceeds by explicitly constructing the neighborhood sets and applying the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> to the pre-nucleation graph $G_0$ and the post-nucleation graph $G_1$. Let $\alpha, \beta$ be the fixed parameters of the measure, strictly positive (specifically $\alpha=\beta=1/3$).
-
-**I. Pre-Nucleation State ($G_0$)**
-Let $u, v \in V_0$ be vertices connected by a directed edge $(u,v)$.
-Define the antecedent neighborhoods relevant to the transport from $u$ to $v$:
-1.  **Past of $u$:** $N_0^-(u) = \{x \in V_0 \mid (x,u) \in E_0\}$. Let $n_u^- = |N_0^-(u)|$.
-2.  **Future of $v$:** $N_0^+(v) = \{y \in V_0 \mid (v,y) \in E_0\}$. Let $n_v^+ = |N_0^+(v)|$.
-
-The antecedent measure $\mu_u^{(0)}$ allocates mass to the past neighborhood $N_0^-(u)$ according to the uniform rule:
+For $d_i>0$ each old neighbor has weight $(d_i/(d_i+1))(1/d_i)=1/(d_i+1)$, and for $d_i=0$ the formula gives the point mass at $w$. Multiplying by the sector weight $\beta$ and subtracting the old sector gives
 
 $$
-\forall x \in N_0^-(u), \quad \mu_u^{(0)}(x) = \frac{\beta}{n_u^-}.
+\begin{aligned}
+\mu_u^{(1)}-\mu_u^{(0)}&=\frac{\beta}{d_u+1}(\delta_w-\nu_u),\\
+\mu_v^{(1)}-\mu_v^{(0)}&=\frac{\beta}{d_v+1}(\delta_w-\nu_v).
+\end{aligned}
 $$
 
-Critically, since the new vertex $w \notin V_0$, the measure at $w$ is identically zero: $\mu_u^{(0)}(w) = 0$.
-
-**II. Nucleation Event**
-The transition $G_0 \to G_1$ introduces the vertex $w$ and the edges $(v,w)$ and $(w,u)$, completing the cycle $u \to v \to w \to u$.
-The neighborhoods update as follows:
-1.  **New Past of $u$:** $N_1^-(u) = N_0^-(u) \cup \{w\}$. The cardinality increments: $|N_1^-(u)| = n_u^- + 1$.
-2.  **New Future of $v$:** $N_1^+(v) = N_0^+(v) \cup \{w\}$. The cardinality increments: $|N_1^+(v)| = n_v^+ + 1$.
-
-**III. Post-Nucleation Measures**
-We apply the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> to the updated graph $G_1$.
-
-* **For the Measure $\mu_u^{(1)}$:**
-    The total mass $\beta$ assigned to the past component is now distributed over $n_u^- + 1$ vertices. The mass allocated to the new vertex $w$ is:
-
-    $$
-    \mu_u^{(1)}(w) = \frac{\beta}{|N_1^-(u)|} = \frac{\beta}{n_u^- + 1}.
-    $$
-
-    Since $\beta > 0$ and $n_u^- \ge 0$, this quantity is strictly positive.
-    Simultaneously, the mass on any legacy neighbor $x \in N_0^-(u)$ undergoes dilution:
-
-    $$
-    \mu_u^{(1)}(x) = \frac{\beta}{n_u^- + 1} < \frac{\beta}{n_u^-} = \mu_u^{(0)}(x).
-    $$
-
-* **For the Measure $\mu_v^{(1)}$:**
-    The total mass $\beta$ assigned to the future component is distributed over $n_v^+ + 1$ vertices. The mass allocated to $w$ is:
-
-    $$
-    \mu_v^{(1)}(w) = \frac{\beta}{|N_1^+(v)|} = \frac{\beta}{n_v^+ + 1}.
-    $$
-
-    Since $\beta > 0$ and $n_v^+ \ge 0$, this quantity is strictly positive.
-
-**IV. Conclusion**
-The topological adjunction of the cycle necessitates that both $\mu_u^{(1)}$ and $\mu_v^{(1)}$ acquire shared support at $w$. Specifically, there exists a shared mass $m_w$:
+For a nonempty old sector the change at each legacy neighbor is
 
 $$
-m_w = \min\left( \mu_u^{(1)}(w), \mu_v^{(1)}(w) \right) = \min\left( \frac{\beta}{n_u^- + 1}, \frac{\beta}{n_v^+ + 1} \right) > 0.
+\frac{\beta}{d_i+1}-\frac{\beta}{d_i}
+=-\frac{\beta}{d_i(d_i+1)}.
 $$
 
-This establishes the existence of a probability bridge required for transport cost reduction.
+For an empty old sector the change at the endpoint is $-\beta$.
+
+**III. Shared successor mass**
+
+The old laws extended by zero to $w$ have no mass there. Writing $a_i=\beta/(d_i+1)$ gives
+
+$$
+\mu_u^{(1)}(w)=a_u,\qquad \mu_v^{(1)}(w)=a_v,\qquad
+\boxed{m_w=\min(a_u,a_v)>0}.
+$$
 
 Q.E.D.
 
@@ -1193,78 +1180,40 @@ Section 11.3.4 formalizes the properties of the QBD lemma regarding transport fe
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+**I. Residual marginals**
 
-The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
-
-**I. Decomposition of Post-Nucleation Measures**
-we compute the strictly positive shared mass at vertex $w$ as established in the preceding lemma:
+Let $m_w=\min(\mu_u^{(1)}(w),\mu_v^{(1)}(w))$ and set $r=\mu_u^{(1)}-m_w\delta_w$, $s=\mu_v^{(1)}-m_w\delta_w$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). Both residuals are nonnegative. The coupling uses the same marginal convention (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />). The residual masses are
 
 $$
-m_w = \min\left( \mu_u^{(1)}(w), \mu_v^{(1)}(w) \right) > 0.
+\sum_x r(x)=1-m_w=M,\qquad \sum_y s(y)=M .
 $$
 
-We decompose the probability measures $\mu_u^{(1)}$ and $\mu_v^{(1)}$ into a contribution from this shared mass and a residual distribution supported primarily on the antecedent vertex set $V_0$:
+Since $m_w\le\beta<1$, $M>0$.
+
+**II. A feasible plan**
+
+On $V_1\times V_1$ define
 
 $$
-\mu_u^{(1)} = m_w \delta_w + \mu_u^{rem},
+\pi_1(x,y)=m_w\mathbf 1_{x=y=w}+\frac{r(x)s(y)}{M}.
 $$
 
+If the two masses at $w$ differ, the larger law retains its excess there in the residual term. The two marginal calculations give
+
 $$
-\mu_v^{(1)} = m_w \delta_w + \mu_v^{rem},
+\begin{aligned}
+\sum_y\pi_1(x,y)
+&=m_w\mathbf 1_{x=w}+\frac{r(x)}{M}\sum_y s(y)
+=m_w\mathbf 1_{x=w}+r(x)=\mu_u^{(1)}(x),\\
+\sum_x\pi_1(x,y)
+&=m_w\mathbf 1_{y=w}+\frac{s(y)}{M}\sum_x r(x)
+=m_w\mathbf 1_{y=w}+s(y)=\mu_v^{(1)}(y).
+\end{aligned}
 $$
 
-where $\delta_w$ denotes the Dirac delta measure concentrated at $w$. The residual measures $\mu_u^{rem}$ and $\mu_v^{rem}$ constitute non-negative measures with total mass $1 - m_w$. Their support covers $V_0$, plus any excess mass at $w$ if $\mu_u^{(1)}(w) \neq \mu_v^{(1)}(w)$.
+**III. Cost of the fixed mass**
 
-**II. Construction of the Coupling Kernel $\pi_1$**
-we compute the transport plan $\pi_1: V_1 \times V_1 \to [0,1]$ as the linear superposition of a static diagonal coupling and a scaled residual coupling.
-
-1.  **The Static Component ($\pi_{static}$):**
-    For the shared mass $m_w$, we substitute a strict identity transport from $w$ to $w$.
-
-    $$
-    \pi_{static}(x,y) = \begin{cases} m_w & \text{if } x = w \text{ and } y = w, \\ 0 & \text{otherwise.} \end{cases}
-    $$
-
-2.  **The Residual Component ($\pi_{rem}$):**
-    we compute the transport for the remaining mass $(1 - m_w)$ by creating a scaled mapping of the antecedent optimal plan $\pi_0^*$. Let $\pi_0^*(x,y)$ be the optimal coupling between the normalized antecedent measures $\mu_u^{(0)}$ and $\mu_v^{(0)}$. we compute $\pi_{rem}(x,y)$ for $x,y \in V_0$ as follows:
-
-    $$
-    \pi_{rem}(x,y) = (1 - m_w) \cdot \pi_0^*(x,y).
-    $$
-
-    In cases where the neighborhood dilution is non-uniform (where $|N_0^-(u)| \neq |N_0^+(v)|$), this definition necessitates a re-weighting factor to strictly match marginals. For the purposes of proving feasibility and strict inequality, we apply require that $\pi_{rem}$ maps the support of $\mu_u^{rem}$ to $\mu_v^{rem}$ within $V_0$ using paths available in $G_0$. Since the supports of $\mu_u^{rem}$ and $\mu_v^{rem}$ reside as subsets of $V_0$ (plus potentially $w$), such a coupling exists and satisfies the requisite bounds.
-
-**III. Verification of Marginal Constraints**
-To demonstrate that $\pi_1 = \pi_{static} + \pi_{rem}$ constitutes a valid plan, we sum its rows and columns.
-
-* **Row Sums (Source Constraints):**
-    For $x = w$:
-
-    $$
-    \sum_{y \in V_1} \pi_1(w,y) = \pi_{static}(w,w) + \sum_{y} \pi_{rem}(w,y) = m_w + \mu_u^{rem}(w) = \mu_u^{(1)}(w).
-    $$
-
-    For $x \in V_0$:
-
-    $$
-    \sum_{y \in V_1} \pi_1(x,y) = 0 + \mu_u^{rem}(x) = \mu_u^{(1)}(x).
-    $$
-
-* **Column Sums (Target Constraints):**
-    For $y = w$:
-
-    $$
-    \sum_{x \in V_1} \pi_1(x,w) = \pi_{static}(w,w) + \sum_{x} \pi_{rem}(x,w) = m_w + \mu_v^{rem}(w) = \mu_v^{(1)}(w).
-    $$
-
-    For $y \in V_0$:
-
-    $$
-    \sum_{x \in V_1} \pi_1(x,y) = 0 + \mu_v^{rem}(y) = \mu_v^{(1)}(y).
-    $$
-
-Since $\pi_1$ remains non-negative and satisfies $\sum_{y} \pi_1(x,y) = \mu_u^{(1)}(x)$ and $\sum_{x} \pi_1(x,y) = \mu_v^{(1)}(y)$, it qualifies as a feasible coupling.
+At least one residual has zero mass at $w$, so $r(w)s(w)=0$. Thus $\pi_1(w,w)=m_w$ and its diagonal cost is $\bar d_1(w,w)m_w=0$. The remaining cost depends on the residual coupling.
 
 Q.E.D.
 
@@ -1278,7 +1227,13 @@ Section 11.3.4.1 formalizes the properties of the QBD proof regarding transport 
 :::info[**Demonstration of Strict Inequality via Wasserstein Distances**]
 :::
 
-Given the system, the Wasserstein-1 transport cost associated with the feasible plan $\pi_1$ in the nucleated graph $G_1$ is strictly less than the optimal transport cost $W_1^{(0)}$ required in the antecedent graph $G_0$
+Let a fresh-vertex update adjoin $v\to w$ and $w\to u$ to an old edge $u\to v$, with $\alpha=\beta=1/3$ and with the old ground metric on the two full endpoint supports equal to the unit double-star metric. Then, with $a_u=\beta/(|N_0^-(u)|+1)$, $a_v=\beta/(|N_0^+(v)|+1)$ and $m_w=\min(a_u,a_v)$, the optimal cost satisfies
+
+$$
+W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}>0.
+$$
 
 **In Plain English:**  
 Section 11.3.5 formalizes the properties of the QBD lemma regarding cost contraction (phase 3).
@@ -1290,86 +1245,54 @@ Section 11.3.5 formalizes the properties of the QBD lemma regarding cost contrac
 :::tip[**Formal Bounding of Transport Costs via Component Analysis**]
 :::
 
-Specifically, the cost satisfies the inequality $W_1(\pi_1) < W_1^{(0)}$, a reduction necessitated by the zero-cost transport of the shared probability mass fraction $m_w$ at the nucleated vertex $w$. Consequently, the true optimal Wasserstein distance $W_1^{(1)}$ in the successor graph must also satisfy this strict upper bound.
+**I. Support metric**
 
-The proof proceeds by evaluating the transport cost functional for the hybrid plan $\pi_1$ constructed as established in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and comparing it term-wise to the antecedent cost.
-
-**I. Definition of the Cost Functional**
-The total cost of the transport plan $\pi_1$ is defined as the expectation of the distance metric $\bar{d}_1$ over the coupling distribution:
+Let $L_u,L_v$ denote the noncentral leaves attached to $u,v$ in the double star. The old supports are contained in $\{u,v\}\cup L_u$ and $\{u,v\}\cup L_v$, respectively. In the new graph any old-to-old path using $w$ can replace the segment $u-w-v$ by the old unit edge $u-v$. Old distances are therefore unchanged. Also
 
 $$
-C(\pi_1) = \sum_{x \in V_1} \sum_{y \in V_1} \bar{d}_1(x,y) \cdot \pi_1(x,y).
+\bar d_1(w,x)=1+\min\bigl(\bar d_0(u,x),\bar d_0(v,x)\bigr)
 $$
 
-**II. Decomposition into Static and Residual Terms**
-Substituting the decomposition $\pi_1 = \pi_{static} + \pi_{rem}$ established previously **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />:
+for each old support vertex $x$, since $w$ has exactly those two neighbors. Consequently the new support metric is the leaf network on the unit triangle $u,v,w$ (**Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" />).
+
+**II. Old optimal cost**
+
+Each leaf of $L_u$ carries only source mass, and each leaf of $L_v$ carries only target mass. A unit of mass at such a leaf contributes one unit of cost through its attachment edge. Move the source leaf masses to $u$ and account for the target leaf masses at $v$. The remaining net mass at $u$ is
 
 $$
-C(\pi_1) = \sum_{x,y} \bar{d}_1(x,y) \cdot \pi_{static}(x,y) + \sum_{x,y} \bar{d}_1(x,y) \cdot \pi_{rem}(x,y).
+s=\mu_u^{(0)}(u)+\mu_u^{(0)}(L_u)-\mu_v^{(0)}(u)
+=1-\mu_u^{(0)}(v)-\mu_v^{(0)}(u)\ge1-2\beta=\tfrac13.
 $$
 
-1.  **Analysis of the Static Component ($C_{static}$):**
-    The static component is non-zero only when $x=y=w$.
-
-    $$
-    C_{static} = \bar{d}_1(w,w) \cdot \pi_{static}(w,w) = 0 \cdot m_w = 0.
-    $$
-
-    The contribution of the shared mass to the total cost is identically zero.
-
-2.  **Analysis of the Residual Component ($C_{rem}$):**
-    The residual component operates on the antecedent vertex set $V_0$. Substituting the definition $\pi_{rem}(x,y) = (1 - m_w) \cdot \pi_0^*(x,y)$:
-
-    $$
-    C_{rem} = \sum_{x,y \in V_0} \bar{d}_1(x,y) \cdot (1 - m_w) \cdot \pi_0^*(x,y).
-    $$
-
-    Factor out the scalar $(1 - m_w)$:
-
-    $$
-    C_{rem} = (1 - m_w) \sum_{x,y \in V_0} \bar{d}_1(x,y) \cdot \pi_0^*(x,y).
-    $$
-
-    We invoke the property that the distance metric is non-increasing under edge addition. For any $u,v \in V_0$, the shortest path in $G_1$ cannot be longer than the shortest path in $G_0$ (since $E_0 \subset E_1$). Therefore, $\bar{d}_1(x,y) \le \bar{d}_0(x,y)$.
-
-    $$
-    C_{rem} \le (1 - m_w) \sum_{x,y \in V_0} \bar{d}_0(x,y) \cdot \pi_0^*(x,y).
-    $$
-
-    The summation term is precisely the definition of the antecedent optimal cost $W_1^{(0)}$.
-
-    $$
-    C_{rem} \le (1 - m_w) \cdot W_1^{(0)}.
-    $$
-
-**III. Strict Inequality**
-Combining the components yields the bound for the hybrid plan:
+The deficit at $v$ is $s$. The leaf-edge costs and the central cut give a lower bound on every coupling, since each shipment pays its distance in the double star. Matching the excess to the deficit across $u-v$ attains that bound. Hence
 
 $$
-C(\pi_1) = 0 + C_{rem} \le (1 - m_w) \cdot W_1^{(0)}.
+W_1^{(0)}=\mu_u^{(0)}(L_u)+\mu_v^{(0)}(L_v)+s.
 $$
 
-we conclude via **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> that the shared mass is strictly positive ($m_w > 0$). Furthermore, in the antecedent sparse graph $G_0$, the neighborhoods are disjoint, implying a non-zero initial transport distance ($W_1^{(0)} > 0$).
-Therefore, the scaling factor $(1 - m_w)$ is strictly less than 1, and the product is strictly less than $W_1^{(0)}$:
+**III. New optimal cost**
+
+Let $I_u=\mathbf 1_{N_0^-(u)\ne\varnothing}$ and $I_v=\mathbf 1_{N_0^+(v)\ne\varnothing}$. The successor leaf masses are $\mu_u^{(0)}(L_u)-a_u I_u$ and $\mu_v^{(0)}(L_v)-a_v I_v$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). If a changing sector was empty, its lost mass came from its endpoint. After the leaf costs are counted, the signed source-minus-target imbalances at the triangle vertices are therefore
 
 $$
-C(\pi_1) < W_1^{(0)}.
+(s-a_u,\ -s+a_v,\ a_u-a_v).
 $$
 
-**IV. Optimality Conclusion**
-The true Wasserstein distance $W_1^{(1)}$ is defined as the infimum over all valid couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$. Since $\pi_1$ is a valid coupling (as proven in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />), the optimal cost must be less than or equal to the cost of $\pi_1$:
+Since $a_u,a_v\le\beta\le s$, the total excess to ship is
 
 $$
-W_1^{(1)} \le C(\pi_1).
+s-a_u+\max(0,a_u-a_v)=s-\min(a_u,a_v)=s-m_w .
 $$
 
-By transitivity:
+All triangle distances between distinct vertices are one. Every feasible coupling incurs at least the forced leaf costs plus the total excess across the triangle. This is attained by retaining common masses, sending leaf excess to its attachment and leaf demand from its attachment, and routing the triangle excess directly to its deficits. The resulting paths decompose into shipments from original source vertices to original target vertices. Replacing any such path by a shortest path can only reduce cost, so the resulting coupling attains the lower bound.
+
+**IV. Difference**
+
+Subtracting the exact costs gives
 
 $$
-W_1^{(1)} < W_1^{(0)}.
+\boxed{W_1^{(0)}-W_1^{(1)}=m_w+a_u I_u+a_v I_v>0}.
 $$
-
-The transport cost strictly contracts upon nucleation.
 
 Q.E.D.
 
@@ -1396,38 +1319,36 @@ Section 11.3.6 formalizes the properties of the QBD lemma regarding action-compl
 :::
 
 **I. Action Definition**
-The variation in action is the sum of curvature changes over all edges affected by the update.
+Let $I_0=\{e\in E_0:e\text{ meets }u\text{ or }v\}$. An old-to-old path using $w$ can replace $u-w-v$ by $u-v$, and old paths remain available. Thus $\bar d_1|_{V_0\times V_0}=\bar d_0$. Only the laws at $u,v$ change among old vertices (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). For $e\in E_0\setminus I_0$, its two marginals and its ground costs on their supports are identical before and after the update, so $K_1(e)-K_0(e)=0$. Hence
 
 $$
-\Delta \mathcal{S} = \mathcal{S}[G_1] - \mathcal{S}[G_0] = \sum_{e \in G_1} K_1(e) - \sum_{e \in G_0} K_0(e).
+\begin{aligned}
+\Delta\mathcal S
+&=\sum_{e\in E_0}(K_1(e)-K_0(e))+K_1(v,w)+K_1(w,u)\\
+&=\sum_{e\in I_0}(K_1(e)-K_0(e))+K_1(v,w)+K_1(w,u).
+\end{aligned}
 $$
 
-**II. Localized Perturbation**
-The nucleation of a 3-cycle affects the curvature primarily on the three edges of the cycle: $(u,v), (v,w), (w,u)$.
-Effects on distant edges vanish due to the exponential decay of correlations **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, limiting the effective radius of the perturbation to $\xi$.
+**II. Cycle and incident-edge contributions**
+
+The exact decomposition into the central edge, the two new edges and the other old incident edges is
 
 $$
-\Delta \mathcal{S} \approx \Delta K_{uv} + \Delta K_{vw} + \Delta K_{wu}.
+\Delta\mathcal S
+=K_1(u,v)-K_0(u,v)+K_1(v,w)+K_1(w,u)
++\sum_{e\in I_0\setminus\{(u,v)\}}\bigl(K_1(e)-K_0(e)\bigr).
 $$
 
-**III. Curvature Contribution**
-From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, $\Delta K_{uv} > 0$ holds. For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a positive value due to the shared neighbor $w$ in the triad.
-From **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, the shared mass fraction $m_w = \min\left(\frac{\beta}{n_u^-+1}, \frac{\beta}{n_v^++1}\right)$ is bounded below by $m_{\text{min}} = \frac{\beta}{n_{\text{max}}+1} > 0$.
-The net action variation per cycle insertion satisfies the strict analytical bounds:
+If the tree ground-metric premise holds, the central term equals $W_1^{(0)}-W_1^{(1)}>0$ (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />). The fresh vertex adds exactly one directed triangle because its only incident edges are $v\to w$ and $w\to u$, and the return from $u$ to $v$ closes it. Thus $\Delta N_3=1$. A common coefficient per insertion would require control of the complete sum above.
+
+**III. Error of a cycle-only estimate**
+
+Let $C_\gamma=K_1(u,v)-K_0(u,v)+K_1(v,w)+K_1(w,u)$. The error of the cycle-only estimate satisfies
 
 $$
-\frac{\beta}{n_{\text{max}} + 1} \le c \le 3(1 - K_{\text{min}}).
+\left|\Delta\mathcal S-C_\gamma\right|
+\le\sum_{e\in I_0\setminus\{(u,v)\}}|K_1(e)-K_0(e)|.
 $$
-
-Since $n_{\text{max}} < \infty$ by **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />, the constant $c > 0$ is strictly bounded away from zero.
-
-**IV. Conclusion**
-
-$$
-\Delta \mathcal{S} = c \cdot 1 = c \cdot \Delta N_3.
-$$
-
-The growth of the action tracks the growth of topological complexity linearly.
 
 Q.E.D.
 
@@ -1602,10 +1523,9 @@ K_post:  1.0000
 
 **Conclusion:**
 
-The verification confirms the entire proof chain.
-The post-state measures show shared mass at node 2 ($m_w = 0.333$), confirming **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />. The Wasserstein distance drops from 0.667 to 0.0, confirming the strict inequality of **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />.
+The fixture closes the existing chain $0\to1\to2$ with $2\to0$. The two post-update laws are equal, so the Wasserstein cost on the tracked edge drops from $2/3$ to zero and its curvature increases by $2/3$.
 
-Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The calculation estimates a curvature gain of $\approx 0.46$ in the realistic sparse regime, confirming the proportionality of the subsequent **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
+The separate sparse estimate uses the assigned dilution and transport factors, giving $1.2(1/3)/(1+0.087)\simeq0.3680$. The action comparison would additionally require the contributions of the other affected edges (**Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />).
 
 **In Plain English:**  
 Section 11.3.6.3 formalizes the properties of the QBD calculation regarding monotonicity verification.

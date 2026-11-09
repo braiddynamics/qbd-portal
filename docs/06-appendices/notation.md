@@ -352,7 +352,6 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
 | $N$ | Lapse function (coordinate update rate) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
 | $N^i$ | Shift vector (coordinate spatial offset) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $\vert\Psi\rangle$ | Wavefunction of the universe | [§14.1.4.1](/monograph/stage/time/14.1/#14.1.4.1) |
 | $\mathcal{H}_{\text{rel}}$ | Relational Hamiltonian constraint operator | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
 | $\hat{H}$ | Hamiltonian constraint operator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
 | $\Lambda$ | Cosmological constant | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
