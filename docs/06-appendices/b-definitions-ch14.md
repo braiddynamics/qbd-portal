@@ -527,7 +527,21 @@ g(e_i,e_j)=h(e_i,e_j)=\delta_{ij},\qquad
 g(e_0,e_i)=-N\,\mathrm dT(e_i)=0.
 $$
 
-**III. Metric reconstruction**
+**III. Oriented spatial frame freedom**
+
+Keep $e_0$ fixed. For $O\in SO(3)$ set $e'_i=\sum_j O_i{}^j e_j$. Then
+
+$$
+\begin{aligned}
+g(e'_i,e'_k)&=\sum_{j,l}O_i{}^jO_k{}^l\delta_{jl}
+=(OO^{\mathsf T})_{ik}=\delta_{ik},\\
+g(e'_i,e_0)&=\sum_j O_i{}^j g(e_j,e_0)=0 .
+\end{aligned}
+$$
+
+Conversely, for two oriented orthonormal bases of the complement the matrix $O_i{}^j=g(e'_i,e_j)$ is orthogonal, and the common orientation gives $\det O=1$. A Lorentz frame transformation fixing $e_0$ preserves its orthogonal complement, so the subgroup fixing this time leg is $SO(3)$. For isotropic spatial covariance $C=\sigma^2 I_3$, the rotated covariance is $OCO^{\mathsf T}=\sigma^2 I_3$.
+
+**IV. Metric reconstruction**
 
 For the dual coframe $\theta^a$ with $\theta^a(e_b)=\delta^a_b$, the tensor $\eta_{ab}\theta^a\otimes\theta^b$ evaluates on $e_c,e_d$ to $\eta_{cd}=g(e_c,e_d)$. Since these vectors form a basis,
 
@@ -982,44 +996,36 @@ Section 14.3.3 formalizes the properties of the QBD lemma regarding poincaré co
 
 ### 14.3.3.1 Proof: Poincaré Covariance {#14.3.3.1}
 
-:::tip[**Derivation of Unitary Group Representations from the Limit of Discrete Graph Automorphisms**]
+:::tip[**Derivation of Smeared Field Covariance from the Represented Spacetime Action**]
 :::
 
-The field operators $\phi(x)$ transform covariantly under the adjoint action of this group:.
+**I. Spacetime representation input**
+
+On the Minkowski comparison sector of **Poincaré Covariance** <Ref id="14.3.3" label="§14.3.3" />, assume a strongly continuous unitary action $U(g)$ of the proper orthochronous Poincaré group or its spin cover. Write $g x=\Lambda x+a$ and let $S$ be the field-component representation of the Lorentz factor or its lift. On a common invariant dense domain, assume the represented field distribution satisfies $U(g)\Phi(x)U(g)^{-1}=S(\Lambda^{-1})\Phi(g x)$ in matrix elements.
+
+**II. Covariance on smeared fields**
+
+Use the bilinear test pairing $\Phi(f)=\int f(x)^{\mathsf T}\Phi(x)\,\mathrm d^4x$ for a compactly supported smooth column of tests $f$. The volume Jacobian of $y=\Lambda x+a$ is one. Thus
 
 $$
-U(\Lambda, a) \phi(x) U(\Lambda, a)^{-1} = S(\Lambda^{-1}) \phi(\Lambda x + a)
+\begin{aligned}
+U(g)\Phi(f)U(g)^{-1}
+&=\int f(x)^{\mathsf T}S(\Lambda^{-1})\Phi(\Lambda x+a)\,\mathrm d^4x\\
+&=\int \bigl[S(\Lambda^{-1})^{\mathsf T} f(\Lambda^{-1}(y-a))\bigr]^{\mathsf T}
+\Phi(y)\,\mathrm d^4y\\
+&=\Phi\!\left(S(\Lambda^{-1})^{\mathsf T}(f\circ g^{-1})\right).
+\end{aligned}
 $$
 
-where $S(\Lambda)$ is the finite-dimensional representation of the Lorentz group appropriate to the spin of the field. This covariance is rigorously derived not as a fundamental postulate, but as the inevitable continuum limit of the **Statistical Homogeneity** and **Statistical Isotropy** of the underlying equilibrium causal graph.
+**III. Quantum time evolution and graph stationarity**
 
-The proof establishes the existence of the generators of the Poincaré group by identifying the corresponding symmetries in the statistical ensemble of the causal graph.
-
-**I. Translation Invariance (Homogeneity)**
-Under Hypothesis H4 **Optimal Structure** <Ref id="3.2" label="§3.2" />, the equilibrium graph $G^*$ is established as statistically homogeneous. In the continuum limit, the generator of these discrete shifts maps to the momentum operator $\hat{P}^\mu$. Since the Hamiltonian $H$ (graph evolution operator) commutes with these shifts for the equilibrium state, the system is translationally invariant: $[H, \hat{P}^\mu] = 0$.
-
-**II. Rotation Invariance (Isotropy)**
-Under Hypothesis H5 **Only Maximal Parallelism Preserves Vacuum Symmetry** <Ref id="3.3" label="§3.3" />, the equilibrium graph is established as statistically isotropic. The distribution of edge directions emerging from any vertex $v$ converges uniformly to the Haar measure on the sphere $S^2$. Consequently, the action of the effective Hamiltonian is invariant under the group of global spatial rotations $SO(3)$. The generators of these rotations are identified with the angular momentum operators $\hat{J}^{ij}$.
-
-**III. Boost Invariance (Lorentzian Geometry)**
-As proved in **Causal Isomorphism** <Ref id="14.2.4" label="§14.2.4" />, the causal order of the graph maps isomorphically to the conformal structure of the Lorentzian manifold. By the **Alexandrov-Zeeman Theorem**, the group of bijections that preserve the causal order on a Minkowski spacetime is exactly the Poincaré group (plus dilations). Since the physics is defined solely by causal propagation on the graph, the theory must be invariant under the group of causal automorphisms, the Lorentz group $SO(1,3)$.
-
-**IV. Unitarity**
-The graph tick acts on probability laws as a Markov kernel (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). For example the stochastic matrix
+The graph tick acts on probability laws as a Markov kernel (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />). The stochastic matrix $P=\tfrac12\begin{pmatrix}1&1\\1&1\end{pmatrix}$ preserves total probability and sends $(1,-1)^{\mathsf T}$ to zero. On an admitted quantum sector with Hermitian generator $H$ (**Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />), the quantum evolution obeys
 
 $$
-P=\frac12\begin{pmatrix}1&1\\1&1\end{pmatrix}
+U(t)^\dagger U(t)=e^{-it H}e^{it H}=I .
 $$
 
-preserves total probability, while $P(1,-1)^{\mathsf T}=0$. It therefore does not preserve the Hilbert norm.
-
-On an admitted finite-dimensional quantum sector with Hermitian generator $H$, the one-parameter action $U(t)=e^{itH}$ satisfies
-
-$$
-U(t)^\dagger U(t)=e^{-i t H}e^{i t H}=I
-$$
-
-(**Lie Algebra Generator** <Ref id="8.1.1" label="§8.1.1" />). Poincaré covariance additionally uses a unitary action of the spacetime symmetry group on the represented fields and its intertwining law. The sector calculation supplies norm preservation for the admitted quantum evolution.
+The one-parameter norm calculation concerns quantum time evolution. Covariance of the fields uses the full spacetime action and intertwiner in Steps I and II.
 
 Q.E.D.
 
@@ -1065,7 +1071,7 @@ $$
 
 **III. Scope of the two identities**
 
-The classical stationarity calculation supplies a probability law. The existence and cyclicity of the quantum vacuum refer to the represented Hilbert space.
+In the represented Hilbert space, cyclicity means that the span of $\Phi(f_1)\cdots\Phi(f_m)|0\rangle$ over $m\ge0$ and all admitted test functions is dense. Vacuum uniqueness means that the invariant-vector subspace is $\mathbb C|0\rangle$. These are separate representation conditions used in the synthesis. The classical stationarity calculation concerns the invariant probability law $\pi$ on graph configurations.
 
 Q.E.D.
 
@@ -1088,33 +1094,33 @@ Section 14.3.5 formalizes the properties of the QBD lemma regarding spectral con
 
 ### 14.3.5.1 Proof: Spectral Condition {#14.3.5.1}
 
-:::tip[**Demonstration of Energy Boundedness imposed by the Geometric Constraints on Braid Deformation**]
+:::tip[**Derivation of Forward Spectral Support from Positive Energy and Boost Covariance**]
 :::
 
-Specifically, for any physical state $|\psi\rangle$, the expectation value of the energy is bounded from below, $E \ge 0$, and the invariant mass satisfies the relativistic condition $m^2 = -g_{\mu\nu} P^\mu P^\nu \ge 0$. This condition prevents the existence of negative-energy states (tachyons or ghosts), thereby guaranteeing the thermodynamic stability of the vacuum and the physical realizability of the emergent field theory.
+**I. Translation spectrum and positive energy**
 
-The proof derives the positivity of energy directly from the discrete combinatorics of the underlying graph substrate, where "energy" is rigorously identified with the count of logic gates (complexity).
+On the represented Poincaré sector of **Poincaré Covariance** <Ref id="14.3.3" label="§14.3.3" />, let $P^\mu$ be the joint generators of the strongly continuous unitary translation subgroup. Denote their joint spectral measure by $E$. For **Spectral Condition** <Ref id="14.3.5" label="§14.3.5" />, assume the time generator has nonnegative spectrum and the boost representation acts on the joint measure by $U(\Lambda)E(B)U(\Lambda)^{-1}=E(\Lambda B)$. Invariance of the vacuum under translations gives $P^\mu|0\rangle=0$ on that vector.
 
-**I. Vacuum Normalization**
-The vacuum state $|0\rangle$, defined as the maximum entropy equilibrium graph $G^*$, serves as the reference ground state. The Hamiltonian operator $\hat{H}$ is defined relative to this background such that $\hat{H}|0\rangle = 0$. This renormalization removes the divergent zero-point energy of the vacuum fluctuations, isolating the energy contribution of topological defects.
+**II. Exclusion of spacelike spectral points**
 
-**II. Positive Definiteness of Mass**
-A massive particle state $|\psi_m\rangle$ corresponds to a stable topological braid $\beta$ embedded in the graph. the **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> (Topological Mass) establishes that the rest mass of the particle is strictly proportional to its irreducible complexity $N_3$ (the crossing number):
+If $p=(p^0,\boldsymbol p)$ lies in the joint spectral support, then $p^0\ge0$. Suppose $p^0<\|\boldsymbol p\|$. Choose a boost of speed $\beta$ along $\boldsymbol p$ with $p^0/\|\boldsymbol p\|<\beta<1$. Its time component is
 
 $$
-m = \mu \cdot N_3(\beta)
+(\Lambda p)^0=\frac{p^0-\beta\|\boldsymbol p\|}{\sqrt{1-\beta^2}}<0 .
 $$
 
-where $\mu > 0$ is the mass gap constant. Since $N_3$ represents a cardinal count of discrete geometric features (twists), it is defined on the domain of non-negative integers $\mathbb{N}_0$. Consequently, $m \ge 0$ is a structural necessity; a braid cannot possess "negative crossings."
+By continuity there is a neighborhood $B$ of $p$ whose boost lies in the negative-energy half-space. Since $p$ is in the support, $E(B)\ne0$, so $E(\Lambda B)=U(\Lambda)E(B)U(\Lambda)^{-1}\ne0$. This contradicts the positive-energy hypothesis.
 
-**III. Kinetic Contribution**
-The total energy of a propagating state includes the kinetic term derived from the graph evolution. Since the metric signature is Lorentzian $(-1, +1, +1, +1)$ and the causal propagation speed is bounded by $c=1$ (**Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />), the dispersion relation satisfies:
+**III. Forward cone**
+
+It follows that
 
 $$
-E^2 = |\boldsymbol{p}|^2 + m^2
+p^0\ge\|\boldsymbol p\|,\qquad
+-g_{\mu\nu}p^\mu p^\nu=(p^0)^2-\|\boldsymbol p\|^2\ge0
 $$
 
-Since the squared momentum $|\boldsymbol{p}|^2 \ge 0$ and the squared mass $m^2 \ge 0$, the total energy squared $E^2$ is non-negative. Selection of the positive root (consistent with the future-directed time evolution) ensures $E \ge 0$.
+throughout the joint spectrum in the Minkowski comparison frame. The nonnegative topological mass of **Topological Mass** <Ref id="6.3.3" label="§6.3.3" /> is a discrete count calibration. Positive energy of the represented time generator is a separate premise in the spectral calculation.
 
 Q.E.D.
 
@@ -1137,42 +1143,47 @@ Section 14.3.6 formalizes the properties of the QBD lemma regarding microcausali
 
 ### 14.3.6.1 Proof: Microcausality {#14.3.6.1}
 
-:::tip[**Derivation of Local Commutativity enabled by the Factorization of Hilbert Spaces for Disconnected Subgraphs**]
+:::tip[**Derivation of Local Graded Commutativity from Separated Support and Product Limits**]
 :::
 
-Specifically, for any two points $x, y \in M$ separated by a spacelike interval with respect to the emergent metric $g_{\mu\nu}$:.
+**I. Local support in the representation**
+
+For smooth test functions $f,g$ with spacelike-separated supports in the continuum comparison, assume the represented discrete approximants have separated operator supports. This is a localization premise relating the graph to the spacetime separation of **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />. In the even tensor-product case assume the supports act on distinct factors of a common sector, in the setting of **Fault-Tolerance (QECC)** <Ref id="3.5" label="§3.5" />.
+
+**II. Exact local product**
+
+For operators $A_t=O_{u,t}\otimes I_v$ and $B_t=I_u\otimes O_{v,t}$ on the two factors, the two orders satisfy
 
 $$
-[\phi(x), \phi(y)]_{\pm} = 0 \quad \text{if} \quad (x-y)^\mu (x-y)^\nu g_{\mu\nu} > 0
+\begin{aligned}
+A_t B_t&=(O_{u,t}\otimes I_v)(I_u\otimes O_{v,t})=O_{u,t}\otimes O_{v,t},\\
+B_t A_t&=(I_u\otimes O_{v,t})(O_{u,t}\otimes I_v)=O_{u,t}\otimes O_{v,t}.
+\end{aligned}
 $$
 
-where the commutator $[-]$ applies to bosonic fields and the anti-commutator $\{-\}$ applies to fermionic fields. This condition is the rigorous algebraic manifestation of the graph-theoretic property that no information can propagate between vertices lacking a directed path, thereby preserving the causal structure of the theory against superluminal signaling.
-
-The proof derives the commutation relations from the fundamental locality of the graph update rules and the tensor product structure of the quantum state space.
-
-**I. Discrete Spacelike Separation**
-In the causal graph $G$, two vertices $u, v$ are defined as spacelike separated if and only if the intersection of the causal future of $u$ with $v$ is empty, and the intersection of the causal future of $v$ with $u$ is empty:
+For homogeneous operators of parities $p_A,p_B\in\{0,1\}$ in a represented graded tensor product, the multiplication rule is
 
 $$
-u \nprec v \quad \text{and} \quad v \nprec u
+(A\widehat\otimes B)(C\widehat\otimes D)
+=(-1)^{p_B p_C}(AC\widehat\otimes BD).
 $$
 
-By the **Axiom 1: The Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> (Causal Transfer), direct state influence propagates strictly along directed edges. Consequently, no sequence of updates originating at $u$ can affect the state at $v$ within the same logical time slice.
+For $A_t=O_{u,t}\widehat\otimes I_v$ and $B_t=I_u\widehat\otimes O_{v,t}$, the forward product is $O_{u,t}\widehat\otimes O_{v,t}$ because the middle factors are identities. The reverse product is $(-1)^{p_Ap_B}O_{u,t}\widehat\otimes O_{v,t}$, so $A_t B_t=(-1)^{p_Ap_B}B_t A_t$.
 
-**II. Operator Disconnection**
-The field operators $\hat{\phi}(u)$ correspond to local rewrite operations acting on the subgraph neighborhood centered at $u$. Let $\mathcal{H}_u$ and $\mathcal{H}_v$ be the local Hilbert spaces supported by the edge sets incident to $u$ and $v$. If $u$ and $v$ are spacelike separated, these support sets are disjoint: $E_u \cap E_v = \emptyset$.
+**III. Continuum product limit**
 
-**III. Tensor Product Commutativity**
-The global Hilbert space is constructed as the tensor product of local edge states (consistent with the QECC formulation in the **Fault-Tolerance (QECC)** <Ref id="3.5" label="§3.5" />). Operators acting on disjoint tensor factors strictly commute. Let $O_u$ act on $\mathcal{H}_u$ and $O_v$ act on $\mathcal{H}_v$:
+Use a common invariant dense domain $\mathcal D$. Suppose both product orders converge in matrix elements on $\mathcal D$ to the corresponding ordered products of the smeared limit fields. For $\psi,\chi\in\mathcal D$,
 
 $$
-[O_u \otimes I_v, I_u \otimes O_v] = 0
+\begin{aligned}
+&\left\langle\psi,
+\left(\Phi(f)\Phi(g)-(-1)^{p_Ap_B}\Phi(g)\Phi(f)\right)\chi\right\rangle\\
+&\quad=\lim_{t\to\infty}
+\left\langle\psi,\left(A_t B_t-(-1)^{p_Ap_B}B_t A_t\right)\chi\right\rangle=0 .
+\end{aligned}
 $$
 
-Since the field operators are linear combinations of such local operations, they inherit this commutativity.
-
-**IV. Continuum Limit**
-the **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" /> (Coincidence of Null Cones) establishes that the condition of graph disconnection $u \nprec v$ converges uniformly to the condition of metric spacelike separation $ds^2 > 0$ in the limit $N \to \infty$. Therefore, the algebraic independence of the discrete operators persists in the continuum field theory.
+Density gives the corresponding operator relation on $\mathcal D$ when the products act there. The locality result uses both the disjoint-support representation and the two product limits.
 
 Q.E.D.
 
@@ -1306,37 +1317,39 @@ Section 14.3.7 formalizes the properties of the QBD lemma regarding spin-statist
 
 ### 14.3.7.1 Proof: Spin-Statistics Relation {#14.3.7.1}
 
-:::tip[**Derivation of Statistics following the Exclusion of Negative Energy States from the Continuum Limit**]
+:::tip[**Derivation of the Local Exchange Sign via the Represented Graded Algebra**]
 :::
 
-This algebraic correspondence is not an independent postulate but a necessary consequence of the topological phase $\phi = (-1)^{2s}$ established in the **Topological Statistics** <Ref id="7.1.2" label="§7.1.2" /> combined with the Lorentz invariance of the emergent manifold. The consistency of the emergent Quantum Field Theory requires:.
+**I. Represented exchange phase**
+
+Use the representation bridge for the exchange phase (**Exchange-Rotation Equivalence** <Ref id="7.1.4.1" label="§7.1.4.1" />) that identifies the framed exchange with the central $2\pi$ spatial rotation on the spin-$s$ sector. On a magnetic weight $m=-s,-s+1,\ldots,s$,
+
+$$
+e^{-2\pi i m}=e^{2\pi i s} e^{-2\pi i(m+s)}=(-1)^{2s}.
+$$
+
+The integer $m+s$ gives the same scalar on every weight of that sector.
+
+**II. Grading and local field exchange**
+
+Assume that the represented field algebra has a grading for which a spin-$s$ field is homogeneous of parity $p\equiv2s\pmod2$. Assume the exchange is represented on products in the spacelike local algebras, with the separated-support and product-limit premises of **Microcausality** <Ref id="14.3.6" label="§14.3.6" />. For two smeared fields of the same parity, the represented sign is
+
+$$
+(-1)^{p^2}=(-1)^p=(-1)^{2s}.
+$$
+
+**III. Relations on the common domain**
+
+On the common invariant domain the graded relation for spacelike-separated supports becomes
 
 $$
 \begin{cases}
-\{\psi(x), \psi(y)\} = 0 & \text{for } s = n + \frac{1}{2} \\
-[\phi(x), \phi(y)] = 0 & \text{for } s = n
+\Phi_s(f)\Phi_s(g)-\Phi_s(g)\Phi_s(f)=0,& s\in\mathbb N_0,\\
+\Phi_s(f)\Phi_s(g)+\Phi_s(g)\Phi_s(f)=0,& s\in\mathbb N_0+\tfrac12 .
 \end{cases}
 $$
 
-at spacelike separations.
-
-The proof demonstrates that "wrong statistics" (e.g., commuting fermions) leads to catastrophic vacuum instability or causal violation, forcing the alignment of spin and statistics.
-
-**I. Topological Phase Origin**
-As established in **Topological Statistics** <Ref id="7.1.2" label="§7.1.2" />, the exchange of two identical fermions (tripartite braids) induces a topological phase factor of $-1$. This phase arises from the non-trivial fundamental group of the configuration space of braids; exchanging two twisted ribbons requires a $360^\circ$ relative rotation, which for spinors corresponds to the phase $e^{i 2\pi (1/2)} = -1$.
-
-**II. Field Operator Exchange**
-In the continuum QFT limit, the exchange of physical particles corresponds to the swapping of field operators in correlation functions. The algebra of the field operators must reflect the topology of the underlying states:
-* For fermions ($s=1/2$), the swap introduces a minus sign, requiring anticommutators.
-* For bosons ($s=0, 1$), the swap introduces a plus sign, requiring commutators.
-
-**III. The Pauli Constraints**
-Standard axiomatic QFT (the Pauli Spin-Statistics Theorem) proves that:
-1.  Quantizing half-integer spin fields with commutators leads to a Hamiltonian unbounded from below ($E \to -\infty$).
-2.  Quantizing integer spin fields with anticommutators leads to a vanishing propagator for spacelike separations (violation of causality).
-
-**IV. Substrate Enforcement**
-the **Spectral Condition** <Ref id="14.3.5" label="§14.3.5" /> (Spectral Condition) strictly enforces $E \ge 0$ based on the positivity of graph complexity. the **Microcausality** <Ref id="14.3.6" label="§14.3.6" /> (Microcausality) enforces strict causal independence. Therefore, the substrate axioms physically forbid the "wrong" quantization choices. The system is mathematically forced into the standard Spin-Statistics relation to survive the continuum limit.
+The phase calculation uses the framed exchange identification. The local operator relation uses the specified grading and the representation of exchange on products.
 
 Q.E.D.
 
@@ -1350,25 +1363,24 @@ Section 14.3.7.1 formalizes the properties of the QBD proof regarding spin-stati
 :::tip[**Formal Synthesis of the Necessary via Sufficient Conditions for Relativistic Quantum Field Theory**]
 :::
 
-The emergent physical reality of Quantum Braid Dynamics satisfies the complete set of Wightman axioms for a relativistic quantum field theory. This proof consolidates the preceding lemmas into a rigorous logical conjunction, demonstrating that the discrete substrate is isomorphic to the continuous axiomatic structure in the thermodynamic limit.
+**I. Represented fields and covariance**
 
-**I. Poincaré Covariance and Vacuum Stability**
-The state space admits a continuous unitary representation of the Poincaré group, $U(\Lambda, a)$, as established in **Poincaré Covariance** <Ref id="14.3.3" label="§14.3.3" />. Furthermore, as proved in **Vacuum Invariance (Haar Measure)** <Ref id="14.3.4" label="§14.3.4" />, the maximum entropy state $|0\rangle$ is the unique, invariant ground state.
+Use a positive-metric Hilbert space $\mathcal H$ with a common invariant dense domain $\mathcal D$ for the smeared field operators. For the Wightman formulation, assume the fields are operator-valued tempered distributions on that domain. The strongly continuous unitary action and field intertwiner of **Poincaré Covariance** <Ref id="14.3.3" label="§14.3.3" /> give $U(g)\Phi(f)U(g)^{-1}=\Phi(f_g)$ with $f_g$ the transformed test function.
 
-**II. Spectral Condition and Positivity**
-The identification of mass with topological complexity ($N_3 \ge 0$) from the **Spectral Condition** <Ref id="14.3.5" label="§14.3.5" /> strictly confines the energy-momentum spectrum to the forward light cone $\bar{V}^+$, ensuring stability.
+**II. Vacuum and translation spectrum**
 
-**III. Microcausality and Locality**
-The strict acyclicity of the underlying graph enforces the commutativity of field operators at spacelike separations as verified in **Microcausality** <Ref id="14.3.6" label="§14.3.6" />.
+Assume the unit invariant vacuum is unique up to phase and cyclic for the field algebra, as in **Vacuum Invariance (Haar Measure)** <Ref id="14.3.4" label="§14.3.4" />. In particular,
 
-**IV. Spin-Statistics and Fermi-Bose Symmetries**
-The topological phases of braid exchange from the **Spin-Statistics Relation** <Ref id="14.3.7" label="§14.3.7" /> necessitate the assignment of Fermi-Dirac statistics to half-integer spin fields and Bose-Einstein statistics to integer spin fields.
+$$
+\overline{\operatorname{span}\{\Phi(f_1)\cdots\Phi(f_m)|0\rangle:m\ge0\}}
+=\mathcal H .
+$$
 
-**V. Completeness and QFT Synthesis**
-The Hilbert space $\mathcal{H}_{braid}$ is spanned by the polynomial algebra of creation operators acting on the vacuum state, verifying completeness. Consequently, the vacuum is cyclic, and the theory describes a complete set of states.
+With independent positive energy of the time translation generator and covariance of the joint spectral measure, $\operatorname{supp}E\subseteq\bar V^+$ (**Spectral Condition** <Ref id="14.3.5" label="§14.3.5" />).
 
-**Conclusion:**
-The continuum limit of the causal graph dynamics constitutes a rigorous Relativistic Quantum Field Theory. The substrate instantiates the precise mathematical structure required by the Standard Model of particle physics.
+**III. Locality and exchange**
+
+Under the localization, grading, and product-limit premises of **Microcausality** <Ref id="14.3.6" label="§14.3.6" />, the spacelike products have graded commutator zero on $\mathcal D$. The represented exchange identification and parity assignment of **Spin-Statistics Relation** <Ref id="14.3.7" label="§14.3.7" /> give the sign $(-1)^{2s}$ for two fields of the same spin parity. These results yield the covariance, spectral, and locality relations for a represented continuum sector with the stated domain, regularity, and vacuum inputs.
 
 Q.E.D.
 

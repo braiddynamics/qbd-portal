@@ -342,7 +342,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $P_{\text{del}}(a,b)$ | Probability of edge deletion | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
 | $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§13.1.2.1](/monograph/stage/dynamics/13.1/#13.1.2.1) |
 | $\ell_0$ | Microscopic discreteness / Planck area element | [§13.1.5.1](/monograph/stage/dynamics/13.1/#13.1.5.1) |
-| $\kappa$ | Discrete gravitational coupling | [§13.2](/monograph/stage/dynamics/13.2/#13.2) |
+| $\kappa$ | Discrete gravitational coupling | [§13.2.5](/monograph/stage/dynamics/13.2/#13.2.5) |
 | $\mathcal{G}_{ab}$ | Discrete Einstein Tensor quantifying local curvature response | [§13.2.1](/monograph/stage/dynamics/13.2/#13.2.1) |
 | $\mathcal{G}_{ab}$ | Discrete Einstein tensor | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |
 | $R_{\text{disc}}$ | Discrete scalar curvature | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |

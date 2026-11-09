@@ -592,54 +592,45 @@ Section 13.2.3 formalizes the properties of the QBD lemma regarding variational 
 
 ### 13.2.3.1 Proof: Variational Action Principle {#13.2.3.1}
 
-:::tip[**Formal Demonstration via Action Stationarity at the Density Fixed Point**]
+:::tip[**Demonstration of Zero Mean Action Increment via Invariance of the Graph Law**]
 :::
 
-This equivalence is enforced by the **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, which establishes a bijective mapping between the variation in topological complexity $\delta N_3$ and the variation in geometric action $\delta \mathcal{S}$, such that the state of balanced creation and deletion fluxes corresponds precisely to the critical point of the action functional.
+**I. Action increment for a graph transition**
 
-**I. Variation of the Action Functional**
-The discrete Einstein-Hilbert action $\mathcal{S}[G]$ defines itself as the summation of the causal curvature $K(e)$ over the edge set $E$. The first variation of the action $\delta \mathcal{S}$ with respect to the graph topology corresponds to the differential change induced by the elementary transition $G \to G' = G \pm \{e\}$.
-
-$$
-\delta \mathcal{S} = \mathcal{S}[G \pm e] - \mathcal{S}[G] = \sum_{e' \in G'} K(e') - \sum_{e \in G} K(e).
-$$
-
-As established in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the curvature increment $\Delta K$ scales linearly with the 3-cycle count increment $\Delta N_3$ localized to the edge neighborhood. Consequently, the total action variation expresses as a linear function of the complexity variation:
+For a transition $G\to G'$ define $\Delta\mathcal S=\mathcal S(G')-\mathcal S(G)$, where $\mathcal S(G)=\sum_{e\in E(G)}K_G(e)$. The finite increment decomposes as
 
 $$
-\delta \mathcal{S} = c_K \cdot \delta N_3,
+\Delta\mathcal S
+=\sum_{e\in E(G)\cap E(G')}\bigl(K_{G'}(e)-K_G(e)\bigr)
++\sum_{e\in E(G')\setminus E(G)}K_{G'}(e)
+-\sum_{e\in E(G)\setminus E(G')}K_G(e).
 $$
 
-where $c_K > 0$ represents the geometric quantum constant derived from the transport cost reduction **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />.
+For the fresh-vertex cycle update this reduces to the incident-edge expression in **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
 
-**II. Flux Dynamics Relation**
-The temporal evolution of the global complexity $N_3$ follows the Master Equation dynamics governed by the net probability current $J_{net}$. The rate of change equals the difference between the constructive flux $J_{in}(\rho)$ (edge addition leading to cycle closure) and the destructive flux $J_{out}(\rho)$ (edge deletion leading to cycle breaking) **Macroscopic Evolution** <Ref id="5.2.2" label="§5.2.2" />:
+**II. Ensemble action at stationarity**
 
-$$
-\frac{d N_3}{dt} \propto J_{in}(\rho) - J_{out}(\rho).
-$$
-
-For a discrete logical time interval $\delta t$, the expectation value of the complexity variation satisfies:
+Let $P$ be the graph transition kernel and let $\pi P=\pi$ for a specified invariant graph law as in **Global Stationarity** <Ref id="13.1.3" label="§13.1.3" />. For integrable action, $G\sim\pi$ implies $G'\sim\pi P$. Hence
 
 $$
-\mathbb{E}[\delta N_3] \approx (J_{in} - J_{out}) \delta t.
+\begin{aligned}
+\mathbb E_\pi[\mathcal S(G')-\mathcal S(G)]
+&=\int\!\!\int \mathcal S(G')P(G,\mathrm dG')\,\pi(\mathrm dG)
+-\int \mathcal S(G)\,\pi(\mathrm dG)\\
+&=\int\mathcal S\,\mathrm d(\pi P)-\int\mathcal S\,\mathrm d\pi=0.
+\end{aligned}
 $$
 
-**III. Stationarity Condition**
-The Principle of Stationary Action imposes the constraint $\delta \mathcal{S} = 0$ upon the physical path of the system at equilibrium. Substituting the linearity relation yields the requisite condition on the topological complexity:
+**III. Mean complexity and the density fixed point**
+
+For integrable $N_3$ the same stationary-law identity gives
 
 $$
-\delta \mathcal{S} = 0 \implies \delta N_3 = 0.
+\mathbb E_\pi[\Delta N_3]
+=\int N_3\,\mathrm d(\pi P)-\int N_3\,\mathrm d\pi=0 .
 $$
 
-Substituting the flux dynamics yields the boundary condition on the probability currents:
-
-$$
-(J_{in} - J_{out}) \delta t = 0 \implies J_{in}(\rho) = J_{out}(\rho).
-$$
-
-**IV. Equivalence Conclusion**
-The condition $J_{in} = J_{out}$ constitutes the exact definition of the homeostatic fixed point $\rho^*$ within the thermodynamic state space **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. Thus, the state satisfying the variational principle $\delta \mathcal{S} = 0$ is isomorphic to the state satisfying the thermodynamic equilibrium condition $d\rho/dt = 0$.
+In the macroscopic master equation the homeostatic condition is a zero net density drift (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). The two expectation identities concern the evolution at the invariant law. A density variation would instead compare an identified family $\pi_\rho$, for example through the derivative of $A(\rho)=\int\mathcal S\,\mathrm d\pi_\rho$. Stationarity under $P$ supplies the first pair of identities at the fixed law. An extremum of $A(\rho)$ requires a variational relation across the family.
 
 Q.E.D.
 
@@ -662,54 +653,44 @@ Section 13.2.4 formalizes the properties of the QBD lemma regarding curvature-fl
 
 ### 13.2.4.1 Proof: Curvature-Flux Coupling {#13.2.4.1}
 
-:::tip[**Derivation of the Coupling Relation via the Work-Energy Theorem of the Graph**]
+:::tip[**Derivation of the Mean Action Increment via a Fixed-Environment Slot Difference**]
 :::
 
-specifically, for a variation $\delta g_{ab}$ corresponding to the activation or deactivation of the directed edge $(a,b)$, the action response satisfies the relation.
+**I. Single-slot action difference**
+
+Fix the environment $\eta$ outside the slot $(a,b)$ and let $G_\eta^{(0)},G_\eta^{(1)}$ be admissible configurations with the slot off and on. Write $D_\eta=\mathcal S(G_\eta^{(1)})-\mathcal S(G_\eta^{(0)})$. A transition that changes only this slot has
 
 $$
-\frac{\delta \mathcal{S}}{\delta g_{ab}} = \kappa T_{ab},
+\Delta\mathcal S=
+\begin{cases}
+D_\eta & \text{for addition},\\
+-D_\eta & \text{for deletion},\\
+0 & \text{for no change}.
+\end{cases}
 $$
 
-where $\kappa$ is the gravitational coupling constant derived from the emergent scales $\ell_0^2/\xi$. This coupling serves as the discrete analogue of the continuum relation $\frac{\delta S_{EH}}{\delta g_{\mu\nu}} \propto T_{\mu\nu}$, identifying the stress-energy tensor as the functional derivative of the geometric action and establishing the mechanism by which informational flux performs thermodynamic work on the graph geometry.
+The difference of actions includes changes in curvatures of retained edges, as in **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
 
-**I. Definition of the Configuration Space Variation**
-Let the topology of the causal graph be represented by the adjacency matrix elements $g_{ab} \in \{0, 1\}$. A variation $\delta g_{ab}$ denotes a state transition corresponding to the creation or annihilation of the directed edge $(a,b)$. The functional derivative of the action with respect to this variation is defined as the discrete difference quotient:
+**II. Accepted probabilities and the action mean**
 
-$$
-\frac{\delta \mathcal{S}}{\delta g_{ab}} \equiv \mathcal{S}[g_{ab}=1] - \mathcal{S}[g_{ab}=0].
-$$
-
-**II. Gradient Identification**
-The **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" /> determines that the injection of an edge $(a,b)$ participating in a 3-cycle $\gamma$ induces a positive definite curvature increment $\Delta K > 0$. The total action variation scales with the number of fundamental geometric quanta (3-cycles) generated or destroyed by the transition:
+For the conditional ensemble at fixed $\eta$, let $p_+(\eta),p_-(\eta)$ be the probabilities of accepted addition and deletion. The slot source is $T_{ab}(\eta)=p_+(\eta)-p_-(\eta)$ by **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />. Therefore
 
 $$
-\delta \mathcal{S} \propto \Delta N_3(\delta g_{ab}).
+\mathbb E[\Delta\mathcal S\mid\eta]
+=D_\eta p_+(\eta)-D_\eta p_-(\eta)
+=D_\eta T_{ab}(\eta),\qquad
+\mathbb E[\Delta\mathcal S]=\mathbb E[D_\eta T_{ab}(\eta)].
 $$
 
-This establishes that the gradient of the geometric action aligns with the gradient of the topological complexity.
+**III. Observable in a response law**
 
-**III. Conjugate Flux Identification**
-The discrete stress-energy tensor $T_{ab}$ is defined as the net probability flux density of edge updates **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />. In the thermodynamic limit, this tensor quantifies the expected rate of complexity change associated with the edge $(a,b)$:
-
-$$
-T_{ab} = P_{\text{add}}(a,b) - P_{\text{del}}(a,b) \propto \mathbb{E}\left[\frac{\Delta N_3}{\Delta t}\right].
-$$
-
-Consequently, the expected variation of the action over the update interval $\Delta t$ relates linearly to the tensor magnitude:
+For a specified family of perturbations indexed by a real parameter $s$, one possible action observable is $A(s)=\mathbb E_s[D_\eta T_{ab}(\eta)]$, with source observable $F(s)=\mathbb E_s[T_{ab}(\eta)]$. For example, if the difference is a fixed constant $D_\eta=D$ throughout that family, then
 
 $$
-\mathbb{E}[\delta \mathcal{S}] \propto T_{ab} \Delta t.
+A(s)-A(0)=D\bigl(F(s)-F(0)\bigr).
 $$
 
-**IV. Coupling Constant Derivation**
-The linear coefficient connecting the geometric response to the informational source defines the gravitational coupling $\kappa$. Equating the variational response to the source term yields the constitutive relation:
-
-$$
-\frac{\delta \mathcal{S}}{\delta g_{ab}} = \kappa T_{ab}.
-$$
-
-This relation identifies $T_{ab}$ as the generalized thermodynamic force conjugate to the geometric coordinate $g_{ab}$, validating the field equation as a work-energy relation where informational flux performs work to curve the graph.
+In varying environments the exact formula retains $D_\eta$ inside the expectation. A common constitutive coefficient for the macroscopic variation requires a specified family and a separate comparison of the action and source responses.
 
 Q.E.D.
 
@@ -1583,7 +1564,18 @@ W_{ab}(d_s)=\inf_\pi\sum_{x,y}s d(x,y)\pi(x,y)=sW_{ab}(d),
 K_{ab}(d_s)=1-\frac{sW_{ab}(d)}{sd(a,b)}=K_{ab}(d).
 $$
 
-Thus each curvature variation along a common rescaling is zero. A cancellation for general weighted deformations requires a separate estimate for the sum of the first variations.
+Thus each curvature variation along a common rescaling is zero.
+
+**IV. Conditional limit for other deformations**
+
+For a refining family choose fixed nonnegative edge weights $n_{t,e}$ with positive sum and set $N_{t,e}=n_{t,e}/\sum_{e'}n_{t,e'}$. The weighted action uses these normalized weights, held fixed during the variation. Suppose a comparison estimate on that family gives
+
+$$
+\left|\sum_{e\in E_t}N_{t,e}\delta K_e\right|
+\le C\ell_0^2\|\delta d\|_\infty .
+$$
+
+For $\sup_t\|\delta d\|_\infty\le M$ and $\ell_0\to0$, the weighted response has absolute value at most $CM\ell_0^2$ and tends to zero. The estimate is an additional premise for general deformations. The rescaling calculation gives zero on each edge at every finite mesh.
 
 Q.E.D.
 
@@ -1650,44 +1642,39 @@ Section 13.3.5.1 formalizes the properties of the QBD proof regarding bianchi er
 
 ### 13.3.6 Proof: Discrete Divergence-Free Geometry {#13.3.6}
 
-:::tip[**Formal Verification of the Discrete Bianchi Identity via Action Invariance**]
+:::tip[**Derivation of Weak Continuum Divergence via the Weighted Variation Comparison**]
 :::
 
-This synthesis proof utilizes the structural results established in **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" /> and **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" />.
+**I. Relabeling and continuous comparison**
 
-**I. Invariance Principle**
-As established in **Action Invariance** <Ref id="13.3.3" label="§13.3.3" />, the discrete Einstein-Hilbert action $\mathcal{S}[G]$ remains constant under infinitesimal diffeomorphisms generated by a vector field $\xi^a$. This invariance implies $\delta_\xi \mathcal{S} = 0$.
+Graph relabeling preserves the action exactly (**Action Invariance** <Ref id="13.3.3" label="§13.3.3" />). For a smooth comparison variation generated by a compactly supported vector field $\xi$, use a separately defined map from the metric deformation to length variations $\delta_\xi d$ on the fixed graph. Assume these variations are uniformly bounded in sup norm on the refining family.
 
-**II. Variational Formula**
-The variation of the action with respect to the edge structure is defined by the contraction of the discrete Einstein tensor with the variation of the metric field:
+**II. Weighted curvature variation**
 
-$$
-\delta \mathcal{S} = \sum_{(a,b) \in E} \frac{\delta \mathcal{S}}{\delta g_{ab}} \delta g_{ab} = \sum_{(a,b) \in E} \mathcal{G}_{ab} \delta g_{ab}.
-$$
-
-Under the deformation generated by $\xi$, the metric variation corresponds to the discrete Lie derivative $\delta g_{ab} = \nabla_a \xi_b + \nabla_b \xi_a$ (symmetrized gradient).
-
-**III. Integration by Parts (Discrete)**
-Substituting the Lie derivative into the variation:
+With $N_{t,e}$ the normalized fixed weights of **Discrete Schläfli Identity** <Ref id="13.3.4" label="§13.3.4" />, set $\mathcal S_t^N=\sum_eN_{t,e}K_e$. If the stated comparison estimate holds for the represented deformation, then
 
 $$
-\delta \mathcal{S} = \sum_{(a,b)} \mathcal{G}_{ab} (\nabla_a \xi_b + \nabla_b \xi_a) = 2 \sum_{(a,b)} \mathcal{G}_{ab} \nabla_a \xi_b.
+|\delta_\xi\mathcal S_t^N|
+=\left|\sum_{e\in E_t}N_{t,e}\delta_\xi K_e\right|
+\le C\ell_0^2\|\delta_\xi d\|_\infty\longrightarrow0 .
 $$
 
-Applying the discrete analogue of the divergence theorem (summation by parts) transfers the derivative from the arbitrary vector field $\xi$ to the tensor $\mathcal{G}$:
+The comparison uses this asymptotic bound on the represented variation. **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" /> concerns a divergence error and requires its own control.
+
+**III. Limit divergence pairing**
+
+Assume the normalized variations converge to the continuum action pairing with a smooth symmetric geometry tensor $\mathcal G$ and the Lie derivative $(\mathcal L_\xi g)_{\mu\nu}=\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu$. Then compact support and symmetry give
 
 $$
-\sum_{a} \sum_{b \in N(a)} \mathcal{G}_{ab} \nabla_a \xi_b = - \sum_{b} \xi_b \left( \sum_{a \in N(b)} \nabla_a \mathcal{G}_{ab} \right).
+\begin{aligned}
+0&=\lim_{t\to\infty}\delta_\xi\mathcal S_t^N
+=\int_M\mathcal G^{\mu\nu}(\mathcal L_\xi g)_{\mu\nu}\,\mathrm dV_g\\
+&=2\int_M\mathcal G^{\mu\nu}\nabla_\mu\xi_\nu\,\mathrm dV_g
+=-2\int_M(\nabla_\mu\mathcal G^{\mu\nu})\xi_\nu\,\mathrm dV_g .
+\end{aligned}
 $$
 
-**IV. The Identity**
-For the action variation $\delta \mathcal{S}$ to vanish for *arbitrary* local deformations $\xi_b$, the term in the parentheses must vanish identically at every vertex $b$:
-
-$$
-\sum_{a \in N(b)} \nabla_a \mathcal{G}_{ab} \equiv \nabla^a \mathcal{G}_{ab} = 0.
-$$
-
-This derivation confirms that the discrete Einstein tensor satisfies the conservation law $\nabla \cdot \mathcal{G} = 0$ as a direct consequence of the graph's intrinsic symmetry.
+If the comparison holds for each such $\xi$, then $\nabla_\mu\mathcal G^{\mu\nu}=0$ in the limit. The weighted estimate and the identification of the variations in this pairing are the inputs for the continuum cancellation.
 
 Q.E.D.
 

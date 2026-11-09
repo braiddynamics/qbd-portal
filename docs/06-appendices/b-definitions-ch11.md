@@ -557,7 +557,7 @@ Section 11.2.5.2 formalizes the properties of the QBD calculation regarding entr
 :::info[**Requirement of the Undirected Metric arising from the Prevention of Ill-Posed Transport Costs in Acyclic Graphs**]
 :::
 
-Given the causal Ollivier-Ricci curvature functional, the utilization of undirected shortest-path metric $\bar{d}$ is a necessary condition for the well-posedness of the causal Ollivier-Ricci curvature functional
+For any graph in the causal graph class, the undirected shortest-path ground metric $\bar d$ gives finite causal Ollivier-Ricci transport cost on every edge. Among the two shortest-path prescriptions, directed shortest-path cost lacks this universal guarantee.
 
 **In Plain English:**  
 Section 11.2.6 formalizes the properties of the QBD lemma regarding metric necessity.
@@ -1014,13 +1014,26 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+Let $G_t$ be a sequence of graphs with mesh $\ell_t\to0$, and choose integer radii $r=r_t$ with $r_t\to\infty$ and $2r_t\ell_t\to0$. Work within the common growth window of $G_t$, with $r_t$ and $2r_t$ both admissible at the same center $v$. In addition to the two-sided count regime in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />, assume the uniform expansion
 
 $$
-\frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).
+|B_s(v)|=C_0(t,v)s^4(1+\varepsilon_s(v)),\qquad
+C_0(t,v)>0,\qquad |\varepsilon_s(v)|\le C/s,\qquad
+s\in\{r,2r\}.
 $$
 
-This validates the emergent four-dimensional scaling.
+The common leading coefficient cancels. For $r\ge2C$,
+
+$$
+\begin{aligned}
+\frac{|B_{2r}(v)|}{|B_r(v)|}-16
+&=16\left(\frac{1+\varepsilon_{2r}(v)}{1+\varepsilon_r(v)}-1\right)
+=16\frac{\varepsilon_{2r}(v)-\varepsilon_r(v)}{1+\varepsilon_r(v)},\\
+\left|\frac{|B_{2r}(v)|}{|B_r(v)|}-16\right|
+&\le 16\frac{C/(2r)+C/r}{1-C/r}
+\le \frac{48C}{r}.
+\end{aligned}
+$$
 
 **III. Homological Stability and Euler Characteristic**
 To audit the stability of the Euler characteristic $\chi(L_r(v))$ under local edge fluctuations, the simplicial link is decomposed into contractible subcomplexes. Let $L_r(v) = \bigcup_j U_j$. The Mayer-Vietoris sequence is applied to compute the homology of the union. Since the local correlation length $\ell_0$ is small relative to $r$, the intersection of any three subcomplexes $U_i \cap U_j \cap U_k$ is contractible. The Betti numbers are substituted into the Euler-Poincaré formula:
@@ -1093,7 +1106,7 @@ Section 11.3.1 formalizes the properties of the QBD definition regarding discret
 :::info[**Derivation of Strict Curvature Augmentation from the Nucleation of Three-Cycle Geometric Quanta**]
 :::
 
-Let $G_0 = (V_0, E_0)$ denote a finite, simple, directed graph, and let $(u,v) \in E_0$ be a directed edge within it. Let $G_1 = (V_1, E_1)$ be the graph derived from $G_0$ by adjoining a new vertex $w \notin V_0$ and the two new directed edges $(v,w)$ and $(w,u)$, thereby nucleating a novel 3-cycle $u \to v \to w \to u$.
+Let $G_0$ be a finite simple directed graph with edge $u\to v$, with lazy causal laws at $\alpha=\beta=1/3$ and old undirected ground metric on the union of the two full endpoint supports equal to the unit double-star metric centered at $u,v$. If $G_1$ adjoins one fresh vertex $w$ and exactly the edges $v\to w$ and $w\to u$, then the curvature of the retained edge strictly increases, $K_1(u,v)>K_0(u,v)$.
 
 **In Plain English:**  
 Section 11.3.2 formalizes the properties of the QBD theorem regarding curvature monotonicity.
@@ -1350,6 +1363,60 @@ $$
 \le\sum_{e\in I_0\setminus\{(u,v)\}}|K_1(e)-K_0(e)|.
 $$
 
+**IV. Single-edge example**
+
+Start with $0\to1$. In vertex order $(0,1)$ the laws are $(2/3,1/3)$ and $(1/3,2/3)$. The excess $1/3$ at $0$ moves to $1$ at unit cost, and the difference of expectations against $\bar d(\,\cdot\,,1)$ is $1/3$. Hence $W_1(0,1)=1/3$ and $\mathcal S_0=1-1/3=2/3$. Adding $1\to2\to0$ produces an oriented triangle, so each law is $(1/3,1/3,1/3)$. All three costs vanish. Thus
+
+$$
+\mathcal S_1=3(1-0)=3,\qquad \Delta\mathcal S=3-\tfrac23=\tfrac73.
+$$
+
+**V. Chain example**
+
+Start instead with $0\to1\to2$. The old laws in vertex order $(0,1,2)$ are
+
+$$
+\mu_0=(2/3,1/3,0),\qquad
+\mu_1=(1/3,1/3,1/3),\qquad
+\mu_2=(0,1/3,2/3).
+$$
+
+For both edges the excess $1/3$ at $0$ moves to $2$ across distance two. The dual potential $\bar d_0(\,\cdot\,,2)$ gives $2/3$ for each difference of expectations, so both optimal costs are $2/3$ and $\mathcal S_0=2(1-2/3)=2/3$. Now add $1\to3\to0$. The new laws in vertex order $(0,1,2,3)$ are
+
+$$
+\mu_0=\mu_3=(1/3,1/3,0,1/3),\qquad
+\mu_1=(1/3,1/3,1/6,1/6),\qquad
+\mu_2=(0,1/3,2/3,0).
+$$
+
+Keep the common mass at each site and ship the residual as follows. The potential $f=\bar d_1(\,\cdot\,,2)$ has values $(2,1,0,2)$ and is $1$-Lipschitz. Each dual bound equals the displayed feasible transport cost:
+
+$$
+\begin{array}{c|l|c|c}
+\text{edge} & \text{residual shipments} & \text{cost} & \text{dual bound}\\ \hline
+(0,1)&3\to2:\,1/6 &2(1/6)=1/3 &2(1/6)=1/3\\
+(1,2)&0\to2:\,1/3,\quad3\to2:\,1/6 &2(1/3+1/6)=1 &2(1/3+1/6)=1\\
+(1,3)&2\to3:\,1/6 &2(1/6)=1/3 &2(1/6)=1/3\\
+(3,0)&\text{none}&0&0
+\end{array}
+$$
+
+Use $-f$ for $(1,3)$ and $f$ for the other edges. Consequently
+
+$$
+\mathcal S_1=\tfrac23+0+\tfrac23+1=\tfrac73,\qquad
+\Delta\mathcal S=\tfrac73-\tfrac23=\tfrac53.
+$$
+
+**VI. Ensemble coefficient on the specified event class**
+
+Let $\pi$ be a probability law on fresh-vertex single-cycle insertion events for which $\Delta\mathcal S$ is integrable. Then $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$ and
+
+$$
+\mathbb E_\pi[\Delta\mathcal S]
+=c_\pi=c_\pi\,\mathbb E_\pi[\Delta N_3],\qquad \Delta N_3=1.
+$$
+
 Q.E.D.
 
 **In Plain English:**  
@@ -1537,43 +1604,50 @@ Section 11.3.6.3 formalizes the properties of the QBD calculation regarding mono
 :::tip[**Formal Verification of the Link between Topological Nucleation through Geometric Action**]
 :::
 
-The proof synthesizes the definitions and lemmas established in Phases 1 through 3 to rigorously demonstrate the global monotonicity of the geometric evolution asserted in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The derivation proceeds by chaining the logical implications of the mass redistribution, transport feasibility, and cost contraction.
+**I. Shared mass on the new vertex**
 
-**I. Mass Redistribution (Phase 1)**
-From the **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, we conclude that the topological nucleation of the 3-cycle involving vertex $w$ necessitates a strictly positive shared probability mass $m_w$ in the successor measures:
-
-$$
-m_w = \min(\mu_u^{(1)}(w), \mu_v^{(1)}(w)) > 0.
-$$
-
-**II. Transport Efficiency (Phase 2 & 3)**
-From the **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />, we compute a valid transport coupling $\pi_1$ that utilizes this shared mass. From the **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />, we conclude that the cost of this plan is strictly bounded by the antecedent optimal cost:
+Under the hypotheses of **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the shared-site masses from the dilution formula (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />) satisfy
 
 $$
-W_1^{(1)} \le C(\pi_1) < W_1^{(0)}.
+a_u=\mu_u^{(1)}(w)=\frac{\beta}{|N_0^-(u)|+1},\qquad
+a_v=\mu_v^{(1)}(w)=\frac{\beta}{|N_0^+(v)|+1},\qquad
+m_w=\min(a_u,a_v)>0 .
 $$
 
-**III. Curvature Increase**
-We apply the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> metric to the inequality derived above.
+**II. Optimal transport cost**
+
+The coupling in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> places mass $m_w$ on $(w,w)$ and couples the residual laws. For the full-support double-star metric, subtracting the two optimal costs gives the difference below (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />).
 
 $$
-K^{(1)}(u,v) = 1 - W_1^{(1)}(u,v).
+W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}\ge m_w>0.
 $$
 
-Substituting the strict inequality $W_1^{(1)} < W_1^{(0)}$:
+**III. Curvature of the retained edge**
+
+Since $\bar d_0(u,v)=\bar d_1(u,v)=1$, subtraction of the two curvature values yields (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />)
 
 $$
-1 - W_1^{(1)} > 1 - W_1^{(0)}.
+\begin{aligned}
+K_1(u,v)-K_0(u,v)
+&=\left(1-\frac{W_1^{(1)}}{\bar d_1(u,v)}\right)
+ -\left(1-\frac{W_1^{(0)}}{\bar d_0(u,v)}\right)\\
+&=W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}>0 .
+\end{aligned}
 $$
 
-Therefore:
+**IV. Relation to the total action**
+
+Let $I_0$ be the set of old edges meeting $u$ or $v$. Subtracting the retained-edge term from the action decomposition gives (**Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />)
 
 $$
-K^{(1)}(u,v) > K^{(0)}(u,v).
+\Delta\mathcal S-\bigl(K_1(u,v)-K_0(u,v)\bigr)
+=K_1(v,w)+K_1(w,u)
++\sum_{e\in I_0\setminus\{(u,v)\}}\bigl(K_1(e)-K_0(e)\bigr).
 $$
-
-**IV. Conclusion**
-The discrete dynamics of the causal graph rigorously induce a geometric evolution characterized by the monotonic accumulation of curvature, confirming the relation established in **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />. The topological act of creating information (increasing $N_3$) is isomorphic to the geometric act of creating gravity (increasing $K$).
 
 Q.E.D.
 
