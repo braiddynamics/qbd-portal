@@ -1035,14 +1035,23 @@ $$
 \end{aligned}
 $$
 
-**III. Homological Stability and Euler Characteristic**
-To audit the stability of the Euler characteristic $\chi(L_r(v))$ under local edge fluctuations, the simplicial link is decomposed into contractible subcomplexes. Let $L_r(v) = \bigcup_j U_j$. The Mayer-Vietoris sequence is applied to compute the homology of the union. Since the local correlation length $\ell_0$ is small relative to $r$, the intersection of any three subcomplexes $U_i \cap U_j \cap U_k$ is contractible. The Betti numbers are substituted into the Euler-Poincaré formula:
+**III. Shell homology and Euler characteristic**
+
+Write $L=L_r(v)$. Suppose $L$ has a finite cover by subcomplexes $U_i$ whose nonempty finite intersections are contractible. Its nerve $\mathcal N$ has a simplex on each index set $I$ with $\bigcap_{i\in I}U_i\ne\varnothing$. The simplicial nerve theorem gives $|L|\simeq|\mathcal N|$, so their Euler characteristics agree:
 
 $$
-\chi(L_r(v)) = \sum_{p=0}^3 (-1)^p b_p(L_r(v)).
+\chi(L)=\chi(\mathcal N)
+=\sum_{\substack{I\ne\varnothing\\\bigcap_{i\in I}U_i\ne\varnothing}}(-1)^{|I|-1}.
 $$
 
-The alternating sum is evaluated to obtain $\chi(L_r(v)) = 0$ as $r \to \infty$. This proves that the macroscopic boundary shell is homeomorphic to a three-sphere $S^3$, completing the proof.
+If $L$ is independently identified as a closed orientable three-dimensional homology manifold, Poincaré duality and the universal coefficient theorem over $\mathbb Q$ give
+
+$$
+b_p(L)=\dim H^{3-p}(L;\mathbb Q)=b_{3-p}(L),\qquad
+\chi(L)=(b_0-b_3)-(b_1-b_2)=0 .
+$$
+
+The cancellation holds on any shell satisfying the duality premise. For example, the three-torus has Betti numbers $(1,3,3,1)$ and also has Euler characteristic zero. Applying the calculation to the graph requires verification of the shell hypotheses. A homeomorphism to $S^3$ requires a separate identification of the shell.
 
 Q.E.D.
 
@@ -1410,7 +1419,13 @@ $$
 
 **VI. Ensemble coefficient on the specified event class**
 
-Let $\pi$ be a probability law on fresh-vertex single-cycle insertion events for which $\Delta\mathcal S$ is integrable. Then $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$ and
+For a uniform total degree bound $\Delta$ on the old endpoints, each of $u,v$ has at most $\Delta$ incident edges. Their incident sets both contain $(u,v)$, so $|I_0|\le2\Delta-1$. Every edge curvature satisfies $-2\le K\le1$ since $0\le W_1\le3$ and the endpoints are one hop apart (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />). Thus each old difference has absolute value at most $1-(-2)=3$, and each new curvature has absolute value at most $2$. By Step I,
+
+$$
+|\Delta\mathcal S|\le3|I_0|+2+2\le6\Delta+1.
+$$
+
+For any probability law $\pi$ supported on this class, $\mathbb E_\pi[|\Delta\mathcal S|]\le6\Delta+1$. More generally, for any insertion law with an integrable action increment, set $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$. Then
 
 $$
 \mathbb E_\pi[\Delta\mathcal S]
