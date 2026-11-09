@@ -37,16 +37,14 @@ We resolve this limitation by applying spectral geometry to prove the Laplacian 
 :::tip[**Specification of the Discrete Laplacian Operator Scaled by the Inverse Square of Discreteness Length**]
 :::
 
-The **Consistently Weighted Laplacian**, denoted $\tilde{\mathcal{L}}_t$, is defined as the linear operator acting on the Hilbert space of scalar functions $\ell^2(V_t)$ on the causal graph $G_t$. It is constructed as the renormalization of the graph random walk Laplacian $L_{rw}$ by the dimension-dependent diffusion coefficient and the fundamental discreteness scale $\ell_0$:
+Let $A_{uv}=A_{vu}\ge0$ be the symmetrized spatial adjacency and $d_u=\sum_v A_{uv}$. At a vertex with $d_u>0$ set $P_{uv}=A_{uv}/d_u$. At an isolated vertex set $P_{uu}=1$ and $P_{uv}=0$ for $v\ne u$. The **Consistently Weighted Laplacian** is
 
 $$
-\tilde{\mathcal{L}}_t f(u) \equiv \frac{2(d+2)}{\ell_0^2} \left( f(u) - \sum_{v \in V_t} P_{uv} f(v) \right)
+\widetilde{\mathcal L}_t f(u)
+=\frac{2(d+2)}{\ell_0^2}\left(f(u)-\sum_vP_{uv}f(v)\right).
 $$
 
-where the components satisfy the following structural constraints:
-1.  **Stochastic Kernel:** The term $P_{uv} = A_{uv} / \deg(u)$ constitutes the row-stochastic transition matrix of the unbiased random walk on $G_t$, encoding the local connectivity structure.
-2.  **Dimensional Calibration:** The four-dimensional calibration assumes ball growth with exponent $d=4$ (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). The prefactor $2(d+2)$ is the unique normalization required to match the trace asymptotics of the discrete operator to the continuum Gaussian heat kernel $(4\pi t)^{-d/2}$.
-3.  **Metric Scaling:** The coefficient $\ell_0^{-2}$ assigns the operator the physical dimensions of curvature ($[\text{Length}]^{-2}$), ensuring the spectral convergence $\lim_{t\to\infty} \sigma(\tilde{\mathcal{L}}_t) = \sigma(-\Delta_g)$ to the Laplace-Beltrami operator of the limit manifold $(M,g)$.
+Here $d$ is the dimension used in the diffusion calibration. On a component of positive degree the inner product is weighted by $\pi_u=d_u/\sum_x d_x$. An isolated vertex is a separate one-dimensional component with zero Laplacian. The physical scaling factor has units of inverse length squared.
 
 ### 12.1.1.1 Commentary: Calibrating Diffusion {#12.1.1.1}
 
@@ -64,14 +62,14 @@ The rescaling by $\ell_0^{-2}$ provides the necessary metric units, converting a
 :::info[**Convergence of the Discrete Causal Graph Sequence to a Smooth Riemannian Manifold via Spectral Convergence**]
 :::
 
-For any sequence of causal graphs $\{G_t\}$ converging in the Gromov-Hausdorff sense, a smooth, compact, 4-dimensional Riemannian manifold $(M, g)$ is established as its limit.
+Let $\{G_t\}$ be a refining sequence in the four-dimensional growth regime whose Gromov-Hausdorff limit is identified by a separate comparison with a smooth, compact Riemannian four-manifold $(M,g)$, with the spectral, heat, and elliptic-regularity inputs of the supporting lemmas and a full-rank local spectral coordinate tuple at each point. Then the graph spectral and heat comparisons hold on $(M,g)$, and the limit eigenfunctions supply smooth local charts in which the Laplace-Beltrami principal symbol determines the metric.
 
 ### 12.1.2.1 Commentary: Argument Outline {#12.1.2.1}
 
 :::tip[**Structure of the Smooth Riemannian Limit Argument via Spectral Convergence, Heat Kernel Asymptotics, and Smoothness Bootstrapping**]
 :::
 
-The proof establishing the smooth Riemannian limit proceeds by demonstrating that the spectral properties of the discrete causal graph converge to those of the Laplace-Beltrami operator on a manifold.
+The proof proceeds by limits in the four-dimensional geometric growth regime. The spectral, heat, and chart steps use a common smooth comparison and their respective convergence and regularity premises.
 
 ```text
 • 12.1.2 Theorem Smooth Manifold Limit  [by limits]
@@ -111,66 +109,224 @@ Given the conditions of **Eigenvalues** and **Eigenfunctions**, the properties o
 :::tip[**Operator Decomposition via Perturbation Analysis**]
 :::
 
-As the thermodynamic limit is approached ($N_t \to \infty$, $\ell_0 \to 0$), the consistently weighted Laplacian $\tilde{\mathcal{L}}_t$ converges spectrally to the Laplace-Beltrami operator $-\Delta_g$ on the limit manifold $(M,g)$.  **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> and  **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" /> Specifically:
+**I. Reversibility and the energy form**
 
-* **Eigenvalues:** For each fixed mode $k$, the discrete eigenvalues converge with the rate:
-
-    $$
-    |\tilde{\lambda}_k^{(t)} - \lambda_k| = O\left(\ell_0 + N_t^{-1/2} + \frac{(\log N_t)^4}{N_t}\right)
-    $$
-
-* **Eigenfunctions:** In the $L^2(M, dV_g)$ norm (induced by the discrete measure convergence), the eigenfunctions converge as:
-
-    $$
-    \|\psi_k^{(t)} - f_k\|_{L^2} = O\left(\ell_0^{1/2} + N_t^{-1/2}\right)
-    $$
-
-The leading $\ell_0$ term reflects the geometric discretization error (bandwidth bias), the $N_t^{-1/2}$ term arises from finite-sample variance (Monte Carlo error), and the subdominant $(\log N_t)^4 / N_t$ term accounts for the residual entropic correlations in the vacuum fluctuations.
-
-The proof proceeds by decomposing the total error into a geometric bias component and a statistical variance component, then applying perturbation theory to the spectral data.
-
-**I. Operator Error Decomposition**
-For a smooth test function $f \in C^\infty(M)$ extended to the graph vertices, the action of the discrete operator deviates from the continuum limit as:
+On a positive-degree component the spatial walk satisfies
 
 $$
-\|\tilde{\mathcal{L}}_t f + \Delta_g f\|_{L^2} \leq \underbrace{\|\mathbb{E}[\tilde{\mathcal{L}}_t] f + \Delta_g f\|}_{\text{Bias (Geometric)}} + \underbrace{\|\tilde{\mathcal{L}}_t f - \mathbb{E}[\tilde{\mathcal{L}}_t] f\|}_{\text{Variance (Statistical)}}
+\pi_uP_{uv}=\frac{A_{uv}}{\sum_xd_x}
+=\frac{A_{vu}}{\sum_xd_x}=\pi_vP_{vu}
 $$
 
-**II. Geometric Bias (Belkin-Niyogi / Calder-GT)**
-The expectation $\mathbb{E}[\tilde{\mathcal{L}}_t]$ represents the operator averaged over the vertex distribution with bandwidth $\varepsilon \sim \ell_0$. Under the **Ahlfors Regularity** (uniform sampling) and **Bounded Curvature** ($|K| \leq 2$) conditions, the bias expands as a function of the local geometry:
+(**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />). Thus $\sum_u\pi_uP_{uv}=\pi_v$. For real functions $f,g$,
 
 $$
-\|\mathbb{E}[\tilde{\mathcal{L}}_t] f + \Delta_g f\|_\infty = O(\ell_0 \|\nabla^3 f\|_\infty + \ell_0^2)
+\begin{aligned}
+\frac12\sum_{u,v}\pi_uP_{uv}(f(u)-f(v))(g(u)-g(v))
+&=\sum_u\pi_u f(u)g(u)-\sum_{u,v}\pi_uP_{uv}f(u)g(v)\\
+&=\langle f,(I-P)g\rangle_\pi .
+\end{aligned}
 $$
 
-Integrating over the compact manifold yields the leading $O(\ell_0)$ operator-norm error.
+The form is symmetric and nonnegative on the diagonal. On a regular grid of degree $q$, $I-P=(D-A)/q$. The unnormalized grid benchmark therefore uses a different constant calibration (**Spectral Convergence Verification** <Ref id="12.1.3.2" label="§12.1.3.2" />).
 
-**III. Statistical Variance (Calder-García Trillos)**
-The fluctuation term concentrates around zero. While graph edges are not perfectly independent, the **Correlation Decay** lemma restricts dependence to neighborhoods of size $\xi = O(1)$. Applying concentration inequalities (McDiarmid’s inequality with logarithmic union bounds for correlation clusters) yields:
+**II. Pointwise error and bandwidth**
 
-$$
-\|\tilde{\mathcal{L}}_t f - \mathbb{E}[\tilde{\mathcal{L}}_t] f\|_\infty = O_p\!\left( \frac{(\log N_t)^2}{\sqrt{N_t \ell_0^4}} \right)
-$$
-
-Given the scaling $N_t \sim \ell_0^{-4}$ in 4 dimensions, the denominator simplifies to $\sqrt{N_t}$. The higher-moment contributions from the correlation tails add the subleading $(\log N_t)^4 / N_t$ term to the resolvent expansion.
-
-**IV. Eigenvalue Convergence (Kato Perturbation)**
-The operator norm bound $O(\ell_0 + N_t^{-1/2})$ implies strong resolvent convergence of $\tilde{\mathcal{L}}_t$ to $-\Delta_g$. By **Kato’s Theorem** for self-adjoint operators, isolated eigenvalues perturb continuously with the norm of the perturbation:
+With discrete and continuum functions compared in a common norm, the fixed-test-function error decomposes as
 
 $$
-|\tilde{\lambda}_k^{(t)} - \lambda_k| \leq O(\|\tilde{\mathcal{L}}_t + \Delta_g\|_{\text{op}})
+\|\widetilde{\mathcal L}_t f+\Delta_g f\|
+\le\|\mathbb E[\widetilde{\mathcal L}_t]f+\Delta_g f\|
+ +\|(\widetilde{\mathcal L}_t-\mathbb E[\widetilde{\mathcal L}_t])f\|.
 $$
 
-Thus, the eigenvalues inherit the combined geometric and statistical error rates.
-
-**V. Eigenfunction Convergence (Davis-Kahan)**
-The convergence of the eigenspaces is governed by the **Davis-Kahan $\sin \Theta$ Theorem**, which bounds the rotation of the subspace by the perturbation size divided by the spectral gap $\delta_k$:
+A pointwise estimate depends on the bandwidth of its own stencil. In particular, if the bandwidth in the fluctuation denominator is $\ell_0$ and $N_t\asymp\ell_0^{-4}$, then
 
 $$
-\Theta(\operatorname{span}\{\psi_k^{(t)}\}, \operatorname{span}\{f_k\}) \leq O\!\left( \frac{\|\tilde{\mathcal{L}}_t + \Delta_g\|_{\text{op}}}{\delta_k} \right)
+\sqrt{N_t\ell_0^4}\asymp\sqrt{\ell_0^{-4}\ell_0^4}=1 .
 $$
 
-Since $\delta_k > 0$ uniformly (due to the Cheeger inequality), the projection error scales linearly with the operator error. Accounting for the $L^2$-volume normalization yields the $O(\ell_0^{1/2} + N_t^{-1/2})$ rate for the individual eigenfunctions.
+The pointwise bound with this denominator gives no $N_t^{-1/2}$ decay.
+
+**III. Projection onto a mode**
+
+For a continuum eigenfunction $f_k$, a global mode projection can be written as $N_t^{-1}\sum_i Y_i$. Its variance is
+
+$$
+\operatorname{Var}\!\left(\frac{1}{N_t}\sum_iY_i\right)
+=\frac{1}{N_t^2}\sum_{i,j}\operatorname{Cov}(Y_i,Y_j).
+$$
+
+A bound of order $N_t$ on the covariance sum of the scaled terms would give variance of order $N_t^{-1}$. This is a separate condition on the mode projection. The covariance estimate concerns a single mode.
+
+**IV. Balanced-stencil and mesoscopic comparisons**
+
+Write $x_v-x_u=\ell_0 z_{uv}$ in local normal coordinates at $x_u$, with bounded stencil vectors, and define $m_u=\sum_vP_{uv}z_{uv}$ and $Q_u=\sum_vP_{uv}z_{uv}\otimes z_{uv}$. For a smooth fixed test $f$, Taylor expansion gives
+
+$$
+\begin{aligned}
+f(x_v)&=f(x_u)+\ell_0\nabla f(x_u)\cdot z_{uv}
++\frac{\ell_0^2}{2}\nabla^2 f(x_u):(z_{uv}\otimes z_{uv})+O_f(\ell_0^3),\\
+\ell_0^{-2}(I-P)f(u)
+&=-\ell_0^{-1}\nabla f(x_u)\cdot m_u-\tfrac12\nabla^2 f(x_u):Q_u+O_f(\ell_0).
+\end{aligned}
+$$
+
+The first term vanishes on a balanced stencil with $m_u=0$. In the reversible energy form each difference is of order $\ell_0$. For two smooth tests $f,g$ the leading product is
+
+$$
+\begin{aligned}
+\ell_0^{-2}(f(u)-f(v))(g(u)-g(v))
+&=(\nabla f(x_u)\cdot z_{uv})(\nabla g(x_u)\cdot z_{uv})+O_{f,g}(\ell_0),\\
+\ell_0^{-2}\langle f,(I-P)g\rangle_\pi
+&=\tfrac12\sum_u\pi_u\,\nabla f(x_u)^{\mathsf T}Q_u\nabla g(x_u)+O_{f,g}(\ell_0).
+\end{aligned}
+$$
+
+The second line uses $\sum_{u,v}\pi_uP_{uv}=1$. For a target second-moment field $Q(x)$ and a continuum measure $\nu$, put $H_{f,g}(x)=\nabla f(x)^{\mathsf T}Q(x)\nabla g(x)$. The weak comparison for fixed tests satisfies
+
+$$
+\begin{aligned}
+\left|\ell_0^{-2}\langle f,(I-P)g\rangle_\pi-\tfrac12\int H_{f,g}\,\mathrm d\nu\right|
+&\le C_{f,g}\ell_0
++\tfrac12\|\nabla f\|_\infty\|\nabla g\|_\infty
+\sum_u\pi_u\|Q_u-Q(x_u)\|\\
+&\quad+\tfrac12\left|\sum_u\pi_u H_{f,g}(x_u)-\int H_{f,g}\,\mathrm d\nu\right|.
+\end{aligned}
+$$
+
+The last two terms come from replacing $Q_u$ with $Q(x_u)$ at each vertex and then replacing the discrete measure by $\nu$. In the Laplace-Beltrami comparison the normalization of $Q$ and $\nu$ must give the intended continuum Dirichlet form. A variational resolvent comparison additionally needs interpolation, control of varying sequences of tests, and energy compactness.
+
+In the mesoscopic kernel route one instead compares an operator built with bandwidth $h_t$, which is distinct from the one-hop spacing. For example, the $\varepsilon$-graph comparison of <Cite id="A.17" label="(Calder & García Trillos, 2022)" /> uses independent samples with a smooth positive density bounded away from zero on a compact smooth manifold without boundary, and the small-bandwidth sampling regime $(\log N_t/N_t)^{1/d}\ll h_t\ll1$ for eigenvalue consistency. For the sampled points $x_i$ the operator and its continuum normalization are
+
+$$
+\begin{aligned}
+(L_{h_t}f)(x_i)
+&=\frac{1}{N_t h_t^{d+2}}\sum_{j=1}^{N_t}
+\eta\!\left(\frac{|x_i-x_j|}{h_t}\right)\bigl(f(x_i)-f(x_j)\bigr),\\
+A_{\rho,\eta}f
+&=-\frac{\sigma_\eta}{2\rho}\operatorname{div}_g(\rho^2\nabla_g f),
+\qquad
+\sigma_\eta=\int_{\mathbb R^d} z_1^2\eta(|z|)\,\mathrm dz .
+\end{aligned}
+$$
+
+Here $\rho$ is the sampling density. The nonnegative radial kernel profile is nonincreasing, supported on $[0,1]$, Lipschitz on that interval, and positive at $1/2$, with radial integral one. For a constant $\rho$, $A_{\rho,\eta}=-(\sigma_\eta\rho/2)\Delta_g$, so the comparison needs a constant calibration even in that case. Applying this route to the causal graph would require identifying its sampling, weights, and limit operator with those of the comparison.
+
+**Powered lazy walk.**
+
+Let $P_t$ be reversible and lazy with spectrum in $[0,1]$, and define $A_t=a_t(I-P_t)$ and $A_{t,k}=a_t(I-P_t^k)/k$ with $a_t>0$ and integer $k\ge1$. If $A_tu=\lambda u$, then $P_tu=(1-\lambda/a_t)u$, so the powered eigenvalue on $u$ is $F_t(\lambda)=a_t[1-(1-\lambda/a_t)^k]/k$. The map increases strictly on $[0,a_t]$. For $x=\lambda/a_t$,
+
+$$
+\begin{aligned}
+0\le\lambda-F_t(\lambda)
+&=a_t\int_0^x[1-(1-y)^{k-1}]\,\mathrm dy\\
+&\le a_t(k-1)\int_0^x y\,\mathrm dy
+=\frac{(k-1)\lambda^2}{2a_t}.
+\end{aligned}
+$$
+
+Conversely, for $b=k F_t(\lambda)/a_t<1$, inverting the power gives
+
+$$
+\lambda=a_t[1-(1-b)^{1/k}]
+=\frac{a_t}{k}\int_0^b(1-y)^{1/k-1}\,\mathrm dy
+\le\frac{F_t(\lambda)}{1-b}.
+$$
+
+If $k/a_t\to0$ and the powered eigenvalues in a fixed band are bounded, then $b\to0$ uniformly there. The inverse estimate bounds the associated one-hop eigenvalues, and the first estimate gives a difference tending to zero. The eigenspaces are the same because the map is strictly increasing. This transfers a fixed-band spectral comparison already proved for $A_{t,k}$.
+
+**V. Eigenvalues on a common Hilbert space**
+
+Let $A=-\Delta_g\ge 0$ be self-adjoint with compact resolvent on $H=L^2(M,\mathrm dV_g)$, and let $J_t$ be an isometric comparison map from $L^2(\pi)$ to $H$. Take $\widetilde{\mathcal L}_t$ to be the nonnegative, self-adjoint graph operator. The spectral comparison uses the following norm-resolvent hypothesis:
+
+$$
+R=(I+A)^{-1},\qquad
+R_t=J_t(I+\widetilde{\mathcal L}_t)^{-1}J_t^*,\qquad
+\varepsilon_t=\|R_t-R\|_{H\to H}\longrightarrow0 .
+$$
+
+For instance, in a weak form comparison, suppose the embedded resolvents converge strongly to $R$ and the union of their images of the unit ball is relatively compact. These properties give the norm bound in the limit. If norm convergence fails, take unit vectors $b_t$ along a subsequence with $\|(R_t-R)b_t\|\ge c>0$. Pass to subsequences with $b_t\rightharpoonup b$ and $R_tb_t\to y$. For each fixed $g\in H$, self-adjointness gives
+
+$$
+\langle y,g\rangle=\lim_t\langle b_t,R_tg\rangle
+=\langle b,Rg\rangle=\langle Rb,g\rangle .
+$$
+
+Then $y=Rb$, and compactness of $R$ gives $Rb_t\to Rb$, contradicting the choice of $b_t$. A quantitative bound on $\varepsilon_t$ would require a quantitative comparison.
+
+Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde\lambda_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
+
+$$
+\langle u,Ru\rangle-\varepsilon_t
+\le \langle u,R_tu\rangle
+\le \langle u,Ru\rangle+\varepsilon_t .
+$$
+
+Taking the infimum over unit vectors in a $k$-dimensional subspace $L$ and then the supremum over $L$ gives, with indexing starting at $k=1$,
+
+$$
+r_k-\varepsilon_t
+\le \sup_{\dim L=k}\inf_{\substack{u\in L\\\|u\|=1}}\langle u,R_tu\rangle
+=r_{t,k}
+\le r_k+\varepsilon_t .
+$$
+
+For $\varepsilon_t<r_k/2$ the $k$th graph resolvent eigenvalue is positive and $r_{t,k}\ge r_k/2$. Hence
+
+$$
+\left|\widetilde\lambda_{t,k}-\lambda_k\right|
+=\left|\frac{1}{r_{t,k}}-\frac{1}{r_k}\right|
+=\frac{|r_{t,k}-r_k|}{r_{t,k}r_k}
+\le \frac{2\varepsilon_t}{r_k^2}.
+$$
+
+**VI. Eigenfunctions and isolated eigenspaces**
+
+For an isolated simple eigenvalue $r=r_k$ of $R$, let $f_k$ be its unit eigenfunction, $P_k$ the orthogonal projection onto its span, and $\gamma=\operatorname{dist}(r,\sigma(R)\setminus\{r\})>0$. A unit embedded graph eigenfunction $u_t=J_t\psi_{t,k}$ satisfies
+
+$$
+(R-rI)u_t=(R-R_t)u_t+(r_{t,k}-r)u_t,\qquad
+\|(R-rI)u_t\|\le 2\varepsilon_t .
+$$
+
+Expansion in the orthonormal eigenbasis of $R$ gives the gap estimate
+
+$$
+\gamma^2\|(I-P_k)u_t\|^2
+=\gamma^2\sum_{j\ne k}|\langle f_j,u_t\rangle|^2
+\le \sum_{j\ne k}|r_j-r|^2|\langle f_j,u_t\rangle|^2
+=\|(R-rI)u_t\|^2 .
+$$
+
+Choose the phase of $\psi_{t,k}$ so that $\langle f_k,u_t\rangle$ is nonnegative. Since $J_t^*J_t=I$, the graph comparison with the pulled-back eigenfunction obeys
+
+$$
+\begin{aligned}
+\|\psi_{t,k}-J_t^* f_k\|_{L^2(\pi)}^2
+&\le \|u_t-f_k\|_H^2
+=2(1-|\langle f_k,u_t\rangle|)\\
+&\le 2(1-|\langle f_k,u_t\rangle|^2)
+=2\|(I-P_k)u_t\|^2
+\le \frac{8\varepsilon_t^2}{\gamma^2}.
+\end{aligned}
+$$
+
+For a repeated isolated eigenvalue $r$, let $P$ and $P_t$ project onto the spectral clusters inside the circle $\mathcal C=\{z:|z-r|=\gamma/2\}$. When $\varepsilon_t<\gamma/4$, on $\mathcal C$ the two resolvent norms satisfy $\|(zI-R)^{-1}\|\le 2/\gamma$ and $\|(zI-R_t)^{-1}\|\le 4/\gamma$. The second bound follows by factoring $zI-R_t=(zI-R)[I-(zI-R)^{-1}(R_t-R)]$ and bounding the inverse of the second factor by the geometric series. The contour projection formula and the resolvent identity give
+
+$$
+\begin{aligned}
+P_t-P
+&=\frac{1}{2\pi i}\oint_{\mathcal C}
+(zI-R_t)^{-1}(R_t-R)(zI-R)^{-1}\,\mathrm dz,\\
+\|P_t-P\|
+&\le \frac{\pi\gamma}{2\pi}\frac{4}{\gamma}
+\varepsilon_t\frac{2}{\gamma}
+=\frac{4\varepsilon_t}{\gamma}.
+\end{aligned}
+$$
+
+Thus each fixed eigenvalue converges, simple eigenfunctions converge after phase alignment, and repeated isolated eigenvalues give convergence of the associated eigenspaces under the common-space hypothesis.
 
 Q.E.D.
 
@@ -179,7 +335,7 @@ Q.E.D.
 :::note[**Verification of Laplacian Spectral Convergence via Periodic 4D Grid Approximations**]
 :::
 
-Verification of the eigenvalue **Spectral Convergence** rates established by **Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" /> and **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> is based on the following protocols:
+The following protocols check eigenvalue convergence on the periodic grid benchmark (**Spectral Convergence** <Ref id="12.1.3.1" label="§12.1.3.1" />). The grid normalization is related to the reversible spatial walk by the degree factor on a regular graph (**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />).
 
 1.  **Grid Discretization:** The algorithm constructs a sequence of periodic 4D grid graphs representing discrete approximations of the Riemannian manifold.
 2.  **Spectrum Eigendecomposition:** The protocol performs numerical eigendecomposition of the consistently weighted discrete Laplacian to isolate the first non-zero eigenvalue.
@@ -257,6 +413,8 @@ for k in [4, 6, 8, 10]:
     print(f"{N:<8} | {ell0:<8.4f} | {lam:<10.4f} | {target:<10.4f} | {err:<10.2f}")
 ```
 
+The fixture uses the unnormalized grid stencil $D-A$ with its own calibration. On a regular grid of degree $q$, this stencil equals $q(I-P)$ for the reversible spatial walk.
+
 **Simulation Results:**
 
 ```text
@@ -271,7 +429,7 @@ N        | ell_0    | Lambda_1   | Theory     | Error %
 ```
 
 **Conclusion:**
-The simulation confirms the spectral convergence of the discrete Laplacian to the continuum limit. The first non-zero eigenvalue $\lambda_1$ approaches the theoretical value of $(2\pi)^2 \approx 39.48$ as the graph resolution refines ($\ell_0 \to 0$). The error scales monotonically with the edge length, consistent with the expected discretization error of the operator on a regular lattice. This verifies that the "consistently weighted" operator correctly encodes the Riemannian metric information, ensuring that the spectral geometry of the causal graph faithfully reproduces the manifold Laplacian in the thermodynamic limit.
+The simulation confirms the spectral convergence of the discrete Laplacian to the continuum limit. The first non-zero eigenvalue $\lambda_1$ approaches the theoretical value of $(2\pi)^2 \approx 39.48$ as the graph resolution refines ($\ell_0 \to 0$). The error scales monotonically with the edge length, consistent with the expected discretization error of the operator on a regular lattice. The benchmark uses the regular-grid operator and its grid calibration. The general comparison still requires the operator hypotheses of the proof.
 
 ### 12.1.3.3 Commentary: Hearing the Shape of Spacetime {#12.1.3.3}
 
@@ -298,46 +456,113 @@ Suppose $p_t(x,y)$ is the heat kernel on the causal graph $G_t$. Then it converg
 :::tip[**Derivation of Heat Kernel Bounds from Functional Inequalities on the Graph**]
 :::
 
-Specifically, within the injectivity radius and for diffusion times $t \sim \ell_0^2$, the discrete transition density admits the expansion:.
+**I. Reversible walk and volume doubling**
+
+Consider the spatial walk of **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" /> with reversible measure $\mu$. In the calibrated scale window, assume $c_1s^4\le V(x,s)\le c_2s^4$ for $s=r,2r$ (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Then
 
 $$
-p_t(x,y) = \frac{1}{(4\pi t)^{d/2}} \exp\left(-\frac{d_g(x,y)^2}{4t}\right) \left( 1 + \frac{t}{6} R_g(x) + O(t^2) \right)
+V(x,2r)\le c_2(2r)^4=16c_2r^4\le16(c_2/c_1)V(x,r).
 $$
 
-with $d=4$. This asymptotic behavior is enforced not merely by dimensional scaling, but by the structural stability of the heat flow under the **Uniform Curvature Bound**. The strict lower bound on the Causal Ollivier-Ricci curvature $\kappa \geq -K_{min}$ guarantees a **Discrete Li-Yau Gradient Estimate**, which constrains the logarithmic derivative of the heat kernel, compelling it to decay no faster than a Gaussian envelope.
+**II. Functional inequality for a Gaussian comparison**
 
-**I. The Equivalence of Geometry and Diffusion**
-The Gaussian bounds for the heat kernel on a metric measure space are mathematically equivalent to the simultaneous satisfaction of the **Volume Doubling Property** and the **Poincaré Inequality** (Grigoryan; Saloff-Coste). we conclude that the equilibrium causal graph satisfies these functional inequalities via its fundamental geometric constraints.
-
-**II. Volume Doubling (Ahlfors Regularity)**
-Assume two-sided growth $c_1r^4\le V(x,r)\le c_2r^4$ at both radii in the calibrated regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Dividing the upper bound at the doubled radius by the lower bound at radius $r$ gives the volume doubling constant $C_D=16c_2/c_1$.
+Let $c_{uv}=\mu(u)P_{uv}=c_{vu}$ and let $f_{B_r}$ be the $\mu$-average over $B_r(x)$. The local Poincaré input on the comparison window is a bound of the form
 
 $$
-V(x,2r)\le 16(c_2/c_1)V(x,r).
+\sum_{u\in B_r}\mu(u)|f(u)-f_{B_r}|^2
+\le C_P r^2\sum_{\{u,v\}\subset B_{\eta r}}c_{uv}|f(u)-f(v)|^2,
+\qquad \eta\ge1 .
 $$
 
-This condition prevents the measure from collapsing or expanding exponentially, ensuring the underlying space is dimensionally stable.
-
-**III. Poincaré Inequality (Cheeger Isoperimetry)**
-The **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" /> suppresses the formation of "bottlenecks" (narrow constrictions between large subgraphs). This implies a uniform lower bound on the Cheeger isoperimetric constant $h(G_t) > 0$. By the discrete Cheeger-Buser inequality, this lower bound enforces a spectral gap $\lambda_2 \geq h^2/2$, which in turn implies the local Poincaré inequality:
+Here $C_P$ and the allowed enlargement factor $\eta$ are uniform, and the balls used in the inequality lie in the comparison regime. In a graph Gaussian estimate based on doubling and Poincaré, one must supply the local inequality and the transition hypotheses of that estimate, including a uniform lower bound on positive transition probabilities and laziness in the discrete-time formulation. For that formulation the spatial walk can be made lazy by replacing $P$ by $(I+P)/2$, which preserves the reversible measure and halves $I-P$. With the applicable comparison hypotheses, the Gaussian bounds control the kernel up to constants in the exponent and the volume prefactor. In the diffusive range they take the form
 
 $$
-\int_{B_r} |f - \bar{f}|^2 d\mu \leq C_P r^2 \int_{B_r} |\nabla f|^2 d\mu.
+\frac{c}{V(x,\sqrt{s})}e^{-C d(x,y)^2/s}
+\le p_s(x,y)
+\le \frac{C'}{V(x,\sqrt{s})}e^{-c' d(x,y)^2/s}.
 $$
 
-This inequality guarantees that local relaxation times scale as $r^2$, locking the diffusion process to the metric distance.
+Here $p_s$ is a density relative to $\mu$, and the constants and range are those of the selected comparison theorem.
 
-**IV. Discrete Li-Yau Gradient Estimate**
-The uniform lower bound on the Causal Ollivier-Ricci curvature $\kappa(x,y) \geq -K$, as established in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, implies a differential constraint on the heat kernel. Following the discrete analysis of Bauer et al. (2015), a lower bound on Ricci curvature yields a discrete Li-Yau inequality for positive solutions $u > 0$ of the heat equation:
+**III. Alternative curvature-dimension route**
+
+A graph Li-Yau estimate uses a curvature-dimension hypothesis for the chosen generator $L$. In the exponential curvature-dimension formulation, write $\Gamma(f,g)=\tfrac12[L(fg)-f Lg-g Lf]$, $\Gamma(f)=\Gamma(f,f)$, and $\Gamma_2(f)=\tfrac12 L\Gamma(f)-\Gamma(f,Lf)$. The condition $\mathrm{CDE}(n,-K)$ requires at vertices with $f>0$ and $Lf<0$ that
 
 $$
-\frac{|\nabla u|^2}{u^2} - \alpha \frac{\partial_t u}{u} \leq C \frac{d}{t} + C' K.
+\Gamma_2(f)-\Gamma\bigl(f,\Gamma(f)/f\bigr)
+\ge \frac{(Lf)^2}{n}-K\Gamma(f).
 $$
 
-Integrating this inequality along geodesic paths yields the **Parabolic Harnack Inequality**, which bounds the spatial variation of the heat kernel $p_t(x,y)$ in terms of the temporal decay, explicitly forcing the Gaussian exponent $-d(x,y)^2/4t$.
+The condition concerns the reversible generator and its iterated energy form. The retained-edge curvature result in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" /> concerns a transport comparison for a specific graph update. A graph Li-Yau route requires verification of its own generator hypothesis.
 
-**V. Convergence of the Asymptotic**
-Since the sequence of graphs $\{G_t\}$ converges in the Gromov-Hausdorff sense to $M$ and satisfies uniform lower bounds on Ricci curvature and injectivity radius (from the cycle suppression lemma), the sequence of heat kernels $p_t^{(n)}$ converges uniformly on compact sets to the unique heat kernel of the limit space (Ding & Liu, 2015). The expansion term $1 + \frac{t}{6}R_g$ emerges from the second-order variation of the metric volume element in the parametrix construction.
+**IV. Continuum kernel and the small-time coefficient**
+
+Use a common-space heat-kernel comparison to identify the limit kernel with the heat kernel of $-\Delta_g$ for an independently smooth Riemannian metric. For continuum diffusion time $\tau>0$, the smooth diagonal parametrix gives
+
+$$
+p_\tau^g(x,x)=(4\pi\tau)^{-2}
+\left(1+\tfrac{\tau}{6}R_g(x)+O(\tau^2)\right).
+$$
+
+Away from the diagonal the local parametrix includes a separate leading transport coefficient multiplying the Gaussian factor. To transfer the diagonal curvature coefficient along a joint limit $\tau=\tau_t\to0$, the volume-normalized kernel comparison would need to control the error on that scale. In particular, if the embedded density $p_\tau^{(t)}$ satisfies
+
+$$
+(4\pi\tau_t)^2
+\left(p_{\tau_t}^{(t)}(x,x)-p_{\tau_t}^g(x,x)\right)=o(\tau_t),
+$$
+
+then
+
+$$
+\frac{(4\pi\tau_t)^2 p_{\tau_t}^{(t)}(x,x)-1}{\tau_t}
+=\frac{R_g(x)}{6}+O(\tau_t)+o(1).
+$$
+
+**V. Fixed-cutoff heat trace and order of limits**
+
+Let $A_t$ and $A$ be the nonnegative graph and comparison generators with eigenvalues $\lambda_{t,j}$ and $\lambda_j$ in increasing order with multiplicity. At fixed $t$, the spectrum is finite and
+
+$$
+\lim_{s\downarrow0}\operatorname{Tr}(e^{-sA_t})
+=\sum_{j=1}^{N_t}\lim_{s\downarrow0}e^{-s\lambda_{t,j}}=N_t .
+$$
+
+Now fix a physical diffusion time $s>0$ and a positive cutoff $\Lambda$ outside the spectrum of $A$. Let $m$ count the eigenvalues below $\Lambda$. The fixed-index convergence from the operator comparison (**Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />) puts $\lambda_{t,m}<\Lambda<\lambda_{t,m+1}$ eventually if $m\ge1$. For $m=0$ it puts $\lambda_{t,1}>\Lambda$. For nonnegative $a,b$, integration of the exponential derivative gives $|e^{-sa}-e^{-sb}|\le s|a-b|$. Thus
+
+$$
+\left|\sum_{\lambda_{t,j}<\Lambda} e^{-s\lambda_{t,j}}
+      -\sum_{\lambda_j<\Lambda} e^{-s\lambda_j}\right|
+\le s\sum_{j=1}^{m}|\lambda_{t,j}-\lambda_j|
+\longrightarrow0 .
+$$
+
+If $A$ is the Laplacian of a smooth compact four-dimensional Riemannian manifold without boundary, $e^{-sA}$ is trace class. At fixed $s$, taking $\Lambda\to\infty$ after the graph limit recovers its trace. Integrating the continuum diagonal expansion then gives
+
+$$
+\operatorname{Tr}(e^{-sA})
+=\int_M p_s^g(x,x)\,\mathrm dV_g
+=(4\pi s)^{-2}\left(\operatorname{Vol}_g(M)
+  +\frac{s}{6}\int_M R_g\,\mathrm dV_g+O(s^2)\right)
+\quad (s\downarrow0).
+$$
+
+An untruncated discrete trace limit at fixed $s$ also needs a uniform heat-tail bound. Taking $s$ to zero together with the mesh requires control of that comparison on the chosen diffusion window.
+
+**VI. Removing the cutoff at fixed diffusion time**
+
+Fix $s>0$. Suppose the calibrated graph kernel at time $s/2$ has a uniform diagonal bound $p_{s/2}^{(t)}(x,x)\le M_s$ with respect to the reversible measure $\mu_t$, and suppose $\mu_t(V_t)\le M_0$. For the orthonormal basis of normalized point indicators in $L^2(\mu_t)$, the diagonal entry of $e^{-(s/2)A_t}$ at $x$ is $\mu_t(x)p_{s/2}^{(t)}(x,x)$. Therefore
+
+$$
+\begin{aligned}
+\operatorname{Tr}e^{-(s/2)A_t}
+&=\sum_{x\in V_t}\mu_t(x)p_{s/2}^{(t)}(x,x)\le M_0 M_s,\\
+\sum_{\lambda_{t,j}>\Lambda}e^{-s\lambda_{t,j}}
+&\le e^{-s\Lambda/2}\sum_{\lambda_{t,j}>\Lambda}e^{-(s/2)\lambda_{t,j}}
+\le M_0M_s e^{-s\Lambda/2}.
+\end{aligned}
+$$
+
+At fixed $s$, split the difference of the full graph and continuum traces into the two tails and the fixed-band difference of Step V. First take the graph limit, then $\Lambda\to\infty$. The displayed bound controls the graph tail and trace class controls the continuum tail. A uniform version on a shrinking diffusion window needs additional control of $M_s$ and of the kernel comparison on that window.
 
 Q.E.D.
 
@@ -461,54 +686,91 @@ Given that the Gromov-Hausdorff limit space $(M, g)$ is equipped with a unique s
 
 ### 12.1.5.1 Proof: Smoothness via Elliptic Regularity {#12.1.5.1}
 
-:::tip[**Formal Derivation of Metric Tensor Smoothness by means of the Bootstrapping of Weak Solutions to the Laplace-Beltrami Equation**]
+:::tip[**Derivation of Smooth Eigenfunctions via Interior Elliptic Bootstrapping**]
 :::
 
-This regularity derives from the spectral properties of the Laplacian through the following logical implication chain:  **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" /> and  **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />
-1. **Eigenfunction Regularity:** The eigenfunctions $f_k$ of the limit operator $-\Delta_g$ belong to the intersection of all Sobolev spaces $W^{m,p}(M)$ for $m \in \mathbb{N}, p \in [1, \infty)$. 2. **Smooth Embedding:** By the Sobolev Embedding Theorem, this infinite Sobolev regularity implies containment in the space of smooth functions $C^\infty(M)$. 3. **Metric Regularity:** Since the components of the metric tensor $g_{\mu\nu}$ determine the coefficients of the elliptic operator $-\Delta_g$, the $C^\infty$ smoothness of the eigensolutions necessitates that the metric tensor itself is $C^\infty$-smooth. Consequently, the limit of the discrete causal graphs is not merely a topological manifold but a smooth Riemannian manifold.
+**I. Weak eigenvalue equation on the comparison manifold**
 
-**I. Weak Formulation of the Spectral Limit**
-From the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />, the discrete eigenfunctions converge to limit functions $f_k \in L^2(M)$ which satisfy the weak eigenvalue equation for the Laplace-Beltrami operator:
+Let $M$ carry an independently identified Riemannian metric $g$ that is smooth and locally uniformly elliptic in the coordinate charts used for the comparison. When the limit operator of **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" /> is the Laplace-Beltrami operator for $g$, an eigenfunction $f_k$ in its form domain satisfies
 
 $$
-\int_M \langle \nabla f_k, \nabla \phi \rangle_g \, dV_g = \lambda_k \int_M f_k \phi \, dV_g \quad \forall \phi \in C^\infty_c(M).
+\int_M\langle\nabla f_k,\nabla\phi\rangle_g\,\mathrm dV_g
+=\lambda_k\int_M f_k\phi\,\mathrm dV_g,\qquad \phi\in C_c^\infty(M).
 $$
 
-Since $f_k$ is an element of the Hilbert space $L^2(M)$, it trivially satisfies the initial regularity condition $f_k \in W^{0,2}(M)$.
+In coordinates set $a^{ij}=\sqrt{\det g}\,g^{ij}$ and $b=\sqrt{\det g}$. The equation is $-\partial_i(a^{ij}\partial_j f_k)=\lambda_k b f_k$ in distributions.
 
-**II. Elliptic Bootstrapping (Iterative Regularity Gain)**
-The equation $-\Delta_g f_k - \lambda_k f_k = 0$ constitutes a linear, second-order, uniformly elliptic partial differential equation. The **Interior Regularity Theorem** for elliptic operators <Cite id="A.29" label="(Gilbarg & Trudinger, 2001, Thm 9.11)" /> states:
-* *Premise:* If $u \in W^{m,p}(M)$ is a weak solution to $Lu = \psi$ where $\psi \in W^{m,p}(M)$, and the coefficients of $L$ possess sufficient regularity,
-* *Conclusion:* Then $u \in W^{m+2,p}(M)$.
+**II. Interior regularity**
 
-We apply this bootstrapping regularity iteration to the homogeneous equation where $\psi = \lambda_k f_k$:
-1.  **Base Step ($m=0$):** RHS $\lambda_k f_k \in W^{0,2}(M)$. Implies LHS $f_k \in W^{2,2}(M)$.
-2.  **Inductive Step:** Assume $f_k \in W^{m,2}(M)$. Then the RHS $\lambda_k f_k \in W^{m,2}(M)$. By the regularity theorem, the solution must belong to $W^{m+2,2}(M)$.
-3.  **Conclusion:** By mathematical induction, $f_k \in W^{m,2}(M)$ for all $m \in \mathbb{N}$.
-
-**III. Sobolev Embedding to Hölder Spaces**
-The **Sobolev Embedding Theorem** <Cite id="A.3" label="(Adams & Fournier, 2003)" /> establishes the injection of Sobolev spaces into spaces of continuous derivatives. Specifically, for a manifold of dimension $d=4$:
+Write $u=f_k$, $A=(a^{ij})$, and $F=\lambda_kbu$. Work with a real eigenfunction or apply the argument to its real and imaginary parts. Let $U\Subset W\Subset V$ be coordinate sets, with ellipticity lower bound $\alpha>0$ for $A$ on $V$. A cutoff $\zeta\in C_c^\infty(V)$ equals one on $W$. The form-domain assumption gives $u\in H^1(V)$ locally, so the weak equation with test $\zeta^2u$ gives
 
 $$
-W^{m,p}(M) \subset C^r(M) \quad \text{if } m > r + \frac{d}{p}.
+\begin{aligned}
+\alpha\|\zeta\nabla u\|_2^2
+&\le\int_V F\zeta^2u
+-2\int_V\zeta u\,A\nabla u\cdot\nabla\zeta\\
+&\le \|F\|_{L^2(V)}\|u\|_{L^2(V)}
++\tfrac{\alpha}{2}\|\zeta\nabla u\|_2^2
++C\|u\|_{L^2(V)}^2.
+\end{aligned}
 $$
 
-With $p=2$ and $d=4$, the condition simplifies to $m > r + 2$.
-Since $f_k \in W^{m,2}(M)$ for arbitrarily large $m$ (proven in Step II), for any desired degree of differentiability $r$, one can select an $m$ such that the embedding holds.
+Thus $\|\nabla u\|_{L^2(W)}\le C(\|F\|_{L^2(V)}+\|u\|_{L^2(V)})$. For a coordinate direction $j$ define $D_\epsilon v(x)=[v(x+\epsilon e_j)-v(x)]/\epsilon$. Let $\eta\in C_c^\infty(W)$ equal one on $U$, and take $\epsilon$ small enough that the shifted support stays in $W$. With $w=D_\epsilon u$, the weak test $-D_{-\epsilon}(\eta^2w)$ and difference-quotient summation by parts give
 
 $$
-f_k \in \bigcap_{r=0}^\infty C^r(M) \equiv C^\infty(M).
+\begin{aligned}
+\int D_\epsilon(A\nabla u)\cdot\nabla(\eta^2w)
+&=-\int F D_{-\epsilon}(\eta^2w),\\
+D_\epsilon(A\nabla u)
+&=A(x+\epsilon e_j)\nabla w+(D_\epsilon A)\nabla u,\\
+\nabla(\eta^2w)&=\eta^2\nabla w+2\eta w\nabla\eta .
+\end{aligned}
 $$
 
-This confirms that the eigenfunctions are infinitely differentiable classical functions.
+The line-segment integral for a difference quotient gives $\|w\|_{L^2(\operatorname{supp}\eta)}\le\|\partial_j u\|_{L^2(W)}$ and $\|D_{-\epsilon}(\eta^2w)\|_2\le\|\partial_j(\eta^2w)\|_2$. Put $Z=\|\eta\nabla w\|_2$ and $B=\|F\|_{L^2(V)}+\|\nabla u\|_{L^2(W)}$. The principal term is at least $\alpha Z^2$. The cutoff term is bounded by $CZ\|w\|_{L^2(\operatorname{supp}\eta)}$, the coefficient-difference term by $C\|\nabla u\|_{L^2(W)}(Z+\|w\|_{L^2(\operatorname{supp}\eta)})$, and the right-hand side by $C\|F\|_{L^2(V)}(Z+\|w\|_{L^2(\operatorname{supp}\eta)})$. Hence
 
-**IV. Inverse Regularity of the Metric Tensor**
-The local coordinate representation of the Laplacian is $\Delta_g u = g^{ij} \partial_i \partial_j u + \text{lower order terms}$. The regularity of the operator coefficients ($g^{ij}$) is inextricably linked to the regularity of the solutions.
-A fundamental result in Inverse Spectral Geometry (DeTurck & Kazdan, 1981) asserts the following **Regularity Converse**:
-* *Premise:* If a differential operator $L(g)$ admits a complete set of eigenfunctions $\{f_k\}$ that are $C^\infty$-smooth,
-* *Conclusion:* Then the metric tensor $g$ defining that operator must be $C^\infty$-smooth in harmonic coordinates.
+$$
+\alpha Z^2\le C(BZ+B^2)\le \tfrac{\alpha}{2}Z^2+C'B^2 .
+$$
 
-Any singularity or discontinuity in the metric $g$ would necessarily induce a corresponding singularity in the eigenfunctions $f_k$ at the same location (propagation of singularities), contradicting the established $C^\infty$ property of $f_k$. Therefore, the metric $g$ emerging from the QBD equilibrium is smooth.
+The bound for $\nabla D_\epsilon u$ on $U$ is uniform in $\epsilon$. For each component $\partial_i u$ and each smooth test $\phi$ supported in $U$,
+
+$$
+\lim_{\epsilon\to0}\int_U D_\epsilon\partial_i u\,\phi
+=-\lim_{\epsilon\to0}\int_U \partial_i u\,D_{-\epsilon}\phi
+=-\int_U\partial_i u\,\partial_j\phi .
+$$
+
+A weak $L^2(U)$ limit of the uniformly bounded quotients therefore represents $\partial_j\partial_i u$. Summing the bounds over coordinate directions and using $F=\lambda_kbu$ yields $\|f_k\|_{H^2(U)}\le C(1+|\lambda_k|)\|f_k\|_{L^2(V)}$.
+
+At higher orders the interior elliptic estimate for smooth coefficients <Cite id="A.29" label="(Gilbarg & Trudinger, 2001)" /> gives the local gain
+
+$$
+\|f_k\|_{H^{m+2}(U)}
+\le C_{m,U,V}\left(\|\lambda_k b f_k\|_{H^m(V)}+\|f_k\|_{L^2(V)}\right).
+$$
+
+Multiplication by smooth $b$ is bounded on $H^m(V)$ on these sets. In particular, the Leibniz rule gives $\partial^\alpha(b f_k)=\sum_{\beta\le\alpha}\binom{\alpha}{\beta}(\partial^\beta b)(\partial^{\alpha-\beta} f_k)$ for $|\alpha|\le m$. Thus $\|\lambda_k b f_k\|_{H^m(V)}\le C_m|\lambda_k|\|f_k\|_{H^m(V)}$. For example, the base estimate gives $f_k\in H^2(W)$, so the estimate with $m=2$ on $U\Subset W$ gives $\|f_k\|_{H^4(U)}\le C(\|f_k\|_{L^2(W)}+|\lambda_k|\|f_k\|_{H^2(W)})<\infty$. Iteration on nested sets yields
+
+$$
+f_k\in L^2_{\mathrm{loc}}
+\ \Longrightarrow\ f_k\in H^2_{\mathrm{loc}}
+\ \Longrightarrow\ f_k\in H^4_{\mathrm{loc}}
+\ \Longrightarrow\ \cdots\ \Longrightarrow\ f_k\in H^{2j}_{\mathrm{loc}}
+\quad\text{for every }j\ge1.
+$$
+
+**III. Smooth eigenfunctions**
+
+For each integer $r\ge0$, choose $2j>r+4/2$. In dimension four the Sobolev embedding <Cite id="A.3" label="(Adams & Fournier, 2003)" /> gives
+
+$$
+f_k\in H^{2j}_{\mathrm{loc}}\subset C^r_{\mathrm{loc}},
+\qquad
+f_k\in\bigcap_{r\ge0}C^r_{\mathrm{loc}}=C^\infty(M).
+$$
+
+The regularity of the metric is an input to the coefficient estimates here and to the smooth kernel expansion in **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />. Identifying that regularity from the graph requires a separate metric comparison.
 
 Q.E.D.
 
@@ -530,44 +792,289 @@ Because the eigenfunctions $f_k$ are proven to be infinitely smooth, the metric 
 :::info[**Asymptotic Expansion via Causal Ollivier-Ricci Curvature to the Continuum Ricci Tensor**]
 :::
 
-For any sequence of measured metric spaces $\{ (V_t, \bar{d}_t, \mu_t) \}$ converging to a smooth $d$-dimensional Riemannian manifold $(M, g)$, the discrete Causal Ollivier-Ricci curvature along a unit tangent vector $v$ with discreteness step $\ell_0$ satisfies the asymptotic expansion $K(u, v) = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3)$. Consequently, the discrete Einstein-Hilbert action sum $\mathcal{S}[G] = \sum_{e \in E} K(e)$ converges in the thermodynamic limit $\ell_0 \to 0$ to the continuum Einstein-Hilbert action integral $\frac{1}{2(d+2)\ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x$.
+Let $G_h$ be embedded in a smooth $d$-dimensional Riemannian comparison region $(M,g)$, with mesh $h=\ell_0$, center separation $d_g(x,y)\asymp h$, unit edge tangent $\boldsymbol v$ at $x$, and uniform $\mathcal O(h^4)$ bounds on the ground-cost error including the center-distance error and on the sum of the two marginal Wasserstein errors relative to the normalized geodesic-ball laws of radius $h$. Then the discrete Causal Ollivier-Ricci curvature satisfies
+
+$$
+K_h(x,y)=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)+\mathcal O(h^3),
+$$
+
+and if the rescaled edge measures $h^d\sum_{e\in E_h}\delta_{(x_e,\boldsymbol n_e)}$ converge weakly on the unit tangent bundle of a compact comparison region to $\rho_E(x)\,\mathrm dV_g(x)\,\sigma_x(\mathrm d\boldsymbol n)$ with probability laws $\sigma_x$ of second moment $I/d$ in an orthonormal frame, the discrete action satisfies
+
+$$
+\lim_{h\to0}h^{d-2}\mathcal S[G_h]
+=\frac{1}{2d(d+2)}\int_M \rho_E(x)R_g(x)\,\mathrm dV_g(x).
+$$
 
 ### 12.1.6.1 Proof: Ollivier-Ricci Asymptotic Limit {#12.1.6.1}
 
 :::tip[**Asymptotic Expansion via Geodesic Mass Transport**]
 :::
 
-**I. Setup and Measure Expansion**
-Let $u, v \in V_t$ be adjacent vertices separated by distance $\bar{d}(u,v) = \ell_0$. In normal coordinates centered at $u$, the probability measure $\mu_u$ concentrates mass in a ball of radius $\ell_0$. The volume element of a geodesic ball $B_{\ell_0}(u)$ on $(M,g)$ expands in terms of the Ricci curvature tensor $\mathrm{Ric}$:
+**I. Parallel transport of a continuum ball law**
+
+Work on a smooth Riemannian comparison manifold with $y=\exp_x(\delta v)$, $\|v\|_g=1$, $\delta=d_g(x,y)$, and ball radius $h$. Take $h$ and $\delta$ small enough for the normal-coordinate comparison. Let $\eta_h$ be uniform on the tangent $h$-ball at $x$. The push-forward of $\eta_h$ under
 
 $$
-d\mu_u(x) = \left( 1 - \frac{1}{6} \mathrm{Ric}_{ij}(u) x^i x^j + \mathcal{O}(\ell_0^3) \right) \frac{dx}{V(B_{\ell_0})}.
+w\longmapsto \bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
 $$
 
-**II. Optimal Transport Cost Expansion**
-By the Kantorovich-Rubinstein duality, the Wasserstein-1 transport distance between $\mu_u$ and $\mu_v$ along direction vector $v \in T_u M$ expands as the average geodesic displacement between mass elements:
+is a coupling $\pi_{\mathrm{PT}}$ of the two tangent-ball push-forward laws, since parallel transport $\mathcal P_{x\to y}$ is an isometry. For the curvature convention $R(v,w,w,v)>0$ on positive sectional curvature planes, the distance expansion of Proposition 6 <Cite id="A.53" label="(Ollivier, 2009)" /> gives
 
 $$
-W_1(\mu_u, \mu_v) = \ell_0 \left( 1 - \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3) \right).
+d_g\bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
+=\delta\bigl(1-\tfrac12 R(v,w,w,v)+O(h^3+h^2\delta)\bigr).
 $$
 
-**III. Ricci Tensor Identification**
-Substituting this transport cost expansion into the operational definition of Causal Ollivier-Ricci curvature (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />) yields:
+Write $w=\sum_i w^i e_i$ in an orthonormal frame. The tangent-ball law has radial density $d r^{d-1}/h^d$ on $[0,h]$, so
 
 $$
-K(u, v) = 1 - \frac{W_1(\mu_u, \mu_v)}{\ell_0} = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3).
+\mathbb E_{\eta_h}|w|^2
+=\frac{d}{h^d}\int_0^h r^{d+1}\,\mathrm dr=\frac{d h^2}{d+2},
+\qquad
+\mathbb E_{\eta_h}[w^i w^j]=\frac{h^2}{d+2}\delta^{ij}.
 $$
 
-This establishes the precise asymptotic connection between discrete optimal transport curvature and the continuum Ricci curvature tensor.
-
-**IV. Action Sum Integral Convergence**
-We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and the assumed $d=4$ ball-growth regime (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />)):
+The last equality uses reflection symmetry for mixed moments and permutation symmetry for equal diagonal moments. The contraction and cost are therefore
 
 $$
-\mathcal{S}[G] = \sum_{e \in E} K(e) \xrightarrow{\ell_0 \to 0} \frac{1}{2(d+2) \ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x.
+\begin{aligned}
+\mathbb E_{\eta_h}[R(v,w,w,v)]
+&=\sum_{i,j} R(v,e_i,e_j,v)\mathbb E_{\eta_h}[w^i w^j]
+=\frac{h^2}{d+2}\operatorname{Ric}(v,v),\\
+\int d_g\,\mathrm d\pi_{\mathrm{PT}}
+&=\delta\left(1-\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)+O(h^3+h^2\delta)\right).
+\end{aligned}
 $$
 
-This proves that the discrete action variation drives the continuum geometry to satisfy the stationary action principle of General Relativity.
+For a finite paired stencil, choose bounded $z_i$ and weights $p_i\ge0$ with $\sum_i p_i=1$ and $\sum_i p_i z_i^a z_i^b=\sigma^2\delta^{ab}$. Use offsets $w_i=h z_i$ at $x$ and their parallel transports at $y$. Matching each pair with mass $p_i$ gives exactly the prescribed two stencil laws $\mu_x^{\mathrm{st}},\mu_y^{\mathrm{st}}$. Applying the same distance expansion and summing gives
+
+$$
+\begin{aligned}
+W_{1,g}(\mu_x^{\mathrm{st}},\mu_y^{\mathrm{st}})
+&\le\sum_i p_i\,d_g\bigl(\exp_x(hz_i),\exp_y(h\mathcal P_{x\to y}z_i)\bigr)\\
+&=\delta\left(1-\frac{h^2}{2}\sum_i p_i R(v,z_i,z_i,v)+O(h^3+h^2\delta)\right)\\
+&=\delta\left(1-\frac{\sigma^2 h^2}{2}\operatorname{Ric}(v,v)+O(h^3+h^2\delta)\right).
+\end{aligned}
+$$
+
+An optimal-cost expansion for these stencil laws also needs a matching lower bound.
+
+**II. Optimal cost for uniform geodesic balls**
+
+The cost above gives an upper bound for the tangent-ball push-forwards. Write $\mu_x^g,\mu_y^g$ for normalized Riemannian volume on the two geodesic balls. At $x$ the corresponding normal-coordinate density is
+
+$$
+\mathrm d\mu_x^g(w)
+=\frac{1-\tfrac16\operatorname{Ric}_{ij}(x)w^i w^j+O(h^3)}
+       {\operatorname{Vol}_g(B_h(x))}\,\mathrm dw .
+$$
+
+Example 7 <Cite id="A.53" label="(Ollivier, 2009)" /> uses the common part of the two volume-density corrections under parallel transport and bounds the remaining mismatch. It also provides the matching lower bound by testing a Lipschitz distance to an exponentiated transverse set. These two steps give the optimal cost and the corresponding curvature:
+
+$$
+\begin{aligned}
+W_{1,g}(\mu_x^g,\mu_y^g)
+&=\delta\left(1-\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)
+                  +O(h^3+h^2\delta)\right),\\
+K_g(x,y)&=1-\frac{W_{1,g}(\mu_x^g,\mu_y^g)}{\delta}
+=\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)+O(h^3+h^2\delta).
+\end{aligned}
+$$
+
+**III. Transfer at the curvature scale**
+
+Write $S_h$ for the union of the two embedded graph supports and their centers. Let $\mu_x^h,\mu_y^h$ be the graph marginals and let $\nu_x,\nu_y$ be the reference marginals with ground cost $d_g$. Use the normalized geodesic-ball laws of Step II for the ball comparison. Set
+
+$$
+\begin{aligned}
+\varepsilon_h&=\sup_{a,b\in S_h}|d_h(a,b)-d_g(a,b)|,\\
+\eta_h&=W_{1,g}(\mu_x^h,\nu_x)+W_{1,g}(\mu_y^h,\nu_y),\\
+W_h&=W_{1,h}(\mu_x^h,\mu_y^h),\qquad W_g=W_{1,g}(\nu_x,\nu_y),\\
+\delta_h&=d_h(x,y),\qquad \delta=d_g(x,y).
+\end{aligned}
+$$
+
+For every coupling $\pi$ of the two graph marginals,
+
+$$
+\left|\int d_h\,\mathrm d\pi-\int d_g\,\mathrm d\pi\right|
+\le \varepsilon_h\int 1\,\mathrm d\pi=\varepsilon_h .
+$$
+
+Taking both infima and applying the Wasserstein triangle inequality at each endpoint gives
+
+$$
+\begin{aligned}
+|W_h-W_g|
+&\le |W_h-W_{1,g}(\mu_x^h,\mu_y^h)|
++\left|W_{1,g}(\mu_x^h,\mu_y^h)-W_g\right|\\
+&\le\varepsilon_h+\eta_h,\qquad
+|\delta_h-\delta|\le\varepsilon_h .
+\end{aligned}
+$$
+
+For $\delta\asymp h$, $\varepsilon_h+\eta_h=O(h^4)$ and $W_g=O(h)$, one has $\delta_h\asymp h$. Subtracting the two curvature quotients gives
+
+$$
+\begin{aligned}
+K_h-K_g
+&=\frac{W_g-W_h}{\delta_h}
++\frac{W_g(\delta_h-\delta)}{\delta_h\delta},\\
+|K_h-K_g|
+&\le\frac{\varepsilon_h+\eta_h}{\delta_h}
++\frac{W_g\varepsilon_h}{\delta_h\delta}
+=O(h^3).
+\end{aligned}
+$$
+
+For the geodesic-ball reference, $\delta=O(h)$ in Step II. Hence
+
+$$
+\begin{aligned}
+K_h(x,y)
+&=K_g(x,y)+O(h^3)\\
+&=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)
++O(h^3+h^2\delta)+O(h^3)\\
+&=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)+O(h^3).
+\end{aligned}
+$$
+
+For a finite antipodal comparison, let $(z_i,p_i)$ be a fixed weighted stencil with the same weight at $z_i$ and $-z_i$, $\sum_i p_i=1$, and second moment $\sigma^2 I$. In a local coordinate system $(s,\boldsymbol y)\in\mathbb R\times\mathbb R^{d-1}$, use the metric and the two discrete reference laws
+
+$$
+\begin{aligned}
+g&=f(\boldsymbol y)^2\,\mathrm ds^2+|\mathrm d\boldsymbol y|^2,\qquad
+f(\boldsymbol y)^2=1-A(\boldsymbol y),\qquad A(\boldsymbol y)=\sum_{j=1}^{d-1}\kappa_j(y^j)^2,\\
+\nu_0&=\sum_i p_i\delta_{h z_i},\qquad
+\nu_1=\sum_i p_i\delta_{h(z_i+\boldsymbol e_s)} .
+\end{aligned}
+$$
+
+Under coordinate rescaling by $h$, the metric for lengths divided by $h$ is $I-h^2 A(\boldsymbol y)\,\mathrm ds^2$. The scaled metric is even in $h$ and the weighted endpoint lists are fixed in scaled coordinates. For distinct fixed scaled endpoints $X,Y$, put $\boldsymbol w=Y-X$, $\gamma_0(t)=X+t\boldsymbol w$, and $D=\|\dot\gamma-\boldsymbol w\|_{L^2(0,1)}$ for a competing path on $[0,1]$. Its scaled energy satisfies
+
+$$
+\begin{aligned}
+E_h(\gamma)&=|\boldsymbol w|^2+D^2-h^2 F(\gamma),\\
+F(\gamma)&=\int_0^1 A(\boldsymbol y(t))\dot s(t)^2\,\mathrm dt,\qquad
+\|\gamma-\gamma_0\|_\infty\le D .
+\end{aligned}
+$$
+
+The original endpoints lie within $O(h)$ of the chart center. The straight competitor has length $O(h)$, and uniform ellipticity keeps a minimizing path in a bounded scaled region. On its bounded-energy paths, $A$ and its first derivative are bounded. With $L_A$ a Lipschitz bound on $A$ there,
+
+$$
+\begin{aligned}
+|F(\gamma)-F(\gamma_0)|
+&\le L_A D\|\dot s\|_2^2
+ +\|A\|_\infty\|\dot s-w_s\|_2\|\dot s+w_s\|_2
+\le C D,\\
+E_h(\gamma)
+&\ge |\boldsymbol w|^2-h^2F(\gamma_0)+D^2-Ch^2D\\
+&\ge |\boldsymbol w|^2-h^2F(\gamma_0)-\tfrac14 C^2 h^4 .
+\end{aligned}
+$$
+
+The straight competitor gives the upper bound $|\boldsymbol w|^2-h^2F(\gamma_0)$. Taking square roots yields a uniform expansion over the finite cost matrix,
+
+$$
+\frac{d_g(hX,hY)}{h}
+=|\boldsymbol w|-\frac{h^2 F(\gamma_0)}{2|\boldsymbol w|}+O(h^4)
+\quad(X\ne Y).
+$$
+
+Coincident pairs have cost zero. The center pair $X=0$, $Y=\boldsymbol e_s$ has $F(\gamma_0)=0$, so its distance is $h(1+O(h^4))$.
+
+At $h=0$, every coupling has mean displacement $\boldsymbol e_s$. Its scaled cost is at least one, with equality exactly when all positive-mass pairs have displacement $\lambda\boldsymbol e_s$ with $\lambda\ge0$. Translation of each stencil point realizes equality. On this flat optimal face the common transverse group $\boldsymbol y$ is preserved. If its mass is $m_{\boldsymbol y}$, then
+
+$$
+\sum_{X,Y\ \mathrm{in\ group}\ \boldsymbol y}\pi(X,Y)(Y_s-X_s)
+=\sum_Y\nu_{1,\boldsymbol y}(Y)Y_s-\sum_X\nu_{0,\boldsymbol y}(X)X_s
+=m_{\boldsymbol y},
+$$
+
+where the group marginals in this sum are taken in scaled coordinates. For such a pair $F(\gamma_0)=A(\boldsymbol y)\lambda^2$, so every flat optimal plan has the same scaled second-order cost correction $-\tfrac12\sum_{\boldsymbol y}m_{\boldsymbol y}A(\boldsymbol y)$. The transport polytope has finitely many vertices. Those outside the flat optimal face have a strictly positive flat cost gap whenever such vertices exist. The uniform $O(h^2)$ perturbation cannot close that gap for sufficiently small $h$. The optimum is attained at a vertex on the face and satisfies
+
+$$
+\frac{W_g}{h}
+=1-\frac{h^2}{2}\sum_{\boldsymbol y}m_{\boldsymbol y}A(\boldsymbol y)+O(h^4)
+=1-\frac{\sigma^2 h^2}{2}\sum_{j=1}^{d-1}\kappa_j+O(h^4).
+$$
+
+The nonzero connection coefficients of the comparison metric are $\Gamma^j_{ss}=-f\partial_j f$ and $\Gamma^s_{sj}=\Gamma^s_{js}=\partial_j f/f$. At the origin, $\partial_j f=0$ and $\partial_j\partial_k f=-\kappa_j\delta_{jk}$, so
+
+$$
+\operatorname{Ric}_0(\boldsymbol e_s,\boldsymbol e_s)
+=\sum_j\partial_j\Gamma^j_{ss}(0)
+=-\sum_j\partial_j^2 f(0)
+=\sum_j\kappa_j .
+$$
+
+Dividing by the center distance gives the antipodal model expansion
+
+$$
+K_g(0,h\boldsymbol e_s)
+=\frac{\sigma^2 h^2}{2}\operatorname{Ric}_0(\boldsymbol e_s,\boldsymbol e_s)+O(h^4).
+$$
+
+For the lazy four-dimensional 24-cell, assign weight $1/3$ to the center and share the remaining $2/3$ equally among the 24 vectors $(\pm\boldsymbol e_i\pm\boldsymbol e_j)/\sqrt2$ with $i<j$. Each coordinate is nonzero in 12 directions and each mixed moment vanishes by sign symmetry, so $\sigma^2=(2/3)(12/24)(1/2)=1/6$. The coefficient $\sigma^2/2=1/12$ agrees with the four-dimensional ball-law coefficient. Applied to these finite reference marginals, the quotient estimate transfers the $O(h^3)$ graph remainder for $\varepsilon_h+\eta_h=O(h^4)$. It transfers the $O(h^4)$ remainder for $\varepsilon_h+\eta_h=O(h^5)$.
+
+**IV. Normalized bulk action**
+
+On a compact comparison region, assume that the finite edge measures converge weakly on the unit tangent bundle over that region:
+
+$$
+\omega_h=h^d\sum_{e\in E_h}\delta_{(x_e,n_e)}
+\rightharpoonup \rho_E(x)\,\mathrm dV_g(x)\,\sigma_x(\mathrm dn),
+$$
+
+where $n_e$ is the unit embedded edge direction, $\rho_E$ is the limiting edge density, and $\sigma_x$ is a probability law on unit directions at $x$. The uniform ball-law expansion in Step III gives $K_e=h^2 B(x_e,n_e)+h^2 r_{h,e}$, with $B(x,n)=C\operatorname{Ric}_x(n,n)$, $C=1/[2(d+2)]$, and $\sup_e|r_{h,e}|=O(h)$. For the sum in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />,
+
+$$
+\begin{aligned}
+\left|h^{d-2}\mathcal S[G_h]-\int B\,\mathrm d\omega_h\right|
+&=\left|h^d\sum_e r_{h,e}\right|
+\le \omega_h(1)\sup_e|r_{h,e}|\longrightarrow0,\\
+h^{d-2}\mathcal S[G_h]
+&\longrightarrow
+\int \rho_E(x)\int B(x,n)\,\sigma_x(\mathrm dn)\,\mathrm dV_g(x).
+\end{aligned}
+$$
+
+If the second moment of $\sigma_x$ is $I/d$ in the orthonormal frame, then
+
+$$
+\int B(x,n)\,\sigma_x(\mathrm dn)
+=C\sum_{i,j}\operatorname{Ric}_{ij}(x)\frac{\delta^{ij}}{d}
+=\frac{C}{d}R_g(x).
+$$
+
+For the ball law, $C=1/[2(d+2)]$. Substitution yields
+
+$$
+\boxed{\lim_{h\to0}h^{d-2}\mathcal S[G_h]
+=\frac{1}{2d(d+2)}\int_M \rho_E(x)R_g(x)\,\mathrm dV_g(x).}
+$$
+
+**V. Flat-circle test of the one-hop law**
+
+Take the directed circulant on $\mathbb Z/n\mathbb Z$, $n\ge10$, with steps $+1,-2$ and circle spacing $\Delta=1/n$. For the full law of **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> at $\alpha=\beta=1/3$, the center has mass $1/3$ and each step $\pm\Delta,\pm2\Delta$ has mass $1/6$. Thus the local mean is zero and the second moment is $2(\Delta^2+4\Delta^2)/6=5\Delta^2/3$.
+
+The laws at $0,1$ have signed difference $\mu_0-\mu_1=(\delta_{-2}+\delta_0-\delta_1-\delta_3)/6$. The undirected graph allows hops of length one and two in either direction. Each of $-2\to1$ and $0\to3$ needs two hops since the circular separation is three. Keeping the common mass in place and sending $1/6$ along each of these shipments gives cost $2/3$ in hop units. The function $f(j)=\bar d(j,3)$ is $1$-Lipschitz. Its values at $-2,0,1,3$ are $3,2,1,0$, so the dual difference is
+
+$$
+\int f\,\mathrm d(\mu_0-\mu_1)=\tfrac16(3+2-1-0)=\tfrac23.
+$$
+
+Hence $W_1=2/3$ and $K(0,1)=1/3$. The rescaled hop metric satisfies
+
+$$
+2\Delta\,\bar d(i,j)
+=2\Delta\left\lceil\frac{d_{S^1}(i,j)}{2\Delta}\right\rceil,
+\qquad
+0\le 2\Delta\,\bar d(i,j)-d_{S^1}(i,j)<2\Delta .
+$$
+
+It therefore converges to the circle metric, whose intrinsic Ricci curvature is zero. At the stencil scale both physical lengths $\Delta$ and $2\Delta$ have unit hop cost.
 
 Q.E.D.
 
@@ -576,11 +1083,11 @@ Q.E.D.
 :::info[**Physical Meaning of the Asymptotic Limit via Optimal Mass Transport**]
 :::
 
-The asymptotic expansion of the discrete Causal Ollivier-Ricci curvature establishes a direct analytical bridge between discrete optimal transport theory and classical general relativity. In discrete graph dynamics, local curvature $K(u,v)$ measures the difficulty of transporting probability mass between adjacent causal lightcones. In Riemannian geometry, spatial curvature is governed by the Ricci curvature tensor $\mathrm{Ric}(v,v)$.
+Curvature compares the transport cost of two neighborhood laws with the distance between their centers. The continuum calculation uses uniform volume on small geodesic balls. The flat-circle example uses the full lazy graph law and has a centered stencil. Its two physical step lengths receive the same hop cost, so global convergence of the rescaled metrics leaves a distortion at the stencil scale.
 
-Proving that discrete curvature expands as $K(u,v) = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v,v) + \mathcal{O}(\ell_0^3)$ demonstrates that minimizing transport costs across discrete graph nodes is mathematically equivalent to minimizing spacetime curvature energy. As the discreteness scale $\ell_0$ vanishes, the discrete Einstein-Hilbert action sum $\mathcal{S}[G] = \sum K(e)$ converges precisely to the continuous Einstein-Hilbert action integral $\int R \sqrt{-g} \, d^4x$.
+The comparison divides the absolute transport and center-distance errors by a separation of order $h$. Errors of order $h^4$ therefore preserve the cubic curvature remainder. The even metric expansion and flat optimal-face calculation in the antipodal example give a fourth-order remainder for its reference transport law. The same rate transfers to the graph when the corresponding absolute errors are of order $h^5$.
 
-This asymptotic limit reveals the thermodynamic origin of gravitational dynamics. Relational graph rewrites that optimize information flow naturally drive the macroscopic geometry toward configurations governed by stationary action. Classical general relativity thus emerges as the continuum limit of optimal transport efficiency, establishing that Einstein's field equations are the macroscopic manifestation of microscopic graph entropic optimization.
+The bulk calculation also uses the limiting density of sampled edges and the second moment of their directions. The isotropic angular trace supplies $R_g/d$ under those hypotheses. Identifying the corresponding physical spacetime action requires its own Lorentzian comparison and, for a region with boundary, a separate treatment of boundary terms.
 
 ---
 
@@ -589,36 +1096,41 @@ This asymptotic limit reveals the thermodynamic origin of gravitational dynamics
 :::tip[**Synthesis of Spectral Convergence via Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
 :::
 
-**I. Convergence of the Spectral Data**
-From the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />, the sequence of consistently weighted Laplacians $\{\tilde{\mathcal{L}}_t\}$ converges to the continuum Laplace-Beltrami operator $-\Delta_g$ in the sense of strong resolvent convergence. This implies two critical convergences as $N_t \to \infty$:
-1.  **Eigenvalue Stability:** $\tilde{\lambda}_k^{(t)} \to \lambda_k$ uniformly for any fixed $k$.
-2.  **Eigenfunction Convergence:** $\psi_k^{(t)} \to f_k$ in the $L^2$-norm induced by the Gromov-Hausdorff approximation.
-This establishes that the spectral invariants of the discrete graphs stabilize to those of a limit operator defined on the limit metric space $X = \lim_{GH} G_t$.
+**I. Comparison regime and spectral data**
 
-**II. Identification of the Topological Manifold**
-As established in **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />, the heat kernel $p_t(x,y)$ of the limit space admits short-time Gaussian bounds characteristic of a 4-dimensional Euclidean space.
+Consider a refining sequence in the four-dimensional geometric growth regime, with scaled count bounds on the common range (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Suppose a metric comparison identifies a limit $X$, and a separate smooth comparison identifies it with a Riemannian four-manifold $(M,g)$. In the common Hilbert space, the norm-resolvent hypothesis yields convergence of fixed eigenvalues and isolated eigenspaces (**Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />).
 
-$$
-\lim_{t \to 0} 4t \log p_t(x,y) = -d(x,y)^2.
-$$
+**II. Heat and coefficient inputs**
 
-By the **Reifenberg Metric Regularity Theorem** (Cheeger-Colding), a metric measure space satisfying Ahlfors 4-regularity and the Poincaré inequality, and whose heat kernel exhibits Euclidean asymptotic behavior, is homeomorphic to a topological manifold $M$. Thus, the limit space $X$ is a topological 4-manifold.
+The continuum heat expansion uses the Riemannian comparison metric and the graph heat comparison requires its own functional inequalities and kernel limit (**Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />). The local eigenfunctions used below are smooth under the coefficient hypotheses of **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />. The geometric identification and coefficient regularity are inputs to the chart calculation.
 
-**III. Construction of the Differentiable Structure**
-The limit eigenfunctions $\{f_k\}_{k=1}^\infty$ form a complete orthonormal basis for $L^2(M)$. From the **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />, these functions are $C^\infty$-smooth. we compute the **Spectral Embedding** map $\Phi_K: M \to \mathbb{R}^K$ by:
+**III. Spectral coordinate charts**
+
+For smooth limit eigenfunctions define $\Phi_K(x)=(f_1(x),\ldots,f_K(x))$. If $D\Phi_K$ has rank $d$ at $x$ for $d=\dim M$, then a choice of $d$ component rows yields an invertible derivative. The inverse function theorem gives a local smooth chart $\Phi_i$ after restricting to a neighborhood on which the selected map is invertible. A global spectral embedding additionally requires global injectivity and the embedding topology. On an already identified closed smooth Riemannian manifold, a finite collection of Laplace eigenfunctions can supply an embedding, with the finite cutoff controlled under the geometric hypotheses of the spectral embedding theorem. [Portegies](https://arxiv.org/abs/1311.7568)
+
+On an overlap of two such charts set $\psi_{ij}=\Phi_j\circ\Phi_i^{-1}$. For $x$ in the overlap,
 
 $$
-\Phi_K(x) = (f_1(x), f_2(x), \dots, f_K(x)).
+\begin{aligned}
+D\Phi_i^{-1}(\Phi_i(x))\,D\Phi_i(x)
+&=D(\Phi_i^{-1}\circ\Phi_i)(x)=I,\\
+D\psi_{ij}(\Phi_i(x))
+&=D\Phi_j(x)\,D\Phi_i^{-1}(\Phi_i(x))
+=D\Phi_j(x)[D\Phi_i(x)]^{-1}.
+\end{aligned}
 $$
 
-For sufficiently large $K$ (guaranteed by the embedding theorem of Bérard, Besson, & Gallot), $\Phi_K$ is a smooth embedding into Euclidean space. The image $\Phi_K(M)$ is a smooth submanifold of $\mathbb{R}^K$. This induces a unique smooth differentiable structure on $M$ such that the eigenfunctions are smooth coordinate charts.
+The opposite composition $\psi_{ji}$ is the inverse, so the transition is a smooth diffeomorphism of the overlap images.
 
-**IV. Regularity of the Riemannian Metric**
-The metric tensor $g$ on $M$ is defined intrinsically by the symbol of the Laplacian. In local coordinates determined by the spectral embedding, the metric components $g_{ij}$ are solutions to the elliptic system determined by the Laplacian's principal part. Since the eigenfunctions $f_k$ are $C^\infty$, the coefficients of the operator must be $C^\infty$ (Regularity Converse). The local curvature tensor is governed by the **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
-Consequently, the limit space is a pair $(M, g)$ where $M$ is a smooth 4-manifold and $g$ is a smooth Riemannian metric tensor.
+**IV. Metric in the comparison charts**
 
-**V. Uniformity of the Limit**
-The error terms governing the convergence of the heat kernel and spectrum scale as $O(\ell_0^p + N_t^{-q})$. Since the QBD evolution drives $\ell_0 \to 0$ and $N_t \to \infty$ simultaneously at the fixed point, the convergence is uniform. The sequence of causal graphs $\{G_t\}$ therefore converges in the Spectral-Gromov-Hausdorff topology to the smooth Riemannian manifold $(M, g)$.
+In these coordinates, the principal symbol of $-\Delta_g$ is $p_x(\xi)=g^{ij}(x)\xi_i\xi_j$. Polarization with coordinate covectors $\mathrm dx^i$ gives
+
+$$
+g^{ij}(x)=\tfrac12\bigl(p_x(\mathrm dx^i+\mathrm dx^j)-p_x(\mathrm dx^i)-p_x(\mathrm dx^j)\bigr).
+$$
+
+The inverse matrix gives the covariant components. The comparison of transport curvature with this metric uses separate cost and marginal bounds (**Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />). The chart and symbol calculations apply to the identified smooth limit.
 
 Q.E.D.
 
@@ -629,11 +1141,11 @@ Q.E.D.
 :::note[**Emergence of the Continuum**]
 :::
 
-The bridging of the chasm between the discrete and the continuous is achieved by proving that the spectral properties of the graph, analyzed through **spectral convergence** in <Ref id="12.1.3" label="§12.1.3" /> based on a **consistently weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />, reconstruct the geometry of a smooth 4-dimensional manifold. Furthermore, as established in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />, an exact mathematical link connects discrete Causal Ollivier-Ricci curvature to the continuum Ricci tensor $\mathrm{Ric}(v,v)$ and the continuous Einstein-Hilbert action integral. The discreteness of the underlying substrate does not vanish; rather, it is smoothed out by the statistical law of large numbers, much as the discrete molecular chaos of water resolves into the smooth hydrodynamics of a fluid, with the metric tensor $g_{\mu\nu}$ emerging as a statistical property of the graph's information flow.
+The reversible graph operator supplies a discrete energy form (**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />). A comparison with the continuum operator on a common space gives eigenvalue and eigenspace control under the operator bound in **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />. The balanced-stencil and mesoscopic kernel approaches specify different inputs for such a comparison.
 
-This result implies a profound shift in the ontological status of spacetime, where General Relativity is revealed not as a fundamental interaction, but as the hydrodynamic limit of the causal network's thermodynamics. The smoothness of spacetime is an emergent phenomenon, valid only at scales significantly larger than the discreteness length, a boundary audited through **heat kernel asymptotics** in <Ref id="12.1.4" label="§12.1.4" />. Just as fluid mechanics fails at the mean free path, the smooth Riemannian description is expected to break down at the scale of the causal graph, revealing the granular, stochastic machinery beneath, whose differential structure is nonetheless preserved by elliptic regularity as established in **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />.
+The heat calculation separates the doubling and Poincaré inputs for graph estimates from the smooth continuum expansion (**Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />). On an independently regular metric, the eigenfunctions gain derivatives from their elliptic equation (**Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />). The directional curvature comparison is treated in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
 
-With the stage now constructed as a smooth manifold $(M, g)$ equipped with a differential structure, we must populate it with physics. The geometric container is ready; the next step is to map the dynamical content, specifically the flux of information, onto this manifold. We must demonstrate that the discrete stress-energy tensor $T_{ab}$ coarse-grains into a smooth tensor field $T_{\mu\nu}$ that sources the curvature of our newly derived metric, thereby recovering the Einstein Field Equations in their full continuum glory.
+The following section uses the local directions of graph observables to construct tensor averages. Comparing those averages requires embedding the discrete measures and testing the resulting fields in a common space.
 
 ---
 
@@ -751,92 +1263,43 @@ Let $x \in M$ be a point on the limit manifold, and let $B_t(x, R_t)$ be a seque
 :::tip[**Establishment of Isotropic Mixing via Spectral Concentration and the Wasserstein Bound for Manifold-Valued Random Fields**]
 :::
 
-Let $E_{x,R}^{(t)} = \{e \in E_t : m_e \in B_t(x, R_t)\}$ be the set of edges localized within the ball.
+**I. Physical and graph radii**
 
-The empirical probability measure $\mu_{x,R}^{(t)}$ defined on the unit tangent sphere $S^{d-1} \subset T_x M$ by the spectral embedding of edge directions:.
-
-$$
-\mu_{x,R}^{(t)} = \frac{1}{|E_{x,R}^{(t)}|} \sum_{e \in E_{x,R}^{(t)}} \delta_{\hat{n}_e}
-$$
-
-converges weakly to the normalized Haar measure $\sigma$ on $S^{d-1}$ as $t \to \infty$. Specifically, for the Wasserstein-1 transport distance $W_1$, the convergence rate is:.
+Let $R_t$ denote physical radius and let $r_t=R_t/\ell_0$ denote radius in mesh units. In a mesoscopic limit the two conditions are
 
 $$
-W_1(\mu_{x,R}^{(t)}, \sigma) \leq C \left( R_t^{-d} + N_t^{-1} \log N_t \right)
+R_t\longrightarrow0,\qquad r_t\longrightarrow\infty .
 $$
 
-where $d=4$ is the emergent dimension. This convergence implies that for any Lipschitz continuous function $f: S^{d-1} \to \mathbb{R}$, the expectation satisfies:.
+When the physical ball is in a normal neighborhood of $x$, the radial geodesic from each edge midpoint to $x$ defines the parallel transport of its unit direction. Write the resulting vector as $n_e\in S_xM$. A holonomy error proportional to $\|\mathrm{sec}\|_\infty R_t^2$ tends to zero under this scale choice. An edge count in the ball is a count at radius $r_t$ in graph units (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />).
+
+**II. Empirical direction law**
+
+Use the nonempty edge set of size $m$ in the ball (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). Its direction law is
 
 $$
-\left| \int_{S^{d-1}} f(\xi) \, d\mu_{x,R}^{(t)}(\xi) - \int_{S^{d-1}} f(\xi) \, d\sigma(\xi) \right| \xrightarrow{t \to \infty} 0.
+\mu_{x,R_t}^{(t)}=\frac1m\sum_e\delta_{n_e},
+\qquad \mu_{x,R_t}^{(t)}(S_xM)=\frac1m\sum_e1=1.
 $$
 
-**I. Measure Theoretic Formulation**
-Let $(M, g)$ be the limit manifold. Fix a base point $x \in M$ and consider the mesoscopic ball $B(x, R)$ with radius satisfying $\ell_0 \ll R \ll \text{inj}(M)$, where $\text{inj}(M)$ is the injectivity radius. Let $S_x M \cong S^{d-1}$ be the unit tangent sphere at $x$.
-
-For each edge $e \in E_{x,R}^{(t)}$ with midpoint $m_e$, let $v_e \in T_{m_e}M$ be the tangent vector corresponding to the spectral embedding. Since $R < \text{inj}(M)$, there exists a unique minimizing geodesic $\gamma$ connecting $m_e$ to $x$ lying entirely within the normal neighborhood. we compute the random variable $X_e$ on $S_x M$ by parallel transport $P_\gamma$:
+For a fixed observable $f$ on the sphere, set $Y_e=f(n_e)$ and let $\sigma$ denote uniform sphere measure. The error separates into the mean bias and the centered average,
 
 $$
-X_e = P_{\gamma}^{m_e \to x}\left(\frac{v_e}{\|v_e\|}\right) \in S_x M.
+\frac1m\sum_eY_e-\int f\,\mathrm d\sigma
+=\left(\frac1m\sum_e\mathbb E[Y_e]-\int f\,\mathrm d\sigma\right)
++\frac1m\sum_e(Y_e-\mathbb E[Y_e]).
 $$
 
-The empirical measure is $\mu_N = \frac{1}{N} \sum_{e} \delta_{X_e}$ with $N = |E_{x,R}^{(t)}|$. The target measure $\sigma$ is the normalized Haar measure on $S_x M$.
+**III. Fixed-observable variance**
 
-**II. Sample Density (Ahlfors Scaling)**
-From the **Smooth Manifold Limit** <Ref id="12.1.6" label="§12.1.6" />, the graph volume growth matches the manifold dimension $d=4$. The sample size scales as the integral of the edge density $\rho_{edge}$:
-
-$$
-N(R) = \sum_{e \in B} 1 \asymp \int_{B(x,R)} \rho_{edge} \, dV_g \sim c_d R^d.
-$$
-
-In the limit $t \to \infty$, $R \to \infty$ (in graph units), ensuring $N \to \infty$.
-
-**III. Weak Dependence (Geometric Mixing)**
-The edge directions form a dependent random field. the **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />(Correlation Decay)** establishes that the directional covariance between edges $e, e'$ decays exponentially with geodesic distance:
+The variance of the centered term is
 
 $$
-|\text{Cov}(\langle X_e, u \rangle, \langle X_{e'}, v \rangle)| \leq C \exp\left(-\frac{d_g(e, e')}{\xi}\right) \quad \forall u,v \in T_x M.
+\mathbb E\!\left[\left(\frac1m\sum_e(Y_e-\mathbb E[Y_e])\right)^2\right]
+=\frac1{m^2}\sum_{e,e'}\operatorname{Cov}(Y_e,Y_{e'}).
 $$
 
-This satisfies the strong mixing condition ($\alpha$-mixing), implying that the effective sample size $N_{eff} \approx N / \tau_{int}$ scales linearly with $N$.
-
-**IV. Error Decomposition**
-we evaluate the convergence of the expectation $\mathbb{E}_{\mu_N}[f]$ for test functions $f \in C^2(S^{d-1})$. This class includes the quadratic forms $f(\xi) = \xi_i \xi_j$ required for tensor reconstruction. The total error $\mathcal{E} = |\mathbb{E}_{\mu_N}[f] - \mathbb{E}_{\sigma}[f]|$ decomposes into three physical components:
-
-$$
-\mathcal{E} \leq \mathcal{E}_{geom} + \mathcal{E}_{stat} + \mathcal{E}_{corr}
-$$
-
-1.  **Geometric Holonomy Bias ($\mathcal{E}_{geom}$):** Parallel transport over distance $r \in [0, R]$ in a curved manifold introduces a deviation proportional to the sectional curvature. Let $\|\text{sec}\|_\infty = \sup_{M} |\mathcal{K}|$ be the uniform bound on sectional curvature. The holonomy deviation over the ball scales as the area of the geodesic triangle:
-
-    $$
-    \mathcal{E}_{geom} \leq C \|\text{sec}\|_\infty R^2.
-    $$
-
-    Since $R$ is mesoscopic, this term is small relative to the manifold scale $L \sim 1/\sqrt{\|\text{sec}\|_\infty}$, i.e., $R/L \ll 1$.
-
-2.  **Statistical Fluctuation ($\mathcal{E}_{stat}$):** Treating the transported vectors as a weakly dependent random sample, the error is governed by the Central Limit Theorem for empirical processes. For bounded quadratic forms, the Donsker property holds:
-
-    $$
-    \mathcal{E}_{stat} \asymp \frac{\text{Var}(f)^{1/2}}{\sqrt{N_{eff}}} \sim \frac{1}{\sqrt{c_d R^d}} \sim O(R^{-d/2}).
-    $$
-
-    For $d=4$, this yields the dominant convergence rate of $O(R^{-2})$.
-
-3.  **Mixing Covariance Tail ($\mathcal{E}_{corr}$):** The residual correlations between distant edges contribute a bias term. Integrating the covariance tail over the domain volume:
-
-    $$
-    \mathcal{E}_{corr} \leq \frac{1}{N} \int_{B} \int_{B} e^{-d(y,z)/\xi} \, dy \, dz \leq O(N^{-1}).
-    $$
-
-**V. Convergence Rate**
-Summing the components for $d=4$, we obtain the final bound on the transport distance:
-
-$$
-\boxed{ W_1(\mu_{x,R}^{(t)}, \sigma) \leq \underbrace{C_1 R^{-2}}_{\text{Statistics}} + \underbrace{C_2 N^{-1}}_{\text{Mixing}} + \underbrace{C_3 \|\text{sec}\|_\infty R^2}_{\text{Curvature}} }
-$$
-
-Choosing the optimal intermediate scale $R \sim N^{1/8}$ minimizes the total error, ensuring that the empirical distribution converges to the Haar measure at the rate $O(N^{-1/4})$. This suffices to validate the tensorial averaging integral.
+If $\sum_{e'}|\operatorname{Cov}(Y_e,Y_{e'})|\le C$ uniformly in $e$ and $t$, the variance is at most $Cm/m^2=C/m$. If the first term in the error decomposition also tends to zero, the fixed-observable estimate converges in mean square to its uniform-sphere value. For the second moment the tests are the finitely many functions $f(n)=n_i n_j$. Uniform angular transport estimates require a separate comparison over all Lipschitz tests.
 
 Q.E.D.
 
@@ -845,7 +1308,7 @@ Q.E.D.
 :::note[**Verification of Directional Measures Convergence via Monte Carlo Sampling**]
 :::
 
-Verification of the spatial isotropy convergence established by **Directional Measures** <Ref id="12.2.3.1" label="§12.2.3.1" /> and **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> is based on the following protocols:
+The calculation samples the uniform sphere law directly and measures the error of a fixed second moment (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). The protocols are as follows (**Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" />).
 
 1.  **Empirical Direction Sampling:** The algorithm generates Monte Carlo samples of unit vectors distributed uniformly on the 4D sphere to represent edge directions.
 2.  **Moment Computation:** The protocol calculates the empirical second moment of the coordinates across the generated vector ensemble.
@@ -925,44 +1388,74 @@ Let $\mathcal{S}_e$ be a locally isotropic scalar field on the graph, such that 
 :::tip[**Evaluation of the Spherical Moment Tensor via Symmetry Groups and Error Analysis**]
 :::
 
-The tensorial averaging map $\widetilde{\mathcal{S}}_{ij}^{(t)}(x)$ converges asymptotically to a continuum tensor field proportional to the Riemannian metric $g_{ij}$.  **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" /> and  **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> Specifically, as $N_t \to \infty$:.
+**I. Normalized weighted projection**
+
+For a ball with positive total weight set $p_e=w_e/\sum_{e'}w_{e'}$, $\sum_e p_e=1$, and let $M=\sum_e p_e n_e\otimes n_e$ (**Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" />). In an orthonormal frame the projection of the edge scalar is
 
 $$
-\lim_{t \to \infty} \left\| \widetilde{\mathcal{S}}_{ij}^{(t)}(x) - \frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}(x) \right\| \leq O(R^{-2} + N_t^{-1/2}).
+\widetilde{\mathcal S}=\sum_e p_e\mathcal S_e n_e\otimes n_e .
 $$
 
-The factor $1/d$ (where $d=4$) arises from the projection of the scalar magnitude onto the orthonormal basis of the tangent space via the spherical integral $\int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi) = \frac{1}{d} \delta_{ij}$. The convergence rate is dominated by the statistical variance of the directional sampling, $O(R^{-2})$, while the scalar concentration contributes a subleading term $O(N_t^{-1/2})$.
+**II. Uniform sphere moment**
 
-**I. Reduction to Spherical Integral**
-By the **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, the empirical measure $\mu_{x,R}^{(t)}$ approximates the Haar measure $\sigma$. For the tensorial projection $\xi_i \xi_j$, the discrete sum approximates the integral:
-
-$$
-\sum_{e \in B} w_e \mathcal{S}_e (\hat{n}_e)_i (\hat{n}_e)_j \approx \bar{\mathcal{S}}(x) \int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi).
-$$
-
-**II. Error Analysis (Monte Carlo Variance)**
-The edges in the ball $B(x,R)$ constitute a random sample of the tangent space with size $N_{ball} \sim R^d$. The approximation error $\mathcal{E}$ decomposes into:
-1.  **Directional Variance:** Since the edge directions are random variables (ergodically mixed) rather than a fixed quadrature grid, the convergence is governed by the Central Limit Theorem. The standard error of the mean scales as $1/\sqrt{N_{ball}} \sim R^{-d/2}$. For $d=4$, this yields the dominant term $O(R^{-2})$.
-2.  **Scalar Concentration:** The deviation of individual edge scalars from the local mean introduces a term proportional to $\sqrt{\text{Var}(\mathcal{S}) / N_{ball}}$. With $\text{Var}(\mathcal{S}) \sim O(N_t^{-1})$, this term vanishes rapidly as $O(N_t^{-1/2} R^{-2})$.
-   
-   *Optimal Scaling:* Choosing the mesoscopic radius $R \sim N_t^{1/8}$ minimizes the total error, yielding a local convergence rate of $O(N_t^{-1/4})$.
-
-**III. Symmetry Argument (Parity)**
-Consider the integral $I_{ij} = \int_{S^{d-1}} \xi_i \xi_j \, d\sigma(\xi)$ for $i \neq j$.
-The domain $S^{d-1}$ and Haar measure are invariant under reflection $T_i: \xi_i \mapsto -\xi_i$. The integrand is odd ($-\xi_i \xi_j$), so $I_{ij} = -I_{ij} \implies I_{ij} = 0$.
-
-**IV. Diagonal Normalization (Trace)**
-Consider diagonal terms $I_{kk} = \int_{S^{d-1}} \xi_k^2 \, d\sigma$. By $SO(d)$ invariance, $I_{11} = \dots = I_{dd}$.
-Summing the trace:
+Let $I_{ij}=\int n_i n_j\,\mathrm d\sigma(n)$. For $i\ne j$, reflection in coordinate $i$ preserves $\sigma$ and negates the integrand, giving $I_{ij}=-I_{ij}=0$. Permutation symmetry makes the diagonal entries equal, and
 
 $$
-\sum_{k=1}^d I_{kk} = \int_{S^{d-1}} \|\xi\|^2 \, d\sigma = \int_{S^{d-1}} 1 \, d\sigma = 1.
+d I_{11}=\sum_i I_{ii}=\int\sum_i n_i^2\,\mathrm d\sigma(n)
+=\int 1\,\mathrm d\sigma(n)=1.
 $$
 
-Thus, $I_{kk} = 1/d$.
+Thus the uniform moment matrix is $I/d$.
 
-**V. Tensor Identification**
-Combining components yields $\frac{1}{d} \delta_{ij}$, identifying the limit tensor as $\frac{1}{d} \bar{\mathcal{S}}(x) g_{ij}$ with the stated error bounds.
+**III. Error from directions and scalar variation**
+
+Subtracting the uniform moment times the local mean gives
+
+$$
+\widetilde{\mathcal S}-\bar{\mathcal S}\frac{I}{d}
+=\bar{\mathcal S}\left(M-\frac{I}{d}\right)
++\sum_e p_e(\mathcal S_e-\bar{\mathcal S})n_e\otimes n_e .
+$$
+
+Since $\|n_e\otimes n_e\|_F=\|n_e\|^2=1$, the second term is bounded by
+
+$$
+\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|
+\le\left(\sum_e p_e\right)^{1/2}
+    \left(\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|^2\right)^{1/2}.
+$$
+
+The full norm therefore satisfies
+
+$$
+\left\|\widetilde{\mathcal S}-\bar{\mathcal S} I/d\right\|_F
+\le|\bar{\mathcal S}|\,\|M-I/d\|_F
++\left(\sum_e p_e|\mathcal S_e-\bar{\mathcal S}|^2\right)^{1/2}.
+$$
+
+**IV. Conditional isotropic limit**
+
+For bounded local means and $M\to I/d$, the first term tends to zero (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). The second tends to zero under the weighted local-variance premise. Returning from the orthonormal frame to coordinates gives the isotropic tensor $\bar{\mathcal S}g/d$.
+
+**V. Tensor recovery from a directional quadratic**
+
+Suppose a scalar observable has the form $B(n)=T_{kl}n^k n^l$ for a symmetric tensor $T$ in an orthonormal frame, and let $\sigma$ be the uniform unit-sphere law. Set $a=\mathbb E_\sigma[n_1^4]$ and $b=\mathbb E_\sigma[n_1^2n_2^2]$ for $d\ge2$. Reflection kills monomials with an odd coordinate power. Rotation sending $n_1$ to $(n_1+n_2)/\sqrt2$ gives $a=(2a+6b)/4$, hence $a=3b$. Also,
+
+$$
+1=\mathbb E_\sigma\!\left[\left(\sum_i n_i^2\right)^2\right]
+=d a+d(d-1)b=d(d+2)b.
+$$
+
+Thus the fourth moment is $(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})/[d(d+2)]$. Contracting with $T$ gives
+
+$$
+M_{ij}=\int B(n)n_i n_j\,\mathrm d\sigma(n)
+=\frac{2T_{ij}+(\operatorname{tr}T)\delta_{ij}}{d(d+2)},
+\qquad
+\operatorname{tr}M=\frac{\operatorname{tr}T}{d}.
+$$
+
+Substitution yields $T=\tfrac{d(d+2)}2 M-\tfrac d2(\operatorname{tr}M)I$. On traceless tensors the projection has eigenvalue $2/[d(d+2)]$, and on multiples of $I$ it has eigenvalue $1/d$. The recovery uses the directional quadratic representation and the fourth moment in addition to the second-moment calculation.
 
 Q.E.D.
 
@@ -1045,7 +1538,7 @@ In **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" />, the "comp
 
 The mechanism is **geometric projection**. The term $\xi_i \xi_j$ acts as a projector. When we sum this projector over an isotropic distribution of edges, we are effectively asking, "How much of this scalar quantity points in the $x$-direction? How much in the $y$-direction?" Because the vacuum state is isotropic (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />), the answer is "an equal amount in all directions."
 
-The factor $1/4$ (in $d=4$) is the physical consequence of this equidistribution. If you pour 1 unit of "stuff" (flux/curvature) into a 4-dimensional ball and it spreads out evenly, exactly 1/4 of it resists compression along any single axis. This normalization is crucial. Without it, the coarse-grained field equations would have incorrect coefficients, and the emergent gravity would not match the Newtonian limit. The derivation shows that the metric tensor $g_{\mu\nu}$ naturally emerges as the statistical average of the graph's connectivity, scaled by the intensity of the information flow.
+The factor $1/4$ (in $d=4$) is the physical consequence of this equidistribution. If you pour 1 unit of "stuff" (flux/curvature) into a 4-dimensional ball and it spreads out evenly, exactly 1/4 of it resists compression along any single axis. This normalization is crucial. Without it, the coarse-grained field equations would have incorrect coefficients, and the emergent gravity would not match the Newtonian limit. The same unit-sphere moment enters the scalar bulk comparison. Once the directional transport coefficient is proportional to $\operatorname{Ric}(n,n)$, averaging over directions gives its scalar-curvature trace divided by the dimension (**Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />). The tensor projection of a scalar field and the angular trace of directional curvature are distinct uses of this moment.
 
 ---
 
@@ -1064,7 +1557,7 @@ The macroscopic coupling constant $\kappa'$ is related to the microscopic coupli
 
 ### 12.2.5.1 Proof: EFE Convergence {#12.2.5.1}
 
-:::tip[**Verification of the Algebraic Preservation of the Field Equation Structure through the Pointwise Limits of the Coarse-Graining Operator**]
+:::tip[**Verification of Field Equation Preservation via Weak Tensor Pairings**]
 :::
 
 **I. Linearity of the Coarse-Graining Operator**
@@ -1077,7 +1570,7 @@ $$
 This linearity is intrinsic to the definition of the map as a weighted projection sum and is independent of the scale $t$.
 
 **II. Microscopic Identity**
-By the hypothesis of the discrete field equations (specifically, **Geometric Conservation** <Ref id="13.3" label="§13.3" />), the discrete fields satisfy the relation $\mathcal{G}^{(t)}_e - \kappa \mathcal{T}^{(t)}_e = 0$ for every edge. Applying the linear operator $\mathcal{A}_R^{(t)}$ to this null field:
+Assume that the discrete fields in the comparison satisfy the finite field identity (the setting of **Geometric Conservation** <Ref id="13.3" label="§13.3" />) given by $\mathcal{G}^{(t)}_e - \kappa \mathcal{T}^{(t)}_e = 0$ for every edge. Applying the linear operator $\mathcal{A}_R^{(t)}$ to this null field:
 
 $$
 \mathcal{A}_R^{(t)}[\mathcal{G}^{(t)} - \kappa \mathcal{T}^{(t)}] = \mathcal{A}_R^{(t)}[\mathbf{0}] = 0.
@@ -1090,19 +1583,26 @@ $$
 $$
 
 **III. Macroscopic Limit**
-Taking the weak limit $t \to \infty$ as established in the **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" />, the sequence of tensor fields converges in distribution:
+Use a common comparison space and normalization for both averaged fields, and denote the embedded measure by $\nu_t$. Assume that for every smooth compactly supported test tensor $\phi$ the pairings converge to those of $G$ and $T$ with the same limit measure $\nu$, in the setting of **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" />. The finite identity in Step II then gives
 
 $$
-\widetilde{\mathcal{G}}_{\mu\nu}^{(t)} \rightharpoonup G_{\mu\nu}, \quad \widetilde{\mathcal{T}}_{\mu\nu}^{(t)} \rightharpoonup T_{\mu\nu}.
+\begin{aligned}
+0
+&=\lim_{t\to\infty}\int
+\left(\widetilde{\mathcal G}^{(t)}-\kappa\widetilde{\mathcal T}^{(t)}\right):\phi\,\mathrm d\nu_t\\
+&=\int G:\phi\,\mathrm d\nu-\kappa\int T:\phi\,\mathrm d\nu .
+\end{aligned}
 $$
 
-The asymptotic convergence of the scalar edge curvature $\mathcal{G}^{(t)}_e = K(e)$ to the continuum Ricci tensor $Ric_{\mu\nu}$ is guaranteed by the **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />. Since the linear combination is identically zero for every term in the sequence, the limit distribution must satisfy the same relation:
+Thus the tested identity preserves the same coefficient $\kappa$. Suppose $\nu$ is the metric volume and $D=G-\kappa T$ is continuous. If $D_{ij}(x_0)\ne0$ in a smooth local frame $e_i$, there is a neighborhood $U$ and a sign $\epsilon\in\{-1,1\}$ with $\epsilon D_{ij}(x)\ge c>0$ on $U$. Let $\psi\in C_c^\infty(U)$ be nonnegative and nonzero. The contravariant test tensor $\phi=\epsilon\psi e_i\otimes e_j$, extended by zero, selects that component. Its tested pairing is
 
 $$
-G_{\mu\nu} - \kappa T_{\mu\nu} = 0
+0=\int_M D:\phi\,\mathrm d\nu
+=\int_U\epsilon D_{ij}(x)\psi(x)\,\mathrm d\nu(x)
+\ge c\int_U\psi(x)\,\mathrm d\nu(x)>0 .
 $$
 
-in the distributional sense. Since the limit fields are smooth (by the elliptic regularity of the averaging limit derived from the manifold smoothness), the equality holds pointwise. Because the discrete tensor $\mathcal{G}_{ab}$ already incorporates the required trace-reversal factor of $1/2$ (as defined in **Discrete Einstein Tensor** <Ref id="13.2.1" label="§13.2.1" />), the macroscopic limit maps linearly to the continuum Einstein tensor $G_{\mu\nu}$, with the renormalization of $\kappa$ to $\kappa' = 8\pi G_N$ serving purely to align the volumetric integration measure.
+This contradiction gives $G=\kappa T$ pointwise. Identification with the physical Einstein and stress tensors requires the comparison to verify the fields and their normalizations.
 
 Q.E.D.
 
@@ -1111,53 +1611,50 @@ Q.E.D.
 :::info[**Pointwise Emergence of Einstein Field Equations via Renormalized Averaging**]
 :::
 
-Proving the pointwise convergence of discrete graph field equations to continuous Einstein field equations establishes that classical gravitation emerges directly from relational network dynamics. At microscopic scales, graph rewrites govern local curvature and energy-momentum transport. Demonstrating that spherical graph averaging converges pointwise to $G_{\mu\nu} = 8\pi G_N T_{\mu\nu}$ proves that the structural coupling between geometry and matter is rigorously preserved across scale transitions.
+A weak tensor limit carries the finite field identity through the tested pairing when the two fields use the same normalization and measure. If the limiting fields are continuous with respect to a metric volume, their distributional equality also gives equality as continuous tensors. A divergence comparison for the discrete approximants requires control of derivatives or a separate weak divergence pairing.
 
-This convergence theorem illuminates the physical origin of Newton's gravitational constant $G_N$. Rather than acting as an ad-hoc fundamental constant of nature, $G_N$ emerges as a renormalized coupling coefficient determined by the spherical averaging measure over discrete graph elements. The trace-reversal factor $1/2$ embedded within the discrete Einstein tensor $\mathcal{G}_{ab}$ matches the four-dimensional spacetime metric trace, ensuring exact tensor compliance without tuning parameters.
+In an oriented chain complex, the incidence identity follows from $\partial_2[a,b,c]=[b,c]-[a,c]+[a,b]$, since $\partial_1\partial_2[a,b,c]=(c-b)-(c-a)+(b-a)=0$. Linearity gives zero on every two-chain. This identity describes the boundary maps. In a smooth Levi-Civita geometry, contracting the differential Bianchi identity instead gives $\nabla^\mu R_{\mu\nu}=\tfrac12\nabla_\nu R$. With $\nabla g=0$, this yields $\nabla^\mu G_{\mu\nu}=0$ for $G_{\mu\nu}=R_{\mu\nu}-\tfrac12 Rg_{\mu\nu}$.
 
-Pointwise emergence guarantees that general relativity operates as a local field theory at every point on the emergent manifold. Because weak distribution convergence holds continuously across compact testing regions, localized energy-momentum distributions generate corresponding spacetime curvature distortions without non-local anomalies. Spherical averaging thus bridges microscopic graph rewrites with classical gravitational field dynamics.
+If an interpolated field $\widetilde G_t$ tends to $G$ in $C^1$ on the same smooth metric, then $\nabla^g\widetilde G_t=\nabla^g(\widetilde G_t-G)$ tends to zero. This implication concerns the divergence of the interpolant. A discrete divergence operator, its relation to that interpolant, and its error require their own comparison (**Discrete Divergence-Free Geometry** <Ref id="13.3.6" label="§13.3.6" />).
 
 ---
 
 ### 12.2.6 Proof: Tensorial Continuum Limit {#12.2.6}
 
-:::tip[**Synthesis via Weak Convergence Arguments using the Dominated Convergence Theorem**]
+:::tip[**Synthesis via Weak Convergence of the Embedded Tensor Pairings**]
 :::
 
- This synthesis proof utilizes the structural results established in supporting **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />.
- This synthesis proof utilizes the structural results established in supporting **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />.
-**I. Construction of the Test Functional**
-Let $\phi^{\mu\nu} \in C_c^\infty(M)$ be a smooth test tensor with compact support $K$ and bound $C_\phi$. we compute the integrated pairing functional:
+**I. Pairing in a common comparison space**
+
+Let $\phi$ be a smooth compactly supported test tensor and $K=\operatorname{supp}\phi$. Put the embedded positive measures $\nu_t$ and the interpolated tensor fields in a common comparison space. Locally, the tensor contraction is a finite sum of component pairings $\int\phi F_t\,\mathrm d\nu_t$, using the same frames and normalization for the finite and limit fields. The estimates in **Directional Measures** <Ref id="12.2.3" label="§12.2.3" /> and **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" /> concern the direction and averaging comparisons that enter the component fields.
+
+**II. A sufficient weak convergence estimate**
+
+Suppose $\nu_t\rightharpoonup\nu$ against continuous compactly supported functions, $\sup_t\nu_t(K)<\infty$, and $F_t\to F$ uniformly on $K$ with $F$ continuous. Add and subtract the integral of $\phi F$ against $\nu_t$:
 
 $$
-I^{(t)} = \int_M \widetilde{\mathcal{G}}_{ij}^{(t)}(x) \phi^{ij}(x) \, dV_t(x).
+\begin{aligned}
+\left|\int\phi F_t\,\mathrm d\nu_t-\int\phi F\,\mathrm d\nu\right|
+&\le\left|\int\phi(F_t-F)\,\mathrm d\nu_t\right|
++\left|\int\phi F\,\mathrm d\nu_t-\int\phi F\,\mathrm d\nu\right|\\
+&\le \|\phi\|_\infty\sup_K|F_t-F|\,\nu_t(K)
++\left|\int\phi F\,\mathrm d\nu_t-\int\phi F\,\mathrm d\nu\right|
+\longrightarrow0 .
+\end{aligned}
 $$
 
-**II. Pointwise Convergence of the Integrand**
-By the **Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" />, the tensorial average $\widetilde{\mathcal{G}}_{ij}^{(t)}(x)$ converges pointwise to the continuum field $G_{\mu\nu}(x)$ for every $x \in M$. The pointwise error is bounded by $\epsilon_t(x) = O(R_t^{-2} + N_t^{-1/2})$.
+The first term tends to zero by the mass and uniform error bounds. The second tends to zero by weak convergence since $\phi F$ is continuous and compactly supported. One may also establish convergence directly for the full tensor pairings.
+
+**III. Preservation of the finite field identity**
+
+Apply the pairing comparison to both fields of **EFE Convergence** <Ref id="12.2.5" label="§12.2.5" /> using the same $\nu_t$. Under the finite identity and the two limits,
 
 $$
-\lim_{t \to \infty} \left| \widetilde{\mathcal{G}}_{ij}^{(t)}(x) - G_{\mu\nu}(x) \right| = 0.
+\langle G-\kappa T,\phi\rangle_\nu
+=\lim_{t\to\infty}\langle\widetilde{\mathcal G}^{(t)}-\kappa\widetilde{\mathcal T}^{(t)},\phi\rangle_{\nu_t}=0 .
 $$
 
-**III. Uniform Boundedness (Domination)**
-The discrete scalars are uniformly bounded by the **Geometric Syndrome** condition: $|\mathcal{G}_e| \leq 2$. Consequently, the averaged tensor field is uniformly bounded: $\|\widetilde{\mathcal{G}}^{(t)}\|_\infty \leq 2$. Thus, the integrand is dominated by $2 C_\phi \cdot \mathbb{1}_K(x) \in L^1(M, dV_g)$.
-
-**IV. Convergence of Measures**
-The discrete measure $dV_t$ converges to the Riemannian volume measure $dV_g$ in Total Variation distance due to the **Smooth Manifold Limit** <Ref id="12.1.6" label="§12.1.6" />.
-
-$$
-\lim_{t \to \infty} \int_M \psi \, dV_t = \int_M \psi \, dV_g.
-$$
-
-**V. Limit Evaluation**
-By the **Generalized Dominated Convergence Theorem**, the limit of the integral equals the integral of the limit:
-
-$$
-\lim_{t \to \infty} I^{(t)} = \int_M G_{\mu\nu} \phi^{\mu\nu} \, dV_g.
-$$
-
-The global error in the weak pairing scales as the integrated pointwise error: $O(R_t^{-2} + N_t^{-1/2}) \cdot \text{vol}(K) \cdot C_\phi$. Since $R_t \to \infty$ and $N_t \to \infty$, the limit is exact.
+The two convergence hypotheses give a distributional identity in the chosen normalization.
 
 Q.E.D.
 
@@ -1168,11 +1665,11 @@ Q.E.D.
 :::note[**Tensorial Reorganization**]
 :::
 
-The transition from scalar graph dynamics to continuum tensor calculus is executed by mapping discrete features to smooth manifold objects. By demonstrating that the statistical thermodynamics of the causal graph coarse-grains into smooth tensor fields satisfying $G_{\mu\nu} = \kappa T_{\mu\nu}$, as verified in the **Tensorial Continuum Limit** <Ref id="12.2.2" label="§12.2.2" /> using **directional** **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, the Einstein Field Equations are shown to be the exact hydrodynamic limit of the discrete informational balance equations. The linearity of the **tensorial averaging map** defined in <Ref id="12.2.1" label="§12.2.1" /> guarantees that the microscopic equilibrium between curvature flux and complexity flux scales up undistorted, validating the hypothesis that gravity is an emergent entropic force.
+The tensorial averaging map is linear in the discrete scalar observables (**Tensorial Averaging Map** <Ref id="12.2.1" label="§12.2.1" />). Directional moments enter the comparison of its components (**Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). The averaging window sets the scale of the sum (**Riemann Sum Approximation** <Ref id="12.2.4" label="§12.2.4" />).
 
-This result implies a fundamental shift in the interpretation of the metric tensor, since $g_{\mu\nu}$ is not a fundamental field but a derived statistical property of the graph's connectivity, much as temperature is a derived property of molecular motion. The stiffness of spacetime, characterized by the coupling constant $\kappa$, is determined by the correlation length of the underlying vacuum fluctuations. This confirms that General Relativity is an effective field theory valid only at scales larger than the discreteness length, with specific, calculable deviations expected in the high-energy regime where the averaging breaks down, a limit analyzed in the **EFE convergence** framework of <Ref id="12.2.5" label="§12.2.5" /> under **Riemann sum** **Riemann Sum Approximation**s <Ref id="12.2.4" label="§12.2.4" />.
+In a common comparison space, convergence of the two weak tensor pairings passes a finite field identity to the limit (**EFE Convergence** <Ref id="12.2.5" label="§12.2.5" />). Using the same measure and normalization for both fields preserves the coefficient $\kappa$. A comparison with the physical Einstein and stress tensors must establish the identities of those limiting fields.
 
-With the geometric and dynamical structures now established, one critical component remains: the signature of the metric. We have derived a Riemannian metric $g_{\mu\nu}$ that describes the spatial geometry, but physical spacetime is Lorentzian. The final stage of the proof, presented in the subsequent section, must recover the light cone structure. We will demonstrate that the intrinsic directedness of the causal graph induces a temporal orientation on the manifold, upgrading the emergent geometry from Riemannian to pseudo-Riemannian and completing the recovery of classical spacetime.
+The tensorial comparison specifies how to test the geometric and dynamical fields in the same space. The following section considers the temporal direction and the boundary data needed to determine the metric signature.
 
 ---
 
@@ -1261,53 +1758,44 @@ Let $\boldsymbol{e} \in T_x M$ be the vector representation of a directed edge $
 
 ### 12.3.3.1 Proof: Causal Drift {#12.3.3.1}
 
-:::tip[**Derivation of the Drift Vector from the Monotonicity of Logical Depth**]
+:::tip[**Derivation of the Drift Vector from Calibrated Embedded Displacements**]
 :::
 
-Unlike the undirected case where orientational symmetry implies $\langle \boldsymbol{e} \rangle = 0$, the expectation value of directed edges is strictly non-zero as established in **Causal Drift** <Ref id="12.3.3" label="§12.3.3" /> and **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />:
+**I. Embedded displacements**
+
+Work in a local comparison chart at $x$, with a nonzero future-directed longitudinal vector $e_0$ of unit length in a positive reference inner product and a transverse complement. For each effective path $\gamma$ in the comparison, write its embedded displacement as $\Delta x_\gamma$. Assume that the longitudinal projection satisfies $\langle e_0,\Delta x_\gamma\rangle\ge c_0\ell_0$ for a uniform $c_0>0$. This geometric bound is the embedded time calibration in **Causal Drift** <Ref id="12.3.3" label="§12.3.3" /> and **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />.
+
+**II. Rescaled first moment**
+
+For the probability law on the paths let $v_\gamma=\Delta x_\gamma/\ell_0=v_{\gamma,\parallel}e_0+v_{\gamma,\perp}$. Then
 
 $$
-D^\mu(x) \equiv \lim_{R \to 0} \lim_{t \to \infty} \mathbb{E}_{\mu_{x,R}^{(t)}} [\boldsymbol{e}] \neq 0.
+\mathbb E[v_{\gamma,\parallel}]
+=\ell_0^{-1}\mathbb E[\langle e_0,\Delta x_\gamma\rangle]
+\ge\ell_0^{-1}c_0\ell_0=c_0.
 $$
 
-The vector field $D^\mu$ is the **Causal Drift**. Given the assumed continuum order and normalized-volume correspondence (**Iid Diamond Count Concentration** <Ref id="5.5.10" label="§5.5.10" />), the proposed field defines a global, nowhere-vanishing vector field on $M$, establishing the temporal orientation (arrow of time) and breaking the local $O(4)$ symmetry down to $O(3)$ spatial isotropy.
-
-**I. Directed Edge Projection**
-Let $\phi: G_t \to M$ be the spectral embedding. For a causal edge $e=(u,v)$, the logical depth satisfies $L(v) \geq L(u) + 1$. The tangent vector is defined as the limit of the secant:
+Under spatial rotation invariance, the finite transverse mean $\boldsymbol m=\mathbb E[v_{\gamma,\perp}]$ satisfies $R\boldsymbol m=\mathbb E[Rv_{\gamma,\perp}]=\boldsymbol m$ for every $R\in SO(3)$. If $\boldsymbol m\ne0$, let $\boldsymbol a$ be a unit axis orthogonal to $\boldsymbol m$. The half-turn $R_\pi=2\boldsymbol a\boldsymbol a^{\mathsf T}-I$ has eigenvalues $1,-1,-1$ and determinant one. Hence
 
 $$
-v^\mu_e = \lim_{\ell_0 \to 0} \frac{\phi^\mu(v) - \phi^\mu(u)}{\ell_0}.
+\boldsymbol m=R_\pi\boldsymbol m
+=2\boldsymbol a(\boldsymbol a\cdot\boldsymbol m)-\boldsymbol m
+=-\boldsymbol m,
 $$
 
-**II. Decomposition by Logical Depth**
-We decompose the coordinate basis into a longitudinal component (aligned with the gradient of logical depth $\nabla L$) and transverse components orthogonal to $\nabla L$.
+which gives $\boldsymbol m=0$. For the limit it suffices that the mean tends to zero.
+
+**III. Limit drift**
+
+Assume the rescaled first moments converge and $\mathbb E[v_{\gamma,\perp}]\to0$. If $\bar\lambda=\lim\mathbb E[v_{\gamma,\parallel}]$, then
 
 $$
-v^\mu_e = (\Delta L)_e \cdot (\nabla L)^\mu + v^\mu_\perp.
+D=\lim\mathbb E[v_\gamma]
+=\bar\lambda e_0,\qquad
+\bar\lambda\ge c_0>0.
 $$
 
-**III. Expectation Evaluation**
-We compute the expectation over the equilibrium ensemble $\mathcal{E}$ in the thermodynamic limit:
-1.  **Longitudinal Component:** By the strict ordering of causal updates, $(\Delta L)_e \geq 1$. Thus, the mean longitudinal displacement is strictly positive:
-
-    $$
-    \mathbb{E}[(\Delta L)_e] \equiv \bar{\lambda} \geq 1 > 0.
-    $$
-
-2.  **Transverse Component:** The QBD equilibrium is isotropic with respect to spatial directions perpendicular to the update flow (as established in the **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />). Thus, the transverse fluctuations average to zero:
-
-    $$
-    \mathbb{E}[v^\mu_\perp] = 0.
-    $$
-
-**IV. Resulting Drift**
-The mean vector is:
-
-$$
-D^\mu = \bar{\lambda} (\nabla L)^\mu \neq 0.
-$$
-
-Since $L$ is a globally monotonic function (the logical clock), its gradient $\nabla L$ is non-vanishing everywhere. Thus, the distribution of directed edges possesses a first moment $D^\mu$ that selects a preferred direction at every point $x$.
+Under the embedded time calibration and transverse mean condition, the drift at $x$ is nonzero and future directed.
 
 Q.E.D.
 
@@ -1333,42 +1821,49 @@ Given the system, the support of the directed edge measure $\mu_x$ is strictly c
 
 ### 12.3.4.1 Proof: Null Boundary {#12.3.4.1}
 
-:::tip[**Establishment of the Causal Cone via Lieb-Robinson Bounds on the Graph**]
+:::tip[**Derivation of Cone Containment from the Embedded Slope Bound**]
 :::
 
-The causal cone bound is established under **Null Boundary** <Ref id="12.3.4" label="§12.3.4" /> and **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />:
+**I. Geometric propagation input**
+
+In the local comparison frame of **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />, assume each rescaled effective displacement satisfies $v_\parallel\ge c_0>0$ and $\|v_\perp\|\le K_{\max}v_\parallel$ with $0<K_{\max}<\infty$. The latter is the slope calibration for **Null Boundary** <Ref id="12.3.4" label="§12.3.4" />. For an adjacent graph step, the logical-depth ratio $d_G(u,v)/|L(v)-L(u)|$ is at most one when the depth increases by at least one. The slope hypothesis concerns the embedded physical displacements.
+
+**II. Angular support**
+
+Decompose $v=v_\parallel e_0+v_\perp$ in the positive reference inner product. With $\theta$ the angle to $e_0$,
 
 $$
-\text{supp}(\mu_x) \subseteq \{ v \in T_x M : \angle(v, D) \leq \Theta_c \}.
+\tan\theta=\frac{\|v_\perp\|}{v_\parallel}\le K_{\max},
+\qquad
+0\le\theta\le\Theta_c=\arctan K_{\max}.
 $$
 
+The set $\mathcal C_x=\{v:v_\parallel\ge0,\ \|v_\perp\|\le K_{\max}v_\parallel\}$ is closed. If the embedded velocity laws converge weakly, the limit has mass one on $\mathcal C_x$ because every finite law assigns it mass one.
 
-This angular bound $\Theta_c$ corresponds to the maximum speed of information propagation (the "speed of light") relative to the mean drift speed. The boundary of this support, $\partial \mathcal{C}_x$, forms the Null Cone structure required for Lorentzian geometry.
+**III. Attainment of the boundary**
 
-**I. Speed Limit Definition**
-Define the propagation speed $c_g$ on the graph as the ratio of geodesic distance to logical depth difference:
+For the full round cone, suppose that each unit transverse direction $n$ has a limiting reachable direction with $v_\parallel>0$ and $v_\perp/v_\parallel=K_{\max}n$. Each boundary generator is then represented by $e_0+K_{\max}n$. The additional geometric identification used in the signature calculation is that these reached boundary rays are null for the comparison metric.
 
-$$
-c_g(u,v) = \frac{d_G(u,v)}{|L(v) - L(u)|}.
-$$
+**IV. Reachability from effective path blocks**
 
-For any single edge $e=(u,v)$, the spatial distance is bounded ($d_G=1$) and the time step is non-zero ($\Delta L \ge 1$), so the microscopic speed is finite.
-
-**II. Tangent Space Projection**
-In the continuum limit, the angle $\theta$ between an edge vector $v$ and the drift $D$ is determined by the ratio of the transverse displacement to the longitudinal displacement:
+In a common comparison frame, fix a unit transverse direction $n$ and suppose a path can be built from successive admissible blocks with positive longitudinal increments $\tau_j$ and transverse displacements $\tau_j s_j$. Assume each chosen block satisfies $\|s_j\|\le K_{\max}$ and $n\cdot s_j\ge K_{\max}-\varepsilon$. The total slope $\bar s$ is a longitudinally weighted average:
 
 $$
-\tan \theta = \frac{\|v_\perp\|}{\|v_\parallel\|}.
+\bar s=\frac{\sum_j\tau_j s_j}{\sum_j\tau_j},
+\qquad
+\|\bar s\|\le K_{\max},
+\qquad n\cdot\bar s\ge K_{\max}-\varepsilon .
 $$
 
-From the **Geometric Syndrome** constraints (Chapter 11), the transverse connectivity is bounded by the maximum degree of the graph, $\Delta_{max}$. A node cannot connect to arbitrarily distant spatial neighbors in a single update step. There exists a geometric constant $K_{max}$ such that $\|v_\perp\| \leq K_{max} \|v_\parallel\|$.
+Consequently,
 
-**III. Cone Construction**
-The maximum angle is $\Theta_c = \arctan(K_{max})$.
-* **Allowed Zone:** If $\theta \le \Theta_c$, the vector lies within the support of the measure.
-* **Forbidden Zone:** If $\theta > \Theta_c$, the probability density is identically zero ($\mu_x(\theta) = 0$).
+$$
+\|\bar s-K_{\max}n\|^2
+=\|\bar s\|^2+K_{\max}^2-2K_{\max}n\cdot\bar s
+\le2K_{\max}\varepsilon.
+$$
 
-This strictly compact support defines a topological cone $\mathcal{C}_x$. The vectors on the boundary $\theta = \Theta_c$ are the generators of the null cone.
+A family of admissible effective blocks with $\varepsilon\to0$ for each $n$ supplies the required boundary directions. The estimate uses the block selection and common-frame hypotheses.
 
 Q.E.D.
 
@@ -1387,47 +1882,39 @@ In the continuum limit, this finite speed limit establishes a compact support an
 
 ### 12.3.5 Proof: Signature Selectivity {#12.3.5}
 
-:::tip[**Derivation of the $(-+++)$ Signature via the Quadratic Form of the Causal Propagator**]
+:::tip[**Derivation of the $(-+++)$ Signature via the Full Null Boundary and Positive Spatial Metric**]
 :::
 
- This synthesis proof utilizes the structural results established in supporting **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />.
- This synthesis proof utilizes the structural results established in supporting **Null Boundary** <Ref id="12.3.4" label="§12.3.4" />.
-**I. The Causal Propagator Construction**
-To capture the full spacetime geometry, we evaluate the second moment tensor of the *directed* edge distribution, termed the Causal Propagator $P^{\mu\nu}$. Unlike the undirected averaging in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" /> which yielded the identity $\delta^{\mu\nu}$, the directed propagator integrates only over the causal wedge:
+**I. Moment tensor in the embedded frame**
+
+Under the nonzero embedded drift of **Causal Drift** <Ref id="12.3.3" label="§12.3.3" />, choose a basis with $e_0$ along the drift and the other three vectors transverse. For a limiting velocity law $\mu_x$ with finite second moment, the causal propagator has components
 
 $$
-P^{\mu\nu} = \int_{\mathcal{C}_x} v^\mu v^\nu \, d\mu_x(v).
+P^{\mu\nu}=\int v^\mu v^\nu\,\mathrm d\mu_x(v),\qquad
+b_\mu P^{\mu\nu}b_\nu=\int (b_\mu v^\mu)^2\,\mathrm d\mu_x(v)\ge0 .
 $$
 
-**II. Eigendecomposition and Symmetry Breaking**
-We decompose the tangent space into the drift axis $e_0 \parallel D^\mu$ and the transverse spatial plane $\Sigma$.
-1.  **Longitudinal Eigenvalue (Time):** The component along the drift, $\lambda_0 = \int (v^0)^2 d\mu$, is macroscopic and dominated by the mean drift $(\Delta L)^2 \approx 1$.
-2.  **Transverse Eigenvalues (Space):** The components $\lambda_i = \int (v^i)^2 d\mu$ ($i=1,2,3$) correspond to the spatial variance. From the isotropy of the vacuum established in the **Directional Measures** <Ref id="12.2.3" label="§12.2.3" />, these spatial eigenvalues are identical: $\lambda_1 = \lambda_2 = \lambda_3$.
-3.  **Cross Correlations:** Due to the rotational symmetry of the vacuum around the drift axis, the cross terms vanish: $\int v^0 v^i d\mu = 0$.
+Spatial rotation invariance gives a scalar spatial block and zero mixed entries: the vector with entries $\int v^0v^i\,\mathrm d\mu_x$ is fixed by all rotations, and the spatial block commutes with all rotations. Thus the second moment identifies a longitudinal and a spatial block.
 
-**III. The Null Condition (The Wick Rotation)**
-The physical metric $g_{\mu\nu}$ is defined by the causal structure: the boundary of the causal cone $\partial \mathcal{C}_x$ must correspond to the set of null vectors ($ds^2 = 0$).
-Let $v_{null} \in \partial \mathcal{C}_x$. In the eigenbasis, this vector is parameterized by the cone aperture $\Theta_c$:
+**II. Full null boundary input**
+
+Use the full boundary attainment and null identification of **Null Boundary** <Ref id="12.3.4" label="§12.3.4" />. Let $h$ be the given positive spatial metric and write $b(n)=g(e_0,n)$ for transverse $n$. For each unit transverse $n$ the two directions $e_0\pm K_{\max}n$ are null. Hence
 
 $$
-v_{null} = (\cos \Theta_c, \sin \Theta_c \cdot \hat{n}).
+0=g_{00}\pm 2K_{\max}b(n)+K_{\max}^2h(n,n).
 $$
 
-The null condition requires $g_{\mu\nu} v_{null}^\mu v_{null}^\nu = 0$, which expands to:
+Subtracting the two equalities gives $4K_{\max}b(n)=0$. Adding them gives $2g_{00}+2K_{\max}^2h(n,n)=0$.
+
+**III. Signature**
+
+The mixed block vanishes by linearity, and the longitudinal coefficient is
 
 $$
-g_{00} \cos^2 \Theta_c + g_{ii} \sin^2 \Theta_c = 0.
+g_{00}=-K_{\max}^2h(n,n)=-h(n,n)\tan^2\Theta_c<0 .
 $$
 
-**IV. Result: The Sign Flip**
-Since the geometric terms $\cos^2 \Theta_c$ and $\sin^2 \Theta_c$ are strictly positive real numbers, the equation $A + B = 0$ necessitates that $g_{00}$ and $g_{ii}$ have **opposite algebraic signs**.
-conventionally assign the positive sign to the spatial components $g_{ii}$ to match the Riemannian spatial metric $h_{ij}$ derived in the **Tensorial Reorganization** <Ref id="12.2" label="§12.2" />. This choice *forces* the temporal component $g_{00}$ to be negative:
-
-$$
-g_{00} = - g_{ii} \tan^2 \Theta_c.
-$$
-
-Thus, the emergent metric tensor has the signature $(-1, +1, +1, +1)$. The directed causal structure of the graph necessitates a Lorentzian manifold.
+The transverse block is positive definite. Thus the comparison metric has one negative and three positive eigenvalues under the embedded geometric premises.
 
 Q.E.D.
 
@@ -1438,7 +1925,7 @@ Q.E.D.
 
 Verification of the emergent Lorentzian signature established in the **Signature Selectivity** <Ref id="12.3.5" label="§12.3.5" /> is based on the following protocols:
 
-1.  **Causal Propagator Assembly:** The algorithm generates a large ensemble of unit vectors distributed uniformly within a 4D cone representing the local tangent space.
+1.  **Causal Propagator Assembly:** The algorithm generates a large ensemble of unit vectors with uniform spatial directions and uniformly sampled angle cosines inside the prescribed 4D cone.
 2.  **Eigendecomposition Analysis:** The protocol performs numerical eigendecomposition of the causal propagator matrix to extract the spatial and temporal eigenvalues.
 3.  **Null Condition Solve:** The metric evaluates the anisotropy ratio and enforces the null boundary condition to algebraically solve for the metric signature. This verifies the result established in  **Signature Selectivity** <Ref id="12.3.5" label="§12.3.5" />.
 
@@ -1514,7 +2001,7 @@ Result: LORENTZIAN (-+++)
 **Conclusion:**
 The ensemble analysis confirms the stability of the emergent causal structure. The longitudinal eigenvalue converges to $\lambda_0 \approx 0.7359$ with an exceptionally low standard deviation of $\sigma \approx 0.0015$, indicating a highly consistent drift direction across all realizations. The transverse eigenvalues are suppressed by nearly an order of magnitude ($\lambda_i \approx 0.088$), yielding a robust anisotropy ratio of $8.36 \pm 0.06$.
 
-This spectral gap provides the rigorous geometric justification for the signature change. When the boundary of the edge distribution is identified with the null cone ($ds^2=0$), this anisotropy forces the metric component along the drift axis to take the opposite sign of the transverse components. The result is a stable, emergent Lorentzian signature $(-1, +1, +1, +1)$, proving that the arrow of time is a statistical necessity of the directed graph dynamics.
+The moment spectrum measures anisotropy for the sampled cone. The metric sign calculation separately imposes the full round boundary as null with positive spatial metric. With those inputs, $g_{00}=-\tan^2\Theta_c$ in the chosen spatial units, giving the displayed Lorentzian signature.
 
 ---
 
@@ -1523,11 +2010,11 @@ This spectral gap provides the rigorous geometric justification for the signatur
 :::note[**Emergence of Causal Structure**]
 :::
 
-The derivation of the spacetime signature is completed by analyzing the statistical anisotropy of the directed graph. By showing that the continuum limit of the causal graph is not a Riemannian solid but a Lorentzian manifold as established in **Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />, the Wick rotation from Euclidean to Minkowski signature is revealed as a derived consequence of the directedness of the underlying edges rather than an ad hoc postulate. The **causal** **Causal Drift** vector analyzed in <Ref id="12.3.3" label="§12.3.3" /> breaks the symmetry of the vacuum, forcing the metric to assign a negative sign to the temporal dimension to satisfy the null condition at the boundary of the causal wedge.
+The embedded drift calculation uses a calibrated positive longitudinal displacement and a vanishing transverse mean (**Causal Drift** <Ref id="12.3.3" label="§12.3.3" />). A bound on the ratio of transverse to longitudinal displacement then confines the embedded path directions to a cone (**Null Boundary** <Ref id="12.3.4" label="§12.3.4" />).
 
-This result has profound implications for the ontology of time, identifying the temporal dimension physically with the longitudinal flux of logical depth. It represents the direction of maximum graph growth, where the speed of light is identified geometrically with the aperture of the **emergent light cone** <Ref id="12.3.1" label="§12.3.1" />, a strict bound imposed by the finite connectivity of the discrete network and evaluated at the **null boundary** in <Ref id="12.3.4" label="§12.3.4" />. The causal structure of Special Relativity (including light cones, timelike paths, and spacelike separation) is thus recovered from the purely combinatorial properties of the underlying graph.
+When the full round boundary is reached and identified with null rays, the positive spatial metric and the null equation fix a negative temporal coefficient (**Signature Selectivity** <Ref id="12.3.2" label="§12.3.2" />). The moment calculation identifies the longitudinal and transverse blocks. The null boundary identification supplies the separate sign condition.
 
-This section concludes the construction of the geometry of the continuum limit. We now possess a smooth manifold $M$ equipped with a Lorentzian metric $g_{\mu\nu}$ and tensor fields $T_{\mu\nu}$. However, a static description of geometry is insufficient. General Relativity is a dynamical theory: it describes how this geometry evolves. The final step in our derivation is to recover the time evolution equations, the 3+1 decomposition that governs the slicing of this manifold. This sets the stage for the final chapter of the derivation.
+The resulting comparison metric has Lorentzian signature under the stated embedded geometric premises. The next chapter takes up the local time function, the spatial slices, and the evolution on those slices.
 
 ---
 
@@ -1587,3 +2074,16 @@ Gilbarg and Trudinger present a definitive and thorough treatment of classical e
 
 **Relevance to QBD:**
 This reference is necessary for the discrete field equations formulated in Chapter 13. To prove that the discrete Einstein field equations converge to the classical continuous equations, we must analyze the properties of elliptic operators on the manifold. Gilbarg and Trudinger's analytical tools bound the convergence errors of these operators, ensuring a mathematically consistent limit.
+
+---
+
+### 53. **Ollivier, Y. (2009).** {#A.53}
+**"Ricci curvature of Markov chains on metric spaces"**
+    * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
+
+
+**Overview:**
+Ollivier develops a robust approach to define Ricci curvature on arbitrary metric spaces using transport distances between probability measures. He shows that this definition, known as Ollivier-Ricci curvature, captures the geometric properties of continuous Riemannian manifolds while remaining fully applicable to discrete networks.
+
+**Relevance to QBD:**
+Ollivier's metric curvature is the direct tool used to formulate the discrete field equations in Chapter 13. By calculating the transport distance between localized random walks on our causal graph, we define the Ollivier-Ricci curvature along each edge. Ollivier's calculus provides the formal apparatus used to prove that this discrete curvature converges to classical Ricci curvature.

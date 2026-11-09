@@ -4,8 +4,8 @@
       "name": "Complete Monograph (Markdown)",
       "filename": "qbd_monograph_complete.md",
       "url": "/downloads/qbd_monograph_complete.md",
-      "file_size_bytes": 4887454,
-      "estimated_tokens": 1771031,
+      "file_size_bytes": 4876997,
+      "estimated_tokens": 1766825,
       "type": "markdown",
       "description": "The complete Quantum Braid Dynamics monograph in clean, standard Markdown format, starting with a Table of Contents and full book title. Best for direct copy-pasting or model ingestion."
     },
@@ -13,8 +13,8 @@
       "name": "Complete Monograph (Structured JSON)",
       "filename": "qbd_monograph_complete.json",
       "url": "/downloads/qbd_monograph_complete.json",
-      "file_size_bytes": 5204302,
-      "estimated_tokens": 1916592,
+      "file_size_bytes": 5197049,
+      "estimated_tokens": 1913927,
       "type": "json",
       "description": "Highly structured JSON representation of the entire text including Table of Contents. Segregated neatly into introduction, parts, chapters, and sections."
     },
@@ -22,8 +22,8 @@
       "name": "Complete Monograph (PDF)",
       "filename": "qbd_monograph_complete.pdf",
       "url": "/downloads/qbd_monograph_complete.pdf",
-      "file_size_bytes": 4223031,
-      "estimated_tokens": 1771031,
+      "file_size_bytes": 4230882,
+      "estimated_tokens": 1766825,
       "type": "pdf",
       "description": "Beautiful, publication-ready PDF containing the full monograph assembled (typeset professionally with Title page, Abstract, full Bibliography citations, and Footers)."
     }
@@ -42,7 +42,7 @@
       "json_file_size_bytes": 1353231,
       "json_estimated_tokens": 497134,
       "pdf_url": "/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.pdf",
-      "pdf_file_size_bytes": 1667473,
+      "pdf_file_size_bytes": 1667459,
       "pdf_estimated_tokens": 478925
     },
     {
@@ -58,7 +58,7 @@
       "json_file_size_bytes": 1131032,
       "json_estimated_tokens": 416421,
       "pdf_url": "/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.pdf",
-      "pdf_file_size_bytes": 1432047,
+      "pdf_file_size_bytes": 1432039,
       "pdf_estimated_tokens": 396272
     },
     {
@@ -66,16 +66,16 @@
       "name": "Part 3: Emergent Reality (The Stage)",
       "filename": "qbd_part_3_emergent_reality_the_stage.md",
       "url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.md",
-      "file_size_bytes": 964725,
-      "estimated_tokens": 350732,
+      "file_size_bytes": 955339,
+      "estimated_tokens": 346918,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 3: Emergent Reality (The Stage).",
       "json_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.json",
-      "json_file_size_bytes": 987811,
-      "json_estimated_tokens": 364467,
+      "json_file_size_bytes": 980665,
+      "json_estimated_tokens": 361841,
       "pdf_url": "/downloads/parts/qbd_part_3_emergent_reality_the_stage.pdf",
-      "pdf_file_size_bytes": 1267681,
-      "pdf_estimated_tokens": 350732
+      "pdf_file_size_bytes": 1278279,
+      "pdf_estimated_tokens": 346918
     },
     {
       "part_number": 4,
@@ -90,7 +90,7 @@
       "json_file_size_bytes": 1031692,
       "json_estimated_tokens": 380621,
       "pdf_url": "/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.pdf",
-      "pdf_file_size_bytes": 1321775,
+      "pdf_file_size_bytes": 1321765,
       "pdf_estimated_tokens": 366468
     },
     {
@@ -114,16 +114,16 @@
       "name": "Part 6: Appendices",
       "filename": "qbd_part_6_appendices.md",
       "url": "/downloads/parts/qbd_part_6_appendices.md",
-      "file_size_bytes": 153700,
-      "estimated_tokens": 56096,
+      "file_size_bytes": 153596,
+      "estimated_tokens": 56058,
       "type": "markdown",
       "description": "Contains the compiled text and equations for Part 6: Appendices.",
       "json_url": "/downloads/parts/qbd_part_6_appendices.json",
-      "json_file_size_bytes": 154692,
-      "json_estimated_tokens": 57085,
+      "json_file_size_bytes": 154585,
+      "json_estimated_tokens": 57046,
       "pdf_url": "/downloads/parts/qbd_part_6_appendices.pdf",
-      "pdf_file_size_bytes": 257497,
-      "pdf_estimated_tokens": 56096
+      "pdf_file_size_bytes": 257456,
+      "pdf_estimated_tokens": 56058
     }
   ],
   "chapters": [
@@ -140,7 +140,7 @@
       "json_file_size_bytes": 368609,
       "json_estimated_tokens": 135355,
       "pdf_url": "/downloads/chapters/chapter_1.pdf",
-      "pdf_file_size_bytes": 493310,
+      "pdf_file_size_bytes": 493291,
       "pdf_estimated_tokens": 133433
     },
     {
@@ -172,7 +172,7 @@
       "json_file_size_bytes": 261444,
       "json_estimated_tokens": 95855,
       "pdf_url": "/downloads/chapters/chapter_3.pdf",
-      "pdf_file_size_bytes": 410628,
+      "pdf_file_size_bytes": 410594,
       "pdf_estimated_tokens": 93098
     },
     {
@@ -188,7 +188,7 @@
       "json_file_size_bytes": 289170,
       "json_estimated_tokens": 106478,
       "pdf_url": "/downloads/chapters/chapter_4.pdf",
-      "pdf_file_size_bytes": 442311,
+      "pdf_file_size_bytes": 442289,
       "pdf_estimated_tokens": 103162
     },
     {
@@ -204,7 +204,7 @@
       "json_file_size_bytes": 208140,
       "json_estimated_tokens": 76687,
       "pdf_url": "/downloads/chapters/chapter_5.pdf",
-      "pdf_file_size_bytes": 357538,
+      "pdf_file_size_bytes": 357522,
       "pdf_estimated_tokens": 74223
     },
     {
@@ -220,7 +220,7 @@
       "json_file_size_bytes": 161277,
       "json_estimated_tokens": 59252,
       "pdf_url": "/downloads/chapters/chapter_6.pdf",
-      "pdf_file_size_bytes": 293738,
+      "pdf_file_size_bytes": 293733,
       "pdf_estimated_tokens": 57341
     },
     {
@@ -236,7 +236,7 @@
       "json_file_size_bytes": 160463,
       "json_estimated_tokens": 58981,
       "pdf_url": "/downloads/chapters/chapter_7.pdf",
-      "pdf_file_size_bytes": 276646,
+      "pdf_file_size_bytes": 276629,
       "pdf_estimated_tokens": 56997
     },
     {
@@ -252,7 +252,7 @@
       "json_file_size_bytes": 243965,
       "json_estimated_tokens": 89867,
       "pdf_url": "/downloads/chapters/chapter_8.pdf",
-      "pdf_file_size_bytes": 405957,
+      "pdf_file_size_bytes": 405941,
       "pdf_estimated_tokens": 86072
     },
     {
@@ -268,7 +268,7 @@
       "json_file_size_bytes": 299961,
       "json_estimated_tokens": 110452,
       "pdf_url": "/downloads/chapters/chapter_9.pdf",
-      "pdf_file_size_bytes": 443289,
+      "pdf_file_size_bytes": 443275,
       "pdf_estimated_tokens": 106651
     },
     {
@@ -284,7 +284,7 @@
       "json_file_size_bytes": 260152,
       "json_estimated_tokens": 95939,
       "pdf_url": "/downloads/chapters/chapter_10.pdf",
-      "pdf_file_size_bytes": 419183,
+      "pdf_file_size_bytes": 419173,
       "pdf_estimated_tokens": 92780
     },
     {
@@ -292,64 +292,64 @@
       "name": "Chapter 11: Differential Geometry (Discrete)",
       "filename": "chapter_11.md",
       "url": "/downloads/chapters/chapter_11.md",
-      "file_size_bytes": 139070,
-      "estimated_tokens": 50528,
+      "file_size_bytes": 136148,
+      "estimated_tokens": 49419,
       "type": "markdown",
       "description": "Markdown source for Chapter 11.",
       "json_url": "/downloads/chapters/chapter_11.json",
-      "json_file_size_bytes": 140801,
-      "json_estimated_tokens": 51966,
+      "json_file_size_bytes": 138134,
+      "json_estimated_tokens": 50982,
       "pdf_url": "/downloads/chapters/chapter_11.pdf",
-      "pdf_file_size_bytes": 259979,
-      "pdf_estimated_tokens": 50528
+      "pdf_file_size_bytes": 259555,
+      "pdf_estimated_tokens": 49419
     },
     {
       "chapter_number": 12,
       "name": "Chapter 12: Continuum Limit (Convergence)",
       "filename": "chapter_12.md",
       "url": "/downloads/chapters/chapter_12.md",
-      "file_size_bytes": 115881,
-      "estimated_tokens": 42184,
+      "file_size_bytes": 127757,
+      "estimated_tokens": 46404,
       "type": "markdown",
       "description": "Markdown source for Chapter 12.",
       "json_url": "/downloads/chapters/chapter_12.json",
-      "json_file_size_bytes": 117540,
-      "json_estimated_tokens": 43385,
+      "json_file_size_bytes": 130472,
+      "json_estimated_tokens": 48181,
       "pdf_url": "/downloads/chapters/chapter_12.pdf",
-      "pdf_file_size_bytes": 243171,
-      "pdf_estimated_tokens": 42184
+      "pdf_file_size_bytes": 267266,
+      "pdf_estimated_tokens": 46404
     },
     {
       "chapter_number": 13,
       "name": "Chapter 13: Discrete Field Equations (Einstein)",
       "filename": "chapter_13.md",
       "url": "/downloads/chapters/chapter_13.md",
-      "file_size_bytes": 136970,
-      "estimated_tokens": 49705,
+      "file_size_bytes": 130581,
+      "estimated_tokens": 47283,
       "type": "markdown",
       "description": "Markdown source for Chapter 13.",
       "json_url": "/downloads/chapters/chapter_13.json",
-      "json_file_size_bytes": 138531,
-      "json_estimated_tokens": 51051,
+      "json_file_size_bytes": 132440,
+      "json_estimated_tokens": 48800,
       "pdf_url": "/downloads/chapters/chapter_13.pdf",
-      "pdf_file_size_bytes": 250223,
-      "pdf_estimated_tokens": 49705
+      "pdf_file_size_bytes": 250069,
+      "pdf_estimated_tokens": 47283
     },
     {
       "chapter_number": 14,
       "name": "Chapter 14: Lorentzian Reality (Time)",
       "filename": "chapter_14.md",
       "url": "/downloads/chapters/chapter_14.md",
-      "file_size_bytes": 165118,
-      "estimated_tokens": 60111,
+      "file_size_bytes": 153284,
+      "estimated_tokens": 55651,
       "type": "markdown",
       "description": "Markdown source for Chapter 14.",
       "json_url": "/downloads/chapters/chapter_14.json",
-      "json_file_size_bytes": 167305,
-      "json_estimated_tokens": 61730,
+      "json_file_size_bytes": 156099,
+      "json_estimated_tokens": 57586,
       "pdf_url": "/downloads/chapters/chapter_14.pdf",
-      "pdf_file_size_bytes": 296379,
-      "pdf_estimated_tokens": 60111
+      "pdf_file_size_bytes": 288758,
+      "pdf_estimated_tokens": 55651
     },
     {
       "chapter_number": 15,
@@ -364,7 +364,7 @@
       "json_file_size_bytes": 142207,
       "json_estimated_tokens": 52508,
       "pdf_url": "/downloads/chapters/chapter_15.pdf",
-      "pdf_file_size_bytes": 259912,
+      "pdf_file_size_bytes": 259906,
       "pdf_estimated_tokens": 50939
     },
     {
@@ -372,16 +372,16 @@
       "name": "Chapter 16: Isomorphism Principle (Holography)",
       "filename": "chapter_16.md",
       "url": "/downloads/chapters/chapter_16.md",
-      "file_size_bytes": 126017,
-      "estimated_tokens": 45815,
+      "file_size_bytes": 125900,
+      "estimated_tokens": 45771,
       "type": "markdown",
       "description": "Markdown source for Chapter 16.",
       "json_url": "/downloads/chapters/chapter_16.json",
-      "json_file_size_bytes": 127843,
-      "json_estimated_tokens": 47147,
+      "json_file_size_bytes": 127729,
+      "json_estimated_tokens": 47105,
       "pdf_url": "/downloads/chapters/chapter_16.pdf",
-      "pdf_file_size_bytes": 237696,
-      "pdf_estimated_tokens": 45815
+      "pdf_file_size_bytes": 238369,
+      "pdf_estimated_tokens": 45771
     },
     {
       "chapter_number": 17,
@@ -396,7 +396,7 @@
       "json_file_size_bytes": 148543,
       "json_estimated_tokens": 54815,
       "pdf_url": "/downloads/chapters/chapter_17.pdf",
-      "pdf_file_size_bytes": 275133,
+      "pdf_file_size_bytes": 275122,
       "pdf_estimated_tokens": 53367
     },
     {
@@ -412,7 +412,7 @@
       "json_file_size_bytes": 230596,
       "json_estimated_tokens": 85075,
       "pdf_url": "/downloads/chapters/chapter_18.pdf",
-      "pdf_file_size_bytes": 362725,
+      "pdf_file_size_bytes": 362719,
       "pdf_estimated_tokens": 82314
     },
     {
@@ -428,7 +428,7 @@
       "json_file_size_bytes": 153532,
       "json_estimated_tokens": 56643,
       "pdf_url": "/downloads/chapters/chapter_19.pdf",
-      "pdf_file_size_bytes": 271429,
+      "pdf_file_size_bytes": 271420,
       "pdf_estimated_tokens": 54839
     },
     {
@@ -444,7 +444,7 @@
       "json_file_size_bytes": 268744,
       "json_estimated_tokens": 99179,
       "pdf_url": "/downloads/chapters/chapter_20.pdf",
-      "pdf_file_size_bytes": 430485,
+      "pdf_file_size_bytes": 430474,
       "pdf_estimated_tokens": 96035
     },
     {
@@ -460,7 +460,7 @@
       "json_file_size_bytes": 148807,
       "json_estimated_tokens": 54874,
       "pdf_url": "/downloads/chapters/chapter_21.pdf",
-      "pdf_file_size_bytes": 252138,
+      "pdf_file_size_bytes": 252132,
       "pdf_estimated_tokens": 53073
     },
     {
@@ -476,7 +476,7 @@
       "json_file_size_bytes": 228817,
       "json_estimated_tokens": 84410,
       "pdf_url": "/downloads/chapters/chapter_22.pdf",
-      "pdf_file_size_bytes": 372942,
+      "pdf_file_size_bytes": 372918,
       "pdf_estimated_tokens": 81815
     },
     {
@@ -492,7 +492,7 @@
       "json_file_size_bytes": 161712,
       "json_estimated_tokens": 59671,
       "pdf_url": "/downloads/chapters/chapter_23.pdf",
-      "pdf_file_size_bytes": 286803,
+      "pdf_file_size_bytes": 286794,
       "pdf_estimated_tokens": 57753
     },
     {
@@ -508,7 +508,7 @@
       "json_file_size_bytes": 190233,
       "json_estimated_tokens": 70162,
       "pdf_url": "/downloads/chapters/chapter_24.pdf",
-      "pdf_file_size_bytes": 325719,
+      "pdf_file_size_bytes": 325716,
       "pdf_estimated_tokens": 67660
     },
     {
@@ -524,7 +524,7 @@
       "json_file_size_bytes": 65686,
       "json_estimated_tokens": 24093,
       "pdf_url": "/downloads/chapters/chapter_25.pdf",
-      "pdf_file_size_bytes": 153938,
+      "pdf_file_size_bytes": 153930,
       "pdf_estimated_tokens": 23723
     }
   ],
@@ -907,8 +907,8 @@
       {
         "name": "11.2.4.2.py",
         "url": "/downloads/code/repo/python/11.2.4.2.py",
-        "file_size_bytes": 1880,
-        "estimated_tokens": 670,
+        "file_size_bytes": 1862,
+        "estimated_tokens": 664,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 11.2.4.2."
       },
@@ -1019,24 +1019,24 @@
       {
         "name": "14.1.3.2.py",
         "url": "/downloads/code/repo/python/14.1.3.2.py",
-        "file_size_bytes": 2582,
-        "estimated_tokens": 933,
+        "file_size_bytes": 2528,
+        "estimated_tokens": 913,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.1.3.2."
       },
       {
         "name": "14.1.5.1.py",
         "url": "/downloads/code/repo/python/14.1.5.1.py",
-        "file_size_bytes": 4054,
-        "estimated_tokens": 1461,
+        "file_size_bytes": 3013,
+        "estimated_tokens": 1082,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.1.5.1."
       },
       {
         "name": "14.2.8.1.py",
         "url": "/downloads/code/repo/python/14.2.8.1.py",
-        "file_size_bytes": 3188,
-        "estimated_tokens": 1151,
+        "file_size_bytes": 2335,
+        "estimated_tokens": 843,
         "type": "code",
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 14.2.8.1."
       },
@@ -2060,7 +2060,7 @@
     "repo_zip": {
       "name": "qbd_simulations_repo.zip",
       "url": "/downloads/code/qbd_simulations_repo.zip",
-      "file_size_bytes": 304810,
+      "file_size_bytes": 303757,
       "description": "Download the complete simulations repository bundle containing all 150 numerical derivation scripts in a single ZIP archive."
     }
   },

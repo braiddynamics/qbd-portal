@@ -427,7 +427,7 @@ The proof proceeds via Direct Construction, establishing the normalization and w
 :::info[**Verification of Probability Normalization through the Exhaustive Enumeration of Neighborhood Configurations**]
 :::
 
-For any finite directed graph $G=(V,E)$ and any vertex $u \in V$, the function $\mu_u: V \to [0,1]$ established by the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> constitutes a valid probability measure. Specifically, it satisfies the non-negativity condition $\mu_u(x) \ge 0$ for all $x$, and the normalization condition $\sum_{x \in V} \mu_u(x) = 1$, regardless of the topological configuration of the neighborhoods of $u$.
+Let $G=(V,E)$ be a finite causal graph satisfying irreflexivity and asymmetry (**Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). Then the lazy causal law $\mu_u$ is a probability measure at every $u\in V$ (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />).
 
 ### 11.2.4.1 Proof: Measure Validity {#11.2.4.1}
 
@@ -435,13 +435,13 @@ For any finite directed graph $G=(V,E)$ and any vertex $u \in V$, the function $
 :::
 
 **I. Decomposition of Support**
-The support of the measure $\mu_u$ is restricted to the disjoint union of the singleton $\{u\}$, the future neighborhood $N^+(u)$, and the past neighborhood $N^-(u)$.  **Measure Validity** <Ref id="11.2.4" label="§11.2.4" /> and  **Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.3" />
+Irreflexivity gives $u\notin N^+(u)\cup N^-(u)$. Asymmetry gives $N^+(u)\cap N^-(u)=\varnothing$, since membership in both would require $u\to x$ and $x\to u$ (**Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). The three support sets are therefore pairwise disjoint.
 
 $$
 \text{supp}(\mu_u) \subseteq \{u\} \cup N^+(u) \cup N^-(u)
 $$
 
-we apply the fixed parameter constraint $\alpha + 2\beta = 1$, where $\alpha, \beta > 0$. The proof proceeds by exhaustively summing the mass over these components for the four possible topological states of $u$.
+we apply the fixed parameter constraint $\alpha + 2\beta = 1$, where $\alpha, \beta > 0$ (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). The proof proceeds by exhaustively summing the mass over these components for the four possible topological states of $u$.
 
 **II. Case 1: Fully Connected Topology**
 Assume $N^+(u) \neq \emptyset$ and $N^-(u) \neq \emptyset$. The indicator functions $\mathbb{I}[\emptyset]$ evaluate to 0.
@@ -541,13 +541,13 @@ print_case("Balanced Topology (u=1)", mu1, sum1)
 mu0, sum0 = lazy_mu(0, G_chain)
 print_case("Empty Past (u=0)", mu0, sum0)
 
-# 2. Reverse Chain: 0 <- 1 <- 2 (to simulate empty future at u=2)
+# 2. Reverse Chain: 0 <- 1 <- 2
 G_rev = nx.DiGraph()
 G_rev.add_edges_from([(1,0), (2,1)])
 
-# Case 3: Empty Future (u=2, has past but no future)
-mu2, sum2 = lazy_mu(2, G_rev)
-print_case("Empty Future (u=2)", mu2, sum2)
+# Case 3: Empty Future (u=0, has past but no future)
+mu_sink, sum_sink = lazy_mu(0, G_rev)
+print_case("Empty Future (u=0)", mu_sink, sum_sink)
 
 # 3. Isolated Node
 G_iso = nx.DiGraph()
@@ -569,8 +569,8 @@ Case: Empty Past (u=0)
   Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
-Case: Empty Future (u=2)
-  Map: {2: 0.6667, 1: 0.3333}
+Case: Empty Future (u=0)
+  Map: {0: 0.6667, 1: 0.3333}
   Sum: 1.0000
 
 Case: Isolated Singularity (u=99)
@@ -597,7 +597,7 @@ The "Laziness Adjustment", reabsorbing the allocation $\beta$ into the vertex $u
 :::info[**Optimization of Informational Entropy via the Selection of the Tripartite Laziness Parameter**]
 :::
 
-For any vertex $u$ possessing balanced causal degrees $ d_+ = |N^+(u)| = d_- = |N^-(u)| = d \geq 1 $, the Shannon entropy $H(\mu_u) = -\sum_{x \in V} \mu_u(x) \log \mu_u(x)$ is maximized when the laziness parameter satisfies $\alpha = 1/3$.
+Let $u$ have disjoint, nonempty past and future neighborhoods of equal size, with sector masses $(\beta,\alpha,\beta)$ and $\alpha+2\beta=1$. Then the temporal sector entropy $-\alpha\log\alpha-2\beta\log\beta$ is uniquely maximized at $\alpha=\beta=1/3$.
 
 ### 11.2.5.1 Proof: Entropy Maximization {#11.2.5.1}
 
@@ -652,14 +652,16 @@ $$
 
 **V. Derivation of the First Order Condition**
 The location of the extremum requires the computation of the first derivative $\frac{\mathrm{d}h}{\mathrm{d}\alpha}$. Applying the product rule $\frac{\mathrm{d}}{\mathrm{d}x}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x)$ to each term yields:
-1.  **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
-2.  **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
+1. **Self Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-\alpha \log \alpha) = -(\log \alpha + \alpha \cdot \frac{1}{\alpha}) = -\log \alpha - 1$.
+2. **Complement Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}(-(1-\alpha)\log(1-\alpha))$. Letting $u = 1-\alpha$, then $\mathrm{d}u/\mathrm{d}\alpha = -1$.
 
-    $$
-    \frac{\mathrm{d}}{\mathrm{d}\alpha} = (-1) \cdot \left[-\log u - (1-\alpha)\frac{1}{u}(-1)\right] = \log(1-\alpha) + 1.
-    $$
+    $$
+    \frac{\mathrm{d}}{\mathrm{d}\alpha}\bigl[-(1-\alpha)\log(1-\alpha)\bigr]
+    =\log(1-\alpha)-(1-\alpha)\frac{-1}{1-\alpha}
+    =\log(1-\alpha)+1.
+    $$
 
-3.  **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
+3. **Linear Term:** $\frac{\mathrm{d}}{\mathrm{d}\alpha}((1-\alpha)\log 2) = -\log 2$.
 
 Combining these components yields:
 
@@ -698,7 +700,7 @@ $$
 For any $\alpha$ in the domain $(0,1)$, both terms $-\frac{1}{1-\alpha}$ and $-\frac{1}{\alpha}$ assume strictly negative values. Thus, $h''(\alpha) < 0$ universally across the domain. This strict concavity guarantees that the stationary point $\alpha = 1/3$ represents a unique global maximum.
 
 **VIII: Global Optimality Conclusion**
-Maximizing the uncertainty of the temporal locus necessitates the exact equipartition of probability mass among the Past, Present, and Future causal sectors. This establishes the parameters $\alpha = \beta = 1/3$ as the necessary condition for thermodynamic equilibrium in the unbiased geometry.
+Maximizing the uncertainty of the temporal locus necessitates the exact equipartition of probability mass among the Past, Present, and Future causal sectors. This establishes the unique maximizer of the specified three-sector entropy.
 
 Q.E.D.
 
@@ -709,7 +711,7 @@ Q.E.D.
 
 Verification of the entropic equilibrium parameters established by **Entropy Maximization** <Ref id="11.2.5.1" label="§11.2.5.1" /> is based on the following protocols:
 
-1.  **Entropy Computation:** The algorithm performs a bounded numerical optimization of the allocation entropy $h(\alpha)$ to locate the global maximum.
+1.  **Entropy Computation:** The algorithm optimizes the allocation entropy $h(\alpha)$. In the balanced fixture with one vertex per past and future sector, the sector entropy equals the vertex entropy. The sensitivity comparison varies the vertex-level multiplicities.
 2.  **Derivative Evaluation:** The protocol executes a derivative check at the critical laziness value $\alpha = 1/3$ to verify that the theoretical derivative is zero within machine precision tolerance.
 3.  **Sensitivity Analysis:** The metric tracks the shift of optimal laziness under structural sparsity to evaluate entropic pressure.
 
@@ -857,47 +859,44 @@ MAXIMUM ENTROPY STATE (α = 1/3)
 :::info[**Requirement of the Undirected Metric arising from the Prevention of Ill-Posed Transport Costs in Acyclic Graphs**]
 :::
 
-Given the causal Ollivier-Ricci curvature functional, the utilization of undirected shortest-path metric $\bar{d}$ is a necessary condition for the well-posedness of the causal Ollivier-Ricci curvature functional
+For any graph in the causal graph class, the undirected shortest-path ground metric $\bar d$ gives finite causal Ollivier-Ricci transport cost on every edge. Among the two shortest-path prescriptions, directed shortest-path cost lacks this universal guarantee.
 
 ### 11.2.6.1 Proof: Metric Necessity {#11.2.6.1}
 
 :::tip[**Demonstration of Divergence in Directed Transport due to the Analysis of Acausal Backward Paths**]
 :::
 
-The analysis demonstrates that any metric structure strictly respecting the directed topology of an acyclic causal graph generates divergent or undefined Wasserstein transport costs for a non-negligible set of vertex pairs, thereby rendering the curvature $K$ uncomputable. The geometric framework therefore decouples the connectivity metric from the causal directionality, delegating the latter entirely to the asymmetry of the probability measures.
+**I. Directed ground cost**
 
-**I. Formulation of the Directed Transport Problem**
-Consider a directed graph $G = (V, E)$ satisfying the acyclicity condition implicit in the causal structure **acyclic effective causality** <Ref id="2.7.1" label="§2.7.1" />. Let $d_{\text{dir}}(x,y)$ denote the directed geodesic distance, defined as the infimum of the lengths of all directed paths from $x$ to $y$. If no directed path exists from $x$ to $y$, the distance diverges: $d_{\text{dir}}(x,y) = \infty$. The associated Wasserstein-1 transport cost between two measures $\mu_u$ and $\mu_v$ defines itself as:
+Let $d_{\rm dir}$ assign to an ordered pair the length of its shortest directed path, with value $\infty$ if there is no such path. A finite-cost coupling $\pi$ can have $\pi(x,y)>0$ only if $d_{\rm dir}(x,y)<\infty$ (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />).
+
+**II. Marginal obstruction on a directed fork**
+
+For the fork $u\to v,\ u\to z$, both $v$ and $z$ are terminal vertices. The future sector at $u$ places $\beta/2$ at $z$, whereas the law at $v$ is supported on $\{u,v\}$. Since $z$ reaches only itself,
 
 $$
-W_1^{\text{dir}}(\mu_u, \mu_v) = \inf_{\pi \in \Pi(\mu_u, \mu_v)} \sum_{x,y \in V} d_{\text{dir}}(x,y) \pi(x,y).
+\sum_y\pi(z,y)=\pi(z,z)=\mu_u(z)=\frac{\beta}{2}>0,
+\qquad
+0\le\pi(z,z)\le\sum_x\pi(x,z)=\mu_v(z)=0 .
 $$
 
-**II. Identification of the Singular Configuration**
-Consider two adjacent vertices $u, v$ connected by a directed edge $(u, v)$. The evaluation of the curvature $K(u,v)$ requires the computation of $W_1(\mu_u, \mu_v)$.
-The lazy causal measure $\mu_v$ allocates a strictly positive probability mass $\beta > 0$ to its past neighborhood $N^-(v)$.
-The lazy causal measure $\mu_u$ allocates a strictly positive probability mass $\beta > 0$ to its future neighborhood $N^+(u)$.
-Let $y \in N^+(u)$ be a future neighbor of $u$, and let $x \in N^-(v)$ be a past neighbor of $v$.
-A valid coupling $\pi$ must transport mass from the support of $\mu_u$ to the support of $\mu_v$. On a tree-like topology, the supports may be disjoint. Their support radii are measured in the underlying metric (**Strict Locality** <Ref id="5.5.2" label="§5.5.2" />).
+Thus every coupling has infinite directed cost for this pair.
 
-**III. Analysis of Acausal Transport Requirements**
-In the event that the optimal coupling $\pi$ assigns non-zero mass to a transition from a future-located vertex $y \in N^+(u)$ to a past-located vertex $x \in N^-(v)$, the cost function evaluates the directed distance $d_{\text{dir}}(y, x)$.
-Given the edge orientation $u \to v$, the vertex $y$ resides in the causal future of $u$, while $x$ resides in the causal past of $v$. A directed path from $y$ to $x$ would imply a trajectory $y \rightsquigarrow u \to v \rightsquigarrow x$. However, by definition, $x \to v$ (past neighbor implies edge into $v$), and $u \to y$ (future neighbor implies edge out of $u$).
-A path $y \to x$ requires moving against the causal flow. In a Directed Acyclic Graph (DAG), no such return path exists.
-Consequently, $d_{\text{dir}}(y, x) = \infty$.
+**III. Undirected ground cost on an edge**
 
-**IV: Divergence of the Transport Integral**
-If the marginal distributions $\mu_u$ and $\mu_v$ necessitate any mass transfer between causally separated regions that lack a forward directed path, the transport integral diverges. Specifically, if the total mass in $N^+(u)$ exceeds the capacity of $N^+(v)$ to absorb it via forward paths, the surplus mass must flow to $u$, $v$, or $N^-(v)$.
-Transport from $N^+(u)$ to $N^-(v)$ incurs infinite cost.
-Transport from $N^+(u)$ to $u$ (backwards across the edge) incurs infinite cost.
-Thus, for a broad class of local configurations, $W_1^{\text{dir}}(\mu_u, \mu_v) = \infty$.
-This yields a curvature value $K = 1 - \infty = -\infty$, which constitutes a singularity rather than a geometric measurement.
+For any edge $(u,v)$, the law at either endpoint is supported within one hop of that endpoint (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). Hence for each $x$ in the source support and $y$ in the target support,
 
-**V. Violation of Metric Space Axioms**
-The directed distance $d_{\text{dir}}$ further fails the symmetry axiom of a metric space, $d(x,y) = d(y,x)$. While extended definitions of Optimal Transport (e.g., asymmetric transport) exist, they require finite costs. The presence of infinite costs in the "reverse" direction of time violates the condition for a bounded Lipschitz constant, preventing the convergence of the dual Kantorovich potentials. The geometry becomes ill-posed.
+$$
+\bar d(x,y)\le\bar d(x,u)+\bar d(u,v)+\bar d(v,y)\le1+1+1=3 .
+$$
 
-**VI: Conclusion**
-The undirected metric $\bar{d}$ resolves these singularities by assigning finite positive values to acausal links (e.g., $\bar{d}(y,x) < \infty$), effectively interpreting "distance" as "separation in the causal graph" rather than "causal reachability." The distinction between past and future is not lost but is instead encoded in the probability masses of $\mu_u$ and $\mu_v$ (the "tilt" of the measure) rather than the manifold metric itself. This separation ensures that $K(u,v)$ remains finite, bounded, and computable for all edges.
+The product coupling is feasible by normalization of the two laws. Its cost bounds the optimum:
+
+$$
+W_1(\mu_u,\mu_v)\le
+\sum_{x,y}\bar d(x,y)\mu_u(x)\mu_v(y)
+\le 3\left(\sum_x\mu_u(x)\right)\left(\sum_y\mu_v(y)\right)=3 .
+$$
 
 Q.E.D.
 
@@ -1035,7 +1034,7 @@ The Metric Necessity Lemma secures the computational stability of the geometric 
 
 The construction utilized in Quantum Braid Dynamics (Undirected Metric + Lazy Causal Measure) resolves this by decoupling the connectivity of the space from the direction of time:
 1.  **Metric Role (Continuity):** The undirected metric $\bar{d}$ ensures that a finite path exists between all connected points, guaranteeing that the transport cost $W_1$ varies continuously with respect to the measure parameters.
-2.  **Measure Role (Causality):** The lazy causal measure $\mu$ reintroduces the arrow of time. By biasing the probability mass according to the directed topology, it ensures that transport "with the flow" incurs lower effective costs than transport "against the flow," thereby encoding causality into the curvature values without violating the metric space axioms.
+2.  **Measure Role (Causality):** The ordered neighbor sectors retain the causal orientation. Their equal-weight aggregate law records local mass differences, such as the fallback mass at a boundary. The transport cost of the aggregate laws with symmetric ground distance is the same in either order.
 
 ---
 
@@ -1051,7 +1050,7 @@ Given the local causal topology, the specific configuration of the probability m
 :::tip[**Verification of Directional Curvature Sensitivity by the Computation of Transport Costs on Asymmetric Measures**]
 :::
 
-The asymmetry inherent in the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> modulates the Wasserstein distance $W_1(\mu_u, \mu_v)$ such that the resulting curvature $K(u,v)$ accurately reflects the causal delay and information propagation along the directed edge $(u,v)$.
+The boundary fallback in the lazy law changes the masses used in the transport calculation (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). The chain example computes that change in the undirected ground metric.
 
 **I. Topological Instantiation**
 The proof analyzes a minimal directed chain configuration $G = (V, E)$ with $V = \{A, B, C\}$ and edges $E = \{(A,B), (B,C)\}$. The proof fixes the laziness parameters at the entropic optimum $\alpha = 1/3$ and $\beta = 1/3$ **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />. The undirected shortest-path metric $\bar{d}$ assigns the following values to the vertex pairs:
@@ -1101,17 +1100,24 @@ Comparing the marginals:
 * **At B:** Source has $1/3$, Target has $1/3$. Balanced.
 * **At C:** Source has $0$, Target has $1/3$. Excess demand $-1/3$.
 
-The optimal transport plan $\pi^*$ identifies the stationary components and the moving components:
+A feasible transport plan has the following components.
 1.  **Stationary Mass at A:** Transport $1/3$ from $\mu_A(A)$ to $\mu_B(A)$. Cost: $\bar{d}(A,A) \times 1/3 = 0$.
 2.  **Stationary Mass at B:** Transport $1/3$ from $\mu_A(B)$ to $\mu_B(B)$. Cost: $\bar{d}(B,B) \times 1/3 = 0$.
-3.  **Moving Mass:** The remaining $1/3$ at $\mu_A(A)$ must transport to the vacancy at $\mu_B(C)$. Cost: $\bar{d}(A,C) \times 1/3 = 2 \times 1/3 = 2/3$.
+3.  **Moving Mass:** The plan sends the remaining $1/3$ from $A$ to $C$. Cost: $\bar{d}(A,C) \times 1/3 = 2 \times 1/3 = 2/3$.
 
 **V. Evaluation of Curvature**
-The total Wasserstein distance sums the contributions:
+The displayed plan gives $W_1(\mu_A,\mu_B)\le 2/3$. Let $f(x)=\bar d(x,C)$. By the triangle inequality, $f(x)-f(y)\le\bar d(x,y)$. For any feasible coupling $\pi$,
 
 $$
-W_1(\mu_A, \mu_B) = 0 + 0 + 2/3 = 2/3.
+\begin{aligned}
+\sum_{x,y}\bar d(x,y)\pi(x,y)
+&\ge\sum_{x,y}(f(x)-f(y))\pi(x,y)\\
+&=\sum_x f(x)\mu_A(x)-\sum_y f(y)\mu_B(y)\\
+&=\tfrac13 f(A)-\tfrac13 f(C)=\tfrac23.
+\end{aligned}
 $$
+
+The two bounds give $W_1(\mu_A,\mu_B)=2/3$.
 
 The Causal Ollivier-Ricci curvature for the edge $(A,B)$ computes as:
 
@@ -1120,7 +1126,14 @@ K(A,B) = 1 - W_1(\mu_A, \mu_B) = 1 - 2/3 = 1/3.
 $$
 
 **VI: Conclusion**
-The non-zero cost $W_1 = 2/3$ arises entirely from the necessity of transporting mass from the "stuck" past of $A$ (due to the empty history) to the future of $B$. Even though the metric $\bar{d}$ is undirected, the probability measures encode the arrow of time: $\mu_A$ lags behind $\mu_B$. The geometry correctly identifies this lag as a positive distance, yielding a finite, positive curvature $K=1/3$ that signifies stable causal propagation.
+Let $G^{\rm rev}$ reverse every edge. Its two neighbor sectors interchange, preserving their equal weights and their fallback rule. Therefore $\mu_x^{\rm rev}=\mu_x$ and $\bar d^{\rm rev}=\bar d$. For a coupling $\pi$ of $\mu_A,\mu_B$, transposition gives a coupling of $\mu_B,\mu_A$ with cost
+
+$$
+\sum_{x,y}\bar d(x,y)\pi(y,x)=\sum_{x,y}\bar d(y,x)\pi(x,y)
+=\sum_{x,y}\bar d(x,y)\pi(x,y).
+$$
+
+The computed mass difference distinguishes the boundary vertex from the interior vertex. The ordered neighbor sectors retain their separate direction labels.
 
 Q.E.D.
 
@@ -1129,7 +1142,7 @@ Q.E.D.
 :::note[**Verification of Causal Encoding via Asymmetric Optimal Transport**]
 :::
 
-Verification of the asymmetric transport compensation established by **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> is based on the constraints verified in **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" /> is based on the following protocols:
+The fixture checks boundary and interior masses in the lazy law (**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />). The transport uses the undirected ground cost (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />). The protocols are as follows.
 
 1.  **Measure Initialization:** The algorithm dynamically calculates the lazy causal measures for a directed chain graph, explicitly enforcing boundary conditions.
 2.  **Wasserstein Solution:** The protocol solves the linear programming optimal transport problem to compute the exact Wasserstein distance between adjacent measures.
@@ -1255,16 +1268,16 @@ Verification Pass:  True
 **Conclusion:**
 
 The simulation provides exact confirmation of the analytical proof.
-Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This validates that the asymmetry of the measures successfully enforces a directional transport cost, compensating for the undirected metric.
+Measures: `Measure A` shows the predicted heavy self-bias ($0.6667$) due to the empty past. `Measure B` is perfectly balanced.; Excess Mass: The explicit calculation of Excess Mass confirms Proof Step IV: there is a surplus of $+0.3333$ at Node 0 (A) and a deficit of $-0.3333$ at Node 2 (C). Node 1 (B) is balanced ($0.0$).; Cost: The solver confirms that moving this specific surplus to this specific deficit over a distance of 2 yields a total cost of $0.6667$.This checks the effect of different boundary and interior masses on the symmetric ground transport cost.
 
 ### 11.2.7.3 Commentary: Arrow of Time in Static Geometry {#11.2.7.3}
 
 :::info[**Emergence of Directed Physics from Undirected Metrics**]
 :::
 
-Compensation by Causal Measures resolves a central tension in discrete quantum gravity: how to reconcile the reversibility of metric distance (where $d(x,y)=d(y,x)$) with the irreversibility of causal time. The "Compensation Mechanism" demonstrates that the arrow of time is not lost when we adopt an undirected metric; rather, it is lifted into the space of measures.
+The source in the chain fixture places the fallback mass of its empty past sector at its center. The interior vertex has both sectors occupied and distributes the same total probability over three sites. This boundary difference survives in the aggregate laws. The transport comparison measures the mismatch between those laws and gives a positive curvature for the edge in the fixture.
 
-By defining the measure $\mu_u$ based on the directed neighborhoods $N^-$ and $N^+$, we effectively "tilt" the probability distribution along the time axis. When we compute the distance between two such tilted distributions, the transport cost becomes sensitive to their relative orientation. Transporting "with the grain" of causality (as in the proof) yields a coherent, finite curvature. If we were to attempt transport "against the grain" (e.g., from a future-biased measure to a past-biased one), the cost would increase significantly (though remain finite), signaling a causal mismatch. Thus, the geometry of Quantum Braid Dynamics is oriented not by the manifold itself, but by the distribution of information upon it.
+The ordered past and future sectors, together with the directed edges and timestamps, retain orientation data. Reversing the chain interchanges its occupied and empty sectors at each endpoint. The weights of the two sectors are equal and their empty-sector rules agree, so the aggregate law at each labeled vertex survives the reversal. The same symmetry applies to the scalar transport cost.
 
 ### 11.2.7.4 Diagram: Compensation Mechanism {#11.2.7.4}
 
@@ -1327,23 +1340,65 @@ and the Euler characteristic of the simplicial link satisfies $\chi(\partial B_r
 **I. Decomposition of the Boundary Shell**
 The boundary shell $\partial B_r(v)$ is identified with the simplicial link of the metric ball boundary. Let the set of vertices at combinatorial distance exactly $r$ be denoted by $S_r(v)$. The simplicial link complex $L_r(v)$ is defined with vertices $S_r(v)$ and simplices spanned by mutually adjacent vertex subsets.
 
+For $r\ge1$ and $u\in\partial B_r(v)$, there is an undirected neighbor $w\in B_{r-1}(v)$ and $u\notin B_{r-1}(v)$. The distances are integer-valued, so
+
+$$
+r\le\bar d(v,u)\le\bar d(v,w)+\bar d(w,u)\le(r-1)+1=r.
+$$
+
+Thus $u\in S_r(v)$. Conversely, if $u\in S_r(v)$, a shortest path $v=x_0,\ldots,x_r=u$ has a penultimate vertex $x_{r-1}$ with $\bar d(v,x_{r-1})\le r-1$. Since $u$ lies outside $B_{r-1}(v)$ and is adjacent to $x_{r-1}$, it belongs to $\partial B_r(v)$. Hence $\partial B_r(v)=S_r(v)$ as vertex sets.
+
 **II. Volume Growth Scaling**
-The volume $|B_r(v)|$ scales as $C r^4(1 + o(1))$ under the stable 3-cycle area density $\rho^* \approx 0.037$ as derived in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />. The ratio of the volume of the double-radius ball to the single-radius ball is computed:
+Let $G_t$ be a sequence of graphs with mesh $\ell_t\to0$, and choose integer radii $r=r_t$ with $r_t\to\infty$ and $2r_t\ell_t\to0$. Work within the common growth window of $G_t$, with $r_t$ and $2r_t$ both admissible at the same center $v$. In addition to the two-sided count regime in **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />, assume the uniform expansion
 
 $$
-\frac{|B_{2r}(v)|}{|B_r(v)|} = \frac{C (2r)^4 + \mathcal{O}(r^3)}{C r^4 + \mathcal{O}(r^3)} = 16 + \mathcal{O}(r^{-1}).
+|B_s(v)|=C_0(t,v)s^4(1+\varepsilon_s(v)),\qquad
+C_0(t,v)>0,\qquad |\varepsilon_s(v)|\le C/s,\qquad
+s\in\{r,2r\}.
 $$
 
-This validates the emergent four-dimensional scaling.
-
-**III. Homological Stability and Euler Characteristic**
-To audit the stability of the Euler characteristic $\chi(L_r(v))$ under local edge fluctuations, the simplicial link is decomposed into contractible subcomplexes. Let $L_r(v) = \bigcup_j U_j$. The Mayer-Vietoris sequence is applied to compute the homology of the union. Since the local correlation length $\ell_0$ is small relative to $r$, the intersection of any three subcomplexes $U_i \cap U_j \cap U_k$ is contractible. The Betti numbers are substituted into the Euler-Poincaré formula:
+The common leading coefficient cancels. For $r\ge2C$,
 
 $$
-\chi(L_r(v)) = \sum_{p=0}^3 (-1)^p b_p(L_r(v)).
+\begin{aligned}
+\frac{|B_{2r}(v)|}{|B_r(v)|}-16
+&=16\left(\frac{1+\varepsilon_{2r}(v)}{1+\varepsilon_r(v)}-1\right)
+=16\frac{\varepsilon_{2r}(v)-\varepsilon_r(v)}{1+\varepsilon_r(v)},\\
+\left|\frac{|B_{2r}(v)|}{|B_r(v)|}-16\right|
+&\le 16\frac{C/(2r)+C/r}{1-C/r}
+\le \frac{48C}{r}.
+\end{aligned}
 $$
 
-The alternating sum is evaluated to obtain $\chi(L_r(v)) = 0$ as $r \to \infty$. This proves that the macroscopic boundary shell is homeomorphic to a three-sphere $S^3$, completing the proof.
+**III. Shell homology and Euler characteristic**
+
+Write $L=L_r(v)$. Suppose $L$ has a finite cover by subcomplexes $U_i$ whose nonempty finite intersections are contractible. Its nerve $\mathcal N$ has a simplex on each index set $I$ with $\bigcap_{i\in I}U_i\ne\varnothing$. The simplicial nerve theorem gives $|L|\simeq|\mathcal N|$, so their Euler characteristics agree:
+
+$$
+\chi(L)=\chi(\mathcal N)
+=\sum_{\substack{I\ne\varnothing\\\bigcap_{i\in I}U_i\ne\varnothing}}(-1)^{|I|-1}.
+$$
+
+If $L$ is independently identified as a closed orientable three-dimensional homology manifold, Poincaré duality and the universal coefficient theorem over $\mathbb Q$ give
+
+$$
+b_p(L)=\dim H^{3-p}(L;\mathbb Q)=b_{3-p}(L),\qquad
+\chi(L)=(b_0-b_3)-(b_1-b_2)=0 .
+$$
+
+The cancellation holds on any shell satisfying the duality premise. For example, the three-torus has Betti numbers $(1,3,3,1)$ and also has Euler characteristic zero. Applying the calculation to the graph requires verification of the shell hypotheses. A homeomorphism to $S^3$ requires a separate identification of the shell.
+
+**IV. Complete simplicial fan certificate**
+
+Suppose $L$ is pure of dimension three with embedded unit vertex vectors $\boldsymbol u_i\in S^3$. For each tetrahedron $\sigma$ let $U_\sigma$ have its four vertex vectors as columns and assume that $U_\sigma$ is invertible. Assume the cones $U_\sigma\mathbb R_{\ge0}^4$ cover $\mathbb R^4$ and intersect exactly in the cones of their common faces. On each tetrahedron, radial projection sends barycentric coordinates $\boldsymbol b$ to $U_\sigma\boldsymbol b/\|U_\sigma\boldsymbol b\|$. For a direction $\boldsymbol v$ in its cone the inverse is
+
+$$
+\boldsymbol a=U_\sigma^{-1}\boldsymbol v,\qquad
+\boldsymbol b=\frac{\boldsymbol a}{\sum_i a_i},\qquad
+\frac{U_\sigma\boldsymbol b}{\|U_\sigma\boldsymbol b\|}=\boldsymbol v .
+$$
+
+The vector $\boldsymbol a$ is nonnegative and nonzero. On a common face the coefficients of vertices outside the face vanish, so these inverse maps agree. Cone coverage gives surjectivity, and the common-face property gives injectivity. Radial projection is continuous on the finite complex, and the continuous bijection from compact $|L|$ to Hausdorff $S^3$ is a homeomorphism.
 
 Q.E.D.
 
@@ -1356,7 +1411,19 @@ Establishing macroscopic metric stability across discrete quantum spacetime repr
 
 Reifenberg Flatness provides the mathematical framework to prove that chaotic, discrete graph fluctuations produce smooth macroscopic geometries. The Reifenberg condition evaluates the Hausdorff distance between local metric balls and ideal Euclidean tangent spaces across scaling radii $r$. Proving that the causal graph satisfies Reifenberg Flatness demonstrates that microscopic edge-flip noise is dynamically suppressed over multi-link correlation distances, preventing metric singularities and fractal collapse.
 
-This macroscopic stability proof confirms that continuous spacetime manifolds emerge naturally from discrete relational network dynamics. At large distances, boundary spheres on the causal graph become homeomorphic to smooth three-spheres $S^3$, establishing an un-crumpled, flat Euclidean background geometry. Reifenberg Flatness thus bridges discrete micro-geometry with classical differential geometry, guaranteeing the stability of emergent physical space.
+The ball $B_r(v)$ counts vertices at undirected graph distance at most $r$. A causal diamond instead counts events in an order interval. In the flat Lorentzian comparison with $c=1$, place its endpoints at $(0,\boldsymbol 0)$ and $(\tau,\boldsymbol 0)$. At time $t$ the two cone inequalities are $\|\boldsymbol x\|\le t$ and $\|\boldsymbol x\|\le\tau-t$. Hence the cross-section is a spatial ball of radius $\min(t,\tau-t)$ and the spacetime volume is
+
+$$
+\begin{aligned}
+V_4(\tau)
+&=\int_0^\tau \frac{4\pi}{3}\min(t,\tau-t)^3\,\mathrm dt
+=\frac{8\pi}{3}\int_0^{\tau/2}t^3\,\mathrm dt\\
+&=\frac{8\pi}{3}\frac{(\tau/2)^4}{4}
+=\frac{\pi}{24}\tau^4.
+\end{aligned}
+$$
+
+This coefficient belongs to the interval between the two timelike separated events. A graph diamond count requires a comparison of causal orders and normalized measures. The ratio of the undirected graph ball counts uses the separate growth expansion of **Combinatorial Reifenberg Flatness** <Ref id="11.2.8" label="§11.2.8" />. An embedded shortest-path comparison and a shell topology calculation have their own hypotheses.
 
 ---
 
@@ -1371,10 +1438,10 @@ The derivation (**Causal Geometry Construction** <Ref id="11.2.3" label="§11.2.
 Under **Measure Validity** <Ref id="11.2.4" label="§11.2.4" />, for every vertex $u \in V$, the object $\mu_u$ is guaranteed to constitute a valid probability measure ($\sum \mu_u(x) = 1$). The explicit handling of vacuum states via the laziness adjustment ensures that no topological configuration results in measure collapse or mass leakage, securing the input stability for the transport functional.
 
 **II. Metric Finiteness and Stability**
-In **Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />, the undirected shortest-path metric $\bar{d}$ is established as strictly necessary to prevent divergence. By proving that directed metrics yield infinite transport costs for reverse-time analysis, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> justifies the use of $\bar{d}$ to ensure that $W_1(\mu_u, \mu_v) < \infty$ for all connected pairs, rendering the curvature $K(u,v)$ computable and continuous everywhere.
+Directed shortest-path cost is infinite for the specified fork marginals. The undirected metric yields $W_1(\mu_u,\mu_v)\le3$ for every edge because the two laws are supported within one hop of its endpoints (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />).
 
 **III. Causal Fidelity and Orientation**
-As demonstrated in **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, the undirected metric does not erase the arrow of time. The proof verifies that the temporal biases encoded in the measures $\mu_u, \mu_v$ (specifically the $\alpha=1/3$ equilibrium derived in **Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />) sufficiently modulate the transport cost to distinguish forward propagation from reverse propagation. This confirms that $K(u,v)$ encodes the directed causal structure of the underlying graph $G$.
+The chain example compares the mass law of a boundary vertex with that of an interior vertex (**Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />). The two temporal sectors have equal weights at the sector-entropy optimum (**Entropy Maximization** <Ref id="11.2.5" label="§11.2.5" />). The aggregate law is invariant when these sectors are interchanged. The directed edge set and the ordered sector labels carry the orientation.
 
 **IV. Curvature Boundedness**
 Since $\bar{d}(x,y) \le \text{diam}(G)$ and $\mu_u, \mu_v$ are probability measures, the Wasserstein distance is bounded by $0 \le W_1 \le \text{diam}(G)$. Consequently, the curvature $K = 1 - W_1$ is strictly bounded within $[1 - \text{diam}(G), 1]$. In the sparse equilibrium regime where diameters of relevant neighborhoods are small, this bound tightens effectively to $[-1, 1]$.
@@ -1425,7 +1492,7 @@ $$
 \mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v).
 $$
 
-This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The asymptotic convergence of $\mathcal{S}[G]$ to the continuous Einstein-Hilbert action integral $\int R \sqrt{-g} \, d^4x$ is formally derived in **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" />. The variation of this action with respect to graph topology governs the emergent dynamics of the system.
+This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
 
 ### 11.3.1.1 Commentary: Cost of Curvature {#11.3.1.1}
 
@@ -1445,14 +1512,14 @@ This action formulation governs the fundamental dynamical principle of discrete 
 :::info[**Derivation of Strict Curvature Augmentation from the Nucleation of Three-Cycle Geometric Quanta**]
 :::
 
-Let $G_0 = (V_0, E_0)$ denote a finite, simple, directed graph, and let $(u,v) \in E_0$ be a directed edge within it. Let $G_1 = (V_1, E_1)$ be the graph derived from $G_0$ by adjoining a new vertex $w \notin V_0$ and the two new directed edges $(v,w)$ and $(w,u)$, thereby nucleating a novel 3-cycle $u \to v \to w \to u$.
+Let $G_0$ be a finite simple directed graph with edge $u\to v$, with lazy causal laws at $\alpha=\beta=1/3$ and old undirected ground metric on the union of the two full endpoint supports equal to the unit double-star metric centered at $u,v$. If $G_1$ adjoins one fresh vertex $w$ and exactly the edges $v\to w$ and $w\to u$, then the curvature of the retained edge strictly increases, $K_1(u,v)>K_0(u,v)$.
 
 ### 11.3.2.1 Commentary: Argument Outline {#11.3.2.1}
 
 :::tip[**Structure of the Curvature Monotonicity Argument via Measure Dilution, Feasible Transport, Cost Delimitation, and Strict Augmentation**]
 :::
 
-The argument proceeds via Direct Construction, tracing the evolution of transport plans across two phases. In Phase 1 (pre-nucleation state G_0), measures mu_u and mu_v exhibit disjoint supports, compelling mass relocation along extended, high-cost paths. In Phase 2 (post-nucleation state G_1), the insertion of a new 3-cycle u -> v -> w -> u injects shared support at vertex w into both measures. This permits zero-cost self-transport at w, contracting overall transport cost and strictly augmenting local curvature.
+The proof proceeds by construction on the double-star ground metric on the full supports of both lazy laws. The old laws already share the two center sites. The fresh vertex adds another common site, and the past sector of the source and the future sector of the target redistribute their existing mass. The feasible coupling places the common mass at the new vertex on the diagonal. The tree cuts and the residual cost determine the strict decrease in optimal transport cost. The retained edge has length one in both graphs, so this decrease is the exact increase in its curvature.
 
 ```text
 • 11.3.2 Theorem Curvature Monotonicity  [by construction]
@@ -1487,7 +1554,8 @@ The argument proceeds via Direct Construction, tracing the evolution of transpor
 
 PHASE 1: BEFORE (State G_0)
 ---------------------------
-Edge u -> v exists. Neighborhoods are disjoint.
+Edge u -> v exists. The old support metric is a unit double star.
+Both endpoint laws already have mass at u and v.
 
       N^-(u)          N^+(v)
       {p1, p2}        {f1, f2}
@@ -1498,9 +1566,7 @@ Edge u -> v exists. Neighborhoods are disjoint.
    Transport Problem:
    μ_u has mass on p1.
    μ_v has mass on f1.
-   Distance d(p1, f1) is large.
-   
-   Cost W_1^(0) is HIGH.
+   Distance d(p1, f1) = 3 along p1-u-v-f1.
 
 PHASE 2: AFTER (State G_1) - 3-Cycle Nucleation
 -----------------------------------------------
@@ -1543,70 +1609,44 @@ If the nucleation of a 3-cycle involving a new vertex $w$ occurs, then the lazy 
 :::tip[**Formal Derivation of Shared Mass Existence from Neighborhood Cardinalities**]
 :::
 
-Specifically, the probability mass allocated to the shared vertex $w$ in both the past-measure of $u$ ($\mu_u^{(1)}$) and the future-measure of $v$ ($\mu_v^{(1)}$) is strictly positive, satisfying:.
+**I. The two changing sectors**
+
+Write $A_u=N_0^-(u)$, $A_v=N_0^+(v)$ and $d_i=|A_i|$ for $i\in\{u,v\}$. After adjoining $v\to w$ and $w\to u$, the respective sets become $A_u\cup\{w\}$ and $A_v\cup\{w\}$. The future sector of $u$ and past sector of $v$ retain their old weights (**Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />).
+
+**II. Redistribution with the empty-sector rule**
+
+For either changing sector let $\nu_i$ be the uniform probability law on $A_i$ if $d_i>0$ and $\delta_i$ if $d_i=0$. The post-update sector law follows from equal allocation within that sector (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). It is
 
 $$
-\mu_u^{(1)}(w) > 0 \quad \text{and} \quad \mu_v^{(1)}(w) > 0.
+\nu_i^{(1)}=\frac{d_i}{d_i+1}\nu_i+\frac1{d_i+1}\delta_w.
 $$
 
-This positive allocation occurs via the dilution of probability mass from the pre-existing neighborhoods $N_0^-(u)$ and $N_0^+(v)$, reducing the weight on legacy vertices by factors of proportional to their neighborhood growth.
-
-The proof proceeds by explicitly constructing the neighborhood sets and applying the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> to the pre-nucleation graph $G_0$ and the post-nucleation graph $G_1$. Let $\alpha, \beta$ be the fixed parameters of the measure, strictly positive (specifically $\alpha=\beta=1/3$).
-
-**I. Pre-Nucleation State ($G_0$)**
-Let $u, v \in V_0$ be vertices connected by a directed edge $(u,v)$.
-Define the antecedent neighborhoods relevant to the transport from $u$ to $v$:
-1.  **Past of $u$:** $N_0^-(u) = \{x \in V_0 \mid (x,u) \in E_0\}$. Let $n_u^- = |N_0^-(u)|$.
-2.  **Future of $v$:** $N_0^+(v) = \{y \in V_0 \mid (v,y) \in E_0\}$. Let $n_v^+ = |N_0^+(v)|$.
-
-The antecedent measure $\mu_u^{(0)}$ allocates mass to the past neighborhood $N_0^-(u)$ according to the uniform rule:
+For $d_i>0$ each old neighbor has weight $(d_i/(d_i+1))(1/d_i)=1/(d_i+1)$, and for $d_i=0$ the formula gives the point mass at $w$. Multiplying by the sector weight $\beta$ and subtracting the old sector gives
 
 $$
-\forall x \in N_0^-(u), \quad \mu_u^{(0)}(x) = \frac{\beta}{n_u^-}.
+\begin{aligned}
+\mu_u^{(1)}-\mu_u^{(0)}&=\frac{\beta}{d_u+1}(\delta_w-\nu_u),\\
+\mu_v^{(1)}-\mu_v^{(0)}&=\frac{\beta}{d_v+1}(\delta_w-\nu_v).
+\end{aligned}
 $$
 
-Critically, since the new vertex $w \notin V_0$, the measure at $w$ is identically zero: $\mu_u^{(0)}(w) = 0$.
-
-**II. Nucleation Event**
-The transition $G_0 \to G_1$ introduces the vertex $w$ and the edges $(v,w)$ and $(w,u)$, completing the cycle $u \to v \to w \to u$.
-The neighborhoods update as follows:
-1.  **New Past of $u$:** $N_1^-(u) = N_0^-(u) \cup \{w\}$. The cardinality increments: $|N_1^-(u)| = n_u^- + 1$.
-2.  **New Future of $v$:** $N_1^+(v) = N_0^+(v) \cup \{w\}$. The cardinality increments: $|N_1^+(v)| = n_v^+ + 1$.
-
-**III. Post-Nucleation Measures**
-We apply the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> to the updated graph $G_1$.
-
-* **For the Measure $\mu_u^{(1)}$:**
-    The total mass $\beta$ assigned to the past component is now distributed over $n_u^- + 1$ vertices. The mass allocated to the new vertex $w$ is:
-
-    $$
-    \mu_u^{(1)}(w) = \frac{\beta}{|N_1^-(u)|} = \frac{\beta}{n_u^- + 1}.
-    $$
-
-    Since $\beta > 0$ and $n_u^- \ge 0$, this quantity is strictly positive.
-    Simultaneously, the mass on any legacy neighbor $x \in N_0^-(u)$ undergoes dilution:
-
-    $$
-    \mu_u^{(1)}(x) = \frac{\beta}{n_u^- + 1} < \frac{\beta}{n_u^-} = \mu_u^{(0)}(x).
-    $$
-
-* **For the Measure $\mu_v^{(1)}$:**
-    The total mass $\beta$ assigned to the future component is distributed over $n_v^+ + 1$ vertices. The mass allocated to $w$ is:
-
-    $$
-    \mu_v^{(1)}(w) = \frac{\beta}{|N_1^+(v)|} = \frac{\beta}{n_v^+ + 1}.
-    $$
-
-    Since $\beta > 0$ and $n_v^+ \ge 0$, this quantity is strictly positive.
-
-**IV. Conclusion**
-The topological adjunction of the cycle necessitates that both $\mu_u^{(1)}$ and $\mu_v^{(1)}$ acquire shared support at $w$. Specifically, there exists a shared mass $m_w$:
+For a nonempty old sector the change at each legacy neighbor is
 
 $$
-m_w = \min\left( \mu_u^{(1)}(w), \mu_v^{(1)}(w) \right) = \min\left( \frac{\beta}{n_u^- + 1}, \frac{\beta}{n_v^+ + 1} \right) > 0.
+\frac{\beta}{d_i+1}-\frac{\beta}{d_i}
+=-\frac{\beta}{d_i(d_i+1)}.
 $$
 
-This establishes the existence of a probability bridge required for transport cost reduction.
+For an empty old sector the change at the endpoint is $-\beta$.
+
+**III. Shared successor mass**
+
+The old laws extended by zero to $w$ have no mass there. Writing $a_i=\beta/(d_i+1)$ gives
+
+$$
+\mu_u^{(1)}(w)=a_u,\qquad \mu_v^{(1)}(w)=a_v,\qquad
+\boxed{m_w=\min(a_u,a_v)>0}.
+$$
 
 Q.E.D.
 
@@ -1633,78 +1673,49 @@ There exists a feasible transport coupling $\pi_1$ between the post-nucleation m
 :::tip[**Formal Derivation of the Hybrid Transport Plan via Measure Decomposition**]
 :::
 
-This coupling $\pi_1$ decomposes the transport problem into two orthogonal components: a static component $\pi_{static}$ that retains mass at the shared vertex $w$ with zero displacement, and a residual component $\pi_{rem}$ that redistributes the remaining mass according to the optimal transport plan $\pi_0^*$ of the antecedent graph $G_0$.  **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and  **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> This construction satisfies all marginal constraints mandated by the expanded probability measures, thereby qualifying as a valid member of the set of all couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$.
+**I. Residual marginals**
 
-The proof constructs the coupling $\pi_1$ by first decomposing the measures based on the shared mass derived previously **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, and then defining the transport kernel for each component.
-
-**I. Decomposition of Post-Nucleation Measures**
-we compute the strictly positive shared mass at vertex $w$ as established in the preceding lemma:
+Let $a_u=\mu_u^{(1)}(w)$, $a_v=\mu_v^{(1)}(w)$, and $m_w=\min(a_u,a_v)$, and set $r=\mu_u^{(1)}-m_w\delta_w$, $s=\mu_v^{(1)}-m_w\delta_w$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). For $x\ne w$, $r(x)=\mu_u^{(1)}(x)\ge0$ and $s(x)=\mu_v^{(1)}(x)\ge0$. At $w$,
 
 $$
-m_w = \min\left( \mu_u^{(1)}(w), \mu_v^{(1)}(w) \right) > 0.
+\begin{aligned}
+r(w)&=a_u-\min(a_u,a_v)=\max(a_u-a_v,0),\\
+s(w)&=a_v-\min(a_u,a_v)=\max(a_v-a_u,0).
+\end{aligned}
 $$
 
-We decompose the probability measures $\mu_u^{(1)}$ and $\mu_v^{(1)}$ into a contribution from this shared mass and a residual distribution supported primarily on the antecedent vertex set $V_0$:
+The coupling uses the same marginal convention (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />). The residual masses are
 
 $$
-\mu_u^{(1)} = m_w \delta_w + \mu_u^{rem},
+\sum_x r(x)=1-m_w=M,\qquad \sum_y s(y)=M .
 $$
 
+Since $m_w\le\beta<1$, $M>0$.
+
+**II. A feasible plan**
+
+On $V_1\times V_1$ define
+
 $$
-\mu_v^{(1)} = m_w \delta_w + \mu_v^{rem},
+\pi_1(x,y)=m_w\mathbf 1_{x=y=w}+\frac{r(x)s(y)}{M}.
 $$
 
-where $\delta_w$ denotes the Dirac delta measure concentrated at $w$. The residual measures $\mu_u^{rem}$ and $\mu_v^{rem}$ constitute non-negative measures with total mass $1 - m_w$. Their support covers $V_0$, plus any excess mass at $w$ if $\mu_u^{(1)}(w) \neq \mu_v^{(1)}(w)$.
+If the two masses at $w$ differ, the larger law retains its excess there in the residual term. The two marginal calculations give
 
-**II. Construction of the Coupling Kernel $\pi_1$**
-we compute the transport plan $\pi_1: V_1 \times V_1 \to [0,1]$ as the linear superposition of a static diagonal coupling and a scaled residual coupling.
+$$
+\begin{aligned}
+\sum_y\pi_1(x,y)
+&=m_w\mathbf 1_{x=w}+\frac{r(x)}{M}\sum_y s(y)
+=m_w\mathbf 1_{x=w}+r(x)=\mu_u^{(1)}(x),\\
+\sum_x\pi_1(x,y)
+&=m_w\mathbf 1_{y=w}+\frac{s(y)}{M}\sum_x r(x)
+=m_w\mathbf 1_{y=w}+s(y)=\mu_v^{(1)}(y).
+\end{aligned}
+$$
 
-1.  **The Static Component ($\pi_{static}$):**
-    For the shared mass $m_w$, we substitute a strict identity transport from $w$ to $w$.
+**III. Cost of the fixed mass**
 
-    $$
-    \pi_{static}(x,y) = \begin{cases} m_w & \text{if } x = w \text{ and } y = w, \\ 0 & \text{otherwise.} \end{cases}
-    $$
-
-2.  **The Residual Component ($\pi_{rem}$):**
-    we compute the transport for the remaining mass $(1 - m_w)$ by creating a scaled mapping of the antecedent optimal plan $\pi_0^*$. Let $\pi_0^*(x,y)$ be the optimal coupling between the normalized antecedent measures $\mu_u^{(0)}$ and $\mu_v^{(0)}$. we compute $\pi_{rem}(x,y)$ for $x,y \in V_0$ as follows:
-
-    $$
-    \pi_{rem}(x,y) = (1 - m_w) \cdot \pi_0^*(x,y).
-    $$
-
-    In cases where the neighborhood dilution is non-uniform (where $|N_0^-(u)| \neq |N_0^+(v)|$), this definition necessitates a re-weighting factor to strictly match marginals. For the purposes of proving feasibility and strict inequality, we apply require that $\pi_{rem}$ maps the support of $\mu_u^{rem}$ to $\mu_v^{rem}$ within $V_0$ using paths available in $G_0$. Since the supports of $\mu_u^{rem}$ and $\mu_v^{rem}$ reside as subsets of $V_0$ (plus potentially $w$), such a coupling exists and satisfies the requisite bounds.
-
-**III. Verification of Marginal Constraints**
-To demonstrate that $\pi_1 = \pi_{static} + \pi_{rem}$ constitutes a valid plan, we sum its rows and columns.
-
-* **Row Sums (Source Constraints):**
-    For $x = w$:
-
-    $$
-    \sum_{y \in V_1} \pi_1(w,y) = \pi_{static}(w,w) + \sum_{y} \pi_{rem}(w,y) = m_w + \mu_u^{rem}(w) = \mu_u^{(1)}(w).
-    $$
-
-    For $x \in V_0$:
-
-    $$
-    \sum_{y \in V_1} \pi_1(x,y) = 0 + \mu_u^{rem}(x) = \mu_u^{(1)}(x).
-    $$
-
-* **Column Sums (Target Constraints):**
-    For $y = w$:
-
-    $$
-    \sum_{x \in V_1} \pi_1(x,w) = \pi_{static}(w,w) + \sum_{x} \pi_{rem}(x,w) = m_w + \mu_v^{rem}(w) = \mu_v^{(1)}(w).
-    $$
-
-    For $y \in V_0$:
-
-    $$
-    \sum_{x \in V_1} \pi_1(x,y) = 0 + \mu_v^{rem}(y) = \mu_v^{(1)}(y).
-    $$
-
-Since $\pi_1$ remains non-negative and satisfies $\sum_{y} \pi_1(x,y) = \mu_u^{(1)}(x)$ and $\sum_{x} \pi_1(x,y) = \mu_v^{(1)}(y)$, it qualifies as a feasible coupling.
+At least one residual has zero mass at $w$, so $r(w)s(w)=0$. Thus $\pi_1(w,w)=m_w$ and its diagonal cost is $\bar d_1(w,w)m_w=0$. The remaining cost depends on the residual coupling.
 
 Q.E.D.
 
@@ -1713,11 +1724,9 @@ Q.E.D.
 :::info[**Strategy for Bounding Transport Costs via Sub-Optimal Couplings**]
 :::
 
-The construction of the hybrid transport plan $\pi_1$ represents a crucial tactical maneuver in the proof of monotonicity. Calculating the exact Wasserstein distance $W_1$ for an arbitrary graph presents a computationally intensive optimization problem. However, to prove the Monotonicity Theorem, we do not require the exact value of the new transport cost; we only require a proof that the new cost is strictly lower than the old cost.
+The fixed part of the coupling uses the shared successor mass at zero cost. The residual product uses the actual successor marginals, including any unmatched mass at the new vertex. For unequal affected degrees, one residual can still put mass at the new vertex. Its partner residual has zero mass there, so the fixed part gives exactly the prescribed common diagonal mass.
 
-By constructing a specific, feasible plan (one we design manually rather than discovering via optimization), we establish an upper bound on the true cost. This plan acts as a proof of concept for the transport reduction. It effectively demonstrates that even if we simply keep the shared mass stationary while moving the rest of the mass exactly as we did before, we still save energy.
-
-This hybrid strategy exploits the sub-additivity of the transport problem. We isolate the "easy" part of the transport (the zero-cost self-loop at $w$) from the "hard" part (the residual transport across $V_0$). Because the true optimal plan $W_1^{(1)}$ is defined as the infimum over all possible plans, it is guaranteed to be at least as efficient as our hybrid construction. Therefore, proving that our hybrid plan is cheaper than the original plan ($C(\pi_1) < W_1^{(0)}$) mathematically guarantees that the true curvature has increased, regardless of whether $\pi_1$ is the absolute optimal solution.
+The update redistributes a single sector at each endpoint. Scaling the old coupling would rescale every sector, including weights that did not participate in the redistribution. The product construction gives a feasible replacement without requiring any claim about which paths minimize its residual cost. The optimum is evaluated separately for the specified ground metric, using its actual support distances.
 
 ---
 
@@ -1726,93 +1735,81 @@ This hybrid strategy exploits the sub-additivity of the transport problem. We is
 :::info[**Demonstration of Strict Inequality via Wasserstein Distances**]
 :::
 
-Given the system, the Wasserstein-1 transport cost associated with the feasible plan $\pi_1$ in the nucleated graph $G_1$ is strictly less than the optimal transport cost $W_1^{(0)}$ required in the antecedent graph $G_0$
+Let a fresh-vertex update adjoin $v\to w$ and $w\to u$ to an old edge $u\to v$, with $\alpha=\beta=1/3$ and with the old ground metric on the two full endpoint supports equal to the unit double-star metric. Then, with $a_u=\beta/(|N_0^-(u)|+1)$, $a_v=\beta/(|N_0^+(v)|+1)$ and $m_w=\min(a_u,a_v)$, the optimal cost satisfies
+
+$$
+W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}>0.
+$$
 
 ### 11.3.5.1 Proof: Cost Contraction (Phase 3) {#11.3.5.1}
 
 :::tip[**Formal Bounding of Transport Costs via Component Analysis**]
 :::
 
-Specifically, the cost satisfies the inequality $W_1(\pi_1) < W_1^{(0)}$, a reduction necessitated by the zero-cost transport of the shared probability mass fraction $m_w$ at the nucleated vertex $w$. Consequently, the true optimal Wasserstein distance $W_1^{(1)}$ in the successor graph must also satisfy this strict upper bound.
+**I. Support metric**
 
-The proof proceeds by evaluating the transport cost functional for the hybrid plan $\pi_1$ constructed as established in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> and comparing it term-wise to the antecedent cost.
-
-**I. Definition of the Cost Functional**
-The total cost of the transport plan $\pi_1$ is defined as the expectation of the distance metric $\bar{d}_1$ over the coupling distribution:
+Let $L_u,L_v$ denote the noncentral leaves attached to $u,v$ in the double star. The old supports are contained in $\{u,v\}\cup L_u$ and $\{u,v\}\cup L_v$, respectively. In the new graph any old-to-old path using $w$ can replace the segment $u-w-v$ by the old unit edge $u-v$. Old distances are therefore unchanged. Also
 
 $$
-C(\pi_1) = \sum_{x \in V_1} \sum_{y \in V_1} \bar{d}_1(x,y) \cdot \pi_1(x,y).
+\bar d_1(w,x)=1+\min\bigl(\bar d_0(u,x),\bar d_0(v,x)\bigr)
 $$
 
-**II. Decomposition into Static and Residual Terms**
-Substituting the decomposition $\pi_1 = \pi_{static} + \pi_{rem}$ established previously **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />:
+for each old support vertex $x$, since $w$ has exactly those two neighbors. Consequently the new support metric is the leaf network on the unit triangle $u,v,w$ (**Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" />).
+
+**II. Old optimal cost**
+
+Each leaf of $L_u$ carries only source mass, and each leaf of $L_v$ carries only target mass. A unit of mass at such a leaf contributes one unit of cost through its attachment edge. Move the source leaf masses to $u$ and account for the target leaf masses at $v$. The remaining net mass at $u$ is
 
 $$
-C(\pi_1) = \sum_{x,y} \bar{d}_1(x,y) \cdot \pi_{static}(x,y) + \sum_{x,y} \bar{d}_1(x,y) \cdot \pi_{rem}(x,y).
+s=\mu_u^{(0)}(u)+\mu_u^{(0)}(L_u)-\mu_v^{(0)}(u)
+=1-\mu_u^{(0)}(v)-\mu_v^{(0)}(u)\ge1-2\beta=\tfrac13.
 $$
 
-1.  **Analysis of the Static Component ($C_{static}$):**
-    The static component is non-zero only when $x=y=w$.
-
-    $$
-    C_{static} = \bar{d}_1(w,w) \cdot \pi_{static}(w,w) = 0 \cdot m_w = 0.
-    $$
-
-    The contribution of the shared mass to the total cost is identically zero.
-
-2.  **Analysis of the Residual Component ($C_{rem}$):**
-    The residual component operates on the antecedent vertex set $V_0$. Substituting the definition $\pi_{rem}(x,y) = (1 - m_w) \cdot \pi_0^*(x,y)$:
-
-    $$
-    C_{rem} = \sum_{x,y \in V_0} \bar{d}_1(x,y) \cdot (1 - m_w) \cdot \pi_0^*(x,y).
-    $$
-
-    Factor out the scalar $(1 - m_w)$:
-
-    $$
-    C_{rem} = (1 - m_w) \sum_{x,y \in V_0} \bar{d}_1(x,y) \cdot \pi_0^*(x,y).
-    $$
-
-    We invoke the property that the distance metric is non-increasing under edge addition. For any $u,v \in V_0$, the shortest path in $G_1$ cannot be longer than the shortest path in $G_0$ (since $E_0 \subset E_1$). Therefore, $\bar{d}_1(x,y) \le \bar{d}_0(x,y)$.
-
-    $$
-    C_{rem} \le (1 - m_w) \sum_{x,y \in V_0} \bar{d}_0(x,y) \cdot \pi_0^*(x,y).
-    $$
-
-    The summation term is precisely the definition of the antecedent optimal cost $W_1^{(0)}$.
-
-    $$
-    C_{rem} \le (1 - m_w) \cdot W_1^{(0)}.
-    $$
-
-**III. Strict Inequality**
-Combining the components yields the bound for the hybrid plan:
+The deficit at $v$ is $s$. The leaf-edge costs and the central cut give a lower bound on every coupling, since each shipment pays its distance in the double star. Matching the excess to the deficit across $u-v$ attains that bound. Hence
 
 $$
-C(\pi_1) = 0 + C_{rem} \le (1 - m_w) \cdot W_1^{(0)}.
+W_1^{(0)}=\mu_u^{(0)}(L_u)+\mu_v^{(0)}(L_v)+s.
 $$
 
-we conclude via **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" /> that the shared mass is strictly positive ($m_w > 0$). Furthermore, in the antecedent sparse graph $G_0$, the neighborhoods are disjoint, implying a non-zero initial transport distance ($W_1^{(0)} > 0$).
-Therefore, the scaling factor $(1 - m_w)$ is strictly less than 1, and the product is strictly less than $W_1^{(0)}$:
+**III. New optimal cost**
+
+Let $I_u=\mathbf 1_{N_0^-(u)\ne\varnothing}$ and $I_v=\mathbf 1_{N_0^+(v)\ne\varnothing}$. The successor leaf masses are $\mu_u^{(0)}(L_u)-a_u I_u$ and $\mu_v^{(0)}(L_v)-a_v I_v$ (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />). If a changing sector was empty, its lost mass came from its endpoint. After the leaf costs are counted, the signed source-minus-target imbalances at the triangle vertices are therefore
 
 $$
-C(\pi_1) < W_1^{(0)}.
+(s-a_u,\ -s+a_v,\ a_u-a_v).
 $$
 
-**IV. Optimality Conclusion**
-The true Wasserstein distance $W_1^{(1)}$ is defined as the infimum over all valid couplings $\Pi(\mu_u^{(1)}, \mu_v^{(1)})$. Since $\pi_1$ is a valid coupling (as proven in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />), the optimal cost must be less than or equal to the cost of $\pi_1$:
+Since $a_u,a_v\le\beta\le s$, the total excess to ship is
 
 $$
-W_1^{(1)} \le C(\pi_1).
+s-a_u+\max(0,a_u-a_v)=s-\min(a_u,a_v)=s-m_w .
 $$
 
-By transitivity:
+All triangle distances between distinct vertices are one. Every feasible coupling incurs at least the forced leaf costs plus the total excess across the triangle. After retaining common masses and settling the leaf attachments, the triangle shipments and their costs are
 
 $$
-W_1^{(1)} < W_1^{(0)}.
+\begin{array}{c|c|c}
+\text{case}&\text{shipments with mass}&\text{unit-distance cost}\\ \hline
+a_u\ge a_v&
+u\to v:\ s-a_u,\quad w\to v:\ a_u-a_v&
+(s-a_u)+(a_u-a_v)=s-a_v\\
+a_u<a_v&
+u\to v:\ s-a_v,\quad u\to w:\ a_v-a_u&
+(s-a_v)+(a_v-a_u)=s-a_u
+\end{array}
 $$
 
-The transport cost strictly contracts upon nucleation.
+In the first case the total delivered to $v$ is $s-a_v$, its entire deficit. In the second case the two shipments consume $s-a_u$, the entire surplus at $u$, and fill both deficits. Joining these shipments to the leaf transfers gives paths between original source and target vertices. Their length bounds the cost of the corresponding coupling from above, while the forced leaf costs and triangle excess give the same lower bound.
+
+**IV. Difference**
+
+Subtracting the exact costs gives
+
+$$
+\boxed{W_1^{(0)}-W_1^{(1)}=m_w+a_u I_u+a_v I_v>0}.
+$$
 
 Q.E.D.
 
@@ -1821,11 +1818,9 @@ Q.E.D.
 :::info[**Physical Interpretation of Cost Reduction as Curvature Generation**]
 :::
 
-Cost Contraction delivers the geometric payoff of the topological construction. We have proven mathematically that the transport cost strictly decreases, but the physical intuition is equally vital. The reduction occurs because the nucleation of the 3-cycle creates a "shortcut" in probability space.
+The double-star hypothesis concerns distances on the full endpoint supports. It permits additional outgoing leaves at the source and additional incoming leaves at the target. The old cost includes the mass associated with those leaves. Their contribution is retained after the update because their sectors were unchanged. The contraction arises from the redistributed sectors and the smaller imbalance on the central triangle.
 
-In the antecedent graph, every unit of probability mass residing in the past of $u$ was required to traverse a finite distance (typically $\ge 1$) to reach the future of $v$. The system paid a "tax" for every bit of information transferred. In the nucleated graph, a specific fraction of that mass ($m_w$) is now located at the shared vertex $w$. This mass no longer needs to travel; it is already at its destination.
-
-This "free" transport for the shared fraction $m_w$ is the mechanism of **geometric efficiency**. The system has become more efficient at connecting the past of $u$ to the future of $v$. In the language of discrete differential geometry, an increase in transport efficiency ($W_1 \downarrow$) is synonymous with an increase in positive curvature ($K \uparrow$). The 3-cycle acts effectively as a "gravity well," pulling the causal neighborhoods together and warping the geometry to reduce the effective distance between events.
+When the graph supplies shortcuts among the full supports, the ground metric may no longer charge the same leaf and central costs. The optimal comparison then requires its own calculation. The fresh-vertex update here adds two edges and a new vertex. The scheduler's return-chord operation instead uses an existing two-path and needs a comparison for the marginals of that operation.
 
 ---
 
@@ -1834,7 +1829,7 @@ This "free" transport for the shared fraction $m_w$ is the mechanism of **geomet
 :::info[**Linear Scaling of Total Action by the Count of Geometric Quanta**]
 :::
 
-For any nucleation of a single three-cycle (geometric quantum), the variation of the total discrete action $\Delta \mathcal{S}$ satisfies the relation $\Delta \mathcal{S} \approx c \cdot \Delta N_3$, where $c > 0$ is a positive constant determined by the baseline curvature of the vacuum.
+Let a fresh-vertex insertion add exactly one three-cycle and have integrable action increment under an insertion law $\pi$. Then the mean action increment satisfies $\mathbb E_\pi[\Delta\mathcal S]=c_\pi\mathbb E_\pi[\Delta N_3]$ with $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$, and for laws supported on the oriented double-star family below, $c_\pi>2/3$.
 
 ### 11.3.6.1 Proof: Action-Complexity Proportionality {#11.3.6.1}
 
@@ -1842,38 +1837,117 @@ For any nucleation of a single three-cycle (geometric quantum), the variation of
 :::
 
 **I. Action Definition**
-The variation in action is the sum of curvature changes over all edges affected by the update.
+Let $I_0=\{e\in E_0:e\text{ meets }u\text{ or }v\}$. An old-to-old path using $w$ can replace $u-w-v$ by $u-v$, and old paths remain available. Thus $\bar d_1|_{V_0\times V_0}=\bar d_0$. Only the laws at $u,v$ change among old vertices (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). For $e\in E_0\setminus I_0$, its two marginals and its ground costs on their supports are identical before and after the update, so $K_1(e)-K_0(e)=0$. Hence
 
 $$
-\Delta \mathcal{S} = \mathcal{S}[G_1] - \mathcal{S}[G_0] = \sum_{e \in G_1} K_1(e) - \sum_{e \in G_0} K_0(e).
+\begin{aligned}
+\Delta\mathcal S
+&=\sum_{e\in E_0}(K_1(e)-K_0(e))+K_1(v,w)+K_1(w,u)\\
+&=\sum_{e\in I_0}(K_1(e)-K_0(e))+K_1(v,w)+K_1(w,u).
+\end{aligned}
 $$
 
-**II. Localized Perturbation**
-The nucleation of a 3-cycle affects the curvature primarily on the three edges of the cycle: $(u,v), (v,w), (w,u)$.
-Effects on distant edges vanish due to the exponential decay of correlations **Correlation Decay** <Ref id="5.1.3" label="§5.1.3" />, limiting the effective radius of the perturbation to $\xi$.
+**II. Cycle and incident-edge contributions**
+
+The exact decomposition into the central edge, the two new edges and the other old incident edges is
 
 $$
-\Delta \mathcal{S} \approx \Delta K_{uv} + \Delta K_{vw} + \Delta K_{wu}.
+\Delta\mathcal S
+=K_1(u,v)-K_0(u,v)+K_1(v,w)+K_1(w,u)
++\sum_{e\in I_0\setminus\{(u,v)\}}\bigl(K_1(e)-K_0(e)\bigr).
 $$
 
-**III. Curvature Contribution**
-From the **Curvature Monotonicity** <Ref id="11.3.7" label="§11.3.7" />, $\Delta K_{uv} > 0$ holds. For the newly created edges $(v,w)$ and $(w,u)$, the curvature initializes at a positive value due to the shared neighbor $w$ in the triad.
-From **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, the shared mass fraction $m_w = \min\left(\frac{\beta}{n_u^-+1}, \frac{\beta}{n_v^++1}\right)$ is bounded below by $m_{\text{min}} = \frac{\beta}{n_{\text{max}}+1} > 0$.
-The net action variation per cycle insertion satisfies the strict analytical bounds:
+If the tree ground-metric premise holds, the central term equals $W_1^{(0)}-W_1^{(1)}>0$ (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />). The fresh vertex adds exactly one directed triangle because its only incident edges are $v\to w$ and $w\to u$, and the return from $u$ to $v$ closes it. Thus $\Delta N_3=1$. A common coefficient per insertion would require control of the complete sum above.
+
+**III. Error of a cycle-only estimate**
+
+Let $C_\gamma=K_1(u,v)-K_0(u,v)+K_1(v,w)+K_1(w,u)$. The error of the cycle-only estimate satisfies
 
 $$
-\frac{\beta}{n_{\text{max}} + 1} \le c \le 3(1 - K_{\text{min}}).
+\left|\Delta\mathcal S-C_\gamma\right|
+\le\sum_{e\in I_0\setminus\{(u,v)\}}|K_1(e)-K_0(e)|.
 $$
 
-Under the stated uniform bound on $n_{\text{max}}$, the positive constant $c$ stays bounded away from zero.
+**IV. Single-edge example**
 
-**IV. Conclusion**
+Start with $0\to1$. In vertex order $(0,1)$ the laws are $(2/3,1/3)$ and $(1/3,2/3)$. The excess $1/3$ at $0$ moves to $1$ at unit cost, and the difference of expectations against $\bar d(\,\cdot\,,1)$ is $1/3$. Hence $W_1(0,1)=1/3$ and $\mathcal S_0=1-1/3=2/3$. Adding $1\to2\to0$ produces an oriented triangle, so each law is $(1/3,1/3,1/3)$. All three costs vanish. Thus
 
 $$
-\Delta \mathcal{S} = c \cdot 1 = c \cdot \Delta N_3.
+\mathcal S_1=3(1-0)=3,\qquad \Delta\mathcal S=3-\tfrac23=\tfrac73.
 $$
 
-The growth of the action tracks the growth of topological complexity linearly.
+**V. Chain example**
+
+Start instead with $0\to1\to2$. The old laws in vertex order $(0,1,2)$ are
+
+$$
+\mu_0=(2/3,1/3,0),\qquad
+\mu_1=(1/3,1/3,1/3),\qquad
+\mu_2=(0,1/3,2/3).
+$$
+
+For both edges the excess $1/3$ at $0$ moves to $2$ across distance two. The dual potential $\bar d_0(\,\cdot\,,2)$ gives $2/3$ for each difference of expectations, so both optimal costs are $2/3$ and $\mathcal S_0=2(1-2/3)=2/3$. Now add $1\to3\to0$. The new laws in vertex order $(0,1,2,3)$ are
+
+$$
+\mu_0=\mu_3=(1/3,1/3,0,1/3),\qquad
+\mu_1=(1/3,1/3,1/6,1/6),\qquad
+\mu_2=(0,1/3,2/3,0).
+$$
+
+Keep the common mass at each site and ship the residual as follows. The potential $f=\bar d_1(\,\cdot\,,2)$ has values $(2,1,0,2)$ and is $1$-Lipschitz. Each dual bound equals the displayed feasible transport cost:
+
+$$
+\begin{array}{c|l|c|c}
+\text{edge} & \text{residual shipments} & \text{cost} & \text{dual bound}\\ \hline
+(0,1)&3\to2:\,1/6 &2(1/6)=1/3 &2(1/6)=1/3\\
+(1,2)&0\to2:\,1/3,\quad3\to2:\,1/6 &2(1/3+1/6)=1 &2(1/3+1/6)=1\\
+(1,3)&2\to3:\,1/6 &2(1/6)=1/3 &2(1/6)=1/3\\
+(3,0)&\text{none}&0&0
+\end{array}
+$$
+
+Use $-f$ for $(1,3)$ and $f$ for the other edges. Consequently
+
+$$
+\mathcal S_1=\tfrac23+0+\tfrac23+1=\tfrac73,\qquad
+\Delta\mathcal S=\tfrac73-\tfrac23=\tfrac53.
+$$
+
+**VI. Ensemble coefficient on the specified event class**
+
+For a uniform total degree bound $\Delta$ on the old endpoints, each of $u,v$ has at most $\Delta$ incident edges. Their incident sets both contain $(u,v)$, so $|I_0|\le2\Delta-1$. Every edge curvature satisfies $-2\le K\le1$ since $0\le W_1\le3$ and the endpoints are one hop apart (**Metric Necessity** <Ref id="11.2.6" label="§11.2.6" />). Thus each old difference has absolute value at most $1-(-2)=3$, and each new curvature has absolute value at most $2$. By Step I,
+
+$$
+|\Delta\mathcal S|\le3|I_0|+2+2\le6\Delta+1.
+$$
+
+For any probability law $\pi$ supported on this class, $\mathbb E_\pi[|\Delta\mathcal S|]\le6\Delta+1$. More generally, for any insertion law with an integrable action increment, set $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$. Then
+
+$$
+\mathbb E_\pi[\Delta\mathcal S]
+=c_\pi=c_\pi\,\mathbb E_\pi[\Delta N_3],\qquad \Delta N_3=1.
+$$
+
+For the exact double-star host, take $p$ incoming leaves $x_i\to u$ and $q$ outgoing leaves $v\to y_j$ with central edge $u\to v$ and no other old edges. Add $v\to w\to u$ with $w$ fresh. Set $a=1/[3(p+1)]$, $b=1/[3(q+1)]$, $I_p=\mathbf 1_{\{p>0\}}$, and $I_q=\mathbf 1_{\{q>0\}}$. The retained-edge curvature gain is $\min(a,b)+I_pa+I_qb$ by the double-star transport calculation (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />).
+
+For $p>0$, the leaf law is $\mu_{x_i}=2\delta_{x_i}/3+\delta_u/3$. After cancellation with the law at $u$, the residual mass at $x_i$ is $2/3-1/(3p)$ before insertion and $2/3-a$ after insertion. Every deficit is at distance two from $x_i$, so both optimal costs equal twice their respective residual masses. The total curvature change on the $p$ incoming edges is
+
+$$
+p\left[2\left(\tfrac23-\tfrac1{3p}\right)-2\left(\tfrac23-a\right)\right]
+=2pa-\tfrac23=-2a.
+$$
+
+The sum is zero for $p=0$. Reversing all orientations exchanges the two equal-weight sectors, giving the outgoing contribution $-2I_qb$. The law at $w$ is uniform on $u,v,w$. After cancellation in the comparisons with $v$ and $u$, the leaf excesses have masses $qb$ and $pa$, respectively, and all their deficit destinations are at distance two. Thus the two new curvatures are $1-2qb$ and $1-2pa$. Combining the contributions yields
+
+$$
+\begin{aligned}
+\Delta\mathcal S(p,q)
+&=\min(a,b)+I_pa+I_qb-2I_pa-2I_qb+2-2pa-2qb\\
+&=\boxed{\tfrac23+\min(a,b)+(2-I_p)a+(2-I_q)b>\tfrac23}.
+\end{aligned}
+$$
+
+The formula is bounded above by $7/3$ since $a,b\le1/3$ and $pa=1/3-a$, $qb=1/3-b$. Every probability law supported on this family therefore has an integrable increment and strictly positive $c_\pi>2/3$.
 
 Q.E.D.
 
@@ -1882,11 +1956,13 @@ Q.E.D.
 :::info[**Identification of the 3-Cycle via Action-Complexity Proportionality**]
 :::
 
-Establishing a linear scaling relationship between total discrete action and the count of elementary 3-cycles formalizes the central geometric quantum hypothesis of Quantum Braid Dynamics. In topological graph theory, 3-cycles serve as the minimal non-trivial geometric building blocks capable of supporting non-zero local curvature. Proving that action variations scale linearly with 3-cycle count ($\Delta \mathcal{S} = c \cdot \Delta N_3$) demonstrates that 3-cycles serve simultaneously as the fundamental units of topology and action.
+The action sums the edge curvatures (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />). Each edge calculation uses the full past, center, and future weights (**Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />). Conditioning the sector choice on the center and future would instead use weights $\alpha/(\alpha+\beta)$ and $\beta/(\alpha+\beta)$, with the empty future sector returned to the center. That choice defines a separate comparison on the same undirected ground metric.
 
-Every time a graph rewrite nucleates a new 3-cycle ($u \to v \to w \to u$), it adds a discrete, positive quantum of action $c > 0$ to the global action sum. This proportionality converts the abstract continuous action integral into a discrete counting functional. Global action measures the total volume of geometric structure synthesized within the network, establishing a direct link between graph complexity and gravitational field energy.
+Both worked updates adjoin a fresh $w$ and add $v\to w$ and $w\to u$ around the retained edge $u\to v$. The scheduler example instead begins with the two-path $v\to w\to u$ and adds the single return edge $u\to v$ (**Monotonicity Verification** <Ref id="11.3.6.3" label="§11.3.6.3" />). The fresh-vertex update changes the vertex set and two edge slots. The scheduler closure changes a single edge slot on the existing vertex set.
 
-This discrete action quantization provides the physical mechanism for emergent gravity. Because the thermodynamic evolution of the causal graph favors configurations that maximize entropy under topological constraints, the network naturally drives toward states of higher 3-cycle density. Gravitational dynamics emerge as the macroscopic realization of discrete action quantization, pulling causal neighborhoods together to maximize total geometric connectivity.
+Each of the two worked fresh-vertex updates creates one directed triangle. The single-edge example changes the action by $7/3$, and the chain example changes it by $5/3$. Both begin with action $2/3$. The distinction comes from the endpoint laws and the contributions of old incident edges, which enter the total action along with the two new edges.
+
+The mean coefficient $c_\pi$ describes a specified distribution of insertion events with integrable action increments. Its value can depend on the distribution of local environments. A response law for a physical ensemble would require identifying that law and controlling its mean and variation, including the effects of the old incident edges. The exact decomposition specifies the contributions that an ensemble calculation would have to retain for each update.
 
 ### 11.3.6.3 Calculation: Monotonicity Verification {#11.3.6.3}
 
@@ -2054,10 +2130,9 @@ K_post:  1.0000
 
 **Conclusion:**
 
-The verification confirms the entire proof chain.
-The post-state measures show shared mass at node 2 ($m_w = 0.333$), confirming **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />. The Wasserstein distance drops from 0.667 to 0.0, confirming the strict inequality of **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />.
+The fixture closes the existing chain $0\to1\to2$ with $2\to0$. The two post-update laws are equal, so the Wasserstein cost on the tracked edge drops from $2/3$ to zero and its curvature increases by $2/3$.
 
-Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The calculation estimates a curvature gain of $\approx 0.46$ in the realistic sparse regime, confirming the proportionality of the subsequent **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />.
+The separate sparse estimate uses the assigned dilution and transport factors, giving $1.2(1/3)/(1+0.087)\simeq0.3680$. The action comparison would additionally require the contributions of the other affected edges (**Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />).
 
 ---
 
@@ -2066,43 +2141,50 @@ Curvature increases by $\Delta K = 0.667$, verifying the central **Curvature Mon
 :::tip[**Formal Verification of the Link between Topological Nucleation through Geometric Action**]
 :::
 
-The proof synthesizes the definitions and lemmas established in Phases 1 through 3 to rigorously demonstrate the global monotonicity of the geometric evolution asserted in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />. The derivation proceeds by chaining the logical implications of the mass redistribution, transport feasibility, and cost contraction.
+**I. Shared mass on the new vertex**
 
-**I. Mass Redistribution (Phase 1)**
-From the **Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />, we conclude that the topological nucleation of the 3-cycle involving vertex $w$ necessitates a strictly positive shared probability mass $m_w$ in the successor measures:
-
-$$
-m_w = \min(\mu_u^{(1)}(w), \mu_v^{(1)}(w)) > 0.
-$$
-
-**II. Transport Efficiency (Phase 2 & 3)**
-From the **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" />, we compute a valid transport coupling $\pi_1$ that utilizes this shared mass. From the **Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />, we conclude that the cost of this plan is strictly bounded by the antecedent optimal cost:
+Under the hypotheses of **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the shared-site masses from the dilution formula (**Measure Dilution (Phase 1)** <Ref id="11.3.3" label="§11.3.3" />) satisfy
 
 $$
-W_1^{(1)} \le C(\pi_1) < W_1^{(0)}.
+a_u=\mu_u^{(1)}(w)=\frac{\beta}{|N_0^-(u)|+1},\qquad
+a_v=\mu_v^{(1)}(w)=\frac{\beta}{|N_0^+(v)|+1},\qquad
+m_w=\min(a_u,a_v)>0 .
 $$
 
-**III. Curvature Increase**
-We apply the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> metric to the inequality derived above.
+**II. Optimal transport cost**
+
+The coupling in **Transport Feasibility (Phase 2)** <Ref id="11.3.4" label="§11.3.4" /> places mass $m_w$ on $(w,w)$ and couples the residual laws. For the full-support double-star metric, subtracting the two optimal costs gives the difference below (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />).
 
 $$
-K^{(1)}(u,v) = 1 - W_1^{(1)}(u,v).
+W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}\ge m_w>0.
 $$
 
-Substituting the strict inequality $W_1^{(1)} < W_1^{(0)}$:
+**III. Curvature of the retained edge**
+
+Since $\bar d_0(u,v)=\bar d_1(u,v)=1$, subtraction of the two curvature values yields (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />)
 
 $$
-1 - W_1^{(1)} > 1 - W_1^{(0)}.
+\begin{aligned}
+K_1(u,v)-K_0(u,v)
+&=\left(1-\frac{W_1^{(1)}}{\bar d_1(u,v)}\right)
+ -\left(1-\frac{W_1^{(0)}}{\bar d_0(u,v)}\right)\\
+&=W_1^{(0)}-W_1^{(1)}
+=m_w+a_u\mathbf 1_{N_0^-(u)\ne\varnothing}
+     +a_v\mathbf 1_{N_0^+(v)\ne\varnothing}>0 .
+\end{aligned}
 $$
 
-Therefore:
+**IV. Relation to the total action**
+
+Let $I_0$ be the set of old edges meeting $u$ or $v$. Subtracting the retained-edge term from the action decomposition gives (**Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />)
 
 $$
-K^{(1)}(u,v) > K^{(0)}(u,v).
+\Delta\mathcal S-\bigl(K_1(u,v)-K_0(u,v)\bigr)
+=K_1(v,w)+K_1(w,u)
++\sum_{e\in I_0\setminus\{(u,v)\}}\bigl(K_1(e)-K_0(e)\bigr).
 $$
-
-**IV. Conclusion**
-The discrete dynamics of the causal graph rigorously induce a geometric evolution characterized by the monotonic accumulation of curvature, confirming the relation established in **Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />. The topological act of creating information (increasing $N_3$) is isomorphic to the geometric act of creating gravity (increasing $K$).
 
 Q.E.D.
 
@@ -2113,11 +2195,11 @@ Q.E.D.
 :::note[**Monotonicity Theorem**]
 :::
 
-The Monotonicity Theorem establishes the fundamental causality of emergent gravity. By demonstrating that the topological act of closing a 3-cycle strictly increases the local causal **curvature** as formulated in  **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the discrete origin of the continuum geometric field is identified. This result implies that curvature is not a background stage upon which dynamics play out; rather, it is the direct, cumulative artifact of the system's underlying information processing.
+For the full-support double-star metric and the specified fresh-vertex insertion, the transport cost on the retained edge decreases by the shared mass and the two contributions from nonempty sectors. Its curvature increases by the same amount because the edge stays at unit distance (**Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />).
 
-The physical consequence of this topological-geometric isomorphism is the unification of information and geometry. In this framework, a region of high curvature is not merely a region of warped space; it is a region of high computational density, characterized by a dense network of causal feedback loops. The force of gravity, therefore, emerges as an entropic pressure. Since the system is driven thermodynamically to maximize its structural complexity, the Monotonicity Theorem guarantees that this thermodynamic drive maps isomorphically onto a geometric drive, providing the microscopic justification for the **discrete Einstein-Hilbert Action** defined in <Ref id="11.3.1" label="§11.3.1" />.
+The global action sums curvature over every edge (**Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />). After the insertion, its change includes both new edges and any altered curvature on old incident edges. The worked examples give distinct total increments for the same cycle-count increase (**Action-Complexity Proportionality** <Ref id="11.3.6" label="§11.3.6" />).
 
-This alignment between thermodynamic complexity and geometric curvature provides a predictive foundation for quantum dynamics. By establishing that the creation of information is isomorphic to the creation of gravity as detailed in the **Action-Complexity Proportionality** lemma in <Ref id="11.3.6" label="§11.3.6" />, we obtain a rigorous mechanism for the emergence of general relativistic constraints. In the subsequent chapter, we will extend this discrete formalism to reconstruct continuous space, tracing how the microscopic dynamics of these causal networks give rise to smooth macroscopic manifolds.
+The retained-edge comparison quantifies one way a local topological rewrite changes the discrete geometry. A comparison with a continuum geometric field uses the discrete curvature data and a choice of how to average them. The next chapter develops the reconstruction and tensorial averaging maps for that comparison.
 
 ---
 
@@ -2128,7 +2210,7 @@ This alignment between thermodynamic complexity and geometric curvature provides
 
 The construction of a rigorous discrete differential geometry upon the foundation of the causal graph relies on the **GHW Metric** <Ref id="11.1.1" label="§11.1.1" /> as the ruler of causal space. Within this metric space, the **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> is employed to define the volume.
 
-This volume measure defines the local geometry. Specifically, the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> is constructed from the Wasserstein transport distance between these measures. This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. As demonstrated in **Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />, the discrete Einstein-Hilbert action scales with complexity, ensuring that thermodynamic relaxation generates a coherent spatial history. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
+This volume measure defines the local geometry. Specifically, the **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> is constructed from the Wasserstein transport distance between these measures. This implies that geometry is not an abstract background, but an active manifestation of causal capacity, where flat regions represent linear transmission and curved zones indicate feedback and structural integration. In the fresh-vertex double-star case, the retained edge gains curvature (**Curvature Monotonicity** <Ref id="11.3.2" label="§11.3.2" />). The global action also includes the remaining incident-edge contributions. Yet, this introduces a deep physical friction: the discrete curvature is fundamentally non-local, leaving the local differential field equations of gravity as an effective approximation.
 
 We now possess a fully defined geometric spacetime that arises directly from discrete causal relations. The stage is set for the final deductive leap: demonstrating the convergence to a continuous manifold. We turn next to **Chapter 12**, where the convergence of the discrete causal graph to a smooth, continuous space will be proved.
 

@@ -779,11 +779,11 @@ Q.E.D.
 :::info[**Physical Interpretation of the Bekenstein Factor via Horizon Plaquette Packing**]
 :::
 
-Deriving the universal $1/4$ prefactor in the Bekenstein-Hawking entropy formula ($S = \frac{A}{4 \ell_P^2}$) removes its historic status as an empirical constant by revealing it as an exact geometric packing efficiency. In black hole thermodynamics, the $1/4$ factor is typically introduced via semiclassical quantum field theory on curved backgrounds. In Quantum Braid Dynamics, this factor is derived combinatorially from the regular triangular tiling of 2-dimensional spherical horizons.
+The tiling calculation expresses the entropy density of a spherical horizon in terms of the area assigned to each plaquette and the entropy of its binary stabilizer. The Euler relation constrains the numbers of faces, edges, and vertices in the tiling. The entropy per unit area also depends on the area assigned to a face.
 
-Spherical trapped horizons are tessellated by irreducible 3-cycle topological plaquettes. Each triangular plaquette carries a binary stabilizer degree of freedom ($\ln 2$ bits) and occupies an effective cross-sectional area $a_0 = 4 \ln 2 \cdot \ell_P^2$. By Euler's formula for spherical triangulations ($V - E + F = 2$), dividing the total boundary bit count by the horizon surface area cancels the $\ln 2$ factor identically, yielding $\eta = \frac{S}{A/\ell_P^2} = \frac{1}{4}$.
+Spherical trapped horizons are tessellated by irreducible 3-cycle topological plaquettes. Each equiprobable binary stabilizer contributes dimensionless entropy $\ln 2$ and is assigned an effective cross-sectional area $a_0 = 4 \ln 2 \cdot \ell_P^2$. Dividing the dimensionless entropy per face by the area per face cancels the $\ln 2$ factor and gives $S/A=1/(4\ell_P^2)$. This yields $\eta = S/(A/\ell_P^2) = 1/4$ for the specified area assignment.
 
-This geometric cancellation proves that black hole entropy scaling is governed by the discrete packing geometry of topological 3-cycles on 2-spheres. The Bekenstein prefactor is established as a mathematical consequence of optimal triangular graph plaquette packing across saturated horizons, establishing a complete microscopic foundation for black hole thermodynamics.
+The area assignment uses $\ell_P^2=\hbar G/c^3$, with $G$ supplied by the horizon calibration (**Sakharov Induced Metric Elasticity (G)** <Ref id="14.4.3" label="§14.4.3" />). The ratio calculation takes this area unit as an input and gives the entropy per unit area for the chosen plaquette normalization. Relating the plaquette count to the pierced-cycle count in the horizon calibration requires identifying the counted objects and the state weights.
 
 ---
 
