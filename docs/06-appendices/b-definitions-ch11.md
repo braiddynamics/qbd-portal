@@ -1053,6 +1053,18 @@ $$
 
 The cancellation holds on any shell satisfying the duality premise. For example, the three-torus has Betti numbers $(1,3,3,1)$ and also has Euler characteristic zero. Applying the calculation to the graph requires verification of the shell hypotheses. A homeomorphism to $S^3$ requires a separate identification of the shell.
 
+**IV. Complete simplicial fan certificate**
+
+Suppose $L$ is pure of dimension three with embedded unit vertex vectors $\boldsymbol u_i\in S^3$. For each tetrahedron $\sigma$ let $U_\sigma$ have its four vertex vectors as columns and assume that $U_\sigma$ is invertible. Assume the cones $U_\sigma\mathbb R_{\ge0}^4$ cover $\mathbb R^4$ and intersect exactly in the cones of their common faces. On each tetrahedron, radial projection sends barycentric coordinates $\boldsymbol b$ to $U_\sigma\boldsymbol b/\|U_\sigma\boldsymbol b\|$. For a direction $\boldsymbol v$ in its cone the inverse is
+
+$$
+\boldsymbol a=U_\sigma^{-1}\boldsymbol v,\qquad
+\boldsymbol b=\frac{\boldsymbol a}{\sum_i a_i},\qquad
+\frac{U_\sigma\boldsymbol b}{\|U_\sigma\boldsymbol b\|}=\boldsymbol v .
+$$
+
+The vector $\boldsymbol a$ is nonnegative and nonzero. On a common face the coefficients of vertices outside the face vanish, so these inverse maps agree. Cone coverage gives surjectivity, and the common-face property gives injectivity. Radial projection is continuous on the finite complex, and the continuous bijection from compact $|L|$ to Hausdorff $S^3$ is a homeomorphism.
+
 Q.E.D.
 
 **In Plain English:**  
@@ -1328,7 +1340,7 @@ Section 11.3.5.1 formalizes the properties of the QBD proof regarding cost contr
 :::info[**Linear Scaling of Total Action by the Count of Geometric Quanta**]
 :::
 
-For any nucleation of a single three-cycle (geometric quantum), the variation of the total discrete action $\Delta \mathcal{S}$ satisfies the relation $\Delta \mathcal{S} \approx c \cdot \Delta N_3$, where $c > 0$ is a positive constant determined by the baseline curvature of the vacuum.
+Let a fresh-vertex insertion add exactly one three-cycle and have integrable action increment under an insertion law $\pi$. Then the mean action increment satisfies $\mathbb E_\pi[\Delta\mathcal S]=c_\pi\mathbb E_\pi[\Delta N_3]$ with $c_\pi=\mathbb E_\pi[\Delta\mathcal S]$, and for laws supported on the oriented double-star family below, $c_\pi>2/3$.
 
 **In Plain English:**  
 Section 11.3.6 formalizes the properties of the QBD lemma regarding action-complexity proportionality.
@@ -1431,6 +1443,27 @@ $$
 \mathbb E_\pi[\Delta\mathcal S]
 =c_\pi=c_\pi\,\mathbb E_\pi[\Delta N_3],\qquad \Delta N_3=1.
 $$
+
+For the exact double-star host, take $p$ incoming leaves $x_i\to u$ and $q$ outgoing leaves $v\to y_j$ with central edge $u\to v$ and no other old edges. Add $v\to w\to u$ with $w$ fresh. Set $a=1/[3(p+1)]$, $b=1/[3(q+1)]$, $I_p=\mathbf 1_{\{p>0\}}$, and $I_q=\mathbf 1_{\{q>0\}}$. The retained-edge curvature gain is $\min(a,b)+I_pa+I_qb$ by the double-star transport calculation (**Cost Contraction (Phase 3)** <Ref id="11.3.5" label="§11.3.5" />).
+
+For $p>0$, the leaf law is $\mu_{x_i}=2\delta_{x_i}/3+\delta_u/3$. After cancellation with the law at $u$, the residual mass at $x_i$ is $2/3-1/(3p)$ before insertion and $2/3-a$ after insertion. Every deficit is at distance two from $x_i$, so both optimal costs equal twice their respective residual masses. The total curvature change on the $p$ incoming edges is
+
+$$
+p\left[2\left(\tfrac23-\tfrac1{3p}\right)-2\left(\tfrac23-a\right)\right]
+=2pa-\tfrac23=-2a.
+$$
+
+The sum is zero for $p=0$. Reversing all orientations exchanges the two equal-weight sectors, giving the outgoing contribution $-2I_qb$. The law at $w$ is uniform on $u,v,w$. After cancellation in the comparisons with $v$ and $u$, the leaf excesses have masses $qb$ and $pa$, respectively, and all their deficit destinations are at distance two. Thus the two new curvatures are $1-2qb$ and $1-2pa$. Combining the contributions yields
+
+$$
+\begin{aligned}
+\Delta\mathcal S(p,q)
+&=\min(a,b)+I_pa+I_qb-2I_pa-2I_qb+2-2pa-2qb\\
+&=\boxed{\tfrac23+\min(a,b)+(2-I_p)a+(2-I_q)b>\tfrac23}.
+\end{aligned}
+$$
+
+The formula is bounded above by $7/3$ since $a,b\le1/3$ and $pa=1/3-a$, $qb=1/3-b$. Every probability law supported on this family therefore has an integrable increment and strictly positive $c_\pi>2/3$.
 
 Q.E.D.
 

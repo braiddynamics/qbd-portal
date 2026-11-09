@@ -12,19 +12,13 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 :::tip[**Definition of the Lapse Function arising from the Continuum Limit of Proper Time and Logical Timestamp Ratios**]
 :::
 
-The **Lapse Function**, denoted $N(x)$, constitutes the intrinsic scaling factor that relates the global logical time coordinate $t_L$ (derived from the universal sequencer step count) to the local proper time $H(e)$ (derived from the intrinsic edge history timestamps). This relation establishes the **slicing duality**: the sequencer step count $t_L$ functions as the global coordinate time parameterizing the foliated hypersurfaces of the scheduler, whereas the local edge timestamps $H(e)$ represent the physical proper time accumulated along specific causal pathways.
-
-Formally, the simulation operates in a specific **sequencer gauge**, which defines a coordinate foliation of the spacetime manifold. Although the sequencer gauge introduces a global ordering of updates for computational execution, physical observables remain invariant under changes of coordinate foliation, preserving foliation covariance. Spacelike-separated regions evolve their local proper times $H(e)$ independently based on local graph interactions, without requiring global synchronization.
-
-Let $x$ be a point in the emergent manifold $\mathcal{M}$. Let $\gamma$ be a causal path in the graph sequence passing through $x$, representing a physical observer. Let $\Delta H(e)$ be the proper time interval along the path and $\Delta t_L$ be the corresponding interval of global coordinate time. The Lapse function is defined in the continuum limit as:
+On the continuum comparison $M$, the **Lapse Function** $N(x)$ relates the calibrated coordinate $T$ to the proper duration $\tau$ registered by an observer normal to the spatial slices,
 
 $$
-N(x) \approx \frac{\Delta H(e)}{\Delta t_L}
+N(x)=\frac{\mathrm d\tau}{\mathrm dT}.
 $$
 
-In the geometric limit, $N(x)$ represents the local processing throughput:
-* **High Lapse ($N \approx 1$):** Regions where the local proper time accumulates at the same rate as the coordinate sequencer steps. This corresponds to flat, empty space (vacuum).
-* **Low Lapse ($N < 1$):** Regions where the local proper time progress is sparse or delayed relative to the global sequencer steps. This corresponds to **gravitational time dilation**, where high graph complexity requires more sequencer ticks to update the local geometry, establishing the Lapse function as a local geometric field.
+The logical sequencer label $t_L$ orders graph updates, and $H(e)$ records an edge history label. A comparison assigns a coordinate-time increment $\Delta T$ to a logical interval and a proper duration $\Delta\tau$ to the registered transitions of a represented clock. In that comparison $\Delta\tau/\Delta T$ is the discrete lapse estimate. A ratio of changes in $H(e)$ and $t_L$ represents it when the corresponding clock calibrations have been established.
 
 **In Plain English:**  
 Section 14.1.1 formalizes the properties of the QBD definition regarding lapse function.
@@ -109,70 +103,70 @@ Section 14.1.3.1 formalizes the properties of the QBD proof regarding local caus
 :::note[**Verification of Lapse Smoothness via Gaussian Mollification Regularization**]
 :::
 
-Verification of the proper time convergence and lapse smoothness established by **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" /> is based on the proper time scaling verified in **Smoothness of the Lapse** <Ref id="14.1.2" label="§14.1.2" />. This verification utilizes the following protocols:
+Verification of finite-sample smoothing for a prescribed lapse profile (**Local Causal Averages** <Ref id="14.1.3.1" label="§14.1.3.1" />) is based on the following protocols:
 
-1.  **Background Field Setup:** The algorithm establishes a Schwarzschild-like background metric with a known analytical Lapse profile to serve as the reference target.
-2.  **Poisson Clock Simulation:** The protocol simulates local proper time tick accumulation using Poisson processes to model the stochastic noise of the discrete rewrite updates.
-3.  **Sobolev Regularization Evaluation:** The metric applies the local causal average operator and computes the Sobolev norms to evaluate field convergence and derivative smoothness.
+1.  **Reference Profile:** The calculation prescribes a Schwarzschild-like lapse on a fixed radial interval.
+2.  **Clock Counts:** For coordinate exposure $\Delta T$ and assigned proper duration $q$ per registered event, the calculation samples $X\sim\operatorname{Poisson}(N\Delta T/q)$ and forms the estimate $qX/\Delta T$ (**Lapse Function** <Ref id="14.1.1" label="§14.1.1" />).
+3.  **Smoothing Comparison:** The calculation applies Gaussian smoothing and compares the sampled value and gradient errors against the prescribed profile.
 
 ```python
 import numpy as np
 from scipy.ndimage import gaussian_filter
 
 def verify_lapse_smoothness():
-    print("--- §14.1.3.2 Lapse Function Convergence (Poisson-Shot Noise) ---")
-    
+    print("--- §14.1.3.2 Synthetic Poisson Clock Denoising ---")
+
     # 1. SETUP: Continuum Target (Schwarzschild-like Potential)
     # Model a spatial slice starting at r=3.0 (safe distance from horizon singularity)
     # to avoid smoothing bias artifacts near the vertical asymptote.
     r_points = 1000
     r_domain = np.linspace(3.0, 20.0, r_points)
     M = 1.0
-    
+
     # Analytical Lapse N(r)
     N_analytical = np.sqrt(1 - 2*M/r_domain)
-    
+
     # 2. DISCRETE REALIZATION: Poisson Shot Noise
-    # Global ticks per interval. Higher = less relative noise (1/sqrt(N)).
-    Delta_T = 5000  
-    
-    # Local proper ticks observed (Poisson Process)
-    local_lambda = N_analytical * Delta_T
-    np.random.seed(137) 
-    proper_ticks_discrete = np.random.poisson(local_lambda)
-    
+    # Prescribed coordinate exposure and proper duration per registered event.
+    exposure = 5000.0
+    proper_duration_per_event = 1.0
+
+    local_lambda = N_analytical * exposure / proper_duration_per_event
+    np.random.seed(137)
+    event_counts = np.random.poisson(local_lambda)
+
     # Raw Discrete Lapse Field
-    N_discrete = proper_ticks_discrete / Delta_T
-    
+    N_discrete = proper_duration_per_event * event_counts / exposure
+
     # 3. MOLLIFICATION: Local Causal Average
     # Averaging scale R relative to lattice spacing
     sigma_smoothing = 25.0
     N_smoothed = gaussian_filter(N_discrete, sigma=sigma_smoothing)
-    
+
     # 4. ERROR ANALYSIS
     # L2 Norm (Value Deviation)
     l2_error_raw = np.linalg.norm(N_discrete - N_analytical) / np.sqrt(r_points)
     l2_error_smooth = np.linalg.norm(N_smoothed - N_analytical) / np.sqrt(r_points)
-    
+
     # H1 Semi-Norm (Roughness/Derivative Deviation)
     grad_analytical = np.gradient(N_analytical)
     grad_discrete = np.gradient(N_discrete)
     grad_smoothed = np.gradient(N_smoothed)
-    
+
     h1_error_raw = np.linalg.norm(grad_discrete - grad_analytical) / np.sqrt(r_points)
     h1_error_smooth = np.linalg.norm(grad_smoothed - grad_analytical) / np.sqrt(r_points)
-    
+
     # 5. REPORTING
     print(f"{'Metric':<20} | {'Raw Discrete':<15} | {'Smoothed':<15} | {'Reduction Factor':<10}")
     print("-" * 70)
     print(f"{'L2 Norm (Value)':<20} | {l2_error_raw:.6f}        | {l2_error_smooth:.6f}        | {l2_error_raw/l2_error_smooth:.1f}x")
     print(f"{'H1 Norm (Roughness)':<20} | {h1_error_raw:.6f}        | {h1_error_smooth:.6f}        | {h1_error_raw/h1_error_smooth:.1f}x")
     print("-" * 70)
-    
+
     if l2_error_smooth < l2_error_raw * 0.5 and h1_error_smooth < h1_error_raw * 0.1:
-        print("PASS: Smoothing operator recovers continuum geometry and suppresses fractal noise.")
+        print("PASS: Smoothing reduces the prescribed profile errors.")
     else:
-        print("FAIL: Convergence criteria not met.")
+        print("FAIL: Error reduction criteria not met.")
 
 if __name__ == "__main__":
     verify_lapse_smoothness()
@@ -181,19 +175,18 @@ if __name__ == "__main__":
 **Simulation Results:**
 
 ```text
---- §14.1.3.2 Lapse Function Convergence (Poisson-Shot Noise) ---
+--- §14.1.3.2 Synthetic Poisson Clock Denoising ---
 Metric               | Raw Discrete    | Smoothed        | Reduction Factor
 ----------------------------------------------------------------------
 L2 Norm (Value)      | 0.013411        | 0.004940        | 2.7x
 H1 Norm (Roughness)  | 0.009498        | 0.000346        | 27.4x
 ----------------------------------------------------------------------
-PASS: Smoothing operator recovers continuum geometry and suppresses fractal noise.
+PASS: Smoothing reduces the prescribed profile errors.
 ```
 
 **Conclusion:**
 
-The simulation demonstrates a dual convergence characteristic.
-Value Convergence ($L^2$): The averaging operator reduces the deviation from the analytical target by a factor of **2.7x**, confirming that the macroscopic lapse accurately reflects the underlying graph density.; Smoothness Convergence ($H^1$): Crucially, the "roughness" of the field (measured by the gradient norm) is suppressed by a factor of **27.4x**. This empirically confirms that while the raw causal graph is fractal and non-differentiable at the micro-scale, the emergent field satisfies the $C^\infty$ smoothness requirements of the ADM formalism.
+The finite sample value error decreases from $0.013411$ to $0.004940$, and the sampled gradient error decreases from $0.009498$ to $0.000346$. These reductions verify the denoising comparison for the prescribed profile and exposure.
 
 **In Plain English:**  
 Section 14.1.3.2 formalizes the properties of the QBD calculation regarding lapse function smoothness.
@@ -291,33 +284,28 @@ Section 14.1.4.1 formalizes the properties of the QBD proof regarding sobolev co
 :::tip[**Formal Synthesis of the Global Time Foliation via Monotonic Ordering and Sobolev Regularity**]
 :::
 
-This synthesis proof utilizes the structural results established in supporting **Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" />.
-**I. The Foliation Hypothesis**
-The emergent spacetime manifold $M$ admits a global time function $T: M \to \mathbb{R}$ such that the level sets $\Sigma_t = T^{-1}(t)$ constitute a smooth foliation of spacelike Cauchy surfaces. This requires demonstrating that the discrete causal ordering of the graph converges to a strictly monotonic, differentiable scalar field with a non-vanishing timelike gradient.
+**I. Ordering and calibration**
 
-**II. The Construction Chain**
-1.  **Topological Ordering (Existence):**
-    * *Discrete Premise:* Under **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />, the causal graph $G$ is established as a Directed Acyclic Graph (DAG).
-    * *Model Construction:* The global coordinate time is defined by the sequencer step count $t_L \in \mathbb{N}$, which defines the foliated hypersurfaces of the scheduler. The physical proper time along any causal path $\gamma$ is defined by the accumulation of local edge timestamps $H(e)$. Since the graph is acyclic, $t_L$ is strictly monotonic along any causal path: if $u \prec v$, then $t_L(u) < t_L(v)$.
-    * *Deduction:* In the continuum limit, the coordinate time $t_L$ maps to a global temporal coordinate field $T(x)$, parameterizing the foliation of Cauchy surfaces.
-2.  **Differentiable Structure (Regularity):**
-    * *Discrete Premise:* In **Sobolev Convergence** <Ref id="14.1.4" label="§14.1.4" />, the discrete lapse function $N^{(t)} \approx \Delta H(e) / \Delta t_L$, representing the ratio of local proper time progress to sequencer coordinate time steps, is shown to converge in the Sobolev space $H^k(M)$.
-    * *Analysis:* By the **Sobolev Embedding Theorem**, the limit Lapse field $N(x)$ is $C^\infty$-smooth. The gradient of the global time function is related to the lapse by $\nabla_\mu T = -N^{-1} n_\mu$, where $n_\mu$ is the unit normal to the foliation.
-    * *Deduction:* Since $N$ is smooth and bounded away from zero by the discreteness scale of the graph, $\nabla T$ is a smooth, non-vanishing timelike vector field.
-3.  **Metric Decomposition (Geometry):**
-    * *Model Construction:* Spacetime geometry is constructed via the **ADM Decomposition** in the sequencer gauge: $ds^2 = -N^2 dT^2 + h_{ij} dx^i dx^j$.
-    * *Analysis:* The **Lapse Function** <Ref id="14.1.1" label="§14.1.1" /> verifies that in this preferred sequencer gauge (coordinate foliation), the Shift vector vanishes ($\beta^i = 0$), meaning that the coordinates are comoving with the update fronts.
-    * *Deduction:* The emergent Lorentzian metric is fully specified by the scalar Lapse field $N(x)$ and the spatial metric tensor $h_{ij}(x)$, both of which are smooth.
+In the admitted discrete history, use an order-preserving logical label on the represented events. A calibrated comparison assigns coordinate time $T$ to these histories and gives a smooth slicing of the limiting manifold. The lapse input is the ratio of registered proper duration to calibrated coordinate duration (**Lapse Function** <Ref id="14.1.1" label="§14.1.1" />).
 
-**III. Convergence**
-The combination of strict acyclicity (preventing Closed Timelike Curves) and Sobolev smoothing (preventing fractal discontinuities) ensures that the causal structure of the graph lifts uniquely to a globally hyperbolic Lorentzian manifold.
+**II. Regularity of the lapse**
 
-**IV. Formal Conclusion**
-The emergent spacetime is topologically isomorphic to $\mathbb{R} \times \Sigma$, where $\mathbb{R}$ represents the smooth flow of the global time function $T$ recovered from the sequencer.
+Assume the normalized clock averages satisfy the common-metric and coefficient convergence hypotheses (**Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" />) (**Sobolev Convergence** <Ref id="14.1.4" label="§14.1.4" />). For each integer $m\ge0$, choose $k>m+d/2$ on the smooth $d$-dimensional comparison. Convergence in $H^k$ and the Sobolev embedding give a $C^m$ lapse limit. Since $m$ is arbitrary, the limit is smooth. Use the positive lower lapse bound in the calibrated comparison.
+
+**III. Timelike gradient**
+
+In ADM coordinates let the normal be $n^\mu=N^{-1}(1,-\beta^i)$ and write $\beta_i=h_{ij}\beta^j$. The metric gives
 
 $$
-M \cong \mathbb{R} \times \Sigma \quad \text{and} \quad \forall p \in M, \nabla T|_p \cdot \nabla T|_p < 0
+\begin{aligned}
+g_{0\nu}n^\nu&=N^{-1}(-N^2+\beta_i\beta^i-\beta_i\beta^i)=-N,\\
+g_{i\nu}n^\nu&=N^{-1}(\beta_i-h_{ij}\beta^j)=0,\\
+n_\mu&=-N\partial_\mu T,\qquad n_\mu n^\mu=-Nn^0=-1,\\
+g^{\mu\nu}\partial_\mu T\,\partial_\nu T&=N^{-2}n_\mu n^\mu=-N^{-2}<0.
+\end{aligned}
 $$
+
+Thus the prescribed smooth time coordinate has a timelike gradient. On a comparison with Cauchy slices, the level sets of $T$ give the corresponding spacelike foliation.
 
 Q.E.D.
 
@@ -331,11 +319,11 @@ Section 14.1.5 formalizes the properties of the QBD proof regarding smoothness o
 :::note[**Verification of Global Monotonicity and Lapse Regularity via Causal Graph Sort**]
 :::
 
-Verification of the global time foliation properties established in the **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" /> is based on the following protocols:
+Verification of discrete ordering and smoothing on a prescribed graph (**Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />) is based on the following protocols:
 
-1.  **Causal Graph Generation:** The algorithm constructs a 1+1 dimensional causal graph incorporating a localized density boost to simulate a gravity well.
-2.  **Topological Acyclicity Sorting:** The protocol performs a topological sort on the generated graph to confirm the absence of Closed Timelike Curves.
-3.  **Roughness Gradient Analysis:** The metric evaluates the discrete lapse field gradients and roughness measures before and after applying the local causal average operator. This verifies the result established in  **Smoothness of the Lapse** <Ref id="14.1.5" label="§14.1.5" />.
+1.  **Layered Graph:** The calculation inserts additional two-edge routes between coordinate layers, with a higher probability in the central columns.
+2.  **Logical Ordering:** A topological sort provides longest-path depths $D$ and verifies that the constructed graph is acyclic.
+3.  **Smoothing Comparison:** The calculation samples $1/\Delta D$ between adjacent layers and compares its roughness before and after smoothing, with synthetic noise added to the samples (**Local Causal Averages** <Ref id="14.1.3" label="§14.1.3" />).
 
 ```python
 import networkx as nx
@@ -344,23 +332,18 @@ from scipy.ndimage import gaussian_filter
 
 def verify_time_foliation_integration():
     np.random.seed(42)
-    print("--- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---")
+    print("--- Layered DAG ordering and inverse-depth smoothing ---")
 
     # 1. SETUP: 1+1D Spacetime Graph
     G = nx.DiGraph()
     width = 20
     steps = 30
 
-    # Track node labels
-    nodes_at_t = {t: [] for t in range(steps)}
-
     for t in range(steps):
         for x in range(width):
             u = (t, x)
-            nodes_at_t[t].append(u)
 
-            # Gravity Well: Center (x=8 to 12) has higher probability of delay nodes
-            # This creates "Jagged" proper time in the raw graph
+            # The central columns have a higher chance of a two-edge route.
             density_prob = 0.8 if 8 <= x <= 12 else 0.1
 
             # Forward edges
@@ -370,12 +353,9 @@ def verify_time_foliation_integration():
                     v = (t + 1, nx_next)
                     G.add_edge(u, v)
 
-            # Inject "Delay" nodes to simulate discrete spacetime foam/gravity
-            # u -> m -> v (Effective proper time = 2 instead of 1)
+            # Add a route of length two to the next layer.
             if np.random.rand() < density_prob:
                 m = f"delay_{t}_{x}_{np.random.randint(1000)}"
-                # Pick a random future neighbor to connect through
-                # (Simplification for proper time counting)
                 G.add_edge(u, m)
                 G.add_edge(m, (t+1, x)) # Reconnect to same spatial coord
 
@@ -390,17 +370,15 @@ def verify_time_foliation_integration():
             else:
                 depths[n] = max(depths[p] for p in preds) + 1.0
 
-        print("PASS: Global Time Function T(x) exists (Graph is Acyclic).")
+        print("PASS: Longest-path depth orders the synthetic DAG.")
 
     except nx.NetworkXUnfeasible:
-        print("FAIL: Graph contains cycles (CTCs detected).")
+        print("FAIL: The synthetic graph contains a directed cycle.")
         return
 
-    # 3. VERIFY: Lapse Smoothness
-    # Lapse N ~ 1 / (d_tau / dt)
-    # Measure local d_tau for each column x across time steps
+    # 3. Measure inverse depth increments between coordinate layers.
 
-    raw_lapse_field = np.zeros(width)
+    raw_inverse_depth = np.zeros(width)
     samples = 0
 
     for t in range(steps - 1):
@@ -408,40 +386,34 @@ def verify_time_foliation_integration():
             u = (t, x)
             v = (t + 1, x)
 
-            # Get depth difference (Proper time delta)
             if u in depths and v in depths:
-                d_tau = depths[v] - depths[u]
+                depth_increment = depths[v] - depths[u]
 
-                # Discrete Lapse = Coordinate Step (1) / Proper Time Step (d_tau)
-                # d_tau is at least 1. If delay nodes exist, d_tau > 1.
-                local_lapse = 1.0 / d_tau
-                raw_lapse_field[x] += local_lapse
+                inverse_depth = 1.0 / depth_increment
+                raw_inverse_depth[x] += inverse_depth
         samples += 1
 
     # Average over time
-    raw_lapse_field /= samples
+    raw_inverse_depth /= samples
 
-    # Add artificial "Measurement Noise" to simulate the microscopic discreteness
-    # that mollification is supposed to cure (The "Shot Noise" of vacuum)
-    # The graph structure provided some, but averaging over T smooths it too fast for this test size.
-    # Inject high-frequency noise to demonstrate the filter.
-    raw_lapse_field += np.random.normal(0, 0.1, size=width)
+    # Add synthetic noise to test the filter.
+    raw_inverse_depth += np.random.normal(0, 0.1, size=width)
 
     # Apply Smoothing
-    smooth_lapse_field = gaussian_filter(raw_lapse_field, sigma=2.0)
+    smooth_inverse_depth = gaussian_filter(raw_inverse_depth, sigma=2.0)
 
     # Calculate Roughness (Sum of squared second derivatives)
     # Use diff twice to get Laplacian-like measure of "jaggedness"
-    roughness_raw = np.sum(np.diff(raw_lapse_field, 2)**2)
-    roughness_smooth = np.sum(np.diff(smooth_lapse_field, 2)**2)
+    roughness_raw = np.sum(np.diff(raw_inverse_depth, 2)**2)
+    roughness_smooth = np.sum(np.diff(smooth_inverse_depth, 2)**2)
 
     print(f"Roughness (Raw):      {roughness_raw:.4f}")
     print(f"Roughness (Smoothed): {roughness_smooth:.4f}")
 
     if roughness_smooth < roughness_raw * 0.2:
-        print("PASS: Lapse field converges to smooth manifold limit.")
+        print("PASS: Smoothing reduces inverse-depth roughness.")
     else:
-        print("FAIL: Field remains fractal/rough.")
+        print("FAIL: Roughness reduction criterion not met.")
 
 if __name__ == "__main__":
     verify_time_foliation_integration()
@@ -450,16 +422,16 @@ if __name__ == "__main__":
 **Simulation Results:**
 
 ```text
---- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---
-PASS: Global Time Function T(x) exists (Graph is Acyclic).
+--- Layered DAG ordering and inverse-depth smoothing ---
+PASS: Longest-path depth orders the synthetic DAG.
 Roughness (Raw):      2.0153
 Roughness (Smoothed): 0.0023
-PASS: Lapse field converges to smooth manifold limit.
+PASS: Smoothing reduces inverse-depth roughness.
 ```
 
 **Conclusion:**
 
-Monotonicity: The topological sort completes successfully ("PASS"), confirming that the causal graph is a Directed Acyclic Graph (DAG) and admits a valid global time coordinate $T(x)$.; Smoothness: The raw discrete lapse exhibits high roughness ($\approx 0.5899$) due to the stochastic "shot noise" of the graph updates. The mollified field reduces this roughness to $\approx 0.0008$, a suppression factor of $>700x$. This confirms that the emergent temporal geometry is $C^\infty$-smooth in the continuum limit.
+The longest-path labeling succeeds on the synthetic graph. The inverse-depth roughness decreases from $2.0153$ to $0.0023$ after smoothing, verifying the stated finite-array filtering test.
 
 **In Plain English:**  
 Section 14.1.5.1 formalizes the properties of the QBD calculation regarding global monotonicity check.
@@ -477,7 +449,7 @@ $$
 \mathrm{d}s^2 = g_{\mu\nu} \mathrm{d}x^\mu \mathrm{d}x^\nu = -N^2 \mathrm{d}T^2 + g_{ij} (\mathrm{d}x^i + \beta^i \mathrm{d}T) (\mathrm{d}x^j + \beta^j \mathrm{d}T)
 $$
 
-where the Greek indices $\mu, \nu \in \{0, 1, 2, 3\}$ span the spacetime coordinates and the Latin indices $i, j \in \{1, 2, 3\}$ span the spatial hypersurface. The temporal coordinate $x^0 = T$ aligns with the global logical depth of the causal graph. Within the intrinsic Gaussian Normal frame where the shift vector vanishes ($\beta^i = 0$), the metric reduces to the diagonal form $\mathrm{d}s^2 = -N(x)^2 \mathrm{d}T^2 + g_{ij} \mathrm{d}x^i \mathrm{d}x^j$. This structure enforces a Lorentzian signature $(-,+,+,+)$ everywhere on $M$, strictly distinguishing the timelike trajectory of the causal update from the spacelike separation of the spectral embedding.
+where Greek indices span spacetime coordinates and Latin indices span the spatial hypersurface. The temporal coordinate $x^0=T$ belongs to the calibrated continuum comparison. In the zero-shift chart $\beta^i=0$, the line element is $\mathrm{d}s^2=-N^2\mathrm{d}T^2+g_{ij}\mathrm{d}x^i\mathrm{d}x^j$. With $N>0$ and $g_{ij}$ positive definite, the signature is $(-,+,+,+)$.
 
 **In Plain English:**  
 Section 14.2.1 formalizes the properties of the QBD definition regarding lorentzian metric.
@@ -489,7 +461,7 @@ Section 14.2.1 formalizes the properties of the QBD definition regarding lorentz
 :::info[**Derivation of the Global Spacetime Structure from the Sequence of Causal Graphs**]
 :::
 
-For any sequence of causal graphs $\{G_t\}$, in the thermodynamic limit $t \to \infty$, converge to a globally hyperbolic Lorentzian manifold $(M, g_{\mu\nu})$ equipped with a metric connection $\nabla$ that is torsion-free and compatible with the metric ($\nabla_\rho g_{\mu\nu} = 0$)
+Let a sequence of admitted causal graphs have a smooth limiting ADM comparison with calibrated time, convergent causal order and volume, the stated propagation-cone identification, and the uniform compact-diamond comparison on time slabs. Then the limiting metric is globally hyperbolic with a unique torsion-free metric connection, and the stationary-phase trajectories of stable represented braids are timelike geodesics when the stationary-phase comparison identifies their limiting variational phase with the proper-time action.
 
 **In Plain English:**  
 Section 14.2.2 formalizes the properties of the QBD theorem regarding emergent lorentzian manifold.
@@ -631,7 +603,7 @@ Section 14.2.5 formalizes the properties of the QBD lemma regarding coincidence 
 
 **I. Hop speed**
 
-If a represented causal signal takes $L$ graph hops in $\Delta T$ ticks and takes at most one hop per tick, then $L\le\Delta T$ and $L/\Delta T\le1$. The hop count and tick count are dimensionless. Their comparison to a spatial norm and a coordinate time uses the embedded paths.
+If a represented causal signal takes $L$ graph hops in $\Delta L$ logical increments and takes at most one hop per increment, then $L\le\Delta L$ and $L/\Delta L\le1$. Both counts are dimensionless. The comparison assigns the corresponding coordinate interval $\Delta T$ and the embedded spatial displacement separately.
 
 **II. Causal tangents in the comparison metric**
 
@@ -803,36 +775,52 @@ Section 14.2.7.1 formalizes the properties of the QBD proof regarding geodesic m
 :::tip[**Formal Synthesis of the Einsteinian Kinematic Framework via Geometric and Statistical Convergence**]
 :::
 
-This synthesis proof utilizes the structural results established in supporting **Causal Isomorphism** <Ref id="14.2.4" label="§14.2.4" />.
- This synthesis proof utilizes the structural results established in supporting **Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />.
-**I. The Relativistic Hypothesis**
-The emergent physical system constitutes a metric theory of gravity if and only if it simultaneously satisfies three logically distinct conditions: (1) **Lorentzian Geometry** (a metric signature of $(-,+,+,+)$), (2) **Global Hyperbolicity** (causal determinism), and (3) the **Weak Equivalence Principle** (universality of free fall). This proof demonstrates that the conjunction of Lemmas 14.2.3, 14.2.6, and 14.2.7 necessitates this structure.
+**I. Calibrated Lorentzian comparison**
 
-**II. The Derivation Chain**
-1.  **Geometric Instantiation ($Ax1 \to g_{\mu\nu}$):**
-    * *Discrete Premise:* The graph Laplacian admits a local spectral decomposition **Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />.
-    * *Continuum Limit:* This enforces the existence of a local orthonormal tetrad $e^a_\mu$ at every point $p \in M$, decomposing the metric as $g_{\mu\nu} = \eta_{ab} e^a_\mu e^b_\nu$.
-    * *Deduction:* The manifold $M$ is strictly Pseudo-Riemannian with Lorentzian signature, distinguishing timelike (update) and spacelike (network) directions.
+Use the orthonormal frame of the smooth ADM comparison (**Emergent Tetrad** <Ref id="14.2.3" label="§14.2.3" />). Its metric matrix in that frame is $\operatorname{diag}(-1,1,1,1)$, so the metric is Lorentzian. The limiting order and volume comparison fix its conformal class and scale (**Causal Isomorphism** <Ref id="14.2.4" label="§14.2.4" />). The propagation comparison identifies the boundary of the represented reachable cone with the metric null cone (**Coincidence of Null Cones** <Ref id="14.2.5" label="§14.2.5" />).
 
-2.  **Causal Determinism ($Ax2 \to \Sigma_t$):**
-    * *Discrete Premise:* The underlying causal graph is strictly acyclic **Axiom 3: Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />.
-    * *Continuum Limit:* as proved in **Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" />, the transitive closure of the graph maps to a globally hyperbolic spacetime foliated by Cauchy surfaces $\Sigma_t$.
-    * *Deduction:* The emergent physics is free of causal pathologies (CTCs) and admits a well-posed initial value formulation.
+**II. Global hyperbolicity**
 
-3.  **Kinematic Universality ($Ax3 \to \Gamma^\mu_{\alpha\beta}$):**
-    * *Discrete Premise:* Matter is constituted by topological defects (braids) whose mass is proportional to complexity **Topological Mass** <Ref id="6.3.3" label="§6.3.3" />.
-    * *Continuum Limit:* as established in **Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />, the graph evolution operator $\mathcal{U}$ acts on these defects such that their stationary phase trajectory maximizes proper time $\tau$.
-    * *Deduction:* The equation of motion $\delta \int m d\tau = 0$ yields the Geodesic Equation. Since the mass $m$ factors out of the variation, the trajectory is independent of composition.
+The temporal coordinate and the uniform reference-metric and speed bounds confine every causal diamond to a compact reference cylinder on its time slab. Closure under causal limits then makes the diamond compact. Together with strong causality from the temporal coordinate, this gives global hyperbolicity (**Global Hyperbolicity** <Ref id="14.2.6" label="§14.2.6" />).
 
-**III. Convergence**
-The intersection of these three established properties defines a unique kinematic framework. The geometry ($g_{\mu\nu}$) restricts the causality ($J^\pm$), and the causality directs the matter geodesics ($\gamma$).
+**III. Metric connection**
 
-**IV. Formal Conclusion**
-The macroscopic limit of the Quantum Braid Dynamics substrate is isomorphic to the kinematic structure of General Relativity. Gravity is rigorously identified not as a force, but as the curvature of the information-theoretic optimization landscape.
+In a coordinate frame set
 
 $$
-\text{QBD}_{limit} \cong \text{GR}_{kinematics}
+\Gamma^\mu_{\rho\nu}
+=\tfrac12 g^{\mu\lambda}
+(\partial_\rho g_{\lambda\nu}+\partial_\nu g_{\lambda\rho}-\partial_\lambda g_{\rho\nu}).
 $$
+
+This expression is symmetric in $\rho,\nu$. Lowering the upper index gives
+
+$$
+\begin{aligned}
+g_{\mu\lambda}\Gamma^\lambda_{\rho\nu}
++g_{\nu\lambda}\Gamma^\lambda_{\rho\mu}
+&=\tfrac12(\partial_\rho g_{\mu\nu}+\partial_\nu g_{\mu\rho}-\partial_\mu g_{\rho\nu})\\
+&\quad+\tfrac12(\partial_\rho g_{\nu\mu}+\partial_\mu g_{\nu\rho}-\partial_\nu g_{\rho\mu})\\
+&=\partial_\rho g_{\mu\nu}.
+\end{aligned}
+$$
+
+Thus $\nabla_\rho g_{\mu\nu}=0$. For any compatible torsion-free connection with lowered coefficients $C_{\lambda,\rho\nu}=g_{\lambda\mu}\Gamma^\mu_{\rho\nu}$, compatibility and symmetry give
+
+$$
+\begin{aligned}
+\partial_\rho g_{\lambda\nu}&=C_{\lambda,\rho\nu}+C_{\nu,\rho\lambda},\\
+\partial_\nu g_{\lambda\rho}&=C_{\lambda,\rho\nu}+C_{\rho,\nu\lambda},\\
+\partial_\lambda g_{\rho\nu}&=C_{\rho,\nu\lambda}+C_{\nu,\rho\lambda},\\
+2C_{\lambda,\rho\nu}&=\partial_\rho g_{\lambda\nu}+\partial_\nu g_{\lambda\rho}-\partial_\lambda g_{\rho\nu}.
+\end{aligned}
+$$
+
+Raising $\lambda$ recovers the displayed coefficients, which proves uniqueness.
+
+**IV. Represented trajectories**
+
+When a stable represented braid has the proper-time phase in this comparison, a stationary trajectory obeys the fixed-endpoint variation of $-mc^2\int\mathrm d\tau$ (**Geodesic Motion** <Ref id="14.2.7" label="§14.2.7" />). The positive constant $mc^2$ factors out of that variation, yielding the timelike geodesic equation independently of its value.
 
 Q.E.D.
 
@@ -843,113 +831,101 @@ Section 14.2.8 formalizes the properties of the QBD proof regarding emergent lor
 
 ### 14.2.8.1 Calculation: Geodesic Emergence Verification {#14.2.8.1}
 
-:::note[**Verification of Geodesic Motion via Shortest-Path Optimization on Weighted Lorentzian Graphs**]
+:::note[**Verification of Proper-Time Maximization via a Calibrated Rindler Comparison**]
 :::
 
-Verification of the geodesic emergence and proper time maximization established in the **Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" /> is based on the following protocols:
+Verification of metric proper-time maximization in a prescribed comparison (**Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" />) is based on the following protocols:
 
-1.  **Lorentzian Graph Setup:** The algorithm constructs a 1+1D spacetime graph featuring a localized high proper time density region to simulate a gravitational center.
-2.  **Shortest Path Optimization:** The protocol computes the optimal proper time trajectory between specified endpoints using shortest-path graph optimization.
-3.  **Trajectory Deviation Analysis:** The metric compares the resulting path against flat space coordinates to verify gravitational attraction and proper time maximization. This verifies the result established in  **Emergent Lorentzian Manifold** <Ref id="14.2.8" label="§14.2.8" />.
+1.  **Metric Benchmark:** The calculation uses the Rindler line element $\mathrm ds^2=-(1+x)^2\mathrm dT^2+\mathrm dx^2$ in units $c=1$ (**Lorentzian Metric** <Ref id="14.2.1" label="§14.2.1" />).
+2.  **Causal Edge Durations:** Each edge joins consecutive coordinate layers and carries the proper duration of the corresponding causal straight segment in Minkowski coordinates.
+3.  **Path Comparison:** The layered maximization compares the total durations and spatial apexes with the analytic geodesic for fixed endpoints.
+
+With $\rho=1+x>0$, the coordinates $t_{\rm M}=\rho\sinh T$ and $X_{\rm M}=\rho\cosh T$ give $-\mathrm dt_{\rm M}^2+\mathrm dX_{\rm M}^2=-\rho^2\mathrm dT^2+\mathrm d\rho^2$. For consecutive layers separated by $\Delta T$ the squared proper duration of a causal straight segment is
+
+$$
+(\Delta t_{\rm M})^2-(\Delta X_{\rm M})^2
+=4\rho\rho'\sinh^2(\Delta T/2)-(\rho'-\rho)^2 .
+$$
+
+The endpoints $x=0$, $T=\pm1/2$ have equal $X_{\rm M}=\cosh(1/2)$. The straight segment at that coordinate attains the upper bound $\int\sqrt{\mathrm dt_{\rm M}^2-\mathrm dX_{\rm M}^2}\le\int\mathrm dt_{\rm M}=2\sinh(1/2)$. It reaches $x=\cosh(1/2)-1$ at $T=0$. The calculation uses $\Delta x=(\Delta T)^2$ in its chosen units.
 
 ```python
-import networkx as nx
+from math import ceil, cosh, sinh
+
 import numpy as np
 
-def verify_geodesic_emergence():
-    print("--- INTEGRATION TEST: Geodesic Motion & Equivalence Principle ---")
-    
-    # 1. CONSTRUCT SPACETIME GRAPH (1+1D)
-    # Dimensions: Time T=0 to T=20, Space X=0 to X=10
-    G = nx.DiGraph()
-    T_steps = 21
-    X_width = 11
-    
-    # Define Gravity Well: "Slow" time (high density) in the center (x=5)
-    # Assign weights to edges. Weight = Proper Time.
-    # In vacuum (edges), weight = 1.0.
-    # In a gravity well, extra nodes/weight make the path longer (more proper time).
-    # Heuristic: Lapse N is low, so Proper Time (1/N) is high.
-    
-    def get_proper_time_weight(x):
-        # Gaussian potential well at x=5
-        dist = abs(x - 5)
-        # Closer to mass = Higher Proper Time density (Gravitational Time Dilation)
-        return 1.0 + 2.0 * np.exp(-dist**2 / 2.0)
 
-    # Build Lattice
-    for t in range(T_steps - 1):
-        for x in range(X_width):
-            u = (t, x)
-            
-            # Allow movement to x-1, x, x+1 (Light cones)
-            for dx in [-1, 0, 1]:
-                next_x = x + dx
-                if 0 <= next_x < X_width:
-                    v = (t + 1, next_x)
-                    
-                    # Edge Weight = Proper Time accumulated
-                    # Average the proper time potential of start and end x
-                    weight = (get_proper_time_weight(x) + get_proper_time_weight(next_x)) / 2.0
-                    
-                    # Negate weight because path algorithms minimize length.
-                    # Target is the longest path (maximal proper time).
-                    # Bellman-Ford or negating weights works for DAGs.
-                    G.add_edge(u, v, weight=-weight)
+def maximize_proper_time(layers):
+    duration = 1.0
+    dt = duration / layers
+    dx = dt**2
+    grid = dx * np.arange(-round(0.25 / dx), round(0.30 / dx) + 1)
+    origin = int(np.argmin(abs(grid)))
+    radius = 1.0 + grid
 
-    # 2. VERIFY ACYCLICITY (Global Hyperbolicity)
-    if not nx.is_directed_acyclic_graph(G):
-        print("FAIL: Graph contains cycles (CTCs). Physics broken.")
-        return
-    else:
-        print("PASS: Graph is Acyclic (Globally Hyperbolic).")
+    # Exact squared Minkowski separation of consecutive Rindler events.
+    factor = 4.0 * sinh(dt / 2.0)**2
+    max_offset = ceil(radius.max() * np.sqrt(factor) / dx)
+    edges = []
+    for offset in range(-max_offset, max_offset + 1):
+        first = slice(max(0, -offset), min(len(grid), len(grid) - offset))
+        second = slice(max(0, offset), min(len(grid), len(grid) + offset))
+        interval = factor * radius[first] * radius[second] - (offset * dx)**2
+        edge_time = np.full(interval.shape, -np.inf)
+        causal = interval >= 0
+        edge_time[causal] = np.sqrt(interval[causal])
+        edges.append((first, second, edge_time))
 
-    # 3. COMPUTE GEODESIC (Path of Stationary Phase)
-    # Particle starts at (0, 2) and ends at (20, 2).
-    # Straight line path is x=2 -> x=2.
-    # Geodesic should curve towards x=5 (the gravity well) to maximize proper time.
-    start_node = (0, 2)
-    end_node = (20, 2)
-    
-    # Use shortest path on negative weights = Longest Path (Max Proper Time)
-    path = nx.shortest_path(G, source=start_node, target=end_node, weight='weight')
-    
-    # Extract trajectory
-    trajectory = [p[1] for p in path]
-    
-    # 4. ANALYZE DEVIATION
-    # Does it bend toward the mass (x=5)?
-    max_deflection = max(trajectory)
-    print(f"Start X: {trajectory[0]}")
-    print(f"End X:   {trajectory[-1]}")
-    print(f"Max X (Apex): {max_deflection}")
-    print(f"Trajectory: {trajectory}")
-    
-    if max_deflection > 2:
-        print("PASS: Geodesic Deviation Detected.")
-        print("      Particle accelerated toward high-curvature region (Gravity).")
-    else:
-        print("FAIL: Particle followed Euclidean straight line. No Gravity detected.")
+    best = np.full(len(grid), -np.inf)
+    apex = np.zeros(len(grid))
+    best[origin] = 0.0
+    for _ in range(layers):
+        next_best = np.full(len(grid), -np.inf)
+        next_apex = np.zeros(len(grid))
+        for first, second, edge_time in edges:
+            candidate = best[first] + edge_time
+            better = candidate > next_best[second]
+            next_best[second][better] = candidate[better]
+            next_apex[second][better] = np.maximum(apex[first], grid[second])[better]
+        best, apex = next_best, next_apex
+
+    return float(best[origin]), float(apex[origin])
+
 
 if __name__ == "__main__":
-    verify_geodesic_emergence()
+    exact_time = 2.0 * sinh(0.5)
+    exact_apex = cosh(0.5) - 1.0
+    print("--- Proper-time maximization in a Rindler chart ---")
+    print(f"Exact proper duration: {exact_time:.8f}")
+    print(f"Exact spatial apex:    {exact_apex:.8f}")
+    print("Layers | Proper duration | Error      | Apex")
+    previous_error = float("inf")
+    for layers in (16, 32, 64):
+        duration, apex = maximize_proper_time(layers)
+        error = exact_time - duration
+        assert 0 <= error < previous_error
+        previous_error = error
+        print(f"{layers:6d} | {duration:.8f}      | {error:.8f} | {apex:.8f}")
+    assert previous_error < 1e-3
+    print("PASS: The finite path durations approach the analytic benchmark.")
 ```
 
 **Simulation Results:**
 
 ```text
---- INTEGRATION TEST: Geodesic Motion & Equivalence Principle ---
-PASS: Graph is Acyclic (Globally Hyperbolic).
-Start X: 2
-End X:   2
-Max X (Apex): 5
-Trajectory: [2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2]
-PASS: Geodesic Deviation Detected.
-      Particle accelerated toward high-curvature region (Gravity).
+--- Proper-time maximization in a Rindler chart ---
+Exact proper duration: 1.04219061
+Exact spatial apex:    0.12762597
+Layers | Proper duration | Error      | Apex
+    16 | 1.04199878      | 0.00019183 | 0.13281250
+    32 | 1.04215675      | 0.00003386 | 0.12792969
+    64 | 1.04217742      | 0.00001319 | 0.12817383
+PASS: The finite path durations approach the analytic benchmark.
 ```
 
 **Conclusion:**
-The particle trajectory demonstrates a clear "free fall" behavior. Despite starting and ending at $x=2$, the path immediately deviates, accelerating toward the gravity well apex at $x=5$. It remains in the high-density region for the majority of the duration (ticks 3 through 17) to maximize proper time accumulation, before rapidly returning to the endpoint. This confirms that "gravity" in this framework is not a force, but a statistical imperative to maximize causal history.
+
+The duration error decreases from $0.00019183$ to $0.00001319$, and the finest sampled apex differs from $\cosh(1/2)-1$ by less than $0.00055$. The results verify the proper-time maximization on this prescribed metric.
 
 **In Plain English:**  
 Section 14.2.8.1 formalizes the properties of the QBD calculation regarding geodesic emergence verification.
@@ -1009,7 +985,7 @@ Section 14.3.1 formalizes the properties of the QBD definition regarding wightma
 :::info[**Verification of Relativistic Quantum Field Theory Consistency guaranteed by the Satisfaction of the Wightman Axioms**]
 :::
 
-Given the Hilbert space of topological braid states $\mathcal{H}_{braid}$ and field operators $\Phi(x)$, the emergent physical theory satisfies the Wightman axioms.
+Let a represented continuum braid sector have a positive-metric Hilbert space, tempered smeared fields on a common invariant dense domain, a covariant strongly continuous unitary Poincaré action or its spin lift, a unique cyclic invariant vacuum, a positive time generator with boost-covariant joint spectral measure, and the represented exchange identification (**Spin-Statistics Relation** <Ref id="14.3.7" label="§14.3.7" />). Then under the localization, grading, and product-limit hypotheses the sector satisfies the Wightman conditions with spacelike graded commutativity (**Microcausality** <Ref id="14.3.6" label="§14.3.6" />).
 
 **In Plain English:**  
 Section 14.3.2 formalizes the properties of the QBD theorem regarding wightman compliance.
@@ -1538,7 +1514,7 @@ Section 14.3.8.1 formalizes the properties of the QBD calculation regarding clus
 :::info[**Derivation of the Einstein Tensor as the Equation of State for Entanglement Equilibrium**]
 :::
 
-For any emergent metric $g_{\mu\nu}$ of the causal graph, the Einstein Field Equations are satisfied in the thermodynamic limit.
+Let $(M,g_{\mu\nu})$ be a smooth Lorentzian comparison with conserved stress-energy $T_{\mu\nu}$, the calibrated area entropy coefficient, and local horizon pencils satisfying modular flux matching, Raychaudhuri focusing, and fixed-volume stationarity of total entropy in every null direction with vanishing normalized remainder. Then on each connected component $G_{\mu\nu}+\Lambda g_{\mu\nu}=(8\pi G/c^4)T_{\mu\nu}$ for a constant $\Lambda$.
 
 **In Plain English:**  
 Section 14.4.1 formalizes the properties of the QBD theorem regarding einstein field equations.

@@ -1,5 +1,5 @@
---- INTEGRATION TEST: Time Foliation & Lapse Smoothness (Fixed) ---
-PASS: Global Time Function T(x) exists (Graph is Acyclic).
+--- Layered DAG ordering and inverse-depth smoothing ---
+PASS: Longest-path depth orders the synthetic DAG.
 Roughness (Raw):      2.0153
 Roughness (Smoothed): 0.0023
-PASS: Lapse field converges to smooth manifold limit.
+PASS: Smoothing reduces inverse-depth roughness.

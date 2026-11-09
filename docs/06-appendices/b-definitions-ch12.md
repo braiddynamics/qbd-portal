@@ -31,7 +31,7 @@ Section 12.1.1 formalizes the properties of the QBD definition regarding consist
 :::info[**Convergence of the Discrete Causal Graph Sequence to a Smooth Riemannian Manifold via Spectral Convergence**]
 :::
 
-For any sequence of causal graphs $\{G_t\}$ converging in the Gromov-Hausdorff sense, a smooth, compact, 4-dimensional Riemannian manifold $(M, g)$ is established as its limit.
+Let $\{G_t\}$ be a refining sequence in the four-dimensional growth regime whose Gromov-Hausdorff limit is identified by a separate comparison with a smooth, compact Riemannian four-manifold $(M,g)$, with the spectral, heat, and elliptic-regularity inputs of the supporting lemmas and a full-rank local spectral coordinate tuple at each point. Then the graph spectral and heat comparisons hold on $(M,g)$, and the limit eigenfunctions supply smooth local charts in which the Laplace-Beltrami principal symbol determines the metric.
 
 **In Plain English:**  
 Section 12.1.2 formalizes the properties of the QBD theorem regarding smooth manifold limit.
@@ -695,7 +695,18 @@ Section 12.1.5.1 formalizes the properties of the QBD proof regarding smoothness
 :::info[**Asymptotic Expansion via Causal Ollivier-Ricci Curvature to the Continuum Ricci Tensor**]
 :::
 
-For any sequence of measured metric spaces $\{ (V_t, \bar{d}_t, \mu_t) \}$ converging to a smooth $d$-dimensional Riemannian manifold $(M, g)$, the discrete Causal Ollivier-Ricci curvature along a unit tangent vector $v$ with discreteness step $\ell_0$ satisfies the asymptotic expansion $K(u, v) = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3)$. Consequently, the discrete Einstein-Hilbert action sum $\mathcal{S}[G] = \sum_{e \in E} K(e)$ converges in the thermodynamic limit $\ell_0 \to 0$ to the continuum Einstein-Hilbert action integral $\frac{1}{2(d+2)\ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x$.
+Let $G_h$ be embedded in a smooth $d$-dimensional Riemannian comparison region $(M,g)$, with mesh $h=\ell_0$, center separation $d_g(x,y)\asymp h$, unit edge tangent $\boldsymbol v$ at $x$, and uniform $\mathcal O(h^4)$ bounds on the ground-cost error including the center-distance error and on the sum of the two marginal Wasserstein errors relative to the normalized geodesic-ball laws of radius $h$. Then the discrete Causal Ollivier-Ricci curvature satisfies
+
+$$
+K_h(x,y)=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)+\mathcal O(h^3),
+$$
+
+and if the rescaled edge measures $h^d\sum_{e\in E_h}\delta_{(x_e,\boldsymbol n_e)}$ converge weakly on the unit tangent bundle of a compact comparison region to $\rho_E(x)\,\mathrm dV_g(x)\,\sigma_x(\mathrm d\boldsymbol n)$ with probability laws $\sigma_x$ of second moment $I/d$ in an orthonormal frame, the discrete action satisfies
+
+$$
+\lim_{h\to0}h^{d-2}\mathcal S[G_h]
+=\frac{1}{2d(d+2)}\int_M \rho_E(x)R_g(x)\,\mathrm dV_g(x).
+$$
 
 **In Plain English:**  
 Section 12.1.6 formalizes the properties of the QBD lemma regarding ollivier-ricci asymptotic limit.
@@ -780,33 +791,140 @@ $$
 
 **III. Transfer at the curvature scale**
 
-Identify the support of the two graph laws with embedded sites and write $d_h$ for the physically rescaled hop cost and $\mu_x^h,\mu_y^h$ for the graph marginals. Suppose $\delta\asymp h$ and assume the uniform cost error $\|d_h-d_g\|_\infty=o(h^3)$ on the graph support including the centers. For any coupling of the graph laws the cost changes by at most this sup norm, so taking infima in both directions gives
-
-$$
-|W_{1,h}(\mu_x^h,\mu_y^h)-W_{1,g}(\mu_x^h,\mu_y^h)|
-\le\|d_h-d_g\|_\infty .
-$$
-
-If the two graph marginals also approximate the continuum laws with combined $W_{1,g}$ error $o(h^3)$, the triangle inequality gives
-
-$$
-\left|W_{1,h}(\mu_x^h,\mu_y^h)-W_{1,g}(\mu_x^g,\mu_y^g)\right|
-\le\|d_h-d_g\|_\infty
-+W_{1,g}(\mu_x^h,\mu_x^g)+W_{1,g}(\mu_y^h,\mu_y^g)
-=o(h^3).
-$$
-
-Let $W_h$ and $W_g$ denote these two optimal costs and put $\delta_h=d_h(x,y)$. Since $W_g=O(h)$, $\delta_h\asymp h$, and $|\delta_h-\delta|=o(h^3)$, the curvature quotient in **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> satisfies
+Write $S_h$ for the union of the two embedded graph supports and their centers. Let $\mu_x^h,\mu_y^h$ be the graph marginals and let $\nu_x,\nu_y$ be the reference marginals with ground cost $d_g$. Use the normalized geodesic-ball laws of Step II for the ball comparison. Set
 
 $$
 \begin{aligned}
-|K_h-K_g|
-&=\left|\frac{W_h}{\delta_h}-\frac{W_g}{\delta}\right|\\
-&\le\frac{|W_h-W_g|}{\delta_h}
- +\frac{W_g|\delta_h-\delta|}{\delta_h\delta}
-=o(h^2).
+\varepsilon_h&=\sup_{a,b\in S_h}|d_h(a,b)-d_g(a,b)|,\\
+\eta_h&=W_{1,g}(\mu_x^h,\nu_x)+W_{1,g}(\mu_y^h,\nu_y),\\
+W_h&=W_{1,h}(\mu_x^h,\mu_y^h),\qquad W_g=W_{1,g}(\nu_x,\nu_y),\\
+\delta_h&=d_h(x,y),\qquad \delta=d_g(x,y).
 \end{aligned}
 $$
+
+For every coupling $\pi$ of the two graph marginals,
+
+$$
+\left|\int d_h\,\mathrm d\pi-\int d_g\,\mathrm d\pi\right|
+\le \varepsilon_h\int 1\,\mathrm d\pi=\varepsilon_h .
+$$
+
+Taking both infima and applying the Wasserstein triangle inequality at each endpoint gives
+
+$$
+\begin{aligned}
+|W_h-W_g|
+&\le |W_h-W_{1,g}(\mu_x^h,\mu_y^h)|
++\left|W_{1,g}(\mu_x^h,\mu_y^h)-W_g\right|\\
+&\le\varepsilon_h+\eta_h,\qquad
+|\delta_h-\delta|\le\varepsilon_h .
+\end{aligned}
+$$
+
+For $\delta\asymp h$, $\varepsilon_h+\eta_h=O(h^4)$ and $W_g=O(h)$, one has $\delta_h\asymp h$. Subtracting the two curvature quotients gives
+
+$$
+\begin{aligned}
+K_h-K_g
+&=\frac{W_g-W_h}{\delta_h}
++\frac{W_g(\delta_h-\delta)}{\delta_h\delta},\\
+|K_h-K_g|
+&\le\frac{\varepsilon_h+\eta_h}{\delta_h}
++\frac{W_g\varepsilon_h}{\delta_h\delta}
+=O(h^3).
+\end{aligned}
+$$
+
+For the geodesic-ball reference, $\delta=O(h)$ in Step II. Hence
+
+$$
+\begin{aligned}
+K_h(x,y)
+&=K_g(x,y)+O(h^3)\\
+&=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)
++O(h^3+h^2\delta)+O(h^3)\\
+&=\frac{h^2}{2(d+2)}\operatorname{Ric}_x(\boldsymbol v,\boldsymbol v)+O(h^3).
+\end{aligned}
+$$
+
+For a finite antipodal comparison, let $(z_i,p_i)$ be a fixed weighted stencil with the same weight at $z_i$ and $-z_i$, $\sum_i p_i=1$, and second moment $\sigma^2 I$. In a local coordinate system $(s,\boldsymbol y)\in\mathbb R\times\mathbb R^{d-1}$, use the metric and the two discrete reference laws
+
+$$
+\begin{aligned}
+g&=f(\boldsymbol y)^2\,\mathrm ds^2+|\mathrm d\boldsymbol y|^2,\qquad
+f(\boldsymbol y)^2=1-A(\boldsymbol y),\qquad A(\boldsymbol y)=\sum_{j=1}^{d-1}\kappa_j(y^j)^2,\\
+\nu_0&=\sum_i p_i\delta_{h z_i},\qquad
+\nu_1=\sum_i p_i\delta_{h(z_i+\boldsymbol e_s)} .
+\end{aligned}
+$$
+
+Under coordinate rescaling by $h$, the metric for lengths divided by $h$ is $I-h^2 A(\boldsymbol y)\,\mathrm ds^2$. The scaled metric is even in $h$ and the weighted endpoint lists are fixed in scaled coordinates. For distinct fixed scaled endpoints $X,Y$, put $\boldsymbol w=Y-X$, $\gamma_0(t)=X+t\boldsymbol w$, and $D=\|\dot\gamma-\boldsymbol w\|_{L^2(0,1)}$ for a competing path on $[0,1]$. Its scaled energy satisfies
+
+$$
+\begin{aligned}
+E_h(\gamma)&=|\boldsymbol w|^2+D^2-h^2 F(\gamma),\\
+F(\gamma)&=\int_0^1 A(\boldsymbol y(t))\dot s(t)^2\,\mathrm dt,\qquad
+\|\gamma-\gamma_0\|_\infty\le D .
+\end{aligned}
+$$
+
+The original endpoints lie within $O(h)$ of the chart center. The straight competitor has length $O(h)$, and uniform ellipticity keeps a minimizing path in a bounded scaled region. On its bounded-energy paths, $A$ and its first derivative are bounded. With $L_A$ a Lipschitz bound on $A$ there,
+
+$$
+\begin{aligned}
+|F(\gamma)-F(\gamma_0)|
+&\le L_A D\|\dot s\|_2^2
+ +\|A\|_\infty\|\dot s-w_s\|_2\|\dot s+w_s\|_2
+\le C D,\\
+E_h(\gamma)
+&\ge |\boldsymbol w|^2-h^2F(\gamma_0)+D^2-Ch^2D\\
+&\ge |\boldsymbol w|^2-h^2F(\gamma_0)-\tfrac14 C^2 h^4 .
+\end{aligned}
+$$
+
+The straight competitor gives the upper bound $|\boldsymbol w|^2-h^2F(\gamma_0)$. Taking square roots yields a uniform expansion over the finite cost matrix,
+
+$$
+\frac{d_g(hX,hY)}{h}
+=|\boldsymbol w|-\frac{h^2 F(\gamma_0)}{2|\boldsymbol w|}+O(h^4)
+\quad(X\ne Y).
+$$
+
+Coincident pairs have cost zero. The center pair $X=0$, $Y=\boldsymbol e_s$ has $F(\gamma_0)=0$, so its distance is $h(1+O(h^4))$.
+
+At $h=0$, every coupling has mean displacement $\boldsymbol e_s$. Its scaled cost is at least one, with equality exactly when all positive-mass pairs have displacement $\lambda\boldsymbol e_s$ with $\lambda\ge0$. Translation of each stencil point realizes equality. On this flat optimal face the common transverse group $\boldsymbol y$ is preserved. If its mass is $m_{\boldsymbol y}$, then
+
+$$
+\sum_{X,Y\ \mathrm{in\ group}\ \boldsymbol y}\pi(X,Y)(Y_s-X_s)
+=\sum_Y\nu_{1,\boldsymbol y}(Y)Y_s-\sum_X\nu_{0,\boldsymbol y}(X)X_s
+=m_{\boldsymbol y},
+$$
+
+where the group marginals in this sum are taken in scaled coordinates. For such a pair $F(\gamma_0)=A(\boldsymbol y)\lambda^2$, so every flat optimal plan has the same scaled second-order cost correction $-\tfrac12\sum_{\boldsymbol y}m_{\boldsymbol y}A(\boldsymbol y)$. The transport polytope has finitely many vertices. Those outside the flat optimal face have a strictly positive flat cost gap whenever such vertices exist. The uniform $O(h^2)$ perturbation cannot close that gap for sufficiently small $h$. The optimum is attained at a vertex on the face and satisfies
+
+$$
+\frac{W_g}{h}
+=1-\frac{h^2}{2}\sum_{\boldsymbol y}m_{\boldsymbol y}A(\boldsymbol y)+O(h^4)
+=1-\frac{\sigma^2 h^2}{2}\sum_{j=1}^{d-1}\kappa_j+O(h^4).
+$$
+
+The nonzero connection coefficients of the comparison metric are $\Gamma^j_{ss}=-f\partial_j f$ and $\Gamma^s_{sj}=\Gamma^s_{js}=\partial_j f/f$. At the origin, $\partial_j f=0$ and $\partial_j\partial_k f=-\kappa_j\delta_{jk}$, so
+
+$$
+\operatorname{Ric}_0(\boldsymbol e_s,\boldsymbol e_s)
+=\sum_j\partial_j\Gamma^j_{ss}(0)
+=-\sum_j\partial_j^2 f(0)
+=\sum_j\kappa_j .
+$$
+
+Dividing by the center distance gives the antipodal model expansion
+
+$$
+K_g(0,h\boldsymbol e_s)
+=\frac{\sigma^2 h^2}{2}\operatorname{Ric}_0(\boldsymbol e_s,\boldsymbol e_s)+O(h^4).
+$$
+
+For the lazy four-dimensional 24-cell, assign weight $1/3$ to the center and share the remaining $2/3$ equally among the 24 vectors $(\pm\boldsymbol e_i\pm\boldsymbol e_j)/\sqrt2$ with $i<j$. Each coordinate is nonzero in 12 directions and each mixed moment vanishes by sign symmetry, so $\sigma^2=(2/3)(12/24)(1/2)=1/6$. The coefficient $\sigma^2/2=1/12$ agrees with the four-dimensional ball-law coefficient. Applied to these finite reference marginals, the quotient estimate transfers the $O(h^3)$ graph remainder for $\varepsilon_h+\eta_h=O(h^4)$. It transfers the $O(h^4)$ remainder for $\varepsilon_h+\eta_h=O(h^5)$.
 
 **IV. Normalized bulk action**
 
@@ -817,7 +935,7 @@ $$
 \rightharpoonup \rho_E(x)\,\mathrm dV_g(x)\,\sigma_x(\mathrm dn),
 $$
 
-where $n_e$ is the unit embedded edge direction, $\rho_E$ is the limiting edge density, and $\sigma_x$ is a probability law on unit directions at $x$. Suppose $K_e=h^2 B(x_e,n_e)+h^2 r_{h,e}$ with continuous $B$ and $\sup_e|r_{h,e}|\to0$. For the sum in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />,
+where $n_e$ is the unit embedded edge direction, $\rho_E$ is the limiting edge density, and $\sigma_x$ is a probability law on unit directions at $x$. The uniform ball-law expansion in Step III gives $K_e=h^2 B(x_e,n_e)+h^2 r_{h,e}$, with $B(x,n)=C\operatorname{Ric}_x(n,n)$, $C=1/[2(d+2)]$, and $\sup_e|r_{h,e}|=O(h)$. For the sum in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />,
 
 $$
 \begin{aligned}
@@ -830,7 +948,7 @@ h^{d-2}\mathcal S[G_h]
 \end{aligned}
 $$
 
-If $B(x,n)=C\operatorname{Ric}_x(n,n)$ and the second moment of $\sigma_x$ is $I/d$ in the orthonormal frame, then
+If the second moment of $\sigma_x$ is $I/d$ in the orthonormal frame, then
 
 $$
 \int B(x,n)\,\sigma_x(\mathrm dn)
@@ -838,7 +956,12 @@ $$
 =\frac{C}{d}R_g(x).
 $$
 
-The resulting Riemannian bulk integral has density $\rho_E C R_g/d$.
+For the ball law, $C=1/[2(d+2)]$. Substitution yields
+
+$$
+\boxed{\lim_{h\to0}h^{d-2}\mathcal S[G_h]
+=\frac{1}{2d(d+2)}\int_M \rho_E(x)R_g(x)\,\mathrm dV_g(x).}
+$$
 
 **V. Flat-circle test of the one-hop law**
 

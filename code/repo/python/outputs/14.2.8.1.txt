@@ -1,8 +1,8 @@
---- INTEGRATION TEST: Geodesic Motion & Equivalence Principle ---
-PASS: Graph is Acyclic (Globally Hyperbolic).
-Start X: 2
-End X:   2
-Max X (Apex): 5
-Trajectory: [2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 3, 2]
-PASS: Geodesic Deviation Detected.
-      Particle accelerated toward high-curvature region (Gravity).
+--- Proper-time maximization in a Rindler chart ---
+Exact proper duration: 1.04219061
+Exact spatial apex:    0.12762597
+Layers | Proper duration | Error      | Apex
+    16 | 1.04199878      | 0.00019183 | 0.13281250
+    32 | 1.04215675      | 0.00003386 | 0.12792969
+    64 | 1.04217742      | 0.00001319 | 0.12817383
+PASS: The finite path durations approach the analytic benchmark.

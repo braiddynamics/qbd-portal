@@ -1,80 +1,58 @@
-import networkx as nx
+from math import ceil, cosh, sinh
+
 import numpy as np
 
-def verify_geodesic_emergence():
-    print("--- INTEGRATION TEST: Geodesic Motion & Equivalence Principle ---")
-    
-    # 1. CONSTRUCT SPACETIME GRAPH (1+1D)
-    # Dimensions: Time T=0 to T=20, Space X=0 to X=10
-    G = nx.DiGraph()
-    T_steps = 21
-    X_width = 11
-    
-    # Define Gravity Well: "Slow" time (high density) in the center (x=5)
-    # Assign weights to edges. Weight = Proper Time.
-    # In vacuum (edges), weight = 1.0.
-    # In a gravity well, extra nodes/weight make the path longer (more proper time).
-    # Heuristic: Lapse N is low, so Proper Time (1/N) is high.
-    
-    def get_proper_time_weight(x):
-        # Gaussian potential well at x=5
-        dist = abs(x - 5)
-        # Closer to mass = Higher Proper Time density (Gravitational Time Dilation)
-        return 1.0 + 2.0 * np.exp(-dist**2 / 2.0)
 
-    # Build Lattice
-    for t in range(T_steps - 1):
-        for x in range(X_width):
-            u = (t, x)
-            
-            # Allow movement to x-1, x, x+1 (Light cones)
-            for dx in [-1, 0, 1]:
-                next_x = x + dx
-                if 0 <= next_x < X_width:
-                    v = (t + 1, next_x)
-                    
-                    # Edge Weight = Proper Time accumulated
-                    # Average the proper time potential of start and end x
-                    weight = (get_proper_time_weight(x) + get_proper_time_weight(next_x)) / 2.0
-                    
-                    # Negate weight because path algorithms minimize length.
-                    # Target is the longest path (maximal proper time).
-                    # Bellman-Ford or negating weights works for DAGs.
-                    G.add_edge(u, v, weight=-weight)
+def maximize_proper_time(layers):
+    duration = 1.0
+    dt = duration / layers
+    dx = dt**2
+    grid = dx * np.arange(-round(0.25 / dx), round(0.30 / dx) + 1)
+    origin = int(np.argmin(abs(grid)))
+    radius = 1.0 + grid
 
-    # 2. VERIFY ACYCLICITY (Global Hyperbolicity)
-    if not nx.is_directed_acyclic_graph(G):
-        print("FAIL: Graph contains cycles (CTCs). Physics broken.")
-        return
-    else:
-        print("PASS: Graph is Acyclic (Globally Hyperbolic).")
+    # Exact squared Minkowski separation of consecutive Rindler events.
+    factor = 4.0 * sinh(dt / 2.0)**2
+    max_offset = ceil(radius.max() * np.sqrt(factor) / dx)
+    edges = []
+    for offset in range(-max_offset, max_offset + 1):
+        first = slice(max(0, -offset), min(len(grid), len(grid) - offset))
+        second = slice(max(0, offset), min(len(grid), len(grid) + offset))
+        interval = factor * radius[first] * radius[second] - (offset * dx)**2
+        edge_time = np.full(interval.shape, -np.inf)
+        causal = interval >= 0
+        edge_time[causal] = np.sqrt(interval[causal])
+        edges.append((first, second, edge_time))
 
-    # 3. COMPUTE GEODESIC (Path of Stationary Phase)
-    # Particle starts at (0, 2) and ends at (20, 2).
-    # Straight line path is x=2 -> x=2.
-    # Geodesic should curve towards x=5 (the gravity well) to maximize proper time.
-    start_node = (0, 2)
-    end_node = (20, 2)
-    
-    # Use shortest path on negative weights = Longest Path (Max Proper Time)
-    path = nx.shortest_path(G, source=start_node, target=end_node, weight='weight')
-    
-    # Extract trajectory
-    trajectory = [p[1] for p in path]
-    
-    # 4. ANALYZE DEVIATION
-    # Does it bend toward the mass (x=5)?
-    max_deflection = max(trajectory)
-    print(f"Start X: {trajectory[0]}")
-    print(f"End X:   {trajectory[-1]}")
-    print(f"Max X (Apex): {max_deflection}")
-    print(f"Trajectory: {trajectory}")
-    
-    if max_deflection > 2:
-        print("PASS: Geodesic Deviation Detected.")
-        print("      Particle accelerated toward high-curvature region (Gravity).")
-    else:
-        print("FAIL: Particle followed Euclidean straight line. No Gravity detected.")
+    best = np.full(len(grid), -np.inf)
+    apex = np.zeros(len(grid))
+    best[origin] = 0.0
+    for _ in range(layers):
+        next_best = np.full(len(grid), -np.inf)
+        next_apex = np.zeros(len(grid))
+        for first, second, edge_time in edges:
+            candidate = best[first] + edge_time
+            better = candidate > next_best[second]
+            next_best[second][better] = candidate[better]
+            next_apex[second][better] = np.maximum(apex[first], grid[second])[better]
+        best, apex = next_best, next_apex
+
+    return float(best[origin]), float(apex[origin])
+
 
 if __name__ == "__main__":
-    verify_geodesic_emergence()
+    exact_time = 2.0 * sinh(0.5)
+    exact_apex = cosh(0.5) - 1.0
+    print("--- Proper-time maximization in a Rindler chart ---")
+    print(f"Exact proper duration: {exact_time:.8f}")
+    print(f"Exact spatial apex:    {exact_apex:.8f}")
+    print("Layers | Proper duration | Error      | Apex")
+    previous_error = float("inf")
+    for layers in (16, 32, 64):
+        duration, apex = maximize_proper_time(layers)
+        error = exact_time - duration
+        assert 0 <= error < previous_error
+        previous_error = error
+        print(f"{layers:6d} | {duration:.8f}      | {error:.8f} | {apex:.8f}")
+    assert previous_error < 1e-3
+    print("PASS: The finite path durations approach the analytic benchmark.")
