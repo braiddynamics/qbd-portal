@@ -698,7 +698,7 @@ This recent stabilizer model is vital for the boundary protection theories devel
 ### 53. **Ollivier, Y. (2009).** {#A.53}
 **"Ricci curvature of Markov chains on metric spaces"**
     * **Link:** [https://arxiv.org/pdf/math/0701886](https://arxiv.org/pdf/math/0701886)
-    * **Citing Chapters:** [5]
+    * **Citing Chapters:** [5, 12]
 
 **Overview:**
 Ollivier develops a robust approach to define Ricci curvature on arbitrary metric spaces using transport distances between probability measures. He shows that this definition, known as Ollivier-Ricci curvature, captures the geometric properties of continuous Riemannian manifolds while remaining fully applicable to discrete networks.

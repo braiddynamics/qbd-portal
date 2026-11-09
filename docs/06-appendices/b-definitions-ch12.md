@@ -443,6 +443,36 @@ $$
 =\frac{R_g(x)}{6}+O(\tau_t)+o(1).
 $$
 
+**V. Fixed-cutoff heat trace and order of limits**
+
+Let $A_t$ and $A$ be the nonnegative graph and comparison generators with eigenvalues $\lambda_{t,j}$ and $\lambda_j$ in increasing order with multiplicity. At fixed $t$, the spectrum is finite and
+
+$$
+\lim_{s\downarrow0}\operatorname{Tr}(e^{-sA_t})
+=\sum_{j=1}^{N_t}\lim_{s\downarrow0}e^{-s\lambda_{t,j}}=N_t .
+$$
+
+Now fix a physical diffusion time $s>0$ and a positive cutoff $\Lambda$ outside the spectrum of $A$. Let $m$ count the eigenvalues below $\Lambda$. The fixed-index convergence from the operator comparison (**Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />) puts $\lambda_{t,m}<\Lambda<\lambda_{t,m+1}$ eventually if $m\ge1$. For $m=0$ it puts $\lambda_{t,1}>\Lambda$. For nonnegative $a,b$, integration of the exponential derivative gives $|e^{-sa}-e^{-sb}|\le s|a-b|$. Thus
+
+$$
+\left|\sum_{\lambda_{t,j}<\Lambda} e^{-s\lambda_{t,j}}
+      -\sum_{\lambda_j<\Lambda} e^{-s\lambda_j}\right|
+\le s\sum_{j=1}^{m}|\lambda_{t,j}-\lambda_j|
+\longrightarrow0 .
+$$
+
+If $A$ is the Laplacian of a smooth compact four-dimensional Riemannian manifold without boundary, $e^{-sA}$ is trace class. At fixed $s$, taking $\Lambda\to\infty$ after the graph limit recovers its trace. Integrating the continuum diagonal expansion then gives
+
+$$
+\operatorname{Tr}(e^{-sA})
+=\int_M p_s^g(x,x)\,\mathrm dV_g
+=(4\pi s)^{-2}\left(\operatorname{Vol}_g(M)
+  +\frac{s}{6}\int_M R_g\,\mathrm dV_g+O(s^2)\right)
+\quad (s\downarrow0).
+$$
+
+An untruncated discrete trace limit at fixed $s$ also needs a uniform heat-tail bound. Taking $s$ to zero together with the mesh requires control of that comparison on the chosen diffusion window.
+
 Q.E.D.
 
 **In Plain English:**  
@@ -638,37 +668,146 @@ Section 12.1.6 formalizes the properties of the QBD lemma regarding ollivier-ric
 :::tip[**Asymptotic Expansion via Geodesic Mass Transport**]
 :::
 
-**I. Setup and Measure Expansion**
-Let $u, v \in V_t$ be adjacent vertices separated by distance $\bar{d}(u,v) = \ell_0$. In normal coordinates centered at $u$, the probability measure $\mu_u$ concentrates mass in a ball of radius $\ell_0$. The volume element of a geodesic ball $B_{\ell_0}(u)$ on $(M,g)$ expands in terms of the Ricci curvature tensor $\mathrm{Ric}$:
+**I. Parallel transport of a continuum ball law**
+
+Work on a smooth Riemannian comparison manifold with $y=\exp_x(\delta v)$, $\|v\|_g=1$, $\delta=d_g(x,y)$, and ball radius $h$. Take $h$ and $\delta$ small enough for the normal-coordinate comparison. Let $\eta_h$ be uniform on the tangent $h$-ball at $x$. The push-forward of $\eta_h$ under
 
 $$
-d\mu_u(x) = \left( 1 - \frac{1}{6} \mathrm{Ric}_{ij}(u) x^i x^j + \mathcal{O}(\ell_0^3) \right) \frac{dx}{V(B_{\ell_0})}.
+w\longmapsto \bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
 $$
 
-**II. Optimal Transport Cost Expansion**
-By the Kantorovich-Rubinstein duality, the Wasserstein-1 transport distance between $\mu_u$ and $\mu_v$ along direction vector $v \in T_u M$ expands as the average geodesic displacement between mass elements:
+is a coupling $\pi_{\mathrm{PT}}$ of the two tangent-ball push-forward laws, since parallel transport $\mathcal P_{x\to y}$ is an isometry. For the curvature convention $R(v,w,w,v)>0$ on positive sectional curvature planes, the distance expansion of Proposition 6 <Cite id="A.53" label="(Ollivier, 2009)" /> gives
 
 $$
-W_1(\mu_u, \mu_v) = \ell_0 \left( 1 - \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3) \right).
+d_g\bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
+=\delta\bigl(1-\tfrac12 R(v,w,w,v)+O(h^3+h^2\delta)\bigr).
 $$
 
-**III. Ricci Tensor Identification**
-Substituting this transport cost expansion into the operational definition of Causal Ollivier-Ricci curvature (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />) yields:
+Write $w=\sum_i w^i e_i$ in an orthonormal frame. The tangent-ball law has radial density $d r^{d-1}/h^d$ on $[0,h]$, so
 
 $$
-K(u, v) = 1 - \frac{W_1(\mu_u, \mu_v)}{\ell_0} = \frac{\ell_0^2}{2(d+2)} \mathrm{Ric}(v, v) + \mathcal{O}(\ell_0^3).
+\mathbb E_{\eta_h}|w|^2
+=\frac{d}{h^d}\int_0^h r^{d+1}\,\mathrm dr=\frac{d h^2}{d+2},
+\qquad
+\mathbb E_{\eta_h}[w^i w^j]=\frac{h^2}{d+2}\delta^{ij}.
 $$
 
-This establishes the precise asymptotic connection between discrete optimal transport curvature and the continuum Ricci curvature tensor.
-
-**IV. Action Sum Integral Convergence**
-We evaluate the discrete Einstein-Hilbert action $\mathcal{S}[G] = \sum_{e \in E} K(e)$ defined in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />. Substituting the asymptotic expansion and converting the edge sum over isotropic directions to a volume integral over $M$ (with volume element $dV = \ell_0^d dN$ and $d=4$ from **Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />):
+The last equality uses reflection symmetry for mixed moments and permutation symmetry for equal diagonal moments. The contraction and cost are therefore
 
 $$
-\mathcal{S}[G] = \sum_{e \in E} K(e) \xrightarrow{\ell_0 \to 0} \frac{1}{2(d+2) \ell_0^{d-2}} \int_M R(x) \sqrt{-g} \, d^4x.
+\begin{aligned}
+\mathbb E_{\eta_h}[R(v,w,w,v)]
+&=\sum_{i,j} R(v,e_i,e_j,v)\mathbb E_{\eta_h}[w^i w^j]
+=\frac{h^2}{d+2}\operatorname{Ric}(v,v),\\
+\int d_g\,\mathrm d\pi_{\mathrm{PT}}
+&=\delta\left(1-\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)+O(h^3+h^2\delta)\right).
+\end{aligned}
 $$
 
-This proves that the discrete action variation drives the continuum geometry to satisfy the stationary action principle of General Relativity.
+**II. Optimal cost for uniform geodesic balls**
+
+The cost above gives an upper bound for the tangent-ball push-forwards. Write $\mu_x^g,\mu_y^g$ for normalized Riemannian volume on the two geodesic balls. At $x$ the corresponding normal-coordinate density is
+
+$$
+\mathrm d\mu_x^g(w)
+=\frac{1-\tfrac16\operatorname{Ric}_{ij}(x)w^i w^j+O(h^3)}
+       {\operatorname{Vol}_g(B_h(x))}\,\mathrm dw .
+$$
+
+Example 7 <Cite id="A.53" label="(Ollivier, 2009)" /> uses the common part of the two volume-density corrections under parallel transport and bounds the remaining mismatch. It also provides the matching lower bound by testing a Lipschitz distance to an exponentiated transverse set. These two steps give the optimal cost and the corresponding curvature:
+
+$$
+\begin{aligned}
+W_{1,g}(\mu_x^g,\mu_y^g)
+&=\delta\left(1-\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)
+                  +O(h^3+h^2\delta)\right),\\
+K_g(x,y)&=1-\frac{W_{1,g}(\mu_x^g,\mu_y^g)}{\delta}
+=\frac{h^2}{2(d+2)}\operatorname{Ric}(v,v)+O(h^3+h^2\delta).
+\end{aligned}
+$$
+
+**III. Transfer at the curvature scale**
+
+Identify the support of the two graph laws with embedded sites and write $d_h$ for the physically rescaled hop cost and $\mu_x^h,\mu_y^h$ for the graph marginals. Suppose $\delta\asymp h$ and assume the uniform cost error $\|d_h-d_g\|_\infty=o(h^3)$ on the graph support including the centers. For any coupling of the graph laws the cost changes by at most this sup norm, so taking infima in both directions gives
+
+$$
+|W_{1,h}(\mu_x^h,\mu_y^h)-W_{1,g}(\mu_x^h,\mu_y^h)|
+\le\|d_h-d_g\|_\infty .
+$$
+
+If the two graph marginals also approximate the continuum laws with combined $W_{1,g}$ error $o(h^3)$, the triangle inequality gives
+
+$$
+\left|W_{1,h}(\mu_x^h,\mu_y^h)-W_{1,g}(\mu_x^g,\mu_y^g)\right|
+\le\|d_h-d_g\|_\infty
++W_{1,g}(\mu_x^h,\mu_x^g)+W_{1,g}(\mu_y^h,\mu_y^g)
+=o(h^3).
+$$
+
+Let $W_h$ and $W_g$ denote these two optimal costs and put $\delta_h=d_h(x,y)$. Since $W_g=O(h)$, $\delta_h\asymp h$, and $|\delta_h-\delta|=o(h^3)$, the curvature quotient in **Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" /> satisfies
+
+$$
+\begin{aligned}
+|K_h-K_g|
+&=\left|\frac{W_h}{\delta_h}-\frac{W_g}{\delta}\right|\\
+&\le\frac{|W_h-W_g|}{\delta_h}
+ +\frac{W_g|\delta_h-\delta|}{\delta_h\delta}
+=o(h^2).
+\end{aligned}
+$$
+
+**IV. Normalized bulk action**
+
+On a compact comparison region, assume that the finite edge measures converge weakly on the unit tangent bundle over that region:
+
+$$
+\omega_h=h^d\sum_{e\in E_h}\delta_{(x_e,n_e)}
+\rightharpoonup \rho_E(x)\,\mathrm dV_g(x)\,\sigma_x(\mathrm dn),
+$$
+
+where $n_e$ is the unit embedded edge direction, $\rho_E$ is the limiting edge density, and $\sigma_x$ is a probability law on unit directions at $x$. Suppose $K_e=h^2 B(x_e,n_e)+h^2 r_{h,e}$ with continuous $B$ and $\sup_e|r_{h,e}|\to0$. For the sum in **Discrete Einstein-Hilbert Action** <Ref id="11.3.1" label="§11.3.1" />,
+
+$$
+\begin{aligned}
+\left|h^{d-2}\mathcal S[G_h]-\int B\,\mathrm d\omega_h\right|
+&=\left|h^d\sum_e r_{h,e}\right|
+\le \omega_h(1)\sup_e|r_{h,e}|\longrightarrow0,\\
+h^{d-2}\mathcal S[G_h]
+&\longrightarrow
+\int \rho_E(x)\int B(x,n)\,\sigma_x(\mathrm dn)\,\mathrm dV_g(x).
+\end{aligned}
+$$
+
+If $B(x,n)=C\operatorname{Ric}_x(n,n)$ and the second moment of $\sigma_x$ is $I/d$ in the orthonormal frame, then
+
+$$
+\int B(x,n)\,\sigma_x(\mathrm dn)
+=C\sum_{i,j}\operatorname{Ric}_{ij}(x)\frac{\delta^{ij}}{d}
+=\frac{C}{d}R_g(x).
+$$
+
+The resulting Riemannian bulk integral has density $\rho_E C R_g/d$.
+
+**V. Flat-circle test of the one-hop law**
+
+Take the directed circulant on $\mathbb Z/n\mathbb Z$, $n\ge10$, with steps $+1,-2$ and circle spacing $\Delta=1/n$. For the full law of **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" /> at $\alpha=\beta=1/3$, the center has mass $1/3$ and each step $\pm\Delta,\pm2\Delta$ has mass $1/6$. Thus the local mean is zero and the second moment is $2(\Delta^2+4\Delta^2)/6=5\Delta^2/3$.
+
+The laws at $0,1$ have signed difference $\mu_0-\mu_1=(\delta_{-2}+\delta_0-\delta_1-\delta_3)/6$. The undirected graph allows hops of length one and two in either direction. Each of $-2\to1$ and $0\to3$ needs two hops since the circular separation is three. Keeping the common mass in place and sending $1/6$ along each of these shipments gives cost $2/3$ in hop units. The function $f(j)=\bar d(j,3)$ is $1$-Lipschitz. Its values at $-2,0,1,3$ are $3,2,1,0$, so the dual difference is
+
+$$
+\int f\,\mathrm d(\mu_0-\mu_1)=\tfrac16(3+2-1-0)=\tfrac23.
+$$
+
+Hence $W_1=2/3$ and $K(0,1)=1/3$. The rescaled hop metric satisfies
+
+$$
+2\Delta\,\bar d(i,j)
+=2\Delta\left\lceil\frac{d_{S^1}(i,j)}{2\Delta}\right\rceil,
+\qquad
+0\le 2\Delta\,\bar d(i,j)-d_{S^1}(i,j)<2\Delta .
+$$
+
+It therefore converges to the circle metric, whose intrinsic Ricci curvature is zero. At the stencil scale both physical lengths $\Delta$ and $2\Delta$ have unit hop cost.
 
 Q.E.D.
 
@@ -682,36 +821,41 @@ Section 12.1.6.1 formalizes the properties of the QBD proof regarding ollivier-r
 :::tip[**Synthesis of Spectral Convergence via Elliptic Regularity within the Gromov-Hausdorff Limit to Establish the Riemannian Manifold Structure**]
 :::
 
-**I. Convergence of the Spectral Data**
-From the **Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />, the sequence of consistently weighted Laplacians $\{\tilde{\mathcal{L}}_t\}$ converges to the continuum Laplace-Beltrami operator $-\Delta_g$ in the sense of strong resolvent convergence. This implies two critical convergences as $N_t \to \infty$:
-1.  **Eigenvalue Stability:** $\tilde{\lambda}_k^{(t)} \to \lambda_k$ uniformly for any fixed $k$.
-2.  **Eigenfunction Convergence:** $\psi_k^{(t)} \to f_k$ in the $L^2$-norm induced by the Gromov-Hausdorff approximation.
-This establishes that the spectral invariants of the discrete graphs stabilize to those of a limit operator defined on the limit metric space $X = \lim_{GH} G_t$.
+**I. Comparison regime and spectral data**
 
-**II. Identification of the Topological Manifold**
-As established in **Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />, the heat kernel $p_t(x,y)$ of the limit space admits short-time Gaussian bounds characteristic of a 4-dimensional Euclidean space.
+Consider a refining sequence in the four-dimensional geometric growth regime, with scaled count bounds on the common range (**Conditional Ball Growth** <Ref id="5.5.9" label="§5.5.9" />). Suppose a metric comparison identifies a limit $X$, and a separate smooth comparison identifies it with a Riemannian four-manifold $(M,g)$. In the common Hilbert space, the norm-resolvent hypothesis yields convergence of fixed eigenvalues and isolated eigenspaces (**Spectral Convergence** <Ref id="12.1.3" label="§12.1.3" />).
 
-$$
-\lim_{t \to 0} 4t \log p_t(x,y) = -d(x,y)^2.
-$$
+**II. Heat and coefficient inputs**
 
-By the **Reifenberg Metric Regularity Theorem** (Cheeger-Colding), a metric measure space satisfying Ahlfors 4-regularity and the Poincaré inequality, and whose heat kernel exhibits Euclidean asymptotic behavior, is homeomorphic to a topological manifold $M$. Thus, the limit space $X$ is a topological 4-manifold.
+The continuum heat expansion uses the Riemannian comparison metric and the graph heat comparison requires its own functional inequalities and kernel limit (**Heat Kernel Asymptotics** <Ref id="12.1.4" label="§12.1.4" />). The local eigenfunctions used below are smooth under the coefficient hypotheses of **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />. The geometric identification and coefficient regularity are inputs to the chart calculation.
 
-**III. Construction of the Differentiable Structure**
-The limit eigenfunctions $\{f_k\}_{k=1}^\infty$ form a complete orthonormal basis for $L^2(M)$. From the **Smoothness via Elliptic Regularity** <Ref id="12.1.5" label="§12.1.5" />, these functions are $C^\infty$-smooth. we compute the **Spectral Embedding** map $\Phi_K: M \to \mathbb{R}^K$ by:
+**III. Spectral coordinate charts**
+
+For smooth limit eigenfunctions define $\Phi_K(x)=(f_1(x),\ldots,f_K(x))$. If $D\Phi_K$ has rank $d$ at $x$ for $d=\dim M$, then a choice of $d$ component rows yields an invertible derivative. The inverse function theorem gives a local smooth chart $\Phi_i$ after restricting to a neighborhood on which the selected map is invertible. A global spectral embedding additionally requires global injectivity and the embedding topology.
+
+On an overlap of two such charts set $\psi_{ij}=\Phi_j\circ\Phi_i^{-1}$. For $x$ in the overlap,
 
 $$
-\Phi_K(x) = (f_1(x), f_2(x), \dots, f_K(x)).
+\begin{aligned}
+D\Phi_i^{-1}(\Phi_i(x))\,D\Phi_i(x)
+&=D(\Phi_i^{-1}\circ\Phi_i)(x)=I,\\
+D\psi_{ij}(\Phi_i(x))
+&=D\Phi_j(x)\,D\Phi_i^{-1}(\Phi_i(x))
+=D\Phi_j(x)[D\Phi_i(x)]^{-1}.
+\end{aligned}
 $$
 
-For sufficiently large $K$ (guaranteed by the embedding theorem of Bérard, Besson, & Gallot), $\Phi_K$ is a smooth embedding into Euclidean space. The image $\Phi_K(M)$ is a smooth submanifold of $\mathbb{R}^K$. This induces a unique smooth differentiable structure on $M$ such that the eigenfunctions are smooth coordinate charts.
+The opposite composition $\psi_{ji}$ is the inverse, so the transition is a smooth diffeomorphism of the overlap images.
 
-**IV. Regularity of the Riemannian Metric**
-The metric tensor $g$ on $M$ is defined intrinsically by the symbol of the Laplacian. In local coordinates determined by the spectral embedding, the metric components $g_{ij}$ are solutions to the elliptic system determined by the Laplacian's principal part. Since the eigenfunctions $f_k$ are $C^\infty$, the coefficients of the operator must be $C^\infty$ (Regularity Converse). The local curvature tensor is governed by the **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
-Consequently, the limit space is a pair $(M, g)$ where $M$ is a smooth 4-manifold and $g$ is a smooth Riemannian metric tensor.
+**IV. Metric in the comparison charts**
 
-**V. Uniformity of the Limit**
-The error terms governing the convergence of the heat kernel and spectrum scale as $O(\ell_0^p + N_t^{-q})$. Since the QBD evolution drives $\ell_0 \to 0$ and $N_t \to \infty$ simultaneously at the fixed point, the convergence is uniform. The sequence of causal graphs $\{G_t\}$ therefore converges in the Spectral-Gromov-Hausdorff topology to the smooth Riemannian manifold $(M, g)$.
+In these coordinates, the principal symbol of $-\Delta_g$ is $p_x(\xi)=g^{ij}(x)\xi_i\xi_j$. Polarization with coordinate covectors $\mathrm dx^i$ gives
+
+$$
+g^{ij}(x)=\tfrac12\bigl(p_x(\mathrm dx^i+\mathrm dx^j)-p_x(\mathrm dx^i)-p_x(\mathrm dx^j)\bigr).
+$$
+
+The inverse matrix gives the covariant components. The comparison of transport curvature with this metric uses separate cost and marginal bounds (**Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />). The chart and symbol calculations apply to the identified smooth limit.
 
 Q.E.D.
 

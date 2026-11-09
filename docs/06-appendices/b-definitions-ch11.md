@@ -1094,7 +1094,7 @@ $$
 \mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v).
 $$
 
-This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The asymptotic convergence of $\mathcal{S}[G]$ to the continuous Einstein-Hilbert action integral $\int R \sqrt{-g} \, d^4x$ is formally derived in **Smooth Manifold Limit** <Ref id="12.1.2" label="§12.1.2" />. The variation of this action with respect to graph topology governs the emergent dynamics of the system.
+This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
 
 **In Plain English:**  
 Section 11.3.1 formalizes the properties of the QBD definition regarding discrete einstein-hilbert action.

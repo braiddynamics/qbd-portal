@@ -615,36 +615,28 @@ Section 14.2.5 formalizes the properties of the QBD lemma regarding coincidence 
 :::tip[**Demonstration of Causal Boundary Convergence defined by the Limit of Path Distance Ratios**]
 :::
 
-Specifically, if a sequence of graph vertices $\{v_n\}$ approaches a lightlike trajectory $\gamma$ in the manifold $M$, the ratio of the spatial proper distance traversed to the temporal logical depth accumulated approaches the Lapse speed $N(x)$. This convergence guarantees that the metric light cone $ds^2=0$ acts as the strict upper bound for information propagation in the continuum, inheriting the fundamental speed limit of one edge per logical update from the underlying lattice.
+**I. Hop speed**
 
-The proof establishes that the condition $ds^2=0$ in the emergent metric is mathematically equivalent to the saturation of the discrete causal propagation bound in the thermodynamic limit.
+If a represented causal signal takes $L$ graph hops in $\Delta T$ ticks and takes at most one hop per tick, then $L\le\Delta T$ and $L/\Delta T\le1$. The hop count and tick count are dimensionless. Their comparison to a spatial norm and a coordinate time uses the embedded paths.
 
-**I. The Discrete Speed Limit**
-Let $v$ be a vertex in the causal graph $G_t$. The propagation of information is rigorously bounded by the graph topology: a signal can traverse at most one edge per logical update step. For any causal path of length $L$ edges spanning a logical depth of $\Delta T$ ticks, the discrete speed $v_{graph}$ satisfies the inequality:
+**II. Causal tangents in the comparison metric**
 
-$$
-v_{graph} = \frac{L}{\Delta T} \le 1
-$$
-
-The boundary of the causal future $I^+(v)$ is defined by the set of paths where $v_{graph} = 1$ (maximal propagation).
-
-**II. The Metric Null Condition**
-Under the emergent **Lorentzian Metric** <Ref id="14.2.1" label="§14.2.1" />, for a null vector field $k^\mu$ tangent to a light ray ($ds^2 = 0$), the relationship between spatial displacement and temporal coordinate change is governed by the Lapse function $N$:
+Use the metric of **Lorentzian Metric** <Ref id="14.2.1" label="§14.2.1" /> in ADM form, with $c$ displayed explicitly. For a future-directed tangent with $\mathrm dt>0$, write $v^i=\mathrm dx^i/\mathrm dt$. Then
 
 $$
-0 = -N^2 dT^2 + h_{ij} dx^i dx^j \implies \sqrt{h_{ij} \frac{dx^i}{dT} \frac{dx^j}{dT}} = N
+\begin{aligned}
+\frac{\mathrm ds^2}{\mathrm dt^2}
+&=-c^2N^2+h_{ij}(v^i+N^i)(v^j+N^j),\\
+\mathrm ds^2\le0
+&\ \Longrightarrow\ h_{ij}(v^i+N^i)(v^j+N^j)\le c^2N^2.
+\end{aligned}
 $$
 
-Thus, the coordinate speed of light is exactly $N(x)$.
+A null tangent attains equality. With zero shift and $c=1$, its spatial norm per coordinate time is $\sqrt{h_{ij}v^iv^j}=N$, using the clock normalization of **Lapse Function** <Ref id="14.1.1" label="§14.1.1" />.
 
-**III. Convergence of Limits**
-The **Lapse Function** <Ref id="14.1.1" label="§14.1.1" /> (denoted $N$) is defined as the continuum limit of the ratio of proper distance (edges) to logical depth (ticks). Therefore:
+**III. Comparison of the propagation boundaries**
 
-$$
-\lim_{\text{graph} \to M} \left( \frac{\Delta s_{max}}{\Delta T} \right) \equiv N
-$$
-
-Consequently, the metric condition $ds^2=0$ exactly corresponds to the saturation of the graph connectivity bound ($v_{graph}=1$). The metric light cone is the smooth envelope of the discrete maximal paths.
+Suppose embedded effective paths have limiting tangents in the future cone of the comparison metric. The inequality in Step II then bounds their shift-adjusted spatial speed. If each future null direction is also approached by the limiting reachable directions, the null generators lie on the boundary of that reachable direction set: the set is contained in the future cone, and every neighborhood of a null direction contains directions outside the cone. The full null-boundary identification uses both containment and reachability (**Null Boundary** <Ref id="12.3.4" label="§12.3.4" />).
 
 Q.E.D.
 
@@ -1026,6 +1018,21 @@ U(t)^\dagger U(t)=e^{-it H}e^{it H}=I .
 $$
 
 The one-parameter norm calculation concerns quantum time evolution. Covariance of the fields uses the full spacetime action and intertwiner in Steps I and II.
+
+**IV. Generator of an identified limiting flow**
+
+Let $\psi_\epsilon$ be a smooth comparison flow with generator $\xi$. Fix $\epsilon$ first, and suppose a family of graph actions on a mesh $h$ approximates $\psi_\epsilon$ with integer steps $k_h h\to\epsilon$. For vertices $x_h$ embedded by $\iota_h$ with $\iota_h(x_h)\to x$, suppose that the embedded images $\iota_h(\varphi_{h,k_h}(x_h))$ tend to $\psi_\epsilon(x)$. For a smooth test $f$ this gives the ordered limit
+
+$$
+\begin{aligned}
+\lim_{\epsilon\to0}\lim_{h\to0}
+\frac{f(\iota_h(\varphi_{h,k_h}(x_h)))-f(\iota_h(x_h))}{\epsilon}
+&=\lim_{\epsilon\to0}\frac{f(\psi_\epsilon(x))-f(x)}{\epsilon}\\
+&=\mathrm df_x(\xi_x).
+\end{aligned}
+$$
+
+For a joint limit the error in the numerator relative to $f(\psi_\epsilon(x))-f(x)$ must be $o(|\epsilon|)$. Invariance of the continuum null form follows from $\Lambda^{\mathsf T}g\Lambda=g$ in a Minkowski frame. Acting on fields and dynamics additionally uses the represented spacetime action and intertwining law.
 
 Q.E.D.
 
@@ -1519,31 +1526,49 @@ Section 14.4.2 formalizes the properties of the QBD lemma regarding first law of
 :::tip[**Derivation of the Entanglement Equilibrium Relation from Horizon Cut-Sets and Modular Theory**]
 :::
 
-**I. The Horizon as a Causal Cut-Set**
-In the discrete causal graph under **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, a local causal horizon $\mathcal{H}$ corresponds to a bipartite cut-set $C$ separating an accessible diamond subgraph $G_{\text{obs}}$ from its causal complement $G_{\text{hidden}}$. The quantum state of the vacuum is described by a pure density matrix $\rho_{\text{total}} = |\psi_0\rangle\langle\psi_0|$, and the local observer state is the reduced density matrix $\rho_{\text{obs}} = \text{tr}_{\text{hidden}} |\psi_0\rangle\langle\psi_0|$. The entanglement entropy is the Von Neumann entropy $S_{\text{ent}} = -\text{tr}(\rho_{\text{obs}} \ln \rho_{\text{obs}})$.
+**I. Reduced state on a cut**
 
-**II. The Ryu-Takayanagi Cut-Set Area Law**
-By graph planarity and the Monotonicity Theorem, the minimal cut-set area is proportional to the number of fundamental 3-cycles pierced by the boundary surface $\partial G_{\text{obs}}$. The entanglement entropy satisfies:
+In the cut representation of **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />, suppose the vacuum state restricts to a density matrix $\rho_0$ on the observer sector. For a factorized representation this is $\rho_0=\operatorname{Tr}_{\mathrm{hidden}}|\psi_0\rangle\langle\psi_0|$. Use a fixed finite-dimensional support on which $\rho_0$ is strictly positive, and set $K=-\ln\rho_0$. Write $S_{\mathrm{ent}}/k_B=-\operatorname{Tr}(\rho\ln\rho)$.
 
-$$
-S_{\text{ent}} = \frac{k_B}{4} N_3(\mathcal{H}) = \frac{k_B c^3}{4\hbar G} A(\mathcal{H}).
-$$
+**II. Entropy and area calibration**
 
-**III. Modular Hamiltonian and Stress-Energy Flux**
-The modular Hamiltonian $K$ associated with the reduced density operator $\rho_{\text{obs}}$ is defined implicitly by $\rho_{\text{obs}} = \frac{e^{-K}}{\text{tr}(e^{-K})}$. By the Bisognano-Wichmann theorem and the conformal mapping of small geodesic balls, the modular flow near the horizon generates Lorentz boosts along null generators $k^\mu$. For an arbitrary excitation carrying matter stress-energy tensor $T_{\mu\nu}$, the first-order variation in the modular Hamiltonian expectation value evaluates to:
+For the benchmark cut calibration, let $N_3(\mathcal H)$ count the pierced 3-cycles and use $s_3=1/4$ as the assigned dimensionless entropy per counted cycle. With $a_3$ the calibrated area per cycle,
 
 $$
-\delta \langle K \rangle = \frac{2\pi}{\hbar} \int_{\mathcal{H}} T_{\mu\nu} k^\mu k^\nu \lambda \, d\lambda \, dA.
+\frac{S_{\mathrm{cut}}}{k_B}=s_3 N_3(\mathcal H),\qquad
+A(\mathcal H)=a_3 N_3(\mathcal H),\qquad
+\frac{S_{\mathrm{cut}}}{k_B A}=\frac{s_3}{a_3}.
 $$
 
-**IV. Entanglement Equilibrium**
-Consider an arbitrary variation of the quantum state $\rho = \rho_{\text{vac}} + \delta \rho$. By the mathematical identity of relative entropy $S(\rho \| \rho_{\text{vac}}) \ge 0$, the first-order variation of the Von Neumann entropy satisfies:
+The match to the area coefficient $c^3/(4\hbar G)$ uses the calibration of **Sakharov Induced Metric Elasticity (G)** <Ref id="14.4.3" label="§14.4.3" />. The state variation below uses the reduced density matrix at a fixed cut.
+
+**III. First variation of the entropy**
+
+Let $\rho(\epsilon)$ be a trace-one variation with $\rho(0)=\rho_0$ and derivative $\delta\rho$. In an eigenbasis of $\rho_0$, with eigenvalues $p_i>0$, the trace derivative of the spectral function $-p\ln p$ is $\sum_i(-\ln p_i-1)(\delta\rho)_{ii}$. Thus
 
 $$
-\delta S_{\text{ent}} = -\delta \, \text{tr}(\rho \ln \rho) = \text{tr}(\delta \rho K) = \delta \langle K \rangle.
+\begin{aligned}
+\frac{\delta S_{\mathrm{ent}}}{k_B}
+&=-\operatorname{Tr}\bigl[(\ln\rho_0+I)\delta\rho\bigr]\\
+&=\operatorname{Tr}(K\delta\rho)-\operatorname{Tr}(\delta\rho)
+=\operatorname{Tr}(K\delta\rho)
+=\delta\langle K\rangle ,
+\end{aligned}
 $$
 
-This identity establishes under **First Law of Entanglement Equilibrium** <Ref id="14.4.2" label="§14.4.2" /> that the vacuum state is a maximal entanglement equilibrium configuration. Matter excitations perturbing the modular Hamiltonian $\delta \langle K \rangle$ compel an identical variation in the horizon entanglement entropy $\delta S_{\text{ent}}$, without relying on a fictitious physical heat bath or temperature gradient.
+where $K$ is fixed at the reference state and $\operatorname{Tr}(\delta\rho)=0$. This is the dimensionless entropy equality of **First Law of Entanglement Equilibrium** <Ref id="14.4.2" label="§14.4.2" />.
+
+**IV. Modular stress comparison**
+
+To evaluate $\delta\langle K\rangle$ by stress flux, assume the represented modular flow has the local boost kernel in the horizon pencil. With $x^0=ct$ and the same past-directed affine orientation as the geometric area variation, the leading dimensionless flux used in the field-equation synthesis is
+
+$$
+\delta\langle K\rangle
+=\frac{2\pi}{\hbar c}\int_{\mathcal H}
+T_{\mu\nu}k^\mu k^\nu\,\lambda\,\mathrm d\lambda\,\mathrm dA_0 .
+$$
+
+This stress identification and stationarity of total entropy under fixed-volume variations are inputs separate from the fixed-cut trace derivative.
 
 Q.E.D.
 
@@ -1573,38 +1598,48 @@ Section 14.4.3 formalizes the properties of the QBD lemma regarding sakharov ind
 :::tip[**Derivation of Induced Metric Elasticity from the Holographic Cut-Set and Discreteness Modulus**]
 :::
 
-Newton's constant $G$ represents the metric elasticity resisting geometric deformation, derived from the fundamental discreteness area $\ell_0^2$ and the equilibrium 3-cycle density $\rho_3^* \approx 0.037$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
+**I. Matching the entropy per unit area**
 
-**I. Cut-Set Area and Density of States**
-Let a local causal horizon $\mathcal{H}$ intersect a cut-set of $N_3(\mathcal{H})$ fundamental 3-cycles. At the homeostatic fixed point $\rho_3^* \approx 0.037$, each 3-cycle occupies an effective Planckian area element $\Delta A_3 = \frac{\ell_0^2}{\rho_3^*}$. The macroscopic area of the causal cut-set evaluates to:
-
-$$
-A(\mathcal{H}) = \frac{\ell_0^2}{\rho_3^*} N_3(\mathcal{H}).
-$$
-
-**II. Sakharov Induced Action and Entanglement Equivalence**
-Following Sakharov (1967), the effective Einstein-Hilbert gravitational action $\mathcal{S}_{\text{EH}} = \frac{c^3}{16\pi G} \int R \sqrt{-g} \, d^4x$ arises not as a fundamental tree-level field action, but as the one-loop induced elasticity generated by integrating out microscopic quantum fluctuations. In QBD, this microscopic integration corresponds to summing the discrete boolean rewrite transitions over the category of histories.
-Equating the microscopic cut-set entropy under **First Law of Entanglement Equilibrium** <Ref id="14.4.2" label="§14.4.2" /> to the macroscopic Bekenstein-Hawking entropy $S_{\text{BH}} = \frac{k_B c^3 A(\mathcal{H})}{4 \hbar G}$ yields:
+Let $s_3>0$ be the dimensionless entropy assigned to one pierced cycle in the cut calibration of **First Law of Entanglement Equilibrium** <Ref id="14.4.2" label="§14.4.2" />, and let $a_3>0$ be its area. For $N_3>0$ pierced cycles, $S_{\mathrm{cut}}=k_Bs_3N_3$ and $A=a_3N_3$. Matching the cut entropy to the area entropy gives
 
 $$
-\frac{1}{4} k_B N_3(\mathcal{H}) = \frac{k_B c^3}{4 \hbar G} \left( \frac{\ell_0^2}{\rho_3^*} N_3(\mathcal{H}) \right).
+k_Bs_3N_3=\frac{k_B c^3}{4\hbar G}a_3N_3
+\quad\Longrightarrow\quad
+\frac{s_3}{a_3}=\frac{c^3}{4\hbar G}
+\quad\Longrightarrow\quad
+G=\frac{c^3a_3}{4\hbar s_3}.
 $$
 
-**III. Exact Derivation of Newton's Constant**
-Canceling $N_3(\mathcal{H})$ and solving for $G$ yields the exact induced metric elasticity:
+**II. Two area normalizations**
+
+At $s_3=1/4$, an area assignment $a_3=\ell_0^2/\rho_3^*$ gives
 
 $$
-G = \frac{c^3 \ell_0^2}{4 \hbar \rho_3^*}.
+G=\frac{c^3}{\hbar}\frac{\ell_0^2}{\rho_3^*},
+\qquad N_3=\frac{\rho_3^* A}{\ell_0^2}.
 $$
 
-Correspondingly, the Einstein-Hilbert coupling constant $\kappa = \frac{8\pi G}{c^4}$ evaluates to:
+For the benchmark in **Sakharov Induced Metric Elasticity (G)** <Ref id="14.4.3" label="§14.4.3" />, use the calibrated area $a_3=\ell_0^2/(4\rho_3^*)$, where $\rho_3^*$ denotes the equilibrium density of **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. This assigns
 
 $$
-\kappa = \frac{2\pi \ell_0^2}{\hbar c \, \rho_3^*}.
+N_3=\frac{4\rho_3^* A}{\ell_0^2},\qquad
+\frac{S_{\mathrm{cut}}}{k_B}=\tfrac14 N_3
+=\frac{\rho_3^* A}{\ell_0^2}.
 $$
 
-**IV. Formal Conclusion**
-This establishes that Newton's constant $G$ and the gravitational coupling $\kappa$ are exact functions of the Planck discreteness scale $\ell_0$ and the equilibrium vacuum 3-cycle density $\rho_3^*$, without any free or phenomenological parameters.
+**III. Benchmark coupling**
+
+Substituting the benchmark assignment in the matching equation gives
+
+$$
+G=\frac{c^3}{4\hbar(1/4)}\frac{\ell_0^2}{4\rho_3^*}
+=\frac{c^3\ell_0^2}{4\hbar\rho_3^*},
+\qquad
+\kappa=\frac{8\pi}{c^4}\frac{c^3\ell_0^2}{4\hbar\rho_3^*}
+=\frac{2\pi\ell_0^2}{\hbar c\,\rho_3^*}.
+$$
+
+The benchmark uses the specified area and entropy per counted cycle. The area law fixes their ratio. A microscopic calculation of either factor needs the represented cut geometry and state.
 
 Q.E.D.
 

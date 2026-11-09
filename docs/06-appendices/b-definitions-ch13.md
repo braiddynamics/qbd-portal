@@ -749,6 +749,20 @@ $$
 
 This choice has the required units. The screening law and its coefficient require physical calibration.
 
+**IV. Matching at the vacuum fixed point**
+
+Let $\xi_{\mathrm{lat}}^*$ be the lattice correlation length evaluated at the vacuum density $\rho_3^*$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />). Express the two couplings in common units. Write $\kappa_{13}^*=A\ell_0^2/\xi_{\mathrm{lat}}^*$ for the inverse-screening expression and $\kappa_{14}^*=B\ell_0^2/\rho_3^*$ for the horizon benchmark (**Sakharov Induced Metric Elasticity (G)** <Ref id="14.4.3" label="§14.4.3" />). For positive $\rho_3^*,\xi_{\mathrm{lat}}^*$ and nonzero $A,B$, agreement at this equilibrium requires
+
+$$
+\kappa_{13}^*=\kappa_{14}^*
+\quad\Longleftrightarrow\quad
+\frac{A}{\xi_{\mathrm{lat}}^*}=\frac{B}{\rho_3^*}
+\quad\Longleftrightarrow\quad
+\xi_{\mathrm{lat}}^*=\frac{A}{B}\rho_3^* .
+$$
+
+This equation compares the two calibrations at the same vacuum.
+
 Q.E.D.
 
 **In Plain English:**  
