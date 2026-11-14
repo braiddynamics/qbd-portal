@@ -2611,7 +2611,7 @@ Type-theoretic certification of the information-theoretic foundations and base-c
 
 1.  **Combinatorial Base Priors:** The Lean proposition `permutation_invariance_uniquely_determines_prior` proves that automorphism invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$ without free parameters.
 2.  **Specified Decision Count:** The Lean theorems `triad_interaction_ports_is_six` and `simplicial_permittivity_scale` evaluate $3 \times 2 = 6$ and $2^6=64$ under the defined two-decision-per-vertex convention. Independence, fairness and the attempt clock are separate premises of the probability and rate interpretation.
-3.  **Simplicial Boundary Integrability:** The Lean theorem `simplicial_boundary_cycle_closed` proves that the boundary of the 2-simplex is a closed cycle in simplicial homology ($\partial_1 \circ \partial_2 = 0$), verifying that the elementary geometric quantum possesses vanishing boundary flow.
+3.  **Simplicial Boundary Integrability:** The Lean theorem `simplicial_boundary_cycle_closed` proves by structural induction on finite integer-weighted 2-chains that the iterated boundary vanishes at every vertex ($\partial_1 \circ \partial_2 = 0$), verifying that the boundary of any oriented 2-simplex forms a closed cycle.
 
 ```lean
 structure ProbField (α : Type) where
@@ -2697,11 +2697,63 @@ THEOREM 9.5: Simplicial Permittivity Microstate Space
 theorem simplicial_permittivity_scale :
     2 ^ (triad_interaction_ports 3) = 64 := by
   rfl
+
+-- Formal 1-chain over vertex universe V represented as a weighted list of directed edges
+abbrev Chain1 (V : Type) := List (Int × V × V)
+
+-- Formal 2-chain over vertex universe V represented as a weighted list of oriented 2-simplices
+abbrev Chain2 (V : Type) := List (Int × V × V × V)
+
+-- Boundary operator ∂₁ evaluating the signed incident flux at vertex x
+def boundary1 {V : Type} [DecidableEq V] : Chain1 V → V → Int
+  | [], _ => 0
+  | (k, u, v) :: rest, x =>
+    (if x = v then k else 0) - (if x = u then k else 0) + boundary1 rest x
+
+-- Boundary operator ∂₂ on a single oriented 2-simplex k·[a, b, c]
+def simplexBoundary2 {V : Type} (k : Int) (a b c : V) : Chain1 V :=
+  [(k, b, c), (-k, a, c), (k, a, b)]
+
+-- Linear boundary operator ∂₂ mapped across an arbitrary 2-chain
+def boundary2 {V : Type} : Chain2 V → Chain1 V
+  | [] => []
+  | (k, a, b, c) :: rest => simplexBoundary2 k a b c ++ boundary2 rest
+
+-- Additivity of ∂₁ under concatenation of 1-chains
+theorem boundary1_append {V : Type} [DecidableEq V] (c1 c2 : Chain1 V) (x : V) :
+    boundary1 (c1 ++ c2) x = boundary1 c1 x + boundary1 c2 x := by
+  induction c1 with
+  | nil => simp [boundary1]
+  | cons hd tl ih =>
+    rcases hd with ⟨k, u, v⟩
+    simp [boundary1, ih]
+    omega
+
+-- Vanishing vertex boundary flux on the boundary of any single oriented 2-simplex
+theorem simplex_boundary1_boundary2 {V : Type} [DecidableEq V]
+    (k : Int) (a b c x : V) :
+    boundary1 (simplexBoundary2 k a b c) x = 0 := by
+  simp [simplexBoundary2, boundary1]
+  split <;> split <;> split <;> omega
+
+/--
+THEOREM 4.4.9: Simplicial Boundary Cycle Closure (∂₁ ∘ ∂₂ = 0)
+Formally proves that the boundary of any integer-weighted 2-chain is a closed
+1-cycle with vanishing net boundary at every vertex x.
+-/
+theorem simplicial_boundary_cycle_closed {V : Type} [DecidableEq V]
+    (c2 : Chain2 V) (x : V) :
+    boundary1 (boundary2 c2) x = 0 := by
+  induction c2 with
+  | nil => rfl
+  | cons hd tl ih =>
+    rcases hd with ⟨k, a, b, c⟩
+    simp [boundary2, boundary1_append, simplex_boundary1_boundary2, ih]
 ```
 
 **Verification Summary:**
 
-The Lean block proves the bit-flip prior identity under its explicit algebraic field assumptions and evaluates the declared decision counts. Its decision-channel definition stipulates two variables per vertex; the arithmetic does not derive that convention from external edge incidence. The resulting 64 assignments have equal mass only when the independent fair law is supplied. Interpreting their probability as a continuum drive also needs the reference attempt clock. The block contains no admitted proof or custom axiom declaration, but its structures carry explicit premises. Lean kernel acceptance certifies the conditional prior identity (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
+The Lean block proves the bit-flip prior identity under its explicit algebraic field assumptions, evaluates the declared decision counts, and proves simplicial boundary cycle closure across arbitrary integer-weighted 2-chains. Its decision-channel definition stipulates two variables per vertex; the arithmetic does not derive that convention from external edge incidence, and the resulting 64 assignments carry equal mass only when the independent fair law is supplied. Interpreting their probability as a continuum drive also requires the reference attempt clock. For oriented chains encoded by `Chain1` and `Chain2`, structural induction over 2-chains paired with `boundary1_append`, `simplex_boundary1_boundary2`, and linear integer arithmetic (`omega`) eliminates every vertex incidence contribution identically, verifying $\partial_1 \circ \partial_2 = 0$. The block contains no admitted proof or custom axiom declaration, while its field structures carry explicit premises. Lean kernel acceptance certifies the conditional prior identity and combinatorial boundary identities (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
 
 **In Plain English:**  
 Section 4.4.9 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
@@ -2762,13 +2814,14 @@ def R(annotated_graph, T, mu, lambda_cat):
         # Base probability is 0.5 (Entropic Penalty of Erasure)
         P_del_thermo = 0.5
         
-        # B.2) The "Catalysis" (Modulation by Tension)
-        # Stress *excluding* this cycle's own contribution
-        stress = measure_local_stress(G, cycle.nodes) - 1
-        f_catalysis = (1 + lambda_cat * max(0, stress))
+        # B.2) The "Catalysis" & "Friction" (Modulation by Local Stress)
+        # Stress *excluding* this cycle's own contribution: s_c = max(0, sum_{v in c} s_G(v) - 1)
+        stress = max(0, measure_local_stress(G, cycle.nodes) - 1)
+        f_catalysis = 1 + lambda_cat * stress
+        f_friction = exp(-mu * stress)
         
         # The full probability for this single event
-        P_del = min(1.0, f_catalysis * P_del_thermo)
+        P_del = min(1.0, f_catalysis * f_friction * P_del_thermo)
         del_proposals.append( (cycle, P_del) )
 
     # --- 3. RETURN THE PROBABILITY DISTRIBUTION ---
@@ -2789,14 +2842,16 @@ Spacetime updates are governed by a Universal Constructor that stochastically sc
 :::tip[**Syndrome-Response Function Modulating Base Probabilities via Catalytic Tension Factor**]
 :::
 
-The **Catalytic Tension Factor**, denoted $\chi(\boldsymbol{\sigma}_e)$, is defined as the scalar modulation function acting on the base transition probabilities. It is constructed as the product of two distinct terms:
+Let $s_G(v) = |\mathcal{C}_3(v)|$ denote the count of directed **3-cycles** incident to vertex $v$, defining the local addition stress $s_a = \sum_{v \in e_a} s_G(v)$ on a candidate closing site $e_a = (u, v)$ and the self-excluded deletion stress $s_c = \max\!\left(0, \sum_{v \in c} s_G(v) - 1\right)$ on an existing cycle $c \in \mathcal{C}_3(G)$. The mode-separated **Catalytic Tension Factor** $(\chi_{\mathrm{add}}, \chi_{\mathrm{del}})$ modulates the thermodynamic baselines as
 
 $$
-\chi(\boldsymbol{\sigma}_e) = \underbrace{\left( \prod_{s \in \mathcal{S}_{\text{sites}, e}} (1 + \lambda_{\text{cat}} \cdot I[\Delta s(e) = +2]) \right)}_{\text{Catalysis Term}} \cdot \underbrace{\exp\left( -\mu \cdot \sum_{x \in \text{nbhd}(e)} I[\sigma_x = -1] \right)}_{\text{Friction Term}}
+\chi_{\mathrm{add}}(s_a) = e^{-\mu s_a}, \qquad \chi_{\mathrm{del}}(s_c) = (1 + \lambda s_c)e^{-\mu s_c},
 $$
 
-1.  **Catalysis Term:** The product over the set of local sites where the proposed action resolves a syndrome excitation ($\Delta s = +2$). This term applies a linear scaling factor of $(1 + \lambda_{cat})$ for every resolved defect.
-2.  **Friction Term:** The exponential decay function of the total local stress, defined as the count of negative syndromes ($\sigma_x = -1$) within the immediate neighborhood $\text{nbhd}(e)$. This term applies a damping factor with coefficient $\mu$.
+yielding the operational acceptance probabilities $p_a = \chi_{\mathrm{add}}(s_a)\mathbb{P}_{\text{acc,thermo}} = e^{-\mu s_a}$ for edge addition and $q_c = \min\{1, \chi_{\mathrm{del}}(s_c)\mathbb{P}_{\text{del,thermo}}\} = \min\!\left\{1, \tfrac{1}{2}(1 + \lambda s_c)e^{-\mu s_c}\right\}$ for triangle deletion (**Universal Constructor** <Ref id="4.5.8" label="§4.5.8" />).
+
+1.  **Addition Friction ($\chi_{\mathrm{add}}$):** Pure exponential steric damping by the candidate vertex cycle-incidence sum $s_a$, suppressing edge additions in crowded regions without catalytic boost (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />).
+2.  **Deletion Catalysis and Friction ($\chi_{\mathrm{del}}$):** Affine linear catalytic scaling $(1 + \lambda s_c)$ (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />) combined with exponential neighborhood friction $e^{-\mu s_c}$ in the self-excluded deletion stress $s_c$. Multiplication by the one-half entropic baseline yields the operational deletion probability (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
 
 **In Plain English:**  
 Section 4.5.2 formalizes the properties of the QBD definition regarding catalytic tension factor.
@@ -2923,10 +2978,10 @@ Both conclusions are conditional on their supplied energy normalizations.
 
 **IV. Scope of the Factor**
 
-Writing the full admissible-proposal acceptance as $P_{acc}=\chi(\sigma)P_{thermo}$ gives, within the barrierless range,
+Writing the full admissible-proposal acceptance as $P_{acc}=\chi_{\mathrm{add}}(s_a)P_{thermo}$ gives, within the barrierless range,
 
 $$
-P_{acc}=\chi(\sigma)\cdot1=\chi(\sigma).
+P_{acc}=\chi_{\mathrm{add}}(s_a)\cdot1=\chi_{\mathrm{add}}(s_a)=e^{-\mu s_a}.
 $$
 
 The exact claim about the thermodynamic factor is consequently (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />)

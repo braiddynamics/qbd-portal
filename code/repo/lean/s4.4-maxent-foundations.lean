@@ -227,3 +227,80 @@ theorem spatial_deletion_preserves_history {V : Type}
     (h_in_history : H t e) :
     H (t + 1) e := by
   exact h_step t e h_in_history
+
+-- ----------------------------------------------------------------------------
+-- PART 4: 6-PORT TRIAD BOUNDARY & SIMPLICIAL BOUNDARY CLOSURE (∂₁ ∘ ∂₂ = 0)
+-- ----------------------------------------------------------------------------
+
+-- Number of binary boundary routing decisions per triad vertex
+def boundary_decision_channels_per_vertex : Nat := 2
+
+-- Total boundary interaction ports for a polygon of num_vertices
+def triad_interaction_ports (num_vertices : Nat) : Nat :=
+  num_vertices * boundary_decision_channels_per_vertex
+
+/--
+THEOREM 4.4.6: Triad Interaction Boundary is Exactly Six Routing Ports
+-/
+theorem triad_interaction_ports_is_six :
+    triad_interaction_ports 3 = 6 := by
+  rfl
+
+/--
+THEOREM 4.4.7: Simplicial Permittivity Microstate Space
+-/
+theorem simplicial_permittivity_scale :
+    2 ^ (triad_interaction_ports 3) = 64 := by
+  rfl
+
+-- Formal 1-chain over vertex universe V represented as a weighted list of directed edges
+abbrev Chain1 (V : Type) := List (Int × V × V)
+
+-- Formal 2-chain over vertex universe V represented as a weighted list of oriented 2-simplices
+abbrev Chain2 (V : Type) := List (Int × V × V × V)
+
+-- Boundary operator ∂₁ evaluating the signed incident flux at vertex x
+def boundary1 {V : Type} [DecidableEq V] : Chain1 V → V → Int
+  | [], _ => 0
+  | (k, u, v) :: rest, x =>
+    (if x = v then k else 0) - (if x = u then k else 0) + boundary1 rest x
+
+-- Boundary operator ∂₂ on a single oriented 2-simplex k·[a, b, c]
+def simplexBoundary2 {V : Type} (k : Int) (a b c : V) : Chain1 V :=
+  [(k, b, c), (-k, a, c), (k, a, b)]
+
+-- Linear boundary operator ∂₂ mapped across an arbitrary 2-chain
+def boundary2 {V : Type} : Chain2 V → Chain1 V
+  | [] => []
+  | (k, a, b, c) :: rest => simplexBoundary2 k a b c ++ boundary2 rest
+
+-- Additivity of ∂₁ under concatenation of 1-chains
+theorem boundary1_append {V : Type} [DecidableEq V] (c1 c2 : Chain1 V) (x : V) :
+    boundary1 (c1 ++ c2) x = boundary1 c1 x + boundary1 c2 x := by
+  induction c1 with
+  | nil => simp [boundary1]
+  | cons hd tl ih =>
+    rcases hd with ⟨k, u, v⟩
+    simp [boundary1, ih]
+    omega
+
+-- Vanishing vertex boundary flux on the boundary of any single oriented 2-simplex
+theorem simplex_boundary1_boundary2 {V : Type} [DecidableEq V]
+    (k : Int) (a b c x : V) :
+    boundary1 (simplexBoundary2 k a b c) x = 0 := by
+  simp [simplexBoundary2, boundary1]
+  split <;> split <;> split <;> omega
+
+/--
+THEOREM 4.4.8: Simplicial Boundary Cycle Closure (∂₁ ∘ ∂₂ = 0)
+Formally proves that the boundary of any integer-weighted 2-chain is a closed
+1-cycle with vanishing net boundary at every vertex x.
+-/
+theorem simplicial_boundary_cycle_closed {V : Type} [DecidableEq V]
+    (c2 : Chain2 V) (x : V) :
+    boundary1 (boundary2 c2) x = 0 := by
+  induction c2 with
+  | nil => rfl
+  | cons hd tl ih =>
+    rcases hd with ⟨k, a, b, c⟩
+    simp [boundary2, boundary1_append, simplex_boundary1_boundary2, ih]

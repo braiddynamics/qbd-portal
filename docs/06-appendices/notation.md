@@ -138,30 +138,31 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
 | $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
 | $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
+| $s_X$ | Freshly computed syndrome map ($\sigma_{G_X}$) | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
 | $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
 | $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
 | $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
-| $T_c, \beta_c$ | Vacuum Temperature / Base Conversion Modulus ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
+| $\beta_c$ | Base-Conversion Modulus ($\ln 2$, relating bits to nats) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
 | $\Delta S_{\mathrm{close}}$ | Entropy of Closure ($\ln 2$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
-| $\varepsilon_{\mathrm{geo}}$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
-| $\Lambda_{\mathrm{theory}}$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
+| $\varepsilon_0$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
+| $\Lambda_0$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
+| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6.1](/monograph/rules/dynamics/4.4/#4.4.6.1) |
 | $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.3989$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
-| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
-| $\chi(\boldsymbol{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1.1](/monograph/rules/dynamics/4.5/#4.5.1.1) |
+| $\chi_{\mathrm{add}}(s_a), \chi_{\mathrm{del}}(s_c)$ | Mode-separated Catalytic Tension Factors | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $P_{\mathrm{acc}}$ | Addition Proposal Probability | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
 | $P_{\mathrm{del}}$ | Deletion Proposal Probability | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
-| $\mathcal{U}$ | Universal Evolution Operator ($\mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{A}$ | Awareness Diagnostic Mapping | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{P}_{\mathrm{prop}}$ | Stochastic Proposal Kernel | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{M}$ | Addition Merge Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{D}$ | Deletion Excision Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G \to G')$ | Transition Probability | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
+| $\mathbb{P}_{\text{acc,thermo}}$ | Base Thermodynamic Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
+| $T_c$ | Critical vacuum temperature normalization ($\ln 2$) | [§4.5.6.1](/monograph/rules/dynamics/4.5/#4.5.6.1) |
+| $\mathbb{P}_{\text{del,thermo}}$ | Base Thermodynamic Deletion Probability | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
+| $\mathcal{U}(G, \xi)$ | Four-stage Evolution Operator on snapshot $G$ and realization $\xi$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{A}(G)$ | Enumerated legal 2-path addition sites | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $s_G(v)$ | Directed 3-cycle incidence count at vertex $v$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $p_a, q_c$ | Mode-separated addition and triangle-deletion trial probabilities | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $B_{\mathrm{filt}}$ | Reciprocal-filtered accepted addition edge set | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $D$ | Aggregated deleted edge set excised after merge | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\Pr(\xi \mid G), K(G, G')$ | Realization probability law and Markov graph transition kernel | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
 | $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
