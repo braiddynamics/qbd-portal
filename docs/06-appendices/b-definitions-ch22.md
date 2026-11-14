@@ -155,7 +155,7 @@ $$
 Substituting numerical constants $\mu_0 \approx 0.39894$, $\rho_{\text{crit}} \approx 0.41781$, and $\lambda_{\text{cat}} \approx 1.71828$:
 
 $$
-\mathcal{J}(\rho_{\text{crit}}) \approx \left[7.520 - (0.0156 + 1.571 + J_{\text{infall}})\right](0.3679) - 0.500 - 4.307
+\mathcal{J}(\rho_{\text{crit}}) \approx \left[7.520 - (0.015625 + 1.571 + J_{\text{infall}})\right](0.3679) - 0.500 - 4.307
 $$
 
 $$
@@ -555,7 +555,7 @@ def run_collapse_saturation_dynamics():
             "Time t": f"{t:.1f}",
             "Radius r (ell_0)": f"{r:.2f}",
             "Velocity v": f"{v:.3f}",
-            "Density rho_3": f"{rho:.4f}",
+            "Density rho_3": f"{rho:.6f}",
             "rho / rho_crit": f"{(rho / rho_crit):.4f}",
             "Ollivier K": f"{k_ollivier:.4f}",
             "Curvature R": f"{scalar_r:.4f}",

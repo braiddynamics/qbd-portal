@@ -146,8 +146,8 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Delta S_{\mathrm{close}}$ | Entropy of Closure ($\ln 2$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
 | $\varepsilon_0$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
 | $\Lambda_0$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6.1](/monograph/rules/dynamics/4.4/#4.4.6.1) |
-| $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.3989$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
+| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.718282$) | [§4.4.6.1](/monograph/rules/dynamics/4.4/#4.4.6.1) |
+| $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.398942$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
 | $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1.1](/monograph/rules/dynamics/4.5/#4.5.1.1) |
 | $\chi_{\mathrm{add}}(s_a), \chi_{\mathrm{del}}(s_c)$ | Mode-separated Catalytic Tension Factors | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
@@ -420,10 +420,10 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\rho(t)$ | Intensive 3-cycle density ($N_3(t)/\|V(t)\|$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
 | $F(\rho)$ | Master Equation intensive rate function ($(\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
 | $\lambda_{\text{cat}}$ | Catalytic deletion coupling parameter | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
-| $\mu$ | Steric hindrance / homeostatic friction parameter ($=0.399$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
+| $\mu$ | Steric hindrance / homeostatic friction parameter ($=1/\sqrt{2\pi} \approx 0.398942$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
 | $\rho_0$ | Frictionless cycle growth threshold density ($> 1/18 \approx 0.0556$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
 | $\rho_c$ | Exact unpumped critical nucleation barrier ($=\frac{1}{24-6e} \approx 0.130$) | [§18.3.2.1](/monograph/output/inflation/18.3/#18.3.2.1) |
-| $\rho^*$ | Homeostatic stable fixed-point attractor density ($\approx 0.0370$) | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
+| $\rho^*$ | Homeostatic stable fixed-point attractor density ($\approx 0.037061$) | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
 | $\varepsilon$ | First inflationary slow-roll parameter ($-\dot{H}/H^2 \approx 0.0125$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
 | $\eta$ | Second inflationary slow-roll parameter ($-\ddot{\rho}/(H\dot{\rho}) \approx 0.0050$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
 | $n_s$ | Primordial scalar spectral index ($= 1 - 2\varepsilon - 2\eta \approx 0.965$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
@@ -507,7 +507,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\hat{H}_{\text{Ryd}}$ | Driven-dissipative Rydberg blockade Hamiltonian | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
 | $R_b$ | Rydberg blockade exclusion radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
 | $R_{\text{fac}}$ | Rydberg facilitation resonance radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
-| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
+| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037061$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
 | $\beta_{\text{DP}}$ | Directed percolation critical order parameter exponent | [§23.1.4](/monograph/conclusion/universality/23.1/#23.1.4) |
 | $S_v, S_p$ | Trivalent stabilizer vertex divergence and plaquette flux checks | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
 | $\hat{U}_{\text{synd}}$ | Transpiled trivalent stabilizer syndrome extraction operator | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |

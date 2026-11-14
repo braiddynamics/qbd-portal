@@ -15,7 +15,7 @@ def verify_gauge_coupling_consistency():
     # Derivation: 3 (Cycle Orientations) * 2 (Doublet States) + 1 (Spin Stabilizer)
     M_SU2 = 7 
     
-    # Equilibrium Equilibrium Vacuum Density (Rho*)
+    # Discrete-Ensemble Unconditioned Vacuum Density (<rho>_all)
     # Source: section 5.3 (§5.3) (Parameter Sweep Results)
     # Mean density of the Region of Physical Viability (RPV)
     RHO_MEAN = 0.0290 
@@ -56,7 +56,7 @@ def verify_gauge_coupling_consistency():
     print("-" * 65)
     print(f"{'Alpha_topo':<25} | {ALPHA_TOPO:.4f}     | {'ln(2)/4'}")
     print(f"{'Multiplier (M)':<25} | {M_SU2}          | {'SU(2) DoF'}")
-    print(f"{'Equilibrium Density (rho)':<25} | {RHO_MEAN:.4f}     | {'+/- 0.0050'}")
+    print(f"{'Discrete Mean (<rho>)':<25} | {RHO_MEAN:.4f}     | {'+/- 0.0050'}")
     print("-" * 65)
     print(f"{'Predicted g (Mean)':<25} | {g_predicted_mean:.4f}     | {'Source: Thm 8.6.1'}")
     print(f"{'Experimental g (PDG)':<25} | {G_EXP_PDG:.4f}     | {'Benchmark'}")

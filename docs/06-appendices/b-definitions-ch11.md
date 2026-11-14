@@ -1123,7 +1123,7 @@ $$
 \mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v).
 $$
 
-This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
+This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037061$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
 
 **In Plain English:**  
 Section 11.3.1 formalizes the properties of the QBD definition regarding discrete einstein-hilbert action.

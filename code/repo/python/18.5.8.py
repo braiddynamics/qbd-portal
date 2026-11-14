@@ -9,13 +9,13 @@ def run_flatness_stabilization(initial_curvatures=[-0.5, -0.2, 0.2, 0.5], t_max=
     
     The spatial curvature obeys:
       Omega_k(t) = Omega_k0 * exp(J * t)
-      where the Jacobian eigenvalue at the stable attractor is J ≈ -0.33314.
+      where the Jacobian eigenvalue at the stable attractor is J ≈ -0.33292.
     """
     # 1. Vacuum Parameters
     Lambda = 0.015625
-    mu = 0.399
-    lcat = 1.718
-    rho_star = 0.037
+    mu = 1.0 / np.sqrt(2.0 * np.pi)
+    lcat = np.e - 1.0
+    rho_star = 0.037061
     
     # 2. Analytical Jacobian derivative calculation
     # F(rho) = (Lambda + 9*rho^2)*e^(-6*mu*rho) - 0.5*rho - 3*lcat*rho^2

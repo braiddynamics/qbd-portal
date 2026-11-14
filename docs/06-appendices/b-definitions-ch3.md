@@ -1658,8 +1658,7 @@ Section 3.2.13.1 formalizes the properties of the QBD proof regarding simplicial
 
 Let a finite outward tree on $N$ vertices have a root of outdegree three and all other internal vertices of outdegree two. Its initial leaves have no outgoing routes and number $L=(N+2)/2$, so $L/N\to1/2$ along increasing fragments, with the initial spatial support given by the fixed vertex set and its maximum depth.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.2.14 formalizes the properties of the QBD lemma regarding extensive leaf boundary of bethe fragments.
 
 ---
@@ -1712,8 +1711,7 @@ Section 3.2.14.1 formalizes the properties of the QBD proof regarding extensive 
 
 Let the faces be all directed triangles of a graph obtained by merging a batch. The edge ceiling is equivalent to checking at most two triangles at every merged edge and is preserved by deletion, while applying the same check to the final graph is exact there.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.2.15 formalizes the properties of the QBD lemma regarding full triangle incidence check.
 
 ---
@@ -1737,8 +1735,7 @@ For a final graph $F\subseteq M$ obtained by edge deletion, $\mathcal C_3(F)\sub
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.2.15.1 formalizes the properties of the QBD proof regarding full triangle incidence check.
 
 ---
@@ -1791,8 +1788,7 @@ Edge (3, 5): 1 supporting, 3 full
 
 The supporting-triangle test passes the batch, while complete incidence finds three faces at the indicated edge. The finite fixture checks the need to count interacting chords.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.2.15.2 formalizes the properties of the QBD calculation regarding interacting chord face counts.
 
 ---
@@ -1832,8 +1828,7 @@ The full face check evaluates a specified batch (**Full Triangle Incidence Check
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.2.16 formalizes the properties of the QBD proof regarding optimal vacuum.
 
 ---
@@ -2214,8 +2209,7 @@ The bound is uniform in the cutoff (**Scalability of the Scheduler** <Ref id="3.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.3.7.1 formalizes the properties of the QBD proof regarding scalability of the scheduler.
 
 ---
@@ -2227,8 +2221,7 @@ Section 3.3.7.1 formalizes the properties of the QBD proof regarding scalability
 
 Let the conflict support have degree at most $d\ge2$ and suppose each specified simple length-$r$ path from root $a$ is active with probability at most $p^r$. For integer $m\ge1$, the active component of $a$ has diameter at least $m$ with probability at most $d(d-1)^{r-1}p^r$, where $r=\lceil m/2\rceil$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.3.8 formalizes the properties of the QBD lemma regarding conditional conflict diameter tail.
 
 ---
@@ -2258,8 +2251,7 @@ At most $d$ first edges and $d-1$ subsequent choices give at most $d(d-1)^{r-1}$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.3.8.1 formalizes the properties of the QBD proof regarding conditional conflict diameter tail.
 
 ---
@@ -2283,8 +2275,7 @@ Work and span control parallel time under the stated premises (**Scalability of 
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.3.9 formalizes the properties of the QBD proof regarding preservation of automorphisms.
 
 ---
@@ -2339,8 +2330,7 @@ theorem parallel_update_preserves_symmetry {G X : Type} [Group G] [MulAction G X
 **Verification Summary:**
 The two typeclasses establish the minimal group-action framework required for the proof: `Group G` provides identity and multiplication, `MulAction G X` encodes the action of $G$ on the state space $X$ via the scalar-multiplication (smul) action. `IsSymmetricState x g` is the proposition that the group element $g$ fixes $x$, encoding the $+1$-eigenstate condition in abstract algebraic form. `IsEquivariantOperator G X f` is the proposition that $f$ commutes with the group action for all $g$ and $x$, the algebraic formulation of **Assumption A4 (Joint-Update Equivariance)** from **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. The algebraic proof unwraps both predicates via `unfold`, then applies the equivariance hypothesis in reverse (`rw [h_equiv.symm]`) to convert the target, and then applies the symmetry hypothesis (`rw [h_symm]`) to close the goal by definitional equality. The Lean kernel's acceptance of this three-step proof certifies that the property of being a symmetry state is closed under equivariant maps, providing the formal machine certificate for the **Preservation of Automorphisms** <Ref id="3.3.9" label="§3.3.9" />: any non-equivariant operator breaks the automorphism group invariant by definition, establishing the mandatory parallelism requirement as a provable algebraic necessity.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.3.10 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---
@@ -2568,8 +2558,7 @@ This proves the stated local probability (**Ignition Probability** <Ref id="3.4.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.5.1 formalizes the properties of the QBD proof regarding ignition probability.
 
 ---
@@ -2581,8 +2570,7 @@ Section 3.4.5.1 formalizes the properties of the QBD proof regarding ignition pr
 
 Let a local seeded fixture have one old triangle and two possible descendants selected independently with probability $p$, with an independent old-triangle deletion trial of probability $q$ choosing one of its edges uniformly. The probability that at least one of the three named triangles survives is $(1-q)+(2q/3)(2p-p^2)$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.6 formalizes the properties of the QBD lemma regarding one-tick seed-sector survival.
 
 ---
@@ -2626,8 +2614,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.6.1 formalizes the properties of the QBD proof regarding one-tick seed-sector survival.
 
 ---
@@ -2683,8 +2670,7 @@ Exact seed-sector survival: 57/100
 
 The enumeration confirms the exact union probability for the old seed and two named descendant events at the rational fixture.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.6.2 formalizes the properties of the QBD calculation regarding exact local survival enumeration.
 
 ---
@@ -2714,8 +2700,7 @@ The local probability for survival of any named triangle is computed separately 
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.7 formalizes the properties of the QBD proof regarding seeded geometrogenesis.
 
 ---
@@ -2777,8 +2762,7 @@ Analytic/enumerated difference: 5.551e-17
 **Conclusion:**
 All 16 local realizations have total mass one. The enumerated descendant-event probability equals the analytic product to numerical precision, and the expected surviving descendant count agrees with the independent-trial expression. These values validate the local seeded probability calculation without asserting a macroscopic burst, a long-time survival probability or a nucleation-barrier crossing.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 3.4.7.1 formalizes the properties of the QBD calculation regarding simulated ignition trajectories.
 
 ---

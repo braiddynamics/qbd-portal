@@ -1,11 +1,11 @@
 ------------------------------------------------------------------------------
 Section 21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance
 ------------------------------------------------------------------------------
-Attractor Fixed Point rho*: 0.0370
-Creation Current J+: 0.025577 cycles/tick/node
-Deletion Current J-: 0.032612 cycles/tick/node
-Jacobian Derivatives: dJ+/drho = 0.54831, dJ-/drho = 1.26279
-Jacobian Stability Eigenvalue J: -0.71448 (< 0, asymptotically stable)
+Attractor Fixed Point rho*: 0.037061
+Creation Current J+: 0.025611 cycles/tick/node
+Deletion Current J-: 0.025611 cycles/tick/node
+Jacobian Derivatives: dJ+/drho = 0.54916, dJ-/drho = 0.88209
+Jacobian Stability Eigenvalue J: -0.33292 (< 0, asymptotically stable)
 Holographic Vacuum Density rho_vac: 3.67e-47 GeV^4 (Ratio to Planck: 1.65e-123)
 ------------------------------------------------------------------------------
 |   Scale Factor a |   Redshift z |   rho_vac (a) |   rho_mat (a) |   P_vac (a) |   EOS w(a) |   |w - (-1)| |

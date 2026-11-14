@@ -1117,7 +1117,7 @@ theorem triad_interaction_ports_is_six :
 /--
 THEOREM 9.5: Simplicial Permittivity Microstate Space
 Proves that 6 independent binary routing ports generate a microstate configuration space
-of 2^6 = 64 states, establishing the theoretical simplicial vacuum drive Λ_theory = 2^-6 = 1/64 (Theorem 4.4.1).
+of 2^6 = 64 states, establishing the theoretical simplicial vacuum drive Λ₀ = 2^-6 = 1/64 (Theorem 4.4.1).
 -/
 theorem simplicial_permittivity_scale :
     2 ^ (triad_interaction_ports 3) = 64 := by
@@ -1129,9 +1129,10 @@ def vertex_cycle_density_sum (density : Fin 3 → Nat) : Nat :=
 
 /--
 THEOREM 9.6: Homogeneous Triad Stress in Cycle Density Foam
-Proves that in a homogeneous topological foam where each vertex has local cycle density σ = 2,
-the total interaction stress evaluated across the candidate triad is exactly 2 + 2 + 2 = 6,
-formally deriving the factor 6 in the exponential steric hindrance term e^(-6*mu*rho) (Section 5.1).
+Proves that in a homogeneous topological foam where each vertex carries local cycle incidence σ = 2,
+the 3-vertex triad addition stress s_add(v,w,u) = ∑_{x ∈ {v,w,u}} s_G(x) evaluated across the
+candidate triad is 2 + 2 + 2 = 6 (Section 4.5.2), matching the scalar closure s_cl(ρ) = 6ρ
+in the continuum steric hindrance factor e^(-6*mu*rho) (Section 5.2).
 -/
 theorem homogeneous_triad_stress_sum :
     vertex_cycle_density_sum (fun _ => 2) = 6 := by

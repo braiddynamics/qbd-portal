@@ -168,8 +168,7 @@ Section 5.1.3.1 formalizes the properties of the QBD proof regarding correlation
 
 Let $(X,Y)$ have a nondegenerate joint Gaussian law with covariance blocks $A,B$ and cross-covariance $C$. For $M=A^{-1/2}CB^{-1/2}$ with singular values $s_j<1$, the mutual information is $-\frac12\sum_j\log(1-s_j^2)$ and is at most $\|M\|_{\mathrm F}^2/(2(1-s_*^2))$ when all $s_j\le s_*<1$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.1.4 formalizes the properties of the QBD lemma regarding gaussian mutual information.
 
 ---
@@ -272,8 +271,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.1.4.1 formalizes the properties of the QBD proof regarding gaussian mutual information.
 
 ---
@@ -307,8 +305,7 @@ The walk sum is an upper bound under path domination (**Correlation Decay** <Ref
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.1.5 formalizes the properties of the QBD proof regarding extensive entropy.
 
 ---
@@ -353,8 +350,7 @@ for blocks in (2, 4, 8, 16):
 
 The explicit shared-bit law confirms the total-correlation decomposition and shows the diminishing correction per block position.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.1.5.1 formalizes the properties of the QBD calculation regarding boundary correction.
 
 ---
@@ -666,11 +662,11 @@ Section 5.2.5.1 formalizes the properties of the QBD proof regarding frictional 
 Computational verification of the exponential damping relation established by **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5.1" label="§5.2.5.1" /> is based on the following protocols:
 
 1.  **Directed Substrate Construction:** For controlled directed 3-cycle densities $\rho \in [0.02, 0.20]$ ($N = 1000$, $10$ trials per density), the algorithm constructs directed substrates obeying the PUC port bounds $k_{\mathrm{in}} \le 3$ and $k_{\mathrm{out}} \le 3$ by combining sparse acyclic DAG chords with planted non-colliding directed 3-cycles, tracking exact vertex 3-cycle stress $s_G(v)$.
-2.  **Unbiased Pair and PUC 2-Path Sampling:** The protocol evaluates endpoint stress $s_a = s_G(u) + s_G(v)$ and microscopic acceptance $P_{\mathrm{acc}}(s_a) = e^{-\mu_0 s_a}$ ($\mu_0 = 1/\sqrt{2\pi}$) over both random vertex pairs $(u, v)$ and all PUC-legal open 2-paths $v \to w \to u$ eligible for closure $u \to v$.
-3.  **Exponential Fitting and Jensen Gap Check:** The metric fits both deterministic mean-stress closures $e^{-\mu_0 \mathbb{E}[s_a]}$ and ensemble averages $\mathbb{E}[e^{-\mu_0 s_a}]$ to $A \cdot e^{-B\rho}$, comparing $B$ against $6\mu_0$ and the Poisson cumulant $6(1 - e^{-\mu_0})$ while verifying the strict Jensen separation of the underlying exponential moment inequality.
+2.  **Unbiased Triad and PUC 2-Path Sampling:** The protocol evaluates the 3-vertex triad stress $s_a(v, w, u) = s_G(v) + s_G(w) + s_G(u)$ and microscopic acceptance $P_{\mathrm{acc}}(s_a) = e^{-\mu_0 s_a}$ ($\mu_0 = 1/\sqrt{2\pi}$) over both unbiased random 3-vertex triples $(v, w, u)$ and all PUC-legal open 2-paths $v \to w \to u$ eligible for closure $u \to v$.
+3.  **Exponential Fitting and Jensen Gap Check:** The metric fits both deterministic mean-stress closures $e^{-\mu_0 \mathbb{E}[s_a]}$ and ensemble averages $\mathbb{E}[e^{-\mu_0 s_a}]$ to $A \cdot e^{-B\rho}$, comparing unbiased triad exponents against $9\mu_0$ and the Poisson cumulant $9(1 - e^{-\mu_0})$ alongside the port-conditioned 2-path measurements around the constitutive $6\mu_0$ closure while verifying strict Jensen separation.
 
 ```python
-"""Measure 3-cycle endpoint stress friction exp(-mu_0 * s_a) and Jensen gaps across directed k_in, k_out <= 3 graphs."""
+"""Measure 3-vertex triad stress friction exp(-mu_0 * s_a) and Jensen gaps across directed k_in, k_out <= 3 graphs."""
 
 import numpy as np
 from scipy.optimize import curve_fit
@@ -725,29 +721,30 @@ def build_directed_substrate(N, target_rho, rng):
 
 
 def measure_steric_friction(N=1000, n_trials=10, seed=42):
-    """Measure endpoint 3-cycle stress and exponential damping across rho targets."""
+    """Measure 3-vertex triad stress and exponential damping across rho targets."""
     rng = np.random.default_rng(seed)
     exp_model = lambda x, a, b: a * np.exp(-b * x)
 
     rho_means = []
-    pair_cl, pair_ens = [], []
+    triad_cl, triad_ens = [], []
     path_cl, path_ens = [], []
 
     for rho_t in RHOS:
-        ar, ap, ep, a2, e2 = [], [], [], [], []
+        ar, atc, ate, a2, e2 = [], [], [], [], []
         for _ in range(n_trials):
             out_adj, in_adj, stress, r_act = build_directed_substrate(N, rho_t, rng)
             ar.append(r_act)
 
-            # 1. Unbiased candidate vertex pairs (u != v)
-            us = rng.integers(0, N, size=3000)
+            # 1. Unbiased candidate 3-vertex triads (distinct v, w, u)
             vs = rng.integers(0, N, size=3000)
-            mask = us != vs
-            s_pair = stress[us[mask]] + stress[vs[mask]]
-            ap.append(np.exp(-MU_0 * np.mean(s_pair)))
-            ep.append(np.mean(np.exp(-MU_0 * s_pair)))
+            ws = rng.integers(0, N, size=3000)
+            us = rng.integers(0, N, size=3000)
+            mask = (vs != ws) & (ws != us) & (us != vs)
+            s_triad = stress[vs[mask]] + stress[ws[mask]] + stress[us[mask]]
+            atc.append(np.exp(-MU_0 * np.mean(s_triad)))
+            ate.append(np.mean(np.exp(-MU_0 * s_triad)))
 
-            # 2. All PUC-legal open 2-paths v -> w -> u (closing edge u -> v)
+            # 2. All PUC-legal open 2-paths v -> w -> u (closing edge u -> v; triad stress on {v, w, u})
             s_2p = []
             for w in range(N):
                 for v in in_adj[w]:
@@ -755,56 +752,57 @@ def measure_steric_friction(N=1000, n_trials=10, seed=42):
                         continue
                     for u in out_adj[w]:
                         if u != v and len(out_adj[u]) < 3 and v not in out_adj[u] and u not in out_adj[v]:
-                            s_2p.append(stress[u] + stress[v])
+                            s_2p.append(stress[v] + stress[w] + stress[u])
             arr_2p = np.array(s_2p, dtype=float)
             a2.append(np.exp(-MU_0 * np.mean(arr_2p)))
             e2.append(np.mean(np.exp(-MU_0 * arr_2p)))
 
         rho_means.append(float(np.mean(ar)))
-        pair_cl.append(float(np.mean(ap)))
-        pair_ens.append(float(np.mean(ep)))
+        triad_cl.append(float(np.mean(atc)))
+        triad_ens.append(float(np.mean(ate)))
         path_cl.append(float(np.mean(a2)))
         path_ens.append(float(np.mean(e2)))
 
     xs = np.array(rho_means)
     fits = {}
     for label, ys in [
-        ("pair_cl", pair_cl),
-        ("pair_ens", pair_ens),
+        ("triad_cl", triad_cl),
+        ("triad_ens", triad_ens),
         ("path_cl", path_cl),
         ("path_ens", path_ens),
     ]:
         popt, _ = curve_fit(exp_model, xs, np.array(ys), p0=[1.0, 2.0])
         fits[label] = (float(popt[0]), float(popt[1]))
 
-    return xs, pair_cl, pair_ens, path_cl, path_ens, fits
+    return xs, triad_cl, triad_ens, path_cl, path_ens, fits
 
 
 def main():
     N = 1000
     n_trials = 10
-    xs, pair_cl, pair_ens, path_cl, path_ens, fits = measure_steric_friction(N=N, n_trials=n_trials)
+    xs, triad_cl, triad_ens, path_cl, path_ens, fits = measure_steric_friction(N=N, n_trials=n_trials)
 
-    b_theory_cl = 6.0 * MU_0
-    b_theory_ens = 6.0 * (1.0 - np.exp(-MU_0))
-    jensen_ok = all(pe > pc for pe, pc in zip(pair_ens, pair_cl)) and all(pe > pc for pe, pc in zip(path_ens, path_cl))
+    b_triad_cl = 9.0 * MU_0
+    b_triad_ens = 9.0 * (1.0 - np.exp(-MU_0))
+    b_constit_cl = 6.0 * MU_0
+    jensen_ok = all(pe > pc for pe, pc in zip(triad_ens, triad_cl)) and all(pe > pc for pe, pc in zip(path_ens, path_cl))
 
-    print("=" * 74)
-    print("Directed 3-Cycle Friction and Jensen Separation Measurements (k_in, k_out <= 3)")
-    print("=" * 74)
+    print("=" * 78)
+    print("Directed 3-Vertex Triad Friction and Jensen Separation (k_in, k_out <= 3)")
+    print("=" * 78)
     print(f"Substrate Size (N):   {N} | Trials/Density: {n_trials} | mu_0: {MU_0:.6f}")
-    print(f"Theory 6*mu_0:        {b_theory_cl:.6f} | Theory 6*(1 - exp(-mu_0)): {b_theory_ens:.6f}")
-    print("-" * 74)
-    print("   rho   | pair exp(-mu*E[s]) | pair E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]")
-    print("-" * 74)
-    for r, pc, pe, tc, te in zip(xs, pair_cl, pair_ens, path_cl, path_ens):
-        print(f"  {r:.4f} |      {pc:.6f}      |      {pe:.6f}      |       {tc:.6f}       |       {te:.6f}")
-    print("-" * 74)
-    print(f"Unbiased Pair Closure Fit : A = {fits['pair_cl'][0]:.6f}, B = {fits['pair_cl'][1]:.6f}")
-    print(f"Unbiased Pair Ensemble Fit: A = {fits['pair_ens'][0]:.6f}, B = {fits['pair_ens'][1]:.6f}")
-    print(f"Open 2-Path Closure Fit   : A = {fits['path_cl'][0]:.6f}, B = {fits['path_cl'][1]:.6f}")
-    print(f"Open 2-Path Ensemble Fit  : A = {fits['path_ens'][0]:.6f}, B = {fits['path_ens'][1]:.6f}")
-    print(f"Strict Jensen Inequality  : {'PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)' if jensen_ok else 'FAIL'}")
+    print(f"Unbiased 9*mu_0:      {b_triad_cl:.6f} | Poisson 9*(1-exp(-mu_0)): {b_triad_ens:.6f} | Closure 6*mu_0: {b_constit_cl:.6f}")
+    print("-" * 78)
+    print("   rho   | triad exp(-mu*E[s]) | triad E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]")
+    print("-" * 78)
+    for r, tc, te, pc, pe in zip(xs, triad_cl, triad_ens, path_cl, path_ens):
+        print(f"  {r:.4f} |       {tc:.6f}      |       {te:.6f}      |       {pc:.6f}       |       {pe:.6f}")
+    print("-" * 78)
+    print(f"Unbiased Triad Closure Fit : A = {fits['triad_cl'][0]:.6f}, B = {fits['triad_cl'][1]:.6f}")
+    print(f"Unbiased Triad Ensemble Fit: A = {fits['triad_ens'][0]:.6f}, B = {fits['triad_ens'][1]:.6f}")
+    print(f"Open 2-Path Closure Fit    : A = {fits['path_cl'][0]:.6f}, B = {fits['path_cl'][1]:.6f}")
+    print(f"Open 2-Path Ensemble Fit   : A = {fits['path_ens'][0]:.6f}, B = {fits['path_ens'][1]:.6f}")
+    print(f"Strict Jensen Inequality   : {'PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)' if jensen_ok else 'FAIL'}")
 
 
 if __name__ == "__main__":
@@ -814,32 +812,32 @@ if __name__ == "__main__":
 **Simulation Results:**
 
 ```text
-==========================================================================
-Directed 3-Cycle Friction and Jensen Separation Measurements (k_in, k_out <= 3)
-==========================================================================
+==============================================================================
+Directed 3-Vertex Triad Friction and Jensen Separation (k_in, k_out <= 3)
+==============================================================================
 Substrate Size (N):   1000 | Trials/Density: 10 | mu_0: 0.398942
-Theory 6*mu_0:        2.393654 | Theory 6*(1 - exp(-mu_0)): 1.973823
---------------------------------------------------------------------------
-   rho   | pair exp(-mu*E[s]) | pair E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]
---------------------------------------------------------------------------
-  0.0200 |      0.953403      |      0.961376      |       0.954093       |       0.961980
-  0.0400 |      0.908667      |      0.923881      |       0.914799       |       0.929077
-  0.0600 |      0.866074      |      0.888161      |       0.876011       |       0.896426
-  0.0800 |      0.824991      |      0.852984      |       0.839763       |       0.865633
-  0.1000 |      0.786087      |      0.820234      |       0.810585       |       0.840469
-  0.1200 |      0.749614      |      0.788863      |       0.779616       |       0.813901
-  0.1600 |      0.679582      |      0.727602      |       0.736766       |       0.777112
-  0.1820 |      0.645805      |      0.700111      |       0.722536       |       0.766123
---------------------------------------------------------------------------
-Unbiased Pair Closure Fit : A = 1.000586, B = 2.410472
-Unbiased Pair Ensemble Fit: A = 0.999501, B = 1.971300
-Open 2-Path Closure Fit   : A = 0.977956, B = 1.778218
-Open 2-Path Ensemble Fit  : A = 0.980907, B = 1.457268
-Strict Jensen Inequality  : PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)
+Unbiased 9*mu_0:      3.590481 | Poisson 9*(1-exp(-mu_0)): 2.960735 | Closure 6*mu_0: 2.393654
+------------------------------------------------------------------------------
+   rho   | triad exp(-mu*E[s]) | triad E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]
+------------------------------------------------------------------------------
+  0.0200 |       0.930655      |       0.942460      |       0.924053       |       0.942059
+  0.0400 |       0.867972      |       0.889757      |       0.854718       |       0.887636
+  0.0600 |       0.807018      |       0.837777      |       0.799536       |       0.842828
+  0.0800 |       0.753167      |       0.792201      |       0.745502       |       0.802076
+  0.1000 |       0.700628      |       0.744687      |       0.700530       |       0.761933
+  0.1200 |       0.651372      |       0.702852      |       0.662119       |       0.731049
+  0.1600 |       0.561567      |       0.622409      |       0.603880       |       0.682251
+  0.1835 |       0.518509      |       0.586598      |       0.583885       |       0.668210
+------------------------------------------------------------------------------
+Unbiased Triad Closure Fit : A = 1.001410, B = 3.589191
+Unbiased Triad Ensemble Fit: A = 0.999632, B = 2.931525
+Open 2-Path Closure Fit    : A = 0.959706, B = 2.934083
+Open 2-Path Ensemble Fit   : A = 0.966743, B = 2.190604
+Strict Jensen Inequality   : PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)
 ```
 
 **Conclusion:**
-Directly measuring endpoint 3-cycle stress $s_a = s_G(u) + s_G(v)$ on directed $k_{\mathrm{in}}, k_{\mathrm{out}} \le 3$ causal substrates reproduces the closed deterministic damping exponent $B \approx 2.410472$ (analytic $6\mu_0 \approx 2.393654$) and the exact Poisson cumulant ensemble decay $B_{\mathrm{ens}} \approx 1.971300$ (analytic $6(1 - e^{-\mu_0}) \approx 1.973823$) for unbiased pairs. Over PUC-legal open 2-paths $v \to w \to u$, port-capacity blocking flattens the effective exponent ($B \approx 1.778218$, ensemble $1.457268$) while preserving $\mathbb{E}[e^{-\mu_0 s_a}] > e^{-\mu_0 \mathbb{E}[s_a]}$ across every density, directly confirming both **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> and the fluctuation gap of the exponential moment analysis.
+Directly measuring the 3-vertex triad stress $s_a(v, w, u) = s_G(v) + s_G(w) + s_G(u)$ on directed $k_{\mathrm{in}}, k_{\mathrm{out}} \le 3$ causal substrates reproduces the closed unbiased triad exponent $B \approx 3.589191$ (analytic $9\mu_0 \approx 3.590481$) and the exact Poisson cumulant ensemble decay $B_{\mathrm{ens}} \approx 2.931525$ (analytic $9(1 - e^{-\mu_0}) \approx 2.960735$). Over PUC-legal open 2-paths $v \to w \to u$, port-capacity blocking flattens the effective exponent ($B \approx 2.934083$, ensemble $2.190604$, straddling the constitutive scalar closure $6\mu_0 \approx 2.393654$) while preserving $\mathbb{E}[e^{-\mu_0 s_a}] > e^{-\mu_0 \mathbb{E}[s_a]}$ across every density, directly confirming both **Frictional Suppression ($P_{acc}$)** <Ref id="5.2.5" label="§5.2.5" /> and the fluctuation gap of the exponential moment analysis.
 
 **In Plain English:**  
 Section 5.2.5.2 formalizes the properties of the QBD calculation regarding friction verification.
@@ -1254,7 +1252,7 @@ Section 5.2.7.2 formalizes the properties of the QBD calculation regarding jump 
 Let $d$ be the original root depth on an outward tree. A return chord closing an original two-path $v\to w\to u$ moves from depth $d(u)$ to $d(u)-2$.
 
 **In Plain English:**  
-Section 5.2.8 formalizes the properties of the QBD lemma regarding initial-depth return bound.
+Section 5.2.8 formalizes the properties of the QBD lemma regarding initial-depth chord bound.
 
 ---
 
@@ -1285,7 +1283,7 @@ The return edge is $(u,v)$. Its depth increment is $d(v)-d(u)=-2$.
 Q.E.D.
 
 **In Plain English:**  
-Section 5.2.8.1 formalizes the properties of the QBD proof regarding initial-depth return bound.
+Section 5.2.8.1 formalizes the properties of the QBD proof regarding initial-depth chord bound.
 
 ---
 
@@ -1907,7 +1905,7 @@ Section 5.3.4 formalizes the properties of the QBD definition regarding viabilit
 
 Algorithmic verification of the theoretical prior coordinates established by **Viability Channel** <Ref id="5.3.4" label="§5.3.4" /> and **Phase Space Sweep** <Ref id="5.3.3" label="§5.3.3" /> is based on the following protocols:
 
-1.  **Analytical Invariant Synthesis:** The evaluation computes the microscopic constants anchored to the canonical reference priors: base conversion modulus $\beta_c = \ln 2$, thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$, catalytic defect relaxation $\lambda_0 = e - 1$, elementary geometric quantum energy $\epsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$, and driven cosmological flux $\Lambda_0 = 2^{-6}$.
+1.  **Analytical Invariant Synthesis:** The evaluation computes the microscopic constants anchored to the canonical reference priors: base conversion modulus $\beta_c = \ln 2$, thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$, catalytic defect relaxation $\lambda_0 = e - 1$, elementary geometric quantum energy $\varepsilon_0 = \frac{\ln 2}{3}$, and driven cosmological flux $\Lambda_0 = 2^{-6}$.
 2.  **Three-Regime Scalar Root Classification:** The solver evaluates the critical unpumped barrier $\rho_c = \frac{1}{24 - 6e} \approx 0.130034$, the saddle-node limit $\mu_{\mathrm{crit}} = \frac{(9 - 3\lambda_0)^2}{108} \approx 0.136900$, the negative homogeneous discriminant $\Delta(\mu_0, \lambda_0) \approx -28.300553$, and all positive fixed points and linearized Jacobians across the driven undamped, unpumped symmetric, driven symmetric, and unit-offset closures.
 3.  **Bethe-Tree Threshold Check:** The benchmark computes the isolated cycle deletion probability $Q_{\mathrm{del}}(2) \approx 0.998849$ together with the Bethe-tree ($b=2$) Pemantle-Liggett thresholds $[\lambda_{c1}, \lambda_{c2}] \approx [0.353553, 0.750000]$, checking both $\mu_0 > \mu_{\mathrm{crit}}$ and weak-survival placement $\lambda_{c1} \le \hat{\lambda}_{\mathrm{eff}} \approx 0.443889 < \lambda_{c2}$.
 
@@ -2740,8 +2738,7 @@ Section 5.5.3.3 formalizes the properties of the QBD calculation regarding degre
 
 Let the old simple oriented graph have maximum total degree $\Delta\ge2$ and let $v$ belong to $k$ directed triangles. If each such triangle triggers a uniform edge deletion with probability at least $q_{\min}(\Delta)$, then the expected number of distinct deleted edges incident at $v$ is at least $2q_{\min}(\Delta)k/[3(\Delta-1)]$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.4 formalizes the properties of the QBD lemma regarding distinct incident deletion bound.
 
 ---
@@ -2787,8 +2784,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.4.1 formalizes the properties of the QBD proof regarding distinct incident deletion bound.
 
 ---
@@ -2846,8 +2842,7 @@ Multiplicity-corrected lower bound: 2/5
 
 The common edge can be selected twice. The enumeration confirms the multiplicity-corrected lower bound on the distinct deletion expectation for this fixture.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.4.2 formalizes the properties of the QBD calculation regarding deletion collision enumeration.
 
 ---
@@ -2859,8 +2854,7 @@ Section 5.5.4.2 formalizes the properties of the QBD calculation regarding delet
 
 Let the scalar scar count model satisfy $S'(t)=\nu(S_\infty-S(t))$ with constant $\nu>0$ and $S(0)=S_0$. Then $S(t)=S_\infty+(S_0-S_\infty)e^{-\nu t}$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.5 formalizes the properties of the QBD lemma regarding conditional scar saturation law.
 
 ---
@@ -2904,8 +2898,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.5.1 formalizes the properties of the QBD proof regarding conditional scar saturation law.
 
 ---
@@ -2923,8 +2916,7 @@ $$
 
 where $C_1 = 2$ is the explicit bound derived from the diameter of the local neighborhood. This bound limits the discrete curvature, a necessary condition for metric pre-compactness.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.6 formalizes the properties of the QBD lemma regarding uniform curvature bound.
 
 ---
@@ -3003,8 +2995,7 @@ The constant is independent of the graph size and of the particular one-hop prob
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.6.1 formalizes the properties of the QBD proof regarding uniform curvature bound.
 
 ---
@@ -3016,8 +3007,7 @@ Section 5.5.6.1 formalizes the properties of the QBD proof regarding uniform cur
 
 Let local observables satisfy a nonnegative walk-sum domination of their absolute covariance with conditional step weight at most $p$ on a degree-$D$ support. For $D\ge2$ and $q=(D-1)p<1$, the covariance is bounded above in absolute value by $ADp\,q^{r-1}/(1-q)$ for vertices at distance $r\ge1$, where $A$ is the prefactor of the domination.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.7 formalizes the properties of the QBD lemma regarding correlation decay.
 
 ---
@@ -3077,8 +3067,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.7.1 formalizes the properties of the QBD proof regarding correlation decay.
 
 ---
@@ -3090,8 +3079,7 @@ Section 5.5.7.1 formalizes the properties of the QBD proof regarding correlation
 
 Let the absolute covariance sums of $N$ local observables obey $\sup_x\sum_y|\operatorname{Cov}(f(x),f(y))|\le C$ uniformly. The variance of their average is at most $C/N$, giving convergence in probability of the average minus its mean to zero.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.7.2 formalizes the properties of the QBD corollary regarding controlled fluctuations.
 
 ---
@@ -3136,8 +3124,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.7.3 formalizes the properties of the QBD proof regarding correlation decay.
 
 ---
@@ -3149,8 +3136,7 @@ Section 5.5.7.3 formalizes the properties of the QBD proof regarding correlation
 
 Let a fixed $N$-vertex candidate support have maximum outdegree $D\ge1$ and suppose each specified simple directed cycle of length $k$ is present with probability at most $p^k$. For $0<Dp<1$, the expected number of cycles of length at least $L$ is at most $N(Dp)^L/(1-Dp)$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.8 formalizes the properties of the QBD lemma regarding long-cycle tail.
 
 ---
@@ -3182,8 +3168,7 @@ For $L\ge(1+\epsilon)\log N/(-\log(Dp))$, this is at most $N^{-\epsilon}/(1-Dp)$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.8.1 formalizes the properties of the QBD proof regarding long-cycle tail.
 
 ---
@@ -3195,8 +3180,7 @@ Section 5.5.8.1 formalizes the properties of the QBD proof regarding long-cycle 
 
 Let a graph with integer graph distance have two-sided vertex counts $c m^d\le |B_m(x)|\le C m^d$ for integer radii $1\le m\le r_0/a$, and let the metric and counting mass be rescaled by $a$ and $a^d$. For closed balls at $a\le r\le r_0$, the rescaled mass is bounded between $2^{-d}c r^d$ and $C r^d$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.9 formalizes the properties of the QBD lemma regarding conditional ball growth.
 
 ---
@@ -3239,8 +3223,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.9.1 formalizes the properties of the QBD proof regarding conditional ball growth.
 
 ---
@@ -3252,8 +3235,7 @@ Section 5.5.9.1 formalizes the properties of the QBD proof regarding conditional
 
 Let $N\ge3$ points be iid from a normalized volume measure of unnormalized volume $V_0$. The count in a fixed diamond of volume $V$ is binomial with $N$ trials and probability $V/V_0$, while the open interval of two sampled fixed-index endpoints uses $N-2$ trials with its conditional volume, and both satisfy the binomial Bernstein bound.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.10 formalizes the properties of the QBD lemma regarding iid diamond count concentration.
 
 ---
@@ -3319,8 +3301,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.10.1 formalizes the properties of the QBD proof regarding iid diamond count concentration.
 
 ---
@@ -3380,8 +3361,7 @@ Synthetic statistic 0.0501: estimated dimension 3.9976
 
 The inversion confirms the prescribed calibration at dimension four, while the nearby synthetic input illustrates sensitivity to the statistic.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.10.3 formalizes the properties of the QBD calculation regarding myrheim-meyer dimension estimator.
 
 ---
@@ -3443,8 +3423,7 @@ Covariance and cycle tails use their respective ensemble premises (**Correlation
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.11 formalizes the properties of the QBD proof regarding geometric well-posedness.
 
 ---
@@ -3555,8 +3534,7 @@ theorem scar_multi_tick_induction {V : Type}
 **Verification Summary:**
 The formalization models topological scar permanence and stationarity under empty move sets over arbitrary graph types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `scar_edges_immune_to_deletion` certifies that non-cyclic background edges are identically excluded from legal deletion proposals, while `acyclic_dag_deletion_empty` confirms that deletion sets vanish completely on acyclic substrates. Theorem `scar_multi_tick_induction` validates by natural induction that scar edges persist indefinitely across arbitrary tick sequences, and `absorbing_state_stationary` verifies that the scheduler transition collapses to the stationary identity map when proposals vanish. The Lean type-checker's acceptance of these machine-checked proofs certifies the pre-compact topological stability of the discrete causal substrate under **Bounded Degree** <Ref id="5.5.3" label="§5.5.3" />.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 5.5.12 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

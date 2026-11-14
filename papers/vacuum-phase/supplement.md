@@ -46,7 +46,7 @@ date: "February 2025"
 
 # Appendix A. Verified Lean 4 Formal Kernel Specifications
 
-This appendix presents the complete, machine-checked Lean 4 formalization defining the axiomatic primitives (Axioms 1–3), geometric well-foundedness, comonadic algebraic rigidity, legal move grammar (PUC and AEC), dynamic non-interference, concurrent addition confluence, automorphism preservation under maximal parallelism, absorbing-state stationarity, non-cyclic scar permanence, Category Hist cumulative trajectory indelibility, edge timestamp idempotency, triad self-stress rigidity, discrete port/stress symmetries, and continuum stability across 56 active numbered verified theorems (120 theorem declarations, 0 unproven obligations, 0 axioms, 0 sorry, compiled under toolchain leanprover/lean4:v4.33.1).
+This appendix presents the complete, machine-checked Lean 4 formalization defining the axiomatic primitives (Axioms 1–3), geometric well-foundedness, comonadic algebraic rigidity, legal move grammar (PUC and AEC), dynamic non-interference, concurrent addition confluence, automorphism preservation under maximal parallelism, absorbing-state stationarity, non-cyclic scar permanence, Category Hist cumulative trajectory indelibility, edge timestamp idempotency, triad self-stress rigidity, discrete port/stress symmetries, and continuum stability across 53 numbered theorems (84 verified `theorem` declarations, 77 definitions, 8 structures, and 3 abbreviations; 172 top-level declarations in `VacuumPhase.lean` across 12 structural parts — 10 core parts plus Parts 6.5 and 9.5 — with 0 unproven obligations, 0 custom axioms, and 0 `sorry`; plus 4 theorem declarations and 5 definitions in `VacuumPhaseMathlib.lean`, compiled under toolchain `leanprover/lean4:v4.33.1`).
 
 ### Formal Theorem Index (Legacy Numbered Results and Concrete Extensions)
 
@@ -1194,7 +1194,7 @@ theorem triad_interaction_ports_is_six :
 /--
 THEOREM 9.5: Simplicial Permittivity Microstate Space
 Proves that 6 independent binary routing ports generate a microstate configuration space
-of 2^6 = 64 states, establishing the theoretical simplicial vacuum drive Λ_theory = 2^-6 = 1/64 (Theorem 4.4.1).
+of 2^6 = 64 states, establishing the theoretical simplicial vacuum drive Λ₀ = 2^-6 = 1/64 (Theorem 4.4.1).
 -/
 theorem simplicial_permittivity_scale :
     2 ^ (triad_interaction_ports 3) = 64 := by
@@ -1206,9 +1206,10 @@ def vertex_cycle_density_sum (density : Fin 3 → Nat) : Nat :=
 
 /--
 THEOREM 9.6: Homogeneous Triad Stress in Cycle Density Foam
-Proves that in a homogeneous topological foam where each vertex has local cycle density σ = 2,
-the total interaction stress evaluated across the candidate triad is exactly 2 + 2 + 2 = 6,
-formally deriving the factor 6 in the exponential steric hindrance term e^(-6*mu*rho) (Section 5.1).
+Proves that in a homogeneous topological foam where each vertex carries local cycle incidence σ = 2,
+the 3-vertex triad addition stress s_add(v,w,u) = ∑_{x ∈ {v,w,u}} s_G(x) evaluated across the
+candidate triad is 2 + 2 + 2 = 6 (Section 4.5.2), matching the scalar closure s_cl(ρ) = 6ρ
+in the continuum steric hindrance factor e^(-6*mu*rho) (Section 5.2).
 -/
 theorem homogeneous_triad_stress_sum :
     vertex_cycle_density_sum (fun _ => 2) = 6 := by
@@ -2285,21 +2286,21 @@ import networkx as nx
 # =============================================================================
 
 def compute_analytical_priors() -> Dict[str, float]:
-    """Computes constitutive scales from discrete combinatorial principles (Table 1)."""
-    T_c = math.log(2.0)                                    # Loop-closure free energy neutrality: T_c = ln 2 (Prop 4.1)
-    mu_0 = 1.0 / math.sqrt(2.0 * math.pi)                  # Z Poisson summation & modular S-duality: mu_0 = 1/sqrt(2*pi) (Prop 4.3)
-    lambda_0 = math.e - 1.0                                # Arrhenius 1-nat defect relaxation: lambda_0 = e - 1 (Prop 4.2)
-    eps_geo = math.log(2.0) / 3.0                          # k_deg=3 vertex channel equipartition: eps_geo = ln(2)/3 (Prop 4.4)
-    Lambda_theory = 2.0 ** (-6)                            # 6-port triad binary simplex routing: Lambda = 2^-6 (Prop 4.5)
-    rho_c = 1.0 / (24.0 - 6.0 * math.e)                    # Unpumped critical nucleation barrier: rho_c = 1/(24-6e) (Sec 6.2)
-    mu_crit = ((9.0 - 3.0 * lambda_0) ** 2) / 108.0       # Saddle-node continuum bifurcation threshold (Sec 6.2.1)
+    """Computes constitutive scales from discrete combinatorial principles (Table 5)."""
+    T_c = math.log(2.0)                                    # Loop-closure free energy neutrality: T_c = ln 2 (Sec 4.2)
+    mu_0 = 1.0 / math.sqrt(2.0 * math.pi)                  # Z Poisson summation & modular S-duality: mu_0 = 1/sqrt(2*pi) (Sec 4.4)
+    lambda_0 = math.e - 1.0                                # Arrhenius 1-nat defect relaxation: lambda_0 = e - 1 (Sec 4.4)
+    eps_0 = math.log(2.0) / 3.0                            # k_deg=3 vertex channel equipartition: eps_0 = ln(2)/3 (Sec 4.4)
+    Lambda_0 = 2.0 ** (-6)                                 # 6-port triad binary simplex routing: Lambda_0 = 2^-6 (Thm 4.4.1)
+    rho_c = 1.0 / (24.0 - 6.0 * math.e)                    # Unpumped critical nucleation barrier: rho_c = 1/(24-6e) (Sec 5.2.3)
+    mu_crit = ((9.0 - 3.0 * lambda_0) ** 2) / 108.0       # Saddle-node continuum bifurcation threshold (Sec 5.2.3)
 
     return {
         "T_c": T_c,
         "mu_0": mu_0,
         "lambda_0": lambda_0,
-        "eps_geo": eps_geo,
-        "Lambda_theory": Lambda_theory,
+        "eps_0": eps_0,
+        "Lambda_0": Lambda_0,
         "rho_c": rho_c,
         "mu_crit": mu_crit,
     }
@@ -3401,8 +3402,8 @@ def execute_scheduler_tick(G, mu, lam):
     return G_next
 
 def measure_km_cumulants(Omega_list=[50, 100, 200, 400], rho_target=0.06, trials=1200):
-    mu_0 = 1.0 / np.sqrt(2 * np.pi)  # ≈ 0.3989
-    lambda_0 = np.e - 1             # ≈ 1.7183
+    mu_0 = 1.0 / np.sqrt(2 * np.pi)  # ≈ 0.398942
+    lambda_0 = np.e - 1             # ≈ 1.718282
     
     results = {}
     
@@ -3644,8 +3645,8 @@ def execute_scheduler_tick(G, mu, lam):
     return G_next
 
 def verify_two_threshold_contact(N=100, trials=100, max_ticks=30):
-    mu_0 = 1.0 / np.sqrt(2 * np.pi)  # ≈ 0.3989
-    lambda_0 = np.e - 1             # ≈ 1.7183
+    mu_0 = 1.0 / np.sqrt(2 * np.pi)  # ≈ 0.398942
+    lambda_0 = np.e - 1             # ≈ 1.718282
     b = 2  # Branching factor
     
     # 1. Analytical Discriminant Failure

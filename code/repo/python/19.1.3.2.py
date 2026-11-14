@@ -6,7 +6,7 @@ from scipy.integrate import solve_ivp, trapezoid
 
 def run_defect_nucleation_simulation():
     # Pre-geometric model parameters
-    rho_star = 0.037       # Homeostatic density attractor fixed point
+    rho_star = 0.037061    # Homeostatic density attractor fixed point
     rho_0 = 0.150          # Post-inflationary initial edge density
     mu = 1.20              # Steric friction coefficient
     omega_0 = 1.0e16       # Comonad annotation map frequency (Hz)

@@ -50,20 +50,20 @@ Section 1.1.5 formalizes the properties of the QBD axiom regarding axiom of choi
 :::info[**Justification of Unprovable Postulates by Coherentist Criteria**]
 :::
 
-The historical evolution of axiomatic justification, epitomized by the independence of Euclid's parallel postulate and the pragmatic acceptance of the Axiom of Choice, demonstrates that when foundational postulates cannot be syntactically derived or intuitively verified as "self-evident," their legitimacy rests upon **Coherentist Justification**. Rather than seeking validation from an impossible chain of antecedent proofs, the axiomatic basis $\mathcal{A}$ of a formal deductive system $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$ is justified holistically by the emergent properties of the global structure it generates.
+The historical evolution of axiomatic justification, epitomized by the independence of Euclid's parallel postulate and the pragmatic acceptance of the Axiom of Choice, demonstrates that when foundational postulates cannot be syntactically derived or intuitively verified as "self-evident," their legitimacy rests upon **Coherentist Justification**. Rather than seeking validation from an impossible chain of antecedent proofs, the axiomatic basis $\mathcal{A}_{\mathrm{ax}}$ of a formal deductive system $\mathfrak{D} = (\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ is justified holistically by the emergent properties of the global structure it generates.
 
-The adoption of an Axiomatic Basis $\mathcal{A}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
+The adoption of an Axiomatic Basis $\mathcal{A}_{\mathrm{ax}}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
 
-1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A} \nvdash \perp$.
-2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}$, $\mathcal{A} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
-3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
-4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
+1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A}_{\mathrm{ax}} \nvdash \perp$.
+2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}_{\mathrm{ax}}$, $\mathcal{A}_{\mathrm{ax}} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
+3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}_{\mathrm{ax}}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
+4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A}_{\mathrm{ax}} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
 
 **Holistic Support vs. Linear Circularity**
 
 Coherentist justification replaces the classical foundationalist model, which envisions knowledge as a hierarchical tower resting upon "self-evident" bedrock, with a relational model (analogous to Otto Neurath's ship), wherein foundational postulates and derived theorems exist in a web of mutual support.
 
-Crucially, this mode of justification does not commit the fallacy of circular reasoning (*petitio principii*). A circular argument operates linearly ($P \vdash P$), providing no new explanatory content. Coherentist validation operates non-linearly: the axiomatic basis $\mathcal{A}$ is not proved by its consequences, but rather justified by the global stability, parsimony, and mathematical and empirical fertility of the complete deductive edifice.
+Crucially, this mode of justification does not commit the fallacy of circular reasoning (*petitio principii*). A circular argument operates linearly ($P \vdash P$), providing no new explanatory content. Coherentist validation operates non-linearly: the axiomatic basis $\mathcal{A}_{\mathrm{ax}}$ is not proved by its consequences, but rather justified by the global stability, parsimony, and mathematical and empirical fertility of the complete deductive edifice.
 
 :::note[**Summary Table: Epistemological Approaches**]
 :::
@@ -71,7 +71,7 @@ Crucially, this mode of justification does not commit the fallacy of circular re
 | Dimension | Foundationalist View (Classical) | Coherentist View (Formalist / Constructive) |
 | :--- | :--- | :--- |
 | **Nature of Axioms** | Self-evident truths; direct descriptions of an absolute, pre-existing reality. | Foundational assumptions; formal rules defining a generative system. |
-| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}|$), and generative fertility. |
+| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}_{\mathrm{ax}}|$), and generative fertility. |
 | **Structure of Knowledge** | Hierarchical pyramid resting on basic, unshakeable beliefs. | Holistic web of mutual logical and structural coherence. |
 | **Status of Alternatives** | Categorically false if non-corresponding to intuitive reality. | Valid alternative formal systems; selection is adjudicated pragmatically by systemic fertility and coherence. |
 
@@ -193,10 +193,10 @@ Time in QBD operates in a dual fashion: physical time (the relativistic, continu
 :::tip[**Mathematical Characterization as Relational Physical Duration**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
+Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi_{\mathrm{path}} = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
 
 $$
-\Delta t_{phys} = \tau(\pi) = f\left(k, \{H(e) \mid e \in \pi\}\right)
+\Delta t_{phys} = \tau(\pi_{\mathrm{path}}) = f\left(k, \{H(e) \mid e \in \pi_{\mathrm{path}}\}\right)
 $$
 
 where $k$ is the topological path length and $f$ is a scaling function mapping discrete edge creation timestamps to proper time, emerging as continuous physical time in the macroscopic limit.
@@ -220,9 +220,8 @@ $$
 
 The indices have their usual strict total order, including when distinct ticks have the same active configuration.
 
-**In Plain English:**
-
-Logical time labels the specified initial snapshot zero and counts subsequent updates. The ordered indices distinguish observations even when adjacency repeats.
+**In Plain English:**  
+Logical time is a discrete sequence of integer steps tracking the repeated application of the universal update operator, ensuring an absolute causal order.
 
 ---
 
@@ -231,16 +230,16 @@ Logical time labels the specified initial snapshot zero and counts subsequent up
 :::info[**Temporal Finitude via Finite Capacity of Distinguishable Histories**]
 :::
 
-Let the histories distinguished at observation admit an injective encoding into $M<\infty$ possible present states. Their cardinality is at most $M$, and the comb with distinct retained terminal alternatives and the full continuing binary prefix tree give, respectively,
+Let the histories distinguished at observation admit an injective encoding into $M_{\mathrm{st}}<\infty$ possible present states. Their cardinality is at most $M_{\mathrm{st}}$, and the comb with distinct retained terminal alternatives and the full continuing binary prefix tree give, respectively,
 
 $$
-K\le M-1,\qquad K\le\lfloor\log_2 M\rfloor.
+K\le M_{\mathrm{st}}-1,\qquad K\le\lfloor\log_2 M_{\mathrm{st}}\rfloor.
 $$
 
 These are tick bounds when $K$ bounds the number of past ticks.
 
 **In Plain English:**  
-A finite state space bounds the number of histories that can be recovered from it. A time bound additionally depends on how the histories branch.
+The universe must have had a beginning (a logical step zero) because an infinite past would require infinite information capacity, resulting in thermodynamic collapse.
 
 ---
 
@@ -252,7 +251,7 @@ A finite state space bounds the number of histories that can be recovered from i
 Let $A_t$ and $C_t$ count binary addition trials and old triangles with at most four deletion outcomes each in a frozen snapshot. The conditional realization entropy is at most $A_t+2C_t$ bits, and under fixed initialization, uniform degree, one trial per candidate edge and at most linear vertex growth, both the accumulated conditional choice entropy and induced graph trajectory entropy are $O(T^2)$ through $T$ ticks.
 
 **In Plain English:**  
-The number of choices in a frozen tick bounds its conditional Shannon entropy. With bounded degree and at most linear vertex growth, the cumulative bound is quadratic in the tick count.
+The amount of information needed to describe the universe's state cannot grow faster than a quadratic curve, preventing informational overload and keeping the system stable.
 
 ---
 
@@ -276,7 +275,7 @@ The successor is determined by the snapshot and the realized list (**Evolution O
 
 $$
 \begin{aligned}
-H(\Xi_t\mid G_t=g)
+H_S(\Xi_t\mid G_t=g)
 &=\sum_{q_\xi>0}q_\xi\log_2\frac1{q_\xi}\\
 &\le \log_2\left(\sum_{q_\xi>0}q_\xi\frac1{q_\xi}\right)
 =\log_2 n_g
@@ -304,9 +303,9 @@ With $G_0$ fixed, each list $\xi_{<t}$ determines $G_t$. Applying the fixed-snap
 
 $$
 \begin{aligned}
-H(\Xi_t\mid\Xi_{<t})
+H_S(\Xi_t\mid\Xi_{<t})
 &=\sum_{\xi_{<t}}\Pr(\Xi_{<t}=\xi_{<t})
-  H(\Xi_t\mid\Xi_{<t}=\xi_{<t})\\
+  H_S(\Xi_t\mid\Xi_{<t}=\xi_{<t})\\
 &\le\sum_{\xi_{<t}}\Pr(\Xi_{<t}=\xi_{<t})\,3\Delta^2(a+bt)
 =3\Delta^2(a+bt).
 \end{aligned}
@@ -316,8 +315,8 @@ The chain rule and the arithmetic sum yield
 
 $$
 \begin{aligned}
-H(\Xi_0,\ldots,\Xi_{T-1})
-&=\sum_{t=0}^{T-1}H(\Xi_t\mid\Xi_{<t})\\
+H_S(\Xi_0,\ldots,\Xi_{T-1})
+&=\sum_{t=0}^{T-1}H_S(\Xi_t\mid\Xi_{<t})\\
 &\le3\Delta^2\left(aT+b\sum_{t=0}^{T-1}t\right)
 =3\Delta^2\left(aT+\frac{bT(T-1)}2\right).
 \end{aligned}
@@ -325,10 +324,10 @@ $$
 
 **IV. Projection to the Graph Trajectory**
 
-Write $X=(\Xi_0,\ldots,\Xi_{T-1})$ and $Y=(G_1,\ldots,G_T)$. As $Y$ is determined by $X$, $H(Y\mid X)=0$, so
+Write $X=(\Xi_0,\ldots,\Xi_{T-1})$ and $Y=(G_1,\ldots,G_T)$. As $Y$ is determined by $X$, $H_S(Y\mid X)=0$, so
 
 $$
-H(X)=H(X,Y)=H(Y)+H(X\mid Y)\ge H(Y).
+H_S(X)=H_S(X,Y)=H_S(Y)+H_S(X\mid Y)\ge H_S(Y).
 $$
 
 Thus both entropies satisfy the displayed quadratic bound (**Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />).
@@ -370,25 +369,25 @@ $$
 |\mathcal E_b|-|\mathcal E_a|=\sum_{t=a}^{b-1}|B_t|\ge K.
 $$
 
-In a fixed-vertex execution of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, let $A_t$ and $D_t$ count the retained additions and actual deletions on the transition from $t$ to $t+1$. Each addition contributes one fresh occurrence to $B_t$. The additions use absent pairs and the deletions remove old edges, so
+In a fixed-vertex execution of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, let $A_t^{\mathrm{ret}}$ and $D_t$ count the retained additions and actual deletions on the transition from $t$ to $t+1$. Each addition contributes one fresh occurrence to $B_t$. The additions use absent pairs and the deletions remove old edges, so
 
 $$
 \begin{aligned}
-A&=\sum_{t=a}^{b-1}A_t=\sum_{t=a}^{b-1}|B_t|=|\mathcal E_b\setminus\mathcal E_a|,\\
+A^{\mathrm{ret}}&=\sum_{t=a}^{b-1}A_t^{\mathrm{ret}}=\sum_{t=a}^{b-1}|B_t|=|\mathcal E_b\setminus\mathcal E_a|,\\
 |E_b|-|E_a|
 &=\sum_{t=a}^{b-1}(|E_{t+1}|-|E_t|)
-=\sum_{t=a}^{b-1}(A_t-D_t)=A-D ,
+=\sum_{t=a}^{b-1}(A_t^{\mathrm{ret}}-D_t)=A^{\mathrm{ret}}-D ,
 \end{aligned}
 $$
 
-where $D=\sum_{t=a}^{b-1}D_t$. The active tick count $M_{\mathrm{act}}$ counts a tick with both operations once. Since $\mathbf1_{\{A_t+D_t>0\}}\le A_t+D_t$, it obeys
+where $D=\sum_{t=a}^{b-1}D_t$. The active tick count $M_{\mathrm{act}}$ counts a tick with both operations once. Since $\mathbf1_{\{A_t^{\mathrm{ret}}+D_t>0\}}\le A_t^{\mathrm{ret}}+D_t$, it obeys
 
 $$
 \begin{aligned}
 M_{\mathrm{act}}
-&=\sum_{t=a}^{b-1}\mathbf1_{\{A_t+D_t>0\}}
-\le A+D\\
-&=|E_a|+2A-|E_b|
+&=\sum_{t=a}^{b-1}\mathbf1_{\{A_t^{\mathrm{ret}}+D_t>0\}}
+\le A^{\mathrm{ret}}+D\\
+&=|E_a|+2A^{\mathrm{ret}}-|E_b|
 \le |E_a|+2|\mathcal E_b\setminus\mathcal E_a|.
 \end{aligned}
 $$
@@ -399,9 +398,9 @@ For trajectory variables $X_a,\ldots,X_b$ and the specified set $J$ of $K$ ticks
 
 $$
 \begin{aligned}
-H(X_a,\ldots,X_b)-H(X_a)
-&=\sum_{t=a}^{b-1}H(X_{t+1}\mid X_a,\ldots,X_t)\\
-&\ge \sum_{t\in J}H(X_{t+1}\mid X_a,\ldots,X_t)\ge \epsilon K.
+H_S(X_a,\ldots,X_b)-H_S(X_a)
+&=\sum_{t=a}^{b-1}H_S(X_{t+1}\mid X_a,\ldots,X_t)\\
+&\ge \sum_{t\in J}H_S(X_{t+1}\mid X_a,\ldots,X_t)\ge \epsilon K.
 \end{aligned}
 $$
 
@@ -492,8 +491,7 @@ The example separates recurrence of the adjacency projection from recurrence of 
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.3.7.1 formalizes the properties of the QBD proof regarding finite state recurrence.
 
 ---
@@ -505,8 +503,7 @@ Section 1.3.7.1 formalizes the properties of the QBD proof regarding finite stat
 
 Let sequential steps have nonoverlapping physical durations of at least $\tau_0>0$. The number of complete steps in a physical interval of length $T_{\mathrm{phys}}$ is bounded by $\lfloor T_{\mathrm{phys}}/\tau_0\rfloor$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.3.8 formalizes the properties of the QBD lemma regarding supertask impossibility.
 
 ---
@@ -574,14 +571,13 @@ Section 1.3.8.1 formalizes the properties of the QBD proof regarding supertask i
 :::info[**Finite Capacity of History Encodings via Injective Encoding of Occurrence Histories**]
 :::
 
-Let $f:\mathcal H\to S$ inject a family of distinguishable histories into a finite set of $M$ states, so $|\mathcal H|\le M$. For a comb with its $K$ terminating alternatives and final continuing history included in $\mathcal H$, and for a binary continuing-prefix tree with all depth-$K$ histories included in $\mathcal H$, the respective bounds are
+Let $f:\mathcal H_{\mathrm{hist}}\to S$ inject a family of distinguishable histories into a finite set of $M_{\mathrm{st}}$ states, so $|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$. For a comb with its $K$ terminating alternatives and final continuing history included in $\mathcal H_{\mathrm{hist}}$, and for a binary continuing-prefix tree with all depth-$K$ histories included in $\mathcal H_{\mathrm{hist}}$, the respective bounds are
 
 $$
-K+1\le M,\qquad 2^K\le M.
+K+1\le M_{\mathrm{st}},\qquad 2^K\le M_{\mathrm{st}}.
 $$
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.3.9 formalizes the properties of the QBD lemma regarding finite capacity of history encodings.
 
 ---
@@ -595,11 +591,11 @@ Section 1.3.9 formalizes the properties of the QBD lemma regarding finite capaci
 
 The histories counted here are distinct records of occurrences (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />) (**Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />).
 
-The image is a subset of the state set, so $|\mathcal H|=|f(\mathcal H)|\le |S|=M$.
+The image is a subset of the state set, so $|\mathcal H_{\mathrm{hist}}|=|f(\mathcal H_{\mathrm{hist}})|\le |S|=M_{\mathrm{st}}$.
 
 **II. Comb**
 
-Two alternatives that terminate at different branch points differ at the earlier point, where one continues and the other terminates. The final continuing history also differs from every terminated alternative at its branch point. Hence $K+1\le|\mathcal H|\le M$.
+Two alternatives that terminate at different branch points differ at the earlier point, where one continues and the other terminates. The final continuing history also differs from every terminated alternative at its branch point. Hence $K+1\le|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$.
 
 **III. Full Continuing Branches**
 
@@ -609,12 +605,11 @@ $$
 n_{j+1}=\sum_{p\in P_j}c(p)\ge\sum_{p\in P_j}2=2n_j .
 $$
 
-The induction hypothesis $n_j\ge2^j$ gives $n_{j+1}\ge2\cdot2^j=2^{j+1}$. In particular, $2^K\le n_K$. The depth-$K$ histories are included in $\mathcal H$, so $2^K\le n_K\le|\mathcal H|\le M$.
+The induction hypothesis $n_j\ge2^j$ gives $n_{j+1}\ge2\cdot2^j=2^{j+1}$. In particular, $2^K\le n_K$. The depth-$K$ histories are included in $\mathcal H_{\mathrm{hist}}$, so $2^K\le n_K\le|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.3.9.1 formalizes the properties of the QBD proof regarding finite capacity of history encodings.
 
 ---
@@ -633,8 +628,8 @@ A finite choice list has bounded conditional entropy (**Finite Information Subst
 The two counting cases give (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />)
 
 $$
-K+1\le M\ \Longrightarrow\ K\le M-1,\qquad
-2^K\le M\ \Longrightarrow\ K\le\lfloor\log_2 M\rfloor .
+K+1\le M_{\mathrm{st}}\ \Longrightarrow\ K\le M_{\mathrm{st}}-1,\qquad
+2^K\le M_{\mathrm{st}}\ \Longrightarrow\ K\le\lfloor\log_2 M_{\mathrm{st}}\rfloor .
 $$
 
 If unbounded candidate past length forces unbounded $K$, the uniform bound on $K$ excludes unbounded candidate past length.
@@ -659,8 +654,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.3.10 formalizes the properties of the QBD proof regarding temporal finitude.
 
 ---
@@ -1004,7 +998,7 @@ Edge Deletion Task defines the primitive operator that removes an active directe
 Let $\mathfrak T$ be the space of tasks witnessed by finite admissible sequences of guarded edge additions and deletions on a fixed vertex set $V$. Each task is a finite composition of the primitives, with active incidence determined by the edge set and rollback of each active update specified by the edited pair and its previous height.
 
 **In Plain English:**  
-A finite admissible task is composed of primitive edge updates. A record of the edited pair and height enables rollback on the active snapshot.
+The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
 
 ---
 
@@ -1109,7 +1103,7 @@ Section 1.5.5.1 formalizes the properties of the QBD proof regarding relational 
 Let a snapshot have adjacency $E(x)\in\{0,1\}$ and height $H(x)\in\mathbb N$ at every directed pair $x$, with height zero when absent. Both fields are restored by adding an absent pair and then deleting it, or by deleting an active pair and then restoring it at its saved height.
 
 **In Plain English:**  
-Deleting a newly added edge restores an absent pair. A deleted active pair can be restored at its saved height.
+The Reversibility of Primitives Lemma proves that every primitive edge addition or deletion has a unique inverse operation, ensuring that the substrate's transitions are completely reversible.
 
 ---
 
@@ -1194,8 +1188,7 @@ $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.5.7 formalizes the properties of the QBD proof regarding vacuum repertoire.
 
 ---
@@ -1267,8 +1260,7 @@ theorem add_then_del_pointwise {V : Type} [DecidableEq V]
 
 The two closed terms certify the active-field identities. Deletion rollback reads the saved height, and addition rollback uses the absent-pair zero-height premise. The Lean kernel accepts both pointwise results.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 1.5.8 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

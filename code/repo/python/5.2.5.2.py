@@ -1,4 +1,4 @@
-"""Measure 3-cycle endpoint stress friction exp(-mu_0 * s_a) and Jensen gaps across directed k_in, k_out <= 3 graphs."""
+"""Measure 3-vertex triad stress friction exp(-mu_0 * s_a) and Jensen gaps across directed k_in, k_out <= 3 graphs."""
 
 import numpy as np
 from scipy.optimize import curve_fit
@@ -53,29 +53,30 @@ def build_directed_substrate(N, target_rho, rng):
 
 
 def measure_steric_friction(N=1000, n_trials=10, seed=42):
-    """Measure endpoint 3-cycle stress and exponential damping across rho targets."""
+    """Measure 3-vertex triad stress and exponential damping across rho targets."""
     rng = np.random.default_rng(seed)
     exp_model = lambda x, a, b: a * np.exp(-b * x)
 
     rho_means = []
-    pair_cl, pair_ens = [], []
+    triad_cl, triad_ens = [], []
     path_cl, path_ens = [], []
 
     for rho_t in RHOS:
-        ar, ap, ep, a2, e2 = [], [], [], [], []
+        ar, atc, ate, a2, e2 = [], [], [], [], []
         for _ in range(n_trials):
             out_adj, in_adj, stress, r_act = build_directed_substrate(N, rho_t, rng)
             ar.append(r_act)
 
-            # 1. Unbiased candidate vertex pairs (u != v)
-            us = rng.integers(0, N, size=3000)
+            # 1. Unbiased candidate 3-vertex triads (distinct v, w, u)
             vs = rng.integers(0, N, size=3000)
-            mask = us != vs
-            s_pair = stress[us[mask]] + stress[vs[mask]]
-            ap.append(np.exp(-MU_0 * np.mean(s_pair)))
-            ep.append(np.mean(np.exp(-MU_0 * s_pair)))
+            ws = rng.integers(0, N, size=3000)
+            us = rng.integers(0, N, size=3000)
+            mask = (vs != ws) & (ws != us) & (us != vs)
+            s_triad = stress[vs[mask]] + stress[ws[mask]] + stress[us[mask]]
+            atc.append(np.exp(-MU_0 * np.mean(s_triad)))
+            ate.append(np.mean(np.exp(-MU_0 * s_triad)))
 
-            # 2. All PUC-legal open 2-paths v -> w -> u (closing edge u -> v)
+            # 2. All PUC-legal open 2-paths v -> w -> u (closing edge u -> v; triad stress on {v, w, u})
             s_2p = []
             for w in range(N):
                 for v in in_adj[w]:
@@ -83,56 +84,57 @@ def measure_steric_friction(N=1000, n_trials=10, seed=42):
                         continue
                     for u in out_adj[w]:
                         if u != v and len(out_adj[u]) < 3 and v not in out_adj[u] and u not in out_adj[v]:
-                            s_2p.append(stress[u] + stress[v])
+                            s_2p.append(stress[v] + stress[w] + stress[u])
             arr_2p = np.array(s_2p, dtype=float)
             a2.append(np.exp(-MU_0 * np.mean(arr_2p)))
             e2.append(np.mean(np.exp(-MU_0 * arr_2p)))
 
         rho_means.append(float(np.mean(ar)))
-        pair_cl.append(float(np.mean(ap)))
-        pair_ens.append(float(np.mean(ep)))
+        triad_cl.append(float(np.mean(atc)))
+        triad_ens.append(float(np.mean(ate)))
         path_cl.append(float(np.mean(a2)))
         path_ens.append(float(np.mean(e2)))
 
     xs = np.array(rho_means)
     fits = {}
     for label, ys in [
-        ("pair_cl", pair_cl),
-        ("pair_ens", pair_ens),
+        ("triad_cl", triad_cl),
+        ("triad_ens", triad_ens),
         ("path_cl", path_cl),
         ("path_ens", path_ens),
     ]:
         popt, _ = curve_fit(exp_model, xs, np.array(ys), p0=[1.0, 2.0])
         fits[label] = (float(popt[0]), float(popt[1]))
 
-    return xs, pair_cl, pair_ens, path_cl, path_ens, fits
+    return xs, triad_cl, triad_ens, path_cl, path_ens, fits
 
 
 def main():
     N = 1000
     n_trials = 10
-    xs, pair_cl, pair_ens, path_cl, path_ens, fits = measure_steric_friction(N=N, n_trials=n_trials)
+    xs, triad_cl, triad_ens, path_cl, path_ens, fits = measure_steric_friction(N=N, n_trials=n_trials)
 
-    b_theory_cl = 6.0 * MU_0
-    b_theory_ens = 6.0 * (1.0 - np.exp(-MU_0))
-    jensen_ok = all(pe > pc for pe, pc in zip(pair_ens, pair_cl)) and all(pe > pc for pe, pc in zip(path_ens, path_cl))
+    b_triad_cl = 9.0 * MU_0
+    b_triad_ens = 9.0 * (1.0 - np.exp(-MU_0))
+    b_constit_cl = 6.0 * MU_0
+    jensen_ok = all(pe > pc for pe, pc in zip(triad_ens, triad_cl)) and all(pe > pc for pe, pc in zip(path_ens, path_cl))
 
-    print("=" * 74)
-    print("Directed 3-Cycle Friction and Jensen Separation Measurements (k_in, k_out <= 3)")
-    print("=" * 74)
+    print("=" * 78)
+    print("Directed 3-Vertex Triad Friction and Jensen Separation (k_in, k_out <= 3)")
+    print("=" * 78)
     print(f"Substrate Size (N):   {N} | Trials/Density: {n_trials} | mu_0: {MU_0:.6f}")
-    print(f"Theory 6*mu_0:        {b_theory_cl:.6f} | Theory 6*(1 - exp(-mu_0)): {b_theory_ens:.6f}")
-    print("-" * 74)
-    print("   rho   | pair exp(-mu*E[s]) | pair E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]")
-    print("-" * 74)
-    for r, pc, pe, tc, te in zip(xs, pair_cl, pair_ens, path_cl, path_ens):
-        print(f"  {r:.4f} |      {pc:.6f}      |      {pe:.6f}      |       {tc:.6f}       |       {te:.6f}")
-    print("-" * 74)
-    print(f"Unbiased Pair Closure Fit : A = {fits['pair_cl'][0]:.6f}, B = {fits['pair_cl'][1]:.6f}")
-    print(f"Unbiased Pair Ensemble Fit: A = {fits['pair_ens'][0]:.6f}, B = {fits['pair_ens'][1]:.6f}")
-    print(f"Open 2-Path Closure Fit   : A = {fits['path_cl'][0]:.6f}, B = {fits['path_cl'][1]:.6f}")
-    print(f"Open 2-Path Ensemble Fit  : A = {fits['path_ens'][0]:.6f}, B = {fits['path_ens'][1]:.6f}")
-    print(f"Strict Jensen Inequality  : {'PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)' if jensen_ok else 'FAIL'}")
+    print(f"Unbiased 9*mu_0:      {b_triad_cl:.6f} | Poisson 9*(1-exp(-mu_0)): {b_triad_ens:.6f} | Closure 6*mu_0: {b_constit_cl:.6f}")
+    print("-" * 78)
+    print("   rho   | triad exp(-mu*E[s]) | triad E[exp(-mu*s)] | 2-path exp(-mu*E[s]) | 2-path E[exp(-mu*s)]")
+    print("-" * 78)
+    for r, tc, te, pc, pe in zip(xs, triad_cl, triad_ens, path_cl, path_ens):
+        print(f"  {r:.4f} |       {tc:.6f}      |       {te:.6f}      |       {pc:.6f}       |       {pe:.6f}")
+    print("-" * 78)
+    print(f"Unbiased Triad Closure Fit : A = {fits['triad_cl'][0]:.6f}, B = {fits['triad_cl'][1]:.6f}")
+    print(f"Unbiased Triad Ensemble Fit: A = {fits['triad_ens'][0]:.6f}, B = {fits['triad_ens'][1]:.6f}")
+    print(f"Open 2-Path Closure Fit    : A = {fits['path_cl'][0]:.6f}, B = {fits['path_cl'][1]:.6f}")
+    print(f"Open 2-Path Ensemble Fit   : A = {fits['path_ens'][0]:.6f}, B = {fits['path_ens'][1]:.6f}")
+    print(f"Strict Jensen Inequality   : {'PASS (E[e^(-mu*s)] > e^(-mu*E[s)] for all rho)' if jensen_ok else 'FAIL'}")
 
 
 if __name__ == "__main__":

@@ -197,9 +197,8 @@ In the countermodel antisymmetry is true and irreflexivity is false. The directe
 
 Q.E.D.
 
-**In Plain English:**
-
-A one-vertex graph with a self-loop is antisymmetric and fails irreflexivity. Adding the loop leaves its simple-path family unchanged.
+**In Plain English:**  
+Section 2.2.4 formalizes the properties of the QBD proof regarding insufficiency of antisymmetry.
 
 ---
 
@@ -794,8 +793,7 @@ by equality of target coordinates. Therefore the full frozen list contains exact
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.3.1 formalizes the properties of the QBD proof regarding chordlessness of maximal cycles.
 
 ---
@@ -807,8 +805,7 @@ Section 2.4.3.1 formalizes the properties of the QBD proof regarding chordlessne
 
 Let $e$ denote an edge belonging to a simple cycle $C$ of maximal length within a graph $G$ characterized by the state valuation $\Phi(G)$ (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />). Then the deletion of $e$ yields a graph $G'$ satisfying the strict descent condition $\Phi(G') < \Phi(G)$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.4 formalizes the properties of the QBD lemma regarding reduction via deletion.
 
 ---
@@ -929,8 +926,7 @@ Section 2.4.5.1 formalizes the properties of the QBD proof regarding decrease in
 
 Let the four endpoints $v,w,u,x$ be distinct with $(v,x)\notin E$, both paths $v\to w\to u$ and $w\to u\to x$ pass PUC and the bounded reverse-witness guard, and the chord heights dominate old outgoing heights at their respective targets. Then both candidate admissions are preserved in either sequential order and the final active timestamped graph is the same.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.6 formalizes the properties of the QBD lemma regarding sequential constructor diamond.
 
 ---
@@ -988,8 +984,7 @@ This proves equality as active timestamped graphs (**Sequential Constructor Diam
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.6.1 formalizes the properties of the QBD proof regarding sequential constructor diamond.
 
 ---
@@ -1019,8 +1014,7 @@ The sequential diamond applies to its two individually admissible proposals unde
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.7 formalizes the properties of the QBD proof regarding general cycle decomposition.
 
 ---
@@ -1208,8 +1202,7 @@ print(df.to_markdown(index=False))
 **Conclusion:**
 The tabulated data establishes a linear correlation between the initial cycle length $k$ and the addition count ($Ops_{add} = k$). The deletion count stabilizes at a constant value ($Ops_{del} = 3$) for all topologies with $k \ge 7$. This finite scaling confirms that the algorithmic reduction complexity is proportional to the defect size $O(k)$, validating the termination logic of the proof.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.11 formalizes the properties of the QBD calculation regarding simulation verification.
 
 ---
@@ -1284,8 +1277,7 @@ theorem puc_precludes_alternative_intermediate :
 **Verification Summary:**
 The auxiliary definitions `IsGeometricQuantum` and `IsCompliant2Path` confirm that the causal vocabulary of Axiom 2 is well-typed as Lean propositions, requiring no consistency workaround. The first theorem delegates the well-foundedness of $\mathbb{N} \times \mathbb{N}$ under the lexicographic product order to `inferInstance`, which resolves against Lean's standard library `WellFoundedRelation` instance; the kernel's acceptance of this one-liner constitutes the machine certificate that the codomain of $\Phi(G)$ possesses no infinite descending chains. The second theorem covers the two-case disjunction $(L_2 < L_1) \lor (L_2 = L_1 \land N_2 < N_1)$ that defines strict lexicographic descent: `Prod.Lex.left` closes the first case directly from the length inequality, while `subst h_eq` eliminates the equality $L_2 = L_1$ before `Prod.Lex.right` closes the count-reduction case. The third theorem `puc_precludes_alternative_intermediate` formally certifies that the universal quantification in `IsCompliant2Path` uniquely identifies the intermediate vertex, precluding parallel routing channels. The Lean kernel's acceptance of these closed proof terms certifies the descent guarantee in the **Well-Foundedness** <Ref id="2.3.6" label="§2.3.6" /> proof: any dynamical rule that strictly decreases the Lexicographic Potential $\Phi$ is provably terminating.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.4.12 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---
@@ -1363,8 +1355,7 @@ Induction gives $\mathcal C_4(G_A)=\varnothing$, contradicting the exhibited per
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.2.1 formalizes the properties of the QBD proof regarding independence case a.
 
 ---
@@ -1376,8 +1367,7 @@ Section 2.5.2.1 formalizes the properties of the QBD proof regarding independenc
 
 Let $G_B$ consist of a directed triangle with successive heights $0,0,1$ and a disjoint self-loop. It satisfies both geometric predicates and Axiom 3 and fails Axiom 1.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.3 formalizes the properties of the QBD lemma regarding independence case b.
 
 ---
@@ -1435,8 +1425,7 @@ Section 2.5.3.1 formalizes the properties of the QBD proof regarding independenc
 
 Let a raw proposal specify a graph, a triple $(v,w,u)$ and an absent chord $(u,v)$ at its source-maximum height, with a reverse-witness horizon of at least two. The output Axiom 1 test, geometric admission of the specified support and either causal test (bounded reverse witness or full output closure) are mutually independent in the sense that each can fail while the other two pass.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.4 formalizes the properties of the QBD lemma regarding raw proposal independence.
 
 ---
@@ -1462,8 +1451,7 @@ Use $A\xrightarrow{1}Z\xrightarrow{2}D\xrightarrow{3}C\xrightarrow{4}Z\xrightarr
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.4.1 formalizes the properties of the QBD proof regarding raw proposal independence.
 
 ---
@@ -1544,8 +1532,7 @@ Proposal 3: (True, True, False, False)
 
 The three explicit proposals yield the stated truth table and confirm the predicate evaluations on the raw domain.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.4.2 formalizes the properties of the QBD calculation regarding raw proposal predicate table.
 
 ---
@@ -1569,8 +1556,7 @@ The two opposite assignments establish mutual non-entailment for each geometric 
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.5.5 formalizes the properties of the QBD proof regarding independence of axioms 1 and 2.
 
 ---
@@ -1580,7 +1566,7 @@ Section 2.5.5 formalizes the properties of the QBD proof regarding independence 
 :::info[**Demonstration of Global Inconsistency under Local Axioms due to Transitive Reflexivity and Symmetry Failures**]
 :::
 
-Let a system be constrained exclusively by Axioms 1 and 2. The causal precedence relation $\le$ (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />) is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits the emergence of **Reflexivity** ($u \le u$) and **Symmetry** ($u \le v \land v \le u$), thereby failing to enforce global causal consistency.
+Let a system be constrained exclusively by Axioms 1 and 2. The transitive causal precedence relation $R^+$ closing **Effective Influence** <Ref id="2.6.2" label="§2.6.2" /> is not guaranteed to constitute a strict partial order. Specifically, the transitive closure of locally valid structures permits violations of strict irreflexivity ($u R^+ u$) and asymmetry ($u R^+ v \land v R^+ u$), thereby failing to enforce global causal consistency.
 
 **In Plain English:**  
 Section 2.6.1 formalizes the properties of the QBD theorem regarding inadequacy of local axioms.
@@ -1924,7 +1910,7 @@ Causality is strictly acyclic: an event can never be its own cause. This prevent
 :::info[**Thermodynamic Enforcement via Conditional Distributed Rollback Cost**]
 :::
 
-Let repairing a spatial perimeter $C$ require coordination over ambient graph distance $D_G(C)=\max_{u,v\in V(C)}d_G(u,v)$ and irreversible erasure of at least $b$ bits. Assume an additive cost of at least $\epsilon_{\mathrm{hop}}>0$ per required hop and at least $k_BT_c\log 2$ per irreversibly erased bit. The resulting lower bound is $W_{\mathrm{repair}}\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_c\log 2$.
+Let repairing a spatial perimeter $C$ require coordination over ambient graph distance $D_G(C)=\max_{u,v\in V(C)}d_G(u,v)$ and irreversible erasure of at least $b$ bits. Assume an additive cost of at least $\epsilon_{\mathrm{hop}}>0$ per required hop and at least $k_BT_{\mathrm{bath}}\log 2$ per irreversibly erased bit. The resulting lower bound is $W_{\mathrm{repair}}\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_{\mathrm{bath}}\log 2$.
 
 **In Plain English:**  
 Section 2.7.2 formalizes the properties of the QBD theorem regarding distributed rollback cost.
@@ -1936,7 +1922,7 @@ Section 2.7.2 formalizes the properties of the QBD theorem regarding distributed
 :::info[**Cycle Diameter Growth via Finite-Radius Indistinguishability of Distant Causal Closure**]
 :::
 
-For any observation radius $r\ge1$, there are timestamped directed graphs whose rooted radius-$r$ induced balls coincide, with one graph having acyclic mediated closure and the other having a mediated cycle.
+For any observation radius $r_{\mathrm{obs}}\ge1$, there are timestamped directed graphs whose rooted radius-$r_{\mathrm{obs}}$ induced balls coincide, with one graph having acyclic mediated closure and the other having a mediated cycle.
 
 **In Plain English:**  
 Section 2.7.3 formalizes the properties of the QBD lemma regarding finite-radius indistinguishability.
@@ -1950,13 +1936,13 @@ Section 2.7.3 formalizes the properties of the QBD lemma regarding finite-radius
 
 **I. The Closed and Open Perimeters**
 
-Let $m=2r+4$ and $V=\{0,\ldots,m-1\}$. Use the cycle $C$ with edges $e_j=(j,j+1\bmod m)$ and the open graph $P=C\setminus\{e_{r+1}\}$ (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />) (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />). Assign edge heights by
+Let $m=2r_{\mathrm{obs}}+4$ and $V=\{0,\ldots,m-1\}$. Use the cycle $C$ with edges $e_j=(j,j+1\bmod m)$ and the open graph $P=C\setminus\{e_{r_{\mathrm{obs}}+1}\}$ (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />) (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />). Assign edge heights by
 
 $$
 H(e_j)=
 \begin{cases}
-j & 0\le j\le r+1,\\
-j-(r+2) & r+2\le j\le 2r+3 .
+j & 0\le j\le r_{\mathrm{obs}}+1,\\
+j-(r_{\mathrm{obs}}+2) & r_{\mathrm{obs}}+2\le j\le 2r_{\mathrm{obs}}+3 .
 \end{cases}
 $$
 
@@ -1969,38 +1955,38 @@ In the undirected support of $C$, the two routes from $0$ to $j$ have lengths $j
 $$
 \begin{aligned}
 d_C(0,j)&=\min(j,m-j),\\
-B_C(0,r)&=\{0,\ldots,r\}\cup\{r+4,\ldots,2r+3\}.
+B_C(0,r_{\mathrm{obs}})&=\{0,\ldots,r_{\mathrm{obs}}\}\cup\{r_{\mathrm{obs}}+4,\ldots,2r_{\mathrm{obs}}+3\}.
 \end{aligned}
 $$
 
 The endpoints of the removed edge satisfy
 
 $$
-d_C(0,r+1)=\min(r+1,r+3)=r+1>r,\qquad
-d_C(0,r+2)=\min(r+2,r+2)=r+2>r.
+d_C(0,r_{\mathrm{obs}}+1)=\min(r_{\mathrm{obs}}+1,r_{\mathrm{obs}}+3)=r_{\mathrm{obs}}+1>r_{\mathrm{obs}},\qquad
+d_C(0,r_{\mathrm{obs}}+2)=\min(r_{\mathrm{obs}}+2,r_{\mathrm{obs}}+2)=r_{\mathrm{obs}}+2>r_{\mathrm{obs}}.
 $$
 
-For $0\le j\le r$, the route $0,1,\ldots,j$ remains in $P$ and has length $j=d_C(0,j)$. For $r+4\le j\le 2r+3$, the route $0,2r+3,\ldots,j$ remains in $P$ and has length $m-j=d_C(0,j)$. Every route in $P$ also occurs in $C$. The distance comparisons are therefore
+For $0\le j\le r_{\mathrm{obs}}$, the route $0,1,\ldots,j$ remains in $P$ and has length $j=d_C(0,j)$. For $r_{\mathrm{obs}}+4\le j\le 2r_{\mathrm{obs}}+3$, the route $0,2r_{\mathrm{obs}}+3,\ldots,j$ remains in $P$ and has length $m-j=d_C(0,j)$. Every route in $P$ also occurs in $C$. The distance comparisons are therefore
 
 $$
 \begin{aligned}
-j\in B_C(0,r)&\Longrightarrow d_C(0,j)\le d_P(0,j)\le d_C(0,j),\\
-j\notin B_C(0,r)&\Longrightarrow d_P(0,j)\ge d_C(0,j)>r .
+j\in B_C(0,r_{\mathrm{obs}})&\Longrightarrow d_C(0,j)\le d_P(0,j)\le d_C(0,j),\\
+j\notin B_C(0,r_{\mathrm{obs}})&\Longrightarrow d_P(0,j)\ge d_C(0,j)>r_{\mathrm{obs}} .
 \end{aligned}
 $$
 
-Thus $B_P(0,r)=B_C(0,r)$. The deleted edge has neither endpoint in this ball, so the induced edges have the same directions and heights.
+Thus $B_P(0,r_{\mathrm{obs}})=B_C(0,r_{\mathrm{obs}})$. The deleted edge has neither endpoint in this ball, so the induced edges have the same directions and heights.
 
 **III. Opposite Closure Outcomes**
 
 The two directed arcs in $C$ give
 
 $$
-0\xrightarrow{0}1\xrightarrow{1}\cdots\xrightarrow{r+1}r+2,\qquad
-r+2\xrightarrow{0}r+3\xrightarrow{1}\cdots\xrightarrow{r+1}0 .
+0\xrightarrow{0}1\xrightarrow{1}\cdots\xrightarrow{r_{\mathrm{obs}}+1}r_{\mathrm{obs}}+2,\qquad
+r_{\mathrm{obs}}+2\xrightarrow{0}r_{\mathrm{obs}}+3\xrightarrow{1}\cdots\xrightarrow{r_{\mathrm{obs}}+1}0 .
 $$
 
-Each arc is a simple path of length $r+2$ and its heights increase strictly. Hence $(0,r+2),(r+2,0)\in R_C$ and $(0,0)\in R_C^+$. In $P$, let $\ell$ denote the index in the order $(r+2,\ldots,2r+3,0,\ldots,r+1)$. For every edge $(u,v)$ of $P$, $\ell(v)=\ell(u)+1$. A path of length $k$ therefore has $\ell(v)-\ell(u)=k$. Every $R_P$ witness has positive length, so a composition of $a$ such witnesses satisfies
+Each arc is a simple path of length $r_{\mathrm{obs}}+2$ and its heights increase strictly. Hence $(0,r_{\mathrm{obs}}+2),(r_{\mathrm{obs}}+2,0)\in R_C$ and $(0,0)\in R_C^+$. In $P$, let $\ell$ denote the index in the order $(r_{\mathrm{obs}}+2,\ldots,2r_{\mathrm{obs}}+3,0,\ldots,r_{\mathrm{obs}}+1)$. For every edge $(u,v)$ of $P$, $\ell(v)=\ell(u)+1$. A path of length $k$ therefore has $\ell(v)-\ell(u)=k$. Every $R_P$ witness has positive length, so a composition of $a$ such witnesses satisfies
 
 $$
 \ell(v_a)-\ell(v_0)=\sum_{i=1}^a\bigl(\ell(v_i)-\ell(v_{i-1})\bigr)>0 .
@@ -2010,8 +1996,7 @@ This proves $(v,v)\notin R_P^+$ for all $v$.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.3.1 formalizes the properties of the QBD proof regarding finite-radius indistinguishability.
 
 ---
@@ -2023,8 +2008,7 @@ Section 2.7.3.1 formalizes the properties of the QBD proof regarding finite-radi
 
 Let the fixed candidate support have $N$ vertices of maximum undirected degree three, with each new height comparison on a fixed simple path having conditional success probability at most $0<p<1/4$ given its exposed prefix. At $L_{\mathrm{cut}}=\lfloor\log_2 N\rfloor+3$, the probability of any missed reverse witness in one tick is at most $18N(2p)^{L_{\mathrm{cut}}}/(1-2p)$, and uniform conditional control across ticks gives the sum of their respective one-tick bounds.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.4 formalizes the properties of the QBD lemma regarding bounded reverse-witness misses.
 
 ---
@@ -2092,7 +2076,7 @@ Section 2.7.4.1 formalizes the properties of the QBD proof regarding bounded rev
 :::info[**Strict Acyclicity of the Causal History Poset through Timestamp Monotonicity**]
 :::
 
-Let $\Omega$ be the set of immutable creation occurrences and let $\omega D\eta$ mean that $\omega$ is an incoming occurrence present at the source of $\eta$ in its creation snapshot. Under the source-maximum recurrence, the nonempty dependency closure $D^+$ is a strict partial order on $\Omega$, independently of the spatial search horizon (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />).
+Let $\Omega_{\mathrm{occ}}$ be the set of immutable creation occurrences and let $\omega D\eta$ mean that $\omega$ is an incoming occurrence present at the source of $\eta$ in its creation snapshot. Under the source-maximum recurrence, the nonempty dependency closure $D^+$ is a strict partial order on $\Omega_{\mathrm{occ}}$, independently of the spatial search horizon (**Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />).
 
 **In Plain English:**  
 Section 2.7.5 formalizes the properties of the QBD lemma regarding exact poset invariance.
@@ -2141,8 +2125,7 @@ When a new occurrence is appended, each of its recorded predecessors satisfies t
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.5.1 formalizes the properties of the QBD proof regarding exact poset invariance.
 
 ---
@@ -2154,8 +2137,7 @@ Section 2.7.5.1 formalizes the properties of the QBD proof regarding exact poset
 
 Let $G$ have edges $A\to Z\to D\to C\to Z\to B\to A$ in the displayed order with heights $1,2,3,4,5,6$. It satisfies Axiom 1 and both specified geometric predicates, while $R^+$ has a diagonal.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.6 formalizes the properties of the QBD lemma regarding independence of axiom 3.
 
 ---
@@ -2229,8 +2211,7 @@ Section 2.7.6.1 formalizes the properties of the QBD proof regarding independenc
 
 Let $v\ne u$ with $(v,u)\notin E$. A directed walk from $v$ to $u$ of at least two and at most $L$ edges with strictly increasing heights and terminal height below $h$ exists if and only if a simple path with those properties exists.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.7 formalizes the properties of the QBD lemma regarding loop erasure of reverse witnesses.
 
 ---
@@ -2267,8 +2248,7 @@ The candidate has no direct forward bypass $(v,u)$ (**Geometric Constructibility
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.7.1 formalizes the properties of the QBD proof regarding loop erasure of reverse witnesses.
 
 ---
@@ -2280,8 +2260,7 @@ Section 2.7.7.1 formalizes the properties of the QBD proof regarding loop erasur
 
 Let old $R$ be acyclic, with every retained new chord's height dominating the old outgoing heights at its target. The final $R$ is acyclic exactly when its full closure has no target diagonal, with the pre-deletion test sufficient and the two-chord sequential diamond also acyclic when both targets are old $R$-sinks.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.8 formalizes the properties of the QBD lemma regarding batch causal preservation under dominance.
 
 ---
@@ -2333,8 +2312,7 @@ A witness of $(v,w)$ would end with $(x,w)$. Its prefix from $v$ to $x$ uses old
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.8.1 formalizes the properties of the QBD proof regarding batch causal preservation under dominance.
 
 ---
@@ -2404,8 +2382,7 @@ final target diagonals: []
 
 The merged example has two target diagonals and the specified deletion removes both. This confirms the pre-deletion and final-state distinction in the fixture.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.8.2 formalizes the properties of the QBD calculation regarding target diagonals before and after deletion.
 
 ---
@@ -2417,8 +2394,7 @@ Section 2.7.8.2 formalizes the properties of the QBD calculation regarding targe
 
 Let every old edge have height $h$ and raise a vertex grading by one, and let a batch of elementary return chords have height $h+1$. The mediated closure after the tick is acyclic.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.9 formalizes the properties of the QBD lemma regarding first-tick causality on graded graphs.
 
 ---
@@ -2448,8 +2424,7 @@ A chain of $m\ge1$ mediated pairs from $a$ to $b$ has $d(b)=d(a)-m$. It cannot r
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.9.1 formalizes the properties of the QBD proof regarding first-tick causality on graded graphs.
 
 ---
@@ -2527,8 +2502,7 @@ Six-cycle mediated pairs: [(0, 5), (1, 0), (2, 1), (3, 2), (4, 3), (5, 4)]
 
 All tested graded batches satisfy the one-step decrease, and the six-cycle gives a cyclic relation. The outputs confirm the grading distinction on these finite inputs.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.9.2 formalizes the properties of the QBD calculation regarding graded inputs and uniform-height cycle.
 
 ---
@@ -2554,14 +2528,13 @@ Under the stated coordination premise the hop count $n_{\mathrm{hop}}$ is at lea
 
 $$
 W_{\mathrm{repair}}\ge\epsilon_{\mathrm{hop}}n_{\mathrm{hop}}
-+k_BT_c\log(2)n_{\mathrm{bit}}
-\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_c\log 2 .
++k_BT_{\mathrm{bath}}\log(2)n_{\mathrm{bit}}
+\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_{\mathrm{bath}}\log 2 .
 $$
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.10 formalizes the properties of the QBD proof regarding distributed rollback cost.
 
 ---
@@ -2693,8 +2666,7 @@ The definitions extend the vocabulary established in the **Type-Theoretic Valida
 
 The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal. In tandem with `edge_monotone_no_causal_cycle` establishing **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, the causal ordering of physical history is completely secured.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 2.7.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

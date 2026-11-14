@@ -2842,7 +2842,7 @@ Spacetime updates are governed by a Universal Constructor that stochastically sc
 :::tip[**Syndrome-Response Function Modulating Base Probabilities via Catalytic Tension Factor**]
 :::
 
-Let $s_G(v) = |\mathcal{C}_3(v)|$ denote the count of directed **3-cycles** incident to vertex $v$, defining the local addition stress $s_a = \sum_{v \in e_a} s_G(v)$ on a candidate closing site $e_a = (u, v)$ and the self-excluded deletion stress $s_c = \max\!\left(0, \sum_{v \in c} s_G(v) - 1\right)$ on an existing cycle $c \in \mathcal{C}_3(G)$. The mode-separated **Catalytic Tension Factor** $(\chi_{\mathrm{add}}, \chi_{\mathrm{del}})$ modulates the thermodynamic baselines as
+Let $s_G(v) = |\mathcal{C}_3(v)|$ denote the count of directed **3-cycles** incident to vertex $v$. For a candidate closing edge $e_a = (u, v)$ bridging an open 2-path $v \to w \to u$, define the local triad addition stress $s_a(v, w, u) = \sum_{x \in \{v, w, u\}} s_G(x)$, and for an existing cycle $c \in \mathcal{C}_3(G)$, define the self-excluded deletion stress $s_c = \max\!\left(0, \sum_{x \in c} s_G(x) - 1\right)$. The mode-separated **Catalytic Tension Factor** $(\chi_{\mathrm{add}}, \chi_{\mathrm{del}})$ modulates the thermodynamic baselines as
 
 $$
 \chi_{\mathrm{add}}(s_a) = e^{-\mu s_a}, \qquad \chi_{\mathrm{del}}(s_c) = (1 + \lambda s_c)e^{-\mu s_c},
@@ -2850,7 +2850,7 @@ $$
 
 yielding the operational acceptance probabilities $p_a = \chi_{\mathrm{add}}(s_a)\mathbb{P}_{\text{acc,thermo}} = e^{-\mu s_a}$ for edge addition and $q_c = \min\{1, \chi_{\mathrm{del}}(s_c)\mathbb{P}_{\text{del,thermo}}\} = \min\!\left\{1, \tfrac{1}{2}(1 + \lambda s_c)e^{-\mu s_c}\right\}$ for triangle deletion (**Universal Constructor** <Ref id="4.5.8" label="§4.5.8" />).
 
-1.  **Addition Friction ($\chi_{\mathrm{add}}$):** Pure exponential steric damping by the candidate vertex cycle-incidence sum $s_a$, suppressing edge additions in crowded regions without catalytic boost (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />).
+1.  **Addition Friction ($\chi_{\mathrm{add}}$):** Pure exponential steric damping by the candidate triad's 3-vertex cycle-incidence sum $s_a$, suppressing edge additions in crowded regions without catalytic boost (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />).
 2.  **Deletion Catalysis and Friction ($\chi_{\mathrm{del}}$):** Affine linear catalytic scaling $(1 + \lambda s_c)$ (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />) combined with exponential neighborhood friction $e^{-\mu s_c}$ in the self-excluded deletion stress $s_c$. Multiplication by the one-half entropic baseline yields the operational deletion probability (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
 
 **In Plain English:**  
@@ -2948,10 +2948,10 @@ In particular, the declared $\Delta E=0$ baseline gives $e^{-\Delta F/T}=e^{\ln2
 
 **III. The Stated Channel-Energy Examples**
 
-For the supplied microscopic channel value $\varepsilon_{geo}=\ln2/3$ and $T_c=\ln2$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />),
+For the supplied microscopic channel value $\varepsilon_0=\ln2/3$ and $T_c=\ln2$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />),
 
 $$
-\frac{\varepsilon_{geo}}{T_c}=\frac13.
+\frac{\varepsilon_0}{T_c}=\frac13.
 $$
 
 The logarithm satisfies
@@ -3849,8 +3849,7 @@ Site-summed upper bound: -0.54856855
 
 The enumerated drift is negative and lies below the site-summed bound. The fixture confirms the analytic one-tick value and inequality on this snapshot.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.5.2 formalizes the properties of the QBD calculation regarding degree-three drift calculation.
 
 ---
@@ -3862,8 +3861,7 @@ Section 4.6.5.2 formalizes the properties of the QBD calculation regarding degre
 
 Let $G$ be a finite active snapshot for the canonical unpumped tick. Then $K(G,G)=1$ exactly when there are no old triangles and every eligible addition candidate has an eligible reciprocal partner.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.6 formalizes the properties of the QBD lemma regarding exact unpumped quiescence.
 
 ---
@@ -3910,8 +3908,7 @@ Thus the output equals the input exactly when this set is empty. Together with S
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.6.1 formalizes the properties of the QBD proof regarding exact unpumped quiescence.
 
 ---
@@ -3988,8 +3985,7 @@ triangle: 0 eligible, quiescent=False
 
 The four-cycle is quiescent, the path has a surviving addition, and the triangle has a positive deletion event. These outputs confirm the quiescence classification for all three fixtures.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.6.2 formalizes the properties of the QBD calculation regarding reciprocal-aware quiescence fixtures.
 
 ---
@@ -4001,8 +3997,7 @@ Section 4.6.6.2 formalizes the properties of the QBD calculation regarding recip
 
 Let the vertex set be finite and fixed, and the active heights be nonnegative integers. After $t$ unpumped ticks their maximum is bounded by $H_{\max}(0)+t$, with the maximum of an empty graph taken as zero, so the reachable active snapshots through any fixed horizon form a finite set.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.7 formalizes the properties of the QBD lemma regarding finite-horizon height bound.
 
 ---
@@ -4039,8 +4034,7 @@ active snapshots in that horizon.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.7.1 formalizes the properties of the QBD proof regarding finite-horizon height bound.
 
 ---
@@ -4052,8 +4046,7 @@ Section 4.6.7.1 formalizes the properties of the QBD proof regarding finite-hori
 
 Let two unpumped snapshots agree in adjacency and differ by a common integer shift on active heights, with both assignments nonnegative. Their transition probabilities agree on shift classes, and the quotient is finite on any invariant class with fixed vertices and a uniform finite height span.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.8 formalizes the properties of the QBD lemma regarding common-height shift equivariance.
 
 ---
@@ -4104,8 +4097,7 @@ The term one counts the empty adjacency. Hence the invariant quotient is finite.
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.8.1 formalizes the properties of the QBD proof regarding common-height shift equivariance.
 
 ---
@@ -4131,8 +4123,7 @@ Quiescent states are identified by reciprocal filtering and deletion trials (**E
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.9 formalizes the properties of the QBD proof regarding emergent dynamics.
 
 ---
@@ -4230,8 +4221,7 @@ theorem parallel_addition_idempotent {V : Type}
 **Verification Summary:**
 The formalization models the parallel move scheduler over arbitrary vertex types with zero postulated axioms and zero unverified dependencies. The constructive Lean theorem `dynamic_move_disjointness` certifies that accepted additions and accepted deletions generated within identical parallel ticks are strictly disjoint, while `dynamic_race_free_invariance` validates that newly created edges cannot be concurrently destroyed. Furthermore, theorems `parallel_addition_commutes` and `parallel_addition_idempotent` confirm that concurrent additions commute in arbitrary sequence and fold duplicate proposals idempotently. The Lean type-checker's acceptance of these machine-checked proofs validates the deterministic confluence and structural consistency of the discrete parallel scheduler under **Emergent Dynamics** <Ref id="4.6.9" label="§4.6.9" />.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.6.10 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---
@@ -4243,8 +4233,7 @@ Section 4.6.10 formalizes the properties of the QBD type-theoretic regarding val
 
 Let $Q$ be the finite substochastic active-to-active matrix of a killed transition, irreducible with Perron root $\lambda\in(0,1)$. Its unique quasi-stationary probability $\nu$ has mean exit time $(1-\lambda)^{-1}$ when used as the initial law, and if $Q$ is primitive the conditioned law converges to $\nu$ exponentially.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.1 formalizes the properties of the QBD theorem regarding finite-kernel quasi-stationarity.
 
 ---
@@ -4256,8 +4245,7 @@ Section 4.7.1 formalizes the properties of the QBD theorem regarding finite-kern
 
 Let $Q$ be a finite irreducible substochastic matrix with Perron root $\lambda>0$. A distribution $\nu$ is quasi-stationary for killing on exit exactly when it is the normalized left Perron eigenvector of $Q$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.2 formalizes the properties of the QBD lemma regarding perron characterization of the qsd.
 
 ---
@@ -4291,8 +4279,7 @@ In components, $\pi r=\sum_i\pi_i r_i\ge(\min_i r_i)\sum_i\pi_i=\min_i r_i>0$. D
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.2.1 formalizes the properties of the QBD proof regarding perron characterization of the qsd.
 
 ---
@@ -4304,8 +4291,7 @@ Section 4.7.2.1 formalizes the properties of the QBD proof regarding perron char
 
 Let $\nu Q=\lambda\nu$ with $\nu\mathbf1=1$ and $0<\lambda<1$. The first exit time $\tau$ from the active set is geometric under $\nu$, with $\Pr_\nu(\tau>t)=\lambda^t$ for $t\ge0$ and $\mathbb E_\nu[\tau]=(1-\lambda)^{-1}$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.3 formalizes the properties of the QBD lemma regarding geometric lifetime from the qsd.
 
 ---
@@ -4345,8 +4331,7 @@ As $m\to\infty$, the left side tends to $\mathbb E_\nu[\tau]$ by monotone conver
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.3.1 formalizes the properties of the QBD proof regarding geometric lifetime from the qsd.
 
 ---
@@ -4358,8 +4343,7 @@ Section 4.7.3.1 formalizes the properties of the QBD proof regarding geometric l
 
 Let $Q$ be primitive and finite with Perron root $\lambda>0$. For each initial law $\pi$ on the active set and every $\eta\in(0,1)$ larger than the ratio of the subdominant spectral radius to $\lambda$, the conditioned law satisfies $\|\pi Q^t/(\pi Q^t\mathbf1)-\nu\|_{\mathrm{TV}}\le C_\eta(\pi)\eta^t$.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.4 formalizes the properties of the QBD lemma regarding conditional spectral convergence.
 
 ---
@@ -4395,8 +4379,7 @@ The numerator has $\ell^1$ norm at most $2\|e_t\|_1$. Total variation is half th
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.4.1 formalizes the properties of the QBD proof regarding conditional spectral convergence.
 
 ---
@@ -4420,8 +4403,7 @@ The left eigenvector gives survival mass $\lambda^t$ and its sum gives the mean 
 
 Q.E.D.
 
-**In Plain English:**
-
+**In Plain English:**  
 Section 4.7.5 formalizes the properties of the QBD proof regarding finite-kernel quasi-stationarity.
 
 ---

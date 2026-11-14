@@ -2958,8 +2958,8 @@ At the canonical parameter $\lambda_0 = e - 1$:
 $$\mu_{\mathrm{crit}}(\lambda_0) = \frac{(12 - 3e)^2}{108} \approx 0.136900.$$
 
 **Resolution of the Mean-Field Extinction Paradox via Two-Threshold Branching:**
-At the canonical constitutive coordinates $(\mu_0, \lambda_0) \approx (0.399, 1.718)$, the cubic discriminant evaluates to:
-$$\Delta(\mu_0, \lambda_0) = (9 - 3\lambda_0)^2 - 108\mu_0 \approx 14.79 - 43.08 = -28.29 < 0.$$
+At the canonical constitutive coordinates $(\mu_0, \lambda_0) \approx (0.398942, 1.718282)$, the cubic discriminant evaluates to:
+$$\Delta(\mu_0, \lambda_0) = (9 - 3\lambda_0)^2 - 108\mu_0 \approx 14.785213 - 43.085766 = -28.300553 < 0.$$
 In a spatially homogeneous mean-field continuum where density is uniform ($\langle \rho^2 \rangle = \langle \rho \rangle^2$), this negative discriminant predicts unconditional extinction for all initial configurations. Yet, multi-scale stochastic ensemble simulations on the discrete Bethe substrate (Section 5.3) demonstrate persistent active survival ($p_{\mathrm{surv}} = 0.270 \pm 0.044$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$).
 
 This discrepancy is resolved by two non-mean-field physical mechanisms:
@@ -2976,14 +2976,14 @@ $$\frac{\mathrm{d}\rho}{\mathrm{d}t} = (\Lambda + 9\rho^2)\mathrm{e}^{-6\mu\rho}
 where $\Lambda = 2^{-6} = 0.015625$ is the auxiliary source under the six-decision and reference-clock assumptions.
 
 1. **Homeostatic Attractor Equilibrium:** Balancing creation flux $C(\rho) = (\Lambda + 9\rho^2)\mathrm{e}^{-6\mu\rho}$ against deletion flux $D(\rho) = \frac{1}{2}\rho(1 + 6\lambda\rho)$ establishes a unique transcendental root:
-   $$\rho^* \approx \mathbf{0.0370}.$$
+   $$\rho^* \approx \mathbf{0.037061}.$$
 
 2. **Negative Jacobian Feedback:** Evaluating the linearized Jacobian $J \equiv \left.\frac{\mathrm{d}}{\mathrm{d}\rho}\left(C(\rho) - D(\rho)\right)\right|_{\rho^*}$ at canonical coordinates $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$ yields:
-   $$J \approx \mathbf{-0.33314} < 0.$$
-   Because the Jacobian eigenvalue is strictly negative, local density perturbations decay exponentially as $\delta\rho(t) = \delta\rho_0 \mathrm{e}^{J t}$, proving that $\rho^* \approx 0.0370$ is a globally stable homeostatic attractor. (Lean 4 Part 10 certifies the abstract ordered ring stability lemma: `gradient_dominance_implies_stability`, which proves $C' < D' \implies J < 0$).
+   $$J \approx \mathbf{-0.332922} < 0.$$
+   Because the Jacobian eigenvalue is strictly negative, local density perturbations decay exponentially as $\delta\rho(t) = \delta\rho_0 \mathrm{e}^{J t}$, proving that $\rho^* \approx 0.037061$ is a globally stable homeostatic attractor. (Lean 4 Part 10 certifies the abstract ordered ring stability lemma: `gradient_dominance_implies_stability`, which proves $C' < D' \implies J < 0$).
 
 3. **Reconciling the Three Density Regimes:** The physical behavior resolves into three distinct quantitative regimes:
-   * **Driven Continuum Attractor ($\rho^* \approx 0.0370$):** In the driven continuous master equation ($\Lambda = 2^{-6} > 0$), continuous injection maintains a uniform, non-vanishing steady state with negative restoring Jacobian $J \approx -0.333$.
+   * **Driven Continuum Attractor ($\rho^* \approx 0.037061$):** In the driven continuous master equation ($\Lambda = 2^{-6} > 0$), continuous injection maintains a uniform, non-vanishing steady state with negative restoring Jacobian $J \approx -0.332922$.
    * **Finite-$N$ Unpumped QSD ($\langle \rho \rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$):** In unpumped discrete Monte Carlo ensembles ($\Lambda_{\mathrm{micro}} \equiv 0$), conditioned on survival, the active core concentrates around the seed with $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles.
    * **Thermodynamic Soliton Limit ($\rho \to 0$ as $N \to \infty$):** In the unpumped limit on large trees ($N = 10,000$), the active phase forms a localized topological soliton with $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ cycles, meaning intensive density $\rho = N_3/N \to 0$. The unpumped active phase is an emergent localized defect, not an extensive volume-filling bulk spacetime; extensive geometry requires continuous driving ($\Lambda > 0$) or distributed multi-seed nucleation.
 
@@ -2999,7 +2999,7 @@ To resolve the finite-volume behavior, extensive ensemble simulations were condu
 
 ### 5.3.1 Parameter Sweep Ensemble Records
 
-Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.399, 1.72, 0.69)$ from the benchmark dataset (`p_surv_N100_design.csv`) along with parameter sweep variations confirm the analytical phase boundaries:
+Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.398942, 1.718282, 0.693147)$ (labeled at two-decimal sweep resolution in Table 6) from the benchmark dataset (`p_surv_N100_design.csv`) along with parameter sweep variations confirm the analytical phase boundaries:
 
 Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100\text{ ticks}$, 100 Realizations per Cell).*
 
@@ -3124,9 +3124,9 @@ Q.E.D.
 
 The physical behavior of the active phase resolves into three distinct regimes across the mean-field and microscopic formulations:
 
-1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.137$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.399$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
+1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.136900$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
 2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the negative homogeneous mean-field discriminant ($\Delta < 0$, Section 5.2.3), the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ sustain an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$ (Table 6). Survival is enabled by localized soliton clustering ($\rho_{\mathrm{local}} \gg \langle \rho \rangle$) and non-mean-field cycle correlations on the Bethe tree, operating in the Pemantle-Liggett weak survival window ($\lambda_{c1} < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2}$) where branching path expansion overcomes local extinction [14, 18].
-3. **Driven Continuum Master Equation ($\Lambda = 2^{-6}$):** Under continuous microscopic creation injection, the driven non-equilibrium master equation admits a strictly stable steady-state attractor $\rho^* \approx 0.0370$ with negative restoring flux $J \approx -0.333 < 0$ at the exact canonical coordinates $(\mu_0, \lambda_0)$. This active attractor is driven by non-equilibrium flux and does not represent an invariant measure of the unpumped discrete Markov chain.
+3. **Driven Continuum Master Equation ($\Lambda = 2^{-6}$):** Under continuous microscopic creation injection, the driven non-equilibrium master equation admits a strictly stable steady-state attractor $\rho^* \approx 0.037061$ with negative restoring flux $J \approx -0.332922 < 0$ at the exact canonical coordinates $(\mu_0, \lambda_0)$. This active attractor is driven by non-equilibrium flux and does not represent an invariant measure of the unpumped discrete Markov chain.
 
 ## 5.5 Geometric Stabilization (Topological Stability)
 
@@ -3397,7 +3397,7 @@ The analytical and computational results presented in this work establish:
 
 ### Formal Verification Scope and Lean 4 Correspondence
 
-To establish complete transparency regarding the nature of the mathematical claims, Table 8 maps the paper's principal theoretical results to their machine-checked Lean 4 formalization in `VacuumPhase.lean`. The repository contains **68 verified `theorem` declarations** (encompassing 53 numbered theorems across 10 structural parts, 66 definitions, and 7 structures, totaling 141 top-level declarations) compiled under Lean 4 with 0 axioms and 0 unproven obligations (`sorry`).
+To establish complete transparency regarding the nature of the mathematical claims, Table 8 maps the paper's principal theoretical results to their machine-checked Lean 4 formalization in `VacuumPhase.lean`. The repository contains **84 verified `theorem` declarations** (encompassing 53 numbered theorems across 10 core structural parts plus Parts 6.5 and 9.5, 77 definitions, 8 structures, and 3 abbreviations, totaling 172 top-level declarations in `VacuumPhase.lean`, alongside 4 theorems and 5 definitions in `VacuumPhaseMathlib.lean`) compiled under Lean 4 with 0 axioms and 0 unproven obligations (`sorry`).
 
 Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
 
@@ -3424,7 +3424,7 @@ Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
 *Explicitly Non-Formalized Results:*
 To maintain complete scientific integrity, we explicitly demarcate the boundaries of what is certified in Lean 4 versus what is derived analytically or numerically:
 
-1. **Numerical Jacobian ($J \approx -0.33314$):** The transcendental fixed point $\rho^* \approx 0.0370$ and its linearized eigenvalue $J \approx -0.33314$ are computed via floating-point numerical root finding; Lean 4 certifies only the abstract ordered ring stability condition $C' < D' \implies J < 0$.
+1. **Numerical Jacobian ($J \approx -0.332922$):** The transcendental fixed point $\rho^* \approx 0.037061$ and its linearized eigenvalue $J \approx -0.332922$ are computed via floating-point numerical root finding; Lean 4 certifies only the abstract ordered ring stability condition $C' < D' \implies J < 0$.
 2. **Continuum Master Equation Derivation:** The van Kampen system-size expansion and Kramers–Moyal jump moments are derived using standard continuum statistical mechanics, not formal type theory.
 3. **Finite-$N$ Scaling Exponents:** The extinction lifetime scaling $\tau_{\mathrm{ext}} \sim N^{0.64}$ and survival probabilities $p_{\mathrm{surv}}$ are empirical Monte Carlo measurements obtained from the C++20 and Python engines.
 4. **General-$N$ Vacuum Uniqueness:** The exhaustive tree census proving Bethe fragment uniqueness is computationally verified for $N \le 10$; Lean 4 formalizes the trivalent coordination and leaf relations for general regular fragments.
@@ -3491,7 +3491,7 @@ The complete, machine-checked Lean 4 formal kernel, the high-performance C++20 m
 
 # Supplementary Material
 
-The complete machine-checked Lean 4 formal verification proofs (68 verified theorem declarations across 53 numbered theorems in 10 parts, 141 total declarations, 0 axioms, 0 sorry), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion technical supplement:
+The complete machine-checked Lean 4 formal verification proofs (84 verified theorem declarations across 53 numbered theorems in 10 core structural parts plus Parts 6.5 and 9.5 — 172 total declarations in `VacuumPhase.lean` plus 4 theorems and 5 definitions in `VacuumPhaseMathlib.lean`, 0 axioms, 0 sorry), the high-performance multi-threaded C++20 simulation engine, and the standalone Python 3 reference implementation and prior verification suite are published in the companion technical supplement:
 
 * **Online Technical Supplement:** [*Formal Lean 4 Specifications and High-Performance Simulation Engines*](https://braiddynamics.com/papers/vacuum-phase/supplement)
 * **Supplementary Markdown Source:** [*vacuum-phase-supplement.md*](https://github.com/braiddynamics/qbd-portal/blob/main/papers/vacuum-phase/downloads/vacuum-phase-supplement.md)

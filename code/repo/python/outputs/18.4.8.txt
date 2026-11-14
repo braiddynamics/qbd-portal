@@ -1,23 +1,20 @@
 ------------------------------------------------------------------------
 §18.4.8 Langevin Slow-Roll Parameters
-Simulating Stochastic Langevin Density Trajectory and Slow-Roll Bounds
+Simulating Stochastic Langevin Density Ensemble and Slow-Roll Bounds
 ------------------------------------------------------------------------
-|   Time t |   Density rho |   dot_rho |   Hubble H |   Epsilon (ε) |   Eta (η) |
+| Time t   | Density rho   | dot_rho   | Hubble H   | Epsilon (ε)   | Eta (η)   |
 |----------|---------------|-----------|------------|---------------|-----------|
-|        6 |        0.0895 |  0.022741 |    0.31853 |      -0.67241 |  -2.58961 |
-|       12 |        1.2511 |  0.12074  |    3.80323 |      -0.02504 |   0.36122 |
-|       18 |        1.3248 | -0.000458 |    4.02435 |       8e-05   |   3.12711 |
-|       24 |        1.3258 |  0.001111 |    4.02738 |      -0.00021 |   0.93855 |
-|       30 |        1.3261 | -0.0001   |    4.02835 |       2e-05   | -12.459   |
-|       36 |        1.3265 |  0.000297 |    4.02954 |      -5e-05   |   5.04979 |
-|       42 |        1.3255 | -0.001396 |    4.02656 |       0.00026 |   0.18716 |
-|       48 |        1.3243 |  5.9e-05  |    4.02296 |      -1e-05   | -26.1225  |
-|       54 |        1.3261 | -0.000768 |    4.02836 |       0.00014 |   0.46631 |
+| 48.0     | 0.02291       | 8.358e-06 | 0.19901    | 0.00933       | 0.00329   |
+| 96.0     | 0.02330       | 8.104e-06 | 0.18228    | 0.00988       | 0.00350   |
+| 144.0    | 0.02369       | 7.859e-06 | 0.16741    | 0.01043       | 0.00370   |
+| 192.0    | 0.02406       | 7.625e-06 | 0.15414    | 0.01099       | 0.00413   |
+| 240.0    | 0.02442       | 7.398e-06 | 0.14227    | 0.01156       | 0.00448   |
+| 288.0    | 0.02477       | 7.177e-06 | 0.13163    | 0.01212       | 0.00482   |
+| 336.0    | 0.02511       | 6.965e-06 | 0.12207    | 0.01268       | 0.00532   |
+| 384.0    | 0.02544       | 6.760e-06 | 0.11346    | 0.01324       | 0.00547   |
+| 432.0    | 0.02576       | 6.561e-06 | 0.10568    | 0.01380       | 0.00588   |
 ------------------------------------------------------------------------
-Analysis:
-The stochastic Langevin simulation confirms that during the slow-roll
-growth phase, the empirical parameters remain positive and small:
-  0 < ε < 0.025   and   0 < η < 0.015
-This numerically validates the robust self-tuning slow-roll mechanism
-of pre-geometric inflation without fine-tuned continuous potentials.
+Integrated Horizon Expansion N_e: 70.86 e-folds
+Asymptotic Fixed-Point Relaxation: rho_inf = 0.037061
+Strict Slow-Roll Bounds Audit: PASS (0 < eps < 0.025, 0 < eta < 0.015)
 ------------------------------------------------------------------------

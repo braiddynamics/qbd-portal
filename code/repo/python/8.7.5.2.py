@@ -3,7 +3,7 @@ import numpy as np
 kappa_m_gev = 0.0001703  # GeV / 3-cycle
 V_CALIB = 246.22  # GeV, EW scale
 N_SCALE_BASE = V_CALIB / kappa_m_gev  # ~1.445e6 3-cycles / GeV
-RHO_CENTER = 0.0290
+RHO_CENTER = 0.0290  # Discrete-ensemble mean <rho>_all (§5.3, Table 5.3.3.2)
 RHO_SIGMA = 0.0050  # Ensemble scatter
 NUM_MC = 1000  # Runs
 # Generation Configurations (N_net from Ch7 writhe minima, adj for hierarchy)
