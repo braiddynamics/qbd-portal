@@ -107,37 +107,34 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $p$ | Conditional edge timestamp-comparison bound ($0 < p < 1/4$) | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $q$ | Conditional reverse-path branching factor ($q = 2p$) | [§2.7.4.1](/monograph/rules/axioms/2.7/#2.7.4.1) |
 | $\Omega_{\mathrm{occ}}$ | Set of immutable edge creation occurrences | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
-| $\Delta F$ | Change in Free Energy | [§3.1](/monograph/rules/architecture/3.1/#3.1) |
-| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
+| $r$ | The Root Vertex ($d_{\mathrm{in}}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
 | $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8](/monograph/rules/architecture/3.1/#3.1.8) |
-| $G_0$ | Regular Bethe Fragment (pre-geometric graph vacuum substrate) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
-| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1.1](/monograph/rules/architecture/3.2/#3.2.1.1) |
-| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
+| $\operatorname{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8.2](/monograph/rules/architecture/3.1/#3.1.8.2) |
+| $k_{\mathrm{deg}}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
+| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
 | $\lambda$ | Weighting parameter for optimality score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
+| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
 | $\mathbf{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
 | $\varphi$ | An automorphism mapping | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
-| $\mathfrak{G}_{\text{sym}}$ | Formal Symmetry Framework (relational automorphism group) | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
-| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.3](/monograph/rules/architecture/3.3/#3.3.3) |
-| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](/monograph/rules/architecture/3.4/#3.4.2) |
-| $\mathcal{T}_{\text{tunnel}}$ | Tunneling Operator | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\chi(G)$ | Chromatic Number | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\epsilon_{geo}$ | Geometric Self-Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
+| $\mathcal{S}(G)$ | Set of eligible candidate rewrite sites | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
+| $\mathcal{S}_{\text{sites}}(G)$ | Equivariant candidate rewrite site set | [§3.3.4](/monograph/rules/architecture/3.3/#3.3.4) |
+| $s_{\mathrm{add}}$ | Addition stress score of a candidate 2-path site | [§3.4.5.1](/monograph/rules/architecture/3.4/#3.4.5.1) |
 | $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $F$ | Fixed forbidden-pair locality mask | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\mathcal{C}_F$ | QECC codespace for forbidden-pair mask $F$ (abbreviated $\mathcal{C}$ when $F$ is fixed) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{cycle}}(u,v)$ | Hard Constraint Projector excluding reciprocal 2-cycles | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{local}}(u,v)$ | Hard Constraint Projector enforcing locality mask $F$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $K_{uv}$ | Individual edge occupancy readout | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $S_1, S_2, S_3$ | Triplet pair-product diagnostic checks | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $V = Z_{uv}Z_{vw}Z_{wu}$ | Three-qubit triplet volume readout resolving pair-check degeneracy | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Omega_F$ | Set of labeled adjacency configurations satisfying hard projections | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.3.2](/monograph/rules/architecture/3.5/#3.5.3.2) |
+| $\Pi_{\mathrm{order}}$ | Non-linear triad order projector annihilating closed 3-cycles | [§3.5.5.4](/monograph/rules/architecture/3.5/#3.5.5.4) |
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
 | $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
 | $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |

@@ -13,7 +13,7 @@ G_disc.add_edges_from([(0,1), (0,2), (0,3)])
 G_disc.add_edges_from([(4,5), (4,6), (4,7)])
 
 # 2. Connected Configuration
-# Bridge the roots: 3->4
+# Bridge leaf 3 (first star) to center 4 (second star): 3->4
 G_conn = nx.DiGraph(G_disc)
 G_conn.add_edge(3, 4)
 

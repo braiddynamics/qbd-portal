@@ -391,14 +391,14 @@ Section 3.1.8.1 formalizes the properties of the QBD proof regarding global conn
 
 ### 3.1.8.2 Calculation: Connectivity Counterexample {#3.1.8.2}
 
-:::note[**Computational Demonstration of Entropy Violation in Disconnected Graphs by Group Size Comparison**]
+:::note[**Automorphism Order and Orbit Splitting via Bridge Coupling of Disjoint Stars**]
 :::
 
-Algorithmic validation of the entropic penalty for disconnected topologies established by **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
+Quantitative comparison of permutation symmetry before and after coupling disjoint components alongside **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
 
-1.  **Disconnected Topology:** The simulation instantiates a graph `G_disc` comprising two disjoint star subgraphs ($N=4$ each), representing a vacuum state with broken causal connectivity. Each star consists of a central root connected to three leaf nodes.
-2.  **Connected Topology:** A second graph `G_conn` is derived from the disconnected state by introducing a single bridge edge between the centers of the two stars, establishing a weak causal path between the previously disjoint regions.
-3.  **Symmetry Quantification:** The algorithm computes the cardinality of the automorphism group $|\text{Aut}(G)|$ for both configurations using the `VF2` isomorphism algorithm provided by `networkx`. This metric quantifies the relational entropy cost of disconnection by counting the number of valid symmetry permutations, verifying the **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> symmetry preservation.
+1.  **Disconnected Topology:** The simulation instantiates a graph `G_disc` comprising two disjoint star subgraphs ($N=4$ each), with edges $0 \to \{1, 2, 3\}$ and $4 \to \{5, 6, 7\}$, representing two causally isolated components.
+2.  **Connected Topology:** A second graph `G_conn` is derived from `G_disc` by introducing a single bridge edge $(3, 4)$ connecting leaf $3$ of the first star to center $4$ of the second star, establishing a directed causal link between the two components.
+3.  **Symmetry Quantification:** The algorithm computes the cardinality of the automorphism group $|\operatorname{Aut}(G)|$ for both configurations using the `VF2` isomorphism algorithm provided by `networkx`, quantifying how coupling the two components alters global permutation symmetry relative to the **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> baseline.
 
 ```python
 import networkx as nx
@@ -416,7 +416,7 @@ G_disc.add_edges_from([(0,1), (0,2), (0,3)])
 G_disc.add_edges_from([(4,5), (4,6), (4,7)])
 
 # 2. Connected Configuration
-# Bridge the roots: 3->4
+# Bridge leaf 3 (first star) to center 4 (second star): 3->4
 G_conn = nx.DiGraph(G_disc)
 G_conn.add_edge(3, 4)
 
@@ -443,7 +443,7 @@ Symmetry Reduction Factor: 6.0x
 ```
 
 **Conclusion:**
-The disconnected graph exhibits 72 automorphisms, arising from the permutation of leaves within the stars and the independent swapping of the two identical star components ($2 \times 3! \times 3! \times 2$). The connected graph reduces this symmetry group to 12. The calculated symmetry reduction factor of 6.0 confirms that disconnected states possess a significantly larger symmetry group ($72$ vs $12$). This high "symmetry penalty" corresponds to a lower relational entropy state, demonstrating that the vacuum thermodynamically disfavors disconnection and validating the exclusion of such topologies from the maximum-entropy vacuum state.
+The disconnected graph exhibits $3! \times 3! \times 2 = 72$ automorphisms, arising from permuting leaves within each star together with swapping the two isomorphic components. Introducing the asymmetric bridge $(3, 4)$ fixes leaf $3$, distinguishes centers $0$ and $4$ by their indegree and outdegree roles, and leaves only $2! \times 3! = 12$ automorphisms ($2!$ permutations on $\{1, 2\}$ and $3!$ on $\{5, 6, 7\}$), a $6.0\times$ reduction. Crucially, this coupling splits the vertex automorphism orbits from two orbits of sizes $[2, 6]$ (orbit-partition Shannon entropy $H_S \approx 0.8113$ bits) into five orbits of sizes $[1, 1, 1, 2, 3]$ ($H_S \approx 2.1556$ bits): coupling increases orbit-partition diversity while lowering $|\operatorname{Aut}(G)|$. Larger $|\operatorname{Aut}(G)|$ therefore cannot by itself enforce connectedness; connectivity in **Global Connectivity** <Ref id="3.1.8" label="§3.1.8" /> follows directly from the root-reachability premise of **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />. By contrast, positive $\log_2|\operatorname{Aut}(G)|$ weighting in **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> evaluates candidates only after connectedness and coordination filters restrict the tree class.
 
 **In Plain English:**  
 Section 3.1.8.2 formalizes the properties of the QBD calculation regarding connectivity counterexample.
@@ -3215,7 +3215,7 @@ def commutes(p1: str, p2: str) -> bool:
     """Return True if two Pauli strings commute (even number of anti-commuting sites)."""
     anti_count = 0
     for a, b in zip(p1, p2):
-        if a in 'IXYZ' and b in 'IXYZ' and a != b and {a, b} == {'X', 'Y'}:
+        if a in 'XYZ' and b in 'XYZ' and a != b:
             anti_count += 1
     return anti_count % 2 == 0
 
@@ -3265,48 +3265,48 @@ generate_syndrome_table(7, stabilizers_7, "7-Qubit Steane Code")
 | Error Type   | Qubit   |   Syndrome |
 |--------------|---------|------------|
 | None         | -       |       0000 |
-| X            | 0       |       0000 |
-| Y            | 0       |       1010 |
-| Z            | 0       |       0000 |
-| X            | 1       |       0000 |
-| Y            | 1       |       0101 |
-| Z            | 1       |       0000 |
-| X            | 2       |       0000 |
-| Y            | 2       |       0010 |
-| Z            | 2       |       0000 |
-| X            | 3       |       0000 |
-| Y            | 3       |       1001 |
-| Z            | 3       |       0000 |
-| X            | 4       |       0000 |
-| Y            | 4       |       0100 |
-| Z            | 4       |       0000 |
+| X            | 0       |       0001 |
+| Y            | 0       |       1011 |
+| Z            | 0       |       1010 |
+| X            | 1       |       1000 |
+| Y            | 1       |       1101 |
+| Z            | 1       |       0101 |
+| X            | 2       |       1100 |
+| Y            | 2       |       1110 |
+| Z            | 2       |       0010 |
+| X            | 3       |       0110 |
+| Y            | 3       |       1111 |
+| Z            | 3       |       1001 |
+| X            | 4       |       0011 |
+| Y            | 4       |       0111 |
+| Z            | 4       |       0100 |
 
 7-Qubit Steane Code Syndrome Table
 =================================
 | Error Type   | Qubit   |   Syndrome |
 |--------------|---------|------------|
 | None         | -       |     000000 |
-| X            | 0       |     000000 |
-| Y            | 0       |     001000 |
-| Z            | 0       |     000000 |
-| X            | 1       |     000000 |
-| Y            | 1       |     010000 |
-| Z            | 1       |     000000 |
-| X            | 2       |     000000 |
-| Y            | 2       |     011000 |
-| Z            | 2       |     000000 |
-| X            | 3       |     000000 |
-| Y            | 3       |     100000 |
-| Z            | 3       |     000000 |
-| X            | 4       |     000000 |
-| Y            | 4       |     101000 |
-| Z            | 4       |     000000 |
-| X            | 5       |     000000 |
-| Y            | 5       |     110000 |
-| Z            | 5       |     000000 |
-| X            | 6       |     000000 |
-| Y            | 6       |     111000 |
-| Z            | 6       |     000000 |
+| X            | 0       |     000001 |
+| Y            | 0       |     001001 |
+| Z            | 0       |     001000 |
+| X            | 1       |     000010 |
+| Y            | 1       |     010010 |
+| Z            | 1       |     010000 |
+| X            | 2       |     000011 |
+| Y            | 2       |     011011 |
+| Z            | 2       |     011000 |
+| X            | 3       |     000100 |
+| Y            | 3       |     100100 |
+| Z            | 3       |     100000 |
+| X            | 4       |     000101 |
+| Y            | 4       |     101101 |
+| Z            | 4       |     101000 |
+| X            | 5       |     000110 |
+| Y            | 5       |     110110 |
+| Z            | 5       |     110000 |
+| X            | 6       |     000111 |
+| Y            | 6       |     111111 |
+| Z            | 6       |     111000 |
 
 **Conclusion:**
 The tables confirm that each single-qubit error generates a unique syndrome signature. No two single-qubit errors map to the same syndrome string (e.g., in 5-qubit code, X on Q0 is `0001`, Z on Q0 is `1010`). This injectivity verifies the capability of the stabilizer formalism to identify and distinguish local errors, supporting the physical interpretation of syndromes as diagnostic data. This capability allows the system to localize faults precisely without collapsing the global wavefunction.
