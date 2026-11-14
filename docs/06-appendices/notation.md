@@ -9,10 +9,9 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\hat{H}$ | Hamiltonian constraint operator | [§1.1](/monograph/rules/ontology/1.1/#1.1) |
 | $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
+| $\mathcal{A}_{\mathrm{ax}}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
@@ -20,59 +19,62 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Gamma$ | A set of premises | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\theta$ | A derived theorem | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
+| $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ | The Gödel sentence (true but unprovable in $\mathfrak{F}$) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
 | $\text{DAG}$ | Directed Acyclic Graph (relational foundation of causal order) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
-| $\Pi(u,v)$ | Directed Path (sequence of relational causality from vertex $u$ to $v$) | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
-| $\pi_{\text{simple}}$ | Simple Path (acyclic trajectory of causal influence) | [§1.2.4](/monograph/rules/ontology/1.2/#1.2.4) |
-| $\Pi_2(u,v)$ | 2-Path (minimal unit of transitive mediation) | [§1.2.5](/monograph/rules/ontology/1.2/#1.2.5) |
-| $C$ | Cycle (general topological causal closure) | [§1.2.6](/monograph/rules/ontology/1.2/#1.2.6) |
+| $(v_0, v_1, \dots, v_n)$ | Directed path vertex sequence in graph $G$ | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
+| $v_i \neq v_j$ | Vertex distinctness condition defining a simple path | [§1.2.4](/monograph/rules/ontology/1.2/#1.2.4) |
+| $(v, w, u)$ | 2-Path vertex triple ($v \to w \to u$) | [§1.2.5](/monograph/rules/ontology/1.2/#1.2.5) |
+| $v_0 = v_k$ | Cycle boundary closure condition for sequence length $k \ge 1$ | [§1.2.6](/monograph/rules/ontology/1.2/#1.2.6) |
 | $(u,v),(v,u)$ | 2-Cycle (minimal unit of reciprocal causality and feedback) | [§1.2.7](/monograph/rules/ontology/1.2/#1.2.7) |
 | $(A,B,C)$ | 3-Cycle (minimal closed loop enclosing elementary spatial area) | [§1.2.8](/monograph/rules/ontology/1.2/#1.2.8) |
 | $(t_L, t_{\text{phys}})$ | Dual Time Architecture (logical clock and emergent duration) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $t_{phys}$ | Physical Time (emergent metric time) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
-| $\pi$ | Directed Path (sequence of relational causality) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
-| $\pi_2$ | 2-Path (minimal unit of transitive mediation) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\pi_{\mathrm{path}}$ | Directed causal path $(v_0, v_1, \dots, v_k)$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\tau(\pi_{\mathrm{path}})$ | Emergent physical proper duration functional along path $\pi_{\mathrm{path}}$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
 | $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$ and causal heights) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $U_0$ | Specified initial state indexed by $t_L = 0$ on a trajectory | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\Psi$ | Wavefunction of the universe | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\mu$ | Renormalization scale | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.3.3.2](/monograph/rules/ontology/1.3/#1.3.3.2) |
-| $\mathcal{T}$ | Unimodular Time variable | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $M$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $b$ | Finite Branching factor | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $M_{\mathrm{st}}$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
 | $A_t$ | Number of binary addition trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $T$ | Temporal Domain (Set of integers) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $C_t$ | Number of old triangles with deletion trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $T$ | Discrete tick horizon in asymptotic entropy bounds | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $\Xi_t$ | Realized list of local update choices at tick $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $H_S$ | Shannon entropy in bits | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $P_2(G_t)$ | Count of supporting directed 2-paths in snapshot $G_t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $\Delta$ | Maximum vertex degree bound in snapshot entropy estimates | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
 | $\mathcal E_t$ | Cumulative set of creation occurrences through tick $t$ | [§1.3.6](/monograph/rules/ontology/1.3/#1.3.6) |
-| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
+| $B_t$ | Fresh occurrence increment $\mathcal E_{t+1} \setminus \mathcal E_t$ on tick $t$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $A_t^{\mathrm{ret}}, D_t$ | Retained additions and actual deletions on tick $t \to t+1$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $M_{\mathrm{act}}$ | Number of active ticks with at least one update event | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $N$ | Fixed number of vertices $\|V\|$ in finite recurrence bounds | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
+| $E_t$ | Directed edge set at logical tick $t$ | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
 | $\tau_0$ | Minimum step duration in the conditional sequential bound | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $c$ | Speed of light | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
+| $T_{\mathrm{phys}}$ | Finite physical time interval length | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
+| $\mathcal{H}_{\mathrm{hist}}$ | Family of distinguishable occurrence histories | [§1.3.9](/monograph/rules/ontology/1.3/#1.3.9) |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.3.10.1](/monograph/rules/ontology/1.3/#1.3.10.1) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $G_t, G$ | Causal Graph snapshot $(V, E_t, H_t)$ and static form $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $H_t$ | Snapshot History Function assigning causal height $E_t \to \mathbb{N}_0$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $\omega=(u,v,b,h)$ | Historical creation occurrence record (endpoints, birth tick, height) | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
 | $v, u, w$ | Individual vertices | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
 | $e$ | Individual edge $(u, v)$ | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
-| $H$ | History Function (Local proper time mapping $E \to \mathbb{N}$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
-| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $H$ | History Function (Causal height mapping $E \to \mathbb{N}_0$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $b(e)$ | Scheduler birth tick assigned upon edge creation | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $D, D^+$ | Direct causal dependence relation and transitive closure | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.6](/monograph/rules/ontology/1.4/#1.4.6) |
 | $\mathfrak{T}$ | Elementary Task Space | [§1.5.1](/monograph/rules/ontology/1.5/#1.5.1) |
 | $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
 | $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.5.2](/monograph/rules/ontology/1.5/#1.5.2) |
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
+| $V_{act}$ | Active vertex set (vertices with non-zero incidence degree) | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
+| $\mathfrak{T}_{vac}$ | Vacuum Repertoire of admissible primitive operations | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
 | $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.1](/monograph/rules/axioms/2.1/#2.1) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
 | $E$ | The set of edges within the graph | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
