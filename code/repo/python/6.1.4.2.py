@@ -17,12 +17,12 @@ def simulate_cluster_decay():
     print("=" * 60)
     
     # ── Physical Constants (Derived in Chapter 5) ─────────────────────
-    Λ_vac     = 0.0156                          # Vacuum Permittivity
+    Λ_vac     = 2.0 ** (-6)                     # Vacuum Permittivity = 0.015625
     μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
     λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
     
-    ρ_star    = 0.0370                          # Equilibrium vacuum density
-    ρ_core    = 0.0820                          # Knot core threshold (topological lock)
+    ρ_star    = 0.037061                        # Equilibrium vacuum density
+    ρ_core    = 0.082000                        # Knot core threshold (topological lock)
     
     # ── Simulation Parameters ────────────────────────────────────────
     initial_ρ = 0.50                            # High-stress fluctuation
@@ -60,11 +60,11 @@ def simulate_cluster_decay():
     
     # ── Results Output ───────────────────────────────────────────────
     print(f"\nPhysical Parameters:")
-    print(f"  Vacuum Drive (Λ)      : {Λ_vac:.4f}")
+    print(f"  Vacuum Drive (Λ)      : {Λ_vac:.6f}")
     print(f"  Friction (μ)          : {μ:.6f}")
     print(f"  Catalysis (λ_cat)     : {λ_cat:.6f}")
-    print(f"  Equilibrium Density   : {ρ_star:.4f}")
-    print(f"  Knot Core Threshold   : {ρ_core:.4f}")
+    print(f"  Equilibrium Density   : {ρ_star:.6f}")
+    print(f"  Knot Core Threshold   : {ρ_core:.6f}")
     print(f"\nInitial Local Density   : {initial_ρ:.2f}")
     print("-" * 60)
     print(f"Final States after {n_steps} steps:")
@@ -75,8 +75,8 @@ def simulate_cluster_decay():
     # Initial flux balance verification
     j_in_0, j_out_0 = fluxes(initial_ρ)
     print(f"Initial Flux Balance (ρ = {initial_ρ}):")
-    print(f"  Creation  J_in  : {j_in_0:.4f}")
-    print(f"  Deletion  J_out : {j_out_0:.4f}")
-    print(f"  Net Rate dρ/dt  : {j_in_0 - j_out_0:+.4f} (Strong Decay)")
+    print(f"  Creation  J_in  : {j_in_0:.6f}")
+    print(f"  Deletion  J_out : {j_out_0:.6f}")
+    print(f"  Net Rate dρ/dt  : {j_in_0 - j_out_0:+.6f} (Strong Decay)")
 if __name__ == "__main__":
     simulate_cluster_decay()

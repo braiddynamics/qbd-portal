@@ -16,10 +16,10 @@ HBAR = 1.0
 C = 1.0
 KB = 1.0
 L0 = 1.0
-RHO_3_STAR = 0.0370     # Equilibrium 3-cycle density (Section 5.4.1)
+RHO_3_STAR = 0.037061   # Equilibrium 3-cycle density (Section 5.4.1)
 
 # Sakharov (1967) Induced Metric Elasticity (Section 14.4.3)
-G_CONST = (C**3 * (L0**2)) / (4.0 * HBAR * RHO_3_STAR)  # G = 1 / (4 * 0.037) = 6.756757
+G_CONST = (C**3 * (L0**2)) / (4.0 * HBAR * RHO_3_STAR)  # G = 1 / (4 * 0.037061) = 6.745636
 KAPPA = (8.0 * np.pi * G_CONST) / (C**4)               # Einstein coupling constant
 
 # Kramers-Moyal Vacuum Energy Density V0 = 2^-6 = 0.015625
@@ -35,7 +35,7 @@ def run_entanglement_gravity_validation():
     # --------------------------------------------------------------------------
     print("Protocol 1: Sakharov (1967) Induced Metric Elasticity")
     print(f"  Microscopic Discreteness Area ell_0^2:  {L0**2:.4f}")
-    print(f"  Equilibrium 3-Cycle Density rho_3*:     {RHO_3_STAR:.4f}")
+    print(f"  Equilibrium 3-Cycle Density rho_3*:     {RHO_3_STAR:.6f}")
     print(f"  Derived Newton Constant G:              {G_CONST:.6f} (c^3 ell_0^2 / 4 hbar rho_3*)")
     print(f"  Einstein Coupling Constant kappa:       {KAPPA:.6f} (8 pi G / c^4)")
     print("-" * 78)

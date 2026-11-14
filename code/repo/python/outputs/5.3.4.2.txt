@@ -1,13 +1,26 @@
-Constitutive Analytical Priors Verification
-=================================================================
-Parameter          | Exact Formulation        | Numerical Value
------------------------------------------------------------------
-beta_c (Modulus)   | ln(2)                    | 0.693147       
-mu_0 (Friction)    | 1 / sqrt(2*pi)           | 0.398942       
-lambda_0 (Catalysis) | e - 1                    | 1.718282       
-eps_geo (Energy)   | ln(2) / 3                | 0.231049       
-Lambda (Drive)     | 2^(-6)                   | 0.015625       
-rho_c (Barrier)    | 1 / (24 - 6*e)           | 0.130034       
-mu_crit (Bifurcation) | (9 - 3*lambda)^2 / 108   | 0.136900       
-=================================================================
-All constitutive priors confirmed within Region of Physical Viability.
+Constitutive Analytical Priors and Three-Regime Phase Boundaries
+========================================================================
+Parameter              | Exact Formulation        | Value       
+------------------------------------------------------------------------
+beta_c (Modulus)       | ln(2)                    | 0.693147    
+mu_0 (Friction)        | 1 / sqrt(2*pi)           | 0.398942    
+lambda_0 (Catalysis)   | e - 1                    | 1.718282    
+eps_geo (Energy)       | ln(2) / 3                | 0.231049    
+Lambda_0 (Drive)       | 2^(-6)                   | 0.015625    
+rho_c (Barrier)        | 1 / (24 - 6*e)           | 0.130034    
+mu_crit (Bifurcation)  | (9 - 3*lambda)^2 / 108   | 0.136900    
+------------------------------------------------------------------------
+Scalar Fixed-Point Classification
+  Driven undamped D0 (Lam=2^-6)            : 0.037061 (J=-0.332922)
+  Unpumped undamped D0 (Lam=0)             : none (Delta = -28.300553)
+  Unpumped symmetric D (Lam=0, s=6rho)     : 0.130034 (J=+0.366263)
+  Driven symmetric D (Lam=2^-6, s=6rho)    : 0.052225 (J=-0.086816), 0.077809 (J=+0.081659)
+  Unpumped symmetric D (Lam=0, s=2+6rho)   : 0.149554 (J=+0.698283)
+  Driven symmetric D (Lam=2^-6, s=2+6rho)  : 0.017750 (J=-0.730068), 0.131804 (J=+0.555646)
+------------------------------------------------------------------------
+Discrete Bethe-Tree Two-Threshold Invariants (b = 2)
+  Cubic discriminant Delta(mu_0, lam_0)    : -28.300553
+  Isolated deletion probability Q_del(2)   : 0.998849
+  Pemantle-Liggett thresholds [c1, c2]     : [0.353553, 0.750000]
+  Bare vs. effective branching [hat, eff]  : [0.286380, 0.443889]
+Regime check: scalar drive stable (J < 0); tree branching in weak survival window.

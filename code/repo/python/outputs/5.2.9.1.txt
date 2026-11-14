@@ -2,17 +2,17 @@
 §5.2.9.1 Master Equation
 =============================
 Constants:
-  Λ (Vacuum Drive):    0.0156
-  μ (Friction):        0.3989
-  λ_cat (Catalysis):   1.7183
+  Λ (Vacuum Drive):    0.015625
+  μ (Friction):        0.398942
+  λ_cat (Catalysis):   1.718282
 =============================
-Equilibrium Density ρ*: 0.036993
+Equilibrium Density ρ*: 0.037061
 =============================
 Flux Balance:
-  Creation J_in:        0.025550
-  Deletion J_out:       0.025550
+  Creation J_in:        0.025611
+  Deletion J_out:       0.025611
   Net dρ/dt at ρ*:      -3.47e-18
 =============================
 Stability Analysis:
-  Jacobian J:           -0.3331
+  Jacobian J:           -0.332922
   Status:               Stable Attractor

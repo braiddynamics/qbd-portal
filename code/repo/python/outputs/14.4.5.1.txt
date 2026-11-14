@@ -3,13 +3,13 @@ Section 14.4.5.1 Entanglement Equilibrium & Induced Metric Elasticity Verificati
 ==============================================================================
 Protocol 1: Sakharov (1967) Induced Metric Elasticity
   Microscopic Discreteness Area ell_0^2:  1.0000
-  Equilibrium 3-Cycle Density rho_3*:     0.0370
-  Derived Newton Constant G:              6.756757 (c^3 ell_0^2 / 4 hbar rho_3*)
-  Einstein Coupling Constant kappa:       169.815819 (8 pi G / c^4)
+  Equilibrium 3-Cycle Density rho_3*:     0.037061
+  Derived Newton Constant G:              6.745636 (c^3 ell_0^2 / 4 hbar rho_3*)
+  Einstein Coupling Constant kappa:       169.536313 (8 pi G / c^4)
 ------------------------------------------------------------------------------
 Protocol 2: Jacobson (2016) Modular Entanglement Regression
   Regression Slope (delta <K> vs Curvature): 1.000000 (Target: 1.000000)
-  Regression Intercept:                     -3.42e-15 (Target: 0.0)
+  Regression Intercept:                     -3.41e-15 (Target: 0.0)
   Determination Coefficient R^2:            1.00000000
   Verdict: First Law delta S_ent == delta <K> holds across all stress fluxes.
 ------------------------------------------------------------------------------

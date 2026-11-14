@@ -2,9 +2,9 @@ import numpy as np
 from scipy.optimize import brentq
 
 # Precise physical constants (from derivations)
-LAMBDA_VAC = 0.0156  # Vacuum Permittivity (Lemma 5.2.3)
-MU = 1.0 / np.sqrt(2 * np.pi)  # Friction Coefficient ≈ 0.3989 (Theorem 4.4.6)
-LAMBDA_CAT = np.e - 1          # Catalysis Coefficient ≈ 1.7183 (Theorem 4.4.5)
+LAMBDA_VAC = 2.0 ** (-6)       # Vacuum Permittivity = 0.015625 (Lemma 5.2.3)
+MU = 1.0 / np.sqrt(2 * np.pi)  # Friction Coefficient ≈ 0.398942 (Lemma 4.4.7)
+LAMBDA_CAT = np.e - 1          # Catalysis Coefficient ≈ 1.718282 (Lemma 4.4.6)
 
 def master_equation(rho):
     """
@@ -49,9 +49,9 @@ print("=============================")
 print("§5.2.9.1 Master Equation")
 print("=============================")
 print(f"Constants:")
-print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.4f}")
-print(f"  μ (Friction):        {MU:.4f}")
-print(f"  λ_cat (Catalysis):   {LAMBDA_CAT:.4f}")
+print(f"  Λ (Vacuum Drive):    {LAMBDA_VAC:.6f}")
+print(f"  μ (Friction):        {MU:.6f}")
+print(f"  λ_cat (Catalysis):   {LAMBDA_CAT:.6f}")
 print("=============================")
 print(f"Equilibrium Density ρ*: {rho_star:.6f}")
 print("=============================")
@@ -61,5 +61,5 @@ print(f"  Deletion J_out:       {J_out:.6f}")
 print(f"  Net dρ/dt at ρ*:      {master_equation(rho_star):.2e}")
 print("=============================")
 print(f"Stability Analysis:")
-print(f"  Jacobian J:           {jacobian:.4f}")
+print(f"  Jacobian J:           {jacobian:.6f}")
 print(f"  Status:               {'Stable Attractor' if jacobian < 0 else 'Unstable'}")

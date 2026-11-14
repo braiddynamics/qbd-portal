@@ -889,7 +889,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 Sakharov introduces the concept of "induced gravity," proposing that the gravitational field and the Einstein-Hilbert action are not fundamental dynamical fields, but rather represent the macroscopic elastic response of spacetime metric geometry induced by the quantum fluctuations of microscopic matter and gauge fields. In this framework, Newton's constant $G$ measures the elasticity of the quantum vacuum.
 
 **Relevance to QBD:**
-Sakharov's induced metric elasticity directly underpins the derivation of Newton's constant in Chapter 14. In QBD, the metric tensor and its curvature action emerge from integrating out the microscopic combinatorial rewrite transitions on the causal network. Newton's constant is derived as $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$, representing the induced elastic modulus of the vacuum resisting the deformation of its homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.0370$.
+Sakharov's induced metric elasticity directly underpins the derivation of Newton's constant in Chapter 14. In QBD, the metric tensor and its curvature action emerge from integrating out the microscopic combinatorial rewrite transitions on the causal network. Newton's constant is derived as $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$, representing the induced elastic modulus of the vacuum resisting the deformation of its homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.037061$.
 
 ---
 

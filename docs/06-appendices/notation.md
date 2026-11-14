@@ -164,33 +164,37 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $D$ | Aggregated deleted edge set excised after merge | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
 | $\Pr(\xi \mid G), K(G, G')$ | Realization probability law and Markov graph transition kernel | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $c$ | Limiting specific entropy per vertex | [§5.1.5](/monograph/rules/equilibrium/5.1/#5.1.5) |
 | $\operatorname{TC}(P)$ | Total correlation of the block law | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2](/monograph/rules/equilibrium/5.2/#5.2) |
-| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
-| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
-| $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
-| $d_c$ | Upper critical dimension ($d=4$) | [§5.2.4.2](/monograph/rules/equilibrium/5.2/#5.2.4.2) |
-| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/rules/equilibrium/5.2/#5.2.5) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
-| $\mathcal{V}_{\text{phys}}$ | Region of Physical Viability (equilibrium parameter manifold) | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
-| $\mathcal{P}_{\text{sweep}}$ | Parameter Sweep Protocol (systematic vacuum calibration) | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
-| $\mathcal{C}_{\text{viab}}$ | Viability Channel (stable topological evolution trajectory) | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
-| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
-| $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |
-| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
-| $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
+| $I(X;Y)$ | Mutual information between disjoint blocks | [§5.1.4.1](/monograph/rules/equilibrium/5.1/#5.1.4.1) |
+| $N_3$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $\rho$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $C(\rho)$ | Mean-field 3-cycle creation rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $D_0(\rho)$ | Undamped mean-field 3-cycle deletion rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $\Lambda_0$ | Vacuum permittivity (ignition flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
+| $\mu$ | Geometric friction coefficient ($1/\sqrt{2\pi}$) | [§5.2.5.1](/monograph/rules/equilibrium/5.2/#5.2.5.1) |
+| $\lambda$ | Bare catalysis coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
+| $\lambda_{\text{cat}}$ | Effective catalytic parameter in the viability protocol | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $p_{\mathrm{surv}}$ | Ensemble survival probability to horizon $T$ | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $F_{\mathrm{QSD}}$ | Normalized quasi-stationary flux imbalance | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $\delta_\mu$ | Perturbation half-width in friction sweeps | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
+| $\rho_c$ | Critical viability threshold density | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
+| $\rho^*$ | Driven steady-state 3-cycle density ($\approx 0.037061$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
+| $F(\rho)$ | Net 3-cycle flux ($C(\rho) - D_0(\rho)$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
+| $J$ | Jacobian eigenvalue ($F'(\rho^*) < 0$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
+| $\bar{d}_{G_t}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
+| $M_v$ | Local vertex degree count | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
+| $\Delta$ | Uniform maximum vertex degree bound | [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
 | $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
-| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
-| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
+| $W_1(\mu_u,\mu_v)$ | Wasserstein-1 distance between local neighborhoods | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
+| $A$ | Exponential covariance decay prefactor | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
+| $L$ | Minimum simple cycle length scale | [§5.5.8](/monograph/rules/equilibrium/5.5/#5.5.8) |
+| $B_m(x)$ | Volume of geodesic ball of radius $m$ centered at $x$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
+| $d_c$ | Upper critical dimension ($d_c=4$) | [§5.5.9.2](/monograph/rules/equilibrium/5.5/#5.5.9.2) |
 | $R$ | Causal Horizon (Radius of local operator) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
+| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.037061$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\rho(\zeta)$ | Local 3-cycle density of excitation | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $w(\zeta)$ | Writhe of the configuration | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
@@ -405,7 +409,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{U}$ | Universal Evolution Operator initiating dynamical graph sequencer | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
 | $P_{\text{nuc}}$ | Spontaneous loop nucleation tunneling probability | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
 | $\Gamma_{\text{spark}}$ | Primordial loop nucleation ignition current / spark rate | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
-| $\Lambda$ | Spontaneous 3-cycle creation seed rate ($=0.0156$) | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
+| $\Lambda$ | Spontaneous 3-cycle creation seed rate ($=2^{-6}=0.015625$) | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
 | $k, b$ | Root coordination number ($k=3$) and internal branching factor ($b=2$) | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
 | $\mathcal{P}_{\text{prec}}$ | Precursor 2-path abundance for 3-cycle closure | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
 | $\hat{P}$ | Topological parity projection operator breaking bipartite stasis | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
