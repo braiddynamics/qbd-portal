@@ -75,36 +75,38 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
 | $V_{act}$ | Active vertex set (vertices with non-zero incidence degree) | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
 | $\mathfrak{T}_{vac}$ | Vacuum Repertoire of admissible primitive operations | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
-| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.1](/monograph/rules/axioms/2.1/#2.1) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
-| $E$ | The set of edges within the graph | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
 | $\implies$ | Logical implication | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
 | $\forall$ | Universal quantifier ("for all") | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
-| $\mathcal{T}_{self}$ | Self-Loop Addition Operation | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
 | $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $\Delta S$ | Change in Entropy | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
+| $S(G)$ | Logarithmic path entropy $k_B \log \Omega(G)$ | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
 | $k_B$ | Boltzmann Constant | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
-| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $L$ | Length of a cycle or path | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
+| $\operatorname{PUC}(G; v, w, u)$ | Candidate-relative Principle of Unique Causality predicate | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.3](/monograph/rules/axioms/2.3/#2.3.3) |
+| $L$ | Length of a cycle or path | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
+| $\Pi_{\ell \le 2}(v, u)$ | Set of Simple Directed Paths from $v$ to $u$ with length $\le 2$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
 | $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
-| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/rules/axioms/2.4/#2.4.2) |
-| $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/rules/axioms/2.4/#2.4.3) |
-| $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/rules/axioms/2.4/#2.4.3.1) |
-| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
+| $C, C_k$ | A Simple Directed Cycle (of length $k$) | [§2.4.1](/monograph/rules/axioms/2.4/#2.4.1) |
 | $R$ | Mediated influence by a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
-| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $R_\le$ | Mediated influence under nondecreasing path timestamps | [§2.6.3](/monograph/rules/axioms/2.6/#2.6.3) |
+| $G_{\mathrm{space}}, G_{\mathrm{event}}$ | Oriented spatial state graph and chronological event order graph | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
+| $\prec$ | Strict event-precedence relation on $G_{\mathrm{event}}$ | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
+| $R^+$ | Strict partial order transitive closure of $R$ | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $D_G(C)$ | Ambient graph diameter of the perimeter's vertices | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $R$ | Radius of local computational patch | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $D$ | Graph Diameter | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
-| $E_{sync}$ | Energy required for global synchronization | [§2.8](/monograph/rules/axioms/2.8/#2.8) |
+| $W_{\mathrm{repair}}$ | Thermodynamic lower-bound work cost for distributed cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $\epsilon_{\mathrm{hop}}$ | Minimum energy cost per coordination hop | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $b$ | Minimum number of irreversibly erased bits in cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $r_{\mathrm{obs}}$ | Local observation radius of rooted graph neighborhoods | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
+| $B_C(0, r_{\mathrm{obs}})$ | Rooted ball of radius $r_{\mathrm{obs}}$ around vertex $0$ in $C$ | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
+| $N$ | Fixed vertex count of the bounded reverse-search candidate support | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $L_{\mathrm{cut}}$ | Logarithmic cutoff depth for bounded reverse-witness search | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $p$ | Conditional edge timestamp-comparison bound ($0 < p < 1/4$) | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $q$ | Conditional reverse-path branching factor ($q = 2p$) | [§2.7.4.1](/monograph/rules/axioms/2.7/#2.7.4.1) |
+| $\Omega_{\mathrm{occ}}$ | Set of immutable edge creation occurrences | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
 | $\Delta F$ | Change in Free Energy | [§3.1](/monograph/rules/architecture/3.1/#3.1) |
 | $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
