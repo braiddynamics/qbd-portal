@@ -175,7 +175,8 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mu$ | Geometric friction coefficient ($1/\sqrt{2\pi}$) | [§5.2.5.1](/monograph/rules/equilibrium/5.2/#5.2.5.1) |
 | $\lambda$ | Bare catalysis coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
 | $\lambda_{\text{cat}}$ | Effective catalytic parameter in the viability protocol | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
-| $p_{\mathrm{surv}}$ | Ensemble survival probability to horizon $T$ | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $p_{\mathrm{surv}}$ | Ensemble survival probability (to horizon $T$ or stopping rule $\tau_{\mathrm{homeo}}$) | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $\tau_K$ | Generalized $K$-tick persistence stopping time ($\tau_1 \equiv \tau_{\mathrm{homeo}}$) | [§5.3.4.3](/monograph/rules/equilibrium/5.3/#5.3.4.3) |
 | $F_{\mathrm{QSD}}$ | Normalized quasi-stationary flux imbalance | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
 | $\delta_\mu$ | Perturbation half-width in friction sweeps | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
 | $\rho_c$ | Critical viability threshold density | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
